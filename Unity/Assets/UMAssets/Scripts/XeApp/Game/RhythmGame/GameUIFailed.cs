@@ -120,7 +120,13 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xF759B0 Offset: 0xF759B0 VA: 0xF759B0
-		//public void BeginFailedAnim() { }
+		public void BeginFailedAnim()
+		{
+			gameObject.SetActive(true);
+			m_root.StartAllAnimGoStop("go_in", "st_in");
+			failedSeInfo.Reset();
+			m_anim = ANIM_TABLE.FAILED;
+		}
 
 		//// RVA: 0xF75A84 Offset: 0xF75A84 VA: 0xF75A84
 		public void BeginRetryAnim()
@@ -166,10 +172,16 @@ namespace XeApp.Game.RhythmGame
 		//private void remove_retry_completed_event(Action value) { }
 
 		//// RVA: 0xF76108 Offset: 0xF76108 VA: 0xF76108
-		//public void CleanupFailedCompletedCallback() { }
+		public void CleanupFailedCompletedCallback()
+		{
+			failed_completed_event = null;
+		}
 
 		//// RVA: 0xF76114 Offset: 0xF76114 VA: 0xF76114
-		//public void AddFailedCompletedCallback(Action failed_completed_event) { }
+		public void AddFailedCompletedCallback(Action failed_completed_event)
+		{
+			this.failed_completed_event += failed_completed_event;
+		}
 
 		//// RVA: 0xF76118 Offset: 0xF76118 VA: 0xF76118
 		public void CleanupRetryCompletedCallback()

@@ -19,6 +19,7 @@ class JpStringLiterals
 	public const string StringLiteral_9796 = "コンテニュー"; // 0x03bb23c8
 	public const string StringLiteral_9797 = "VOP高速完了"; // 0x03bb23cc
 	public const string StringLiteral_9798 = "AP回復"; // 0x03bb23d0
+	public const string StringLiteral_9799 = "コンテニュー:"; // 0x03bb23d4
 	public const string StringLiteral_9806 = "プレイヤー"; // 0x03bb23f0
 	public const string StringLiteral_9807 = "よろしくおねがいします"; // 0x03bb23f4
 	public const string StringLiteral_9829 = "デコルーム"; // 0x03bb244c

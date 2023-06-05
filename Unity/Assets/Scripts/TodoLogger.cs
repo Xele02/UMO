@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using XeApp.Game.Common;
 
@@ -55,7 +56,7 @@ public static class TodoLogger
 			UnityEngine.Debug.LogError(str);
 		}
 	}
-	public static PopupWindowControl LogNotImplemented(string str)
+	public static PopupWindowControl LogNotImplemented(string str, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callbackEnd = null)
 	{
 		TextPopupSetting s = new TextPopupSetting();
 		s.TitleText = "Not Implemented";
@@ -63,6 +64,6 @@ public static class TodoLogger
 		s.WindowSize = SizeType.Large;
 		s.Buttons = new ButtonInfo[1] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive } };
 		UnityEngine.Debug.LogError("Not Implemented " + str);
-		return PopupWindowManager.Show(s, null, null, null, null);
+		return PopupWindowManager.Show(s, callbackEnd, null, null, null);
 	}
 }

@@ -76,12 +76,12 @@ class RuntimeSettings : ScriptableObject
 	public bool ForceTutoSkip = true;
 	//public bool ForceAllStoryMusicUnlock = true;
 	//public int ForcePlayerLevel = 90;
-	public bool IsInvincibleCheat = true;
+	public bool IsInvincibleCheat = false;
 
 	[Header("Live")]
-	public bool ForceLiveValkyrieMode = true;
+	public bool ForceLiveValkyrieMode = false;
 	public bool ForceLiveDivaMode = false;
-	public bool ForceLiveAwakenDivaMode = true;
+	public bool ForceLiveAwakenDivaMode = false;
 
 	//public bool AddBigScore = false;
 

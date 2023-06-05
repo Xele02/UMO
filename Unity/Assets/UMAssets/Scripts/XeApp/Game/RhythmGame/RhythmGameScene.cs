@@ -59,7 +59,17 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xBFDB40 Offset: 0xBFDB40 VA: 0xBFDB40
-		// public void GotoPrevScene() { }
+		public void GotoPrevScene()
+		{
+			if(PopupWindowManager.IsActivePopupWindow())
+			{
+				PopupWindowManager.Close(null, null);
+			}
+			prevSceneButton.transform.parent.gameObject.SetActive(false);
+			if (onChangeScene != null)
+				onChangeScene();
+			NextScene(prevSceneName);
+		}
 
 		// // RVA: 0xBFDCE0 Offset: 0xBFDCE0 VA: 0xBFDCE0
 		public void GotoMenuScene()
@@ -77,7 +87,10 @@ namespace XeApp.Game.RhythmGame
 		// public void GotoTitleScene() { }
 
 		// // RVA: 0xBFDE98 Offset: 0xBFDE98 VA: 0xBFDE98
-		// public bool IsDebugFlow() { }
+		public bool IsDebugFlow()
+		{
+			return false;
+		}
 
 		// // RVA: 0xBFDEA0 Offset: 0xBFDEA0 VA: 0xBFDEA0
 		public bool IsEnableTransionResult()

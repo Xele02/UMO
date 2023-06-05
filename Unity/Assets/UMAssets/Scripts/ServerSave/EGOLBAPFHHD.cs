@@ -670,7 +670,13 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1C52D58 Offset: 0x1C52D58 VA: 0x1C52D58
-	// public void AFBCPAGPLNB() { }
+	public void AFBCPAGPLNB_IncContinue()
+	{
+		if (PJKDBODIGPG_Cont < 99999)
+			PJKDBODIGPG_Cont++;
+		else
+			PJKDBODIGPG_Cont = 0;
+	}
 
 	// // RVA: 0x1C52DC0 Offset: 0x1C52DC0 VA: 0x1C52DC0
 	public PGENIOHDCDI EFBKCNNFIPJ(int PPFNGGCBJKC)

@@ -9,6 +9,7 @@ using XeApp.Game.Tutorial;
 using XeSys;
 using CriWare;
 using mcrs;
+using XeApp.Game.Menu;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -2179,13 +2180,68 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0x9C1D84 Offset: 0x9C1D84 VA: 0x9C1D84
-		// private void ConfirmationWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private void ConfirmationWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
+		{
+			if (label < PopupButton.ButtonLabel.Cancel)
+			{
+				if (label == PopupButton.ButtonLabel.UsedChargesItem || label == PopupButton.ButtonLabel.Continue)
+				{
+					if (Database.Instance.gameSetup.musicInfo.isStoryMode)
+					{
+						OnSuccessInGameContinueByPaidVC();
+					}
+					else
+					{
+						CIOECGOMILE.HHCJCDFCLOB.OKGLDKFLGGK(OnSuccessInGameContinueByPaidVC, null, OnErrorInGameContinueByPaidVC, Database.Instance.gameSetup.musicInfo.freeMusicId, (int)Database.Instance.gameSetup.musicInfo.difficultyType);
+					}
+				}
+			}
+			else if (label == PopupButton.ButtonLabel.Cancel)
+			{
+				ShowConfirmationWindow();
+			}
+			else if (label == PopupButton.ButtonLabel.Skip)
+			{
+				uiController.ShowSkipConfirmationWindow(SkipStoryWindowCallBack);
+			}
+			else if (label == PopupButton.ButtonLabel.Purchase)
+			{
+				if (scene.DenomControl != null)
+				{
+					scene.DenomControl.StartPurchaseSequence(OnSuccessInPaidVCPurchase, OnCancelInPaidVCPurchase, OnErrorInPaidVCPurchase, null, null);
+				}
+			}
+			else
+			{
+				uiController.ShowReconfirmationWindow(ReconfirmationWindowCallBack);
+			}
+		}
 
 		// // RVA: 0x9C24B0 Offset: 0x9C24B0 VA: 0x9C24B0
-		// private void ContinueWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private void ContinueWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
+		{
+			if(label == PopupButton.ButtonLabel.Continue)
+			{
+				uiController.ShowConfirmationWindow(ConfirmationWindowCallBack, GotoTitleSceneInError);
+			}
+			else
+			{
+				uiController.ShowReconfirmationWindow(ReconfirmationWindowCallBack);
+			}
+		}
 
 		// // RVA: 0x9C25FC Offset: 0x9C25FC VA: 0x9C25FC
-		// private void ReconfirmationWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private void ReconfirmationWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
+		{
+			if(label == PopupButton.ButtonLabel.Retire)
+			{
+				FailedRhythmGame();
+			}
+			else
+			{
+				ShowConfirmationWindow();
+			}
+		}
 
 		// // RVA: 0x9C27B4 Offset: 0x9C27B4 VA: 0x9C27B4
 		private void PauseWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
@@ -2236,7 +2292,10 @@ namespace XeApp.Game.RhythmGame
 		// private void EndTutorialWindowCallBack() { }
 
 		// // RVA: 0x9C2DEC Offset: 0x9C2DEC VA: 0x9C2DEC
-		// private void SkipStoryWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private void SkipStoryWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
+		{
+			TodoLogger.Log(0, "SkipStoryWindowCallBack");
+		}
 
 		// // RVA: 0x9C2E00 Offset: 0x9C2E00 VA: 0x9C2E00
 		private void SkipStoryPauseWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
@@ -2278,19 +2337,34 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0x9C34E0 Offset: 0x9C34E0 VA: 0x9C34E0
-		// private void OnSuccessInPaidVCPurchase() { }
+		private void OnSuccessInPaidVCPurchase()
+		{
+			TodoLogger.Log(0, "OnSuccessInPaidVCPurchase");
+		}
 
 		// // RVA: 0x9C34E4 Offset: 0x9C34E4 VA: 0x9C34E4
-		// private void OnCancelInPaidVCPurchase() { }
+		private void OnCancelInPaidVCPurchase()
+		{
+			TodoLogger.Log(0, "OnCancelInPaidVCPurchase");
+		}
 
 		// // RVA: 0x9C34E8 Offset: 0x9C34E8 VA: 0x9C34E8
-		// private void OnErrorInPaidVCPurchase() { }
+		private void OnErrorInPaidVCPurchase()
+		{
+			TodoLogger.Log(0, "OnErrorInPaidVCPurchase");
+		}
 
 		// // RVA: 0x9C2290 Offset: 0x9C2290 VA: 0x9C2290
-		// private void OnSuccessInGameContinueByPaidVC() { }
+		private void OnSuccessInGameContinueByPaidVC()
+		{
+			TodoLogger.Log(0, "OnSuccessInGameContinueByPaidVC");
+		}
 
 		// // RVA: 0x9C3624 Offset: 0x9C3624 VA: 0x9C3624
-		// private void OnErrorInGameContinueByPaidVC() { }
+		private void OnErrorInGameContinueByPaidVC()
+		{
+			TodoLogger.Log(0, "OnErrorInGameContinueByPaidVC");
+		}
 
 		// // RVA: 0x9C1380 Offset: 0x9C1380 VA: 0x9C1380
 		private void PauseGame(bool isReserve = false)
@@ -2398,18 +2472,36 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C4254 Offset: 0x9C4254 VA: 0x9C4254
 		private void FailedAnimCompletedCallback()
 		{
-			TodoLogger.Log(0, "Rhythgameplayer FailedAnimCompletedCallback");
+			uiController.failed.ShowBlackCurtainOnly();
+			ShowConfirmationWindow();
 		}
 
 		// // RVA: 0x9C42AC Offset: 0x9C42AC VA: 0x9C42AC
 		// private void RetryAnimCompletedCallback() { }
 
 		// // RVA: 0x9C23C8 Offset: 0x9C23C8 VA: 0x9C23C8
-		// private void ShowConfirmationWindow() { }
+		private void ShowConfirmationWindow()
+		{
+			GameManager.Instance.SetTouchEffectVisible(true);
+			GameManager.Instance.SetTouchEffectMode(true);
+			this.StartCoroutineWatched(Co_ShowConfirmationWindow());
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x744D2C Offset: 0x744D2C VA: 0x744D2C
 		// // RVA: 0x9C4654 Offset: 0x9C4654 VA: 0x9C4654
-		// private IEnumerator Co_ShowConfirmationWindow() { }
+		private IEnumerator Co_ShowConfirmationWindow()
+		{
+			//0xBF2BF0
+			yield return TutorialManager.TryShowTutorialCoroutine(TutorialChecker);
+			if(Database.Instance.gameSetup.musicInfo.isFreeMode)
+			{
+				uiController.ShowContinueWindow(ContinueWindowCallBack);
+			}
+			else
+			{
+				uiController.ShowConfirmationWindow(ConfirmationWindowCallBack, GotoTitleSceneInError);
+			}
+		}
 
 		// // RVA: 0x9C46DC Offset: 0x9C46DC VA: 0x9C46DC
 		private void OnChangeScene()
@@ -2620,7 +2712,20 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C5D68 Offset: 0x9C5D68 VA: 0x9C5D68
 		private void GotoMenuSceneInFailed()
 		{
-			TodoLogger.Log(0, "GotoMenuSceneInFailed");
+			bool b = status.life.current == 0 && Database.Instance.gameSetup.musicInfo.freeMusicId != 0;
+			if (b)
+			{
+				TipsControl.SetSituationValue(TipsControl.SituationId.GameOver, 1);
+			}
+			Database.Instance.gameResult.Setup(false, b, null, null, 0);
+			if(scene.IsDebugFlow())
+			{
+				scene.GotoPrevScene();
+			}
+			else
+			{
+				scene.GotoMenuScene();
+			}
 		}
 
 		// // RVA: 0x9C34EC Offset: 0x9C34EC VA: 0x9C34EC
@@ -3465,7 +3570,11 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9CC460 Offset: 0x9CC460 VA: 0x9CC460
 		public void OnCallback_PlayVoice_GameFailed()
 		{
-			TodoLogger.Log(0, "RhythmGamePlayer OnCallback_PlayVoice_GameFailed");
+			RhythmGameVoicePlayer.Result voice = voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.GameOver);
+			if (voice == RhythmGameVoicePlayer.Result.None)
+			{
+				SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.GameFailed, 0);
+			}
 		}
 
 		// // RVA: 0x9CC4E8 Offset: 0x9CC4E8 VA: 0x9CC4E8
@@ -3489,7 +3598,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0x9CC5F8 Offset: 0x9CC5F8 VA: 0x9CC5F8
-		// private bool TutorialChecker(TutorialConditionId condition) { }
+		private bool TutorialChecker(TutorialConditionId condition)
+		{
+			return condition == TutorialConditionId.Condition59;
+		}
 
 	}
 }

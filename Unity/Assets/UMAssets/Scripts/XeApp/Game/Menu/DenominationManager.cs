@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
 {
@@ -45,7 +46,60 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x17CF7DC Offset: 0x17CF7DC VA: 0x17CF7DC
-		// public void StartPurchaseSequence(IMCBBOAFION onSuccess, JFDNPFFOACP onCancel, DJBHIFLHJLK onError, OnDenomChangeDate onChangeDate, ProductListFilter filter) { }
+		public void StartPurchaseSequence(IMCBBOAFION onSuccess, JFDNPFFOACP onCancel, DJBHIFLHJLK onError, OnDenomChangeDate onChangeDate, ProductListFilter filter)
+		{
+			GameManager.Instance.CloseSnsNotice();
+			m_paidVCPurchase = new AMOCLPHDGBP();
+			m_paidVCPurchase.MKDKKDNBEEK = OnOpenVCProducts;
+			m_paidVCPurchase.AJGKLIIDKHA = OnOpenBirthdayRegistration;
+			m_paidVCPurchase.FIJMBKFJJIJ = OnOpenBirthdayRegistrationConfirm;
+			errorHandler = onError;
+			m_OnChangeDate = (TransitionList.Type type) =>
+			{
+				//0x17D0DE8
+				m_IsChangeDate = true;
+				onChangeDate(type);
+			};
+			m_productListFilter = filter;
+			m_IsChangeDate = false;
+			m_paidVCPurchase.DCDPMEPNKND(() =>
+			{
+				//0x17D0E3C
+				this.StartCoroutineWatched(PopupDenomination.Co_ClosePopup(() =>
+				{
+					//0x17D0F4C
+					if(onSuccess != null)
+					{
+						onSuccess();
+					}
+					CallResponseHandler(Response.Success);
+				}));
+				errorHandler = null;
+			}, () =>
+			{
+				//0x17D0F90
+				this.StartCoroutineWatched(PopupDenomination.Co_ClosePopup(() =>
+				{
+					//0x17D10A0
+					if(!m_IsChangeDate && onCancel != null)
+					{
+						onCancel();
+					}
+					CallResponseHandler(Response.Cancel);
+				}));
+				errorHandler = null;
+			}, () =>
+			{
+				//0x17D1104
+				if (onError != null)
+					onError();
+				CallResponseHandler(Response.Error);
+			}, () =>
+			{
+				//0x17D0D6C
+				PopupDenomination.OnProcessingEnd();
+			}, false, true);
+		}
 
 		// // RVA: 0x17CFC3C Offset: 0x17CFC3C VA: 0x17CFC3C
 		public void AddResponseHandler(ResponseHandler handler)
@@ -60,18 +114,34 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x17CFD3C Offset: 0x17CFD3C VA: 0x17CFD3C
-		// public void CallResponseHandler(DenominationManager.Response response) { }
+		public void CallResponseHandler(Response response)
+		{
+			for(int i = 0; i < m_responceHandlerList.Count; i++)
+			{
+				if (m_responceHandlerList[i] != null)
+					m_responceHandlerList[i](response);
+			}
+		}
 
 		// // RVA: 0x17D026C Offset: 0x17D026C VA: 0x17D026C
-		// private void OnOpenVCProducts(AMOCLPHDGBP p, ELBOJBBIBFM onPurchase, JFDNPFFOACP onCancel) { }
+		private void OnOpenVCProducts(AMOCLPHDGBP p, ELBOJBBIBFM onPurchase, JFDNPFFOACP onCancel)
+		{
+			TodoLogger.Log(0, "OnOpenVCProducts");
+		}
 
 		// // RVA: 0x17D05C8 Offset: 0x17D05C8 VA: 0x17D05C8
 		// private int GetProcuctListCount(AMOCLPHDGBP p, ProductListFilter filter) { }
 
 		// // RVA: 0x17D079C Offset: 0x17D079C VA: 0x17D079C
-		// private void OnOpenBirthdayRegistration(PJHHCHAKGKI onRegisterBirth, JFDNPFFOACP onCencel) { }
+		private void OnOpenBirthdayRegistration(PJHHCHAKGKI onRegisterBirth, JFDNPFFOACP onCencel)
+		{
+			TodoLogger.Log(0, "OnOpenBirthdayRegistration");
+		}
 
 		// // RVA: 0x17D0860 Offset: 0x17D0860 VA: 0x17D0860
-		// private void OnOpenBirthdayRegistrationConfirm(int year, int mon, IMCBBOAFION onEnter, JFDNPFFOACP onCancel, DJBHIFLHJLK onError) { }
+		private void OnOpenBirthdayRegistrationConfirm(int year, int mon, IMCBBOAFION onEnter, JFDNPFFOACP onCancel, DJBHIFLHJLK onError)
+		{
+			TodoLogger.Log(0, "OnOpenBirthdayRegistrationConfirm");
+		}
 	}
 }

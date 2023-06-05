@@ -30,7 +30,7 @@ public class CPHJGFLEFNF
 	public List<int> MNDPPLILCPJ = new List<int>(); // 0x70
 	public List<int> JIHECDPAOKB = new List<int>(); // 0x74
 	public int GAHLMIOHCAI; // 0x78
-	public int[] FMMKKCANOKG; // 0x7C
+	public int[] FMMKKCANOKG_DivaLevels; // 0x7C
 	public JBECFDNKPFD MFCGAKOAGFE; // 0x80
 	public int KBINAMHOODM_GameEventType; // 0x84
 	public int LMJNFABLJEO_OpenEventType; // 0x88
