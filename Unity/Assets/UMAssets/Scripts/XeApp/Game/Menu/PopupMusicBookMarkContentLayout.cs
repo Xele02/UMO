@@ -3,6 +3,7 @@ using XeApp.Game.Common;
 using UnityEngine.UI;
 using mcrs;
 using XeApp.Game.Common.View;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -67,7 +68,25 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x16903A0 Offset: 0x16903A0 VA: 0x16903A0
 		public void Initialize(bool init)
 		{
-			TodoLogger.Log(0, "Initialize");
+			for(int i = 0; i < m_bookMarkCheckBox.Length; i++)
+			{
+				if (ViewBookMarkMusicData.KNKGEALPDGF(SelectMusicData.DLAEJOBELBH_MusicId, i))
+					m_bookMarkCheckBox[i].SetOn();
+				else
+					m_bookMarkCheckBox[i].SetOff();
+			}
+			for(int i = 0; i < m_bookMarkName.Length; i++)
+			{
+				m_bookMarkName[i].text = ViewBookMarkMusicData.BDCDCCJHOCD_GetBookmarkName(i);
+			}
+			for(int i = 0; i < m_checkIsBookMark.Length; i++)
+			{
+				m_checkIsBookMark[i] = ViewBookMarkMusicData.KNKGEALPDGF(SelectMusicData.DLAEJOBELBH_MusicId, i);
+			}
+			for(int i = 0; i < m_checkBookMarkName.Length; i++)
+			{
+				m_checkBookMarkName[i] = ViewBookMarkMusicData.BDCDCCJHOCD_GetBookmarkName(i);
+			}
 		}
 
 		//// RVA: 0x1690C38 Offset: 0x1690C38 VA: 0x1690C38
@@ -102,13 +121,45 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1690F5C Offset: 0x1690F5C VA: 0x1690F5C
 		private void PopupMusicBookMarkMusicList(int bookMarkIndex)
 		{
-			TodoLogger.LogNotImplemented("PopupMusicBookMarkMusicList");
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			m_bookMarkMusicList.BookMarkSelectIndex = bookMarkIndex;
+			m_bookMarkMusicList.WindowSize = SizeType.Large;
+			m_bookMarkMusicList.SetParent(transform);
+			m_bookMarkMusicList.IsCaption = true;
+			m_bookMarkMusicList.TitleText = m_bookMarkName[bookMarkIndex].text;
+			m_bookMarkMusicList.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative }
+				};
+			PopupWindowManager.Show(m_bookMarkMusicList, null, null, null, null);
 		}
 
 		//// RVA: 0x169124C Offset: 0x169124C VA: 0x169124C
 		public void PopupBookMarkName(int bookMarkIndex)
 		{
-			TodoLogger.LogNotImplemented("PopupBookMarkName");
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			m_inputPopup.SetParent(transform);
+			m_inputPopup.WindowSize = SizeType.Small;
+			m_inputPopup.IsCaption = true;
+			m_inputPopup.TitleText = bk.GetMessageByLabel("popup_music_input_bookmarkname_title");
+			m_inputPopup.Description = PopupWindowManager.FormatTextBank(bk, "popup_music_input_bookmarkname_text_01", new object[] { m_nameMaxLength.ToString() });
+			m_inputPopup.Notes = PopupWindowManager.FormatTextBank(bk, "popup_music_input_bookmarkname_text_02", new object[] { m_nameMaxLength.ToString() });
+			m_inputPopup.CharacterLimit = m_nameMaxLength;
+			m_inputPopup.InputText = m_bookMarkName[bookMarkIndex].text;
+			m_inputPopup.Buttons = new ButtonInfo[2]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				};
+			PopupWindowManager.Show(m_inputPopup, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1691AD0
+				if(label == PopupButton.ButtonLabel.Ok)
+				{
+					InputContent c = control.Content as InputContent;
+					m_bookMarkName[bookMarkIndex].text = c.Text;
+				}
+			}, null, null, null);
 		}
 	}
 }
