@@ -247,7 +247,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB2F0E0 Offset: 0xB2F0E0 VA: 0xB2F0E0
-		private void MakeComebackSceneInfo(ref MenuScene.MenuSceneCamebackInfo info)
+		private void MakeComebackSceneInfo(ref MenuSceneCamebackInfo info)
 		{
 			if(ComebackByRestart)
 			{
@@ -327,8 +327,49 @@ namespace XeApp.Game.Menu
 				}
 				if(!Database.Instance.gameResult.IsClear())
 				{
-					TodoLogger.Log(0, "init from free mode fail");
 					// L558
+					if(Database.Instance.gameSetup.musicInfo.gameEventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN)
+					{
+						if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
+						{
+							TodoLogger.Log(0, "init from event 1");
+						}
+						if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
+						{
+							TodoLogger.Log(0, "init from event 3");
+						}
+					}
+					else
+					{
+						if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
+						{
+							TodoLogger.Log(0, "init from event 14");
+						}
+						if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
+						{
+							TodoLogger.Log(0, "init from event 11");
+						}
+						if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
+						{
+							TodoLogger.Log(0, "init from event 6");
+						}
+					}
+					PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.JBAIEADLAGH/*0*/);
+					if (!Database.Instance.gameSetup.musicInfo.IsMvMode && !Database.Instance.gameSetup.musicInfo.IsLine6Mode)
+					{
+						;
+					}
+					else
+					{
+						MusicSelectArgs margs = new MusicSelectArgs();
+						margs.isSimulation = Database.Instance.gameSetup.musicInfo.IsMvMode;
+						margs.isLine6Mode = Database.Instance.gameSetup.musicInfo.IsLine6Mode;
+						info.args = margs;
+					}
+					info.category = SceneGroupCategory.FREE;
+					info.nextName = TransitionList.Type.MUSIC_SELECT;
+					info.uniqueId = TransitionUniqueId.MUSICSELECT;
+					return;
 				}
 				// L746
 				info.isDivaActive = true;
