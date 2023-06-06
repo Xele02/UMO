@@ -52,7 +52,7 @@ namespace XeApp.Game.Common
 		private AbsoluteLayout m_checkBoxTable; // 0x60
 
 		public bool IsChecked01 { get { return m_check01Button.IsChecked; } } //0x11073DC
-		//public bool IsChecked02 { get; } 0x1107408
+		public bool IsChecked02 { get { return m_check02Button.IsChecked; } } //0x1107408
 
 		//// RVA: 0x1107434 Offset: 0x1107434 VA: 0x1107434
 		public void SetStyle(Style style)

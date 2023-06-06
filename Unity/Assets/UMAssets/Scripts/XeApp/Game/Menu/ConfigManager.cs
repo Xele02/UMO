@@ -333,7 +333,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1B58890 Offset: 0x1B58890 VA: 0x1B58890
-		// public void SetNotesSpeedAutoRejected(bool reject) { }
+		public void SetNotesSpeedAutoRejected(bool reject)
+		{
+			Option.JJDENMHGOIH_NotesSpeedAutoRejected = reject ? 1 : 0;
+		}
 
 		// // RVA: 0x1B588B8 Offset: 0x1B588B8 VA: 0x1B588B8
 		public void SetNotesOffsetValue(float value)

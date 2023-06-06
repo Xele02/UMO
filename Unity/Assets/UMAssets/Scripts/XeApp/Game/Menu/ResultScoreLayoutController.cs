@@ -376,16 +376,54 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x723F4C Offset: 0x723F4C VA: 0x723F4C
 		// // RVA: 0xB609FC Offset: 0xB609FC VA: 0xB609FC
-		// private IEnumerator Co_ShowPlaylogDetail() { }
+		private IEnumerator Co_ShowPlaylogDetail()
+		{
+			//0xB62A5C
+			if (popupPlaylogDetail == null)
+				yield return Co.R(Co_LoadPlaylogDetail());
+			popupPlaylogDetail.ShowPopup((PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0xB61694
+				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			});
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x723FC4 Offset: 0x723FC4 VA: 0x723FC4
 		// // RVA: 0xB60AA8 Offset: 0xB60AA8 VA: 0xB60AA8
-		// private IEnumerator Co_LoadPlaylogDetail() { }
+		private IEnumerator Co_LoadPlaylogDetail()
+		{
+			//0xB61BC8
+			if(popupPlaylogDetail == null)
+			{
+				MenuScene.Instance.InputDisable();
+				GameManager.Instance.NowLoading.Show();
+				this.StartCoroutineWatched(PopupPlaylogDetail.Co_LoadResource(transform, playlog, (PopupPlaylogDetail data) =>
+				{
+					//0xB613B4
+					popupPlaylogDetail = data;
+				}));
+				yield return new WaitWhile(() =>
+				{
+					//0xB613BC
+					return popupPlaylogDetail == null;
+				});
+				popupPlaylogDetail.Setup(playlogGraphParts);
+				yield return null;
+				yield return new WaitWhile(() =>
+				{
+					//0xB61448
+					return !popupPlaylogDetail.IsChangeGraphType();
+				});
+				GameManager.Instance.NowLoading.Hide();
+				MenuScene.Instance.InputEnable();
+			}
+		}
 
 		// // RVA: 0xB60B54 Offset: 0xB60B54 VA: 0xB60B54
 		private void OnClickPlaylogDetailButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickPlaylogDetailButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			this.StartCoroutineWatched(Co_ShowPlaylogDetail());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x72403C Offset: 0x72403C VA: 0x72403C
@@ -529,19 +567,7 @@ namespace XeApp.Game.Menu
 			}
 			return false;
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7241A4 Offset: 0x7241A4 VA: 0x7241A4
-		// // RVA: 0xB613B4 Offset: 0xB613B4 VA: 0xB613B4
-		// private void <Co_LoadPlaylogDetail>b__53_0(PopupPlaylogDetail data) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7241B4 Offset: 0x7241B4 VA: 0x7241B4
-		// // RVA: 0xB613BC Offset: 0xB613BC VA: 0xB613BC
-		// private bool <Co_LoadPlaylogDetail>b__53_1() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7241C4 Offset: 0x7241C4 VA: 0x7241C4
-		// // RVA: 0xB61448 Offset: 0xB61448 VA: 0xB61448
-		// private bool <Co_LoadPlaylogDetail>b__53_2() { }
-
+		
 		// [CompilerGeneratedAttribute] // RVA: 0x7241D4 Offset: 0x7241D4 VA: 0x7241D4
 		// // RVA: 0xB61478 Offset: 0xB61478 VA: 0xB61478
 		// private void <Co_LoadSingRankRateEffectLayout>b__57_0(GameObject instance) { }

@@ -21,47 +21,68 @@ namespace XeApp.Game.Common
 			m_notesUi.SetOnClickMinus10(() =>
 			{
 				//0xAF9DA8
-				TodoLogger.LogNotImplemented("SetOnClickMinus");
+				m_notesUi.SetNumber(string.Format("{0:f1}", ConfigManager.Instance.NotesSpeedMinus1()));
+				ConfigUtility.PlaySeButton();
 			});
 			m_notesUi.SetOnClickMinus01(() =>
 			{
 				//0xAF9E9C
-				TodoLogger.LogNotImplemented("SetOnClickMinus01");
+				m_notesUi.SetNumber(string.Format("{0:f1}", ConfigManager.Instance.NotesSpeedMinus()));
+				ConfigUtility.PlaySeButton();
 			});
 			m_notesUi.SetOnClickPlus10(() =>
 			{
 				//0xAF9F90
-				TodoLogger.LogNotImplemented("SetOnClickPlus10");
+				m_notesUi.SetNumber(string.Format("{0:f1}", ConfigManager.Instance.NotesSpeedPlus1()));
+				ConfigUtility.PlaySeButton();
 			});
 			m_notesUi.SetOnClickPlus01(() =>
 			{
 				//0xAFA084
-				TodoLogger.LogNotImplemented("SetOnClickPlus01");
+				m_notesUi.SetNumber(string.Format("{0:f1}", ConfigManager.Instance.NotesSpeedPlus()));
+				ConfigUtility.PlaySeButton();
 			});
 			m_notesUi.SetOnClickDefault(() =>
 			{
 				//0xAFA178
-				TodoLogger.LogNotImplemented("SetOnClickDefault");
+				ConfigUtility.NotesSpeedDefaultPopup((bool isOk) =>
+				{
+					//0xAFA21C
+					if(isOk)
+					{
+						m_notesUi.SetNumber(string.Format("{0:f1}", ConfigManager.Instance.ParamDefault(ConfigManager.eParamDefaultType.NotesSpeed)));
+						m_notesUi.SetCheckbox01Status(ConfigManager.Instance.GetNotesSpeedAllApply());
+					}
+				});
+				ConfigUtility.PlaySeButton();
 			});
 			m_notesUi.SetOnClickDiffLeft(() =>
 			{
 				//0xAFA374
-				TodoLogger.LogNotImplemented("SetOnClickDiffLeft");
+				ConfigManager.Instance.NotesSpeedDiffToLeft();
+				m_notesUi.SetNumber(string.Format("{0:f1}", ConfigManager.Instance.GetNotesSpeed()));
+				SetDifficulty();
+				ConfigUtility.PlaySeToggleButton();
 			});
 			m_notesUi.SetOnClickDiffRight(() =>
 			{
 				//0xAFA4A4
-				TodoLogger.LogNotImplemented("SetOnClickDiffRight");
+				ConfigManager.Instance.NotesSpeedDiffToRight();
+				m_notesUi.SetNumber(string.Format("{0:f1}", ConfigManager.Instance.GetNotesSpeed()));
+				SetDifficulty();
+				ConfigUtility.PlaySeToggleButton();
 			});
 			m_notesUi.SetOnClickCheckbox01(() =>
 			{
 				//0xAFA5D4
-				TodoLogger.LogNotImplemented("SetOnClickCheckbox01");
+				ConfigManager.Instance.SetNotesSpeedAllApply(m_notesUi.IsChecked01);
+				ConfigUtility.PlaySeToggleButton();
 			});
 			m_notesUi.SetOnClickCheckbox02(() =>
 			{
 				//0xAFA684
-				TodoLogger.LogNotImplemented("SetOnClickCheckbox02");
+				ConfigManager.Instance.SetNotesSpeedAutoRejected(m_notesUi.IsChecked02);
+				ConfigUtility.PlaySeToggleButton();
 			});
 		}
 
