@@ -136,6 +136,7 @@ namespace XeApp.Game.Menu
 				LayoutUGUIRuntime runtime = null;
 				LayoutResultPlaylogDetail layout_ = m_content.GetComponent<LayoutResultPlaylogDetail>();
 				operation = AssetBundleManager.LoadLayoutAsync(BundleName, "root_log_skill_icon_layout_root");
+				yield return operation;
 				yield return Co.R(operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
 				{
 					//0x160F864
@@ -183,7 +184,11 @@ namespace XeApp.Game.Menu
 				public List<RhythmGamePlayLog.SkillData> skill_list = new List<RhythmGamePlayLog.SkillData>(); // 0x18
 
 				// RVA: 0x1611230 Offset: 0x1611230 VA: 0x1611230
-				// public void AddNoteData(RhythmGamePlayLog.NoteData data) { }
+				public void AddNoteData(RhythmGamePlayLog.NoteData data)
+				{
+					result_count[(int)data.result]++;
+					note_list.Add(data);
+				}
 			}
 
 			public RhythmGamePlayLog playlog_data; // 0x8
@@ -196,14 +201,42 @@ namespace XeApp.Game.Menu
 				playlog_data = playlog;
 				for(int i = 0; i < playlog.noteDataList.Count; i++)
 				{
-
+					int v = playlog_data.noteDataList[i].millisec / GRAPHBAR_INTERVAL_MILLISECOND;
+					if (result_list.Count <= v)
+					{
+						AddResultData(v + 1 - result_list.Count);
+					}
+					result_list[v].AddNoteData(playlog.noteDataList[i]);
 				}
-
-				TodoLogger.Log(0, "Init");
+				for(int i = 0; i < result_list.Count; i++)
+				{
+					if(max_count < result_list[i].note_list.Count)
+					{
+						max_count = result_list[i].note_list.Count;
+					}
+				}
+				for(int i = 0; i < playlog_data.skillDataList.Count; i++)
+				{
+					int v = playlog_data.skillDataList[i].millisec / GRAPHBAR_INTERVAL_MILLISECOND;
+					if (result_list.Count < v)
+					{
+						AddResultData(v + 1 - result_list.Count);
+					}
+					result_list[v].skill_list.Add(playlog_data.skillDataList[i]);
+				}
 			}
 
 			// // RVA: 0x1611078 Offset: 0x1611078 VA: 0x1611078
-			// private void AddResultData(int count) { }
+			private void AddResultData(int count)
+			{
+				for(int i = 0; i < count; i++)
+				{
+					ViewNoteResultData data = new ViewNoteResultData();
+					data.time_range_start = GRAPHBAR_INTERVAL_MILLISECOND * result_list.Count;
+					data.time_range_end = GRAPHBAR_INTERVAL_MILLISECOND * (result_list.Count + 1);
+					result_list.Add(data);
+				}
+			}
 		}
 
 		public static readonly string BUNDLE_NAME = "ly/023.xab"; // 0x0

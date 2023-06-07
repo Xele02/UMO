@@ -308,6 +308,10 @@ class JpStringLiterals
 	public const string StringLiteral_17777 = "獲得したアイテムはありません。"; // 0x03bba07c
 	public const string StringLiteral_17787 = "％"; // 0x03bba0a4
 	public const string StringLiteral_17788 = "(UCアイテムは {0}UC に変換されました)"; // 0x03bba0a8
+	public const string StringLiteral_18022 = "使用スキル"; // 0x03bba450
+	public const string StringLiteral_18023 = "{0}秒"; //0x03bba454
+	public const string StringLiteral_18024 = "：{0}"; //0x03bba458
+	public const string StringLiteral_18054 = "～{0}秒"; //0x03bba4d0
 	public const string StringLiteral_19017 = "誕生日"; // 0x03bbb3dc
 	public const string StringLiteral_19018 = "{0}/{1}/{2}　{3}"; // 0x03bbb3e0
 	public const string StringLiteral_19612 = "ユニットセット"; // 0x03bbbd28

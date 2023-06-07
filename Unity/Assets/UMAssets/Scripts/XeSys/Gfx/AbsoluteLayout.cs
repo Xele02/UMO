@@ -443,12 +443,21 @@ namespace XeSys.Gfx
 				return;
 			for(int i = 0; i < p.m_List.Count; i++)
 			{
-				p.m_List[i].StartAnimLoop(startLabel);
+				p.m_List[i].StartAnimLoop(startLabel, endLabel);
 			}
 		}
 
 		// // RVA: 0x20415C4 Offset: 0x20415C4 VA: 0x20415C4
-		// public void StartSiblingAnimLoop(string startLabel) { }
+		public void StartSiblingAnimLoop(string startLabel)
+		{
+			AbsoluteLayout p = Parent as AbsoluteLayout;
+			if (p == null)
+				return;
+			for (int i = 0; i < p.m_List.Count; i++)
+			{
+				p.m_List[i].StartAnimLoop(startLabel);
+			}
+		}
 
 		// // RVA: 0x20416F8 Offset: 0x20416F8 VA: 0x20416F8
 		// public bool IsPlayingSibling() { }

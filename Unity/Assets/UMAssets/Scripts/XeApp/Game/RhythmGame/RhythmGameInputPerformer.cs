@@ -559,6 +559,8 @@ namespace XeApp.Game.RhythmGame
 			}
 			if (fingerId == -1)
 				fingerId = avaiableFingerId;
+			if (fingerId == -1)
+				return; // no more finger avaiable
 
 			if (line != -1)
 			{ 

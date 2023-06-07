@@ -33,6 +33,11 @@ public static class MonoBehaviourExtensions
 		CoroutineWatcher.Instance.Stop(coroutine);
 		owner.StopCoroutine(coroutine);
 	}
+	public static void StopAllCoroutinesWatched(this MonoBehaviour owner)
+	{
+		CoroutineWatcher.Instance.StopAll(owner);
+		owner.StopAllCoroutines();
+	}
 	public static Coroutine StartCoroutineWatched(this MonoBehaviour owner, string FuncName)
 	{
 		Coroutine c = owner.StartCoroutine(FuncName);
@@ -93,6 +98,13 @@ public class CoroutineWatcher : SingletonMonoBehaviour<CoroutineWatcher>
 		{
 			coroutines.Remove(i_);
 		}
+	}
+	public void StopAll(MonoBehaviour owner)
+	{
+		coroutines.RemoveAll((Info info_) =>
+		{
+			return info_.owner == owner;
+		});
 	}
 	public void Stop(Coroutine c)
 	{
