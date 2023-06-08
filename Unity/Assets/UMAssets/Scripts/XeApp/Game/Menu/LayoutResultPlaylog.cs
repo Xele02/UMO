@@ -184,9 +184,14 @@ namespace XeApp.Game.Menu
 			List<GameObject> lg = new List<GameObject>();
 			List<GameObject> lg2 = new List<GameObject>();
 			List<GameObject> lg3 = new List<GameObject>();
-			SetupModeObject(lg, lg2, lg3, playlog.valkyrieModeData, graph_parts.GetPartsData(0).mode_parts[0], graph_parts.GetPartsData(0).division_line, t2, endTime, true);
-			SetupModeObject(lg, lg2, lg3, playlog.divaModeData, playlog.valkyrieModeData.type != RhythmGameMode.Type.Valkyrie ? graph_parts.GetPartsData(0).mode_parts[0] : graph_parts.GetPartsData(0).mode_parts[1], graph_parts.GetPartsData(0).division_line, t2, endTime, true);
-			SetupModeObject(lg, lg2, lg3, playlog.divaModeData, playlog.divaModeData.type == RhythmGameMode.Type.AwakenDiva ? graph_parts.GetPartsData(0).mode_parts[3] : (playlog.divaModeData.type == RhythmGameMode.Type.Diva ? graph_parts.GetPartsData(0).mode_parts[2] : graph_parts.GetPartsData(0).mode_parts[0]), graph_parts.GetPartsData(0).division_line, t2, endTime, false);
+			SetupModeObject(lg, lg2, lg3, 
+				new RhythmGamePlayLog.ModeData() { type = RhythmGameMode.Type.Normal, beginMillisec = 0, endMillisec = playlog.valkyrieModeData.beginMillisec }, 
+				graph_parts.GetPartsData(0).mode_parts[0], graph_parts.GetPartsData(0).division_line, t2, endTime, true);
+			SetupModeObject(lg, lg2, lg3,
+				new RhythmGamePlayLog.ModeData() { type = playlog.valkyrieModeData.type, beginMillisec = playlog.valkyrieModeData.beginMillisec, endMillisec = playlog.divaModeData.beginMillisec },
+				playlog.valkyrieModeData.type != RhythmGameMode.Type.Valkyrie ? graph_parts.GetPartsData(0).mode_parts[0] : graph_parts.GetPartsData(0).mode_parts[1], graph_parts.GetPartsData(0).division_line, t2, endTime, true);
+			SetupModeObject(lg, lg2, lg3, playlog.divaModeData,
+				playlog.divaModeData.type == RhythmGameMode.Type.AwakenDiva ? graph_parts.GetPartsData(0).mode_parts[3] : (playlog.divaModeData.type == RhythmGameMode.Type.Diva ? graph_parts.GetPartsData(0).mode_parts[2] : graph_parts.GetPartsData(0).mode_parts[0]), graph_parts.GetPartsData(0).division_line, t2, endTime, false);
 			for(int i = 0; i < lg2.Count; i++)
 			{
 				lg2[i].transform.SetAsLastSibling();

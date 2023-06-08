@@ -110,7 +110,8 @@ namespace XeApp.Game.Menu
 				f = m_ResultCount;
 			}
 			float time = f;
-			if(m_GraphType != PopupPlaylogDetail.GraphType.None)
+			int total = m_ResultCount;
+			if (m_GraphType != PopupPlaylogDetail.GraphType.None)
 			{
 				time = GRAPH_CHANGE_ANIM_TIME;
 			}
@@ -118,8 +119,8 @@ namespace XeApp.Game.Menu
 			{
 				if(m_ResultDataList[i].count != 0)
 				{
-					this.StartCoroutineWatched(Co_ChangeGraphAnim(m_ResultDataList[i].image, m_ResultCount * 1.0f / f * m_BarSize.y, time));
-					m_ResultCount -= m_ResultDataList[i].count;
+					this.StartCoroutineWatched(Co_ChangeGraphAnim(m_ResultDataList[i].image, total * 1.0f / f * m_BarSize.y, time));
+					total -= m_ResultDataList[i].count;
 					//a = Mathf.Max(a, m_ResultCount * 1.0f / f * m_BarSize.y);
 				}
 			}

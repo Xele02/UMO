@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using XeApp.Game.Common;
 using XeSys;
 using XeApp.Game.Common.uGUI;
+using System.Collections;
+using XeApp.Game.Tutorial;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -329,11 +331,24 @@ namespace XeApp.Game.RhythmGame
 		// public void ShowModeDescriptionTutorialWindow(Action callback) { }
 
 		// // RVA: 0xBF3A24 Offset: 0xBF3A24 VA: 0xBF3A24
-		// public void Show6LineDescriptionTutorialWindow(Action callback) { }
+		public void Show6LineDescriptionTutorialWindow(Action callback)
+		{
+			this.StartCoroutineWatched(Co_Show6LineDescriptionTutorialWindow(callback));
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x746044 Offset: 0x746044 VA: 0x746044
 		// // RVA: 0xC11CF8 Offset: 0xC11CF8 VA: 0xC11CF8
-		// private IEnumerator Co_Show6LineDescriptionTutorialWindow(Action callback) { }
+		private IEnumerator Co_Show6LineDescriptionTutorialWindow(Action callback)
+		{
+			//0x1551670
+			yield return Co.R(TutorialManager.TryShowTutorialCoroutine((TutorialConditionId id) =>
+			{
+				//0x15515A0
+				return id == TutorialConditionId.Condition70;
+			}));
+			if (callback != null)
+				callback();
+		}
 
 		// // RVA: 0xC0FD2C Offset: 0xC0FD2C VA: 0xC0FD2C
 		private PopupSetting CreatePausePopupsetting()

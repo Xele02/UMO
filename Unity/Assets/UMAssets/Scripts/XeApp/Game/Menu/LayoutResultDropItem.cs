@@ -1,3 +1,4 @@
+using mcrs;
 using System;
 using System.Collections;
 using System.Linq;
@@ -428,11 +429,20 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1D924FC Offset: 0x1D924FC VA: 0x1D924FC
 		private void OnStay()
 		{
-			TodoLogger.LogNotImplemented("OnStay");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(itemInfo != null && itemInfo.HHACNFODNEF_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			{
+				ShowSceneCardItem();
+				return;
+			}
+			MenuScene.Instance.ShowItemDetail(itemInfo.KIJAPOFAGPN_ItemId, itemInfo.MHFBCINOJEE_Count, null);
 		}
 
 		//// RVA: 0x1D92660 Offset: 0x1D92660 VA: 0x1D92660
-		//private void ShowSceneCardItem() { }
+		private void ShowSceneCardItem()
+		{
+			MenuScene.Instance.ShowSceneStatusPopupWindow(GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemInfo.KIJAPOFAGPN_ItemId) - 1], GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, false, true, SceneStatusParam.PageSave.None, false);
+		}
 
 		//// RVA: 0x1D9174C Offset: 0x1D9174C VA: 0x1D9174C
 		private void SetupItemStatusType()

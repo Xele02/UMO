@@ -10,16 +10,16 @@ namespace XeApp.Game.Menu
 	{
 		private const int LIST_ITEM_NUM = 3;
 		private const int LIST_INFO_ITEM_NUM = 7;
-		//private PopupRecordPlateOverlapSetting m_overlapSetting; // 0x18
+		private PopupRecordPlateOverlapSetting m_overlapSetting; // 0x18
 		private LayoutOverlapPlateLvup m_overlapLvup; // 0x1C
-		//private PopupOverlapListSetting m_overlapListSetting; // 0x20
+		private PopupOverlapListSetting m_overlapListSetting; // 0x20
 		private RecordPlateUtility.eSceneType m_sceneType; // 0x24
 		private SceneCardTextureCache m_sceneCard; // 0x28
 		private SceneFrameTextureCache m_sceneFrame; // 0x2C
-		//private PopupAddEpisodeContentSetting m_newEpisodeSetting; // 0x30
-		//private PopupGachaSkillUpSetting m_gachaSkillUpSetting; // 0x34
+		private PopupAddEpisodeContentSetting m_newEpisodeSetting; // 0x30
+		private PopupGachaSkillUpSetting m_gachaSkillUpSetting; // 0x34
 		private KiraProductController m_kiraProduct; // 0x38
-		//private PopupAddEpisodeScrollSetting m_newEpisodeScrollSetting; // 0x3C
+		private PopupAddEpisodeScrollSetting m_newEpisodeScrollSetting; // 0x3C
 		private string[] m_bundleNames = new string[3] { "ly/073.xab", "ly/074.xab", "ly/057.xab" }; // 0x40
 		private Dictionary<string, int> m_bundleCounter = new Dictionary<string, int>(8); // 0x44
 
@@ -42,7 +42,14 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x177A254 Offset: 0x177A254 VA: 0x177A254
 		public void Setup(RecordPlateUtility.eSceneType sceneType)
 		{
-			TodoLogger.Log(0, "Setup");
+			m_sceneType = sceneType;
+			m_overlapListSetting = new PopupOverlapListSetting();
+			m_overlapSetting = new PopupRecordPlateOverlapSetting();
+			m_newEpisodeSetting = new PopupAddEpisodeContentSetting();
+			m_kiraProduct = new KiraProductController();
+			m_gachaSkillUpSetting = new PopupGachaSkillUpSetting();
+			m_newEpisodeScrollSetting = new PopupAddEpisodeScrollSetting();
+			SetupSceneCard();
 		}
 
 		//// RVA: 0x177A420 Offset: 0x177A420 VA: 0x177A420
@@ -209,7 +216,11 @@ namespace XeApp.Game.Menu
 		//public void UnloadAssetBundle() { }
 
 		//// RVA: 0x177A388 Offset: 0x177A388 VA: 0x177A388
-		//private void SetupSceneCard() { }
+		private void SetupSceneCard()
+		{
+			m_sceneCard = new SceneCardTextureCache();
+			m_sceneFrame = new SceneFrameTextureCache();
+		}
 
 		//// RVA: 0x177A21C Offset: 0x177A21C VA: 0x177A21C
 		//private void SceneCardUpdete() { }

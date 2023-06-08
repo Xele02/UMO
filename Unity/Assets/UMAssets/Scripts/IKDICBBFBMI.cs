@@ -72,7 +72,7 @@ public abstract class IKDICBBFBMI_EventBase
 	//}; // 0x78
 	public List<int> JOFBHHHLBBN = new List<int>(); // 0x7C
 	// public NHGEHCMPDAI HLFHJIDHJMP; // 0x80
-	// public JKNGJFOBADP JANMJPOKLFL = new JKNGJFOBADP(); // 0x84
+	public JKNGJFOBADP JANMJPOKLFL = new JKNGJFOBADP(); // 0x84
 	// public List<AKIIJBEJOEP> AGLILDLEFDK; // 0x88
 	// public List<IKCGAJKCPFN> OLDFFDMPEBM; // 0x8C
 	private int HAJJBEFHPKG; // 0x90

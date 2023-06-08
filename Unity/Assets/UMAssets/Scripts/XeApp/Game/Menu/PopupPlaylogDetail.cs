@@ -143,7 +143,7 @@ namespace XeApp.Game.Menu
 					runtime = instance.GetComponent<LayoutUGUIRuntime>();
 					layout_.SwapScroll.AddScrollObject(instance.GetComponent<PlayLogSkillIconContent>());
 				}));
-				for(i = 0; i < layout_.SwapScroll.ScrollObjectCount; i++)
+				for(i = 1; i < layout_.SwapScroll.ScrollObjectCount; i++)
 				{
 					LayoutUGUIRuntime r = CopyInstance(runtime);
 					layout_.SwapScroll.AddScrollObject(r.GetComponent<PlayLogSkillIconContent>());

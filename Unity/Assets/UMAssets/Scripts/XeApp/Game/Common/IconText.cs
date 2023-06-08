@@ -56,7 +56,7 @@ namespace XeApp.Game.Common
 		private StringBuilder m_texModify = new StringBuilder(); // 0xB0
 		private string m_prevString = ""; // 0xB4
 
-		public override string text { get { return ReplaceTagToSpace(text); } set { text = value; } } //0x10FC030 0x10FC1A8
+		public override string text { get { return ReplaceTagToSpace(base.text); } set { base.text = value; } } //0x10FC030 0x10FC1A8
 		public override float preferredWidth { get
 			{
 				return cachedTextGeneratorForLayout.GetPreferredWidth(text, GetGenerationSettings(Vector2.zero)) / pixelsPerUnit;
@@ -102,7 +102,7 @@ namespace XeApp.Game.Common
 				}
 			}
 			m_imageObjectList.Clear();
-			Parse(text);
+			Parse(base.text);
 		}
 
 		//// RVA: 0x10FCF4C Offset: 0x10FCF4C VA: 0x10FCF4C
@@ -286,9 +286,9 @@ namespace XeApp.Game.Common
 		protected override void OnPopulateMesh(VertexHelper toFill)
 		{
 			base.OnPopulateMesh(toFill);
-			if(m_prevString != text)
+			if(m_prevString != base.text)
 			{
-				m_prevString = text;
+				m_prevString = base.text;
 				m_dirtyUpdateText = true;
 			}
 		}

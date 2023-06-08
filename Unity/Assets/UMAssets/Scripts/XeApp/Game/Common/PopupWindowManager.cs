@@ -295,7 +295,7 @@ namespace XeApp.Game.Common
 			}
 			else
 			{
-				TodoLogger.Log(0, "ReviewStarPopupShow");
+				TodoLogger.Log(TodoLogger.UMOSkip, "ReviewStarPopupShow");
 				if (closeWaitCallback != null)
 					closeWaitCallback();
 			}

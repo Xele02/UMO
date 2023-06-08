@@ -5,7 +5,7 @@ public class JKNGJFOBADP
 {
 	public class GPPAIFNBHDP
 	{
-		public int BCCHOBPJJKE; // 0x8
+		public int BCCHOBPJJKE_SceneId; // 0x8
 		public int INDDJNMPONH; // 0xC
 		public int JKGFBFPIMGA; // 0x10
 		public int MPGNHFDGOBO; // 0x14
@@ -313,7 +313,7 @@ public class JKNGJFOBADP
 						IKBLCEFCGDE = 0;
 						PJBJCBEMEEC = 0;
 						GPPAIFNBHDP data = new GPPAIFNBHDP();
-						data.BCCHOBPJJKE = MHFBCINOJEE;
+						data.BCCHOBPJJKE_SceneId = MHFBCINOJEE;
 						data.OLGCDLJFMDH = dbScene.FBJDHLGODPP_Sngl;
 						data.INDDJNMPONH = 1;
 						data.JKGFBFPIMGA = EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, MHFBCINOJEE);
@@ -333,7 +333,7 @@ public class JKNGJFOBADP
 						saveScene.DJNPIJPHKKJ(time, ONMCOJPNBAO);
 						IKBLCEFCGDE = 0;
 						GPPAIFNBHDP data = new GPPAIFNBHDP();
-						data.BCCHOBPJJKE = MHFBCINOJEE;
+						data.BCCHOBPJJKE_SceneId = MHFBCINOJEE;
 						data.OLGCDLJFMDH = dbScene.FBJDHLGODPP_Sngl;
 						data.INDDJNMPONH = 1;
 						data.JKGFBFPIMGA = EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, MHFBCINOJEE);
@@ -353,7 +353,7 @@ public class JKNGJFOBADP
 				else
 				{
 					GPPAIFNBHDP data = new GPPAIFNBHDP();
-					data.BCCHOBPJJKE = MHFBCINOJEE;
+					data.BCCHOBPJJKE_SceneId = MHFBCINOJEE;
 					data.OLGCDLJFMDH = dbScene.FBJDHLGODPP_Sngl;
 					if(saveScene.JPIPENJGGDD_Mlt == 0)
 					{

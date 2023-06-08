@@ -2071,47 +2071,12 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C12F8 Offset: 0x9C12F8 VA: 0x9C12F8
 		private IEnumerator Co_StartMusic()
 		{
-    		//UnityEngine.Debug.Log("Enter Co_StartMusic");
-			// private int <>1__state; // 0x8
-			// private object <>2__current; // 0xC
-			// public RhythmGamePlayer <>4__this; // 0x10
+			//UnityEngine.Debug.Log("Enter Co_StartMusic");
 			// 0xBF32EC
-			
-			
-			// private sealed class RhythmGamePlayer.<>c__DisplayClass276_0
-			// {
-				// public RhythmGamePlayer <>4__this; // 0x8
-				// public bool isShowingDescription; // 0xC
-				// public Action <>9__5; // 0x10
 
-				// // RVA: 0xBF1774 Offset: 0xBF1774 VA: 0xBF1774
-				// internal void <Co_StartMusic>b__5() { }
-
-				// // RVA: 0xBF1780 Offset: 0xBF1780 VA: 0xBF1780
-				// internal void <Co_StartMusic>b__0() { }
-
-				// // RVA: 0xBF178C Offset: 0xBF178C VA: 0xBF178C
-				// internal void <Co_StartMusic>b__1() { }
-
-				// // RVA: 0xBF1798 Offset: 0xBF1798 VA: 0xBF1798
-				// internal bool <Co_StartMusic>b__2() { }
-			// }
-
-			// private sealed class RhythmGamePlayer.<>c__DisplayClass276_1
-			// {
-				// public BasicTutorialManager mrg; // 0x8
-				// public RhythmGamePlayer.<>c__DisplayClass276_0 CS$<>8__locals1; // 0xC
-				// public Action <>9__4; // 0x10
-
-				// // RVA: 0xBF17A8 Offset: 0xBF17A8 VA: 0xBF17A8
-				// internal void <Co_StartMusic>b__3() { }
-
-				// // RVA: 0xBF198C Offset: 0xBF198C VA: 0xBF198C
-				// internal void <Co_StartMusic>b__4() { }
-			// }
-			
 			//__this00 = c__DisplayClass276_0
-			if(Database.Instance.gameSetup.musicInfo.isTutorialOne)
+			bool isShowingDescription = false;
+			if (Database.Instance.gameSetup.musicInfo.isTutorialOne)
 			{
 				//__this_03 = c__DisplayClass276_1
 				Debug.LogError("TODO tuto");
@@ -2126,10 +2091,19 @@ namespace XeApp.Game.RhythmGame
 				bool IsMvMode = Database.Instance.gameSetup.musicInfo.IsMvMode;
 				if(IsLine6Mode && !IsMvMode)
 				{
-					Debug.LogError("TODO tuto");
+					isShowingDescription = true;
+					uiController.Show6LineDescriptionTutorialWindow(() =>
+					{
+						//0xBF178C
+						isShowingDescription = false;
+					});
 				}
 			}
-			yield return null; // wait end tuto
+			yield return new WaitWhile(() =>
+			{
+				//0xBF1798
+				return isShowingDescription;
+			}); // wait end tuto
 			
 			if(XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
 			{

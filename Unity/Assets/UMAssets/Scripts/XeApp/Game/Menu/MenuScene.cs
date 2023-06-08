@@ -99,7 +99,7 @@ namespace XeApp.Game.Menu
 		private LimitOverControl m_limitOverControl; // 0x6C
 		private IntimacyController m_intimacyControl; // 0x70
 		// private PopupItemList.PopupItemListSetting m_popupItemListSetting = new PopupItemList.PopupItemListSetting(); // 0x74
-		// private PopupItemDetail.PopupItemDetailSetting m_popupItemDetailSettinig = new PopupItemDetail.PopupItemDetailSetting(); // 0x78
+		private PopupItemDetail.PopupItemDetailSetting m_popupItemDetailSettinig = new PopupItemDetail.PopupItemDetailSetting(); // 0x78
 		private PopupUseItemWindow m_popupUseItemWindow; // 0x7C
 		private PopupDetailCostumeSetting m_popupDetailCostumeSetting = new PopupDetailCostumeSetting(); // 0x80
 		private HomeLobbyButtonController m_lobbyButtonControl; // 0x84
@@ -1100,7 +1100,23 @@ namespace XeApp.Game.Menu
 		// public void ShowItemDetail(int id, int count, ButtonInfo[] buttons, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> buttonCallBack) { }
 
 		// // RVA: 0xB335DC Offset: 0xB335DC VA: 0xB335DC
-		// public void ShowItemDetail(int id, int count, Action closeCallback) { }
+		public void ShowItemDetail(int id, int count, Action closeCallback)
+		{
+			m_popupItemDetailSettinig.TitleText = MessageManager.Instance.GetMessage("menu", "item_detail_popup_title_00");
+			m_popupItemDetailSettinig.ItemId = id;
+			m_popupItemDetailSettinig.SubId = 0;
+			m_popupItemDetailSettinig.Count = count;
+			m_popupItemDetailSettinig.IsShop = false;
+			m_popupItemDetailSettinig.OverrideName = "";
+			m_popupItemDetailSettinig.OverrideText = "";
+			m_popupItemDetailSettinig.WindowSize = SizeType.Middle;
+			m_popupItemDetailSettinig.SetParent(transform);
+			m_popupItemDetailSettinig.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			PopupWindowManager.Show(m_popupItemDetailSettinig, null, null, null, null, true, true, false, null, closeCallback);
+		}
 
 		// // RVA: 0xB3394C Offset: 0xB3394C VA: 0xB3394C
 		// public void ShowItemDetail(int id, int subId, int count, string name, string desc, Action closeCallback) { }

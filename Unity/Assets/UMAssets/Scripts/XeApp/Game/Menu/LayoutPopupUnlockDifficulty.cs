@@ -64,7 +64,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x178D3B8 Offset: 0x178D3B8 VA: 0x178D3B8
 		public bool IsLoading()
 		{
-			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning && !m_isLoadingLogo && !m_isLoadingMusicJacket;
+			return KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning || m_isLoadingLogo || m_isLoadingMusicJacket;
 		}
 
 		//// RVA: 0x178D474 Offset: 0x178D474 VA: 0x178D474
