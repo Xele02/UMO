@@ -218,7 +218,7 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < playlog_data.skillDataList.Count; i++)
 				{
 					int v = playlog_data.skillDataList[i].millisec / GRAPHBAR_INTERVAL_MILLISECOND;
-					if (result_list.Count < v)
+					if (result_list.Count <= v)
 					{
 						AddResultData(v + 1 - result_list.Count);
 					}
@@ -232,8 +232,8 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < count; i++)
 				{
 					ViewNoteResultData data = new ViewNoteResultData();
-					data.time_range_start = GRAPHBAR_INTERVAL_MILLISECOND * result_list.Count;
-					data.time_range_end = GRAPHBAR_INTERVAL_MILLISECOND * (result_list.Count + 1);
+					data.time_range_start = GRAPHBAR_INTERVAL_SECOND * result_list.Count;
+					data.time_range_end = GRAPHBAR_INTERVAL_SECOND * (result_list.Count + 1);
 					result_list.Add(data);
 				}
 			}
@@ -419,7 +419,7 @@ namespace XeApp.Game.Menu
 			RectTransform rt = line.GetComponent<RectTransform>();
 			RawImageEx img = rt.GetComponentInChildren<RawImageEx>(true);
 			rt.localScale = new Vector3(Mathf.Abs(f2 * a - f2 * b) / rt.sizeDelta.x, 1, 1);
-			rt.anchoredPosition = new Vector2(rt.anchoredPosition.x, -(h + f * -0.5f));
+			rt.anchoredPosition = new Vector2(rt.anchoredPosition.x, -(h + rt.sizeDelta.y * -0.5f));
 			if(icon != null)
 			{
 				icon.GetComponent<RectTransform>().anchoredPosition = new Vector2(icon.GetComponent<RectTransform>().anchoredPosition.x + icon.GetComponent<RectTransform>().sizeDelta.x * -0.5f, -(h - icon.GetComponent<RectTransform>().sizeDelta.y + 12));

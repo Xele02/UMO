@@ -156,7 +156,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xCFB274 Offset: 0xCFB274 VA: 0xCFB274
 		private void SetAttr(GameAttribute.Type attr)
 		{
-			m_imageAttr.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData(string.Format("cmn_zok_{0:D2}", attr)));
+			m_imageAttr.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData(string.Format("cmn_zok_{0:D2}", (int)attr)));
 			if(m_textAttr != null)
 				m_textAttr.text = "";
 		}

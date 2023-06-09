@@ -92,7 +92,39 @@ public class HHFFOACILKG_Medal : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x17582A4 Offset: 0x17582A4 VA: 0x17582A4
-	//public string LPHKLEJPKAN(string FEMMDNIELFC, int PPFNGGCBJKC) { }
+	public string LPHKLEJPKAN(string FEMMDNIELFC, int PPFNGGCBJKC)
+	{
+		if(PPFNGGCBJKC - 1 < CDENCMNHNGA.Count)
+		{
+			if(CDENCMNHNGA[PPFNGGCBJKC - 1].PLALNIIBLOF_Enabled == 2)
+			{
+				if(CDENCMNHNGA[PPFNGGCBJKC - 1].GBJFNGCDKPM == 1)
+				{
+					DateTime dt = Utility.GetLocalDateTime(OEMKKJBNIFA(PPFNGGCBJKC));
+					HCFJGDFMHOJ medal = CDENCMNHNGA[PPFNGGCBJKC - 1];
+					DateTime dt2 = Utility.GetLocalDateTime(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IFLGCDGOLOP_Shop.LELDGMBGEAO(medal.IBAKPKKEDJM_Month));
+					string str1 = string.Concat(new string[]
+					{
+						dt.Year.ToString(),
+						"/",
+						dt.Month.ToString(),
+						"/",
+						dt.Day.ToString()
+					});
+					string str2 = string.Concat(new string[]
+					{
+						dt2.Year.ToString(),
+						"/",
+						dt2.Month.ToString(),
+						"/",
+						dt2.Day.ToString()
+					});
+					return FEMMDNIELFC.Replace("YYYY/MM/DD", str1).Replace("yyyy/mm/dd", str2);
+				}
+			}
+		}
+		return "";
+	}
 
 	// RVA: 0x1758AD0 Offset: 0x1758AD0 VA: 0x1758AD0
 	public HHFFOACILKG_Medal()

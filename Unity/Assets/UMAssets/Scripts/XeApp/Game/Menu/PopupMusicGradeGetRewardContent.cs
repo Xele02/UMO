@@ -180,7 +180,15 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1694E50 Offset: 0x1694E50 VA: 0x1694E50
 		public void OnShowItemDetails(int itemId, int itemNum)
 		{
-			TodoLogger.LogNotImplemented("OnShowItemDetails");
+			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId);
+			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			{
+				GCIJNCFDNON_SceneInfo scene = new GCIJNCFDNON_SceneInfo();
+				scene.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId), null, null, 0, 0, 0, false, 0, 0);
+				MenuScene.Instance.ShowSceneStatusPopupWindow(scene, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, true, true, 0, false);
+				return;
+			}
+			MenuScene.Instance.ShowItemDetail(itemId, itemNum, null);
 		}
 	}
 }

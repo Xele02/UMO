@@ -246,7 +246,8 @@ namespace XeApp.Game.Menu
 					if(callBack != null)
 						callBack();
 				}
-				popupStateList.RemoveAt(popupStateList.Count - 1);
+				if(popupStateList != null)
+					popupStateList.RemoveAt(popupStateList.Count - 1);
 			}, null, null, null, true, true, false, () =>
 			{
 				//0x12E3390

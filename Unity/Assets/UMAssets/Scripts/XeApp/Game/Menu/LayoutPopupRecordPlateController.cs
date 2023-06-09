@@ -108,6 +108,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x177B708 Offset: 0x177B708 VA: 0x177B708
 		public IEnumerator NewGetPhase(List<GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo> infoList, Action callback)
 		{
+			//0x1780374
 			TodoLogger.Log(0, "NewGetPhase");
 			yield return null;
 		}

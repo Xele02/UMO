@@ -6,6 +6,8 @@ using System;
 using System.Linq;
 using System.Collections;
 using XeApp.Game.Common.uGUI;
+using mcrs;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -391,7 +393,33 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x18E2438 Offset: 0x18E2438 VA: 0x18E2438
 		private void OnClickSingRankInfoBtn()
 		{
-			TodoLogger.LogNotImplemented("OnClickSingRankInfoBtn");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			GHLGEECLCMH g = new GHLGEECLCMH();
+			g.KHEKNNFCAOI(viewResultData.LCKMBHDMPIP_SaveRecordMusic, viewResultData.OEELDFNNLKK_SaveRecordMusic2);
+			PopupMusicRateListContentSetting s = new PopupMusicRateListContentSetting();
+			s.View = g;
+			s.WindowSize = SizeType.Large;
+			s.TitleText = bk.GetMessageByLabel("popup_music_rate_title");
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			s.Tabs = new PopupTabButton.ButtonLabel[2]
+			{
+				PopupTabButton.ButtonLabel.MusicRateDetail,
+				PopupTabButton.ButtonLabel.MusicGradeView,
+			};
+			s.DefaultTab = PopupTabButton.ButtonLabel.MusicRateDetail;
+			PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x18E3054
+				return;
+			}, (IPopupContent content, PopupTabButton.ButtonLabel label) =>
+			{
+				//0x18E3188
+				s.layout.ChangeTab(label);
+			}, null, null);
 		}
 	}
 }

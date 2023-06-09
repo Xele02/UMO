@@ -25,7 +25,7 @@ namespace XeApp.Game.Menu
 			public int ResourceType { get; set; } // 0x14
 			public int Index { get; set; } // 0x18
 			public FlexibleListItemLayout Layout { get; set; } // 0x1C
-			//public ECEPJHGMGBJ ViewData { get; set; } // 0x20
+			public ECEPJHGMGBJ ViewData { get; set; } // 0x20
 		}
 
 		public class FlexibleListItem_Grade : IFlexibleListItem

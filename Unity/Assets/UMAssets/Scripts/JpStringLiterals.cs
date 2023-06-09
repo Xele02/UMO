@@ -164,6 +164,8 @@ class JpStringLiterals
 	public const string StringLiteral_12333 = "歌晶石セットE"; // 0x03bb4b6c
 	public const string StringLiteral_12334 = "歌晶石セットF"; // 0x03bb4b70
 	public const string StringLiteral_12335 = "歌晶石セットG"; // 0x03bb4b74
+	public const string StringLiteral_12526 = "汎用"; //0x03bb4e70
+	public const string StringLiteral_12528 = "専用"; //0x03bb4e78
 	public const string StringLiteral_12532 = "GPGSログインボタンを表示"; // 0x03bb4e88
 	public const string StringLiteral_12533 = "GPGSログインボタンを表示しない"; // 0x03bb4e8c
 	public const string StringLiteral_12534 = "GPGSセーブデータが存在しない"; // 0x03bb4e90
@@ -304,6 +306,7 @@ class JpStringLiterals
 	public const string StringLiteral_15651 = "手動"; // 0x03bb7f44
 	public const string StringLiteral_16338 = "ユーザーリスト 失敗"; // 0x03bb8a00
 	public const string StringLiteral_16339 = "ユーザーフレンドリスト 成功 "; // 0x03bb8a04
+	public const string StringLiteral_17446 = "さしすせそ"; // 0x03bb9b50
 	public const string StringLiteral_17754 = "(＋{0})"; // 0x03bba020
 	public const string StringLiteral_17777 = "獲得したアイテムはありません。"; // 0x03bba07c
 	public const string StringLiteral_17787 = "％"; // 0x03bba0a4

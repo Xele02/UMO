@@ -969,7 +969,17 @@ public class HDNKOFNBCEO_RewardInfo
 	}
 
 	// // RVA: 0x1742BE4 Offset: 0x1742BE4 VA: 0x1742BE4
-	// public int MEBHFJPMCIF(int HMFFHLPNMPH) { }
+	public int MEBHFJPMCIF(int HMFFHLPNMPH)
+	{
+		int res = -1;
+		for(int i = 0; i < 4; i++)
+		{
+			res = i - 1;
+			if (HMFFHLPNMPH < GPBKAAMLIBF(i))
+				return i;
+		}
+		return res + 2;
+	}
 
 	// // RVA: 0x1742C2C Offset: 0x1742C2C VA: 0x1742C2C
 	// public uint CAOGDCBPBAN() { }

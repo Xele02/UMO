@@ -159,7 +159,27 @@ public class BKPAPCMJKHE_Shop : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x19B38D8 Offset: 0x19B38D8 VA: 0x19B38D8
-	//public long LELDGMBGEAO(int IBAKPKKEDJM) { }
+	public long LELDGMBGEAO(int IBAKPKKEDJM)
+	{
+		long res = 0;
+		for(int i = 0; i < CDENCMNHNGA.Count; i++)
+		{
+			if(CDENCMNHNGA[i].PPEGAKEIEGM_Enabled == 2)
+			{
+				if(CDENCMNHNGA[i].HCCEFDMGPEA == 2)
+				{
+					if(CDENCMNHNGA[i].IBAKPKKEDJM_Month == IBAKPKKEDJM)
+					{
+						if(res < CDENCMNHNGA[i].GJFPFFBAKGK)
+						{
+							res = CDENCMNHNGA[i].GJFPFFBAKGK;
+						}
+					}
+				}
+			}
+		}
+		return res;
+	}
 
 	// RVA: 0x19B3BA8 Offset: 0x19B3BA8 VA: 0x19B3BA8
 	public BKPAPCMJKHE_Shop()

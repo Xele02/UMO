@@ -350,6 +350,7 @@ public class FOCPLKMMCAL
 						}
 						ADDHLABEFKH a = mdata.EMJCHPDJHEI(OMNOFMEBLAD.LFGNLKKFOCD_IsLine6, OMNOFMEBLAD.AKNELONELJK_Difficulty);
 						PENICOGGNLF_ScoreRank = a.DLPBHJALHCK_GetScoreRank(OMNOFMEBLAD.KNIFCANOHOC_Score);
+						clearCount = rinfo.MEBHFJPMCIF(clearCount);
 						DAKKOLCGFCN = true;
 						if(!b && !GNAMCOJKEFE)
 						{

@@ -1,4 +1,5 @@
 
+using System.Collections.Generic;
 using XeApp.Game.Common;
 
 public class GHLGEECLCMH
@@ -95,7 +96,11 @@ public class GHLGEECLCMH
 	//public HighScoreRating.UtaGradeData CMANMLGFJMM() { }
 
 	//// RVA: 0xAA6420 Offset: 0xAA6420 VA: 0xAA6420
-	//public List<ECEPJHGMGBJ> BGMPAMNAKHN(int FJFCNGNGIBN = 0) { }
+	public List<ECEPJHGMGBJ> BGMPAMNAKHN(int FJFCNGNGIBN = 0)
+	{
+		TodoLogger.Log(0, "BGMPAMNAKHN");
+		return new List<ECEPJHGMGBJ>();
+	}
 
 	//// RVA: 0xAA6C20 Offset: 0xAA6C20 VA: 0xAA6C20
 	public void GLAHMLIFAPB(int KIMIHIBGONK_FreeMusicId, int FJFCNGNGIBN = 0)
