@@ -31,9 +31,10 @@ namespace XeApp.Game.Menu
 			{
 				hasTab = setup.Tabs.Length > 0;
 			}
+			layout = s.layout;
 			layout.SetStatus(control, setup.View, hasTab);
 			layout.ChangeTab(PopupTabButton.ButtonLabel.MusicRateDetail);
-			List<ECEPJHGMGBJ> l = setup.View.BGMPAMNAKHN(0);
+			List<ECEPJHGMGBJ> l = setup.View.BGMPAMNAKHN_GetMusicRateList(0);
 			for(int i = 0; i < l.Count; i++)
 			{
 				MusicJacketTextureCache.TryInstall(l[i].JNCPEGJGHOG_JacketId);

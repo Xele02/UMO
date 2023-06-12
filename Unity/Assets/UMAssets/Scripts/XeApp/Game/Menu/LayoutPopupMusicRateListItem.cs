@@ -71,23 +71,23 @@ namespace XeApp.Game.Menu
 		{
 			m_view = view;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			if(view.FJOLNJLLJEJ < 4)
+			if(view.FJOLNJLLJEJ_RankNum < 4)
 			{
 				m_imageRank.enabled = true;
-				m_imageRank.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData("pop_m_rank" + view.FJOLNJLLJEJ.ToString("D2")));
+				m_imageRank.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData("pop_m_rank" + view.FJOLNJLLJEJ_RankNum.ToString("D2")));
 				m_textRank.text = "";
 			}
 			else
 			{
 				m_imageRank.enabled = false;
-				m_textRank.text = view.FJOLNJLLJEJ.ToString();
+				m_textRank.text = view.FJOLNJLLJEJ_RankNum.ToString();
 			}
-			m_textName.name = RichTextUtility.MakeColorTagString(view.NEDBBJDAFBH_MusicName, GameAttributeTextColor.Colors[Mathf.Clamp(view.FKDCCLPGKDK_JacketAttr, 0, GameAttributeTextColor.Colors.Length)]);
+			m_textName.text = RichTextUtility.MakeColorTagString(view.NEDBBJDAFBH_MusicName, GameAttributeTextColor.Colors[Mathf.Clamp(view.FKDCCLPGKDK_JacketAttr, 0, GameAttributeTextColor.Colors.Length)]);
 			SetFrameUv(s_frameAttrUvFormat[view.FKDCCLPGKDK_JacketAttr]);
 			SetIconUv(s_iconAttrUvFormat[view.FKDCCLPGKDK_JacketAttr]);
-			SetRating(view.HKIAHOEEMLC, view.LPALNMHPDKK);
-			m_imageDifficulty.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData("cmn_music_diff_" + (view.LFGNLKKFOCD ? view.AKNELONELJK + 3 : view.AKNELONELJK + 1)));
-			GameManager.Instance.UnionTextureManager.GetTexture(!view.LFGNLKKFOCD ? "cmn_tex_pack" : "cmn_tex_02_pack").Set(m_imageDifficulty);
+			SetRating(view.HKIAHOEEMLC_PrevScore, view.LPALNMHPDKK_Score);
+			m_imageDifficulty.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData("cmn_music_diff_" + (view.LFGNLKKFOCD_IsLine6 ? (int)view.AKNELONELJK_Difficulty + 3 : (int)view.AKNELONELJK_Difficulty + 1).ToString("D2")));
+			GameManager.Instance.UnionTextureManager.GetTexture(!view.LFGNLKKFOCD_IsLine6 ? "cmn_tex_pack" : "cmn_tex_02_pack").Set(m_imageDifficulty);
 			m_imageJacket.enabled = false;
 			m_JacketId = view.JNCPEGJGHOG_JacketId;
 			int jacketId = m_JacketId;

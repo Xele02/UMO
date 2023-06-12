@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using XeApp.Core;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
 {
@@ -53,7 +54,20 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x177A420 Offset: 0x177A420 VA: 0x177A420
-		//private void PopupShowNewGet(GONMPHKGKHI.LCMJJMNMIKG info, Action callback) { }
+		private void PopupShowNewGet(GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo info, Action callback)
+		{
+			m_overlapSetting.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			m_overlapSetting.RareUpInfo = info;
+			PopupWindowManager.Show(m_overlapSetting, (PopupWindowControl control, PopupButton.ButtonType buttonType, PopupButton.ButtonLabel buttonLabel) =>
+			{
+				//0x177D0F8
+				if (callback != null)
+					callback();
+			}, null, null, null, info.IPMJIODJGBC != GONMPHKGKHI_RewardView.CECMLGBLHHG.GBIDBHKEPGL/*1*/, true, false);
+		}
 
 		//// RVA: 0x177A664 Offset: 0x177A664 VA: 0x177A664
 		//private void PopupShowEpisode(int episodeId, LayoutPopupAddEpisode.Type type, Action callback) { }
@@ -108,9 +122,31 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x177B708 Offset: 0x177B708 VA: 0x177B708
 		public IEnumerator NewGetPhase(List<GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo> infoList, Action callback)
 		{
+			int i;
+
 			//0x1780374
-			TodoLogger.Log(0, "NewGetPhase");
-			yield return null;
+			bool isLoading = false;
+			mb.StartCoroutineWatched(LoadLayoutPlate(() =>
+			{
+				//0x177D398
+				isLoading = true;
+			}));
+			while(!isLoading)
+				yield return null;
+			for(i = 0; i < infoList.Count; i++)
+			{
+				yield return Co.R(LoadLayoutNewEpisodeSetup(infoList[i].IPMJIODJGBC, null));
+				bool isWait = true;
+				PopupShowNewGet(infoList[i], () =>
+				{
+					//0x177D3AC
+					isWait = false;
+				});
+				while (isWait)
+					yield return null;
+			}
+			if (callback != null)
+				callback();
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C0EC Offset: 0x70C0EC VA: 0x70C0EC
@@ -143,7 +179,26 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C1DC Offset: 0x70C1DC VA: 0x70C1DC
 		//// RVA: 0x177BC20 Offset: 0x177BC20 VA: 0x177BC20
-		//private IEnumerator LoadLayoutNewEpisodeSetup(GONMPHKGKHI.CECMLGBLHHG type, Action callback) { }
+		private IEnumerator LoadLayoutNewEpisodeSetup(GONMPHKGKHI_RewardView.CECMLGBLHHG type, Action callback)
+		{
+			//0x177FB04
+			if(type == GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM/*2*/)
+			{
+				bool isLoading = false;
+				GameManager.Instance.NowLoading.Show();
+				isLoading = false;
+				mb.StartCoroutineWatched(LoadLayoutNewEpisode(() =>
+				{
+					//0x177D3FC
+					isLoading = true;
+				}));
+				while (!isLoading)
+					yield return null;
+				GameManager.Instance.NowLoading.Hide();
+			}
+			if (callback != null)
+				callback();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C254 Offset: 0x70C254 VA: 0x70C254
 		//// RVA: 0x177BD00 Offset: 0x177BD00 VA: 0x177BD00
@@ -151,7 +206,29 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C2CC Offset: 0x70C2CC VA: 0x70C2CC
 		//// RVA: 0x177BDE0 Offset: 0x177BDE0 VA: 0x177BDE0
-		//private IEnumerator LoadLayoutPlate(Action callback) { }
+		private IEnumerator LoadLayoutPlate(Action callback)
+		{
+			//0x177FE58
+			if(m_overlapSetting.Content == null)
+			{
+				m_overlapSetting.m_parent = Parent.transform;
+				m_overlapSetting.IsCaption = false;
+				m_overlapSetting.WindowSize = SizeType.Small;
+				yield return Co.R(LoadLayout(m_overlapSetting.BundleName, m_overlapSetting.AssetName, (GameObject instance) =>
+				{
+					//0x177CB64
+					if (Parent != null)
+						instance.transform.SetParent(Parent.transform, false);
+					PopupRecordPlateOverlapContent content = instance.GetComponent<PopupRecordPlateOverlapContent>();
+					if(content != null)
+					{
+						m_overlapSetting.SetContent(content.gameObject);
+					}
+				}));
+			}
+			if (callback != null)
+				callback();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C344 Offset: 0x70C344 VA: 0x70C344
 		//// RVA: 0x177BEA8 Offset: 0x177BEA8 VA: 0x177BEA8
@@ -159,7 +236,27 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C3BC Offset: 0x70C3BC VA: 0x70C3BC
 		//// RVA: 0x177BF70 Offset: 0x177BF70 VA: 0x177BF70
-		//private IEnumerator LoadLayoutNewEpisode(Action callback) { }
+		private IEnumerator LoadLayoutNewEpisode(Action callback)
+		{
+			//0x177F208
+			if(m_newEpisodeSetting.Content == null)
+			{
+				m_newEpisodeSetting.m_parent = Parent.transform;
+				m_newEpisodeSetting.IsCaption = false;
+				m_newEpisodeSetting.WindowSize = SizeType.Middle;
+				yield return Co.R(LoadLayout(m_newEpisodeSetting.BundleName, m_newEpisodeSetting.AssetName, (GameObject instance) =>
+				{
+					//0x177CE44
+					if(Parent != null)
+					{
+						instance.transform.SetParent(Parent.transform);
+						m_newEpisodeSetting.SetContent(instance);
+					}
+				}));
+			}
+			if (callback != null)
+				callback();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C434 Offset: 0x70C434 VA: 0x70C434
 		//// RVA: 0x177C038 Offset: 0x177C038 VA: 0x177C038
@@ -175,7 +272,22 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C59C Offset: 0x70C59C VA: 0x70C59C
 		//// RVA: 0x177C274 Offset: 0x177C274 VA: 0x177C274
-		//private IEnumerator LoadLayout(string bundleName, string assetName, Action<GameObject> callback) { }
+		private IEnumerator LoadLayout(string bundleName, string assetName, Action<GameObject> callback)
+		{
+			Font font; // 0x24
+			AssetBundleLoadLayoutOperationBase operation; // 0x28
+
+			//0x177EF48
+			font = GameManager.Instance.GetSystemFont();
+			operation = AssetBundleManager.LoadLayoutAsync(bundleName, assetName);
+			yield return operation;
+			yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) =>
+			{
+				//0x177D424
+				callback(instance);
+			}));
+			AddBundleCounter(bundleName);
+		}
 
 		//// RVA: 0x177C37C Offset: 0x177C37C VA: 0x177C37C
 		private void AddBundleCounter(string bundleName)
@@ -244,17 +356,9 @@ namespace XeApp.Game.Menu
 
 		//// RVA: 0x177C950 Offset: 0x177C950 VA: 0x177C950
 		//private bool CheckTutorialFunc_39(TutorialConditionId conditionId) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x70C724 Offset: 0x70C724 VA: 0x70C724
-		//// RVA: 0x177CB64 Offset: 0x177CB64 VA: 0x177CB64
-		//private void <LoadLayoutPlate>b__51_0(GameObject instance) { }
-
+		
 		//[CompilerGeneratedAttribute] // RVA: 0x70C734 Offset: 0x70C734 VA: 0x70C734
 		//// RVA: 0x177CD18 Offset: 0x177CD18 VA: 0x177CD18
 		//private void <LoadLayoutPlateLvup>b__52_0(GameObject instance) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x70C744 Offset: 0x70C744 VA: 0x70C744
-		//// RVA: 0x177CE44 Offset: 0x177CE44 VA: 0x177CE44
-		//private void <LoadLayoutNewEpisode>b__53_0(GameObject instance) { }
 	}
 }

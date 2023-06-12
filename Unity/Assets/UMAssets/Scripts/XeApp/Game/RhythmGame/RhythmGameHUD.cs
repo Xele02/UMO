@@ -668,7 +668,8 @@ namespace XeApp.Game.RhythmGame
 			m_valkyrieCenterUi.SetActive(true);
 			m_valkyrieCenterEffectAnimator.Show();
 			m_valkyrieBottomUi.SetActive(true);
-			m_mainGaugeAnimator.SetTrigger(MainGaugeGoBattleParamHash);
+			TodoLogger.Log(TodoLogger.UMOSkip, "Remove MainGaugeGoBattleParamHash event cause the button was moved outside the screen");
+			//m_mainGaugeAnimator.SetTrigger(MainGaugeGoBattleParamHash);
 			m_mainGaugeAnimator.SetBool(MainGaugeIsMaxParamHash, false);
 			m_foldWaveGauge.Success(m_isValkyrieOff);
 			m_enemyStatus.Show();

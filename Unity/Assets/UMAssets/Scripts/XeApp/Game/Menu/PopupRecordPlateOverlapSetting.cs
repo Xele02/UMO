@@ -15,6 +15,9 @@ namespace XeApp.Game.Menu
 		public override GameObject Content { get { return m_content; } } //0x161B86C
 
 		//// RVA: 0x161B874 Offset: 0x161B874 VA: 0x161B874
-		//public void SetContent(GameObject obj) { }
+		public void SetContent(GameObject obj)
+		{
+			m_content = obj;
+		}
 	}
 }

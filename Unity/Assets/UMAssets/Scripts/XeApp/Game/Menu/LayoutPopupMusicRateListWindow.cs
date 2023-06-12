@@ -4,6 +4,7 @@ using UnityEngine;
 using XeApp.Game.Common;
 using System.Collections.Generic;
 using XeSys;
+using System.Text;
 
 namespace XeApp.Game.Menu
 {
@@ -51,39 +52,157 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1736DD4 Offset: 0x1736DD4 VA: 0x1736DD4
 		public bool IsListReady()
 		{
-			TodoLogger.Log(0, "IsListReady");
-			return true;
+			return m_scrollView.IsCacheLoaded();
 		}
 
 		//// RVA: 0x1736E00 Offset: 0x1736E00 VA: 0x1736E00
 		public void SetStatus(PopupWindowControl control, GHLGEECLCMH view, bool a_tab = true)
 		{
-			TodoLogger.Log(0, "SetStatus");
+			m_view = view;
+			m_control = control;
+			m_enable_tab = a_tab;
+			m_list_musicrate = view.BGMPAMNAKHN_GetMusicRateList(0);
+			SetupListMusicrate(m_list_musicrate);
+			SetTotalGrade(m_view.DEMOACDDPHM_PrevUtaRateTotal, m_view.ECMFBEHEGEH_UtaRateTotal);
+			if(m_enable_tab)
+			{
+				m_list_musicgrade = view.IEPGAGBLHBN_GetMusicGradeList();
+				SetupListMusicgrade(m_list_musicgrade);
+			}
+			SetNextGrade(m_view);
+			HighScoreRatingRank.Type ratingRank = m_view.LLNHMMBFPMA_ScoreRatingRanking;
+			m_textGrade.text = HighScoreRatingRank.GetRankName(ratingRank);
+			GameManager.Instance.MusicRatioTextureCache.Load(ratingRank, (IiconTexture texture) =>
+			{
+				//0x1738D34
+				if (texture != null)
+				{
+					MusicRatioTextureCache.MusicRatioTexture t = texture as MusicRatioTextureCache.MusicRatioTexture;
+					if (t != null)
+					{
+						t.Set(m_imageGrade, ratingRank);
+					}
+				}
+			});
 		}
 
 		//// RVA: 0x1737B70 Offset: 0x1737B70 VA: 0x1737B70
 		public void UpdateListMusicGrade(GHLGEECLCMH view)
 		{
-			TodoLogger.Log(0, "UpdateListMusicGrade");
+			if (!m_enable_tab)
+				return;
+			m_list_musicgrade = m_view.IEPGAGBLHBN_GetMusicGradeList();
+			SetupListMusicgrade(m_list_musicgrade);
 		}
 
 		//// RVA: 0x1737354 Offset: 0x1737354 VA: 0x1737354
-		//public void SetTotalGrade(int total0, int total) { }
+		public void SetTotalGrade(int total0, int total)
+		{
+			m_textTotalNum[0].text = total0.ToString();
+			m_textTotalNum[1].text = total.ToString();
+			m_layoutTotal.StartChildrenAnimGoStop(total0 < total ? "02" : "01");
+		}
 
 		//// RVA: 0x1737834 Offset: 0x1737834 VA: 0x1737834
-		//public void SetNextGrade(GHLGEECLCMH a_view) { }
+		public void SetNextGrade(GHLGEECLCMH a_view)
+		{
+			if(a_view == null)
+			{
+				m_layoutNextRate.StartChildrenAnimGoStop("03");
+			}
+			else
+			{
+				if((int)a_view.LLNHMMBFPMA_ScoreRatingRanking < HighScoreRatingRank.GetRankIDMax())
+				{
+					m_layoutNextRate.StartChildrenAnimGoStop("01");
+					HighScoreRating.UtaGradeData utaGrade = a_view.CMANMLGFJMM_GetNextUtaGradeInfo();
+					HighScoreRatingRank.Type grade = (HighScoreRatingRank.Type)utaGrade.grade;
+					StringBuilder str = new StringBuilder();
+					str.SetFormat("{0}", utaGrade.rate);
+					m_textNextRate_02.text = str.ToString();
+					m_textNextRate_04.text = HighScoreRatingRank.GetRankName(grade);
+					GameManager.Instance.MusicRatioTextureCache.Load(grade, (IiconTexture texture) =>
+					{
+						//0x1738E0C
+						if(texture != null)
+						{
+							MusicRatioTextureCache.MusicRatioTexture t = texture as MusicRatioTextureCache.MusicRatioTexture;
+							if(t != null)
+							{
+								t.Set(m_imageNextGrade, grade);
+							}
+						}
+					});
+					return;
+				}
+				m_layoutNextRate.StartChildrenAnimGoStop("02");
+			}
+		}
 
 		//// RVA: 0x1737BC4 Offset: 0x1737BC4 VA: 0x1737BC4
 		public void ChangeTab(PopupTabButton.ButtonLabel a_label)
 		{
-			TodoLogger.Log(0, "ChangeTab");
+			if (a_label == PopupTabButton.ButtonLabel.MusicRateDetail)
+			{
+				if (m_listItem_MusicRate == null)
+					return;
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				m_control.m_titleText.text = bk.GetMessageByLabel("popup_music_rate_title");
+				m_scrollView.SetupListItem(m_listItem_MusicRate);
+				m_scrollView.SetlistTop(0);
+				m_scrollView.SetZeroVelocity();
+				m_scrollView.VisibleRangeUpdate();
+				m_textScroll.enabled = m_listItem_MusicRate.Count < 1;
+			}
+			else if (a_label == PopupTabButton.ButtonLabel.MusicGradeView)
+			{
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				m_control.m_titleText.text = bk.GetMessageByLabel("popup_music_grade_title");
+				m_scrollView.SetupListItem(m_listItem_MusicGrade);
+				m_scrollView.SetlistBottom(Mathf.Min(m_now_grade_index + 3, m_listItem_MusicGrade.Count - 1));
+				m_scrollView.SetZeroVelocity();
+				m_scrollView.VisibleRangeUpdate();
+				m_textScroll.enabled = m_listItem_MusicGrade.Count < 1;
+			}
 		}
 
 		//// RVA: 0x1737098 Offset: 0x1737098 VA: 0x1737098
-		//private void SetupListMusicrate(List<ECEPJHGMGBJ> a_list) { }
+		private void SetupListMusicrate(List<ECEPJHGMGBJ> a_list)
+		{
+			m_listItem_MusicRate = new List<IFlexibleListItem>();
+			for (int i = 0; i < a_list.Count; i++)
+			{
+				LayoutMusicRateList.FlexibleListItem_Rate item = new LayoutMusicRateList.FlexibleListItem_Rate();
+				item.Index = i;
+				item.Top = new Vector2(0, -(i * 116 + 10));
+				item.Height = 116;
+				item.ResourceType = 2;
+				item.ViewData = a_list[i];
+				m_listItem_MusicRate.Add(item);
+			}
+		}
 
 		//// RVA: 0x17374C4 Offset: 0x17374C4 VA: 0x17374C4
-		//private void SetupListMusicgrade(List<HighScoreRating.UtaGradeData> a_list) { }
+		private void SetupListMusicgrade(List<HighScoreRating.UtaGradeData> a_list)
+		{
+			m_listItem_MusicGrade = new List<IFlexibleListItem>();
+			for(int i = 0; i < a_list.Count; i++)
+			{
+				if(a_list[i].isNow)
+				{
+					m_now_grade_index = i;
+				}
+				LayoutMusicRateList.FlexibleListItem_Grade data = new LayoutMusicRateList.FlexibleListItem_Grade();
+				data.Top = new Vector2(0, -(i * 62 + 10));
+				data.Height = 62;
+				data.ResourceType = 1;
+				data.MusicGrade = (HighScoreRatingRank.Type)a_list[i].grade;
+				data.MusicGradeName = HighScoreRatingRank.GetRankName(data.MusicGrade);
+				data.MusicMustRate = string.Format("{0}", a_list[i].rate);
+				data.MySelf = a_list[i].isNow;
+				m_listItem_MusicGrade.Add(data);
+			}
+		}
 
 		//// RVA: 0x1737FB4 Offset: 0x1737FB4 VA: 0x1737FB4
 		private void OnUpdateListItem(IFlexibleListItem a_item)

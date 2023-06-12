@@ -365,10 +365,50 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xEA66C8 Offset: 0xEA66C8 VA: 0xEA66C8
-		//public HighScoreRating.UtaGradeData GetNextUtaGradeInfo(int rateTotal) { }
+		public UtaGradeData GetNextUtaGradeInfo(int rateTotal)
+		{
+			UtaGradeData res = new UtaGradeData();
+			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+			{
+				List<HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE> l = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO;
+				List<MFDJIFIIPJD> lm = new List<MFDJIFIIPJD>();
+				res.Init(l.Count, 0, 0, lm, false);
+				for(int i = 1; i - 1 < l.Count; i++)
+				{
+					HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE d = l[i - 1];
+					if (rateTotal < d.ADKDHKMPMHP_Rate)
+					{
+						int r = d.ADKDHKMPMHP_Rate;
+						int pickup = d.JOPPFEHKNFO_Idx;
+						if (d.HDOEJDHGFLH_ItemFullId > 0)
+						{
+							if(d.GCKPDEDJFIC > 0)
+							{
+								MFDJIFIIPJD m = new MFDJIFIIPJD();
+								m.KHEKNNFCAOI(d.HDOEJDHGFLH_ItemFullId, d.GCKPDEDJFIC);
+								lm.Add(m);
+							}
+						}
+						for(int j = 0; j < d.AJMDFJFCIML_GetCount(); j++)
+						{
+							MFDJIFIIPJD m = new MFDJIFIIPJD();
+							m.KHEKNNFCAOI(d.FKNBLDPIPMC_GetItemId(j), d.NKOHMLHLJGL(j));
+							lm.Add(m);
+						}
+						res.Init(i, r - rateTotal, pickup, lm, false);
+						lm.Clear();
+						return res;
+					}
+				}
+			}
+			return res;
+		}
 
 		//// RVA: 0xEA6D38 Offset: 0xEA6D38 VA: 0xEA6D38
-		//public HighScoreRating.UtaGradeData GetNextUtaGradeInfo() { }
+		public UtaGradeData GetNextUtaGradeInfo()
+		{
+			return GetNextUtaGradeInfo(GetUtaRateTotal());
+		}
 
 		//// RVA: 0xEA6D50 Offset: 0xEA6D50 VA: 0xEA6D50
 		public List<UtaGradeData> GetUtaGradeList(HighScoreRatingRank.Type nowGrade)
@@ -419,7 +459,10 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xEA72FC Offset: 0xEA72FC VA: 0xEA72FC
-		//public List<HighScoreRating.UtaGradeData> GetUtaGradeList() { }
+		public List<UtaGradeData> GetUtaGradeList()
+		{
+			return GetUtaGradeList(GetUtaGrade(GetUtaRateTotal()));
+		}
 
 		//// RVA: 0xEA7318 Offset: 0xEA7318 VA: 0xEA7318
 		//public List<HighScoreRating.UtaGradeData> GetNotReceivedRewardUtaGradeList(int nowGrade = 0, int prevGrade = 0) { }

@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
 {
@@ -153,6 +154,12 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xCF9300 Offset: 0xCF9300 VA: 0xCF9300
-		//public static string GetPlateName(int cardId, GONMPHKGKHI.CECMLGBLHHG showType, bool isMulti = False) { }
+		public static string GetPlateName(int cardId, GONMPHKGKHI_RewardView.CECMLGBLHHG showType, bool isMulti = false)
+		{
+			int a = (int)showType - 3;
+			if (showType != GONMPHKGKHI_RewardView.CECMLGBLHHG.GBIDBHKEPGL/*1*/)
+				showType = GONMPHKGKHI_RewardView.CECMLGBLHHG.HJNNKCMLGFL/*0*/;
+			return GameMessageManager.GetSceneCardName(cardId, ((int)showType | (a < 2 ? 1 : 0)) & (isMulti ? 1 : 0), "");
+		}
 	}
 }

@@ -109,7 +109,7 @@ namespace XeApp.Game.Menu
 			{
 				f = m_ResultCount;
 			}
-			float time = f;
+			float time = 0;
 			int total = m_ResultCount;
 			if (m_GraphType != PopupPlaylogDetail.GraphType.None)
 			{
