@@ -84,6 +84,10 @@ namespace ExternLib
 				}
 			}
 			{
+				FNBIIGJJGKA_Counter counterBlock = newData.LBDOLHGDIEB_GetBlock("counter") as FNBIIGJJGKA_Counter;
+				counterBlock.BDLNMOIOMHK_Total.GKOAPFJFKEJ_VOpC[0] = Mathf.Max(50, counterBlock.BDLNMOIOMHK_Total.GKOAPFJFKEJ_VOpC[0]);
+			}
+			{
 				BAHFBCEPFGP_AddMusic addMusicBlock = newData.LBDOLHGDIEB_GetBlock("add_music") as BAHFBCEPFGP_AddMusic;
 				for(int i = 1; i < 38 * 8; i++)
 				{

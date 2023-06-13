@@ -151,6 +151,8 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE4A6AC Offset: 0xE4A6AC VA: 0xE4A6AC
 		public static IEnumerator Co_CostumeUpgrade(EBFLJMOCLNA_Costume.NDOPBOCEPJO type, ButtonBase button, BasicTutorialMessageId messageId, InputLimitButton limitButton = InputLimitButton.None, TutorialPointer.Direction direction = TutorialPointer.Direction.Normal)
 		{
+			if (RuntimeSettings.CurrentSettings.ForceTutoSkip)
+				yield break;
 			TodoLogger.Log(0, "Co_CostumeUpgrade");
 			yield return null;
 		}

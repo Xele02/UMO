@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using XeApp.Core;
 using XeApp.Game.Common;
@@ -95,7 +96,16 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CD824 Offset: 0x6CD824 VA: 0x6CD824
 		//// RVA: 0x1CE6990 Offset: 0x1CE6990 VA: 0x1CE6990
-		//private IEnumerator Co_StartUpdate() { }
+		private IEnumerator Co_StartUpdate()
+		{
+			//0x1CE76AC
+			yield return new WaitWhile(() =>
+			{
+				//0x1CE761C
+				return m_cameraMan == null;
+			});
+			m_cameraMan.StartUpdate();
+		}
 
 		//// RVA: 0x1CE6A3C Offset: 0x1CE6A3C VA: 0x1CE6A3C
 		public void Goodbye()
@@ -112,10 +122,30 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1CE6BB0 Offset: 0x1CE6BB0 VA: 0x1CE6BB0
-		//public static GameObject Create() { }
+		public static GameObject Create()
+		{
+			GameObject res = new GameObject("View Mode Costumue");
+			if(res != null)
+			{
+				ViewScreenCostume v = res.AddComponent<ViewScreenCostume>();
+				GameManager.Instance.SetTouchEffectVisible(false);
+			}
+			return res;
+		}
 
 		//// RVA: 0x1CE6D34 Offset: 0x1CE6D34 VA: 0x1CE6D34
-		//public static void Enter(GameObject obj, Action onEntered) { }
+		public static void Enter(GameObject obj, Action onEntered)
+		{
+			if(obj != null)
+			{
+				ViewScreenCostume v = obj.GetComponent<ViewScreenCostume>();
+				if(v != null)
+				{
+					v.StartCoroutineWatched(v.Co_StartUpdate());
+					v.m_onEntered = onEntered;
+				}
+			}
+		}
 
 		//// RVA: 0x1CE6E88 Offset: 0x1CE6E88 VA: 0x1CE6E88
 		public static void Leave(GameObject obj, Action onFinished)
@@ -136,13 +166,28 @@ namespace XeApp.Game.Menu
 		//public void Reinstate() { }
 
 		//// RVA: 0x1CE7064 Offset: 0x1CE7064 VA: 0x1CE7064
-		//public void InputOn() { }
+		public void InputOn()
+		{
+			m_cameraMan.InputOn();
+			m_gazeControl.On();
+		}
 
 		//// RVA: 0x1CE70B4 Offset: 0x1CE70B4 VA: 0x1CE70B4
-		//public void InputOff() { }
+		public void InputOff()
+		{
+			m_cameraMan.InputOff();
+			m_gazeControl.Restore();
+		}
 
 		//// RVA: 0x1CE7104 Offset: 0x1CE7104 VA: 0x1CE7104
-		//public void SetDivaTargetObject() { }
+		public void SetDivaTargetObject()
+		{
+			if(m_cameraMan != null)
+			{
+				m_cameraMan.SetTargetObject(MenuScene.Instance.divaManager.gameObject);
+			}
+			m_gazeControl.Initialize();
+		}
 
 		//// RVA: 0x1CE7254 Offset: 0x1CE7254 VA: 0x1CE7254
 		//public void InitChangeDiva() { }
@@ -158,9 +203,5 @@ namespace XeApp.Game.Menu
 
 		//// RVA: 0x1CE7560 Offset: 0x1CE7560 VA: 0x1CE7560
 		//public void ClearCameraRot() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6CD89C Offset: 0x6CD89C VA: 0x6CD89C
-		//// RVA: 0x1CE761C Offset: 0x1CE761C VA: 0x1CE761C
-		//private bool <Co_StartUpdate>b__14_0() { }
 	}
 }

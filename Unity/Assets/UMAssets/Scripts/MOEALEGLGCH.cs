@@ -41,7 +41,7 @@ public class MOEALEGLGCH
 	//public static int LCLMFJOBPOK() { }
 
 	//// RVA: 0x17B3604 Offset: 0x17B3604 VA: 0x17B3604
-	public static int IGDOBKHKNJM()
+	public static int IGDOBKHKNJM_GetCostumeUpgradeOfferNum()
 	{
 		return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("costume_upgrade_complete_offer_num", 10);
 	}
@@ -49,7 +49,7 @@ public class MOEALEGLGCH
 	//// RVA: 0x17B36F4 Offset: 0x17B36F4 VA: 0x17B36F4
 	public static bool CDOCOLOKCJK()
 	{
-		return IGDOBKHKNJM() <= KDHGBOOECKC.HHCJCDFCLOB.DEAIKHLFFCL(0);
+		return IGDOBKHKNJM_GetCostumeUpgradeOfferNum() <= KDHGBOOECKC.HHCJCDFCLOB.DEAIKHLFFCL_GetTotalVOp(0);
 	}
 
 	//// RVA: 0x17B3744 Offset: 0x17B3744 VA: 0x17B3744

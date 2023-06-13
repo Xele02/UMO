@@ -1603,7 +1603,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB36F90 Offset: 0xB36F90 VA: 0xB36F90
-		// public static void RemainDivaOneTime() { }
+		public static void RemainDivaOneTime()
+		{
+			MenuScene.Instance.m_menuTransitionControl.RemainDivaOneTime();
+		}
 
 		// // RVA: 0xB3703C Offset: 0xB3703C VA: 0xB3703C
 		private void OnShowHelpPopup(int id, int eventHelpId)

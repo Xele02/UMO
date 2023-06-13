@@ -164,7 +164,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1647338 Offset: 0x1647338 VA: 0x1647338
 		private void CB_CostumeBuild()
 		{
-			TodoLogger.LogNotImplemented("CB_CostumeBuild");
+			if (m_cb_cos_build != null)
+				m_cb_cos_build();
 		}
 
 		//// RVA: 0x164734C Offset: 0x164734C VA: 0x164734C
@@ -336,7 +337,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x16483E8 Offset: 0x16483E8 VA: 0x16483E8
-		//public void Leave() { }
+		public void Leave()
+		{
+			m_anim_root.StartChildrenAnimGoStop("go_out", "st_out");
+		}
 
 		//// RVA: 0x1648474 Offset: 0x1648474 VA: 0x1648474
 		public void Exit()

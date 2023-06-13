@@ -458,7 +458,32 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CD13C Offset: 0x6CD13C VA: 0x6CD13C
 		//// RVA: 0x16E0718 Offset: 0x16E0718 VA: 0x16E0718
-		//private IEnumerator Co_PopupCostumeBuildLock() { }
+		private IEnumerator Co_PopupCostumeBuildLock()
+		{
+			//0x16E3FCC
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			StringBuilder str = new StringBuilder();
+			str.SetFormat(bk.GetMessageByLabel("costume_upgrade_lock_text"), MOEALEGLGCH.IGDOBKHKNJM_GetCostumeUpgradeOfferNum());
+			TextPopupSetting s = new TextPopupSetting();
+			s.IsCaption = false;
+			s.Text = str.ToString();
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			bool t_end_popup = false;
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x16E1E04
+				return;
+			}, null, null, null, true, true, false, null, () =>
+			{
+				//0x16E1E70
+				t_end_popup = true;
+			});
+			while (!t_end_popup)
+				yield return null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CD1B4 Offset: 0x6CD1B4 VA: 0x6CD1B4
 		//// RVA: 0x16DEFDC Offset: 0x16DEFDC VA: 0x16DEFDC
@@ -523,12 +548,58 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x16E07CC Offset: 0x16E07CC VA: 0x16E07CC
 		private void OnClickViewOn()
 		{
-			TodoLogger.LogNotImplemented("OnClickViewOn");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			this.StartCoroutineWatched(Co_GotoViewMode());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CD22C Offset: 0x6CD22C VA: 0x6CD22C
 		//// RVA: 0x16E0840 Offset: 0x16E0840 VA: 0x16E0840
-		//private IEnumerator Co_GotoViewMode() { }
+		private IEnumerator Co_GotoViewMode()
+		{
+			int t_hash_simple_idle; // 0x14
+			int t_hash_simple_end; // 0x18
+			bool isMotion; // 0x1C
+
+			//0x16E219C
+			if (m_touch_disable_obj != null)
+				m_touch_disable_obj.SetActive(true);
+			t_hash_simple_idle = Animator.StringToHash("simple_idle");
+			t_hash_simple_end = Animator.StringToHash("simple_loop_end");
+			MenuScene.Instance.InputDisable();
+			isMotion = false;
+			if(divaWaitCoroutine != null)
+			{
+				this.StopCoroutineWatched(divaWaitCoroutine);
+				divaWaitCoroutine = null;
+				isMotion = true;
+			}
+			yield return null;
+			MenuScene.Instance.divaManager.SetAnimParamInteger("menu_simpleLoopStart_State", 0);
+			if (isMotion)
+			{
+				if (!MenuScene.Instance.divaManager.IsCurrentBodyState(t_hash_simple_idle) &&
+					!MenuScene.Instance.divaManager.IsCurrentBodyState(t_hash_simple_end))
+				{
+					MenuScene.Instance.divaManager.SetBodyCrossFade("simple_loop_end", 0.07f);
+					MenuScene.Instance.divaManager.PlayFacialBlendAnimator("simple_idle", 0);
+					MenuScene.Instance.divaManager.PlayFacialBlendAnimator("simple_idle", 1);
+				}
+			}
+			yield return null;
+			yield return this.StartCoroutineWatched(MenuScene.Instance.divaManager.Co_WaitTransition());
+			while (!MenuScene.Instance.divaManager.IsCurrentBodyState(t_hash_simple_idle))
+			{
+				yield return null;
+			}
+			m_view_on.Leave();
+			m_cos_list_win.Leave();
+			m_viewObj = ViewScreenCostume.Create();
+			ViewScreenCostume.Enter(m_viewObj, null);
+			MenuScene.Instance.InputEnable();
+			DivaViewModeArgs arg = new DivaViewModeArgs();
+			arg.viewObj = m_viewObj;
+			MenuScene.Instance.Call(TransitionList.Type.COSTUME_VIEW_MODE, arg, true);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CD2A4 Offset: 0x6CD2A4 VA: 0x6CD2A4
 		//// RVA: 0x16E08EC Offset: 0x16E08EC VA: 0x16E08EC
@@ -685,7 +756,18 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x16E189C Offset: 0x16E189C VA: 0x16E189C
 		private void CB_CostumeBuild()
 		{
-			TodoLogger.LogNotImplemented("CB_CostumeBuild");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(MOEALEGLGCH.CDOCOLOKCJK())
+			{
+				CostumeUpgradeArgs arg = new CostumeUpgradeArgs();
+				arg.divaId = m_diva_id;
+				arg.costumemModelId = m_next_costume_model_id;
+				MenuScene.Instance.Call(TransitionList.Type.COSTUME_UPGRADE, arg, true);
+			}
+			else
+			{
+				this.StartCoroutineWatched(Co_PopupCostumeBuildLock());
+			}
 		}
 	}
 }

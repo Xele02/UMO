@@ -1319,7 +1319,10 @@ namespace XeApp.Game.Menu
 			}
 
 			// // RVA: 0xA3B688 Offset: 0xA3B688 VA: 0xA3B688
-			// public void RemainDivaOneTime() { }
+			public void RemainDivaOneTime()
+			{
+				m_remainDivaOneTimeFlag = true;
+			}
 
 			// // RVA: 0xA3B694 Offset: 0xA3B694 VA: 0xA3B694
 			// public void SaveStack(SceneStack stack) { }

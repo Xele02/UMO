@@ -174,10 +174,16 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1110C90 Offset: 0x1110C90 VA: 0x1110C90
-		//public void SetBodyCrossFade(string stateName, float duration = 0,07) { }
+		public void SetBodyCrossFade(string stateName, float duration = 0.07f)
+		{
+			animator.CrossFade(stateName, duration);
+		}
 
 		//// RVA: 0x1110CCC Offset: 0x1110CCC VA: 0x1110CCC
-		//public void PlayFacialBlendAnimator(string stateName, int layerIndex) { }
+		public void PlayFacialBlendAnimator(string stateName, int layerIndex)
+		{
+			facialBlendAnimMediator.selfAnimator.Play(stateName, layerIndex);
+		}
 
 		//// RVA: 0x1110D28 Offset: 0x1110D28 VA: 0x1110D28
 		public bool IsCurrentBodyState(int hash)

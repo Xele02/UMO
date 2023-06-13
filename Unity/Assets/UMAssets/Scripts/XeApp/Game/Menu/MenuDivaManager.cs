@@ -213,10 +213,16 @@ namespace XeApp.Game.Menu
 		//public void IdleCrossFade(string stateName = "") { }
 
 		//// RVA: 0xECAEB4 Offset: 0xECAEB4 VA: 0xECAEB4
-		//public void SetBodyCrossFade(string stateName, float duration = 0,07) { }
+		public void SetBodyCrossFade(string stateName, float duration = 0.07f)
+		{
+			divaObject.SetBodyCrossFade(stateName, duration);
+		}
 
 		//// RVA: 0xECAEF0 Offset: 0xECAEF0 VA: 0xECAEF0
-		//public void PlayFacialBlendAnimator(string stateName, int layerIndex) { }
+		public void PlayFacialBlendAnimator(string stateName, int layerIndex)
+		{
+			divaObject.PlayFacialBlendAnimator(stateName, layerIndex);
+		}
 
 		//// RVA: 0xECAF2C Offset: 0xECAF2C VA: 0xECAF2C
 		public bool IsCurrentBodyState(int hash)
@@ -226,7 +232,12 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C700C Offset: 0x6C700C VA: 0x6C700C
 		//// RVA: 0xECAF60 Offset: 0xECAF60 VA: 0xECAF60
-		//public IEnumerator Co_WaitTransition() { }
+		public IEnumerator Co_WaitTransition()
+		{
+			//0xECC510
+			while (divaObject.IsInTransition)
+				yield return null;
+		}
 
 		//// RVA: 0xEB3CD8 Offset: 0xEB3CD8 VA: 0xEB3CD8
 		public void SetActive(bool active, bool isIdle = true)

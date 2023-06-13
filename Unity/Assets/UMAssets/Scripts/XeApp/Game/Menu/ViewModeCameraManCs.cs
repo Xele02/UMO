@@ -314,13 +314,27 @@ namespace XeApp.Game.Menu
 		//public void Reinstate() { }
 
 		//// RVA: 0xAE30A8 Offset: 0xAE30A8 VA: 0xAE30A8
-		//public void InputOn() { }
+		public void InputOn()
+		{
+			m_is_input = true;
+			if(m_state != 0)
+			{
+				m_state = 1;
+				m_time = 0;
+			}
+		}
 
 		//// RVA: 0xAE30C8 Offset: 0xAE30C8 VA: 0xAE30C8
-		//public void InputOff() { }
+		public void InputOff()
+		{
+			m_is_input = false;
+		}
 
 		//// RVA: 0xAE30D4 Offset: 0xAE30D4 VA: 0xAE30D4
-		//public void StartUpdate() { }
+		public void StartUpdate()
+		{
+			m_is_update = true;
+		}
 
 		//// RVA: 0xAE30E0 Offset: 0xAE30E0 VA: 0xAE30E0
 		public bool IsEntered()
