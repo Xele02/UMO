@@ -149,7 +149,14 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF3CF4 Offset: 0x1BF3CF4 VA: 0x1BF3CF4
-		//public void OverrideAnimations(List<DivaResource.MotionOverrideClipKeyResource> resource) { }
+		public void OverrideAnimations(List<DivaResource.MotionOverrideClipKeyResource> resource)
+		{
+			for(int i = 0; i < resource.Count; i++)
+			{
+				overrideController[resource[i].body.name] = resource[i].body.clip;
+			}
+			facialBlendAnimMediator.OverrideAnimations(resource);
+		}
 
 		//// RVA: 0x1BF3E4C Offset: 0x1BF3E4C VA: 0x1BF3E4C
 		public void OverrideAnimations(List<DivaResource.MotionOverrideSingleResource> resource)
@@ -461,7 +468,11 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF4F20 Offset: 0x1BF4F20 VA: 0x1BF4F20
-		//public void Stop() { }
+		public void Stop()
+		{
+			if (animator != null)
+				ChangeAnimationTime(0);
+		}
 
 		//// RVA: 0x1BF4FDC Offset: 0x1BF4FDC VA: 0x1BF4FDC
 		public void Pause()

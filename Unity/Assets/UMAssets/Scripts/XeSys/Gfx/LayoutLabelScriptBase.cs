@@ -100,7 +100,23 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x1EF9500 Offset: 0x1EF9500 VA: 0x1EF9500
-		// public void GoToLabelFrame(LabelPreset preset, AbsoluteLayout layout, int frame) { }
+		public void GoToLabelFrame(LabelPreset preset, AbsoluteLayout layout, int frame)
+		{
+			if(preset.type < LabelPreset.Type.Table)
+			{
+				int a = Mathf.RoundToInt(layout.FrameAnimation.SearchLabelFrame(preset.first));
+				layout.StartSiblingAnimGoStop(a + frame, a + frame);
+			}
+			else if(preset.type >= LabelPreset.Type.SingleChildren && preset.type < LabelPreset.Type.TableChildren)
+			{
+				int a = Mathf.RoundToInt(layout[0].FrameAnimation.SearchLabelFrame(preset.first));
+				layout.StartChildrenAnimGoStop(a + frame, a + frame);
+			}
+			else
+			{
+				Debug.LogError("undefined PresetType : " + preset.type);
+			}
+		}
 
 		// [ConditionalAttribute] // RVA: 0x6926EC Offset: 0x6926EC VA: 0x6926EC
 		// // RVA: 0x1EF982C Offset: 0x1EF982C VA: 0x1EF982C

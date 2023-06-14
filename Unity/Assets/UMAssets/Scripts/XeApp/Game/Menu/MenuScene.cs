@@ -128,7 +128,7 @@ namespace XeApp.Game.Menu
 		public IntimacyController IntimacyControl { get { return m_intimacyControl; } } //0xB2E0C8
 		// public PopupUseItemWindow PopupUseItemWindow { get; } 0xB2E0D0
 		public ValkyrieIconTextureCache ValkyrieIconCache { get { return GameManager.Instance.ValkyrieIconCache; } } //0xB2E0D8
-		// public CostumeTextureCache CostumeIconCache { get; } 0xB2E174
+		public CostumeTextureCache CostumeIconCache { get { return GameManager.Instance.CostumeIconCache; } } //0xB2E174
 		// public QuestEventTextureCache QuestEventCache { get; } 0xB2E210
 		// public SNSTextureCache SnsIconCache { get; } 0xB2E2AC
 		// public EpisodeTextuteCache EpisodeIconCache { get; } 0xB2E348

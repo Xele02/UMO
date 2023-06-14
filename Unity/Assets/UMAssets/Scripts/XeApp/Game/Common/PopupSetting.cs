@@ -22,7 +22,7 @@ namespace XeApp.Game.Common
     }
 
     [Serializable]
-    public abstract class PopupSetting // TypeDefIndex: 17510
+    public abstract class PopupSetting
     {
         private bool mIsCaption = true; // 0x8
         private PopupButton.ButtonLabel backButtonLabel; // 0xC

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -279,7 +280,14 @@ namespace XeApp.Game.Common
 		//public void OverrideAnimation(ref DivaResource.MotionOverrideClipKeyResource resource) { }
 
 		//// RVA: 0x1C11CB8 Offset: 0x1C11CB8 VA: 0x1C11CB8
-		//public void OverrideAnimations(List<DivaResource.MotionOverrideClipKeyResource> resource) { }
+		public void OverrideAnimations(List<DivaResource.MotionOverrideClipKeyResource> resource)
+		{
+			for (int i = 0; i < resource.Count; i++)
+			{
+				overrideController[resource[i].face.name] = resource[i].face.clip;
+				overrideController[resource[i].mouth.name] = resource[i].mouth.clip;
+			}
+		}
 
 		//// RVA: 0x1C11E8C Offset: 0x1C11E8C VA: 0x1C11E8C
 		public void OverrideAnimations(DivaResource.MotionOverrideSingleResource resource)

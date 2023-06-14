@@ -6,8 +6,8 @@ public class MOEALEGLGCH
 	private Dictionary<int, string> KGNCCIDGGCC; // 0x10
 
 	// Properties
-	public List<int> NBIGLBMHEDC { get; set; } // 0x8
-	//public List<LFAFJCNKLML> MGJKEJHEBPO { get; set; } // 0xC
+	public List<int> NBIGLBMHEDC { get; set; } // 0x8 ELHJMCKHBBO DGMMMDMLCJF PICPPMMJAEH
+	public List<LFAFJCNKLML> MGJKEJHEBPO { get; set; } // 0xC DPHOPMPKAHK BNPJIIPJJLJ HOKDNOFCDHM
 
 	//[CompilerGeneratedAttribute] // RVA: 0x7406C4 Offset: 0x7406C4 VA: 0x7406C4
 	//// RVA: 0x17B2DA8 Offset: 0x17B2DA8 VA: 0x17B2DA8
@@ -32,7 +32,25 @@ public class MOEALEGLGCH
 	//private void JOMFNNJHNIJ() { }
 
 	//// RVA: 0x17B325C Offset: 0x17B325C VA: 0x17B325C
-	//public List<LFAFJCNKLML> NLLHENIPDDA(List<int> NBIGLBMHEDC) { }
+	public List<LFAFJCNKLML> NLLHENIPDDA(List<int> NBIGLBMHEDC)
+	{
+		if(NBIGLBMHEDC == null || NBIGLBMHEDC.Count < 1)
+		{
+			return MGJKEJHEBPO;
+		}
+		else
+		{
+			List<LFAFJCNKLML> res = new List<LFAFJCNKLML>(MGJKEJHEBPO.Count);
+			for(int i = 0; i < MGJKEJHEBPO.Count; i++)
+			{
+				if(NBIGLBMHEDC.Contains(MGJKEJHEBPO[i].AHHJLDLAPAN_DivaId))
+				{
+					res.Add(MGJKEJHEBPO[i]);
+				}
+			}
+			return res;
+		}
+	}
 
 	//// RVA: 0x17B3438 Offset: 0x17B3438 VA: 0x17B3438
 	//public static int LLCBDMCPBOD() { }

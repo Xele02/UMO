@@ -52,7 +52,23 @@ namespace XeApp.Game.Common
 			}
 
 			// RVA: 0x1C09618 Offset: 0x1C09618 VA: 0x1C09618
-			//public static DivaResource.MotionOverrideClipKeyResource Set(string keyFormat, string replaceClipName, int id, AssetBundleLoadAllAssetOperationBase op, StringBuilder strBuilder) { }
+			public static MotionOverrideClipKeyResource Set(string keyFormat, string replaceClipName, int id, AssetBundleLoadAllAssetOperationBase op, StringBuilder strBuilder)
+			{
+				MotionOverrideClipKeyResource res = new MotionOverrideClipKeyResource();
+				strBuilder.SetFormat(keyFormat, id, "body");
+				res.body.name = replaceClipName + "_body";
+				res.body.clip = op.GetAsset<AnimationClip>(strBuilder.ToString());
+
+				strBuilder.SetFormat(keyFormat, id, "face");
+				res.face.name = replaceClipName + "_face";
+				res.face.clip = op.GetAsset<AnimationClip>(strBuilder.ToString());
+
+				strBuilder.SetFormat(keyFormat, id, "mouth");
+				res.mouth.name = replaceClipName + "_mouth";
+				res.mouth.clip = op.GetAsset<AnimationClip>(strBuilder.ToString());
+
+				return res;
+			}
 		}
 		
 		public struct MotionOverrideSingleResource

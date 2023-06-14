@@ -322,6 +322,11 @@ class JpStringLiterals
 	public const string StringLiteral_20367 = "ー"; // 0x03bbc8f4
 	public const string StringLiteral_20369 = "±{0}"; // 0x03bbc8fc
 	public const string StringLiteral_20382 = "（2回使用可）"; // 0x03bbc930
+	public const string StringLiteral_20448 = "モーションが指定されていない、またはモーション数を超えています。[ "; //0x03bbca38
+	public const string StringLiteral_20457 = "シンプルモデルに歌姫IDが設定されておりません。"; //0x03bbca5c
+	public const string StringLiteral_20458 = "シンプルモデルに衣装モデルIDが設定されておりません。"; //0x03bbca60
+	public const string StringLiteral_20469 = "シンプルモデルで設定できるモーション数を超えております。[ "; //0x03bbca8c
+	public const string StringLiteral_20470 = "シンプルモデルで設定できるループモーション数を超えております。[ "; // 0x03bbca90
 	public const string StringLiteral_20864 = "自動編成"; // 0x03bbd0b8
 	public const string StringLiteral_20882 = "(<color={1}>↑{0}</color>)"; // 0x03bbd100
 	public const string StringLiteral_21607 = "???12"; //0x03bbdc54

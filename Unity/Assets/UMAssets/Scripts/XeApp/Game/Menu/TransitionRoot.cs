@@ -1437,7 +1437,7 @@ namespace XeApp.Game.Menu
 		public TransitionRoot.MenuTransitionControl.TransitionType TransitionType { get { return m_transitionType; } } //0xA9D76C
 		public bool IsRequestGotoTitle { get; set; } // 0x28
 		public bool IsReady { get; protected set; } // 0x29
-		// public int InputStateCount { get; } 0xA9D78C
+		public int InputStateCount { get { return m_inputStateCount; } } //0xA9D78C
 		public bool AutoFadeFlag { get { return m_isAutoFade; } set { m_isAutoFade = value; } }// 0xA9D794 0xA9D79C
 
 		// RVA: 0xA80A84 Offset: 0xA80A84 VA: 0xA80A84 Slot: 4

@@ -48,16 +48,38 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1392B84 Offset: 0x1392B84 VA: 0x1392B84
-		//public void setAdjuster() { }
+		public void setAdjuster()
+		{
+			if(adjustScaler == null)
+			{
+				Transform t = divaPrefab.transform.Find("joint_root/hips");
+				if (t != null)
+				{
+					adjustScaler = t.gameObject.AddComponent<ObjectPositionAdjuster>();
+				}
+			}
+			if(adjustScaler != null)
+			{
+				adjustScaler.Initialize(ObjParam.GetHipScaleFactor(divaId), true, true, true);
+			}
+		}
 
 		//// RVA: 0x1392DC4 Offset: 0x1392DC4 VA: 0x1392DC4
-		//public void Play(string stateName) { }
+		public void Play(string stateName)
+		{
+			Anim_Play(stateName, 0);
+			animator.speed = 1;
+			this.StartCoroutineWatched(WaitUnlockBoneSpring(0));
+		}
 
 		//// RVA: 0x1392E38 Offset: 0x1392E38 VA: 0x1392E38
 		//public void Play(string BodyStateName, string faceStateName, double time) { }
 
 		//// RVA: 0x1392F00 Offset: 0x1392F00 VA: 0x1392F00
-		//public void PlayFacialAnime(string faceStateName) { }
+		public void PlayFacialAnime(string faceStateName)
+		{
+			facialBlendAnimMediator.selfAnimator.Play(faceStateName);
+		}
 
 		//// RVA: 0x1392F54 Offset: 0x1392F54 VA: 0x1392F54
 		//public void CrossFadeIdle(string IdleStateName) { }
@@ -78,16 +100,25 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1393278 Offset: 0x1393278 VA: 0x1393278
-		//public int GetBodyHash() { }
+		public int GetBodyHash()
+		{
+			return animator.GetCurrentAnimatorStateInfo(0).shortNameHash;
+		}
 
 		//// RVA: 0x13932F4 Offset: 0x13932F4 VA: 0x13932F4
 		//public int GetFaceHash() { }
 
 		//// RVA: 0x1393390 Offset: 0x1393390 VA: 0x1393390
-		//public int GetMouthHash() { }
+		public int GetMouthHash()
+		{
+			return facialBlendAnimMediator.selfAnimator.GetCurrentAnimatorStateInfo(1).shortNameHash;
+		}
 
 		//// RVA: 0x139342C Offset: 0x139342C VA: 0x139342C
-		//public void Anim_SetTrigger(string name) { }
+		public new void Anim_SetTrigger(string name)
+		{
+			base.Anim_SetTrigger(name);
+		}
 
 		//// RVA: 0x1393434 Offset: 0x1393434 VA: 0x1393434
 		//public void FacialAnim_SetTrigger(string name) { }
@@ -99,13 +130,19 @@ namespace XeApp.Game.Common
 		//public void FacialAnim_ResetTrigger(string name) { }
 
 		//// RVA: 0x13934E4 Offset: 0x13934E4 VA: 0x13934E4
-		//public void Anim_SetInteger(string name, int value) { }
+		public new void Anim_SetInteger(string name, int value)
+		{
+			base.Anim_SetInteger(name, value);
+		}
 
 		//// RVA: 0x13934EC Offset: 0x13934EC VA: 0x13934EC
 		//public void FacialAnim_SetInteger(string name, int value) { }
 
 		//// RVA: 0x1393548 Offset: 0x1393548 VA: 0x1393548
-		//public void Anim_SetBool(string name, bool value) { }
+		public new void Anim_SetBool(string name, bool value)
+		{
+			base.Anim_SetBool(name, value);
+		}
 
 		//// RVA: 0x1393550 Offset: 0x1393550 VA: 0x1393550
 		//public void FacialAnim_SetBool(string name, bool value) { }

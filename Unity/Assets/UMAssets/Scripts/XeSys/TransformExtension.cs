@@ -15,15 +15,30 @@ namespace XeSys
 
 		//[ExtensionAttribute] // RVA: 0x6904B0 Offset: 0x6904B0 VA: 0x6904B0
 		//// RVA: 0x23A7930 Offset: 0x23A7930 VA: 0x23A7930
-		//public static void SetPositionX(Transform transform, float x) { }
+		public static void SetPositionX(this Transform transform, float x)
+		{
+			Vector3 p = transform.position;
+			p.x = x;
+			transform.position = p;
+		}
 
 		//[ExtensionAttribute] // RVA: 0x6904C0 Offset: 0x6904C0 VA: 0x6904C0
 		//// RVA: 0x23A79E8 Offset: 0x23A79E8 VA: 0x23A79E8
-		//public static void SetPositionY(Transform transform, float y) { }
+		public static void SetPositionY(this Transform transform, float y)
+		{
+			Vector3 p = transform.position;
+			p.y = y;
+			transform.position = p;
+		}
 
 		//[ExtensionAttribute] // RVA: 0x6904D0 Offset: 0x6904D0 VA: 0x6904D0
 		//// RVA: 0x23A7AA0 Offset: 0x23A7AA0 VA: 0x23A7AA0
-		//public static void SetPositionZ(Transform transform, float z) { }
+		public static void SetPositionZ(this Transform transform, float z)
+		{
+			Vector3 p = transform.position;
+			p.z = z;
+			transform.position = p;
+		}
 
 		//[ExtensionAttribute] // RVA: 0x6904E0 Offset: 0x6904E0 VA: 0x6904E0
 		//// RVA: 0x23A7B58 Offset: 0x23A7B58 VA: 0x23A7B58
