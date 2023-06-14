@@ -135,6 +135,7 @@ namespace XeSys
 				return;
 			}
 			info.Update(phase, position);
+			touchCount++;
 			MousePinchAction();
 		}
 
@@ -172,7 +173,7 @@ namespace XeSys
 			int id = 99999;
 			for(int i = 0; i < touchCount; i++)
 			{
-				TouchInfoRecord record = GetTouchInfoRecord(touchCount);
+				TouchInfoRecord record = GetTouchInfoRecord(i);
 				if(IsTouchPositionInScreen(record.beganInfo.GetSceneInnerPosition()))
 				{
 					if(record.beganInfo.id < id)

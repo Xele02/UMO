@@ -222,7 +222,7 @@ namespace XeApp.Game.Menu
 					TouchInfo touch = InputManager.Instance.GetFirstInScreenTouchRecord().FindRecentInfo(0);
 					if (IsTouchPoisitionInScreen(touch.GetSceneInnerPosition()) && touch.isMoved)
 					{
-						TouchInfo touch2 = InputManager.Instance.GetFirstInScreenTouchRecord().FindRecentInfo(0);
+						TouchInfo touch2 = InputManager.Instance.GetFirstInScreenTouchRecord().FindRecentInfo(1);
 
 						Quaternion v2 = Quaternion.AngleAxis(-m_rotCamZ, Vector3.forward);
 						Vector3 v1 = v2 * new Vector3(touch2.x, touch2.y, 0);
@@ -276,7 +276,7 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < sr.Length; i++)
 			{
 				max = Vector3.Max(max, sr[i].bounds.max);
-				min = Vector3.Max(min, sr[i].bounds.min);
+				min = Vector3.Min(min, sr[i].bounds.min);
 				m_targetTr = sr[i].transform;
 			}
 			m_bbMax = max;
