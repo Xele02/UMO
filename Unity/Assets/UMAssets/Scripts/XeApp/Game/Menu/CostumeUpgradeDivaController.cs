@@ -131,7 +131,15 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x16F2684 Offset: 0x16F2684 VA: 0x16F2684
-		//public void Release() { }
+		public void Release()
+		{
+			DestoryCamera();
+			if(m_simpleDivaAnimation != null)
+			{
+				m_simpleDivaAnimation.Release();
+				Destroy(m_simpleDivaAnimation.gameObject);
+			}
+		}
 
 		//// RVA: 0x16F1E6C Offset: 0x16F1E6C VA: 0x16F1E6C
 		public void InitializeCamera()

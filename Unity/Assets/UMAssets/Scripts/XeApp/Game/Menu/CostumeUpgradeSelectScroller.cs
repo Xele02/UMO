@@ -54,13 +54,37 @@ namespace XeApp.Game.Menu
 		public Action<bool> onScrollEnded { private get; set; } // 0x94
 
 		//// RVA: 0x16F0864 Offset: 0x16F0864 VA: 0x16F0864
-		//public void RequestFlow(int pageOffset, float flowSec, Action onEnd) { }
+		public void RequestFlow(int pageOffset, float flowSec, Action onEnd)
+		{
+			onAutoScrollEnd = onEnd;
+			scrolled = 0;
+			scrollTimer = 0;
+			scrollPerSec = m_offsetLength * -pageOffset / flowSec;
+			scrollEndLength = m_offsetLength * -pageOffset;
+			scrollEndSec = flowSec;
+			StartScroll(true);
+			updater = UpdateAutoScroll;
+		}
 
 		//// RVA: 0x16EBD30 Offset: 0x16EBD30 VA: 0x16EBD30
-		//public void SetLimit(int leftLimitPage, int rightLimitPage) { }
+		public void SetLimit(int leftLimitPage, int rightLimitPage)
+		{
+			m_enableLimit = true;
+			m_leftLimitPage = leftLimitPage;
+			m_rightLimitPage = rightLimitPage;
+			m_leftOffsetLimit = m_offsetLength * -rightLimitPage;
+			m_rightOffsetLimit = m_offsetLength * -leftLimitPage;
+		}
 
 		//// RVA: 0x16EBD70 Offset: 0x16EBD70 VA: 0x16EBD70
-		//public void ClearLimit() { }
+		public void ClearLimit()
+		{
+			m_enableLimit = false;
+			m_leftLimitPage = 0;
+			m_rightLimitPage = 0;
+			m_leftOffsetLimit = 0;
+			m_rightOffsetLimit = 0;
+		}
 
 		//// RVA: 0x16EB8EC Offset: 0x16EB8EC VA: 0x16EB8EC
 		public bool CheckOnLeftLimitPage()
@@ -75,10 +99,16 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x16EED70 Offset: 0x16EED70 VA: 0x16EED70
-		//public void InputEnable() { }
+		public void InputEnable()
+		{
+			m_inputEnable = true;
+		}
 
 		//// RVA: 0x16EED7C Offset: 0x16EED7C VA: 0x16EED7C
-		//public void InputDisable() { }
+		public void InputDisable()
+		{
+			m_inputEnable = false;
+		}
 
 		// RVA: 0x16F9258 Offset: 0x16F9258 VA: 0x16F9258
 		private void Update()

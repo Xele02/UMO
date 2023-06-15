@@ -124,7 +124,11 @@ public class CKFGMNAIBNG
 	}
 
 	// // RVA: 0x107EDDC Offset: 0x107EDDC VA: 0x107EDDC
-	// public void OHGOPFEOJOG(int GHDGALFNGFJ, ref string OPFGFINHFCE, ref string HCAHCFGPJIF) { }
+	public void OHGOPFEOJOG_GetSkillInfo(int GHDGALFNGFJ, ref string OPFGFINHFCE, ref string HCAHCFGPJIF)
+	{
+		LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cosInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_GetUnlockedCostumeOrDefault(AHHJLDLAPAN_DivaId, JPIDIENBGKH_CostumeId);
+		OHGOPFEOJOG_GetSkillInfo(cosInfo, MessageManager.Instance.GetBank("master"), new StringBuilder(32), ENMAEBJGEKL_SkillId, cosInfo.DOGKAEAHIMI_GetUnlockedSkillLevel(GHDGALFNGFJ), ref OPFGFINHFCE, ref HCAHCFGPJIF);
+	}
 
 	// // RVA: 0x107EFA0 Offset: 0x107EFA0 VA: 0x107EFA0
 	// public bool LMHEGNBODJG() { }

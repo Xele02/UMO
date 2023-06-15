@@ -174,7 +174,7 @@ namespace XeApp.Game.Menu
 		protected override void InputDisable()
 		{
 			base.InputDisable();
-			m_costumeSelect.m_scroller.m_inputEnable = false;
+			m_costumeSelect.m_scroller.InputDisable();
 		}
 
 		// RVA: 0x16F7BB4 Offset: 0x16F7BB4 VA: 0x16F7BB4 Slot: 9

@@ -52,6 +52,9 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x16E8FD0 Offset: 0x16E8FD0 VA: 0x16E8FD0
-		// public void TryInstallCostume(int divaId, int modelId, int colorId) { }
+		public void TryInstallCostume(int divaId, int modelId, int colorId)
+		{
+			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(MakeCostumeTexturePath(divaId, modelId, colorId));
+		}
 	}
 }

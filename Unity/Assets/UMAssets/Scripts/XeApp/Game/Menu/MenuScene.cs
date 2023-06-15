@@ -133,7 +133,7 @@ namespace XeApp.Game.Menu
 		// public SNSTextureCache SnsIconCache { get; } 0xB2E2AC
 		// public EpisodeTextuteCache EpisodeIconCache { get; } 0xB2E348
 		// public StoryImageTextureCache StoryImageCache { get; } 0xB2E3E4
-		// public SubPlateIconTextureCache SubPlateIconTextureCahe { get; } 0xB2E480
+		public SubPlateIconTextureCache SubPlateIconTextureCahe { get { return GameManager.Instance.subPlateIconCache; } } //0xB2E480
 		// public DecorationItemTextureCache DecorationItemTextureCache { get; } 0xB2E51C
 		// public HomeBgIconBgTextureCache HomeBgIconTextureCache { get; } 0xB2E5B8
 		public BgControl BgControl { get { return m_menuTransitionControl.bgControl; } } //0xB2E654

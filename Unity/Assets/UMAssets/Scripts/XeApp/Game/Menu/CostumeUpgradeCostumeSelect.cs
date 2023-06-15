@@ -163,7 +163,35 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x16EAC68 Offset: 0x16EAC68 VA: 0x16EAC68
-		//public void Init() { }
+		public void Init()
+		{
+			m_costumeUpgradeData = new MOEALEGLGCH();
+			m_costumeUpgradeData.KHEKNNFCAOI();
+			if(!isPrevCostumeSelect)
+			{
+				m_filterDivaIdList = BitToDivaIdList(GameManager.Instance.localSave.EPJOACOONAC_GetSave().MOBOMOEHGAO_CostumeUpgrade.AEKKEKBMOCF_DivaFilterBit);
+				SettingDivaFilter();
+				SetFocus(GameManager.Instance.localSave.EPJOACOONAC_GetSave().MOBOMOEHGAO_CostumeUpgrade.BDIOOMFHPJA_SelectDivaId, GameManager.Instance.localSave.EPJOACOONAC_GetSave().MOBOMOEHGAO_CostumeUpgrade.HEEJCAOKDPE_SelectCostumeId, false);
+			}
+			for(int i = 0; i < m_costumeButton.Count; i++)
+			{
+				m_costumeButton[i].onSelectButton = (int offset) =>
+				{
+					//0x16F12D8
+					if(!m_isKeyScrool)
+					{
+						m_isKeyScrool = true;
+						MenuScene.Instance.InputDisable();
+						m_scroller.RequestFlow(offset, 0.2f, () =>
+						{
+							//0x16F1454
+							MenuScene.Instance.InputEnable();
+							m_isKeyScrool = false;
+						});
+					}
+				};
+			}
+		}
 
 		//// RVA: 0x16EAFAC Offset: 0x16EAFAC VA: 0x16EAFAC
 		public void SettingDivaFilter()
@@ -180,13 +208,24 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x16EB2EC Offset: 0x16EB2EC VA: 0x16EB2EC
-		//public void Enter() { }
+		public void Enter()
+		{
+			isItemSelectScene = false;
+			m_baseAnim.StartChildrenAnimGoStop("go_in", "st_in");
+			SettingCostume();
+		}
 
 		//// RVA: 0x16EB43C Offset: 0x16EB43C VA: 0x16EB43C
-		//public void Leave() { }
+		public void Leave()
+		{
+			m_baseAnim.StartChildrenAnimGoStop("go_out", "st_out");
+		}
 
 		//// RVA: 0x16EB4C8 Offset: 0x16EB4C8 VA: 0x16EB4C8
-		//public bool IsPlayingEnd() { }
+		public bool IsPlayingEnd()
+		{
+			return !m_baseAnim.IsPlayingChildren();
+		}
 
 		// RVA: 0x16EB4F8 Offset: 0x16EB4F8 VA: 0x16EB4F8
 		public void Update()
@@ -238,47 +277,363 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x16EBBC4 Offset: 0x16EBBC4 VA: 0x16EBBC4
-		//private void SettingScrollLimit() { }
+		private void SettingScrollLimit()
+		{
+			if(m_filterCostumeDataList.Count > 2)
+			{
+				m_scroller.ClearLimit();
+			}
+			else
+			{
+				if(m_cursorIndex == 0)
+				{
+					m_scroller.SetLimit(0, m_filterCostumeDataList.Count - 1);
+				}
+				else
+				{
+					m_scroller.SetLimit(-1, 0);
+				}
+			}
+		}
 
 		//// RVA: 0x16EB95C Offset: 0x16EB95C VA: 0x16EB95C
 		private void SettingCostumeUI(int cursorIndex, bool is_update_costume_image = true, bool is_move_right = false, bool is_wait = false)
 		{
 			m_showCostumeDataList.Clear();
-			!!!
+			List<int> l = new List<int>();
+			if (cursorIndex - 2 < 0)
+				cursorIndex += m_filterCostumeDataList.Count;
+			for(int i = 0; i < 5; i++)
+			{
+				l.Add(((cursorIndex - 2) + i) % m_filterCostumeDataList.Count);
+			}
+			for (int i = 0; i < 5; i++)
+			{
+				m_showCostumeDataList.Add(m_filterCostumeDataList[l[i]]);
+			}
+			if (is_update_costume_image)
+				SettingCostumeIcon(is_move_right, is_wait);
+			SettingSelectCostume();
 		}
 
 		//// RVA: 0x16EBD88 Offset: 0x16EBD88 VA: 0x16EBD88
-		//public void SettingCostumeIcon(bool is_move_right, bool is_wait) { }
+		public void SettingCostumeIcon(bool is_move_right, bool is_wait)
+		{
+			int[][] l = new int[5][]
+			{
+				new int[2] { 4, -1 },
+				new int[2] { 1, -1 },
+				new int[2] { 0, 2 },
+				new int[2] { 3, -1 },
+				new int[2] { -1, -1 }
+			};
+			int[][] l2 = new int[5][]
+			{
+				new int[2] { -1, -1 },
+				new int[2] { 4, -1 },
+				new int[2] { 1, -1 },
+				new int[2] { 0, 2 },
+				new int[2] { 3, -1 }
+			};
+			int[][] l3 = new int[5][]
+			{
+				new int[2] { -1, -1 },
+				new int[2] { 1, -1 },
+				new int[2] { 0, 2 },
+				new int[2] { 3, -1 },
+				new int[2] { -1, -1 }
+			};
+			List<int> l4 = new List<int>();
+			if(is_move_right)
+				l2 = l;
+			if (is_wait)
+				l2 = l3;
+			l4.Add(0);
+			l4.Add(1);
+			l4.Add(2);
+			l4.Add(3);
+			l4.Add(4);
+			if(m_filterCostumeDataList.Count == 2)
+			{
+				l4.Clear();
+				l4.Add(0);
+				l4.Add(1);
+				if(is_wait && m_cursorIndex == 0)
+				{
+					l4.Add(3);
+				}
+				else
+				{
+					l4.Add(1);
+				}
+			}
+			else
+			{
+				if(m_filterCostumeDataList.Count == 1)
+				{
+					l4.Clear();
+					l4.Add(0);
+				}
+			}
+			for(int i = 0; i < m_showCostumeDataList.Count; i++)
+			{
+				if (!l4.Exists((int x) =>
+				 {
+					 //0x16F14FC
+					 return i == x;
+				 }))
+				{
+					m_costumeLayoutList[i].SetVisibleCostumeIcon(false);
+				}
+			}
+			for(int i = 0; i < m_showCostumeDataList.Count; i++)
+			{
+				for(int j = 0; j < 2; j++)
+				{
+					int layerId = l2[i][j];
+					int index = i;
+					if (l4.Exists((int x) =>
+					{
+						//0x16F1510
+						return layerId == x;
+					}))
+					{
+						m_costumeLayoutList[layerId].SetCostumeIcon(new CostumeUpgradeUtility.CostumeData.Setting()
+						{
+							divaId = m_showCostumeDataList[i].AHHJLDLAPAN_DivaId,
+							costumeModelId = m_showCostumeDataList[i].DAJGPBLEEOB_PrismCostumeId,
+							colorId = null, isHave = m_showCostumeDataList[i].FJODMPGPDDD_Possessed, 
+							rankMax = m_showCostumeDataList[i].LLLCMHENKKN_LevelMax,
+							rankNum = m_showCostumeDataList[i].GKIKAABHAAD_Level
+						}, (CostumeUpgradeUtility.CostumeData.Setting setting) =>
+						{
+							//0x16F1524
+							if(m_showCostumeDataList[index].AHHJLDLAPAN_DivaId == setting.divaId)
+							{
+								return m_showCostumeDataList[index].DAJGPBLEEOB_PrismCostumeId == setting.costumeModelId;
+							}
+							return false;
+						});
+					}
+				}
+			}
+		}
 
 		//// RVA: 0x16ED254 Offset: 0x16ED254 VA: 0x16ED254
-		//private void SettingSelectCostume() { }
+		private void SettingSelectCostume()
+		{
+			m_selectCostumeData = m_showCostumeDataList[2];
+			m_divaId = m_selectCostumeData.AHHJLDLAPAN_DivaId;
+			m_costumeModelId = m_selectCostumeData.DAJGPBLEEOB_PrismCostumeId;
+			m_costumeName.text = m_selectCostumeData.OPFGFINHFCE_Name;
+			m_baseColorAnim.StartAllAnimGoStop(m_selectCostumeData.AHHJLDLAPAN_DivaId + 1, m_selectCostumeData.AHHJLDLAPAN_DivaId + 1);
+			SetDivaImage(m_divaId, 1, 0);
+			int level = m_selectCostumeData.GKIKAABHAAD_Level;
+			if(m_selectCostumeData.JHLKLPEHHCD() == null || m_selectCostumeData.LLLCMHENKKN_LevelMax <= m_selectCostumeData.GKIKAABHAAD_Level)
+			{
+				m_useItemButton.Disable = true;
+				m_rankUpUnlockButton.Disable = true;
+				m_conditionCheckButton.Disable = true;
+				level = m_selectCostumeData.LLLCMHENKKN_LevelMax + 1;
+				m_releaseValue.num.SetNumber(m_selectCostumeData.OCOOHBINGBG[m_selectCostumeData.LLLCMHENKKN_LevelMax + 1].DNBFMLBNAEE, 0);
+				m_releaseValue.max.SetNumber(m_selectCostumeData.OCOOHBINGBG[m_selectCostumeData.LLLCMHENKKN_LevelMax + 1].DNBFMLBNAEE, 0);
+			}
+			else
+			{
+				m_useItemButton.Disable = false;
+				m_rankUpUnlockButton.Disable = false;
+				m_conditionCheckButton.Disable = false;
+				m_releaseValue.num.SetNumber(m_selectCostumeData.ABLHIAEDJAI_Point, 0);
+				m_releaseValue.max.SetNumber(m_selectCostumeData.JHLKLPEHHCD().DNBFMLBNAEE, 0);
+			}
+			SettingRewardIcon(level);
+			bool b = true;
+			if(m_selectCostumeData.GKIKAABHAAD_Level < m_selectCostumeData.LLLCMHENKKN_LevelMax)
+			{
+				b = m_selectCostumeData.CDOCOLOKCJK();
+			}
+			SettingRelase(b);
+		}
 
 		//// RVA: 0x16EDF68 Offset: 0x16EDF68 VA: 0x16EDF68
-		//private void SettingRewardIcon(int rank) { }
+		private void SettingRewardIcon(int rank)
+		{
+			LFAFJCNKLML.GFIPDFPIKIJ a;
+			LFAFJCNKLML.HKKKKFLBFJN(m_selectCostumeData, rank, out a, 0);
+			CostumeUpgradeUtility.SettingRewardIcon(m_selectCostumeData, a.GLCLFMGPMAN, rank, a.NANNGLGOFKH, new CostumeUpgradeUtility.RewardIconLayoutSetting(m_nextReawad.image, m_nextReawad.divaImage, m_nextReawad.itemType, m_nextReawad.num, m_nextReawad.rank), (LFAFJCNKLML viewData) =>
+			{
+				//0x16F12DC
+				if(viewData.AHHJLDLAPAN_DivaId == m_selectCostumeData.AHHJLDLAPAN_DivaId)
+				{
+					if(viewData.DAJGPBLEEOB_PrismCostumeId == m_selectCostumeData.DAJGPBLEEOB_PrismCostumeId)
+					{
+						return true;
+					}
+				}
+				return false;
+			});
+			int b = m_selectCostumeData.HGBJODBCJDA - 1;
+			if(rank < b)
+			{
+				m_rewadIconAnim.StartChildrenAnimLoop("lo_");
+				LFAFJCNKLML.HKKKKFLBFJN(m_selectCostumeData, b, out a, 0);
+				CostumeUpgradeUtility.SettingRewardIcon(m_selectCostumeData, a.GLCLFMGPMAN, b, a.NANNGLGOFKH, new CostumeUpgradeUtility.RewardIconLayoutSetting(m_targetReawad.image, m_targetReawad.divaImage, m_targetReawad.itemType, m_targetReawad.num, m_targetReawad.rank), (LFAFJCNKLML viewData) =>
+				{
+					//0x16F138C
+					if (viewData.AHHJLDLAPAN_DivaId == m_selectCostumeData.AHHJLDLAPAN_DivaId)
+					{
+						if (viewData.DAJGPBLEEOB_PrismCostumeId == m_selectCostumeData.DAJGPBLEEOB_PrismCostumeId)
+						{
+							return true;
+						}
+					}
+					return false;
+				});
+			}
+			else
+			{
+				m_rewadIconAnim.StartChildrenAnimGoStop("st_wait");
+			}
+			if(m_selectCostumeData.GKIKAABHAAD_Level < m_selectCostumeData.LLLCMHENKKN_LevelMax)
+			{
+				m_nextReawad.getIcon.StartChildrenAnimGoStop(1, 1);
+				m_targetReawad.getIcon.StartChildrenAnimGoStop(1, 1);
+			}
+			else
+			{
+				m_nextReawad.getIcon.StartChildrenAnimGoStop(0, 0);
+				m_targetReawad.getIcon.StartChildrenAnimGoStop(0, 0);
+			}
+		}
 
 		//// RVA: 0x16EE2A8 Offset: 0x16EE2A8 VA: 0x16EE2A8
-		//private void SettingRelase(bool is_release) { }
+		private void SettingRelase(bool is_release)
+		{
+			if(is_release)
+			{
+				m_buttonTable.StartChildrenAnimGoStop(0, 0);
+			}
+			else
+			{
+				if(m_costumeUpgradeData.KFJHILDJCCB(m_selectCostumeData))
+				{
+					m_buttonTable.StartChildrenAnimGoStop(1, 1);
+					m_conditionCheckButtonEffect.StartChildrenAnimLoop("lo");
+				}
+				else
+				{
+					m_buttonTable.StartChildrenAnimGoStop(2, 2);
+				}
+			}
+			SettingReleaseLock(is_release);
+		}
 
 		//// RVA: 0x16EB094 Offset: 0x16EB094 VA: 0x16EB094
-		//public void SetFocus(int divaId, int cosutmeModelId, bool isUpdateFilter = False) { }
+		public void SetFocus(int divaId, int cosutmeModelId, bool isUpdateFilter = false)
+		{
+			if (divaId == 0 || cosutmeModelId == 0)
+				return;
+			m_divaId = divaId;
+			m_costumeModelId = cosutmeModelId;
+			if(isUpdateFilter)
+			{
+				m_filterDivaIdList.Clear();
+				m_filterDivaIdList.Add(divaId);
+				SettingCostumeFilter();
+				m_diva_select_window.SetFilterDivaIdList(m_filterDivaIdList);
+			}
+			m_cursorIndex = 0;
+			for(int i = 0; i < m_filterCostumeDataList.Count; i++)
+			{
+				if(m_divaId == m_filterCostumeDataList[i].AHHJLDLAPAN_DivaId)
+				{
+					if(m_costumeModelId == m_filterCostumeDataList[i].DAJGPBLEEOB_PrismCostumeId)
+					{
+						m_cursorIndex = i;
+						break;
+					}
+				}
+			}
+			SettingCostume();
+		}
 
 		//// RVA: 0x16EED08 Offset: 0x16EED08 VA: 0x16EED08
-		//public void ScrollerInputEnable(bool enable) { }
+		public void ScrollerInputEnable(bool enable)
+		{
+			if(enable)
+			{
+				if (!m_rightArrowButton.IsInputOff)
+					m_scroller.InputEnable();
+			}
+			m_scroller.InputDisable();
+		}
 
 		//// RVA: 0x16EEC48 Offset: 0x16EEC48 VA: 0x16EEC48
-		//private void SettingReleaseLock(bool is_release) { }
+		private void SettingReleaseLock(bool is_release)
+		{
+			if(is_release)
+			{
+				if(m_selectCostumeData.GKIKAABHAAD_Level < m_selectCostumeData.LLLCMHENKKN_LevelMax)
+				{
+					m_releaseLock.StartChildrenAnimGoStop(0, 0);
+				}
+				else
+				{
+					m_releaseLock.StartChildrenAnimGoStop(2, 2);
+				}
+			}
+			else
+			{
+				m_releaseLock.StartChildrenAnimGoStop(1, 1);
+			}
+		}
 
 		//// RVA: 0x16EDD70 Offset: 0x16EDD70 VA: 0x16EDD70
-		//public void SetDivaImage(int divaId, int costumeModelId, int costumeColorId) { }
+		public void SetDivaImage(int divaId, int costumeModelId, int costumeColorId)
+		{
+			m_loadingDivaId = divaId;
+			m_divaIconImage.enabled = false;
+			RawImageEx image = m_divaIconImage;
+			MenuScene.Instance.DivaIconCache.LoadStateIcon(divaId, costumeModelId, costumeColorId, (IiconTexture texture) =>
+			{
+				//0x16F168C
+				if (m_loadingDivaId != divaId)
+					return;
+				image.enabled = true;
+				texture.Set(image);
+			});
+		}
 
 		//// RVA: 0x16EED90 Offset: 0x16EED90 VA: 0x16EED90
-		//private int DivaIdListToBit(List<int> list) { }
+		private int DivaIdListToBit(List<int> list)
+		{
+			int res = 0;
+			for(int i = 0; i < list.Count; i++)
+			{
+				res |= (1 << (list[i] - 1));
+			}
+			return res;
+		}
 
 		//// RVA: 0x16EAEDC Offset: 0x16EAEDC VA: 0x16EAEDC
-		//private List<int> BitToDivaIdList(int bit) { }
+		private List<int> BitToDivaIdList(int bit)
+		{
+			List<int> res = new List<int>();
+			for(int i = 0; i < 10; i++)
+			{
+				if ((bit & (1 << (i))) != 0)
+					res.Add(i + 1);
+			}
+			return res;
+		}
 
 		//// RVA: 0x16EEE64 Offset: 0x16EEE64 VA: 0x16EEE64
-		//public void SaveSelectDiva() { }
+		public void SaveSelectDiva()
+		{
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MOBOMOEHGAO_CostumeUpgrade.BDIOOMFHPJA_SelectDivaId = m_divaId;
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MOBOMOEHGAO_CostumeUpgrade.HEEJCAOKDPE_SelectCostumeId = m_costumeModelId;
+			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+		}
 
 		//// RVA: 0x16EF014 Offset: 0x16EF014 VA: 0x16EF014
 		private void CallBackDivaSelect()
@@ -346,64 +701,124 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x16EF7F4 Offset: 0x16EF7F4 VA: 0x16EF7F4
-		//private void CallBackReward() { }
+		private void CallBackReward()
+		{
+			TodoLogger.LogNotImplemented("CallBackReward");
+		}
 
 		//// RVA: 0x16EFAD8 Offset: 0x16EFAD8 VA: 0x16EFAD8
-		//private void CallBackLeft() { }
+		private void CallBackLeft()
+		{
+			TodoLogger.LogNotImplemented("CallBackLeft");
+		}
 
 		//// RVA: 0x16EFC04 Offset: 0x16EFC04 VA: 0x16EFC04
-		//private void CallBackRight() { }
+		private void CallBackRight()
+		{
+			TodoLogger.LogNotImplemented("CallBackRight");
+		}
 
 		//// RVA: 0x16EFC0C Offset: 0x16EFC0C VA: 0x16EFC0C
-		//private void CallBackItemDetail() { }
+		private void CallBackItemDetail()
+		{
+			TodoLogger.LogNotImplemented("CallBackItemDetail");
+		}
 
 		//// RVA: 0x16EFFBC Offset: 0x16EFFBC VA: 0x16EFFBC
-		//private void CallBackUseItem() { }
+		private void CallBackUseItem()
+		{
+			TodoLogger.LogNotImplemented("CallBackUseItem");
+		}
 
 		//// RVA: 0x16F0178 Offset: 0x16F0178 VA: 0x16F0178
-		//private void CallBackRankUpUnlock() { }
+		private void CallBackRankUpUnlock()
+		{
+			TodoLogger.LogNotImplemented("CallBackRankUpUnlock");
+		}
 
 		//// RVA: 0x16F0564 Offset: 0x16F0564 VA: 0x16F0564
-		//private void CallBackConditionCheck() { }
+		private void CallBackConditionCheck()
+		{
+			TodoLogger.LogNotImplemented("CallBackConditionCheck");
+		}
 
 		//// RVA: 0x16EFAE0 Offset: 0x16EFAE0 VA: 0x16EFAE0
 		//private void ButtonScroll(int offset) { }
 
 		//// RVA: 0x16F0940 Offset: 0x16F0940 VA: 0x16F0940
-		//private void ChangeCostume(int offset = 0) { }
+		private void ChangeCostume(int offset = 0)
+		{
+			if(offset < 0)
+			{
+				if(m_cursorIndex < 1)
+				{
+					m_cursorIndex = m_filterCostumeDataList.Count;
+				}
+				m_cursorIndex--;
+			}
+			else
+			{
+				if (m_cursorIndex >= m_filterCostumeDataList.Count - 1)
+					m_cursorIndex = 0;
+				else
+					m_cursorIndex++;
+			}
+			SettingCostumeUI(m_cursorIndex, false, offset < 0, false);
+		}
 
 		//// RVA: 0x16F0A40 Offset: 0x16F0A40 VA: 0x16F0A40
-		//protected void OnSelectionChanged(int offset) { }
+		protected void OnSelectionChanged(int offset)
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_004);
+			ChangeCostume(offset);
+		}
 
 		//// RVA: 0x16F0AAC Offset: 0x16F0AAC VA: 0x16F0AAC
-		//protected void OnScrollRepeated(int repeatDelta, bool isSelectionFlipped) { }
+		protected void OnScrollRepeated(int repeatDelta, bool isSelectionFlipped)
+		{
+			SettingCostumeUI(m_cursorIndex, true, -1 < repeatDelta, false);
+		}
 
 		//// RVA: 0x16F0AE0 Offset: 0x16F0AE0 VA: 0x16F0AE0
-		//protected void OnScrollStarted(bool isAuto) { }
+		protected void OnScrollStarted(bool isAuto)
+		{
+			return;
+		}
 
 		//// RVA: 0x16F0AE4 Offset: 0x16F0AE4 VA: 0x16F0AE4
-		//protected void OnScrollUpdated(bool isAuto) { }
+		protected void OnScrollUpdated(bool isAuto)
+		{
+			return;
+		}
 
 		//// RVA: 0x16F0AE8 Offset: 0x16F0AE8 VA: 0x16F0AE8
-		//private void OnScrollEnded(bool isAuto) { }
+		private void OnScrollEnded(bool isAuto)
+		{
+			SettingCostumeUI(m_cursorIndex, true, false, true);
+			SettingScrollLimit();
+		}
 
 		//// RVA: 0x16F0B24 Offset: 0x16F0B24 VA: 0x16F0B24
-		//public void TryInstall() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6CE97C Offset: 0x6CE97C VA: 0x6CE97C
-		//// RVA: 0x16F12D8 Offset: 0x16F12D8 VA: 0x16F12D8
-		//private void <Init>b__52_0(int offset) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6CE98C Offset: 0x6CE98C VA: 0x6CE98C
-		//// RVA: 0x16F12DC Offset: 0x16F12DC VA: 0x16F12DC
-		//private bool <SettingRewardIcon>b__66_0(LFAFJCNKLML viewData) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6CE99C Offset: 0x6CE99C VA: 0x6CE99C
-		//// RVA: 0x16F138C Offset: 0x16F138C VA: 0x16F138C
-		//private bool <SettingRewardIcon>b__66_1(LFAFJCNKLML viewData) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6CE9BC Offset: 0x6CE9BC VA: 0x6CE9BC
-		//// RVA: 0x16F1454 Offset: 0x16F1454 VA: 0x16F1454
-		//private void <ButtonScroll>b__85_0() { }
+		public void TryInstall()
+		{
+			for(int i = 0; i < m_costumeUpgradeData.MGJKEJHEBPO.Count; i++)
+			{
+				MenuScene.Instance.CostumeIconCache.TryInstallCostume(m_costumeUpgradeData.MGJKEJHEBPO[i].AHHJLDLAPAN_DivaId, m_costumeUpgradeData.MGJKEJHEBPO[i].DAJGPBLEEOB_PrismCostumeId, 0);
+				MenuScene.Instance.DivaIconCache.TryInstall(m_costumeUpgradeData.MGJKEJHEBPO[i].AHHJLDLAPAN_DivaId, 1, 0);
+				MenuScene.Instance.DivaIconCache.TryStateDivaIconInstall(m_costumeUpgradeData.MGJKEJHEBPO[i].AHHJLDLAPAN_DivaId, 1, 0);
+				for(int j = 0; j < m_costumeUpgradeData.MGJKEJHEBPO[i].OCOOHBINGBG.Count; j++)
+				{
+					if(m_costumeUpgradeData.MGJKEJHEBPO[i].OCOOHBINGBG[j].PEEAGFNOFFO_UnlockType == LCLCCHLDNHJ_Costume.FPDJGDGEBNG.CFOEMAAKOMC/*4*/)
+					{
+						MenuScene.Instance.ItemTextureCache.TryInstall(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume, m_costumeUpgradeData.MGJKEJHEBPO[i].JPIDIENBGKH_CostumeId), m_costumeUpgradeData.MGJKEJHEBPO[i].OCOOHBINGBG[j].KJNAHLOODKD_Value[0]);
+					}
+					else if(m_costumeUpgradeData.MGJKEJHEBPO[i].OCOOHBINGBG[j].PEEAGFNOFFO_UnlockType == LCLCCHLDNHJ_Costume.FPDJGDGEBNG.NKKIKONDGPF/*1*/)
+					{
+						MenuScene.Instance.ItemTextureCache.TryInstall(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume, m_costumeUpgradeData.MGJKEJHEBPO[i].JPIDIENBGKH_CostumeId), 0);
+					}
+				}
+			}
+			MenuScene.Instance.SubPlateIconTextureCahe.TryInstall();
+		}
 	}
 }
