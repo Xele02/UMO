@@ -35,7 +35,7 @@ namespace XeApp.Game.Menu
 			{
 				for(int j = 1; j < 4; j++)
 				{
-					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(string.Format("ct/sb/{0:d2}_{1:d2}.xab", i, j));
+					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(string.Format("ct/sb/{0:d2}_{1:d2}.xab", i + 1, j));
 				}
 			}
 		}

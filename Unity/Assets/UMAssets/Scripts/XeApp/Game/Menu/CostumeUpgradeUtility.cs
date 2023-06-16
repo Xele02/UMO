@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 using XeApp.Game.Common;
+using XeSys;
 using XeSys.Gfx;
 
 namespace XeApp.Game.Menu
@@ -50,13 +52,19 @@ namespace XeApp.Game.Menu
 						{
 							v.enabled = value;
 						}
-						foreach(var v in rank_up_anim)
+						if (rank_up_anim != null)
 						{
-							v.enabled = value;
+							foreach (var v in rank_up_anim)
+							{
+								v.enabled = value;
+							}
 						}
-						foreach(var v in rank_unlock_anim)
+						if (rank_unlock_anim != null)
 						{
-							v.enabled = value;
+							foreach (var v in rank_unlock_anim)
+							{
+								v.enabled = value;
+							}
 						}
 					}
 				} //0x7FD48C
@@ -273,6 +281,20 @@ namespace XeApp.Game.Menu
 		//public static void ShowReleaseDailyOperationWindow(int prev, Action buttonCallBack) { }
 
 		//// RVA: 0x16EFD58 Offset: 0x16EFD58 VA: 0x16EFD58
-		//public static void ShowItemDetailWindow(LFAFJCNKLML upgradeData, int level, Transform parent) { }
+		public static void ShowItemDetailWindow(LFAFJCNKLML upgradeData, int level, Transform parent)
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			CostumeItemDetailPopupSetting s = new CostumeItemDetailPopupSetting();
+			s.data = upgradeData;
+			s.lv = level;
+			s.m_parent = parent;
+			s.TitleText = bk.GetMessageByLabel("costume_upgrade_detail_item_title_text");
+			s.WindowSize = SizeType.Middle;
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			PopupWindowManager.Show(s, null, null, null, null);
+		}
 	}
 }

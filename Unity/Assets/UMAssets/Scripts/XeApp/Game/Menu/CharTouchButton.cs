@@ -12,13 +12,17 @@ namespace XeApp.Game.Menu
 		// RVA: 0x10AC5B0 Offset: 0x10AC5B0 VA: 0x10AC5B0 Slot: 18
 		public override void OnPointerDown(PointerEventData eventData)
 		{
-			TodoLogger.Log(0, "OnPointerDown");
+			isTouch = true;
+			touchPosition = eventData.position;
+			m_isPointerInside = true;
+			base.OnPointerDown(eventData);
 		}
 
 		// RVA: 0x10AC614 Offset: 0x10AC614 VA: 0x10AC614 Slot: 19
 		public override void OnPointerUp(PointerEventData eventData)
 		{
-			TodoLogger.Log(0, "OnPointerUp");
+			isTouch = false;
+			base.OnPointerUp(eventData);
 		}
 	}
 }

@@ -32,7 +32,7 @@ namespace XeApp.Game.Menu
 					//0x162A234
 					if(index == 0)
 					{
-						if (!m_divaToggleButton[i].IsOn)
+						if (!m_divaToggleButton[index].IsOn)
 							return;
 					}
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
@@ -65,11 +65,11 @@ namespace XeApp.Game.Menu
 			{
 				if((bit & (1 << (m_divaList[i] - 1))) == 0)
 				{
-					m_divaToggleButton[i].SetOff();
+					m_divaToggleButton[i + 1].SetOff();
 				}
 				else
 				{
-					m_divaToggleButton[i].SetOn();
+					m_divaToggleButton[i + 1].SetOn();
 				}
 			}
 		}
@@ -164,7 +164,7 @@ namespace XeApp.Game.Menu
 				{
 					for(int i = 0; i < m_divaList.Count; i++)
 					{
-						if(m_divaToggleButton[i].IsOn)
+						if(m_divaToggleButton[i + 1].IsOn)
 						{
 							bit |= (uint)(1 << (m_divaList[i] - 1));
 						}

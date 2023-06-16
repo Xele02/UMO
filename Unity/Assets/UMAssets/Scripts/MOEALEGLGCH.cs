@@ -98,7 +98,10 @@ public class MOEALEGLGCH
 	}
 
 	//// RVA: 0x17B3744 Offset: 0x17B3744 VA: 0x17B3744
-	//public static int FLGEJDKMNMI() { }
+	public static int FLGEJDKMNMI()
+	{
+		return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("costume_upgrade_vc_count", 5);
+	}
 
 	//// RVA: 0x17B3834 Offset: 0x17B3834 VA: 0x17B3834
 	//public int GJFJBGNCBAP(LFAFJCNKLML IDLHJIOMJBK, int ANAJIAENLNB) { }

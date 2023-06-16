@@ -101,13 +101,13 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < strs.Length; i++)
 			{
 				CostumeUpgradeUtility.CostumeData data = new CostumeUpgradeUtility.CostumeData();
-				data.image = transform.Find("sw_cos_01_anim (AbsoluteLayout)/sw_cos_01 (AbsoluteLayout)/sw_cos_01_swipe_anim (AbsoluteLayout)/" + i).Find("cos_01_001 (AbsoluteLayout)/cos_01_001 (ImageView)").GetComponent<RawImageEx>();
-				AbsoluteLayout l1 = layout.FindViewByExId("sw_cos_01_swipe_anim_" + ("sw_cos_01_anim (AbsoluteLayout)/sw_cos_01 (AbsoluteLayout)/sw_cos_01_swipe_anim (AbsoluteLayout)/" + i).Replace(" (AbsoluteLayout)", "")) as AbsoluteLayout;
+				data.image = transform.Find("sw_cos_01_anim (AbsoluteLayout)/sw_cos_01 (AbsoluteLayout)/sw_cos_01_swipe_anim (AbsoluteLayout)/" + strs[i]).Find("cos_01_001 (AbsoluteLayout)/cos_01_001 (ImageView)").GetComponent<RawImageEx>();
+				AbsoluteLayout l1 = layout.FindViewByExId("sw_cos_01_swipe_anim_" + strs[i].Replace(" (AbsoluteLayout)", "")) as AbsoluteLayout;
 				data.rank.num = (l1).FindViewByExId("swtbl_cos_01_swtbl_star_num_02") as AbsoluteLayout;
 				data.rank.enable = new List<AbsoluteLayout>();
 				for(int j = 0; j < 6; j++)
 				{
-					data.rank.enable.Add(l1.FindViewByExId("swtbl_star_num_02_swbtl_star_on_off_0" + (i + 1)) as AbsoluteLayout);
+					data.rank.enable.Add(l1.FindViewByExId("swtbl_star_num_02_swbtl_star_on_off_0" + (j + 1)) as AbsoluteLayout);
 				}
 				m_costumeLayoutList.Add(data);
 			}
@@ -178,17 +178,7 @@ namespace XeApp.Game.Menu
 				m_costumeButton[i].onSelectButton = (int offset) =>
 				{
 					//0x16F12D8
-					if(!m_isKeyScrool)
-					{
-						m_isKeyScrool = true;
-						MenuScene.Instance.InputDisable();
-						m_scroller.RequestFlow(offset, 0.2f, () =>
-						{
-							//0x16F1454
-							MenuScene.Instance.InputEnable();
-							m_isKeyScrool = false;
-						});
-					}
+					ButtonScroll(offset);
 				};
 			}
 		}
@@ -434,9 +424,9 @@ namespace XeApp.Game.Menu
 				m_useItemButton.Disable = true;
 				m_rankUpUnlockButton.Disable = true;
 				m_conditionCheckButton.Disable = true;
-				level = m_selectCostumeData.LLLCMHENKKN_LevelMax + 1;
-				m_releaseValue.num.SetNumber(m_selectCostumeData.OCOOHBINGBG[m_selectCostumeData.LLLCMHENKKN_LevelMax + 1].DNBFMLBNAEE, 0);
-				m_releaseValue.max.SetNumber(m_selectCostumeData.OCOOHBINGBG[m_selectCostumeData.LLLCMHENKKN_LevelMax + 1].DNBFMLBNAEE, 0);
+				level = m_selectCostumeData.LLLCMHENKKN_LevelMax - 1;
+				m_releaseValue.num.SetNumber(m_selectCostumeData.OCOOHBINGBG[m_selectCostumeData.LLLCMHENKKN_LevelMax - 1].DNBFMLBNAEE, 0);
+				m_releaseValue.max.SetNumber(m_selectCostumeData.OCOOHBINGBG[m_selectCostumeData.LLLCMHENKKN_LevelMax - 1].DNBFMLBNAEE, 0);
 			}
 			else
 			{
@@ -460,7 +450,7 @@ namespace XeApp.Game.Menu
 		{
 			LFAFJCNKLML.GFIPDFPIKIJ a;
 			LFAFJCNKLML.HKKKKFLBFJN(m_selectCostumeData, rank, out a, 0);
-			CostumeUpgradeUtility.SettingRewardIcon(m_selectCostumeData, a.GLCLFMGPMAN, rank, a.NANNGLGOFKH, new CostumeUpgradeUtility.RewardIconLayoutSetting(m_nextReawad.image, m_nextReawad.divaImage, m_nextReawad.itemType, m_nextReawad.num, m_nextReawad.rank), (LFAFJCNKLML viewData) =>
+			CostumeUpgradeUtility.SettingRewardIcon(m_selectCostumeData, a.GLCLFMGPMAN_ItemId, rank, a.NANNGLGOFKH_Value, new CostumeUpgradeUtility.RewardIconLayoutSetting(m_nextReawad.image, m_nextReawad.divaImage, m_nextReawad.itemType, m_nextReawad.num, m_nextReawad.rank), (LFAFJCNKLML viewData) =>
 			{
 				//0x16F12DC
 				if(viewData.AHHJLDLAPAN_DivaId == m_selectCostumeData.AHHJLDLAPAN_DivaId)
@@ -477,7 +467,7 @@ namespace XeApp.Game.Menu
 			{
 				m_rewadIconAnim.StartChildrenAnimLoop("lo_");
 				LFAFJCNKLML.HKKKKFLBFJN(m_selectCostumeData, b, out a, 0);
-				CostumeUpgradeUtility.SettingRewardIcon(m_selectCostumeData, a.GLCLFMGPMAN, b, a.NANNGLGOFKH, new CostumeUpgradeUtility.RewardIconLayoutSetting(m_targetReawad.image, m_targetReawad.divaImage, m_targetReawad.itemType, m_targetReawad.num, m_targetReawad.rank), (LFAFJCNKLML viewData) =>
+				CostumeUpgradeUtility.SettingRewardIcon(m_selectCostumeData, a.GLCLFMGPMAN_ItemId, b, a.NANNGLGOFKH_Value, new CostumeUpgradeUtility.RewardIconLayoutSetting(m_targetReawad.image, m_targetReawad.divaImage, m_targetReawad.itemType, m_targetReawad.num, m_targetReawad.rank), (LFAFJCNKLML viewData) =>
 				{
 					//0x16F138C
 					if (viewData.AHHJLDLAPAN_DivaId == m_selectCostumeData.AHHJLDLAPAN_DivaId)
@@ -703,25 +693,53 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x16EF7F4 Offset: 0x16EF7F4 VA: 0x16EF7F4
 		private void CallBackReward()
 		{
-			TodoLogger.LogNotImplemented("CallBackReward");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			CostumeRewardPopupSetting s = new CostumeRewardPopupSetting();
+			s.TitleText = bk.GetMessageByLabel("costume_upgrade_achievement_title_text");
+			s.m_parent = transform;
+			s.CostumeData = m_filterCostumeDataList[m_cursorIndex];
+			s.WindowSize = SizeType.Large;
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			PopupWindowManager.Show(s, null, null, null, null);
 		}
 
 		//// RVA: 0x16EFAD8 Offset: 0x16EFAD8 VA: 0x16EFAD8
 		private void CallBackLeft()
 		{
-			TodoLogger.LogNotImplemented("CallBackLeft");
+			ButtonScroll(-1);
 		}
 
 		//// RVA: 0x16EFC04 Offset: 0x16EFC04 VA: 0x16EFC04
 		private void CallBackRight()
 		{
-			TodoLogger.LogNotImplemented("CallBackRight");
+			ButtonScroll(1);
 		}
 
 		//// RVA: 0x16EFC0C Offset: 0x16EFC0C VA: 0x16EFC0C
 		private void CallBackItemDetail()
 		{
-			TodoLogger.LogNotImplemented("CallBackItemDetail");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			int level;
+			if(m_targetReawad.iconBase.IsVisible)
+			{
+				level = m_selectCostumeData.HGBJODBCJDA - 1;
+			}
+			else
+			{
+				if(m_selectCostumeData.GKIKAABHAAD_Level < m_selectCostumeData.LLLCMHENKKN_LevelMax)
+				{
+					level = m_selectCostumeData.GKIKAABHAAD_Level;
+				}
+				else
+				{
+					level = m_selectCostumeData.LLLCMHENKKN_LevelMax - 1;
+				}
+			}
+			CostumeUpgradeUtility.ShowItemDetailWindow(m_selectCostumeData, level, transform);
 		}
 
 		//// RVA: 0x16EFFBC Offset: 0x16EFFBC VA: 0x16EFFBC
@@ -743,7 +761,20 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x16EFAE0 Offset: 0x16EFAE0 VA: 0x16EFAE0
-		//private void ButtonScroll(int offset) { }
+		private void ButtonScroll(int offset)
+		{
+			if(!m_isKeyScrool)
+			{
+				m_isKeyScrool = true;
+				MenuScene.Instance.InputDisable();
+				m_scroller.RequestFlow(offset, 0.2f, () =>
+				{
+					//0x16F1454
+					MenuScene.Instance.InputEnable();
+					m_isKeyScrool = false;
+				});
+			}
+		}
 
 		//// RVA: 0x16F0940 Offset: 0x16F0940 VA: 0x16F0940
 		private void ChangeCostume(int offset = 0)

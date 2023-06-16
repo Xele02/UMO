@@ -233,7 +233,7 @@ namespace XeApp.Game.Menu
 				//0x16F8138
 				return m_costumeSelect.IsPlayingEnd();
 			});
-			yield return new WaitUntil(() =>
+			yield return new WaitWhile(() =>
 			{
 				//0x16F8160
 				return m_isTutorial;
