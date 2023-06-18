@@ -234,7 +234,7 @@ namespace XeApp.Game.Menu
 							m_moveSpeed.y = 0;
 						else
 						{
-							f = (v.y - v2.y) * 0.02f * ((m_eye.z + 5) / (m_defaultDist + 5));
+							f = (v.y - v1.y) * 0.02f * ((m_eye.z + 5) / (m_defaultDist + 5));
 							m_moveSpeed.y = f;
 						}
 					}
@@ -255,7 +255,9 @@ namespace XeApp.Game.Menu
 				m_rot = Quaternion.Euler(m_rotAngle.x, m_rotAngle.y, 0);
 				m_divaRot = Quaternion.Euler(0, -m_rotAngle.z, 0);
 				m_targetObj.transform.localRotation = m_divaOriginalRot * m_divaRot;
+				#if UNITY_ANDROID
 				if(InputManager.Instance.GetInScreenTouchCount() > 1)
+				#endif
 				{
 					m_targetFov = Mathf.Clamp(m_camera.fieldOfView + InputManager.Instance.pinchDelta * -20, 10, 37);
 					m_camera.fieldOfView = m_targetFov;

@@ -104,7 +104,10 @@ public class FFHPBEPOMAK_DivaInfo
 	// RVA: 0x14DE1BC Offset: 0x14DE1BC VA: 0x14DE1BC
 	public void LEHDLBJJBNC()
 	{
-		TodoLogger.Log(0, "LEHDLBJJBNC");
+		MBFADDHOEOK_IsNew = false;
+		if(!BNFDBPPOAOE || JPIDIENBGKH_CostumeId == 0)
+			return;
+		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.FABAGMLEKIB_List[JPIDIENBGKH_CostumeId - 1].CADENLBDAEB_IsNew = false;
 	}
 
 	// RVA: 0x14DE4E0 Offset: 0x14DE4E0 VA: 0x14DE4E0

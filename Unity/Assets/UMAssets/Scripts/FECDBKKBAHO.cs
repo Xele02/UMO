@@ -69,10 +69,24 @@ public class FECDBKKBAHO
 	}
 
 	// // RVA: 0xFCFBB8 Offset: 0xFCFBB8 VA: 0xFCFBB8
-	public FECDBKKBAHO.FHOPNIJCFKA_FileInfo ANIJHEBLMGB(string CJEKGLGBIHF, long DGGFLBJBLLN, int KKPAHLMJKIH)
+	public FHOPNIJCFKA_FileInfo ANIJHEBLMGB(string CJEKGLGBIHF, long DGGFLBJBLLN, int KKPAHLMJKIH)
 	{
-		TodoLogger.Log(0, "TODO");
-		return null;
+		if(!MLHACNBJAGM_FilesInfoByHash.ContainsKey(CJEKGLGBIHF.GetHashCode()))
+		{
+			FHOPNIJCFKA_FileInfo data = new FHOPNIJCFKA_FileInfo();
+			data.DGGFLBJBLLN = DGGFLBJBLLN;
+			data.FNALNKKMKDC_ExpireTime = 0;
+			data.IOIMHJAOKOO = CJEKGLGBIHF.GetHashCode();
+			data.KKPAHLMJKIH = (short)KKPAHLMJKIH;
+			MLHACNBJAGM_FilesInfoByHash.Add(CJEKGLGBIHF.GetHashCode(), data);
+			return data;
+		}
+		FHOPNIJCFKA_FileInfo d = MLHACNBJAGM_FilesInfoByHash[CJEKGLGBIHF.GetHashCode()];
+		d.DGGFLBJBLLN = DGGFLBJBLLN;
+		d.FNALNKKMKDC_ExpireTime = 0;
+		d.IOIMHJAOKOO = CJEKGLGBIHF.GetHashCode();
+		d.KKPAHLMJKIH = (short)KKPAHLMJKIH;
+		return d;
 	}
 
 	// // RVA: 0xFCF3E0 Offset: 0xFCF3E0 VA: 0xFCF3E0

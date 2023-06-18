@@ -420,8 +420,8 @@ public class NKGJPJPHLIF
 		GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.GEPLOFLHAOL_NeedInitRenderQuality = 1;
 		GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
 		Debug.Log(JpStringLiterals.StringLiteral_12640);
-		PlayerPrefs.SetInt("cpid", MLPEHNBNOGD);
-		PlayerPrefs.Save();
+		UMO_PlayerPrefs.SetInt("cpid", MLPEHNBNOGD);
+		UMO_PlayerPrefs.Save();
 		PKECIDPBEFL.GDELLNOBNDM_DeleteCache();
 	}
 

@@ -105,7 +105,7 @@ namespace XeApp.Game.Menu
 		public void SetAngleX(float angle)
 		{
 			m_offsetDataX.is_update = true;
-			m_offsetDataX.target = Mathf.Lerp(m_uvData.xMin.offset, m_uvData.xMin.offset, Mathf.Clamp01((angle - m_uvData.xMin.angle) / (m_uvData.xMax.angle - m_uvData.xMin.angle)));
+			m_offsetDataX.target = Mathf.Lerp(m_uvData.xMin.offset, m_uvData.xMax.offset, Mathf.Clamp01((angle - m_uvData.xMin.angle) / (m_uvData.xMax.angle - m_uvData.xMin.angle)));
 		}
 
 		//// RVA: 0x17DDD68 Offset: 0x17DDD68 VA: 0x17DDD68
@@ -130,13 +130,12 @@ namespace XeApp.Game.Menu
 				Vector3 v1 = (target - m_head.position).normalized;
 				Vector3 v2 = m_head.forward.normalized;
 				float angle = Vector3.Dot(v1, v2);
-				angle = Mathf.Clamp(angle, -1, 1);
-				float a2 = Mathf.Acos(angle);
+				angle = Mathf.Acos(Mathf.Clamp(angle, -1, 1));
 				if(Vector3.Cross(v1, v2).y < 0)
 				{
-					angle = -a2 * 57.29578f;
+					angle = -angle;
 				}
-				SetAngleX(angle);
+				SetAngleX(angle * 57.29578f);
 			}
 		}
 
@@ -152,6 +151,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_targetObj != null)
 			{
+				m_isUpdate = true;
 				m_targetPos = m_targetObj.transform.position;
 			}
 			if(m_isUpdate)

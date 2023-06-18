@@ -23,9 +23,9 @@ namespace XeApp.Game.Menu
 
 		private TextSet[] m_textTbl = new TextSet[4] {
 			new TextSet() { index = 0, label = "config_text_60" },
-			new TextSet() { index = 0, label = "config_text_60" },
-			new TextSet() { index = 0, label = "config_text_60" },
-			new TextSet() { index = 0, label = "config_text_60" }
+			new TextSet() { index = 1, label = "config_text_59" },
+			new TextSet() { index = 2, label = "config_text_58" },
+			new TextSet() { index = 3, label = "config_text_57" }
 		}; // 0x38
 
 		// RVA: 0x1ED4FA8 Offset: 0x1ED4FA8 VA: 0x1ED4FA8 Slot: 6

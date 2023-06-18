@@ -246,14 +246,14 @@ namespace XeApp.Game.Menu
 					dataCol.m_name_base = f_.FFKMJNHFFFL_Costume.HCPCHEPCFEA_GetCostumeName(0);
 					dataCol.m_status = f_.FFKMJNHFFFL_Costume.FCEGELPJAMH_SkillDesc;
 					dataCol.m_cos_id = f_.FFKMJNHFFFL_Costume.JPIDIENBGKH_CostumeId;
-					dataCol.m_cos_model_id = f_.FFKMJNHFFFL_Costume.HNJNKCPDKAL_PrismCostumeId_CryptedPrismCostumeId;
+					dataCol.m_cos_model_id = f_.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
 					dataCol.m_cos_color = cols[j];
 					dataCol.m_lv = f_.FFKMJNHFFFL_Costume.GKIKAABHAAD_Level;
 					dataCol.m_lv_max = cosInfo.LLLCMHENKKN_LevelMax;
 					dataCol.m_is_set = false;
 					if(transition == TransitionList.Type.COSTUME_SELECT)
 					{
-						if(selectedCostume.FFKMJNHFFFL_Costume.HNJNKCPDKAL_PrismCostumeId_CryptedPrismCostumeId == f_.FFKMJNHFFFL_Costume.HNJNKCPDKAL_PrismCostumeId_CryptedPrismCostumeId)
+						if(selectedCostume.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId == f_.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId)
 						{
 							dataCol.m_is_set = selectedCostume.EKFONBFDAAP_ColorId == f_.EKFONBFDAAP_ColorId;
 						}

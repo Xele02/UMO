@@ -226,7 +226,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x16DFCD4 Offset: 0x16DFCD4 VA: 0x16DFCD4 Slot: 13
 		protected override bool IsEndExitAnimation()
 		{
-			if (m_view_on.IsPlaying())
+			if (!m_view_on.IsPlaying())
 			{
 				if (!m_model_loaded)
 					return false;

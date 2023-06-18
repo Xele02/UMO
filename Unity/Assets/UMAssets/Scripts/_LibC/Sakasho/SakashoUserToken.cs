@@ -113,7 +113,7 @@ namespace ExternLib
             UnityEngine.Debug.Log("SakashoUserTokenGetPlayerStatus "+json);
 			//ExternLib.Java_Sakasho.jp.dena.sakasho.api.SakashoAPICallContext context = ExternLib.Java_Sakasho.jp.dena.sakasho.api.SakashoUserToken.getPlayerStatus(null, null);
 
-			int playerId = PlayerPrefs.GetInt("cpid", 0);
+			int playerId = UMO_PlayerPrefs.GetInt("cpid", 0);
 			if(playerId == 0)
 			{
 				playerAccount = null;

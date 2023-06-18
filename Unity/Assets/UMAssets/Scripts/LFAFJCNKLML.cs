@@ -193,14 +193,14 @@ public class LFAFJCNKLML : CKFGMNAIBNG
 							NGHKJOEDLIP.AKNGHELNIHO_ItemName = rewardStr + JpStringLiterals.StringLiteral_12298;
 							NGHKJOEDLIP.BONMCBFDMJE_ItemNum = s2_[0] + "\n" + s.Substring(s2_[0].Length);
 							str2.SetFormat(menuBk.GetMessageByLabel("costume_upgrade_item_detail_costume_skillup"), s2);
-							NGHKJOEDLIP.IDCPALBPNFB_Explanation = str.ToString();
+							NGHKJOEDLIP.IDCPALBPNFB_Explanation = str2.ToString();
 						}
 						else
 						{
 							NGHKJOEDLIP.AKNGHELNIHO_ItemName = rewardStr + JpStringLiterals.StringLiteral_12300;
 							NGHKJOEDLIP.BONMCBFDMJE_ItemNum = "";
 							str2.SetFormat(menuBk.GetMessageByLabel("costume_upgrade_item_detail_costume_skillget"), s2);
-							NGHKJOEDLIP.IDCPALBPNFB_Explanation = str.ToString();
+							NGHKJOEDLIP.IDCPALBPNFB_Explanation = str2.ToString();
 						}
 					}
 				}
@@ -236,10 +236,11 @@ public class LFAFJCNKLML : CKFGMNAIBNG
 				}
 				break;
 			case LCLCCHLDNHJ_Costume.FPDJGDGEBNG.PJJJGFBLIAP/*5*/:
+				str.SetFormat("cos_reward_status_{0:D4}", data.KJNAHLOODKD_Value[0]);
 				NGHKJOEDLIP.GLCLFMGPMAN_ItemId = 10001;
 				NGHKJOEDLIP.NANNGLGOFKH_Value = data.KJNAHLOODKD_Value[1];
 				NGHKJOEDLIP.BONMCBFDMJE_ItemNum = "+" + data.KJNAHLOODKD_Value[1].ToString();
-				str2.SetFormat(menuBk.GetMessageByLabel("costume_upgrade_item_detail_diva_status_up"), masterBk.GetMessageByLabel("diva_s_" + IDLHJIOMJBK.AHHJLDLAPAN_DivaId.ToString("D2")), str.ToString(), NGHKJOEDLIP.BONMCBFDMJE_ItemNum);
+				str2.SetFormat(menuBk.GetMessageByLabel("costume_upgrade_item_detail_diva_status_up"), masterBk.GetMessageByLabel("diva_s_" + IDLHJIOMJBK.AHHJLDLAPAN_DivaId.ToString("D2")), masterBk.GetMessageByLabel(str.ToString()), NGHKJOEDLIP.BONMCBFDMJE_ItemNum);
 				NGHKJOEDLIP.IDCPALBPNFB_Explanation = str2.ToString();
 				if(OJBOEMCJPHJ == EJOEMKJOCMH.LLCLFAACPLH/*2*/)
 				{

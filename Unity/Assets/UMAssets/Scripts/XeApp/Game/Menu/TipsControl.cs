@@ -292,7 +292,11 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA99004 Offset: 0xA99004 VA: 0xA99004
 		public void Show(IBJAKJJICBC musicData)
 		{
-			TodoLogger.Log(0, "TipsControl Show");
+			if(m_isShow)
+				return;
+			m_isShow = false;
+			MakeTipsList(3);
+			this.StartCoroutineWatched(ShowCoroutine(musicData));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x735614 Offset: 0x735614 VA: 0x735614

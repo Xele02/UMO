@@ -64,8 +64,8 @@ namespace XeSys
 		// // RVA: 0x23A51DC Offset: 0x23A51DC VA: 0x23A51DC
 		public static void SetForceWideScreen(bool isOn)
 		{
-			PlayerPrefs.SetInt("forceWideScreen", isOn ? 1 : 0);
-			PlayerPrefs.Save();
+			UMO_PlayerPrefs.SetInt("forceWideScreen", isOn ? 1 : 0);
+			UMO_PlayerPrefs.Save();
 		}
 
 		// // RVA: 0x23A524C Offset: 0x23A524C VA: 0x23A524C
@@ -103,7 +103,7 @@ namespace XeSys
 			rawScreenAreaRect = XeSafeArea.GetScreenArea();
 			BaseScreenSize = new Vector2(1184, 792);
 
-			int isForceWideScreen = PlayerPrefs.GetInt("forceWideScreen", 1);
+			int isForceWideScreen = UMO_PlayerPrefs.GetInt("forceWideScreen", 1);
 			if(isForceWideScreen != 1)
 				isForceWideScreen = 0;
 			

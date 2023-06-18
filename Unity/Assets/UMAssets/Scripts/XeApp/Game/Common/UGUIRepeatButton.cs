@@ -22,6 +22,7 @@ namespace XeApp.Game.Common
 		// RVA: 0x1CDAC00 Offset: 0x1CDAC00 VA: 0x1CDAC00 Slot: 11
 		protected override void Start()
 		{
+			base.Start();
 			m_updater = UpdateIdel;
 		}
 
