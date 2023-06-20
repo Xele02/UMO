@@ -25,7 +25,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB2D768 Offset: 0xB2D768 VA: 0xB2D768
-		// public void LoadLogoUnlock(int seriase, Action<IiconTexture> callBack) { }
+		public void LoadLogoUnlock(int seriase, Action<IiconTexture> callBack)
+		{
+			Load(string.Format("ct/lu/{0:D2}.xab", seriase), callBack);
+		}
 
 		// // RVA: 0xB2D810 Offset: 0xB2D810 VA: 0xB2D810
 		// public void LoadDegree(int id, int subId, Action<IiconTexture> callBack) { }

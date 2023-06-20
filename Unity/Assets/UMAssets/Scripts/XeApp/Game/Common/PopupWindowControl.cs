@@ -249,7 +249,28 @@ namespace XeApp.Game.Common
 		// public static void PlaySeNegative() { }
 
 		// // RVA: 0x1BB978C Offset: 0x1BB978C VA: 0x1BB978C
-		// public void PushNegativeOtherButton() { }
+		public void PushNegativeOtherButton()
+		{
+			if(m_blockCount < 1 && m_isOpenWindow && m_validButtonCount > 0)
+			{
+				int idx = m_validButtonCount - 1;
+				if(m_negativeButtonLabel != PopupButton.ButtonLabel.None)
+				{
+					for(int i = 0; i < m_buttons.Length; i++)
+					{
+						if (m_buttons[i].Label == m_backButtonLabel)
+						{
+							idx = i;
+							break;
+						}
+					}
+				}
+				if(!m_buttons[idx].Hidden && !m_buttons[idx].Disable)
+				{
+					m_buttons[idx].PerformClick();
+				}
+			}
+		}
 
 		// // RVA: 0x1BB995C Offset: 0x1BB995C VA: 0x1BB995C
 		private void PushBackButton()

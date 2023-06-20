@@ -230,15 +230,13 @@ namespace XeApp.Game.Menu
 					p.KHEKNNFCAOI(scene.KELFCMEOPPM_EpisodeId);
 					EpisodeDetailArgs arg = new EpisodeDetailArgs();
 					arg.data = p;
-					//MenuScene.Instance.Mount(TransitionUniqueId.SETTINGMENU_EPISODESELECT_EPISODEDETAIL, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
-					TodoLogger.LogNotImplemented("ShowSceneStatusPopupWindow");
+					MenuScene.Instance.Mount(TransitionUniqueId.SETTINGMENU_EPISODESELECT_EPISODEDETAIL, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 				}
 				else if(type == PopupButton.ButtonLabel.SkillRelease)
 				{
 					PopupWindowManager.Close(control, null);
 					SceneGrowthSceneArgs arg = new SceneGrowthSceneArgs(scene, false);
-					//MenuScene.Instance.Call(TransitionList.Type.SCENE_GROWTH, arg, true);
-					TodoLogger.LogNotImplemented("ShowSceneStatusPopupWindow");
+					MenuScene.Instance.Call(TransitionList.Type.SCENE_GROWTH, arg, true);
 					return;
 				}
 				else

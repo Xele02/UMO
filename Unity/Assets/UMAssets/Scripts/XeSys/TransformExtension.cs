@@ -113,7 +113,10 @@ namespace XeSys
 
 		//[ExtensionAttribute] // RVA: 0x6905F0 Offset: 0x6905F0 VA: 0x6905F0
 		//// RVA: 0x23A8430 Offset: 0x23A8430 VA: 0x23A8430
-		//public static void SetLocalEulerAngleZ(Transform transform, float z) { }
+		public static void SetLocalEulerAngleZ(this Transform transform, float z)
+		{
+			transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, z);
+		}
 
 		//[ExtensionAttribute] // RVA: 0x690600 Offset: 0x690600 VA: 0x690600
 		//// RVA: 0x23A84E8 Offset: 0x23A84E8 VA: 0x23A84E8

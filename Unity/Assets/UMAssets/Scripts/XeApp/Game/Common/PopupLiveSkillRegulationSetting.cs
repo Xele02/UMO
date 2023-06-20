@@ -27,8 +27,7 @@ namespace XeApp.Game.Common
 		{
 			//0x1BAE964
 			m_parent = parent;
-			AssetBundleManager.LoadUnionAssetBundle(BundleName);
-			yield return null;
+			yield return AssetBundleManager.LoadUnionAssetBundle(BundleName);
 			yield return Co.R(base.LoadAssetBundlePrefab(parent));
 			LayoutSkillRegulationWindow = m_content.GetComponent<LayoutSkillRegulationWindow>();
 			while (!ISLoaded())

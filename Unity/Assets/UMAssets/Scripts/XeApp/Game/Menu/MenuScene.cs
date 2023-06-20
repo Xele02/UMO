@@ -131,7 +131,7 @@ namespace XeApp.Game.Menu
 		public CostumeTextureCache CostumeIconCache { get { return GameManager.Instance.CostumeIconCache; } } //0xB2E174
 		// public QuestEventTextureCache QuestEventCache { get; } 0xB2E210
 		// public SNSTextureCache SnsIconCache { get; } 0xB2E2AC
-		// public EpisodeTextuteCache EpisodeIconCache { get; } 0xB2E348
+		public EpisodeTextuteCache EpisodeIconCache { get { return GameManager.Instance.EpisodeIconCache; } } //0xB2E348
 		// public StoryImageTextureCache StoryImageCache { get; } 0xB2E3E4
 		public SubPlateIconTextureCache SubPlateIconTextureCahe { get { return GameManager.Instance.subPlateIconCache; } } //0xB2E480
 		// public DecorationItemTextureCache DecorationItemTextureCache { get; } 0xB2E51C

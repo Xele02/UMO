@@ -150,7 +150,7 @@ namespace ExternLib
 								saveScene.BEBJKJKBOGH_Date = time;
 							}
 							saveScene.ANAJIAENLNB_Level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(dbScene.EKLIPGELKCL_Rarity, true, dbScene.MCCIFLKCNKO_Feed);
-							for (int j = 0; j < saveScene.ANAJIAENLNB_Level - 1; j++)
+							for (int j = 0; j < saveScene.ANAJIAENLNB_Level; j++)
 							{
 								int idx = j / 8;
 								int idx2 = j % 8;

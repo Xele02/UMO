@@ -24,7 +24,11 @@ namespace XeApp.Game.Common.uGUI
 		}
 
 		//// RVA: 0xD39558 Offset: 0xD39558 VA: 0xD39558
-		//public static string MakeSizeTagString(string str, int size) { }
+		public static string MakeSizeTagString(string str, int size)
+		{
+			sb.SetFormat("<size={0}>{1}</size>", size, str);
+			return str.ToString();
+		}
 
 		//// RVA: 0xD39674 Offset: 0xD39674 VA: 0xD39674
 		//public static void ChangeSize(Text uguiText, int size) { }

@@ -306,7 +306,10 @@ class JpStringLiterals
 	public const string StringLiteral_14032 = "アニメーションテーブル数以上のキーフレーム番号が指定されました。"; // 0x03bb65f8
 	public const string StringLiteral_14529 = "ーーー"; // 0x03bb6dbc
 	public const string StringLiteral_14832 = "ふた"; // 0x03bb7278
+	public const string StringLiteral_15265 = "所持："; // 0x03bb793c
 	public const string StringLiteral_15651 = "手動"; // 0x03bb7f44
+	public const string StringLiteral_15750 = "次の報酬まで {0} {1}"; // 0x03bb80d0
+	public const string StringLiteral_15778 = "追加報酬"; // 0x03bb8140
 	public const string StringLiteral_16338 = "ユーザーリスト 失敗"; // 0x03bb8a00
 	public const string StringLiteral_16339 = "ユーザーフレンドリスト 成功 "; // 0x03bb8a04
 	public const string StringLiteral_17446 = "さしすせそ"; // 0x03bb9b50

@@ -109,7 +109,7 @@ namespace XeApp.Game.Menu
 				SetDesc(cat);
 			}
 			//LAB_015e45c8
-			SetImageEpisode(p.KELFCMEOPPM_Id);
+			SetImageEpisode(p.KELFCMEOPPM_EpId);
 			SetEpisodeName(p.OPFGFINHFCE_Name);
 			SetEpisodeDesc(p.KLMPFGOCBHC_Description);
 		}
