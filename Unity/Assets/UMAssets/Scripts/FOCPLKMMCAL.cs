@@ -91,7 +91,7 @@ public class FOCPLKMMCAL
 					if(IPGFALGDLHN_FriendInfo != null && IPGFALGDLHN_FriendInfo.KHGKPKDBMOH_GetAssistScene() != null)
 					{
 						sceneId = IPGFALGDLHN_FriendInfo.KHGKPKDBMOH_GetAssistScene().BCCHOBPJJKE_SceneId;
-						c = IPGFALGDLHN_FriendInfo.KHGKPKDBMOH_GetAssistScene().JPIPENJGGDD;
+						c = IPGFALGDLHN_FriendInfo.KHGKPKDBMOH_GetAssistScene().JPIPENJGGDD_NumBoard;
 					}
 					if(OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 6)
 					{
@@ -174,7 +174,7 @@ public class FOCPLKMMCAL
 			if(IPGFALGDLHN_FriendInfo.KHGKPKDBMOH_GetAssistScene() != null)
 			{
 				fsceneId = IPGFALGDLHN_FriendInfo.KHGKPKDBMOH_GetAssistScene().BCCHOBPJJKE_SceneId;
-				c = IPGFALGDLHN_FriendInfo.KHGKPKDBMOH_GetAssistScene().JPIPENJGGDD;
+				c = IPGFALGDLHN_FriendInfo.KHGKPKDBMOH_GetAssistScene().JPIPENJGGDD_NumBoard;
 			}
 		}
 		switch(OMNOFMEBLAD.MNNHHJBBICA_GameEventType)

@@ -1734,7 +1734,7 @@ namespace XeApp.Game.Menu
 						if (!(m_args is SceneGrowthSceneArgs))
 							return false;
 						SceneGrowthSceneArgs sceneArgs = m_args as SceneGrowthSceneArgs;
-						if (sceneArgs.ViewSceneData.JPIPENJGGDD < 2)
+						if (sceneArgs.ViewSceneData.JPIPENJGGDD_NumBoard < 2)
 							return false;
 						return sceneArgs.ViewSceneData.ILABPFOMEAG_Va > 0;
 					case TutorialConditionId.Condition86:
@@ -1907,13 +1907,13 @@ namespace XeApp.Game.Menu
 					if(m_transitionName == TransitionList.Type.SCENE_GROWTH && m_args is SceneGrowthSceneArgs)
 					{
 						SceneGrowthSceneArgs args = m_args as SceneGrowthSceneArgs;
-						if(args.ViewSceneData.JPIPENJGGDD > 1)
+						if(args.ViewSceneData.JPIPENJGGDD_NumBoard > 1)
 						{
 
 							AEKDNMPPOJN data = new AEKDNMPPOJN();
 							MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[args.ViewSceneData.BCCHOBPJJKE_SceneId - 1];
 							data.KHEKNNFCAOI(args.ViewSceneData.JKGFBFPIMGA_Rarity, args.ViewSceneData.MKHFCGPJPFI_LimitOverCount,
-								scene.PKNGPIFNIGN(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board, args.ViewSceneData.JPIPENJGGDD, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.GENHLFPKOEE(scene.EKLIPGELKCL_Rarity, scene.MCCIFLKCNKO_Feed)));
+								scene.PKNGPIFNIGN(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board, args.ViewSceneData.JPIPENJGGDD_NumBoard, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.GENHLFPKOEE(scene.EKLIPGELKCL_Rarity, scene.MCCIFLKCNKO_Feed)));
 							if (data.LJHOOPJACPI_LeafMax > 0)
 								return true;
 						}

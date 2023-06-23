@@ -185,7 +185,7 @@ namespace XeApp.Game.Menu
 					m_sceneIconDecrationBehaviour.SetEpisode(sceneData.KELFCMEOPPM_EpisodeId, sceneData.CIEOBFIIPLD_SceneLevel, IsMaxLevel(sceneData), sceneData.MCCIFLKCNKO_Feed);
 					return;
 				case DisplayType.SecretBoard:
-					val = sceneData.JPIPENJGGDD - 1;
+					val = sceneData.JPIPENJGGDD_NumBoard - 1;
 					if(val < 1)
 					{
 						val = 0;

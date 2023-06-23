@@ -106,7 +106,7 @@ public class PIGBBNDPPJC
 	public int JJJNKGBCFMI_Step; // 0x24
 	public int ABLHIAEDJAI_CurrentPoint; // 0x28
 	public int DMHDNKILKGI_MaxPoint; // 0x2C
-	public int LEGAKDFPPHA; // 0x30
+	public int LEGAKDFPPHA_AvaiablePoint; // 0x30
 	public int KIJAPOFAGPN_UnlockItemId; // 0x34
 	public bool CCBKMCLDGAD_HasReward; // 0x38
 	public bool JBCIDDKDJMM; // 0x39
@@ -114,7 +114,7 @@ public class PIGBBNDPPJC
 	public LGMEPLIJLNB JBFLCHFEIGL; // 0x48
 
 	//public bool OJOLGGKILFL { get; } 0x16D0300 KKEOAGANMNA
-	//public bool DKMLDEDKPBA { get; } 0x16D0314 PCIINKJELKK
+	public bool DKMLDEDKPBA_HasEpisode { get { return KELFCMEOPPM_EpId > 0; } } //0x16D0314 PCIINKJELKK
 	//public bool IIEAILCOPDB { get; } 0x16D0328 EMKGOLJAJBG
 
 	//// RVA: 0x16D0340 Offset: 0x16D0340 VA: 0x16D0340
@@ -131,7 +131,7 @@ public class PIGBBNDPPJC
 		{
 			ABLHIAEDJAI_CurrentPoint = 0;
 			DMHDNKILKGI_MaxPoint = 0;
-			LEGAKDFPPHA = 0;
+			LEGAKDFPPHA_AvaiablePoint = 0;
 			KIJAPOFAGPN_UnlockItemId = 0;
 			FKMAEKNOLJB = 0;
 			FGOGPCMHPIN_Count = 0;
@@ -215,7 +215,7 @@ public class PIGBBNDPPJC
 			}
 			if(KELFCMEOPPM > 0)
 			{
-				LEGAKDFPPHA = GMDHJBGLBEI(KELFCMEOPPM);
+				LEGAKDFPPHA_AvaiablePoint = GMDHJBGLBEI(KELFCMEOPPM);
 			}
 			JBCIDDKDJMM = FIBLGPNEKEM(KELFCMEOPPM);
 		}
@@ -273,7 +273,7 @@ public class PIGBBNDPPJC
 			}
 			if(KELFCMEOPPM_EpId > 0)
 			{
-				LEGAKDFPPHA = GMDHJBGLBEI(KELFCMEOPPM_EpId);
+				LEGAKDFPPHA_AvaiablePoint = GMDHJBGLBEI(KELFCMEOPPM_EpId);
 			}
 			JBCIDDKDJMM = FIBLGPNEKEM(KELFCMEOPPM_EpId);
 		}

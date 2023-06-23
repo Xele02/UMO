@@ -350,8 +350,8 @@ namespace XeApp.Game.Menu
 						rightVal = rscene.KELFCMEOPPM_EpisodeId;
 						break;
 					case SortItem.SecretBoard:
-						leftVal = lscene.JPIPENJGGDD;
-						rightVal = rscene.JPIPENJGGDD;
+						leftVal = lscene.JPIPENJGGDD_NumBoard;
+						rightVal = rscene.JPIPENJGGDD_NumBoard;
 						break;
 					case SortItem.LuckyLeaf:
 						leftVal = lscene.MKHFCGPJPFI_LimitOverCount;

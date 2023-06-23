@@ -275,7 +275,10 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x1EE8A94 Offset: 0x1EE8A94 VA: 0x1EE8A94
-		// public void StartAnim() { }
+		public void StartAnim()
+		{
+			m_FrameAnimation.StartAnim();
+		}
 
 		// // RVA: 0x1EE8AF0 Offset: 0x1EE8AF0 VA: 0x1EE8AF0
 		public void StartAnimGoStop(int start, int end)

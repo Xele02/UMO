@@ -11,6 +11,8 @@ class JpStringLiterals
 	public const string StringLiteral_9528 = "想定していない人数が入っています　id:"; //0x03bb1f98
 	public const string StringLiteral_9555 = "event_quest"; // 0x03bb2004
 	public const string StringLiteral_9630 = "から新しいメッセージがあります。"; // 0x03bb2130
+	public const string StringLiteral_9714 = "第"; //0x03bb2280
+	public const string StringLiteral_9715 = "話"; //0x03bb2284
 	public const string StringLiteral_9767 = "超時空ユニット"; // 0x03bb2354
 	public const string StringLiteral_9787 = "<color=yellow>期間限定エナジーアイテムの削除</color>"; // 0x03bb23a4
 	public const string StringLiteral_9788 = "<color=pink>ログイン日数="; // 0x03bb23a8
@@ -324,6 +326,10 @@ class JpStringLiterals
 	public const string StringLiteral_19017 = "誕生日"; // 0x03bbb3dc
 	public const string StringLiteral_19018 = "{0}/{1}/{2}　{3}"; // 0x03bbb3e0
 	public const string StringLiteral_19612 = "ユニットセット"; // 0x03bbbd28
+	public const string StringLiteral_20178 = " ★"; // 0x03bbc600
+	public const string StringLiteral_20179 = "の最大マス数="; // 0x03bbc604
+	public const string StringLiteral_20180 = "なのに "; // 0x03bbc608
+	public const string StringLiteral_20181 = "しかマスがない。"; // 0x03bbc60c
 	public const string StringLiteral_20290 = "l×{0}"; // 0x03bbc7c0
 	public const string StringLiteral_20367 = "ー"; // 0x03bbc8f4
 	public const string StringLiteral_20369 = "±{0}"; // 0x03bbc8fc

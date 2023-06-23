@@ -220,7 +220,7 @@ namespace XeApp.Game.Menu
 				m_point_den.SetNumber(data.JBFLCHFEIGL.DNBFMLBNAEE_TotalPoint - data.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint, 0);
 				SetGauge(Mathf.RoundToInt(((m_data.JBFLCHFEIGL.DNBFMLBNAEE_TotalPoint - m_data.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint) / m_data.JBFLCHFEIGL.DNBFMLBNAEE_TotalPoint - GetPoint0(data.KELFCMEOPPM_EpId)) * 100.0f));
 				this.StartCoroutineWatched(SetItemGaugeLine(EpisodeUtility.CalcEpisodeGaugeFrame(data.JBFLCHFEIGL.DNBFMLBNAEE_TotalPoint, data.DMHDNKILKGI_MaxPoint, GaugeMaxFrame)));
-				SetHasEpisodeGauge(EpisodeUtility.CalcEpisodeGaugeFrame(data.LEGAKDFPPHA, data.DMHDNKILKGI_MaxPoint, GaugeMaxFrame));
+				SetHasEpisodeGauge(EpisodeUtility.CalcEpisodeGaugeFrame(data.LEGAKDFPPHA_AvaiablePoint, data.DMHDNKILKGI_MaxPoint, GaugeMaxFrame));
 			}
 			else
 			{

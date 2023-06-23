@@ -193,7 +193,7 @@ namespace XeApp.Game.Menu
 				m_gauge_table.StartChildrenAnimGoStop(0, 0);
 				m_line_image.enabled = true;
 				m_next_image.enabled = true;
-				int a = EpisodeUtility.CalcEpisodeGaugeFrame(data.LEGAKDFPPHA, data.DMHDNKILKGI_MaxPoint, 264);
+				int a = EpisodeUtility.CalcEpisodeGaugeFrame(data.LEGAKDFPPHA_AvaiablePoint, data.DMHDNKILKGI_MaxPoint, 264);
 				m_available_episodepoint.StartChildrenAnimGoStop(a, a);
 			}
 			else

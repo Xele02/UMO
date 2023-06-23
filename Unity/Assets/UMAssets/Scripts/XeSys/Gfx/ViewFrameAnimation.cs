@@ -86,7 +86,13 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x1EE8AD0 Offset: 0x1EE8AD0 VA: 0x1EE8AD0
-		// public void StartAnim() { }
+		public void StartAnim()
+		{
+			m_startTime = 0;
+			m_endTime = -1;
+			m_AnimCount = 0;
+			m_IsAnimEnd = false;
+		}
 
 		// // RVA: 0x1EE8B4C Offset: 0x1EE8B4C VA: 0x1EE8B4C
 		public void StartAnimGoStop(int start, int end)

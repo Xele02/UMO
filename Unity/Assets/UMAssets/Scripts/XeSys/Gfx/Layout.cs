@@ -389,7 +389,10 @@ namespace XeSys.Gfx
 		// public void SetAllInterpolationType(ViewAnimation.InterpolationType type) { }
 
 		// // RVA: 0x2050D58 Offset: 0x2050D58 VA: 0x2050D58
-		// public void StartAllAnim() { }
+		public void StartAllAnim()
+		{
+			m_Root.StartAllAnim();
+		}
 
 		// // RVA: 0x2050D84 Offset: 0x2050D84 VA: 0x2050D84
 		// public void StartAllAnimGoStop(int start, int end) { }

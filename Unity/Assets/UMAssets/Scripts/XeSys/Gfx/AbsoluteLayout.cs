@@ -210,10 +210,27 @@ namespace XeSys.Gfx
 		// public void StartAllAnimation(float time) { }
 
 		// // RVA: 0x20402FC Offset: 0x20402FC VA: 0x20402FC
-		// private void StartAllAnim(List<ViewBase> listView) { }
+		private void StartAllAnim(List<ViewBase> listView)
+		{
+			StartAnim();
+			for (int i = 0; i < listView.Count; i++)
+			{
+				if (listView[i] is AbsoluteLayout)
+				{
+					(listView[i] as AbsoluteLayout).StartAllAnim();
+				}
+				else
+				{
+					listView[i].StartAnim();
+				}
+			}
+		}
 
 		// // RVA: 0x2040428 Offset: 0x2040428 VA: 0x2040428
-		// public void StartAllAnim() { }
+		public void StartAllAnim()
+		{
+			StartAllAnim(m_List);
+		}
 
 		// // RVA: 0x2040430 Offset: 0x2040430 VA: 0x2040430
 		private void StartAllAnimGoStop(List<ViewBase> listView, int start, int end)
