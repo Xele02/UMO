@@ -165,7 +165,14 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDAC130 Offset: 0xDAC130 VA: 0xDAC130
 		private void JudgedDelegate(RNoteObject noteObject, RhythmGameConsts.NoteResultEx a_result_ex, RhythmGameConsts.NoteJudgeType a_type)
 		{
-			if(noteObject.rNote.noteInfo.isSlide)
+			// UMO
+			bool isSlide = noteObject.rNote.noteInfo.isSlide;
+			#if UNITY_EDITOR
+			isSlide = false; // Disable slideon long note
+			#endif
+
+
+			if(isSlide)
 			{
 				if(a_result_ex.m_result != RhythmGameConsts.NoteResult.Miss)
 				{
@@ -211,7 +218,7 @@ namespace XeApp.Game.RhythmGame
 					}
 					else
 					{
-						if(!noteObject.rNote.noteInfo.isSlide)
+						if(!isSlide)
 						{
 							lastRNoteObject.Judged(RhythmGameConsts.NoteResult.Miss, RhythmGameConsts.NoteJudgeType.Normal);
 							Free();

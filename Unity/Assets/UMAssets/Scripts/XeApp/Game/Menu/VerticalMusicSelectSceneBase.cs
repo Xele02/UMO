@@ -1053,7 +1053,13 @@ namespace XeApp.Game.Menu
 		// protected void OnClickMissionButton() { }
 
 		// // RVA: 0xAD1410 Offset: 0xAD1410 VA: 0xAD1410
-		// protected void OnClickMusicRate() { }
+		protected void OnClickMusicRate()
+		{
+			TodoLogger.LogNotImplemented("OnClickMusicRate");
+			//SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			//GameManager.Instance.CloseOfferNotice();
+			//MenuScene.Instance.Call(TransitionList.Type.MUSIC_RATE, null, true);
+		}
 
 		// // RVA: 0xAD158C Offset: 0xAD158C VA: 0xAD158C
 		protected void OnClickMusicBookMark(Action okCallBack)

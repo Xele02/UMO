@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System;
 using XeSys;
 using XeApp.Game.Common;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -128,8 +129,98 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF96C50 Offset: 0xF96C50 VA: 0xF96C50
 		private void UpdateSwaip()
 		{
-			TodoLogger.Log(0, "UpdateSwaip");
-			m_updater = UpdateIdle;
+			bool b = false;
+            TouchInfoRecord record = InputManager.Instance.GetFirstInScreenTouchRecord();
+			if(record == null)
+			{
+				InputFlick();
+				m_swaipState = SwaipState.Wait;
+	            m_updater = UpdateIdle;
+			}
+			else
+			{
+				if(!record.currentInfo.isIllegal)
+				{
+					ChangeList(record.currentInfo.nativePosition - m_old_pos);
+					if(!m_stop)
+					{
+						m_width += record.currentInfo.nativePosition.x - m_old_pos.x;
+						m_height += record.currentInfo.nativePosition.y - m_old_pos.y;
+					}
+					if(m_is_swaip_width_flag && m_is_swaip)
+					{
+						if(m_swaip_width_value <= m_width)
+						{
+							m_input_swaip |= 1;
+							if(m_is_once)
+							{
+								m_is_swaip = false;
+							}
+							else
+							{
+								m_width = 0;
+							}
+							b = true;
+						}
+						else if(-m_swaip_width_value >= m_width)
+						{
+							m_input_swaip |= 2;
+							if(m_is_once)
+							{
+								m_is_swaip = false;
+							}
+							else
+							{
+								m_width = 0;
+							}
+							b = true;
+						}
+					}
+					if(m_is_swaip_height_flag && m_is_swaip)
+					{
+						if(m_swaip_height_value <= m_height)
+						{
+							m_input_swaip |= 8;
+							if(m_is_once)
+							{
+								m_is_swaip = false;
+							}
+							else
+							{
+								m_height = 0;
+							}
+							b = true;
+						}
+						else if(-m_swaip_height_value >= m_height)
+						{
+							m_input_swaip |= 4;
+							if(m_is_once)
+							{
+								m_is_swaip = false;
+							}
+							else
+							{
+								m_height = 0;
+							}
+							b = true;
+						}
+					}
+					m_old_pos = record.currentInfo.nativePosition;
+				}
+			}
+			//LAB_00f96f3c
+			if(!m_ignoreActivePopup)
+			{
+				if(PopupWindowManager.IsActivePopupWindow())
+				{
+					m_swaipState = SwaipState.Wait;
+					m_updater = UpdateIdle;
+				}
+			}
+			if(b && m_is_mute == false)
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_004);
+			}
 		}
 
 		// // RVA: 0xF971DC Offset: 0xF971DC VA: 0xF971DC
@@ -236,7 +327,33 @@ namespace XeApp.Game.Menu
 		// private void InputSwaip(SwaipTouch.Direction dir) { }
 
 		// // RVA: 0xF97124 Offset: 0xF97124 VA: 0xF97124
-		// private void InputFlick() { }
+		private void InputFlick()
+		{
+			float w = CalcWidthAcceleration();
+			float h = CalcHeightAcceleration();
+			if(m_is_swaip_width_flag)
+			{
+				if(m_flick_width_value <= w)
+				{
+					m_input_flick |= 1;
+				}
+				else if(-m_flick_width_value >= w)
+				{
+					m_input_flick |= 2;
+				}
+			}
+			if(m_is_swaip_height_flag)
+			{
+				if(m_flick_height_value <= w)
+				{
+					m_input_flick |= 8;
+				}
+				else if(-m_flick_height_value >= w)
+				{
+					m_input_flick |= 4;
+				}
+			}
+		}
 
 		// // RVA: 0xF96868 Offset: 0xF96868 VA: 0xF96868
 		private void InitList()
@@ -271,7 +388,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xF97048 Offset: 0xF97048 VA: 0xF97048
-		// private void ChangeList(Vector3 pos) { }
+		private void ChangeList(Vector3 pos)
+		{
+			m_acceleration_list.RemoveAt(0);
+			m_acceleration_list.Add(pos);
+		}
 
 		// // RVA: 0xF965C4 Offset: 0xF965C4 VA: 0xF965C4
 		private Canvas GetCanvas()
@@ -285,7 +406,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF96B88 Offset: 0xF96B88 VA: 0xF96B88
 		private bool IsTouchEnableArea(Vector3 touchPosition)
 		{
-			return RectTransformUtility.RectangleContainsScreenPoint(m_hit_check, touchPosition);
+			return RectTransformUtility.RectangleContainsScreenPoint(m_hit_check, touchPosition, uiCamera);
 		}
 	}
 }

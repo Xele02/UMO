@@ -71,7 +71,26 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xCF8370 Offset: 0xCF8370 VA: 0xCF8370
-		//public static bool CheckPlateId(List<MOLKENLNCPE.CEFIOPJKEIC> itemList) { }
+		public static bool CheckPlateId(List<MOLKENLNCPE_DropData.CEFIOPJKEIC> itemList)
+		{
+			bool res = false;
+			for(int i = 0; i < itemList.Count; i++)
+			{
+				if(itemList[i].HHACNFODNEF_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+				{
+					int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemList[i].KIJAPOFAGPN_ItemId);
+					if(itemId > 0)
+					{
+						if(!m_showedIdList.Contains(itemId))
+						{
+							RegisterPlateIdInner(itemList[i].KIJAPOFAGPN_ItemId);
+							res = true;
+						}
+					}
+				}
+			}
+			return res;
+		}
 
 		//// RVA: 0xCF860C Offset: 0xCF860C VA: 0xCF860C
 		//public static void CheckPlateId(JJPEIELNEJB.JLHHGLANHGE item) { }

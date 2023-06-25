@@ -622,6 +622,9 @@ namespace XeApp.Game.RhythmGame
 									{
 										flick = -1;
 									}
+									// don't flick on long note
+									if(refRNoteOwner.GetNote(idx).noteInfo.longTouch != MusicScoreData.TouchState.None)
+										flick = -1;
 									break;
 								}
 							}

@@ -325,7 +325,8 @@ namespace XeApp.Game.Menu
 			m_utaRate.onClickButton = () =>
 			{
 				//0xBF0554
-				TodoLogger.LogNotImplemented("m_utaRate onClickButton");
+				m_musicList.MusicScrollView.SetPosition(list_no);
+				OnClickMusicRate();
 			};
 			m_eventBanner.OnButtonClickListener = () =>
 			{

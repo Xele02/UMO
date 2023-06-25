@@ -460,7 +460,7 @@ namespace XeApp.Game.Menu
 							else
 							{
 								valk.GCCNMFHELCB_Form = v.GetFormType();
-								v.ChangeValkyrie(valk.GCCNMFHELCB_Form, valk.GCCNMFHELCB_Form);
+								v.ChangeValkyrie(valk.GPPEFLKGGGJ_ValkyrieId, valk.GCCNMFHELCB_Form);
 							}
 						}
 						else
@@ -530,7 +530,10 @@ namespace XeApp.Game.Menu
 		protected override void OnPreSetCanvas()
 		{
 			base.OnPreSetCanvas();
-			m_isGoDiva = (Args as ValkyrieDataArgs).isGoDiva;
+			if(Args != null && Args is ValkyrieDataArgs)
+			{
+				m_isGoDiva = (Args as ValkyrieDataArgs).isGoDiva;
+			}
 			m_UnitData = GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(m_isGoDiva);
 			MenuScene.Instance.BgControl.SetPriority(BgPriority.TopMost);
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PNNHEOOJBFI_TutorialGeneralFlags.EDEDFDDIOKO_SetTrue(2);
@@ -862,7 +865,19 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x165E554 Offset: 0x165E554 VA: 0x165E554
 		private void OnClickViewButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickViewButton");
+			if(!m_SwaipTouch.IsMoveFlickDistance())
+			{
+				if(InputManager.Instance.GetInScreenTouchCount() < 2)
+				{
+					if(!MenuScene.Instance.DirtyChangeScene && IsLoadedValkyrie())
+					{
+						PGIGNJDPCAH.NNOBACMJHDM(PGIGNJDPCAH.FELLIEJEPIJ.LPBDIINNFEE/*5*/);
+						SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+						MenuScene.Instance.Call(TransitionList.Type.MODEL_VIEW_MODE, null, true);
+						m_viewSceneFlag = true;
+					}
+				}
+			}
 		}
 
 		// // RVA: 0x165E788 Offset: 0x165E788 VA: 0x165E788

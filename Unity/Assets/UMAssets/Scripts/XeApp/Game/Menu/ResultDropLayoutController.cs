@@ -113,9 +113,16 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xD019AC Offset: 0xD019AC VA: 0xD019AC
 		private IEnumerator CO_Skip()
 		{
-			TodoLogger.Log(0, "CO_Skip");
+			//0xD024FC
+			layoutDropMain.SkipBeginAnim();
 			yield return null;
-
+			layoutOkayButton.SkipAnim();
+			if(isEnableFriendInfo)
+			{
+				layoutFriendInfo.SkipBeginAnim();
+			}
+			layoutDropMain.SkipRecordPlate(StartPopupProcess);
+			isSkiped = true;
 		}
 
 		// // RVA: 0xD01A58 Offset: 0xD01A58 VA: 0xD01A58
@@ -153,7 +160,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xD01B10 Offset: 0xD01B10 VA: 0xD01B10
-		// private void StartPopupProcess() { }
+		private void StartPopupProcess()
+		{
+			if(coroutine != null)
+				return;
+			coroutine = this.StartCoroutineWatched(Co_PopupProcess());
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x72158C Offset: 0x72158C VA: 0x72158C
 		// // RVA: 0xD01B48 Offset: 0xD01B48 VA: 0xD01B48

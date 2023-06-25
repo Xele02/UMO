@@ -155,10 +155,54 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1D94A38 Offset: 0x1D94A38 VA: 0x1D94A38
-		// public void SkipBeginAnim() { }
+		public void SkipBeginAnim()
+		{
+			countUpSEPlayback.Stop();
+			countUpBonusSEPlayback.Stop();
+			for(int i = 0; i < itemList.Count; i++)
+			{
+				itemList[i].StopAllCoroutinesWatched();
+			}
+			for(int i = 0; i < itemList.Count; i++)
+			{
+				itemList[i].SkipBeginAnim();	
+			}
+			if(itemList.Count == 0)
+			{
+				layoutZeroItem.StartChildrenAnimGoStop("st_in");
+			}
+			do
+			{
+				;
+			} while(!AddItem());
+			scrollSupporter.scrollRect.horizontalNormalizedPosition = 0;
+			SetupUCAnimTable();
+			StringBuilder str = new StringBuilder(32);
+			numberTotalUC.SetNumber(viewDrop.PBIHLJKLHGJ_UCNumber, 0);
+			numberTotalUC.enabled = true;
+			if(viewDrop.ADHABBGDFPK != 0)
+				textConvertUC.enabled = true;
+			layoutRoot.StartChildrenAnimGoStop("st_in");
+			EnterMainStep(MainAnimStep.End);
+			StartScoreLoopAnim();
+			layoutRankIcon[(int)viewDrop.DCBDCHPKLCN_Rank].StartChildrenAnimGoStop("st_in", "st_in");
+			layoutRankIcon[(int)viewDrop.DCBDCHPKLCN_Rank].StartChildrenAnimLoop("logo_act", "loen_act");
+			scrollSupporter.ContentHeight = 0;
+		}
 
 		// // RVA: 0x1D95714 Offset: 0x1D95714 VA: 0x1D95714
-		// public void SkipRecordPlate(Action callback) { }
+		public void SkipRecordPlate(Action callback)
+		{
+			if(RecordPlateUtility.CheckPlateId(viewDrop.HBHMAKNGKFK))
+			{
+				this.StartCoroutineWatched(PopupRecordPlate.Show(RecordPlateUtility.eSceneType.Result, callback, false));
+				return;
+			}
+			if(callback != null)
+			{
+				callback();
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71933C Offset: 0x71933C VA: 0x71933C
 		// // RVA: 0x1D948E0 Offset: 0x1D948E0 VA: 0x1D948E0

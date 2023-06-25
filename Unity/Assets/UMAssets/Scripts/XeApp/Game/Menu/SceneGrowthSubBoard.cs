@@ -132,7 +132,7 @@ namespace XeApp.Game.Menu
 							AFIFDLOAKGI a2 = GetPanelItem(m_boardSquareList[j][k].saveIndex);
 							if (a2.INDDJNMPONH_StatType == 20)
 							{
-								m_boardSquareList[j][k].isPossible =
+								//m_boardSquareList[j][k].isPossible =
 							}
 						}
 					}

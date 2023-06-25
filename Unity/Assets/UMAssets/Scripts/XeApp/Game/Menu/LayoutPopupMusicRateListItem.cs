@@ -82,7 +82,7 @@ namespace XeApp.Game.Menu
 				m_imageRank.enabled = false;
 				m_textRank.text = view.FJOLNJLLJEJ_RankNum.ToString();
 			}
-			m_textName.text = RichTextUtility.MakeColorTagString(view.NEDBBJDAFBH_MusicName, GameAttributeTextColor.Colors[Mathf.Clamp(view.FKDCCLPGKDK_JacketAttr, 0, GameAttributeTextColor.Colors.Length)]);
+			m_textName.text = RichTextUtility.MakeColorTagString(view.NEDBBJDAFBH_MusicName, GameAttributeTextColor.Colors[Mathf.Clamp(view.FKDCCLPGKDK_JacketAttr - 1, 0, GameAttributeTextColor.Colors.Length)]);
 			SetFrameUv(s_frameAttrUvFormat[view.FKDCCLPGKDK_JacketAttr]);
 			SetIconUv(s_iconAttrUvFormat[view.FKDCCLPGKDK_JacketAttr]);
 			SetRating(view.HKIAHOEEMLC_PrevScore, view.LPALNMHPDKK_Score);
