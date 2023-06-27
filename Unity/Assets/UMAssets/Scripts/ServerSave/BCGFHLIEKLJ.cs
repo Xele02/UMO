@@ -70,7 +70,12 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 		//public FENCAJJBLBH PFAKPFKJJKA() { }
 
 		//// RVA: 0xF351F0 Offset: 0xF351F0 VA: 0xF351F0
-		//public bool PPJAGFPBFHJ(int HMFFHLPNMPH) { }
+		public bool PPJAGFPBFHJ(int HMFFHLPNMPH)
+		{
+			CADENLBDAEB_IsNew = BFINGCJHOHI_Cnt < HMFFHLPNMPH;
+			BFINGCJHOHI_Cnt = HMFFHLPNMPH;
+			return CADENLBDAEB_IsNew;
+		}
 	}
 
 	public class GNGFGEIAGJL : AKAHOEBACGJ
@@ -398,7 +403,7 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 							data.PPFNGGCBJKC_Id = i + 1;
 							int c = cnt;
 							if (i < items.Count)
-								c = items[i].KEJMJPHFFOJ;
+								c = items[i].KEJMJPHFFOJ_Max;
 							data.BFINGCJHOHI_Cnt = CJAENOMGPDA_ReadInt(b2, AFEHLCGHAEE_Strings.BFINGCJHOHI_cnt, 0, ref isInvalid);
 							if (c < data.BFINGCJHOHI_Cnt)
 								data.BFINGCJHOHI_Cnt = c;
@@ -473,7 +478,7 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 							data.PPFNGGCBJKC_Id = i + 1;
 							int c = cnt;
 							if (items.Count < i) // ??
-								c = items[i].KEJMJPHFFOJ;
+								c = items[i].KEJMJPHFFOJ_Max;
 							data.BFINGCJHOHI_Cnt = CJAENOMGPDA_ReadInt(b2, AFEHLCGHAEE_Strings.BFINGCJHOHI_cnt, 0, ref isInvalid);
 							if (c < data.BFINGCJHOHI_Cnt)
 								data.BFINGCJHOHI_Cnt = c;

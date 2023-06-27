@@ -46,10 +46,16 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x15AE134 Offset: 0x15AE134 VA: 0x15AE134
-		//public void SetOpen() { }
+		public void SetOpen()
+		{
+			m_flags |= 1;
+		}
 
 		//// RVA: 0x15AE144 Offset: 0x15AE144 VA: 0x15AE144
-		//public void SetClose() { }
+		public void SetClose()
+		{
+			m_flags &= 0xfffffffe;
+		}
 
 		//// RVA: 0x15AE154 Offset: 0x15AE154 VA: 0x15AE154
 		//public bool IsOpen() { }

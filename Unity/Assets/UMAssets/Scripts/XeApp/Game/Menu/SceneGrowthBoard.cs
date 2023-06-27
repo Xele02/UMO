@@ -238,12 +238,16 @@ namespace XeApp.Game.Menu
 		//public int GetPanelValue(int index) { }
 
 		//// RVA: 0x15A9000 Offset: 0x15A9000 VA: 0x15A9000
-		//public bool IsPanelRock(int sqrX, int sqrY) { }
+		public bool IsPanelRock(int sqrX, int sqrY)
+		{
+			return m_boardSquareList[sqrX][sqrY].type == SquareType.Lock;
+		}
 
 		//// RVA: 0x15A90CC Offset: 0x15A90CC VA: 0x15A90CC
 		private void OnPushPanel(int sqrX, int sqrY)
 		{
-			TodoLogger.LogNotImplemented("OnPushPanel");
+			if (OnUnlockAction != null)
+				OnUnlockAction(this, sqrX, sqrY);
 		}
 
 		//// RVA: 0x15A9158 Offset: 0x15A9158 VA: 0x15A9158
@@ -515,23 +519,141 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x15AACBC Offset: 0x15AACBC VA: 0x15AACBC
 		public void UnlockAllPanelListup(List<byte> panelList, List<byte> roadList)
 		{
-			TodoLogger.Log(0, "UnlockAllPanelListup");
+			for(int i = 1; i < m_boardSquareList.Count; i++)
+			{
+				for (int j = 0; j < m_boardSquareList[i].Length; j++)
+				{
+					if(!m_boardSquareList[i][j].isOpen)
+					{
+						if(m_boardSquareList[i][j].type == SquareType.Panel)
+						{
+							panelList.Add((byte)m_boardSquareList[i][j].saveIndex);
+						}
+						else if(m_boardSquareList[i][j].type == SquareType.Road)
+						{
+							roadList.Add((byte)m_boardSquareList[i][j].saveIndex);
+						}
+					}
+				}
+			}
 		}
 
 		//// RVA: 0x15AAEB4 Offset: 0x15AAEB4 VA: 0x15AAEB4
 		public void UnlockEpisodePanelListup(List<byte> panelList, List<byte> roadList)
 		{
-			TodoLogger.Log(0, "UnlockEpisodePanelListup");
+			List<int[]> l = new List<int[]>();
+			for(int i = 0; i < m_boardSquareList.Count; i++)
+			{
+				for(int j = 0; j < m_boardSquareList[i].Length; j++)
+				{
+					if(!m_boardSquareList[i][j].isOpen && m_boardSquareList[i][j].type == SquareType.Panel)
+					{
+						AFIFDLOAKGI a = GetPanelItem(m_boardSquareList[i][j].saveIndex);
+						if(a.INDDJNMPONH_StatType == 18)
+						{
+							int[] intVal = new int[2];
+							intVal[0] = i;
+							intVal[1] = j;
+							l.Add(intVal);
+						}
+					}
+				}
+			}
+			for (int i = 0; i < l.Count; i++)
+			{
+				OpenPanelSearch(l[i][0], l[i][1], (BoardSquare board, int bx, int by) =>
+				{
+					//0x15AC540
+					if (by == 3)
+					{
+						if (roadList.Contains((byte)bx))
+							return;
+						roadList.Add((byte)bx);
+					}
+					else
+					{
+						if (panelList.Contains((byte)bx))
+							return;
+						panelList.Add((byte)bx);
+					}
+				});
+			}
 		}
 
 		//// RVA: 0x15AB6E0 Offset: 0x15AB6E0 VA: 0x15AB6E0
 		public void UnlockStatusPanelListup(List<byte> panelList, List<byte> roadList)
 		{
-			TodoLogger.Log(0, "UnlockStatusPanelListup");
+			List<int[]> l = new List<int[]>();
+			for(int i = 0; i < m_boardSquareList.Count; i++)
+			{
+				for(int j = 0; j < m_boardSquareList[i].Length; j++)
+				{
+					if(!m_boardSquareList[i][j].isOpen && m_boardSquareList[i][j].type == SquareType.Panel)
+					{
+						AFIFDLOAKGI a = GetPanelItem(m_boardSquareList[i][j].saveIndex);
+						if(a.INDDJNMPONH_StatType != 0)
+						{
+							if (a.INDDJNMPONH_StatType != 17)
+							{
+								if(a.INDDJNMPONH_StatType != 18)
+								{
+									if (a.INDDJNMPONH_StatType != 19)
+									{
+										if (a.INDDJNMPONH_StatType != 21)
+										{
+											if (a.INDDJNMPONH_StatType != 20)
+											{
+												int[] intVal = new int[2];
+												intVal[0] = i;
+												intVal[1] = j;
+												l.Add(intVal);
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			for(int i = 0; i < l.Count; i++)
+			{
+				OpenPanelSearch(l[i][0], l[i][1], (BoardSquare board, int bx, int by) =>
+				{
+					//0x15AC66C
+					if(by == 3)
+					{
+						if (roadList.Contains((byte)bx))
+							return;
+						roadList.Add((byte)bx);
+					}
+					else
+					{
+						if (panelList.Contains((byte)bx))
+							return;
+						panelList.Add((byte)bx);
+					}
+				});
+			}
 		}
 
 		//// RVA: 0x15ABC4C Offset: 0x15ABC4C VA: 0x15ABC4C
-		//public void UnlockPanelListup(int x, int y, List<byte> panelList, List<byte> roadList) { }
+		public void UnlockPanelListup(int x, int y, List<byte> panelList, List<byte> roadList)
+		{
+			panelList.Add((byte)m_boardSquareList[x][y].saveIndex);
+			OpenPanelSearch(x - 1, y, (BoardSquare board, int bx, int by) =>
+			{
+				//0x15AC798
+				if (by == 3)
+				{
+					roadList.Add((byte)bx);
+				}
+				else
+				{
+					panelList.Add((byte)bx);
+				}
+			});
+		}
 
 		//// RVA: 0x15AB364 Offset: 0x15AB364 VA: 0x15AB364
 		protected void OpenPanelSearch(int x, int y, Action<BoardSquare, int, int> func)
@@ -571,7 +693,36 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x15A8BD0 Offset: 0x15A8BD0 VA: 0x15A8BD0
 		public void OnChangeScroll(Vector2 position)
 		{
-			TodoLogger.Log(0, "OnChangeScroll");
+			while(-120 > m_scrollRect.content.anchoredPosition.x - m_scrollDiff)
+			{
+				position.x = m_topPosition;
+				m_scrollDiff -= 120;
+				if((-1 < position.x) && position.x <= m_lastPosition)
+				{
+					for (int i = 0; i < 5; i++)
+					{
+						RemovePanel((int)position.x, i);
+						AddPanel((int)position.x + 8, i);
+						position.x = m_topPosition;
+					}
+				}
+				m_topPosition = (int)(position.x + 1);
+			}
+			while(m_scrollRect.content.anchoredPosition.x - m_scrollDiff >= 0)
+			{
+				m_topPosition--;
+				m_scrollDiff += 120;
+				if(-1 < m_topPosition && m_topPosition <= m_lastPosition)
+				{
+					RemovePanel(m_topPosition + 8, 0);
+					AddPanel(m_topPosition, 0);
+					for(int i = 1; i < 5; i++)
+					{
+						RemovePanel(m_topPosition + 8, i);
+						AddPanel(m_topPosition, i);
+					}
+				}
+			}
 		}
 
 		//// RVA: 0x15ABFD0 Offset: 0x15ABFD0 VA: 0x15ABFD0

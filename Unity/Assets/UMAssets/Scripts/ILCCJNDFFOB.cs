@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using XeApp.Game;
@@ -635,7 +636,52 @@ public class ILCCJNDFFOB
 	// public void JNBKOAKJDAL(int HHGMPEEGFMA, int HMFFHLPNMPH, int IIGPLLECFND, int KJMLLBDLKCG, List<MFDJIFIIPJD> HBHMAKNGKFK, BBHNACPENDM LDEGEHAEALK, IAPIDHGIEED OMOEKOCNICP, IAPIDHGIEED ONNIHHLHLDP, PFIJNPCEOIL IFFKECJOPIB) { }
 
 	// // RVA: 0x8FF734 Offset: 0x8FF734 VA: 0x8FF734
-	// public void NNAPCDMAAJM(int BCCHOBPJJKE, int JPIPENJGGDD, int MMEIOJKLCKK, int PNMKPKMDOND, List<int> GFFAJFPIEKD, List<int> GHINHKOOBKI, int NEMMJLNMEHB, List<int> FHHIONFFABP) { }
+	public void NNAPCDMAAJM(int BCCHOBPJJKE, int JPIPENJGGDD, int MMEIOJKLCKK, int PNMKPKMDOND, List<int> GFFAJFPIEKD, List<int> GHINHKOOBKI, int NEMMJLNMEHB, List<int> FHHIONFFABP)
+	{
+		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
+		FLBFCCIEPNC_InitBaseJson(json, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
+		MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[BCCHOBPJJKE - 1];
+		json["scene_id"] = BCCHOBPJJKE;
+		if(JPIPENJGGDD < 1)
+		{
+			json["rarity"] = dbScene.EKLIPGELKCL_Rarity;
+		}
+		else
+		{
+			json["rarity"] = dbScene.EKLIPGELKCL_Rarity + 1;
+		}
+		json[AFEHLCGHAEE_Strings.MMEIOJKLCKK_bf_main_lv] = MMEIOJKLCKK;
+		json[AFEHLCGHAEE_Strings.PNMKPKMDOND_af_main_lv] = PNMKPKMDOND;
+		JBBHNIACMFJ.Length = 0;
+		bool b = false;
+		for(int i = 0; i < GFFAJFPIEKD.Count; i++)
+		{
+			if (b)
+				JBBHNIACMFJ.Append(',');
+			JBBHNIACMFJ.Append(EKLNMHFCAOI.INCKKODFJAP_GetItemName(GFFAJFPIEKD[i]));
+			JBBHNIACMFJ.Append(':');
+			JBBHNIACMFJ.Append(GFFAJFPIEKD[i]);
+			b = true;
+		}
+		json["item_info"] = JBBHNIACMFJ.ToString();
+		json[AFEHLCGHAEE_Strings.NEMMJLNMEHB_money] = NEMMJLNMEHB;
+		JBBHNIACMFJ.Length = 0;
+		b = false;
+		for (int i = 0; i < FHHIONFFABP.Count; i++)
+		{
+			if (FHHIONFFABP[i] != 0)
+			{
+				if (b)
+					JBBHNIACMFJ.Append(',');
+				JBBHNIACMFJ.Append(IDMPGHMNLHD.HBOECCCMPMJ[i]);
+				JBBHNIACMFJ.Append(':');
+				JBBHNIACMFJ.Append(FHHIONFFABP[i]);
+				b = true;
+			}
+		}
+		json["open_panel_info"] = JBBHNIACMFJ.ToString();
+		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.NNAPCDMAAJM/*8*/, json, false);
+	}
 
 	// // RVA: 0x900300 Offset: 0x900300 VA: 0x900300
 	public void JAHALBMOANH(int JJBGOIMEIPF, OAGBCBBHMPF.COIIJOEKBDH LHEIIHKDMPA, string NPBEKONLDDI, int ADPPAIPFHML, int FBAIDPHDEBA, int LIDBKCIMCKE)

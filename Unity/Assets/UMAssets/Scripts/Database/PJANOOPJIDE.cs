@@ -9,7 +9,7 @@ public class PJANOOPJIDE_TutorialPict : DIHHCBACKGG_DbSection
 	{
 		public int PPFNGGCBJKC; // 0x8
 		public int[] FJOLNJLLJEJ; // 0xC
-		public int[] AKBHPFBDDOL; // 0x10
+		public int[] AKBHPFBDDOL_TutoCondId; // 0x10
 		public int PPEGAKEIEGM_Enabled; // 0x14
 		public int KNHABOOAAIP; // 0x18
 		public string[] JONNCMDGMKA; // 0x1C
@@ -61,7 +61,7 @@ public class PJANOOPJIDE_TutorialPict : DIHHCBACKGG_DbSection
 		{
 			HNHHGJCPMEA data = new HNHHGJCPMEA();
 			data.PPFNGGCBJKC = array[i].PPFNGGCBJKC;
-			data.AKBHPFBDDOL = array[i].JIMJHIDEHNM;
+			data.AKBHPFBDDOL_TutoCondId = array[i].JIMJHIDEHNM;
 			data.PPEGAKEIEGM_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, array[i].DBHPPMPNCKF);
 			data.KNHABOOAAIP = array[i].KNHABOOAAIP;
 			data.JONNCMDGMKA = array[i].IPBHCLIHAPG;

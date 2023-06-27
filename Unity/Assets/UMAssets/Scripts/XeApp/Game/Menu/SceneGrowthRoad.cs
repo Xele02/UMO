@@ -93,7 +93,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x10DD3E8 Offset: 0x10DD3E8 VA: 0x10DD3E8
-		//public void Expanded(bool isOpen) { }
+		public void Expanded(bool isOpen)
+		{
+			if (isOpen)
+				SetOpen(m_isSub, m_isCenter);
+			else
+				SetClose();
+			m_flags |= 1;
+		}
 
 		//// RVA: 0x10DD44C Offset: 0x10DD44C VA: 0x10DD44C
 		//public void PlayUnLockAnime() { }

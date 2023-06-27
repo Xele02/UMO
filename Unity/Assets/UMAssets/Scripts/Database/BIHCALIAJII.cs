@@ -45,7 +45,19 @@ public class BIHCALIAJII_GachaLimit : DIHHCBACKGG_DbSection
 	//public BIHCALIAJII.AICPHCIFEJL IEOBBIBCNPH(int HHGMPEEGFMA) { }
 
 	//// RVA: 0xC83200 Offset: 0xC83200 VA: 0xC83200
-	//public int DDHDJNCFNOC(int HHGMPEEGFMA) { }
+	public int DDHDJNCFNOC(int HHGMPEEGFMA)
+	{
+		AICPHCIFEJL a = CDENCMNHNGA.Find((AICPHCIFEJL GHPLINIACBB) =>
+		{
+			//0xC850D0
+			return HHGMPEEGFMA == GHPLINIACBB.FEFDGBPFKBJ_GId;
+		});
+		if(a != null && a.PLALNIIBLOF_En == 2)
+		{
+			return a.FOILNHKHHDF_Pt;
+		}
+		return 0;
+	}
 
 	//// RVA: 0xC83460 Offset: 0xC83460 VA: 0xC83460
 	//public bool PJPDOCNJNGJ(int HHGMPEEGFMA, int DNBFMLBNAEE) { }

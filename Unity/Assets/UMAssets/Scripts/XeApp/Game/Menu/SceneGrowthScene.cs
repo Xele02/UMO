@@ -76,8 +76,8 @@ namespace XeApp.Game.Menu
 		private PopupSceneGrowthSetting m_popupSetting = new PopupSceneGrowthSetting(); // 0xF4
 		private PopupSceneGrowthConfirmSetting m_popupGrowthConfirmSetting = new PopupSceneGrowthConfirmSetting(); // 0xF8
 		private PopupSceneGrowthInfinityPanelSetting m_popupInfinityPanelSetting = new PopupSceneGrowthInfinityPanelSetting(); // 0xFC
-		//private PopupItemUseConfirmSetting m_popupItemUseConfirmSetting = new PopupItemUseConfirmSetting(); // 0x100
-		//private PopupItemRarityUpConfirmSetting m_popupItemRarityUpConfirmSetting = new PopupItemRarityUpConfirmSetting(); // 0x104
+		private PopupItemUseConfirmSetting m_popupItemUseConfirmSetting = new PopupItemUseConfirmSetting(); // 0x100
+		private PopupItemRarityUpConfirmSetting m_popupItemRarityUpConfirmSetting = new PopupItemRarityUpConfirmSetting(); // 0x104
 		private EventStoryOpenListPopupSetting m_popupEventStoryOpenListPopupSetting = new EventStoryOpenListPopupSetting(); // 0x108
 		private EpisodeRewardGet m_episodeRewardWindow; // 0x10C
 		private int m_lastRewardItemId; // 0x110
@@ -305,7 +305,7 @@ namespace XeApp.Game.Menu
 				yield return Co.R(layoutOperation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject obj) =>
 				{
 					//0x10E741C
-					m_statusWindow = GetComponent<SceneGrowthStatus>();
+					m_statusWindow = obj.GetComponent<SceneGrowthStatus>();
 					m_statusWindow.transform.SetParent(transform, false);
 					m_statusWindow.PushStoryButtonListener += () =>
 					{
@@ -342,7 +342,7 @@ namespace XeApp.Game.Menu
 				yield return Co.R(layoutOperation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject obj) =>
 				{
 					//0x10E7AA8
-					m_itemPassButtonLayout.GetComponent<SceneGrowthPassButton>();
+					m_itemPassButtonLayout = obj.GetComponent<SceneGrowthPassButton>();
 					m_itemPassButtonLayout.OnClickButton = OnPushPassPurchaseButton;
 					m_itemPassButtonLayout.transform.SetParent(transform, false);
 				}));
@@ -353,7 +353,7 @@ namespace XeApp.Game.Menu
 				yield return Co.R(layoutOperation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject obj) =>
 				{
 					//0x10E7C28
-					m_itemUnlockButtonLayout.GetComponent<SceneGrowthUnlockButton>();
+					m_itemUnlockButtonLayout = obj.GetComponent<SceneGrowthUnlockButton>();
 					m_itemUnlockButtonLayout.transform.SetParent(transform, false);
 				}));
 				layoutOperation = null;
@@ -639,19 +639,226 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7252A4 Offset: 0x7252A4 VA: 0x7252A4
 		//// RVA: 0x10E02D0 Offset: 0x10E02D0 VA: 0x10E02D0
-		//private IEnumerator ShowRarityUpConfirmPopupCoroutine() { }
+		private IEnumerator ShowRarityUpConfirmPopupCoroutine()
+		{
+			MessageBank bank; // 0x1C
+			EKLNMHFCAOI.FKGCBLHOOCL_Category itemType; // 0x20
+			int itemId; // 0x24
+
+			//0x10F5174
+			MenuScene.Instance.InputDisable();
+			if (!m_popupItemUseConfirmSetting.ISLoaded())
+				yield return this.StartCoroutineWatched(m_popupItemUseConfirmSetting.LoadAssetBundlePrefab(transform));
+			MenuScene.Instance.InputEnable();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			bank = MessageManager.Instance.GetBank("menu");
+			int rarityUpItemId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("rarity_up_item_id", 230001);
+			itemType = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(rarityUpItemId);
+			itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(rarityUpItemId);
+			int num = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.FKGCBLHOOCL_Category.CIOGEKJNMBB_RareUpItem, 1, null);
+			int a = 0;
+			List<NKFJNAANPNP.MOJLCADLMKH> n = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DPNKPPBEAGJ_RareUpItem.MCPIBDPKBBD(time);
+			if (n.Count > 0)
+			{
+				a = n[0].HNKFMAJIFJD;
+			}
+			m_popupItemUseConfirmSetting.TitleText = bank.GetMessageByLabel("rarityup_item_use_title");
+			m_popupItemUseConfirmSetting.WindowSize = SizeType.Middle;
+			m_popupItemUseConfirmSetting.TypeItemId = rarityUpItemId;
+			m_popupItemUseConfirmSetting.Cost = 1;
+			m_popupItemUseConfirmSetting.OwnCount = num;
+			m_popupItemUseConfirmSetting.Period = a;
+			int b = NHPDPKHMFEP.HHCJCDFCLOB.MENKMJPCELJ();
+			if (num < 1)
+			{
+				if(b == 0 || b == -3)
+				{
+					m_popupItemUseConfirmSetting.OverrideText = bank.GetMessageByLabel("rarityup_item_use_desc_2");
+					m_popupItemUseConfirmSetting.Buttons = new ButtonInfo[2]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.PassPurchase, Type = PopupButton.ButtonType.Positive }
+					};
+				}
+				else
+				{
+					m_popupItemUseConfirmSetting.OverrideText = bank.GetMessageByLabel("rarityup_item_use_desc_2");
+					m_popupItemUseConfirmSetting.Buttons = new ButtonInfo[1]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+					};
+				}
+			}
+			else
+			{
+				m_popupItemUseConfirmSetting.OverrideText = bank.GetMessageByLabel("rarityup_item_use_desc_1");
+				m_popupItemUseConfirmSetting.Buttons = new ButtonInfo[2]
+				{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				};
+			}
+			bool isCancel = false;
+			bool isPurchase = false;
+			bool isClose = false;
+			PopupWindowManager.Show(m_popupItemUseConfirmSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x10E81B8
+				if (type == PopupButton.ButtonType.Negative)
+					isCancel = true;
+				if (label == PopupButton.ButtonLabel.PassPurchase)
+					isPurchase = true;
+				isClose = true;
+			}, null, null, null);
+			while (!isClose)
+				yield return null;
+			if(!isCancel)
+			{
+				if(!isPurchase)
+				{
+					if(m_viewSceneData.JKGFBFPIMGA_Rarity < 5)
+					{
+						TextPopupSetting scontent = PopupWindowManager.CrateTextContent("", SizeType.Small, 
+							string.Format(bank.GetMessageByLabel("rarityup_item_use_warning"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(itemType, itemId)),
+							new ButtonInfo[2]
+							{
+								new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+								new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+							}, false, false);
+						isCancel = false;
+						isClose = false;
+						PopupWindowManager.Show(scontent, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+						{
+							//0x10E81E4
+							if (type == PopupButton.ButtonType.Negative)
+								isCancel = true;
+							isClose = true;
+						}, null, null, null);
+						while (!isClose)
+							yield return null;
+						if(isCancel)
+						{
+							yield break;
+						}
+					}
+					this.StartCoroutineWatched(ShowRarityUpFinalConfirmPopupCoroutine());
+				}
+				else
+				{
+					this.StartCoroutineWatched(ShowPassPurchasePopupCoroutine());
+				}
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72531C Offset: 0x72531C VA: 0x72531C
 		//// RVA: 0x10E037C Offset: 0x10E037C VA: 0x10E037C
-		//private IEnumerator ShowRarityUpFinalConfirmPopupCoroutine() { }
+		private IEnumerator ShowRarityUpFinalConfirmPopupCoroutine()
+		{
+			//0x10F6170
+			MenuScene.Instance.InputDisable();
+			if(!m_popupItemRarityUpConfirmSetting.ISLoaded())
+			{
+				yield return this.StartCoroutineWatched(m_popupItemRarityUpConfirmSetting.LoadAssetBundlePrefab(transform));
+			}
+			MenuScene.Instance.InputEnable();
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			m_popupItemRarityUpConfirmSetting.TitleText = bk.GetMessageByLabel("rarityup_item_use_confirm_title");
+			m_popupItemRarityUpConfirmSetting.WindowSize = SizeType.Middle;
+			m_popupItemRarityUpConfirmSetting.SceneId = m_viewSceneData.BCCHOBPJJKE_SceneId;
+			m_popupItemRarityUpConfirmSetting.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.RarityUp, Type = PopupButton.ButtonType.Positive }
+			};
+			bool isCancel = false;
+			bool isClose = false;
+			PopupWindowManager.Show(m_popupItemRarityUpConfirmSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x10E6894
+				if (type == PopupButton.ButtonType.Negative)
+					isCancel = true;
+				else
+				{
+					if (MenuScene.CheckDatelineAndAssetUpdate())
+						return;
+				}
+				isClose = true;
+			}, null, null, null);
+			while (!isClose)
+				yield return null;
+			if (!isCancel)
+				this.StartCoroutineWatched(ApplyRarityUpCoroutine());
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x725394 Offset: 0x725394 VA: 0x725394
 		//// RVA: 0x10E0428 Offset: 0x10E0428 VA: 0x10E0428
-		//private IEnumerator ApplyRarityUpCoroutine() { }
+		private IEnumerator ApplyRarityUpCoroutine()
+		{
+			Color color;
+
+			//0x10E8200
+			MenuScene.Instance.InputDisable();
+			m_viewSceneData.EKLIPGELKCL_SceneRarity = (byte)(m_viewSceneData.JKGFBFPIMGA_Rarity + 1);
+			m_viewSceneData.JPIPENJGGDD_NumBoard = 1;
+			m_viewSceneData.IELENGDJPHF = 0;
+			JKNGJFOBADP d = new JKNGJFOBADP();
+			d.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.CDJJNKKIBJN, "");
+			d.CPIICACGNBH(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, m_viewSceneData.BCCHOBPJJKE_SceneId, 1, null, 0);
+			int typeItemId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("rarity_up_item_id", 230001);
+			int num = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(typeItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId), null);
+			if (num > 0)
+				EKLNMHFCAOI.DPHGFMEPOCA_SetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(typeItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId), num - 1, null);
+			yield return Co.R(PopupRecordPlate.Show(RecordPlateUtility.eSceneType.RarityUp, null, false));
+			SoundResource.AddCueSheet(SoundManager.Instance.sePlayerGacha.cueSheet);
+			GameManager.Instance.fullscreenFader.Fade(0.5f, Color.white);
+			m_unLockTargetPanelIndex.RemoveRange(1, m_unLockTargetPanelIndex.Count - 1);
+			m_unlockTargetRoadIndex.Clear();
+			yield return Co.R(PlayUnlockPanelAnimationCoroutine(() =>
+			{
+				//0x10E661C
+				SoundManager.Instance.sePlayerGacha.Play((int)cs_se_gacha.SE_GACHA_009);
+			}));
+			m_isAddtiveMainBoard = m_viewSceneData.ADMDGGOKPND_IsAdditiveMainBoard();
+			yield return Co.R(LoadAppendLayoutCoroutine(m_isAddtiveMainBoard));
+			m_mainBoard.DisConnectGameObject(m_boardPanelCache, transform);
+			m_mainBoard.RemovePanel();
+			m_mainBoard.ClearCallBack();
+			m_mainBoard.SetBoardLayout(m_viewSceneData);
+			m_mainBoard.SetEnableSubBoardReleaseButton(m_viewSceneData.JHNNCPCBFDK(), m_viewSceneData.JFDLBEOGGID());
+			m_statusWindow.UpdateContent(m_viewSceneData, m_transitionUniqueId);
+			m_statusWindow.UpdateEpisode(m_episodeData);
+			color = Color.white;
+			color.a = 0;
+			GameManager.Instance.fullscreenFader.Fade(0.5f, color);
+			yield return Co.R(StartAddtivePanelDirectionCoroutine());
+			SoundResource.RemoveCueSheet(SoundManager.Instance.sePlayerGacha.cueSheet);
+			m_viewSceneData.GHJOFLBDIOI();
+			m_isWaitSave = true;
+			MenuScene.Save(() =>
+			{
+				//0x10E6944
+				ILCCJNDFFOB.HHCJCDFCLOB.NNAPCDMAAJM(m_viewSceneData.BCCHOBPJJKE_SceneId,
+					m_viewSceneData.JPIPENJGGDD_NumBoard, m_viewSceneData.CIEOBFIIPLD_SceneLevel,
+					m_viewSceneData.CIEOBFIIPLD_SceneLevel, new List<int>() { typeItemId }, new List<int>() { 1 }, 0, new List<int>());
+				m_isWaitSave = false;
+			}, () =>
+			{
+				//0x10E6BD0
+				m_isWaitSave = false;
+				m_isSaveError = true;
+			});
+			while (m_isWaitSave)
+				yield return null;
+			MenuScene.Instance.InputEnable();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72540C Offset: 0x72540C VA: 0x72540C
 		//// RVA: 0x10DFB74 Offset: 0x10DFB74 VA: 0x10DFB74
-		//private IEnumerator ShowPassPurchasePopupCoroutine() { }
+		private IEnumerator ShowPassPurchasePopupCoroutine()
+		{
+			TodoLogger.Log(0, "ShowPassPurchasePopupCoroutine");
+			yield return null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x725484 Offset: 0x725484 VA: 0x725484
 		//// RVA: 0x10E04F4 Offset: 0x10E04F4 VA: 0x10E04F4
@@ -736,7 +943,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x10E0EC8 Offset: 0x10E0EC8 VA: 0x10E0EC8 Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			if(!m_isLoadingAppendAsset && m_isWaitSave)
+			if(!m_isLoadingAppendAsset && !m_isWaitSave)
 			{
 				if(!m_isSaveError)
 				{
@@ -927,6 +1134,46 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10E2E30 Offset: 0x10E2E30 VA: 0x10E2E30
 		private void OpenPopupLimitOver()
 		{
+			if(!MenuScene.CheckDatelineAndAssetUpdate())
+			{
+				m_limitOverData.KHEKNNFCAOI(m_viewSceneData.JKGFBFPIMGA_Rarity, m_viewSceneData.MKHFCGPJPFI_LimitOverCount, m_viewSceneData.MJBODMOLOBC_Luck);
+				if(!m_limitOverData.EOBACDCDGOF)
+				{
+					m_luckyLeafSetting.Setup(m_viewSceneData);
+					if(!m_limitOverData.JMHIDPKHELB)
+					{
+						m_luckyLeafSetting.Buttons = new ButtonInfo[2]
+						{
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative },
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.SkillRelease, Type = PopupButton.ButtonType.Positive }
+						};
+					}
+					else
+					{
+						m_luckyLeafSetting.Buttons = new ButtonInfo[1]
+						{
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+						};
+					}
+					PopupWindowManager.Show(m_luckyLeafSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+					{
+						//0x10E6338
+						if(type == PopupButton.ButtonType.Positive)
+						{
+							m_viewGrowItemData.MDHKGJJBLNL();
+						}
+					}, null, null, null);
+				}
+				else
+				{
+					m_luckyLeafTerminateSetting.Setup(m_viewSceneData);
+					m_luckyLeafTerminateSetting.Buttons = new ButtonInfo[1]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+					};
+					PopupWindowManager.Show(m_luckyLeafTerminateSetting, null, null, null, null);
+				}
+			}
 			TodoLogger.LogNotImplemented("OpenPopupLimitOver");
 		}
 
@@ -1262,7 +1509,20 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10E3968 Offset: 0x10E3968 VA: 0x10E3968
 		private void UnLockPanel(SceneGrowthBoard board, int x, int y)
 		{
-			TodoLogger.LogNotImplemented("UnLockPanel");
+			SoundManager.Instance.sePlayerMenu.Play((int)cs_se_boot.SE_BTN_003);
+			if (MenuScene.CheckDatelineAndAssetUpdate())
+				return;
+			m_unLockTargetPanelIndex.Clear();
+			m_unlockTargetRoadIndex.Clear();
+			board.UnlockPanelListup(x, y, m_unLockTargetPanelIndex, m_unlockTargetRoadIndex);
+			if(board.IsPanelRock(x, y))
+			{
+				this.StartCoroutineWatched(ShowRarityUpConfirmPopupCoroutine());
+			}
+			else
+			{
+				this.StartCoroutineWatched(UnlockPanelCoroutine(board, UseItemList.Unlock.Default));
+			}
 		}
 
 		//// RVA: 0x10E3C18 Offset: 0x10E3C18 VA: 0x10E3C18
@@ -1285,7 +1545,11 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x725934 Offset: 0x725934 VA: 0x725934
 		//// RVA: 0x10E3B58 Offset: 0x10E3B58 VA: 0x10E3B58
-		//private IEnumerator UnlockPanelCoroutine(SceneGrowthBoard board, UseItemList.Unlock unlock) { }
+		private IEnumerator UnlockPanelCoroutine(SceneGrowthBoard board, UseItemList.Unlock unlock)
+		{
+			TodoLogger.Log(0, "UnlockPanelCoroutine");
+			yield return null;
+		}
 
 		//// RVA: 0x10E40AC Offset: 0x10E40AC VA: 0x10E40AC
 		//private void MakeGrowItemData(SceneGrowthBoard board, MNDAMOGGJBJ itemData, List<byte> unLockIndexList, int infLoopCount) { }
@@ -1302,7 +1566,16 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x725A24 Offset: 0x725A24 VA: 0x725A24
 		//// RVA: 0x10E5408 Offset: 0x10E5408 VA: 0x10E5408
-		//private IEnumerator PlayUnlockPanelAnimationCoroutine(Action playSeEvent) { }
+		private IEnumerator PlayUnlockPanelAnimationCoroutine(Action playSeEvent)
+		{
+			int loadCount; // 0x28
+			ISceneGrowthPanel inifityPanel; // 0x2C
+			AssetBundleLoadLayoutOperationBase layoutOperation; // 0x30
+
+			//0x10EE8BC
+			TodoLogger.Log(0, "PlayUnlockPanelAnimationCoroutine");
+			yield return null;
+		}
 
 		//// RVA: 0x10E54D0 Offset: 0x10E54D0 VA: 0x10E54D0
 		//private int GetEpisodePoint(int[] addStatus) { }
@@ -1339,10 +1612,6 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10E6224 Offset: 0x10E6224 VA: 0x10E6224
 		//private void <ShowFinalConfirmPopupCoroutine>b__95_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
 		
-		//[CompilerGeneratedAttribute] // RVA: 0x725B0C Offset: 0x725B0C VA: 0x725B0C
-		//// RVA: 0x10E6338 Offset: 0x10E6338 VA: 0x10E6338
-		//private void <OpenPopupLimitOver>b__118_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
-
 		//[CompilerGeneratedAttribute] // RVA: 0x725B1C Offset: 0x725B1C VA: 0x725B1C
 		//// RVA: 0x10E6514 Offset: 0x10E6514 VA: 0x10E6514
 		//private void <LimitOverMainCoroutine>b__119_2() { }

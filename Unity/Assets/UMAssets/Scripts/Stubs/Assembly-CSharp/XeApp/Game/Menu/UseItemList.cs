@@ -6,6 +6,13 @@ namespace XeApp.Game.Menu
 {
 	public class UseItemList : LayoutUGUIScriptBase
 	{
+		public enum Unlock
+		{
+			Default = 0,
+			Status = 1,
+			Episode = 2,
+			All = 4,
+		}
     public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private LayoutUGUIScrollSupport m_scrollSupport;

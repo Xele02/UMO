@@ -23,7 +23,7 @@ namespace XeApp.Game.Menu
 				_canvas = gameObject.AddComponent<Canvas>();
 			}
 			_rayCaster = GetComponent<GraphicRaycaster>();
-			if(_rayCaster)
+			if(_rayCaster == null)
 			{
 				_rayCaster = gameObject.AddComponent<GraphicRaycaster>();
 			}

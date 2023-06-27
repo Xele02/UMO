@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using XeApp.Game.Common;
 using System.Text;
 using UnityEngine.Events;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -250,13 +251,15 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10FA68C Offset: 0x10FA68C VA: 0x10FA68C
 		private void OnPushLeftButton()
 		{
-			TodoLogger.LogNotImplemented("OnPushLeftButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			ChangeStatus(-1);
 		}
 
 		//// RVA: 0x10FA6F4 Offset: 0x10FA6F4 VA: 0x10FA6F4
 		private void OnPushRightButton()
 		{
-			TodoLogger.LogNotImplemented("OnPushRightButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			ChangeStatus(1);
 		}
 
 		//// RVA: 0x10FA75C Offset: 0x10FA75C VA: 0x10FA75C

@@ -13,6 +13,9 @@ namespace XeApp.Game.Common
         public override string AssetName { get { return "root_pop_luckyleaf_01_layout_root"; } } //0x1BAF364
 
         // // RVA: 0x1BAF294 Offset: 0x1BAF294 VA: 0x1BAF294
-        // public void Setup(GCIJNCFDNON sceneData) { }
+        public void Setup(GCIJNCFDNON_SceneInfo sceneData)
+		{
+			this.sceneData = sceneData;
+		}
     }
 }

@@ -118,7 +118,12 @@ public class IOEKHJBOMDH_DecoStamp : KLFDBFMNLBL_ServerSaveBlock
 		//public FENCAJJBLBH PFAKPFKJJKA() { }
 
 		//// RVA: 0xA06098 Offset: 0xA06098 VA: 0xA06098
-		//public bool PPJAGFPBFHJ(int HMFFHLPNMPH) { }
+		public bool PPJAGFPBFHJ(int HMFFHLPNMPH)
+		{
+			CADENLBDAEB_IsNew = BFINGCJHOHI_Cnt < HMFFHLPNMPH;
+			BFINGCJHOHI_Cnt = HMFFHLPNMPH;
+			return CADENLBDAEB_IsNew;
+		}
 	}
 
 	private const int ECFEMKGFDCE = 3;
