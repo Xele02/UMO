@@ -51,7 +51,10 @@ public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_ServerSaveBlock
 			}
 
 			//// RVA: 0x16BA81C Offset: 0x16BA81C VA: 0x16BA81C
-			//public bool GIBLKLLLHFP() { }
+			public bool GIBLKLLLHFP()
+			{
+				return HNKFMAJIFJD >= OLNKAECIGJH;
+			}
 
 			//// RVA: 0x16BD54C Offset: 0x16BD54C VA: 0x16BD54C
 			public void DNBGDMBCLMI_ChangeKey(int KNEFBLHBDBG)
@@ -275,7 +278,64 @@ public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x16B9E30 Offset: 0x16B9E30 VA: 0x16B9E30
-	// public List<NKFJNAANPNP.MOJLCADLMKH> BNGLMLIMFDM(int PPFNGGCBJKC, long JHNMKKNEENE) { }
+	public List<NKFJNAANPNP.MOJLCADLMKH> BNGLMLIMFDM(int PPFNGGCBJKC, long JHNMKKNEENE)
+	{
+		List<NKFJNAANPNP.MOJLCADLMKH> res = new List<NKFJNAANPNP.MOJLCADLMKH>();
+		if (PPFNGGCBJKC > 0)
+		{
+			JHAAHJNEBOG_LimitedCompoItem.AOBHKONKIPF litem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem.OCMMLAOEPIG[PPFNGGCBJKC - 1];
+			List<NKFJNAANPNP.MOJLCADLMKH> l2 = new List<NKFJNAANPNP.MOJLCADLMKH>();
+			for(int i = 0; i < ODHBHOGFNAA[litem.PENIOLJHIPK].PJADHDHKOEJ.Count; i++)
+			{
+				AIAPDPDOIKG.AGGJCJMIIMJ item = ODHBHOGFNAA[litem.PENIOLJHIPK].PJADHDHKOEJ[i];
+				if(item.NIENPFFLMCH(JHNMKKNEENE))
+				{
+					if(!item.GIBLKLLLHFP())
+					{
+						NKFJNAANPNP.MOJLCADLMKH data = new NKFJNAANPNP.MOJLCADLMKH();
+						data.LHPDDGIJKNB((int)(JHNMKKNEENE * 0x227));
+						data.HNKFMAJIFJD_ExpireAt = item.HNKFMAJIFJD;
+						data.HMFFHLPNMPH_Remaining = 1;
+						l2.Add(data);
+					}
+				}
+			}
+			for(int i = 0; i < l2.Count; i++)
+			{
+				DateTime date = Utility.GetLocalDateTime(l2[i].HNKFMAJIFJD_ExpireAt);
+				string str = string.Concat(new string[]
+				{
+					date.Year.ToString(), date.Month.ToString(), date.Day.ToString(), date.Hour.ToString(),
+					date.Minute.ToString()
+				});
+				NKFJNAANPNP.MOJLCADLMKH r = res.Find((NKFJNAANPNP.MOJLCADLMKH JPAEDJJFFOI) =>
+				{
+					//0x16BCADC
+					DateTime date2 = Utility.GetLocalDateTime(JPAEDJJFFOI.HNKFMAJIFJD_ExpireAt);
+					string str2 = string.Concat(new string[]
+					{
+						date2.Year.ToString(), date2.Month.ToString(), date2.Day.ToString(), date2.Hour.ToString(),
+						date2.Minute.ToString()
+					});
+					return str == str2;
+				});
+				if (r == null)
+				{
+					res.Add(l2[i]);
+				}
+				else
+				{
+					r.HMFFHLPNMPH_Remaining += l2[i].HMFFHLPNMPH_Remaining;
+				}
+			}
+			res.Sort((NKFJNAANPNP.MOJLCADLMKH HKICMNAACDA, NKFJNAANPNP.MOJLCADLMKH BNKHBCBJBKI) =>
+			{
+				//0x16BCA6C
+				return HKICMNAACDA.HNKFMAJIFJD_ExpireAt.CompareTo(BNKHBCBJBKI.HNKFMAJIFJD_ExpireAt);
+			});
+		}
+		return res;
+	}
 
 	// // RVA: 0x16BA850 Offset: 0x16BA850 VA: 0x16BA850
 	public GEGHOCKCKKA_LimitedCompoItem()

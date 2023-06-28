@@ -28,7 +28,20 @@ public class PMDCIJMMNGK_GachaTicket : DIHHCBACKGG_DbSection
 	public List<int> DHIACJMOEBH = new List<int>(); // 0x24
 
 	// RVA: 0xFEC644 Offset: 0xFEC644 VA: 0xFEC644
-	// public PMDCIJMMNGK.EJAKHFONNGN ACEHGKOLBCG(int KIJAPOFAGPN) { }
+	public EJAKHFONNGN ACEHGKOLBCG(int KIJAPOFAGPN)
+	{
+		EKLNMHFCAOI.FKGCBLHOOCL_Category itemCat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(KIJAPOFAGPN);
+		int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(KIJAPOFAGPN);
+		if(itemCat == EKLNMHFCAOI.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket)
+		{
+			return CDENCMNHNGA.Find((EJAKHFONNGN GHPLINIACBB) =>
+			{
+				//0xFED6D0
+				return GHPLINIACBB.PPFNGGCBJKC_Id == itemId;
+			});
+		}
+		return null;
+	}
 
 	// // RVA: 0xFEC7A4 Offset: 0xFEC7A4 VA: 0xFEC7A4
 	public EJAKHFONNGN AAJILEFHFGC(int GJDNBENICPF)

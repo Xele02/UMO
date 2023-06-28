@@ -22,8 +22,8 @@ public class PCKLFFNPPLF : BNKMBBKMBNC
 			if(b1)
 			{
 				MNDAMOGGJBJ.JFJJNPJNBPI d = new MNDAMOGGJBJ.JFJJNPJNBPI();
-				d.HMFFHLPNMPH = itemId;
-				d.PPFNGGCBJKC = a;
+				d.PPFNGGCBJKC = itemId;
+				d.HMFFHLPNMPH = a;
 				JICEBIKLCPF.INLBMFMOHCI.Add(d);
 			}
 			else
@@ -49,8 +49,8 @@ public class PCKLFFNPPLF : BNKMBBKMBNC
 			if (b1)
 			{
 				MNDAMOGGJBJ.JFJJNPJNBPI d = new MNDAMOGGJBJ.JFJJNPJNBPI();
-				d.HMFFHLPNMPH = itemId;
-				d.PPFNGGCBJKC = a;
+				d.PPFNGGCBJKC = itemId;
+				d.HMFFHLPNMPH = a;
 				JICEBIKLCPF.INLBMFMOHCI.Add(d);
 			}
 			else

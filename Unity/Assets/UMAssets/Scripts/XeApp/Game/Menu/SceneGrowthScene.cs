@@ -660,7 +660,7 @@ namespace XeApp.Game.Menu
 			List<NKFJNAANPNP.MOJLCADLMKH> n = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DPNKPPBEAGJ_RareUpItem.MCPIBDPKBBD(time);
 			if (n.Count > 0)
 			{
-				a = n[0].HNKFMAJIFJD;
+				a = n[0].HNKFMAJIFJD_ExpireAt;
 			}
 			m_popupItemUseConfirmSetting.TitleText = bank.GetMessageByLabel("rarityup_item_use_title");
 			m_popupItemUseConfirmSetting.WindowSize = SizeType.Middle;
@@ -1174,7 +1174,6 @@ namespace XeApp.Game.Menu
 					PopupWindowManager.Show(m_luckyLeafTerminateSetting, null, null, null, null);
 				}
 			}
-			TodoLogger.LogNotImplemented("OpenPopupLimitOver");
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x725574 Offset: 0x725574 VA: 0x725574

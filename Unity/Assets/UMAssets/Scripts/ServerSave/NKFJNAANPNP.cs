@@ -88,8 +88,8 @@ public class NKFJNAANPNP : KLFDBFMNLBL_ServerSaveBlock
 		private int PIOJIJEDDJP; // 0xC
 		private int HLMAFFLCCKD; // 0x10
 
-		public int HNKFMAJIFJD { get { return PIOJIJEDDJP ^ FBGGEFFJJHB; } set { PIOJIJEDDJP = FBGGEFFJJHB ^ value; } } //0xC13BD0 CEOIBKAGPAG 0xC13BA8 DLHBCINBDFI
-		public int HMFFHLPNMPH { get { return HLMAFFLCCKD ^ FBGGEFFJJHB; } set { HLMAFFLCCKD = FBGGEFFJJHB ^ value; } } //0xC13BE0 NJOGDDPICKG 0xC13BB8 NBBGMMBICNA
+		public int HNKFMAJIFJD_ExpireAt { get { return PIOJIJEDDJP ^ FBGGEFFJJHB; } set { PIOJIJEDDJP = FBGGEFFJJHB ^ value; } } //0xC13BD0 CEOIBKAGPAG 0xC13BA8 DLHBCINBDFI
+		public int HMFFHLPNMPH_Remaining { get { return HLMAFFLCCKD ^ FBGGEFFJJHB; } set { HLMAFFLCCKD = FBGGEFFJJHB ^ value; } } //0xC13BE0 NJOGDDPICKG 0xC13BB8 NBBGMMBICNA
 
 		//// RVA: 0xC13B98 Offset: 0xC13B98 VA: 0xC13B98
 		public void LHPDDGIJKNB(int KNEFBLHBDBG)
@@ -212,21 +212,21 @@ public class NKFJNAANPNP : KLFDBFMNLBL_ServerSaveBlock
 			{
 				MOJLCADLMKH data = new MOJLCADLMKH();
 				data.LHPDDGIJKNB((int)(JHNMKKNEENE * 0x227));
-				data.HNKFMAJIFJD = IDJIDAPJCBE[i].HNKFMAJIFJD;
-				data.HMFFHLPNMPH = 1;
+				data.HNKFMAJIFJD_ExpireAt = IDJIDAPJCBE[i].HNKFMAJIFJD;
+				data.HMFFHLPNMPH_Remaining = 1;
 				res.Add(data);
 			}
 		}
 		List<MOJLCADLMKH> res2 = new List<MOJLCADLMKH>();
 		for(int i = 0; i < res.Count; i++)
 		{
-			DateTime date = Utility.GetLocalDateTime(res[i].HNKFMAJIFJD);
+			DateTime date = Utility.GetLocalDateTime(res[i].HNKFMAJIFJD_ExpireAt);
 			string[] strs = new string[5] { date.Year.ToString(), date.Month.ToString(), date.Day.ToString(), date.Hour.ToString(), date.Minute.ToString() };
 			string str = string.Concat(strs);
 			MOJLCADLMKH r = res2.Find((MOJLCADLMKH JPAEDJJFFOI) =>
 			{
 				//0xC160E0
-				DateTime date_ = Utility.GetLocalDateTime(JPAEDJJFFOI.HNKFMAJIFJD);
+				DateTime date_ = Utility.GetLocalDateTime(JPAEDJJFFOI.HNKFMAJIFJD_ExpireAt);
 				string[] strs_ = new string[5] { date_.Year.ToString(), date_.Month.ToString(), date_.Day.ToString(), date_.Hour.ToString(), date_.Minute.ToString() };
 				string str_ = string.Concat(strs_);
 				return str == str_;
@@ -237,13 +237,13 @@ public class NKFJNAANPNP : KLFDBFMNLBL_ServerSaveBlock
 			}
 			else
 			{
-				r.HMFFHLPNMPH += res[i].HMFFHLPNMPH;
+				r.HMFFHLPNMPH_Remaining += res[i].HMFFHLPNMPH_Remaining;
 			}
 		}
 		res.Sort((MOJLCADLMKH HKICMNAACDA, MOJLCADLMKH BNKHBCBJBKI) =>
 		{
 			//0xC16074
-			return HKICMNAACDA.HNKFMAJIFJD.CompareTo(BNKHBCBJBKI.HNKFMAJIFJD);
+			return HKICMNAACDA.HNKFMAJIFJD_ExpireAt.CompareTo(BNKHBCBJBKI.HNKFMAJIFJD_ExpireAt);
 		});
 		return res;
 	}
