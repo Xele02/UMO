@@ -124,11 +124,36 @@ public class SakashoPlayerData : SakashoAPIBase
 		hash["order"] = "" + order;
 		hash["page"] = "" + page;
 		hash["ipp"] = "" + ipp;
-		return new SakashoAPICallContext(SakashoAPIBase.Call(SakashoPlayerDataSearchForPlayer, MiniJSON.jsonEncode(hash), onSuccess, onError));
+		return new SakashoAPICallContext(Call(SakashoPlayerDataSearchForPlayer, MiniJSON.jsonEncode(hash), onSuccess, onError));
 	}
 
 	// // RVA: 0x2E5C3F4 Offset: 0x2E5C3F4 VA: 0x2E5C3F4
-	// public static SakashoAPICallContext GetPlayerData(int[] ids, string[] names, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext GetPlayerData(int[] ids, string[] names, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		ArrayList l = null;
+		if(ids != null)
+		{
+			l = new ArrayList();
+			for(int i = 0; i < ids.Length; i++)
+			{
+				l.Add(ids[i]);
+			}
+		}
+		h["ids"] = l;
+		l = null;
+		if (names != null)
+		{
+			l = new ArrayList();
+			for (int i = 0; i < names.Length; i++)
+			{
+				if(names[i] != null)
+					l.Add(names[i]);
+			}
+		}
+		h["names"] = l;
+		return new SakashoAPICallContext(Call(SakashoPlayerDataGetPlayerData, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	// // RVA: 0x2E5C754 Offset: 0x2E5C754 VA: 0x2E5C754
 	// public static SakashoAPICallContext DeletePlayerData(string[] names, OnSuccess onSuccess, OnError onError) { }
@@ -153,7 +178,10 @@ public class SakashoPlayerData : SakashoAPIBase
 	}
 
 	// // RVA: 0x2E5CCC8 Offset: 0x2E5CCC8 VA: 0x2E5CCC8
-	// private static extern int SakashoPlayerDataGetPlayerData(int callbackId, string json) { }
+	private static int SakashoPlayerDataGetPlayerData(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoPlayerDataGetPlayerData(callbackId, json);
+	}
 
 	// // RVA: 0x2E5CDD8 Offset: 0x2E5CDD8 VA: 0x2E5CDD8
 	// private static extern int SakashoPlayerDataDeletePlayerData(int callbackId, string json) { }

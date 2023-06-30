@@ -545,6 +545,22 @@ namespace ExternLib
 			SendMessage(callbackId, res);
 			return 0;
 		}
+		public static int SakashoPlayerDataGetPlayerData(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
+			EDOHBJAPLPF_JsonData names = jsonData["names"];
+
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res["created_at"] = 1501751856;
+			res["data_status"] = 1;
+			res["updated_at"] = 1656166393;
+			res["player"] = new EDOHBJAPLPF_JsonData();
+			res["player"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+			TodoLogger.Log(0, "SakashoPlayerDataGetPlayerData");
+
+			SendMessage(callbackId, res);
+			return 0;
+		}
 
 	}
 }

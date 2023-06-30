@@ -109,6 +109,38 @@ namespace ExternLib
 			return 0;
 		}
 
-		
+		public static int SakashoRankingGetTopRanks(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData input = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
+			int rankingId = (int)input["id"];
+			int rankingType = (int)input["type"];
+			int rankingPage = (int)input["page"];
+			int rankingIpp = (int)input["ipp"];
+
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			if (!playerAccount.playerData.rankingsData.ContainsKey(rankingId))
+			{
+				res["error_code"] = (int)SakashoErrorId.RANKING_PLAYER_NOT_FOUND;//"RANKING_PLAYER_NOT_FOUND";
+				res["error_detail"] = null;
+			}
+			else
+			{
+				res["ranks"] = new EDOHBJAPLPF_JsonData();
+				res["ranks"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+				// todo min/max
+				EDOHBJAPLPF_JsonData d = new EDOHBJAPLPF_JsonData();
+				d["extra"] = null;
+				d["player_id"] = playerAccount.userId;
+				d["rank"] = playerAccount.playerData.rankingsData[rankingId].rank;
+				d["score"] = playerAccount.playerData.rankingsData[rankingId].score;
+				res["ranks"].Add(d);
+			}
+			res[AFEHLCGHAEE_Strings.GPPOJHNNINK_current_page] = 1;
+			res[AFEHLCGHAEE_Strings.CJNNMLLEKEF_previous_page] = -1;
+			res[AFEHLCGHAEE_Strings.MDIBIIHAAPN_next_page] = -1;
+
+			SendMessage(callbackId, res);
+			return 0;
+		}
 	}
 }

@@ -19,7 +19,11 @@ namespace XeApp.Game.Menu
 			}
 
 			//// RVA: 0xCF7C1C Offset: 0xCF7C1C VA: 0xCF7C1C
-			//public void Reset(int waitFrame) { }
+			public void Reset(int waitFrame)
+			{
+				this.waitFrame = waitFrame;
+				startFrame = Time.frameCount;
+			}
 		}
 
 		private void Awake()

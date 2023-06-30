@@ -19,9 +19,9 @@ namespace XeApp.Game.Menu
 		private int m_dispEndIndex; // 0x20
 		private Dictionary<int, List<FlexibleListItemLayout>> m_partsChache = new Dictionary<int, List<FlexibleListItemLayout>>(); // 0x24
 
-		// public Dictionary<int, List<FlexibleListItemLayout>> PartsChache { get; } 0xB9DFA4
-		// public int DispBeginIndex { get; } 0xB9DFAC
-		// public int DispEndIndex { get; } 0xB9DFB4
+		public Dictionary<int, List<FlexibleListItemLayout>> PartsChache { get { return m_partsChache; } } //0xB9DFA4
+		public int DispBeginIndex { get { return m_dispBeginIndex; } } //0xB9DFAC
+		public int DispEndIndex { get { return m_dispEndIndex; } } //0xB9DFB4
 
 		// [CompilerGeneratedAttribute] // RVA: 0x70D644 Offset: 0x70D644 VA: 0x70D644
 		// // RVA: 0xB9DD8C Offset: 0xB9DD8C VA: 0xB9DD8C
@@ -336,10 +336,16 @@ namespace XeApp.Game.Menu
 		// public void StopScrollMove() { }
 
 		// // RVA: 0xBA1354 Offset: 0xBA1354 VA: 0xBA1354
-		// public float GetVerticalScrollSizeRatio() { }
+		public float GetVerticalScrollSizeRatio()
+		{
+			return m_scroll.content.sizeDelta.y / m_scrollRectTransform.sizeDelta.y;
+		}
 
 		// // RVA: 0xBA13EC Offset: 0xBA13EC VA: 0xBA13EC
-		// public float CurrentVerticalScrollPositon() { }
+		public float CurrentVerticalScrollPositon()
+		{
+			return m_scroll.verticalNormalizedPosition;
+		}
 
 		// // RVA: 0xBA1418 Offset: 0xBA1418 VA: 0xBA1418
 		// public float CurrentHorizontalScrollPositon() { }
@@ -357,6 +363,16 @@ namespace XeApp.Game.Menu
 		// public void SetHorizontalScrollPositon(float pos) { }
 
 		// // RVA: 0xBA16B0 Offset: 0xBA16B0 VA: 0xBA16B0
-		// public void SetEnableScrollBar(bool isEnable) { }
+		public void SetEnableScrollBar(bool isEnable)
+		{
+			if(m_scroll.verticalScrollbar != null)
+			{
+				m_scroll.verticalScrollbar.interactable = isEnable;
+			}
+			if(m_scroll.horizontalScrollbar != null)
+			{
+				m_scroll.horizontalScrollbar.interactable = isEnable;
+			}
+		}
 	}
 }

@@ -5,6 +5,9 @@ using XeApp.Game.Common;
 using System;
 using System.Collections.Generic;
 using XeSys;
+using System.Collections;
+using mcrs;
+using System.Text;
 
 namespace XeApp.Game.Menu
 {
@@ -102,7 +105,7 @@ namespace XeApp.Game.Menu
 		private List<RankingListInfo> m_listRanking; // 0x94
 		private int m_nowGradeIndex; // 0x98
 
-		//public FlexibleItemScrollView FxScrollView { get; } 0x15C9B08
+		public FlexibleItemScrollView FxScrollView { get { return m_scrollView; } } //0x15C9B08
 		public Content SelectTab { get; set; } // 0x6C
 		public Action OnClickRankingButton { get; set; } // 0x70
 		public Action<RankingListInfo> OnClickRankingUserButton { get; set; } // 0x74
@@ -111,68 +114,360 @@ namespace XeApp.Game.Menu
 		public Action<Content, FlexibleItemScrollView, List<IFlexibleListItem>> OnUpdateScrollList { get; set; } // 0x80
 
 		//// RVA: 0x15C9B70 Offset: 0x15C9B70 VA: 0x15C9B70
-		//public void Enter() { }
+		public void Enter()
+		{
+			m_layoutRoot.StartChildrenAnimGoStop("go_in", "st_in");
+		}
 
 		//// RVA: 0x15C9BFC Offset: 0x15C9BFC VA: 0x15C9BFC
-		//public void Leave() { }
+		public void Leave()
+		{
+			m_layoutRoot.StartChildrenAnimGoStop("go_out", "st_out");
+		}
 
 		//// RVA: 0x15C9C88 Offset: 0x15C9C88 VA: 0x15C9C88
 		//public void Show() { }
 
 		//// RVA: 0x15C9D08 Offset: 0x15C9D08 VA: 0x15C9D08
-		//public void Hide() { }
+		public void Hide()
+		{
+			m_layoutRoot.StartChildrenAnimGoStop("st_out", "st_out");
+		}
 
 		//// RVA: 0x15C9D88 Offset: 0x15C9D88 VA: 0x15C9D88
-		//public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_layoutRoot.IsPlayingChildren();
+		}
 
 		//// RVA: 0x15C9DB4 Offset: 0x15C9DB4 VA: 0x15C9DB4
 		//public bool IsListReady() { }
 
 		//// RVA: 0x15C9DE0 Offset: 0x15C9DE0 VA: 0x15C9DE0
-		//public void SetStatus(GHLGEECLCMH view, LayoutMusicRateList.Content tab, bool posReset = True) { }
+		public void SetStatus(GHLGEECLCMH view, Content tab, bool posReset = true)
+		{
+			m_view = view;
+			MakeList_Rate(view.BGMPAMNAKHN_GetMusicRateList(0));
+			MakeList_Grade(m_view.IEPGAGBLHBN_GetMusicGradeList());
+			MakeList_Reward(m_view.LLNHMMBFPMA_ScoreRatingRanking, m_view.IEPGAGBLHBN_GetMusicGradeList());
+			m_listRanking = OEGIPPCADNA.HHCJCDFCLOB.HGGPIBNLALJ;
+			MakeList_Ranking(1000);
+			SetTotalGrade(m_view.DEMOACDDPHM_PrevUtaRateTotal, m_view.ECMFBEHEGEH_UtaRateTotal);
+			m_textGrade.text = HighScoreRatingRank.GetRankName(m_view.LLNHMMBFPMA_ScoreRatingRanking);
+			HighScoreRatingRank.Type grade = m_view.LLNHMMBFPMA_ScoreRatingRanking;
+			GameManager.Instance.MusicRatioTextureCache.Load(m_view.LLNHMMBFPMA_ScoreRatingRanking, (IiconTexture texture) =>
+			{
+				//0x15CD01C
+				if(texture != null && texture is MusicRatioTextureCache.MusicRatioTexture)
+				{
+					(texture as MusicRatioTextureCache.MusicRatioTexture).Set(m_imageGrade, grade);
+				}
+			});
+			m_buttonTabsGroup.SelectGroupButton((int)tab);
+			m_buttonTabsGroup.OnSelectToggleButtonEvent.RemoveAllListeners();
+			m_buttonTabsGroup.OnSelectToggleButtonEvent.AddListener((int tabIndex) =>
+			{
+				//0x15CD0F4
+				this.StartCoroutineWatched(Co_ChangeTab((Content)tabIndex));
+			});
+			ChangeTab(tab, posReset);
+		}
 
 		//// RVA: 0x15CACAC Offset: 0x15CACAC VA: 0x15CACAC
-		//public void SetTotalGrade(int total0, int total) { }
+		public void SetTotalGrade(int total0, int total)
+		{
+			m_textTotalNum[1].text = total.ToString();
+			m_textTotalNum[0].text = total.ToString();
+			m_layoutTotal.StartChildrenAnimGoStop(total0 < total ? "02" : "01");
+		}
 
 		//// RVA: 0x15CB188 Offset: 0x15CB188 VA: 0x15CB188
-		//public void SetNextGrade(LayoutMusicRateList.Content tab, GHLGEECLCMH view) { }
+		public void SetNextGrade(Content tab, GHLGEECLCMH view)
+		{
+			if(view == null)
+			{
+				m_layoutNextRate.StartChildrenAnimGoStop("03");
+			}
+			else
+			{
+				if((int)view.LLNHMMBFPMA_ScoreRatingRanking < HighScoreRatingRank.GetRankIDMax())
+				{
+					if(tab != Content.MusicRanking)
+					{
+						m_layoutNextRate.StartChildrenAnimGoStop("01");
+						StringBuilder str = new StringBuilder();
+						HighScoreRating.UtaGradeData info = view.CMANMLGFJMM_GetNextUtaGradeInfo();
+						str.SetFormat("{0}", info.rate);
+						m_textNextRate_02.text = str.ToString();
+						HighScoreRatingRank.Type grade_next = (HighScoreRatingRank.Type)info.grade;
+						m_textNextRate_04.text = HighScoreRatingRank.GetRankName(grade_next);
+						GameManager.Instance.MusicRatioTextureCache.Load(grade_next, (IiconTexture texture) =>
+						{
+							//0x15CD154
+							if(texture != null && texture is MusicRatioTextureCache.MusicRatioTexture)
+							{
+								(texture as MusicRatioTextureCache.MusicRatioTexture).Set(m_imageNextGrade, grade_next);
+							}
+						});
+					}
+					else
+					{
+						m_layoutNextRate.StartChildrenAnimGoStop("04");
+					}
+				}
+				else
+				{
+					m_layoutNextRate.StartChildrenAnimGoStop("02");
+				}
+			}
+			m_buttonRanking.Hidden = tab != Content.MusicRanking;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6ED414 Offset: 0x6ED414 VA: 0x6ED414
 		//// RVA: 0x15CB524 Offset: 0x15CB524 VA: 0x15CB524
-		//private IEnumerator Co_ChangeTab(LayoutMusicRateList.Content tab) { }
+		private IEnumerator Co_ChangeTab(Content tab)
+		{
+			//0x15CD244
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(OnPreChangeTab != null)
+			{
+				bool done = false;
+				OnPreChangeTab(tab, () =>
+				{
+					//0x15CD234
+					done = true;
+				});
+				while (!done)
+					yield return null;
+			}
+			ChangeTab(tab, true);
+			if (OnClickTabsButton != null)
+				OnClickTabsButton(tab);
+		}
 
 		//// RVA: 0x15CAE1C Offset: 0x15CAE1C VA: 0x15CAE1C
-		//public void ChangeTab(LayoutMusicRateList.Content tab, bool posReset = True) { }
+		public void ChangeTab(Content tab, bool posReset = true)
+		{
+			List<IFlexibleListItem> l = null;
+			string txt = "";
+			switch(tab)
+			{
+				case Content.MusicReward:
+					m_textDesc.enabled = false;
+					l = m_listItem_MusicReward;
+					txt = "popup_music_rate_not_found";
+					break;
+				case Content.MusicGrade:
+					m_textDesc.enabled = false;
+					l = m_listItem_MusicGrade;
+					txt = "popup_music_rate_not_found";
+					break;
+				case Content.MusicRate:
+					m_textDesc.enabled = true;
+					l = m_listItem_MusicRate;
+					txt = "popup_music_rate_not_found";
+					break;
+				case Content.MusicRanking:
+					l = m_listItem_MusicRanking.FindAll((IFlexibleListItem x) =>
+					{
+						//0x15CCD18
+						return (x as FlexibleListItem_Ranking).Index < m_listRanking.Count;
+					});
+					m_textDesc.enabled = false;
+					txt = "popup_music_rate_ranking_not_found";
+					break;
+				default:
+					break;
+			}
+			if(l != null)
+			{
+				m_textScroll.enabled = l.Count < 1;
+				m_textScroll.text = MessageManager.Instance.GetMessage("menu", txt);
+				if(posReset && OnUpdateScrollList != null)
+				{
+					OnUpdateScrollList(tab, m_scrollView, l);
+				}
+				m_scrollView.VisibleRangeUpdate();
+			}
+			for(int i = 0; i < m_layoutToggleButtons.Length; i++)
+			{
+				m_layoutToggleButtons[i].StartChildrenAnimGoStop((int)tab == i ? "02" : "01");
+				SelectTab = tab;
+				SetNextGrade(tab, m_view);
+			}
+		}
 
 		//// RVA: 0x15CB5EC Offset: 0x15CB5EC VA: 0x15CB5EC
-		//public void UpdateRankingList(List<RankingListInfo> infoList, Action<FlexibleItemScrollView, List<IFlexibleListItem>> onUpdateScrollList) { }
+		public void UpdateRankingList(List<RankingListInfo> infoList, Action<FlexibleItemScrollView, List<IFlexibleListItem>> onUpdateScrollList)
+		{
+			m_listRanking = infoList;
+			List<IFlexibleListItem> l = m_listItem_MusicRanking.FindAll((IFlexibleListItem x) =>
+			{
+				//0x15CCE20
+				return (x as FlexibleListItem_Ranking).Index < m_listRanking.Count;
+			});
+			if(onUpdateScrollList != null)
+				onUpdateScrollList(m_scrollView, l);
+			m_textScroll.enabled = l.Count < 1;
+			m_textScroll.text = MessageManager.Instance.GetMessage("menu", "popup_music_rate_ranking_not_found");
+		}
 
 		//// RVA: 0x15CB7C0 Offset: 0x15CB7C0 VA: 0x15CB7C0
 		//public void SetNextRewardListPos(int nowPos) { }
 
 		//// RVA: 0x15CB95C Offset: 0x15CB95C VA: 0x15CB95C
-		//public void SetRankRange(string text) { }
+		public void SetRankRange(string text)
+		{
+			m_textRanking.text = text;
+		}
 
 		//// RVA: 0x15CA1D8 Offset: 0x15CA1D8 VA: 0x15CA1D8
-		//private void MakeList_Rate(List<ECEPJHGMGBJ> list) { }
+		private void MakeList_Rate(List<ECEPJHGMGBJ> list)
+		{
+			m_listItem_MusicRate = new List<IFlexibleListItem>();
+			for(int i = 0; i < list.Count; i++)
+			{
+				FlexibleListItem_Rate r = new FlexibleListItem_Rate();
+				r.Top = new Vector2(0, -(i + 116 + 10));
+				r.Height = 116;
+				r.ResourceType = 2;
+				r.ViewData = list[i];
+				m_listItem_MusicRate.Add(r);
+			}
+		}
 
 		//// RVA: 0x15CA3F0 Offset: 0x15CA3F0 VA: 0x15CA3F0
-		//private void MakeList_Grade(List<HighScoreRating.UtaGradeData> list) { }
+		private void MakeList_Grade(List<HighScoreRating.UtaGradeData> list)
+		{
+			m_listItem_MusicGrade = new List<IFlexibleListItem>();
+			for(int i = 0; i < list.Count; i++)
+			{
+				if(list[i].isNow)
+				{
+					m_nowGradeIndex = i;
+				}
+				FlexibleListItem_Grade r = new FlexibleListItem_Grade();
+				r.Top = new Vector2(0, -(i * 62 + 10));
+				r.Height = 62;
+				r.ResourceType = 1;
+				r.MusicGrade = (HighScoreRatingRank.Type)list[i].grade;
+				r.MusicGradeName = HighScoreRatingRank.GetRankName(r.MusicGrade);
+				r.MusicMustRate = string.Format("{0}", list[i].rate);
+				r.MySelf = list[i].isNow;
+				m_listItem_MusicGrade.Add(r);
+			}
+		}
 
 		//// RVA: 0x15CA710 Offset: 0x15CA710 VA: 0x15CA710
-		//private void MakeList_Reward(HighScoreRatingRank.Type grade, List<HighScoreRating.UtaGradeData> list) { }
+		private void MakeList_Reward(HighScoreRatingRank.Type grade, List<HighScoreRating.UtaGradeData> list)
+		{
+			m_listItem_MusicReward = new List<IFlexibleListItem>();
+			for(int i = 0, cnt = 0; i < list.Count; i++)
+			{
+				for(int j = 0; j < list[i].items.Count; j++, cnt++)
+				{
+					FlexibleListItem_Reward r = new FlexibleListItem_Reward();
+					r.Top = new Vector2(0, -(cnt * 105 + 10));
+					r.Height = 105;
+					r.ResourceType = 0;
+					r.MusicGrade = (HighScoreRatingRank.Type)list[i].grade;
+					r.MusicGradeName = HighScoreRatingRank.GetRankName(r.MusicGrade);
+					r.MusicMustRate = string.Format("{0}", list[i].rate);
+					r.Index = j;
+					r.Item = list[i].items[j];
+					r.Pickup = j == list[i].pickup;
+					r.Get = list[i].grade < (int)grade;
+					m_listItem_MusicReward.Add(r);
+				}
+			}
+		}
 
 		//// RVA: 0x15CAAD8 Offset: 0x15CAAD8 VA: 0x15CAAD8
-		//private void MakeList_Ranking(int count) { }
+		private void MakeList_Ranking(int count)
+		{
+			m_listItem_MusicRanking = new List<IFlexibleListItem>();
+			for(int i = 0; i < count; i++)
+			{
+				FlexibleListItem_Ranking r = new FlexibleListItem_Ranking();
+				r.Top = new Vector2(0, -(i * 132 + 10));
+				r.Height = 132;
+				r.ResourceType = 3;
+				r.Index = i;
+				m_listItem_MusicRanking.Add(r);
+			}
+		}
 
 		//// RVA: 0x15CBA5C Offset: 0x15CBA5C VA: 0x15CBA5C
 		private void OnUpdateListItem(IFlexibleListItem item)
 		{
-			TodoLogger.Log(0, "OnUpdateListItem");
+			if(item != null)
+			{
+				if(item is FlexibleListItem_Rate)
+				{
+					FlexibleListItem_Rate it = item as FlexibleListItem_Rate;
+					if(it.Layout != null && it.Layout is LayoutPopupMusicRateListItem)
+					{
+						LayoutPopupMusicRateListItem l = it.Layout as LayoutPopupMusicRateListItem;
+						l.SetStatus(it.Index, it.ViewData);
+					}
+				}
+				if(item is FlexibleListItem_Grade)
+				{
+					FlexibleListItem_Grade it = item as FlexibleListItem_Grade;
+					if(it.Layout != null && it.Layout is LayoutPopupMusicGradeListItem)
+					{
+						LayoutPopupMusicGradeListItem l = it.Layout as LayoutPopupMusicGradeListItem;
+						l.SetStatus(it);
+					}
+				}
+				if(item is FlexibleListItem_Reward)
+				{
+					FlexibleListItem_Reward it = item as FlexibleListItem_Reward;
+					if(it.Layout != null && it.Layout is LayoutPopupMusicGradeRewardListItem)
+					{
+						LayoutPopupMusicGradeRewardListItem l = it.Layout as LayoutPopupMusicGradeRewardListItem;
+						l.SetStatus(it);
+						l.OnClickButton = (int itemId, int itemNum) =>
+						{
+							//0x15CCF28
+							SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+							OnShowItemDetails(itemId, itemNum);
+						};
+					}
+				}
+				else if(item is FlexibleListItem_Ranking)
+				{
+					FlexibleListItem_Ranking it = item as FlexibleListItem_Ranking;
+					if(it.Layout != null && it.Layout is LayoutPopupMusicRateRankingListItem)
+					{
+						LayoutPopupMusicRateRankingListItem l = it.Layout as LayoutPopupMusicRateRankingListItem;
+						l.SetStatus(m_listRanking[it.Index]);
+						l.OnClickButton = (RankingListInfo info) =>
+						{
+							//0x15CCF94
+							if (OnClickRankingUserButton != null)
+								OnClickRankingUserButton(info);
+						};
+						l.UpdateLayoutDisplay();
+					}
+				}
+			}
 		}
 
 		//// RVA: 0x15CBFC4 Offset: 0x15CBFC4 VA: 0x15CBFC4
-		//public void OnShowItemDetails(int itemId, int itemNum) { }
+		public void OnShowItemDetails(int itemId, int itemNum)
+		{
+			if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			{
+				GCIJNCFDNON_SceneInfo s = new GCIJNCFDNON_SceneInfo();
+				s.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId), null, null, 0, 0, 0, false, 0, 0);
+				MenuScene.Instance.ShowSceneStatusPopupWindow(s, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, true, true, 0, false);
+			}
+			else
+			{
+				MenuScene.Instance.ShowItemDetail(itemId, itemNum, null);
+			}
+		}
 
 		// RVA: 0x15CC244 Offset: 0x15CC244 VA: 0x15CC244 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
@@ -216,21 +511,5 @@ namespace XeApp.Game.Menu
 			Loaded();
 			return true;
 		}
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6ED48C Offset: 0x6ED48C VA: 0x6ED48C
-		//// RVA: 0x15CCD18 Offset: 0x15CCD18 VA: 0x15CCD18
-		//private bool <ChangeTab>b__69_0(IFlexibleListItem x) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6ED49C Offset: 0x6ED49C VA: 0x6ED49C
-		//// RVA: 0x15CCE20 Offset: 0x15CCE20 VA: 0x15CCE20
-		//private bool <UpdateRankingList>b__70_0(IFlexibleListItem x) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6ED4AC Offset: 0x6ED4AC VA: 0x6ED4AC
-		//// RVA: 0x15CCF28 Offset: 0x15CCF28 VA: 0x15CCF28
-		//private void <OnUpdateListItem>b__77_0(int itemId, int itemNum) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6ED4BC Offset: 0x6ED4BC VA: 0x6ED4BC
-		//// RVA: 0x15CCF94 Offset: 0x15CCF94 VA: 0x15CCF94
-		//private void <OnUpdateListItem>b__77_1(RankingListInfo info) { }
 	}
 }

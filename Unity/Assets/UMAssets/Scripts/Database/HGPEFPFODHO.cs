@@ -85,7 +85,12 @@ public class HGPEFPFODHO_HighScoreRanking : DIHHCBACKGG_DbSection
 	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_Ints { get; private set; } // 0x28 KLDCHOIPJGB AEMNOGNEBOJ DGKDBOAMNBB
 
 	//// RVA: 0x175215C Offset: 0x175215C VA: 0x175215C
-	//public string EFEGBHACJAL(string LJNAKDMILMC, string KKMJBMKHGNH) { }
+	public string EFEGBHACJAL(string LJNAKDMILMC, string KKMJBMKHGNH)
+	{
+		if (!FJOEBCMGDMI_Strings.ContainsKey(LJNAKDMILMC))
+			return KKMJBMKHGNH;
+		return FJOEBCMGDMI_Strings[LJNAKDMILMC].DNJEJEANJGL_Value;
+	}
 
 	//// RVA: 0x1752240 Offset: 0x1752240 VA: 0x1752240
 	public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH)
