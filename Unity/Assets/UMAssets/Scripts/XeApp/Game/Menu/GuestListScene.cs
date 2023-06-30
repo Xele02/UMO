@@ -268,8 +268,7 @@ namespace XeApp.Game.Menu
 				ProfilDateArgs arg = new ProfilDateArgs();
 				arg.data = m_guestInfoList[content.Index].friend;
 				arg.infoType = ProfilMenuLayout.InfoType.ASSIST;
-				//MenuScene.Instance.Call(TransitionList.Type.PROFIL, arg, true);
-				TodoLogger.LogNotImplemented("OnSelectListItem");
+				MenuScene.Instance.Call(TransitionList.Type.PROFIL, arg, true);
 			}
 			else if(value == 0)
 			{

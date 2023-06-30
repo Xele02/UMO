@@ -57,7 +57,10 @@ namespace XeApp.Game.Menu
 		private Action m_updater; // 0x58
 
 		// // RVA: 0xF964F8 Offset: 0xF964F8 VA: 0xF964F8
-		// public bool IsReady() { }
+		public bool IsReady()
+		{
+			return m_swaipState != SwaipState.Initializeing;
+		}
 
 		// // RVA: 0xF96508 Offset: 0xF96508 VA: 0xF96508
 		public void ResetCanvas()
