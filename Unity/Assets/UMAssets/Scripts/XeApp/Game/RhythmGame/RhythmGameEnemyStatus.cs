@@ -108,13 +108,12 @@ namespace XeApp.Game.RhythmGame
 			}
 			evaluationNotesNum = evaluationNotesNum + 1 - AttackComboCount;
 			basicValueStepThresholdList = new List<int>();
-			int r = 0;
 			int v = 0;
 			for (int i = 0; i < vals.Length; i++)
 			{
-				v += evaluationNotesNum / vals.Length + r;
+				v += evaluationNotesNum / vals.Length;
 				if (i == 1)
-					r += evaluationNotesNum % vals.Length;
+					v += evaluationNotesNum % vals.Length;
 				basicValueStepThresholdList.Add(v);
 			}
 			NHDJHOPLMDE data = new NHDJHOPLMDE(valkyrieId, 0);
