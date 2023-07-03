@@ -23,7 +23,7 @@ public class DFKGGBMFFGB_PlayerInfo
 	public int BJGOPOEAAIC; // 0x34
 	public HighScoreRatingRank.Type AGJIIKKOKFJ = HighScoreRatingRank.Type.Be; // 0x38
 
-	// public BBHNACPENDM AHEFHIMGIBI { get; } // GNMGJMDJEGI 0x197E7F0
+	public BBHNACPENDM_ServerSaveData AHEFHIMGIBI_ServerSave { get { return LDEGEHAEALK_ServerSave; } } // GNMGJMDJEGI 0x197E7F0
 	// public int NLMELNHPIID { get; set; }//DBEFCECMFMG 0x197E8C0 ILFOOPKEKLC 0x197E90C
 
 	// // RVA: 0x197E960 Offset: 0x197E960 VA: 0x197E960

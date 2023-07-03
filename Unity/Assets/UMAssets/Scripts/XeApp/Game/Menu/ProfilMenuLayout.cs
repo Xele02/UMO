@@ -7,6 +7,7 @@ using System;
 using XeSys;
 using mcrs;
 using System.Collections;
+using XeApp.Core;
 
 namespace XeApp.Game.Menu
 {
@@ -322,9 +323,9 @@ namespace XeApp.Game.Menu
 		private const string LevelFormat = "Lv{0}";
 
 		public bool IsFriend { get { return m_is_friend; } } //0x116B76C
-		//public List<CKFGMNAIBNG> CostumeList { get; set; } //0x116B774 0x116B77C
-		//public List<PNGOLKLFFLH> ValkyrieList { get; set; } //0x116B784 0x116B78C
-		//public List<IAPDFOPPGND> EmblemList { get; set; } //0x116B794 0x116B79C
+		public List<CKFGMNAIBNG> CostumeList { get { return m_costume_list; } set { m_costume_list = value; } } //0x116B774 0x116B77C
+		public List<PNGOLKLFFLH> ValkyrieList { get { return m_valkyrie_list; } set { m_valkyrie_list = value; } } //0x116B784 0x116B78C
+		public List<IAPDFOPPGND> EmblemList { get { return m_emblem_list; } set { m_emblem_list = value; } } //0x116B794 0x116B79C
 
 		// RVA: 0x116B7A4 Offset: 0x116B7A4 VA: 0x116B7A4 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
@@ -612,10 +613,16 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x116DDAC Offset: 0x116DDAC VA: 0x116DDAC
-		//public void Init() { }
+		public void Init()
+		{
+			TodoLogger.Log(0, "Init");
+		}
 
 		//// RVA: 0x1171608 Offset: 0x1171608 VA: 0x1171608
-		//public void Init(EAJCBFGKKFA data, bool a_enable_lobby_btn) { }
+		public void Init(EAJCBFGKKFA_FriendInfo data, bool a_enable_lobby_btn)
+		{
+			TodoLogger.Log(0, "Init 2");
+		}
 
 		//// RVA: 0x1171E90 Offset: 0x1171E90 VA: 0x1171E90
 		public void SetInfoTable(InfoType type)
@@ -657,10 +664,27 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x11722DC Offset: 0x11722DC VA: 0x11722DC
-		//public void SetPlayerInfoWindow(bool IsEnableCannon, bool IsEnableFan) { }
+		public void SetPlayerInfoWindow(bool IsEnableCannon, bool IsEnableFan)
+		{
+			string s = "";
+			if (IsEnableCannon && IsEnableFan)
+				s = "04";
+			else
+			{
+				s = "01";
+				if (IsEnableCannon)
+					s = "03";
+				if (IsEnableFan)
+					s = "02";
+			}
+			m_player_info_win.StartChildrenAnimGoStop(s);
+		}
 
 		//// RVA: 0x11723A0 Offset: 0x11723A0 VA: 0x11723A0
-		//public void SetTransitionUniqueId(TransitionUniqueId uniqueId) { }
+		public void SetTransitionUniqueId(TransitionUniqueId uniqueId)
+		{
+			m_transitionUniquId = uniqueId;
+		}
 
 		//// RVA: 0x11723A8 Offset: 0x11723A8 VA: 0x11723A8
 		//private int CountHaveScene() { }
@@ -678,7 +702,10 @@ namespace XeApp.Game.Menu
 		//public void SetMusicRate(HighScoreRatingRank.Type a_icon_type) { }
 
 		//// RVA: 0x1172598 Offset: 0x1172598 VA: 0x1172598
-		//public void SetMusicRanking(int a_rank) { }
+		public void SetMusicRanking(int a_rank)
+		{
+			m_musicrate01_text.text = OEGIPPCADNA.GEEFFAEGHAH(a_rank, true);
+		}
 
 		//// RVA: 0x11725E4 Offset: 0x11725E4 VA: 0x11725E4
 		//public void SetDegreeImage(int degree_no) { }
@@ -763,8 +790,21 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x116D660 Offset: 0x116D660 VA: 0x116D660
 		private IEnumerator LoadDegreeInfoWindow()
 		{
-			TodoLogger.Log(0, "LoadDegreeInfoWindow");
-			yield return null;
+			AssetBundleLoadLayoutOperationBase operation;
+
+			//0x9CCEE4
+			operation = AssetBundleManager.LoadLayoutAsync(m_degree_setting.BundleName, m_degree_setting.AssetName);
+			yield return operation;
+			if(!operation.IsError())
+			{
+				yield return Co.R(operation.InitializeLayoutCoroutine(MenuScene.Instance.m_font, (GameObject instance) =>
+				{
+					//0x117B2B4
+					m_degree_setting.SetContent(instance);
+				}));
+				m_degree_setting.SetParent(transform);
+				AssetBundleManager.UnloadAssetBundle(m_degree_setting.BundleName);
+			}
 		}
 
 		//// RVA: 0x1174F10 Offset: 0x1174F10 VA: 0x1174F10
@@ -837,8 +877,42 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x116D5D0 Offset: 0x116D5D0 VA: 0x116D5D0
 		private IEnumerator Load_ScrollItemIcon()
 		{
-			TodoLogger.Log(0, "Load_ScrollItemIcon");
+			AssetBundleLoadLayoutOperationBase layOp;
+
+			//0x9CD2C0
+			LayoutUGUIRuntime runtime = null;
+			m_swap_scroll.RemoveScrollObject();
+			m_swap_scroll.SetEnableScrollBar(true);
+			layOp = AssetBundleManager.LoadLayoutAsync("ly/071.xab", "UI_ProfilScrollItemIcon");
+			yield return layOp;
+			yield return Co.R(layOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+			{
+				//0x117CF9C
+				runtime = instance.GetComponent<LayoutUGUIRuntime>();
+				ProfilScrollIcon p = instance.GetComponent<ProfilScrollIcon>();
+				p.SetCallbackClickIconCos(CB_ClickIcon_Costume);
+				p.SetCallbackClickIconVal(CB_ClickIcon_Valkyrie);
+				p.SetCallbackClickIconEmblem(CB_ClickIcon_Emblem);
+				m_swap_scroll.AddScrollObject(p);
+			}));
+			for(int i = 1; i < m_swap_scroll.ScrollObjectCount; i++)
+			{
+				LayoutUGUIRuntime r = Instantiate(runtime);
+				r.IsLayoutAutoLoad = false;
+				r.Layout = runtime.Layout.DeepClone();
+				r.UvMan = runtime.UvMan;
+				r.LoadLayout();
+				ProfilScrollIcon p = r.GetComponent<ProfilScrollIcon>();
+				p.SetCallbackClickIconCos(CB_ClickIcon_Costume);
+				p.SetCallbackClickIconVal(CB_ClickIcon_Valkyrie);
+				p.SetCallbackClickIconEmblem(CB_ClickIcon_Emblem);
+				m_swap_scroll.AddScrollObject(p);
+			}
+			m_swap_scroll.Apply();
+			m_swap_scroll.SetContentEscapeMode(false);
 			yield return null;
+			AssetBundleManager.UnloadAssetBundle("ly/071.xab", false);
+			m_swap_scroll_loaded = true;
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FECDC Offset: 0x6FECDC VA: 0x6FECDC
@@ -863,22 +937,42 @@ namespace XeApp.Game.Menu
 		//private void OnUpdateEmblemScrollItem(int a_index, ProfilScrollIcon a_icon, IAPDFOPPGND a_emblem_info) { }
 
 		//// RVA: 0x1175D18 Offset: 0x1175D18 VA: 0x1175D18
-		//private void CB_ClickIcon_Valkyrie(PNGOLKLFFLH a_data) { }
+		private void CB_ClickIcon_Valkyrie(PNGOLKLFFLH a_data)
+		{
+			TodoLogger.LogNotImplemented("CB_ClickIcon_Valkyrie");
+		}
 
 		//// RVA: 0x1175F14 Offset: 0x1175F14 VA: 0x1175F14
-		//private void CB_ClickIcon_Costume(CKFGMNAIBNG a_data, int a_color) { }
+		private void CB_ClickIcon_Costume(CKFGMNAIBNG a_data, int a_color)
+		{
+			TodoLogger.LogNotImplemented("CB_ClickIcon_Costume");
+		}
 
 		//// RVA: 0x1176014 Offset: 0x1176014 VA: 0x1176014
-		//private void CB_ClickIcon_Emblem(IAPDFOPPGND a_data) { }
+		private void CB_ClickIcon_Emblem(IAPDFOPPGND a_data)
+		{
+			TodoLogger.LogNotImplemented("CB_ClickIcon_Emblem");
+		}
 
 		//// RVA: 0x11764A8 Offset: 0x11764A8 VA: 0x11764A8
-		//public void SetFanCount(int _fanCount) { }
+		public void SetFanCount(int _fanCount)
+		{
+			if (_fanCount >= 99999)
+				_fanCount = 99999;
+			m_fanCount_num.SetNumber(_fanCount, 0);
+		}
 
 		//// RVA: 0x11764F4 Offset: 0x11764F4 VA: 0x11764F4
-		//public void SetMainGunPower(int _power) { }
+		public void SetMainGunPower(int _power)
+		{
+			m_mainGunPower_text.text = _power < 1 ? "---" : (_power < 1000000 ? _power : 999999).ToString();
+		}
 
 		//// RVA: 0x11765C0 Offset: 0x11765C0 VA: 0x11765C0
-		//public void HiddenVisitButton(bool isHidden) { }
+		public void HiddenVisitButton(bool isHidden)
+		{
+			m_visit_btn.Hidden = isHidden;
+		}
 
 		//// RVA: 0x11765F4 Offset: 0x11765F4 VA: 0x11765F4
 		//public void HiddenLobbyBrows(bool isHidden) { }
@@ -890,7 +984,10 @@ namespace XeApp.Game.Menu
 		//public void DecoButtonHidden(bool a_hidden) { }
 
 		//// RVA: 0x117671C Offset: 0x117671C VA: 0x117671C
-		//public void SetButtonType(ProfilMenuLayout.ButtonType a_type) { }
+		public void SetButtonType(ButtonType a_type)
+		{
+			TodoLogger.Log(0, "SetButtonType");
+		}
 
 		//// RVA: 0x1176B94 Offset: 0x1176B94 VA: 0x1176B94
 		public void OnClickFanRelease()
@@ -1017,11 +1114,7 @@ namespace XeApp.Game.Menu
 		//[CompilerGeneratedAttribute] // RVA: 0x6FEFDC Offset: 0x6FEFDC VA: 0x6FEFDC
 		//// RVA: 0x117B1C8 Offset: 0x117B1C8 VA: 0x117B1C8
 		//private void <SetDegreeImage>b__197_0(IiconTexture icon) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6FEFEC Offset: 0x6FEFEC VA: 0x6FEFEC
-		//// RVA: 0x117B2B4 Offset: 0x117B2B4 VA: 0x117B2B4
-		//private void <LoadDegreeInfoWindow>b__220_0(GameObject instance) { }
-
+		
 		//[CompilerGeneratedAttribute] // RVA: 0x6FEFFC Offset: 0x6FEFFC VA: 0x6FEFFC
 		//// RVA: 0x117B2E8 Offset: 0x117B2E8 VA: 0x117B2E8
 		//private void <OnClickSceneInfo>b__229_0() { }

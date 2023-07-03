@@ -85,7 +85,10 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CCB67C Offset: 0x1CCB67C VA: 0x1CCB67C
-		//public void RemoveScrollObject() { }
+		public void RemoveScrollObject()
+		{
+			m_scrollObjects.Clear();
+		}
 
 		//// RVA: 0x1CCB6F4 Offset: 0x1CCB6F4 VA: 0x1CCB6F4
 		//public void Apply(int rowCount, int columnCount, Vector2 contentSize, Vector2 leftTopPosition) { }
@@ -434,6 +437,12 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CCDBE8 Offset: 0x1CCDBE8 VA: 0x1CCDBE8
-		//public void SetEnableScrollBar(bool isEnable) { }
+		public void SetEnableScrollBar(bool isEnable)
+		{
+			if (m_scrollRect.verticalScrollbar != null)
+				m_scrollRect.verticalScrollbar.interactable = isEnable;
+			if (m_scrollRect.horizontalScrollbar != null)
+				m_scrollRect.horizontalScrollbar.interactable = isEnable;
+		}
 	}
 }

@@ -551,13 +551,16 @@ namespace ExternLib
 			EDOHBJAPLPF_JsonData names = jsonData["names"];
 
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res["players"] = new EDOHBJAPLPF_JsonData();
+			res["players"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+			/*
 			res["created_at"] = 1501751856;
 			res["data_status"] = 1;
 			res["updated_at"] = 1656166393;
 			res["player"] = new EDOHBJAPLPF_JsonData();
 			res["player"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
 			TodoLogger.Log(0, "SakashoPlayerDataGetPlayerData");
-
+			*/
 			SendMessage(callbackId, res);
 			return 0;
 		}

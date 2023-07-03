@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace XeApp.Game.Menu
 {
@@ -136,8 +137,226 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x9CF690 Offset: 0x9CF690 VA: 0x9CF690
 		private IEnumerator Co_ProfileInit(ProfilDateArgs a_arg)
 		{
-			TodoLogger.Log(0, "Co_ProfileInit");
-			yield return null;
+			bool _isFanEnable; // 0x24
+			bool _isCannonEnable; // 0x25
+			bool IsLobby; // 0x26
+			NKOBMDPHNGP_EventRaidLobby lobbyController; // 0x28
+
+			//0x9CFCC4
+			bool t_is_end = false;
+			bool t_is_error = false;
+			_isFanEnable = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("deco_player_level", 0) > 0;
+			_isCannonEnable = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.BLEDNLHJDEF_IsCannonEnabled();
+			if(a_arg != null && !a_arg.isShowMyProfil)
+			{
+				a_arg.data.KLJNFJJMJMC(() =>
+				{
+					//0x9CF9A8
+					m_profil.CostumeList = a_arg.data.ODNHGAJPEOM_CostumeList;
+					m_profil.ValkyrieList = a_arg.data.EDEPBHCOHNF_ValkyrieList;
+					m_profil.EmblemList = a_arg.data.ALJGLDBFFGJ_EmblemList;
+					t_is_end = true;
+				}, () =>
+				{
+					//0x9CFAEC
+					t_is_error = true;
+				}, false);
+				//LAB_009d0034
+				while(!t_is_end)
+				{
+					if (!t_is_error)
+						yield return null;
+					else
+					{
+						//LAB_009d109c
+						m_isGotoTitle = true;
+						yield break;
+					}
+				}
+				m_mainGunPower = a_arg.data.PCEGKKLKFNO.AHEFHIMGIBI_ServerData.MHEAEGMIKIE_PublicStatus.OENMBJEKJII_McPower;
+				t_is_end = false;
+				t_is_error = false;
+				CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.NDDIOKIKCNA_GetFanCount(a_arg.data.PCEGKKLKFNO.MLPEHNBNOGD_Id, (int fanCount) =>
+				{
+					//0x9CFAF8
+					m_fanCount = fanCount;
+					t_is_end = true;
+				}, () =>
+				{
+					//0x9CFB2C
+					t_is_error = true;
+				});
+				while(!t_is_end)
+				{
+					if (!t_is_error)
+						yield return null;
+					else
+					{
+						//LAB_009d109c
+						m_isGotoTitle = true;
+						yield break;
+					}
+				}
+				IsLobby = false;
+				lobbyController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/) as NKOBMDPHNGP_EventRaidLobby;
+				if(lobbyController != null)
+				{
+					TodoLogger.Log(0, "Event");
+				}
+				t_is_end = false;
+				t_is_error = false;
+				CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.EKIJICIBGOG(true, () =>
+				{
+					//0x9CFB44
+					t_is_end = true;
+				}, (CACGCMBKHDI_Request error) =>
+				{
+					//0x9CFB50
+					t_is_error = true;
+				}, (CACGCMBKHDI_Request error) =>
+				{
+					//0x9CFB5C
+					t_is_error = true;
+				});
+				//LAB_009d04bc
+				while(!t_is_end)
+				{
+					if (!t_is_error)
+						yield return null;
+					else
+					{
+						//LAB_009d109c
+						m_isGotoTitle = true;
+						yield break;
+					}
+				}
+				m_profil.Init(a_arg.data, IsLobby);
+				m_profil.SetInfoTable(a_arg.infoType);
+				m_profil.HiddenVisitButton(!a_arg.isFavorite);
+				m_profil.SetFanCount(m_fanCount);
+				m_profil.SetMainGunPower(m_mainGunPower);
+				m_musicRank = OEGIPPCADNA.BFKAHKBKBJE(a_arg.data.PCEGKKLKFNO.AHEFHIMGIBI_ServerData.MHEAEGMIKIE_PublicStatus.AILEOFKIELL_UtaRateRank, a_arg.data.PCEGKKLKFNO.AJECHDLMKOE_LastLogin);
+				m_profil.SetMusicRanking(m_musicRank);
+				m_profil.SetButtonType(a_arg.btnType);
+				m_profil.SetPlayerInfoWindow(_isCannonEnable, _isFanEnable);
+				lobbyController = null;
+				//LAB_009d15fc
+			}
+			else
+			{ 
+				m_profil.CostumeList = CKFGMNAIBNG.NEOMKKIEMJJ(GameManager.Instance.ViewPlayerData.AHEFHIMGIBI_ServerSave, false, true);
+				m_profil.ValkyrieList = PNGOLKLFFLH.NEOMKKIEMJJ(GameManager.Instance.ViewPlayerData.AHEFHIMGIBI_ServerSave, false);
+				m_mainGunPower = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.MHEAEGMIKIE_PublicStatus.OENMBJEKJII_McPower;
+				t_is_end = false;
+				t_is_error = false;
+				CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.CCAOOIMEPAL_GetPlayerFanCount((int fanCount) =>
+				{
+					//0x9CFB68
+					m_fanCount = fanCount;
+					t_is_end = true;
+				}, () =>
+				{
+					//0x9CFB9C
+					t_is_error = true;
+				});
+				while (!t_is_end)
+				{
+					if (!t_is_error)
+						yield return null;
+					else
+					{
+						m_isGotoTitle = true;
+						yield break;
+					}
+				}
+				if (!m_isGotoTitle)
+				{
+					t_is_end = false;
+					t_is_error = false;
+					OEGIPPCADNA mng = OEGIPPCADNA.HHCJCDFCLOB;
+					mng.MJFKJHJJLMN_GetUtaRateRank(0, false, () =>
+					{
+						//0x9CFC28
+						m_musicRank = OEGIPPCADNA.BFKAHKBKBJE(mng.CDINKAANIAA, 0);
+						t_is_end = true;
+					}, () =>
+					{
+						//0x9CFBA8
+						m_musicRank = 0;
+						t_is_end  = true;
+					}, () =>
+					{
+						//0x9CFBDC
+						t_is_error = true;
+					});
+					while(!t_is_end)
+					{
+						if (!t_is_error)
+							yield return null;
+						else
+						{
+							//LAB_009d109c
+							m_isGotoTitle = true;
+							yield break;
+						}
+					}
+				}
+				m_profil.EmblemList.Clear();
+				List<IAPDFOPPGND> embList = IAPDFOPPGND.FKDIMODKKJD(false);
+				foreach(var emb in embList)
+				{
+					if(emb.EAHPLCJMPHD_EmblemPic > 0)
+					{
+						m_profil.EmblemList.Add(emb);
+					}
+				}
+				m_profil.Init();
+				m_profil.SetInfoTable(a_arg == null ? ProfilMenuLayout.InfoType.PLAYER : a_arg.infoType);
+				m_profil.SetFanCount(m_fanCount);
+				m_profil.SetMainGunPower(m_mainGunPower);
+				m_profil.SetMusicRanking(m_musicRank);
+				m_profil.SetButtonType(0);
+				m_profil.SetPlayerInfoWindow(_isCannonEnable, _isFanEnable);
+			}
+			//LAB_009d15fc
+			if(m_profil.CostumeList != null)
+			{
+				m_profil.CostumeList.Sort((CKFGMNAIBNG a, CKFGMNAIBNG b) =>
+				{
+					//0x9CF8DC
+					int res = a.AHHJLDLAPAN_DivaId - b.AHHJLDLAPAN_DivaId;
+					if (res == 0)
+						res = a.JPIDIENBGKH_CostumeId - b.JPIDIENBGKH_CostumeId;
+					return res;
+				});
+				for(int i = 0; i < m_profil.CostumeList.Count; i++)
+				{
+					int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume, m_profil.CostumeList[i].JPIDIENBGKH_CostumeId);
+					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(itemId, 0));
+					for(int j = 0; j < m_profil.CostumeList[i].NLKGAAFBDFK(); j++)
+					{
+						KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(itemId, m_profil.CostumeList[i].LLJPMOIPBAG(j)));
+					}
+				}
+			}
+			if(m_profil.ValkyrieList != null)
+			{
+				for(int i = 0; i < m_profil.ValkyrieList.Count; i++)
+				{
+					int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie, m_profil.ValkyrieList[i].GPPEFLKGGGJ_ValkyrieId);
+					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(itemId, 0));
+				}
+			}
+			if(m_profil.EmblemList != null)
+			{
+				for(int i = 0; i < m_profil.EmblemList.Count; i++)
+				{
+					int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.MNCJMDDAFJB_EmblemItem, m_profil.EmblemList[i].MDPKLNFFDBO_EmblemId);
+					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(itemId, 0));
+				}
+			}
+			m_profil.SetTransitionUniqueId((TransitionUniqueId) MenuScene.Instance.GetCurrentScene().uniqueId);
+			m_isCreateValkyrieAndCostumeList = true;
 		}
 	}
 }

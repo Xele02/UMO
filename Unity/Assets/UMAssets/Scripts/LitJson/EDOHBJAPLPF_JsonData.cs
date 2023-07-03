@@ -976,7 +976,18 @@ public class EDOHBJAPLPF_JsonData : IHIFCPDDDKN_IJsonWrapper, IEquatable<EDOHBJA
 	}
 	
 	// // RVA: 0x150BF1C Offset: 0x150BF1C VA: 0x150BF1C
-	// public string FLPBHNAOIOB(int OIPCCBHIKIA) { }
+	public string FLPBHNAOIOB(int OIPCCBHIKIA)
+	{
+		CBJBIDKHLFM_EnsureCollection();
+		if(INDDJNMPONH_type == JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array)
+		{
+			return HGNCNIHIPJJ_inst_array[OIPCCBHIKIA].FLPBHNAOIOB(0);
+		}
+		else
+		{
+			return NAMGNKNCNON_object_list[OIPCCBHIKIA].Key;
+		}
+	}
 
 	// // RVA: 0x14F4048 Offset: 0x14F4048 VA: 0x14F4048
 	public bool BBAJPINMOEP_Contains(string GODGBGGHPNG_prop_name) 

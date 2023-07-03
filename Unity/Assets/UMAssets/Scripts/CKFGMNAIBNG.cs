@@ -1,4 +1,5 @@
 
+using System.Collections.Generic;
 using System.Text;
 using XeApp.Game.Common;
 using XeSys;
@@ -37,7 +38,10 @@ public class CKFGMNAIBNG
 	}
 
 	// // RVA: 0x107DFC4 Offset: 0x107DFC4 VA: 0x107DFC4
-	// public int NLKGAAFBDFK() { }
+	public int NLKGAAFBDFK()
+	{
+		return EOGIFMAPOPA_ColsAvaiableFlags_Crypted.Length;
+	}
 
 	// // RVA: 0x107DFE8 Offset: 0x107DFE8 VA: 0x107DFE8
 	public CKFGMNAIBNG()
@@ -167,7 +171,57 @@ public class CKFGMNAIBNG
 	}
 
 	// // RVA: 0x107F330 Offset: 0x107F330 VA: 0x107F330
-	// public static List<CKFGMNAIBNG> NEOMKKIEMJJ(BBHNACPENDM KPMOBPNENCD, bool OJEBNBLHPNP = False, bool NHMPDLNPBJD = False) { }
+	public static List<CKFGMNAIBNG> NEOMKKIEMJJ(BBHNACPENDM_ServerSaveData KPMOBPNENCD, bool OJEBNBLHPNP = false, bool NHMPDLNPBJD = false)
+	{
+		List<CKFGMNAIBNG> cosList = new List<CKFGMNAIBNG>();
+		for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes.Count; i++)
+		{
+			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo dbCos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[i];
+			EBFLJMOCLNA_Costume.ILFJDCICIKN saveCos = KPMOBPNENCD.BEKHNNCGIEL_Costume.FABAGMLEKIB_List[i];
+			if (!OJEBNBLHPNP)
+			{
+				if (dbCos.PPEGAKEIEGM_Enabled == 2)
+				{
+					if (NHMPDLNPBJD)
+					{
+						if (dbCos.EODICFLJAKO)
+							continue;
+					}
+					if (dbCos.DAJGPBLEEOB_PrismCostumeModelId == 1)
+					{
+						if (KPMOBPNENCD.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(dbCos.AHHJLDLAPAN_PrismDivaId).CPGFPEDMDEH_Have != 0)
+						{
+							//LAB_0107f50c
+							CKFGMNAIBNG data = new CKFGMNAIBNG();
+							data.KHEKNNFCAOI(dbCos.AHHJLDLAPAN_PrismDivaId, dbCos.JPIDIENBGKH_CostumeId, KPMOBPNENCD, OJEBNBLHPNP);
+							data.FJODMPGPDDD_Possessed = true;
+							cosList.Add(data);
+						}
+					}
+					else
+					{
+						if(saveCos.CGKAEMGLHNK_Possessed())
+						{
+							//LAB_0107f50c
+							CKFGMNAIBNG data = new CKFGMNAIBNG();
+							data.KHEKNNFCAOI(dbCos.AHHJLDLAPAN_PrismDivaId, dbCos.JPIDIENBGKH_CostumeId, KPMOBPNENCD, OJEBNBLHPNP);
+							data.FJODMPGPDDD_Possessed = true;
+							cosList.Add(data);
+						}
+					}
+				}
+			}
+			else
+			{
+				//LAB_0107f50c
+				CKFGMNAIBNG data = new CKFGMNAIBNG();
+				data.KHEKNNFCAOI(dbCos.AHHJLDLAPAN_PrismDivaId, dbCos.JPIDIENBGKH_CostumeId, KPMOBPNENCD, OJEBNBLHPNP);
+				data.FJODMPGPDDD_Possessed = true;
+				cosList.Add(data);
+			}
+		}
+		return cosList;
+	}
 
 	// // RVA: 0x107F7B4 Offset: 0x107F7B4 VA: 0x107F7B4
 	// public static string EJOJNFDHDHN(int AHHJLDLAPAN, int JPIDIENBGKH) { }

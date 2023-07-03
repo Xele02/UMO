@@ -365,7 +365,11 @@ public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xCC8338 Offset: 0xCC8338 VA: 0xCC8338
-	// public bool BLEDNLHJDEF() { }
+	public bool BLEDNLHJDEF_IsCannonEnabled()
+	{
+		int a = LPJLEHAJADA("cannon_enable_master_version", 1);
+		return a > 0 && a <= DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion;
+	}
 
 	// // RVA: 0xCC8404 Offset: 0xCC8404 VA: 0xCC8404
 	// public bool BEFGHIJNEBL() { }
