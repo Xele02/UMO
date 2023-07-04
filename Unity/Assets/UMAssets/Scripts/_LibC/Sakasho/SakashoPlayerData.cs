@@ -292,218 +292,245 @@ namespace ExternLib
 		public static int SakashoPlayerDataSearchForPlayer(int callbackId, string json)
 		{
 			//https://sakasho.sp.mbga.jp/v2/player_search?page=1&ipp=40&from=1&to=19&exclude_account_ban=1&key=plv&namespaces=base,public_status&order_by_updated_at=2&_reqid=1654421025
-			string result = @"
-{
-    ""SAKASHO_CURRENT_ASSET_REVISION"": ""20220622141305"",
-	""SAKASHO_CURRENT_DATE_TIME"": " + Utility.GetCurrentUnixTime() + @",
-    ""SAKASHO_CURRENT_MASTER_REVISION"": 5,
-    ""current_page"": 1,
-    ""next_page"": 0,
-    ""players"": [
-        {
-            ""is_friend"": false,
-            ""player_data"": {
-                ""base"": {
-                    ""agree_tos_ver"": 1,
-                    ""force_rename"": 0,
-                    ""name"": ""AA"",
-                    ""prof"": ""BB"",
-                    ""rename_date"": 0,
-                    ""rev"": 2,
-                    ""save_id"": 4853,
-                    ""tutorial_end"": 2,
-                    ""ver"": 1
-
-				},
-                ""public_status"": {
-                    ""assist_data"": {
-                        ""assist_data_list"": [
-                            {
-                                ""id"": 3313,
-                                ""leaf"": 0,
-                                ""luck"": 0,
-                                ""lv"": 1,
-                                ""mb"": ""//////////////////9/"",
-                                ""mlt"": 1,
-                                ""sb"": ""AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=""
+			/*			string result = @"
+			{
+				""SAKASHO_CURRENT_ASSET_REVISION"": ""20220622141305"",
+				""SAKASHO_CURRENT_DATE_TIME"": " + Utility.GetCurrentUnixTime() + @",
+				""SAKASHO_CURRENT_MASTER_REVISION"": 5,
+				""current_page"": 1,
+				""next_page"": 0,
+				""players"": [
+					{
+						""is_friend"": false,
+						""player_data"": {
+							""base"": {
+								""agree_tos_ver"": 1,
+								""force_rename"": 0,
+								""name"": ""AA"",
+								""prof"": ""BB"",
+								""rename_date"": 0,
+								""rev"": 2,
+								""save_id"": 4853,
+								""tutorial_end"": 2,
+								""ver"": 1
 
 							},
-                            {
-                                ""id"": 2557,
-                                ""leaf"": 0,
-                                ""luck"": 0,
-                                ""lv"": 1,
-                                ""mb"": ""//////////////8BAAAA"",
-                                ""mlt"": 2,
-                                ""sb"": ""AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=""
-                            },
-                            {
-                                ""id"": 746,
-                                ""leaf"": 0,
-                                ""luck"": 0,
-                                ""lv"": 1,
-                                ""mb"": ""//////////////8BAAAA"",
-                                ""mlt"": 1,
-                                ""sb"": ""AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=""
-                            },
-                            {
-                                ""id"": 749,
-                                ""leaf"": 0,
-                                ""luck"": 2,
-                                ""lv"": 1,
-                                ""mb"": ""//////////////8BAAAA"",
-                                ""mlt"": 3,
-                                ""sb"": ""/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=""
-                            }
-                        ],
-                        ""assist_name"": ""CC""
-                    },
-                    ""c_col"": 0,
-                    ""c_id"": 0,
-                    ""cos_cnt"": 24,
-                    ""dc_nm"": ""DD"",
-                    ""dc_tm"": 1611282502,
-                    ""df_clr"": [
-                        20,
-                        10,
-                        0,
-                        0,
-                        0
-                    ],
-                    ""df_clr_l6"": [
-                        0,
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    ""df_fcb"": [
-                        12,
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    ""df_fcb_l6"": [
-                        0,
-                        0,
-                        0,
-                        0,
-                        0
-                    ],
-                    ""diva_id"": 6,
-                    ""em_cnt"": 0,
-                    ""em_id"": 1,
-                    ""hs_rating"": [
-                        {
-                            ""df"": [
-                                0,
-                                0,
-                                0,
-                                1,
-                                0,
-                                1,
-                                0,
-                                0,
-                                0,
-                                0
-                            ],
-                            ""id"": [
-                                5,
-                                17,
-                                59,
-                                18,
-                                8,
-                                23,
-                                19,
-                                21,
-                                24,
-                                26
-                            ],
-                            ""l6"": [
-                                0,
-                                0,
-                                0,
-                                0,
-                                0,
-                                0,
-                                0,
-                                0,
-                                0,
-                                0
-                            ],
-                            ""sc"": [
-                                56,
-                                47,
-                                33,
-                                27,
-                                24,
-                                22,
-                                19,
-                                19,
-                                19,
-                                19
-                            ]
-                        }
-                    ],
-                    ""lv"": 8,
-                    ""lv_max_cnt"": 17,
-                    ""m_scene"": {
-                        ""id"": 3313,
-                        ""leaf"": 0,
-                        ""luck"": 0,
-                        ""lv"": 1,
-                        ""mb"": ""//////////////////9/"",
-                        ""mlt"": 1,
-                        ""sb"": ""AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=""
-                    },
-                    ""max_df"": 0,
-                    ""max_id"": 5,
-                    ""max_l6"": 0,
-                    ""max_sc"": 564997,
-                    ""mc_power"": 44864,
-                    ""pf_tap"": 7051,
-                    ""plv"": 11,
-                    ""psh"": 0,
-                    ""q_cnt"": 277,
-                    ""rev"": 2,
-                    ""s_scene"": [
-                        {
-                            ""id"": 193,
-                            ""leaf"": 0,
-                            ""luck"": 0,
-                            ""lv"": 1,
-                            ""mb"": ""//////////////8BAAAA"",
-                            ""mlt"": 2,
-                            ""sb"": ""AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=""
-                        },
-                        {
-                            ""id"": 134,
-                            ""leaf"": 0,
-                            ""luck"": 2,
-                            ""lv"": 1,
-                            ""mb"": ""//////////////8BAAAA"",
-                            ""mlt"": 3,
-                            ""sb"": ""/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=""
-                        }
-                    ],
-                    ""save_id"": 7718,
-                    ""scn_cnt"": 1456,
-                    ""t_clr"": 60,
-                    ""utarate_rank"": 241982,
-                    ""vf_cnt"": 7,
-                    ""vf_id"": 1
-                }
-            },
-            ""player_id"": 49552951,
-            ""updated_at"": 1654421023,
-            ""value"": 11
-        }
-	],
-	""previous_page"": 0
-}";
+							""public_status"": {
+								""assist_data"": {
+									""assist_data_list"": [
+										{
+											""id"": 3313,
+											""leaf"": 0,
+											""luck"": 0,
+											""lv"": 1,
+											""mb"": ""//////////////////9/"",
+											""mlt"": 1,
+											""sb"": ""AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=""
 
-			SendMessage(callbackId, result);
+										},
+										{
+											""id"": 2557,
+											""leaf"": 0,
+											""luck"": 0,
+											""lv"": 1,
+											""mb"": ""//////////////8BAAAA"",
+											""mlt"": 2,
+											""sb"": ""AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=""
+										},
+										{
+											""id"": 746,
+											""leaf"": 0,
+											""luck"": 0,
+											""lv"": 1,
+											""mb"": ""//////////////8BAAAA"",
+											""mlt"": 1,
+											""sb"": ""AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=""
+										},
+										{
+											""id"": 749,
+											""leaf"": 0,
+											""luck"": 2,
+											""lv"": 1,
+											""mb"": ""//////////////8BAAAA"",
+											""mlt"": 3,
+											""sb"": ""/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=""
+										}
+									],
+									""assist_name"": ""CC""
+								},
+								""c_col"": 0,
+								""c_id"": 0,
+								""cos_cnt"": 24,
+								""dc_nm"": ""DD"",
+								""dc_tm"": 1611282502,
+								""df_clr"": [
+									20,
+									10,
+									0,
+									0,
+									0
+								],
+								""df_clr_l6"": [
+									0,
+									0,
+									0,
+									0,
+									0
+								],
+								""df_fcb"": [
+									12,
+									0,
+									0,
+									0,
+									0
+								],
+								""df_fcb_l6"": [
+									0,
+									0,
+									0,
+									0,
+									0
+								],
+								""diva_id"": 6,
+								""em_cnt"": 0,
+								""em_id"": 1,
+								""hs_rating"": [
+									{
+										""df"": [
+											0,
+											0,
+											0,
+											1,
+											0,
+											1,
+											0,
+											0,
+											0,
+											0
+										],
+										""id"": [
+											5,
+											17,
+											59,
+											18,
+											8,
+											23,
+											19,
+											21,
+											24,
+											26
+										],
+										""l6"": [
+											0,
+											0,
+											0,
+											0,
+											0,
+											0,
+											0,
+											0,
+											0,
+											0
+										],
+										""sc"": [
+											56,
+											47,
+											33,
+											27,
+											24,
+											22,
+											19,
+											19,
+											19,
+											19
+										]
+									}
+								],
+								""lv"": 8,
+								""lv_max_cnt"": 17,
+								""m_scene"": {
+									""id"": 3313,
+									""leaf"": 0,
+									""luck"": 0,
+									""lv"": 1,
+									""mb"": ""//////////////////9/"",
+									""mlt"": 1,
+									""sb"": ""AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=""
+								},
+								""max_df"": 0,
+								""max_id"": 5,
+								""max_l6"": 0,
+								""max_sc"": 564997,
+								""mc_power"": 44864,
+								""pf_tap"": 7051,
+								""plv"": 11,
+								""psh"": 0,
+								""q_cnt"": 277,
+								""rev"": 2,
+								""s_scene"": [
+									{
+										""id"": 193,
+										""leaf"": 0,
+										""luck"": 0,
+										""lv"": 1,
+										""mb"": ""//////////////8BAAAA"",
+										""mlt"": 2,
+										""sb"": ""AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=""
+									},
+									{
+										""id"": 134,
+										""leaf"": 0,
+										""luck"": 2,
+										""lv"": 1,
+										""mb"": ""//////////////8BAAAA"",
+										""mlt"": 3,
+										""sb"": ""/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=""
+									}
+								],
+								""save_id"": 7718,
+								""scn_cnt"": 1456,
+								""t_clr"": 60,
+								""utarate_rank"": 241982,
+								""vf_cnt"": 7,
+								""vf_id"": 1
+							}
+						},
+						""player_id"": 49552951,
+						""updated_at"": 1654421023,
+						""value"": 11
+					}
+				],
+				""previous_page"": 0
+			}";*/
+
+			// Send a copy of the full unlocked account as user data
+			EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
+			EDOHBJAPLPF_JsonData names = jsonData["names"];
+
+			EDOHBJAPLPF_JsonData jsonRes = playerAccount.serverData;
+
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res["next_page"] = -1;
+			res["previous_page"] = -1;
+			res["current_page"] = 1;
+			res["players"] = new EDOHBJAPLPF_JsonData();
+			res["players"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+			res["players"].Add(new EDOHBJAPLPF_JsonData());
+			res["players"][0].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+			res["players"][0]["is_friend"] = false;
+			res["players"][0]["player_data"] = new EDOHBJAPLPF_JsonData();
+			res["players"][0]["player_data"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+			for (int i = 0; i < names.HNBFOAJIIAL_Count; i++)
+			{
+				string str = (string)names[i];
+				res["players"][0]["player_data"][str] = jsonRes[str];
+			}
+
+			res["players"][0]["player_id"] = 99999998;
+			res["players"][0]["updated_at"] = 1654421023;
+			res["players"][0]["value"] = 11; // ??
+
+			SendMessage(callbackId, res);
 			return 0;
 		}
 		static int saveCnt = 0;
@@ -549,18 +576,29 @@ namespace ExternLib
 		{
 			EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
 			EDOHBJAPLPF_JsonData names = jsonData["names"];
+			EDOHBJAPLPF_JsonData ids = jsonData["ids"];
+
+
+			// Send a copy of the full unlocked account as user data
+			EDOHBJAPLPF_JsonData jsonRes = playerAccount.serverData;
 
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res["players"] = new EDOHBJAPLPF_JsonData();
 			res["players"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
-			/*
-			res["created_at"] = 1501751856;
-			res["data_status"] = 1;
-			res["updated_at"] = 1656166393;
-			res["player"] = new EDOHBJAPLPF_JsonData();
-			res["player"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
-			TodoLogger.Log(0, "SakashoPlayerDataGetPlayerData");
-			*/
+			res["players"].Add(new EDOHBJAPLPF_JsonData());
+			res["players"][0].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+			res["players"][0]["player_data"] = new EDOHBJAPLPF_JsonData();
+			res["players"][0]["player_data"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+			for (int i = 0; i < names.HNBFOAJIIAL_Count; i++)
+			{
+				string str = (string)names[i];
+				res["players"][0]["player_data"][str] = jsonRes[str];
+			}
+
+			res["players"][0]["player_id"] = 99999998;
+			res["players"][0]["updated_at"] = 1654421023;
+
+
 			SendMessage(callbackId, res);
 			return 0;
 		}

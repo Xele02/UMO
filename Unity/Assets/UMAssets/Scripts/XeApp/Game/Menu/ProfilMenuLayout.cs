@@ -8,6 +8,7 @@ using XeSys;
 using mcrs;
 using System.Collections;
 using XeApp.Core;
+using System.Text;
 
 namespace XeApp.Game.Menu
 {
@@ -621,7 +622,33 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1171608 Offset: 0x1171608 VA: 0x1171608
 		public void Init(EAJCBFGKKFA_FriendInfo data, bool a_enable_lobby_btn)
 		{
-			TodoLogger.Log(0, "Init 2");
+			m_imageLoadFlags = 0;
+			m_is_friend = true;
+			m_friend_player_data = data;
+			m_enable_lobby_btn = a_enable_lobby_btn;
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			SetDivaImage(data.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId, data.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, data.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId);
+			SetMusicRate(data.AGJIIKKOKFJ_ScoreRatingRank);
+			m_viewHSRatingData = data.PPMGIDEHHDI_ViewHSRatingData;
+			SetMainSceneInfo(data.JIGONEMPPNP_Diva.FGFIBOBAPIA_SceneId < 1 ? null : data.AFBMEMCHJCL_MainScene);
+			SetCenterSkillInfo(data.JIGONEMPPNP_Diva, m_scene_data);
+			m_player_name.text = data.LBODHBDOMGK_Name;
+			m_player_id.text = "";
+			m_player_name_time.text = "";
+			m_comment.text = data.FGMPKKOOGCM;
+			m_comment.horizontalOverflow = HorizontalWrapMode.Wrap;
+			SetDegreeInfo(data.NDOLELKAJNL_DegreeData);
+			m_degree_data = data.NDOLELKAJNL_DegreeData;
+			m_name_btn.Hidden = true;
+			m_comment_btn.Hidden = true;
+			m_degree_btn.Hidden = true;
+			m_player_level.text = bk.GetMessageByLabel("profil_text_04") + data.ILOJAJNCPEC_Rank.ToString();
+			m_level_icon = new DivaIconDecoration(m_diva_level.gameObject, DivaIconDecoration.Size.L, null, null);
+			m_level_icon.Change(data.JIGONEMPPNP_Diva, GameManager.Instance.ViewPlayerData, DisplayType.Level);
+			m_player_id_switch.StartChildrenAnimGoStop(1, 1);
+			m_text_switch.StartChildrenAnimGoStop(1, 1);
+			SetStatsInfo(data.PCEGKKLKFNO.AHEFHIMGIBI_ServerData.MHEAEGMIKIE_PublicStatus);
+			AssistSelectInit(data);
 		}
 
 		//// RVA: 0x1171E90 Offset: 0x1171E90 VA: 0x1171E90
@@ -696,10 +723,30 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x116E4F0 Offset: 0x116E4F0 VA: 0x116E4F0
-		//public void SetDivaImage(int diva_no, int cos_no, int color_no) { }
+		public void SetDivaImage(int diva_no, int cos_no, int color_no)
+		{
+			GameManager.Instance.DivaIconCache.LoadPortraitIcon(diva_no, cos_no, color_no, (IiconTexture icon) =>
+			{
+				//0x117B0DC
+				icon.Set(m_diva_image);
+				m_imageLoadFlags |= ImageLoadFlags.Diva;
+			});
+		}
 
 		//// RVA: 0x116E618 Offset: 0x116E618 VA: 0x116E618
-		//public void SetMusicRate(HighScoreRatingRank.Type a_icon_type) { }
+		public void SetMusicRate(HighScoreRatingRank.Type a_icon_type)
+		{
+			m_musicrate00_text.text = HighScoreRatingRank.GetRankName(a_icon_type);
+			m_musicrate01_text.text = "---";
+			GameManager.Instance.MusicRatioTextureCache.Load(a_icon_type, (IiconTexture texture) =>
+			{
+				//0x117C6AC
+				if(texture != null && texture is MusicRatioTextureCache.MusicRatioTexture)
+				{
+					(texture as MusicRatioTextureCache.MusicRatioTexture).Set(m_musicrate_image, a_icon_type);
+				}
+			});
+		}
 
 		//// RVA: 0x1172598 Offset: 0x1172598 VA: 0x1172598
 		public void SetMusicRanking(int a_rank)
@@ -708,16 +755,64 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x11725E4 Offset: 0x11725E4 VA: 0x11725E4
-		//public void SetDegreeImage(int degree_no) { }
+		public void SetDegreeImage(int degree_no)
+		{
+			if (degree_no == 1)
+			{
+				m_degree_image.enabled = false;
+				m_imageLoadFlags |= ImageLoadFlags.Degree;
+			}
+			else
+			{
+				m_degree_image.enabled = true;
+				GameManager.Instance.ItemTextureCache.LoadEmblem(degree_no, (IiconTexture icon) =>
+				{
+					//0x117B1C8
+					icon.Set(m_degree_image);
+					m_imageLoadFlags |= ImageLoadFlags.Degree;
+				});
+			}
+		}
 
 		//// RVA: 0x117273C Offset: 0x117273C VA: 0x117273C
 		//public void SetSceneImage(int id, int rank, bool isKira) { }
 
 		//// RVA: 0x11728B8 Offset: 0x11728B8 VA: 0x11728B8
-		//private void SetAssistSceneImage(int id, int rank, bool isKira, int num) { }
+		private void SetAssistSceneImage(int id, int rank, bool isKira, int num)
+		{
+			int listNum = num;
+			GameManager.Instance.SceneIconCache.Load(id, rank, (IiconTexture icon) =>
+			{
+				//0x117C920
+				AssistImageData data = new AssistImageData();
+				data.index = listNum;
+				data.sceneTex = icon;
+				data.isKira = isKira;
+				m_assist_imagedata_list.Add(data);
+				m_assist_load_image_count++;
+				if (m_assist_load_image_count != m_assist_load_image_max)
+					return;
+				m_imageLoadFlags |= ImageLoadFlags.Assist;
+				m_assist_load_image_count = 0;
+				SetAssistSceneImage();
+			});
+		}
 
 		//// RVA: 0x1172A4C Offset: 0x1172A4C VA: 0x1172A4C
-		//private void SetAssistSceneImage() { }
+		private void SetAssistSceneImage()
+		{
+			for(int i = 0; i < 4; i++)
+			{
+				for(int j = 0; j < m_assist_imagedata_list.Count; j++)
+				{
+					if (m_assist_imagedata_list[i].index == i + m_assist_select_page * 4)
+					{
+						m_assist_imagedata_list[i].sceneTex.Set(m_assist_scene_image[i]);
+						SceneIconTextureCache.ChangeKiraMaterial(m_assist_scene_image[i], m_assist_imagedata_list[i].sceneTex as IconTexture, m_assist_imagedata_list[i].isKira);
+					}
+				}
+			}
+		}
 
 		//// RVA: 0x1170374 Offset: 0x1170374 VA: 0x1170374
 		//private void SetChangePlayerNameTime(int mon, int day) { }
@@ -781,10 +876,18 @@ namespace XeApp.Game.Menu
 		//private void OnClickMusicRateDetail() { }
 
 		//// RVA: 0x1174BC8 Offset: 0x1174BC8 VA: 0x1174BC8
-		//private void OnClickCenterSkill() { }
+		private void OnClickCenterSkill()
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MenuScene.Instance.UnitSaveWindowControl.ShowSkillWindow(m_center_skill_name[0].name, m_center_skill_full_desc[0]);
+		}
 
 		//// RVA: 0x1174D6C Offset: 0x1174D6C VA: 0x1174D6C
-		//private void OnClickCenterSkill2() { }
+		private void OnClickCenterSkill2()
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MenuScene.Instance.UnitSaveWindowControl.ShowSkillWindow(m_center_skill_name[1].name, m_center_skill_full_desc[1]);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FEB74 Offset: 0x6FEB74 VA: 0x6FEB74
 		//// RVA: 0x116D660 Offset: 0x116D660 VA: 0x116D660
@@ -814,7 +917,25 @@ namespace XeApp.Game.Menu
 		//private IAPDFOPPGND GetDegreeData(int id) { }
 
 		//// RVA: 0x11753B4 Offset: 0x11753B4 VA: 0x11753B4
-		//private void SetDegreeNum(int num, bool active = True) { }
+		private void SetDegreeNum(int num, bool active = true)
+		{
+			m_degree_num.SetNumber(num, 0);
+			RawImageEx[] imgs = m_degree_num.transform.GetComponentsInChildren<RawImageEx>();
+			if(!active)
+			{
+				for(int i = 0; i < imgs.Length; i++)
+				{
+					imgs[i].enabled = false;
+				}
+			}
+			else
+			{
+				for (int i = 0; i < imgs.Length; i++)
+				{
+					imgs[i].enabled = true;
+				}
+			}
+		}
 
 		//// RVA: 0x117555C Offset: 0x117555C VA: 0x117555C
 		//private IAPDFOPPGND GetDegreeListIndex(int id) { }
@@ -826,13 +947,141 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x116EF30 Offset: 0x116EF30 VA: 0x116EF30
-		//private void SetCenterSkillInfo(FFHPBEPOMAK divaData, GCIJNCFDNON sceneData) { }
+		private void SetCenterSkillInfo(FFHPBEPOMAK_DivaInfo divaData, GCIJNCFDNON_SceneInfo sceneData)
+		{
+			m_center_skill_cross_fade.StartAllAnimLoop("st_wait");
+			if (divaData.FGFIBOBAPIA_SceneId > 0 && sceneData.MEOOLHNNMHL_GetCenterSkillId(false, 0, 0) > 0)
+			{
+				int skillId1 = sceneData.MEOOLHNNMHL_GetCenterSkillId(false, 0, 0);
+				int skillId2 = sceneData.MEOOLHNNMHL_GetCenterSkillId(true, 0, 0);
+				StringBuilder str = new StringBuilder();
+				if (skillId1 > 0)
+				{
+					m_center_skill_name[0].text = sceneData.PFHJFIHGCKP_CenterSkillName1;
+					m_center_skill_full_desc[0] = sceneData.IHLINMFMCDN_GetCenterSkillDesc(false);
+					m_center_skill_level[0].text = "Lv" + sceneData.DDEDANKHHPN_SkillLevel.ToString();
+					m_center_skill_name[0].alignment = m_center_skill_name_align;
+					m_center_skill_desc[0].alignment = m_center_skill_desc_align;
+					m_center_skill_level[0].alignment = m_center_skill_level_align;
+					m_center_skill_rank[0].uvRect = GameManager.Instance.UnionTextureManager.GetSkillRankUvRect((SkillRank.Type)sceneData.DHEFMEGKKDN_CenterSkillRank);
+					m_center_skill_btn[0].ClearOnClickCallback();
+					m_center_skill_foldout[0].enabled = false;
+					m_center_skill_desc[0].horizontalOverflow = HorizontalWrapMode.Wrap;
+					if (UnitWindowConstant.SetSkillDetails(m_center_skill_desc[0], m_center_skill_full_desc[0], 1))
+					{
+						m_center_skill_btn[0].AddOnClickCallback(OnClickCenterSkill);
+						m_center_skill_foldout[0].enabled = true;
+					}
+					m_center_skill_regu_btn.Setup(0, 0, sceneData);
+					if (skillId1 != skillId2 && skillId2 > 0)
+					{
+						m_center_skill_name[1].text = sceneData.EFELCLMJEOL_CenterSkillName2;
+						m_center_skill_full_desc[1] = sceneData.IHLINMFMCDN_GetCenterSkillDesc(true);
+						m_center_skill_level[1].text = "Lv" + sceneData.DDEDANKHHPN_SkillLevel.ToString();
+						m_center_skill_name[1].alignment = m_center_skill_name_align;
+						m_center_skill_desc[1].alignment = m_center_skill_desc_align;
+						m_center_skill_level[1].alignment = m_center_skill_level_align;
+						m_center_skill_rank[1].uvRect = GameManager.Instance.UnionTextureManager.GetSkillRankUvRect((SkillRank.Type)sceneData.FFDCGHDNDFJ_CenterSkillRank2);
+						m_center_skill_btn[1].ClearOnClickCallback();
+						m_center_skill_foldout[1].enabled = false;
+						m_center_skill_desc[1].horizontalOverflow = HorizontalWrapMode.Wrap;
+						if (UnitWindowConstant.SetSkillDetails(m_center_skill_desc[1], m_center_skill_full_desc[1], 1))
+						{
+							m_center_skill_btn[1].AddOnClickCallback(OnClickCenterSkill2);
+							m_center_skill_foldout[1].enabled = true;
+						}
+						m_center_skill_cross_fade.StartAllAnimLoop("logo_act");
+					}
+				}
+			}
+			else
+			{
+				TextAnchor[] ta = new TextAnchor[9] { TextAnchor.UpperCenter, TextAnchor.UpperCenter, TextAnchor.UpperCenter, TextAnchor.MiddleCenter, TextAnchor.MiddleCenter, TextAnchor.MiddleCenter, TextAnchor.LowerCenter, TextAnchor.LowerCenter, TextAnchor.LowerCenter };
+				UnitWindowConstant.SetInvalidText(m_center_skill_name[0], ta[(int)m_center_skill_name_align]);
+				UnitWindowConstant.SetInvalidText(m_center_skill_desc[0], ta[(int)m_center_skill_desc_align]);
+				m_center_skill_level[0].text = "";
+				m_center_skill_rank[1].uvRect = GameManager.Instance.UnionTextureManager.GetSkillRankUvRect(SkillRank.Type.None);
+				m_center_skill_full_desc[0] = m_center_skill_desc[0].text;
+				m_center_skill_foldout[0].enabled = false;
+			}
+			m_center_skill_mask.StartChildrenAnimGoStop("02");
+		}
 
 		//// RVA: 0x117008C Offset: 0x117008C VA: 0x117008C
-		//private void SetDegreeInfo(IAPDFOPPGND emblem) { }
+		private void SetDegreeInfo(IAPDFOPPGND emblem)
+		{
+			if(emblem.MDPKLNFFDBO_EmblemId > 1)
+			{
+				m_degree.horizontalOverflow = HorizontalWrapMode.Overflow;
+				m_degree.verticalOverflow = VerticalWrapMode.Overflow;
+				TextGeneratorUtility.SetTextNewLineMessage(m_degree, emblem.ADCMNODJBGJ_EmblemName);
+				SetDegreeImage(emblem.MDPKLNFFDBO_EmblemId);
+				SetDegreeNum(emblem.HMFFHLPNMPH, emblem.HMFFHLPNMPH > 0);
+			}
+			else
+			{
+				m_degree.horizontalOverflow = HorizontalWrapMode.Wrap;
+				m_degree.text = MessageManager.Instance.GetMessage("menu", "profil_text_02");
+				SetDegreeImage(1);
+				SetDegreeNum(0, false);
+			}
+		}
 
 		//// RVA: 0x11704A8 Offset: 0x11704A8 VA: 0x11704A8
-		//private void SetStatsInfo(JNMFKOHFAFB status) { }
+		private void SetStatsInfo(JNMFKOHFAFB_PublicStatus status)
+		{
+			m_stats_plate_count.text = status.BKIFLJAMJGG_ScnCnt.ToString();
+			m_stats_valkyrie_count.text = status.MIFLBHBPBNF_VfCnt.ToString();
+			m_stats_lvmax_plate_count.text = status.JGDNCEANEBB_LvMaxCnt.ToString();
+			m_stats_costume_count.text = status.FOFGELKGMAH_CosCnt.ToString();
+			m_stats_mission_clear_count.text = status.APFOBLMCLAO_QCnt.ToString();
+			m_stats_clear_count.text = status.PCBJHBCNNGD_TClr.ToString();
+			m_stats_perfect_notes_count.text = status.LDKEOMCNLBE_PfTap.ToString();
+			m_stats_highscore_value.text = status.AEBENOJEGOJ_MaxSc.ToString();
+			if(status.AEBENOJEGOJ_MaxSc < 1)
+			{
+				m_stats_highscore_music.text = "";
+				m_stats_highscore_diff.enabled = false;
+			}
+			else
+			{
+				EEDKAACNBBG_MusicData mData = new EEDKAACNBBG_MusicData();
+				mData.KHEKNNFCAOI(status.JHOIMONJKLG_MaxId);
+				m_stats_highscore_music.text = mData.NEDBBJDAFBH_MusicName;
+				m_stats_highscore_music.resizeTextForBestFit = true;
+				m_stats_highscore_music.resizeTextMinSize = 10;
+				m_stats_highscore_music.resizeTextMaxSize = 20;
+				m_stats_highscore_music.horizontalOverflow = HorizontalWrapMode.Wrap;
+				m_stats_highscore_music.verticalOverflow = VerticalWrapMode.Truncate;
+				if(status.NADEAGFJDLL_MaxL6 == 1)
+				{
+					GameManager.Instance.UnionTextureManager.GetTexture("cmn_tex_02_pack").Set(m_stats_highscore_diff);
+					m_stats_highscore_diff.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData(DifficultUvTable_6Line[status.JEENEHPOCFN_MaxDf - 2]));
+				}
+				else
+				{
+					GameManager.Instance.UnionTextureManager.GetTexture("cmn_tex_pack").Set(m_stats_highscore_diff);
+					m_stats_highscore_diff.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData(DifficultUvTable[status.JEENEHPOCFN_MaxDf]));
+				}
+				m_stats_highscore_diff.enabled = true;
+			}
+			for(int i = 0; i < 5; i++)
+			{
+				m_stats_clear_music_count[i].text = status.PFHIOGBJDHM(i).ToString();
+				m_stats_fullcombo_music_count[i].text = status.KIBCDACEFIC(i).ToString();
+			}
+			for(int i = 2; i < 5; i++)
+			{
+				m_stats_clear_music_count[i + 3].text = status.EJNGDOJAIDP(i).ToString();
+				m_stats_fullcombo_music_count[i + 3].text = status.JFBMBPPHDLB(i).ToString();
+			}
+			m_stats_clear_music_count[4].enabled = true;
+			m_stats_fullcombo_music_count[4].enabled = true;
+			for(int i = 0; i < m_stats_extreme_image.Count; i++)
+			{
+				m_stats_extreme_image[i].enabled = true;
+			}
+		}
 
 		//// RVA: 0x1175690 Offset: 0x1175690 VA: 0x1175690
 		private void OnClickSceneInfo()
@@ -986,7 +1235,55 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x117671C Offset: 0x117671C VA: 0x117671C
 		public void SetButtonType(ButtonType a_type)
 		{
-			TodoLogger.Log(0, "SetButtonType");
+			bool blockHidden = true;
+			bool visitHidden = false;
+			bool fanReleaseHidden = false;
+			bool fanEntryHidden = false;
+			bool lobbyHidden = false;
+			m_btnType = a_type;
+			if(a_type >= ButtonType.Raid && a_type <= ButtonType.Raid_Result)
+			{
+				TodoLogger.Log(0, "Event");
+			}
+			else
+			{
+				if(a_type >= ButtonType.Fan && a_type <= ButtonType.Fan_NoLobby)
+				{
+					fanEntryHidden = false;
+					lobbyHidden = true;
+					fanReleaseHidden = true;
+					bool b = false;
+					if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(m_friend_player_data.MLPEHNBNOGD_Id))
+					{
+						fanReleaseHidden = false;
+						lobbyHidden = m_btnType != ButtonType.Fan;
+						fanEntryHidden = true;
+						b = true;
+					}
+					visitHidden = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("deco_player_level", 0) < 1;
+					if(!lobbyHidden)
+					{
+						if (!m_enable_lobby_btn)
+							m_enable_lobby_btn = true;
+					}
+					if(!b)
+					{
+						blockHidden = CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.DIGEHCDEAON_IsBlacklisted(m_friend_player_data.MLPEHNBNOGD_Id);
+					}
+				}
+				else
+				{
+					lobbyHidden = true;
+					fanEntryHidden = true;
+					fanReleaseHidden = true;
+					visitHidden = true;
+				}
+			}
+			m_lobbyBrowsing_btn.Hidden = lobbyHidden;
+			m_fanEntry_btn.Hidden = fanEntryHidden;
+			m_fanRelease_btn.Hidden = fanReleaseHidden;
+			m_visit_btn.Hidden = visitHidden;
+			m_block_btn.Hidden = blockHidden;
 		}
 
 		//// RVA: 0x1176B94 Offset: 0x1176B94 VA: 0x1176B94
@@ -1030,7 +1327,14 @@ namespace XeApp.Game.Menu
 		//private void UpdateFavoritePlayer(List<int> a_list_add, List<int> a_list_remove, Action a_func) { }
 
 		//// RVA: 0x1177BD0 Offset: 0x1177BD0 VA: 0x1177BD0
-		//private void SetAssistAttributeText() { }
+		private void SetAssistAttributeText()
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			m_assist_attribute_title[0].text = bk.GetMessageByLabel("assistselect_attribute_other");
+			m_assist_attribute_title[1].text = bk.GetMessageByLabel("assistselect_attribute_yellow");
+			m_assist_attribute_title[2].text = bk.GetMessageByLabel("assistselect_attribute_red");
+			m_assist_attribute_title[3].text = bk.GetMessageByLabel("assistselect_attribute_blue");
+		}
 
 		//// RVA: 0x1177E94 Offset: 0x1177E94 VA: 0x1177E94
 		//private void SetAssistName(int page) { }
@@ -1042,22 +1346,136 @@ namespace XeApp.Game.Menu
 		//private void AssistSelectInit() { }
 
 		//// RVA: 0x1171B00 Offset: 0x1171B00 VA: 0x1171B00
-		//private void AssistSelectInit(EAJCBFGKKFA data) { }
+		private void AssistSelectInit(EAJCBFGKKFA_FriendInfo data)
+		{
+			m_assist_status_page = 0;
+			m_assist_select_page = 0;
+			m_assist_load_image_max = 4;
+			m_assist_imagedata_list.Clear();
+			for(int i = 0; i < data.MGMFOJPNDGA.JOHLGBDOLNO_AssistScenes.Length; i++)
+			{
+				if(data.MGMFOJPNDGA.JOHLGBDOLNO_AssistScenes[i] == null || data.MGMFOJPNDGA.JOHLGBDOLNO_AssistScenes[i].BCCHOBPJJKE_SceneId < 1)
+				{
+					SetAssistSceneInfo(i, null);
+					SetAssistSceneImage(0, 0, false, i);
+				}
+				else
+				{
+					SetAssistSceneInfo(i, data.MGMFOJPNDGA.JOHLGBDOLNO_AssistScenes[i]);
+					SetAssistSceneImage(data.MGMFOJPNDGA.JOHLGBDOLNO_AssistScenes[i].BCCHOBPJJKE_SceneId, data.MGMFOJPNDGA.JOHLGBDOLNO_AssistScenes[i].CGIELKDLHGE_GetEvolveId(), data.MGMFOJPNDGA.JOHLGBDOLNO_AssistScenes[i].MBMFJILMOBP_IsKira(), i);
+				}
+			}
+			m_assist_status_page = 0;
+			UpdateAssistStatusPage(0);
+			FriendAssistInformation();
+			for(int i = 0; i < 4; i++)
+			{
+				m_assist_plate_btn[i].ClearOnClickCallback();
+				int attribute = i;
+				m_assist_plate_btn[i].AddOnClickCallback(() =>
+				{
+					//0x117DA80
+					OnStayAssistScene(attribute);
+				});
+			}
+			m_is_stop_swaip = true;
+			m_is_enable_swaip = false;
+		}
 
 		//// RVA: 0x1178DB8 Offset: 0x1178DB8 VA: 0x1178DB8
 		//private void MyAssistInformation() { }
 
 		//// RVA: 0x1179038 Offset: 0x1179038 VA: 0x1179038
-		//private void FriendAssistInformation() { }
+		private void FriendAssistInformation()
+		{
+			SetAssistAttributeText();
+			m_assist_name_btn.Hidden = true;
+			m_assist_name_btn_layout.StartChildrenAnimGoStop("02");
+			m_assist_caution.text = "";
+			m_assist_arrow_layout.StartChildrenAnimGoStop("02");
+			m_assist_selectnum_layout.StartChildrenAnimGoStop(string.Format("{0:00}", 6));
+			for (int i = 0; i < m_assist_skill_layout.Length; i++)
+			{
+				m_assist_skill_layout[i].StartChildrenAnimGoStop("03");
+			}
+		}
 
 		//// RVA: 0x1177F9C Offset: 0x1177F9C VA: 0x1177F9C
-		//private void SetAssistSceneInfo(int assistNum, GCIJNCFDNON sceneData) { }
+		private void SetAssistSceneInfo(int assistNum, GCIJNCFDNON_SceneInfo sceneData)
+		{
+			m_assist_scene_data[assistNum] = sceneData;
+			if (sceneData == null)
+			{
+				m_assist_total[assistNum].text = "0";
+				m_assist_life[assistNum].text = "0";
+				SetAssistCenterSkill(null, assistNum);
+				m_assist_soul[assistNum].text = "0";
+				m_assist_voice[assistNum].text = "0";
+				m_assist_charm[assistNum].text = "0";
+				m_assist_support[assistNum].text = "0";
+				m_assist_fold[assistNum].text = "0";
+				m_assist_luck[assistNum].text = "0";
+			}
+			else
+			{
+				m_assist_total[assistNum].text = sceneData.CMCKNKKCNDK_Status.Total.ToString();
+				m_assist_life[assistNum].text = sceneData.CMCKNKKCNDK_Status.life.ToString();
+				SetAssistCenterSkill(sceneData, assistNum);
+				m_assist_soul[assistNum].text = sceneData.CMCKNKKCNDK_Status.soul.ToString();
+				m_assist_voice[assistNum].text = sceneData.CMCKNKKCNDK_Status.vocal.ToString();
+				m_assist_charm[assistNum].text = sceneData.CMCKNKKCNDK_Status.charm.ToString();
+				m_assist_support[assistNum].text = sceneData.CMCKNKKCNDK_Status.support.ToString();
+				m_assist_fold[assistNum].text = sceneData.CMCKNKKCNDK_Status.fold.ToString();
+				m_assist_luck[assistNum].text = UnitWindowConstant.MakeLuckText(sceneData.MJBODMOLOBC_Luck);
+			}
+			if (m_assist_scene_deco[assistNum] == null)
+				m_assist_scene_deco[assistNum] = new SceneIconDecoration(m_assist_scene_image[assistNum].gameObject, SceneIconDecoration.Size.S, null, null);
+			else
+				m_assist_scene_deco[assistNum].Initialize(m_assist_scene_image[assistNum].gameObject, SceneIconDecoration.Size.S, null, null);
+			m_assist_scene_deco[assistNum].Change(sceneData, DisplayType.Level);
+		}
 
 		//// RVA: 0x117924C Offset: 0x117924C VA: 0x117924C
-		//private void SetAssistCenterSkill(GCIJNCFDNON sceneData, int assistNum) { }
+		private void SetAssistCenterSkill(GCIJNCFDNON_SceneInfo sceneData, int assistNum)
+		{
+			m_assist_skill_cross_fade_layout[assistNum].StartAllAnimLoop("st_wait");
+			bool b = sceneData != null && sceneData.MEOOLHNNMHL_GetCenterSkillId(false, 0, 0) > 0;
+			if (b)
+			{
+				m_assist_center_skill_name[assistNum * 2].text = sceneData.PFHJFIHGCKP_CenterSkillName1;
+				m_assist_center_skill_name[assistNum * 2 + 1].text = sceneData.EFELCLMJEOL_CenterSkillName2;
+				m_assist_center_skill_level[assistNum * 2].text = string.Format("Lv{0}", sceneData.DDEDANKHHPN_SkillLevel);
+				m_assist_center_skill_level[assistNum * 2 + 1].text = string.Format("Lv{0}", sceneData.DDEDANKHHPN_SkillLevel);
+				GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_assist_certer_skill_rank[assistNum * 2], (SkillRank.Type)sceneData.DHEFMEGKKDN_CenterSkillRank);
+				GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_assist_certer_skill_rank[assistNum * 2 + 1], (SkillRank.Type)sceneData.FFDCGHDNDFJ_CenterSkillRank2);
+				if(sceneData.MEOOLHNNMHL_GetCenterSkillId(false, 0, 0) != sceneData.MEOOLHNNMHL_GetCenterSkillId(true, 0, 0))
+				{
+					m_assist_skill_cross_fade_layout[assistNum].StartAllAnimLoop("logo_act");
+				}
+			}
+			else
+			{
+				m_assist_center_skill_name[assistNum * 2].text = "";
+				UnitWindowConstant.SetInvalidText(m_assist_center_skill_level[assistNum * 2], TextAnchor.MiddleRight);
+				m_assist_certer_skill_rank[assistNum * 2].uvRect = GameManager.Instance.UnionTextureManager.GetSkillRankUvRect(SkillRank.Type.None);
+			}
+		}
 
 		//// RVA: 0x1178AA8 Offset: 0x1178AA8 VA: 0x1178AA8
-		//private void UpdateAssistStatusPage(int newPage) { }
+		private void UpdateAssistStatusPage(int newPage)
+		{
+			if (newPage < 0)
+				newPage += 3;
+			if(newPage >= 3)
+				newPage -= 3;
+			m_assist_status_page_now.text = (newPage + 1).ToString();
+			m_assist_status_page_max.text = 3.ToString();
+			string s = string.Format("{0:00}", newPage);
+			for(int i = 0; i < m_assist_status_layout.Length; i++)
+			{
+				m_assist_status_layout[i].StartChildrenAnimGoStop(s, s);
+			}
+		}
 
 		//// RVA: 0x11798EC Offset: 0x11798EC VA: 0x11798EC
 		private void OnClickAssistStatusPage()
@@ -1104,16 +1522,10 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x117226C Offset: 0x117226C VA: 0x117226C
 		private void SwaipReset()
 		{
-			TodoLogger.Log(0, "SwaipReset");
+			m_swaip_touch.ResetValue();
+			m_swaip_touch.ResetInput();
+			m_swaip_touch.ResetInputState();
 		}
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x6FEFCC Offset: 0x6FEFCC VA: 0x6FEFCC
-		//// RVA: 0x117B0DC Offset: 0x117B0DC VA: 0x117B0DC
-		//private void <SetDivaImage>b__194_0(IiconTexture icon) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6FEFDC Offset: 0x6FEFDC VA: 0x6FEFDC
-		//// RVA: 0x117B1C8 Offset: 0x117B1C8 VA: 0x117B1C8
-		//private void <SetDegreeImage>b__197_0(IiconTexture icon) { }
 		
 		//[CompilerGeneratedAttribute] // RVA: 0x6FEFFC Offset: 0x6FEFFC VA: 0x6FEFFC
 		//// RVA: 0x117B2E8 Offset: 0x117B2E8 VA: 0x117B2E8

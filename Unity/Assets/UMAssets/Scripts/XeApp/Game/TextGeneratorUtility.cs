@@ -40,6 +40,24 @@ namespace XeApp.Game
 		}
 
 		// RVA: 0x1570698 Offset: 0x1570698 VA: 0x1570698
-		//public static bool SetTextNewLineMessage(Text textComponent, string message) { }
+		public static bool SetTextNewLineMessage(Text textComponent, string message)
+		{
+			strBuilder.Clear();
+			UnityEngine.TextGenerationSettings setting = textComponent.GetGenerationSettings(textComponent.rectTransform.sizeDelta);
+			bool res = false;
+			for(int i = 0; i < message.Length; i++)
+			{
+				strBuilder.Append(message[i]);
+				float w = textComponent.cachedTextGenerator.GetPreferredWidth(strBuilder.ToString(), setting);
+				float h = textComponent.cachedTextGenerator.GetPreferredWidth(strBuilder.ToString(), setting);
+				if(textComponent.rectTransform.sizeDelta.x <= w / setting.scaleFactor)
+				{
+					strBuilder.Insert(strBuilder.Length - 1, '\n');
+				}
+				res |= textComponent.rectTransform.sizeDelta.y <= h / setting.scaleFactor;
+			}
+			textComponent.text = strBuilder.ToString();
+			return res;
+		}
 	}
 }

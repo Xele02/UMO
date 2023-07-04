@@ -205,7 +205,7 @@ namespace XeApp.Game.Menu
 				}
 				t_is_end = false;
 				t_is_error = false;
-				CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.EKIJICIBGOG(true, () =>
+				CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.EKIJICIBGOG_GetBlacklist(true, () =>
 				{
 					//0x9CFB44
 					t_is_end = true;

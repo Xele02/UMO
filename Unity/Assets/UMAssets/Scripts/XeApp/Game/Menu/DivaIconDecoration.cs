@@ -180,8 +180,8 @@ namespace XeApp.Game.Menu
 					isFav = true;
 				}
 				m_divaFriendIconDecrationBehaviour.SetFriendFavoriteIcon(isFriend, isFav);
-				m_divaFriendIconDecrationBehaviour.SetDegreeIcon(friendPlayerData.NDOLELKAJNL.MDPKLNFFDBO_EmblemId);
-				m_divaFriendIconDecrationBehaviour.SetDegreeNumber(friendPlayerData.NDOLELKAJNL.HMFFHLPNMPH);
+				m_divaFriendIconDecrationBehaviour.SetDegreeIcon(friendPlayerData.NDOLELKAJNL_DegreeData.MDPKLNFFDBO_EmblemId);
+				m_divaFriendIconDecrationBehaviour.SetDegreeNumber(friendPlayerData.NDOLELKAJNL_DegreeData.HMFFHLPNMPH);
 			}
 			m_status.Clear();
 			m_status.Add(divaData.CMCKNKKCNDK_EquippedStatus);
