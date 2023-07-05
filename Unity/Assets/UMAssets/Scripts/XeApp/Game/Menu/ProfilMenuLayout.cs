@@ -427,7 +427,7 @@ namespace XeApp.Game.Menu
 			m_musicrate_popup_button.AddOnClickCallback(() =>
 			{
 				//0x117B060
-				TodoLogger.LogNotImplemented("MusicRatePopup");
+				OnClickMusicRateDetail();
 			});
 			m_scene_info.AddOnClickCallback(() =>
 			{
@@ -775,7 +775,16 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x117273C Offset: 0x117273C VA: 0x117273C
-		//public void SetSceneImage(int id, int rank, bool isKira) { }
+		public void SetSceneImage(int id, int rank, bool isKira)
+		{
+			GameManager.Instance.SceneIconCache.Load(id, rank, (IiconTexture icon) =>
+			{
+				//0x117C784
+				icon.Set(m_scene_image);
+				SceneIconTextureCache.ChangeKiraMaterial(m_scene_image, icon as IconTexture, isKira);
+				m_imageLoadFlags |= ImageLoadFlags.Scene;
+			});
+		}
 
 		//// RVA: 0x11728B8 Offset: 0x11728B8 VA: 0x11728B8
 		private void SetAssistSceneImage(int id, int rank, bool isKira, int num)
@@ -873,20 +882,52 @@ namespace XeApp.Game.Menu
 		//private void OnClickPlayerIdCopy() { }
 
 		//// RVA: 0x1174674 Offset: 0x1174674 VA: 0x1174674
-		//private void OnClickMusicRateDetail() { }
+		private void OnClickMusicRateDetail()
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			PopupMusicRateListContentSetting s = new PopupMusicRateListContentSetting();
+			s.View = m_viewHSRatingData;
+			s.WindowSize = SizeType.Large;
+			s.TitleText = bk.GetMessageByLabel("popup_music_rate_title");
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			s.Tabs = new PopupTabButton.ButtonLabel[2]
+			{
+				PopupTabButton.ButtonLabel.MusicRateDetail,
+				PopupTabButton.ButtonLabel.MusicGradeView
+			};
+			s.DefaultTab = PopupTabButton.ButtonLabel.MusicRateDetail;
+			if(m_is_friend)
+			{
+				s.Tabs = new PopupTabButton.ButtonLabel[0];
+				s.DefaultTab = PopupTabButton.ButtonLabel.None;
+			}
+			PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x117C16C
+				return;
+			}, (IPopupContent content, PopupTabButton.ButtonLabel label) =>
+			{
+				//0x117CF4C
+				s.layout.ChangeTab(label);
+			}, null, null);
+		}
 
 		//// RVA: 0x1174BC8 Offset: 0x1174BC8 VA: 0x1174BC8
 		private void OnClickCenterSkill()
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-			MenuScene.Instance.UnitSaveWindowControl.ShowSkillWindow(m_center_skill_name[0].name, m_center_skill_full_desc[0]);
+			MenuScene.Instance.UnitSaveWindowControl.ShowSkillWindow(m_center_skill_name[0].text, m_center_skill_full_desc[0]);
 		}
 
 		//// RVA: 0x1174D6C Offset: 0x1174D6C VA: 0x1174D6C
 		private void OnClickCenterSkill2()
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-			MenuScene.Instance.UnitSaveWindowControl.ShowSkillWindow(m_center_skill_name[1].name, m_center_skill_full_desc[1]);
+			MenuScene.Instance.UnitSaveWindowControl.ShowSkillWindow(m_center_skill_name[1].text, m_center_skill_full_desc[1]);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FEB74 Offset: 0x6FEB74 VA: 0x6FEB74
@@ -943,7 +984,42 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x116E818 Offset: 0x116E818 VA: 0x116E818
 		private void SetMainSceneInfo(GCIJNCFDNON_SceneInfo sceneData)
 		{
-			TodoLogger.Log(0, "SetMainSceneInfo");
+			m_scene_data = sceneData;
+			if(sceneData == null)
+			{
+				m_scene_name.text = MessageManager.Instance.GetMessage("menu", "profil_text_01");
+				SetSceneImage(0, 0, false);
+				m_scene_total.text = "0";
+				m_scene_soul.text = "0";
+				m_scene_voice.text = "0";
+				m_scene_charm.text = "0";
+				m_scene_life.text = "0";
+				m_scene_support.text = "0";
+				m_scene_fold.text = "0";
+				m_scene_luck.text = UnitWindowConstant.MakeLuckText(0);
+			}
+			else
+			{
+				m_scene_name.text = GameMessageManager.GetSceneCardName(sceneData);
+				SetSceneImage(m_scene_data.BCCHOBPJJKE_SceneId, m_scene_data.CGIELKDLHGE_GetEvolveId(), m_scene_data.MBMFJILMOBP_IsKira());
+				m_scene_total.text = m_scene_data.CMCKNKKCNDK_Status.Total.ToString();
+				m_scene_soul.text = m_scene_data.CMCKNKKCNDK_Status.soul.ToString();
+				m_scene_voice.text = m_scene_data.CMCKNKKCNDK_Status.vocal.ToString();
+				m_scene_charm.text = m_scene_data.CMCKNKKCNDK_Status.charm.ToString();
+				m_scene_life.text = m_scene_data.CMCKNKKCNDK_Status.life.ToString();
+				m_scene_support.text = m_scene_data.CMCKNKKCNDK_Status.support.ToString();
+				m_scene_fold.text = m_scene_data.CMCKNKKCNDK_Status.fold.ToString();
+				m_scene_luck.text = UnitWindowConstant.MakeLuckText(sceneData.MJBODMOLOBC_Luck);
+			}
+			if(m_scene_deco == null)
+			{
+				m_scene_deco = new SceneIconDecoration(m_scene_info_rect.gameObject, SceneIconDecoration.Size.S, null, null);
+			}
+			else
+			{
+				m_scene_deco.Initialize(m_scene_info_rect.gameObject, SceneIconDecoration.Size.S, null, null);
+			}
+			m_scene_deco.Change(m_scene_data, DisplayType.Level);
 		}
 
 		//// RVA: 0x116EF30 Offset: 0x116EF30 VA: 0x116EF30
@@ -1106,12 +1182,51 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x117214C Offset: 0x117214C VA: 0x117214C
 		private void UpdateStatsPage(int newPage)
 		{
-			TodoLogger.Log(0, "UpdateStatsPage");
+			if (newPage < 0)
+				newPage += 6;
+			if (newPage >= 6)
+				newPage -= 6;
+			m_stats_page_idx = newPage;
+			m_stats_page_num.text = string.Format("{0}/{1}", m_stats_page_idx + 1, 6);
+			this.StartCoroutineWatched(Coroutine_ChangeMcrosReportPage(m_stats_page_idx));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FEBEC Offset: 0x6FEBEC VA: 0x6FEBEC
 		//// RVA: 0x11759A4 Offset: 0x11759A4 VA: 0x11759A4
-		//private IEnumerator Coroutine_ChangeMcrosReportPage(int a_page) { }
+		private IEnumerator Coroutine_ChangeMcrosReportPage(int a_page)
+		{
+			string pageLabel;
+
+			//0x117EF78
+			yield return null;
+			pageLabel = "";
+			switch(a_page)
+			{
+				case 0:
+					pageLabel = "logo_act_01";
+					break;
+				case 1:
+					pageLabel = "logo_act_02";
+					yield return Co.R(Coroutine_SetupCostumeScrollList());
+					break;
+				case 2:
+					pageLabel = "logo_act_03";
+					yield return Co.R(Coroutine_SetupVarkiryScrollList());
+					break;
+				case 3:
+					pageLabel = "logo_act_05";
+					yield return Co.R(Coroutine_SetupEmblemScrollList());
+					break;
+				case 4:
+					pageLabel = "logo_act_04";
+					break;
+				case 5:
+					pageLabel = "logo_act_06";
+					break;
+			}
+			m_stats_page.StartChildrenAnimGoStop(pageLabel, pageLabel);
+			yield return null;
+		}
 
 		//// RVA: 0x11757E4 Offset: 0x11757E4 VA: 0x11757E4
 		private void ShowSceneStatusPopup(GCIJNCFDNON_SceneInfo sceneData, DFKGGBMFFGB_PlayerInfo playerData, Action onClose)
@@ -1166,35 +1281,137 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FECDC Offset: 0x6FECDC VA: 0x6FECDC
 		//// RVA: 0x1175A6C Offset: 0x1175A6C VA: 0x1175A6C
-		//private IEnumerator Coroutine_SetupCostumeScrollList() { }
+		private IEnumerator Coroutine_SetupCostumeScrollList()
+		{
+			//0x117F224
+			m_swap_scroll.SetItemCount(0);
+			m_swap_scroll.VisibleRegionUpdate();
+			yield return null;
+			m_swap_scroll.OnUpdateItem.RemoveAllListeners();
+			if(m_costume_list != null)
+			{ 
+				m_inner_costume_list = new List<CostumeData>(m_costume_list.Count * 2);
+				for(int i = 0; i < m_costume_list.Count; i++)
+				{
+					CostumeData data = new CostumeData();
+					data.data = m_costume_list[i];
+					data.color = 0;
+					m_inner_costume_list.Add(data);
+					for(int j = 0; j < m_costume_list[i].NLKGAAFBDFK(); j++)
+					{
+						CostumeData d = new CostumeData();
+						d.data = m_costume_list[i];
+						d.color = m_costume_list[i].LLJPMOIPBAG(j);
+						m_inner_costume_list.Add(d);
+					}
+				}
+				m_swap_scroll.SetItemCount(m_inner_costume_list.Count);
+				m_swap_scroll.OnUpdateItem.AddListener((int index, SwapScrollListContent content) =>
+				{
+					//0x117B2F0
+					OnUpdateCostumeScrollItem(index, (content as ProfilScrollIcon), m_inner_costume_list[index]);
+				});
+			}
+			m_swap_scroll.ResetScrollVelocity();
+			m_swap_scroll.SetPosition(0, 0, 0, false);
+			m_swap_scroll.VisibleRegionUpdate();
+		}
 
 		//// RVA: 0x1175B18 Offset: 0x1175B18 VA: 0x1175B18
-		//private void OnUpdateCostumeScrollItem(int a_index, ProfilScrollIcon a_icon, ProfilMenuLayout.CostumeData a_costume_info) { }
+		private void OnUpdateCostumeScrollItem(int a_index, ProfilScrollIcon a_icon, CostumeData a_costume_info)
+		{
+			a_icon.SetCostumeIcon(a_costume_info.data, a_costume_info.color);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FED54 Offset: 0x6FED54 VA: 0x6FED54
 		//// RVA: 0x1175B7C Offset: 0x1175B7C VA: 0x1175B7C
-		//private IEnumerator Coroutine_SetupVarkiryScrollList() { }
+		private IEnumerator Coroutine_SetupVarkiryScrollList()
+		{
+			//0x9CCB98
+			m_swap_scroll.SetItemCount(0);
+			m_swap_scroll.VisibleRegionUpdate();
+			yield return null;
+			m_swap_scroll.OnUpdateItem.RemoveAllListeners();
+			if(m_valkyrie_list != null)
+			{
+				m_swap_scroll.SetItemCount(m_valkyrie_list.Count);
+				m_swap_scroll.OnUpdateItem.AddListener((int index, SwapScrollListContent content) =>
+				{
+					//0x117B424
+					OnUpdateVarkiryScrollItem(index, content as ProfilScrollIcon, m_valkyrie_list[index]);
+				});
+			}
+			m_swap_scroll.ResetScrollVelocity();
+			m_swap_scroll.SetPosition(0, 0, 0, false);
+			m_swap_scroll.VisibleRegionUpdate();
+		}
 
 		//// RVA: 0x1175C04 Offset: 0x1175C04 VA: 0x1175C04
-		//private void OnUpdateVarkiryScrollItem(int a_index, ProfilScrollIcon a_icon, PNGOLKLFFLH a_data) { }
+		private void OnUpdateVarkiryScrollItem(int a_index, ProfilScrollIcon a_icon, PNGOLKLFFLH a_data)
+		{
+			a_icon.SetVarkiryIcon(a_data);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FEDCC Offset: 0x6FEDCC VA: 0x6FEDCC
 		//// RVA: 0x1175C38 Offset: 0x1175C38 VA: 0x1175C38
-		//private IEnumerator Coroutine_SetupEmblemScrollList() { }
+		private IEnumerator Coroutine_SetupEmblemScrollList()
+		{
+			//0x117F7A4
+			if(m_emblem_list.Count < 1)
+			{
+				m_emblem_scroll_text.text = MessageManager.Instance.GetMessage("menu", "cmn_profil_emblem_none");
+			}
+			else
+			{
+				m_emblem_scroll_text.text = "";
+			}
+			m_swap_scroll.SetItemCount(0);
+			m_swap_scroll.VisibleRegionUpdate();
+			yield return null;
+			m_swap_scroll.OnUpdateItem.RemoveAllListeners();
+			if(m_emblem_list != null)
+			{
+				m_swap_scroll.SetItemCount(m_emblem_list.Count);
+				m_swap_scroll.OnUpdateItem.AddListener((int index, SwapScrollListContent content) =>
+				{
+					//0x117B55C
+					OnUpdateEmblemScrollItem(index, content as ProfilScrollIcon, m_emblem_list[index]);
+				});
+			}
+			m_swap_scroll.ResetScrollVelocity();
+			m_swap_scroll.SetPosition(0, 0, 0, false);
+			m_swap_scroll.VisibleRegionUpdate();
+		}
 
 		//// RVA: 0x1175CE4 Offset: 0x1175CE4 VA: 0x1175CE4
-		//private void OnUpdateEmblemScrollItem(int a_index, ProfilScrollIcon a_icon, IAPDFOPPGND a_emblem_info) { }
+		private void OnUpdateEmblemScrollItem(int a_index, ProfilScrollIcon a_icon, IAPDFOPPGND a_emblem_info)
+		{
+			a_icon.SetEmblemIcon(a_emblem_info);
+		}
 
 		//// RVA: 0x1175D18 Offset: 0x1175D18 VA: 0x1175D18
 		private void CB_ClickIcon_Valkyrie(PNGOLKLFFLH a_data)
 		{
-			TodoLogger.LogNotImplemented("CB_ClickIcon_Valkyrie");
+			if(a_data != null)
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+				m_popup_setting_val.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+				};
+				m_popup_setting_val.ViewValkyrieData = a_data;
+				PopupWindowManager.Show(m_popup_setting_val, null, null, null, null);
+			}
 		}
 
 		//// RVA: 0x1175F14 Offset: 0x1175F14 VA: 0x1175F14
 		private void CB_ClickIcon_Costume(CKFGMNAIBNG a_data, int a_color)
 		{
-			TodoLogger.LogNotImplemented("CB_ClickIcon_Costume");
+			if(a_data != null)
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+				MenuScene.Instance.ShowCostumeDetailWindow(a_data, a_color);
+			}
 		}
 
 		//// RVA: 0x1176014 Offset: 0x1176014 VA: 0x1176014
@@ -1480,7 +1697,10 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x11798EC Offset: 0x11798EC VA: 0x11798EC
 		private void OnClickAssistStatusPage()
 		{
-			TodoLogger.LogNotImplemented("OnClickAssistStatusPage");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			UpdateAssistStatusPage(m_assist_status_page + 1);
+			SwaipReset();
+			m_is_lock_swaip = true;
 		}
 
 		//// RVA: 0x1178C7C Offset: 0x1178C7C VA: 0x1178C7C
@@ -1507,14 +1727,28 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x117A120 Offset: 0x117A120 VA: 0x117A120
 		private void OnStayAssistScene(int attribute)
 		{
-			TodoLogger.LogNotImplemented("OnStayAssistScene");
+			if(!IsDoSwaip())
+			{
+				if(m_assist_scene_data[attribute] != null)
+				{
+					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+					ShowSceneStatusPopup(m_assist_scene_data[attribute], GameManager.Instance.ViewPlayerData, () =>
+					{
+						//0x117C678
+						return;
+					});
+				}
+			}
 		}
 
 		//// RVA: 0x117A3D8 Offset: 0x117A3D8 VA: 0x117A3D8
 		//private void OnClickAssistScene(int type) { }
 
 		//// RVA: 0x117A388 Offset: 0x117A388 VA: 0x117A388
-		//private bool IsDoSwaip() { }
+		private bool IsDoSwaip()
+		{
+			return !m_swaip_touch.IsStop() && m_is_lock_scene;
+		}
 
 		//// RVA: 0x116D838 Offset: 0x116D838 VA: 0x116D838
 		//private void UpdateSwaip() { }
@@ -1530,19 +1764,7 @@ namespace XeApp.Game.Menu
 		//[CompilerGeneratedAttribute] // RVA: 0x6FEFFC Offset: 0x6FEFFC VA: 0x6FEFFC
 		//// RVA: 0x117B2E8 Offset: 0x117B2E8 VA: 0x117B2E8
 		//private void <OnClickSceneInfo>b__229_0() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6FF00C Offset: 0x6FF00C VA: 0x6FF00C
-		//// RVA: 0x117B2F0 Offset: 0x117B2F0 VA: 0x117B2F0
-		//private void <Coroutine_SetupCostumeScrollList>b__237_0(int index, SwapScrollListContent content) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6FF01C Offset: 0x6FF01C VA: 0x6FF01C
-		//// RVA: 0x117B424 Offset: 0x117B424 VA: 0x117B424
-		//private void <Coroutine_SetupVarkiryScrollList>b__239_0(int index, SwapScrollListContent content) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6FF02C Offset: 0x6FF02C VA: 0x6FF02C
-		//// RVA: 0x117B55C Offset: 0x117B55C VA: 0x117B55C
-		//private void <Coroutine_SetupEmblemScrollList>b__241_0(int index, SwapScrollListContent content) { }
-
+		
 		//[CompilerGeneratedAttribute] // RVA: 0x6FF03C Offset: 0x6FF03C VA: 0x6FF03C
 		//// RVA: 0x117B694 Offset: 0x117B694 VA: 0x117B694
 		//private void <OnClickFanRelease>b__253_0() { }

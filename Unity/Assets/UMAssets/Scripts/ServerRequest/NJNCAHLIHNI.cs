@@ -27,7 +27,7 @@ public class NJNCAHLIHNI_GetPlayerData : CACGCMBKHDI_Request
 	public MEIEDGPOMOO PINPBOCDKLI; // 0x84
 
 	public JFNMOPPICNP NFEAMMJIMPG { get; set; } // 0x88 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
-	//public override bool EBPLLJGPFDA { get; } 0x18ABEC8 HGPAELCGELL
+	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG != null; } } //0x18ABEC8 HGPAELCGELL
 
 	// RVA: 0x18ABC90 Offset: 0x18ABC90 VA: 0x18ABC90 Slot: 12
 	public override void DHLDNIEELHO()
@@ -51,9 +51,9 @@ public class NJNCAHLIHNI_GetPlayerData : CACGCMBKHDI_Request
 	//// RVA: 0x18ABEDC Offset: 0x18ABEDC VA: 0x18ABEDC
 	private void DIAMDBHBKBH()
 	{
-		NFEAMMJIMPG = new JFNMOPPICNP();
+		JFNMOPPICNP res = new JFNMOPPICNP();
 		EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result);
-		NFEAMMJIMPG.AIGKNOKPMEJ = new List<OKMDAFICFHJ>(data["players"].HNBFOAJIIAL_Count);
+		res.AIGKNOKPMEJ = new List<OKMDAFICFHJ>(data["players"].HNBFOAJIIAL_Count);
 		for (int i = 0; i < data["players"].HNBFOAJIIAL_Count; i++)
 		{
 			EDOHBJAPLPF_JsonData p = data["players"][i];
@@ -61,18 +61,19 @@ public class NJNCAHLIHNI_GetPlayerData : CACGCMBKHDI_Request
 			d.EHGBICNIBKE_PlayerId = (int)p["player_id"];
 			d.IFNLEKOILPM_UpdatedAt = (int)p["updated_at"];
 			d.HJDBGMMPPEF_PlayerData = p["player_data"];
-			NFEAMMJIMPG.AIGKNOKPMEJ.Add(d);
+			res.AIGKNOKPMEJ.Add(d);
 		}
 		if(PINPBOCDKLI != null)
 		{
-			for(int i = 0; i < NFEAMMJIMPG.AIGKNOKPMEJ.Count; i++)
+			for(int i = 0; i < res.AIGKNOKPMEJ.Count; i++)
 			{
-				bool b = PINPBOCDKLI(i, NFEAMMJIMPG.AIGKNOKPMEJ[i].EHGBICNIBKE_PlayerId, NFEAMMJIMPG.AIGKNOKPMEJ[i].IFNLEKOILPM_UpdatedAt, HHIHCJKLJFF, NFEAMMJIMPG.AIGKNOKPMEJ[i].HJDBGMMPPEF_PlayerData);
+				bool b = PINPBOCDKLI(i, res.AIGKNOKPMEJ[i].EHGBICNIBKE_PlayerId, res.AIGKNOKPMEJ[i].IFNLEKOILPM_UpdatedAt, HHIHCJKLJFF, res.AIGKNOKPMEJ[i].HJDBGMMPPEF_PlayerData);
 				if(!b)
 				{
 					DLKLLHPLANH = true;
 				}
 			}
 		}
+		NFEAMMJIMPG = res;
 	}
 }

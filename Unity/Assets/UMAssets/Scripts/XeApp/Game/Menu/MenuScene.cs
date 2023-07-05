@@ -1131,7 +1131,12 @@ namespace XeApp.Game.Menu
 		// public PopupItemDetail.PopupItemDetailSetting CreateIconTextContent(int id, string title, SizeType size, string name, string desc, ButtonInfo[] buttons, bool isCaption = True) { }
 
 		// // RVA: 0xB347DC Offset: 0xB347DC VA: 0xB347DC
-		// public void ShowCostumeDetailWindow(CKFGMNAIBNG data, int colorId = 0) { }
+		public void ShowCostumeDetailWindow(CKFGMNAIBNG data, int colorId = 0)
+		{
+			m_popupDetailCostumeSetting.ViewCostumeData = data;
+			m_popupDetailCostumeSetting.ColorId = colorId;
+			PopupWindowManager.Show(m_popupDetailCostumeSetting, null, null, null, null);
+		}
 
 		// // RVA: 0xB348F4 Offset: 0xB348F4 VA: 0xB348F4
 		// public void ShowAutoCombined() { }

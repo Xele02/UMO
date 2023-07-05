@@ -118,7 +118,7 @@ public class PNGOLKLFFLH
 			{
 				if(dbValk.GPPEFLKGGGJ_Id != 1 && !OJEBNBLHPNP)
 				{
-					if(saveValk.FJODMPGPDDD)
+					if(!saveValk.FJODMPGPDDD)
 					{
 						continue;
 					}
