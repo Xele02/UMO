@@ -343,7 +343,11 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x154983C Offset: 0x154983C VA: 0x154983C
 		private void SendPrismChangeLog(int musicId, GameSetupData.MusicInfo musicInfo, bool isSimulation)
 		{
-			TodoLogger.Log(0, "SendPrismChangeLog");
+			m_prismLogDiffData.OBKGEDCKHHE(musicId, musicInfo.onStageDivaNum > 1);
+			ILCCJNDFFOB.HHCJCDFCLOB.CBKENDJIBDM(isSimulation ? "S-LIVE" : JpStringLiterals.StringLiteral_18280, musicId,
+				m_prismData.FBGAKINEIPG ? 1 : 0, m_prismData.OMNDNNFANCK_PrismDivaIds, m_prismData.DLPIKHDNIIE_PrismCostumeIds, 
+				m_prismData.FBAGIDFLHHI_PrismValkyrieId, m_prismLogDiffData.FBGAKINEIPG ? 1 : 0, m_prismLogDiffData.OMNDNNFANCK_PrismDivaIds, 
+				m_prismLogDiffData.DLPIKHDNIIE_PrismCostumeIds, m_prismLogDiffData.FBAGIDFLHHI_PrismValkyrieId);
 		}
 	}
 }

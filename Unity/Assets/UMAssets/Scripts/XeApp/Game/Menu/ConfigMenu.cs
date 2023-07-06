@@ -557,10 +557,79 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1B5EB00 Offset: 0x1B5EB00 VA: 0x1B5EB00
 		private IEnumerator SetupWindowSimulation(UnityAction showEndCb, UnityAction<PopupButton.ButtonLabel> finishCb)
 		{
-			TodoLogger.LogNotImplemented("SetupWindowSimulation");
-			yield return null;
-			if (finishCb != null)
-				finishCb(PopupButton.ButtonLabel.Ok);
+			eType etype;
+
+			//0x1B642B4
+			etype = eType.Simulation;
+			yield return Co.R(LoadLayout(eType.Simulation));
+			PopupConfigScrollListSetting setting = m_settingRhythmSimulation;
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			setting.TitleText = bk.GetMessageByLabel("config_text_81");
+			setting.WindowSize = SizeType.Large;
+			setting.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive },
+			};
+			bool popupWait = true;
+			bool isOk = false;
+			PopupButton.ButtonLabel butLabel = 0;
+			PopupWindowManager.Show(setting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1B60560
+				butLabel = label;
+				if (label == PopupButton.ButtonLabel.Cancel)
+					isOk = false;
+				else if (label == PopupButton.ButtonLabel.Ok)
+					isOk = true;
+				popupWait = false;
+			}, null, null, () =>
+			{
+				//0x1B60590
+				if (showEndCb != null)
+					showEndCb();
+			});
+			while (popupWait)
+				yield return null;
+			if(!isOk)
+			{
+				ConfigManager.Instance.ApplyValue(false);
+				//LAB_01b649b4
+				if (finishCb != null)
+					finishCb(butLabel);
+				PopupConfigScrollListContent p = setting.Content.GetComponent<PopupConfigScrollListContent>();
+				if(p != null)
+				{
+					p.SetScrollPosition();
+				}
+			}
+			else
+			{
+				bool isReShow = false;
+				yield return Co.R(Co_ConfigSave((bool reShow) =>
+				{
+					//0x1B606B0
+					isReShow = reShow;
+				}));
+				if(isReShow)
+				{
+					ConfigManager.Instance.ApplyValue(false);
+					yield break;
+				}
+				else
+				{
+					bool done = false;
+					ConfigManager.Instance.ApplyValue(true, () =>
+					{
+						//0x1B606C0
+						done = true;
+					});
+					while (!done)
+						yield return null;
+					if (finishCb != null)
+						finishCb(butLabel);
+				}
+			}
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x700FC4 Offset: 0x700FC4 VA: 0x700FC4

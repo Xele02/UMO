@@ -287,7 +287,8 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CEEB4 Offset: 0x12CEEB4 VA: 0x12CEEB4
 		private void OnClickGameSettingButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickGameSettingButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			m_gameSettingMenu.ShowPopupRhythm(null, null);
 		}
 
 		// // RVA: 0x12CEF38 Offset: 0x12CEF38 VA: 0x12CEF38

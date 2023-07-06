@@ -999,7 +999,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				TodoLogger.LogNotImplemented("OnClickRankingButton");
+				MenuScene.Instance.Call(TransitionList.Type.REGULAR_RANKING, new RegularRankingSceneArgs(musicData), true);
 			}
 		}
 

@@ -35,7 +35,7 @@ namespace XeApp.Game.Common
 		private RawImageEx m_horizontalScrollBarImage; // 0x58
 
 		public List<SwapScrollListContent> ScrollObjects { get { return m_scrollObjects; } } //0x1CCB004
-		//public int ListTopPosition { get; } 0x1CCB00C
+		public int ListTopPosition { get { return m_listTopPosition; } } //0x1CCB00C
 		public SwapScrollList.SwapScrollUpdateItem OnUpdateItem { get { return m_scrollUpdateItem; } } //0x1CCB014
 		public RectTransform ScrollContent { get { return m_scrollRect.content; } } //0x1CCB01C
 		public int ScrollObjectCount { get { return m_rowCount * m_columnCount; } } //0x1CCB048

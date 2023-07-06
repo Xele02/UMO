@@ -129,7 +129,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1104310 Offset: 0x1104310 VA: 0x1104310
-		// public Rect GetGameAttributeUvRect(GameAttribute.Type attr) { }
+		public Rect GetGameAttributeUvRect(GameAttribute.Type attr)
+		{
+			return m_gameAttributeRects[(int)attr - 1];
+		}
 
 		// // RVA: 0x1104398 Offset: 0x1104398 VA: 0x1104398
 		// public Rect GetDifficultyUvRect(Difficulty.Type diff) { }

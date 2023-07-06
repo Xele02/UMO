@@ -74,7 +74,8 @@ namespace XeApp.Game.Menu
 			m_scroll.content.anchoredPosition = new Vector2(0, GetScrollPosition(index));
 			CalcIndex(out m_dispBeginIndex, out m_dispEndIndex);
 			AllocRange(m_dispBeginIndex, m_dispEndIndex);
-			for(int i = 0; i < m_listItem.Count; i++)
+			//UnityEngine.Debug.LogError("SetlistTop " + index + "/" + m_listItem.Count+ " " + GetScrollPosition(index) + " " + m_dispBeginIndex + ">" + m_dispEndIndex);
+			for (int i = 0; i < m_listItem.Count; i++)
 			{
 				if(m_listItem[i].Layout != null)
 				{
@@ -90,6 +91,7 @@ namespace XeApp.Game.Menu
 			m_scroll.content.anchoredPosition = new Vector2(0, GetScrollPositionBottom(index));
 			CalcIndex(out m_dispBeginIndex, out m_dispEndIndex);
 			AllocRange(m_dispBeginIndex, m_dispEndIndex);
+			//UnityEngine.Debug.LogError("SetlistBottom " + index + "/" + m_listItem.Count + " " + GetScrollPositionBottom(index) + " " + m_dispBeginIndex + ">" + m_dispEndIndex);
 			for (int i = 0; i < m_listItem.Count; i++)
 			{
 				if (m_listItem[i].Layout != null)
@@ -221,6 +223,7 @@ namespace XeApp.Game.Menu
 			}
 			m_dispBeginIndex = start;
 			m_dispEndIndex = end;
+			//UnityEngine.Debug.LogError("OnUpdateScroll " + position + " " + m_dispBeginIndex + ">" + m_dispEndIndex);
 		}
 
 		// // RVA: 0xB9F414 Offset: 0xB9F414 VA: 0xB9F414

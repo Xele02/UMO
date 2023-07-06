@@ -1062,7 +1062,30 @@ public class ILCCJNDFFOB
 	// public void DBNECDJCNOI(int DLLJMINACDN, string GEGCFOCMEKD, int FNNGLNPIKOL, int DJJGPACGEMM, int IPJBPBDCCPF, int HABCGPMKBJK, int PEKOLGMLJAL, int BGHCIAOANCF, int GJNAOBBAPOF, int FFBPGKHIKGD, int KMFLNILNPJD, int JPLLMKIDNBM, int HMFDJHEEGNN, long DECPPKAAHFA, int NFBLLKHBMEK, string DJPBDDBNMLN) { }
 
 	// // RVA: 0x911BA4 Offset: 0x911BA4 VA: 0x911BA4
-	// public void CBKENDJIBDM(string JKJDGDLAIME, int LKNCHJCLLFN, int KAAENFOCPLN, int[] OCJACPIJCBL, int[] POEMOGPOGPN, int BBNEDFIJFEN, int GGPDPDMODPL, int[] KJEHAHAKGDE, int[] OKIMFNNDGGP, int FEFHFFGBOEM) { }
+	public void CBKENDJIBDM(string JKJDGDLAIME, int LKNCHJCLLFN, int KAAENFOCPLN, int[] OCJACPIJCBL, int[] POEMOGPOGPN, int BBNEDFIJFEN, int GGPDPDMODPL, int[] KJEHAHAKGDE, int[] OKIMFNNDGGP, int FEFHFFGBOEM)
+	{
+		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
+		FLBFCCIEPNC_InitBaseJson(json, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
+		json["music_id"] = LKNCHJCLLFN;
+		json["place"] = JKJDGDLAIME;
+		json["bf_enable"] = KAAENFOCPLN;
+		json["af_enable"] = GGPDPDMODPL;
+		json["bf_diva_id"] = OCJACPIJCBL[0];
+		json["bf_diva_id2"] = OCJACPIJCBL[1];
+		json["bf_diva_id3"] = OCJACPIJCBL[2];
+		json["af_diva_id"] = KJEHAHAKGDE[0];
+		json["af_diva_id2"] = KJEHAHAKGDE[1];
+		json["af_diva_id3"] = KJEHAHAKGDE[2];
+		json["bf_valkyrie_id"] = BBNEDFIJFEN;
+		json["af_valkyrie_id"] = FEFHFFGBOEM;
+		json["bf_costume_id"] = POEMOGPOGPN[0];
+		json["bf_costume_id2"] = POEMOGPOGPN[1];
+		json["bf_costume_id3"] = POEMOGPOGPN[2];
+		json["af_costume_id"] = OKIMFNNDGGP[0];
+		json["af_costume_id2"] = OKIMFNNDGGP[1];
+		json["af_costume_id3"] = OKIMFNNDGGP[2];
+		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.CBKENDJIBDM, json, false);
+	}
 
 	// // RVA: 0x91251C Offset: 0x91251C VA: 0x91251C
 	// public void LIPHGGFEJFJ(int IMMDGJAOPCD, int HMFFHLPNMPH, int EIILNOEOICO, int COJALPJKKDL, int JGGKJBCGKCC, int KJMLLBDLKCG, int GDAGHLJDKGK, CHHECNJBMLA MOHDLLIJELH) { }

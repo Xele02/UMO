@@ -476,7 +476,23 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1050968 Offset: 0x1050968 VA: 0x1050968
 		private void OnClickRankingButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickRankingButton");
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			m_rankRangePopupSetting.TitleText = bk.GetMessageByLabel("popup_rank_range_title");
+			m_rankRangePopupSetting.SetParent(transform);
+			m_rankRangePopupSetting.WindowSize = SizeType.Small;
+			m_rankRangePopupSetting.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			m_rankRangePopupSetting.itemLabels = m_rankRangeLabelList;
+			m_rankRangePopupSetting.initialLabelIndex = m_currentRankRange;
+			m_rankRangePopupSetting.onDecideIndex = (int next) =>
+			{
+				//0x1050F58
+				m_nextRankRange = next;
+			};
+			m_nextRankRange = m_currentRankRange;
+			PopupWindowManager.Show(m_rankRangePopupSetting, null, null, null, null);
 		}
 
 		//// RVA: 0x1050CE0 Offset: 0x1050CE0 VA: 0x1050CE0
@@ -605,11 +621,7 @@ namespace XeApp.Game.Menu
 			while (!m_layout.IsLoaded())
 				yield return null;
 		}
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6ED9EC Offset: 0x6ED9EC VA: 0x6ED9EC
-		//// RVA: 0x1050F58 Offset: 0x1050F58 VA: 0x1050F58
-		//private void <OnClickRankingButton>b__43_0(int next) { }
-
+		
 		//[CompilerGeneratedAttribute] // RVA: 0x6ED9FC Offset: 0x6ED9FC VA: 0x6ED9FC
 		//// RVA: 0x1050F60 Offset: 0x1050F60 VA: 0x1050F60
 		//private void <OnClickRankingButton>b__43_1(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
