@@ -373,7 +373,10 @@ public class BBHNACPENDM_ServerSaveData
 	// public void LKBHDMOBOGN() { }
 
 	// // RVA: 0xF1F2EC Offset: 0xF1F2EC VA: 0xF1F2EC
-	// public void PGPNDIHDIOD() { }
+	public void PGPNDIHDIOD()
+	{
+		KHEKNNFCAOI_Init(0x4005);
+	}
 
 	// // RVA: 0xF1F30C Offset: 0xF1F30C VA: 0xF1F30C
 	// public void PNHOEMIMCGC() { }

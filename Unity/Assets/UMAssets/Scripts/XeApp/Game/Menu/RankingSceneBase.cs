@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XeApp.Core;
 using XeApp.Game.Common;
 using XeSys.Gfx;
 
@@ -46,7 +47,7 @@ namespace XeApp.Game.Menu
 		private const int VisibleListItemCount = 2;
 
 		private List<RankingListInfo> currentInfoList { get; set; } // 0x70
-		//protected bool isFriendList { get; } 0xCF4564
+		protected bool isFriendList { get { return m_isFriendList; } } //0xCF4564
 
 		// RVA: 0xCF456C Offset: 0xCF456C VA: 0xCF456C Slot: 4
 		protected override void Awake()
@@ -123,19 +124,22 @@ namespace XeApp.Game.Menu
 		protected abstract void Release();
 
 		//// RVA: -1 Offset: -1 Slot: 33
-		//protected abstract int GetCurrentBaseRank();
+		protected abstract int GetCurrentBaseRank();
 
 		//// RVA: -1 Offset: -1 Slot: 34
-		//protected abstract void GetRankingList(int baseRank, int rankingIdx);
+		protected abstract void GetRankingList(int baseRank, int rankingIdx);
 
 		//// RVA: -1 Offset: -1 Slot: 35
 		protected abstract void GetRankingListAdditive(bool isUpper);
 
 		//// RVA: -1 Offset: -1 Slot: 36
-		//protected abstract string GetRankingNotFoundMessage();
+		protected abstract string GetRankingNotFoundMessage();
 
 		//// RVA: 0xCF49EC Offset: 0xCF49EC VA: 0xCF49EC Slot: 37
-		//protected virtual void OnSetupTotalRanking() { }
+		protected virtual void OnSetupTotalRanking()
+		{
+			return;
+		}
 
 		//// RVA: 0xCF49F0 Offset: 0xCF49F0 VA: 0xCF49F0 Slot: 38
 		//protected virtual void OnSetupFriendRanking() { }
@@ -187,14 +191,59 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xCF537C Offset: 0xCF537C VA: 0xCF537C
 		protected void SetupTotalRanking()
 		{
-			TodoLogger.Log(0, "SetupTotalRanking");
+			ResetReceivedFlag();
+			m_windowUi.SelectTotalRankingTab();
+			m_listAddBorderPosition = -1;
+			m_isFriendList = false;
+			currentInfoList = m_totalInfoList;
+			OnSetupTotalRanking();
+			if(!m_receivedTotalInfo)
+			{
+				m_scrollList.SetItemCount(0);
+				m_scrollList.SetPosition(0, 0, 0, false);
+				m_scrollList.VisibleRegionUpdate();
+				MenuScene.Instance.RaycastDisable();
+				m_scrollList.SetEnableScrollBar(false);
+				GetRankingList(GetCurrentBaseRank(), 0);
+			}
+			else
+			{
+				m_scrollList.SetItemCount(currentInfoList.Count);
+				m_scrollList.SetPosition(0, 0, 0, false);
+				m_scrollList.VisibleRegionUpdate();
+			}
 		}
 
 		//// RVA: 0xCF55F8 Offset: 0xCF55F8 VA: 0xCF55F8
 		//protected void SetupFriendRanking() { }
 
 		//// RVA: 0xCF5920 Offset: 0xCF5920 VA: 0xCF5920
-		//protected void OnReceivedRankingList(int dir, List<IBIGBMDANNM> list) { }
+		protected void OnReceivedRankingList(int dir, List<IBIGBMDANNM> list)
+		{
+			currentInfoList.Clear();
+			if(list != null)
+			{
+				for (int i = 0; i < list.Count; i++)
+				{
+					EAJCBFGKKFA_FriendInfo data = new EAJCBFGKKFA_FriendInfo();
+					data.KHEKNNFCAOI(list[i]);
+					RankingListInfo info = new RankingListInfo(i, true, data);
+					currentInfoList.Add(info);
+					info.TryInstall();
+				}
+			}
+			m_windowUi.SetMessageVisible(currentInfoList.Count < 1);
+			if(currentInfoList.Count < 1)
+			{
+				m_windowUi.SetMessage(GetRankingNotFoundMessage());
+			}
+			OnChangedRankingList(0);
+			if (!m_isFriendList)
+				m_receivedTotalInfo = true;
+			else
+				m_receivedFriendInfo = true;
+			this.StartCoroutineWatched(Co_WaitDownLoadAsset());
+		}
 
 		//// RVA: 0xCF6048 Offset: 0xCF6048 VA: 0xCF6048
 		//protected void OnReceivedRankingList(List<RankingListInfo> a_list) { }
@@ -210,7 +259,16 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E15E4 Offset: 0x6E15E4 VA: 0x6E15E4
 		//// RVA: 0xCF5FBC Offset: 0xCF5FBC VA: 0xCF5FBC
-		//private IEnumerator Co_WaitDownLoadAsset() { }
+		private IEnumerator Co_WaitDownLoadAsset()
+		{
+			//0xCF7A50
+			waitForFrame.Reset(3);
+			yield return waitForFrame;
+			while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+				yield return null;
+			MenuScene.Instance.RaycastEnable();
+			m_scrollList.SetEnableScrollBar(true);
+		}
 
 		//// RVA: 0xCF66D4 Offset: 0xCF66D4 VA: 0xCF66D4
 		protected void OnRankingError()
@@ -237,10 +295,72 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xCF5BE8 Offset: 0xCF5BE8 VA: 0xCF5BE8
-		//protected void OnChangedRankingList(int changeDirection) { }
+		protected void OnChangedRankingList(int changeDirection)
+		{
+			m_scrollList.SetItemCount(currentInfoList.Count);
+			m_scrollList.OnUpdateItem.RemoveAllListeners();
+			m_scrollList.OnUpdateItem.AddListener((int index, SwapScrollListContent content) =>
+			{
+				//0xCF71E0
+				GeneralListContent c = content as GeneralListContent;
+				OnUpdateListItem(index, c, currentInfoList[index]);
+			});
+			if(changeDirection == 0)
+			{
+				int s = GetCurrentBaseRank();
+				if(s == 0)
+				{
+					for(int i = 0; i < currentInfoList.Count; i++)
+					{
+						if (currentInfoList[i].isOwner)
+							s = i;
+					}
+				}
+				int c = 0;
+				if(currentInfoList.Count > 1)
+				{
+					c = s;
+					if(currentInfoList.Count - 2 < s)
+					{
+						c = currentInfoList.Count - 2;
+					}
+				}
+				m_scrollList.SetPosition(c, 0, 0, false);
+			}
+			m_scrollList.VisibleRegionUpdate();
+			m_listAddBorderPosition = -1;
+			if(currentInfoList.Count > 0)
+			{
+				m_listAddBorderPosition = Mathf.Max(0, currentInfoList.Count - 4);
+			}
+		}
 
 		//// RVA: 0xCF69CC Offset: 0xCF69CC VA: 0xCF69CC
-		//protected void OnUpdateListItem(int index, GeneralListContent content, RankingListInfo info) { }
+		protected void OnUpdateListItem(int index, GeneralListContent content, RankingListInfo info)
+		{
+			RankingListElemBase elem = content.GetElemUI<RankingListElemBase>();
+			elem.SetName(info.name);
+			elem.SetLevel(info.playerLevel.ToString());
+			elem.SetScore(info.score.ToString());
+			elem.SetDamage(info.score.ToString());
+			elem.SetRankOrder(info.rankingOrder);
+			elem.SetMusicRatio(info.musicRatio.ToString());
+			elem.SetMusicRank(info.scoreRatingRank);
+			elem.SetKira(info.isKira);
+			elem.SetDivaIconDelegate(info.GetDivaIconTex, GameManager.Instance.DivaIconCache.SetLoadingIcon);
+			elem.SetSceneIconDelegate(info.GetSceneIconTex, GameManager.Instance.SceneIconCache.SetLoadingTexture);
+			int idx = m_elems.IndexOf(elem);
+			if(m_divaDecos.Count > 0)
+			{
+				m_divaDecos[idx].SetActive(true);
+				m_divaDecos[idx].Change(info.friend.JIGONEMPPNP_Diva, info.friend, DisplayType.Level, info.friend.AFBMEMCHJCL_MainScene);
+			}
+			if(m_sceneDecos.Count > 0)
+			{
+				m_sceneDecos[idx].SetActive(true);
+				m_sceneDecos[idx].Change(info.friend.AFBMEMCHJCL_MainScene, DisplayType.Level);
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E165C Offset: 0x6E165C VA: 0x6E165C
 		//// RVA: 0xCF4640 Offset: 0xCF4640 VA: 0xCF4640
@@ -258,12 +378,29 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xCF6F60 Offset: 0xCF6F60 VA: 0xCF6F60
 		protected static IEnumerator Co_LoadListElem(string bundleName, string assetName, Font font, int elemCount, string elemNameFormat, Action<LayoutUGUIRuntime> onLoadedElem)
 		{
-			TodoLogger.Log(0, "Co_LoadListElem");
-			yield return null;
-		}
+			AssetBundleLoadLayoutOperationBase operation;
 
-		//[CompilerGeneratedAttribute] // RVA: 0x6E174C Offset: 0x6E174C VA: 0x6E174C
-		//// RVA: 0xCF71E0 Offset: 0xCF71E0 VA: 0xCF71E0
-		//private void <OnChangedRankingList>b__53_0(int index, SwapScrollListContent content) { }
+			//0xCF7438
+			operation = AssetBundleManager.LoadLayoutAsync(bundleName, assetName);
+			yield return operation;
+			LayoutUGUIRuntime baseRuntime = null;
+			yield return Co.R(operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+			{
+				//0xCF7320
+				baseRuntime = instance.GetComponent<LayoutUGUIRuntime>();
+				baseRuntime.name = string.Format(elemNameFormat, 0);
+				onLoadedElem(baseRuntime);
+			}));
+			for(int i = 1; i < elemCount; i++)
+			{
+				LayoutUGUIRuntime r = Instantiate(baseRuntime);
+				r.name = string.Format(elemNameFormat, i);
+				r.IsLayoutAutoLoad = false;
+				r.Layout = baseRuntime.Layout.DeepClone();
+				r.UvMan = baseRuntime.UvMan;
+				r.LoadLayout();
+				onLoadedElem(r);
+			}
+		}
 	}
 }

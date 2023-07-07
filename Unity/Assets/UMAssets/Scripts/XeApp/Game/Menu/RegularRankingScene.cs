@@ -74,7 +74,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xCF9CA4 Offset: 0xCF9CA4 VA: 0xCF9CA4 Slot: 34
-		//protected override void GetRankingList(int baseRank, int rankingIdx) { }
+		protected override void GetRankingList(int baseRank, int rankingIdx)
+		{
+			//NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester
+			m_windowUi.SetMessageVisible(false);
+			CNNIKANJMNG.HHCJCDFCLOB.FAMFKPBPIAA(NGNLPIBPHJH.DEPGBBJMFED, m_musicData.GHBPLHBNMBK_FreeMusicId, isFriendList, baseRank, rankingIdx, OnReceivedRankingList, OnRankingError, OnNetError);
+		}
 
 		// RVA: 0xCF9EA4 Offset: 0xCF9EA4 VA: 0xCF9EA4 Slot: 35
 		protected override void GetRankingListAdditive(bool isUpper)
@@ -84,10 +89,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xCFA050 Offset: 0xCFA050 VA: 0xCFA050 Slot: 36
-		//protected override string GetRankingNotFoundMessage() { }
+		protected override string GetRankingNotFoundMessage()
+		{
+			return MessageManager.Instance.GetMessage("menu", "ranking_no_entry");
+		}
 
 		// RVA: 0xCFA0F0 Offset: 0xCFA0F0 VA: 0xCFA0F0 Slot: 33
-		//protected override int GetCurrentBaseRank() { }
+		protected override int GetCurrentBaseRank()
+		{
+			return 1;
+		}
 
 		//// RVA: 0xCFA0F8 Offset: 0xCFA0F8 VA: 0xCFA0F8
 		private void OnClickCornerButton()

@@ -9,7 +9,22 @@ namespace XeApp.Game.Menu
 			throw new System.NotImplementedException();
 		}
 
+		protected override int GetCurrentBaseRank()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		protected override void GetRankingList(int baseRank, int rankingIdx)
+		{
+			throw new System.NotImplementedException();
+		}
+
 		protected override void GetRankingListAdditive(bool isUpper)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		protected override string GetRankingNotFoundMessage()
 		{
 			throw new System.NotImplementedException();
 		}

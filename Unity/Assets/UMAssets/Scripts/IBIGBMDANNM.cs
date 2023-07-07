@@ -14,10 +14,10 @@ public class IBIGBMDANNM
 	public long DHIFKMEFABP; // 0x18
 	public LJJOIIAEICI LHMDABPNDDH_Type; // 0x28
 	public BBHNACPENDM_ServerSaveData AHEFHIMGIBI_ServerData; // 0x2C
-	public bool ONAFFLLLBHE; // 0x30
-	public int FJOLNJLLJEJ; // 0x34
-	public long KNIFCANOHOC; // 0x38
-	public double HMLEDBJDCAF; // 0x40
+	public bool ONAFFLLLBHE_IsSelf; // 0x30
+	public int FJOLNJLLJEJ_Rank; // 0x34
+	public long KNIFCANOHOC_Score; // 0x38
+	public double HMLEDBJDCAF_PreciseScore; // 0x40
 
 	public int MLPEHNBNOGD_Id { get; set; } // 0x8 OCNCGDJNBIH LJALJLIIODH MKBAMFJNCDK
 	public int ADFIHAPELAN_PLevel { get { return AHEFHIMGIBI_ServerData.MHEAEGMIKIE_PublicStatus.KIECDDFNCAN_PLevel; } set { AHEFHIMGIBI_ServerData.MHEAEGMIKIE_PublicStatus.KIECDDFNCAN_PLevel = value; } } //0x121255C NBALCMLLJGJ 0x12125A8 CPMNIMFDFAM

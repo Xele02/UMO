@@ -229,7 +229,7 @@ public class OEGIPPCADNA
 				});
 				if(r == null)
 				{
-					if(KKGKLNDOCFI <= NNDGIAEFMOG[i].FJOLNJLLJEJ)
+					if(KKGKLNDOCFI <= NNDGIAEFMOG[i].FJOLNJLLJEJ_Rank)
 					{
 						EAJCBFGKKFA_FriendInfo data = new EAJCBFGKKFA_FriendInfo();
 						data.KHEKNNFCAOI(NNDGIAEFMOG[i]);

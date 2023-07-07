@@ -87,10 +87,26 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xCF2974 Offset: 0xCF2974 VA: 0xCF2974
-		//public void SetDivaIconDelegate(Func<IiconTexture> iconDelegate, Action<RawImageEx> loadIconSet) { }
+		public void SetDivaIconDelegate(Func<IiconTexture> iconDelegate, Action<RawImageEx> loadIconSet)
+		{
+			if(m_divaIconImage != null)
+			{
+				if (loadIconSet != null)
+					loadIconSet(m_divaIconImage);
+				divaIconDelegate = iconDelegate;
+			}
+		}
 
 		//// RVA: 0xCF2A38 Offset: 0xCF2A38 VA: 0xCF2A38
-		//public void SetSceneIconDelegate(Func<IiconTexture> iconDelegate, Action<RawImageEx> loadIconSet) { }
+		public void SetSceneIconDelegate(Func<IiconTexture> iconDelegate, Action<RawImageEx> loadIconSet)
+		{
+			if(m_sceneIconImage != null)
+			{
+				if (loadIconSet != null)
+					loadIconSet(m_sceneIconImage);
+				sceneIconDelegate = iconDelegate;
+			}
+		}
 
 		//// RVA: 0xCF26B8 Offset: 0xCF26B8 VA: 0xCF26B8
 		public void SetDivaIcon(IiconTexture iconTex)
@@ -158,31 +174,117 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xCF2E48 Offset: 0xCF2E48 VA: 0xCF2E48
-		//public void SetName(string name) { }
+		public void SetName(string name)
+		{
+			if (m_nameText != null)
+				m_nameText.text = name;
+		}
 
 		//// RVA: 0xCF2F0C Offset: 0xCF2F0C VA: 0xCF2F0C
-		//public void SetLevel(string level) { }
+		public void SetLevel(string level)
+		{
+			if (m_levelText != null)
+				m_levelText.text = level;
+		}
 
 		//// RVA: 0xCF2FD0 Offset: 0xCF2FD0 VA: 0xCF2FD0
-		//public void SetScore(string score) { }
+		public void SetScore(string score)
+		{
+			if (m_scoreText != null)
+			{
+				m_scoreText.text = score;
+			}
+			if(m_numberEventHiScore != null)
+			{
+				m_numberEventHiScore.SetNumber(Convert.ToInt32(score), 0);
+			}
+		}
 
 		//// RVA: 0xCF3148 Offset: 0xCF3148 VA: 0xCF3148
-		//public void SetDamage(string damage) { }
+		public void SetDamage(string damage)
+		{
+			if (m_damageText != null)
+				m_damageText.text = damage;
+		}
 
 		//// RVA: 0xCF320C Offset: 0xCF320C VA: 0xCF320C
 		//public void SetOutOfRange(string text) { }
 
 		//// RVA: 0xCF32D0 Offset: 0xCF32D0 VA: 0xCF32D0
-		//public void SetMusicRatio(string ratio) { }
+		public void SetMusicRatio(string ratio)
+		{
+			if (m_musicRatioText != null)
+				m_musicRatioText.text = ratio;
+		}
 
 		//// RVA: 0xCF3394 Offset: 0xCF3394 VA: 0xCF3394
-		//public void SetRankOrder(int rankOrder) { }
+		public void SetRankOrder(int rankOrder)
+		{
+			if(m_animStyle_Total == null)
+			{
+				for(int i = 0; i < m_rankOrderImages.Count; i++)
+				{
+					m_rankOrderImages[i].enabled = false;
+				}
+				m_rankOrderText.enabled = false;
+				m_rankOrderUnit.enabled = false;
+				m_outOfRangeText.enabled = false;
+				if(rankOrder <= m_rankOrderImages.Count)
+				{
+					m_rankOrderImages[rankOrder - 1].enabled = true;
+					return;
+				}
+				m_rankOrderText.enabled = true;
+				m_rankOrderUnit.enabled = true;
+				m_rankOrderText.text = rankOrder.ToString();
+			}
+			else
+			{
+				for(int i = 0; i < m_rankOrderImages.Count; i++)
+				{
+					m_rankOrderImages[i].enabled = true;
+				}
+				if(rankOrder == 3)
+				{
+					m_animStyle_Total.StartAllAnimGoStop("03");
+				}
+				else if(rankOrder == 2)
+				{
+					m_animStyle_Total.StartAllAnimGoStop("02");
+				}
+				else if(rankOrder == 1)
+				{
+					m_animStyle_Total.StartAllAnimGoStop("01");
+				}
+				else
+				{
+					m_animStyle_Total.StartAllAnimGoStop("04");
+					m_rankOrderText.text = rankOrder.ToString();
+				}
+			}
+		}
 
 		//// RVA: 0xCF376C Offset: 0xCF376C VA: 0xCF376C
-		//public void SetMusicRank(HighScoreRatingRank.Type rank) { }
+		public void SetMusicRank(HighScoreRatingRank.Type rank)
+		{
+			if(m_musicRatioIconImage != null)
+			{
+				GameManager.Instance.MusicRatioTextureCache.Load(rank, (IiconTexture texture) =>
+				{
+					//0xCF3CF4
+					if(texture != null && (texture is MusicRatioTextureCache.MusicRatioTexture))
+					{
+						(texture as MusicRatioTextureCache.MusicRatioTexture).Set(m_musicRatioIconImage, rank);
+					}
+				});
+			}
+		}
 
 		//// RVA: 0xCF391C Offset: 0xCF391C VA: 0xCF391C
-		//public void SetKira(bool isKira) { }
+		public void SetKira(bool isKira)
+		{
+			m_isKira = isKira;
+		}
 
 		// RVA: 0xCF3924 Offset: 0xCF3924 VA: 0xCF3924 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
