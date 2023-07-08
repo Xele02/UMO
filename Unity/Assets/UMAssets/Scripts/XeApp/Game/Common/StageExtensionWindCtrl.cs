@@ -12,7 +12,7 @@ namespace XeApp.Game.Common
 			public Vector3 m_next = new Vector3(0, 0, 0); // 0x14
 			public Vector3 m_now = new Vector3(0, 0, 0); // 0x20
 			public Transform m_trans; // 0x2C
-			public float m_rate; // 0x30
+			public float m_rate = 1; // 0x30
 		}
 
 		public class DivaInfo
@@ -134,6 +134,7 @@ namespace XeApp.Game.Common
 					if(m_frame <= 0)
 					{
 						Quaternion q = Quaternion.Euler(Random.Range(m_rand_x.x, m_rand_x.y), Random.Range(m_rand_y.x, m_rand_y.y), 0);
+						m_prev_dir = m_now_dir;
 						m_next_dir = (q * m_wind_dir).normalized * m_power;
 					}
 					vec = Vector3.Slerp(m_prev_dir, m_next_dir, m_frame_rate);
@@ -157,7 +158,7 @@ namespace XeApp.Game.Common
 						if(m_frame <= 0)
 						{
 							Quaternion q = Quaternion.Euler(Random.Range(m_sub_rand_x.x, m_sub_rand_x.y), Random.Range(m_sub_rand_y.x, m_sub_rand_y.y), 0);
-							Vector3 vec2 = (q * m_now_dir).normalized * m_power;
+							Vector3 vec2 = (q * m_now_dir).normalized * m_sub_power;
 							m_list_diva[i].m_node[j].m_prev = m_list_diva[i].m_node[j].m_now;
 							m_list_diva[i].m_node[j].m_next = vec2;
 						}

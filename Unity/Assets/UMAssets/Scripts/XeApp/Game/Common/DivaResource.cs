@@ -628,7 +628,7 @@ namespace XeApp.Game.Common
 			{
 				for(int i = 0; i < (int)BoneSpringSuppressor.Preset._Num; i++)
 				{
-					assetName.SetFormat("bs_{0:D3}_{1:D3}_suppress_{2}", divaId, modelId, i);
+					assetName.SetFormat("bs_{0:D3}_{1:D3}_suppress_{2}", divaId, modelId, (BoneSpringSuppressor.Preset)i);
 					BoneSpringSuppressParam p = operation.GetAsset<BoneSpringSuppressParam>(assetName.ToString());
 					if(p != null)
 					{
