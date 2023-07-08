@@ -1258,7 +1258,7 @@ public class JGEOBNENMAH
 		data.IPEKDLNEOFI_TeamLife = OMNOFMEBLAD.IPEKDLNEOFI_TeamLife;
 		data.BFHPKJEKJNN_TeamSupport = OMNOFMEBLAD.BFHPKJEKJNN_TeamSupport;
 		data.DDBEJNGJIPF_Fold = OMNOFMEBLAD.DDBEJNGJIPF_Fold;
-		if(NHPGGBCKLHC_FriendPlayerData != null)
+		if(NHPGGBCKLHC_FriendPlayerData == null)
 		{
 			data.GELJFCKEBDM_FriendId = 0;
 			data.ANOPDAGJIKG_FriendSceneId = 0;

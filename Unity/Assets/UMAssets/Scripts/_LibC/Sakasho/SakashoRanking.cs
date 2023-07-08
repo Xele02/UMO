@@ -68,7 +68,7 @@ namespace ExternLib
 				EDOHBJAPLPF_JsonData d = new EDOHBJAPLPF_JsonData();
 				d["extra"] = null;
 				d["player_id"] = playerAccount.userId;
-				d["rank"] = playerAccount.playerData.rankingsData[rankingId].rank;
+				d["rank"] = 1;//playerAccount.playerData.rankingsData[rankingId].rank;
 				d["score"] = playerAccount.playerData.rankingsData[rankingId].score;
 				res["ranks"].Add(d);
 			}
