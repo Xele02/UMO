@@ -1318,7 +1318,7 @@ namespace XeApp.Game.Common
 				operationType = AssetBundleManager.LoadAllAssetAsync(typeBundleName.ToString());
 				yield return Co.R(operationType);
 
-				string str = DivaResultMotion.GetResultSpecialStr(scoreRank);
+				string str = DivaResultMotion.GetResultReactType(scoreRank).ToString();
 
 				assetName.SetFormat("type_{0:D3}_result_react{1}_start_h_body", personalityId, str);
 				resultMotionOverride.start.bodyClip = operationType.GetAsset<AnimationClip>(assetName.ToString());
