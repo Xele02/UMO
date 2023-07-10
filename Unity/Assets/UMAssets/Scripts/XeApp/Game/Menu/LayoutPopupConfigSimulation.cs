@@ -63,14 +63,21 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1ED7EB4 Offset: 0x1ED7EB4 VA: 0x1ED7EB4
 		public bool IsLoaded()
 		{
-			TodoLogger.Log(0, "IsLoaded");
+			for(int i = 0; i < m_layouts.Length; i++)
+			{
+				if (!m_layouts[i].IsLoaded())
+					return false;
+			}
 			return true;
 		}
 
 		//// RVA: 0x1ED70FC Offset: 0x1ED70FC VA: 0x1ED70FC
 		public void SetStatus(ScrollRect scroll)
 		{
-			TodoLogger.Log(0, "SetStatus");
+			for(int i = 0; i < m_layouts.Length; i++)
+			{
+				m_layouts[i].SetStatus(scroll);
+			}
 		}
 
 		// RVA: 0x1ED7F50 Offset: 0x1ED7F50 VA: 0x1ED7F50
