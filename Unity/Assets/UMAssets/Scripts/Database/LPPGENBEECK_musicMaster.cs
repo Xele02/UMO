@@ -627,7 +627,7 @@ public class LPPGENBEECK_MusicMaster : DIHHCBACKGG_DbSection
 			data.EDDLJBLJJOE_PilotVoice = (int)array[i].EDDLJBLJJOE;
 			data.JIIOKINLOGM_NoteType = (int)array[i].JIIOKINLOGM;
 			data.MDKNFOIMCJB_NoteSe = (int)array[i].MDKNFOIMCJB;
-			data.OENPCNBFPDA = (int)array[i].OENPCNBFPDA;
+			data.OENPCNBFPDA_Bg = (int)array[i].OENPCNBFPDA;
 			data.EGMIILFFHMI_DivaMode = (int)array[i].EGMIILFFHMI;
 			data.HFMFGFHPBNB_ValkyrieMode = (int)array[i].HFMFGFHPBNB;
 			data.ENAAKPKFBGN_EffectCutIn = (int)array[i].ENAAKPKFBGN;
@@ -922,7 +922,7 @@ public class AIPEHINPIHC_ForcedSettingInfo
 	public int EDDLJBLJJOE_PilotVoice; // 0x20
 	public int JIIOKINLOGM_NoteType; // 0x24
 	public int MDKNFOIMCJB_NoteSe; // 0x28
-	public int OENPCNBFPDA; // 0x2C
+	public int OENPCNBFPDA_Bg; // 0x2C
 	public int EGMIILFFHMI_DivaMode; // 0x30
 	public int HFMFGFHPBNB_ValkyrieMode; // 0x34
 	public int ENAAKPKFBGN_EffectCutIn; // 0x38

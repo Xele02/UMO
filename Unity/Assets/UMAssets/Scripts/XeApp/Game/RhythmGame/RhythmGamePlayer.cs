@@ -817,7 +817,9 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
-				TodoLogger.Log(0, "InitializeGameData 2D");
+				objectRoot3dLayer.SetActive(false);
+				GameManager.Instance.PopupCanvas.worldCamera.clearFlags = CameraClearFlags.Depth;
+				lowModeBackgroundObject.Initialize(resource.lowModeBackgroundResource);
 			}
 
 			uiController.Initialize(resource, setting, setting_mv);

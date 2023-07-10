@@ -528,7 +528,7 @@ namespace XeApp.Game.Menu
 					//0x1B6053C
 					isReShow = reShow;
 				}));
-				if (!isReShow)
+				if (isReShow)
 				{
 					ConfigManager.Instance.ApplyValue(false, null);
 				}

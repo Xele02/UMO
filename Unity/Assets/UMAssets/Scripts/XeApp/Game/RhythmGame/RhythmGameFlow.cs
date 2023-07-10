@@ -427,9 +427,8 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
-				TodoLogger.Log(0, "Load 2d mode");
+				rhythmGameResource.LoadAllResourceFor2DMode(introSky, battle);
 			}
-
 			ChangeWaitLoadingDataStatus();
 		}
 

@@ -565,7 +565,16 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xE9D308 Offset: 0xE9D308 VA: 0xE9D308
-		// public int ForceBG() { }
+		public int ForceBG()
+		{
+			if(forcePrism != null)
+			{
+				if (forcePrism.OENPCNBFPDA_Bg < 1)
+					return 0;
+				return forcePrism.OENPCNBFPDA_Bg;
+			}
+			return 0;
+		}
 
 		// // RVA: 0xE9D328 Offset: 0xE9D328 VA: 0xE9D328
 		public int ForceDivaMode()

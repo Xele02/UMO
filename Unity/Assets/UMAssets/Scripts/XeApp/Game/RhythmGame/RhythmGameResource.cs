@@ -146,8 +146,8 @@ namespace XeApp.Game.RhythmGame
 				return param.enterdFoldWaveId_100;
 			} private set { return; } } //0xBF61D4 0xBF628C
 		// public bool isUITextureResoucesLoaded { get; private set; } 0xBF6290 0xBF62B0
-		public bool is3DModeMusicDataResoucesLoaded { get { return musicData.isAllLoaded; } private set { } }// 0xBF6490 0xBF64BC
-		public bool is2DModeMusicDataResoucesLoaded { get { return musicData.isAllLoaded; } private set { } } //0xBF64C0 0xBF64EC
+		public bool is3DModeMusicDataResoucesLoaded { get { return musicData.isAllLoaded; } private set { return; } }// 0xBF6490 0xBF64BC
+		public bool is2DModeMusicDataResoucesLoaded { get { return musicData.isAllLoaded; } private set { return; } } //0xBF64C0 0xBF64EC
 		public bool is3DModeSpecialResoucesLoaded { get
 			{
 				if (!isSpecialDirectionResourceLoaded_)
@@ -181,11 +181,55 @@ namespace XeApp.Game.RhythmGame
 					return false;
 				return true;
 			}
-			private set { } } //0xBF64F0 0xBF64F4
+			private set { return; } } //0xBF64F0 0xBF64F4
 		public bool is2DModeSpecialResoucesLoaded { get {
-			TodoLogger.Log(0, "is2DModeSpecialResoucesLoaded");
-			return true;
-		} private set {} }// 0xBF64F8 0xBF64FC
+				if(!isSpecialDirectionResourceLoaded_)
+					return false;
+				foreach(var d in divaExtensionResource)
+				{
+					if(d != null)
+					{
+						if (!d.isAllLoaded)
+							return false;
+					}
+				}
+				foreach(var d in divaCutinResource)
+				{
+					if(d != null)
+					{
+						if (!d.isAllLoaded)
+							return false;
+					}
+				}
+				foreach(var m in musicCameraCutinResource)
+				{
+					if(m != null)
+					{
+						if (!m.isAllLoaded)
+							return false;
+					}
+				}
+				foreach(var s in stageLightingResource)
+				{
+					if(s != null)
+					{
+						if (!s.isAllLoaded)
+							return false;
+					}
+				}
+				foreach(var s in stageExtensionResource)
+				{
+					if(s != null)
+					{
+						if (!s.isAllLoaded)
+							return false;
+					}
+				}
+				if (musicVoiceChangerResource != null)
+					if (!musicVoiceChangerResource.isAllLoaded)
+						return false;
+				return true;
+		} private set { return; } }// 0xBF64F8 0xBF64FC
 		public bool is3DModeAllResoucesLoaded { get
 		{
 			bool ok = divaResourceIsMusicAllLoaded() && cameraResource.isAllLoaded && stageResources.isAllLoaded && 
@@ -197,11 +241,15 @@ namespace XeApp.Game.RhythmGame
 				ok &= musicBoneSpringResource[i].isAllLoaded;
 			}
 			return ok;
-		} private set {} } //0xBF6500 0xBF66CC
+		} private set { return; } } //0xBF6500 0xBF66CC
 		public bool is2DModeAllResoucesLoaded { get {
-			TodoLogger.Log(0, "is2DModeAllResoucesLoaded");
-			return true;
-		} private set {} } //0xBF66D0 0xBF6744
+			if(lowModeBackgroundResource.isAllLoaded && isUITextureResoucesLoaded_)
+			{
+					if (uiTextureResources != null)
+						return paramResource.isLoaded;
+			}
+			return false;
+		} private set { return; } } //0xBF66D0 0xBF6744
 
 		// // RVA: 0xBF4744 Offset: 0xBF4744 VA: 0xBF4744
 		public void OnDestroy()
@@ -840,23 +888,57 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xBF8ED0 Offset: 0xBF8ED0 VA: 0xBF8ED0
 		public void LoadSpecialResourceFor2DMode(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)
 		{
-			TodoLogger.Log(0, "LoadSpecialResourceFor2DMode");
+			this.StartCoroutineWatched(Co_LoadSpecialResourceFor2DMode(wavId, stageDivaNum, settingList));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7455AC Offset: 0x7455AC VA: 0x7455AC
 		// // RVA: 0xBF8EFC Offset: 0xBF8EFC VA: 0xBF8EFC
-		// private IEnumerator Co_LoadSpecialResourceFor2DMode(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList) { }
+		private IEnumerator Co_LoadSpecialResourceFor2DMode(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)
+		{
+			//0xBFA06C
+			yield return this.StartCoroutineWatched(Co_LoadSpecialDirectionResourceFor2DMode(wavId, stageDivaNum, settingList));
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x745624 Offset: 0x745624 VA: 0x745624
 		// // RVA: 0xBF8FF4 Offset: 0xBF8FF4 VA: 0xBF8FF4
-		// private IEnumerator Co_LoadSpecialDirectionResourceFor2DMode(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList) { }
+		private IEnumerator Co_LoadSpecialDirectionResourceFor2DMode(int wavId, int stageDivaNum, List<MusicDirectionParamBase.ConditionSetting> settingList)
+		{
+			//0xBF9E64
+			isSpecialDirectionResourceLoaded_ = false;
+			yield return new WaitUntil(() =>
+			{
+				//0xBF9438
+				return musicData.isAllLoaded;
+			});
+			LoadMusicVoiceChangerResource(wavId, stageDivaNum, settingList);
+			isSpecialDirectionResourceLoaded_ = true;
+		}
 
 		// // RVA: 0xBF90EC Offset: 0xBF90EC VA: 0xBF90EC
-		// public void LoadAllResourceFor2DMode(int introEnviromentId, int valkyrieModeId) { }
+		public void LoadAllResourceFor2DMode(int introEnviromentId, int valkyrieModeId)
+		{
+			this.StartCoroutineWatched(Co_LoadAllResourceFor2DMode(introEnviromentId, valkyrieModeId));
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x74569C Offset: 0x74569C VA: 0x74569C
 		// // RVA: 0xBF9110 Offset: 0xBF9110 VA: 0xBF9110
-		// private IEnumerator Co_LoadAllResourceFor2DMode(int introEnviromentId, int valkyrieModeId) { }
+		private IEnumerator Co_LoadAllResourceFor2DMode(int introEnviromentId, int valkyrieModeId)
+		{
+			//0xBF9710
+			yield return this.StartCoroutineWatched(LoadingUITextureAllResource());
+			int cardRarityId = -1;
+			int rarity = 1;
+			if(Database.Instance.gameSetup.teamInfo.divaList[0].sceneIdList[0] != 0)
+			{
+				GCIJNCFDNON_SceneInfo scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[Database.Instance.gameSetup.teamInfo.divaList[0].sceneIdList[0] - 1];
+				cardRarityId = scene.CGIELKDLHGE_GetEvolveId();
+				rarity = scene.JKGFBFPIMGA_Rarity;
+				if (rarity < 4)
+					cardRarityId = 1;
+			}
+			lowModeBackgroundResource.LoadResouces(introEnviromentId, Database.Instance.gameSetup.teamInfo.divaList[0].sceneIdList[0], 
+				cardRarityId, rarity, valkyrieModeId, uiTextureResources.centerCardTexture);
+		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x745724 Offset: 0x745724 VA: 0x745724
 		// // RVA: 0xBF93D0 Offset: 0xBF93D0 VA: 0xBF93D0
@@ -869,10 +951,6 @@ namespace XeApp.Game.RhythmGame
 		// [CompilerGeneratedAttribute] // RVA: 0x745744 Offset: 0x745744 VA: 0x745744
 		// // RVA: 0xBF9404 Offset: 0xBF9404 VA: 0xBF9404
 		// private void <LoadingUIPrefab>b__102_1(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x745764 Offset: 0x745764 VA: 0x745764
-		// // RVA: 0xBF9438 Offset: 0xBF9438 VA: 0xBF9438
-		// private bool <Co_LoadSpecialDirectionResourceFor2DMode>b__108_0() { }
 	}
 }
 
