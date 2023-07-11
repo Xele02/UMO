@@ -1435,8 +1435,42 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BC85C Offset: 0x9BC85C VA: 0x9BC85C
 		private IEnumerator Co_2DModeEnemyUIAnim(int startRawMusicMillisec)
 		{
-			TodoLogger.Log(0, "Co_2DModeEnemyUIAnim");
-			yield break;
+			//0xBF1E14
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG_IsValkyrieModeEnabled())
+			{
+				lowModeBackgroundObject.ChangeBattleBg();
+			}
+			yield return new WaitWhile(() =>
+			{
+				//0xBF1668
+				return currentRawMusicMillisec - startRawMusicMillisec < 300;
+			});
+			if(setting.m_enable_cutin)
+			{
+				RhythmGameVoicePlayer.Result r = voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.Mode_Valkyrie_Start);
+				if(r == RhythmGameVoicePlayer.Result.None)
+				{
+					if(resource.enteredValkyrieModeVoiceId < 0)
+					{
+						SoundManager.Instance.voPilot.Play(PilotVoicePlayer.VoiceCategory.Valkyrie, 0);
+					}
+					else
+					{
+						SoundManager.Instance.voPilot.Play(PilotVoicePlayer.VoiceCategory.Special, resource.enteredValkyrieModeVoiceId);
+					}
+				}
+				uiController.Hud.ShowPilotCutin();
+				uiController.Hud.ShowEnemyCutin();
+			}
+			yield return new WaitWhile(() =>
+			{
+				//0xBF16A4
+				return currentRawMusicMillisec - startRawMusicMillisec < 1750;
+			});
+			SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_GAME_013);
+			uiController.Hud.ShowEnemyStatus();
+			uiController.Hud.ShowHitResult();
+			uiController.Hud.ShowTargetSight();
 		}
 
 		// // RVA: 0x9BC900 Offset: 0x9BC900 VA: 0x9BC900
@@ -1533,8 +1567,13 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BD058 Offset: 0x9BD058 VA: 0x9BD058
 		private IEnumerator Co_2DModeChangeBg(int startRawMusicMillisec)
 		{
-			TodoLogger.Log(0, "Co_2DModeChangeBg");
-			yield break;
+			//0xBF1BD8
+			yield return new WaitWhile(() =>
+			{
+				//0xBF16EC
+				return currentRawMusicMillisec - startRawMusicMillisec < 2000;
+			});
+			lowModeBackgroundObject.ChangeCardBg();
 		}
 
 		// // RVA: 0x9BD0FC Offset: 0x9BD0FC VA: 0x9BD0FC

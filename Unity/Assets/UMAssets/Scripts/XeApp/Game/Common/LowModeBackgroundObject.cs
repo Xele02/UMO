@@ -104,6 +104,13 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x110A924 Offset: 0x110A924 VA: 0x110A924
-		// public void ChangeBattleBg() { }
+		public void ChangeBattleBg()
+		{
+			if (!isInitialized)
+				return;
+			intro.SetActive(false);
+			card.SetActive(false);
+			battle.SetActive(true);
+		}
 	}
 }
