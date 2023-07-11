@@ -439,8 +439,8 @@ namespace XeApp.Game
 				isDirtyFontUpdate = false;
 			if(UpdateAction != null)
 			{
-				m_sceneIconAnimeTime = m_sceneIconAnimeTime + TimeWrapper.deltaTime;
-				UpdateAction(TimeWrapper.deltaTime);
+				m_sceneIconAnimeTime += TimeWrapper.deltaTime;
+				UpdateAction(m_sceneIconAnimeTime);
 			}
 		}
 

@@ -217,6 +217,14 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 				FixMaterialShader(rawEx[i].MaterialAdd);
 			}
 		}
+		LayoutUGUIRuntime[] runtimes = obj.GetComponentsInChildren<LayoutUGUIRuntime>(true);
+		for (int i = 0; i < runtimes.Length; i++)
+		{
+			if (runtimes[i].Font != null && runtimes[i].Font.material != null)
+			{
+				FixMaterialShader(runtimes[i].Font.material);
+			}
+		}
 	}
 
     public IEnumerator FixMaterialShader_Co(AssetBundle myLoadedAssetBundle)
