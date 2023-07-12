@@ -384,7 +384,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB88E38 Offset: 0xB88E38 VA: 0xB88E38
-		//public void SelectFriendRankingTab() { }
+		public void SelectFriendRankingTab()
+		{
+			m_symbolTotalTabType.StartAnim("blue");
+			m_symbolFriendTabType.StartAnim("red");
+		}
 
 		//// RVA: 0xB88EE4 Offset: 0xB88EE4 VA: 0xB88EE4
 		public void SetMessage(string message)

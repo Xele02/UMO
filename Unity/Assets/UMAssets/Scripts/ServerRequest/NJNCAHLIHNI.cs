@@ -21,8 +21,8 @@ public class NJNCAHLIHNI_GetPlayerData : CACGCMBKHDI_Request
 		public List<OKMDAFICFHJ> AIGKNOKPMEJ; // 0x8
 	}
 
-	public List<int> FAMHAPONILI; // 0x7C
-	public List<string> HHIHCJKLJFF; // 0x80
+	public List<int> FAMHAPONILI_Ids; // 0x7C
+	public List<string> HHIHCJKLJFF_BlockNames; // 0x80
 	public const int GLOLJBMGDNP = 50;
 	public MEIEDGPOMOO PINPBOCDKLI; // 0x84
 
@@ -32,7 +32,7 @@ public class NJNCAHLIHNI_GetPlayerData : CACGCMBKHDI_Request
 	// RVA: 0x18ABC90 Offset: 0x18ABC90 VA: 0x18ABC90 Slot: 12
 	public override void DHLDNIEELHO()
 	{
-		EBGACDGNCAA_CallContext = SakashoPlayerData.GetPlayerData(FAMHAPONILI.ToArray(), HHIHCJKLJFF.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
+		EBGACDGNCAA_CallContext = SakashoPlayerData.GetPlayerData(FAMHAPONILI_Ids.ToArray(), HHIHCJKLJFF_BlockNames.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
 	}
 
 	// RVA: 0x18ABE0C Offset: 0x18ABE0C VA: 0x18ABE0C Slot: 13
@@ -67,7 +67,7 @@ public class NJNCAHLIHNI_GetPlayerData : CACGCMBKHDI_Request
 		{
 			for(int i = 0; i < res.AIGKNOKPMEJ.Count; i++)
 			{
-				bool b = PINPBOCDKLI(i, res.AIGKNOKPMEJ[i].EHGBICNIBKE_PlayerId, res.AIGKNOKPMEJ[i].IFNLEKOILPM_UpdatedAt, HHIHCJKLJFF, res.AIGKNOKPMEJ[i].HJDBGMMPPEF_PlayerData);
+				bool b = PINPBOCDKLI(i, res.AIGKNOKPMEJ[i].EHGBICNIBKE_PlayerId, res.AIGKNOKPMEJ[i].IFNLEKOILPM_UpdatedAt, HHIHCJKLJFF_BlockNames, res.AIGKNOKPMEJ[i].HJDBGMMPPEF_PlayerData);
 				if(!b)
 				{
 					DLKLLHPLANH = true;

@@ -259,11 +259,7 @@ namespace XeApp.Game.Menu
 			{
 				for(int i = 0; i < m_animeCurve.Count; i++)
 				{
-					bool b = isMax;
-					bool c = !b;
-					if (c)
-						b = isShowLeaf;
-					if((!c || b) || isMultiSkill)
+					if(isMax || isShowLeaf || isMultiSkill)
 					{
 						float val = m_animeCurve[i].Evaluate(time);
 						if(isMax)

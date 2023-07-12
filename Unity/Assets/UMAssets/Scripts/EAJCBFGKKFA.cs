@@ -137,8 +137,8 @@ public class EAJCBFGKKFA_FriendInfo
 			NJNCAHLIHNI_GetPlayerData req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new NJNCAHLIHNI_GetPlayerData());
 			List<int> l = new List<int>();
 			l.Add(MLPEHNBNOGD_Id);
-			req.FAMHAPONILI = l;
-			req.HHIHCJKLJFF = KPMOBPNENCD_serverData.KPIDBPEKMFD_GetBlockList();
+			req.FAMHAPONILI_Ids = l;
+			req.HHIHCJKLJFF_BlockNames = KPMOBPNENCD_serverData.KPIDBPEKMFD_GetBlockList();
 			req.PINPBOCDKLI = (int BMBBDIAEOMP, int EHGBICNIBKE, long IFNLEKOILPM, List<string> OHNJJIMGKGK, EDOHBJAPLPF_JsonData IDLHJIOMJBK) =>
 			{
 				//0x14F1AEC

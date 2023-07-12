@@ -149,6 +149,8 @@ namespace ExternLib
 							{
 								saveScene.BEBJKJKBOGH_Date = time;
 							}
+							saveScene.JPIPENJGGDD_Mlt = 1;
+							saveScene.IELENGDJPHF_Ulk = 1;
 							saveScene.ANAJIAENLNB_Level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(dbScene.EKLIPGELKCL_Rarity, true, dbScene.MCCIFLKCNKO_Feed);
 							for (int j = 0; j < saveScene.ANAJIAENLNB_Level; j++)
 							{
@@ -586,17 +588,22 @@ namespace ExternLib
 			res["players"] = new EDOHBJAPLPF_JsonData();
 			res["players"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
 			res["players"].Add(new EDOHBJAPLPF_JsonData());
-			res["players"][0].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
-			res["players"][0]["player_data"] = new EDOHBJAPLPF_JsonData();
-			res["players"][0]["player_data"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
-			for (int i = 0; i < names.HNBFOAJIIAL_Count; i++)
+			for (int i = 0; i < ids.HNBFOAJIIAL_Count; i++)
 			{
-				string str = (string)names[i];
-				res["players"][0]["player_data"][str] = jsonRes[str];
-			}
+				EDOHBJAPLPF_JsonData p = new EDOHBJAPLPF_JsonData();
+				res["players"].Add(p);
+				p.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+				p["player_data"] = new EDOHBJAPLPF_JsonData();
+				p["player_data"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+				for (int j = 0; j < names.HNBFOAJIIAL_Count; j++)
+				{
+					string str = (string)names[j];
+					p["player_data"][str] = jsonRes[str];
+				}
 
-			res["players"][0]["player_id"] = 99999998;
-			res["players"][0]["updated_at"] = 1654421023;
+				p["player_id"] = (int)ids[i];
+				p["updated_at"] = 1654421023;
+			}
 
 
 			SendMessage(callbackId, res);

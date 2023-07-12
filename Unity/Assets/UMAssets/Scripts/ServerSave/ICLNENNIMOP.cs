@@ -31,7 +31,10 @@ public class ICLNENNIMOP_FreeScoreMax : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x11E9D78 Offset: 0x11E9D78 VA: 0x11E9D78
-	// public double CJFBOEKDKNN(int GHBPLHBNMBK) { }
+	public double CJFBOEKDKNN_GetPreciseScoreMusic(int GHBPLHBNMBK)
+	{
+		return AGPLAKAFDEP_FreeMusicHighScorePrecise[GHBPLHBNMBK - 1];
+	}
 
 	// // RVA: 0x11E9DF8 Offset: 0x11E9DF8 VA: 0x11E9DF8
 	public void POIKGADFLHF_SetPreciseScoreForMusic(int GHBPLHBNMBK, int KNIFCANOHOC, long EOLFJGMAJAB)

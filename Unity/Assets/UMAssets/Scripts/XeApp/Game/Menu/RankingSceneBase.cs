@@ -1,3 +1,4 @@
+using mcrs;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -142,7 +143,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xCF49F0 Offset: 0xCF49F0 VA: 0xCF49F0 Slot: 38
-		//protected virtual void OnSetupFriendRanking() { }
+		protected virtual void OnSetupFriendRanking()
+		{
+			return;
+		}
 
 		//// RVA: 0xCF49F4 Offset: 0xCF49F4 VA: 0xCF49F4
 		//protected bool CheckTransitByReturn() { }
@@ -178,7 +182,21 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xCF5050 Offset: 0xCF5050 VA: 0xCF5050
 		protected void OnSelectListItem(int value, SwapScrollListContent content)
 		{
-			TodoLogger.LogNotImplemented("OnSelectListItem");
+			RankingListInfo info = currentInfoList[content.Index];
+			if(value == 0)
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				ProfilDateArgs arg = new ProfilDateArgs();
+				arg.data = info.friend;
+				arg.infoType = ProfilMenuLayout.InfoType.STATS;
+				if(ParentTransition == TransitionList.Type.RAID)
+				{
+					arg.infoType = ProfilMenuLayout.InfoType.PLAYER;
+					arg.isFavorite = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(info.friend.MLPEHNBNOGD_Id);
+					arg.btnType = NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD() == info.friend.MLPEHNBNOGD_Id ? ProfilMenuLayout.ButtonType.None : ProfilMenuLayout.ButtonType.Raid;
+				}
+				MenuScene.Instance.Call(TransitionList.Type.PROFIL, arg, true);
+			}
 		}
 
 		//// RVA: 0xCF5370 Offset: 0xCF5370 VA: 0xCF5370
@@ -215,7 +233,34 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xCF55F8 Offset: 0xCF55F8 VA: 0xCF55F8
-		//protected void SetupFriendRanking() { }
+		protected void SetupFriendRanking()
+		{
+			ResetReceivedFlag();
+			m_windowUi.SelectFriendRankingTab();
+			m_listAddBorderPosition = -1;
+			m_isFriendList = true;
+			currentInfoList = m_friendInfoList;
+			OnSetupFriendRanking();
+			if(!m_receivedFriendInfo)
+			{
+				m_scrollList.SetItemCount(0);
+				m_scrollList.SetPosition(0, 0, 0, false);
+				m_scrollList.VisibleRegionUpdate();
+				MenuScene.Instance.RaycastDisable();
+				m_scrollList.SetEnableScrollBar(false);
+				GetRankingList(GetCurrentBaseRank(), 0);
+			}
+			else
+			{
+				m_scrollList.SetItemCount(currentInfoList.Count);
+				m_scrollList.SetPosition(0, 0, 0, false);
+				m_scrollList.VisibleRegionUpdate();
+				m_windowUi.SetMessageVisible(currentInfoList.Count < 1);
+				if (currentInfoList.Count > 0)
+					return;
+				m_windowUi.SetMessage(GetRankingNotFoundMessage());
+			}
+		}
 
 		//// RVA: 0xCF5920 Offset: 0xCF5920 VA: 0xCF5920
 		protected void OnReceivedRankingList(int dir, List<IBIGBMDANNM> list)
@@ -285,13 +330,15 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xCF6904 Offset: 0xCF6904 VA: 0xCF6904
 		protected void OnClickTotalButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickTotalButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			SetupTotalRanking();
 		}
 
 		//// RVA: 0xCF6968 Offset: 0xCF6968 VA: 0xCF6968
 		protected void OnClickFriendButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickFriendButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			SetupFriendRanking();
 		}
 
 		//// RVA: 0xCF5BE8 Offset: 0xCF5BE8 VA: 0xCF5BE8
