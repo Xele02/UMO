@@ -39,6 +39,9 @@ namespace XeApp.Game.RhythmGame
 		// RVA: 0xDBDB6C Offset: 0xDBDB6C VA: 0xDBDB6C
 		public RhythmGameConsts.NoteResult CalcEvaluation(int gapMilliSec, int skillEffect)
 		{
+			if (RuntimeSettings.CurrentSettings.ForcePerfectNote)
+				return RhythmGameConsts.NoteResult.Perfect;
+
 			if (Perfect[0] - skillEffect <= gapMilliSec)
 				if (Perfect[1] + skillEffect >= gapMilliSec)
 					return RhythmGameConsts.NoteResult.Perfect;

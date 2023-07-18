@@ -110,7 +110,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x115161C Offset: 0x115161C VA: 0x115161C
 		private void SetFriendSortProprty(ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.MMALELPFEBH_UserList friendProperty)
 		{
-			TodoLogger.Log(0, "SetFriendSortProprty");
+			SortItem = (SortItem)friendProperty.LHPDCGNKPHD_sortItem;
+			AssistItem = (AssistItem)friendProperty.NPEEPPCPEPE_assistItem;
+			RarityFilter = (uint)friendProperty.ACCHOFLOOEC_filter;
+			AttributeFilter = (uint)friendProperty.BOFFOHHLLFG_attributeFilter;
+			SeriaseFilter = (uint)friendProperty.BBIIHLNBHDE_seriaseFilter;
+			CenterSkillFilter = (uint)friendProperty.LKPCKPJGJKN_centerSkillFilter;
 		}
 	}
 }

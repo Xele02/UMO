@@ -104,7 +104,7 @@ namespace XeApp.Game.Menu
 		private bool m_isGoDivaEvent; // 0x14D
 		private bool m_isGoDivaBonus; // 0x14E
 
-		//private int UseLiveSkipTicketCount { get; set; } 0xA80220 0xA80234
+		private int UseLiveSkipTicketCount { get { return m_useLiveSkipTicketCount ^ 3257895; } set { m_useLiveSkipTicketCount = value ^ 3257895; } } //0xA80220 0xA80234
 		private int UnitSetIndex { get { return m_isGoDivaEvent ? UnitSetSelectIndex_GoDiva : UnitSetSelectIndex_Normal; } set { if (m_isGoDivaEvent) UnitSetSelectIndex_GoDiva = value; UnitSetSelectIndex_Normal = value; } } //0xA80248 0xA8031C
 		private EAJCBFGKKFA_FriendInfo m_viewFriendPlayerData { get { return GameManager.Instance.SelectedGuestData; } } //0xA803F4
 		//private bool IsEnableUnitInfoChange { get; } 0xA80490
@@ -112,7 +112,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xA804A4 Offset: 0xA804A4 VA: 0xA804A4 Slot: 4
 		protected override void Awake()
 		{
-			m_useLiveSkipTicketCount = 3257895;
+			UseLiveSkipTicketCount = 0;
 			IsReady = false;
 			m_dispTypePopupParam.Scene = PopupFilterSortUGUI.Scene.UnitDispType;
 			m_dispTypePopupParam.EnableSave = true;
@@ -791,7 +791,7 @@ namespace XeApp.Game.Menu
 				if(Database.Instance.gameSetup.SelectedDashIndex < 1)
 				{
 					res = SkipStatusType.Lock;
-					if((Database.Instance.selectedMusic.GetSelectedMusicData() as IBJAKJJICBC).JHLDFOLFNGB(Database.Instance.gameSetup.musicInfo.difficultyType, Database.Instance.gameSetup.musicInfo.IsLine6Mode))
+					if((Database.Instance.selectedMusic.GetSelectedMusicData() as IBJAKJJICBC).JHLDFOLFNGB(Database.Instance.gameSetup.musicInfo.difficultyType, Database.Instance.gameSetup.musicInfo.IsLine6Mode) || RuntimeSettings.CurrentSettings.CanSkipUnplayedSongs)
 					{
 						res = SkipStatusType.Limit;
 						if(!CIOECGOMILE.HHCJCDFCLOB.PPDOILECBAD())
@@ -1227,7 +1227,7 @@ namespace XeApp.Game.Menu
 			OnClickAnyButtons();
 			//NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
-			m_useLiveSkipTicketCount = 3257895;
+			UseLiveSkipTicketCount = 0;
 			UpdatePrismData(m_viewMusicData.DLAEJOBELBH_MusicId, Database.Instance.gameSetup.musicInfo);
 			if(!CheckSetAllDiva())
 			{
@@ -1254,14 +1254,134 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8C708 Offset: 0xA8C708 VA: 0xA8C708
 		private void OnSkipButton()
 		{
-			TodoLogger.LogNotImplemented("OnSkipButton");
+			OnClickAnyButtons();
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+			UseLiveSkipTicketCount = 0;
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			switch(m_skipStatus)
+			{
+				case SkipStatusType.Story:
+					m_textPopupSetting.TitleText = bk.GetMessageByLabel("unit_skip_story_title");
+					m_textPopupSetting.IsCaption = true;
+					m_textPopupSetting.Text = bk.GetMessageByLabel("unit_skip_story_text");
+					m_textPopupSetting.WindowSize = SizeType.Middle;
+					m_textPopupSetting.Buttons = m_textPopupButtons;
+					break;
+				case SkipStatusType.Lock:
+					m_textPopupSetting.TitleText = bk.GetMessageByLabel("unit_skip_condition_title");
+					m_textPopupSetting.IsCaption = true;
+					m_textPopupSetting.Text = bk.GetMessageByLabel("unit_skip_condition_text");
+					m_textPopupSetting.WindowSize = SizeType.Middle;
+					m_textPopupSetting.Buttons = m_textPopupButtons;
+					break;
+				case SkipStatusType.Limit:
+					m_textPopupSetting.TitleText = bk.GetMessageByLabel("unit_skip_ticket_count_title");
+					m_textPopupSetting.IsCaption = true;
+					m_textPopupSetting.Text = bk.GetMessageByLabel("unit_skip_ticket_count_text");
+					m_textPopupSetting.WindowSize = SizeType.Middle;
+					m_textPopupSetting.Buttons = m_textPopupButtons;
+					break;
+				case SkipStatusType.LackTicket:
+					m_textPopupSetting.TitleText = bk.GetMessageByLabel("unit_skip_ticket_lack_title");
+					m_textPopupSetting.IsCaption = true;
+					m_textPopupSetting.Text = bk.GetMessageByLabel("unit_skip_ticket_lack_text");
+					m_textPopupSetting.WindowSize = SizeType.Middle;
+					m_textPopupSetting.Buttons = m_textPopupButtons;
+					break;
+				case SkipStatusType.Boost:
+					m_textPopupSetting.TitleText = bk.GetMessageByLabel("boost_skip_ticket_title");
+					m_textPopupSetting.IsCaption = true;
+					m_textPopupSetting.Text = bk.GetMessageByLabel("boost_skip_ticket_text");
+					m_textPopupSetting.WindowSize = SizeType.Middle;
+					m_textPopupSetting.Buttons = m_textPopupButtons;
+					break;
+				case SkipStatusType.Rival:
+					m_textPopupSetting.TitleText = bk.GetMessageByLabel("boost_skip_battle_ex_title");
+					m_textPopupSetting.IsCaption = true;
+					m_textPopupSetting.Text = bk.GetMessageByLabel("boost_skip_battle_ex_text");
+					m_textPopupSetting.WindowSize = SizeType.Middle;
+					m_textPopupSetting.Buttons = m_textPopupButtons;
+					break;
+				case SkipStatusType.Support:
+					m_textPopupSetting.TitleText = bk.GetMessageByLabel("pop_raid_assist_attack_skip_title");
+					m_textPopupSetting.IsCaption = true;
+					m_textPopupSetting.Text = bk.GetMessageByLabel("pop_raid_assist_attack_skip_desc_02");
+					m_textPopupSetting.WindowSize = SizeType.Middle;
+					m_textPopupSetting.Buttons = m_textPopupButtons;
+					break;
+				default:
+					if(!CheckSetAllDiva())
+					{
+						NotSetAllDivaShow();
+						return;
+					}
+					m_isDoSkip = true;
+					PreGameSkipShow(AdvanceGame);
+					return;
+			}
+			PopupWindowManager.Show(m_textPopupSetting, null, null, null, null);
 		}
 
 		//// RVA: 0xA8A680 Offset: 0xA8A680 VA: 0xA8A680
 		private void PreGameSkipShow(Action onContinue)
 		{
-			TodoLogger.Log(0, "PreGameSkipShow");
-			onContinue();
+			IBJAKJJICBC d = m_viewMusicData as IBJAKJJICBC;
+			if (d == null)
+				return;
+			if (MenuScene.Instance.CheckEventLimit(d, true, true, KGCNCBOKCBA.GNENJEHKMHD.MEAJLPAHINL/*5*/, Database.Instance.gameSetup.musicInfo.EventUniqueId))
+				return;
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			int cnt = Mathf.Min(CIOECGOMILE.HHCJCDFCLOB.KJBENABMBCA(time), CIOECGOMILE.HHCJCDFCLOB.GGJMFEGHGIA());
+			m_skipTicketPopupSetting.UseItemId = LimitedCompoItemCompoConstants.MakeItemId(LimitedCompoContentsId.NormalSkipTicket);
+			m_skipTicketPopupSetting.ItemHaveMaxValue = CIOECGOMILE.HHCJCDFCLOB.KJBENABMBCA(time);
+			m_skipTicketPopupSetting.ConsumeItemId = 0;
+			int weeklyEventCount = d.MOJMEFIENDM_WeeklyEventCount;
+			if (m_eventCtrl == null)
+			{
+				m_skipTicketPopupSetting.ConsumeItem = PopupSkipTicketUseConfirm.ConsumeItem.Energy;
+				m_skipTicketPopupSetting.ConsumeItemMax = MenuScene.Instance.GetCurrentStamina();
+				int needEnergy = Database.Instance.selectedMusic.GetNeedEnergy(Database.Instance.gameSetup.musicInfo.difficultyType, Database.Instance.gameSetup.musicInfo.IsLine6Mode);
+				cnt = Mathf.Min(MenuScene.Instance.GetCurrentStamina() / needEnergy, cnt);
+				if(weeklyEventCount < 1)
+				{
+					m_skipTicketPopupSetting.IsWeekdayEvent = false;
+				}
+				else
+				{
+					cnt = Mathf.Min(cnt, weeklyEventCount);
+					m_skipTicketPopupSetting.IsWeekdayEvent = true;
+				}
+				m_skipTicketPopupSetting.ItemCurrentValue = 1;
+				m_skipTicketPopupSetting.ItemUseMaxValue = cnt;
+				m_skipTicketPopupSetting.ConsumeItemValue = needEnergy;
+				m_skipTicketPopupSetting.IsOneUseForced = false;
+			}
+			else
+			{
+				TodoLogger.Log(0, "PreGameSkipShow event");
+			}
+			PopupWindowManager.Show(m_skipTicketPopupSetting, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0xA92B3C
+				if(type == PopupButton.ButtonType.Positive && onContinue != null)
+				{
+					int c = (ctrl.Content as PopupSkipTicketUseConfirm).UseTcketCount;
+					long time_ = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+					if(!CIOECGOMILE.HHCJCDFCLOB.LNCGIOILBDD(c, time_))
+					{
+						JHHBAFKMBDL.HHCJCDFCLOB.GKMAHMLNMEK(() =>
+						{
+							//0xA929F8
+							MenuScene.Instance.GotoTitle();
+						}, "");
+						return;
+					}
+					UseLiveSkipTicketCount = c;
+					if (onContinue != null)
+						onContinue();
+				}
+			}, null, null, null);
 		}
 
 		//// RVA: 0xA8C374 Offset: 0xA8C374 VA: 0xA8C374
@@ -1309,7 +1429,7 @@ namespace XeApp.Game.Menu
 				TodoLogger.Log(0, "Event raid");
 			}
 			Database.Instance.gameSetup.teamInfo.SetupInfo(m_paramCalculator.AddStatus, m_playerData, 0, m_viewMusicData, m_viewFriendPlayerData, m_paramCalculator.LimitOverStatus, m_prismData, m_isGoDivaEvent);
-			AdvanceGame(m_paramCalculator.AddStatus, m_playerData, m_viewFriendPlayerData, m_paramCalculator.LimitOverStatus, m_isDoSkip, m_useLiveSkipTicketCount ^ 3257895, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime(), m_paramCalculator.LogParams, isNotUpdate);
+			AdvanceGame(m_paramCalculator.AddStatus, m_playerData, m_viewFriendPlayerData, m_paramCalculator.LimitOverStatus, m_isDoSkip, UseLiveSkipTicketCount, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime(), m_paramCalculator.LogParams, isNotUpdate);
 		}
 
 		//// RVA: 0xA8D2EC Offset: 0xA8D2EC VA: 0xA8D2EC

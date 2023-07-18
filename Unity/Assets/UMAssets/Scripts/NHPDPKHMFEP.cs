@@ -381,7 +381,17 @@ public class NHPDPKHMFEP
 	}
 
 	// // RVA: 0x189B694 Offset: 0x189B694 VA: 0x189B694
-	// public int EOBEPKGEJFE() { }
+	public int EOBEPKGEJFE()
+	{
+		if(NILNABPCKGI())
+		{
+			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+			{
+				return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem.OEJIPANCLOP.EIEOBPKBJDN;
+			}
+		}
+		return 0;
+	}
 
 	// // RVA: 0x189B41C Offset: 0x189B41C VA: 0x189B41C
 	public bool NILNABPCKGI()

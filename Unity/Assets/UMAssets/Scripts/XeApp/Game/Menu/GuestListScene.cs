@@ -353,7 +353,18 @@ namespace XeApp.Game.Menu
 		// RVA: 0xE2B87C Offset: 0xE2B87C VA: 0xE2B87C
 		private void OnClickSortButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickSortButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MenuScene.Instance.ShowSortWindow(PopupSortMenu.SortPlace.GuestSelect, (PopupSortMenu popup) =>
+			{
+				//0xE2DB0C
+				MenuScene.Instance.InputDisable();
+				m_sortType = popup.SortItem;
+				m_assistType = popup.AssistItem;
+				m_seriesFilter = popup.GetSeriaseFilter();
+				m_centerSkillFilter = popup.GetCenterSkillFilter();
+				m_buttonRuntime.SetSortType(m_sortType);
+				this.StartCoroutineWatched(OnSuccessSearchFriend());
+			}, null);
 		}
 
 		// RVA: 0xE2B9C4 Offset: 0xE2B9C4 VA: 0xE2B9C4
@@ -362,7 +373,12 @@ namespace XeApp.Game.Menu
 		// RVA: 0xE2C1DC Offset: 0xE2C1DC VA: 0xE2C1DC
 		private void OnClickOrderButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickOrderButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			m_sortOrder = m_sortOrder == GeneralList.SortOrder.Ascend ? GeneralList.SortOrder.Descend : GeneralList.SortOrder.Ascend;
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.GDMIGCCMEEF_GuestSelect.EILKGEADKGH_order = (int)m_sortOrder;
+			m_saveDataDirty = true;
+			m_buttonRuntime.SetSortOrder(m_sortOrder);
+			SortGuestList();
 		}
 
 		// RVA: 0xE2C378 Offset: 0xE2C378 VA: 0xE2C378
@@ -579,7 +595,11 @@ namespace XeApp.Game.Menu
 		// RVA: 0xE2D2C8 Offset: 0xE2D2C8 VA: 0xE2D2C8
 		private void OnShowAssistSelectButton()
 		{
-			TodoLogger.LogNotImplemented("GuestList OnShowAssistSelectButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			ProfilDateArgs arg = new ProfilDateArgs();
+			arg.infoType = ProfilMenuLayout.InfoType.ASSIST;
+			arg.isShowMyProfil = true;
+			MenuScene.Instance.Call(TransitionList.Type.PROFIL, arg, true);
 		}
 
 		// RVA: 0xE2D41C Offset: 0xE2D41C VA: 0xE2D41C Slot: 28
@@ -710,11 +730,7 @@ namespace XeApp.Game.Menu
 					yield return null;
 			}
 		}
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6E0EC4 Offset: 0x6E0EC4 VA: 0x6E0EC4
-		//// RVA: 0xE2DB0C Offset: 0xE2DB0C VA: 0xE2DB0C
-		//private void <OnClickSortButton>b__46_0(PopupSortMenu popup) { }
-
+		
 		//[CompilerGeneratedAttribute] // RVA: 0x6E0ED4 Offset: 0x6E0ED4 VA: 0x6E0ED4
 		//// RVA: 0xE2DC8C Offset: 0xE2DC8C VA: 0xE2DC8C
 		//private bool <OnClickSortNextButton>b__47_0(SortItem _) { }

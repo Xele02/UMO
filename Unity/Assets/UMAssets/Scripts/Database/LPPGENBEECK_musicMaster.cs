@@ -1000,7 +1000,8 @@ public class ADDHLABEFKH
 			if (KNIFCANOHOC_RankScore[i] > JBGEEPFKIGG_Score)
 				return i;
 		}
-		return KNIFCANOHOC_RankScore.Count;
+		//return KNIFCANOHOC_RankScore.Count;
+		return KNIFCANOHOC_RankScore.Count - 1; // UMO fix for very high score
 	}
 
 	//// RVA: 0x15B9F40 Offset: 0x15B9F40 VA: 0x15B9F40

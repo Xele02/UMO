@@ -2865,7 +2865,9 @@ namespace XeApp.Game.RhythmGame
 		{
 			if (setting_mv.m_enable)
 				return;
-			if(buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.OverwritePerfect, a_note_obj.rNote.GetLineNo()))
+			if (RuntimeSettings.CurrentSettings.ForcePerfectNote)
+				a_result_ex.m_result = RhythmGameConsts.NoteResult.Perfect;
+			if (buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.OverwritePerfect, a_note_obj.rNote.GetLineNo()))
 			{
 				if (a_result_ex.m_result == RhythmGameConsts.NoteResult.Bad || a_result_ex.m_result == RhythmGameConsts.NoteResult.Good || a_result_ex.m_result == RhythmGameConsts.NoteResult.Great)
 				{

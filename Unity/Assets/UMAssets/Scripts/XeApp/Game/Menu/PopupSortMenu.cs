@@ -181,7 +181,7 @@ namespace XeApp.Game.Menu
 
 		public Transform Parent { get; private set; } // 0xC
 		public SortItem SortItem { get { return m_sortItem; } set { m_sortItem = value; } } //0x1149B04 0x1149B0C 
-		//public AssistItem AssistItem { get; set; } 0x1149B14 0x1149B1C
+		public AssistItem AssistItem { get { return m_assistItem; } set { m_assistItem = value; } } //0x1149B14 0x1149B1C
 		public static List<SortItem> UnitSortItem { get { return UnitSortItemList; } } //0x1149B24 
 		public static List<SortItem> UnitDivaSortItem { get { return UnitDivaSortItemList; } }  //0x1149BB0
 		public static List<SortItem> SceneSortItem { get { return SceneSortItemList; } } //0x1149C3C
@@ -201,10 +201,16 @@ namespace XeApp.Game.Menu
 		//public uint GetAttributeFilter() { }
 
 		//// RVA: 0x1149F1C Offset: 0x1149F1C VA: 0x1149F1C
-		//public uint GetSeriaseFilter() { }
+		public uint GetSeriaseFilter()
+		{
+			return m_seriaseButtonStateBit;
+		}
 
 		//// RVA: 0x1149F24 Offset: 0x1149F24 VA: 0x1149F24
-		//public uint GetCenterSkillFilter() { }
+		public uint GetCenterSkillFilter()
+		{
+			return m_centerSkillButtonStateBit;
+		}
 
 		//// RVA: 0x1149F2C Offset: 0x1149F2C VA: 0x1149F2C
 		//public uint GetCompatibleFilter() { }
@@ -272,7 +278,9 @@ namespace XeApp.Game.Menu
 			m_sortMenuWindow.SetSelectSortButton(f, (int)m_sortPlace > 9);
 			if(m_sortPlace == SortPlace.GuestSelect)
 			{
-				TodoLogger.Log(0, "Initialize GuestSelect");
+				m_sortMenuWindow.ShowAssistSelectFilter();
+				m_sortMenuWindow.SetAssistSlotLabel();
+				m_sortMenuWindow.SetSelectAssistButton(GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.GDMIGCCMEEF_GuestSelect.NPEEPPCPEPE_assistItem);
 			}
 			else if(m_sortPlace == SortPlace.AssistList)
 			{
@@ -473,7 +481,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x114B9A0 Offset: 0x114B9A0 VA: 0x114B9A0
 		private void ApplyFriendSortParam(ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.MMALELPFEBH_UserList friendProperty)
 		{
-			TodoLogger.Log(0, "ApplyFriendSortParam");
+			friendProperty.LHPDCGNKPHD_sortItem = (int)m_sortItem;
+			friendProperty.NPEEPPCPEPE_assistItem = (int)m_assistItem;
+			friendProperty.ACCHOFLOOEC_filter = (int)m_rarityButtonStateBit;
+			friendProperty.BOFFOHHLLFG_attributeFilter = (int)m_attributeButtonStateBit;
+			friendProperty.BBIIHLNBHDE_seriaseFilter = (int)m_seriaseButtonStateBit;
+			friendProperty.LKPCKPJGJKN_centerSkillFilter = (int)m_centerSkillButtonStateBit;
 		}
 
 		//// RVA: 0x114BA5C Offset: 0x114BA5C VA: 0x114BA5C

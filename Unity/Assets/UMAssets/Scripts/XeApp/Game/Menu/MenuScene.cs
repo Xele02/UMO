@@ -613,7 +613,14 @@ namespace XeApp.Game.Menu
 		// public int GetMedalMonthId() { }
 
 		// // RVA: 0xB30F58 Offset: 0xB30F58 VA: 0xB30F58
-		// public int GetCurrentStamina() { }
+		public int GetCurrentStamina()
+		{
+			if(m_playerStatusData != null)
+			{
+				return m_playerStatusData.EPNALMONMHB_CurEnergy;
+			}
+			return 0;
+		}
 
 		// // RVA: 0xB30F70 Offset: 0xB30F70 VA: 0xB30F70
 		public void InitAssitPlate()
@@ -1060,7 +1067,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB32BA0 Offset: 0xB32BA0 VA: 0xB32BA0
-		// public void ShowSortWindow(PopupSortMenu.SortPlace place, UnityAction<PopupSortMenu> okCallBack, Action endCallBack) { }
+		public void ShowSortWindow(PopupSortMenu.SortPlace place, UnityAction<PopupSortMenu> okCallBack, Action endCallBack)
+		{
+			m_sortWindowControl.Show(place, 0, 0, okCallBack, endCallBack, SortItem.None);
+		}
 
 		// // RVA: 0xB32C00 Offset: 0xB32C00 VA: 0xB32C00
 		// public void ShowSortWindow(PopupSortMenu.SortPlace place, SortItem sortItem, UnityAction<PopupSortMenu> okCallBack, Action endCallBack) { }

@@ -230,6 +230,17 @@ namespace XeApp.Game.RhythmGame
 					};
 				}
 			}
+			else if(RuntimeSettings.CurrentSettings.ForcePerfectNote)
+			{
+				for (int i = 0; i < objectPool.list.Count; i++)
+				{
+					objectPool.list[i].funcForceOverwriteNoteResult = () =>
+					{
+						//0xDBC5F8
+						return RhythmGameConsts.NoteResult.Perfect;
+					};
+				}
+			}
 			if(a_setting_skip)
 			{
 				SetEnableRenderer(false);
@@ -1104,6 +1115,15 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDBC280 Offset: 0xDBC280 VA: 0xDBC280
-		//public void UpdateObjectPool() { }
+		public void UpdateObjectPool()
+		{
+			for(int i = 0; i < objectPool.list.Count; i++)
+			{
+				if(objectPool.list[i].isActiveAndEnabled)
+				{
+					objectPool.list[i].Update();
+				}
+			}
+		}
 	}
 }

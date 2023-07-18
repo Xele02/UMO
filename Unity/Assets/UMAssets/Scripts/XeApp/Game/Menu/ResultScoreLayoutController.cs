@@ -149,7 +149,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB50B1C Offset: 0xB50B1C VA: 0xB50B1C
-		// public void ChangeViewForSkipResult() { }
+		public void ChangeViewForSkipResult()
+		{
+			layoutScoreMain.ChangeViewForSkipResult();
+		}
 
 		// // RVA: 0xB50AF0 Offset: 0xB50AF0 VA: 0xB50AF0
 		// public void ChangeViewForSupportResult() { }

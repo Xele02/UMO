@@ -397,7 +397,11 @@ namespace XeApp.Game.Menu
 				{
 					TodoLogger.Log(0, "Todo Event");
 				}
-				TodoLogger.Log(0, "Todo Skip");
+				else
+				{
+					commonLayoutController.ChangeViewForSkipResult(Database.Instance.gameSetup.LiveSkipTicketCount);
+					scoreLayoutController.ChangeViewForSkipResult();
+				}
 			}
 			else
 			{

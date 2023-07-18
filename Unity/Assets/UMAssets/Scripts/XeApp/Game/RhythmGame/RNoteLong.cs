@@ -111,7 +111,7 @@ namespace XeApp.Game.RhythmGame
 			isAdsorbedLastObject = false;
 			touchFingerId_ = -1;
 			gameObject.SetActive(true);
-			for(int i =0; i < objects.Length; i++)
+			for(int i = 0; i < objects.Length; i++)
 			{
 				objects[i].AddJudgedEvent(this.JudgedDelegate);
 				objects[i].AddBeyondEvent(this.BeyondDelegate);

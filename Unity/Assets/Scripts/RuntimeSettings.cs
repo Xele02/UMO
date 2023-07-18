@@ -77,6 +77,8 @@ class RuntimeSettings : ScriptableObject
 	//public bool ForceAllStoryMusicUnlock = true;
 	//public int ForcePlayerLevel = 90;
 	public bool IsInvincibleCheat = false;
+	public bool ForcePerfectNote = false;
+	public bool CanSkipUnplayedSongs = false;
 
 	[Header("Live")]
 	public bool ForceLiveValkyrieMode = false;

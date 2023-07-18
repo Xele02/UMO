@@ -221,7 +221,13 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12D8664 Offset: 0x12D8664 VA: 0x12D8664
-		//public void SetAssistSlotLabel() { }
+		public void SetAssistSlotLabel()
+		{
+			for(int i = 0; i < m_assistSlotLabel.Length; i++)
+			{
+				m_assistSlotLabel[i].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData(m_assistSlotUvTbl[i]));
+			}
+		}
 
 		//// RVA: 0x12D8854 Offset: 0x12D8854 VA: 0x12D8854
 		//public void SelectedDivaId(int divaId) { }
@@ -247,7 +253,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12D8B14 Offset: 0x12D8B14 VA: 0x12D8B14
-		//public void SetSelectAssistButton(int index) { }
+		public void SetSelectAssistButton(int index)
+		{
+			m_assistGroupButton.SelectGroupButton(index);
+		}
 
 		//// RVA: 0x12D8B48 Offset: 0x12D8B48 VA: 0x12D8B48
 		//public void ShowFilter(bool isShowCompatibleCheck, bool isFriend = False) { }
@@ -256,7 +265,13 @@ namespace XeApp.Game.Menu
 		//public void ShowDecoFilter(bool isDecoShopInterior = False) { }
 
 		//// RVA: 0x12D8E68 Offset: 0x12D8E68 VA: 0x12D8E68
-		//public void ShowAssistSelectFilter() { }
+		public void ShowAssistSelectFilter()
+		{
+			m_filterAnimeLayout.StartChildrenAnimGoStop("05");
+			m_sortButtonLayout.StartChildrenAnimGoStop("04");
+			m_childfilterAnimeLayout.StartChildrenAnimGoStop("04");
+			(transform as RectTransform).sizeDelta = new Vector2((transform as RectTransform).sizeDelta.x, 925);
+		}
 
 		//// RVA: 0x12D8FD4 Offset: 0x12D8FD4 VA: 0x12D8FD4
 		//public void ShowAssistEditFilter(int attrId) { }
