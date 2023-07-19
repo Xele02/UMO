@@ -90,7 +90,7 @@ namespace XeApp.Game.RhythmGame
 				int totalCombo = totalComboCount;
 				for (int i = 0; i < comboBonusDataList.Count; i++)
 				{
-					if(combo / totalCombo >= comboBonusDataList[i].ADKDHKMPMHP / 100.0f)
+					if(combo * 1.0f / totalCombo >= comboBonusDataList[i].ADKDHKMPMHP / 100.0f)
 					{
 						f = comboBonusDataList[i].DHIPGHBJLIL / 100.0f;
 						break;
@@ -103,8 +103,6 @@ namespace XeApp.Game.RhythmGame
 			nonExcellentScore += Mathf.FloorToInt(f * h * s + s * g * baseNoteScore + 0);
 			if (a_result_ex.m_excellent)
 				s += a_excellent_score_rate;
-			//if(RuntimeSettings.CurrentSettings.AddBigScore)
-			//	s += 1500;
 			currentScore += Mathf.FloorToInt(f * h * s + g * baseNoteScore * s + 0);
 		}
 
