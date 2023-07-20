@@ -193,7 +193,7 @@ namespace XeApp.Game.Menu
 				{
 					arg.infoType = ProfilMenuLayout.InfoType.PLAYER;
 					arg.isFavorite = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(info.friend.MLPEHNBNOGD_Id);
-					arg.btnType = NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD() == info.friend.MLPEHNBNOGD_Id ? ProfilMenuLayout.ButtonType.None : ProfilMenuLayout.ButtonType.Raid;
+					arg.btnType = NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD_GetPlayerId() == info.friend.MLPEHNBNOGD_Id ? ProfilMenuLayout.ButtonType.None : ProfilMenuLayout.ButtonType.Raid;
 				}
 				MenuScene.Instance.Call(TransitionList.Type.PROFIL, arg, true);
 			}

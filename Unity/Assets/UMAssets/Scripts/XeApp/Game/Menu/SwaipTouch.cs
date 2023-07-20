@@ -279,7 +279,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xF973A4 Offset: 0xF973A4 VA: 0xF973A4
-		// public void SetAdjustment(bool width_flag, bool height_flag, int width_swaip = 50, int height_swaip = 50, int width_flick = 50, int height_flick = 50, bool once = True) { }
+		public void SetAdjustment(bool width_flag, bool height_flag, int width_swaip = 50, int height_swaip = 50, int width_flick = 50, int height_flick = 50, bool once = true)
+		{
+			m_is_swaip_height_flag = height_flag;
+			m_is_swaip_width_flag = width_flag;
+			m_is_once = once;
+			m_swaip_width_value = width_swaip;
+			m_swaip_height_value = height_swaip;
+			m_flick_width_value = width_flick;
+			m_flick_height_value = height_flick;
+		}
 
 		// // RVA: 0xF973E8 Offset: 0xF973E8 VA: 0xF973E8
 		public bool IsSwaip(SwaipTouch.Direction dir)

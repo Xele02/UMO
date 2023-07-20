@@ -77,7 +77,7 @@ public class NKGJPJPHLIF
 	public int AFJEOKGBCNA_NumReplies { get; private set; } // 0xAC BLKAENELKCD AFEOFCFFAHA 0xC16A4C HHLMPHKALAF 0xC16A54
 
 	// // RVA: 0xC16608 Offset: 0xC16608 VA: 0xC16608
-	public int CAFHLEFMMGD()
+	public int CAFHLEFMMGD_GetPlayerId()
 	{
 		return MDAMJIGBOLD_PlayerId;
 	}

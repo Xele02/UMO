@@ -1436,7 +1436,25 @@ public class CIOECGOMILE
 	}
 
 	// // RVA: 0x10067C4 Offset: 0x10067C4 VA: 0x10067C4
-	// public bool HNDJBAAAHDO(ref int IBAKPKKEDJM, ref int BAOFEFFADPD) { }
+	public bool HNDJBAAAHDO(ref int IBAKPKKEDJM, ref int BAOFEFFADPD)
+	{
+		if(IMMAOANGPNK.HHCJCDFCLOB != null)
+		{
+			if(IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized && LNAHEIEIBOI_Initialized)
+			{
+				DateTime date = Utility.GetLocalDateTime(AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.AFPONJEJKCO_RenameDate + IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP.KMNPFOPBDMA_RenameDay * 86400);
+				long t = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0);
+				long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				if(time < t)
+				{
+					IBAKPKKEDJM = date.Month;
+					BAOFEFFADPD = date.Day;
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 
 	// // RVA: 0x1006B5C Offset: 0x1006B5C VA: 0x1006B5C
 	public void AKCOAKHAGAL_CheckServerSaveDefaultInit()

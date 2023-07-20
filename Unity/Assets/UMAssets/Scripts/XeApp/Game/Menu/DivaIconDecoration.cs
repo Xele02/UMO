@@ -138,8 +138,8 @@ namespace XeApp.Game.Menu
 			if(m_divaFriendIconDecrationBehaviour != null)
 			{
 				m_divaFriendIconDecrationBehaviour.SetFriendFavoriteIcon(false, false);
-				m_divaFriendIconDecrationBehaviour.SetDegreeIcon(playerData.NDOLELKAJNL.MDPKLNFFDBO_EmblemId);
-				m_divaFriendIconDecrationBehaviour.SetDegreeNumber(playerData.NDOLELKAJNL.HMFFHLPNMPH);
+				m_divaFriendIconDecrationBehaviour.SetDegreeIcon(playerData.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId);
+				m_divaFriendIconDecrationBehaviour.SetDegreeNumber(playerData.NDOLELKAJNL_Degree.HMFFHLPNMPH);
 			}
 			CMMKCEPBIHI.AECDJDIJJKD_ApplySkills(ref m_calcStatusResult, divaData, null, playerData, null, null, null);
 			m_status.Clear();

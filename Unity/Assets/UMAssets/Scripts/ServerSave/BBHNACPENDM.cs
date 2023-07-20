@@ -825,7 +825,7 @@ public class BBHNACPENDM_ServerSaveData
 			if(unlockVal != 0)
 			{
 				JGGLDGNKELI_Emblem.AAHAAJEJNLJ embl = OFAJDLJBMEM_Emblem.MDKOHOCONKE[unlockVal - 1];
-				if(embl.FJODMPGPDDD)
+				if(embl.FJODMPGPDDD_Unlocked)
 				{
 					if(KCCLEHLLOFG_Common.CPAGIICKKNN_EvBtlClsu == 25)
 					{
@@ -835,7 +835,7 @@ public class BBHNACPENDM_ServerSaveData
 				}
 			}
 			JGGLDGNKELI_Emblem.AAHAAJEJNLJ embl2 = OFAJDLJBMEM_Emblem.MDKOHOCONKE[165];
-			if(embl2.FJODMPGPDDD)
+			if(embl2.FJODMPGPDDD_Unlocked)
 			{
 				if (KCCLEHLLOFG_Common.CPAGIICKKNN_EvBtlClsu > 25)
 					return;
@@ -846,7 +846,7 @@ public class BBHNACPENDM_ServerSaveData
 			for(int i = 164; i > 1; i--)
 			{
 				embl2 = OFAJDLJBMEM_Emblem.MDKOHOCONKE[i];
-				if (embl2.FJODMPGPDDD)
+				if (embl2.FJODMPGPDDD_Unlocked)
 				{
 					if (KCCLEHLLOFG_Common.CPAGIICKKNN_EvBtlClsu <= i - 139)
 						return;

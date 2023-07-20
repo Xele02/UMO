@@ -28,10 +28,35 @@ public class IAPDFOPPGND
 	// public void KHEKNNFCAOI_Init(JNMFKOHFAFB FIAMPPHKOOF) { }
 
 	// // RVA: 0x120F0BC Offset: 0x120F0BC VA: 0x120F0BC
-	public static List<IAPDFOPPGND> FKDIMODKKJD(bool CDEOEEHBOBI)
+	public static List<IAPDFOPPGND> FKDIMODKKJD(bool CDEOEEHBOBI_ForceAll)
 	{
-		TodoLogger.Log(0, "FKDIMODKKJD");
-		return new List<IAPDFOPPGND>();
+		List<JGGLDGNKELI_Emblem.AAHAAJEJNLJ> saveEmblems = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.OFAJDLJBMEM_Emblem.MDKOHOCONKE;
+		List<IHGBPAJMJFK_Emblem.AKJPPHFGEFG_EmblemInfo> dbEmblem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem.CDENCMNHNGA_EmblemList;
+		int cnt = saveEmblems.Count;
+		if (dbEmblem.Count < cnt)
+			cnt = dbEmblem.Count;
+		List<IAPDFOPPGND> res = new List<IAPDFOPPGND>();
+		for (int i = 0; i < cnt; i++)
+		{
+			if (dbEmblem[i].PLALNIIBLOF_En == 2)
+			{
+				if(saveEmblems[i].FJODMPGPDDD_Unlocked || CDEOEEHBOBI_ForceAll)
+				{
+					IAPDFOPPGND data = new IAPDFOPPGND();
+					data.KHEKNNFCAOI_Init(i + 1, saveEmblems[i].FHCAFLCLGAA_Cnt);
+					res.Add(data);
+				}
+			}
+		}
+		res.Sort((IAPDFOPPGND HKICMNAACDA, IAPDFOPPGND BNKHBCBJBKI) =>
+		{
+			//0x120FDFC
+			int r = HKICMNAACDA.EILKGEADKGH_EmblemOdr.CompareTo(BNKHBCBJBKI.EILKGEADKGH_EmblemOdr);
+			if(r == 0)
+				r = HKICMNAACDA.MDPKLNFFDBO_EmblemId.CompareTo(BNKHBCBJBKI.MDPKLNFFDBO_EmblemId);
+			return r;
+		});
+		return res;
 	}
 
 	// // RVA: 0x120F5DC Offset: 0x120F5DC VA: 0x120F5DC
@@ -48,7 +73,7 @@ public class IAPDFOPPGND
 			JGGLDGNKELI_Emblem.AAHAAJEJNLJ saveEmblem = KPMOBPNENCD.OFAJDLJBMEM_Emblem.MDKOHOCONKE[i];
 			if (dbEmblem.PLALNIIBLOF_En == 2)
 			{
-				if(saveEmblem.FJODMPGPDDD || CDEOEEHBOBI)
+				if(saveEmblem.FJODMPGPDDD_Unlocked || CDEOEEHBOBI)
 				{
 					IAPDFOPPGND data = new IAPDFOPPGND();
 					data.KHEKNNFCAOI_Init(i + 1, saveEmblem.FHCAFLCLGAA_Cnt);

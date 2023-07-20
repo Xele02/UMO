@@ -243,7 +243,7 @@ namespace XeApp.Game.Menu
 				if (dbEmblem.PLALNIIBLOF_En == 2 && dbEmblem.EKLIPGELKCL_Rar > 0)
 				{
 					m_achievement_max++;
-					if (a_player_data.OFAJDLJBMEM_Emblem.MDKOHOCONKE[i].FJODMPGPDDD)
+					if (a_player_data.OFAJDLJBMEM_Emblem.MDKOHOCONKE[i].FJODMPGPDDD_Unlocked)
 						m_achievement++;
 				}
 			}

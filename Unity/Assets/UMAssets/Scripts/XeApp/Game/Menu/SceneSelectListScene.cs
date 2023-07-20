@@ -731,7 +731,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				m_sceneSelectList.UpdateRemoveButton(m_assistViewData.ELBLMMPEKPH(m_assistPageIndex, m_assistSlotIndex));
+				m_sceneSelectList.UpdateRemoveButton(m_assistViewData.ELBLMMPEKPH_GetAssistScene(m_assistPageIndex, m_assistSlotIndex));
 			}
 			m_sceneSelectList.SetSelectedSlot(m_selectedEquipmentSlotIndex);
 			if(m_musicBaseData != null)
@@ -771,9 +771,9 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					m_equipmentScene.UpdateAssistContent(PlayerData, m_assistViewData.ELBLMMPEKPH(m_assistPageIndex, m_assistSlotIndex), m_assistSlotIndex);
+					m_equipmentScene.UpdateAssistContent(PlayerData, m_assistViewData.ELBLMMPEKPH_GetAssistScene(m_assistPageIndex, m_assistSlotIndex), m_assistSlotIndex);
 					m_equipmentScene.SelectSlot(0);
-					m_equipmentScene.ChangeIcon(m_assistViewData.ELBLMMPEKPH(m_assistPageIndex, m_assistSlotIndex), type, 0);
+					m_equipmentScene.ChangeIcon(m_assistViewData.ELBLMMPEKPH_GetAssistScene(m_assistPageIndex, m_assistSlotIndex), type, 0);
 				}
 			}
 			m_sceneSelectList.SetWait();
@@ -974,7 +974,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					m_equipmentScene.ChangeIcon(m_assistViewData.ELBLMMPEKPH(m_assistPageIndex, m_assistSlotIndex), dt, 0);
+					m_equipmentScene.ChangeIcon(m_assistViewData.ELBLMMPEKPH_GetAssistScene(m_assistPageIndex, m_assistSlotIndex), dt, 0);
 				}
 			}
 			if(TransitionName == TransitionList.Type.SCENE_SELECT)
@@ -1132,7 +1132,7 @@ namespace XeApp.Game.Menu
 			}
 			else if(TransitionName == TransitionList.Type.ASSIST_SELECT)
 			{
-				GCIJNCFDNON_SceneInfo beforeScene = m_assistViewData.ELBLMMPEKPH(m_assistPageIndex, m_assistSlotIndex);
+				GCIJNCFDNON_SceneInfo beforeScene = m_assistViewData.ELBLMMPEKPH_GetAssistScene(m_assistPageIndex, m_assistSlotIndex);
 				if(beforeScene.BCCHOBPJJKE_SceneId < 1)
 					beforeScene = null;
 				ShowComparisonPopupWindow(beforeScene, sceneInfo, null);
@@ -1180,7 +1180,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				ShowComparisonPopupWindow(m_assistViewData.ELBLMMPEKPH(m_assistPageIndex, m_assistSlotIndex), null, m_divaData);
+				ShowComparisonPopupWindow(m_assistViewData.ELBLMMPEKPH_GetAssistScene(m_assistPageIndex, m_assistSlotIndex), null, m_divaData);
 			}
 		}
 
@@ -1210,7 +1210,7 @@ namespace XeApp.Game.Menu
 				}
 				if(m_assistViewData != null)
 				{
-					m_equipmentScene.ChangeIcon(m_assistViewData.ELBLMMPEKPH(m_assistPageIndex, m_assistSlotIndex), type, 0);
+					m_equipmentScene.ChangeIcon(m_assistViewData.ELBLMMPEKPH_GetAssistScene(m_assistPageIndex, m_assistSlotIndex), type, 0);
 				}
 			}
 		}

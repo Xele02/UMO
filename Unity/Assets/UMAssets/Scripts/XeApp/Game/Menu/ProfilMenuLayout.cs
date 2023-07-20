@@ -616,7 +616,44 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x116DDAC Offset: 0x116DDAC VA: 0x116DDAC
 		public void Init()
 		{
-			TodoLogger.Log(0, "Init");
+			m_imageLoadFlags = 0;
+			m_is_friend = false;
+			m_friend_player_data = null;
+			m_enable_lobby_btn = false;
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			JLKEOGLJNOD_TeamInfo t = GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(false);
+			SetDivaImage(t.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId, t.BCJEAJPLGMB_MainDivas[0].FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, t.BCJEAJPLGMB_MainDivas[0].EKFONBFDAAP_ColorId);
+			SetMusicRate(GameManager.Instance.ViewPlayerData.AGJIIKKOKFJ_MusicRate);
+			m_viewHSRatingData.KHEKNNFCAOI(null, null);
+			GCIJNCFDNON_SceneInfo scene = null;
+			if(t.BCJEAJPLGMB_MainDivas[0].FGFIBOBAPIA_SceneId > 0)
+			{
+				scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[t.BCJEAJPLGMB_MainDivas[0].FGFIBOBAPIA_SceneId - 1];
+			}
+			SetMainSceneInfo(scene);
+			SetCenterSkillInfo(t.BCJEAJPLGMB_MainDivas[0], m_scene_data);
+			m_player_name.text = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName;
+			m_player_id.text = NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD_GetPlayerId().ToString();
+			m_comment.text = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.CMKKFCGBILD_Prof;
+			m_comment.horizontalOverflow = HorizontalWrapMode.Wrap;
+			SetDegreeInfo(GameManager.Instance.ViewPlayerData.NDOLELKAJNL_Degree);
+			m_degree_data = GetDegreeData(GameManager.Instance.ViewPlayerData.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId);
+			int IBAKPKKEDJM = 0;
+			int BAOFEFFADPD = 0;
+			if (CIOECGOMILE.HHCJCDFCLOB.HNDJBAAAHDO(ref IBAKPKKEDJM, ref BAOFEFFADPD))
+			{
+				SetChangePlayerNameTime(IBAKPKKEDJM, BAOFEFFADPD);
+			}
+			else
+			{
+				m_player_name_time.text = "";
+			}
+			m_level_icon = new DivaIconDecoration(m_diva_level.gameObject, DivaIconDecoration.Size.L, null, null);
+			m_level_icon.Change(t.BCJEAJPLGMB_MainDivas[0], GameManager.Instance.ViewPlayerData, DisplayType.Level);
+			m_player_id_switch.StartChildrenAnimGoStop(0, 0);
+			m_text_switch.StartChildrenAnimGoStop(0, 0);
+			SetStatsInfo(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.MHEAEGMIKIE_PublicStatus);
+			AssistSelectInit();
 		}
 
 		//// RVA: 0x1171608 Offset: 0x1171608 VA: 0x1171608
@@ -824,39 +861,182 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1170374 Offset: 0x1170374 VA: 0x1170374
-		//private void SetChangePlayerNameTime(int mon, int day) { }
+		private void SetChangePlayerNameTime(int mon, int day)
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			m_player_name_time.text = string.Format(bk.GetMessageByLabel("profil_text_05"), day, mon);
+		}
 
 		//// RVA: 0x1172D10 Offset: 0x1172D10 VA: 0x1172D10
 		private void OnChangePlayerName(string playerName)
 		{
-			TodoLogger.LogNotImplemented("OnChangePlayerName");
+			int mon = 0;
+			int day = 0;
+			if(!CIOECGOMILE.HHCJCDFCLOB.HNDJBAAAHDO(ref mon, ref day))
+			{
+				this.StartCoroutineWatched(OnChangePlayerNameCoroutine(playerName));
+			}
+			else
+			{
+				FailurePlayerName();
+			}
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FE994 Offset: 0x6FE994 VA: 0x6FE994
 		//// RVA: 0x1172DFC Offset: 0x1172DFC VA: 0x1172DFC
-		//private IEnumerator OnChangePlayerNameCoroutine(string playerName) { }
+		private IEnumerator OnChangePlayerNameCoroutine(string playerName)
+		{
+			//0x9CE8B0
+			bool isWait = true;
+			bool isDecide = false;
+			string inputText = "";
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			InputPopupSetting s = new InputPopupSetting();
+			s.TitleText = bk.GetMessageByLabel("popup_title_profil_01");
+			s.InputText = playerName;
+			s.WindowSize = SizeType.Middle;
+			s.Description = bk.GetMessageByLabel("popup_title_profil_02");
+			s.Notes = bk.GetMessageByLabel("popup_title_profil_03");
+			s.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x117CB08
+				if(type == PopupButton.ButtonType.Positive)
+				{
+					isDecide = true;
+					inputText = (control.Content as InputContent).Text;
+				}
+				isWait = false;
+			}, null, null, null);
+			while (isWait)
+				yield return null;
+			if (isDecide)
+			{
+				if(IsChangePlayerName(inputText))
+				{
+					MenuScene.Instance.InputDisable();
+					BHLFHHBDGHO.GEJEDJNKBOF(inputText, () =>
+					{
+						//0x117CC48
+						MenuScene.Instance.InputEnable();
+						ConfirmPlayerName(inputText);
+					}, () =>
+					{
+						//0x117BE90
+						MenuScene.Instance.InputEnable();
+					}, () =>
+					{
+						//0x117BF2C
+						MenuScene.Instance.InputEnable();
+						MenuScene.Instance.GotoTitle();
+					});
+				}
+				else
+				{
+					ShowNotChangedPlayerNamePopup();
+				}
+			}
+		}
 
 		//// RVA: 0x11732FC Offset: 0x11732FC VA: 0x11732FC
-		//private void ConfirmPlayerName(string playerName) { }
+		private void ConfirmPlayerName(string playerName)
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			TextPopupSetting setting = new TextPopupSetting();
+			setting.TitleText = bk.GetMessageByLabel("popup_title_profil_04");
+			setting.WindowSize = SizeType.Middle;
+			setting.Text = "\n" + playerName + bk.GetMessageByLabel("popup_title_profil_05");
+			setting.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			PopupWindowManager.Show(setting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				// 0x117CD0C
+				this.StartCoroutineWatched(ChangePlayerNameCoroutine(playerName));
+			}, (IPopupContent content, PopupTabButton.ButtonLabel label) =>
+			{
+				//0x117BFF0
+				return;
+			}, null, null);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FEA0C Offset: 0x6FEA0C VA: 0x6FEA0C
 		//// RVA: 0x11737A4 Offset: 0x11737A4 VA: 0x11737A4
-		//private IEnumerator ChangePlayerNameCoroutine(string playerName) { }
+		private IEnumerator ChangePlayerNameCoroutine(string playerName)
+		{
+			int mon; // 0x1C
+			int day; // 0x20
+
+			//0x117DAB4
+			bool isError = false;
+			MenuScene.Instance.InputDisable();
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName = playerName;
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.AFPONJEJKCO_RenameDate = time;
+			mon = 0;
+			day = 0;
+			CIOECGOMILE.HHCJCDFCLOB.HNDJBAAAHDO(ref mon, ref day);
+			MenuScene.Save(null, () =>
+			{
+				//0x117CD7C
+				isError = true;
+			});
+			while (CIOECGOMILE.HHCJCDFCLOB.KONHMOLMOCI)
+				yield return null;
+			while(isError)
+				yield return null;
+			m_player_name.text = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName;
+			m_comment.text = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.CMKKFCGBILD_Prof;
+			MenuScene.Instance.InputEnable();
+			SetChangePlayerNameTime(mon, day);
+			ChangePlayerName();
+		}
 
 		//// RVA: 0x117386C Offset: 0x117386C VA: 0x117386C
-		//private bool IsChangePlayerName(string changedName) { }
+		private bool IsChangePlayerName(string changedName)
+		{
+			return changedName == CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName;
+		}
 
 		//// RVA: 0x1173958 Offset: 0x1173958 VA: 0x1173958
 		//private bool IsChangeComment(string changedComment) { }
 
 		//// RVA: 0x1173A44 Offset: 0x1173A44 VA: 0x1173A44
-		//private void ChangePlayerName() { }
+		private void ChangePlayerName()
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_title_profil_06"), SizeType.Small, bk.GetMessageByLabel("popup_title_profil_07"), new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x117BFF4
+				return;
+			}, (IPopupContent content, PopupTabButton.ButtonLabel label) =>
+			{
+				//0x117BFF8
+				return;
+			}, null, null);
+		}
 
 		//// RVA: 0x1172EA0 Offset: 0x1172EA0 VA: 0x1172EA0
-		//private void FailurePlayerName() { }
+		private void FailurePlayerName()
+		{
+			TodoLogger.Log(0, "FailurePlayerName");
+		}
 
 		//// RVA: 0x1173E54 Offset: 0x1173E54 VA: 0x1173E54
-		//private void ShowNotChangedPlayerNamePopup() { }
+		private void ShowNotChangedPlayerNamePopup()
+		{
+			PopupWindowManager.Show(m_notChangedPlayerNamePopupSetting, null, null, null, null);
+		}
 
 		//// RVA: 0x1173F18 Offset: 0x1173F18 VA: 0x1173F18
 		//private void ShowNotChangedCommentPopup() { }
@@ -955,7 +1135,18 @@ namespace XeApp.Game.Menu
 		//private void OnClickDegreeInfo() { }
 
 		//// RVA: 0x117025C Offset: 0x117025C VA: 0x117025C
-		//private IAPDFOPPGND GetDegreeData(int id) { }
+		private IAPDFOPPGND GetDegreeData(int id)
+		{
+			List<IAPDFOPPGND> emblems = IAPDFOPPGND.FKDIMODKKJD(true);
+			for(int i = 0; i < emblems.Count; i++)
+			{
+				if(emblems[i].MDPKLNFFDBO_EmblemId == id)
+				{
+					return emblems[i];
+				}
+			}
+			return null;
+		}
 
 		//// RVA: 0x11753B4 Offset: 0x11753B4 VA: 0x11753B4
 		private void SetDegreeNum(int num, bool active = true)
@@ -1554,13 +1745,64 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1177E94 Offset: 0x1177E94 VA: 0x1177E94
-		//private void SetAssistName(int page) { }
+		private void SetAssistName(int page)
+		{
+			m_assist_name.text = m_view_assist_data.IOKHHOCMNKA(page).JCJNKBKMJFK_Name;
+		}
 
 		//// RVA: 0x1177F10 Offset: 0x1177F10 VA: 0x1177F10
 		//private void ChangeAssistName(string assistName) { }
 
 		//// RVA: 0x1171110 Offset: 0x1171110 VA: 0x1171110
-		//private void AssistSelectInit() { }
+		private void AssistSelectInit()
+		{
+			m_view_assist_data.KHEKNNFCAOI();
+			m_assist_status_page = 0;
+			m_assist_select_page = m_view_assist_data.ILHBCOMKHOO();
+			EEMGHIINEHN.OPANFJDIEGH e = m_view_assist_data.IOKHHOCMNKA(m_assist_select_page);
+			for(int i = 0; i < e.JOHLGBDOLNO_AssistScenes.Length; i++)
+			{
+				GCIJNCFDNON_SceneInfo s = m_view_assist_data.ELBLMMPEKPH_GetAssistScene(m_assist_select_page, i);
+				if (s.BCCHOBPJJKE_SceneId < 1)
+					s = null;
+				SetAssistSceneInfo(i, s);
+			}
+			m_assist_load_image_max = 20;
+			m_assist_imagedata_list.Clear();
+			for(int i = 0; i < 5; i++)
+			{
+				m_view_assist_data.IOKHHOCMNKA(i);
+				for(int j = 0; j < 4; j++)
+				{
+					GCIJNCFDNON_SceneInfo s = m_view_assist_data.ELBLMMPEKPH_GetAssistScene(i, j);
+					if(s.BCCHOBPJJKE_SceneId < 1)
+					{
+						SetAssistSceneImage(0, 0, false, i * 4 + j);
+					}
+					else
+					{
+						SetAssistSceneImage(s.BCCHOBPJJKE_SceneId, s.CGIELKDLHGE_GetEvolveId(), s.MBMFJILMOBP_IsKira(), i * 4 + j);
+					}
+				}
+			}
+			UpdateAssistStatusPage(m_assist_status_page);
+			UpdateAssistSelectPage(m_assist_select_page);
+			MyAssistInformation();
+			for(int i = 0; i < 4; i++)
+			{
+				m_assist_plate_btn[i].ClearLoadedCallback();
+				int attribute = i;
+				m_assist_plate_btn[i].AddOnClickCallback(() =>
+				{
+					//0x117DA50
+					OnClickAssistScene(attribute);
+				});
+			}
+			m_swaip_touch.SetAdjustment(true, false, 50, 50, 50, 50, true);
+			m_swaip_touch.SetMute(true);
+			m_is_stop_swaip = false;
+			m_is_enable_swaip = true;
+		}
 
 		//// RVA: 0x1171B00 Offset: 0x1171B00 VA: 0x1171B00
 		private void AssistSelectInit(EAJCBFGKKFA_FriendInfo data)
@@ -1600,7 +1842,20 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1178DB8 Offset: 0x1178DB8 VA: 0x1178DB8
-		//private void MyAssistInformation() { }
+		private void MyAssistInformation()
+		{
+			SetAssistAttributeText();
+			m_assist_name_btn.Hidden = false;
+			m_assist_name_btn_layout.StartChildrenAnimGoStop("01");
+			MessageBank bank = MessageManager.Instance.GetBank("menu");
+			m_assist_caution.text = bank.GetMessageByLabel("assistselect_caution_01");
+			m_assist_arrow_layout.StartChildrenAnimGoStop("01");
+			m_assist_selectnum_layout.StartAllAnimGoStop(string.Format("{0:00}", 5));
+			for(int i = 0; i < m_assist_skill_layout.Length; i++)
+			{
+				m_assist_skill_layout[i].StartChildrenAnimGoStop("03");
+			}
+		}
 
 		//// RVA: 0x1179038 Offset: 0x1179038 VA: 0x1179038
 		private void FriendAssistInformation()
@@ -1704,7 +1959,19 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1178C7C Offset: 0x1178C7C VA: 0x1178C7C
-		//private void UpdateAssistSelectPage(int newPage) { }
+		private void UpdateAssistSelectPage(int newPage)
+		{
+			if (newPage < 0)
+				newPage += 5;
+			m_assist_select_page = newPage % 5;
+			for(int i = 0; i < 5; i++)
+			{
+				string s = i == newPage ? "02" : "01";
+				m_assist_select_layout[i].StartChildrenAnimGoStop(s, s);
+			}
+			SetAssistName(newPage);
+			m_view_assist_data.AIMMBGFMFOD(m_assist_select_page);
+		}
 
 		//// RVA: 0x1179968 Offset: 0x1179968 VA: 0x1179968
 		private void ChangeAssistSelectPage(int newPage)
@@ -1742,7 +2009,19 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x117A3D8 Offset: 0x117A3D8 VA: 0x117A3D8
-		//private void OnClickAssistScene(int type) { }
+		private void OnClickAssistScene(int type)
+		{
+			if(!IsDoSwaip())
+			{
+				m_is_stop_swaip = true;
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+				AssistSelectArgs arg = new AssistSelectArgs();
+				arg.viewData = m_view_assist_data;
+				arg.pageIndex = m_assist_select_page;
+				arg.slotIndex = type;
+				MenuScene.Instance.Call(TransitionList.Type.ASSIST_SELECT, arg, true);
+			}
+		}
 
 		//// RVA: 0x117A388 Offset: 0x117A388 VA: 0x117A388
 		private bool IsDoSwaip()

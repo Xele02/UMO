@@ -16,7 +16,7 @@ namespace Mana.Service.Ad
 				return;
 			TodoLogger.Log(TodoLogger.ManaAd, "ManaAdAPIHelper.SendLaunchEvent");
 			_hasSendLaunchEvent = true;
-			NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD();
+			NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD_GetPlayerId();
 		}
 
         // // RVA: 0x17BD520 Offset: 0x17BD520 VA: 0x17BD520
@@ -29,7 +29,7 @@ namespace Mana.Service.Ad
 			{
 				if (NKGJPJPHLIF.HHCJCDFCLOB != null)
 				{
-					if (NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD() == 0)
+					if (NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD_GetPlayerId() == 0)
 						return;
 					TodoLogger.Log(TodoLogger.ManaAd, "ManaAdAPIHelper.TryPendingSendResumeEvent ");
 					_sendResumeEventRequest = false;
