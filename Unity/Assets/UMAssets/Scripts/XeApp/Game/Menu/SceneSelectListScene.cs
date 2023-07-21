@@ -439,10 +439,16 @@ namespace XeApp.Game.Menu
 		// private void DetachSceneGoDiva(int slot, FFHPBEPOMAK divaData) { }
 
 		// // RVA: 0x1382428 Offset: 0x1382428 VA: 0x1382428
-		// private void AttachAssist(int page, int slot, EEMGHIINEHN assistData, GCIJNCFDNON sceneData) { }
+		private void AttachAssist(int page, int slot, EEMGHIINEHN assistData, GCIJNCFDNON_SceneInfo sceneData)
+		{
+			assistData.CLFGOPNDGNL_SetScene(sceneData, page, slot);
+		}
 
 		// // RVA: 0x1382478 Offset: 0x1382478 VA: 0x1382478
-		// private void DetachAssist(int page, int slot, EEMGHIINEHN assistData) { }
+		private void DetachAssist(int page, int slot, EEMGHIINEHN assistData)
+		{
+			assistData.NODLMHKAGFD_RemoveScene(page, slot);
+		}
 
 		// // RVA: 0x13824B4 Offset: 0x13824B4 VA: 0x13824B4
 		// private int GetEquSceneId(int selectedSlot, FFHPBEPOMAK divaData) { }
@@ -521,7 +527,16 @@ namespace XeApp.Game.Menu
 					}
 					else
 					{
-						TodoLogger.Log(0, "Assist");
+						if (afterScene == null)
+							DetachAssist(m_assistPageIndex, m_assistSlotIndex, m_assistViewData);
+						else
+							AttachAssist(m_assistPageIndex, m_assistSlotIndex, m_assistViewData, afterScene);
+						GCIJNCFDNON_SceneInfo scene = m_assistViewData.ELBLMMPEKPH_GetAssistScene(m_assistPageIndex, m_assistSlotIndex);
+						m_equipmentScene.UpdateAssistContent(PlayerData, scene, m_assistSlotIndex);
+						m_equipmentScene.SelectSlot(0);
+						m_equipmentScene.ChangeIcon(scene, displayType, 0);
+						m_sceneSelectList.UpdateRemoveButton(scene);
+						MenuScene.Instance.Return(true);
 					}
 					m_sceneSelectList.UpdateRegion();
 					m_sceneSelectList.UpdateScore();

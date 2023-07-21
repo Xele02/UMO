@@ -406,8 +406,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x117BD90
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-				//MenuScene.Instance.Call(TransitionList.Type.DEGREE_SELECT, null, true);
-				TodoLogger.LogNotImplemented("SetDegree");
+				MenuScene.Instance.Call(TransitionList.Type.DEGREE_SELECT, null, true);
 			});
 			m_degree_info.AddOnClickCallback(() =>
 			{
@@ -422,7 +421,11 @@ namespace XeApp.Game.Menu
 			m_player_id_btn.AddOnClickCallback(() =>
 			{
 				//0x117AFD8
-				TodoLogger.LogNotImplemented("PlayerId Copy");
+				if (Time.realtimeSinceStartup - m_copyButtonPrevPushSec < 3)
+					return;
+				m_copyButtonPrevPushSec = Time.realtimeSinceStartup - m_copyButtonPrevPushSec;
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+				OnClickPlayerIdCopy();
 			});
 			m_musicrate_popup_button.AddOnClickCallback(() =>
 			{
@@ -1002,11 +1005,14 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x117386C Offset: 0x117386C VA: 0x117386C
 		private bool IsChangePlayerName(string changedName)
 		{
-			return changedName == CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName;
+			return changedName != CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName;
 		}
 
 		//// RVA: 0x1173958 Offset: 0x1173958 VA: 0x1173958
-		//private bool IsChangeComment(string changedComment) { }
+		private bool IsChangeComment(string changedComment)
+		{
+			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.CMKKFCGBILD_Prof != changedComment;
+		}
 
 		//// RVA: 0x1173A44 Offset: 0x1173A44 VA: 0x1173A44
 		private void ChangePlayerName()
@@ -1039,27 +1045,125 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1173F18 Offset: 0x1173F18 VA: 0x1173F18
-		//private void ShowNotChangedCommentPopup() { }
+		private void ShowNotChangedCommentPopup()
+		{
+			PopupWindowManager.Show(m_notChangedCommentPopupSetting, null, null, null, null);
+		}
 
 		//// RVA: 0x1173FDC Offset: 0x1173FDC VA: 0x1173FDC
 		private void OnChangeComment(string comment)
 		{
-			TodoLogger.LogNotImplemented("OnChangeComment");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			this.StartCoroutineWatched(OnChangeCommentCoroutine(comment));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FEA84 Offset: 0x6FEA84 VA: 0x6FEA84
 		//// RVA: 0x1174058 Offset: 0x1174058 VA: 0x1174058
-		//private IEnumerator OnChangeCommentCoroutine(string comment) { }
+		private IEnumerator OnChangeCommentCoroutine(string comment)
+		{
+			//0x9CDFBC
+			bool isWait = true;
+			bool isDecide = false;
+			string inputComment = "";
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			InputPopupSetting setting = new InputPopupSetting();
+			setting.TitleText = bk.GetMessageByLabel("popup_title_profil_09");
+			setting.InputText = comment;
+			setting.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive },
+			};
+			setting.InputLineCount = 2;
+			setting.CharacterLimit = 25;
+			setting.WindowSize = SizeType.Middle;
+			setting.Description = bk.GetMessageByLabel("popup_title_profil_10");
+			setting.Notes = bk.GetMessageByLabel("popup_title_profil_11");
+			PopupWindowManager.Show(setting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x117CD90
+				if(type == PopupButton.ButtonType.Positive)
+				{
+					isDecide = true;
+					inputComment = (control.Content as InputContent).Text;
+				}
+				isWait = false;
+			}, null, null, null);
+			while (isWait)
+				yield return null;
+			if(isDecide)
+			{
+				if(IsChangeComment(inputComment))
+				{
+					MenuScene.Instance.InputDisable();
+					BHLFHHBDGHO.GEJEDJNKBOF(inputComment, () =>
+					{
+						//0x117CED8
+						this.StartCoroutineWatched(OnChangeCommentCoroutine2(inputComment));
+					}, () =>
+					{
+						//0x117C004
+						MenuScene.Instance.InputEnable();
+					}, () =>
+					{
+						//0x117C0A0
+						MenuScene.Instance.InputEnable();
+						MenuScene.Instance.GotoTitle();
+					});
+				}
+				else
+				{
+					ShowNotChangedCommentPopup();
+				}
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FEAFC Offset: 0x6FEAFC VA: 0x6FEAFC
 		//// RVA: 0x11740FC Offset: 0x11740FC VA: 0x11740FC
-		//private IEnumerator OnChangeCommentCoroutine2(string inputComment) { }
+		private IEnumerator OnChangeCommentCoroutine2(string inputComment)
+		{
+			//0x9CDA64
+			bool isError = false;
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.CMKKFCGBILD_Prof = inputComment;
+			ILLPDLODANB.HECOAKHIAKP(ILLPDLODANB.LOEGALDKHPL.HDJGNKOIMOH/*26*/, 2, false);
+			MenuScene.Save(null, () =>
+			{
+				//0x117CF40
+				isError = true;
+			});
+			while (CIOECGOMILE.HHCJCDFCLOB.KONHMOLMOCI)
+				yield return null;
+			while (isError)
+				yield return null;
+			MenuScene.Instance.InputEnable();
+			m_comment.text = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.CMKKFCGBILD_Prof;
+			m_player_name.text = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName;
+			ChangeComment();
+		}
 
 		//// RVA: 0x11741A0 Offset: 0x11741A0 VA: 0x11741A0
-		//private void ChangeComment() { }
+		private void ChangeComment()
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_title_profil_12"), SizeType.Small, bk.GetMessageByLabel("popup_title_profil_13"), new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x117C164
+				return;
+			}, (IPopupContent content, PopupTabButton.ButtonLabel label) =>
+			{
+				//0x117C168
+				return;
+			}, null, null);
+		}
 
 		//// RVA: 0x11745B0 Offset: 0x11745B0 VA: 0x11745B0
-		//private void OnClickPlayerIdCopy() { }
+		private void OnClickPlayerIdCopy()
+		{
+			ClipboardSupport.SendSharedIntent(NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId.ToString());
+		}
 
 		//// RVA: 0x1174674 Offset: 0x1174674 VA: 0x1174674
 		private void OnClickMusicRateDetail()
@@ -1976,7 +2080,20 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1179968 Offset: 0x1179968 VA: 0x1179968
 		private void ChangeAssistSelectPage(int newPage)
 		{
-			TodoLogger.LogNotImplemented("ChangeAssistSelectPage");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			UpdateAssistSelectPage(newPage);
+			EEMGHIINEHN.OPANFJDIEGH d = m_view_assist_data.IOKHHOCMNKA(m_assist_select_page);
+			for(int i = 0; i < d.JOHLGBDOLNO_AssistScenes.Length; i++)
+			{
+				GCIJNCFDNON_SceneInfo scene = null;
+				if (d.JOHLGBDOLNO_AssistScenes[i].BCCHOBPJJKE_SceneId > 0)
+				{
+					scene = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[d.JOHLGBDOLNO_AssistScenes[i].BCCHOBPJJKE_SceneId - 1];
+				}
+				SetAssistSceneInfo(i, scene);
+			}
+			SetAssistSceneImage();
+			m_view_assist_data.CEIOGBFIDKI_SetPage(m_assist_select_page);
 		}
 
 		//// RVA: 0x1179BB4 Offset: 0x1179BB4 VA: 0x1179BB4
