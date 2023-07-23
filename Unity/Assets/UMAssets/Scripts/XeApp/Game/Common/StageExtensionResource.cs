@@ -155,6 +155,11 @@ namespace XeApp.Game.Common
 			moviePlayer.material = movieMaterial;
 			yield return null;
 			moviePlayer.player.Prepare();
+			//UMO, ensure video is ready
+			while(moviePlayer.player.status != CriWare.CriMana.Player.Status.Ready)
+			{
+				yield return null;
+			}
 		}
 	}
 }

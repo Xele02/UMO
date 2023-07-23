@@ -16,7 +16,7 @@ namespace ExternLib
         {
             public int playerId;
             public string filePath;
-            public VLCPlayback playback;
+            public MoviePlayback playback;
 
             public Player.Status status;
             public bool loop;
@@ -39,23 +39,14 @@ namespace ExternLib
                 moviePlayers[player_id].status = Player.Status.Dechead;
                 if(moviePlayers[player_id].playback == null)
                 {
-                    moviePlayers[player_id].playback = VLCManager.Instance.gameObject.AddComponent<VLCPlayback>();
-                    CriUsmStream videoStream = new CriUsmStream(moviePlayers[player_id].filePath);
-                    MpegStream.DemuxOptionsStruct demux = new MpegStream.DemuxOptionsStruct() { ExtractVideo = true, ExtractAudio = false };
-                    demux.ExtractedFileList = new List<string>();
-                    demux.Key1 = 0x44C5F5F5;
-                    demux.Key2 = 0x0581B687;
-                    demux.ExtractInMemoryStream = true;
-                    demux.ExtractedMemoryStream = new List<MemoryStream>();
-                    videoStream.DemultiplexStreams(demux);
-                    moviePlayers[player_id].movieInfo = videoStream.movieInfo;
-                    foreach(MemoryStream s in demux.ExtractedMemoryStream)
+                    if(VLCManager.Instance.enabled && VLCManager.Instance.IsInitialized)
+                        moviePlayers[player_id].playback = VLCManager.Instance.AddMovie<VLCPlayback>();
+                    else if(!RuntimeSettings.CurrentSettings.DisableMovies)
+                        moviePlayers[player_id].playback = VLCManager.Instance.AddMovie<StreamedMoviePlayback>();
+                    moviePlayers[player_id].playback.Init(moviePlayers[player_id].filePath, moviePlayers[player_id].loop, (MovieInfo info) =>
                     {
-                        moviePlayers[player_id].playback.ms = s;
-                        moviePlayers[player_id].playback.SetLoop(moviePlayers[player_id].loop);
-                        moviePlayers[player_id].playback.StartCoroutineWatched(moviePlayers[player_id].playback.Prepare());
-                        break;
-                    }
+                        moviePlayers[player_id].movieInfo = info;
+                    });
                 }
             }
         }
@@ -205,6 +196,8 @@ namespace ExternLib
             {
                 frame_info.time = (ulong)moviePlayers[player_id].playback.GetTime();
                 frame_info.tunit = 1000000;
+                frame_info.dispHeight = moviePlayers[player_id].movieInfo.dispHeight;
+                frame_info.dispWidth = moviePlayers[player_id].movieInfo.dispWidth;
             }
             frame_drop = false;
             return true;
@@ -258,7 +251,7 @@ namespace ExternLib
             movie_info = null;
         }
 
-        public static Texture2D GetVLCTexture(int player_id)
+        public static Texture GetVLCTexture(int player_id)
         {
             if(moviePlayers.ContainsKey(player_id))
             {

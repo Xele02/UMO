@@ -380,7 +380,7 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xC02654 Offset: 0xC02654 VA: 0xC02654
 		private void StartIntroFade()
 		{
-			uguiFader.Fade(0.5f, IntroEndFadeColor);
+			uguiFader.Fade(0.5f, new Color(IntroEndFadeColor.r, IntroEndFadeColor.g, IntroEndFadeColor.b, 0), IntroEndFadeColor);
 			this.StartCoroutineWatched(WaitIntroFade());
 		}
 

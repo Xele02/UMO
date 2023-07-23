@@ -16,6 +16,13 @@ public class VLCManager : SingletonMonoBehaviour<VLCManager>
 		isInitialized = true;
 	}
 
+    public T AddMovie<T>() where T : MoviePlayback
+    {
+        GameObject g = new GameObject();
+        g.transform.parent = transform;
+        return g.AddComponent<T>();
+    }
+
     void TryInit()
     {
         if(_libVLC == null)
@@ -37,5 +44,9 @@ public class VLCManager : SingletonMonoBehaviour<VLCManager>
         _libVLC = null;
     }
 
-	public bool IsInitialized { get { return isInitialized && !RuntimeSettings.CurrentSettings.DisableMovies; } }
+	public bool IsInitialized { get { return isInitialized && !RuntimeSettings.CurrentSettings.DisableMovies
+    #if UNITY_EDITOR_LINUX
+        && false
+    #endif
+    ; } }
 }

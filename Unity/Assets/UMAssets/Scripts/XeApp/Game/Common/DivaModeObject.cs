@@ -55,6 +55,7 @@ namespace XeApp.Game.Common
 			{
 				if(time >= preEndCallbackMicroSec && playedMicroSec < preEndCallbackMicroSec)
 				{
+					UnityEngine.Debug.LogError("endmovie "+time+" "+preEndCallbackMicroSec+" "+playedMicroSec);
 					onPreEndMovieCallback();
 				}
 			}
@@ -70,8 +71,13 @@ namespace XeApp.Game.Common
 			}
 			moviePlayer = movieController;
 			movieController.target = m_movieRenderer;
+			#if UNITY_EDITOR_LINUX
+			moviePlayer.material.mainTextureScale = new Vector2(1, -1);
+			moviePlayer.material.mainTextureOffset = new Vector2(0, 1);
+			#else
 			moviePlayer.material.mainTextureScale = new Vector2(-1, -1);
 			moviePlayer.material.mainTextureOffset = new Vector2(1, 1);
+			#endif
 			m_releaseData = new ReleaseData();
 			m_releaseData.cullingMask = m_billboardCamera.cullingMask;
 			m_stretchBillboard = gameObject.AddComponent<CameraStretchBillboard>();

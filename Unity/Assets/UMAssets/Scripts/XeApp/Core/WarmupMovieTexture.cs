@@ -25,8 +25,13 @@ namespace XeApp.Core
 		{
 			moviePlayer = movieController;
 			movieController.target = m_movieRenderer;
+			#if UNITY_EDITOR_LINUX
+			moviePlayer.material.mainTextureScale = new Vector2(1, 1);
+			moviePlayer.material.mainTextureOffset = new Vector2(0, 0);
+			#else
 			moviePlayer.material.mainTextureScale = new Vector2(-1, -1);
 			moviePlayer.material.mainTextureOffset = new Vector2(1, 1);
+			#endif
 			m_billboardCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
 			m_stretchBillboard = gameObject.AddComponent<CameraStretchBillboard>();
 			m_stretchBillboard.Setup(m_billboardCamera, m_billboardDist, () => {
@@ -52,6 +57,11 @@ namespace XeApp.Core
 			moviePlayer.player.SetSeekPosition(0);
 			moviePlayer.target = null;
 			moviePlayer.player.Prepare();
+			//UMO, ensure video is ready
+			while(moviePlayer.player.status != CriWare.CriMana.Player.Status.Ready)
+			{
+				yield return null;
+			}
 			onFinish();
 			Destroy(gameObject);
 		}
