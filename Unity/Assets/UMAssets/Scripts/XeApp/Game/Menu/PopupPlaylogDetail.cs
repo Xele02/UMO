@@ -418,7 +418,7 @@ namespace XeApp.Game.Menu
 			}
 			RectTransform rt = line.GetComponent<RectTransform>();
 			RawImageEx img = rt.GetComponentInChildren<RawImageEx>(true);
-			rt.localScale = new Vector3(Mathf.Abs(f2 * a - f2 * b) / rt.sizeDelta.x, 1, 1);
+			rt.localScale = new Vector3(Mathf.Abs(f2 * a - f2 * b) / img.rectTransform.sizeDelta.x, 1, 1);
 			rt.anchoredPosition = new Vector2(rt.anchoredPosition.x, -(h + rt.sizeDelta.y * -0.5f));
 			if(icon != null)
 			{
@@ -443,6 +443,7 @@ namespace XeApp.Game.Menu
 						continue;
 				}
 				GameObject o = Instantiate(obj);
+				//UnityEngine.Debug.LogError((area_width + area_space * -2) * ((data.millisec / 1000.0f) / end_time) + area_space+" "+area_width+" "+area_space+" "+data.millisec+" "+end_time);
 				SetupObject(o, parent, (area_width + area_space * -2) * ((data.millisec / 1000.0f) / end_time) + area_space);
 				obj_list.Add(o);
 				RawImageEx[] imgs = o.GetComponentsInChildren<RawImageEx>(true);
