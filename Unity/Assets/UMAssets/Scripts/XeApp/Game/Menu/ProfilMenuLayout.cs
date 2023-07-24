@@ -854,10 +854,10 @@ namespace XeApp.Game.Menu
 			{
 				for(int j = 0; j < m_assist_imagedata_list.Count; j++)
 				{
-					if (m_assist_imagedata_list[i].index == i + m_assist_select_page * 4)
+					if (m_assist_imagedata_list[j].index == i + m_assist_select_page * 4)
 					{
-						m_assist_imagedata_list[i].sceneTex.Set(m_assist_scene_image[i]);
-						SceneIconTextureCache.ChangeKiraMaterial(m_assist_scene_image[i], m_assist_imagedata_list[i].sceneTex as IconTexture, m_assist_imagedata_list[i].isKira);
+						m_assist_imagedata_list[j].sceneTex.Set(m_assist_scene_image[i]);
+						SceneIconTextureCache.ChangeKiraMaterial(m_assist_scene_image[i], m_assist_imagedata_list[j].sceneTex as IconTexture, m_assist_imagedata_list[j].isKira);
 					}
 				}
 			}
@@ -1035,7 +1035,21 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1172EA0 Offset: 0x1172EA0 VA: 0x1172EA0
 		private void FailurePlayerName()
 		{
-			TodoLogger.Log(0, "FailurePlayerName");
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_title_profil_06"), SizeType.Small, 
+				bk.GetMessageByLabel("popup_title_profil_08"), new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0x117BFFC
+					return;
+				}, (IPopupContent content, PopupTabButton.ButtonLabel label) =>
+				{
+					//0x117C000
+					return;
+				}, null, null);
 		}
 
 		//// RVA: 0x1173E54 Offset: 0x1173E54 VA: 0x1173E54
@@ -1855,7 +1869,12 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1177F10 Offset: 0x1177F10 VA: 0x1177F10
-		//private void ChangeAssistName(string assistName) { }
+		private void ChangeAssistName(string assistName)
+		{
+			m_view_assist_data.EGENJDLKEJP(m_assist_select_page, assistName);
+			m_view_assist_data.KHEKNNFCAOI();
+			m_assist_name.text = assistName;
+		}
 
 		//// RVA: 0x1171110 Offset: 0x1171110 VA: 0x1171110
 		private void AssistSelectInit()
@@ -2044,9 +2063,10 @@ namespace XeApp.Game.Menu
 				newPage += 3;
 			if(newPage >= 3)
 				newPage -= 3;
+			m_assist_status_page = newPage;
 			m_assist_status_page_now.text = (newPage + 1).ToString();
 			m_assist_status_page_max.text = 3.ToString();
-			string s = string.Format("{0:00}", newPage);
+			string s = string.Format("{0:00}", newPage + 1);
 			for(int i = 0; i < m_assist_status_layout.Length; i++)
 			{
 				m_assist_status_layout[i].StartChildrenAnimGoStop(s, s);
@@ -2070,10 +2090,10 @@ namespace XeApp.Game.Menu
 			m_assist_select_page = newPage % 5;
 			for(int i = 0; i < 5; i++)
 			{
-				string s = i == newPage ? "02" : "01";
+				string s = i == m_assist_select_page ? "02" : "01";
 				m_assist_select_layout[i].StartChildrenAnimGoStop(s, s);
 			}
-			SetAssistName(newPage);
+			SetAssistName(m_assist_select_page);
 			m_view_assist_data.AIMMBGFMFOD(m_assist_select_page);
 		}
 
@@ -2105,7 +2125,32 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1179BF4 Offset: 0x1179BF4 VA: 0x1179BF4
 		private void OnChangeAssitName(int page)
 		{
-			TodoLogger.LogNotImplemented("OnChangeAssitName");
+			string name = m_view_assist_data.IOKHHOCMNKA(page).JCJNKBKMJFK_Name;
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			InputPopupSetting setting = new InputPopupSetting();
+			setting.TitleText = bk.GetMessageByLabel("assistselect_namechange_popup_title");
+			setting.Description = bk.GetMessageByLabel("assistselect_namechange_popup_details_01");
+			setting.InputText = name;
+			setting.Notes = bk.GetMessageByLabel("assistselect_namechange_popup_details_02");
+			setting.CharacterLimit = 15;
+			setting.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			PopupWindowManager.Show(setting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x117BB54
+				if(label == PopupButton.ButtonLabel.Ok)
+				{
+					ChangeAssistName((control.Content as InputContent).Text);
+				}
+			}, (IPopupContent content, PopupTabButton.ButtonLabel label) =>
+			{
+				//0x117C674
+				return;
+			}, null, null);
 		}
 
 		//// RVA: 0x117A120 Offset: 0x117A120 VA: 0x117A120

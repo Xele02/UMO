@@ -135,7 +135,13 @@ public class JDDGPJDKHNE
 	// public void KIPIMGCGLJG(int KAPMOPMDHJE, EDOHBJAPLPF_JsonData JIBNPJCIALH, bool FOIGCFNFPOB) { }
 
 	// // RVA: 0x1C32148 Offset: 0x1C32148 VA: 0x1C32148
-	// public void BGDOBGFECOB() { }
+	public void BGDOBGFECOB()
+	{
+		if (FCMCNIMEAEA)
+			return;
+		NFNLGGHMEAM();
+		FCMCNIMEAEA = true;
+	}
 
 	// // RVA: 0x1C31ED4 Offset: 0x1C31ED4 VA: 0x1C31ED4
 	public void NFNLGGHMEAM()

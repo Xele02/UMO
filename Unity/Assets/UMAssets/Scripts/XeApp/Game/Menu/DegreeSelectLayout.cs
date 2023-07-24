@@ -7,6 +7,7 @@ using System;
 using mcrs;
 using System.Collections;
 using XeApp.Core;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -114,28 +115,74 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x11E436C Offset: 0x11E436C VA: 0x11E436C
 		private void UpdateLoad()
 		{
-			TodoLogger.Log(0, "UpdateLoad");
+			if(m_degree_mol.IsLoaded())
+			{
+				if(m_degree_setting.Content != null)
+				{
+					if(m_button_list.Count == 24)
+					{
+						if(m_none_btn != null)
+						{
+							m_none_btn.GetBtn().AddOnClickCallback(() =>
+							{
+								//0x11E6AE0
+								SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+								WaitAllBtnAnim();
+								m_none_btn.ActiveSelectAnim(true);
+								m_select_btn_index = 0;
+								InitSelectDegree(0);
+							});
+							Loaded();
+							m_updater = UpdateIdle;
+						}
+					}
+				}
+			}
 		}
 
 		//// RVA: 0x11E4590 Offset: 0x11E4590 VA: 0x11E4590
-		//private void UpdateIdle() { }
+		private void UpdateIdle()
+		{
+			Vector2 p = m_content.GetComponent<RectTransform>().anchoredPosition;
+			if(Mathf.Round(p.y / 360) != Mathf.Round(m_old_scroll_pos / 360))
+			{
+				UpdateDegreeBtn();
+			}
+			m_old_scroll_pos = p.y;
+		}
 
 		//// RVA: 0x11E4F28 Offset: 0x11E4F28 VA: 0x11E4F28
 		public void Enter()
 		{
-			TodoLogger.Log(0, "Enter");
+			m_abs.StartChildrenAnimGoStop("go_in", "st_in");
 		}
 
 		//// RVA: 0x11E4FB4 Offset: 0x11E4FB4 VA: 0x11E4FB4
 		public void Leave()
 		{
-			TodoLogger.Log(0, "Leave");
+			m_abs.StartChildrenAnimGoStop("go_out", "st_out");
 		}
 
 		//// RVA: 0x11E5040 Offset: 0x11E5040 VA: 0x11E5040
 		public void Init(bool allDebug = false)
 		{
-			TodoLogger.Log(0, "Init");
+			m_degree_list = IAPDFOPPGND.FKDIMODKKJD(allDebug);
+			m_degree_mol.SetNumber(m_degree_list.Count - 1, 0);
+			m_set_btn_index = GetDegreeListIndex(GameManager.Instance.ViewPlayerData.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId);
+			InitSetDegree(m_set_btn_index);
+			InitSelectDegree(m_set_btn_index);
+			UpdateDegreeBtn();
+			Vector2 v = new Vector2(0, (m_degree_list.Count - 1) / 2 * 90 + 110);
+			m_content.GetComponent<RectTransform>().sizeDelta = v;
+			ScrollRect sr = GetComponentInChildren<ScrollRect>();
+			sr.vertical = sr.GetComponent<RectTransform>().sizeDelta.y < v.y;
+			for(int i = 0; i < m_degree_list.Count; i++)
+			{
+				if(m_degree_list[i].MDPKLNFFDBO_EmblemId != 1)
+				{
+					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeEmblemIconTexturePath(m_degree_list[i].MDPKLNFFDBO_EmblemId));
+				}
+			}
 		}
 
 		//// RVA: 0x11E5AAC Offset: 0x11E5AAC VA: 0x11E5AAC
@@ -144,20 +191,100 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x11E5ABC Offset: 0x11E5ABC VA: 0x11E5ABC
 		public void SetCurrentWindowTitle(string title)
 		{
-			TodoLogger.Log(0, "SetCurrentWindowTitle");
+			m_current_window_title.text = title;
 		}
 
 		//// RVA: 0x11E5AF8 Offset: 0x11E5AF8 VA: 0x11E5AF8
 		public void SetSelectWindowTitle(string title)
 		{
-			TodoLogger.Log(0, "SetSelectWindowTitle");
+			m_select_window_title.text = title;
 		}
 
 		//// RVA: 0x11E5470 Offset: 0x11E5470 VA: 0x11E5470
-		//private int GetDegreeListIndex(int id) { }
+		private int GetDegreeListIndex(int id)
+		{
+			for(int i = 0; i < m_degree_list.Count; i++)
+			{
+				if (m_degree_list[i].MDPKLNFFDBO_EmblemId == id)
+					return i;
+			}
+			return 0;
+		}
 
 		//// RVA: 0x11E4674 Offset: 0x11E4674 VA: 0x11E4674
-		//public void UpdateDegreeBtn() { }
+		public void UpdateDegreeBtn()
+		{
+			Vector2 v = m_content.GetComponent<RectTransform>().anchoredPosition;
+			int f = Mathf.RoundToInt(v.y / 360);
+			m_start_view_icon_index = f * 8;
+			for (int i = 0; i < m_button_list.Count; i++)
+			{
+				TodoLogger.Log(TodoLogger.ToCheck, "Check i - 1");
+				Vector3 v3 = new Vector3((i - 1) * 325 - 10, (i) / 2 * -90 - Mathf.RoundToInt(f) * 360 + 360, 0);
+				m_button_list[i].transform.GetComponent<RectTransform>().localPosition = v3;
+				int btn_index = i;
+				int index = m_start_view_icon_index + i - 8;
+				if(index == 0)
+				{
+					m_none_btn.transform.localPosition = v3;
+				}
+				/*int a = m_degree_list.Count - 1;
+				bool c = a == index;
+				int b = a - index;
+				if (a >= index)
+				{
+					c = index == 0;
+					b = index;
+				}*/
+				if(index >= 0 && index < m_degree_list.Count)
+				{
+					if(index == 0)
+					{
+						m_none_btn.transform.gameObject.SetActive(true);
+						m_button_list[btn_index].gameObject.SetActive(false);
+					}
+					else
+					{
+						m_button_list[btn_index].gameObject.SetActive(true);
+					}
+					m_button_list[btn_index].GetBtn().ClearOnClickCallback();
+					m_button_list[btn_index].GetBtn().AddOnClickCallback(() =>
+					{
+						//0x17CDA20
+						SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+						WaitAllBtnAnim();
+						m_button_list[btn_index].ActiveSelectAnim(true);
+						OnClickDegreeBtn(index);
+					});
+					if(index == m_select_btn_index)
+					{
+						m_button_list[btn_index].ActiveSelectAnim(true);
+						if(index == 0)
+						{
+							m_none_btn.ActiveSelectAnim(true);
+						}
+					}
+					else
+					{
+						m_button_list[btn_index].ActiveSelectAnim(false);
+						if(index == 0)
+						{
+							m_none_btn.ActiveSelectAnim(false);
+						}
+					}
+					m_button_list[btn_index].ActiveSetIcon(index == m_set_btn_index);
+					m_button_list[btn_index].Init(m_degree_list[index]);
+				}
+				else
+				{
+					m_button_list[btn_index].gameObject.SetActive(false);
+					if(index == 0)
+					{
+						m_none_btn.transform.gameObject.SetActive(false);
+					}
+				}
+			}
+		}
 
 		//// RVA: 0x11E5B34 Offset: 0x11E5B34 VA: 0x11E5B34
 		//private void SetActiveBtn(int index, bool active) { }
@@ -169,23 +296,83 @@ namespace XeApp.Game.Menu
 		//private void SetIconBtn(int index, bool enable) { }
 
 		//// RVA: 0x11E5558 Offset: 0x11E5558 VA: 0x11E5558
-		//private void InitSetDegree(int index) { }
+		private void InitSetDegree(int index)
+		{
+			if(m_set_degree.name.horizontalOverflow != HorizontalWrapMode.Wrap)
+			{
+				m_set_degree.name.horizontalOverflow = HorizontalWrapMode.Wrap;
+			}
+			TextGeneratorUtility.SetTextRectangleMessage(m_set_degree.name, m_degree_list[index].ADCMNODJBGJ_EmblemName, 2, JpStringLiterals.StringLiteral_12038);
+			m_set_btn_index = index;
+			SetDegreeImage(m_degree_list[index].MDPKLNFFDBO_EmblemId);
+			m_set_degree.btn.Hidden = index == 0;
+			m_set_btn.Disable = m_select_btn_index == m_set_btn_index;
+		}
 
 		//// RVA: 0x11E57A0 Offset: 0x11E57A0 VA: 0x11E57A0
-		//private void InitSelectDegree(int index) { }
+		private void InitSelectDegree(int index)
+		{
+			if(m_select_degree.name.horizontalOverflow != HorizontalWrapMode.Wrap)
+			{
+				m_select_degree.name.horizontalOverflow = HorizontalWrapMode.Wrap;
+			}
+			TextGeneratorUtility.SetTextRectangleMessage(m_select_degree.name, m_degree_list[index].ADCMNODJBGJ_EmblemName, 2, JpStringLiterals.StringLiteral_12038);
+			m_select_btn_index = index;
+			SetSelectDegreeImage(m_degree_list[index].MDPKLNFFDBO_EmblemId);
+			if(index == 0)
+			{
+				m_select_degree.btn.Hidden = true;
+				m_select_degree.btn.Disable = false;
+			}
+			else
+			{
+				m_select_degree.btn.Hidden = false;
+				m_select_degree.btn.Disable = m_select_btn_index == m_set_btn_index;
+			}
+			m_set_btn.Disable = m_select_btn_index == m_set_btn_index;
+		}
 
 		//// RVA: 0x11E604C Offset: 0x11E604C VA: 0x11E604C
 		public bool IsPlaying()
 		{
-			TodoLogger.Log(0, "IsPlaying");
-			return false;
+			return m_abs.IsPlayingChildren();
 		}
 
 		//// RVA: 0x11E5D8C Offset: 0x11E5D8C VA: 0x11E5D8C
-		//public void SetDegreeImage(int degree_no) { }
+		public void SetDegreeImage(int degree_no)
+		{
+			if(degree_no == 1)
+			{
+				m_set_degree.image.enabled = false;
+			}
+			else
+			{
+				m_set_degree.image.enabled = true;
+				GameManager.Instance.ItemTextureCache.LoadEmblem(degree_no, (IiconTexture icon) =>
+				{
+					//0x11E6B7C
+					icon.Set(m_set_degree.image);
+				});
+			}
+		}
 
 		//// RVA: 0x11E5EEC Offset: 0x11E5EEC VA: 0x11E5EEC
-		//public void SetSelectDegreeImage(int degree_no) { }
+		public void SetSelectDegreeImage(int degree_no)
+		{
+			if(degree_no == 1)
+			{
+				m_select_degree.image.enabled = false;
+			}
+			else
+			{
+				m_select_degree.image.enabled = true;
+				GameManager.Instance.ItemTextureCache.LoadEmblem(degree_no, (IiconTexture icon) =>
+				{
+					//0x11E6C70
+					icon.Set(m_select_degree.image);
+				});
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FD384 Offset: 0x6FD384 VA: 0x6FD384
 		//// RVA: 0x11E41BC Offset: 0x11E41BC VA: 0x11E41BC
@@ -209,54 +396,87 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x11E4244 Offset: 0x11E4244 VA: 0x11E4244
 		private IEnumerator LoadDegreeButton()
 		{
-			TodoLogger.Log(0, "LoadDegreeButton");
-			yield return null;
+			AssetBundleLoadLayoutOperationBase operation;
+			//0x17CDB90
+			operation = AssetBundleManager.LoadLayoutAsync("ly/076.xab", "UI_DegreeButton");
+			yield return operation;
+			yield return Co.R(operation.InitializeLayoutCoroutine(MenuScene.Instance.m_font, (GameObject instance) =>
+			{
+				//0x11E6D98
+				m_button_list.Add(instance.GetComponent<DegreeSelectDegreeButton>());
+				instance.transform.SetParent(m_content, false);
+			}));
+			AssetBundleManager.UnloadAssetBundle("ly/076.xab", false);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FD474 Offset: 0x6FD474 VA: 0x6FD474
 		//// RVA: 0x11E42CC Offset: 0x11E42CC VA: 0x11E42CC
 		private IEnumerator LoadDegreeNoneButton()
 		{
-			TodoLogger.Log(0, "LoadDegreeNoneButton");
-			yield return null;
+			AssetBundleLoadLayoutOperationBase operation;
+			//0x17CE208
+			operation = AssetBundleManager.LoadLayoutAsync("ly/076.xab", "UI_DegreeButton_None");
+			yield return operation;
+			yield return Co.R(operation.InitializeLayoutCoroutine(MenuScene.Instance.m_font, (GameObject instance) =>
+			{
+				//0x11E6E8C
+				m_none_btn = instance.GetComponent<DegreeSelectNoneBtn>();
+				m_none_btn.transform.SetParent(m_content, false);
+			}));
+			AssetBundleManager.UnloadAssetBundle("ly/076.xab", false);
 		}
 
 		//// RVA: 0x11E6078 Offset: 0x11E6078 VA: 0x11E6078
 		private void OnClickInfoBtn(int index)
 		{
-			TodoLogger.LogNotImplemented("OnClickInfoBtn");
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			m_degree_setting.TitleText = bk.GetMessageByLabel("popup_title_degree_01");
+			m_degree_setting.SetParent(transform);
+			m_degree_setting.data = m_degree_list[index];
+			m_degree_setting.WindowSize = SizeType.Small;
+			m_degree_setting.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			PopupWindowManager.Show(m_degree_setting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x17CD91C
+				return;
+			}, (IPopupContent content, PopupTabButton.ButtonLabel label) =>
+			{
+				//0x17CD920
+				(content as PopupTabContents).ChangeContents((int)label);
+			}, null, null);
 		}
 
 		//// RVA: 0x11E64EC Offset: 0x11E64EC VA: 0x11E64EC
-		//private void OnClickDegreeBtn(int index) { }
+		private void OnClickDegreeBtn(int index)
+		{
+			m_select_btn_index = index;
+			InitSelectDegree(index);
+		}
 
 		//// RVA: 0x11E64F4 Offset: 0x11E64F4 VA: 0x11E64F4
 		private void OnClickSetBtn()
 		{
-			TodoLogger.LogNotImplemented("OnClickSetBtn");
+			InitSetDegree(m_select_btn_index);
+			InitSelectDegree(m_select_btn_index);
+			UpdateDegreeBtn();
+			JDDGPJDKHNE.HHCJCDFCLOB.BGDOBGFECOB();
+			int oldEmblem = GameManager.Instance.ViewPlayerData.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId;
+			GameManager.Instance.ViewPlayerData.HPLIKGGILHF(m_degree_list[m_select_btn_index].MDPKLNFFDBO_EmblemId);
+			ILCCJNDFFOB.HHCJCDFCLOB.PGHFPIMIOKE(oldEmblem, GameManager.Instance.ViewPlayerData.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId);
+			MenuScene.Save(null, null);
 		}
 
 		//// RVA: 0x11E678C Offset: 0x11E678C VA: 0x11E678C
-		//private void WaitAllBtnAnim() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6FD51C Offset: 0x6FD51C VA: 0x6FD51C
-		//// RVA: 0x11E6AE0 Offset: 0x11E6AE0 VA: 0x11E6AE0
-		//private void <UpdateLoad>b__29_0() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6FD52C Offset: 0x6FD52C VA: 0x6FD52C
-		//// RVA: 0x11E6B7C Offset: 0x11E6B7C VA: 0x11E6B7C
-		//private void <SetDegreeImage>b__45_0(IiconTexture icon) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6FD53C Offset: 0x6FD53C VA: 0x6FD53C
-		//// RVA: 0x11E6C70 Offset: 0x11E6C70 VA: 0x11E6C70
-		//private void <SetSelectDegreeImage>b__46_0(IiconTexture icon) { }
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x6FD55C Offset: 0x6FD55C VA: 0x6FD55C
-		//// RVA: 0x11E6D98 Offset: 0x11E6D98 VA: 0x11E6D98
-		//private void <LoadDegreeButton>b__48_0(GameObject instance) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6FD56C Offset: 0x6FD56C VA: 0x6FD56C
-		//// RVA: 0x11E6E8C Offset: 0x11E6E8C VA: 0x11E6E8C
-		//private void <LoadDegreeNoneButton>b__49_0(GameObject instance) { }
+		private void WaitAllBtnAnim()
+		{
+			m_none_btn.ActiveSelectAnim(false);
+			for(int i = 0; i < m_button_list.Count; i++)
+			{
+				m_button_list[i].ActiveSelectAnim(false);
+			}
+		}
 	}
 }
