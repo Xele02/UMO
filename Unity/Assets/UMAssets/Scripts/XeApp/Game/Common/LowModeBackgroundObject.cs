@@ -72,7 +72,8 @@ namespace XeApp.Game.Common
 		// // RVA: 0x110A27C Offset: 0x110A27C VA: 0x110A27C
 		private void ApplyBackGroundPanelSize(RawImage target, Canvas canvas, int baseRare)
 		{
-			target.rectTransform.sizeDelta = canvas.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta; // ?? size.x *2
+			Vector2 v = canvas.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta;
+			target.rectTransform.sizeDelta = new Vector2(v.x, v.x);
 			if(baseRare < 4)
 			{
 				target.uvRect = SceneCardrectRectangle.uvRect;

@@ -3,12 +3,13 @@
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: AndroidScreenFrame
   m_Shader: {fileID: 4800000, guid: 297a8d36877396d44a65d1093a77a337, type: 3}
-  m_ShaderKeywords:
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -17,7 +18,7 @@ Material:
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: {}
+    m_TexEnvs: []
     m_Floats:
     - _BumpScale: 1
     - _ColorMask: 15
