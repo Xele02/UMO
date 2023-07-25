@@ -34,9 +34,8 @@ namespace XeApp.Game.Common
 			}
 			if(Database.Instance.gameSetup.musicInfo.onStageDivaNum > 2)
 			{
-				if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.DDHCLNFPNGK_RenderQuality == 1 || GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.JLEJPKOMKEJ())
+				if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.DDHCLNFPNGK_RenderQuality == 1 || GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.JLEJPKOMKEJ_IsAnimatorLowQuality())
 				{
-					UnityEngine.Debug.LogError("Scene animator disabled !! check quality");
 					if (animator != null)
 					{
 						animator.enabled = false;

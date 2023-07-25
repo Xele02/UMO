@@ -781,8 +781,8 @@ namespace XeApp.Game.Menu
 			GameManager.Instance.SetLongScreenFrameColor(Option.HLABNEIEJPM_SafeAreaDesign);
 			if(isSave)
 			{
-				bool b = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PKEMELMMEKM_GetDivaQuality();
-				bool b2 = Option.PKEMELMMEKM_GetDivaQuality();
+				bool b = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PKEMELMMEKM_IsDivaHighQuality();
+				bool b2 = Option.PKEMELMMEKM_IsDivaHighQuality();
 				SetOrientationInner(b2 ? 1 : 0);
 				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.HOMPENLIHCK_VolBgm = Option.HOMPENLIHCK_VolBgm;
 				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BGLLCLEDHKK_VolSe = Option.BGLLCLEDHKK_VolSe;

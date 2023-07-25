@@ -176,7 +176,7 @@ public class ILDKBCLAFPB
 		}
 
         // // RVA: 0x2035DB8 Offset: 0x2035DB8 VA: 0x2035DB8
-        public bool PKEMELMMEKM_GetDivaQuality()
+        public bool PKEMELMMEKM_IsDivaHighQuality()
 		{
 			if (DDHCLNFPNGK_RenderQuality == 3)
 				return HHMCIGLCBNG_QualityCustomDiva3D == 0;
@@ -184,7 +184,7 @@ public class ILDKBCLAFPB
 		}
 
         // // RVA: 0x2035DD4 Offset: 0x2035DD4 VA: 0x2035DD4
-        public bool DKECHCHOMEL_GetValkyrieQuality()
+        public bool DKECHCHOMEL_IsValkyrieHighQuality()
 		{
 			if (DDHCLNFPNGK_RenderQuality == 3)
 				return AHLFOHJMGAI_QualityCustomOther3D == 0;
@@ -192,7 +192,7 @@ public class ILDKBCLAFPB
 		}
 
         // // RVA: 0x2035DF0 Offset: 0x2035DF0 VA: 0x2035DF0
-        public bool MIHFCOBBIPJ_GetQuality2d()
+        public bool MIHFCOBBIPJ_Is2DHighQuality()
 		{
 			if(DDHCLNFPNGK_RenderQuality == 3)
 				return FPJHOLMLDGC_QualityCustom2D == 0;
@@ -200,7 +200,7 @@ public class ILDKBCLAFPB
 		}
 
         // // RVA: 0x2035E0C Offset: 0x2035E0C VA: 0x2035E0C
-        public bool JLEJPKOMKEJ()
+        public bool JLEJPKOMKEJ_IsAnimatorLowQuality()
 		{
 			if(DDHCLNFPNGK_RenderQuality == 3)
 			{
@@ -211,7 +211,7 @@ public class ILDKBCLAFPB
 		}
 
         // // RVA: 0x2035E48 Offset: 0x2035E48 VA: 0x2035E48
-        public bool INPHNKJPJFN()
+        public bool INPHNKJPJFN_IsBoneHighQuality()
 		{
 			if(DDHCLNFPNGK_RenderQuality == 3)
 			{
@@ -221,7 +221,7 @@ public class ILDKBCLAFPB
 		}
 
         // // RVA: 0x2035E94 Offset: 0x2035E94 VA: 0x2035E94
-        public int CBLEFELBNDN_GetQuality()
+        public int CBLEFELBNDN_GetVideoQuality()
 		{
 			return IHEPCAHBECA_VideoMode != 0 ? 1 : 2;
 		}

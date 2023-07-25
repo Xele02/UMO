@@ -11,7 +11,7 @@ namespace XeApp.Game.Common
 		// RVA: 0x110BE08 Offset: 0x110BE08 VA: 0x110BE08
 		private void Start()
 		{
-			if(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.DKECHCHOMEL_GetValkyrieQuality() || m_force_enable)
+			if(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.DKECHCHOMEL_IsValkyrieHighQuality() || m_force_enable)
 			{
 				for(int i = 0; i < inactivateTargetObjects.Count; i++)
 				{

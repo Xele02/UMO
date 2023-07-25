@@ -238,16 +238,39 @@ namespace XeApp.Game.Common
 			Renderer[] renderers = divaPrefab_.transform.Find("mesh_root").GetComponentsInChildren<Renderer>();
 			if(useQualitySetting)
 			{
-				if(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PKEMELMMEKM_GetDivaQuality())
+				if(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PKEMELMMEKM_IsDivaHighQuality())
 				{
-					TodoLogger.Log(0, "Diva Low quality 3d setyp");
+					for(int i = 0; i < renderers.Length; i++)
+					{
+						for(int j = 0; j < renderers[i].materials.Length; j++)
+						{
+							if(renderers[i].materials[j].shader.name == "MCRS/Diva/Opaque_High")
+							{
+								renderers[i].materials[j].shader = Shader.Find("MCRS/Diva/Opaque_Low");
+							}
+							else if (renderers[i].materials[j].shader.name == "MCRS/Diva/Opaque_Outline_High")
+							{
+								renderers[i].materials[j].shader = Shader.Find("MCRS/Diva/Opaque_Outline_Low");
+							}
+							else if (renderers[i].materials[j].shader.name == "MCRS/Valkyrie_High")
+							{
+								renderers[i].materials[j].shader = Shader.Find("MCRS/Valkyrie_Low");
+							}
+							else if (renderers[i].materials[j].shader.name == "MCRS/Diva/Trans_High")
+							{
+								int rqueue = renderers[i].materials[j].renderQueue;
+								renderers[i].materials[j].shader = Shader.Find("MCRS/Diva/Trans_Low");
+								renderers[i].materials[j].renderQueue = rqueue;
+							}
+						}
+					}
 				}
 			}
 			m_valkyrieShaderControlelr.Initialize(renderers, null);
 			BoneSpringController.PerformanceMode boneQualityMode = BoneSpringController.PerformanceMode.High;
 			if(useQualitySetting)
 			{
-				if(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.INPHNKJPJFN())
+				if(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.INPHNKJPJFN_IsBoneHighQuality())
 				{
 					boneQualityMode = BoneSpringController.PerformanceMode.Low;
 				}

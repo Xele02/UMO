@@ -115,7 +115,7 @@ namespace XeApp.Game.Common
 			{
 				ShaderName = "MCRS/Valkyrie_Low";
 				ShaderMultiName = "MCRS/ValkyrieMulti_Low";
-				if(saveOption.DKECHCHOMEL_GetValkyrieQuality())
+				if(saveOption.DKECHCHOMEL_IsValkyrieHighQuality())
 				{
 					ShaderMultiName = "MCRS/ValkyrieMulti_High";
 					ShaderName = "MCRS/Valkyrie_High";

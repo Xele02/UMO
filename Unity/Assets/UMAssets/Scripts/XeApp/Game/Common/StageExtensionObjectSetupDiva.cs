@@ -12,14 +12,14 @@ namespace XeApp.Game.Common
 		{
 			Transform root = gameObject.transform.Find("mesh_root");
 			Renderer[] rs = root.GetComponentsInChildren<Renderer>();
-			if(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PKEMELMMEKM_GetDivaQuality())
+			if(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PKEMELMMEKM_IsDivaHighQuality())
 			{
 				TodoLogger.Log(0, "SetupDivaObject switch to low shader");
 			}
 			BoneSpringController controller = gameObject.GetComponentInChildren<BoneSpringController>();
 			if(controller != null)
 			{
-				controller.Initialize(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.INPHNKJPJFN() ? BoneSpringController.PerformanceMode.High : BoneSpringController.PerformanceMode.Low);
+				controller.Initialize(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.INPHNKJPJFN_IsBoneHighQuality() ? BoneSpringController.PerformanceMode.High : BoneSpringController.PerformanceMode.Low);
 			}
 		}
 

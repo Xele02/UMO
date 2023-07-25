@@ -206,7 +206,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			GameSetupData.TeamInfo team = Database.Instance.gameSetup.teamInfo;
 			GameSetupData.MusicInfo music = Database.Instance.gameSetup.musicInfo;
-			m_isLowSpec = !GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.MIHFCOBBIPJ_GetQuality2d();
+			m_isLowSpec = !GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.MIHFCOBBIPJ_Is2DHighQuality();
 			m_is2dMode = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.OOCKIFIHJJN_Is2DMode;
 			m_isValkyrieOff = !GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG_IsValkyrieModeEnabled();
 			int pilotId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[team.prismValkyrieId - 1].PFGJJLGLPAC_PilotId;

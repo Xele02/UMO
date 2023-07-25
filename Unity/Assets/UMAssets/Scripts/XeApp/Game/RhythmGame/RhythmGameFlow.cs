@@ -396,7 +396,7 @@ namespace XeApp.Game.RhythmGame
 												Database.Instance.gameSetup.musicInfo.onStageDivaNum, Database.Instance.gameSetup.musicInfo.onStageDivaNum > 1 ? Database.Instance.gameSetup.teamInfo.danceDivaList[0].positionId : 0);
 				if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.GPKILPOLNKO())
 				{
-					rhythmGameResource.divaModeResource.LoadResources(wavId, GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CBLEFELBNDN_GetQuality(), rhythmGameResource.GetSpecialDirectionMovieId);
+					rhythmGameResource.divaModeResource.LoadResources(wavId, GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CBLEFELBNDN_GetVideoQuality(), rhythmGameResource.GetSpecialDirectionMovieId);
 				}
 				for(int i = 0; i < 4 && i < rhythmGameResource.subDivaResource.Count; i++)
 				{

@@ -782,7 +782,7 @@ namespace XeApp.Game.RhythmGame
 
 			yield return Co.R(AssetBundleManager.LoadUnionAssetBundle("gm/if/un.xab"));
 			
-			if(option.MIHFCOBBIPJ_GetQuality2d())
+			if(option.MIHFCOBBIPJ_Is2DHighQuality())
 			{
 				bundleName.Set("gm/if/hi.xab");
 				if(musicInfo.IsMvMode)
@@ -807,7 +807,7 @@ namespace XeApp.Game.RhythmGame
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			operation = null;
 
-			if(option.MIHFCOBBIPJ_GetQuality2d())
+			if(option.MIHFCOBBIPJ_Is2DHighQuality())
 				bundleName.SetFormat("gm/if/els/{0:D3}/{0:D3}_{1}.xab", 6, "hi");
 			else
 				bundleName.SetFormat("gm/if/els/{0:D3}/{0:D3}_{1}.xab", 6, "lo");
