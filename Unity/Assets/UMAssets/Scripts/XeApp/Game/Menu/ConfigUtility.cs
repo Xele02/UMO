@@ -118,17 +118,41 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1B60B24 Offset: 0x1B60B24 VA: 0x1B60B24
 		public static void PopupShowVideoQuality(Action<bool> callback)
 		{
-			TodoLogger.LogNotImplemented("PopupShowVideoQuality");
-			if (callback != null)
-				callback(true);
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("config_text_41"), SizeType.Small, 
+				bk.GetMessageByLabel("config_text_45"), new ButtonInfo[2]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Change, Type = PopupButton.ButtonType.Positive }
+				}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0x1B65BB0
+					if(type == PopupButton.ButtonType.Negative)
+					{
+						if(callback != null)
+							callback(false);
+					}
+					else if(type == PopupButton.ButtonType.Positive)
+					{
+						if (callback != null)
+							callback(true);
+					}
+				}, null, null, null);
 		}
 
 		//// RVA: 0x1B60E30 Offset: 0x1B60E30 VA: 0x1B60E30
 		public static void PopupShowVideoDelete(Action callback)
 		{
-			TodoLogger.LogNotImplemented("PopupShowVideoDelete");
-			if (callback != null)
-				callback();
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("config_text_41"), SizeType.Small, 
+				bk.GetMessageByLabel("config_text_46"), new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0x1B65920
+					return;
+				}, null, null, null, true, true, false, null, callback);
 		}
 	}
 }
