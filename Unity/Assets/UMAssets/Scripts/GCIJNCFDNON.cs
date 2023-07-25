@@ -516,7 +516,7 @@ public class GCIJNCFDNON_SceneInfo
 		MKHFCGPJPFI_LimitOverCount = BLHGJPIFKCL_Leaf_;
 		MCOMAOELHOG_IsKira = 0;
 		JNNHIDMNBFG(OPFGFINHFCE_SceneName, BLHGJPIFKCL_Leaf_);
-		CIEOBFIIPLD_SceneLevel = KBOLNIBLIND_Mb_ == null ? 1 : CEDHHAGBIBA.OGPFNHOKONH_GetNumBitActive(KBOLNIBLIND_Mb_);
+		CIEOBFIIPLD_SceneLevel = KBOLNIBLIND_Mb_ == null ? 1 : CEDHHAGBIBA.OGPFNHOKONH_GetNumBitActive(KBOLNIBLIND_Mb_) + 1;
 		PFHJFIHGCKP_CenterSkillName1 = bank.GetMessageByLabel("c_nm_" + MEOOLHNNMHL_GetCenterSkillId(false, 0, 0).ToString("D4"));
 		EFELCLMJEOL_CenterSkillName2 = bank.GetMessageByLabel("c_nm_" + MEOOLHNNMHL_GetCenterSkillId(true, 0, 0).ToString("D4"));
 		ILCLGGPHHJO_ActiveSkillName = bank.GetMessageByLabel("a_nm_" + HGONFBDIBPM_ActiveSkillId.ToString("D4"));
