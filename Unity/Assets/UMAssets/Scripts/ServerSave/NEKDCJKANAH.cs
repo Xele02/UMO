@@ -152,7 +152,7 @@ public class NEKDCJKANAH_StoryRecord : KLFDBFMNLBL_ServerSaveBlock
 			EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
 			data2[AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id] = MCKEOKFMLAH;
 			data2[JIKKNHIAEKG_BlockName] = data;
-			data2["complete"] = EOHHFADHHBL_Complete;
+			data2["complete"] = EOHHFADHHBL_Complete ? 1 : 0;
 			data2[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] = 2;
 			data = data2;
 		}

@@ -102,6 +102,7 @@ namespace ExternLib
 				{
 					storyBlock.MMKAJBFBKNH[i].EALOBDHOCHP_Stat = 4;
 				}
+				storyBlock.EOHHFADHHBL_Complete = true;
 			}
 			{
 				DEKKMGAFJCG_Diva divaBlock = newData.LBDOLHGDIEB_GetBlock("diva") as DEKKMGAFJCG_Diva;
