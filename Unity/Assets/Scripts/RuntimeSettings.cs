@@ -115,4 +115,5 @@ class RuntimeSettings : ScriptableObject
 	[Header("Debug")]
 
 	public int MinLog = -9999;
+	public bool EnableProfileSaveCheck = false;
 }

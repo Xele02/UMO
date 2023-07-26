@@ -247,11 +247,14 @@ namespace ExternLib
 
 			SerializeServerSave(newData, jsonRes);
 			SaveAccountServerData();
-			if (allBlock)
+			if (RuntimeSettings.CurrentSettings.EnableProfileSaveCheck)
 			{
-				SaveAccountServerData(jsonRes, playerAccount.userId, "data_base.json");
+				if (allBlock)
+				{
+					SaveAccountServerData(jsonRes, playerAccount.userId, "data_base.json");
+				}
+				CheckSaveFile(playerAccount.userId, "data.json", "data_error.json", jsonRes);
 			}
-			CheckSaveFile(playerAccount.userId, "data.json", "data_error.json", jsonRes);
 
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res["created_at"] = 1501751856;
@@ -558,8 +561,6 @@ namespace ExternLib
 		static int saveCnt = 0;
 		public static int SakashoPlayerDataSavePlayerData(int callbackId, string json)
 		{
-			TodoLogger.Log(0, "Save player data");
-
 			EDOHBJAPLPF_JsonData msgData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
 			List<string> blockNames = new List<string>();
 			for (int i = 0; i < msgData["names"].HNBFOAJIIAL_Count; i++)
@@ -578,11 +579,17 @@ namespace ExternLib
 					}
 				}
 
-				SaveAccountServerData(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject((string)msgData["playerData"]), playerAccount.userId, "/data_save_" + saveCnt.ToString() + "_part.json");
-				SaveAccountServerData(playerAccount.serverData, playerAccount.userId, "/data_save_" + saveCnt.ToString() + ".json");
+				if (RuntimeSettings.CurrentSettings.EnableProfileSaveCheck)
+				{
+					SaveAccountServerData(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject((string)msgData["playerData"]), playerAccount.userId, "/data_save_" + saveCnt.ToString() + "_part.json");
+					SaveAccountServerData(playerAccount.serverData, playerAccount.userId, "/data_save_" + saveCnt.ToString() + ".json");
+				}
 
 				SaveAccountServerData();
-				CheckSaveFile(playerAccount.userId, "data.json", "/data_save_" + saveCnt.ToString() + "_error.json");
+				if (RuntimeSettings.CurrentSettings.EnableProfileSaveCheck)
+				{
+					CheckSaveFile(playerAccount.userId, "data.json", "/data_save_" + saveCnt.ToString() + "_error.json");
+				}
 
 				saveCnt++;
 			}

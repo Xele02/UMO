@@ -43,7 +43,7 @@ namespace ExternLib
 
 			path += "/" + fileName;
 			File.WriteAllText(path, saveData);
-			UnityEngine.Debug.LogError("saved server data " + path);
+			UnityEngine.Debug.Log("saved server data " + path);
 		}
 
 		public static void SaveAccountServerData()
@@ -62,7 +62,7 @@ namespace ExternLib
 
 			if (File.Exists(path))
 			{
-				UnityEngine.Debug.LogError("load server data "+path);
+				UnityEngine.Debug.Log("load server data "+path);
 				string saveData = File.ReadAllText(path);
 				playerAccount.serverData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(saveData);
 			}
@@ -134,14 +134,14 @@ namespace ExternLib
 				res["is_created"] = 0;
 				res["player_account_status"] = 0;
 				res["player_id"] = 0;
-				UnityEngine.Debug.LogError("No user");
+				UnityEngine.Debug.Log("No user");
 			}
 			else
 			{
 				res["is_created"] = 1;
 				res["player_account_status"] = 0;
 				res["player_id"] = playerAccount.userId;
-				UnityEngine.Debug.LogError("Using user "+ playerAccount.userId);
+				UnityEngine.Debug.Log("Using user "+ playerAccount.userId);
 			}
 			// Hack directly send response
 
