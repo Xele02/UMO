@@ -51,7 +51,10 @@ namespace ExternLib
 			}
 			else
 			{
-				SaveAccountServerData(jsonRes, playerAccount.userId, "data_initbckp.json");
+				if (RuntimeSettings.CurrentSettings.EnableProfileSaveCheck)
+				{
+					SaveAccountServerData(jsonRes, playerAccount.userId, "data_initbckp.json");
+				}
 
 				Dictionary<string, EDOHBJAPLPF_JsonData> blocks;
 				blocks = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject<Dictionary<string, EDOHBJAPLPF_JsonData>>(jsonRes.EJCOJCGIBNG_ToJson());
