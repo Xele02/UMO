@@ -109,6 +109,9 @@ namespace XeApp.Game.Menu
 				GameManager.Instance.ItemTextureCache.LoadEmblem(degree_no, (IiconTexture icon) =>
 				{
 					//0x11E3850
+					if (m_Degree_no != degree_no)
+						return;
+					m_image.enabled = true;
 					icon.Set(m_image);
 				});
 			}

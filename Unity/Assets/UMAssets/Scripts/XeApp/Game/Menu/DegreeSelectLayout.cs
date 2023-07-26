@@ -219,8 +219,7 @@ namespace XeApp.Game.Menu
 			m_start_view_icon_index = f * 8;
 			for (int i = 0; i < m_button_list.Count; i++)
 			{
-				TodoLogger.Log(TodoLogger.ToCheck, "Check i - 1");
-				Vector3 v3 = new Vector3((i - 1) * 325 - 10, (i) / 2 * -90 - Mathf.RoundToInt(f) * 360 + 360, 0);
+				Vector3 v3 = new Vector3((i % 2) * 325 - 10, i / 2 * -90 - Mathf.RoundToInt(f) * 360 + 360, 0);
 				m_button_list[i].transform.GetComponent<RectTransform>().localPosition = v3;
 				int btn_index = i;
 				int index = m_start_view_icon_index + i - 8;
@@ -228,14 +227,6 @@ namespace XeApp.Game.Menu
 				{
 					m_none_btn.transform.localPosition = v3;
 				}
-				/*int a = m_degree_list.Count - 1;
-				bool c = a == index;
-				int b = a - index;
-				if (a >= index)
-				{
-					c = index == 0;
-					b = index;
-				}*/
 				if(index >= 0 && index < m_degree_list.Count)
 				{
 					if(index == 0)

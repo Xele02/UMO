@@ -165,6 +165,24 @@ namespace ExternLib
 				}
 			}
 			{
+				List<JGGLDGNKELI_Emblem.AAHAAJEJNLJ> saveEmblems = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.OFAJDLJBMEM_Emblem.MDKOHOCONKE;
+				List<IHGBPAJMJFK_Emblem.AKJPPHFGEFG_EmblemInfo> dbEmblem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem.CDENCMNHNGA_EmblemList;
+				int cnt = saveEmblems.Count;
+				if (dbEmblem.Count < cnt)
+					cnt = dbEmblem.Count;
+				for (int i = 0; i < cnt; i++)
+				{
+					if (dbEmblem[i].PLALNIIBLOF_En == 2)
+					{
+						if (saveEmblems[i].BEBJKJKBOGH_Date == 0)
+						{
+							saveEmblems[i].BEBJKJKBOGH_Date = time;
+							saveEmblems[i].FHCAFLCLGAA_Cnt = 1;
+						}
+					}
+				}
+			}
+			{
 				EBFLJMOCLNA_Costume costumeBlock = newData.LBDOLHGDIEB_GetBlock("costume") as EBFLJMOCLNA_Costume;
 				LCLCCHLDNHJ_Costume costumeDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
 				for (int i = 0; i < costumeDb.CDENCMNHNGA_Costumes.Count; i++)
