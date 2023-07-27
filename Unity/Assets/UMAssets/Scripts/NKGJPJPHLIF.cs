@@ -352,8 +352,12 @@ public class NKGJPJPHLIF
 		else
 		{
 			//L214
+			// UMO Display account type creation popup, check if full account is already created?
+			int accountType = 1; // 0 = normal, 1 = full unlock
+
 			FFEEIONIBFF_Request = null;
 			PKNOGNLPHAE_CreatePlayer CNEMMHHJKNG = IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new PKNOGNLPHAE_CreatePlayer());
+			CNEMMHHJKNG.AccountType = accountType;
 			yield return CNEMMHHJKNG.GDPDELLNOBO_WaitDone(N.a);
 			//2
 			if (!CNEMMHHJKNG.NPNNPNAIONN_IsError)

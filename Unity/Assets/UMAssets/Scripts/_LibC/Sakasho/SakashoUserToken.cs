@@ -79,13 +79,24 @@ namespace ExternLib
 			LoadAccountServerData();
 		}
 
-		public static int CreateAccount()
+		public static int CreateAccount(bool cheatAccount)
 		{
+			// cheat account : 999999999
+			// cheat other account : 999999998 (or 9xxxxxxxx)
+			// local account : 100000000 -> 599999999
+			// network account : 600000000 -> 899999999
 			int id = 0;
-			do
+			if (cheatAccount)
 			{
-				id = Random.Range(100000000, 999999999);
-			} while (Directory.Exists(Application.persistentDataPath + "/Profiles/" + id.ToString()));
+				id = 999999999;
+			}
+			else
+			{
+				do
+				{
+					id = Random.Range(100000000, 599999999);
+				} while (Directory.Exists(Application.persistentDataPath + "/Profiles/" + id.ToString()));
+			}
 
 			InitPlayerAccount(id);
 			return id;
@@ -95,13 +106,16 @@ namespace ExternLib
 		{
 			UnityEngine.Debug.Log("SakashoUserTokenCreatePlayer " + json);
 
-			CreateAccount();
+			EDOHBJAPLPF_JsonData inData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
+			int accountType = (int)inData["accountType"];
+
+			CreateAccount(accountType == 1);
 
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res["is_created"] = 1;
 			res["player_account_status"] = 0;
 			res["player_id"] = playerAccount.userId;
-			UnityEngine.Debug.LogError("Created player "+ playerAccount.userId);
+			UnityEngine.Debug.Log("Created player "+ playerAccount.userId);
 
 			SendMessage(callbackId, res);
 

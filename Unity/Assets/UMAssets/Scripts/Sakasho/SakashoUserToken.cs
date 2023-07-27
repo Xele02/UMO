@@ -1,11 +1,15 @@
+using Sakasho.JSON;
 using SakashoSystemCallback;
+using System.Collections;
 
 public class SakashoUserToken : SakashoAPIBase
 {
 	// // RVA: 0x2E6D2E4 Offset: 0x2E6D2E4 VA: 0x2E6D2E4
-	public static SakashoAPICallContext CreatePlayer(OnSuccess onSuccess, OnError onError)
+	public static SakashoAPICallContext CreatePlayer(int accountType, OnSuccess onSuccess, OnError onError)
 	{
-		return new SakashoAPICallContext(Call(SakashoUserTokenCreatePlayer, "", onSuccess, onError));
+		Hashtable h = new Hashtable();
+		h["accountType"] = accountType;
+		return new SakashoAPICallContext(Call(SakashoUserTokenCreatePlayer, MiniJSON.jsonEncode(h), onSuccess, onError));
 	}
 
 	// // RVA: 0x2E6D3C8 Offset: 0x2E6D3C8 VA: 0x2E6D3C8
