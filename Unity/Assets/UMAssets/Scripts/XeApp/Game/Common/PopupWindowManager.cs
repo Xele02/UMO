@@ -130,7 +130,19 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BC0A30 Offset: 0x1BC0A30 VA: 0x1BC0A30
-		// public static void SetInputState(bool isEnable) { }
+		public static void SetInputState(bool isEnable)
+		{
+			if (s_controls == null)
+				return;
+			if(isEnable)
+			{
+				s_controls[s_popupIndexStack[s_popupIndexStack.Count - 1]].InputEnable();
+			}
+			else
+			{
+				s_controls[s_popupIndexStack[s_popupIndexStack.Count - 1]].InputDisable();
+			}
+		}
 
 		// // RVA: 0x1BC0C8C Offset: 0x1BC0C8C VA: 0x1BC0C8C
 		public static void SetButtonState(bool isEnable)
@@ -144,7 +156,17 @@ namespace XeApp.Game.Common
 		// public static void TopPopupPushNegativeOtherButton() { }
 
 		// // RVA: 0x1BC104C Offset: 0x1BC104C VA: 0x1BC104C
-		// public static ButtonBase FindTopPopupButton(PopupButton.ButtonType type) { }
+		public static ButtonBase FindTopPopupButton(PopupButton.ButtonType type)
+		{
+			if (s_controls != null)
+			{
+				if(s_popupIndexStack.Count != 0)
+				{
+					return s_controls[s_popupIndexStack[s_popupIndexStack.Count - 1]].FindButton(type);
+				}
+			}
+			return null;
+		}
 
 		// // RVA: 0x1BC1274 Offset: 0x1BC1274 VA: 0x1BC1274
 		public static string FormatTextBank(MessageBank bank, string label, object[] args)

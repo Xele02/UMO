@@ -9,6 +9,8 @@ using UnityEngine.Events;
 using System.Collections;
 using XeApp.Core;
 using XeApp.Game.Menu;
+using UnityEngine.SceneManagement;
+using XeSys.Gfx;
 
 namespace XeApp.Game.Tutorial
 {
@@ -172,18 +174,214 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE3DF30 Offset: 0xE3DF30 VA: 0xE3DF30
 		public void ShowMessageWindow(BasicTutorialMessageId id, Action endCallBack, AdvMessageBase.TagConvertFunc func)
 		{
-			TodoLogger.Log(5, "TutorialAfterFirstLoginBonus");
-			endCallBack();
+			ILLPGHGGKLL_TutorialMiniAdv.AFBMNDPOALE data = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LINHIDCNAMG_TutorialMiniAdv.LBDOLHGDIEB((int)id);
+			if(data != null)
+			{
+				this.StartCoroutineWatched(ProcMessage(data, endCallBack, func));
+				return;
+			}
+			if (endCallBack != null)
+				endCallBack();
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6AE3D8 Offset: 0x6AE3D8 VA: 0x6AE3D8
 		// // RVA: 0xE3E078 Offset: 0xE3E078 VA: 0xE3E078
-		// private IEnumerator ProcMessage(ILLPGHGGKLL.AFBMNDPOALE messData, Action endCallBack, AdvMessageBase.TagConvertFunc func) { }
+		private IEnumerator ProcMessage(ILLPGHGGKLL_TutorialMiniAdv.AFBMNDPOALE messData, Action endCallBack, AdvMessageBase.TagConvertFunc func)
+		{
+			TodoLogger.Log(0, "ProcMessage");
+			yield return null;
+			if (endCallBack != null)
+				endCallBack();
+		}
 
 		// // RVA: 0xE3E170 Offset: 0xE3E170 VA: 0xE3E170
 		public void SetInputLimit(InputLimitButton button, UnityAction onPush, Func<ButtonBase> findButton, TutorialPointer.Direction dir = TutorialPointer.Direction.Normal)
 		{
-			TodoLogger.Log(0, "SetInputLimit");
+			MenuHeaderControl.Button headerButton = 0;
+			MenuFooterControl.Button footerButton = 0;
+			bool b2 = false;
+			ButtonBase buttonBase = null;
+			TransitionRoot tr = MenuScene.Instance.GetCurrentTransitionRoot();
+			RectTransform rt = null;
+			TutorialPointer.Direction d = dir;
+			Vector2 v1 = Vector2.zero;
+			Vector2 v2 = Vector2.zero;
+			if (button == InputLimitButton.PopupPositiveButton)
+			{
+				PopupWindowManager.SetInputState(false);
+				buttonBase = PopupWindowManager.FindTopPopupButton(PopupButton.ButtonType.Positive);
+				buttonBase.IsInputOff = false;
+			}
+			else
+			{
+				if(SceneManager.GetActiveScene().name == "Menu")
+				{
+					if(MenuScene.Instance != null)
+					{
+						tr.InputDisable(null);
+						switch (button)
+						{
+							case InputLimitButton.CmnBack:
+								headerButton = MenuHeaderControl.Button.All & ~MenuHeaderControl.Button.Back;
+								footerButton = MenuFooterControl.Button.All;
+								tr.InputDisable(null);
+								buttonBase = MenuScene.Instance.HeaderMenu.FindButton(MenuHeaderControl.Button.Back);
+								break;
+							default:
+								break;
+							case InputLimitButton.GachaBuy:
+								headerButton = MenuHeaderControl.Button.All;
+								footerButton = MenuFooterControl.Button.All;
+								tr.InputEnable("sw_gacha_btn_anim_r (AbsoluteLayout)", "sw_gacha_btn (AbsoluteLayout)");
+								tr.InputEnable("sw_but_detail_anime (AbsoluteLayout)", "sw_gacha_legal_inout_anim (AbsoluteLayout)");
+								buttonBase = tr.FindButton("sw_gacha_btn_anim_r (AbsoluteLayout)", "sw_gacha_btn (AbsoluteLayout)");
+								rt = Array.Find(tr.GetComponentsInChildren<RectTransform>(true), (RectTransform x) =>
+								{
+									//0xE427CC
+									return x.name.Contains("root_gacha_title_layout_root");
+								});
+								b2 = true;
+								break;
+							case InputLimitButton.Setting:
+							case InputLimitButton.VOP:
+							case InputLimitButton.Mission:
+								headerButton = MenuHeaderControl.Button.All;
+								footerButton = MenuFooterControl.Button.All;
+								tr.InputDisable(null);
+								if(button == InputLimitButton.Mission)
+								{
+									footerButton &= ~MenuFooterControl.Button.Mission;
+									buttonBase = MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.Mission);
+								}
+								else if (button == InputLimitButton.VOP)
+								{
+									footerButton &= ~MenuFooterControl.Button.VOP;
+									buttonBase = MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.VOP);
+								}
+								else
+								{
+									d = TutorialPointer.Direction.Down;
+									if (button != InputLimitButton.Setting)
+										break;
+									footerButton &= ~MenuFooterControl.Button.Setting;
+									buttonBase = MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.Setting);
+								}
+								break;
+							case InputLimitButton.UnitSetting:
+								headerButton = MenuHeaderControl.Button.All;
+								footerButton = MenuFooterControl.Button.All;
+								tr.InputEnable("sw_s_m_btn_01_anim (AbsoluteLayout)", "setting_menu (AbsoluteLayout)");
+								buttonBase = tr.FindButton("sw_s_m_btn_01_anim (AbsoluteLayout)", "setting_menu (AbsoluteLayout)");
+								break;
+							case InputLimitButton.MainScene:
+								headerButton = MenuHeaderControl.Button.All;
+								footerButton = MenuFooterControl.Button.All;
+								CharaSet[] cs = rt.GetComponentsInChildren<CharaSet>(true);
+								cs[2].MainSceneBusttons[1].IsInputOff = false;
+								buttonBase = cs[2].MainSceneBusttons[1];
+								break;
+							case InputLimitButton.Scene:
+								headerButton = MenuHeaderControl.Button.All;
+								footerButton = MenuFooterControl.Button.All;
+								SwapScrollList s = rt.GetComponentInChildren<SwapScrollList>(true);
+								buttonBase = s.ScrollObjects[5].GetComponentInChildren<StayButton>(true);
+								buttonBase.ClearOnClickCallback();
+								buttonBase.IsInputOff = false;
+								v1 = new Vector2(1.2f, 1.25f);
+								v2 = new Vector2(-0.1f, -0.15f);
+								break;
+							case InputLimitButton.LobbyTab:
+								buttonBase = MenuScene.Instance.LobbyButtonControl.m_lobbyTabBtn.tabBtn;
+								if(buttonBase != null)
+								{
+									buttonBase.IsInputOff = false;
+								}
+								break;
+							case InputLimitButton.LobbyScene:
+								buttonBase = MenuScene.Instance.LobbyButtonControl.m_lobbySceneBtn.sceneBtn;
+								if (buttonBase != null)
+								{
+									buttonBase.IsInputOff = false;
+								}
+								break;
+							case InputLimitButton.Delegate:
+								headerButton = MenuHeaderControl.Button.All;
+								footerButton = MenuFooterControl.Button.All;
+								if(findButton != null)
+								{
+									buttonBase = findButton();
+									if (buttonBase != null)
+									{
+										buttonBase.IsInputOff = false;
+									}
+								}
+								break;
+						}
+					}
+					//LAB_00e3f120
+				}
+				else if(SceneManager.GetActiveScene().name == "GachaDirection")
+				{
+					TodoLogger.Log(0, "GachaDirection");
+				}
+				else if(SceneManager.GetActiveScene().name == "Adv" && button == InputLimitButton.SnsRoomButton)
+				{
+					TodoLogger.Log(0, "Adv");
+				}
+				//LAB_00e3f120
+			}
+			//LAB_00e3f120
+			if(buttonBase != null)
+			{
+				if(headerButton != 0)
+				{
+					MenuScene.Instance.HeaderMenu.SetButtonDisable(headerButton);
+				}
+				if(footerButton != 0)
+				{
+					MenuScene.Instance.FooterMenu.SetButtonDisable(footerButton);
+					if (button != InputLimitButton.LobbyTab && button != InputLimitButton.LobbyScene)
+					{
+						MenuScene.Instance.LobbyButtonControl.EnableButton(false);
+					}
+				}
+				if(MenuScene.Instance != null)
+				{
+					if(MenuScene.Instance.HelpButton != null)
+					{
+						MenuScene.Instance.HelpButton.SetDisable();
+					}
+				}
+				LayoutUGUIHitOnly hit = buttonBase.GetComponentInChildren<LayoutUGUIHitOnly>(true);
+				if(hit != null)
+				{
+					if(m_cursorInstance != null)
+					{
+						SetCursorPosition(hit.transform as RectTransform, d);
+						if (b2)
+							m_cursorInstance.transform.SetAsFirstSibling();
+						else
+							m_cursorInstance.transform.SetAsLastSibling();
+					}
+				}
+				if(hit != null)
+				{
+					if(m_blackImageInstance != null)
+					{
+						if (b2)
+							SetRect(rt, v2, v1);
+						else
+							SetRect(hit, v2, v1);
+						m_blackImageInstance.SetActive(true);
+					}
+				}
+				ButtonBase.OnClickCallback onClickEvent = () =>
+				{
+					//0xE42918
+					TodoLogger.LogNotImplemented("TutoClick");
+				};
+				buttonBase.AddOnClickCallback(onClickEvent);
+			}
 		}
 
 		// // RVA: 0xE409E4 Offset: 0xE409E4 VA: 0xE409E4
@@ -202,13 +400,34 @@ namespace XeApp.Game.Tutorial
 		// public void ChangeCursorLastSibling() { }
 
 		// // RVA: 0xE3FA90 Offset: 0xE3FA90 VA: 0xE3FA90
-		// private void SetCursorPosition(RectTransform target, TutorialPointer.Direction dir) { }
+		private void SetCursorPosition(RectTransform target, TutorialPointer.Direction dir)
+		{
+			/*if(m_cursorInstance != null)
+			{
+				if(target != null)
+				{
+					Canvas c = m_cursorInstance.GetComponentInParent<Canvas>();
+					//target.GetComponentInParent<Canvas>();
+					RectTransform rt = m_pointer.RectTransform;
+					rt.anchorMax = new Vector2(0.5f, 0.5f);
+					rt.anchorMin = new Vector2(0.5f, 0.5f);
+					m_pointer.Show();
+				}
+			}*/
+			TodoLogger.Log(0, "SetCursorPosition");
+		}
 
 		// // RVA: 0xE40498 Offset: 0xE40498 VA: 0xE40498
-		// private void SetRect(LayoutUGUIHitOnly hitOnly, Vector2 offset, Vector2 scale) { }
+		private void SetRect(LayoutUGUIHitOnly hitOnly, Vector2 offset, Vector2 scale)
+		{
+			TodoLogger.Log(0, "SetRect");
+		}
 
 		// // RVA: 0xE3FF5C Offset: 0xE3FF5C VA: 0xE3FF5C
-		// private void SetRect(RectTransform rt, Vector2 offset, Vector2 scale) { }
+		private void SetRect(RectTransform rt, Vector2 offset, Vector2 scale)
+		{
+			TodoLogger.Log(0, "SetRect2");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6AE450 Offset: 0x6AE450 VA: 0x6AE450
 		// // RVA: 0xE3D40C Offset: 0xE3D40C VA: 0xE3D40C

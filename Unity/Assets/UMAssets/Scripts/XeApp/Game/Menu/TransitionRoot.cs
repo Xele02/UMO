@@ -1627,13 +1627,93 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA9DD34 Offset: 0xA9DD34 VA: 0xA9DD34
-		// public void InputEnable(string objName, string parentName = "") { }
+		public void InputEnable(string objName, string parentName = "")
+		{
+			if (string.IsNullOrEmpty(objName))
+			{
+				for (int i = 0; i < m_swaipTouches.Count; i++)
+				{
+					m_swaipTouches[i].Stop(false);
+				}
+				for (int i = 0; i < m_scrollRect.Count; i++)
+				{
+					m_scrollRect[i].enabled = true;
+					if (m_scrollRect[i].verticalScrollbar != null)
+						m_scrollRect[i].verticalScrollbar.interactable = true;
+					if (m_scrollRect[i].horizontalScrollbar != null)
+						m_scrollRect[i].horizontalScrollbar.interactable = true;
+				}
+				for (int i = 0; i < m_buttons.Count; i++)
+				{
+					m_buttons[i].IsInputOff = false;
+				}
+			}
+			else
+			{
+				SwaipTouch st = m_swaipTouches.Find((SwaipTouch x) =>
+				{
+					//0xA31170
+					return ObjectFindFunc(x.transform, objName, parentName);
+				});
+				if (st != null)
+				{
+					st.Stop(false);
+				}
+				ScrollRect sr = m_scrollRect.Find((ScrollRect x) =>
+				{
+					//0xA311E4
+					return ObjectFindFunc(x.transform, objName, parentName);
+				});
+				if (sr != null)
+				{
+					sr.enabled = true;
+					if (sr.verticalScrollbar != null)
+						sr.verticalScrollbar.interactable = true;
+					if (sr.horizontalScrollbar != null)
+						sr.horizontalScrollbar.interactable = true;
+				}
+				ButtonBase bt = m_buttons.Find((ButtonBase x) =>
+				{
+					//0xA31258
+					return ObjectFindFunc(x.transform, objName, parentName);
+				});
+				if (bt != null)
+				{
+					bt.IsInputOff = false;
+				}
+			}
+		}
 
 		// // RVA: 0xA9E600 Offset: 0xA9E600 VA: 0xA9E600
-		// public ButtonBase FindButton(string objName, string parentName = "") { }
+		public ButtonBase FindButton(string objName, string parentName = "")
+		{
+			return m_buttons.Find((ButtonBase x) =>
+			{
+				//0xA312D4
+				return ObjectFindFunc(x.transform, objName, parentName);
+			});
+		}
 
 		// // RVA: 0xA9E728 Offset: 0xA9E728 VA: 0xA9E728
-		// private bool ObjectFindFunc(Transform ts, string name, string parentName) { }
+		private bool ObjectFindFunc(Transform ts, string name, string parentName)
+		{
+			if (ts.name == name)
+			{
+				if (!string.IsNullOrEmpty(parentName))
+				{
+					while (true)
+					{
+						ts = ts.parent;
+						if (ts == null)
+							return false;
+						if (ts.name == parentName)
+							break;
+					}
+					return true;
+				}
+			}
+			return false;
+		}
 
 		// // RVA: 0xA9E8B4 Offset: 0xA9E8B4 VA: 0xA9E8B4 Slot: 30
 		protected virtual void InputDisable()
@@ -1663,7 +1743,62 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA9ED10 Offset: 0xA9ED10 VA: 0xA9ED10
-		// public void InputDisable(string objName) { }
+		public void InputDisable(string objName)
+		{
+			if(string.IsNullOrEmpty(objName))
+			{
+				for(int i = 0; i < m_swaipTouches.Count; i++)
+				{
+					m_swaipTouches[i].Stop(true);
+				}
+				for(int i = 0; i < m_scrollRect.Count; i++)
+				{
+					m_scrollRect[i].enabled = false;
+					if(m_scrollRect[i].verticalScrollbar != null)
+						m_scrollRect[i].verticalScrollbar.interactable = false;
+					if (m_scrollRect[i].horizontalScrollbar != null)
+						m_scrollRect[i].horizontalScrollbar.interactable = false;
+				}
+				for(int i = 0; i < m_buttons.Count; i++)
+				{
+					m_buttons[i].IsInputOff = true;
+				}
+			}
+			else
+			{
+				SwaipTouch st = m_swaipTouches.Find((SwaipTouch x) =>
+				{
+					//0xA31350
+					return x.name == objName;
+				});
+				if(st != null)
+				{
+					st.Stop(true);
+				}
+				ScrollRect sr = m_scrollRect.Find((ScrollRect x) =>
+				{
+					//0xA313A8
+					return x.name == objName;
+				});
+				if(sr != null)
+				{
+					sr.enabled = false;
+					if (sr.verticalScrollbar != null)
+						sr.verticalScrollbar.interactable = false;
+					if (sr.horizontalScrollbar != null)
+						sr.horizontalScrollbar.interactable = false;
+				}
+				ButtonBase bt = m_buttons.Find((ButtonBase x) =>
+				{
+					//0xA31400
+					return x.name == objName;
+				});
+				if(bt != null)
+				{
+					bt.IsInputOff = true;
+				}
+			}
+		}
 
 		// // RVA: 0xA9F5B0 Offset: 0xA9F5B0 VA: 0xA9F5B0
 		protected void ResetButton()

@@ -17,7 +17,7 @@ namespace XeApp.Game.Menu
 		private NKOBMDPHNGP_EventRaidLobby m_evnetLobby; // 0x28
 		private bool m_is_show; // 0x2C
 
-		//public ActionButton tabBtn { get; } 0x965EF8
+		public ActionButton tabBtn { get { return m_tabBtn; } } //0x965EF8
 		public Action onTabClickButton { private get; set; } // 0x30
 
 		//// RVA: 0x965F10 Offset: 0x965F10 VA: 0x965F10

@@ -30,7 +30,7 @@ namespace XeApp.Game.Menu
 		private int m_dayNum; // 0x34
 		private bool m_is_show; // 0x38
 
-		//public ActionButton sceneBtn { get; } 0x96C220
+		public ActionButton sceneBtn { get { return m_sceneBtn; } } //0x96C220
 		//public Button hideBtn { get; } 0x96C228
 		public Action onSceneClickButton { private get; set; } // 0x3C
 		public Action onHideClickButton { private get; set; } // 0x40

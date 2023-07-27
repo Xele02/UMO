@@ -745,7 +745,19 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BBC144 Offset: 0x1BBC144 VA: 0x1BBC144
-		// public PopupButton FindButton(PopupButton.ButtonType type) { }
+		public PopupButton FindButton(PopupButton.ButtonType type)
+		{
+			return Array.Find(m_buttons, (PopupButton button) =>
+			{
+				//0x1BBDBC8
+				if(button.gameObject.activeSelf)
+				{
+					if (button.Type == type)
+						return true;
+				}
+				return false;
+			});
+		}
 
 		// // RVA: 0x1BBC234 Offset: 0x1BBC234 VA: 0x1BBC234
 		public void ForceChangeScrollPosition(float value)

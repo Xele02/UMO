@@ -481,7 +481,20 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB29CE4 Offset: 0xB29CE4 VA: 0xB29CE4
-		// public ButtonBase FindButton(MenuHeaderControl.Button bit) { }
+		public ButtonBase FindButton(Button bit)
+		{
+			if(m_buttons != null)
+			{
+				for(int i = 0; i < m_buttons.Count; i++)
+				{
+					if(((int)bit & (1 << i)) != 0)
+					{
+						return m_buttons[i].GetComponent<ButtonBase>();
+					}
+				}
+			}
+			return null;
+		}
 
 		// // RVA: 0xB29DF4 Offset: 0xB29DF4 VA: 0xB29DF4
 		// public bool IsEnableBack() { }
