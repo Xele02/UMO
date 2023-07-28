@@ -14,7 +14,7 @@ public class KDOMGMCGHDC
 		public int EHBAJPHFDOK_NextLevel; // 0x18
 		public int PBGFIOONCMB_NextLevelMusicExp; // 0x1C
 		public int PMBFNFOCNAJ_CurLevelMusicExp; // 0x20
-		public string ONIAMNAJLKI = JpStringLiterals.StringLiteral_12215; // 0x24
+		public string ONIAMNAJLKI_LockMessage = JpStringLiterals.StringLiteral_12215; // 0x24
 
 		//// RVA: 0xE86F90 Offset: 0xE86F90 VA: 0xE86F90
 		//public void ODDIHGPONFL(KDOMGMCGHDC.HJNMIKNAMFH GPBJHKLFCEP) { }
@@ -36,7 +36,7 @@ public class KDOMGMCGHDC
 
 		res.PBGFIOONCMB_NextLevelMusicExp = dbExp.IECLHMBPEIJ_GetMusicExp(EFFAFONBNFM_PrevMusicLevel + 1);
 		res.PMBFNFOCNAJ_CurLevelMusicExp = dbExp.IECLHMBPEIJ_GetMusicExp(EFFAFONBNFM_PrevMusicLevel);
-		res.ONIAMNAJLKI = "";
+		res.ONIAMNAJLKI_LockMessage = "";
 		HMJHLLPBCLD h = dbMusic.KCBOGEBCMMJ(HMJHLLPBCLD.ABDFBABHIHJ_GetId(DLAEJOBELBH_MusicId, AHHJLDLAPAN_DivaId, res.EHBAJPHFDOK_NextLevel));
 		if(h != null)
 		{
@@ -49,7 +49,7 @@ public class KDOMGMCGHDC
 					res.LHBDCGFOKCA_DivaId = h.LHBDCGFOKCA_DivaId;
 					res.PBGFIOONCMB_NextLevelMusicExp = dbExp.IECLHMBPEIJ_GetMusicExp(EFFAFONBNFM_PrevMusicLevel);
 					res.PMBFNFOCNAJ_CurLevelMusicExp = dbExp.IECLHMBPEIJ_GetMusicExp(EFFAFONBNFM_PrevMusicLevel - 1);
-					res.ONIAMNAJLKI = string.Format(MessageManager.Instance.GetMessage("common", "mlv_unlock_00"), MessageManager.Instance.GetMessage("master", "diva_" + h.LHBDCGFOKCA_DivaId.ToString("D2")), res.KDGIHMCBLND_MusicLevel);
+					res.ONIAMNAJLKI_LockMessage = string.Format(MessageManager.Instance.GetMessage("common", "mlv_unlock_00"), MessageManager.Instance.GetMessage("master", "diva_" + h.LHBDCGFOKCA_DivaId.ToString("D2")), res.KDGIHMCBLND_MusicLevel);
 				}
 			}
 			else if(h.LHBDCGFOKCA_DivaId != 0)
@@ -63,7 +63,7 @@ public class KDOMGMCGHDC
 					res.CEFHDLLAPDH_MusicId = h.CEFHDLLAPDH_MusicId;
 					res.PBGFIOONCMB_NextLevelMusicExp = dbExp.IECLHMBPEIJ_GetMusicExp(EFFAFONBNFM_PrevMusicLevel);
 					res.PMBFNFOCNAJ_CurLevelMusicExp = dbExp.IECLHMBPEIJ_GetMusicExp(EFFAFONBNFM_PrevMusicLevel - 1);
-					res.ONIAMNAJLKI = string.Format(MessageManager.Instance.GetMessage("common", "mlv_unlock_01"), Database.Instance.musicText.Get(dbMusic.IAJLOELFHKC_GetMusicInfo(h.CEFHDLLAPDH_MusicId).KNMGEEFGDNI_Nam).musicName, MessageManager.Instance.GetMessage("master", "diva_" + h.LHBDCGFOKCA_DivaId.ToString("D2")), res.KDGIHMCBLND_MusicLevel);
+					res.ONIAMNAJLKI_LockMessage = string.Format(MessageManager.Instance.GetMessage("common", "mlv_unlock_01"), Database.Instance.musicText.Get(dbMusic.IAJLOELFHKC_GetMusicInfo(h.CEFHDLLAPDH_MusicId).KNMGEEFGDNI_Nam).musicName, MessageManager.Instance.GetMessage("master", "diva_" + h.LHBDCGFOKCA_DivaId.ToString("D2")), res.KDGIHMCBLND_MusicLevel);
 				}
 			}
 		}

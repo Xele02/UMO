@@ -266,8 +266,52 @@ namespace XeApp.Game.Tutorial
 		{
 			if (RuntimeSettings.CurrentSettings.ForceTutoSkip)
 				yield break;
-			TodoLogger.Log(0, "Co_DivaSelectList");
-			yield return null;
+			GameManager.PushBackButtonHandler dymmyBackHandler;
+			//0xE4EE00
+			button.ClearOnStayCallback();
+			MenuScene.Instance.InputDisable();
+			BasicTutorialManager.Initialize();
+			bool isWait = true;
+			BasicTutorialManager.Instance.PreLoadResource(() =>
+			{
+				//0xE4C3C4
+				isWait = false;
+			}, true);
+			while (isWait)
+				yield return null;
+			MenuScene.Instance.InputEnable();
+			dymmyBackHandler = () =>
+			{
+				//0xE4C0B8
+				return;
+			};
+			GameManager.Instance.AddPushBackButtonHandler(dymmyBackHandler);
+			isWait = true;
+			BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.Delegate, () =>
+			{
+				//0xE4C3D0
+				isWait = false;
+			}, () =>
+			{
+				//0xE4C3DC
+				return button;
+			}, TutorialPointer.Direction.Normal);
+			while (isWait)
+				yield return null;
+			if (waitFunc != null)
+			{
+				while (!waitFunc())
+					yield return null;
+			}
+			isWait = true;
+			BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.PopupPositiveButton, () =>
+			{
+				//0xE4C3E4
+				isWait = false;
+			}, null, TutorialPointer.Direction.Down);
+			while (isWait)
+				yield return null;
+			GameManager.Instance.RemovePushBackButtonHandler(dymmyBackHandler);
 		}
 
 		//// RVA: 0xE4B4F8 Offset: 0xE4B4F8 VA: 0xE4B4F8

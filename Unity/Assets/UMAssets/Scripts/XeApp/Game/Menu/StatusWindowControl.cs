@@ -148,8 +148,7 @@ namespace XeApp.Game.Menu
 				{
 					GrowthConfArgs arg = new GrowthConfArgs();
 					arg.DivaId = diva.AHHJLDLAPAN_DivaId;
-					TodoLogger.LogNotImplemented("ShowDivaStatusPopupWindow");
-					//MenuScene.Instance.Call(TransitionList.Type.DIVA_GROWTH_CONF, arg, true);
+					MenuScene.Instance.Call(TransitionList.Type.DIVA_GROWTH_CONF, arg, true);
 				}
 				else
 				{

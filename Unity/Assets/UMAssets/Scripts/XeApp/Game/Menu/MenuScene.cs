@@ -1626,7 +1626,35 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB3703C Offset: 0xB3703C VA: 0xB3703C
 		private void OnShowHelpPopup(int id, int eventHelpId)
 		{
-			TodoLogger.Log(0, "OnShowHelpPopup");
+			InputDisable();
+			GameManager.Instance.CloseSnsNotice();
+			if(eventHelpId == 0)
+			{
+				m_helpPopupWindowControl.Show(this, id, () =>
+				{
+					//0xB37E38
+					InputEnable();
+				});
+				return;
+			}
+			else
+			{
+				VeiwOptionHelpCategoryData data = new VeiwOptionHelpCategoryData();
+				data.Init(eventHelpId);
+				if(data.helps.Count > 0)
+				{
+					if(data.helps[0] != null)
+					{
+						this.StartCoroutineWatched(TutorialManager.ShowTutorial(data.helps[0].helpId, () =>
+						{
+							//0xB37E34
+							InputEnable();
+						}));
+						return;
+					}
+				}
+			}
+			InputEnable();
 		}
 
 		// // RVA: 0xB372CC Offset: 0xB372CC VA: 0xB372CC
@@ -1653,15 +1681,7 @@ namespace XeApp.Game.Menu
 		// [CompilerGeneratedAttribute] // RVA: 0x6C831C Offset: 0x6C831C VA: 0x6C831C
 		// // RVA: 0xB37CCC Offset: 0xB37CCC VA: 0xB37CCC
 		// private IEnumerator <GotoRhythmGame>b__148_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6C834C Offset: 0x6C834C VA: 0x6C834C
-		// // RVA: 0xB37E34 Offset: 0xB37E34 VA: 0xB37E34
-		// private void <OnShowHelpPopup>b__232_1() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6C835C Offset: 0x6C835C VA: 0x6C835C
-		// // RVA: 0xB37E38 Offset: 0xB37E38 VA: 0xB37E38
-		// private void <OnShowHelpPopup>b__232_0() { }
-
+		
 		// [CompilerGeneratedAttribute] // RVA: 0x6C836C Offset: 0x6C836C VA: 0x6C836C
 		// // RVA: 0xB37E3C Offset: 0xB37E3C VA: 0xB37E3C
 		// private void <OnBackButton>b__233_0() { }

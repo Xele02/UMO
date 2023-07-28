@@ -106,8 +106,17 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE464B0 Offset: 0xE464B0 VA: 0xE464B0
 		public static IEnumerator ShowTutorial(int id, UnityAction endAction)
 		{
-			TodoLogger.Log(0, "ShowTutorial");
-			yield return null;
+			//0xE474F4
+			PJANOOPJIDE_TutorialPict.HNHHGJCPMEA h = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict.LBDOLHGDIEB(id);
+			GameManager.Instance.AddPushBackButtonHandler(OnDummyBackButton);
+			if(h != null && h.PPEGAKEIEGM_Enabled == 2)
+			{
+				Initialize();
+				yield return Co.R(Instance.ShowTutorialCoroutine(h));
+			}
+			if (endAction != null)
+				endAction();
+			GameManager.Instance.RemovePushBackButtonHandler(OnDummyBackButton);
 		}
 
 		// // RVA: 0xE46578 Offset: 0xE46578 VA: 0xE46578

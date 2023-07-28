@@ -72,7 +72,7 @@ namespace XeApp.Game.Menu
 				else
 				{
 					SwitchBarStatus(eGaugeStatus.Lock);
-					SetUnlockText(a.ONIAMNAJLKI);
+					SetUnlockText(a.ONIAMNAJLKI_LockMessage);
 				}
 				SetDivaIcon(divaData.AHHJLDLAPAN_DivaId, divaData.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, divaData.EKFONBFDAAP_ColorId);
 			}

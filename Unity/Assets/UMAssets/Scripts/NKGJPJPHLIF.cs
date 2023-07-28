@@ -715,7 +715,13 @@ public class NKGJPJPHLIF
 	}
 
 	// // RVA: 0xC191CC Offset: 0xC191CC VA: 0xC191CC
-	// public void NBLAOIPJFGL(string HJLDBEJOMIO) { }
+	public void NBLAOIPJFGL_OpenURL(string HJLDBEJOMIO)
+	{
+		int id = MDAMJIGBOLD_PlayerId;
+		if (id == 0)
+			id = UMO_PlayerPrefs.GetInt("cpid", 0);
+		Application.OpenURL(HJLDBEJOMIO.Replace("saka_player_id", id.ToString()));
+	}
 
 	// // RVA: 0xC1929C Offset: 0xC1929C VA: 0xC1929C
 	// public void NBLAOIPJFGL(string HJLDBEJOMIO, IMCBBOAFION HIDFAIBOHCC) { }
