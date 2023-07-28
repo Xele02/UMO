@@ -1017,7 +1017,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBE87B4 Offset: 0xBE87B4 VA: 0xBE87B4
 		public void SelectAprilFoolFocus()
 		{
-			TodoLogger.Log(0, "SelectAprilFoolFocus!!!");
+			m_pickupFreeMusicId = 0;
+			m_pickupFreeCategoryId = 0;
+			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
+			if(ev != null)
+			{
+				TodoLogger.Log(0, "Event");
+			}
 		}
 
 		// // RVA: 0xBE8AE8 Offset: 0xBE8AE8 VA: 0xBE8AE8
@@ -1065,7 +1071,7 @@ namespace XeApp.Game.Menu
 			int select_index = 0;
 			if(args == null || !args.hasSelection)
 			{
-				if(gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB)
+				if(gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool)
 				{
 					select_index = GetMinigameListNo(songId);
 				}
@@ -1605,7 +1611,7 @@ namespace XeApp.Game.Menu
 		{
 			if(!listIsEmpty)
 			{
-				if(gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB)
+				if(gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool)
 				{
 					list_no = GetMinigameListNo(freeMusicId);
 				}

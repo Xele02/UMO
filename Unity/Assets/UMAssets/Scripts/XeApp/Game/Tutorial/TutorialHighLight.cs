@@ -18,7 +18,7 @@ namespace XeApp.Game.Tutorial
 					_rawImage = GetComponent<RawImage>();
 				return _rawImage;
 			} } //0xE44894
-		//public Rect HighLightRect { get; set; } 0xE44948 0xE416B0
+		public Rect HighLightRect { get { return _highLightRect; } set { if (_highLightRect != value) _highLightRect = value; } } //0xE44948 0xE416B0
 
 		//// RVA: 0xE44958 Offset: 0xE44958 VA: 0xE44958
 		private void UpdateVertex()
@@ -35,7 +35,7 @@ namespace XeApp.Game.Tutorial
 			Vector4 v4 = new Vector4(v5.x, v5.y, canvasPivot_.x, v5.w);
 			Vector2 v9 = new Vector2(v4.x * v4.z, canvasSize_.y * canvasPivot_.y);
 			Vector3 v12 = new Vector3(v4.y, v4.z, v4.w);
-			Vector2 topLeft = new Vector2(_highLightRect.x, _highLightRect.yMax);
+			Vector2 topLeft = new Vector2(_highLightRect.x, _highLightRect.y);
 			Vector2 bottomRight = new Vector2(_highLightRect.xMax, v4.x - _highLightRect.height);
 			Vector4 v3 = new Vector4(canvasSize_.x, v12.x, v12.y, v12.z);
 			Vector4 v2 = new Vector4(v3.x, v3.y, canvasPivot_.x, v3.w);
@@ -44,12 +44,12 @@ namespace XeApp.Game.Tutorial
 			Rect r2 = new Rect(-v1.x, -v1.y, canvasSize_.x, canvasSize_.y);
 			if (v1.x < r2.x)
 				topLeft.x = r2.x;
-			if (r2.y <= v1.x)
-				topLeft.y = r2.y;
+			if (r2.yMax <= v1.x)
+				topLeft.y = r2.yMax;
 			if (r2.xMax <= v1.x)
 				bottomRight.x = r2.xMax;
-			if (v1.x < r2.yMax)
-				bottomRight.y = r2.yMax;
+			if (v1.x < r2.y)
+				bottomRight.y = r2.y;
 			_vertex.Clear();
 			_vertex.Add(new UIVertex() { position = v8 });
 			_vertex.Add(new UIVertex() { position = new Vector3(v9.x, v8.y, 0) });

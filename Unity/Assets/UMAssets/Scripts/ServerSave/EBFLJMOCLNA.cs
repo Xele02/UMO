@@ -222,7 +222,13 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x14F6C2C Offset: 0x14F6C2C VA: 0x14F6C2C
-	// public void ILMPHFPFLJE(int OIPCCBHIKIA, bool OAFPGJLCNFM) { }
+	public void ILMPHFPFLJE_SetTutoStatus(int OIPCCBHIKIA, bool OAFPGJLCNFM)
+	{
+		if (OAFPGJLCNFM)
+			JLFONLABECA_ShowTuto |= (1 << (OIPCCBHIKIA & 0x1f));
+		else
+			JLFONLABECA_ShowTuto &= ~(1 << (OIPCCBHIKIA & 0x1f));
+	}
 
 	// // RVA: 0x14F6C54 Offset: 0x14F6C54 VA: 0x14F6C54
 	private void JEDBIGLCMBC_ForEachUnlockedCostume(LCLCCHLDNHJ_Costume MFPNGNMFEAL_DbCos, DEKKMGAFJCG_Diva DGCJCAHIAPP_SaveDiva, bool NHMPDLNPBJD, Action<ILFJDCICIKN> KBCBGIGOLHP)

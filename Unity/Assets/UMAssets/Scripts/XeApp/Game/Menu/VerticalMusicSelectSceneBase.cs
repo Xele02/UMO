@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using XeApp.Game.Common;
 using XeApp.Game.MusicSelect;
+using XeApp.Game.Tutorial;
 using XeSys;
 using XeSys.uGUI;
 
@@ -1421,11 +1422,19 @@ namespace XeApp.Game.Menu
 		{
 			if (RuntimeSettings.CurrentSettings.ForceTutoSkip)
 				yield break;
-			TodoLogger.Log(0, "TryShow6LineModeTutorial");
+			//0xAD88EC
+			MenuScene.Instance.InputDisable();
+			MenuScene.Instance.RaycastDisable();
+			yield return Co.R(TutorialManager.TryShowTutorialCoroutine(CheckTutorialFunc_6Line));
+			MenuScene.Instance.InputEnable();
+			MenuScene.Instance.RaycastEnable();
 		}
 
 		// // RVA: 0xAD2B4C Offset: 0xAD2B4C VA: 0xAD2B4C
-		// protected bool CheckTutorialFunc_6Line(TutorialConditionId conditionId) { }
+		protected bool CheckTutorialFunc_6Line(TutorialConditionId conditionId)
+		{
+			return !GameManager.Instance.IsTutorial && conditionId == TutorialConditionId.Condition69 && IBJAKJJICBC.KGJJCAKCMLO();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F6E3C Offset: 0x6F6E3C VA: 0x6F6E3C
 		// // RVA: 0xAC3A1C Offset: 0xAC3A1C VA: 0xAC3A1C
@@ -1433,10 +1442,18 @@ namespace XeApp.Game.Menu
 		{
 			if (RuntimeSettings.CurrentSettings.ForceTutoSkip)
 				yield break;
-			TodoLogger.Log(0, "TryShowUtaRateTutorial");
+			//0xAD8E2C
+			MenuScene.Instance.InputDisable();
+			MenuScene.Instance.RaycastDisable();
+			yield return Co.R(TutorialManager.TryShowTutorialCoroutine(CheckTutorialFunc_UtaRate));
+			MenuScene.Instance.InputEnable();
+			MenuScene.Instance.RaycastEnable();
 		}
 
 		// // RVA: 0xAD2C28 Offset: 0xAD2C28 VA: 0xAD2C28
-		// protected bool CheckTutorialFunc_UtaRate(TutorialConditionId conditionId) { }
+		protected bool CheckTutorialFunc_UtaRate(TutorialConditionId conditionId)
+		{
+			return !GameManager.Instance.IsTutorial && !QuestUtility.IsBeginnerQuest() && conditionId == TutorialConditionId.Condition85;
+		}
 	}
 }

@@ -259,39 +259,39 @@ public static class CMMKCEPBIHI
 			{
 				for(int i = 0; i < PCEGKKLKFNO_FriendData.JIGONEMPPNP_Diva.DJICAKGOGFO_SubSceneIds.Count + 1; i++)
 				{
-					if(i == 0)
+					bool isAttrValid = false;
+					StatusData st = null;
+					StatusData st2 = null;
+					if (i == 0)
 					{
-						bool isAttrValid = false;
-						StatusData st = null;
-						StatusData st2 = null;
 						if (PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene() != null)
 						{
 							st2 = PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene().CMCKNKKCNDK_Status;
 							isAttrValid = KKHIDFKKFJE_MusicData.FKDCCLPGKDK_JacketAttr == 4 || KKHIDFKKFJE_MusicData.FKDCCLPGKDK_JacketAttr == PCEGKKLKFNO_FriendData.KHGKPKDBMOH_GetAssistScene().JGJFIJOCPAG_SceneAttr;
 							st = HBODCMLFDOB.BJABFKMIJHB_StatusMainScene;
 						}
-						else
+					}
+					else
+					{
+						GCIJNCFDNON_SceneInfo sceneInfo = PCEGKKLKFNO_FriendData.HDJOHAJPGBA_SubScene[i - 1];
+						if (sceneInfo != null)
 						{
-							GCIJNCFDNON_SceneInfo sceneInfo = PCEGKKLKFNO_FriendData.HDJOHAJPGBA_SubScene[i - 1];
-							if(sceneInfo != null)
-							{
-								st2 = sceneInfo.CMCKNKKCNDK_Status;
-								isAttrValid = KKHIDFKKFJE_MusicData.FKDCCLPGKDK_JacketAttr == 4 || KKHIDFKKFJE_MusicData.FKDCCLPGKDK_JacketAttr == sceneInfo.JGJFIJOCPAG_SceneAttr;
-								st = HBODCMLFDOB.OBCPFDNKLMM_StatusSubScenes[i - 1];
-							}
+							st2 = sceneInfo.CMCKNKKCNDK_Status;
+							isAttrValid = KKHIDFKKFJE_MusicData.FKDCCLPGKDK_JacketAttr == 4 || KKHIDFKKFJE_MusicData.FKDCCLPGKDK_JacketAttr == sceneInfo.JGJFIJOCPAG_SceneAttr;
+							st = HBODCMLFDOB.OBCPFDNKLMM_StatusSubScenes[i - 1];
 						}
-						if(isAttrValid &&  st != null)
+					}
+					if(isAttrValid &&  st != null)
+					{
+						st.soul += st2.soul * 30;
+						st.vocal += st2.vocal * 30;
+						st.charm += st2.charm * 30;
+						HBODCMLFDOB.MCBLDOECHEK_MatchMusicAttrStatus[i].MKMIEGPOKGG_Vocal = (st2.soul * 30) / 100;
+						HBODCMLFDOB.MCBLDOECHEK_MatchMusicAttrStatus[i].EACDINDLGLF_Charm = (st2.vocal * 30) / 100;
+						HBODCMLFDOB.MCBLDOECHEK_MatchMusicAttrStatus[i].LDLHPACIIAB_Soul = (st2.charm * 30) / 100;
+						if(i == 0)
 						{
-							st.soul += st2.soul * 30;
-							st.vocal += st2.vocal * 30;
-							st.charm += st2.charm * 30;
-							HBODCMLFDOB.MCBLDOECHEK_MatchMusicAttrStatus[i].MKMIEGPOKGG_Vocal = (st2.soul * 30) / 100;
-							HBODCMLFDOB.MCBLDOECHEK_MatchMusicAttrStatus[i].EACDINDLGLF_Charm = (st2.vocal * 30) / 100;
-							HBODCMLFDOB.MCBLDOECHEK_MatchMusicAttrStatus[i].LDLHPACIIAB_Soul = (st2.charm * 30) / 100;
-							if(i == 0)
-							{
-								HBODCMLFDOB.LGGLFAECCBK_BonusTypeFlag |= MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm/*7*/;
-							}
+							HBODCMLFDOB.LGGLFAECCBK_BonusTypeFlag |= MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm/*7*/;
 						}
 					}
 				}

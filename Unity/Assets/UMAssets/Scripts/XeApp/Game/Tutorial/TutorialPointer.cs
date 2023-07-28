@@ -16,7 +16,13 @@ namespace XeApp.Game.Tutorial
 		private AbsoluteLayout m_rootLayer; // 0x18
 		private RectTransform m_rectTransform; // 0x1C
 
-		//public RectTransform RectTransform { get; } 0xE41178
+		public RectTransform RectTransform { get
+			{
+				if (m_rectTransform == null)
+					m_rectTransform = GetComponent<RectTransform>();
+				return m_rectTransform;
+			}
+		} //0xE41178
 
 		// RVA: 0xE499C4 Offset: 0xE499C4 VA: 0xE499C4 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
@@ -28,7 +34,13 @@ namespace XeApp.Game.Tutorial
 		}
 
 		//// RVA: 0xE41540 Offset: 0xE41540 VA: 0xE41540
-		//public void Show(Vector3 localPosition, TutorialPointer.Direction dir) { }
+		public void Show(Vector3 localPosition, Direction dir)
+		{
+			gameObject.transform.localPosition = localPosition;
+			m_cursorLayer.StartChildrenAnimGoStop(((int)dir).ToString("00"));
+			m_rootLayer.StartChildrenAnimLoop("logo_");
+			gameObject.SetActive(true);
+		}
 
 		//// RVA: 0xE4122C Offset: 0xE4122C VA: 0xE4122C
 		//public void ShowAnchorPosition(Vector3 localPosition, TutorialPointer.Direction dir) { }

@@ -203,6 +203,10 @@ namespace ExternLib
 							costumeBlock.FABAGMLEKIB_List[i].ANAJIAENLNB_Level = costumeDb.CDENCMNHNGA_Costumes[i].LLLCMHENKKN_LevelMax;
 						}
 					}
+					for (int i = 0; i < 30; i++)
+					{
+						costumeBlock.ILMPHFPFLJE_SetTutoStatus(i, true);
+					}
 				}
 				{
 					OIGEIIGKMNH_Valkyrie valkBlock = newData.LBDOLHGDIEB_GetBlock("valkyrie") as OIGEIIGKMNH_Valkyrie;
@@ -248,6 +252,10 @@ namespace ExternLib
 				{
 					saveQuests.GPMKFMFEKLN_NormalQuests[i].EALOBDHOCHP_Stat = 3;
 					saveQuests.GPMKFMFEKLN_NormalQuests[i].CADENLBDAEB_New = false;
+				}
+				{
+					OCMJNBIFJNM_Offer offerBlock = newData.LBDOLHGDIEB_GetBlock("offer") as OCMJNBIFJNM_Offer;
+					offerBlock.JLFONLABECA_ShowTuto = -1; // set all tuto read
 				}
 			}
 			//

@@ -146,7 +146,10 @@ namespace XeApp.Game.Menu
 		// public void LoadStandingCostumeIcon(int id, int modelId, Action<IiconTexture> callBack) { }
 
 		// // RVA: 0x17E3D10 Offset: 0x17E3D10 VA: 0x17E3D10
-		// public void LoadTutorialIcon(int charId, Action<IiconTexture> callBack) { }
+		public void LoadTutorialIcon(int charId, Action<IiconTexture> callBack)
+		{
+			Load(MakeTutorialIconPath(charId), callBack);
+		}
 
 		// // RVA: 0x17E3E38 Offset: 0x17E3E38 VA: 0x17E3E38
 		public void LoadDivaUpIco(int id, int modelId, int colorId, Action<IiconTexture> callBack)

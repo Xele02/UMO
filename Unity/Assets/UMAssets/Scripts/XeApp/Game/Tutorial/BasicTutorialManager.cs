@@ -188,8 +188,23 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE3E078 Offset: 0xE3E078 VA: 0xE3E078
 		private IEnumerator ProcMessage(ILLPGHGGKLL_TutorialMiniAdv.AFBMNDPOALE messData, Action endCallBack, AdvMessageBase.TagConvertFunc func)
 		{
-			TodoLogger.Log(0, "ProcMessage");
+			TutorialMessageWindow.Position position; // 0x20
+			int i; // 0x24
+
+			//0xE440BC
+			position = messData.NDFOAINJPIN_WindowPositionTop != 1 ? TutorialMessageWindow.Position.Bottom : TutorialMessageWindow.Position.Top;
+			m_messageWindow.gameObject.SetActive(true);
+			m_messageWindow.ResetWindow();
+			for(i = 0; i < messData.JONNCMDGMKA.Length; i++)
+			{
+				yield return Co.R(m_messageWindow.ProcMessageCoroutine(messData.KGJHFFNFPOK_CharacterId[i], position, messData.JONNCMDGMKA[i], func));
+			}
+			m_messageWindow.gameObject.SetActive(false);
+			if (MenuScene.Instance != null)
+				MenuScene.Instance.RaycastDisable();
 			yield return null;
+			if (MenuScene.Instance != null)
+				MenuScene.Instance.RaycastEnable();
 			if (endCallBack != null)
 				endCallBack();
 		}
@@ -402,25 +417,47 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE3FA90 Offset: 0xE3FA90 VA: 0xE3FA90
 		private void SetCursorPosition(RectTransform target, TutorialPointer.Direction dir)
 		{
-			/*if(m_cursorInstance != null)
+			if(m_cursorInstance != null)
 			{
 				if(target != null)
 				{
-					Canvas c = m_cursorInstance.GetComponentInParent<Canvas>();
-					//target.GetComponentInParent<Canvas>();
+					Canvas c1 = m_cursorInstance.GetComponentInParent<Canvas>();
+					Canvas c2 = target.GetComponentInParent<Canvas>();
 					RectTransform rt = m_pointer.RectTransform;
 					rt.anchorMax = new Vector2(0.5f, 0.5f);
 					rt.anchorMin = new Vector2(0.5f, 0.5f);
-					m_pointer.Show();
+					Vector2 v1 = new Vector2();
+					RectTransformUtility.ScreenPointToLocalPointInRectangle(c1.transform as RectTransform, RectTransformUtility.WorldToScreenPoint(c2.rootCanvas.worldCamera, target.position), c1.worldCamera, out v1);
+					v1.x -= target.sizeDelta.x * target.pivot.x;
+					v1.y -= target.sizeDelta.y * target.pivot.y;
+					v1.x += target.sizeDelta.x * 0.5f;
+					m_pointer.Show(new Vector2(v1.x, v1.y + target.sizeDelta.y * 0.5f), dir);
 				}
-			}*/
-			TodoLogger.Log(0, "SetCursorPosition");
+			}
 		}
 
 		// // RVA: 0xE40498 Offset: 0xE40498 VA: 0xE40498
 		private void SetRect(LayoutUGUIHitOnly hitOnly, Vector2 offset, Vector2 scale)
 		{
-			TodoLogger.Log(0, "SetRect");
+			Vector2 v1 = offset;
+			if(m_blackImageInstance != null)
+			{
+				Canvas c1 = hitOnly.GetComponentInParent<Canvas>();
+				Canvas c2 = m_blackImageInstance.GetComponentInParent<Canvas>();
+				RectTransform t1 = hitOnly.transform as RectTransform;
+				Vector2 v = RectTransformUtility.WorldToScreenPoint(c1.rootCanvas.worldCamera, hitOnly.transform.position);
+				Vector2 v2;
+				RectTransformUtility.ScreenPointToLocalPointInRectangle(c2.transform as RectTransform, v, c2.worldCamera, out v2);
+				float f = 1;
+				if(SystemManager.isLongScreenDevice)
+				{
+					f = SystemManager.rawAppScreenRect.height / SystemManager.rawScreenAreaRect.height;
+				}
+				v1 = new Vector2(t1.sizeDelta.x * v1.x, t1.sizeDelta.y * v1.y);
+				Vector2 v3 = v2 + v1;
+				Vector2 v4 = new Vector2(f * t1.sizeDelta.x * scale.x, f * t1.sizeDelta.y * scale.y);
+				m_highLight.HighLightRect = new Rect(v3.x, v3.y, v4.x, v4.y);
+			}
 		}
 
 		// // RVA: 0xE3FF5C Offset: 0xE3FF5C VA: 0xE3FF5C

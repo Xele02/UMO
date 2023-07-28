@@ -13,7 +13,7 @@ public class OHCAABOMEOF
         ENPJADLIFAB = 7,
         OCCGDMDBCHK_EventGacha = 8,
         DMPMKBCPHMA = 9,
-        DAMDPLEBNCB = 10,
+        DAMDPLEBNCB_AprilFool = 10,
         CADKONMJEDA_EventRaid = 11,
         DIDJLIPNCKO = 12,
         MCGPGMGEPHG_EventRaidLobby = 13,

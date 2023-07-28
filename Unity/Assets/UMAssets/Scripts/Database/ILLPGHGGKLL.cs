@@ -8,7 +8,7 @@ public class ILLPGHGGKLL_TutorialMiniAdv : DIHHCBACKGG_DbSection
 	public class AFBMNDPOALE
 	{
 		public int PPFNGGCBJKC_Id; // 0x8
-		public int NDFOAINJPIN; // 0xC
+		public int NDFOAINJPIN_WindowPositionTop; // 0xC
 		public string[] JONNCMDGMKA; // 0x10
 		public int[] KGJHFFNFPOK_CharacterId; // 0x14
 		public int[] CJPMCKIOCGI; // 0x18
@@ -65,7 +65,7 @@ public class ILLPGHGGKLL_TutorialMiniAdv : DIHHCBACKGG_DbSection
 			data.PPFNGGCBJKC_Id = array[i].PPFNGGCBJKC;
 			data.JONNCMDGMKA = array[i].IPBHCLIHAPG;
 			data.CJPMCKIOCGI = array[i].OGDLCNPFODO;
-			data.NDFOAINJPIN = array[i].NDFOAINJPIN;
+			data.NDFOAINJPIN_WindowPositionTop = array[i].NDFOAINJPIN;
 			data.KGJHFFNFPOK_CharacterId = array[i].ECEOBKOFJHK;
 			CDENCMNHNGA.Add(data);
 		}

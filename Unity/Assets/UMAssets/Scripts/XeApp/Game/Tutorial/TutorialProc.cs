@@ -39,7 +39,24 @@ namespace XeApp.Game.Tutorial
 		{
 			if (RuntimeSettings.CurrentSettings.ForceTutoSkip)
 				return false;
-			TodoLogger.Log(0, "Tutorial CanAutoSettingHelp");
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsAutoSetting))
+			{
+				if(QuestUtility.m_beginnerViewList.Count != 0)
+				{
+					if(!GameManager.Instance.IsTutorial)
+					{
+						FKMOKDCJFEN f = QuestUtility.m_beginnerViewList.Find((FKMOKDCJFEN x) =>
+						{
+							//0xE4BFFC
+							return x.CMEJFJFOIIJ_QuestId == 1;
+						});
+						if(f != null)
+						{
+							return f.CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ;
+						}
+					}
+				}
+			}
 			return false;
 		}
 
@@ -55,8 +72,9 @@ namespace XeApp.Game.Tutorial
 		{
 			if (RuntimeSettings.CurrentSettings.ForceTutoSkip)
 				return false;
-			TodoLogger.Log(0, "Tutorial CanUnit5Help");
-			return false;
+			if (musicInfo == null || CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsUnit5Help) || musicInfo.onStageDivaNum < 4)
+				return false;
+			return !GameManager.Instance.IsTutorial;
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AEE20 Offset: 0x6AEE20 VA: 0x6AEE20
@@ -264,7 +282,27 @@ namespace XeApp.Game.Tutorial
 		{
 			if (RuntimeSettings.CurrentSettings.ForceTutoSkip)
 				return false;
-			TodoLogger.Log(0, "Tutorial CanBeginnerAssistSelect");
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsSelectAssist))
+			{
+				if (!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsAutoSetting))
+				{
+					return true;
+				}
+				if(QuestUtility.m_beginnerViewList.Count != 0)
+				{
+					FKMOKDCJFEN f = QuestUtility.m_beginnerViewList.Find((FKMOKDCJFEN x) =>
+					{
+						//0xE4C0C0
+						return x.CMEJFJFOIIJ_QuestId == 1;
+					});
+					if (f != null)
+					{
+						if(f.CMCKNKKCNDK_Status != FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ)
+							return false;
+						return true;
+					}
+				}
+			}
 			return false;
 		}
 
