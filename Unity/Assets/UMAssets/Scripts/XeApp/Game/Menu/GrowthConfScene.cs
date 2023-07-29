@@ -1,5 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using mcrs;
+using UnityEngine;
+using XeApp.Core;
+using XeApp.Game.Common;
 using XeSys;
 using XeSys.Gfx;
 
@@ -54,8 +58,53 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xE22C70 Offset: 0xE22C70 VA: 0xE22C70
 		private IEnumerator LoadLayoutCoroutine()
 		{
-			TodoLogger.Log(0, "LoadLayoutCoroutine");
+			AssetBundleLoadLayoutOperationBase lytOpt;
+
+			//0xE24488
+			lytOpt = AssetBundleManager.LoadLayoutAsync("ly/017.xab", "root_chk_diva_tab_window01_layout_root");
+			yield return lytOpt;
+			yield return Co.R(lytOpt.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+			{
+				//0xE24108
+				instance.transform.SetParent(transform, false);
+				m_layoutRuntime = instance.GetComponent<LayoutUGUIRuntime>();
+				m_windowAnimeLayout = m_layoutRuntime.Layout.FindViewByExId("sw_chk_diva_window01_all_sw_chk_diva_win_anim") as AbsoluteLayout;
+				m_tabWindow = instance.GetComponent<DivaGrowthTabListWindow>();
+				m_statusWindow = instance.GetComponent<DivaGrowthStatusWindow>();
+
+			}));
+			LayoutUGUIRuntime listItemInstance = null;
+			lytOpt = AssetBundleManager.LoadLayoutAsync("ly/017.xab", "root_sw_chk_diva_all01_layout_root");
+			yield return lytOpt;
+			yield return Co.R(lytOpt.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+			{
+				//0xE2433C
+				listItemInstance = instance.GetComponent<LayoutUGUIRuntime>();
+			}));
+			for(int i = 0; i < 4; i++)
+			{
+				LayoutUGUIRuntime r = Instantiate(listItemInstance);
+				r.UvMan = listItemInstance.UvMan;
+				r.Layout = listItemInstance.Layout.DeepClone();
+				r.IsLayoutAutoLoad = false;
+				r.LoadLayout();
+				m_tabWindow.AddScrollItem(r.GetComponent<DivaGrowthListItem>());
+			}
+			m_tabWindow.AddScrollItem(listItemInstance.GetComponent<DivaGrowthListItem>());
 			yield return null;
+			m_tabWindow.ScrollUpdateEvent(OnUpdateList);
+			m_tabWindow.ResetScrollItem();
+			m_tabWindow.OnPushTabActionEvent.AddListener((int index) =>
+			{
+				//0xE243B8
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+				m_seriesType = m_seriesTbl[index];
+				ChangeList();
+			});
+			m_statusWindow.OnClickDetailButtonListener = OnClickDetailButton;
+			m_dataMessageBank = MessageManager.Instance.GetBank("master");
+			m_menuMessageBank = MessageManager.Instance.GetBank("menu");
+			IsReady = true;
 		}
 
 		// RVA: 0xE22D1C Offset: 0xE22D1C VA: 0xE22D1C Slot: 16
@@ -149,7 +198,34 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xE23AE0 Offset: 0xE23AE0 VA: 0xE23AE0
-		//private void OnUpdateList(int index, SwapScrollListContent content) { }
+		private void OnUpdateList(int index, SwapScrollListContent content)
+		{
+			if(index > -1 && index < m_growsList[(int)m_seriesType].Count)
+			{
+				DivaGrowthListItem c = content as DivaGrowthListItem;
+				string str = "";
+				DivaGrowthListItem.GaugeState state = DivaGrowthListItem.GaugeState.Open;
+				if(!m_growsList[(int)m_seriesType][index].isLock)
+				{
+					if(m_growsList[(int)m_seriesType][index].isComplete)
+						state = DivaGrowthListItem.GaugeState.Max;
+				}
+				else
+				{
+					state = DivaGrowthListItem.GaugeState.Lock;
+					str = m_growsList[(int)m_seriesType][index].lockMessage;
+				}
+                MusicTextDatabase.TextInfo musicText = Database.Instance.musicText.Get(m_growsList[(int)m_seriesType][index].musicNameId);
+                c.SetMusicTitle(musicText.musicName);
+				c.SetUnlockTerms(str);
+				c.SetLevel(m_growsList[(int)m_seriesType][index].leve);
+				c.SetExpNumerator(m_growsList[(int)m_seriesType][index].exp);
+				c.SetExpDenominator(m_growsList[(int)m_seriesType][index].maxexp);
+				c.SetGaugeState(state);
+				c.SetGaugeValue(m_growsList[(int)m_seriesType][index].meta);
+				c.SetComplete(m_growsList[(int)m_seriesType][index].isComplete);
+			}
+		}
 
 		//// RVA: 0xE234FC Offset: 0xE234FC VA: 0xE234FC
 		private bool IsAnyDivaMusicExp(DFKGGBMFFGB_PlayerInfo viewPlayerData, int musicId)
@@ -167,6 +243,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xE23F40 Offset: 0xE23F40 VA: 0xE23F40
-		//private void OnClickDetailButton() { }
+		private void OnClickDetailButton()
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MenuScene.Instance.ShowGoDivaStatusDetail(m_divaData, null);
+		}
 	}
 }

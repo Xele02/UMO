@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Text;
 using XeSys;
+using UnityEngine.Events;
 
 namespace XeApp.Game.Menu
 {
@@ -22,7 +23,7 @@ namespace XeApp.Game.Menu
 		private StringBuilder m_strBuilder = new StringBuilder(64); // 0x28
 		private AbsoluteLayout[] m_tabButtonAnimeLayout; // 0x2C
 
-		//public OnDivaGrowthPushTabActionEvent OnPushTabActionEvent { get; } 0x17E07D0
+		public OnDivaGrowthPushTabActionEvent OnPushTabActionEvent { get { return m_onPushTabActionEvent; } } //0x17E07D0
 
 		// RVA: 0x17E07D8 Offset: 0x17E07D8 VA: 0x17E07D8 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
@@ -70,18 +71,32 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17E0E80 Offset: 0x17E0E80 VA: 0x17E0E80
-		//public void ScrollUpdateEvent(UnityAction<int, SwapScrollListContent> updateEvent) { }
+		public void ScrollUpdateEvent(UnityAction<int, SwapScrollListContent> updateEvent)
+		{
+			m_scrollList.OnUpdateItem.RemoveAllListeners();
+			m_scrollList.OnUpdateItem.AddListener(updateEvent);
+		}
 
 		//// RVA: 0x17E0F60 Offset: 0x17E0F60 VA: 0x17E0F60
-		//public void AddScrollItem(DivaGrowthListItem item) { }
+		public void AddScrollItem(DivaGrowthListItem item)
+		{
+			m_scrollList.AddScrollObject(item);
+		}
 
 		//// RVA: 0x17E0F94 Offset: 0x17E0F94 VA: 0x17E0F94
-		//public void ResetScrollItem() { }
+		public void ResetScrollItem()
+		{
+			m_scrollList.Apply();
+			m_scrollList.SetContentEscapeMode(true);
+		}
 
 		//// RVA: 0x17E0FE8 Offset: 0x17E0FE8 VA: 0x17E0FE8
 		public void SetItemCount(int count)
 		{
-			TodoLogger.Log(0, "SetItemCount");
+			m_scrollList.SetItemCount(count);
+			m_scrollList.SetPosition(0, 0, 0, false);
+			m_scrollList.VisibleRegionUpdate();
+			m_noClearText.enabled = count == 0;
 		}
 
 		//// RVA: 0x17E10A8 Offset: 0x17E10A8 VA: 0x17E10A8

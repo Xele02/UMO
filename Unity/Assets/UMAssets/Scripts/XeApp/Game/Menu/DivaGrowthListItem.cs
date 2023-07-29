@@ -3,14 +3,18 @@ using UnityEngine.UI;
 using UnityEngine;
 using XeSys.Gfx;
 using System.Text;
+using mcrs;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
 	public class DivaGrowthListItem : SwapScrollListContent
 	{
-		private void Awake()
+		public enum GaugeState
 		{
-			TodoLogger.Log(0, "Implement monobehaviour");
+			Open = 0,
+			Max = 1,
+			Lock = 2,
 		}
 
 		[SerializeField]
@@ -34,31 +38,70 @@ namespace XeApp.Game.Menu
 		private static StringBuilder m_strBuilder = new StringBuilder(64); // 0x0
 
 		//// RVA: 0x17DF148 Offset: 0x17DF148 VA: 0x17DF148 Slot: 5
-		//public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan) { }
+		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
+		{
+			m_gaugeAnimeLayout = layout.FindViewByExId("swtbl_chk_diva_met_sw_chk_diva_met01_anim") as AbsoluteLayout;
+			m_conditionsButton.AddOnClickCallback(OnShowUnLockConditionsPopup);
+			ClearLoadedCallback();
+			return true;
+		}
 
 		//// RVA: 0x17DF27C Offset: 0x17DF27C VA: 0x17DF27C
-		//public void SetMusicTitle(string title) { }
+		public void SetMusicTitle(string title)
+		{
+			m_titleText.horizontalOverflow = HorizontalWrapMode.Wrap;
+			m_titleText.verticalOverflow = VerticalWrapMode.Truncate;
+			m_titleText.resizeTextForBestFit = true;
+			m_titleText.text = title;
+		}
 
 		//// RVA: 0x17DF328 Offset: 0x17DF328 VA: 0x17DF328
-		//public void SetUnlockTerms(string text) { }
+		public void SetUnlockTerms(string text)
+		{
+			m_conditionText = text;
+			m_conditionsImage.enabled = SetConditionsText(m_unlockTermsText, text);
+			m_conditionsButton.Disable = !m_conditionsImage.enabled;
+		}
 
 		//// RVA: 0x17DF9E8 Offset: 0x17DF9E8 VA: 0x17DF9E8
-		//public void SetLevel(int level) { }
+		public void SetLevel(int level)
+		{
+			for(int i = 0; i < m_skillLevel.Length; i++)
+			{
+				m_skillLevel[i].SetNumber(level, 0);
+			}
+		}
 
 		//// RVA: 0x17DFA8C Offset: 0x17DFA8C VA: 0x17DFA8C
-		//public void SetExpNumerator(int value) { }
+		public void SetExpNumerator(int value)
+		{
+			m_numerator.SetNumber(value, 0);
+		}
 
 		//// RVA: 0x17DFACC Offset: 0x17DFACC VA: 0x17DFACC
-		//public void SetExpDenominator(int value) { }
+		public void SetExpDenominator(int value)
+		{
+			m_denominator.SetNumber(value, 0);
+		}
 
 		//// RVA: 0x17DFB0C Offset: 0x17DFB0C VA: 0x17DFB0C
-		//public void SetComplete(bool isComplete) { }
+		public void SetComplete(bool isComplete)
+		{
+			m_unlockTermsText.enabled = !isComplete;
+			m_complete.enabled = isComplete;
+		}
 
 		//// RVA: 0x17DFB68 Offset: 0x17DFB68 VA: 0x17DFB68
-		//public void SetGaugeState(DivaGrowthListItem.GaugeState state) { }
+		public void SetGaugeState(GaugeState state)
+		{
+			m_gaugeAnimeLayout.StartSiblingAnimGoStop(((int)state + 1).ToString("D2"));
+		}
 
 		//// RVA: 0x17DFC0C Offset: 0x17DFC0C VA: 0x17DFC0C
-		//public void SetGaugeValue(float value) { }
+		public void SetGaugeValue(float value)
+		{
+			m_gaugeAnimeLayout.StartChildrenAnimGoStop(Mathf.RoundToInt(value * 100), Mathf.RoundToInt(value * 100));
+		}
 
 		//// RVA: 0x17DF404 Offset: 0x17DF404 VA: 0x17DF404
 		public static bool SetConditionsText(Text text, string conditionText)
@@ -83,6 +126,15 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17DFC58 Offset: 0x17DFC58 VA: 0x17DFC58
-		//private void OnShowUnLockConditionsPopup() { }
+		private void OnShowUnLockConditionsPopup()
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("growth_popup_title_01"), SizeType.Small, 
+				m_conditionText, new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+				}, false, true), null, null, null, null);
+		}
 	}
 }

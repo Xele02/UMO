@@ -944,31 +944,31 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1270228 Offset: 0x1270228 VA: 0x1270228
 		private void OnShowCenterSkillDetails()
 		{
-			TodoLogger.LogNotImplemented("OnShowCenterSkillDetails");
+			MenuScene.Instance.UnitSaveWindowControl.ShowSkillWindow(m_sceneList[0].PFHJFIHGCKP_CenterSkillName1, m_sceneList[0].IHLINMFMCDN_GetCenterSkillDesc(false));
 		}
 
 		// // RVA: 0x1270360 Offset: 0x1270360 VA: 0x1270360
 		private void OnShowCenterSkillDetails2()
 		{
-			TodoLogger.LogNotImplemented("OnShowCenterSkillDetails2");
+			MenuScene.Instance.UnitSaveWindowControl.ShowSkillWindow(m_sceneList[0].EFELCLMJEOL_CenterSkillName2, m_sceneList[0].IHLINMFMCDN_GetCenterSkillDesc(true));
 		}
 
 		// // RVA: 0x1270498 Offset: 0x1270498 VA: 0x1270498
 		private void OnShowActiveSkillDetails()
 		{
-			TodoLogger.LogNotImplemented("OnShowActiveSkillDetails");
+			MenuScene.Instance.UnitSaveWindowControl.ShowSkillWindow(m_sceneList[0].ILCLGGPHHJO_ActiveSkillName, m_sceneList[0].PCMEMHPDABG_GetActiveSkillDesc());
 		}
 
 		// // RVA: 0x12705CC Offset: 0x12705CC VA: 0x12705CC
 		private void OnShowLiveSkillDetail(int skillIndex)
 		{
-			TodoLogger.LogNotImplemented("OnShowLiveSkillDetail");
+			MenuScene.Instance.UnitSaveWindowControl.ShowSkillWindow(m_sceneList[0].NDPPEMCHKHA_LiveSkillName1, m_sceneList[skillIndex].KDGACEJPGFG_GetLiveSkillDesc(false));
 		}
 
 		// // RVA: 0x1270708 Offset: 0x1270708 VA: 0x1270708
 		private void OnShowLiveSkillDetail2(int skillIndex)
 		{
-			TodoLogger.LogNotImplemented("OnShowLiveSkillDetail2");
+			MenuScene.Instance.UnitSaveWindowControl.ShowSkillWindow(m_sceneList[0].LNLECENGMKK_LiveSkillName2, m_sceneList[skillIndex].KDGACEJPGFG_GetLiveSkillDesc(true));
 		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x70F5AC Offset: 0x70F5AC VA: 0x70F5AC

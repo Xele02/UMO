@@ -1135,7 +1135,35 @@ namespace XeApp.Game.Menu
 		// public PopupWindowControl ShowItemDetail(int id, string title, string desc, bool isShop = False) { }
 
 		// // RVA: 0xB33FA0 Offset: 0xB33FA0 VA: 0xB33FA0
-		// public PopupWindowControl ShowGoDivaStatusDetail(FFHPBEPOMAK divaData, Action endCallback) { }
+		public PopupWindowControl ShowGoDivaStatusDetail(FFHPBEPOMAK_DivaInfo divaData, Action endCallback)
+		{
+			LayoutPopupEventGoDivaStatus.StatusParamSet p = new LayoutPopupEventGoDivaStatus.StatusParamSet();
+			p.soul.totalLevel = divaData.IHANGGCHPAL.KAMIJDBFGDB_EvSoLevel;
+			p.voice.totalLevel = divaData.IHANGGCHPAL.BPEFIIEPJBM_EvVoLevel;
+			p.charm.totalLevel = divaData.IHANGGCHPAL.DNFEEOODOBF_EvChLevel;
+			p.soul.upStatus = divaData.IHANGGCHPAL.PNOKIEEILJN();
+			p.voice.upStatus = divaData.IHANGGCHPAL.LCDIGPJJJGI();
+			p.charm.upStatus = divaData.IHANGGCHPAL.KDKCMCBLEMG();
+			p.soul.totalStatus = divaData.JLJGCBOHJID_Status.soul;
+			p.voice.totalStatus = divaData.JLJGCBOHJID_Status.vocal;
+			p.charm.totalStatus = divaData.JLJGCBOHJID_Status.charm;
+			PopupEventGoDivaStatusSetting s = new PopupEventGoDivaStatusSetting();
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			s.TitleText = bk.GetMessageByLabel("popup_godiva_status_title");
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			s.WindowSize = 0;
+			s.IsCaption = true;
+			s.m_statusParamSet = p;
+			return PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel buttonLabel) =>
+			{
+				//0xB38674
+				if(endCallback != null)
+					endCallback();
+			}, null, null, null);
+		}
 
 		// // RVA: 0xB345E4 Offset: 0xB345E4 VA: 0xB345E4
 		// public PopupItemDetail.PopupItemDetailSetting CreateIconTextContent(int id, string title, SizeType size, string name, string desc, ButtonInfo[] buttons, bool isCaption = True) { }
