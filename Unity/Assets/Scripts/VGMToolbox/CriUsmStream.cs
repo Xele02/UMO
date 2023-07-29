@@ -173,7 +173,7 @@ namespace VGMToolbox.format
             {
                 CriUtfTable utfTable = new CriUtfTable();
                 utfTable.Initialize(fs, startOffset + 8 + payloadOffset);
-                UnityEngine.Debug.Log(utfTable.GetTableAsString(0, true));
+                //UnityEngine.Debug.Log(utfTable.GetTableAsString(0, true));
                 if(utfTable.TableName == "VIDEO_HDRINFO")
                 {
 /*
