@@ -1325,7 +1325,10 @@ namespace XeApp.Game.Menu
 			}
 
 			// // RVA: 0xA3B694 Offset: 0xA3B694 VA: 0xA3B694
-			// public void SaveStack(SceneStack stack) { }
+			public void SaveStack(SceneStack stack)
+			{
+				m_transitionStack.Copy(stack);
+			}
 
 			// // RVA: 0xA3B6C8 Offset: 0xA3B6C8 VA: 0xA3B6C8
 			// public void LoadStack(SceneStack stack) { }

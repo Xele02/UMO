@@ -50,7 +50,15 @@ namespace XeApp.Game.Common
 			Release(sheet);
 			if(defaultInstallSource == InstallSource.LocalStorage)
 			{
-				TodoLogger.Log(0, "MessageLoader 1");
+				string str = BBGDKLLEPIB.OGCDNCDMLCA_MxDir + BBGDKLLEPIB.HHCJCDFCLOB.OCOGBOHOGGE_DbFileName;
+				Dictionary<string,string> dic = new Dictionary<string, string>(1);
+				dic.Add("sheet", ((int)sheet).ToString());
+				dic.Add("bankName", sheet.ToString());
+				dic.Add("ver", version.ToString());
+				m_isLoading = true;
+				IIEDOGCMCIE data = new IIEDOGCMCIE();
+				data.MCDJJPAKBLH(str);
+				N.a.StartCoroutineWatched(Coroutine_SecureFileLoad(data, sheet, version));
 			}
 			else
 			{
@@ -70,7 +78,26 @@ namespace XeApp.Game.Common
 
 		// [IteratorStateMachineAttribute] // RVA: 0x739A3C Offset: 0x739A3C VA: 0x739A3C
 		// // RVA: 0x1116178 Offset: 0x1116178 VA: 0x1116178
-		// private IEnumerator Coroutine_SecureFileLoad(IIEDOGCMCIE tar, MessageLoader.eSheet sheet, int version) { }
+		private IEnumerator Coroutine_SecureFileLoad(IIEDOGCMCIE tar, MessageLoader.eSheet sheet, int version)
+		{
+			//0x11179A4
+			while(!tar.PLOOEECNHFB)
+				yield return null;
+			StringBuilder str = new StringBuilder(64);
+			str.AppendFormat("{0}_{1:D8}.bytes", s_path[(int)sheet], version);
+			string name = str.ToString();
+			CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tar.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) =>
+			{
+				//0x1117860
+				return x.OPFGFINHFCE_Name.Contains(name);
+			});
+			if(file != null)
+			{
+				Release(sheet);
+				MessageManager.Instance.RegisterBank(sheet.ToString(), file.DBBGALAPFGC_Data);
+			}
+			m_isLoading = false;
+		}
 
 		// // RVA: 0x111626C Offset: 0x111626C VA: 0x111626C
 		// public void Request(string bankName, string fileName) { }

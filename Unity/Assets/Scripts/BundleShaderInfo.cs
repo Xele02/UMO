@@ -9,6 +9,7 @@ using UnityEditor;
 #endif
 using UnityEngine;
 using UnityEngine.UI;
+using XeApp.Game.Adv;
 using XeSys;
 using XeSys.Gfx;
 
@@ -98,6 +99,8 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 			FixMaterialShaderGO(obj as GameObject);
 		if(obj is Material)
 			FixMaterialShaderMat(obj as Material);
+		if(obj is AdvCharacterData)
+			FixMaterialShaderMat((obj as AdvCharacterData).GetMaterial());
 	}
 
 	public void FixMaterialShaderMat(Material mat)

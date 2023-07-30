@@ -32,6 +32,15 @@ namespace XeApp.Game.Menu
         // public SceneStackInfo GetAt(int index) { }
 
         // // RVA: 0xA595AC Offset: 0xA595AC VA: 0xA595AC
-        // public void Copy(SceneStack o) { }
+        public void Copy(SceneStack o)
+        {
+            o.Clear();
+            for(int i = 0; i < Count; i++)
+            {
+                SceneStackInfo info = new SceneStackInfo();
+                this[i].Copy(info);
+                o.Push(info);
+            }
+        }
     }
 }

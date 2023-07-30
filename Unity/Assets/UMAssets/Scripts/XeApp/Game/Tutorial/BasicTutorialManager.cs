@@ -145,7 +145,10 @@ namespace XeApp.Game.Tutorial
 		// public static void SetupFirstTutorialLog() { }
 
 		// // RVA: 0xE3D9B0 Offset: 0xE3D9B0 VA: 0xE3D9B0
-		// public static void Log(OAGBCBBHMPF.OGBCFNIKAFI step) { }
+		public static void Log(OAGBCBBHMPF.OGBCFNIKAFI step)
+		{
+			TodoLogger.Log(0, "Log");
+		}
 
 		// // RVA: 0xE3DB08 Offset: 0xE3DB08 VA: 0xE3DB08
 		public static void TutorialAfterFirstLoginBonus()

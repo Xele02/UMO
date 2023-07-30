@@ -37,6 +37,9 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x191ACB8 Offset: 0x191ACB8 VA: 0x191ACB8
-		// public void End() { }
+		public void End()
+		{
+			m_time = m_curve.keys[m_curve.length - 1].time;
+		}
 	}
 }

@@ -155,7 +155,14 @@ namespace XeApp.Core
 		//*/
 
 		//// RVA: -1 Offset: -1
-		//public void FreeAll() { }
+		public void FreeAll()
+		{
+			for(int i = 0; i < mList.Count; i++)
+			{
+				mList[i].Free();
+				mList[i].gameObject.SetActive(false);
+			}
+		}
 		///* GenericInstMethod :
 		//|
 		//|-RVA: 0x30A58F0 Offset: 0x30A58F0 VA: 0x30A58F0

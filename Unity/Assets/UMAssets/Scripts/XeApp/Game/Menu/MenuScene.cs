@@ -65,7 +65,7 @@ namespace XeApp.Game.Menu
 		public const float FADE_TIME = 0.4f;
 		[SerializeField]
 		private TransitionTreeObject treeObject; // 0x28
-		// private static SceneStack m_menuSceneStack = new SceneStack(); // 0x8
+		private static SceneStack m_menuSceneStack = new SceneStack(); // 0x8
 		public const string titleSceneName = "Title";
 		public const string gameSceneName = "RhythmGame";
 		public const string gameSkipSceneName = "RhythmGameSkip";
@@ -1514,12 +1514,28 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB35118 Offset: 0xB35118 VA: 0xB35118
 		public void ChangeRhythmAdjustScene()
 		{
-			TodoLogger.LogNotImplemented("ChangeRhythmAdjustScene");
+			m_menuTransitionControl.SetHeaderMenuButtonDisable(MenuHeaderControl.Button.All);
+			m_menuTransitionControl.SetMenuContentButtonDisable();
+			m_menuTransitionControl.SetFooterMenuButtonDisable(MenuFooterControl.Button.All);
+			m_menuTransitionControl.PushStack();
+			m_menuTransitionControl.SaveStack(m_menuSceneStack);
+			this.StartCoroutineWatched(GotoRhythmAdjustCorotine());
+
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C8284 Offset: 0x6C8284 VA: 0x6C8284
 		// // RVA: 0xB3526C Offset: 0xB3526C VA: 0xB3526C
-		// private IEnumerator GotoRhythmAdjustCorotine() { }
+		private IEnumerator GotoRhythmAdjustCorotine()
+		{
+			//0xB3B310
+			GameManager.Instance.fullscreenFader.Fade(0.1f, Color.black);
+			while(GameManager.Instance.fullscreenFader.isFading)
+				yield return null;
+			SoundManager.Instance.bgmPlayer.Stop();
+			yield return Co.R(m_menuTransitionControl.DestroyTransion());
+			enableFade = false;
+			NextScene("RhythmAdjust");
+		}
 
 		// // RVA: 0xB35318 Offset: 0xB35318 VA: 0xB35318
 		public static void SaveRequest()

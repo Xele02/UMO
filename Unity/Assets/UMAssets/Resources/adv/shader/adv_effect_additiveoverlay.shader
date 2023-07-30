@@ -20,19 +20,33 @@ Shader "Adv/Effect/AdditiveOverlay" {
 			struct appdata
 			{
 				float4 position0 : POSITION;
+				float2 texcoord0 : TEXCOORD0;
+				float4 color0 : COLOR0;
 			};
 
 			struct v2f
 			{
 				float4 position0 : SV_POSITION;
+				float2 texcoord0 : TEXCOORD0;
+				float2 texcoord1 : TEXCOORD1;
+				float4 color0 : COLOR0;
 			};
+
+			sampler2D _MainTex;
+			sampler2D _PatternTex;
+			float4 _MainTex_ST;
+			float4 _PatternTex_ST;
+			float _Power;
+			float4 _MainColor;
+
 
 			v2f vert(appdata v)
 			{
 				v2f o;
-
+				o.texcoord0 = TRANSFORM_TEX(v.texcoord0, _MainTex);
+				o.texcoord1 = TRANSFORM_TEX(v.texcoord0, _PatternTex);
 				o.position0 = UnityObjectToClipPos(v.position0);
-
+				o.color0 = v.color0;
 				return o;
 			}
 			/*
@@ -90,8 +104,15 @@ Shader "Adv/Effect/AdditiveOverlay" {
 */
 			fixed4 frag(v2f i) : SV_Target
 			{
-				float4 SV_Target0;
-				SV_Target0 = float4(1, 0, 1, 1);
+				float4 u_xlat10_0, u_xlat16_2, u_xlat1, u_xlat0;
+				u_xlat10_0.xyz = tex2D(_PatternTex, i.texcoord1.xy).xyz;
+				u_xlat1 = tex2D(_MainTex, i.texcoord0.xy);
+				u_xlat16_2.xyz = u_xlat10_0.xyz * u_xlat1.xyz;
+				u_xlat0.xyz = u_xlat16_2.xyz * _MainColor.xyz;
+				u_xlat0.xyz = u_xlat0.xyz * float3(_Power, _Power, _Power);
+				u_xlat1.xyz = u_xlat0.xyz * i.color0.www;
+				u_xlat1.xyz = clamp(u_xlat1.xyz, 0.0, 1.0);
+				float4 SV_Target0 = u_xlat1;
 				return SV_Target0;
 			}
 

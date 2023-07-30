@@ -41,7 +41,7 @@ public class BOKMNHAFJHF_Sns : DIHHCBACKGG_DbSection
 	{
 		public int IDELKEKDIFD; // 0x8
 		public int EAHPLCJMPHD; // 0xC
-		public int HEHKNMCDBJJ; // 0x10
+		public int HEHKNMCDBJJ_ColorId; // 0x10
 		public int CPKMLLNADLJ; // 0x14
 		public string OPFGFINHFCE; // 0x18
 		public string HAPAFECPFEK; // 0x1C
@@ -54,7 +54,7 @@ public class BOKMNHAFJHF_Sns : DIHHCBACKGG_DbSection
 	public class EIJGEDBGBBI
 	{
 		public int PPFNGGCBJKC; // 0x8
-		public Color DOKKMMFKLJI; // 0xC
+		public Color DOKKMMFKLJI_Color; // 0xC
 
 		//// RVA: 0x19CF038 Offset: 0x19CF038 VA: 0x19CF038
 		//public uint CAOGDCBPBAN() { }
@@ -99,7 +99,7 @@ public class BOKMNHAFJHF_Sns : DIHHCBACKGG_DbSection
 			data.HAPAFECPFEK = "";
 			data.IDELKEKDIFD = i + 1;
 			data.EAHPLCJMPHD = 1;
-			data.HEHKNMCDBJJ = 1;
+			data.HEHKNMCDBJJ_ColorId = 1;
 			data.CPKMLLNADLJ = 0;
 			KHCACDIKJLG.Add(data);
 		}
@@ -187,7 +187,7 @@ public class BOKMNHAFJHF_Sns : DIHHCBACKGG_DbSection
 				data.OPFGFINHFCE = array[i].OPFGFINHFCE;
 				data.HAPAFECPFEK = array[i].ONOPACPKFPK;
 				data.EAHPLCJMPHD = (int)array[i].HANMDEBPBHG;
-				data.HEHKNMCDBJJ = array[i].DJJNOCDIIAE;
+				data.HEHKNMCDBJJ_ColorId = array[i].DJJNOCDIIAE;
 				data.CPKMLLNADLJ = array[i].CPKMLLNADLJ;
 				data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(1, (int)array[i].PLALNIIBLOF, 0);
 			}
@@ -207,7 +207,7 @@ public class BOKMNHAFJHF_Sns : DIHHCBACKGG_DbSection
 		{
 			EIJGEDBGBBI data = new EIJGEDBGBBI();
 			data.PPFNGGCBJKC = array[i].PPFNGGCBJKC;
-			data.DOKKMMFKLJI = new Color((array[i].DOKKMMFKLJI & 0xff) / 255.0f,
+			data.DOKKMMFKLJI_Color = new Color((array[i].DOKKMMFKLJI & 0xff) / 255.0f,
 				((array[i].DOKKMMFKLJI >> 8) & 0xff) / 255.0f,
 				((array[i].DOKKMMFKLJI >> 16) & 0xff) / 255.0f);
 			LOCEHOMKJEI.Add(data);

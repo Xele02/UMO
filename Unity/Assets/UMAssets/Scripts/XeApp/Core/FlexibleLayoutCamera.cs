@@ -19,7 +19,7 @@ namespace XeApp.Core
 		private bool isEnableViewPort = true; // 0x21
 
 		public bool IsEnableFov { get { return isEnableFov; } set { isEnableFov = value; } } //0x1D704B0 0x1D704B8
-		//public bool IsEnableViewPort { get; set; } 0x1D704C0 0x1D704C8
+		public bool IsEnableViewPort { get { return isEnableViewPort; } set { isEnableViewPort = value; } } //0x1D704C0 0x1D704C8
 		public List<Camera> FlexibleFovCameraList { get { return flexibleFovCameraList; } } //0x1D704D0
 		//public List<Camera> FlexibleViewportCameraList { get; } 0x1D704D8
 
@@ -141,7 +141,10 @@ namespace XeApp.Core
 		}
 
 		//// RVA: 0x1D711C0 Offset: 0x1D711C0 VA: 0x1D711C0
-		//public void SetDisable() { }
+		public void SetDisable()
+		{
+			return;
+		}
 
 		//// RVA: 0x1D711C4 Offset: 0x1D711C4 VA: 0x1D711C4
 		//public void SetEnable() { }
