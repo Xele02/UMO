@@ -152,7 +152,10 @@ namespace XeApp.Game.RhythmAdjust
 		}
 
 		// // RVA: 0xF5B468 Offset: 0xF5B468 VA: 0xF5B468
-		// public void Update() { }
+		public void Update()
+		{
+			return;
+		}
 
 		// // RVA: 0xF5B46C Offset: 0xF5B46C VA: 0xF5B46C
 		// public void OpenConfirmWindow(UnityAction endCb) { }

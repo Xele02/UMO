@@ -281,8 +281,27 @@ namespace XeApp.Game.Menu
 				}
 				if(prevSceneName == "RhythmAdjust")
 				{
-					TodoLogger.Log(0, "init from RhythmAdjust");
-					//179
+					if(GameManager.Instance.IsTutorial)
+					{
+						info.category = SceneGroupCategory.GACHA;
+						info.nextName = TransitionList.Type.GACHA_2;
+						info.uniqueId = TransitionUniqueId.GACHA2;
+						return;
+					}
+					if(m_menuSceneStack[m_menuSceneStack.Count - 1].name == TransitionList.Type.TEAM_SELECT)
+					{
+						if(m_menuSceneStack[m_menuSceneStack.Count - 1].groupCategory == SceneGroupCategory.STORY)
+						{
+							TodoLogger.Log(0, "init from Story");
+							// L224
+						}
+					}
+					else if(m_menuSceneStack[m_menuSceneStack.Count - 1].name == TransitionList.Type.OPTION_MENU)
+					{
+						TodoLogger.Log(0, "init from Option");
+						// L232
+					}
+					info.flags = MenuSceneCamebackInfo.Flags.ReturnScene;
 					return;
 				}
 				if(prevSceneName == "Adv")
@@ -458,7 +477,8 @@ namespace XeApp.Game.Menu
 			}
 			else if(m_sceneCamebackInfo.flags == MenuSceneCamebackInfo.Flags.ReturnScene)
 			{
-				TodoLogger.Log(0, "MenuSceneCamebackInfo.Flags.ReturnScene");
+				m_menuTransitionControl.LoadStack(m_menuSceneStack);
+				m_menuTransitionControl.Return();
 			}
 			else if(m_sceneCamebackInfo.flags == MenuSceneCamebackInfo.Flags.Adventure)
 			{

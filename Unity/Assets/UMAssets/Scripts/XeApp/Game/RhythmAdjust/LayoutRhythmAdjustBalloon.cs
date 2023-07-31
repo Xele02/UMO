@@ -24,13 +24,28 @@ namespace XeApp.Game.RhythmAdjust
 		// // RVA: 0xF5B2BC Offset: 0xF5B2BC VA: 0xF5B2BC
 		public void ChangeMode(LayoutRhythmAdjust.ModeType mode)
 		{
-			TodoLogger.Log(0, "ChangeMode");
+			if (mode == LayoutRhythmAdjust.ModeType.ADJUST)
+				Enter();
+			else if (mode == LayoutRhythmAdjust.ModeType.CHECK)
+				Leave();
 		}
 
 		// // RVA: 0xF5C290 Offset: 0xF5C290 VA: 0xF5C290
-		// public void Enter() { }
+		public void Enter()
+		{
+			if (m_IsShowBalloon)
+				return;
+			m_Anim.StartChildrenAnimGoStop("go_in", "st_in");
+			m_IsShowBalloon = true;
+		}
 
 		// // RVA: 0xF5B1C4 Offset: 0xF5B1C4 VA: 0xF5B1C4
-		// public void Leave() { }
+		public void Leave()
+		{
+			if (!m_IsShowBalloon)
+				return;
+			m_Anim.StartChildrenAnimGoStop("go_out", "st_out");
+			m_IsShowBalloon = false;
+		}
 	}
 }

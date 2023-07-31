@@ -174,13 +174,13 @@ namespace XeApp.Game.RhythmAdjust
 			assetName.SetFormat("TouchEffect", Array.Empty<object>());
 			operationTouchEffect = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(GameObject));
 			yield return operationTouchEffect;
-			touchEffectObject = operationTouchEffect.GetAsset<GameObject>();
+			touchEffectObject = Instantiate(operationTouchEffect.GetAsset<GameObject>());
 			touchEffect = touchEffectObject.GetComponent<TouchPrefabInstance>();
 			loadCount++;
 			assetName.SetFormat("notes_button_high", Array.Empty<object>());
 			operationNotesButton = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(GameObject));
 			yield return operationNotesButton;
-			notesMarkerObject = operationNotesButton.GetAsset<GameObject>();
+			notesMarkerObject = Instantiate(operationNotesButton.GetAsset<GameObject>());
 			loadCount++;
 			for(int i = 0; i < loadCount; i++)
 			{
@@ -239,7 +239,7 @@ namespace XeApp.Game.RhythmAdjust
 			m_character.SetFace(1);
 			this.StartCoroutineWatched(m_character.ShowCoroutine(false));
 			m_character.SetPosition(new Vector2(-270, 0));
-			m_character.transform.SetSiblingIndex(m_character.transform.GetSiblingIndex() + 1);
+			m_character.transform.SetSiblingIndex(m_character.transform.GetSiblingIndex() - 1);
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			operationNotesButton = null;
 			yield return soundWait;
@@ -347,7 +347,7 @@ namespace XeApp.Game.RhythmAdjust
 			touchEffect.SkillEffect.Initialize();
 			touchEffectObject.transform.SetParent(judgePointTransform, false);
 			notesMarkerObject.transform.SetParent(judgePointTransform, false);
-			notesMarkerObject.SetActive(false);
+			notesMarkerObject.SetActive(true);
 			notesMarkerObject.GetComponent<Animator>().Play(notes_button_Anim_Hash, 0, 1);
 			if(!GameManager.Instance.IsTutorial)
 			{
@@ -381,6 +381,10 @@ namespace XeApp.Game.RhythmAdjust
 				{
 					ShowAdjustMoveConfirmModePopup();
 				}
+			}
+			else
+			{
+				ShowAdjustFinishCheckPopup();
 			}
 			updater = UpdatePopupTask;
 		}
@@ -417,6 +421,15 @@ namespace XeApp.Game.RhythmAdjust
 					AllocNote(rNoteList[i]);
 			}
 			TouchInfoRecord record = InputManager.Instance.GetFirstInScreenTouchRecord();
+			if (record == null)
+			{
+				for (int i = 0; record == null && i < (int)InputManager.KeyTouchInfoRecord.KeyType.Num; i++)
+				{
+					record = InputManager.Instance.GetKeyTouchInfoRecord((InputManager.KeyTouchInfoRecord.KeyType)i);
+					if (record.currentInfo.isIllegal)
+						record = null;
+				}
+			}
 			if(record != null)
 			{
 				if(!record.currentInfo.isBegan)
@@ -428,7 +441,18 @@ namespace XeApp.Game.RhythmAdjust
 				}
 				else
 				{
-					if(RectTransformUtility.RectangleContainsScreenPoint(touchRect, record.currentInfo.nativePosition))
+					bool isKeyOk = false;
+					if(record is InputManager.KeyTouchInfoRecord)
+					{
+						InputManager.KeyTouchInfoRecord kr = record as InputManager.KeyTouchInfoRecord;
+						isKeyOk |= kr.keyType == InputManager.KeyTouchInfoRecord.KeyType.Line1Touch;
+						isKeyOk |= kr.keyType == InputManager.KeyTouchInfoRecord.KeyType.Line2Touch;
+						isKeyOk |= kr.keyType == InputManager.KeyTouchInfoRecord.KeyType.Line3Touch;
+						isKeyOk |= kr.keyType == InputManager.KeyTouchInfoRecord.KeyType.Line4Touch;
+						isKeyOk |= kr.keyType == InputManager.KeyTouchInfoRecord.KeyType.Line5Touch;
+						isKeyOk |= kr.keyType == InputManager.KeyTouchInfoRecord.KeyType.Line6Touch;
+					}
+					if(RectTransformUtility.RectangleContainsScreenPoint(touchRect, record.currentInfo.nativePosition) || isKeyOk)
 					{
 						if(!isTestMode)
 						{
@@ -652,26 +676,97 @@ namespace XeApp.Game.RhythmAdjust
 		// // RVA: 0xF618B0 Offset: 0xF618B0 VA: 0xF618B0
 		private void ShowAdjustMoveConfirmModePopup()
 		{
-			TodoLogger.Log(0, "ShowAdjustMoveConfirmModePopup");
+			adjustSlider.enabled = false;
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			TextPopupSetting s = new TextPopupSetting();
+			s.TitleText = bk.GetMessageByLabel("rhythm_adjust_confirmmode_title");
+			s.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Readjustment, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.MoveConfirmMode, Type = PopupButton.ButtonType.Positive },
+			};
+			s.Text = string.Format(bk.GetMessageByLabel("rhythm_adjust_confirmmode_text"), adjustSlider.value.ToString("+#;-#;0"));
+			if(GameManager.Instance.IsTutorial)
+			{
+				PopupWindowManager.Show(s, AdjustTutorialMoveConfirmMode, null, () =>
+				{
+					//0xF647DC
+					BasicTutorialManager.Instance.HideCursor();
+				}, null);
+			}
+			else
+			{
+				PopupWindowManager.Show(s, AdjustMoveConfirmMode, null, null, null);
+			}
 		}
 
 		// // RVA: 0xF61394 Offset: 0xF61394 VA: 0xF61394
 		private void ShowAdjustFinishCheckPopup()
 		{
-			TodoLogger.Log(0, "ShowAdjustFinishCheckPopup");
+			adjustSlider.enabled = false;
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			TextPopupSetting s = new TextPopupSetting();
+			s.TitleText = bk.GetMessageByLabel("popup_rhythm_adjust_result_title");
+			s.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Readjustment, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive },
+			};
+			s.Text = string.Format(bk.GetMessageByLabel("popup_rhythm_adjust_result_text"), adjustSlider.value.ToString("+#;-#;0"));
+			if(GameManager.Instance.IsTutorial)
+			{
+				PopupWindowManager.Show(s, AdjustTutorialConfirmPopupResult, null, () =>
+				{
+					//0xF64858
+					BasicTutorialManager.Instance.HideCursor();
+				}, null);
+			}
+			else
+			{
+				PopupWindowManager.Show(s, AdjustConfirmPopupResult, null, null, null);
+			}
 		}
 
 		// // RVA: 0xF638C4 Offset: 0xF638C4 VA: 0xF638C4
-		// private void AdjustMoveConfirmMode(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private void AdjustMoveConfirmMode(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
+		{
+			if(type == PopupButton.ButtonType.Positive)
+			{
+				SwitchMode(true);
+				layoutData.ChangeMode(LayoutRhythmAdjust.ModeType.CHECK);
+			}
+			adjustSlider.enabled = true;
+			ChangeAdjustTask(ShowConfirmPopup);
+		}
 
 		// // RVA: 0xF639BC Offset: 0xF639BC VA: 0xF639BC
-		// private void AdjustTutorialMoveConfirmMode(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private void AdjustTutorialMoveConfirmMode(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
+		{
+			TodoLogger.Log(0, "AdjustTutorialMoveConfirmMode");
+		}
 
 		// // RVA: 0xF63A58 Offset: 0xF63A58 VA: 0xF63A58
-		// private void AdjustConfirmPopupResult(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private void AdjustConfirmPopupResult(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
+		{
+			if(type == PopupButton.ButtonType.Negative)
+			{
+				adjustSlider.enabled = true;
+				SwitchMode(false);
+				layoutData.ChangeMode(LayoutRhythmAdjust.ModeType.ADJUST);
+				ChangeAdjustTask(ShowConfirmPopup);
+			}
+			else if(type == PopupButton.ButtonType.Positive)
+			{
+				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+				NextScene("Menu");
+			}
+		}
 
 		// // RVA: 0xF63BEC Offset: 0xF63BEC VA: 0xF63BEC
-		// private void AdjustTutorialConfirmPopupResult(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private void AdjustTutorialConfirmPopupResult(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
+		{
+			TodoLogger.Log(0, "AdjustTutorialConfirmPopupResult");
+		}
 
 		// // RVA: 0xF60F40 Offset: 0xF60F40 VA: 0xF60F40
 		private void ShowAdjustModeStartPopup()

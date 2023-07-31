@@ -192,7 +192,7 @@ namespace XeApp.Game.RhythmAdjust
 		public void Enter(bool isTutorial = false)
 		{
 			m_bgAnime.StartChildrenAnimGoStop("go_in", "st_in");
-			if(isTutorial)
+			if(!isTutorial)
 				OpenWindow();
 		}
 
@@ -202,7 +202,10 @@ namespace XeApp.Game.RhythmAdjust
 		// // RVA: 0xF5AFE0 Offset: 0xF5AFE0 VA: 0xF5AFE0
 		public void OpenWindow()
 		{
-			TodoLogger.Log(0, "OpenWindow");
+			if (m_isWindowOpen)
+				return;
+			m_windowAnime.StartChildrenAnimGoStop("go_in", "st_in");
+			m_isWindowOpen = true;
 		}
 
 		// // RVA: 0xF5B0FC Offset: 0xF5B0FC VA: 0xF5B0FC
