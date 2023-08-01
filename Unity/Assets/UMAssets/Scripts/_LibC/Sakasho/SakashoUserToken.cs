@@ -68,17 +68,6 @@ namespace ExternLib
 				string saveData = File.ReadAllText(path);
 				playerAccount.players[playerId].serverData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(saveData);
 			}
-			else
-			{
-				UnityEngine.Debug.Log("Create new server data for " + playerId);
-				EDOHBJAPLPF_JsonData jsonRes = new EDOHBJAPLPF_JsonData();
-
-				BBHNACPENDM_ServerSaveData newData = new BBHNACPENDM_ServerSaveData();
-				newData.KHEKNNFCAOI_Init(0xFFFFFFFFFFFFFF);
-
-				SerializeServerSave(newData, jsonRes);
-				playerAccount.players[playerId].serverData = jsonRes;
-			}
 		}
 
 		public static void InitPlayerAccount(int playerId)
@@ -93,7 +82,6 @@ namespace ExternLib
 		{
 			PlayerData p = new PlayerData();
 			p.userId = playerId;
-			p.needUpdateAfter = true;
 			playerAccount.players.Add(p.userId, p);
 			LoadAccountServerData(playerId);
 			CheckAccountUpdate(playerId);
@@ -102,14 +90,24 @@ namespace ExternLib
 		public static void CheckAccountUpdate(int accountId)
 		{
 			PlayerData p = playerAccount.players[accountId];
-			if(!CIOECGOMILE.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+			if(!IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
 			{
 				p.needUpdateAfter = true;
 				return;
 			}
-			if (!p.needUpdateAfter)
-				return;
 			p.needUpdateAfter = false;
+
+			if(p.serverData == null)
+			{
+				UnityEngine.Debug.Log("Create new server data for " + accountId);
+				EDOHBJAPLPF_JsonData jsonRes = new EDOHBJAPLPF_JsonData();
+
+				BBHNACPENDM_ServerSaveData newData = new BBHNACPENDM_ServerSaveData();
+				newData.KHEKNNFCAOI_Init(0xFFFFFFFFFFFFFF);
+
+				SerializeServerSave(newData, jsonRes);
+				p.serverData = jsonRes;
+			}
 
 			// Check cheat accounts is full unlocked
 			if (p.userId >= 900000000) // unlock all for cheat account

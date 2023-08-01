@@ -250,6 +250,8 @@ namespace ExternLib
 			}
 
 			CheckAccountUpdate(playerAccount.userId);
+			if(jsonRes == null)
+				jsonRes = playerAccount.playerData.serverData;
 
 			SaveAccountServerData();
 			if (RuntimeSettings.CurrentSettings.EnableProfileSaveCheck)
