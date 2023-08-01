@@ -146,7 +146,8 @@ namespace XeApp.Game.Menu
 			m_btn_total.AddOnClickCallback(() =>
 			{
 				//0xA430A4
-				TodoLogger.LogNotImplemented("Total");
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_000);
+				this.StartCoroutineWatched(CO_ChangeTotal());
 			});
 			for(int i = 0; i < m_list_btn_diva.Count; i++)
 			{
@@ -154,7 +155,8 @@ namespace XeApp.Game.Menu
 				m_list_btn_diva[i].AddOnClickCallback(() =>
 				{
 					//0xA43150
-					TodoLogger.LogNotImplemented("Diva");
+					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_000);
+					this.StartCoroutineWatched(CO_ChangeDiva(t_diva_id));
 				});
 			}
 			m_list_canvas_group = new List<CanvasGroup>();
@@ -195,11 +197,81 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FF61C Offset: 0x6FF61C VA: 0x6FF61C
 		//// RVA: 0xA42890 Offset: 0xA42890 VA: 0xA42890
-		//private IEnumerator CO_ChangeDiva(int a_diva_id) { }
+		private IEnumerator CO_ChangeDiva(int a_diva_id)
+		{
+			int t_diva_index; // 0x18
+			string t_bundle_name; // 0x1C
+			AssetBundleLoadAssetOperation t_operation; // 0x20
+
+			//0xA43488
+			m_tap_guard.raycastTarget = true;
+			yield return null;
+			SelectButton(a_diva_id);
+			m_diva_id_prev = m_diva_id_now;
+			m_diva_id_now = a_diva_id;
+			t_diva_index = a_diva_id - 1;
+			if(m_material_diva[t_diva_index] == null)
+			{
+				m_string_builder.Clear();
+				m_string_builder.AppendFormat("ct/dv/me/09/{0:D2}_{1:D2}.xab", a_diva_id, 1);
+				t_bundle_name = m_string_builder.ToString();
+				m_string_builder.Clear();
+				m_string_builder.AppendFormat("{0:D2}_{1:D2}", a_diva_id, 1);
+				t_operation = AssetBundleManager.LoadAssetAsync(t_bundle_name, m_string_builder.ToString(), typeof(Material));
+				yield return t_operation;
+				m_material_diva[t_diva_index] = t_operation.GetAsset<Material>();
+				AssetBundleManager.UnloadAssetBundle(t_bundle_name, false);
+				yield return null;
+				t_operation = null;
+				t_bundle_name = null;
+			}
+			m_content_diva.back.Set(m_view_data.m_diva[t_diva_index]);
+			m_content_diva.back.m_image_main.material = m_material_diva[t_diva_index];
+			if(m_current == 0)
+			{
+				m_content_total.animctrl.Leave();
+			}
+			else
+			{
+				m_content_diva.front.animctrl.Leave();
+			}
+			yield return null;
+			m_content_diva.Swap();
+			if(m_diva_id_prev > 0)
+			{
+				m_content_diva_pos[m_diva_id_prev] = m_content_diva.back.m_scroll.verticalNormalizedPosition;
+			}
+			if(m_diva_id_now > 0)
+			{
+				m_content_diva.front.m_scroll.verticalNormalizedPosition = m_content_diva_pos[m_diva_id_now];
+			}
+			m_content_diva.front.animctrl.Enter();
+			yield return null;
+			while (m_content_diva.front.animctrl.IsPlaying())
+				yield return null;
+			m_tap_guard.raycastTarget = false;
+			m_current = DispInfo.Diva;
+			yield return null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FF694 Offset: 0x6FF694 VA: 0x6FF694
 		//// RVA: 0xA42958 Offset: 0xA42958 VA: 0xA42958
-		//private IEnumerator CO_ChangeTotal() { }
+		private IEnumerator CO_ChangeTotal()
+		{
+			//0xA4455C
+			m_tap_guard.raycastTarget = true;
+			yield return null;
+			SelectButton(0);
+			m_content_diva.front.animctrl.Leave();
+			yield return null;
+			m_content_total.animctrl.Enter();
+			yield return null;
+			while (m_content_diva.front.animctrl.IsPlaying())
+				yield return null;
+			m_tap_guard.raycastTarget = false;
+			m_current = DispInfo.Total;
+			yield return null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FF70C Offset: 0x6FF70C VA: 0x6FF70C
 		//// RVA: 0xA42A04 Offset: 0xA42A04 VA: 0xA42A04

@@ -8,8 +8,8 @@ namespace XeApp.Game.Menu
 		public List<T> m_obj; // 0x0
 		public int m_current; // 0x0
 
-		public T front { get { return m_obj[0]; } } // 0x30A5FB0
-		public T back { get { return m_obj[m_current]; } } // 0x30A5FF4 ??
+		public T front { get { return m_obj[m_current]; } } // 0x30A5FB0
+		public T back { get { return m_obj[(m_current + 1) % 2]; } } // 0x30A5FF4 ??
 
 		// RVA: -1 Offset: -1
 		public PlayRecord_DoubleBuffer(List<T> a_obj)
@@ -43,7 +43,10 @@ namespace XeApp.Game.Menu
 		//*/
 
 		//// RVA: -1 Offset: -1
-		//public void Swap() { }
+		public void Swap()
+		{
+			m_current = (m_current + 1) % 2;
+		}
 		///* GenericInstMethod :
 		//|
 		//|-RVA: 0x30A6048 Offset: 0x30A6048 VA: 0x30A6048

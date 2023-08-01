@@ -59,7 +59,36 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA43EF4 Offset: 0xA43EF4 VA: 0xA43EF4
-		//public void Set(PlayRecordView_Diva a_view) { }
+		public void Set(PlayRecordView_Diva a_view)
+		{
+			m_Rank.Set(a_view.m_diva_level);
+			m_IntimacyTouch.Set(a_view.m_intimacy_touch);
+			m_Costume.Set(a_view.m_costume_now, a_view.m_costume_max);
+			m_CostumeLV.Set(a_view.m_costume_now);
+			m_MusicMax.Set(a_view.m_music_lv_max);
+			m_Present.Set(a_view.m_intimacy_present);
+			m_DivaEvent_Soul.Set(a_view.m_diva_event_soul, a_view.m_diva_event_soul_max);
+			m_DivaEvent_Voice.Set(a_view.m_diva_event_voice, a_view.m_diva_event_voice_max);
+			m_DivaEvent_Charm.Set(a_view.m_diva_event_charm, a_view.m_diva_event_charm_max);
+			m_Sns.Set(a_view.m_sns_cnt);
+			for(int i = 0; i < m_Sns_Object.Count; i++)
+			{
+				if(i < a_view.m_sns.Count)
+				{
+					m_Sns_Object[i].m_text.text = a_view.m_sns[i].m_title;
+					m_Sns_Object[i].m_image.gameObject.SetActive(true);
+					if (!a_view.m_sns[i].m_enable)
+						m_Sns_Object[i].m_image.sprite = m_Sns_SpriteUnread;
+					else
+						m_Sns_Object[i].m_image.sprite = m_Sns_SpriteRead;
+				}
+				else
+				{
+					m_Sns_Object[i].m_text.text = "";
+					m_Sns_Object[i].m_image.gameObject.SetActive(false);
+				}
+			}
+		}
 
 		//// RVA: 0xA44484 Offset: 0xA44484 VA: 0xA44484
 		//public void SetImage(Material a_material) { }
