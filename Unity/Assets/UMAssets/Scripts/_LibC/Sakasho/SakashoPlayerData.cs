@@ -10,6 +10,215 @@ namespace ExternLib
 {
     public static partial class LibSakasho
     {
+		public static void UnlockAll(PlayerData playerData)
+		{
+			EDOHBJAPLPF_JsonData jsonRes = playerData.serverData;
+
+			BBHNACPENDM_ServerSaveData newData = new BBHNACPENDM_ServerSaveData();
+			newData.KHEKNNFCAOI_Init(0xFFFFFFFFFFFFFF);
+
+			Dictionary<string, EDOHBJAPLPF_JsonData> blocks;
+			blocks = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject<Dictionary<string, EDOHBJAPLPF_JsonData>>(jsonRes.EJCOJCGIBNG_ToJson());
+			newData.IIEMACPEEBJ_Load(blocks.Keys.ToList(), jsonRes);
+
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+
+			// Config full unlocked profile
+			(newData.LBDOLHGDIEB_GetBlock("base") as JBMPOAAMGNB_Base).PBEKKMOPENN_AgreeTosVer = 1;
+			(newData.LBDOLHGDIEB_GetBlock("base") as JBMPOAAMGNB_Base).IJHBIMNKOMC_TutorialEnd = 2;
+			{
+				EGOLBAPFHHD_Common commonBlock = newData.LBDOLHGDIEB_GetBlock("common") as EGOLBAPFHHD_Common;
+				// set max level
+				commonBlock.KIECDDFNCAN_Level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP.PIAMMJNADJH_PlayerMaxLevel;
+				// set max uta grade
+				commonBlock.EAHPKPADCPL_TotalUtaRate = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.Last().ADKDHKMPMHP_Rate;
+				// set uta reward all get
+				commonBlock.EAFLCGCIOND_RetRewRecGra = (int)HighScoreRating.GetUtaGrade(commonBlock.EAHPKPADCPL_TotalUtaRate);
+				// set master version for shown new song popup
+				commonBlock.MMPPEHPKGLI_AddRegularMusicMVer = DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion;
+				// give a lot of stamina
+				commonBlock.BCFPEJODJPP_Stamina = 9999;
+				// give a lot of mv ticket
+				commonBlock.GKKDNOFMJJN_NumTicket = 999;
+				// set all 6line & multi diva song shown
+				for (int i = 1; i < EGOLBAPFHHD_Common.HKJKONOKBLN_ShowLine6AddLength * 8; i++)
+				{
+					commonBlock.LIPHECJKIDD(i, true);
+				}
+			}
+			{
+				FNBIIGJJGKA_Counter counterBlock = newData.LBDOLHGDIEB_GetBlock("counter") as FNBIIGJJGKA_Counter;
+				counterBlock.BDLNMOIOMHK_Total.GKOAPFJFKEJ_VOpC[0] = Mathf.Max(50, counterBlock.BDLNMOIOMHK_Total.GKOAPFJFKEJ_VOpC[0]);
+			}
+			{
+				BAHFBCEPFGP_AddMusic addMusicBlock = newData.LBDOLHGDIEB_GetBlock("add_music") as BAHFBCEPFGP_AddMusic;
+				for (int i = 1; i < 38 * 8; i++)
+				{
+					for (int j = 2; j <= 5; j++)
+						addMusicBlock.DDCBGCODHHN(i, j);
+				}
+			}
+			{
+				NEKDCJKANAH_StoryRecord storyBlock = newData.LBDOLHGDIEB_GetBlock("story_record") as NEKDCJKANAH_StoryRecord;
+				LAEGMENIEDB_Story storyDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OHCIFMDPAPD_Story;
+				for (int i = 0; i < storyDb.CDENCMNHNGA.Count; i++)
+				{
+					storyBlock.MMKAJBFBKNH[i].EALOBDHOCHP_Stat = 4;
+				}
+				storyBlock.EOHHFADHHBL_Complete = true;
+			}
+			{
+				DEKKMGAFJCG_Diva divaBlock = newData.LBDOLHGDIEB_GetBlock("diva") as DEKKMGAFJCG_Diva;
+				for (int i = 0; i < divaBlock.NBIGLBMHEDC_DivaList.Count; i++)
+				{
+					divaBlock.NBIGLBMHEDC_DivaList[i].CPGFPEDMDEH_Have = 1;
+					divaBlock.NBIGLBMHEDC_DivaList[i].KCCONFODCPN_IntimacyLevel = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.GLHEHGGKILG_GetMaxLevel();
+					divaBlock.NBIGLBMHEDC_DivaList[i].JLEPLIHFPKD_IntimacySkillLevel = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.COHLJLNLBKM.Count - 1;
+					for (int j = 0; j < divaBlock.NBIGLBMHEDC_DivaList[i].ANAJIAENLNB_Levels.Count; j++)
+						divaBlock.NBIGLBMHEDC_DivaList[i].ANAJIAENLNB_Levels[j] = 8;
+					divaBlock.NBIGLBMHEDC_DivaList[i].HEBKEJBDCBH_DivaLevel = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.AGNCAAFGLBE_MaxLevels;
+				}
+			}
+			{
+				DDEMMEPBOIA_Sns snsBlock = newData.LBDOLHGDIEB_GetBlock("sns") as DDEMMEPBOIA_Sns;
+				int numSns = 0;
+				for (int i = 0; i < 2000; i++)
+				{
+					BOKMNHAFJHF_Sns.KEIGMAOCJHK dbSns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA[i];
+					if (dbSns.PPEGAKEIEGM_Enabled == 2)
+					{
+						DDEMMEPBOIA_Sns.EFIFBJGKPJF saveSns = snsBlock.HAJEJPFGILG[i];
+						if (saveSns.BEBJKJKBOGH_Date == 0)
+						{
+							saveSns.BEBJKJKBOGH_Date = time;
+						}
+						numSns++;
+					}
+				}
+				EGOLBAPFHHD_Common commonBlock = newData.LBDOLHGDIEB_GetBlock("common") as EGOLBAPFHHD_Common;
+				commonBlock.JLJJHDGEHLK_RecvSns = numSns;
+			}
+			{
+				MLIBEPGADJH_Scene dbScenes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene;
+				MMPBPOIFDAF_Scene saveScenes = newData.LBDOLHGDIEB_GetBlock("scene") as MMPBPOIFDAF_Scene;
+				for (int i = 0; i < dbScenes.CDENCMNHNGA_SceneList.Count; i++)
+				{
+					MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = dbScenes.CDENCMNHNGA_SceneList[i];
+					if (dbScene.PPEGAKEIEGM_En == 2)
+					{
+						if (i < saveScenes.OPIBAPEGCLA.Count)
+						{
+							MMPBPOIFDAF_Scene.PMKOFEIONEG saveScene = saveScenes.OPIBAPEGCLA[i];
+							if (saveScene.BEBJKJKBOGH_Date == 0)
+							{
+								saveScene.BEBJKJKBOGH_Date = time;
+							}
+							saveScene.JPIPENJGGDD_Mlt = 1;
+							saveScene.IELENGDJPHF_Ulk = 1;
+							saveScene.ANAJIAENLNB_Level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(dbScene.EKLIPGELKCL_Rarity, true, dbScene.MCCIFLKCNKO_Feed) + 1;
+							for (int j = 0; j < 15; j++)
+								saveScene.PDNIFBEGMHC_Mb[j] = 0;
+							for (int j = 0; j < saveScene.ANAJIAENLNB_Level - 1; j++)
+							{
+								int idx = j / 8;
+								int idx2 = j % 8;
+								saveScene.PDNIFBEGMHC_Mb[idx] |= (byte)(1 << idx2);
+							}
+						}
+					}
+				}
+			}
+			{
+				List<JGGLDGNKELI_Emblem.AAHAAJEJNLJ> saveEmblems = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.OFAJDLJBMEM_Emblem.MDKOHOCONKE;
+				List<IHGBPAJMJFK_Emblem.AKJPPHFGEFG_EmblemInfo> dbEmblem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem.CDENCMNHNGA_EmblemList;
+				int cnt = saveEmblems.Count;
+				if (dbEmblem.Count < cnt)
+					cnt = dbEmblem.Count;
+				for (int i = 0; i < cnt; i++)
+				{
+					if (dbEmblem[i].PLALNIIBLOF_En == 2)
+					{
+						if (saveEmblems[i].BEBJKJKBOGH_Date == 0)
+						{
+							saveEmblems[i].BEBJKJKBOGH_Date = time;
+							saveEmblems[i].FHCAFLCLGAA_Cnt = 1;
+						}
+					}
+				}
+			}
+			{
+				EBFLJMOCLNA_Costume costumeBlock = newData.LBDOLHGDIEB_GetBlock("costume") as EBFLJMOCLNA_Costume;
+				LCLCCHLDNHJ_Costume costumeDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
+				for (int i = 0; i < costumeDb.CDENCMNHNGA_Costumes.Count; i++)
+				{
+					LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo item = costumeDb.CDENCMNHNGA_Costumes[i];
+					if (item.PPEGAKEIEGM_Enabled == 2)
+					{
+						if (costumeBlock.FABAGMLEKIB_List[i].BEBJKJKBOGH_Date == 0)
+						{
+							costumeBlock.FABAGMLEKIB_List[i].BEBJKJKBOGH_Date = time;
+						}
+						costumeBlock.FABAGMLEKIB_List[i].ANAJIAENLNB_Level = costumeDb.CDENCMNHNGA_Costumes[i].LLLCMHENKKN_LevelMax;
+					}
+				}
+				for (int i = 0; i < 30; i++)
+				{
+					costumeBlock.ILMPHFPFLJE_SetTutoStatus(i, true);
+				}
+			}
+			{
+				OIGEIIGKMNH_Valkyrie valkBlock = newData.LBDOLHGDIEB_GetBlock("valkyrie") as OIGEIIGKMNH_Valkyrie;
+				GKFMJAHKEMA_ValSkill dbValkSkill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill;
+				JPIANKEOOMB_Valkyrie dbValk = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie;
+				for (int i = 0; i < dbValk.CDENCMNHNGA_ValkyrieList.Count; i++)
+				{
+					if (dbValk.CDENCMNHNGA_ValkyrieList[i].IPJMPBANBPP_IsEnabled)
+					{
+						if (valkBlock.CNGNBKNBKGI_ValkList[i].BEBJKJKBOGH_Date == 0)
+						{
+							valkBlock.CNGNBKNBKGI_ValkList[i].BEBJKJKBOGH_Date = time;
+						}
+						GKFMJAHKEMA_ValSkill.CCPFGNNIBDD valkSkill = dbValkSkill.MNHBHNIHJJH(dbValk.CDENCMNHNGA_ValkyrieList[i].BMIJDLBGFNP_SkillId);
+						if (valkSkill != null && valkSkill.DOOGFEGEKLG > 0)
+						{
+							valkBlock.CNGNBKNBKGI_ValkList[i].CIEOBFIIPLD_Level = valkSkill.DOOGFEGEKLG;
+						}
+					}
+				}
+			}
+			{
+				OCLHKHAMDHF_Episode epBlock = newData.LBDOLHGDIEB_GetBlock("episode") as OCLHKHAMDHF_Episode;
+				KMOGDEOKHPG_Episode dbEp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode;
+				for (int i = 0; i < dbEp.BBAJKJPKOHD_EpisodeList.Count; i++)
+				{
+					if (dbEp.BBAJKJPKOHD_EpisodeList[i].PPEGAKEIEGM == 2)
+					{
+						epBlock.BBAJKJPKOHD_EpisodeList[i].EBIIIAELNAA_Step = dbEp.BBAJKJPKOHD_EpisodeList[i].FGOGPCMHPIN_Count - 1;
+						if (epBlock.BBAJKJPKOHD_EpisodeList[i].BEBJKJKBOGH_Date == 0)
+							epBlock.BBAJKJPKOHD_EpisodeList[i].BEBJKJKBOGH_Date = time;
+						for (int j = 0; j < dbEp.BBAJKJPKOHD_EpisodeList[i].FGOGPCMHPIN_Count; j++)
+						{
+							epBlock.BBAJKJPKOHD_EpisodeList[i].BDPOOJDJKAA_SetRewardReceived(j, true);
+						}
+					}
+				}
+			}
+
+			// End all normal quest
+			ODPNBADOFAN_Quest saveQuests = newData.LBDOLHGDIEB_GetBlock("quest") as ODPNBADOFAN_Quest;
+			for (int i = 0; i < saveQuests.GPMKFMFEKLN_NormalQuests.Count; i++)
+			{
+				saveQuests.GPMKFMFEKLN_NormalQuests[i].EALOBDHOCHP_Stat = 3;
+				saveQuests.GPMKFMFEKLN_NormalQuests[i].CADENLBDAEB_New = false;
+			}
+			{
+				OCMJNBIFJNM_Offer offerBlock = newData.LBDOLHGDIEB_GetBlock("offer") as OCMJNBIFJNM_Offer;
+				offerBlock.JLFONLABECA_ShowTuto = -1; // set all tuto read
+			}
+
+			SerializeServerSave(newData, jsonRes);
+		}
+
         public static int SakashoPlayerDataLoadPlayerData(int callbackId, string json)
         {
             UnityEngine.Debug.Log("SakashoPlayerDataLoadPlayerData "+json);
@@ -17,12 +226,7 @@ namespace ExternLib
             EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
             EDOHBJAPLPF_JsonData names = jsonData["names"];
 
-			/*string account_info = System.Text.Encoding.UTF8.GetString(System.IO.File.ReadAllBytes(UnityEngine.Application.dataPath+"/../../Data/RequestPlayerAccount.json"));
-            EDOHBJAPLPF_JsonData jsonRes = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(account_info);
-
-            jsonRes["common"]["mv_ticket"] = 999;
-			*/
-			EDOHBJAPLPF_JsonData jsonRes = playerAccount.serverData;
+			EDOHBJAPLPF_JsonData jsonRes = playerAccount.playerData.serverData;
 			List<string> missingBlock = new List<string>();
 			if(jsonRes != null)
 			{
@@ -39,228 +243,14 @@ namespace ExternLib
 
 			bool allBlock = jsonRes == null;
 
-			BBHNACPENDM_ServerSaveData newData = new BBHNACPENDM_ServerSaveData();
-			newData.KHEKNNFCAOI_Init(0xFFFFFFFFFFFFFF);
-
 			// Init default profile data
-			if (jsonRes == null)
+			if (RuntimeSettings.CurrentSettings.EnableProfileSaveCheck)
 			{
-				UnityEngine.Debug.Log("Create new server data");
-				jsonRes = new EDOHBJAPLPF_JsonData();
-				playerAccount.serverData = jsonRes;
-			}
-			else
-			{
-				if (RuntimeSettings.CurrentSettings.EnableProfileSaveCheck)
-				{
-					SaveAccountServerData(jsonRes, playerAccount.userId, "data_initbckp.json");
-				}
-
-				Dictionary<string, EDOHBJAPLPF_JsonData> blocks;
-				blocks = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject<Dictionary<string, EDOHBJAPLPF_JsonData>>(jsonRes.EJCOJCGIBNG_ToJson());
-				newData.IIEMACPEEBJ_Load(blocks.Keys.ToList(), jsonRes);
+				SaveAccountServerData(jsonRes, playerAccount.userId, "data_initbckp.json");
 			}
 
-			if (playerAccount.userId == 999999999) // unlock all for cheat account
-			{
-				long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			CheckAccountUpdate(playerAccount.userId);
 
-				// Config full unlocked profile
-				(newData.LBDOLHGDIEB_GetBlock("base") as JBMPOAAMGNB_Base).PBEKKMOPENN_AgreeTosVer = 1;
-				(newData.LBDOLHGDIEB_GetBlock("base") as JBMPOAAMGNB_Base).IJHBIMNKOMC_TutorialEnd = 2;
-				{
-					EGOLBAPFHHD_Common commonBlock = newData.LBDOLHGDIEB_GetBlock("common") as EGOLBAPFHHD_Common;
-					// set max level
-					commonBlock.KIECDDFNCAN_Level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP.PIAMMJNADJH_PlayerMaxLevel;
-					// set max uta grade
-					commonBlock.EAHPKPADCPL_TotalUtaRate = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.Last().ADKDHKMPMHP_Rate;
-					// set uta reward all get
-					commonBlock.EAFLCGCIOND_RetRewRecGra = (int)HighScoreRating.GetUtaGrade(commonBlock.EAHPKPADCPL_TotalUtaRate);
-					// set master version for shown new song popup
-					commonBlock.MMPPEHPKGLI_AddRegularMusicMVer = DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion;
-					// give a lot of stamina
-					commonBlock.BCFPEJODJPP_Stamina = 9999;
-					// give a lot of mv ticket
-					commonBlock.GKKDNOFMJJN_NumTicket = 999;
-					// set all 6line & multi diva song shown
-					for (int i = 1; i < EGOLBAPFHHD_Common.HKJKONOKBLN_ShowLine6AddLength * 8; i++)
-					{
-						commonBlock.LIPHECJKIDD(i, true);
-					}
-				}
-				{
-					FNBIIGJJGKA_Counter counterBlock = newData.LBDOLHGDIEB_GetBlock("counter") as FNBIIGJJGKA_Counter;
-					counterBlock.BDLNMOIOMHK_Total.GKOAPFJFKEJ_VOpC[0] = Mathf.Max(50, counterBlock.BDLNMOIOMHK_Total.GKOAPFJFKEJ_VOpC[0]);
-				}
-				{
-					BAHFBCEPFGP_AddMusic addMusicBlock = newData.LBDOLHGDIEB_GetBlock("add_music") as BAHFBCEPFGP_AddMusic;
-					for (int i = 1; i < 38 * 8; i++)
-					{
-						for (int j = 2; j <= 5; j++)
-							addMusicBlock.DDCBGCODHHN(i, j);
-					}
-				}
-				{
-					NEKDCJKANAH_StoryRecord storyBlock = newData.LBDOLHGDIEB_GetBlock("story_record") as NEKDCJKANAH_StoryRecord;
-					LAEGMENIEDB_Story storyDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OHCIFMDPAPD_Story;
-					for (int i = 0; i < storyDb.CDENCMNHNGA.Count; i++)
-					{
-						storyBlock.MMKAJBFBKNH[i].EALOBDHOCHP_Stat = 4;
-					}
-					storyBlock.EOHHFADHHBL_Complete = true;
-				}
-				{
-					DEKKMGAFJCG_Diva divaBlock = newData.LBDOLHGDIEB_GetBlock("diva") as DEKKMGAFJCG_Diva;
-					for (int i = 0; i < divaBlock.NBIGLBMHEDC_DivaList.Count; i++)
-					{
-						divaBlock.NBIGLBMHEDC_DivaList[i].CPGFPEDMDEH_Have = 1;
-						divaBlock.NBIGLBMHEDC_DivaList[i].KCCONFODCPN_IntimacyLevel = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.GLHEHGGKILG_GetMaxLevel();
-						divaBlock.NBIGLBMHEDC_DivaList[i].JLEPLIHFPKD_IntimacySkillLevel = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.COHLJLNLBKM.Count - 1;
-						for (int j = 0; j < divaBlock.NBIGLBMHEDC_DivaList[i].ANAJIAENLNB_Levels.Count; j++)
-							divaBlock.NBIGLBMHEDC_DivaList[i].ANAJIAENLNB_Levels[j] = 8;
-						divaBlock.NBIGLBMHEDC_DivaList[i].HEBKEJBDCBH_DivaLevel = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.AGNCAAFGLBE_MaxLevels;
-					}
-				}
-				{
-					DDEMMEPBOIA_Sns snsBlock = newData.LBDOLHGDIEB_GetBlock("sns") as DDEMMEPBOIA_Sns;
-					int numSns = 0;
-					for (int i = 0; i < 2000; i++)
-					{
-						BOKMNHAFJHF_Sns.KEIGMAOCJHK dbSns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA[i];
-						if (dbSns.PPEGAKEIEGM_Enabled == 2)
-						{
-							DDEMMEPBOIA_Sns.EFIFBJGKPJF saveSns = snsBlock.HAJEJPFGILG[i];
-							if (saveSns.BEBJKJKBOGH_Date == 0)
-							{
-								saveSns.BEBJKJKBOGH_Date = time;
-							}
-							numSns++;
-						}
-					}
-					EGOLBAPFHHD_Common commonBlock = newData.LBDOLHGDIEB_GetBlock("common") as EGOLBAPFHHD_Common;
-					commonBlock.JLJJHDGEHLK_RecvSns = numSns;
-				}
-				{
-					MLIBEPGADJH_Scene dbScenes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene;
-					MMPBPOIFDAF_Scene saveScenes = newData.LBDOLHGDIEB_GetBlock("scene") as MMPBPOIFDAF_Scene;
-					for (int i = 0; i < dbScenes.CDENCMNHNGA_SceneList.Count; i++)
-					{
-						MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = dbScenes.CDENCMNHNGA_SceneList[i];
-						if (dbScene.PPEGAKEIEGM_En == 2)
-						{
-							if (i < saveScenes.OPIBAPEGCLA.Count)
-							{
-								MMPBPOIFDAF_Scene.PMKOFEIONEG saveScene = saveScenes.OPIBAPEGCLA[i];
-								if (saveScene.BEBJKJKBOGH_Date == 0)
-								{
-									saveScene.BEBJKJKBOGH_Date = time;
-								}
-								saveScene.JPIPENJGGDD_Mlt = 1;
-								saveScene.IELENGDJPHF_Ulk = 1;
-								saveScene.ANAJIAENLNB_Level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(dbScene.EKLIPGELKCL_Rarity, true, dbScene.MCCIFLKCNKO_Feed) + 1;
-								for (int j = 0; j < 15; j++)
-									saveScene.PDNIFBEGMHC_Mb[j] = 0;
-								for (int j = 0; j < saveScene.ANAJIAENLNB_Level - 1; j++)
-								{
-									int idx = j / 8;
-									int idx2 = j % 8;
-									saveScene.PDNIFBEGMHC_Mb[idx] |= (byte)(1 << idx2);
-								}
-							}
-						}
-					}
-				}
-				{
-					List<JGGLDGNKELI_Emblem.AAHAAJEJNLJ> saveEmblems = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.OFAJDLJBMEM_Emblem.MDKOHOCONKE;
-					List<IHGBPAJMJFK_Emblem.AKJPPHFGEFG_EmblemInfo> dbEmblem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem.CDENCMNHNGA_EmblemList;
-					int cnt = saveEmblems.Count;
-					if (dbEmblem.Count < cnt)
-						cnt = dbEmblem.Count;
-					for (int i = 0; i < cnt; i++)
-					{
-						if (dbEmblem[i].PLALNIIBLOF_En == 2)
-						{
-							if (saveEmblems[i].BEBJKJKBOGH_Date == 0)
-							{
-								saveEmblems[i].BEBJKJKBOGH_Date = time;
-								saveEmblems[i].FHCAFLCLGAA_Cnt = 1;
-							}
-						}
-					}
-				}
-				{
-					EBFLJMOCLNA_Costume costumeBlock = newData.LBDOLHGDIEB_GetBlock("costume") as EBFLJMOCLNA_Costume;
-					LCLCCHLDNHJ_Costume costumeDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
-					for (int i = 0; i < costumeDb.CDENCMNHNGA_Costumes.Count; i++)
-					{
-						LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo item = costumeDb.CDENCMNHNGA_Costumes[i];
-						if (item.PPEGAKEIEGM_Enabled == 2)
-						{
-							if (costumeBlock.FABAGMLEKIB_List[i].BEBJKJKBOGH_Date == 0)
-							{
-								costumeBlock.FABAGMLEKIB_List[i].BEBJKJKBOGH_Date = time;
-							}
-							costumeBlock.FABAGMLEKIB_List[i].ANAJIAENLNB_Level = costumeDb.CDENCMNHNGA_Costumes[i].LLLCMHENKKN_LevelMax;
-						}
-					}
-					for (int i = 0; i < 30; i++)
-					{
-						costumeBlock.ILMPHFPFLJE_SetTutoStatus(i, true);
-					}
-				}
-				{
-					OIGEIIGKMNH_Valkyrie valkBlock = newData.LBDOLHGDIEB_GetBlock("valkyrie") as OIGEIIGKMNH_Valkyrie;
-					GKFMJAHKEMA_ValSkill dbValkSkill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill;
-					JPIANKEOOMB_Valkyrie dbValk = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie;
-					for (int i = 0; i < dbValk.CDENCMNHNGA_ValkyrieList.Count; i++)
-					{
-						if (dbValk.CDENCMNHNGA_ValkyrieList[i].IPJMPBANBPP_IsEnabled)
-						{
-							if (valkBlock.CNGNBKNBKGI_ValkList[i].BEBJKJKBOGH_Date == 0)
-							{
-								valkBlock.CNGNBKNBKGI_ValkList[i].BEBJKJKBOGH_Date = time;
-							}
-							GKFMJAHKEMA_ValSkill.CCPFGNNIBDD valkSkill = dbValkSkill.MNHBHNIHJJH(dbValk.CDENCMNHNGA_ValkyrieList[i].BMIJDLBGFNP_SkillId);
-							if (valkSkill != null && valkSkill.DOOGFEGEKLG > 0)
-							{
-								valkBlock.CNGNBKNBKGI_ValkList[i].CIEOBFIIPLD_Level = valkSkill.DOOGFEGEKLG;
-							}
-						}
-					}
-				}
-				{
-					OCLHKHAMDHF_Episode epBlock = newData.LBDOLHGDIEB_GetBlock("episode") as OCLHKHAMDHF_Episode;
-					KMOGDEOKHPG_Episode dbEp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode;
-					for (int i = 0; i < dbEp.BBAJKJPKOHD_EpisodeList.Count; i++)
-					{
-						if (dbEp.BBAJKJPKOHD_EpisodeList[i].PPEGAKEIEGM == 2)
-						{
-							epBlock.BBAJKJPKOHD_EpisodeList[i].EBIIIAELNAA_Step = dbEp.BBAJKJPKOHD_EpisodeList[i].FGOGPCMHPIN_Count - 1;
-							if (epBlock.BBAJKJPKOHD_EpisodeList[i].BEBJKJKBOGH_Date == 0)
-								epBlock.BBAJKJPKOHD_EpisodeList[i].BEBJKJKBOGH_Date = time;
-							for (int j = 0; j < dbEp.BBAJKJPKOHD_EpisodeList[i].FGOGPCMHPIN_Count; j++)
-							{
-								epBlock.BBAJKJPKOHD_EpisodeList[i].BDPOOJDJKAA_SetRewardReceived(j, true);
-							}
-						}
-					}
-				}
-
-				// End all normal quest
-				ODPNBADOFAN_Quest saveQuests = newData.LBDOLHGDIEB_GetBlock("quest") as ODPNBADOFAN_Quest;
-				for (int i = 0; i < saveQuests.GPMKFMFEKLN_NormalQuests.Count; i++)
-				{
-					saveQuests.GPMKFMFEKLN_NormalQuests[i].EALOBDHOCHP_Stat = 3;
-					saveQuests.GPMKFMFEKLN_NormalQuests[i].CADENLBDAEB_New = false;
-				}
-				{
-					OCMJNBIFJNM_Offer offerBlock = newData.LBDOLHGDIEB_GetBlock("offer") as OCMJNBIFJNM_Offer;
-					offerBlock.JLFONLABECA_ShowTuto = -1; // set all tuto read
-				}
-			}
-			//
-
-			SerializeServerSave(newData, jsonRes);
 			SaveAccountServerData();
 			if (RuntimeSettings.CurrentSettings.EnableProfileSaveCheck)
 			{
@@ -547,7 +537,12 @@ namespace ExternLib
 			EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
 			EDOHBJAPLPF_JsonData names = jsonData["names"];
 
-			EDOHBJAPLPF_JsonData jsonRes = playerAccount.serverData;
+			if(!playerAccount.players.ContainsKey(999999998))
+			{
+				InitAccount(999999998);
+			}
+
+			EDOHBJAPLPF_JsonData jsonRes = playerAccount.players[999999998].serverData;
 
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res["next_page"] = -1;
@@ -590,14 +585,14 @@ namespace ExternLib
 				{
 					if (playerData.BBAJPINMOEP_Contains(blockNames[i]))
 					{
-						playerAccount.serverData[blockNames[i]] = playerData[blockNames[i]];
+						playerAccount.playerData.serverData[blockNames[i]] = playerData[blockNames[i]];
 					}
 				}
 
 				if (RuntimeSettings.CurrentSettings.EnableProfileSaveCheck)
 				{
 					SaveAccountServerData(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject((string)msgData["playerData"]), playerAccount.userId, "/data_save_" + saveCnt.ToString() + "_part.json");
-					SaveAccountServerData(playerAccount.serverData, playerAccount.userId, "/data_save_" + saveCnt.ToString() + ".json");
+					SaveAccountServerData(playerAccount.playerData.serverData, playerAccount.userId, "/data_save_" + saveCnt.ToString() + ".json");
 				}
 
 				SaveAccountServerData();
@@ -624,7 +619,14 @@ namespace ExternLib
 
 
 			// Send a copy of the full unlocked account as user data
-			EDOHBJAPLPF_JsonData jsonRes = playerAccount.serverData;
+			for (int i = 0; i < ids.HNBFOAJIIAL_Count; i++)
+			{
+				int accountId = (int)ids[i];
+				if (!playerAccount.players.ContainsKey(accountId))
+				{
+					InitAccount(accountId);
+				}
+			}
 
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res["players"] = new EDOHBJAPLPF_JsonData();
@@ -632,6 +634,7 @@ namespace ExternLib
 			res["players"].Add(new EDOHBJAPLPF_JsonData());
 			for (int i = 0; i < ids.HNBFOAJIIAL_Count; i++)
 			{
+				EDOHBJAPLPF_JsonData jsonRes = playerAccount.players[(int)ids[i]].serverData;
 				EDOHBJAPLPF_JsonData p = new EDOHBJAPLPF_JsonData();
 				res["players"].Add(p);
 				p.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);

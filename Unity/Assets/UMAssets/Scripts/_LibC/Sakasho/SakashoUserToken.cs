@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 using XeSys;
 
@@ -10,6 +11,8 @@ namespace ExternLib
 		public partial class PlayerData
 		{
 			public int userId;
+			public bool needUpdateAfter = false;
+			public EDOHBJAPLPF_JsonData serverData;
 		}
 
 		public partial class AccountData
@@ -17,7 +20,6 @@ namespace ExternLib
 			public int userId = -1;
 			public PlayerData playerData;
 			public Dictionary<int, PlayerData> players = new Dictionary<int, PlayerData>();
-			public EDOHBJAPLPF_JsonData serverData;
 		}
 
 		static AccountData playerAccount;
@@ -51,20 +53,31 @@ namespace ExternLib
 			if (playerAccount == null)
 				return;
 
-			SaveAccountServerData(playerAccount.serverData, playerAccount.userId, "data.json");
+			SaveAccountServerData(playerAccount.playerData.serverData, playerAccount.userId, "data.json");
 		}
 
-		public static void LoadAccountServerData()
+		public static void LoadAccountServerData(int playerId)
 		{
 			if (playerAccount == null)
 				return;
-			string path = Application.persistentDataPath + "/Profiles/" + playerAccount.userId.ToString() + "/data.json";
+			string path = Application.persistentDataPath + "/Profiles/" + playerId.ToString() + "/data.json";
 
 			if (File.Exists(path))
 			{
-				UnityEngine.Debug.Log("load server data "+path);
+				UnityEngine.Debug.Log("load server data " + path + "for" + playerId);
 				string saveData = File.ReadAllText(path);
-				playerAccount.serverData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(saveData);
+				playerAccount.players[playerId].serverData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(saveData);
+			}
+			else
+			{
+				UnityEngine.Debug.Log("Create new server data for " + playerId);
+				EDOHBJAPLPF_JsonData jsonRes = new EDOHBJAPLPF_JsonData();
+
+				BBHNACPENDM_ServerSaveData newData = new BBHNACPENDM_ServerSaveData();
+				newData.KHEKNNFCAOI_Init(0xFFFFFFFFFFFFFF);
+
+				SerializeServerSave(newData, jsonRes);
+				playerAccount.players[playerId].serverData = jsonRes;
 			}
 		}
 
@@ -72,11 +85,89 @@ namespace ExternLib
 		{
 			playerAccount = new AccountData();
 			playerAccount.userId = playerId;
+			InitAccount(playerId);
+			playerAccount.playerData = playerAccount.players[playerId];
+		}
+
+		public static void InitAccount(int playerId)
+		{
 			PlayerData p = new PlayerData();
-			p.userId = playerAccount.userId;
-			playerAccount.playerData = p;
+			p.userId = playerId;
+			p.needUpdateAfter = true;
 			playerAccount.players.Add(p.userId, p);
-			LoadAccountServerData();
+			LoadAccountServerData(playerId);
+			CheckAccountUpdate(playerId);
+		}
+
+		public static void CheckAccountUpdate(int accountId)
+		{
+			PlayerData p = playerAccount.players[accountId];
+			if(!CIOECGOMILE.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+			{
+				p.needUpdateAfter = true;
+				return;
+			}
+			if (!p.needUpdateAfter)
+				return;
+			p.needUpdateAfter = false;
+
+			// Check cheat accounts is full unlocked
+			if (p.userId >= 900000000) // unlock all for cheat account
+			{
+				UnlockAll(p);
+			}
+			if (p.userId == 999999998)
+			{
+				EDOHBJAPLPF_JsonData jsonRes = p.serverData;
+
+				// Update friend with assist cards
+				BBHNACPENDM_ServerSaveData newData = new BBHNACPENDM_ServerSaveData();
+				newData.KHEKNNFCAOI_Init(0xFFFFFFFFFFFFFF);
+
+				Dictionary<string, EDOHBJAPLPF_JsonData> blocks;
+				blocks = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject<Dictionary<string, EDOHBJAPLPF_JsonData>>(jsonRes.EJCOJCGIBNG_ToJson());
+				newData.IIEMACPEEBJ_Load(blocks.Keys.ToList(), jsonRes);
+
+				(newData.LBDOLHGDIEB_GetBlock("base") as JBMPOAAMGNB_Base).OPFGFINHFCE_PlayerName = "Friend";
+				(newData.LBDOLHGDIEB_GetBlock("base") as JBMPOAAMGNB_Base).CMKKFCGBILD_Prof = "Cool friend";
+				{
+					JNMFKOHFAFB_PublicStatus publicBlock = newData.LBDOLHGDIEB_GetBlock("public_status") as JNMFKOHFAFB_PublicStatus;
+					// build sceneList
+					List<GCIJNCFDNON_SceneInfo> scenes = new List<GCIJNCFDNON_SceneInfo>();
+					for (int i = 0; i < newData.PNLOINMCCKH_Scene.OPIBAPEGCLA.Count; i++)
+					{
+						GCIJNCFDNON_SceneInfo IFGEJDMMAHE = new GCIJNCFDNON_SceneInfo();
+						if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[i].PPEGAKEIEGM_En == 2)
+						{
+							MMPBPOIFDAF_Scene.PMKOFEIONEG scene = newData.PNLOINMCCKH_Scene.OPIBAPEGCLA[i];
+							IFGEJDMMAHE.KHEKNNFCAOI(scene.PPFNGGCBJKC_Id, scene.PDNIFBEGMHC_Mb, scene.EMOJHJGHJLN_Sb, scene.JPIPENJGGDD_Mlt, scene.IELENGDJPHF_Ulk, scene.MJBODMOLOBC_Luck, scene.LHMOAJAIJCO_New, scene.BEBJKJKBOGH_Date, scene.DMNIMMGGJJJ_Leaf);
+							scenes.Add(IFGEJDMMAHE);
+						}
+					}
+					scenes.Sort((GCIJNCFDNON_SceneInfo a, GCIJNCFDNON_SceneInfo b) =>
+					{
+						int res = b.CMCKNKKCNDK_Status.Total - a.CMCKNKKCNDK_Status.Total;
+						if (res == 0)
+							res = a.BCCHOBPJJKE_SceneId - b.BCCHOBPJJKE_SceneId;
+						return res;
+					});
+
+					publicBlock.AFBMEMCHJCL_MScene.DOMFHDPMCCO(scenes[0].BCCHOBPJJKE_SceneId, scenes[0].KBOLNIBLIND, scenes[0].ODKMKEHJOCK, scenes[0].MJBODMOLOBC_Luck, scenes[0].JPIPENJGGDD_NumBoard, scenes[0].MKHFCGPJPFI_LimitOverCount);
+					for (int i = 0; i < 4; i++)
+					{
+						for (int j = 0; j < scenes.Count; j++)
+						{
+							if (scenes[j].JGJFIJOCPAG_SceneAttr == i || i == 0)
+							{
+								publicBlock.MGMFOJPNDGA_AssistData.JOHLGBDOLNO_DataList[i].DOMFHDPMCCO(scenes[j].BCCHOBPJJKE_SceneId, scenes[j].KBOLNIBLIND, scenes[j].ODKMKEHJOCK, scenes[j].MJBODMOLOBC_Luck, scenes[j].JPIPENJGGDD_NumBoard, scenes[j].MKHFCGPJPFI_LimitOverCount);
+								break;
+							}
+						}
+					}
+				}
+
+				SerializeServerSave(newData, jsonRes);
+			}
 		}
 
 		public static int CreateAccount(bool cheatAccount)
