@@ -25,7 +25,7 @@ public class PGCGJPPBOOA
 	// RVA: 0x16C8A88 Offset: 0x16C8A88 VA: 0x16C8A88
 	public void DPKCOKLMFMK(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
     {
-        TodoLogger.Log(0, "PGCGJPPBOOA.DPKCOKLMFMK");
+        TodoLogger.LogError(0, "PGCGJPPBOOA.DPKCOKLMFMK");
     }
 }
 

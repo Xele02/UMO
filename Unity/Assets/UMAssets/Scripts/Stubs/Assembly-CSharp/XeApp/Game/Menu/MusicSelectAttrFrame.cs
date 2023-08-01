@@ -7,7 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class MusicSelectAttrFrame : LayoutUGUIScriptBase
 	{
-    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private List<RawImageEx> m_frameImages;
 		[SerializeField]

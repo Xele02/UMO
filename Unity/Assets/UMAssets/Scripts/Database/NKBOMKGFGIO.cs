@@ -66,14 +66,14 @@ public class NKBOMKGFGIO_EventRaidItem : DIHHCBACKGG_DbSection
 	// RVA: 0x18AE6A8 Offset: 0x18AE6A8 VA: 0x18AE6A8 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(TodoLogger.Database, "NKBOMKGFGIO_EventRaidItem.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.Database, "NKBOMKGFGIO_EventRaidItem.IIEMACPEEBJ");
 		return true;
 	}
 
 	// RVA: 0x18AEA60 Offset: 0x18AEA60 VA: 0x18AEA60 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "NKBOMKGFGIO_EventRaidItem.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "NKBOMKGFGIO_EventRaidItem.CAOGDCBPBAN");
 		return 0;
 	}
 }

@@ -50,7 +50,7 @@ public class OPKDHAODJOA
 	{
 		if (FCICFIAOLAM.Count < 1)
 			return;
-		TodoLogger.Log(0, "OPKDHAODJOA.LFKLIOKFGLP");
+		TodoLogger.LogError(0, "OPKDHAODJOA.LFKLIOKFGLP");
 	}
 
 	//// RVA: 0xCB7C54 Offset: 0xCB7C54 VA: 0xCB7C54

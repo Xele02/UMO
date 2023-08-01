@@ -658,13 +658,13 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xD897EC Offset: 0xD897EC VA: 0xD897EC Slot: 10
 	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "AGHKODFKOJI");
+		TodoLogger.LogError(0, "AGHKODFKOJI");
 	}
 
 	// // RVA: 0xD8A954 Offset: 0xD8A954 VA: 0xD8A954 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "TODO");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "TODO");
 		return null;
 	}
 

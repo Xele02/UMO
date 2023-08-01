@@ -11,7 +11,7 @@ public class PIKEPLLPNNH
 	// RVA: 0x92F268 Offset: 0x92F268 VA: 0x92F268
 	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
 	{
-		TodoLogger.Log(0, "KHEKNNFCAOI");
+		TodoLogger.LogError(0, "KHEKNNFCAOI");
 	}
 }
 
@@ -31,12 +31,12 @@ public class HNFBMAFPDLB_GetRegularRankingRanksAroundTarget : CACGCMBKHDI_Reques
 	// RVA: 0x15FAFE0 Offset: 0x15FAFE0 VA: 0x15FAFE0 Slot: 12
 	public override void DHLDNIEELHO()
 	{
-		TodoLogger.Log(0, "DHLDNIEELHO");
+		TodoLogger.LogError(0, "DHLDNIEELHO");
 	}
 
 	// RVA: 0x15FB0FC Offset: 0x15FB0FC VA: 0x15FB0FC Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
 	{
-		TodoLogger.Log(0, "MGFNKDPHFGI");
+		TodoLogger.LogError(0, "MGFNKDPHFGI");
 	}
 }

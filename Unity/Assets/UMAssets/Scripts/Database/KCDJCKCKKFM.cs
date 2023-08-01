@@ -39,7 +39,7 @@ public class KCDJCKCKKFM_HelpBrowser : DIHHCBACKGG_DbSection
 	// RVA: 0x101FDEC Offset: 0x101FDEC VA: 0x101FDEC Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "KCDJCKCKKFM_HelpBrowser.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "KCDJCKCKKFM_HelpBrowser.CAOGDCBPBAN");
 		return 0;
 	}
 }

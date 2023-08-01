@@ -9,7 +9,7 @@ public class LGGPBMPINDL_EventRaidPlayer : KLFDBFMNLBL_ServerSaveBlock
 	public long NFIOKIBPJCJ; // 0x30
 	public int KDMPHHFADMC; // 0x38
 
-	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0xD74474 NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { TodoLogger.LogError(0, "DMICHEJIAJL"); return false; } } // 0xD74474 NFKFOODCJJB
 
 	// // RVA: 0xD73940 Offset: 0xD73940 VA: 0xD73940
 	// public void KHEKNNFCAOI_Init(int GPLGIGCNNAD) { }
@@ -26,38 +26,38 @@ public class LGGPBMPINDL_EventRaidPlayer : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xD739BC Offset: 0xD739BC VA: 0xD739BC Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Event, "TODO");
+		TodoLogger.LogError(TodoLogger.Event, "TODO");
 	}
 
 	// // RVA: 0xD739C0 Offset: 0xD739C0 VA: 0xD739C0 Slot: 5
 	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(TodoLogger.Event, "OKJPIBHMKMJ");
+		TodoLogger.LogError(TodoLogger.Event, "OKJPIBHMKMJ");
 	}
 
 	// // RVA: 0xD73D14 Offset: 0xD73D14 VA: 0xD73D14 Slot: 6
 	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.LogError(0, "TODO");
 		return true;
 	}
 
 	// // RVA: 0xD741C0 Offset: 0xD741C0 VA: 0xD741C0 Slot: 7
 	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
-		TodoLogger.Log(0, "LGGPBMPINDL_EventRaidPlayer.BMGGKONLFIC");
+		TodoLogger.LogError(0, "LGGPBMPINDL_EventRaidPlayer.BMGGKONLFIC");
 	}
 
 	// // RVA: 0xD74318 Offset: 0xD74318 VA: 0xD74318 Slot: 8
 	public override bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
-		TodoLogger.Log(0, "AGBOGBEOFME");
+		TodoLogger.LogError(0, "AGBOGBEOFME");
 		return true;
 	}
 
 	// // RVA: 0xD74470 Offset: 0xD74470 VA: 0xD74470 Slot: 10
 	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "AGHKODFKOJI");
+		TodoLogger.LogError(0, "AGHKODFKOJI");
 	}
 }

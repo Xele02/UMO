@@ -123,23 +123,23 @@ namespace XeApp.Game.Menu
 			eventType = JGEOBNENMAH.HHCJCDFCLOB.NNABDGKFEMK_EventType;
 			if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 			{
-				TodoLogger.Log(0, "InitParam Event");
+				TodoLogger.LogError(0, "InitParam Event");
 			}
 			if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
 			{
-				TodoLogger.Log(0, "InitParam Event");
+				TodoLogger.LogError(0, "InitParam Event");
 			}
 			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
-				TodoLogger.Log(0, "InitParam Event");
+				TodoLogger.LogError(0, "InitParam Event");
 			}
 			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 			{
-				TodoLogger.Log(0, "InitParam Event");
+				TodoLogger.LogError(0, "InitParam Event");
 			}
 			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
 			{
-				TodoLogger.Log(0, "InitParam Event");
+				TodoLogger.LogError(0, "InitParam Event");
 			}
 		}
 
@@ -284,7 +284,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4FCB0 Offset: 0xB4FCB0 VA: 0xB4FCB0
 		private IEnumerator Co_LoadEvent01Layout()
 		{
-			TodoLogger.Log(0, "Co_LoadEvent01Layout");
+			TodoLogger.LogError(0, "Co_LoadEvent01Layout");
 			yield return null;
 		}
 
@@ -298,7 +298,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4FDFC Offset: 0xB4FDFC VA: 0xB4FDFC
 		private IEnumerator Co_LoadEvent02Layout()
 		{
-			TodoLogger.Log(0, "Co_LoadEvent02Layout");
+			TodoLogger.LogError(0, "Co_LoadEvent02Layout");
 			yield return null;
 		}
 
@@ -306,7 +306,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4FEA8 Offset: 0xB4FEA8 VA: 0xB4FEA8
 		private IEnumerator Co_LoadEvent03Layout()
 		{
-			TodoLogger.Log(0, "Co_LoadEvent03Layout");
+			TodoLogger.LogError(0, "Co_LoadEvent03Layout");
 			yield return null;
 		}
 
@@ -314,7 +314,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4FF54 Offset: 0xB4FF54 VA: 0xB4FF54
 		private IEnumerator Co_LoadRaidLayout()
 		{
-			TodoLogger.Log(0, "Co_LoadRaidLayout");
+			TodoLogger.LogError(0, "Co_LoadRaidLayout");
 			yield return null;
 		}
 
@@ -322,7 +322,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB50000 Offset: 0xB50000 VA: 0xB50000
 		private IEnumerator Co_LoadGoDivaLayout()
 		{
-			TodoLogger.Log(0, "Co_LoadGoDivaLayout");
+			TodoLogger.LogError(0, "Co_LoadGoDivaLayout");
 			yield return null;
 		}
 
@@ -395,7 +395,7 @@ namespace XeApp.Game.Menu
 			{
 				if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 				{
-					TodoLogger.Log(0, "Todo Event");
+					TodoLogger.LogError(0, "Todo Event");
 				}
 				else
 				{
@@ -506,7 +506,7 @@ namespace XeApp.Game.Menu
 			{
 				yield return new WaitWhile(() => {
 					//0xB556B0
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					return false;
 				});
 			}
@@ -514,7 +514,7 @@ namespace XeApp.Game.Menu
 			{
 				yield return new WaitWhile(() => {
 					//0xB55770
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					return false;
 				});
 			}
@@ -522,12 +522,12 @@ namespace XeApp.Game.Menu
 			{
 				yield return new WaitWhile(() => {
 					//0xB55830
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					return false;
 				});
 				yield return new WaitWhile(() => {
 					//0xB558F0
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					return false;
 				});
 			}
@@ -535,22 +535,22 @@ namespace XeApp.Game.Menu
 			{
 				yield return new WaitWhile(() => {
 					//0xB559B0
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					return false;
 				});
 				yield return new WaitWhile(() => {
 					//0xB55A70
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					return false;
 				});
 				yield return new WaitWhile(() => {
 					//0xB55B30
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					return false;
 				});
 				yield return new WaitWhile(() => {
 					//0xB55BF0
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					return false;
 				});
 			}
@@ -558,7 +558,7 @@ namespace XeApp.Game.Menu
 			{
 				yield return new WaitWhile(() => {
 					//0xB55CB0
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					return false;
 				});
 			}
@@ -577,7 +577,7 @@ namespace XeApp.Game.Menu
 			}
 			if(isEventBattle)
 			{
-				TodoLogger.Log(0, "Event");
+				TodoLogger.LogError(0, "Event");
 				//event03ScoreLayoutController.SetActive(false);
 				//event03PointLayoutController.SetActive(false);
 			}
@@ -795,7 +795,7 @@ namespace XeApp.Game.Menu
 			}
 			else if(isRaidEventOpen)
 			{
-				TodoLogger.Log(0, "Event Raid");
+				TodoLogger.LogError(0, "Event Raid");
 			}
 			else
 			{
@@ -837,20 +837,20 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB52510 Offset: 0xB52510 VA: 0xB52510
 		private void InitEvent01Result()
 		{
-			TodoLogger.Log(0, "InitEvent01Result");
+			TodoLogger.LogError(0, "InitEvent01Result");
 		}
 
 		// // RVA: 0xB526B8 Offset: 0xB526B8 VA: 0xB526B8
 		private bool IsEvent01ResultLoading()
 		{
-			TodoLogger.Log(0, "IsEvent01ResultLoading");
+			TodoLogger.LogError(0, "IsEvent01ResultLoading");
 			return false;
 		}
 
 		// // RVA: 0xB526E4 Offset: 0xB526E4 VA: 0xB526E4
 		private void StartEvent01ResultAnim()
 		{
-			TodoLogger.Log(0, "StartEvent01ResultAnim");
+			TodoLogger.LogError(0, "StartEvent01ResultAnim");
 		}
 
 		// // RVA: 0xB52710 Offset: 0xB52710 VA: 0xB52710
@@ -865,20 +865,20 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB52764 Offset: 0xB52764 VA: 0xB52764
 		private void InitEvent02Result()
 		{
-			TodoLogger.Log(0, "InitEvent02Result");
+			TodoLogger.LogError(0, "InitEvent02Result");
 		}
 
 		// // RVA: 0xB52904 Offset: 0xB52904 VA: 0xB52904
 		private bool IsEvent02ResultLoading()
 		{
-			TodoLogger.Log(0, "IsEvent02ResultLoading");
+			TodoLogger.LogError(0, "IsEvent02ResultLoading");
 			return false;
 		}
 
 		// // RVA: 0xB52930 Offset: 0xB52930 VA: 0xB52930
 		private void StartEvent02ResultAnim()
 		{
-			TodoLogger.Log(0, "StartEvent02ResultAnim");
+			TodoLogger.LogError(0, "StartEvent02ResultAnim");
 		}
 
 		// // RVA: 0xB5295C Offset: 0xB5295C VA: 0xB5295C
@@ -897,7 +897,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB529D4 Offset: 0xB529D4 VA: 0xB529D4
 		private IEnumerator Co_InitGoDivaResult()
 		{
-			TodoLogger.Log(0, "Co_InitGoDivaResult");
+			TodoLogger.LogError(0, "Co_InitGoDivaResult");
 			yield return null;
 		}
 
@@ -916,7 +916,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB52B04 Offset: 0xB52B04 VA: 0xB52B04
 		private void InitEvent03WinLose()
 		{
-			TodoLogger.Log(0, "InitEvent03WinLose");
+			TodoLogger.LogError(0, "InitEvent03WinLose");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x722F3C Offset: 0x722F3C VA: 0x722F3C
@@ -1012,7 +1012,7 @@ namespace XeApp.Game.Menu
 			{
 				if(GameManager.Instance.IsTutorial)
 				{
-					TodoLogger.Log(0, "Tuto");
+					TodoLogger.LogError(0, "Tuto");
 				}
 				else
 				{
@@ -1027,7 +1027,7 @@ namespace XeApp.Game.Menu
 					switch(Database.Instance.gameSetup.musicInfo.gameEventType)
 					{
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection:
-							TodoLogger.Log(0, "Event");
+							TodoLogger.LogError(0, "Event");
 							break;
 						default:
 							MusicSelectArgs args = new MusicSelectArgs();
@@ -1035,19 +1035,19 @@ namespace XeApp.Game.Menu
 							MenuScene.Instance.Mount(TransitionUniqueId.MUSICSELECT, args, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle:
-							TodoLogger.Log(0, "Event");
+							TodoLogger.LogError(0, "Event");
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN:
-							TodoLogger.Log(0, "Event");
+							TodoLogger.LogError(0, "Event");
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest:
-							TodoLogger.Log(0, "Event");
+							TodoLogger.LogError(0, "Event");
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid:
-							TodoLogger.Log(0, "Event");
+							TodoLogger.LogError(0, "Event");
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva:
-							TodoLogger.Log(0, "Event");
+							TodoLogger.LogError(0, "Event");
 							break;
 					}
 				}

@@ -134,7 +134,7 @@ public abstract class IKDICBBFBMI_EventBase
 	// // RVA: 0x8DD52C Offset: 0x8DD52C VA: 0x8DD52C Slot: 7
 	public virtual List<int> HEACCHAKMFG()
 	{
-		TodoLogger.Log(0, "HEACCHAKMFG");
+		TodoLogger.LogError(0, "HEACCHAKMFG");
 		return new List<int>();
 	}
 
@@ -186,7 +186,7 @@ public abstract class IKDICBBFBMI_EventBase
 	// // RVA: 0x8DE4E0 Offset: 0x8DE4E0 VA: 0x8DE4E0 Slot: 19
 	public virtual void HEFIKPAHCIA(GBNDFCEDNMG.CJDGJFINBFH HDAMBOOCIAA)
     {
-        TodoLogger.Log(0, "TODO");
+        TodoLogger.LogError(0, "TODO");
     }
 
 	// // RVA: 0x8DE830 Offset: 0x8DE830 VA: 0x8DE830 Slot: 20
@@ -274,7 +274,7 @@ public abstract class IKDICBBFBMI_EventBase
 	// // RVA: 0x8DF94C Offset: 0x8DF94C VA: 0x8DF94C
 	public void EHNHJKBDIJN(long JHNMKKNEENE)
 	{
-		TodoLogger.Log(0, "IKDICBBFBMI_EventBase.EHNHJKBDIJN");
+		TodoLogger.LogError(0, "IKDICBBFBMI_EventBase.EHNHJKBDIJN");
 	}
 
 	// // RVA: 0x8DF980 Offset: 0x8DF980 VA: 0x8DF980 Slot: 40
@@ -289,7 +289,7 @@ public abstract class IKDICBBFBMI_EventBase
 	// // RVA: 0x8DF99C Offset: 0x8DF99C VA: 0x8DF99C
 	public void NDHIFHJAAEO()
 	{
-		TodoLogger.Log(0, "IKDICBBFBMI_EventBase.NDHIFHJAAEO");
+		TodoLogger.LogError(0, "IKDICBBFBMI_EventBase.NDHIFHJAAEO");
 	}
 
 	// // RVA: 0x8DF9B8 Offset: 0x8DF9B8 VA: 0x8DF9B8 Slot: 43

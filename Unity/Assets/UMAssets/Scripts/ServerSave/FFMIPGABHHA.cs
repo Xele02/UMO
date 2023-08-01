@@ -104,6 +104,6 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x14E56AC Offset: 0x14E56AC VA: 0x14E56AC Slot: 10
 	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "AGHKODFKOJI");
+		TodoLogger.LogError(0, "AGHKODFKOJI");
 	}
 }

@@ -78,7 +78,7 @@ public class EOHDAOAJOHH
     {
 		if(!AppEnv.IsCBT() && KGCCNEBMHMM != null)
 		{
-			TodoLogger.Log(0, "OPODBGPJDCJ");
+			TodoLogger.LogError(0, "OPODBGPJDCJ");
 		}
     }
 
@@ -88,7 +88,7 @@ public class EOHDAOAJOHH
 	// // RVA: 0xFBC4E8 Offset: 0xFBC4E8 VA: 0xFBC4E8
 	public bool HKMEADILMGB(long PEJIPAFKHKM, int LJNAKDMILMC, string LJGOOOMOMMA, int EAHPLCJMPHD)
 	{
-		TodoLogger.Log(0, "HKMEADILMGB");
+		TodoLogger.LogError(0, "HKMEADILMGB");
 		return false;
 	}
 

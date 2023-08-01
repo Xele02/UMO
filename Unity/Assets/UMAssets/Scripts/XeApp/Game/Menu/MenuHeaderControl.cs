@@ -519,13 +519,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB2A28C Offset: 0xB2A28C VA: 0xB2A28C
 		private void OnClickRecovEne()
 		{
-			TodoLogger.Log(0, "OnClickRecovEne");
+			TodoLogger.LogError(0, "OnClickRecovEne");
 		}
 
 		// // RVA: 0xB2ABA4 Offset: 0xB2ABA4 VA: 0xB2ABA4
 		private void OnClickChargeMoney()
 		{
-			TodoLogger.Log(0, "OnClickChargeMoney");
+			TodoLogger.LogError(0, "OnClickChargeMoney");
 		}
 		
 		// [CompilerGeneratedAttribute] // RVA: 0x6C7734 Offset: 0x6C7734 VA: 0x6C7734

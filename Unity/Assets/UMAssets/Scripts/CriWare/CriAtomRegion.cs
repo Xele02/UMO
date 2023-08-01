@@ -11,19 +11,19 @@ namespace CriWare
 		// // RVA: 0x28B4EF8 Offset: 0x28B4EF8 VA: 0x28B4EF8
 		private void Awake()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x28B4F08 Offset: 0x28B4F08 VA: 0x28B4F08 Slot: 4
 		protected override void OnEnable()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x28B4F34 Offset: 0x28B4F34 VA: 0x28B4F34
 		private void OnDestroy()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x28B4F44 Offset: 0x28B4F44 VA: 0x28B4F44 Slot: 8
@@ -38,13 +38,13 @@ namespace CriWare
 		// // RVA: 0x28B5130 Offset: 0x28B5130 VA: 0x28B5130 Slot: 6
 		public override void CriInternalUpdate()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x28B5134 Offset: 0x28B5134 VA: 0x28B5134 Slot: 7
 		public override void CriInternalLateUpdate()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 	}
 }

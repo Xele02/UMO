@@ -856,7 +856,7 @@ public class OKGLGHCBCJP_Database
 					case BEOKNKGHFFE_Section.LJKEOODGGJF_VcItem: KCCDBKIOLDJ_VcItem = (DKJMDIFAKKD_VcItem)item; break;
 					case BEOKNKGHFFE_Section.NPOPGPFPLOL_HighscoreRating: DCNNPEDOGOG_HighScoreRanking = (HGPEFPFODHO_HighScoreRanking)item; break;
 					case BEOKNKGHFFE_Section.AHKEJPLNAJK_LimitedCompoItem: MBAGKLJDKMH_LimitedCompoItem = (JHAAHJNEBOG_LimitedCompoItem)item; break;
-					default: TodoLogger.Log(TodoLogger.Database, "TODO" + INBBCDGDMLC[i]); break;
+					default: TodoLogger.LogError(TodoLogger.Database, "TODO" + INBBCDGDMLC[i]); break;
 				}
 			}
 		}
@@ -878,7 +878,7 @@ public class OKGLGHCBCJP_Database
 	// // RVA: 0x149494C Offset: 0x149494C VA: 0x149494C
 	public bool IIEMACPEEBJ(List<string> ANFNAHPIJDH, EDOHBJAPLPF_JsonData AAEDAEHIONI)
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.LogError(0, "TODO");
 		return false;
 	}
 

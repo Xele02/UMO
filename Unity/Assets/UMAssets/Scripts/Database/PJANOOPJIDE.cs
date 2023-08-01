@@ -88,7 +88,7 @@ public class PJANOOPJIDE_TutorialPict : DIHHCBACKGG_DbSection
 	// RVA: 0x9305E0 Offset: 0x9305E0 VA: 0x9305E0 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "PJANOOPJIDE_TutorialPict.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "PJANOOPJIDE_TutorialPict.CAOGDCBPBAN");
 		return 0;
 	}
 }

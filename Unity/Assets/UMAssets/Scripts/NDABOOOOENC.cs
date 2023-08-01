@@ -83,7 +83,7 @@ public class NDABOOOOENC
 		{
 			if(!AppEnv.IsCBT())
 			{
-				TodoLogger.Log(TodoLogger.Playgames, "NDABOOOOENC.NCDLCIPGPNC (playgames)");
+				TodoLogger.LogError(TodoLogger.Playgames, "NDABOOOOENC.NCDLCIPGPNC (playgames)");
 				Debug.Log("call PlayGamesPlatform.Activate");
 				GKDLPKNOGCK_Initialized = true;
 				KBCANNBANIL_ReadStatusOnSavedFile();

@@ -202,7 +202,7 @@ public class GJALOMELEHD_Intimacy : DIHHCBACKGG_DbSection
 	// // RVA: 0xAAA570 Offset: 0xAAA570 VA: 0xAAA570 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "GJALOMELEHD_Intimacy.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "GJALOMELEHD_Intimacy.CAOGDCBPBAN");
 		return 0;
 	}
 

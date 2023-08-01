@@ -29,31 +29,31 @@ namespace ExternLib
 
         public static void CRIWARE2DDFB51C_criAtomUnity_SetBeatSyncCallback(IntPtr cbfunc)
         {
-			TodoLogger.Log(TodoLogger.CriAtomPlugin, "CRIWARE2DDFB51C_criAtomUnity_SetBeatSyncCallback");
+			TodoLogger.LogError(TodoLogger.CriAtomPlugin, "CRIWARE2DDFB51C_criAtomUnity_SetBeatSyncCallback");
         }
 
         public static void criAtomUnity_ExecuteQueuedCueLinkCallbacks()
         {
-			TodoLogger.Log(TodoLogger.CriAtomPlugin, "criAtomUnity_ExecuteQueuedCueLinkCallbacks");
+			TodoLogger.LogError(TodoLogger.CriAtomPlugin, "criAtomUnity_ExecuteQueuedCueLinkCallbacks");
 		}
 
         public static void CRIWARE148BE2F8_criAtomUnitySequencer_ExecuteQueuedEventCallbacks()
         {
-			TodoLogger.Log(TodoLogger.CriAtomPlugin, "CRIWARE148BE2F8_criAtomUnitySequencer_ExecuteQueuedEventCallbacks");
+			TodoLogger.LogError(TodoLogger.CriAtomPlugin, "CRIWARE148BE2F8_criAtomUnitySequencer_ExecuteQueuedEventCallbacks");
 		}
 
         public static void CRIWARE75F073A2_criAtomUnity_ExecuteQueuedBeatSyncCallbacks()
         {
-			TodoLogger.Log(TodoLogger.CriAtomPlugin, "CRIWARE75F073A2_criAtomUnity_ExecuteQueuedBeatSyncCallbacks");
+			TodoLogger.LogError(TodoLogger.CriAtomPlugin, "CRIWARE75F073A2_criAtomUnity_ExecuteQueuedBeatSyncCallbacks");
 		}
 
         public static void CRIWARE59269F98_criAtomUnity_Pause(bool pause)
 		{
-			TodoLogger.Log(TodoLogger.CriAtomPlugin, "CRIWARE59269F98_criAtomUnity_Pause");
+			TodoLogger.LogError(TodoLogger.CriAtomPlugin, "CRIWARE59269F98_criAtomUnity_Pause");
 		}
         public static ushort CRIWARE2178C0A8_criAtomUnity_GetNativeParameterId(int id)
         {
-            TodoLogger.Log(TodoLogger.CriAtomPlugin, "CRIWARE2178C0A8_criAtomUnity_GetNativeParameterId");
+            TodoLogger.LogError(TodoLogger.CriAtomPlugin, "CRIWARE2178C0A8_criAtomUnity_GetNativeParameterId");
             return 0;
         }
     }

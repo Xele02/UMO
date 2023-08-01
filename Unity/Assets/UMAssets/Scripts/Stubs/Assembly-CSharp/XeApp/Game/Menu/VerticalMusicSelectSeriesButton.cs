@@ -12,7 +12,7 @@ namespace XeApp.Game.Menu
 		private RawImageEx m_seriesImage;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

@@ -6,7 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class RaidActSelectRootPanel : LayoutUGUIScriptBase
 	{
-    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private RaidActSelectPanel m_layoutPanelL;
 		[SerializeField]

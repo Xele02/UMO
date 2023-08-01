@@ -215,7 +215,7 @@ public class AIFIANALLPB
 	// // RVA: 0xCCD214 Offset: 0xCCD214 VA: 0xCCD214
 	private void JHHKCOCJIKH(CACGCMBKHDI_Request KFBCOGJKEJP)
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.LogError(0, "TODO");
 	}
 
 	// // RVA: 0xCCD234 Offset: 0xCCD234 VA: 0xCCD234

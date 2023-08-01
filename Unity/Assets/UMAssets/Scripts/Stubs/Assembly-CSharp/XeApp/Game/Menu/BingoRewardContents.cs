@@ -20,7 +20,7 @@ namespace XeApp.Game.Menu
 		private Text explanationText;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

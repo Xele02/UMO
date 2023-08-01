@@ -103,7 +103,7 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE4A4C0 Offset: 0xE4A4C0 VA: 0xE4A4C0
 		public static IEnumerator Co_BeginnerMissionLiveClear(MusicSelectCDSelect cdSelect, MusicScrollView musicScrollView)
 		{
-			TodoLogger.Log(0, "Co_BeginnerMissionLiveClear");
+			TodoLogger.LogError(0, "Co_BeginnerMissionLiveClear");
 			yield return null;
 		}
 
@@ -171,7 +171,7 @@ namespace XeApp.Game.Tutorial
 		{
 			if (RuntimeSettings.CurrentSettings.ForceTutoSkip)
 				yield break;
-			TodoLogger.Log(0, "Co_CostumeUpgrade");
+			TodoLogger.LogError(0, "Co_CostumeUpgrade");
 			yield return null;
 		}
 
@@ -187,7 +187,7 @@ namespace XeApp.Game.Tutorial
 				yield break;
 			if(RuntimeSettings.CurrentSettings.ForceTutoSkip)
 				yield break;
-			TodoLogger.Log(0, "Co_ValkyrieUpgrade");
+			TodoLogger.LogError(0, "Co_ValkyrieUpgrade");
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF078 Offset: 0x6AF078 VA: 0x6AF078
@@ -211,7 +211,7 @@ namespace XeApp.Game.Tutorial
 				yield break;
 			if(proc != null)
 				proc();
-			TodoLogger.Log(0, "Co_Decolture");
+			TodoLogger.LogError(0, "Co_Decolture");
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF1E0 Offset: 0x6AF1E0 VA: 0x6AF1E0
@@ -237,14 +237,14 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE4AF98 Offset: 0xE4AF98 VA: 0xE4AF98
 		public static IEnumerator Co_PlateGrowth(ActionButton button)
 		{
-			TodoLogger.Log(0, "Co_PlateGrowth");
+			TodoLogger.LogError(0, "Co_PlateGrowth");
 			yield return null;
 		}
 
 		//// RVA: 0xE4B020 Offset: 0xE4B020 VA: 0xE4B020
 		public static bool CanDivaSelect(int missionId)
 		{
-			TodoLogger.Log(0, "CanDivaSelect");
+			TodoLogger.LogError(0, "CanDivaSelect");
 			return false;
 		}
 
@@ -354,7 +354,7 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE4BBA8 Offset: 0xE4BBA8 VA: 0xE4BBA8
 		public static IEnumerator Co_AssistSelect(ActionButton button)
 		{
-			TodoLogger.Log(0, "Tutorial Co_AssistSelect");
+			TodoLogger.LogError(0, "Tutorial Co_AssistSelect");
 			yield break;
 		}
 

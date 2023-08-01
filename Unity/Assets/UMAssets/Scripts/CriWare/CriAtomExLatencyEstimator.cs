@@ -18,13 +18,13 @@ public static class CriAtomExLatencyEstimator
 	// // RVA: 0x289B3F0 Offset: 0x289B3F0 VA: 0x289B3F0
 	public static void InitializeModule()
 	{
-		TodoLogger.Log(TodoLogger.CriAtomExLatencyEstimator, "CriAtomExLatencyEstimator.InitializeModule");
+		TodoLogger.LogError(TodoLogger.CriAtomExLatencyEstimator, "CriAtomExLatencyEstimator.InitializeModule");
 	}
 
 	// // RVA: 0x289B4DC Offset: 0x289B4DC VA: 0x289B4DC
 	public static void FinalizeModule()
 	{
-        TodoLogger.Log(TodoLogger.CriAtomExLatencyEstimator, "CriAtomExLatencyEstimator.FinalizeModule");
+        TodoLogger.LogError(TodoLogger.CriAtomExLatencyEstimator, "CriAtomExLatencyEstimator.FinalizeModule");
     }
 
 	// // RVA: 0x289B5C4 Offset: 0x289B5C4 VA: 0x289B5C4

@@ -227,7 +227,7 @@ public class PIGBKEIAMPE_FriendManager
 		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request DOGDHKIEBJA) =>
 		{
 			//0x92C494
-			TodoLogger.Log(0, "MOBEEPPKFLG_OnFail");
+			TodoLogger.LogError(0, "MOBEEPPKFLG_OnFail");
 		};
 	}
 
@@ -249,7 +249,7 @@ public class PIGBKEIAMPE_FriendManager
 		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request DOGDHKIEBJA) =>
 		{
 			//0x92C66C
-			TodoLogger.Log(0, "MOBEEPPKFLG_OnFail");
+			TodoLogger.LogError(0, "MOBEEPPKFLG_OnFail");
 		};
 	}
 
@@ -299,7 +299,7 @@ public class PIGBKEIAMPE_FriendManager
 		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request DOGDHKIEBJA) =>
 		{
 			//0x92CAEC
-			TodoLogger.Log(0, "MOBEEPPKFLG_OnFail");
+			TodoLogger.LogError(0, "MOBEEPPKFLG_OnFail");
 		};
 	}
 
@@ -340,7 +340,7 @@ public class PIGBKEIAMPE_FriendManager
 		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request DOGDHKIEBJA) =>
 		{
 			//0x92CE0C
-			TodoLogger.Log(0, "MOBEEPPKFLG_OnFail");
+			TodoLogger.LogError(0, "MOBEEPPKFLG_OnFail");
 		};
 	}
 
@@ -358,7 +358,7 @@ public class PIGBKEIAMPE_FriendManager
 		f = (CACGCMBKHDI_Request DOGDHKIEBJA) =>
 		{
 			//0x92D344
-			TodoLogger.Log(0, "MOBEEPPKFLG_OnFail");
+			TodoLogger.LogError(0, "MOBEEPPKFLG_OnFail");
 		};
 		s = (CACGCMBKHDI_Request KFBCOGJKEJP) =>
 		{

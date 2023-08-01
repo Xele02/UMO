@@ -57,14 +57,14 @@ public class DGDIEDDPNNG_UcItem : DIHHCBACKGG_DbSection
 	// RVA: 0x1984900 Offset: 0x1984900 VA: 0x1984900 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(TodoLogger.Database, "DGDIEDDPNNG_UcItem.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.Database, "DGDIEDDPNNG_UcItem.IIEMACPEEBJ");
 		return true;
 	}
 
 	// RVA: 0x1984DF4 Offset: 0x1984DF4 VA: 0x1984DF4 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "DGDIEDDPNNG_UcItem.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "DGDIEDDPNNG_UcItem.CAOGDCBPBAN");
 		return 0;
 	}
 }

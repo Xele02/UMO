@@ -320,7 +320,7 @@ public class KOGHKIODHPA_Board : DIHHCBACKGG_DbSection
 	// // RVA: 0x1131120 Offset: 0x1131120 VA: 0x1131120 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(100, "TODO");
+		TodoLogger.LogError(100, "TODO");
 		return true;
 	}
 
@@ -416,7 +416,7 @@ public class KOGHKIODHPA_Board : DIHHCBACKGG_DbSection
 	// // RVA: 0x1131470 Offset: 0x1131470 VA: 0x1131470 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "KOGHKIODHPA_Board.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "KOGHKIODHPA_Board.CAOGDCBPBAN");
 		return 0;
 	}
 }

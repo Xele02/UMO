@@ -187,7 +187,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xECEBE4 Offset: 0xECEBE4 VA: 0xECEBE4
 		private void DoAutoTalk()
 		{
-			TodoLogger.Log(0, "DoAutoTalk");
+			TodoLogger.LogError(0, "DoAutoTalk");
 			m_autoTalkWatch.Reset();
 			m_autoTalkWatch.Start();
 		}

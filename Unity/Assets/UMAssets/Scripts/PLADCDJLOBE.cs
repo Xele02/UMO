@@ -54,7 +54,7 @@ public class PLADCDJLOBE
 				PLADCDJLOBE p = null;
 				for (int i = 0; i < JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Count; i++)
 				{
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 				}
 				List<FKMOKDCJFEN> l = FKMOKDCJFEN.CMLEFPDNBCB(false, 0, true);
 				if (l != null && l.Count > 0)
@@ -94,7 +94,7 @@ public class PLADCDJLOBE
 			}
 			else
 			{
-				TodoLogger.Log(0, "Event");
+				TodoLogger.LogError(0, "Event");
 			}
 		}
 		else
@@ -146,7 +146,7 @@ public class PLADCDJLOBE
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 		for(int i = 0; i < JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Count; i++)
 		{
-			TodoLogger.Log(0, "Event");
+			TodoLogger.LogError(0, "Event");
 		}
 		return null;
 	}

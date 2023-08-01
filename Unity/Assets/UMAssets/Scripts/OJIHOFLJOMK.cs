@@ -30,13 +30,13 @@ public class OJIHOFLJOMK
 	//// RVA: 0x148DD70 Offset: 0x148DD70 VA: 0x148DD70
 	public void LKCPCCANJFB(string LEAIFBMIEIG, long PEJIPAFKHKM, int NNGBINEKMNO, string ADCMNODJBGJ, string LJGOOOMOMMA, int EAHPLCJMPHD, string JJCAHFAOPNI = "png")
 	{
-		TodoLogger.Log(TodoLogger.Java, "Java Call send");
+		TodoLogger.LogError(TodoLogger.Java, "Java Call send");
 	}
 
 	//// RVA: 0x148E13C Offset: 0x148E13C VA: 0x148E13C
 	public void JCHLONCMPAJ(int NNGBINEKMNO)
 	{
-		TodoLogger.Log(TodoLogger.Java, "Java Call clear");
+		TodoLogger.LogError(TodoLogger.Java, "Java Call clear");
 	}
 
 	//// RVA: 0x148E25C Offset: 0x148E25C VA: 0x148E25C

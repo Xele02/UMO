@@ -33,7 +33,7 @@ public class MGCDMPJLFKP
 		DHDCHLAIAMP.Clear();
 		if(File.Exists(ELLBAAFKDCH_FilePath))
 		{
-			TodoLogger.Log(0, "PCODDPDFLHK");
+			TodoLogger.LogError(0, "PCODDPDFLHK");
 		}
 	}
 

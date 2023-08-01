@@ -95,7 +95,7 @@ public class LAPFLEEAACL
 	// // RVA: 0xD94D64 Offset: 0xD94D64 VA: 0xD94D64
 	private IEnumerator BJGOKLICIDO_Coroutine_Convert(int LGMBMMMAFKK)
 	{
-		TodoLogger.Log(0, "BJGOKLICIDO_Coroutine_Convert");
+		TodoLogger.LogError(0, "BJGOKLICIDO_Coroutine_Convert");
 		yield return null;
 		PLOOEECNHFB_IsDone = true;
 	}
@@ -104,7 +104,7 @@ public class LAPFLEEAACL
 	// // RVA: 0xD94E0C Offset: 0xD94E0C VA: 0xD94E0C
 	private IEnumerator CAIJJOKCOAB_ConvertMonthlyPass(int LGMBMMMAFKK)
 	{
-		TodoLogger.Log(0, "CAIJJOKCOAB_ConvertMonthlyPass");
+		TodoLogger.LogError(0, "CAIJJOKCOAB_ConvertMonthlyPass");
 		yield return null;
 		PLOOEECNHFB_IsDone = true;
 	}

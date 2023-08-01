@@ -80,7 +80,7 @@ public class LAMCONGFONF
 		{
 			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFHMLHKODOD_EventGoDivaRanking != null && IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFHMLHKODOD_EventGoDivaRanking.NGHKJOEDLIP != null)
 			{
-				TodoLogger.Log(0, "AMKJFGLEJGE");
+				TodoLogger.LogError(0, "AMKJFGLEJGE");
 			}
 		}
 	}

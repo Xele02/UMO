@@ -382,7 +382,7 @@ public class BKPAPCMJKHE_Shop : DIHHCBACKGG_DbSection
 	// RVA: 0x19B5744 Offset: 0x19B5744 VA: 0x19B5744 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "BKPAPCMJKHE_Shop.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "BKPAPCMJKHE_Shop.CAOGDCBPBAN");
 		return 0;
 	}
 }

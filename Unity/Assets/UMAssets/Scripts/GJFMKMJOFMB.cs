@@ -35,7 +35,7 @@ public class GJFMKMJOFMB
 			HNNAJBJCNEJ = true;
 			for(int i = 0; i < NHPDPKHMFEP.HHCJCDFCLOB.LKNKNKAALJO.Count; i++)
 			{
-				TodoLogger.Log(0, "KHEKNNFCAOI");
+				TodoLogger.LogError(0, "KHEKNNFCAOI");
 			}
 			NHPDPKHMFEP.HHCJCDFCLOB.LKNKNKAALJO.Clear();
 		}
@@ -47,7 +47,7 @@ public class GJFMKMJOFMB
 				HNNAJBJCNEJ = true;
 				for (int i = 0; i < NHPDPKHMFEP.HHCJCDFCLOB.LKNKNKAALJO.Count; i++)
 				{
-					TodoLogger.Log(0, "KHEKNNFCAOI");
+					TodoLogger.LogError(0, "KHEKNNFCAOI");
 				}
 				NHPDPKHMFEP.HHCJCDFCLOB.LKNKNKAALJO.Clear();
 			}

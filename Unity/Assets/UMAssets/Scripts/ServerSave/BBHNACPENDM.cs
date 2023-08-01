@@ -558,7 +558,7 @@ public class BBHNACPENDM_ServerSaveData
 			BHBONAHFKHD data = new BHBONAHFKHD();
 			for(int i = 0; i < l1.Count; i++)
 			{
-				TodoLogger.Log(TodoLogger.OptimizedSave, "OptimizedSave not neededd for now as we are only local");
+				TodoLogger.LogError(TodoLogger.OptimizedSave, "OptimizedSave not neededd for now as we are only local");
 				continue;
 				KLFDBFMNLBL_ServerSaveBlock b = MGJKEJHEBPO_Blocks[l1[i]];
 				KLFDBFMNLBL_ServerSaveBlock b2 = GJLFANGDGCL.MGJKEJHEBPO_Blocks[l1[i]];
@@ -721,7 +721,7 @@ public class BBHNACPENDM_ServerSaveData
 	// // RVA: 0xF220F8 Offset: 0xF220F8 VA: 0xF220F8
 	public void JCFDDJIBKPA()
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.LogError(0, "TODO");
 	}
 
 	// // RVA: 0xF23B4C Offset: 0xF23B4C VA: 0xF23B4C
@@ -936,7 +936,7 @@ public class BBHNACPENDM_ServerSaveData
 	// // RVA: 0xF257B4 Offset: 0xF257B4 VA: 0xF257B4
 	public void JAIGHAGMLCJ()
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.LogError(0, "TODO");
 	}
 
 	// // RVA: 0xF23C3C Offset: 0xF23C3C VA: 0xF23C3C

@@ -93,7 +93,7 @@ public class HHPEMHHCKBE_Compo : DIHHCBACKGG_DbSection
 	// RVA: 0x183367C Offset: 0x183367C VA: 0x183367C Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "HHPEMHHCKBE_Compo.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "HHPEMHHCKBE_Compo.IIEMACPEEBJ");
 		return 0;
 	}
 }

@@ -149,7 +149,7 @@ public class AODFBGCCBPE
 		long res = 0;
 		for(int i = 0; i < MHKCPJDNJKI.Count; i++)
 		{
-			TodoLogger.Log(TodoLogger.ToCheck, "what is ^ ");
+			TodoLogger.LogError(TodoLogger.ToCheck, "what is ^ ");
 			res += MHKCPJDNJKI[i].EAPILIMHDNP;
 		}
 		return res;

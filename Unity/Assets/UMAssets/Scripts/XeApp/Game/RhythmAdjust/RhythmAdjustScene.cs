@@ -742,7 +742,7 @@ namespace XeApp.Game.RhythmAdjust
 		// // RVA: 0xF639BC Offset: 0xF639BC VA: 0xF639BC
 		private void AdjustTutorialMoveConfirmMode(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
 		{
-			TodoLogger.Log(0, "AdjustTutorialMoveConfirmMode");
+			TodoLogger.LogError(0, "AdjustTutorialMoveConfirmMode");
 		}
 
 		// // RVA: 0xF63A58 Offset: 0xF63A58 VA: 0xF63A58
@@ -765,7 +765,7 @@ namespace XeApp.Game.RhythmAdjust
 		// // RVA: 0xF63BEC Offset: 0xF63BEC VA: 0xF63BEC
 		private void AdjustTutorialConfirmPopupResult(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
 		{
-			TodoLogger.Log(0, "AdjustTutorialConfirmPopupResult");
+			TodoLogger.LogError(0, "AdjustTutorialConfirmPopupResult");
 		}
 
 		// // RVA: 0xF60F40 Offset: 0xF60F40 VA: 0xF60F40
@@ -796,7 +796,7 @@ namespace XeApp.Game.RhythmAdjust
 		// // RVA: 0xF63DF0 Offset: 0xF63DF0 VA: 0xF63DF0
 		private void AdjustTutorialPopupResult(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
 		{
-			TodoLogger.Log(0, "AdjustTutorialPopupResult");
+			TodoLogger.LogError(0, "AdjustTutorialPopupResult");
 		}
 
 		// // RVA: 0xF62288 Offset: 0xF62288 VA: 0xF62288
@@ -825,7 +825,7 @@ namespace XeApp.Game.RhythmAdjust
 		// // RVA: 0xF60EB4 Offset: 0xF60EB4 VA: 0xF60EB4
 		private IEnumerator Co_TutorialIntroFlow()
 		{
-			TodoLogger.Log(0, "Co_TutorialIntroFlow");
+			TodoLogger.LogError(0, "Co_TutorialIntroFlow");
 			yield return null;
 		}
 
@@ -833,7 +833,7 @@ namespace XeApp.Game.RhythmAdjust
 		// // RVA: 0xF60E28 Offset: 0xF60E28 VA: 0xF60E28
 		private IEnumerator Co_TutorialEndFlow()
 		{
-			TodoLogger.Log(0, "Co_TutorialEndFlow");
+			TodoLogger.LogError(0, "Co_TutorialEndFlow");
 			yield return null;
 		}
 	}

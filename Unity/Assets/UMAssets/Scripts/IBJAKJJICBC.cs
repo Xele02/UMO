@@ -288,7 +288,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 		}
 		else
 		{
-			TodoLogger.Log(0, "IBJAKJJCBC KHEKNNFCAOI Init weekly event");
+			TodoLogger.LogError(0, "IBJAKJJCBC KHEKNNFCAOI Init weekly event");
 		}
 		EEFLOOBOAGF = musicInfo.EEFLOOBOAGF;
 		LDGOHPAPBMM = true;
@@ -474,7 +474,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 						bool b2 = false;
 						if(DEPGBBJMFED_Serie == 5 && ev != null && ev.FLPDCNBLOKL((int)time.DayOfWeek, musicInfo.GHBPLHBNMBK_FreeMusicId))
 						{
-							TodoLogger.Log(0, "FKDIMODKKJD Event week");
+							TodoLogger.LogError(0, "FKDIMODKKJD Event week");
 							CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LCKMBHDMPIP_RecordMusic.FAMANJGJANN_FreeMusicInfo[i].FKBPJCDBDAG_SetWeekEventServerDate(JHNMKKNEENE_Date);
 							//Setup vars
 							//L311
@@ -533,16 +533,16 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 
 		if(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI, false) != null)
 		{
-			TodoLogger.Log(0, "FKDIMODKKJD (generate song list event)");
+			TodoLogger.LogError(0, "FKDIMODKKJD (generate song list event)");
 		}
 		if(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI) != null)
 		{
-			TodoLogger.Log(0, "FKDIMODKKJD (generate song list event)");
+			TodoLogger.LogError(0, "FKDIMODKKJD (generate song list event)");
 		}
 		List<IKDICBBFBMI_EventBase> list2 = DJPFFHLCCNL(OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool, JHNMKKNEENE_Date, KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI);
 		for(int i = 0; i < list2.Count; i++)
 		{
-			TodoLogger.Log(0, "FKDIMODKKJD (generate song list event)");
+			TodoLogger.LogError(0, "FKDIMODKKJD (generate song list event)");
 		}
 
         return res;
@@ -559,7 +559,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 		});
 		for(int i = 0; i < evts.Count; i++)
 		{
-			TodoLogger.Log(0, "DJPFFHLCCNL");
+			TodoLogger.LogError(0, "DJPFFHLCCNL");
 		}
 		return res;
 	}
@@ -581,17 +581,17 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 		IKDICBBFBMI_EventBase data = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI, false);
 		if(data != null && data.HEACCHAKMFG().Count > 0)
 		{
-			TodoLogger.Log(0, "FKDIMODKKJD event info");
+			TodoLogger.LogError(0, "FKDIMODKKJD event info");
 		}
 		data = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI);
 		if(data != null)
 		{
-			TodoLogger.Log(0, "FKDIMODKKJD event info");
+			TodoLogger.LogError(0, "FKDIMODKKJD event info");
 		}
 		List<IKDICBBFBMI_EventBase> ldata = DJPFFHLCCNL(OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool, JHNMKKNEENE, KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI);
 		for(int i = 0; i < ldata.Count; i++)
 		{
-			TodoLogger.Log(0, "FKDIMODKKJD event info");
+			TodoLogger.LogError(0, "FKDIMODKKJD event info");
 		}
         return res;
     }

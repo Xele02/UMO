@@ -5,7 +5,7 @@ namespace XeApp.Game.Menu
 {
 	public class GachaRateElemBase : LayoutUGUIScriptBase
 	{
-    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private RectTransform m_rectTrans;
 		[SerializeField]

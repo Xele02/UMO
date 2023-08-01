@@ -332,7 +332,7 @@ public class HPBDNNACBAK
 			MHKCPJDNJKI_GatchaProducts.Sort((LOBDIAABMKG HKICMNAACDA, LOBDIAABMKG BNKHBCBJBKI) =>
 			{
 				//0x16061BC
-				TodoLogger.Log(0, "Sort");
+				TodoLogger.LogError(0, "Sort");
 				return 0;
 			});
 			ECFNAOCFKKN = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
@@ -343,7 +343,7 @@ public class HPBDNNACBAK
 	// // RVA: 0x160286C Offset: 0x160286C VA: 0x160286C
 	private void CLAAFINFLJN()
 	{
-		TodoLogger.Log(0, "CLAAFINFLJN");
+		TodoLogger.LogError(0, "CLAAFINFLJN");
 	}
 
 	// // RVA: 0x1602AD8 Offset: 0x1602AD8 VA: 0x1602AD8
@@ -404,7 +404,7 @@ public class HPBDNNACBAK
 		};
 		LECJIEDBMKP.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request JIPCHHHLOMM) => {
 			//0x1606AB4
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		};
 	}
 
@@ -414,14 +414,14 @@ public class HPBDNNACBAK
 	// // RVA: 0x1603070 Offset: 0x1603070 VA: 0x1603070
 	private bool ALBOGEHBBAH(List<KBPDNHOKEKD_ProductId> BBKDLIPKADG, int APHNELOFGAK)
 	{
-		TodoLogger.Log(0, "ALBOGEHBBAH");
+		TodoLogger.LogError(0, "ALBOGEHBBAH");
 		return true;
 	}
 
 	// // RVA: 0x1603FA0 Offset: 0x1603FA0 VA: 0x1603FA0
 	private bool BCNEGDOHICK(List<KOPCFBCDBPC> JOMCOLHEBBI, List<JBHCLFDBPKP> IHHEKIJMNLJ, int APHNELOFGAK)
 	{
-		TodoLogger.Log(0, "BCNEGDOHICK");
+		TodoLogger.LogError(0, "BCNEGDOHICK");
 		return true;
 	}
 

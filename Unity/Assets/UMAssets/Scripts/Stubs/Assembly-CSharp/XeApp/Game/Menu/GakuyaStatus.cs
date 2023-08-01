@@ -33,7 +33,7 @@ namespace XeApp.Game.Menu
 		private ScrollRect m_scroll;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

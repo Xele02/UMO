@@ -98,7 +98,7 @@ public class BCKMELFCKKN_Tips : DIHHCBACKGG_DbSection
 	// RVA: 0xC70064 Offset: 0xC70064 VA: 0xC70064 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "BCKMELFCKKN_Tips.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "BCKMELFCKKN_Tips.CAOGDCBPBAN");
 		return 0;
 	}
 }

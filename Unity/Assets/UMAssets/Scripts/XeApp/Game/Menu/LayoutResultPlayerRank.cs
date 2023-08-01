@@ -230,7 +230,7 @@ namespace XeApp.Game.Menu
 			//0x18E7F4C
 			if(viewLevelupData.APIIHFJGEAO_Level < viewLevelupData.IANDPFDFAKP_Level2)
 			{
-				TodoLogger.Log(0, "Co_ShowRankupPopup() 1");
+				TodoLogger.LogError(0, "Co_ShowRankupPopup() 1");
 				yield break;
 			}
 		}

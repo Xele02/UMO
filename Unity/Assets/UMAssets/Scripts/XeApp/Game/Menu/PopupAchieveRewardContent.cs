@@ -37,7 +37,7 @@ namespace XeApp.Game.Menu
 			}
 			if(s.gameEventType == 4)
 			{
-				TodoLogger.Log(0, "PopupAchieveRewardContent Init Event");
+				TodoLogger.LogError(0, "PopupAchieveRewardContent Init Event");
 			}
 			m_viewMusic.KHEKNNFCAOI(s.selectFreeMusicId, false, 0, 0, 0, s.diff == Difficulty.Type.Extreme, false);
 			//LAB_00df0d5c

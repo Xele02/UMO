@@ -117,7 +117,7 @@ public class LAEGMENIEDB_Story : DIHHCBACKGG_DbSection
 	// RVA: 0xD8F830 Offset: 0xD8F830 VA: 0xD8F830 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "LAEGMENIEDB_Story.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "LAEGMENIEDB_Story.CAOGDCBPBAN");
 		return 0;
 	}
 }

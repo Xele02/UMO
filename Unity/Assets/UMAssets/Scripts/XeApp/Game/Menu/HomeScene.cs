@@ -150,7 +150,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				TodoLogger.Log(0, "Event");
+				TodoLogger.LogError(0, "Event");
 			}
 			CHHECNJBMLA_EventBoxGacha evGacha = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.JNHHEMLIDGJ() as CHHECNJBMLA_EventBoxGacha;
 			if(evGacha == null)
@@ -159,7 +159,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				TodoLogger.Log(0, "Event");
+				TodoLogger.LogError(0, "Event");
 			}
 			if(m_playRecordBanner.IsAvailabilityPeriod(DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion))
 			{
@@ -227,7 +227,7 @@ namespace XeApp.Game.Menu
 				m_isInitRaidLobby = true;
 			}, () => {
 				//0x13C7934
-				TodoLogger.Log(0, "InitRaidLobby");
+				TodoLogger.LogError(0, "InitRaidLobby");
 			}));
 			m_isSuccessPrepare = false;
 			NKGJPJPHLIF.HHCJCDFCLOB.LBEHLMLKPDM(() => {
@@ -235,7 +235,7 @@ namespace XeApp.Game.Menu
 				m_isSuccessPrepare = true;
 			}, () => {
 				//0x13C79A8
-				TodoLogger.Log(10, "TODO");
+				TodoLogger.LogError(10, "TODO");
 			});
 			m_balloonLeadData = PLADCDJLOBE.HEGEKFMJNCC();
 			Database.Instance.bonusData.ClearEpisodeBonus();
@@ -256,7 +256,7 @@ namespace XeApp.Game.Menu
 					m_isCheckGachaProductList = true;
 				}, () => {
 					//0x13C7B24
-					TodoLogger.Log(0, "LILDGEPCPPG_GetProducList 2");
+					TodoLogger.LogError(0, "LILDGEPCPPG_GetProducList 2");
 				}, false, false);
 			}
 			else
@@ -283,7 +283,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x971570 Offset: 0x971570 VA: 0x971570
 		private IEnumerator Co_ChangeBg()
 		{
-			TodoLogger.Log(5, "Co_ChangeBg");
+			TodoLogger.LogError(5, "Co_ChangeBg");
 			yield return null;
 		}
 
@@ -318,12 +318,12 @@ namespace XeApp.Game.Menu
 				MenuScene.Instance.LobbyButtonControl.OnStartAnnounce = () =>
 				{
 					//0x97CEF8
-					TodoLogger.Log(0, "OnStartAnnounce ");
+					TodoLogger.LogError(0, "OnStartAnnounce ");
 				};
 				MenuScene.Instance.LobbyButtonControl.OnEndAnnounce = () =>
 				{
 					//0x97D0E8
-					TodoLogger.Log(0, "OnEndAnnounce ");
+					TodoLogger.LogError(0, "OnEndAnnounce ");
 				};
 				MenuScene.Instance.divaManager.SetEnableDivaWind(true, false);
 			}
@@ -661,7 +661,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x97311C Offset: 0x97311C VA: 0x97311C
 		private void OnNetErrorToTitle()
 		{
-			TodoLogger.Log(0, "OnNetErrorToTitle");
+			TodoLogger.LogError(0, "OnNetErrorToTitle");
 		}
 
 		// // RVA: 0x9731CC Offset: 0x9731CC VA: 0x9731CC
@@ -1228,7 +1228,7 @@ namespace XeApp.Game.Menu
 		{
 			if (!BIFNGFAIEIL.HHCJCDFCLOB.DNFPMBFNDCA())
 				return;
-			TodoLogger.Log(0, "CheckSnsNotice");
+			TodoLogger.LogError(0, "CheckSnsNotice");
 		}
 
 		// // RVA: 0x978E2C Offset: 0x978E2C VA: 0x978E2C
@@ -1236,7 +1236,7 @@ namespace XeApp.Game.Menu
 		{
 			if (KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.OAFPGJLCNFM_Cond == 0)
 				return;
-			TodoLogger.Log(0, "CheckOfferNotice");
+			TodoLogger.LogError(0, "CheckOfferNotice");
 		}
 
 		// // RVA: 0x978F14 Offset: 0x978F14 VA: 0x978F14
@@ -1465,7 +1465,7 @@ namespace XeApp.Game.Menu
 			currentTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			foreach(var it in JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN)
 			{
-				TodoLogger.Log(0, "Co_HomeMissionAnnounce");
+				TodoLogger.LogError(0, "Co_HomeMissionAnnounce");
 			}
 
 		}
@@ -1481,7 +1481,7 @@ namespace XeApp.Game.Menu
 			//0x13D7AEC
 			if (m_richBannerData.FPCLGFKEEFE.Count == 0)
 				yield break;
-			TodoLogger.Log(0, "Co_ShowRichBanner");
+			TodoLogger.LogError(0, "Co_ShowRichBanner");
 		}
 
 		// // RVA: 0x97A5E0 Offset: 0x97A5E0 VA: 0x97A5E0
@@ -1508,7 +1508,7 @@ namespace XeApp.Game.Menu
 			//PopupLimitedHomeBG.Setting s = new PopupLimitedHomeBG.Setting();
 			//MenuScene.Instance.InputDisable();
 			//s.m_bundle_id = 
-			TodoLogger.Log(0, "Co_ChangePopupLimtiedBg");
+			TodoLogger.LogError(0, "Co_ChangePopupLimtiedBg");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E39E4 Offset: 0x6E39E4 VA: 0x6E39E4
@@ -1583,7 +1583,7 @@ namespace XeApp.Game.Menu
 			//0x13D71BC
 			if(m_pickupWebViewList.Count > 0)
 			{
-				TodoLogger.Log(0, "Co_ShowPickupWebView");
+				TodoLogger.LogError(0, "Co_ShowPickupWebView");
 			}
 			yield break;
 		}
@@ -1621,44 +1621,44 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x96FAF8 Offset: 0x96FAF8 VA: 0x96FAF8
 		private void SetupBeginnerLead()
 		{
-			TodoLogger.Log(0, "SetupBeginnerLead");
+			TodoLogger.LogError(0, "SetupBeginnerLead");
 		}
 
 		// // RVA: 0x96FD5C Offset: 0x96FD5C VA: 0x96FD5C
 		private void SetupMissionLead()
 		{
-			TodoLogger.Log(0, "SetupMissionLead");
+			TodoLogger.LogError(0, "SetupMissionLead");
 		}
 
 		// // RVA: 0x96FFC0 Offset: 0x96FFC0 VA: 0x96FFC0
 		private void SetupStoryLead()
 		{
-			TodoLogger.Log(0, "SetupStoryLead");
+			TodoLogger.LogError(0, "SetupStoryLead");
 		}
 
 		// // RVA: 0x970118 Offset: 0x970118 VA: 0x970118
 		private void SetupStoryDivaLead()
 		{
-			TodoLogger.Log(0, "SetupStoryDivaLead");
+			TodoLogger.LogError(0, "SetupStoryDivaLead");
 		}
 
 		// // RVA: 0x970358 Offset: 0x970358 VA: 0x970358
 		private void SetupStorySnsLead()
 		{
-			TodoLogger.Log(0, "SetupStorySnsLead");
+			TodoLogger.LogError(0, "SetupStorySnsLead");
 		}
 
 		// // RVA: 0x9704B0 Offset: 0x9704B0 VA: 0x9704B0
 		private void SetupEventHomeLead()
 		{
-			TodoLogger.Log(0, "SetupEventHomeLead");
+			TodoLogger.LogError(0, "SetupEventHomeLead");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3D2C Offset: 0x6E3D2C VA: 0x6E3D2C
 		// // RVA: 0x97ADFC Offset: 0x97ADFC VA: 0x97ADFC
 		private IEnumerator Co_SnsScreen()
 		{
-			TodoLogger.Log(0, "Co_SnsScreen");
+			TodoLogger.LogError(0, "Co_SnsScreen");
 			yield return null;
 		}
 
@@ -1677,7 +1677,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x97B034 Offset: 0x97B034 VA: 0x97B034
 		private IEnumerator Co_BeginnerMissionMiniAdv()
 		{
-			TodoLogger.Log(0, "Co_BeginnerMissionMiniAdv");
+			TodoLogger.LogError(0, "Co_BeginnerMissionMiniAdv");
 			yield return null;
 		}
 
@@ -1700,7 +1700,7 @@ namespace XeApp.Game.Menu
             IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.DDEODFNANDO/*8*/, false);
 			if(ev != null && ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.MKKOHBGHADL/*2*/)
 			{
-				TodoLogger.Log(0, "Coroutine_EventReward");
+				TodoLogger.LogError(0, "Coroutine_EventReward");
 			}
 			bool isShowReward = false;
 			bool isError = false;
@@ -1709,7 +1709,7 @@ namespace XeApp.Game.Menu
 			eventControlers = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN;
 			for(i = 0; i < eventControlers.Count; i++)
 			{
-				TodoLogger.Log(0, "Coroutine_EventReward");
+				TodoLogger.LogError(0, "Coroutine_EventReward");
 			}
 			eventControlers = null;
 			yield return null;
@@ -1737,7 +1737,7 @@ namespace XeApp.Game.Menu
 			//0x13CAF10
 			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.FNLNIKFNHAM_ForceRename)
 				yield break;
-			TodoLogger.Log(0, "Co_CheckPlayerForceRename");
+			TodoLogger.LogError(0, "Co_CheckPlayerForceRename");
 		}
 
 		// // RVA: 0x97B8D4 Offset: 0x97B8D4 VA: 0x97B8D4
@@ -1781,7 +1781,7 @@ namespace XeApp.Game.Menu
 			{
 				for(int i = 0; i < JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Count; i++)
 				{
-					TodoLogger.Log(0, "Event GetEventAdvId");
+					TodoLogger.LogError(0, "Event GetEventAdvId");
 				}
 			}
 			return 0;
@@ -1916,7 +1916,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x97C4A8 Offset: 0x97C4A8 VA: 0x97C4A8
 		private IEnumerator Co_LimitedItemPeriodPopup(int itemId, int itemCount, long currentTime, long period)
 		{
-			TodoLogger.Log(0, "Co_LimitedItemPeriodPopup");
+			TodoLogger.LogError(0, "Co_LimitedItemPeriodPopup");
 			yield return null;
 		}
 
@@ -1924,7 +1924,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x97C57C Offset: 0x97C57C VA: 0x97C57C
 		private IEnumerator Co_LimitedItemGachaProductPeriodPopup(int itemId, int itemCount, long currentTime, long period)
 		{
-			TodoLogger.Log(0, "Co_LimitedItemGachaProductPeriodPopup");
+			TodoLogger.LogError(0, "Co_LimitedItemGachaProductPeriodPopup");
 			yield return null;
 		}
 
@@ -1951,7 +1951,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x97C8C4 Offset: 0x97C8C4 VA: 0x97C8C4
 		private IEnumerator ShowLimitedItemPopup(int itemId, int itemCount, int period, TimeSpan limitedSpan, Action close)
 		{
-			TodoLogger.Log(0, "ShowLimitedItemPopup");
+			TodoLogger.LogError(0, "ShowLimitedItemPopup");
 			yield return null;
 		}
 
@@ -2018,7 +2018,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x97CA68 Offset: 0x97CA68 VA: 0x97CA68
 		private IEnumerator Co_CurrencyItemPeriodPopup(int currencyId, int count, long currentTime, long period)
 		{
-			TodoLogger.Log(0, "Co_CurrencyItemPeriodPopup");
+			TodoLogger.LogError(0, "Co_CurrencyItemPeriodPopup");
 			yield return null;
 		}
 
@@ -2026,7 +2026,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x97CB70 Offset: 0x97CB70 VA: 0x97CB70
 		private IEnumerator Co_CurrencyItemGachaProductPeriodPopup(int currencyId, int count, long currentTime, long period)
 		{
-			TodoLogger.Log(0, "Co_CurrencyItemGachaProductPeriodPopup");
+			TodoLogger.LogError(0, "Co_CurrencyItemGachaProductPeriodPopup");
 			yield return null;
 		}
 

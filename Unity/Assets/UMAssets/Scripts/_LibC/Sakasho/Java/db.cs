@@ -18,7 +18,7 @@ namespace ExternLib.Java_Sakasho
 
             public void a(int var1, string var2, byte[] var3)
             {
-                TodoLogger.Log(0, "TODO");
+                TodoLogger.LogError(0, "TODO");
                 /*if (this.a != null) {
                     String var5 = ey.a(var2, var3);
                     JSONObject var6 = ey.a(var3);

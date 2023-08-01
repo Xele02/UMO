@@ -40,19 +40,19 @@ public class FNPBAENIEPG_PurchaseAndSave : CACGCMBKHDI_Request
 	//// RVA: 0x13E7EB8 Offset: 0x13E7EB8 VA: 0x13E7EB8
 	public void DOMFHDPMCCO(BBHNACPENDM_ServerSaveData.EMHDCKMFCGE IDLHJIOMJBK, int AFKAGFOFAHM, int BPNPBJALGHM, int APHNELOFGAK)
 	{
-		TodoLogger.Log(0, "DOMFHDPMCCO");
+		TodoLogger.LogError(0, "DOMFHDPMCCO");
 	}
 
 	// RVA: 0x13E7F80 Offset: 0x13E7F80 VA: 0x13E7F80 Slot: 12
 	public override void DHLDNIEELHO()
 	{
-		TodoLogger.Log(0, "DHLDNIEELHO");
+		TodoLogger.LogError(0, "DHLDNIEELHO");
 	}
 
 	// RVA: 0x13E80C8 Offset: 0x13E80C8 VA: 0x13E80C8 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
 	{
-		TodoLogger.Log(0, "MGFNKDPHFGI");
+		TodoLogger.LogError(0, "MGFNKDPHFGI");
 	}
 
 	//// RVA: 0x13E84DC Offset: 0x13E84DC VA: 0x13E84DC Slot: 10

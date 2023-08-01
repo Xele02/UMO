@@ -6,7 +6,7 @@ namespace XeApp.Game
 	{
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement monobehaviour");
+			TodoLogger.LogError(0, "Implement monobehaviour");
 		}
 		public Button m_button;
 		public Text m_text;

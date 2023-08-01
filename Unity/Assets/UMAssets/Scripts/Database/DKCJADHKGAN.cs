@@ -132,7 +132,7 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 	// RVA: 0x198E32C Offset: 0x198E32C VA: 0x198E32C Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "DKCJADHKGAN_EventWeekDay.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "DKCJADHKGAN_EventWeekDay.CAOGDCBPBAN");
 		return 0;
 	}
 }

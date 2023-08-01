@@ -10,7 +10,7 @@ namespace XeApp.Game.Gacha
 	{
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement monobehaviour");
+			TodoLogger.LogError(0, "Implement monobehaviour");
 		}
 		[SerializeField]
 		protected PopupGachaLotRuntime m_popupUi;

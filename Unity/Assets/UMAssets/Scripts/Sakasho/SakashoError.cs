@@ -21,13 +21,13 @@ public class SakashoError
 	// // RVA: 0x307A048 Offset: 0x307A048 VA: 0x307A048
 	public SakashoError(int responseCode, string responseBodyJSON)
     { 
-        TodoLogger.Log(0, "TODO");
+        TodoLogger.LogError(0, "TODO");
     }
 
 	// // RVA: 0x307A424 Offset: 0x307A424 VA: 0x307A424
 	public SakashoErrorId getErrorId()
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.LogError(0, "TODO");
 		return SakashoErrorId.UNKNOWN;
 	}
 }

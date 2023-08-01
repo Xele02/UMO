@@ -101,7 +101,7 @@ public class NAKMCMEPAGH
 	// // RVA: 0x17C07E0 Offset: 0x17C07E0 VA: 0x17C07E0
 	public void EJJAPFPJLHP_AddUc(int ACGLMKEBMDL)
 	{
-		TodoLogger.Log(TodoLogger.ToCheck, "Find the max value (99999999?)");
+		TodoLogger.LogError(TodoLogger.ToCheck, "Find the max value (99999999?)");
 		HOHBKPPOLLA_Uc += ACGLMKEBMDL;
 	}
 

@@ -71,7 +71,7 @@ public class DFKGGBMFFGB_PlayerInfo
 							}
 						}
 						// ?? L428
-						TodoLogger.Log(0, "TODO ?? test");
+						TodoLogger.LogError(0, "TODO ?? test");
 						if(i < 2 && j < 2)
 						{
 							if(LDEGEHAEALK_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA.Count > sId)
@@ -121,7 +121,7 @@ public class DFKGGBMFFGB_PlayerInfo
 			IKDICBBFBMI_EventBase evt = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ);
 			if (evt != null)
 			{
-				TodoLogger.Log(0, "Finish for event");
+				TodoLogger.LogError(0, "Finish for event");
 				//??
 				//if(MANPIONIGNO_EventGoDiva evt.PMHLJAIGBGK)
 			}

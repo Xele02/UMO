@@ -68,7 +68,7 @@ public class MDACFBPPIHD_PresentItem : DIHHCBACKGG_DbSection
 	// RVA: 0x130E208 Offset: 0x130E208 VA: 0x130E208 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "MDACFBPPIHD_PresentItem.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "MDACFBPPIHD_PresentItem.CAOGDCBPBAN");
 		return 0;
 	}
 }

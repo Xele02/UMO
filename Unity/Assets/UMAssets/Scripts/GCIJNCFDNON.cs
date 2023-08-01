@@ -150,7 +150,7 @@ public class GCIJNCFDNON_SceneInfo
 	// // RVA: 0x16AB830 Offset: 0x16AB830 VA: 0x16AB830
 	public int CGIELKDLHGE_GetEvolveId()
 	{
-		TodoLogger.Log(TodoLogger.ToCheck, "CGIELKDLHGE_GetEvolveId Not sure ? ");
+		TodoLogger.LogError(TodoLogger.ToCheck, "CGIELKDLHGE_GetEvolveId Not sure ? ");
 		if (JPIPENJGGDD_NumBoard <= 0 && IJIKIPDKCPP <= 1 && !JOKJBMJBLBB_Single)
 			return 1;
 		return 2;
@@ -874,7 +874,7 @@ public class GCIJNCFDNON_SceneInfo
 		int b = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.GENHLFPKOEE(dbScene.EKLIPGELKCL_Rarity, dbScene.MCCIFLKCNKO_Feed);
 		int res = scene.CDOBCKMHAOK_Inf;
 		res = (JPIPENJGGDD_NumBoard - b) - res;
-		TodoLogger.Log(TodoLogger.ToCheck, "Check test");
+		TodoLogger.LogError(TodoLogger.ToCheck, "Check test");
 		if (((res >> 0x1f) & 3) == 3)
 			return 0;
 		return res;

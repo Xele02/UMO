@@ -7,7 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class StorySelectStageIcon : LayoutUGUIScriptBase
 	{
-    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private bool m_is_large;
 		[SerializeField]

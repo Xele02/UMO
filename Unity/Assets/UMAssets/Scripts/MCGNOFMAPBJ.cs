@@ -106,7 +106,7 @@ public class MCGNOFMAPBJ
 			{
 				timeDiff = a;
 			}
-			TodoLogger.Log(TodoLogger.ToCheck, "Check stamina up");
+			TodoLogger.LogError(TodoLogger.ToCheck, "Check stamina up");
 			res += (int)(timeDiff % FLJGHBLEDDB_HealSec);
 			if (DCBENCMNOGO_GainStamina < res)
 				return DCBENCMNOGO_GainStamina;
@@ -167,6 +167,6 @@ public class MCGNOFMAPBJ
 	// // RVA: 0x130D520 Offset: 0x130D520 VA: 0x130D520
 	public void GFOAJNICANO(int GDDFDGNEACK)
 	{
-		TodoLogger.Log(0, "GFOAJNICANO");
+		TodoLogger.LogError(0, "GFOAJNICANO");
 	}
 }

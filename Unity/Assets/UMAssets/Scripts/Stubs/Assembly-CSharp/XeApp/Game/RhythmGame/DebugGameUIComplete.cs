@@ -11,7 +11,7 @@ namespace XeApp.Game.RhythmGame
 		private RhythmGameConsts.ResultComboType m_rank;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

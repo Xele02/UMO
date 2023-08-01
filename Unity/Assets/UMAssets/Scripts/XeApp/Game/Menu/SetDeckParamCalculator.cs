@@ -95,7 +95,7 @@ namespace XeApp.Game.Menu
 			m_isEnableEpisodeBonus = false;
 			if (isRaid)
 			{
-				TodoLogger.Log(0, "event");
+				TodoLogger.LogError(0, "event");
 			}
 			else
 			{
@@ -275,7 +275,7 @@ namespace XeApp.Game.Menu
 			bonusPoint = 0;
 			if (list != null && list.Count > 0)
 			{
-				TodoLogger.Log(0, "CanBonusEpisode Event");
+				TodoLogger.LogError(0, "CanBonusEpisode Event");
 			}
 			return false;
 		}

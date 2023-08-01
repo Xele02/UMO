@@ -29,7 +29,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xC3B074 Offset: 0xC3B074 VA: 0xC3B074
 		private void Start()
 		{
-			TodoLogger.Log(0, "Start");
+			TodoLogger.LogError(0, "Start");
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x726434 Offset: 0x726434 VA: 0x726434
@@ -57,33 +57,33 @@ namespace XeApp.Game.Menu
 		// RVA: 0xC3C3E0 Offset: 0xC3C3E0 VA: 0xC3C3E0 Slot: 16
 		protected override void OnPreSetCanvas()
 		{
-			TodoLogger.Log(0, "OnPreSetCanvas");
+			TodoLogger.LogError(0, "OnPreSetCanvas");
 		}
 
 		// RVA: 0xC3C638 Offset: 0xC3C638 VA: 0xC3C638 Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			TodoLogger.Log(0, "IsEndPreSetCanvas");
+			TodoLogger.LogError(0, "IsEndPreSetCanvas");
 			return true;
 		}
 
 		// RVA: 0xC3C640 Offset: 0xC3C640 VA: 0xC3C640 Slot: 19
 		protected override bool IsEndPostSetCanvas()
 		{
-			TodoLogger.Log(0, "IsEndPostSetCanvas");
+			TodoLogger.LogError(0, "IsEndPostSetCanvas");
 			return true;
 		}
 
 		// RVA: 0xC3C648 Offset: 0xC3C648 VA: 0xC3C648 Slot: 9
 		protected override void OnStartEnterAnimation()
 		{
-			TodoLogger.Log(0, "OnStartEnterAnimation");
+			TodoLogger.LogError(0, "OnStartEnterAnimation");
 		}
 
 		// RVA: 0xC3C790 Offset: 0xC3C790 VA: 0xC3C790 Slot: 23
 		protected override void OnActivateScene()
 		{
-			TodoLogger.Log(0, "OnActivateScene");
+			TodoLogger.LogError(0, "OnActivateScene");
 		}
 
 		//// RVA: 0xC3C6E4 Offset: 0xC3C6E4 VA: 0xC3C6E4
@@ -108,27 +108,27 @@ namespace XeApp.Game.Menu
 		// RVA: 0xC3C840 Offset: 0xC3C840 VA: 0xC3C840 Slot: 10
 		protected override bool IsEndEnterAnimation()
 		{
-			TodoLogger.Log(0, "IsEndEnterAnimation");
+			TodoLogger.LogError(0, "IsEndEnterAnimation");
 			return true;
 		}
 
 		// RVA: 0xC3C870 Offset: 0xC3C870 VA: 0xC3C870 Slot: 12
 		protected override void OnStartExitAnimation()
 		{
-			TodoLogger.Log(0, "OnStartExitAnimation");
+			TodoLogger.LogError(0, "OnStartExitAnimation");
 		}
 
 		// RVA: 0xC3C8FC Offset: 0xC3C8FC VA: 0xC3C8FC Slot: 13
 		protected override bool IsEndExitAnimation()
 		{
-			TodoLogger.Log(0, "IsEndExitAnimation");
+			TodoLogger.LogError(0, "IsEndExitAnimation");
 			return true;
 		}
 
 		// RVA: 0xC3C92C Offset: 0xC3C92C VA: 0xC3C92C Slot: 25
 		protected override void OnTutorial()
 		{
-			TodoLogger.Log(0, "OnTutorial");
+			TodoLogger.LogError(0, "OnTutorial");
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7264AC Offset: 0x7264AC VA: 0x7264AC

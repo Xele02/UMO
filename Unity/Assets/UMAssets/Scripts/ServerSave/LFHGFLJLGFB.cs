@@ -143,13 +143,13 @@ public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xD6C5F8 Offset: 0xD6C5F8 VA: 0xD6C5F8 Slot: 10
 	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "AGHKODFKOJI");
+		TodoLogger.LogError(0, "AGHKODFKOJI");
 	}
 
 	// // RVA: 0xD6C604 Offset: 0xD6C604 VA: 0xD6C604 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "TODO");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "TODO");
 		return null;
 	}
 }

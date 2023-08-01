@@ -23,7 +23,7 @@ public class BKNLPABECOB_FacebookLinkage : AILHMHMOKKA_BaseLinkage
 		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
 		{
 			//0xC89C5C
-			TodoLogger.Log(0, "MOBEEPPKFLG_OnFail");
+			TodoLogger.LogError(0, "MOBEEPPKFLG_OnFail");
 		};
 	}
 

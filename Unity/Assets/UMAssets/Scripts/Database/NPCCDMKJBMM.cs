@@ -64,7 +64,7 @@ public class NPCCDMKJBMM_HomeVoice : DIHHCBACKGG_DbSection
 	// RVA: 0x1CB5E44 Offset: 0x1CB5E44 VA: 0x1CB5E44 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "NPCCDMKJBMM_HomeVoice.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "NPCCDMKJBMM_HomeVoice.CAOGDCBPBAN");
 		return 0;
 	}
 }

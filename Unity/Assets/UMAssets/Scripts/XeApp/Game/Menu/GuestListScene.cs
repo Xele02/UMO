@@ -160,7 +160,7 @@ namespace XeApp.Game.Menu
 			{
 				if(Database.Instance.gameSetup.musicInfo.gameEventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL/*0*/)
 				{
-					TodoLogger.Log(0, "CheckEventLimit");
+					TodoLogger.LogError(0, "CheckEventLimit");
 				}
 				return false;
 			}
@@ -304,7 +304,7 @@ namespace XeApp.Game.Menu
 			}, (CACGCMBKHDI_Request error) =>
 			{
 				//0xE2E250
-				TodoLogger.Log(0, "Error friend request");
+				TodoLogger.LogError(0, "Error friend request");
 			});
 
 		}
@@ -618,14 +618,14 @@ namespace XeApp.Game.Menu
 			{
 				if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 				{
-					TodoLogger.Log(0, "GetCallArgsReturn Event");
+					TodoLogger.LogError(0, "GetCallArgsReturn Event");
 				}
 				if(eventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
 				{
 					return base.GetCallArgsReturn();
 				}
 			}
-			TodoLogger.Log(0, "GetCallArgsReturn Event");
+			TodoLogger.LogError(0, "GetCallArgsReturn Event");
 			return null;
 		}
 

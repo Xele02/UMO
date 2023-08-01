@@ -1195,7 +1195,7 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 	// RVA: 0xD7EA50 Offset: 0xD7EA50 VA: 0xD7EA50 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "LGHIPHEDCNC_Offer.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "LGHIPHEDCNC_Offer.CAOGDCBPBAN");
 		return 0;
 	}
 }

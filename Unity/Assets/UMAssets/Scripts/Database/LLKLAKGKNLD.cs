@@ -256,7 +256,7 @@ public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
 	// RVA: 0x181010C Offset: 0x181010C VA: 0x181010C Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "LLKLAKGKNLD_LimitOver.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "LLKLAKGKNLD_LimitOver.CAOGDCBPBAN");
 		return 0;
 	}
 }

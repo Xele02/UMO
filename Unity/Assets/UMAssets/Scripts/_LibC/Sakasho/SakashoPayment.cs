@@ -553,7 +553,7 @@ namespace ExternLib
 			}
 			else
 			{
-				TodoLogger.Log(0, "Missing product info for "+json);
+				TodoLogger.LogError(0, "Missing product info for "+json);
 			}
 
 			SendMessage(callbackId, res);

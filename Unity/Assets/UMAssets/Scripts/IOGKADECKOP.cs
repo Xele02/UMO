@@ -205,7 +205,7 @@ public class IOGKADECKOP
 		DANMJLOBLIE.StartCoroutineWatched(IMDAHCEDGFK_Coroutine_TitleLogo());
 		if(AppEnv.IsCBT())
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 		else
 		{
@@ -227,7 +227,7 @@ public class IOGKADECKOP
 			while(!StorageSupport.IsAvailableStorage())
 			{
 				yield return null;
-				TodoLogger.Log(0, "TODO");
+				TodoLogger.LogError(0, "TODO");
 			}
 			ManaAdAPIHelper.Instance.SendLaunchEvent();
 			ManaAdAPIHelper.Instance.TryPendingSendResumeEvent();
@@ -1382,7 +1382,7 @@ public class IOGKADECKOP
         //UnityEngine.Debug.Log("Enter NNPDJBJGBFA_Coroutine_ReturnToTitle");
 		//0x1405D14
 		
-        TodoLogger.Log(0, "TODO");
+        TodoLogger.LogError(0, "TODO");
         //UnityEngine.Debug.Log("Exit NNPDJBJGBFA_Coroutine_ReturnToTitle");
 		yield break;
 	}

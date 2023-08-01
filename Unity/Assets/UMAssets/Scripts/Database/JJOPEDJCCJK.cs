@@ -363,14 +363,14 @@ public class JJOPEDJCCJK_Exp : DIHHCBACKGG_DbSection
 	// // RVA: 0x1357044 Offset: 0x1357044 VA: 0x1357044 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
     {
-        TodoLogger.Log(100, "Exp Json IIEMACPEEBJ");
+        TodoLogger.LogError(100, "Exp Json IIEMACPEEBJ");
         return true;
     }
 
 	// // RVA: 0x1357E44 Offset: 0x1357E44 VA: 0x1357E44 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "JJOPEDJCCJK_Exp.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "JJOPEDJCCJK_Exp.CAOGDCBPBAN");
 		return 0;
 	}
 }

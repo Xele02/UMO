@@ -12,7 +12,7 @@ public static class CriFsPlugin
 	// // RVA: 0x29498CC Offset: 0x29498CC VA: 0x29498CC
 	public static void SetConfigParameters(int num_loaders, int num_binders, int num_installers, int argInstallBufferSize, int max_path, bool minimize_file_descriptor_usage, bool enable_crc_check)
 	{
-		TodoLogger.Log(TodoLogger.CriFsPlugin, "CriFsPlugin.SetConfigParameters");
+		TodoLogger.LogError(TodoLogger.CriFsPlugin, "CriFsPlugin.SetConfigParameters");
 	}
 
 	// // RVA: 0x2949AD4 Offset: 0x2949AD4 VA: 0x2949AD4
@@ -21,7 +21,7 @@ public static class CriFsPlugin
 	// // RVA: 0x2949C94 Offset: 0x2949C94 VA: 0x2949C94
 	public static void SetConfigAdditionalParameters_ANDROID(int device_read_bps)
 	{
-		TodoLogger.Log(TodoLogger.CriFsPlugin, "CriFsPlugin.SetConfigAdditionalParameters_ANDROID");
+		TodoLogger.LogError(TodoLogger.CriFsPlugin, "CriFsPlugin.SetConfigAdditionalParameters_ANDROID");
 	}
 
 	// // RVA: 0x2949E0C Offset: 0x2949E0C VA: 0x2949E0C
@@ -57,7 +57,7 @@ public static class CriFsPlugin
 	// // RVA: 0x294A2E8 Offset: 0x294A2E8 VA: 0x294A2E8
 	public static void FinalizeLibrary()
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.LogError(0, "TODO");
 	}
 
 	// // RVA: 0x29499A8 Offset: 0x29499A8 VA: 0x29499A8

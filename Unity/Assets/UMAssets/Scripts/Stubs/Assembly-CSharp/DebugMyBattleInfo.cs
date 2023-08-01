@@ -13,6 +13,6 @@ public class DebugMyBattleInfo : MonoBehaviour
 	private Text m_gameNum;
 	private void Awake()
 	{
-		TodoLogger.Log(0, "Implement Monobehaviour");
+		TodoLogger.LogError(0, "Implement Monobehaviour");
 	}
 }

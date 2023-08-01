@@ -28,7 +28,7 @@ namespace XeApp.Game.Menu
 		private List<StripeEffect.PatternInfo> m_patternInfos;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

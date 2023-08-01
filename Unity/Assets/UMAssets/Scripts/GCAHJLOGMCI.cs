@@ -66,24 +66,24 @@ public class GCAHJLOGMCI
 				if(OPFGFINHFCE.Contains(JpStringLiterals.StringLiteral_10431))
 				{
 					NMPMNPLGIEL = 0;
-					TodoLogger.Log(TodoLogger.ToCheck, "PMBGPACNPIN values");
+					TodoLogger.LogError(TodoLogger.ToCheck, "PMBGPACNPIN values");
 					return NMPMNPLGIEL | KJBGCLPMLCG | (0xff0000 << 32);
 				}
 			}
 			if(NMPMNPLGIEL != 0)
 			{
-				TodoLogger.Log(TodoLogger.ToCheck, "PMBGPACNPIN values");
+				TodoLogger.LogError(TodoLogger.ToCheck, "PMBGPACNPIN values");
 				return NMPMNPLGIEL | KJBGCLPMLCG;
 			}
 			long val = 0;
 			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.IOIDJALFFJA_GachaSortPriority.TryGetValue((int)INDDJNMPONH, out val))
 			{
-				TodoLogger.Log(TodoLogger.ToCheck, "PMBGPACNPIN values");
+				TodoLogger.LogError(TodoLogger.ToCheck, "PMBGPACNPIN values");
 				return val | KJBGCLPMLCG;
 			}
 		}
 		NMPMNPLGIEL = 0;
-		TodoLogger.Log(TodoLogger.ToCheck, "PMBGPACNPIN values");
+		TodoLogger.LogError(TodoLogger.ToCheck, "PMBGPACNPIN values");
 		return NMPMNPLGIEL | KJBGCLPMLCG;
 	}
 }

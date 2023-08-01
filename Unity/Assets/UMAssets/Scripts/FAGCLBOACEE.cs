@@ -36,7 +36,7 @@ public class FAGCLBOACEE
         switch(DEPGBBJMFED)
         {
             case BEFPBAIONFK.KDGLIKDMGCN/*1*/:
-                TodoLogger.Log(0, "KHEKNNFCAOI 1");
+                TodoLogger.LogError(0, "KHEKNNFCAOI 1");
                 break;
             case BEFPBAIONFK.CELONIBHMBA/*2*/:
             case BEFPBAIONFK.FCHMGAHKMLG/*4*/:
@@ -44,10 +44,10 @@ public class FAGCLBOACEE
 				id = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(PPFNGGCBJKC).DLAEJOBELBH_MusicId;
 				break;
             case BEFPBAIONFK.EOBDILOCCHO/*3*/:
-                TodoLogger.Log(0, "KHEKNNFCAOI 3");
+                TodoLogger.LogError(0, "KHEKNNFCAOI 3");
                 break;
             case BEFPBAIONFK.AJPJOJNIHKH/*6*/:
-                TodoLogger.Log(0, "KHEKNNFCAOI 6");
+                TodoLogger.LogError(0, "KHEKNNFCAOI 6");
                 break;
             case BEFPBAIONFK.KHBEKPMMALI/*7*/:
 				id = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.CIKALPJDGMF_ResolveMusicId(PPFNGGCBJKC, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(PPFNGGCBJKC).DLAEJOBELBH_MusicId);

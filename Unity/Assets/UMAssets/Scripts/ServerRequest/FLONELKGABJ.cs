@@ -39,12 +39,12 @@ public class FLONELKGABJ_ClaimAchievementPrizes : CACGCMBKHDI_Request
 	// RVA: 0x1197FA8 Offset: 0x1197FA8 VA: 0x1197FA8 Slot: 12
 	public override void DHLDNIEELHO()
 	{
-		TodoLogger.Log(0, "FLONELKGABJ_ClaimAchievementPrizes.DHLDNIEELHO()");
+		TodoLogger.LogError(0, "FLONELKGABJ_ClaimAchievementPrizes.DHLDNIEELHO()");
 	}
 
 	// RVA: 0x11982F0 Offset: 0x11982F0 VA: 0x11982F0 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
 	{
-		TodoLogger.Log(0, "FLONELKGABJ_ClaimAchievementPrizes.MGFNKDPHFGI()");
+		TodoLogger.LogError(0, "FLONELKGABJ_ClaimAchievementPrizes.MGFNKDPHFGI()");
 	}
 }

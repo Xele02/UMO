@@ -411,7 +411,7 @@ namespace XeApp.Game.Menu
 			}
 			if(!MenuScene.Instance.DirtyChangeScene && TutorialProc.CanBeginnerMissionLiveClearLiveHelp())
 			{
-				TodoLogger.Log(0, "Co_ActivateScene");
+				TodoLogger.LogError(0, "Co_ActivateScene");
 			}
 			else
 			{
@@ -420,7 +420,7 @@ namespace XeApp.Game.Menu
 					if (KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk() &&
 						!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DAEJHMCMFJD_Offer.MLBBKNLPBBD(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO/*0*/))
 					{
-						TodoLogger.Log(0, "Co_ActivateScene 2");
+						TodoLogger.LogError(0, "Co_ActivateScene 2");
 					}
 				}
 				if (!MenuScene.Instance.DirtyChangeScene)
@@ -428,7 +428,7 @@ namespace XeApp.Game.Menu
 					if(SettingMenuPanel.IsValkyrieTuneUpUnlock() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade) 
 						&& !RuntimeSettings.CurrentSettings.ForceTutoSkip)
 					{
-						TodoLogger.Log(0, "Co_ActivateScene 3");
+						TodoLogger.LogError(0, "Co_ActivateScene 3");
 					}
 				}
 				if (!MenuScene.Instance.DirtyChangeScene)
@@ -478,7 +478,7 @@ namespace XeApp.Game.Menu
 			//0xAC8548
 			if (!m_showScoreRankingPopup)
 				yield break;
-			TodoLogger.Log(0, "Co_ShowScoreRankingPopup");
+			TodoLogger.LogError(0, "Co_ShowScoreRankingPopup");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F6104 Offset: 0x6F6104 VA: 0x6F6104
@@ -1022,14 +1022,14 @@ namespace XeApp.Game.Menu
 			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
 			if(ev != null)
 			{
-				TodoLogger.Log(0, "Event");
+				TodoLogger.LogError(0, "Event");
 			}
 		}
 
 		// // RVA: 0xBE8AE8 Offset: 0xBE8AE8 VA: 0xBE8AE8
 		private int GetMinigameListNo(int minigameId)
 		{
-			TodoLogger.Log(0, "GetMinigameListNo");
+			TodoLogger.LogError(0, "GetMinigameListNo");
 			return 0;
 		}
 
@@ -1084,7 +1084,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				TodoLogger.Log(0, "SelectArgsFocus when args");
+				TodoLogger.LogError(0, "SelectArgsFocus when args");
 			}
 			list_no = select_index;
 			save.HJHBGHMNGKL_SetDifficulty(diff);
@@ -1112,11 +1112,11 @@ namespace XeApp.Game.Menu
 			IKDICBBFBMI_EventBase eventInfo = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ);
 			if(eventInfo != null)
 			{
-				TodoLogger.Log(0, "ApplyEventInfo");
+				TodoLogger.LogError(0, "ApplyEventInfo");
 			}
 			if(m_eventCtrl != null)
 			{
-				TodoLogger.Log(0, "ApplyEventInfo");
+				TodoLogger.LogError(0, "ApplyEventInfo");
 			}
 			if(m_feverLimit != null)
 			{
@@ -1125,7 +1125,7 @@ namespace XeApp.Game.Menu
 			m_scoreEventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI);
 			if(m_scoreEventCtrl != null)
 			{
-				TodoLogger.Log(0, "ApplyEventInfo");
+				TodoLogger.LogError(0, "ApplyEventInfo");
 			}
 		}
 
@@ -1234,7 +1234,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBEAC3C Offset: 0xBEAC3C VA: 0xBEAC3C
 		private void ApplyMusicInfoEventEntrance()
 		{
-			TodoLogger.Log(0, "ApplyMusicInfoEventEntrance");
+			TodoLogger.LogError(0, "ApplyMusicInfoEventEntrance");
 		}
 
 		// // RVA: 0xBEB120 Offset: 0xBEB120 VA: 0xBEB120
@@ -1565,7 +1565,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBEE6D8 Offset: 0xBEE6D8 VA: 0xBEE6D8
 		private int EventMusicDataListSortCb(VerticalMusicDataList.MusicListData left, VerticalMusicDataList.MusicListData right)
 		{
-			TodoLogger.Log(0, "EventMusicDataListSortCb");
+			TodoLogger.LogError(0, "EventMusicDataListSortCb");
 			return left.ViewMusic.DLAEJOBELBH_MusicId.CompareTo(right.ViewMusic.DLAEJOBELBH_MusicId);
 		}
 

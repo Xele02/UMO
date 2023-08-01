@@ -64,7 +64,7 @@ public class INDEPDKCJDD_ValItem : DIHHCBACKGG_DbSection
 	// RVA: 0xA014A0 Offset: 0xA014A0 VA: 0xA014A0 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "INDEPDKCJDD_ValItem.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "INDEPDKCJDD_ValItem.CAOGDCBPBAN");
 		return 0;
 	}
 }

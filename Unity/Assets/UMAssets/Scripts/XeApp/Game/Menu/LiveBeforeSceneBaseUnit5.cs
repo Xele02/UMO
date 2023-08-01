@@ -153,7 +153,7 @@ namespace XeApp.Game.Menu
 				IKDICBBFBMI_EventBase evt = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB(mi.EventUniqueId);
 				if(evt != null)
 				{
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 				}
 			}
 			if(mi.openEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
@@ -161,7 +161,7 @@ namespace XeApp.Game.Menu
 				IKDICBBFBMI_EventBase evt = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.KPMNPGKKFJG, false);
 				if(evt != null)
 				{
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 				}
 				mi.ClearEventType();
 				h.MNNHHJBBICA_GameEventType = (int)mi.gameEventType;
@@ -175,7 +175,7 @@ namespace XeApp.Game.Menu
 				{
 					if(mi.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 					{
-						TodoLogger.Log(0, "Event");
+						TodoLogger.LogError(0, "Event");
 					}
 					else
 					{
@@ -188,23 +188,23 @@ namespace XeApp.Game.Menu
 			}, () =>
 			{
 				//0x154A934
-				TodoLogger.Log(0, "AdvanceGame Fail");
+				TodoLogger.LogError(0, "AdvanceGame Fail");
 			}, () =>
 			{
 				//0x154A0D0
-				TodoLogger.Log(0, "AdvanceGame Fail");
+				TodoLogger.LogError(0, "AdvanceGame Fail");
 			}, () =>
 			{
 				//0x154A47C
-				TodoLogger.Log(0, "AdvanceGame Fail");
+				TodoLogger.LogError(0, "AdvanceGame Fail");
 			}, () =>
 			{
 				//0x154A518
-				TodoLogger.Log(0, "AdvanceGame Fail");
+				TodoLogger.LogError(0, "AdvanceGame Fail");
 			}, (NHCDBBBMFFG status) =>
 			{
 				//0x154ACB4
-				TodoLogger.Log(0, "AdvanceGame Fail");
+				TodoLogger.LogError(0, "AdvanceGame Fail");
 			});
 		}
 

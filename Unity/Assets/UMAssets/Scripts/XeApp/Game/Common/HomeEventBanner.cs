@@ -59,11 +59,11 @@ namespace XeApp.Game.Common
 			});
 			m_scrollView.OnChangeItem = (int idx) => {
 				//0xEABBA4
-				TodoLogger.Log(TodoLogger.UI, "OnChangeItem");
+				TodoLogger.LogError(TodoLogger.UI, "OnChangeItem");
 			};
 			m_scrollView.OnChangeEndItem = (int idx) => {
 				//0xEABBC0
-				TodoLogger.Log(TodoLogger.UI, "OnChangeEndItem");
+				TodoLogger.LogError(TodoLogger.UI, "OnChangeEndItem");
 			};
 			InitScrollType();
 		}
@@ -91,7 +91,7 @@ namespace XeApp.Game.Common
 			MenuScene.Instance.LobbyButtonControl.CheckLobbyAnnounce();
 			for(int i = 0; i < list.Count; i++)
 			{
-				TodoLogger.Log(0, "Event");
+				TodoLogger.LogError(0, "Event");
 			}
 			m_scrollView.horizontal = cnt > 1;
 		}
@@ -107,7 +107,7 @@ namespace XeApp.Game.Common
 		{
 			for(int i = 0; i < m_scrollView.scrollObjects.Count; i++)
 			{
-				TodoLogger.Log(0, "ClearBanner");
+				TodoLogger.LogError(0, "ClearBanner");
 			}
 		}
 

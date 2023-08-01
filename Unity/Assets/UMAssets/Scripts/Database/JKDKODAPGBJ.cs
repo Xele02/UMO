@@ -75,7 +75,7 @@ public class JKDKODAPGBJ_EnergyItem : DIHHCBACKGG_DbSection
 	// RVA: 0x135CFA8 Offset: 0x135CFA8 VA: 0x135CFA8 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "JKDKODAPGBJ_EnergyItem.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "JKDKODAPGBJ_EnergyItem.CAOGDCBPBAN");
 		return 0;
 	}
 }

@@ -6,7 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class CostumeItemUseWindow : LayoutUGUIScriptBase
 	{
-    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private AnimeCurveScriptableObject m_animeCurve;
 		public int xor;

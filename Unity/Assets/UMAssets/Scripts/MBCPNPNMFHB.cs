@@ -95,10 +95,10 @@ public class MBCPNPNMFHB
 				TodoLogger.LogNotImplemented("RequestURL GHDACOGLNLJ_Contract");
 				break;
 			case MHOILBOJFHL.KCAEDEHGAFO.GCCBFIFJHII_Information:
-				TodoLogger.Log(TodoLogger.WebRequest, "RequestURL GCCBFIFJHII_Information");
+				TodoLogger.LogError(TodoLogger.WebRequest, "RequestURL GCCBFIFJHII_Information");
 				break;
 			default:
-				TodoLogger.Log(0, "MBCPNPNMFHB.BAGOKKHNLDB");
+				TodoLogger.LogError(0, "MBCPNPNMFHB.BAGOKKHNLDB");
 				break;
 		}
 		return null;

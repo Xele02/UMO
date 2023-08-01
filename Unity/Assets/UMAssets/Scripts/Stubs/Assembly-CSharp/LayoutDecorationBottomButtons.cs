@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class LayoutDecorationBottomButtons : LayoutUGUIScriptBase
 {
-    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 	[Serializable]
 	public class BottomButtons
 	{

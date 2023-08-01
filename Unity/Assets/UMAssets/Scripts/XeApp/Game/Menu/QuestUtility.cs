@@ -47,7 +47,7 @@ namespace XeApp.Game.Menu
 						EventQuestData data = new EventQuestData();
 						/*data.m_masterName = l[i].JOPOPMLFINI;
 						data.m_uniqueId = */
-						TodoLogger.Log(0, "UpdateQuestData event");
+						TodoLogger.LogError(0, "UpdateQuestData event");
 						m_eventQuestDataList.Add(data);
 					}
 					break;

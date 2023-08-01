@@ -118,7 +118,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x12D2AD8 Offset: 0x12D2AD8 VA: 0x12D2AD8
 		private void SettingOfferNotifi()
 		{
-			TodoLogger.Log(0, "SettingOfferNotifi");
+			TodoLogger.LogError(0, "SettingOfferNotifi");
 		}
 
 		//// RVA: 0x12D2D0C Offset: 0x12D2D0C VA: 0x12D2D0C

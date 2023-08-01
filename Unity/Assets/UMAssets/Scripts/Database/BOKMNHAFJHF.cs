@@ -221,7 +221,7 @@ public class BOKMNHAFJHF_Sns : DIHHCBACKGG_DbSection
 	// RVA: 0x19CECF0 Offset: 0x19CECF0 VA: 0x19CECF0 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "BOKMNHAFJHF_Sns.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "BOKMNHAFJHF_Sns.CAOGDCBPBAN");
 		return 0;
 	}
 }

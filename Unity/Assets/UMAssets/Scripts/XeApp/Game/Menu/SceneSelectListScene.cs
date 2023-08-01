@@ -158,7 +158,7 @@ namespace XeApp.Game.Menu
 				yield return this.StartCoroutineWatched(m_sceneSelectList.LoadScrollObjectCoroutine(TransitionName));
 			}
 
-			TodoLogger.Log(TodoLogger.ToCheck, "m_popupFilterSortScene init should not be here");
+			TodoLogger.LogError(TodoLogger.ToCheck, "m_popupFilterSortScene init should not be here");
 			if(m_transitionName == TransitionList.Type.SCENE_SELECT)
 				m_popupFilterSortScene = PopupFilterSort.Scene.EpisodeSelect2;
 
@@ -522,7 +522,7 @@ namespace XeApp.Game.Menu
 						}
 						else
 						{
-							TodoLogger.Log(0, "GoDiva");
+							TodoLogger.LogError(0, "GoDiva");
 						}
 					}
 					else
@@ -901,7 +901,7 @@ namespace XeApp.Game.Menu
 									GameManager.Instance.AddPushBackButtonHandler(dymmyBackHandler);
 									BasicTutorialManager.Instance.ShowMessageWindow(BasicTutorialMessageId.Id_EpisodeMission2, () => {
 										//0xA5846C
-										TodoLogger.Log(0, "Tutorial");
+										TodoLogger.LogError(0, "Tutorial");
 									}, null);
 								}
 							}
@@ -915,13 +915,13 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1385A84 Offset: 0x1385A84 VA: 0x1385A84 Slot: 25
 		protected override void OnTutorial()
 		{
-			TodoLogger.Log(0, "Tutorial");
+			TodoLogger.LogError(0, "Tutorial");
 		}
 
 		// RVA: 0x1385C64 Offset: 0x1385C64 VA: 0x1385C64
 		private void SetTutorialPopupDecide()
 		{
-			TodoLogger.Log(0, "Tutorial");
+			TodoLogger.LogError(0, "Tutorial");
 		}
 
 		// // RVA: 0x13844DC Offset: 0x13844DC VA: 0x13844DC

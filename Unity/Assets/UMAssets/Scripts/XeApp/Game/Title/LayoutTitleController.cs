@@ -51,7 +51,7 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE367F4 Offset: 0xE367F4 VA: 0xE367F4
 		public void ShowArButton()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0xE368A4 Offset: 0xE368A4 VA: 0xE368A4

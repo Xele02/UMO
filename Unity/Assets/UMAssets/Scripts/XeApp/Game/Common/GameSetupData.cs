@@ -241,7 +241,7 @@ namespace XeApp.Game.Common
 				}
 				else
 				{
-					TodoLogger.Log(0, "GoDiva");
+					TodoLogger.LogError(0, "GoDiva");
 				}
 				for(int i = 0; i < divaList_.Length; i++)
 				{

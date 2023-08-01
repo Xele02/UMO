@@ -126,7 +126,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x17D026C Offset: 0x17D026C VA: 0x17D026C
 		private void OnOpenVCProducts(AMOCLPHDGBP p, ELBOJBBIBFM onPurchase, JFDNPFFOACP onCancel)
 		{
-			TodoLogger.Log(0, "OnOpenVCProducts");
+			TodoLogger.LogError(0, "OnOpenVCProducts");
 		}
 
 		// // RVA: 0x17D05C8 Offset: 0x17D05C8 VA: 0x17D05C8
@@ -135,13 +135,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x17D079C Offset: 0x17D079C VA: 0x17D079C
 		private void OnOpenBirthdayRegistration(PJHHCHAKGKI onRegisterBirth, JFDNPFFOACP onCencel)
 		{
-			TodoLogger.Log(0, "OnOpenBirthdayRegistration");
+			TodoLogger.LogError(0, "OnOpenBirthdayRegistration");
 		}
 
 		// // RVA: 0x17D0860 Offset: 0x17D0860 VA: 0x17D0860
 		private void OnOpenBirthdayRegistrationConfirm(int year, int mon, IMCBBOAFION onEnter, JFDNPFFOACP onCancel, DJBHIFLHJLK onError)
 		{
-			TodoLogger.Log(0, "OnOpenBirthdayRegistrationConfirm");
+			TodoLogger.LogError(0, "OnOpenBirthdayRegistrationConfirm");
 		}
 	}
 }

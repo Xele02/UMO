@@ -94,7 +94,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1CDD888 Offset: 0x1CDD888 VA: 0x1CDD888
 		private void ChangeProgressForHighResolutionMode(float per)
 		{
-			TodoLogger.Log(5, "ChangeProgressForHighResolutionMode");
+			TodoLogger.LogError(5, "ChangeProgressForHighResolutionMode");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7397E4 Offset: 0x7397E4 VA: 0x7397E4

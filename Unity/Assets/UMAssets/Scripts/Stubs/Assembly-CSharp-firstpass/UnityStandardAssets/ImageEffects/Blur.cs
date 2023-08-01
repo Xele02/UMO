@@ -9,7 +9,7 @@ namespace UnityStandardAssets.ImageEffects
 		public Shader blurShader;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

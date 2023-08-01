@@ -9,7 +9,7 @@ namespace XeApp.Game.Menu
 		private MacrossCannonObject mcrsCannonObject;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

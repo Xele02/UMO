@@ -926,7 +926,7 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1C53B48 Offset: 0x1C53B48 VA: 0x1C53B48
 	public bool ADKJDHPEAJH(GPFlagConstant.ID PPFNGGCBJKC)
 	{
-		TodoLogger.Log(TodoLogger._Todo, "EGOLBAPFHHD_Common.BCLKCMDGDLD Todo with calc office");
+		TodoLogger.LogError(TodoLogger._Todo, "EGOLBAPFHHD_Common.BCLKCMDGDLD Todo with calc office");
 		if ((int)PPFNGGCBJKC > 32)
 			return false;
 		return (CKDPJCLINAB_GpFlg[0] & (1 << ((int)PPFNGGCBJKC))) != 0;
@@ -935,7 +935,7 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1C53BE8 Offset: 0x1C53BE8 VA: 0x1C53BE8
 	public void BCLKCMDGDLD(GPFlagConstant.ID PPFNGGCBJKC, bool JKDJCFEBDHC)
 	{
-		TodoLogger.Log(TodoLogger._Todo, "EGOLBAPFHHD_Common.BCLKCMDGDLD Todo with calc office");
+		TodoLogger.LogError(TodoLogger._Todo, "EGOLBAPFHHD_Common.BCLKCMDGDLD Todo with calc office");
 		if(JKDJCFEBDHC)
 			CKDPJCLINAB_GpFlg[0] &= 1 << (int)PPFNGGCBJKC;
 		else
@@ -1966,14 +1966,14 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 			string str2 = str + AFEHLCGHAEE_Strings.DLBLONNCCCE_main_team_id;
 			JBBHNIACMFJ.OJLJAHAGBLK(str3, str2, b.DLBLONNCCCE_MainTeamId);
 		}*/
-		TodoLogger.Log(0, "AGHKODFKOJI");
+		TodoLogger.LogError(0, "AGHKODFKOJI");
 
 	}
 
 	// // RVA: 0x1C69388 Offset: 0x1C69388 VA: 0x1C69388 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "TODO");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "TODO");
 		return null;
 	}
 

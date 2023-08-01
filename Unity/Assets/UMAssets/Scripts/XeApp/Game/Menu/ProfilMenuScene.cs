@@ -201,7 +201,7 @@ namespace XeApp.Game.Menu
 				lobbyController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/) as NKOBMDPHNGP_EventRaidLobby;
 				if(lobbyController != null)
 				{
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 				}
 				t_is_end = false;
 				t_is_error = false;

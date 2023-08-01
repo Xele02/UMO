@@ -8,7 +8,7 @@ namespace XeApp.Game.Common
 	{
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement monobehaviour");
+			TodoLogger.LogError(0, "Implement monobehaviour");
 		}
 		[SerializeField]
 		protected RawImageEx m_imageBanner;

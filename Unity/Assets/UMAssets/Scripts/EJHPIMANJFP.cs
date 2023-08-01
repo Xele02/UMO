@@ -26,7 +26,7 @@ public class EJHPIMANJFP
 	// // RVA: 0x12EFB58 Offset: 0x12EFB58 VA: 0x12EFB58
 	private bool AIJFDCIDDLO(SakashoErrorId PPFNGGCBJKC)
 	{
-		TodoLogger.Log(0, "EJHPIMANJFP.AIJFDCIDDLO");
+		TodoLogger.LogError(0, "EJHPIMANJFP.AIJFDCIDDLO");
 		return false;
 	}
 

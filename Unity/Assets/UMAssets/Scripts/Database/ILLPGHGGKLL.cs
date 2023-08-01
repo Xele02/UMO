@@ -78,7 +78,7 @@ public class ILLPGHGGKLL_TutorialMiniAdv : DIHHCBACKGG_DbSection
 	// RVA: 0x9F66A0 Offset: 0x9F66A0 VA: 0x9F66A0 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "ILLPGHGGKLL_TutorialMiniAdv.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "ILLPGHGGKLL_TutorialMiniAdv.CAOGDCBPBAN");
 		return 0;
 	}
 }

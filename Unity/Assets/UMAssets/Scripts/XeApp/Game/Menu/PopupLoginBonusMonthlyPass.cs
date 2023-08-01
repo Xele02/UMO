@@ -51,7 +51,7 @@ namespace XeApp.Game.Menu
 			view.KHEKNNFCAOI(m_instance.m_isSuccess, forceAvailableTopplan);
 			if(m_instance.m_isSuccess || popupType != Type.RequestLoginBonus)
 			{
-				TodoLogger.Log(0, "PopupLoginBonusMonthlyPass.Show");
+				TodoLogger.LogError(0, "PopupLoginBonusMonthlyPass.Show");
 			}
 			//LAB_0168db54
 			if(!view.KLMNKBCDGPI)
@@ -59,7 +59,7 @@ namespace XeApp.Game.Menu
 				//LAB_0168dc58
 				if(view.ENHGKPMEICN)
 				{
-					TodoLogger.Log(0, "PopupLoginBonusMonthlyPass.Show");
+					TodoLogger.LogError(0, "PopupLoginBonusMonthlyPass.Show");
 				}
 				if(closeCallback != null)
 				{
@@ -78,7 +78,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				TodoLogger.Log(0, "PopupLoginBonusMonthlyPass.Show");
+				TodoLogger.LogError(0, "PopupLoginBonusMonthlyPass.Show");
 			}
 		}
 
@@ -98,7 +98,7 @@ namespace XeApp.Game.Menu
 				bool done = false;
 				bool err = false;
 				//MenuScene.Instance.RaycastDisable();
-				TodoLogger.Log(0, "Co_RequestLoginBonusMonthlyPass");
+				TodoLogger.LogError(0, "Co_RequestLoginBonusMonthlyPass");
 			}
 			//LAB_0168cc50
 			int numItem = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.FKGCBLHOOCL_Category.PJCJEOECLBK_MonthlyPassItem, 1, null);
@@ -107,11 +107,11 @@ namespace XeApp.Game.Menu
 				//LAB_0168d4e4
 				if (!NHPDPKHMFEP.HHCJCDFCLOB.GBCPDBJEDHL(false))
 					yield break;
-				TodoLogger.Log(0, "Co_RequestLoginBonusMonthlyPass 2");
+				TodoLogger.LogError(0, "Co_RequestLoginBonusMonthlyPass 2");
 			}
 			else
 			{
-				TodoLogger.Log(0, "Co_RequestLoginBonusMonthlyPass 3");
+				TodoLogger.LogError(0, "Co_RequestLoginBonusMonthlyPass 3");
 			}
 		}
 

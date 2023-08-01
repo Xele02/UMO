@@ -24,7 +24,7 @@ public class JAILOEFCNJP
 		CLHMBMLOAOE c2 = null;
 		if (IDOLJENFBPM.Count > 0)
 		{
-			TodoLogger.Log(0, "GEOMLGKCCNI");
+			TodoLogger.LogError(0, "GEOMLGKCCNI");
 		}
 		bool b = false;
 		if(HMMNDKHKEBC.AOHBAOAPGDM_Raw[0].NKMNFPMMJND_ExpiredAt != t)
@@ -37,7 +37,7 @@ public class JAILOEFCNJP
 		long t3 = 0;
 		if(b)
 		{
-			TodoLogger.Log(0, "GEOMLGKCCNI");
+			TodoLogger.LogError(0, "GEOMLGKCCNI");
 		}
 		else
 		{
@@ -47,7 +47,7 @@ public class JAILOEFCNJP
 			}
 			else
 			{
-				TodoLogger.Log(0, "GEOMLGKCCNI");
+				TodoLogger.LogError(0, "GEOMLGKCCNI");
 			}
 		}
 		b = false;
@@ -60,7 +60,7 @@ public class JAILOEFCNJP
 		}
 		if(HMMNDKHKEBC.DNKJAIHCDFN_First[0].NKMNFPMMJND_ExpiredAt == 0 && t3 != 0)
 		{
-			TodoLogger.Log(0, "GEOMLGKCCNI");
+			TodoLogger.LogError(0, "GEOMLGKCCNI");
 		}
 		return b;
 	}

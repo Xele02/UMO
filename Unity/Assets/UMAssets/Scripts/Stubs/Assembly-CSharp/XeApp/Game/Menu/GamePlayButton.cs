@@ -7,7 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class GamePlayButton : LayoutUGUIScriptBase
 	{
-    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private ActionButton m_gamePlayButton;
 		[SerializeField]

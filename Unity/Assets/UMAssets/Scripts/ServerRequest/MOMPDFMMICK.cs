@@ -28,7 +28,7 @@ public class MOMPDFMMICK_ClaimAchievementPrizesAndSave : CACGCMBKHDI_Request
 		{
 			if(IDLHJIOMJBK.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.BBEPLKNMICJ_balances))
 			{
-				TodoLogger.Log(0, "KHEKNNFCAOI");
+				TodoLogger.LogError(0, "KHEKNNFCAOI");
 			}
 			else
 			{
@@ -36,7 +36,7 @@ public class MOMPDFMMICK_ClaimAchievementPrizesAndSave : CACGCMBKHDI_Request
 			}
 			if(IDLHJIOMJBK.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes))
 			{
-				TodoLogger.Log(0, "KHEKNNFCAOI 2");
+				TodoLogger.LogError(0, "KHEKNNFCAOI 2");
 			}
 			BIOGKIEECGN_CreatedAt = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.BIOGKIEECGN_created_at];
 			IFNLEKOILPM_UpdatedAt = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.IFNLEKOILPM_updated_at];

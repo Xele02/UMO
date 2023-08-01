@@ -45,7 +45,7 @@ namespace ExternLib
             if(cueRecord == null)
                 return false;
             info.length = cueRecord.LengthMilli;
-            TodoLogger.Log(TodoLogger.CriAtomExLib, "finish criAtomExAcb_GetCueInfoByName");
+            TodoLogger.LogError(TodoLogger.CriAtomExLib, "finish criAtomExAcb_GetCueInfoByName");
             return true;
         }
 
@@ -59,7 +59,7 @@ namespace ExternLib
 			if (cueRecord == null)
 				return false;
 			info.length = cueRecord.LengthMilli;
-			TodoLogger.Log(TodoLogger.CriAtomExLib, "finish criAtomExAcb_GetCueInfoByIndex");
+			TodoLogger.LogError(TodoLogger.CriAtomExLib, "finish criAtomExAcb_GetCueInfoByIndex");
 			return true;
 		}
 
@@ -68,7 +68,7 @@ namespace ExternLib
         {
             if(acb_binder != null || awb_binder != null)
             {
-                TodoLogger.Log(0, "criAtomExAcb_LoadAcbFile with binder");
+                TodoLogger.LogError(0, "criAtomExAcb_LoadAcbFile with binder");
                 return IntPtr.Zero;
             }
             using(FileStream fs = File.Open(acb_path, FileMode.Open, FileAccess.Read, FileShare.Read))

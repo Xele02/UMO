@@ -9,7 +9,7 @@ namespace XeApp.Game.MiniGame
 		private InOutAnime m_inOutAnime;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

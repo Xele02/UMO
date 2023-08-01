@@ -357,7 +357,7 @@ namespace XeApp.Game.Menu
 			//0xB6424C
 			if(GameManager.Instance.IsTutorial)
 			{
-				TodoLogger.Log(0, "TryTutorialCoroutine");
+				TodoLogger.LogError(0, "TryTutorialCoroutine");
 				yield return null;
 			}
 			//LAB_00b6441c

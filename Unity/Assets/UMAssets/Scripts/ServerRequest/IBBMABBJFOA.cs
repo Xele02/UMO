@@ -14,7 +14,7 @@ public class IBBMABBJFOA_PaymentRecover : CACGCMBKHDI_Request
 		// RVA: 0x1210F60 Offset: 0x1210F60 VA: 0x1210F60
 		public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
 		{
-			TodoLogger.Log(0, "IBBMABBJFOA_PaymentRecover.EPJKBEHOMNJ.KHEKNNFCAOI");
+			TodoLogger.LogError(0, "IBBMABBJFOA_PaymentRecover.EPJKBEHOMNJ.KHEKNNFCAOI");
 		}
 	}
 

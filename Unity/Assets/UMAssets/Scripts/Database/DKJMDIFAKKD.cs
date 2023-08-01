@@ -163,7 +163,7 @@ public class DKJMDIFAKKD_VcItem : DIHHCBACKGG_DbSection
 	// RVA: 0x1990824 Offset: 0x1990824 VA: 0x1990824 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "DKJMDIFAKKD_VcItem.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "DKJMDIFAKKD_VcItem.CAOGDCBPBAN");
 		return 0;
 	}
 }

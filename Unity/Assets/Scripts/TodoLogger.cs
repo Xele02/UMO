@@ -49,7 +49,7 @@ public static class TodoLogger
 	public static int Popup = 0;
 	public static int Database = 0;
 
-	public static void Log(int priority, string str)
+	public static void LogError(int priority, string str)
 	{
 		if(priority < RuntimeSettings.CurrentSettings.MinLog)
 		{

@@ -42,7 +42,7 @@ public class MKNIBACMCDO_AssistPlate : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x195AE1C Offset: 0x195AE1C VA: 0x195AE1C Slot: 10
 	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "AGHKODFKOJI");
+		TodoLogger.LogError(0, "AGHKODFKOJI");
 	}
 
 	// // RVA: 0x195B1D0 Offset: 0x195B1D0 VA: 0x195B1D0 Slot: 8
@@ -60,7 +60,7 @@ public class MKNIBACMCDO_AssistPlate : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x195B3C8 Offset: 0x195B3C8 VA: 0x195B3C8 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "TODO");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "TODO");
 		return null;
 	}
 

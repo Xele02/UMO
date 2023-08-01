@@ -272,7 +272,7 @@ public class LPPGENBEECK_MusicMaster : DIHHCBACKGG_DbSection
 	// // RVA: 0x10D52EC Offset: 0x10D52EC VA: 0x10D52EC Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.LogError(0, "TODO");
 		return true;
 	}
 
@@ -661,7 +661,7 @@ public class LPPGENBEECK_MusicMaster : DIHHCBACKGG_DbSection
 	// // RVA: 0x10D7BD4 Offset: 0x10D7BD4 VA: 0x10D7BD4 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "LPPGENBEECK_MusicMaster.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "LPPGENBEECK_MusicMaster.CAOGDCBPBAN");
 		return 0;
 	}
 }

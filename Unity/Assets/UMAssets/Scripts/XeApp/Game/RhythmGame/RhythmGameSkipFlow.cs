@@ -97,7 +97,7 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xBFF400 Offset: 0xBFF400 VA: 0xBFF400
 		public void ChangeErrorToTilteStatus()
 		{
-			TodoLogger.Log(0, "ChangeErrorToTilteStatus");
+			TodoLogger.LogError(0, "ChangeErrorToTilteStatus");
 		}
 
 		//// RVA: 0xBFF434 Offset: 0xBFF434 VA: 0xBFF434

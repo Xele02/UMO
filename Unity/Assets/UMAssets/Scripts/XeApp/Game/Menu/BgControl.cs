@@ -1003,7 +1003,7 @@ namespace XeApp.Game.Menu
 		{
 			if(storyBgParam.isCategoryStory)
 			{
-				TodoLogger.Log(0, "StorytBgReturn");
+				TodoLogger.LogError(0, "StorytBgReturn");
 			}
 			storyBgLoading = false;
 		}

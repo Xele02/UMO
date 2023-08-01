@@ -181,7 +181,7 @@ public class HGPEFPFODHO_HighScoreRanking : DIHHCBACKGG_DbSection
 	// RVA: 0x175334C Offset: 0x175334C VA: 0x175334C Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "HGPEFPFODHO_HighScoreRanking.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "HGPEFPFODHO_HighScoreRanking.CAOGDCBPBAN");
 		return 0;
 	}
 

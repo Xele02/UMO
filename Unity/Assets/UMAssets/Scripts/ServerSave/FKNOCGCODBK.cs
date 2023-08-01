@@ -256,6 +256,6 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1191B20 Offset: 0x1191B20 VA: 0x1191B20 Slot: 10
 	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "AGHKODFKOJI");
+		TodoLogger.LogError(0, "AGHKODFKOJI");
 	}
 }

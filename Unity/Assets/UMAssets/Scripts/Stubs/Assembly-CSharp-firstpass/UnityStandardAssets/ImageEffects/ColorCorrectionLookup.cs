@@ -6,7 +6,7 @@ namespace UnityStandardAssets.ImageEffects
 	{
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement monobehaviour");
+			TodoLogger.LogError(0, "Implement monobehaviour");
 		}
 		public Shader shader;
 		public Texture3D converted3DLut;

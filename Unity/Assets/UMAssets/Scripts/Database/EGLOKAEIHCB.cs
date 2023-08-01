@@ -83,7 +83,7 @@ public class EGLOKAEIHCB_LimitedItem : DIHHCBACKGG_DbSection
 	// RVA: 0x1C5097C Offset: 0x1C5097C VA: 0x1C5097C Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "EGLOKAEIHCB_LimitedItem.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "EGLOKAEIHCB_LimitedItem.CAOGDCBPBAN");
 		return 0;
 	}
 }

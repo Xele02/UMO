@@ -39,7 +39,7 @@ public class BJGEJMNDOLK_GetSubscriptionStatuses : CACGCMBKHDI_Request
 		{
 			if(IDLHJIOMJBK.BBAJPINMOEP_Contains("subscription_statuses"))
 			{
-				TodoLogger.Log(0, "Parse Subscription status");
+				TodoLogger.LogError(0, "Parse Subscription status");
 			}
 		}
 	}

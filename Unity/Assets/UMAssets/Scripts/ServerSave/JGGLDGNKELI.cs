@@ -165,6 +165,6 @@ public class JGGLDGNKELI_Emblem : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xB1791C Offset: 0xB1791C VA: 0xB1791C Slot: 10
 	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "AGHKODFKOJI");
+		TodoLogger.LogError(0, "AGHKODFKOJI");
 	}
 }

@@ -68,7 +68,7 @@ public class GJAEGCMKMEK_MvTicket : DIHHCBACKGG_DbSection
 	// RVA: 0xAA87FC Offset: 0xAA87FC VA: 0xAA87FC Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "GJAEGCMKMEK_MvTicket.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "GJAEGCMKMEK_MvTicket.CAOGDCBPBAN");
 		return 0;
 	}
 }

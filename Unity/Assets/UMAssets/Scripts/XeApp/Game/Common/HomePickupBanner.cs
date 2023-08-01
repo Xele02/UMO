@@ -129,17 +129,17 @@ namespace XeApp.Game.Common
 			m_scrollView.OnUpdateItem = (int index, UGUILoopScrollContent content) =>
 			{
 				//0xEAEC78
-				TodoLogger.Log(0, "OnUpdateItem ");
+				TodoLogger.LogError(0, "OnUpdateItem ");
 			};
 			m_scrollView.OnDragBegin = () =>
 			{
 				//0xEAF00C
-				TodoLogger.Log(0, "OnDragBegin ");
+				TodoLogger.LogError(0, "OnDragBegin ");
 			};
 			m_scrollView.OnDragEnd = (Vector2 vec) =>
 			{
 				//0xEAF048
-				TodoLogger.Log(0, "OnDragEnd ");
+				TodoLogger.LogError(0, "OnDragEnd ");
 			};
 			m_repeatTimer.OnRepeatTiming = () =>
 			{

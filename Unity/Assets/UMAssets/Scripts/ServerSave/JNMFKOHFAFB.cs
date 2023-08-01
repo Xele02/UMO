@@ -909,6 +909,6 @@ public class JNMFKOHFAFB_PublicStatus : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1B9ECAC Offset: 0x1B9ECAC VA: 0x1B9ECAC Slot: 10
 	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "AGHKODFKOJI");
+		TodoLogger.LogError(0, "AGHKODFKOJI");
 	}
 }

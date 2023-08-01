@@ -435,7 +435,7 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 	// // RVA: 0x195EF38 Offset: 0x195EF38 VA: 0x195EF38 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(100, "Json load");
+		TodoLogger.LogError(100, "Json load");
 		return true;
 	}
 
@@ -617,7 +617,7 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 					{
 						r = CDENCMNHNGA_SceneList[BCCHOBPJJKE - 1].LFPEIEOHABE_Pstv - 1;
 					}
-					TodoLogger.Log(TodoLogger.ToCheck, "check test puVar1 < 0 == bVar6");
+					TodoLogger.LogError(TodoLogger.ToCheck, "check test puVar1 < 0 == bVar6");
 					if(r >= 1)
 					{
 						return r <= IEFOPDOOLOK_MasterVersion;
@@ -676,7 +676,7 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 	// // RVA: 0x1961F54 Offset: 0x1961F54 VA: 0x1961F54 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "MLIBEPGADJH_Scene.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "MLIBEPGADJH_Scene.CAOGDCBPBAN");
 		return 0;
 	}
 

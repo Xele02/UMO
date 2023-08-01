@@ -14,7 +14,7 @@ namespace XeApp.Game.Common
 			Renderer[] rs = root.GetComponentsInChildren<Renderer>();
 			if(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PKEMELMMEKM_IsDivaHighQuality())
 			{
-				TodoLogger.Log(0, "SetupDivaObject switch to low shader");
+				TodoLogger.LogError(0, "SetupDivaObject switch to low shader");
 			}
 			BoneSpringController controller = gameObject.GetComponentInChildren<BoneSpringController>();
 			if(controller != null)

@@ -66,7 +66,7 @@ public abstract class KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1A0BD2C Offset: 0x1A0BD2C VA: 0x1A0BD2C Slot: 10
 	public virtual void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "AGHKODFKOJI");
+		TodoLogger.LogError(0, "AGHKODFKOJI");
 	}
 
 	// // RVA: 0x1A0BD30 Offset: 0x1A0BD30 VA: 0x1A0BD30
@@ -212,7 +212,7 @@ public abstract class KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1A0CA48 Offset: 0x1A0CA48 VA: 0x1A0CA48 Slot: 11
 	public virtual FENCAJJBLBH PFAKPFKJJKA()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "TODO");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "TODO");
 		return null;
 	}
 

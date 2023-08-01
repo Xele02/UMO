@@ -20,7 +20,7 @@ public class MKIKFJKPEHK
 	{
 		if ((ENKGMPLGEIJ.MNNHHJBBICA_EventType > 0 && ENKGMPLGEIJ.MNNHHJBBICA_EventType < 4) || ENKGMPLGEIJ.MNNHHJBBICA_EventType == 6)
 		{
-			TodoLogger.Log(0, "DPICLLJJPAC Event");
+			TodoLogger.LogError(0, "DPICLLJJPAC Event");
 		}
 		else if(ENKGMPLGEIJ.MNNHHJBBICA_EventType == 0)
 		{
@@ -35,7 +35,7 @@ public class MKIKFJKPEHK
 		IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI/*6*/, false);
 		if(ev != null)
 		{
-			TodoLogger.Log(0, "EFFBJDMGIGO Event");
+			TodoLogger.LogError(0, "EFFBJDMGIGO Event");
 		}
 		return IMIDFBNGHCG.JCOBDONNJIP/*3*/;
 	}

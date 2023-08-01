@@ -26,7 +26,7 @@ public class FHPFLAGNCAF
 	//// RVA: 0x14E8444 Offset: 0x14E8444 VA: 0x14E8444
 	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
 	{
-		TodoLogger.Log(0, "FHPFLAGNCAF.KHEKNNFCAOI");
+		TodoLogger.LogError(0, "FHPFLAGNCAF.KHEKNNFCAOI");
 	}
 
 	//// RVA: 0x14E8700 Offset: 0x14E8700 VA: 0x14E8700
@@ -91,7 +91,7 @@ public class NHPDPKHMFEP
 	// // RVA: 0x1897998 Offset: 0x1897998 VA: 0x1897998
 	private bool AIJFDCIDDLO(SakashoErrorId PPFNGGCBJKC)
 	{
-		TodoLogger.Log(0, "AIJFDCIDDLO");
+		TodoLogger.LogError(0, "AIJFDCIDDLO");
 		return false;
 	}
 
@@ -118,7 +118,7 @@ public class NHPDPKHMFEP
 		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
 		{
 			//0x189C0D0
-			TodoLogger.Log(0, "MOBEEPPKFLG_OnFail");
+			TodoLogger.LogError(0, "MOBEEPPKFLG_OnFail");
 		};
 	}
 
@@ -169,16 +169,16 @@ public class NHPDPKHMFEP
 						}
 						else
 						{
-							TodoLogger.Log(0, "Todo subscription satus");
+							TodoLogger.LogError(0, "Todo subscription satus");
 						}
 						if(NPALHBGHNKN != null && !string.IsNullOrEmpty(NPALHBGHNKN.FJGCDPLCIAK))
 						{
-							TodoLogger.Log(0, "Todo subscription satus");
+							TodoLogger.LogError(0, "Todo subscription satus");
 						}
 						string str = "";
 						if(!JAILOEFCNJP.GEOMLGKCCNI(PJJEOFOFDCO, COJNCNGHIJC.NFEAMMJIMPG.FCABPFLKKBC, EOLFJGMAJAB, out str, out MKBOKLLDCFI))
 						{
-							TodoLogger.Log(0, "Todo subscription satus");
+							TodoLogger.LogError(0, "Todo subscription satus");
 						}
 						else
 						{
@@ -190,7 +190,7 @@ public class NHPDPKHMFEP
 							CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
 							{
 								//0x189D73C
-								TodoLogger.Log(0, "TODO");
+								TodoLogger.LogError(0, "TODO");
 								BHFHGFKBOHH();
 							}, AOCANKOMKFG, null);
 						}
@@ -198,7 +198,7 @@ public class NHPDPKHMFEP
 					COJNCNGHIJC.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
 					{
 						//0x189D20C
-						TodoLogger.Log(0, "Onfail");
+						TodoLogger.LogError(0, "Onfail");
 					};
 					return;
 				}
@@ -311,7 +311,7 @@ public class NHPDPKHMFEP
 					BEJHIEGCGNE.JCHLONCMPAJ();
 					if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HMMNDKHKEBC_MonthlyPass.BGANHMCJIIC() != null)
 					{
-						TodoLogger.Log(0, "KBJJGEJAMOK");
+						TodoLogger.LogError(0, "KBJJGEJAMOK");
 					}
 					DMFNALAGLHH++;
 					if (!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HMMNDKHKEBC_MonthlyPass.HMAHFMHPBBC())
@@ -331,7 +331,7 @@ public class NHPDPKHMFEP
 	{
 		if(GBCPDBJEDHL(false))
 		{
-			TodoLogger.Log(0, "PIEFCAPBEAI");
+			TodoLogger.LogError(0, "PIEFCAPBEAI");
 		}
 		return 0;
 	}

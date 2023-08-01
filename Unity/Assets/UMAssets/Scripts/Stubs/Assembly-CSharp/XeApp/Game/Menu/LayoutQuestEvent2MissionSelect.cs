@@ -6,7 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutQuestEvent2MissionSelect : LayoutUGUIScriptBase
 	{
-    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private MusicSelectCDCursor m_cdCursor;
 		[SerializeField]

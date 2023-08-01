@@ -34,7 +34,7 @@ namespace XeApp.Game.Menu
 		private List<Sprite> m_messageSprites;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

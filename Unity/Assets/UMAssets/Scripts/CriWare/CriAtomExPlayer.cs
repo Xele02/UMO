@@ -466,7 +466,7 @@ namespace CriWare
 		// // RVA: 0x28AA1DC Offset: 0x28AA1DC VA: 0x28AA1DC
 		public void SetSoundRendererType(CriAtomEx.SoundRendererType type)
 		{
-			TodoLogger.Log(0, "SetSoundRendererType");
+			TodoLogger.LogError(0, "SetSoundRendererType");
 		}
 
 		// // RVA: 0x28AA2D8 Offset: 0x28AA2D8 VA: 0x28AA2D8

@@ -226,7 +226,7 @@ namespace XeApp.Game.Menu
 			m_isGoDivaEvent = m_transitionName == TransitionList.Type.GODIVA_TEAM_SELECT;
 			if(m_isGoDivaEvent)
 			{
-				TodoLogger.Log(0, "TODO Event");
+				TodoLogger.LogError(0, "TODO Event");
 			}
 			m_viewMusicData = Database.Instance.selectedMusic.GetSelectedMusicData();
 			m_viewEnemyData = Database.Instance.selectedMusic.GetEnemyData(Database.Instance.gameSetup.musicInfo.difficultyType);
@@ -235,7 +235,7 @@ namespace XeApp.Game.Menu
 			m_isRaidEvent = Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid;
 			if(TutorialProc.CanUnit5Help(Database.Instance.gameSetup.musicInfo))
 			{
-				TodoLogger.Log(0, "Tuto");
+				TodoLogger.LogError(0, "Tuto");
 			}
 			int energy = Database.Instance.selectedMusic.GetNeedEnergy(Database.Instance.gameSetup.musicInfo.difficultyType, Database.Instance.gameSetup.musicInfo.IsLine6Mode);
 			m_updateBaseScoreRatio = true;
@@ -244,7 +244,7 @@ namespace XeApp.Game.Menu
 			m_eventCtrl = null;
 			if (Database.Instance.gameSetup.musicInfo.gameEventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL)
 			{
-				TodoLogger.Log(0, "Todo Event");
+				TodoLogger.LogError(0, "Todo Event");
 			}
 			UpdateEpisodeBonusList();
 			m_viewUnitData = m_playerData.DPLBHAIKPGL_GetTeam(m_isGoDivaEvent);
@@ -269,7 +269,7 @@ namespace XeApp.Game.Menu
 			{
 				if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 				{
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 				}
 				else
 				{
@@ -303,7 +303,7 @@ namespace XeApp.Game.Menu
 				skipButton = SetDeckPlayButtons.SkipButtoType.Lock;
 			else if (m_skipStatus != SkipStatusType.Enable)
 				skipButton = SetDeckPlayButtons.SkipButtoType.Hide;
-			TodoLogger.Log(TodoLogger.ToCheck, "Check skipButton, read in a array somewhere");
+			TodoLogger.LogError(TodoLogger.ToCheck, "Check skipButton, read in a array somewhere");
 			// L 909
 			m_playButtons.Set(skipButton, GetSkipRestCount(), CheckPlayButtonType(Database.Instance.gameSetup.musicInfo), energy);
 			m_playButtons.SetPosType(SetDeckPlayButtons.PosType.Normal);
@@ -486,11 +486,11 @@ namespace XeApp.Game.Menu
 			m_isWaitActivateScene = true;
 			if(TutorialProc.CanAutoSettingHelp())
 			{
-				TodoLogger.Log(0, "Co_ShowHelp");
+				TodoLogger.LogError(0, "Co_ShowHelp");
 			}
 			if(TutorialProc.CanUnit5Help(Database.Instance.gameSetup.musicInfo))
 			{
-				TodoLogger.Log(0, "Co_ShowHelp");
+				TodoLogger.LogError(0, "Co_ShowHelp");
 			}
 			MenuScene.Instance.InputDisable();
 			yield return Co.R(TutorialManager.TryShowTutorialCoroutine(CheckTutorialCondition));
@@ -507,7 +507,7 @@ namespace XeApp.Game.Menu
 			FinalizeUGUIObject();
 			if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 			{
-				TodoLogger.Log(0, "Event");
+				TodoLogger.LogError(0, "Event");
 			}
 		}
 
@@ -728,7 +728,7 @@ namespace XeApp.Game.Menu
 				return;
 			if (m_eventCtrl == null)
 				return;
-			TodoLogger.Log(0, "Event");
+			TodoLogger.LogError(0, "Event");
 		}
 
 		//// RVA: 0xA86E48 Offset: 0xA86E48 VA: 0xA86E48
@@ -738,7 +738,7 @@ namespace XeApp.Game.Menu
 				return;
 			if (m_eventCtrl == null)
 				return;
-			TodoLogger.Log(0, "Event");
+			TodoLogger.LogError(0, "Event");
 		}
 
 		//// RVA: 0xA86FA0 Offset: 0xA86FA0 VA: 0xA86FA0
@@ -746,7 +746,7 @@ namespace XeApp.Game.Menu
 		{
 			if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 			{
-				TodoLogger.Log(0, "Event");
+				TodoLogger.LogError(0, "Event");
 			}
 		}
 
@@ -755,7 +755,7 @@ namespace XeApp.Game.Menu
 		{
 			if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 			{
-				TodoLogger.Log(0, "Event");
+				TodoLogger.LogError(0, "Event");
 			}
 		}
 
@@ -764,7 +764,7 @@ namespace XeApp.Game.Menu
 		{
 			if(musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid && m_eventCtrl != null)
 			{
-				TodoLogger.Log(0, "Event");
+				TodoLogger.LogError(0, "Event");
 			}
 			if (!musicInfo.isEnergyRequired)
 				return SetDeckPlayButtons.PlayButtonType.Play;
@@ -781,11 +781,11 @@ namespace XeApp.Game.Menu
 			{
 				if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 				{
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 				}
 				if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid && m_eventCtrl != null)
 				{
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 				}
 				res = SkipStatusType.Boost;
 				if(Database.Instance.gameSetup.SelectedDashIndex < 1)
@@ -1359,7 +1359,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				TodoLogger.Log(0, "PreGameSkipShow event");
+				TodoLogger.LogError(0, "PreGameSkipShow event");
 			}
 			PopupWindowManager.Show(m_skipTicketPopupSetting, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{
@@ -1426,7 +1426,7 @@ namespace XeApp.Game.Menu
 			bool isNotUpdate = false;
 			if(m_isRaidEvent)
 			{
-				TodoLogger.Log(0, "Event raid");
+				TodoLogger.LogError(0, "Event raid");
 			}
 			Database.Instance.gameSetup.teamInfo.SetupInfo(m_paramCalculator.AddStatus, m_playerData, 0, m_viewMusicData, m_viewFriendPlayerData, m_paramCalculator.LimitOverStatus, m_prismData, m_isGoDivaEvent);
 			AdvanceGame(m_paramCalculator.AddStatus, m_playerData, m_viewFriendPlayerData, m_paramCalculator.LimitOverStatus, m_isDoSkip, UseLiveSkipTicketCount, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime(), m_paramCalculator.LogParams, isNotUpdate);
@@ -1533,7 +1533,7 @@ namespace XeApp.Game.Menu
 			{
 				if(m_viewMusicData is IBJAKJJICBC && Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid && m_eventCtrl != null)
 				{
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 				}
 			}
 			return false;
@@ -1713,7 +1713,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8EC70 Offset: 0xA8EC70 VA: 0xA8EC70
 		private void ShowSubPlateWindow(bool isReShow = false)
 		{
-			TodoLogger.Log(0, "ShowSubPlateWindow");
+			TodoLogger.LogError(0, "ShowSubPlateWindow");
 		}
 
 		//// RVA: 0xA8EEE0 Offset: 0xA8EEE0 VA: 0xA8EEE0
@@ -2135,7 +2135,7 @@ namespace XeApp.Game.Menu
 			if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva ||
 				Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
-				TodoLogger.Log(0, "Event");
+				TodoLogger.LogError(0, "Event");
 			}
 			return null;
 		}

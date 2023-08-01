@@ -272,7 +272,7 @@ public class JJCJKALEIAC_HomePickup : DIHHCBACKGG_DbSection
 	// RVA: 0x134F010 Offset: 0x134F010 VA: 0x134F010 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "JJCJKALEIAC_HomePickup.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "JJCJKALEIAC_HomePickup.CAOGDCBPBAN");
 		return 0;
 	}
 }

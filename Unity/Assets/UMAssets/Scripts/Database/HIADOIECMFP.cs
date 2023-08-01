@@ -102,20 +102,20 @@ public class HIADOIECMFP_EventPresentCampaign : DIHHCBACKGG_DbSection
 	// RVA: 0x1833CCC Offset: 0x1833CCC VA: 0x1833CCC Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "HIADOIECMFP_EventPresentCampaign.KMBPACJNEOF");
+		TodoLogger.LogError(TodoLogger.Database, "HIADOIECMFP_EventPresentCampaign.KMBPACJNEOF");
 	}
 
 	// RVA: 0x1833E94 Offset: 0x1833E94 VA: 0x1833E94 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
 	{
-		TodoLogger.Log(TodoLogger.Database, "HIADOIECMFP_EventPresentCampaign.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.Database, "HIADOIECMFP_EventPresentCampaign.IIEMACPEEBJ");
 		return true;
 	}
 
 	// RVA: 0x1834880 Offset: 0x1834880 VA: 0x1834880 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(TodoLogger.Database, "HIADOIECMFP_EventPresentCampaign.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.Database, "HIADOIECMFP_EventPresentCampaign.IIEMACPEEBJ");
 		return true;
 	}
 
@@ -140,7 +140,7 @@ public class HIADOIECMFP_EventPresentCampaign : DIHHCBACKGG_DbSection
 	// RVA: 0x1835510 Offset: 0x1835510 VA: 0x1835510 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "HIADOIECMFP_EventPresentCampaign.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "HIADOIECMFP_EventPresentCampaign.CAOGDCBPBAN");
 		return 0;
 	}
 }

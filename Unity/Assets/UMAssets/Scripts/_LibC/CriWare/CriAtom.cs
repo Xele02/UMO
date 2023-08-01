@@ -23,7 +23,7 @@ namespace ExternLib
 				categories[id].id = id;
 			}
 			categories[id].volume = volume;
-			TodoLogger.Log(TodoLogger.CriAtomVolumes, "criAtomExCategory_SetVolumeById");
+			TodoLogger.LogError(TodoLogger.CriAtomVolumes, "criAtomExCategory_SetVolumeById");
         }
 
         public static float criAtomExCategory_GetVolumeById(int id)

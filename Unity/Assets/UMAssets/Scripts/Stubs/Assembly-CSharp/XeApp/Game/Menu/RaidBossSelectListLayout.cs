@@ -9,7 +9,7 @@ namespace XeApp.Game.Menu
 {
 	public class RaidBossSelectListLayout : LayoutUGUIScriptBase
 	{
-    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 		[Serializable]
 		public class BossPanel
 		{

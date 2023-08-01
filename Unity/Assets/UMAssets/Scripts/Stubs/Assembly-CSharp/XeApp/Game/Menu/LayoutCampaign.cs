@@ -7,7 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutCampaign : LayoutUGUIScriptBase
 	{
-    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private SwapScrollList m_scrollList;
 		[SerializeField]

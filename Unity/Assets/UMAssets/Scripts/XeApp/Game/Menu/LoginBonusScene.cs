@@ -93,7 +93,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEB3658 Offset: 0xEB3658 VA: 0xEB3658
 		private IEnumerator DefaultLoginBonus()
 		{
-			TodoLogger.Log(0, "DefaultLoginBonus");
+			TodoLogger.LogError(0, "DefaultLoginBonus");
 			yield return null;
 		}
 
@@ -101,7 +101,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEB3704 Offset: 0xEB3704 VA: 0xEB3704
 		private IEnumerator ConditionsLoginBonus()
 		{
-			TodoLogger.Log(0, "ConditionsLoginBonus");
+			TodoLogger.LogError(0, "ConditionsLoginBonus");
 			yield return null;
 		}
 
@@ -118,12 +118,12 @@ namespace XeApp.Game.Menu
 			GameManager.Instance.SetFPS(30);
 			foreach(var e in JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN)
 			{
-				TodoLogger.Log(0, "LoginBonusScene.NextScene event");
+				TodoLogger.LogError(0, "LoginBonusScene.NextScene event");
 			}
 			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA/*9*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
 			if(ev != null)
 			{
-				TodoLogger.Log(0, "LoginBonusScene.NextScene event");
+				TodoLogger.LogError(0, "LoginBonusScene.NextScene event");
 			}
 			//LAB_00eb9458
 			MenuScene.Instance.Mount(TransitionUniqueId.EPISODEAPPEAL, null, true, 0);
@@ -289,7 +289,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEB4AC0 Offset: 0xEB4AC0 VA: 0xEB4AC0
 		private IEnumerator LoadingLayoutConditions()
 		{
-			TodoLogger.Log(0, "LoadingLayoutConditions");
+			TodoLogger.LogError(0, "LoadingLayoutConditions");
 			yield return null;
 		}
 
@@ -297,7 +297,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEB4B6C Offset: 0xEB4B6C VA: 0xEB4B6C
 		private IEnumerator LayoutLoadDefaultLoginBonus()
 		{
-			TodoLogger.Log(0, "LayoutLoadDefaultLoginBonus");
+			TodoLogger.LogError(0, "LayoutLoadDefaultLoginBonus");
 			yield return null;
 			/*AssetBundleLoadLayoutOperationBase operation;
 
@@ -325,7 +325,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEB4C18 Offset: 0xEB4C18 VA: 0xEB4C18
 		private IEnumerator LayoutLoadConditionsLoginBonus()
 		{
-			TodoLogger.Log(0, "LayoutLoadConditionsLoginBonus");
+			TodoLogger.LogError(0, "LayoutLoadConditionsLoginBonus");
 			yield return null;
 		}
 
@@ -359,7 +359,7 @@ namespace XeApp.Game.Menu
 		{ 
 			if(m_loginBonusMasters != null)
 			{
-				TodoLogger.Log(0, "IsDefaultLoginBonus");
+				TodoLogger.LogError(0, "IsDefaultLoginBonus");
 			}
 			return false;
 		}
@@ -367,7 +367,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEB4ED0 Offset: 0xEB4ED0 VA: 0xEB4ED0
 		private bool IsExistConditionsLoginBonus()
 		{
-			TodoLogger.Log(0, "IsExistConditionsLoginBonus");
+			TodoLogger.LogError(0, "IsExistConditionsLoginBonus");
 			return false;
 		}
 
@@ -406,7 +406,7 @@ namespace XeApp.Game.Menu
 				return;
 			if(IsDefaultLoginBonus())
 			{
-				TodoLogger.Log(0, "IsDefaultLoginBonus");
+				TodoLogger.LogError(0, "IsDefaultLoginBonus");
 				return;
 			}
 			m_isOpenScene = true;

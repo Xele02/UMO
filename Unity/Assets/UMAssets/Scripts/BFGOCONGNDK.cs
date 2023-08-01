@@ -45,14 +45,14 @@ public class BFGOCONGNDK
 					{
 						if(size > 16)
 						{
-        					TodoLogger.Log(5, "TODO");
+        					TodoLogger.LogError(5, "TODO");
 						}
 					}
 				}
 			}
 		}
 
-        TodoLogger.Log(TodoLogger._Todo, "BFGOCONGNDK.PCODDPDFLHK Implement when sys/05 is saved.");
+        TodoLogger.LogError(TodoLogger._Todo, "BFGOCONGNDK.PCODDPDFLHK Implement when sys/05 is saved.");
 		MBGHLLHFNHH = true;
     }
 
@@ -135,7 +135,7 @@ public class BFGOCONGNDK
 						{
 							f.Dispose();
 						}
-						TodoLogger.Log(TodoLogger._Todo, "BFGOCONGNDK.DAONJOOCPFP Fix when PCODDPDFLHK works");
+						TodoLogger.LogError(TodoLogger._Todo, "BFGOCONGNDK.DAONJOOCPFP Fix when PCODDPDFLHK works");
 						//return strHash == IOIMHJAOKOO_FileHash;
 						return true;
 					}

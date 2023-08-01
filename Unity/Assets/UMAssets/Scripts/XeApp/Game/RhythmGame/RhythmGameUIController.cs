@@ -289,7 +289,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xC10730 Offset: 0xC10730 VA: 0xC10730
 		public void ShowSkipConfirmationWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback)
 		{
-			TodoLogger.Log(0, "ShowSkipConfirmationWindow");
+			TodoLogger.LogError(0, "ShowSkipConfirmationWindow");
 		}
 
 		// // RVA: 0xC10E9C Offset: 0xC10E9C VA: 0xC10E9C
@@ -392,7 +392,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
-				TodoLogger.Log(0, "CreateConfirmationSetting");
+				TodoLogger.LogError(0, "CreateConfirmationSetting");
 				return null;
 			}
 		}
@@ -415,7 +415,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xC0EE70 Offset: 0xC0EE70 VA: 0xC0EE70
 		private PopupSetting CreateConfirmationSettingForStory()
 		{
-			TodoLogger.Log(0, "CreateConfirmationSettingForStory");
+			TodoLogger.LogError(0, "CreateConfirmationSettingForStory");
 			return null;
 		}
 

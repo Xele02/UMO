@@ -34,12 +34,12 @@ public class FIDDMIAEFEA_GetRankingRecordsByKeys : CACGCMBKHDI_Request
 	// RVA: 0x14E8968 Offset: 0x14E8968 VA: 0x14E8968 Slot: 12
 	public override void DHLDNIEELHO()
     {
-        TodoLogger.Log(0, "FIDDMIAEFEA_GetRankingRecordsByKeys.DHLDNIEELHO");
+        TodoLogger.LogError(0, "FIDDMIAEFEA_GetRankingRecordsByKeys.DHLDNIEELHO");
     }
 
 	// RVA: 0x14E8A78 Offset: 0x14E8A78 VA: 0x14E8A78 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
     {
-        TodoLogger.Log(0, "FIDDMIAEFEA_GetRankingRecordsByKeys.MGFNKDPHFGI");
+        TodoLogger.LogError(0, "FIDDMIAEFEA_GetRankingRecordsByKeys.MGFNKDPHFGI");
     }
 }

@@ -19,7 +19,7 @@ namespace XeApp.Game
 		private Condition m_menuCondition;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

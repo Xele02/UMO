@@ -53,7 +53,7 @@ public class NKOBMDPHNGP_EventRaidLobby : IKDICBBFBMI_EventBase
     {
         if(FJLIDJJAGOM() == null)
             return;
-        TodoLogger.Log(0, "NKOBMDPHNGP_EventRaidLobby()");
+        TodoLogger.LogError(0, "NKOBMDPHNGP_EventRaidLobby()");
         /*FPPNANIIODA.EBKCPELHDKN();
         MALEKMPDKKF()
         CNGIENBEHID();*/
@@ -84,7 +84,7 @@ public class NKOBMDPHNGP_EventRaidLobby : IKDICBBFBMI_EventBase
 	{
 		if(FJLIDJJAGOM() != null)
 		{
-			TodoLogger.Log(0, "NKOBMDPHNGP_EventRaidLobby.JIHMLILFOPG");
+			TodoLogger.LogError(0, "NKOBMDPHNGP_EventRaidLobby.JIHMLILFOPG");
 		}
 		return false;
 	}
@@ -92,7 +92,7 @@ public class NKOBMDPHNGP_EventRaidLobby : IKDICBBFBMI_EventBase
 	// // RVA: 0xC1EB64 Offset: 0xC1EB64 VA: 0xC1EB64 Slot: 31
 	protected override bool IMCMNOPNGHO(long JHNMKKNEENE)
 	{
-		TodoLogger.Log(0, "NKOBMDPHNGP_EventRaidLobby.IMCMNOPNGHO");
+		TodoLogger.LogError(0, "NKOBMDPHNGP_EventRaidLobby.IMCMNOPNGHO");
 		return false;
 	}
 
@@ -102,7 +102,7 @@ public class NKOBMDPHNGP_EventRaidLobby : IKDICBBFBMI_EventBase
 	// // RVA: 0xC1EFB4 Offset: 0xC1EFB4 VA: 0xC1EFB4 Slot: 46
 	protected override void PJDGDNJNCNM(long JHNMKKNEENE)
 	{
-		TodoLogger.Log(0, "PJDGDNJNCNM");
+		TodoLogger.LogError(0, "PJDGDNJNCNM");
 	}
 
 	// // RVA: 0xC1F014 Offset: 0xC1F014 VA: 0xC1F014 Slot: 28
@@ -417,7 +417,7 @@ public class NKOBMDPHNGP_EventRaidLobby : IKDICBBFBMI_EventBase
 	// // RVA: 0xC27028 Offset: 0xC27028 VA: 0xC27028
 	public bool KLEEKOAFIIK(bool FBBNPFFEJBN)
 	{
-		TodoLogger.Log(0, "NKOBMDPHNGP_EventRaidLobby.KLEEKOAFIIK");
+		TodoLogger.LogError(0, "NKOBMDPHNGP_EventRaidLobby.KLEEKOAFIIK");
 		return false;
 	}
 
@@ -447,7 +447,7 @@ public class NKOBMDPHNGP_EventRaidLobby : IKDICBBFBMI_EventBase
 	// // RVA: 0xC27698 Offset: 0xC27698 VA: 0xC27698
 	public static int ADPMLOEOAFD()
 	{
-		TodoLogger.Log(0, "ADPMLOEOAFD (raid)");
+		TodoLogger.LogError(0, "ADPMLOEOAFD (raid)");
 		return 0;
 	}
 
@@ -466,7 +466,7 @@ public class NKOBMDPHNGP_EventRaidLobby : IKDICBBFBMI_EventBase
 	// // RVA: 0xC27EE0 Offset: 0xC27EE0 VA: 0xC27EE0
 	public bool AKNOOLKMEGJ()
 	{
-		TodoLogger.Log(0, "AKNOOLKMEGJ");
+		TodoLogger.LogError(0, "AKNOOLKMEGJ");
 		return false;
 	}
 

@@ -14,7 +14,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAF4C20 Offset: 0xAF4C20 VA: 0xAF4C20
 		public void Create(TextAsset a_text_asset)
 		{
-			TodoLogger.Log(TodoLogger.ToCheck, "TO DEBUG CHECK");
+			TodoLogger.LogError(TodoLogger.ToCheck, "TO DEBUG CHECK");
 			int val1 = BitConverter.ToInt32(a_text_asset.bytes, 3);
 			int val2 = BitConverter.ToInt32(a_text_asset.bytes, 7);
 			int val3 = BitConverter.ToInt32(a_text_asset.bytes, 11);

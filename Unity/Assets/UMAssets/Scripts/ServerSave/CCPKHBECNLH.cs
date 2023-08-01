@@ -14,7 +14,7 @@ public class CCPKHBECNLH_EventBattle : KLFDBFMNLBL_ServerSaveBlock
 	// public const int KKBHHBGCNJO = 5;
 	// public List<CCPKHBECNLH.BHIDLKBIJFK> FBCJICEPLED = new List<CCPKHBECNLH.BHIDLKBIJFK>(); // 0x24
 
-	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0x190F0E0 NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { TodoLogger.LogError(0, "DMICHEJIAJL"); return false; } } // 0x190F0E0 NFKFOODCJJB
 
 	// // RVA: 0x190A2E4 Offset: 0x190A2E4 VA: 0x190A2E4
 	public CCPKHBECNLH_EventBattle()
@@ -25,45 +25,45 @@ public class CCPKHBECNLH_EventBattle : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x190A380 Offset: 0x190A380 VA: 0x190A380 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Event, "TODO");
+		TodoLogger.LogError(TodoLogger.Event, "TODO");
 	}
 
 	// // RVA: 0x190A470 Offset: 0x190A470 VA: 0x190A470 Slot: 5
 	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(TodoLogger.Event, "OKJPIBHMKMJ");
+		TodoLogger.LogError(TodoLogger.Event, "OKJPIBHMKMJ");
 	}
 
 	// // RVA: 0x190C288 Offset: 0x190C288 VA: 0x190C288 Slot: 6
 	public override bool IIEMACPEEBJ_Deserialize(EDOHBJAPLPF_JsonData OILEIIEIBHP)
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.LogError(0, "TODO");
 		return true;
 	}
 
 	// // RVA: 0x190E5C0 Offset: 0x190E5C0 VA: 0x190E5C0 Slot: 7
 	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
-		TodoLogger.Log(0, "CCPKHBECNLH_EventBattle.BMGGKONLFIC");
+		TodoLogger.LogError(0, "CCPKHBECNLH_EventBattle.BMGGKONLFIC");
 	}
 
 	// // RVA: 0x190E794 Offset: 0x190E794 VA: 0x190E794 Slot: 8
 	public override bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
-		TodoLogger.Log(0, "AGBOGBEOFME");
+		TodoLogger.LogError(0, "AGBOGBEOFME");
 		return true;
 	}
 
 	// // RVA: 0x190E984 Offset: 0x190E984 VA: 0x190E984 Slot: 10
 	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "AGHKODFKOJI");
+		TodoLogger.LogError(0, "AGHKODFKOJI");
 	}
 
 	// // RVA: 0x190ED98 Offset: 0x190ED98 VA: 0x190ED98 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.LogError(0, "TODO");
 		return null;
 	}
 }

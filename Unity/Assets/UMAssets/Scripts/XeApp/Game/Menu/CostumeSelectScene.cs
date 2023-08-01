@@ -660,7 +660,7 @@ namespace XeApp.Game.Menu
 				else
 				{
 					divaInfo = null;
-					TodoLogger.Log(0, "CB_CostumeChange divaGo");
+					TodoLogger.LogError(0, "CB_CostumeChange divaGo");
 				}
 				if(m_transitionName == TransitionList.Type.COSTUME_SELECT)
 				{

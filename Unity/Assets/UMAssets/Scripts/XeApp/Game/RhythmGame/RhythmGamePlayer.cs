@@ -870,7 +870,7 @@ namespace XeApp.Game.RhythmGame
 			if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
 				uiController.Hud.SetPlayerDivaId(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId);
-				TodoLogger.Log(0, "InitializeGameData BattleEvent");
+				TodoLogger.LogError(0, "InitializeGameData BattleEvent");
 				//L1814
 			}
 
@@ -1154,7 +1154,7 @@ namespace XeApp.Game.RhythmGame
 			if (resource.musicData.rhythmGameResultStartMillisec < 0)
 			{
 				resource.musicData.rhythmGameResultStartMillisec = musicMillisecLength - 5000;
-				TodoLogger.Log(0, "Shouldn't pass here");
+				TodoLogger.LogError(0, "Shouldn't pass here");
 			}
 			else
 			{
@@ -1166,7 +1166,7 @@ namespace XeApp.Game.RhythmGame
 				tutorialOneEndEvent.onFireEvent = () =>
 				{
 					//0xBF1658
-					TodoLogger.Log(0, "TutorialOnEndEvent");
+					TodoLogger.LogError(0, "TutorialOnEndEvent");
 				};
 				tutorialOneEndEvent.millisec = resource.musicData.tutorialOneEndGameStartMillisec;
 			}
@@ -1199,7 +1199,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
-				TodoLogger.Log(0, "InitializeMusicScoreEvent Event Type 3");
+				TodoLogger.LogError(0, "InitializeMusicScoreEvent Event Type 3");
 				//L744
 			}
 			if(setting.m_enable_cutin)
@@ -2173,13 +2173,13 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C16F0 Offset: 0x9C16F0 VA: 0x9C16F0
 		private void ForceChangePercentage100ForTutorial()
 		{
-			TodoLogger.Log(0, "ForceChangePercentage100ForTutorial");
+			TodoLogger.LogError(0, "ForceChangePercentage100ForTutorial");
 		}
 
 		// // RVA: 0x9C1854 Offset: 0x9C1854 VA: 0x9C1854
 		private void ForceDefeatEnemyForTutorial()
 		{
-			TodoLogger.Log(0, "ForceDefeatEnemyForTutorial");
+			TodoLogger.LogError(0, "ForceDefeatEnemyForTutorial");
 		}
 
 		// // RVA: 0x9C1B60 Offset: 0x9C1B60 VA: 0x9C1B60
@@ -2190,7 +2190,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(Database.Instance.gameSetup.musicInfo.isTutorialTwo)
 			{
-				TodoLogger.Log(0, "ShowTutorialActiveSkillGuide");
+				TodoLogger.LogError(0, "ShowTutorialActiveSkillGuide");
 			}
 		}
 
@@ -2300,7 +2300,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C2B68 Offset: 0x9C2B68 VA: 0x9C2B68
 		private void SkipTutorialWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
 		{
-			TodoLogger.Log(0, "SkipTutorialWindowCallBack");
+			TodoLogger.LogError(0, "SkipTutorialWindowCallBack");
 		}
 
 		// // RVA: 0x9C2D30 Offset: 0x9C2D30 VA: 0x9C2D30
@@ -2309,13 +2309,13 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C2DEC Offset: 0x9C2DEC VA: 0x9C2DEC
 		private void SkipStoryWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
 		{
-			TodoLogger.Log(0, "SkipStoryWindowCallBack");
+			TodoLogger.LogError(0, "SkipStoryWindowCallBack");
 		}
 
 		// // RVA: 0x9C2E00 Offset: 0x9C2E00 VA: 0x9C2E00
 		private void SkipStoryPauseWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
 		{
-			TodoLogger.Log(0, "SkipStoryPauseWindowCallBack");
+			TodoLogger.LogError(0, "SkipStoryPauseWindowCallBack");
 		}
 
 		// // RVA: 0x9C2ECC Offset: 0x9C2ECC VA: 0x9C2ECC
@@ -2354,31 +2354,31 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C34E0 Offset: 0x9C34E0 VA: 0x9C34E0
 		private void OnSuccessInPaidVCPurchase()
 		{
-			TodoLogger.Log(0, "OnSuccessInPaidVCPurchase");
+			TodoLogger.LogError(0, "OnSuccessInPaidVCPurchase");
 		}
 
 		// // RVA: 0x9C34E4 Offset: 0x9C34E4 VA: 0x9C34E4
 		private void OnCancelInPaidVCPurchase()
 		{
-			TodoLogger.Log(0, "OnCancelInPaidVCPurchase");
+			TodoLogger.LogError(0, "OnCancelInPaidVCPurchase");
 		}
 
 		// // RVA: 0x9C34E8 Offset: 0x9C34E8 VA: 0x9C34E8
 		private void OnErrorInPaidVCPurchase()
 		{
-			TodoLogger.Log(0, "OnErrorInPaidVCPurchase");
+			TodoLogger.LogError(0, "OnErrorInPaidVCPurchase");
 		}
 
 		// // RVA: 0x9C2290 Offset: 0x9C2290 VA: 0x9C2290
 		private void OnSuccessInGameContinueByPaidVC()
 		{
-			TodoLogger.Log(0, "OnSuccessInGameContinueByPaidVC");
+			TodoLogger.LogError(0, "OnSuccessInGameContinueByPaidVC");
 		}
 
 		// // RVA: 0x9C3624 Offset: 0x9C3624 VA: 0x9C3624
 		private void OnErrorInGameContinueByPaidVC()
 		{
-			TodoLogger.Log(0, "OnErrorInGameContinueByPaidVC");
+			TodoLogger.LogError(0, "OnErrorInGameContinueByPaidVC");
 		}
 
 		// // RVA: 0x9C1380 Offset: 0x9C1380 VA: 0x9C1380
@@ -2554,7 +2554,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C48F0 Offset: 0x9C48F0 VA: 0x9C48F0
 		private void TutorialClearEndRhythmGame()
 		{
-			TodoLogger.Log(0, "TutorialClearEndRhythmGame");
+			TodoLogger.LogError(0, "TutorialClearEndRhythmGame");
 		}
 
 		// // RVA: 0x9C4A70 Offset: 0x9C4A70 VA: 0x9C4A70
@@ -2746,7 +2746,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C34EC Offset: 0x9C34EC VA: 0x9C34EC
 		private void GotoTitleSceneInError()
 		{
-			TodoLogger.Log(0, "GotoTitleSceneInError");
+			TodoLogger.LogError(0, "GotoTitleSceneInError");
 		}
 
 		// // RVA: 0x9C5F68 Offset: 0x9C5F68 VA: 0x9C5F68
@@ -3520,7 +3520,7 @@ namespace XeApp.Game.RhythmGame
 				bgmPlayer.source.player.Stop();
 				bgmPlayback = bgmPlayer.source.player.Start();
 				#endif
-				TodoLogger.Log(0, "Check ApplyChangeMusicSequenceTime");
+				TodoLogger.LogError(0, "Check ApplyChangeMusicSequenceTime");
 				isChangeSequenceRequest = false;
 				return true;
 			}

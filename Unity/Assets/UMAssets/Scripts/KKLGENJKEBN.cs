@@ -111,12 +111,12 @@ public class KKLGENJKEBN
 			{
 				//0x1A06E88
 				FPFPJKJNOFK_UpdateRankingScore r = NHECPMNKEFK as FPFPJKJNOFK_UpdateRankingScore;
-				TodoLogger.Log(0, "BHFHGFKBOHH_OnSuccess");
+				TodoLogger.LogError(0, "BHFHGFKBOHH_OnSuccess");
 			};
 			req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 			{
 				//0x1A072B0
-				TodoLogger.Log(0, "MOBEEPPKFLG_OnFail");
+				TodoLogger.LogError(0, "MOBEEPPKFLG_OnFail");
 			};
 			return;
 		}
@@ -198,7 +198,7 @@ public class KKLGENJKEBN
 							req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 							{
 								//0x1A08168
-								TodoLogger.Log(0, "OnFail");
+								TodoLogger.LogError(0, "OnFail");
 							};
 							req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 							{
@@ -248,7 +248,7 @@ public class KKLGENJKEBN
 		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 		{
 			//0x1A08614
-			TodoLogger.Log(0, "On Error");
+			TodoLogger.LogError(0, "On Error");
 		};
 		req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 		{
@@ -273,7 +273,7 @@ public class KKLGENJKEBN
 	//// RVA: 0x1A05CE4 Offset: 0x1A05CE4 VA: 0x1A05CE4
 	public void JPNACOLKHLB(int CJHEHIMLGGL, int NEFEFHBHFFF, LIOLBKLMMIK KLMFJJCNBIP, DJBHIFLHJLK IDAEHNGOKAE, DJBHIFLHJLK JGKOLBLPMPG, bool EEJADLBBMLH = false)
 	{
-		TodoLogger.Log(0, "JPNACOLKHLB");
+		TodoLogger.LogError(0, "JPNACOLKHLB");
 	}
 
 	//[IteratorStateMachineAttribute] // RVA: 0x6BA3CC Offset: 0x6BA3CC VA: 0x6BA3CC
@@ -388,7 +388,7 @@ public class KKLGENJKEBN
 		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 		{
 			//0x1A09D08
-			TodoLogger.Log(0, "On Fail");
+			TodoLogger.LogError(0, "On Fail");
 		};
 	}
 

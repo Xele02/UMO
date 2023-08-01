@@ -186,7 +186,7 @@ public class AMOCLPHDGBP
 	// // RVA: 0xCE99D4 Offset: 0xCE99D4 VA: 0xCE99D4
 	private IEnumerator IGFMPECJFJA_Coroutine_Purchase(LGDNAJACFHI MEANCEOIMGE)
 	{
-		TodoLogger.Log(0, "IGFMPECJFJA_Coroutine_Purchase");
+		TodoLogger.LogError(0, "IGFMPECJFJA_Coroutine_Purchase");
 		yield return null;
 	}
 
@@ -757,7 +757,7 @@ public class AMOCLPHDGBP
 	{
 		if (PPFNGGCBJKC_Id >= SakashoErrorId.CANNOT_MAKE_PAYMENTS && PPFNGGCBJKC_Id < SakashoErrorId.PURCHASING_CANCELLED)
 		{
-			TodoLogger.Log(TodoLogger.ToCheck, "Check ELDMAINJHJI");
+			TodoLogger.LogError(TodoLogger.ToCheck, "Check ELDMAINJHJI");
 			return ((0x5cf >> (((int)PPFNGGCBJKC_Id - 59) & 0xff)) & 1) != 0;
 		}
 		return false;

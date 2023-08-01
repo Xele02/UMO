@@ -25,7 +25,7 @@ public abstract class AILHMHMOKKA_BaseLinkage
 	//// RVA: 0xCCB520 Offset: 0xCCB520 VA: 0xCCB520
 	protected bool DGLAMLJFEDB_CheckError(SakashoErrorId KLCMLLLIANB)
 	{
-		TodoLogger.Log(0, "AILHMHMOKKA_BaseLinkage.DGLAMLJFEDB_CheckError");
+		TodoLogger.LogError(0, "AILHMHMOKKA_BaseLinkage.DGLAMLJFEDB_CheckError");
 		return false;
 	}
 

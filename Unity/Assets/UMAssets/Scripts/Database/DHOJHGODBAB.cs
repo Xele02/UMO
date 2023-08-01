@@ -145,7 +145,7 @@ public class DHOJHGODBAB_Quest : DIHHCBACKGG_DbSection
 	// RVA: 0x1989F28 Offset: 0x1989F28 VA: 0x1989F28 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "DHOJHGODBAB_Quest.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "DHOJHGODBAB_Quest.CAOGDCBPBAN");
 		return 0;
 	}
 }

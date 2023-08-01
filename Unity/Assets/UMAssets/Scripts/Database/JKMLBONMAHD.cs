@@ -62,7 +62,7 @@ public class JKMLBONMAHD_RichBanner : DIHHCBACKGG_DbSection
 	// RVA: 0x1469B24 Offset: 0x1469B24 VA: 0x1469B24 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "JKMLBONMAHD_RichBanner.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "JKMLBONMAHD_RichBanner.CAOGDCBPBAN");
 		return 0;
 	}
 }

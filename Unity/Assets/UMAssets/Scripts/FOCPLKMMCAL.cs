@@ -95,22 +95,22 @@ public class FOCPLKMMCAL
 					}
 					if(OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 6)
 					{
-						TodoLogger.Log(0, "Event");
+						TodoLogger.LogError(0, "Event");
 						// L268
 					}
 					else if(OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 1)
 					{
-						TodoLogger.Log(0, "Event");
+						TodoLogger.LogError(0, "Event");
 						// L207
 					}
 					else if (OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 3)
 					{
-						TodoLogger.Log(0, "Event");
+						TodoLogger.LogError(0, "Event");
 						// L237
 					}
 					else if (OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 14)
 					{
-						TodoLogger.Log(0, "Event");
+						TodoLogger.LogError(0, "Event");
 						// L298
 					}
 				}
@@ -186,7 +186,7 @@ public class FOCPLKMMCAL
 			case 5:
 			case 6:
 			case 14:
-				TodoLogger.Log(0, "HNNPBABEPBP event");
+				TodoLogger.LogError(0, "HNNPBABEPBP event");
 				break;
 			default:
 				break;
@@ -282,7 +282,7 @@ public class FOCPLKMMCAL
 			HLEBAINCOME_EventScore eventScore = null;
 			if (OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 4)
 			{
-				TodoLogger.Log(0, "HKEFOCFIKIL");
+				TodoLogger.LogError(0, "HKEFOCFIKIL");
 			}
 			else
 			{
@@ -474,16 +474,16 @@ public class FOCPLKMMCAL
 							}
 							else
 							{
-								TodoLogger.Log(0, "HKEFOCFIKIL Event");
+								TodoLogger.LogError(0, "HKEFOCFIKIL Event");
 							}
 						}
 						else if(OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 2)
 						{
-							TodoLogger.Log(0, "HKEFOCFIKIL Event");
+							TodoLogger.LogError(0, "HKEFOCFIKIL Event");
 						}
 						else if (OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 3)
 						{
-							TodoLogger.Log(0, "HKEFOCFIKIL Event");
+							TodoLogger.LogError(0, "HKEFOCFIKIL Event");
 						}
 					}
 				}
@@ -553,7 +553,7 @@ public class FOCPLKMMCAL
 				}
 				else
 				{
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					/*event_ = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI, false);
 					FFDBCEDKMGN = event_.FBGDBGKNKOD();
 					d = true;*/
@@ -562,13 +562,13 @@ public class FOCPLKMMCAL
 				v1 = freeInfo.MGLDIOILOFF;
 				if (d)
 				{
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					// L291
 				}
 				v5 = freeInfo.KDIKCKEEPDA(OMNOFMEBLAD.LFGNLKKFOCD_IsLine6);
 				if(d)
 				{
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					// L310
 				}
 				v7 = 0;
@@ -581,7 +581,7 @@ public class FOCPLKMMCAL
 				v4 = 0;
 				if(d)
 				{
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					// L346
 				}
 				if(v3 != 0)
@@ -589,7 +589,7 @@ public class FOCPLKMMCAL
 					int j = freeInfo.NCCFJCDMBFO(OMNOFMEBLAD.LFGNLKKFOCD_IsLine6);
 					if(d)
 					{
-						TodoLogger.Log(0, "Event");
+						TodoLogger.LogError(0, "Event");
 						// L366
 					}
 					v4 = OMNOFMEBLAD.AKNELONELJK_Difficulty + j;
@@ -599,13 +599,13 @@ public class FOCPLKMMCAL
 				{
 					if(OMNOFMEBLAD.MFJKNCACBDG_OpenEventType == 1)
 					{
-						TodoLogger.Log(0, "Event");
+						TodoLogger.LogError(0, "Event");
 						// L389
 					}
 				}
 				else
 				{
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					// L412
 				}
 
@@ -614,14 +614,14 @@ public class FOCPLKMMCAL
 				data.KHEKNNFCAOI(EPMMNEFADAP_MusicInfo.FKDCCLPGKDK_Ma, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, false);
 				if(d)
 				{
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					// L464
 				}
 			}
 		}
 		else
 		{
-			TodoLogger.Log(0, "Tuto");
+			TodoLogger.LogError(0, "Tuto");
 			// L476
 		}
 		List<int> l = new List<int>();
@@ -634,7 +634,7 @@ public class FOCPLKMMCAL
 		int f = LFGNFNDDLJH_TicketCount;
 		if (OMNOFMEBLAD.OOPEJLMNIAH_EventItemCount > 0)
 		{
-			TodoLogger.Log(0, "Tuto");
+			TodoLogger.LogError(0, "Tuto");
 			// L648
 		}
 		if(setInfo != null && rateInfo != null)
@@ -1084,7 +1084,7 @@ public class FOCPLKMMCAL
 			MKEPHNGLHDL = exp;
 			if(OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 14)
 			{
-				TodoLogger.Log(0, "ILDLMKGBKIL");
+				TodoLogger.LogError(0, "ILDLMKGBKIL");
 			}
 			int c = OMNOFMEBLAD.KNIFCANOHOC_Score / 10000;
 			int d;
@@ -1224,7 +1224,7 @@ public class FOCPLKMMCAL
 	{
 		if(OMNOFMEBLAD.KLCIIHKFPPO_StoryMusicId > 0)
 		{
-			TodoLogger.Log(0, "KJAFCPAFDBK");
+			TodoLogger.LogError(0, "KJAFCPAFDBK");
 		}
 	}
 

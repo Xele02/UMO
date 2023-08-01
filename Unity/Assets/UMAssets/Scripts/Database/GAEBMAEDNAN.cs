@@ -77,14 +77,14 @@ public class GAEBMAEDNAN_DecoPoint : DIHHCBACKGG_DbSection
 	// RVA: 0x13FDBAC Offset: 0x13FDBAC VA: 0x13FDBAC Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(TodoLogger.Database, "GAEBMAEDNAN_DecoPoint.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.Database, "GAEBMAEDNAN_DecoPoint.IIEMACPEEBJ");
 		return true;
 	}
 
 	// RVA: 0x13FDDA4 Offset: 0x13FDDA4 VA: 0x13FDDA4 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "GAEBMAEDNAN_DecoPoint.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "GAEBMAEDNAN_DecoPoint.CAOGDCBPBAN");
 		return 0;
 	}
 }

@@ -13,13 +13,13 @@ namespace CriWare
 		// RVA: 0x28882B0 Offset: 0x28882B0 VA: 0x28882B0
 		public CriAtomEx3dTransceiver()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x2888460 Offset: 0x2888460 VA: 0x2888460 Slot: 5
 		public override void Dispose()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x2888468 Offset: 0x2888468 VA: 0x2888468
@@ -31,7 +31,7 @@ namespace CriWare
 		// // RVA: 0x2888640 Offset: 0x2888640 VA: 0x2888640
 		public void Update()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x2888728 Offset: 0x2888728 VA: 0x2888728

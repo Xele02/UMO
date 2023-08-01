@@ -33,7 +33,7 @@ namespace XeApp.Game.Menu
 		public UGUICurveMover.CurveInfo m_leaveAnimCurveInfo;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 
 		public void ModifyMesh(Mesh mesh)

@@ -329,6 +329,6 @@ public class NPOOPJIOMHF_Prism : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1CB8A9C Offset: 0x1CB8A9C VA: 0x1CB8A9C Slot: 10
 	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "AGHKODFKOJI");
+		TodoLogger.LogError(0, "AGHKODFKOJI");
 	}
 }

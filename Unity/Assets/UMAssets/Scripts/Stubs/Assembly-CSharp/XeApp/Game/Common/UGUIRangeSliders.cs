@@ -21,7 +21,7 @@ namespace XeApp.Game.Common
 		private RectTransform m_fillTransMaxRight;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

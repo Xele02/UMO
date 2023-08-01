@@ -73,7 +73,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1275BD0 Offset: 0x1275BD0 VA: 0x1275BD0
 		public IEnumerator Co_LoadDirectionLayout()
 		{
-			TodoLogger.Log(0, "Co_LoadDirectionLayout");
+			TodoLogger.LogError(0, "Co_LoadDirectionLayout");
 			yield return null;
 		}
 
@@ -81,7 +81,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1275C7C Offset: 0x1275C7C VA: 0x1275C7C
 		public IEnumerator LoadResource(int episodeId, int sceneId)
 		{
-			TodoLogger.Log(0, "LoadResource");
+			TodoLogger.LogError(0, "LoadResource");
 			yield return null;
 		}
 
@@ -117,7 +117,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1276100 Offset: 0x1276100 VA: 0x1276100
 		public IEnumerator Co_Play()
 		{
-			TodoLogger.Log(0, "Co_Play");
+			TodoLogger.LogError(0, "Co_Play");
 			yield return null;
 		}
 

@@ -6,7 +6,7 @@ namespace UnityStandardAssets.ImageEffects
 	{
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement monobehaviour");
+			TodoLogger.LogError(0, "Implement monobehaviour");
 		}
 		public float intensity;
 		public float threshold;

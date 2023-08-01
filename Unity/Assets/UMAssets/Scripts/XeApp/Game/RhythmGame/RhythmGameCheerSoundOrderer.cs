@@ -180,7 +180,7 @@ namespace XeApp.Game.RhythmGame
 		// RVA: 0xDC1888 Offset: 0xDC1888 VA: 0xDC1888
 		public void OnDestroy()
 		{
-			TodoLogger.Log(0, "RhythmGameCheerSoundOrderer OnDestroy");
+			TodoLogger.LogError(0, "RhythmGameCheerSoundOrderer OnDestroy");
 		}
 
 		//// RVA: 0xDC18EC Offset: 0xDC18EC VA: 0xDC18EC

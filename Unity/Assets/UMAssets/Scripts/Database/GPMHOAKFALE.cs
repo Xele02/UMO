@@ -26,7 +26,7 @@ public class GPMHOAKFALE_Adventure : DIHHCBACKGG_DbSection
 	//// RVA: 0x1E5F1EC Offset: 0x1E5F1EC VA: 0x1E5F1EC
 	public NGDBKCKMDHE GCINIJEMHFK(int PPFNGGCBJKC)
 	{
-		TodoLogger.Log(0, "GCINIJEMHFK");
+		TodoLogger.LogError(0, "GCINIJEMHFK");
 		return null;
 	}
 
@@ -83,7 +83,7 @@ public class GPMHOAKFALE_Adventure : DIHHCBACKGG_DbSection
 	// RVA: 0x1E5F6F0 Offset: 0x1E5F6F0 VA: 0x1E5F6F0 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "GPMHOAKFALE_Adventure.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "GPMHOAKFALE_Adventure.CAOGDCBPBAN");
 		return 0;
 	}
 }

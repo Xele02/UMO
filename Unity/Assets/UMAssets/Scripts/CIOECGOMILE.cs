@@ -92,7 +92,7 @@ public class CIOECGOMILE
 	// // RVA: 0xFFA5B0 Offset: 0xFFA5B0 VA: 0xFFA5B0
 	public int NOJDLFKKMDD(int MHFBCINOJEE)
 	{
-		TodoLogger.Log(0, "NOJDLFKKMDD");
+		TodoLogger.LogError(0, "NOJDLFKKMDD");
 		return 0;
 	}
 
@@ -215,7 +215,7 @@ public class CIOECGOMILE
 		PDKNJAEGNIL();
 		PDKNJAEGNIL(LGBMDHOLOIF);
 		PDKNJAEGNIL(LGBMDHOLOIF);
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.LogError(0, "TODO");
 	}
 
 	// // RVA: 0xFFB7A8 Offset: 0xFFB7A8 VA: 0xFFB7A8
@@ -564,7 +564,7 @@ public class CIOECGOMILE
 	// // RVA: 0xFFC6E4 Offset: 0xFFC6E4 VA: 0xFFC6E4
 	public bool LOOCNGEPAMI(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG, int HJBLIJOGNPC)
 	{
-		TodoLogger.Log(0, "LOOCNGEPAMI");
+		TodoLogger.LogError(0, "LOOCNGEPAMI");
 		PMHLJAIGBGK = new List<string>();
 		FMEDFGOMNBK = new List<int>();
 		KDLBAGCENNC = new BBHNACPENDM_ServerSaveData.EMHDCKMFCGE(null, null, false, 0);
@@ -777,34 +777,34 @@ public class CIOECGOMILE
 							if (AHEFHIMGIBI_ServerSave.NGHJPEIKLJL_Episode != null)
 							{
 								//L385
-								TodoLogger.Log(0, "BMKEBEJJKBE Episode");
+								TodoLogger.LogError(0, "BMKEBEJJKBE Episode");
 							}
 						}
 						bool b2 = false;
 						if ((FIBPIDELFBB & 4) != 0)
 						{
 							//678
-							TodoLogger.Log(0, "BMKEBEJJKBE Episode");
+							TodoLogger.LogError(0, "BMKEBEJJKBE Episode");
 						}
 						if ((FIBPIDELFBB & 8) != 0)
 						{
 							//950
-							TodoLogger.Log(0, "BMKEBEJJKBE Episode");
+							TodoLogger.LogError(0, "BMKEBEJJKBE Episode");
 						}
 						if ((FIBPIDELFBB & 0x1c7fffffff0) != 0)
 						{
 							//1289
-							TodoLogger.Log(0, "BMKEBEJJKBE Episode");
+							TodoLogger.LogError(0, "BMKEBEJJKBE Episode");
 						}
 						if ((FIBPIDELFBB & 0x800000000) != 0)
 						{
 							//1646
-							TodoLogger.Log(0, "BMKEBEJJKBE Episode");
+							TodoLogger.LogError(0, "BMKEBEJJKBE Episode");
 						}
 						if ((FIBPIDELFBB & 0x1000000000) != 0)
 						{
 							//1876
-							TodoLogger.Log(0, "BMKEBEJJKBE Episode");
+							TodoLogger.LogError(0, "BMKEBEJJKBE Episode");
 						}
 						AHEFHIMGIBI_ServerSave.IPLNOMCCNBI_UpdatePublicStatus();
 						BBHNACPENDM_ServerSaveData.EMHDCKMFCGE e = FMFKHDPKLOC.LEMFJICBALP(AHEFHIMGIBI_ServerSave, true);
@@ -1237,7 +1237,7 @@ public class CIOECGOMILE
 		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 		{
 			//0x100A094
-			TodoLogger.Log(0, "MOBEEPPKFLG_OnFail");
+			TodoLogger.LogError(0, "MOBEEPPKFLG_OnFail");
 		};
 	}
 
@@ -1343,7 +1343,7 @@ public class CIOECGOMILE
 						COJNCNGHIJC.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 						{
 							//0x100C634
-							TodoLogger.Log(0, "OnFail");
+							TodoLogger.LogError(0, "OnFail");
 						};
 						yield break;
 					}
@@ -1431,7 +1431,7 @@ public class CIOECGOMILE
 	// // RVA: 0xFFC7E4 Offset: 0xFFC7E4 VA: 0xFFC7E4
 	private IEnumerator EHNDCODOBBL_Falsification(FENCAJJBLBH KOGBMDOONFA, DJBHIFLHJLK MOBEEPPKFLG, int NHJBJIGNLHI)
 	{
-		TodoLogger.Log(0, "EHNDCODOBBL_Falsification");
+		TodoLogger.LogError(0, "EHNDCODOBBL_Falsification");
 		yield return null;
 	}
 
@@ -1489,7 +1489,7 @@ public class CIOECGOMILE
 		NAIJIFAJGGK_RequestLoadPlayerData AFHIJJJKJJJ; // 0x20
 
 		//0x10757EC
-		TodoLogger.Log(0, "DEHKLOLHKID_Coroutine_ReSave");
+		TodoLogger.LogError(0, "DEHKLOLHKID_Coroutine_ReSave");
 		yield return null;
 	}
 

@@ -147,7 +147,7 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE3D9B0 Offset: 0xE3D9B0 VA: 0xE3D9B0
 		public static void Log(OAGBCBBHMPF.OGBCFNIKAFI step)
 		{
-			TodoLogger.Log(0, "Log");
+			TodoLogger.LogError(0, "Log");
 		}
 
 		// // RVA: 0xE3DB08 Offset: 0xE3DB08 VA: 0xE3DB08
@@ -157,7 +157,7 @@ namespace XeApp.Game.Tutorial
 			{
 				if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level != 1)
 					return;
-				TodoLogger.Log(0, "TutorialAfterFirstLoginBonus");
+				TodoLogger.LogError(0, "TutorialAfterFirstLoginBonus");
 			}
 		}
 
@@ -170,7 +170,7 @@ namespace XeApp.Game.Tutorial
 				{
 					return;
 				}
-				TodoLogger.Log(0, "TutorialAfterFirstHome");
+				TodoLogger.LogError(0, "TutorialAfterFirstHome");
 			}
 		}
 
@@ -340,11 +340,11 @@ namespace XeApp.Game.Tutorial
 				}
 				else if(SceneManager.GetActiveScene().name == "GachaDirection")
 				{
-					TodoLogger.Log(0, "GachaDirection");
+					TodoLogger.LogError(0, "GachaDirection");
 				}
 				else if(SceneManager.GetActiveScene().name == "Adv" && button == InputLimitButton.SnsRoomButton)
 				{
-					TodoLogger.Log(0, "Adv");
+					TodoLogger.LogError(0, "Adv");
 				}
 				//LAB_00e3f120
 			}
@@ -411,7 +411,7 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE413B4 Offset: 0xE413B4 VA: 0xE413B4
 		public void HideCursor()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0xE4146C Offset: 0xE4146C VA: 0xE4146C
@@ -466,7 +466,7 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE3FF5C Offset: 0xE3FF5C VA: 0xE3FF5C
 		private void SetRect(RectTransform rt, Vector2 offset, Vector2 scale)
 		{
-			TodoLogger.Log(0, "SetRect2");
+			TodoLogger.LogError(0, "SetRect2");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6AE450 Offset: 0x6AE450 VA: 0x6AE450

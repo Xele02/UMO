@@ -10,7 +10,7 @@ namespace XeApp.Game.MiniGame
 		private ShootingHelpBotton m_helpButton;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

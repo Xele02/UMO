@@ -49,7 +49,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x13DE4B0 Offset: 0x13DE4B0 VA: 0x13DE4B0
 		public void PopupShowMenu(bool isPreparation, Action inheritingSuccess, Action closeCallback, LayoutMonthlyPassTakeover monthlylayout)
 		{
-			TodoLogger.Log(TodoLogger.Popup, "PopupShowMenu");
+			TodoLogger.LogError(TodoLogger.Popup, "PopupShowMenu");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E588C Offset: 0x6E588C VA: 0x6E588C
@@ -150,7 +150,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x13E02A8 Offset: 0x13E02A8 VA: 0x13E02A8 Slot: 4
 		public void Dispose()
 		{
-			TodoLogger.Log(0, "Displose");
+			TodoLogger.LogError(0, "Displose");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E5AE4 Offset: 0x6E5AE4 VA: 0x6E5AE4

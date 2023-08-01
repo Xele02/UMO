@@ -284,15 +284,15 @@ namespace XeApp.Game.Menu
 			}
 			else if(m_sortPlace == SortPlace.AssistList)
 			{
-				TodoLogger.Log(0, "Initialize AssistList");
+				TodoLogger.LogError(0, "Initialize AssistList");
 			}
 			else if(m_sortPlace == SortPlace.SceneSelect || m_sortPlace == SortPlace.SceneList || (int)m_sortPlace > 9)
 			{
-				TodoLogger.Log(0, "Initialize SceneSelect");
+				TodoLogger.LogError(0, "Initialize SceneSelect");
 			}
 			else if(((int)m_sortPlace & 0xfffffffe) == 8)
 			{
-				TodoLogger.Log(0, "Initialize Deco");
+				TodoLogger.LogError(0, "Initialize Deco");
 			}
 			else
 			{
@@ -600,7 +600,7 @@ namespace XeApp.Game.Menu
 		{
 			if(flags == 0)
 				return true;
-			TodoLogger.Log(0, "IsCenterSkillFilterOn");
+			TodoLogger.LogError(0, "IsCenterSkillFilterOn");
 			return true;
 		}
 
@@ -615,7 +615,7 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.OEELDELPIIP.Count; i++)
 				{
 					HCDIOPEOGEE h = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.OEELDELPIIP[i];
-					TodoLogger.Log(TodoLogger.ToCheck, "check bit test");
+					TodoLogger.LogError(TodoLogger.ToCheck, "check bit test");
 					if((h.MKDDOJOADMF & (int)flags) != 0)
 					{
 						for (int j = 0; j < h.NNDGIAEFMOG.Count; j++)
@@ -659,7 +659,7 @@ namespace XeApp.Game.Menu
 				for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.GAGNFDHGJGC.Count; i++)
 				{
 					DNIDPGDJCOG d = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.GAGNFDHGJGC[i];
-					TodoLogger.Log(TodoLogger.ToCheck, "check bit test");
+					TodoLogger.LogError(TodoLogger.ToCheck, "check bit test");
 					if ((d.MKDDOJOADMF & (int)flags) != 0)
 					{
 						for(int j = 0; j < d.NNDGIAEFMOG.Count; j++)
@@ -689,7 +689,7 @@ namespace XeApp.Game.Menu
 							if(f.BHADMHLIFMM < 1)
 							{
 								b3 = false;
-								TodoLogger.Log(TodoLogger.ToCheck, "Check test");
+								TodoLogger.LogError(TodoLogger.ToCheck, "Check test");
 								if(scene.AOLIJKMIJJE_DivaCompatible < 2)
 								{
 									b3 = true;

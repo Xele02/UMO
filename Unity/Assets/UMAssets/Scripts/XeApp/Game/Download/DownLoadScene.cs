@@ -209,7 +209,7 @@ namespace XeApp.Game.DownLoad
 		// // RVA: 0x11BE93C Offset: 0x11BE93C VA: 0x11BE93C
 		private IEnumerator Co_DownLoadProc()
 		{
-			TodoLogger.Log(0, "Co_DownLoadProc");
+			TodoLogger.LogError(0, "Co_DownLoadProc");
 			yield return null;
 		}
 
@@ -235,7 +235,7 @@ namespace XeApp.Game.DownLoad
 		// // RVA: 0x11BEAA4 Offset: 0x11BEAA4 VA: 0x11BEAA4
 		private void DownLoadError()
 		{
-			TodoLogger.Log(0, "DownloadScene.DownLoadError");
+			TodoLogger.LogError(0, "DownloadScene.DownLoadError");
 		}
 
 		// // RVA: 0x11BEB0C Offset: 0x11BEB0C VA: 0x11BEB0C

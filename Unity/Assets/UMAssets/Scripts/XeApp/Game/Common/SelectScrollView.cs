@@ -230,25 +230,25 @@ namespace XeApp.Game.Common
 		// RVA: 0x1391018 Offset: 0x1391018 VA: 0x1391018 Slot: 42
 		public override void OnScroll(PointerEventData eventData)
 		{
-			TodoLogger.Log(0, "OnScroll()");
+			TodoLogger.LogError(0, "OnScroll()");
 		}
 
 		// RVA: 0x139102C Offset: 0x139102C VA: 0x139102C Slot: 46
 		public override void OnDrag(PointerEventData eventData)
 		{
-			TodoLogger.Log(0, "OnDrag()");
+			TodoLogger.LogError(0, "OnDrag()");
 		}
 
 		// RVA: 0x1391040 Offset: 0x1391040 VA: 0x1391040 Slot: 44
 		public override void OnBeginDrag(PointerEventData eventData)
 		{
-			TodoLogger.Log(0, "OnBeginDrag()");
+			TodoLogger.LogError(0, "OnBeginDrag()");
 		}
 
 		// RVA: 0x1391124 Offset: 0x1391124 VA: 0x1391124 Slot: 45
 		public override void OnEndDrag(PointerEventData eventData)
 		{
-			TodoLogger.Log(0, "OnEndDrag()");
+			TodoLogger.LogError(0, "OnEndDrag()");
 		}
 	}
 }

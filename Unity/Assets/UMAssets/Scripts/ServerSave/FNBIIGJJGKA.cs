@@ -46,7 +46,7 @@ public class FNBIIGJJGKA_Counter : KLFDBFMNLBL_ServerSaveBlock
 			{
 				for(int i = 0; i < 5; i++)
 				{
-					TodoLogger.Log(TodoLogger.ToCheck, "Find max");
+					TodoLogger.LogError(TodoLogger.ToCheck, "Find max");
 					NJIDHLPGBFO_TTap[i] += PGPBALKFBNK[i];
 				}
 			}
@@ -450,7 +450,7 @@ public class FNBIIGJJGKA_Counter : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x11A25E8 Offset: 0x11A25E8 VA: 0x11A25E8 Slot: 10
 	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "AGHKODFKOJI");
+		TodoLogger.LogError(0, "AGHKODFKOJI");
 	}
 }
 

@@ -26,13 +26,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF52CB8 Offset: 0xF52CB8 VA: 0xF52CB8
 		public void TryLeave()
 		{
-			TodoLogger.Log(0, "MusicSelectSeriesInfo TryLeave");
+			TodoLogger.LogError(0, "MusicSelectSeriesInfo TryLeave");
 		}
 
 		// // RVA: 0xF52C34 Offset: 0xF52C34 VA: 0xF52C34
 		public void Enter()
 		{
-			TodoLogger.Log(0, "MusicSelectSeriesInfo Enter");
+			TodoLogger.LogError(0, "MusicSelectSeriesInfo Enter");
 		}
 
 		// // RVA: 0xF52CC8 Offset: 0xF52CC8 VA: 0xF52CC8
@@ -47,7 +47,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF390A4 Offset: 0xF390A4 VA: 0xF390A4
 		public bool IsPlaying()
 		{
-			TodoLogger.Log(0, "MusicSelectSeriesInfo IsPlaying");
+			TodoLogger.LogError(0, "MusicSelectSeriesInfo IsPlaying");
 			return false;
 		}
 
@@ -70,7 +70,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF5366C Offset: 0xF5366C VA: 0xF5366C Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			TodoLogger.Log(0, "InitializeFromLayout MusicSelectSeriesInfo");
+			TodoLogger.LogError(0, "InitializeFromLayout MusicSelectSeriesInfo");
 			return true;
 		}
 	}

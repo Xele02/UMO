@@ -83,14 +83,14 @@ public class ALJHJDHNFFB_HomeBg : DIHHCBACKGG_DbSection
 	// RVA: 0xCDE9DC Offset: 0xCDE9DC VA: 0xCDE9DC Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(TodoLogger.Database, "ALJHJDHNFFB_HomeBg.KMBPACJNEOF");
+		TodoLogger.LogError(TodoLogger.Database, "ALJHJDHNFFB_HomeBg.KMBPACJNEOF");
 		return true;
 	}
 
 	// RVA: 0xCDEF88 Offset: 0xCDEF88 VA: 0xCDEF88 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "ALJHJDHNFFB_HomeBg.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "ALJHJDHNFFB_HomeBg.CAOGDCBPBAN");
 		return 0;
 	}
 

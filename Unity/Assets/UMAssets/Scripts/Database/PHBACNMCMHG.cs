@@ -231,20 +231,20 @@ public class PHBACNMCMHG_EventCollection : DIHHCBACKGG_DbSection
 	// RVA: 0x16CB480 Offset: 0x16CB480 VA: 0x16CB480 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "PHBACNMCMHG_EventCollection.KMBPACJNEOF");
+		TodoLogger.LogError(TodoLogger.Database, "PHBACNMCMHG_EventCollection.KMBPACJNEOF");
 	}
 
 	// RVA: 0x16CB9A8 Offset: 0x16CB9A8 VA: 0x16CB9A8 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
 	{
-		TodoLogger.Log(TodoLogger.Database, "PHBACNMCMHG_EventCollection.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.Database, "PHBACNMCMHG_EventCollection.IIEMACPEEBJ");
 		return true;
 	}
 
 	// RVA: 0x16CD738 Offset: 0x16CD738 VA: 0x16CD738 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(TodoLogger.Database, "PHBACNMCMHG_EventCollection.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.Database, "PHBACNMCMHG_EventCollection.IIEMACPEEBJ");
 		return true;
 	}
 
@@ -290,7 +290,7 @@ public class PHBACNMCMHG_EventCollection : DIHHCBACKGG_DbSection
 	// RVA: 0x16CE4D0 Offset: 0x16CE4D0 VA: 0x16CE4D0 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "PHBACNMCMHG_EventCollection.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "PHBACNMCMHG_EventCollection.CAOGDCBPBAN");
 		return 0;
 	}
 }

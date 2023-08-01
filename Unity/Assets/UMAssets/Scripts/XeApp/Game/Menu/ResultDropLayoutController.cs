@@ -228,7 +228,7 @@ namespace XeApp.Game.Menu
 			lobbyController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/) as NKOBMDPHNGP_EventRaidLobby;
 			if(lobbyController == null)
 				yield break;
-			TodoLogger.Log(0, "ShowFoldRadarAnim Event");
+			TodoLogger.LogError(0, "ShowFoldRadarAnim Event");
 		}
 
 		// // RVA: 0xD01EA4 Offset: 0xD01EA4 VA: 0xD01EA4

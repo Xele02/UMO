@@ -330,7 +330,7 @@ public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 	// // RVA: 0xCC6E38 Offset: 0xCC6E38 VA: 0xCC6E38 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(100, "TODO");
+		TodoLogger.LogError(100, "TODO");
 		return true;
 	}
 
@@ -360,7 +360,7 @@ public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 	// // RVA: 0xCC7F98 Offset: 0xCC7F98 VA: 0xCC7F98 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "PEBFNABDJDI_System.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "PEBFNABDJDI_System.CAOGDCBPBAN");
 		return 0;
 	}
 

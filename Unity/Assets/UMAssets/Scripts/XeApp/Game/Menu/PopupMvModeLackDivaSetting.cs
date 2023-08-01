@@ -24,7 +24,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1698834 Offset: 0x1698834 VA: 0x1698834 Slot: 4
 		public override IEnumerator LoadAssetBundlePrefab(Transform parent)
 		{
-			TodoLogger.Log(0, "LoadAssetBundlePrefab");
+			TodoLogger.LogError(0, "LoadAssetBundlePrefab");
 			yield return null;
 		}
 

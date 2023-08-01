@@ -245,7 +245,7 @@ namespace XeApp.Game.Menu
 		{
 			if (m_miniWindow != null)
 			{
-				TodoLogger.Log(0, "LeaveMiniWindow");
+				TodoLogger.LogError(0, "LeaveMiniWindow");
 			}
 		}
 
@@ -254,7 +254,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_miniWindow != null)
 			{
-				TodoLogger.Log(0, "IsPlayingMiniWindow");
+				TodoLogger.LogError(0, "IsPlayingMiniWindow");
 			}
 			return false;
 		}

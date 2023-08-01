@@ -30,27 +30,27 @@ namespace SecureLib
         // // RVA: 0x2E71EF4 Offset: 0x2E71EF4 VA: 0x2E71EF4
         static SecureLibAPI()
 		{
-            TodoLogger.Log(TodoLogger.SecureLibAPI, "SecureLibAPI.SecureLibAPI");
+            TodoLogger.LogError(TodoLogger.SecureLibAPI, "SecureLibAPI.SecureLibAPI");
 		}
 
         // // RVA: 0x2E71EF8 Offset: 0x2E71EF8 VA: 0x2E71EF8
         public static bool isRooted()
         {
-            TodoLogger.Log(TodoLogger.SecureLibAPI, "SecureLibAPI.isRooted");
+            TodoLogger.LogError(TodoLogger.SecureLibAPI, "SecureLibAPI.isRooted");
             return false;
         }
 
         // // RVA: 0x2E71F70 Offset: 0x2E71F70 VA: 0x2E71F70
         public static bool isDebuggerAttachedJava()
         {
-            TodoLogger.Log(TodoLogger.SecureLibAPI, "SecureLibAPI.isDebuggerAttachedJava");
+            TodoLogger.LogError(TodoLogger.SecureLibAPI, "SecureLibAPI.isDebuggerAttachedJava");
             return false;
         }
 
         // // RVA: 0x2E71FE8 Offset: 0x2E71FE8 VA: 0x2E71FE8
         public static bool isDebuggerAttachedNative()
         {
-            TodoLogger.Log(TodoLogger.SecureLibAPI, "SecureLibAPI.isDebuggerAttachedNative");
+            TodoLogger.LogError(TodoLogger.SecureLibAPI, "SecureLibAPI.isDebuggerAttachedNative");
             return false;
         }
 
@@ -63,7 +63,7 @@ namespace SecureLib
         // // RVA: 0x2E71FF4 Offset: 0x2E71FF4 VA: 0x2E71FF4
         public static bool isEmulator()
         {
-            TodoLogger.Log(TodoLogger.SecureLibAPI, "SecureLibAPI.isEmulator");
+            TodoLogger.LogError(TodoLogger.SecureLibAPI, "SecureLibAPI.isEmulator");
             return false;
         }
 
@@ -79,7 +79,7 @@ namespace SecureLib
         // // RVA: 0x2E721D4 Offset: 0x2E721D4 VA: 0x2E721D4
         public static bool checkCodeDigest(string whiteList)
 		{
-			TodoLogger.Log(TodoLogger.SecureLibAPI, "SecureLibAPI.checkCodeDigest");
+			TodoLogger.LogError(TodoLogger.SecureLibAPI, "SecureLibAPI.checkCodeDigest");
 			return false;
 		}
 

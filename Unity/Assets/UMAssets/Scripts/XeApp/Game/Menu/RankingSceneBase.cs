@@ -154,7 +154,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xCF4A18 Offset: 0xCF4A18 VA: 0xCF4A18
 		protected int GetListEdgeRank(bool isUpper)
 		{
-			TodoLogger.Log(0, "GetListEdgeRank");
+			TodoLogger.LogError(0, "GetListEdgeRank");
 			return 0;
 		}
 
@@ -296,7 +296,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xCF6284 Offset: 0xCF6284 VA: 0xCF6284
 		protected void OnReceivedRankingListAdditive(int dir, List<IBIGBMDANNM> list)
 		{
-			TodoLogger.Log(0, "OnReceivedRankingListAdditive");
+			TodoLogger.LogError(0, "OnReceivedRankingListAdditive");
 		}
 
 		//// RVA: 0xCF64C4 Offset: 0xCF64C4 VA: 0xCF64C4
@@ -318,13 +318,13 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xCF66D4 Offset: 0xCF66D4 VA: 0xCF66D4
 		protected void OnRankingError()
 		{
-			TodoLogger.Log(0, "OnRankingError");
+			TodoLogger.LogError(0, "OnRankingError");
 		}
 
 		//// RVA: 0xCF67B4 Offset: 0xCF67B4 VA: 0xCF67B4
 		protected void OnNetError()
 		{
-			TodoLogger.Log(0, "OnNetError");
+			TodoLogger.LogError(0, "OnNetError");
 		}
 
 		//// RVA: 0xCF6904 Offset: 0xCF6904 VA: 0xCF6904

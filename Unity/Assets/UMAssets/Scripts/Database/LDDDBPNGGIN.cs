@@ -876,7 +876,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	// // RVA: 0xDA5A70 Offset: 0xDA5A70 VA: 0xDA5A70 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(100, "Json Load");
+		TodoLogger.LogError(100, "Json Load");
 		return true;
 	}
 
@@ -986,7 +986,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	// // RVA: 0xDA7BFC Offset: 0xDA7BFC VA: 0xDA7BFC Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "LDDDBPNGGIN_Game.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "LDDDBPNGGIN_Game.CAOGDCBPBAN");
 		return 0;
 	}
 }

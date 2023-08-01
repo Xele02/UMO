@@ -17,7 +17,7 @@ public class EDOGNHECOMI_GetStepUpLotDetail : CACGCMBKHDI_Request
 	// RVA: 0x1509CAC Offset: 0x1509CAC VA: 0x1509CAC Slot: 12
 	public override void DHLDNIEELHO()
 	{
-		TodoLogger.Log(0, "EDOGNHECOMI_GetStepUpLotDetail.DHLDNIEELHO");
+		TodoLogger.LogError(0, "EDOGNHECOMI_GetStepUpLotDetail.DHLDNIEELHO");
 	}
 
 	// RVA: 0x1509DA8 Offset: 0x1509DA8 VA: 0x1509DA8
@@ -29,7 +29,7 @@ public class EDOGNHECOMI_GetStepUpLotDetail : CACGCMBKHDI_Request
 	// RVA: 0x1509E44 Offset: 0x1509E44 VA: 0x1509E44 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
 	{
-		TodoLogger.Log(0, "EDOGNHECOMI_GetStepUpLotDetail.MGFNKDPHFGI");
+		TodoLogger.LogError(0, "EDOGNHECOMI_GetStepUpLotDetail.MGFNKDPHFGI");
 	}
 
 	// RVA: 0x1509F10 Offset: 0x1509F10 VA: 0x1509F10

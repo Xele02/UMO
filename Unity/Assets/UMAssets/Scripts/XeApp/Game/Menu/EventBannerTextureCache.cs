@@ -20,14 +20,14 @@ namespace XeApp.Game.Menu
 		// RVA: 0xF0ED90 Offset: 0xF0ED90 VA: 0xF0ED90 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
 		{
-			TodoLogger.Log(0, "EventBannerTextureCache CreateIconTexture");
+			TodoLogger.LogError(0, "EventBannerTextureCache CreateIconTexture");
 			return null;
 		}
 
 		// // RVA: 0xF0EE18 Offset: 0xF0EE18 VA: 0xF0EE18
 		public void LoadBanner(int id, Action<IiconTexture> callback)
 		{
-			TodoLogger.Log(0, "EventBannerTextureCache LoadBanner");
+			TodoLogger.LogError(0, "EventBannerTextureCache LoadBanner");
 		}
 
 		// // RVA: 0xF0EED4 Offset: 0xF0EED4 VA: 0xF0EED4

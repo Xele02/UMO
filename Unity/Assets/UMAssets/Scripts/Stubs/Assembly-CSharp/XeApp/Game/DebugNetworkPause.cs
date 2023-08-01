@@ -26,7 +26,7 @@ namespace XeApp.Game
 		public bool emulateDoAction;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

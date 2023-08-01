@@ -275,13 +275,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF91E70 Offset: 0xF91E70 VA: 0xF91E70
 		private void InitializeDivaSelect(PopupFilterSortSetting a_setting)
 		{
-			TodoLogger.Log(0, "InitializeDivaSelect");
+			TodoLogger.LogError(0, "InitializeDivaSelect");
 		}
 
 		// // RVA: 0xF93308 Offset: 0xF93308 VA: 0xF93308
 		private void FainalizeDivaSelect()
 		{
-			TodoLogger.Log(0, "FainalizeDivaSelect");
+			TodoLogger.LogError(0, "FainalizeDivaSelect");
 		}
 
 		// // RVA: 0xF93828 Offset: 0xF93828 VA: 0xF93828
@@ -290,7 +290,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF8FD14 Offset: 0xF8FD14 VA: 0xF8FD14
 		private void InitializeEpisode()
 		{
-			TodoLogger.Log(0, "InitializeEpisode");
+			TodoLogger.LogError(0, "InitializeEpisode");
 		}
 
 		// // RVA: 0xF909F0 Offset: 0xF909F0 VA: 0xF909F0
@@ -342,7 +342,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF92874 Offset: 0xF92874 VA: 0xF92874
 		private void FainalizeEpisode()
 		{
-			TodoLogger.Log(0, "FainalizeEpisode");
+			TodoLogger.LogError(0, "FainalizeEpisode");
 		}
 
 		// // RVA: 0xF92C84 Offset: 0xF92C84 VA: 0xF92C84
@@ -391,13 +391,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF922A0 Offset: 0xF922A0 VA: 0xF922A0
 		private void InitializeGoDivaMusicSelect()
 		{
-			TodoLogger.Log(0, "InitializeGoDivaMusicSelect");
+			TodoLogger.LogError(0, "InitializeGoDivaMusicSelect");
 		}
 
 		// // RVA: 0xF93430 Offset: 0xF93430 VA: 0xF93430
 		private void FainalizeGoDivaMusicSelect()
 		{
-			TodoLogger.Log(0, "FainalizeGoDivaMusicSelect");
+			TodoLogger.LogError(0, "FainalizeGoDivaMusicSelect");
 		}
 
 		// // RVA: 0xF947D8 Offset: 0xF947D8 VA: 0xF947D8
@@ -406,13 +406,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF916D8 Offset: 0xF916D8 VA: 0xF916D8
 		private void InitializeSelectHomeBg()
 		{
-			TodoLogger.Log(0, "InitializeSelectHomeBg");
+			TodoLogger.LogError(0, "InitializeSelectHomeBg");
 		}
 
 		// // RVA: 0xF93098 Offset: 0xF93098 VA: 0xF93098
 		private void FainalizeSelectHomeBg()
 		{
-			TodoLogger.Log(0, "FainalizeSelectHomeBg");
+			TodoLogger.LogError(0, "FainalizeSelectHomeBg");
 		}
 
 		// // RVA: 0xF94928 Offset: 0xF94928 VA: 0xF94928

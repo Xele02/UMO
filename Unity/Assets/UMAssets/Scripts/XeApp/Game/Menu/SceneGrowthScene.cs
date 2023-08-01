@@ -856,7 +856,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10DFB74 Offset: 0x10DFB74 VA: 0x10DFB74
 		private IEnumerator ShowPassPurchasePopupCoroutine()
 		{
-			TodoLogger.Log(0, "ShowPassPurchasePopupCoroutine");
+			TodoLogger.LogError(0, "ShowPassPurchasePopupCoroutine");
 			yield return null;
 		}
 
@@ -1546,7 +1546,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10E3B58 Offset: 0x10E3B58 VA: 0x10E3B58
 		private IEnumerator UnlockPanelCoroutine(SceneGrowthBoard board, UseItemList.Unlock unlock)
 		{
-			TodoLogger.Log(0, "UnlockPanelCoroutine");
+			TodoLogger.LogError(0, "UnlockPanelCoroutine");
 			yield return null;
 		}
 
@@ -1572,7 +1572,7 @@ namespace XeApp.Game.Menu
 			AssetBundleLoadLayoutOperationBase layoutOperation; // 0x30
 
 			//0x10EE8BC
-			TodoLogger.Log(0, "PlayUnlockPanelAnimationCoroutine");
+			TodoLogger.LogError(0, "PlayUnlockPanelAnimationCoroutine");
 			yield return null;
 		}
 

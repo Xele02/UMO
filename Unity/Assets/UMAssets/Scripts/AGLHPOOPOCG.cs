@@ -60,7 +60,7 @@ public class AGLHPOOPOCG
 	//// RVA: 0x15C47E0 Offset: 0x15C47E0 VA: 0x15C47E0
 	private void HKMNKGFJLEA()
 	{
-		TodoLogger.Log(0, "HKMNKGFJLEA");
+		TodoLogger.LogError(0, "HKMNKGFJLEA");
 	}
 
 	//// RVA: 0x15C48CC Offset: 0x15C48CC VA: 0x15C48CC

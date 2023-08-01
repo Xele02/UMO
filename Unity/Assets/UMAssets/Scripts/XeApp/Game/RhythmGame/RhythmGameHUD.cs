@@ -387,7 +387,7 @@ namespace XeApp.Game.RhythmGame
 			m_laneController.SetVisibility(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.NFMEIILKACN_NotesRoute == 0);
 			if(GameManager.Instance.IsTutorial)
 			{
-				TodoLogger.Log(0, "Tutorial");
+				TodoLogger.LogError(0, "Tutorial");
 			}
 		}
 
@@ -668,7 +668,7 @@ namespace XeApp.Game.RhythmGame
 			m_valkyrieCenterUi.SetActive(true);
 			m_valkyrieCenterEffectAnimator.Show();
 			m_valkyrieBottomUi.SetActive(true);
-			TodoLogger.Log(TodoLogger.UMOSkip, "Remove MainGaugeGoBattleParamHash event cause the button was moved outside the screen");
+			TodoLogger.LogError(TodoLogger.UMOSkip, "Remove MainGaugeGoBattleParamHash event cause the button was moved outside the screen");
 			//m_mainGaugeAnimator.SetTrigger(MainGaugeGoBattleParamHash);
 			m_mainGaugeAnimator.SetBool(MainGaugeIsMaxParamHash, false);
 			m_foldWaveGauge.Success(m_isValkyrieOff);

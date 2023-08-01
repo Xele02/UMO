@@ -8,7 +8,7 @@ public class PopupItemListItemIcon : FlexibleListItemLayout
 {
 	private void Awake()
 	{
-		TodoLogger.Log(0, "Implement monobehaviour");
+		TodoLogger.LogError(0, "Implement monobehaviour");
 	}
 	[SerializeField]
 	private RawImageEx[] m_itemIconImage;

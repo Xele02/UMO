@@ -76,7 +76,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xF7B8D4 Offset: 0xF7B8D4 VA: 0xF7B8D4
 		public static IEnumerator Co_ClosePopup(Action onClosed)
 		{
-			TodoLogger.Log(0, "Co_ClosePopup");
+			TodoLogger.LogError(0, "Co_ClosePopup");
 			yield return null;
 			if(onClosed != null)
 				onClosed();
@@ -85,7 +85,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xF7B980 Offset: 0xF7B980 VA: 0xF7B980
 		public static void OnProcessingEnd()
 		{
-			TodoLogger.Log(0, "OnProcessingEnd");
+			TodoLogger.LogError(0, "OnProcessingEnd");
 		}
 
 		//// RVA: 0xF7BBB0 Offset: 0xF7BBB0 VA: 0xF7BBB0
@@ -94,7 +94,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xF7BCFC Offset: 0xF7BCFC VA: 0xF7BCFC Slot: 17
 		public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
 		{
-			TodoLogger.Log(0, "Initialize");
+			TodoLogger.LogError(0, "Initialize");
 		}
 
 		// RVA: 0xF7BF00 Offset: 0xF7BF00 VA: 0xF7BF00
@@ -123,26 +123,26 @@ namespace XeApp.Game.Menu
 		// RVA: 0xF7C988 Offset: 0xF7C988 VA: 0xF7C988 Slot: 19
 		public void Show()
 		{
-			TodoLogger.Log(0, "Show");
+			TodoLogger.LogError(0, "Show");
 		}
 
 		// RVA: 0xF7C9CC Offset: 0xF7C9CC VA: 0xF7C9CC Slot: 20
 		public void Hide()
 		{
-			TodoLogger.Log(0, "Hide");
+			TodoLogger.LogError(0, "Hide");
 		}
 
 		// RVA: 0xF7CBD4 Offset: 0xF7CBD4 VA: 0xF7CBD4 Slot: 21
 		public bool IsReady()
 		{
-			TodoLogger.Log(0, "IsReady");
+			TodoLogger.LogError(0, "IsReady");
 			return true;
 		}
 
 		// RVA: 0xF7CC58 Offset: 0xF7CC58 VA: 0xF7CC58 Slot: 22
 		public void CallOpenEnd()
 		{
-			TodoLogger.Log(0, "CallOpenEnd");
+			TodoLogger.LogError(0, "CallOpenEnd");
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D80A4 Offset: 0x6D80A4 VA: 0x6D80A4

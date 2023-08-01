@@ -25,7 +25,7 @@ public class AHNHJFCAPCH_SetRaidbossRewardsReceivedAndSave : CACGCMBKHDI_Request
 		// RVA: 0x15C8DD4 Offset: 0x15C8DD4 VA: 0x15C8DD4
 		public LKFHBFHOLBG(EDOHBJAPLPF_JsonData DLENPPIJNPA)
 		{
-			TodoLogger.Log(0, "LKFHBFHOLBG");
+			TodoLogger.LogError(0, "LKFHBFHOLBG");
 		}
 	}
 
@@ -35,33 +35,33 @@ public class AHNHJFCAPCH_SetRaidbossRewardsReceivedAndSave : CACGCMBKHDI_Request
 	// RVA: 0x15C8B38 Offset: 0x15C8B38 VA: 0x15C8B38 Slot: 12
 	public override void DHLDNIEELHO()
 	{
-		TodoLogger.Log(0, "SetRaidbossRewardsReceivedAndSave DHLDNIEELHO");
+		TodoLogger.LogError(0, "SetRaidbossRewardsReceivedAndSave DHLDNIEELHO");
 	}
 
 	// RVA: 0x15C8CBC Offset: 0x15C8CBC VA: 0x15C8CBC Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
 	{
-		TodoLogger.Log(0, "SetRaidbossRewardsReceivedAndSave MGFNKDPHFGI");
+		TodoLogger.LogError(0, "SetRaidbossRewardsReceivedAndSave MGFNKDPHFGI");
 	}
 
 	// RVA: 0x15C8EF8 Offset: 0x15C8EF8 VA: 0x15C8EF8 Slot: 17
 	public List<string> KPIDBPEKMFD()
 	{
-		TodoLogger.Log(0, "SetRaidbossRewardsReceivedAndSave KPIDBPEKMFD");
+		TodoLogger.LogError(0, "SetRaidbossRewardsReceivedAndSave KPIDBPEKMFD");
 		return new List<string>();
 	}
 
 	// RVA: 0x15C8F1C Offset: 0x15C8F1C VA: 0x15C8F1C Slot: 18
 	public long DPKGNBIAFDO()
 	{
-		TodoLogger.Log(0, "SetRaidbossRewardsReceivedAndSave DPKGNBIAFDO");
+		TodoLogger.LogError(0, "SetRaidbossRewardsReceivedAndSave DPKGNBIAFDO");
 		return 0;
 	}
 
 	// RVA: 0x15C8F40 Offset: 0x15C8F40 VA: 0x15C8F40 Slot: 19
 	public int JNFCOPCBHAP()
 	{
-		TodoLogger.Log(0, "SetRaidbossRewardsReceivedAndSave JNFCOPCBHAP");
+		TodoLogger.LogError(0, "SetRaidbossRewardsReceivedAndSave JNFCOPCBHAP");
 		return 0;
 	}
 }

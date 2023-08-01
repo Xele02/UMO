@@ -282,7 +282,7 @@ namespace XeApp.Game.MusicSelect
 							AMLGMLNGMFB_EventAprilFool eventApril = list[j] as AMLGMLNGMFB_EventAprilFool;
 							if (musicData.EKANGPODCEP_EventId == eventApril.PGIIDPEGGPI)
 							{
-								TodoLogger.Log(0, "CreateMusicDataList april event");
+								TodoLogger.LogError(0, "CreateMusicDataList april event");
 								/*KCGOMAFPGDD.EIEGCBJHGCP dd = eventApril.KOBMFPACBMB().Find((KCGOMAFPGDD.EIEGCBJHGCP x) =>
 								{
 									//0xCA3DB4
@@ -369,7 +369,7 @@ namespace XeApp.Game.MusicSelect
 		//// RVA: 0xCA2728 Offset: 0xCA2728 VA: 0xCA2728
 		public static string GetEventPeriodString(long openTime, long closeTime)
 		{
-			TodoLogger.Log(0, "GetEventPeriodString");
+			TodoLogger.LogError(0, "GetEventPeriodString");
 			return "";
 		}
 

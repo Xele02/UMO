@@ -25,7 +25,7 @@ namespace CriWare
 		// // RVA: 0x294AFA8 Offset: 0x294AFA8 VA: 0x294AFA8 Slot: 6
 		public virtual void Stop()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x294AFAC Offset: 0x294AFAC VA: 0x294AFAC

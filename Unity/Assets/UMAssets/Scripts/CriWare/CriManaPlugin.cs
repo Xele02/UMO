@@ -19,7 +19,7 @@ namespace CriWare
 		public static void SetConfigParameters(bool graphicsMultiThreaded, int num_decoders, int max_num_of_entries)
 		{
 			enabledMultithreadedRendering = graphicsMultiThreaded;
-			TodoLogger.Log(TodoLogger.CriManaPlugin, "CriManaPlugin.SetConfigParameters");
+			TodoLogger.LogError(TodoLogger.CriManaPlugin, "CriManaPlugin.SetConfigParameters");
 		}
 
 		// // RVA: 0x2964C3C Offset: 0x2964C3C VA: 0x2964C3C
@@ -28,7 +28,7 @@ namespace CriWare
 			Type t = Type.GetType("CriManaVp9");
 			if(t == null)
 				return;
-			TodoLogger.Log(0, "SetupVp9");
+			TodoLogger.LogError(0, "SetupVp9");
 		}
 
 		// [ObsoleteAttribute] // RVA: 0x636358 Offset: 0x636358 VA: 0x636358
@@ -41,7 +41,7 @@ namespace CriWare
 		// // RVA: 0x2964F50 Offset: 0x2964F50 VA: 0x2964F50
 		public static void SetConfigAdditonalParameters_ANDROID(bool use_h264_playback)
 		{
-			TodoLogger.Log(TodoLogger.CriManaPlugin, "CriManaPlugin.SetConfigAdditonalParameters_ANDROID");
+			TodoLogger.LogError(TodoLogger.CriManaPlugin, "CriManaPlugin.SetConfigAdditonalParameters_ANDROID");
 		}
 
 		// // RVA: 0x2965224 Offset: 0x2965224 VA: 0x2965224

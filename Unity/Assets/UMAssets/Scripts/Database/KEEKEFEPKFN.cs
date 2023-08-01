@@ -75,7 +75,7 @@ public class KEEKEFEPKFN_GrowItem : DIHHCBACKGG_DbSection
 	// RVA: 0xE87AB8 Offset: 0xE87AB8 VA: 0xE87AB8 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "KEEKEFEPKFN_GrowItem.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "KEEKEFEPKFN_GrowItem.CAOGDCBPBAN");
 		return 0;
 	}
 }

@@ -14,13 +14,13 @@ namespace XeApp.Core
 		// RVA: 0x1D74440 Offset: 0x1D74440 VA: 0x1D74440 Slot: 11
 		protected override void InternalPause()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// RVA: 0x1D7456C Offset: 0x1D7456C VA: 0x1D7456C Slot: 12
 		protected override void InternalResume()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 	}
 }

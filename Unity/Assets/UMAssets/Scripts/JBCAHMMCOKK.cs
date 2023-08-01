@@ -253,7 +253,7 @@ public class JBCAHMMCOKK
 				{
 					for(int i = 0; i < JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Count; i++)
 					{
-						TodoLogger.Log(0, "HEGEKFMJNCC 4 event");
+						TodoLogger.LogError(0, "HEGEKFMJNCC 4 event");
 					}
 				}
 				break;
@@ -265,7 +265,7 @@ public class JBCAHMMCOKK
 					List<LOBDIAABMKG> l = NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.MHKCPJDNJKI_GatchaProducts;
 					for (int i = 0; i < l.Count; i++)
 					{
-						TodoLogger.Log(0, "HEGEKFMJNCC 5");
+						TodoLogger.LogError(0, "HEGEKFMJNCC 5");
 					}
 				}
 				break;
@@ -273,7 +273,7 @@ public class JBCAHMMCOKK
 				{
 					for(int i = 0; i < NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.MHKCPJDNJKI_GatchaProducts.Count; i++)
 					{
-						TodoLogger.Log(0, "HEGEKFMJNCC 6");
+						TodoLogger.LogError(0, "HEGEKFMJNCC 6");
 					}
 				}
 				break;
@@ -292,14 +292,14 @@ public class JBCAHMMCOKK
 					}
 					if (EJHPIMANJFP.HHCJCDFCLOB.MHKCPJDNJKI.Count < 1)
 						return;
-					TodoLogger.Log(0, "HEGEKFMJNCC 7");
+					TodoLogger.LogError(0, "HEGEKFMJNCC 7");
 				}
 				break;
 			case 8:
 				{
 					if (FKMOKDCJFEN.KFHCJLFAHAG() == null)
 						return;
-					TodoLogger.Log(0, "HEGEKFMJNCC 8");
+					TodoLogger.LogError(0, "HEGEKFMJNCC 8");
 				}
 				break;
 			case 9:
@@ -307,7 +307,7 @@ public class JBCAHMMCOKK
 					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI/*6*/);
 					if (ev == null)
 						return;
-					TodoLogger.Log(0, "HEGEKFMJNCC 9 event");
+					TodoLogger.LogError(0, "HEGEKFMJNCC 9 event");
 				}
 				break;
 			case 10:
@@ -318,7 +318,7 @@ public class JBCAHMMCOKK
 					List<IBJAKJJICBC> l = IBJAKJJICBC.FKDIMODKKJD(5, JHNMKKNEENE, true, false, false);
 					for(int i = 0; i < l.Count; i++)
 					{
-						TodoLogger.Log(0, "HEGEKFMJNCC 10 event");
+						TodoLogger.LogError(0, "HEGEKFMJNCC 10 event");
 					}
 				}
 				break;
@@ -329,12 +329,12 @@ public class JBCAHMMCOKK
 					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB/*7*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
 					if (ev != null)
 					{
-						TodoLogger.Log(0, "HEGEKFMJNCC 11 event");
+						TodoLogger.LogError(0, "HEGEKFMJNCC 11 event");
 					}
 					List<int> l2 = FNDEJKMGFFO("type", KOGBMDOONFA.PIBLLGLCJEO);
 					for(int i = 0; i < JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Count; i++)
 					{
-						TodoLogger.Log(0, "HEGEKFMJNCC 11-2 event");
+						TodoLogger.LogError(0, "HEGEKFMJNCC 11-2 event");
 					}
 				}
 				break;
@@ -379,7 +379,7 @@ public class JBCAHMMCOKK
 				{
 					for (int i = 0; i < NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.MHKCPJDNJKI_GatchaProducts.Count; i++)
 					{
-						TodoLogger.Log(0, "HEGEKFMJNCC 18");
+						TodoLogger.LogError(0, "HEGEKFMJNCC 18");
 					}
 				}
 				break;
@@ -387,7 +387,7 @@ public class JBCAHMMCOKK
 				{
 					for (int i = 0; i < NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.MHKCPJDNJKI_GatchaProducts.Count; i++)
 					{
-						TodoLogger.Log(0, "HEGEKFMJNCC 19");
+						TodoLogger.LogError(0, "HEGEKFMJNCC 19");
 					}
 				}
 				break;
@@ -444,19 +444,19 @@ public class JBCAHMMCOKK
 					JJCJKALEIAC_HomePickup.OHPHKIFMPEK d = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NFDHMGGLEPN_HomePickup.OKMGCLFJDJI(a, JHNMKKNEENE);
 					if (d == null)
 						return;
-					TodoLogger.Log(0, "HEGEKFMJNCC 25");
+					TodoLogger.LogError(0, "HEGEKFMJNCC 25");
 				}
 				break;
 			case 26: // 0x1a
 				{
 					for(int i = 0; i < JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Count; i++)
 					{
-						TodoLogger.Log(0, "HEGEKFMJNCC 26 event");
+						TodoLogger.LogError(0, "HEGEKFMJNCC 26 event");
 					}
 				}
 				break;
 			default:
-				TodoLogger.Log(0, "HEGEKFMJNCC "+ KOGBMDOONFA.GMELAKNFKMG);
+				TodoLogger.LogError(0, "HEGEKFMJNCC "+ KOGBMDOONFA.GMELAKNFKMG);
 				break;
 		}
 	}
@@ -499,7 +499,7 @@ public class JBCAHMMCOKK
 		string path = persistPath + "/sys" + "/20";
 		if(File.Exists(path))
 		{
-			TodoLogger.Log(0, "AKIFCOIDAHD");
+			TodoLogger.LogError(0, "AKIFCOIDAHD");
 		}
 	}
 

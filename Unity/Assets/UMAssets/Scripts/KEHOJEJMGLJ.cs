@@ -144,7 +144,7 @@ public class KEHOJEJMGLJ
 	// // RVA: 0xE88334 Offset: 0xE88334 VA: 0xE88334
 	private void FCPBCDOKOPD(KEHOJEJMGLJ.LIFANPDHNHE PPFNGGCBJKC, string IPBHCLIHAPG)
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.LogError(0, "TODO");
 	}
 
 	// // RVA: 0xE883AC Offset: 0xE883AC VA: 0xE883AC
@@ -318,7 +318,7 @@ public class KEHOJEJMGLJ
 					DLAEPJPPEKI = false;
 					// L 482
 					//*************
-					TodoLogger.Log(TodoLogger._Todo, "Todo File on disk check");
+					TodoLogger.LogError(TodoLogger._Todo, "Todo File on disk check");
 					ICCMKHKNAMJ.Clear();// UMO hack, not file check for now
 					//*************
 					if (ICCMKHKNAMJ.Count == 0)
@@ -326,7 +326,7 @@ public class KEHOJEJMGLJ
 						KOMKKBDABJP = false;
 						JFAIABBIPEO.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
 							//0xE8D3C0
-							TodoLogger.Log(TodoLogger._Todo, "Disabled file deletion");
+							TodoLogger.LogError(TodoLogger._Todo, "Disabled file deletion");
 							//CIDPPOGCODB(FAOOOLDDBBB);
 							KOMKKBDABJP = true;
 						});
@@ -401,7 +401,7 @@ public class KEHOJEJMGLJ
 					PMDNNKAPIKJ.DOMFHDPMCCO_AddFiles(ICCMKHKNAMJ, FLHOFIEOKDH_BaseUrl, JCMJBMBMJAK_PersistentDataPath);
 					PMDNNKAPIKJ.LBGNKOJFOFC = (JEHIAIPJNJF_FileDownloader.HCJPJKCIBDL_DldFileInfo JGBPLIGAILE) => {
 						//0xE8D424
-						TodoLogger.Log(0, "TODO");
+						TodoLogger.LogError(0, "TODO");
 					};
 					NJDHMNBBCLK = 60;
 					// goto LAB_00e8f360
@@ -425,7 +425,7 @@ public class KEHOJEJMGLJ
 							KOMKKBDABJP = false;
 							JFAIABBIPEO.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
 								//0xE8D8B0
-								TodoLogger.Log(0, "TODO");
+								TodoLogger.LogError(0, "TODO");
 							});
 							//goto LAB_00e8e0f8;
 							//0xd
@@ -462,10 +462,10 @@ public class KEHOJEJMGLJ
 								errorStr = "storage";
 							MAIHLKPEHJN(errorStr, () => {
 								//0xE8D91C
-								TodoLogger.Log(0, "TODO");
+								TodoLogger.LogError(0, "TODO");
 							}, () => {
 								//0xE8D928
-								TodoLogger.Log(0, "TODO");
+								TodoLogger.LogError(0, "TODO");
 							});
 							//goto LAB_00e8dffc;
 							// 8
@@ -526,10 +526,10 @@ public class KEHOJEJMGLJ
 								errorStr = "storage";
 							MAIHLKPEHJN(errorStr, () => {
 								//0xE8D93C
-								TodoLogger.Log(0, "TODO");
+								TodoLogger.LogError(0, "TODO");
 							}, () => {
 								//0xE8D948
-								TodoLogger.Log(0, "TODO");
+								TodoLogger.LogError(0, "TODO");
 							});
 							//goto LAB_00e8f260;
 							//0xb
@@ -814,7 +814,7 @@ public class KEHOJEJMGLJ
 									NFIDKHELFDK++;
 									string h = IFCHFDEDCGF_GetFileHash(md5, localPath);
 									//if(h == afinfo.POEGMFKLFJG_Hash)
-									TodoLogger.Log(TodoLogger._Todo, "hash check disabled");
+									TodoLogger.LogError(TodoLogger._Todo, "hash check disabled");
 									if(true) // UMO
 									{
 										FAOOOLDDBBB[afinfo.OIEAICNAMNB_LocalFileName] = 2;
@@ -834,7 +834,7 @@ public class KEHOJEJMGLJ
 							{
 								NFIDKHELFDK++;
 								string h = IFCHFDEDCGF_GetFileHash(md5, localPath);
-								TodoLogger.Log(TodoLogger._Todo, "hash check disabled");
+								TodoLogger.LogError(TodoLogger._Todo, "hash check disabled");
 								//if(h != afinfo.POEGMFKLFJG_Hash)
 								if(false) // UMO
 								{
@@ -888,14 +888,14 @@ public class KEHOJEJMGLJ
 	// // RVA: 0xE8B240 Offset: 0xE8B240 VA: 0xE8B240
 	private bool ALDMHFCFECK(int INDDJNMPONH, float LNAHJANMJNM)
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.LogError(0, "TODO");
 		return false;
 	}
 
 	// // RVA: 0xE8B248 Offset: 0xE8B248 VA: 0xE8B248
 	private void EEHMGCMAOAB(string DOGDHKIEBJA, IMCBBOAFION KLMFJJCNBIP, JFDNPFFOACP NEFKBBNKNPP)
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.LogError(0, "TODO");
 	}
 
 	// // RVA: 0xE845B8 Offset: 0xE845B8 VA: 0xE845B8
@@ -935,7 +935,7 @@ public class KEHOJEJMGLJ
 	// // RVA: 0xE8AFF8 Offset: 0xE8AFF8 VA: 0xE8AFF8
 	private static string IFCHFDEDCGF_GetFileHash(MD5 DMIPFEIICDP, string CJEKGLGBIHF_path)
 	{
-		TodoLogger.Log(TodoLogger.HashCheck, "IFCHFDEDCGF");
+		TodoLogger.LogError(TodoLogger.HashCheck, "IFCHFDEDCGF");
 		return "";
 	}
 
@@ -1021,19 +1021,19 @@ public class KEHOJEJMGLJ
 	// // RVA: 0xE888B8 Offset: 0xE888B8 VA: 0xE888B8
 	private static void GBCDHECMDMC()
 	{
-		TodoLogger.Log(0, "!!!");
+		TodoLogger.LogError(0, "!!!");
 	}
 
 	// // RVA: 0xE8BC98 Offset: 0xE8BC98 VA: 0xE8BC98
 	public static void AFKGMCBJBJA()
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.LogError(0, "TODO");
 	}
 
 	// // RVA: 0xE8BDB0 Offset: 0xE8BDB0 VA: 0xE8BDB0
 	private void BDGGNOAIIFK(float OLDAGCNLJOI_Progress)
 	{
-		TodoLogger.Log(0, "!!!");
+		TodoLogger.LogError(0, "!!!");
 	}
 
 	// // RVA: 0xE8BF18 Offset: 0xE8BF18 VA: 0xE8BF18

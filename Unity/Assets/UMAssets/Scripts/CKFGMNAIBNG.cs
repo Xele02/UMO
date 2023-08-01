@@ -167,7 +167,7 @@ public class CKFGMNAIBNG
 	// // RVA: 0x107F26C Offset: 0x107F26C VA: 0x107F26C
 	public void PDADHMIODCA(int HEHKNMCDBJJ, bool JKDJCFEBDHC)
 	{
-		TodoLogger.Log(0, "PDADHMIODCA");
+		TodoLogger.LogError(0, "PDADHMIODCA");
 	}
 
 	// // RVA: 0x107F330 Offset: 0x107F330 VA: 0x107F330

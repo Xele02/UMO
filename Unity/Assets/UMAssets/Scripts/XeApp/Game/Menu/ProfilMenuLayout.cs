@@ -1769,7 +1769,7 @@ namespace XeApp.Game.Menu
 			m_btnType = a_type;
 			if(a_type >= ButtonType.Raid && a_type <= ButtonType.Raid_Result)
 			{
-				TodoLogger.Log(0, "Event");
+				TodoLogger.LogError(0, "Event");
 			}
 			else
 			{

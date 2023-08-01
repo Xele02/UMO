@@ -13,7 +13,7 @@ namespace XeApp.Game.Menu
 			Episode = 2,
 			All = 4,
 		}
-    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private LayoutUGUIScrollSupport m_scrollSupport;
 		[SerializeField]

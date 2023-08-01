@@ -8,7 +8,7 @@ namespace XeApp.Game.Title
 	{
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement monobehaviour");
+			TodoLogger.LogError(0, "Implement monobehaviour");
 		}
 		public Transform Parent => null; //throw new System.NotImplementedException();
 

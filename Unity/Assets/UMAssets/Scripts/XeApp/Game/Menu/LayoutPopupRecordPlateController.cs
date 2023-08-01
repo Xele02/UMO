@@ -82,7 +82,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x177B0D0 Offset: 0x177B0D0 VA: 0x177B0D0
 		public IEnumerator ListPhase(List<GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo> highList, List<GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo> infoList, Action callback)
 		{
-			TodoLogger.Log(0, "ListPhase");
+			TodoLogger.LogError(0, "ListPhase");
 			yield return null;
 		}
 
@@ -90,7 +90,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x177B1B0 Offset: 0x177B1B0 VA: 0x177B1B0
 		public IEnumerator RarityUpPhase(List<GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo> highList, Action callback)
 		{
-			TodoLogger.Log(0, "RarityUpPhase");
+			TodoLogger.LogError(0, "RarityUpPhase");
 			yield return null;
 		}
 
@@ -98,7 +98,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x177B290 Offset: 0x177B290 VA: 0x177B290
 		public IEnumerator SkillEvolutionPhase(List<GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo> highList, Action callback)
 		{
-			TodoLogger.Log(0, "SkillEvolutionPhase");
+			TodoLogger.LogError(0, "SkillEvolutionPhase");
 			yield return null;
 		}
 
@@ -153,7 +153,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x177B7E8 Offset: 0x177B7E8 VA: 0x177B7E8
 		public IEnumerator EpisodePhase(GONMPHKGKHI_RewardView.CECMLGBLHHG type, List<int> episodeList, Action callback)
 		{
-			TodoLogger.Log(0, "EpisodePhase");
+			TodoLogger.LogError(0, "EpisodePhase");
 			yield return null;
 		}
 
@@ -161,7 +161,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x177B8E0 Offset: 0x177B8E0 VA: 0x177B8E0
 		public IEnumerator GetPosterPhase(List<GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo> posterList, Action callback)
 		{
-			TodoLogger.Log(0, "GetPosterPhase");
+			TodoLogger.LogError(0, "GetPosterPhase");
 			yield return null;
 		}
 

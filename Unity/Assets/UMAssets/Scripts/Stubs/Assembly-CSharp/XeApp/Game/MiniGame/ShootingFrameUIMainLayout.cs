@@ -8,7 +8,7 @@ namespace XeApp.Game.MiniGame
 		private ShootingPauseBotton m_pauseButton;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

@@ -79,12 +79,12 @@ public class CNNIKANJMNG
 					req2.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 					{
 						//0x175FB80
-						TodoLogger.Log(0, "OnFail");
+						TodoLogger.LogError(0, "OnFail");
 					};
 					req2.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 					{
 						//0x175FC50
-						TodoLogger.Log(0, "OnSuccess");
+						TodoLogger.LogError(0, "OnSuccess");
 					};
 					yield break;
 				}
@@ -93,15 +93,15 @@ public class CNNIKANJMNG
 					FGEIGGNCGGD(MIINNCFHBCL, CJHEHIMLGGL, 2, null, (int NEFEFHBHFFF, List<IBIGBMDANNM> MAGKKPOFJIM) =>
 					{
 						//0x175F8A0
-						TodoLogger.Log(0, "OnSuccess2");
+						TodoLogger.LogError(0, "OnSuccess2");
 					}, () =>
 					{
 						//0x175FB28
-						TodoLogger.Log(0, "OnFail2");
+						TodoLogger.LogError(0, "OnFail2");
 					}, () =>
 					{
 						//0x175FB54
-						TodoLogger.Log(0, "OnFail3");
+						TodoLogger.LogError(0, "OnFail3");
 					});
 					yield break;
 				}
@@ -129,7 +129,7 @@ public class CNNIKANJMNG
 		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 		{
 			//0x175E248
-			TodoLogger.Log(0, "OnFail");
+			TodoLogger.LogError(0, "OnFail");
 		};
 		req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 		{
@@ -154,7 +154,7 @@ public class CNNIKANJMNG
 	//// RVA: 0x175D630 Offset: 0x175D630 VA: 0x175D630
 	public void JPNACOLKHLB(int CJHEHIMLGGL, int NEFEFHBHFFF, LIOLBKLMMIK KLMFJJCNBIP, DJBHIFLHJLK IDAEHNGOKAE, DJBHIFLHJLK JGKOLBLPMPG)
 	{
-		TodoLogger.Log(0, "JPNACOLKHLB");
+		TodoLogger.LogError(0, "JPNACOLKHLB");
 	}
 
 	//[IteratorStateMachineAttribute] // RVA: 0x6BA55C Offset: 0x6BA55C VA: 0x6BA55C

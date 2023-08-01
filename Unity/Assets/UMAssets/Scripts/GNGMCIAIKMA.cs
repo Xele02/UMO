@@ -1361,7 +1361,7 @@ public class GNGMCIAIKMA
 						{
 							continue;
 						}
-						TodoLogger.Log(TodoLogger.ToCheck,"Last value ?");
+						TodoLogger.LogError(TodoLogger.ToCheck,"Last value ?");
 						if(FGHOILFCCKC(OMNOFMEBLAD, l[i], IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, 0))
 						{
 							int a = GOIAHBFBKPF(APFDNBGMMMM, OMNOFMEBLAD, l[i], IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, bingo.AHCFGOGCJKI_St.HDMADAHNLDN_Ms[l[i].NDFOAINJPIN - 1].HMFFHLPNMPH_Cnt);

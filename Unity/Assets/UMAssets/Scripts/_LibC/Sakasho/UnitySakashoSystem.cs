@@ -7,7 +7,7 @@ namespace ExternLib
 
         public static bool UnitySakashoSystemInitialize(string sdkType, string sdkVersionNumber, int serverMode, string gameId, string commonKey, int paymentType)
         {
-            TodoLogger.Log(TodoLogger.SakashoSystem, "LibSakasho.UnitySakashoSystemInitialize");
+            TodoLogger.LogError(TodoLogger.SakashoSystem, "LibSakasho.UnitySakashoSystemInitialize");
             return true;
         }
         public static void UnitySetCallbackReceiverName(string callbackReceiverName)

@@ -295,13 +295,13 @@ public class JGEOBNENMAH
 				CIOECGOMILE LGAALOEKCAC = CIOECGOMILE.HHCJCDFCLOB;
 				if(AGDEBBENNCK.MNNHHJBBICA_GameEventType != 0)
 				{
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					//L 499
 				}
 				bool b5 = false;
 				if(AGDEBBENNCK.MFJKNCACBDG_OpenEventType == 1)
 				{
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					//L1111
 				}
 				if(!AGDEBBENNCK.OBOPMHBPCFE_MvMode)
@@ -355,7 +355,7 @@ public class JGEOBNENMAH
 					//LAB_00b11758
 					for (int i = 0; i < JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Count; i++)
 					{
-						TodoLogger.Log(0, "Event");
+						TodoLogger.LogError(0, "Event");
 						// L1350
 					}
 					b = true;
@@ -439,7 +439,7 @@ public class JGEOBNENMAH
 		ECHONOJEPHP = CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC();
 		if(AGDEBBENNCK.MNNHHJBBICA_GameEventType == 11)
 		{
-			TodoLogger.Log(0, "KMOBPDBOCHJ_Co_GameStartSave event");
+			TodoLogger.LogError(0, "KMOBPDBOCHJ_Co_GameStartSave event");
 		}
 		bool BEKAMBBOLBO = false;
 		bool CNAIDEAFAAM = false;
@@ -497,37 +497,37 @@ public class JGEOBNENMAH
 		{
 			if(AGDEBBENNCK.MNNHHJBBICA_GameEventType == 6)
 			{
-				TodoLogger.Log(0, "KMOBPDBOCHJ_Co_GameStartSave event");
+				TodoLogger.LogError(0, "KMOBPDBOCHJ_Co_GameStartSave event");
 			}
 			else if(AGDEBBENNCK.MNNHHJBBICA_GameEventType == 2)
 			{
-				TodoLogger.Log(0, "KMOBPDBOCHJ_Co_GameStartSave event");
+				TodoLogger.LogError(0, "KMOBPDBOCHJ_Co_GameStartSave event");
 			}
 			else if(AGDEBBENNCK.MNNHHJBBICA_GameEventType == 3)
 			{
-				TodoLogger.Log(0, "KMOBPDBOCHJ_Co_GameStartSave event");
+				TodoLogger.LogError(0, "KMOBPDBOCHJ_Co_GameStartSave event");
 			}
 			else
 			{
 				if(AGDEBBENNCK.MNNHHJBBICA_GameEventType == 1)
 				{
-					TodoLogger.Log(0, "KMOBPDBOCHJ_Co_GameStartSave event");
+					TodoLogger.LogError(0, "KMOBPDBOCHJ_Co_GameStartSave event");
 				}
 				else
 				{
 					if(AGDEBBENNCK.MNNHHJBBICA_GameEventType == 4)
 					{
-						TodoLogger.Log(0, "KMOBPDBOCHJ_Co_GameStartSave event");
+						TodoLogger.LogError(0, "KMOBPDBOCHJ_Co_GameStartSave event");
 					}
 					else
 					{
 						if(AGDEBBENNCK.MNNHHJBBICA_GameEventType == 11)
 						{
-							TodoLogger.Log(0, "KMOBPDBOCHJ_Co_GameStartSave event");
+							TodoLogger.LogError(0, "KMOBPDBOCHJ_Co_GameStartSave event");
 						}
 						else if(AGDEBBENNCK.MNNHHJBBICA_GameEventType == 14)
 						{
-							TodoLogger.Log(0, "KMOBPDBOCHJ_Co_GameStartSave event");
+							TodoLogger.LogError(0, "KMOBPDBOCHJ_Co_GameStartSave event");
 						}
 						else
 						{
@@ -561,7 +561,7 @@ public class JGEOBNENMAH
 		{
 			if(OMNOFMEBLAD.KLCIIHKFPPO_StoryMusicId > 0)
 			{
-				TodoLogger.Log(0, "MJOFDDCIABC Story");
+				TodoLogger.LogError(0, "MJOFDDCIABC Story");
 			}
 		}
 		else if(!OMNOFMEBLAD.OBOPMHBPCFE_MvMode)
@@ -570,30 +570,30 @@ public class JGEOBNENMAH
 			{
 				if(OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 3)
 				{
-					TodoLogger.Log(0, "MJOFDDCIABC Event");
+					TodoLogger.LogError(0, "MJOFDDCIABC Event");
 				}
 				else
 				{
 					if (OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 4)
 					{
-						TodoLogger.Log(0, "MJOFDDCIABC Event");
+						TodoLogger.LogError(0, "MJOFDDCIABC Event");
 					}
 					else
 					{
 						if (OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 6)
 						{
-							TodoLogger.Log(0, "MJOFDDCIABC Event");
+							TodoLogger.LogError(0, "MJOFDDCIABC Event");
 						}
 						else
 						{
 							if (OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 11)
 							{
-								TodoLogger.Log(0, "MJOFDDCIABC Event");
+								TodoLogger.LogError(0, "MJOFDDCIABC Event");
 							}
 						}
 						if (OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 14)
 						{
-							TodoLogger.Log(0, "MJOFDDCIABC Event");
+							TodoLogger.LogError(0, "MJOFDDCIABC Event");
 						}
 						JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo d = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LCKMBHDMPIP_RecordMusic.FAMANJGJANN_FreeMusicInfo[OMNOFMEBLAD.GHBPLHBNMBK_FreeMusicId - 1];
 						List<int> l;
@@ -683,13 +683,13 @@ public class JGEOBNENMAH
 				{
 					if(OMNOFMEBLAD.MNNHHJBBICA_GameEventType != 0)
 					{
-						TodoLogger.Log(0, "Event");
+						TodoLogger.LogError(0, "Event");
 						// L 289
 					}
 				}
 				else
 				{
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					// L331
 				}
 				DCELMKFJHPG.Clear();
@@ -731,7 +731,7 @@ public class JGEOBNENMAH
 				int FNAFPJGPGAC = 0;
 				if(OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 11)
 				{
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					//L585
 				}
 				KFIEMBCDEFO.MDPFLKOIJFN(OMNOFMEBLAD, NHPGGBCKLHC_FriendPlayerData);
@@ -748,40 +748,40 @@ public class JGEOBNENMAH
 					PGIGNJDPCAH.NNOBACMJHDM(PGIGNJDPCAH.FELLIEJEPIJ.NADCOIBMMJM/*2*/);
 					if (OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 4)
 					{
-						TodoLogger.Log(0, "Event");
+						TodoLogger.LogError(0, "Event");
 						//L692
 					}
 					if (OMNOFMEBLAD.MFJKNCACBDG_OpenEventType != 1)
 					{
 						if (OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 2)
 						{
-							TodoLogger.Log(0, "Event");
+							TodoLogger.LogError(0, "Event");
 							//733
 						}
 						else if (OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 3)
 						{
-							TodoLogger.Log(0, "Event");
+							TodoLogger.LogError(0, "Event");
 							//780
 						}
 						else if (OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 6)
 						{
-							TodoLogger.Log(0, "Event");
+							TodoLogger.LogError(0, "Event");
 							//834
 						}
 						else if (OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 11)
 						{
-							TodoLogger.Log(0, "Event");
+							TodoLogger.LogError(0, "Event");
 							//883
 						}
 						else if (OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 14)
 						{
-							TodoLogger.Log(0, "Event");
+							TodoLogger.LogError(0, "Event");
 							//932
 						}
 					}
 					else
 					{
-						TodoLogger.Log(0, "Event");
+						TodoLogger.LogError(0, "Event");
 						//1023
 					}
 					//1065
@@ -802,7 +802,7 @@ public class JGEOBNENMAH
 					{
 						if (JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI) != null)
 						{
-							TodoLogger.Log(0, "Event");
+							TodoLogger.LogError(0, "Event");
 							//1169
 						}
 						int c = 0;
@@ -818,7 +818,7 @@ public class JGEOBNENMAH
 						{
 							for (int j = 0; j < JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Count; j++)
 							{
-								TodoLogger.Log(0, "Event");
+								TodoLogger.LogError(0, "Event");
 								/*if(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN[j].AGLILDLEFDK != null)
 								{
 									JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN[j].
@@ -884,7 +884,7 @@ public class JGEOBNENMAH
 					}
 					if(OMNOFMEBLAD.JPJMALBLKDI_Tutorial > 0)
 					{
-						TodoLogger.Log(0, "Tutorial");
+						TodoLogger.LogError(0, "Tutorial");
 						// L1601
 					}
 					if(CPABPPPPKEP)
@@ -1121,7 +1121,7 @@ public class JGEOBNENMAH
 		CIFHILOJJFC c = null;
 		if(OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 14)
 		{
-			TodoLogger.Log(0, "GLNPPDPDJGN Event");
+			TodoLogger.LogError(0, "GLNPPDPDJGN Event");
 		}
 		else
 		{
@@ -1296,15 +1296,15 @@ public class JGEOBNENMAH
 		{
 			if(OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 4)
 			{
-				TodoLogger.Log(0, "IBEIMGHLPPJ Event");
+				TodoLogger.LogError(0, "IBEIMGHLPPJ Event");
 			}
 			if(OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 1)
 			{
-				TodoLogger.Log(0, "IBEIMGHLPPJ Event");
+				TodoLogger.LogError(0, "IBEIMGHLPPJ Event");
 			}
 			else if (OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 2)
 			{
-				TodoLogger.Log(0, "IBEIMGHLPPJ Event");
+				TodoLogger.LogError(0, "IBEIMGHLPPJ Event");
 			}
 			else
 			{
@@ -1393,7 +1393,7 @@ public class JGEOBNENMAH
 				case 6:
 				case 11:
 				case 14:
-					TodoLogger.Log(0, "IBEIMGHLPPJ Event");
+					TodoLogger.LogError(0, "IBEIMGHLPPJ Event");
 					break;
 				default:
 					ILCCJNDFFOB.HHCJCDFCLOB.IMJLLLNHICJ(data, OMNOFMEBLAD, NKGFGDGFGFM);
@@ -1412,19 +1412,19 @@ public class JGEOBNENMAH
 		{
 			if(OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 4)
 			{
-				TodoLogger.Log(0, "Todo event");
+				TodoLogger.LogError(0, "Todo event");
 			}
 			else if(OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 1)
 			{
-				TodoLogger.Log(0, "Todo event");
+				TodoLogger.LogError(0, "Todo event");
 			}
 			else if(OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 14)
 			{
-				TodoLogger.Log(0, "Todo event");
+				TodoLogger.LogError(0, "Todo event");
 			}
 			else if (OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 2)
 			{
-				TodoLogger.Log(0, "Todo event");
+				TodoLogger.LogError(0, "Todo event");
 			}
 			else
 			{
@@ -1497,7 +1497,7 @@ public class JGEOBNENMAH
 				case 2:
 				case 3:
 				case 4:
-					TodoLogger.Log(0, "Todo event");
+					TodoLogger.LogError(0, "Todo event");
 					break;
 				default:
 					ILCCJNDFFOB.HHCJCDFCLOB.IMJLLLNHICJ(c, OMNOFMEBLAD, NKGFGDGFGFM);
@@ -1505,7 +1505,7 @@ public class JGEOBNENMAH
 				case 6:
 				case 11:
 				case 14:
-					TodoLogger.Log(0, "Todo event");
+					TodoLogger.LogError(0, "Todo event");
 					break;
 			}
 		}
@@ -1624,7 +1624,7 @@ public class JGEOBNENMAH
 			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB(LFDFPBEAAFA.JPDPFGFMKHK_Ranking[i].OBGBAOLONDD_Unq);
 			if(ev != null)
 			{
-				TodoLogger.Log(0, "CPHKNMHLFPC event");
+				TodoLogger.LogError(0, "CPHKNMHLFPC event");
 			}
 		}
 	}
@@ -1848,7 +1848,7 @@ public class JGEOBNENMAH
 	private IEnumerator ODBDMBAFOIN_Coroutine_Recover(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG)
 	{
 		//UnityEngine.Debug.Log("Enter ODBDMBAFOIN_Coroutine_Recover");
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.LogError(0, "TODO");
 		//UnityEngine.Debug.Log("Exit ODBDMBAFOIN_Coroutine_Recover");
 		yield break;
 	}

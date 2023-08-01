@@ -85,7 +85,7 @@ public class IPJBAPLFECP_Anketo : DIHHCBACKGG_DbSection
 	// RVA: 0x14107AC Offset: 0x14107AC VA: 0x14107AC Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "IPJBAPLFECP_Anketo.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "IPJBAPLFECP_Anketo.CAOGDCBPBAN");
 		return 0;
 	}
 }

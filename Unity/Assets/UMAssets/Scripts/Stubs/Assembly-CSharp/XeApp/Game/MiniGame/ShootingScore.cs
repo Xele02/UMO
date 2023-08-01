@@ -9,7 +9,7 @@ namespace XeApp.Game.MiniGame
 		private Text m_scoreText;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

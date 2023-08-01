@@ -498,7 +498,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1050CE0 Offset: 0x1050CE0 VA: 0x1050CE0
 		private void NetErrorToTitle()
 		{
-			TodoLogger.Log(0, "NetErrorToTitle");
+			TodoLogger.LogError(0, "NetErrorToTitle");
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6ED8FC Offset: 0x6ED8FC VA: 0x6ED8FC

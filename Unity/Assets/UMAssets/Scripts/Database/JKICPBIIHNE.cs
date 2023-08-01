@@ -522,7 +522,7 @@ public class JKICPBIIHNE_Bingo : DIHHCBACKGG_DbSection
 	// RVA: 0x13625F0 Offset: 0x13625F0 VA: 0x13625F0 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "JKICPBIIHNE_Bingo.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "JKICPBIIHNE_Bingo.CAOGDCBPBAN");
 		return 0;
 	}
 }

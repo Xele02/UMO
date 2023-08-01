@@ -111,7 +111,7 @@ public class JKNGJFOBADP
 	//// RVA: 0x146A074 Offset: 0x146A074 VA: 0x146A074
 	public void CPIICACGNBH(BBHNACPENDM_ServerSaveData AHEFHIMGIBI, int KIJAPOFAGPN, int HMFFHLPNMPH, OOOOCFAFGCP KACECFNECON, int ONMCOJPNBAO = 0)
 	{
-		TodoLogger.Log(0, "CPIICACGNBH");
+		TodoLogger.LogError(0, "CPIICACGNBH");
 	}
 
 	//// RVA: 0x146A140 Offset: 0x146A140 VA: 0x146A140
@@ -423,7 +423,7 @@ public class JKNGJFOBADP
 	//// RVA: 0x146B7F8 Offset: 0x146B7F8 VA: 0x146B7F8
 	private void DPFKEPHOBKL(BBHNACPENDM_ServerSaveData AHEFHIMGIBI, int MHFBCINOJEE, int HMFFHLPNMPH)
 	{
-		TodoLogger.Log(0, "DPFKEPHOBKL");
+		TodoLogger.LogError(0, "DPFKEPHOBKL");
 	}
 
 	//// RVA: 0x14702F4 Offset: 0x14702F4 VA: 0x14702F4
@@ -432,7 +432,7 @@ public class JKNGJFOBADP
 	//// RVA: 0x146BBBC Offset: 0x146BBBC VA: 0x146BBBC
 	private void GAFDHKHLNBA(BBHNACPENDM_ServerSaveData AHEFHIMGIBI, int MHFBCINOJEE, int HMFFHLPNMPH)
 	{
-		TodoLogger.Log(0, "GAFDHKHLNBA");
+		TodoLogger.LogError(0, "GAFDHKHLNBA");
 	}
 
 	//// RVA: 0x14702FC Offset: 0x14702FC VA: 0x14702FC
@@ -441,7 +441,7 @@ public class JKNGJFOBADP
 	//// RVA: 0x146C220 Offset: 0x146C220 VA: 0x146C220
 	private void GFNNJKJGEGA(BBHNACPENDM_ServerSaveData AHEFHIMGIBI, int MHFBCINOJEE, int HMFFHLPNMPH)
 	{
-		TodoLogger.Log(0, "GFNNJKJGEGA");
+		TodoLogger.LogError(0, "GFNNJKJGEGA");
 	}
 
 	//// RVA: 0x1470404 Offset: 0x1470404 VA: 0x1470404
@@ -450,13 +450,13 @@ public class JKNGJFOBADP
 	//// RVA: 0x146C554 Offset: 0x146C554 VA: 0x146C554
 	private void KNBGNFDFEON(BBHNACPENDM_ServerSaveData AHEFHIMGIBI, int MHFBCINOJEE, int HMFFHLPNMPH)
 	{
-		TodoLogger.Log(0, "KNBGNFDFEON");
+		TodoLogger.LogError(0, "KNBGNFDFEON");
 	}
 
 	//// RVA: 0x146C830 Offset: 0x146C830 VA: 0x146C830
 	private void CHKDGBJDBEF(BBHNACPENDM_ServerSaveData AHEFHIMGIBI, int MHFBCINOJEE, int HMFFHLPNMPH)
 	{
-		TodoLogger.Log(0, "CHKDGBJDBEF");
+		TodoLogger.LogError(0, "CHKDGBJDBEF");
 	}
 
 	//// RVA: 0x14705D8 Offset: 0x14705D8 VA: 0x14705D8
@@ -468,7 +468,7 @@ public class JKNGJFOBADP
 	//// RVA: 0x146CC48 Offset: 0x146CC48 VA: 0x146CC48
 	private void HPBIMHODDAP(BBHNACPENDM_ServerSaveData AHEFHIMGIBI, int MHFBCINOJEE, int HMFFHLPNMPH)
 	{
-		TodoLogger.Log(0, "HPBIMHODDAP");
+		TodoLogger.LogError(0, "HPBIMHODDAP");
 	}
 
 	//// RVA: 0x147077C Offset: 0x147077C VA: 0x147077C
@@ -493,13 +493,13 @@ public class JKNGJFOBADP
 	//// RVA: 0x146D200 Offset: 0x146D200 VA: 0x146D200
 	private void OAOJFIOACEL(BBHNACPENDM_ServerSaveData AHEFHIMGIBI, int MHFBCINOJEE, int HMFFHLPNMPH)
 	{
-		TodoLogger.Log(0, "OAOJFIOACEL");
+		TodoLogger.LogError(0, "OAOJFIOACEL");
 	}
 
 	//// RVA: 0x146D3CC Offset: 0x146D3CC VA: 0x146D3CC
 	private void PGMIPBPEDDD(BBHNACPENDM_ServerSaveData AHEFHIMGIBI, int MHFBCINOJEE, int HMFFHLPNMPH)
 	{
-		TodoLogger.Log(0, "PGMIPBPEDDD");
+		TodoLogger.LogError(0, "PGMIPBPEDDD");
 	}
 
 	//// RVA: 0x147099C Offset: 0x147099C VA: 0x147099C
@@ -508,7 +508,7 @@ public class JKNGJFOBADP
 	//// RVA: 0x146DADC Offset: 0x146DADC VA: 0x146DADC
 	private void JNABIIIMOPE(BBHNACPENDM_ServerSaveData AHEFHIMGIBI, int MHFBCINOJEE, int HMFFHLPNMPH)
 	{
-		TodoLogger.Log(0, "JNABIIIMOPE");
+		TodoLogger.LogError(0, "JNABIIIMOPE");
 	}
 
 	//// RVA: 0x1470BD8 Offset: 0x1470BD8 VA: 0x1470BD8
@@ -517,7 +517,7 @@ public class JKNGJFOBADP
 	//// RVA: 0x146D918 Offset: 0x146D918 VA: 0x146D918
 	private void NFDOJPCKFAK(BBHNACPENDM_ServerSaveData AHEFHIMGIBI, int MHFBCINOJEE, int HMFFHLPNMPH)
 	{
-		TodoLogger.Log(0, "NFDOJPCKFAK");
+		TodoLogger.LogError(0, "NFDOJPCKFAK");
 	}
 
 	//// RVA: 0x1470B70 Offset: 0x1470B70 VA: 0x1470B70
@@ -526,7 +526,7 @@ public class JKNGJFOBADP
 	//// RVA: 0x146E0F4 Offset: 0x146E0F4 VA: 0x146E0F4
 	private void IFDDILLJLFO(BBHNACPENDM_ServerSaveData AHEFHIMGIBI, int MHFBCINOJEE, int HMFFHLPNMPH)
 	{
-		TodoLogger.Log(0, "IFDDILLJLFO");
+		TodoLogger.LogError(0, "IFDDILLJLFO");
 	}
 
 	//// RVA: 0x1470D90 Offset: 0x1470D90 VA: 0x1470D90
@@ -535,7 +535,7 @@ public class JKNGJFOBADP
 	//// RVA: 0x146E3C0 Offset: 0x146E3C0 VA: 0x146E3C0
 	private void LCIPJMMEMPI(BBHNACPENDM_ServerSaveData AHEFHIMGIBI, int MHFBCINOJEE, int HMFFHLPNMPH)
 	{
-		TodoLogger.Log(0, "LCIPJMMEMPI");
+		TodoLogger.LogError(0, "LCIPJMMEMPI");
 	}
 
 	//// RVA: 0x1470FA0 Offset: 0x1470FA0 VA: 0x1470FA0
@@ -544,7 +544,7 @@ public class JKNGJFOBADP
 	//// RVA: 0x146E648 Offset: 0x146E648 VA: 0x146E648
 	private void IAFODMHCKNH(BBHNACPENDM_ServerSaveData AHEFHIMGIBI, int MHFBCINOJEE, int HMFFHLPNMPH)
 	{
-		TodoLogger.Log(0, "IAFODMHCKNH");
+		TodoLogger.LogError(0, "IAFODMHCKNH");
 	}
 
 	//// RVA: 0x14710A4 Offset: 0x14710A4 VA: 0x14710A4
@@ -553,7 +553,7 @@ public class JKNGJFOBADP
 	//// RVA: 0x146E8FC Offset: 0x146E8FC VA: 0x146E8FC
 	private void NKJHEGBDMHJ(BBHNACPENDM_ServerSaveData AHEFHIMGIBI, int MHFBCINOJEE, int HMFFHLPNMPH)
 	{
-		TodoLogger.Log(0, "NKJHEGBDMHJ");
+		TodoLogger.LogError(0, "NKJHEGBDMHJ");
 	}
 
 	//// RVA: 0x1471294 Offset: 0x1471294 VA: 0x1471294
@@ -562,7 +562,7 @@ public class JKNGJFOBADP
 	//// RVA: 0x146EAAC Offset: 0x146EAAC VA: 0x146EAAC
 	private void EALJGONPDJD(BBHNACPENDM_ServerSaveData AHEFHIMGIBI, int MHFBCINOJEE, int HMFFHLPNMPH)
 	{
-		TodoLogger.Log(0, "EALJGONPDJD");
+		TodoLogger.LogError(0, "EALJGONPDJD");
 	}
 
 	//// RVA: 0x14713EC Offset: 0x14713EC VA: 0x14713EC
@@ -571,7 +571,7 @@ public class JKNGJFOBADP
 	//// RVA: 0x146EC38 Offset: 0x146EC38 VA: 0x146EC38
 	private void NGIHAOOFEPG(BBHNACPENDM_ServerSaveData AHEFHIMGIBI, int MHFBCINOJEE, int HMFFHLPNMPH)
 	{
-		TodoLogger.Log(0, "NGIHAOOFEPG");
+		TodoLogger.LogError(0, "NGIHAOOFEPG");
 	}
 
 	//// RVA: 0x1471538 Offset: 0x1471538 VA: 0x1471538
@@ -606,7 +606,7 @@ public class JKNGJFOBADP
 	//// RVA: 0x146EE80 Offset: 0x146EE80 VA: 0x146EE80
 	private void NOGNCLIGIMG(BBHNACPENDM_ServerSaveData AHEFHIMGIBI, int MHFBCINOJEE, int HMFFHLPNMPH)
 	{
-		TodoLogger.Log(0, "NOGNCLIGIMG");
+		TodoLogger.LogError(0, "NOGNCLIGIMG");
 	}
 
 	//// RVA: 0x1471764 Offset: 0x1471764 VA: 0x1471764
@@ -615,13 +615,13 @@ public class JKNGJFOBADP
 	//// RVA: 0x146F254 Offset: 0x146F254 VA: 0x146F254
 	private void IJGFIAGIINJ(BBHNACPENDM_ServerSaveData AHEFHIMGIBI, int MHFBCINOJEE, int HMFFHLPNMPH)
 	{
-		TodoLogger.Log(0, "IJGFIAGIINJ");
+		TodoLogger.LogError(0, "IJGFIAGIINJ");
 	}
 
 	//// RVA: 0x146F73C Offset: 0x146F73C VA: 0x146F73C
 	private void ACODICAMEGB(BBHNACPENDM_ServerSaveData AHEFHIMGIBI, int MHFBCINOJEE, int HMFFHLPNMPH)
 	{
-		TodoLogger.Log(0, "ACODICAMEGB");
+		TodoLogger.LogError(0, "ACODICAMEGB");
 	}
 
 	//// RVA: 0x1471974 Offset: 0x1471974 VA: 0x1471974
@@ -636,19 +636,19 @@ public class JKNGJFOBADP
 	//// RVA: 0x146EF3C Offset: 0x146EF3C VA: 0x146EF3C
 	private void FLFGJFDBEAB(BBHNACPENDM_ServerSaveData AHEFHIMGIBI, EKLNMHFCAOI.FKGCBLHOOCL_Category HHACNFODNEF, int MHFBCINOJEE, int HMFFHLPNMPH)
 	{
-		TodoLogger.Log(0, "FLFGJFDBEAB");
+		TodoLogger.LogError(0, "FLFGJFDBEAB");
 	}
 
 	//// RVA: 0x146F450 Offset: 0x146F450 VA: 0x146F450
 	private void PCJFOILKCOP(BBHNACPENDM_ServerSaveData AHEFHIMGIBI, int MHFBCINOJEE, int HMFFHLPNMPH)
 	{
-		TodoLogger.Log(0, "PCJFOILKCOP");
+		TodoLogger.LogError(0, "PCJFOILKCOP");
 	}
 
 	//// RVA: 0x146FDB8 Offset: 0x146FDB8 VA: 0x146FDB8
 	private void DBHOKBOGDNB(BBHNACPENDM_ServerSaveData AHEFHIMGIBI, int MHFBCINOJEE, int HMFFHLPNMPH)
 	{
-		TodoLogger.Log(0, "DBHOKBOGDNB");
+		TodoLogger.LogError(0, "DBHOKBOGDNB");
 	}
 
 	//// RVA: 0x1471CD8 Offset: 0x1471CD8 VA: 0x1471CD8

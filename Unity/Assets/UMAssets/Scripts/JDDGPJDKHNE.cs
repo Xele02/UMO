@@ -113,7 +113,7 @@ public class JDDGPJDKHNE
 			LGCNNIKLFFN(KAPMOPMDHJE,JIBNPJCIALH);
 			return;
 		}
-		TodoLogger.Log(TodoLogger.UMOSkip, "Skip log event");
+		TodoLogger.LogError(TodoLogger.UMOSkip, "Skip log event");
 		return;
 		GBAMMLEAIOF a = new GBAMMLEAIOF();
 		a.KHEKNNFCAOI_Init(KAPMOPMDHJE,JIBNPJCIALH, LAFGAPBDKML);
@@ -160,7 +160,7 @@ public class JDDGPJDKHNE
 	// // RVA: 0x1C32174 Offset: 0x1C32174 VA: 0x1C32174
 	public void FOKEGEOKGDG()
 	{
-		TodoLogger.Log(0, "FOKEGEOKGDG");
+		TodoLogger.LogError(0, "FOKEGEOKGDG");
 	}
 
 	// // RVA: 0x1C3142C Offset: 0x1C3142C VA: 0x1C3142C
@@ -238,7 +238,7 @@ public class JDDGPJDKHNE
 	// // RVA: 0x1C3232C Offset: 0x1C3232C VA: 0x1C3232C
 	private void MGGMIOBICLP_OnLogFail(SakashoError DOGDHKIEBJA)
 	{
-		TodoLogger.Log(TodoLogger.Errors, "JDDGPJDKHNE.MGGMIOBICLP_OnLogFail");
+		TodoLogger.LogError(TodoLogger.Errors, "JDDGPJDKHNE.MGGMIOBICLP_OnLogFail");
 	}
 
 	// // RVA: 0x1C30E40 Offset: 0x1C30E40 VA: 0x1C30E40
@@ -289,13 +289,13 @@ public class JDDGPJDKHNE
 	// // RVA: 0x1C32458 Offset: 0x1C32458 VA: 0x1C32458
 	private void JGECIJGPMCB(string IDLHJIOMJBK)
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.LogError(0, "TODO");
 	}
 
 	// // RVA: 0x1C32568 Offset: 0x1C32568 VA: 0x1C32568
 	private void HNDCPCFHKDB(SakashoError DOGDHKIEBJA)
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.LogError(0, "TODO");
 	}
 
 	// // RVA: 0x1C326D4 Offset: 0x1C326D4 VA: 0x1C326D4

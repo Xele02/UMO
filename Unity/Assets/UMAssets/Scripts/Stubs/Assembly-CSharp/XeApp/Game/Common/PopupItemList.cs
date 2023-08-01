@@ -7,7 +7,7 @@ namespace XeApp.Game.Common
 	{
 		public Transform Parent => null; //throw new System.NotImplementedException();
 
-		public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
+		public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 
 		public void CallOpenEnd()
 		{

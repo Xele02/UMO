@@ -10,7 +10,7 @@ namespace XeApp.Game.Common
 		// RVA: 0xE58110 Offset: 0xE58110 VA: 0xE58110
 		public void Setup(int advId)
 		{
-			TodoLogger.Log(0, "Setup");
+			TodoLogger.LogError(0, "Setup");
 		}
 
 		// RVA: 0xE57FF4 Offset: 0xE57FF4 VA: 0xE57FF4

@@ -689,7 +689,7 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xC04548 Offset: 0xC04548 VA: 0xC04548
 		private void GameStartErrorToTitleAction()
 		{
-			TodoLogger.Log(0, "GameStartErrorToTitleAction");
+			TodoLogger.LogError(0, "GameStartErrorToTitleAction");
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x745D94 Offset: 0x745D94 VA: 0x745D94
@@ -844,7 +844,7 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xC04158 Offset: 0xC04158 VA: 0xC04158
 		private void GotoTitleSceneInError()
 		{
-			TodoLogger.Log(0, "GotoTitleSceneInError");
+			TodoLogger.LogError(0, "GotoTitleSceneInError");
 		}
 
 		//// RVA: 0xC06190 Offset: 0xC06190 VA: 0xC06190

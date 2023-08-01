@@ -207,7 +207,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xADC350 Offset: 0xADC350 VA: 0xADC350
 		private void updateCameraOperation()
 		{
-			TodoLogger.Log(0, "updateCameraOperation");
+			TodoLogger.LogError(0, "updateCameraOperation");
 		}
 
 		// // RVA: 0xADD3A0 Offset: 0xADD3A0 VA: 0xADD3A0

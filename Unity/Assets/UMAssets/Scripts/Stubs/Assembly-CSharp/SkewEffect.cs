@@ -5,7 +5,7 @@ public class SkewEffect : BaseMeshEffect
 {
 	private void Awake()
 	{
-		TodoLogger.Log(0, "Implement monobehaviour");
+		TodoLogger.LogError(0, "Implement monobehaviour");
 	}
 	public enum SkewMode
 	{

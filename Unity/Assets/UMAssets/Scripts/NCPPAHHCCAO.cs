@@ -26,7 +26,7 @@ public class NCPPAHHCCAO
 	// RVA: 0x1ADA200 Offset: 0x1ADA200 VA: 0x1ADA200
 	public NCPPAHHCCAO()
 	{
-		TodoLogger.Log(0, "NCPPAHHCCAO");
+		TodoLogger.LogError(0, "NCPPAHHCCAO");
 	}
 
 	//// RVA: 0x1ADA220 Offset: 0x1ADA220 VA: 0x1ADA220

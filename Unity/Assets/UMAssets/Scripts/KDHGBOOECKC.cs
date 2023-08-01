@@ -481,7 +481,7 @@ public class KDHGBOOECKC
 			List<OCMJNBIFJNM_Offer.JPOHOLBBFGP> saveOffers = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DAEJHMCMFJD_Offer.FOFLMHELILC;
 			for(int i = 0; i < JGPJCOCHJFJ.Count; i++)
 			{
-				TodoLogger.Log(0, "JPNPPIHOJFC");
+				TodoLogger.LogError(0, "JPNPPIHOJFC");
 			}
 			BIFNGFAIEIL.HHCJCDFCLOB.DNKCCHCEPBH(false);
 		}
@@ -570,7 +570,7 @@ public class KDHGBOOECKC
 			l = BJIPLMJFAGH();
 		if (ECBHIIOABCK() - LJMOMAGLEGL(BOPFPIHGJMD.MLBMHDCCGHI.GENEIBGNMPH, BOPFPIHGJMD.IGHPDAGKIKO.CADDNFIKDLG, true) > 0)
 			return BOPFPIHGJMD.LEIPFJHOFPC.HJNNKCMLGFL/*0*/;
-		TodoLogger.Log(0, "PANBPMDADAH");
+		TodoLogger.LogError(0, "PANBPMDADAH");
 		return new BOPFPIHGJMD.LEIPFJHOFPC();
 	}
 
@@ -702,7 +702,7 @@ public class KDHGBOOECKC
 			return false;
 		if (!PEMMDEMCHAH())
 			return false;
-		TodoLogger.Log(0, "PPPLNJCFAID");
+		TodoLogger.LogError(0, "PPPLNJCFAID");
 		/*long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 		if(OONMAICCONN())
 		{
@@ -728,7 +728,7 @@ public class KDHGBOOECKC
 	// // RVA: 0x1035DD0 Offset: 0x1035DD0 VA: 0x1035DD0
 	private bool CCPNBHCKNDC(long JHNMKKNEENE, bool CGKINNALDGE)
 	{
-		TodoLogger.Log(0, "CCPNBHCKNDC");
+		TodoLogger.LogError(0, "CCPNBHCKNDC");
 		return false;
 	}
 
@@ -954,13 +954,13 @@ public class KDHGBOOECKC
 							{
 								//0xE6F5F8
 								JGMEFHJCNHP_GetAchievementRecords t = NHECPMNKEFK as JGMEFHJCNHP_GetAchievementRecords;
-								TodoLogger.Log(0, "BHFHGFKBOHH_OnSuccess");
+								TodoLogger.LogError(0, "BHFHGFKBOHH_OnSuccess");
 							};
 							req.BHFHGFKBOHH_OnSuccess = KDFFGLHBDLO;
 							CACGCMBKHDI_Request.HDHIKGLMOGF BAHANNNJCGC = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 							{
 								//0xE6F9F8
-								TodoLogger.Log(0, "MOBEEPPKFLG_OnFail");
+								TodoLogger.LogError(0, "MOBEEPPKFLG_OnFail");
 							};
 							req.MOBEEPPKFLG_OnFail = BAHANNNJCGC;
 							//LAB_00e71020
@@ -978,13 +978,13 @@ public class KDHGBOOECKC
 									CACGCMBKHDI_Request.HDHIKGLMOGF CMJMGEFNBDK = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 									{
 										//0xE6FA04
-										TodoLogger.Log(0, "BHFHGFKBOHH_OnSuccess");
+										TodoLogger.LogError(0, "BHFHGFKBOHH_OnSuccess");
 									};
 									req2.BHFHGFKBOHH_OnSuccess = CMJMGEFNBDK;
 									CACGCMBKHDI_Request.HDHIKGLMOGF DMLJLPMBLCH = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 									{
 										//0xE6FA10
-										TodoLogger.Log(0, "MOBEEPPKFLG_OnFail");
+										TodoLogger.LogError(0, "MOBEEPPKFLG_OnFail");
 									};
 									req2.MOBEEPPKFLG_OnFail = DMLJLPMBLCH;
 									while (PLOOEECNHFB == false)

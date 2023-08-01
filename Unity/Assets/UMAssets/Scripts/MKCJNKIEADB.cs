@@ -16,13 +16,13 @@ public class MKCJNKIEADB
 	// RVA: 0x19596F0 Offset: 0x19596F0 VA: 0x19596F0 Slot: 4
 	public virtual void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
 	{
-		TodoLogger.Log(0, "MKCJNKIEADB.KHEKNNFCAOI");
+		TodoLogger.LogError(0, "MKCJNKIEADB.KHEKNNFCAOI");
 	}
 
 	//// RVA: 0x19599DC Offset: 0x19599DC VA: 0x19599DC
 	public bool ILOKENBBBAE(long BEBJKJKBOGH)
 	{
-		TodoLogger.Log(0, "MKCJNKIEADB.ILOKENBBBAE");
+		TodoLogger.LogError(0, "MKCJNKIEADB.ILOKENBBBAE");
 		return false;
 	}
 }

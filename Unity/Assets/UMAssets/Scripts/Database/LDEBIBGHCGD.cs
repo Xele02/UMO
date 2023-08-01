@@ -85,13 +85,13 @@ public class LDEBIBGHCGD_EventRaidLobby : DIHHCBACKGG_DbSection
 	// RVA: 0xD659C8 Offset: 0xD659C8 VA: 0xD659C8 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.Log(TodoLogger.Database, "LDEBIBGHCGD_EventRaidLobby.KMBPACJNEOF");
+		TodoLogger.LogError(TodoLogger.Database, "LDEBIBGHCGD_EventRaidLobby.KMBPACJNEOF");
 	}
 
 	// RVA: 0xD65B3C Offset: 0xD65B3C VA: 0xD65B3C Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
 	{
-		TodoLogger.Log(TodoLogger.Database, "LDEBIBGHCGD_EventRaidLobby.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.Database, "LDEBIBGHCGD_EventRaidLobby.IIEMACPEEBJ");
 		return true;
 	}
 
@@ -110,7 +110,7 @@ public class LDEBIBGHCGD_EventRaidLobby : DIHHCBACKGG_DbSection
 	// RVA: 0xD667D0 Offset: 0xD667D0 VA: 0xD667D0 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "LDEBIBGHCGD_EventRaidLobby.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "LDEBIBGHCGD_EventRaidLobby.CAOGDCBPBAN");
 		return 0;
 	}
 }

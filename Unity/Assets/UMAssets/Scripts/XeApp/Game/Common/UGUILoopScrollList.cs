@@ -162,25 +162,25 @@ namespace XeApp.Game.Common
 		// RVA: 0x1CD55AC Offset: 0x1CD55AC VA: 0x1CD55AC Slot: 42
 		public override void OnScroll(PointerEventData eventData)
 		{
-			TodoLogger.Log(0, "OnScroll");
+			TodoLogger.LogError(0, "OnScroll");
 		}
 
 		// RVA: 0x1CD55B4 Offset: 0x1CD55B4 VA: 0x1CD55B4 Slot: 44
 		public override void OnBeginDrag(PointerEventData eventData)
 		{
-			TodoLogger.Log(0, "OnBeginDrag");
+			TodoLogger.LogError(0, "OnBeginDrag");
 		}
 
 		// RVA: 0x1CD567C Offset: 0x1CD567C VA: 0x1CD567C Slot: 46
 		public override void OnDrag(PointerEventData eventData)
 		{
-			TodoLogger.Log(0, "OnDrag");
+			TodoLogger.LogError(0, "OnDrag");
 		}
 
 		// RVA: 0x1CD5768 Offset: 0x1CD5768 VA: 0x1CD5768 Slot: 45
 		public override void OnEndDrag(PointerEventData eventData)
 		{
-			TodoLogger.Log(0, "OnEndDrag");
+			TodoLogger.LogError(0, "OnEndDrag");
 		}
 
 		//// RVA: 0x1CD5844 Offset: 0x1CD5844 VA: 0x1CD5844
@@ -213,7 +213,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1CD5A10 Offset: 0x1CD5A10 VA: 0x1CD5A10
 		public void Apply()
 		{
-			TodoLogger.Log(TodoLogger.UI, "Apply");
+			TodoLogger.LogError(TodoLogger.UI, "Apply");
 		}
 
 		//// RVA: 0x1CD5DB0 Offset: 0x1CD5DB0 VA: 0x1CD5DB0
@@ -222,20 +222,20 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1CD63A4 Offset: 0x1CD63A4 VA: 0x1CD63A4
 		public void SetItemCount(int count, bool isLoop = false)
 		{
-			TodoLogger.Log(TodoLogger.UI, "SetItemCount");
+			TodoLogger.LogError(TodoLogger.UI, "SetItemCount");
 		}
 
 		//// RVA: 0x1CD493C Offset: 0x1CD493C VA: 0x1CD493C
 		private Vector2 GetContentSize(int count)
 		{
-			TodoLogger.Log(0, "GetContentSize");
+			TodoLogger.LogError(0, "GetContentSize");
 			return Vector2.zero;
 		}
 
 		//// RVA: 0x1CD66C0 Offset: 0x1CD66C0 VA: 0x1CD66C0
 		public void SetPosition(int index, float animTime = 0)
 		{
-			TodoLogger.Log(TodoLogger.UI, "SetPosition");
+			TodoLogger.LogError(TodoLogger.UI, "SetPosition");
 		}
 
 		//// RVA: 0x1CD6964 Offset: 0x1CD6964 VA: 0x1CD6964
@@ -277,13 +277,13 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1CD4AB8 Offset: 0x1CD4AB8 VA: 0x1CD4AB8
 		private void UpdateScrollCb(Vector2 position)
 		{
-			TodoLogger.Log(TodoLogger.UI, "UpdateScrollCb");
+			TodoLogger.LogError(TodoLogger.UI, "UpdateScrollCb");
 		}
 
 		//// RVA: 0x1CD47C4 Offset: 0x1CD47C4 VA: 0x1CD47C4
 		public void VisibleRegionUpdate()
 		{
-			TodoLogger.Log(TodoLogger.UI, "VisibleRegionUpdate");
+			TodoLogger.LogError(TodoLogger.UI, "VisibleRegionUpdate");
 		}
 
 		//// RVA: 0x1CD6AC4 Offset: 0x1CD6AC4 VA: 0x1CD6AC4

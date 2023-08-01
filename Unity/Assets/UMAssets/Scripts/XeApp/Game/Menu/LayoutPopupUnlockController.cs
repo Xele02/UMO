@@ -91,7 +91,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x178A6CC Offset: 0x178A6CC VA: 0x178A6CC
 		private IEnumerator MusicUnlockPhase()
 		{
-			TodoLogger.Log(0, "MusicUnlockPhase");
+			TodoLogger.LogError(0, "MusicUnlockPhase");
 			yield break;
 		}
 
@@ -99,7 +99,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x178A778 Offset: 0x178A778 VA: 0x178A778
 		private IEnumerator StageUnlockPhase()
 		{
-			TodoLogger.Log(0, "StageUnlockPhase");
+			TodoLogger.LogError(0, "StageUnlockPhase");
 			yield break;
 		}
 
@@ -107,7 +107,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x178A80C Offset: 0x178A80C VA: 0x178A80C
 		private IEnumerator DivaNotifyPhase()
 		{
-			TodoLogger.Log(0, "DivaNotifyPhase");
+			TodoLogger.LogError(0, "DivaNotifyPhase");
 			yield break;
 		}
 
@@ -115,7 +115,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x178A8A0 Offset: 0x178A8A0 VA: 0x178A8A0
 		private IEnumerator DivaUnlockPhase()
 		{
-			TodoLogger.Log(0, "DivaUnlockPhase");
+			TodoLogger.LogError(0, "DivaUnlockPhase");
 			yield break;
 		}
 

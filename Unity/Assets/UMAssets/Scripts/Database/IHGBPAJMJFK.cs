@@ -61,7 +61,7 @@ public class IHGBPAJMJFK_Emblem : DIHHCBACKGG_DbSection
 	// RVA: 0x11FABC0 Offset: 0x11FABC0 VA: 0x11FABC0 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(100, "Emblem IIEMACPEEBJ");
+		TodoLogger.LogError(100, "Emblem IIEMACPEEBJ");
 		return false;
 	}
 
@@ -88,7 +88,7 @@ public class IHGBPAJMJFK_Emblem : DIHHCBACKGG_DbSection
 	// RVA: 0x11FB248 Offset: 0x11FB248 VA: 0x11FB248 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "IHGBPAJMJFK_Emblem.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "IHGBPAJMJFK_Emblem.CAOGDCBPBAN");
 		return 0;
 	}
 

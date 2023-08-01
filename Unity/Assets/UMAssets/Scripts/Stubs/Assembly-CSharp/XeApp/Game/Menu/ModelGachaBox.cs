@@ -39,7 +39,7 @@ namespace XeApp.Game.Menu
 		private BoxTexture[] m_textures;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

@@ -53,7 +53,7 @@ public class MPOEMCEBBJH_Pilot : DIHHCBACKGG_DbSection
 	// RVA: 0x17BCC98 Offset: 0x17BCC98 VA: 0x17BCC98 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(100, "Pilot IIEMACPEEBJ");
+		TodoLogger.LogError(100, "Pilot IIEMACPEEBJ");
 		return true;
 	}
 
@@ -78,7 +78,7 @@ public class MPOEMCEBBJH_Pilot : DIHHCBACKGG_DbSection
 	//// RVA: 0x17BCF34 Offset: 0x17BCF34 VA: 0x17BCF34 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "MPOEMCEBBJH_Pilot.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "MPOEMCEBBJH_Pilot.CAOGDCBPBAN");
 		return 0;
 	}
 }

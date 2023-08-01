@@ -8,7 +8,7 @@ namespace XeSys.Gfx
 		private XeMeshSpriteObject meshSpritePrefab;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

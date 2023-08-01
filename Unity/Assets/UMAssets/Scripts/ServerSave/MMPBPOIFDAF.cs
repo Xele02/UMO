@@ -172,7 +172,7 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 		// // RVA: 0x1971E34 Offset: 0x1971E34 VA: 0x1971E34
 		public bool OFNNNEMCJNN()
 		{
-			TodoLogger.Log(TodoLogger.DbIntegrityCheck, "OFNNNEMCJNN");
+			TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "OFNNNEMCJNN");
 			return false;
 		}
 
@@ -689,13 +689,13 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x196E4CC Offset: 0x196E4CC VA: 0x196E4CC Slot: 10
 	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "AGHKODFKOJI");
+		TodoLogger.LogError(0, "AGHKODFKOJI");
 	}
 
 	// // RVA: 0x19715B4 Offset: 0x19715B4 VA: 0x19715B4 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "TODO");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "TODO");
 		return null;
 	}
 }

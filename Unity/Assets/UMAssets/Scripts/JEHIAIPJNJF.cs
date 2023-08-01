@@ -472,7 +472,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 	// // RVA: 0x1C37140 Offset: 0x1C37140 VA: 0x1C37140
 	private void DLHJNILCAGE(JEHIAIPJNJF_FileDownloader.AFGDFAJEBFA_DldInfo PHKJOMLDNOB)
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.LogError(0, "TODO");
 	}
 
 	// // RVA: 0x1C35730 Offset: 0x1C35730 VA: 0x1C35730

@@ -211,7 +211,7 @@ public class IHFIAFDLAAK_DecoStamp : DIHHCBACKGG_DbSection
 	// RVA: 0x11F9F00 Offset: 0x11F9F00 VA: 0x11F9F00 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "IHFIAFDLAAK_DecoStamp.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "IHFIAFDLAAK_DecoStamp.CAOGDCBPBAN");
 		return 0;
 	}
 

@@ -78,7 +78,7 @@ namespace XeApp.Native
         // // RVA: 0x2F94648 Offset: 0x2F94648 VA: 0x2F94648
         private static /*extern*/ int xedec_get_abi_type()
         {
-            TodoLogger.Log(TodoLogger.AppInfo, "AppInfo.xedec_get_abi_type");
+            TodoLogger.LogError(TodoLogger.AppInfo, "AppInfo.xedec_get_abi_type");
             return 0;
         }
     }

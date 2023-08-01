@@ -136,14 +136,14 @@ public class BIHCALIAJII_GachaLimit : DIHHCBACKGG_DbSection
 	// RVA: 0xC84414 Offset: 0xC84414 VA: 0xC84414 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(TodoLogger.Database, "BIHCALIAJII_GachaLimit.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.Database, "BIHCALIAJII_GachaLimit.IIEMACPEEBJ");
 		return true;
 	}
 
 	// RVA: 0xC84D78 Offset: 0xC84D78 VA: 0xC84D78 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "BIHCALIAJII_GachaLimit.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "BIHCALIAJII_GachaLimit.CAOGDCBPBAN");
 		return 0;
 	}
 }

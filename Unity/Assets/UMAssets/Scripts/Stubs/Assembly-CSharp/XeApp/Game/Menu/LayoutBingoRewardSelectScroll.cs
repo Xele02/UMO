@@ -6,7 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutBingoRewardSelectScroll : LayoutUGUIScriptBase, IBeginDragHandler, IEventSystemHandler, IEndDragHandler, IDragHandler
 	{
-    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 
 		public void OnBeginDrag(PointerEventData eventData)
 		{

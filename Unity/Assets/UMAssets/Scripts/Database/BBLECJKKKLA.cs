@@ -98,7 +98,7 @@ public class BBLECJKKKLA_DecoSetItem : DIHHCBACKGG_DbSection
 	// // RVA: 0xF2BF14 Offset: 0xF2BF14 VA: 0xF2BF14 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "BBLECJKKKLA_DecoSetItem.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "BBLECJKKKLA_DecoSetItem.CAOGDCBPBAN");
 		return 0;
 	}
 }

@@ -30,7 +30,7 @@ namespace CriWare
 			initializationCount++;
 			if (initializationCount == 1)
 			{
-				TodoLogger.Log(TodoLogger.CriWareErrorHandler, "CriWareErrorHandler.Awake");
+				TodoLogger.LogError(TodoLogger.CriWareErrorHandler, "CriWareErrorHandler.Awake");
 				if (!dontDestroyOnLoad)
 					return;
 				DontDestroyOnLoad(transform.gameObject);
@@ -45,14 +45,14 @@ namespace CriWare
 		protected override void OnEnable()
 		{
 			base.OnEnable();
-			TodoLogger.Log(TodoLogger.CriWareErrorHandler, "CriWareErrorHandler.OnEnable");
+			TodoLogger.LogError(TodoLogger.CriWareErrorHandler, "CriWareErrorHandler.OnEnable");
 		}
 
 		// // RVA: 0x2BAAC10 Offset: 0x2BAAC10 VA: 0x2BAAC10 Slot: 5
 		protected override void OnDisable()
 		{
 			base.OnDisable();
-			TodoLogger.Log(TodoLogger.CriWareErrorHandler, "CriWareErrorHandler.OnDisable");
+			TodoLogger.LogError(TodoLogger.CriWareErrorHandler, "CriWareErrorHandler.OnDisable");
 		}
 
 		// // RVA: 0x2BAAC9C Offset: 0x2BAAC9C VA: 0x2BAAC9C
@@ -66,7 +66,7 @@ namespace CriWare
 		{
 			if (enableDebugPrintOnTerminal)
 				return;
-			TodoLogger.Log(TodoLogger.CriWareErrorHandler, "CriWareErrorHandler.CriInternalUpdate");
+			TodoLogger.LogError(TodoLogger.CriWareErrorHandler, "CriWareErrorHandler.CriInternalUpdate");
 		}
 
 		// // RVA: 0x2BAAFA0 Offset: 0x2BAAFA0 VA: 0x2BAAFA0 Slot: 7
@@ -78,7 +78,7 @@ namespace CriWare
 		// // RVA: 0x2BAAFA4 Offset: 0x2BAAFA4 VA: 0x2BAAFA4
 		private void OnDestroy()
 		{
-			TodoLogger.Log(TodoLogger.CriWareErrorHandler, "CriWareErrorHandler.OnDestroy");
+			TodoLogger.LogError(TodoLogger.CriWareErrorHandler, "CriWareErrorHandler.OnDestroy");
 		}
 
 		// // RVA: 0x2BAACB0 Offset: 0x2BAACB0 VA: 0x2BAACB0

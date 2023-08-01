@@ -197,6 +197,6 @@ public class ICLNENNIMOP_FreeScoreMax : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x11EB038 Offset: 0x11EB038 VA: 0x11EB038 Slot: 10
 	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "AGHKODFKOJI");
+		TodoLogger.LogError(0, "AGHKODFKOJI");
 	}
 }

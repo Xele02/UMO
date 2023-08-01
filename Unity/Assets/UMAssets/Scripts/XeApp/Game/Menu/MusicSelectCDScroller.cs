@@ -122,19 +122,19 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x166FAF4 Offset: 0x166FAF4 VA: 0x166FAF4 Slot: 6
 		public void OnBeginDrag(PointerEventData eventData)
 		{
-			TodoLogger.Log(0, "MusicSelectCDScroller OnBeginDrag");
+			TodoLogger.LogError(0, "MusicSelectCDScroller OnBeginDrag");
 		}
 
 		// // RVA: 0x166FBDC Offset: 0x166FBDC VA: 0x166FBDC Slot: 7
 		public void OnEndDrag(PointerEventData eventData)
 		{
-			TodoLogger.Log(0, "MusicSelectCDScroller OnEndDrag");
+			TodoLogger.LogError(0, "MusicSelectCDScroller OnEndDrag");
 		}
 
 		// // RVA: 0x166FCC8 Offset: 0x166FCC8 VA: 0x166FCC8 Slot: 8
 		public void OnDrag(PointerEventData eventData)
 		{
-			TodoLogger.Log(0, "MusicSelectCDScroller OnDrag");
+			TodoLogger.LogError(0, "MusicSelectCDScroller OnDrag");
 		}
 
 		// // RVA: 0x166FBA0 Offset: 0x166FBA0 VA: 0x166FBA0
@@ -143,7 +143,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x166FDA4 Offset: 0x166FDA4 VA: 0x166FDA4 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			TodoLogger.Log(0, "InitializeFromLayout MusicSelectCDScroller");
+			TodoLogger.LogError(0, "InitializeFromLayout MusicSelectCDScroller");
 			return true;
 		}
 	}

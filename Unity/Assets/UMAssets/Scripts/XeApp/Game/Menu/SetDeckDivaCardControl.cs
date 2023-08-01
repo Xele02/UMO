@@ -251,7 +251,7 @@ namespace XeApp.Game.Menu
 				m_divaImage.gameObject.SetActive(false);
 				m_divaIconImage.gameObject.SetActive(true);
 				m_divaTextureLoadingCount++;
-				TodoLogger.Log(0, "finish SetDivaImageAndColor");
+				TodoLogger.LogError(0, "finish SetDivaImageAndColor");
 			}
 			else
 			{

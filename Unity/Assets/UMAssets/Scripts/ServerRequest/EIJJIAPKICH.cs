@@ -11,7 +11,7 @@ public class EIJJIAPKICH_RequestToken : CACGCMBKHDI_Request
 	// // RVA: 0x12EB990 Offset: 0x12EB990 VA: 0x12EB990 Slot: 12
 	public override void DHLDNIEELHO()
     {
-        TodoLogger.Log(0, "TODO");
+        TodoLogger.LogError(0, "TODO");
     }
 
 	// [CompilerGeneratedAttribute] // RVA: 0x6C4260 Offset: 0x6C4260 VA: 0x6C4260

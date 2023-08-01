@@ -22,7 +22,7 @@ namespace XeApp.Game.Menu
 		private Image backGroundImage;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

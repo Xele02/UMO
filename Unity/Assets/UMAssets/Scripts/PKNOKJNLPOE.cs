@@ -89,7 +89,7 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
     {
 		if(FJLIDJJAGOM() != null)
 		{
-        	TodoLogger.Log(0, "PKNOKJNLPOE_EventRaid()");
+        	TodoLogger.LogError(0, "PKNOKJNLPOE_EventRaid()");
 		}
     }
 
@@ -122,7 +122,7 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 	// // RVA: 0x94097C Offset: 0x94097C VA: 0x94097C Slot: 7
 	public override List<int> HEACCHAKMFG()
 	{
-		TodoLogger.Log(0, "HEACCHAKMFG");
+		TodoLogger.LogError(0, "HEACCHAKMFG");
 		return base.HEACCHAKMFG();
 	}
 
@@ -153,7 +153,7 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI);
 		if(db != null)
 		{
-			TodoLogger.Log(0, "PKNOKJNLPOE_EventRaid.JIHMLILFOPG");
+			TodoLogger.LogError(0, "PKNOKJNLPOE_EventRaid.JIHMLILFOPG");
 		}
 		return false;
 	}
@@ -161,7 +161,7 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 	// // RVA: 0x9421F0 Offset: 0x9421F0 VA: 0x9421F0 Slot: 31
 	protected override bool IMCMNOPNGHO(long JHNMKKNEENE)
 	{
-		TodoLogger.Log(0, "PKNOKJNLPOE_EventRaid.IMCMNOPNGHO");
+		TodoLogger.LogError(0, "PKNOKJNLPOE_EventRaid.IMCMNOPNGHO");
 		return false;
 	}
 
@@ -182,7 +182,7 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 	// // RVA: 0x943530 Offset: 0x943530 VA: 0x943530 Slot: 46
 	protected override void PJDGDNJNCNM(long JHNMKKNEENE)
 	{
-		TodoLogger.Log(0, "PJDGDNJNCNM");
+		TodoLogger.LogError(0, "PJDGDNJNCNM");
 	}
 
 	// // RVA: 0x943B38 Offset: 0x943B38 VA: 0x943B38 Slot: 48
@@ -258,7 +258,7 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 		DIHHCBACKGG_DbSection dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI);
 		if(dbSection == null)
 			return null;
-		TodoLogger.Log(0, "PKNOKJNLPOE_EventRaid.IJCPBPFEGDM");
+		TodoLogger.LogError(0, "PKNOKJNLPOE_EventRaid.IJCPBPFEGDM");
 		return null;
 	}
 
@@ -383,7 +383,7 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 	// // RVA: 0x9498A8 Offset: 0x9498A8 VA: 0x9498A8
 	public void FGIHOCHKKMD(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
 	{
-		TodoLogger.Log(0, "PKNOKJNLPOE_EventRaid.FGIHOCHKKMD");
+		TodoLogger.LogError(0, "PKNOKJNLPOE_EventRaid.FGIHOCHKKMD");
 	}
 
 	// // RVA: 0x949CE0 Offset: 0x949CE0 VA: 0x949CE0

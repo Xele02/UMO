@@ -380,7 +380,7 @@ public class PNFCNPCGKDM
 	// RVA: 0xFF1614 Offset: 0xFF1614 VA: 0xFF1614
 	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
 	{
-		TodoLogger.Log(0, "PNFCNPCGKDM KHEKNNFCAOI");
+		TodoLogger.LogError(0, "PNFCNPCGKDM KHEKNNFCAOI");
 	}
 }
 

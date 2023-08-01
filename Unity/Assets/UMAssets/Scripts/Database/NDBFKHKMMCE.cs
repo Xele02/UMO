@@ -661,7 +661,7 @@ public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG_DbSection
 	// // RVA: 0x1AE1BF0 Offset: 0x1AE1BF0 VA: 0x1AE1BF0 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "NDBFKHKMMCE_DecoItem.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "NDBFKHKMMCE_DecoItem.CAOGDCBPBAN");
 		return 0;
 	}
 

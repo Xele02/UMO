@@ -196,7 +196,7 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 	//// RVA: 0x1B95F10 Offset: 0x1B95F10 VA: 0x1B95F10 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(0, "DB Skills IIEMACPEEBJ");
+		TodoLogger.LogError(0, "DB Skills IIEMACPEEBJ");
 		return true;
 	}
 
@@ -768,7 +768,7 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 	//// RVA: 0x1B97044 Offset: 0x1B97044 VA: 0x1B97044 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "JNKEEAOKNCI_Skill.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "JNKEEAOKNCI_Skill.CAOGDCBPBAN");
 		return 0;
 	}
 }

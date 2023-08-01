@@ -74,7 +74,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x19EB9C0 Offset: 0x19EB9C0 VA: 0x19EB9C0 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			TodoLogger.Log(0, "InitializeFromLayout");
+			TodoLogger.LogError(0, "InitializeFromLayout");
 			return true;
 		}
 

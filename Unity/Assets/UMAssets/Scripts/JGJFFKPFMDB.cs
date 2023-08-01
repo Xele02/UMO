@@ -27,7 +27,7 @@ public class JGJFFKPFMDB
 	//// RVA: 0xB1A9D8 Offset: 0xB1A9D8 VA: 0xB1A9D8
 	public static bool NBDHKIGADLF(SakashoErrorId PPFNGGCBJKC)
 	{
-		TodoLogger.Log(0, "NBDHKIGADLF");
+		TodoLogger.LogError(0, "NBDHKIGADLF");
 		return false;
 	}
 

@@ -333,7 +333,7 @@ namespace XeApp.Game.RhythmGame
 				v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId).KDIKCKEEPDA(Database.Instance.gameSetup.musicInfo.IsLine6Mode);
 				if (JEPBIIJDGEF_EventInfo.HHCJCDFCLOB != null && JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI, false) != null)
 				{
-					TodoLogger.Log(0, "GetDropItemSet event");
+					TodoLogger.LogError(0, "GetDropItemSet event");
 				}
 				v += (int)Database.Instance.gameSetup.musicInfo.difficultyType;
 			}
@@ -353,7 +353,7 @@ namespace XeApp.Game.RhythmGame
 				v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId).MGLDIOILOFF;
 				if (JEPBIIJDGEF_EventInfo.HHCJCDFCLOB != null && JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI, false) != null)
 				{
-					TodoLogger.Log(0, "GetDropItemSet event");
+					TodoLogger.LogError(0, "GetDropItemSet event");
 				}
 			}
 			else

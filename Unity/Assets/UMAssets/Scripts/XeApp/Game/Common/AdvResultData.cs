@@ -43,7 +43,7 @@ namespace XeApp.Game.Common
 		// RVA: 0xE5F8B0 Offset: 0xE5F8B0 VA: 0xE5F8B0
 		public void Setup(string returnSceneName, TransitionUniqueId uniqueId)
 		{
-			TodoLogger.Log(0, "Setup");
+			TodoLogger.LogError(0, "Setup");
 		}
 
 		//// RVA: 0xE5F8C8 Offset: 0xE5F8C8 VA: 0xE5F8C8

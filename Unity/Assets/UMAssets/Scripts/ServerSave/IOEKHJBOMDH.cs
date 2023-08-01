@@ -136,7 +136,7 @@ public class IOEKHJBOMDH_DecoStamp : KLFDBFMNLBL_ServerSaveBlock
 	public List<GFPPDCEPLCM> FHBIIONKIDI_Stamps; // 0x28
 	public List<GFPPDCEPLCM> DMKMNGELNAE_Serif; // 0x2C
 
-	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0xA0606C NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { TodoLogger.LogError(0, "DMICHEJIAJL"); return false; } } // 0xA0606C NFKFOODCJJB
 
 	// // RVA: 0xA027AC Offset: 0xA027AC VA: 0xA027AC
 	public bool DDKEJHIGBGK_IsStampEnabled(IHFIAFDLAAK_DecoStamp GAPONCJOKAC, int PPFNGGCBJKC)
@@ -170,7 +170,7 @@ public class IOEKHJBOMDH_DecoStamp : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xA02AA4 Offset: 0xA02AA4 VA: 0xA02AA4 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "TODO");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "TODO");
 		return null;
 	}
 
@@ -370,6 +370,6 @@ public class IOEKHJBOMDH_DecoStamp : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xA0516C Offset: 0xA0516C VA: 0xA0516C Slot: 10
 	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "AGHKODFKOJI");
+		TodoLogger.LogError(0, "AGHKODFKOJI");
 	}
 }

@@ -90,7 +90,7 @@ public class JEPBIIJDGEF_EventInfo
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 		for(int i = 0; i < MPEOOINCGEN.Count; i++)
 		{
-			TodoLogger.Log(0, "MKBJOOAILBB");
+			TodoLogger.LogError(0, "MKBJOOAILBB");
 		}
 		return null;
 	}
@@ -104,7 +104,7 @@ public class JEPBIIJDGEF_EventInfo
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 		for(int i = 0; i < MPEOOINCGEN.Count; i++)
 		{
-			TodoLogger.Log(0, "AJLEDCKMFLP");
+			TodoLogger.LogError(0, "AJLEDCKMFLP");
 		}
 		return null;
 	}
@@ -156,14 +156,14 @@ public class JEPBIIJDGEF_EventInfo
 	// // RVA: 0x1C3AA14 Offset: 0x1C3AA14 VA: 0x1C3AA14
 	public bool GPKMEOKPDIP(int PGIIDPEGGPI)
 	{
-		TodoLogger.Log(0, "GPKMEOKPDIP");
+		TodoLogger.LogError(0, "GPKMEOKPDIP");
 		return false;
 	}
 
 	// // RVA: 0x1C3AB44 Offset: 0x1C3AB44 VA: 0x1C3AB44
 	public long IALIHKHGMFJ(int PGIIDPEGGPI)
 	{
-		TodoLogger.Log(0, "IALIHKHGMFJ");
+		TodoLogger.LogError(0, "IALIHKHGMFJ");
 		return 0;
 	}
 
@@ -195,7 +195,7 @@ public class JEPBIIJDGEF_EventInfo
 		IKDICBBFBMI_EventBase ev = OIKOHACJPCB(EKANGPODCEP);
 		if (ev != null/* && */)
 		{
-			TodoLogger.Log(0, "GJFBNJLOOPD");
+			TodoLogger.LogError(0, "GJFBNJLOOPD");
 		}
 		return false;
 	}
@@ -311,7 +311,7 @@ public class JEPBIIJDGEF_EventInfo
 		yield return null;
 		for(int i = 0; i < MPEOOINCGEN.Count; i++)
 		{
-			TodoLogger.Log(0, "ACMHBOEOPLP_Coroutine_GetMyRanks Event");
+			TodoLogger.LogError(0, "ACMHBOEOPLP_Coroutine_GetMyRanks Event");
 		}
 		BHFHGFKBOHH();
 	}
@@ -382,14 +382,14 @@ public class JEPBIIJDGEF_EventInfo
 	// // RVA: 0x1C3C704 Offset: 0x1C3C704 VA: 0x1C3C704
 	public int NBIAKELCBLC(int MNNHHJBBICA, int MFJKNCACBDG, int AKNELONELJK, bool GIKLNODJKFK, int MJBODMOLOBC, int HDDCLCOMOOB)
 	{
-		TodoLogger.Log(0, "EventInfo NBIAKELCBLC");
+		TodoLogger.LogError(0, "EventInfo NBIAKELCBLC");
 		return 0;
 	}
 
 	// // RVA: 0x1C3D084 Offset: 0x1C3D084 VA: 0x1C3D084
 	private int GPOAFJFABMI(IKDICBBFBMI_EventBase KCADLFGPNKH, IKDICBBFBMI_EventBase NEKKJMFOEDA)
 	{
-		TodoLogger.Log(0, "EventInfo Sort GPOAFJFABMI");
+		TodoLogger.LogError(0, "EventInfo Sort GPOAFJFABMI");
 		return 0;
 	}
 

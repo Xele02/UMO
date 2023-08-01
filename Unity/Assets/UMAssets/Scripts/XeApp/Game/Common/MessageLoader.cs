@@ -137,7 +137,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1117054 Offset: 0x1117054 VA: 0x1117054 Slot: 4
 		public void Dispose()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x1116088 Offset: 0x1116088 VA: 0x1116088

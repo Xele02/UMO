@@ -65,7 +65,7 @@ public abstract class IKMBBPDBECA
 	//// RVA: 0x8E86FC Offset: 0x8E86FC VA: 0x8E86FC
 	public void EDCOECLMPGM(bool KNMLPAAHAOF)
 	{
-		TodoLogger.Log(0, "IKMBBPDBECA.EDCOECLMPGM");
+		TodoLogger.LogError(0, "IKMBBPDBECA.EDCOECLMPGM");
 	}
 
 	//// RVA: 0x8E8880 Offset: 0x8E8880 VA: 0x8E8880
@@ -74,7 +74,7 @@ public abstract class IKMBBPDBECA
 	//// RVA: 0x8E8B44 Offset: 0x8E8B44 VA: 0x8E8B44
 	public static IKMBBPDBECA HEGEKFMJNCC(string FEMMDNIELFC)
 	{
-		TodoLogger.Log(0, "IKMBBPDBECA.HEGEKFMJNCC");
+		TodoLogger.LogError(0, "IKMBBPDBECA.HEGEKFMJNCC");
 		return null;
 	}
 }

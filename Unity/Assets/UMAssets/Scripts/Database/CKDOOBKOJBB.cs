@@ -68,7 +68,7 @@ public class CKDOOBKOJBB_RareUpItem : DIHHCBACKGG_DbSection
 	// RVA: 0x107D9FC Offset: 0x107D9FC VA: 0x107D9FC Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "CKDOOBKOJBB_RareUpItem.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "CKDOOBKOJBB_RareUpItem.CAOGDCBPBAN");
 		return 0;
 	}
 }

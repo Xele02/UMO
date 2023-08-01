@@ -96,14 +96,14 @@ public class PMDCIJMMNGK_GachaTicket : DIHHCBACKGG_DbSection
 	// RVA: 0xFED1AC Offset: 0xFED1AC VA: 0xFED1AC Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
     {
-        TodoLogger.Log(0, "TODO");
+        TodoLogger.LogError(0, "TODO");
         return true;
     }
 
 	// RVA: 0xFED538 Offset: 0xFED538 VA: 0xFED538 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "TODO");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "TODO");
 		return 0;
 	}
 }

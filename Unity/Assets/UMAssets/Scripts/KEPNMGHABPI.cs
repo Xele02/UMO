@@ -48,7 +48,7 @@ public class KEPNMGHABPI
         // RVA: 0x19FC234 Offset: 0x19FC234 VA: 0x19FC234
         public void KHEKNNFCAOI(KEPNMGHABPI PAKIOKPJOBF)
         {
-            TodoLogger.Log(0, "KHEKNNFCAOI");
+            TodoLogger.LogError(0, "KHEKNNFCAOI");
         }
     }
 
@@ -72,7 +72,7 @@ public class KEPNMGHABPI
         // RVA: 0x19FC608 Offset: 0x19FC608 VA: 0x19FC608
         public void KHEKNNFCAOI()
         {
-            TodoLogger.Log(0, "KHEKNNFCAOI");
+            TodoLogger.LogError(0, "KHEKNNFCAOI");
         }
     }
 
@@ -87,7 +87,7 @@ public class KEPNMGHABPI
         // RVA: 0x19F92A4 Offset: 0x19F92A4 VA: 0x19F92A4
         public LNCLNAOPNKF(int BOINIEAKFPL, string OODOEBCLCFI, string ECAIHFNAAOM)
         {
-            TodoLogger.Log(0, "LNCLNAOPNKF");
+            TodoLogger.LogError(0, "LNCLNAOPNKF");
         }
 
         // RVA: 0x19F7314 Offset: 0x19F7314 VA: 0x19F7314
@@ -139,7 +139,7 @@ public class KEPNMGHABPI
         // RVA: 0x19FC2A0 Offset: 0x19FC2A0 VA: 0x19FC2A0 Slot: 4
         public int Compare(LNCLNAOPNKF CIFFHLGLPMK, LNCLNAOPNKF OIKJFMGEICL)
         {
-            TodoLogger.Log(0, "Compare");
+            TodoLogger.LogError(0, "Compare");
             return 0;
         }
     }
@@ -161,7 +161,7 @@ public class KEPNMGHABPI
         // RVA: 0x19FC498 Offset: 0x19FC498 VA: 0x19FC498 Slot: 4
         public int Compare(CAIPMAMHNJP CIFFHLGLPMK, CAIPMAMHNJP OIKJFMGEICL)
         {
-            TodoLogger.Log(0, "Compare");
+            TodoLogger.LogError(0, "Compare");
             return 0;
         }
     }
@@ -232,7 +232,7 @@ public class KEPNMGHABPI
 	// // RVA: 0x19F409C Offset: 0x19F409C VA: 0x19F409C
     public void OMEFFONNMBC(int KPNKPGLPDHI, Action<KEPNMGHABPI.LNCLNAOPNKF> BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG, SakashoBbsThreadCriteria IPKCADIAAPG)
     {
-        TodoLogger.Log(0, "OMEFFONNMBC");
+        TodoLogger.LogError(0, "OMEFFONNMBC");
     }
 
 	// // RVA: 0x19F4470 Offset: 0x19F4470 VA: 0x19F4470
@@ -283,7 +283,7 @@ public class KEPNMGHABPI
             OMEFFONNMBC(KPNKPGLPDHI, (LNCLNAOPNKF EOHFABJDJOH) =>
             {
                 //0x19F9028
-                TodoLogger.Log(0, "IFFGEIMIKHH");
+                TodoLogger.LogError(0, "IFFGEIMIKHH");
             }, MOBEEPPKFLG, null);
         }
     }
@@ -331,7 +331,7 @@ public class KEPNMGHABPI
 	// // RVA: 0x19F68A0 Offset: 0x19F68A0 VA: 0x19F68A0
 	private void HLEABLHJPOI(int KPNKPGLPDHI, KEPNMGHABPI.LNCLNAOPNKF MENAGBMBJFJ, SakashoBbsCommentInfo KOGBMDOONFA, KEPNMGHABPI.DALALJLBNPL BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG, DJBHIFLHJLK NKGHADCBGJO)
     {
-        TodoLogger.Log(0, "HLEABLHJPOI");
+        TodoLogger.LogError(0, "HLEABLHJPOI");
     }
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6C2C64 Offset: 0x6C2C64 VA: 0x6C2C64

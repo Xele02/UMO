@@ -59,7 +59,7 @@ namespace XeApp.Game.Menu
 				IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
 				if(ev != null)
 				{
-					TodoLogger.Log(0, "LobbyButton Setup Event");
+					TodoLogger.LogError(0, "LobbyButton Setup Event");
 				}
 			}
 		}
@@ -79,22 +79,22 @@ namespace XeApp.Game.Menu
 			PKNOKJNLPOE_EventRaid t_raid_ctrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/) as PKNOKJNLPOE_EventRaid;
 			if (t_raid_ctrl != null)
 			{
-				TodoLogger.Log(0, "LobbyButton Co_CheckNewMark");
+				TodoLogger.LogError(0, "LobbyButton Co_CheckNewMark");
 			}
 			t_raid_lobby_ctrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/) as NKOBMDPHNGP_EventRaidLobby;
 			if(t_raid_lobby_ctrl != null)
 			{
-				TodoLogger.Log(0, "LobbyButton Co_CheckNewMark 2");
+				TodoLogger.LogError(0, "LobbyButton Co_CheckNewMark 2");
 			}
 			t_raid_lobby_ctrl = null;
 			if(t_raid_ctrl != null && t_raid_lobby_ctrl != null)
 			{
-				TodoLogger.Log(0, "LobbyButton Co_CheckNewMark 3");
+				TodoLogger.LogError(0, "LobbyButton Co_CheckNewMark 3");
 			}
 			//LAB_0096a28c
 			if (!m_lobbyTabBtn.IsLoaded())
 				yield break;
-			TodoLogger.Log(0, "LobbyButton Co_CheckNewMark 4");
+			TodoLogger.LogError(0, "LobbyButton Co_CheckNewMark 4");
 		}
 
 		// // RVA: 0x966FCC Offset: 0x966FCC VA: 0x966FCC
@@ -150,7 +150,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x9682F0 Offset: 0x9682F0 VA: 0x9682F0
 		public void RequestInitRaidLobby(IMCBBOAFION onSuccess, DJBHIFLHJLK onErrorToTitle)
 		{
-			TodoLogger.Log(0, "LobbyButton RequestInitRaidLobby");
+			TodoLogger.LogError(0, "LobbyButton RequestInitRaidLobby");
 			onSuccess();
 		}
 
@@ -166,7 +166,7 @@ namespace XeApp.Game.Menu
 					onSuccess();
 				yield break;
 			}
-			TodoLogger.Log(0, "InitRaidLobby");
+			TodoLogger.LogError(0, "InitRaidLobby");
 		}
 
 		// // RVA: 0x9683DC Offset: 0x9683DC VA: 0x9683DC
@@ -179,7 +179,7 @@ namespace XeApp.Game.Menu
 				IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
 				if(ev != null)
 				{
-					TodoLogger.Log(0, "Event CheckLobbyAnnounce");
+					TodoLogger.LogError(0, "Event CheckLobbyAnnounce");
 				}
 			}
 			return false;
@@ -190,7 +190,7 @@ namespace XeApp.Game.Menu
 		{
 			if(!CheckLobbyAnnounce())
 				return false;
-			TodoLogger.Log(0, "TryLobbyAnnounce");
+			TodoLogger.LogError(0, "TryLobbyAnnounce");
 			return true;
 		}
 
@@ -264,7 +264,7 @@ namespace XeApp.Game.Menu
 			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
 			if(ev != null)
 			{
-				TodoLogger.Log(0, "UpdatePresentment event");
+				TodoLogger.LogError(0, "UpdatePresentment event");
 			}
 		}
 

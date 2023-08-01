@@ -67,7 +67,7 @@ namespace ExternLib
         {
             if(pool.ToInt32() != 0)
             {
-                TodoLogger.Log(0, "CRIWARE0C3ECA83_criAtomUnityEntryPool_Clear");
+                TodoLogger.LogError(0, "CRIWARE0C3ECA83_criAtomUnityEntryPool_Clear");
             }
         }
         public static void criAtomExPlayer_SetVolume(IntPtr player, float volume)
@@ -81,7 +81,7 @@ namespace ExternLib
         }
         public static void CRIWARE693E0CA2_criAtomUnityEntryPool_Destroy(IntPtr pool)
         {
-            TodoLogger.Log(0, "CRIWARE693E0CA2_criAtomUnityEntryPool_Destroy");
+            TodoLogger.LogError(0, "CRIWARE693E0CA2_criAtomUnityEntryPool_Destroy");
         }
         public static IntPtr criAtomExPlayer_Create(ref CriAtomExPlayer.Config config, IntPtr work, int work_size)
         {
@@ -128,11 +128,11 @@ namespace ExternLib
                     return;
 #endif
             }
-            TodoLogger.Log(TodoLogger.CriAtomExPlayer, "criAtomExPlayer_Set3dSourceHn");
+            TodoLogger.LogError(TodoLogger.CriAtomExPlayer, "criAtomExPlayer_Set3dSourceHn");
         }
         public static void criAtomExPlayer_Set3dListenerHn(IntPtr player, IntPtr listener)
         {
-            TodoLogger.Log(0, "criAtomExPlayer_Set3dListenerHn");
+            TodoLogger.LogError(0, "criAtomExPlayer_Set3dListenerHn");
         }
         public static void criAtomExPlayer_SetPitch(IntPtr player, float pitch)
         {
@@ -293,16 +293,16 @@ namespace ExternLib
 
 		public static void criAtomExPlayer_LimitLoopCount(IntPtr player, int count)
         {
-            TodoLogger.Log(0, "criAtomExPlayer_LimitLoopCount");
+            TodoLogger.LogError(0, "criAtomExPlayer_LimitLoopCount");
         }
         public static IntPtr criAtomExPlayer_GetPlayerParameter(IntPtr player)
         {
-            TodoLogger.Log(TodoLogger.CriAtomExPlayer, "criAtomExPlayer_GetPlayerParameter");
+            TodoLogger.LogError(TodoLogger.CriAtomExPlayer, "criAtomExPlayer_GetPlayerParameter");
             return IntPtr.Zero;
         }
         public static void criAtomExPlayerParameter_RemoveParameter(IntPtr player_parameter, ushort id)
         {
-            TodoLogger.Log(TodoLogger.CriAtomExPlayer, "criAtomExPlayerParameter_RemoveParameter");
+            TodoLogger.LogError(TodoLogger.CriAtomExPlayer, "criAtomExPlayerParameter_RemoveParameter");
         }
         public static uint criAtomExPlayer_Start(IntPtr player)
         {
@@ -403,7 +403,7 @@ namespace ExternLib
 
         public static void criAtomExPlayer_SetPanType(IntPtr player, CriAtomEx.PanType panType)
 		{
-			TodoLogger.Log(0, "criAtomExPlayer_SetPanType");
+			TodoLogger.LogError(0, "criAtomExPlayer_SetPanType");
 		}
     }
 }

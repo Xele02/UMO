@@ -83,7 +83,7 @@ public class IKIIAFKHDFP
 	//// RVA: 0x8E4B3C Offset: 0x8E4B3C VA: 0x8E4B3C
 	private IEnumerator GNECDBAHDBP_GetStatus(List<int> EAFEGCPEKDC, IMCBBOAFION MKECMMAJBBH, IMCBBOAFION NDLCLMAFABH, DJBHIFLHJLK MOBEEPPKFLG)
 	{
-		TodoLogger.Log(0, "GNECDBAHDBP_GetStatus");
+		TodoLogger.LogError(0, "GNECDBAHDBP_GetStatus");
 		yield return null;
 		MKECMMAJBBH();
 	}

@@ -210,12 +210,12 @@ namespace ExternLib
 
         public static void CRIWARE6AEEBF51(int player_id) // desallocate subtitle buffer
         {
-			TodoLogger.Log(TodoLogger.CriManaPlugin, "CRIWARE6AEEBF51");
+			TodoLogger.LogError(TodoLogger.CriManaPlugin, "CRIWARE6AEEBF51");
         }
 
         public static IntPtr CRIWARE91AA6C29(int player_id, int bufferSize)
 		{
-			TodoLogger.Log(TodoLogger.CriManaPlugin, "CRIWARE91AA6C29");
+			TodoLogger.LogError(TodoLogger.CriManaPlugin, "CRIWARE91AA6C29");
 			return IntPtr.Zero;
         }
 
@@ -233,12 +233,12 @@ namespace ExternLib
 
         public static void CRIWARE55BA8D00(int player_id) // Frame update ?
 		{
-			TodoLogger.Log(TodoLogger.CriManaPlugin, "CRIWARE55BA8D00");
+			TodoLogger.LogError(TodoLogger.CriManaPlugin, "CRIWARE55BA8D00");
 		}
 
         public static void CRIWARE51B54144(int player_id, ulong user_count, ulong user_unit)
 		{
-			TodoLogger.Log(TodoLogger.CriManaPlugin, "CRIWARE51B54144");
+			TodoLogger.LogError(TodoLogger.CriManaPlugin, "CRIWARE51B54144");
 		}
 
         public static void CRIWARE4A28D964_criManaUnityPlayer_GetMovieInfo(int player_id, out MovieInfo movie_info)

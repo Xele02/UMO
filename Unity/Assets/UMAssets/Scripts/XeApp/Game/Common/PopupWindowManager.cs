@@ -253,7 +253,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BC2CE8 Offset: 0x1BC2CE8 VA: 0x1BC2CE8
 		public static void OpenStaminaWindow(DenominationManager denomControl, Action recoveryCallBack, JFDNPFFOACP cancelCallBack, DJBHIFLHJLK errorCallBack, OnDenomChangeDate changeDateCallBack)
 		{
-			TodoLogger.Log(0, "OpenStaminaWindow");
+			TodoLogger.LogError(0, "OpenStaminaWindow");
 		}
 
 		// // RVA: 0x1BC3048 Offset: 0x1BC3048 VA: 0x1BC3048
@@ -304,7 +304,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BC5C10 Offset: 0x1BC5C10 VA: 0x1BC5C10
 		public static void ApplicationQuitPopupShow(Action cancelAction)
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x1BC5E74 Offset: 0x1BC5E74 VA: 0x1BC5E74
@@ -317,7 +317,7 @@ namespace XeApp.Game.Common
 			}
 			else
 			{
-				TodoLogger.Log(TodoLogger.UMOSkip, "ReviewStarPopupShow");
+				TodoLogger.LogError(TodoLogger.UMOSkip, "ReviewStarPopupShow");
 				if (closeWaitCallback != null)
 					closeWaitCallback();
 			}

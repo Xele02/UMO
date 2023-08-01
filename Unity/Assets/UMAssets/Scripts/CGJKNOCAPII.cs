@@ -35,7 +35,7 @@ public class CGJKNOCAPII
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 		for(int i = 0; i < JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Count; i++)
 		{
-			TodoLogger.Log(0, "JHCHAOJFHFG");
+			TodoLogger.LogError(0, "JHCHAOJFHFG");
 		}
 		res.Sort((CGJKNOCAPII HKICMNAACDA, CGJKNOCAPII BNKHBCBJBKI) =>
 		{

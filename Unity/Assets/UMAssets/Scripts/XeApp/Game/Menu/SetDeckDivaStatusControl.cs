@@ -150,7 +150,7 @@ namespace XeApp.Game.Menu
 				{
 				!
 				}*/
-				TodoLogger.Log(0, "SetMusicExp");
+				TodoLogger.LogError(0, "SetMusicExp");
 			}
 		}
 

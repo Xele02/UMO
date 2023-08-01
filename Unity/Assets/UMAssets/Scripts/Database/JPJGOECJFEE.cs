@@ -140,7 +140,7 @@ public class JPJGOECJFEE_EventGoDivaRanking : DIHHCBACKGG_DbSection
 	// RVA: 0x1BA84C4 Offset: 0x1BA84C4 VA: 0x1BA84C4 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "JPJGOECJFEE_EventGoDivaRanking.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "JPJGOECJFEE_EventGoDivaRanking.CAOGDCBPBAN");
 		return 0;
 	}
 }

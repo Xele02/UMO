@@ -42,13 +42,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x16791A8 Offset: 0x16791A8 VA: 0x16791A8
 		public void TryLeave()
 		{
-			TodoLogger.Log(0, "MusicSelectMusicFilterButton TryLeave");
+			TodoLogger.LogError(0, "MusicSelectMusicFilterButton TryLeave");
 		}
 
 		// // RVA: 0x167916C Offset: 0x167916C VA: 0x167916C
 		public void Enter()
 		{
-			TodoLogger.Log(0, "MusicSelectMusicFilterButton Enter");
+			TodoLogger.LogError(0, "MusicSelectMusicFilterButton Enter");
 		}
 
 		// // RVA: 0x16791B8 Offset: 0x16791B8 VA: 0x16791B8
@@ -60,20 +60,20 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1679240 Offset: 0x1679240 VA: 0x1679240
 		public void Hide()
 		{
-			TodoLogger.Log(0, "MusicSelectMusicFilterButton Hide");
+			TodoLogger.LogError(0, "MusicSelectMusicFilterButton Hide");
 		}
 
 		// // RVA: 0x1679288 Offset: 0x1679288 VA: 0x1679288
 		public bool IsPlaying()
 		{
-			TodoLogger.Log(0, "MusicSelectMusicFilterButton IsPlaying");
+			TodoLogger.LogError(0, "MusicSelectMusicFilterButton IsPlaying");
 			return false;
 		}
 
 		// // RVA: 0x1679084 Offset: 0x1679084 VA: 0x1679084
 		public void SetButtonStatus(MusicSelectMusicFilterButton.ButtonStatusType status)
 		{
-			TodoLogger.Log(0, "MusicSelectMusicFilterButton SetButtonStatus");
+			TodoLogger.LogError(0, "MusicSelectMusicFilterButton SetButtonStatus");
 		}
 	}
 }

@@ -22,13 +22,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x167EC14 Offset: 0x167EC14 VA: 0x167EC14
 		public void TryLeave()
 		{
-			TodoLogger.Log(0, "MusicSelectSLiveItem TryLeave");
+			TodoLogger.LogError(0, "MusicSelectSLiveItem TryLeave");
 		}
 
 		// // RVA: 0x167EB80 Offset: 0x167EB80 VA: 0x167EB80
 		public void Enter()
 		{
-			TodoLogger.Log(0, "MusicSelectSLiveItem Enter");
+			TodoLogger.LogError(0, "MusicSelectSLiveItem Enter");
 		}
 
 		// // RVA: 0x167EC24 Offset: 0x167EC24 VA: 0x167EC24
@@ -40,7 +40,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x167ED40 Offset: 0x167ED40 VA: 0x167ED40
 		public void Hide()
 		{
-			TodoLogger.Log(0, "MusicSelectSLiveItem Hide");
+			TodoLogger.LogError(0, "MusicSelectSLiveItem Hide");
 		}
 
 		// // RVA: 0x167EDC8 Offset: 0x167EDC8 VA: 0x167EDC8
@@ -49,25 +49,25 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x167EDF4 Offset: 0x167EDF4 VA: 0x167EDF4
 		public void ItemIconHide()
 		{
-			TodoLogger.Log(0, "MusicSelectSLiveItem ItemIconHide");
+			TodoLogger.LogError(0, "MusicSelectSLiveItem ItemIconHide");
 		}
 
 		// // RVA: 0x167EE24 Offset: 0x167EE24 VA: 0x167EE24
 		public void SetIcon(IiconTexture image)
 		{
-			TodoLogger.Log(0, "MusicSelectSLiveItem SetIcon");
+			TodoLogger.LogError(0, "MusicSelectSLiveItem SetIcon");
 		}
 
 		// // RVA: 0x167EF70 Offset: 0x167EF70 VA: 0x167EF70
 		public void SetCount(int count)
 		{
-			TodoLogger.Log(0, "MusicSelectSLiveItem SetCount");
+			TodoLogger.LogError(0, "MusicSelectSLiveItem SetCount");
 		}
 
 		// // RVA: 0x167EFB0 Offset: 0x167EFB0 VA: 0x167EFB0 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			TodoLogger.Log(0, "InitializeFromLayout MusicSelectSLiveItem");
+			TodoLogger.LogError(0, "InitializeFromLayout MusicSelectSLiveItem");
 			return true;
 		}
 	}

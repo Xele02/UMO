@@ -426,7 +426,7 @@ public class EKLNMHFCAOI
 			case FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem:
 				return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OOEPHOEFBNL_SpItem.CDENCMNHNGA[PPFNGGCBJKC - 1].EKLIPGELKCL;
 			default:
-				TodoLogger.Log(0, "FABCKNDLPDH " + INDDJNMPONH);
+				TodoLogger.LogError(0, "FABCKNDLPDH " + INDDJNMPONH);
 				break;
 		}
 		return 1;
@@ -532,7 +532,7 @@ public class EKLNMHFCAOI
 			case FKGCBLHOOCL_Category.CLMIJKACELE_EventTicket:
 				if(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/) != null)
 				{
-					TodoLogger.Log(0, "ALHCGDMEMID_GetNumItems Event");
+					TodoLogger.LogError(0, "ALHCGDMEMID_GetNumItems Event");
 				}
 				break;
 			case FKGCBLHOOCL_Category.JHGPNDLNPFA_DivaItem:
@@ -548,7 +548,7 @@ public class EKLNMHFCAOI
 			case FKGCBLHOOCL_Category.LLFAAOHPMIC_EventGachaTicket:
 				if(LDEGEHAEALK.MMAIJOCPJHP_EventBoxGacha != null)
 				{
-					TodoLogger.Log(0, "ALHCGDMEMID_GetNumItems Event");
+					TodoLogger.LogError(0, "ALHCGDMEMID_GetNumItems Event");
 				}
 				break;
 			case FKGCBLHOOCL_Category.DLBHNNOHLMM_PresentItem:
@@ -595,7 +595,7 @@ public class EKLNMHFCAOI
 			case FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem:
 				if (JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/) != null)
 				{
-					TodoLogger.Log(0, "ALHCGDMEMID_GetNumItems Event");
+					TodoLogger.LogError(0, "ALHCGDMEMID_GetNumItems Event");
 				}
 				break;
 			case FKGCBLHOOCL_Category.GGEFMAAOMFH_StampItemChara:
@@ -699,7 +699,7 @@ public class EKLNMHFCAOI
 			case FKGCBLHOOCL_Category.CLMIJKACELE_EventTicket:
 				if (JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/) != null)
 				{
-					TodoLogger.Log(0, "ALHCGDMEMID_SetNumItems Event");
+					TodoLogger.LogError(0, "ALHCGDMEMID_SetNumItems Event");
 				}
 				break;
 			case FKGCBLHOOCL_Category.JHGPNDLNPFA_DivaItem:
@@ -737,7 +737,7 @@ public class EKLNMHFCAOI
 			case FKGCBLHOOCL_Category.LLFAAOHPMIC_EventGachaTicket:
 				if (LDEGEHAEALK.MMAIJOCPJHP_EventBoxGacha != null)
 				{
-					TodoLogger.Log(0, "ALHCGDMEMID_SetNumItems Event");
+					TodoLogger.LogError(0, "ALHCGDMEMID_SetNumItems Event");
 				}
 				break;
 			case FKGCBLHOOCL_Category.DLBHNNOHLMM_PresentItem:
@@ -958,7 +958,7 @@ public class EKLNMHFCAOI
 				IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
 				if(ev != null)
 				{
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 				}
 				break;
 			case FKGCBLHOOCL_Category.DMMIIBCMCFG_EnergyItem:

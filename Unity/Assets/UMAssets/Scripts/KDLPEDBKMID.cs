@@ -492,7 +492,7 @@ public class KDLPEDBKMID
 	// // RVA: 0xE7EF18 Offset: 0xE7EF18 VA: 0xE7EF18
 	private void EEHMGCMAOAB(string DOGDHKIEBJA, IMCBBOAFION KLMFJJCNBIP, JFDNPFFOACP NEFKBBNKNPP)
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.LogError(0, "TODO");
 	}
 
 	// // RVA: 0xE7EF44 Offset: 0xE7EF44 VA: 0xE7EF44

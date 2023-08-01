@@ -36,7 +36,7 @@ namespace XeSys.Gfx
 		//// RVA: 0x8025CC Offset: 0x8025CC VA: 0x8025CC
 		public float GetPlayFrameCustom(float time, float start, float end)
 		{
-			TodoLogger.Log(0, "GetPlayFrameCustom");
+			TodoLogger.LogError(0, "GetPlayFrameCustom");
 			return 0;
 		}
 	}

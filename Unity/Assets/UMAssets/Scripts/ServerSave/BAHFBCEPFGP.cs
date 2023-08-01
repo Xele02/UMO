@@ -13,7 +13,7 @@ public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_ServerSaveBlock
 	private byte[] FALFJCGGDHB_ShowAddUnitLiveQuartet = new byte[38]; // 0x2C
 	private byte[] KKPKAMANKOH_ShowAddUnitLiveQuintet = new byte[38]; // 0x30
 
-	public override bool DMICHEJIAJL { get { TodoLogger.Log(0, "DMICHEJIAJL"); return false; } } // 0xF15DE4 NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { TodoLogger.LogError(0, "DMICHEJIAJL"); return false; } } // 0xF15DE4 NFKFOODCJJB
 
 	// // RVA: 0xF14400 Offset: 0xF14400 VA: 0xF14400
 	public void DDCBGCODHHN(int DLAEJOBELBH_Id, int HPNLNIFICNI)
@@ -206,6 +206,6 @@ public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xF15600 Offset: 0xF15600 VA: 0xF15600 Slot: 10
 	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "AGHKODFKOJI");
+		TodoLogger.LogError(0, "AGHKODFKOJI");
 	}
 }

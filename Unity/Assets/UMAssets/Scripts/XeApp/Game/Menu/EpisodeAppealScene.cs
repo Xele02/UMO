@@ -123,7 +123,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x127D934 Offset: 0x127D934 VA: 0x127D934
 		private void StartBGM()
 		{
-			TodoLogger.Log(0, "StartBGM");
+			TodoLogger.LogError(0, "StartBGM");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6DA534 Offset: 0x6DA534 VA: 0x6DA534

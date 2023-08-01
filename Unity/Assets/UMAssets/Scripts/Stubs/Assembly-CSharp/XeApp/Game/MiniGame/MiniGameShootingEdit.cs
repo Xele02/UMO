@@ -19,7 +19,7 @@ namespace XeApp.Game.MiniGame
 		private RectTransform m_mainSceenSize;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

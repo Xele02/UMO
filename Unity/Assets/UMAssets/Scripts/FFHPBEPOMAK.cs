@@ -174,7 +174,7 @@ public class FFHPBEPOMAK_DivaInfo
 		}
 		else
 		{
-			TodoLogger.Log(0, "episode info");
+			TodoLogger.LogError(0, "episode info");
 			//KELFCMEOPPM = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode
 			//L.280
 		}
@@ -578,7 +578,7 @@ public class FFHPBEPOMAK_DivaInfo
 	// // RVA: 0x14E1D28 Offset: 0x14E1D28 VA: 0x14E1D28
 	public void OPDBFHFKKJN(int PDEEMMEHDPK, int HEHKNMCDBJJ, bool OJEBNBLHPNP = false)
 	{
-		TodoLogger.Log(0, "OPDBFHFKKJN");
+		TodoLogger.LogError(0, "OPDBFHFKKJN");
 	}
 
 	// // RVA: 0x14E1F38 Offset: 0x14E1F38 VA: 0x14E1F38
@@ -726,7 +726,7 @@ public class FFHPBEPOMAK_DivaInfo
 	// // RVA: 0x14E2F68 Offset: 0x14E2F68 VA: 0x14E2F68
 	public static List<FFHPBEPOMAK_DivaInfo> OOJFGDKBOHK(int AHHJLDLAPAN, bool OJEBNBLHPNP = false)
 	{
-		TodoLogger.Log(0, "OOJFGDKBOHK");
+		TodoLogger.LogError(0, "OOJFGDKBOHK");
 		return new List<FFHPBEPOMAK_DivaInfo>();
 	}
 }

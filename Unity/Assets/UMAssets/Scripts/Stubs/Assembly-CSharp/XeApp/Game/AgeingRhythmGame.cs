@@ -41,7 +41,7 @@ namespace XeApp.Game
 		private Text m_continueLabel;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

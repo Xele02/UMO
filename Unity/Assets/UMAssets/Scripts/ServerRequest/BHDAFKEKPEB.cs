@@ -21,13 +21,13 @@ public class BHDAFKEKPEB_GetStepUpLotRecords : CACGCMBKHDI_Request
 	// RVA: 0xC7EDB0 Offset: 0xC7EDB0 VA: 0xC7EDB0 Slot: 12
 	public override void DHLDNIEELHO()
 	{
-		TodoLogger.Log(0, "BHDAFKEKPEB_GetStepUpLotRecords.DHLDNIEELHO");
+		TodoLogger.LogError(0, "BHDAFKEKPEB_GetStepUpLotRecords.DHLDNIEELHO");
 	}
 
 	// RVA: 0xC7EE8C Offset: 0xC7EE8C VA: 0xC7EE8C Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
 	{
-		TodoLogger.Log(0, "BHDAFKEKPEB_GetStepUpLotRecords.MGFNKDPHFGI");
+		TodoLogger.LogError(0, "BHDAFKEKPEB_GetStepUpLotRecords.MGFNKDPHFGI");
 	}
 
 	//// RVA: 0xC7EF58 Offset: 0xC7EF58 VA: 0xC7EF58

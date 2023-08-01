@@ -14,7 +14,7 @@ namespace Mana.Service.Ad
         {
 			if (_hasSendLaunchEvent)
 				return;
-			TodoLogger.Log(TodoLogger.ManaAd, "ManaAdAPIHelper.SendLaunchEvent");
+			TodoLogger.LogError(TodoLogger.ManaAd, "ManaAdAPIHelper.SendLaunchEvent");
 			_hasSendLaunchEvent = true;
 			NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD_GetPlayerId();
 		}
@@ -31,7 +31,7 @@ namespace Mana.Service.Ad
 				{
 					if (NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD_GetPlayerId() == 0)
 						return;
-					TodoLogger.Log(TodoLogger.ManaAd, "ManaAdAPIHelper.TryPendingSendResumeEvent ");
+					TodoLogger.LogError(TodoLogger.ManaAd, "ManaAdAPIHelper.TryPendingSendResumeEvent ");
 					_sendResumeEventRequest = false;
 				}
 			}

@@ -331,7 +331,7 @@ namespace CriWare
 			// // RVA: 0x295AEE4 Offset: 0x295AEE4 VA: 0x295AEE4
 			public void SetMasterTimerType(Player.TimerType timerType)
 			{
-				TodoLogger.Log(TodoLogger.CriManaPlugin, "SetMasterTimerType");
+				TodoLogger.LogError(TodoLogger.CriManaPlugin, "SetMasterTimerType");
 			}
 
 			// // RVA: 0x295B084 Offset: 0x295B084 VA: 0x295B084

@@ -110,7 +110,7 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 	// // RVA: 0x16093A8 Offset: 0x16093A8 VA: 0x16093A8 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "HPBPIOPPDCB_Diva.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "HPBPIOPPDCB_Diva.CAOGDCBPBAN");
 		return 0;
 	}
 }

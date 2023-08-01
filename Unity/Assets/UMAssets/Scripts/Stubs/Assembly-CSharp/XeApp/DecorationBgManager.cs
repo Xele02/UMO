@@ -8,7 +8,7 @@ namespace XeApp
 		private float m_innerAreaSize;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

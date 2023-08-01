@@ -13,7 +13,7 @@ public class ATELIDAVAPK
 	// // RVA: 0xD61B04 Offset: 0xD61B04 VA: 0xD61B04
 	public bool CCKHESGNI()
     {
-        TodoLogger.Log(TodoLogger.SecureLibAPI, "ATELIDAVAPK.CCKHESGNI Apk Check signature");
+        TodoLogger.LogError(TodoLogger.SecureLibAPI, "ATELIDAVAPK.CCKHESGNI Apk Check signature");
         return true;
     }
 
@@ -23,7 +23,7 @@ public class ATELIDAVAPK
 	// // RVA: 0xD6204C Offset: 0xD6204C VA: 0xD6204C
 	public bool QTHZDMBR()
     {
-        TodoLogger.Log(TodoLogger.SecureLibAPI, "ATELIDAVAPK.QTHZDMBR Check Code digest");
+        TodoLogger.LogError(TodoLogger.SecureLibAPI, "ATELIDAVAPK.QTHZDMBR Check Code digest");
         return true;
     }
 

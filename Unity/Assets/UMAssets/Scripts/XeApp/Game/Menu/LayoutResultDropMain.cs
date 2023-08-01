@@ -264,7 +264,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1D959BC Offset: 0x1D959BC VA: 0x1D959BC
 		private void StartNextEventRareItemAnim()
 		{
-			TodoLogger.Log(0, "StartNextEventRareItemAnim");
+			TodoLogger.LogError(0, "StartNextEventRareItemAnim");
 		}
 
 		// // RVA: 0x1D95D34 Offset: 0x1D95D34 VA: 0x1D95D34

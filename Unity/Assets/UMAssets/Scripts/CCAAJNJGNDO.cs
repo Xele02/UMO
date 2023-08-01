@@ -326,7 +326,7 @@ public class CCAAJNJGNDO
 	//// RVA: 0x18FCFF4 Offset: 0x18FCFF4 VA: 0x18FCFF4
 	public bool NLKEJAFBDGC(int PGIIDPEGGPI, int PFGAKEDKOPD)
 	{
-		TodoLogger.Log(TodoLogger.ToCheck, "Check value");
+		TodoLogger.LogError(TodoLogger.ToCheck, "Check value");
 		int index = (PGIIDPEGGPI - 1000000) - 1;
 		MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA[index];
 		MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[index];

@@ -8,7 +8,7 @@ namespace XeApp.Game.Menu
 	{
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement monobehaviour");
+			TodoLogger.LogError(0, "Implement monobehaviour");
 		}
 		[SerializeField]
 		private List<Text> m_texts;

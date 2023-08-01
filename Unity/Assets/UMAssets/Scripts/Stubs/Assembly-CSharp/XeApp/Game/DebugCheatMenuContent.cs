@@ -29,7 +29,7 @@ namespace XeApp.Game
 		private List<DebugCheatMenuContent.MenuElem> m_menuElems;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

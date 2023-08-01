@@ -205,7 +205,7 @@ public class KBPDNHOKEKD_ProductId
 	//// RVA: 0x101D8E0 Offset: 0x101D8E0 VA: 0x101D8E0
 	public KNEKLJHNHAK FJICMLBOJCH()
 	{
-		TodoLogger.Log(0, "FJICMLBOJCH");
+		TodoLogger.LogError(0, "FJICMLBOJCH");
 		return 0;
 	}
 }

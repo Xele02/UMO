@@ -230,7 +230,7 @@ namespace XeApp.Game.Menu
 			switch(type)
 			{
 				case eSceneType.StorySelect:
-					TodoLogger.Log(0, "ViewInitialize 1");
+					TodoLogger.LogError(0, "ViewInitialize 1");
 					return;
 				case eSceneType.Home:
 					SetViewData(eSceneType.Home, FAGCLBOACEE.OGGDOPACJOB());
@@ -239,7 +239,7 @@ namespace XeApp.Game.Menu
 					SetViewData(eSceneType.DropResult, FAGCLBOACEE.KJDIPIAFNEN());
 					return;
 				case eSceneType.MusicSelect:
-					TodoLogger.Log(0, "ViewInitialize 4");
+					TodoLogger.LogError(0, "ViewInitialize 4");
 					return;
 				case eSceneType.FreeMusicSelect1:
 					{
@@ -411,7 +411,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x115A6EC Offset: 0x115A6EC VA: 0x115A6EC
 		private IEnumerator ShowPopupDiva(eUnlockType unlockType, List<UnlockParam> param)
 		{
-			TodoLogger.Log(0, "ShowPopupDiva");
+			TodoLogger.LogError(0, "ShowPopupDiva");
 			yield break;
 		}
 
@@ -552,7 +552,7 @@ namespace XeApp.Game.Menu
 					}
 					break;
 				default:
-					TodoLogger.Log(0, "CreatePopupSetting " + unlockTYpe);
+					TodoLogger.LogError(0, "CreatePopupSetting " + unlockTYpe);
 					break;
 			}
 			res.IsCaption = false;

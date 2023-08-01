@@ -7,7 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class RaidActSelectPanel : LayoutUGUIScriptBase
 	{
-    public void Awake() { TodoLogger.Log(0, "Implement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 		public enum PanelType
 		{
 			PanelRight = 0,

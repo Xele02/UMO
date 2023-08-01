@@ -17,7 +17,7 @@ namespace CriWare
 		// // RVA: 0x2947AEC Offset: 0x2947AEC VA: 0x2947AEC
 		public static CriFsLoadFileRequest LoadFile(CriFsBinder binder, string path, int readUnitSize = 1048576)
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 			return null;
 		}
 
@@ -45,7 +45,7 @@ namespace CriWare
 		// // RVA: 0x294CFE0 Offset: 0x294CFE0 VA: 0x294CFE0
 		public static CriFsBindRequest BindCpk(CriFsBinder targetBinder, string srcPath)
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 			return null;
 		}
 
@@ -67,7 +67,7 @@ namespace CriWare
 		// // RVA: 0x294D368 Offset: 0x294D368 VA: 0x294D368
 		public static void SetUserAgentString(string userAgentString)
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x294D4A0 Offset: 0x294D4A0 VA: 0x294D4A0

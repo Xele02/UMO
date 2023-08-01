@@ -78,7 +78,7 @@ public class PPNFHHPJOKK_SpItem : DIHHCBACKGG_DbSection
 	// RVA: 0xDF8790 Offset: 0xDF8790 VA: 0xDF8790 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "PPNFHHPJOKK_SpItem.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "PPNFHHPJOKK_SpItem.CAOGDCBPBAN");
 		return 0;
 	}
 }

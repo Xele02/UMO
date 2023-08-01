@@ -17,7 +17,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xEE42B4 Offset: 0xEE42B4 VA: 0xEE42B4 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
 		{
-			TodoLogger.Log(0, "CreateIconTexture");
+			TodoLogger.LogError(0, "CreateIconTexture");
 			return null;
 		}
 

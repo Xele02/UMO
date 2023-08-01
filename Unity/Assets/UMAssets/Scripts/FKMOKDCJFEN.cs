@@ -134,7 +134,7 @@ public class FKMOKDCJFEN
 			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.LKJGDCBCLKO(JOPOPMLFINI);
 			if (ev == null)
 				return;
-			TodoLogger.Log(0, "HCDGELDHFHB");
+			TodoLogger.LogError(0, "HCDGELDHFHB");
 			//CMCKNKKCNDK_Status = ev.GBADILEHLGC(CMEJFJFOIIJ);
 		}
 		else

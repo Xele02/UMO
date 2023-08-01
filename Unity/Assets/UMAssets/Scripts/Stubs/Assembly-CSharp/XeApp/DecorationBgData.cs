@@ -44,7 +44,7 @@ namespace XeApp
 		public Vector2[] m_RightFloorInnerOuterLine;
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

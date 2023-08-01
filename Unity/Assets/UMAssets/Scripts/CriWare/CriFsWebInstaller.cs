@@ -101,7 +101,7 @@ namespace CriWare
         // // RVA: 0x294D728 Offset: 0x294D728 VA: 0x294D728
         public void Stop()
         {
-            TodoLogger.Log(TodoLogger.CriFsWebInstaller, "CriFsWebInstaller Stop");
+            TodoLogger.LogError(TodoLogger.CriFsWebInstaller, "CriFsWebInstaller Stop");
             if(www != null)
             {
                 www.Dispose();
@@ -142,7 +142,7 @@ namespace CriWare
 				return;
 			}
 
-			TodoLogger.Log(TodoLogger.CriFsWebInstaller, "CriFsWebInstaller.InitializeModule");
+			TodoLogger.LogError(TodoLogger.CriFsWebInstaller, "CriFsWebInstaller.InitializeModule");
 			isCrcEnabled = config.crcEnabled;
 			isInitialized = true;
 		}
@@ -150,13 +150,13 @@ namespace CriWare
         // // RVA: 0x294E8A4 Offset: 0x294E8A4 VA: 0x294E8A4
         public static void FinalizeModule()
 		{
-			TodoLogger.Log(TodoLogger.CriFsWebInstaller, "CriFsWebInstaller FinalizeModule");
+			TodoLogger.LogError(TodoLogger.CriFsWebInstaller, "CriFsWebInstaller FinalizeModule");
 		}
 
 		// // RVA: 0x294C460 Offset: 0x294C460 VA: 0x294C460
 		public static void ExecuteMain()
         {
-            TodoLogger.Log(TodoLogger.CriFsWebInstaller, "CriFsWebInstaller.ExecuteMain");
+            TodoLogger.LogError(TodoLogger.CriFsWebInstaller, "CriFsWebInstaller.ExecuteMain");
         }
 
         // // RVA: 0x294EC08 Offset: 0x294EC08 VA: 0x294EC08
@@ -177,7 +177,7 @@ namespace CriWare
         // // RVA: 0x294DE30 Offset: 0x294DE30 VA: 0x294DE30
         private static /*extern */int criFsWebInstaller_Create(out IntPtr installer)
 		{
-			TodoLogger.Log(TodoLogger.CriFsWebInstaller, "CriFsWebInstaller.criFsWebInstaller_Create");
+			TodoLogger.LogError(TodoLogger.CriFsWebInstaller, "CriFsWebInstaller.criFsWebInstaller_Create");
 			installer = new IntPtr(1);
 			return 0;
 		}
@@ -194,7 +194,7 @@ namespace CriWare
         // // RVA: 0x294E3D0 Offset: 0x294E3D0 VA: 0x294E3D0
         private static /*extern */int criFsWebInstaller_GetStatusInfo(/*IntPtr*/CriFsWebInstaller installer, out CriFsWebInstaller.StatusInfo status)
         {
-            TodoLogger.Log(TodoLogger.CriFsWebInstaller, "criFsWebInstaller_GetStatusInfo");
+            TodoLogger.LogError(TodoLogger.CriFsWebInstaller, "criFsWebInstaller_GetStatusInfo");
             
             status = installer.status;
 

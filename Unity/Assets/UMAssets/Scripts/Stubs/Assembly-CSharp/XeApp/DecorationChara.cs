@@ -4,7 +4,7 @@ namespace XeApp
 	{
 		private void Awake()
 		{
-			TodoLogger.Log(0, "Implement monobehaviour");
+			TodoLogger.LogError(0, "Implement monobehaviour");
 		}
 		public DecorationContoller decorationController;
 	}

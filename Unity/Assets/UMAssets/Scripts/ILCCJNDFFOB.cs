@@ -719,7 +719,7 @@ public class ILCCJNDFFOB
 	// // RVA: 0x9011B4 Offset: 0x9011B4 VA: 0x9011B4
 	public void CJCJNKOPIKB(int AHHJLDLAPAN, int IGCLCOMCHHB, int IBKAENIBBIL, int DPJCPEIPAPN, int EKPGGDOOLFM)
 	{
-		TodoLogger.Log(0, "CJCJNKOPIKB");
+		TodoLogger.LogError(0, "CJCJNKOPIKB");
 	}
 
 	// // RVA: 0x900DE0 Offset: 0x900DE0 VA: 0x900DE0
@@ -1100,7 +1100,7 @@ public class ILCCJNDFFOB
 	// // RVA: 0x912DAC Offset: 0x912DAC VA: 0x912DAC
 	public void LCDPEMIFNKJ(int GLCLFMGPMAN, int MBJIFDBEDAC)
 	{
-		TodoLogger.Log(0, "ILCCJNDFFOB.LCDPEMIFNKJ()");
+		TodoLogger.LogError(0, "ILCCJNDFFOB.LCDPEMIFNKJ()");
 	}
 
 	// // RVA: 0x913094 Offset: 0x913094 VA: 0x913094
@@ -1133,7 +1133,7 @@ public class ILCCJNDFFOB
 	// // RVA: 0x91514C Offset: 0x91514C VA: 0x91514C
 	public void LIIJEGOIKDP(int FMJECOKINMO, OAGBCBBHMPF.DKAMMIHBINF JKJDGDLAIME)
 	{
-		TodoLogger.Log(0, "LIIJEGOIKDP");
+		TodoLogger.LogError(0, "LIIJEGOIKDP");
 	}
 
 	// // RVA: 0x9154B4 Offset: 0x9154B4 VA: 0x9154B4

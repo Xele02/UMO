@@ -587,13 +587,13 @@ public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1B35630 Offset: 0x1B35630 VA: 0x1B35630 Slot: 10
 	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
 	{
-		TodoLogger.Log(0, "AGHKODFKOJI");
+		TodoLogger.LogError(0, "AGHKODFKOJI");
 	}
 
 	// // RVA: 0x1B36D84 Offset: 0x1B36D84 VA: 0x1B36D84 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "TODO");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "TODO");
 		return null;
 	}
 }

@@ -48,7 +48,7 @@ public class LGDNAJACFHI
 	// // RVA: 0xD725A8 Offset: 0xD725A8 VA: 0xD725A8
 	public bool KHEKNNFCAOI_Init(KBPDNHOKEKD_ProductId MEANCEOIMGE)
 	{
-		TodoLogger.Log(0, "LGDNAJACFHI.KHEKNNFCAOI_Init");
+		TodoLogger.LogError(0, "LGDNAJACFHI.KHEKNNFCAOI_Init");
 		return true;
 	}
 

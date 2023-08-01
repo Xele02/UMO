@@ -148,7 +148,7 @@ public class JHAAHJNEBOG_LimitedCompoItem : DIHHCBACKGG_DbSection
 	// RVA: 0xB1CCB8 Offset: 0xB1CCB8 VA: 0xB1CCB8 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "JHAAHJNEBOG_LimitedCompoItem.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "JHAAHJNEBOG_LimitedCompoItem.CAOGDCBPBAN");
 		return 0;
 	}
 }

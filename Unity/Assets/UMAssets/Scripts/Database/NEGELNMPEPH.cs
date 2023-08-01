@@ -122,7 +122,7 @@ public class NEGELNMPEPH_DecoSpSetting : DIHHCBACKGG_DbSection
 	// RVA: 0x1AE630C Offset: 0x1AE630C VA: 0x1AE630C Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(TodoLogger.DbIntegrityCheck, "NEGELNMPEPH_DecoSpSetting.CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "NEGELNMPEPH_DecoSpSetting.CAOGDCBPBAN");
 		return 0;
 	}
 }
