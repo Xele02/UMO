@@ -43,7 +43,7 @@ namespace XeApp.Game.Menu
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan) 
 		{
 			layoutRoot = layout.FindViewById("sw_game_res_mgrade_icon_anim") as AbsoluteLayout;
-			ImageSingRankSmall = transform.GetComponentsInChildren<RawImageEx>().Where((RawImageEx _) => {
+			ImageSingRankSmall = transform.GetComponentsInChildren<RawImageEx>(true).Where((RawImageEx _) => {
 				//0x1D1AA08
 				return _.name == "swtexc_cmn_musicrate (ImageView)";
 			}).ToArray();

@@ -1788,7 +1788,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8F73C Offset: 0xA8F73C VA: 0xA8F73C
 		private void OnShowFriendDivaStatus(EAJCBFGKKFA_FriendInfo friendData)
 		{
-			TodoLogger.LogNotImplemented("OnShowFriendDivaStatus");
+			OnClickAnyButtons();
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+			ProfilDateArgs arg = new ProfilDateArgs();
+			arg.data = friendData;
+			arg.infoType = ProfilMenuLayout.InfoType.ASSIST;
+			MenuScene.Instance.Call(TransitionList.Type.PROFIL, arg, true);
 		}
 
 		//// RVA: 0xA8F89C Offset: 0xA8F89C VA: 0xA8F89C

@@ -89,7 +89,24 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x172B1A4 Offset: 0x172B1A4 VA: 0x172B1A4
-		public void SetPlateImage(int nowId, int nowRank) { }
+		public void SetPlateImage(int nowId, int nowRank)
+		{
+			m_isLoadingNewImage = false;
+			m_isLoadingNextImage = false;
+			if(m_imagePlate != null)
+			{
+				m_isLoadingNewImage = true;
+				GameManager.Instance.SceneIconCache.Load(nowId, nowRank, (IiconTexture texture) =>
+				{
+					//0x172C408
+					if(texture != null)
+					{
+						texture.Set(m_imagePlate);
+					}
+					m_isLoadingNewImage = false;
+				});
+			}
+		}
 
 		// RVA: 0x172B474 Offset: 0x172B474 VA: 0x172B474
 		public void Update()
@@ -271,9 +288,5 @@ namespace XeApp.Game.Menu
 			Loaded();
 			return true;
 		}
-
-		//[CompilerGeneratedAttribute] // RVA: 0x70BB4C Offset: 0x70BB4C VA: 0x70BB4C
-		//// RVA: 0x172C408 Offset: 0x172C408 VA: 0x172C408
-		//private void <SetPlateImage>b__33_0(IiconTexture texture) { }
 	}
 }

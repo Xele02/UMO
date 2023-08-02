@@ -593,7 +593,7 @@ public class JDDGGJCGOPA_RecordMusic : KLFDBFMNLBL_ServerSaveBlock
 	public static int IEFAHENNHAH(bool GIKLNODJKFK, int AKNELONELJK, int OIPCCBHIKIA)
 	{
 		int r = AKNELONELJK << 8;
-		if (!GIKLNODJKFK)
+		if (GIKLNODJKFK)
 			r = AKNELONELJK << 8 | 0x10000;
 		return r | OIPCCBHIKIA;
 	}
@@ -602,7 +602,7 @@ public class JDDGGJCGOPA_RecordMusic : KLFDBFMNLBL_ServerSaveBlock
 	public static void NPGCCNCHDLF(int FAENAMBEGMD, out bool GIKLNODJKFK, out int AKNELONELJK, out int OIPCCBHIKIA)
 	{
 		GIKLNODJKFK = (FAENAMBEGMD & 0xffff0000U) == 0x10000;
-		AKNELONELJK = FAENAMBEGMD >> 8;
+		AKNELONELJK = (int)((FAENAMBEGMD & 0x0000ff00U) >> 8);
 		OIPCCBHIKIA = FAENAMBEGMD & 0xff;
 
 		// Debug

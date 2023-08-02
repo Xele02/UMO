@@ -305,6 +305,7 @@ namespace XeApp.Game.Menu
 			if(!m_args.isFromBeginner)
 			{
 				this.StartCoroutineWatched(Co_ShowHelp());
+				return;
 			}
 			else if(!TutorialProc.CanDivaSelect(m_args.beginnerMissionId))
 			{

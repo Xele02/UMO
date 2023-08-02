@@ -53,7 +53,8 @@ namespace XeApp.Game.Common
 						else
 							isSkip = true;
 					} while (count < time && !isSkip);
-					onChangeNumberCakllback(fixedNumber + Mathf.RoundToInt(Mathf.Pow(10, i) * lastDigitNumber[i]));
+					fixedNumber = fixedNumber + Mathf.RoundToInt(Mathf.Pow(10, i) * lastDigitNumber[i]);
+					onChangeNumberCakllback(fixedNumber);
 				}
 			}
 			if (onFinished != null)

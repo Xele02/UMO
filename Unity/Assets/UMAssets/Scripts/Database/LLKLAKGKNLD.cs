@@ -69,16 +69,12 @@ public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
 		{
 			if(JKGFBFPIMGA == 4)
 			{
-				res = LOCCHKJGJDJ[MJBODMOLOBC];
+				res = LOCCHKJGJDJ[MJBODMOLOBC] ^ FBGGEFFJJHB;
 			}
-			else
+			else if(JKGFBFPIMGA >= 5)
 			{
-				if(JKGFBFPIMGA >= 5)
-				{
-					res = BMEHMMIPELI[MJBODMOLOBC];
-				}
+				res = BMEHMMIPELI[MJBODMOLOBC] ^ FBGGEFFJJHB;
 			}
-			res = res ^ FBGGEFFJJHB;
 		}
 		return res;
 	}

@@ -382,14 +382,14 @@ namespace XeApp.Game.Menu
 		private void StartNextNormalItemAnim()
 		{
 			AddItem();
-			onFinished = StartNormalItemBonusAnim;
+			itemList[currentItemIndex].onFinished = StartNormalItemBonusAnim;
 			if(currentItemIndex < 7)
 			{
 				itemList[currentItemIndex].StartBeginAnim();
 			}
 			else
 			{
-				this.StartCoroutineWatched(Co_AutoScrolling(1, nextItemMoveSec, StartBeginAnim));
+				this.StartCoroutineWatched(Co_AutoScrolling(1, nextItemMoveSec, itemList[currentItemIndex].StartBeginAnim));
 			}
 		}
 
