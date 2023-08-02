@@ -82,7 +82,6 @@ namespace XeSys
 				target = idle;
 			}
 			Unlink(ref idle, target);
-			//UnityEngine.Debug.Log("Register process "+target);
 			processes[target].State = 1;
 			processes[target].Process = process;
 			processes[target].Priority = priority;
@@ -242,13 +241,11 @@ namespace XeSys
 				}
 				if(exec)
 				{
-					//UnityEngine.Debug.Log("IdleManager Exec Process : "+i);
 					ProcessResult res = processes[i].Process();
 					if(res != ProcessResult.Continue)
 					{
 						if(res == ProcessResult.End)
 						{
-							//UnityEngine.Debug.Log("IdleManager End Process : "+i);
 							Unregister(i);
 						}
 					}
@@ -260,12 +257,10 @@ namespace XeSys
 				}
 				if(next < 0)
 				{
-					//UnityEngine.Debug.Log("Break, no more to execute");
 					break;
 				}
 				noExec = false;
 				i = next;
-				//UnityEngine.Debug.Log(sw.ElapsedTicks+" < "+allowedticks);
 			} while(sw.ElapsedTicks < allowedticks);
 			sw.Stop();
 		}
@@ -305,7 +300,6 @@ namespace XeSys
 					if(u3 < 0)
 					{
 						prev = -1;
-						//UnityEngine.Debug.Log("Activate "+target+" after "+prev+" & before "+u3);
 						Link(ref active, prev, u3, target);
 					}
 					else
@@ -313,7 +307,6 @@ namespace XeSys
 						if(processes[u3].Priority > processes[target].Priority)
 						{
 							prev = -1;
-							//UnityEngine.Debug.Log("Activate 2 "+target+" after "+prev+" & before "+u3);
 							Link(ref active, prev, u3, target);
 						}
 						else
@@ -328,7 +321,6 @@ namespace XeSys
 								u3 = processes[prev].Next;
 							}
 							u3 = processes[prev].Next;
-							//UnityEngine.Debug.Log("Activate 3 "+target+" after "+prev+" & before "+u3);
 							Link(ref active, prev, u3, target);
 						}
 					}

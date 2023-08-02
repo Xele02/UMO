@@ -168,7 +168,7 @@ namespace XeApp.Game.Common
 				currentBgmId = bgmId;
 			} catch (Exception e)
 			{
-				UnityEngine.Debug.LogError("Could not plsy bgm : "+e.ToString());
+				TodoLogger.LogError(TodoLogger.Filesystem, "Could not plsy bgm : "+e.ToString());
 			}
 		}
 

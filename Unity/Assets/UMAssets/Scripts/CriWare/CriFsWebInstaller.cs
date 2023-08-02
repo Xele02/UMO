@@ -210,12 +210,12 @@ namespace CriWare
                         status.status = Status.Complete;
 						if (string.IsNullOrEmpty(installer.www.error))
 						{
-							UnityEngine.Debug.Log("Write file " + installer.fileSavePath);
+							TodoLogger.Log(TodoLogger.Filesystem, "Write file " + installer.fileSavePath);
 							System.IO.File.WriteAllBytes(installer.fileSavePath, installer.www.bytes);
 						}
                         else
                         {
-                            UnityEngine.Debug.LogError("Install Error for "+installer.www.url+" : "+installer.www.error);
+                            TodoLogger.LogError(TodoLogger.Filesystem, "Install Error for "+installer.www.url+" : "+installer.www.error);
                         }
                     }
                 }

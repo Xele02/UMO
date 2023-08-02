@@ -142,7 +142,6 @@ namespace XeSys.File
 		// // RVA: 0x20388C8 Offset: 0x20388C8 VA: 0x20388C8
 		private IEnumerator IALIHGPHLPH_Execute()
 		{
-    		//UnityEngine.Debug.Log("Enter IALIHGPHLPH_Execute");
 			// private int GGPNEJDOELB; // 0x8
 			// private object GMEFKDIEHCA; // 0xC
 			// public CriFileRequestManager KIGBLACMODG; // 0x10
@@ -254,7 +253,6 @@ namespace XeSys.File
 				OALKCHOADBI_NeedRestart = false;
 				LFBFKKKCMNM_TryExecute();
 			}
-    		//UnityEngine.Debug.Log("Exit IALIHGPHLPH_Execute");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x693828 Offset: 0x693828 VA: 0x693828

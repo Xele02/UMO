@@ -41,7 +41,7 @@ namespace XeSys.Gfx
 						}
 					}
 				}
-				UnityEngine.Debug.LogError("Can't find abs layout with id " + defData.exid+", vals are "+str);
+				TodoLogger.LogError(TodoLogger.Layout, "Can't find abs layout with id " + defData.exid+", vals are "+str);
 			}
 			//UMO end
 			return new LayoutSymbolData(defData, abs, this);
@@ -71,7 +71,7 @@ namespace XeSys.Gfx
 					layout.StartChildrenAnimLoop(preset.first, preset.second);
 				break;
 				default:
-					UnityEngine.Debug.LogError("undefined PresetType : "+preset.type.ToString());
+					TodoLogger.LogError(TodoLogger.Layout, "undefined PresetType : "+preset.type.ToString());
 				break;	
 			}
 		}
@@ -94,7 +94,7 @@ namespace XeSys.Gfx
 					layout.StartChildrenAnimGoStop(frame, frame);
 					break;
 				default:
-					UnityEngine.Debug.LogError("undefined PresetType : " + preset.type);
+					TodoLogger.LogError(TodoLogger.Layout, "undefined PresetType : " + preset.type);
 					break;
 			}
 		}
@@ -114,7 +114,7 @@ namespace XeSys.Gfx
 			}
 			else
 			{
-				Debug.LogError("undefined PresetType : " + preset.type);
+				TodoLogger.LogError(TodoLogger.Layout, "undefined PresetType : " + preset.type);
 			}
 		}
 

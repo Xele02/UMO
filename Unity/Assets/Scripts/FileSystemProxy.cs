@@ -37,7 +37,7 @@ static class FileSystemProxy
 			}
 			else
 			{
-				UnityEngine.Debug.LogError("Error finding file source name "+url);
+				TodoLogger.LogError(TodoLogger.Filesystem, "Error finding file source name " + url);
 				return "";
 			}
 		}
@@ -128,7 +128,7 @@ static class FileSystemProxy
 			{
 				if((i % 1000) == 0)
 				{
-					UnityEngine.Debug.Log("Done file list "+i+"/"+fileL.HNBFOAJIIAL_Count);
+					TodoLogger.Log(TodoLogger.Filesystem, "Done file list " + i+"/"+fileL.HNBFOAJIIAL_Count);
 					yield return null;
 				}
 				string fileName = (string)fileL[i]["file"];
@@ -148,14 +148,14 @@ static class FileSystemProxy
 		int pos = path.IndexOf("/android/");
 		if (pos >= 0)
 			relativePath = path.Substring(pos);
-		UnityEngine.Debug.Log("Try install relative path : " + relativePath);
+		TodoLogger.Log(TodoLogger.Filesystem, "Try install relative path : " + relativePath);
 		if (serverFileList.ContainsKey(relativePath))
 		{
 			string startPath = RuntimeSettings.CurrentSettings.DataWebServerURL;
 			if(serverFileList[relativePath].StartsWith("/") && startPath.EndsWith("/"))
 				startPath = startPath.Substring(0, startPath.Length - 1);
 			string url = startPath + serverFileList[relativePath];
-			UnityEngine.Debug.Log("Try dld from server at " + url);
+			TodoLogger.Log(TodoLogger.Filesystem, "Try dld from server at " + url);
 			WWW dldData = new WWW(url);
 			while (!dldData.isDone)
 				yield return null;
@@ -166,7 +166,7 @@ static class FileSystemProxy
 			}
 			else
 			{
-				UnityEngine.Debug.LogError("Dld Error : "+dldData.error);
+				TodoLogger.LogError(TodoLogger.Filesystem, "Dld Error : " + dldData.error);
 			}
 		}
 		if (onDone != null)

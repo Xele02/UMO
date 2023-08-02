@@ -63,7 +63,7 @@ public class IGJHFKELHKJ
 		JHJMNLMNPGO_BasePath = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + KCOGAGGCPBP.HAFLEFNJAKD_DirSys; // /sys
 		if(!Directory.Exists(JHJMNLMNPGO_BasePath))
 		{
-			UnityEngine.Debug.Log("Create Dir "+JHJMNLMNPGO_BasePath);
+			TodoLogger.Log(TodoLogger.Filesystem, "Create Dir "+JHJMNLMNPGO_BasePath);
 			Directory.CreateDirectory(JHJMNLMNPGO_BasePath);
 		}
 		string file = JHJMNLMNPGO_BasePath + "/" + KCOGAGGCPBP.PNBIAPMFPPD_File01; // 01

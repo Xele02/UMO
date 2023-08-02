@@ -6,7 +6,6 @@ namespace ExternLib
 	{
 		public static int SakashoRepeatedAchievementGetAchievementRecords(int callbackId, string json)
 		{
-			UnityEngine.Debug.Log("SakashoRepeatedAchievementGetAchievementRecords " + json);
 			// Hack directly send response
 
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
@@ -20,7 +19,6 @@ namespace ExternLib
 		}
 		public static int SakashoRepeatedAchievementClaimAchievementPrizesAndSaveSetInventoryClosedAt(int callbackId, string json)
 		{
-			UnityEngine.Debug.Log("SakashoRepeatedAchievementClaimAchievementPrizesAndSaveSetInventoryClosedAt " + json);
 			// Hack directly send response
 
 			return SakashoPlayerDataSavePlayerData(callbackId, json);
@@ -28,7 +26,6 @@ namespace ExternLib
 
 		public static int SakashoRepeatedAchievementClaimAchievementPrizesAndSave(int callbackId, string json)
 		{
-			UnityEngine.Debug.Log("SakashoRepeatedAchievementClaimAchievementPrizesAndSave " + json);
 			// Hack directly send response
 
 			return SakashoPlayerDataSavePlayerData(callbackId, json);

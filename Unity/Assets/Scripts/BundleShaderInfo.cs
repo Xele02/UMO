@@ -44,7 +44,7 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 	{
 		if(shaderBundle2 == null)
 		{
-			UnityEngine.Debug.LogError("Error Register shader, bundle is null");
+			TodoLogger.LogError(TodoLogger.Shader, "Error Register shader, bundle is null");
 			yield break;
 		}
         //UnityEngine.Debug.Log("Enter Co_RegisterShaderIds "+shaderBundle2.name);
@@ -79,11 +79,11 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 					}
 					if(info.shader == null)
 					{
-						Debug.LogWarning("shader not found : "+assetName+" : "+info.name);
+						TodoLogger.LogWarning(TodoLogger.Shader, "shader not found : "+assetName+" : "+info.name);
 					}
 					
 					shaderList.Add(o.GetInstanceID(), info);
-					Debug.Log("Loaded game shader "+o.GetInstanceID()+" "+info.name);
+					TodoLogger.Log(TodoLogger.Shader, "Loaded game shader " + o.GetInstanceID()+" "+info.name);
 				}
 			}
 		}
@@ -105,12 +105,12 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 
 	public void FixMaterialShaderMat(Material mat)
 	{
-		UnityEngine.Debug.Log("Checking shader for mat "+mat.name+" with shader "+mat.shader.GetInstanceID()+" "+mat.shader.name);
+		TodoLogger.Log(TodoLogger.Shader, "Checking shader for mat "+mat.name+" with shader "+mat.shader.GetInstanceID()+" "+mat.shader.name);
 //#if UNITY_EDITOR
 		if(usedShaderList.Contains(mat.shader.GetInstanceID()))
 		//if (!string.IsNullOrEmpty(AssetDatabase.GetAssetPath(mat.shader)) && !AssetDatabase.GetAssetPath(mat.shader).Contains("unity default resources"))
 		{
-			UnityEngine.Debug.Log("Already on disk shader used : "+mat.shader.name);
+			TodoLogger.Log(TodoLogger.Shader, "Already on disk shader used : " + mat.shader.name);
 			return;
 		}
 //#endif
@@ -124,7 +124,7 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 				Shader shader = Shader.Find(mat.shader.name);
 				if(shader != null)
 				{
-					UnityEngine.Debug.Log(mat.shader.name);
+					TodoLogger.Log(TodoLogger.Shader, mat.shader.name);
 					info = new ShaderInfo();
 					info.shader = shader;
 /*#if UNITY_EDITOR
@@ -142,7 +142,7 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 			{
 				shaderList.Add(mat.shader.GetInstanceID(), info);
 				usedShaderList.Add(info.shader.GetInstanceID());
-				Debug.Log("Loaded game shader "+mat.shader.GetInstanceID()+" "+info.name);
+				TodoLogger.Log(TodoLogger.Shader, "Loaded game shader " + mat.shader.GetInstanceID()+" "+info.name);
 			}
 		}
 		int shaderId = mat.shader.GetInstanceID();
@@ -160,22 +160,22 @@ public class BundleShaderInfo : SingletonMonoBehaviour<BundleShaderInfo>
 				if (renderQueue != -1)
 					mat.renderQueue = renderQueue;
 #endif
-				Debug.Log("Loaded shader "+shaderId+" "+shader.name+" on "+mat.name);
+				TodoLogger.Log(TodoLogger.Shader, "Loaded shader " + shaderId+" "+shader.name+" on "+mat.name);
 			}
 			else
 			{
-				Debug.LogError("shader not found : "+shaderList[shaderId].name+" "+shaderId+" for "+mat.name);
+				TodoLogger.LogError(TodoLogger.Shader, "shader not found : " + shaderList[shaderId].name+" "+shaderId+" for "+mat.name);
 			}
 		}
 		else
 		{
-			Debug.LogError("shader not found : "+mat.shader.name+" "+shaderId+" for "+mat.name);
+			TodoLogger.LogError(TodoLogger.Shader, "shader not found : " + mat.shader.name+" "+shaderId+" for "+mat.name);
 		}
 	}
 
 	public void FixMaterialShaderGO(GameObject obj)
 	{
-		UnityEngine.Debug.Log("Checking shader for object "+obj.name);
+		TodoLogger.Log(TodoLogger.Shader, "Checking shader for object " + obj.name);
 		// Search in Graphic element
 		Graphic[] graphics = obj.GetComponentsInChildren<Graphic>(true);
 		for(int i = 0; i < graphics.Length; i++)

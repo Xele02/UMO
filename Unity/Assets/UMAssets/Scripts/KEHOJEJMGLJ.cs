@@ -109,7 +109,7 @@ public class KEHOJEJMGLJ
 		{
 			string path = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath;
 			if(string.IsNullOrEmpty(path))
-				UnityEngine.Debug.LogError("Install.InstallPathManager.CriWare_installTargetPath is null");
+				TodoLogger.LogError(TodoLogger.Filesystem, "Install.InstallPathManager.CriWare_installTargetPath is null");
 			JCMJBMBMJAK_PersistentDataPath = path + "/data";
 		}
         return JCMJBMBMJAK_PersistentDataPath;
@@ -210,7 +210,6 @@ public class KEHOJEJMGLJ
 		// private LFPOMKLKHPB NOAMCCLDODN; // 0x34
 		// private int NJDHMNBBCLK; // 0x38
 		//0xE8DA10
-		//UnityEngine.Debug.Log("Enter EOFJPNPFGDM_Coroutine_Install");
 
 		int NJDHMNBBCLK = 0;
 		// private KEHOJEJMGLJ.<>c__DisplayClass75_0 OPLBFCEPDCH; // 0x14
@@ -265,7 +264,7 @@ public class KEHOJEJMGLJ
 					MOBEEPPKFLG();
 				}
 				//FCPBCDOKOPD?
-				UnityEngine.Debug.LogError("Exit Error EOFJPNPFGDM_Coroutine_Install");
+				TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error EOFJPNPFGDM_Coroutine_Install");
 				yield break;
 			}
 
@@ -358,7 +357,6 @@ public class KEHOJEJMGLJ
 						}
 						//goto LAB_00e8f334;
 						FBGNDKKDOIE = null;
-						//UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
 						yield break;
 					}
 					// L518
@@ -386,7 +384,7 @@ public class KEHOJEJMGLJ
 						{
 							MOBEEPPKFLG();
 						}
-						UnityEngine.Debug.LogError("Exit Error EOFJPNPFGDM_Coroutine_Install");
+						TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error EOFJPNPFGDM_Coroutine_Install");
 						yield break;
 					}
 					OEPPEGHGNNO(1, 0);
@@ -492,7 +490,7 @@ public class KEHOJEJMGLJ
 								FGGJNGCAFGK();
 							//LAB_00e8f334
 							FBGNDKKDOIE = null;
-							UnityEngine.Debug.LogError("Exit Error EOFJPNPFGDM_Coroutine_Install");
+							TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error EOFJPNPFGDM_Coroutine_Install");
 							yield break;
 						}
 						// L.780
@@ -544,7 +542,7 @@ public class KEHOJEJMGLJ
 									FGGJNGCAFGK();
 								//LAB_00e8f334
 								FBGNDKKDOIE = null;
-								UnityEngine.Debug.LogError("Exit Error EOFJPNPFGDM_Coroutine_Install");
+								TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error EOFJPNPFGDM_Coroutine_Install");
 								yield break;
 							}
 							PMDNNKAPIKJ.PBIMGBKLDPP();
@@ -602,8 +600,6 @@ public class KEHOJEJMGLJ
 			GameManager.Instance.SetNeverSleep(false);
 			// goto LAB_00e8f334;
 			FBGNDKKDOIE = null;
-
-			//UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
 			break;
 		}
 	}
@@ -676,7 +672,7 @@ public class KEHOJEJMGLJ
 			{
 				string path = JCMJBMBMJAK_PersistentDataPath + strs[i];
 				File.SetAttributes(path, FileAttributes.Normal);
-				UnityEngine.Debug.Log("Would delete " + path);
+				TodoLogger.Log(TodoLogger.Filesystem, "Would delete " + path);
 				//INLICKMJHHK_DeleteFile(path);
 			}
 		}
@@ -711,7 +707,7 @@ public class KEHOJEJMGLJ
 				{
 					string path = JCMJBMBMJAK_PersistentDataPath + l[i].IBGNDNLAHOE[j];
 					File.SetAttributes(path, FileAttributes.Normal);
-					UnityEngine.Debug.Log("Would delete " + path);
+					TodoLogger.Log(TodoLogger.Filesystem, "Would delete " + path);
 					//INLICKMJHHK_DeleteFile(path);
 					KLIJFOBEKBE.OJCJPCHFPGO_DeleteFileInfo(l[i].IBGNDNLAHOE[j]);
 				}
@@ -945,7 +941,7 @@ public class KEHOJEJMGLJ
 	// // RVA: 0xE89CF8 Offset: 0xE89CF8 VA: 0xE89CF8
 	public static void INLICKMJHHK_DeleteFile(string CJEKGLGBIHF_path)
 	{
-		UnityEngine.Debug.Log("Delete File "+CJEKGLGBIHF_path);
+		TodoLogger.Log(TodoLogger.Filesystem, "Delete File " + CJEKGLGBIHF_path);
 		File.Delete(CJEKGLGBIHF_path);
 	}
 

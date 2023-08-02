@@ -12,7 +12,7 @@ namespace XeSys
 			if(mInstance == null)
 			{
 				T exist = FindObjectOfType(typeof(T)) as T;
-				UnityEngine.Debug.Log(""+typeof(T)+" "+exist);
+				TodoLogger.Log(TodoLogger.Base, ""+typeof(T)+" "+exist);
 				if(exist != null)
 					mInstance = exist;
 			}

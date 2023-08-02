@@ -112,7 +112,6 @@ public class BBGDKLLEPIB
 	// // RVA: 0xF17A70 Offset: 0xF17A70 VA: 0xF17A70
 	private IEnumerator EOFJPNPFGDM_Coroutine_Install(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
 	{
-		//UnityEngine.Debug.Log("Enter EOFJPNPFGDM_Coroutine_Install");
 		// private BBGDKLLEPIB.<>c__DisplayClass45_0 OPLBFCEPDCH; // 0x14
 				// public BBGDKLLEPIB KIGBLACMODG; // 0x8
 				// public bool KOMKKBDABJP; // 0xC
@@ -169,7 +168,7 @@ public class BBGDKLLEPIB
 			{
 				if(MOBEEPPKFLG != null)
 					MOBEEPPKFLG();
-				UnityEngine.Debug.LogError("Exit Error EOFJPNPFGDM_Coroutine_Install");
+				TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error EOFJPNPFGDM_Coroutine_Install");
 				yield break;
 			}
 
@@ -187,7 +186,6 @@ public class BBGDKLLEPIB
 				//goto LAB_00f1b02c;
 				if(BHFHGFKBOHH != null)
 					BHFHGFKBOHH();
-				//UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
 				yield break;
 			}
 			//L254
@@ -232,7 +230,7 @@ public class BBGDKLLEPIB
 		MHHFMCPJONH.DOMFHDPMCCO_AddFiles(ICCMKHKNAMJ_ToDldList, FLHOFIEOKDH_BaseUrl, JCMJBMBMJAK);
 		MHHFMCPJONH.LBGNKOJFOFC = (JEHIAIPJNJF_FileDownloader.HCJPJKCIBDL_DldFileInfo JGBPLIGAILE) => {
 			//0xF1A318
-			UnityEngine.Debug.Log("downloaded "+JGBPLIGAILE.AJPIGKBIDDL_LocalFileName+" in "+ JGBPLIGAILE.ADHHKEMDOIK_LocalPath+" from "+ JGBPLIGAILE.NFCMNIEHJML_ServerPath);
+			TodoLogger.Log(TodoLogger.Filesystem, "downloaded " + JGBPLIGAILE.AJPIGKBIDDL_LocalFileName+" in "+ JGBPLIGAILE.ADHHKEMDOIK_LocalPath+" from "+ JGBPLIGAILE.NFCMNIEHJML_ServerPath);
 			FAOOOLDDBBB[JGBPLIGAILE.LAPFOLJGJMB_AssetFileInfo.OIEAICNAMNB_LocalFileName] = 2;
 		};
 		MHHFMCPJONH.LAOEGNLOJHC();
@@ -268,7 +266,6 @@ public class BBGDKLLEPIB
 				//LAB_00f1b02c:
 				if(BHFHGFKBOHH != null)
 					BHFHGFKBOHH();
-				//UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
 				yield break;
 			}
 			//L361
@@ -296,7 +293,7 @@ public class BBGDKLLEPIB
 				{
 					//goto LAB_00f1b7e4;
 					MHHFMCPJONH.Dispose();
-					UnityEngine.Debug.LogError("Exit Error EOFJPNPFGDM_Coroutine_Install");
+					TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error EOFJPNPFGDM_Coroutine_Install");
 					yield break;
 				}
 				MHHFMCPJONH.PBIMGBKLDPP();
@@ -349,7 +346,7 @@ public class BBGDKLLEPIB
 				{
 					//LAB_00f1b7e4				
 					MHHFMCPJONH.Dispose();
-					UnityEngine.Debug.LogError("Exit Error EOFJPNPFGDM_Coroutine_Install");
+					TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error EOFJPNPFGDM_Coroutine_Install");
 					yield break;
 				}
 				MHHFMCPJONH.PBIMGBKLDPP();
@@ -368,8 +365,6 @@ public class BBGDKLLEPIB
 		//goto LAB_00f1b828;
 		// To 4
 		}
-		
-		//UnityEngine.Debug.Log("Exit EOFJPNPFGDM_Coroutine_Install");
 	}
 
 	// // RVA: 0xF17B50 Offset: 0xF17B50 VA: 0xF17B50
@@ -401,7 +396,7 @@ public class BBGDKLLEPIB
 			{
 				string path = OGCDNCDMLCA_MxDir + item.Key;
 				File.SetAttributes(path, FileAttributes.Normal);
-				UnityEngine.Debug.Log("Delete File "+path);
+				TodoLogger.Log(TodoLogger.Filesystem, "Delete File " + path);
 				//File.Delete(path);
 			}
 		}
@@ -572,7 +567,7 @@ public class BBGDKLLEPIB
 			data[i] = (byte)(data[i] ^ 0x1b);
 		}
 		
-		UnityEngine.Debug.Log("Write file "+dir+"/"+KCOGAGGCPBP.HJNJMNFEJEH_File02);
+		TodoLogger.Log(TodoLogger.Filesystem, "Write file " + dir+"/"+KCOGAGGCPBP.HJNJMNFEJEH_File02);
 		File.WriteAllBytes(dir+"/"+KCOGAGGCPBP.HJNJMNFEJEH_File02, data); // sys/02
 	}
 

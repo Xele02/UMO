@@ -120,14 +120,14 @@ public class HMHBDNGJIGL : LBHFILLFAGA
 	// // RVA: 0x15F5344 Offset: 0x15F5344 VA: 0x15F5344
 	private static BIIAHJNILEE BNPBLFMLECC(byte[] GKBDHBJDGAH)
 	{
-		Debug.LogError("TODO");
+		TodoLogger.LogError(0, "BNPBLFMLECC");
 		return new BIIAHJNILEE(0, 0);
 	}
 
 	// // RVA: 0x15F542C Offset: 0x15F542C VA: 0x15F542C
 	private static BIIAHJNILEE BAGLLAKJMPO(byte[] FLOEPENHMCO)
 	{
-		Debug.LogError("TODO");
+		TodoLogger.LogError(0, "BAGLLAKJMPO");
 		return new BIIAHJNILEE(0, 0);
 	}
 }

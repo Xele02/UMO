@@ -169,7 +169,7 @@ namespace XeApp.Game.Common
 				if(Directory.Exists(str.ToString()))
 				{
 					//Directory.Delete(str.ToString(), true);
-					UnityEngine.Debug.Log("Would have deleted "+str.ToString()+" dir recursively");
+					TodoLogger.Log(TodoLogger.Filesystem, "Would have deleted "+str.ToString()+" dir recursively");
 				}
 			}
 		}

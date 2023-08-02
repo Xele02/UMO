@@ -100,7 +100,6 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBE1F68 Offset: 0xBE1F68 VA: 0xBE1F68
 		public void SetMusicDataList(List<VerticalMusicDataList.MusicListData> musicList, int listNo, int diff)
 		{
-			UnityEngine.Debug.Log("SetMusicDataList "+musicList.Count);
 			m_isSingleMusic = false;
 			m_musicList = musicList;
 			m_difficult = diff;

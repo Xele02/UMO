@@ -511,7 +511,6 @@ namespace XeApp.Game.Menu
 			// // RVA: 0xA39030 Offset: 0xA39030 VA: 0xA39030
 			private void ChangeMount(TransitionUniqueId uniqueId, bool isFading = true, TransitionArgs args = null, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene camBackUnityScene = 0, bool isForceFading = false)
 			{
-				UnityEngine.Debug.Log("Scene mount "+uniqueId.ToString());
 				int group = (int)uniqueId >> 16;
 				TransitionTreeObject.SceneRoot root = treeObject.Find((TransitionTreeObject.SceneRoot x) => {
 					//0xA3D6C8
@@ -682,7 +681,6 @@ namespace XeApp.Game.Menu
 				// private ResourcesManager <resourceManager>5__4; // 0x28
 				// private AssetBundleLoadLayoutOperationBase <operation>5__5; // 0x2C
 				//0xA414D4
-				//UnityEngine.Debug.Log("Enter RegisterCache");
 				GameObject instance = null;
 				TransitionRoot root = null;
 				TransitionRoot.MenuTransitionControl.BundleName assetBundle = assetBundleNames[(int)transitionName];
@@ -729,7 +727,6 @@ namespace XeApp.Game.Menu
 				root.transform.SetParent(m_uiRootObject.transform, false);
 				root.gameObject.SetActive(false);
 				m_instanceCacheDict.Add((int)transitionName, root);
-				//UnityEngine.Debug.Log("Exit RegisterCache "+transitionName);
 			}
 
 			// [IteratorStateMachineAttribute] // RVA: 0x6C8D4C Offset: 0x6C8D4C VA: 0x6C8D4C
@@ -1112,12 +1109,12 @@ namespace XeApp.Game.Menu
 				{
 					if(info.thresholdMasterVersion < 1)
 					{
-						UnityEngine.Debug.Log("Replace prefab "+assetBundleNames[(int)transitionName].prefabName+" with "+info.prefabName);
+						TodoLogger.Log(TodoLogger.Menu, "Replace prefab "+assetBundleNames[(int)transitionName].prefabName+" with "+info.prefabName);
 						return info.prefabName;
 					}
 					else if(info.thresholdMasterVersion <= DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion)
 					{
-						UnityEngine.Debug.Log("Replace prefab "+assetBundleNames[(int)transitionName].prefabName+" with "+info.prefabName);
+						TodoLogger.Log(TodoLogger.Menu, "Replace prefab " + assetBundleNames[(int)transitionName].prefabName+" with "+info.prefabName);
 						return info.prefabName;
 					}
 				}

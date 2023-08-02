@@ -607,6 +607,6 @@ public class JDDGGJCGOPA_RecordMusic : KLFDBFMNLBL_ServerSaveBlock
 
 		// Debug
 		if (IEFAHENNHAH(GIKLNODJKFK, AKNELONELJK, OIPCCBHIKIA) != FAENAMBEGMD)
-			UnityEngine.Debug.LogError("Error converting music id");
+			TodoLogger.LogError(0, "Error converting music id");
 	}
 }

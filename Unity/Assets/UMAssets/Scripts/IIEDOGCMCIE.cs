@@ -19,7 +19,6 @@ public class IIEDOGCMCIE : CBBJHPBGBAJ_Archive
 	// // RVA: 0x12043D8 Offset: 0x12043D8 VA: 0x12043D8
 	public IEnumerator ODDEPBIJHOE_Load(string CJEKGLGBIHF_path)
     {
-        //UnityEngine.Debug.Log("Enter ODDEPBIJHOE_Load "+ CJEKGLGBIHF_path);
         // 	public string CJEKGLGBIHF_path; // 0x10
         // 	public IIEDOGCMCIE KIGBLACMODG; // 0x14
         // 	private DsfdLoader.ILoadRequest OCJDGDAJMFC; // 0x18
@@ -30,7 +29,7 @@ public class IIEDOGCMCIE : CBBJHPBGBAJ_Archive
         {
             PLOOEECNHFB = true;
             NPNNPNAIONN = true;
-            UnityEngine.Debug.LogError("Exit  Error ODDEPBIJHOE_Load");
+            TodoLogger.LogError(TodoLogger.Coroutine, "Exit  Error ODDEPBIJHOE_Load");
             yield break;
         }
         while(!request.IsDone)
@@ -62,11 +61,10 @@ public class IIEDOGCMCIE : CBBJHPBGBAJ_Archive
             PLOOEECNHFB = true;
             if(BIOFMLDLNKD)
             {
-                //UnityEngine.Debug.Log("Exit ODDEPBIJHOE_Load");
                 yield break;
             }
         }
         NPNNPNAIONN = true;
-        UnityEngine.Debug.LogError("Exit  Error ODDEPBIJHOE_Load");
+        TodoLogger.LogError(TodoLogger.Coroutine, "Exit  Error ODDEPBIJHOE_Load");
     }
 }

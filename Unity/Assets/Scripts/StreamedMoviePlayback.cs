@@ -77,13 +77,13 @@ public class StreamedMoviePlayback : MoviePlayback
             p.StartInfo = info;
             //p.OutputDataReceived += (s_, e) => UnityEngine.Debug.LogError(e.Data);
             //p.ErrorDataReceived += (s_, e) => UnityEngine.Debug.LogError(e.Data);
-            UnityEngine.Debug.Log("Start converting "+tmpPath);
+            TodoLogger.Log(TodoLogger.Movie, "Start converting " + tmpPath);
             p.Start();
             //p.BeginErrorReadLine();
             //p.BeginOutputReadLine();
             while(!p.HasExited)
                 yield return null;
-            UnityEngine.Debug.Log("End converting "+tmpPath+" to "+videoPath);
+            TodoLogger.Log(TodoLogger.Movie, "End converting " + tmpPath+" to "+videoPath);
             File.Delete(tmpPath);
             tmpPath = "";
         }
@@ -118,7 +118,7 @@ public class StreamedMoviePlayback : MoviePlayback
             };
             _mediaPlayer.errorReceived += (VideoPlayer vp, string message) =>
             {
-                UnityEngine.Debug.LogError("Video Error : "+message);
+                TodoLogger.LogError(TodoLogger.Movie, "Video Error : "+message);
             };
             _mediaPlayer.prepareCompleted += cb;
             _mediaPlayer.Prepare();

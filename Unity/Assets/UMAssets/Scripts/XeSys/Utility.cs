@@ -91,7 +91,7 @@ namespace XeSys
 		// // RVA: 0x23A9AF0 Offset: 0x23A9AF0 VA: 0x23A9AF0
 		public static void SaveToStorage(string path, byte[] bytes, bool overwrite)
 		{
-			UnityEngine.Debug.Log("Save to "+path);
+			TodoLogger.Log(TodoLogger.Filesystem, "Save to "+path);
 			path = path.Replace("file://", "");
 			string dir = Path.GetDirectoryName(path);
 			if(!Directory.Exists(dir))

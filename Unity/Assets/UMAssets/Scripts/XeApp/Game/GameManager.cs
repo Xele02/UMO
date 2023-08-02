@@ -246,7 +246,6 @@ namespace XeApp.Game
 		// // RVA: 0x99A7A4 Offset: 0x99A7A4 VA: 0x99A7A4
 		public IEnumerator UnloadAllAssets()
 		{
-    		//UnityEngine.Debug.Log("Enter UnloadAllAssets");
 			//0x1428C74
 			m_layoutObjectCache.ReleaseAll();
 			BgControl.ForceDestoryTexture();
@@ -305,7 +304,6 @@ namespace XeApp.Game
 			yield return Resources.UnloadUnusedAssets();
 			IsCacheActive = false;
 
-			//UnityEngine.Debug.Log("Exit UnloadAllAssets");
 		}
 
 		// // RVA: 0x99A82C Offset: 0x99A82C VA: 0x99A82C
@@ -322,7 +320,6 @@ namespace XeApp.Game
 		// // RVA: 0x99AC08 Offset: 0x99AC08 VA: 0x99AC08
 		private IEnumerator Co_InitScreen()
 		{
-    		//UnityEngine.Debug.Log("Enter Co_InitScreen");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public GameManager <>4__this; // 0x10
@@ -376,7 +373,6 @@ namespace XeApp.Game
 			ReInitScreen();
 			yield return null;
 			isBootInitialized = true;
-    		//UnityEngine.Debug.Log("Exit Co_InitScreen");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADAB0 Offset: 0x6ADAB0 VA: 0x6ADAB0
@@ -501,7 +497,6 @@ namespace XeApp.Game
 		// // RVA: 0x99DCFC Offset: 0x99DCFC VA: 0x99DCFC
 		private IEnumerator InitializeSystemCoroutine()
 		{
-    		//UnityEngine.Debug.Log("Enter InitializeSystemCoroutine");
 			//private int <>1__state; // 0x8
 			//private object <>2__current; // 0xC
 			//public GameManager <>4__this; // 0x10
@@ -523,7 +518,6 @@ namespace XeApp.Game
 			KDLPEDBKMID.HHCJCDFCLOB.OEPPEGHGNNO = this.InstallEvent;
 			NDABOOOOENC.HHCJCDFCLOB.NCDLCIPGPNC_Login();
 			IsSystemInitialized = true;
-    		//UnityEngine.Debug.Log("Exit InitializeSystemCoroutine");
 		}
 
 		// // RVA: 0x99DD84 Offset: 0x99DD84 VA: 0x99DD84

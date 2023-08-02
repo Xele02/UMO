@@ -311,7 +311,7 @@ public class PKECIDPBEFL
         GKMONHIBHCL = false;
         LHPDDGIJKNB();
         string path = JAFAIDPJALG();
-        UnityEngine.Debug.Log("Try load "+path);
+        TodoLogger.Log(TodoLogger.Filesystem, "Try load " + path);
         if(File.Exists(path))
         {
             MIABDPJHEHK(File.ReadAllBytes(path));
@@ -329,7 +329,7 @@ public class PKECIDPBEFL
         string dirName = Path.GetDirectoryName(path);
         if(!Directory.Exists(dirName))
             return;
-        UnityEngine.Debug.Log("Delete dir "+dirName);
+        TodoLogger.Log(TodoLogger.Filesystem, "Delete dir " + dirName);
         Directory.Delete(dirName, true);
     }
 

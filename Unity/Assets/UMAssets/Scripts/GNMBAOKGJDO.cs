@@ -27,7 +27,6 @@ public class GNMBAOKGJDO
 		// public GNMBAOKGJDO KIGBLACMODG; // 0x14
 		// private DsfdLoader.ILoadRequest OCJDGDAJMFC; // 0x18
 		//0x1E5951C
-		//UnityEngine.Debug.Log("Enter ODDEPBIJHOE_Coroutine_Load");
 
 		UnityEngine.Debug.Log("start DsfdLoader.LoadFile "+CJEKGLGBIHF);
 		DsfdLoader.ILoadRequest OCJDGDAJMFC = DsfdLoader.LoadFile(CJEKGLGBIHF);
@@ -36,7 +35,6 @@ public class GNMBAOKGJDO
 			UnityEngine.Debug.Log("err DsfdLoader.LoadFile");
 			PLOOEECNHFB = true;
 			NPNNPNAIONN = true;
-			UnityEngine.Debug.LogError("Exit ErrorODDEPBIJHOE_Coroutine_Load");
 			yield break;
 		}
 
@@ -65,13 +63,11 @@ public class GNMBAOKGJDO
 		else
 		{
 			UnityEngine.Debug.Log("err2 DsfdLoader.LoadFile");
-			UnityEngine.Debug.LogError("Exit Error ODDEPBIJHOE_Coroutine_Load");
+			TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error ODDEPBIJHOE_Coroutine_Load");
 			PLOOEECNHFB = true;
 			NPNNPNAIONN = true;
 			yield break;
 		}
-
-		//UnityEngine.Debug.Log("Exit ODDEPBIJHOE_Coroutine_Load");
 	}
 
 }

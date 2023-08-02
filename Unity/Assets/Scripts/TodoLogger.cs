@@ -48,14 +48,42 @@ public static class TodoLogger
 
 	public static int Popup = 0;
 	public static int Database = 0;
+	public static int Shader = 0;
+	public static int Filesystem = 0;
+	public static int Movie = 0;
+	public static int Init = 0;
+	public static int Job = 0;
+	public static int AssetBundle = 0;
+	public static int Menu = 0;
+	public static int Game = 0;
+	public static int Base = 0;
+	public static int Coroutine = 0;
+	public static int Layout = 0;
 
 	public static void LogError(int priority, string str)
 	{
-		if(priority < RuntimeSettings.CurrentSettings.MinLog)
+		if(priority < RuntimeSettings.CurrentSettings.MinLogError)
 		{
 			UnityEngine.Debug.LogError(str);
 		}
 	}
+
+	public static void LogWarning(int priority, string str)
+	{
+		if (priority < RuntimeSettings.CurrentSettings.MinLogWarning)
+		{
+			UnityEngine.Debug.LogWarning(str);
+		}
+	}
+
+	public static void Log(int priority, string str)
+	{
+		if (priority < RuntimeSettings.CurrentSettings.MinLog)
+		{
+			UnityEngine.Debug.Log(str);
+		}
+	}
+
 	public static PopupWindowControl LogNotImplemented(string str, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callbackEnd = null)
 	{
 		TextPopupSetting s = new TextPopupSetting();

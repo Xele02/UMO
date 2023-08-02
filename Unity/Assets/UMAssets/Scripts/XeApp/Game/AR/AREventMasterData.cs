@@ -147,7 +147,7 @@ namespace XeApp.Game.AR
 						return m_chengeBg[i];
 				}
 			}
-			UnityEngine.Debug.LogWarning("No BG found return the last one");
+			TodoLogger.LogWarning(TodoLogger.Menu, "No BG found return the last one");
 			// HACK for game post close
 			return m_chengeBg[m_chengeBg.Count-1];
 		}

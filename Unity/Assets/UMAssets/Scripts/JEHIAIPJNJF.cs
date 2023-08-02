@@ -522,7 +522,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 			}
 			if(File.Exists(info.ADHHKEMDOIK_LocalPath))
 			{
-				UnityEngine.Debug.Log("Delete File "+info.ADHHKEMDOIK_LocalPath);
+				TodoLogger.Log(TodoLogger.Filesystem, "Delete File "+info.ADHHKEMDOIK_LocalPath);
 				File.Delete(info.ADHHKEMDOIK_LocalPath);
 			}
 			installer.Copy(info.NFCMNIEHJML_ServerPath, info.ADHHKEMDOIK_LocalPath);

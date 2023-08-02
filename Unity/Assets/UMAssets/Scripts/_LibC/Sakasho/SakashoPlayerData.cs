@@ -221,8 +221,6 @@ namespace ExternLib
 
         public static int SakashoPlayerDataLoadPlayerData(int callbackId, string json)
         {
-            UnityEngine.Debug.Log("SakashoPlayerDataLoadPlayerData "+json);
-            
             EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
             EDOHBJAPLPF_JsonData names = jsonData["names"];
 
@@ -235,7 +233,7 @@ namespace ExternLib
 					string str = (string)names[i];
 					if (!jsonRes.BBAJPINMOEP_Contains(str))
 					{
-						UnityEngine.Debug.LogError("Server data missing block "+str);
+						TodoLogger.LogError(0, "Server data missing block "+str);
 						missingBlock.Add(str);
 					}
 				}
@@ -308,7 +306,7 @@ namespace ExternLib
 			}
 			else
 			{
-				UnityEngine.Debug.LogError("Error in save file check "+ fileName);
+				TodoLogger.LogError(0, "Error in save file check "+ fileName);
 				if (replaceIfDiff != null)
 				{
 					List<string> block = blocks.Keys.ToList();

@@ -39,7 +39,7 @@ namespace XeApp.Core
 			LoadedAssetBundle loadedBundle = null;
 			if(m_LoadedAssetBundles.TryGetValue(assetBundleName, out loadedBundle))
 			{
-				UnityEngine.Debug.Log("LoadAssetBundle using already loaded AB "+assetBundleName);
+				TodoLogger.Log(TodoLogger.AssetBundle, "LoadAssetBundle using already loaded AB " + assetBundleName);
 				loadedBundle.m_ReferencedCount++;
 				return true;
 			}
@@ -50,7 +50,7 @@ namespace XeApp.Core
 				if(m_lodingAssetBundle.TryGetValue(assetBundleName, out loadingCount))
 				{
 					m_lodingAssetBundle[assetBundleName] = ++loadingCount;
-					UnityEngine.Debug.Log("LoadAssetBundle using currently loading AB "+assetBundleName+" count is "+m_lodingAssetBundle[assetBundleName]);
+					TodoLogger.Log(TodoLogger.AssetBundle, "LoadAssetBundle using currently loading AB " + assetBundleName+" count is "+m_lodingAssetBundle[assetBundleName]);
 					return true;
 				}
 				else
@@ -65,11 +65,11 @@ namespace XeApp.Core
 				{
 					path = Path.Combine(BaseAssetBundleInstallPath, assetBundleName);
 				}
-				UnityEngine.Debug.Log("LoadAssetBundle "+assetBundleName);
+				TodoLogger.Log(TodoLogger.AssetBundle, "LoadAssetBundle " + assetBundleName);
 				FileLoader.Instance.Request(path, assetBundleName, 
 					(FileResultObject fo) => {
 						//0x1D6AC7C
-						UnityEngine.Debug.Log("LoadAssetBundle loaded "+assetBundleName);
+						TodoLogger.Log(TodoLogger.AssetBundle, "LoadAssetBundle loaded " + assetBundleName);
 						fo.dispose = true;
 						AssetBundle bundle = fo.assetBundle;
 						if(bundle != null)
@@ -83,7 +83,7 @@ namespace XeApp.Core
 								{
 									res.m_ReferencedCount += loadingCount;
 								}
-								UnityEngine.Debug.Log("LoadAssetBundle shader done "+assetBundleName+" count is "+m_LoadedAssetBundles[assetBundleName].m_ReferencedCount);
+								TodoLogger.Log(TodoLogger.AssetBundle, "LoadAssetBundle shader done " + assetBundleName+" count is "+m_LoadedAssetBundles[assetBundleName].m_ReferencedCount);
 								m_lodingAssetBundle.Remove(assetBundleName);
 
 #if UNITY_EDITOR || UNITY_STANDALONE
@@ -99,7 +99,7 @@ namespace XeApp.Core
 					}, 
 					(FileResultObject fo) => {
 						//0x1D6AEDC
-						UnityEngine.Debug.LogError("Load Assetbundle Failed:"+assetBundleName);
+						TodoLogger.LogError(TodoLogger.AssetBundle, "Load Assetbundle Failed:"+assetBundleName);
 						m_lodingErrors[assetBundleName] = "Load Assetbundle Failed:"+assetBundleName;
 						m_lodingAssetBundle.Remove(assetBundleName);
 						fo.dispose = true;
@@ -108,7 +108,7 @@ namespace XeApp.Core
 
 				FileLoader.Instance.Load();
 				m_lodingAssetBundle.Add(assetBundleName, 0);
-				UnityEngine.Debug.Log("LoadAssetBundle added in m_lodingAssetBundle "+assetBundleName);
+				TodoLogger.Log(TodoLogger.AssetBundle, "LoadAssetBundle added in m_lodingAssetBundle " + assetBundleName);
 				return false;
 			}
 		}
@@ -234,13 +234,13 @@ namespace XeApp.Core
 		// // RVA: 0xE1326C Offset: 0xE1326C VA: 0xE1326C
 		protected static void UnloadAssetBundleInternal(string assetBundleName, bool unloadAllLoadedObject = false)
 		{
-			UnityEngine.Debug.Log("Request bundle unload "+assetBundleName);
+			TodoLogger.Log(TodoLogger.AssetBundle, "Request bundle unload " + assetBundleName);
 			string error;
 			LoadedAssetBundle info = GetLoadedAssetBundle(assetBundleName, out error);
 			if(info != null)
 			{
 				info.m_ReferencedCount -= 1;
-				UnityEngine.Debug.Log("Refcount is "+info.m_ReferencedCount);
+				TodoLogger.Log(TodoLogger.AssetBundle, "Refcount is " + info.m_ReferencedCount);
 				if(info.m_ReferencedCount == 0)
 				{
 					info.m_AssetBundle.Unload(unloadAllLoadedObject);

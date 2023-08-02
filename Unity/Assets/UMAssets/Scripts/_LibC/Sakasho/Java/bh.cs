@@ -29,7 +29,6 @@ namespace ExternLib.Java_Sakasho
         {
             if (a(var1))
             {
-                UnityEngine.Debug.LogError("");
                 // SakashoSystem.i();
                 // db.c(new bh.__1(this));
             }

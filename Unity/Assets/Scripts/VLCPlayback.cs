@@ -87,7 +87,7 @@ public class VLCPlayback : MoviePlayback
     {
         if(VLCManager.Instance.IsInitialized)
         {
-            UnityEngine.Debug.Log("Start preparing VLC player");
+            TodoLogger.Log(TodoLogger.Movie, "Start preparing VLC player");
             if (_mediaPlayer == null)
             {
                 _mediaPlayer = new MediaPlayer(VLCManager.Instance.VLC);
@@ -133,7 +133,7 @@ public class VLCPlayback : MoviePlayback
                     }
                     yield return null;
                 }
-                UnityEngine.Debug.Log("Video size : "+width+" "+height);
+                TodoLogger.Log(TodoLogger.Movie, "Video size : " + width+" "+height);
                 
                 _mediaPlayer.Stop();
                 while(_mediaPlayer.Media.State != VLCState.Stopped)
@@ -168,7 +168,7 @@ public class VLCPlayback : MoviePlayback
             state = _mediaPlayer.Media.State;
             _mediaPlayer.Media.StateChanged += OnStateChanged;
             
-            UnityEngine.Debug.Log("VLC player ready");
+            TodoLogger.Log(TodoLogger.Movie, "VLC player ready");
             isReady = true;
         }
         else
@@ -224,7 +224,7 @@ public class VLCPlayback : MoviePlayback
             Debug.Log ("[VLC] Start Player !");
 
             if(!_mediaPlayer.Play())
-                UnityEngine.Debug.Log("Play error");
+                TodoLogger.Log(TodoLogger.Movie, "Play error");
             _mediaPlayer.SetRate(1);
         }
         else
@@ -304,7 +304,7 @@ public class VLCPlayback : MoviePlayback
             //var texptr = _mediaPlayer.GetTexture(i_videoWidth, i_videoHeight, out bool updated);
             if (i_videoWidth != 0 && i_videoHeight != 0 && CurrentMappedViewAccessor != null/* && updated && texptr != IntPtr.Zero*/)
             {
-                Debug.Log("Creating texture with height " + i_videoHeight + " and width " + i_videoWidth);
+                TodoLogger.Log(TodoLogger.Movie, "Creating texture with height " + i_videoHeight + " and width " + i_videoWidth);
                 tex = new Texture2D((int)width/*i_videoWidth*/,
                     (int)/*i_videoHeight*/height,
                     TextureFormat.RGBA32,

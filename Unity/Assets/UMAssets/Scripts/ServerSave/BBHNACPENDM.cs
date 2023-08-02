@@ -506,7 +506,7 @@ public class BBHNACPENDM_ServerSaveData
 				data.FJMOAAPNCJI_SaveId = save_id;
 				if(data.IIEMACPEEBJ_Deserialize(AAEDAEHIONI) == false)
 				{
-					UnityEngine.Debug.LogError("Failed to deserialize "+OPFGFINHFCE_Name+" wih data "+AAEDAEHIONI[OPFGFINHFCE_Name].EJCOJCGIBNG_ToJson());
+					TodoLogger.LogError(TodoLogger.SaveLoad, "Failed to deserialize "+OPFGFINHFCE_Name+" wih data "+AAEDAEHIONI[OPFGFINHFCE_Name].EJCOJCGIBNG_ToJson());
 					return false;
 				}
 				data.LLBJFFFJEPJ_Deseralized = true;

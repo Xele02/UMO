@@ -42,7 +42,7 @@ namespace ExternLib
             {
                 if(playersList[player].acbStream != null)
                 {
-                    UnityEngine.Debug.Log("Stop sound "+playersList[player].cueName+" "+playersList[player].cueId);
+                    TodoLogger.Log(TodoLogger.CriAtomExPlayer, "Stop sound "+playersList[player].cueName+" "+playersList[player].cueId);
 #if !UNITY_ANDROID
 					playersList[player].config.source.unityAudioSource.Stop();
                     playersList[player].config.source.unityAudioSource.clip = null;
@@ -235,13 +235,13 @@ namespace ExternLib
 			bool debug = false;
 			if (debug)
 			{
-				UnityEngine.Debug.Log("A " + reallength);
-				UnityEngine.Debug.Log("A " + cueName);
-				UnityEngine.Debug.Log("A " + cueId);
-				UnityEngine.Debug.Log("A " + length);
-				UnityEngine.Debug.Log("A " + audioStream.HcaInfo.ChannelCount);
-				UnityEngine.Debug.Log("A " + audioStream.HcaInfo.SamplingRate);
-				UnityEngine.Debug.Log("A " + isStreaming);
+				TodoLogger.Log(TodoLogger.CriAtomExPlayer, "A " + reallength);
+				TodoLogger.Log(TodoLogger.CriAtomExPlayer, "A " + cueName);
+				TodoLogger.Log(TodoLogger.CriAtomExPlayer, "A " + cueId);
+				TodoLogger.Log(TodoLogger.CriAtomExPlayer, "A " + length);
+				TodoLogger.Log(TodoLogger.CriAtomExPlayer, "A " + audioStream.HcaInfo.ChannelCount);
+				TodoLogger.Log(TodoLogger.CriAtomExPlayer, "A " + audioStream.HcaInfo.SamplingRate);
+				TodoLogger.Log(TodoLogger.CriAtomExPlayer, "A " + isStreaming);
 			}
 
 			byte[] readData = null;
@@ -250,7 +250,7 @@ namespace ExternLib
 			{
 				clip = AudioClip.Create(cueName, length, (int)audioStream.HcaInfo.ChannelCount, (int)audioStream.HcaInfo.SamplingRate, isStreaming, (float[] data) => {
 					if (debug)
-						UnityEngine.Debug.Log("Asked new data (" + data.Length + "), cur pos = " +/*curPos+*/" stream pos = " + audioStream.Position);
+						TodoLogger.Log(TodoLogger.CriAtomExPlayer, "Asked new data (" + data.Length + "), cur pos = " +/*curPos+*/" stream pos = " + audioStream.Position);
 					int numLeft = data.Length * 2;
 					if (readData == null || readData.Length < data.Length * 2)
 					{
@@ -262,7 +262,7 @@ namespace ExternLib
 					{
 						read = audioStream.Read(readData, 0, numLeft);
 						if (debug)
-							UnityEngine.Debug.Log("Read " + read);
+							TodoLogger.Log(TodoLogger.CriAtomExPlayer, "Read " + read);
 						for (int i = 0; i < read; i += 2)
 						{
 							data[offset] = bytesToFloat(readData[i], readData[i + 1]);
@@ -361,7 +361,7 @@ namespace ExternLib
 						break;
 					case CriAtomEx.ResumeMode.PreparedPlayback:
 						canPlay = playersList[player].status == CriAtomExPlayer.Status.Prep;
-						UnityEngine.Debug.LogError("Check");
+						TodoLogger.LogError(TodoLogger.ToCheck, "Resume");
 						break;
 				}
 				if (canPlay)

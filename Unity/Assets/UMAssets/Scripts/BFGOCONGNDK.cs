@@ -143,7 +143,7 @@ public class BFGOCONGNDK
 			}
 			else
 			{
-				UnityEngine.Debug.LogError("File missing : " + fileBg);
+				TodoLogger.LogError(TodoLogger.Filesystem, "File missing : " + fileBg);
 			}
 		}
 		return false;

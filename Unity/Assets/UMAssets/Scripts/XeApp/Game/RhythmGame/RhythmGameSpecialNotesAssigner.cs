@@ -158,7 +158,7 @@ namespace XeApp.Game.RhythmGame
 			numItemsByMode[1] = part + (rest > 0 ? 1 : 0);
 			numItemsByMode[2] = part + (rest > 1 ? 1 : 0);
 			numItemsByMode[3] = part;
-			UnityEngine.Debug.Log("Items to spawn : "+numToSpawn+" "+numItemsByMode[1]+ " "+numItemsByMode[2]+" "+numItemsByMode[3]);
+			TodoLogger.Log(TodoLogger.Game, "Items to spawn : "+numToSpawn+" "+numItemsByMode[1]+ " "+numItemsByMode[2]+" "+numItemsByMode[3]);
 
 			EGLJKICMCPG[] ar = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.BBFNPHGDCOF(specialNoteByDifficulty[(int)Database.Instance.gameSetup.musicInfo.difficultyType]).CDENCMNHNGA.ToArray();
 			int[] li2 = new int[6];

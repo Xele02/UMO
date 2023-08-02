@@ -60,7 +60,7 @@ namespace XeApp.Core
             {
                 errorTxt += m_request.allAssets[i].name+" "+m_request.allAssets[i].GetType().ToString()+" ";
             }
-            UnityEngine.Debug.LogWarning(errorTxt);
+            TodoLogger.LogWarning(TodoLogger.AssetBundle, errorTxt);
             return default(T);
         }
         // /* GenericInstMethod :

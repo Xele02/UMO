@@ -23,7 +23,6 @@ namespace ExternLib
 
         public static int SakashoMasterGetMasters(int callbackId, string json)
         {
-            UnityEngine.Debug.Log("SakashoMasterGetMasters "+json);
             // Hack directly send response
 
             string data1 = DecompressGZipBase64String("H4sIAAV4g1sAA3XTS24CMQwG4LtE3RVB/Igdc5WqC2AoRTAgdVrUquLuHU1ANouu88lxfjsvv+ktLdP8a+if0iztu7SEWTqkZb7O2tFi0y3mz7cznM6MrRQuZG4+F+uVM5pYFQHASvWB7ZzxxBhyxoryUG3fOysTK2pKlhUiO56dycSoZmKtRSPrN8609VaIRYQkso+DszoxzFkVBDGyIVSzxqxiNSz8wEI1yO0NoplQiaJzBP/E1l0CaiNQARSy4v1vI2oDKAwsXKtftwutQ4u/qioVDb3vQvbQwjcY+y4o3tP76tT1524baBsAIiiaFZ/T8SegFn8Zn4dUzHONI4IWPlSoGccBODoF1KInFS7M5Nf1Q1gxzLetgIwG7KWGEDy24EXNBAF9ES/HgFrwlQyZxsTuaP69Wt+/DrbcSWhcL2S4vv4BlAfAEGADAAA=");

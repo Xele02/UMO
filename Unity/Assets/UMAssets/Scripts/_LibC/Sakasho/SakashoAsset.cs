@@ -6,7 +6,6 @@ namespace ExternLib
     {
         public static int SakashoAssetGetAssetList(int callbackId, string json)
         {
-            UnityEngine.Debug.Log("SakashoAssetGetAssetList "+json);
             string message = "{}";
             if(json.Contains("db"))
             {

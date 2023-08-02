@@ -53,7 +53,6 @@ namespace XeApp.Game.Menu
 		protected void Load(string path, IconTextureType iconTextureType, Action<IiconTexture> callBack)
 		{
 			IiconTexture res;
-			UnityEngine.Debug.Log(path);
 			if(m_iconTextureCache.TryGetValue(path, out res))
 			{
 				if(m_capacity > 0)
@@ -117,7 +116,7 @@ namespace XeApp.Game.Menu
 				{
 					if(info.Operation.IsError())
 					{
-						UnityEngine.Debug.LogError("Error loading icon bundle "+info.Path);
+						TodoLogger.LogError(TodoLogger.Filesystem, "Error loading icon bundle "+info.Path);
 						m_loadingAssetBundle.Remove(i);
 						AssetBundleManager.UnloadAssetBundle(info.Path, false);
 					}

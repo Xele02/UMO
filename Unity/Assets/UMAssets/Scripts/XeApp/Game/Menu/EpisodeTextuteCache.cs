@@ -63,7 +63,6 @@ namespace XeApp.Game.Menu
 			m_strBuilder.Clear();
 			if(colorId < 1)
 			{
-				UnityEngine.Debug.Log(divaId+" "+modelId+" "+colorId);
 				m_strBuilder.SetFormat(DivaBustupTexturePath, divaId, modelId);
 				if(!KEHOJEJMGLJ.HHCJCDFCLOB.IDJBKGBMDAJ.PPCCFNAPHCH_FileExists(m_strBuilder.ToString()))
 				{

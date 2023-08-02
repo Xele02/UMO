@@ -679,12 +679,12 @@ public class OKGLGHCBCJP_Database
 			}
 			if(valid)
 			{
-				UnityEngine.Debug.Log("Database will load : "+IJBLEJOKEFH_SectionNames[i]);
+				TodoLogger.Log(TodoLogger.Database, "Database will load : " + IJBLEJOKEFH_SectionNames[i]);
 				res.Add((BEOKNKGHFFE_Section)i);
 			}
 			else
 			{
-				UnityEngine.Debug.Log("Wont load "+IJBLEJOKEFH_SectionNames[i]);
+				TodoLogger.Log(TodoLogger.Database, "Wont load " + IJBLEJOKEFH_SectionNames[i]);
 			}
 		}
 		return res;
@@ -920,7 +920,7 @@ public class OKGLGHCBCJP_Database
 				{
 					if(!data.ContainsKey(LIGPJAIDNOA.MHDFCBBFMOA[item.LMHMIIKCGPE]))
 					{
-						Debug.LogError(LIGPJAIDNOA.MHDFCBBFMOA[item.LMHMIIKCGPE]+"schema not found");
+						TodoLogger.LogError(TodoLogger.Database, LIGPJAIDNOA.MHDFCBBFMOA[item.LMHMIIKCGPE]+"schema not found");
 						return false;
 					}
 					

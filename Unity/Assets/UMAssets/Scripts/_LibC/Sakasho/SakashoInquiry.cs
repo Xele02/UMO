@@ -6,7 +6,6 @@ namespace ExternLib
     {
         public static int SakashoInquiryGetInquiryResponsesNumber(int callbackId, string json)
         {
-            UnityEngine.Debug.Log("SakashoInquiryGetInquiryResponsesNumber "+json);
 			// Hack directly send response
 
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();

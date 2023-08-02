@@ -114,6 +114,8 @@ class RuntimeSettings : ScriptableObject
 
 	[Header("Debug")]
 
+	public int MinLogError = -9999;
+	public int MinLogWarning = -9999;
 	public int MinLog = -9999;
 	public bool EnableProfileSaveCheck = false;
 }

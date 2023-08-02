@@ -122,7 +122,7 @@ public class FECDBKKBAHO
 				}
 				else
 				{
-					UnityEngine.Debug.LogError("Wrong signature for "+JHJMNLMNPGO_PersistentDirSys);
+					TodoLogger.LogError(TodoLogger.Filesystem, "Wrong signature for "+JHJMNLMNPGO_PersistentDirSys);
 				}
 			}
 		}
@@ -237,7 +237,7 @@ public class FECDBKKBAHO
 				if(OOLIMFMEJGP_CleanRegex.Match(fName).Success)
 				{
 					//File.Delete(files[i]);
-					Debug.Log("delete " + files[i]);
+					TodoLogger.Log(TodoLogger.Filesystem, "delete " + files[i]);
 				}
 			}
 			string[] dirs = Directory.GetDirectories(CJJJPKJHOGM);
@@ -267,7 +267,7 @@ public class FECDBKKBAHO
 						if(finfo.FNALNKKMKDC_ExpireTime <= JHNMKKNEENE_Time)
 						{
 							//File.Delete(files[i]);
-							UnityEngine.Debug.Log("delete " + files[i]);
+							TodoLogger.Log(TodoLogger.Database, "delete " + files[i]);
 							//finfo.GOAEFAAIOEK_Deleted = true;
 						}
 					}

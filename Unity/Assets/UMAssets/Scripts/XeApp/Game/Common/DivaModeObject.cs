@@ -55,7 +55,7 @@ namespace XeApp.Game.Common
 			{
 				if(time >= preEndCallbackMicroSec && playedMicroSec < preEndCallbackMicroSec)
 				{
-					UnityEngine.Debug.LogError("endmovie "+time+" "+preEndCallbackMicroSec+" "+playedMicroSec);
+					TodoLogger.LogError(TodoLogger.Movie, "endmovie "+time+" "+preEndCallbackMicroSec+" "+playedMicroSec);
 					onPreEndMovieCallback();
 				}
 			}

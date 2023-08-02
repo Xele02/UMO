@@ -75,10 +75,10 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 		{
 			if(LGADCGFMLLD == 1)
 			{
-				UnityEngine.Debug.Log("Bundle wait for load in memory");
+				TodoLogger.Log(TodoLogger.Filesystem, "Bundle wait for load in memory");
 				if(NMNCMNNPNCI.isDone)
 				{
-					UnityEngine.Debug.Log("Bundle loaded in memory");
+					TodoLogger.Log(TodoLogger.Filesystem, "Bundle loaded in memory");
 					IMGIFJHHEED_fro.assetBundle = NMNCMNNPNCI.assetBundle;
 					NMNCMNNPNCI = null;
 				}
@@ -102,7 +102,7 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 						Debug.LogError("decrypt failed");
 					}
 				}
-				UnityEngine.Debug.Log("Bundle decrypted, start load in memory");
+				TodoLogger.Log(TodoLogger.Filesystem, "Bundle decrypted, start load in memory");
 				//#region UMO
 				// Convert android bundle to Window / Linux bundle
 				//#if UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN || UNITY_STANDALONE_LINUX || UNITY_EDITOR_LINUX

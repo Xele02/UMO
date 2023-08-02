@@ -147,7 +147,6 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4F89C Offset: 0xB4F89C VA: 0xB4F89C
 		private IEnumerator Co_LoadCommonLayout()
 		{
-			//UnityEngine.Debug.Log("Enter Co_LoadCommonLayout");
 			StringBuilder bundleName; // 0x14
 			AssetBundleLoadLayoutOperationBase lytAssetOp; // 0x18
 
@@ -162,7 +161,6 @@ namespace XeApp.Game.Menu
 				commonLayoutController = instance.GetComponent<ResultCommonLayoutController>();
 			}));
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
-			//UnityEngine.Debug.Log("Exit Co_LoadCommonLayout");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x722834 Offset: 0x722834 VA: 0x722834
@@ -339,12 +337,10 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB500EC Offset: 0xB500EC VA: 0xB500EC
 		private IEnumerator Co_LoadLayout()
 		{
-			//UnityEngine.Debug.Log("Enter Co_LoadLayout");
 			//0xB5D5E0
 			yield return this.StartCoroutineWatched(Co_LoadCommonLayout());
 			yield return this.StartCoroutineWatched(Co_PopupAchieveRewardLayout());
 			yield return this.StartCoroutineWatched(Co_LoadScoreLayout());
-			//UnityEngine.Debug.Log("Exit Co_LoadLayout");
 		}
 
 		// RVA: 0xB50198 Offset: 0xB50198 VA: 0xB50198 Slot: 19

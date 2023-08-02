@@ -313,7 +313,7 @@ namespace XeSys.Gfx
 		public void CopyTo(ViewFrameAnimation anim)
 		{
 			if(data == null)
-				UnityEngine.Debug.LogError("Copying empty data animation");
+				TodoLogger.LogError(TodoLogger.Layout, "Copying empty data animation");
 			anim.data = data;
 			anim.m_timeScale = m_timeScale;
 			anim.m_BaseX = m_BaseX;

@@ -6,7 +6,6 @@ namespace ExternLib
 	{
 		public static int SakashoSupportSiteGetInquiryURL(int callbackId, string json)
 		{
-			UnityEngine.Debug.Log("SakashoSupportSiteGetInquiryURL " + json);
 			TodoLogger.LogError(0, "SakashoSupportSiteGetInquiryURL");
 
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();

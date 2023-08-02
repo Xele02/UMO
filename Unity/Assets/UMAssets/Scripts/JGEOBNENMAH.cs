@@ -643,7 +643,7 @@ public class JGEOBNENMAH
 		IMMAOANGPNK.HHCJCDFCLOB.PFAKPFKJJKA();
 		if(IMMAOANGPNK.HHCJCDFCLOB.ENEBEGGOHFP != 0)
 		{
-			UnityEngine.Debug.LogError("Exit Error IILJJMAEPCI_GameClear");
+			TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error IILJJMAEPCI_GameClear");
 			yield return N.a.StartCoroutineWatched(EHNDCODOBBL_Coroutine_Falsification(null, MOBEEPPKFLG_CbError));
 			yield break;
 		}
@@ -652,19 +652,18 @@ public class JGEOBNENMAH
 			FENCAJJBLBH check = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PFAKPFKJJKA(true);
 			if (check != null)
 			{
-				UnityEngine.Debug.LogError("Exit Error IILJJMAEPCI_GameClear");
+				TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error IILJJMAEPCI_GameClear");
 				yield return N.a.StartCoroutineWatched(EHNDCODOBBL_Coroutine_Falsification(check, MOBEEPPKFLG_CbError));
 				yield break;
 			}
 			else if (OMNOFMEBLAD.NMNHBJIAPGG_CheckFalsification != null)
 			{
-				UnityEngine.Debug.LogError("Exit Error IILJJMAEPCI_GameClear");
+				TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error IILJJMAEPCI_GameClear");
 				yield return N.a.StartCoroutineWatched(EHNDCODOBBL_Coroutine_Falsification(OMNOFMEBLAD.NMNHBJIAPGG_CheckFalsification, MOBEEPPKFLG_CbError));
 				yield break;
 			}
 			else if (OMNOFMEBLAD.OBOPMHBPCFE_MvMode)
 			{
-				//UnityEngine.Debug.LogError("Exit IILJJMAEPCI_GameClear");
 				yield return N.a.StartCoroutineWatched(PJEBPAKPANP_Coroutine_SimulationEnd(OMNOFMEBLAD, BHFHGFKBOHH_CbSuccess, MOBEEPPKFLG_CbError));
 				yield break;
 			}
@@ -896,7 +895,6 @@ public class JGEOBNENMAH
 						JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
 						if (BHFHGFKBOHH_CbSuccess != null)
 							BHFHGFKBOHH_CbSuccess();
-						//UnityEngine.Debug.LogError("Exit IILJJMAEPCI_GameClear");
 						yield break;
 					}
 					else
@@ -997,7 +995,7 @@ public class JGEOBNENMAH
 								JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
 								LFDFPBEAAFA = null;
 								MOBEEPPKFLG_CbError();
-								UnityEngine.Debug.LogError("Exit Error IILJJMAEPCI_GameClear");
+								TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error IILJJMAEPCI_GameClear");
 								yield break;
 							}
 							else
@@ -1031,7 +1029,6 @@ public class JGEOBNENMAH
 										JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
 										if (BHFHGFKBOHH_CbSuccess != null)
 											BHFHGFKBOHH_CbSuccess();
-										//UnityEngine.Debug.LogError("Exit IILJJMAEPCI_GameClear");
 										yield break;
 									}
 								}
@@ -1044,7 +1041,6 @@ public class JGEOBNENMAH
 									JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
 									if (BHFHGFKBOHH_CbSuccess != null)
 										BHFHGFKBOHH_CbSuccess();
-									//UnityEngine.Debug.LogError("Exit IILJJMAEPCI_GameClear");
 									yield break;
 								}
 							}
@@ -1058,7 +1054,7 @@ public class JGEOBNENMAH
 		JDDGPJDKHNE.HHCJCDFCLOB.FECGDGCNGGN();
 		JDDGPJDKHNE.HHCJCDFCLOB.FOKEGEOKGDG();
 		JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
-		UnityEngine.Debug.LogError("Exit Error IILJJMAEPCI_GameClear");
+		TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error IILJJMAEPCI_GameClear");
 		MOBEEPPKFLG_CbError();
 	}
 
@@ -1102,7 +1098,6 @@ public class JGEOBNENMAH
 			yield return null;
 		if(!CNAIDEAFAAM)
 		{
-			//Debug.LogError("Exit PJEBPAKPANP_Coroutine_SimulationEnd");
 			BHFHGFKBOHH_CbSuccess();
 		}
 		else
@@ -1110,7 +1105,7 @@ public class JGEOBNENMAH
 			CIOECGOMILE.HHCJCDFCLOB.JHOKIPPIHII = false;
 			JDDGPJDKHNE.HHCJCDFCLOB.FOKEGEOKGDG();
 			JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
-			Debug.LogError("Exit Error PJEBPAKPANP_Coroutine_SimulationEnd");
+			TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error PJEBPAKPANP_Coroutine_SimulationEnd");
 			MOBEEPPKFLG_CbError();
 		}
 	}
@@ -1847,9 +1842,7 @@ public class JGEOBNENMAH
 	// // RVA: 0xB0A4B4 Offset: 0xB0A4B4 VA: 0xB0A4B4
 	private IEnumerator ODBDMBAFOIN_Coroutine_Recover(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG)
 	{
-		//UnityEngine.Debug.Log("Enter ODBDMBAFOIN_Coroutine_Recover");
 		TodoLogger.LogError(0, "TODO");
-		//UnityEngine.Debug.Log("Exit ODBDMBAFOIN_Coroutine_Recover");
 		yield break;
 	}
 

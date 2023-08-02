@@ -283,7 +283,7 @@ namespace ExternLib
 				}
 				if(r == null)
 				{
-					UnityEngine.Debug.LogError("SakashoPaymentGetRemainingForCurrencyIds, missing id "+val);
+					TodoLogger.LogError(0, "SakashoPaymentGetRemainingForCurrencyIds, missing id "+val);
 					r = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(@"{
 					""description"": ""No desc"",
 					""free"": 0,
@@ -397,7 +397,7 @@ namespace ExternLib
 				}
 				if(r == null)
 				{
-					UnityEngine.Debug.LogError("SakashoPaymentGetVirtualCurrencyBalancesWithExpiredAt, missing id " + val);
+					TodoLogger.LogError(0, "SakashoPaymentGetVirtualCurrencyBalancesWithExpiredAt, missing id " + val);
 					r = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(@"{
 					""description"": ""No desc"",
 					""free"": [],

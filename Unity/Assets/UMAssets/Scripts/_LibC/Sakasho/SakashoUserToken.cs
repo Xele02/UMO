@@ -45,7 +45,7 @@ namespace ExternLib
 
 			path += "/" + fileName;
 			File.WriteAllText(path, saveData);
-			UnityEngine.Debug.Log("saved server data " + path);
+			TodoLogger.Log(TodoLogger.SakashoSystem, "saved server data " + path);
 		}
 
 		public static void SaveAccountServerData()
@@ -64,7 +64,7 @@ namespace ExternLib
 
 			if (File.Exists(path))
 			{
-				UnityEngine.Debug.Log("load server data " + path + "for" + playerId);
+				TodoLogger.Log(TodoLogger.SakashoSystem, "load server data " + path + "for" + playerId);
 				string saveData = File.ReadAllText(path);
 				playerAccount.players[playerId].serverData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(saveData);
 			}
@@ -99,7 +99,7 @@ namespace ExternLib
 
 			if(p.serverData == null)
 			{
-				UnityEngine.Debug.Log("Create new server data for " + accountId);
+				TodoLogger.Log(TodoLogger.SakashoSystem, "Create new server data for " + accountId);
 				EDOHBJAPLPF_JsonData jsonRes = new EDOHBJAPLPF_JsonData();
 
 				BBHNACPENDM_ServerSaveData newData = new BBHNACPENDM_ServerSaveData();
@@ -193,7 +193,7 @@ namespace ExternLib
 
 		public static int SakashoUserTokenCreatePlayer(int callbackId, string json)
 		{
-			UnityEngine.Debug.Log("SakashoUserTokenCreatePlayer " + json);
+			TodoLogger.Log(TodoLogger.SakashoSystem, "SakashoUserTokenCreatePlayer " + json);
 
 			EDOHBJAPLPF_JsonData inData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
 			int accountType = (int)inData["accountType"];
@@ -204,7 +204,7 @@ namespace ExternLib
 			res["is_created"] = 1;
 			res["player_account_status"] = 0;
 			res["player_id"] = playerAccount.userId;
-			UnityEngine.Debug.Log("Created player "+ playerAccount.userId);
+			TodoLogger.Log(TodoLogger.SakashoSystem, "Created player " + playerAccount.userId);
 
 			SendMessage(callbackId, res);
 
@@ -213,7 +213,7 @@ namespace ExternLib
 
 		public static int SakashoUserTokenGetPlayerStatus(int callbackId, string json)
         {
-            UnityEngine.Debug.Log("SakashoUserTokenGetPlayerStatus "+json);
+            TodoLogger.Log(TodoLogger.SakashoSystem, "SakashoUserTokenGetPlayerStatus " + json);
 			//ExternLib.Java_Sakasho.jp.dena.sakasho.api.SakashoAPICallContext context = ExternLib.Java_Sakasho.jp.dena.sakasho.api.SakashoUserToken.getPlayerStatus(null, null);
 
 			int playerId = UMO_PlayerPrefs.GetInt("cpid", 0);
@@ -237,14 +237,14 @@ namespace ExternLib
 				res["is_created"] = 0;
 				res["player_account_status"] = 0;
 				res["player_id"] = 0;
-				UnityEngine.Debug.Log("No user");
+				TodoLogger.Log(TodoLogger.SakashoSystem, "No user");
 			}
 			else
 			{
 				res["is_created"] = 1;
 				res["player_account_status"] = 0;
 				res["player_id"] = playerAccount.userId;
-				UnityEngine.Debug.Log("Using user "+ playerAccount.userId);
+				TodoLogger.Log(TodoLogger.SakashoSystem, "Using user " + playerAccount.userId);
 			}
 			// Hack directly send response
 

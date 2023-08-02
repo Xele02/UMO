@@ -6,8 +6,6 @@ namespace ExternLib
 	{
 		public static int SakashoFCMPushNotificationGetFCMTokens(int callbackId, string json)
 		{
-			UnityEngine.Debug.Log("SakashoFCMPushNotificationGetFCMTokens " + json);
-
 			EDOHBJAPLPF_JsonData message = GetBaseMessage();
 			message["fcm_tokens"] = new EDOHBJAPLPF_JsonData();
 			message["fcm_tokens"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
@@ -22,8 +20,6 @@ namespace ExternLib
 		}
 		public static int SakashoFCMPushNotificationAcceptPushNotification(int callbackId, string json)
 		{
-			UnityEngine.Debug.Log("SakashoFCMPushNotificationAcceptPushNotification " + json);
-
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			SendMessage(callbackId, res);
 
@@ -32,8 +28,6 @@ namespace ExternLib
 
 		public static int SakashoFCMPushNotificationBlockPushNotification(int callbackId, string json)
 		{
-			UnityEngine.Debug.Log("SakashoFCMPushNotificationBlockPushNotification " + json);
-
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			SendMessage(callbackId, res);
 

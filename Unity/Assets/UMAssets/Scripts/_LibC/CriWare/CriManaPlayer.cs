@@ -29,7 +29,7 @@ namespace ExternLib
 
         public static void CRIWARE044D0246_criManaUnityPlayer_SetCuePointCallback(int player_id, Player.CuePointCallbackFromNativeDelegate cbfunc)
         {
-            UnityEngine.Debug.LogError("CRIWARE044D0246_criManaUnityPlayer_SetCuePointCallback");
+            TodoLogger.LogError(0, "CRIWARE044D0246_criManaUnityPlayer_SetCuePointCallback");
         }
 
         public static void CRIWARECB5086D8_criManaUnityPlayer_Prepare(int player_id)
@@ -89,7 +89,7 @@ namespace ExternLib
             {
                 // Need to see what event change prep to ready, instead of directly going on next call
                 player.status = Player.Status.Ready;
-                UnityEngine.Debug.Log("CriMana, player is ready");
+                TodoLogger.Log(TodoLogger.CriManaPlugin, "CriMana, player is ready");
             }
             else if(player.status == Player.Status.Playing)
             {
@@ -136,7 +136,7 @@ namespace ExternLib
         }
         public static bool CRIWARE7FE26661_criManaUnityPlayer_EntryFile(int player_id, IntPtr binder, string path, bool repeat)
         {
-            UnityEngine.Debug.LogError("CRIWARE7FE26661_criManaUnityPlayer_EntryFile");
+            TodoLogger.LogError(0, "CRIWARE7FE26661_criManaUnityPlayer_EntryFile");
             return true;
         }
 
@@ -156,13 +156,13 @@ namespace ExternLib
 
         public static bool CRIWARE6C94B6FB(int player_id)
         {
-            UnityEngine.Debug.LogError("CRIWARE6C94B6FB");
+            TodoLogger.LogError(0, "CRIWARE6C94B6FB");
             return true;
         }
 
         public static void CRIWAREC9D98FAA(int player_id)
         {
-            UnityEngine.Debug.LogError("CRIWAREC9D98FAA");
+            TodoLogger.LogError(0, "CRIWAREC9D98FAA");
         }
 
         public static int CRIWARE4B9FFA91_criManaUnityPlayer_Create()
@@ -181,7 +181,7 @@ namespace ExternLib
 
         public static IntPtr CRIWARE453735B6(int player_id)
         {
-            UnityEngine.Debug.LogError("CRIWARE453735B6");
+            TodoLogger.LogError(0, "CRIWARE453735B6");
             return IntPtr.Zero;
         }
 

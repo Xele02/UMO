@@ -142,7 +142,7 @@ public class KKLGENJKEBN
 			};
 			return;
 		}
-		Debug.LogWarning("Ranking not found : " + LJNAKDMILMC);
+		TodoLogger.LogWarning(TodoLogger.SakashoSystem, "Ranking not found : " + LJNAKDMILMC);
 		NEFKBBNKNPP();
 	}
 

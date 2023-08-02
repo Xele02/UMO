@@ -46,7 +46,7 @@ public class ICLNENNIMOP_FreeScoreMax : KLFDBFMNLBL_ServerSaveBlock
 		{
 			double f = BOAGCEOHJEO.CFLDNJANAPI_Truncate(v);
 			if (KNIFCANOHOC != (int)f)
-				UnityEngine.Debug.LogError("Error, debug double / int values : " + v + " " + GHBPLHBNMBK + " " + KNIFCANOHOC + " " + EOLFJGMAJAB + " " + f);
+				TodoLogger.LogError(0, "Error, debug double / int values : " + v + " " + GHBPLHBNMBK + " " + KNIFCANOHOC + " " + EOLFJGMAJAB + " " + f);
 		}
 		// End debug
 		ECKFCIHPHGJ_SetScoreForMusic(GHBPLHBNMBK, KNIFCANOHOC);
