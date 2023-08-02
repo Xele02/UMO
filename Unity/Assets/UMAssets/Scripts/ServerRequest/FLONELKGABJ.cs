@@ -27,11 +27,8 @@ public class FLONELKGABJ_ClaimAchievementPrizes : CACGCMBKHDI_Request
 	public List<int> MEGNAIJPBFF; // 0x80
 	public List<string> MIDAMHNABAJ; // 0x84
 
-	//public override bool OIDCBBGLPHL { get; }
+	public override bool OIDCBBGLPHL { get { return true; } } //0x1197F0C GINMIBJOABO
 	public BGKCFBHGNDI NFEAMMJIMPG { get; private set; } // 0x88 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
-
-	// RVA: 0x1197F0C Offset: 0x1197F0C VA: 0x1197F0C Slot: 7
-	//public override bool GINMIBJOABO() { }
 
 	// RVA: 0x1197F24 Offset: 0x1197F24 VA: 0x1197F24
 	//private bool DEJPNPMHPJD() { }

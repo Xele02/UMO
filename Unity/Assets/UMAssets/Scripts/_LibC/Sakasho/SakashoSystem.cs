@@ -33,7 +33,10 @@ namespace ExternLib
 		}
 		public static void SendMessage(int callbackId, EDOHBJAPLPF_JsonData data)
 		{
-			UnityEngine.GameObject.Find(UnityCallbackObject).SendMessage("NotifyOnSuccess", "" + callbackId + ":" + data.EJCOJCGIBNG_ToJson());
+			if(data.BBAJPINMOEP_Contains("error_code"))
+				UnityEngine.GameObject.Find(UnityCallbackObject).SendMessage("NotifyOnError", "" + callbackId + ":" + data.EJCOJCGIBNG_ToJson());
+			else
+				UnityEngine.GameObject.Find(UnityCallbackObject).SendMessage("NotifyOnSuccess", "" + callbackId + ":" + data.EJCOJCGIBNG_ToJson());
 		}
 
 	}

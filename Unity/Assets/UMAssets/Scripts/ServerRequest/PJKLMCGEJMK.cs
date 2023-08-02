@@ -465,24 +465,37 @@ public class PJKLMCGEJMK
         }
         else
         {
-            UnityEngine.Debug.LogError("NBCKHIAINIM_Coroutine_Execute Error");
+            //UnityEngine.Debug.LogError("NBCKHIAINIM_Coroutine_Execute Error");
             a = ADKIDBJCAJA.MOBEEPPKFLG_OnFail;
             if(a == null)
             {
-    	        UnityEngine.Debug.LogError("Exit  Error NBCKHIAINIM_Coroutine_Execute");
+    	        //UnityEngine.Debug.LogError("Exit  Error NBCKHIAINIM_Coroutine_Execute");
                 yield break;
             }
         }
         a(ADKIDBJCAJA);
-		if(KADMOOOMMJF)
-			UnityEngine.Debug.LogError("Exit Error NBCKHIAINIM_Coroutine_Execute");
 		//UnityEngine.Debug.Log("Exit "+(KADMOOOMMJF?" Error":"")+" NBCKHIAINIM_Coroutine_Execute");
 	}
 
     // // RVA: 0x931E18 Offset: 0x931E18 VA: 0x931E18
     private bool EHLBPCGHLCL(CACGCMBKHDI_Request ADKIDBJCAJA, SakashoErrorId KLCMLLLIANB, bool OHPAOJNLDJO) 
     {
-        TodoLogger.LogError(0, "TODO");
+		if(!ADKIDBJCAJA.BNCFONNOHFO)
+		{
+			if(JGJFFKPFMDB.BDPBNKPKAJJ(KLCMLLLIANB) != GOBDOEHKLHN.KLPAIDGGGCN/*5*/)
+			{
+				if(JGJFFKPFMDB.BDPBNKPKAJJ(KLCMLLLIANB) == GOBDOEHKLHN.FJGMPDJFELN/*4*/)
+				{
+					if(KLCMLLLIANB != SakashoErrorId.INTERNAL_SERVER_ERROR && !ADKIDBJCAJA.OIDCBBGLPHL)
+					{
+						return KLCMLLLIANB == SakashoErrorId.NETWORK_ERROR && !OHPAOJNLDJO;
+					}
+				}
+				else if(KLCMLLLIANB != SakashoErrorId.INTERNAL_SERVER_ERROR)
+					return KLCMLLLIANB == SakashoErrorId.NETWORK_ERROR && !OHPAOJNLDJO;
+			}
+			return true;
+		}
         return false;
     }
 

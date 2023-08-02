@@ -41,7 +41,49 @@ namespace ExternLib
 
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res["rankings"] = new EDOHBJAPLPF_JsonData();
-            res["rankings"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+			res["rankings"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+
+			res["rankings"].Add(new EDOHBJAPLPF_JsonData());
+			res["rankings"][0].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+			res["rankings"][0]["allow_lower_score"] = false;
+			res["rankings"][0]["allow_negative_score"] = false;
+			res["rankings"][0]["allow_tied_rank"] = true;
+			res["rankings"][0]["batch_interval_time"] = 0;
+			res["rankings"][0]["batch_started_at"] = 0;
+			res["rankings"][0]["closed_at"] = 1654558200;
+			res["rankings"][0]["competition_closed_at"] = 1654558140;
+			res["rankings"][0]["default_score"] = 0;
+			res["rankings"][0]["description"] = "\u6b4c\u30ec\u30fc\u30c8\u30e9\u30f3\u30ad\u30f3\u30b0";
+			res["rankings"][0]["id"] = 15934;
+			res["rankings"][0]["is_reverse"] = false;
+			res["rankings"][0]["name"] = "uta_rate_ranking";
+			res["rankings"][0]["name_for_api"] = "uta_rate_ranking";
+			res["rankings"][0]["opened_at"] = 1651825800;
+			res["rankings"][0]["ranking_type"] = 1;
+			res["rankings"][0]["reward_opened_at"] = 1654558140;
+			res["rankings"][0]["score_precision"] = 6;
+			res["rankings"][0]["update_type"] = 0;
+
+			res["rankings"].Add(new EDOHBJAPLPF_JsonData());
+			res["rankings"][1].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+			res["rankings"][1]["allow_lower_score"] = false;
+			res["rankings"][1]["allow_negative_score"] = false;
+			res["rankings"][1]["allow_tied_rank"] = true;
+			res["rankings"][1]["batch_interval_time"] = 0;
+			res["rankings"][1]["batch_started_at"] = 0;
+			res["rankings"][1]["closed_at"] = 1734274740;
+			res["rankings"][1]["competition_closed_at"] = 1732978800;
+			res["rankings"][1]["default_score"] = 0;
+			res["rankings"][1]["description"] = "\u6b4c\u30ec\u30fc\u30c8\u30e9\u30f3\u30ad\u30f3\u30b0";
+			res["rankings"][1]["id"] = 16510;
+			res["rankings"][1]["is_reverse"] = false;
+			res["rankings"][1]["name"] = "uta_rate_ranking2";
+			res["rankings"][1]["name_for_api"] = "uta_rate_ranking2";
+			res["rankings"][1]["opened_at"] = 1575126000;
+			res["rankings"][1]["ranking_type"] = 1;
+			res["rankings"][1]["reward_opened_at"] = 1732978860;
+			res["rankings"][1]["score_precision"] = 6;
+			res["rankings"][1]["update_type"] = 0;
 
 			SendMessage(callbackId, res);
 			return 0;
@@ -57,7 +99,7 @@ namespace ExternLib
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			if (!playerAccount.playerData.rankingsData.ContainsKey(rankingId))
 			{
-				res["error_code"] = (int)SakashoErrorId.RANKING_PLAYER_NOT_FOUND;//"RANKING_PLAYER_NOT_FOUND";
+				res["error_code"] = "RANKING_PLAYER_NOT_FOUND";
 				res["error_detail"] = null;
 			}
 			else
@@ -83,7 +125,9 @@ namespace ExternLib
 			EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
 			int id = (int)data["id"];
 			int score = (int)data["score"];
-			string extra = (string)data["extra"];
+			string extra = null;
+			if(data.BBAJPINMOEP_Contains("extra") && data["extra"] != null)
+				extra = (string)data["extra"];
 
 			if(playerAccount.rankings.ContainsKey(id))
 			{
@@ -120,7 +164,7 @@ namespace ExternLib
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			if (!playerAccount.playerData.rankingsData.ContainsKey(rankingId))
 			{
-				res["error_code"] = (int)SakashoErrorId.RANKING_PLAYER_NOT_FOUND;//"RANKING_PLAYER_NOT_FOUND";
+				res["error_code"] = "RANKING_PLAYER_NOT_FOUND";
 				res["error_detail"] = null;
 			}
 			else
@@ -138,6 +182,64 @@ namespace ExternLib
 			res[AFEHLCGHAEE_Strings.GPPOJHNNINK_current_page] = 1;
 			res[AFEHLCGHAEE_Strings.CJNNMLLEKEF_previous_page] = -1;
 			res[AFEHLCGHAEE_Strings.MDIBIIHAAPN_next_page] = -1;
+
+			SendMessage(callbackId, res);
+			return 0;
+		}
+
+		public static int SakashoRankingGetRankingRecordsByKeys(int callbackId, string json)
+		{
+			CheckDefaultRankingCreated();
+
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res["rankings"] = new EDOHBJAPLPF_JsonData();
+			res["rankings"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+
+			res["rankings"].Add(new EDOHBJAPLPF_JsonData());
+			res["rankings"][0].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+			res["rankings"][0]["allow_lower_score"] = false;
+			res["rankings"][0]["allow_negative_score"] = false;
+			res["rankings"][0]["allow_tied_rank"] = true;
+			res["rankings"][0]["batch_interval_time"] = 0;
+			res["rankings"][0]["batch_started_at"] = 0;
+			res["rankings"][0]["closed_at"] = 1654558200;
+			res["rankings"][0]["competition_closed_at"] = 1654558140;
+			res["rankings"][0]["default_score"] = 0;
+			res["rankings"][0]["description"] = "\u6b4c\u30ec\u30fc\u30c8\u30e9\u30f3\u30ad\u30f3\u30b0";
+			res["rankings"][0]["id"] = 15934;
+			res["rankings"][0]["is_reverse"] = false;
+			res["rankings"][0]["name"] = "uta_rate_ranking";
+			res["rankings"][0]["name_for_api"] = "uta_rate_ranking";
+			res["rankings"][0]["opened_at"] = 1651825800;
+			res["rankings"][0]["ranking_type"] = 1;
+			res["rankings"][0]["reward_opened_at"] = 1654558140;
+			res["rankings"][0]["score_precision"] = 6;
+			res["rankings"][0]["update_type"] = 0;
+			res["rankings"][0]["rewards"] = new EDOHBJAPLPF_JsonData();
+			res["rankings"][0]["rewards"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+
+			res["rankings"].Add(new EDOHBJAPLPF_JsonData());
+			res["rankings"][1].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+			res["rankings"][1]["allow_lower_score"] = false;
+			res["rankings"][1]["allow_negative_score"] = false;
+			res["rankings"][1]["allow_tied_rank"] = true;
+			res["rankings"][1]["batch_interval_time"] = 0;
+			res["rankings"][1]["batch_started_at"] = 0;
+			res["rankings"][1]["closed_at"] = 1734274740;
+			res["rankings"][1]["competition_closed_at"] = 1732978800;
+			res["rankings"][1]["default_score"] = 0;
+			res["rankings"][1]["description"] = "\u6b4c\u30ec\u30fc\u30c8\u30e9\u30f3\u30ad\u30f3\u30b0";
+			res["rankings"][1]["id"] = 16510;
+			res["rankings"][1]["is_reverse"] = false;
+			res["rankings"][1]["name"] = "uta_rate_ranking2";
+			res["rankings"][1]["name_for_api"] = "uta_rate_ranking2";
+			res["rankings"][1]["opened_at"] = 1575126000;
+			res["rankings"][1]["ranking_type"] = 1;
+			res["rankings"][1]["reward_opened_at"] = 1732978860;
+			res["rankings"][1]["score_precision"] = 6;
+			res["rankings"][1]["update_type"] = 0;
+			res["rankings"][1]["rewards"] = new EDOHBJAPLPF_JsonData();
+			res["rankings"][1]["rewards"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
 
 			SendMessage(callbackId, res);
 			return 0;

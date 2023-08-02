@@ -164,7 +164,14 @@ public class SakashoCallback : MonoBehaviour, ISakashoQueueHolder
     }
 
 	// // RVA: 0x2BB8B20 Offset: 0x2BB8B20 VA: 0x2BB8B20
-	// public void NotifyOnError(string message) { }
+	public void NotifyOnError(string message)
+	{
+		workerQueue.Push(() =>
+		{
+			// 0x2BB8DF4
+			SakashoCallbackRegistry.FireOnError(message);
+		});
+	}
 
 	// RVA: 0x2BB8BF4 Offset: 0x2BB8BF4 VA: 0x2BB8BF4 Slot: 4
 	public bool PushToQueue(Action action)

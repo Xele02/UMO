@@ -25,7 +25,7 @@ public class HNFBMAFPDLB_GetRegularRankingRanksAroundTarget : CACGCMBKHDI_Reques
 	public int PJFKNNNDMIA; // 0x88
 	public Nullable<int> MLPEHNBNOGD; // 0x8C
 
-	//public override bool OIDCBBGLPHL { get; } 0x15FAFC8 GINMIBJOABO
+	public override bool OIDCBBGLPHL { get { return true; } } //0x15FAFC8 GINMIBJOABO
 	public PIKEPLLPNNH NFEAMMJIMPG { get; private set; } // 0x94 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
 
 	// RVA: 0x15FAFE0 Offset: 0x15FAFE0 VA: 0x15FAFE0 Slot: 12

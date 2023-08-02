@@ -2,6 +2,8 @@ using System.Threading;
 using System.Collections.Generic;
 using SakashoSystemCallback;
 using System;
+using System.Collections;
+using Sakasho.JSON;
 
 public class SakashoCallbackRegistry
 {
@@ -106,7 +108,21 @@ public class SakashoCallbackRegistry
     }
 
 	// // RVA: 0x3079BA8 Offset: 0x3079BA8 VA: 0x3079BA8
-	// public static void FireOnError(string message) { }
+	public static void FireOnError(string message)
+	{
+		int callId;
+		string json;
+		ParseMessage(message, out callId, out json);
+		Monitor.Enter(lockObject);
+		if(errorHandlers.ContainsKey(callId))
+		{
+			Hashtable h = new Hashtable();
+			h["responseCode"] = 200;
+			h["responseBodyJSON"] = json;
+			errorHandlers[callId].Callback(MiniJSON.jsonEncode(h));
+		}
+		Monitor.Exit(lockObject);
+	}
 
 	// // RVA: 0x3079EF8 Offset: 0x3079EF8 VA: 0x3079EF8
 	public static bool RunOnMainThread(Action action)

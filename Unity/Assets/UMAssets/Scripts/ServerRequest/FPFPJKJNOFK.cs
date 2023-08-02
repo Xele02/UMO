@@ -27,11 +27,8 @@ public class FPFPJKJNOFK_UpdateRankingScore : CACGCMBKHDI_Request
 	public int EMPNJPMAKBF_Id; // 0x7C
 	public double HOCPLDLAIGL_Score; // 0x80
 
-	//public override bool OIDCBBGLPHL { get; }
+	public override bool OIDCBBGLPHL { get { return true; } } //0x13FA240 GINMIBJOABO
 	public PIFKFGCKNPN NFEAMMJIMPG { get; private set; } // 0x88 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
-
-	// RVA: 0x13FA240 Offset: 0x13FA240 VA: 0x13FA240 Slot: 7
-	//public override bool GINMIBJOABO() { }
 
 	// RVA: 0x13FA258 Offset: 0x13FA258 VA: 0x13FA258 Slot: 12
 	public override void DHLDNIEELHO()

@@ -55,18 +55,15 @@ public class OKPEFAPPFDH_GetRanksAroundSelf : CACGCMBKHDI_Request
 	public int PJFKNNNDMIA_To; // 0x88
 
 	public NJNCENEFCEI NFEAMMJIMPG { get; private set; } // 0x8C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
-	//public override bool OIDCBBGLPHL { get; }
+	public override bool OIDCBBGLPHL { get { return true; } } //0x14ACBE4 GINMIBJOABO
 
 	// RVA: 0x14ACB08 Offset: 0x14ACB08 VA: 0x14ACB08
 	public OKPEFAPPFDH_GetRanksAroundSelf(bool KCOEDBOCPIK = false)
 	{
 		if (KCOEDBOCPIK)
 			return;
-		NBFDEFGFLPJ = JGJFFKPFMDB.NBDHKIGADLF;
+		NBFDEFGFLPJ = JGJFFKPFMDB.NBDHKIGADLF_IsRankingError2;
 	}
-
-	// RVA: 0x14ACBE4 Offset: 0x14ACBE4 VA: 0x14ACBE4 Slot: 7
-	//public override bool GINMIBJOABO() { }
 
 	// RVA: 0x14ACBEC Offset: 0x14ACBEC VA: 0x14ACBEC Slot: 12
 	public override void DHLDNIEELHO()

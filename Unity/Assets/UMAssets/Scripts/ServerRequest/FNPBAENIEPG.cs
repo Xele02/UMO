@@ -27,12 +27,9 @@ public class FNPBAENIEPG_PurchaseAndSave : CACGCMBKHDI_Request
 	public string AHEFHIMGIBI; // 0xA0
 	public bool CHDDDCCHJJH = true; // 0xA4
 
-	//public override bool BNCFONNOHFO { get; }
+	public override bool BNCFONNOHFO { get { return !CLBFPFLNGKF; } } //0x13E7E90 NPLNAJFJPEE
 	public override bool ICFMKEFJOIE { get; }
 	public PKNFMLJNKHA NFEAMMJIMPG { get; set; } // 0xA8 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
-
-	//// RVA: 0x13E7E90 Offset: 0x13E7E90 VA: 0x13E7E90 Slot: 9
-	//public override bool NPLNAJFJPEE() { }
 
 	//// RVA: 0x13E7EA4 Offset: 0x13E7EA4 VA: 0x13E7EA4 Slot: 8
 	//public override bool HOPDAAAEBBG() { }

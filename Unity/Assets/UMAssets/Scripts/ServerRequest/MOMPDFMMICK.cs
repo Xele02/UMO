@@ -53,7 +53,7 @@ public class MOMPDFMMICK_ClaimAchievementPrizesAndSave : CACGCMBKHDI_Request
 	public bool ODMNMFNGBGD; // 0x98
 	public List<int> MEGNAIJPBFF; // 0x9C
 
-	//public override bool OIDCBBGLPHL { get; } 0x17B901C GINMIBJOABO  Slot: 7
+	public override bool OIDCBBGLPHL { get { return true; } } //0x17B901C GINMIBJOABO  Slot: 7
 	public JGCHFAKGAGA NFEAMMJIMPG { get; private set; } // 0xA0 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
 
 	//// RVA: 0x17B9024 Offset: 0x17B9024 VA: 0x17B9024
