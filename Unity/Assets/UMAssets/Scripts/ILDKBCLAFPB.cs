@@ -804,7 +804,7 @@ public class ILDKBCLAFPB
 				AADOPBAMLJK_EventType.Clear();
 				for(int i = 0; i < 2; i++)
 				{
-					LGMDOEIPLAK_SongIds.Add(JsonUtil.GetInt(OBHAFLMHAKG, IAMECBIFIKA("freeMusicid_{0:D2}", i), 0));
+					LGMDOEIPLAK_SongIds.Add(JsonUtil.GetInt(OBHAFLMHAKG, IAMECBIFIKA("freeMusicId_{0:D2}", i), 0));
 					AADOPBAMLJK_EventType.Add(JsonUtil.GetInt(OBHAFLMHAKG, IAMECBIFIKA("gameEventType_{0:D2}", i), 0));
 				}
 				PFHPKAGBMOK_PlayDashEventId = JsonUtil.GetInt(OBHAFLMHAKG, "playDashEventId", 0);
@@ -4643,13 +4643,20 @@ public class ILDKBCLAFPB
 			JCHBCPEPFKE_CreateSaveDirectory();
 			JCOILDLEPDP_SaveToPath(DMCLJKABBCJ_GetSavePath(), MIDAHPPDINB.EncryptToBase64(GLANNFOPMDO_Save.EJCOJCGIBNG()));
 			GLANNFOPMDO_Save.ODDIHGPONFL_Copy(CGFIFBHIBCF_SavedCache);
-#if false // save read / write / == check
-			IPHAEFKCNMN.CHDGLBBFEKH_IsEqual(GLANNFOPMDO_Save, CGFIFBHIBCF_SavedCache);
-			IPHAEFKCNMN t = new IPHAEFKCNMN();
-			GLANNFOPMDO_Save.ODDIHGPONFL_Copy(t);
-			PCODDPDFLHK_Load();
-			IPHAEFKCNMN.CHDGLBBFEKH_IsEqual(GLANNFOPMDO_Save, t);
-#endif
+			if (RuntimeSettings.CurrentSettings.EnableLocalSaveCheck)
+			{
+				if(!IPHAEFKCNMN.CHDGLBBFEKH_IsEqual(GLANNFOPMDO_Save, CGFIFBHIBCF_SavedCache))
+				{
+					UnityEngine.Debug.LogError("Local save was not copied correctly");
+				}
+				IPHAEFKCNMN t = new IPHAEFKCNMN();
+				GLANNFOPMDO_Save.ODDIHGPONFL_Copy(t);
+				PCODDPDFLHK_Load();
+				if(!IPHAEFKCNMN.CHDGLBBFEKH_IsEqual(GLANNFOPMDO_Save, t))
+				{
+					UnityEngine.Debug.LogError("Local save was not save correctly");
+				}
+			}
 			return true;
 		}
         return false;

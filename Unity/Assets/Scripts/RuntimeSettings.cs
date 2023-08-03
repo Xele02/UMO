@@ -118,4 +118,5 @@ class RuntimeSettings : ScriptableObject
 	public int MinLogWarning = -9999;
 	public int MinLog = -9999;
 	public bool EnableProfileSaveCheck = false;
+	public bool EnableLocalSaveCheck = false;
 }
