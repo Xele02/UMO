@@ -17,7 +17,7 @@ public class UMOStart : MonoBehaviour
 	}
 
 #if UNITY_EDITOR
-	[MenuItem("UMO/Start Game")]
+	[MenuItem("UMO/Start Game", priority = 1)]
 #endif
 	static void StartGameMenu()
 	{
@@ -33,7 +33,7 @@ public class UMOStart : MonoBehaviour
 	}
 
 #if UNITY_EDITOR
-	[MenuItem("UMO/Start Auto SLive Viewer (Experimental)")]
+	[MenuItem("UMO/Start Auto SLive Viewer (Experimental)", priority = 1)]
 #endif
 	static void StartSLive()
 	{

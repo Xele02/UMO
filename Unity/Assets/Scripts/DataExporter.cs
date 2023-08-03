@@ -12,6 +12,8 @@ using UnityEngine.SceneManagement;
 using UnityEditor;
 #endif
 
+#if false
+
 class DataExporter
 {
 #if UNITY_EDITOR
@@ -206,3 +208,4 @@ class DataExporter
 	}
 #endif
 }
+#endif

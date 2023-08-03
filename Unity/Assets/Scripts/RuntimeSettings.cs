@@ -6,6 +6,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "RuntimeSettings", menuName = "ScriptableObjects/RuntimeSettings", order = 1)]
 class RuntimeSettings : ScriptableObject
 {
+	[MenuItem("UMO/Options", priority=2)]
+	static void ShowOption()
+	{
+		PopUpAssetInspector.Create(CurrentSettings);
+	}
+
 	private static RuntimeSettings m_currentSettings;
 	public static RuntimeSettings CurrentSettings
 	{
@@ -76,11 +82,11 @@ class RuntimeSettings : ScriptableObject
 	public bool ForceTutoSkip = true;
 	//public bool ForceAllStoryMusicUnlock = true;
 	//public int ForcePlayerLevel = 90;
-	public bool IsInvincibleCheat = false;
-	public bool ForcePerfectNote = false;
 	public bool CanSkipUnplayedSongs = false;
 
 	[Header("Live")]
+	public bool IsInvincibleCheat = false;
+	public bool ForcePerfectNote = false;
 	public bool ForceLiveValkyrieMode = false;
 	public bool ForceLiveDivaMode = false;
 	public bool ForceLiveAwakenDivaMode = false;
@@ -119,4 +125,29 @@ class RuntimeSettings : ScriptableObject
 	public int MinLog = -9999;
 	public bool EnableProfileSaveCheck = false;
 	public bool EnableLocalSaveCheck = false;
+}
+
+public class PopUpAssetInspector : EditorWindow
+{
+	private Object asset;
+	private Editor assetEditor;
+
+	public static PopUpAssetInspector Create(Object asset)
+	{
+		var window = GetWindow<PopUpAssetInspector>(typeof(PopUpAssetInspector));
+		window.asset = asset;
+		window.assetEditor = Editor.CreateEditor(asset);
+		return window;
+	}
+
+	private void OnGUI()
+	{
+		GUI.enabled = false;
+		asset = EditorGUILayout.ObjectField("Asset", asset, asset.GetType(), false);
+		GUI.enabled = true;
+
+		EditorGUILayout.BeginVertical(EditorStyles.helpBox);
+		assetEditor.OnInspectorGUI();
+		EditorGUILayout.EndVertical();
+	}
 }

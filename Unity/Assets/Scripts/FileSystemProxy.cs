@@ -174,7 +174,7 @@ static class FileSystemProxy
 	}
 
 #if UNITY_EDITOR
-	[UnityEditor.MenuItem("UMO/TestLoadBundle")]
+	//[UnityEditor.MenuItem("UMO/TestLoadBundle")]
 	static void TestLoadBundle()
 	{
 		if (GameManager.Instance)

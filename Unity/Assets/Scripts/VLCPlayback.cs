@@ -194,7 +194,7 @@ public class VLCPlayback : MoviePlayback
     {
         if(VLCManager.Instance.IsInitialized)
         {
-            Debug.Log ("[VLC] Toggling Play Pause !");
+            TodoLogger.Log (TodoLogger.Movie, "[VLC] Toggling Play Pause !");
             if (_mediaPlayer.IsPlaying)
             {
                 _mediaPlayer.Pause();
@@ -221,7 +221,7 @@ public class VLCPlayback : MoviePlayback
         playing = true;
         if(VLCManager.Instance.IsInitialized)
         {
-            Debug.Log ("[VLC] Start Player !");
+            TodoLogger.Log (TodoLogger.Movie, "[VLC] Start Player !");
 
             if(!_mediaPlayer.Play())
                 TodoLogger.Log(TodoLogger.Movie, "Play error");
@@ -238,7 +238,7 @@ public class VLCPlayback : MoviePlayback
         playing = false;
         if(VLCManager.Instance.IsInitialized)
         {
-            Debug.Log ("[VLC] Stopping Player !");
+            TodoLogger.Log (TodoLogger.Movie, "[VLC] Stopping Player !");
 
             _mediaPlayer?.Stop();
             time = 0;

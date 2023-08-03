@@ -69,7 +69,7 @@ namespace XeApp.Game.Menu
 		public void UpdateContent(AOJGDNFAIJL_PrismData.AMIECPBIALP prismData, GameSetupData.MusicInfo musicInfo)
 		{
 			int maxDiva = Mathf.Max(m_divas.Count + m_additionDivas.Count, 5);
-			int numDiva = Mathf.Clamp(musicInfo.onStageDivaNum, 1, maxDiva);
+			int numDiva = Mathf.Clamp(musicInfo.onStageDivaNum, 1, 5);
 			for(int i = m_divaDatas.Count; i < maxDiva; i++)
 			{
 				m_divaDatas.Add(new FFHPBEPOMAK_DivaInfo());
