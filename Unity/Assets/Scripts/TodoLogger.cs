@@ -46,19 +46,20 @@ public static class TodoLogger
 	public static int Event = _Todo;
 	public static int SaveLoad = _Todo;
 
-	public static int Popup = 0;
-	public static int Database = 0;
-	public static int Shader = 0;
-	public static int Filesystem = 0;
-	public static int Movie = 0;
-	public static int Init = 0;
-	public static int Job = 0;
-	public static int AssetBundle = 0;
-	public static int Menu = 0;
-	public static int Game = 0;
-	public static int Base = 0;
-	public static int Coroutine = 0;
-	public static int Layout = 0;
+	public static int _Debug = 1;
+	public static int Popup = _Debug;
+	public static int Database = _Debug;
+	public static int Shader = _Debug;
+	public static int Filesystem = _Debug;
+	public static int Movie = _Debug;
+	public static int Init = _Debug;
+	public static int Job = _Debug;
+	public static int AssetBundle = _Debug;
+	public static int Menu = _Debug;
+	public static int Game = _Debug;
+	public static int Base = _Debug;
+	public static int Coroutine = _Debug;
+	public static int Layout = _Debug;
 
 	public static void LogError(int priority, string str)
 	{

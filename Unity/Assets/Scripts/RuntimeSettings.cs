@@ -120,11 +120,12 @@ class RuntimeSettings : ScriptableObject
 
 	[Header("Debug")]
 
-	public int MinLogError = -9999;
-	public int MinLogWarning = -9999;
-	public int MinLog = -9999;
+	public int MinLogError = 1;
+	public int MinLogWarning = 1;
+	public int MinLog = 1;
 	public bool EnableProfileSaveCheck = false;
 	public bool EnableLocalSaveCheck = false;
+	public bool EnableDebugStopCoroutine = false;
 }
 
 public class PopUpAssetInspector : EditorWindow
