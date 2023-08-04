@@ -88,10 +88,14 @@ public class CoroutineWatcher : SingletonMonoBehaviour<CoroutineWatcher>
 
 	public void StopAll(MonoBehaviour owner)
 	{
-		coroutines.RemoveAll((Info info_) =>
+		List<Info> infos = coroutines.FindAll((Info info_) =>
 		{
 			return info_.owner == owner;
 		});
+		for(int i = 0; i < infos.Count; i++)
+		{
+			Stop(infos[i]);
+		}
 	}
 	public void Stop(IEnumerator e)
 	{

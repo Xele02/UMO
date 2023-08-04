@@ -303,6 +303,7 @@ namespace XeApp.Game.RhythmGame
 			{
 				XeApp.Game.GameManager.Instance.PopupCanvas.worldCamera.clearFlags = UnityEngine.CameraClearFlags.Nothing;
 			}
+			ExternLib.LibCriWare.checkUncached = false;
 			RestoreSave();
 		}
 
@@ -332,6 +333,7 @@ namespace XeApp.Game.RhythmGame
 			notesMillisec = currentRawMusicMillisec - noteOffsetMillisec;
 			deviceMillisec = IncludeDeviceLatency(currentRawMusicMillisec);
 			deviceSec = deviceMillisec / 1000.0f;
+			UMODebugger.Instance.UpdateSongTime(deviceSec);
 			if(!isResetRequest)
 			{
 				normalModeEndEvent.Update(notesMillisec);
@@ -638,6 +640,7 @@ namespace XeApp.Game.RhythmGame
 					SoundManager.Instance.voDiva.Preload(cat, voice);
 				}
 			}
+			SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_GAME_022);
 			//
 #endif
 		}
@@ -2086,7 +2089,8 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C10DC Offset: 0x9C10DC VA: 0x9C10DC
 		private void StartRhythmGame()
 		{
-			if(XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
+			UMODebugger.Instance.StartSong();
+			if (XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
 			{
 				musicIntroObject.Begin();
 				ValkyrieColorParam col = resource.musicIntroResource.paramColor;
@@ -2586,6 +2590,8 @@ namespace XeApp.Game.RhythmGame
 			int noteResultCount_Excellent;
 			//0xBF3B04
 
+			ExternLib.LibCriWare.checkUncached = false;
+
 			GameManager.FadeOut(0.4f);
 			if(soundCheerOrderer != null)
 			{
@@ -2886,6 +2892,7 @@ namespace XeApp.Game.RhythmGame
 			JudgedNoteResult(noteObject, a_result_ex);
 			JudgedNoteEffect(noteObject, a_result_ex);
 			JudgedNoteSound(noteObject, a_result_ex.m_result);
+			UMODebugger.Instance.AddNoteInfo(noteObject.rNote, a_result_ex.m_result);
 			gamePerformer.EndTouchSave(noteObject.rNote.GetLineNo(), true);
 			status.life.isInvincibleGameEnd = rNoteOwner.CheckAllNotesEnd();
 		}
@@ -3311,6 +3318,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			bgmPlayer.source.player.SetStartTime(startTime);
 			bgmPlayback = bgmPlayer.source.Play();
+			ExternLib.LibCriWare.checkUncached = true; // Wait for bgm to be started
 			gameDivaObject.PlayMusicAnimation(0);
 			for(int i = 0; i < subDivaObject.Length; i++)
 			{

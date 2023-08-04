@@ -333,6 +333,7 @@ namespace XeSys
 					continue;
 				}
 				keyTouchInfo.Update(phase, position);
+				UMODebugger.Instance.AddInputInfo(keyTouchInfo, phase);
 			}
 		}
 

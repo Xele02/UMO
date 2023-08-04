@@ -160,6 +160,8 @@ namespace ExternLib
 			}
 		}
 
+		public static bool checkUncached = false;
+
 		private static void SetupPlayer(PlayerData player)
 		{
 			if (!acbFiles.ContainsKey(player.acbPtr))
@@ -186,7 +188,8 @@ namespace ExternLib
 			AudioClip clip = null;
 			if (!acbFiles[player.acbPtr].cachedAudioClips.TryGetValue(clipName, out clip))
 			{
-				//UnityEngine.Debug.LogError("Loading uncached sound "+ clipName +" " + player.cueName+" "+ player.cueId+" "+player.acbPtr.ToString());
+				if(checkUncached)
+					UnityEngine.Debug.LogError("Loading uncached sound "+ clipName +" " + player.cueName+" "+ player.cueId+" "+player.acbPtr.ToString());
 				clip = GetClip(player.audioStream, player.cueName, player.cueId, isStreaming);
 			}
 			source.clip = clip;

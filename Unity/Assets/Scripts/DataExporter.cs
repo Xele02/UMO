@@ -12,11 +12,11 @@ using UnityEngine.SceneManagement;
 using UnityEditor;
 #endif
 
-#if false
-
 class DataExporter
 {
 #if UNITY_EDITOR
+#if false
+
 	[MenuItem("UMO/Export Song List", validate = true)]
 	static bool ExportSongListAvaiable()
 	{
@@ -156,7 +156,7 @@ class DataExporter
 		writer.Close();
 		Debug.Log("Done");
 	}
-
+#endif
 	[MenuItem("UMO/Copy Song setup for bug report", validate = true)]
 	static bool CopySongSetupAvaiable()
 	{
@@ -183,7 +183,7 @@ class DataExporter
 		txt += "Difficulty : "+Database.Instance.gameSetup.musicInfo.difficultyType+", Line6 : "+Database.Instance.gameSetup.musicInfo.IsLine6Mode;
 		GUIUtility.systemCopyBuffer = txt;
 	}
-
+#if false
 	[MenuItem("Assets/UMO/Convert Texture to PNG", true)]
 	private static bool CheckConvertTexture()
 	{
@@ -207,5 +207,5 @@ class DataExporter
 		}
 	}
 #endif
-}
 #endif
+}

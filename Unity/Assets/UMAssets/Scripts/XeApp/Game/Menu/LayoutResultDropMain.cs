@@ -159,6 +159,7 @@ namespace XeApp.Game.Menu
 		{
 			countUpSEPlayback.Stop();
 			countUpBonusSEPlayback.Stop();
+			this.StopAllCoroutinesWatched();
 			for(int i = 0; i < itemList.Count; i++)
 			{
 				itemList[i].StopAllCoroutinesWatched();
