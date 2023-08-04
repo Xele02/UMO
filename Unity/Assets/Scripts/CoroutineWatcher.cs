@@ -18,20 +18,16 @@ public static class MonoBehaviourExtensions
 		}
 		IEnumerator s = CoroutineWatcher.Instance.Run(coroutine, c_);
 		Coroutine c = CoroutineWatcher.Instance.StartCoroutine(s);
-		CoroutineWatcher.Instance.SetSpawned(coroutine, s, c, owner);
+		CoroutineWatcher.Instance.SetWatcherInfo(coroutine, s, c, owner);
 		return c;
 	}
-	public static void StopCoroutineWatched(this MonoBehaviour owner, IEnumerator coroutine)
+	public static void StopCoroutineWatched(this MonoBehaviour owner, IEnumerator watcherEnumerator)
 	{
-		//CoroutineWatcher.Instance.StopCoroutine(CoroutineWatcher.Instance.Find(coroutine));
-		CoroutineWatcher.Instance.Stop(coroutine);
-		owner.StopCoroutine(coroutine);
+		CoroutineWatcher.Instance.Stop(watcherEnumerator);
 	}
-	public static void StopCoroutineWatched(this MonoBehaviour owner, Coroutine coroutine)
+	public static void StopCoroutineWatched(this MonoBehaviour owner, Coroutine watcherCoroutine)
 	{
-		//owner/*CoroutineWatcher.Instance*/.StopCoroutine(coroutine);
-		CoroutineWatcher.Instance.Stop(coroutine);
-		owner.StopCoroutine(coroutine);
+		CoroutineWatcher.Instance.Stop(watcherCoroutine);
 	}
 	public static void StopAllCoroutinesWatched(this MonoBehaviour owner)
 	{
@@ -57,10 +53,11 @@ public class CoroutineWatcher : SingletonMonoBehaviour<CoroutineWatcher>
 {
     public class Info
     {
-        public Coroutine c;
-		public bool hasCoroutine = false;
-        public IEnumerator e;
-		public IEnumerator spawned;
+        public Coroutine watcherCoroutine;
+		public bool hasWatcherCoroutine = false;
+        public IEnumerator ownerEnumerator;
+		public Coroutine ownerCoroutine;
+		public IEnumerator watcherEnumerator;
 		public MonoBehaviour owner;
 		public System.Diagnostics.StackTrace stackInfo;
 		public int Id;
@@ -76,7 +73,8 @@ public class CoroutineWatcher : SingletonMonoBehaviour<CoroutineWatcher>
         Info i = new Info();
         if(GetStackTrace)
             i.stackInfo = new System.Diagnostics.StackTrace(true);
-        i.e = e;
+        i.ownerEnumerator = e;
+		i.ownerCoroutine = c_;
 		i.Id = cntRun++;
         //UnityEngine.Debug.LogError(""+i.Id+" Begin "+e);
         coroutines.Add(i);
@@ -88,17 +86,6 @@ public class CoroutineWatcher : SingletonMonoBehaviour<CoroutineWatcher>
         coroutines.Remove(i);
     }
 
-	public void Stop(IEnumerator e)
-	{
-		Info i_ = coroutines.Find((Info info_) => 
-		{ 
-			return info_.e == e;
-		});
-		if(i_ != null)
-		{
-			coroutines.Remove(i_);
-		}
-	}
 	public void StopAll(MonoBehaviour owner)
 	{
 		coroutines.RemoveAll((Info info_) =>
@@ -106,42 +93,111 @@ public class CoroutineWatcher : SingletonMonoBehaviour<CoroutineWatcher>
 			return info_.owner == owner;
 		});
 	}
+	public void Stop(IEnumerator e)
+	{
+		Info i_ = coroutines.Find((Info info_) =>
+		{
+			return info_.watcherEnumerator == e;
+		});
+		if(i_ == null)
+		{
+			// Try to search in owner coroutine for some special cases
+			i_ = coroutines.Find((Info info_) =>
+			{
+				return info_.ownerEnumerator == e;
+			});
+		}
+		if (i_ != null)
+		{
+			Stop(i_);
+		}
+		else
+		{
+			if (RuntimeSettings.CurrentSettings.EnableDebugStopCoroutine)
+			{
+				UnityEngine.Debug.LogError("Cound not stop coroutine " + e);
+				DumpCoroutineInfo();
+				UnityEngine.Debug.LogError("=============");
+			}
+		}
+	}
+
 	public void Stop(Coroutine c)
 	{
 		Info i_ = coroutines.Find((Info info_) => 
 		{ 
-			return info_.c == c;
+			return info_.watcherCoroutine == c;
 		});
-		if(i_ != null)
+		if (i_ == null)
 		{
-			coroutines.Remove(i_);
+			// Try to search in owner coroutine for some special cases
+			i_ = coroutines.Find((Info info_) =>
+			{
+				return info_.ownerCoroutine == c;
+			});
+		}
+		if (i_ != null)
+		{
+			Stop(i_);
+		}
+		else
+		{
+			if (RuntimeSettings.CurrentSettings.EnableDebugStopCoroutine)
+			{
+				UnityEngine.Debug.LogError("Cound not stop coroutine " + c);
+				DumpCoroutineInfo();
+				UnityEngine.Debug.LogError("=============");
+			}
 		}
 	}
 
-	public void SetSpawned(IEnumerator e, IEnumerator spawned, Coroutine c, MonoBehaviour owner)
+	public void Stop(Info i_)
+	{
+		if (i_.ownerCoroutine != null)
+			i_.owner.StopCoroutine(i_.ownerCoroutine);
+		else if (i_.ownerEnumerator != null)
+			i_.owner.StopCoroutine(i_.ownerEnumerator);
+		if(i_.hasWatcherCoroutine)
+			StopCoroutine(i_.watcherCoroutine);
+		else
+			StopCoroutine(i_.watcherEnumerator);
+		coroutines.Remove(i_);
+	}
+
+	public void SetWatcherInfo(IEnumerator ownerEnumerator_, IEnumerator watcherEnum, Coroutine watcherCoroutine_, MonoBehaviour owner)
 	{
 		Info info = coroutines.Find((Info _) =>
 		{
-			return _.e == e;
+			return _.ownerEnumerator == ownerEnumerator_;
 		});
 		if(info != null)
 		{
-			info.spawned = spawned;
-			info.c = c;
-			info.hasCoroutine = c != null;
+			info.watcherEnumerator = watcherEnum;
+			info.watcherCoroutine = watcherCoroutine_;
+			info.hasWatcherCoroutine = watcherCoroutine_ != null;
 			info.owner = owner;
 		}
 	}
 
-	public IEnumerator Find(IEnumerator e)
+	public Coroutine Find(IEnumerator e)
 	{
 		Info info = coroutines.Find((Info _) =>
 		{
-			return _.e == e;
+			return _.watcherEnumerator == e;
 		});
 		if (info != null)
-			return info.spawned;
-		return e;
+			return info.ownerCoroutine;
+		return null;
+	}
+	public Coroutine Find(Coroutine c)
+	{
+		Info info = coroutines.Find((Info _) =>
+		{
+			return _.watcherCoroutine == c;
+		});
+		if (info != null)
+			return info.ownerCoroutine;
+		return null;
 	}
 
 	public void Update()
@@ -149,7 +205,7 @@ public class CoroutineWatcher : SingletonMonoBehaviour<CoroutineWatcher>
         List<Info> cs = Instance.coroutines;
 		for (int i = cs.Count - 1; i >= 0; i--)
 		{
-			if((cs[i].hasCoroutine && (cs[i].owner == null || !cs[i].owner.gameObject.activeInHierarchy || cs[i].c == null)))
+			if((cs[i].hasWatcherCoroutine && (cs[i].owner == null || !cs[i].owner.gameObject.activeInHierarchy || cs[i].watcherCoroutine == null)))
 			{
 				//Debug.LogError("Removed info for "+cs[i].Id+" "+cs[i].e+". "+cs[i].owner+" - "+cs[i].hasCoroutine+" - "+cs[i].c);
 				cs.RemoveAt(i);
@@ -173,8 +229,8 @@ public class CoroutineWatcher : SingletonMonoBehaviour<CoroutineWatcher>
 
 	static public object FindTarget(Info info)
 	{
-		object target = info.e.Current;
-		IEnumerator waiting = info.e.Current as IEnumerator;
+		object target = info.ownerEnumerator.Current;
+		IEnumerator waiting = info.ownerEnumerator.Current as IEnumerator;
 		if(waiting != null && waiting.ToString().Contains("Co+<R>") && waiting.Current != null)
 		{
 			waiting = waiting.Current as IEnumerator;
@@ -195,7 +251,7 @@ public class CoroutineWatcher : SingletonMonoBehaviour<CoroutineWatcher>
 			Info i_ = cs.Find((Info info_) => 
 			{ 
 				object target_ = FindTarget(info_);
-				return target_ != null && (target_ == info.e || info.c == target_); 
+				return target_ != null && (target_ == info.ownerEnumerator || info.watcherCoroutine == target_); 
 			});
 			if(i_ != null && !displayed.Contains(i_.Id))
 			{
@@ -207,13 +263,13 @@ public class CoroutineWatcher : SingletonMonoBehaviour<CoroutineWatcher>
 
 		string ownerInfo = "";
 		if(info.owner != null)
-			ownerInfo = " ["+(!info.owner.gameObject.activeInHierarchy ? "[Disabled] ": "")+""+info.owner+" : "+info.c+"]";
-		UnityEngine.Debug.LogError(level+info.Id+" "+info.e+""+ownerInfo+" ===> "+target+"\n"+info.stackInfo);
+			ownerInfo = " ["+(!info.owner.gameObject.activeInHierarchy ? "[Disabled] ": "")+""+info.owner+" : "+info.watcherCoroutine+"]";
+		UnityEngine.Debug.LogError(level+info.Id+" "+info.ownerEnumerator+""+ownerInfo+" ===> "+target+"\n"+info.stackInfo);
 		displayed.Add(info.Id);
 
 		if(target != null)
 		{
-			Info i_ = cs.Find((Info info_) => { return info_.e == target || info_.c == target; });
+			Info i_ = cs.Find((Info info_) => { return info_.ownerEnumerator == target || info_.watcherCoroutine == target; });
 			if(i_ != null)
 			{
 				DumpCoroutineInfo(i_, cs, displayed, level + "   ");
