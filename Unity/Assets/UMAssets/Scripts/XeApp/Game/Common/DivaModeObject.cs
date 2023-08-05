@@ -55,7 +55,7 @@ namespace XeApp.Game.Common
 			{
 				if(time >= preEndCallbackMicroSec && playedMicroSec < preEndCallbackMicroSec)
 				{
-					TodoLogger.LogError(TodoLogger.Movie, "endmovie "+time+" "+preEndCallbackMicroSec+" "+playedMicroSec);
+					//TodoLogger.LogError(TodoLogger.Movie, "endmovie "+time+" "+preEndCallbackMicroSec+" "+playedMicroSec);
 					onPreEndMovieCallback();
 				}
 			}
@@ -165,7 +165,9 @@ namespace XeApp.Game.Common
 			//0x1BF143C
 			yield return new WaitForSeconds(0.5f);
 			while (isPlayingMovie && endMicroSec >= playedMicroSec)
+			{
 				yield return null;
+			}
 			if (onEndMovieCallback != null)
 				onEndMovieCallback();
 		}

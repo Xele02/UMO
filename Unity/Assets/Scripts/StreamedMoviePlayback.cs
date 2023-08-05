@@ -20,6 +20,11 @@ public class StreamedMoviePlayback : MoviePlayback
     {
         base.Awake();
         _mediaPlayer = gameObject.AddComponent<VideoPlayer>();
+        _mediaPlayer.loopPointReached += (VideoPlayer vp) =>
+        {
+            if(!loop)
+                state = VLCState.Ended;
+        };
     }
 
     public override void OnDestroy()

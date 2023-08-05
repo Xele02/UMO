@@ -2073,6 +2073,9 @@ namespace XeApp.Game.Menu
 		{
 			UnityEngine.Debug.Log("Generate Next Song");
 
+			while(MenuScene.Instance.IsTransition())
+				yield return null;
+
 			// select a song
 			var freemusics = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas;
 			int freemusicNum = 0;

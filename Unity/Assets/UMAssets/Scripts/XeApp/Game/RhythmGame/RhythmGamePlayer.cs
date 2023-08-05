@@ -482,6 +482,8 @@ namespace XeApp.Game.RhythmGame
 			SoundManager.Instance.sePlayerGame.Preload("se_valkyrie_000");
 			SoundManager.Instance.sePlayerGame.Preload("se_valkyrie_001");
 			SoundManager.Instance.sePlayerGame.Preload("se_valkyrie_002");
+			SoundManager.Instance.sePlayerGame.Preload("se_valkyrie_005");
+			SoundManager.Instance.sePlayerGame.Preload("se_valkyrie_003");
 			SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_GAME_009);
 			SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_GAME_018);
 			SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_GAME_019);
