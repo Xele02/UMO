@@ -239,11 +239,11 @@ namespace XeApp.Game.Menu
 			m_content_diva.Swap();
 			if(m_diva_id_prev > 0)
 			{
-				m_content_diva_pos[m_diva_id_prev] = m_content_diva.back.m_scroll.verticalNormalizedPosition;
+				m_content_diva_pos[m_diva_id_prev - 1] = m_content_diva.back.m_scroll.verticalNormalizedPosition;
 			}
 			if(m_diva_id_now > 0)
 			{
-				m_content_diva.front.m_scroll.verticalNormalizedPosition = m_content_diva_pos[m_diva_id_now];
+				m_content_diva.front.m_scroll.verticalNormalizedPosition = m_content_diva_pos[m_diva_id_now - 1];
 			}
 			m_content_diva.front.animctrl.Enter();
 			yield return null;
