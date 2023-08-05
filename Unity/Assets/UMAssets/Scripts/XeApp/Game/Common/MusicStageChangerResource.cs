@@ -18,7 +18,7 @@ namespace XeApp.Game.Common
 		// RVA: 0xAEB564 Offset: 0xAEB564 VA: 0xAEB564
 		public void OnDestroy()
 		{
-			TodoLogger.LogError(0, "MusicStageChangerResource OnDestroy");
+			return;
 		}
 
 		// RVA: 0xAEB578 Offset: 0xAEB578 VA: 0xAEB578

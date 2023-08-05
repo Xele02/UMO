@@ -122,7 +122,7 @@ class RuntimeSettings : ScriptableObject
 
 	public int MinLogError = 1;
 	public int MinLogWarning = 1;
-	public int MinLog = 1;
+	public int MinLogInfo = 1;
 	public bool EnableProfileSaveCheck = false;
 	public bool EnableLocalSaveCheck = false;
 	public bool EnableDebugStopCoroutine = false;
@@ -141,6 +141,8 @@ public class PopUpAssetInspector : EditorWindow
 		return window;
 	}
 
+	Vector2 scrollPos = Vector2.zero;
+
 	private void OnGUI()
 	{
 		GUI.enabled = false;
@@ -148,7 +150,9 @@ public class PopUpAssetInspector : EditorWindow
 		GUI.enabled = true;
 
 		EditorGUILayout.BeginVertical(EditorStyles.helpBox);
+		scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
 		assetEditor.OnInspectorGUI();
+		EditorGUILayout.EndScrollView();
 		EditorGUILayout.EndVertical();
 	}
 }

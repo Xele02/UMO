@@ -303,7 +303,7 @@ public class OEGIPPCADNA
 		}
 		else if(DECFKDIGIJL)
 		{
-			str = MessageManager.Instance.GetBank("menu").GetMessageByLabel(BDGDHOAJDFM.ToString()+"event_music_ranking_unit");
+			str = BDGDHOAJDFM.ToString() + MessageManager.Instance.GetBank("menu").GetMessageByLabel("event_music_ranking_unit");
 		}
 		return str;
 	}

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using CriWare;
 using XeApp.Game.Common;
 using static XeApp.Game.Common.GameSetupData;
 
@@ -126,6 +127,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDC6DA4 Offset: 0xDC6DA4 VA: 0xDC6DA4
 		public void ChangeEndGameStatus()
 		{
+			ExternLib.LibCriWare.checkUncached = false;
 			currentStatus = Status.EndGame;
 			updater = this.BeginCompleteAnim;
 		}

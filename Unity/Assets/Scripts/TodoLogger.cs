@@ -79,7 +79,7 @@ public static class TodoLogger
 
 	public static void Log(int priority, string str)
 	{
-		if (priority < RuntimeSettings.CurrentSettings.MinLog)
+		if (priority < RuntimeSettings.CurrentSettings.MinLogInfo)
 		{
 			UnityEngine.Debug.Log(str);
 		}

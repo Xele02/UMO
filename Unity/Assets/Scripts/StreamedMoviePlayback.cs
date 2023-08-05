@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using LibVLCSharp.Shared;
 using System.Collections;
+using UnityEditor;
 
 public class StreamedMoviePlayback : MoviePlayback
 {
@@ -27,6 +28,75 @@ public class StreamedMoviePlayback : MoviePlayback
         _mediaPlayer = null;
     }
     private string tmpPath = "";
+
+#if UNITY_EDITOR_LINUX
+    [MenuItem("UMO/Convert all movies")]
+    public static void ConvertAll()
+    {
+        string moviePath = Application.persistentDataPath + "/Movies/";
+        if(!Directory.Exists(moviePath))
+            Directory.CreateDirectory(moviePath);
+        if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.DataDirectory))
+        {
+            List<string> movieList = new List<string>();
+            RecursGetMovies(movieList, RuntimeSettings.CurrentSettings.DataDirectory);
+            for(int i = 0; i < movieList.Count; i++)
+            {
+                if(EditorUtility.DisplayCancelableProgressBar("Converting movies", "["+i+"/"+movieList.Count+"] Convert "+movieList[i], i * 1.0f / movieList.Count))
+                    break;
+                string realPath = moviePath + Path.GetFileName(movieList[i]).Replace("usm", "webm");
+                if(!File.Exists(realPath))
+                {
+                    CriUsmStream videoStream = new CriUsmStream(movieList[i]);
+                    MpegStream.DemuxOptionsStruct demux = new MpegStream.DemuxOptionsStruct() { ExtractAudio = false };
+                    if(!File.Exists(realPath))
+                        demux.ExtractVideo = true;
+                    demux.OutputPath = Path.GetTempPath();
+                    demux.ExtractedFileList = new List<string>();
+                    demux.Key1 = 0x44C5F5F5;
+                    demux.Key2 = 0x0581B687;
+                    videoStream.DemultiplexStreams(demux);
+                    string tmpPath = "";
+                    if(!File.Exists(realPath))
+                    {
+                        foreach(var s in demux.ExtractedFileList)
+                        {
+                            tmpPath = s;
+                            break;
+                        }
+                    }
+                    if(tmpPath != "")
+                    {
+                        ProcessStartInfo info = new ProcessStartInfo();
+                        info.FileName = "ffmpeg";
+                        info.Arguments = "-y -i "+tmpPath+" -c:v libvpx -crf 4 -b:v 10M "+realPath;
+                        info.UseShellExecute = false;
+                        Process p = new Process();
+                        p.StartInfo = info;
+                        TodoLogger.Log(TodoLogger.Movie, "Start converting " + tmpPath);
+                        p.Start();
+                        p.WaitForExit();
+                        TodoLogger.Log(TodoLogger.Movie, "End converting " + tmpPath+" to "+realPath);
+                        File.Delete(tmpPath);
+                        tmpPath = "";
+                    }
+                }
+            }
+            EditorUtility.ClearProgressBar();
+        }
+    }
+#endif
+
+    public static void RecursGetMovies(List<string> list, string path)
+    {
+        string[] files = Directory.GetFiles(path, "*.usm");
+        list.AddRange(files);
+        string[] dirs = Directory.GetDirectories(path);
+        for(int i = 0; i < dirs.Length; i++)
+        {
+            RecursGetMovies(list, dirs[i]);
+        }
+    }
 
     public override void Init(string path, bool loop, Action<MovieInfo> onReady)
     {

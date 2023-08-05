@@ -568,7 +568,7 @@ namespace XeApp.Game.Menu
 							SetUnitButton(0);
 							return;
 						}
-						for (int i = 1; i < 3; i++)
+						for (int i = 1; i < 4; i++)
 						{
 							if (musicData.BENDFLDLIAG_IsAvaiableForNumDiva(array[i]))
 							{

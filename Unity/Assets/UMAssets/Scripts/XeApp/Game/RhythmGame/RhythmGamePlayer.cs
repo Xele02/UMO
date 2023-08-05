@@ -304,6 +304,7 @@ namespace XeApp.Game.RhythmGame
 				XeApp.Game.GameManager.Instance.PopupCanvas.worldCamera.clearFlags = UnityEngine.CameraClearFlags.Nothing;
 			}
 			ExternLib.LibCriWare.checkUncached = false;
+			SoundManager.Instance.SetInGame(false);
 			RestoreSave();
 		}
 
@@ -482,6 +483,8 @@ namespace XeApp.Game.RhythmGame
 			SoundManager.Instance.sePlayerGame.Preload("se_valkyrie_001");
 			SoundManager.Instance.sePlayerGame.Preload("se_valkyrie_002");
 			SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_GAME_009);
+			SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_GAME_018);
+			SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_GAME_019);
 			// Preload pilot voice
 			if (setting.m_enable_cutin)
 			{
@@ -3316,6 +3319,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9CA6EC Offset: 0x9CA6EC VA: 0x9CA6EC
 		private void StartPlayMusic(int startTime)
 		{
+			SoundManager.Instance.SetInGame(true);
 			bgmPlayer.source.player.SetStartTime(startTime);
 			bgmPlayback = bgmPlayer.source.Play();
 			ExternLib.LibCriWare.checkUncached = true; // Wait for bgm to be started
