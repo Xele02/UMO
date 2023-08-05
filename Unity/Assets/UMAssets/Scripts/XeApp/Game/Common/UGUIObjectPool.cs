@@ -23,12 +23,19 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CD93D8 Offset: 0x1CD93D8 VA: 0x1CD93D8
-		//public void Release() { }
+		public void Release()
+		{
+			for(int i = 0; i < m_poolList.Count; i++)
+			{
+				Object.Destroy(m_poolList[i].instanceObject.gameObject);
+			}
+			m_poolList.Clear();
+		}
 
 		//// RVA: 0x1CD9528 Offset: 0x1CD9528 VA: 0x1CD9528
 		public void Entry(string bundleName, string prefabName, Font font, MonoBehaviour mb)
 		{
-			mb.StartCoroutine(LoadUGUI(bundleName, prefabName, font));
+			mb.StartCoroutineWatched(LoadUGUI(bundleName, prefabName, font));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7400F4 Offset: 0x7400F4 VA: 0x7400F4
@@ -38,13 +45,13 @@ namespace XeApp.Game.Common
 			AssetBundleLoadUGUIOperationBase operation;
 			//0x1CD9868
 			operation = AssetBundleManager.LoadUGUIAsync(bundleName, prefabname);
-			yield return operation;
+			yield return Co.R(operation);
 			GameObject sourceInstance = null;
-			yield return operation.InitializeUGUICoroutine(font, (GameObject instance) =>
+			yield return Co.R(operation.InitializeUGUICoroutine(font, (GameObject instance) =>
 			{
 				//0x1CD985C
 				sourceInstance = instance;
-			});
+			}));
 			for(int i = 0; i < m_poolSize; i++)
 			{
 				GameObject obj = UnityEngine.Object.Instantiate<GameObject>(sourceInstance);

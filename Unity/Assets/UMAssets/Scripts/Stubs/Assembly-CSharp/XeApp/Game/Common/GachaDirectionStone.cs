@@ -46,7 +46,7 @@ namespace XeApp.Game.Common
 		private RefData m_meshRefData;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

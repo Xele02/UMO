@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using UnityEngine;
 using XeApp.Game.Common;
 
 [System.Obsolete("Use LLKLAKGKNLD_LimitOver", true)]
@@ -14,7 +15,10 @@ public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
 		public int PPFNGGCBJKC { get { return EHOIENNDEDH ^ FBGGEFFJJHB; } set { EHOIENNDEDH = value ^ FBGGEFFJJHB; } } //0x18109E0 DEMEPMAEJOO 0x180FD54 HIGKAIDMOKN
 
 		//// RVA: 0x180EC10 Offset: 0x180EC10 VA: 0x180EC10
-		//public int DEACAHNLMNI(int OIPCCBHIKIA) { }
+		public int DEACAHNLMNI(int OIPCCBHIKIA)
+		{
+			return IOKDGIGCJDA[OIPCCBHIKIA] ^ FBGGEFFJJHB;
+		}
 
 		//// RVA: 0x1810570 Offset: 0x1810570 VA: 0x1810570
 		//public uint CAOGDCBPBAN() { }
@@ -52,7 +56,10 @@ public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
 	public int AJHBAOCLNDF_Enabled { get { return EHKFGCPHHJJ ^ 0x46c0baf; } set { EHKFGCPHHJJ = value ^ 0x46c0baf; } } //0x180E790 EHDOJGNECHA 0x180E910 DAHLKLKBJDB
 
 	//// RVA: 0x180E55C Offset: 0x180E55C VA: 0x180E55C
-	//public int ELFPIODODFF(int JKGFBFPIMGA) { }
+	public int ELFPIODODFF(int JKGFBFPIMGA)
+	{
+		return BDKOIDEMCEE[JKGFBFPIMGA - 1] ^ FBGGEFFJJHB;
+	}
 
 	//// RVA: 0x180E628 Offset: 0x180E628 VA: 0x180E628
 	public int JNLLKKHJCAD(int JKGFBFPIMGA, int MJBODMOLOBC)
@@ -62,22 +69,21 @@ public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
 		{
 			if(JKGFBFPIMGA == 4)
 			{
-				res = LOCCHKJGJDJ[MJBODMOLOBC];
+				res = LOCCHKJGJDJ[MJBODMOLOBC] ^ FBGGEFFJJHB;
 			}
-			else
+			else if(JKGFBFPIMGA >= 5)
 			{
-				if(JKGFBFPIMGA >= 5)
-				{
-					res = BMEHMMIPELI[MJBODMOLOBC];
-				}
+				res = BMEHMMIPELI[MJBODMOLOBC] ^ FBGGEFFJJHB;
 			}
-			res = res ^ FBGGEFFJJHB;
 		}
 		return res;
 	}
 
 	//// RVA: 0x180E7A4 Offset: 0x180E7A4 VA: 0x180E7A4
-	//public int BKCAECPCELG() { }
+	public int BKCAECPCELG()
+	{
+		return LOCCHKJGJDJ.Count;
+	}
 
 	//// RVA: 0x180E82C Offset: 0x180E82C VA: 0x180E82C
 	public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH)
@@ -90,7 +96,56 @@ public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
 	//// RVA: 0x180E924 Offset: 0x180E924 VA: 0x180E924
 	public void MNHPPJFNPCG(ref LimitOverStatusData DNNHDJPNIAK, int JKGFBFPIMGA, int MJBODMOLOBC, int DCMJPFFBINO)
 	{
-		TodoLogger.Log(0, "MNHPPJFNPCG");
+		int a = ELFPIODODFF(JKGFBFPIMGA);
+		if(a < DCMJPFFBINO)
+		{
+			Debug.LogError("leafNum > leafMaxNum");
+			DCMJPFFBINO = a;
+		}
+		a = JNLLKKHJCAD(JKGFBFPIMGA, MJBODMOLOBC);
+		if(a < DCMJPFFBINO)
+		{
+			Debug.LogError("leafNum > GetLuckToLeafMaxNum");
+			DCMJPFFBINO = a;
+		}
+
+		PBMKLFCEAAA t0 = BODDKCKFLJF[JKGFBFPIMGA - 1];
+		PBMKLFCEAAA t1 = GPPJBOCJOFI[DCMJPFFBINO];
+
+		for(int i = 0; i < 6; i++)
+		{
+			int b = 0;
+			if(t1.DEACAHNLMNI(i) == 1)
+			{
+				b = t0.DEACAHNLMNI(i);
+			}
+			switch(i)
+			{
+				case 0:
+					DNNHDJPNIAK.excellentRate = b;
+					break;
+				case 1:
+					DNNHDJPNIAK.centerLiveSkillRate = b;
+					break;
+				case 2:
+					DNNHDJPNIAK.excellentRate_SameMusicAttr = b;
+					break;
+				case 3:
+					DNNHDJPNIAK.centerLiveSkillRate_SameMusicAttr = b;
+					break;
+				case 4:
+					DNNHDJPNIAK.excellentRate_SameSeriesAttr = b;
+					break;
+				case 5:
+					DNNHDJPNIAK.centerLiveSkillRate_SameSeriesAttr = b;
+					break;
+				default:
+					break;
+				case 7:
+					DNNHDJPNIAK.excellentEffect = b;
+					break;
+			}
+		}
 	}
 
 	// RVA: 0x180ECDC Offset: 0x180ECDC VA: 0x180ECDC
@@ -197,7 +252,7 @@ public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
 	// RVA: 0x181010C Offset: 0x181010C VA: 0x181010C Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(100, "LimitOver CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "LLKLAKGKNLD_LimitOver.CAOGDCBPBAN");
 		return 0;
 	}
 }

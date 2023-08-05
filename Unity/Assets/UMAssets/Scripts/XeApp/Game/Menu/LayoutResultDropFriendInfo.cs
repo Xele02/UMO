@@ -136,7 +136,7 @@ namespace XeApp.Game.Menu
 			if (!isSetupFinished)
 				return;
 			layoutRootAnim.StartChildrenAnimGoStop("go_in", "st_in");
-			StartCoroutine(Co_PlayingAnim());
+			this.StartCoroutineWatched(Co_PlayingAnim());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7190D4 Offset: 0x7190D4 VA: 0x7190D4
@@ -154,7 +154,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1D8F39C Offset: 0x1D8F39C VA: 0x1D8F39C
-		// public void SkipBeginAnim() { }
+		public void SkipBeginAnim()
+		{
+			if(!isSetupFinished)
+				return;
+			layoutRootAnim.StartChildrenAnimGoStop("st_in");
+		}
 
 		// // RVA: 0x1D8F1D8 Offset: 0x1D8F1D8 VA: 0x1D8F1D8
 		public void HiddenFriendRequestButton()

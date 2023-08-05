@@ -97,7 +97,7 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 	// // RVA: 0x111F948 Offset: 0x111F948 VA: 0x111F948 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
     {
-        TodoLogger.Log(0, "IIEMACPEEBJ");
+        TodoLogger.LogError(0, "IIEMACPEEBJ");
         return true;
     }
 
@@ -109,7 +109,7 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 		{
 			HMGPODKEFBA_EpisodeInfo data = new HMGPODKEFBA_EpisodeInfo();
 			data.KELFCMEOPPM = (short)array[i].PPFNGGCBJKC;
-			data.IOFHEGJPHKG = (short)array[i].BDJMFDKLHPM;
+			data.IOFHEGJPHKG_StepId = (short)array[i].BDJMFDKLHPM;
 			data.PPEGAKEIEGM = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
 			data.EILKGEADKGH = (short)array[i].FPOMEEJFBIG;
 			for(int j = 0; j < array[i].JGOHPDKCJKB.Length; j++)
@@ -119,12 +119,12 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 			FMLIFJBPFNA_Step f = KODIKHBMBBJ_Steps.Find((FMLIFJBPFNA_Step HKICMNAACDA) =>
 			{
 				//0x112040C
-				return HKICMNAACDA.IOFHEGJPHKG_SId == data.IOFHEGJPHKG;
+				return HKICMNAACDA.IOFHEGJPHKG_SId == data.IOFHEGJPHKG_StepId;
 			});
 			if (f == null)
-				data.FGOGPCMHPIN = 0;
+				data.FGOGPCMHPIN_Count = 0;
 			else
-				data.FGOGPCMHPIN = f.FGOGPCMHPIN_Count;
+				data.FGOGPCMHPIN_Count = f.FGOGPCMHPIN_Count;
 			BBAJKJPKOHD_EpisodeList.Add(data);
 		}
 		return true;
@@ -176,7 +176,7 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 	// // RVA: 0x11201C0 Offset: 0x11201C0 VA: 0x11201C0 Slot: 11
 	public override uint CAOGDCBPBAN()
     {
-        TodoLogger.Log(0, "CAOGDCBPBAN");
+        TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "KMOGDEOKHPG_Episode.CAOGDCBPBAN");
         return 0;
     }
 }
@@ -186,10 +186,10 @@ public class HMGPODKEFBA { }
 public class HMGPODKEFBA_EpisodeInfo
 {
 	public short KELFCMEOPPM; // 0x8
-	public short IOFHEGJPHKG; // 0xA
+	public short IOFHEGJPHKG_StepId; // 0xA
 	public short EILKGEADKGH; // 0xC
 	public sbyte PPEGAKEIEGM; // 0xE
-	public sbyte FGOGPCMHPIN; // 0xF
+	public sbyte FGOGPCMHPIN_Count; // 0xF
 	public List<short> HHJGBJCIFON_Rewards = new List<short>(10); // 0x10
 
 	public bool IPJMPBANBPP { get; } //0x15F4CC4

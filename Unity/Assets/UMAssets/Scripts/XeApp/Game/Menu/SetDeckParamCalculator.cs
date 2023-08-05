@@ -22,14 +22,14 @@ namespace XeApp.Game.Menu
 		private CFHDKAFLNEP m_subPlate; // 0x64
 		private JGEOBNENMAH.NEDILFPPCJF m_logParams = new JGEOBNENMAH.NEDILFPPCJF(); // 0x6C
 
-		public bool IsEmptyUnit { get { return m_viewUnitData != null && m_viewUnitData.EIGKIHENKNC_HasDivaSet; } } //0xA6FF7C
+		public bool IsEmptyUnit { get { return m_viewUnitData != null && m_viewUnitData.EIGKIHENKNC_HasNoDivaSet; } } //0xA6FF7C
 		public AEGLGBOGDHH SkillCalcResult { get {
 				return m_unitSkillCalcResult;
 			} } //0xA6FF94
 		public StatusData BaseStatus { get { return m_baseStatus; } } //0xA6FFB4
 		public StatusData AddStatus { get { return m_addStatus; } } //0xA6FFBC
 		public LimitOverStatusData LimitOverStatus { get { return m_limitOverStatus; } } //0xA6FFC4
-		//public NHDJHOPLMDE ValkyrieAbilityData { get; } 0xA6FFCC
+		public NHDJHOPLMDE ValkyrieAbilityData { get { return m_viewValkyrieAbilityData; } } //0xA6FFCC
 		public JGEOBNENMAH.NEDILFPPCJF LogParams { get { return m_logParams; } } //0xA6FFD4
 		//public CFHDKAFLNEP SubPlateResult { get; } 0xA6FFDC
 		//public bool IsEnableEnemySkill { get; } 0xA6FFF0
@@ -95,7 +95,7 @@ namespace XeApp.Game.Menu
 			m_isEnableEpisodeBonus = false;
 			if (isRaid)
 			{
-				TodoLogger.Log(0, "event");
+				TodoLogger.LogError(0, "event");
 			}
 			else
 			{
@@ -124,7 +124,7 @@ namespace XeApp.Game.Menu
 			result.GEEDEOHGMOM(ref addStatus);
 			subPlate = result.CLCIOEHGFNI;
 			m_tmpStatus.Clear();
-			if(viewUnitData.EIGKIHENKNC_HasDivaSet)
+			if(viewUnitData.EIGKIHENKNC_HasNoDivaSet)
 			{
 				CMMKCEPBIHI.BKBMHJBFDOG_Reset();
 			}
@@ -147,13 +147,13 @@ namespace XeApp.Game.Menu
 			result.DIJOPLHIMBO(logParams, viewUnitData.JLJGCBOHJID_Status, m_tmpStatus, baseLuck, friendLuck);
 			if(f == null || f.FGFIBOBAPIA_SceneId < 1)
 			{
-				logParams.IFHMFONMGPE = 0;
-				logParams.AKNKIOKELEP = 0;
+				logParams.IFHMFONMGPE_CenterSkillLvl = 0;
+				logParams.AKNKIOKELEP_ActiveSkillLvl = 0;
 			}
 			else
 			{
-				logParams.IFHMFONMGPE = viewPlayerData.OPIBAPEGCLA_Scenes[f.FGFIBOBAPIA_SceneId - 1].DDEDANKHHPN_SkillLevel;
-				logParams.AKNKIOKELEP = viewPlayerData.OPIBAPEGCLA_Scenes[f.FGFIBOBAPIA_SceneId - 1].PNHJPCPFNFI_ActiveSkillLevel;
+				logParams.IFHMFONMGPE_CenterSkillLvl = viewPlayerData.OPIBAPEGCLA_Scenes[f.FGFIBOBAPIA_SceneId - 1].DDEDANKHHPN_SkillLevel;
+				logParams.AKNKIOKELEP_ActiveSkillLvl = viewPlayerData.OPIBAPEGCLA_Scenes[f.FGFIBOBAPIA_SceneId - 1].PNHJPCPFNFI_ActiveSkillLevel;
 			}
 			int totalScore = 0;
 			for(int i = 0; i < 10; i++)
@@ -273,9 +273,9 @@ namespace XeApp.Game.Menu
 		private static bool CanBonusEpisode(List<IKDICBBFBMI_EventBase.GNPOABJANKO> list, out int bonusPoint)
 		{
 			bonusPoint = 0;
-			if (list != null)
+			if (list != null && list.Count > 0)
 			{
-				TodoLogger.Log(0, "CanBonusEpisode Event");
+				TodoLogger.LogError(0, "CanBonusEpisode Event");
 			}
 			return false;
 		}

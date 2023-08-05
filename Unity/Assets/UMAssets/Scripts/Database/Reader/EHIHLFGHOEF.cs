@@ -1,0 +1,34 @@
+using FlatBuffers;
+using System.Collections.Generic;
+
+public class COBIMANANGK
+{
+	public uint PPFNGGCBJKC { get; set; } // 0x8 FDGEMCPHJCB DEMEPMAEJOO HIGKAIDMOKN
+	public uint FBFLDFMFFOH { get; set; } // 0xC LMKEDCAPLEE HNLMNIOMOLI CHHJKABBIBL
+	public uint JBGEEPFKIGG { get; set; } // 0x10 AHPLCJAKAOP OLOCMINKGON ABAFHIBFKCE
+}
+public class EHIHLFGHOEF
+{
+	public COBIMANANGK[] AJJAKJEMCID { get; set; } // 0x8 MIHGHOPDLGP KHOGMDCLGBK OOLKGHLPFBB
+	public static EHIHLFGHOEF HEGEKFMJNCC(byte[] NIODCJLINJN)// 0x12EA1E4
+	{
+		ByteBuffer buffer = new ByteBuffer(NIODCJLINJN);
+		CBOPKMNJJIA res_readData = CBOPKMNJJIA.GetRootAsCBOPKMNJJIA(buffer);
+		EHIHLFGHOEF res_data = new EHIHLFGHOEF();
+
+		List<COBIMANANGK> AJJAKJEMCID_list = new List<COBIMANANGK>();
+		for(int AJJAKJEMCID_idx = 0; AJJAKJEMCID_idx < res_readData.HBPDIEOICJPLength; AJJAKJEMCID_idx++)
+		{
+			CECBEDHLMBM AJJAKJEMCID_readData = res_readData.GetHBPDIEOICJP(AJJAKJEMCID_idx);
+			COBIMANANGK AJJAKJEMCID_data = new COBIMANANGK();
+
+			AJJAKJEMCID_data.PPFNGGCBJKC = AJJAKJEMCID_readData.BBPHAPFBFHK;
+			AJJAKJEMCID_data.FBFLDFMFFOH = AJJAKJEMCID_readData.ODBPKGJPLMD;
+			AJJAKJEMCID_data.JBGEEPFKIGG = AJJAKJEMCID_readData.KJFEBMBHKOC;
+			AJJAKJEMCID_list.Add(AJJAKJEMCID_data);
+		}
+		res_data.AJJAKJEMCID = AJJAKJEMCID_list.ToArray();
+
+		return res_data;
+	}
+}

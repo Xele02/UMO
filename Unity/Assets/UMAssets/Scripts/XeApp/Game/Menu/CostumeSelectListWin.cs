@@ -94,14 +94,14 @@ namespace XeApp.Game.Menu
 			font = GameManager.Instance.GetSystemFont();
 			bundleName = "ly/044.xab";
 			lytOp = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_cos_list_layout_root");
-			yield return lytOp;
+			yield return Co.R(lytOp);
 
 			GameObject t_source = null;
-			yield return lytOp.InitializeLayoutCoroutine(font, (GameObject instance) =>
+			yield return Co.R(lytOp.InitializeLayoutCoroutine(font, (GameObject instance) =>
 			{
 				//0x16DE098
 				t_source = instance;
-			});
+			}));
 
 			LayoutUGUIRuntime runtime = t_source.GetComponent<LayoutUGUIRuntime>();
 			for(int i = 0; i < m_swapScrollList.ColumnCount * m_swapScrollList.RowCount; i++)
@@ -164,7 +164,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1647338 Offset: 0x1647338 VA: 0x1647338
 		private void CB_CostumeBuild()
 		{
-			TodoLogger.LogNotImplemented("CB_CostumeBuild");
+			if (m_cb_cos_build != null)
+				m_cb_cos_build();
 		}
 
 		//// RVA: 0x164734C Offset: 0x164734C VA: 0x164734C
@@ -245,14 +246,14 @@ namespace XeApp.Game.Menu
 					dataCol.m_name_base = f_.FFKMJNHFFFL_Costume.HCPCHEPCFEA_GetCostumeName(0);
 					dataCol.m_status = f_.FFKMJNHFFFL_Costume.FCEGELPJAMH_SkillDesc;
 					dataCol.m_cos_id = f_.FFKMJNHFFFL_Costume.JPIDIENBGKH_CostumeId;
-					dataCol.m_cos_model_id = f_.FFKMJNHFFFL_Costume.HNJNKCPDKAL_PrismCostumeId_CryptedPrismCostumeId;
+					dataCol.m_cos_model_id = f_.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
 					dataCol.m_cos_color = cols[j];
 					dataCol.m_lv = f_.FFKMJNHFFFL_Costume.GKIKAABHAAD_Level;
 					dataCol.m_lv_max = cosInfo.LLLCMHENKKN_LevelMax;
 					dataCol.m_is_set = false;
 					if(transition == TransitionList.Type.COSTUME_SELECT)
 					{
-						if(selectedCostume.FFKMJNHFFFL_Costume.HNJNKCPDKAL_PrismCostumeId_CryptedPrismCostumeId == f_.FFKMJNHFFFL_Costume.HNJNKCPDKAL_PrismCostumeId_CryptedPrismCostumeId)
+						if(selectedCostume.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId == f_.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId)
 						{
 							dataCol.m_is_set = selectedCostume.EKFONBFDAAP_ColorId == f_.EKFONBFDAAP_ColorId;
 						}
@@ -271,10 +272,10 @@ namespace XeApp.Game.Menu
 							break;
 						}
 					}
-					if(RuntimeSettings.CurrentSettings.ForceCostumeUnlock)
+					/*if(RuntimeSettings.CurrentSettings.ForceCostumeUnlock)
 					{
 						dataCol.m_is_have = true;
-					}
+					}*/
 					if(!dataCol.m_is_set)
 					{
 						if(!dataCol.m_is_have)
@@ -336,7 +337,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x16483E8 Offset: 0x16483E8 VA: 0x16483E8
-		//public void Leave() { }
+		public void Leave()
+		{
+			m_anim_root.StartChildrenAnimGoStop("go_out", "st_out");
+		}
 
 		//// RVA: 0x1648474 Offset: 0x1648474 VA: 0x1648474
 		public void Exit()

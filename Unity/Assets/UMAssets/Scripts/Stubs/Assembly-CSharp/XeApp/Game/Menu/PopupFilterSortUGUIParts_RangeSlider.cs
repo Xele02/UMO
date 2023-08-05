@@ -8,7 +8,7 @@ namespace XeApp.Game.Menu
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.LogError(0, "Implement monobehaviour");
 		}
 		[SerializeField]
 		private UGUIRangeSliders m_rangeSliders;
@@ -24,5 +24,8 @@ namespace XeApp.Game.Menu
 		private Text m_minText;
 		[SerializeField]
 		private Text m_maxText;
+
+		public override Type MyType { get { TodoLogger.LogError(0, "Type"); return 0; } }
+		protected override System.Collections.IEnumerator OnInitialize() { TodoLogger.LogError(0, "OnInitialize"); yield return null; }
 	}
 }

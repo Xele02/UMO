@@ -15,11 +15,12 @@ namespace ExternLib
 
         public static void criAtomEx3dListener_Destroy(IntPtr ex_3d_listener)
         {
-
+			TodoLogger.LogError(TodoLogger.CriAtomExLib, "criAtomEx3dListener_Destroy");
         }
 
         public static void criAtomEx3dListener_Update(IntPtr ex_3d_listener)
         {
-        }
+			TodoLogger.LogError(TodoLogger.CriAtomExLib, "criAtomEx3dListener_Update");
+		}
     }
 }

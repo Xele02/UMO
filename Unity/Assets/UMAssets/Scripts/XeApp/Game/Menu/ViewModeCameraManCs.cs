@@ -222,7 +222,7 @@ namespace XeApp.Game.Menu
 					TouchInfo touch = InputManager.Instance.GetFirstInScreenTouchRecord().FindRecentInfo(0);
 					if (IsTouchPoisitionInScreen(touch.GetSceneInnerPosition()) && touch.isMoved)
 					{
-						TouchInfo touch2 = InputManager.Instance.GetFirstInScreenTouchRecord().FindRecentInfo(0);
+						TouchInfo touch2 = InputManager.Instance.GetFirstInScreenTouchRecord().FindRecentInfo(1);
 
 						Quaternion v2 = Quaternion.AngleAxis(-m_rotCamZ, Vector3.forward);
 						Vector3 v1 = v2 * new Vector3(touch2.x, touch2.y, 0);
@@ -234,7 +234,7 @@ namespace XeApp.Game.Menu
 							m_moveSpeed.y = 0;
 						else
 						{
-							f = (v.y - v2.y) * 0.02f * ((m_eye.z + 5) / (m_defaultDist + 5));
+							f = (v.y - v1.y) * 0.02f * ((m_eye.z + 5) / (m_defaultDist + 5));
 							m_moveSpeed.y = f;
 						}
 					}
@@ -255,7 +255,9 @@ namespace XeApp.Game.Menu
 				m_rot = Quaternion.Euler(m_rotAngle.x, m_rotAngle.y, 0);
 				m_divaRot = Quaternion.Euler(0, -m_rotAngle.z, 0);
 				m_targetObj.transform.localRotation = m_divaOriginalRot * m_divaRot;
+				#if UNITY_ANDROID
 				if(InputManager.Instance.GetInScreenTouchCount() > 1)
+				#endif
 				{
 					m_targetFov = Mathf.Clamp(m_camera.fieldOfView + InputManager.Instance.pinchDelta * -20, 10, 37);
 					m_camera.fieldOfView = m_targetFov;
@@ -276,7 +278,7 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < sr.Length; i++)
 			{
 				max = Vector3.Max(max, sr[i].bounds.max);
-				min = Vector3.Max(min, sr[i].bounds.min);
+				min = Vector3.Min(min, sr[i].bounds.min);
 				m_targetTr = sr[i].transform;
 			}
 			m_bbMax = max;
@@ -314,13 +316,27 @@ namespace XeApp.Game.Menu
 		//public void Reinstate() { }
 
 		//// RVA: 0xAE30A8 Offset: 0xAE30A8 VA: 0xAE30A8
-		//public void InputOn() { }
+		public void InputOn()
+		{
+			m_is_input = true;
+			if(m_state != 0)
+			{
+				m_state = 1;
+				m_time = 0;
+			}
+		}
 
 		//// RVA: 0xAE30C8 Offset: 0xAE30C8 VA: 0xAE30C8
-		//public void InputOff() { }
+		public void InputOff()
+		{
+			m_is_input = false;
+		}
 
 		//// RVA: 0xAE30D4 Offset: 0xAE30D4 VA: 0xAE30D4
-		//public void StartUpdate() { }
+		public void StartUpdate()
+		{
+			m_is_update = true;
+		}
 
 		//// RVA: 0xAE30E0 Offset: 0xAE30E0 VA: 0xAE30E0
 		public bool IsEntered()

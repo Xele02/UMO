@@ -27,7 +27,7 @@ namespace XeApp.Game.Common
 		public void LoadResouces(int stageId, Func<int> getSpecialStageId)
 		{
 			isLoadedPrefab = false;
-			StartCoroutine(Co_LoadResouces(stageId, getSpecialStageId));
+			this.StartCoroutineWatched(Co_LoadResouces(stageId, getSpecialStageId));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73B5C0 Offset: 0x73B5C0 VA: 0x73B5C0
@@ -56,7 +56,7 @@ namespace XeApp.Game.Common
 			assetName = new StringBuilder();
 			bundleName.SetFormat("st/{0:D4}.xab", stageId);
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			assetName.SetFormat("stg_{0:D4}_prefab", stageId);
 			prefab = operation.GetAsset<GameObject>(assetName.ToString());
 			assetName.SetFormat("stg_{0:D4}_param", stageId);

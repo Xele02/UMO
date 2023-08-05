@@ -2,6 +2,8 @@ using XeApp.Game.Common;
 using UnityEngine.UI;
 using UnityEngine;
 using XeSys.Gfx;
+using mcrs;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -98,6 +100,7 @@ namespace XeApp.Game.Menu
 						AddOnClickCallback(OpenPopupCenterSkillDetails);
 						m_layoutTable.StartChildrenAnimGoStop("06");
 						IsMisMatchAttr = !m_sceneData.KAFAAPEBCPD_IsMatchCenterSkillMusicAttr(musicId);
+						Hidden = false;
 					}
 				}
 				else if(type == Type.Live)
@@ -153,7 +156,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xCFB274 Offset: 0xCFB274 VA: 0xCFB274
 		private void SetAttr(GameAttribute.Type attr)
 		{
-			m_imageAttr.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData(string.Format("cmn_zok_{0:D2}", attr)));
+			m_imageAttr.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData(string.Format("cmn_zok_{0:D2}", (int)attr)));
 			if(m_textAttr != null)
 				m_textAttr.text = "";
 		}
@@ -173,13 +176,51 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xCFBEEC Offset: 0xCFBEEC VA: 0xCFBEEC
 		private void OpenPopupLiveSkillDetails()
 		{
-			TodoLogger.LogNotImplemented("OpenPopupLiveSkillDetails");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if (m_sceneData != null)
+			{
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				PopupLiveSkillRegulationSetting s = new PopupLiveSkillRegulationSetting();
+				s.TitleText = bk.GetMessageByLabel("liveskillregulation_popup_title");
+				s.WindowSize = SizeType.Middle;
+				s.SetParent(transform);
+				s.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+				};
+				s.ViewSceneData = m_sceneData;
+				s.SkillType = Type.Live;
+				PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0xCFC81C
+					return;
+				}, null, null, null);
+			}
 		}
 
 		// // RVA: 0xCFC308 Offset: 0xCFC308 VA: 0xCFC308
 		private void OpenPopupCenterSkillDetails()
 		{
-			TodoLogger.LogNotImplemented("OpenPopupCenterSkillDetails");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(m_sceneData != null)
+			{
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				PopupLiveSkillRegulationSetting s = new PopupLiveSkillRegulationSetting();
+				s.TitleText = bk.GetMessageByLabel("centerskillregulation_popup_title");
+				s.WindowSize = SizeType.Middle;
+				s.SetParent(transform);
+				s.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+				};
+				s.ViewSceneData = m_sceneData;
+				s.SkillType = Type.Center;
+				PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0xCFC820
+					return;
+				}, null, null, null);
+			}
 		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x72DADC Offset: 0x72DADC VA: 0x72DADC

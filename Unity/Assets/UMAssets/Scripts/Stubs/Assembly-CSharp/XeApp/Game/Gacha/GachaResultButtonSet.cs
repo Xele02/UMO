@@ -9,7 +9,7 @@ namespace XeApp.Game.Gacha
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.LogError(0, "Implement monobehaviour");
 		}
 		[SerializeField]
 		private GachaResultRetryButton m_retryButton;

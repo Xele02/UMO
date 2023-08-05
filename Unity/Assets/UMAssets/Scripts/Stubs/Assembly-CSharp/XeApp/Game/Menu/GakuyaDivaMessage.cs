@@ -21,7 +21,7 @@ namespace XeApp.Game.Menu
 		private List<Color> m_divaColor;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

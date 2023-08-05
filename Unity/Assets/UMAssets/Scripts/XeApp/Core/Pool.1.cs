@@ -135,7 +135,18 @@ namespace XeApp.Core
 		//*/
 
 		//// RVA: -1 Offset: -1
-		//public T AllocForce() { }
+		public T AllocForce()
+		{
+			T y = Alloc();
+			if(y == null)
+			{
+				int cur = mNext;
+				cur = XeSys.Math.Repeat(mNext + 1, 0, mList.Count - 1);
+				y = mList[cur];
+			}
+			y.Alloc();
+			return y;
+		}
 		///* GenericInstMethod :
 		//|
 		//|-RVA: 0x30A578C Offset: 0x30A578C VA: 0x30A578C
@@ -144,7 +155,14 @@ namespace XeApp.Core
 		//*/
 
 		//// RVA: -1 Offset: -1
-		//public void FreeAll() { }
+		public void FreeAll()
+		{
+			for(int i = 0; i < mList.Count; i++)
+			{
+				mList[i].Free();
+				mList[i].gameObject.SetActive(false);
+			}
+		}
 		///* GenericInstMethod :
 		//|
 		//|-RVA: 0x30A58F0 Offset: 0x30A58F0 VA: 0x30A58F0

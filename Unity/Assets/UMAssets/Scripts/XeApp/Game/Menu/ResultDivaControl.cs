@@ -25,10 +25,28 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xCFF4C4 Offset: 0xCFF4C4 VA: 0xCFF4C4
-		//public void OnResultAnimStart(ResultScoreRank.Type scoreRank) { }
+		public void OnResultAnimStart(ResultScoreRank.Type scoreRank)
+		{
+			DivaObject.ResultAnimStart(DivaResultMotion.UseResultSpecial(DivaObject.divaId, scoreRank));
+			int voice = Database.Instance.gameSetup.ForceDivaVoice();
+			if (voice > 0)
+			{
+				SoundManager.Instance.voDiva.RequestChangeCueSheetForReplacement(voice, () => {
+					//0xCFFE3C
+					SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.Result, DivaResultMotion.GetVoiceId(scoreRank));
+				});
+				return;
+			}
+			SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.Result, DivaResultMotion.GetVoiceId(scoreRank));
+			return;
+		}
 
 		//// RVA: 0xCFF6FC Offset: 0xCFF6FC VA: 0xCFF6FC
-		//public void RequestResultAnimStart(ResultScoreRank.Type scoreRank) { }
+		public void RequestResultAnimStart(ResultScoreRank.Type scoreRank)
+		{
+			OnResultAnimStart(scoreRank);
+			StartCoroutine(Coroutine_RequestResultAnimStart());
+		}
 
 		//// RVA: 0xCFF7B4 Offset: 0xCFF7B4 VA: 0xCFF7B4
 		public void OnSimulationResultAnimStart()

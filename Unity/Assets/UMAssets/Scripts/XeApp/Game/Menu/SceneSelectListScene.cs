@@ -65,7 +65,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x13802EC Offset: 0x13802EC VA: 0x13802EC Slot: 5
 		protected override void Start()
 		{
-			StartCoroutine(InitializeCoroutine());
+			this.StartCoroutineWatched(InitializeCoroutine());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x72E0C4 Offset: 0x72E0C4 VA: 0x72E0C4
@@ -80,13 +80,13 @@ namespace XeApp.Game.Menu
 			if(m_sortButtonGroup != null)
 				yield break;
 			operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_card_btn_layout_root");
-			yield return operation;
-			yield return operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
+			yield return Co.R(operation);
+			yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
 				//0x138794C
 				instance.transform.SetParent(transform, false);
 				m_sortButtonGroup = instance.GetComponentInChildren<ListSortButtonGroup>(true);
 				m_sortButtonGroup.SortPlace = m_sortPlace;
-			});
+			}));
 			AssetBundleManager.UnloadAssetBundle(bundleName, false);
 			operation = null;
 		}
@@ -108,13 +108,13 @@ namespace XeApp.Game.Menu
 			if(m_sceneSelectList != null)
 				yield break;
 			operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_window01_layout_root");
-			yield return operation;
-			yield return operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
+			yield return Co.R(operation);
+			yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
 				//0x1387A48
 				instance.transform.SetParent(transform, false);
 				m_equipmentScene = instance.GetComponentInChildren<EquipmentScene>(true);
 				m_sceneSelectList = instance.GetComponentInChildren<SceneSelectList>(true);
-			});
+			}));
 			AssetBundleManager.UnloadAssetBundle(bundleName, false);
 			operation = null;
 		}
@@ -129,9 +129,9 @@ namespace XeApp.Game.Menu
 			//0xA58CBC
 			bundleName = "ly/014.xab";
 			systemFont = GameManager.Instance.GetSystemFont();
-			yield return AssetBundleManager.LoadUnionAssetBundle(bundleName);
-			yield return Co_SelectWindowLayout(bundleName, systemFont);
-			yield return Co_SceneSortButtonLayout(bundleName, systemFont);
+			yield return Co.R(AssetBundleManager.LoadUnionAssetBundle(bundleName));
+			yield return Co.R(Co_SelectWindowLayout(bundleName, systemFont));
+			yield return Co.R(Co_SceneSortButtonLayout(bundleName, systemFont));
 			if(m_transitionName == TransitionList.Type.ASSIST_SELECT ||
 				m_transitionName == TransitionList.Type.SCENE_SELECT)
 			{
@@ -155,8 +155,13 @@ namespace XeApp.Game.Menu
 			{
 				while(!m_sceneSelectList.IsLoaded())
 					yield return null;
-				yield return StartCoroutine(m_sceneSelectList.LoadScrollObjectCoroutine(TransitionName));
+				yield return this.StartCoroutineWatched(m_sceneSelectList.LoadScrollObjectCoroutine(TransitionName));
 			}
+
+			TodoLogger.LogError(TodoLogger.ToCheck, "m_popupFilterSortScene init should not be here");
+			if(m_transitionName == TransitionList.Type.SCENE_SELECT)
+				m_popupFilterSortScene = PopupFilterSort.Scene.EpisodeSelect2;
+
 			IsReady = true;
 		}
 
@@ -239,23 +244,171 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1381204 Offset: 0x1381204 VA: 0x1381204
 		private void SortImpl()
 		{
-			TodoLogger.Log(0, "SortImpl");
+			if(!m_isCallEpisodeList)
+			{
+				m_sceneIndexList.Sort(DefaultSortCb);
+			}
+			else
+			{
+				m_sceneIndexList.Sort(EpisodeSortCb);
+			}
 		}
 
 		// // RVA: 0x138131C Offset: 0x138131C VA: 0x138131C
-		// private int DefaultSortCb(int left, int right) { }
+		private int DefaultSortCb(int left, int right)
+		{
+			if (left < 0)
+				return -1;
+			if (right < 0)
+				return 1;
+			GCIJNCFDNON_SceneInfo lscene = PlayerData.OPIBAPEGCLA_Scenes[left];
+			GCIJNCFDNON_SceneInfo rscene = PlayerData.OPIBAPEGCLA_Scenes[right];
+			long leftVal = 0;
+			long rightVal = 0;
+			if (m_sortType <= SortItem.UtaRate)
+			{
+				switch (m_sortType)
+				{
+					case SortItem.Total:
+						leftVal = lscene.CMCKNKKCNDK_Status.Total;
+						rightVal = rscene.CMCKNKKCNDK_Status.Total;
+						break;
+					case SortItem.Soul:
+						leftVal = lscene.CMCKNKKCNDK_Status.soul;
+						rightVal = rscene.CMCKNKKCNDK_Status.soul;
+						break;
+					case SortItem.Voice:
+						leftVal = lscene.CMCKNKKCNDK_Status.vocal;
+						rightVal = rscene.CMCKNKKCNDK_Status.vocal;
+						break;
+					case SortItem.Charm:
+						leftVal = lscene.CMCKNKKCNDK_Status.charm;
+						rightVal = rscene.CMCKNKKCNDK_Status.charm;
+						break;
+					case SortItem.Get:
+						leftVal = lscene.NPHOIEOPIJO;
+						rightVal = rscene.NPHOIEOPIJO;
+						break;
+					case SortItem.Rarity:
+						leftVal = lscene.EKLIPGELKCL_SceneRarity;
+						rightVal = rscene.EKLIPGELKCL_SceneRarity;
+						break;
+					case SortItem.Level:
+						leftVal = lscene.CIEOBFIIPLD_SceneLevel;
+						rightVal = rscene.CIEOBFIIPLD_SceneLevel;
+						break;
+					case SortItem.Life:
+						leftVal = lscene.CMCKNKKCNDK_Status.life;
+						rightVal = rscene.CMCKNKKCNDK_Status.life;
+						break;
+					case SortItem.Luck:
+						leftVal = lscene.MJBODMOLOBC_Luck;
+						rightVal = rscene.MJBODMOLOBC_Luck;
+						break;
+					case SortItem.Support:
+						leftVal = lscene.CMCKNKKCNDK_Status.support;
+						rightVal = rscene.CMCKNKKCNDK_Status.support;
+						break;
+					case SortItem.Fold:
+						leftVal = lscene.CMCKNKKCNDK_Status.fold;
+						rightVal = rscene.CMCKNKKCNDK_Status.fold;
+						break;
+					case SortItem.RecoveryNotes:
+					case SortItem.ItemNotes:
+					case SortItem.ScoreUpNotes:
+					case SortItem.SupportNotes:
+					case SortItem.FoldNotes:
+						leftVal = lscene.CMCKNKKCNDK_Status.spNoteExpected[(int)m_sortType - 10];
+						rightVal = rscene.CMCKNKKCNDK_Status.spNoteExpected[(int)m_sortType - 10];
+						break;
+					default:
+						break;
+					case SortItem.ActiveSkill:
+						if (lscene.HGONFBDIBPM_ActiveSkillId < 1)
+							left = 0;
+						else
+							left = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[lscene.HGONFBDIBPM_ActiveSkillId - 1].GIEFBAHPMMM;
+						if (rscene.HGONFBDIBPM_ActiveSkillId < 1)
+							right = 0;
+						else
+							right = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[rscene.HGONFBDIBPM_ActiveSkillId - 1].GIEFBAHPMMM;
+						break;
+					case SortItem.LiveSkill:
+						int id = lscene.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0);
+						if (id < 1)
+							left = 0;
+						else
+							left = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[id - 1].GIEFBAHPMMM;
+						id = rscene.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0);
+						if (id < 1)
+							right = 0;
+						else
+							right = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[id - 1].GIEFBAHPMMM;
+						break;
+					case SortItem.Episode:
+						leftVal = lscene.KELFCMEOPPM_EpisodeId;
+						rightVal = rscene.KELFCMEOPPM_EpisodeId;
+						break;
+					case SortItem.SecretBoard:
+						leftVal = lscene.JPIPENJGGDD_NumBoard;
+						rightVal = rscene.JPIPENJGGDD_NumBoard;
+						break;
+					case SortItem.LuckyLeaf:
+						leftVal = lscene.MKHFCGPJPFI_LimitOverCount;
+						rightVal = rscene.MKHFCGPJPFI_LimitOverCount;
+						break;
+					case SortItem.NotesExpectation:
+						leftVal = lscene.KMFADKEKPOM_Nx;
+						rightVal = rscene.KMFADKEKPOM_Nx;
+						break;
+				}
+			}
+			int res = (int)(leftVal - rightVal);
+			if(res == 0)
+			{
+				res = GetSameEvaluationValue2(lscene, rscene);
+				if (res == 0)
+				{
+					return GetSameEvaluationValue3(lscene, rscene);
+				}
+			}
+			else
+			{
+				if (res < 0)
+					res = -1;
+				else
+					res = 1;
+			}
+			if (m_order != 0)
+				res = -res;
+			return res;
+		}
 
 		// // RVA: 0x1382008 Offset: 0x1382008 VA: 0x1382008
-		// private int EpisodeSortCb(int left, int right) { }
+		private int EpisodeSortCb(int left, int right)
+		{
+			GCIJNCFDNON_SceneInfo lscene = PlayerData.OPIBAPEGCLA_Scenes[left];
+			GCIJNCFDNON_SceneInfo rscene = PlayerData.OPIBAPEGCLA_Scenes[right];
+			return GetSameEvaluationValue(lscene, rscene);
+		}
 
 		// // RVA: 0x1382140 Offset: 0x1382140 VA: 0x1382140
-		// private int GetSameEvaluationValue(GCIJNCFDNON left, GCIJNCFDNON right) { }
+		private int GetSameEvaluationValue(GCIJNCFDNON_SceneInfo left, GCIJNCFDNON_SceneInfo right)
+		{
+			return SortMenuWindow.GetSameEvaluationValue(left, right);
+		}
 
 		// // RVA: 0x1381EF0 Offset: 0x1381EF0 VA: 0x1381EF0
-		// private int GetSameEvaluationValue2(GCIJNCFDNON left, GCIJNCFDNON right) { }
+		private int GetSameEvaluationValue2(GCIJNCFDNON_SceneInfo left, GCIJNCFDNON_SceneInfo right)
+		{
+			return SortMenuWindow.SortSecondPriority(left, right);
+		}
 
 		// // RVA: 0x1381F7C Offset: 0x1381F7C VA: 0x1381F7C
-		// private int GetSameEvaluationValue3(GCIJNCFDNON left, GCIJNCFDNON right) { }
+		private int GetSameEvaluationValue3(GCIJNCFDNON_SceneInfo left, GCIJNCFDNON_SceneInfo right)
+		{
+			return SortMenuWindow.SortThirdPriority(left, right);
+		}
 
 		// // RVA: 0x13821CC Offset: 0x13821CC VA: 0x13821CC
 		private void AttachScene(int slot, FFHPBEPOMAK_DivaInfo divaData, GCIJNCFDNON_SceneInfo sceneData)
@@ -286,10 +439,16 @@ namespace XeApp.Game.Menu
 		// private void DetachSceneGoDiva(int slot, FFHPBEPOMAK divaData) { }
 
 		// // RVA: 0x1382428 Offset: 0x1382428 VA: 0x1382428
-		// private void AttachAssist(int page, int slot, EEMGHIINEHN assistData, GCIJNCFDNON sceneData) { }
+		private void AttachAssist(int page, int slot, EEMGHIINEHN assistData, GCIJNCFDNON_SceneInfo sceneData)
+		{
+			assistData.CLFGOPNDGNL_SetScene(sceneData, page, slot);
+		}
 
 		// // RVA: 0x1382478 Offset: 0x1382478 VA: 0x1382478
-		// private void DetachAssist(int page, int slot, EEMGHIINEHN assistData) { }
+		private void DetachAssist(int page, int slot, EEMGHIINEHN assistData)
+		{
+			assistData.NODLMHKAGFD_RemoveScene(page, slot);
+		}
 
 		// // RVA: 0x13824B4 Offset: 0x13824B4 VA: 0x13824B4
 		// private int GetEquSceneId(int selectedSlot, FFHPBEPOMAK divaData) { }
@@ -363,12 +522,21 @@ namespace XeApp.Game.Menu
 						}
 						else
 						{
-							TodoLogger.Log(0, "GoDiva");
+							TodoLogger.LogError(0, "GoDiva");
 						}
 					}
 					else
 					{
-						TodoLogger.Log(0, "Assist");
+						if (afterScene == null)
+							DetachAssist(m_assistPageIndex, m_assistSlotIndex, m_assistViewData);
+						else
+							AttachAssist(m_assistPageIndex, m_assistSlotIndex, m_assistViewData, afterScene);
+						GCIJNCFDNON_SceneInfo scene = m_assistViewData.ELBLMMPEKPH_GetAssistScene(m_assistPageIndex, m_assistSlotIndex);
+						m_equipmentScene.UpdateAssistContent(PlayerData, scene, m_assistSlotIndex);
+						m_equipmentScene.SelectSlot(0);
+						m_equipmentScene.ChangeIcon(scene, displayType, 0);
+						m_sceneSelectList.UpdateRemoveButton(scene);
+						MenuScene.Instance.Return(true);
 					}
 					m_sceneSelectList.UpdateRegion();
 					m_sceneSelectList.UpdateScore();
@@ -578,7 +746,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				m_sceneSelectList.UpdateRemoveButton(m_assistViewData.ELBLMMPEKPH(m_assistPageIndex, m_assistSlotIndex));
+				m_sceneSelectList.UpdateRemoveButton(m_assistViewData.ELBLMMPEKPH_GetAssistScene(m_assistPageIndex, m_assistSlotIndex));
 			}
 			m_sceneSelectList.SetSelectedSlot(m_selectedEquipmentSlotIndex);
 			if(m_musicBaseData != null)
@@ -618,9 +786,9 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					m_equipmentScene.UpdateAssistContent(PlayerData, m_assistViewData.ELBLMMPEKPH(m_assistPageIndex, m_assistSlotIndex), m_assistSlotIndex);
+					m_equipmentScene.UpdateAssistContent(PlayerData, m_assistViewData.ELBLMMPEKPH_GetAssistScene(m_assistPageIndex, m_assistSlotIndex), m_assistSlotIndex);
 					m_equipmentScene.SelectSlot(0);
-					m_equipmentScene.ChangeIcon(m_assistViewData.ELBLMMPEKPH(m_assistPageIndex, m_assistSlotIndex), type, 0);
+					m_equipmentScene.ChangeIcon(m_assistViewData.ELBLMMPEKPH_GetAssistScene(m_assistPageIndex, m_assistSlotIndex), type, 0);
 				}
 			}
 			m_sceneSelectList.SetWait();
@@ -721,7 +889,7 @@ namespace XeApp.Game.Menu
 								button.ClearOnStayCallback();
 								if(m_missionId == 5)
 								{
-									StartCoroutine(TutorialProc.Co_PlateGrowth(button));
+									this.StartCoroutineWatched(TutorialProc.Co_PlateGrowth(button));
 									m_isBeginner = false;
 								}
 								else
@@ -733,7 +901,7 @@ namespace XeApp.Game.Menu
 									GameManager.Instance.AddPushBackButtonHandler(dymmyBackHandler);
 									BasicTutorialManager.Instance.ShowMessageWindow(BasicTutorialMessageId.Id_EpisodeMission2, () => {
 										//0xA5846C
-										TodoLogger.Log(0, "Tutorial");
+										TodoLogger.LogError(0, "Tutorial");
 									}, null);
 								}
 							}
@@ -747,13 +915,13 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1385A84 Offset: 0x1385A84 VA: 0x1385A84 Slot: 25
 		protected override void OnTutorial()
 		{
-			TodoLogger.Log(0, "Tutorial");
+			TodoLogger.LogError(0, "Tutorial");
 		}
 
 		// RVA: 0x1385C64 Offset: 0x1385C64 VA: 0x1385C64
 		private void SetTutorialPopupDecide()
 		{
-			TodoLogger.Log(0, "Tutorial");
+			TodoLogger.LogError(0, "Tutorial");
 		}
 
 		// // RVA: 0x13844DC Offset: 0x13844DC VA: 0x13844DC
@@ -796,7 +964,53 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1385DD0 Offset: 0x1385DD0 VA: 0x1385DD0
 		private void OnSortEvent(SortItem item, ListSortButtonGroup.SortOrder order, bool isBonus)
 		{
-			TodoLogger.LogNotImplemented("OnSortEvent");
+			m_selectedSceneId = 0;
+			m_sortType = item;
+			m_order = (uint)order;
+			m_isBonus = isBonus;
+			Sort(isBonus, false);
+			DisplayType dt = 0;
+			bool b = UnitWindowConstant.SortItemToDisplayType.TryGetValue((int)m_sortType, out dt);
+			CheckSkillIconType(PlayerData.DPLBHAIKPGL_GetTeam(), m_divaData);
+			m_sceneSelectList.UpdateContent(PlayerData, m_divaData, m_musicBaseData != null ? m_musicBaseData.DLAEJOBELBH_MusicId : 0, PlayerData.OPIBAPEGCLA_Scenes, m_sceneIndexList, m_selectedSceneId, dt, m_dispRowCount, m_transitionName, m_isGoDivaEvent);
+			if(m_musicBaseData != null)
+			{
+				CMMKCEPBIHI.EFCNOOFFMIL(PlayerData, m_friendPlayerData, m_musicBaseData, m_enemyData, m_difficulty, Database.Instance.gameSetup.musicInfo.IsLine6Mode, m_isGoDivaEvent);
+			}
+			m_sceneSelectList.UpdateScore(m_musicBaseData);
+			if(m_equipmentScene != null)
+			{
+				if(m_assistViewData == null)
+				{
+					if(!m_isHomeSceneBg)
+					{
+						m_equipmentScene.ChangeIcon(PlayerData, m_divaData, dt, m_selectedDivaSlotIndex == 0, m_isGoDivaEvent);
+					}
+				}
+				else
+				{
+					m_equipmentScene.ChangeIcon(m_assistViewData.ELBLMMPEKPH_GetAssistScene(m_assistPageIndex, m_assistSlotIndex), dt, 0);
+				}
+			}
+			if(TransitionName == TransitionList.Type.SCENE_SELECT)
+			{
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.LNFFKCDNCPN_sceneSelectSortItem = (int)m_sortType;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CIDJJBFGHIE_sceneSelectSortOrder = (int)m_order;
+			}
+			else if(TransitionName == TransitionList.Type.ASSIST_SELECT)
+			{
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.NCDOLBOHGFN_sceneAssistSortItem = (int)m_sortType;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.OGFJPNKICGI_sceneAssistSortOrder = (int)m_order;
+			}
+			else if(TransitionName == TransitionList.Type.HOME_BG_SELECT)
+			{
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.GIDCHFBCBML_SelectHomeBG.EILKGEADKGH_Order = (int)m_order;
+			}
+			else
+			{
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.GEAECNMDMHH_sceneListSortItem = (int)m_sortType;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CLKCCJJJPLB_sceneListSortOrder = (int)m_order;
+			}
 		}
 
 		// // RVA: 0x1384A14 Offset: 0x1384A14 VA: 0x1384A14
@@ -933,7 +1147,7 @@ namespace XeApp.Game.Menu
 			}
 			else if(TransitionName == TransitionList.Type.ASSIST_SELECT)
 			{
-				GCIJNCFDNON_SceneInfo beforeScene = m_assistViewData.ELBLMMPEKPH(m_assistPageIndex, m_assistSlotIndex);
+				GCIJNCFDNON_SceneInfo beforeScene = m_assistViewData.ELBLMMPEKPH_GetAssistScene(m_assistPageIndex, m_assistSlotIndex);
 				if(beforeScene.BCCHOBPJJKE_SceneId < 1)
 					beforeScene = null;
 				ShowComparisonPopupWindow(beforeScene, sceneInfo, null);
@@ -981,7 +1195,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				ShowComparisonPopupWindow(m_assistViewData.ELBLMMPEKPH(m_assistPageIndex, m_assistSlotIndex), null, m_divaData);
+				ShowComparisonPopupWindow(m_assistViewData.ELBLMMPEKPH_GetAssistScene(m_assistPageIndex, m_assistSlotIndex), null, m_divaData);
 			}
 		}
 
@@ -1011,7 +1225,7 @@ namespace XeApp.Game.Menu
 				}
 				if(m_assistViewData != null)
 				{
-					m_equipmentScene.ChangeIcon(m_assistViewData.ELBLMMPEKPH(m_assistPageIndex, m_assistSlotIndex), type, 0);
+					m_equipmentScene.ChangeIcon(m_assistViewData.ELBLMMPEKPH_GetAssistScene(m_assistPageIndex, m_assistSlotIndex), type, 0);
 				}
 			}
 		}
@@ -1035,7 +1249,21 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1386670 Offset: 0x1386670 VA: 0x1386670
-		// private SceneIconScrollContent.SkillIconType CheckSkillIconType(JLKEOGLJNOD unitData, FFHPBEPOMAK diva) { }
+		private SceneIconScrollContent.SkillIconType CheckSkillIconType(JLKEOGLJNOD_TeamInfo unitData, FFHPBEPOMAK_DivaInfo diva)
+		{
+			if(diva != null)
+			{
+				if(unitData.BCJEAJPLGMB_MainDivas[0] != null)
+				{
+					if(unitData.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId != diva.AHHJLDLAPAN_DivaId)
+					{
+						return SceneIconScrollContent.SkillIconType.Live;
+					}
+					return SceneIconScrollContent.SkillIconType.Active;
+				}
+			}
+			return SceneIconScrollContent.SkillIconType.None;
+		}
 
 		// RVA: 0x1387780 Offset: 0x1387780 VA: 0x1387780 Slot: 28
 		protected override TransitionArgs GetCallArgsReturn()

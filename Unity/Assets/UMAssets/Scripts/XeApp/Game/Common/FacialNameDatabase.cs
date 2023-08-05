@@ -27,7 +27,13 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1C131F0 Offset: 0x1C131F0 VA: 0x1C131F0
-		// public static void Release() { }
+		public static void Release()
+		{
+			if (!isInitialized)
+				return;
+			facialNameList.Clear();
+			isInitialized = false;
+		}
 
 		// // RVA: 0x1C132FC Offset: 0x1C132FC VA: 0x1C132FC
 		public static void CreateFacialOverrideList(TextAsset facialTableAsset, int divaId, ref List<string> originalFacialNames, ref List<int> overrideFacialIds)

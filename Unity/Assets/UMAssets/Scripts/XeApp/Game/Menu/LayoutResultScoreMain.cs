@@ -150,7 +150,7 @@ namespace XeApp.Game.Menu
 			layoutScoreRankIconList[4] = layout.FindViewByExId("swtbl_rank_score_sw_rank_score_ss") as AbsoluteLayout;
 			layoutLeafNum = layout.FindViewById("swtbl_btn_luc") as AbsoluteLayout;
 			layoutComboRankAnim = layout.FindViewById("swtbl_rank_cmb") as AbsoluteLayout;
-			StartCoroutine(Co_Loading());
+			this.StartCoroutineWatched(Co_Loading());
 			return true;
  		}
 
@@ -195,7 +195,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1D1253C Offset: 0x1D1253C VA: 0x1D1253C
-		// public void ChangeViewForSkipResult() { }
+		public void ChangeViewForSkipResult()
+		{
+			textLiveSkipCaution.text = MessageManager.Instance.GetMessage("menu", "result_skip_caution");
+		}
 
 		// // RVA: 0x1D1260C Offset: 0x1D1260C VA: 0x1D1260C
 		// public void ChangeViewForSupportResult() { }
@@ -209,7 +212,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1D126E8 Offset: 0x1D126E8 VA: 0x1D126E8
 		public void StartAnim()
 		{
-			StartCoroutine(Co_StartAnim());
+			this.StartCoroutineWatched(Co_StartAnim());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71D8D4 Offset: 0x71D8D4 VA: 0x71D8D4
@@ -217,14 +220,14 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_StartAnim()
 		{
 			//0x1D17478
-			yield return Co_WaitForSeconds(0.5f, true);
-			yield return Co_CountUpNotes();
-			yield return Co_CountUpCombo();
-			yield return Co_FullComboAnim();
-			yield return Co_EnterComboRank();
-			yield return Co_CountUpScore();
-			yield return Co_HighScoreAnim();
-			yield return Co_ScoreRankAnim();
+			yield return Co.R(Co_WaitForSeconds(0.5f, true));
+			yield return Co.R(Co_CountUpNotes());
+			yield return Co.R(Co_CountUpCombo());
+			yield return Co.R(Co_FullComboAnim());
+			yield return Co.R(Co_EnterComboRank());
+			yield return Co.R(Co_CountUpScore());
+			yield return Co.R(Co_HighScoreAnim());
+			yield return Co.R(Co_ScoreRankAnim());
 			if(onFinished != null)
 				onFinished();
 		}
@@ -233,36 +236,116 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1D127B8 Offset: 0x1D127B8 VA: 0x1D127B8
 		private IEnumerator Co_CountUpNotes()
 		{
-			//0x1D15BC8
-			layoutMainAnim.StartChildrenAnimGoStop("go_score", "st_score");
-			yield return Co_WaitFrame(layoutMainAnim, countStartFrameList[6], true);
-			bool countUpEnd = false;
-			List<float> l = new List<float>();
-			NumberAnimationUtility.MakeAccelerationTimeList(10, 0.3f, 0.02f, ref l);
+			List<float> timerList;
+
+			//0x1D14B64
+			layoutMainAnim.StartChildrenAnimGoStop("go_notes", "st_notes");
+			List<CountType> waitList = new List<CountType>();
+			timerList = new List<float>();
+			NumberAnimationUtility.MakeAccelerationTimeList(5, 0.3f, 0.02f, ref timerList);
 			PlayCountUpLoopSE();
-			SetCountUpValue(CountType.Score, l, (int value) =>
+
 			{
-				//0x1D146D8
-				numberScore.SetNumber(value, 0);
-			}, () =>
-			{
-				//0x1D1472C
-				return m_isSkiped;
-			}, () =>
-			{
-				//0x1D14750
-				countUpEnd = true;
-			});
-			while (!countUpEnd)
-				yield return null;
-			countUpSEPlayback.Stop();
-			if(!viewData.PMCGHPOGLGM_EnableLiveSkip)
-			{
-				if(viewData.HMDHDKLDPFK_PrevScore < viewData.GCAPLLEIAAI_HighScore)
+				CountType type = CountType.Perfect;
+				waitList.Add(type);
+				yield return Co.R(Co_WaitFrame(layoutMainAnim, countStartFrameList[(int)type]));
+				SetCountUpValue(type, timerList, (int value) =>
 				{
-					numberHighScore.SetNumber(viewData.GCAPLLEIAAI_HighScore, 0);
-				}
+					//0x1D13FDC
+					numberNoteResultCountList[4].SetNumber(value, 0);
+				}, () =>
+				{
+					//0x1D14060
+					return m_isSkiped;
+				}, () =>
+				{
+					//0x1D1432C
+					waitList.Remove(type);
+				});
 			}
+
+			{
+				CountType type = CountType.Great;
+				waitList.Add(type);
+				yield return Co.R(Co_WaitFrame(layoutMainAnim, countStartFrameList[(int)type]));
+				SetCountUpValue(type, timerList, (int value) =>
+				{
+					//0x1D14084
+					numberNoteResultCountList[3].SetNumber(value, 0);
+				}, () =>
+				{
+					//0x1D14108
+					return m_isSkiped;
+				}, () =>
+				{
+					//0x1D143C8
+					waitList.Remove(type);
+				});
+			}
+
+			{
+				CountType type = CountType.Good;
+				waitList.Add(type);
+				yield return Co.R(Co_WaitFrame(layoutMainAnim, countStartFrameList[(int)type]));
+				SetCountUpValue(type, timerList, (int value) =>
+				{
+					//0x1D1412C
+					numberNoteResultCountList[2].SetNumber(value, 0);
+				}, () =>
+				{
+					//0x1D141B0
+					return m_isSkiped;
+				}, () =>
+				{
+					//0x1D14464
+					waitList.Remove(type);
+				});
+			}
+
+			{
+				CountType type = CountType.Bad;
+				waitList.Add(type);
+				yield return Co.R(Co_WaitFrame(layoutMainAnim, countStartFrameList[(int)type]));
+				SetCountUpValue(type, timerList, (int value) =>
+				{
+					//0x1D141D4
+					numberNoteResultCountList[1].SetNumber(value, 0);
+				}, () =>
+				{
+					//0x1D14258
+					return m_isSkiped;
+				}, () =>
+				{
+					//0x1D14500
+					waitList.Remove(type);
+				});
+			}
+
+			{
+				CountType type = CountType.Miss;
+				waitList.Add(type);
+				yield return Co.R(Co_WaitFrame(layoutMainAnim, countStartFrameList[(int)type]));
+				SetCountUpValue(type, timerList, (int value) =>
+				{
+					//0x1D1427C
+					numberNoteResultCountList[0].SetNumber(value, 0);
+				}, () =>
+				{
+					//0x1D14300
+					return m_isSkiped;
+				}, () =>
+				{
+					//0x1D1459C
+					waitList.Remove(type);
+				});
+			}
+
+			while(waitList.Count > 0)
+				yield return null;
+			if(OnFinishCountupNoteResult != null)
+				OnFinishCountupNoteResult();
+
+			countUpSEPlayback.Stop();
 		}
 
 		// // RVA: 0x1D12864 Offset: 0x1D12864 VA: 0x1D12864
@@ -302,7 +385,7 @@ namespace XeApp.Game.Menu
 					count = 0;
 					break;
 			}
-			StartCoroutine(Co_FakeCountup(count, timerList, onChangeNumberCakllback, onSkiped, onFinished));
+			this.StartCoroutineWatched(Co_FakeCountup(count, timerList, onChangeNumberCakllback, onSkiped, onFinished));
 			if(res != RhythmGameConsts.NoteResult.None && OnCountupNoteResult != null)
 			{
 				OnCountupNoteResult(res, CalcNoteResultCountUpTime(count, timerList));
@@ -317,7 +400,7 @@ namespace XeApp.Game.Menu
 
 			//0x1D16238
 			bool isEnd = false;
-			co = StartCoroutine(NumberAnimationUtility.Co_FakeCountup(targetNumber, countTimeList, onChangeNumberCakllback, () =>
+			co = this.StartCoroutineWatched(NumberAnimationUtility.Co_FakeCountup(targetNumber, countTimeList, onChangeNumberCakllback, () =>
 			{
 				//0x1D14638
 				isEnd = true;
@@ -333,7 +416,7 @@ namespace XeApp.Game.Menu
 			}
 			if(co != null)
 			{
-				StopCoroutine(co);
+				this.StopCoroutineWatched(co);
 				co = null;
 			}
 			onChangeNumberCakllback(targetNumber);
@@ -346,7 +429,7 @@ namespace XeApp.Game.Menu
 		{
 			//0x1D14760
 			layoutMainAnim.StartChildrenAnimGoStop("go_combo", "st_combo");
-			yield return Co_WaitFrame(layoutMainAnim, countStartFrameList[5], true);
+			yield return Co.R(Co_WaitFrame(layoutMainAnim, countStartFrameList[5], true));
 			bool countUpEnd = false;
 			List<float> f = new List<float>();
 			NumberAnimationUtility.MakeAccelerationTimeList(10, 0.3f, 0.02f, ref f);
@@ -379,13 +462,13 @@ namespace XeApp.Game.Menu
 				if(!IsFullCombo())
 				{
 					PlaySound(1, true);
-					yield return Co_WaitForSeconds(0.3f, true);
+					yield return Co.R(Co_WaitForSeconds(0.3f, true));
 				}
 				else
 				{
 					layoutFullComboMarkAnim.StartChildrenAnimGoStop("go_in", "st_in");
 					PlaySound(2, true);
-					yield return Co_WaitAnim(layoutFullComboMarkAnim, true);
+					yield return Co.R(Co_WaitAnim(layoutFullComboMarkAnim, true));
 					layoutFullComboMarkAnim.StartChildrenAnimLoop("logo_act", "loen_act");
 				}
 			}
@@ -393,7 +476,7 @@ namespace XeApp.Game.Menu
 			{
 				layoutPerfectFullComboMarkAnim.StartChildrenAnimGoStop("go_in", "st_in");
 				PlaySound(2, true);
-				yield return Co_WaitAnim(layoutPerfectFullComboMarkAnim, true);
+				yield return Co.R(Co_WaitAnim(layoutPerfectFullComboMarkAnim, true));
 				layoutPerfectFullComboMarkAnim.StartChildrenAnimLoop("logo_act", "loen_act");
 			}
 		}
@@ -404,7 +487,7 @@ namespace XeApp.Game.Menu
 		{
 			//0x1D160B4
 			layoutMainAnim.StartChildrenAnimGoStop("go_comborank", "st_comborank");
-			yield return Co_WaitAnim(layoutMainAnim, true);
+			yield return Co.R(Co_WaitAnim(layoutMainAnim, true));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71DBA4 Offset: 0x71DBA4 VA: 0x71DBA4
@@ -413,7 +496,7 @@ namespace XeApp.Game.Menu
 		{
 			//0x1D15BC8
 			layoutMainAnim.StartChildrenAnimGoStop("go_score", "st_score");
-			yield return Co_WaitFrame(layoutMainAnim, countStartFrameList[6], true);
+			yield return Co.R(Co_WaitFrame(layoutMainAnim, countStartFrameList[6], true));
 			bool countUpEnd = false;
 			List<float> f = new List<float>();
 			NumberAnimationUtility.MakeAccelerationTimeList(10, 0.3f, 0.02f, ref f);
@@ -436,7 +519,7 @@ namespace XeApp.Game.Menu
 			countUpSEPlayback.Stop();
 			if(!viewData.PMCGHPOGLGM_EnableLiveSkip)
 			{
-				if(viewData.GCAPLLEIAAI_HighScore < viewData.HMDHDKLDPFK_PrevScore)
+				if(viewData.GCAPLLEIAAI_HighScore > viewData.HMDHDKLDPFK_PrevScore)
 				{
 					numberHighScore.SetNumber(viewData.GCAPLLEIAAI_HighScore, 0);
 				}
@@ -452,7 +535,7 @@ namespace XeApp.Game.Menu
 			{
 				layoutHighScoreMarkAnim.StartChildrenAnimGoStop("go_in", "st_in");
 				PlaySound(3, true);
-				yield return Co_WaitAnim(layoutHighScoreMarkAnim, true);
+				yield return Co.R(Co_WaitAnim(layoutHighScoreMarkAnim, true));
 
 				if (!IsPerfectFullCombo())
 				{
@@ -483,9 +566,9 @@ namespace XeApp.Game.Menu
 			layoutMainAnim.StartChildrenAnimGoStop("go_rank");
 			layoutScoreRankTable.StartChildrenAnimGoStop(viewData.PENICOGGNLF_RankScore, viewData.PENICOGGNLF_RankScore);
 			layoutScoreRankIconList[viewData.PENICOGGNLF_RankScore].StartChildrenAnimGoStop("go_in", "st_in");
-			yield return Co_WaitForSeconds(0.5f, true);
+			yield return Co.R(Co_WaitForSeconds(0.5f, true));
 			PlayJingle();
-			yield return Co_WaitAnim(layoutScoreRankIconList[viewData.PENICOGGNLF_RankScore], true);
+			yield return Co.R(Co_WaitAnim(layoutScoreRankIconList[viewData.PENICOGGNLF_RankScore], true));
 			layoutScoreRankIconList[viewData.PENICOGGNLF_RankScore].StartChildrenAnimLoop("logo_act", "loen_act");
 			if(resultData.GetNoteExcellentCount() > 0)
 			{
@@ -495,7 +578,7 @@ namespace XeApp.Game.Menu
 			}
 			if (viewData.PENICOGGNLF_RankScore != 4)
 				yield break;
-			yield return Co_WaitForSeconds(0.5f, true);
+			yield return Co.R(Co_WaitForSeconds(0.5f, true));
 		}
 
 		// // RVA: 0x1D12B8C Offset: 0x1D12B8C VA: 0x1D12B8C

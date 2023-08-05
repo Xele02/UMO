@@ -14,7 +14,7 @@ public class BBLECJKKKLA_DecoSetItem : DIHHCBACKGG_DbSection
 		public int HJCJMAONOMH; // 0x1C
 		public int HAIFEBPOPEF; // 0x20
 		public int GJFLAHAGDKG; // 0x24
-		public int[] OMALMJLHABC; // 0x28
+		public int[] OMALMJLHABC_SetContent; // 0x28
 
 		public int PPFNGGCBJKC_Id { get { return EHOIENNDEDH ^ FBGGEFFJJHB; } set { EHOIENNDEDH = value ^ FBGGEFFJJHB; } } //0xF2C094 DEMEPMAEJOO 0xF2BA2C HIGKAIDMOKN
 		public int PLALNIIBLOF { get { return HNJHPNPFAAN ^ FBGGEFFJJHB; } set { HNJHPNPFAAN = value ^ FBGGEFFJJHB; } } //0xF2C12C JPCJNLHHIPE 0xF2BB64 JJFJNEJLBDG
@@ -23,16 +23,22 @@ public class BBLECJKKKLA_DecoSetItem : DIHHCBACKGG_DbSection
 		public int MLMCEBBDJOE { get { return MMDBOPCEKCJ ^ FBGGEFFJJHB; } set { MMDBOPCEKCJ = value ^ FBGGEFFJJHB; } } //0xF2C2F4 IGMHCODOFKG 0xF2BC9C IIIGDLGGEGK
 		public int ODNILEDOAIP { get { return HJCJMAONOMH ^ FBGGEFFJJHB; } set { HJCJMAONOMH = value ^ FBGGEFFJJHB; } } //0xF2C38C GNKPMBBAJHI 0xF2BD38 PPMACIMALAC
 		public int NPPGKNGIFGK { get { return HAIFEBPOPEF ^ FBGGEFFJJHB; } set { HAIFEBPOPEF = value ^ FBGGEFFJJHB; } } //0xF2C424 FLMDBAFHDNJ 0xF2BDD4 DIHIEJPOCOJ
-		public int KEJMJPHFFOJ { get { return GJFLAHAGDKG ^ FBGGEFFJJHB; } set { GJFLAHAGDKG = value ^ FBGGEFFJJHB; } } //0xF2C4BC FMNMLNIALNE 0xF2BE70 GBEPCBPOGDB
+		public int KEJMJPHFFOJ_Max { get { return GJFLAHAGDKG ^ FBGGEFFJJHB; } set { GJFLAHAGDKG = value ^ FBGGEFFJJHB; } } //0xF2C4BC FMNMLNIALNE 0xF2BE70 GBEPCBPOGDB
 
 		// // RVA: 0xF2C554 Offset: 0xF2C554 VA: 0xF2C554
-		// public int FKNBLDPIPMC(int BMBBDIAEOMP) { }
+		public int FKNBLDPIPMC_GetItemCode(int BMBBDIAEOMP)
+		{
+			return OMALMJLHABC_SetContent[BMBBDIAEOMP * 2] ^ FBGGEFFJJHB;
+		}
 
 		// // RVA: 0xF2C628 Offset: 0xF2C628 VA: 0xF2C628
 		// public int NKOHMLHLJGL(int BMBBDIAEOMP) { }
 
 		// // RVA: 0xF2C700 Offset: 0xF2C700 VA: 0xF2C700
-		// public int JJBNDDDGEAN() { }
+		public int JJBNDDDGEAN_GetNumItems()
+		{
+			return OMALMJLHABC_SetContent.Length / 2;
+		}
 
 		// // RVA: 0xF2BFF8 Offset: 0xF2BFF8 VA: 0xF2BFF8
 		// public uint CAOGDCBPBAN() { }
@@ -72,12 +78,12 @@ public class BBLECJKKKLA_DecoSetItem : DIHHCBACKGG_DbSection
 			data.ODNILEDOAIP = array[i].ODNILEDOAIP;
 			data.NPPGKNGIFGK = array[i].NPPGKNGIFGK;
 			int[] array2 = array[i].PIPDCAEIBPO;
-			data.OMALMJLHABC = new int[array2.Length];
+			data.OMALMJLHABC_SetContent = new int[array2.Length];
 			for(int j = 0; j < array2.Length; j++)
 			{
-				data.OMALMJLHABC[j] = array2[j] ^ FBGGEFFJJHB;
+				data.OMALMJLHABC_SetContent[j] = array2[j] ^ FBGGEFFJJHB;
 			}
-			data.KEJMJPHFFOJ = array[i].KEJMJPHFFOJ;
+			data.KEJMJPHFFOJ_Max = array[i].KEJMJPHFFOJ;
 			CDENCMNHNGA.Add(data);
 		}
 		return true;
@@ -92,7 +98,7 @@ public class BBLECJKKKLA_DecoSetItem : DIHHCBACKGG_DbSection
 	// // RVA: 0xF2BF14 Offset: 0xF2BF14 VA: 0xF2BF14 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(100, "DecoSteItem CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "BBLECJKKKLA_DecoSetItem.CAOGDCBPBAN");
 		return 0;
 	}
 }

@@ -331,7 +331,7 @@ namespace CriWare
 			// // RVA: 0x295AEE4 Offset: 0x295AEE4 VA: 0x295AEE4
 			public void SetMasterTimerType(Player.TimerType timerType)
 			{
-				TodoLogger.Log(0, "SetMasterTimerType");
+				TodoLogger.LogError(TodoLogger.CriManaPlugin, "SetMasterTimerType");
 			}
 
 			// // RVA: 0x295B084 Offset: 0x295B084 VA: 0x295B084
@@ -519,7 +519,7 @@ namespace CriWare
 					}
 					else
 					{
-						playerHolder.StartCoroutine(IssuePluginUpdatesForFrames(frameCount, playerHolder, true, playerId));
+						playerHolder.StartCoroutineWatched(IssuePluginUpdatesForFrames(frameCount, playerHolder, true, playerId));
 					}
 				}
 				cuePointCallback = null;

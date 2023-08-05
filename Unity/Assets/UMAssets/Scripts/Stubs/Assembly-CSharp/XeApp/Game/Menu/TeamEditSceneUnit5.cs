@@ -6,7 +6,7 @@ namespace XeApp.Game.Menu
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.LogError(0, "Implement monobehaviour");
 		}
 		[SerializeField]
 		private int m_switchDispTypeWaitFrame;

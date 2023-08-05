@@ -56,7 +56,7 @@ namespace XeApp.Game.RhythmGame.UI
 			_rivalDivaId = 1;
 			SetResult(true);
 			_isWaitWarmup = true;
-			StartCoroutine(WaitWarmup());
+			this.StartCoroutineWatched(WaitWarmup());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x746EF4 Offset: 0x746EF4 VA: 0x746EF4

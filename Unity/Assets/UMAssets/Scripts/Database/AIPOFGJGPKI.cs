@@ -31,7 +31,7 @@ public class AIPOFGJGPKI_CampaignDiva : DIHHCBACKGG_DbSection
 	{
 		for(int i = 0; i < CDENCMNHNGA.Count; i++)
 		{
-			if (PACNICEIIDI > CDENCMNHNGA[i].PDBPFJJCADD && PACNICEIIDI < CDENCMNHNGA[i].FDBNFFNFOND)
+			if (CDENCMNHNGA[i].PPEGAKEIEGM == 2 && PACNICEIIDI >= CDENCMNHNGA[i].PDBPFJJCADD && PACNICEIIDI < CDENCMNHNGA[i].FDBNFFNFOND)
 				return CDENCMNHNGA[i];
 		}
 		return null;
@@ -87,7 +87,7 @@ public class AIPOFGJGPKI_CampaignDiva : DIHHCBACKGG_DbSection
 	// RVA: 0xCD22AC Offset: 0xCD22AC VA: 0xCD22AC Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(0, "AIPOFGJGPKI_CampaignDiva CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "AIPOFGJGPKI_CampaignDiva.CAOGDCBPBAN");
 		return 0;
 	}
 }

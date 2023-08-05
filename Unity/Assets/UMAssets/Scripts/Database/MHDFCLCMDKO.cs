@@ -69,7 +69,7 @@ public class MHDFCLCMDKO_Enemy : DIHHCBACKGG_DbSection
 	// // RVA: 0x132B18C Offset: 0x132B18C VA: 0x132B18C Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(100, "Energy IIEMACPEEBJ");
+		TodoLogger.LogError(100, "Energy IIEMACPEEBJ");
 		return true;
 	}
 
@@ -97,7 +97,7 @@ public class MHDFCLCMDKO_Enemy : DIHHCBACKGG_DbSection
 	// // RVA: 0x132B5F8 Offset: 0x132B5F8 VA: 0x132B5F8 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(100, "Energy CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "MHDFCLCMDKO_Enemy.CAOGDCBPBAN");
 		return 0;
 	}
 }

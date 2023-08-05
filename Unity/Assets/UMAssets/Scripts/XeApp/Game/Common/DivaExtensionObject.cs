@@ -259,10 +259,10 @@ namespace XeApp.Game.Common
 		public void LockBoneSpring(int a_index = 0, float a_seconds = 0.05f)
 		{
 			if (m_coroutine_bsc_lock != null)
-				StopCoroutine(m_coroutine_bsc_lock);
+				this.StopCoroutineWatched(m_coroutine_bsc_lock);
 			if (!gameObject.activeSelf)
 				return;
-			m_coroutine_bsc_lock = StartCoroutine(CoroutineWaitLockBoneSpring(a_index, a_seconds));
+			m_coroutine_bsc_lock = this.StartCoroutineWatched(CoroutineWaitLockBoneSpring(a_index, a_seconds));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x737C50 Offset: 0x737C50 VA: 0x737C50
@@ -321,7 +321,7 @@ namespace XeApp.Game.Common
 		{
 			if(m_pause)
 			{
-				TodoLogger.Log(0, "LateUpdate DivaExtenssionObject when paused");
+				TodoLogger.LogError(0, "LateUpdate DivaExtenssionObject when paused");
 			}
 		}
 	}

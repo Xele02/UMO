@@ -53,7 +53,7 @@ namespace XeApp.Game.Menu
 					m_elems[i].SwapStatus(false);
 				}
 			};
-			StartCoroutine(Co_LoadResources());
+			this.StartCoroutineWatched(Co_LoadResources());
 		}
 
 		// RVA: 0xE29350 Offset: 0xE29350 VA: 0xE29350 Slot: 16
@@ -99,7 +99,7 @@ namespace XeApp.Game.Menu
 			base.OnActivateScene();
 			m_isShowHelp = false;
 			InitializeList();
-			StartCoroutine(Co_ShowHelp());
+			this.StartCoroutineWatched(Co_ShowHelp());
 		}
 
 		// RVA: 0xE2A468 Offset: 0xE2A468 VA: 0xE2A468
@@ -108,7 +108,7 @@ namespace XeApp.Game.Menu
 			m_statusChange.Update();
 			if (!m_monitorReloadCoolingTime)
 				return;
-			m_buttonRuntime.SetReloadButtonLock(CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.CDOBDJFJLPG() > 0);
+			m_buttonRuntime.SetReloadButtonLock(CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.CDOBDJFJLPG_GetRecheckTime() > 0);
 		}
 
 		// RVA: 0xE2A584 Offset: 0xE2A584 VA: 0xE2A584 Slot: 14
@@ -156,8 +156,15 @@ namespace XeApp.Game.Menu
 		// RVA: 0xE2A9C8 Offset: 0xE2A9C8 VA: 0xE2A9C8
 		protected bool CheckEventLimit()
 		{
-			TodoLogger.Log(0, "CheckEventLimit()");
-			return false;
+			if(!MenuScene.CheckDatelineAndAssetUpdate())
+			{
+				if(Database.Instance.gameSetup.musicInfo.gameEventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL/*0*/)
+				{
+					TodoLogger.LogError(0, "CheckEventLimit");
+				}
+				return false;
+			}
+			return true;
 		}
 
 		// RVA: 0xE2AD40 Offset: 0xE2AD40 VA: 0xE2AD40
@@ -245,7 +252,7 @@ namespace XeApp.Game.Menu
 					friends.Add(data);
 				}
 				MenuScene.Instance.InputDisable();
-				StartCoroutine(OnSuccessSearchFriend());
+				this.StartCoroutineWatched(OnSuccessSearchFriend());
 			}
 		}
 
@@ -257,7 +264,11 @@ namespace XeApp.Game.Menu
 		{
 			if (value == 1)
 			{
-				TodoLogger.LogNotImplemented("OnSelectListItem");
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				ProfilDateArgs arg = new ProfilDateArgs();
+				arg.data = m_guestInfoList[content.Index].friend;
+				arg.infoType = ProfilMenuLayout.InfoType.ASSIST;
+				MenuScene.Instance.Call(TransitionList.Type.PROFIL, arg, true);
 			}
 			else if(value == 0)
 			{
@@ -284,7 +295,7 @@ namespace XeApp.Game.Menu
 					data.KHEKNNFCAOI(friendManager.BFDEHIANFOG[i]);
 					friends.Add(data);
 				}
-				StartCoroutine(OnSuccessSearchFriend());
+				this.StartCoroutineWatched(OnSuccessSearchFriend());
 			}, (CACGCMBKHDI_Request error) =>
 			{
 				//0xE2DF0C
@@ -293,7 +304,7 @@ namespace XeApp.Game.Menu
 			}, (CACGCMBKHDI_Request error) =>
 			{
 				//0xE2E250
-				TodoLogger.Log(0, "Error friend request");
+				TodoLogger.LogError(0, "Error friend request");
 			});
 
 		}
@@ -322,7 +333,7 @@ namespace XeApp.Game.Menu
 				GuestListElem elem = m_scrollList.ScrollContent.GetComponentInChildren<GuestListElem>(true);
 				if(elem != null)
 				{
-					StartCoroutine(TutorialProc.Co_AssistSelect(elem.Button));
+					this.StartCoroutineWatched(TutorialProc.Co_AssistSelect(elem.Button));
 				}
 			}
 			m_isShowHelp = true;
@@ -342,7 +353,18 @@ namespace XeApp.Game.Menu
 		// RVA: 0xE2B87C Offset: 0xE2B87C VA: 0xE2B87C
 		private void OnClickSortButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickSortButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MenuScene.Instance.ShowSortWindow(PopupSortMenu.SortPlace.GuestSelect, (PopupSortMenu popup) =>
+			{
+				//0xE2DB0C
+				MenuScene.Instance.InputDisable();
+				m_sortType = popup.SortItem;
+				m_assistType = popup.AssistItem;
+				m_seriesFilter = popup.GetSeriaseFilter();
+				m_centerSkillFilter = popup.GetCenterSkillFilter();
+				m_buttonRuntime.SetSortType(m_sortType);
+				this.StartCoroutineWatched(OnSuccessSearchFriend());
+			}, null);
 		}
 
 		// RVA: 0xE2B9C4 Offset: 0xE2B9C4 VA: 0xE2B9C4
@@ -351,7 +373,12 @@ namespace XeApp.Game.Menu
 		// RVA: 0xE2C1DC Offset: 0xE2C1DC VA: 0xE2C1DC
 		private void OnClickOrderButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickOrderButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			m_sortOrder = m_sortOrder == GeneralList.SortOrder.Ascend ? GeneralList.SortOrder.Descend : GeneralList.SortOrder.Ascend;
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.GDMIGCCMEEF_GuestSelect.EILKGEADKGH_order = (int)m_sortOrder;
+			m_saveDataDirty = true;
+			m_buttonRuntime.SetSortOrder(m_sortOrder);
+			SortGuestList();
 		}
 
 		// RVA: 0xE2C378 Offset: 0xE2C378 VA: 0xE2C378
@@ -403,12 +430,95 @@ namespace XeApp.Game.Menu
 		// RVA: 0xE2C45C Offset: 0xE2C45C VA: 0xE2C45C
 		private int SortDelegate(GuestListInfo a, GuestListInfo b)
 		{
-			TodoLogger.Log(0, "SortDelegate");
-			return a.GetHashCode().CompareTo(b.GetHashCode());
+			int res = 0;
+			switch(m_sortType)
+			{
+				case SortItem.Total:
+					res = a.total.CompareTo(b.total);
+					break;
+				case SortItem.Soul:
+					res = a.soul.CompareTo(b.soul);
+					break;
+				case SortItem.Voice:
+					res = a.voice.CompareTo(b.voice);
+					break;
+				case SortItem.Charm:
+					res = a.charm.CompareTo(b.charm);
+					break;
+				default:
+					break;
+				case SortItem.Rarity:
+					res = a.sceneRarity.CompareTo(b.sceneRarity);
+					break;
+				case SortItem.Level:
+					res = a.sceneLevel.CompareTo(b.sceneLevel);
+					break;
+				case SortItem.Life:
+					res = a.life.CompareTo(b.life);
+					break;
+				case SortItem.Luck:
+					res = a.luck.CompareTo(b.luck);
+					break;
+				case SortItem.Support:
+					res = a.support.CompareTo(b.support);
+					break;
+				case SortItem.Fold:
+					res = a.fold.CompareTo(b.fold);
+					break;
+				case SortItem.LastPlayDate:
+					res = a.lastLogin.CompareTo(b.lastLogin);
+					break;
+				case SortItem.PlayerRunk:
+					res = a.playerRank.CompareTo(b.playerRank);
+					break;
+				case SortItem.Episode:
+					{
+						if (a.episodeId == 0 && b.episodeId == 0)
+							break;
+						if (a.episodeId == 0)
+							res = 1;
+						else if (b.episodeId == 0)
+							res = -1;
+						else
+							res = a.episodeId.CompareTo(b.episodeId);
+					}
+					break;
+				case SortItem.HighScoreRating:
+					res = a.musicRatio.CompareTo(b.musicRatio);
+					break;
+				case SortItem.LuckyLeaf:
+					res = a.limitOverCount.CompareTo(b.limitOverCount);
+					break;
+			}
+			//switchD_00e2c494_caseD_4;
+			if(res == 0)
+			{
+				res = GetBaseRaritySortValue(a, b);
+				if (res == 0)
+				{
+					res = b.sceneId.CompareTo(a.sceneId);
+					if(res == 0)
+					{
+						res = a.ListIndex.CompareTo(b.ListIndex);
+					}
+				}
+				return res;
+			}
+			if (m_sortOrder == GeneralList.SortOrder.Descend)
+				res = -res;
+			return res;
 		}
 
 		// RVA: 0xE2C908 Offset: 0xE2C908 VA: 0xE2C908
-		//private int GetBaseRaritySortValue(GuestListInfo a, GuestListInfo b) { }
+		private int GetBaseRaritySortValue(GuestListInfo a, GuestListInfo b)
+		{
+			int res = (a.friend.KHGKPKDBMOH_GetAssistScene() != null ? a.friend.KHGKPKDBMOH_GetAssistScene().JKGFBFPIMGA_Rarity : 0).CompareTo(b.friend.KHGKPKDBMOH_GetAssistScene() != null ? b.friend.KHGKPKDBMOH_GetAssistScene().JKGFBFPIMGA_Rarity : 0);
+			if(res == 0)
+			{
+				res = (a.friend.KHGKPKDBMOH_GetAssistScene() != null ? a.friend.KHGKPKDBMOH_GetAssistScene().EKLIPGELKCL_SceneRarity : 0).CompareTo(b.friend.KHGKPKDBMOH_GetAssistScene() != null ? b.friend.KHGKPKDBMOH_GetAssistScene().EKLIPGELKCL_SceneRarity : 0);
+			}
+			return res;
+		}
 
 		// RVA: 0xE2C9C0 Offset: 0xE2C9C0 VA: 0xE2C9C0
 		private void OnUpdateListItem(int index, GeneralListContent content, GuestListInfo info)
@@ -467,23 +577,55 @@ namespace XeApp.Game.Menu
 		// RVA: 0xE2A3DC Offset: 0xE2A3DC VA: 0xE2A3DC
 		private IEnumerator Co_ShowHelp()
 		{
-			TodoLogger.Log(0, "GuestList Co_ShowHelp");
-			yield break;
+			//0xE2F644
+			while (!m_isShowHelp)
+				yield return null;
+			MenuScene.Instance.InputDisable();
+			yield return TutorialManager.TryShowTutorialCoroutine(CheckTutorialCondition);
+			MenuScene.Instance.InputEnable();
+			yield return null;
 		}
 
 		// RVA: 0xE2D13C Offset: 0xE2D13C VA: 0xE2D13C
-		//private bool CheckTutorialCondition(TutorialConditionId conditionId) { }
+		private bool CheckTutorialCondition(TutorialConditionId conditionId)
+		{
+			return conditionId == TutorialConditionId.Condition88 && IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.OANJBOPLCKP_IsUnit5Enabled() && !QuestUtility.IsBeginnerQuest() && !GameManager.Instance.IsTutorial;
+		}
 
 		// RVA: 0xE2D2C8 Offset: 0xE2D2C8 VA: 0xE2D2C8
 		private void OnShowAssistSelectButton()
 		{
-			TodoLogger.LogNotImplemented("GuestList OnShowAssistSelectButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			ProfilDateArgs arg = new ProfilDateArgs();
+			arg.infoType = ProfilMenuLayout.InfoType.ASSIST;
+			arg.isShowMyProfil = true;
+			MenuScene.Instance.Call(TransitionList.Type.PROFIL, arg, true);
 		}
 
 		// RVA: 0xE2D41C Offset: 0xE2D41C VA: 0xE2D41C Slot: 28
 		protected override TransitionArgs GetCallArgsReturn()
 		{
-			TodoLogger.Log(0, "GuestList GetCallArgsReturn");
+			OHCAABOMEOF.KGOGMKMBCPP_EventType eventType = Database.Instance.gameSetup.musicInfo.gameEventType;
+			if(eventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB)
+			{
+				if(eventType > OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest || 
+				((1 << (int)eventType) & 78) == 0)
+				{
+					return base.GetCallArgsReturn();
+				}
+			}
+			else
+			{
+				if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
+				{
+					TodoLogger.LogError(0, "GetCallArgsReturn Event");
+				}
+				if(eventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
+				{
+					return base.GetCallArgsReturn();
+				}
+			}
+			TodoLogger.LogError(0, "GetCallArgsReturn Event");
 			return null;
 		}
 
@@ -492,7 +634,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_LoadResources()
 		{
 			//0xE2F51C
-			yield return Co_LoadLayout();
+			yield return Co.R(Co_LoadLayout());
 			IsReady = true;
 		}
 
@@ -515,52 +657,52 @@ namespace XeApp.Game.Menu
 			bundleLoadCount = 0;
 
 			operation = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_GeneralListButton");
-			yield return operation;
+			yield return Co.R(operation);
 
-			yield return operation.InitializeLayoutCoroutine(systemFont, (GameObject instance) =>
+			yield return Co.R(operation.InitializeLayoutCoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xE2E3BC
 				instance.transform.SetParent(transform, false);
 				m_buttonRuntime = instance.GetComponent<GeneralListButtonRuntime>();
-			});
+			}));
 			bundleLoadCount++;
 
 			operation = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_GuestListWindow");
-			yield return operation;
+			yield return Co.R(operation);
 
-			yield return operation.InitializeLayoutCoroutine(systemFont, (GameObject instance) =>
+			yield return Co.R(operation.InitializeLayoutCoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xE2E4B8
 				instance.transform.SetParent(transform, false);
 				m_windowUi = instance.GetComponent<GuestListWindow>();
 				m_scrollList = instance.GetComponentInChildren<SwapScrollList>(true);
-			});
+			}));
 			bundleLoadCount++;
 
 			uguiOperation = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "UGUI_AssistButton");
-			yield return uguiOperation;
+			yield return Co.R(uguiOperation);
 
-			yield return uguiOperation.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			yield return Co.R(uguiOperation.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xE2E5FC
 				instance.transform.SetParent(transform, false);
 				m_assistButton = instance.GetComponent<AssistSelectButton>();
-			});
+			}));
 			bundleLoadCount++;
 
 			poolSize = m_scrollList.ScrollObjectCount;
 			operation = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_GuestListElem");
-			yield return operation;
+			yield return Co.R(operation);
 
 			LayoutUGUIRuntime baseRuntime = null;
-			yield return operation.InitializeLayoutCoroutine(systemFont, (GameObject instance) =>
+			yield return Co.R(operation.InitializeLayoutCoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xE2E6F8
 				baseRuntime = instance.GetComponent<LayoutUGUIRuntime>();
 				baseRuntime.name = string.Format("GuestListElem {0:D2}", 0);
 				m_scrollList.AddScrollObject(baseRuntime.GetComponent<SwapScrollListContent>());
 				m_elems.Add(baseRuntime.GetComponent<GuestListElem>());
-			});
+			}));
 			bundleLoadCount++;
 
 			for(i = 1; i < poolSize; i++)
@@ -588,11 +730,7 @@ namespace XeApp.Game.Menu
 					yield return null;
 			}
 		}
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6E0EC4 Offset: 0x6E0EC4 VA: 0x6E0EC4
-		//// RVA: 0xE2DB0C Offset: 0xE2DB0C VA: 0xE2DB0C
-		//private void <OnClickSortButton>b__46_0(PopupSortMenu popup) { }
-
+		
 		//[CompilerGeneratedAttribute] // RVA: 0x6E0ED4 Offset: 0x6E0ED4 VA: 0x6E0ED4
 		//// RVA: 0xE2DC8C Offset: 0xE2DC8C VA: 0xE2DC8C
 		//private bool <OnClickSortNextButton>b__47_0(SortItem _) { }

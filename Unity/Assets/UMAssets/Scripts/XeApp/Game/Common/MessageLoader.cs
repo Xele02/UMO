@@ -50,13 +50,21 @@ namespace XeApp.Game.Common
 			Release(sheet);
 			if(defaultInstallSource == InstallSource.LocalStorage)
 			{
-				TodoLogger.Log(0, "MessageLoader 1");
+				string str = BBGDKLLEPIB.OGCDNCDMLCA_MxDir + BBGDKLLEPIB.HHCJCDFCLOB.OCOGBOHOGGE_DbFileName;
+				Dictionary<string,string> dic = new Dictionary<string, string>(1);
+				dic.Add("sheet", ((int)sheet).ToString());
+				dic.Add("bankName", sheet.ToString());
+				dic.Add("ver", version.ToString());
+				m_isLoading = true;
+				IIEDOGCMCIE data = new IIEDOGCMCIE();
+				data.MCDJJPAKBLH(str);
+				N.a.StartCoroutineWatched(Coroutine_SecureFileLoad(data, sheet, version));
 			}
 			else
 			{
 				if(sheet != MessageLoader.eSheet.common && sheet != MessageLoader.eSheet.menu)
 				{
-					UnityEngine.Debug.LogError("cant load from resource = "+sheet);
+					TodoLogger.LogError(TodoLogger.Filesystem, "cant load from resource = "+sheet);
 				}
 				StringBuilder str = new StringBuilder(64);
 				str.AppendFormat("Message/{0}_{1:D8}", s_path[(int)sheet], version);
@@ -70,7 +78,26 @@ namespace XeApp.Game.Common
 
 		// [IteratorStateMachineAttribute] // RVA: 0x739A3C Offset: 0x739A3C VA: 0x739A3C
 		// // RVA: 0x1116178 Offset: 0x1116178 VA: 0x1116178
-		// private IEnumerator Coroutine_SecureFileLoad(IIEDOGCMCIE tar, MessageLoader.eSheet sheet, int version) { }
+		private IEnumerator Coroutine_SecureFileLoad(IIEDOGCMCIE tar, MessageLoader.eSheet sheet, int version)
+		{
+			//0x11179A4
+			while(!tar.PLOOEECNHFB)
+				yield return null;
+			StringBuilder str = new StringBuilder(64);
+			str.AppendFormat("{0}_{1:D8}.bytes", s_path[(int)sheet], version);
+			string name = str.ToString();
+			CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tar.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) =>
+			{
+				//0x1117860
+				return x.OPFGFINHFCE_Name.Contains(name);
+			});
+			if(file != null)
+			{
+				Release(sheet);
+				MessageManager.Instance.RegisterBank(sheet.ToString(), file.DBBGALAPFGC_Data);
+			}
+			m_isLoading = false;
+		}
 
 		// // RVA: 0x111626C Offset: 0x111626C VA: 0x111626C
 		// public void Request(string bankName, string fileName) { }
@@ -110,7 +137,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1117054 Offset: 0x1117054 VA: 0x1117054 Slot: 4
 		public void Dispose()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x1116088 Offset: 0x1116088 VA: 0x1116088
@@ -122,18 +149,16 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1117058 Offset: 0x1117058 VA: 0x1117058
 		public YieldInstruction WaitForDone(MonoBehaviour mb)
 		{
-			return mb.StartCoroutine(CheckDone());
+			return mb.StartCoroutineWatched(CheckDone());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x739AB4 Offset: 0x739AB4 VA: 0x739AB4
 		// // RVA: 0x1117090 Offset: 0x1117090 VA: 0x1117090
 		private IEnumerator CheckDone()
 		{
-    		UnityEngine.Debug.Log("Enter CheckDone");
 			//0x11178B0
 			while(m_isLoading)
 				yield return null;
-    		UnityEngine.Debug.Log("Exit CheckDone");
 		}
 
 		// // RVA: 0x111713C Offset: 0x111713C VA: 0x111713C

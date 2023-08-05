@@ -18,13 +18,13 @@ namespace XeApp.Game.Common
 		// RVA: 0xAEB564 Offset: 0xAEB564 VA: 0xAEB564
 		public void OnDestroy()
 		{
-			TodoLogger.Log(0, "MusicStageChangerResource OnDestroy");
+			return;
 		}
 
 		// RVA: 0xAEB578 Offset: 0xAEB578 VA: 0xAEB578
 		public void LoadResouces(int wavId, int assetId, int stageDivaNum)
 		{
-			StartCoroutine(Co_LoadAllResouces(wavId, assetId, stageDivaNum));
+			this.StartCoroutineWatched(Co_LoadAllResouces(wavId, assetId, stageDivaNum));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x73B6A8 Offset: 0x73B6A8 VA: 0x73B6A8
@@ -42,7 +42,7 @@ namespace XeApp.Game.Common
 			string wavName = GameManager.Instance.GetWavDirectoryName(wavId, "mc/{0}/dr/sc/{1:D3}.xab", stageDivaNum, 1, assetId, false);
 			bundleName.SetFormat("mc/{0}/dr/sc/{1:D3}.xab", wavName, assetId);
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			assetName.SetFormat("dr_sc_{0:D3}_param", assetId);
 			param = operation.GetAsset<MusicStageChangerParam>(assetName.ToString());
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());

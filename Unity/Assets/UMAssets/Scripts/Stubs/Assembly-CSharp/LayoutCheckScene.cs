@@ -5,7 +5,7 @@ public class LayoutCheckScene : MainSceneBase
 {
 	private void Awake()
 	{
-		UnityEngine.Debug.LogError("Implement monobehaviour");
+		TodoLogger.LogError(0, "Implement monobehaviour");
 	}
 	[SerializeField]
 	private Canvas m_canvas;

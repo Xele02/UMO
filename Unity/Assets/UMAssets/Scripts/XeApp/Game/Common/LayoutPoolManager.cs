@@ -44,7 +44,13 @@ namespace XeApp.Game.Common
 		}
 
         // // RVA: 0x1106AE0 Offset: 0x1106AE0 VA: 0x1106AE0
-        // public void Release() { }
+        public void Release()
+		{
+			for(int i = 0; i < m_pools.Length; i++)
+			{
+				m_pools[i].Release();
+			}
+		}
 
         // // RVA: 0x1106B6C Offset: 0x1106B6C VA: 0x1106B6C
         public void Initialize(MonoBehaviour mb, Font font)

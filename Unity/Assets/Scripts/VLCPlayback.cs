@@ -6,87 +6,29 @@ using System.Runtime.InteropServices;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
-#if UNITY_EDITOR
-using UnityEditor;
-
-[InitializeOnLoadAttribute]
-public static class VLCPauseStateChanged
-{
-    // register an event handler when the class is initialized
-    static VLCPauseStateChanged()
-    {
-        EditorApplication.pauseStateChanged += LogPauseState;
-    }
-
-    public static List<VLCPlayback> playbacks = new List<VLCPlayback>();
-
-    private static void LogPauseState(PauseState state)
-    {
-        if(Application.isPlaying)
-        {
-            for(int i = 0; i < playbacks.Count; i++)
-            {
-                playbacks[i].SetPauseEditor(state == PauseState.Paused);
-            }
-        }
-    }
-}
-#endif
+using VGMToolbox.format;
+using CriWare.CriMana;
 
 /// this class serves as an example on how to configure playback in Unity with VLC for Unity using LibVLCSharp.
 /// for libvlcsharp usage documentation, please visit https://code.videolan.org/videolan/LibVLCSharp/-/blob/master/docs/home.md
-public class VLCPlayback : MonoBehaviour
+public class VLCPlayback : MoviePlayback
 {
     MediaPlayer _mediaPlayer;
-    const int seekTimeDelta = 5000;
-    Texture2D tex = null;
-    bool playing;
-    public string videoPath;
-    
-    uint width;
-    uint height;
-    uint pitch;
-    uint lines;
     public MemoryStream ms;
     static int s_playerId = 0;
     int playerId;
     string mapFileName;
 
-    bool loop = false;
 
-    private VLCState state;
-
-    bool pauseEditor = false;
-    bool pause = false;
-
-    float time = 0;
-
-    void Awake()
+    public override void Awake()
     {
-        //TextureHelper.FlipTextures(transform);
+        base.Awake();
         playerId = s_playerId++;
-        #if UNITY_EDITOR
-        VLCPauseStateChanged.playbacks.Add(this);
-        #endif
     }
 
-    /*public void SeekForward()
+    public override void OnDestroy()
     {
-        Debug.Log("[VLC] Seeking forward !");
-        _mediaPlayer.SetTime(_mediaPlayer.Time + seekTimeDelta);
-    }
-
-    public void SeekBackward()
-    {
-        Debug.Log("[VLC] Seeking backward !");
-        _mediaPlayer.SetTime(_mediaPlayer.Time - seekTimeDelta);
-    }*/
-
-    void OnDestroy()
-    {
-        #if UNITY_EDITOR
-        VLCPauseStateChanged.playbacks.Remove(this);
-        #endif
+        base.OnDestroy();
         if(VLCManager.Instance.IsInitialized)
         {
             _mediaPlayer?.Stop();
@@ -109,9 +51,6 @@ public class VLCPlayback : MonoBehaviour
             ms?.Dispose();
             ms = null;
         }
-        #if UNITY_EDITOR
-        VLCPauseStateChanged.playbacks.Remove(this);
-        #endif
     }
 
     void OnDisable() 
@@ -124,13 +63,31 @@ public class VLCPlayback : MonoBehaviour
         }
     }
 
-    bool isReady = false;
+    public override void Init(string path, bool loop, Action<MovieInfo> onReady)
+    {
+        CriUsmStream videoStream = new CriUsmStream(path);
+        MpegStream.DemuxOptionsStruct demux = new MpegStream.DemuxOptionsStruct() { ExtractVideo = true, ExtractAudio = false };
+        demux.ExtractedFileList = new List<string>();
+        demux.Key1 = 0x44C5F5F5;
+        demux.Key2 = 0x0581B687;
+        demux.ExtractInMemoryStream = true;
+        demux.ExtractedMemoryStream = new List<MemoryStream>();
+        videoStream.DemultiplexStreams(demux);
+        foreach(MemoryStream s in demux.ExtractedMemoryStream)
+        {
+            ms = s;
+            SetLoop(loop);
+            this.StartCoroutineWatched(Prepare());
+            break;
+        }
+        onReady(videoStream.movieInfo);
+    }
 
-    public IEnumerator Prepare(int _width = -1, int _height = -1)
+    public override IEnumerator Prepare(int _width = -1, int _height = -1)
     {
         if(VLCManager.Instance.IsInitialized)
         {
-            UnityEngine.Debug.Log("Start preparing VLC player");
+            TodoLogger.Log(TodoLogger.Movie, "Start preparing VLC player");
             if (_mediaPlayer == null)
             {
                 _mediaPlayer = new MediaPlayer(VLCManager.Instance.VLC);
@@ -176,7 +133,7 @@ public class VLCPlayback : MonoBehaviour
                     }
                     yield return null;
                 }
-                UnityEngine.Debug.Log("Video size : "+width+" "+height);
+                TodoLogger.Log(TodoLogger.Movie, "Video size : " + width+" "+height);
                 
                 _mediaPlayer.Stop();
                 while(_mediaPlayer.Media.State != VLCState.Stopped)
@@ -211,7 +168,7 @@ public class VLCPlayback : MonoBehaviour
             state = _mediaPlayer.Media.State;
             _mediaPlayer.Media.StateChanged += OnStateChanged;
             
-            UnityEngine.Debug.Log("VLC player ready");
+            TodoLogger.Log(TodoLogger.Movie, "VLC player ready");
             isReady = true;
         }
         else
@@ -224,7 +181,7 @@ public class VLCPlayback : MonoBehaviour
                         TextureFormat.RGBA32,
                         false,
                         true);
-            tex.SetPixel(0, 0, Color.black);
+            (tex as Texture2D).SetPixel(0, 0, Color.black);
         }
     }
 
@@ -233,34 +190,11 @@ public class VLCPlayback : MonoBehaviour
         state = _mediaPlayer.Media.State;
     }
 
-    public VLCState GetState()
-    {
-        return state;
-    }
-
-    public bool IsReady()
-    {
-        return isReady;
-    }
-
-    public MediaTrack[] GetTracksInfo()
+    public override void PlayPause()
     {
         if(VLCManager.Instance.IsInitialized)
         {
-            if(_mediaPlayer != null && _mediaPlayer.Media != null)
-            {
-                MediaTrack[] tracks = _mediaPlayer.Media.Tracks;
-                return tracks;
-            }
-        }
-        return null;
-    }
-
-    public void PlayPause()
-    {
-        if(VLCManager.Instance.IsInitialized)
-        {
-            Debug.Log ("[VLC] Toggling Play Pause !");
+            TodoLogger.Log (TodoLogger.Movie, "[VLC] Toggling Play Pause !");
             if (_mediaPlayer.IsPlaying)
             {
                 _mediaPlayer.Pause();
@@ -272,27 +206,25 @@ public class VLCPlayback : MonoBehaviour
         }
         else
         {
-            if(state != VLCState.Paused)
-                state = VLCState.Playing;
-            else
-                state = VLCState.Paused;
+            if(playing)
+            {
+                if(state != VLCState.Paused)
+                    state = VLCState.Playing;
+                else
+                    state = VLCState.Paused;
+            }
         }
     }
 
-    public void SetLoop(bool loop)
+    public override void StartPlay()
     {
-        this.loop = loop;
-    }
-
-    public void StartPlay()
-    {
+        playing = true;
         if(VLCManager.Instance.IsInitialized)
         {
-            Debug.Log ("[VLC] Start Player !");
-            playing = true;
+            TodoLogger.Log (TodoLogger.Movie, "[VLC] Start Player !");
 
             if(!_mediaPlayer.Play())
-                UnityEngine.Debug.Log("Play error");
+                TodoLogger.Log(TodoLogger.Movie, "Play error");
             _mediaPlayer.SetRate(1);
         }
         else
@@ -301,22 +233,13 @@ public class VLCPlayback : MonoBehaviour
         }
     }
 
-    public long GetTime()
+    public override void Stop ()
     {
-        /*if(_mediaPlayer != null)
-        {
-            return  _mediaPlayer.Time;
-        }*/
-        return (long)(time * 1000 * 1000);
-    }
-
-    public void Stop ()
-    {
+        playing = false;
         if(VLCManager.Instance.IsInitialized)
         {
-            Debug.Log ("[VLC] Stopping Player !");
+            TodoLogger.Log (TodoLogger.Movie, "[VLC] Stopping Player !");
 
-            playing = false;
             _mediaPlayer?.Stop();
             time = 0;
             
@@ -333,7 +256,7 @@ public class VLCPlayback : MonoBehaviour
         }
     }
 
-    public bool IsPlaying()
+    public override bool IsPlaying()
     {
         if(VLCManager.Instance.IsInitialized)
             return _mediaPlayer.IsPlaying;
@@ -341,37 +264,17 @@ public class VLCPlayback : MonoBehaviour
             return false;
     }
 
-    public bool IsPaused()
+    protected override void UpdatePause()
     {
-        return pause;
-    }
-
-    public void Pause(bool pause)
-    {
-        this.pause = pause;
-        UpdatePause();
-    }
-
-    public void SetPauseEditor(bool pause)
-    {
-        pauseEditor = pause;
-        UpdatePause();
-    }
-
-    private void UpdatePause()
-    {
+        if(!playing)
+            return;
         if(VLCManager.Instance.IsInitialized)
             _mediaPlayer?.SetPause(pause || pauseEditor);
         else
             state = pause ? VLCState.Paused : VLCState.Playing;
     }
 
-    public void CleanAndDestroy()
-    {
-        Destroy(this);
-    }
-
-    void Update()
+    protected override void Update()
     {
         if(!playing) return;
 
@@ -401,7 +304,7 @@ public class VLCPlayback : MonoBehaviour
             //var texptr = _mediaPlayer.GetTexture(i_videoWidth, i_videoHeight, out bool updated);
             if (i_videoWidth != 0 && i_videoHeight != 0 && CurrentMappedViewAccessor != null/* && updated && texptr != IntPtr.Zero*/)
             {
-                Debug.Log("Creating texture with height " + i_videoHeight + " and width " + i_videoWidth);
+                TodoLogger.Log(TodoLogger.Movie, "Creating texture with height " + i_videoHeight + " and width " + i_videoWidth);
                 tex = new Texture2D((int)width/*i_videoWidth*/,
                     (int)/*i_videoHeight*/height,
                     TextureFormat.RGBA32,
@@ -417,16 +320,11 @@ public class VLCPlayback : MonoBehaviour
             {
                 tex.UpdateExternalTexture(texptr);
             }*/
-            tex.LoadRawTextureData(CurrentMappedViewAccessor.SafeMemoryMappedViewHandle.DangerousGetHandle(), (int)(pitch * lines));
-            tex.Apply();
+            (tex as Texture2D).LoadRawTextureData(CurrentMappedViewAccessor.SafeMemoryMappedViewHandle.DangerousGetHandle(), (int)(pitch * lines));
+            (tex as Texture2D).Apply();
         }
         if(state == VLCState.Playing)
             time += Time.deltaTime;
-    }
-
-    public Texture2D GetTexture()
-    {
-        return tex;
     }
 
     MemoryMappedFile CurrentMappedFile;

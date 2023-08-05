@@ -67,7 +67,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x16DE9F8 Offset: 0x16DE9F8 VA: 0x16DE9F8 Slot: 5
 		protected override void Start()
 		{
-			StartCoroutine(Co_LoadResources());
+			this.StartCoroutineWatched(Co_LoadResources());
 		}
 
 		// RVA: 0x16DEAA8 Offset: 0x16DEAA8 VA: 0x16DEAA8
@@ -124,7 +124,7 @@ namespace XeApp.Game.Menu
 			m_costume_color = m_next_costume_color;
 			MenuScene.Instance.divaManager.SetActive(false);
 			m_model_loaded = false;
-			StartCoroutine(CoroutineDivaModel(m_pushedTrying, false));
+			this.StartCoroutineWatched(CoroutineDivaModel(m_pushedTrying, false));
 		}
 
 		// RVA: 0x16DF084 Offset: 0x16DF084 VA: 0x16DF084 Slot: 16
@@ -167,7 +167,7 @@ namespace XeApp.Game.Menu
 					}
 				}
 			}
-			StartCoroutine(Co_LoadDivaResource(m_diva_id));
+			this.StartCoroutineWatched(Co_LoadDivaResource(m_diva_id));
 		}
 
 		// RVA: 0x16DF764 Offset: 0x16DF764 VA: 0x16DF764 Slot: 17
@@ -226,7 +226,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x16DFCD4 Offset: 0x16DFCD4 VA: 0x16DFCD4 Slot: 13
 		protected override bool IsEndExitAnimation()
 		{
-			if (m_view_on.IsPlaying())
+			if (!m_view_on.IsPlaying())
 			{
 				if (!m_model_loaded)
 					return false;
@@ -262,7 +262,7 @@ namespace XeApp.Game.Menu
 			m_resourceLoadRequest = true;
 			if(divaWaitCoroutine != null)
 			{
-				StopCoroutine(divaWaitCoroutine);
+				this.StopCoroutineWatched(divaWaitCoroutine);
 				divaWaitCoroutine = null;
 			}
 			MenuScene.Instance.divaManager.SetAnimParamInteger("menu_simpleLoopStart_State", 0);
@@ -283,9 +283,9 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_LoadResources()
 		{
 			//0x16E3B38
-			yield return Co_LoadLayout();
-			yield return Co_LoadEffect();
-			yield return Co_LoadPopupWindow();
+			yield return Co.R(Co_LoadLayout());
+			yield return Co.R(Co_LoadEffect());
+			yield return Co.R(Co_LoadPopupWindow());
 			if(m_touch_disable_obj == null)
 			{
 				m_touch_disable_obj = new GameObject("Panel");
@@ -315,26 +315,26 @@ namespace XeApp.Game.Menu
 			bundleName = "ly/044.xab";
 			bundleLoadCount = 0;
 			lytOp = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_cos_win_layout_root");
-			yield return lytOp;
+			yield return Co.R(lytOp);
 
-			yield return lytOp.InitializeLayoutCoroutine(font, (GameObject instance) =>
+			yield return Co.R(lytOp.InitializeLayoutCoroutine(font, (GameObject instance) =>
 			{
 				//0x16E1B1C
 				instance.transform.SetParent(transform, false);
 				m_cos_list_win = instance.GetComponent<CostumeSelectListWin>();
-			});
+			}));
 			bundleLoadCount++;
-			yield return m_cos_list_win.Co_LoadListContent();
+			yield return Co.R(m_cos_list_win.Co_LoadListContent());
 
 			lytOp = AssetBundleManager.LoadLayoutAsync(bundleName, "ViewModeViewOn");
-			yield return lytOp;
+			yield return Co.R(lytOp);
 
-			yield return lytOp.InitializeLayoutCoroutine(font, (GameObject instance) =>
+			yield return Co.R(lytOp.InitializeLayoutCoroutine(font, (GameObject instance) =>
 			{
 				//0x16E1BEC
 				m_view_on = instance.GetComponent<CostumeSelectViewOn>();
 				instance.transform.SetParent(transform, false);
-			});
+			}));
 
 			bundleLoadCount++;
 			for(int i = 0; i < bundleLoadCount; i++)
@@ -368,7 +368,7 @@ namespace XeApp.Game.Menu
 			bundleName = "ef/cmn.xab";
 			assetName = "model_loading";
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName);
-			yield return operation;
+			yield return Co.R(operation);
 
 			m_EffectPrefab = operation.GetAsset<GameObject>(assetName);
 			AssetBundleManager.UnloadAssetBundle(bundleName, false);
@@ -396,8 +396,8 @@ namespace XeApp.Game.Menu
 			});
 			voicePlayIndex = 0;
 			divaResource.Initialize(divaId);
-			yield return divaResource.Co_LoadBasicResource();
-			yield return divaResource.Co_LoadMotion();
+			yield return Co.R(divaResource.Co_LoadBasicResource());
+			yield return Co.R(divaResource.Co_LoadMotion());
 			while (isWaitLoadCueSheet)
 				yield return null;
 			CriAtomCueSheet cueSheet = CriAtom.GetCueSheet(voicePlayer.source.cueSheet);
@@ -420,14 +420,14 @@ namespace XeApp.Game.Menu
 
 			//0x16E37AC
 			operation = AssetBundleManager.LoadLayoutAsync(m_costume_window.BundleName, m_costume_window.AssetName);
-			yield return operation;
+			yield return Co.R(operation);
 
-			yield return operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+			yield return Co.R(operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
 			{
 				//0x16E1CC4
 				m_costume_window.SetContent(instance);
 				m_costume_window.costumeInfoWindow = instance.GetComponent<CostumeInfoWindow>();
-			});
+			}));
 
 			m_costume_window.SetParent(transform);
 			AssetBundleManager.UnloadAssetBundle(m_costume_window.BundleName, false);
@@ -458,7 +458,32 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CD13C Offset: 0x6CD13C VA: 0x6CD13C
 		//// RVA: 0x16E0718 Offset: 0x16E0718 VA: 0x16E0718
-		//private IEnumerator Co_PopupCostumeBuildLock() { }
+		private IEnumerator Co_PopupCostumeBuildLock()
+		{
+			//0x16E3FCC
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			StringBuilder str = new StringBuilder();
+			str.SetFormat(bk.GetMessageByLabel("costume_upgrade_lock_text"), MOEALEGLGCH.IGDOBKHKNJM_GetCostumeUpgradeOfferNum());
+			TextPopupSetting s = new TextPopupSetting();
+			s.IsCaption = false;
+			s.Text = str.ToString();
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			bool t_end_popup = false;
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x16E1E04
+				return;
+			}, null, null, null, true, true, false, null, () =>
+			{
+				//0x16E1E70
+				t_end_popup = true;
+			});
+			while (!t_end_popup)
+				yield return null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CD1B4 Offset: 0x6CD1B4 VA: 0x6CD1B4
 		//// RVA: 0x16DEFDC Offset: 0x16DEFDC VA: 0x16DEFDC
@@ -469,7 +494,7 @@ namespace XeApp.Game.Menu
 			//0x16E5738
 			if(divaWaitCoroutine != null)
 			{
-				StopCoroutine(divaWaitCoroutine);
+				this.StopCoroutineWatched(divaWaitCoroutine);
 				divaWaitCoroutine = null;
 			}
 			yield return null;
@@ -482,7 +507,7 @@ namespace XeApp.Game.Menu
 			yield return Resources.UnloadUnusedAssets();
 			bool isWait = true;
 			divaResource.ReleaseCostume();
-			StartCoroutine(divaResource.Co_LoadCostume(m_costume_model_id, () =>
+			this.StartCoroutineWatched(divaResource.Co_LoadCostume(m_costume_model_id, () =>
 			{
 				//0x16E1E84
 				isWait = false;
@@ -512,7 +537,7 @@ namespace XeApp.Game.Menu
 				voicePlayIndex++;
 				if (voiceQueCount <= voicePlayIndex)
 					voicePlayIndex = 0;
-				divaWaitCoroutine = StartCoroutine(Co_WaitDiva());
+				divaWaitCoroutine = this.StartCoroutineWatched(Co_WaitDiva());
 			}
 			yield return new WaitForSeconds(0.1f);
 			MenuScene.Instance.divaManager.SetEnableRenderer(true);
@@ -523,12 +548,58 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x16E07CC Offset: 0x16E07CC VA: 0x16E07CC
 		private void OnClickViewOn()
 		{
-			TodoLogger.LogNotImplemented("OnClickViewOn");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			this.StartCoroutineWatched(Co_GotoViewMode());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CD22C Offset: 0x6CD22C VA: 0x6CD22C
 		//// RVA: 0x16E0840 Offset: 0x16E0840 VA: 0x16E0840
-		//private IEnumerator Co_GotoViewMode() { }
+		private IEnumerator Co_GotoViewMode()
+		{
+			int t_hash_simple_idle; // 0x14
+			int t_hash_simple_end; // 0x18
+			bool isMotion; // 0x1C
+
+			//0x16E219C
+			if (m_touch_disable_obj != null)
+				m_touch_disable_obj.SetActive(true);
+			t_hash_simple_idle = Animator.StringToHash("simple_idle");
+			t_hash_simple_end = Animator.StringToHash("simple_loop_end");
+			MenuScene.Instance.InputDisable();
+			isMotion = false;
+			if(divaWaitCoroutine != null)
+			{
+				this.StopCoroutineWatched(divaWaitCoroutine);
+				divaWaitCoroutine = null;
+				isMotion = true;
+			}
+			yield return null;
+			MenuScene.Instance.divaManager.SetAnimParamInteger("menu_simpleLoopStart_State", 0);
+			if (isMotion)
+			{
+				if (!MenuScene.Instance.divaManager.IsCurrentBodyState(t_hash_simple_idle) &&
+					!MenuScene.Instance.divaManager.IsCurrentBodyState(t_hash_simple_end))
+				{
+					MenuScene.Instance.divaManager.SetBodyCrossFade("simple_loop_end", 0.07f);
+					MenuScene.Instance.divaManager.PlayFacialBlendAnimator("simple_idle", 0);
+					MenuScene.Instance.divaManager.PlayFacialBlendAnimator("simple_idle", 1);
+				}
+			}
+			yield return null;
+			yield return this.StartCoroutineWatched(MenuScene.Instance.divaManager.Co_WaitTransition());
+			while (!MenuScene.Instance.divaManager.IsCurrentBodyState(t_hash_simple_idle))
+			{
+				yield return null;
+			}
+			m_view_on.Leave();
+			m_cos_list_win.Leave();
+			m_viewObj = ViewScreenCostume.Create();
+			ViewScreenCostume.Enter(m_viewObj, null);
+			MenuScene.Instance.InputEnable();
+			DivaViewModeArgs arg = new DivaViewModeArgs();
+			arg.viewObj = m_viewObj;
+			MenuScene.Instance.Call(TransitionList.Type.COSTUME_VIEW_MODE, arg, true);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CD2A4 Offset: 0x6CD2A4 VA: 0x6CD2A4
 		//// RVA: 0x16E08EC Offset: 0x16E08EC VA: 0x16E08EC
@@ -589,7 +660,7 @@ namespace XeApp.Game.Menu
 				else
 				{
 					divaInfo = null;
-					TodoLogger.Log(0, "CB_CostumeChange divaGo");
+					TodoLogger.LogError(0, "CB_CostumeChange divaGo");
 				}
 				if(m_transitionName == TransitionList.Type.COSTUME_SELECT)
 				{
@@ -667,13 +738,13 @@ namespace XeApp.Game.Menu
 				if (GNGMCIAIKMA.HHCJCDFCLOB != null)
 				{
 					GNGMCIAIKMA.HHCJCDFCLOB.GJENEJOANEL(DKFJADMCNPI.NLKCMNHOBAI.HOOJOFACOEK/*7*/, divaId, 1, null);
-					GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA(null, -1);
+					GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA_IsBingoValid(null, -1);
 				}
 			}
 
 			//LAB_016e1740
 			m_cos_list_win.Exit();
-			StartCoroutine(Co_CostumeSaveAndSceneReturn());
+			this.StartCoroutineWatched(Co_CostumeSaveAndSceneReturn());
 		}
 
 		//// RVA: 0x16E17A4 Offset: 0x16E17A4 VA: 0x16E17A4
@@ -685,7 +756,18 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x16E189C Offset: 0x16E189C VA: 0x16E189C
 		private void CB_CostumeBuild()
 		{
-			TodoLogger.LogNotImplemented("CB_CostumeBuild");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(MOEALEGLGCH.CDOCOLOKCJK())
+			{
+				CostumeUpgradeArgs arg = new CostumeUpgradeArgs();
+				arg.divaId = m_diva_id;
+				arg.costumemModelId = m_next_costume_model_id;
+				MenuScene.Instance.Call(TransitionList.Type.COSTUME_UPGRADE, arg, true);
+			}
+			else
+			{
+				this.StartCoroutineWatched(Co_PopupCostumeBuildLock());
+			}
 		}
 	}
 }

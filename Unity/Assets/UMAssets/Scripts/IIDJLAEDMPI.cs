@@ -45,7 +45,6 @@ public class IIDJLAEDMPI
 		long res = NNBNNPOEJLK_ServerTime + BMIKAALKIJC_GetElapsedTimeSinceLastServerUpdate();
 		if(isLocked)
 			Monitor.Exit(CBHDHHIHLLG);
-
 		return res;
 	}
 
@@ -83,6 +82,6 @@ public class IIDJLAEDMPI
 		if(isLocked)
 			Monitor.Exit(CBHDHHIHLLG);
 
-		return res;
+		return res / 1000;
 	}
 }

@@ -7,6 +7,6 @@ public class DebugCheatIntInputField : MonoBehaviour
 	private InputField m_input;
 	private void Awake()
 	{
-		UnityEngine.Debug.LogError("Implement Monobehaviour");
+		TodoLogger.LogError(0, "Implement Monobehaviour");
 	}
 }

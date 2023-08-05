@@ -7,7 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutPopupLoginBonusPackListBase : LayoutUGUIScriptBase
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private ScrollRect m_scrollRect;
 		[SerializeField]

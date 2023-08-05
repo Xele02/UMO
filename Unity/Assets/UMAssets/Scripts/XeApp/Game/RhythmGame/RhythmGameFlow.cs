@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using CriWare;
 using XeApp.Game.Common;
 using static XeApp.Game.Common.GameSetupData;
 
@@ -126,6 +127,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDC6DA4 Offset: 0xDC6DA4 VA: 0xDC6DA4
 		public void ChangeEndGameStatus()
 		{
+			ExternLib.LibCriWare.checkUncached = false;
 			currentStatus = Status.EndGame;
 			updater = this.BeginCompleteAnim;
 		}
@@ -140,7 +142,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDC6E68 Offset: 0xDC6E68 VA: 0xDC6E68
 		public void ChangeErrorToTilteStatus()
 		{
-			TodoLogger.Log(0, "ChangeErrorToTilteStatus");
+			TodoLogger.LogError(0, "ChangeErrorToTilteStatus");
 		}
 
 		// // RVA: 0xDC6E9C Offset: 0xDC6E9C VA: 0xDC6E9C
@@ -198,7 +200,7 @@ namespace XeApp.Game.RhythmGame
 						if (teamInfo.danceDivaList[i].positionId == basaraPos)
 							break;
 						freePos = teamInfo.danceDivaList[i].positionId;
-						teamInfo.danceDivaList[i].positionId = basaraPos;
+						teamInfo.danceDivaList[i].SetPositionId(basaraPos);
 					}
 				}
 				if(freePos != 0)
@@ -209,7 +211,7 @@ namespace XeApp.Game.RhythmGame
 						{
 							if(teamInfo.danceDivaList[i].positionId == basaraPos)
 							{
-								teamInfo.danceDivaList[i].positionId = freePos;
+								teamInfo.danceDivaList[i].SetPositionId(freePos);
 								break;
 							}
 						}
@@ -262,7 +264,6 @@ namespace XeApp.Game.RhythmGame
 				rhythmGameResource.LoadSpecialResourceFor2DMode(DbMusicInfo.KKPAHLMJKIH_WavId, stageDivaNum, settingList);
 			}
 			ChangeWaitLoadingSpecialResourceStatus();
-			TodoLogger.Log(0, "check WaitDownloadingSpecialResource");
 		}
 
 		// // RVA: 0xDC80E4 Offset: 0xDC80E4 VA: 0xDC80E4
@@ -340,7 +341,7 @@ namespace XeApp.Game.RhythmGame
 					isDivaSoundLoaded = true;
 				});
 			}
-			IsRareBreak = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.GOFAPKBNNCL(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId);
+			IsRareBreak = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.GOFAPKBNNCL_HasRareSceneWithCostumeForDivaUnlocked(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId);
 			if(IsRareBreak)
 			{
 				isDivaCosSoundLoaded = false;
@@ -397,7 +398,7 @@ namespace XeApp.Game.RhythmGame
 												Database.Instance.gameSetup.musicInfo.onStageDivaNum, Database.Instance.gameSetup.musicInfo.onStageDivaNum > 1 ? Database.Instance.gameSetup.teamInfo.danceDivaList[0].positionId : 0);
 				if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.GPKILPOLNKO())
 				{
-					rhythmGameResource.divaModeResource.LoadResources(wavId, GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CBLEFELBNDN_GetQuality(), rhythmGameResource.GetSpecialDirectionMovieId);
+					rhythmGameResource.divaModeResource.LoadResources(wavId, GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CBLEFELBNDN_GetVideoQuality(), rhythmGameResource.GetSpecialDirectionMovieId);
 				}
 				for(int i = 0; i < 4 && i < rhythmGameResource.subDivaResource.Count; i++)
 				{
@@ -428,9 +429,8 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
-				TodoLogger.Log(0, "Load 2d mode");
+				rhythmGameResource.LoadAllResourceFor2DMode(introSky, battle);
 			}
-
 			ChangeWaitLoadingDataStatus();
 		}
 
@@ -476,10 +476,16 @@ namespace XeApp.Game.RhythmGame
 		{
 			isGameSaveEnd = false;
 			isGameSaveError = false;
+			JGEOBNENMAH.HHCJCDFCLOB.CNNNAAACEHE_GameStartSave(false, () =>
 			{
-				TodoLogger.Log(0, "GameSaveStart");
+				//0xDCA510
 				isGameSaveEnd = true;
-			}
+			}, () =>
+			{
+				//0xDCA51C
+				isGameSaveEnd = true;
+				isGameSaveError = true;
+			});
 			updater = this.WaitGameSave;
 		}
 
@@ -556,13 +562,5 @@ namespace XeApp.Game.RhythmGame
 		// [CompilerGeneratedAttribute] // RVA: 0x74415C Offset: 0x74415C VA: 0x74415C
 		// // RVA: 0xDCA504 Offset: 0xDCA504 VA: 0xDCA504
 		// private void <WaitDownloadingData>b__44_6() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x74416C Offset: 0x74416C VA: 0x74416C
-		// // RVA: 0xDCA510 Offset: 0xDCA510 VA: 0xDCA510
-		// private void <GameSaveStart>b__48_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x74417C Offset: 0x74417C VA: 0x74417C
-		// // RVA: 0xDCA51C Offset: 0xDCA51C VA: 0xDCA51C
-		// private void <GameSaveStart>b__48_1() { }
 	}
 }

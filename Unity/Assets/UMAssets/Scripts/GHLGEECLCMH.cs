@@ -1,4 +1,5 @@
 
+using System.Collections.Generic;
 using XeApp.Game.Common;
 
 public class GHLGEECLCMH
@@ -89,13 +90,47 @@ public class GHLGEECLCMH
 	}
 
 	//// RVA: 0xAA63C8 Offset: 0xAA63C8 VA: 0xAA63C8
-	//public List<HighScoreRating.UtaGradeData> IEPGAGBLHBN() { }
+	public List<HighScoreRating.UtaGradeData> IEPGAGBLHBN_GetMusicGradeList()
+	{
+		return JPJHBJAHPFP_HsRating.GetUtaGradeList();
+	}
 
 	//// RVA: 0xAA63F4 Offset: 0xAA63F4 VA: 0xAA63F4
-	//public HighScoreRating.UtaGradeData CMANMLGFJMM() { }
+	public HighScoreRating.UtaGradeData CMANMLGFJMM_GetNextUtaGradeInfo()
+	{
+		return JPJHBJAHPFP_HsRating.GetNextUtaGradeInfo();
+	}
 
 	//// RVA: 0xAA6420 Offset: 0xAA6420 VA: 0xAA6420
-	//public List<ECEPJHGMGBJ> BGMPAMNAKHN(int FJFCNGNGIBN = 0) { }
+	public List<ECEPJHGMGBJ> BGMPAMNAKHN_GetMusicRateList(int FJFCNGNGIBN = 0)
+	{
+		List<ECEPJHGMGBJ> res = new List<ECEPJHGMGBJ>();
+		for(int i = 0; i < 10; i++)
+		{
+			if(JPJHBJAHPFP_HsRating.hsRatingMusicData[i, FJFCNGNGIBN].FreeMusicId > 0)
+			{
+				ECEPJHGMGBJ data = new ECEPJHGMGBJ();
+				data.KHEKNNFCAOI(JPJHBJAHPFP_HsRating.hsRatingMusicData[i, FJFCNGNGIBN].FreeMusicId);
+				data.LPALNMHPDKK_Score = JPJHBJAHPFP_HsRating.hsRatingMusicData[i, FJFCNGNGIBN].Score;
+				data.FJOLNJLLJEJ_RankNum = JPJHBJAHPFP_HsRating.hsRatingMusicData[i, FJFCNGNGIBN].RankNum;
+				data.AKNELONELJK_Difficulty = (Difficulty.Type)(JPJHBJAHPFP_HsRating.hsRatingMusicData[i, FJFCNGNGIBN].Difficulty > 4 ? 0 : JPJHBJAHPFP_HsRating.hsRatingMusicData[i, FJFCNGNGIBN].Difficulty);
+				data.LFGNLKKFOCD_IsLine6 = JPJHBJAHPFP_HsRating.hsRatingMusicData[i, FJFCNGNGIBN].isLine6 != 0;
+				if(HOHNHJEFCBF_PrevHsRating != null)
+				{
+					data.HKIAHOEEMLC_PrevScore = data.LPALNMHPDKK_Score;
+					for (int j = 0; j < 9; j++)
+					{
+						if(HOHNHJEFCBF_PrevHsRating.hsRatingMusicData[j, FJFCNGNGIBN].FreeMusicId == JPJHBJAHPFP_HsRating.hsRatingMusicData[i, FJFCNGNGIBN].FreeMusicId)
+						{
+							data.HKIAHOEEMLC_PrevScore = HOHNHJEFCBF_PrevHsRating.hsRatingMusicData[j, FJFCNGNGIBN].Score;
+						}
+					}
+				}
+				res.Add(data);
+			}
+		}
+		return res;
+	}
 
 	//// RVA: 0xAA6C20 Offset: 0xAA6C20 VA: 0xAA6C20
 	public void GLAHMLIFAPB(int KIMIHIBGONK_FreeMusicId, int FJFCNGNGIBN = 0)

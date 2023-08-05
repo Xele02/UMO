@@ -187,17 +187,17 @@ namespace XeApp.Game.RhythmGame
 			{
 				if(current < subgoalValue)
 				{
-					return basicValue / evaluationNotesNum * Mathf.Max((maxValue - current) * 1.0f / maxValue, rateMinValue);
+					return basicValue * 1.0f / evaluationNotesNum * Mathf.Max((maxValue - current) * 1.0f / maxValue, rateMinValue);
 				}
-				return basicValue / evaluationNotesNum * Mathf.Max((maxValue - current) * 1.0f / maxValue, rateMinValue) * awakenIncreaseRate;
+				return basicValue * 1.0f  / evaluationNotesNum * Mathf.Max((maxValue - current) * 1.0f / maxValue, rateMinValue) * awakenIncreaseRate;
 			}
 			else
 			{
 				if(current < subgoalValue)
 				{
-					return basicValue / evaluationNotesNum * (current / maxValue);
+					return basicValue * 1.0f  / evaluationNotesNum * (current * 1.0f  / maxValue);
 				}
-				return basicValue / evaluationNotesNum * (current / maxValue) * awakenDecreaseRate;
+				return basicValue * 1.0f  / evaluationNotesNum * (current * 1.0f  / maxValue) * awakenDecreaseRate;
 			}
 		}
 

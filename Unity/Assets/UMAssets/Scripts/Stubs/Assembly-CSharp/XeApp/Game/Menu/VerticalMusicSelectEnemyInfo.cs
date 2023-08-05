@@ -11,7 +11,7 @@ namespace XeApp.Game.Menu
 		private InOutAnime m_inOut;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

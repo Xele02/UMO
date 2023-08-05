@@ -6,7 +6,7 @@ namespace XeApp.Game.MiniGame
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.LogError(0, "Implement monobehaviour");
 		}
 		[SerializeField]
 		private SpriteRenderer m_sprite;

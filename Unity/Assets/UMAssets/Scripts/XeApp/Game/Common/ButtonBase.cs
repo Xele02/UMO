@@ -227,7 +227,10 @@ namespace XeApp.Game.Common
 		// RVA: 0xE5FEC4 Offset: 0xE5FEC4 VA: 0xE5FEC4
 		public void ClearOnClickCallback()
 		{
-			OnClickEvent = () => {};
+			OnClickEvent = () => {
+				//0xE64D5C
+				return;
+			};
 		}
 
 		// RVA: 0xE60008 Offset: 0xE60008 VA: 0xE60008

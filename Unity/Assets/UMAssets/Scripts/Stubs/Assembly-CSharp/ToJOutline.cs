@@ -4,6 +4,6 @@ public class ToJOutline : Shadow
 {
 	private void Awake()
 	{
-		UnityEngine.Debug.LogError("Implement monobehaviour");
+		TodoLogger.LogError(0, "Implement monobehaviour");
 	}
 }

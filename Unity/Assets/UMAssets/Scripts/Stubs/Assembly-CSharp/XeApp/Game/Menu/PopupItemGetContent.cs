@@ -9,7 +9,7 @@ namespace XeApp.Game.Menu
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.LogError(0, "Implement monobehaviour");
 		}
 		public Transform Parent => null; //throw new System.NotImplementedException();
 

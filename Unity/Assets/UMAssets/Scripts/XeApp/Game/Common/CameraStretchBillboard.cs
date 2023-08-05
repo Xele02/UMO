@@ -29,7 +29,7 @@ namespace XeApp.Game.Common
 			m_distance = m_camera.farClipPlane * 0.99f;
 			transform.position = m_camera.transform.position + m_camera.transform.forward * m_distance;
 			transform.LookAt(m_camera.transform.position, m_camera.transform.up);
-			float f = m_camera.fieldOfView * 0.5f * 0.01745329f * m_distance * 2;
+			float f = (Mathf.Tan(m_camera.fieldOfView * 0.5f * 0.01745329f) * m_distance) * 2;
 			transform.localScale = new Vector3(f * aspectRatio, f, 1.0f);
 		}
 	}

@@ -1,16 +1,30 @@
+using XeApp.Game.Common;
+using XeSys;
+
 namespace XeApp.Game.Menu
 {
 	public class PopupUseItemWindow
 	{
-		// private PopupUseItemSetting useItemSeting; // 0x8
-		// private PopupUseItemWindow.UseItemResult _result; // 0xC
+		public enum UseItemResult
+		{
+			 None = 0,
+			Close = 1,
+			Cancel = 2,
+			OK = 3,
+		}
+
+		private PopupUseItemSetting useItemSeting; // 0x8
+		private UseItemResult _result; // 0xC
 
 		// public PopupUseItemWindow.UseItemResult Result { get; private set; }  0x11607D8 0x11607E0
 
 		// RVA: 0x11607F0 Offset: 0x11607F0 VA: 0x11607F0
 		public void Initialize()
 		{
-			TodoLogger.Log(0, "TODO");
+			useItemSeting = new PopupUseItemSetting();
+			useItemSeting.TitleText = MessageManager.Instance.GetBank("menu").GetMessageByLabel("popup_text_09");
+			useItemSeting.WindowSize = SizeType.Middle;
+			useItemSeting.SetParent(MenuScene.Instance.transform);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x733634 Offset: 0x733634 VA: 0x733634

@@ -19,13 +19,13 @@ namespace XeSys
 		// // RVA: 0x203D1E4 Offset: 0x203D1E4 VA: 0x203D1E4
 		public FileResultObject() : this(null, null, 0)
 		{
-
+			return;
 		}
 
 		// // RVA: 0x203D208 Offset: 0x203D208 VA: 0x203D208
 		public FileResultObject(string path) : this(path, null, 0)
 		{
-
+			return;
 		}
 
 		// // RVA: 0x203CDA0 Offset: 0x203CDA0 VA: 0x203CDA0

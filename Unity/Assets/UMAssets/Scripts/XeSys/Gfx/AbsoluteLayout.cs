@@ -33,8 +33,8 @@ namespace XeSys.Gfx
 		{
 			child.Parent = this;
 			m_List.Add(child);
-			m_ChildViewMap.Add(child.ID, child);
-			m_ChildViewMapForExid.Add(child.EXID, child);
+			m_ChildViewMap[child.ID] = child;
+			m_ChildViewMapForExid[child.EXID] = child;
 			if(child is AbsoluteLayout)
 			{
 				m_AbsoluteList.Add(child as AbsoluteLayout);
@@ -210,10 +210,27 @@ namespace XeSys.Gfx
 		// public void StartAllAnimation(float time) { }
 
 		// // RVA: 0x20402FC Offset: 0x20402FC VA: 0x20402FC
-		// private void StartAllAnim(List<ViewBase> listView) { }
+		private void StartAllAnim(List<ViewBase> listView)
+		{
+			StartAnim();
+			for (int i = 0; i < listView.Count; i++)
+			{
+				if (listView[i] is AbsoluteLayout)
+				{
+					(listView[i] as AbsoluteLayout).StartAllAnim();
+				}
+				else
+				{
+					listView[i].StartAnim();
+				}
+			}
+		}
 
 		// // RVA: 0x2040428 Offset: 0x2040428 VA: 0x2040428
-		// public void StartAllAnim() { }
+		public void StartAllAnim()
+		{
+			StartAllAnim(m_List);
+		}
 
 		// // RVA: 0x2040430 Offset: 0x2040430 VA: 0x2040430
 		private void StartAllAnimGoStop(List<ViewBase> listView, int start, int end)
@@ -443,12 +460,21 @@ namespace XeSys.Gfx
 				return;
 			for(int i = 0; i < p.m_List.Count; i++)
 			{
-				p.m_List[i].StartAnimLoop(startLabel);
+				p.m_List[i].StartAnimLoop(startLabel, endLabel);
 			}
 		}
 
 		// // RVA: 0x20415C4 Offset: 0x20415C4 VA: 0x20415C4
-		// public void StartSiblingAnimLoop(string startLabel) { }
+		public void StartSiblingAnimLoop(string startLabel)
+		{
+			AbsoluteLayout p = Parent as AbsoluteLayout;
+			if (p == null)
+				return;
+			for (int i = 0; i < p.m_List.Count; i++)
+			{
+				p.m_List[i].StartAnimLoop(startLabel);
+			}
+		}
 
 		// // RVA: 0x20416F8 Offset: 0x20416F8 VA: 0x20416F8
 		// public bool IsPlayingSibling() { }

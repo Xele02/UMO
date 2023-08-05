@@ -175,7 +175,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBDCE3C Offset: 0xBDCE3C VA: 0xBDCE3C
-		// public void Leave() { }
+		public void Leave()
+		{
+			if (!gameObject.activeSelf)
+				return;
+			m_inOut.ForceLeave(null);
+		}
 
 		// // RVA: 0xBDCEA0 Offset: 0xBDCEA0 VA: 0xBDCEA0
 		public bool IsPlaying()

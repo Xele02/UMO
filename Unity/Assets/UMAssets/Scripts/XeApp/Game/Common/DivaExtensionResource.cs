@@ -31,7 +31,7 @@ namespace XeApp.Game.Common
 		public void LoadResouces(int wavId, int assetId, int divaId, int stageDivaNum)
 		{
 			this.divaId = divaId;
-			StartCoroutine(Co_LoadAllResouces(wavId, assetId, stageDivaNum));
+			this.StartCoroutineWatched(Co_LoadAllResouces(wavId, assetId, stageDivaNum));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x737D38 Offset: 0x737D38 VA: 0x737D38
@@ -41,8 +41,8 @@ namespace XeApp.Game.Common
 			//0x1BEF46C
 			isLoaded = false;
 			isUnused = false;
-			yield return StartCoroutine(Co_LoadBasicResouces());
-			yield return StartCoroutine(Co_LoadMusicResouces(wavId, assetId, stageDivaNum));
+			yield return this.StartCoroutineWatched(Co_LoadBasicResouces());
+			yield return this.StartCoroutineWatched(Co_LoadMusicResouces(wavId, assetId, stageDivaNum));
 			isLoaded = true;
 		}
 
@@ -58,7 +58,7 @@ namespace XeApp.Game.Common
 			assetName = new StringBuilder();
 			bundleName.SetFormat("mc/cmn/dr/dv.xab", Array.Empty<object>());
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			assetName.SetFormat("dr_dv_cmn_animator", Array.Empty<object>());
 			animatorController = operation.GetAsset<RuntimeAnimatorController>(assetName.ToString());
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
@@ -77,7 +77,7 @@ namespace XeApp.Game.Common
 			string wavName = GameManager.Instance.GetWavDirectoryName(wavId, "mc/{0}/dr/dv/{1:D3}.xab", stageDivaNum, 1, assetId, false);
 			bundleName.SetFormat("mc/{0}/dr/dv/{1:D3}.xab", wavName, assetId);
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			assetName.SetFormat("dr_dv_{0:D3}_param", assetId);
 			param = operation.GetAsset<MusicExtensionPrefabParam>(assetName.ToString());
 			assetName.SetFormat("dr_dv_{0:D3}_anim", assetId);

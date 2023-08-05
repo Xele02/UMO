@@ -10,7 +10,10 @@ namespace XeApp.Game.Menu
 		public const string EventTextureBundleFormat = "ct/ev/mc/{0:D4}.xab";
 
 		// // RVA: 0x104B8D0 Offset: 0x104B8D0 VA: 0x104B8D0 Slot: 5
-		// public override void Terminated() { }
+		public override void Terminated()
+		{
+			Clear();
+		}
 
 		// // RVA: 0x104B8D8 Offset: 0x104B8D8 VA: 0x104B8D8 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
@@ -42,6 +45,9 @@ namespace XeApp.Game.Menu
 		// public void LoadForEvent(int eventId, Action<IiconTexture> callback) { }
 
 		// // RVA: 0x104BA94 Offset: 0x104BA94 VA: 0x104BA94
-		// public static void TryInstall(int jacketId) { }
+		public static void TryInstall(int jacketId)
+		{
+			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(MakeJacketTexturePath(jacketId));
+		}
 	}
 }

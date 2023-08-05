@@ -535,6 +535,11 @@ namespace XeApp.Game.RhythmGame
 				line = 3;
 			if (tir.keyType == InputManager.KeyTouchInfoRecord.KeyType.Line6Touch)
 				line = 5;
+			if(RhythmGameConsts.LineNum == 4)
+			{
+				if(line == 4 || line == 5)
+					return;
+			}
 
 			TouchInfo info = tir.currentInfo;
 
@@ -554,6 +559,8 @@ namespace XeApp.Game.RhythmGame
 			}
 			if (fingerId == -1)
 				fingerId = avaiableFingerId;
+			if (fingerId == -1)
+				return; // no more finger avaiable
 
 			if (line != -1)
 			{ 
@@ -615,6 +622,9 @@ namespace XeApp.Game.RhythmGame
 									{
 										flick = -1;
 									}
+									// don't flick on long note
+									if(refRNoteOwner.GetNote(idx).noteInfo.longTouch != MusicScoreData.TouchState.None)
+										flick = -1;
 									break;
 								}
 							}

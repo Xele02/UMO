@@ -292,7 +292,31 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1437E00 Offset: 0x1437E00 VA: 0x1437E00
-		// public void SetHomeScene(bool isBgDark) { }
+		public void SetHomeScene(bool isBgDark)
+		{
+			m_tileImage.enabled = false;
+			m_transLationTween.IsPause = true;
+			m_transLationTween.ResetCurve();
+			m_decrationInstance[0].SetActive(false);
+			m_decrationInstance[1].SetActive(false);
+			for (int i = 0; i < m_growImages.Length; i++)
+			{
+				m_growImages[i].gameObject.SetActive(false);
+			}
+			for (int i = 0; i < m_colorChangeImages.Count; i++)
+			{
+				m_colorChangeImages[i].material = m_decorationMaterials[0];
+			}
+			if (isBgDark)
+			{
+				ShowOverlay(HomeSceneOverlayAlpha);
+			}
+			else
+			{
+				HideOverlay();
+			}
+			ResetBgImageRectSize(false);
+		}
 
 		// // RVA: 0x1438148 Offset: 0x1438148 VA: 0x1438148
 		// public void SetHomeSceneView() { }
@@ -323,10 +347,47 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1438B40 Offset: 0x1438B40 VA: 0x1438B40
-		// public void GachaPickup() { }
+		public void GachaPickup()
+		{
+			m_tileImage.enabled = true;
+			ChangeTilingType(TilingType.Mark, true);
+			m_transLationTween.IsPause = false;
+			m_decrationInstance[0].SetActive(false);
+			m_decrationInstance[1].SetActive(false);
+			for (int i = 0; i < m_growImages.Length; i++)
+			{
+				m_growImages[i].gameObject.SetActive(false);
+			}
+			for (int i = 0; i < m_colorChangeImages.Count; i++)
+			{
+				m_colorChangeImages[i].material = m_decorationMaterials[0];
+			}
+			HideOverlay();
+			ResetBgImageRectSize(false);
+		}
 
 		// // RVA: 0x1438E14 Offset: 0x1438E14 VA: 0x1438E14
-		// public void SetMusic(bool simulation = False) { }
+		public void SetMusic(bool simulation = false)
+		{
+			m_tileImage.enabled = true;
+			ChangeTilingType(simulation ? TilingType.Cross : TilingType.Dot, false);
+			m_transLationTween.IsPause = true;
+			m_transLationTween.ResetCurve();
+			m_decrationInstance[0].SetActive(false);
+			m_decrationInstance[0].transform.localPosition = m_decorationPosition[0];
+			m_decrationInstance[0].transform.localScale = m_decorationScale[0];
+			m_decrationInstance[1].SetActive(false);
+			for (int i = 0; i < m_growImages.Length; i++)
+			{
+				m_growImages[i].gameObject.SetActive(false);
+			}
+			for (int i = 0; i < m_colorChangeImages.Count; i++)
+			{
+				m_colorChangeImages[i].material = m_decorationMaterials[0];
+			}
+			HideOverlay();
+			ResetBgImageRectSize(false);
+		}
 
 		// // RVA: 0x1439294 Offset: 0x1439294 VA: 0x1439294
 		public void SetVerticalMusic()
@@ -355,43 +416,237 @@ namespace XeApp.Game.Menu
 		// public void SetDownLoad() { }
 
 		// // RVA: 0x143970C Offset: 0x143970C VA: 0x143970C
-		// public void SetValkyrieSelect() { }
+		public void SetValkyrieSelect()
+		{
+			ChangeTilingType(0, false);
+			m_tileImage.enabled = true;
+			m_transLationTween.IsPause = true;
+			m_transLationTween.ResetCurve();
+			m_decrationInstance[0].SetActive(false);
+			m_decrationInstance[1].SetActive(false);
+			for (int i = 0; i < m_growImages.Length; i++)
+			{
+				m_growImages[i].gameObject.SetActive(false);
+			}
+			HideOverlay();
+			ResetBgImageRectSize(false);
+		}
 
 		// // RVA: 0x1439930 Offset: 0x1439930 VA: 0x1439930
-		// public void SetCostumeSelect() { }
+		public void SetCostumeSelect()
+		{
+			m_tileImage.enabled = true;
+			ChangeTilingType(TilingType.Mark, false);
+			m_transLationTween.IsPause = false;
+			m_decrationInstance[0].SetActive(true);
+			m_decrationInstance[0].transform.localPosition = m_decorationPosition[1];
+			m_decrationInstance[0].transform.localScale = m_decorationScale[1];
+			m_decrationInstance[1].SetActive(true);
+			m_decrationInstance[1].transform.localPosition = m_decorationPosition[2];
+			m_decrationInstance[1].transform.localScale = m_decorationScale[2];
+			for (int i = 0; i < m_growImages.Length; i++)
+			{
+				m_growImages[i].gameObject.SetActive(true);
+			}
+			for (int i = 0; i < m_colorChangeImages.Count; i++)
+			{
+				m_colorChangeImages[i].material = m_decorationMaterials[0];
+			}
+			HideOverlay();
+			ResetBgImageRectSize(false);
+		}
 
 		// // RVA: 0x1439EF8 Offset: 0x1439EF8 VA: 0x1439EF8
-		// public void SetResult() { }
+		public void SetResult()
+		{
+			ChangeTilingType(0, false);
+			m_transLationTween.IsPause = true;
+			m_transLationTween.ResetCurve();
+			m_decrationInstance[0].SetActive(false);
+			m_decrationInstance[1].SetActive(false);
+			for (int i = 0; i < m_growImages.Length; i++)
+			{
+				m_growImages[i].gameObject.SetActive(false);
+			}
+			HideOverlay();
+			ResetBgImageRectSize(false);
+		}
 
 		// // RVA: 0x143A0F8 Offset: 0x143A0F8 VA: 0x143A0F8
-		// public void SetLoginBonus() { }
+		public void SetLoginBonus()
+		{
+			ChangeTilingType(0, false);
+			m_tileImage.enabled = false;
+			m_transLationTween.IsPause = true;
+			m_transLationTween.ResetCurve();
+			m_decrationInstance[0].SetActive(false);
+			m_decrationInstance[1].SetActive(false);
+			for (int i = 0; i < m_growImages.Length; i++)
+			{
+				m_growImages[i].gameObject.SetActive(false);
+			}
+			HideOverlay();
+			ResetBgImageRectSize(false);
+		}
 
 		// // RVA: 0x143A31C Offset: 0x143A31C VA: 0x143A31C
-		// public void SetUnlockValkyrie() { }
+		public void SetUnlockValkyrie()
+		{
+			ChangeTilingType(TilingType.Dot, false);
+			m_tileImage.enabled = false;
+			m_decrationInstance[0].SetActive(false);
+			m_decrationInstance[1].SetActive(false);
+			for (int i = 0; i < m_growImages.Length; i++)
+			{
+				m_growImages[i].gameObject.SetActive(false);
+			}
+			HideOverlay();
+			ResetBgImageRectSize(false);
+		}
 
 		// // RVA: 0x143A4FC Offset: 0x143A4FC VA: 0x143A4FC
-		// public void SetGachaBox() { }
+		public void SetGachaBox()
+		{
+			ChangeTilingType(TilingType.Dot, false);
+			m_tileImage.enabled = false;
+			m_transLationTween.IsPause = true;
+			m_transLationTween.ResetCurve();
+			m_decrationInstance[0].SetActive(false);
+			m_decrationInstance[1].SetActive(false);
+			for (int i = 0; i < m_growImages.Length; i++)
+			{
+				m_growImages[i].gameObject.SetActive(false);
+			}
+			HideOverlay();
+			ResetBgImageRectSize(false);
+		}
 
 		// // RVA: 0x143A720 Offset: 0x143A720 VA: 0x143A720
-		// public void SetNewYearEvent() { }
+		public void SetNewYearEvent()
+		{
+			m_tileImage.enabled = false;
+			ChangeTilingType(TilingType.Mark, false);
+			m_transLationTween.IsPause = true;
+			m_transLationTween.ResetCurve();
+			m_decrationInstance[0].SetActive(false);
+			m_decrationInstance[0].transform.localPosition = m_decorationPosition[0];
+			m_decrationInstance[0].transform.localScale = m_decorationScale[0];
+			m_decrationInstance[1].SetActive(false);
+			for (int i = 0; i < m_growImages.Length; i++)
+			{
+				m_growImages[i].gameObject.SetActive(false);
+			}
+			HideOverlay();
+			ResetBgImageRectSize(false);
+		}
 
 		// // RVA: 0x143AAC4 Offset: 0x143AAC4 VA: 0x143AAC4
-		// public void SetLimitedHomeScene() { }
+		public void SetLimitedHomeScene()
+		{
+			m_tileImage.enabled = false;
+			ChangeTilingType(TilingType.Dot, false);
+			m_transLationTween.IsPause = true;
+			m_transLationTween.ResetCurve();
+			m_decrationInstance[0].SetActive(false);
+			m_decrationInstance[1].SetActive(false);
+			for(int i = 0; i < m_growImages.Length; i++)
+			{
+				m_growImages[i].gameObject.SetActive(false);
+			}
+			for(int i = 0; i < m_colorChangeImages.Count; i++)
+			{
+				m_colorChangeImages[i].material = m_decorationMaterials[0];
+			}
+			ShowOverlay(HomeSceneOverlayAlpha);
+			ResetBgImageRectSize(false);
+		}
 
 		// // RVA: 0x143ADFC Offset: 0x143ADFC VA: 0x143ADFC
-		// public void SetCampaign() { }
+		public void SetCampaign()
+		{
+			ChangeTilingType(TilingType.Dot, false);
+			m_tileImage.enabled = false;
+			m_transLationTween.IsPause = true;
+			m_transLationTween.ResetCurve();
+			m_decrationInstance[0].SetActive(false);
+			m_decrationInstance[1].SetActive(false);
+			for (int i = 0; i < m_growImages.Length; i++)
+			{
+				m_growImages[i].gameObject.SetActive(false);
+			}
+			HideOverlay();
+			ResetBgImageRectSize(false);
+		}
 
 		// // RVA: 0x143B020 Offset: 0x143B020 VA: 0x143B020
-		// public void SetOffer() { }
+		public void SetOffer()
+		{
+			ChangeTilingType(TilingType.Square, false);
+			m_tileImage.enabled = true;
+			m_transLationTween.IsPause = true;
+			m_transLationTween.ResetCurve();
+			m_decrationInstance[0].SetActive(false);
+			m_decrationInstance[1].SetActive(false);
+			for (int i = 0; i < m_growImages.Length; i++)
+			{
+				m_growImages[i].gameObject.SetActive(false);
+			}
+			HideOverlay();
+			ResetBgImageRectSize(false);
+		}
 
 		// // RVA: 0x143B244 Offset: 0x143B244 VA: 0x143B244
-		// public void SetDecoration() { }
+		public void SetDecoration()
+		{
+			ChangeTilingType(TilingType.Dot, false);
+			m_tileImage.enabled = false;
+			m_transLationTween.IsPause = true;
+			m_transLationTween.ResetCurve();
+			m_decrationInstance[0].SetActive(false);
+			m_decrationInstance[1].SetActive(false);
+			for (int i = 0; i < m_growImages.Length; i++)
+			{
+				m_growImages[i].gameObject.SetActive(false);
+			}
+			HideOverlay();
+			ResetBgImageRectSize(false);
+		}
 
 		// // RVA: 0x143B468 Offset: 0x143B468 VA: 0x143B468
-		// public void SetLobbyMain() { }
+		public void SetLobbyMain()
+		{
+			ChangeTilingType(TilingType.Square, false);
+			m_tileImage.enabled = false;
+			m_transLationTween.IsPause = true;
+			m_transLationTween.ResetCurve();
+			m_decrationInstance[0].SetActive(false);
+			m_decrationInstance[1].SetActive(false);
+			for (int i = 0; i < m_growImages.Length; i++)
+			{
+				m_growImages[i].gameObject.SetActive(false);
+			}
+			HideOverlay();
+			m_bgImage.GetComponent<RectTransform>().sizeDelta = RectSize4_3;
+			m_bgImage.GetComponent<RectTransform>().localScale = new Vector3(4.86f, 4.86f, 0);
+			m_bgImage.uvRect = TextureUv4_3;
+		}
 
 		// // RVA: 0x143B7CC Offset: 0x143B7CC VA: 0x143B7CC
-		// public void SetRaid() { }
+		public void SetRaid()
+		{
+			ChangeTilingType(TilingType.Square, false);
+			m_tileImage.enabled = false;
+			m_transLationTween.IsPause = true;
+			m_transLationTween.ResetCurve();
+			m_decrationInstance[0].SetActive(false);
+			m_decrationInstance[1].SetActive(false);
+			for (int i = 0; i < m_growImages.Length; i++)
+			{
+				m_growImages[i].gameObject.SetActive(false);
+			}
+			HideOverlay();
+			ResetBgImageRectSize(false);
+		}
 
 		// // RVA: 0x1437A4C Offset: 0x1437A4C VA: 0x1437A4C
 		public void ResetBgImageRectSize(bool isPlate)
@@ -474,7 +729,10 @@ namespace XeApp.Game.Menu
 		// public IEnumerator SetupStoryBg(int map, Action finish) { }
 
 		// // RVA: 0x143BCBC Offset: 0x143BCBC VA: 0x143BCBC
-		// public void StoryBgShow() { }
+		public void StoryBgShow()
+		{
+			m_storyBgScroll.gameObject.SetActive(true);
+		}
 
 		// // RVA: 0x143BD0C Offset: 0x143BD0C VA: 0x143BD0C
 		public void StoryBgHide()

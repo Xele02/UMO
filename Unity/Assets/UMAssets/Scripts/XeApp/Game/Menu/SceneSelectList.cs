@@ -150,9 +150,9 @@ namespace XeApp.Game.Menu
 			}
 			assetBundleName = "ly/014.xab";
 			operation = AssetBundleManager.LoadLayoutAsync(assetBundleName, "SceneIconButton");
-			yield return operation;
+			yield return Co.R(operation);
 			GameObject prefab = operation.GetAsset<GameObject>();
-			yield return operation.CreateLayoutCoroutine(prefab.GetComponent<LayoutUGUIRuntime>(), GameManager.Instance.GetSystemFont(), (Layout loadLayout, TexUVListManager loadUvMan) => {
+			yield return Co.R(operation.CreateLayoutCoroutine(prefab.GetComponent<LayoutUGUIRuntime>(), GameManager.Instance.GetSystemFont(), (Layout loadLayout, TexUVListManager loadUvMan) => {
 				//0x137E408
 				for(i = 0; i < poolSize; i++)
 				{
@@ -169,28 +169,28 @@ namespace XeApp.Game.Menu
 					}
 					m_scrollList.AddScrollObject(g.GetComponent<SceneIconScrollContent>());
 				}
-			});
+			}));
 			yield return null;
 			m_scrollList.Apply();
 			if(transitionName == TransitionList.Type.HOME_BG_SELECT)
 			{
 				operation = AssetBundleManager.LoadLayoutAsync(assetBundleName, "root_sel_card03_layout_root");
-				yield return operation;
-				yield return operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
+				yield return Co.R(operation);
+				yield return Co.R(operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
 					//0x137EAB0
 					m_removeButton = instance.GetComponentInChildren<ActionButton>();
 					m_removeButton.Hidden = true;
 					instance.transform.SetParent(m_scrollList.ScrollContent, false);
 					instance.GetComponent<RectTransform>().anchoredPosition = new Vector2(m_scrollList.LeftTopPosition.x, -m_scrollList.LeftTopPosition.y);
-				});
+				}));
 				yield return null;
 			}
 			if(transitionName == TransitionList.Type.SCENE_SELECT || transitionName == TransitionList.Type.ASSIST_SELECT)
 			{
 				operation = AssetBundleManager.LoadLayoutAsync(assetBundleName, "RemoveButton");
-				yield return operation;
+				yield return Co.R(operation);
 				prefab = operation.GetAsset<GameObject>();
-				yield return operation.CreateLayoutCoroutine(prefab.GetComponent<LayoutUGUIRuntime>(), GameManager.Instance.GetSystemFont(), (Layout loadLayout, TexUVListManager loadUvMan) => {
+				yield return Co.R(operation.CreateLayoutCoroutine(prefab.GetComponent<LayoutUGUIRuntime>(), GameManager.Instance.GetSystemFont(), (Layout loadLayout, TexUVListManager loadUvMan) => {
 					//0x137E740
 					GameObject g = Instantiate(prefab);
 					LayoutUGUIRuntime runtime = g.GetComponent<LayoutUGUIRuntime>();
@@ -201,7 +201,7 @@ namespace XeApp.Game.Menu
 					m_removeButton = g.GetComponentInChildren<ActionButton>(true);
 					g.transform.SetParent(m_scrollList.ScrollContent, false);
 					g.GetComponent<RectTransform>().anchoredPosition = new Vector2(m_scrollList.LeftTopPosition.x, -m_scrollList.LeftTopPosition.y);
-				});
+				}));
 				yield return null;
 			}
 			AssetBundleManager.UnloadAssetBundle(assetBundleName);
@@ -392,7 +392,7 @@ namespace XeApp.Game.Menu
 				}
 				for(int i = 0; i < 5; i++)
 				{
-					rankPosition[i] = CMMKCEPBIHI.GPCKPNJGANO((ResultScoreRank.Type)i);
+					rankPosition[i] = CMMKCEPBIHI.GPCKPNJGANO_GetRank((ResultScoreRank.Type)i);
 				}
 				m_scoreGaugeLayout.StartChildrenAnimGoStop("01");
 				float viewratio = m_scoreGauge.UpdateScoreGaugeRatio(m_gaugeRateText, m_scorePlusButton, m_scoreMinusButton);

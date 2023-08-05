@@ -24,7 +24,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAED608 Offset: 0xAED608 VA: 0xAED608
 		public void PreSetup()
 		{
-			TodoLogger.Log(0, "NoteSoundPlayer PreSetup");
+			TodoLogger.LogError(0, "NoteSoundPlayer PreSetup");
 		}
 
 		// // RVA: 0xAED6F4 Offset: 0xAED6F4 VA: 0xAED6F4
@@ -47,19 +47,19 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAED7CC Offset: 0xAED7CC VA: 0xAED7CC
 		public void PostSetup(BgmPlayer bgmPlayer, bool isVolumeZero)
 		{
-			TodoLogger.Log(0, "NotesSoundPlayer PostSetup");
+			TodoLogger.LogError(0, "NotesSoundPlayer PostSetup");
 		}
 
 		// // RVA: 0xAEDFE0 Offset: 0xAEDFE0 VA: 0xAEDFE0
 		public void Pause()
 		{
-			TodoLogger.Log(0, "NotesSoundPlayer Pause");
+			TodoLogger.LogError(0, "NotesSoundPlayer Pause");
 		}
 
 		// // RVA: 0xAEDFEC Offset: 0xAEDFEC VA: 0xAEDFEC
 		public void Resume()
 		{
-			TodoLogger.Log(0, "NotesSoundPlayer Resume");
+			TodoLogger.LogError(0, "NotesSoundPlayer Resume");
 		}
 
 		// // RVA: 0xAEDEC8 Offset: 0xAEDEC8 VA: 0xAEDEC8

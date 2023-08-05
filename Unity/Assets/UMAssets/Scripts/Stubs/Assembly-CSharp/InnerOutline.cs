@@ -5,7 +5,7 @@ public class InnerOutline : BaseMeshEffect, IMaterialModifier
 {
 	private void Awake()
 	{
-		UnityEngine.Debug.LogError("Implement monobehaviour");
+		TodoLogger.LogError(0, "Implement monobehaviour");
 	}
 	public enum ColorMode
 	{

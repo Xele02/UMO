@@ -103,7 +103,7 @@ namespace XeApp.Game.Common
 			}
 			m_list_particle.Clear();
 			m_list_particle.AddRange(m_mainObj.GetComponentsInChildren<ParticleSystem>(true));
-			StartCoroutine(Co_DelayInit());
+			this.StartCoroutineWatched(Co_DelayInit());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x73C828 Offset: 0x73C828 VA: 0x73C828
@@ -126,11 +126,11 @@ namespace XeApp.Game.Common
 		{
 			if (m_coWaitForEnterEnd != null)
 			{
-				StopCoroutine(m_coWaitForEnterEnd);
+				this.StopCoroutineWatched(m_coWaitForEnterEnd);
 			}
 			if (m_coWaitForAnimationEnd != null)
 			{
-				StopCoroutine(m_coWaitForAnimationEnd);
+				this.StopCoroutineWatched(m_coWaitForAnimationEnd);
 			}
 			SetAllActive(true);
 			isRunning = true;
@@ -148,7 +148,7 @@ namespace XeApp.Game.Common
 				}
 			}
 			m_resetAnimationBaseTime = true;
-			m_coWaitForEnterEnd = StartCoroutine(Co_WaitForEnterEnd());
+			m_coWaitForEnterEnd = this.StartCoroutineWatched(Co_WaitForEnterEnd());
 			m_lockOnTarget.Register(m_valkyrie.instance.transform);
 			isInitialized = true;
 			m_isFailed = false;
@@ -172,7 +172,7 @@ namespace XeApp.Game.Common
 			if (isInitialized)
 			{
 				if (m_coWaitForEnterEnd != null)
-					StopCoroutine(m_coWaitForEnterEnd);
+					this.StopCoroutineWatched(m_coWaitForEnterEnd);
 				isShootingPhase = false;
 				if (!m_isFailed)
 				{
@@ -199,7 +199,7 @@ namespace XeApp.Game.Common
 					}
 					m_lockOnTarget.Pause();
 				}
-				m_coWaitForAnimationEnd = StartCoroutine(Co_WaitForAnimationEnd());
+				m_coWaitForAnimationEnd = this.StartCoroutineWatched(Co_WaitForAnimationEnd());
 			}
 		}
 
@@ -210,7 +210,7 @@ namespace XeApp.Game.Common
 				return;
 			m_valkyrie.ForceShootStop();
 			if (m_coWaitForEnterEnd != null)
-				StopCoroutine(m_coWaitForEnterEnd);
+				this.StopCoroutineWatched(m_coWaitForEnterEnd);
 			m_lockOnTarget.End();
 			m_lockOnTarget.Unregister();
 			SetAllActive(false);

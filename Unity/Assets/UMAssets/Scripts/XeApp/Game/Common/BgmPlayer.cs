@@ -18,7 +18,7 @@ namespace XeApp.Game.Common
 
 		public override CriAtomSource source { get { return bgmSource; } set { return; } } //0xE61334 0xE6133C
 		public int currentBgmId { get; private set; } // 0x20
-		// public long timeSyncedWithAudio { get; private set; } 0xE61350 0xE6137C
+		public long timeSyncedWithAudio { get { return playBack.timeSyncedWithAudio; } private set { return; } } //0xE61350 0xE6137C
 
 		// // RVA: 0xE60AA4 Offset: 0xE60AA4 VA: 0xE60AA4
 		public static void ConvertBgmIdToCueSheetName(int bgmId, ref string cueSheetName)
@@ -168,7 +168,7 @@ namespace XeApp.Game.Common
 				currentBgmId = bgmId;
 			} catch (Exception e)
 			{
-				UnityEngine.Debug.LogError("Could not plsy bgm : "+e.ToString());
+				TodoLogger.LogError(TodoLogger.Filesystem, "Could not plsy bgm : "+e.ToString());
 			}
 		}
 

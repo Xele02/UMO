@@ -14,7 +14,7 @@ namespace XeApp.Game.Common
 		private bool m_isSet; // 0x88
 
 		// public short GropID { get; } 0x1CCF1EC
-		// public bool IsOn { get; } 0x1CCF1F4
+		public bool IsOn { get { return m_isSet; } } //0x1CCF1F4
 
 		// RVA: 0x1CCF1FC Offset: 0x1CCF1FC VA: 0x1CCF1FC Slot: 15
 		public override void OnPointerClick(PointerEventData eventData)

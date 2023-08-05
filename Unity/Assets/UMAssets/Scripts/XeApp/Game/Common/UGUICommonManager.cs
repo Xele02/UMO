@@ -16,11 +16,17 @@ namespace XeApp.Game.Common
 			//0x1CD2230
 			if(IsReady)
 				yield break;
-			yield return AssetBundleManager.LoadAllAssetAsync(BundleName);
+			yield return Co.R(AssetBundleManager.LoadAllAssetAsync(BundleName));
 			IsReady = true;
 		}
 
 		// // RVA: 0x1CD217C Offset: 0x1CD217C VA: 0x1CD217C
-		// public void Release() { }
+		public void Release()
+		{
+			if (!IsReady)
+				return;
+			AssetBundleManager.UnloadAssetBundle("ly/cmn.xab", false);
+			IsReady = false;
+		}
 	}
 }

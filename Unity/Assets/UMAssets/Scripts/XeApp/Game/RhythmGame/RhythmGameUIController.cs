@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using XeApp.Game.Common;
 using XeSys;
 using XeApp.Game.Common.uGUI;
+using System.Collections;
+using XeApp.Game.Tutorial;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -134,7 +136,9 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xC0D874 Offset: 0xC0D874 VA: 0xC0D874
 		public void BeginFailedAnim(Action callback)
 		{
-			TodoLogger.Log(0, "BeginFailedAnim");
+			failed.BeginFailedAnim();
+			failed.CleanupFailedCompletedCallback();
+			failed.AddFailedCompletedCallback(callback);
 		}
 
 		// // RVA: 0xC0D8EC Offset: 0xC0D8EC VA: 0xC0D8EC
@@ -232,13 +236,36 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xBF2FC4 Offset: 0xBF2FC4 VA: 0xBF2FC4
-		// public void ShowConfirmationWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback, DJBHIFLHJLK errorGotoTitle) { }
+		public void ShowConfirmationWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback, DJBHIFLHJLK errorGotoTitle)
+		{
+			if (Database.Instance.gameSetup.musicInfo.isFreeMode)
+			{
+				PopupWindowManager.Show(CreateConfirmationSetting(errorGotoTitle), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe);
+			}
+			else
+			{
+				PopupWindowManager.Show(CreateConfirmationSettingForStory(), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe);
+			}
+		}
 
 		// // RVA: 0xBF2E70 Offset: 0xBF2E70 VA: 0xBF2E70
-		// public void ShowContinueWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback) { }
+		public void ShowContinueWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback)
+		{
+			PopupWindowManager.Show(CreateContinueSetting(), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe);
+		}
 
 		// // RVA: 0xC0F378 Offset: 0xC0F378 VA: 0xC0F378
-		// public void ShowReconfirmationWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback) { }
+		public void ShowReconfirmationWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback)
+		{
+			if(Database.Instance.gameSetup.musicInfo.isFreeMode)
+			{
+				PopupWindowManager.Show(CreateRetirePopupsetting(), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe);
+			}
+			else
+			{
+				PopupWindowManager.Show(CreateRetirePopupsettingForStory(), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe);
+			}
+		}
 
 		// // RVA: 0xC0FBD8 Offset: 0xC0FBD8 VA: 0xC0FBD8
 		public void ShowPauseWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback)
@@ -262,7 +289,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xC10730 Offset: 0xC10730 VA: 0xC10730
 		public void ShowSkipConfirmationWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback)
 		{
-			TodoLogger.Log(0, "ShowSkipConfirmationWindow");
+			TodoLogger.LogError(0, "ShowSkipConfirmationWindow");
 		}
 
 		// // RVA: 0xC10E9C Offset: 0xC10E9C VA: 0xC10E9C
@@ -304,11 +331,24 @@ namespace XeApp.Game.RhythmGame
 		// public void ShowModeDescriptionTutorialWindow(Action callback) { }
 
 		// // RVA: 0xBF3A24 Offset: 0xBF3A24 VA: 0xBF3A24
-		// public void Show6LineDescriptionTutorialWindow(Action callback) { }
+		public void Show6LineDescriptionTutorialWindow(Action callback)
+		{
+			this.StartCoroutineWatched(Co_Show6LineDescriptionTutorialWindow(callback));
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x746044 Offset: 0x746044 VA: 0x746044
 		// // RVA: 0xC11CF8 Offset: 0xC11CF8 VA: 0xC11CF8
-		// private IEnumerator Co_Show6LineDescriptionTutorialWindow(Action callback) { }
+		private IEnumerator Co_Show6LineDescriptionTutorialWindow(Action callback)
+		{
+			//0x1551670
+			yield return Co.R(TutorialManager.TryShowTutorialCoroutine((TutorialConditionId id) =>
+			{
+				//0x15515A0
+				return id == TutorialConditionId.Condition70;
+			}));
+			if (callback != null)
+				callback();
+		}
 
 		// // RVA: 0xC0FD2C Offset: 0xC0FD2C VA: 0xC0FD2C
 		private PopupSetting CreatePausePopupsetting()
@@ -334,13 +374,50 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xC0E7B0 Offset: 0xC0E7B0 VA: 0xC0E7B0
-		// private PopupSetting CreateConfirmationSetting(DJBHIFLHJLK errorGotoTitle) { }
+		private PopupSetting CreateConfirmationSetting(DJBHIFLHJLK errorGotoTitle)
+		{
+			int diff = CIOECGOMILE.HHCJCDFCLOB.DEAPMEIDCGC_GetTotalPaidCurrency() - CIOECGOMILE.HHCJCDFCLOB.BPPGDBHGMDA_Continue_Price;
+			if (diff < 0)
+			{
+				TextPopupSetting res = new TextPopupSetting();
+				res.WindowSize = SizeType.Small;
+				res.TitleText = MessageManager.Instance.GetBank("common").GetMessageByLabel("game_popup_continue_title");
+				res.Text = MessageManager.Instance.GetBank("common").GetMessageByLabel("game_popup_continue_shotage_text");
+				res.Buttons = new ButtonInfo[2]
+				{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Purchase, Type = PopupButton.ButtonType.Positive}
+				};
+				return res;
+			}
+			else
+			{
+				TodoLogger.LogError(0, "CreateConfirmationSetting");
+				return null;
+			}
+		}
 
 		// // RVA: 0xC0F0F4 Offset: 0xC0F0F4 VA: 0xC0F0F4
-		// private PopupSetting CreateContinueSetting() { }
+		private PopupSetting CreateContinueSetting()
+		{
+			TextPopupSetting res = new TextPopupSetting();
+			res.WindowSize = SizeType.Small;
+			res.TitleText = MessageManager.Instance.GetBank("common").GetMessageByLabel("game_popup_continue_title");
+			res.Text = MessageManager.Instance.GetBank("common").GetMessageByLabel("game_popup_continue_text_01");
+			res.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Retire, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Continue, Type = PopupButton.ButtonType.Positive}
+			};
+			return res;
+		}
 
 		// // RVA: 0xC0EE70 Offset: 0xC0EE70 VA: 0xC0EE70
-		// private PopupSetting CreateConfirmationSettingForStory() { }
+		private PopupSetting CreateConfirmationSettingForStory()
+		{
+			TodoLogger.LogError(0, "CreateConfirmationSettingForStory");
+			return null;
+		}
 
 		// // RVA: 0xC0F5DC Offset: 0xC0F5DC VA: 0xC0F5DC
 		private PopupSetting CreateRetirePopupsetting()

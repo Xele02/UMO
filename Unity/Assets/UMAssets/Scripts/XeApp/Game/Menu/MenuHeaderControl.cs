@@ -3,12 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using XeApp.Core;
+using XeApp.Game.Common;
 using XeSys.Gfx;
 
 namespace XeApp.Game.Menu
 {
 	public class MenuHeaderControl
 	{
+		public enum Button
+		{
+			None = 0,
+			Rank = 1,
+			UtaRate = 2,
+			Stamina = 4,
+			Charge = 8,
+			Back = 16,
+			All = 31,
+		}
+
+		public enum ButtonIndex
+		{
+			Stamina = 0,
+			Charge = 1,
+			Back = 2,
+		}
+
 		private GameObject m_root; // 0x8
 		private GameObject m_userInfoInstance; // 0xC
 		private GameObject m_menuStackInstance; // 0x10
@@ -228,7 +247,21 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB28E7C Offset: 0xB28E7C VA: 0xB28E7C
-		// public bool CheckDisableUserInfo(TransitionInfo info) { }
+		public bool CheckDisableUserInfo(TransitionInfo info)
+		{
+			int idx = m_disableUserInfo.FindIndex((TransitionList.Type x) => {
+				//0xB2B8D0
+				return info.name == x;
+			});
+			if(idx < 0)
+			{
+				idx = m_disableUserInfoUniqueScene.FindIndex((TransitionUniqueId x) => {
+					//0xB2B8E4
+					return info.uniqueId == (int)x;
+				});
+			}
+			return idx > -1;
+		}
 
 		// // RVA: 0xB2903C Offset: 0xB2903C VA: 0xB2903C
 		public void Show(TransitionList.Type transitionName, TransitionUniqueId uniqueId, CommonMenuStackLabel.LabelType labelType, SceneGroupCategory group, int descId, bool isVisibleBackButton)
@@ -318,13 +351,39 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB29640 Offset: 0xB29640 VA: 0xB29640
-		// public void SetActive(bool active) { }
+		public void SetActive(bool active)
+		{
+			if(m_userInfoInstance != null)
+			{
+				if(active)
+				{
+					m_userInfoInstance.SetActive(true);
+					m_userInfoInstance.transform.SetAsLastSibling();
+				}
+				else
+				{
+					m_userInfoInstance.SetActive(false);
+				}
+			}
+		}
 
 		// // RVA: 0xB29754 Offset: 0xB29754 VA: 0xB29754
-		// public void Enter(bool isFading = False) { }
+		public void Enter(bool isFading = false)
+		{
+			if(m_userInfo != null)
+			{
+				m_userInfo.Enter(isFading);
+			}
+		}
 
 		// // RVA: 0xB29810 Offset: 0xB29810 VA: 0xB29810
-		// public void Leave(bool isFading = False) { }
+		public void Leave(bool isFading = false)
+		{
+			if(m_userInfo != null)
+			{
+				m_userInfo.Leave(isFading);
+			}
+		}
 
 		// // RVA: 0xB298CC Offset: 0xB298CC VA: 0xB298CC
 		// public bool IsPlaying() { }
@@ -342,8 +401,8 @@ namespace XeApp.Game.Menu
 			while(i < assetBundleName.Length / 2)
 			{
 				operation = AssetBundleManager.LoadLayoutAsync(assetBundleName[i * 2], assetBundleName[i * 2 + 1]);
-				yield return operation;
-				mb.StartCoroutine(operation.InitializeLayoutCoroutine(font, (GameObject instance) =>
+				yield return Co.R(operation);
+				mb.StartCoroutineWatched(operation.InitializeLayoutCoroutine(font, (GameObject instance) =>
 				{
 					//0xB2B010
 					if(instance.name == "UI_MenuTop(Clone)")
@@ -392,13 +451,50 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB299F0 Offset: 0xB299F0 VA: 0xB299F0
-		// public void SetButtonDisable(MenuHeaderControl.Button bit) { }
+		public void SetButtonDisable(Button bit)
+		{
+			for(int i = 0; i < m_buttons.Count; i++)
+			{
+				if(((int)bit & (1 << (i & 0x1f))) != 0)
+				{
+					m_buttons[i].enabled = false;
+					m_buttonBlockCount[i]++;
+				}
+			}
+		}
 
 		// // RVA: 0xB29B2C Offset: 0xB29B2C VA: 0xB29B2C
-		// public void SetButtonEnable(MenuHeaderControl.Button bit) { }
+		public void SetButtonEnable(MenuHeaderControl.Button bit)
+		{
+			for(int i = 0; i < m_buttons.Count; i++)
+			{
+				if(((int)bit & (1 << (i & 0x1f))) != 0)
+				{
+					m_buttonBlockCount[i]--;
+					if(m_buttonBlockCount[i] < 1)
+					{
+						m_buttons[i].enabled = true;
+						m_buttonBlockCount[i] = 0;
+					}
+				}
+			}
+		}
 
 		// // RVA: 0xB29CE4 Offset: 0xB29CE4 VA: 0xB29CE4
-		// public ButtonBase FindButton(MenuHeaderControl.Button bit) { }
+		public ButtonBase FindButton(Button bit)
+		{
+			if(m_buttons != null)
+			{
+				for(int i = 0; i < m_buttons.Count; i++)
+				{
+					if(((int)bit & (1 << i)) != 0)
+					{
+						return m_buttons[i].GetComponent<ButtonBase>();
+					}
+				}
+			}
+			return null;
+		}
 
 		// // RVA: 0xB29DF4 Offset: 0xB29DF4 VA: 0xB29DF4
 		// public bool IsEnableBack() { }
@@ -406,19 +502,30 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB29E8C Offset: 0xB29E8C VA: 0xB29E8C
 		public void ApplyPlayerStatus(IFBCGCCJBHI playerStatus)
 		{
-			TodoLogger.Log(0, "ApplyPlayerStatus");
+			if (m_userInfo == null)
+				return;
+			if (!m_userInfo.IsLoaded())
+				return;
+			m_userInfo.SetLevelLimit(playerStatus.NMCICIHMOCM_PlayerLevelLimit);
+			m_userInfo.ChangeEnergyValue(playerStatus.EPNALMONMHB_CurEnergy, playerStatus.POKDILOKODG_MaxEnergy);
+			m_userInfo.ChangeRemainTime(playerStatus.CMCHABFEOHH_RemainTime);
+			m_userInfo.ChangeLevelValue(playerStatus.DMBFOMLCGBG_ChangeLevelValue);
+			m_userInfo.ChangeEXPValue(playerStatus.OPBHNBECFII_CurExp, playerStatus.PBGFIOONCMB_MaxExp);
+			m_userInfo.ChangeCurrencyValue(playerStatus.OIOFGIBDOPI_CurrencyNonPaid, playerStatus.FNCPAEFEECO_CurrencyPaid + Database.Instance.tutorialPaidVC);
+			m_userInfo.ChangeMedalValue(playerStatus.AHHGKGOPGDE_MedalMonth, playerStatus.GBIKGLELKEO_MedalValue);
+			m_userInfo.ChangeUtaRateValue(playerStatus.ILELGGCCGMJ_UtaGrade, playerStatus.HDBFOIAGPJK_UtaRank);
 		}
 
 		// // RVA: 0xB2A28C Offset: 0xB2A28C VA: 0xB2A28C
 		private void OnClickRecovEne()
 		{
-			TodoLogger.Log(0, "OnClickRecovEne");
+			TodoLogger.LogError(0, "OnClickRecovEne");
 		}
 
 		// // RVA: 0xB2ABA4 Offset: 0xB2ABA4 VA: 0xB2ABA4
 		private void OnClickChargeMoney()
 		{
-			TodoLogger.Log(0, "OnClickChargeMoney");
+			TodoLogger.LogError(0, "OnClickChargeMoney");
 		}
 		
 		// [CompilerGeneratedAttribute] // RVA: 0x6C7734 Offset: 0x6C7734 VA: 0x6C7734

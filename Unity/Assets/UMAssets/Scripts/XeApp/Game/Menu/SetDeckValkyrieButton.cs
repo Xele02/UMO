@@ -83,7 +83,7 @@ namespace XeApp.Game.Menu
 				m_abilityImage.enabled = en;
 			}
 			bool b = false;
-			if(!viewUnitData.EIGKIHENKNC_HasDivaSet)
+			if(!viewUnitData.EIGKIHENKNC_HasNoDivaSet)
 			{
 				if (viewUnitData.JOKFNBLEILN_Valkyrie != null)
 					b = true;

@@ -7,7 +7,7 @@ namespace XeApp.Game.Menu
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.LogError(0, "Implement monobehaviour");
 		}
 		[SerializeField]
 		public PopupFilterSortUGUIParts_FilterPlateRarity filterRarity;
@@ -33,5 +33,8 @@ namespace XeApp.Game.Menu
 		public ContentSizeFitter contentSizeFitter;
 		[SerializeField]
 		public VerticalLayoutGroup layoutGroup;
+
+		public override Type MyType { get { TodoLogger.LogError(0, "Type"); return 0; } }
+		protected override System.Collections.IEnumerator OnInitialize() { TodoLogger.LogError(0, "OnInitialize"); yield return null; }
 	}
 }

@@ -29,7 +29,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x11187A8 Offset: 0x11187A8 VA: 0x11187A8
 		public void LoadMusicResouces(int wavId, int primeId, int stageDivaNum, int positionId = 0)
 		{
-			StartCoroutine(Co_LoadAllResouces(wavId, primeId, stageDivaNum, positionId));
+			this.StartCoroutineWatched(Co_LoadAllResouces(wavId, primeId, stageDivaNum, positionId));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x739BEC Offset: 0x739BEC VA: 0x739BEC
@@ -39,8 +39,8 @@ namespace XeApp.Game.Common
 			//0x1118B58
 			isLoaded = false;
 			isUnused = false;
-			yield return StartCoroutine(Co_LoadAnimatorResouces());
-			yield return StartCoroutine(Co_LoadMusicResouces(wavId, primeId, stageDivaNum, positionId));
+			yield return this.StartCoroutineWatched(Co_LoadAnimatorResouces());
+			yield return this.StartCoroutineWatched(Co_LoadMusicResouces(wavId, primeId, stageDivaNum, positionId));
 			isLoaded = true;
 		}
 
@@ -60,7 +60,7 @@ namespace XeApp.Game.Common
 			if(KEHOJEJMGLJ.HHCJCDFCLOB.IDJBKGBMDAJ.PPCCFNAPHCH_FileExists(bundleName.ToString()))
 			{
 				operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-				yield return operation;
+				yield return Co.R(operation);
 				if(!operation.IsError())
 				{
 					assetName.SetFormat("game_cmn_bs_animator", Array.Empty<object>());
@@ -87,7 +87,7 @@ namespace XeApp.Game.Common
 			if(KEHOJEJMGLJ.HHCJCDFCLOB.IDJBKGBMDAJ.PPCCFNAPHCH_FileExists(bundleName.ToString()))
 			{
 				operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-				yield return operation;
+				yield return Co.R(operation);
 				if(!operation.IsError())
 				{
 					if(positionId == 0)

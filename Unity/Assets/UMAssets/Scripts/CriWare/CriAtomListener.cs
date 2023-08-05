@@ -39,43 +39,43 @@ namespace CriWare
 		// // RVA: 0x28AEE48 Offset: 0x28AEE48 VA: 0x28AEE48
 		private void Awake()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x28AEFE8 Offset: 0x28AEFE8 VA: 0x28AEFE8
 		private void Start()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x28AF088 Offset: 0x28AF088 VA: 0x28AF088 Slot: 4
 		protected override void OnEnable()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x28AF2B8 Offset: 0x28AF2B8 VA: 0x28AF2B8 Slot: 5
 		protected override void OnDisable()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x28AF2DC Offset: 0x28AF2DC VA: 0x28AF2DC
 		private void OnDestroy()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x28AF440 Offset: 0x28AF440 VA: 0x28AF440 Slot: 6
 		public override void CriInternalUpdate()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x28AF444 Offset: 0x28AF444 VA: 0x28AF444 Slot: 7
 		public override void CriInternalLateUpdate()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x28AEAB8 Offset: 0x28AEAB8 VA: 0x28AEAB8

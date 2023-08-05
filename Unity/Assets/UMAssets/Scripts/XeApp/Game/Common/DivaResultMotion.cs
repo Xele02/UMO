@@ -15,7 +15,7 @@ namespace XeApp.Game.Common
         {
             if(divaId != 9)
             {
-                if(scoreRank >= ResultScoreRank.Type.A &&  scoreRank <= ResultScoreRank.Type.S)
+                if(scoreRank < ResultScoreRank.Type.A || scoreRank > ResultScoreRank.Type.SS)
                     return false;
                 if(((uint)(scoreRank - 2) & 7) == 2)
                     return true;
@@ -38,10 +38,20 @@ namespace XeApp.Game.Common
         }
 
         // // RVA: 0x1C09A28 Offset: 0x1C09A28 VA: 0x1C09A28
-        // public static int GetResultReactType(ResultScoreRank.Type scoreRank) { }
+        public static int GetResultReactType(ResultScoreRank.Type scoreRank)
+        {
+            if(scoreRank >= ResultScoreRank.Type.A &&  scoreRank <= ResultScoreRank.Type.SS)
+                return 2;
+            return 1;
+        }
 
         // // RVA: 0x1C09A3C Offset: 0x1C09A3C VA: 0x1C09A3C
-        // public static int GetVoiceId(ResultScoreRank.Type scoreRank) { }
+        public static int GetVoiceId(ResultScoreRank.Type scoreRank)
+		{
+			if (scoreRank >= ResultScoreRank.Type.A && scoreRank < ResultScoreRank.Type.Num)
+				return new int[3] { 1, 1, 2 }[(int)scoreRank - 2];
+			return 0;
+		}
 
         // // RVA: 0x1C0998C Offset: 0x1C0998C VA: 0x1C0998C
         // private static DivaResultMotion.Type ToType(ResultScoreRank.Type scoreRank) { }

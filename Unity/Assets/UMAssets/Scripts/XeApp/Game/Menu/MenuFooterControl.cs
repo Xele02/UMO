@@ -1,22 +1,37 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using XeApp.Game.Common;
+using XeApp.Game.Gacha;
 using XeSys.Gfx;
 
 namespace XeApp.Game.Menu
 {
 	public class MenuFooterControl
 	{
+		public enum Button
+		{
+			None = 0,
+			Home = 64,
+			Setting = 32,
+			VOP = 16,
+			LiveMode = 8,
+			Gacha = 4,
+			Mission = 2,
+			Menu = 1,
+			All = 127,
+		}
+
 		private GameObject m_root; // 0x8
 		private GameObject m_instance; // 0xC
 		private MenuBarPrefab m_menuBar; // 0x10
 		private ActionButton[] m_actionButtons; // 0x14
 		private LayoutUGUIHitOnly[] m_buttons; // 0x18
 		private int[] m_buttonBlockCount; // 0x1C
-		// private HGOAIGFPCBC m_QuestbadgeData = new HGOAIGFPCBC(); // 0x20
-		// private IIMBAOGHCIG m_HomebadgeData = new IIMBAOGHCIG(); // 0x24
+		private HGOAIGFPCBC m_QuestbadgeData = new HGOAIGFPCBC(); // 0x20
+		private IIMBAOGHCIG m_HomebadgeData = new IIMBAOGHCIG(); // 0x24
 		private List<TransitionUniqueId> m_disableMenuBarUniqueScene = new List<TransitionUniqueId>() {
 			TransitionUniqueId.MUSICSELECT_FRIENDSELECT_TEAMSELECT_DIVASELECTLIST_SCENESELECT,
 			TransitionUniqueId.MUSICSELECT_FRIENDSELECT_TEAMSELECT_SCENESELECT,
@@ -127,7 +142,7 @@ namespace XeApp.Game.Menu
 			TransitionList.Type.GAKUYA,
 			TransitionList.Type.GAKUYA_DIVA_VIEW
 		}; // 0x2C
-		// private static readonly MenuButtonAnim.ButtonType[] ToButtonType = new MenuButtonAnim.ButtonType[7] { 6, 5, 4, 3, 2, 1, 0 }; // 0x0
+		private static readonly MenuButtonAnim.ButtonType[] ToButtonType = new MenuButtonAnim.ButtonType[7] { MenuButtonAnim.ButtonType.MENU, MenuButtonAnim.ButtonType.QUEST, MenuButtonAnim.ButtonType.GACHA, MenuButtonAnim.ButtonType.LIVE, MenuButtonAnim.ButtonType.VOP, MenuButtonAnim.ButtonType.SETTING, MenuButtonAnim.ButtonType.HOME }; // 0x0
 
 		public MenuBarPrefab MenuBar { get { return m_menuBar; } } //0xED0D08
 
@@ -138,7 +153,21 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xED1F34 Offset: 0xED1F34 VA: 0xED1F34
-		// public bool CheckDisableFooter(TransitionInfo info) { }
+		public bool CheckDisableFooter(TransitionInfo info)
+		{
+			int idx = m_disableMenuBarScene.FindIndex((TransitionList.Type x) => {
+				//0xB2696C
+				return info.name == x;
+			});
+			if(idx < 0)
+			{
+				idx = m_disableMenuBarUniqueScene.FindIndex((TransitionUniqueId x) => {
+					//0xB26980
+					return info.uniqueId == (int)x;
+				});
+			}
+			return idx > -1;
+		}
 
 		// // RVA: 0xED20EC Offset: 0xED20EC VA: 0xED20EC
 		public void Show(TransitionList.Type transitionName, TransitionUniqueId uniqueId, MenuButtonAnim.ButtonType selectedButton, bool isFading)
@@ -165,25 +194,29 @@ namespace XeApp.Game.Menu
 			m_menuBar.gameObject.SetActive(true);
 			m_menuBar.transform.SetAsLastSibling();
 			m_menuBar.Enter(isFading, selectedButton);
-
-			TodoLogger.Log(0, "footer Show");
 		}
 
 		// // RVA: 0xED2390 Offset: 0xED2390 VA: 0xED2390
 		// public void Enter(bool isFading = False) { }
 
 		// // RVA: 0xED2448 Offset: 0xED2448 VA: 0xED2448
-		// public void Leave(bool isFading = False) { }
+		public void Leave(bool isFading = false)
+		{
+			if(m_menuBar != null)
+			{
+				m_menuBar.Leave(isFading);
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C75D4 Offset: 0x6C75D4 VA: 0x6C75D4
 		// RVA: 0xED2500 Offset: 0xED2500 VA: 0xED2500
 		public IEnumerator Load(Font font, UnityAction action)
 		{
 			//0xB269E8
-			yield return MenuBarPrefab.Load(m_root.transform, font, (MenuBarPrefab instance) => {
+			yield return Co.R(MenuBarPrefab.Load(m_root.transform, font, (MenuBarPrefab instance) => {
 				//0xED3528
 				m_menuBar = instance;
-			});
+			}));
 			m_buttons = m_menuBar.GetComponentsInChildren<LayoutUGUIHitOnly>(true);
 			m_actionButtons = m_menuBar.GetComponentsInChildren<ActionButton>(true);
 			m_menuBar.gameObject.SetActive(false);
@@ -220,19 +253,126 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xED2678 Offset: 0xED2678 VA: 0xED2678
-		// public void SetButtonDisable(MenuFooterControl.Button bit) { }
+		public void SetButtonDisable(Button bit)
+		{
+			if (m_buttons != null)
+			{
+				for (int i = 0; i < m_buttons.Length; i++)
+				{
+					if(((int)bit & (1 << (i & 0x1f))) != 0)
+					{
+						m_buttons[i].enabled = false;
+						m_buttonBlockCount[i]++;
+					}
+				}
+			}
+		}
 
 		// // RVA: 0xED2768 Offset: 0xED2768 VA: 0xED2768
-		// public void SetButtonEnable(MenuFooterControl.Button bit) { }
+		public void SetButtonEnable(Button bit)
+		{
+			if (m_buttons != null)
+			{
+				for (int i = 0; i < m_buttons.Length; i++)
+				{
+					if(((int)bit & (1 << (i & 0x1f))) != 0)
+					{
+						m_buttonBlockCount[i]--;
+						if(m_buttonBlockCount[i] < 1)
+						{
+							m_buttons[i].enabled = true;
+							m_buttonBlockCount[i] = 0;
+						}
+					}
+				}
+			}
+		}
 
 		// // RVA: 0xED28D4 Offset: 0xED28D4 VA: 0xED28D4
-		// public ButtonBase FindButton(MenuFooterControl.Button bit) { }
+		public ButtonBase FindButton(Button bit)
+		{
+			if(m_buttons != null)
+			{
+				for(int i = 0; i < m_buttons.Length; i++)
+				{
+					if (((int)bit & (1 << (i & 0x1f))) != 0)
+					{
+						return m_buttons[i].GetComponentInParent<ButtonBase>();
+					}
+				}
+			}
+			return null;
+		}
 
 		// // RVA: 0xED29D4 Offset: 0xED29D4 VA: 0xED29D4
-		// public void SetButtonNew(MenuFooterControl.Button bit, bool isNew) { }
+		public void SetButtonNew(Button bit, bool isNew)
+		{
+			BadgeConstant.ID badgeId = 0;
+			string badgeText = null;
+			MenuButtonAnim.ButtonType buttonType = 0;
+			if(m_buttons != null)
+			{
+				if(m_menuBar != null)
+				{
+					bool isTuto = GameManager.Instance.IsTutorial;
+					for(int i = 0; i < m_buttons.Length; i++)
+					{
+						if (((int)bit & (1 << (i & 0x1f))) == 0)
+							continue;
+						badgeId = 0;
+						badgeText = "";
+						buttonType = ToButtonType[i];
+						switch (ToButtonType[i])
+						{
+							case MenuButtonAnim.ButtonType.VOP:
+								m_HomebadgeData.FBANBDCOEJL(isNew && !isTuto);
+								badgeText = m_HomebadgeData.BHANMJKCCBC;
+								badgeId = m_HomebadgeData.BEEIIJJKDBH;
+								break;
+							case MenuButtonAnim.ButtonType.LIVE:
+							case MenuButtonAnim.ButtonType.MENU:
+								if(isNew && !isTuto)
+								{
+									badgeId = BadgeConstant.ID.New;
+								}
+								break;
+							case MenuButtonAnim.ButtonType.GACHA:
+								badgeId = 0;
+								if(!QuestUtility.IsBeginnerQuest())
+								{
+									badgeId = GachaUtility.GetFooterMenuBadgeId(ref badgeText);
+								}
+								break;
+							case MenuButtonAnim.ButtonType.QUEST:
+								m_QuestbadgeData.FBANBDCOEJL(true);
+								badgeText = m_QuestbadgeData.BHANMJKCCBC;
+								badgeId = m_QuestbadgeData.BEEIIJJKDBH;
+								break;
+						}
+						string[] values = new string[6] { "buttonType:", buttonType.ToString(), " / badgeID:", badgeId.ToString(), " / badgeText:", badgeText };
+						Debug.Log(string.Concat(values));
+						m_menuBar.SetButtonBadge(buttonType, badgeId, badgeText);
+					}
+				}
+			}
+		}
 
 		// // RVA: 0xED3160 Offset: 0xED3160 VA: 0xED3160
-		// public void SetOfferUnlockRank() { }
+		public void SetOfferUnlockRank()
+		{
+			int idx = Array.FindIndex(ToButtonType, (MenuButtonAnim.ButtonType x) =>
+			{
+				//0xB26954
+				return x == MenuButtonAnim.ButtonType.VOP;
+			});
+			m_buttons[idx].enabled = false;
+			if (KDHGBOOECKC.HHCJCDFCLOB != null)
+			{
+				KDHGBOOECKC.HHCJCDFCLOB.EJBPEBIIMPG_GetVfoPlayerLevelUnlock();
+				m_buttons[idx].enabled = KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk();
+			}
+			m_actionButtons[idx].Disable = !m_buttons[idx].enabled;
+		}
 
 		// // RVA: 0xED33D4 Offset: 0xED33D4 VA: 0xED33D4
 		// public bool IsShow() { }

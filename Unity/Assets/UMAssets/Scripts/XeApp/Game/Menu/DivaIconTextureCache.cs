@@ -54,7 +54,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x17E3714 Offset: 0x17E3714 VA: 0x17E3714 Slot: 5
-		// public override void Terminated() { }
+		public override void Terminated()
+		{
+			if (m_loadingDivaIcon != null)
+				m_loadingDivaIcon.isKeep = false;
+			if (m_loadingStatusDivaIcon != null)
+				m_loadingStatusDivaIcon.isKeep = false;
+			Clear();
+			m_loadingDivaIcon = null;
+			m_loadingStatusDivaIcon = null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C5FB8 Offset: 0x6C5FB8 VA: 0x6C5FB8
 		// // RVA: 0x17E375C Offset: 0x17E375C VA: 0x17E375C
@@ -137,7 +146,10 @@ namespace XeApp.Game.Menu
 		// public void LoadStandingCostumeIcon(int id, int modelId, Action<IiconTexture> callBack) { }
 
 		// // RVA: 0x17E3D10 Offset: 0x17E3D10 VA: 0x17E3D10
-		// public void LoadTutorialIcon(int charId, Action<IiconTexture> callBack) { }
+		public void LoadTutorialIcon(int charId, Action<IiconTexture> callBack)
+		{
+			Load(MakeTutorialIconPath(charId), callBack);
+		}
 
 		// // RVA: 0x17E3E38 Offset: 0x17E3E38 VA: 0x17E3E38
 		public void LoadDivaUpIco(int id, int modelId, int colorId, Action<IiconTexture> callBack)
@@ -170,7 +182,10 @@ namespace XeApp.Game.Menu
 		// public static string GetDivaStandingCostumeIconPath(int id, int modelId) { }
 
 		// // RVA: 0x17E3DAC Offset: 0x17E3DAC VA: 0x17E3DAC
-		// public static string MakeTutorialIconPath(int charId) { }
+		public static string MakeTutorialIconPath(int charId)
+		{
+			return string.Format("ad/ic/{0:D4}.xab", charId);
+		}
 
 		// // RVA: 0x17E425C Offset: 0x17E425C VA: 0x17E425C
 		public void TryInstall(DFKGGBMFFGB_PlayerInfo playerData)

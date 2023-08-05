@@ -86,7 +86,7 @@ namespace XeApp.Game.RhythmGame.UI
 			m_controller[0].m_showSkillTypeId = 0;
 			m_controller[0].m_skillEffectiveIdBit = 0;
 			m_controller[0].m_topPrioritySkillEffectiveIdBit = 0;
-			m_controller[0].updateSkillAnimeCoroutine = StartCoroutine(UpdateSkillAnimeCoroutine(0));
+			m_controller[0].updateSkillAnimeCoroutine = this.StartCoroutineWatched(UpdateSkillAnimeCoroutine(0));
 			m_controller[0].m_materialPropertyBlock = new MaterialPropertyBlock();
 			m_controller[0].m_renderer = m_insideRenderer;
 			m_controller[0].m_renderer.SetPropertyBlock(m_controller[0].m_materialPropertyBlock);
@@ -97,7 +97,7 @@ namespace XeApp.Game.RhythmGame.UI
 			m_controller[1].m_showSkillTypeId = 0;
 			m_controller[1].m_skillEffectiveIdBit = 0;
 			m_controller[1].m_topPrioritySkillEffectiveIdBit = 0;
-			m_controller[1].updateSkillAnimeCoroutine = StartCoroutine(UpdateSkillAnimeCoroutine(1));
+			m_controller[1].updateSkillAnimeCoroutine = this.StartCoroutineWatched(UpdateSkillAnimeCoroutine(1));
 			m_controller[1].m_materialPropertyBlock = new MaterialPropertyBlock();
 			m_controller[1].m_renderer = m_outsideRenderer;
 			m_controller[1].m_renderer.SetPropertyBlock(m_controller[1].m_materialPropertyBlock);
@@ -114,7 +114,7 @@ namespace XeApp.Game.RhythmGame.UI
 				if(isTopPriority)
 				{
 					m_controller[idx].m_topPrioritySkillEffectiveIdBit |= (byte)(1 << val);
-					m_controller[idx].updateSkillAnimeCoroutine = StartCoroutine(UpdateSkillAnimeCoroutine(idx));
+					m_controller[idx].updateSkillAnimeCoroutine = this.StartCoroutineWatched(UpdateSkillAnimeCoroutine(idx));
 				}
 			}
 		}

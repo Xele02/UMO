@@ -33,20 +33,32 @@ namespace XeApp.Game.Common
 		// RVA: 0x1CD0B3C Offset: 0x1CD0B3C VA: 0x1CD0B3C
 		private void Start()
 		{
-			TodoLogger.Log(0, "TODO");
+			return;
 		}
 
 		// RVA: 0x1CD0B40 Offset: 0x1CD0B40 VA: 0x1CD0B40
 		private void Update()
 		{
-			TodoLogger.Log(0, "TODO");
+			if (m_touch_circle.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
+				Release();
 		}
 
 		// // RVA: 0x1CD0BD8 Offset: 0x1CD0BD8 VA: 0x1CD0BD8
-		// private void Release() { }
+		private void Release()
+		{
+			gameObject.SetActive(false);
+			Free();
+		}
 
 		// // RVA: 0x1CD0124 Offset: 0x1CD0124 VA: 0x1CD0124
-		// public void Enter(Vector3 pos) { }
+		public void Enter(Vector3 pos)
+		{
+			gameObject.SetActive(true);
+			m_touch_circle.enabled = true;
+			m_touch_circle.Play(m_animeStateName, 0, 0);
+			m_particle_touch.Play();
+			transform.position = pos;
+		}
 
 		// // RVA: 0x1CD0C28 Offset: 0x1CD0C28 VA: 0x1CD0C28
 		// public void SetScale(Vector3 scale) { }
@@ -54,13 +66,13 @@ namespace XeApp.Game.Common
 		// RVA: 0x1CD0C2C Offset: 0x1CD0C2C VA: 0x1CD0C2C Slot: 5
 		protected override void PausableAwake()
 		{
-			TodoLogger.Log(0, "TODO");
+			return;
 		}
 
 		// RVA: 0x1CD0C30 Offset: 0x1CD0C30 VA: 0x1CD0C30 Slot: 6
 		protected override void PausableStart()
 		{
-			TodoLogger.Log(0, "TODO");
+			return;
 		}
 
 		// RVA: 0x1CD0C34 Offset: 0x1CD0C34 VA: 0x1CD0C34 Slot: 7
@@ -72,10 +84,15 @@ namespace XeApp.Game.Common
 		// RVA: 0x1CD0C38 Offset: 0x1CD0C38 VA: 0x1CD0C38 Slot: 8
 		protected override void PausableInPause()
 		{
-			TodoLogger.Log(0, "TODO");
+			return;
 		}
 
 		// RVA: 0x1CD0770 Offset: 0x1CD0770 VA: 0x1CD0770
-		// public void Stop() { }
+		public void Stop()
+		{
+			Release();
+			m_touch_circle.enabled = false;
+			m_particle_touch.Stop();
+		}
 	}
 }

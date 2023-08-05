@@ -14,11 +14,18 @@ public struct CFHDKAFLNEP
 		public int ALJGIPAGDJI; // 0x18
 		public bool LHFPLDHBAAN; // 0x1C
 		public bool KPNDMALAOKC; // 0x1D
-		public bool OGHIOHAACIB; // 0x1E
+		public bool OGHIOHAACIB_IsKira; // 0x1E
 
-		//public int IKEJLHJEANO { get; } 0x7FC5B8
-		//public bool CDOCOLOKCJK { get; } 0x7FC5D8
-		//public bool DFIGPDCBAPB { get; } 0x7FC5EC
+		public int IKEJLHJEANO { get {
+				int res = 3;
+				if (!LHFPLDHBAAN)
+					res = 2;
+				if (!KPNDMALAOKC)
+					res = LHFPLDHBAAN ? 1 : 0;
+				return res;
+			} } //0x7FC5B8
+		public bool CDOCOLOKCJK_HasRate { get { return ADKDHKMPMHP_Rate > 0; } } //0x7FC5D8
+		public bool DFIGPDCBAPB_IsInvalid { get { return PBPOLELIPJI_Id < 1; } } //0x7FC5EC
 
 		//// RVA: 0x7FC600 Offset: 0x7FC600 VA: 0x7FC600
 		public void JCHLONCMPAJ()
@@ -27,7 +34,7 @@ public struct CFHDKAFLNEP
 			IFFKEMEOFAE_EvolveId = 0;
 			OEOIHIIIMCK_Add = 0;
 			ADKDHKMPMHP_Rate = 0;
-			OGHIOHAACIB = false;
+			OGHIOHAACIB_IsKira = false;
 		}
 
 		// RVA: 0x7FC618 Offset: 0x7FC618 VA: 0x7FC618 Slot: 3
@@ -82,7 +89,20 @@ public struct CFHDKAFLNEP
 	}
 
 	//// RVA: 0x7FC4E4 Offset: 0x7FC4E4 VA: 0x7FC4E4
-	//public int IKEJLHJEANO(int CMCKNKKCNDK) { }
+	public int IKEJLHJEANO(int CMCKNKKCNDK)
+	{
+		int res = 0;
+		for(int i = 0; i < KOGBMDOONFA.GetLength(1); i++)
+		{
+			int a = 3;
+			if (!KOGBMDOONFA[CMCKNKKCNDK, i].LHFPLDHBAAN)
+				a = 2;
+			if (!KOGBMDOONFA[CMCKNKKCNDK, i].KPNDMALAOKC)
+				a = KOGBMDOONFA[CMCKNKKCNDK, i].LHFPLDHBAAN ? 1 : 0;
+			res |= a;
+		}
+		return res;
+	}
 
 	//// RVA: 0x7FC4EC Offset: 0x7FC4EC VA: 0x7FC4EC
 	//public bool CDOCOLOKCJK(int CMCKNKKCNDK) { }

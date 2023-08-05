@@ -50,7 +50,7 @@ namespace XeApp.Game.RhythmGame
 			{
 				return Mode.Goal;
 			}
-			return (currentValue < goalValue ? (subgoalValue <= currentValue ? Mode.Subgoal : Mode.Normal ) : Mode.Goal); } private set { } 
+			return (currentValue < goalValue ? (subgoalValue <= currentValue ? Mode.Subgoal : Mode.Normal ) : Mode.Goal); } private set { return; } 
 		} //0xDC3D04 0xDC3D2C
 
 		// RVA: 0xDC3D30 Offset: 0xDC3D30 VA: 0xDC3D30
@@ -108,19 +108,18 @@ namespace XeApp.Game.RhythmGame
 			}
 			evaluationNotesNum = evaluationNotesNum + 1 - AttackComboCount;
 			basicValueStepThresholdList = new List<int>();
-			int r = 0;
 			int v = 0;
 			for (int i = 0; i < vals.Length; i++)
 			{
-				v += evaluationNotesNum / vals.Length + r;
+				v += evaluationNotesNum / vals.Length;
 				if (i == 1)
-					r += evaluationNotesNum % vals.Length;
+					v += evaluationNotesNum % vals.Length;
 				basicValueStepThresholdList.Add(v);
 			}
 			NHDJHOPLMDE data = new NHDJHOPLMDE(valkyrieId, 0);
 			int v1 = 0;
 			int v2 = 0;
-			if(data.LAKLFHGMCLI((SeriesAttr.Type)musicData.musicBase.AIHCEGFANAM_SerieId))
+			if(data.LAKLFHGMCLI((SeriesAttr.Type)musicData.musicBase.AIHCEGFANAM_SerieAttr))
 			{
 				v1 = data.NONBCCLGBAO_Hit;
 				v2 = data.KINFGHHNFCF_Atk;

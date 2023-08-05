@@ -9,7 +9,7 @@ namespace XeApp.Game.Menu
 		private UGUISwapScrollList m_scrollList;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

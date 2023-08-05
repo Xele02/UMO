@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
 using XeSys;
@@ -39,7 +40,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0xE9907C Offset: 0xE9907C VA: 0xE9907C
 		public static string GetSceneCardName(GCIJNCFDNON_SceneInfo sceneData)
 		{
-			return GetSceneCardName(sceneData.BCCHOBPJJKE_SceneId, sceneData.JPIPENJGGDD, sceneData.OPFGFINHFCE_SceneName);
+			return GetSceneCardName(sceneData.BCCHOBPJJKE_SceneId, sceneData.JPIPENJGGDD_NumBoard, sceneData.OPFGFINHFCE_SceneName);
 		}
 
 		//// RVA: 0xE99144 Offset: 0xE99144 VA: 0xE99144
@@ -65,10 +66,40 @@ namespace XeApp.Game.Common
 		//public static void MakeShortSkillName(ref StringBuilder strBuilder, int rank, int level) { }
 
 		//// RVA: 0xE9997C Offset: 0xE9997C VA: 0xE9997C
-		//public static void ReplaceInvalidFont(ref StringBuilder strBuilder, string inputStr) { }
+		public static void ReplaceInvalidFont(ref StringBuilder strBuilder, string inputStr)
+		{
+			strBuilder.Clear();
+			if(!string.IsNullOrEmpty(inputStr))
+			{
+				m_regex = new Regex(InvalidCodeList);
+				m_validRegex = new Regex(ValidCodeList);
+				var e = StringInfo.GetTextElementEnumerator(inputStr);
+				while(e.MoveNext())
+				{
+					if(e.GetTextElement().Length < 2)
+					{
+						if (Char.IsSurrogate(e.GetTextElement(), 0))
+							strBuilder.Append('Δ');
+						else if (m_regex.IsMatch(e.GetTextElement()))
+							strBuilder.Append('Δ');
+						else if (!m_validRegex.IsMatch(e.GetTextElement()))
+							strBuilder.Append('Δ');
+						else
+							strBuilder.Append(e.GetTextElement());
+					}
+					else
+					{
+						strBuilder.Append('Δ');
+					}
+				}
+			}
+		}
 
 		//// RVA: 0xE99DD4 Offset: 0xE99DD4 VA: 0xE99DD4
-		//public static bool CheckBasara(int divaId) { }
+		public static bool CheckBasara(int divaId)
+		{
+			return divaId == 9;
+		}
 
 		//// RVA: 0xE99DE8 Offset: 0xE99DE8 VA: 0xE99DE8
 		//public static string MissionMessageTagFunc(StringBuilder strBuilder, string tag, int freeMusicId, bool is6Line, Difficulty.Type diffculty) { }

@@ -5,12 +5,16 @@ namespace XeApp.Game.Menu
 {
 	public class ValkyrieIconTexture : IconTexture
 	{
+		//
 	}
 
 	public class ValkyrieIconTextureCache : IconTextureCache
 	{
 		// // RVA: 0x16557F4 Offset: 0x16557F4 VA: 0x16557F4 Slot: 5
-		// public override void Terminated() { }
+		public override void Terminated()
+		{
+			Clear();
+		}
 
 		// // RVA: 0x16557FC Offset: 0x16557FC VA: 0x16557FC Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)

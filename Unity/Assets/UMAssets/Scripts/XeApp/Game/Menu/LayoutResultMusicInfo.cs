@@ -6,6 +6,8 @@ using System;
 using System.Linq;
 using System.Collections;
 using XeApp.Game.Common.uGUI;
+using mcrs;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -46,7 +48,7 @@ namespace XeApp.Game.Menu
 			"cmn_music_diff_06", "cmn_music_diff_07", "cmn_music_diff_08"
 		}; // 0x4
 
-		private bool isInTutorial { get { return !Database.Instance.gameSetup.musicInfo.isTutorialOne && !Database.Instance.gameSetup.musicInfo.isTutorialTwo; } } //0x18E0140
+		private bool isInTutorial { get { return Database.Instance.gameSetup.musicInfo.isTutorialOne || Database.Instance.gameSetup.musicInfo.isTutorialTwo; } } //0x18E0140
 
 		// RVA: 0x18E0218 Offset: 0x18E0218 VA: 0x18E0218 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
@@ -168,7 +170,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x18E1E08 Offset: 0x18E1E08 VA: 0x18E1E08
 		public void StartSingRankUpAnim()
 		{
-			m_coroutine = StartCoroutine(Co_StartSingRankUpAnim());
+			m_coroutine = this.StartCoroutineWatched(Co_StartSingRankUpAnim());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71C13C Offset: 0x71C13C VA: 0x71C13C
@@ -181,13 +183,13 @@ namespace XeApp.Game.Menu
 			//0x18E4074
 			if(viewResultData.BPGDOBCMDBP_CategoryId != 5)
 			{
-				coRank = StartCoroutine(Co_AnimRankIn());
+				coRank = this.StartCoroutineWatched(Co_AnimRankIn());
 				yield return new WaitForSeconds(0.2f);
-				coRankTotal = StartCoroutine(Co_AnimRankTotalIn());
+				coRankTotal = this.StartCoroutineWatched(Co_AnimRankTotalIn());
 				yield return coRank;
 				yield return coRankTotal;
-				coRank = StartCoroutine(Co_AnimRankUp());
-				coRankTotal = StartCoroutine(Co_AnimRankTotalUp());
+				coRank = this.StartCoroutineWatched(Co_AnimRankUp());
+				coRankTotal = this.StartCoroutineWatched(Co_AnimRankTotalUp());
 				yield return coRank;
 				yield return coRankTotal;
 				if(viewResultData.JLBJIIBGCOE_RankState != NGJOPPIGCPM_ResultData.DFJMELLLNLH.HJNNKCMLGFL)
@@ -205,8 +207,8 @@ namespace XeApp.Game.Menu
 					}
 					layoutRateRankIn.StartChildrenAnimLoop("logo_act", "loen_act");
 				}
-				yield return Co_UpdataUtarateRanking();
-				yield return Co_GetCurrentRank();
+				yield return Co.R(Co_UpdataUtarateRanking());
+				yield return Co.R(Co_GetCurrentRank());
 			}
 			else
 			{
@@ -244,18 +246,18 @@ namespace XeApp.Game.Menu
 			//0x18E3A08
 			if(viewResultData.NOPDDMJIFFO_IsBetterUtaRate)
 			{
-				if(!isSkiped)
+				if (!isSkiped)
 				{
-					if(layoutRateText.IsVisible)
+					if (layoutRateText.IsVisible)
 					{
-						if(!viewResultData.CEEKHMOMKOK_IsBetterUtaRateTotal)
+						if (!viewResultData.CEEKHMOMKOK_IsBetterUtaRateTotal)
 						{
 							SoundManager.Instance.sePlayerResult.Play(40);
 						}
+						layoutRateText.StartChildrenAnimGoStop("go_up", "st_up");
+						while (layoutRateText.IsPlayingChildren() && !isSkiped)
+							yield return null;
 					}
-					layoutRateText.StartChildrenAnimGoStop("go_up", "st_up");
-					while (layoutRateText.IsPlayingChildren() && !isSkiped)
-						yield return null;
 				}
 				layoutRateText.StartChildrenAnimLoop("logo_act", "loen_act");
 			}
@@ -303,7 +305,7 @@ namespace XeApp.Game.Menu
 			{
 				bool _isDone = false;
 				bool _isError = false;
-				OEGIPPCADNA.HHCJCDFCLOB.FGMOMBKGCNF(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.EAHPKPADCPL_TotalUtaRate,
+				OEGIPPCADNA.HHCJCDFCLOB.FGMOMBKGCNF_UpdateTotalUtaRate(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.EAHPKPADCPL_TotalUtaRate,
 					() =>
 					{
 						//0x18E3138
@@ -337,7 +339,7 @@ namespace XeApp.Game.Menu
 			{
 				bool _isDone = false;
 				bool _isError = false;
-				OEGIPPCADNA.HHCJCDFCLOB.MJFKJHJJLMN(0, false, () =>
+				OEGIPPCADNA.HHCJCDFCLOB.MJFKJHJJLMN_GetUtaRateRank(0, false, () =>
 				{
 					//0x18E3164
 					_isDone = true;
@@ -367,7 +369,7 @@ namespace XeApp.Game.Menu
 			isSkiped = true;
 			if(m_coroutine != null)
 				return;
-			m_coroutine = StartCoroutine(Co_StartSingRankUpAnim());
+			m_coroutine = this.StartCoroutineWatched(Co_StartSingRankUpAnim());
 		}
 
 		// // RVA: 0x18E2324 Offset: 0x18E2324 VA: 0x18E2324
@@ -391,7 +393,33 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x18E2438 Offset: 0x18E2438 VA: 0x18E2438
 		private void OnClickSingRankInfoBtn()
 		{
-			TodoLogger.LogNotImplemented("OnClickSingRankInfoBtn");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			GHLGEECLCMH g = new GHLGEECLCMH();
+			g.KHEKNNFCAOI(viewResultData.LCKMBHDMPIP_SaveRecordMusic, viewResultData.OEELDFNNLKK_SaveRecordMusic2);
+			PopupMusicRateListContentSetting s = new PopupMusicRateListContentSetting();
+			s.View = g;
+			s.WindowSize = SizeType.Large;
+			s.TitleText = bk.GetMessageByLabel("popup_music_rate_title");
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			s.Tabs = new PopupTabButton.ButtonLabel[2]
+			{
+				PopupTabButton.ButtonLabel.MusicRateDetail,
+				PopupTabButton.ButtonLabel.MusicGradeView,
+			};
+			s.DefaultTab = PopupTabButton.ButtonLabel.MusicRateDetail;
+			PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x18E3054
+				return;
+			}, (IPopupContent content, PopupTabButton.ButtonLabel label) =>
+			{
+				//0x18E3188
+				s.layout.ChangeTab(label);
+			}, null, null);
 		}
 	}
 }

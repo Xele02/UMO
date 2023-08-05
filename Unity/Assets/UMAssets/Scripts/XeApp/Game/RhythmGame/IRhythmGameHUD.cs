@@ -7,9 +7,7 @@ using XeApp.Game.RhythmGame.UI;
 
 namespace XeApp.Game.RhythmGame
 {
-	public class RhythmGameHudPauseButtonEvent : UnityEvent<bool>
-	{
-	}
+	public class RhythmGameHudPauseButtonEvent : UnityEvent<bool> { }
 
 	public interface IRhythmGameHUD
 	{

@@ -326,7 +326,7 @@ namespace XeApp.Game.Common
 			{
 				IEnumerator coroutine = StartAnimeCoroutine();
 				m_coroutineList.Add(coroutine);
-				StartCoroutine(coroutine);
+				this.StartCoroutineWatched(coroutine);
 				return;
 			}
 			if(m_abs != null)
@@ -355,7 +355,7 @@ namespace XeApp.Game.Common
 		{
 			for(int i = 0; i < m_coroutineList.Count; i++)
 			{
-				StopCoroutine(m_coroutineList[i]);
+				this.StopCoroutineWatched(m_coroutineList[i]);
 			}
 			m_coroutineList.Clear();
 		}
@@ -367,7 +367,7 @@ namespace XeApp.Game.Common
 			//0xE5F31C
 			IEnumerator coroutine = StartChildAnimeCoroutine();
 			m_coroutineList.Add(coroutine);
-			yield return StartCoroutine(coroutine);
+			yield return this.StartCoroutineWatched(coroutine);
 			m_animEndCallBack();
 		}
 
@@ -393,7 +393,7 @@ namespace XeApp.Game.Common
 
 				IEnumerator coroutine = StartChildAnimeCoroutine();
 				m_coroutineList.Add(coroutine);
-				yield return StartCoroutine(coroutine);
+				yield return this.StartCoroutineWatched(coroutine);
 			}
 		}
 

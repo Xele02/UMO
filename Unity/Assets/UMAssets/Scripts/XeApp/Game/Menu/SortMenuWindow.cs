@@ -6,26 +6,37 @@ using XeApp.Game.Common;
 using UnityEngine.UI;
 using System.Text;
 using System.Collections.Generic;
+using XeSys;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
 	public class SortMenuWindow : LayoutUGUIScriptBase
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
-		[Serializable]
-		public class SortButtonEvent : UnityEvent<int>
+		public enum SortTitle
 		{
+			Sort = 1,
+			Status = 2,
+		}
+
+		public enum FilterType
+		{
+			Rare = 0,
+			Attribute = 1,
+			Series = 2,
+			CenterSkill = 3,
+			CompatibleDiva = 4,
+			Interior = 5,
 		}
 
 		[Serializable]
-		public class FilterButtonEvent : UnityEvent<uint>
-		{
-		}
+		public class SortButtonEvent : UnityEvent<int> { }
 
 		[Serializable]
-		public class CompatibleDivaButtonEvent : UnityEvent<bool>
-		{
-		}
+		public class FilterButtonEvent : UnityEvent<uint> { }
+
+		[Serializable]
+		public class CompatibleDivaButtonEvent : UnityEvent<bool> { }
 
 		// Fields
 		[SerializeField]
@@ -94,8 +105,8 @@ namespace XeApp.Game.Menu
 		private AbsoluteLayout m_divaCompatibleLayout; // 0x98
 		private AbsoluteLayout m_sortTitleLayout; // 0x9C
 		private AbsoluteLayout m_sortButtonLayout; // 0xA0
-		private List<int> m_divaIdList; // 0xA4
-		private StringBuilder m_strBuilder; // 0xA8
+		private List<int> m_divaIdList = new List<int>(); // 0xA4
+		private StringBuilder m_strBuilder = new StringBuilder(64); // 0xA8
 		private const int m_sceneSelectContentHeight = 1200;
 		private const int m_sceneListContentHeight = 1240;
 		private const int m_sceneAssistSelectContentHeight = 925;
@@ -127,42 +138,15 @@ namespace XeApp.Game.Menu
 			"cmn_btn_sort_fnt_49"
 		}; // 0xC
 
-		//public SortMenuWindow.SortButtonEvent PushSortButtonEvent { get; }
-		//public SortMenuWindow.SortButtonEvent PushAssistButtonEvent { get; }
-		//public SortMenuWindow.FilterButtonEvent PushRareButtonEvent { get; }
-		//public SortMenuWindow.FilterButtonEvent PushAttributeButtonEvent { get; }
-		//public SortMenuWindow.FilterButtonEvent PushSeriesButtonEvent { get; }
-		//public SortMenuWindow.FilterButtonEvent PushCenterSkillButtonEvent { get; }
-		//public SortMenuWindow.FilterButtonEvent PushDivaButtonEvent { get; }
-		//public SortMenuWindow.FilterButtonEvent PushInteriorButtonEvent { get; }
-		//public SortMenuWindow.CompatibleDivaButtonEvent PushCompatibleDivaButtonEvent { get; }
-
-		//// RVA: 0x12D7004 Offset: 0x12D7004 VA: 0x12D7004
-		//public SortMenuWindow.SortButtonEvent get_PushSortButtonEvent() { }
-
-		//// RVA: 0x12D700C Offset: 0x12D700C VA: 0x12D700C
-		//public SortMenuWindow.SortButtonEvent get_PushAssistButtonEvent() { }
-
-		//// RVA: 0x12D7014 Offset: 0x12D7014 VA: 0x12D7014
-		//public SortMenuWindow.FilterButtonEvent get_PushRareButtonEvent() { }
-
-		//// RVA: 0x12D701C Offset: 0x12D701C VA: 0x12D701C
-		//public SortMenuWindow.FilterButtonEvent get_PushAttributeButtonEvent() { }
-
-		//// RVA: 0x12D7024 Offset: 0x12D7024 VA: 0x12D7024
-		//public SortMenuWindow.FilterButtonEvent get_PushSeriesButtonEvent() { }
-
-		//// RVA: 0x12D702C Offset: 0x12D702C VA: 0x12D702C
-		//public SortMenuWindow.FilterButtonEvent get_PushCenterSkillButtonEvent() { }
-
-		//// RVA: 0x12D7034 Offset: 0x12D7034 VA: 0x12D7034
-		//public SortMenuWindow.FilterButtonEvent get_PushDivaButtonEvent() { }
-
-		//// RVA: 0x12D703C Offset: 0x12D703C VA: 0x12D703C
-		//public SortMenuWindow.FilterButtonEvent get_PushInteriorButtonEvent() { }
-
-		//// RVA: 0x12D7044 Offset: 0x12D7044 VA: 0x12D7044
-		//public SortMenuWindow.CompatibleDivaButtonEvent get_PushCompatibleDivaButtonEvent() { }
+		public SortMenuWindow.SortButtonEvent PushSortButtonEvent { get { return m_pushSortButtonEvent; } } //0x12D7004
+		public SortMenuWindow.SortButtonEvent PushAssistButtonEvent { get { return m_pushAssistButtonEvent; } } //0x12D700C
+		public SortMenuWindow.FilterButtonEvent PushRareButtonEvent { get { return m_pushRareButtonEvent; } } //0x12D7014
+		public SortMenuWindow.FilterButtonEvent PushAttributeButtonEvent { get { return m_pushAttributeButtonEvent; } } //0x12D701C
+		public SortMenuWindow.FilterButtonEvent PushSeriesButtonEvent { get { return m_pushSeriesButtonEvent; } } //0x12D7024
+		public SortMenuWindow.FilterButtonEvent PushCenterSkillButtonEvent { get { return m_pushCenterSkillButtonEvent; } } //0x12D702C
+		public SortMenuWindow.FilterButtonEvent PushDivaButtonEvent { get { return m_pushDivaButtonEvent; } } //0x12D7034
+		public SortMenuWindow.FilterButtonEvent PushInteriorButtonEvent { get { return m_pushInteriorButtonEvent; } } //0x12D703C
+		public SortMenuWindow.CompatibleDivaButtonEvent PushCompatibleDivaButtonEvent { get { return m_pushComatibleDivaButtonEvent; } } //0x12D7044
 
 		//// RVA: 0x12D704C Offset: 0x12D704C VA: 0x12D704C
 		//private bool SearchRarityFilterButton(string name) { }
@@ -176,29 +160,103 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x12D727C Offset: 0x12D727C VA: 0x12D727C
 		//public static void ApplySortLabelTexture(RawImageEx image, SortItem item) { }
 
-		//// RVA: 0x12D7354 Offset: 0x12D7354 VA: 0x12D7354 Slot: 5
-		//public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan) { }
+		//// RVA: g Offset: 0x12D7354 VA: 0x12D7354 Slot: 5
+		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
+		{
+			m_uvMan = uvMan;
+			m_filterAnimeLayout = layout.FindViewByExId("root_deck_sort_swtbl_sort_filter") as AbsoluteLayout;
+			m_childfilterAnimeLayout = layout.FindViewByExId("swtbl_sort_filter_filter_all") as AbsoluteLayout;
+			m_sortButtonLayout = layout.FindViewByExId("swtbl_sort_filter_sw_sort") as AbsoluteLayout;
+			m_sortGroupButton.OnSelectToggleButtonEvent.AddListener(OnPushSortButton);
+			m_assistGroupButton.OnSelectToggleButtonEvent.AddListener(OnPushAssistButton);
+			m_resetButton.AddOnClickCallback(OnFilterReset);
+			SetFilterButtonEvent(m_rareFilterToggleButtons, m_pushRareButtonEvent);
+			SetFilterButtonEvent(m_attributeToggleButtons, m_pushAttributeButtonEvent);
+			SetFilterButtonEvent(m_seriesToggleButtons, m_pushSeriesButtonEvent);
+			SetFilterButtonEvent(m_centerSkillToggleButtons, m_pushCenterSkillButtonEvent);
+			m_compatibleToggleButton.AddOnClickCallback(OnPushCompatibleButton);
+			SetCimpatibleDivaFilterButtonEvent(m_divaToggleButtons, m_pushDivaButtonEvent);
+			SetFilterButtonEvent(m_InteriorToggleButtons, m_pushInteriorButtonEvent);
+			m_divaCompatibleLayout = layout.FindViewByExId("swtbl_sort_filter_swtbl_filter_compatibility") as AbsoluteLayout;
+			for(int i = 0; i < m_rareIconImages.Length; i++)
+			{
+				m_rareIconImages[i].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData(RARITYFILTERTABLE[i]));
+			}
+			for(int i = 0; i < m_seriesIconImages.Length; i++)
+			{
+				m_seriesIconImages[i].enabled = false;
+				int index = i;
+				GameManager.Instance.MenuResidentTextureCache.LoadLogo((4 - i) > 0 ? (4 - i) : 11, (IiconTexture texture) =>
+				{
+					//0x12DC360
+					if(m_seriesIconImages[index] == null)
+						return;
+					m_seriesIconImages[index].enabled = true;
+					texture.Set(m_seriesIconImages[index]);
+				});
+			}
+			for(int i = 0; i < m_centerSkillIconImages.Length; i++)
+			{
+				m_centerSkillIconImages[i].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData(m_centerSkillUvTbl[i]));
+			}
+			for(int i = 0; i < m_interiorIconImages.Length; i++)
+			{
+				m_strBuilder.Clear();
+				m_strBuilder.AppendFormat("cmn_btn_sort_fnt_4{0}", i + 1);
+				m_interiorIconImages[i].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData(m_strBuilder.ToString()));
+			}
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			m_compatibleText.text = bk.GetMessageByLabel("popup_sort_text_00");
+			m_assistText.text = bk.GetMessageByLabel("assist_friend_select_caution_01");
+			m_sortTitleLayout = layout.FindViewByExId("swtbl_sort_filter_sw_sort_title") as AbsoluteLayout;
+			Loaded();
+			ClearLoadedCallback();
+			return true;
+		}
 
 		//// RVA: 0x12D84B8 Offset: 0x12D84B8 VA: 0x12D84B8
-		//public void SetSortLabel(int index, SortItem item, bool isFriend = False) { }
+		public void SetSortLabel(int index, SortItem item, bool isFriend = false)
+		{
+			m_sortItemLabel[index].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData(m_sortLabelUvTbl[(int)item]));
+		}
 
 		//// RVA: 0x12D8664 Offset: 0x12D8664 VA: 0x12D8664
-		//public void SetAssistSlotLabel() { }
+		public void SetAssistSlotLabel()
+		{
+			for(int i = 0; i < m_assistSlotLabel.Length; i++)
+			{
+				m_assistSlotLabel[i].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData(m_assistSlotUvTbl[i]));
+			}
+		}
 
 		//// RVA: 0x12D8854 Offset: 0x12D8854 VA: 0x12D8854
 		//public void SelectedDivaId(int divaId) { }
 
 		//// RVA: 0x12D8958 Offset: 0x12D8958 VA: 0x12D8958
-		//public void SetSelectSortButton(int index, bool isFriend = False) { }
+		public void SetSelectSortButton(int index, bool isFriend = false)
+		{
+			m_sortGroupButton.SelectGroupButton(index);
+		}
 
 		//// RVA: 0x12D898C Offset: 0x12D898C VA: 0x12D898C
-		//public void SetSortButtonEnable(int index, bool isFriend = False) { }
+		public void SetSortButtonEnable(int index, bool isFriend = false)
+		{
+			m_sortToggleButtons[index].Hidden = false;
+			m_sortItemLabel[index].enabled = true;
+		}
 
 		//// RVA: 0x12D8A50 Offset: 0x12D8A50 VA: 0x12D8A50
-		//public void SetSortButtonDisable(int index, bool isFriend = False) { }
+		public void SetSortButtonDisable(int index, bool isFriend = false)
+		{
+			m_sortToggleButtons[index].Hidden = true;
+			m_sortItemLabel[index].enabled = false;
+		}
 
 		//// RVA: 0x12D8B14 Offset: 0x12D8B14 VA: 0x12D8B14
-		//public void SetSelectAssistButton(int index) { }
+		public void SetSelectAssistButton(int index)
+		{
+			m_assistGroupButton.SelectGroupButton(index);
+		}
 
 		//// RVA: 0x12D8B48 Offset: 0x12D8B48 VA: 0x12D8B48
 		//public void ShowFilter(bool isShowCompatibleCheck, bool isFriend = False) { }
@@ -207,13 +265,24 @@ namespace XeApp.Game.Menu
 		//public void ShowDecoFilter(bool isDecoShopInterior = False) { }
 
 		//// RVA: 0x12D8E68 Offset: 0x12D8E68 VA: 0x12D8E68
-		//public void ShowAssistSelectFilter() { }
+		public void ShowAssistSelectFilter()
+		{
+			m_filterAnimeLayout.StartChildrenAnimGoStop("05");
+			m_sortButtonLayout.StartChildrenAnimGoStop("04");
+			m_childfilterAnimeLayout.StartChildrenAnimGoStop("04");
+			(transform as RectTransform).sizeDelta = new Vector2((transform as RectTransform).sizeDelta.x, 925);
+		}
 
 		//// RVA: 0x12D8FD4 Offset: 0x12D8FD4 VA: 0x12D8FD4
 		//public void ShowAssistEditFilter(int attrId) { }
 
 		//// RVA: 0x12D9174 Offset: 0x12D9174 VA: 0x12D9174
-		//public void HideFilter() { }
+		public void HideFilter()
+		{
+			m_filterAnimeLayout.StartChildrenAnimGoStop("01");
+			m_sortButtonLayout.StartChildrenAnimGoStop("01");
+			m_childfilterAnimeLayout.StartChildrenAnimGoStop("01");
+		}
 
 		//// RVA: 0x12D9250 Offset: 0x12D9250 VA: 0x12D9250
 		//public void SetDivaButtonIcon(List<FFHPBEPOMAK> divaList) { }
@@ -228,45 +297,176 @@ namespace XeApp.Game.Menu
 		//public void SetCompatibleDivaButtonState(bool isOn) { }
 
 		//// RVA: 0x12D9E18 Offset: 0x12D9E18 VA: 0x12D9E18
-		//private void OnPushSortButton(int index) { }
+		private void OnPushSortButton(int index)
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			m_pushSortButtonEvent.Invoke(index);
+		}
 
 		//// RVA: 0x12D9EE4 Offset: 0x12D9EE4 VA: 0x12D9EE4
-		//private void OnPushAssistButton(int index) { }
+		private void OnPushAssistButton(int index)
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			m_pushAssistButtonEvent.Invoke(index);
+		}
 
 		//// RVA: 0x12D9FB0 Offset: 0x12D9FB0 VA: 0x12D9FB0
-		//private void OnFilterReset() { }
+		private void OnFilterReset()
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			PushFilterButton(0, m_rareFilterToggleButtons);
+			PushFilterButton(0, m_attributeToggleButtons);
+			PushFilterButton(0, m_seriesToggleButtons);
+			PushFilterButton(0, m_centerSkillToggleButtons);
+			PushFilterButton(0, m_InteriorToggleButtons);
+			PushFilterButton(0, m_divaToggleButtons);
+			m_compatibleToggleButton.SetOff();
+
+			m_pushRareButtonEvent.Invoke(0);
+			m_pushAttributeButtonEvent.Invoke(0);
+			m_pushSeriesButtonEvent.Invoke(0);
+			m_pushCenterSkillButtonEvent.Invoke(0);
+			m_pushDivaButtonEvent.Invoke(0);
+			m_pushInteriorButtonEvent.Invoke(0);
+			m_pushComatibleDivaButtonEvent.Invoke(false);
+		}
 
 		//// RVA: 0x12D8088 Offset: 0x12D8088 VA: 0x12D8088
-		//private void SetFilterButtonEvent(ToggleButton[] buttons, SortMenuWindow.FilterButtonEvent buttonEvent) { }
+		private void SetFilterButtonEvent(ToggleButton[] buttons, FilterButtonEvent buttonEvent)
+		{
+			for(int i = 0; i < buttons.Length; i++)
+			{
+				int index = i;
+				buttons[i].AddOnClickCallback(() =>
+				{
+					//0x12DC764
+					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+					PushFilterButton(index, buttons);
+					buttonEvent.Invoke(GetFilterButtonBit(buttons));
+				});
+			}
+		}
 
 		//// RVA: 0x12D829C Offset: 0x12D829C VA: 0x12D829C
-		//private void SetCimpatibleDivaFilterButtonEvent(ToggleButton[] buttons, SortMenuWindow.FilterButtonEvent buttonEvent) { }
+		private void SetCimpatibleDivaFilterButtonEvent(ToggleButton[] buttons, SortMenuWindow.FilterButtonEvent buttonEvent)
+		{
+			for(int i = 0; i < buttons.Length; i++)
+			{
+				int index = i;
+				buttons[i].AddOnClickCallback(() =>
+				{
+					//0x12DC8E8
+					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+					m_compatibleToggleButton.SetOff();
+					m_pushComatibleDivaButtonEvent.Invoke(false);
+					PushFilterButton(index, buttons);
+					buttonEvent.Invoke(GetFilterButtonBit(buttons));
+				});
+			}
+		}
 
 		//// RVA: 0x12DA228 Offset: 0x12DA228 VA: 0x12DA228
-		//private uint GetFilterButtonBit(ToggleButton[] buttons) { }
+		private uint GetFilterButtonBit(ToggleButton[] buttons)
+		{
+			uint res = 0;
+			for(int i = 1; i < buttons.Length; i++)
+			{
+				if(buttons[i].IsOn)
+					res |= (uint)(1 << (i - 1));
+			}
+			return res;
+		}
 
 		//// RVA: 0x12D9888 Offset: 0x12D9888 VA: 0x12D9888
-		//private void PushFilterButton(int index, ToggleButton[] buttons) { }
+		private void PushFilterButton(int index, ToggleButton[] buttons)
+		{
+			if(index == 0)
+			{
+				buttons[0].SetOn();
+				if(buttons.Length < 2)
+					return;
+				for(int i = 1; i < buttons.Length; i++)
+					buttons[i].SetOff();
+			}
+			else
+			{
+				bool b = true;
+				for(int i = 1; i < buttons.Length; i++)
+				{
+					if(buttons[i].IsOn)
+					{
+						b = false;
+						break;
+					}
+				}
+				if(b)
+					buttons[0].SetOn();
+				else
+					buttons[0].SetOff();
+			}
+		}
 
 		//// RVA: 0x12DA2C4 Offset: 0x12DA2C4 VA: 0x12DA2C4
-		//public void SetSortTitle(SortMenuWindow.SortTitle title) { }
+		public void SetSortTitle(SortMenuWindow.SortTitle title)
+		{
+			m_sortTitleLayout.StartChildrenAnimGoStop(string.Format("{0:D2}", (int)title));
+		}
 
 		//// RVA: 0x12DA37C Offset: 0x12DA37C VA: 0x12DA37C
-		//private void OnPushCompatibleButton() { }
+		private void OnPushCompatibleButton()
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(m_compatibleToggleButton.IsOn)
+			{
+				m_compatibleToggleButton.SetOn();
+				UpdateCompatibleButton();
+			}
+			else
+			{
+				m_compatibleToggleButton.SetOff();
+				PushFilterButton(0, m_divaToggleButtons);
+				m_pushComatibleDivaButtonEvent.Invoke(false);
+				m_pushDivaButtonEvent.Invoke(GetFilterButtonBit(m_divaToggleButtons));
+			}
+		}
 
 		//// RVA: 0x12D9C60 Offset: 0x12D9C60 VA: 0x12D9C60
-		//private void UpdateCompatibleButton() { }
+		private void UpdateCompatibleButton()
+		{
+			m_pushComatibleDivaButtonEvent.Invoke(true);
+			m_divaToggleButtons[0].SetOff();
+			for(int i = 1; i < m_divaToggleButtons.Length; i++)
+			{
+				if(i - 1 == m_selectedDivaListIndex)
+					m_divaToggleButtons[i].SetOn();
+				else
+					m_divaToggleButtons[i].SetOff();
+			}
+			m_pushDivaButtonEvent.Invoke(GetFilterButtonBit(m_divaToggleButtons));
+		}
 
 		//// RVA: 0x12DA4FC Offset: 0x12DA4FC VA: 0x12DA4FC
-		//public static int SortSecondPriority(GCIJNCFDNON left, GCIJNCFDNON right) { }
+		public static int SortSecondPriority(GCIJNCFDNON_SceneInfo left, GCIJNCFDNON_SceneInfo right)
+		{
+			int res = left.JKGFBFPIMGA_Rarity - right.JKGFBFPIMGA_Rarity;
+			if (res == 0)
+				res = left.EKLIPGELKCL_SceneRarity - right.EKLIPGELKCL_SceneRarity;
+			return res;
+		}
 
 		//// RVA: 0x12DA548 Offset: 0x12DA548 VA: 0x12DA548
-		//public static int SortThirdPriority(GCIJNCFDNON left, GCIJNCFDNON right) { }
+		public static int SortThirdPriority(GCIJNCFDNON_SceneInfo left, GCIJNCFDNON_SceneInfo right)
+		{
+			return right.BCCHOBPJJKE_SceneId - left.BCCHOBPJJKE_SceneId;
+		}
 
 		//// RVA: 0x12DA588 Offset: 0x12DA588 VA: 0x12DA588
-		//public static int GetSameEvaluationValue(GCIJNCFDNON left, GCIJNCFDNON right) { }
-
-		//// RVA: 0x12DA650 Offset: 0x12DA650 VA: 0x12DA650
-		//public void .ctor() { }
+		public static int GetSameEvaluationValue(GCIJNCFDNON_SceneInfo left, GCIJNCFDNON_SceneInfo right)
+		{
+			int res = SortSecondPriority(right, left);
+			if (res != 0)
+				return res;
+			return SortThirdPriority(left, right);
+		}
 	}
 }

@@ -6,7 +6,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutDecorationVisitButton : LayoutUGUIScriptBase
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private ActionButton m_sortButton;
 		[SerializeField]

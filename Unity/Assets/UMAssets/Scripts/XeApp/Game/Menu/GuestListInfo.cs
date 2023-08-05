@@ -65,7 +65,7 @@ namespace XeApp.Game.Menu
 				divaModelId = fri.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
 				divaColorId = fri.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId;
 			}
-			emblemId = fri.NDOLELKAJNL.MDPKLNFFDBO_EmblemId;
+			emblemId = fri.NDOLELKAJNL_DegreeData.MDPKLNFFDBO_EmblemId;
 			isKira = false;
 			skill = "";
 			skillLevel = 0;

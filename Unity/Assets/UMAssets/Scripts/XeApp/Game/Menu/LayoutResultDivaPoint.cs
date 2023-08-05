@@ -60,7 +60,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_coroutine != null)
 			{
-				StopCoroutine(m_coroutine);
+				this.StopCoroutineWatched(m_coroutine);
 			}
 			m_is_open_window = false;
 			countScoreSEPlayback.Stop();
@@ -76,7 +76,7 @@ namespace XeApp.Game.Menu
 		public void StartBeginAnim()
 		{
 			m_is_open_window = true;
-			m_coroutine = StartCoroutine(Co_StartCount());
+			m_coroutine = this.StartCoroutineWatched(Co_StartCount());
 		}
 
 		//// RVA: 0x1D8B784 Offset: 0x1D8B784 VA: 0x1D8B784
@@ -106,16 +106,16 @@ namespace XeApp.Game.Menu
 			//0x1D8D448
 			while (m_isLoadingImage)
 				yield return null;
-			yield return StartCoroutine(Co_EnterAnim());
-			yield return StartCoroutine(Co_EnterDiffAnim());
-			yield return StartCoroutine(Co_EnterTotalScoreAnim());
-			yield return StartCoroutine(Co_CountTotalPoint(0, viewResultDivaData.OGFBKCGGPBC_DiffPoint, COUNT_POINT_TIME));
+			yield return this.StartCoroutineWatched(Co_EnterAnim());
+			yield return this.StartCoroutineWatched(Co_EnterDiffAnim());
+			yield return this.StartCoroutineWatched(Co_EnterTotalScoreAnim());
+			yield return this.StartCoroutineWatched(Co_CountTotalPoint(0, viewResultDivaData.OGFBKCGGPBC_DiffPoint, COUNT_POINT_TIME));
 			yield return new WaitForSeconds(0.5f);
-			yield return StartCoroutine(Co_EnterScoreAnim());
-			yield return StartCoroutine(Co_CountTotalPoint(viewResultDivaData.OGFBKCGGPBC_DiffPoint, viewResultDivaData.BMGKGDPKJFA_Point, COUNT_POINT_TIME));
-			yield return StartCoroutine(Co_EffectTotalScoreAnim());
+			yield return this.StartCoroutineWatched(Co_EnterScoreAnim());
+			yield return this.StartCoroutineWatched(Co_CountTotalPoint(viewResultDivaData.OGFBKCGGPBC_DiffPoint, viewResultDivaData.BMGKGDPKJFA_Point, COUNT_POINT_TIME));
+			yield return this.StartCoroutineWatched(Co_EffectTotalScoreAnim());
 			yield return new WaitForSeconds(0.5f);
-			yield return StartCoroutine(Co_LeaveAnim());
+			yield return this.StartCoroutineWatched(Co_LeaveAnim());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x71874C Offset: 0x71874C VA: 0x71874C

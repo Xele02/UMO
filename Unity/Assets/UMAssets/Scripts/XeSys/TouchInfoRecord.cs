@@ -33,7 +33,7 @@ namespace XeSys
 		{
 			if (frameFromLatest >= recentInfos.Length)
 				return null;
-			return recentInfos[recentInfos.Length - frameFromLatest];
+			return recentInfos[recentInfos.Length - frameFromLatest - 1];
 		}
 
         // // RVA: 0x23A6C0C Offset: 0x23A6C0C VA: 0x23A6C0C

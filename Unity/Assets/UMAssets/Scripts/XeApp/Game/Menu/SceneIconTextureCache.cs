@@ -169,7 +169,11 @@ namespace XeApp.Game.Menu
 		public static int IsKiraShaderParam; // 0x0
 
 		// // RVA: 0x1370C64 Offset: 0x1370C64 VA: 0x1370C64 Slot: 5
-		// public override void Terminated() { }
+		public override void Terminated()
+		{
+			m_loadingTexture = null;
+			Clear();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C62B0 Offset: 0x6C62B0 VA: 0x6C62B0
 		// // RVA: 0x1370C74 Offset: 0x1370C74 VA: 0x1370C74
@@ -179,7 +183,7 @@ namespace XeApp.Game.Menu
 
 			//0x1371E80
 			operation = AssetBundleManager.LoadAllAssetAsync("ct/sc/ef.xab");
-			yield return operation;
+			yield return Co.R(operation);
 
 			m_kira256Material = operation.GetAsset<Material>("eff_256");
 			m_kira2048Material = operation.GetAsset<Material>("eff_2048");
@@ -190,7 +194,7 @@ namespace XeApp.Game.Menu
 			IsKiraShaderParam = Shader.PropertyToID("_IsKira");
 
 			operation = AssetBundleManager.LoadAllAssetAsync("ct/sc/me/01/al.xab");
-			yield return operation;
+			yield return Co.R(operation);
 
 			SharedAlphaTexture = operation.GetAsset<Texture2D>("al");
 
@@ -204,15 +208,31 @@ namespace XeApp.Game.Menu
 			while (m_loadingTexture == null)
 				yield return null;
 
-			yield return AssetBundleManager.LoadUnionAssetBundle("ct/sc/fr_256.xab");
+			yield return Co.R(AssetBundleManager.LoadUnionAssetBundle("ct/sc/fr_256.xab"));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C6328 Offset: 0x6C6328 VA: 0x6C6328
 		// // RVA: 0x1370D20 Offset: 0x1370D20 VA: 0x1370D20
-		// public IEnumerator LoadKiraMaterial(Action LoadEndAction) { }
+		public IEnumerator LoadKiraMaterial(Action LoadEndAction)
+		{
+			AssetBundleLoadAllAssetOperationBase operation;
+
+			//0x137233C
+			operation = AssetBundleManager.LoadAllAssetAsync("ct/sc/ef.xab");
+			yield return operation;
+			m_kira2048HoloMaterial = operation.GetAsset<Material>("holo_2048_a_mul");
+			m_kira2048Material = operation.GetAsset<Material>("eff_2048");
+			AssetBundleManager.UnloadAssetBundle("ct/sc/ef.xab", false);
+			if (LoadEndAction != null)
+				LoadEndAction();
+		}
 
 		// // RVA: 0x1370DE8 Offset: 0x1370DE8 VA: 0x1370DE8
-		// public void ReleaseKiraMaterial() { }
+		public void ReleaseKiraMaterial()
+		{
+			m_kira2048Material = null;
+			m_kira2048HoloMaterial = null;
+		}
 
 		// // RVA: 0x136EBA4 Offset: 0x136EBA4 VA: 0x136EBA4
 		public void SetLoadingTexture(RawImageEx image)
@@ -305,10 +325,18 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1371820 Offset: 0x1371820 VA: 0x1371820
-		// public void ChangeKiraMaterial_2048(RawImageEx _image) { }
+		public void ChangeKiraMaterial_2048(RawImageEx _image)
+		{
+			_image.material = m_kira2048Material;
+			_image.MaterialMul = m_kira2048Material;
+		}
 
 		// // RVA: 0x1371884 Offset: 0x1371884 VA: 0x1371884
-		// public void ChangeKiraMaterial_holo(RawImageEx _image) { }
+		public void ChangeKiraMaterial_holo(RawImageEx _image)
+		{
+			_image.material = m_kira2048HoloMaterial;
+			_image.MaterialMul = m_kira2048HoloMaterial;
+		}
 
 		// // RVA: 0x13718E8 Offset: 0x13718E8 VA: 0x13718E8
 		public void TryInstall(DFKGGBMFFGB_PlayerInfo playerData)

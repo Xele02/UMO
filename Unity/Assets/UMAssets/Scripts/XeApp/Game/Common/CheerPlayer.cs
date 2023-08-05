@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace XeApp.Game.Common
 {
@@ -172,6 +173,16 @@ namespace XeApp.Game.Common
 			for(int i = 0; i < MAX; i++)
 			{
 				m_player[i].FadeOut(sec, null);
+			}
+		}
+
+		public void SetMixer(AudioMixerGroup group)
+		{
+			if (!m_create)
+				return;
+			for(int i = 0; i < MAX; i++)
+			{
+				m_player[i].source.unityAudioSource.outputAudioMixerGroup = group;
 			}
 		}
 	}

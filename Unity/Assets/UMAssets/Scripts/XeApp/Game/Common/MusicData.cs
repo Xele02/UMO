@@ -55,14 +55,13 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAE62A8 Offset: 0xAE62A8 VA: 0xAE62A8
 		public void LoadData(int musicId, int difficultyId, int stageDivaNum, bool line6Mode)
 		{
-			StartCoroutine(Co_LoadData(musicId, difficultyId, stageDivaNum, line6Mode));
+			this.StartCoroutineWatched(Co_LoadData(musicId, difficultyId, stageDivaNum, line6Mode));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73A424 Offset: 0x73A424 VA: 0x73A424
 		// // RVA: 0xAE62E0 Offset: 0xAE62E0 VA: 0xAE62E0
 		private IEnumerator Co_LoadData(int musicId, int difficultyId, int stageDivaNum, bool line6Mode)
 		{
-    		UnityEngine.Debug.Log("Enter Co_LoadData");
 			// public MusicData <>4__this; // 0x10
 			// public int musicId; // 0x14
 			// public int difficultyId; // 0x18
@@ -78,7 +77,7 @@ namespace XeApp.Game.Common
 
 			musicBase = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId);
 			noteDisplayMillisec = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.HBCHGGNOOCD_GetNotesDisplayTiming((XeApp.Game.Common.Difficulty.Type)difficultyId, false);
-			yield return StartCoroutine(LoadScoreTarFile(musicId));
+			yield return this.StartCoroutineWatched(LoadScoreTarFile(musicId));
 
 			StringBuilder bundleName = new StringBuilder();
 
@@ -86,22 +85,21 @@ namespace XeApp.Game.Common
 			bundleName.SetFormat("mc/{0}/sc.xab", wavDir);
 
 			AssetBundleLoadAllAssetOperationBase operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
-			yield return StartCoroutine(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, -1, line6Mode, this.LoadedCommonScoreData, "s_"));
+			yield return this.StartCoroutineWatched(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, -1, line6Mode, this.LoadedCommonScoreData, "s_"));
 
-			yield return StartCoroutine(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, -1, line6Mode, this.LoadedCheerScoreData, "mv_"));
+			yield return this.StartCoroutineWatched(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, -1, line6Mode, this.LoadedCheerScoreData, "mv_"));
 
-			yield return StartCoroutine(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, difficultyId, line6Mode, this.LoadedMusicScoreData, "s_"));
+			yield return this.StartCoroutineWatched(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, difficultyId, line6Mode, this.LoadedMusicScoreData, "s_"));
 
 			if(musicScoreData == null)
-				yield return StartCoroutine(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, difficultyId, false, this.LoadedMusicScoreData, "s_"));
+				yield return this.StartCoroutineWatched(LoadScoreData(operation, musicBase.KKPAHLMJKIH_WavId, musicBase.BKJGCEOEPFB_VariationId, difficultyId, false, this.LoadedMusicScoreData, "s_"));
 
-			yield return StartCoroutine(LoadDirectionParam(operation, musicBase.KKPAHLMJKIH_WavId));
+			yield return this.StartCoroutineWatched(LoadDirectionParam(operation, musicBase.KKPAHLMJKIH_WavId));
 
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
 			RhythmGameConsts.SetWide(musicScoreData.isWideTrack);
-    		UnityEngine.Debug.Log("Exit Co_LoadData");
 		}
 
 		// // RVA: 0xAE63F4 Offset: 0xAE63F4 VA: 0xAE63F4
@@ -115,7 +113,6 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAE64E0 Offset: 0xAE64E0 VA: 0xAE64E0
 		private IEnumerator LoadScoreTarFile(int musicId)
 		{
-    		UnityEngine.Debug.Log("Enter LoadScoreTarFile");
 			//0xAE8584
 			StringBuilder str = new StringBuilder(64);
 			str.AppendFormat("sc/{0:D4}.dat", musicBase.KKPAHLMJKIH_WavId);
@@ -145,7 +142,6 @@ namespace XeApp.Game.Common
 			while(!done)
 				yield return null;
 			FileLoader.Instance.Unload(hash);
-    		UnityEngine.Debug.Log("Exit LoadScoreTarFile");
 			yield break;
 		}
 
@@ -175,7 +171,6 @@ namespace XeApp.Game.Common
 		// // RVA: 0xAE6A98 Offset: 0xAE6A98 VA: 0xAE6A98
 		private IEnumerator LoadScoreData(AssetBundleLoadAllAssetOperationBase operation, int wavId, int variationId, int difficultyType, bool is6Line, Action<MusicScoreData> dataSetFunc, string strPrefix = "s_")
 		{
-    		UnityEngine.Debug.Log("Enter LoadScoreData");
 			//0xAE8084
 
 			MusicScoreData res = null;
@@ -201,7 +196,7 @@ namespace XeApp.Game.Common
 					{
 						listFiles += f.OPFGFINHFCE_Name +" ";
 					}
-					UnityEngine.Debug.LogError("File "+str.ToString()+" not found in tarFile. Files are : "+listFiles);
+					TodoLogger.LogError(TodoLogger.Filesystem, "File "+str.ToString()+" not found in tarFile. Files are : "+listFiles);
 				}
 			}
 			if (res == null)
@@ -214,7 +209,6 @@ namespace XeApp.Game.Common
 			}
 			dataSetFunc(res);
 
-			UnityEngine.Debug.Log("Exit LoadScoreData");
 			yield break;
 		}
 
@@ -271,6 +265,7 @@ namespace XeApp.Game.Common
 					}
 					else if(commonData.eventTrack10[i].value == MusicScoreData.START_COMBO_RESULT)
 					{
+						rhythmGameResultStartMillisec = commonData.eventTrack10[i].time;
 					}
 					else if(commonData.eventTrack10[i].value == MusicScoreData.TUTORIAL_ONE_END_GAME)
 					{

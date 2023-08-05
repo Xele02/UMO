@@ -12,33 +12,25 @@ namespace XeApp.Native
         private static int abiType_; // 0x18
         private static string map_url = ""; // 0x1C
 
-        // public static string appVersion { get; }
+        public static string appVersion { get {
+			if(!initialized)
+				Init();
+			return appVersion_;
+			} } //0x2F93D48
         public static string buildVersion { get {
             if(!initialized)
                 Init();
             return buildVersion_;
         } } // get_buildVersion 0x2F94200
-        // public static int secureVer { get; }
-        // public static string buildType { get; }
+        // public static int secureVer { get; } 0x2F942F8
+        // public static string buildType { get; } 0x2F943FC
         public static string buildOption { get {
             if(!initialized)
                 Init();
             return buildOption_;
         } } // get_buildOption 0x2F94458
-        // public static bool isExistCopyAsset { get; }
-        // public static int abiType { get; }
-
-        // // RVA: 0x2F93D48 Offset: 0x2F93D48 VA: 0x2F93D48
-        // public static string get_appVersion() { }
-
-        // // RVA: 0x2F942F8 Offset: 0x2F942F8 VA: 0x2F942F8
-        // public static int get_secureVer() { }
-
-        // // RVA: 0x2F943FC Offset: 0x2F943FC VA: 0x2F943FC
-        // public static string get_buildType() { }
-
-        // // RVA: 0x2F94550 Offset: 0x2F94550 VA: 0x2F94550
-        // public static bool get_isExistCopyAsset() { }
+        // public static bool isExistCopyAsset { get; } 0x2F94550
+        // public static int abiType { get; } 0x2F94D14
 
         // // RVA: 0x2F93E50 Offset: 0x2F93E50 VA: 0x2F93E50
         private static void Init()
@@ -82,14 +74,11 @@ namespace XeApp.Native
 
         // // RVA: 0x2F94C84 Offset: 0x2F94C84 VA: 0x2F94C84
         // public static void SetMapParam(string url) { }
-
-        // // RVA: 0x2F94D14 Offset: 0x2F94D14 VA: 0x2F94D14
-        // public static int get_abiType() { }
-
+		
         // // RVA: 0x2F94648 Offset: 0x2F94648 VA: 0x2F94648
         private static /*extern*/ int xedec_get_abi_type()
         {
-            TodoLogger.Log(5, "xedec_get_abi_type");
+            TodoLogger.LogError(TodoLogger.AppInfo, "AppInfo.xedec_get_abi_type");
             return 0;
         }
     }

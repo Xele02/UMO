@@ -25,12 +25,19 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1105AFC Offset: 0x1105AFC VA: 0x1105AFC
-		//public void Release() { }
+		public void Release()
+		{
+			for(int i = 0; i < m_poolList.Count; i++)
+			{
+				Object.Destroy(m_poolList[i].Runtime.gameObject);
+			}
+			m_poolList.Clear();
+		}
 
 		//// RVA: 0x1105C4C Offset: 0x1105C4C VA: 0x1105C4C
 		public void Entry(string bundleName, string prefabName, Font font, MonoBehaviour mb)
 		{
-			mb.StartCoroutine(LoadLayout(bundleName, prefabName, font));
+			mb.StartCoroutineWatched(LoadLayout(bundleName, prefabName, font));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x73CCF0 Offset: 0x73CCF0 VA: 0x73CCF0
@@ -42,19 +49,19 @@ namespace XeApp.Game.Common
 
 			//0x1106090
 			operation = AssetBundleManager.LoadLayoutAsync(bundleName, prefabname);
-			yield return operation;
+			yield return Co.R(operation);
 
 			prefab = operation.GetAsset<GameObject>();
 			Layout layout = null;
 			TexUVListManager uvMan = null;
 			LayoutUGUIRuntime runtime = prefab.GetComponent<LayoutUGUIRuntime>();
 
-			yield return operation.CreateLayoutCoroutine(runtime, font, (Layout loadLayout, TexUVListManager loadUvMan) =>
+			yield return Co.R(operation.CreateLayoutCoroutine(runtime, font, (Layout loadLayout, TexUVListManager loadUvMan) =>
 			{
 				//0x1106080
 				layout = loadLayout;
 				uvMan = loadUvMan;
-			});
+			}));
 
 			GameObject go = UnityEngine.Object.Instantiate(prefab);
 			go.GetComponent<LayoutUGUIRuntime>().IsLayoutAutoLoad = false;

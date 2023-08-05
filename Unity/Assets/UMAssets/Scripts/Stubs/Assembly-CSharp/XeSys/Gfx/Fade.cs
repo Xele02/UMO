@@ -8,7 +8,7 @@ namespace XeSys.Gfx
 		public int renderQueue;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

@@ -36,7 +36,7 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 	// // RVA: 0x11333D8 Offset: 0x11333D8 VA: 0x11333D8 Slot: 7
 	public override List<int> HEACCHAKMFG()
 	{
-		TodoLogger.Log(0, "HEACCHAKMFG");
+		TodoLogger.LogError(0, "HEACCHAKMFG");
 		return base.HEACCHAKMFG();
 	}
 
@@ -62,10 +62,22 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 	// public override void MJFKJHJJLMN(int LHJCOPMMIGO = 0, bool FBBNPFFEJBN = False) { }
 
 	// // RVA: 0x1135118 Offset: 0x1135118 VA: 0x1135118 Slot: 30
-	// protected override bool JIHMLILFOPG(long JHNMKKNEENE) { }
+	protected override bool JIHMLILFOPG(long JHNMKKNEENE)
+	{
+		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI);
+		if(db != null)
+		{
+			TodoLogger.LogError(0, "KPJHLACKGJF_EventMission.JIHMLILFOPG");
+		}
+		return false;
+	}
 
 	// // RVA: 0x1135434 Offset: 0x1135434 VA: 0x1135434 Slot: 31
-	// protected override bool IMCMNOPNGHO(long JHNMKKNEENE) { }
+	protected override bool IMCMNOPNGHO(long JHNMKKNEENE)
+	{
+		TodoLogger.LogError(0, "KPJHLACKGJF_EventMission.IMCMNOPNGHO");
+		return false;
+	}
 
 	// // RVA: 0x1135790 Offset: 0x1135790 VA: 0x1135790 Slot: 40
 	// protected override void KKFLDCBHFJA(long JHNMKKNEENE) { }
@@ -87,7 +99,7 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 	// // RVA: 0x1137D20 Offset: 0x1137D20 VA: 0x1137D20 Slot: 46
 	protected override void PJDGDNJNCNM(long JHNMKKNEENE)
 	{
-		TodoLogger.Log(0, "PJDGDNJNCNM");
+		TodoLogger.LogError(0, "PJDGDNJNCNM");
 	}
 
 	// // RVA: 0x1138374 Offset: 0x1138374 VA: 0x1138374 Slot: 47
@@ -170,7 +182,14 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 	// public override string FEKEBPKINIM() { }
 
 	// // RVA: 0x113CC84 Offset: 0x113CC84 VA: 0x113CC84 Slot: 73
-	// public override List<string> IJCPBPFEGDM(long JHNMKKNEENE) { }
+	public override List<string> IJCPBPFEGDM(long JHNMKKNEENE)
+	{
+		DIHHCBACKGG_DbSection dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI);
+		if(dbSection == null)
+			return null;
+		TodoLogger.LogError(0, "KPJHLACKGJF_EventMission.IJCPBPFEGDM");
+		return null;
+	}
 
 	// // RVA: 0x113CF98 Offset: 0x113CF98 VA: 0x113CF98 Slot: 74
 	// public override int EDNMFMBLCGF() { }

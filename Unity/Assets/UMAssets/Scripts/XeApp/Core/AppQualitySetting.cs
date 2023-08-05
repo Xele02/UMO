@@ -1,4 +1,5 @@
 using UnityEngine;
+using XeApp.Game;
 
 namespace XeApp.Core
 {
@@ -39,10 +40,12 @@ namespace XeApp.Core
 		// private static void RepostQulityLevel(int index) { }
 
 		// // RVA: 0xE0DAC8 Offset: 0xE0DAC8 VA: 0xE0DAC8
-		public static AppQualitySetting.DeviceSpec GetDeviceSpec()
+		public static DeviceSpec GetDeviceSpec()
 		{
-			TodoLogger.Log(5, "GetDeviceSpec");
-			return AppQualitySetting.DeviceSpec.High;
+#if UNITY_ANDROID
+			TodoLogger.Log(TodoLogger.AppQualitySetting, "AppQualitySetting.GetDeviceSpec");
+#endif
+			return DeviceSpec.High;
 		}
 
 		// // RVA: 0xE0E27C Offset: 0xE0E27C VA: 0xE0E27C
@@ -68,15 +71,32 @@ namespace XeApp.Core
 		// public static int GetInGameScreenSizeType() { }
 
 		// // RVA: 0xE0E4FC Offset: 0xE0E4FC VA: 0xE0E4FC
-		// public static AppQualitySetting.DeviceSpec GetDeviceSpecFromMaster(string deviceModel) { }
+		public static DeviceSpec GetDeviceSpecFromMaster(string deviceModel)
+		{
+#if UNITY_ANDROID
+			TodoLogger.Log(0, "GetDeviceSpecFromMaster");
+#else
+			return DeviceSpec.High;
+#endif
+		}
 
 		// // RVA: 0xE0E6C8 Offset: 0xE0E6C8 VA: 0xE0E6C8
-		// public static int Get3DModeFromMaster(AppQualitySetting.DeviceSpec spec) { }
+		public static int Get3DModeFromMaster(DeviceSpec spec)
+		{
+			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.GAGDEIMGBBG((int)spec);
+		}
 
 		// // RVA: 0xE0E7AC Offset: 0xE0E7AC VA: 0xE0E7AC
 		public static void InitDefault3dMode()
 		{
-			TodoLogger.Log(0, "TODO");
+			if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.GEPLOFLHAOL_NeedInitRenderQuality == 0)
+				return;
+			DeviceSpec spec = GetDeviceSpecFromMaster(null);
+			int mode = Get3DModeFromMaster(spec);
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.DDHCLNFPNGK_RenderQuality = mode;
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MHHPDGJLJGE_OptionsSLive.DDHCLNFPNGK_RenderQuality = mode;
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.GEPLOFLHAOL_NeedInitRenderQuality = 0;
+			Debug.Log(JpStringLiterals.StringLiteral_13316 + mode.ToString());
 		}
 	}
 }

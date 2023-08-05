@@ -108,14 +108,14 @@ namespace XeApp.Game.Common
 				Transform t = ctrl.gameObject.transform.Find(data.pointPath);
 				if(t == null)
 				{
-					Debug.LogError("Point not found : "+data.pointPath);
+					TodoLogger.LogError(TodoLogger.Game, "Point not found : "+data.pointPath);
 				}
 				else
 				{
 					BoneSpringControlPoint ctrlPoint = t.GetComponent<BoneSpringControlPoint>();
 					if(ctrlPoint == null)
 					{
-						Debug.LogError("Component CtrlPoint not found on "+data.pointPath);
+						TodoLogger.LogError(TodoLogger.Game, "Component CtrlPoint not found on "+data.pointPath);
 					}
 					else
 					{

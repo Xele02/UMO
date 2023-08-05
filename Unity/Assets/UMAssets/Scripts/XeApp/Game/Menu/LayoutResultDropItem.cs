@@ -1,3 +1,4 @@
+using mcrs;
 using System;
 using System.Collections;
 using System.Linq;
@@ -229,7 +230,7 @@ namespace XeApp.Game.Menu
 					layoutNumStateTable.StartChildrenAnimGoStop(m_is_bonus ? "01" : "02", m_is_bonus ? "01" : "02");
 					normalItem.layoutRoot.StartChildrenAnimGoStop("go_in", "st_in");
 					shadowAnime.StartChildrenAnimGoStop("go_in", "st_in");
-					StartCoroutine(Co_PlayingAnim(normalItem.layoutRoot, normalAnimEndRate));
+					this.StartCoroutineWatched(Co_PlayingAnim(normalItem.layoutRoot, normalAnimEndRate));
 					PlayNormalItemSE();
 				}
 				else
@@ -238,7 +239,7 @@ namespace XeApp.Game.Menu
 					layoutNumStateTable.StartChildrenAnimGoStop("02", "02");
 					rareItem.layoutRoot.StartChildrenAnimGoStop("go_hiraki", "st_hiraki");
 					shadowAnime.StartChildrenAnimGoStop("go_hiraki", "st_hiraki");
-					StartCoroutine(Co_PlayingAnim(rareItem.layoutRoot, rareAnimEndRate));
+					this.StartCoroutineWatched(Co_PlayingAnim(rareItem.layoutRoot, rareAnimEndRate));
 					PlayRareItemSE();
 				}
 			}
@@ -248,7 +249,7 @@ namespace XeApp.Game.Menu
 				layoutNumStateTable.StartChildrenAnimGoStop("02", "02");
 				eventRareItem.layoutRoot.StartChildrenAnimGoStop("go_hiraki", "st_hiraki");
 				shadowAnime.StartChildrenAnimGoStop("go_hiraki", "st_hiraki");
-				StartCoroutine(Co_PlayingAnim(eventRareItem.layoutRoot, rareAnimEndRate));
+				this.StartCoroutineWatched(Co_PlayingAnim(eventRareItem.layoutRoot, rareAnimEndRate));
 				PlayRareItemSE();
 			}
 			if (itemInfo == null)
@@ -316,7 +317,41 @@ namespace XeApp.Game.Menu
 		//private IEnumerator Co_CountUpBonus(float sec) { }
 
 		//// RVA: 0x1D91D3C Offset: 0x1D91D3C VA: 0x1D91D3C
-		//public void SkipBeginAnim() { }
+		public void SkipBeginAnim()
+		{
+			this.StopAllCoroutinesWatched();
+			if(!itemInfo.BAKFIPIFDLE_IsEventRareItem)
+			{
+				if(!itemInfo.PHJHJGDLPED_IsRareItem)
+				{
+					layoutStateTable.StartChildrenAnimGoStop(0, 0);
+					layoutNumStateTable.StartChildrenAnimGoStop(m_is_bonus ? 0 : 1, m_is_bonus ? 0 : 1);
+					normalItem.layoutNumAnim.StartChildrenAnimGoStop("st_out");
+					shadowAnime.StartChildrenAnimGoStop("st_in");
+				}
+				else
+				{
+					layoutStateTable.StartChildrenAnimGoStop(1, 1);
+					layoutNumStateTable.StartChildrenAnimGoStop(1, 1);
+					rareItem.layoutRoot.StartChildrenAnimGoStop("st_hiraki");
+					shadowAnime.StartChildrenAnimGoStop("st_hiraki");
+				}
+			}
+			else
+			{
+				layoutStateTable.StartChildrenAnimGoStop(2, 2);
+				layoutNumStateTable.StartChildrenAnimGoStop(1, 1);
+				eventRareItem.layoutRoot.StartChildrenAnimGoStop("st_hiraki");
+				shadowAnime.StartChildrenAnimGoStop("st_hiraki");
+			}
+			if(itemInfo != null && itemInfo.HHACNFODNEF_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			{
+				layoutSceneStatusAnim.StartChildrenAnimGoStop("st_in");
+				SetupItemStatusType();
+			}
+			FinalizeBaseCountNumber();
+			FinalizeBonusCountNumber();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x719224 Offset: 0x719224 VA: 0x719224
 		//// RVA: 0x1D915D0 Offset: 0x1D915D0 VA: 0x1D915D0
@@ -346,7 +381,7 @@ namespace XeApp.Game.Menu
 				prevInput = GameManager.Instance.InputEnabled;
 				GameManager.Instance.InputEnabled = true;
 				isOpenRecordPlateInfo = true;
-				StartCoroutine(PopupRecordPlate.Show(RecordPlateUtility.eSceneType.Result, () =>
+				this.StartCoroutineWatched(PopupRecordPlate.Show(RecordPlateUtility.eSceneType.Result, () =>
 				{
 					//0x1D92CC8
 					isOpenRecordPlateInfo = false;
@@ -428,11 +463,20 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1D924FC Offset: 0x1D924FC VA: 0x1D924FC
 		private void OnStay()
 		{
-			TodoLogger.LogNotImplemented("OnStay");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(itemInfo != null && itemInfo.HHACNFODNEF_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			{
+				ShowSceneCardItem();
+				return;
+			}
+			MenuScene.Instance.ShowItemDetail(itemInfo.KIJAPOFAGPN_ItemId, itemInfo.MHFBCINOJEE_Count, null);
 		}
 
 		//// RVA: 0x1D92660 Offset: 0x1D92660 VA: 0x1D92660
-		//private void ShowSceneCardItem() { }
+		private void ShowSceneCardItem()
+		{
+			MenuScene.Instance.ShowSceneStatusPopupWindow(GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemInfo.KIJAPOFAGPN_ItemId) - 1], GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, false, true, SceneStatusParam.PageSave.None, false);
+		}
 
 		//// RVA: 0x1D9174C Offset: 0x1D9174C VA: 0x1D9174C
 		private void SetupItemStatusType()

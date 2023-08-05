@@ -74,7 +74,7 @@ namespace XeApp.Game.Menu
 		private FlexibleItemScrollView m_scrollView = new FlexibleItemScrollView(); // 0xC
 		private ScrollRect m_scrollRect; // 0x10
 		private AOJGDNFAIJL_PrismData.AMIECPBIALP m_prismData = new AOJGDNFAIJL_PrismData.AMIECPBIALP(); // 0x14
-		private PopupMvModeSelectListContent.SelectTarget m_selectTarget; // 0x18
+		private SelectTarget m_selectTarget; // 0x18
 		private int m_selectIndex; // 0x1C
 		private int m_selectListIndex; // 0x20
 		private Transform m_parent; // 0x24
@@ -112,7 +112,7 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < divaList.Count; i++)
 				{
 					ScrollDivaListItem item = new ScrollDivaListItem(divaList[i].PPFNGGCBJKC_Id);
-					SetIconPosition(0, i, item);
+					SetIconPosition(i % 2, i / 2, item);
 					item.ListIndex = i;
 					item.IsSet = divaList[i].CBLHLEKLLDE_IsSet;
 					if(item.IsSet)
@@ -141,7 +141,7 @@ namespace XeApp.Game.Menu
 					int costumeId = costumeList[i].PPFNGGCBJKC_Id;
 					int colorId = costumeList[i].DOKKMMFKLJI_ColorId;
 					ScrollCostumeListItem item = new ScrollCostumeListItem(divaId, costumeId, colorId);
-					SetIconPosition(0, i, item);
+					SetIconPosition(i % 2, i / 2, item);
 					item.ListIndex = i;
 					item.IsSet = costumeList[i].CBLHLEKLLDE_IsSet;
 					m_scrollItem.Add(item);
@@ -155,7 +155,7 @@ namespace XeApp.Game.Menu
 				for (int i = 0; i < l.Count; i++)
 				{
 					ScrollValkyrieListItem item = new ScrollValkyrieListItem(l[i].PPFNGGCBJKC_Id);
-					SetIconPosition(0, i, item);
+					SetIconPosition(i % 2, i / 2, item);
 					item.ListIndex = i;
 					item.IsSet = l[i].CBLHLEKLLDE_IsSet;
 					m_scrollItem.Add(item);

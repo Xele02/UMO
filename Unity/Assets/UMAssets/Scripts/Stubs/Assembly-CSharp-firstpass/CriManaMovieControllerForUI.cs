@@ -6,7 +6,7 @@ namespace CriWare
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.LogError(0, "Implement monobehaviour");
 		}
 		public Graphic target;
 		public bool useOriginalMaterial;

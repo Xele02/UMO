@@ -17,7 +17,7 @@ namespace XeApp.Game.Menu
 		private List<EventGoDivaCamera.OffsetSetting> m_offsetSettings;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

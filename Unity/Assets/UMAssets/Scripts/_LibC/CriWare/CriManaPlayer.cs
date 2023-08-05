@@ -16,7 +16,7 @@ namespace ExternLib
         {
             public int playerId;
             public string filePath;
-            public VLCPlayback playback;
+            public MoviePlayback playback;
 
             public Player.Status status;
             public bool loop;
@@ -29,7 +29,7 @@ namespace ExternLib
 
         public static void CRIWARE044D0246_criManaUnityPlayer_SetCuePointCallback(int player_id, Player.CuePointCallbackFromNativeDelegate cbfunc)
         {
-            UnityEngine.Debug.LogError("CRIWARE044D0246_criManaUnityPlayer_SetCuePointCallback");
+            TodoLogger.LogError(0, "CRIWARE044D0246_criManaUnityPlayer_SetCuePointCallback");
         }
 
         public static void CRIWARECB5086D8_criManaUnityPlayer_Prepare(int player_id)
@@ -39,23 +39,14 @@ namespace ExternLib
                 moviePlayers[player_id].status = Player.Status.Dechead;
                 if(moviePlayers[player_id].playback == null)
                 {
-                    moviePlayers[player_id].playback = VLCManager.Instance.gameObject.AddComponent<VLCPlayback>();
-                    CriUsmStream videoStream = new CriUsmStream(moviePlayers[player_id].filePath);
-                    MpegStream.DemuxOptionsStruct demux = new MpegStream.DemuxOptionsStruct() { ExtractVideo = true, ExtractAudio = false };
-                    demux.ExtractedFileList = new List<string>();
-                    demux.Key1 = 0x44C5F5F5;
-                    demux.Key2 = 0x0581B687;
-                    demux.ExtractInMemoryStream = true;
-                    demux.ExtractedMemoryStream = new List<MemoryStream>();
-                    videoStream.DemultiplexStreams(demux);
-                    moviePlayers[player_id].movieInfo = videoStream.movieInfo;
-                    foreach(MemoryStream s in demux.ExtractedMemoryStream)
+                    if(VLCManager.Instance.enabled && VLCManager.Instance.IsInitialized)
+                        moviePlayers[player_id].playback = VLCManager.Instance.AddMovie<VLCPlayback>();
+                    else if(!RuntimeSettings.CurrentSettings.DisableMovies)
+                        moviePlayers[player_id].playback = VLCManager.Instance.AddMovie<StreamedMoviePlayback>();
+                    moviePlayers[player_id].playback.Init(moviePlayers[player_id].filePath, moviePlayers[player_id].loop, (MovieInfo info) =>
                     {
-                        moviePlayers[player_id].playback.ms = s;
-                        moviePlayers[player_id].playback.SetLoop(moviePlayers[player_id].loop);
-                        moviePlayers[player_id].playback.StartCoroutine(moviePlayers[player_id].playback.Prepare());
-                        break;
-                    }
+                        moviePlayers[player_id].movieInfo = info;
+                    });
                 }
             }
         }
@@ -98,7 +89,7 @@ namespace ExternLib
             {
                 // Need to see what event change prep to ready, instead of directly going on next call
                 player.status = Player.Status.Ready;
-                UnityEngine.Debug.Log("CriMana, player is ready");
+                TodoLogger.Log(TodoLogger.CriManaPlugin, "CriMana, player is ready");
             }
             else if(player.status == Player.Status.Playing)
             {
@@ -145,7 +136,7 @@ namespace ExternLib
         }
         public static bool CRIWARE7FE26661_criManaUnityPlayer_EntryFile(int player_id, IntPtr binder, string path, bool repeat)
         {
-            UnityEngine.Debug.LogError("CRIWARE7FE26661_criManaUnityPlayer_EntryFile");
+            TodoLogger.LogError(0, "CRIWARE7FE26661_criManaUnityPlayer_EntryFile");
             return true;
         }
 
@@ -165,13 +156,13 @@ namespace ExternLib
 
         public static bool CRIWARE6C94B6FB(int player_id)
         {
-            UnityEngine.Debug.LogError("CRIWARE6C94B6FB");
+            TodoLogger.LogError(0, "CRIWARE6C94B6FB");
             return true;
         }
 
         public static void CRIWAREC9D98FAA(int player_id)
         {
-            UnityEngine.Debug.LogError("CRIWAREC9D98FAA");
+            TodoLogger.LogError(0, "CRIWAREC9D98FAA");
         }
 
         public static int CRIWARE4B9FFA91_criManaUnityPlayer_Create()
@@ -190,7 +181,7 @@ namespace ExternLib
 
         public static IntPtr CRIWARE453735B6(int player_id)
         {
-            UnityEngine.Debug.LogError("CRIWARE453735B6");
+            TodoLogger.LogError(0, "CRIWARE453735B6");
             return IntPtr.Zero;
         }
 
@@ -205,6 +196,8 @@ namespace ExternLib
             {
                 frame_info.time = (ulong)moviePlayers[player_id].playback.GetTime();
                 frame_info.tunit = 1000000;
+                frame_info.dispHeight = moviePlayers[player_id].movieInfo.dispHeight;
+                frame_info.dispWidth = moviePlayers[player_id].movieInfo.dispWidth;
             }
             frame_drop = false;
             return true;
@@ -217,12 +210,13 @@ namespace ExternLib
 
         public static void CRIWARE6AEEBF51(int player_id) // desallocate subtitle buffer
         {
+			TodoLogger.LogError(TodoLogger.CriManaPlugin, "CRIWARE6AEEBF51");
         }
 
         public static IntPtr CRIWARE91AA6C29(int player_id, int bufferSize)
-        {
-            UnityEngine.Debug.LogError("CRIWARE91AA6C29");
-            return IntPtr.Zero;
+		{
+			TodoLogger.LogError(TodoLogger.CriManaPlugin, "CRIWARE91AA6C29");
+			return IntPtr.Zero;
         }
 
         public static void CRIWARE6536ABE0_criManaUnityPlayer_Destroy(int player_id)
@@ -238,13 +232,14 @@ namespace ExternLib
         }
 
         public static void CRIWARE55BA8D00(int player_id) // Frame update ?
-        {
-        }
+		{
+			TodoLogger.LogError(TodoLogger.CriManaPlugin, "CRIWARE55BA8D00");
+		}
 
         public static void CRIWARE51B54144(int player_id, ulong user_count, ulong user_unit)
-        {
-            UnityEngine.Debug.LogError("CRIWARE51B54144");
-        }
+		{
+			TodoLogger.LogError(TodoLogger.CriManaPlugin, "CRIWARE51B54144");
+		}
 
         public static void CRIWARE4A28D964_criManaUnityPlayer_GetMovieInfo(int player_id, out MovieInfo movie_info)
         {
@@ -256,7 +251,7 @@ namespace ExternLib
             movie_info = null;
         }
 
-        public static Texture2D GetVLCTexture(int player_id)
+        public static Texture GetVLCTexture(int player_id)
         {
             if(moviePlayers.ContainsKey(player_id))
             {

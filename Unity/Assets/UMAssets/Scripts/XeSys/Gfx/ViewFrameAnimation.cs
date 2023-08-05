@@ -31,7 +31,7 @@ namespace XeSys.Gfx
 		private float m_BaseY; // 0x38
 
 		public bool IsAnimEnd { get { return m_IsAnimEnd; } set { m_IsAnimEnd = value; } } //0x1EE7058 0x1EE7010
-		// public float AnimCount { get; set; } 0x1EE958C 0x1EE9594
+		public float AnimCount { get { return m_AnimCount; } set { m_AnimCount = value; } } //0x1EE958C 0x1EE9594
 		// public float TimeScale { get; set; } 0x1EE5EA4 0x1EE5EF8
 		// public float FrameSec { get; set; } 0x1EE959C 0x1EE95A4
 		public int FrameCount { get { return Mathf.RoundToInt(m_AnimCount / m_FrameSec); } private set { return; } } //0x1EE95AC 0x1EE95C4
@@ -86,7 +86,13 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x1EE8AD0 Offset: 0x1EE8AD0 VA: 0x1EE8AD0
-		// public void StartAnim() { }
+		public void StartAnim()
+		{
+			m_startTime = 0;
+			m_endTime = -1;
+			m_AnimCount = 0;
+			m_IsAnimEnd = false;
+		}
 
 		// // RVA: 0x1EE8B4C Offset: 0x1EE8B4C VA: 0x1EE8B4C
 		public void StartAnimGoStop(int start, int end)
@@ -307,7 +313,7 @@ namespace XeSys.Gfx
 		public void CopyTo(ViewFrameAnimation anim)
 		{
 			if(data == null)
-				UnityEngine.Debug.LogError("Copying empty data animation");
+				TodoLogger.LogError(TodoLogger.Layout, "Copying empty data animation");
 			anim.data = data;
 			anim.m_timeScale = m_timeScale;
 			anim.m_BaseX = m_BaseX;

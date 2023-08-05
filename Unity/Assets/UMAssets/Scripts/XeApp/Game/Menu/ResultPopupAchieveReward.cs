@@ -1,5 +1,6 @@
 using System;
 using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -22,7 +23,18 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4E094 Offset: 0xB4E094 VA: 0xB4E094
 		public void Setup(PopupAchieveRewardSetting setting, bool levelup)
 		{
-			TodoLogger.Log(0, "ResultPopupAchieveReward.Setup");
+			m_setting = setting;
+			m_isNotAchieve = setting == null;
+			if(setting != null)
+			{
+				PopupAchieveRewardContent ct = null;
+				if (setting.Content != null)
+				{
+					ct = setting.Content.GetComponent<PopupAchieveRewardContent>();
+				}
+				m_isNotAchieve = ct == null;
+			}
+			isLevelUp = levelup;
 		}
 
 		// // RVA: 0xB4E1E8 Offset: 0xB4E1E8 VA: 0xB4E1E8
@@ -54,13 +66,26 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4E2C8 Offset: 0xB4E2C8 VA: 0xB4E2C8
 		private void ShowInner()
 		{
-			TodoLogger.Log(0, "ShowInner");
-			if(onFinished != null)
-				onFinished();
+			if(!m_isShowed)
+			{
+				m_isShowed = true;
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				m_setting.TitleText = bk.GetMessageByLabel("popup_music_select_02");
+				m_setting.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				};
+				m_setting.WindowSize = SizeType.Large;
+				PopupWindowManager.Show(m_setting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0xB4E598
+					if (label != PopupButton.ButtonLabel.Ok)
+						return;
+					if (!m_isSkip && onFinished != null)
+						onFinished();
+					onFinished = null;
+				}, null, null, null, false, true, false);
+			}
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7227AC Offset: 0x7227AC VA: 0x7227AC
-		// // RVA: 0xB4E598 Offset: 0xB4E598 VA: 0xB4E598
-		// private void <ShowInner>b__18_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
 	}
 }

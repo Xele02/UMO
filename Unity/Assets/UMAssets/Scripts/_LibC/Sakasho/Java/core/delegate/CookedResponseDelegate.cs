@@ -14,7 +14,7 @@ namespace ExternLib.Java_Sakasho.jp.dena.sakasho.core.delegate_
 
         private /*native*/ byte[] cookResponse(byte[] var1, byte[] var2, string var3, string var4, bool var5)
         {
-            TodoLogger.Log(0, "cookResponse "+BitConverter.ToString(var1)+" "+BitConverter.ToString(var2)+" "+var3+" "+var4+" "+var5);
+            TodoLogger.LogError(0, "cookResponse "+BitConverter.ToString(var1)+" "+BitConverter.ToString(var2)+" "+var3+" "+var4+" "+var5);
             return null;
         }
 
@@ -41,7 +41,7 @@ namespace ExternLib.Java_Sakasho.jp.dena.sakasho.core.delegate_
 
         public override void b(int n, bv[] array, byte[] o)
         {
-            TodoLogger.Log(0, "TODO");
+            TodoLogger.LogError(0, "TODO");
             /*string s3;
             string s4;
 

@@ -7,17 +7,17 @@ public class IHGBPAJMJFK_Emblem : DIHHCBACKGG_DbSection
 {
 	public class AKJPPHFGEFG_EmblemInfo
 	{
-		public int EHOIENNDEDH_Id; // 0x8
-		public int MJMPPEKDALP_Pic; // 0xC
-		public int HNJHPNPFAAN_En; // 0x10
-		public int JDIJODDBCPK_Odr; // 0x14
-		public int EAJCFBCHIFB_Rar; // 0x18
+		public int EHOIENNDEDH_IdCrypted; // 0x8
+		public int MJMPPEKDALP_PicCrypted; // 0xC
+		public int HNJHPNPFAAN_EnCrypted; // 0x10
+		public int JDIJODDBCPK_OdrCrypted; // 0x14
+		public int EAJCFBCHIFB_RarCrypted; // 0x18
 
-		public int PPFNGGCBJKC_Id { get { return EHOIENNDEDH_Id ^ FBGGEFFJJHB; } set { EHOIENNDEDH_Id = value ^ FBGGEFFJJHB; } } //0x11FB578 DEMEPMAEJOO 0x11FA794 HIGKAIDMOKN
-		public int HANMDEBPBHG_Pic { get { return MJMPPEKDALP_Pic ^ FBGGEFFJJHB; } set { MJMPPEKDALP_Pic = value ^ FBGGEFFJJHB; } } //0x11FB474 EFGGIMOPNMG 0x11FAFD8 PNGGKPFDKMA
-		public int PLALNIIBLOF_En { get { return HNJHPNPFAAN_En ^ FBGGEFFJJHB; } set { HNJHPNPFAAN_En = value ^ FBGGEFFJJHB; } } //0x11FB610 JPCJNLHHIPE 0x11FB074 JJFJNEJLBDG
-		public int FPOMEEJFBIG_Odr { get { return JDIJODDBCPK_Odr ^ FBGGEFFJJHB; } set { JDIJODDBCPK_Odr = value ^ FBGGEFFJJHB; } } //0x11FB6A8 OEEBAHNAPEC 0x11FB110 BEHAPLPPLNE
-		public int EKLIPGELKCL_Rar { get { return EAJCFBCHIFB_Rar ^ FBGGEFFJJHB; } set { EAJCFBCHIFB_Rar = value ^ FBGGEFFJJHB; } } //0x11FB740 OEEHBGECGKL 0x11FB1AC GHLMHLJJBIG
+		public int PPFNGGCBJKC_Id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB; } } //0x11FB578 DEMEPMAEJOO 0x11FA794 HIGKAIDMOKN
+		public int HANMDEBPBHG_Pic { get { return MJMPPEKDALP_PicCrypted ^ FBGGEFFJJHB; } set { MJMPPEKDALP_PicCrypted = value ^ FBGGEFFJJHB; } } //0x11FB474 EFGGIMOPNMG 0x11FAFD8 PNGGKPFDKMA
+		public int PLALNIIBLOF_En { get { return HNJHPNPFAAN_EnCrypted ^ FBGGEFFJJHB; } set { HNJHPNPFAAN_EnCrypted = value ^ FBGGEFFJJHB; } } //0x11FB610 JPCJNLHHIPE 0x11FB074 JJFJNEJLBDG
+		public int FPOMEEJFBIG_Odr { get { return JDIJODDBCPK_OdrCrypted ^ FBGGEFFJJHB; } set { JDIJODDBCPK_OdrCrypted = value ^ FBGGEFFJJHB; } } //0x11FB6A8 OEEBAHNAPEC 0x11FB110 BEHAPLPPLNE
+		public int EKLIPGELKCL_Rar { get { return EAJCFBCHIFB_RarCrypted ^ FBGGEFFJJHB; } set { EAJCFBCHIFB_RarCrypted = value ^ FBGGEFFJJHB; } } //0x11FB740 OEEHBGECGKL 0x11FB1AC GHLMHLJJBIG
 
 		// RVA: 0x11FB7D8 Offset: 0x11FB7D8 VA: 0x11FB7D8
 		//public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG) { }
@@ -61,7 +61,7 @@ public class IHGBPAJMJFK_Emblem : DIHHCBACKGG_DbSection
 	// RVA: 0x11FABC0 Offset: 0x11FABC0 VA: 0x11FABC0 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(100, "Emblem IIEMACPEEBJ");
+		TodoLogger.LogError(100, "Emblem IIEMACPEEBJ");
 		return false;
 	}
 
@@ -88,7 +88,7 @@ public class IHGBPAJMJFK_Emblem : DIHHCBACKGG_DbSection
 	// RVA: 0x11FB248 Offset: 0x11FB248 VA: 0x11FB248 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(100, "Emblem CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "IHGBPAJMJFK_Emblem.CAOGDCBPBAN");
 		return 0;
 	}
 

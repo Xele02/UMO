@@ -7,7 +7,7 @@ namespace XeApp.Game.RhythmGame
 		public bool isCooltime;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

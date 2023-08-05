@@ -65,7 +65,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1C09FA0 Offset: 0x1C09FA0 VA: 0x1C09FA0
-		// public void RequestChangeCueSheetForLiveStartMulti(int cuesheet_id, UnityAction onChangeCallback) { }
+		public void RequestChangeCueSheetForLiveStartMulti(int cuesheet_id, UnityAction onChangeCallback)
+		{
+			RequestChangeCueSheet(string.Format("cs_livestart_multi_{0:D3}", cuesheet_id), onChangeCallback);
+		}
 
 		// // RVA: 0x1C0A048 Offset: 0x1C0A048 VA: 0x1C0A048
 		public static string MakeCueName(DivaVoicePlayer.VoiceCategory categoryType, int voiceId)
@@ -95,6 +98,9 @@ namespace XeApp.Game.Common
 		// public void Play(int cueId) { }
 
 		// // RVA: 0x1C0A290 Offset: 0x1C0A290 VA: 0x1C0A290
-		// public void Stop() { }
+		public void Stop()
+		{
+			StopCue();
+		}
 	}
 }

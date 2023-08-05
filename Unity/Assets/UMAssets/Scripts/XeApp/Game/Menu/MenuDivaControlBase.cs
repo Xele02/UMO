@@ -25,12 +25,18 @@ namespace XeApp.Game.Menu
 		protected Coroutine StartCoroutine(IEnumerator routine)
 		{
 			if (DivaManager != null)
-				return DivaManager.StartCoroutine(routine);
+				return DivaManager.StartCoroutineWatched(routine);
 			return null;
 		}
 
 		//// RVA: 0xEC85B0 Offset: 0xEC85B0 VA: 0xEC85B0
-		//protected void StopCoroutine(Coroutine routine) { }
+		protected void StopCoroutine(Coroutine routine)
+		{
+			if(DivaManager != null)
+			{
+				DivaManager.StopCoroutineWatched(routine);
+			}
+		}
 
 		//// RVA: 0xEC866C Offset: 0xEC866C VA: 0xEC866C Slot: 4
 		public void BeginControl(MenuDivaManager divaManager, MenuDivaObject divaObject)

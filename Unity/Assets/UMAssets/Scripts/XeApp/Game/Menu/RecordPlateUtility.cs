@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
 {
@@ -70,7 +71,26 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xCF8370 Offset: 0xCF8370 VA: 0xCF8370
-		//public static bool CheckPlateId(List<MOLKENLNCPE.CEFIOPJKEIC> itemList) { }
+		public static bool CheckPlateId(List<MOLKENLNCPE_DropData.CEFIOPJKEIC> itemList)
+		{
+			bool res = false;
+			for(int i = 0; i < itemList.Count; i++)
+			{
+				if(itemList[i].HHACNFODNEF_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+				{
+					int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemList[i].KIJAPOFAGPN_ItemId);
+					if(itemId > 0)
+					{
+						if(!m_showedIdList.Contains(itemId))
+						{
+							RegisterPlateIdInner(itemList[i].KIJAPOFAGPN_ItemId);
+							res = true;
+						}
+					}
+				}
+			}
+			return res;
+		}
 
 		//// RVA: 0xCF860C Offset: 0xCF860C VA: 0xCF860C
 		//public static void CheckPlateId(JJPEIELNEJB.JLHHGLANHGE item) { }
@@ -97,11 +117,68 @@ namespace XeApp.Game.Menu
 		public static GONMPHKGKHI_RewardView ViewInitialize(eSceneType sceneType, bool allReceive)
 		{
 			GONMPHKGKHI_RewardView reward = new GONMPHKGKHI_RewardView();
-			TodoLogger.Log(0, "ViewInitialize");
+			JKNGJFOBADP util = inventoryUtil;
+			inventoryUtil = null;
+			if(util == null)
+			{
+				switch(sceneType)
+				{
+					case eSceneType.Result:
+						util = JGEOBNENMAH.HHCJCDFCLOB.KDKHGAPKBNI;
+						break;
+					case eSceneType.PresentBox:
+					case eSceneType.Gacha:
+					case eSceneType.Offer:
+					case eSceneType.Bingo:
+						util = CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL;
+						break;
+					case eSceneType.Quest:
+						util = CIOECGOMILE.HHCJCDFCLOB.EBEGGFECPOE;
+						break;
+					case eSceneType.EventResult:
+						IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI/*6*/, false);
+						if (ev == null)
+							return null;
+						util = ev.JANMJPOKLFL;
+						break;
+					default:
+						return null;
+				}
+				if(util == null)
+					return null;
+			}
+			SceneCardCount = util.FIGHNFKAMGI.Count;
+			reward.KHEKNNFCAOI(util, allReceive);
+			if(sceneType == eSceneType.Result)
+			{
+				for(int i = 0; i < m_plateIds.Count; i++)
+				{
+					if(!m_showedIdList.Contains(m_plateIds[i].id))
+					{
+						m_showedIdList.Add(m_plateIds[i].id);
+					}
+				}
+			}
+			else if(sceneType == eSceneType.Bingo || sceneType == eSceneType.Offer)
+			{
+				for (int i = 0; i < m_plateIds.Count; i++)
+				{
+					if (!m_showedIdList.Contains(m_plateIds[i].id))
+					{
+						m_showedIdList.Add(m_plateIds[i].id);
+					}
+				}
+			}
 			return reward;
 		}
 
 		//// RVA: 0xCF9300 Offset: 0xCF9300 VA: 0xCF9300
-		//public static string GetPlateName(int cardId, GONMPHKGKHI.CECMLGBLHHG showType, bool isMulti = False) { }
+		public static string GetPlateName(int cardId, GONMPHKGKHI_RewardView.CECMLGBLHHG showType, bool isMulti = false)
+		{
+			int a = (int)showType - 3;
+			if (showType != GONMPHKGKHI_RewardView.CECMLGBLHHG.GBIDBHKEPGL/*1*/)
+				showType = GONMPHKGKHI_RewardView.CECMLGBLHHG.HJNNKCMLGFL/*0*/;
+			return GameMessageManager.GetSceneCardName(cardId, ((int)showType | (a < 2 ? 1 : 0)) & (isMulti ? 1 : 0), "");
+		}
 	}
 }

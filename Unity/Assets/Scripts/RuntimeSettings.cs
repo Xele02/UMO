@@ -6,6 +6,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "RuntimeSettings", menuName = "ScriptableObjects/RuntimeSettings", order = 1)]
 class RuntimeSettings : ScriptableObject
 {
+	[MenuItem("UMO/Options", priority=2)]
+	static void ShowOption()
+	{
+		PopUpAssetInspector.Create(CurrentSettings);
+	}
+
 	private static RuntimeSettings m_currentSettings;
 	public static RuntimeSettings CurrentSettings
 	{
@@ -67,22 +73,25 @@ class RuntimeSettings : ScriptableObject
 	}
 
 	[Header("Profile")]
-	public bool ForceDivaUnlock = true;
-	public bool ForceCostumeUnlock = true;
-	public bool ForceSongUnlock = true;
-	public bool ForceCardsUnlock = true;
-	public bool ForceValkyrieUnlock = true;
-	public bool ForceSimulationOpen = true;
+	//public bool ForceDivaUnlock = true;
+	//public bool ForceCostumeUnlock = true;
+	//public bool ForceSongUnlock = true;
+	//public bool ForceCardsUnlock = true;
+	//public bool ForceValkyrieUnlock = true;
+	//public bool ForceSimulationOpen = true;
 	public bool ForceTutoSkip = true;
-	public int ForcePlayerLevel = 90;
-	public bool IsInvincibleCheat = true;
+	//public bool ForceAllStoryMusicUnlock = true;
+	//public int ForcePlayerLevel = 90;
+	public bool CanSkipUnplayedSongs = false;
 
 	[Header("Live")]
-	public bool ForceLiveValkyrieMode = true;
+	public bool IsInvincibleCheat = false;
+	public bool ForcePerfectNote = false;
+	public bool ForceLiveValkyrieMode = false;
 	public bool ForceLiveDivaMode = false;
-	public bool ForceLiveAwakenDivaMode = true;
+	public bool ForceLiveAwakenDivaMode = false;
 
-	public bool AddBigScore = false;
+	//public bool AddBigScore = false;
 
 	public KeyCode Lane1Touch = KeyCode.S;
 	public KeyCode Lane2Touch = KeyCode.D;
@@ -93,9 +102,10 @@ class RuntimeSettings : ScriptableObject
 	public KeyCode ActiveSkillTouch = KeyCode.Space;
 
 	[Header("S-Live")]
-	public bool ForceCutin = true;
+	//public bool ForceCutin = true;
 	public bool DisableNoteSound = false;
 	public bool DisableWatermark = false;
+	public bool DisableMovies = false;
 
 	[Header("Local directory where the android directory with asset bundle is. Accept crypted and decrypted bundle.")]
 	public string DataDirectory;
@@ -108,9 +118,41 @@ class RuntimeSettings : ScriptableObject
 	public bool SLiveViewerRequest { get; set; }
 	public bool SLiveViewer { get; set; }
 
-	public bool DisableMovies = false;
-
 	[Header("Debug")]
 
-	public int MinLog = -9999;
+	public int MinLogError = 1;
+	public int MinLogWarning = 1;
+	public int MinLogInfo = 1;
+	public bool EnableProfileSaveCheck = false;
+	public bool EnableLocalSaveCheck = false;
+	public bool EnableDebugStopCoroutine = false;
+}
+
+public class PopUpAssetInspector : EditorWindow
+{
+	private Object asset;
+	private Editor assetEditor;
+
+	public static PopUpAssetInspector Create(Object asset)
+	{
+		var window = GetWindow<PopUpAssetInspector>(typeof(PopUpAssetInspector));
+		window.asset = asset;
+		window.assetEditor = Editor.CreateEditor(asset);
+		return window;
+	}
+
+	Vector2 scrollPos = Vector2.zero;
+
+	private void OnGUI()
+	{
+		GUI.enabled = false;
+		asset = EditorGUILayout.ObjectField("Asset", asset, asset.GetType(), false);
+		GUI.enabled = true;
+
+		EditorGUILayout.BeginVertical(EditorStyles.helpBox);
+		scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
+		assetEditor.OnInspectorGUI();
+		EditorGUILayout.EndScrollView();
+		EditorGUILayout.EndVertical();
+	}
 }

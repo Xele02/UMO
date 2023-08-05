@@ -30,27 +30,27 @@ namespace SecureLib
         // // RVA: 0x2E71EF4 Offset: 0x2E71EF4 VA: 0x2E71EF4
         static SecureLibAPI()
 		{
-            TodoLogger.Log(5, "SecureLibAPI");
+            TodoLogger.LogError(TodoLogger.SecureLibAPI, "SecureLibAPI.SecureLibAPI");
 		}
 
         // // RVA: 0x2E71EF8 Offset: 0x2E71EF8 VA: 0x2E71EF8
         public static bool isRooted()
         {
-            TodoLogger.Log(5, "isRooted");
+            TodoLogger.LogError(TodoLogger.SecureLibAPI, "SecureLibAPI.isRooted");
             return false;
         }
 
         // // RVA: 0x2E71F70 Offset: 0x2E71F70 VA: 0x2E71F70
         public static bool isDebuggerAttachedJava()
         {
-            TodoLogger.Log(5, "isDebuggerAttachedJava");
+            TodoLogger.LogError(TodoLogger.SecureLibAPI, "SecureLibAPI.isDebuggerAttachedJava");
             return false;
         }
 
         // // RVA: 0x2E71FE8 Offset: 0x2E71FE8 VA: 0x2E71FE8
         public static bool isDebuggerAttachedNative()
         {
-            TodoLogger.Log(5, "isDebuggerAttachedNative");
+            TodoLogger.LogError(TodoLogger.SecureLibAPI, "SecureLibAPI.isDebuggerAttachedNative");
             return false;
         }
 
@@ -63,7 +63,7 @@ namespace SecureLib
         // // RVA: 0x2E71FF4 Offset: 0x2E71FF4 VA: 0x2E71FF4
         public static bool isEmulator()
         {
-            TodoLogger.Log(5, "isEmulator");
+            TodoLogger.LogError(TodoLogger.SecureLibAPI, "SecureLibAPI.isEmulator");
             return false;
         }
 
@@ -77,9 +77,16 @@ namespace SecureLib
         // public static string getCodeDigest() { }
 
         // // RVA: 0x2E721D4 Offset: 0x2E721D4 VA: 0x2E721D4
-        // public static bool checkCodeDigest(string whiteList) { }
+        public static bool checkCodeDigest(string whiteList)
+		{
+			TodoLogger.LogError(TodoLogger.SecureLibAPI, "SecureLibAPI.checkCodeDigest");
+			return false;
+		}
 
         // // RVA: 0x2E72254 Offset: 0x2E72254 VA: 0x2E72254
-        // public static bool isHooked() { }
+        public static bool isHooked()
+		{
+			return false;
+		}
     }
 }

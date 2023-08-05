@@ -13,7 +13,7 @@ namespace XeApp.Game.Gacha
 		private Button m_allSkipButton;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

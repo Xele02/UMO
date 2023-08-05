@@ -25,6 +25,7 @@ public class HMHBDNGJIGL : LBHFILLFAGA
 	public HMHBDNGJIGL(string CJEKGLGBIHF_path, string BOPDLODALFD_withoutPlarformPath, FileLoadedPostProcess OGLMMENAJFL_onSuccess, FileLoadedPostProcess GOIHDOPGPCE_onFail, Dictionary<string, string> JBKMAPLCBMO_arg, int HNKPENAFDKA_argValue, FileLoadInfo LAMFBMFNOFP_fi, bool ALJGNAPELAH)
 		: base(CJEKGLGBIHF_path,BOPDLODALFD_withoutPlarformPath,OGLMMENAJFL_onSuccess,GOIHDOPGPCE_onFail,JBKMAPLCBMO_arg,HNKPENAFDKA_argValue,LAMFBMFNOFP_fi)
     {
+		return;
     }
 
 	// // RVA: 0x15F4EB4 Offset: 0x15F4EB4 VA: 0x15F4EB4 Slot: 4
@@ -101,7 +102,7 @@ public class HMHBDNGJIGL : LBHFILLFAGA
 	// // RVA: 0x15F521C Offset: 0x15F521C VA: 0x15F521C
 	private static bool KGDPFAPANIH(byte[] GKBDHBJDGAH)
 	{
-        TodoLogger.Log(0, "static HMHBDNGJIGL");
+        TodoLogger.LogError(0, "static HMHBDNGJIGL");
 		if(GKBDHBJDGAH.Length > 20)
 		{
 			for(int i = 0; i < 7; i++)
@@ -119,14 +120,14 @@ public class HMHBDNGJIGL : LBHFILLFAGA
 	// // RVA: 0x15F5344 Offset: 0x15F5344 VA: 0x15F5344
 	private static BIIAHJNILEE BNPBLFMLECC(byte[] GKBDHBJDGAH)
 	{
-		Debug.LogError("TODO");
+		TodoLogger.LogError(0, "BNPBLFMLECC");
 		return new BIIAHJNILEE(0, 0);
 	}
 
 	// // RVA: 0x15F542C Offset: 0x15F542C VA: 0x15F542C
 	private static BIIAHJNILEE BAGLLAKJMPO(byte[] FLOEPENHMCO)
 	{
-		Debug.LogError("TODO");
+		TodoLogger.LogError(0, "BAGLLAKJMPO");
 		return new BIIAHJNILEE(0, 0);
 	}
 }

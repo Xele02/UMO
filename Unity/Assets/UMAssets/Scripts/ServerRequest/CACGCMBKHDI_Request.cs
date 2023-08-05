@@ -37,7 +37,7 @@ public abstract class CACGCMBKHDI_Request
     public WorkerThreadQueue BNJPAKLNOPA_WorkerThreadQueue { get; set; } // 0x24 EGCCKJEDANG IMDNDFIKMHN ODBGIMFJOHN
     public SakashoError ANMFDAGDMDE { get; set; } // 0x2C GHCMEMELCJF ILGAFKNEAJI DPCCCKAKHDB
     public SakashoErrorId CJMFJOMECKI_ErrorId { get; set; } // 0x30 BCCAMPBOJHK LBJPGPOJOKP GPEILELFPCD
-    public bool NPNNPNAIONN { get; set; } // 0x34 GMEODAHJILH IAGEPLEBOKJ DDHAFEDMPEH
+    public bool NPNNPNAIONN_IsError { get; set; } // 0x34 GMEODAHJILH IAGEPLEBOKJ DDHAFEDMPEH
     public bool JONHGMCILHM { get; set; } // 0x35 CEMOPAGHPJM JPIBKPPPIDG BMAPGPMEFKC
     public bool LEBKCAEHLPC { get; set; } // 0x36 DMGEAJAAHAO FHBJIBDPBLI ODMPKGGKPAN
     public bool PDAPLCPOCMA { get; set; } // 0x37 MIEDINFMHKL EBANJNNPMCM GNKHADMLLGA
@@ -53,10 +53,10 @@ public abstract class CACGCMBKHDI_Request
     public double DMOBOIOFPCM { get; set; } // 0x60 GJKEKJMCFLB IBBPAJGOFFA FNIKLDHAPEG
     public double LHGPAJGIAME { get; set; }  // 0x68 FOFFKBHGEPC OJCLNCIEHLL BPAIAMDPKBJ
     // public double MOCNPGKAPKE { get; } // FLDLAOCPFCP 0x18F23E0
-    // public virtual bool OIDCBBGLPHL { get; } // GINMIBJOABO 0x18F256C
+    public virtual bool OIDCBBGLPHL { get { return false; } } // GINMIBJOABO 0x18F256C
     public virtual bool ICFMKEFJOIE { get { return false; } } // HOPDAAAEBBG 0x18F2574 
-    // public virtual bool BNCFONNOHFO { get; } // NPLNAJFJPEE 0x18F257C
-    public bool PLOOEECNHFB { get { return NAEDHHPPFCK_IsDone; } set { NAEDHHPPFCK_IsDone = value; } } // JFOKBBLFMLD 0x18F2584 EDBGNGILAKA 0x18F258C
+    public virtual bool BNCFONNOHFO { get { return false; } } // NPLNAJFJPEE 0x18F257C
+    public bool PLOOEECNHFB_IsDone { get { return NAEDHHPPFCK_IsDone; } set { NAEDHHPPFCK_IsDone = value; } } // JFOKBBLFMLD 0x18F2584 EDBGNGILAKA 0x18F258C
     public SakashoAPICallContext EBGACDGNCAA_CallContext { get; set; }  // 0x78 NKPCDAJOMEO EEMOCCMAONH IGIDINIFHDJ
     public virtual bool EBPLLJGPFDA_HasResult { get { return true; } } // HGPAELCGELL 0x18F2BD8
 
@@ -66,13 +66,13 @@ public abstract class CACGCMBKHDI_Request
     // // RVA: 0x18F240C Offset: 0x18F240C VA: 0x18F240C
     public void BOPHNJFGJBN()
     {
-        TodoLogger.Log(0, "TODO");
+        TodoLogger.LogError(0, "TODO");
     }
 
     // // RVA: 0x18F24BC Offset: 0x18F24BC VA: 0x18F24BC
     public void EHLFONGENNK()
     {
-        TodoLogger.Log(0, "TODO");
+        TodoLogger.LogError(0, "TODO");
     }
 
     // // RVA: 0x18F25A4 Offset: 0x18F25A4 VA: 0x18F25A4
@@ -100,14 +100,30 @@ public abstract class CACGCMBKHDI_Request
     // // RVA: 0x18F2738 Offset: 0x18F2738 VA: 0x18F2738 Slot: 12
     public virtual void DHLDNIEELHO()
     {
-        TodoLogger.Log(0, "TODO");
+        TodoLogger.LogError(0, "TODO");
     }
 
     // // RVA: 0x18F273C Offset: 0x18F273C VA: 0x18F273C
     public void MEOCKCJBDAD(SakashoError DOGDHKIEBJA)
     {
-        TodoLogger.Log(0, "TODO");
-    }
+		EFGFPCBGDDK = true;
+		ANMFDAGDMDE = DOGDHKIEBJA;
+		if(DOGDHKIEBJA.ErrorDetailJSON != null)
+		{
+			if(DOGDHKIEBJA.getErrorId() == SakashoErrorId.OLDER_REQUIREMENT_CLIENT_VERSION)
+			{
+				TodoLogger.LogError(0, "Error OLDER_REQUIREMENT_CLIENT_VERSION");
+			}
+			else if(DOGDHKIEBJA.getErrorId() == SakashoErrorId.SIGN_IN_WITH_APPLE_UNAVAILABLE)
+			{
+				TodoLogger.LogError(0, "Error SIGN_IN_WITH_APPLE_UNAVAILABLE");
+			}
+			else if (DOGDHKIEBJA.getErrorId() == SakashoErrorId.APPLICATION_UNDER_MAINTENANCE)
+			{
+				TodoLogger.LogError(0, "Error APPLICATION_UNDER_MAINTENANCE");
+			}
+		}
+	}
 
     // // RVA: 0x18F2B34 Offset: 0x18F2B34 VA: 0x18F2B34
     public void DCKLDDCAJAP(string IDLHJIOMJBK_result)
@@ -133,20 +149,18 @@ public abstract class CACGCMBKHDI_Request
     // // RVA: 0x18F2BE4 Offset: 0x18F2BE4 VA: 0x18F2BE4
     public YieldInstruction GDPDELLNOBO_WaitDone(MonoBehaviour DANMJLOBLIE)
     {
-        return DANMJLOBLIE.StartCoroutine(HOHLIBIOPOM_CheckDone());
+        return DANMJLOBLIE.StartCoroutineWatched(HOHLIBIOPOM_CheckDone());
     }
 
     // [IteratorStateMachineAttribute] // RVA: 0x6C3DB0 Offset: 0x6C3DB0 VA: 0x6C3DB0
     // // RVA: 0x18F2C1C Offset: 0x18F2C1C VA: 0x18F2C1C
     private IEnumerator HOHLIBIOPOM_CheckDone()
     {
-        UnityEngine.Debug.Log("Enter HOHLIBIOPOM_CheckDone");
         //0x18F2D34
         while(!NAEDHHPPFCK_IsDone)
         {
             yield return null;
         }
-        UnityEngine.Debug.Log("Exit HOHLIBIOPOM_CheckDone");
     }
 
     // // RVA: 0x18F2CC8 Offset: 0x18F2CC8 VA: 0x18F2CC8 Slot: 16

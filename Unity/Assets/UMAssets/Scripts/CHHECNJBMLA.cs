@@ -1,24 +1,26 @@
 
+using System.Text;
+
 [System.Obsolete("Use CHHECNJBMLA_EventBoxGacha", true)]
 public class CHHECNJBMLA { }
 public class CHHECNJBMLA_EventBoxGacha : IKDICBBFBMI_EventBase
 {
-	// private const int GHJHJDIDCFA = 3;
+	private const int GHJHJDIDCFA = 3;
 	// private EECOJKDJIFG KBACNOCOANM; // 0xE8
 	// public List<KDLFECOOANO> HNDKCBHOJEH = new List<KDLFECOOANO>(50); // 0xEC
-	// public bool EGOJLOEFMOH; // 0xF0
-	// public int BCBCODAKIDN; // 0xF4
-	// public bool KDDBNAIJKAD; // 0xF8
-	// public bool KIBBLLADDPO; // 0xF9
-	// public bool AAODGCEBJCG; // 0xFA
+	public bool EGOJLOEFMOH; // 0xF0
+	public int BCBCODAKIDN; // 0xF4
+	public bool KDDBNAIJKAD; // 0xF8
+	public bool KIBBLLADDPO; // 0xF9
+	public bool AAODGCEBJCG; // 0xFA
 	// public List<CHHECNJBMLA.MDBEKHIHBJM> JMLKAGOACAE = new List<CHHECNJBMLA.MDBEKHIHBJM>(); // 0xFC
 	// public List<CHHECNJBMLA.MDBEKHIHBJM> CKFCGDIJKKC = new List<CHHECNJBMLA.MDBEKHIHBJM>(); // 0x100
 	// public List<CHHECNJBMLA.FMAHFJGBHMG> PNLJHCDHKCP = new List<CHHECNJBMLA.FMAHFJGBHMG>(); // 0x104
 	// public JKNGJFOBADP JANMJPOKLFL = new JKNGJFOBADP(); // 0x108
-	// private uint PMBEODGMMBB = 0x15ab17a1; // 0x10C
-	// private StringBuilder OGNKHBFKHIP; // 0x110
+	private uint PMBEODGMMBB = 0x15ab17a1; // 0x10C
+	private StringBuilder OGNKHBFKHIP; // 0x110
 
-	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.OCCGDMDBCHK; } } //0x12BF064 DKHCGLCNKCD  Slot: 4
+	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.OCCGDMDBCHK_EventGacha; } } //0x12BF064 DKHCGLCNKCD  Slot: 4
 
 	// // RVA: 0x12BF06C Offset: 0x12BF06C VA: 0x12BF06C Slot: 32
 	// public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO = 0) { }
@@ -42,10 +44,22 @@ public class CHHECNJBMLA_EventBoxGacha : IKDICBBFBMI_EventBase
 	// public override void MJFKJHJJLMN(int LHJCOPMMIGO = 0, bool FBBNPFFEJBN = False) { }
 
 	// // RVA: 0x12BF544 Offset: 0x12BF544 VA: 0x12BF544 Slot: 30
-	// protected override bool JIHMLILFOPG(long JHNMKKNEENE) { }
+	protected override bool JIHMLILFOPG(long JHNMKKNEENE)
+	{
+		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI);
+		if(db != null)
+		{
+			TodoLogger.LogError(0, "CHHECNJBMLA_EventBoxGacha.JIHMLILFOPG");
+		}
+		return false;
+	}
 
 	// // RVA: 0x12BF8A8 Offset: 0x12BF8A8 VA: 0x12BF8A8 Slot: 31
-	// protected override bool IMCMNOPNGHO(long JHNMKKNEENE) { }
+	protected override bool IMCMNOPNGHO(long JHNMKKNEENE)
+	{
+		TodoLogger.LogError(0, "CHHECNJBMLA_EventBoxGacha.IMCMNOPNGHO");
+		return false;
+	}
 
 	// // RVA: 0x12C01A0 Offset: 0x12C01A0 VA: 0x12C01A0 Slot: 40
 	// protected override void KKFLDCBHFJA(long JHNMKKNEENE) { }
@@ -56,7 +70,7 @@ public class CHHECNJBMLA_EventBoxGacha : IKDICBBFBMI_EventBase
 	// // RVA: 0x12C0F84 Offset: 0x12C0F84 VA: 0x12C0F84 Slot: 46
 	protected override void PJDGDNJNCNM(long JHNMKKNEENE)
 	{
-		TodoLogger.Log(0, "PJDGDNJNCNM");
+		TodoLogger.LogError(0, "PJDGDNJNCNM");
 	}
 
 	// // RVA: 0x12C13E4 Offset: 0x12C13E4 VA: 0x12C13E4 Slot: 47

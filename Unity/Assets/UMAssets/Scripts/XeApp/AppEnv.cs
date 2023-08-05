@@ -94,9 +94,9 @@ namespace XeApp
         // public static string GetActionRootUrl() { }
 
         // // RVA: 0xE0C898 Offset: 0xE0C898 VA: 0xE0C898
-        public static AppEnv.SakashoConnectTargetType GetSakashoConnectTarget()
+        public static SakashoConnectTargetType GetSakashoConnectTarget()
         {
-            return AppEnv.SakashoConnectTargetType.release;
+            return SakashoConnectTargetType.release;
         }
 
         // // RVA: 0xE0C8A0 Offset: 0xE0C8A0 VA: 0xE0C8A0
@@ -105,7 +105,6 @@ namespace XeApp
         // // RVA: 0xE0C8A8 Offset: 0xE0C8A8 VA: 0xE0C8A8
         public static bool IsCBT()
 		{
-			TodoLogger.Log(5, "IsCBT");
 			return false;
 		}
 

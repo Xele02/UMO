@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.Events;
 using CriWare;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 
 namespace XeApp.Game.Common
 {
@@ -47,6 +48,17 @@ namespace XeApp.Game.Common
 		public CriAtomSource sePlayerRaid { get; private set; } // 0x5C
 		public CriAtomSource sePlayerRaidLoop { get; private set; } // 0x60
 		public CriAtomSource sePlayerMiniGame { get; private set; } // 0x64
+
+		// UMO
+		public AudioMixer mixer;
+		public AudioMixerGroup mixerMenuSe;
+		public AudioMixerGroup mixerMenuVoice;
+		public AudioMixerGroup mixerMenuBgm;
+		public AudioMixerGroup mixerGameSe;
+		public AudioMixerGroup mixerGameVoice;
+		public AudioMixerGroup mixerGameBgm;
+		public AudioMixerGroup mixerGameNotes;
+
 		public bool isInitialized { get; private set; } // 0x68
 		// public bool isEestimatorInitialized { get; private set; } 0x13959DC 0x13959F0
 		public int estimatedLatencyMillisec { get { return estimatorInfo.status == CriAtomExLatencyEstimator.Status.Done ? (int)estimatorInfo.estimated_latency : 0; } private set { return; } } //0x13959F4 0x1395A0C
@@ -56,7 +68,7 @@ namespace XeApp.Game.Common
 		{
 			Instance = this;
 			isInitialized = false;
-			StartCoroutine(SurveyLatencyEstimator());
+			this.StartCoroutineWatched(SurveyLatencyEstimator());
 
 			// Added, force an audio listener on this gameObject so sound work always
 			gameObject.AddComponent<AudioListener>();
@@ -66,7 +78,6 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1395A94 Offset: 0x1395A94 VA: 0x1395A94
 		private IEnumerator SurveyLatencyEstimator()
 		{
-    		UnityEngine.Debug.Log("Enter SurveyLatencyEstimator");
 			//0x1397B84
 			CriAtomExLatencyEstimator.InitializeModule();
 			do
@@ -79,7 +90,6 @@ namespace XeApp.Game.Common
 
 			CriAtomExLatencyEstimator.FinalizeModule();
 
-			UnityEngine.Debug.Log("Exit SurveyLatencyEstimator");
 			yield break;
 		}
 
@@ -140,6 +150,31 @@ namespace XeApp.Game.Common
 			sePlayerMiniGame = gameObject.AddComponent<CriAtomSource>();
 			sePlayerMiniGame.cueSheet = "cs_se_minigame";
 			sePlayerMiniGame.androidUseLowLatencyVoicePool = true;
+			#if !UNITY_ANDROID
+			sePlayerBoot.unityAudioSource.outputAudioMixerGroup = mixerMenuSe;
+			sePlayerMenu.unityAudioSource.outputAudioMixerGroup = mixerMenuSe;
+			sePlayerGacha.unityAudioSource.outputAudioMixerGroup = mixerMenuSe;
+			sePlayerGame.unityAudioSource.outputAudioMixerGroup = mixerGameSe;
+			sePlayerNotes.unityAudioSource.outputAudioMixerGroup = mixerGameNotes;
+			sePlayerLongNotes.unityAudioSource.outputAudioMixerGroup = mixerGameNotes;
+			sePlayerResult.unityAudioSource.outputAudioMixerGroup = mixerMenuSe;
+			sePlayerResultLoop.unityAudioSource.outputAudioMixerGroup = mixerMenuSe;
+			sePlayerAdv.unityAudioSource.outputAudioMixerGroup = mixerMenuSe;
+			sePlayerRaid.unityAudioSource.outputAudioMixerGroup = mixerMenuSe;
+			sePlayerRaidLoop.unityAudioSource.outputAudioMixerGroup = mixerMenuSe;
+			sePlayerMiniGame.unityAudioSource.outputAudioMixerGroup = mixerMenuSe;
+			bgmPlayer.source.unityAudioSource.outputAudioMixerGroup = mixerMenuBgm;
+			voDiva.source.unityAudioSource.outputAudioMixerGroup = mixerMenuVoice;
+			voDivaCos.source.unityAudioSource.outputAudioMixerGroup = mixerMenuVoice;
+			voOtherDiva.source.unityAudioSource.outputAudioMixerGroup = mixerMenuVoice;
+			voTitlecall.source.unityAudioSource.outputAudioMixerGroup = mixerMenuVoice;
+			voGreeting.source.unityAudioSource.outputAudioMixerGroup = mixerMenuVoice;
+			voPilot.source.unityAudioSource.outputAudioMixerGroup = mixerMenuVoice;
+			voSeasonEvent.source.unityAudioSource.outputAudioMixerGroup = mixerMenuVoice;
+			voAdv.source.unityAudioSource.outputAudioMixerGroup = mixerMenuVoice;
+			voARDiva.source.unityAudioSource.outputAudioMixerGroup = mixerMenuVoice;
+			sePlayerCheer.SetMixer(mixerMenuVoice);
+			#endif
 		}
 
 		// // RVA: 0x139654C Offset: 0x139654C VA: 0x139654C
@@ -156,7 +191,7 @@ namespace XeApp.Game.Common
 			{
 				strs.Add(string.Format("cs_se_notes_{0:000}", forceNoteSe));
 			}
-			StartCoroutine(Co_InstallProcess(strs.ToArray(), () =>
+			this.StartCoroutineWatched(Co_InstallProcess(strs.ToArray(), () =>
 			{
 				//0x139764C
 				if(forceNoteSe < 1)
@@ -178,8 +213,19 @@ namespace XeApp.Game.Common
 		// // RVA: 0x139697C Offset: 0x139697C VA: 0x139697C
 		public void RequestEntryMenuCueSheet(UnityAction onLoadedCallback)
 		{
-			TodoLogger.Log(0, "TODO");
-			onLoadedCallback();
+			RemoveSectionallySECueSheet();
+			bool skipRaidLobby = true;
+			if(!GameManager.Instance.IsTutorial)
+			{
+				if(IMMAOANGPNK.HHCJCDFCLOB != null && IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+				{
+					skipRaidLobby = !IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LGLJALBIIIB_IsRaidLobbyLoaded();
+				}
+			}
+			List<string> l = new List<string>() { "cs_se_menu", "cs_se_result" };
+			if (!skipRaidLobby)
+				l.Add("cs_se_raid");
+			this.StartCoroutineWatched(Co_InstallProcess(l.ToArray(), onLoadedCallback));
 		}
 
 		// // RVA: 0x1396BFC Offset: 0x1396BFC VA: 0x1396BFC
@@ -278,6 +324,7 @@ namespace XeApp.Game.Common
 					break;
 				default: break;
 			}
+			UpdateMixer();
 		}
 
 		// // RVA: 0x139729C Offset: 0x139729C VA: 0x139729C
@@ -316,5 +363,38 @@ namespace XeApp.Game.Common
 
 		// // RVA: 0x1394B14 Offset: 0x1394B14 VA: 0x1394B14
 		// public bool IsUingCueSheetByVoicePlayer(string cueSheetName) { }
+
+		private bool isInGame = false;
+		public void SetInGame(bool isInGame)
+		{
+			this.isInGame = isInGame;
+			UpdateMixer();
+		}
+
+		private float ConvertVolumeToAtenuation(float volume)
+		{
+			return (1 - Mathf.Sqrt(volume)) * -80f;
+		}
+
+		public void UpdateMixer()
+		{
+			if(isInGame)
+			{
+				mixer.SetFloat("volumeGameBgm", ConvertVolumeToAtenuation(GetCategoryVolume(CategoryId.GAME_BGM)));
+				mixer.SetFloat("volumeGameVoice", ConvertVolumeToAtenuation(GetCategoryVolume(CategoryId.GAME_VOICE)));
+				mixer.SetFloat("volumeMenuBgm", 0);
+				mixer.SetFloat("volumeMenuVoice", 0);
+			}
+			else
+			{
+				mixer.SetFloat("volumeGameBgm", 0);
+				mixer.SetFloat("volumeGameVoice", 0);
+				mixer.SetFloat("volumeMenuBgm", ConvertVolumeToAtenuation(GetCategoryVolume(CategoryId.MENU_BGM)));
+				mixer.SetFloat("volumeMenuVoice", ConvertVolumeToAtenuation(GetCategoryVolume(CategoryId.MENU_VOICE)));
+			}
+			mixer.SetFloat("volumeGameNotes", ConvertVolumeToAtenuation(GetCategoryVolume(CategoryId.GAME_NOTES)));
+			mixer.SetFloat("volumeMenuSe", ConvertVolumeToAtenuation(GetCategoryVolume(CategoryId.MENU_SE)));
+			mixer.SetFloat("volumeGameSe", ConvertVolumeToAtenuation(GetCategoryVolume(CategoryId.GAME_SE)));
+		}
 	}
 }

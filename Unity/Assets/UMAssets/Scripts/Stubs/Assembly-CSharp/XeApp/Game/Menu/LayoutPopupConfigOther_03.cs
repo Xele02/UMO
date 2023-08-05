@@ -4,7 +4,19 @@ namespace XeApp.Game.Menu
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.LogError(0, "Implement monobehaviour");
+		}
+
+		public override int GetContentsHeight()
+		{
+			TodoLogger.LogError(0, "Implement monobehaviour");
+			return 0;
+		}
+
+		public override bool IsShow()
+		{
+			TodoLogger.LogError(0, "Implement monobehaviour");
+			return false;
 		}
 	}
 }

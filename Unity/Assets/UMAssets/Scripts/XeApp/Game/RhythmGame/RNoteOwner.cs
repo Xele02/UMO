@@ -230,6 +230,17 @@ namespace XeApp.Game.RhythmGame
 					};
 				}
 			}
+			else if(RuntimeSettings.CurrentSettings.ForcePerfectNote)
+			{
+				for (int i = 0; i < objectPool.list.Count; i++)
+				{
+					objectPool.list[i].funcForceOverwriteNoteResult = () =>
+					{
+						//0xDBC5F8
+						return RhythmGameConsts.NoteResult.Perfect;
+					};
+				}
+			}
 			if(a_setting_skip)
 			{
 				SetEnableRenderer(false);
@@ -692,8 +703,10 @@ namespace XeApp.Game.RhythmGame
 						RhythmGameConsts.NoteResult res = activeLongList[i].lastRNoteObject.rNote.CalcEvaluation(evaluationOffsetMillisec[activeLongList[i].lastRNoteObject.rNote.noteInfo.trackID]);
 						if (res == RhythmGameConsts.NoteResult.Exempt)
 							res = RhythmGameConsts.NoteResult.Miss;
+						#if !UNITY_EDITOR // UMO : disable flick on long line
 						if(activeLongList[i].lastRNoteObject.rNote.noteInfo.flick != MusicScoreData.FlickType.None)
 							res = RhythmGameConsts.NoteResult.Miss;
+						#endif
 						if(forceMiss)
 							res = RhythmGameConsts.NoteResult.Miss;
 						activeLongList[i].lastRNoteObject.Judged(res, RhythmGameConsts.NoteJudgeType.Normal);
@@ -1102,6 +1115,15 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDBC280 Offset: 0xDBC280 VA: 0xDBC280
-		//public void UpdateObjectPool() { }
+		public void UpdateObjectPool()
+		{
+			for(int i = 0; i < objectPool.list.Count; i++)
+			{
+				if(objectPool.list[i].isActiveAndEnabled)
+				{
+					objectPool.list[i].Update();
+				}
+			}
+		}
 	}
 }

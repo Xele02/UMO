@@ -6,7 +6,7 @@ namespace XeApp.Game.Common.uGUI
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.LogError(0, "Implement monobehaviour");
 		}
 		public override void ModifyMesh(VertexHelper vh)
 		{

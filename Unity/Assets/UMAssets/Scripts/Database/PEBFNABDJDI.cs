@@ -90,13 +90,30 @@ public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xCC4880 Offset: 0xCC4880 VA: 0xCC4880
-	// public int NCEMAEDMJLO(long EOLFJGMAJAB) { }
+	public int NCEMAEDMJLO(long EOLFJGMAJAB)
+	{
+		if (BMAHEAMPCED_BeginnerGachaInfo.Count < 1)
+			return 1;
+		int res = 1;
+		for(int i = 0; i < BMAHEAMPCED_BeginnerGachaInfo.Count; i++)
+		{
+			if(EOLFJGMAJAB >= BMAHEAMPCED_BeginnerGachaInfo[i].KJLPILMAIKH_Date)
+			{
+				res = BMAHEAMPCED_BeginnerGachaInfo[i].CEMEIPNMAAD_Version;
+			}
+		}
+		return res;
+	}
 
 	// // RVA: 0xCC49B8 Offset: 0xCC49B8 VA: 0xCC49B8
 	// public bool JLAJNCMIIOK(int JIKLEHGJKBH, string OPFGFINHFCE) { }
 
 	// // RVA: 0xCC4B20 Offset: 0xCC4B20 VA: 0xCC4B20
-	// public int GAGDEIMGBBG(int JIKLEHGJKBH) { }
+	public int GAGDEIMGBBG(int JIKLEHGJKBH)
+	{
+		string[] strs = EFEGBHACJAL("default_3dmode_android", "1,1,0").Split(new char[] { ',' });
+		return int.Parse(strs[JIKLEHGJKBH]);
+	}
 
 	// // RVA: 0xCC4C4C Offset: 0xCC4C4C VA: 0xCC4C4C
 	public int DDGHBNLOBAJ_GetCueEncryptedKey(string OPFGFINHFCE)
@@ -313,7 +330,7 @@ public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 	// // RVA: 0xCC6E38 Offset: 0xCC6E38 VA: 0xCC6E38 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(100, "TODO");
+		TodoLogger.LogError(100, "TODO");
 		return true;
 	}
 
@@ -343,12 +360,16 @@ public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 	// // RVA: 0xCC7F98 Offset: 0xCC7F98 VA: 0xCC7F98 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(100, "CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "PEBFNABDJDI_System.CAOGDCBPBAN");
 		return 0;
 	}
 
 	// // RVA: 0xCC8338 Offset: 0xCC8338 VA: 0xCC8338
-	// public bool BLEDNLHJDEF() { }
+	public bool BLEDNLHJDEF_IsCannonEnabled()
+	{
+		int a = LPJLEHAJADA("cannon_enable_master_version", 1);
+		return a > 0 && a <= DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion;
+	}
 
 	// // RVA: 0xCC8404 Offset: 0xCC8404 VA: 0xCC8404
 	// public bool BEFGHIJNEBL() { }

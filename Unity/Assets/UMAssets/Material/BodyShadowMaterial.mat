@@ -3,12 +3,13 @@
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BodyShadowMaterial
   m_Shader: {fileID: 4800000, guid: c7126b3ee133b774691555f7880acf63, type: 3}
-  m_ShaderKeywords:
+  m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -26,6 +27,6 @@ Material:
         m_Texture: {fileID: 2800000, guid: 29ac0637f81a96647838d5112aaa4cb3, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats: {}
+    m_Floats: []
     m_Colors:
     - _MainColor: {r: 0, g: 0, b: 0, a: 0}

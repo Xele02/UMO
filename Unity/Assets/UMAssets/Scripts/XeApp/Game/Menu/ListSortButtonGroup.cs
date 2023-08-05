@@ -3,6 +3,7 @@ using XeApp.Game.Common;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections.Generic;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -127,13 +128,62 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1541EDC Offset: 0x1541EDC VA: 0x1541EDC
 		private void OnShowSortList()
 		{
-			TodoLogger.LogNotImplemented("OnShowSortList");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			PopupFilterSortUGUIInitParam s = new PopupFilterSortUGUIInitParam();
+			s.SetPlateSelectParam(SelectedDivaId, true);
+			if(MenuScene.Instance.GetCurrentTransitionRoot().TransitionName == TransitionList.Type.SCENE_ABILITY_RELEASE_LIST)
+			{
+				MenuScene.Instance.ShowSortWindow(s, (PopupFilterSortUGUI content) =>
+				{
+					//0x1543B20
+					m_currentSortItem = (SortItem)GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.GEAECNMDMHH_sceneListSortItem;
+					m_onListSortEvent.Invoke(m_currentSortItem, m_sortOrder, m_isBonus);
+					UpdateSortFont();
+					UpdateOrderFont();
+				}, null);
+			}
+			if(MenuScene.Instance.GetCurrentTransitionRoot().TransitionName == TransitionList.Type.SCENE_SELECT)
+			{
+				MenuScene.Instance.ShowSortWindow(s, (PopupFilterSortUGUI content) =>
+				{
+					//0x15439CC
+					m_currentSortItem = (SortItem)GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.LNFFKCDNCPN_sceneSelectSortItem;
+					m_onListSortEvent.Invoke(m_currentSortItem, m_sortOrder, m_isBonus);
+					UpdateSortFont();
+					UpdateOrderFont();
+				}, null);
+			}
+			else
+			{
+				MenuScene.Instance.ShowSortWindow(m_sortPlace, SelectedDivaId, SelectedAttrId, (PopupSortMenu content) =>
+				{
+					//0x1543C74
+					m_sortTblIndex = m_sortItemTbl[(int)m_sortPlace].FindIndex((SortItem _) =>
+					{
+						//0x1543F9C
+						return content.SortItem == _;
+					});
+					m_currentSortItem = (SortItem)m_sortItemTbl[(int)m_sortPlace][m_sortTblIndex];
+					m_onListSortEvent.Invoke(m_currentSortItem, m_sortOrder, m_isBonus);
+					UpdateSortFont();
+					UpdateOrderFont();
+				}, null);
+			}
 		}
 
 		// // RVA: 0x154221C Offset: 0x154221C VA: 0x154221C
 		private void OnShowFilterSortPopup()
 		{
-			TodoLogger.LogNotImplemented("OnShowFilterSortPopup");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MenuScene.Instance.ShowSortWindow(m_sceneType, (PopupFilterSort content) =>
+			{
+				//0x1543ED8
+				if(m_sceneType == PopupFilterSort.Scene.SelectHomeBg)
+					m_currentSortItem = SortItem.Rarity;
+				m_onListSortEvent.Invoke(m_currentSortItem, m_sortOrder, m_isBonus);
+				UpdateSortFont();
+				UpdateOrderFont();
+			}, null, true);
 		}
 
 		// // RVA: 0x154236C Offset: 0x154236C VA: 0x154236C
@@ -142,7 +192,10 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x15425CC Offset: 0x15425CC VA: 0x15425CC
 		private void OnChangeOrder()
 		{
-			TodoLogger.LogNotImplemented("OnChangeOrder");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			m_sortOrder = m_sortOrder == SortOrder.Big ? SortOrder.Small : SortOrder.Big;
+			m_onListSortEvent.Invoke(m_currentSortItem, m_sortOrder, m_isBonus);
+			UpdateOrderFont();
 		}
 
 		// // RVA: 0x15426CC Offset: 0x15426CC VA: 0x15426CC
@@ -192,21 +245,5 @@ namespace XeApp.Game.Menu
 		{
 			m_updownText.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_texUvList.GetUVData(m_orderTextureUvNameTable[(int)m_sortOrder]));
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6E7CFC Offset: 0x6E7CFC VA: 0x6E7CFC
-		// // RVA: 0x15439CC Offset: 0x15439CC VA: 0x15439CC
-		// private void <OnShowSortList>b__48_0(PopupFilterSortUGUI content) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6E7D0C Offset: 0x6E7D0C VA: 0x6E7D0C
-		// // RVA: 0x1543B20 Offset: 0x1543B20 VA: 0x1543B20
-		// private void <OnShowSortList>b__48_1(PopupFilterSortUGUI content) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6E7D1C Offset: 0x6E7D1C VA: 0x6E7D1C
-		// // RVA: 0x1543C74 Offset: 0x1543C74 VA: 0x1543C74
-		// private void <OnShowSortList>b__48_2(PopupSortMenu content) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6E7D2C Offset: 0x6E7D2C VA: 0x6E7D2C
-		// // RVA: 0x1543ED8 Offset: 0x1543ED8 VA: 0x1543ED8
-		// private void <OnShowFilterSortPopup>b__49_0(PopupFilterSort content) { }
 	}
 }

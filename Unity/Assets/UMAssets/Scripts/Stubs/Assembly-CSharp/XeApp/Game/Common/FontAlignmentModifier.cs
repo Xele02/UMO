@@ -7,7 +7,7 @@ namespace XeApp.Game.Common
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.LogError(0, "Implement monobehaviour");
 		}
 		public bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{

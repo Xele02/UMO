@@ -46,7 +46,11 @@ public class LGDNAJACFHI
 	public static int[] MKJBOPJEAHN = new int[10] {1, 2, 2, 3, 3, 3, 3, 3, 3, 3}; // 0x8
 
 	// // RVA: 0xD725A8 Offset: 0xD725A8 VA: 0xD725A8
-	// public bool KHEKNNFCAOI_Init(KBPDNHOKEKD MEANCEOIMGE) { }
+	public bool KHEKNNFCAOI_Init(KBPDNHOKEKD_ProductId MEANCEOIMGE)
+	{
+		TodoLogger.LogError(0, "LGDNAJACFHI.KHEKNNFCAOI_Init");
+		return true;
+	}
 
 	// // RVA: 0xD72E08 Offset: 0xD72E08 VA: 0xD72E08
 	// public void GNIKLANHDHD() { }

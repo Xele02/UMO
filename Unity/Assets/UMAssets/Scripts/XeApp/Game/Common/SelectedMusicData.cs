@@ -3,14 +3,14 @@ namespace XeApp.Game.Common
 	public class SelectedMusicData
 	{
 		private EEDKAACNBBG_MusicData selectedMusic; // 0x8
-		//private BKKMNPEEILG ghostData; // 0xC
+		private BKKMNPEEILG ghostData; // 0xC
 		private int selectedFreeMusicId; // 0x10
 
 		// RVA: 0x1391C54 Offset: 0x1391C54 VA: 0x1391C54
 		public void SetMusicData(IBJAKJJICBC selectedMusic)
 		{
 			this.selectedMusic = selectedMusic;
-			TodoLogger.Log(0, "Finish SetMusicData");
+			ghostData = selectedMusic.DACLONHOFLA;
 		}
 
 		// RVA: 0x1391C84 Offset: 0x1391C84 VA: 0x1391C84

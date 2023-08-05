@@ -95,7 +95,7 @@ namespace XeApp.Game.Menu
 		private float m_currentCamAdjYDown; // 0x128
 		private int m_formType; // 0x12C
 
-		// public static ViewModeCameraMan Instance { get; } 0xADEA30
+		public static ViewModeCameraMan Instance { get { return ms_instance; } } //0xADEA30
 
 		// // RVA: 0xADC0DC Offset: 0xADC0DC VA: 0xADC0DC
 		public void SetValkyrieRenderer(FKGMGBHBNOC.HPJOCKGKNCC_Form formType, SkinnedMeshRenderer rend)
@@ -144,7 +144,7 @@ namespace XeApp.Game.Menu
 			//0xADF114
 			bundleName = "vl/cmn.xab";
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
 			m_camObj = new GameObject("val_cmn_cam");
 			m_camAnimObj = new GameObject("unity_cam");
@@ -207,7 +207,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xADC350 Offset: 0xADC350 VA: 0xADC350
 		private void updateCameraOperation()
 		{
-			TodoLogger.Log(0, "updateCameraOperation");
+			TodoLogger.LogError(0, "updateCameraOperation");
 		}
 
 		// // RVA: 0xADD3A0 Offset: 0xADD3A0 VA: 0xADD3A0
@@ -317,7 +317,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xADE9DC Offset: 0xADE9DC VA: 0xADE9DC
-		// public void SetUserOperation(bool ok) { }
+		public void SetUserOperation(bool ok)
+		{
+			m_operationFlag = ok;
+			m_operationEndFlag = m_operationFlag & !ok;
+		}
 
 		// // RVA: 0xADEA1C Offset: 0xADEA1C VA: 0xADEA1C
 		public void SetOperationType(ViewModeCameraMan.OperationType ope)
@@ -326,6 +330,9 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xADEA24 Offset: 0xADEA24 VA: 0xADEA24
-		// public void StartNeutralPose() { }
+		public void StartNeutralPose()
+		{
+			m_neutralDone = false;
+		}
 	}
 }

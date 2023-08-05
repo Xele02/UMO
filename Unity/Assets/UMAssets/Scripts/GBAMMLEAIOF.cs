@@ -4,13 +4,13 @@ public class GBAMMLEAIOF
 {
 	private const int FBGGEFFJJHB = 23;
 	public byte[] EJJEHEHFMGO; // 0x8
-	public int PGEDKFOIPIP; // 0xC
+	public int PGEDKFOIPIP_EventIdx; // 0xC
 
 	// // RVA: 0x1401894 Offset: 0x1401894 VA: 0x1401894
 	public void KHEKNNFCAOI_Init(int PGEDKFOIPIP, byte[] IDLHJIOMJBK)
 	{
 		EJJEHEHFMGO = IDLHJIOMJBK;
-		this.PGEDKFOIPIP = PGEDKFOIPIP;
+		this.PGEDKFOIPIP_EventIdx = PGEDKFOIPIP;
 		for(int i = 0; i < IDLHJIOMJBK.Length; i++)
 		{
 			EJJEHEHFMGO[i] = (byte)(EJJEHEHFMGO[i] ^ 0x17);
@@ -29,7 +29,7 @@ public class GBAMMLEAIOF
 	// // RVA: 0x1401A54 Offset: 0x1401A54 VA: 0x1401A54
 	public void KHEKNNFCAOI_Init(int PGEDKFOIPIP, byte[] IDLHJIOMJBK, int POMLAOPLMNA, int MOIECBABHNP)
     {
-        this.PGEDKFOIPIP = PGEDKFOIPIP;
+        this.PGEDKFOIPIP_EventIdx = PGEDKFOIPIP;
         EJJEHEHFMGO = new byte[MOIECBABHNP];
         for(int i = 0; i < MOIECBABHNP; i++)
         {
@@ -38,7 +38,7 @@ public class GBAMMLEAIOF
     }
 
 	// // RVA: 0x1401B74 Offset: 0x1401B74 VA: 0x1401B74
-	public string HGJLBEBNMIP()
+	public string HGJLBEBNMIP_LogData()
 	{
 		byte[] data = new byte[EJJEHEHFMGO.Length];
 		for(int i = 0; i < data.Length; i++)

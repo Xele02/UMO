@@ -2,7 +2,7 @@ using System;
 
 namespace XeSys
 {
-	public abstract class Singleton<T>
+	public abstract class Singleton<T> where T : IDisposable
 	{
 		protected static T instance; // 0x0
 
@@ -44,7 +44,8 @@ namespace XeSys
 		// RVA: -1 Offset: -1
 		public static void Release()
 		{
-			TodoLogger.Log(0, "TODO");
+			instance.Dispose();
+			instance = default(T);
 		}
 		/* GenericInstMethod :
 		|

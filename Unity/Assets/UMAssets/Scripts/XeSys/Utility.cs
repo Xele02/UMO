@@ -46,7 +46,9 @@ namespace XeSys
 		// // RVA: 0x23A9000 Offset: 0x23A9000 VA: 0x23A9000
 		public static DateTime GetLocalDateTime(long unixTime)
 		{
-			return UNIX_EPOCH.AddSeconds(unixTime);
+			//UMO, get real timeline
+			double diff = (DateTime.Now - DateTime.UtcNow).TotalSeconds;
+			return TimeZoneInfo.ConvertTimeToUtc(UNIX_EPOCH.AddSeconds(unixTime + diff/* + 32400*/));
 		}
 
 		// // RVA: 0x23A90F8 Offset: 0x23A90F8 VA: 0x23A90F8
@@ -63,7 +65,16 @@ namespace XeSys
 		}
 
 		// // RVA: 0x23A9378 Offset: 0x23A9378 VA: 0x23A9378
-		// public static bool IsWithinPeriod(long current, long start, long end) { }
+		public static bool IsWithinPeriod(long current, long start, long end)
+		{
+			if(start == 0)
+			{
+				return !(end < current);
+			}
+			if ((end == 0 || end > current) && current >= start)
+				return true;
+			return false;
+		}
 
 		// // RVA: 0x23A93DC Offset: 0x23A93DC VA: 0x23A93DC
 		// public static string GetDayStringFromUNIXTime(long unix_time) { }
@@ -80,7 +91,7 @@ namespace XeSys
 		// // RVA: 0x23A9AF0 Offset: 0x23A9AF0 VA: 0x23A9AF0
 		public static void SaveToStorage(string path, byte[] bytes, bool overwrite)
 		{
-			UnityEngine.Debug.Log("Save to "+path);
+			TodoLogger.Log(TodoLogger.Filesystem, "Save to "+path);
 			path = path.Replace("file://", "");
 			string dir = Path.GetDirectoryName(path);
 			if(!Directory.Exists(dir))
@@ -197,7 +208,7 @@ namespace XeSys
 		public static long RoundDownDayUnixTime(long unixtime, int offset = 0)
 		{
 			DateTime d = GetLocalDateTime(unixtime);
-			return GetTargetUnixTime(d.Year, d.Month, d.Day, 0, 0, 0);
+			return GetTargetUnixTime(d.Year, d.Month, d.Day, 0, 0, 0) + offset;
 		}
 	}
 }

@@ -27,6 +27,6 @@ public class DebugMatchingInfo : MonoBehaviour
 	private Button m_retry;
 	private void Awake()
 	{
-		UnityEngine.Debug.LogError("Implement Monobehaviour");
+		TodoLogger.LogError(0, "Implement Monobehaviour");
 	}
 }

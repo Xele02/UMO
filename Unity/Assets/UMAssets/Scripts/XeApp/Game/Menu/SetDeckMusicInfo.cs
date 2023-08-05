@@ -3,6 +3,8 @@ using XeApp.Game.Common;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System;
+using XeApp.Game.Common.uGUI;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -97,8 +99,15 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA6F828 Offset: 0xA6F828 VA: 0xA6F828
 		public void Set(EEDKAACNBBG_MusicData viewMusicData, GameSetupData.MusicInfo musicInfo, bool isMvMode, SetDeckMusicInfo.BottomType bottomType)
 		{
-			TodoLogger.Log(0, "Music Info Set");
+			m_musicAttrImage.sprite = GetMusicAttrSprite(viewMusicData.FKDCCLPGKDK_JacketAttr);
+			m_musicAttrEffectImage.sprite = GetMusicAttrEffectSprite(viewMusicData.FKDCCLPGKDK_JacketAttr);
+			m_musicAttrEffectAnime.Stop(true);
+			m_musicAttrEffectAnime.Play(0, null);
+			m_difficultyImage.sprite = GetDifficultySprite(musicInfo.difficultyType, musicInfo.IsLine6Mode);
 			m_musicNameText.text = Database.Instance.musicText.Get(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(musicInfo.freeMusicId, musicInfo.musicId).KNMGEEFGDNI_Nam).musicName;
+			RichTextUtility.ChangeColor(m_musicNameText, isMvMode ? StatusTextColor.NormalColor : GameAttributeTextColor.Colors[viewMusicData.FKDCCLPGKDK_JacketAttr - 1]);
+			m_descriptionText.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_mv_mode_description");
+			ApplyBottomType(bottomType);
 		}
 
 		// // RVA: 0xA6FE7C Offset: 0xA6FE7C VA: 0xA6FE7C
@@ -123,13 +132,25 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA6FD80 Offset: 0xA6FD80 VA: 0xA6FD80
-		// private Sprite GetMusicAttrSprite(int attr) { }
+		private Sprite GetMusicAttrSprite(int attr)
+		{
+			return m_musicAttrSprites.GetMusicAttrIconSprite(attr);
+		}
 
 		// // RVA: 0xA6FDB4 Offset: 0xA6FDB4 VA: 0xA6FDB4
-		// private Sprite GetMusicAttrEffectSprite(int attr) { }
+		private Sprite GetMusicAttrEffectSprite(int attr)
+		{
+			return m_musicAttrEffectSprites.GetMusicAttrIconSprite(attr);
+		}
 
 		// // RVA: 0xA6FDE8 Offset: 0xA6FDE8 VA: 0xA6FDE8
-		// private Sprite GetDifficultySprite(Difficulty.Type difficulty, bool is6Line) { }
+		private Sprite GetDifficultySprite(Difficulty.Type difficulty, bool is6Line)
+		{
+			if (is6Line)
+				return m_difficulty6LineSprites[(int)difficulty - 2];
+			else
+				return m_difficultySprites[(int)difficulty];
+		}
 
 		// // RVA: 0xA6F7BC Offset: 0xA6F7BC VA: 0xA6F7BC
 		private void ApplyBottomType(BottomType bottomType)

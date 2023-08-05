@@ -149,7 +149,14 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF3CF4 Offset: 0x1BF3CF4 VA: 0x1BF3CF4
-		//public void OverrideAnimations(List<DivaResource.MotionOverrideClipKeyResource> resource) { }
+		public void OverrideAnimations(List<DivaResource.MotionOverrideClipKeyResource> resource)
+		{
+			for(int i = 0; i < resource.Count; i++)
+			{
+				overrideController[resource[i].body.name] = resource[i].body.clip;
+			}
+			facialBlendAnimMediator.OverrideAnimations(resource);
+		}
 
 		//// RVA: 0x1BF3E4C Offset: 0x1BF3E4C VA: 0x1BF3E4C
 		public void OverrideAnimations(List<DivaResource.MotionOverrideSingleResource> resource)
@@ -231,16 +238,39 @@ namespace XeApp.Game.Common
 			Renderer[] renderers = divaPrefab_.transform.Find("mesh_root").GetComponentsInChildren<Renderer>();
 			if(useQualitySetting)
 			{
-				if(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PKEMELMMEKM_GetDivaQuality())
+				if(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PKEMELMMEKM_IsDivaHighQuality())
 				{
-					TodoLogger.Log(0, "Diva Low quality 3d setyp");
+					for(int i = 0; i < renderers.Length; i++)
+					{
+						for(int j = 0; j < renderers[i].materials.Length; j++)
+						{
+							if(renderers[i].materials[j].shader.name == "MCRS/Diva/Opaque_High")
+							{
+								renderers[i].materials[j].shader = Shader.Find("MCRS/Diva/Opaque_Low");
+							}
+							else if (renderers[i].materials[j].shader.name == "MCRS/Diva/Opaque_Outline_High")
+							{
+								renderers[i].materials[j].shader = Shader.Find("MCRS/Diva/Opaque_Outline_Low");
+							}
+							else if (renderers[i].materials[j].shader.name == "MCRS/Valkyrie_High")
+							{
+								renderers[i].materials[j].shader = Shader.Find("MCRS/Valkyrie_Low");
+							}
+							else if (renderers[i].materials[j].shader.name == "MCRS/Diva/Trans_High")
+							{
+								int rqueue = renderers[i].materials[j].renderQueue;
+								renderers[i].materials[j].shader = Shader.Find("MCRS/Diva/Trans_Low");
+								renderers[i].materials[j].renderQueue = rqueue;
+							}
+						}
+					}
 				}
 			}
 			m_valkyrieShaderControlelr.Initialize(renderers, null);
 			BoneSpringController.PerformanceMode boneQualityMode = BoneSpringController.PerformanceMode.High;
 			if(useQualitySetting)
 			{
-				if(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.INPHNKJPJFN())
+				if(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.INPHNKJPJFN_IsBoneHighQuality())
 				{
 					boneQualityMode = BoneSpringController.PerformanceMode.Low;
 				}
@@ -387,7 +417,7 @@ namespace XeApp.Game.Common
 		{
 			if(!a_fix)
 			{
-				StartCoroutine(WaitUnlockBoneSpring(a_index));
+				this.StartCoroutineWatched(WaitUnlockBoneSpring(a_index));
 				return;
 			}
 			if(boneSpringController != null)
@@ -418,10 +448,10 @@ namespace XeApp.Game.Common
 		public void WaitLockBoneSpring(int a_index = 0, float a_seconds = 0.05f)
 		{
 			if (m_coroutine_wait_lock != null)
-				StopCoroutine(m_coroutine_wait_lock);
+				this.StopCoroutineWatched(m_coroutine_wait_lock);
 			if (!gameObject.activeSelf)
 				return;
-			m_coroutine_wait_lock = StartCoroutine(CoroutineWaitLockBoneSpring(a_index, a_seconds));
+			m_coroutine_wait_lock = this.StartCoroutineWatched(CoroutineWaitLockBoneSpring(a_index, a_seconds));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x736534 Offset: 0x736534 VA: 0x736534
@@ -461,7 +491,11 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF4F20 Offset: 0x1BF4F20 VA: 0x1BF4F20
-		//public void Stop() { }
+		public void Stop()
+		{
+			if (animator != null)
+				ChangeAnimationTime(0);
+		}
 
 		//// RVA: 0x1BF4FDC Offset: 0x1BF4FDC VA: 0x1BF4FDC
 		public void Pause()
@@ -600,7 +634,19 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF6608 Offset: 0x1BF6608 VA: 0x1BF6608
-		//protected void Anim_SetTrigger(string name) { }
+		protected void Anim_SetTrigger(string name)
+		{
+			animator.SetTrigger(name);
+			facialBlendAnimMediator.selfAnimator.SetTrigger(name);
+			if (m_boneSpringAnim != null && m_boneSpringAnim.animator != null)
+			{
+				m_boneSpringAnim.animator.SetTrigger(name);
+			}
+			if (mikeStandObject != null)
+			{
+				mikeStandObject.animator.SetTrigger(name);
+			}
+		}
 
 		//// RVA: 0x1BF6834 Offset: 0x1BF6834 VA: 0x1BF6834
 		//protected void Anim_ResetTrigger(string name) { }

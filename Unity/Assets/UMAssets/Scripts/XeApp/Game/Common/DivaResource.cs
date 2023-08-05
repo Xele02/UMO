@@ -52,7 +52,23 @@ namespace XeApp.Game.Common
 			}
 
 			// RVA: 0x1C09618 Offset: 0x1C09618 VA: 0x1C09618
-			//public static DivaResource.MotionOverrideClipKeyResource Set(string keyFormat, string replaceClipName, int id, AssetBundleLoadAllAssetOperationBase op, StringBuilder strBuilder) { }
+			public static MotionOverrideClipKeyResource Set(string keyFormat, string replaceClipName, int id, AssetBundleLoadAllAssetOperationBase op, StringBuilder strBuilder)
+			{
+				MotionOverrideClipKeyResource res = new MotionOverrideClipKeyResource();
+				strBuilder.SetFormat(keyFormat, id, "body");
+				res.body.name = replaceClipName + "_body";
+				res.body.clip = op.GetAsset<AnimationClip>(strBuilder.ToString());
+
+				strBuilder.SetFormat(keyFormat, id, "face");
+				res.face.name = replaceClipName + "_face";
+				res.face.clip = op.GetAsset<AnimationClip>(strBuilder.ToString());
+
+				strBuilder.SetFormat(keyFormat, id, "mouth");
+				res.mouth.name = replaceClipName + "_mouth";
+				res.mouth.clip = op.GetAsset<AnimationClip>(strBuilder.ToString());
+
+				return res;
+			}
 		}
 		
 		public struct MotionOverrideSingleResource
@@ -486,14 +502,13 @@ namespace XeApp.Game.Common
 			m_loadedColorId = colorId;
 			if(isLoadedBasicResource)
 				return;
-			StartCoroutine(Co_LoadBasicResource(divaId, modelId, colorId));
+			this.StartCoroutineWatched(Co_LoadBasicResource(divaId, modelId, colorId));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73666C Offset: 0x73666C VA: 0x73666C
 		// // RVA: 0x1BF88A8 Offset: 0x1BF88A8 VA: 0x1BF88A8
 		private IEnumerator Co_LoadBasicResource(int divaId, int modelId, int colorId)
 		{
-    		UnityEngine.Debug.Log("Enter Co_LoadBasicResource");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public DivaResource <>4__this; // 0x10
@@ -519,7 +534,7 @@ namespace XeApp.Game.Common
 			bundleName.SetFormat("dv/ca/cmn.xab", "");
 			
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			divaAnimatorController = operation.GetAsset<RuntimeAnimatorController>("diva_cmn_animator");
 			facialAnimatorController = operation.GetAsset<RuntimeAnimatorController>("med_cmn_animator");
@@ -529,7 +544,7 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			assetName.SetFormat("diva_{0:D3}_param", divaId);
 			divaParam = operation.GetAsset<DivaParam>(assetName.ToString());
@@ -538,7 +553,7 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("dv/cs/{0:D3}_{1:D3}.xab", divaId, modelId);
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			assetName.SetFormat("diva_{0:D3}_cos_{1:D3}_prefab", divaId, modelId);
 			divaPrefab = operation.GetAsset<GameObject>(assetName.ToString());
@@ -561,7 +576,7 @@ namespace XeApp.Game.Common
 			{
 				bundleName.SetFormat("dv/cs/{0:D3}_{1:D3}_{2:D2}.xab", divaId, modelId, colorId);
 				operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-				yield return operation;
+				yield return Co.R(operation);
 				
 				List<Texture> texList = new List<Texture>();
 				
@@ -576,19 +591,17 @@ namespace XeApp.Game.Common
 				XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);	
 			}
 			
-			yield return Co_LoadComponent(divaId, modelId, (pe, pw) => {prefabEffect = pe; prefabWind = pw;});
+			yield return Co.R(Co_LoadComponent(divaId, modelId, (pe, pw) => {prefabEffect = pe; prefabWind = pw;}));
 			
-			yield return Co_LoadBoneSpringSuppress(divaId, modelId, (p) => {boneSpringResource.suppress.presets = p;});
+			yield return Co.R(Co_LoadBoneSpringSuppress(divaId, modelId, (p) => {boneSpringResource.suppress.presets = p;}));
 			
 			isLoadedBasicResource = true;
-    		UnityEngine.Debug.Log("Exit Co_LoadBasicResource");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7366E4 Offset: 0x7366E4 VA: 0x7366E4
 		// // RVA: 0x1BF89A0 Offset: 0x1BF89A0 VA: 0x1BF89A0
 		protected IEnumerator Co_LoadBoneSpringSuppress(int divaId, int modelId, Action<Dictionary<BoneSpringSuppressor.Preset, BoneSpringSuppressParam>> a_func)
 		{
-    		UnityEngine.Debug.Log("Enter Co_LoadBoneSpringSuppress");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public int divaId; // 0x10
@@ -606,13 +619,13 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("dv/bs/{0:D3}_{1:D3}.xab", divaId, modelId);
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			if(!operation.IsError())
 			{
 				for(int i = 0; i < (int)BoneSpringSuppressor.Preset._Num; i++)
 				{
-					assetName.SetFormat("bs_{0:D3}_{1:D3}_suppress_{2}", divaId, modelId, i);
+					assetName.SetFormat("bs_{0:D3}_{1:D3}_suppress_{2}", divaId, modelId, (BoneSpringSuppressor.Preset)i);
 					BoneSpringSuppressParam p = operation.GetAsset<BoneSpringSuppressParam>(assetName.ToString());
 					if(p != null)
 					{
@@ -623,14 +636,12 @@ namespace XeApp.Game.Common
 			
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			a_func(pressets);
-    		UnityEngine.Debug.Log("Exit Co_LoadBoneSpringSuppress");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73675C Offset: 0x73675C VA: 0x73675C
 		// // RVA: 0x1BF8A80 Offset: 0x1BF8A80 VA: 0x1BF8A80
 		protected IEnumerator Co_LoadComponent(int divaId, int modelId, Action<List<GameObject>, GameObject> a_func)
 		{
-    		UnityEngine.Debug.Log("Enter Co_LoadComponent");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public int divaId; // 0x10
@@ -651,7 +662,6 @@ namespace XeApp.Game.Common
 			int e = a.EGLDFPILJLG;
 			if(e == 0)
 			{
-    			UnityEngine.Debug.LogError("Exit  Error Co_LoadComponent");
 				yield break;
 			}
 			
@@ -660,7 +670,7 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("dv/cs/{0:D3}_{1:D3}.xab", divaId, modelId);
 			AssetBundleLoadAllAssetOperationBase operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			for(int i = 0; i < 3; i++)
 			{
@@ -679,7 +689,7 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("dv/ca/cmn.xab", "");
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			if(list_effect.Count == 0)
 			{
@@ -703,7 +713,6 @@ namespace XeApp.Game.Common
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			
 			a_func(list_effect, wind);
-    		UnityEngine.Debug.Log("Exit Co_LoadComponent");
 		}
 
 		// // RVA: 0x1BF8B60 Offset: 0x1BF8B60 VA: 0x1BF8B60
@@ -782,14 +791,13 @@ namespace XeApp.Game.Common
 		{
 			this.positionId = positionId;
 			if(!isLoadedMusicAnimationResource)
-				StartCoroutine(Co_LoadMusicAnimationResource(wavId, primeId, positionId, divaNum, divaId));
+				this.StartCoroutineWatched(Co_LoadMusicAnimationResource(wavId, primeId, positionId, divaNum, divaId));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x736868 Offset: 0x736868 VA: 0x736868
 		// // RVA: 0x1BF93D8 Offset: 0x1BF93D8 VA: 0x1BF93D8
 		private IEnumerator Co_LoadMusicAnimationResource(int wavId, int primeId, int positionId = 1, int divaNum = 1, int divaId = 0)
 		{
-    		UnityEngine.Debug.Log("Enter Co_LoadMusicAnimationResource");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public int divaNum; // 0x10
@@ -816,7 +824,7 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("mc/{0}/bt{1:D3}.xab", wavPath, primeId);
 			AssetBundleLoadAllAssetOperationBase operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			if(divaNum > 1 && divaId == 9)
 			{
@@ -842,10 +850,9 @@ namespace XeApp.Game.Common
 				HPBPIOPPDCB_Diva h = o.MGFMPKLLGHE_Diva;
 				BJPLLEBHAGO_DivaInfo b = h.GCINIJEMHFK_GetInfo(divaId);
 				int ms = b.IDDHKOEFJFB_BodyId;
-				yield return StartCoroutine(Co_LoadMikeStandResource(ms));
+				yield return this.StartCoroutineWatched(Co_LoadMikeStandResource(ms));
 			}
 			isLoadedMusicAnimationResource = true;
-    		UnityEngine.Debug.Log("Exit Co_LoadMusicAnimationResource");
 		}
 
 		// // RVA: 0x1BF9508 Offset: 0x1BF9508 VA: 0x1BF9508
@@ -859,7 +866,6 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BF960C Offset: 0x1BF960C VA: 0x1BF960C
 		private IEnumerator Co_LoadMikeStandResource(int primeId)
 		{
-    		UnityEngine.Debug.Log("Enter Co_LoadMikeStandResource");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public DivaResource <>4__this; // 0x10
@@ -873,7 +879,7 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("dv/mk/bt/cmn.xab", "");
 			AssetBundleLoadAllAssetOperationBase operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			assetName.SetFormat("stand_mike_animator", "");
 			mikeStandAnimatorController = operation.GetAsset<RuntimeAnimatorController>(assetName.ToString());
@@ -882,7 +888,7 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("dv/mk/bt/{0:D3}.xab", primeId);
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			assetName.SetFormat("stand_mike_prefab", "");
 			mikeStandPrefab = operation.GetAsset<GameObject>(assetName.ToString());
@@ -891,7 +897,6 @@ namespace XeApp.Game.Common
 			mikeCommonPrefab = operation.GetAsset<GameObject>(assetName.ToString());
 			
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
-    		UnityEngine.Debug.Log("Exit Co_LoadMikeStandResource");
 		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x7369D0 Offset: 0x7369D0 VA: 0x7369D0
@@ -907,7 +912,7 @@ namespace XeApp.Game.Common
 		{
 			if(!isLoadedMusicFacialResource)
 			{
-				StartCoroutine(Co_LoadFacialResource(divaId, wavId, stageDivaNum));
+				this.StartCoroutineWatched(Co_LoadFacialResource(divaId, wavId, stageDivaNum));
 			}
 		}
 
@@ -915,7 +920,6 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BF971C Offset: 0x1BF971C VA: 0x1BF971C
 		private IEnumerator Co_LoadFacialResource(int divaId, int wavId, int stageDivaNum)
 		{
-    		UnityEngine.Debug.Log("Enter Co_LoadFacialResource");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public int wavId; // 0x10
@@ -936,7 +940,7 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("mc/{0}/ft.xab", wavPath);
 			AssetBundleLoadAllAssetOperationBase operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			assetName.SetFormat("facial_table", "");
 			TextAsset facialTableAsset = operation.GetAsset<TextAsset>(assetName.ToString());
@@ -950,7 +954,7 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			commonFacialResource.Clear();
 			
@@ -980,7 +984,6 @@ namespace XeApp.Game.Common
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			
 			isLoadedMusicFacialResource = true;
-    		UnityEngine.Debug.Log("Exit Co_LoadFacialResource");
 		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x736A68 Offset: 0x736A68 VA: 0x736A68
@@ -996,7 +999,7 @@ namespace XeApp.Game.Common
 		{
 			if(!isLoadedMenuAnimationResource)
 			{
-				StartCoroutine(Co_LoadMenuResource(divaId, modelId, facialType, scoreRank));
+				this.StartCoroutineWatched(Co_LoadMenuResource(divaId, modelId, facialType, scoreRank));
 			}
 		}
 
@@ -1004,24 +1007,21 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BF9894 Offset: 0x1BF9894 VA: 0x1BF9894
 		private IEnumerator Co_LoadMenuResource(int divaId, int modelId, DivaResource.MenuFacialType facialType, ResultScoreRank.Type scoreRank)
 		{			
-    		UnityEngine.Debug.Log("Enter Co_LoadMenuResource");
 			//0x1C03944
 			
-			yield return StartCoroutine(Co_LoadCharacter(divaId));
-			yield return StartCoroutine(Co_LoadFacialClip(divaId, facialType));
-			yield return StartCoroutine(Co_LoadLoginAction(divaId));
-			yield return StartCoroutine(Co_LoadResultAction(divaId, modelId, scoreRank));
-			yield return StartCoroutine(Co_LoadUnlockDivaAction(divaId));
-			yield return StartCoroutine(Co_LoadUnlockCostumeDivaAction(divaId));
+			yield return this.StartCoroutineWatched(Co_LoadCharacter(divaId));
+			yield return this.StartCoroutineWatched(Co_LoadFacialClip(divaId, facialType));
+			yield return this.StartCoroutineWatched(Co_LoadLoginAction(divaId));
+			yield return this.StartCoroutineWatched(Co_LoadResultAction(divaId, modelId, scoreRank));
+			yield return this.StartCoroutineWatched(Co_LoadUnlockDivaAction(divaId));
+			yield return this.StartCoroutineWatched(Co_LoadUnlockCostumeDivaAction(divaId));
 			isLoadedMenuAnimationResource = true;
-    		UnityEngine.Debug.Log("Exit Co_LoadMenuResource");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x736B00 Offset: 0x736B00 VA: 0x736B00
 		// // RVA: 0x1BF99A4 Offset: 0x1BF99A4 VA: 0x1BF99A4
 		private IEnumerator Co_LoadCharacter(int divaId)
 		{			
-    		UnityEngine.Debug.Log("Enter Co_LoadCharacter");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public DivaResource <>4__this; // 0x10
@@ -1049,7 +1049,7 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("dv/ty/{0:D3}.xab", personalityId);
 			AssetBundleLoadAllAssetOperationBase operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			for(int i = 1; i <= MAX_TALK; i++)
 			{
@@ -1086,7 +1086,7 @@ namespace XeApp.Game.Common
 			
 			bundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
 			operation = XeApp.Core.AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			
 			assetName.SetFormat("diva_{0:D3}_menu_idle_body", divaId);
 			menuMotionOverride.idle.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
@@ -1150,7 +1150,7 @@ namespace XeApp.Game.Common
 			CIOECGOMILE c = CIOECGOMILE.HHCJCDFCLOB;
 			BBHNACPENDM_ServerSaveData b2 = c.AHEFHIMGIBI_ServerSave;
 			MMPBPOIFDAF_Scene m = b2.PNLOINMCCKH_Scene;
-			bool f = m.GOFAPKBNNCL(divaId);
+			bool f = m.GOFAPKBNNCL_HasRareSceneWithCostumeForDivaUnlocked(divaId);
 			if(f)
 			{
 				assetName.SetFormat("diva_{0:D3}_menu_voicetable_cos", divaId);
@@ -1158,7 +1158,6 @@ namespace XeApp.Game.Common
 			}
 			
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
-    		UnityEngine.Debug.Log("Exit Co_LoadCharacter");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x736B78 Offset: 0x736B78 VA: 0x736B78
@@ -1184,7 +1183,7 @@ namespace XeApp.Game.Common
 			personalityId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(divaId).FPMGHDKACOF_PersonalityId;
 			divaBundleName.SetFormat("dv/ty/{0:D3}.xab", divaParam.ChangePersonalityId(modelId, personalityId));
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(divaBundleName.ToString());
-			yield return operationDiva;
+			yield return Co.R(operationDiva);
 
 			assetName.SetFormat("type_{0:D3}_result_battle_lose_start_body", personalityId);
 			resultMotionOverride.loseStart.bodyClip = operationDiva.GetAsset<AnimationClip>(assetName.ToString());
@@ -1208,7 +1207,7 @@ namespace XeApp.Game.Common
 
 			divaBundleName.SetFormat("dv/cs/{0:D3}_{1:D3}.xab", divaId, modelId);
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(divaBundleName.ToString());
-			yield return operationDiva;
+			yield return Co.R(operationDiva);
 
 			assetName.SetFormat("diva_{0:D3}_menu_idle_body", divaId);
 			t_costume_wait.bodyClip = operationDiva.GetAsset<AnimationClip>(assetName.ToString());
@@ -1241,7 +1240,7 @@ namespace XeApp.Game.Common
 
 			divaBundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(divaBundleName.ToString());
-			yield return operationDiva;
+			yield return Co.R(operationDiva);
 
 			if(t_costume_wait.bodyClip != null)
 			{
@@ -1300,9 +1299,9 @@ namespace XeApp.Game.Common
 			{
 				typeBundleName.SetFormat("dv/ty/{0:D3}.xab", personalityId);
 				operationType = AssetBundleManager.LoadAllAssetAsync(typeBundleName.ToString());
-				yield return operationType;
+				yield return Co.R(operationType);
 
-				string str = DivaResultMotion.GetResultSpecialStr(scoreRank);
+				string str = DivaResultMotion.GetResultReactType(scoreRank).ToString();
 
 				assetName.SetFormat("type_{0:D3}_result_react{1}_start_h_body", personalityId, str);
 				resultMotionOverride.start.bodyClip = operationType.GetAsset<AnimationClip>(assetName.ToString());
@@ -1362,7 +1361,7 @@ namespace XeApp.Game.Common
 			res = new LoginMotionOverrideResource.Reaction();
 			divaBundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(divaBundleName.ToString());
-			yield return operationDiva;
+			yield return Co.R(operationDiva);
 
 			assetName.SetFormat("diva_{0:D3}_menu_idle_body", divaId);
 			loginMotionOverride.idle.bodyClip = operationDiva.GetAsset<AnimationClip>(assetName.ToString());
@@ -1379,7 +1378,7 @@ namespace XeApp.Game.Common
 			bundleName = new StringBuilder();
 			bundleName.SetFormat("dv/ty/{0:D3}.xab", personalityId);
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
 			assetName.SetFormat("type_{0:D3}_login_reaction{1:D2}_begin_body", personalityId, 1);
 			res.begin.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
@@ -1412,7 +1411,7 @@ namespace XeApp.Game.Common
 
 			divaBundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(divaBundleName.ToString());
-			yield return operationDiva;
+			yield return Co.R(operationDiva);
 
 			assetName.SetFormat("diva_{0:D3}_join_start_body", divaId);
 			unlockMotionOverride.start.bodyClip = operationDiva.GetAsset<AnimationClip>(assetName.ToString());
@@ -1451,7 +1450,7 @@ namespace XeApp.Game.Common
 			bodyId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(divaId).IDDHKOEFJFB_BodyId;
 			divaBundleName.SetFormat("dv/bt/{0:D3}.xab", bodyId);
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(divaBundleName.ToString());
-			yield return operationDiva;
+			yield return Co.R(operationDiva);
 
 			assetName.SetFormat("type_{0:D3}_costume_start_body", bodyId);
 			unlockCostumeMotionOverride.start.bodyClip = operationDiva.GetAsset<AnimationClip>(assetName.ToString());
@@ -1466,7 +1465,7 @@ namespace XeApp.Game.Common
 
 			divaBundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(divaBundleName.ToString());
-			yield return operationDiva;
+			yield return Co.R(operationDiva);
 
 			assetName.SetFormat("diva_{0:D3}_costume_pose_body", divaId);
 			unlockCostumeMotionOverride.pose.bodyClip = operationDiva.GetAsset<AnimationClip>(assetName.ToString());
@@ -1511,7 +1510,7 @@ namespace XeApp.Game.Common
 				bundleName.SetFormat("re/ft.xab", System.Array.Empty<object>());
 			}
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
 			assetName.SetFormat("facial_table", Array.Empty<object>());
 			TextAsset t = operation.GetAsset<TextAsset>(assetName.ToString());
@@ -1523,7 +1522,7 @@ namespace XeApp.Game.Common
 
 			bundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
 			commonFacialResource = new List<FacialOverrideResouece>();
 			for(int i = 0; i < divaCommonFacialAnimName.Length; i++)

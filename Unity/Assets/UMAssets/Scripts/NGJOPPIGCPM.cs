@@ -100,38 +100,38 @@ public class NGJOPPIGCPM_ResultData
 		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo mInfo2 = OEELDFNNLKK_SaveRecordMusic2.FAMANJGJANN_FreeMusicInfo[GHBPLHBNMBK_FreeMusicId - 1];
 		if(MNNHHJBBICA_GameEventType == 2)
 		{
-			TodoLogger.Log(0, "Event");
+			TodoLogger.LogError(0, "Event");
 		}
 		else if(MNNHHJBBICA_GameEventType == 3)
 		{
-			TodoLogger.Log(0, "Event");
+			TodoLogger.LogError(0, "Event");
 		}
 		else if(MNNHHJBBICA_GameEventType == 4)
 		{
-			TodoLogger.Log(0, "Event");
+			TodoLogger.LogError(0, "Event");
 		}
-		PBGLMBMEKAA_ComboCount = mInfo1.PDNJGJNGPNJ;
-		GCAPLLEIAAI_HighScore = mInfo1.ODEHJGPDFCL;
-		GPMILOPNBPA_Bonus = mInfo1.ECLDABOLHLM;
+		PBGLMBMEKAA_ComboCount = mInfo1.PDNJGJNGPNJ_MaxCombo;
+		GCAPLLEIAAI_HighScore = mInfo1.ODEHJGPDFCL_Score;
+		GPMILOPNBPA_Bonus = mInfo1.ECLDABOLHLM_ExcellentScore;
 		if(!GIKLNODJKFK_IsLine6)
 		{
-			IHNCAAHAFEE_Score = mInfo1.BDCAICINCKK_GetScore((int)NOAKHKMLPFK_diff);
+			IHNCAAHAFEE_Score = mInfo1.BDCAICINCKK_GetScoreForDiff((int)NOAKHKMLPFK_diff);
 			NCMJNHJJLBC_Combo = mInfo1.NLKEBAOBJCM_Combo[(int)NOAKHKMLPFK_diff];
 		}
 		else
 		{
-			IHNCAAHAFEE_Score = mInfo1.AHDKMPFDKPE_GetScoreL6((int)NOAKHKMLPFK_diff);
+			IHNCAAHAFEE_Score = mInfo1.AHDKMPFDKPE_GetScoreL6_ForDiff((int)NOAKHKMLPFK_diff);
 			NCMJNHJJLBC_Combo = mInfo1.DNIGPFPHJAK_ComboL6[(int)NOAKHKMLPFK_diff];
 		}
 		if(!GIKLNODJKFK_IsLine6)
 		{
-			HMDHDKLDPFK_PrevScore = mInfo2.BDCAICINCKK_GetScore((int)NOAKHKMLPFK_diff);
+			HMDHDKLDPFK_PrevScore = mInfo2.BDCAICINCKK_GetScoreForDiff((int)NOAKHKMLPFK_diff);
 			HHPIAKKJBJD_IsBetterScore = HMDHDKLDPFK_PrevScore < IHNCAAHAFEE_Score;
 			EFJFKKMAHMB_IsBetterCombo = mInfo2.NLKEBAOBJCM_Combo[(int)NOAKHKMLPFK_diff] < NCMJNHJJLBC_Combo;
 		}
 		else
 		{
-			HMDHDKLDPFK_PrevScore = mInfo2.AHDKMPFDKPE_GetScoreL6((int)NOAKHKMLPFK_diff);
+			HMDHDKLDPFK_PrevScore = mInfo2.AHDKMPFDKPE_GetScoreL6_ForDiff((int)NOAKHKMLPFK_diff);
 			HHPIAKKJBJD_IsBetterScore = HMDHDKLDPFK_PrevScore < IHNCAAHAFEE_Score;
 			EFJFKKMAHMB_IsBetterCombo = mInfo2.DNIGPFPHJAK_ComboL6[(int)NOAKHKMLPFK_diff] < NCMJNHJJLBC_Combo;
 		}
@@ -140,7 +140,7 @@ public class NGJOPPIGCPM_ResultData
 		DACPGGLFLJG_FullComboType = 0;
 		if (!JIBFGLODGHN_EnableLiveSkip)
 		{
-			DACPGGLFLJG_FullComboType = mInfo1.ABFNAEKEGOB;
+			DACPGGLFLJG_FullComboType = mInfo1.ABFNAEKEGOB_ComboRank;
 		}
 		PMCGHPOGLGM_EnableLiveSkip = JIBFGLODGHN_EnableLiveSkip;
 		BPGDOBCMDBP_CategoryId = HMONFKMAFDD.DEPGBBJMFED_CategoryId;

@@ -9,7 +9,7 @@ namespace CriWare
 		// RVA: 0x2897D18 Offset: 0x2897D18 VA: 0x2897D18
 		public CriDisposable()
 		{
-			guid = new Guid();
+			guid = Guid.NewGuid();
 		}
 
 		// RVA: -1 Offset: -1 Slot: 5

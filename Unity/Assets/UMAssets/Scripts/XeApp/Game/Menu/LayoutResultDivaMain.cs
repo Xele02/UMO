@@ -268,7 +268,7 @@ namespace XeApp.Game.Menu
 		public void StartBeginAnim()
 		{
 			layoutRoot.StartChildrenAnimGoStop("go_in", "st_in");
-			StartCoroutine(Co_StartPlayingAnim());
+			this.StartCoroutineWatched(Co_StartPlayingAnim());
 		}
 
 		// // RVA: 0x18880B8 Offset: 0x18880B8 VA: 0x18880B8
@@ -276,7 +276,7 @@ namespace XeApp.Game.Menu
 		{
 			if (isSkiped)
 				return;
-			ExpAnimCoroutine = StartCoroutine(Co_StartMusicLevelPlayingAnim());
+			ExpAnimCoroutine = this.StartCoroutineWatched(Co_StartMusicLevelPlayingAnim());
 		}
 
 		// // RVA: 0x1888178 Offset: 0x1888178 VA: 0x1888178
@@ -286,7 +286,7 @@ namespace XeApp.Game.Menu
 		public void StartEndAnim(Action endAnimCallback)
 		{
 			layoutRoot.StartChildrenAnimGoStop("go_out", "st_out");
-			StartCoroutine(Co_EndPlayingAnim(endAnimCallback));
+			this.StartCoroutineWatched(Co_EndPlayingAnim(endAnimCallback));
 		}
 
 		// // RVA: 0x18882E0 Offset: 0x18882E0 VA: 0x18882E0
@@ -348,7 +348,7 @@ namespace XeApp.Game.Menu
 						dl.layoutIntimacy.StartChildrenAnimGoStop("st_out");
 					}
 				}
-				StartCoroutine(Co_StartLevelupPopupProcess(onFinished));
+				this.StartCoroutineWatched(Co_StartLevelupPopupProcess(onFinished));
 				isFinished = true;
 			}
 		}
@@ -356,7 +356,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1888A70 Offset: 0x1888A70 VA: 0x1888A70
 		public void StartGaugeFinishAnim()
 		{
-			GaugeAnimFinishCoroutine = StartCoroutine(Co_GaugeFinishAnim());
+			GaugeAnimFinishCoroutine = this.StartCoroutineWatched(Co_GaugeFinishAnim());
 		}
 
 		// // RVA: 0x1888B24 Offset: 0x1888B24 VA: 0x1888B24
@@ -364,7 +364,7 @@ namespace XeApp.Game.Menu
 		{
 			if(GaugeAnimFinishCoroutine != null)
 			{
-				StopCoroutine(GaugeAnimFinishCoroutine);
+				this.StopCoroutineWatched(GaugeAnimFinishCoroutine);
 				GaugeAnimFinishCoroutine = null;
 			}
 			for(int i = 0; i < 3; i++)
@@ -417,7 +417,7 @@ namespace XeApp.Game.Menu
 				//0x188B198
 				return musicLevelLayout.layoutRoot.IsPlayingChildren();
 			});
-			StartCoroutine(Co_StartMusicLevelExpAnim());
+			this.StartCoroutineWatched(Co_StartMusicLevelExpAnim());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7179DC Offset: 0x7179DC VA: 0x7179DC
@@ -430,7 +430,7 @@ namespace XeApp.Game.Menu
 			{
 				if (viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId > 0)
 				{
-					StartCoroutine(Co_EnterIntimacyAnim(i));
+					this.StartCoroutineWatched(Co_EnterIntimacyAnim(i));
 				}
 			}
 			yield return new WaitWhile(() =>
@@ -450,7 +450,7 @@ namespace XeApp.Game.Menu
 			{
 				if (viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId > 0)
 				{
-					coMusicExpIncreaseList.Add(StartCoroutine(Co_MusicLevelExpIncreaseAnim(i, false)));
+					coMusicExpIncreaseList.Add(this.StartCoroutineWatched(Co_MusicLevelExpIncreaseAnim(i, false)));
 				}
 			}
 			for (int i = 0; i < coMusicExpIncreaseList.Count; i++)
@@ -481,7 +481,7 @@ namespace XeApp.Game.Menu
 			});
 			if (IsGetBonus())
 			{
-				yield return Co_StartMusicLevelBonusExpAnim();
+				yield return Co.R(Co_StartMusicLevelBonusExpAnim());
 			}
 			musicLevelLayout.layoutRoot.FinishAnimLoop();
 			musicLevelLayout.layoutEffectRoot.StartChildrenAnimGoStop("go_out", "st_out");
@@ -492,7 +492,7 @@ namespace XeApp.Game.Menu
 			{
 				if (viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId > 0)
 				{
-					coDivaExpIncreaseList.Add(StartCoroutine(Co_DivaLevelExpIncreaseAnim(i)));
+					coDivaExpIncreaseList.Add(this.StartCoroutineWatched(Co_DivaLevelExpIncreaseAnim(i)));
 				}
 			}
 			for (int i = 0; i < coDivaExpIncreaseList.Count; i++)
@@ -507,7 +507,7 @@ namespace XeApp.Game.Menu
 				if (viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId > 0)
 				{
 					//? not sure this one
-					coDivaExpIncreaseList.Add(StartCoroutine(Co_GaugeEffectAnimFinishLoopWait(divaLayouts[i].layoutDivaExpGaugeEffectIn)));
+					coDivaExpIncreaseList.Add(this.StartCoroutineWatched(Co_GaugeEffectAnimFinishLoopWait(divaLayouts[i].layoutDivaExpGaugeEffectIn)));
 				}
 			}
 			for (int i = 0; i < coDivaExpIncreaseList.Count; i++)
@@ -515,7 +515,7 @@ namespace XeApp.Game.Menu
 				yield return coDivaExpIncreaseList[i];
 			}
 			yield return new WaitForSeconds(0.5f);
-			yield return StartCoroutine(Co_StartLevelupPopupProcess(null));
+			yield return this.StartCoroutineWatched(Co_StartLevelupPopupProcess(null));
 			if (onFinished != null)
 				onFinished();
 			isFinished = true;
@@ -535,7 +535,7 @@ namespace XeApp.Game.Menu
 				if(viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId > 0 &&
 					viewResultDivaData.NAIHIJAJPNK_Divas[i].DACHHLHPAAB_BonusExp > 0)
 				{
-					coMusicExpIncreaseList.Add(StartCoroutine(Co_WaitDivaExpAnim(i, "go_out", "st_out")));
+					coMusicExpIncreaseList.Add(this.StartCoroutineWatched(Co_WaitDivaExpAnim(i, "go_out", "st_out")));
 				}
 			}
 			for(i = 0; i < coMusicExpIncreaseList.Count; i++)
@@ -549,7 +549,7 @@ namespace XeApp.Game.Menu
 				if (viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId > 0 &&
 					viewResultDivaData.NAIHIJAJPNK_Divas[i].DACHHLHPAAB_BonusExp > 0)
 				{
-					coMusicExpIncreaseList.Add(StartCoroutine(Co_MusicLevelBonusEnterAnim(i)));
+					coMusicExpIncreaseList.Add(this.StartCoroutineWatched(Co_MusicLevelBonusEnterAnim(i)));
 				}
 			}
 			for (i = 0; i < coMusicExpIncreaseList.Count; i++)
@@ -564,7 +564,7 @@ namespace XeApp.Game.Menu
 				if (viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId > 0 &&
 					viewResultDivaData.NAIHIJAJPNK_Divas[i].DACHHLHPAAB_BonusExp > 0)
 				{
-					coMusicExpIncreaseList.Add(StartCoroutine(Co_MusicLevelBonusExpIncreaseAnim(i)));
+					coMusicExpIncreaseList.Add(this.StartCoroutineWatched(Co_MusicLevelBonusExpIncreaseAnim(i)));
 				}
 			}
 			for (i = 0; i < coMusicExpIncreaseList.Count; i++)
@@ -578,7 +578,7 @@ namespace XeApp.Game.Menu
 				if (viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId > 0 &&
 					viewResultDivaData.NAIHIJAJPNK_Divas[i].DACHHLHPAAB_BonusExp > 0)
 				{
-					coMusicExpIncreaseList.Add(StartCoroutine(Co_MusicLevelBonusLeaveAnim(i)));
+					coMusicExpIncreaseList.Add(this.StartCoroutineWatched(Co_MusicLevelBonusLeaveAnim(i)));
 				}
 			}
 			for (i = 0; i < coMusicExpIncreaseList.Count; i++)
@@ -592,7 +592,7 @@ namespace XeApp.Game.Menu
 				if (viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId > 0 &&
 					viewResultDivaData.NAIHIJAJPNK_Divas[i].DACHHLHPAAB_BonusExp > 0)
 				{
-					coMusicExpIncreaseList.Add(StartCoroutine(Co_WaitDivaExpAnim(i, "go_in", "st_in")));
+					coMusicExpIncreaseList.Add(this.StartCoroutineWatched(Co_WaitDivaExpAnim(i, "go_in", "st_in")));
 				}
 			}
 			for (i = 0; i < coMusicExpIncreaseList.Count; i++)
@@ -617,7 +617,7 @@ namespace XeApp.Game.Menu
 					if(viewResultDivaData.NAIHIJAJPNK_Divas[divaIndex].AJCEIPJDMEC_PrevDivaLevel < viewResultDivaData.NAIHIJAJPNK_Divas[divaIndex].JPGEAFPDHDE_DivaLevel)
 					{
 						IsLevelup = true;
-						yield return StartCoroutine(Co_ShowLevelupPopup(divaIndex));
+						yield return this.StartCoroutineWatched(Co_ShowLevelupPopup(divaIndex));
 					}
 				}
 				isLevelupPopupProcess = false;
@@ -764,7 +764,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_MusicLevelBonusExpIncreaseAnim(int divaIndex)
 		{
 			//0x188CF54
-			yield return StartCoroutine(Co_MusicLevelExpIncreaseAnim(divaIndex, true));
+			yield return this.StartCoroutineWatched(Co_MusicLevelExpIncreaseAnim(divaIndex, true));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x717D9C Offset: 0x717D9C VA: 0x717D9C
@@ -858,9 +858,9 @@ namespace XeApp.Game.Menu
 			dl.layoutMusicLevelUpBackShadow.StartChildrenAnimGoStop("go_out", "st_out");
 			dl.layoutDivaLevelEffectRoot4.StartChildrenAnimGoStop("go_in", "st_in");
 			dl.layoutDivaLevelEffect4.StartChildrenAnimLoop("anim", "lo_anim");
-			coGuideAnim = StartCoroutine(Co_PlayDivaIncreaseGuideAnim(divaIndex));
+			coGuideAnim = this.StartCoroutineWatched(Co_PlayDivaIncreaseGuideAnim(divaIndex));
 			dl.layoutDivaExpGaugeEffect.StartChildrenAnimGoStop("go_in", "st_in");
-			StartCoroutine(Co_GaugeEffectAnimStartWait(dl.layoutDivaExpGaugeEffect));
+			this.StartCoroutineWatched(Co_GaugeEffectAnimStartWait(dl.layoutDivaExpGaugeEffect));
 
 			currentTime = 0;
 			timeLength = 2;
@@ -881,7 +881,7 @@ namespace XeApp.Game.Menu
 				if(coGuideAnim != null && timeLength - 1 <= currentTime)
 				{
 					dl.layoutDivaLevelEffectRoot2.StartChildrenAnimGoStop("go_out", "st_out");
-					StopCoroutine(coGuideAnim);
+					this.StopCoroutineWatched(coGuideAnim);
 				}
 				if(timeLength <= currentTime)
 				{
@@ -894,7 +894,7 @@ namespace XeApp.Game.Menu
 			}
 			dl.layoutDivaLevelEffectRoot4.StartChildrenAnimGoStop("go_out", "st_out");
 			dl.layoutDivaExpGaugeEffect.FinishAnimLoop();
-			StartCoroutine(Co_GaugeEffectAnimFinishLoopWait(dl.layoutDivaExpGaugeEffect));
+			this.StartCoroutineWatched(Co_GaugeEffectAnimFinishLoopWait(dl.layoutDivaExpGaugeEffect));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x717F04 Offset: 0x717F04 VA: 0x717F04

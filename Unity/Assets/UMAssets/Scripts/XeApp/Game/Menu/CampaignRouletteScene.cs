@@ -20,7 +20,7 @@ namespace XeApp.Game.Menu
 		protected override void Awake()
 		{
 			base.Awake();
-			StartCoroutine(Co_InitializeLayout());
+			this.StartCoroutineWatched(Co_InitializeLayout());
 		}
 
 		// RVA: 0x10A5628 Offset: 0x10A5628 VA: 0x10A5628
@@ -32,13 +32,13 @@ namespace XeApp.Game.Menu
 		// RVA: 0x10A563C Offset: 0x10A563C VA: 0x10A563C
 		private void OnDestroy()
 		{
-			TodoLogger.Log(0, "Campaign roulette on destroy");
+			TodoLogger.LogError(0, "Campaign roulette on destroy");
 		}
 
 		// RVA: 0x10A5670 Offset: 0x10A5670 VA: 0x10A5670 Slot: 16
 		protected override void OnPreSetCanvas()
 		{
-			TodoLogger.Log(0, "Campaign roulette OnPreSetCanvas");
+			TodoLogger.LogError(0, "Campaign roulette OnPreSetCanvas");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6CB39C Offset: 0x6CB39C VA: 0x6CB39C
@@ -48,46 +48,46 @@ namespace XeApp.Game.Menu
 		// RVA: 0x10A5AAC Offset: 0x10A5AAC VA: 0x10A5AAC Slot: 18
 		protected override void OnPostSetCanvas() 
 		{
-			TodoLogger.Log(0, "Campaign roulette OnPostSetCanvas");
+			TodoLogger.LogError(0, "Campaign roulette OnPostSetCanvas");
 		}
 
 		// RVA: 0x10A5AB4 Offset: 0x10A5AB4 VA: 0x10A5AB4 Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			TodoLogger.Log(0, "Campaign roulette IsEndPreSetCanvas");
+			TodoLogger.LogError(0, "Campaign roulette IsEndPreSetCanvas");
 			return true;
 		}
 
 		// RVA: 0x10A5B78 Offset: 0x10A5B78 VA: 0x10A5B78 Slot: 20
 		protected override bool OnBgmStart()
 		{
-			TodoLogger.Log(0, "Campaign roulette OnBgmStart");
+			TodoLogger.LogError(0, "Campaign roulette OnBgmStart");
 			return true;
 		}
 
 		// RVA: 0x10A5C58 Offset: 0x10A5C58 VA: 0x10A5C58 Slot: 14
 		protected override void OnDestoryScene()
 		{
-			TodoLogger.Log(0, "Campaign roulette OnDestoryScene");
+			TodoLogger.LogError(0, "Campaign roulette OnDestoryScene");
 		}
 
 		// RVA: 0x10A5C5C Offset: 0x10A5C5C VA: 0x10A5C5C Slot: 9
 		protected override void OnStartEnterAnimation()
 		{
-			TodoLogger.Log(0, "Campaign roulette OnStartEnterAnimation");
+			TodoLogger.LogError(0, "Campaign roulette OnStartEnterAnimation");
 		}
 
 		// RVA: 0x10A5D0C Offset: 0x10A5D0C VA: 0x10A5D0C Slot: 10
 		protected override bool IsEndEnterAnimation()
 		{
-			TodoLogger.Log(0, "Campaign roulette IsEndEnterAnimation");
+			TodoLogger.LogError(0, "Campaign roulette IsEndEnterAnimation");
 			return true;
 		}
 
 		// // RVA: 0x10A5D14 Offset: 0x10A5D14 VA: 0x10A5D14 Slot: 31
 		public void OnPointerClick(PointerEventData eventData)
 		{
-			TodoLogger.Log(0, "Campaign roulette OnPointerClick");
+			TodoLogger.LogError(0, "Campaign roulette OnPointerClick");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6CB414 Offset: 0x6CB414 VA: 0x6CB414
@@ -104,7 +104,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x10A5F50 Offset: 0x10A5F50 VA: 0x10A5F50
 		private IEnumerator Co_InitializeLayout()
 		{
-			UnityEngine.Debug.LogError("Implement CampainRoulette Co_InitializeLayout");
+			TodoLogger.LogError(0, "Implement CampainRoulette Co_InitializeLayout");
 			yield break;
 		}
 

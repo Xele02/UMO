@@ -12,11 +12,11 @@ namespace XeApp.Game.RhythmGame.UI
         public IEnumerator Load(int pilotNo)
 		{
 			//0x1569338
-			yield return Load(string.Format("ct/pl/{0:D3}.xab", pilotNo), pilotNo.ToString("000"), (Texture2D tex) =>
+			yield return Co.R(Load(string.Format("ct/pl/{0:D3}.xab", pilotNo), pilotNo.ToString("000"), (Texture2D tex) =>
 			{
 				//0x156932C
 				mainTexture = tex;
-			});
+			}));
 		}
 
 		// // RVA: 0x1569220 Offset: 0x1569220 VA: 0x1569220 Slot: 4

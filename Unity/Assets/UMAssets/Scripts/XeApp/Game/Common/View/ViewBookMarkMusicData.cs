@@ -22,13 +22,22 @@ namespace XeApp.Game.Common.View
 		}
 
 		//// RVA: 0xD310BC Offset: 0xD310BC VA: 0xD310BC
-		//public static void OBHMLEOHEFF(int DLAEJOBELBH, int OIPCCBHIKIA, bool MHBBJADMHPN) { }
+		public static void OBHMLEOHEFF_SetBookmark(int DLAEJOBELBH, int OIPCCBHIKIA, bool MHBBJADMHPN)
+		{
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.DOGPMKIKKDA_SetBookmark(DLAEJOBELBH, OIPCCBHIKIA, MHBBJADMHPN);
+		}
 
 		//// RVA: 0xD311BC Offset: 0xD311BC VA: 0xD311BC
-		//public static string BDCDCCJHOCD(int OIPCCBHIKIA) { }
+		public static string BDCDCCJHOCD_GetBookmarkName(int OIPCCBHIKIA)
+		{
+			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.NPGGEAJMFCB_GetBookmarkName(OIPCCBHIKIA);
+		}
 
 		//// RVA: 0xD312A0 Offset: 0xD312A0 VA: 0xD312A0
-		//public static void GLMEPJIKBLP(int OIPCCBHIKIA, string OPFGFINHFCE) { }
+		public static void GLMEPJIKBLP_SetBookmarkName(int OIPCCBHIKIA, string OPFGFINHFCE)
+		{
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BAAGCGEGIMK_SetBookmarkName(OIPCCBHIKIA, OPFGFINHFCE);
+		}
 
 		//// RVA: 0xD3138C Offset: 0xD3138C VA: 0xD3138C
 		//public static List<IBJAKJJICBC> GLKIJNGMAGB(List<VerticalMusicDataList> DONOKFOFNBB, int FJFHNAJFNMK) { }

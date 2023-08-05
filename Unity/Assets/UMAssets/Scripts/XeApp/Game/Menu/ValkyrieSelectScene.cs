@@ -67,8 +67,8 @@ namespace XeApp.Game.Menu
 			m_PopupSetting.WindowSize = SizeType.Large;
 			m_PopupSetting.TitleText = MessageManager.Instance.GetBank("menu").GetMessageByLabel("popup_valkyrie_select_title");
 			m_PopupSetting.SetParent(transform);
-			StartCoroutine(Co_LoadEffect());
-			StartCoroutine(Co_LayoutAssetLoad());
+			this.StartCoroutineWatched(Co_LoadEffect());
+			this.StartCoroutineWatched(Co_LayoutAssetLoad());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x733A3C Offset: 0x733A3C VA: 0x733A3C
@@ -83,7 +83,7 @@ namespace XeApp.Game.Menu
 			bundleName = "ef/cmn.xab";
 			assetName = "model_loading";
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName);
-			yield return operation;
+			yield return Co.R(operation);
 
 			m_EffectPrefab = operation.GetAsset<GameObject>(assetName);
 			AssetBundleManager.UnloadAssetBundle(bundleName, false);
@@ -101,12 +101,12 @@ namespace XeApp.Game.Menu
 			m_IsLoadLayout = false;
 			bundleName = "ly/045.xab";
 			systemFont = GameManager.Instance.GetSystemFont();
-			yield return AssetBundleManager.LoadUnionAssetBundle(bundleName);
-			yield return Co_LoadAssetsLayoutValkyrieSelect(bundleName, systemFont);
-			yield return Co_LoadAssetsLayoutSeriesButton(bundleName, systemFont);
-			yield return Co_LoadAssetsLayoutCircle(bundleName, systemFont);
-			yield return Co_LoadAssetsViewButton(bundleName, systemFont);
-			yield return Co_LoadAssetsPopUp(bundleName, systemFont);
+			yield return Co.R(AssetBundleManager.LoadUnionAssetBundle(bundleName));
+			yield return Co.R(Co_LoadAssetsLayoutValkyrieSelect(bundleName, systemFont));
+			yield return Co.R(Co_LoadAssetsLayoutSeriesButton(bundleName, systemFont));
+			yield return Co.R(Co_LoadAssetsLayoutCircle(bundleName, systemFont));
+			yield return Co.R(Co_LoadAssetsViewButton(bundleName, systemFont));
+			yield return Co.R(Co_LoadAssetsPopUp(bundleName, systemFont));
 			AssetBundleManager.UnloadAssetBundle(bundleName, false);
 
 			while(m_layoutValSelect == null)
@@ -133,12 +133,12 @@ namespace XeApp.Game.Menu
 			if(m_layoutValSelect == null)
 			{
 				operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_valkyrie01_layout_root");
-				yield return operation;
-				yield return operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
+				yield return Co.R(operation);
+				yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
 					//0x165F544
 					instance.transform.SetParent(transform, false);
 					m_layoutValSelect = instance.GetComponent<LayoutValkyrieSelect>();
-				});
+				}));
 
 				AssetBundleManager.UnloadAssetBundle(bundleName, false);
 				operation = null;
@@ -159,12 +159,12 @@ namespace XeApp.Game.Menu
 			if(m_SeriesTab == null)
 			{
 				operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_val_btn_layout_root");
-				yield return operation;
-				yield return operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
+				yield return Co.R(operation);
+				yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
 					//0x165F614
 					instance.transform.SetParent(transform, false);
 					m_SeriesTab = instance.GetComponent<LayoutSeriesTab>();
-				});
+				}));
 				AssetBundleManager.UnloadAssetBundle(bundleName, false);
 				operation = null;
 			}
@@ -184,11 +184,11 @@ namespace XeApp.Game.Menu
 			if(m_circle == null)
 			{
 				operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_val_circle_layout_root");
-				yield return operation;
-				yield return operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
+				yield return Co.R(operation);
+				yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
 					//0x165F6E4
 					m_circle = instance.GetComponent<LayoutBackGroundCircle>();
-				});
+				}));
 				AssetBundleManager.UnloadAssetBundle(bundleName, false);
 				operation = null;
 			}
@@ -204,8 +204,8 @@ namespace XeApp.Game.Menu
 			if(m_ViewBtnAnim == null)
 			{
 				operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_val_btn_view_layout_root");
-				yield return operation;
-				yield return operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
+				yield return Co.R(operation);
+				yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
 					//0x165F760
 					instance.transform.SetParent(transform, false);
 					LayoutUGUIRuntime runtime = instance.GetComponent<LayoutUGUIRuntime>();
@@ -216,7 +216,7 @@ namespace XeApp.Game.Menu
 						return _.name == "sw_sel_val_view_btn_anim (AbsoluteLayout)";
 					}).First();
 					m_ViewButton.AddOnClickCallback(OnClickViewButton);
-				});
+				}));
 				AssetBundleManager.UnloadAssetBundle(bundleName, false);
 				operation = null;
 			}
@@ -232,12 +232,12 @@ namespace XeApp.Game.Menu
 			if(m_episodePop == null)
 			{
 				operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_val_terms_window_all_layout_root");
-				yield return operation;
-				yield return operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
+				yield return Co.R(operation);
+				yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
 					//0x165FA64
 					instance.transform.SetParent(transform, false);
 					m_episodePop = instance.GetComponent<LayoutEpisodePopup>();
-				});
+				}));
 				AssetBundleManager.UnloadAssetBundle(bundleName, false);
 				operation = null;
 			}
@@ -396,7 +396,7 @@ namespace XeApp.Game.Menu
 				if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null &&
 					Database.Instance.gameSetup.musicInfo != null)
 				{
-					int serie = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.musicId).AIHCEGFANAM_SerieId;
+					int serie = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.musicId).AIHCEGFANAM_SerieAttr;
 					if (serie >= 1 && serie <= 4)
 						return 0;
 					return (EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition)serie;
@@ -460,7 +460,7 @@ namespace XeApp.Game.Menu
 							else
 							{
 								valk.GCCNMFHELCB_Form = v.GetFormType();
-								v.ChangeValkyrie(valk.GCCNMFHELCB_Form, valk.GCCNMFHELCB_Form);
+								v.ChangeValkyrie(valk.GPPEFLKGGGJ_ValkyrieId, valk.GCCNMFHELCB_Form);
 							}
 						}
 						else
@@ -530,12 +530,15 @@ namespace XeApp.Game.Menu
 		protected override void OnPreSetCanvas()
 		{
 			base.OnPreSetCanvas();
-			m_isGoDiva = (Args as ValkyrieDataArgs).isGoDiva;
+			if(Args != null && Args is ValkyrieDataArgs)
+			{
+				m_isGoDiva = (Args as ValkyrieDataArgs).isGoDiva;
+			}
 			m_UnitData = GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(m_isGoDiva);
 			MenuScene.Instance.BgControl.SetPriority(BgPriority.TopMost);
-			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PNNHEOOJBFI_TutorialGeneralFlags.EDEDFDDIOKO(2);
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PNNHEOOJBFI_TutorialGeneralFlags.EDEDFDDIOKO_SetTrue(2);
 			m_IsSceneActivate = false;
-			StartCoroutine(Co_Initialize());
+			this.StartCoroutineWatched(Co_Initialize());
 		}
 
 		// RVA: 0x165C43C Offset: 0x165C43C VA: 0x165C43C Slot: 17
@@ -557,7 +560,7 @@ namespace XeApp.Game.Menu
 			{
 				ShowViewButton();
 			}
-			StartCoroutine(Co_PlayNoticeAnim());
+			this.StartCoroutineWatched(Co_PlayNoticeAnim());
 			if(m_viewValkyrieModeObj == null)
 			{
 				m_viewValkyrieModeObj = ViewScreenValkyrie.Create(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId, m_SeriesValkyrieList[SelectSeries][Select].GCCNMFHELCB_Form, () => {
@@ -731,7 +734,7 @@ namespace XeApp.Game.Menu
 					return;
 				m_layoutValSelect.ApplySelectValkyrieImage(m_SeriesValkyrieList[SelectSeries], Select);
                 PIGBBNDPPJC epData = GetEpisodeData(m_SeriesValkyrieList[SelectSeries][Select].KELFCMEOPPM_EpisodeId);
-                m_episodePop.SetEpisodeText(MessageManager.Instance.GetBank("menu").GetMessageByLabel("costume_select_text_01"), string.Format(MessageManager.Instance.GetBank("menu").GetMessageByLabel("costume_select_text_02"), epData != null ? epData.OPFGFINHFCE : ""));
+                m_episodePop.SetEpisodeText(MessageManager.Instance.GetBank("menu").GetMessageByLabel("costume_select_text_01"), string.Format(MessageManager.Instance.GetBank("menu").GetMessageByLabel("costume_select_text_02"), epData != null ? epData.OPFGFINHFCE_Name : ""));
 				m_layoutValSelect.FadeInValkyrieImage(LayoutValkyrieSelect.Direction.LEFT);
 				m_layoutValSelect.FadeInValkyrieImage(LayoutValkyrieSelect.Direction.RIGHT);
 				m_episodePop.SetEpisodeValkyrieImage(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId, 0);
@@ -833,7 +836,7 @@ namespace XeApp.Game.Menu
 			if(label != PopupButton.ButtonLabel.Ok)
 				return;
 			m_is_ValkrieTouch = false;
-			StartCoroutine(Co_DecideValkyrie());
+			this.StartCoroutineWatched(Co_DecideValkyrie());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x733E74 Offset: 0x733E74 VA: 0x733E74
@@ -862,7 +865,19 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x165E554 Offset: 0x165E554 VA: 0x165E554
 		private void OnClickViewButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickViewButton");
+			if(!m_SwaipTouch.IsMoveFlickDistance())
+			{
+				if(InputManager.Instance.GetInScreenTouchCount() < 2)
+				{
+					if(!MenuScene.Instance.DirtyChangeScene && IsLoadedValkyrie())
+					{
+						PGIGNJDPCAH.NNOBACMJHDM(PGIGNJDPCAH.FELLIEJEPIJ.LPBDIINNFEE/*5*/);
+						SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+						MenuScene.Instance.Call(TransitionList.Type.MODEL_VIEW_MODE, null, true);
+						m_viewSceneFlag = true;
+					}
+				}
+			}
 		}
 
 		// // RVA: 0x165E788 Offset: 0x165E788 VA: 0x165E788
@@ -898,7 +913,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < m_EpisodeList.Count; i++)
 			{
-				if(m_EpisodeList[i].KELFCMEOPPM_Id == id)
+				if(m_EpisodeList[i].KELFCMEOPPM_EpId == id)
 				{
 					return m_EpisodeList[i];
 				}
@@ -933,7 +948,7 @@ namespace XeApp.Game.Menu
 										SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_VALKYRIE_000);
 										m_layoutValSelect.SetActiveTransform(m_EffectInstance.activeSelf, false);
 										m_SwaipTouch.Stop(true);
-										StartCoroutine(v.Co_WaitEnableTransformation(() => {
+										this.StartCoroutineWatched(v.Co_WaitEnableTransformation(() => {
 											//0x165FB78
 											m_SwaipTouch.ResetValue();
 											m_SwaipTouch.ResetInputState();

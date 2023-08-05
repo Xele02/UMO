@@ -21,25 +21,25 @@ namespace XeApp.Game.Menu
 
 		[SerializeField]
 		[Header("- m_home_[Voice Id]")]
-		private List<MenuDivaVoiceTable.Data> m_timeTalk; // 0xC
+		private List<Data> m_timeTalk; // 0xC
 		[SerializeField]
-		private List<MenuDivaVoiceTable.Data> m_loginTalk; // 0x10
+		private List<Data> m_loginTalk; // 0x10
 		[SerializeField]
-		private MenuDivaVoiceTable.Data m_comeback; // 0x14
+		private Data m_comeback; // 0x14
 		[SerializeField]
-		private MenuDivaVoiceTable.Data m_birthdayTalk; // 0x18
+		private Data m_birthdayTalk; // 0x18
 		[Header("- diva_[Diva Id]_m_home_[Voice Id]")]
 		[SerializeField]
-		private List<MenuDivaVoiceTable.Data> m_eventTalk; // 0x1C
+		private List<Data> m_eventTalk; // 0x1C
 		[SerializeField]
 		[Header("- touch [Voice Id] [Touch / Talk / Timezone / Present / SimpleTalk]")]
-		private List<MenuDivaVoiceTable.Data> m_touchReaction; // 0x20
+		private List<Data> m_touchReaction; // 0x20
 		[SerializeField]
 		[Header("- present [Voice Id] [Touch / Talk / Timezone / Present / SimpleTalk]")]
-		private List<MenuDivaVoiceTable.Data> m_presentReaction; // 0x24
+		private List<Data> m_presentReaction; // 0x24
 		[Header("- intimacy [Voice Id] [Touch / Talk / Timezone / Present / SimpleTalk]")]
 		[SerializeField]
-		private List<MenuDivaVoiceTable.Data> m_intimacyReaction; // 0x28
+		private List<Data> m_intimacyReaction; // 0x28
 		[SerializeField]
 		[Header("")] // RVA: 0x669D34 Offset: 0x669D34 VA: 0x669D34
 		private List<int> m_IntimacyLock_TimeTalk; // 0x2C
@@ -47,7 +47,10 @@ namespace XeApp.Game.Menu
 		private List<int> m_IntimacyLock_TouchReaction; // 0x30
 
 		// // RVA: 0xECE090 Offset: 0xECE090 VA: 0xECE090
-		// public List<MenuDivaVoiceTable.Data> GetList_TimeTalk() { }
+		public List<Data> GetList_TimeTalk()
+		{
+			return m_timeTalk;
+		}
 
 		// // RVA: 0xED0848 Offset: 0xED0848 VA: 0xED0848
 		// public List<MenuDivaVoiceTable.Data> GetList_LoginTalk() { }
@@ -68,16 +71,25 @@ namespace XeApp.Game.Menu
 		// public MenuDivaVoiceTable.Data GetTimeTalk(int i) { }
 
 		// // RVA: 0xED08F0 Offset: 0xED08F0 VA: 0xED08F0
-		// public MenuDivaVoiceTable.Data GetLoginTalk(DivaTimezoneTalk.Type i) { }
+		public Data GetLoginTalk(DivaTimezoneTalk.Type i)
+		{
+			return m_loginTalk[(int)i];
+		}
 
 		// // RVA: 0xED0970 Offset: 0xED0970 VA: 0xED0970
-		// public MenuDivaVoiceTable.Data GetEventTalk(DivaSeasonTalk.Type i) { }
+		public Data GetEventTalk(DivaSeasonTalk.Type i)
+		{
+			return m_eventTalk[(int)i];
+		}
 
 		// // RVA: 0xED09F0 Offset: 0xED09F0 VA: 0xED09F0
 		// public MenuDivaVoiceTable.Data GetComeback() { }
 
 		// // RVA: 0xED09F8 Offset: 0xED09F8 VA: 0xED09F8
-		// public MenuDivaVoiceTable.Data GetBirthdayTalk() { }
+		public Data GetBirthdayTalk()
+		{
+			return m_birthdayTalk;
+		}
 
 		// // RVA: 0xED0A00 Offset: 0xED0A00 VA: 0xED0A00
 		// public MenuDivaVoiceTable.Data GetTouchReaction(DivaTouchReaction.Type i) { }

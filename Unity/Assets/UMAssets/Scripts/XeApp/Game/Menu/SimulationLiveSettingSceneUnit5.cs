@@ -1,6 +1,7 @@
 using mcrs;
 using System.Collections;
 using XeApp.Game.Common;
+using XeApp.Game.Tutorial;
 using XeSys;
 
 namespace XeApp.Game.Menu
@@ -29,7 +30,7 @@ namespace XeApp.Game.Menu
 		{
 			SetupPrismPopupSetting();
 			m_gameSettingMenu = ConfigMenu.Create(null);
-			StartCoroutine(Co_LoadResource());
+			this.StartCoroutineWatched(Co_LoadResource());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x72743C Offset: 0x72743C VA: 0x72743C
@@ -37,7 +38,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_LoadResource()
 		{
 			//0x12D05EC
-			yield return CreateUGUIObjectCache();
+			yield return Co.R(CreateUGUIObjectCache());
 			IsReady = true;
 		}
 
@@ -77,7 +78,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CE228 Offset: 0x12CE228 VA: 0x12CE228 Slot: 18
 		protected override void OnPostSetCanvas()
 		{
-			StartCoroutine(Co_OnPostSetCanvas());
+			this.StartCoroutineWatched(Co_OnPostSetCanvas());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7274B4 Offset: 0x7274B4 VA: 0x7274B4
@@ -126,7 +127,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CE9BC Offset: 0x12CE9BC VA: 0x12CE9BC Slot: 12
 		protected override void OnStartExitAnimation()
 		{
-			StartCoroutine(Co_ExitAnimation());
+			this.StartCoroutineWatched(Co_ExitAnimation());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x72752C Offset: 0x72752C VA: 0x72752C
@@ -157,19 +158,26 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CEAA0 Offset: 0x12CEAA0 VA: 0x12CEAA0 Slot: 23
 		protected override void OnActivateScene()
 		{
-			TodoLogger.Log(0, "OnActivateScene");
+			this.StartCoroutineWatched(Co_ShowHelp());
 		}
 
 		// // RVA: 0x12CEB50 Offset: 0x12CEB50 VA: 0x12CEB50 Slot: 24
 		protected override bool IsEndActivateScene()
 		{
-			TodoLogger.Log(0, "IsEndActivateScene");
-			return true;
+			return !m_isWaitActivateScene;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7275A4 Offset: 0x7275A4 VA: 0x7275A4
 		// // RVA: 0x12CEAC4 Offset: 0x12CEAC4 VA: 0x12CEAC4
-		// private IEnumerator Co_ShowHelp() { }
+		private IEnumerator Co_ShowHelp()
+		{
+			//0x12D0830
+			m_isWaitActivateScene = true;
+			MenuScene.Instance.InputDisable();
+			yield return TutorialManager.TryShowTutorialCoroutine(CheckTutorialCondition);
+			MenuScene.Instance.InputEnable();
+			m_isWaitActivateScene = false;
+		}
 
 		// // RVA: 0x12CD8A8 Offset: 0x12CD8A8 VA: 0x12CD8A8
 		private void InitializeUGUIObject()
@@ -279,7 +287,8 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CEEB4 Offset: 0x12CEEB4 VA: 0x12CEEB4
 		private void OnClickGameSettingButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickGameSettingButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			m_gameSettingMenu.ShowPopupRhythm(null, null);
 		}
 
 		// // RVA: 0x12CEF38 Offset: 0x12CEF38 VA: 0x12CEF38
@@ -365,7 +374,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CFB68 Offset: 0x12CFB68 VA: 0x12CFB68
 		private void StartApplyWait()
 		{
-			StartCoroutine(Co_ApplyWait());
+			this.StartCoroutineWatched(Co_ApplyWait());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x72761C Offset: 0x72761C VA: 0x72761C
@@ -380,7 +389,14 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x12CFC38 Offset: 0x12CFC38 VA: 0x12CFC38
-		// private bool CheckTutorialCondition(TutorialConditionId conditionId) { }
+		private bool CheckTutorialCondition(TutorialConditionId conditionId)
+		{
+			if(conditionId == TutorialConditionId.Condition96)
+			{
+				return LiveBeforeSceneBaseUnit5.CheckExistOriginalSetting(m_prismData);
+			}
+			return false;
+		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x727694 Offset: 0x727694 VA: 0x727694
 		// // RVA: 0x12CFD68 Offset: 0x12CFD68 VA: 0x12CFD68

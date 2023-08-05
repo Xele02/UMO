@@ -6,7 +6,7 @@ namespace XeApp.Game.Common
 {
 	public class LuckyLeafTerminate : LayoutUGUIScriptBase
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private Text[] m_texts;
 		[SerializeField]

@@ -109,7 +109,7 @@ public class FPGEMAIAMBF_RewardData
 		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo prevMusicInfo = null;
 		if (MNNHHJBBICA_GameEventType == 4)
 		{
-			TodoLogger.Log(0, "Event");
+			TodoLogger.LogError(0, "Event");
 		}
 		else
 		{

@@ -27,7 +27,10 @@ public class HMIJOOPHJLB_Diva2 : DIHHCBACKGG_DbSection
 	// public int OAJOMHOOCJJ(int CIEOBFIIPLD) { }
 
 	// // RVA: 0x15F6168 Offset: 0x15F6168 VA: 0x15F6168
-	// public int NBJKHMLGNPA() { }
+	public int NBJKHMLGNPA()
+	{
+		return KNOMABFHFEB.Count - 1;
+	}
 
 	// RVA: 0x15F61E4 Offset: 0x15F61E4 VA: 0x15F61E4
 	public HMIJOOPHJLB_Diva2()
@@ -79,7 +82,7 @@ public class HMIJOOPHJLB_Diva2 : DIHHCBACKGG_DbSection
 	// RVA: 0x15F680C Offset: 0x15F680C VA: 0x15F680C Slot: 11
 	public override uint CAOGDCBPBAN()
     {
-        TodoLogger.Log(0, "CAOGDCBPBAN");
+        TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "HMIJOOPHJLB_Diva2.CAOGDCBPBAN");
         return 0;
     }
 }

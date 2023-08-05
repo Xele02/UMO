@@ -18,6 +18,21 @@ namespace XeApp.Game.Menu
         public StoryBgParam storyBgParam; // 0x38
 
         // RVA: 0xA59734 Offset: 0xA59734 VA: 0xA59734
-        // public void Copy(SceneStackInfo o) { }
+        public void Copy(SceneStackInfo o)
+        {
+            o.name = name;
+            o.cacheCategory = cacheCategory;
+            o.groupCategory = groupCategory;
+            o.args = args;
+            o.fadeId = fadeId;
+            o.titleLabel = titleLabel;
+            o.descId = descId;
+            o.bgmId = bgmId;
+            o.bgType = bgType;
+            o.bgId = bgId;
+            o.bgAttr = bgAttr;
+            o.storyBgParam = storyBgParam;
+            o.uniqueId = uniqueId;
+        }
     }
 }

@@ -93,7 +93,7 @@ namespace XeApp.Game.Menu
 			layoutDetailButton = layout.FindViewById("sw_btn_log_detail") as AbsoluteLayout;
 			layoutDetailButton.enabled = false;
 			if(!isStartInitialize)
-				StartCoroutine(Co_Initialize(layout, uvMan));
+				this.StartCoroutineWatched(Co_Initialize(layout, uvMan));
 			return IsLoaded();
 		}
 
@@ -109,7 +109,7 @@ namespace XeApp.Game.Menu
 			isStartInitialize = true;
 			bundle_name = PopupPlaylogDetail.BUNDLE_NAME;
 			operation = AssetBundleManager.LoadAssetAsync(bundle_name, "PlaylogBarObj", typeof(GameObject));
-			yield return operation;
+			yield return Co.R(operation);
 
 			GameObject g = operation.GetAsset<GameObject>();
 			parent = transform.Find(GRAPH_PARENT_OBJ);
@@ -136,12 +136,14 @@ namespace XeApp.Game.Menu
 				}
 				for(int i = 0; i < playlog.noteDataList.Count; i++)
 				{
-					data[Mathf.Min(Mathf.RoundToInt(playlog.noteDataList[i].millisec / endTime * GRAPH_COUNT), GRAPH_COUNT - 1)].Add(playlog.noteDataList[i]);
+					data[Mathf.Min(Mathf.RoundToInt(playlog.noteDataList[i].millisec * 1.0f / endTime * GRAPH_COUNT), GRAPH_COUNT - 1)].Add(playlog.noteDataList[i]);
 				}
 				for(int i = 0; i < GRAPH_COUNT; i++)
 				{
 					graphObjects[i].GetComponent<ResultPlaylogBarController>().Setup(0, graphSize, data[i], endTime);
+					graphObjects[i].GetComponent<ResultPlaylogBarController>().ChangeGraphType(PopupPlaylogDetail.GraphType.Hide);
 					graphObjectsHL[i].GetComponent<ResultPlaylogBarController>().Setup(0, graphSizeHL, data[i], endTime);
+					graphObjectsHL[i].GetComponent<ResultPlaylogBarController>().ChangeGraphType(PopupPlaylogDetail.GraphType.Hide);
 				}
 				yield return null;
 				yield return new WaitWhile(() => {
@@ -182,9 +184,14 @@ namespace XeApp.Game.Menu
 			List<GameObject> lg = new List<GameObject>();
 			List<GameObject> lg2 = new List<GameObject>();
 			List<GameObject> lg3 = new List<GameObject>();
-			SetupModeObject(lg, lg2, lg3, playlog.valkyrieModeData, graph_parts.GetPartsData(0).mode_parts[0], graph_parts.GetPartsData(0).division_line, t2, endTime, true);
-			SetupModeObject(lg, lg2, lg3, playlog.divaModeData, playlog.valkyrieModeData.type != RhythmGameMode.Type.Valkyrie ? graph_parts.GetPartsData(0).mode_parts[0] : graph_parts.GetPartsData(0).mode_parts[1], graph_parts.GetPartsData(0).division_line, t2, endTime, true);
-			SetupModeObject(lg, lg2, lg3, playlog.divaModeData, playlog.divaModeData.type == RhythmGameMode.Type.AwakenDiva ? graph_parts.GetPartsData(0).mode_parts[3] : (playlog.divaModeData.type == RhythmGameMode.Type.Diva ? graph_parts.GetPartsData(0).mode_parts[2] : graph_parts.GetPartsData(0).mode_parts[0]), graph_parts.GetPartsData(0).division_line, t2, endTime, false);
+			SetupModeObject(lg, lg2, lg3, 
+				new RhythmGamePlayLog.ModeData() { type = RhythmGameMode.Type.Normal, beginMillisec = 0, endMillisec = playlog.valkyrieModeData.beginMillisec }, 
+				graph_parts.GetPartsData(0).mode_parts[0], graph_parts.GetPartsData(0).division_line, t2, endTime, true);
+			SetupModeObject(lg, lg2, lg3,
+				new RhythmGamePlayLog.ModeData() { type = playlog.valkyrieModeData.type, beginMillisec = playlog.valkyrieModeData.beginMillisec, endMillisec = playlog.divaModeData.beginMillisec },
+				playlog.valkyrieModeData.type != RhythmGameMode.Type.Valkyrie ? graph_parts.GetPartsData(0).mode_parts[0] : graph_parts.GetPartsData(0).mode_parts[1], graph_parts.GetPartsData(0).division_line, t2, endTime, true);
+			SetupModeObject(lg, lg2, lg3, playlog.divaModeData,
+				playlog.divaModeData.type == RhythmGameMode.Type.AwakenDiva ? graph_parts.GetPartsData(0).mode_parts[3] : (playlog.divaModeData.type == RhythmGameMode.Type.Diva ? graph_parts.GetPartsData(0).mode_parts[2] : graph_parts.GetPartsData(0).mode_parts[0]), graph_parts.GetPartsData(0).division_line, t2, endTime, false);
 			for(int i = 0; i < lg2.Count; i++)
 			{
 				lg2[i].transform.SetAsLastSibling();
@@ -228,8 +235,8 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x18E955C Offset: 0x18E955C VA: 0x18E955C
 		private void SetupModeObject(List<GameObject> range_list, List<GameObject> line_list, List<GameObject> icon_list, RhythmGamePlayLog.ModeData data, LayoutResultPlaylogGraphParts.PartsData.ModeParts parts, GameObject line_obj, RectTransform parent, int end_time, bool is_show_end_line = true)
 		{
-			float f = Mathf.Clamp(data.beginMillisec * 1.0f / endTime, 0, 1);
-			float f2 = Mathf.Clamp(data.endMillisec * 1.0f / endTime, 0, 1);
+			float f = Mathf.Clamp(data.beginMillisec * 1.0f / end_time, 0, 1);
+			float f2 = Mathf.Clamp(data.endMillisec * 1.0f / end_time, 0, 1);
 			float f5 = Mathf.Clamp(Mathf.Lerp(f, f2, 0.5f), 0, 1);
 			GameObject line = Instantiate(parts.line);
 			SetupObject(line, parent, f5 * parent.sizeDelta.x);
@@ -332,7 +339,14 @@ namespace XeApp.Game.Menu
 		// public void SkipAnim() { }
 
 		// // RVA: 0x18EAB18 Offset: 0x18EAB18 VA: 0x18EAB18
-		// public void StartAnim(RhythmGameConsts.NoteResult type, float time) { }
+		public void StartAnim(RhythmGameConsts.NoteResult type, float time)
+		{
+			for(int i = 0; i < GRAPH_COUNT; i++)
+			{
+				graphObjects[i].GetComponent<ResultPlaylogBarController>().EnterGraphAnim(type, time);
+				graphObjectsHL[i].GetComponent<ResultPlaylogBarController>().EnterGraphAnim(type, time);
+			}
+		}
 
 		// // RVA: 0x18EA884 Offset: 0x18EA884 VA: 0x18EA884
 		public void FinishAnim(bool is_skip = false)
@@ -344,7 +358,7 @@ namespace XeApp.Game.Menu
 			}
 			if(!is_skip)
 			{
-				StartCoroutine(Co_EnterGraphParts());
+				this.StartCoroutineWatched(Co_EnterGraphParts());
 			}
 			else
 			{
@@ -364,7 +378,7 @@ namespace XeApp.Game.Menu
 		{
 			if(showHintId > -1 && !isShowHit)
 			{
-				StartCoroutine(Co_EnterHint());
+				this.StartCoroutineWatched(Co_EnterHint());
 				isShowHit = true;
 				return;
 			}
@@ -455,7 +469,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x18EB120 Offset: 0x18EB120 VA: 0x18EB120
-		// public void SetActiveHintButton(bool is_active) { }
+		public void SetActiveHintButton(bool is_active)
+		{
+			isHintTouch = is_active;
+		}
 
 		// // RVA: 0x18EB128 Offset: 0x18EB128 VA: 0x18EB128
 		private static bool CheckHintFunc_FoldStaus(RhythmGamePlayLog playlog)

@@ -49,7 +49,7 @@ namespace XeSys.Gfx
 		public string TextId { get { return m_TextId; } set {
 			m_TextId = value;
 			if(LayoutUtil.getTextFromIdDelegate == null)
-				Text = "???12";
+				Text = JpStringLiterals.StringLiteral_21607;
 			else
 			{
 				Text = LayoutUtil.getTextFromIdDelegate(m_TextId);

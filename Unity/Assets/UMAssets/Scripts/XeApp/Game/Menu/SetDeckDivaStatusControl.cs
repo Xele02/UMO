@@ -148,9 +148,9 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-
+				!
 				}*/
-				TodoLogger.Log(0, "SetMusicExp");
+				TodoLogger.LogError(0, "SetMusicExp");
 			}
 		}
 

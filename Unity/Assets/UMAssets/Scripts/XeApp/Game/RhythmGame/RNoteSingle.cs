@@ -196,7 +196,10 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDBBC7C Offset: 0xDBBC7C VA: 0xDBBC7C
 		public void SetupSpecialType(RhythmGameMode gameMode)
 		{
-			SetSpecialType(noteObject.rNote.CurrentModeInfo(gameMode).specialNoteType);
+			if(gameMode == null)
+				SetSpecialType(RhythmGameConsts.SpecialNoteType.None);
+			else
+				SetSpecialType(noteObject.rNote.CurrentModeInfo(gameMode).specialNoteType);
 		}
 
 		// // RVA: 0xDBEA88 Offset: 0xDBEA88 VA: 0xDBEA88

@@ -55,6 +55,7 @@ namespace XeApp.Game.Common
 			{
 				if(time >= preEndCallbackMicroSec && playedMicroSec < preEndCallbackMicroSec)
 				{
+					//TodoLogger.LogError(TodoLogger.Movie, "endmovie "+time+" "+preEndCallbackMicroSec+" "+playedMicroSec);
 					onPreEndMovieCallback();
 				}
 			}
@@ -70,8 +71,13 @@ namespace XeApp.Game.Common
 			}
 			moviePlayer = movieController;
 			movieController.target = m_movieRenderer;
+			#if UNITY_EDITOR_LINUX
+			moviePlayer.material.mainTextureScale = new Vector2(1, -1);
+			moviePlayer.material.mainTextureOffset = new Vector2(0, 1);
+			#else
 			moviePlayer.material.mainTextureScale = new Vector2(-1, -1);
 			moviePlayer.material.mainTextureOffset = new Vector2(1, 1);
+			#endif
 			m_releaseData = new ReleaseData();
 			m_releaseData.cullingMask = m_billboardCamera.cullingMask;
 			m_stretchBillboard = gameObject.AddComponent<CameraStretchBillboard>();
@@ -91,7 +97,7 @@ namespace XeApp.Game.Common
 		public void Begin()
 		{
 			if (m_coWaitForMovieEnd != null)
-				StopCoroutine(m_coWaitForMovieEnd);
+				this.StopCoroutineWatched(m_coWaitForMovieEnd);
 			gameObject.SetActive(true);
 			m_billboardCamera.cullingMask = VisibleDiva ? m_overrideCullingMask1 : m_overrideCullingMask2;
 			m_stretchBillboard.enabled = true;
@@ -99,7 +105,7 @@ namespace XeApp.Game.Common
 			moviePlayer.Play();
 			SetupMovieTimes();
 			isRunning = true;
-			m_coWaitForMovieEnd = StartCoroutine(Co_WaitForMovieEnd());
+			m_coWaitForMovieEnd = this.StartCoroutineWatched(Co_WaitForMovieEnd());
 			isInitialized = true;
 		}
 
@@ -109,7 +115,7 @@ namespace XeApp.Game.Common
 			if (!isInitialized)
 				return;
 			if (m_coWaitForMovieEnd != null)
-				StopCoroutine(m_coWaitForMovieEnd);
+				this.StopCoroutineWatched(m_coWaitForMovieEnd);
 			gameObject.SetActive(false);
 			m_billboardCamera.cullingMask = m_releaseData.cullingMask;
 			m_stretchBillboard.enabled = false;
@@ -158,8 +164,10 @@ namespace XeApp.Game.Common
 		{
 			//0x1BF143C
 			yield return new WaitForSeconds(0.5f);
-			while (isPlayingMovie && playedMicroSec < endMicroSec)
+			while (isPlayingMovie && endMicroSec >= playedMicroSec)
+			{
 				yield return null;
+			}
 			if (onEndMovieCallback != null)
 				onEndMovieCallback();
 		}

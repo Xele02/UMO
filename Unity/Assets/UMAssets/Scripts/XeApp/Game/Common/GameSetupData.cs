@@ -156,7 +156,10 @@ namespace XeApp.Game.Common
 				}
 
 				// // RVA: 0xEA0730 Offset: 0xEA0730 VA: 0xEA0730
-				// public void SetPositionId(int position_id) { }
+				public void SetPositionId(int position_id)
+				{
+					positionId = position_id;
+				}
 
 				// // RVA: 0xEA0738 Offset: 0xEA0738 VA: 0xEA0738
 				// public void ApplyCenterSpecialRules() { }
@@ -212,10 +215,10 @@ namespace XeApp.Game.Common
 				teamStatus = new StatusData();
 				teamStatus.Clear();
 				isPrismEnable = false;
-				teamLuck_ = 0x4e8bf5d; // 0
-				excellentRate_ = 0xda76a15; // 0
-				excellentScoreAdd_ = 0xc0ae7; // 0
-				centerLiveSkillRate_ = 0x768078; // 0
+				teamLuck = 0;
+				excellentRate = 0;
+				excellentScoreAdd = 0;
+				centerLiveSkillRate = 0;
 			}
 
 			// // RVA: 0xE9E784 Offset: 0xE9E784 VA: 0xE9E784
@@ -238,7 +241,7 @@ namespace XeApp.Game.Common
 				}
 				else
 				{
-					TodoLogger.Log(0, "GoDiva");
+					TodoLogger.LogError(0, "GoDiva");
 				}
 				for(int i = 0; i < divaList_.Length; i++)
 				{
@@ -272,17 +275,17 @@ namespace XeApp.Game.Common
 				teamStatus = new StatusData();
 				teamStatus.Copy(teamStateus);
 				teamStatus.Add(status);
-				teamLuck_ = luck ^ 0x4e8bf5d;
+				teamLuck = luck;
 				if(limitOverStatus != null)
 				{
-					excellentRate_ = limitOverStatus.excellentRate_SameMusicAttr + limitOverStatus.excellentRate + limitOverStatus.excellentRate_SameSeriesAttr;
-					excellentScoreAdd_ = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.LPJLEHAJADA("ex_effect", 0);
+					excellentRate = limitOverStatus.excellentRate_SameMusicAttr + limitOverStatus.excellentRate + limitOverStatus.excellentRate_SameSeriesAttr;
+					excellentScoreAdd = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.LPJLEHAJADA("ex_effect", 0);
 					if(divaList_[0].liveSkillIdList[0] > 0)
 					{
-						centerLiveSkillRate_ = limitOverStatus.centerLiveSkillRate_SameMusicAttr + limitOverStatus.centerLiveSkillRate + limitOverStatus.centerLiveSkillRate_SameSeriesAttr;
+						centerLiveSkillRate = limitOverStatus.centerLiveSkillRate_SameMusicAttr + limitOverStatus.centerLiveSkillRate + limitOverStatus.centerLiveSkillRate_SameSeriesAttr;
 					}
 				}
-				UnityEngine.Debug.Log(string.Concat(new object[6] { JpStringLiterals.StringLiteral_13975, excellentRate_ ^ 0xda76a15, ", " + JpStringLiterals.StringLiteral_13976, excellentScoreAdd_ ^ 0xc0ae7, ", " + JpStringLiterals.StringLiteral_13977, centerLiveSkillRate_ ^ 0x768078 }));
+				UnityEngine.Debug.Log(string.Concat(new object[6] { JpStringLiterals.StringLiteral_13975, excellentRate, ", " + JpStringLiterals.StringLiteral_13976, excellentScoreAdd, ", " + JpStringLiterals.StringLiteral_13977, centerLiveSkillRate }));
 			}
 
 			// // RVA: 0xE9CDAC Offset: 0xE9CDAC VA: 0xE9CDAC
@@ -297,7 +300,7 @@ namespace XeApp.Game.Common
 				prismValkyrieId = info.PNDKNFBLKDP_GetPrismValkyrieId();
 				teamStatus = new StatusData();
 				teamStatus.Copy(teamStateus);
-				teamLuck_ = 0x4e8bf5d;
+				teamLuck = 0;
 			}
 
 			// // RVA: 0xE9D15C Offset: 0xE9D15C VA: 0xE9D15C
@@ -410,7 +413,7 @@ namespace XeApp.Game.Common
 				IsLine6Mode = isLine6Mode;
 				if(setupTime == 0)
 				{
-					setupTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+					setupTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 				}
 				this.musicLoadText = musicLoadText;
 				this.onStageDivaNum = onStageDivaNum;
@@ -498,13 +501,23 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xE9CF04 Offset: 0xE9CF04 VA: 0xE9CF04
-		// public void SetLiveSkip(bool isSkip, int ticketCount) { }
+		public void SetLiveSkip(bool isSkip, int ticketCount)
+		{
+			LiveSkipTicketCount = ticketCount;
+			EnableLiveSkip = isSkip;
+		}
 
 		// // RVA: 0xE9CF10 Offset: 0xE9CF10 VA: 0xE9CF10
-		// public void SetIsNotUpdateProfile(bool _isNotUpdateProfile) { }
+		public void SetIsNotUpdateProfile(bool _isNotUpdateProfile)
+		{
+			IsNotUpdateProfile = _isNotUpdateProfile;
+		}
 
 		// // RVA: 0xE9CBBC Offset: 0xE9CBBC VA: 0xE9CBBC
-		// public void ResetSelectedDashIndex() { }
+		public void ResetSelectedDashIndex()
+		{
+			SelectedDashIndex = -1;
+		}
 
 		// // RVA: 0xE9CF18 Offset: 0xE9CF18 VA: 0xE9CF18
 		// public void SetSelectedDashIndex(int index) { }
@@ -552,7 +565,16 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xE9D308 Offset: 0xE9D308 VA: 0xE9D308
-		// public int ForceBG() { }
+		public int ForceBG()
+		{
+			if(forcePrism != null)
+			{
+				if (forcePrism.OENPCNBFPDA_Bg < 1)
+					return 0;
+				return forcePrism.OENPCNBFPDA_Bg;
+			}
+			return 0;
+		}
 
 		// // RVA: 0xE9D328 Offset: 0xE9D328 VA: 0xE9D328
 		public int ForceDivaMode()

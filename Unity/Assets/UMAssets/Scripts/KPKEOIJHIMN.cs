@@ -39,14 +39,14 @@ public class KPKEOIJHIMN
     }
 
 	// // RVA: 0xD8E9D0 Offset: 0xD8E9D0 VA: 0xD8E9D0
-	public KPKEOIJHIMN.GIDACIOHFNN PGBOFGNOBLD()
+	public GIDACIOHFNN PGBOFGNOBLD()
     {
         if(CINGFPEPPED.AJBPBEALBOB_ServerCurrentAssetRevision == null)
-            return KPKEOIJHIMN.GIDACIOHFNN.NHHHCIINJKO;
+            return GIDACIOHFNN.NHHHCIINJKO;
 
-        if(IBLKLEMGCCG.AJBPBEALBOB_ServerCurrentAssetRevision == CINGFPEPPED.AJBPBEALBOB_ServerCurrentAssetRevision)
-            return KPKEOIJHIMN.GIDACIOHFNN.GJCDHOAEIHP;
+        if(IBLKLEMGCCG.AJBPBEALBOB_ServerCurrentAssetRevision != CINGFPEPPED.AJBPBEALBOB_ServerCurrentAssetRevision)
+            return GIDACIOHFNN.GJCDHOAEIHP;
             
-		return KPKEOIJHIMN.GIDACIOHFNN.NHHHCIINJKO;
+		return GIDACIOHFNN.NHHHCIINJKO;
     }
 }

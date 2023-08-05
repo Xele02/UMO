@@ -9,7 +9,7 @@ namespace XeApp.Game.Menu
 {
 	public class RaidActionSelectLayout : LayoutUGUIScriptBase
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 		[Serializable]
 		public class ActionSelectButton
 		{

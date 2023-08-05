@@ -1,0 +1,14 @@
+
+using XeApp.Game.Common;
+
+public class ECEPJHGMGBJ : IBJAKJJICBC
+{
+	public int LPALNMHPDKK_Score { get; set; } // 0xDC CDKILGMPLCF KFHBJBLOGGO GLJHANHAFMN
+	public int HKIAHOEEMLC_PrevScore { get; set; } // 0xE0 JCKPLOPNIIB PLOGONAKOPF HMAMEJKDGAA
+	public Difficulty.Type AKNELONELJK_Difficulty { get; set; } // 0xE4 MDCMMICBKFN BPPILHGDABB PMMIIHKEGCI
+	public int FJOLNJLLJEJ_RankNum { get; set; } // 0xE8 BLIGJGPCOKP EAKAGHDPEMI GHECCGBGCBI
+	public bool LFGNLKKFOCD_IsLine6 { get; set; } // 0xEC JPINIEEOCME PAIHMADGJKE ICADLJCGFIN
+
+	//// RVA: 0x1502C90 Offset: 0x1502C90 VA: 0x1502C90
+	//public void KHEKNNFCAOI(int GHBPLHBNMBK) { }
+}

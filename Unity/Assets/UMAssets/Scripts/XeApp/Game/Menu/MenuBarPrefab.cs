@@ -105,7 +105,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xEC3FA8 Offset: 0xEC3FA8 VA: 0xEC3FA8
-		// public void SetButtonBadge(MenuButtonAnim.ButtonType buttonType, BadgeConstant.ID badgeId, string text) { }
+		public void SetButtonBadge(MenuButtonAnim.ButtonType buttonType, BadgeConstant.ID badgeId, string text)
+		{
+			m_badge[(int)buttonType].Set(badgeId, text);
+		}
 
 		// // RVA: 0xEC4018 Offset: 0xEC4018 VA: 0xEC4018
 		// public void SetCallBack(ButtonBase.OnClickCallback callback, MenuButtonAnim.ButtonType type) { }
@@ -177,8 +180,6 @@ namespace XeApp.Game.Menu
 				cueId = (int)cs_se_boot.SE_BTN_000;
 			}
 			SoundManager.Instance.sePlayerBoot.Play(cueId);
-
-			TodoLogger.Log(0, "CallBackFreeBattle");
 		}
 
 		// // RVA: 0xEC55DC Offset: 0xEC55DC VA: 0xEC55DC
@@ -226,24 +227,24 @@ namespace XeApp.Game.Menu
 			MenuBarPrefab menuPrefab = null;
 			int loadAssetBundle = 0;
 			AssetBundleLoadLayoutOperationBase operation = AssetBundleManager.LoadLayoutAsync("ly/005.xab", "UI_MenuBar");
-			yield return operation;
-			yield return operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
+			yield return Co.R(operation);
+			yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
 				//0xEC6584
 				instance.transform.SetParent(parent, false);
 				menuPrefab = instance.GetComponent<MenuBarPrefab>();
-			});
+			}));
 			loadAssetBundle++;
 			while(!menuPrefab.IsLoaded())
 				yield return null;
 			MenuBarBadge menuBadge = null;
 			operation = AssetBundleManager.LoadLayoutAsync("ly/005.xab", "root_menu_badge_layout_root");
-			yield return operation;
-			yield return operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
+			yield return Co.R(operation);
+			yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) => {
 				//0xEC6648
 				menuBadge = instance.GetComponent<MenuBarBadge>();
 				instance.SetActive(false);
 				menuPrefab.m_badge[0] = menuBadge;
-			});
+			}));
 			loadAssetBundle++;
 			for(int i = 0; i < menuPrefab.m_badge.Length; i++)
 			{

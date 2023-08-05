@@ -38,14 +38,13 @@ namespace XeApp.Game.RhythmGame
 		public void LoadResource()
 		{
 			isRequestLoad = true;
-			StartCoroutine(Co_LoadResource());
+			this.StartCoroutineWatched(Co_LoadResource());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x74640C Offset: 0x74640C VA: 0x74640C
 		// // RVA: 0x1551CB8 Offset: 0x1551CB8 VA: 0x1551CB8
 		private IEnumerator Co_LoadResource()
 		{
-    		UnityEngine.Debug.Log("Enter Co_LoadResource");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public RhytmGameParameterResource <>4__this; // 0x10
@@ -58,7 +57,7 @@ namespace XeApp.Game.RhythmGame
 
 			name_bundle.Set("vl/param_vl.xab");
 			AssetBundleLoadAllAssetOperationBase operation = AssetBundleManager.LoadAllAssetAsync(name_bundle.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
 			name_asset.Set("param_vl_awake");
 			m_paramValkyrieAwake = new ParameterData_ValkyrieAwake();
@@ -88,7 +87,6 @@ namespace XeApp.Game.RhythmGame
 			AssetBundleManager.UnloadAssetBundle(name_bundle.ToString(), false);
 
 			isLoaded = true;
-    		UnityEngine.Debug.Log("Exit Co_LoadResource");
 		}
 	}
 }

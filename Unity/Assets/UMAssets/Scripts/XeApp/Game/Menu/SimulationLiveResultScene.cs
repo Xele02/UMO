@@ -22,7 +22,7 @@ namespace XeApp.Game.Menu
 		private void Awake()
 		{
 			MenuScene.Instance.divaManager.BeginControl(divaControl);
-			StartCoroutine(CO_ResourceLoad());
+			this.StartCoroutineWatched(CO_ResourceLoad());
 		}
 
 		// RVA: 0xC4F708 Offset: 0xC4F708 VA: 0xC4F708 Slot: 9
@@ -38,7 +38,7 @@ namespace XeApp.Game.Menu
 			m_resultInfo.OnClickMusicButton = OnClickMusicButton;
 			m_resultInfo.OnClickAnimeStoreButton = OnClickAnimeStoreButton;
 			divaControl.OnResultStart();
-			StartCoroutine(CO_WaitDiva());
+			this.StartCoroutineWatched(CO_WaitDiva());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x726DAC Offset: 0x726DAC VA: 0x726DAC
@@ -142,9 +142,9 @@ namespace XeApp.Game.Menu
 		private IEnumerator CO_ResourceLoad()
 		{
 			//0x12C9FEC
-			yield return StartCoroutine(CO_LoadResultInfo());
-			yield return StartCoroutine(Co_LoadCommonLayout());
-			yield return StartCoroutine(CO_LoadSerifWindow());
+			yield return this.StartCoroutineWatched(CO_LoadResultInfo());
+			yield return this.StartCoroutineWatched(Co_LoadCommonLayout());
+			yield return this.StartCoroutineWatched(CO_LoadSerifWindow());
 			yield return new WaitWhile(() =>
 			{
 				//0xC50D1C
@@ -181,12 +181,12 @@ namespace XeApp.Game.Menu
 			bundleName = "ly/108.xab";
 			font = GameManager.Instance.GetSystemFont();
 			op = AssetBundleManager.LoadLayoutAsync(bundleName, "S_LiveResult");
-			yield return op;
-			yield return op.InitializeLayoutCoroutine(font, (GameObject instance) => {
+			yield return Co.R(op);
+			yield return Co.R(op.InitializeLayoutCoroutine(font, (GameObject instance) => {
 				//0xC50EBC
 				instance.transform.SetParent(transform, false);
 				m_resultInfo = instance.GetComponent<SimulationLiveResultInfo>();
-			});
+			}));
 			AssetBundleManager.UnloadAssetBundle(bundleName, false);
 		}
 
@@ -202,12 +202,12 @@ namespace XeApp.Game.Menu
 			bundleName = "ly/032.xab";
 			font = GameManager.Instance.GetSystemFont();
 			op = AssetBundleManager.LoadLayoutAsync(bundleName, "root_cmn_balloon_layout_root");
-			yield return op;
-			yield return op.InitializeLayoutCoroutine(font, (GameObject instance) => {
+			yield return Co.R(op);
+			yield return Co.R(op.InitializeLayoutCoroutine(font, (GameObject instance) => {
 				//0xC50F8C
 				instance.transform.SetParent(transform, false);
 				m_serifWindow = instance.GetComponent<DivaSerifWindow>();
-			});
+			}));
 			AssetBundleManager.UnloadAssetBundle(bundleName, false);
 		}
 
@@ -221,12 +221,12 @@ namespace XeApp.Game.Menu
 			//0x12CA59C
 			bundleName = "ly/022.xab";
 			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName, "UI_ResultCommon");
-			yield return lytAssetOp;
-			yield return lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
+			yield return Co.R(lytAssetOp);
+			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
 				//0xC5105C
 				instance.transform.SetParent(transform, false);
 				m_resultCmn = instance.GetComponent<ResultCommonLayoutController>();
-			});
+			}));
 			AssetBundleManager.UnloadAssetBundle(bundleName, false);
 		}
 

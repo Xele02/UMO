@@ -6,16 +6,15 @@ namespace ExternLib
     {
         public static int SakashoAssetGetAssetList(int callbackId, string json)
         {
-            UnityEngine.Debug.Log("SakashoAssetGetAssetList "+json);
             string message = "{}";
             if(json.Contains("db"))
             {
                 // Hack directly send response
                 message =
 @"{
-    ""SAKASHO_CURRENT_ASSET_REVISION"": ""20220622141305"",
-    ""SAKASHO_CURRENT_DATE_TIME"": "+Utility.GetCurrentUnixTime()+ @",
-    ""SAKASHO_CURRENT_MASTER_REVISION"": 5,
+    ""SAKASHO_CURRENT_ASSET_REVISION"":""20220622141305"",
+    ""SAKASHO_CURRENT_DATE_TIME"":" + Utility.GetCurrentUnixTime()+ @",
+    ""SAKASHO_CURRENT_MASTER_REVISION"":5,
     ""base_url"": ""[SERVER_DATA_PATH]"",
     ""files"": [
         {
@@ -136,12 +135,13 @@ namespace ExternLib
                 message = System.Text.Encoding.UTF8.GetString(System.IO.File.ReadAllBytes(UnityEngine.Application.dataPath+"/../../Data/RequestGetFiles.json"));
 				message = message.Replace("https://assets-sakasho.cdn-dena.com/1246/20220502151005", "[SERVER_DATA_PATH]");
                 message = message.Replace("https://assets-sakasho.cdn-dena.com/1246/20220622141305", "[SERVER_DATA_PATH]");
+                message = message.Replace("[[DATE]]", ""+Utility.GetCurrentUnixTime());
 			}
             else
             {
-                TodoLogger.Log(0, "SakashoAssetGetAssetList "+json);
+                TodoLogger.LogError(0, "SakashoAssetGetAssetList "+json);
             }
-            UnityEngine.GameObject.Find(UnityCallbackObject).SendMessage("NotifyOnSuccess", ""+callbackId+":"+message);
+			SendMessage(callbackId, message);
             // end hack
 
             return 0;

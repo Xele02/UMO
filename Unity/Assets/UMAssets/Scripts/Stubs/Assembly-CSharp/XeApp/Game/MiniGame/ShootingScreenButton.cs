@@ -9,7 +9,7 @@ namespace XeApp.Game.MiniGame
 		private ButtonBase m_changeSceneButton;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

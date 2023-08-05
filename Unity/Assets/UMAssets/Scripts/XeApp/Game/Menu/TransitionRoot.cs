@@ -12,7 +12,9 @@ using XeApp.Game.Tutorial;
 namespace XeApp.Game.Menu
 {
 	public interface TransitionArgs
-	{}
+	{
+		//
+	}
 
 	public class TransitionRoot : MonoBehaviour
 	{
@@ -326,17 +328,17 @@ namespace XeApp.Game.Menu
 				TransitionList.Type.COSTUME_SELECT,
 				TransitionList.Type.COSTUME_VIEW_MODE
 			}; // 0x60
-			// private Dictionary<TransitionList.Type, float[]> m_divaAdjustPosition = new Dictionary<TransitionList.Type, float[]>() {
-			//	{ 12, new float[2] {1.0f, 1.5f} }
-			//}; // 0x64
-			// private Dictionary<TransitionList.Type, Vector3> m_divaCameraRotation = new Dictionary<TransitionList.Type, Vector3>() {
-				// { -2, new Vector3(0, -170, 0) },
-				// { 2, new Vector3(0, -180, 0) },
-				// { 105, new Vector3(0, -180, 0) },
-				// { 111, new Vector3( 0, -178, 0 ) },
-				// { 112, new Vector3(0, -178, 0) }
-			// }; // 0x68
-			// private readonly float[] m_baseAspect = new float[2] { 1.777778f, 1.333333f }; // 0x6C
+			private Dictionary<TransitionList.Type, float[]> m_divaAdjustPosition = new Dictionary<TransitionList.Type, float[]>() {
+				{ TransitionList.Type.TEAM_EDIT, new float[2] {1.0f, 1.5f} }
+			}; // 0x64
+			private Dictionary<TransitionList.Type, Vector3> m_divaCameraRotation = new Dictionary<TransitionList.Type, Vector3>() {
+				{ TransitionList.Type.UNDEFINED, new Vector3(0, -170, 0) },
+				{ TransitionList.Type.HOME, new Vector3(0, -180, 0) },
+				{ TransitionList.Type.HOME_BG_SELECT, new Vector3(0, -180, 0) },
+				{ TransitionList.Type.GAKUYA, new Vector3( 0, -178, 0 ) },
+				{ TransitionList.Type.GAKUYA_DIVA_VIEW, new Vector3(0, -178, 0) }
+			 }; // 0x68
+			private readonly float[] m_baseAspect = new float[2] { 1.777778f, 1.333333f }; // 0x6C
 			private static readonly TransitionRoot.MenuTransitionControl.LoadPlaceData[] loadPlaceList = new LoadPlaceData[16] {
 				new LoadPlaceData(TransitionList.Type.UNDEFINED, TransitionList.Type.COSTUME_SELECT),
 				new LoadPlaceData(TransitionList.Type.UNDEFINED, TransitionList.Type.VALKYRIE_SELECT),
@@ -509,7 +511,6 @@ namespace XeApp.Game.Menu
 			// // RVA: 0xA39030 Offset: 0xA39030 VA: 0xA39030
 			private void ChangeMount(TransitionUniqueId uniqueId, bool isFading = true, TransitionArgs args = null, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene camBackUnityScene = 0, bool isForceFading = false)
 			{
-				UnityEngine.Debug.Log("Scene mount "+uniqueId.ToString());
 				int group = (int)uniqueId >> 16;
 				TransitionTreeObject.SceneRoot root = treeObject.Find((TransitionTreeObject.SceneRoot x) => {
 					//0xA3D6C8
@@ -571,7 +572,10 @@ namespace XeApp.Game.Menu
 			}
 
 			// // RVA: 0xA39A10 Offset: 0xA39A10 VA: 0xA39A10
-			// public TransitionRoot GetCurrentTransitionRoot() { }
+			public TransitionRoot GetCurrentTransitionRoot()
+			{
+				return m_currentRoot;
+			}
 
 			// // RVA: 0xA39A18 Offset: 0xA39A18 VA: 0xA39A18
 			// public bool OnPushReturnButton() { }
@@ -591,19 +595,19 @@ namespace XeApp.Game.Menu
 			{
 				//0xA410DC
 				int loadCount = 0;
-				mb.StartCoroutine(m_bgControl.Load(() => {
+				mb.StartCoroutineWatched(m_bgControl.Load(() => {
 					//0xA3D740
 					loadCount++;
 				}));
-				mb.StartCoroutine(m_menuBarControl.Load(m_font, () => {
+				mb.StartCoroutineWatched(m_menuBarControl.Load(m_font, () => {
 					//0xA3D750
 					loadCount++;
 				}));
-				mb.StartCoroutine(m_titleBarControl.Load(mb, m_font, () => {
+				mb.StartCoroutineWatched(m_titleBarControl.Load(mb, m_font, () => {
 					//0xA3D760
 					loadCount++;
 				}));
-				mb.StartCoroutine(Co_LoadHelpButton(() => {
+				mb.StartCoroutineWatched(Co_LoadHelpButton(() => {
 					//0xA3D770
 					loadCount++;
 				}));
@@ -622,12 +626,12 @@ namespace XeApp.Game.Menu
 			{
 				//0xA4067C
 				AssetBundleLoadLayoutOperationBase op = AssetBundleManager.LoadLayoutAsync("ly/092.xab", "roo_cmn_help_question_btn_layout_root");
-				yield return op;
-				yield return op.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
+				yield return Co.R(op);
+				yield return Co.R(op.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
 					//0xA3D408;
 					instance.transform.SetParent(m_uiRootObject.transform, false);
 					m_helpButton = instance.GetComponent<HelpButton>();
-				});
+				}));
 				if(finish != null)
 					finish();
 				AssetBundleManager.UnloadAssetBundle("ly/092.xab");
@@ -677,7 +681,6 @@ namespace XeApp.Game.Menu
 				// private ResourcesManager <resourceManager>5__4; // 0x28
 				// private AssetBundleLoadLayoutOperationBase <operation>5__5; // 0x2C
 				//0xA414D4
-				UnityEngine.Debug.Log("Enter RegisterCache");
 				GameObject instance = null;
 				TransitionRoot root = null;
 				TransitionRoot.MenuTransitionControl.BundleName assetBundle = assetBundleNames[(int)transitionName];
@@ -685,16 +688,16 @@ namespace XeApp.Game.Menu
 				{
 					if(!string.IsNullOrEmpty(assetBundle.textureBundlePath))
 					{
-						yield return AssetBundleManager.LoadUnionAssetBundle(assetBundleNames[(int)transitionName].textureBundlePath);
+						yield return Co.R(AssetBundleManager.LoadUnionAssetBundle(assetBundleNames[(int)transitionName].textureBundlePath));
 						//to 3
 					}
 					// goto LAB_00a41be4
 					AssetBundleLoadLayoutOperationBase operation = AssetBundleManager.LoadLayoutAsync(assetBundle.bundlePath, GetPrefabName(transitionName));
-					yield return operation;
-					yield return operation.InitializeLayoutCoroutine(m_font, (GameObject layout) => {
+					yield return Co.R(operation);
+					yield return Co.R(operation.InitializeLayoutCoroutine(m_font, (GameObject layout) => {
 						//0xA3D788
 						instance = layout;
-					});
+					}));
 					instance.SetActive(true);
 					root = instance.GetComponent<TransitionRoot>();
 					while(!root.IsReady)
@@ -724,7 +727,6 @@ namespace XeApp.Game.Menu
 				root.transform.SetParent(m_uiRootObject.transform, false);
 				root.gameObject.SetActive(false);
 				m_instanceCacheDict.Add((int)transitionName, root);
-				UnityEngine.Debug.Log("Exit RegisterCache "+transitionName);
 			}
 
 			// [IteratorStateMachineAttribute] // RVA: 0x6C8D4C Offset: 0x6C8D4C VA: 0x6C8D4C
@@ -740,7 +742,7 @@ namespace XeApp.Game.Menu
 				{
 					m_currentRoot.OnDestoryScene();
 				}
-				yield return DeleteCache(SceneCacheCategory.TITLE);
+				yield return Co.R(DeleteCache(SceneCacheCategory.TITLE));
 			}
 
 			// [IteratorStateMachineAttribute] // RVA: 0x6C8E3C Offset: 0x6C8E3C VA: 0x6C8E3C
@@ -763,7 +765,17 @@ namespace XeApp.Game.Menu
 				bool isSaveError = false;
 				if(m_isRequestSave)
 				{
-					TodoLogger.Log(0, "request save");
+					CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() => {
+						//0xA3D568
+						JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
+					}, () => {
+						//0xA3D7AC
+						JDDGPJDKHNE.HHCJCDFCLOB.FOKEGEOKGDG();
+						JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
+						MenuScene.Instance.GotoTitle();
+						isSaveError = true;
+					}, null);
+					m_isRequestSave = false;
 				}
 				DirtyChangeScene = false;
 				IsTransition = true;
@@ -903,14 +915,14 @@ namespace XeApp.Game.Menu
 				}
 				if(isCacheChange)
 				{
-					yield return DeleteCache(SceneCacheCategory.TITLE);
+					yield return Co.R(DeleteCache(SceneCacheCategory.TITLE));
 					// to 9
 					yield return Resources.UnloadUnusedAssets();
 					// to 10
 				}
 				if(!TryGetRoot(0, m_next.name, out m_currentRoot))
 				{
-					yield return RegisterCache(SceneCacheCategory.TITLE, m_next.name);
+					yield return Co.R(RegisterCache(SceneCacheCategory.TITLE, m_next.name));
 					// to 11
 					m_currentRoot = m_instanceCacheDict.GetValue((int)m_next.name);
 				}
@@ -930,7 +942,7 @@ namespace XeApp.Game.Menu
 				{
 					m_bgControl.ReserveFade(0.1f, Color.black);
 				}
-				yield return m_bgControl.ChangeBgCoroutine(m_next.bgType, m_next.bgId, m_next.groupCategory, m_next.name, m_next.bgAttr);
+				yield return Co.R(m_bgControl.ChangeBgCoroutine(m_next.bgType, m_next.bgId, m_next.groupCategory, m_next.name, m_next.bgAttr));
 				// to 12
 				TransitionList.Type lastSceneName = TransitionList.Type.NUM;
 				if(m_current != null)
@@ -994,8 +1006,21 @@ namespace XeApp.Game.Menu
 				bool divaActivated = false;
 				if(isDivaActivate)
 				{
-					TodoLogger.Log(0, "setup diva");
-					//900
+					float[] f;
+					float posX = 0;
+					if (m_divaAdjustPosition.TryGetValue(m_next.name, out f))
+					{
+						posX = CalcDivaPositionX(f[0], f[1]);
+					}
+					MenuScene.Instance.SetDivaXposition(posX);
+					if(idleDivaModel)
+					{
+						MenuScene.Instance.divaManager.OnIdle("");
+					}
+					//LAB_00a3ed5c
+					//18
+					while (MenuScene.Instance.divaManager.isWaitUnlockBoneSpring())
+						yield return null;
 					divaActivated = isDivaActivate;
 				}
 				if((isNotAutoLoad || divaActivated) == false)
@@ -1004,7 +1029,8 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					TodoLogger.Log(0, "setup cam");
+					Vector3 camRot = GetDivaCameraRotByScene(m_next.name);
+					MenuScene.Instance.divaManager.SetCameraRot(camRot);
 				}
 				m_currentRoot.OnPostSetCanvas();
 				while(!m_currentRoot.IsEndPostSetCanvas())
@@ -1056,7 +1082,7 @@ namespace XeApp.Game.Menu
 				m_currentRoot.OnOpenScene();
 				while(!m_currentRoot.IsEndOpenScene())
 					yield return null;
-				yield return TutorialManager.TryShowTutorialCoroutine(m_currentRoot.CheckTutorialFunc);
+				yield return Co.R(TutorialManager.TryShowTutorialCoroutine(m_currentRoot.CheckTutorialFunc));
 				//to 0x17
 				MenuScene.Instance.InputEnable();
 				MenuScene.Instance.RaycastEnable();
@@ -1083,12 +1109,12 @@ namespace XeApp.Game.Menu
 				{
 					if(info.thresholdMasterVersion < 1)
 					{
-						UnityEngine.Debug.Log("Replace prefab "+assetBundleNames[(int)transitionName].prefabName+" with "+info.prefabName);
+						TodoLogger.Log(TodoLogger.Menu, "Replace prefab "+assetBundleNames[(int)transitionName].prefabName+" with "+info.prefabName);
 						return info.prefabName;
 					}
 					else if(info.thresholdMasterVersion <= DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion)
 					{
-						UnityEngine.Debug.Log("Replace prefab "+assetBundleNames[(int)transitionName].prefabName+" with "+info.prefabName);
+						TodoLogger.Log(TodoLogger.Menu, "Replace prefab " + assetBundleNames[(int)transitionName].prefabName+" with "+info.prefabName);
 						return info.prefabName;
 					}
 				}
@@ -1102,7 +1128,10 @@ namespace XeApp.Game.Menu
 			}
 
 			// // RVA: 0xA3A5F4 Offset: 0xA3A5F4 VA: 0xA3A5F4
-			// private float CalcDivaPositionX(float min, float max) { }
+			private float CalcDivaPositionX(float min, float max)
+			{
+				return (max - min) * (Screen.width * 1.0f / Screen.height - m_baseAspect[1]) / (m_baseAspect[0] - m_baseAspect[1]) + min;
+			}
 
 			// // RVA: 0xA3A708 Offset: 0xA3A708 VA: 0xA3A708
 			// private bool IsShiftIdleAnimation(TransitionList.Type current, TransitionList.Type next) { }
@@ -1177,32 +1206,101 @@ namespace XeApp.Game.Menu
 			// // RVA: 0xA3ADFC Offset: 0xA3ADFC VA: 0xA3ADFC
 			public static void UpdateMenuNewIcon(TransitionList.Type nextTransition, TransitionList.Type prevTransition)
 			{
-				TodoLogger.Log(0, "UpdateMenuNewIcon");
+				QuestUtility.UpdateQuestData();
+				QuestUtility.FooterMenuBadge();
+				bool b = false;
+				bool c = QuestUtility.IsBeginnerQuest();
+				if (!c)
+				{
+					b = IBJAKJJICBC.FPLIAMHMFJP();
+				}
+				MenuScene.Instance.FooterMenu.SetButtonNew(MenuFooterControl.Button.LiveMode, b);
+				MenuScene.Instance.FooterMenu.SetButtonNew(MenuFooterControl.Button.Gacha, false);
+				bool isNew = false;
+				if(NKGJPJPHLIF.HHCJCDFCLOB.AFJEOKGBCNA_NumReplies == 0 || !c)
+				{
+					isNew = true;
+					if(!AODFBGCCBPE.PLKKMHBFDCJ())
+					{
+						isNew = DKKPBBBDKMJ.CADENLBDAEB();
+					}
+				}
+				else
+				{
+					isNew = NKGJPJPHLIF.HHCJCDFCLOB.AFJEOKGBCNA_NumReplies > 0 || !c;
+				}
+				MenuScene.Instance.FooterMenu.SetButtonNew(MenuFooterControl.Button.Menu, isNew);
+				MenuScene.Instance.FooterMenu.SetButtonNew(MenuFooterControl.Button.Home, false);
+				if (nextTransition == TransitionList.Type.OFFER_RESULT || prevTransition == TransitionList.Type.OFFER_SELECT)
+					return;
+				bool d = KDHGBOOECKC.HHCJCDFCLOB.PPPLNJCFAID();
+				long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				KDHGBOOECKC.HHCJCDFCLOB.JPNPPIHOJFC(time);
+				MenuScene.Instance.FooterMenu.SetButtonNew(MenuFooterControl.Button.VOP, nextTransition != TransitionList.Type.OFFER_SELECT && d);
+				MenuScene.Instance.FooterMenu.SetOfferUnlockRank();
 			}
 
 			// // RVA: 0xA3B1C0 Offset: 0xA3B1C0 VA: 0xA3B1C0
-			// public void SetFooterMenuButtonDisable(MenuFooterControl.Button button) { }
+			public void SetFooterMenuButtonDisable(MenuFooterControl.Button button)
+			{
+				m_menuBarControl.SetButtonDisable(button);
+			}
 
 			// // RVA: 0xA3B1F4 Offset: 0xA3B1F4 VA: 0xA3B1F4
-			// public void SetFooterMenuButtonEnable(MenuFooterControl.Button button) { }
+			public void SetFooterMenuButtonEnable(MenuFooterControl.Button button)
+			{
+				m_menuBarControl.SetButtonEnable(button);
+			}
 
 			// // RVA: 0xA3B228 Offset: 0xA3B228 VA: 0xA3B228
-			// public void SetMenuContentButtonEnable() { }
+			public void SetMenuContentButtonEnable()
+			{
+				TransitionRoot t;
+				if(m_instanceCacheDict.TryGetValue((int)m_current.name, out t))
+				{
+					t.InputEnable();
+				}
+			}
 
 			// // RVA: 0xA3B300 Offset: 0xA3B300 VA: 0xA3B300
-			// public void SetHeaderMenuButtonDisable(MenuHeaderControl.Button button) { }
+			public void SetHeaderMenuButtonDisable(MenuHeaderControl.Button button)
+			{
+				m_titleBarControl.SetButtonDisable(button);
+			}
 
 			// // RVA: 0xA3B334 Offset: 0xA3B334 VA: 0xA3B334
-			// public void SetHeaderMenuButtonEnable(MenuHeaderControl.Button button) { }
+			public void SetHeaderMenuButtonEnable(MenuHeaderControl.Button button)
+			{
+				m_titleBarControl.SetButtonEnable(button);
+			}
 
 			// // RVA: 0xA3B368 Offset: 0xA3B368 VA: 0xA3B368
-			// public void SetMenuContentButtonDisable() { }
+			public void SetMenuContentButtonDisable()
+			{
+				TransitionRoot t;
+				if(m_instanceCacheDict.TryGetValue((int)m_current.name, out t))
+				{
+					t.InputDisable();
+				}
+			}
 
 			// // RVA: 0xA3B440 Offset: 0xA3B440 VA: 0xA3B440
-			// public void SetHelpButtonEnable() { }
+			public void SetHelpButtonEnable()
+			{
+				if(m_helpButton != null)
+				{
+					m_helpButton.SetEnable();
+				}
+			}
 
 			// // RVA: 0xA3B4F4 Offset: 0xA3B4F4 VA: 0xA3B4F4
-			// public void SetHelpButtonDisable() { }
+			public void SetHelpButtonDisable()
+			{
+				if(m_helpButton != null)
+				{
+					m_helpButton.SetDisable();
+				}
+			}
 
 			// // RVA: 0xA3B5A8 Offset: 0xA3B5A8 VA: 0xA3B5A8
 			public void ApplyPlayerStatus(IFBCGCCJBHI playerStatus)
@@ -1218,13 +1316,22 @@ namespace XeApp.Game.Menu
 			}
 
 			// // RVA: 0xA3B688 Offset: 0xA3B688 VA: 0xA3B688
-			// public void RemainDivaOneTime() { }
+			public void RemainDivaOneTime()
+			{
+				m_remainDivaOneTimeFlag = true;
+			}
 
 			// // RVA: 0xA3B694 Offset: 0xA3B694 VA: 0xA3B694
-			// public void SaveStack(SceneStack stack) { }
+			public void SaveStack(SceneStack stack)
+			{
+				m_transitionStack.Copy(stack);
+			}
 
 			// // RVA: 0xA3B6C8 Offset: 0xA3B6C8 VA: 0xA3B6C8
-			// public void LoadStack(SceneStack stack) { }
+			public void LoadStack(SceneStack stack)
+			{
+				stack.Copy(m_transitionStack);
+			}
 
 			// // RVA: 0xA3B6FC Offset: 0xA3B6FC VA: 0xA3B6FC
 			public void PushStack()
@@ -1254,7 +1361,15 @@ namespace XeApp.Game.Menu
 			}
 
 			// // RVA: 0xA3BA1C Offset: 0xA3BA1C VA: 0xA3BA1C
-			// public Vector3 GetDivaCameraRotByScene(TransitionList.Type type) { }
+			public Vector3 GetDivaCameraRotByScene(TransitionList.Type type)
+			{
+				Vector3 res;
+				if(!m_divaCameraRotation.TryGetValue(type, out res))
+				{
+					res = m_divaCameraRotation[TransitionList.Type.UNDEFINED];
+				}
+				return res;
+			}
 
 			// // RVA: 0xA3BB18 Offset: 0xA3BB18 VA: 0xA3BB18
 			public bool CanShowNowLoading(TransitionList.Type from, TransitionList.Type to)
@@ -1274,7 +1389,28 @@ namespace XeApp.Game.Menu
 			public bool CanShowTips(TransitionList.Type from, TransitionList.Type to, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene camBackUnityScene, out int count)
 			{
 				count = 0;
-				TodoLogger.Log(0, "TODO");
+				for(int i = 0; i < tipsPlaceList.Length; i++)
+				{
+					bool b;
+					if (tipsPlaceList[i].camBackUnityScene == MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None)
+						b = true;
+					else
+					{
+						b = tipsPlaceList[i].camBackUnityScene == camBackUnityScene;
+					}
+					bool b2 = true;
+					if(tipsPlaceList[i].from != TransitionList.Type.UNDEFINED)
+					{
+						b2 = false;
+						if (tipsPlaceList[i].from == from)
+							b2 = true;
+					}
+					if(b && b2 && tipsPlaceList[i].to == to)
+					{
+						count = tipsPlaceList[i].count;
+						return true;
+					}
+				}
 				return false;
 			}
 		}
@@ -1304,7 +1440,7 @@ namespace XeApp.Game.Menu
 		public TransitionRoot.MenuTransitionControl.TransitionType TransitionType { get { return m_transitionType; } } //0xA9D76C
 		public bool IsRequestGotoTitle { get; set; } // 0x28
 		public bool IsReady { get; protected set; } // 0x29
-		// public int InputStateCount { get; } 0xA9D78C
+		public int InputStateCount { get { return m_inputStateCount; } } //0xA9D78C
 		public bool AutoFadeFlag { get { return m_isAutoFade; } set { m_isAutoFade = value; } }// 0xA9D794 0xA9D79C
 
 		// RVA: 0xA80A84 Offset: 0xA80A84 VA: 0xA80A84 Slot: 4
@@ -1459,26 +1595,213 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA9D810 Offset: 0xA9D810 VA: 0xA9D810
 		protected void GotoTitle()
 		{
-			TodoLogger.Log(0, "Goto Title");
+			TodoLogger.LogError(0, "Goto Title");
 		}
 
 		// // RVA: 0xA9D81C Offset: 0xA9D81C VA: 0xA9D81C Slot: 29
-		// protected virtual void InputEnable() { }
+		protected virtual void InputEnable()
+		{
+			ListupInputObjects();
+			m_inputStateCount--;
+			if(m_inputStateCount < 1)
+			{
+				for(int i = 0; i < m_swaipTouches.Count; i++)
+				{
+					m_swaipTouches[i].Stop(false);
+				}
+				for(int i = 0; i < m_scrollRect.Count; i++)
+				{
+					m_scrollRect[i].enabled = true;
+					if(m_scrollRect[i].verticalScrollbar != null)
+					{
+						m_scrollRect[i].verticalScrollbar.interactable = true;
+					}
+					if (m_scrollRect[i].horizontalScrollbar != null)
+					{
+						m_scrollRect[i].horizontalScrollbar.interactable = true;
+					}
+				}
+				for(int i = 0; i < m_buttons.Count; i++)
+				{
+					m_buttons[i].IsInputOff = false;
+				}
+				m_inputStateCount = 0;
+			}
+		}
 
 		// // RVA: 0xA9DD34 Offset: 0xA9DD34 VA: 0xA9DD34
-		// public void InputEnable(string objName, string parentName = "") { }
+		public void InputEnable(string objName, string parentName = "")
+		{
+			if (string.IsNullOrEmpty(objName))
+			{
+				for (int i = 0; i < m_swaipTouches.Count; i++)
+				{
+					m_swaipTouches[i].Stop(false);
+				}
+				for (int i = 0; i < m_scrollRect.Count; i++)
+				{
+					m_scrollRect[i].enabled = true;
+					if (m_scrollRect[i].verticalScrollbar != null)
+						m_scrollRect[i].verticalScrollbar.interactable = true;
+					if (m_scrollRect[i].horizontalScrollbar != null)
+						m_scrollRect[i].horizontalScrollbar.interactable = true;
+				}
+				for (int i = 0; i < m_buttons.Count; i++)
+				{
+					m_buttons[i].IsInputOff = false;
+				}
+			}
+			else
+			{
+				SwaipTouch st = m_swaipTouches.Find((SwaipTouch x) =>
+				{
+					//0xA31170
+					return ObjectFindFunc(x.transform, objName, parentName);
+				});
+				if (st != null)
+				{
+					st.Stop(false);
+				}
+				ScrollRect sr = m_scrollRect.Find((ScrollRect x) =>
+				{
+					//0xA311E4
+					return ObjectFindFunc(x.transform, objName, parentName);
+				});
+				if (sr != null)
+				{
+					sr.enabled = true;
+					if (sr.verticalScrollbar != null)
+						sr.verticalScrollbar.interactable = true;
+					if (sr.horizontalScrollbar != null)
+						sr.horizontalScrollbar.interactable = true;
+				}
+				ButtonBase bt = m_buttons.Find((ButtonBase x) =>
+				{
+					//0xA31258
+					return ObjectFindFunc(x.transform, objName, parentName);
+				});
+				if (bt != null)
+				{
+					bt.IsInputOff = false;
+				}
+			}
+		}
 
 		// // RVA: 0xA9E600 Offset: 0xA9E600 VA: 0xA9E600
-		// public ButtonBase FindButton(string objName, string parentName = "") { }
+		public ButtonBase FindButton(string objName, string parentName = "")
+		{
+			return m_buttons.Find((ButtonBase x) =>
+			{
+				//0xA312D4
+				return ObjectFindFunc(x.transform, objName, parentName);
+			});
+		}
 
 		// // RVA: 0xA9E728 Offset: 0xA9E728 VA: 0xA9E728
-		// private bool ObjectFindFunc(Transform ts, string name, string parentName) { }
+		private bool ObjectFindFunc(Transform ts, string name, string parentName)
+		{
+			if (ts.name == name)
+			{
+				if (!string.IsNullOrEmpty(parentName))
+				{
+					while (true)
+					{
+						ts = ts.parent;
+						if (ts == null)
+							return false;
+						if (ts.name == parentName)
+							break;
+					}
+					return true;
+				}
+			}
+			return false;
+		}
 
 		// // RVA: 0xA9E8B4 Offset: 0xA9E8B4 VA: 0xA9E8B4 Slot: 30
-		// protected virtual void InputDisable() { }
+		protected virtual void InputDisable()
+		{
+			ListupInputObjects();
+			m_inputStateCount++;
+			for(int i = 0; i < m_swaipTouches.Count; i++)
+			{
+				m_swaipTouches[i].Stop(true);
+			}
+			for(int i = 0; i < m_scrollRect.Count; i++)
+			{
+				m_scrollRect[i].enabled = false;
+				if(m_scrollRect[i].verticalScrollbar != null)
+				{
+					m_scrollRect[i].verticalScrollbar.interactable = false;
+				}
+				if (m_scrollRect[i].horizontalScrollbar != null)
+				{
+					m_scrollRect[i].horizontalScrollbar.interactable = false;
+				}
+			}
+			for(int i = 0; i < m_buttons.Count; i++)
+			{
+				m_buttons[i].IsInputOff = true;
+			}
+		}
 
 		// // RVA: 0xA9ED10 Offset: 0xA9ED10 VA: 0xA9ED10
-		// public void InputDisable(string objName) { }
+		public void InputDisable(string objName)
+		{
+			if(string.IsNullOrEmpty(objName))
+			{
+				for(int i = 0; i < m_swaipTouches.Count; i++)
+				{
+					m_swaipTouches[i].Stop(true);
+				}
+				for(int i = 0; i < m_scrollRect.Count; i++)
+				{
+					m_scrollRect[i].enabled = false;
+					if(m_scrollRect[i].verticalScrollbar != null)
+						m_scrollRect[i].verticalScrollbar.interactable = false;
+					if (m_scrollRect[i].horizontalScrollbar != null)
+						m_scrollRect[i].horizontalScrollbar.interactable = false;
+				}
+				for(int i = 0; i < m_buttons.Count; i++)
+				{
+					m_buttons[i].IsInputOff = true;
+				}
+			}
+			else
+			{
+				SwaipTouch st = m_swaipTouches.Find((SwaipTouch x) =>
+				{
+					//0xA31350
+					return x.name == objName;
+				});
+				if(st != null)
+				{
+					st.Stop(true);
+				}
+				ScrollRect sr = m_scrollRect.Find((ScrollRect x) =>
+				{
+					//0xA313A8
+					return x.name == objName;
+				});
+				if(sr != null)
+				{
+					sr.enabled = false;
+					if (sr.verticalScrollbar != null)
+						sr.verticalScrollbar.interactable = false;
+					if (sr.horizontalScrollbar != null)
+						sr.horizontalScrollbar.interactable = false;
+				}
+				ButtonBase bt = m_buttons.Find((ButtonBase x) =>
+				{
+					//0xA31400
+					return x.name == objName;
+				});
+				if(bt != null)
+				{
+					bt.IsInputOff = true;
+				}
+			}
+		}
 
 		// // RVA: 0xA9F5B0 Offset: 0xA9F5B0 VA: 0xA9F5B0
 		protected void ResetButton()
@@ -1491,7 +1814,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA9DC88 Offset: 0xA9DC88 VA: 0xA9DC88
-		// private void ListupInputObjects() { }
+		private void ListupInputObjects()
+		{
+			GetComponentsInChildren(true, m_buttons);
+			GetComponentsInChildren(true, m_scrollRect);
+			GetComponentsInChildren(true, m_swaipTouches);
+		}
 
 		// // RVA: 0xA9F728 Offset: 0xA9F728 VA: 0xA9F728
 		protected void ShowCanvas()
@@ -1528,7 +1856,235 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA9FA50 Offset: 0xA9FA50 VA: 0xA9FA50
 		protected bool CheckTutorialFunc(TutorialConditionId conditionId)
 		{
-			TodoLogger.Log(0, "CheckTutorialFunc");
+			if (GameManager.Instance.IsTutorial)
+				return false;
+			if ((int)conditionId > 65)
+			{
+				switch (conditionId)
+				{
+					case TutorialConditionId.Condition79:
+						return m_transitionName == TransitionList.Type.DECO_CHAT;
+					default:
+						return false;
+					case TutorialConditionId.Condition84:
+						if (m_transitionName != TransitionList.Type.SCENE_GROWTH)
+							return false;
+						if (!(m_args is SceneGrowthSceneArgs))
+							return false;
+						SceneGrowthSceneArgs sceneArgs = m_args as SceneGrowthSceneArgs;
+						if (sceneArgs.ViewSceneData.JPIPENJGGDD_NumBoard < 2)
+							return false;
+						return sceneArgs.ViewSceneData.ILABPFOMEAG_Va > 0;
+					case TutorialConditionId.Condition86:
+						if (m_transitionName != TransitionList.Type.SCENE_GROWTH)
+							return false;
+						return TutorialManager.IsAlreadyTutorial(TutorialConditionId.Condition47);
+					case TutorialConditionId.Condition89:
+						return m_transitionName == TransitionList.Type.HOME_BG_SELECT;
+					case TutorialConditionId.Condition90:
+					case TutorialConditionId.Condition92:
+						return m_transitionName == TransitionList.Type.GAKUYA;
+					case TutorialConditionId.Condition91:
+						return m_transitionName == TransitionList.Type.SCENE_GROWTH;
+				}
+			}
+			switch(conditionId)
+			{
+				case TutorialConditionId.Condition2:
+					return m_transitionName == TransitionList.Type.STORY_SELECT;
+				case TutorialConditionId.Condition3:
+					return m_transitionName == TransitionList.Type.MUSIC_SELECT;
+				case TutorialConditionId.Condition4:
+					if (!GameManager.Instance.IsTutorial)
+						return m_transitionName == TransitionList.Type.FRIEND_SELECT;
+					break;
+				case TutorialConditionId.Condition5:
+					if(m_transitionName == TransitionList.Type.TEAM_EDIT)
+					{
+						int res = 0;
+						for(int i = 0; i < GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes.Count; i++)
+						{
+							res += GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[i].CGKAEMGLHNK_IsUnlocked() ? 1 : 0;
+						}
+						return res > 9;
+					}
+					break;
+				case TutorialConditionId.Condition9:
+					if (m_transitionName == TransitionList.Type.TEAM_EDIT)
+					{
+						TeamEditSceneArgs teamArgs = m_args as TeamEditSceneArgs;
+						if(teamArgs != null)
+						{
+							return teamArgs.IsFromBeginner;
+						}
+					}
+					break;
+				case TutorialConditionId.Condition10:
+				case TutorialConditionId.Condition13:
+					if(m_transitionName == TransitionList.Type.SCENE_ABILITY_RELEASE_LIST)
+					{
+						SceneListArgs sceneArgs = m_args as SceneListArgs;
+						if(sceneArgs != null && sceneArgs.IsFromBiginner && sceneArgs.QuestType == 42)
+						{
+							return conditionId == TutorialConditionId.Condition10;
+						}
+					}
+					break;
+				case TutorialConditionId.Condition11:
+					return m_transitionName == TransitionList.Type.PRESENT_LIST;
+				case TutorialConditionId.Condition12:
+					if(m_transitionName == TransitionList.Type.TEAM_EDIT)
+					{
+						for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC.Count; i++)
+						{
+							List<FFHPBEPOMAK_DivaInfo> cosList = FFHPBEPOMAK_DivaInfo.DNAIGDHCILM_GetCostumeList(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[i].AHHJLDLAPAN_DivaId, false);
+							int res = 0;
+							for (int j = 0; j < cosList.Count; j++)
+							{
+								res += cosList[j].JLKPGDEKPEO_IsHave ? 1 : 0;
+							}
+							return res > 1;
+						}
+					}
+					break;
+				case TutorialConditionId.Condition15:
+					if(m_transitionName == TransitionList.Type.TEAM_EDIT)
+					{
+						int res = 0;
+						for(int i = 0; i < GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas.Count; i++)
+						{
+							if (GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[i] != null)
+								res++;
+						}
+						return res > 1;
+					}
+					break;
+				case TutorialConditionId.Condition17:
+					if(m_transitionName == TransitionList.Type.PROFIL)
+					{
+						if(this is ProfilMenuScene)
+						{
+							return !(this as ProfilMenuScene).IsFriend();
+						}
+						return false;
+					}
+					break;
+				case TutorialConditionId.Condition23:
+					return m_transitionName == TransitionList.Type.SCENE_ABILITY_RELEASE_LIST;
+				case TutorialConditionId.Condition24:
+					return m_transitionName == TransitionList.Type.VALKYRIE_SELECT;
+				case TutorialConditionId.Condition26:
+					return m_transitionName == TransitionList.Type.OPTION_MENU;
+				case TutorialConditionId.Condition27:
+					return m_transitionName == TransitionList.Type.EPISODE_SELECT;
+				case TutorialConditionId.Condition28:
+					return m_transitionName == TransitionList.Type.EPISODE_DETAIL;
+				case TutorialConditionId.Condition30:
+					if(m_transitionName == TransitionList.Type.TEAM_SELECT)
+					{
+						if(Database.Instance.selectedMusic.GetSelectedMusicData() != null)
+						{
+							return Database.Instance.selectedMusic.GetSelectedMusicData().FKDCCLPGKDK_JacketAttr != 4;
+						}
+					}
+					break;
+				case TutorialConditionId.Condition35:
+					if(m_transitionName == TransitionList.Type.TEAM_SELECT || m_transitionName == TransitionList.Type.TEAM_EDIT)
+					{
+						if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level > 4)
+						{
+							return !GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PNNHEOOJBFI_TutorialGeneralFlags.ODKIHPBEOEC_IsTrue(2);
+						}
+					}
+					break;
+				case TutorialConditionId.Condition37:
+					if(!GameManager.Instance.IsTutorial && m_transitionName == TransitionList.Type.TEAM_EDIT)
+					{
+						int res = 0;
+						for(int i = 0; i < GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes.Count; i++)
+						{
+							if(GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[i].CGKAEMGLHNK_IsUnlocked())
+							{
+								res++;
+								if (res > 4)
+									return true;
+							}
+						}
+					}
+					break;
+				case TutorialConditionId.Condition38:
+					return m_transitionName == TransitionList.Type.SCENE_GROWTH;
+				case TutorialConditionId.Condition40:
+					if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level < 3)
+						return false;
+					return m_transitionName == TransitionList.Type.MUSIC_SELECT;
+				case TutorialConditionId.Condition42:
+					if(m_transitionName == TransitionList.Type.TEAM_EDIT)
+					{
+						if(m_args is TeamEditSceneArgs)
+						{
+							if ((m_args as TeamEditSceneArgs).IsFromBeginner)
+								return false;
+						}
+						if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[3].EALOBDHOCHP_Stat < 2)
+						{
+							int res = 0;
+							for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC.Count; i++)
+							{
+								res += GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[i].FJODMPGPDDD ? 1 : 0;
+							}
+							return res > 1;
+						}
+					}
+					break;
+				case TutorialConditionId.Condition46:
+					if (Database.Instance.bonusData.EffectiveEpisodeBonus.Count > 0)
+						return m_transitionName == TransitionList.Type.TEAM_SELECT;
+					return false;
+				case TutorialConditionId.Condition47:
+					if(m_transitionName == TransitionList.Type.SCENE_GROWTH && m_args is SceneGrowthSceneArgs)
+					{
+						SceneGrowthSceneArgs args = m_args as SceneGrowthSceneArgs;
+						if(args.ViewSceneData.JPIPENJGGDD_NumBoard > 1)
+						{
+
+							AEKDNMPPOJN data = new AEKDNMPPOJN();
+							MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[args.ViewSceneData.BCCHOBPJJKE_SceneId - 1];
+							data.KHEKNNFCAOI(args.ViewSceneData.JKGFBFPIMGA_Rarity, args.ViewSceneData.MKHFCGPJPFI_LimitOverCount,
+								scene.PKNGPIFNIGN(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board, args.ViewSceneData.JPIPENJGGDD_NumBoard, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.GENHLFPKOEE(scene.EKLIPGELKCL_Rarity, scene.MCCIFLKCNKO_Feed)));
+							if (data.LJHOOPJACPI_LeafMax > 0)
+								return true;
+						}
+					}
+					break;
+				case TutorialConditionId.Condition48:
+					if(m_transitionName == TransitionList.Type.MUSIC_SELECT)
+					{
+						return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("mv_player_level", 5) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+					}
+					break;
+				case TutorialConditionId.Condition49:
+					return m_transitionName == TransitionList.Type.SIMULATIONLIVE_SETTING;
+				case TutorialConditionId.Condition50:
+					if(m_transitionName == TransitionList.Type.TEAM_SELECT)
+					{
+						AOJGDNFAIJL_PrismData.AMIECPBIALP data = new AOJGDNFAIJL_PrismData.AMIECPBIALP(Database.Instance.gameSetup.musicInfo.musicId, false);
+						return data.OFHMEAJBIEL_IsPrismUnlocked();
+					}
+					break;
+				case TutorialConditionId.Condition53:
+					return m_transitionName == TransitionList.Type.SHOP;
+				case TutorialConditionId.Condition55:
+					return m_transitionName == TransitionList.Type.GACHA_BOX_QUEST;
+				case TutorialConditionId.Condition57:
+					return m_transitionName == TransitionList.Type.GACHA_BOX;
+				case TutorialConditionId.Condition65:
+					if(m_transitionName == TransitionList.Type.TEAM_EDIT || m_transitionName == TransitionList.Type.TEAM_SELECT)
+					{
+						return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.GODGHFDMAHF() != null;
+					}
+					break;
+				}
 			return false;
 		}
 	}

@@ -196,7 +196,7 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 	//// RVA: 0x1B95F10 Offset: 0x1B95F10 VA: 0x1B95F10 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(0, "DB Skills IIEMACPEEBJ");
+		TodoLogger.LogError(0, "DB Skills IIEMACPEEBJ");
 		return true;
 	}
 
@@ -614,10 +614,10 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 			{
 				if (((int)array[j].PFOIIAGCKON ^ array2[i].FLJHGGKIOJH_SkillType | array2[i].FLJHGGKIOJH_SkillType >> 0x1f) == 0) // ?? not sure if ((uVar8 ^ uVar5 | (int)uVar8 >> 0x1f) == 0) break;
 				{
-					array2[i].AOPELJFAMCL = (int)array[j].AOPELJFAMCL;
+					array2[i].AOPELJFAMCL_LiveSkillType = (int)array[j].AOPELJFAMCL;
 					break;
 				}
-				array2[i].AOPELJFAMCL = 0;
+				array2[i].AOPELJFAMCL_LiveSkillType = 0;
 			}
 		}
 		return true;
@@ -768,7 +768,7 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 	//// RVA: 0x1B97044 Offset: 0x1B97044 VA: 0x1B97044 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(0, "DB Skills CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "JNKEEAOKNCI_Skill.CAOGDCBPBAN");
 		return 0;
 	}
 }
@@ -897,7 +897,7 @@ public class PPGHMBNIAEC
 	public int NFIBKOACELP_Attr; // 0x38
 	public int POMLAENHCHA_TargetSkillEffectId; // 0x3C
 	public int DPGDCJFBFGK_TargetSkillType; // 0x40
-	public int AOPELJFAMCL; // 0x44
+	public int AOPELJFAMCL_LiveSkillType; // 0x44
 
 	//// RVA: 0xDF6D74 Offset: 0xDF6D74 VA: 0xDF6D74
 	//public uint CAOGDCBPBAN() { }
@@ -914,8 +914,8 @@ public class PPGHMBNIAEC
 			}
 			for(int i = 0; i < 2; i++)
 			{
-				short a = PHAGNOHBMCM_DurationByIndexAndLevel[2, CIEOBFIIPLD - 1];
-				str.Replace(i == 0 ? "[dv]" : "[dv2]", a.ToString());
+				short a = PHAGNOHBMCM_DurationByIndexAndLevel[CIEOBFIIPLD - 1, i];
+				str = str.Replace(i == 0 ? "[dv]" : "[dv2]", a.ToString());
 			}
 			return str.Replace("[tv]", LFGFBMJNBKN_ConfigValue[CIEOBFIIPLD - 1].ToString());
 		}

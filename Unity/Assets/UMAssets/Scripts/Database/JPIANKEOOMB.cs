@@ -27,7 +27,7 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 		//public short KINFGHHNFCF { get; set; } 0x1BA7558 BNLKPIIJCDF 0x1BA756C PKEDNGJNJNC
 		//public short NONBCCLGBAO { get; set; } 0x1BA757C AEJBEGKBPCO 0x1BA7590 JPIBPFANBNG
 		public short BMIJDLBGFNP_SkillId { get { return (short)(AENGKBBMPGM ^ FBGGEFFJJHB); } } //0x1BA75A0 NIHGHMNFOAO
-		//public int MIHAHCEANII { get; set; } 0x1BA7434 FOKDFFJIDDI 0x1BA7188 KMILCNKADIO
+		public int MIHAHCEANII { get { return BFFGMECIOIA ^ FBGGEFFJJHB; } set { BFFGMECIOIA = value ^ FBGGEFFJJHB; } } //0x1BA7434 FOKDFFJIDDI 0x1BA7188 KMILCNKADIO
 		public bool IPJMPBANBPP_IsEnabled { get { return PPEGAKEIEGM_Enabled == 2; } } //0x1BA75B4 IJMCHOOIMBB
 
 		//// RVA: 0x1BA75C8 Offset: 0x1BA75C8 VA: 0x1BA75C8
@@ -98,7 +98,7 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 	// RVA: 0x1BA7168 Offset: 0x1BA7168 VA: 0x1BA7168 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(100, "Valkyrie Json Load");
+		TodoLogger.LogError(100, "Valkyrie Json Load");
 		return false;
 	}
 
@@ -118,7 +118,7 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 			CDENCMNHNGA_ValkyrieList[i].KIDNEIEHOMN = (short)(array[i].FCBJFKGDINH ^ CDENCMNHNGA_ValkyrieList[i].FBGGEFFJJHB);
 			CDENCMNHNGA_ValkyrieList[i].CDDLNKAPCFB = (short)(array[i].NONBCCLGBAO ^ CDENCMNHNGA_ValkyrieList[i].FBGGEFFJJHB);
 			CDENCMNHNGA_ValkyrieList[i].AENGKBBMPGM = (short)(array[i].BMIJDLBGFNP ^ CDENCMNHNGA_ValkyrieList[i].FBGGEFFJJHB);
-			CDENCMNHNGA_ValkyrieList[i].BFFGMECIOIA = (short)(array[i].BFCBGDOICCO ^ CDENCMNHNGA_ValkyrieList[i].FBGGEFFJJHB);
+			CDENCMNHNGA_ValkyrieList[i].MIHAHCEANII = (short)(array[i].BFCBGDOICCO);
 			CDENCMNHNGA_ValkyrieList[i].CMAJHIMEIAC = 0;
 			for (int j = 0; j < 3; j++)
 			{
@@ -134,7 +134,7 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 	// RVA: 0x1BA7198 Offset: 0x1BA7198 VA: 0x1BA7198 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(100, "Valkyrie CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "JPIANKEOOMB_Valkyrie.CAOGDCBPBAN");
 		return 0;
 	}
 
@@ -150,7 +150,20 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x1BA72EC Offset: 0x1BA72EC VA: 0x1BA72EC
-	//public bool AAACOMKNJJJ(int LLOBHDMHJIG) { }
+	public bool AAACOMKNJJJ(int LLOBHDMHJIG)
+	{
+		if(LLOBHDMHJIG > 0)
+		{
+			if(LLOBHDMHJIG <= CDENCMNHNGA_ValkyrieList.Count)
+			{
+				if(CDENCMNHNGA_ValkyrieList[LLOBHDMHJIG - 1].PPEGAKEIEGM_Enabled == 2 && CDENCMNHNGA_ValkyrieList[LLOBHDMHJIG - 1].MIHAHCEANII > 0)
+				{
+					return CDENCMNHNGA_ValkyrieList[LLOBHDMHJIG - 1].MIHAHCEANII <= IEFOPDOOLOK_MasterVersion;
+				}
+			}
+		}
+		return false;
+	}
 
 	//// RVA: 0x1BA7444 Offset: 0x1BA7444 VA: 0x1BA7444
 	//public int MGKNLBJCJCK(int LLOBHDMHJIG) { }

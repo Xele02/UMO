@@ -6,7 +6,7 @@ namespace XeApp.Game.MiniGame
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.LogError(0, "Implement monobehaviour");
 		}
 		public List<ShootingEnemyPoolCharacter> m_enemyPoolObj;
 	}

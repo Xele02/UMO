@@ -8,7 +8,7 @@ namespace XeApp.Game.RhythmGame
 		public float m_outlineSize;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

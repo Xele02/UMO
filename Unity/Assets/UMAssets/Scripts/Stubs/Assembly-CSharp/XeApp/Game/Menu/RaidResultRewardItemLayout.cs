@@ -8,7 +8,7 @@ namespace XeApp.Game.Menu
 {
 	public class RaidResultRewardItemLayout : LayoutUGUIScriptBase
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 		[Serializable]
 		private class ItemCell
 		{

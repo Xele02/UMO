@@ -15,7 +15,7 @@ namespace XeSys.Gfx
 		public int startSliceOffset;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

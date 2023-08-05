@@ -11,7 +11,7 @@ namespace XeApp.Game.Tutorial
 		private Image m_faceImage;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

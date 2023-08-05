@@ -61,14 +61,18 @@ namespace XeApp.Game.Common
 			{
 				m_digit[i] = left % 10;
 				if (left < 10)
+				{
+					i++;
 					break;
+				}
 				left = left / 10;
 			}
 			for(; i < minDgit; i++)
 			{
 				m_digit[i] = 0;
 			}
-			m_digit_layout.StartSiblingAnimGoStop(i - 1, i - 1);
+			if(m_digit_layout != null)
+				m_digit_layout.StartSiblingAnimGoStop(i - 1, i - 1);
 			for(int j = 0; j < i; j++)
 			{
 				m_numberImage[j].uvRect = m_numberRect[m_digit[j]];

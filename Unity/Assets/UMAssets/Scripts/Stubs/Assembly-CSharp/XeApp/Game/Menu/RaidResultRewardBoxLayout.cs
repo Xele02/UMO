@@ -8,7 +8,7 @@ namespace XeApp.Game.Menu
 		private ModelRaidRewardBox m_boxModel;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

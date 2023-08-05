@@ -3,15 +3,19 @@ public class StorageSupport
 	// // RVA: 0x2E72264 Offset: 0x2E72264 VA: 0x2E72264
 	public static bool IsAvailableStorage()
     {
-        TodoLogger.Log(5, "IsAvailableStorage");
+		int avaiable = GetAvailableStorageSizeMB();
+		if (avaiable > -1)
+			return avaiable > 49;
         return true;
     }
 
 	// // RVA: 0x2E72290 Offset: 0x2E72290 VA: 0x2E72290
 	public static int GetAvailableStorageSizeMB()
 	{
-        TodoLogger.Log(5, "GetAvailableStorageSizeMB");
-        return 10000;
+#if UNITY_ANDROID
+		TodoLogger.Log(TodoLogger.StorageSupport, "GetAvailableStorageSizeMB");
+#endif
+		return 10000;
 	}
 
 	// // RVA: 0x2E723D0 Offset: 0x2E723D0 VA: 0x2E723D0

@@ -102,13 +102,13 @@ namespace XeApp.Game.Menu
 			{
 				LayoutUGUIRuntime runtime = null;
 				lytOperation = AssetBundleManager.LoadLayoutAsync("ly/014.xab", "root_sel_chara_icon_layout_root");
-				yield return lytOperation;
+				yield return Co.R(lytOperation);
 
-				yield return lytOperation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+				yield return Co.R(lytOperation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
 				{
 					//0x17EC610
 					runtime = instance.GetComponent<LayoutUGUIRuntime>();
-				});
+				}));
 				for(int i = 0; i < m_scrollList.ScrollObjectCount - 1; i++)
 				{
 					LayoutUGUIRuntime inst = Instantiate(runtime);
@@ -524,7 +524,15 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17EC120 Offset: 0x17EC120 VA: 0x17EC120
 		public StayButton GetNavigationDivaListButton()
 		{
-			TodoLogger.Log(0, "GetNavigationDivaListButton");
+			FFHPBEPOMAK_DivaInfo d = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
+			for(int i = 0; i < 2; i++)
+			{
+				FFHPBEPOMAK_DivaInfo d2 = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[m_sortDivaList[i]];
+				if(d2.AHHJLDLAPAN_DivaId != d.AHHJLDLAPAN_DivaId)
+				{
+					return m_divaListIcon[i].StayButton;
+				}
+			}
 			return null;
 		}
 	}

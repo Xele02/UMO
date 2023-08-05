@@ -26,7 +26,7 @@ class CriFileTest : MonoBehaviour
     {
         //pb.videoPath = s;
         pb.ms = s;
-        yield return pb.Prepare();
+        yield return Co.R(pb.Prepare());
         pb.PlayPause();
         yield break;
     }
@@ -57,7 +57,7 @@ class CriFileTest : MonoBehaviour
             foreach(MemoryStream s in demux.ExtractedMemoryStream)
             {
                 //UnityEngine.Debug.Log(s);
-                StartCoroutine(PlayVideo(s));
+                this.StartCoroutineWatched(PlayVideo(s));
                 break;
             }
         }

@@ -19,9 +19,9 @@ namespace XeApp.Game.Menu
 		private int m_dispEndIndex; // 0x20
 		private Dictionary<int, List<FlexibleListItemLayout>> m_partsChache = new Dictionary<int, List<FlexibleListItemLayout>>(); // 0x24
 
-		// public Dictionary<int, List<FlexibleListItemLayout>> PartsChache { get; } 0xB9DFA4
-		// public int DispBeginIndex { get; } 0xB9DFAC
-		// public int DispEndIndex { get; } 0xB9DFB4
+		public Dictionary<int, List<FlexibleListItemLayout>> PartsChache { get { return m_partsChache; } } //0xB9DFA4
+		public int DispBeginIndex { get { return m_dispBeginIndex; } } //0xB9DFAC
+		public int DispEndIndex { get { return m_dispEndIndex; } } //0xB9DFB4
 
 		// [CompilerGeneratedAttribute] // RVA: 0x70D644 Offset: 0x70D644 VA: 0x70D644
 		// // RVA: 0xB9DD8C Offset: 0xB9DD8C VA: 0xB9DD8C
@@ -74,7 +74,8 @@ namespace XeApp.Game.Menu
 			m_scroll.content.anchoredPosition = new Vector2(0, GetScrollPosition(index));
 			CalcIndex(out m_dispBeginIndex, out m_dispEndIndex);
 			AllocRange(m_dispBeginIndex, m_dispEndIndex);
-			for(int i = 0; i < m_listItem.Count; i++)
+			//UnityEngine.Debug.LogError("SetlistTop " + index + "/" + m_listItem.Count+ " " + GetScrollPosition(index) + " " + m_dispBeginIndex + ">" + m_dispEndIndex);
+			for (int i = 0; i < m_listItem.Count; i++)
 			{
 				if(m_listItem[i].Layout != null)
 				{
@@ -84,7 +85,21 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB9FAAC Offset: 0xB9FAAC VA: 0xB9FAAC
-		// public void SetlistBottom(int index) { }
+		public void SetlistBottom(int index)
+		{
+			AllFree();
+			m_scroll.content.anchoredPosition = new Vector2(0, GetScrollPositionBottom(index));
+			CalcIndex(out m_dispBeginIndex, out m_dispEndIndex);
+			AllocRange(m_dispBeginIndex, m_dispEndIndex);
+			//UnityEngine.Debug.LogError("SetlistBottom " + index + "/" + m_listItem.Count + " " + GetScrollPositionBottom(index) + " " + m_dispBeginIndex + ">" + m_dispEndIndex);
+			for (int i = 0; i < m_listItem.Count; i++)
+			{
+				if (m_listItem[i].Layout != null)
+				{
+					OnUpdateItem(m_listItem[i]);
+				}
+			}
+		}
 
 		// // RVA: 0xBA00B4 Offset: 0xBA00B4 VA: 0xBA00B4
 		// public void SetlistUpdateOnly() { }
@@ -130,13 +145,31 @@ namespace XeApp.Game.Menu
 			float val = m_scroll.content.sizeDelta.y - m_scrollRectTransform.sizeDelta.y;
 			if(val >= 0)
 			{
-				//?
+				val = m_scroll.content.sizeDelta.y - m_scrollRectTransform.sizeDelta.y;
 			}
 			return val;
 		}
 
 		// // RVA: 0xB9FD3C Offset: 0xB9FD3C VA: 0xB9FD3C
-		// private float GetScrollPositionBottom(int index) { }
+		private float GetScrollPositionBottom(int index)
+		{
+			if(-1 < index)
+			{
+				if(index < m_listItem.Count)
+				{
+					Vector2 top = m_listItem[index].Top;
+					float f = top.y + (m_scrollRectTransform.sizeDelta.y - m_listItem[index].Height);
+					if (-f < 0)
+						return f;
+				}
+			}
+			float f2 = m_scroll.content.sizeDelta.y - m_scrollRectTransform.sizeDelta.y;
+			if(f2 >= 0)
+			{
+				f2 = m_scroll.content.sizeDelta.y - m_scrollRectTransform.sizeDelta.y;
+			}
+			return f2;
+		}
 
 		// // RVA: 0xBA0608 Offset: 0xBA0608 VA: 0xBA0608
 		public void AddLayoutCache(int type, LayoutUGUIRuntime runtime, int count)
@@ -190,6 +223,7 @@ namespace XeApp.Game.Menu
 			}
 			m_dispBeginIndex = start;
 			m_dispEndIndex = end;
+			//UnityEngine.Debug.LogError("OnUpdateScroll " + position + " " + m_dispBeginIndex + ">" + m_dispEndIndex);
 		}
 
 		// // RVA: 0xB9F414 Offset: 0xB9F414 VA: 0xB9F414
@@ -288,16 +322,33 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBA10A8 Offset: 0xBA10A8 VA: 0xBA10A8
-		// public bool IsCacheLoaded() { }
+		public bool IsCacheLoaded()
+		{
+			foreach(var p in m_partsChache)
+			{
+				for(int i = 0; i < p.Value.Count; i++)
+				{
+					if (!p.Value[i].IsLoaded())
+						return false;
+				}
+			}
+			return true;
+		}
 
 		// // RVA: 0xBA1320 Offset: 0xBA1320 VA: 0xBA1320
 		// public void StopScrollMove() { }
 
 		// // RVA: 0xBA1354 Offset: 0xBA1354 VA: 0xBA1354
-		// public float GetVerticalScrollSizeRatio() { }
+		public float GetVerticalScrollSizeRatio()
+		{
+			return m_scroll.content.sizeDelta.y / m_scrollRectTransform.sizeDelta.y;
+		}
 
 		// // RVA: 0xBA13EC Offset: 0xBA13EC VA: 0xBA13EC
-		// public float CurrentVerticalScrollPositon() { }
+		public float CurrentVerticalScrollPositon()
+		{
+			return m_scroll.verticalNormalizedPosition;
+		}
 
 		// // RVA: 0xBA1418 Offset: 0xBA1418 VA: 0xBA1418
 		// public float CurrentHorizontalScrollPositon() { }
@@ -315,6 +366,16 @@ namespace XeApp.Game.Menu
 		// public void SetHorizontalScrollPositon(float pos) { }
 
 		// // RVA: 0xBA16B0 Offset: 0xBA16B0 VA: 0xBA16B0
-		// public void SetEnableScrollBar(bool isEnable) { }
+		public void SetEnableScrollBar(bool isEnable)
+		{
+			if(m_scroll.verticalScrollbar != null)
+			{
+				m_scroll.verticalScrollbar.interactable = isEnable;
+			}
+			if(m_scroll.horizontalScrollbar != null)
+			{
+				m_scroll.horizontalScrollbar.interactable = isEnable;
+			}
+		}
 	}
 }

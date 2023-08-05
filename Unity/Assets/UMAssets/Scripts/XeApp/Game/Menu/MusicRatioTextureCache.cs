@@ -47,7 +47,10 @@ namespace XeApp.Game.Menu
 		private const string TexturePath = "ct/mr/{0:D2}.xab";
 
 		// RVA: 0x1053FD8 Offset: 0x1053FD8 VA: 0x1053FD8 Slot: 5
-		// public override void Terminated() { }
+		public override void Terminated()
+		{
+			Clear();
+		}
 
 		// RVA: 0x1053FE0 Offset: 0x1053FE0 VA: 0x1053FE0 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)

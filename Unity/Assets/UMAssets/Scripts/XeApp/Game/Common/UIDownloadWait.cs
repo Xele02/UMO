@@ -1,6 +1,7 @@
 using XeSys.Gfx;
 using System;
 using UnityEngine;
+using System.Collections;
 
 namespace XeApp.Game.Common
 {
@@ -18,7 +19,7 @@ namespace XeApp.Game.Common
 		private WaitForEndOfFrame m_frameYilder = new WaitForEndOfFrame(); // 0x38
 
 		public bool HighResolutionModeFlag { get; set; } // 0x1C
-		// public bool IsReady { get; } 0x1CDD520
+		public bool IsReady { get { return m_isReady; } } //0x1CDD520
 
 		// // RVA: 0x1CDD528 Offset: 0x1CDD528 VA: 0x1CDD528
 		private void Update()
@@ -28,13 +29,30 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1CDD53C Offset: 0x1CDD53C VA: 0x1CDD53C
-		// public void Begin() { }
+		public void Begin()
+		{
+			if(!gameObject.activeSelf)
+			{
+				gameObject.SetActive(true);
+			}
+			m_ratio = 0;
+			m_per = 0;
+			ChangeProgress(0);
+			m_isReady = false;
+			this.StartCoroutineWatched(WaitOneFrameCoroutine());
+		}
 
 		// // RVA: 0x1CDD738 Offset: 0x1CDD738 VA: 0x1CDD738
-		// public void End() { }
+		public void End()
+		{
+			gameObject.SetActive(false);
+		}
 
 		// // RVA: 0x1CDD770 Offset: 0x1CDD770 VA: 0x1CDD770
-		// public void SetPer(float per) { }
+		public void SetPer(float per)
+		{
+			m_per = per;
+		}
 
 		// // RVA: 0x1CDD778 Offset: 0x1CDD778 VA: 0x1CDD778
 		private void UpdateLoad()
@@ -60,18 +78,37 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1CDD5E0 Offset: 0x1CDD5E0 VA: 0x1CDD5E0
 		private void ChangeProgress(int per)
 		{
-			TodoLogger.Log(5, "ChangeProgress");
+			if(per < 100)
+			{
+				m_ratio += (per - m_ratio) * 0.7f;
+			}
+			else
+			{
+				m_ratio = 100;
+			}
+			int v = Mathf.RoundToInt(m_ratio);
+			m_per_number.SetNumber(v * 100, 3);
+			m_download_frame_layout.StartChildrenAnimGoStop(v, v);
 		}
 
 		// // RVA: 0x1CDD888 Offset: 0x1CDD888 VA: 0x1CDD888
 		private void ChangeProgressForHighResolutionMode(float per)
 		{
-			TodoLogger.Log(5, "ChangeProgressForHighResolutionMode");
+			TodoLogger.LogError(5, "ChangeProgressForHighResolutionMode");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7397E4 Offset: 0x7397E4 VA: 0x7397E4
 		// // RVA: 0x1CDD6AC Offset: 0x1CDD6AC VA: 0x1CDD6AC
-		// private IEnumerator WaitOneFrameCoroutine() { }
+		private IEnumerator WaitOneFrameCoroutine()
+		{
+			//0x1CDDC64
+			if(m_parent == null)
+				m_parent = transform.parent;
+			transform.SetParent(null, false);
+			yield return m_frameYilder;
+			transform.SetParent(m_parent, false);
+			m_isReady = true;
+		}
 
 		// // RVA: 0x1CDD9C8 Offset: 0x1CDD9C8 VA: 0x1CDD9C8 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

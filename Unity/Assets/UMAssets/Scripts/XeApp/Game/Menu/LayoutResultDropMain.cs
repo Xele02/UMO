@@ -118,7 +118,7 @@ namespace XeApp.Game.Menu
 			textRareItemNum.text = viewDrop.MFNCONLNBPB_RareItemNum.ToString();
 			textNomralItemNum.text = viewDrop.OOEFNNNFOLF_NormalItemNum.ToString();
 			textEventRareItemNum.text = viewDrop.POPPPGMKOHN_EventRareItemNum.ToString();
-			is_evenRareDrop = viewDrop.ELKAMCOPCDO > 0;
+			is_evenRareDrop = viewDrop.ELKAMCOPCDO_EventRareItemNum > 0;
 			layoutLuckType.StartChildrenAnimGoStop(viewDrop.MJBODMOLOBC_Luck == 0 ? "00": "01");
 			layoutScoreRankIcon.StartChildrenAnimGoStop((int)viewDrop.DCBDCHPKLCN_Rank, (int)viewDrop.DCBDCHPKLCN_Rank);
 			float a = (viewDrop.JKLNANHPJLO - 1) * 100;
@@ -145,20 +145,65 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1D948BC Offset: 0x1D948BC VA: 0x1D948BC
 		public void StartBeginAnim()
 		{
-			StartCoroutine(Co_PlayingRootAnim());
+			this.StartCoroutineWatched(Co_PlayingRootAnim());
 		}
 
 		// // RVA: 0x1D9496C Offset: 0x1D9496C VA: 0x1D9496C
 		public void StartEndAnim(Action endCallback)
 		{
-			StartCoroutine(Co_EndPlayingAnim(endCallback));
+			this.StartCoroutineWatched(Co_EndPlayingAnim(endCallback));
 		}
 
 		// // RVA: 0x1D94A38 Offset: 0x1D94A38 VA: 0x1D94A38
-		// public void SkipBeginAnim() { }
+		public void SkipBeginAnim()
+		{
+			countUpSEPlayback.Stop();
+			countUpBonusSEPlayback.Stop();
+			this.StopAllCoroutinesWatched();
+			for(int i = 0; i < itemList.Count; i++)
+			{
+				itemList[i].StopAllCoroutinesWatched();
+			}
+			for(int i = 0; i < itemList.Count; i++)
+			{
+				itemList[i].SkipBeginAnim();	
+			}
+			if(itemList.Count == 0)
+			{
+				layoutZeroItem.StartChildrenAnimGoStop("st_in");
+			}
+			do
+			{
+				;
+			} while(!AddItem());
+			scrollSupporter.scrollRect.horizontalNormalizedPosition = 0;
+			SetupUCAnimTable();
+			StringBuilder str = new StringBuilder(32);
+			numberTotalUC.SetNumber(viewDrop.PBIHLJKLHGJ_UCNumber, 0);
+			numberTotalUC.enabled = true;
+			if(viewDrop.ADHABBGDFPK != 0)
+				textConvertUC.enabled = true;
+			layoutRoot.StartChildrenAnimGoStop("st_in");
+			EnterMainStep(MainAnimStep.End);
+			StartScoreLoopAnim();
+			layoutRankIcon[(int)viewDrop.DCBDCHPKLCN_Rank].StartChildrenAnimGoStop("st_in", "st_in");
+			layoutRankIcon[(int)viewDrop.DCBDCHPKLCN_Rank].StartChildrenAnimLoop("logo_act", "loen_act");
+			scrollSupporter.ContentHeight = 0;
+		}
 
 		// // RVA: 0x1D95714 Offset: 0x1D95714 VA: 0x1D95714
-		// public void SkipRecordPlate(Action callback) { }
+		public void SkipRecordPlate(Action callback)
+		{
+			if(RecordPlateUtility.CheckPlateId(viewDrop.HBHMAKNGKFK))
+			{
+				this.StartCoroutineWatched(PopupRecordPlate.Show(RecordPlateUtility.eSceneType.Result, callback, false));
+				return;
+			}
+			if(callback != null)
+			{
+				callback();
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71933C Offset: 0x71933C VA: 0x71933C
 		// // RVA: 0x1D948E0 Offset: 0x1D948E0 VA: 0x1D948E0
@@ -176,11 +221,11 @@ namespace XeApp.Game.Menu
 			StartZeroItemAnim();
 			if(!is_evenRareDrop)
 			{
-				StartCoroutine(Co_PlayingRareItemDropNumAnim());
+				this.StartCoroutineWatched(Co_PlayingRareItemDropNumAnim());
 			}
 			else
 			{
-				StartCoroutine(Co_PlayingEventRareItemDropNumAnim());
+				this.StartCoroutineWatched(Co_PlayingEventRareItemDropNumAnim());
 			}
 		}
 
@@ -199,8 +244,6 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1D95910 Offset: 0x1D95910 VA: 0x1D95910
 		private IEnumerator Co_PlayingEventRareItemDropNumAnim()
 		{
-			TodoLogger.Log(0, "Co_PlayingEventRareItemDropNumAnim");
-
 			//0x1D97710
 			EnterMainStep(MainAnimStep.EVENT_RARE_DROP);
 			yield return null;
@@ -215,14 +258,14 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				StartCoroutine(Co_PlayingRareItemDropNumAnim());
+				this.StartCoroutineWatched(Co_PlayingRareItemDropNumAnim());
 			}
 		}
 
 		// // RVA: 0x1D959BC Offset: 0x1D959BC VA: 0x1D959BC
 		private void StartNextEventRareItemAnim()
 		{
-			TodoLogger.Log(0, "StartNextEventRareItemAnim");
+			TodoLogger.LogError(0, "StartNextEventRareItemAnim");
 		}
 
 		// // RVA: 0x1D95D34 Offset: 0x1D95D34 VA: 0x1D95D34
@@ -246,7 +289,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				StartCoroutine(Co_PlayingNomralItemDropNumAnim());
+				this.StartCoroutineWatched(Co_PlayingNomralItemDropNumAnim());
 			}
 		}
 
@@ -275,26 +318,26 @@ namespace XeApp.Game.Menu
 			}
 			if(!AddItem() && viewDrop.HBHMAKNGKFK[currentItemIndex].PHJHJGDLPED_IsRareItem)
 			{
-				onFinished = StartNextRareItemAnim;
+				item.onFinished = StartNextRareItemAnim;
 			}
 			else
 			{
-				onFinished = StartNormalItemDropNumAnim;
+				item.onFinished = StartNormalItemDropNumAnim;
 			}
 			if(currentItemIndex < 7)
 			{
-				StartBeginAnim();
+				item.StartBeginAnim();
 			}
 			else
 			{
-				StartCoroutine(Co_AutoScrolling(1, nextItemMoveSec, StartBeginAnim));
+				this.StartCoroutineWatched(Co_AutoScrolling(1, nextItemMoveSec, item.StartBeginAnim));
 			}
 		}
 
 		// // RVA: 0x1D960B4 Offset: 0x1D960B4 VA: 0x1D960B4
 		private void StartNormalItemDropNumAnim()
 		{
-			StartCoroutine(Co_PlayingNomralItemDropNumAnim());
+			this.StartCoroutineWatched(Co_PlayingNomralItemDropNumAnim());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71951C Offset: 0x71951C VA: 0x71951C
@@ -340,21 +383,21 @@ namespace XeApp.Game.Menu
 		private void StartNextNormalItemAnim()
 		{
 			AddItem();
-			onFinished = StartNormalItemBonusAnim;
+			itemList[currentItemIndex].onFinished = StartNormalItemBonusAnim;
 			if(currentItemIndex < 7)
 			{
 				itemList[currentItemIndex].StartBeginAnim();
 			}
 			else
 			{
-				StartCoroutine(Co_AutoScrolling(1, nextItemMoveSec, StartBeginAnim));
+				this.StartCoroutineWatched(Co_AutoScrolling(1, nextItemMoveSec, itemList[currentItemIndex].StartBeginAnim));
 			}
 		}
 
 		// // RVA: 0x1D962FC Offset: 0x1D962FC VA: 0x1D962FC
 		public void StartNormalItemBonusAnim()
 		{
-			StartCoroutine(Co_PlayingNormalItemBonusAnim());
+			this.StartCoroutineWatched(Co_PlayingNormalItemBonusAnim());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x719594 Offset: 0x719594 VA: 0x719594
@@ -487,7 +530,7 @@ namespace XeApp.Game.Menu
 		public void StartUCAnim()
 		{
 			SetupUCAnimTable();
-			StartCoroutine(Co_PlayingUCAnim());
+			this.StartCoroutineWatched(Co_PlayingUCAnim());
 		}
 
 		// // RVA: 0x1D955DC Offset: 0x1D955DC VA: 0x1D955DC
@@ -508,7 +551,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_PlayingUCAnim()
 		{
 			//0x1D98E88
-			StartCoroutine(Co_AutoScrolling(0, backItemMoveSec, null));
+			this.StartCoroutineWatched(Co_AutoScrolling(0, backItemMoveSec, null));
 			yield return null;
 			EnterMainStep(MainAnimStep.UC);
 			yield return null;
@@ -521,7 +564,7 @@ namespace XeApp.Game.Menu
 			List<float> fl = new List<float>();
 			NumberAnimationUtility.MakeAccelerationTimeList(10, 0.3f, 0.02f, ref fl);
 			PlayCountUpLoopSE();
-			yield return StartCoroutine(NumberAnimationUtility.Co_FakeCountup(viewDrop.PBIHLJKLHGJ_UCNumber, fl, OnChangeUCNumber, null, null));
+			yield return this.StartCoroutineWatched(NumberAnimationUtility.Co_FakeCountup(viewDrop.PBIHLJKLHGJ_UCNumber, fl, OnChangeUCNumber, null, null));
 			countUpSEPlayback.Stop();
 			if(viewDrop.ADHABBGDFPK != 0)
 			{
@@ -724,9 +767,20 @@ namespace XeApp.Game.Menu
 		// private void StopBonusCountUpLoopSE() { }
 
 		// // RVA: 0x1D968E0 Offset: 0x1D968E0 VA: 0x1D968E0
-		// public bool IsDrop() { }
+		public bool IsDrop()
+		{
+			return itemList.Count > 0;
+		}
 
 		// // RVA: 0x1D96968 Offset: 0x1D96968 VA: 0x1D96968
-		// public bool IsMedalDrop() { }
+		public bool IsMedalDrop()
+		{
+			for(int i = 0; i < itemList.Count; i++)
+			{
+				if (itemList[i].itemInfo.HHACNFODNEF_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.ADCAAALBAIF_Medal)
+					return true;
+			}
+			return false;
+		}
 	}
 }

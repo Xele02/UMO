@@ -5,7 +5,7 @@ namespace XeApp.Game.Menu
 {
     internal class PopupDetailCostumeSetting : PopupSetting
     {
-        // public CKFGMNAIBNG ViewCostumeData { get; set; } // 0x34
+        public CKFGMNAIBNG ViewCostumeData { get; set; } // 0x34
         public int ColorId { get; set; } // 0x38
         public override bool IsPreload { get { return true; } } //0xF80BC8
         public override bool IsAssetBundle { get { return true; } }// 0xF80BD0

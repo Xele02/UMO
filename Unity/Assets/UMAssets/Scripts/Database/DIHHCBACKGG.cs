@@ -9,7 +9,7 @@ public abstract class DIHHCBACKGG_DbSection
 	public virtual string JIKKNHIAEKG_BlockName { get; set; } // 0x8 HIPHMHKCJOI  // KLGJBKFAOGN // FEENLLLIMHM
 	// public virtual int GLOLECOPKDM { get; set; } // 0x10 FKLFBFJJHPF // FPNGGOKOJHF // PMJJHGPMLBN
 	public bool LNIMEIMBCMF { get; set; } // 0x14 FELOLNHPBOI  // // JCGFCHCLKAH // HNHIPLGADIF
-	public string HDIDJNCGICK { get; set; } // 0x18 AEDHAENECGN // BILFANLLKPJ // CELPMALCAHG
+	public string HDIDJNCGICK_LoadError { get; set; } // 0x18 AEDHAENECGN // BILFANLLKPJ // CELPMALCAHG
 	public uint HHPOFCILDGN { get; set; } // 0x1C LGLBKNBFCIO // ACELOLOGDLM // MNDHNBBFJIB
 
 	// // RVA: 0x1984404 Offset: 0x1984404 VA: 0x1984404

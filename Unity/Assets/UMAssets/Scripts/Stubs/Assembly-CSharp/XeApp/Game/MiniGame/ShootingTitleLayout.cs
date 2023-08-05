@@ -12,7 +12,7 @@ namespace XeApp.Game.MiniGame
 		private ShootingTitleUseCommandLayout m_titleUseCommand;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

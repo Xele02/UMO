@@ -52,6 +52,7 @@ namespace CriWare.CriMana
         SofdecPrime = 1,
         H264 = 5,
         VP9 = 9,
+        Theora = 10,
     }
 
     public class FrameInfo

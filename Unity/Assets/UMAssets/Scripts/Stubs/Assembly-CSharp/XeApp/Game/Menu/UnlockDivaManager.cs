@@ -17,7 +17,7 @@ namespace XeApp.Game.Menu
 		private List<float> m_diva_target_pos_y;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

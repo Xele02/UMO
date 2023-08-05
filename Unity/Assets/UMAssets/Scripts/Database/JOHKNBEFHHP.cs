@@ -58,7 +58,7 @@ public class JOHKNBEFHHP_TitleBanner : DIHHCBACKGG_DbSection
 	// // RVA: 0x1BA4188 Offset: 0x1BA4188 VA: 0x1BA4188 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(100, "CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "JOHKNBEFHHP_TitleBanner.CAOGDCBPBAN");
 		return 0;
 	}
 }

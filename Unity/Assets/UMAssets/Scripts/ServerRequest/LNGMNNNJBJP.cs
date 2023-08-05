@@ -31,7 +31,7 @@ public class LNGMNNNJBJP : CACGCMBKHDI_Request
 	public int IGNIIEBMFIN_Page = 1; // 0x90
 	public int MLPLGFLKKLI_Ipp = 15; // 0x94
 
-	//public override bool OIDCBBGLPHL { get; } 0x10C387C
+	public override bool OIDCBBGLPHL { get { return true; } } //0x10C387C GINMIBJOABO
 	public SakashoPlayerCriteria IPKCADIAAPG_SakashoCrit { get; set; } // 0x7C GOKPJIPOKCK FLHEFBEHCKK EIDLJIDFPFG
 	public FKNFPJEGMOO NFEAMMJIMPG_FriendsResult { get; set; } // 0x8C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
 	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG_FriendsResult != null; } } //0x10C3AC8 HGPAELCGELL

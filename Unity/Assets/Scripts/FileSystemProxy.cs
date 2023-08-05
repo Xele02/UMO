@@ -20,6 +20,12 @@ static class FileSystemProxy
 
 	static public string ConvertURL(string url)
 	{
+		string urlExt = "";
+		if (url.Contains("?"))
+		{
+			urlExt = url.Substring(url.IndexOf("?"));
+			url = url.Substring(0, url.IndexOf("?"));
+		}
 		if (url.Contains("!s00000000z!"))
 		{
 			int idx = url.IndexOf("/android/");
@@ -31,7 +37,7 @@ static class FileSystemProxy
 			}
 			else
 			{
-				UnityEngine.Debug.LogError("Error finding file source name "+url);
+				TodoLogger.LogError(TodoLogger.Filesystem, "Error finding file source name " + url);
 				return "";
 			}
 		}
@@ -42,12 +48,12 @@ static class FileSystemProxy
 			{
 				url = url.Replace("[SERVER_DATA_PATH]", "file://" + Path.GetFullPath(RuntimeSettings.CurrentSettings.DataDirectory));
 			}
-			return url;
+			return url + urlExt;
 		}
 		string serverPath = RuntimeSettings.CurrentSettings.DataWebServerURL;
 		if (serverPath.EndsWith("/"))
 			serverPath = serverPath.Substring(0, serverPath.Length - 1);
-		return url.Replace("[SERVER_DATA_PATH]", serverPath);
+		return url.Replace("[SERVER_DATA_PATH]", serverPath) + urlExt;
 	}
 
 	static public string ConvertPath(string path)
@@ -101,7 +107,7 @@ static class FileSystemProxy
 		{
 			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.DataWebServerURL))
 			{
-				GameManager.Instance.StartCoroutine(TryInstallFileCoroutine(path, onDone));
+				GameManager.Instance.StartCoroutineWatched(TryInstallFileCoroutine(path, onDone));
 				return;
 			}
 		}
@@ -115,13 +121,14 @@ static class FileSystemProxy
 		{
 			serverFileList = new Dictionary<string, string>();
 			string fileList = System.Text.Encoding.UTF8.GetString(System.IO.File.ReadAllBytes(UnityEngine.Application.dataPath + "/../../Data/RequestGetFiles.json"));
+			fileList = fileList.Replace("[[DATE]]", "0");
 			EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(fileList);
 			EDOHBJAPLPF_JsonData fileL = jsonData["files"];
 			for (int i = 0; i < fileL.HNBFOAJIIAL_Count; i++)
 			{
 				if((i % 1000) == 0)
 				{
-					UnityEngine.Debug.Log("Done file list "+i+"/"+fileL.HNBFOAJIIAL_Count);
+					TodoLogger.Log(TodoLogger.Filesystem, "Done file list " + i+"/"+fileL.HNBFOAJIIAL_Count);
 					yield return null;
 				}
 				string fileName = (string)fileL[i]["file"];
@@ -135,20 +142,20 @@ static class FileSystemProxy
 
 	static IEnumerator TryInstallFileCoroutine(string path, Action<string> onDone)
 	{
-		yield return InitServerFileList();
+		yield return Co.R(InitServerFileList());
 		path = path.Replace("\\", "/");
 		string relativePath = path;
 		int pos = path.IndexOf("/android/");
 		if (pos >= 0)
 			relativePath = path.Substring(pos);
-		UnityEngine.Debug.Log("Try install relative path : " + relativePath);
+		TodoLogger.Log(TodoLogger.Filesystem, "Try install relative path : " + relativePath);
 		if (serverFileList.ContainsKey(relativePath))
 		{
 			string startPath = RuntimeSettings.CurrentSettings.DataWebServerURL;
 			if(serverFileList[relativePath].StartsWith("/") && startPath.EndsWith("/"))
 				startPath = startPath.Substring(0, startPath.Length - 1);
 			string url = startPath + serverFileList[relativePath];
-			UnityEngine.Debug.Log("Try dld from server at " + url);
+			TodoLogger.Log(TodoLogger.Filesystem, "Try dld from server at " + url);
 			WWW dldData = new WWW(url);
 			while (!dldData.isDone)
 				yield return null;
@@ -159,7 +166,7 @@ static class FileSystemProxy
 			}
 			else
 			{
-				UnityEngine.Debug.LogError("Dld Error : "+dldData.error);
+				TodoLogger.LogError(TodoLogger.Filesystem, "Dld Error : " + dldData.error);
 			}
 		}
 		if (onDone != null)
@@ -167,12 +174,12 @@ static class FileSystemProxy
 	}
 
 #if UNITY_EDITOR
-	[UnityEditor.MenuItem("UMO/TestLoadBundle")]
+	//[UnityEditor.MenuItem("UMO/TestLoadBundle")]
 	static void TestLoadBundle()
 	{
 		if (GameManager.Instance)
 		{
-			GameManager.Instance.StartCoroutine(TestBundleAsync());
+			GameManager.Instance.StartCoroutineWatched(TestBundleAsync());
 		}
 	}
 
@@ -355,7 +362,7 @@ static class FileSystemProxy
 		string s = "ad/am/100601.xab";
 		UnityEngine.Debug.LogError(s);
 		AssetBundleLoadAllAssetOperationBase operation = AssetBundleManager.LoadAllAssetAsync(s);
-		yield return operation;
+		yield return Co.R(operation);
 		GameObject go = operation.GetAsset<GameObject>("100601");
 		go = UnityEngine.Object.Instantiate(go);
 		ExtractBundle(operation, "100601");
@@ -364,7 +371,7 @@ static class FileSystemProxy
 		s = "ad/am/100602.xab";
 		UnityEngine.Debug.LogError(s);
 		operation = AssetBundleManager.LoadAllAssetAsync(s);
-		yield return operation;
+		yield return Co.R(operation);
 		go = operation.GetAsset<GameObject>("100602");
 		go = UnityEngine.Object.Instantiate(go);
 		ExtractBundle(operation, "100602");

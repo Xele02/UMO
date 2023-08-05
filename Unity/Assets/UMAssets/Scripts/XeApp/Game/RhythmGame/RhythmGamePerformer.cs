@@ -42,7 +42,41 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9ADBC8 Offset: 0x9ADBC8 VA: 0x9ADBC8
 		public void RemoveAllTouchEvents()
 		{
-			TodoLogger.Log(0, "GamePerformer RemoveAllTouchEvents");
+			beganTouchEvent = (int lineNo, int fingerId) =>
+			{
+				//0x9AE8AC
+				return;
+			};
+			endedTouchEvent = (int lineNo, int lineNo_Begin, int fingerId, bool forceMiss) =>
+			{
+				//0x9AE8B0
+				return;
+			};
+			releaseLineEvent = (int lineNo, int lineNo_Begin, int fingerId, bool forceMiss) =>
+			{
+				//0x9AE8B4
+				return;
+			};
+			nextLineEvent = (int lineNo0, int lineNo1, int fingerId, bool forceMiss) =>
+			{
+				//0x9AE8B8
+				return;
+			};
+			swipedTouchEvent = (int lineNo, int fingerId, bool isRight, bool isDown, bool isLeft, bool isUp) =>
+			{
+				//0x9AE8BC
+				return;
+			};
+			neutralTouchEvent = (int lineNo, int fingerId) =>
+			{
+				//0x9AE8C0
+				return;
+			};
+			skillTouchEvent = (TouchSwipeDirection swipeDir) =>
+			{
+				//0x9AE8C4
+				return;
+			};
 		}
 
 		//// RVA: 0x9AE1B4 Offset: 0x9AE1B4 VA: 0x9AE1B4

@@ -75,9 +75,9 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 				data.IDDHKOEFJFB_BodyId = (sbyte)array[i].JIBNPJCIALH;
 				data.FPMGHDKACOF_PersonalityId = (sbyte)array[i].OKADDOIJGNB;
 				data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
-				data.DOAJJALOKLI = (sbyte)array[i].KLCMKLPIDDJ;
-				data.PKNONBBKCCP = (sbyte)array[i].BAOFEFFADPD;
-				data.LIOGKHIGJKN = (ushort)array[i].LIOGKHIGJKN;
+				data.DOAJJALOKLI_Month = (sbyte)array[i].KLCMKLPIDDJ;
+				data.PKNONBBKCCP_Day = (sbyte)array[i].BAOFEFFADPD;
+				data.LIOGKHIGJKN_FreeMusicId = (ushort)array[i].LIOGKHIGJKN;
 				data.CMBCBNEODPD_HomeBgId = (ushort)array[i].CMBCBNEODPD;
 
 				EPPOHFLMDBC_DivaStats data2 = new EPPOHFLMDBC_DivaStats();
@@ -97,7 +97,7 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 			}
 			return true;
 		}
-		HDIDJNCGICK = "\"diva\" table overflow";
+		HDIDJNCGICK_LoadError = "\"diva\" table overflow";
 		return false;
     }
 
@@ -110,7 +110,7 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 	// // RVA: 0x16093A8 Offset: 0x16093A8 VA: 0x16093A8 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(0, "CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "HPBPIOPPDCB_Diva.CAOGDCBPBAN");
 		return 0;
 	}
 }

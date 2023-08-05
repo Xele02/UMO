@@ -9,6 +9,7 @@ using XeApp.Game.Tutorial;
 using XeSys;
 using CriWare;
 using mcrs;
+using XeApp.Game.Menu;
 
 namespace XeApp.Game.RhythmGame
 {
@@ -302,6 +303,8 @@ namespace XeApp.Game.RhythmGame
 			{
 				XeApp.Game.GameManager.Instance.PopupCanvas.worldCamera.clearFlags = UnityEngine.CameraClearFlags.Nothing;
 			}
+			ExternLib.LibCriWare.checkUncached = false;
+			SoundManager.Instance.SetInGame(false);
 			RestoreSave();
 		}
 
@@ -331,6 +334,7 @@ namespace XeApp.Game.RhythmGame
 			notesMillisec = currentRawMusicMillisec - noteOffsetMillisec;
 			deviceMillisec = IncludeDeviceLatency(currentRawMusicMillisec);
 			deviceSec = deviceMillisec / 1000.0f;
+			UMODebugger.Instance.UpdateSongTime(deviceSec);
 			if(!isResetRequest)
 			{
 				normalModeEndEvent.Update(notesMillisec);
@@ -478,7 +482,11 @@ namespace XeApp.Game.RhythmGame
 			SoundManager.Instance.sePlayerGame.Preload("se_valkyrie_000");
 			SoundManager.Instance.sePlayerGame.Preload("se_valkyrie_001");
 			SoundManager.Instance.sePlayerGame.Preload("se_valkyrie_002");
+			SoundManager.Instance.sePlayerGame.Preload("se_valkyrie_005");
+			SoundManager.Instance.sePlayerGame.Preload("se_valkyrie_003");
 			SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_GAME_009);
+			SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_GAME_018);
+			SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_GAME_019);
 			// Preload pilot voice
 			if (setting.m_enable_cutin)
 			{
@@ -637,6 +645,7 @@ namespace XeApp.Game.RhythmGame
 					SoundManager.Instance.voDiva.Preload(cat, voice);
 				}
 			}
+			SoundManager.Instance.sePlayerGame.Preload((int)cs_se_game.SE_GAME_022);
 			//
 #endif
 		}
@@ -664,8 +673,8 @@ namespace XeApp.Game.RhythmGame
 			RhythmGameStatus.InitializeData initData;
 			initData.musicData = resource.musicData;
 			initData.teamScoreValue = s.soul + s.vocal + s.charm;
-			initData.teamEnergyValue = s.support;
-			initData.supportRate = s.support / (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.MPAMBMKFCKK_BCoeff2) + 1;
+			initData.teamEnergyValue = s.fold;
+			initData.supportRate = s.support * 1.0f / (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.MPAMBMKFCKK_BCoeff2) + 1;
 			initData.valkyrieId = t.valkyrieId;
 			initData.maxLife = s.life;
 			initData.isLiveSkip = false;
@@ -816,7 +825,9 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
-				TodoLogger.Log(0, "InitializeGameData 2D");
+				objectRoot3dLayer.SetActive(false);
+				GameManager.Instance.PopupCanvas.worldCamera.clearFlags = CameraClearFlags.Depth;
+				lowModeBackgroundObject.Initialize(resource.lowModeBackgroundResource);
 			}
 
 			uiController.Initialize(resource, setting, setting_mv);
@@ -867,7 +878,7 @@ namespace XeApp.Game.RhythmGame
 			if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
 				uiController.Hud.SetPlayerDivaId(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId);
-				TodoLogger.Log(0, "InitializeGameData BattleEvent");
+				TodoLogger.LogError(0, "InitializeGameData BattleEvent");
 				//L1814
 			}
 
@@ -1151,9 +1162,9 @@ namespace XeApp.Game.RhythmGame
 			if (resource.musicData.rhythmGameResultStartMillisec < 0)
 			{
 				resource.musicData.rhythmGameResultStartMillisec = musicMillisecLength - 5000;
+				TodoLogger.LogError(0, "Shouldn't pass here");
 			}
-			//else
-			TodoLogger.Log(0, "why else ?");
+			else
 			{
 				rhythmGameResultStartEvent.millisec = resource.musicData.rhythmGameResultStartMillisec;
 			}
@@ -1163,7 +1174,7 @@ namespace XeApp.Game.RhythmGame
 				tutorialOneEndEvent.onFireEvent = () =>
 				{
 					//0xBF1658
-					TodoLogger.Log(0, "TutorialOnEndEvent");
+					TodoLogger.LogError(0, "TutorialOnEndEvent");
 				};
 				tutorialOneEndEvent.millisec = resource.musicData.tutorialOneEndGameStartMillisec;
 			}
@@ -1196,7 +1207,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
-				TodoLogger.Log(0, "InitializeMusicScoreEvent Event Type 3");
+				TodoLogger.LogError(0, "InitializeMusicScoreEvent Event Type 3");
 				//L744
 			}
 			if(setting.m_enable_cutin)
@@ -1260,7 +1271,7 @@ namespace XeApp.Game.RhythmGame
 		private void StartIntroFade()
 		{
 			uguiFader.Fade(0.5f, new Color(IntroEndFadeColor.r, IntroEndFadeColor.g, IntroEndFadeColor.b, 0), IntroEndFadeColor);
-			StartCoroutine(WaitIntroFade());
+			this.StartCoroutineWatched(WaitIntroFade());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x744AD4 Offset: 0x744AD4 VA: 0x744AD4
@@ -1418,12 +1429,12 @@ namespace XeApp.Game.RhythmGame
 				}
 				else
 				{
-					StartCoroutine(Co_2DModeEnemyUIAnim(currentRawMusicMillisec));
+					this.StartCoroutineWatched(Co_2DModeEnemyUIAnim(currentRawMusicMillisec));
 				}
 			}
 			else
 			{
-				StartCoroutine(Co_2DModeEnemyUIAnim(currentRawMusicMillisec));
+				this.StartCoroutineWatched(Co_2DModeEnemyUIAnim(currentRawMusicMillisec));
 			}
 			uiController.Hud.isBattleLimitTimeRunning = true;
 		}
@@ -1432,8 +1443,42 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BC85C Offset: 0x9BC85C VA: 0x9BC85C
 		private IEnumerator Co_2DModeEnemyUIAnim(int startRawMusicMillisec)
 		{
-			TodoLogger.Log(0, "Co_2DModeEnemyUIAnim");
-			yield break;
+			//0xBF1E14
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG_IsValkyrieModeEnabled())
+			{
+				lowModeBackgroundObject.ChangeBattleBg();
+			}
+			yield return new WaitWhile(() =>
+			{
+				//0xBF1668
+				return currentRawMusicMillisec - startRawMusicMillisec < 300;
+			});
+			if(setting.m_enable_cutin)
+			{
+				RhythmGameVoicePlayer.Result r = voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.Mode_Valkyrie_Start);
+				if(r == RhythmGameVoicePlayer.Result.None)
+				{
+					if(resource.enteredValkyrieModeVoiceId < 0)
+					{
+						SoundManager.Instance.voPilot.Play(PilotVoicePlayer.VoiceCategory.Valkyrie, 0);
+					}
+					else
+					{
+						SoundManager.Instance.voPilot.Play(PilotVoicePlayer.VoiceCategory.Special, resource.enteredValkyrieModeVoiceId);
+					}
+				}
+				uiController.Hud.ShowPilotCutin();
+				uiController.Hud.ShowEnemyCutin();
+			}
+			yield return new WaitWhile(() =>
+			{
+				//0xBF16A4
+				return currentRawMusicMillisec - startRawMusicMillisec < 1750;
+			});
+			SoundManager.Instance.sePlayerGame.Play((int)cs_se_game.SE_GAME_013);
+			uiController.Hud.ShowEnemyStatus();
+			uiController.Hud.ShowHitResult();
+			uiController.Hud.ShowTargetSight();
 		}
 
 		// // RVA: 0x9BC900 Offset: 0x9BC900 VA: 0x9BC900
@@ -1521,7 +1566,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
-				StartCoroutine(Co_2DModeChangeBg(currentRawMusicMillisec));
+				this.StartCoroutineWatched(Co_2DModeChangeBg(currentRawMusicMillisec));
 			}
 			uiController.Hud.isBattleLimitTimeRunning = false;
 		}
@@ -1530,8 +1575,13 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9BD058 Offset: 0x9BD058 VA: 0x9BD058
 		private IEnumerator Co_2DModeChangeBg(int startRawMusicMillisec)
 		{
-			TodoLogger.Log(0, "Co_2DModeChangeBg");
-			yield break;
+			//0xBF1BD8
+			yield return new WaitWhile(() =>
+			{
+				//0xBF16EC
+				return currentRawMusicMillisec - startRawMusicMillisec < 2000;
+			});
+			lowModeBackgroundObject.ChangeCardBg();
 		}
 
 		// // RVA: 0x9BD0FC Offset: 0x9BD0FC VA: 0x9BD0FC
@@ -2044,7 +2094,8 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C10DC Offset: 0x9C10DC VA: 0x9C10DC
 		private void StartRhythmGame()
 		{
-			if(XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
+			UMODebugger.Instance.StartSong();
+			if (XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
 			{
 				musicIntroObject.Begin();
 				ValkyrieColorParam col = resource.musicIntroResource.paramColor;
@@ -2058,7 +2109,7 @@ namespace XeApp.Game.RhythmGame
 			// // RVA: 0x9CCB30 Offset: 0x9CCB30 VA: 0x9CCB30
 			// private void <StartRhythmGame>b__274_0() { }
 			uiController.BeginIntroAnim(() => {
-				StartCoroutine(Co_StartMusic());
+				this.StartCoroutineWatched(Co_StartMusic());
 				uiController.DeleteIntro();
 			});
 		}
@@ -2070,54 +2121,18 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C12F8 Offset: 0x9C12F8 VA: 0x9C12F8
 		private IEnumerator Co_StartMusic()
 		{
-    		UnityEngine.Debug.Log("Enter Co_StartMusic");
-			// private int <>1__state; // 0x8
-			// private object <>2__current; // 0xC
-			// public RhythmGamePlayer <>4__this; // 0x10
 			// 0xBF32EC
-			
-			
-			// private sealed class RhythmGamePlayer.<>c__DisplayClass276_0
-			// {
-				// public RhythmGamePlayer <>4__this; // 0x8
-				// public bool isShowingDescription; // 0xC
-				// public Action <>9__5; // 0x10
 
-				// // RVA: 0xBF1774 Offset: 0xBF1774 VA: 0xBF1774
-				// internal void <Co_StartMusic>b__5() { }
-
-				// // RVA: 0xBF1780 Offset: 0xBF1780 VA: 0xBF1780
-				// internal void <Co_StartMusic>b__0() { }
-
-				// // RVA: 0xBF178C Offset: 0xBF178C VA: 0xBF178C
-				// internal void <Co_StartMusic>b__1() { }
-
-				// // RVA: 0xBF1798 Offset: 0xBF1798 VA: 0xBF1798
-				// internal bool <Co_StartMusic>b__2() { }
-			// }
-
-			// private sealed class RhythmGamePlayer.<>c__DisplayClass276_1
-			// {
-				// public BasicTutorialManager mrg; // 0x8
-				// public RhythmGamePlayer.<>c__DisplayClass276_0 CS$<>8__locals1; // 0xC
-				// public Action <>9__4; // 0x10
-
-				// // RVA: 0xBF17A8 Offset: 0xBF17A8 VA: 0xBF17A8
-				// internal void <Co_StartMusic>b__3() { }
-
-				// // RVA: 0xBF198C Offset: 0xBF198C VA: 0xBF198C
-				// internal void <Co_StartMusic>b__4() { }
-			// }
-			
 			//__this00 = c__DisplayClass276_0
-			if(Database.Instance.gameSetup.musicInfo.isTutorialOne)
+			bool isShowingDescription = false;
+			if (Database.Instance.gameSetup.musicInfo.isTutorialOne)
 			{
 				//__this_03 = c__DisplayClass276_1
-				Debug.LogError("TODO tuto");
+				TodoLogger.LogError(0, "TODO tuto");
 			}
 			else if(Database.Instance.gameSetup.musicInfo.isTutorialTwo)
 			{
-				Debug.LogError("TODO tuto");
+				TodoLogger.LogError(0, "TODO tuto");
 			}
 			else
 			{
@@ -2125,10 +2140,19 @@ namespace XeApp.Game.RhythmGame
 				bool IsMvMode = Database.Instance.gameSetup.musicInfo.IsMvMode;
 				if(IsLine6Mode && !IsMvMode)
 				{
-					Debug.LogError("TODO tuto");
+					isShowingDescription = true;
+					uiController.Show6LineDescriptionTutorialWindow(() =>
+					{
+						//0xBF178C
+						isShowingDescription = false;
+					});
 				}
 			}
-			yield return null; // wait end tuto
+			yield return new WaitWhile(() =>
+			{
+				//0xBF1798
+				return isShowingDescription;
+			}); // wait end tuto
 			
 			if(XeApp.Game.GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D)
 			{
@@ -2139,7 +2163,6 @@ namespace XeApp.Game.RhythmGame
 				MusicIntroStartPlayerCutInCallback();
 			}
 			Play();
-    		UnityEngine.Debug.Log("Exit Co_StartMusic");
 		}
 
 		// // RVA: 0x9B2AE0 Offset: 0x9B2AE0 VA: 0x9B2AE0
@@ -2157,13 +2180,13 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C16F0 Offset: 0x9C16F0 VA: 0x9C16F0
 		private void ForceChangePercentage100ForTutorial()
 		{
-			TodoLogger.Log(0, "ForceChangePercentage100ForTutorial");
+			TodoLogger.LogError(0, "ForceChangePercentage100ForTutorial");
 		}
 
 		// // RVA: 0x9C1854 Offset: 0x9C1854 VA: 0x9C1854
 		private void ForceDefeatEnemyForTutorial()
 		{
-			TodoLogger.Log(0, "ForceDefeatEnemyForTutorial");
+			TodoLogger.LogError(0, "ForceDefeatEnemyForTutorial");
 		}
 
 		// // RVA: 0x9C1B60 Offset: 0x9C1B60 VA: 0x9C1B60
@@ -2174,18 +2197,73 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(Database.Instance.gameSetup.musicInfo.isTutorialTwo)
 			{
-				TodoLogger.Log(0, "ShowTutorialActiveSkillGuide");
+				TodoLogger.LogError(0, "ShowTutorialActiveSkillGuide");
 			}
 		}
 
 		// // RVA: 0x9C1D84 Offset: 0x9C1D84 VA: 0x9C1D84
-		// private void ConfirmationWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private void ConfirmationWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
+		{
+			if (label < PopupButton.ButtonLabel.Cancel)
+			{
+				if (label == PopupButton.ButtonLabel.UsedChargesItem || label == PopupButton.ButtonLabel.Continue)
+				{
+					if (Database.Instance.gameSetup.musicInfo.isStoryMode)
+					{
+						OnSuccessInGameContinueByPaidVC();
+					}
+					else
+					{
+						CIOECGOMILE.HHCJCDFCLOB.OKGLDKFLGGK(OnSuccessInGameContinueByPaidVC, null, OnErrorInGameContinueByPaidVC, Database.Instance.gameSetup.musicInfo.freeMusicId, (int)Database.Instance.gameSetup.musicInfo.difficultyType);
+					}
+				}
+			}
+			else if (label == PopupButton.ButtonLabel.Cancel)
+			{
+				ShowConfirmationWindow();
+			}
+			else if (label == PopupButton.ButtonLabel.Skip)
+			{
+				uiController.ShowSkipConfirmationWindow(SkipStoryWindowCallBack);
+			}
+			else if (label == PopupButton.ButtonLabel.Purchase)
+			{
+				if (scene.DenomControl != null)
+				{
+					scene.DenomControl.StartPurchaseSequence(OnSuccessInPaidVCPurchase, OnCancelInPaidVCPurchase, OnErrorInPaidVCPurchase, null, null);
+				}
+			}
+			else
+			{
+				uiController.ShowReconfirmationWindow(ReconfirmationWindowCallBack);
+			}
+		}
 
 		// // RVA: 0x9C24B0 Offset: 0x9C24B0 VA: 0x9C24B0
-		// private void ContinueWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private void ContinueWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
+		{
+			if(label == PopupButton.ButtonLabel.Continue)
+			{
+				uiController.ShowConfirmationWindow(ConfirmationWindowCallBack, GotoTitleSceneInError);
+			}
+			else
+			{
+				uiController.ShowReconfirmationWindow(ReconfirmationWindowCallBack);
+			}
+		}
 
 		// // RVA: 0x9C25FC Offset: 0x9C25FC VA: 0x9C25FC
-		// private void ReconfirmationWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private void ReconfirmationWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
+		{
+			if(label == PopupButton.ButtonLabel.Retire)
+			{
+				FailedRhythmGame();
+			}
+			else
+			{
+				ShowConfirmationWindow();
+			}
+		}
 
 		// // RVA: 0x9C27B4 Offset: 0x9C27B4 VA: 0x9C27B4
 		private void PauseWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
@@ -2229,19 +2307,22 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C2B68 Offset: 0x9C2B68 VA: 0x9C2B68
 		private void SkipTutorialWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
 		{
-			TodoLogger.Log(0, "SkipTutorialWindowCallBack");
+			TodoLogger.LogError(0, "SkipTutorialWindowCallBack");
 		}
 
 		// // RVA: 0x9C2D30 Offset: 0x9C2D30 VA: 0x9C2D30
 		// private void EndTutorialWindowCallBack() { }
 
 		// // RVA: 0x9C2DEC Offset: 0x9C2DEC VA: 0x9C2DEC
-		// private void SkipStoryWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private void SkipStoryWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
+		{
+			TodoLogger.LogError(0, "SkipStoryWindowCallBack");
+		}
 
 		// // RVA: 0x9C2E00 Offset: 0x9C2E00 VA: 0x9C2E00
 		private void SkipStoryPauseWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
 		{
-			TodoLogger.Log(0, "SkipStoryPauseWindowCallBack");
+			TodoLogger.LogError(0, "SkipStoryPauseWindowCallBack");
 		}
 
 		// // RVA: 0x9C2ECC Offset: 0x9C2ECC VA: 0x9C2ECC
@@ -2278,19 +2359,34 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0x9C34E0 Offset: 0x9C34E0 VA: 0x9C34E0
-		// private void OnSuccessInPaidVCPurchase() { }
+		private void OnSuccessInPaidVCPurchase()
+		{
+			TodoLogger.LogError(0, "OnSuccessInPaidVCPurchase");
+		}
 
 		// // RVA: 0x9C34E4 Offset: 0x9C34E4 VA: 0x9C34E4
-		// private void OnCancelInPaidVCPurchase() { }
+		private void OnCancelInPaidVCPurchase()
+		{
+			TodoLogger.LogError(0, "OnCancelInPaidVCPurchase");
+		}
 
 		// // RVA: 0x9C34E8 Offset: 0x9C34E8 VA: 0x9C34E8
-		// private void OnErrorInPaidVCPurchase() { }
+		private void OnErrorInPaidVCPurchase()
+		{
+			TodoLogger.LogError(0, "OnErrorInPaidVCPurchase");
+		}
 
 		// // RVA: 0x9C2290 Offset: 0x9C2290 VA: 0x9C2290
-		// private void OnSuccessInGameContinueByPaidVC() { }
+		private void OnSuccessInGameContinueByPaidVC()
+		{
+			TodoLogger.LogError(0, "OnSuccessInGameContinueByPaidVC");
+		}
 
 		// // RVA: 0x9C3624 Offset: 0x9C3624 VA: 0x9C3624
-		// private void OnErrorInGameContinueByPaidVC() { }
+		private void OnErrorInGameContinueByPaidVC()
+		{
+			TodoLogger.LogError(0, "OnErrorInGameContinueByPaidVC");
+		}
 
 		// // RVA: 0x9C1380 Offset: 0x9C1380 VA: 0x9C1380
 		private void PauseGame(bool isReserve = false)
@@ -2352,14 +2448,11 @@ namespace XeApp.Game.RhythmGame
 						return;
 					}
 				}
-				else
-				{
-					PauseGame(true);
-					GameManager.Instance.SetTouchEffectVisible(true);
-					GameManager.Instance.SetTouchEffectMode(true);
-					uiController.failed.ShowBlackCurtainOnly();
-					uiController.ShowMvModePauseWindow(this.MvModePauseWindowCallBack);
-				}
+				PauseGame(true);
+				GameManager.Instance.SetTouchEffectVisible(true);
+				GameManager.Instance.SetTouchEffectMode(true);
+				uiController.failed.ShowBlackCurtainOnly();
+				uiController.ShowMvModePauseWindow(this.MvModePauseWindowCallBack);
 			}
 			else
 			{
@@ -2401,18 +2494,36 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C4254 Offset: 0x9C4254 VA: 0x9C4254
 		private void FailedAnimCompletedCallback()
 		{
-			TodoLogger.Log(0, "Rhythgameplayer FailedAnimCompletedCallback");
+			uiController.failed.ShowBlackCurtainOnly();
+			ShowConfirmationWindow();
 		}
 
 		// // RVA: 0x9C42AC Offset: 0x9C42AC VA: 0x9C42AC
 		// private void RetryAnimCompletedCallback() { }
 
 		// // RVA: 0x9C23C8 Offset: 0x9C23C8 VA: 0x9C23C8
-		// private void ShowConfirmationWindow() { }
+		private void ShowConfirmationWindow()
+		{
+			GameManager.Instance.SetTouchEffectVisible(true);
+			GameManager.Instance.SetTouchEffectMode(true);
+			this.StartCoroutineWatched(Co_ShowConfirmationWindow());
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x744D2C Offset: 0x744D2C VA: 0x744D2C
 		// // RVA: 0x9C4654 Offset: 0x9C4654 VA: 0x9C4654
-		// private IEnumerator Co_ShowConfirmationWindow() { }
+		private IEnumerator Co_ShowConfirmationWindow()
+		{
+			//0xBF2BF0
+			yield return TutorialManager.TryShowTutorialCoroutine(TutorialChecker);
+			if(Database.Instance.gameSetup.musicInfo.isFreeMode)
+			{
+				uiController.ShowContinueWindow(ContinueWindowCallBack);
+			}
+			else
+			{
+				uiController.ShowConfirmationWindow(ConfirmationWindowCallBack, GotoTitleSceneInError);
+			}
+		}
 
 		// // RVA: 0x9C46DC Offset: 0x9C46DC VA: 0x9C46DC
 		private void OnChangeScene()
@@ -2426,14 +2537,13 @@ namespace XeApp.Game.RhythmGame
 		private void GameStartErrorToTitleAction()
 		{
 			XeApp.Game.GameManager.FadeOut();
-			StartCoroutine(Co_FadeOutAndExit());
+			this.StartCoroutineWatched(Co_FadeOutAndExit());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x744DA4 Offset: 0x744DA4 VA: 0x744DA4
 		// // RVA: 0x9C4868 Offset: 0x9C4868 VA: 0x9C4868
 		private IEnumerator Co_FadeOutAndExit()
 		{
-    		UnityEngine.Debug.Log("Enter Co_FadeOutAndExit");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public RhythmGamePlayer <>4__this; // 0x10
@@ -2444,13 +2554,12 @@ namespace XeApp.Game.RhythmGame
 			}
 			GotoTitleSceneInError();
 			uiController.DeleteIntro();
-    		UnityEngine.Debug.Log("Exit Co_FadeOutAndExit");
 		}
 
 		// // RVA: 0x9C48F0 Offset: 0x9C48F0 VA: 0x9C48F0
 		private void TutorialClearEndRhythmGame()
 		{
-			TodoLogger.Log(0, "TutorialClearEndRhythmGame");
+			TodoLogger.LogError(0, "TutorialClearEndRhythmGame");
 		}
 
 		// // RVA: 0x9C4A70 Offset: 0x9C4A70 VA: 0x9C4A70
@@ -2458,7 +2567,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(!scene.IsEnableTransionResult())
 				return;
-			StartCoroutine(Co_WaitRhytmGameEnd(true));
+			this.StartCoroutineWatched(Co_WaitRhytmGameEnd(true));
 		}
 
 		// // RVA: 0x9C260C Offset: 0x9C260C VA: 0x9C260C
@@ -2466,7 +2575,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(scene.IsEnableTransionResult())
 			{
-				StartCoroutine(Co_WaitRhytmGameEnd(false));
+				this.StartCoroutineWatched(Co_WaitRhytmGameEnd(false));
 				return;
 			}
 			uiController.failed.HideAll();
@@ -2484,8 +2593,9 @@ namespace XeApp.Game.RhythmGame
 		{
 			int[] noteResultCount;
 			int noteResultCount_Excellent;
-			UnityEngine.Debug.Log("Enter Co_WaitRhytmGameEnd");
 			//0xBF3B04
+
+			ExternLib.LibCriWare.checkUncached = false;
 
 			GameManager.FadeOut(0.4f);
 			if(soundCheerOrderer != null)
@@ -2543,7 +2653,6 @@ namespace XeApp.Game.RhythmGame
 
 			//TodoLogger.MinLog = -9999;
 
-			UnityEngine.Debug.Log("Exit Co_WaitRhytmGameEnd");
 			yield break;
 		}
 
@@ -2623,13 +2732,26 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C5D68 Offset: 0x9C5D68 VA: 0x9C5D68
 		private void GotoMenuSceneInFailed()
 		{
-			TodoLogger.Log(0, "GotoMenuSceneInFailed");
+			bool b = status.life.current == 0 && Database.Instance.gameSetup.musicInfo.freeMusicId != 0;
+			if (b)
+			{
+				TipsControl.SetSituationValue(TipsControl.SituationId.GameOver, 1);
+			}
+			Database.Instance.gameResult.Setup(false, b, null, null, 0);
+			if(scene.IsDebugFlow())
+			{
+				scene.GotoPrevScene();
+			}
+			else
+			{
+				scene.GotoMenuScene();
+			}
 		}
 
 		// // RVA: 0x9C34EC Offset: 0x9C34EC VA: 0x9C34EC
 		private void GotoTitleSceneInError()
 		{
-			TodoLogger.Log(0, "GotoTitleSceneInError");
+			TodoLogger.LogError(0, "GotoTitleSceneInError");
 		}
 
 		// // RVA: 0x9C5F68 Offset: 0x9C5F68 VA: 0x9C5F68
@@ -2748,7 +2870,9 @@ namespace XeApp.Game.RhythmGame
 		{
 			if (setting_mv.m_enable)
 				return;
-			if(buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.OverwritePerfect, a_note_obj.rNote.GetLineNo()))
+			if (RuntimeSettings.CurrentSettings.ForcePerfectNote)
+				a_result_ex.m_result = RhythmGameConsts.NoteResult.Perfect;
+			if (buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.OverwritePerfect, a_note_obj.rNote.GetLineNo()))
 			{
 				if (a_result_ex.m_result == RhythmGameConsts.NoteResult.Bad || a_result_ex.m_result == RhythmGameConsts.NoteResult.Good || a_result_ex.m_result == RhythmGameConsts.NoteResult.Great)
 				{
@@ -2773,6 +2897,7 @@ namespace XeApp.Game.RhythmGame
 			JudgedNoteResult(noteObject, a_result_ex);
 			JudgedNoteEffect(noteObject, a_result_ex);
 			JudgedNoteSound(noteObject, a_result_ex.m_result);
+			UMODebugger.Instance.AddNoteInfo(noteObject.rNote, a_result_ex.m_result);
 			gamePerformer.EndTouchSave(noteObject.rNote.GetLineNo(), true);
 			status.life.isInvincibleGameEnd = rNoteOwner.CheckAllNotesEnd();
 		}
@@ -3196,8 +3321,10 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9CA6EC Offset: 0x9CA6EC VA: 0x9CA6EC
 		private void StartPlayMusic(int startTime)
 		{
+			SoundManager.Instance.SetInGame(true);
 			bgmPlayer.source.player.SetStartTime(startTime);
 			bgmPlayback = bgmPlayer.source.Play();
+			ExternLib.LibCriWare.checkUncached = true; // Wait for bgm to be started
 			gameDivaObject.PlayMusicAnimation(0);
 			for(int i = 0; i < subDivaObject.Length; i++)
 			{
@@ -3241,14 +3368,12 @@ namespace XeApp.Game.RhythmGame
 		{
 			float waittime;
 			float startTime;
-			UnityEngine.Debug.Log("Enter WaitMusicPlayCoroutine");
 			//0xBF4584
 			waittime = a_sec_wait;
 			startTime = TimeWrapper.time;
 			while (TimeWrapper.time - startTime < waittime)
 				yield return null;
 			StartPlayMusic(Mathf.RoundToInt((TimeWrapper.time - startTime - waittime) * 1000));
-			UnityEngine.Debug.Log("Exit WaitMusicPlayCoroutine");
 		}
 
 		// // RVA: 0x9C3750 Offset: 0x9C3750 VA: 0x9C3750
@@ -3265,7 +3390,7 @@ namespace XeApp.Game.RhythmGame
 				}
 				else
 				{
-					StartCoroutine(WaitMusicPlayCoroutine(val));
+					this.StartCoroutineWatched(WaitMusicPlayCoroutine(val));
 				}
 			}
 			else
@@ -3401,7 +3526,7 @@ namespace XeApp.Game.RhythmGame
 				bgmPlayer.source.player.Stop();
 				bgmPlayback = bgmPlayer.source.player.Start();
 				#endif
-				TodoLogger.Log(0, "Check ApplyChangeMusicSequenceTime");
+				TodoLogger.LogError(0, "Check ApplyChangeMusicSequenceTime");
 				isChangeSequenceRequest = false;
 				return true;
 			}
@@ -3409,7 +3534,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0x9B2AC4 Offset: 0x9B2AC4 VA: 0x9B2AC4
-		// public static float ToSecTime(int millisec) { }
+		public static float ToSecTime(int millisec)
+		{
+			return millisec / 1000.0f;
+		}
 
 		// // RVA: 0x9CC3D4 Offset: 0x9CC3D4 VA: 0x9CC3D4
 		// public static int ToMillisecTime(float sec) { }
@@ -3465,23 +3593,38 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9CC460 Offset: 0x9CC460 VA: 0x9CC460
 		public void OnCallback_PlayVoice_GameFailed()
 		{
-			TodoLogger.Log(0, "RhythmGamePlayer OnCallback_PlayVoice_GameFailed");
+			RhythmGameVoicePlayer.Result voice = voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.GameOver);
+			if (voice == RhythmGameVoicePlayer.Result.None)
+			{
+				SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.GameFailed, 0);
+			}
 		}
 
 		// // RVA: 0x9CC4E8 Offset: 0x9CC4E8 VA: 0x9CC4E8
 		public void OnCallback_PlayVoice_GameClear_PerfectFullCombo()
 		{
-			TodoLogger.Log(0, "RhythmGamePlayer OnCallback_PlayVoice_GameClear_PerfectFullCombo");
+			RhythmGameVoicePlayer.Result voice = voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.GameClear_PerfectFullCombo);
+			if(voice == RhythmGameVoicePlayer.Result.None)
+			{
+				SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.GameClear, 1);
+			}
 		}
 
 		// // RVA: 0x9CC570 Offset: 0x9CC570 VA: 0x9CC570
 		public void OnCallback_PlayVoice_GameClear_FullCombo()
 		{
-			TodoLogger.Log(0, "RhythmGamePlayer OnCallback_PlayVoice_GameClear_FullCombo");
+			RhythmGameVoicePlayer.Result voice = voicePlayer.ChangePlayVoice(RhythmGameVoicePlayer.Voice.GameClear_FullCombo);
+			if (voice == RhythmGameVoicePlayer.Result.None)
+			{
+				SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.GameClear, 0);
+			}
 		}
 
 		// // RVA: 0x9CC5F8 Offset: 0x9CC5F8 VA: 0x9CC5F8
-		// private bool TutorialChecker(TutorialConditionId condition) { }
+		private bool TutorialChecker(TutorialConditionId condition)
+		{
+			return condition == TutorialConditionId.Condition59;
+		}
 
 	}
 }

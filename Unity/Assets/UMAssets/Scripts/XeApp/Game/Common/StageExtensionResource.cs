@@ -35,7 +35,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x13A3474 Offset: 0x13A3474 VA: 0x13A3474
 		public void LoadResouces(int wavId, int divaId, int assetId, int stageDivaNum)
 		{
-			StartCoroutine(Co_LoadAllResouces(wavId, divaId, assetId, stageDivaNum));
+			this.StartCoroutineWatched(Co_LoadAllResouces(wavId, divaId, assetId, stageDivaNum));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73B7B0 Offset: 0x73B7B0 VA: 0x73B7B0
@@ -45,8 +45,8 @@ namespace XeApp.Game.Common
 			//0x13A38A0
 			isLoaded = false;
 			isUnused = false;
-			yield return StartCoroutine(Co_LoadBasicResouces());
-			yield return StartCoroutine(Co_LoadMusicResouces(wavId, divaId, assetId, stageDivaNum));
+			yield return this.StartCoroutineWatched(Co_LoadBasicResouces());
+			yield return this.StartCoroutineWatched(Co_LoadMusicResouces(wavId, divaId, assetId, stageDivaNum));
 			isLoaded = true;
 		}
 
@@ -63,7 +63,7 @@ namespace XeApp.Game.Common
 			assetName = new StringBuilder();
 			bundleName.SetFormat("mc/cmn/dr/st.xab", Array.Empty<object>());
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			assetName.SetFormat("dr_st_cmn_animator", Array.Empty<object>());
 			animatorController = operation.GetAsset<RuntimeAnimatorController>(assetName.ToString());
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
@@ -83,7 +83,7 @@ namespace XeApp.Game.Common
 			string wavName = GameManager.Instance.GetWavDirectoryName(wavId, "mc/{0}/dr/st/{1:D3}.xab", stageDivaNum, 1, assetId, false);
 			bundleName.SetFormat("mc/{0}/dr/st/{1:D3}.xab", wavName, assetId);
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			assetName.SetFormat("dr_st_{0:D3}_param", assetId);
 			param = operation.GetAsset<MusicExtensionPrefabParam>(assetName.ToString());
 			assetName.SetFormat("dr_st_{0:D3}_movie_param", assetId);
@@ -112,7 +112,7 @@ namespace XeApp.Game.Common
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
 			if(mat != null)
 			{
-				yield return StartCoroutine(Co_LoadMovieResource(wavId, divaId));
+				yield return this.StartCoroutineWatched(Co_LoadMovieResource(wavId, divaId));
 			}
 		}
 
@@ -155,6 +155,11 @@ namespace XeApp.Game.Common
 			moviePlayer.material = movieMaterial;
 			yield return null;
 			moviePlayer.player.Prepare();
+			//UMO, ensure video is ready
+			while(moviePlayer.player.status != CriWare.CriMana.Player.Status.Ready)
+			{
+				yield return null;
+			}
 		}
 	}
 }

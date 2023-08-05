@@ -37,7 +37,7 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	// // RVA: 0xA17174 Offset: 0xA17174 VA: 0xA17174 Slot: 7
 	public override List<int> HEACCHAKMFG()
 	{
-		TodoLogger.Log(0, "HEACCHAKMFG");
+		TodoLogger.LogError(0, "HEACCHAKMFG");
 		return base.HEACCHAKMFG();
 	}
 
@@ -66,10 +66,22 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	// public override void MJFKJHJJLMN(int LHJCOPMMIGO = 0, bool FBBNPFFEJBN = False) { }
 
 	// // RVA: 0xA18A44 Offset: 0xA18A44 VA: 0xA18A44 Slot: 30
-	// protected override bool JIHMLILFOPG(long JHNMKKNEENE) { }
+	protected override bool JIHMLILFOPG(long JHNMKKNEENE)
+	{
+		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI);
+		if(db != null)
+		{
+			TodoLogger.LogError(0, "MANPIONIGNO_EventGoDiva.JIHMLILFOPG");
+		}
+		return false;
+	}
 
 	// // RVA: 0xA18F10 Offset: 0xA18F10 VA: 0xA18F10 Slot: 31
-	// protected override bool IMCMNOPNGHO(long JHNMKKNEENE) { }
+	protected override bool IMCMNOPNGHO(long JHNMKKNEENE)
+	{
+		TodoLogger.LogError(0, "MANPIONIGNO_EventGoDiva.IMCMNOPNGHO");
+		return false;
+	}
 
 	// // RVA: 0xA19258 Offset: 0xA19258 VA: 0xA19258
 	// private void OCPAJHKFGDI() { }
@@ -97,7 +109,7 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	// // RVA: 0xA1B4E4 Offset: 0xA1B4E4 VA: 0xA1B4E4 Slot: 46
 	protected override void PJDGDNJNCNM(long JHNMKKNEENE)
 	{
-		TodoLogger.Log(0, "PJDGDNJNCNM");
+		TodoLogger.LogError(0, "PJDGDNJNCNM");
 	}
 
 	// // RVA: 0xA1BB4C Offset: 0xA1BB4C VA: 0xA1BB4C Slot: 48
@@ -220,7 +232,13 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	// public bool GPGPLIAHGJH(int AHHJLDLAPAN) { }
 
 	// // RVA: 0xA27DB0 Offset: 0xA27DB0 VA: 0xA27DB0 Slot: 73
-	// public override List<string> IJCPBPFEGDM(long JHNMKKNEENE) { }
+	public override List<string> IJCPBPFEGDM(long JHNMKKNEENE)
+	{
+		if(!MNNNLDFNNCD(JHNMKKNEENE))
+			return null;
+		TodoLogger.LogError(0, "MANPIONIGNO_EventGoDiva.IJCPBPFEGDM");
+		return null;
+	}
 
 	// // RVA: 0xA2802C Offset: 0xA2802C VA: 0xA2802C Slot: 74
 	// public override int EDNMFMBLCGF() { }

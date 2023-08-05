@@ -8,7 +8,7 @@ namespace XeApp.Game.Common
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.LogError(0, "Implement monobehaviour");
 		}
 		[Serializable]
 		public class RefData

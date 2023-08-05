@@ -30,11 +30,11 @@ namespace XeApp.Game.Common
 		public void LoadResource(int wavId, int primeId, int stageDivaNum)
 		{
 			isLoadedParam = false;
-			StartCoroutine(Co_LoadParam(wavId, stageDivaNum));
+			this.StartCoroutineWatched(Co_LoadParam(wavId, stageDivaNum));
 			isLoadedAnimator = false;
-			StartCoroutine(Co_LoadAnimator());
+			this.StartCoroutineWatched(Co_LoadAnimator());
 			isLoadedMusicClip = false;
-			StartCoroutine(Co_LoadMusicClipResouces(wavId, primeId, stageDivaNum));
+			this.StartCoroutineWatched(Co_LoadMusicClipResouces(wavId, primeId, stageDivaNum));
 
 		}
 
@@ -52,7 +52,7 @@ namespace XeApp.Game.Common
 			bundleName = new StringBuilder();
 			bundleName.SetFormat("mc/cmn/ca.xab", Array.Empty<object>());
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			animator = operation.GetAsset<RuntimeAnimatorController>("game_cmn_cam_animator");
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
 			isLoadedAnimator = true;
@@ -76,7 +76,7 @@ namespace XeApp.Game.Common
 			wavIdString = GameManager.Instance.GetWavDirectoryName(wavId, "mc/{0}/bt{1:D3}.xab", stageDivaNum, primeId, -1, true);
 			bundleName.SetFormat("mc/{0}/bt{1:D3}.xab", wavIdString, primeId);
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			assetName.SetFormat("music_{0}_prime_{1:D3}_cam", wavIdString, primeId);
 			clip = operation.GetAsset<AnimationClip>(assetName.ToString());
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
@@ -97,7 +97,7 @@ namespace XeApp.Game.Common
 			string wavIdString = GameManager.Instance.GetWavDirectoryName(waveId, "mc/{0}/sc.xab", stageDivaNum, 1, -1, true);
 			strBuilder.SetFormat("mc/{0}/sc.xab", wavIdString);
 			operation = AssetBundleManager.LoadAllAssetAsync(strBuilder.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 			StringBuilder strBuilder2 = new StringBuilder(); // fix original game bug where they release wrong bundle name;
 			strBuilder2.SetFormat("mcp_{0:D4}", waveId);
 			m_param = operation.GetAsset<MusicCameraParam>(strBuilder2.ToString());

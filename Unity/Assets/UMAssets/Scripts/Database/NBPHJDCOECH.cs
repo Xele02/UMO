@@ -67,7 +67,7 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 		int b = GEAANLPDJBP_MusicInfo.CCLIOBOGFHC;
 		if (MFJKNCACBDG_OpenEventType != 0)
 		{
-			TodoLogger.Log(0, "DGMNLKDEDDC event");
+			TodoLogger.LogError(0, "DGMNLKDEDDC event");
 		}
 		return DGMNLKDEDDC(GEAANLPDJBP_MusicInfo.JCDKMICANJO, GEAANLPDJBP_MusicInfo.ONLFLGPMAAN(GIKLNODJKFK_IsLine6) + EBBCGFOGKNE_Diff, b, a + EBBCGFOGKNE_Diff);
 	}
@@ -189,7 +189,18 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x17C8E30 Offset: 0x17C8E30 VA: 0x17C8E30 Slot: 8
-	protected override void KMBPACJNEOF() { }
+	protected override void KMBPACJNEOF()
+	{
+		KPEOJPKLJBH_Set.Clear();
+		FDCBLEDPHBM_Rate.Clear();
+		LMILCGIFPGC_RareSet.Clear();
+		ABNFGCEDJIM_RareRate.Clear();
+		BNFPHOEFKBA_GameDropRate.Clear();
+		CFECAEBGLIH_GameDropMaNe.Clear();
+		BFNDKINIEOE_GameDropMaEq.Clear();
+		ENLMDHJIPLA_GameDropEvCnt.Clear();
+		DGCBAFGBOCL_GameDropEvBns.Clear();
+	}
 
 	//// RVA: 0x17C9008 Offset: 0x17C9008 VA: 0x17C9008 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
@@ -206,7 +217,7 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 	// RVA: 0x17CA22C Offset: 0x17CA22C VA: 0x17CA22C Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.Log(0, "Deserialize NBPHJDCOECH_Drop");
+		TodoLogger.LogError(0, "Deserialize NBPHJDCOECH_Drop");
 		return false;
 	}
 
@@ -374,7 +385,7 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 	//// RVA: 0x17CB474 Offset: 0x17CB474 VA: 0x17CB474 Slot: 11
 	public override uint CAOGDCBPBAN()
 	{
-		TodoLogger.Log(0, "NBPHJDCOECH_Drop CAOGDCBPBAN");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "NBPHJDCOECH_Drop.CAOGDCBPBAN");
 		return 0;
 	}
 

@@ -43,9 +43,15 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9AF3A0 Offset: 0x9AF3A0 VA: 0x9AF3A0
-		//public void SetValkyrieModeType(RhythmGameMode.Type type) { }
+		public void SetValkyrieModeType(RhythmGameMode.Type type)
+		{
+			log.valkyrieModeData.type = type;
+		}
 
 		//// RVA: 0x9AF3C8 Offset: 0x9AF3C8 VA: 0x9AF3C8
-		//public void SetDivaModeType(RhythmGameMode.Type type) { }
+		public void SetDivaModeType(RhythmGameMode.Type type)
+		{
+			log.divaModeData.type = type;
+		}
 	}
 }

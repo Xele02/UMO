@@ -6,9 +6,7 @@ namespace XeApp.Game.Common
 {
 	public class SwapScrollListContent : LayoutUGUIScriptBase
 	{
-		public class SwapScrollListContentClickButtonEvent : UnityEvent<int, SwapScrollListContent>
-		{
-		}
+		public class SwapScrollListContentClickButtonEvent : UnityEvent<int, SwapScrollListContent> { }
 		public SwapScrollListContentClickButtonEvent ClickButton = new SwapScrollListContentClickButtonEvent(); // 0x14
 		private RectTransform m_rectTransform; // 0x18
 

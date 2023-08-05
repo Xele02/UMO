@@ -82,8 +82,8 @@ public class EPPOHFLMDBC_DivaStats
 public class BJPLLEBHAGO { }
 public class BJPLLEBHAGO_DivaInfo
 {
-	public sbyte DOAJJALOKLI; // 0xD
-	public sbyte PKNONBBKCCP; // 0xE
+	public sbyte DOAJJALOKLI_Month; // 0xD
+	public sbyte PKNONBBKCCP_Day; // 0xE
 	public List<EPPOHFLMDBC_DivaStats> CMCKNKKCNDK_StatsByLevel = new List<EPPOHFLMDBC_DivaStats>(); // 0x14
 
 	public sbyte AIHCEGFANAM_Attr { get; set; } // 0x8 FJOGAAMLJMA ANEJPLENMAL HEHDOGFEIOL
@@ -91,7 +91,7 @@ public class BJPLLEBHAGO_DivaInfo
 	public sbyte IDDHKOEFJFB_BodyId { get; set; }  // 0xA KEOMNKLLNFJ // ADCMNNJMGKO KOFCMDMLAHC 
 	public sbyte FPMGHDKACOF_PersonalityId { get; set; } // 0xB AJHJBOKOPAJ // ALJDJOFDKDJ FPFJHHIANFD
 	public sbyte PPEGAKEIEGM_Enabled { get; set; } // 0xC NEKLJCCBECB KPOEEPIMMJP NCIEAFEDPBH
-	public ushort LIOGKHIGJKN { get; set; } // 0x10 DGLBKOGGKHO JNBPCHKDNMD MLPEHHGEEIB
+	public ushort LIOGKHIGJKN_FreeMusicId { get; set; } // 0x10 DGLBKOGGKHO JNBPCHKDNMD MLPEHHGEEIB
 	public ushort CMBCBNEODPD_HomeBgId { get; set; } // 0x12 CLHDIBCIJBB EIMFDHBOECI OJMIHHIIBPI
 
 	// // RVA: 0xC85E00 Offset: 0xC85E00 VA: 0xC85E00

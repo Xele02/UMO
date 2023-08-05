@@ -15,6 +15,8 @@ using UnityEditor;
 class DataExporter
 {
 #if UNITY_EDITOR
+#if false
+
 	[MenuItem("UMO/Export Song List", validate = true)]
 	static bool ExportSongListAvaiable()
 	{
@@ -30,7 +32,7 @@ class DataExporter
 			if (MusicDb.EPMMNEFADAP_Musics[i].JNCPEGJGHOG_Cov > 0)
 			{
 				string Title = Database.Instance.musicText.Get(MusicDb.EPMMNEFADAP_Musics[i].KNMGEEFGDNI_Nam).musicName;
-				string Serie = string.Format("{0}", MusicDb.EPMMNEFADAP_Musics[i].AIHCEGFANAM_SerieId);
+				string Serie = string.Format("{0}", MusicDb.EPMMNEFADAP_Musics[i].AIHCEGFANAM_SerieAttr);
 				if (Serie == "4") Serie = "Macross";
 				if (Serie == "3") Serie = "Macross 7";
 				if (Serie == "2") Serie = "Macross Frontier";
@@ -103,7 +105,7 @@ class DataExporter
 	[MenuItem("UMO/Export Song Effect Enabler List")]
 	static void ExportSongEffectEnablerList()
 	{
-		BundleShaderInfo.Instance.StartCoroutine(ExtractEffectList());
+		BundleShaderInfo.Instance.StartCoroutineWatched(ExtractEffectList());
 	}
 
 	static public IEnumerator ExtractEffectList()
@@ -141,7 +143,7 @@ class DataExporter
 			writer.WriteLine("|---|---|---|---|---|---|---|---|---|---|");
 
 			var operation = AssetBundleManager.LoadAssetAsync("mc/" + dirInfo.Name + "/sc.xab", "p_" + songId, typeof(MusicDirectionParamBase));
-			yield return operation;
+			yield return Co.R(operation);
 
 			MusicDirectionParamBase param = operation.GetAsset<MusicDirectionParamBase>();
 
@@ -154,7 +156,7 @@ class DataExporter
 		writer.Close();
 		Debug.Log("Done");
 	}
-
+#endif
 	[MenuItem("UMO/Copy Song setup for bug report", validate = true)]
 	static bool CopySongSetupAvaiable()
 	{
@@ -181,7 +183,7 @@ class DataExporter
 		txt += "Difficulty : "+Database.Instance.gameSetup.musicInfo.difficultyType+", Line6 : "+Database.Instance.gameSetup.musicInfo.IsLine6Mode;
 		GUIUtility.systemCopyBuffer = txt;
 	}
-
+#if false
 	[MenuItem("Assets/UMO/Convert Texture to PNG", true)]
 	private static bool CheckConvertTexture()
 	{
@@ -204,5 +206,6 @@ class DataExporter
 			}
 		}
 	}
+#endif
 #endif
 }

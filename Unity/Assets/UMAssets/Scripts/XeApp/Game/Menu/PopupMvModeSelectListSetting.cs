@@ -29,15 +29,15 @@ namespace XeApp.Game.Menu
             //0x169C648
             AssetBundleLoadLayoutOperationBase listItemOp;
 
-            yield return AssetBundleManager.LoadUnionAssetBundle(BundleName);
-            yield return base.LoadAssetBundlePrefab(parent);
+            yield return Co.R(AssetBundleManager.LoadUnionAssetBundle(BundleName));
+            yield return Co.R(base.LoadAssetBundlePrefab(parent));
             LayoutUGUIRuntime sourceRunTime = null;
             listItemOp = AssetBundleManager.LoadLayoutAsync(BundleName, "root_pop_simu_icon_layout_root");
-            yield return listItemOp;
-            yield return listItemOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject inst) => {
+            yield return Co.R(listItemOp);
+            yield return Co.R(listItemOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject inst) => {
                 //0x169C5C8
                 sourceRunTime = inst.GetComponent<LayoutUGUIRuntime>();
-            });
+            }));
             m_content.gameObject.SetActive(true);
             m_content.GetComponent<PopupMvModeSelectListContent>().InitializeObject(sourceRunTime.GetComponent<LayoutUGUIRuntime>(), 10);
             yield return null;

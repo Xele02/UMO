@@ -131,7 +131,12 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEC8DD0 Offset: 0xEC8DD0 VA: 0xEC8DD0
-		//public void On() { }
+		public void On()
+		{
+			enabled = true;
+			m_EyeControl.On();
+			m_Updater = UpdateGazeControl;
+		}
 
 		//// RVA: 0xEC8E88 Offset: 0xEC8E88 VA: 0xEC8E88
 		public void Off()
@@ -159,7 +164,128 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEC8FEC Offset: 0xEC8FEC VA: 0xEC8FEC
-		//private void UpdateGazeControl() { }
+		private void UpdateGazeControl()
+		{
+			Vector3 v1 = (m_TargetObj.transform.position - m_Nodes[0].transform.position).normalized;
+			Vector3 v2 = m_Nodes[0].transform.forward.normalized;
+			Vector3 v = Vector3.Cross(v1, v2);
+			float f = Vector3.Dot(v1, v2);
+			f = Mathf.Acos(f);
+			if((180 - f * 57.29578f) <= (m_ControlData.threshold))
+			{
+				;
+			}
+			else
+			{
+				m_IsRight = v.y < 0;
+			}
+
+			DivaEyeControl.AngleData data;
+			if (m_IsRight)
+			{
+				data = m_EyeControl.eyeUVData.xMin;
+			}
+			else
+			{
+				data = m_EyeControl.eyeUVData.xMax;
+			}
+			f = f * 57.29578f - Mathf.Abs(data.angle);
+			for(int i = 0; i < 5; i++)
+			{
+				Vector3 a = m_Nodes[i].localEulerAngles;
+				float resX, resY, resZ;
+				resZ = a.z;
+				float a_ = a.y;
+				float b_ = a.x;
+				if (f < 0)
+				{
+					resX = a.x;
+					resY = a.y;
+				}
+				else
+				{
+					RotateData d = null;
+					switch (i)
+					{
+						case 0:
+							d = m_ControlData.nodeData.Head;
+							break;
+						case 1:
+							d = m_ControlData.nodeData.Neck;
+							break;
+						case 2:
+							d = m_ControlData.nodeData.Spine2;
+							break;
+						case 3:
+							d = m_ControlData.nodeData.Spine1;
+							break;
+						case 4:
+							d = m_ControlData.nodeData.Spine;
+							break;
+					}
+					resX = b_;
+					float d_;
+					float e_;
+					if(d.type == RotateType.Y)
+					{
+						float f2 = a.y % 360;
+						if(-180 <= f2)
+						{
+							if(180 <= f2)
+							{
+								f2 -= 360;
+							}
+						}
+						else
+						{
+							f2 += 360;
+						}
+						resY = Mathf.Clamp((m_IsRight ? f : -f) + f2, d.min, d.max);
+						d_ = resY;
+						e_ = a_;
+					}
+					else
+					{
+						resY = a_;
+						d_ = 0;
+						e_ = 0;
+						if(d.type == RotateType.X)
+						{
+							float f3 = a.x % 360;
+							if (-180 <= f3)
+							{
+								if (180 <= f3)
+								{
+									f3 -= 360;
+								}
+							}
+							else
+							{
+								f3 += 360;
+							}
+							resX = Mathf.Clamp((m_IsRight ? -f : f) + f3, d.min, d.max);
+							d_ = resX;
+							e_ = b_;
+						}
+					}
+					float f4 = e_ % 360;
+					if (-180 <= f4)
+					{
+						if (180 <= f4)
+						{
+							f4 -= 360;
+						}
+					}
+					else
+					{
+						f4 += 360;
+					}
+					f = f - Mathf.Abs(d_ - f4);
+				}
+				m_Rots[i] = Quaternion.Lerp(m_Rots[i], Quaternion.Euler(resX, resY, resZ), 0.05f);
+				m_Nodes[i].localRotation = m_Rots[i];
+			}
+		}
 
 		//// RVA: 0xEC98E8 Offset: 0xEC98E8 VA: 0xEC98E8
 		private void UpdateRestore()

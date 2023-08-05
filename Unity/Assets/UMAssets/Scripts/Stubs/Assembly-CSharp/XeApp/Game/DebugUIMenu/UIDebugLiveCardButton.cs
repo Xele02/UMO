@@ -6,7 +6,7 @@ namespace XeApp.Game.DebugUIMenu
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

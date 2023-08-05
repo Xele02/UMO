@@ -41,7 +41,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: -1 Offset: -1 Slot: 5
-		// public abstract void Terminated();
+		public abstract void Terminated();
 
 		// // RVA: 0x13DBFC0 Offset: 0x13DBFC0 VA: 0x13DBFC0 Slot: 6
 		public virtual void Load(string path, Action<IiconTexture> callBack)
@@ -53,7 +53,6 @@ namespace XeApp.Game.Menu
 		protected void Load(string path, IconTextureType iconTextureType, Action<IiconTexture> callBack)
 		{
 			IiconTexture res;
-			UnityEngine.Debug.Log(path);
 			if(m_iconTextureCache.TryGetValue(path, out res))
 			{
 				if(m_capacity > 0)
@@ -80,6 +79,7 @@ namespace XeApp.Game.Menu
 							int idx = 0;
 							for(int i = 1; i < m_iconTextureCache.Count; i++)
 							{
+								TodoLogger.LogError(TodoLogger.ToCheck, "Weird int64");
 								if(m_iconTextureCache[i].CreateCount < createCount)
 								{
 									idx = i;
@@ -116,7 +116,7 @@ namespace XeApp.Game.Menu
 				{
 					if(info.Operation.IsError())
 					{
-						UnityEngine.Debug.LogError("Error loading icon bundle "+info.Path);
+						TodoLogger.LogError(TodoLogger.Filesystem, "Error loading icon bundle "+info.Path);
 						m_loadingAssetBundle.Remove(i);
 						AssetBundleManager.UnloadAssetBundle(info.Path, false);
 					}
@@ -158,10 +158,26 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x13DD214 Offset: 0x13DD214 VA: 0x13DD214
-		// protected void SetupForSplitTextureBias(IconTextureLodingInfo info, IiconTexture icon, float mipmapBias) { }
+		protected void SetupForSplitTextureBias(IconTextureLodingInfo info, IiconTexture icon, float mipmapBias)
+		{
+			string name = Path.GetFileNameWithoutExtension(info.Path);
+			icon.Material = new Material(Shader.Find("MCRS/SplitTexture_Bias"));
+			icon.Material.SetFloat("_MipmapBias", mipmapBias);
+			icon.BaseTexture = info.Operation.GetAsset<Texture2D>(name + "_base");
+			icon.MaskTexture = info.Operation.GetAsset<Texture2D>(name + "_mask");
+			icon.CreateCount = GetCreateCountAndIncrement();
+		}
 
 		// // RVA: 0x13DD70C Offset: 0x13DD70C VA: 0x13DD70C
-		// protected void SetupForSplitTextureBias(IconTextureLodingInfo info, IiconTexture icon, Texture2D maskTexture, float mipmapBias) { }
+		protected void SetupForSplitTextureBias(IconTextureLodingInfo info, IiconTexture icon, Texture2D maskTexture, float mipmapBias)
+		{
+			string name = Path.GetFileNameWithoutExtension(info.Path);
+			icon.Material = new Material(Shader.Find("MCRS/SplitTexture_Bias"));
+			icon.Material.SetFloat("_MipmapBias", mipmapBias);
+			icon.BaseTexture = info.Operation.GetAsset<Texture2D>(name);
+			icon.MaskTexture = maskTexture;
+			icon.CreateCount = GetCreateCountAndIncrement();
+		}
 
 		// // RVA: 0x13DDB7C Offset: 0x13DDB7C VA: 0x13DDB7C
 		protected void SetupForSingleTexture(IconTextureLodingInfo info, IiconTexture icon)

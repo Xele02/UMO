@@ -19,6 +19,6 @@ public class DebugRivalData : MonoBehaviour
 	private Text m_noteResult;
 	private void Awake()
 	{
-		UnityEngine.Debug.LogError("Implement Monobehaviour");
+		TodoLogger.LogError(0, "Implement Monobehaviour");
 	}
 }

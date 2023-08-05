@@ -23,43 +23,40 @@ namespace ExternLib
 
         public static int SakashoMasterGetMasters(int callbackId, string json)
         {
-            UnityEngine.Debug.Log("SakashoMasterGetMasters "+json);
             // Hack directly send response
 
             string data1 = DecompressGZipBase64String("H4sIAAV4g1sAA3XTS24CMQwG4LtE3RVB/Igdc5WqC2AoRTAgdVrUquLuHU1ANouu88lxfjsvv+ktLdP8a+if0iztu7SEWTqkZb7O2tFi0y3mz7cznM6MrRQuZG4+F+uVM5pYFQHASvWB7ZzxxBhyxoryUG3fOysTK2pKlhUiO56dycSoZmKtRSPrN8609VaIRYQkso+DszoxzFkVBDGyIVSzxqxiNSz8wEI1yO0NoplQiaJzBP/E1l0CaiNQARSy4v1vI2oDKAwsXKtftwutQ4u/qioVDb3vQvbQwjcY+y4o3tP76tT1524baBsAIiiaFZ/T8SegFn8Zn4dUzHONI4IWPlSoGccBODoF1KInFS7M5Nf1Q1gxzLetgIwG7KWGEDy24EXNBAF9ES/HgFrwlQyZxsTuaP69Wt+/DrbcSWhcL2S4vv4BlAfAEGADAAA=");
             string data2 = DecompressGZipBase64String("H4sIAEsIJ2IAA33TO27DMBBF0b2wVsE3Hw7prQRBmjRBkCpAUgTeewyY82yIskvhUjriiHr5Kx/v5YStfJZT+XqrZSs/l+s4b9ciWTBLBs0gu2AZ9BpaVwnzVnOBXxf8ghrvbUx7LljSq2IZO+M0YaHRXGmOuUJoaiZUtj0KMB2oENbJascIE5DFnNL3ulVYpqneXsiz7EeLlmWC0sO6Q/m5kHNSis7W2ZaNDqaDjUplzfl6b1ojVtfWI0TXHrv21DW6rYZLxeo63bG4/tj1p65zzoHLhiF8gOTJaOneNWHbu6JMR66xpjvQh9rds/PnCbo8N9LYFjeYjtzOmgc5pDeD4vz6D6Z8qHIiBAAA");
 
-            string message =
-@"{
-    ""SAKASHO_CURRENT_ASSET_REVISION"": ""20220602120304"",
-    ""SAKASHO_CURRENT_DATE_TIME"": "+Utility.GetCurrentUnixTime()+@",
-    ""SAKASHO_CURRENT_MASTER_REVISION"": 5,
-    ""master"": {
-        ""s_ak"": {
-            ""data"": "+data1+@",
-            ""label"": 0
-        },
-        ""s_sys_int"": {
-            ""data"": "+data2+@",
-            ""label"": 0
-        },
-        ""s_sys_str"": {
-            ""data"": [
-                {
-                    ""id"": 1,
-                    ""k"": ""dpass"",
-                    ""v"": ""aLRjyy""
-                }
-            ],
-            ""label"": 0
-        }
-    }
-}";
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res["master"] = new EDOHBJAPLPF_JsonData();
+			res["master"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
 
-            UnityEngine.GameObject.Find(UnityCallbackObject).SendMessage("NotifyOnSuccess", ""+callbackId+":"+message);
-            // end hack
+			res["master"]["s_ak"] = new EDOHBJAPLPF_JsonData();
+			res["master"]["s_ak"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+			res["master"]["s_ak"]["data"] = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(data1);
+			res["master"]["s_ak"]["label"] = 0;
 
-            return 0;
+			res["master"]["s_sys_int"] = new EDOHBJAPLPF_JsonData();
+			res["master"]["s_sys_int"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+			res["master"]["s_sys_int"]["data"] = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(data2);
+			res["master"]["s_sys_int"]["label"] = 0;
+
+			res["master"]["s_sys_str"] = new EDOHBJAPLPF_JsonData();
+			res["master"]["s_sys_str"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+			res["master"]["s_sys_str"]["data"] = new EDOHBJAPLPF_JsonData();
+			res["master"]["s_sys_str"]["data"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+			res["master"]["s_sys_str"]["data"].Add(new EDOHBJAPLPF_JsonData());
+			res["master"]["s_sys_str"]["data"][0].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+			res["master"]["s_sys_str"]["data"][0]["id"] = 1;
+			res["master"]["s_sys_str"]["data"][0]["k"] = "dpass";
+			res["master"]["s_sys_str"]["data"][0]["v"] = "aLRjyy";
+			res["master"]["s_sys_str"]["label"] = 0;
+
+			SendMessage(callbackId, res);
+			// end hack
+
+			return 0;
         }
     }
 }

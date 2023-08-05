@@ -119,6 +119,8 @@ namespace XeApp.Game.Menu
 				case DisplayType.Rarity:
 				case DisplayType.Level:
 				case DisplayType.Luck:
+					isShowLevel = true;
+					isMax = IsMaxLevel(sceneData);
 					val = sceneData.CIEOBFIIPLD_SceneLevel;
 					break;
 				case DisplayType.Life:
@@ -173,8 +175,6 @@ namespace XeApp.Game.Menu
 				case DisplayType.SupportNotes:
 				case DisplayType.FoldNotes:
 					val = sceneData.CMCKNKKCNDK_Status.spNoteExpected[(int)type - 12];
-					isShowLevel = true;
-					isMax = IsMaxLevel(sceneData);
 					break;
 				case DisplayType.EpisodePoint:
 					m_sceneIconDecrationBehaviour.SetFraction(sceneData.CGJCEHGFHMA(), sceneData.JLNGOOGHCNA());
@@ -182,10 +182,12 @@ namespace XeApp.Game.Menu
 					m_sceneIconDecrationBehaviour.SetLuck(sceneData.MJBODMOLOBC_Luck, sceneData.MKHFCGPJPFI_LimitOverCount, isVisible);
 					return;
 				case DisplayType.EpisodeName:
+					isShowLevel = true;
+					isMax = IsMaxLevel(sceneData);
 					m_sceneIconDecrationBehaviour.SetEpisode(sceneData.KELFCMEOPPM_EpisodeId, sceneData.CIEOBFIIPLD_SceneLevel, IsMaxLevel(sceneData), sceneData.MCCIFLKCNKO_Feed);
 					return;
 				case DisplayType.SecretBoard:
-					val = sceneData.JPIPENJGGDD - 1;
+					val = sceneData.JPIPENJGGDD_NumBoard - 1;
 					if(val < 1)
 					{
 						val = 0;

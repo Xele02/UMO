@@ -42,7 +42,7 @@ namespace ExternLib
             {
                 if(playersList[player].acbStream != null)
                 {
-                    UnityEngine.Debug.Log("Stop sound "+playersList[player].cueName+" "+playersList[player].cueId);
+                    TodoLogger.Log(TodoLogger.CriAtomExPlayer, "Stop sound "+playersList[player].cueName+" "+playersList[player].cueId);
 #if !UNITY_ANDROID
 					playersList[player].config.source.unityAudioSource.Stop();
                     playersList[player].config.source.unityAudioSource.clip = null;
@@ -65,7 +65,10 @@ namespace ExternLib
 		}
         public static void CRIWARE0C3ECA83_criAtomUnityEntryPool_Clear(IntPtr pool)
         {
-            TodoLogger.Log(0, "CRIWARE0C3ECA83_criAtomUnityEntryPool_Clear");
+            if(pool.ToInt32() != 0)
+            {
+                TodoLogger.LogError(0, "CRIWARE0C3ECA83_criAtomUnityEntryPool_Clear");
+            }
         }
         public static void criAtomExPlayer_SetVolume(IntPtr player, float volume)
         {
@@ -78,7 +81,7 @@ namespace ExternLib
         }
         public static void CRIWARE693E0CA2_criAtomUnityEntryPool_Destroy(IntPtr pool)
         {
-            TodoLogger.Log(0, "CRIWARE693E0CA2_criAtomUnityEntryPool_Destroy");
+            TodoLogger.LogError(0, "CRIWARE693E0CA2_criAtomUnityEntryPool_Destroy");
         }
         public static IntPtr criAtomExPlayer_Create(ref CriAtomExPlayer.Config config, IntPtr work, int work_size)
         {
@@ -114,6 +117,7 @@ namespace ExternLib
         }
         public static void criAtomExPlayer_UpdateAll(IntPtr player)
         {
+			return;
         }
         public static void criAtomExPlayer_Set3dSourceHn(IntPtr player, IntPtr source)
         {
@@ -124,11 +128,11 @@ namespace ExternLib
                     return;
 #endif
             }
-            TodoLogger.Log(0, "criAtomExPlayer_Set3dSourceHn");
+            TodoLogger.LogError(TodoLogger.CriAtomExPlayer, "criAtomExPlayer_Set3dSourceHn");
         }
         public static void criAtomExPlayer_Set3dListenerHn(IntPtr player, IntPtr listener)
         {
-            TodoLogger.Log(0, "criAtomExPlayer_Set3dListenerHn");
+            TodoLogger.LogError(0, "criAtomExPlayer_Set3dListenerHn");
         }
         public static void criAtomExPlayer_SetPitch(IntPtr player, float pitch)
         {
@@ -156,6 +160,8 @@ namespace ExternLib
 			}
 		}
 
+		public static bool checkUncached = false;
+
 		private static void SetupPlayer(PlayerData player)
 		{
 			if (!acbFiles.ContainsKey(player.acbPtr))
@@ -182,7 +188,8 @@ namespace ExternLib
 			AudioClip clip = null;
 			if (!acbFiles[player.acbPtr].cachedAudioClips.TryGetValue(clipName, out clip))
 			{
-				//UnityEngine.Debug.LogError("Loading uncached sound "+ clipName +" " + player.cueName+" "+ player.cueId+" "+player.acbPtr.ToString());
+				if(checkUncached)
+					UnityEngine.Debug.LogError("Loading uncached sound "+ clipName +" " + player.cueName+" "+ player.cueId+" "+player.acbPtr.ToString());
 				clip = GetClip(player.audioStream, player.cueName, player.cueId, isStreaming);
 			}
 			source.clip = clip;
@@ -231,13 +238,13 @@ namespace ExternLib
 			bool debug = false;
 			if (debug)
 			{
-				UnityEngine.Debug.Log("A " + reallength);
-				UnityEngine.Debug.Log("A " + cueName);
-				UnityEngine.Debug.Log("A " + cueId);
-				UnityEngine.Debug.Log("A " + length);
-				UnityEngine.Debug.Log("A " + audioStream.HcaInfo.ChannelCount);
-				UnityEngine.Debug.Log("A " + audioStream.HcaInfo.SamplingRate);
-				UnityEngine.Debug.Log("A " + isStreaming);
+				TodoLogger.Log(TodoLogger.CriAtomExPlayer, "A " + reallength);
+				TodoLogger.Log(TodoLogger.CriAtomExPlayer, "A " + cueName);
+				TodoLogger.Log(TodoLogger.CriAtomExPlayer, "A " + cueId);
+				TodoLogger.Log(TodoLogger.CriAtomExPlayer, "A " + length);
+				TodoLogger.Log(TodoLogger.CriAtomExPlayer, "A " + audioStream.HcaInfo.ChannelCount);
+				TodoLogger.Log(TodoLogger.CriAtomExPlayer, "A " + audioStream.HcaInfo.SamplingRate);
+				TodoLogger.Log(TodoLogger.CriAtomExPlayer, "A " + isStreaming);
 			}
 
 			byte[] readData = null;
@@ -246,7 +253,7 @@ namespace ExternLib
 			{
 				clip = AudioClip.Create(cueName, length, (int)audioStream.HcaInfo.ChannelCount, (int)audioStream.HcaInfo.SamplingRate, isStreaming, (float[] data) => {
 					if (debug)
-						UnityEngine.Debug.Log("Asked new data (" + data.Length + "), cur pos = " +/*curPos+*/" stream pos = " + audioStream.Position);
+						TodoLogger.Log(TodoLogger.CriAtomExPlayer, "Asked new data (" + data.Length + "), cur pos = " +/*curPos+*/" stream pos = " + audioStream.Position);
 					int numLeft = data.Length * 2;
 					if (readData == null || readData.Length < data.Length * 2)
 					{
@@ -258,7 +265,7 @@ namespace ExternLib
 					{
 						read = audioStream.Read(readData, 0, numLeft);
 						if (debug)
-							UnityEngine.Debug.Log("Read " + read);
+							TodoLogger.Log(TodoLogger.CriAtomExPlayer, "Read " + read);
 						for (int i = 0; i < read; i += 2)
 						{
 							data[offset] = bytesToFloat(readData[i], readData[i + 1]);
@@ -289,16 +296,16 @@ namespace ExternLib
 
 		public static void criAtomExPlayer_LimitLoopCount(IntPtr player, int count)
         {
-            TodoLogger.Log(0, "criAtomExPlayer_LimitLoopCount");
+            TodoLogger.LogError(0, "criAtomExPlayer_LimitLoopCount");
         }
         public static IntPtr criAtomExPlayer_GetPlayerParameter(IntPtr player)
         {
-            TodoLogger.Log(100, "criAtomExPlayer_GetPlayerParameter");
+            TodoLogger.LogError(TodoLogger.CriAtomExPlayer, "criAtomExPlayer_GetPlayerParameter");
             return IntPtr.Zero;
         }
         public static void criAtomExPlayerParameter_RemoveParameter(IntPtr player_parameter, ushort id)
         {
-            TodoLogger.Log(100, "criAtomExPlayerParameter_RemoveParameter");
+            TodoLogger.LogError(TodoLogger.CriAtomExPlayer, "criAtomExPlayerParameter_RemoveParameter");
         }
         public static uint criAtomExPlayer_Start(IntPtr player)
         {
@@ -357,7 +364,7 @@ namespace ExternLib
 						break;
 					case CriAtomEx.ResumeMode.PreparedPlayback:
 						canPlay = playersList[player].status == CriAtomExPlayer.Status.Prep;
-						UnityEngine.Debug.LogError("Check");
+						TodoLogger.LogError(TodoLogger.ToCheck, "Resume");
 						break;
 				}
 				if (canPlay)
@@ -399,7 +406,7 @@ namespace ExternLib
 
         public static void criAtomExPlayer_SetPanType(IntPtr player, CriAtomEx.PanType panType)
 		{
-			TodoLogger.Log(0, "criAtomExPlayer_SetPanType");
+			TodoLogger.LogError(0, "criAtomExPlayer_SetPanType");
 		}
     }
 }

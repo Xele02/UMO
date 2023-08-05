@@ -175,7 +175,11 @@ namespace XeSys.Gfx
 		// public void SetAnimElm(bool isPos, bool isSize, bool isCenter, bool isScale, bool isRot, bool isCol) { }
 
 		// // RVA: 0x1EE6FCC Offset: 0x1EE6FCC VA: 0x1EE6FCC
-		// public void StopAnim() { }
+		public void StopAnim()
+		{
+			m_Animation.IsAnimEnd = true;
+			m_FrameAnimation.IsAnimEnd = true;
+		}
 
 		// // RVA: 0x1EE7018 Offset: 0x1EE7018 VA: 0x1EE7018
 		public bool IsPlaying()
@@ -271,7 +275,10 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x1EE8A94 Offset: 0x1EE8A94 VA: 0x1EE8A94
-		// public void StartAnim() { }
+		public void StartAnim()
+		{
+			m_FrameAnimation.StartAnim();
+		}
 
 		// // RVA: 0x1EE8AF0 Offset: 0x1EE8AF0 VA: 0x1EE8AF0
 		public void StartAnimGoStop(int start, int end)

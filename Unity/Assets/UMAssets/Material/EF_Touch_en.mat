@@ -3,12 +3,13 @@
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: EF_Touch_en
-  m_Shader: {fileID: 4800000, guid: d7d5be9873eac8d428b553f1a22a6751, type: 3}
-  m_ShaderKeywords:
+  m_Shader: {fileID: 4800000, guid: ce5f0617dbb0ff929a99dcbf79dd11b1, type: 3}
+  m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0

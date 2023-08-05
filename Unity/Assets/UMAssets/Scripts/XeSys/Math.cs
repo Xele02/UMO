@@ -29,7 +29,7 @@ namespace XeSys
 			//// RVA: 0x23913B8 Offset: 0x23913B8 VA: 0x23913B8 Slot: 4
 			public Vector3 Evaluate(float t)
 			{
-				TodoLogger.Log(0, "CurveBezier3 Evaluate");
+				TodoLogger.LogError(0, "CurveBezier3 Evaluate");
 				return Vector3.zero;
 			}
 

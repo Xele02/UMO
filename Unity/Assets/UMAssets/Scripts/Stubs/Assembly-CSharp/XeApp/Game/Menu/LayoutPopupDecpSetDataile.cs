@@ -7,7 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutPopupDecpSetDataile : LayoutUGUIScriptBase
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private Text m_textDescription;
 		[SerializeField]

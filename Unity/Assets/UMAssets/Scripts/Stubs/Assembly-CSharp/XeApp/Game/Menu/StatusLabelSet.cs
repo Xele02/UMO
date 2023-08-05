@@ -8,7 +8,7 @@ namespace XeApp.Game.Menu
 {
 	public class StatusLabelSet : LayoutUGUIScriptBase
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 		private class ListData<T>
 		{
 			public ListData(List<T> data)

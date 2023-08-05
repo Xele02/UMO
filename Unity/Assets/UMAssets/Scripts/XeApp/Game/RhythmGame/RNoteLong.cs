@@ -111,7 +111,7 @@ namespace XeApp.Game.RhythmGame
 			isAdsorbedLastObject = false;
 			touchFingerId_ = -1;
 			gameObject.SetActive(true);
-			for(int i =0; i < objects.Length; i++)
+			for(int i = 0; i < objects.Length; i++)
 			{
 				objects[i].AddJudgedEvent(this.JudgedDelegate);
 				objects[i].AddBeyondEvent(this.BeyondDelegate);
@@ -165,10 +165,18 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDAC130 Offset: 0xDAC130 VA: 0xDAC130
 		private void JudgedDelegate(RNoteObject noteObject, RhythmGameConsts.NoteResultEx a_result_ex, RhythmGameConsts.NoteJudgeType a_type)
 		{
-			if(noteObject.rNote.noteInfo.isSlide)
+			// UMO
+			bool isSlide = noteObject.rNote.noteInfo.isSlide;
+			#if UNITY_EDITOR
+			isSlide = false; // Disable slideon long note
+			#endif
+
+
+			if(isSlide)
 			{
 				if(a_result_ex.m_result != RhythmGameConsts.NoteResult.Miss)
 				{
+					;
 				}
 				else
 				{
@@ -176,6 +184,7 @@ namespace XeApp.Game.RhythmGame
 					{
 						if(firstRNoteObject != noteObject || a_type == RhythmGameConsts.NoteJudgeType.EndedTouch)
 						{
+							;
 						}
 						else
 						{
@@ -205,10 +214,11 @@ namespace XeApp.Game.RhythmGame
 				{
 					if(a_result_ex.m_result != RhythmGameConsts.NoteResult.Miss)
 					{
+						;
 					}
 					else
 					{
-						if(!noteObject.rNote.noteInfo.isSlide)
+						if(!isSlide)
 						{
 							lastRNoteObject.Judged(RhythmGameConsts.NoteResult.Miss, RhythmGameConsts.NoteJudgeType.Normal);
 							Free();
@@ -224,6 +234,7 @@ namespace XeApp.Game.RhythmGame
 				}
 				else if(a_result_ex.m_result == RhythmGameConsts.NoteResult.None)
 				{
+					;
 				}
 				else
 				{

@@ -1,10 +1,9 @@
+using System.Collections.Generic;
 using UnityEngine.Events;
 
 namespace XeApp.Game.RhythmGame
 {
-	public class BuffEffectPoisonEvent : UnityEvent<BuffEffect>
-	{
-	}
+	public class BuffEffectPoisonEvent : UnityEvent<BuffEffect> { }
 
 	public struct BuffDurationCheckParameter
 	{
@@ -85,13 +84,32 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xF6AE38 Offset: 0xF6AE38 VA: 0xF6AE38
-		public void OnUpdate(BuffDurationCheckParameter checkParameter) { }
+		public void OnUpdate(BuffDurationCheckParameter checkParameter)
+		{
+			for (var f = effectiveBuffList.First; f != null; f = f.Next)
+			{
+				UpdateBuff(f, checkParameter);
+				CheckDuration(f, checkParameter);
+			}
+		}
 
 		//// RVA: 0xF6AF30 Offset: 0xF6AF30 VA: 0xF6AF30
-		//private void UpdateBuff(LinkedListNode<BuffEffect> buffNode, BuffDurationCheckParameter checkParameter) { }
+		private void UpdateBuff(LinkedListNode<BuffEffect> buffNode, BuffDurationCheckParameter checkParameter)
+		{
+			buffNode.Value.OnUpdate(checkParameter);
+		}
 
 		//// RVA: 0xF6AFE8 Offset: 0xF6AFE8 VA: 0xF6AFE8
-		//private void CheckDuration(LinkedListNode<BuffEffect> buffNode, BuffDurationCheckParameter checkParameter) { }
+		private void CheckDuration(LinkedListNode<BuffEffect> buffNode, BuffDurationCheckParameter checkParameter)
+		{
+			if(buffNode.Value.InDuration(checkParameter))
+			{
+				return;
+			}
+			effectiveBuffList.Remove(buffNode);
+			if (onRemoveEvent != null)
+				onRemoveEvent(buffNode.Value, buffNode.Value.ownerDivaPlaceIndex);
+		}
 
 		//// RVA: 0xF6B118 Offset: 0xF6B118 VA: 0xF6B118
 		public float CalcComboBonus(int a_combo, int a_line_no)

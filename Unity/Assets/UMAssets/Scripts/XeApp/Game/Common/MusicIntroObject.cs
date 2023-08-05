@@ -76,7 +76,7 @@ namespace XeApp.Game.Common
 		{
 			if(m_coWaitForAnimationEnd != null)
 			{
-				StopCoroutine(m_coWaitForAnimationEnd);
+				this.StopCoroutineWatched(m_coWaitForAnimationEnd);
 			}
 			MakeParent();
 			gameObject.SetActive(true);
@@ -108,7 +108,7 @@ namespace XeApp.Game.Common
 					m_animators[i].CrossFadeInFixedTime(TakeoffStateHash, TakeoffFadeDuration, 0, 0);
 				}
 			}
-			m_coWaitForAnimationEnd = StartCoroutine(Co_WaitForAnimationEnd());
+			m_coWaitForAnimationEnd = this.StartCoroutineWatched(Co_WaitForAnimationEnd());
 			isTakeoff = true;
 		}
 
@@ -117,7 +117,7 @@ namespace XeApp.Game.Common
 		{
 			if(m_coWaitForAnimationEnd != null)
 			{
-				StopCoroutine(m_coWaitForAnimationEnd);
+				this.StopCoroutineWatched(m_coWaitForAnimationEnd);
 			}
 			gameObject.SetActive(false);
 			SetAllActive(false);

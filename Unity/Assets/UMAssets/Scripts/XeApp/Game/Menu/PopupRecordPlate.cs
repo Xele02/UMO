@@ -37,7 +37,7 @@ namespace XeApp.Game.Menu
 			yield return null;
 
 			prp = Create(null);
-			yield return prp.Co_MainPhase(sceneType, allReceive);
+			yield return Co.R(prp.Co_MainPhase(sceneType, allReceive));
 			if (callbackClose != null)
 				callbackClose();
 			prp.Dispose();
@@ -113,39 +113,39 @@ namespace XeApp.Game.Menu
 			{
 				if (!viewData.JDKOAKDLHMG(/*4*/GONMPHKGKHI_RewardView.CECMLGBLHHG.INJNLJHGGKB, ref highList, ref infoList, ref episodeList))
 					yield break;
-				yield return m_prpController.ListPhase(highList, infoList, null);
+				yield return Co.R(m_prpController.ListPhase(highList, infoList, null));
 			}
 			else
 			{
 				if(sceneType != RecordPlateUtility.eSceneType.Gacha && viewData.JDKOAKDLHMG(/*1*/GONMPHKGKHI_RewardView.CECMLGBLHHG.GBIDBHKEPGL, ref highList, ref infoList, ref episodeList))
 				{
-					yield return m_prpController.NewGetPhase(infoList, null);
+					yield return Co.R(m_prpController.NewGetPhase(infoList, null));
 				}
 				if(viewData.JDKOAKDLHMG(/*2*/GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM, ref highList, ref infoList, ref episodeList))
 				{
-					yield return m_prpController.EpisodePhase(GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM/*2*/, episodeList, null);
+					yield return Co.R(m_prpController.EpisodePhase(GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM/*2*/, episodeList, null));
 				}
 				if (viewData.JDKOAKDLHMG(GONMPHKGKHI_RewardView.CECMLGBLHHG.NNEOHGFGLKM/*3*/, ref highList, ref infoList, ref episodeList))
 				{
-					yield return m_prpController.RarityUpPhase(highList, null);
-					yield return m_prpController.SkillEvolutionPhase(highList, null);
+					yield return Co.R(m_prpController.RarityUpPhase(highList, null));
+					yield return Co.R(m_prpController.SkillEvolutionPhase(highList, null));
 				}
 				if(sceneType != RecordPlateUtility.eSceneType.RarityUp)
 				{
 					if (viewData.JDKOAKDLHMG(/*4*/GONMPHKGKHI_RewardView.CECMLGBLHHG.INJNLJHGGKB, ref highList, ref infoList, ref episodeList))
 					{
-						yield return m_prpController.ListPhase(highList, infoList, null);
+						yield return Co.R(m_prpController.ListPhase(highList, infoList, null));
 					}
 				}
 				if (viewData.JDKOAKDLHMG(/*7*/GONMPHKGKHI_RewardView.CECMLGBLHHG.BKHAAGAAIHJ, ref highList, ref infoList, ref episodeList))
 				{
-					yield return m_prpController.EpisodePhase(/*7*/GONMPHKGKHI_RewardView.CECMLGBLHHG.BKHAAGAAIHJ, episodeList, null);
+					yield return Co.R(m_prpController.EpisodePhase(/*7*/GONMPHKGKHI_RewardView.CECMLGBLHHG.BKHAAGAAIHJ, episodeList, null));
 				}
-				if(HNDLICBDEMI.AFGKIJMPNNN())
+				if(HNDLICBDEMI.AFGKIJMPNNN_IsDecoEnabled())
 				{
 					if (viewData.JDKOAKDLHMG(/*8*/GONMPHKGKHI_RewardView.CECMLGBLHHG.JCGKGFLCKCP, ref highList, ref infoList, ref episodeList))
 					{
-						yield return m_prpController.GetPosterPhase(infoList, null);
+						yield return Co.R(m_prpController.GetPosterPhase(infoList, null));
 					}
 				}
 				highList = null;

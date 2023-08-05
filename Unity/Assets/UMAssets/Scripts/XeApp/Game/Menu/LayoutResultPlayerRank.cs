@@ -123,7 +123,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x18E62B8 Offset: 0x18E62B8 VA: 0x18E62B8
 		public void StartAnim()
 		{
-			m_coroutine = StartCoroutine(Co_StartAnim());
+			m_coroutine = this.StartCoroutineWatched(Co_StartAnim());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71C79C Offset: 0x71C79C VA: 0x71C79C
@@ -145,8 +145,8 @@ namespace XeApp.Game.Menu
 				ChangeCurrentExp(viewLevelupData.APIIHFJGEAO_Level, currentGaugePercentage, viewLevelupData.ALBCEALLGJG_PrevExp);
 				ChangeRequiredPlayerExp(viewLevelupData.APIIHFJGEAO_Level);
 				layoutRoot.StartChildrenAnimGoStop("go_in", "st_in");
-				yield return Co_WaitAnim(layoutRoot, true);
-				yield return Co_ExpIncreaseAnim();
+				yield return Co.R(Co_WaitAnim(layoutRoot, true));
+				yield return Co.R(Co_ExpIncreaseAnim());
 			}
 		}
 
@@ -182,7 +182,7 @@ namespace XeApp.Game.Menu
 					isLevelupFirst = true;
 					if (IsLevelMax(currentFrameLevel))
 					{
-						yield return Co_LevelMaxProcess(currentFrameLevel);
+						yield return Co.R(Co_LevelMaxProcess(currentFrameLevel));
 					}
 					else
 					{
@@ -219,7 +219,7 @@ namespace XeApp.Game.Menu
 			ChangeCurrentExp(playerLevel - 1, 100, -1);
 			StartLevelupAnimation(playerLevel);
 			yield return null;
-			yield return Co_WaitAnim(layoutLevelUp, true);
+			yield return Co.R(Co_WaitAnim(layoutLevelUp, true));
 			ChangeRequiredPlayerExp(playerLevel);
 		}
 
@@ -227,15 +227,18 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x18E67EC Offset: 0x18E67EC VA: 0x18E67EC
 		public IEnumerator Co_ShowRankupPopup()
 		{
-			TodoLogger.Log(0, "Co_ShowRankupPopup");
-			yield return null;
+			//0x18E7F4C
+			if(viewLevelupData.APIIHFJGEAO_Level < viewLevelupData.IANDPFDFAKP_Level2)
+			{
+				TodoLogger.LogError(0, "Co_ShowRankupPopup() 1");
+				yield break;
+			}
 		}
 
 		// // RVA: 0x18E6898 Offset: 0x18E6898 VA: 0x18E6898
 		public bool IsOpenRankupPopup()
 		{
-			TodoLogger.Log(0, "IsOpenRankupPopup");
-			return false;
+			return isOpenRankupPopup;
 		}
 
 		// // RVA: 0x18E645C Offset: 0x18E645C VA: 0x18E645C
@@ -260,17 +263,35 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71C97C Offset: 0x71C97C VA: 0x71C97C
 		// // RVA: 0x18E69C8 Offset: 0x18E69C8 VA: 0x18E69C8
-		// private IEnumerator Co_FinishGaugeAnim() { }
+		private IEnumerator Co_FinishGaugeAnim()
+		{
+			int frame;
+
+			//0x18E7AD4
+			frame = 0;
+			while (frame < GAUGE_ANIM_FINISH_TIME * 30)
+			{
+				if (!PopupWindowManager.IsOpenPopupWindow())
+					frame++;
+				yield return null;
+			}
+			layoutAddAnimGauge.StartChildrenAnimGoStop("go_out", "st_out");
+			layoutEffectOutGauge.StartChildrenAnimGoStop("go_out", "st_out");
+			layoutEffectInGauge.StartChildrenAnimGoStop("go_in", "st_in");
+		}
 
 		// // RVA: 0x18E6A74 Offset: 0x18E6A74 VA: 0x18E6A74
-		// public void StartFinishGaugeAnim() { }
+		public void StartFinishGaugeAnim()
+		{
+			GaugeAnimFinishCoroutine = this.StartCoroutineWatched(Co_FinishGaugeAnim());
+		}
 
 		// // RVA: 0x18E6A9C Offset: 0x18E6A9C VA: 0x18E6A9C
 		public void StopFinishGaugeAnim()
 		{
 			if(GaugeAnimFinishCoroutine != null)
 			{
-				StopCoroutine(GaugeAnimFinishCoroutine);
+				this.StopCoroutineWatched(GaugeAnimFinishCoroutine);
 				GaugeAnimFinishCoroutine = null;
 			}
 			ChangeOldExp(viewLevelupData.IANDPFDFAKP_Level2, CalcExpPercentage(viewLevelupData.IANDPFDFAKP_Level2, viewLevelupData.GLAJCLEAKJJ_Exp));

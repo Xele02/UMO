@@ -7,7 +7,20 @@ namespace XeApp.Core
 		private int m_blockCount; // 0x8
 		private EventSystem eventSystem; // 0xC
 
-		// public bool InputEnabled { get; set; } 0x1D6ECA4 0x1D6ECB8
+		public bool InputEnabled { get { return m_blockCount < 1; } set
+			{
+				if(value)
+				{
+					if (m_blockCount > 0)
+						m_blockCount--;
+				}
+				else
+				{
+					m_blockCount++;
+				}
+				eventSystem.enabled = m_blockCount < 1;
+			}
+		} //0x1D6ECA4 0x1D6ECB8
 
 		// // RVA: 0x1D6EC40 Offset: 0x1D6EC40 VA: 0x1D6EC40
 		public void Init(EventSystem es)

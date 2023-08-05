@@ -103,7 +103,7 @@ namespace XeSys
 		// // RVA: 0x1EF64F4 Offset: 0x1EF64F4 VA: 0x1EF64F4
 		private void MobileAction()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x1EF6744 Offset: 0x1EF6744 VA: 0x1EF6744
@@ -135,6 +135,7 @@ namespace XeSys
 				return;
 			}
 			info.Update(phase, position);
+			touchCount++;
 			MousePinchAction();
 		}
 
@@ -172,7 +173,7 @@ namespace XeSys
 			int id = 99999;
 			for(int i = 0; i < touchCount; i++)
 			{
-				TouchInfoRecord record = GetTouchInfoRecord(touchCount);
+				TouchInfoRecord record = GetTouchInfoRecord(i);
 				if(IsTouchPositionInScreen(record.beganInfo.GetSceneInnerPosition()))
 				{
 					if(record.beganInfo.id < id)
@@ -194,10 +195,13 @@ namespace XeSys
 		// // RVA: 0x1EF6C84 Offset: 0x1EF6C84 VA: 0x1EF6C84
 		private void MousePinchAction()
 		{
+			// UMO Update, always update pinchdelta
+			float wheel = Input.GetAxis("Mouse ScrollWheel");
+			pinchDelta = -wheel;
 			if(!Input.GetMouseButton(0) && !Input.GetMouseButton(1))
 			{
 				pinchRatio = 1.0f;
-				pinchDelta = 0.0f;
+				//pinchDelta = 0.0f;
 				pinch = false;
 				return;
 			}
@@ -207,9 +211,9 @@ namespace XeSys
 				pinchDelta = 0.0f;
 			}
 			pinch = true;
-			float wheel = Input.GetAxis("Mouse ScrollWheel");
+			//float wheel = Input.GetAxis("Mouse ScrollWheel");
 			pinchRatio = pinchRatio - wheel;
-			pinchDelta = -wheel;
+			//pinchDelta = -wheel;
 		}
 
 		// // RVA: 0x1EF7434 Offset: 0x1EF7434 VA: 0x1EF7434
@@ -329,6 +333,7 @@ namespace XeSys
 					continue;
 				}
 				keyTouchInfo.Update(phase, position);
+				UMODebugger.Instance.AddInputInfo(keyTouchInfo, phase);
 			}
 		}
 

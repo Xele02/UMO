@@ -1,9 +1,16 @@
+using Sakasho.JSON;
 using SakashoSystemCallback;
+using System.Collections;
 
 public class SakashoUserToken : SakashoAPIBase
 {
 	// // RVA: 0x2E6D2E4 Offset: 0x2E6D2E4 VA: 0x2E6D2E4
-	// public static SakashoAPICallContext CreatePlayer(OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext CreatePlayer(int accountType, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		h["accountType"] = accountType;
+		return new SakashoAPICallContext(Call(SakashoUserTokenCreatePlayer, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	// // RVA: 0x2E6D3C8 Offset: 0x2E6D3C8 VA: 0x2E6D3C8
 	// private static SakashoAPICallContext CreatePlayerSession(OnSuccess onSuccess, OnError onError) { }
@@ -11,7 +18,7 @@ public class SakashoUserToken : SakashoAPIBase
 	// // RVA: 0x2E6D4AC Offset: 0x2E6D4AC VA: 0x2E6D4AC
 	public static SakashoAPICallContext GetPlayerStatus(OnSuccess onSuccess, OnError onError)
     {
-        return new SakashoAPICallContext(SakashoAPIBase.Call(SakashoUserTokenGetPlayerStatus, "", onSuccess, onError));
+        return new SakashoAPICallContext(Call(SakashoUserTokenGetPlayerStatus, "", onSuccess, onError));
     }
 
 	// // RVA: 0x2E6D590 Offset: 0x2E6D590 VA: 0x2E6D590
@@ -96,7 +103,10 @@ public class SakashoUserToken : SakashoAPIBase
 	// public static SakashoAPICallContext ClearDeviceLoginDataWithLog(OnSuccess onSuccess, OnError onError) { }
 
 	// // RVA: 0x2E6FBB0 Offset: 0x2E6FBB0 VA: 0x2E6FBB0
-	// private static extern int SakashoUserTokenCreatePlayer(int callbackId, string json) { }
+	private static /*extern */int SakashoUserTokenCreatePlayer(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoUserTokenCreatePlayer(callbackId, json);
+	}
 
 	// // RVA: 0x2E6FCC0 Offset: 0x2E6FCC0 VA: 0x2E6FCC0
 	// private static extern int SakashoUserTokenCreatePlayerSession(int callbackId, string json) { }

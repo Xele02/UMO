@@ -15,7 +15,7 @@ public class GCGNICILKLD_AssetFileInfo
 	public int LBALIFCJKON_Idx; // 0x24
 	private uint JCKCPNHIKGP_Key1; // 0x28
 	private long BBEGLBMOBOF_Key2; // 0x30
-	public int FDDDLPAJIEJ; // 0x38
+	public int FDDDLPAJIEJ_IsMediaFile; // 0x38
 	public static uint LAFJPOLCKLP_Key1 = 0x14577faf; // 0x8
 	public static long PMMJABPFGOA_Key2 = 0x74841251; // 0x10
 

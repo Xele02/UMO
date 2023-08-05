@@ -8,9 +8,7 @@ namespace XeApp.Game.Common
 {
 	public class SwapScrollList : LayoutUGUIScriptBase
 	{
-		public class SwapScrollUpdateItem : UnityEvent<int, SwapScrollListContent>
-		{
-		}
+		public class SwapScrollUpdateItem : UnityEvent<int, SwapScrollListContent> { }
 
 		[SerializeField]
 		private ScrollRect m_scrollRect; // 0x14
@@ -37,7 +35,7 @@ namespace XeApp.Game.Common
 		private RawImageEx m_horizontalScrollBarImage; // 0x58
 
 		public List<SwapScrollListContent> ScrollObjects { get { return m_scrollObjects; } } //0x1CCB004
-		//public int ListTopPosition { get; } 0x1CCB00C
+		public int ListTopPosition { get { return m_listTopPosition; } } //0x1CCB00C
 		public SwapScrollList.SwapScrollUpdateItem OnUpdateItem { get { return m_scrollUpdateItem; } } //0x1CCB014
 		public RectTransform ScrollContent { get { return m_scrollRect.content; } } //0x1CCB01C
 		public int ScrollObjectCount { get { return m_rowCount * m_columnCount; } } //0x1CCB048
@@ -46,9 +44,9 @@ namespace XeApp.Game.Common
 		public Vector2 ContentSize { get { return m_contentRect; } } //0x1CCB0C8
 		public int RowCount { get { return m_rowCount; } } //0x1CCB0DC
 		public int ColumnCount { get { return m_columnCount; } } //0x1CCB0E4
-		//public ScrollRect ScrollRect { get; } 0x1CCB0EC
+		public ScrollRect ScrollRect { get { return m_scrollRect; } } //0x1CCB0EC
 		//public float RelativePositon { get; } 0x1CCB0F4
-		//public bool Vertical { set; } 0x1CCB198
+		public bool Vertical { set { m_isVertical = true; } } //0x1CCB198
 		private RectTransform ScrollRectTransfom { get {
 				if(m_scrollRectTransfom == null)
 				{
@@ -87,7 +85,10 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CCB67C Offset: 0x1CCB67C VA: 0x1CCB67C
-		//public void RemoveScrollObject() { }
+		public void RemoveScrollObject()
+		{
+			m_scrollObjects.Clear();
+		}
 
 		//// RVA: 0x1CCB6F4 Offset: 0x1CCB6F4 VA: 0x1CCB6F4
 		//public void Apply(int rowCount, int columnCount, Vector2 contentSize, Vector2 leftTopPosition) { }
@@ -436,6 +437,12 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CCDBE8 Offset: 0x1CCDBE8 VA: 0x1CCDBE8
-		//public void SetEnableScrollBar(bool isEnable) { }
+		public void SetEnableScrollBar(bool isEnable)
+		{
+			if (m_scrollRect.verticalScrollbar != null)
+				m_scrollRect.verticalScrollbar.interactable = isEnable;
+			if (m_scrollRect.horizontalScrollbar != null)
+				m_scrollRect.horizontalScrollbar.interactable = isEnable;
+		}
 	}
 }

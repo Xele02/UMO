@@ -2,7 +2,7 @@ using XeApp.Game.Common;
 
 namespace XeApp.Game.RhythmGame
 {
-	public class BuffEffectDuration
+	public abstract class BuffEffectDuration
 	{
 		public BuffDurationInitialParameter initialParameter; // 0x8
 
@@ -13,7 +13,7 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: -1 Offset: -1 Slot: 5
-		//public abstract bool InDuration(BuffDurationCheckParameter checkParameter);
+		public abstract bool InDuration(BuffDurationCheckParameter checkParameter);
 
 		//// RVA: 0xF694D8 Offset: 0xF694D8 VA: 0xF694D8 Slot: 6
 		public virtual bool IsValue(RhythmGameConsts.NoteResult a_result)
@@ -22,6 +22,6 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: -1 Offset: -1 Slot: 7
-		//public abstract float GetEndMusicTime();
+		public abstract float GetEndMusicTime();
 	}
 }

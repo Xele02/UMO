@@ -34,7 +34,7 @@ namespace ExternLib
                     else
                     {
                         item.Value.status = CriFsBinder.Status.Error;
-                        UnityEngine.Debug.LogError("Unable to open "+item.Value.path);
+                        TodoLogger.LogError(TodoLogger.Filesystem, "Unable to open "+item.Value.path);
                     }
                 }
             }

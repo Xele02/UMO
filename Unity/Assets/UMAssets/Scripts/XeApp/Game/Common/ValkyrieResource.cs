@@ -133,7 +133,7 @@ namespace XeApp.Game.Common
 		public void LoadResources(int valkyrieId, int envId, int battleId)
 		{
 			isLoadedPrefab = false;
-			StartCoroutine(Co_LoadResources(valkyrieId, envId, battleId));
+			this.StartCoroutineWatched(Co_LoadResources(valkyrieId, envId, battleId));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73C4D0 Offset: 0x73C4D0 VA: 0x73C4D0
@@ -158,7 +158,7 @@ namespace XeApp.Game.Common
 			assetName.SetFormat("param_vl_common", Array.Empty<string>());
 
 			AssetBundleLoadAllAssetOperationBase operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
 			ParamValkyrieCommon data = operation.GetAsset<ParamValkyrieCommon>(assetName.ToString());
 			if(data != null)
@@ -184,7 +184,7 @@ namespace XeApp.Game.Common
 			assetName.SetFormat("val_{0:D4}_prefab", modelId);
 
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
 			prefab = operation.GetAsset<GameObject>(assetName.ToString());
 			m_materialAwakeHigh = new Dictionary<int, Material>();
@@ -198,7 +198,7 @@ namespace XeApp.Game.Common
 					assetName.SetFormat("val_{0:D4}_{1:D2}_Awake_H", modelId, cnt + 1);
 
 				//operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-				//yield return operation;
+				//yield return Co.R(operation);
 				m_materialAwakeHigh[cnt] = operation.GetAsset<Material>(assetName.ToString());
 
 				if (cnt == 0)
@@ -206,7 +206,7 @@ namespace XeApp.Game.Common
 				else
 					assetName.SetFormat("val_{0:D4}_{1:D2}_Awake_L", modelId, cnt + 1);
 				//operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-				//yield return operation;
+				//yield return Co.R(operation);
 
 				m_materialAwakeLow[cnt] = operation.GetAsset<Material>(assetName.ToString());
 			}
@@ -227,7 +227,7 @@ namespace XeApp.Game.Common
 
 			bundleName.Set("vl/cmn.xab");
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
 			prefab.GetComponent<EffectFactoryCollector>().RedirectionAll((string name) =>
 			{
@@ -262,7 +262,7 @@ namespace XeApp.Game.Common
 		public void LoadResourcesForMenu(int valkyrieId)
 		{
 			isLoadedPrefab = false;
-			StartCoroutine(Co_LoadResourcesMenu(valkyrieId));
+			this.StartCoroutineWatched(Co_LoadResourcesMenu(valkyrieId));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73C548 Offset: 0x73C548 VA: 0x73C548
@@ -282,7 +282,7 @@ namespace XeApp.Game.Common
 			assetName.SetFormat("val_{0:D4}_prefab", modelId);
 
 			AssetBundleLoadAllAssetOperationBase operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
 			prefab = operation.GetAsset<GameObject>(assetName.ToString());
 			menuOverrideResource.wait = new AnimationClip[3];
@@ -303,7 +303,7 @@ namespace XeApp.Game.Common
 
 			bundleName.Set("vl/cmn.xab");
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
 			EffectFactoryCollector eff = prefab.GetComponent<EffectFactoryCollector>();
 			eff.RedirectionAll((string name) => {

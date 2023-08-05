@@ -145,7 +145,7 @@ namespace XeApp.Game.RhythmGame.UI
 		{
 			if (m_isHide)
 				return;
-			StartCoroutine(ColorAnimeCoroutine(m_renderers[m_currentGauge]));
+			this.StartCoroutineWatched(ColorAnimeCoroutine(m_renderers[m_currentGauge]));
 		}
 
 		// // RVA: 0x1560510 Offset: 0x1560510 VA: 0x1560510
@@ -180,7 +180,7 @@ namespace XeApp.Game.RhythmGame.UI
 		public void Success(bool isValkyrieOff)
 		{
 			m_mainAnimator.SetTrigger(isValkyrieOff ? NoValkyrieSuccess : SuccessParamHash);
-			StartCoroutine(WaitSuccessAnimationCoroutine());
+			this.StartCoroutineWatched(WaitSuccessAnimationCoroutine());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7472AC Offset: 0x7472AC VA: 0x7472AC

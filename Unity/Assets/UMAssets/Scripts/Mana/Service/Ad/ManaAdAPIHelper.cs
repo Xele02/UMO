@@ -12,8 +12,12 @@ namespace Mana.Service.Ad
         // // RVA: 0x17BD040 Offset: 0x17BD040 VA: 0x17BD040
         public void SendLaunchEvent()
         {
-            TodoLogger.Log(5, "ManaAdAPIHelper SendLaunchEvent");
-        }
+			if (_hasSendLaunchEvent)
+				return;
+			TodoLogger.LogError(TodoLogger.ManaAd, "ManaAdAPIHelper.SendLaunchEvent");
+			_hasSendLaunchEvent = true;
+			NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD_GetPlayerId();
+		}
 
         // // RVA: 0x17BD520 Offset: 0x17BD520 VA: 0x17BD520
         // public void SendResumeEvent() { }
@@ -21,7 +25,16 @@ namespace Mana.Service.Ad
         // // RVA: 0x17BD65C Offset: 0x17BD65C VA: 0x17BD65C
         public void TryPendingSendResumeEvent()
         {
-            TodoLogger.Log(5, "ManaAdAPIHelper TryPendingSendResumeEvent ");
+			if (_sendResumeEventRequest)
+			{
+				if (NKGJPJPHLIF.HHCJCDFCLOB != null)
+				{
+					if (NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD_GetPlayerId() == 0)
+						return;
+					TodoLogger.LogError(TodoLogger.ManaAd, "ManaAdAPIHelper.TryPendingSendResumeEvent ");
+					_sendResumeEventRequest = false;
+				}
+			}
         }
 
         // // RVA: 0x17BD75C Offset: 0x17BD75C VA: 0x17BD75C

@@ -365,7 +365,7 @@ namespace CriWare
 		private void PlayOnStart()
 		{
 			if (this.playOnStart && !String.IsNullOrEmpty(this.cueName)) {
-				StartCoroutine(PlayAsync(this.cueName));
+				this.StartCoroutineWatched(PlayAsync(this.cueName));
 			}
 		}
 

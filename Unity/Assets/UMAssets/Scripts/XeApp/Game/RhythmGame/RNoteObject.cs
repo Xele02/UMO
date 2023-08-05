@@ -110,6 +110,8 @@ namespace XeApp.Game.RhythmGame
 			if(!IsJudged())
 			{
 				m_note_result_ex.Init(result);
+				if (delegateOverrideNoteJudgeList != null)
+					delegateOverrideNoteJudgeList(this, ref m_note_result_ex);
 				rNote.Judged(m_note_result_ex);
 				for(int i = 0; i < judgedEventList.Count; i++)
 				{

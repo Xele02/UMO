@@ -68,7 +68,7 @@ namespace XeApp.Game.Common
 			}
 			if(SoundResource.InstallCueSheet(cueSheetName))
 			{
-				StartCoroutine(Co_InstallProcess(cueSheetName, onEndCallback));
+				this.StartCoroutineWatched(Co_InstallProcess(cueSheetName, onEndCallback));
 				return true;
 			}
 			ChangeCueSheet(cueSheetName);
@@ -199,14 +199,14 @@ namespace XeApp.Game.Common
 		{
 			if(fadeCoroutine != null)
 			{
-				StopCoroutine(fadeCoroutine);
+				this.StopCoroutineWatched(fadeCoroutine);
 				if(changeVolume != null)
 				{
-					StopCoroutine(changeVolume);
+					this.StopCoroutineWatched(changeVolume);
 				}
 				source.volume = 1.0f;
 			}
-			fadeCoroutine = StartCoroutine(Co_FadeOut(sec, onStop));
+			fadeCoroutine = this.StartCoroutineWatched(Co_FadeOut(sec, onStop));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73B258 Offset: 0x73B258 VA: 0x73B258
@@ -215,7 +215,7 @@ namespace XeApp.Game.Common
 		{
 			//0x13992E8
 			changeVolume = Co_ChangeVolume(sec, 0);
-			yield return changeVolume;
+			yield return Co.R(changeVolume);
 			changeVolume = null;
 			StopCue(true);
 			source.volume = 1.0f;
@@ -228,10 +228,10 @@ namespace XeApp.Game.Common
 		protected void ChangeVolume(float sec, float targetVol, Action onEnd)
 		{
 			if (fadeCoroutine != null)
-				StopCoroutine(fadeCoroutine);
+				this.StopCoroutineWatched(fadeCoroutine);
 			if (changeVolume != null)
-				StopCoroutine(changeVolume);
-			fadeCoroutine = StartCoroutine(Co_ChangeVolume(sec, targetVol, onEnd));
+				this.StopCoroutineWatched(changeVolume);
+			fadeCoroutine = this.StartCoroutineWatched(Co_ChangeVolume(sec, targetVol, onEnd));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73B2D0 Offset: 0x73B2D0 VA: 0x73B2D0
@@ -240,7 +240,7 @@ namespace XeApp.Game.Common
 		{
 			//0x1399140
 			changeVolume = Co_ChangeVolume(sec, targetVol);
-			yield return changeVolume;
+			yield return Co.R(changeVolume);
 			changeVolume = null;
 			fadeCoroutine = null;
 			if (onEnd != null)

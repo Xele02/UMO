@@ -8,7 +8,7 @@ namespace XeApp
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.LogError(0, "Implement monobehaviour");
 		}
 		[SerializeField]
 		private DebugDecorationTexture m_decorationTexture;

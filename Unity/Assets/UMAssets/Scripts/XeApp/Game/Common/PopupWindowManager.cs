@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using XeApp.Game.Menu;
 using XeSys;
+using System.Collections;
 
 namespace XeApp.Game.Common
 {
@@ -129,16 +130,43 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BC0A30 Offset: 0x1BC0A30 VA: 0x1BC0A30
-		// public static void SetInputState(bool isEnable) { }
+		public static void SetInputState(bool isEnable)
+		{
+			if (s_controls == null)
+				return;
+			if(isEnable)
+			{
+				s_controls[s_popupIndexStack[s_popupIndexStack.Count - 1]].InputEnable();
+			}
+			else
+			{
+				s_controls[s_popupIndexStack[s_popupIndexStack.Count - 1]].InputDisable();
+			}
+		}
 
 		// // RVA: 0x1BC0C8C Offset: 0x1BC0C8C VA: 0x1BC0C8C
-		// public static void SetButtonState(bool isEnable) { }
+		public static void SetButtonState(bool isEnable)
+		{
+			if (s_controls == null)
+				return;
+			s_controls[s_popupIndexStack[s_popupIndexStack.Count - 1]].SetButtonHiddenEnable(isEnable);
+		}
 
 		// // RVA: 0x1BC0E34 Offset: 0x1BC0E34 VA: 0x1BC0E34
 		// public static void TopPopupPushNegativeOtherButton() { }
 
 		// // RVA: 0x1BC104C Offset: 0x1BC104C VA: 0x1BC104C
-		// public static ButtonBase FindTopPopupButton(PopupButton.ButtonType type) { }
+		public static ButtonBase FindTopPopupButton(PopupButton.ButtonType type)
+		{
+			if (s_controls != null)
+			{
+				if(s_popupIndexStack.Count != 0)
+				{
+					return s_controls[s_popupIndexStack[s_popupIndexStack.Count - 1]].FindButton(type);
+				}
+			}
+			return null;
+		}
 
 		// // RVA: 0x1BC1274 Offset: 0x1BC1274 VA: 0x1BC1274
 		public static string FormatTextBank(MessageBank bank, string label, object[] args)
@@ -171,7 +199,16 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BC1670 Offset: 0x1BC1670 VA: 0x1BC1670
-		// public static void Close(PopupWindowControl ignoreControl, Action endCallBack) { }
+		public static void Close(PopupWindowControl ignoreControl, Action endCallBack)
+		{
+			for(int i = s_popupIndexStack.Count - 1; i >= 0; i--)
+			{
+				if(ignoreControl != s_controls[s_popupIndexStack[i]])
+				{
+					s_controls[s_popupIndexStack[i]].Close(i == 0 ? endCallBack : null, null);
+				}
+			}
+		}
 
 		// // RVA: 0x1BC190C Offset: 0x1BC190C VA: 0x1BC190C
 		public static TextPopupSetting CreateMessageBankTextContent(string bankName, string titleLabel, string messageLabel, SizeType size, ButtonInfo[] buttons)
@@ -214,7 +251,10 @@ namespace XeApp.Game.Common
 		// private static bool IsStaminaMax() { }
 
 		// // RVA: 0x1BC2CE8 Offset: 0x1BC2CE8 VA: 0x1BC2CE8
-		// public static void OpenStaminaWindow(DenominationManager denomControl, Action recoveryCallBack, JFDNPFFOACP cancelCallBack, DJBHIFLHJLK errorCallBack, OnDenomChangeDate changeDateCallBack) { }
+		public static void OpenStaminaWindow(DenominationManager denomControl, Action recoveryCallBack, JFDNPFFOACP cancelCallBack, DJBHIFLHJLK errorCallBack, OnDenomChangeDate changeDateCallBack)
+		{
+			TodoLogger.LogError(0, "OpenStaminaWindow");
+		}
 
 		// // RVA: 0x1BC3048 Offset: 0x1BC3048 VA: 0x1BC3048
 		// private static void OpenStaminaWindowHaveItem(List<ViewEnergyItemData> list, Action recoveryCallBack, JFDNPFFOACP cancelCallBack, DJBHIFLHJLK errorCallBack, OnDenomChangeDate changeDateCallBack) { }
@@ -264,11 +304,24 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BC5C10 Offset: 0x1BC5C10 VA: 0x1BC5C10
 		public static void ApplicationQuitPopupShow(Action cancelAction)
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x1BC5E74 Offset: 0x1BC5E74 VA: 0x1BC5E74
-		// public static void ReviewStarPopupShow(MonoBehaviour mb, Action closeWaitCallback, int divaId = 1, int voiceId = 0) { }
+		public static void ReviewStarPopupShow(MonoBehaviour mb, Action closeWaitCallback, int divaId = 1, int voiceId = 0)
+		{
+			if(!KNHHNMFCJEN.AIGMIEKPPAD())
+			{
+				if(closeWaitCallback != null)
+					closeWaitCallback();
+			}
+			else
+			{
+				TodoLogger.LogError(TodoLogger.UMOSkip, "ReviewStarPopupShow");
+				if (closeWaitCallback != null)
+					closeWaitCallback();
+			}
+		}
 
 		// // RVA: 0x1BC6294 Offset: 0x1BC6294 VA: 0x1BC6294
 		// public static void OpinionPopupShow(MonoBehaviour mb, Action closeWaitCallback, int divaId = 1, int voiceId = 0, int starRank = 0) { }
@@ -304,10 +357,32 @@ namespace XeApp.Game.Common
 		// private static bool PlayReviewPopupButtonSe(PopupButton.ButtonLabel label, PopupButton.ButtonType type) { }
 
 		// // RVA: 0x1BC7674 Offset: 0x1BC7674 VA: 0x1BC7674
-		// public static PopupTabSetting CreateTabContents(Action<PopupTabContents> callback) { }
+		public static PopupTabSetting CreateTabContents(Action<PopupTabContents> callback)
+		{
+			PopupTabSetting res = new PopupTabSetting();
+			GameManager.Instance.StartCoroutineWatched(TabContentsLoader(res, callback));
+			return res;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73F684 Offset: 0x73F684 VA: 0x73F684
 		// // RVA: 0x1BC7778 Offset: 0x1BC7778 VA: 0x1BC7778
-		// private static IEnumerator TabContentsLoader(PopupTabSetting tabSetting, Action<PopupTabContents> callback) { }
+		private static IEnumerator TabContentsLoader(PopupTabSetting tabSetting, Action<PopupTabContents> callback)
+		{
+			//0x138A144
+			PopupTabContents tabContents = null;
+			bool isLoading = false;
+			ResourcesManager.Instance.Load(tabSetting.PrefabPath, (FileResultObject fro) =>
+			{
+				//0x13883F0
+				GameObject g = Instantiate(fro.unityObject) as GameObject;
+				tabSetting.SetContent(g);
+				tabContents = g.GetComponent<PopupTabContents>();
+				isLoading = true;
+				return true;
+			});
+			while (!isLoading)
+				yield return null;
+			callback(tabContents);
+		}
 	}
 }

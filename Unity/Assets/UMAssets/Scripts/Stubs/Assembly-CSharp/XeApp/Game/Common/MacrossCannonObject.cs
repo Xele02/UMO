@@ -16,7 +16,7 @@ namespace XeApp.Game.Common
 		private CameraClearFlags m_overrideClearFlags;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

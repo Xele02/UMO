@@ -3,6 +3,7 @@ using System.Collections;
 using mcrs;
 using UnityEngine;
 using XeApp.Game.Common;
+using XeApp.Game.Tutorial;
 using XeSys;
 
 namespace XeApp.Game.Menu
@@ -71,13 +72,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xD0064C Offset: 0xD0064C VA: 0xD0064C
 		public void SetGoDivaLayout()
 		{
-			TodoLogger.Log(0, "SetGoDivaLayout");
+			TodoLogger.LogError(0, "SetGoDivaLayout");
 		}
 
 		// // RVA: 0xD00678 Offset: 0xD00678 VA: 0xD00678
 		public void StartCountPoint()
 		{
-			countPointWindowCoroutine = StartCoroutine(Co_StartPointCount());
+			countPointWindowCoroutine = this.StartCoroutineWatched(Co_StartPointCount());
 		}
 
 		// // RVA: 0xD0072C Offset: 0xD0072C VA: 0xD0072C
@@ -124,7 +125,7 @@ namespace XeApp.Game.Menu
 					if (layoutDiva.IsLevelupPopupProcess)
 						return;
 					if (countPointWindowCoroutine != null)
-						StopCoroutine(countPointWindowCoroutine);
+						this.StopCoroutineWatched(countPointWindowCoroutine);
 					layoutDiva.SkipBeginAnim();
 					layoutPoint.Skip();
 					isSkiped = true;
@@ -136,7 +137,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xD007B4 Offset: 0xD007B4 VA: 0xD007B4
 		private void OnFinishedDivaMainAnim()
 		{
-			StartCoroutine(Co_TryShowTutorial(OnShowOkayButton));
+			this.StartCoroutineWatched(Co_TryShowTutorial(OnShowOkayButton));
 			layoutDiva.StartGaugeFinishAnim();
 			isSkiped = true;
 		}
@@ -169,13 +170,18 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xD0087C Offset: 0xD0087C VA: 0xD0087C
 		private IEnumerator Co_TryShowTutorial(Action endFunc)
 		{
-			TodoLogger.Log(0, "Co_TryShowTutorial");
-			yield return null;
-			if(endFunc != null)
+			//0xD00CC8
+			yield return this.StartCoroutineWatched(TutorialManager.TryShowTutorialCoroutine(CheckTutorialCondition));
+			if (endFunc != null)
 				endFunc();
 		}
 
 		// // RVA: 0xD00A20 Offset: 0xD00A20 VA: 0xD00A20
-		// private bool CheckTutorialCondition(TutorialConditionId conditionId) { }
+		private bool CheckTutorialCondition(TutorialConditionId conditionId)
+		{
+			if (conditionId != TutorialConditionId.Condition16)
+				return false;
+			return layoutDiva.IsLevelup;
+		}
 	}
 }

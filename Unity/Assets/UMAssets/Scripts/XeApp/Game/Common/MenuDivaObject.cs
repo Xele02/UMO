@@ -38,10 +38,10 @@ namespace XeApp.Game.Common
 
 		//public MenuDivaGazeControl.Data GazeControlData { get; } 0x110F3C8
 		protected override bool useQualitySetting { get { return false; } } //0x110F3D0
-		//public bool IsIdleAnim { get; private set; } 0x1112268 0x111237C
+		public bool IsIdleAnim { get { return animator.GetCurrentAnimatorStateInfo(0).fullPathHash == IdleHash; } private set { return; } } //0x1112268 0x111237C
 		//public bool IsFacialIdelAnim { get; private set; } 0x1112380 0x1112564
-		//public bool IsInTransition { get; } 0x1112568
-		//public bool IsInFacialTransition { get; } 0x1112598
+		public bool IsInTransition { get { return animator.IsInTransition(0); } } //0x1112568
+		public bool IsInFacialTransition { get { return facialBlendAnimMediator.selfAnimator.IsInTransition(0) || facialBlendAnimMediator.selfAnimator.IsInTransition(1); } } //0x1112598
 
 		// RVA: 0x110F3D8 Offset: 0x110F3D8 VA: 0x110F3D8 Slot: 6
 		protected override void SetupCustomComponents(DivaResource resource)
@@ -160,17 +160,30 @@ namespace XeApp.Game.Common
 				stateName = "idle";
 			Anim_Play(stateName, 0);
 			animator.speed = 1;
-			StartCoroutine(WaitUnlockBoneSpring(0));
+			this.StartCoroutineWatched(WaitUnlockBoneSpring(0));
 		}
 
 		//// RVA: 0x1110B60 Offset: 0x1110B60 VA: 0x1110B60
-		//public void IdleCrossFade(string stateName = "") { }
+		public void IdleCrossFade(string stateName = "")
+		{
+			if (string.IsNullOrEmpty(stateName))
+				stateName = "idle";
+			animator.CrossFade(stateName, 0.07f);
+			facialBlendAnimMediator.selfAnimator.Play(stateName, 0);
+			facialBlendAnimMediator.selfAnimator.Play(stateName, 1);
+		}
 
 		//// RVA: 0x1110C90 Offset: 0x1110C90 VA: 0x1110C90
-		//public void SetBodyCrossFade(string stateName, float duration = 0,07) { }
+		public void SetBodyCrossFade(string stateName, float duration = 0.07f)
+		{
+			animator.CrossFade(stateName, duration);
+		}
 
 		//// RVA: 0x1110CCC Offset: 0x1110CCC VA: 0x1110CCC
-		//public void PlayFacialBlendAnimator(string stateName, int layerIndex) { }
+		public void PlayFacialBlendAnimator(string stateName, int layerIndex)
+		{
+			facialBlendAnimMediator.selfAnimator.Play(stateName, layerIndex);
+		}
 
 		//// RVA: 0x1110D28 Offset: 0x1110D28 VA: 0x1110D28
 		public bool IsCurrentBodyState(int hash)
@@ -185,7 +198,7 @@ namespace XeApp.Game.Common
 			Anim_SetBool("res_goStart", false);
 			Anim_Play("wait_loop", 0);
 			isStopFrame = true;
-			StartCoroutine(WaitUnlockBoneSpring(0));
+			this.StartCoroutineWatched(WaitUnlockBoneSpring(0));
 		}
 
 		//// RVA: 0x1110E98 Offset: 0x1110E98 VA: 0x1110E98
@@ -256,7 +269,14 @@ namespace XeApp.Game.Common
 		//public float GetNormalizedTime() { }
 
 		//// RVA: 0x1111CE8 Offset: 0x1111CE8 VA: 0x1111CE8
-		//public void Talk(int type) { }
+		public void Talk(int type)
+		{
+			Anim_SetTrigger("menu_toTalk");
+			Anim_SetInteger("menu_talkType", type);
+			Anim_SetBool("menu_breakTalkLoop", false);
+			isStopFrame = true;
+			UnlockBoneSpring(false, 0);
+		}
 
 		//// RVA: 0x1111DB0 Offset: 0x1111DB0 VA: 0x1111DB0
 		//public void SimpleTalk(int type) { }
@@ -268,16 +288,28 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1111E60 Offset: 0x1111E60 VA: 0x1111E60
-		//public void ReactionLoopBreak() { }
+		public void ReactionLoopBreak()
+		{
+			Anim_SetBool("menu_breakReactionLoop", true);
+		}
 
 		//// RVA: 0x1111ECC Offset: 0x1111ECC VA: 0x1111ECC
 		//public bool IsInTalkLoop() { }
 
 		//// RVA: 0x1112020 Offset: 0x1112020 VA: 0x1112020
-		//public void TalkLoopBreak() { }
+		public void TalkLoopBreak()
+		{
+			Anim_SetBool("menu_breakTalkLoop", true);
+		}
 
 		//// RVA: 0x111208C Offset: 0x111208C VA: 0x111208C
-		//public void TimezoneTalk(int type) { }
+		public void TimezoneTalk(int type)
+		{
+			Anim_SetTrigger("menu_toTimezone");
+			Anim_SetInteger("menu_timezoneId", type);
+			isStopFrame = true;
+			UnlockBoneSpring(false, 0);
+		}
 
 		//// RVA: 0x1112134 Offset: 0x1112134 VA: 0x1112134
 		//public void PlayAnimationPresent(int id) { }

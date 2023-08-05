@@ -23,7 +23,7 @@ namespace XeApp.Game.Menu
 			LimitBg = 4,
 		}
 
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private Text m_setBgTitle;
 		[SerializeField]

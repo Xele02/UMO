@@ -1,4 +1,5 @@
 
+using System.Collections.Generic;
 using UnityEngine;
 using XeApp.Game.Common;
 using XeSys.Gfx;
@@ -137,8 +138,8 @@ namespace XeApp.Game.Menu
 			if(m_divaFriendIconDecrationBehaviour != null)
 			{
 				m_divaFriendIconDecrationBehaviour.SetFriendFavoriteIcon(false, false);
-				m_divaFriendIconDecrationBehaviour.SetDegreeIcon(playerData.NDOLELKAJNL.MDPKLNFFDBO_EmblemId);
-				m_divaFriendIconDecrationBehaviour.SetDegreeNumber(playerData.NDOLELKAJNL.HMFFHLPNMPH);
+				m_divaFriendIconDecrationBehaviour.SetDegreeIcon(playerData.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId);
+				m_divaFriendIconDecrationBehaviour.SetDegreeNumber(playerData.NDOLELKAJNL_Degree.HMFFHLPNMPH);
 			}
 			CMMKCEPBIHI.AECDJDIJJKD_ApplySkills(ref m_calcStatusResult, divaData, null, playerData, null, null, null);
 			m_status.Clear();
@@ -179,13 +180,13 @@ namespace XeApp.Game.Menu
 					isFav = true;
 				}
 				m_divaFriendIconDecrationBehaviour.SetFriendFavoriteIcon(isFriend, isFav);
-				m_divaFriendIconDecrationBehaviour.SetDegreeIcon(friendPlayerData.NDOLELKAJNL.MDPKLNFFDBO_EmblemId);
-				m_divaFriendIconDecrationBehaviour.SetDegreeNumber(friendPlayerData.NDOLELKAJNL.HMFFHLPNMPH);
+				m_divaFriendIconDecrationBehaviour.SetDegreeIcon(friendPlayerData.NDOLELKAJNL_DegreeData.MDPKLNFFDBO_EmblemId);
+				m_divaFriendIconDecrationBehaviour.SetDegreeNumber(friendPlayerData.NDOLELKAJNL_DegreeData.HMFFHLPNMPH);
 			}
 			m_status.Clear();
 			m_status.Add(divaData.CMCKNKKCNDK_EquippedStatus);
 			Change(divaData, null, luck, 0, type);
-			TodoLogger.Log(0, "?? rarity");
+			TodoLogger.LogError(TodoLogger.ToCheck, "?? rarity");
 		}
 
 		//// RVA: 0x17E29F8 Offset: 0x17E29F8 VA: 0x17E29F8
@@ -287,7 +288,18 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17E2F34 Offset: 0x17E2F34 VA: 0x17E2F34
-		//public static int GetEquipmentLuck(List<GCIJNCFDNON> sceneList) { }
+		public static int GetEquipmentLuck(List<GCIJNCFDNON_SceneInfo> sceneList)
+		{
+			int res = 0;
+			for(int i = 0; i < sceneList.Count; i++)
+			{
+				if(sceneList[i] != null)
+				{
+					res += sceneList[i].MJBODMOLOBC_Luck;
+				}
+			}
+			return res;
+		}
 
 		//// RVA: 0x17D4F90 Offset: 0x17D4F90 VA: 0x17D4F90
 		public void SetActive(bool isActive)

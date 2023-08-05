@@ -123,7 +123,7 @@ namespace XeSys.Gfx
 		// RVA: 0x2049F94 Offset: 0x2049F94 VA: 0x2049F94
 		public Layout() : this(false)
 		{
-
+			return;
 		}
 
 		// RVA: 0x2049F9C Offset: 0x2049F9C VA: 0x2049F9C
@@ -148,7 +148,7 @@ namespace XeSys.Gfx
 		// // RVA: 0x204A3AC Offset: 0x204A3AC VA: 0x204A3AC
 		public void LoadFromString(string layoutText)
 		{
-			TodoLogger.Log(0, "Layout LoadFromString");
+			TodoLogger.LogError(0, "Layout LoadFromString");
 		}
 
 		// // RVA: 0x204A3B0 Offset: 0x204A3B0 VA: 0x204A3B0
@@ -257,7 +257,7 @@ namespace XeSys.Gfx
 		// // RVA: 0x204E888 Offset: 0x204E888 VA: 0x204E888
 		private void ReadAbsoluteLayoutAtt(AbsoluteLayout abs, Dictionary<string, string> dic)
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 			/*ReadCommonAtt(abs, dic);
 			if(dic.ContainsKey(colorAtt))
 			{
@@ -296,7 +296,7 @@ namespace XeSys.Gfx
 		// // RVA: 0x205035C Offset: 0x205035C VA: 0x205035C
 		private void ReadChildrenView(AbsoluteLayout abs, XmlReader reader)
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x204DB44 Offset: 0x204DB44 VA: 0x204DB44
@@ -389,7 +389,10 @@ namespace XeSys.Gfx
 		// public void SetAllInterpolationType(ViewAnimation.InterpolationType type) { }
 
 		// // RVA: 0x2050D58 Offset: 0x2050D58 VA: 0x2050D58
-		// public void StartAllAnim() { }
+		public void StartAllAnim()
+		{
+			m_Root.StartAllAnim();
+		}
 
 		// // RVA: 0x2050D84 Offset: 0x2050D84 VA: 0x2050D84
 		// public void StartAllAnimGoStop(int start, int end) { }

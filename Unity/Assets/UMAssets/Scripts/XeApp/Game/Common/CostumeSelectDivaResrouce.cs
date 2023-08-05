@@ -36,22 +36,22 @@ namespace XeApp.Game.Common
 			bundleName.SetFormat("dv/ca/cmn.xab", System.Array.Empty<object>());
 
 			op = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), "diva_cmn_animator", typeof(RuntimeAnimatorController));
-			yield return op;
+			yield return Co.R(op);
 			divaAnimatorController = op.GetAsset<RuntimeAnimatorController>();
 			loadCount++;
 
 			op = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), "med_cmn_animator", typeof(RuntimeAnimatorController));
-			yield return op;
+			yield return Co.R(op);
 			facialAnimatorController = op.GetAsset<RuntimeAnimatorController>();
 			loadCount++;
 
 			op = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), "menu_diva_param", typeof(DivaMenuParam));
-			yield return op;
+			yield return Co.R(op);
 			divaMenuParam = op.GetAsset<DivaMenuParam>();
 			loadCount++;
 
 			op = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), "diva_cmn_menu_talk_mouth", typeof(AnimationClip));
-			yield return op;
+			yield return Co.R(op);
 			overrideClipList.Add(new MotionOverrideSingleResource("diva_cmn_simple_loop_start_mouth", op.GetAsset<AnimationClip>(), MotionOverrideSingleResource.Target.Mouth));
 			loadCount++;
 
@@ -65,7 +65,7 @@ namespace XeApp.Game.Common
 
 			assetName.SetFormat("diva_{0:D3}_param", m_loadedDivaId);
 			op = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(DivaParam));
-			yield return op;
+			yield return Co.R(op);
 			divaParam = op.GetAsset<DivaParam>();
 			loadCount++;
 
@@ -119,7 +119,7 @@ namespace XeApp.Game.Common
 			//0xE6B8B0
 			bundleName.SetFormat("dv/ca/{0:D3}.xab", m_loadedDivaId);
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operationDiva;
+			yield return Co.R(operationDiva);
 
 			strBuilder.SetFormat("diva_{0:D3}_menu_idle_body", m_loadedDivaId);
 			overrideClipList.Add(new MotionOverrideSingleResource("diva_cmn_simple_idle_body", operationDiva.GetAsset<AnimationClip>(strBuilder.ToString()), MotionOverrideSingleResource.Target.Body));
@@ -134,7 +134,7 @@ namespace XeApp.Game.Common
 
 			bundleName.SetFormat("dv/cl/cs/{0:D3}.xab", m_loadedDivaId);
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operationDiva;
+			yield return Co.R(operationDiva);
 
 			strBuilder.SetFormat("diva_{0:D3}_start_body", m_loadedDivaId);
 			overrideClipList.Add(new MotionOverrideSingleResource("diva_cmn_simple_loop_start_body", operationDiva.GetAsset<AnimationClip>(strBuilder.ToString()), MotionOverrideSingleResource.Target.Body));
@@ -182,7 +182,7 @@ namespace XeApp.Game.Common
 
 			bundleName.SetFormat("dv/cs/{0:D3}_{1:D3}.xab", m_loadedDivaId, modelId);
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
 			assetName.SetFormat("diva_{0:D3}_cos_{1:D3}_prefab", m_loadedDivaId, modelId);
 			divaPrefab = operation.GetAsset<GameObject>(assetName.ToString());
@@ -208,7 +208,7 @@ namespace XeApp.Game.Common
 				{
 					bundleName.SetFormat("dv/cs/{0:D3}_{1:D3}_{2:D2}.xab", m_loadedDivaId, modelId, i);
 					operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-					yield return operation;
+					yield return Co.R(operation);
 
 					List<Texture> list = new List<Texture>();
 					operation.ForEach((Object obj) =>
@@ -230,17 +230,17 @@ namespace XeApp.Game.Common
 					materialList.Add(m);
 				}
 			}
-			yield return Co_LoadComponent(m_loadedDivaId, modelId, (List<GameObject> a, GameObject b) =>
+			yield return Co.R(Co_LoadComponent(m_loadedDivaId, modelId, (List<GameObject> a, GameObject b) =>
 			{
 				//0xE69344
 				prefabEffect = a;
 				prefabWind = b;
-			});
-			yield return Co_LoadBoneSpringSuppress(m_loadedDivaId, modelId, (Dictionary<BoneSpringSuppressor.Preset, BoneSpringSuppressParam> a) =>
+			}));
+			yield return Co.R(Co_LoadBoneSpringSuppress(m_loadedDivaId, modelId, (Dictionary<BoneSpringSuppressor.Preset, BoneSpringSuppressParam> a) =>
 			{
 				//0xE6938C
 				boneSpringResource.suppress.presets = a;
-			});
+			}));
 			if (coroutineEnd != null)
 				coroutineEnd();
 		}

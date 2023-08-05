@@ -261,7 +261,7 @@ namespace CriWare
 					player.Pause(wasPausedOnDisable);
 					if(restartOnEnable)
 					{
-						StartCoroutine(RestartPlayerRoutine());
+						this.StartCoroutineWatched(RestartPlayerRoutine());
 					}
 				}
 			}

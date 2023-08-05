@@ -14,19 +14,19 @@ namespace XeApp.Core
 		// // RVA: 0x1D7679C Offset: 0x1D7679C VA: 0x1D7679C
 		private SubSceneBase()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x1D767C0 Offset: 0x1D767C0 VA: 0x1D767C0
 		public SubSceneBase(MainSceneBase mainScene)
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x1D73B30 Offset: 0x1D73B30 VA: 0x1D73B30
 		public void Enter(SubSceneBase prevScene)
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x1D73F18 Offset: 0x1D73F18 VA: 0x1D73F18
@@ -35,7 +35,7 @@ namespace XeApp.Core
 		// // RVA: 0x1D73AF4 Offset: 0x1D73AF4 VA: 0x1D73AF4
 		public void Update()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(0, "TODO");
 		}
 
 		// // RVA: 0x1D74088 Offset: 0x1D74088 VA: 0x1D74088

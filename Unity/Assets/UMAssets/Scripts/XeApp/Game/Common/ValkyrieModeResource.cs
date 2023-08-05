@@ -25,7 +25,7 @@ namespace XeApp.Game.Common
 		public void LoadResources(int id, int valkyrie_id)
 		{
 			isLoadedMain = false;
-			StartCoroutine(Co_LoadResources(id, valkyrie_id));
+			this.StartCoroutineWatched(Co_LoadResources(id, valkyrie_id));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73CB00 Offset: 0x73CB00 VA: 0x73CB00
@@ -42,7 +42,7 @@ namespace XeApp.Game.Common
 
 			bundleName.SetFormat("gm/bt/{0:D4}.xab", id);
 			AssetBundleLoadAllAssetOperationBase operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
 			assetName.SetFormat("game_bt_{0:D4}_prefab", id);
 			mainPrefab = operation.GetAsset<GameObject>(assetName.ToString());
@@ -54,7 +54,7 @@ namespace XeApp.Game.Common
 
 			bundleName.Set("gm/bt/cmn.xab");
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
-			yield return operation;
+			yield return Co.R(operation);
 
 			assetName.SetFormat("val_{0:D4}_bt_cam_start", valkyrie_id);
 			changeCameraBeginAnimClip = operation.GetAsset<AnimationClip>(assetName.ToString());

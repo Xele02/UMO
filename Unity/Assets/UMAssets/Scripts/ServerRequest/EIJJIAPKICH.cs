@@ -3,15 +3,12 @@
 public class EIJJIAPKICH { } 
 public class EIJJIAPKICH_RequestToken : CACGCMBKHDI_Request
 {
-	// public override bool OIDCBBGLPHL { get; } // ??
-
-	// // RVA: 0x12EB988 Offset: 0x12EB988 VA: 0x12EB988 Slot: 7
-	// public override bool GINMIBJOABO() { }
+	public override bool OIDCBBGLPHL { get { return true; } } // 0x12EB988 GINMIBJOABO
 
 	// // RVA: 0x12EB990 Offset: 0x12EB990 VA: 0x12EB990 Slot: 12
 	public override void DHLDNIEELHO()
     {
-        TodoLogger.Log(0, "TODO");
+        TodoLogger.LogError(0, "TODO");
     }
 
 	// [CompilerGeneratedAttribute] // RVA: 0x6C4260 Offset: 0x6C4260 VA: 0x6C4260

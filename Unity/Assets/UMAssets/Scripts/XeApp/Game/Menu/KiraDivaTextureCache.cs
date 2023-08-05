@@ -11,12 +11,15 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x14BE494 Offset: 0x14BE494 VA: 0x14BE494 Slot: 5
-		// public override void Terminated() { }
+		public override void Terminated()
+		{
+			Clear();
+		}
 
 		// RVA: 0x14BE49C Offset: 0x14BE49C VA: 0x14BE49C Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
 		{
-			TodoLogger.Log(0, "CreateIconTexture");
+			TodoLogger.LogError(0, "CreateIconTexture");
 			return null;
 		}
 

@@ -22,7 +22,7 @@ namespace XeApp.Game.MiniGame
 		private ShootingEnemySummonData[] m_summonDatas;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

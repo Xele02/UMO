@@ -41,7 +41,7 @@ namespace XeSys.Gfx
 						}
 					}
 				}
-				UnityEngine.Debug.LogError("Can't find abs layout with id " + defData.exid+", vals are "+str);
+				TodoLogger.LogError(TodoLogger.Layout, "Can't find abs layout with id " + defData.exid+", vals are "+str);
 			}
 			//UMO end
 			return new LayoutSymbolData(defData, abs, this);
@@ -71,7 +71,7 @@ namespace XeSys.Gfx
 					layout.StartChildrenAnimLoop(preset.first, preset.second);
 				break;
 				default:
-					UnityEngine.Debug.LogError("undefined PresetType : "+preset.type.ToString());
+					TodoLogger.LogError(TodoLogger.Layout, "undefined PresetType : "+preset.type.ToString());
 				break;	
 			}
 		}
@@ -94,13 +94,29 @@ namespace XeSys.Gfx
 					layout.StartChildrenAnimGoStop(frame, frame);
 					break;
 				default:
-					UnityEngine.Debug.LogError("undefined PresetType : " + preset.type);
+					TodoLogger.LogError(TodoLogger.Layout, "undefined PresetType : " + preset.type);
 					break;
 			}
 		}
 
 		// // RVA: 0x1EF9500 Offset: 0x1EF9500 VA: 0x1EF9500
-		// public void GoToLabelFrame(LabelPreset preset, AbsoluteLayout layout, int frame) { }
+		public void GoToLabelFrame(LabelPreset preset, AbsoluteLayout layout, int frame)
+		{
+			if(preset.type < LabelPreset.Type.Table)
+			{
+				int a = Mathf.RoundToInt(layout.FrameAnimation.SearchLabelFrame(preset.first));
+				layout.StartSiblingAnimGoStop(a + frame, a + frame);
+			}
+			else if(preset.type >= LabelPreset.Type.SingleChildren && preset.type < LabelPreset.Type.TableChildren)
+			{
+				int a = Mathf.RoundToInt(layout[0].FrameAnimation.SearchLabelFrame(preset.first));
+				layout.StartChildrenAnimGoStop(a + frame, a + frame);
+			}
+			else
+			{
+				TodoLogger.LogError(TodoLogger.Layout, "undefined PresetType : " + preset.type);
+			}
+		}
 
 		// [ConditionalAttribute] // RVA: 0x6926EC Offset: 0x6926EC VA: 0x6926EC
 		// // RVA: 0x1EF982C Offset: 0x1EF982C VA: 0x1EF982C

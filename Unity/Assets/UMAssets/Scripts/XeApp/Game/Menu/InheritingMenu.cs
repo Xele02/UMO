@@ -1,14 +1,16 @@
 using System;
 using UnityEngine;
+using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
 	public class InheritingMenu : MonoBehaviour, IDisposable
 	{
-		// private PopupSnsContent m_snsContent; // 0xC
-		// private PopupSnsInheritingContent m_snsInheritingContent; // 0x10
-		// private PopupWindowControl m_snsCoopControl; // 0x14
-		// private Action m_inheritingSuccess; // 0x18
+		private PopupSnsContent m_snsContent; // 0xC
+		private PopupSnsInheritingContent m_snsInheritingContent; // 0x10
+		private PopupWindowControl m_snsCoopControl; // 0x14
+		private Action m_inheritingSuccess; // 0x18
 
 		public bool IsOpen { get; private set; } // 0x1C
 
@@ -26,13 +28,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x13DE2BC Offset: 0x13DE2BC VA: 0x13DE2BC
 		public void Awake()
 		{
-			TodoLogger.Log(5, "InheritingMenu Awake");
+			return;
 		}
 
 		// // RVA: 0x13DE2C0 Offset: 0x13DE2C0 VA: 0x13DE2C0
 		public void Start()
 		{
-			TodoLogger.Log(5, "InheritingMenu Start");
+			return;
 		}
 
 		// // RVA: 0x13DE2C4 Offset: 0x13DE2C4 VA: 0x13DE2C4
@@ -45,7 +47,10 @@ namespace XeApp.Game.Menu
 		// private void SetCurrentScreenOrientation() { }
 
 		// // RVA: 0x13DE4B0 Offset: 0x13DE4B0 VA: 0x13DE4B0
-		// public void PopupShowMenu(bool isPreparation, Action inheritingSuccess, Action closeCallback, LayoutMonthlyPassTakeover monthlylayout) { }
+		public void PopupShowMenu(bool isPreparation, Action inheritingSuccess, Action closeCallback, LayoutMonthlyPassTakeover monthlylayout)
+		{
+			TodoLogger.LogError(TodoLogger.Popup, "PopupShowMenu");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E588C Offset: 0x6E588C VA: 0x6E588C
 		// // RVA: 0x13DE4EC Offset: 0x13DE4EC VA: 0x13DE4EC
@@ -62,7 +67,58 @@ namespace XeApp.Game.Menu
 		// private void PopupShowPreparationMenu(bool isTitle = False, Action callback, Action errorToTitle) { }
 
 		// // RVA: 0x13DECD4 Offset: 0x13DECD4 VA: 0x13DECD4
-		// public void PopupShowPreparationNotice(bool isTitle = False, Action callback, Action errorToTitle) { }
+		public void PopupShowPreparationNotice(bool isTitle = false, Action callback = null, Action errorToTitle = null)
+		{
+			PopupSnsSetting setting = new PopupSnsSetting();
+			setting.TitleText = MessageManager.Instance.GetBank("common").GetMessageByLabel("popup_inh_title_000");
+			setting.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			setting.WindowSize = SizeType.Middle;
+			setting.IsTitle = isTitle;
+			setting.ButtonCallbackTwitter = () =>
+			{
+				//0x13E162C
+				TodoLogger.LogNotImplemented("InheritingMenu.PopupShowPreparationNotice.ButtonCallbackTwitter");
+			};
+			setting.ButtonCallbackFacebook = () =>
+			{
+				//0x13E16A4
+				TodoLogger.LogNotImplemented("InheritingMenu.PopupShowPreparationNotice.ButtonCallbackFacebook");
+			};
+			setting.ButtonCallbackLine = () =>
+			{
+				//0x13E171C
+				TodoLogger.LogNotImplemented("InheritingMenu.PopupShowPreparationNotice.ButtonCallbackLine");
+			};
+			setting.ButtonCallbackShow = (bool status) =>
+			{
+				//0x13E0C20
+				if(status)
+				{
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().OFMECFHNCHA_Popup.PFCBKBFONJA_SetPopupNextShowTime(ILDKBCLAFPB.EHNBPANMAKA_Popup.FEGJEHDIEMM.HLFFEADNEHB_AccountBindPopup, Utility.GetCurrentUnixTime() + 2592000); // ??0x8d00  0x27
+				}
+				else
+				{
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().OFMECFHNCHA_Popup.PFCBKBFONJA_SetPopupNextShowTime(ILDKBCLAFPB.EHNBPANMAKA_Popup.FEGJEHDIEMM.HLFFEADNEHB_AccountBindPopup, Utility.GetCurrentUnixTime());
+				}
+				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			};
+			m_snsCoopControl = PopupWindowManager.Show(setting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x13E1794
+				if(callback != null)
+					callback();
+			}, null, () =>
+			{
+				//0x13E17A8
+				m_snsContent = m_snsCoopControl.Content as PopupSnsContent;
+				m_snsContent.SetButtonSnsStatus(LayoutPopupSnsSetting.eButtonType.Twitter, HDEEBKIFLNI.HHCJCDFCLOB.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line) ? LayoutPopupSnsSetting.eButtonStatus.Coop : LayoutPopupSnsSetting.eButtonStatus.NotCoop);
+				m_snsContent.SetButtonSnsStatus(LayoutPopupSnsSetting.eButtonType.Facebook, HDEEBKIFLNI.HHCJCDFCLOB.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter) ? LayoutPopupSnsSetting.eButtonStatus.Coop : LayoutPopupSnsSetting.eButtonStatus.NotCoop);
+				m_snsContent.SetButtonSnsStatus(LayoutPopupSnsSetting.eButtonType.Line, HDEEBKIFLNI.HHCJCDFCLOB.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook) ? LayoutPopupSnsSetting.eButtonStatus.Coop : LayoutPopupSnsSetting.eButtonStatus.NotCoop);
+			}, null);
+		}
 
 		// // RVA: 0x13DF250 Offset: 0x13DF250 VA: 0x13DF250
 		// private void SnsInheriting(HDEEBKIFLNI.DGNPPLKNCGH platform, LayoutMonthlyPassTakeover monthlylayout) { }
@@ -94,7 +150,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x13E02A8 Offset: 0x13E02A8 VA: 0x13E02A8 Slot: 4
 		public void Dispose()
 		{
-			TodoLogger.Log(0, "Displose");
+			TodoLogger.LogError(0, "Displose");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E5AE4 Offset: 0x6E5AE4 VA: 0x6E5AE4

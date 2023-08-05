@@ -4,7 +4,7 @@ namespace UnityStandardAssets.ImageEffects
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.LogError(0, "Implement monobehaviour");
 		}
 	}
 }

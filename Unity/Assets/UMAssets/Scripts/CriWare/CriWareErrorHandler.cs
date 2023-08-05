@@ -12,9 +12,9 @@ namespace CriWare
 		// [ObsoleteAttribute] // RVA: 0x634C44 Offset: 0x634C44 VA: 0x634C44
 		// public static CriWareErrorHandler.Callback callback; // 0x8
 		public uint messageBufferCounts = 8; // 0x20
-		// private static int initializationCount; // 0xC
+		private static int initializationCount; // 0xC
 
-		// public static string errorMessage { get; set; } // 0x0
+		public static string errorMessage { get; set; } // 0x0
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6364FC Offset: 0x6364FC VA: 0x6364FC
 		// // RVA: 0x2BAA120 Offset: 0x2BAA120 VA: 0x2BAA120
@@ -27,44 +27,58 @@ namespace CriWare
 		// // RVA: 0x2BAA448 Offset: 0x2BAA448 VA: 0x2BAA448
 		private void Awake()
 		{
-			TodoLogger.Log(5, "CriWareErrorHandler Awake");
+			initializationCount++;
+			if (initializationCount == 1)
+			{
+				TodoLogger.LogError(TodoLogger.CriWareErrorHandler, "CriWareErrorHandler.Awake");
+				if (!dontDestroyOnLoad)
+					return;
+				DontDestroyOnLoad(transform.gameObject);
+			}
+			else
+			{
+				Destroy(this);
+			}
 		}
 
 		// // RVA: 0x2BAAB48 Offset: 0x2BAAB48 VA: 0x2BAAB48 Slot: 4
 		protected override void OnEnable()
 		{
-			TodoLogger.Log(5, "CriWareErrorHandler OnEnable");
+			base.OnEnable();
+			TodoLogger.LogError(TodoLogger.CriWareErrorHandler, "CriWareErrorHandler.OnEnable");
 		}
 
 		// // RVA: 0x2BAAC10 Offset: 0x2BAAC10 VA: 0x2BAAC10 Slot: 5
 		protected override void OnDisable()
 		{
 			base.OnDisable();
-			TodoLogger.Log(100, "CriWareErrorHandler OnDisable");
+			TodoLogger.LogError(TodoLogger.CriWareErrorHandler, "CriWareErrorHandler.OnDisable");
 		}
 
 		// // RVA: 0x2BAAC9C Offset: 0x2BAAC9C VA: 0x2BAAC9C
 		private void Start()
 		{
-			TodoLogger.Log(5, "CriWareErrorHandler Start");
+			return;
 		}
 
 		// // RVA: 0x2BAACA0 Offset: 0x2BAACA0 VA: 0x2BAACA0 Slot: 6
 		public override void CriInternalUpdate()
 		{
-			TodoLogger.Log(0, "TODO");
+			if (enableDebugPrintOnTerminal)
+				return;
+			TodoLogger.LogError(TodoLogger.CriWareErrorHandler, "CriWareErrorHandler.CriInternalUpdate");
 		}
 
 		// // RVA: 0x2BAAFA0 Offset: 0x2BAAFA0 VA: 0x2BAAFA0 Slot: 7
 		public override void CriInternalLateUpdate()
 		{
-			TodoLogger.Log(0, "TODO");
+			return;
 		}
 
 		// // RVA: 0x2BAAFA4 Offset: 0x2BAAFA4 VA: 0x2BAAFA4
 		private void OnDestroy()
 		{
-			TodoLogger.Log(0, "TODO");
+			TodoLogger.LogError(TodoLogger.CriWareErrorHandler, "CriWareErrorHandler.OnDestroy");
 		}
 
 		// // RVA: 0x2BAACB0 Offset: 0x2BAACB0 VA: 0x2BAACB0

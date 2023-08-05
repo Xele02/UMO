@@ -64,10 +64,8 @@ namespace XeSys
 		// // RVA: 0x23A51DC Offset: 0x23A51DC VA: 0x23A51DC
 		public static void SetForceWideScreen(bool isOn)
 		{
-			TodoLogger.Log(0, "Fix isForceWideScreen");
-			isForceWideScreen = isOn;
-			PlayerPrefs.SetInt("forceWideScreen", isOn ? 1 : 0);
-			PlayerPrefs.Save();
+			UMO_PlayerPrefs.SetInt("forceWideScreen", isOn ? 1 : 0);
+			UMO_PlayerPrefs.Save();
 		}
 
 		// // RVA: 0x23A524C Offset: 0x23A524C VA: 0x23A524C
@@ -105,9 +103,9 @@ namespace XeSys
 			rawScreenAreaRect = XeSafeArea.GetScreenArea();
 			BaseScreenSize = new Vector2(1184, 792);
 
-			int forceWS = PlayerPrefs.GetInt("forceWideScreen", 1);
-			if(forceWS != 1)
-				forceWS = 0;
+			int isForceWideScreen = UMO_PlayerPrefs.GetInt("forceWideScreen", 1);
+			if(isForceWideScreen != 1)
+				isForceWideScreen = 0;
 			
 			AddToSystemGroup(InputManager.Create(inputManagerPrefab));
 			AddToSystemGroup(CriFileRequestManager.HEGEKFMJNCC(criFileRequestManagerPrefab));
@@ -122,7 +120,7 @@ namespace XeSys
 		private void ResetGcMemoryProfile()
 		{
 			gcCheckTime = 0;
-			gcMinUseMemorySize = 0x540be3ff20000000; // ??
+			gcMinUseMemorySize = 9999999999; // ??
 			gcMaxUseMemorySize = 0;
 		}
 
@@ -135,9 +133,9 @@ namespace XeSys
 				ResetGcMemoryProfile();
 			}
 			long totalMem = GC.GetTotalMemory(false);
-			if(totalMem > gcMaxUseMemorySize)
+			if(gcMaxUseMemorySize < totalMem)
 				gcMaxUseMemorySize = totalMem;
-			if(gcMinUseMemorySize == 0 || totalMem < gcMinUseMemorySize)
+			if(totalMem < gcMinUseMemorySize)
 				gcMinUseMemorySize = totalMem;
 			UpdateScreenSize();
 			FileLoader.Instance.Update();

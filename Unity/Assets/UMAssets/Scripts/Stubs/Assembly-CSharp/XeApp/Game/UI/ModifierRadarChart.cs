@@ -6,7 +6,7 @@ namespace XeApp.Game.UI
 {
 	public class ModifierRadarChart : LayoutUGUIScriptBase, IMeshModifier
 	{
-    public void Awake() { UnityEngine.Debug.LogError("Immplement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 
 		public void ModifyMesh(Mesh mesh)
 		{

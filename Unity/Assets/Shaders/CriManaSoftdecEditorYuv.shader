@@ -47,7 +47,7 @@ Shader "CriMana/SofdecEditorYuv" {
 			{
 				v2f o;
 				o.pos = UnityObjectToClipPos(v.vertex);
-				o.uv  = mul(MovieUvTransform, float4(TRANSFORM_TEX(v.texcoord, _MainTex), 0.0, 1.0));
+				o.uv  = float4(TRANSFORM_TEX(v.texcoord, _MainTex), 0.0, 1.0);
 				o.uv.y = 1 - o.uv.y;
 				return o;
 			}

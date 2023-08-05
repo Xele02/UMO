@@ -33,9 +33,9 @@ namespace XeApp.Game.Menu
 		private Camera divaCamera; // 0x44
 
 		public bool IsLoading { get; private set; } // 0x48
-		//public MenuDivaVoiceTable VoiceTable { get; } 0xECA3B4
-		//public MenuDivaVoiceTableCos VoiceTableCos { get; } 0xECA3BC
-		//public IList<int> ReactionWeights { get; } 0xECA3C4
+		public MenuDivaVoiceTable VoiceTable { get { return voiceTable; } } //0xECA3B4
+		public MenuDivaVoiceTableCos VoiceTableCos { get { return voiceTableCos; } } //0xECA3BC
+		public IList<int> ReactionWeights { get { return divaMenuParam.ReactionWeights; } } //0xECA3C4
 		public int DivaId { get { return divaObject != null ? divaObject.divaId : -1; } } //0xECA3F0
 		public int ModelId { get { return divaObject != null ? divaObject.modelId : -1; } } //0xECA4A8
 		public int ColorId { get { return divaObject != null ? divaObject.colorId : -1; } } //0xECA560
@@ -80,7 +80,7 @@ namespace XeApp.Game.Menu
 		public void Load(int divaId, int modelId, int colorId, DivaResource.MenuFacialType facialType, bool defaultVisible = true)
 		{
 			IsLoading = true;
-			StartCoroutine(Coroutine_Load(divaId, modelId, colorId, facialType, defaultVisible));
+			this.StartCoroutineWatched(Coroutine_Load(divaId, modelId, colorId, facialType, defaultVisible));
 		}
 
 		//// RVA: 0xEB9C30 Offset: 0xEB9C30 VA: 0xEB9C30
@@ -92,7 +92,7 @@ namespace XeApp.Game.Menu
 			{
 				divaInfo = playerData.NBIGLBMHEDC[GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId - 1];
 			}
-			StartCoroutine(Coroutine_Load(divaInfo.AHHJLDLAPAN_DivaId, divaInfo.EOJIGHEFIAA_GetHomeDivaPrismCostumeId(), divaInfo.LHGJHJLGPBE_GetHomeDivaColorId(), facialType, defaultVisible));
+			this.StartCoroutineWatched(Coroutine_Load(divaInfo.AHHJLDLAPAN_DivaId, divaInfo.EOJIGHEFIAA_GetHomeDivaPrismCostumeId(), divaInfo.LHGJHJLGPBE_GetHomeDivaColorId(), facialType, defaultVisible));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C6F94 Offset: 0x6C6F94 VA: 0x6C6F94
@@ -213,10 +213,16 @@ namespace XeApp.Game.Menu
 		//public void IdleCrossFade(string stateName = "") { }
 
 		//// RVA: 0xECAEB4 Offset: 0xECAEB4 VA: 0xECAEB4
-		//public void SetBodyCrossFade(string stateName, float duration = 0,07) { }
+		public void SetBodyCrossFade(string stateName, float duration = 0.07f)
+		{
+			divaObject.SetBodyCrossFade(stateName, duration);
+		}
 
 		//// RVA: 0xECAEF0 Offset: 0xECAEF0 VA: 0xECAEF0
-		//public void PlayFacialBlendAnimator(string stateName, int layerIndex) { }
+		public void PlayFacialBlendAnimator(string stateName, int layerIndex)
+		{
+			divaObject.PlayFacialBlendAnimator(stateName, layerIndex);
+		}
 
 		//// RVA: 0xECAF2C Offset: 0xECAF2C VA: 0xECAF2C
 		public bool IsCurrentBodyState(int hash)
@@ -226,7 +232,12 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C700C Offset: 0x6C700C VA: 0x6C700C
 		//// RVA: 0xECAF60 Offset: 0xECAF60 VA: 0xECAF60
-		//public IEnumerator Co_WaitTransition() { }
+		public IEnumerator Co_WaitTransition()
+		{
+			//0xECC510
+			while (divaObject.IsInTransition)
+				yield return null;
+		}
 
 		//// RVA: 0xEB3CD8 Offset: 0xEB3CD8 VA: 0xEB3CD8
 		public void SetActive(bool active, bool isIdle = true)
@@ -278,7 +289,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xECB2A8 Offset: 0xECB2A8 VA: 0xECB2A8
-		//public void SetPosition(Vector3 position) { }
+		public void SetPosition(Vector3 position)
+		{
+			if (divaObject == null)
+				return;
+			divaObject.LockBoneSpring(0);
+			divaObject.transform.localPosition = position;
+			divaObject.UnlockBoneSpring(false, 0);
+		}
 
 		//// RVA: 0xECB408 Offset: 0xECB408 VA: 0xECB408
 		public bool isWaitUnlockBoneSpring()
@@ -335,7 +353,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEB470C Offset: 0xEB470C VA: 0xEB470C
-		//public string GetMessageByLabel(string label) { }
+		public string GetMessageByLabel(string label)
+		{
+			return messageBank.GetMessageByLabel(label);
+		}
 
 		//// RVA: 0xECB868 Offset: 0xECB868 VA: 0xECB868
 		//public string GetMessageByIndex(int index) { }
@@ -344,7 +365,10 @@ namespace XeApp.Game.Menu
 		//public string GetFullName() { }
 
 		//// RVA: 0xECB89C Offset: 0xECB89C VA: 0xECB89C
-		//public void SetCameraRot(Vector3 rotation) { }
+		public void SetCameraRot(Vector3 rotation)
+		{
+			divaCamera.transform.localEulerAngles = rotation;
+		}
 
 		//// RVA: 0xECB90C Offset: 0xECB90C VA: 0xECB90C
 		//public void ChangeCameraRot(Vector3 rotation, float duration) { }

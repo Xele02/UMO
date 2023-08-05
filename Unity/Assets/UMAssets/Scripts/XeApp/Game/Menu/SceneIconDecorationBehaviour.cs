@@ -1,3 +1,4 @@
+using System;
 using System.Text;
 using System.Text.RegularExpressions;
 using UnityEngine;
@@ -47,6 +48,7 @@ namespace XeApp.Game.Menu
 				m_texts[i].material = ui.Font.material;
 			}
 			m_episodeNameParts = Instantiate(m_episodeNamePrefab);
+			BundleShaderInfo.Instance.FixMaterialShader(m_episodeNameParts.gameObject);
 			m_episodeNameImage = m_episodeNameParts.GetComponent<Image>();
 			m_episodeNameText = m_episodeNameParts.GetComponentInChildren<Text>();
 			m_episodeNameRectTransform = m_episodeNameParts.GetComponent<RectTransform>();
@@ -135,7 +137,7 @@ namespace XeApp.Game.Menu
 					//0x136DEC8
 					return x.KELFCMEOPPM_EpisodeId == episodeId;
 				}) >> 0x1f) ^ 1;
-				str = PIGBBNDPPJC.EJOJNFDHDHN(episodeId);
+				str = PIGBBNDPPJC.EJOJNFDHDHN_GetEpName(episodeId);
 			}
 			for(int i = 0; i < m_texts.Length; i++)
 			{
@@ -217,7 +219,7 @@ namespace XeApp.Game.Menu
 				m_strBuilder.Set(Regex.Replace(level.ToString(), "[0-9]", (Match p) =>
 				{
 					//0x136DE50
-					return (p.Value[0] - 288).ToString();
+					return Convert.ToChar(p.Value[0] + 0xfee0).ToString();
 				}));
 			}
 			else
@@ -226,7 +228,7 @@ namespace XeApp.Game.Menu
 			}
 			m_texts[0].text = "Lv";
 			m_texts[0].enabled = true;
-			m_texts[2].text = m_strBuilder.ToString();
+			m_texts[2].text = "   " + m_strBuilder.ToString();
 			m_texts[2].enabled = true;
 			m_texts[3].text = isMax ? "   m" : "";
 			m_texts[3].enabled = true;
@@ -257,16 +259,12 @@ namespace XeApp.Game.Menu
 			{
 				for(int i = 0; i < m_animeCurve.Count; i++)
 				{
-					bool b = isMax;
-					bool c = !b;
-					if (c)
-						b = isShowLeaf;
-					if((!c || b) || isMultiSkill)
+					if(isMax || isShowLeaf || isMultiSkill)
 					{
 						float val = m_animeCurve[i].Evaluate(time);
 						if(isMax)
 						{
-							m_texts[i].color = new Color(1, 1, 1, val);
+							m_texts[i + 2].color = new Color(1, 1, 1, val);
 						}
 						if(isShowLeaf)
 						{

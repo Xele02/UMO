@@ -421,7 +421,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 				}
 				else
 				{
-					if(info.IOKJFDPOEFP_InstallerStatusInfo.contentsSize > 0)
+					if(info.IOKJFDPOEFP_InstallerStatusInfo.contentsSize != 0)
 					{
 						if(info.ICKGJODOCBB != null)
 						{
@@ -472,7 +472,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 	// // RVA: 0x1C37140 Offset: 0x1C37140 VA: 0x1C37140
 	private void DLHJNILCAGE(JEHIAIPJNJF_FileDownloader.AFGDFAJEBFA_DldInfo PHKJOMLDNOB)
 	{
-		TodoLogger.Log(0, "TODO");
+		TodoLogger.LogError(0, "TODO");
 	}
 
 	// // RVA: 0x1C35730 Offset: 0x1C35730 VA: 0x1C35730
@@ -522,7 +522,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 			}
 			if(File.Exists(info.ADHHKEMDOIK_LocalPath))
 			{
-				UnityEngine.Debug.Log("Delete File "+info.ADHHKEMDOIK_LocalPath);
+				TodoLogger.Log(TodoLogger.Filesystem, "Delete File "+info.ADHHKEMDOIK_LocalPath);
 				File.Delete(info.ADHHKEMDOIK_LocalPath);
 			}
 			installer.Copy(info.NFCMNIEHJML_ServerPath, info.ADHHKEMDOIK_LocalPath);

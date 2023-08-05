@@ -123,23 +123,23 @@ namespace XeApp.Game.Menu
 			eventType = JGEOBNENMAH.HHCJCDFCLOB.NNABDGKFEMK_EventType;
 			if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 			{
-				TodoLogger.Log(0, "InitParam Event");
+				TodoLogger.LogError(0, "InitParam Event");
 			}
 			if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
 			{
-				TodoLogger.Log(0, "InitParam Event");
+				TodoLogger.LogError(0, "InitParam Event");
 			}
 			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
-				TodoLogger.Log(0, "InitParam Event");
+				TodoLogger.LogError(0, "InitParam Event");
 			}
 			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 			{
-				TodoLogger.Log(0, "InitParam Event");
+				TodoLogger.LogError(0, "InitParam Event");
 			}
 			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
 			{
-				TodoLogger.Log(0, "InitParam Event");
+				TodoLogger.LogError(0, "InitParam Event");
 			}
 		}
 
@@ -147,7 +147,6 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4F89C Offset: 0xB4F89C VA: 0xB4F89C
 		private IEnumerator Co_LoadCommonLayout()
 		{
-			UnityEngine.Debug.Log("Enter Co_LoadCommonLayout");
 			StringBuilder bundleName; // 0x14
 			AssetBundleLoadLayoutOperationBase lytAssetOp; // 0x18
 
@@ -155,14 +154,13 @@ namespace XeApp.Game.Menu
 			bundleName = new StringBuilder();
 			bundleName.Set("ly/022.xab");
 			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_ResultCommon");
-			yield return lytAssetOp;
-			yield return lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
+			yield return Co.R(lytAssetOp);
+			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
 				//0xB545E4
 				instance.transform.SetParent(transform, false);
 				commonLayoutController = instance.GetComponent<ResultCommonLayoutController>();
-			});
+			}));
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
-			UnityEngine.Debug.Log("Exit Co_LoadCommonLayout");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x722834 Offset: 0x722834 VA: 0x722834
@@ -176,12 +174,12 @@ namespace XeApp.Game.Menu
 			bundleName = new StringBuilder();
 			bundleName.Set("ly/023.xab");
 			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_ResultScore");
-			yield return lytAssetOp;
-			yield return lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
+			yield return Co.R(lytAssetOp);
+			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
 				//0xB546B4
 				instance.transform.SetParent(transform, false);
 				scoreLayoutController = instance.GetComponent<ResultScoreLayoutController>();
-			});
+			}));
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 		}
 
@@ -196,12 +194,12 @@ namespace XeApp.Game.Menu
 			bundleName = new StringBuilder();
 			bundleName.Set("ly/024.xab");
 			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_ResultDiva");
-			yield return lytAssetOp;
-			yield return lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
+			yield return Co.R(lytAssetOp);
+			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
 				//0xB54784
 				instance.transform.SetParent(transform, false);
 				divaLayoutController = instance.GetComponent<ResultDivaLayoutController>();
-			});
+			}));
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 		}
 
@@ -215,11 +213,11 @@ namespace XeApp.Game.Menu
 			if(scoreLayoutInitParam.achieveRewardSetting == null)
 				yield break;
 			lytAssetOp = AssetBundleManager.LoadLayoutAsync(scoreLayoutInitParam.achieveRewardSetting.BundleName, scoreLayoutInitParam.achieveRewardSetting.AssetName);
-			yield return lytAssetOp;
-			yield return lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
+			yield return Co.R(lytAssetOp);
+			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
 				//0xB54854
 				scoreLayoutInitParam.achieveRewardSetting.SetContent(instance);
-			});
+			}));
 			scoreLayoutInitParam.achieveRewardSetting.SetParent(transform);
 			AssetBundleManager.UnloadAssetBundle(scoreLayoutInitParam.achieveRewardSetting.BundleName, false);
 		}
@@ -246,23 +244,23 @@ namespace XeApp.Game.Menu
 			bundleName = new StringBuilder();
 			bundleName.Set("ly/026.xab");
 			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_ResultDrop");
-			yield return lytAssetOp;
-			yield return lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
+			yield return Co.R(lytAssetOp);
+			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
 				//0xB57A58
 				instance.transform.SetParent(transform, false);
 				dropLayoutController = instance.GetComponent<ResultDropLayoutController>();
-			});
+			}));
 			itemSetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "Item");
-			yield return itemSetOp;
+			yield return Co.R(itemSetOp);
 			prefab = itemSetOp.GetAsset<GameObject>();
 			Layout layout = null;
 			TexUVListManager uvMan = null;
 
-			itemSetOp.CreateLayoutCoroutine(prefab.GetComponent<LayoutUGUIRuntime>(), GameManager.Instance.GetSystemFont(), (Layout loadLayout, TexUVListManager loadUvMan) => {
+			yield return Co.R(itemSetOp.CreateLayoutCoroutine(prefab.GetComponent<LayoutUGUIRuntime>(), GameManager.Instance.GetSystemFont(), (Layout loadLayout, TexUVListManager loadUvMan) => {
 				//0xB57B54
 				layout = loadLayout;
 				uvMan = loadUvMan;
-			});
+			}));
 			int num = dropLayoutInitParam.viewDropResultData.HBHMAKNGKFK.Count;
 			dropLayoutInitParam.layoutItemList = new List<LayoutResultDropItem>(num);
 			for(int i = 0; i < num; i++)
@@ -284,7 +282,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4FCB0 Offset: 0xB4FCB0 VA: 0xB4FCB0
 		private IEnumerator Co_LoadEvent01Layout()
 		{
-			TodoLogger.Log(0, "Co_LoadEvent01Layout");
+			TodoLogger.LogError(0, "Co_LoadEvent01Layout");
 			yield return null;
 		}
 
@@ -298,7 +296,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4FDFC Offset: 0xB4FDFC VA: 0xB4FDFC
 		private IEnumerator Co_LoadEvent02Layout()
 		{
-			TodoLogger.Log(0, "Co_LoadEvent02Layout");
+			TodoLogger.LogError(0, "Co_LoadEvent02Layout");
 			yield return null;
 		}
 
@@ -306,7 +304,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4FEA8 Offset: 0xB4FEA8 VA: 0xB4FEA8
 		private IEnumerator Co_LoadEvent03Layout()
 		{
-			TodoLogger.Log(0, "Co_LoadEvent03Layout");
+			TodoLogger.LogError(0, "Co_LoadEvent03Layout");
 			yield return null;
 		}
 
@@ -314,7 +312,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4FF54 Offset: 0xB4FF54 VA: 0xB4FF54
 		private IEnumerator Co_LoadRaidLayout()
 		{
-			TodoLogger.Log(0, "Co_LoadRaidLayout");
+			TodoLogger.LogError(0, "Co_LoadRaidLayout");
 			yield return null;
 		}
 
@@ -322,7 +320,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB50000 Offset: 0xB50000 VA: 0xB50000
 		private IEnumerator Co_LoadGoDivaLayout()
 		{
-			TodoLogger.Log(0, "Co_LoadGoDivaLayout");
+			TodoLogger.LogError(0, "Co_LoadGoDivaLayout");
 			yield return null;
 		}
 
@@ -332,19 +330,17 @@ namespace XeApp.Game.Menu
 			if(TransitionType == MenuTransitionControl.TransitionType.Return)
 				return;
 			InitParam();
-			StartCoroutine(Co_LoadLayout());
+			this.StartCoroutineWatched(Co_LoadLayout());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x722C6C Offset: 0x722C6C VA: 0x722C6C
 		// // RVA: 0xB500EC Offset: 0xB500EC VA: 0xB500EC
 		private IEnumerator Co_LoadLayout()
 		{
-			UnityEngine.Debug.Log("Enter Co_LoadLayout");
 			//0xB5D5E0
-			yield return StartCoroutine(Co_LoadCommonLayout());
-			yield return StartCoroutine(Co_PopupAchieveRewardLayout());
-			yield return StartCoroutine(Co_LoadScoreLayout());
-			UnityEngine.Debug.Log("Exit Co_LoadLayout");
+			yield return this.StartCoroutineWatched(Co_LoadCommonLayout());
+			yield return this.StartCoroutineWatched(Co_PopupAchieveRewardLayout());
+			yield return this.StartCoroutineWatched(Co_LoadScoreLayout());
 		}
 
 		// RVA: 0xB50198 Offset: 0xB50198 VA: 0xB50198 Slot: 19
@@ -395,9 +391,13 @@ namespace XeApp.Game.Menu
 			{
 				if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 				{
-					TodoLogger.Log(0, "Todo Event");
+					TodoLogger.LogError(0, "Todo Event");
 				}
-				TodoLogger.Log(0, "Todo Skip");
+				else
+				{
+					commonLayoutController.ChangeViewForSkipResult(Database.Instance.gameSetup.LiveSkipTicketCount);
+					scoreLayoutController.ChangeViewForSkipResult();
+				}
 			}
 			else
 			{
@@ -428,7 +428,7 @@ namespace XeApp.Game.Menu
 		private void EndScoreResult()
 		{
 			GameManager.Instance.fullscreenFader.Fade(0.2f, new Color(Color.white.r, Color.white.g, Color.white.b, 1));
-			StartCoroutine(Co_EndScoreResult());
+			this.StartCoroutineWatched(Co_EndScoreResult());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x722CE4 Offset: 0x722CE4 VA: 0x722CE4
@@ -448,32 +448,32 @@ namespace XeApp.Game.Menu
 			});
 			if(!isInTutorial)
 			{
-				yield return StartCoroutine(Co_LoadDivaLayout());
+				yield return this.StartCoroutineWatched(Co_LoadDivaLayout());
 			}
-			yield return StartCoroutine(Co_LoadDropLayout());
+			yield return this.StartCoroutineWatched(Co_LoadDropLayout());
 			isEventCollection = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection;
 			if(isEventCollection)
-				yield return StartCoroutine(Co_LoadEvent01Layout());
+				yield return this.StartCoroutineWatched(Co_LoadEvent01Layout());
 			isEventMission = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest;
 			if(isEventMission)
 			{
-				yield return StartCoroutine(Co_LoadEvent02Layout());
+				yield return this.StartCoroutineWatched(Co_LoadEvent02Layout());
 			}
 			isEventBattle = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle;
 			if(isEventBattle)
 			{
-				yield return StartCoroutine(Co_LoadEvent03Layout());
+				yield return this.StartCoroutineWatched(Co_LoadEvent03Layout());
 			}
 			isEventRaid = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid;
 			if(isEventRaid)
 			{
-				yield return StartCoroutine(Co_LoadRaidLayout());
+				yield return this.StartCoroutineWatched(Co_LoadRaidLayout());
 			}
 			isEventGoDiva = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva;
 			if(isEventGoDiva)
 			{
 				divaLayoutController.SetGoDivaLayout();
-				yield return StartCoroutine(Co_LoadGoDivaLayout());
+				yield return this.StartCoroutineWatched(Co_LoadGoDivaLayout());
 			}
 			
 			yield return new WaitForSeconds(0.5f);
@@ -502,7 +502,7 @@ namespace XeApp.Game.Menu
 			{
 				yield return new WaitWhile(() => {
 					//0xB556B0
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					return false;
 				});
 			}
@@ -510,7 +510,7 @@ namespace XeApp.Game.Menu
 			{
 				yield return new WaitWhile(() => {
 					//0xB55770
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					return false;
 				});
 			}
@@ -518,12 +518,12 @@ namespace XeApp.Game.Menu
 			{
 				yield return new WaitWhile(() => {
 					//0xB55830
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					return false;
 				});
 				yield return new WaitWhile(() => {
 					//0xB558F0
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					return false;
 				});
 			}
@@ -531,22 +531,22 @@ namespace XeApp.Game.Menu
 			{
 				yield return new WaitWhile(() => {
 					//0xB559B0
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					return false;
 				});
 				yield return new WaitWhile(() => {
 					//0xB55A70
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					return false;
 				});
 				yield return new WaitWhile(() => {
 					//0xB55B30
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					return false;
 				});
 				yield return new WaitWhile(() => {
 					//0xB55BF0
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					return false;
 				});
 			}
@@ -554,7 +554,7 @@ namespace XeApp.Game.Menu
 			{
 				yield return new WaitWhile(() => {
 					//0xB55CB0
-					TodoLogger.Log(0, "Event");
+					TodoLogger.LogError(0, "Event");
 					return false;
 				});
 			}
@@ -573,7 +573,7 @@ namespace XeApp.Game.Menu
 			}
 			if(isEventBattle)
 			{
-				TodoLogger.Log(0, "Event");
+				TodoLogger.LogError(0, "Event");
 				//event03ScoreLayoutController.SetActive(false);
 				//event03PointLayoutController.SetActive(false);
 			}
@@ -633,7 +633,7 @@ namespace XeApp.Game.Menu
 			{
 				while(GameManager.Instance.fullscreenFader.isFading)
 					yield return null;
-				StartCoroutine(Co_MountMenuScene(false));
+				this.StartCoroutineWatched(Co_MountMenuScene(false));
 			}
 			MenuScene.Instance.InputEnable();
 		}
@@ -660,7 +660,7 @@ namespace XeApp.Game.Menu
 		private void OnClickDivaResultOkayButton()
 		{
 			MenuScene.Instance.InputDisable();
-			StartCoroutine(Co_EndDivaResult());
+			this.StartCoroutineWatched(Co_EndDivaResult());
 		}
 
 		// // RVA: 0xB513BC Offset: 0xB513BC VA: 0xB513BC
@@ -729,7 +729,7 @@ namespace XeApp.Game.Menu
 		private void OnClickDropResultOkayButton()
 		{
 			MenuScene.Instance.InputDisable();
-			StartCoroutine(Co_EndDropResult());
+			this.StartCoroutineWatched(Co_EndDropResult());
 		}
 
 		// // RVA: 0xB51978 Offset: 0xB51978 VA: 0xB51978
@@ -783,7 +783,7 @@ namespace XeApp.Game.Menu
 			}
 			else if(isGoDivaEventOpen)
 			{
-				StartCoroutine(Co_InitGoDivaResult());
+				this.StartCoroutineWatched(Co_InitGoDivaResult());
 			}
 			else if(isBattleEventOpen)
 			{
@@ -791,13 +791,13 @@ namespace XeApp.Game.Menu
 			}
 			else if(isRaidEventOpen)
 			{
-				TodoLogger.Log(0, "Event Raid");
+				TodoLogger.LogError(0, "Event Raid");
 			}
 			else
 			{
 				while(GameManager.Instance.fullscreenFader.isFading)
 					yield return null;
-				StartCoroutine(Co_MountMenuScene(false));
+				this.StartCoroutineWatched(Co_MountMenuScene(false));
 			}
 			MenuScene.Instance.InputEnable();
 		}
@@ -833,20 +833,20 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB52510 Offset: 0xB52510 VA: 0xB52510
 		private void InitEvent01Result()
 		{
-			TodoLogger.Log(0, "InitEvent01Result");
+			TodoLogger.LogError(0, "InitEvent01Result");
 		}
 
 		// // RVA: 0xB526B8 Offset: 0xB526B8 VA: 0xB526B8
 		private bool IsEvent01ResultLoading()
 		{
-			TodoLogger.Log(0, "IsEvent01ResultLoading");
+			TodoLogger.LogError(0, "IsEvent01ResultLoading");
 			return false;
 		}
 
 		// // RVA: 0xB526E4 Offset: 0xB526E4 VA: 0xB526E4
 		private void StartEvent01ResultAnim()
 		{
-			TodoLogger.Log(0, "StartEvent01ResultAnim");
+			TodoLogger.LogError(0, "StartEvent01ResultAnim");
 		}
 
 		// // RVA: 0xB52710 Offset: 0xB52710 VA: 0xB52710
@@ -861,20 +861,20 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB52764 Offset: 0xB52764 VA: 0xB52764
 		private void InitEvent02Result()
 		{
-			TodoLogger.Log(0, "InitEvent02Result");
+			TodoLogger.LogError(0, "InitEvent02Result");
 		}
 
 		// // RVA: 0xB52904 Offset: 0xB52904 VA: 0xB52904
 		private bool IsEvent02ResultLoading()
 		{
-			TodoLogger.Log(0, "IsEvent02ResultLoading");
+			TodoLogger.LogError(0, "IsEvent02ResultLoading");
 			return false;
 		}
 
 		// // RVA: 0xB52930 Offset: 0xB52930 VA: 0xB52930
 		private void StartEvent02ResultAnim()
 		{
-			TodoLogger.Log(0, "StartEvent02ResultAnim");
+			TodoLogger.LogError(0, "StartEvent02ResultAnim");
 		}
 
 		// // RVA: 0xB5295C Offset: 0xB5295C VA: 0xB5295C
@@ -893,7 +893,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB529D4 Offset: 0xB529D4 VA: 0xB529D4
 		private IEnumerator Co_InitGoDivaResult()
 		{
-			TodoLogger.Log(0, "Co_InitGoDivaResult");
+			TodoLogger.LogError(0, "Co_InitGoDivaResult");
 			yield return null;
 		}
 
@@ -912,7 +912,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB52B04 Offset: 0xB52B04 VA: 0xB52B04
 		private void InitEvent03WinLose()
 		{
-			TodoLogger.Log(0, "InitEvent03WinLose");
+			TodoLogger.LogError(0, "InitEvent03WinLose");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x722F3C Offset: 0x722F3C VA: 0x722F3C
@@ -1008,7 +1008,7 @@ namespace XeApp.Game.Menu
 			{
 				if(GameManager.Instance.IsTutorial)
 				{
-					TodoLogger.Log(0, "Tuto");
+					TodoLogger.LogError(0, "Tuto");
 				}
 				else
 				{
@@ -1023,7 +1023,7 @@ namespace XeApp.Game.Menu
 					switch(Database.Instance.gameSetup.musicInfo.gameEventType)
 					{
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection:
-							TodoLogger.Log(0, "Event");
+							TodoLogger.LogError(0, "Event");
 							break;
 						default:
 							MusicSelectArgs args = new MusicSelectArgs();
@@ -1031,19 +1031,19 @@ namespace XeApp.Game.Menu
 							MenuScene.Instance.Mount(TransitionUniqueId.MUSICSELECT, args, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle:
-							TodoLogger.Log(0, "Event");
+							TodoLogger.LogError(0, "Event");
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN:
-							TodoLogger.Log(0, "Event");
+							TodoLogger.LogError(0, "Event");
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest:
-							TodoLogger.Log(0, "Event");
+							TodoLogger.LogError(0, "Event");
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid:
-							TodoLogger.Log(0, "Event");
+							TodoLogger.LogError(0, "Event");
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva:
-							TodoLogger.Log(0, "Event");
+							TodoLogger.LogError(0, "Event");
 							break;
 					}
 				}
@@ -1079,7 +1079,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB54540 Offset: 0xB54540 VA: 0xB54540
-		// public static int GetInScreenTouchCount() { }
+		public static int GetInScreenTouchCount()
+		{
+			return InputManager.Instance.GetInScreenTouchCount();
+		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x7231D4 Offset: 0x7231D4 VA: 0x7231D4
 		// // RVA: 0xB5489C Offset: 0xB5489C VA: 0xB5489C

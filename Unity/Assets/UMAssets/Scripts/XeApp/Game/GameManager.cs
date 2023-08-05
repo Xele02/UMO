@@ -15,6 +15,7 @@ using System.IO;
 using CriWare;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using XeApp.Game.Tutorial;
 
 namespace XeApp.Game
 {
@@ -157,7 +158,7 @@ namespace XeApp.Game
 		public UGUILetterBoxController LetterBox { get; set; } // 0x114
 		public LongScreenFrame LongScreenFrame { get; set; } // 0x11C
 		public UnityAction onDownLoadFinish { get; set; }	// 0x138
-		public bool InputEnabled { get { Debug.LogWarning("TODO"); return true; } set { Debug.LogError("TODO Set Input Enabled "+value); } } // get_InputEnabled 0x999F0C set_InputEnabled 0x999F38 
+		public bool InputEnabled { get { return eventSystemController.InputEnabled; } set { eventSystemController.InputEnabled = value; } } // 0x999F0C 0x999F38 
 		public EventSystemControl EventSystemControl { get { return eventSystemController; } } // get_EventSystemControl 0x999F6C 
 		public LayoutCommonTextureManager UnionTextureManager { get { return unionTextureManager; } } // get_UnionTextureManager 0x999F74 
 		public UGUICommonManager UguiCommonManager { get { return uguiCommonManager; } } // get_UguiCommonManager 0x999F7C 
@@ -207,7 +208,7 @@ namespace XeApp.Game
 		// // RVA: 0x99A334 Offset: 0x99A334 VA: 0x99A334
 		public void AddLastBackButtonHandler(GameManager.PushBackButtonHandler handler)
 		{
-			TodoLogger.Log(5, "AddLastBackButtonHandler");
+			m_pushBackButtonHandlerList.Add(handler);
 		}
 
 		// // RVA: 0x988E80 Offset: 0x988E80 VA: 0x988E80
@@ -219,7 +220,7 @@ namespace XeApp.Game
 		// // RVA: 0x98B534 Offset: 0x98B534 VA: 0x98B534
 		public void ClearPushBackButtonHandler()
 		{
-			TodoLogger.Log(5, "GameManager.ClearPushBackButtonHandler()");
+			m_pushBackButtonHandlerList.Clear();
 		}
 
 		// // RVA: 0x99A3B4 Offset: 0x99A3B4 VA: 0x99A3B4
@@ -245,11 +246,64 @@ namespace XeApp.Game
 		// // RVA: 0x99A7A4 Offset: 0x99A7A4 VA: 0x99A7A4
 		public IEnumerator UnloadAllAssets()
 		{
-    		UnityEngine.Debug.Log("Enter UnloadAllAssets");
 			//0x1428C74
-			TodoLogger.Log(5, "GameManager.UnloadAllAssets");
-    		UnityEngine.Debug.Log("Exit UnloadAllAssets");
-			yield break;
+			m_layoutObjectCache.ReleaseAll();
+			BgControl.ForceDestoryTexture();
+			sceneIconTextureCache.Terminated();
+			menuResidentTextureCache.Terminated();
+			divaIconTextureCache.Terminated();
+			bgTextureCache.Terminated();
+			itemTextureCache.Terminated();
+			musicJacketTextureCache.Terminated();
+			valkyrieIconTextureCache.Terminated();
+			costumeTextureCache.Terminated();
+			eventBannerTextureCache.Terminated();
+			pilotTextureCache.Terminated();
+			questEventTextureCache.Terminated();
+			snsIconCache.Terminated();
+			episodeIconCache.Terminated();
+			gachaProductIconCache.Terminated();
+			denomIconCache.Terminated();
+			m_storyImageCache.Terminated();
+			musicRatioTextureCache.Terminated();
+			m_subPlateIconCache.Terminated();
+			m_lobbyTextureCache.Terminated();
+			m_decorationItemTextureCache.Terminated();
+			m_raidBossTextureCache.Terminated();
+			m_kiraDivaTextureCache.Terminated();
+			m_homeBgIconTextureCache.Terminated();
+			unionTextureManager.Release();
+			uguiCommonManager.Release();
+			IsUnionDataInitialized = false;
+			TipsControl.Instance.Release();
+			if(BasicTutorialManager.HasInstanced)
+			{
+				BasicTutorialManager.Instance.Release();
+			}
+			if(TutorialManager.HasInstanced)
+			{
+				TutorialManager.Instance.Release();
+			}
+			if(divaResource != null)
+			{
+				divaResource.ReleaseAll();
+			}
+			for(int i = 0; i < subDivaResource.Length; i++)
+			{
+				if (subDivaResource[i] != null)
+					subDivaResource[i].ReleaseAll();
+			}
+			iconDecorationCache.Release();
+			FacialNameDatabase.Release();
+			if(m_snsNotification != null)
+			{
+				Destroy(m_snsNotification.gameObject);
+				m_snsNotification = null;
+			}
+			yield return Co.R(AssetBundleManager.UnloadAllAssetBundle());
+			yield return Resources.UnloadUnusedAssets();
+			IsCacheActive = false;
+
 		}
 
 		// // RVA: 0x99A82C Offset: 0x99A82C VA: 0x99A82C
@@ -266,7 +320,6 @@ namespace XeApp.Game
 		// // RVA: 0x99AC08 Offset: 0x99AC08 VA: 0x99AC08
 		private IEnumerator Co_InitScreen()
 		{
-    		UnityEngine.Debug.Log("Enter Co_InitScreen");
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
 			// public GameManager <>4__this; // 0x10
@@ -320,7 +373,6 @@ namespace XeApp.Game
 			ReInitScreen();
 			yield return null;
 			isBootInitialized = true;
-    		UnityEngine.Debug.Log("Exit Co_InitScreen");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADAB0 Offset: 0x6ADAB0 VA: 0x6ADAB0
@@ -372,7 +424,8 @@ namespace XeApp.Game
 		// // RVA: 0x99B0D4 Offset: 0x99B0D4 VA: 0x99B0D4
 		private void OnFontTextureRebuilt(Font font)
 		{
-			TodoLogger.Log(5, "GameManager.OnFontTextureRebuilt");
+			if(font.name == GetSystemFont().name)
+				isDirtyFontUpdate = true;
 		}
 
 		// // RVA: 0x99B194 Offset: 0x99B194 VA: 0x99B194
@@ -382,13 +435,18 @@ namespace XeApp.Game
 				isDirtyFontUpdate = false;
 			if(UpdateAction != null)
 			{
-				m_sceneIconAnimeTime = m_sceneIconAnimeTime + TimeWrapper.deltaTime;
-				UpdateAction(TimeWrapper.deltaTime);
+				m_sceneIconAnimeTime += TimeWrapper.deltaTime;
+				UpdateAction(m_sceneIconAnimeTime);
 			}
 		}
 
 		// // RVA: 0x99B250 Offset: 0x99B250 VA: 0x99B250
-		// public void OnPushBackButton() { }
+		public void OnPushBackButton()
+		{
+			if (m_pushBackButtonHandlerList.IsEmpty())
+				return;
+			m_pushBackButtonHandlerList[0].Invoke();
+		}
 
 		// // RVA: 0x99A938 Offset: 0x99A938 VA: 0x99A938
 		private void Initialize()
@@ -439,7 +497,6 @@ namespace XeApp.Game
 		// // RVA: 0x99DCFC Offset: 0x99DCFC VA: 0x99DCFC
 		private IEnumerator InitializeSystemCoroutine()
 		{
-    		UnityEngine.Debug.Log("Enter InitializeSystemCoroutine");
 			//private int <>1__state; // 0x8
 			//private object <>2__current; // 0xC
 			//public GameManager <>4__this; // 0x10
@@ -459,9 +516,8 @@ namespace XeApp.Game
 				yield return null;
 
 			KDLPEDBKMID.HHCJCDFCLOB.OEPPEGHGNNO = this.InstallEvent;
-			NDABOOOOENC.HHCJCDFCLOB.NCDLCIPGPNC();
+			NDABOOOOENC.HHCJCDFCLOB.NCDLCIPGPNC_Login();
 			IsSystemInitialized = true;
-    		UnityEngine.Debug.Log("Exit InitializeSystemCoroutine");
 		}
 
 		// // RVA: 0x99DD84 Offset: 0x99DD84 VA: 0x99DD84
@@ -492,9 +548,21 @@ namespace XeApp.Game
 				FacialNameDatabase.Create(bootAssetOperation.GetAsset<TextAsset>());
 				AssetBundleManager.UnloadAssetBundle("bt.xab");
 			}
-
-			TodoLogger.Log(0, "finish UnionDataCoroutine (Tips / Sns");
-
+			TipsControl tips = TipsControl.Instance;
+			GameObject root = GameObject.Find("Canvas-Popup");
+			tips.transform.SetParent(root.transform.GetChild(0), false);
+			tips.LoadResource();
+			tips.transform.SetAsFirstSibling();
+			while (!tips.IsInitialized)
+				yield return null;
+			AssetBundleLoadAssetOperation op = AssetBundleManager.LoadAssetAsync("ly/094.xab", "SnsNotification", typeof(GameObject));
+			yield return op;
+			m_snsNotification = Instantiate(op.GetAsset<GameObject>()).GetComponent<SnsNotification>();
+			m_snsNotification.transform.SetParent(root.transform.GetChild(0), false);
+			m_snsNotification.transform.SetAsLastSibling();
+			yield return this.StartCoroutineWatched(m_snsNotification.LoadLayout());
+			m_snsNotification.gameObject.SetActive(false);
+			AssetBundleManager.UnloadAssetBundle("ly/094.xab", false);
 			IsUnionDataInitialized = true;
 		}
 
@@ -596,25 +664,144 @@ namespace XeApp.Game
 		// // RVA: 0x99E7FC Offset: 0x99E7FC VA: 0x99E7FC
 		public void SetDispLongScreenFrame(bool isShow)
 		{
-			TodoLogger.Log(5, "GameManager.SetDispLongScreenFrame");
+			if(SystemManager.isLongScreenDevice)
+			{
+				if(LongScreenFrameInstance != null)
+				{
+					LongScreenFrameInstance.SetActive(isShow);
+				}
+			}
 		}
 
 		// // RVA: 0x99E908 Offset: 0x99E908 VA: 0x99E908
-		// public void SetLongScreenFrameColor(int colorNo) { }
+		public void SetLongScreenFrameColor(int colorNo)
+		{
+			if(SystemManager.isLongScreenDevice)
+			{
+				if(SystemManager.HasSafeArea)
+				{
+					if(LongScreenFrame != null)
+					{
+						LongScreenFrame.SetFrameSprite(colorNo);
+					}
+				}
+			}
+		}
 
 		// // RVA: 0x99EA40 Offset: 0x99EA40 VA: 0x99EA40
-		// public void ResetResetLetterBox() { }
+		public void ResetResetLetterBox()
+		{
+			if(SystemManager.isLongScreenDevice)
+			{
+				if(SystemManager.HasSafeArea)
+				{
+					if(LongScreenFrame != null)
+					{
+						LongScreenFrame.ReasetLetterBox();
+					}
+				}
+			}
+		}
 
 		// // RVA: 0x99EB70 Offset: 0x99EB70 VA: 0x99EB70
 		private void ReInitScreen()
 		{
-			TodoLogger.Log(5, "GameManager.ReInitScreen");
+			Rect r = XeSafeArea.GetRect();
+			SystemManager.rawSafeAreaRect = r;
+			Rect r2 = XeSafeArea.GetScreenArea();
+			SystemManager.rawScreenAreaRect = r2;
+			SystemManager.Instance.UpdateScreenSize();
+			SystemManager.rawAppScreenRect = new Rect(0, 0, Screen.width, Screen.height);
+			screenSizeType = Q.B();
+			Debug.Log("SetupResolution:screenSizeType=" + screenSizeType);
+			float baseWidth;
+			float baseHeight;
+			if (screenSizeType == 0)
+			{
+				if(SystemManager.isLongScreenDevice)
+				{
+					Debug.Log("SetupResolution:AppEnv");
+					baseWidth = 1184;
+					baseHeight = 792;
+				}
+				else
+				{
+					Debug.Log("SetupResolution:AppEnv");
+					baseWidth = 1184;
+					baseHeight = 666;
+				}
+			}
+			else
+			{
+				Debug.Log("SetupResolution:XGA");
+				baseWidth = bx[screenSizeType - 1];
+				baseHeight = by[screenSizeType - 1];
+			}
+			SetupResolution(baseWidth, baseHeight);
+			UpdateInputArea(false);
+			if(systemLayoutCanvas != null)
+			{
+				FlexibleCanvasLayoutChanger fl = systemLayoutCanvas.gameObject.GetComponent<FlexibleCanvasLayoutChanger>();
+				if(fl != null)
+				{
+					fl.UpdateForLongScreenDevice();
+					fl.CanvasScalerModeCheck();
+				}
+			}
+			if(popupCanvas != null)
+			{
+				FlexibleCanvasLayoutChanger fl = systemLayoutCanvas.gameObject.GetComponent<FlexibleCanvasLayoutChanger>();
+				if (fl != null)
+				{
+					fl.UpdateForLongScreenDevice();
+					fl.CanvasScalerModeCheck();
+				}
+			}
+			if (SystemManager.isLongScreenDevice)
+			{
+				if(SystemManager.HasSafeArea)
+				{
+					SetLongScreenFrameColor(localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.HLABNEIEJPM_SafeAreaDesign);
+				}
+				else
+				{
+					ResetResetLetterBox();
+				}
+			}
 		}
 
 		// // RVA: 0x99F2B4 Offset: 0x99F2B4 VA: 0x99F2B4
 		public void UpdateInputArea(bool isAr)
 		{
-			TodoLogger.Log(5, "GameManager.UpdateInputArea");
+			if(isAr)
+			{
+				SystemManager.rawAppScreenRect = new Rect(0, 0, AppResolutionWidth, AppResolutionHeight);
+			}
+			else
+			{
+				if(!SystemManager.isLongScreenDevice)
+				{
+					SystemManager.rawAppScreenRect = new Rect(0, 0, AppResolutionWidth, AppResolutionHeight);
+				}
+				else
+				{
+					if(SystemManager.HasSafeArea)
+					{
+						Rect safe = XeSafeArea.GetRect();
+						float safeWidth169 = safe.height * 16.0f / 9.0f;
+						float marginX = (safe.width - safeWidth169) * 0.5f;
+						SystemManager.rawAppScreenRect = new Rect(
+							AppResolutionWidth / SystemManager.rawScreenAreaRect.width * (marginX + safe.x), 
+							AppResolutionHeight / SystemManager.rawScreenAreaRect.height * safe.y, 
+							safeWidth169 * AppResolutionWidth / SystemManager.rawScreenAreaRect.width, 
+							AppResolutionHeight / SystemManager.rawScreenAreaRect.height * SystemManager.rawSafeAreaRect.height);
+					}
+					else
+					{
+						SystemManager.rawAppScreenRect = new Rect(0, 0, Screen.width, Screen.height);
+					}
+				}
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADC18 Offset: 0x6ADC18 VA: 0x6ADC18
@@ -655,7 +842,76 @@ namespace XeApp.Game
 		// // RVA: 0x99DE40 Offset: 0x99DE40 VA: 0x99DE40
 		public void SetupResolution(float baseWidth, float baseHeight)
 		{
-			TodoLogger.Log(5, "SetupResolution");
+			float nativeX = SystemManager.NativeScreenSize.x;
+			float nativeY = SystemManager.NativeScreenSize.y;
+			float sX = nativeX;
+			if(SystemManager.isLongScreenDevice)
+			{
+				sX = nativeY * 16.0f / 9.0f;
+			}
+			float f = SystemManager.rawSafeAreaRect.y;
+			float f2 = baseHeight / nativeY;
+			if (f < 0)
+			{
+				f = baseHeight;
+				if(SystemManager.isLongScreenDevice)
+				{
+					f /= nativeY;
+				}
+				else
+				{
+					if (1 - nativeY / baseHeight <= 1 - sX / baseWidth)
+						f = baseHeight / nativeY;
+					else
+						f = baseWidth / sX;
+					f2 = f;
+				}
+			}
+			else
+			{
+				if(!SystemManager.isLongScreenDevice)
+				{
+					if (1 - nativeY / baseHeight <= 1 - sX / baseWidth)
+						f = baseHeight / nativeY;
+					else
+						f = baseWidth / sX;
+					f2 = f;
+				}
+				else
+				{
+					f = (SystemManager.rawSafeAreaRect.y * baseHeight) / (SystemManager.rawScreenAreaRect.height - SystemManager.rawSafeAreaRect.y) + baseHeight;
+					f /= nativeY;
+				}
+			}
+			// not sure of those 2 min
+			float r2 = Mathf.Min(f2, 1);
+			float r = Mathf.Min(f, 1);
+			float width = Mathf.RoundToInt(sX * r);
+			float height = Mathf.RoundToInt(nativeY * r);
+			SystemManager.longScreenReferenceResolution = new Vector2(sX * r2, nativeY * r2);
+			if (SystemManager.isLongScreenDevice)
+				width = nativeX * height / nativeY;
+			ResolutionWidth = SystemManager.NativeScreenSize.x;
+			ResolutionHeight = SystemManager.NativeScreenSize.y;
+			object[] obj = new object[5];
+			obj[0] = "Screen.SetResolution(";
+			obj[1] = width;
+			obj[2] = ",";
+			obj[3] = height;
+			obj[4] = ") start";
+			Debug.Log(string.Concat(obj));
+			Screen.SetResolution(Mathf.RoundToInt(width), Mathf.RoundToInt(height), true);
+			obj = new object[5];
+			obj[0] = "Screen.SetResolution(";
+			obj[1] = width;
+			obj[2] = ",";
+			obj[3] = height;
+			obj[4] = ") end";
+			Debug.Log(string.Concat(obj));
+			SystemManager.longScreenSizeWithSafeArea = new Vector2(width, height);
+			AppResolutionWidth = width;
+			AppResolutionHeight = height;
+			ResetResetLetterBox();
 		}
 
 		// // RVA: 0x99F750 Offset: 0x99F750 VA: 0x99F750
@@ -664,13 +920,41 @@ namespace XeApp.Game
 		// // RVA: 0x99FB5C Offset: 0x99FB5C VA: 0x99FB5C
 		public void RevertResolution()
 		{
-			TodoLogger.Log(5, "GameMAnager.RevertResolution()");
+			Resolution res = Screen.currentResolution;
+			float x = AppResolutionWidth;
+			float y = AppResolutionHeight;
+			if (x < y)
+			{
+				AppResolutionWidth = y;
+				AppResolutionHeight = x;
+			}
+			if (AppResolutionWidth == res.width && AppResolutionHeight == res.height)
+			{
+				// Nothing
+			}
+			else
+			{
+				object[] obj = new object[5];
+				obj[0] = "ReSetupResolution(";
+				obj[1] = AppResolutionWidth;
+				obj[2] = ",";
+				obj[3] = AppResolutionHeight;
+				obj[4] = ")";
+				Debug.Log(string.Concat(obj));
+				Screen.SetResolution((int)AppResolutionWidth, (int)AppResolutionHeight, true);
+			}
+			UpdateInputArea(false);
+			ResetResetLetterBox();
 		}
 
 		// // RVA: 0x99FF14 Offset: 0x99FF14 VA: 0x99FF14
 		public void SetupResolutionDefault()
 		{
-			TodoLogger.Log(5, "SetupResolutionDefault");
+			if (Q.B() == screenSizeType)
+				return;
+			screenSizeType = Q.B();
+			if (screenSizeType > 0 && screenSizeType <= bx.Length)
+				SetupResolution(bx[screenSizeType - 1], by[screenSizeType - 1]);
 		}
 
 		// // RVA: 0x9A0068 Offset: 0x9A0068 VA: 0x9A0068
@@ -679,8 +963,8 @@ namespace XeApp.Game
 		// // RVA: 0x99E7D4 Offset: 0x99E7D4 VA: 0x99E7D4
 		public void SetFPS(int fps)
 		{
-			UnityEngine.QualitySettings.vSyncCount = 0;
-			UnityEngine.Application.targetFrameRate = fps;
+			QualitySettings.vSyncCount = 0;
+			Application.targetFrameRate = fps;
 		}
 
 		// // RVA: 0x9A01BC Offset: 0x9A01BC VA: 0x9A01BC
@@ -689,7 +973,7 @@ namespace XeApp.Game
 		// // RVA: 0x9A01C8 Offset: 0x9A01C8 VA: 0x9A01C8
 		public void SetNeverSleep(bool enable)
 		{
-			TodoLogger.Log(5, "GameManager SetNeverSleep");
+			Screen.sleepTimeout = enable ? -1 : -2;
 		}
 
 		// // RVA: 0x9A01DC Offset: 0x9A01DC VA: 0x9A01DC
@@ -872,7 +1156,10 @@ namespace XeApp.Game
 		// // RVA: 0x9A0758 Offset: 0x9A0758 VA: 0x9A0758
 		public void ResetSystemCanvasCamera()
 		{
-			TodoLogger.Log(5, "GameManager.ResetSystemCanvasCamera");
+			systemCanvasCamera.orthographicSize = 5;
+			systemCanvasCamera.nearClipPlane = 0.3f;
+			systemCanvasCamera.farClipPlane = 1000;
+			systemCanvasCamera.depth = 99;
 		}
 
 		// // RVA: 0x99B4B0 Offset: 0x99B4B0 VA: 0x99B4B0
@@ -921,21 +1208,41 @@ namespace XeApp.Game
 		// public static void FadeReset() { }
 
 		// // RVA: 0x9A08E0 Offset: 0x9A08E0 VA: 0x9A08E0
-		// public void ShowSnsNotice(int snsId, UnityAction pushAction, bool isButtonEnable = True) { }
+		public void ShowSnsNotice(int snsId, UnityAction pushAction, bool isButtonEnable = true)
+		{
+			if(m_snsNotification != null)
+			{
+				m_snsNotification.gameObject.SetActive(true);
+				m_snsNotification.Show(snsId, pushAction, isButtonEnable);
+			}
+		}
 
 		// // RVA: 0x9A09FC Offset: 0x9A09FC VA: 0x9A09FC
 		public void CloseSnsNotice()
 		{
-			TodoLogger.Log(5, "GameManager CloseSnsNotice");
+			if(m_snsNotification != null)
+			{
+				m_snsNotification.Close();
+			}
 		}
 
 		// // RVA: 0x9A0AB0 Offset: 0x9A0AB0 VA: 0x9A0AB0
-		// public void ShowOfferNotice(UnityAction pushAction, bool isButtonEnable = True) { }
+		public void ShowOfferNotice(UnityAction pushAction, bool isButtonEnable = true)
+		{
+			if(m_snsNotification != null)
+			{
+				m_snsNotification.gameObject.SetActive(true);
+				m_snsNotification.ShowOffer(pushAction, isButtonEnable);
+			}
+		}
 
 		// // RVA: 0x9A0BB8 Offset: 0x9A0BB8 VA: 0x9A0BB8
 		public void CloseOfferNotice()
 		{
-			TodoLogger.Log(5, "GameManager CloseOfferNotice");
+			if(m_snsNotification != null)
+			{
+				m_snsNotification.Close();
+			}
 		}
 
 		// // RVA: 0x9A040C Offset: 0x9A040C VA: 0x9A040C
@@ -975,13 +1282,15 @@ namespace XeApp.Game
 		// // RVA: 0x9A0294 Offset: 0x9A0294 VA: 0x9A0294
 		public void SetTouchEffectVisible(bool isVisible)
 		{
-			TodoLogger.Log(5, "SetTouchEffectVisible");
+			if (!isVisible)
+				m_touchParticle.Stop();
+			m_touchParticle.gameObject.SetActive(isVisible);
 		}
 
 		// // RVA: 0x9A0C6C Offset: 0x9A0C6C VA: 0x9A0C6C
 		public void SetTouchEffectMode(bool isRhythmGame)
 		{
-			TodoLogger.Log(0, "SetTouchEffectMode");
+			m_touchParticle.SetTouchEffectMode(isRhythmGame);
 		}
 
 		// // RVA: 0x9A0CA0 Offset: 0x9A0CA0 VA: 0x9A0CA0
@@ -1008,16 +1317,16 @@ namespace XeApp.Game
 			if(m_viewPlayerData == null)
 				m_viewPlayerData = new DFKGGBMFFGB_PlayerInfo();
 			m_viewPlayerData.KHEKNNFCAOI_Init(null, false);
-			TodoLogger.Log(0, "CreateViewPlayerData");
-			//JKIJLMMLNPL.DJNPDEOLNHD();
+			JKIJLMMLNPL.DJNPDEOLNHD_UpdateMacrossCannonPower();
 		}
 
 		// // RVA: 0x98874C Offset: 0x98874C VA: 0x98874C
 		public void ResetViewPlayerData()
 		{
-			TodoLogger.Log(0, "ResetViewPlayerData");
-			//tmp
-			CreateViewPlayerData();
+			if (m_viewPlayerData == null)
+				return;
+			m_viewPlayerData.KHEKNNFCAOI_Init(null, false);
+			JKIJLMMLNPL.DJNPDEOLNHD_UpdateMacrossCannonPower();
 		}
 
 		// // RVA: 0x9A0DF8 Offset: 0x9A0DF8 VA: 0x9A0DF8
@@ -1109,8 +1418,25 @@ namespace XeApp.Game
 		// // RVA: 0x9A1348 Offset: 0x9A1348 VA: 0x9A1348
 		public bool InstallEvent(int type, float per)
 		{
-			TodoLogger.Log(0, "InstallEvent");
-			return true;
+			switch(type)
+			{
+				case 1:
+					DownloadBar.HighResolutionModeFlag = false;
+					DownloadBar.Begin();
+				break;
+				case 2:
+					DownloadBar.SetPer(per);
+					if(onDownLoadFinish != null)
+						onDownLoadFinish();
+					DownloadBar.End();
+				break;
+				case 3:
+					DownloadBar.SetPer(per);
+					break;
+				case 4:
+					return DownloadBar.IsReady;
+			}
+			return false;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADE28 Offset: 0x6ADE28 VA: 0x6ADE28
@@ -1164,7 +1490,7 @@ namespace XeApp.Game
 			int vidQuality = 0;
 			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PMGMMMGCEEI_Video == 0)
 			{
-				vidQuality = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CBLEFELBNDN_GetQuality();
+				vidQuality = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CBLEFELBNDN_GetVideoQuality();
 			}
 			List<MusicDirectionParamBase.ConditionSetting> settingList = new List<MusicDirectionParamBase.ConditionSetting>();
 			for(int i = 0; i < mi.onStageDivaNum; i++)
@@ -1255,7 +1581,21 @@ namespace XeApp.Game
 		// // RVA: 0x9A1958 Offset: 0x9A1958 VA: 0x9A1958
 		public void SetTransmissionIconPosition(bool isARMode)
 		{
-			TodoLogger.Log(5, "GameManager.SetTransmissionIconPosition()");
+			if(transmissionIcon != null)
+			{
+				Vector2 pos = transmissionIcon.GetComponent<RectTransform>().anchoredPosition;
+				Vector2 pos2 = pos;
+				if (isARMode)
+				{
+					pos = new Vector2(0, -150);
+				}
+				else
+				{
+					pos = Vector2.zero;
+				}
+				transmissionIcon.GetComponent<RectTransform>().anchoredPosition = pos;
+				transmissionIcon.GetComponent<RectTransform>().anchoredPosition = pos2;
+			}
 		}
 	}
 }

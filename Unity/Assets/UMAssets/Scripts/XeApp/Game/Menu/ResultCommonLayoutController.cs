@@ -40,7 +40,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xCFED98 Offset: 0xCFED98 VA: 0xCFED98
-		//public void ChangeViewForSkipResult(int count) { }
+		public void ChangeViewForSkipResult(int count)
+		{
+			layoutTitle.gameObject.SetActive(true);
+			layoutTitle.ChangeTitle(LayoutResultHeaderTitle.TitleType.SKIP);
+			layoutTitle.SetSkipCount(count);
+			layoutOkay.gameObject.SetActive(true);
+			layoutOkay.InitAnim();
+		}
 
 		//// RVA: 0xCFEE9C Offset: 0xCFEE9C VA: 0xCFEE9C
 		//public void ChangeViewForSupportResult() { }

@@ -9,7 +9,7 @@ namespace XeApp.Game.MiniGame
 		private InOutAnime m_inOutAnim;
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement Monobehaviour");
+			TodoLogger.LogError(0, "Implement Monobehaviour");
 		}
 	}
 }

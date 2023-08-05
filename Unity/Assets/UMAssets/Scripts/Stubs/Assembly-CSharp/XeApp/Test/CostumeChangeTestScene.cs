@@ -7,7 +7,7 @@ namespace XeApp.Test
 	{
 		private void Awake()
 		{
-			UnityEngine.Debug.LogError("Implement monobehaviour");
+			TodoLogger.LogError(0, "Implement monobehaviour");
 		}
 		public RawImage RTRenderer;
 	}

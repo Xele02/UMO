@@ -70,7 +70,13 @@ namespace CriWare
         // // RVA: 0x294D7A4 Offset: 0x294D7A4 VA: 0x294D7A4
         public CriFsWebInstaller()
         {
-            TodoLogger.Log(5, "CriFsWebInstaller()");
+			criFsWebInstaller_Create(out handle);
+			if(handle != IntPtr.Zero)
+			{
+				CriDisposableObjectManager.Register(this, CriDisposableObjectManager.ModuleType.FsWeb);
+			}
+			else
+				throw new Exception("criFsWebInstaller_Create() failed.");
         }
 
         // // RVA: 0x294DF48 Offset: 0x294DF48 VA: 0x294DF48 Slot: 1
@@ -95,7 +101,7 @@ namespace CriWare
         // // RVA: 0x294D728 Offset: 0x294D728 VA: 0x294D728
         public void Stop()
         {
-            TodoLogger.Log(5, "CriFsWebInstaller Stop");
+            TodoLogger.LogError(TodoLogger.CriFsWebInstaller, "CriFsWebInstaller Stop");
             if(www != null)
             {
                 www.Dispose();
@@ -128,21 +134,29 @@ namespace CriWare
         // public bool GetCRC32(out uint ret_val) { }
 
         // // RVA: 0x294E59C Offset: 0x294E59C VA: 0x294E59C
-        public static void InitializeModule(CriFsWebInstaller.ModuleConfig config)
+        public static void InitializeModule(ModuleConfig config)
 		{
-			TodoLogger.Log(100, "CriFsWebInstaller InitializeModule");
+			if(isInitialized)
+			{
+				UnityEngine.Debug.LogError("[CRIWARE] CriFsWebInstaller module is already initialized.");
+				return;
+			}
+
+			TodoLogger.LogError(TodoLogger.CriFsWebInstaller, "CriFsWebInstaller.InitializeModule");
+			isCrcEnabled = config.crcEnabled;
+			isInitialized = true;
 		}
 
         // // RVA: 0x294E8A4 Offset: 0x294E8A4 VA: 0x294E8A4
         public static void FinalizeModule()
 		{
-			TodoLogger.Log(100, "CriFsWebInstaller FinalizeModule");
+			TodoLogger.LogError(TodoLogger.CriFsWebInstaller, "CriFsWebInstaller FinalizeModule");
 		}
 
 		// // RVA: 0x294C460 Offset: 0x294C460 VA: 0x294C460
 		public static void ExecuteMain()
         {
-            TodoLogger.Log(100, "CriFsWebInstaller ExecuteMain");
+            TodoLogger.LogError(TodoLogger.CriFsWebInstaller, "CriFsWebInstaller.ExecuteMain");
         }
 
         // // RVA: 0x294EC08 Offset: 0x294EC08 VA: 0x294EC08
@@ -161,7 +175,12 @@ namespace CriWare
         // private static extern int criFsWebInstaller_ExecuteMain() { }
 
         // // RVA: 0x294DE30 Offset: 0x294DE30 VA: 0x294DE30
-        // private static extern int criFsWebInstaller_Create(out IntPtr installer) { }
+        private static /*extern */int criFsWebInstaller_Create(out IntPtr installer)
+		{
+			TodoLogger.LogError(TodoLogger.CriFsWebInstaller, "CriFsWebInstaller.criFsWebInstaller_Create");
+			installer = new IntPtr(1);
+			return 0;
+		}
 
         // // RVA: 0x294ED50 Offset: 0x294ED50 VA: 0x294ED50
         // private static extern int criFsWebInstaller_Destroy(IntPtr installer) { }
@@ -175,7 +194,7 @@ namespace CriWare
         // // RVA: 0x294E3D0 Offset: 0x294E3D0 VA: 0x294E3D0
         private static /*extern */int criFsWebInstaller_GetStatusInfo(/*IntPtr*/CriFsWebInstaller installer, out CriFsWebInstaller.StatusInfo status)
         {
-            TodoLogger.Log(5, "criFsWebInstaller_GetStatusInfo");
+            TodoLogger.LogError(TodoLogger.CriFsWebInstaller, "criFsWebInstaller_GetStatusInfo");
             
             status = installer.status;
 
@@ -191,12 +210,12 @@ namespace CriWare
                         status.status = Status.Complete;
 						if (string.IsNullOrEmpty(installer.www.error))
 						{
-							UnityEngine.Debug.Log("Write file " + installer.fileSavePath);
+							TodoLogger.Log(TodoLogger.Filesystem, "Write file " + installer.fileSavePath);
 							System.IO.File.WriteAllBytes(installer.fileSavePath, installer.www.bytes);
 						}
                         else
                         {
-                            UnityEngine.Debug.LogError("Install Error for "+installer.www.url+" : "+installer.www.error);
+                            TodoLogger.LogError(TodoLogger.Filesystem, "Install Error for "+installer.www.url+" : "+installer.www.error);
                         }
                     }
                 }

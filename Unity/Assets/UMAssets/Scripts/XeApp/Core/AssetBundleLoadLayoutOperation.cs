@@ -17,21 +17,21 @@ namespace XeApp.Core
         // RVA: 0xE0FD2C Offset: 0xE0FD2C VA: 0xE0FD2C
         public AssetBundleLoadLayoutOperation(string bundleName, string assetName) : base(bundleName, assetName)
         {
-
+			return;
         }
 
         // RVA: 0xE0FD30 Offset: 0xE0FD30 VA: 0xE0FD30 Slot: 7
         public override bool Update()
         { 
-            //UnityEngine.Debug.Log("Update Load "+m_AssetName+" - req: "+m_request+" - loadedbundle: "+m_loadedAssetBundle+" - error : "+m_loadingError+" - isdone: "+IsDone()+" - iserror : "+IsError());
+            //TodoLogger.Log("Update Load "+m_AssetName+" - req: "+m_request+" - loadedbundle: "+m_loadedAssetBundle+" - error : "+m_loadingError+" - isdone: "+IsDone()+" - iserror : "+IsError());
             if(m_request != null)
                 return !IsDone();
             m_loadedAssetBundle = AssetBundleManager.GetLoadedAssetBundle(m_AssetBundleName, out m_loadingError);
             if(m_loadedAssetBundle != null)
             {
-                UnityEngine.Debug.Log("Request load layout in bundle : "+m_AssetName);
+                TodoLogger.Log(TodoLogger.AssetBundle, "Request load layout in bundle : " + m_AssetName);
                 m_request = m_loadedAssetBundle.m_AssetBundle.LoadAssetAsync(m_AssetName, m_Type);
-                //UnityEngine.Debug.Log("Request load layout in bundle : "+m_AssetName+" "+m_request);
+                //TodoLogger.Log("Request load layout in bundle : "+m_AssetName+" "+m_request);
             }
             return !IsError();
         }
@@ -40,8 +40,6 @@ namespace XeApp.Core
         // RVA: 0xE0FE3C Offset: 0xE0FE3C VA: 0xE0FE3C Slot: 11
         public override IEnumerator InitializeLayoutCoroutine(Font font, Action<GameObject> finish)
         {
-            UnityEngine.Debug.Log("Enter InitializeLayoutCoroutine "+m_AssetName);
-			//UnityEngine.Debug.Log("Enter InitializeLayoutCoroutine request : "+m_request);
 			//0xE110FC
 #if UNITY_EDITOR || UNITY_STANDALONE
 			BundleShaderInfo.Instance.FixMaterialShader(m_request.asset);
@@ -60,11 +58,11 @@ namespace XeApp.Core
             }
             for(int i = 0; i < runtimes.Length; i++)
             {
-                yield return CreateLayoutCoroutine(runtimes[i], font, (Layout layout, TexUVListManager uvMan) => {
+                yield return Co.R(CreateLayoutCoroutine(runtimes[i], font, (Layout layout, TexUVListManager uvMan) => {
                     //0xE10128
                     runtimes[i].UvMan = uvMan;
                     runtimes[i].Layout = layout;
-                });
+                }));
                 runtimes[i].LoadLayout();
             }
             yield return null;
@@ -80,7 +78,6 @@ namespace XeApp.Core
             {
                 finish(instance);
             }
-            UnityEngine.Debug.Log("Exit InitializeLayoutCoroutine "+m_AssetName);
         }
 
         // [IteratorStateMachineAttribute] // RVA: 0x747F58 Offset: 0x747F58 VA: 0x747F58
@@ -110,13 +107,14 @@ namespace XeApp.Core
                     TexUVList uvList = GameManager.Instance.UnionTextureManager.GetTexUvList(runtime.UvListPathList[j]);
                     if(uvList == null)
                     {
+						TodoLogger.Log(TodoLogger.AssetBundle, "CreateLayoutCoroutine from bundle " + m_loadedAssetBundle.m_DebugBundleName); // UMO
                         m_request = m_loadedAssetBundle.m_AssetBundle.LoadAssetAsync<TexUVList>(Path.GetFileName(runtime.UvListPathList[j]));
                         while(!m_request.isDone)
                             yield return null;
                         uvList = m_request.asset as TexUVList;
                     }
                     if(uvList == null)
-                        UnityEngine.Debug.LogError("Failed to load "+Path.GetFileName(runtime.UvListPathList[j]));
+                        TodoLogger.LogError(TodoLogger.AssetBundle, "Failed to load " + Path.GetFileName(runtime.UvListPathList[j]));
                     uvMan.Register(j, uvList);
                 }
                 layout.SettingTexture(uvMan);

@@ -206,7 +206,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			GameSetupData.TeamInfo team = Database.Instance.gameSetup.teamInfo;
 			GameSetupData.MusicInfo music = Database.Instance.gameSetup.musicInfo;
-			m_isLowSpec = !GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.MIHFCOBBIPJ_GetQuality2d();
+			m_isLowSpec = !GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.MIHFCOBBIPJ_Is2DHighQuality();
 			m_is2dMode = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.OOCKIFIHJJN_Is2DMode;
 			m_isValkyrieOff = !GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.AOOKLMAPPLG_IsValkyrieModeEnabled();
 			int pilotId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[team.prismValkyrieId - 1].PFGJJLGLPAC_PilotId;
@@ -387,7 +387,7 @@ namespace XeApp.Game.RhythmGame
 			m_laneController.SetVisibility(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.NFMEIILKACN_NotesRoute == 0);
 			if(GameManager.Instance.IsTutorial)
 			{
-				TodoLogger.Log(0, "Tutorial");
+				TodoLogger.LogError(0, "Tutorial");
 			}
 		}
 
@@ -527,7 +527,7 @@ namespace XeApp.Game.RhythmGame
 					}
 				}
 			}
-			StartCoroutine(WaitEnterAnimeCoroutine(endAction));
+			this.StartCoroutineWatched(WaitEnterAnimeCoroutine(endAction));
 		}
 
 		// // RVA: 0xDCE44C Offset: 0xDCE44C VA: 0xDCE44C Slot: 23
@@ -554,10 +554,10 @@ namespace XeApp.Game.RhythmGame
 						}
 						if(WaitRecoveryFunc != null)
 						{
-							StopCoroutine(WaitRecoveryFunc);
+							this.StopCoroutineWatched(WaitRecoveryFunc);
 						}
 						WaitRecoveryFunc = WaitRecoveryCoroutine();
-						StartCoroutine(WaitRecoveryFunc);
+						this.StartCoroutineWatched(WaitRecoveryFunc);
 					}
 				}
 				if(!m_isContinue)
@@ -668,7 +668,8 @@ namespace XeApp.Game.RhythmGame
 			m_valkyrieCenterUi.SetActive(true);
 			m_valkyrieCenterEffectAnimator.Show();
 			m_valkyrieBottomUi.SetActive(true);
-			m_mainGaugeAnimator.SetTrigger(MainGaugeGoBattleParamHash);
+			TodoLogger.LogError(TodoLogger.UMOSkip, "Remove MainGaugeGoBattleParamHash event cause the button was moved outside the screen");
+			//m_mainGaugeAnimator.SetTrigger(MainGaugeGoBattleParamHash);
 			m_mainGaugeAnimator.SetBool(MainGaugeIsMaxParamHash, false);
 			m_foldWaveGauge.Success(m_isValkyrieOff);
 			m_enemyStatus.Show();
@@ -733,7 +734,7 @@ namespace XeApp.Game.RhythmGame
 						v = m_valkyrieTopAnimator.transform.localPosition + new Vector3(400, -130, 0);
 					}
 					o.transform.localPosition = v;
-					StartCoroutine(WaitDamgeResultAnimeCoroutine(o));
+					this.StartCoroutineWatched(WaitDamgeResultAnimeCoroutine(o));
 				}
 			}
 		}
@@ -770,7 +771,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(isFaild)
 			{
-				StartCoroutine(FaildValkyrieCoroutine());
+				this.StartCoroutineWatched(FaildValkyrieCoroutine());
 			}
 			else
 			{

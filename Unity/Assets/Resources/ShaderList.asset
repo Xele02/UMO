@@ -148,6 +148,12 @@ MonoBehaviour:
   - fileName: xesystransparentcolculloff
     internalName: XeSys/TransparentColCullOff
     shader: {fileID: 4800000, guid: 20ad34aa2ad305d4d997768402f11810, type: 3}
+  - fileName: projectorlight
+    internalName: Projector/Light
+    shader: {fileID: 4800000, guid: c0ace1ca4bc0718448acf798c93d52d9, type: 3}
+  - fileName: projectormultiply
+    internalName: Projector/Multiply
+    shader: {fileID: 4800000, guid: 01a668cc78047034a8a0c5ca2d24c6f7, type: 3}
   - fileName: tmp_bitmap
     internalName: TextMeshPro/Bitmap
     shader: {fileID: 4800000, guid: 128e987d567d4e2c824d754223b3f3b0, type: 3}
@@ -280,9 +286,27 @@ MonoBehaviour:
   - fileName: mcrsvalkyriemulti_low
     internalName: 
     shader: {fileID: 4800000, guid: 61202c25e3dc9074f8c5d2413ed2c26a, type: 3}
+  - fileName: plateshader
+    internalName: MCRS/PlateShader
+    shader: {fileID: 4800000, guid: 343b4ec7fb52a3547a2c7acc11310c57, type: 3}
+  - fileName: plateshaderoverray
+    internalName: MCRS/PlateOverrayShader
+    shader: {fileID: 4800000, guid: d86b415ea3978c84183664b2d848e5d0, type: 3}
   - fileName: projectorcolormultiply
     internalName: Projector/ColorMultiply
     shader: {fileID: 4800000, guid: c7126b3ee133b774691555f7880acf63, type: 3}
+  - fileName: rbreakplate_poster_shader
+    internalName: 
+    shader: {fileID: 4800000, guid: 50c7d45cfc4369b40966ecd9234bfb39, type: 3}
+  - fileName: rbreakplateshader
+    internalName: Unlit/RBreakPlateShader
+    shader: {fileID: 4800000, guid: ac90b7f5cea53e547979690c0255453f, type: 3}
+  - fileName: rbreaksmallplateshader
+    internalName: Unlit/RBreakSmallPlateShader
+    shader: {fileID: 4800000, guid: 5a326b1f8132fe64b9fb7f99823ccd0d, type: 3}
+  - fileName: ui-unlit-horizontalgradationcolor
+    internalName: MCRS/HorizontalGradationColor
+    shader: {fileID: 4800000, guid: 58915648be753f340b85fd5eae23d73a, type: 3}
   - fileName: ui-unlit-splittextureaddrgb16_a8
     internalName: MCRS/SplitTextureAddRGB16A8
     shader: {fileID: 4800000, guid: 3c79bfe540815a34f8bf83b3093cc5c4, type: 3}

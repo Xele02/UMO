@@ -60,7 +60,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x17EE1A8 Offset: 0x17EE1A8 VA: 0x17EE1A8
 		private void Start()
 		{
-			StartCoroutine(InitializeCoroutine());
+			this.StartCoroutineWatched(InitializeCoroutine());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72D89C Offset: 0x72D89C VA: 0x72D89C
@@ -76,7 +76,7 @@ namespace XeApp.Game.Menu
 			m_divaChangePopupSetting = new DivaChangePopupSetting();
 			m_divaChangePopupSetting.TitleText = MessageManager.Instance.GetBank("menu").GetMessageByLabel("popup_title_02");
 			m_divaChangePopupSetting.WindowSize = SizeType.Middle;
-			yield return StartCoroutine(m_divaSelectList.LoadDivaIconPanelCoroutine());
+			yield return this.StartCoroutineWatched(m_divaSelectList.LoadDivaIconPanelCoroutine());
 			IsReady = true;
 		}
 
@@ -304,13 +304,14 @@ namespace XeApp.Game.Menu
 		{
 			if(!m_args.isFromBeginner)
 			{
-				StartCoroutine(Co_ShowHelp());
+				this.StartCoroutineWatched(Co_ShowHelp());
+				return;
 			}
 			else if(!TutorialProc.CanDivaSelect(m_args.beginnerMissionId))
 			{
 				return;
 			}
-			StartCoroutine(TutorialProc.Co_DivaSelectList(m_divaSelectList.GetNavigationDivaListButton(), () =>
+			this.StartCoroutineWatched(TutorialProc.Co_DivaSelectList(m_divaSelectList.GetNavigationDivaListButton(), () =>
 			{
 				//0x17F1110
 				return m_isOpenEndConfirmPopup;
@@ -327,8 +328,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17F023C Offset: 0x17F023C VA: 0x17F023C
 		private IEnumerator Co_ShowHelp()
 		{
-			TodoLogger.Log(0, "Co_ShowHelp");
-			yield return null;
+			//0x1264EA8
+			m_isWaitHelp = true;
+			MenuScene.Instance.InputDisable();
+			yield return Co.R(TutorialManager.TryShowTutorialCoroutine(CheckTutorialCondition));
+			MenuScene.Instance.InputEnable();
+			m_isWaitHelp = false;
 		}
 
 		//// RVA: 0x17F02DC Offset: 0x17F02DC VA: 0x17F02DC Slot: 14
@@ -351,7 +356,13 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17F03E0 Offset: 0x17F03E0 VA: 0x17F03E0
 		private void OnSort(SortItem item, ListSortButtonGroup.SortOrder order, bool isBonus)
 		{
-			TodoLogger.Log(0, "OnSort");
+			m_order = (byte)order;
+			m_sortType = item;
+			m_divaSortExecutor.Execute(m_divaSortIdList, item, (byte)order);
+			m_divaSelectList.UpdateContent(m_selectedDiva, m_divaSortIdList, m_selectedSlot, m_musicData);
+			m_divaSelectList.UpdateDecoration(m_selectedDiva, m_divaSortIdList, UnitWindowConstant.SortItemToDisplayType[(int)m_sortType]);
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.ONPAMDMIEKM_divaSortItem = (int)m_sortType;
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.HNGHNBNPCHO_divaSortOrder = (int)m_order;
 		}
 
 		//// RVA: 0x17F0670 Offset: 0x17F0670 VA: 0x17F0670
@@ -388,7 +399,19 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17F0A14 Offset: 0x17F0A14 VA: 0x17F0A14
 		private void OnShowDivaStatus(int sortListIndex)
 		{
-			TodoLogger.LogNotImplemented("OnShowDivaStatus");
+			if(!MenuScene.Instance.DirtyChangeScene)
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+				FFHPBEPOMAK_DivaInfo diva = m_selectedDiva;
+				if(sortListIndex >= 0)
+				{
+					diva = PlayerData.NBIGLBMHEDC[m_divaSortIdList[sortListIndex]];
+				}
+				if(diva != null)
+				{
+					MenuScene.Instance.ShowDivaStatusPopupWindow(diva, PlayerData, m_musicData, false, TransitionName, UpdateContent, true, false, -1, false);
+				}
+			}
 		}
 
 		//// RVA: 0x17F0C8C Offset: 0x17F0C8C VA: 0x17F0C8C
@@ -446,6 +469,9 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17F0F90 Offset: 0x17F0F90 VA: 0x17F0F90
-		//private bool CheckTutorialCondition(TutorialConditionId conditionId) { }
+		private bool CheckTutorialCondition(TutorialConditionId conditionId)
+		{
+			return false;
+		}
 	}
 }

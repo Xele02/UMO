@@ -18,7 +18,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x166C300 Offset: 0x166C300 VA: 0x166C300 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			TodoLogger.Log(0, "InitializeFromLayout MusicSelectCDButton");
+			TodoLogger.LogError(0, "InitializeFromLayout MusicSelectCDButton");
 			return true;
 		}
 	}

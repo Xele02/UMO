@@ -55,7 +55,7 @@ namespace XeApp.Game.Common
 			atomSource.androidUseLowLatencyVoicePool = lowLatency;
 #endif
 			CriAtomExPlayback pb = atomSource.Play(name);
-			playbackNameDictionary.Add(name, pb);
+			playbackNameDictionary[name] = pb;
 #if UNITY_ANDROID
 			atomSource.androidUseLowLatencyVoicePool = old;
 #endif

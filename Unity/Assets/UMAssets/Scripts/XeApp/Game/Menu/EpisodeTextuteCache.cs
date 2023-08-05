@@ -27,10 +27,13 @@ namespace XeApp.Game.Menu
 			new Rect(0.345703f, 0.21875f, 0.28125f, 0.716797f),
 		}; // 0x10
 
-		// public static Rect ImageUv { get; } 0xF09714
+		public static Rect ImageUv { get { return imageUv; } } //0xF09714
 
 		// RVA: 0xF097A8 Offset: 0xF097A8 VA: 0xF097A8 Slot: 5
-		// public override void Terminated() { }
+		public override void Terminated()
+		{
+			Clear();
+		}
 
 		// RVA: 0xF097B0 Offset: 0xF097B0 VA: 0xF097B0 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
@@ -41,10 +44,18 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xEF3A6C Offset: 0xEF3A6C VA: 0xEF3A6C
-		// public void Load(int id, Action<IiconTexture> callBack) { }
+		public void Load(int id, Action<IiconTexture> callBack)
+		{
+			m_strBuilder.SetFormat(EpisodeIconTexturePath, id);
+			Load(m_strBuilder.ToString(), callBack);
+		}
 
 		// // RVA: 0xEF3B44 Offset: 0xEF3B44 VA: 0xEF3B44
-		// public void LoadBg(int id, Action<IiconTexture> callBack) { }
+		public void LoadBg(int id, Action<IiconTexture> callBack)
+		{
+			m_strBuilder.SetFormat(EpisodeBgTexturePath, id);
+			Load(m_strBuilder.ToString(), callBack);
+		}
 
 		// // RVA: 0xF09838 Offset: 0xF09838 VA: 0xF09838
 		public void LoadDivaBustupTexture(int divaId, int modelId, int colorId, Action<IiconTexture, Rect> complete)
@@ -52,7 +63,6 @@ namespace XeApp.Game.Menu
 			m_strBuilder.Clear();
 			if(colorId < 1)
 			{
-				UnityEngine.Debug.Log(divaId+" "+modelId+" "+colorId);
 				m_strBuilder.SetFormat(DivaBustupTexturePath, divaId, modelId);
 				if(!KEHOJEJMGLJ.HHCJCDFCLOB.IDJBKGBMDAJ.PPCCFNAPHCH_FileExists(m_strBuilder.ToString()))
 				{

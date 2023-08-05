@@ -48,10 +48,26 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xF691BC Offset: 0xF691BC VA: 0xF691BC
-		//public void OnUpdate(BuffDurationCheckParameter checkParameter) { }
+		public void OnUpdate(BuffDurationCheckParameter checkParameter)
+		{
+			if(initialParameter.effectType == SkillBuffEffect.Type.Poison)
+			{
+				if (checkParameter.musicTime - initialParameter.musicTime < perSecondCount)
+					return;
+				OnPerSecondPoisonEffect.Invoke(this);
+				perSecondCount = perSecondCount + 1;
+			}
+		}
 
 		//// RVA: 0xF69274 Offset: 0xF69274 VA: 0xF69274
-		//public bool InDuration(BuffDurationCheckParameter checkParameter) { }
+		public bool InDuration(BuffDurationCheckParameter checkParameter)
+		{
+			if(duration != null)
+			{
+				return duration.InDuration(checkParameter);
+			}
+			return false;
+		}
 
 		//// RVA: 0xF692BC Offset: 0xF692BC VA: 0xF692BC
 		public bool IsValue(RhythmGameConsts.NoteResult a_result)

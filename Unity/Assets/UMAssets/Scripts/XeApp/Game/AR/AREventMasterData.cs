@@ -138,16 +138,16 @@ namespace XeApp.Game.AR
 		// // RVA: 0xBB8448 Offset: 0xBB8448 VA: 0xBB8448
 		public AREventMasterData.Chenge_bg FindChangeBG()
 		{
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			for(int i = 0; i < m_chengeBg.Count; i++)
 			{
 				if(m_chengeBg[i].enable == 2)
 				{
-					if(m_chengeBg[i].startTime <= time && m_chengeBg[i].endTime >= time)
+					if(time >= m_chengeBg[i].startTime && time < m_chengeBg[i].endTime)
 						return m_chengeBg[i];
 				}
 			}
-			UnityEngine.Debug.LogWarning("No BG found return the last one");
+			TodoLogger.LogWarning(TodoLogger.Menu, "No BG found return the last one");
 			// HACK for game post close
 			return m_chengeBg[m_chengeBg.Count-1];
 		}

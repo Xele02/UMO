@@ -5,12 +5,15 @@ namespace XeApp.Game.Menu
 		private const string TexturePath = "ct/ip/{0:D2}.xab";
 
 		// RVA: 0x14BCD00 Offset: 0x14BCD00 VA: 0x14BCD00 Slot: 5
-		// public override void Terminated() { }
+		public override void Terminated()
+		{
+			Clear();
+		}
 
 		// RVA: 0x14BCD08 Offset: 0x14BCD08 VA: 0x14BCD08 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
 		{
-			TodoLogger.Log(0, "CreateIconTexture");
+			TodoLogger.LogError(0, "CreateIconTexture");
 			return null;
 		}
 

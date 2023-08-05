@@ -12,7 +12,7 @@ public class LHFOAFAOPLC
             GameObject go = GameObject.Find("Adjust");
             if(go != null)
             {
-                TodoLogger.Log(5, "LHFOAFAOPLC.KHEKNNFCAOI Lib adjust");
+                TodoLogger.LogError(TodoLogger.Adjust, "LHFOAFAOPLC.KHEKNNFCAOI_Init Lib adjust");
                 BAFFAONJPCE = true;
             }
         }
@@ -22,7 +22,10 @@ public class LHFOAFAOPLC
 	// public static void AMNOLHCJDPN(double NPPGKNGIFGK, string JMEMGIPGGIK) { }
 
 	// // RVA: 0x17F68C0 Offset: 0x17F68C0 VA: 0x17F68C0
-	// public static void JIABJFIJACN() { }
+	public static void JIABJFIJACN()
+	{
+		TodoLogger.LogError(TodoLogger.Adjust, "LHFOAFAOPLC.JIABJFIJACN trackEvent m3bsg4");
+	}
 
 	// // RVA: 0x17F6948 Offset: 0x17F6948 VA: 0x17F6948
 	// public static void FPCGNJMEHCI() { }

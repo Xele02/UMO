@@ -32,7 +32,7 @@ namespace XeApp.Game.Common
 		{
 			isLoadedMovie = false;
 			isUnused = false;
-			StartCoroutine(Co_LoadResources(musicId,qualityId,getSpecialMovieId));
+			this.StartCoroutineWatched(Co_LoadResources(musicId,qualityId,getSpecialMovieId));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x738198 Offset: 0x738198 VA: 0x738198
@@ -86,6 +86,11 @@ namespace XeApp.Game.Common
 			yield return null;
 
 			moviePlayer.player.Prepare();
+			//UMO, ensure video is ready
+			while(moviePlayer.player.status != CriWare.CriMana.Player.Status.Ready)
+			{
+				yield return null;
+			}
 			if(prePlayMovie)
 			{
 				bool fin = false;

@@ -127,7 +127,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1670208 Offset: 0x1670208 VA: 0x1670208
 		public void TryLeave()
 		{
-			TodoLogger.Log(0, "InitializeFromLayout TryLeave");
+			TodoLogger.LogError(0, "InitializeFromLayout TryLeave");
 		}
 
 		// // RVA: 0x167016C Offset: 0x167016C VA: 0x167016C
@@ -147,7 +147,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x16703B0 Offset: 0x16703B0 VA: 0x16703B0
 		public void Hide()
 		{
-			TodoLogger.Log(0, "InitializeFromLayout Hide");
+			TodoLogger.LogError(0, "InitializeFromLayout Hide");
 		}
 
 		// // RVA: 0x167044C Offset: 0x167044C VA: 0x167044C
@@ -159,7 +159,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1670478 Offset: 0x1670478 VA: 0x1670478
 		public void MakeCache()
 		{
-			TodoLogger.Log(0, "InitializeFromLayout MakeCache");
+			TodoLogger.LogError(0, "InitializeFromLayout MakeCache");
 		}
 
 		// // RVA: 0x16704A0 Offset: 0x16704A0 VA: 0x16704A0
@@ -169,7 +169,10 @@ namespace XeApp.Game.Menu
 		// public void ScrollEnable() { }
 
 		// // RVA: 0x16702EC Offset: 0x16702EC VA: 0x16702EC
-		// public void ScrollDisable() { }
+		public void ScrollDisable()
+		{
+			m_scroller.InputDisable();
+		}
 
 		// // RVA: 0x16704C8 Offset: 0x16704C8 VA: 0x16704C8
 		// public void SetupUnitLive(IBJAKJJICBC musicData, MMOLNAHHDOM saveData) { }
@@ -183,7 +186,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1670A84 Offset: 0x1670A84 VA: 0x1670A84
 		public void SetStyleType(MusicSelectCDSelect.StyleType type)
 		{
-			TodoLogger.Log(0, "cd select SetStyleType");
+			TodoLogger.LogError(0, "cd select SetStyleType");
 			m_symbolStyle.StartAnim("single");
 		}
 
@@ -328,31 +331,31 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1672E8C Offset: 0x1672E8C VA: 0x1672E8C
 		private void OnSelectionChanged(int offset)
 		{
-			TodoLogger.Log(0, "OnSelectionChanged");
+			TodoLogger.LogError(0, "OnSelectionChanged");
 		}
 
 		// // RVA: 0x1673300 Offset: 0x1673300 VA: 0x1673300
 		public void OnScrollRepeated(int repeatDelta, bool isSelectionFlipped)
 		{
-			TodoLogger.Log(0, "OnScrollRepeated");
+			TodoLogger.LogError(0, "OnScrollRepeated");
 		}
 
 		// // RVA: 0x167333C Offset: 0x167333C VA: 0x167333C
 		public void OnScrollStarted(bool isAuto)
 		{
-			TodoLogger.Log(0, "OnScrollStarted");
+			TodoLogger.LogError(0, "OnScrollStarted");
 		}
 
 		// // RVA: 0x16733D4 Offset: 0x16733D4 VA: 0x16733D4
 		public void OnScrollUpdated(bool isAuto)
 		{
-			TodoLogger.Log(0, "OnScrollUpdated");
+			TodoLogger.LogError(0, "OnScrollUpdated");
 		}
 
 		// // RVA: 0x1673448 Offset: 0x1673448 VA: 0x1673448
 		public void OnScrollEnded(bool isAuto)
 		{
-			TodoLogger.Log(0, "OnScrollEnded");
+			TodoLogger.LogError(0, "OnScrollEnded");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F344C Offset: 0x6F344C VA: 0x6F344C
@@ -392,7 +395,7 @@ namespace XeApp.Game.Menu
 
 			}
 
-			TodoLogger.Log(0, "Co_Initialize MusicCDSelect");
+			TodoLogger.LogError(0, "Co_Initialize MusicCDSelect");
 			yield break;
 		}
 
@@ -436,7 +439,7 @@ namespace XeApp.Game.Menu
 				//0x1673F54
 				TodoLogger.LogNotImplemented("Play button click");
 			});
-			StartCoroutine(Co_Initialize());
+			this.StartCoroutineWatched(Co_Initialize());
 			return true;
 		}
 
