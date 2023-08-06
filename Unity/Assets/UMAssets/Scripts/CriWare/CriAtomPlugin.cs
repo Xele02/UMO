@@ -239,46 +239,59 @@ namespace CriWare {
 		// // RVA: 0x28B3160 Offset: 0x28B3160 VA: 0x28B3160
 #if UNITY_ANDROID
 		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
-		private static extern void CRIWARE6B0DCA88_criAtomUnity_Initialize();
-#else
+		private static extern void criAtomUnity_Initialize();
+#endif
 		private static void CRIWARE6B0DCA88_criAtomUnity_Initialize()
 		{
+#if UNITY_ANDROID
+			criAtomUnity_Initialize();
+#else
 			ExternLib.LibCriWare.CRIWARE6B0DCA88_criAtomUnity_Initialize();
-		}
 #endif
+		}
 
 		// // RVA: 0x28B3388 Offset: 0x28B3388 VA: 0x28B3388
 #if UNITY_ANDROID
 		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
-		public static extern bool CRIWARE73A63785_criAtomUnity_IsInitialized();
-#else
+		public static extern bool criAtomUnity_IsInitialized();
+#endif
 		public static bool CRIWARE73A63785_criAtomUnity_IsInitialized()
 		{
+#if UNITY_ANDROID
+			return criAtomUnity_IsInitialized();
+#else
 			return ExternLib.LibCriWare.CRIWARE73A63785_criAtomUnity_IsInitialized();
-		}
 #endif
+		}
 
 		// // RVA: 0x28B35D0 Offset: 0x28B35D0 VA: 0x28B35D0
 #if UNITY_ANDROID
 		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
-		public static extern bool CRIWARE111A4C56_criAtomUnity_Finalize();
-#else
-		private static void CRIWARE111A4C56_criAtomUnity_Finalize()
-		{
-			ExternLib.LibCriWare.CRIWARE111A4C56_criAtomUnity_Finalize();
-		}
+		public static extern bool criAtomUnity_Finalize();
 #endif
+		private static bool CRIWARE111A4C56_criAtomUnity_Finalize()
+		{
+#if UNITY_ANDROID
+			return criAtomUnity_Finalize();
+#else
+			ExternLib.LibCriWare.CRIWARE111A4C56_criAtomUnity_Finalize();
+			return true;
+#endif
+		}
 
 		// // RVA: 0x28B3780 Offset: 0x28B3780 VA: 0x28B3780
 #if UNITY_ANDROID
 		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
-		private static extern void CRIWARE59269F98_criAtomUnity_Pause(bool pause);
-#else
+		private static extern void criAtomUnity_Pause(bool pause);
+#endif
 		private static void CRIWARE59269F98_criAtomUnity_Pause(bool pause)
 		{
+#if UNITY_ANDROID
+			criAtomUnity_Pause(pause);
+#else
 			ExternLib.LibCriWare.CRIWARE59269F98_criAtomUnity_Pause(pause);
-		}
 #endif
+		}
 
 		// // RVA: 0x28B3E00 Offset: 0x28B3E00 VA: 0x28B3E00
 		// public static extern uint CRIWARE5C7A47BE() { }
@@ -295,35 +308,44 @@ namespace CriWare {
 		// // RVA: 0x28B4230 Offset: 0x28B4230 VA: 0x28B4230
 #if UNITY_ANDROID
 		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
-		public static extern void CRIWARE148BE2F8_criAtomUnitySequencer_ExecuteQueuedEventCallbacks();
-#else
+		public static extern void criAtomUnitySequencer_ExecuteQueuedEventCallbacks();
+#endif
 		public static void CRIWARE148BE2F8_criAtomUnitySequencer_ExecuteQueuedEventCallbacks()
 		{
+#if UNITY_ANDROID
+			criAtomUnitySequencer_ExecuteQueuedEventCallbacks();
+#else			
 			ExternLib.LibCriWare.CRIWARE148BE2F8_criAtomUnitySequencer_ExecuteQueuedEventCallbacks();
-		}
 #endif
+		}
 
 		// // RVA: 0x28B4328 Offset: 0x28B4328 VA: 0x28B4328
 #if UNITY_ANDROID
 		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
-		public static extern void CRIWARE2DDFB51C_criAtomUnity_SetBeatSyncCallback(IntPtr cbfunc);
-#else
+		public static extern void criAtomUnity_SetBeatSyncCallback(IntPtr cbfunc);
+#endif
 		public static void CRIWARE2DDFB51C_criAtomUnity_SetBeatSyncCallback(IntPtr cbfunc)
 		{
+#if UNITY_ANDROID
+			criAtomUnity_SetBeatSyncCallback(cbfunc);
+#else
 			ExternLib.LibCriWare.CRIWARE2DDFB51C_criAtomUnity_SetBeatSyncCallback(cbfunc);
-		}
 #endif
+		}
 
 		// // RVA: 0x28B4430 Offset: 0x28B4430 VA: 0x28B4430
 #if UNITY_ANDROID
 		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
-		public static extern void CRIWARE75F073A2_criAtomUnity_ExecuteQueuedBeatSyncCallbacks();
-#else
+		public static extern void criAtomUnity_ExecuteQueuedBeatSyncCallbacks();
+#endif
 		public static void CRIWARE75F073A2_criAtomUnity_ExecuteQueuedBeatSyncCallbacks()
 		{
+#if UNITY_ANDROID
+			criAtomUnity_ExecuteQueuedBeatSyncCallbacks();
+#else			
 			ExternLib.LibCriWare.CRIWARE75F073A2_criAtomUnity_ExecuteQueuedBeatSyncCallbacks();
-		}
 #endif
+		}
 
 		// // RVA: 0x28B4528 Offset: 0x28B4528 VA: 0x28B4528
 		// public static extern void criAtomUnity_SetCueLinkCallback(IntPtr cbfunc) { }
@@ -354,12 +376,12 @@ namespace CriWare {
 		// // RVA: 0x28B3AB0 Offset: 0x28B3AB0 VA: 0x28B3AB0
 #if UNITY_ANDROID
 		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
-		public static extern ushort CRIWARE2178C0A8(int id);
+		public static extern ushort criAtomUnity_GetNativeParameterId(int id);
 #endif
 		public static ushort CRIWARE2178C0A8_criAtomUnity_GetNativeParameterId(int id)
 		{
 #if UNITY_ANDROID
-				return CRIWARE2178C0A8(id);
+				return criAtomUnity_GetNativeParameterId(id);
 #else
 				return ExternLib.LibCriWare.CRIWARE2178C0A8_criAtomUnity_GetNativeParameterId(id);
 #endif

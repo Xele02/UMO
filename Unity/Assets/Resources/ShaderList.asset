@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: ShaderList
   m_EditorClassIdentifier: 
   shaderList:
+  - fileName: crimanaeditorthora
+    internalName: CriMana/EditorTheora
+    shader: {fileID: 4800000, guid: 599fc2139eabe177cb2947accd873a22, type: 3}
   - fileName: crimanasoftdeceditoryuv
     internalName: CriMana/SofdecEditorYuv
     shader: {fileID: 4800000, guid: 00e5ffb2cf8d27aa7b5eb58bc4c03a81, type: 3}
@@ -191,7 +194,7 @@ MonoBehaviour:
     internalName: Adv/Effect/AdditiveOverlay
     shader: {fileID: 4800000, guid: 4fff516194191df45b71cac8eefcdcf8, type: 3}
   - fileName: adv_effect_additivetransparent
-    internalName: 
+    internalName: Adv/Effect/AdditiveTransparent
     shader: {fileID: 4800000, guid: 9d8f0a4fa4658cb46be9ec1f7609d982, type: 3}
   - fileName: adv_effect_gaussianblur
     internalName: 
@@ -254,13 +257,13 @@ MonoBehaviour:
     internalName: 
     shader: {fileID: 4800000, guid: 79d239a585d70ad45a426add30e0edbb, type: 3}
   - fileName: diva_opaque_low
-    internalName: 
+    internalName: MCRS/Diva/Opaque_Low
     shader: {fileID: 4800000, guid: 1c7488733c04dd746aff4a46d0bec580, type: 3}
   - fileName: diva_trans_low
     internalName: MCRS/Diva/Trans_Low
     shader: {fileID: 4800000, guid: 2932bcae71414844f83ef72404bea458, type: 3}
   - fileName: mcrsdivaopaque_outline_low
-    internalName: 
+    internalName: MCRS/Diva/Opaque_Outline_Low
     shader: {fileID: 4800000, guid: 74d014d5d1f021343bd703cbfa62485b, type: 3}
   - fileName: mcrseffectblend
     internalName: 
@@ -272,19 +275,19 @@ MonoBehaviour:
     internalName: 
     shader: {fileID: 4800000, guid: 9db2500d380d38345863f82a5363723e, type: 3}
   - fileName: mcrssplittexture_bias
-    internalName: 
+    internalName: MCRS/SplitTexture_Bias
     shader: {fileID: 4800000, guid: bc80ac520f02f5a4fb1ee035d8a166dc, type: 3}
   - fileName: mcrsuiandroidscreenframe
     internalName: MCRS/UI/AndroidScreenFrame
     shader: {fileID: 4800000, guid: 297a8d36877396d44a65d1093a77a337, type: 3}
   - fileName: mcrsvalkyrie_low
-    internalName: 
+    internalName: MCRS/Valkyrie_Low
     shader: {fileID: 4800000, guid: 94a38964792fa7e4bbbff8977b38a028, type: 3}
   - fileName: mcrsvalkyriemulti_high_0
     internalName: 
     shader: {fileID: 4800000, guid: 2a94c884d43c73647bcc0115e32dd6af, type: 3}
   - fileName: mcrsvalkyriemulti_low
-    internalName: 
+    internalName: MCRS/ValkyrieMulti_Low
     shader: {fileID: 4800000, guid: 61202c25e3dc9074f8c5d2413ed2c26a, type: 3}
   - fileName: plateshader
     internalName: MCRS/PlateShader
@@ -320,7 +323,7 @@ MonoBehaviour:
     internalName: MCRS/ValkyrieMulti_High
     shader: {fileID: 4800000, guid: 6fa787a91ffaf374fa575586fef3f639, type: 3}
   - fileName: xesysfade
-    internalName: 
+    internalName: XeSys/Fade
     shader: {fileID: 4800000, guid: 90cb3f189132ac74792bc19705ef931e, type: 3}
   - fileName: tmp_sdf internal ssd
     internalName: Hidden/TextMeshPro/Internal/Distance Field SSD

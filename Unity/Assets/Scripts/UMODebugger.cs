@@ -53,6 +53,7 @@ public class UMODebugger : SingletonMonoBehaviour<UMODebugger>
 		musicRecordInfo.isLine6 = gameSetup.musicInfo.IsLine6Mode;
 	}
 
+#if UNITY_EDITOR
 	[MenuItem("UMO/Create song notes debug data")]
 	public static void CreateNoteDebugData()
 	{
@@ -90,6 +91,7 @@ public class UMODebugger : SingletonMonoBehaviour<UMODebugger>
 			Debug.LogError("Debug file saved in "+ newFile);
 		}
 	}
+#endif
 
 	public void EndSong()
 	{

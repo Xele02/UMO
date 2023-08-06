@@ -88,6 +88,7 @@ public class UMOStart : MonoBehaviour
     bool canStart = false;
     void Start()
     {
+#if !UNITY_ANDROID
         if(!RuntimeSettings.CurrentSettings.IsPathValid())
         {
             if(!TrySelectDirectory())
@@ -98,6 +99,7 @@ public class UMOStart : MonoBehaviour
 				return;
             }
         }
+#endif
         canStart = true;
         System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
         if(RuntimeSettings.CurrentSettings.SLiveViewerRequest)

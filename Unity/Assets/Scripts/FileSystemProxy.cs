@@ -117,6 +117,7 @@ static class FileSystemProxy
 
 	public static IEnumerator InitServerFileList()
 	{
+#if !UNITY_ANDROID
 		if (serverFileList == null)
 		{
 			serverFileList = new Dictionary<string, string>();
@@ -138,6 +139,10 @@ static class FileSystemProxy
 			}
 			isInitialized = true;
 		}
+#else
+		isInitialized = true;
+		yield break;
+#endif
 	}
 
 	static IEnumerator TryInstallFileCoroutine(string path, Action<string> onDone)

@@ -103,7 +103,25 @@ namespace XeSys
 		// // RVA: 0x1EF64F4 Offset: 0x1EF64F4 VA: 0x1EF64F4
 		private void MobileAction()
 		{
-			TodoLogger.LogError(0, "TODO");
+			touchCount = 0;
+			for(int i = 0; i < InputManager.fingerCount; i++)
+			{
+				bool found = false;
+				for(int j = 0; j < Input.touchCount; j++)
+				{
+					Touch t = Input.GetTouch(j);
+					if(t.fingerId == i)
+					{
+						touchInfoRecords[i].Update(t.phase, t.position);
+						touchCount++;
+						found = true;
+						break;
+					}
+				}
+				if(!found)
+					touchInfoRecords[i].UpdateReleased();
+			}
+			MobilePinchAction();
 		}
 
 		// // RVA: 0x1EF6744 Offset: 0x1EF6744 VA: 0x1EF6744
@@ -140,7 +158,48 @@ namespace XeSys
 		}
 
 		// // RVA: 0x1EF68C8 Offset: 0x1EF68C8 VA: 0x1EF68C8
-		// private void MobilePinchAction() { }
+		private void MobilePinchAction()
+		{
+			if(GetInScreenTouchCount() < 2)
+			{
+				pinch = false;
+				pinchRatio = 1;
+				pinchDelta = 0;
+				return;
+			}
+			Touch t1, t2;
+			GetInScreenTouch(0, out t1);
+			GetInScreenTouch(1, out t2);
+			if(SystemManager.HasSafeArea)
+			{
+				if(t1.position.x <= SystemManager.rawAppScreenRect.x)
+					return;
+				if(SystemManager.rawAppScreenRect.xMax < t1.position.x)
+					return;
+				if(t1.position.y <= SystemManager.rawAppScreenRect.y)
+					return;
+				if(SystemManager.rawAppScreenRect.yMax < t1.position.y)
+					return;
+				if(t2.position.x <= SystemManager.rawAppScreenRect.x)
+					return;
+				if(SystemManager.rawAppScreenRect.xMax < t2.position.x)
+					return;
+				if(t2.position.y <= SystemManager.rawAppScreenRect.y)
+					return;
+				if(SystemManager.rawAppScreenRect.yMax < t2.position.y)
+					return;
+			}
+			pinchCurrentLength = (t2.position - t1.position).sqrMagnitude;
+			if(!pinch)
+			{
+				pinchStartLength = pinchCurrentLength;
+				pinchRatio = 1;
+				pinchDelta = 0;
+			}
+			pinch = true;
+			pinchDelta = pinchCurrentLength / pinchStartLength - pinchRatio;
+			pinchRatio = pinchCurrentLength / pinchStartLength;
+		}
 
 		// // RVA: 0x1EF7158 Offset: 0x1EF7158 VA: 0x1EF7158
 		public bool IsTouchPositionInScreen(Vector2 screenPosition)
@@ -190,7 +249,30 @@ namespace XeSys
 		// public TouchInfoRecord GetInScreenTouchRecord(int order) { }
 
 		// // RVA: 0x1EF6DD0 Offset: 0x1EF6DD0 VA: 0x1EF6DD0
-		// public bool GetInScreenTouch(int order, out Touch touch) { }
+		public bool GetInScreenTouch(int order, out Touch touch)
+		{
+			touch = new Touch();
+			unityTouchListTempList.Clear();
+			for(int i = 0; i < Input.touchCount; i++)
+			{
+				Touch t = Input.GetTouch(i);
+				if(IsTouchPositionInScreen(t.position))
+				{
+					unityTouchListTempList.Add(t);
+				}
+			}
+			unityTouchListTempList.Sort((Touch left, Touch right) =>
+			{
+				//0x2389A4C
+				return left.fingerId - right.fingerId;
+			});
+			if(order < unityTouchListTempList.Count)
+			{
+				touch = unityTouchListTempList[order];
+				return true;
+			}
+			return false;
+		}
 
 		// // RVA: 0x1EF6C84 Offset: 0x1EF6C84 VA: 0x1EF6C84
 		private void MousePinchAction()

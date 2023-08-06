@@ -75,6 +75,7 @@ namespace XeApp.Core
 		{
 #if UNITY_ANDROID
 			TodoLogger.Log(0, "GetDeviceSpecFromMaster");
+			return DeviceSpec.High;
 #else
 			return DeviceSpec.High;
 #endif
