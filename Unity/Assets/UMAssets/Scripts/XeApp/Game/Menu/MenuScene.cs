@@ -1016,10 +1016,16 @@ namespace XeApp.Game.Menu
 		// public void HeaderLeave() { }
 
 		// // RVA: 0xB3259C Offset: 0xB3259C VA: 0xB3259C
-		// public void FooterEnter() { }
+		public void FooterEnter()
+		{
+			FooterMenu.Enter(false);
+		}
 
 		// // RVA: 0xB325D0 Offset: 0xB325D0 VA: 0xB325D0
-		// public void FooterLeave() { }
+		public void FooterLeave()
+		{
+			FooterMenu.Leave(false);
+		}
 
 		// // RVA: 0xB32604 Offset: 0xB32604 VA: 0xB32604
 		public void ShowSnsNotice(int snsId, UnityAction pushAction)

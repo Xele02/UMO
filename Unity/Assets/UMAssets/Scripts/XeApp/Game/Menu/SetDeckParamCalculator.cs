@@ -31,7 +31,7 @@ namespace XeApp.Game.Menu
 		public LimitOverStatusData LimitOverStatus { get { return m_limitOverStatus; } } //0xA6FFC4
 		public NHDJHOPLMDE ValkyrieAbilityData { get { return m_viewValkyrieAbilityData; } } //0xA6FFCC
 		public JGEOBNENMAH.NEDILFPPCJF LogParams { get { return m_logParams; } } //0xA6FFD4
-		//public CFHDKAFLNEP SubPlateResult { get; } 0xA6FFDC
+		public CFHDKAFLNEP SubPlateResult { get { return m_subPlate; } } //0xA6FFDC
 		//public bool IsEnableEnemySkill { get; } 0xA6FFF0
 		public bool IsEnableEpisodeBonus { get { return m_isEnableEpisodeBonus; } } //0xA7002C
 		public int EpisodeBonusPoint { get { return m_episodeBonusPoint; } } //0xA70034
@@ -104,7 +104,43 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA7214C Offset: 0xA7214C VA: 0xA7214C
-		//public void Calc(DFKGGBMFFGB viewPlayerData, JLKEOGLJNOD viewUnitData, EEDKAACNBBG viewMusicData, EAJCBFGKKFA viewFriendData) { }
+		public void Calc(DFKGGBMFFGB_PlayerInfo viewPlayerData, JLKEOGLJNOD_TeamInfo viewUnitData, EEDKAACNBBG_MusicData viewMusicData, EAJCBFGKKFA_FriendInfo viewFriendData)
+		{
+			m_addLuck = 0;
+			m_baseLuck = 0;
+			m_isEnableEpisodeBonus = false;
+			m_episodeBonusPoint = 0;
+			m_viewUnitData = viewUnitData;
+			m_viewEnemyData = null;
+			m_viewValkyrieAbilityData = null;
+			m_mainScene = null;
+			if(viewMusicData != null && viewUnitData.JOKFNBLEILN_Valkyrie != null)
+			{
+				NHDJHOPLMDE n = new NHDJHOPLMDE(viewUnitData.JOKFNBLEILN_Valkyrie.GPPEFLKGGGJ_ValkyrieId, 0);
+				if(n != null)
+				{
+					if(n.LAKLFHGMCLI((SeriesAttr.Type)viewMusicData.AIHCEGFANAM_Serie))
+					{
+						m_viewValkyrieAbilityData = n;
+					}
+				}
+			}
+			m_mainScene = null;
+			if(viewUnitData.BCJEAJPLGMB_MainDivas[0] != null && viewUnitData.BCJEAJPLGMB_MainDivas[0].FGFIBOBAPIA_SceneId > 0)
+			{
+				m_mainScene = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB_MainDivas[0].FGFIBOBAPIA_SceneId - 1];
+			}
+			m_baseLuck = 0;
+			m_addLuck = 0;
+			for(int i = 0; i < viewUnitData.BCJEAJPLGMB_MainDivas.Count; i++)
+			{
+				m_baseLuck += DivaIconDecoration.GetEquipmentLuck(viewUnitData.BCJEAJPLGMB_MainDivas[i], viewPlayerData);
+			}
+			CalcStatusForUnitEdit(ref m_baseStatus, ref m_addStatus, out m_addLuck, viewPlayerData, viewMusicData, viewFriendData, out m_unitSkillCalcResult, out m_subPlate, viewUnitData);
+			m_addStatus.Add(m_baseStatus);
+			m_addLuck += m_baseLuck;
+			CalcLimitBrakeForUnitEdit(ref m_limitOverStatus, viewUnitData, viewPlayerData);
+		}
 
 		//// RVA: 0xA706B8 Offset: 0xA706B8 VA: 0xA706B8
 		private static void CalcStatusForUnitCheck(ref StatusData baseStatus, ref StatusData addStatus, out int luck, int baseLuck, GameSetupData.MusicInfo musicInfo, DFKGGBMFFGB_PlayerInfo viewPlayerData, EEDKAACNBBG_MusicData viewMusicData, EAJCBFGKKFA_FriendInfo viewFriendPlayerData, EJKBKMBJMGL_EnemyData viewEnemyData, out AEGLGBOGDHH result, out CFHDKAFLNEP subPlate, JLKEOGLJNOD_TeamInfo viewUnitData, ref JGEOBNENMAH.NEDILFPPCJF logParams)
@@ -214,7 +250,27 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA72520 Offset: 0xA72520 VA: 0xA72520
-		//private static void CalcStatusForUnitEdit(ref StatusData baseStatus, ref StatusData addStatus, out int luck, DFKGGBMFFGB viewPlayerData, EEDKAACNBBG viewMusicData, EAJCBFGKKFA viewFriendPlayerData, out AEGLGBOGDHH result, out CFHDKAFLNEP subPlate, JLKEOGLJNOD viewUnitData) { }
+		private static void CalcStatusForUnitEdit(ref StatusData baseStatus, ref StatusData addStatus, out int luck, DFKGGBMFFGB_PlayerInfo viewPlayerData, EEDKAACNBBG_MusicData viewMusicData, EAJCBFGKKFA_FriendInfo viewFriendPlayerData, out AEGLGBOGDHH result, out CFHDKAFLNEP subPlate, JLKEOGLJNOD_TeamInfo viewUnitData)
+		{
+			baseStatus.Clear();
+			addStatus.Clear();
+			luck = 0;
+			baseStatus.Copy(viewUnitData.JLJGCBOHJID_Status);
+			result = new AEGLGBOGDHH();
+			result.OBKGEDCKHHE();
+			result.JCHLONCMPAJ();
+			CMMKCEPBIHI.DIDENKKDJKI(ref result, viewUnitData, viewPlayerData, viewMusicData, viewFriendPlayerData, null);
+			result.DDPJACNMPEJ(ref addStatus);
+			baseStatus.Add(addStatus);
+			result.GEEDEOHGMOM(ref addStatus);
+			subPlate = result.CLCIOEHGFNI;
+			m_tmpStatus.Clear();
+			if (viewFriendPlayerData == null || viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene() == null)
+				return;
+			m_tmpStatus.Copy(viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().CMCKNKKCNDK_Status);
+			luck += viewFriendPlayerData.KHGKPKDBMOH_GetAssistScene().MJBODMOLOBC_Luck;
+			baseStatus.Add(m_tmpStatus);
+		}
 
 		//// RVA: 0xA718A8 Offset: 0xA718A8 VA: 0xA718A8
 		private static void CalcLimitBrakeForUnitCheck(ref LimitOverStatusData limitOverStatus, JLKEOGLJNOD_TeamInfo viewUnitData, DFKGGBMFFGB_PlayerInfo viewPlayerData, EEDKAACNBBG_MusicData musicData, EAJCBFGKKFA_FriendInfo friendData)
@@ -252,7 +308,33 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA728D4 Offset: 0xA728D4 VA: 0xA728D4
-		//private static void CalcLimitBrakeForUnitEdit(ref LimitOverStatusData limitOverStatus, JLKEOGLJNOD viewUnitData, DFKGGBMFFGB viewPlayerData) { }
+		private static void CalcLimitBrakeForUnitEdit(ref LimitOverStatusData limitOverStatus, JLKEOGLJNOD_TeamInfo viewUnitData, DFKGGBMFFGB_PlayerInfo viewPlayerData)
+		{
+			LLKLAKGKNLD_LimitOver l = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver;
+			limitOverStatus.Clear();
+			for(int i = 0; i < viewUnitData.BCJEAJPLGMB_MainDivas.Count; i++)
+			{
+				m_tmpLimitOverStatus.Clear();
+				if(viewUnitData.BCJEAJPLGMB_MainDivas[i] != null)
+				{
+					if(viewUnitData.BCJEAJPLGMB_MainDivas[i].FGFIBOBAPIA_SceneId != 0)
+					{
+						GCIJNCFDNON_SceneInfo scene = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB_MainDivas[i].FGFIBOBAPIA_SceneId - 1];
+						l.MNHPPJFNPCG(ref m_tmpLimitOverStatus, scene.JKGFBFPIMGA_Rarity, scene.MJBODMOLOBC_Luck, scene.MKHFCGPJPFI_LimitOverCount);
+						limitOverStatus.Add(m_tmpLimitOverStatus);
+					}
+					for (int j = 0; j < viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds.Count; j++)
+					{
+						if(viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds[j] > 0)
+						{
+							GCIJNCFDNON_SceneInfo scene = viewPlayerData.OPIBAPEGCLA_Scenes[viewUnitData.BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds[j] - 1];
+							l.MNHPPJFNPCG(ref m_tmpLimitOverStatus, scene.JKGFBFPIMGA_Rarity, scene.MJBODMOLOBC_Luck, scene.MKHFCGPJPFI_LimitOverCount);
+							limitOverStatus.Add(m_tmpLimitOverStatus);
+						}
+					}
+				}
+			}
+		}
 
 		//// RVA: 0xA72EB0 Offset: 0xA72EB0 VA: 0xA72EB0
 		private static void AdjustOverLimit(LimitOverStatusData status, GCIJNCFDNON_SceneInfo sceneData, EEDKAACNBBG_MusicData musicData)

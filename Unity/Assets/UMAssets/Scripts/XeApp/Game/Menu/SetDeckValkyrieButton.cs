@@ -102,7 +102,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xC3AEE8 Offset: 0xC3AEE8 VA: 0xC3AEE8
-		// public void UpdateContent(JLKEOGLJNOD viewUnitData) { }
+		public void UpdateContent(JLKEOGLJNOD_TeamInfo viewUnitData)
+		{
+			UpdateContent(viewUnitData, null);
+		}
 
 		// // RVA: 0xC3AEF0 Offset: 0xC3AEF0 VA: 0xC3AEF0
 		public void UpdateContent(AOJGDNFAIJL_PrismData.AMIECPBIALP prismData)

@@ -3,6 +3,7 @@ using UnityEngine;
 using XeSys.Gfx;
 using System.Collections;
 using XeApp.Game.Tutorial;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -63,7 +64,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC3B16C Offset: 0xC3B16C VA: 0xC3B16C
 		private void CallBackUnitSetting()
 		{
-			TodoLogger.LogNotImplemented("CallBackUnitSetting");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MenuScene.Instance.Call(TransitionList.Type.TEAM_EDIT, m_teamEditSceneArgs, true);
 		}
 
 		//// RVA: 0xC3B274 Offset: 0xC3B274 VA: 0xC3B274
