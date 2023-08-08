@@ -1935,9 +1935,9 @@ namespace XeApp.Game.Menu
 				case TutorialConditionId.Condition12:
 					if(m_transitionName == TransitionList.Type.TEAM_EDIT)
 					{
-						for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC.Count; i++)
+						for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Count; i++)
 						{
-							List<FFHPBEPOMAK_DivaInfo> cosList = FFHPBEPOMAK_DivaInfo.DNAIGDHCILM_GetCostumeList(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[i].AHHJLDLAPAN_DivaId, false);
+							List<FFHPBEPOMAK_DivaInfo> cosList = FFHPBEPOMAK_DivaInfo.DNAIGDHCILM_GetCostumeList(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId, false);
 							int res = 0;
 							for (int j = 0; j < cosList.Count; j++)
 							{
@@ -2029,9 +2029,9 @@ namespace XeApp.Game.Menu
 						if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[3].EALOBDHOCHP_Stat < 2)
 						{
 							int res = 0;
-							for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC.Count; i++)
+							for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Count; i++)
 							{
-								res += GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[i].FJODMPGPDDD ? 1 : 0;
+								res += GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[i].FJODMPGPDDD ? 1 : 0;
 							}
 							return res > 1;
 						}

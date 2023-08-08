@@ -287,7 +287,7 @@ namespace XeApp.Game.Menu
 		private void UpdateScrollContent(int index, SwapScrollListContent content)
 		{
 			DivaSelectListIcon data = content as DivaSelectListIcon;
-			FFHPBEPOMAK_DivaInfo f = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[m_sortDivaList[index]];
+			FFHPBEPOMAK_DivaInfo f = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[m_sortDivaList[index]];
 			data.SetDivaIcon(f.AHHJLDLAPAN_DivaId, f.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, f.EKFONBFDAAP_ColorId, IsCenter(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH, f.AHHJLDLAPAN_DivaId), IsUnitMember(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH, f.AHHJLDLAPAN_DivaId));
 			for(int i = 0; i < 3; i++)
 			{
@@ -527,7 +527,7 @@ namespace XeApp.Game.Menu
 			FFHPBEPOMAK_DivaInfo d = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
 			for(int i = 0; i < 2; i++)
 			{
-				FFHPBEPOMAK_DivaInfo d2 = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[m_sortDivaList[i]];
+				FFHPBEPOMAK_DivaInfo d2 = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[m_sortDivaList[i]];
 				if(d2.AHHJLDLAPAN_DivaId != d.AHHJLDLAPAN_DivaId)
 				{
 					return m_divaListIcon[i].StayButton;

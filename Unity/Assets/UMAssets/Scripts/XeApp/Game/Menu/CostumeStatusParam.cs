@@ -40,7 +40,7 @@ namespace XeApp.Game.Menu
 		{
 			if(a_data != null)
 			{
-				FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC.Find((FFHPBEPOMAK_DivaInfo _) =>
+				FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Find((FFHPBEPOMAK_DivaInfo _) =>
 				{
 					//0x16E8998
 					return _.AHHJLDLAPAN_DivaId == a_data.AHHJLDLAPAN_DivaId;

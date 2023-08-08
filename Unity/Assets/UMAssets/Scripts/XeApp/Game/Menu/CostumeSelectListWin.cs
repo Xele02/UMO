@@ -172,7 +172,7 @@ namespace XeApp.Game.Menu
 		public void CreateItem(int a_diva_id, bool a_first_transition = true, TransitionList.Type transition = TransitionList.Type.COSTUME_SELECT, bool a_debug = false, bool isGoDiva = false)
 		{
 			m_diva_id = a_diva_id;
-			FFHPBEPOMAK_DivaInfo selectedCostume = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[m_diva_id - 1];
+			FFHPBEPOMAK_DivaInfo selectedCostume = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[m_diva_id - 1];
 			List<ItemInfo> l1 = new List<ItemInfo>();
 			List<ItemInfo> l2 = new List<ItemInfo>();
 			List<FFHPBEPOMAK_DivaInfo> fl;

@@ -381,11 +381,15 @@ public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 	public bool OANJBOPLCKP_IsUnit5Enabled()
 	{
 		int val = LPJLEHAJADA("unit5_enable_master_version", 0);
-		return val > 0 && val <= DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion;
+		return val > 0 && val <= IEFOPDOOLOK_MasterVersion;
 	}
 
 	// // RVA: 0xCC8668 Offset: 0xCC8668 VA: 0xCC8668
-	// public bool CDOOMPPEINP() { }
+	public bool CDOOMPPEINP()
+	{
+		int val = LPJLEHAJADA("episode_filter_enable_bg_master_version", 0);
+		return val > 0 && val <= IEFOPDOOLOK_MasterVersion;
+	}
 
 	// // RVA: 0xCC8734 Offset: 0xCC8734 VA: 0xCC8734
 	// public bool NJGEDPHNIKC() { }

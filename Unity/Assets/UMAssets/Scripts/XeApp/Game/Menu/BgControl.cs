@@ -609,7 +609,7 @@ namespace XeApp.Game.Menu
 			FFHPBEPOMAK_DivaInfo d = GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(false).BCJEAJPLGMB_MainDivas[0];
 			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId > 0)
 			{
-				d = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId - 1];
+				d = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId - 1];
 			}
 			int idx = 9;
 			if(d != null)

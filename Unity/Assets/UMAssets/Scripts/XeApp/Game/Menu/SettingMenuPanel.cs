@@ -71,7 +71,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC3B274 Offset: 0xC3B274 VA: 0xC3B274
 		private void CallBackEpisodeSelect()
 		{
-			TodoLogger.LogNotImplemented("CallBackEpisodeSelect");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MenuScene.Instance.Call(TransitionList.Type.EPISODE_SELECT, null, true);
 		}
 
 		//// RVA: 0xC3B374 Offset: 0xC3B374 VA: 0xC3B374

@@ -137,7 +137,7 @@ namespace XeApp.Game.Menu
 					int colId = 0;
 					if(a_is_has_only)
 					{
-						FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC.Find((FFHPBEPOMAK_DivaInfo _) =>
+						FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Find((FFHPBEPOMAK_DivaInfo _) =>
 						{
 							//0x1C89620
 							return _.AHHJLDLAPAN_DivaId == divaId;
@@ -195,7 +195,25 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1C88760 Offset: 0x1C88760 VA: 0x1C88760
-		// public static uint CreateBit(PIGBBNDPPJC a_view) { }
+		public static uint CreateBit(PIGBBNDPPJC a_view)
+		{
+			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(a_view.KIJAPOFAGPN_UnlockItemId);
+			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(a_view.KIJAPOFAGPN_UnlockItemId);
+			int a = 0;
+			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg)
+			{
+				a = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Count + 2;
+			}
+			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie)
+			{
+				a = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Count + 1;
+			}
+			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
+			{
+				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.EEOADCECNOM_GetCostumeInfo(id).AHHJLDLAPAN_PrismDivaId;
+			}
+			return (uint)(1 << a);
+		}
 
 		// // RVA: 0x1C885F8 Offset: 0x1C885F8 VA: 0x1C885F8
 		private uint ConvertBit_DivaToBtn(uint a_bit_diva)
@@ -205,7 +223,7 @@ namespace XeApp.Game.Menu
 			{
 				if((a_bit_diva & (1 << (m_bind_tbl[i].m_diva_id))) != 0)
 				{
-					res |= (uint)(1 << (m_bind_tbl[i].m_btn));
+					res |= (uint)(1 << (m_bind_tbl[i].m_btn - 1));
 				}
 			}
 			return res;
@@ -217,7 +235,7 @@ namespace XeApp.Game.Menu
 			uint res = 0;
 			for(int i = 0; i < m_bind_tbl.Length; i++)
 			{
-				if((a_bit_btn & (1 << (m_bind_tbl[i].m_btn))) != 0)
+				if((a_bit_btn & (1 << (m_bind_tbl[i].m_btn - 1))) != 0)
 				{
 					res |= (uint)(1 << (m_bind_tbl[i].m_diva_id));
 				}

@@ -386,11 +386,11 @@ namespace XeApp.Game.Menu
 		private void OnChangeCompatibleDivaFilter(uint bit)
 		{
 			m_compatibleButtonStateBit = 0;
-			for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC.Count; i++)
+			for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Count; i++)
 			{
 				if((bit & (1 << i)) != 0)
 				{
-					m_compatibleButtonStateBit |= (byte)(1 << (GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[i].AHHJLDLAPAN_DivaId - 1));
+					m_compatibleButtonStateBit |= (byte)(1 << (GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId - 1));
 				}
 			}
 		}

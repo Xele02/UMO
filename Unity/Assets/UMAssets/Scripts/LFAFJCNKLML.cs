@@ -136,14 +136,14 @@ public class LFAFJCNKLML : CKFGMNAIBNG
 	public static List<LFAFJCNKLML> FKDIMODKKJD(List<int> NBIGLBMHEDC)
 	{
 		List<LFAFJCNKLML> res = new List<LFAFJCNKLML>(500);
-		for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC.Count; i++)
+		for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Count; i++)
 		{
-			if(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[i].FJODMPGPDDD && GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[i].IPJMPBANBPP)
+			if(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[i].FJODMPGPDDD && GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[i].IPJMPBANBPP)
 			{
-				res.AddRange(HEGEKFMJNCC(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[i].AHHJLDLAPAN_DivaId));
+				res.AddRange(HEGEKFMJNCC(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId));
 				if(NBIGLBMHEDC != null)
 				{
-					NBIGLBMHEDC.Add(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[i].AHHJLDLAPAN_DivaId);
+					NBIGLBMHEDC.Add(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId);
 				}
 			}
 		}

@@ -196,7 +196,7 @@ namespace XeApp.Game.Menu
 				int costumeId = 0;
 				if(viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId >= 1)
 				{
-					FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId - 1];
+					FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId - 1];
 					costumeId = diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
 					colorId = diva.EKFONBFDAAP_ColorId;
 					divaId = diva.AHHJLDLAPAN_DivaId;

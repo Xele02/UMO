@@ -655,7 +655,7 @@ namespace XeApp.Game.Menu
 				FFHPBEPOMAK_DivaInfo divaInfo;
 				if (!m_is_godiva)
 				{
-					divaInfo = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[m_diva_index];
+					divaInfo = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[m_diva_index];
 				}
 				else
 				{
@@ -690,7 +690,7 @@ namespace XeApp.Game.Menu
 			item.m_view_diva.LEHDLBJJBNC();
 			JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = true;
 			JDDGPJDKHNE.HHCJCDFCLOB.NFNLGGHMEAM();
-			FFHPBEPOMAK_DivaInfo currentDiva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[m_diva_index];
+			FFHPBEPOMAK_DivaInfo currentDiva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[m_diva_index];
 			int divaId = currentDiva.AHHJLDLAPAN_DivaId;
 			int oldCostumeId = 0;
 			int oldColorId = 0;

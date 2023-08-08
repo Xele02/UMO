@@ -61,6 +61,15 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1C89FC4 Offset: 0x1C89FC4 VA: 0x1C89FC4
-		// public static uint CreateBit(PIGBBNDPPJC a_view) { }
+		public static uint CreateBit(PIGBBNDPPJC a_view)
+		{
+			if(!a_view.CCBKMCLDGAD_HasReward)
+			{
+				if (a_view.IIEAILCOPDB)
+					return 5;
+				return 1;
+			}
+			return 2;
+		}
 	}
 }

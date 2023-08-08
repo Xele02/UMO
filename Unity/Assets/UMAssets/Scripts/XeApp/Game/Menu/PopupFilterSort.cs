@@ -334,7 +334,7 @@ namespace XeApp.Game.Menu
 			}
 			{
 				PopupFilterSortParts_FilterDiva2 p = m_setting.m_list_parts[11].m_base as PopupFilterSortParts_FilterDiva2;
-				p.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC, true, 0, 0, false);
+				p.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas, true, 0, 0, false);
 				p.SetBit((uint)(m_setting.m_param.EnableSave ? GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CEJNPBFIIMJ_EpisodeSelect.IKEMMEAEPLM_filterDivaAndVal : 0));
 			}
 		}

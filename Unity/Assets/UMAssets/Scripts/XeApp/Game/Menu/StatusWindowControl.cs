@@ -272,7 +272,7 @@ namespace XeApp.Game.Menu
 						bool b;
 						if (!s.isGoDiva)
 						{
-							diva = viewPlayerData.NBIGLBMHEDC[s.id - 1];
+							diva = viewPlayerData.NBIGLBMHEDC_Divas[s.id - 1];
 							b = false;
 						}
 						else

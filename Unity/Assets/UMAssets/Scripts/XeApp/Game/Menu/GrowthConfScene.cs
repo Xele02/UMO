@@ -112,7 +112,7 @@ namespace XeApp.Game.Menu
 		{
 			GrowthConfArgs arg = Args as GrowthConfArgs;
 			m_seriesType = series.First;
-			m_divaData = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[arg.DivaId - 1];
+			m_divaData = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[arg.DivaId - 1];
 			m_growsList.Clear();
 			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics.Count; i++)
 			{
@@ -230,12 +230,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xE234FC Offset: 0xE234FC VA: 0xE234FC
 		private bool IsAnyDivaMusicExp(DFKGGBMFFGB_PlayerInfo viewPlayerData, int musicId)
 		{
-			for(int i = 0; i < viewPlayerData.NBIGLBMHEDC.Count; i++)
+			for(int i = 0; i < viewPlayerData.NBIGLBMHEDC_Divas.Count; i++)
 			{
-				if(viewPlayerData.NBIGLBMHEDC[i].IPJMPBANBPP)
+				if(viewPlayerData.NBIGLBMHEDC_Divas[i].IPJMPBANBPP)
 				{
-					KDOMGMCGHDC.ODIAFJCPIFO(musicId, viewPlayerData.NBIGLBMHEDC[i].AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, viewPlayerData.NBIGLBMHEDC[i].PKLPGBKKFOL[musicId - 1]);
-					if (viewPlayerData.NBIGLBMHEDC[i].HMBECPGHPOE[musicId - 1] > 0)
+					KDOMGMCGHDC.ODIAFJCPIFO(musicId, viewPlayerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, viewPlayerData.NBIGLBMHEDC_Divas[i].PKLPGBKKFOL[musicId - 1]);
+					if (viewPlayerData.NBIGLBMHEDC_Divas[i].HMBECPGHPOE[musicId - 1] > 0)
 						return true;
 				}
 			}

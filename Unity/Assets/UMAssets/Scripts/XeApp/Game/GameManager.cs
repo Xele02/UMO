@@ -1338,7 +1338,7 @@ namespace XeApp.Game
 			FFHPBEPOMAK_DivaInfo res = m_viewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
 			if(localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId > 0)
 			{
-				res = m_viewPlayerData.NBIGLBMHEDC[localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId - 1];
+				res = m_viewPlayerData.NBIGLBMHEDC_Divas[localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId - 1];
 			}
 			return res;
 		}

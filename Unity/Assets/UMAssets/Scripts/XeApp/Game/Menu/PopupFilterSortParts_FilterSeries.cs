@@ -91,7 +91,28 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1C8AF2C Offset: 0x1C8AF2C VA: 0x1C8AF2C
-		// public static uint CreateBit(PIGBBNDPPJC a_view) { }
+		public static uint CreateBit(PIGBBNDPPJC a_view)
+		{
+			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(a_view.KIJAPOFAGPN_UnlockItemId);
+			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(a_view.KIJAPOFAGPN_UnlockItemId);
+			int a = 0;
+			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg)
+			{
+				a = (int)IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PFEKKPABPKL_HomeBg.GCINIJEMHFK(id).AIHCEGFANAM_Sa;
+			}
+			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie)
+			{
+				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.GCINIJEMHFK(id).AIHCEGFANAM_Sa;
+			}
+			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
+			{
+				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.EEOADCECNOM_GetCostumeInfo(id).AHHJLDLAPAN_PrismDivaId).AIHCEGFANAM_Attr;
+			}
+			uint res = 16;
+			if (a > 0 && a < 3)
+				res = (uint)(1 << (a - 1));
+			return res;
+		}
 
 		// // RVA: 0x1C8ADBC Offset: 0x1C8ADBC VA: 0x1C8ADBC
 		private uint ConvertBit_SeriesToBtn(uint a_bit_series)
