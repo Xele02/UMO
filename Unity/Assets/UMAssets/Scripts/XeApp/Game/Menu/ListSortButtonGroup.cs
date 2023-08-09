@@ -210,7 +210,8 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x15427F0 Offset: 0x15427F0 VA: 0x15427F0
 		private void OnPopupLimitOverList()
 		{
-			TodoLogger.LogNotImplemented("OnPopupLimitOverList");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			m_onLimitOverListEvent.Invoke();
 		}
 
 		// // RVA: 0x154286C Offset: 0x154286C VA: 0x154286C

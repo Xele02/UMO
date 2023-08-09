@@ -4,6 +4,8 @@ using XeSys.Gfx;
 using System.Collections;
 using XeApp.Game.Tutorial;
 using mcrs;
+using System.Text;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -78,7 +80,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC3B374 Offset: 0xC3B374 VA: 0xC3B374
 		private void CallBackAbilityRelease()
 		{
-			TodoLogger.LogNotImplemented("CallBackAbilityRelease");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MenuScene.Instance.Call(TransitionList.Type.SCENE_ABILITY_RELEASE_LIST, new SceneListArgs(), true);
 		}
 
 		//// RVA: 0xC3B494 Offset: 0xC3B494 VA: 0xC3B494
@@ -91,7 +94,25 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC3B5B4 Offset: 0xC3B5B4 VA: 0xC3B5B4
 		private void CallBackCostumeUpgrade()
 		{
-			TodoLogger.LogNotImplemented("CallBackCostumeUpgrade");
+			if (MOEALEGLGCH.CDOCOLOKCJK())
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+				MenuScene.Instance.Call(TransitionList.Type.COSTUME_UPGRADE, null, true);
+			}
+			else
+			{
+				StringBuilder str = new StringBuilder(64);
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				str.SetFormat(bk.GetMessageByLabel("costume_upgrade_lock_text"), MOEALEGLGCH.IGDOBKHKNJM_GetCostumeUpgradeOfferNum());
+				TextPopupSetting s = new TextPopupSetting();
+				s.Text = str.ToString();
+				s.WindowSize = SizeType.Small;
+				s.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				};
+				PopupWindowManager.Show(s, null, null, null, null, true, true, false);
+			}
 		}
 
 		//// RVA: 0xC3B980 Offset: 0xC3B980 VA: 0xC3B980

@@ -159,8 +159,12 @@ namespace XeApp.Game.Menu
 			}
 
 			TodoLogger.LogError(TodoLogger.ToCheck, "m_popupFilterSortScene init should not be here");
-			if(m_transitionName == TransitionList.Type.SCENE_SELECT)
+			if (m_transitionName == TransitionList.Type.SCENE_SELECT)
 				m_popupFilterSortScene = PopupFilterSort.Scene.EpisodeSelect2;
+			if (m_transitionName == TransitionList.Type.SCENE_ABILITY_RELEASE_LIST)
+				m_popupFilterSortScene = PopupFilterSort.Scene.EpisodeSelect2;
+			else
+				TodoLogger.LogError(0, "Set for transition " + m_transitionName);
 
 			IsReady = true;
 		}
@@ -168,7 +172,17 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1380510 Offset: 0x1380510 VA: 0x1380510
 		private void OnOpenPopupLimitOverList()
 		{
-			TodoLogger.LogNotImplemented("OnOpenPopupLimitOverList");
+			PopupLimitOverList.Show(PlayerData, m_order, PlayerData.OPIBAPEGCLA_Scenes, m_sceneIndexList, m_isBeginner, 0, () =>
+			{
+				//0x1387B68
+				if(MenuScene.Instance != null)
+				{
+					if(!MenuScene.Instance.IsTransition())
+					{
+						m_sceneSelectList.UpdateContent(PlayerData, m_divaData, m_musicBaseData != null ? m_musicBaseData.DLAEJOBELBH_MusicId : 0, PlayerData.OPIBAPEGCLA_Scenes, m_sceneIndexList, m_selectedSceneId, UnitWindowConstant.SortItemToDisplayType[(int)m_sortType], m_dispRowCount, m_transitionName, false);
+					}
+				}
+			});
 		}
 
 		// // RVA: 0x1380624 Offset: 0x1380624 VA: 0x1380624
@@ -1283,9 +1297,5 @@ namespace XeApp.Game.Menu
 		{
 			return m_selectedDivaSlotIndex == 0;
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x72E24C Offset: 0x72E24C VA: 0x72E24C
-		// // RVA: 0x1387B68 Offset: 0x1387B68 VA: 0x1387B68
-		// private void <OnOpenPopupLimitOverList>b__47_0() { }
 	}
 }

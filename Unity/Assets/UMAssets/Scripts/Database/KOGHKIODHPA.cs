@@ -344,12 +344,12 @@ public class KOGHKIODHPA_Board : DIHHCBACKGG_DbSection
 			data.IGNCGOMDGKI = new List<int>();
 			for(int j = 0; j < array[i].IFILLPEKJFK.Length; j++)
 			{
-				data.IGNCGOMDGKI.Add((int)(array[i].IFILLPEKJFK[j] ^ (data.FBGGEFFJJHB * (i + 2))));
+				data.IGNCGOMDGKI.Add((int)(array[i].IFILLPEKJFK[j] ^ (data.FBGGEFFJJHB * (j + 2))));
 			}
 			data.IEILOCENAMF = new List<int>();
 			for (int j = 0; j < array[i].BONFLFAPFDG.Length; j++)
 			{
-				data.IEILOCENAMF.Add((int)(array[i].BONFLFAPFDG[j] ^ (data.FBGGEFFJJHB * (i + 2))));
+				data.IEILOCENAMF.Add((int)(array[i].BONFLFAPFDG[j] ^ (data.FBGGEFFJJHB * (j + 2))));
 			}
 			PJADHDHKOEJ.Add(data);
 			key = key * 0xd + 7;
