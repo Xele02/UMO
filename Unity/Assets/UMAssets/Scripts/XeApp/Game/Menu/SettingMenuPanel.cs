@@ -84,7 +84,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC3B494 Offset: 0xC3B494 VA: 0xC3B494
 		private void CallBackDivaSetting()
 		{
-			TodoLogger.LogNotImplemented("CallBackDivaSetting");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MenuScene.Instance.Call(TransitionList.Type.DIVA_SETTING_LIST, new TeamSelectDivaListArgs(), true);
 		}
 
 		//// RVA: 0xC3B5B4 Offset: 0xC3B5B4 VA: 0xC3B5B4
