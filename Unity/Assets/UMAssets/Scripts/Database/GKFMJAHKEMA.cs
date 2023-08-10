@@ -257,7 +257,17 @@ public class GKFMJAHKEMA_ValSkill : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xAB1F48 Offset: 0xAB1F48 VA: 0xAB1F48
-		//public int MLIJKJFMOHN(int IOPHIHFOOEP) { }
+		public int MLIJKJFMOHN(int IOPHIHFOOEP)
+		{
+			if(IOPHIHFOOEP > -1)
+			{
+				if(IOPHIHFOOEP < JKLOKAKFJKP.Count)
+				{
+					return JKLOKAKFJKP[IOPHIHFOOEP] ^ FBGGEFFJJHB;
+				}
+			}
+			return 0;
+		}
 
 		//// RVA: 0xAB2014 Offset: 0xAB2014 VA: 0xAB2014
 		//public void JFKBPEBPGCK(int IOPHIHFOOEP, int JBGEEPFKIGG) { }
@@ -275,7 +285,17 @@ public class GKFMJAHKEMA_ValSkill : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xAB20E0 Offset: 0xAB20E0 VA: 0xAB20E0
-		//public int IMALGGGJDJO(int IOPHIHFOOEP) { }
+		public int IMALGGGJDJO(int IOPHIHFOOEP)
+		{
+			if(IOPHIHFOOEP > -1)
+			{
+				if(IOPHIHFOOEP < IFEHKNJONPL.Count)
+				{
+					return IFEHKNJONPL[IOPHIHFOOEP] ^ FBGGEFFJJHB;
+				}
+			}
+			return 0;
+		}
 
 		//// RVA: 0xAB21AC Offset: 0xAB21AC VA: 0xAB21AC
 		//public void BHJNIOKNDLM(int IOPHIHFOOEP, int JBGEEPFKIGG) { }
@@ -332,7 +352,14 @@ public class GKFMJAHKEMA_ValSkill : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0xAAEF28 Offset: 0xAAEF28 VA: 0xAAEF28
-	//public GKFMJAHKEMA.FIKGJJDIBPH NIIADANCEKL(int PPFNGGCBJKC) { }
+	public FIKGJJDIBPH NIIADANCEKL(int PPFNGGCBJKC)
+	{
+		return AELABGDHIHC.Find((FIKGJJDIBPH JGNBPFCJLKI) =>
+		{
+			//0xAB1848
+			return JGNBPFCJLKI.PPFNGGCBJKC == PPFNGGCBJKC;
+		});
+	}
 
 	//// RVA: 0xAAF048 Offset: 0xAAF048 VA: 0xAAF048
 	//public string EFEGBHACJAL(string LJNAKDMILMC, string KKMJBMKHGNH) { }

@@ -118,7 +118,35 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC3B980 Offset: 0xC3B980 VA: 0xC3B980
 		public void CallBackValkyrieTuneUp()
 		{
-			TodoLogger.LogNotImplemented("CallBackValkyrieTuneUp");
+			if(IsValkyrieTuneUpUnlock())
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+				if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade))
+				{
+					TodoLogger.LogError(0, "Tuto");
+				}
+				else
+				{
+					MenuScene.Instance.Call(TransitionList.Type.VALKYRIE_TUNEUP, null, true);
+				}
+			}
+			else
+			{
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				StringBuilder str = new StringBuilder(64);
+				str.Append(bk.GetMessageByLabel("story_unlock_01"));
+				str.Append("\n");
+				str.AppendFormat(bk.GetMessageByLabel("story_unlock_04"), 9);
+				TextPopupSetting s = new TextPopupSetting();
+				s.Text = str.ToString();
+				s.WindowSize = SizeType.Small;
+				s.IsCaption = false;
+				s.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				};
+				PopupWindowManager.Show(s, null, null, null, null);
+			}
 		}
 
 		// RVA: 0xC3C3E0 Offset: 0xC3C3E0 VA: 0xC3C3E0 Slot: 16

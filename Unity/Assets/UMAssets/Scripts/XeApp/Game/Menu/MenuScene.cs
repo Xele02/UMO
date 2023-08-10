@@ -98,7 +98,7 @@ namespace XeApp.Game.Menu
 		private HelpPopupWindowControl m_helpPopupWindowControl; // 0x68
 		private LimitOverControl m_limitOverControl; // 0x6C
 		private IntimacyController m_intimacyControl; // 0x70
-		// private PopupItemList.PopupItemListSetting m_popupItemListSetting = new PopupItemList.PopupItemListSetting(); // 0x74
+		private PopupItemList.PopupItemListSetting m_popupItemListSetting = new PopupItemList.PopupItemListSetting(); // 0x74
 		private PopupItemDetail.PopupItemDetailSetting m_popupItemDetailSettinig = new PopupItemDetail.PopupItemDetailSetting(); // 0x78
 		private PopupUseItemWindow m_popupUseItemWindow; // 0x7C
 		private PopupDetailCostumeSetting m_popupDetailCostumeSetting = new PopupDetailCostumeSetting(); // 0x80
@@ -1010,10 +1010,20 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB32468 Offset: 0xB32468 VA: 0xB32468
-		// public void HeaderEnter() { }
+		public void HeaderEnter()
+		{
+			HeaderMenu.MenuStack.EnterLabel();
+			HeaderMenu.Enter(false);
+			HelpButton.TryEnter();
+		}
 
 		// // RVA: 0xB32500 Offset: 0xB32500 VA: 0xB32500
-		// public void HeaderLeave() { }
+		public void HeaderLeave()
+		{
+			HeaderMenu.MenuStack.LeaveLabel(false);
+			HeaderMenu.Leave(false);
+			HelpButton.TryLeave();
+		}
 
 		// // RVA: 0xB3259C Offset: 0xB3259C VA: 0xB3259C
 		public void FooterEnter()
@@ -1126,11 +1136,43 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB32E14 Offset: 0xB32E14 VA: 0xB32E14
-		// public void ShowItemListWindow(PopupItemList.ItemType type, bool isTab = False) { }
+		public void ShowItemListWindow(PopupItemList.ItemType type, bool isTab = false)
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			m_popupItemListSetting.TitleText = bk.GetMessageByLabel("popup_text_10");
+			m_popupItemListSetting.ItemType = type;
+			m_popupItemListSetting.WindowSize = SizeType.Large;
+			m_popupItemListSetting.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("other_item_show", 0) < 1 || !isTab)
+			{
+				m_popupItemListSetting.Tabs = new PopupTabButton.ButtonLabel[0];
+			}
+			else
+			{
+				m_popupItemListSetting.Tabs = new PopupTabButton.ButtonLabel[2]
+				{
+					PopupTabButton.ButtonLabel.GrowItem, PopupTabButton.ButtonLabel.OtherItem
+				};
+			}
+			m_popupItemListSetting.DefaultTab = type == PopupItemList.ItemType.Growth ? PopupTabButton.ButtonLabel.GrowItem : PopupTabButton.ButtonLabel.OtherItem;
+			this.StartCoroutineWatched(ShowItemListWindowCoroutine());
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7EC4 Offset: 0x6C7EC4 VA: 0x6C7EC4
 		// // RVA: 0xB331B4 Offset: 0xB331B4 VA: 0xB331B4
-		// private IEnumerator ShowItemListWindowCoroutine() { }
+		private IEnumerator ShowItemListWindowCoroutine()
+		{
+			//0xB3F4DC
+			PopupWindowManager.Show(m_popupItemListSetting, null, (IPopupContent content, PopupTabButton.ButtonLabel label) =>
+			{
+				//0xB37F94
+				(content as PopupItemList).ChangeList(label);
+			}, null, null);
+			yield break;
+		}
 
 		// // RVA: 0xB33260 Offset: 0xB33260 VA: 0xB33260
 		// public void ShowItemDetail(int id, int count, ButtonInfo[] buttons, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> buttonCallBack) { }

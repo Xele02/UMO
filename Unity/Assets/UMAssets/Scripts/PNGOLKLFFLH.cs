@@ -20,7 +20,7 @@ public class PNGOLKLFFLH
 	public int KELFCMEOPPM_EpisodeId; // 0x3C
 	public int ENMAEBJGEKL; // 0x40
 	public int CNLIAMIIJID_AbilityLevel; // 0x44
-	public int AKDKFIPNAOL; // 0x48
+	public int AKDKFIPNAOL_AbilityLevelMax; // 0x48
 	public IEIGOPLPJGI_PilotInfo OPBPKNHIPPE_Pilot = new IEIGOPLPJGI_PilotInfo(); // 0x4C
 
 	// public string COCGOFFMFCO { get; }
@@ -55,17 +55,17 @@ public class PNGOLKLFFLH
 		}
 		int lvl_max = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill.LPJLEHAJADA("skill_level_max", 4);
 		ENMAEBJGEKL = valkDb.BMIJDLBGFNP_SkillId;
-		AKDKFIPNAOL = 0;
+		AKDKFIPNAOL_AbilityLevelMax = 0;
 		GKFMJAHKEMA_ValSkill.CCPFGNNIBDD data = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill.MNHBHNIHJJH(ENMAEBJGEKL);
 		if (data != null)
 		{
-			AKDKFIPNAOL = data.DOOGFEGEKLG;
-			if (lvl_max < AKDKFIPNAOL)
-				AKDKFIPNAOL = lvl_max;
+			AKDKFIPNAOL_AbilityLevelMax = data.DOOGFEGEKLG;
+			if (lvl_max < AKDKFIPNAOL_AbilityLevelMax)
+				AKDKFIPNAOL_AbilityLevelMax = lvl_max;
 		}
 		CNLIAMIIJID_AbilityLevel = saveValk.CIEOBFIIPLD_Level;
-		if (AKDKFIPNAOL < CNLIAMIIJID_AbilityLevel)
-			CNLIAMIIJID_AbilityLevel = AKDKFIPNAOL;
+		if (AKDKFIPNAOL_AbilityLevelMax < CNLIAMIIJID_AbilityLevel)
+			CNLIAMIIJID_AbilityLevel = AKDKFIPNAOL_AbilityLevelMax;
 	}
 
 	// // RVA: 0xFF2298 Offset: 0xFF2298 VA: 0xFF2298
