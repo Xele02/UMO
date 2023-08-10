@@ -802,14 +802,57 @@ namespace XeApp.Game.Menu
 		private void UpdateChangeAnim_Start()
 		{
 			MenuScene.Instance.InputDisable();
-
+			m_layoutValSelect.SetActiveTransform(m_EffectInstance.activeSelf, false);
+			m_layoutValSelect.FadeOutValkyrieImage(LayoutValkyrieSelect.Direction.LEFT);
+			m_layoutValSelect.FadeOutValkyrieImage(LayoutValkyrieSelect.Direction.RIGHT);
+			if(m_IsDispEpPop)
+			{
+				m_episodePop.Leave();
+				m_IsDispEpPop = false;
+			}
+			m_Updater = UpdateChangeAnim_Wait;
 		}
 
 		//// RVA: 0xBD3E04 Offset: 0xBD3E04 VA: 0xBD3E04
-		//private void UpdateChangeAnim_Wait() { }
+		private void UpdateChangeAnim_Wait()
+		{
+			if(!m_layoutValSelect.ValkyrieImageIsPlaying())
+			{
+				if(!m_episodePop.IsPlaying())
+				{
+					m_layoutValSelect.ApplySelectValkyrieImage(m_SeriesValkyrieList[SelectSeries], Select);
+					PIGBBNDPPJC e = GetEpisodeData(m_SeriesValkyrieList[SelectSeries][Select].KELFCMEOPPM_EpisodeId);
+					string epName = e != null ? e.OPFGFINHFCE_Name : "";
+					MessageBank bk = MessageManager.Instance.GetBank("menu");
+					m_episodePop.SetEpisodeText(bk.GetMessageByLabel("costume_select_text_01"), string.Format(bk.GetMessageByLabel("costume_select_text_02"), epName));
+					m_layoutValSelect.FadeInValkyrieImage(LayoutValkyrieSelect.Direction.LEFT);
+					m_layoutValSelect.FadeInValkyrieImage(LayoutValkyrieSelect.Direction.RIGHT);
+					m_episodePop.SetEpisodeValkyrieImage(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId, 0);
+					if(m_IsPlayEpAnim)
+					{
+						m_episodePop.Enter();
+						m_IsDispEpPop = true;
+					}
+					m_Updater = UpdateChangeAnim_End;
+				}
+			}
+		}
 
 		//// RVA: 0xBD42E8 Offset: 0xBD42E8 VA: 0xBD42E8
-		//private void UpdateChangeAnim_End() { }
+		private void UpdateChangeAnim_End()
+		{
+			if(!m_layoutValSelect.ValkyrieImageIsPlaying())
+			{
+				if(!m_episodePop.IsPlaying())
+				{
+					MenuScene.Instance.InputEnable();
+					m_SwaipTouch.ResetValue();
+					m_SwaipTouch.ResetInputState();
+					m_layoutValSelect.SetActiveTransform(m_EffectInstance.activeSelf, true);
+					m_Updater = UpdateIdle;
+				}
+			}
+		}
 
 		//// RVA: 0xBD44A0 Offset: 0xBD44A0 VA: 0xBD44A0
 		//private void OnClickArrowButtonL() { }
