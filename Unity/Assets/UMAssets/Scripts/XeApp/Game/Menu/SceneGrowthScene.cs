@@ -937,7 +937,7 @@ namespace XeApp.Game.Menu
 			{
 				m_lastRewardItemId = l.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId;
 			}
-			this.StartCoroutine(LoadAppendLayoutCoroutine(!m_isAddtiveMainBoard && !m_isAddtiveSubBoard));
+			this.StartCoroutine(LoadAppendLayoutCoroutine(m_isAddtiveMainBoard || m_isAddtiveSubBoard));
 		}
 
 		// RVA: 0x10E0EC8 Offset: 0x10E0EC8 VA: 0x10E0EC8 Slot: 17

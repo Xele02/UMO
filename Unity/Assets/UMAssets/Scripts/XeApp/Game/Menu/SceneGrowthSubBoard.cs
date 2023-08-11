@@ -35,7 +35,7 @@ namespace XeApp.Game.Menu
 					DMPDJFAGCPN d = sceneData.JCNIAPAJAOB;
 					if (i < n.JPJNKNOJBMM)
 						d = sceneData.IKBBCHGLLKB;
-					NLNDLEEJOFD n2 = d.PDKGMFHIFML_Pl[n.JPJNKNOJBMM - 2];
+					NLNDLEEJOFD n2 = d.PDKGMFHIFML_Pl[d.PDKGMFHIFML_Pl.Count - 2];
 					v2 += Mathf.Max(n2.GHPLINIACBB_Col, d.ADPJCNHAJPC_Rd[d.ADPJCNHAJPC_Rd.Count - 2].GHPLINIACBB_Col);
 					v1 += d.PDKGMFHIFML_Pl.Count - 1;
 				}
@@ -48,7 +48,7 @@ namespace XeApp.Game.Menu
 					BoardSquare[] squares = new BoardSquare[5];
 					for(int j = 0; j < 5; j++)
 					{
-						squares[i].type = 0;
+						squares[j].type = 0;
 					}
 					m_boardSquareList.Add(squares);
 				}
