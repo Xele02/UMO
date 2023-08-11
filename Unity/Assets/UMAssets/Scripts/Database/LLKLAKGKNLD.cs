@@ -219,15 +219,15 @@ public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
 			ALNDGBMAILD[] array = parser.PJFGGPOEBAH;
 			for (int i = 0; i < array.Length; i++)
 			{
-				BDKOIDEMCEE.Add(array[i].ELHALBFPLJK);
+				BDKOIDEMCEE.Add(array[i].ELHALBFPLJK ^ FBGGEFFJJHB);
 			}
 		}
 		{
 			DGILHAMKBKK[] array = parser.KIEKMCKCMGD;
 			for (int i = 0; i < array.Length; i++)
 			{
-				LOCCHKJGJDJ.Add(array[i].FDAPNFDOHEJ);
-				BMEHMMIPELI.Add(array[i].EDFJKODHCAN);
+				LOCCHKJGJDJ.Add(array[i].FDAPNFDOHEJ ^ FBGGEFFJJHB);
+				BMEHMMIPELI.Add(array[i].EDFJKODHCAN ^ FBGGEFFJJHB);
 			}
 		}
 		{

@@ -1175,7 +1175,28 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB33260 Offset: 0xB33260 VA: 0xB33260
-		// public void ShowItemDetail(int id, int count, ButtonInfo[] buttons, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> buttonCallBack) { }
+		public void ShowItemDetail(int id, int count, ButtonInfo[] buttons, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> buttonCallBack)
+		{
+			m_popupItemDetailSettinig.TitleText = MessageManager.Instance.GetMessage("menu", "item_detail_popup_title_00");
+			m_popupItemDetailSettinig.ItemId = id;
+			m_popupItemDetailSettinig.SubId = 0;
+			m_popupItemDetailSettinig.Count = count;
+			m_popupItemDetailSettinig.IsShop = false;
+			m_popupItemDetailSettinig.OverrideName = "";
+			m_popupItemDetailSettinig.OverrideText = "";
+			m_popupItemDetailSettinig.WindowSize = SizeType.Middle;
+			m_popupItemDetailSettinig.SetParent(transform);
+			if (buttons == null)
+			{
+				m_popupItemDetailSettinig.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+				};
+			}
+			else
+				m_popupItemDetailSettinig.Buttons = buttons;
+			PopupWindowManager.Show(m_popupItemDetailSettinig, buttonCallBack, null, null, null, true, true, false);
+		}
 
 		// // RVA: 0xB335DC Offset: 0xB335DC VA: 0xB335DC
 		public void ShowItemDetail(int id, int count, Action closeCallback)
