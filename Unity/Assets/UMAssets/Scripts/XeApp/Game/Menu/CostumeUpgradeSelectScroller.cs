@@ -253,7 +253,7 @@ namespace XeApp.Game.Menu
 			if(flickStartTime >= 0)
 			{
 				Vector2 delta = position - flickStartPos;
-				float f = delta.sqrMagnitude;
+				float f = delta.magnitude;
 				int a = 0;
 				if((Time.realtimeSinceStartup - flickStartTime) < m_flickTime && m_flickLength <= f)
 				{

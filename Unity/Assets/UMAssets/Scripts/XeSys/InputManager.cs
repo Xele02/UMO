@@ -90,7 +90,9 @@ namespace XeSys
 			else
 			{
 				MouseAction();
+#if !UNITY_ANDROID
 				KeyboardAction();
+#endif
 			}
 		}
 
@@ -189,7 +191,7 @@ namespace XeSys
 				if(SystemManager.rawAppScreenRect.yMax < t2.position.y)
 					return;
 			}
-			pinchCurrentLength = (t2.position - t1.position).sqrMagnitude;
+			pinchCurrentLength = (t2.position - t1.position).magnitude;
 			if(!pinch)
 			{
 				pinchStartLength = pinchCurrentLength;
@@ -338,6 +340,7 @@ namespace XeSys
 		// // RVA: 0x1EF793C Offset: 0x1EF793C VA: 0x1EF793C
 		// public void Debug() { }
 
+#if !UNITY_ANDROID
 		// UMO
 		public class KeyTouchInfoRecord : TouchInfoRecord
 		{
@@ -369,7 +372,6 @@ namespace XeSys
 			}
 
 		}
-
 		List<KeyTouchInfoRecord> keysInfo = new List<KeyTouchInfoRecord>();
 
 		void KeyboardAction()
@@ -429,5 +431,6 @@ namespace XeSys
 		}
 
 		// END UMO
+#endif
 	}
 }

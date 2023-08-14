@@ -108,7 +108,7 @@ namespace XeSys
         // // RVA: 0x23A7160 Offset: 0x23A7160 VA: 0x23A7160
         public bool IsFlick(int frame, float distanceRate)
 		{
-			return distanceRate <= GetRecentDeltaDistance(frame) / new Vector2(Screen.width, Screen.height).sqrMagnitude;
+			return distanceRate <= GetRecentDeltaDistance(frame) / new Vector2(Screen.width, Screen.height).magnitude;
 		}
 
         // // RVA: 0x23A720C Offset: 0x23A720C VA: 0x23A720C

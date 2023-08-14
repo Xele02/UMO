@@ -504,6 +504,7 @@ namespace XeApp.Game.RhythmGame
 					}
 				}
 			}
+			#if !UNITY_ANDROID
 			for(int i = 0; i < (int)InputManager.KeyTouchInfoRecord.KeyType.Num; i++)
 			{
 				InputManager.KeyTouchInfoRecord record = InputManager.Instance.GetKeyTouchInfoRecord((InputManager.KeyTouchInfoRecord.KeyType)i);
@@ -515,11 +516,13 @@ namespace XeApp.Game.RhythmGame
 					}
 				}
 			}
+			#endif
 			inputSaver.TimerUpdate();
 			if (delegateCheckInput != null)
 				delegateCheckInput(inputSaver);
 		}
 
+#if !UNITY_ANDROID
 		private void CheckInputFromKeyTouchInfo(InputManager.KeyTouchInfoRecord tir, int touchId)
 		{
 			int line = -1;
@@ -646,6 +649,7 @@ namespace XeApp.Game.RhythmGame
 				}
 			}
 		}
+#endif
 
 		//// RVA: 0x9A422C Offset: 0x9A422C VA: 0x9A422C
 		private void CheckInputFromTouchInfo(TouchInfoRecord tir, int fingerId)
