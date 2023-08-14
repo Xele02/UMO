@@ -364,10 +364,10 @@ public class KDLPEDBKMID
 				}
 				else
 				{
-					if(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_Status == /*4*/JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LPLEIJIFOKN)
+					if(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_Status == /*4*/JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LPLEIJIFOKN_Error)
 					{
 						string errorStr = "network";
-						if(PMDNNKAPIKJ_FileDownloader.BHICPONFJKM)
+						if(PMDNNKAPIKJ_FileDownloader.BHICPONFJKM_SpaceError)
 							errorStr = "storage";
 						if(StorageSupport.GetAvailableStorageSizeMB() > -1 && StorageSupport.GetAvailableStorageSizeMB() < 50)
 							errorStr = "storage";

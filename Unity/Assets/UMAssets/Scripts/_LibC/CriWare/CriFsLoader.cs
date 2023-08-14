@@ -6,6 +6,7 @@ using CriWare;
 
 namespace ExternLib
 {
+#if !UNITY_ANDROID
     public static partial class LibCriWare
     {
         public static int criFsLoader_Load(CriFsLoader loader, CriFsBinder binder, string path, long offset, long load_size, byte[] buffer, long buffer_size)
@@ -26,7 +27,7 @@ namespace ExternLib
             return 0;
         }
 
-        public static int criFsLoader_Destroy(CriFsLoader loader)
+        public static int criFsLoader_Destroy(IntPtr loader)
         {
             return 0;
         }
@@ -37,4 +38,5 @@ namespace ExternLib
 			return 0;
 		}
     }
+#endif
 }

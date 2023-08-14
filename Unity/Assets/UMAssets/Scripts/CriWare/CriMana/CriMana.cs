@@ -1,7 +1,9 @@
 using System;
+using System.Runtime.InteropServices;
 
 namespace CriWare.CriMana
 {
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
     public struct EventPoint
     {
         public IntPtr cueName; // 0x0
@@ -13,8 +15,15 @@ namespace CriWare.CriMana
         public uint paramStringSize; // 0x20
         public uint cntCallback; // 0x24
     }
+	[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+	public struct AudioInfo
+	{
+        public uint samplingRate; // 0x0
+        public uint numChannels; // 0x4
+        public uint totalSamples; // 0x8
+	}
 
-    
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
     public class MovieInfo
     {
         private uint _reserved1; // 0x8
@@ -29,7 +38,8 @@ namespace CriWare.CriMana
         private uint _codecType; // 0x2C
         private uint _alphaCodecType; // 0x30
         public uint numAudioStreams; // 0x34
-        //public AudioInfo[] audioPrm; // 0x38
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)]
+        public AudioInfo[] audioPrm; // 0x38
         public uint numSubtitleChannels; // 0x3C
         public uint maxSubtitleSize; // 0x40
         public uint maxChunkSize; // 0x44
@@ -55,6 +65,7 @@ namespace CriWare.CriMana
         Theora = 10,
     }
 
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
     public class FrameInfo
     {
         public int frameNo; // 0x8

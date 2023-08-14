@@ -1,5 +1,6 @@
 using System.Text.RegularExpressions;
 using System;
+using System.Globalization;
 
 [System.Obsolete("Use GCGNICILKLD_AssetFileInfo", true)]
 public class GCGNICILKLD { }
@@ -70,7 +71,7 @@ public class GCGNICILKLD_AssetFileInfo
         {
             string strhash = m.Groups["p"].Value;
             uint hash;
-            if(UInt32.TryParse(strhash, out hash))
+            if(UInt32.TryParse(strhash, NumberStyles.HexNumber, null, out hash))
             {
                 FGGCKOJFJGK_FileHash = hash ^ JCKCPNHIKGP_Key1;
             }

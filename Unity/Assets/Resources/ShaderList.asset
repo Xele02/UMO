@@ -218,7 +218,7 @@ MonoBehaviour:
     internalName: 
     shader: {fileID: 4800000, guid: 85a23b24c88905f4faaa45b3c718377d, type: 3}
   - fileName: sofdecprimeyuv
-    internalName: 
+    internalName: CriMana/SofdecPrimeYuv
     shader: {fileID: 4800000, guid: c645e961434f2174c971d1c6ec1a34b9, type: 3}
   - fileName: ui-unlit-transcoloredblur
     internalName: 

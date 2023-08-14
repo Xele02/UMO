@@ -173,6 +173,12 @@ public class BBGDKLLEPIB
 			}
 
 			FLHOFIEOKDH_BaseUrl = COJNCNGHIJC.NFEAMMJIMPG.GLMGHMCOMEC_BaseUrl;
+#if UNITY_ANDROID
+			{
+				FLHOFIEOKDH_BaseUrl = "http://192.168.0.4:8000";
+				//FLHOFIEOKDH_BaseUrl = "https://assets-sakasho.cdn-dena.com/1246/20220622141305";
+			}
+#endif
 
 			DMPNAEEIANJ = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			if(COJNCNGHIJC.HOHOBEOJPBK_ServerInfo.AJBPBEALBOB_ServerCurrentAssetRevision == LHJNPJFNDNA)
@@ -269,11 +275,11 @@ public class BBGDKLLEPIB
 				yield break;
 			}
 			//L361
-			if(MHHFMCPJONH.CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LPLEIJIFOKN/*4*/)
+			if(MHHFMCPJONH.CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LPLEIJIFOKN_Error/*4*/)
 			{
 				int APGOAMNGFFF = 0;
 				string errorType = "network";
-				if(MHHFMCPJONH.BHICPONFJKM)
+				if(MHHFMCPJONH.BHICPONFJKM_SpaceError)
 					errorType = "storage";
 				int diskSpace = StorageSupport.GetAvailableStorageSizeMB();
 				if(diskSpace > -1 && diskSpace < 50)
@@ -325,7 +331,7 @@ public class BBGDKLLEPIB
 				}
 				int APGOAMNGFFF = 0;
 				string errorType = "network";
-				if(MHHFMCPJONH.BHICPONFJKM)
+				if(MHHFMCPJONH.BHICPONFJKM_SpaceError)
 					errorType = "storage";
 				int diskSpace = StorageSupport.GetAvailableStorageSizeMB();
 				if(diskSpace > -1 && diskSpace < 50)
@@ -452,7 +458,8 @@ public class BBGDKLLEPIB
 			{
 				if(CBLEBKOJJDB.KGHAJGGMPKL_Files[i].OIEAICNAMNB_LocalFileName == JNPHAJICDPN_SdFileName) // sd.dat
 				{
-					ICCMKHKNAMJ_ToDldList.Add(CBLEBKOJJDB.KGHAJGGMPKL_Files[i]);
+					if(!File.Exists(path))
+						ICCMKHKNAMJ_ToDldList.Add(CBLEBKOJJDB.KGHAJGGMPKL_Files[i]);
 					continue;
 				}
 				if(File.Exists(path))

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 #if UNITY_EDITOR
 using UnityEditor.SceneManagement;
 using UnityEditor;
@@ -45,7 +46,7 @@ public class UMOStart : MonoBehaviour
     {
         if(!RuntimeSettings.CurrentSettings.IsPathValid())
         {
-            return TrySelectDirectory();
+            return TrySelectDirectory(StartGameMenuInternal);
         }
         else
         {
@@ -57,7 +58,7 @@ public class UMOStart : MonoBehaviour
         }
     }
 
-    static bool TrySelectDirectory()
+    public static bool TrySelectDirectory(Func<bool> OnDone)
 	{
 #if UNITY_EDITOR
 		if (EditorUtility.DisplayDialog("Game Data error", "Game data directory ("+RuntimeSettings.CurrentSettings.DataDirectory+") is not setup correctly and no game data was found in the default directories. Please select the directory containing game directories \"android\" and \"db\".", "Select directory", "Cancel"))
@@ -68,7 +69,7 @@ public class UMOStart : MonoBehaviour
                 RuntimeSettings.CurrentSettings.DataDirectory = path;
                 EditorUtility.SetDirty(RuntimeSettings.CurrentSettings);
                 AssetDatabase.SaveAssets();
-                return StartGameMenuInternal();
+                return OnDone();
             }
         }
 #endif
@@ -91,7 +92,7 @@ public class UMOStart : MonoBehaviour
 #if !UNITY_ANDROID
         if(!RuntimeSettings.CurrentSettings.IsPathValid())
         {
-            if(!TrySelectDirectory())
+            if(!TrySelectDirectory(StartGameMenuInternal))
 			{
 #if UNITY_EDITOR
 				EditorApplication.isPlaying = false;

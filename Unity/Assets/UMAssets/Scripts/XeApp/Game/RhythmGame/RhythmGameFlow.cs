@@ -127,7 +127,9 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xDC6DA4 Offset: 0xDC6DA4 VA: 0xDC6DA4
 		public void ChangeEndGameStatus()
 		{
+#if !UNITY_ANDROID
 			ExternLib.LibCriWare.checkUncached = false;
+#endif
 			currentStatus = Status.EndGame;
 			updater = this.BeginCompleteAnim;
 		}

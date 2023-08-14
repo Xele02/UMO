@@ -6,6 +6,7 @@ using CriWare;
 
 namespace ExternLib
 {
+#if !UNITY_ANDROID
     public static partial class LibCriWare
     {
         private static FileInfo GetFileInfo(string path)
@@ -41,4 +42,5 @@ namespace ExternLib
             return 0;
         }
     }
+#endif
 }

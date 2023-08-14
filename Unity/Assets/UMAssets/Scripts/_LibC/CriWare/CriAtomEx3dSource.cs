@@ -5,6 +5,7 @@ using CriWare;
 
 namespace ExternLib
 {
+#if !UNITY_ANDROID
     public static partial class LibCriWare
     {
         class SourceInfo
@@ -68,4 +69,5 @@ namespace ExternLib
             TodoLogger.LogError(TodoLogger.CriAtomExLib, "criAtomEx3dSource_Set3dRegionHn");
         }
     }
+#endif
 }

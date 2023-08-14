@@ -24,7 +24,7 @@ class RuntimeSettings : ScriptableObject
 				m_currentSettings = Resources.Load<RuntimeSettings>("EditorRuntimeSettings");
 				if (m_currentSettings == null)
 					m_currentSettings = new RuntimeSettings();
-#if UNITY_ANDROID
+#if UNITY_ANDROID && !UNITY_EDITOR
 				m_currentSettings.DataDirectory = Application.persistentDataPath + "/data/";
 #endif
 			}

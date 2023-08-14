@@ -42,6 +42,7 @@ static class FileSystemProxy
 			}
 		}
 
+#if !UNITY_ANDROID
 		if (RuntimeSettings.CurrentSettings == null || string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.DataWebServerURL))
 		{
 			if (!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.DataDirectory))
@@ -51,6 +52,9 @@ static class FileSystemProxy
 			return url + urlExt;
 		}
 		string serverPath = RuntimeSettings.CurrentSettings.DataWebServerURL;
+#else
+		string serverPath = "http://192.168.0.4:8000";
+#endif
 		if (serverPath.EndsWith("/"))
 			serverPath = serverPath.Substring(0, serverPath.Length - 1);
 		return url.Replace("[SERVER_DATA_PATH]", serverPath) + urlExt;
@@ -115,34 +119,42 @@ static class FileSystemProxy
 			onDone(path);
 	}
 
+	public static IEnumerator ReloadFileList()
+	{
+		serverFileList = null;
+		yield return Co.R(InitServerFileList());
+	}
+
 	public static IEnumerator InitServerFileList()
 	{
-#if !UNITY_ANDROID
 		if (serverFileList == null)
 		{
 			serverFileList = new Dictionary<string, string>();
-			string fileList = System.Text.Encoding.UTF8.GetString(System.IO.File.ReadAllBytes(UnityEngine.Application.dataPath + "/../../Data/RequestGetFiles.json"));
-			fileList = fileList.Replace("[[DATE]]", "0");
-			EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(fileList);
-			EDOHBJAPLPF_JsonData fileL = jsonData["files"];
-			for (int i = 0; i < fileL.HNBFOAJIIAL_Count; i++)
+			string filePath = UnityEngine.Application.dataPath + "/../../Data/RequestGetFiles.json";
+#if UNITY_ANDROID && !UNITY_EDITOR
+			filePath = Application.persistentDataPath+"/data/RequestGetFiles.json";
+#endif
+			if(File.Exists(filePath))
 			{
-				if((i % 1000) == 0)
+				string fileList = System.Text.Encoding.UTF8.GetString(System.IO.File.ReadAllBytes(filePath));
+				fileList = fileList.Replace("[[DATE]]", "0");
+				EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(fileList);
+				EDOHBJAPLPF_JsonData fileL = jsonData["files"];
+				for (int i = 0; i < fileL.HNBFOAJIIAL_Count; i++)
 				{
-					TodoLogger.Log(TodoLogger.Filesystem, "Done file list " + i+"/"+fileL.HNBFOAJIIAL_Count);
-					yield return null;
+					if((i % 1000) == 0)
+					{
+						TodoLogger.Log(TodoLogger.Filesystem, "Done file list " + i+"/"+fileL.HNBFOAJIIAL_Count);
+						yield return null;
+					}
+					string fileName = (string)fileL[i]["file"];
+					string localName = GCGNICILKLD_AssetFileInfo.NOCCMAKNLLD.Replace(fileName, "");
+					//UnityEngine.Debug.Log("Added file " + localName + " to remote name " + fileName);
+					serverFileList.Add(localName, fileName);
 				}
-				string fileName = (string)fileL[i]["file"];
-				string localName = GCGNICILKLD_AssetFileInfo.NOCCMAKNLLD.Replace(fileName, "");
-				//UnityEngine.Debug.Log("Added file " + localName + " to remote name " + fileName);
-				serverFileList.Add(localName, fileName);
 			}
 			isInitialized = true;
 		}
-#else
-		isInitialized = true;
-		yield break;
-#endif
 	}
 
 	static IEnumerator TryInstallFileCoroutine(string path, Action<string> onDone)

@@ -5,6 +5,7 @@ using CriWare;
 
 namespace ExternLib
 {
+#if !UNITY_ANDROID
     public static partial class LibCriWare
     {
         class PlaybackInfo
@@ -71,4 +72,5 @@ namespace ExternLib
 			}
 		}
 	}
+#endif
 }

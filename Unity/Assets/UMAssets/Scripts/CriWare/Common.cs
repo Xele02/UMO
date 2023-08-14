@@ -127,17 +127,23 @@ namespace CriWare
         #if UNITY_ANDROID
         [DllImport(pluginName, CallingConvention = pluginCallingConvention)]
         public static extern int criWareUnity_GetVersionNumber();
+        [DllImport(pluginName, CallingConvention = pluginCallingConvention)]
+        public static extern int CRIWARED1CDE3A7();
         #endif
         public static int CRIWARED1CDE3A7_criWareUnity_GetVersionNumber()
         {
         #if UNITY_ANDROID
-            return criWareUnity_GetVersionNumber();
+            //return criWareUnity_GetVersionNumber();
+            return CRIWARED1CDE3A7();
         #else
             return ExternLib.LibCriWare.CRIWARED1CDE3A7_criWareUnity_GetVersionNumber();
         #endif
         }
 
         // // RVA: 0x2BA9338 Offset: 0x2BA9338 VA: 0x2BA9338
-        // public static extern void criWareUnity_SetRenderingEventOffsetForMana(int offset) { }
+        #if UNITY_ANDROID
+        [DllImport(pluginName, CallingConvention = pluginCallingConvention)]
+        public static extern void criWareUnity_SetRenderingEventOffsetForMana(int offset);
+        #endif
     }
 }
