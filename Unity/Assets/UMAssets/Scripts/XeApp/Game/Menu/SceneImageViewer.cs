@@ -200,7 +200,7 @@ namespace XeApp.Game.Menu
 			SetPage(m_page);
 			m_isTouchImage = false;
 			m_isVisible = true;
-			transform.GetComponent<RectTransform>().sizeDelta = GetComponentInParent<Canvas>().transform.GetComponent<RectTransform>().sizeDelta;
+			transform.parent.GetComponent<RectTransform>().sizeDelta = GetComponentInParent<Canvas>().transform.GetComponent<RectTransform>().sizeDelta;
 			m_cardUv = GetCardUv(baseRare);
 			GameManager.Instance.SceneIconCache.ChangeKiraMaterial_2048(m_kiraEffectImage);
 			GameManager.Instance.SceneIconCache.ChangeKiraMaterial_holo(m_kiraOverlayEffectImage);
@@ -532,7 +532,7 @@ namespace XeApp.Game.Menu
 				return;
 			if (m_isToucheDisable)
 				return;
-			if(m_swaipTouch.IsSwaip(SwaipTouch.Direction.RIGHT) || !m_swaipTouch.IsFlickNoSwaip(SwaipTouch.Direction.RIGHT))
+			if(m_swaipTouch.IsSwaip(SwaipTouch.Direction.RIGHT) || m_swaipTouch.IsFlickNoSwaip(SwaipTouch.Direction.RIGHT))
 			{
 				if(IsLArrowEnable)
 				{
@@ -540,7 +540,7 @@ namespace XeApp.Game.Menu
 					this.StartCoroutineWatched(Co_Scroll(1));
 				}
 			}
-			if (m_swaipTouch.IsSwaip(SwaipTouch.Direction.LEFT) || !m_swaipTouch.IsFlickNoSwaip(SwaipTouch.Direction.LEFT))
+			if (m_swaipTouch.IsSwaip(SwaipTouch.Direction.LEFT) || m_swaipTouch.IsFlickNoSwaip(SwaipTouch.Direction.LEFT))
 			{
 				if (IsRArrowEnable)
 				{
