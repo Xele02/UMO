@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using XeApp.Core;
 using XeApp.Game.Common;
@@ -610,10 +611,53 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x10DFC00 Offset: 0x10DFC00 VA: 0x10DFC00
-		//private int GetInfinityPanelIndex(SceneGrowthBoard board, List<byte> unlockIndexList) { }
+		private int GetInfinityPanelIndex(SceneGrowthBoard board, List<byte> unlockIndexList)
+		{
+			for(int i = 0; i < unlockIndexList.Count; i++)
+			{
+				AFIFDLOAKGI a = board.GetPanelItem(unlockIndexList[i]);
+				if(a.INDDJNMPONH_StatType == 20)
+				{
+					return unlockIndexList[i];
+				}
+			}
+			return -1;
+		}
 
 		//// RVA: 0x10DFD40 Offset: 0x10DFD40 VA: 0x10DFD40
-		//private bool GetInfinityMinUnlockMaxCount(SceneGrowthBoard board, List<byte> unlockIndexList, MNDAMOGGJBJ exclusionItemData, out int max, out MNDAMOGGJBJ.MNDGNJLBANB reason) { }
+		private bool GetInfinityMinUnlockMaxCount(SceneGrowthBoard board, List<byte> unlockIndexList, MNDAMOGGJBJ exclusionItemData, out int max, out MNDAMOGGJBJ.MNDGNJLBANB reason)
+		{
+			max = 0;
+			reason = MNDAMOGGJBJ.MNDGNJLBANB.HJNNKCMLGFL_None;
+			AFIFDLOAKGI aa = null;
+			int c = 0;
+			for(int i = 0; i < unlockIndexList.Count; i++)
+			{
+				AFIFDLOAKGI a = board.GetPanelItem(unlockIndexList[i]);
+				if(a.INDDJNMPONH_StatType == 20)
+				{
+					c = a.MKNDAOHGOAK;
+					m_viewSceneData.KPCLNEADGEM(unlockIndexList[i]);
+					aa = a;
+				}
+			}
+			if(aa != null)
+			{
+				int v = m_episodeData.DMHDNKILKGI_MaxPoint / c;
+				for(int i = 0; i < v; i++)
+				{
+					PCKLFFNPPLF p = new PCKLFFNPPLF();
+					p.NCMOCCDGKBP(aa, exclusionItemData);
+					if(exclusionItemData.EFFBJDMGIGO() < 1)
+					{
+						reason = exclusionItemData.HDHNAIIAJCP();
+						break;
+					}
+					max++;
+				}
+			}
+			return aa != null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7250C4 Offset: 0x7250C4 VA: 0x7250C4
 		//// RVA: 0x10DFFFC Offset: 0x10DFFFC VA: 0x10DFFFC
@@ -621,7 +665,11 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72513C Offset: 0x72513C VA: 0x72513C
 		//// RVA: 0x10E00A8 Offset: 0x10E00A8 VA: 0x10E00A8
-		//private IEnumerator ShowFinalConfirmPopupCoroutine() { }
+		private IEnumerator ShowFinalConfirmPopupCoroutine()
+		{
+			TodoLogger.LogNotImplemented("ShowFinalConfirmPopupCoroutine");
+			yield return null;
+		}
 
 		//// RVA: 0x10E0154 Offset: 0x10E0154 VA: 0x10E0154
 		private void OpenPopupSubBoardReleaseConfirm()
@@ -1183,13 +1231,13 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10E33FC Offset: 0x10E33FC VA: 0x10E33FC
 		private void ChangeMainBoard()
 		{
-			TodoLogger.LogNotImplemented("ChangeMainBoard");
+			this.StartCoroutineWatched(ChangeMainBoardCoroutine());
 		}
 
 		//// RVA: 0x10E34AC Offset: 0x10E34AC VA: 0x10E34AC
 		private void ChangeSubBoard()
 		{
-			TodoLogger.LogNotImplemented("ChangeSubBoard");
+			this.StartCoroutineWatched(ChangeSubBoardCoroutine());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7255EC Offset: 0x7255EC VA: 0x7255EC
@@ -1546,19 +1594,125 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10E3B58 Offset: 0x10E3B58 VA: 0x10E3B58
 		private IEnumerator UnlockPanelCoroutine(SceneGrowthBoard board, UseItemList.Unlock unlock)
 		{
-			TodoLogger.LogError(0, "UnlockPanelCoroutine");
-			yield return null;
+			//0x10F8D34
+			m_viewGrowItemData.MDHKGJJBLNL();
+			MakeGrowItemData(board, m_viewGrowItemData, m_unLockTargetPanelIndex, 1);
+			MNDAMOGGJBJ.MNDGNJLBANB reason = m_viewGrowItemData.HDHNAIIAJCP();
+			if (reason != MNDAMOGGJBJ.MNDGNJLBANB.HJNNKCMLGFL_None/*0*/)
+			{
+				yield return Co.R(MenuScene.Instance.PopupUseItemWindow.Show(m_viewGrowItemData, unlock));
+			}
+			else
+			{
+				int a = GetInfinityPanelIndex(board, m_unLockTargetPanelIndex);
+				if (a < 0)
+				{
+					MakeAddStatus(m_addStatuList, board, m_unLockTargetPanelIndex, 0);
+				}
+				else
+				{
+					int count = 0;
+					PopupButton.ButtonType button = PopupButton.ButtonType.Other;
+					int stockCount = m_viewSceneData.KPCLNEADGEM(a);
+					AFIFDLOAKGI afi = board.GetPanelItem(a);
+					MakeGrowItemData(board, m_viewGrowItemData, m_unLockTargetPanelIndex, count);
+					int unlockCount = 0;
+					GetInfinityMinUnlockMaxCount(board, m_unLockTargetPanelIndex, m_viewGrowItemData, out unlockCount, out reason);
+					m_infinityPanelUnlockInfo.index = (short)a;
+					int e = Mathf.Min(unlockCount, stockCount);
+					if(e < 2)
+					{
+						MakeGrowItemData(board, m_viewGrowItemData, m_unLockTargetPanelIndex, 1);
+						MakeAddStatus(m_addStatuList, board, m_unLockTargetPanelIndex, 1);
+					}
+					else
+					{
+						yield return this.StartCoroutineWatched(ShowInfinityItemuPopupCoroutine((short)unlockCount, (short)stockCount, (short)afi.MKNDAOHGOAK, reason, (PopupButton.ButtonType type, int itemCount) =>
+						{
+							//0x10E6D6C
+							count = itemCount;
+							button = type;
+						}));
+						if (button == PopupButton.ButtonType.Negative)
+							yield break;
+						MakeGrowItemData(board, m_viewGrowItemData, m_unLockTargetPanelIndex, count);
+						MakeAddStatus(m_addStatuList, board, m_unLockTargetPanelIndex, count);
+					}
+					//LAB_010f926c
+					m_infinityPanelUnlockInfo.count = (short)count;
+				}
+				//LAB_010f927c
+				m_popupSetting.ViewGrowItemData = m_viewGrowItemData;
+				m_popupSetting.Buttons = new ButtonInfo[2]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive },
+				};
+				m_popupSetting.IsValidate = true;
+				yield return Co.R(MenuScene.Instance.PopupUseItemWindow.Show(m_viewGrowItemData, unlock));
+				if(MenuScene.Instance.PopupUseItemWindow.Result == PopupUseItemWindow.UseItemResult.OK)
+				{
+					this.StartCoroutineWatched(ShowFinalConfirmPopupCoroutine());
+				}
+				else
+				{
+					System.Array.Clear(m_addStatuList, 0, m_addStatuList.Length);
+				}
+			}
 		}
 
 		//// RVA: 0x10E40AC Offset: 0x10E40AC VA: 0x10E40AC
-		//private void MakeGrowItemData(SceneGrowthBoard board, MNDAMOGGJBJ itemData, List<byte> unLockIndexList, int infLoopCount) { }
+		private void MakeGrowItemData(SceneGrowthBoard board, MNDAMOGGJBJ itemData, List<byte> unLockIndexList, int infLoopCount)
+		{
+			itemData.MDHKGJJBLNL();
+			for(int i = 0; i < unLockIndexList.Count; i++)
+			{
+				AFIFDLOAKGI a = board.GetPanelItem(unLockIndexList[i]);
+				//a.ENNLMALGDKN();
+				int count = 1;
+				if (a.INDDJNMPONH_StatType == 20)
+				{
+					//a.PKLGGJPPBAN();
+					count = infLoopCount;
+				}
+				//a.PKLGGJPPBAN();
+				for (int j = 1; j != 0; j--)
+				{
+					PCKLFFNPPLF p = new PCKLFFNPPLF();
+					p.NCMOCCDGKBP(a, itemData);
+				}
+			}
+		}
 
 		//// RVA: 0x10E42D4 Offset: 0x10E42D4 VA: 0x10E42D4
-		//private void MakeAddStatus(int[] addStatus, SceneGrowthBoard board, List<byte> unlockIndexList, int infLoopCount) { }
+		private void MakeAddStatus(int[] addStatus, SceneGrowthBoard board, List<byte> unlockIndexList, int infLoopCount)
+		{
+			Array.Clear(addStatus, 0, addStatus.Length);
+			for(int i = 0; i < unlockIndexList.Count; i++)
+			{
+				int val = board.GetPanelValue(unlockIndexList[i]);
+				AFIFDLOAKGI a = board.GetPanelItem(unlockIndexList[i]);
+				int type = a.INDDJNMPONH_StatType;
+				int cnt = 1;
+				if (type == 20)
+				{
+					type = 18;
+					cnt = infLoopCount;
+				}
+				for(int j = 0; j < cnt; j++)
+				{
+					addStatus[type] += val;
+				}
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7259AC Offset: 0x7259AC VA: 0x7259AC
 		//// RVA: 0x10E44E4 Offset: 0x10E44E4 VA: 0x10E44E4
-		//private IEnumerator ShowInfinityItemuPopupCoroutine(short unlockCount, short stockCount, short episodeUnit, MNDAMOGGJBJ.MNDGNJLBANB reason, UnityAction<PopupButton.ButtonType, int> callBack) { }
+		private IEnumerator ShowInfinityItemuPopupCoroutine(short unlockCount, short stockCount, short episodeUnit, MNDAMOGGJBJ.MNDGNJLBANB reason, UnityAction<PopupButton.ButtonType, int> callBack)
+		{
+			TodoLogger.LogNotImplemented("ShowInfinityItemuPopupCoroutine");
+			yield return null;
+		}
 
 		//// RVA: 0x10E4610 Offset: 0x10E4610 VA: 0x10E4610
 		//private void ApplyConsume() { }
