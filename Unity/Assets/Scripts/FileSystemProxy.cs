@@ -5,6 +5,10 @@ using System.IO;
 using UnityEngine;
 using XeApp.Core;
 using XeApp.Game;
+using System.Net.Sockets;
+using System.Net;
+using System.Text;
+using XeApp.Game.Common;
 #if UNITY_EDITOR
 using System.Reflection;
 using System.Linq;
@@ -53,7 +57,9 @@ static class FileSystemProxy
 		}
 		string serverPath = RuntimeSettings.CurrentSettings.DataWebServerURL;
 #else
-		string serverPath = "http://192.168.0.4:8000";
+		if(foundServer == "")
+			UnityEngine.Debug.LogError("Missing URL");
+		string serverPath = "http://"+foundServer+":8000";
 #endif
 		if (serverPath.EndsWith("/"))
 			serverPath = serverPath.Substring(0, serverPath.Length - 1);
@@ -189,6 +195,50 @@ static class FileSystemProxy
 		if (onDone != null)
 			onDone(path);
 	}
+
+#if UNITY_ANDROID
+	public static string foundServer = "";
+
+	public static IEnumerator WaitServerInfo(bool reset = false)
+	{
+		if(reset)
+			foundServer = "";
+		if(foundServer != "")
+			yield break;
+
+		UdpClient udp = new UdpClient(8001);
+		bool cancel = false;
+        PopupWindowControl control = PopupWindowManager.Show(PopupWindowManager.CrateTextContent("UMO", SizeType.Small, "Searching for server, please start webserver and connect the phone on the same local network...", new ButtonInfo[1]
+        {
+            new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative }
+		}, false, true), (PopupWindowControl control_, PopupButton.ButtonType t, PopupButton.ButtonLabel label) =>
+		{
+			cancel = true;
+		}, null, null, null);
+		yield return null;
+        while (foundServer == "")
+		{
+			bool waiting = true;
+			udp.BeginReceive((IAsyncResult ar) =>
+			{
+				IPEndPoint ip = new IPEndPoint(IPAddress.Any, 8001);
+				byte[] bytes = udp.EndReceive(ar, ref ip);
+				string message = Encoding.ASCII.GetString(bytes);
+				if(message == "UMO")
+				{
+					foundServer = ip.Address.ToString();
+				}
+				waiting = false;
+			}, new object());
+			while(waiting)
+				yield return null;
+		}
+		if(control.IsActive)
+		{
+			control.Close(null, null);
+		}
+	}
+#endif
 
 #if UNITY_EDITOR
 	//[UnityEditor.MenuItem("UMO/TestLoadBundle")]

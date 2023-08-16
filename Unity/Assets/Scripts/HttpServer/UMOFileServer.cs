@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.IO;
 using System.Net;
+using System.Net.Sockets;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 #if UNITY_EDITOR
@@ -17,6 +19,9 @@ public class UMOFileServer : MonoBehaviour
 
     HttpListener listener;
     Task listenTask;
+    Task broadcastTask;
+    bool runServer = true;
+
 
 #if UNITY_EDITOR
 	[MenuItem("UMO/Start File Server", priority = 2)]
@@ -46,7 +51,7 @@ public class UMOFileServer : MonoBehaviour
     static void StartFileServerEditor()
 	{
 #if UNITY_EDITOR
-		if (EditorSceneManager.GetActiveScene().name != "Start")
+		if (EditorSceneManager.GetActiveScene().name != "StartFileServer")
             EditorSceneManager.OpenScene("Assets/Scenes/StartFileServer.unity", OpenSceneMode.Single);
 		EditorApplication.isPlaying = true;
 #endif
@@ -79,12 +84,11 @@ public class UMOFileServer : MonoBehaviour
         listener.Start();
 
         listenTask = HandleIncomingConnections();
+        this.StartCoroutineWatched(Broadcast());
     }
 
     public async Task HandleIncomingConnections()
     {
-        bool runServer = true;
-
         while (runServer && listener != null)
         {
             Debug.Log("Start wait");
@@ -134,8 +138,26 @@ public class UMOFileServer : MonoBehaviour
         }
     }
 
+    IEnumerator Broadcast()
+    {
+        int PORT = 8001;
+        UdpClient udpClient = new UdpClient();
+        udpClient.Client.EnableBroadcast = true;
+        udpClient.Client.Bind(new IPEndPoint(IPAddress.Broadcast, PORT));
+
+        while(true)
+        {
+            yield return new WaitForSeconds(1);
+            var data = Encoding.UTF8.GetBytes("UMO");
+            udpClient.Send(data, data.Length, "255.255.255.255", PORT);
+        }
+        udpClient.Close();
+    }
+
     void OnDestroy()
     {
+        runServer = false;
+
         listener.Stop();
         listener.Close();
         listener = null;

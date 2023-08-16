@@ -397,6 +397,9 @@ public class KEHOJEJMGLJ
 						// to 6
 						//6
 					}
+#if UNITY_ANDROID
+					yield return Co.R(FileSystemProxy.WaitServerInfo(false));
+#endif
 					PMDNNKAPIKJ = new JEHIAIPJNJF_FileDownloader(3);
 					PMDNNKAPIKJ.DOMFHDPMCCO_AddFiles(ICCMKHKNAMJ, FLHOFIEOKDH_BaseUrl, JCMJBMBMJAK_PersistentDataPath);
 					PMDNNKAPIKJ.LBGNKOJFOFC = (JEHIAIPJNJF_FileDownloader.HCJPJKCIBDL_DldFileInfo JGBPLIGAILE) => {

@@ -162,10 +162,11 @@ namespace ExternLib
 
             return 0;
         }
-
+#if UNITY_ANDROID
         public static IEnumerator DownloadRequestGetFiles(int callbackId, string json)
         {
-            WWW req = new WWW("http://192.168.0.4:8000/RequestGetFiles.json");
+			yield return Co.R(FileSystemProxy.WaitServerInfo(false));
+            WWW req = new WWW("http://"+FileSystemProxy.foundServer+":8000/RequestGetFiles.json");
             while(!req.isDone)
                 yield return null;
             if(req.error == null)
@@ -185,5 +186,6 @@ namespace ExternLib
                 SendMessage(callbackId, res);
             }
         }
+#endif
     }
 }

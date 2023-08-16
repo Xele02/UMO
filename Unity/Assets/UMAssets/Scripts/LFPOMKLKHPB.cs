@@ -60,6 +60,9 @@ public class LFPOMKLKHPB
 		do
 		{
 			JHHBAFKMBDL.HHCJCDFCLOB.NIGGABHIFEE_ShowTransmissionIcon(true);
+#if UNITY_ANDROID
+			yield return Co.R(FileSystemProxy.WaitServerInfo(false));
+#endif
 			string url = FileSystemProxy.ConvertURL(HJLDBEJOMIO + "?t=" + DateTime.Now.ToString("yyyyMMddHHmmss"));
 			UnityEngine.Debug.LogError(url);
 			JMNNBKPAAKF = new WWW(url);

@@ -201,9 +201,7 @@ namespace XeApp.Game.AR
 				yield break;
 			}
 
-			string src = FileSystemProxy.ConvertURL(req.NFEAMMJIMPG.GLMGHMCOMEC_BaseUrl + found.MFBMBPJAADA_FileName);
 			string dest = FileSystemProxy.ConvertPath(BBGDKLLEPIB.OGCDNCDMLCA_MxDir + found.OIEAICNAMNB_LocalFileName);
-			TodoLogger.Log(TodoLogger.Filesystem, "Dld from " + src+" to "+dest);
 
 			string dir = Path.GetDirectoryName(dest);
 			if(!Directory.Exists(dir))
@@ -218,6 +216,11 @@ namespace XeApp.Game.AR
 					yield break;
 				}
 			}
+#if UNITY_ANDROID
+			yield return Co.R(FileSystemProxy.WaitServerInfo(false));
+#endif
+			string src = FileSystemProxy.ConvertURL(req.NFEAMMJIMPG.GLMGHMCOMEC_BaseUrl + found.MFBMBPJAADA_FileName);
+			TodoLogger.Log(TodoLogger.Filesystem, "Dld from " + src+" to "+dest);
 
 			byte[] dataBytes = null;
 			int retryCount = 0;

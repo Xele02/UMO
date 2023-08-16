@@ -173,12 +173,6 @@ public class BBGDKLLEPIB
 			}
 
 			FLHOFIEOKDH_BaseUrl = COJNCNGHIJC.NFEAMMJIMPG.GLMGHMCOMEC_BaseUrl;
-#if UNITY_ANDROID
-			{
-				FLHOFIEOKDH_BaseUrl = "http://192.168.0.4:8000";
-				//FLHOFIEOKDH_BaseUrl = "https://assets-sakasho.cdn-dena.com/1246/20220622141305";
-			}
-#endif
 
 			DMPNAEEIANJ = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			if(COJNCNGHIJC.HOHOBEOJPBK_ServerInfo.AJBPBEALBOB_ServerCurrentAssetRevision == LHJNPJFNDNA)
@@ -232,6 +226,12 @@ public class BBGDKLLEPIB
 		{
 			OEPPEGHGNNO(1, 0);
 		}
+#if UNITY_ANDROID
+		{
+			yield return Co.R(FileSystemProxy.WaitServerInfo(false));
+			FLHOFIEOKDH_BaseUrl = "http://"+FileSystemProxy.foundServer+":8000";
+		}
+#endif
 		JEHIAIPJNJF_FileDownloader MHHFMCPJONH = new JEHIAIPJNJF_FileDownloader();
 		MHHFMCPJONH.DOMFHDPMCCO_AddFiles(ICCMKHKNAMJ_ToDldList, FLHOFIEOKDH_BaseUrl, JCMJBMBMJAK);
 		MHHFMCPJONH.LBGNKOJFOFC = (JEHIAIPJNJF_FileDownloader.HCJPJKCIBDL_DldFileInfo JGBPLIGAILE) => {
