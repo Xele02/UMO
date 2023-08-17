@@ -161,13 +161,13 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 				int l = 0;
 				if(KBOLNIBLIND != null)
 				{
-					for(int i = 0; i < d.PDKGMFHIFML_Pl.Count; i++)
+					for(int i = 0; i < d.PDKGMFHIFML_Panels.Count; i++)
 					{
 						if((i >> 3) < KBOLNIBLIND.Length)
 						{
 							if(((1 << (i & 7)) & KBOLNIBLIND[i >> 3]) != 0)
 							{
-								AFIFDLOAKGI a = JEMMMJEJLNL_Board.DDGNLCJGFJF(d.PDKGMFHIFML_Pl[i].JBGEEPFKIGG);
+								AFIFDLOAKGI a = JEMMMJEJLNL_Board.DDGNLCJGFJF(d.PDKGMFHIFML_Panels[i].JBGEEPFKIGG);
 								if(a != null && a.INDDJNMPONH_StatType == (int)INDDJNMPONH_StatType)
 								{
 									l += GDHGEECAJGI_BoardValue[i];
@@ -222,14 +222,14 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 				DMPDJFAGCPN d = JEMMMJEJLNL.FDCDIHIIJJM_GetLayout(BJNBBEMBMIK_BoardId);
 				if(d != null)
 				{
-					for(int i = 0; i < d.PDKGMFHIFML_Pl.Count; i++)
+					for(int i = 0; i < d.PDKGMFHIFML_Panels.Count; i++)
 					{
 						int idx = i >> 3;
 						if(idx < KBOLNIBLIND.Length)
 						{
 							if(((1 << (i & 7)) & KBOLNIBLIND[idx]) != 0)
 							{
-								AFIFDLOAKGI a = JEMMMJEJLNL.DDGNLCJGFJF(d.PDKGMFHIFML_Pl[i].JBGEEPFKIGG);
+								AFIFDLOAKGI a = JEMMMJEJLNL.DDGNLCJGFJF(d.PDKGMFHIFML_Panels[i].JBGEEPFKIGG);
 								if(a != null && a.INDDJNMPONH_StatType == 18)
 								{
 									res += GDHGEECAJGI_BoardValue[i];
@@ -335,13 +335,13 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 			{
 				DMPDJFAGCPN d = JEMMMJEJLNL.FDCDIHIIJJM_GetLayout(BJNBBEMBMIK_BoardId);
 				int res = 0;
-				for(int i = 0; i < d.PDKGMFHIFML_Pl.Count; i++)
+				for(int i = 0; i < d.PDKGMFHIFML_Panels.Count; i++)
 				{
 					if((i >> 3) < KBOLNIBLIND.Length)
 					{
 						if(((1 << (i & 7)) & KBOLNIBLIND[i >> 3]) != 0)
 						{
-							AFIFDLOAKGI a = JEMMMJEJLNL.DDGNLCJGFJF(d.PDKGMFHIFML_Pl[i].JBGEEPFKIGG);
+							AFIFDLOAKGI a = JEMMMJEJLNL.DDGNLCJGFJF(d.PDKGMFHIFML_Panels[i].JBGEEPFKIGG);
 							if (a != null && a.INDDJNMPONH_StatType == 21)
 								res++;
 						}
@@ -526,9 +526,9 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 				l2[j] = 0;
 				l3[j] = 0;
 			}
-			for (int j = 0; j < layout.PDKGMFHIFML_Pl.Count; j++)
+			for (int j = 0; j < layout.PDKGMFHIFML_Panels.Count; j++)
 			{
-				AFIFDLOAKGI a = JEMMMJEJLNL_BoardDB.DDGNLCJGFJF(layout.PDKGMFHIFML_Pl[j].JBGEEPFKIGG);
+				AFIFDLOAKGI a = JEMMMJEJLNL_BoardDB.DDGNLCJGFJF(layout.PDKGMFHIFML_Panels[j].JBGEEPFKIGG);
 				if (a != null)
 				{
 					l1[a.INDDJNMPONH_StatType] += a.MKNDAOHGOAK;
@@ -558,9 +558,9 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 				l2[j] = val - val2;
 			}
 			CDENCMNHNGA_SceneList[i].GDHGEECAJGI_BoardValue.Clear();
-			for (int j = 0; j < layout.PDKGMFHIFML_Pl.Count; j++)
+			for (int j = 0; j < layout.PDKGMFHIFML_Panels.Count; j++)
 			{
-				AFIFDLOAKGI a = JEMMMJEJLNL_BoardDB.DDGNLCJGFJF(layout.PDKGMFHIFML_Pl[j].JBGEEPFKIGG);
+				AFIFDLOAKGI a = JEMMMJEJLNL_BoardDB.DDGNLCJGFJF(layout.PDKGMFHIFML_Panels[j].JBGEEPFKIGG);
 				int val = 0;
 				if(a != null)
 				{
@@ -584,12 +584,12 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 				{
 					while(k <= 99999 && l3.Count < l2.Count)
 					{
-						for(int l = layout.PDKGMFHIFML_Pl.Count - 1; l >= 0; l--)
+						for(int l = layout.PDKGMFHIFML_Panels.Count - 1; l >= 0; l--)
 						{
 							k++;
 							if (l3[j] >= l2[j])
 								break;
-							AFIFDLOAKGI a = JEMMMJEJLNL_BoardDB.DDGNLCJGFJF(layout.PDKGMFHIFML_Pl[l].JBGEEPFKIGG);
+							AFIFDLOAKGI a = JEMMMJEJLNL_BoardDB.DDGNLCJGFJF(layout.PDKGMFHIFML_Panels[l].JBGEEPFKIGG);
 							if(a != null)
 							{
 								CDENCMNHNGA_SceneList[i].GDHGEECAJGI_BoardValue[l]++;

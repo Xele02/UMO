@@ -145,7 +145,19 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEC478C Offset: 0xEC478C VA: 0xEC478C
 		private void CallBackHome()
 		{
-			TodoLogger.LogNotImplemented("CallBackHome");
+			if (OnInterruptEvent != null && OnInterruptEvent(TransitionList.Type.HOME))
+			{
+				mMenuButtons[0].buttonAnimeDisable = true;
+				return;
+			}
+			mMenuButtons[0].buttonAnimeDisable = false;
+			int cueId = 6;
+			if(IsTopLevelScene(SceneGroupCategory.HOME, TransitionList.Type.HOME))
+			{
+				cueId = 0;
+				MenuScene.Instance.Mount(TransitionUniqueId.HOME, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+			}
+			SoundManager.Instance.sePlayerBoot.Play(cueId);
 		}
 
 		// // RVA: 0xEC4980 Offset: 0xEC4980 VA: 0xEC4980
