@@ -1,6 +1,8 @@
+using mcrs;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using UnityEngine;
 using XeApp.Core;
@@ -790,7 +792,10 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x973C18 Offset: 0x973C18 VA: 0x973C18
 		private void OnClickSnsButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickSnsButton");
+			if (TryLobbyAnnounce())
+				return;
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+			m_coOpenSnsScreen = this.StartCoroutineWatched(Co_OpenSnsScreen());
 		}
 
 		// // RVA: 0x973D24 Offset: 0x973D24 VA: 0x973D24
@@ -1664,11 +1669,90 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3DA4 Offset: 0x6E3DA4 VA: 0x6E3DA4
 		// // RVA: 0x973C9C Offset: 0x973C9C VA: 0x973C9C
-		// private IEnumerator Co_OpenSnsScreen() { }
+		private IEnumerator Co_OpenSnsScreen()
+		{
+			//0x13D1CC0
+			GameManager.Instance.CloseSnsNotice();
+			if (m_snsScreen == null)
+			{
+				MenuScene.Instance.InputDisable();
+				m_snsScreen = SnsScreen.Create(transform.parent);
+				yield return null;
+				m_snsScreen.Initialize(0, false);
+				m_snsScreen.OutStartCallback = () =>
+				{
+					//0x97D3BC
+					this.StartCoroutineWatched(Co_ClosingSnsScreen());
+				};
+				MenuScene.Instance.InputEnable();
+			}
+			else
+			{
+				m_snsScreen.Initialize(0, false);
+			}
+			MenuScene.Instance.InputDisable();
+			if(m_isHomeShowDiva)
+			{
+				this.StartCoroutineWatched(m_divaControl.Coroutine_IdleCrossFade());
+				m_divaTalk.CancelRequest();
+				m_divaTalk.TimerStop();
+			}
+			if (MenuScene.CheckDatelineAndAssetUpdate())
+				yield break;
+			m_snsScreen.In(SnsScreen.eSceneType.Menu, SNSController.eObjectOrderType.Last, false);
+			while (m_snsScreen != null && m_snsScreen.IsPlaying)
+				yield return null;
+			MenuScene.Instance.InputEnable();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3E1C Offset: 0x6E3E1C VA: 0x6E3E1C
 		// // RVA: 0x97AE84 Offset: 0x97AE84 VA: 0x97AE84
-		// private IEnumerator Co_ClosingSnsScreen() { }
+		private IEnumerator Co_ClosingSnsScreen()
+		{
+			Stopwatch sw; // 0x14
+			BgmPlayer bgmPlayer; // 0x18
+
+			//0x13CB4E8
+			MenuScene.Instance.InputDisable();
+			m_balloonLeadData = PLADCDJLOBE.HEGEKFMJNCC();
+			if(isValidBalloonLead)
+			{
+				if(m_balloonLeadData.MMMGMNAMGDF == PLADCDJLOBE.PNLNGHNHCNI.KJHABBHBFPD/*1*/)
+				{
+					SetupMissionLead();
+				}
+				else if(m_balloonLeadData.MMMGMNAMGDF == PLADCDJLOBE.PNLNGHNHCNI.NHANNKGPAHM/*0*/)
+				{
+					SetupBeginnerLead();
+				}
+			}
+			m_subMenu.ApplyNewIcons();
+			sw = new Stopwatch();
+			sw.Start();
+			bgmPlayer = SoundManager.Instance.bgmPlayer;
+			while(bgmPlayer.isFading)
+			{
+				if (sw.Elapsed.Milliseconds < 3001)
+					yield return null;
+				else
+					break;
+			}
+			while(!bgmPlayer.isPlaying)
+			{
+				if (sw.Elapsed.Milliseconds < 3001)
+					yield return null;
+				else
+					break;
+			}
+			sw.Stop();
+			while (m_snsScreen != null && m_snsScreen.IsPlaying)
+				yield return null;
+			if(m_isHomeShowDiva)
+			{
+				m_divaTalk.TimerRestart();
+			}
+			MenuScene.Instance.InputEnable();
+		}
 
 		// // RVA: 0x97AF0C Offset: 0x97AF0C VA: 0x97AF0C
 		// private bool IsCenterKaname() { }
@@ -2053,10 +2137,6 @@ namespace XeApp.Game.Menu
 		// 	[CompilerGeneratedAttribute] // RVA: 0x6E455C Offset: 0x6E455C VA: 0x6E455C
 		// 	// RVA: 0x97D38C Offset: 0x97D38C VA: 0x97D38C
 		// 	private void <SetupEventHomeLead>b__154_0(IiconTexture image) { }
-
-		// 	[CompilerGeneratedAttribute] // RVA: 0x6E456C Offset: 0x6E456C VA: 0x6E456C
-		// 	// RVA: 0x97D3BC Offset: 0x97D3BC VA: 0x97D3BC
-		// 	private void <Co_OpenSnsScreen>b__156_0() { }
 
 		private void LoadSLive()
 		{

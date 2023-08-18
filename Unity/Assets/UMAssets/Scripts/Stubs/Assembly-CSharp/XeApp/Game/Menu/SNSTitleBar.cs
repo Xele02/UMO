@@ -7,6 +7,15 @@ namespace XeApp.Game.Menu
 {
 	public class SNSTitleBar : LayoutUGUIScriptBase
 	{
+		public enum eButtonType
+		{
+			None = 0,
+			Default = 1,
+			Room = 2,
+			Tutorial = 3,
+			Adventure = 4,
+		}
+
     public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private ActionButton m_backButton;
