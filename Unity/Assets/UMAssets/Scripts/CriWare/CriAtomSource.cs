@@ -59,7 +59,7 @@ namespace CriWare
 
 		public CriAtomExPlayer player { get; protected set; } // 0x1C
 		public CriAtomEx3dSource source { get; protected set; } // 0x20
-		// protected virtual bool enable_audio_synced_timer { get; protected set; } 0x28B55CC 0x28B55D4
+		public virtual bool enable_audio_synced_timer { get { return false; } protected set { return; } } //0x28B55CC 0x28B55D4
 		public bool playOnStart { 
 			get {return this._playOnStart;}
 			set {this._playOnStart = value;}
@@ -187,7 +187,7 @@ namespace CriWare
 			}
 			#endif
 			CriAtomPlugin.InitializeLibrary();
-			this.player = new CriAtomExPlayer(this);
+			this.player = new CriAtomExPlayer(this, enable_audio_synced_timer);
 			this.source = new CriAtomEx3dSource(this, randomPositionListMaxLength:this.randomPositionListMaxLength);
 			this.initialized = true;
 		}
@@ -462,21 +462,25 @@ namespace CriWare
 		//UMO
 		public void Preload(string cueName)
 		{
+#if !UNITY_ANDROID
 			CriAtomExAcb acb = null;
 			if (!String.IsNullOrEmpty(this.cueSheet))
 			{
 				acb = CriAtom.GetAcb(this.cueSheet);
 			}
 			ExternLib.LibCriWare.PreloadCue(acb.nativeHandle, cueName);
+#endif
 		}
 		public void Preload(int cueId)
 		{
+#if !UNITY_ANDROID
 			CriAtomExAcb acb = null;
 			if (!String.IsNullOrEmpty(this.cueSheet))
 			{
 				acb = CriAtom.GetAcb(this.cueSheet);
 			}
 			ExternLib.LibCriWare.PreloadCue(acb.nativeHandle, cueId);
+#endif
 		}
 		//
 	}

@@ -1,4 +1,6 @@
 
+using System.Runtime.InteropServices;
+
 public static class CriAtomExLatencyEstimator
 {
     public enum Status
@@ -9,6 +11,7 @@ public static class CriAtomExLatencyEstimator
         Error = 3,
     }
 
+	[StructLayout(LayoutKind.Sequential)]
     public struct EstimatorInfo
     {
         public CriAtomExLatencyEstimator.Status status; // 0x0
@@ -18,21 +21,24 @@ public static class CriAtomExLatencyEstimator
 	// // RVA: 0x289B3F0 Offset: 0x289B3F0 VA: 0x289B3F0
 	public static void InitializeModule()
 	{
-		TodoLogger.LogError(TodoLogger.CriAtomExLatencyEstimator, "CriAtomExLatencyEstimator.InitializeModule");
+	#if !UNITY_EDITOR && UNITY_ANDROID
+		criAtomLatencyEstimator_Initialize_ANDROID();
+	#endif
 	}
 
 	// // RVA: 0x289B4DC Offset: 0x289B4DC VA: 0x289B4DC
 	public static void FinalizeModule()
 	{
-        TodoLogger.LogError(TodoLogger.CriAtomExLatencyEstimator, "CriAtomExLatencyEstimator.FinalizeModule");
+	#if !UNITY_EDITOR && UNITY_ANDROID
+		criAtomLatencyEstimator_Finalize_ANDROID();
+	#endif
     }
 
 	// // RVA: 0x289B5C4 Offset: 0x289B5C4 VA: 0x289B5C4
 	public static EstimatorInfo GetCurrentInfo()
     {
 #if UNITY_ANDROID
-		TodoLogger.Log(5, "CriAtomExLatencyEstimator GetCurrentInfo");
-		return new EstimatorInfo();
+		return criAtomLatencyEstimator_GetCurrentInfo_ANDROID();
 #else
 		EstimatorInfo info = new EstimatorInfo();
 		info.status = Status.Done;
@@ -42,11 +48,35 @@ public static class CriAtomExLatencyEstimator
 	}
 
 	// // RVA: 0x289B3F8 Offset: 0x289B3F8 VA: 0x289B3F8
-	// private static extern void criAtomLatencyEstimator_Initialize_ANDROID() { }
+#if UNITY_ANDROID
+	[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+	private static extern void criAtomLatencyEstimator_Initialize_ANDROID();
+#else
+	private static void criAtomLatencyEstimator_Initialize_ANDROID()
+	{
+		
+	}
+#endif
 
 	// // RVA: 0x289B4E0 Offset: 0x289B4E0 VA: 0x289B4E0
-	// private static extern void criAtomLatencyEstimator_Finalize_ANDROID() { }
+#if UNITY_ANDROID
+	[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+	private static extern void criAtomLatencyEstimator_Finalize_ANDROID();
+#else
+	private static void criAtomLatencyEstimator_Finalize_ANDROID()
+	{
+
+	}
+#endif
 
 	// // RVA: 0x289B5D8 Offset: 0x289B5D8 VA: 0x289B5D8
-	// private static extern CriAtomExLatencyEstimator.EstimatorInfo criAtomLatencyEstimator_GetCurrentInfo_ANDROID() { }
+#if UNITY_ANDROID
+	[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+	private static extern EstimatorInfo criAtomLatencyEstimator_GetCurrentInfo_ANDROID();
+#else
+	private static CriAtomExLatencyEstimator.EstimatorInfo criAtomLatencyEstimator_GetCurrentInfo_ANDROID()
+	{
+		return new CriAtomExLatencyEstimator.EstimatorInfo();
+	}
+#endif
 }

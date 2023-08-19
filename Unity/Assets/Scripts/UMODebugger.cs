@@ -16,7 +16,9 @@ public class UMODebugger : SingletonMonoBehaviour<UMODebugger>
 		public class TouchInfo
 		{
 			public float time;
+#if !UNITY_ANDROID
 			public InputManager.KeyTouchInfoRecord.KeyType key;
+#endif
 			public TouchPhase phase;
 		}
 
@@ -46,13 +48,17 @@ public class UMODebugger : SingletonMonoBehaviour<UMODebugger>
 
 	public void StartSong()
 	{
+#if !UNITY_ANDROID
 		GameSetupData gameSetup = Database.Instance.gameSetup;
 		musicRecordInfo = new MusicRecordInfo();
 		musicRecordInfo.freeMusicId = gameSetup.musicInfo.freeMusicId;
 		musicRecordInfo.difficulty = gameSetup.musicInfo.difficultyType;
 		musicRecordInfo.isLine6 = gameSetup.musicInfo.IsLine6Mode;
+#endif
 	}
 
+#if !UNITY_ANDROID
+#if UNITY_EDITOR
 	[MenuItem("UMO/Create song notes debug data")]
 	public static void CreateNoteDebugData()
 	{
@@ -90,14 +96,19 @@ public class UMODebugger : SingletonMonoBehaviour<UMODebugger>
 			Debug.LogError("Debug file saved in "+ newFile);
 		}
 	}
+#endif
+#endif
 
 	public void EndSong()
 	{
+#if !UNITY_ANDROID
 		// Generate log data;
 		musicRecordInfoSaved = musicRecordInfo;
 		musicRecordInfo = null;
+#endif
 	}
 
+#if !UNITY_ANDROID
 	public void AddInputInfo(InputManager.KeyTouchInfoRecord record, TouchPhase phase)
 	{
 		if(musicRecordInfo != null)
@@ -108,20 +119,24 @@ public class UMODebugger : SingletonMonoBehaviour<UMODebugger>
 			}
 		}
 	}
-
+#endif
 	public void UpdateSongTime(float time)
 	{
+#if !UNITY_ANDROID
 		if(musicRecordInfo != null)
 		{
 			musicRecordInfo.currentTime = time;
 		}
+#endif
 	}
 
 	public void AddNoteInfo(RNote note, RhythmGameConsts.NoteResult result)
 	{
+#if !UNITY_ANDROID
 		if(musicRecordInfo != null)
 		{
 			musicRecordInfo.notesList.Add(new MusicRecordInfo.NoteInfo() { time = musicRecordInfo.currentTime, trackId = note.noteInfo.trackID, result = result });
 		}
+#endif
 	}
 }

@@ -218,8 +218,23 @@ public class IOGKADECKOP
 			OKDMEMPECDO = true;
 			while(!StorageSupport.IsAvailableStorage())
 			{
-				yield return null;
-				TodoLogger.LogError(0, "TODO");
+				bool HFPLKFCPHDK_ = true;
+				TextPopupSetting s = new TextPopupSetting();
+				s.Text = MessageManager.Instance.GetMessage("common", "popup_error_storage_size");
+				s.IsCaption = false;
+				s.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Retry, Type = PopupButton.ButtonType.Positive }
+				};
+				PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel KAPMOPMDHJE) =>
+				{
+					//0xA08F48
+					HFPLKFCPHDK_ = false;
+				}, null, null, null);
+				while(HFPLKFCPHDK_)
+				{
+					yield return null;
+				}
 			}
 			ManaAdAPIHelper.Instance.SendLaunchEvent();
 			ManaAdAPIHelper.Instance.TryPendingSendResumeEvent();

@@ -6,11 +6,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "RuntimeSettings", menuName = "ScriptableObjects/RuntimeSettings", order = 1)]
 class RuntimeSettings : ScriptableObject
 {
+#if UNITY_EDITOR
 	[MenuItem("UMO/Options", priority=2)]
 	static void ShowOption()
 	{
 		PopUpAssetInspector.Create(CurrentSettings);
 	}
+#endif
 
 	private static RuntimeSettings m_currentSettings;
 	public static RuntimeSettings CurrentSettings
@@ -22,6 +24,9 @@ class RuntimeSettings : ScriptableObject
 				m_currentSettings = Resources.Load<RuntimeSettings>("EditorRuntimeSettings");
 				if (m_currentSettings == null)
 					m_currentSettings = new RuntimeSettings();
+#if UNITY_ANDROID && !UNITY_EDITOR
+				m_currentSettings.DataDirectory = Application.persistentDataPath + "/data/";
+#endif
 			}
 			return m_currentSettings;
 		}
@@ -128,6 +133,7 @@ class RuntimeSettings : ScriptableObject
 	public bool EnableDebugStopCoroutine = false;
 }
 
+#if UNITY_EDITOR
 public class PopUpAssetInspector : EditorWindow
 {
 	private Object asset;
@@ -156,3 +162,4 @@ public class PopUpAssetInspector : EditorWindow
 		EditorGUILayout.EndVertical();
 	}
 }
+#endif

@@ -296,7 +296,7 @@ namespace CriWare
 
 	public class CriAtomEx
 	{
-
+		[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
 		public struct NativeVector
 		{
 			public float x; // 0x0
@@ -320,13 +320,17 @@ namespace CriWare
 			}
 		}
 
+		[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
 		public struct CueInfo
 		{
 			public int id; // 0x0
 			public CriAtomEx.CueType type; // 0x4
+			[MarshalAs(UnmanagedType.LPStr)]
 			public readonly string name; // 0x8
+			[MarshalAs(UnmanagedType.LPStr)]
 			public readonly string userData; // 0xC
 			public long length; // 0x10
+			[MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
 			public ushort[] categories; // 0x18
 			public short numLimits; // 0x1C
 			public ushort numBlocks; // 0x1E
@@ -390,7 +394,7 @@ namespace CriWare
 			}
 		}
 
-		[Serializable]
+		[Serializable, StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
 		public struct Randomize3dConfig
 		{
 			public const int NumOfCalcParams = 3;
@@ -398,7 +402,7 @@ namespace CriWare
 			private bool followsOriginalSource; // 0x0
 			[SerializeField]
 			private CriAtomEx.Randomize3dCalcType calculationType; // 0x4
-			[SerializeField]
+			[SerializeField, MarshalAs(UnmanagedType.ByValArray, SizeConst = NumOfCalcParams)]
 			private float[] calculationParameters; // 0x8
 
 			public bool FollowsOriginalSource { get { return followsOriginalSource; }  } // 0x81C634
@@ -413,7 +417,8 @@ namespace CriWare
 				this.followsOriginalSource = BitConverter.ToInt32(data, startIndex + 0) != 0;
 				this.calculationType = (Randomize3dCalcType)BitConverter.ToInt32(data, startIndex + 4);
 				this.calculationParameters = new float[NumOfCalcParams];
-				for (int i = 0; i < NumOfCalcParams; ++i) {
+				for (int i = 0; i < NumOfCalcParams; i++) 
+				{
 					calculationParameters[i] = BitConverter.ToSingle(data, startIndex + 8 + (4 * i));
 				}
 			}
@@ -453,6 +458,7 @@ namespace CriWare
 			// public bool SetParamByType(CriAtomEx.Randomize3dParamType paramType, float paramVal) { }
 		}
 
+		[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
 		public struct CuePos3dInfo
 		{
 			public float coneInsideAngle; // 0x0
@@ -468,6 +474,7 @@ namespace CriWare
 			public ushort sourceBaseAngleAisacControl; // 0x2C
 			public ushort listenerBaseElevationAisacControl; // 0x2E
 			public ushort sourceBaseElevationAisacControl; // 0x30
+			[MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)]
 			public ushort[] reserved; // 0x34
 
 			// RVA: 0x81C600 Offset: 0x81C600 VA: 0x81C600
@@ -494,8 +501,10 @@ namespace CriWare
 			}
 		}
 
+		[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
 		public struct GameVariableInfo
 		{
+			[MarshalAs(UnmanagedType.LPStr)]
 			public readonly string name; // 0x0
 			public uint id; // 0x4
 			public float gameValue; // 0x8

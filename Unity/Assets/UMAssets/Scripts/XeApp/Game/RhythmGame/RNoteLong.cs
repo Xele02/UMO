@@ -155,7 +155,7 @@ namespace XeApp.Game.RhythmGame
 			touchFingerId_ = fingerId;
 			if(animator != null)
 			{
-				if(OnStateHash == animator.GetCurrentAnimatorStateInfo(0).shortNameHash || animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
+				if(OnStateHash != animator.GetCurrentAnimatorStateInfo(0).shortNameHash || animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
 				{
 					animator.Play(OnStateHash, -1, 0);
 				}
@@ -168,9 +168,8 @@ namespace XeApp.Game.RhythmGame
 			// UMO
 			bool isSlide = noteObject.rNote.noteInfo.isSlide;
 			#if UNITY_EDITOR
-			isSlide = false; // Disable slideon long note
+			//isSlide = false; // Disable slideon long note
 			#endif
-
 
 			if(isSlide)
 			{
@@ -182,7 +181,8 @@ namespace XeApp.Game.RhythmGame
 				{
 					if(lastRNoteObject != noteObject)
 					{
-						if(firstRNoteObject != noteObject || a_type == RhythmGameConsts.NoteJudgeType.EndedTouch)
+						TodoLogger.LogError(TodoLogger.ToCheck, "remove this test or next lines are kept on screen when releasing finger after starting line");
+						if(firstRNoteObject != noteObject/* || a_type == RhythmGameConsts.NoteJudgeType.EndedTouch*/)
 						{
 							;
 						}
@@ -198,6 +198,10 @@ namespace XeApp.Game.RhythmGame
 								if(touchFingerId_ != -1)
 								{
 									mesh.Clear();
+								}
+								else
+								{
+									Free();
 								}
 							}
 						}
@@ -269,7 +273,7 @@ namespace XeApp.Game.RhythmGame
 					{
 						return;
 					}
-					lastRNoteObject.Judged(lastRNoteObject.rNote.result, RhythmGameConsts.NoteJudgeType.Normal);
+					lastRNoteObject.Judged(noteObject.rNote.result, RhythmGameConsts.NoteJudgeType.Normal);
 					Free();
 				}
 			}

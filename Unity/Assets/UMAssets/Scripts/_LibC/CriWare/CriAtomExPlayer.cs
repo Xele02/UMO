@@ -9,6 +9,7 @@ using VGMToolbox.format;
 
 namespace ExternLib
 {
+#if !UNITY_ANDROID
     public static partial class LibCriWare
     {    
         static float bytesToFloat(byte firstByte, byte secondByte)
@@ -409,4 +410,5 @@ namespace ExternLib
 			TodoLogger.LogError(0, "criAtomExPlayer_SetPanType");
 		}
     }
+#endif
 }

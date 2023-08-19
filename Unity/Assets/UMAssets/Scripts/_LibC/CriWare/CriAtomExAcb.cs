@@ -8,6 +8,7 @@ using VGMToolbox.format;
 
 namespace ExternLib
 {
+#if !UNITY_ANDROID
     public static partial class LibCriWare
     {
 		class AcbData
@@ -105,4 +106,5 @@ namespace ExternLib
 		}
 
 	}
+#endif
 }

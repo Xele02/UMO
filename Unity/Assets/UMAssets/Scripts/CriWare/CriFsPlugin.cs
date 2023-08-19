@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public static class CriFsPlugin
@@ -12,7 +13,10 @@ public static class CriFsPlugin
 	// // RVA: 0x29498CC Offset: 0x29498CC VA: 0x29498CC
 	public static void SetConfigParameters(int num_loaders, int num_binders, int num_installers, int argInstallBufferSize, int max_path, bool minimize_file_descriptor_usage, bool enable_crc_check)
 	{
-		TodoLogger.LogError(TodoLogger.CriFsPlugin, "CriFsPlugin.SetConfigParameters");
+		CRIWARE60B91352_criFsUnity_SetConfigParameters(
+			num_loaders, num_binders, num_installers, max_path, minimize_file_descriptor_usage, enable_crc_check);
+		installBufferSize = argInstallBufferSize;
+		isConfigured = true;
 	}
 
 	// // RVA: 0x2949AD4 Offset: 0x2949AD4 VA: 0x2949AD4
@@ -21,7 +25,9 @@ public static class CriFsPlugin
 	// // RVA: 0x2949C94 Offset: 0x2949C94 VA: 0x2949C94
 	public static void SetConfigAdditionalParameters_ANDROID(int device_read_bps)
 	{
-		TodoLogger.LogError(TodoLogger.CriFsPlugin, "CriFsPlugin.SetConfigAdditionalParameters_ANDROID");
+#if !UNITY_EDITOR && UNITY_ANDROID
+		criFsUnity_SetConfigAdditionalParameters_ANDROID(device_read_bps);
+#endif
 	}
 
 	// // RVA: 0x2949E0C Offset: 0x2949E0C VA: 0x2949E0C
@@ -40,18 +46,19 @@ public static class CriFsPlugin
 		if(IsLibraryInitialized())
 		{
 			FinalizeLibrary();
+			initializationCount = 1;
 		}
 		if(!isConfigured)
 		{
 			Debug.Log("[CRIWARE] FileSystem initialization parameters are not configured. Initializes FileSystem by default parameters.");
 		}
-		CRIWARE1682FBAD();
+		CRIWARE1682FBAD_criFsUnity_Initialize();
 	}
 
 	// // RVA: 0x29446E4 Offset: 0x29446E4 VA: 0x29446E4
 	public static bool IsLibraryInitialized()
 	{
-		return CRIWARE1FDF7DD5();
+		return CRIWARE1FDF7DD5_criFsUnity_IsInitialized();
 	}
 
 	// // RVA: 0x294A2E8 Offset: 0x294A2E8 VA: 0x294A2E8
@@ -61,18 +68,43 @@ public static class CriFsPlugin
 	}
 
 	// // RVA: 0x29499A8 Offset: 0x29499A8 VA: 0x29499A8
-	// private static extern void CRIWARE60B91352(int num_loaders, int num_binders, int num_installers, int max_path, bool minimize_file_descriptor_usage, bool enable_crc_check) { }
+#if UNITY_ANDROID
+	[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+	private static extern void CRIWARE60B91352(int num_loaders, int num_binders, int num_installers, int max_path, bool minimize_file_descriptor_usage, bool enable_crc_check);
+#endif
+	private static void CRIWARE60B91352_criFsUnity_SetConfigParameters(int num_loaders, int num_binders, int num_installers, int max_path, bool minimize_file_descriptor_usage, bool enable_crc_check)
+	{
+#if UNITY_ANDROID
+		CRIWARE60B91352(num_loaders, num_binders, num_installers, max_path, minimize_file_descriptor_usage, enable_crc_check);
+#endif
+	}
 
 	// // RVA: 0x294A4E8 Offset: 0x294A4E8 VA: 0x294A4E8
-	private static /*extern*/ void CRIWARE1682FBAD()
+#if UNITY_ANDROID
+	[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+	private static extern void CRIWARE1682FBAD();
+#endif
+	private static void CRIWARE1682FBAD_criFsUnity_Initialize()
 	{
+#if UNITY_ANDROID
+		CRIWARE1682FBAD();
+#else
 		ExternLib.LibCriWare.CRIWARE1682FBAD();
+#endif
 	}
 
 	// // RVA: 0x294A5E0 Offset: 0x294A5E0 VA: 0x294A5E0
-	public static /*extern */bool CRIWARE1FDF7DD5()
+#if UNITY_ANDROID
+	[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+	private static extern bool CRIWARE1FDF7DD5();
+#endif
+	public static bool CRIWARE1FDF7DD5_criFsUnity_IsInitialized()
 	{
+#if UNITY_ANDROID
+		return CRIWARE1FDF7DD5();
+#else
 		return ExternLib.LibCriWare.CRIWARE1FDF7DD5();
+#endif
 	}
 
 	// // RVA: 0x294A828 Offset: 0x294A828 VA: 0x294A828
@@ -96,12 +128,14 @@ public static class CriFsPlugin
 	// // RVA: 0x2949BB0 Offset: 0x2949BB0 VA: 0x2949BB0
 	// private static extern int criFs_SetReadDeviceEnabled(int device_id, bool enabled) { }
 
-	// // RVA: 0x2949D18 Offset: 0x2949D18 VA: 0x2949D18
-	// private static extern void criFsUnity_SetConfigAdditionalParameters_ANDROID(int device_read_bps) { }
+#if !UNITY_EDITOR && UNITY_ANDROID
+	[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+	private static extern void criFsUnity_SetConfigAdditionalParameters_ANDROID(int device_read_bps);
 
-	// // RVA: 0x2949E90 Offset: 0x2949E90 VA: 0x2949E90
-	// public static extern void criFsUnity_SetMemoryFileSystemThreadPriority_ANDROID(int prio) { }
+	[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+	public static extern void criFsUnity_SetMemoryFileSystemThreadPriority_ANDROID(int prio);
 
-	// // RVA: 0x294A008 Offset: 0x294A008 VA: 0x294A008
-	// public static extern void criFsUnity_SetDataDecompressionThreadPriority_ANDROID(int prio) { }
+	[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+	public static extern void criFsUnity_SetDataDecompressionThreadPriority_ANDROID(int prio);
+#endif
 }

@@ -88,13 +88,13 @@ namespace XeApp.Core
 
 #if UNITY_EDITOR || UNITY_STANDALONE
 							});
+#endif
 						}
 						else
 						{
 							m_lodingErrors[assetBundleName] = "Load Assetbundle Failed:" + assetBundleName;
 							m_lodingAssetBundle.Remove(assetBundleName);
 						}
-#endif
 						return true;
 					}, 
 					(FileResultObject fo) => {

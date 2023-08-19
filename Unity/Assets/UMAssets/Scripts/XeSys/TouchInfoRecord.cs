@@ -39,9 +39,9 @@ namespace XeSys
         // // RVA: 0x23A6C0C Offset: 0x23A6C0C VA: 0x23A6C0C
         public void Update(TouchPhase phase, Vector3 pos)
         {
-            if(phase == TouchPhase.Stationary)
+            if(phase == TouchPhase.Stationary || phase == TouchPhase.Moved)
                 UpdateStationary(pos);
-            else if(phase == TouchPhase.Ended)
+            else if(phase == TouchPhase.Ended || phase == TouchPhase.Canceled)
                 UpdateEnded(pos);
             else if(phase == TouchPhase.Began)
                 UpdateBegan(pos);
@@ -108,7 +108,7 @@ namespace XeSys
         // // RVA: 0x23A7160 Offset: 0x23A7160 VA: 0x23A7160
         public bool IsFlick(int frame, float distanceRate)
 		{
-			return distanceRate <= GetRecentDeltaDistance(frame) / new Vector2(Screen.width, Screen.height).sqrMagnitude;
+			return distanceRate <= GetRecentDeltaDistance(frame) / new Vector2(Screen.width, Screen.height).magnitude;
 		}
 
         // // RVA: 0x23A720C Offset: 0x23A720C VA: 0x23A720C

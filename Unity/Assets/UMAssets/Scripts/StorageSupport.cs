@@ -1,3 +1,6 @@
+using System;
+using UnityEngine;
+
 public class StorageSupport
 {
 	// // RVA: 0x2E72264 Offset: 0x2E72264 VA: 0x2E72264
@@ -13,9 +16,14 @@ public class StorageSupport
 	public static int GetAvailableStorageSizeMB()
 	{
 #if UNITY_ANDROID
-		TodoLogger.Log(TodoLogger.StorageSupport, "GetAvailableStorageSizeMB");
-#endif
+		using (AndroidJavaClass jc = new AndroidJavaClass("jp.co.xeen.xeapp.StorageSupport"))
+		{
+			object[] o = new object[1] { Application.temporaryCachePath };
+			return jc.CallStatic<int>("getAvailableStorageSizeMB", o);
+		}
+#else
 		return 10000;
+#endif
 	}
 
 	// // RVA: 0x2E723D0 Offset: 0x2E723D0 VA: 0x2E723D0

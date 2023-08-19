@@ -6,6 +6,7 @@ using CriWare;
 
 namespace ExternLib
 {
+#if !UNITY_ANDROID
     public static partial class LibCriWare
     {
         private class InternalBindInfo
@@ -81,4 +82,5 @@ namespace ExternLib
 			return 0;
 		}
     }
+#endif
 }

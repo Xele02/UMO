@@ -190,6 +190,7 @@ namespace CriWare
 
 		// // RVA: 0x288ADD8 Offset: 0x288ADD8 VA: 0x288ADD8
 		#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
 		private static extern int criAtomExAcb_GetNumCues(IntPtr acb_hn);
 		#else
 		private static int criAtomExAcb_GetNumCues(IntPtr acb_hn)
@@ -245,6 +246,7 @@ namespace CriWare
 
 		// // RVA: 0x288AC08 Offset: 0x288AC08 VA: 0x288AC08
 		#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
 		private static extern bool criAtomExAcb_GetCueInfoByIndex(IntPtr acb_hn, int index, IntPtr info);
 		#endif
 		private static bool criAtomExAcb_GetCueInfoByIndex(IntPtr acb_hn, int index, out CriAtomEx.CueInfo info)

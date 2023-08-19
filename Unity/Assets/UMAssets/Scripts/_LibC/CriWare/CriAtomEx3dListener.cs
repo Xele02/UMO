@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace ExternLib
 {
+#if !UNITY_ANDROID
     public static partial class LibCriWare
     {
         public static IntPtr criAtomEx3dListener_Create(ref CriAtomEx3dListener.Config config, IntPtr work, int work_size)
@@ -23,4 +24,5 @@ namespace ExternLib
 			TodoLogger.LogError(TodoLogger.CriAtomExLib, "criAtomEx3dListener_Update");
 		}
     }
+#endif
 }

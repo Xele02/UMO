@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace ExternLib
 {
+#if !UNITY_ANDROID
     public static partial class LibCriWare
     {
         private class ManaPluginData
@@ -27,4 +28,5 @@ namespace ExternLib
             return manaPluginData.isInitialized;
         }
     }
+#endif
 }
