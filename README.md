@@ -1,6 +1,6 @@
 Rewrite project of UtaMacross mobile game. 
 
-**Current version : 0.4**
+**Current version : 0.4.2**
 
 Fonctionality : 
 * Basic loading of the game with default profile (all costume/cards unlocked and fully leveled)
@@ -25,9 +25,11 @@ Fonctionality :
   * Run the game, the first time, it will need to download the game datas. Whenever it is the case, a popup will open telling you to run the server on a pc on the local network. To do so :
     * Run the UMO Server executabe.
     * In the input box on top, copy the path where you put the original game data (the directory containing android & db directory)
-    * Press Start Server
+    * Press Start Server. On windows, accept the firewall security. (Server use port 8000, server discovery by broadcast use port 8001).
     * The log should display it is ready.
     * The phone should auto-detect the server running and download the data. Once in the main menu, you can close the server. **The phone and the server should be on the same local network**.
+    * If the game don't find the server, it the cancel button and enter the local IP of the PC running the server.
+    * The game can freeze during download, just restart it.
 * **PC** : 
   * Clone the project or extract the release zip (If you extract the zip on a older installation, remove the Unity directory before doing so).
   * For automatic game data detection, you can copy android and db directory from the game dump into Tools/Data/
