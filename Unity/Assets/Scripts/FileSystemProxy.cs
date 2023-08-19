@@ -208,10 +208,13 @@ static class FileSystemProxy
 
 		UdpClient udp = new UdpClient(8001);
 		bool cancel = false;
-        PopupWindowControl control = PopupWindowManager.Show(PopupWindowManager.CrateTextContent("UMO", SizeType.Small, "Searching for server, please start webserver and connect the phone on the same local network...", new ButtonInfo[1]
+        PopupWindowControl control = PopupWindowManager.Show(PopupWindowManager.CrateTextContent("UMO", SizeType.Small, "Searching for server, please start webserver and connect the phone on the same local network...", 
+		/*new ButtonInfo[1]
         {
             new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative }
-		}, false, true), (PopupWindowControl control_, PopupButton.ButtonType t, PopupButton.ButtonLabel label) =>
+		}*/
+		new ButtonInfo[0] {}
+		, false, true), (PopupWindowControl control_, PopupButton.ButtonType t, PopupButton.ButtonLabel label) =>
 		{
 			cancel = true;
 		}, null, null, null);

@@ -69,7 +69,7 @@ public class KEHOJEJMGLJ
 	public DJBHIFLHJLK FGGJNGCAFGK; // 0x24
 	public List<string> FBGNDKKDOIE = null; // 0x28
 	private JEHIAIPJNJF_FileDownloader PMDNNKAPIKJ; // 0x2C
-	public static bool FJDOHLADGFI; // 0x28
+	public static bool FJDOHLADGFI; // 0x28 // Set for now to force CRC recheck
 	public IKAHKDKIGNA IDJBKGBMDAJ; // 0x30
 	private List<GCGNICILKLD_AssetFileInfo> ICCMKHKNAMJ; // 0x34
 	private static DateTime CBHCDLLOBBK = new DateTime(1970, 1, 1, 0, 0, 0, 1, 0); // 0x30
@@ -881,6 +881,16 @@ public class KEHOJEJMGLJ
 							}
 						}
 					}
+#else
+					if(FJDOHLADGFI)
+					{
+						string h = IFCHFDEDCGF_GetFileHash(md5, localPath);
+						if(h != afinfo.POEGMFKLFJG_Hash)
+						{
+							UnityEngine.Debug.Log("Wrong hash for "+localPath+" "+h+" != "+afinfo.POEGMFKLFJG_Hash);
+							ICCMKHKNAMJ.Add(afinfo);
+						}
+					}
 #endif
                 }
 				else
@@ -948,8 +958,16 @@ public class KEHOJEJMGLJ
 	// // RVA: 0xE8AFF8 Offset: 0xE8AFF8 VA: 0xE8AFF8
 	private static string IFCHFDEDCGF_GetFileHash(MD5 DMIPFEIICDP, string CJEKGLGBIHF_path)
 	{
-		TodoLogger.LogError(TodoLogger.HashCheck, "IFCHFDEDCGF");
-		return "";
+		FileStream f = File.OpenRead(CJEKGLGBIHF_path);
+        byte[] data = DMIPFEIICDP.ComputeHash(f);
+		string s = "";
+		for(int i = 0; i < data.Length; i++)
+		{
+			s += string.Format("{0:x2}",data[i]);
+		}
+		if(f != null)
+			f.Dispose();
+		return s;
 	}
 
 	// // RVA: 0xE8B3C8 Offset: 0xE8B3C8 VA: 0xE8B3C8
