@@ -170,6 +170,8 @@ namespace XeApp.Game.Menu
 				divaInfo2 = team.BCJEAJPLGMB_MainDivas.Find((FFHPBEPOMAK_DivaInfo x) =>
 				{
 					//0x15A6100
+					if(x == null)
+						return false;
 					return attach.AHHJLDLAPAN_DivaId == x.AHHJLDLAPAN_DivaId;
 				});
 			}
