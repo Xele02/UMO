@@ -12,7 +12,7 @@ Fonctionality :
 
 # Requirement
 
-* The game data dump with android and db directories. Game can load from encrypted or decrypted bundle, with name format like bundle.xab, bundle.xab.decrypted, bundle!sxxxxxxz!.xab, bundle!sxxxxxxz!.xab.decrypted. Check the Tools directory to get the game data (this method can stop working anytime).
+* The game data dump with android and db directories. For legal reason and size, this cannot be avaiable here. Game can load from encrypted or decrypted bundle, with name format like bundle.xab, bundle.xab.decrypted, bundle!sxxxxxxz!.xab, bundle!sxxxxxxz!.xab.decrypted. Check the Tools directory to get the game data (this method can stop working anytime).
 * **PC** : Unity version 2018.4.23f1 or 2018.4.24f1
   * **For linux user** : FFMpeg installed to convert movies. If not installed, check "Disable movies" in the options.
 * **Android** : a phone compatible with Arm7 apk. Some emulator or x86 phone can possibly run it too if they use libhoudini.
