@@ -120,23 +120,16 @@ namespace XeApp.Game.RhythmGame
 				int i = 0;
 				for (; i < m_finger.Count; i++)
 				{
-					if (m_finger[i].lineNo < 0)
-						break;
-					if(m_finger[i].lineNo > -1 && m_finger[i].fingerId < 0)
+					if ((m_finger[i].lineNo < 0) || 
+						(m_finger[i].lineNo > -1 && m_finger[i].fingerId < 0 && m_finger[i].lineNo == lineNo))
 					{
-						if(m_finger[i].lineNo == lineNo)
-						{
-							break;
-						}
+						if (m_finger[i] == null)
+							return;
+						m_finger[i].Setup(i, fingerId, lineNo);
+						onBeganTouch(lineNo, i);
+						return;
 					}
 				}
-				if (i == m_finger.Count)
-					return;
-				if (m_finger[i] == null)
-					return;
-				m_finger[i].Setup(i, fingerId, lineNo);
-				onBeganTouch(lineNo, i);
-
 			}
 
 			//// RVA: 0x9A6194 Offset: 0x9A6194 VA: 0x9A6194
@@ -194,7 +187,18 @@ namespace XeApp.Game.RhythmGame
 			//public int GetLineNo(int fingerId) { }
 
 			//// RVA: 0x9A601C Offset: 0x9A601C VA: 0x9A601C
-			//public bool UpdateLineNo(int fingerId, int lineNo) { }
+			public bool UpdateLineNo(int fingerId, int lineNo)
+			{
+				FingerData info = SearchFinger(fingerId);
+				if (info == null)
+					return false;
+				int prevLine = info.lineNo;
+				if(info.UpdateLineNo(lineNo))
+				{
+					onNextLine.Invoke(prevLine, lineNo, info.index, false);
+				}
+				return true;
+			}
 
 			//// RVA: 0x9A8400 Offset: 0x9A8400 VA: 0x9A8400
 			public bool IsActive(int fingerId)
@@ -232,7 +236,6 @@ namespace XeApp.Game.RhythmGame
 				{
 					if(m_finger[i].lineNo > -1)
 					{
-						//UnityEngine.Debug.LogError(m_finger[i].lineNo + " " + m_finger[i].fingerId + " " + m_finger[i].timer + " " + m_limitSec + " " + m_saveForLine[m_finger[i].lineNo]);
 						if(m_finger[i].fingerId < 0)
 						{
 							if(m_finger[i].timer < m_limitSec)
@@ -262,7 +265,6 @@ namespace XeApp.Game.RhythmGame
 			public void SetLineSave(int lineNo, bool isSave, bool isCheckEndTouch = true)
 			{
 				bool prevVal = m_saveForLine[lineNo];
-				//UnityEngine.Debug.LogError("SetLineSave " + lineNo + " " + isSave + " " + isCheckEndTouch);
 				m_saveForLine[lineNo] = isSave;
 				if(prevVal && isCheckEndTouch && !isSave)
 				{
@@ -318,7 +320,6 @@ namespace XeApp.Game.RhythmGame
 			//// RVA: 0x9A6AE8 Offset: 0x9A6AE8 VA: 0x9A6AE8
 			public void Reset()
 			{
-				//UnityEngine.Debug.LogError("Reset Input");
 				requestedTimerReset = false;
 				index = -1;
 				fingerId = -1;
@@ -336,7 +337,6 @@ namespace XeApp.Game.RhythmGame
 			//// RVA: 0x9A6B4C Offset: 0x9A6B4C VA: 0x9A6B4C
 			public void OnReleased()
 			{
-				//UnityEngine.Debug.LogError("OnReleased");
 				fingerId = -1;
 			}
 
@@ -346,7 +346,6 @@ namespace XeApp.Game.RhythmGame
 			//// RVA: 0x9A6B74 Offset: 0x9A6B74 VA: 0x9A6B74
 			public void RequestTimerReset()
 			{
-				//UnityEngine.Debug.LogError("RequestTimerReset");
 				requestedTimerReset = true;
 			}
 
@@ -367,7 +366,15 @@ namespace XeApp.Game.RhythmGame
 			}
 
 			//// RVA: 0x9A6BAC Offset: 0x9A6BAC VA: 0x9A6BAC
-			//public bool UpdateLineNo(int lineNo) { }
+			public bool UpdateLineNo(int lineNo)
+			{
+				if(this.lineNo != lineNo)
+				{
+					this.lineNo = lineNo;
+					return true;
+				}
+				return false;
+			}
 		}
 
 
@@ -691,9 +698,13 @@ namespace XeApp.Game.RhythmGame
 				int a = fingerInfoList[fingerId].JudgeLineCandidate(refRhytmGamePlayer.notesMillisec, info.nativePosition, touchRectScreenPos, touchPriorityThreshold);
 				if(info.isBegan)
 				{
-					if (a > 0)
+					if (a > -1)
 						line = a;
 					inputSaver.OnTouched(fingerId, line);
+				}
+				else if(a > -1)
+				{
+					inputSaver.UpdateLineNo(fingerId, a);
 				}
 			}
 			fingerInfoList[fingerId].ResetJudgeLineInfo();
@@ -713,6 +724,10 @@ namespace XeApp.Game.RhythmGame
 						if(isActiveLineCallback.Invoke(fingerData.lineNo_Begin))
 						{
 							inputSaver.OnMoved(fingerId, RectTransformUtility.RectangleContainsScreenPoint(touchReleaseRects[fingerData.lineNo_Begin], info.nativePosition));
+						}
+						else
+						{
+							inputSaver.OnMoved(fingerId, false);
 						}
 					}
 					if(fingerData.lineNo > -1)

@@ -80,7 +80,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(!noteObject.IsJudged())
 				return;
-			noteObject.Free();
+			Free();
 		}
 
 		// // RVA: 0xDBE174 Offset: 0xDBE174 VA: 0xDBE174 Slot: 11
