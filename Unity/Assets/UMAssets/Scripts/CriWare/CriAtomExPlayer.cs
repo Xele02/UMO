@@ -466,7 +466,7 @@ namespace CriWare
 		// // RVA: 0x28AA1DC Offset: 0x28AA1DC VA: 0x28AA1DC
 		public void SetSoundRendererType(CriAtomEx.SoundRendererType type)
 		{
-			TodoLogger.LogError(0, "SetSoundRendererType");
+			criAtomExPlayer_SetSoundRendererType(this.handle, type);
 		}
 
 		// // RVA: 0x28AA2D8 Offset: 0x28AA2D8 VA: 0x28AA2D8
@@ -840,7 +840,7 @@ namespace CriWare
 		#endif
 
 		// // RVA: 0x28A6568 Offset: 0x28A6568 VA: 0x28A6568
-		#if UNITY_ANROID
+		#if UNITY_ANDROID
 		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
 		private static extern void criAtomExPlayer_SetPitch(IntPtr player, float pitch);
 		#else
@@ -863,8 +863,9 @@ namespace CriWare
 		// private static extern void criAtomExPlayer_SetPan3dVolume(IntPtr player, float pan3d_volume) { }
 
 		// // RVA: 0x28A6A68 Offset: 0x28A6A68 VA: 0x28A6A68
-		#if UNITY_ANROID
-		//private static extern void criAtomExPlayer_SetPanType(IntPtr player, CriAtomEx.PanType panType) { }
+		#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		private static extern void criAtomExPlayer_SetPanType(IntPtr player, CriAtomEx.PanType panType);
 		#else
 		private static void criAtomExPlayer_SetPanType(IntPtr player, CriAtomEx.PanType panType)
 		{
@@ -1014,7 +1015,15 @@ namespace CriWare
 		// private static extern void criAtomExPlayer_ClearSelectorLabels(IntPtr player) { }
 
 		// // RVA: 0x28AA1E8 Offset: 0x28AA1E8 VA: 0x28AA1E8
-		// private static extern void criAtomExPlayer_SetSoundRendererType(IntPtr player, CriAtomEx.SoundRendererType type) { }
+		#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		private static extern void criAtomExPlayer_SetSoundRendererType(IntPtr player, CriAtomEx.SoundRendererType type);
+		#else
+		private static void criAtomExPlayer_SetSoundRendererType(IntPtr player, CriAtomEx.SoundRendererType type)
+		{
+			
+		}
+		#endif
 
 		// // RVA: 0x28AA2E0 Offset: 0x28AA2E0 VA: 0x28AA2E0
 		// private static extern void criAtomExPlayer_SetRandomSeed(IntPtr player, uint seed) { }

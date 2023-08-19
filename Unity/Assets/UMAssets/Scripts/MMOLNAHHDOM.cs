@@ -138,7 +138,7 @@ public class MMOLNAHHDOM
 	public bool NMBAHHJLGPP_IsMultiDiva(int EHDDADDKMFI)
 	{
 		int idx = EHDDADDKMFI - 1;
-		if((idx >> 4) > 124)
+		if((idx >> 4) > 124)	
 			return false;
 		int offset = (idx >> 3);
 		if (LAIIKHJABMP_MultiDiva.Length <= offset)

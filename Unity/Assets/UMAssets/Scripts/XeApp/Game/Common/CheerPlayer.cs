@@ -178,12 +178,14 @@ namespace XeApp.Game.Common
 
 		public void SetMixer(AudioMixerGroup group)
 		{
+#if !UNITY_ANDROID
 			if (!m_create)
 				return;
 			for(int i = 0; i < MAX; i++)
 			{
 				m_player[i].source.unityAudioSource.outputAudioMixerGroup = group;
 			}
+#endif
 		}
 	}
 }

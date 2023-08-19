@@ -106,7 +106,7 @@ namespace CriWare
             if (GetBinaryVersionNumber() == GetRequiredBinaryVersionNumber()) {
                 return true;
             } else {
-                Debug.LogError("CRI runtime library is not compatible. Confirm the version number.");
+                Debug.LogError("CRI runtime library is not compatible. Confirm the version number."+GetBinaryVersionNumber()+" "+GetRequiredBinaryVersionNumber());
                 return false;
             }
         }
@@ -126,15 +126,24 @@ namespace CriWare
         // // RVA: 0x2BA8F68 Offset: 0x2BA8F68 VA: 0x2BA8F68
         #if UNITY_ANDROID
         [DllImport(pluginName, CallingConvention = pluginCallingConvention)]
-        public static extern int CRIWARED1CDE3A7_criWareUnity_GetVersionNumber();
-        #else
+        public static extern int criWareUnity_GetVersionNumber();
+        [DllImport(pluginName, CallingConvention = pluginCallingConvention)]
+        public static extern int CRIWARED1CDE3A7();
+        #endif
         public static int CRIWARED1CDE3A7_criWareUnity_GetVersionNumber()
         {
+        #if UNITY_ANDROID
+            //return criWareUnity_GetVersionNumber();
+            return CRIWARED1CDE3A7();
+        #else
             return ExternLib.LibCriWare.CRIWARED1CDE3A7_criWareUnity_GetVersionNumber();
-        }
         #endif
+        }
 
         // // RVA: 0x2BA9338 Offset: 0x2BA9338 VA: 0x2BA9338
-        // public static extern void criWareUnity_SetRenderingEventOffsetForMana(int offset) { }
+        #if UNITY_ANDROID
+        [DllImport(pluginName, CallingConvention = pluginCallingConvention)]
+        public static extern void criWareUnity_SetRenderingEventOffsetForMana(int offset);
+        #endif
     }
 }

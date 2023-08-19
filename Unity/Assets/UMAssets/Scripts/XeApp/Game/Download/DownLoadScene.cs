@@ -209,8 +209,37 @@ namespace XeApp.Game.DownLoad
 		// // RVA: 0x11BE93C Offset: 0x11BE93C VA: 0x11BE93C
 		private IEnumerator Co_DownLoadProc()
 		{
-			TodoLogger.LogError(0, "Co_DownLoadProc");
+			WaitWhile waiter;
+			//0x11BF23C
+			waiter = new WaitWhile(() =>
+			{
+				//0x11BF1BC
+				return GameManager.IsFading();
+			});
+			m_Layout.Visible();
 			yield return null;
+			yield return null;
+			yield return null;
+			GameManager.FadeIn(0.4f);
+			yield return waiter;
+			m_Layout.EnterDownLoad();
+			m_Layout.EnterVoiceButton();
+			yield return null;
+			yield return new WaitWhile(() =>
+			{
+				//0x11BF104
+				return false;
+			});
+			m_Layout.SetEnabledOperation(true, false);
+			yield return new WaitWhile(() =>
+			{
+				//0x11BF12C
+				return !IsFinish();
+			});
+			while(!m_Layout.IsFinishDownLoadAnim())
+				yield return null;
+			GameManager.FadeOut(0.4f);
+			yield return waiter;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B51D0 Offset: 0x6B51D0 VA: 0x6B51D0
@@ -287,14 +316,16 @@ namespace XeApp.Game.DownLoad
 		// private void Downloaded() { }
 
 		// // RVA: 0x11BEEF8 Offset: 0x11BEEF8 VA: 0x11BEEF8
-		// private bool IsFinish() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6B5248 Offset: 0x6B5248 VA: 0x6B5248
-		// // RVA: 0x11BF104 Offset: 0x11BF104 VA: 0x11BF104
-		// private bool <Co_DownLoadProc>b__15_1() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6B5258 Offset: 0x6B5258 VA: 0x6B5258
-		// // RVA: 0x11BF12C Offset: 0x11BF12C VA: 0x11BF12C
-		// private bool <Co_DownLoadProc>b__15_2() { }
+		private bool IsFinish()
+		{
+			if(DownLoadUIManager.Instance.IsLoadLayout)
+			{
+				if(m_Layout != null)
+				{
+					return !m_Layout.IsFinishDownLoadAnim();
+				}
+			}
+			return false;
+		}
 	}
 }

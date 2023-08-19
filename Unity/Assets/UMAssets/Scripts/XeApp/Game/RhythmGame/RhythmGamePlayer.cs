@@ -303,7 +303,9 @@ namespace XeApp.Game.RhythmGame
 			{
 				XeApp.Game.GameManager.Instance.PopupCanvas.worldCamera.clearFlags = UnityEngine.CameraClearFlags.Nothing;
 			}
+#if !UNITY_ANDROID
 			ExternLib.LibCriWare.checkUncached = false;
+#endif
 			SoundManager.Instance.SetInGame(false);
 			RestoreSave();
 		}
@@ -2595,7 +2597,9 @@ namespace XeApp.Game.RhythmGame
 			int noteResultCount_Excellent;
 			//0xBF3B04
 
+#if !UNITY_ANDROID
 			ExternLib.LibCriWare.checkUncached = false;
+#endif
 
 			GameManager.FadeOut(0.4f);
 			if(soundCheerOrderer != null)
@@ -3324,7 +3328,9 @@ namespace XeApp.Game.RhythmGame
 			SoundManager.Instance.SetInGame(true);
 			bgmPlayer.source.player.SetStartTime(startTime);
 			bgmPlayback = bgmPlayer.source.Play();
+#if !UNITY_ANDROID
 			ExternLib.LibCriWare.checkUncached = true; // Wait for bgm to be started
+#endif
 			gameDivaObject.PlayMusicAnimation(0);
 			for(int i = 0; i < subDivaObject.Length; i++)
 			{

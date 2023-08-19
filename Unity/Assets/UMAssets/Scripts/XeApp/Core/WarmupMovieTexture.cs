@@ -48,7 +48,9 @@ namespace XeApp.Core
 		{
 			//0x1D78820
 			while(moviePlayer.player.status != CriWare.CriMana.Player.Status.Ready)
+			{
 				yield return null;
+			}
 			moviePlayer.player.Start();
 			yield return new WaitForSeconds(0.5f);
 			moviePlayer.player.Stop();
@@ -57,11 +59,13 @@ namespace XeApp.Core
 			moviePlayer.player.SetSeekPosition(0);
 			moviePlayer.target = null;
 			moviePlayer.player.Prepare();
+#if !UNITY_ANDROID
 			//UMO, ensure video is ready
 			while(moviePlayer.player.status != CriWare.CriMana.Player.Status.Ready)
 			{
 				yield return null;
 			}
+#endif
 			onFinish();
 			Destroy(gameObject);
 		}

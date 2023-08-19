@@ -17,13 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/UMAssets/Scene/Project/Scenes/DownLoad.unity
     guid: 7a724ebf2031d04439df09e534dd0d96
-  - enabled: 1
+  - enabled: 0
     path: Assets/UMAssets/Scene/Project/Scenes/GachaDirection.unity
     guid: 6f9ab348d75edf546bb68530ce5fa808
   - enabled: 1
     path: Assets/UMAssets/Scene/Project/Scenes/Menu.unity
     guid: 30e74f4b759d7874f9cc53b4dc35cddc
-  - enabled: 1
+  - enabled: 0
     path: Assets/UMAssets/Scene/Project/Scenes/Prologue.unity
     guid: 934fef27f001e944ea549a9656c251cb
   - enabled: 1
@@ -35,15 +35,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/UMAssets/Scene/Project/Scenes/RhythmGameSkip.unity
     guid: 8708893b8df59f34aa8d4f621652ba5a
-  - enabled: 1
+  - enabled: 0
     path: Assets/UMAssets/Scene/Project/Scenes/Adv.unity
     guid: 31aefc2ab9fa8c94983ff3dd235bceb4
-  - enabled: 1
+  - enabled: 0
     path: Assets/UMAssets/Scene/Project/Scenes/DivaSelect.unity
     guid: 308f0aed73bdebe4ebafb7b6380310bc
-  - enabled: 1
+  - enabled: 0
     path: Assets/UMAssets/Scene/Project/Scenes/MiniGame.unity
     guid: d7f37c3f7a70d184586b90020a3b3ffc
+  - enabled: 0
+    path: Assets/Scenes/StartFileServer.unity
+    guid: 7a5f58b47c6a604e4bcb3409fcb2c6ed
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 99b4ada0122e055448ab6bfb1907df3e,
       type: 2}

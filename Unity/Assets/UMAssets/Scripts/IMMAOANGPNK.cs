@@ -184,7 +184,7 @@ public class IMMAOANGPNK
 				if(File.Exists(BLOMMALFLCM))
 				{
 					TodoLogger.Log(TodoLogger.Filesystem, "Delete File "+BLOMMALFLCM);
-					File.Delete(BLOMMALFLCM);
+					//File.Delete(BLOMMALFLCM);
 				}
 				GCELJIDIGDG = HCNDEJCCIMA.IAKPCFDLMKP;
 				if(!HCNDEJCCIMA.NPNNPNAIONN)

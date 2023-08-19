@@ -10,6 +10,7 @@ using VGMToolbox.format;
 
 namespace ExternLib
 {
+#if !UNITY_ANDROID
     public static partial class LibCriWare
     {
         public class MoviePlayerData
@@ -260,4 +261,5 @@ namespace ExternLib
             return null;
         }
     }
+#endif
 }

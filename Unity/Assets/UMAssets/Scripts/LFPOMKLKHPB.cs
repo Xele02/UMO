@@ -60,7 +60,11 @@ public class LFPOMKLKHPB
 		do
 		{
 			JHHBAFKMBDL.HHCJCDFCLOB.NIGGABHIFEE_ShowTransmissionIcon(true);
+#if UNITY_ANDROID
+			yield return Co.R(FileSystemProxy.WaitServerInfo(false));
+#endif
 			string url = FileSystemProxy.ConvertURL(HJLDBEJOMIO + "?t=" + DateTime.Now.ToString("yyyyMMddHHmmss"));
+			UnityEngine.Debug.LogError(url);
 			JMNNBKPAAKF = new WWW(url);
 			DFIEJHNOBOC = 0;
 			OLEKCNABLNH = false;
@@ -108,7 +112,6 @@ public class LFPOMKLKHPB
 		b.KHEKNNFCAOI_Init(0x26daf41);
 		b.CLNHGLGOKPF_Decrypt(NIODCJLINJN);
 		bool res = HNENADILFBJ(NIODCJLINJN);
-		res = !res;
 		if(res)
 			BIOFMLDLNKD = true;
 		return res;
@@ -134,12 +137,13 @@ public class LFPOMKLKHPB
 						{
 							uint a = BitConverter.ToUInt32(NIODCJLINJN, idx);
 							int b = BitConverter.ToInt32(NIODCJLINJN, idx + 4);
-							BLBOJAHOHEO_Size.Add((int)a);
+							BHMMPMMLDBA_Hash.Add(a);
 							BLBOJAHOHEO_Size.Add(b);
 							if(!OHLLBNBMMDG.ContainsKey(a))
 							{
 								OHLLBNBMMDG.Add(a, b);
 							}
+							idx += 8;
 						}
 						return true;
 					}
@@ -177,7 +181,7 @@ public class LFPOMKLKHPB
 			int s = IJPPHABNGJH_GetCacheSize(KGHAJGGMPKL[i].LBALIFCJKON_Idx, KGHAJGGMPKL[i].HHPEMFKDHLK_FileHash);
 			size += ((s + 4095) / 4096) * 4096;
 		}
-		size *= 10;
+		size *= 10.0f / 1024 / 1024;
 		int i_size = (int)Mathf.Ceil(size);
 		return string.Format("{0}.{1} MB", i_size / 10, i_size % 10);
 	}

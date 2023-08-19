@@ -6,30 +6,36 @@ public static class TodoLogger
 {
 	public static int _NonVisible = 99999999;
 
+#if UNITY_ANDROID
+	public static int _OnlyAndroid = 0;
+#else
+	public static int _OnlyAndroid = _NonVisible;
+#endif
+
 	// Can ignore
-	public static int CriWareErrorHandler = _NonVisible;
-	public static int CriFsPlugin = _NonVisible;
-	public static int CriAtomPlugin = _NonVisible;
-	public static int CriManaPlugin = _NonVisible;
-	public static int CriWareDecrypter = _NonVisible;
-	public static int CriWareInitializer = _NonVisible;
-	public static int CriAtomExLib = _NonVisible;
+	public static int CriWareErrorHandler = _OnlyAndroid;
+	public static int CriFsPlugin = _OnlyAndroid;
+	public static int CriAtomPlugin = _OnlyAndroid;
+	public static int CriManaPlugin = _OnlyAndroid;
+	public static int CriWareDecrypter = _OnlyAndroid;
+	public static int CriWareInitializer = _OnlyAndroid;
+	public static int CriAtomExLib = _OnlyAndroid;
 	public static int AppQualitySetting = _NonVisible;
 	public static int SecureLibAPI = _NonVisible;
 	public static int FCMTokenReceiver = _NonVisible;
-	public static int CriAtomExLatencyEstimator = _NonVisible;
-	public static int CriFsWebInstaller = _NonVisible;
+	public static int CriAtomExLatencyEstimator = _OnlyAndroid;
+	public static int CriFsWebInstaller = _OnlyAndroid;
 	public static int Adjust = _NonVisible;
 	public static int AppInfo = _NonVisible;
-	public static int CriFsLoader = _NonVisible;
+	public static int CriFsLoader = _OnlyAndroid;
 	public static int SakashoSystem = _NonVisible;
 	public static int Playgames = _NonVisible;
 	public static int Crashlytics = _NonVisible;
-	public static int StorageSupport = _NonVisible;
+	public static int StorageSupport = _OnlyAndroid;
 	public static int ManaAd = _NonVisible;
 	public static int AndroidNotification = _NonVisible;
-	public static int CriAtomExPlayer = _NonVisible;
-	public static int HashCheck = _NonVisible;
+	public static int CriAtomExPlayer = _OnlyAndroid;
+	public static int HashCheck = _OnlyAndroid;
 	public static int Java = _NonVisible;
 	public static int WebRequest = _NonVisible;
 	public static int OptimizedSave = _NonVisible;
@@ -37,7 +43,7 @@ public static class TodoLogger
 
 	// Need to implement at some point
 	public static int _Todo = 99999999;
-	public static int CriAtomVolumes = _Todo;
+	public static int CriAtomVolumes = _OnlyAndroid;
 	public static int ToCheck = _Todo;
 	public static int Errors = _Todo;
 	public static int DbIntegrityCheck = _Todo;

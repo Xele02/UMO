@@ -226,6 +226,12 @@ public class BBGDKLLEPIB
 		{
 			OEPPEGHGNNO(1, 0);
 		}
+#if UNITY_ANDROID
+		{
+			yield return Co.R(FileSystemProxy.WaitServerInfo(false));
+			FLHOFIEOKDH_BaseUrl = "http://"+FileSystemProxy.foundServer+":8000";
+		}
+#endif
 		JEHIAIPJNJF_FileDownloader MHHFMCPJONH = new JEHIAIPJNJF_FileDownloader();
 		MHHFMCPJONH.DOMFHDPMCCO_AddFiles(ICCMKHKNAMJ_ToDldList, FLHOFIEOKDH_BaseUrl, JCMJBMBMJAK);
 		MHHFMCPJONH.LBGNKOJFOFC = (JEHIAIPJNJF_FileDownloader.HCJPJKCIBDL_DldFileInfo JGBPLIGAILE) => {
@@ -269,11 +275,11 @@ public class BBGDKLLEPIB
 				yield break;
 			}
 			//L361
-			if(MHHFMCPJONH.CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LPLEIJIFOKN/*4*/)
+			if(MHHFMCPJONH.CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LPLEIJIFOKN_Error/*4*/)
 			{
 				int APGOAMNGFFF = 0;
 				string errorType = "network";
-				if(MHHFMCPJONH.BHICPONFJKM)
+				if(MHHFMCPJONH.BHICPONFJKM_SpaceError)
 					errorType = "storage";
 				int diskSpace = StorageSupport.GetAvailableStorageSizeMB();
 				if(diskSpace > -1 && diskSpace < 50)
@@ -325,7 +331,7 @@ public class BBGDKLLEPIB
 				}
 				int APGOAMNGFFF = 0;
 				string errorType = "network";
-				if(MHHFMCPJONH.BHICPONFJKM)
+				if(MHHFMCPJONH.BHICPONFJKM_SpaceError)
 					errorType = "storage";
 				int diskSpace = StorageSupport.GetAvailableStorageSizeMB();
 				if(diskSpace > -1 && diskSpace < 50)
@@ -452,7 +458,8 @@ public class BBGDKLLEPIB
 			{
 				if(CBLEBKOJJDB.KGHAJGGMPKL_Files[i].OIEAICNAMNB_LocalFileName == JNPHAJICDPN_SdFileName) // sd.dat
 				{
-					ICCMKHKNAMJ_ToDldList.Add(CBLEBKOJJDB.KGHAJGGMPKL_Files[i]);
+					if(!File.Exists(path))
+						ICCMKHKNAMJ_ToDldList.Add(CBLEBKOJJDB.KGHAJGGMPKL_Files[i]);
 					continue;
 				}
 				if(File.Exists(path))

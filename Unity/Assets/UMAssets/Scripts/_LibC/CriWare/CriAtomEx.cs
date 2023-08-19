@@ -4,6 +4,7 @@ using CriWare;
 
 namespace ExternLib
 {
+#if !UNITY_ANDROID
     public static partial class LibCriWare
     {
         public static bool criAtomEx_RegisterAcfFile(CriFsBinder binder, string path, IntPtr work, int workSize)
@@ -31,4 +32,5 @@ namespace ExternLib
 			TodoLogger.LogError(TodoLogger.CriAtomExLib, "CriAtomExLib.criAtomEx_DetachDspBusSetting");
 		}
     }
+#endif
 }

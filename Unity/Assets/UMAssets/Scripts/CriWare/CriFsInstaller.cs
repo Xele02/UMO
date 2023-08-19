@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 
 namespace CriWare
 {
@@ -58,10 +59,15 @@ namespace CriWare
 		// protected override void Finalize() { }
 
 		// // RVA: 0x29478D8 Offset: 0x29478D8 VA: 0x29478D8
+#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		private static extern int criFsInstaller_ExecuteMain();
+#else
 		private static /*extern */int criFsInstaller_ExecuteMain()
 		{
 			return ExternLib.LibCriWare.criFsInstaller_ExecuteMain();
 		}
+#endif
 
 		// // RVA: 0x29470B8 Offset: 0x29470B8 VA: 0x29470B8
 		// private static extern int criFsInstaller_Create(out IntPtr installer, CriFsInstaller.CopyPolicy option) { }

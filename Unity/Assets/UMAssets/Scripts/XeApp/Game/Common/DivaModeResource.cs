@@ -87,10 +87,12 @@ namespace XeApp.Game.Common
 
 			moviePlayer.player.Prepare();
 			//UMO, ensure video is ready
+#if !UNITY_ANDROID
 			while(moviePlayer.player.status != CriWare.CriMana.Player.Status.Ready)
 			{
 				yield return null;
 			}
+#endif
 			if(prePlayMovie)
 			{
 				bool fin = false;

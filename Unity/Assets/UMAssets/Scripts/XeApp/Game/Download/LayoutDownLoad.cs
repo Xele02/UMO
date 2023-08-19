@@ -131,13 +131,23 @@ namespace XeApp.Game.DownLoad
 		// public bool IsPlaying() { }
 
 		// // RVA: 0x11BF018 Offset: 0x11BF018 VA: 0x11BF018
-		// public bool IsFinishDownLoadAnim() { }
+		public bool IsFinishDownLoadAnim()
+		{
+			return m_LayoutDownLoadMain.IsFinishDownLoadAnim();
+		}
 
 		// // RVA: 0x11BF698 Offset: 0x11BF698 VA: 0x11BF698
-		// public void Visible() { }
+		public void Visible()
+		{
+			m_LayoutDownLoadMain.Visible();
+			m_LayoutDownLoadArrow.Visible();
+		}
 
 		// // RVA: 0x11BF6E0 Offset: 0x11BF6E0 VA: 0x11BF6E0
-		// public void EnterDownLoad() { }
+		public void EnterDownLoad()
+		{
+			m_LayoutDownLoadMain.EnterDownLoad();
+		}
 
 		// // RVA: 0x11C2F90 Offset: 0x11C2F90 VA: 0x11C2F90
 		// public void LeaveDownLoad() { }
@@ -159,7 +169,10 @@ namespace XeApp.Game.DownLoad
 		// public void LeaveDivaSelect() { }
 
 		// // RVA: 0x11BD510 Offset: 0x11BD510 VA: 0x11BD510
-		// public void EnterVoiceButton() { }
+		public void EnterVoiceButton()
+		{
+			m_LayoutDownLoadMain.EnterVoiceButton();
+		}
 
 		// // RVA: 0x11C3470 Offset: 0x11C3470 VA: 0x11C3470
 		// public void LeaveVoiceButton() { }
