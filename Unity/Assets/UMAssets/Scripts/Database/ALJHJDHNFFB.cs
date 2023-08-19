@@ -48,7 +48,17 @@ public class ALJHJDHNFFB_HomeBg : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0xCDDE74 Offset: 0xCDDE74 VA: 0xCDDE74
-	//public ALJHJDHNFFB.ADLLAFIDFAM GCINIJEMHFK(int PPFNGGCBJKC) { }
+	public ADLLAFIDFAM GCINIJEMHFK(int PPFNGGCBJKC)
+	{
+		if (PPFNGGCBJKC != 0)
+		{
+			if (PPFNGGCBJKC <= CDENCMNHNGA.Count)
+			{
+				return CDENCMNHNGA[PPFNGGCBJKC - 1];
+			}
+		}
+		return null;
+	}
 
 	// RVA: 0xCDDF3C Offset: 0xCDDF3C VA: 0xCDDF3C Slot: 8
 	protected override void KMBPACJNEOF()

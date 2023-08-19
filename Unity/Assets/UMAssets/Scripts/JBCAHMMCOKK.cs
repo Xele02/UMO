@@ -94,9 +94,9 @@ public class JBCAHMMCOKK
 	private const int BIAOPOMKMJE = 336675140;
 
 	// public string KJGDDCBFFLC { get; } 0x14165C8 JBJGCFCKPGF
-	// public string DMILLPJMDJI { get; } 0x14165D0 DIANNLBLEGL
+	public string DMILLPJMDJI { get { return HDBPGEMDLDN; } } //0x14165D0 DIANNLBLEGL
 	// public bool PKPMHFEIBBM { get; } 0x14165D8 OKEACOIMMLG
-	// public bool NMDLMMOGDML { get; } 0x14165E0 BCLJEOOEMNG
+	public bool NMDLMMOGDML { get { return IPHOLOBDEIK; } } //0x14165E0 BCLJEOOEMNG
 
 	// // RVA: 0x14165E8 Offset: 0x14165E8 VA: 0x14165E8
 	public string INKBPPLCNFC(long GLMALPMKPGI, long BKLGDPCHDHA, bool ONCBNGJNHMB)

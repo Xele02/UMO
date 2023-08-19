@@ -51,7 +51,7 @@ namespace XeApp.Game.Menu
 		public SetDeckAssistCardControl AssistControl { get { return m_assist; } } //0xC30C1C
 		//public bool ExistMessageControl { get; } 0xC30C24
 		public SetDeckUnitInfoMessageControl MessageControl { get { return m_messageControl; } } //0xC30CB0
-		//public UGUIStayButton CenterMainSceneButton { get; } 0xC30CB8
+		public UGUIStayButton CenterMainSceneButton { get { return m_divaInfos[0].m_sceneSetControl.Scenes[0].SceneButton; } } //0xC30CB8
 		//public UGUIStayButton SecondDivaButton { get; } 0xC30DB8
 
 		// RVA: 0xC30E68 Offset: 0xC30E68 VA: 0xC30E68

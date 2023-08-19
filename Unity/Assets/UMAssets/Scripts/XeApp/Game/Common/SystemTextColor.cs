@@ -19,12 +19,18 @@ namespace XeApp.Game.Common
         }
 
         // // RVA: 0x1CCE120 Offset: 0x1CCE120 VA: 0x1CCE120
-        // public static Color GetLackColor() { }
+        public static Color GetLackColor()
+		{
+			return ColorConvert.Convert(LackColor);
+		}
 
         // // RVA: 0x1CCE1BC Offset: 0x1CCE1BC VA: 0x1CCE1BC
         // public static Color GetImportantColor() { }
 
         // // RVA: 0x1CCE258 Offset: 0x1CCE258 VA: 0x1CCE258
-        // public static Color GetImportantYellowColor() { }
+		public static Color GetImportantYellowColor()
+		{
+			return ColorConvert.Convert(ImportantYellowColor);
+		}
     }
 }

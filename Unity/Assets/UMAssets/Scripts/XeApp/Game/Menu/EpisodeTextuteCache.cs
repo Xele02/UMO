@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using XeSys;
@@ -109,10 +110,20 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xF0A150 Offset: 0xF0A150 VA: 0xF0A150
-		// public void TryInstallIcon(int episodeId) { }
+		public void TryInstallIcon(int episodeId)
+		{
+			m_strBuilder.SetFormat(EpisodeIconTexturePath, episodeId);
+			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(m_strBuilder.ToString());
+		}
 
 		// // RVA: 0xF07014 Offset: 0xF07014 VA: 0xF07014
-		// public void TryInstallIcon(List<PIGBBNDPPJC> episodeList) { }
+		public void TryInstallIcon(List<PIGBBNDPPJC> episodeList)
+		{
+			for(int i = 0; i < episodeList.Count; i++)
+			{
+				TryInstallIcon(episodeList[i].KELFCMEOPPM_EpId);
+			}
+		}
 
 		// // RVA: 0xF0A26C Offset: 0xF0A26C VA: 0xF0A26C
 		// public void TryInstallBg(int episodeId) { }

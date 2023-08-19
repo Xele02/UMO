@@ -410,7 +410,7 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 					DMPDJFAGCPN a = JEMMMJEJLNL.GPKFGCFHDHH(dbScene.AOPBAOJIOGO_Sb, false);
 					if(a != null)
 					{
-						if(a.PDKGMFHIFML_Pl.Count > 1)
+						if(a.PDKGMFHIFML_Panels.Count > 1)
 						{
 							for(int j = 0; j < 50; j++)
 							{
@@ -422,7 +422,7 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 							int n = 0;
 							for(int j = 0; j < val; j++)
 							{
-								for(int k = a.PDKGMFHIFML_Pl.Count - 2; k > -1; k--)
+								for(int k = a.PDKGMFHIFML_Panels.Count - 2; k > -1; k--)
 								{
 									if(OPIBAPEGCLA[i].FAGMBGKOIFI_HasBit(OPIBAPEGCLA[i].EMOJHJGHJLN_Sb, k + l))
 									{
@@ -431,7 +431,7 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 										if(!(JEMMMJEJLNL.GJLBMELKHEM[dbScene.ILABPFOMEAG_Va - 1].JPJNKNOJBMM <= j || m != 0))
 										{
 											m = 0;
-											if(JEMMMJEJLNL.DDGNLCJGFJF(a.PDKGMFHIFML_Pl[k].JBGEEPFKIGG).INDDJNMPONH_StatType == 19)
+											if(JEMMMJEJLNL.DDGNLCJGFJF(a.PDKGMFHIFML_Panels[k].JBGEEPFKIGG).INDDJNMPONH_StatType == 19)
 											{
 												m = 1;
 											}
@@ -443,10 +443,10 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 									n++;
 									OPIBAPEGCLA[i].CHDJAACPMJK_SetBit(ref b, n + f);
 								}
-								n += a.PDKGMFHIFML_Pl.Count - 1;
-								l += a.PDKGMFHIFML_Pl.Count - 1;
+								n += a.PDKGMFHIFML_Panels.Count - 1;
+								l += a.PDKGMFHIFML_Panels.Count - 1;
 							}
-							if(n != a.PDKGMFHIFML_Pl.Count * val)
+							if(n != a.PDKGMFHIFML_Panels.Count * val)
 							{
 								for(int j = 0; j < 50; j++)
 								{

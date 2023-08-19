@@ -235,7 +235,23 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x15A8DA0 Offset: 0x15A8DA0 VA: 0x15A8DA0
-		//public int GetPanelValue(int index) { }
+		public int GetPanelValue(int index)
+		{
+			for(int i = 0; i < m_boardSquareList.Count; i++)
+			{
+				for(int j = 0; j < m_boardSquareList[i].Length; j++)
+				{
+					if(m_boardSquareList[i][j].type == SquareType.Panel)
+					{
+						if (m_boardSquareList[i][j].saveIndex == index)
+						{
+							return m_boardSquareList[i][j].value;
+						}
+					}
+				}
+			}
+			return 0;
+		}
 
 		//// RVA: 0x15A9000 Offset: 0x15A9000 VA: 0x15A9000
 		public bool IsPanelRock(int sqrX, int sqrY)

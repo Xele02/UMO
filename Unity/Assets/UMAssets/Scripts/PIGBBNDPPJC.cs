@@ -101,7 +101,7 @@ public class PIGBBNDPPJC
 	public int KELFCMEOPPM_EpId; // 0x10
 	public int EAHPLCJMPHD; // 0x14
 	public bool CADENLBDAEB_IsNew; // 0x18
-	public int FKMAEKNOLJB; // 0x1C
+	public int FKMAEKNOLJB_EpisodeNo; // 0x1C
 	public int FGOGPCMHPIN_Count; // 0x20
 	public int JJJNKGBCFMI_Step; // 0x24
 	public int ABLHIAEDJAI_CurrentPoint; // 0x28
@@ -115,7 +115,7 @@ public class PIGBBNDPPJC
 
 	//public bool OJOLGGKILFL { get; } 0x16D0300 KKEOAGANMNA
 	public bool DKMLDEDKPBA_HasEpisode { get { return KELFCMEOPPM_EpId > 0; } } //0x16D0314 PCIINKJELKK
-	//public bool IIEAILCOPDB { get; } 0x16D0328 EMKGOLJAJBG
+	public bool IIEAILCOPDB { get { return DMHDNKILKGI_MaxPoint <= LEGAKDFPPHA_AvaiablePoint; } } //0x16D0328 EMKGOLJAJBG
 
 	//// RVA: 0x16D0340 Offset: 0x16D0340 VA: 0x16D0340
 	public void LEHDLBJJBNC()
@@ -133,7 +133,7 @@ public class PIGBBNDPPJC
 			DMHDNKILKGI_MaxPoint = 0;
 			LEGAKDFPPHA_AvaiablePoint = 0;
 			KIJAPOFAGPN_UnlockItemId = 0;
-			FKMAEKNOLJB = 0;
+			FKMAEKNOLJB_EpisodeNo = 0;
 			FGOGPCMHPIN_Count = 0;
 			JJJNKGBCFMI_Step = 0;
 			OPFGFINHFCE_Name = "";
@@ -152,7 +152,7 @@ public class PIGBBNDPPJC
 			JJJNKGBCFMI_Step = serverEpInfo.EBIIIAELNAA_Step;
 			BEBJKJKBOGH_Date = serverEpInfo.BEBJKJKBOGH_Date;
 			FGOGPCMHPIN_Count = NDFIEMPPMLF_epInfo.FGOGPCMHPIN_Count;
-			FKMAEKNOLJB = NDFIEMPPMLF_epInfo.EILKGEADKGH;
+			FKMAEKNOLJB_EpisodeNo = NDFIEMPPMLF_epInfo.EILKGEADKGH;
 			CADENLBDAEB_IsNew = serverEpInfo.LHMOAJAIJCO_IsNew;
 			OPFGFINHFCE_Name = EJOJNFDHDHN_GetEpName(KELFCMEOPPM);
 			KLMPFGOCBHC_Description = FKKHNDDGKJB_GetEpDesc(KELFCMEOPPM);
@@ -232,7 +232,7 @@ public class PIGBBNDPPJC
 			JJJNKGBCFMI_Step = saveEpInfo.EBIIIAELNAA_Step;
 			BEBJKJKBOGH_Date = saveEpInfo.BEBJKJKBOGH_Date;
 			FGOGPCMHPIN_Count = epInfo.FGOGPCMHPIN_Count;
-			FKMAEKNOLJB = epInfo.EILKGEADKGH;
+			FKMAEKNOLJB_EpisodeNo = epInfo.EILKGEADKGH;
 			CADENLBDAEB_IsNew = saveEpInfo.LHMOAJAIJCO_IsNew;
 			JBFLCHFEIGL = new LGMEPLIJLNB();
 			if(JJJNKGBCFMI_Step < FGOGPCMHPIN_Count)
@@ -312,7 +312,7 @@ public class PIGBBNDPPJC
 		NNDGIAEFMOG.Sort((PIGBBNDPPJC HKICMNAACDA, PIGBBNDPPJC BNKHBCBJBKI) =>
 		{
 			//0x16D365C
-			return HKICMNAACDA.FKMAEKNOLJB - BNKHBCBJBKI.FKMAEKNOLJB;
+			return HKICMNAACDA.FKMAEKNOLJB_EpisodeNo - BNKHBCBJBKI.FKMAEKNOLJB_EpisodeNo;
 		});
 	}
 

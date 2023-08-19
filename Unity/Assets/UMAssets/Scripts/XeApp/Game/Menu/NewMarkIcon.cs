@@ -49,6 +49,8 @@ namespace XeApp.Game.Menu
         // // RVA: 0x1516250 Offset: 0x1516250 VA: 0x1516250
         public void SetActive(bool isActive)
 		{
+			if (m_object == null)
+				return;
 			m_object.Runtime.gameObject.SetActive(isActive);
 			PlayLoopAnim();
 		}

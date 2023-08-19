@@ -234,11 +234,11 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1248C38 Offset: 0x1248C38 VA: 0x1248C38
 		private void ClearPlate()
 		{
-			for(int i = 0; i < m_unitAutoSettingSetting.PlayerData.NBIGLBMHEDC.Count; i++)
+			for(int i = 0; i < m_unitAutoSettingSetting.PlayerData.NBIGLBMHEDC_Divas.Count; i++)
 			{
-				m_unitAutoSettingSetting.PlayerData.NBIGLBMHEDC[i].MNBNLONEDPF(false);
-				m_unitAutoSettingSetting.PlayerData.NBIGLBMHEDC[i].BCEJOOCGBFG(0, false);
-				m_unitAutoSettingSetting.PlayerData.NBIGLBMHEDC[i].BCEJOOCGBFG(1, false);
+				m_unitAutoSettingSetting.PlayerData.NBIGLBMHEDC_Divas[i].MNBNLONEDPF(false);
+				m_unitAutoSettingSetting.PlayerData.NBIGLBMHEDC_Divas[i].BCEJOOCGBFG(0, false);
+				m_unitAutoSettingSetting.PlayerData.NBIGLBMHEDC_Divas[i].BCEJOOCGBFG(1, false);
 			}
 			m_unitAutoSettingSetting.PlayerData.DPLBHAIKPGL_GetTeam(false).HCDGELDHFHB();
 		}

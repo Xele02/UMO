@@ -55,8 +55,8 @@ public class AEKDNMPPOJN
 				IJEOIMGILCK = 0;
 				GNKGDDMMJPF = 0;
 				MJNOAMAFNHA = 0;
-				EOBACDCDGOF = false;
-				JMHIDPKHELB = true;
+				EOBACDCDGOF = true;
+				JMHIDPKHELB = false;
 			}
 			else
 			{

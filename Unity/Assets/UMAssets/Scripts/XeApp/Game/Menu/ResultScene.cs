@@ -1067,7 +1067,7 @@ namespace XeApp.Game.Menu
 			int homeId = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId;
 			if(homeId > 0)
 			{
-				res = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[homeId - 1].AHHJLDLAPAN_DivaId;
+				res = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[homeId - 1].AHHJLDLAPAN_DivaId;
 			}
 			return res;
 		}

@@ -59,11 +59,13 @@ namespace XeApp.Game.Common
 			});
 			m_scrollView.OnChangeItem = (int idx) => {
 				//0xEABBA4
-				TodoLogger.LogError(TodoLogger.UI, "OnChangeItem");
+				UpdatePageIcon(idx);
+				InputDisable();
 			};
 			m_scrollView.OnChangeEndItem = (int idx) => {
 				//0xEABBC0
-				TodoLogger.LogError(TodoLogger.UI, "OnChangeEndItem");
+				UpdatePageIcon(idx);
+				InputEnable();
 			};
 			InitScrollType();
 		}
@@ -112,10 +114,20 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xEAB328 Offset: 0xEAB328 VA: 0xEAB328
-		// private void InputEnable() { }
+		private void InputEnable()
+		{
+			m_inputDisableCount = Mathf.Max(m_inputDisableCount - 1, 0);
+			m_buttonLeft.enabled = m_inputDisableCount == 0;
+			m_buttonRight.enabled = m_inputDisableCount == 0;
+		}
 
 		// // RVA: 0xEAB418 Offset: 0xEAB418 VA: 0xEAB418
-		// private void InputDisable() { }
+		private void InputDisable()
+		{
+			m_inputDisableCount = Mathf.Max(m_inputDisableCount + 1, 0);
+			m_buttonLeft.enabled = m_inputDisableCount == 0;
+			m_buttonRight.enabled = m_inputDisableCount == 0;
+		}
 
 		// // RVA: 0xEAABE0 Offset: 0xEAABE0 VA: 0xEAABE0
 		// private void AddPageIcon(SelectScrollViewContent content) { }
@@ -124,7 +136,13 @@ namespace XeApp.Game.Common
 		// public void RemovePageIcon(SelectScrollViewContent content) { }
 
 		// // RVA: 0xEAB510 Offset: 0xEAB510 VA: 0xEAB510
-		// private void UpdatePageIcon(int index) { }
+		private void UpdatePageIcon(int index)
+		{
+			for(int i = 0; i < m_listPageIcon.Count; i++)
+			{
+				m_listPageIcon[i].isOn = index == i;
+			}
+		}
 
 		// // RVA: 0xEA9484 Offset: 0xEA9484 VA: 0xEA9484
 		private void InitScrollType()

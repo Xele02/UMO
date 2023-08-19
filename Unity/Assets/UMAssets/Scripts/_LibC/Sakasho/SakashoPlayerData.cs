@@ -113,7 +113,7 @@ namespace ExternLib
 							{
 								saveScene.BEBJKJKBOGH_Date = time;
 							}
-							saveScene.JPIPENJGGDD_Mlt = 1;
+							saveScene.JPIPENJGGDD_Mlt = 50;
 							saveScene.IELENGDJPHF_Ulk = 1;
 							saveScene.ANAJIAENLNB_Level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(dbScene.EKLIPGELKCL_Rarity, true, dbScene.MCCIFLKCNKO_Feed) + 1;
 							for (int j = 0; j < 15; j++)

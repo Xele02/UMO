@@ -421,7 +421,7 @@ namespace XeSys.Gfx
 		public string[] TexturePathList { get { return m_texturePathList; } set { m_texturePathList = value; } } //0x1EFFD68 0x1EFBE18
 		// public GameObject[] ActiveObjList { get; set; } 0x1EFFD78 0x1EFFD70
 		public bool IsLayoutAutoLoad { get { return m_isLayoutAutoLoad; } set { m_isLayoutAutoLoad = value; } } //0x1EFFD80 0x1EFFD88
-		// public float TimeScale { get; set; } 0x1EFFD90 0x1EFFD98
+		public float TimeScale { get { return m_timeScale; } set { m_timeScale = value; } } //0x1EFFD90 0x1EFFD98
 		public static bool IsAlwaysUpdateSRT { get { return m_isAlwaysUpdateSRT; } set { m_isAlwaysUpdateSRT = value; } } //0x1EFFDA0 0x1EFBF20
 		public Layout Layout { get { return m_layout; } set { m_layout = value; } } //0x1EFFE2C 0x1EFBF10
 		public TexUVListManager UvMan { get { return m_uvMan; } set { m_uvMan = value; } } //0x1EFFE34 0x1EFBF18

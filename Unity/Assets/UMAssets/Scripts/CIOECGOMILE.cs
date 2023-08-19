@@ -1496,7 +1496,7 @@ public class CIOECGOMILE
 			JKDKODAPGBJ_EnergyItem.GFGCCICHBHK it = dbEnergy.CDENCMNHNGA[i];
 			if (it.PPEGAKEIEGM_Enabled == 2)
 			{
-				if(it.HJAFPEBIBOP > 0)
+				if(it.HJAFPEBIBOP_IsLimit > 0)
 				{
 					if(AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KFEBOFKAHAJ_EngItem.Count > i)
 					{

@@ -109,7 +109,11 @@ public class ALEKLHIANJN
 	//private bool JLDNFNAOEKE(int CIEOBFIIPLD) { }
 
 	//// RVA: 0xCD8C20 Offset: 0xCD8C20 VA: 0xCD8C20
-	//public int KBFDFIBDOKC(IMCBBOAFION BHFHGFKBOHH) { }
+	public int KBFDFIBDOKC(IMCBBOAFION BHFHGFKBOHH)
+	{
+		TodoLogger.LogError(0, "KBFDFIBDOKC");
+		return 0;
+	}
 
 	//// RVA: 0xCD97A8 Offset: 0xCD97A8 VA: 0xCD97A8
 	//private void LEBCBCCPOPE() { }

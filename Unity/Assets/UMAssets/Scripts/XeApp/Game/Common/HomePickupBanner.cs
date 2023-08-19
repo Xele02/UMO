@@ -129,7 +129,7 @@ namespace XeApp.Game.Common
 			m_scrollView.OnUpdateItem = (int index, UGUILoopScrollContent content) =>
 			{
 				//0xEAEC78
-				TodoLogger.LogError(0, "OnUpdateItem ");
+				(content as HomePickupBannerContent).Setup(m_list[index], LoadBanner);
 			};
 			m_scrollView.OnDragBegin = () =>
 			{
@@ -313,7 +313,7 @@ namespace XeApp.Game.Common
 			time = 0;
 			diff = animEnd - animStart;
 			speed = 1.0f / animTime;
-			while(time <= animTime)
+			while(time < animTime)
 			{
 				time += Time.deltaTime;
 				float f = m_animOpenClose.Evaluate(time * speed);
@@ -437,7 +437,33 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xEAE628 Offset: 0xEAE628 VA: 0xEAE628
-		// private void LoadBanner(int pictId, Action<IiconTexture> onLoaded) { }
+		private void LoadBanner(int pictId, Action<IiconTexture> onLoaded)
+		{
+			JBCAHMMCOKK v = m_list.Find((JBCAHMMCOKK x) =>
+			{
+				//0xEAF490
+				return x.EAHPLCJMPHD == pictId;
+			});
+			if(v.NNHHNFFLCFO <= JBCAHMMCOKK.ALEKHDPDOEA.KCOEIKAMLBD)
+			{
+				if(((1 << (int)v.NNHHNFFLCFO) & 0x4030e10U) != 0)
+				{
+					m_bannerTexCache.LoadForEvent(v.EAHPLCJMPHD, onLoaded);
+					return;
+				}
+				if(((1 << (int)v.NNHHNFFLCFO) & 0x81c0060U) != 0)
+				{
+					m_bannerTexCache.LoadForGacha(v.EAHPLCJMPHD, onLoaded);
+					return;
+				}
+				if(((1 << (int)v.NNHHNFFLCFO) & 0xc00000U) != 0)
+				{
+					m_bannerTexCache.LoadForBingo(v.EAHPLCJMPHD, onLoaded);
+					return;
+				}
+			}
+			m_bannerTexCache.LoadForGenaral(v.EAHPLCJMPHD, onLoaded);
+		}
 
 		// // RVA: 0xEAE83C Offset: 0xEAE83C VA: 0xEAE83C
 		// public void SetActive(bool active) { }

@@ -48,11 +48,11 @@ public static class TodoLogger
 	public static int Errors = _Todo;
 	public static int DbIntegrityCheck = _Todo;
 	public static int Xedec = _Todo;
-	public static int UI = _Todo;
 	public static int Event = _Todo;
 	public static int SaveLoad = _Todo;
 
 	public static int _Debug = 1;
+	public static int UI = _Debug;
 	public static int Popup = _Debug;
 	public static int Database = _Debug;
 	public static int Shader = _Debug;

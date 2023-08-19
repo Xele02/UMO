@@ -69,7 +69,12 @@ namespace XeApp.Game.Common
 			else
 				return content.anchoredPosition.x;
 		} } //0x1CD3EA8
-		//private float ItemSize { get; } 0x1CD3F1C
+		private float ItemSize { get {
+				if (vertical)
+					return m_contentSize.y + m_spacing.y;
+				else
+					return m_contentSize.x + m_spacing.x;
+			} } //0x1CD3F1C
 
 		// RVA: 0x1CD3F70 Offset: 0x1CD3F70 VA: 0x1CD3F70 Slot: 4
 		protected override void Awake()
@@ -91,7 +96,7 @@ namespace XeApp.Game.Common
 		// RVA: 0x1CD41EC Offset: 0x1CD41EC VA: 0x1CD41EC Slot: 48
 		protected override void LateUpdate()
 		{
-			if(m_animEndTime >= 0)
+			if(m_animEndTime > 0)
 			{
 				if(m_animEndTime < m_animTime)
 				{
@@ -213,7 +218,24 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1CD5A10 Offset: 0x1CD5A10 VA: 0x1CD5A10
 		public void Apply()
 		{
-			TodoLogger.LogError(TodoLogger.UI, "Apply");
+			for(int i = 0; i < m_rowCount; i++)
+			{
+				for(int j = 0; j < m_columnCount; j++)
+				{
+					UGUILoopScrollContent item = m_scrollObjects[i * m_columnCount + j];
+					item.AnchorMin = new Vector2(0, 1);
+					item.AnchorMax = new Vector2(0, 1);
+					item.Pivot = new Vector2(0, 1);
+					item.Size = m_contentSize;
+					item.AnchoredPosition = new Vector2((m_contentSize.x + m_spacing.y) * j, -(m_contentSize.y + m_spacing.y) * i);
+					item.transform.SetParent(content, false);
+				}
+				for(int j = 0, k = 0; j < m_columnCount; j++, k--)
+				{
+					UGUILoopScrollContent item = m_scrollObjects[i * m_columnCount + j];
+					item.RectTransform.SetSiblingIndex((i + 1) * m_columnCount + k);
+				}
+			}
 		}
 
 		//// RVA: 0x1CD5DB0 Offset: 0x1CD5DB0 VA: 0x1CD5DB0
@@ -222,20 +244,97 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1CD63A4 Offset: 0x1CD63A4 VA: 0x1CD63A4
 		public void SetItemCount(int count, bool isLoop = false)
 		{
-			TodoLogger.LogError(TodoLogger.UI, "SetItemCount");
+			m_itemCount = count;
+			if (isLoop)
+				count += 2;
+			m_isLoop = isLoop;
+			m_loopCount = count;
+			content.sizeDelta = GetContentSize(count);
+			if(!vertical)
+			{
+				if(horizontalScrollbar != null)
+				{
+					horizontalScrollbar.interactable = horizontal;
+				}
+				if(m_horizontalScrollBarImage != null)
+				{
+					m_horizontalScrollBarImage.enabled = horizontal;
+				}
+			}
+			else
+			{
+				if(verticalScrollbar != null)
+				{
+					verticalScrollbar.interactable = vertical;
+				}
+				if(m_verticalScrollBarImage != null)
+				{
+					m_verticalScrollBarImage.enabled = vertical;
+				}
+			}
+			if(m_isContentEscapeMode)
+			{
+				m_contentEscapeRoot.sizeDelta = content.sizeDelta;
+			}
 		}
 
 		//// RVA: 0x1CD493C Offset: 0x1CD493C VA: 0x1CD493C
 		private Vector2 GetContentSize(int count)
 		{
-			TodoLogger.LogError(0, "GetContentSize");
-			return Vector2.zero;
+			if(vertical)
+			{
+				float f = ItemSize * (count / m_columnCount);
+				if(count % m_columnCount != 0)
+				{
+					f += ItemSize;
+				}
+				return new Vector2(content.sizeDelta.x, f);
+			}
+			else
+			{
+				float f = ItemSize * (count / m_rowCount);
+				if (count % m_rowCount != 0)
+					f += ItemSize;
+				return new Vector2(f, content.sizeDelta.y);
+			}
 		}
 
 		//// RVA: 0x1CD66C0 Offset: 0x1CD66C0 VA: 0x1CD66C0
 		public void SetPosition(int index, float animTime = 0)
 		{
-			TodoLogger.LogError(TodoLogger.UI, "SetPosition");
+			Vector2 v = Vector2.zero;
+			if(vertical)
+			{
+				if(m_rectTransform.sizeDelta.y <= content.sizeDelta.y)
+				{
+					v.y = content.sizeDelta.y - m_rectTransform.sizeDelta.y;
+					float f = ItemSize * index;
+					if (f <= v.y)
+						v.y = f;
+				}
+			}
+			else
+			{
+				if(m_rectTransform.sizeDelta.x <= content.sizeDelta.x)
+				{
+					v.x = m_rectTransform.sizeDelta.x - content.sizeDelta.x;
+					float f = -ItemSize * index;
+					if (v.x < f)
+						v.x = f;
+				}
+			}
+			if(animTime < 0)
+			{
+				UpdatePosition(v.x, v.y);
+				VisibleRegionUpdate();
+			}
+			else
+			{
+				m_animEndTime = animTime;
+				m_animTime = 0;
+				m_animStartPos = content.anchoredPosition;
+				m_animEndPos = v;
+			}
 		}
 
 		//// RVA: 0x1CD6964 Offset: 0x1CD6964 VA: 0x1CD6964
@@ -277,20 +376,160 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1CD4AB8 Offset: 0x1CD4AB8 VA: 0x1CD4AB8
 		private void UpdateScrollCb(Vector2 position)
 		{
-			TodoLogger.LogError(TodoLogger.UI, "UpdateScrollCb");
+			if(ItemSize > 0)
+			{
+				if(m_scrollObjects.Count > 0)
+				{
+					int count1 = vertical ? m_rowCount : m_columnCount;
+					int count2 = vertical ? m_columnCount : m_rowCount;
+					int top = m_listTopPosition;
+					float diffPre = m_diffPrePosition;
+					int cnt = 0;
+					if (AnchoredPosition - diffPre < -ItemSize)
+					{
+						do
+						{
+							diffPre -= ItemSize;
+							cnt++;
+						} while (AnchoredPosition - diffPre < -ItemSize);
+						top += cnt;
+					}
+					if(cnt > count1)
+					{
+						m_diffPrePosition = diffPre + ItemSize * count1;
+						m_listTopPosition = top - count1;
+					}
+					//LAB_01cd509c
+					while(-ItemSize > AnchoredPosition - m_diffPrePosition)
+					{
+						m_diffPrePosition -= ItemSize;
+						for(int i = 0; i < count2; i++)
+						{
+							UGUILoopScrollContent item = m_scrollObjects[0];
+							m_scrollObjects.RemoveAt(0);
+							m_scrollObjects.Add(item);
+							float a = ItemSize * count1 + ItemSize * m_listTopPosition;
+							if (!vertical)
+								item.AnchoredPosition = new Vector2(a, item.AnchoredPosition.y);
+							else
+								item.AnchoredPosition = new Vector2(item.AnchoredPosition.x, -a);
+							int v = (m_listTopPosition + count1) * count2 + i;
+							if (m_itemCount < 1 || m_loopCount <= v)
+							{
+								HideItem(item);
+							}
+							else
+							{
+								ShowItem(item);
+								if (OnUpdateItem != null)
+									OnUpdateItem(v % m_itemCount, item);
+							}
+							item.transform.SetSiblingIndex(item.transform.GetSiblingIndex() - count2 + m_scrollObjects.Count);
+						}
+						m_listTopPosition++;
+					}
+					top = m_listTopPosition;
+					diffPre = m_diffPrePosition;
+					if (0 <= AnchoredPosition - m_diffPrePosition)
+					{
+						cnt = 0;
+						do
+						{
+							diffPre += ItemSize;
+							cnt++;
+						} while (0 <= AnchoredPosition - diffPre);
+						top -= cnt;
+					}
+					if(count1 < cnt)
+					{
+						m_listTopPosition = top + count1;
+						m_diffPrePosition = diffPre - ItemSize * count1;
+					}
+					while (0 <= AnchoredPosition - m_diffPrePosition)
+					{
+						m_listTopPosition--;
+						m_diffPrePosition += ItemSize;
+						for(int i = count2 - 1; i >= 0; i--)
+						{
+							UGUILoopScrollContent item = m_scrollObjects[m_scrollObjects.Count - 1];
+							m_scrollObjects.RemoveAt(m_scrollObjects.Count - 1);
+							m_scrollObjects.Insert(0, item);
+							var f = ItemSize * m_listTopPosition;
+							if(!vertical)
+							{
+								item.AnchoredPosition = new Vector2(f, item.AnchoredPosition.y);
+							}
+							else
+							{
+								item.AnchoredPosition = new Vector2(item.AnchoredPosition.x, -f);
+							}
+							int a = m_itemCount;
+							if (m_itemCount > 0)
+								a = m_listTopPosition;
+							int c = m_itemCount - 1;
+							if (m_itemCount >= 1)
+								c = a;
+							if(m_itemCount > 0 && c >= 0) // not sure
+							{
+								ShowItem(item);
+								if (OnUpdateItem != null)
+									OnUpdateItem((m_listTopPosition * count2 + i) % m_itemCount, item);
+							}
+							else
+							{
+								HideItem(item);
+							}
+							item.transform.SetSiblingIndex(item.transform.GetSiblingIndex() + count2 - m_scrollObjects.Count);
+						}
+					}
+				}
+			}
 		}
 
 		//// RVA: 0x1CD47C4 Offset: 0x1CD47C4 VA: 0x1CD47C4
 		public void VisibleRegionUpdate()
 		{
-			TodoLogger.LogError(TodoLogger.UI, "VisibleRegionUpdate");
+			for(int i = 0; i < m_scrollObjects.Count; i++)
+			{
+				int a = m_listTopPosition * (vertical ? m_columnCount : m_rowCount) + i;
+				if(m_itemCount > 0 && a >= 0 && a < m_loopCount)
+				{
+					ShowItem(m_scrollObjects[i]);
+					if (OnUpdateItem != null)
+						OnUpdateItem(a % m_itemCount, m_scrollObjects[i]);
+				}
+				else
+				{
+					HideItem(m_scrollObjects[i]);
+				}
+			}
 		}
 
 		//// RVA: 0x1CD6AC4 Offset: 0x1CD6AC4 VA: 0x1CD6AC4
-		//private void ShowItem(UGUILoopScrollContent item) { }
+		private void ShowItem(UGUILoopScrollContent item)
+		{
+			if(m_isContentEscapeMode)
+			{
+				item.transform.SetParent(content, false);
+			}
+			else
+			{
+				item.gameObject.SetActive(true);
+			}
+		}
 
 		//// RVA: 0x1CD6B64 Offset: 0x1CD6B64 VA: 0x1CD6B64
-		//private void HideItem(UGUILoopScrollContent item) { }
+		private void HideItem(UGUILoopScrollContent item)
+		{
+			if(m_isContentEscapeMode)
+			{
+				item.transform.SetParent(m_contentEscapeRoot, false);
+			}
+			else
+			{
+				item.gameObject.SetActive(false);
+			}
+		}
 
 		//// RVA: 0x1CD6BF8 Offset: 0x1CD6BF8 VA: 0x1CD6BF8
 		//public void SetEnableScrollBar(bool isEnable) { }

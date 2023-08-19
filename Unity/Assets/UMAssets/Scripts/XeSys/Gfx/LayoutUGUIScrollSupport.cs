@@ -130,7 +130,12 @@ namespace XeSys.Gfx
 		}
 
 		//// RVA: 0x1F06394 Offset: 0x1F06394 VA: 0x1F06394
-		//public void EndAddView(Vector2 size) { }
+		public void EndAddView(Vector2 size)
+		{
+			m_contentSize = size;
+			UpdateContent();
+			UpdateContent();
+		}
 
 		//// RVA: 0x1F063B8 Offset: 0x1F063B8 VA: 0x1F063B8
 		//public int GetChildCount() { }

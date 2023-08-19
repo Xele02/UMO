@@ -81,7 +81,7 @@ namespace XeApp.Game.Common
 			}
 			if(string.IsNullOrEmpty(setup.OverrideText))
 			{
-				m_textDesc.text = EKLNMHFCAOI.ILKGBGOCLAO(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(setup.TypeItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(setup.TypeItemId));
+				m_textDesc.text = EKLNMHFCAOI.ILKGBGOCLAO_GetItemDesc(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(setup.TypeItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(setup.TypeItemId));
 			}
 			else
 			{

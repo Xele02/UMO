@@ -16,7 +16,7 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 		public short HNJNKCPDKAL_CryptedModelId; // 0x14
 		public short KIDNEIEHOMN; // 0x16
 		public short CDDLNKAPCFB; // 0x18
-		public sbyte AIHCEGFANAM; // 0x1A
+		public sbyte AIHCEGFANAM_Sa; // 0x1A
 		public sbyte CMAJHIMEIAC; // 0x1B
 		public short AENGKBBMPGM; // 0x1C
 		public int BFFGMECIOIA; // 0x20
@@ -112,7 +112,7 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 		{
 			CDENCMNHNGA_ValkyrieList[i].GPPEFLKGGGJ_Id = (short)(array[i].PPFNGGCBJKC);
 			CDENCMNHNGA_ValkyrieList[i].DAJGPBLEEOB_ModelId = (short)(array[i].FLNJLKKAFPB);
-			CDENCMNHNGA_ValkyrieList[i].AIHCEGFANAM = (sbyte)array[i].JPFMJHLCMJL;
+			CDENCMNHNGA_ValkyrieList[i].AIHCEGFANAM_Sa = (sbyte)array[i].JPFMJHLCMJL;
 			CDENCMNHNGA_ValkyrieList[i].PFGJJLGLPAC_PilotId = (short)(array[i].HDEBAGHEIKD);
 			CDENCMNHNGA_ValkyrieList[i].PPEGAKEIEGM_Enabled = (short)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
 			CDENCMNHNGA_ValkyrieList[i].KIDNEIEHOMN = (short)(array[i].FCBJFKGDINH ^ CDENCMNHNGA_ValkyrieList[i].FBGGEFFJJHB);

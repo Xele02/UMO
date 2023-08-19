@@ -251,7 +251,7 @@ namespace XeApp.Game.Menu
 					return itemId == _.GPPEFLKGGGJ_Id;
 				}).First();
 				if (dbValk != null)
-					res = dbValk.AIHCEGFANAM;
+					res = dbValk.AIHCEGFANAM_Sa;
 			}
 			else if(type == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
 			{
@@ -262,7 +262,7 @@ namespace XeApp.Game.Menu
 				{
 					index = dbCos.AHHJLDLAPAN_PrismDivaId - 1;
 				}
-				res = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC[index].AIHCEGFANAM_Serie;
+				res = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[index].AIHCEGFANAM_Serie;
 			}
 			return res;
 		}

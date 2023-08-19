@@ -22,15 +22,15 @@ namespace XeApp.Game.Menu
 			DFKGGBMFFGB_PlayerInfo p = new DFKGGBMFFGB_PlayerInfo();
 			p.KHEKNNFCAOI_Init(null, false);
 			m_scrollLayout.Reset();
-			m_scrollLayout.Setup(p.NBIGLBMHEDC);
+			m_scrollLayout.Setup(p.NBIGLBMHEDC_Divas);
 			m_scrollLayout.UpdateScroll();
-			for(int i = 0; i < p.NBIGLBMHEDC.Count; i++)
+			for(int i = 0; i < p.NBIGLBMHEDC_Divas.Count; i++)
 			{
-				if(p.NBIGLBMHEDC[i].IPJMPBANBPP)
+				if(p.NBIGLBMHEDC_Divas[i].IPJMPBANBPP)
 				{
-					if(p.NBIGLBMHEDC[i].FJODMPGPDDD)
+					if(p.NBIGLBMHEDC_Divas[i].FJODMPGPDDD)
 					{
-						GameManager.Instance.DivaIconCache.Load(p.NBIGLBMHEDC[i].AHHJLDLAPAN_DivaId, 1, 0, (IiconTexture textrue) =>
+						GameManager.Instance.DivaIconCache.Load(p.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId, 1, 0, (IiconTexture textrue) =>
 						{
 							//0xF81950
 							return;

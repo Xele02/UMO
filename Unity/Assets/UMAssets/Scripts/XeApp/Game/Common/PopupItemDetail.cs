@@ -80,7 +80,7 @@ namespace XeApp.Game.Common
 			}
 			if(string.IsNullOrEmpty(s.OverrideText))
 			{
-				m_itemDescriptionText.text = EKLNMHFCAOI.ILKGBGOCLAO(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(s.ItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(s.ItemId));
+				m_itemDescriptionText.text = EKLNMHFCAOI.ILKGBGOCLAO_GetItemDesc(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(s.ItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(s.ItemId));
 			}
 			else
 			{

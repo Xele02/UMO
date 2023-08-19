@@ -553,15 +553,15 @@ namespace XeApp.Game.Menu
 				m_skillDetailIconImages[3].enabled = false;
 			}
 			int j = 0;
-			for (int i = 0; i < playerData.NBIGLBMHEDC.Count; i++)
+			for (int i = 0; i < playerData.NBIGLBMHEDC_Divas.Count; i++)
 			{
-				if(playerData.NBIGLBMHEDC[i].IPJMPBANBPP)
+				if(playerData.NBIGLBMHEDC_Divas[i].IPJMPBANBPP)
 				{
 					m_strBuilder.Clear();
-					m_strBuilder.AppendFormat("cmn_chk_icon_{0:D2}", playerData.NBIGLBMHEDC[i].AHHJLDLAPAN_DivaId);
+					m_strBuilder.AppendFormat("cmn_chk_icon_{0:D2}", playerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId);
 					m_compatibleDivaIconImages[j].enabled = true;
 					m_compatibleDivaIconImages[j].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvManager.GetUVData(m_strBuilder.ToString()));
-					m_compatibleMaskIconImages[j].enabled = !sceneData.DCLLIDMKNGO_IsDivaCompatible(playerData.NBIGLBMHEDC[i].AHHJLDLAPAN_DivaId);
+					m_compatibleMaskIconImages[j].enabled = !sceneData.DCLLIDMKNGO_IsDivaCompatible(playerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId);
 					j++;
 				}
 			}
