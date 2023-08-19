@@ -209,17 +209,17 @@ static class FileSystemProxy
 		UdpClient udp = new UdpClient(8001);
 		bool cancel = false;
         PopupWindowControl control = PopupWindowManager.Show(PopupWindowManager.CrateTextContent("UMO", SizeType.Small, "Searching for server, please start webserver and connect the phone on the same local network...", 
-		/*new ButtonInfo[1]
+		new ButtonInfo[1]
         {
             new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative }
-		}*/
-		new ButtonInfo[0] {}
+		}
+		//new ButtonInfo[0] {}
 		, false, true), (PopupWindowControl control_, PopupButton.ButtonType t, PopupButton.ButtonLabel label) =>
 		{
 			cancel = true;
 		}, null, null, null);
 		yield return null;
-        while (foundServer == "")
+        while (foundServer == "" && !cancel)
 		{
 			bool waiting = true;
 			udp.BeginReceive((IAsyncResult ar) =>
@@ -233,12 +233,35 @@ static class FileSystemProxy
 				}
 				waiting = false;
 			}, new object());
-			while(waiting)
+			while(waiting && !cancel)
 				yield return null;
 		}
 		if(control.IsActive)
 		{
 			control.Close(null, null);
+		}
+		if(cancel)
+		{
+			InputPopupSetting s = new InputPopupSetting();
+			s.TitleText = "UMO";
+			s.WindowSize = SizeType.Small;
+			s.Description = "Enter IP of the server";
+			s.Notes = "";
+			s.InputText = "0.0.0.0";
+			s.DisableRegex = true;
+			s.CharacterLimit = 50;
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			bool done = false;
+			PopupWindowManager.Show(s, (PopupWindowControl control_, PopupButton.ButtonType t, PopupButton.ButtonLabel label) =>
+			{
+				foundServer = (control_.Content as InputContent).Text;
+				done = true;
+			}, null, null, null);
+			while(!done)
+				yield return null;
 		}
 	}
 #endif

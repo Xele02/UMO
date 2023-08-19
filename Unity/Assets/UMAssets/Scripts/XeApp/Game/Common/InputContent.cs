@@ -17,6 +17,7 @@ namespace XeApp.Game.Common
 		private Text m_notesText; // 0x14
 		private StringBuilder m_strBuilder = new StringBuilder(); // 0x18
 		private int _characterLimit; // 0x1C
+		private bool disableRegex = false;
 
 		public string Text { get; private set; } // 0x20
 		public Transform Parent { get { return null; } } //0x1100964
@@ -27,6 +28,7 @@ namespace XeApp.Game.Common
 			InputPopupSetting s = setting as InputPopupSetting;
 			m_input.characterLimit = 0;
 			m_input.text = s.InputText;
+			disableRegex = s.DisableRegex;
 			_characterLimit = s.CharacterLimit;
 			if (s.InputLineCount < 2)
 			{
@@ -70,7 +72,10 @@ namespace XeApp.Game.Common
 			m_strBuilder.Replace('>', '＞');
 			m_strBuilder.Replace(JpStringLiterals.StringLiteral_14024, "");
 			m_strBuilder.Replace(JpStringLiterals.StringLiteral_5812, "");
-			GameMessageManager.ReplaceInvalidFont(ref m_strBuilder, m_strBuilder.ToString());
+			if(!disableRegex)
+			{
+				GameMessageManager.ReplaceInvalidFont(ref m_strBuilder, m_strBuilder.ToString());
+			}
 			m_input.onValueChanged.RemoveListener(OnChangeContent);
 			m_input.text = m_strBuilder.ToString();
 			m_input.onValueChanged.AddListener(OnChangeContent);

@@ -15,6 +15,8 @@ namespace XeApp.Game.Common
 		public Action CommitCallBack { get; set; } // 0x4C
 		public override string PrefabPath { get { return "Menu/Prefab/PopupWindow/InputContent"; } } //0x1101C0C
 
+		public bool DisableRegex { get; set; } // UMO add
+
 		// RVA: 0x1101C68 Offset: 0x1101C68 VA: 0x1101C68
 		public InputPopupSetting()
 		{
