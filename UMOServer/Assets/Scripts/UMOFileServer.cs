@@ -152,7 +152,7 @@ public class UMOFileServer : MonoBehaviour
         int PORT = 8001;
         UdpClient udpClient = new UdpClient();
         udpClient.Client.EnableBroadcast = true;
-        udpClient.Client.Bind(new IPEndPoint(IPAddress.Broadcast, PORT));
+        udpClient.Client.Bind(new IPEndPoint(IPAddress.Any, PORT));
 
         while(true)
         {
