@@ -207,6 +207,10 @@ namespace XeApp.Game.Menu
 					isLodingTexture = false;
 				});
 			}
+			#if UNITY_EDITOR || UNITY_STANDALONE
+			BundleShaderInfo.Instance.FixMaterialShader(m_panelLoopEffectPrefab[1]);
+			BundleShaderInfo.Instance.FixMaterialShader(m_panelLoopEffectPrefab[0]);
+			#endif
 			if (m_infinityValidEffect == null)
 			{
 				m_infinityValidEffect = Instantiate(m_panelLoopEffectPrefab[1]);
