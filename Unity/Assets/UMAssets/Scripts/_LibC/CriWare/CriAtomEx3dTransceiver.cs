@@ -4,6 +4,7 @@ using CriWare;
 
 namespace ExternLib
 {
+#if !UNITY_ANDROID
     public static partial class LibCriWare
     {
         public static IntPtr criAtomEx3dRegion_Create(ref CriAtomEx3dRegion.Config config, IntPtr work, int work_size)
@@ -17,4 +18,5 @@ namespace ExternLib
             TodoLogger.LogError(0, "criAtomEx3dRegion_Destroy");
         }
     }
+#endif
 }

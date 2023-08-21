@@ -756,6 +756,7 @@ namespace XeApp.Game.RhythmGame
 							}
 							nextIdx = rNoteList[nextIdx].noteInfo.nextIndex;
 						}
+						return;
 					}
 				}
 			}
@@ -764,7 +765,7 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xDB9A9C Offset: 0xDB9A9C VA: 0xDB9A9C
 		public void ReleaseLine(int lineNo, int lineNo_Begin, int fingerId, bool forceMiss, bool checkLine = false)
 		{
-			if (IsSlideBeganTouched(lineNo))
+			if (!IsSlideBeganTouched(fingerId))
 				EndedTouch(lineNo, lineNo_Begin, fingerId, forceMiss, checkLine);
 		}
 

@@ -131,11 +131,16 @@ class JpStringLiterals
 	public const string StringLiteral_11430 = "マクロスキャノン"; // 0x03bb3d50
 	public const string StringLiteral_11431 = "通常攻撃"; // 0x03bb3d54
 	public const string StringLiteral_11781 = "新しいバージョン検知 mver= "; // 0x03bb42cc
-	public const string StringLiteral_11859 = "バッチインストーラ　停止完了"; // 0x03bb4404
-	public const string StringLiteral_11860 = "バッチインストーラ　停止待ち {0}"; // 0x03bb4408
-	public const string StringLiteral_11861 = "バッチインストーラ　不停止モジュール放棄"; // 0x03bb440c
-	public const string StringLiteral_11862 = "バッチインストーラ　停止処理が完了しなかったインストールモジュール数 {0}"; // 0x03bb4410
-	public const string StringLiteral_11863 = "バッチインストーラ　放棄した分、インストールモジュールを生成 {0}"; // 0x03bb4414
+	public const string StringLiteral_11855 = "Install : Start reception. / バッチインストーラ　開始受付  status = {0}"; //0x03bb43f4
+	public const string StringLiteral_11856 = "Install : Accept debut reception / バッチインストーラ　開始受付受理"; //0x03bb43f8
+	public const string StringLiteral_11857 = "Install : Stop / バッチインストーラ　停止受付  status = {0}"; // 0x03bb43fc
+	public const string StringLiteral_11858 = "Install : Interruption / バッチインストーラ　停止受付受理"; //03bb4400
+	public const string StringLiteral_11859 = "Install : Done/ バッチインストーラ　停止完了"; // 0x03bb4404
+	public const string StringLiteral_11860 = "Install : Waiting / バッチインストーラ　停止待ち {0}"; // 0x03bb4408
+	public const string StringLiteral_11861 = "Install : non-stop module waiver/ バッチインストーラ　不停止モジュール放棄"; // 0x03bb440c
+	public const string StringLiteral_11862 = "Install : Number of installed modules that did not complete the shutdown process/ バッチインストーラ　停止処理が完了しなかったインストールモジュール数 {0}"; // 0x03bb4410
+	public const string StringLiteral_11863 = "Install : Generate installation modules for abandonment/ バッチインストーラ　放棄した分、インストールモジュールを生成 {0}"; // 0x03bb4414
+	public const string StringLiteral_11865 = "Install : Batch Installer Number of modules installed Active:{0} Waiting:{1}/ バッチインストーラ　インストールモジュール数　稼働中:{0}　待機中:{1}"; // 0x03bb441c
 	public const string StringLiteral_11845 = "火"; // 03bb43cc
 	public const string StringLiteral_11846 = "水"; // 03bb43d0
 	public const string StringLiteral_11847 = "木"; // 03bb43d4
@@ -145,6 +150,10 @@ class JpStringLiterals
 	public const string StringLiteral_11921 = "データ更新"; // 0x03bb44fc
 	public const string StringLiteral_11922 = "日付変更"; // 0x03bb4500
 	public const string StringLiteral_11923 = "日付が変わりました。"; // 0x03bb4504
+	public const string StringLiteral_11927 = "ストレージエラー"; // 0x03bb4514
+	public const string StringLiteral_11928 = "ファイルのダウンロードに失敗しました。\nストレージに十分な空き容量がない場合に\nこのメッセージが表示される可能性があります。\nリトライしますか？"; // 0x03bb4518
+	public const string StringLiteral_11929 = "ダウンロードエラー"; // 0x03bb451c
+	public const string StringLiteral_11930 = "ファイルのダウンロードに失敗しました。\nインターネットへの接続や電波の状況を確認して、\nもう一度お試しください。"; // 0x03bb4520
 	public const string StringLiteral_11992 = "バッチインストーラ　インストールモジュール作成失敗"; // 0x03bb4618
 	public const string StringLiteral_12037 = "　"; // 0x03bb46cc
 	public const string StringLiteral_12038 = "…"; // 0x03bb46d0

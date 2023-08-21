@@ -421,6 +421,7 @@ namespace XeApp.Game.RhythmAdjust
 					AllocNote(rNoteList[i]);
 			}
 			TouchInfoRecord record = InputManager.Instance.GetFirstInScreenTouchRecord();
+#if !UNITY_ANDROID
 			if (record == null)
 			{
 				for (int i = 0; record == null && i < (int)InputManager.KeyTouchInfoRecord.KeyType.Num; i++)
@@ -430,6 +431,7 @@ namespace XeApp.Game.RhythmAdjust
 						record = null;
 				}
 			}
+#endif
 			if(record != null)
 			{
 				if(!record.currentInfo.isBegan)
@@ -442,6 +444,7 @@ namespace XeApp.Game.RhythmAdjust
 				else
 				{
 					bool isKeyOk = false;
+#if !UNITY_ANDROID
 					if(record is InputManager.KeyTouchInfoRecord)
 					{
 						InputManager.KeyTouchInfoRecord kr = record as InputManager.KeyTouchInfoRecord;
@@ -452,6 +455,7 @@ namespace XeApp.Game.RhythmAdjust
 						isKeyOk |= kr.keyType == InputManager.KeyTouchInfoRecord.KeyType.Line5Touch;
 						isKeyOk |= kr.keyType == InputManager.KeyTouchInfoRecord.KeyType.Line6Touch;
 					}
+#endif
 					if(RectTransformUtility.RectangleContainsScreenPoint(touchRect, record.currentInfo.nativePosition) || isKeyOk)
 					{
 						if(!isTestMode)

@@ -109,7 +109,7 @@ namespace XeApp.Game.Menu
 				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.EEOADCECNOM_GetCostumeInfo(id).AHHJLDLAPAN_PrismDivaId).AIHCEGFANAM_Attr;
 			}
 			uint res = 16;
-			if (a > 0 && a < 3)
+			if (a > 0 && a < 5)
 				res = (uint)(1 << (a - 1));
 			return res;
 		}
@@ -120,9 +120,9 @@ namespace XeApp.Game.Menu
 			uint res = 0;
 			for(int i = 0; i < m_bind_tbl.Length; i++)
 			{
-				if((a_bit_series & (1 << (m_bind_tbl[i].m_series))) != 0)
+				if((a_bit_series & (1 << (m_bind_tbl[i].m_series - 1))) != 0)
 				{
-					res |= (uint)(1 << (m_bind_tbl[i].m_btn));
+					res |= (uint)(1 << (m_bind_tbl[i].m_btn - 1));
 				}
 			}
 			return res;
@@ -134,9 +134,9 @@ namespace XeApp.Game.Menu
 			uint res = 0;
 			for(int i = 0; i < m_bind_tbl.Length; i++)
 			{
-				if((a_bit_btn & (1 << (m_bind_tbl[i].m_btn))) != 0)
+				if((a_bit_btn & (1 << (m_bind_tbl[i].m_btn - 1))) != 0)
 				{
-					res |= (uint)(1 << (m_bind_tbl[i].m_series));
+					res |= (uint)(1 << (m_bind_tbl[i].m_series - 1));
 				}
 			}
 			return res;

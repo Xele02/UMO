@@ -207,6 +207,10 @@ namespace XeApp.Game.Menu
 					isLodingTexture = false;
 				});
 			}
+			#if UNITY_EDITOR || UNITY_STANDALONE
+			BundleShaderInfo.Instance.FixMaterialShader(m_panelLoopEffectPrefab[1]);
+			BundleShaderInfo.Instance.FixMaterialShader(m_panelLoopEffectPrefab[0]);
+			#endif
 			if (m_infinityValidEffect == null)
 			{
 				m_infinityValidEffect = Instantiate(m_panelLoopEffectPrefab[1]);
@@ -1002,7 +1006,7 @@ namespace XeApp.Game.Menu
 					m_mainBoard.SetBoardLayout(m_viewSceneData);
 					m_mainBoard.ClearUnlockAction();
 					m_mainBoard.OnUnlockAction += UnLockPanel;
-					m_mainBoard.BoardChangeAction += ChangeSubBoard;
+					m_mainBoard.BoardChangeAction = ChangeSubBoard;
 					m_mainBoard.SetEnableBoardChangeButton(m_viewSceneData.JPIPENJGGDD_NumBoard > 1);
 					m_mainBoard.SetEnableSubBoardReleaseButton(m_viewSceneData.JHNNCPCBFDK(), m_viewSceneData.JFDLBEOGGID());
 					m_mainBoard.SetLimitOverLayout(m_limitOverData);
@@ -1013,7 +1017,7 @@ namespace XeApp.Game.Menu
 						m_subBoard.SetBoardLayout(m_viewSceneData);
 						m_subBoard.ClearUnlockAction();
 						m_subBoard.OnUnlockAction += UnLockPanel;
-						m_subBoard.BoardChangeAction += ChangeMainBoard;
+						m_subBoard.BoardChangeAction = ChangeMainBoard;
 						m_subBoard.SetEnableBoardChangeButton(true);
 						m_subBoard.SetEnableSubBoardReleaseButton(m_viewSceneData.JHNNCPCBFDK(), m_viewSceneData.JFDLBEOGGID());
 						m_subBoard.SetLimitOverLayout(m_limitOverData);

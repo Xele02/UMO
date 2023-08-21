@@ -113,7 +113,35 @@ public class JHHBAFKMBDL
 	// // RVA: 0xB1FC18 Offset: 0xB1FC18 VA: 0xB1FC18
 	public void DOHNKJKOGFJ(string LJPMEHDDBGP, IMCBBOAFION EDIIEFHAOGP, JFDNPFFOACP NEFKBBNKNPP)
 	{
-		TodoLogger.LogError(0, "DOHNKJKOGFJ");
+		TextPopupSetting s = new TextPopupSetting();
+		if(LJPMEHDDBGP == "storage")
+		{
+			s.TitleText = JpStringLiterals.StringLiteral_11927;
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Retry, Type = PopupButton.ButtonType.Positive }
+			};
+			s.Text = JpStringLiterals.StringLiteral_11928;
+			PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+			{
+				//0x1347820
+				EDIIEFHAOGP();
+			}, null, null, null);
+		}
+		else
+		{
+			s.TitleText	= JpStringLiterals.StringLiteral_11929;
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Retry, Type = PopupButton.ButtonType.Positive }
+			};
+			s.Text = JpStringLiterals.StringLiteral_11930;
+			PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+			{
+				//0x134784C
+				EDIIEFHAOGP();
+			}, null, null, null);
+		}
 	}
 
 	// // RVA: 0xB2000C Offset: 0xB2000C VA: 0xB2000C

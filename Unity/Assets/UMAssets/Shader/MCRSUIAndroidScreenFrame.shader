@@ -15,7 +15,7 @@ Shader "MCRS/UI/AndroidScreenFrame" {
 			LOD 100
 			Tags { "IGNOREPROJECTOR" = "true" "PreviewType" = "Plane" "QUEUE" = "Transparent" "RenderType" = "Transparent" }
 			Blend SrcAlpha OneMinusSrcAlpha, SrcAlpha OneMinusSrcAlpha
-			ColorMask [_ColorMask] -1
+			ColorMask [_ColorMask]
 			ZWrite Off
 			ZTest [_ZTestMode]
 			Cull Off

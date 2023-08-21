@@ -1,5 +1,6 @@
 
 using System;
+using System.Runtime.InteropServices;
 
 namespace CriWare
 {
@@ -47,9 +48,10 @@ namespace CriWare
 		private void Dispose(bool disposing)
 		{ 
 			CriDisposableObjectManager.Unregister(this);
-			//if(handle != IntPtr.Zero)
+			if(handle != IntPtr.Zero)
 			{
 				criFsBinder_Destroy(this);
+				handle = IntPtr.Zero;
 			}
 		}
 
@@ -91,8 +93,12 @@ namespace CriWare
 		// // RVA: 0x29453A0 Offset: 0x29453A0 VA: 0x29453A0
 		public long GetFileSize(string path)
 		{
-			long size = 0;
-			criFsBinder_GetFileSize(this, path, out size);
+			long size = -1;
+			if(handle != IntPtr.Zero)
+			{
+				if(criFsBinder_GetFileSize(this, path, out size) != 0)
+					size = -1;
+			}
 			return size;
 		}
 
@@ -118,15 +124,28 @@ namespace CriWare
 		// protected override void Finalize() { }
 
 		// // RVA: 0x2944760 Offset: 0x2944760 VA: 0x2944760
+#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		private static extern uint criFsBinder_Create(out IntPtr binder);
+#else
 		private static /*extern */uint criFsBinder_Create(out IntPtr binder)
 		{
 			return ExternLib.LibCriWare.criFsBinder_Create(out binder);
 		}
+#endif
 
 		// // RVA: 0x29449A8 Offset: 0x29449A8 VA: 0x29449A8
+#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		private static extern uint criFsBinder_Destroy(IntPtr binder);
+#endif
 		private static /*extern */uint criFsBinder_Destroy(/*IntPtr*/CriFsBinder binder)
 		{
+#if UNITY_ANDROID
+			return criFsBinder_Destroy(binder.handle);
+#else
 			return ExternLib.LibCriWare.criFsBinder_Destroy(binder);
+#endif
 		}
 
 		// // RVA: 0x2944AC0 Offset: 0x2944AC0 VA: 0x2944AC0
@@ -136,9 +155,17 @@ namespace CriWare
 		// private static extern uint criFsBinder_BindDirectory(IntPtr binder, IntPtr srcBinder, string path, IntPtr work, int worksize, out uint bindId) { }
 
 		// // RVA: 0x2944D70 Offset: 0x2944D70 VA: 0x2944D70
+#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		private static extern uint criFsBinder_BindFile(IntPtr binder, IntPtr srcBinder, string path, IntPtr work, int worksize, out uint bindId);
+#endif
 		private static /*extern*/ uint criFsBinder_BindFile(/*IntPtr*/CriFsBinder binder, /*IntPtr*/CriFsBinder srcBinder, string path, IntPtr work, int worksize, out uint bindId)
 		{
+#if UNITY_ANDROID
+			return criFsBinder_BindFile(binder.handle, srcBinder != null ? srcBinder.handle : IntPtr.Zero, path, work, worksize, out bindId);
+#else
 			return ExternLib.LibCriWare.criFsBinder_BindFile(binder,  srcBinder, path, work, worksize, out bindId);
+#endif
 		}
 
 		// // RVA: 0x2944F90 Offset: 0x2944F90 VA: 0x2944F90
@@ -148,15 +175,28 @@ namespace CriWare
 		// private static extern int criFsBinder_Unbind(uint bindId) { }
 
 		// // RVA: 0x2945288 Offset: 0x2945288 VA: 0x2945288
+#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		private static extern int criFsBinder_GetStatus(uint bindId, out CriFsBinder.Status status);
+#else
 		private static /*extern*/ int criFsBinder_GetStatus(uint bindId, out CriFsBinder.Status status)
 		{
 			return ExternLib.LibCriWare.criFsBinder_GetStatus(bindId, out status);
 		}
+#endif
 
 		// // RVA: 0x2945450 Offset: 0x2945450 VA: 0x2945450
+#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		private static extern int criFsBinder_GetFileSize(IntPtr binder, string path, out long size);
+#endif
 		private static /*extern*/ int criFsBinder_GetFileSize(/*IntPtr*/CriFsBinder binder, string path, out long size)
 		{
+#if UNITY_ANDROID
+			return criFsBinder_GetFileSize(binder.handle, path, out size);
+#else
 			return ExternLib.LibCriWare.criFsBinder_GetFileSize(binder, path, out size);
+#endif
 		}
 
 		// // RVA: 0x2945648 Offset: 0x2945648 VA: 0x2945648

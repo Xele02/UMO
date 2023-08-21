@@ -1,4 +1,6 @@
 using System;
+using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace CriWare
 {
@@ -85,36 +87,47 @@ namespace CriWare
         // // RVA: 0x294E0CC Offset: 0x294E0CC VA: 0x294E0CC Slot: 5
         public override void Dispose()
         {
-            UnityEngine.Debug.LogWarning("CriFsWebInstaller Dispose");
+            Dispose(false);
+            GC.SuppressFinalize(this);
         }
 
         // // RVA: 0x294D8BC Offset: 0x294D8BC VA: 0x294D8BC
         public void Copy(string url, string dstPath)
         {
+#if UNITY_ANDROID
+            criFsWebInstaller_Copy(handle, url, dstPath);
+#else
 			url = FileSystemProxy.ConvertURL(url);
             UnityEngine.Debug.Log("Copy "+url+" "+dstPath);
             www = new UnityEngine.WWW(url);
             fileSavePath = dstPath;
             status.status = Status.Busy;
+#endif
         }
 
         // // RVA: 0x294D728 Offset: 0x294D728 VA: 0x294D728
         public void Stop()
         {
-            TodoLogger.LogError(TodoLogger.CriFsWebInstaller, "CriFsWebInstaller Stop");
+#if UNITY_ANDROID
+            if(handle != IntPtr.Zero)
+            {
+                criFsWebInstaller_Stop(handle);
+            }
+#else
             if(www != null)
             {
                 www.Dispose();
                 www = null;
             }
             status.status = Status.Stop;
+#endif
         }
 
         // // RVA: 0x294DB28 Offset: 0x294DB28 VA: 0x294DB28
         public CriFsWebInstaller.StatusInfo GetStatusInfo()
         {
             CriFsWebInstaller.StatusInfo st;
-            if(/*handle != null*/true)
+            if(handle != IntPtr.Zero)
             {
                 criFsWebInstaller_GetStatusInfo(this, out st);
             }
@@ -123,7 +136,7 @@ namespace CriWare
                 st = new CriFsWebInstaller.StatusInfo();
                 st.contentsSize = -1;
                 st.receivedSize = 0;
-                st.httpStatusCode = 0;
+                st.httpStatusCode = -1;
                 st.status = Status.Stop;
                 st.error = Error.None;
             }
@@ -142,7 +155,8 @@ namespace CriWare
 				return;
 			}
 
-			TodoLogger.LogError(TodoLogger.CriFsWebInstaller, "CriFsWebInstaller.InitializeModule");
+            CriFsPlugin.InitializeLibrary();
+            criFsWebInstaller_Initialize(config);
 			isCrcEnabled = config.crcEnabled;
 			isInitialized = true;
 		}
@@ -156,44 +170,113 @@ namespace CriWare
 		// // RVA: 0x294C460 Offset: 0x294C460 VA: 0x294C460
 		public static void ExecuteMain()
         {
-            TodoLogger.LogError(TodoLogger.CriFsWebInstaller, "CriFsWebInstaller.ExecuteMain");
+            criFsWebInstaller_ExecuteMain();
         }
 
         // // RVA: 0x294EC08 Offset: 0x294EC08 VA: 0x294EC08
         // public static bool SetRequestHeader(string field, string value) { }
 
         // // RVA: 0x294DFB0 Offset: 0x294DFB0 VA: 0x294DFB0
-        // private void Dispose(bool disposing) { }
+        private void Dispose(bool disposing)
+        {
+            CriDisposableObjectManager.Unregister(this);
+            if(handle != IntPtr.Zero)
+            {
+                if(GetStatusInfo().status != Status.Stop)
+                {
+                    Stop();
+                    criFsWebInstaller_ExecuteMain();
+                    while(GetStatusInfo().status != Status.Stop)
+                    {
+                        Thread.Sleep(1);
+                        criFsWebInstaller_ExecuteMain();
+                    }
+                }
+                criFsWebInstaller_Destroy(handle);
+                handle = IntPtr.Zero;
+            }
+        }
 
         // // RVA: 0x294E798 Offset: 0x294E798 VA: 0x294E798
-        // private static extern int criFsWebInstaller_Initialize(in CriFsWebInstaller.ModuleConfig config) { }
-
+#if UNITY_ANDROID
+        [DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+        private static extern int criFsWebInstaller_Initialize(in CriFsWebInstaller.ModuleConfig config);
+#else
+        private static int criFsWebInstaller_Initialize(in CriFsWebInstaller.ModuleConfig config)
+        {
+            return 0;
+        }
+#endif
         // // RVA: 0x294EA58 Offset: 0x294EA58 VA: 0x294EA58
         // private static extern int criFsWebInstaller_Finalize() { }
 
         // // RVA: 0x294EB30 Offset: 0x294EB30 VA: 0x294EB30
-        // private static extern int criFsWebInstaller_ExecuteMain() { }
+#if UNITY_ANDROID
+        [DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+        private static extern int criFsWebInstaller_ExecuteMain();
+#else
+        private static int criFsWebInstaller_ExecuteMain()
+        {
+            return 0;
+        }
+#endif
 
         // // RVA: 0x294DE30 Offset: 0x294DE30 VA: 0x294DE30
+#if UNITY_ANDROID
+        [DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+        private static extern int criFsWebInstaller_Create(out IntPtr installer);
+#else
         private static /*extern */int criFsWebInstaller_Create(out IntPtr installer)
 		{
 			TodoLogger.LogError(TodoLogger.CriFsWebInstaller, "CriFsWebInstaller.criFsWebInstaller_Create");
 			installer = new IntPtr(1);
 			return 0;
 		}
+#endif
 
         // // RVA: 0x294ED50 Offset: 0x294ED50 VA: 0x294ED50
-        // private static extern int criFsWebInstaller_Destroy(IntPtr installer) { }
+#if UNITY_ANDROID
+        [DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+        private static extern int criFsWebInstaller_Destroy(IntPtr installer);
+#else
+        private static int criFsWebInstaller_Destroy(IntPtr installer)
+        {
+            return 0;
+        }
+#endif
 
         // // RVA: 0x294E160 Offset: 0x294E160 VA: 0x294E160
-        // private static extern int criFsWebInstaller_Copy(IntPtr installer, string url, string dstPath) { }
+#if UNITY_ANDROID
+        [DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+        private static extern int criFsWebInstaller_Copy(IntPtr installer, string url, string dstPath);
+#else
+        private static int criFsWebInstaller_Copy(IntPtr installer, string url, string dstPath)
+        {
+            return 0;
+        }
+#endif
 
         // // RVA: 0x294E2B8 Offset: 0x294E2B8 VA: 0x294E2B8
-        // private static extern int criFsWebInstaller_Stop(IntPtr installer) { }
+#if UNITY_ANDROID
+        [DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+        private static extern int criFsWebInstaller_Stop(IntPtr installer);
+#else
+        private static int criFsWebInstaller_Stop(IntPtr installer)
+        {
+            return 0;
+        }
+#endif
 
         // // RVA: 0x294E3D0 Offset: 0x294E3D0 VA: 0x294E3D0
-        private static /*extern */int criFsWebInstaller_GetStatusInfo(/*IntPtr*/CriFsWebInstaller installer, out CriFsWebInstaller.StatusInfo status)
+#if UNITY_ANDROID
+        [DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+        private static extern int criFsWebInstaller_GetStatusInfo(IntPtr installer, out CriFsWebInstaller.StatusInfo status);
+#endif
+        private static int criFsWebInstaller_GetStatusInfo(/*IntPtr*/CriFsWebInstaller installer, out CriFsWebInstaller.StatusInfo status)
         {
+#if UNITY_ANDROID
+            return criFsWebInstaller_GetStatusInfo(installer.handle, out status);
+#else
             TodoLogger.LogError(TodoLogger.CriFsWebInstaller, "criFsWebInstaller_GetStatusInfo");
             
             status = installer.status;
@@ -229,6 +312,7 @@ namespace CriWare
                 status.error = Error.None;
             }
             return 0;
+#endif
         }
 
         // // RVA: 0x294E4B8 Offset: 0x294E4B8 VA: 0x294E4B8

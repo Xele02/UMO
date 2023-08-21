@@ -139,7 +139,14 @@ namespace XeApp.Game.Common
 							{
 								if(a_resource != null)
 								{
-									TodoLogger.LogError(0, "end valk shader init");
+									if(a_resource.materialAwakeLow.ContainsKey(i))
+									{
+										if(a_resource.materialAwakeLow[i] != null)
+										{
+											m_material_info[i].m_awake = new Material(a_resource.materialAwakeLow[i]);
+											m_material_info[i].m_default_value.m_awake_speed_noise = m_material_info[i].m_awake.GetInt(m_shader_nameid.m_noise);
+										}
+									}
 								}
 								m_material_info[i].m_default = new Material(m_material_info[i].m_target_renderer[0].m_material);
 							}

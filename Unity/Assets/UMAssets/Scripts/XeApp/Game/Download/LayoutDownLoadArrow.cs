@@ -57,7 +57,10 @@ namespace XeApp.Game.DownLoad
 		}
 
 		// // RVA: 0x11C2E28 Offset: 0x11C2E28 VA: 0x11C2E28
-		// public void Visible() { }
+		public void Visible()
+		{
+			m_rootAnim.StartChildrenAnimGoStop("st_wait");
+		}
 
 		// // RVA: 0x11C4264 Offset: 0x11C4264 VA: 0x11C4264
 		// public void SetButtonEnable() { }

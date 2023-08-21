@@ -19,27 +19,28 @@ namespace CriWare.CriMana.Detail
 		// RVA: 0x2951610 Offset: 0x2951610 VA: 0x2951610 Slot: 1
 		~RendererResource()
 		{
-			if(!disposed)
-			{
-				OnDisposeUnmanaged();
-				disposed = true;
-			}
+			Dispose(false);
 		}
 
 		// RVA: 0x29516EC Offset: 0x29516EC VA: 0x29516EC Slot: 4
 		public void Dispose()
 		{
-			if(!disposed)
-			{
-				OnDisposeManaged();
-				OnDisposeUnmanaged();
-				disposed = true;
-			}
+			this.Dispose(true);
 			GC.SuppressFinalize(this);
 		}
 
 		// // RVA: 0x2951698 Offset: 0x2951698 VA: 0x2951698
-		// private void Dispose(bool disposing) { }
+		private void Dispose(bool disposing)
+		{
+			if (disposed) {
+				return;
+			}
+			if (disposing) {
+				OnDisposeManaged();
+			}
+			OnDisposeUnmanaged();
+			disposed = true;
+		}
 
 		// // RVA: 0x29517AC Offset: 0x29517AC VA: 0x29517AC
 		public int GetNumberOfFrameBeforeDestroy(int playerId)
@@ -52,16 +53,16 @@ namespace CriWare.CriMana.Detail
 		{
 			if(currentMaterial == null)
 				return;
-			int srcBlendMode = 5;
-			int dstBlendMode = 0;
+			int srcBlendMode = (int)UnityEngine.Rendering.BlendMode.SrcAlpha;
+			int dstBlendMode = (int)UnityEngine.Rendering.BlendMode.Zero;
 			if(!additive)
-				dstBlendMode = 10;
+				dstBlendMode = (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha;
 			else
 			{
-				srcBlendMode = 1;
-				dstBlendMode = 1;
+				srcBlendMode = (int)UnityEngine.Rendering.BlendMode.One;
+				dstBlendMode = (int)UnityEngine.Rendering.BlendMode.One;
 				if(hasAlpha)
-					dstBlendMode = 10;
+					dstBlendMode = (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha;
 			}
 			if(currentMaterial.shader != shader)
 			{
@@ -158,19 +159,34 @@ namespace CriWare.CriMana.Detail
 		// public static int NextPowerOfTwo(int x) { }
 
 		// // RVA: 0x2951C74 Offset: 0x2951C74 VA: 0x2951C74
-		// public static int CeilingWith(int x, int ceilingValue) { }
+		public static int CeilingWith(int x, int ceilingValue)
+		{
+			return (x+ceilingValue-1) & -ceilingValue;
+		}
 
 		// // RVA: 0x2951C88 Offset: 0x2951C88 VA: 0x2951C88
-		// public static int Ceiling16(int x) { }
+		public static int Ceiling16(int x)
+		{
+			return (x+15)& -16;
+		}
 
 		// // RVA: 0x2951C94 Offset: 0x2951C94 VA: 0x2951C94
-		// public static int Ceiling32(int x) { }
+		public static int Ceiling32(int x)
+		{
+			return (x+31)& -32;
+		}
 
 		// // RVA: 0x2951CA0 Offset: 0x2951CA0 VA: 0x2951CA0
-		// public static int Ceiling64(int x) { }
+		public static int Ceiling64(int x)
+		{
+			return (x+63)& -64;
+		}
 
 		// // RVA: 0x2951CAC Offset: 0x2951CAC VA: 0x2951CAC
-		// public static int Ceiling256(int x) { }
+		public static int Ceiling256(int x)
+		{
+			return (x+255)& -256;
+		}
 
 		// // RVA: 0x2951CB8 Offset: 0x2951CB8 VA: 0x2951CB8
 		protected static void DisposeTextures(Texture[] textures)
@@ -190,6 +206,7 @@ namespace CriWare.CriMana.Detail
 
 		// // RVA: 0x2951E18 Offset: 0x2951E18 VA: 0x2951E18
 #if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
 		protected static extern bool CRIWARED6D2B5F7(int player_id, int num_textures, IntPtr[] tex_ptrs, [In] [Out] FrameInfo frame_info, ref bool frame_drop);
 #else
 		protected static bool CRIWARED6D2B5F7(int player_id, int num_textures, IntPtr[] tex_ptrs, FrameInfo frame_info, ref bool frame_drop)
@@ -200,6 +217,7 @@ namespace CriWare.CriMana.Detail
 
 		// // RVA: 0x2952028 Offset: 0x2952028 VA: 0x2952028
 #if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
 		protected static extern bool CRIWARE14DB4020(int player_id, int num_textures, [In] [Out] IntPtr[] tex_ptrs);
 #else
 		protected static bool CRIWARE14DB4020(int player_id, int num_textures, [In] [Out] IntPtr[] tex_ptrs)
@@ -216,6 +234,7 @@ namespace CriWare.CriMana.Detail
 
 		// // RVA: 0x29517C0 Offset: 0x29517C0 VA: 0x29517C0
 #if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
 		protected static extern sbyte CRIWARE9BAE0415(int player_id);
 		#else
 		protected static sbyte CRIWARE9BAE0415(int player_id)

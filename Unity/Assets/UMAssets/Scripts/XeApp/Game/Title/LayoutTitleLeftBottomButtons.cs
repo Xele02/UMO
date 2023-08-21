@@ -27,7 +27,18 @@ namespace XeApp.Game.Title
 			{
 				m_buttonGpgs.AddOnClickCallback(() => {
 					// 0xE399C4
-					TodoLogger.LogNotImplemented("LayoutTitleLeftBottomButton");
+					//TodoLogger.LogNotImplemented("LayoutTitleLeftBottomButton");
+					PopupWindowManager.Show(PopupWindowManager.CrateTextContent("Check File?", SizeType.Small, "Recheck all file integrity ?", new ButtonInfo[2]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive },
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative }
+					}) , (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+					{
+						if(type == PopupButton.ButtonType.Positive)
+							KEHOJEJMGLJ.FJDOHLADGFI = true;
+						else
+							KEHOJEJMGLJ.FJDOHLADGFI = false;
+					}, null, null, null);
 				});
 			}
 		}

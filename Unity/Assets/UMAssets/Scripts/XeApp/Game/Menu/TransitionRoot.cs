@@ -986,10 +986,10 @@ namespace XeApp.Game.Menu
 				}
 				m_remainDivaOneTimeFlag = false;
 				bool idleDivaModel = false;
-				if(lastSceneName != TransitionList.Type.GACHA_CHECK_NEW_COSTUME && 
-				(lastSceneName != TransitionList.Type.GAKUYA && m_current.name != TransitionList.Type.HOME) && 
-				(lastSceneName != TransitionList.Type.COSTUME_SELECT && m_current.name != TransitionList.Type.COSTUME_VIEW_MODE) &&
-				(lastSceneName != TransitionList.Type.COSTUME_VIEW_MODE && m_current.name != TransitionList.Type.COSTUME_SELECT))
+				if((lastSceneName != TransitionList.Type.GACHA_CHECK_NEW_COSTUME && 
+				(lastSceneName != TransitionList.Type.GAKUYA || m_current.name != TransitionList.Type.HOME)) && 
+				(lastSceneName != TransitionList.Type.COSTUME_SELECT || m_current.name != TransitionList.Type.COSTUME_VIEW_MODE) &&
+				(lastSceneName != TransitionList.Type.COSTUME_VIEW_MODE || m_current.name != TransitionList.Type.COSTUME_SELECT))
 				{
 					idleDivaModel = true;
 				}

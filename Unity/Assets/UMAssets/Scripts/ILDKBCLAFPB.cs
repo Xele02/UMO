@@ -138,7 +138,6 @@ public class ILDKBCLAFPB
 			JJDENMHGOIH_NotesSpeedAutoRejected = 0;
 			KDNKCOAJGCM_NotesType = 1;
 			BBIOMNCILMC_HomeDivaId = 0;
-			BBIOMNCILMC_HomeDivaId = 1; // Hack UMO
 			ODOEJMPJHME_NotesSpeedSelectDiffLine6Mode = false;
 			GEPLOFLHAOL_NeedInitRenderQuality = 0;
 			OJAJHIMOIEC_NoteOffset = 0;
@@ -538,7 +537,6 @@ public class ILDKBCLAFPB
 			JJDENMHGOIH_NotesSpeedAutoRejected = JsonUtil.GetInt(OBHAFLMHAKG, "notesSpeedAutoRejected", 0);
 			KDNKCOAJGCM_NotesType = JsonUtil.GetInt(OBHAFLMHAKG, "notesType", 1);
 			BBIOMNCILMC_HomeDivaId = JsonUtil.GetInt(OBHAFLMHAKG, "homeDivaId", 0);
-			BBIOMNCILMC_HomeDivaId = 1; // Hack UMO
 			GDLAPBKCBFP_IsHomeDivaWindow = JsonUtil.GetInt(OBHAFLMHAKG, "isHomeDivaWindow", 0) != 0;
 			BAGJHPGGCCI_PlayLogGraphType = JsonUtil.GetInt(OBHAFLMHAKG, "playLogGraphType", 0);
 			EDDMJEMOAGM_IsNotExcellentDisplaySetting = JsonUtil.GetInt(OBHAFLMHAKG, "isExcellentDisplaySetting", 0) == 0;

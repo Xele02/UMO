@@ -5,6 +5,7 @@ using CriWare;
 
 namespace ExternLib
 {
+#if !UNITY_ANDROID
     public static partial class LibCriWare
     {
 		class CategoryData
@@ -35,4 +36,5 @@ namespace ExternLib
             return 0;
         }
     }
+#endif
 }

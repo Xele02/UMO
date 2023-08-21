@@ -430,6 +430,7 @@ namespace XeApp.Game.Common
 					}
 					top = m_listTopPosition;
 					diffPre = m_diffPrePosition;
+					cnt = 0;
 					if (0 <= AnchoredPosition - m_diffPrePosition)
 					{
 						cnt = 0;

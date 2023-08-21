@@ -1,3 +1,7 @@
+using System;
+using System.Runtime.InteropServices;
+using UnityEngine;
+
 namespace CriWare
 {
 
@@ -7,10 +11,10 @@ namespace CriWare
 		public bool enableDebugPrintOnTerminal; // 0x1C
 		public bool enableForceCrashOnError; // 0x1D
 		public bool dontDestroyOnLoad = true; // 0x1E
-		// [CompilerGeneratedAttribute] // RVA: 0x634C34 Offset: 0x634C34 VA: 0x634C34
-		// private static CriWareErrorHandler.Callback OnCallback; // 0x4
-		// [ObsoleteAttribute] // RVA: 0x634C44 Offset: 0x634C44 VA: 0x634C44
-		// public static CriWareErrorHandler.Callback callback; // 0x8
+		public delegate void Callback(string message);
+		public static event Callback OnCallback = null; // 0x4
+		[Obsolete("CriWareErrorHandler.callback is deprecated. Use CriWareErrorHandler.OnCallback event", false)]
+		public static Callback callback = null; // 0x8
 		public uint messageBufferCounts = 8; // 0x20
 		private static int initializationCount; // 0xC
 
@@ -30,7 +34,14 @@ namespace CriWare
 			initializationCount++;
 			if (initializationCount == 1)
 			{
-				TodoLogger.LogError(TodoLogger.CriWareErrorHandler, "CriWareErrorHandler.Awake");
+				CRIWARE2DABE6AD_criWareUnity_Initialize();
+				CRIWARE2AB443C5_criWareUnity_SetForceCrashFlagOnError(enableForceCrashOnError);
+				CRIWARE2944E024_criWareUnity_AllocateErrorMessageBuffer(messageBufferCounts);
+
+				CRIWAREE5C6ECB6_criWareUnity_ControlLogOutput(enableDebugPrintOnTerminal);
+
+				CRIWAREEA2D718D_criWareUnity_SetErrorCallback(ErrorCallbackFromNative);
+
 				if (!dontDestroyOnLoad)
 					return;
 				DontDestroyOnLoad(transform.gameObject);
@@ -45,14 +56,14 @@ namespace CriWare
 		protected override void OnEnable()
 		{
 			base.OnEnable();
-			TodoLogger.LogError(TodoLogger.CriWareErrorHandler, "CriWareErrorHandler.OnEnable");
+			CRIWAREEA2D718D_criWareUnity_SetErrorCallback(ErrorCallbackFromNative);
 		}
 
 		// // RVA: 0x2BAAC10 Offset: 0x2BAAC10 VA: 0x2BAAC10 Slot: 5
 		protected override void OnDisable()
 		{
 			base.OnDisable();
-			TodoLogger.LogError(TodoLogger.CriWareErrorHandler, "CriWareErrorHandler.OnDisable");
+			CRIWAREEA2D718D_criWareUnity_SetErrorCallback(null);
 		}
 
 		// // RVA: 0x2BAAC9C Offset: 0x2BAAC9C VA: 0x2BAAC9C
@@ -64,9 +75,13 @@ namespace CriWare
 		// // RVA: 0x2BAACA0 Offset: 0x2BAACA0 VA: 0x2BAACA0 Slot: 6
 		public override void CriInternalUpdate()
 		{
-			if (enableDebugPrintOnTerminal)
-				return;
-			TodoLogger.LogError(TodoLogger.CriWareErrorHandler, "CriWareErrorHandler.CriInternalUpdate");
+#if !UNITY_EDITOR && (UNITY_ANDROID || UNITY_IOS || UNITY_TVOS)
+			if (enableDebugPrintOnTerminal == false){
+				DequeueErrorMessages();
+			}
+#else
+			DequeueErrorMessages();
+#endif
 		}
 
 		// // RVA: 0x2BAAFA0 Offset: 0x2BAAFA0 VA: 0x2BAAFA0 Slot: 7
@@ -78,44 +93,180 @@ namespace CriWare
 		// // RVA: 0x2BAAFA4 Offset: 0x2BAAFA4 VA: 0x2BAAFA4
 		private void OnDestroy()
 		{
-			TodoLogger.LogError(TodoLogger.CriWareErrorHandler, "CriWareErrorHandler.OnDestroy");
+			initializationCount--;
+			if (initializationCount != 0) {
+				return;
+			}
+
+			CRIWAREEA2D718D_criWareUnity_SetErrorCallback(null);
+			CRIWARE972AEE70_criWareUnity_DeallocateErrorMessageBuffer();
+
+			CRIWARE992B1A7A_criWareUnity_Finalize();
 		}
 
 		// // RVA: 0x2BAACB0 Offset: 0x2BAACB0 VA: 0x2BAACB0
-		// private void DequeueErrorMessages() { }
+		private void DequeueErrorMessages()
+		{
+			string message = null;
+			while (true) {
+				IntPtr ptr = CRIWARE24FFC2BE_criWareUnity_DequeueFirstErrorMessage();
+				if (ptr == IntPtr.Zero) {
+					break;
+				}
+				try {
+					message = Marshal.PtrToStringAnsi(ptr);
+				} 
+				catch (Exception) {
+					Debug.LogError("[CRIWARE] Failed to parse error message.");
+				}
+				finally {
+					if (message != null && message != string.Empty) {
+						HandleMessage(message);
+					}
+				}
+			}
+		}
 
 		// // RVA: 0x2BAB35C Offset: 0x2BAB35C VA: 0x2BAB35C
-		// private static void HandleMessage(string errmsg) { }
+		private static void HandleMessage(string errmsg)
+		{
+			if (errmsg == null) {
+				return;
+			}
+
+			if (OnCallback == null && callback == null) {
+				OutputDefaultLog(errmsg);
+			} else {
+				if (OnCallback != null) {
+					OnCallback(errmsg);
+				}
+				if (callback != null) {
+					callback(errmsg);
+				}
+			}
+		}
 
 		// // RVA: 0x2BAB594 Offset: 0x2BAB594 VA: 0x2BAB594
-		// private static void OutputDefaultLog(string errmsg) { }
+		private static void OutputDefaultLog(string errmsg)
+		{
+			if (errmsg.StartsWith("E")) {
+				Debug.LogError("[CRIWARE] Error:" + errmsg);
+			} else if (errmsg.StartsWith("W")) {
+				Debug.LogWarning("[CRIWARE] Warning:" + errmsg);
+			} else {
+				Debug.Log("[CRIWARE]" + errmsg);
+			}
+		}
 
-		// [MonoPInvokeCallbackAttribute] // RVA: 0x63651C Offset: 0x63651C VA: 0x63651C
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+		public delegate void ErrorCallbackFunc(string errmsg);
+
+		[AOT.MonoPInvokeCallback(typeof(ErrorCallbackFunc))]
 		// // RVA: 0x2BA9F84 Offset: 0x2BA9F84 VA: 0x2BA9F84
-		// private static void ErrorCallbackFromNative(string errmsg) { }
+		private static void ErrorCallbackFromNative(string errmsg)
+		{
+			HandleMessage(errmsg);
+		}
 
 		// // RVA: 0x2BAA818 Offset: 0x2BAA818 VA: 0x2BAA818
-		// private static extern void CRIWARE2944E024(uint length) { }
+#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		private static extern void CRIWARE2944E024(uint length);
+#endif
+		private static void CRIWARE2944E024_criWareUnity_AllocateErrorMessageBuffer(uint length)
+		{
+#if UNITY_ANDROID
+			CRIWARE2944E024(length);
+#endif
+		}
 
 		// // RVA: 0x2BAA618 Offset: 0x2BAA618 VA: 0x2BAA618
-		// private static extern void CRIWARE2DABE6AD() { }
+#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		private static extern void CRIWARE2DABE6AD();
+#endif
+		private static void CRIWARE2DABE6AD_criWareUnity_Initialize()
+		{
+#if UNITY_ANDROID
+			CRIWARE2DABE6AD();
+#else
+
+#endif
+		}
 
 		// // RVA: 0x2BAB170 Offset: 0x2BAB170 VA: 0x2BAB170
-		// private static extern void CRIWARE992B1A7A() { }
+#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		private static extern void CRIWARE992B1A7A();
+#endif
+		private static void CRIWARE992B1A7A_criWareUnity_Finalize()
+		{
+#if UNITY_ANDROID
+			CRIWARE992B1A7A();
+#endif
+		}
 
 		// // RVA: 0x2BAA920 Offset: 0x2BAA920 VA: 0x2BAA920
-		// private static extern void CRIWAREE5C6ECB6(bool sw) { }
+#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		private static extern void CRIWAREE5C6ECB6(bool sw);
+#endif
+		private static void CRIWAREE5C6ECB6_criWareUnity_ControlLogOutput(bool sw)
+		{
+#if UNITY_ANDROID
+			CRIWAREE5C6ECB6(sw);
+#endif
+		}
 
 		// // RVA: 0x2BAB078 Offset: 0x2BAB078 VA: 0x2BAB078
-		// private static extern void CRIWARE972AEE70() { }
+#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		private static extern void CRIWARE972AEE70();
+#endif
+		private static void CRIWARE972AEE70_criWareUnity_DeallocateErrorMessageBuffer()
+		{
+#if UNITY_ANDROID
+			CRIWARE972AEE70();
+#endif
+		}
 
 		// // RVA: 0x2BAB268 Offset: 0x2BAB268 VA: 0x2BAB268
-		// private static extern IntPtr CRIWARE24FFC2BE() { }
+#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		private static extern IntPtr CRIWARE24FFC2BE();
+#endif
+		private static IntPtr CRIWARE24FFC2BE_criWareUnity_DequeueFirstErrorMessage()
+		{
+#if UNITY_ANDROID
+			return CRIWARE24FFC2BE();
+#else
+			return IntPtr.Zero;
+#endif
+		}
 
 		// // RVA: 0x2BAA710 Offset: 0x2BAA710 VA: 0x2BAA710
-		// private static extern void CRIWARE2AB443C5(bool sw) { }
+#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		private static extern void CRIWARE2AB443C5(bool sw);
+
+#endif
+		private static void CRIWARE2AB443C5_criWareUnity_SetForceCrashFlagOnError(bool sw)
+		{
+#if UNITY_ANDROID
+			CRIWARE2AB443C5(sw);
+#endif
+		}
 
 		// // RVA: 0x2BAAA38 Offset: 0x2BAAA38 VA: 0x2BAAA38
-		// private static extern void CRIWAREEA2D718D(CriWareErrorHandler.ErrorCallbackFunc callback) { }
+#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		private static extern void CRIWAREEA2D718D(ErrorCallbackFunc callback);
+#endif
+		private static void CRIWAREEA2D718D_criWareUnity_SetErrorCallback(CriWareErrorHandler.ErrorCallbackFunc callback)
+		{
+#if UNITY_ANDROID
+			CRIWAREEA2D718D(callback);
+#endif
+		}
 	}
 }

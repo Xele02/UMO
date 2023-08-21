@@ -5,6 +5,10 @@ using System.IO;
 using UnityEngine;
 using XeApp.Core;
 using XeApp.Game;
+using System.Net.Sockets;
+using System.Net;
+using System.Text;
+using XeApp.Game.Common;
 #if UNITY_EDITOR
 using System.Reflection;
 using System.Linq;
@@ -42,6 +46,7 @@ static class FileSystemProxy
 			}
 		}
 
+#if !UNITY_ANDROID
 		if (RuntimeSettings.CurrentSettings == null || string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.DataWebServerURL))
 		{
 			if (!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.DataDirectory))
@@ -51,6 +56,11 @@ static class FileSystemProxy
 			return url + urlExt;
 		}
 		string serverPath = RuntimeSettings.CurrentSettings.DataWebServerURL;
+#else
+		if(foundServer == "")
+			UnityEngine.Debug.LogError("Missing URL");
+		string serverPath = "http://"+foundServer+":8000";
+#endif
 		if (serverPath.EndsWith("/"))
 			serverPath = serverPath.Substring(0, serverPath.Length - 1);
 		return url.Replace("[SERVER_DATA_PATH]", serverPath) + urlExt;
@@ -115,26 +125,39 @@ static class FileSystemProxy
 			onDone(path);
 	}
 
+	public static IEnumerator ReloadFileList()
+	{
+		serverFileList = null;
+		yield return Co.R(InitServerFileList());
+	}
+
 	public static IEnumerator InitServerFileList()
 	{
 		if (serverFileList == null)
 		{
 			serverFileList = new Dictionary<string, string>();
-			string fileList = System.Text.Encoding.UTF8.GetString(System.IO.File.ReadAllBytes(UnityEngine.Application.dataPath + "/../../Data/RequestGetFiles.json"));
-			fileList = fileList.Replace("[[DATE]]", "0");
-			EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(fileList);
-			EDOHBJAPLPF_JsonData fileL = jsonData["files"];
-			for (int i = 0; i < fileL.HNBFOAJIIAL_Count; i++)
+			string filePath = UnityEngine.Application.dataPath + "/../../Data/RequestGetFiles.json";
+#if UNITY_ANDROID && !UNITY_EDITOR
+			filePath = Application.persistentDataPath+"/data/RequestGetFiles.json";
+#endif
+			if(File.Exists(filePath))
 			{
-				if((i % 1000) == 0)
+				string fileList = System.Text.Encoding.UTF8.GetString(System.IO.File.ReadAllBytes(filePath));
+				fileList = fileList.Replace("[[DATE]]", "0");
+				EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(fileList);
+				EDOHBJAPLPF_JsonData fileL = jsonData["files"];
+				for (int i = 0; i < fileL.HNBFOAJIIAL_Count; i++)
 				{
-					TodoLogger.Log(TodoLogger.Filesystem, "Done file list " + i+"/"+fileL.HNBFOAJIIAL_Count);
-					yield return null;
+					if((i % 1000) == 0)
+					{
+						TodoLogger.Log(TodoLogger.Filesystem, "Done file list " + i+"/"+fileL.HNBFOAJIIAL_Count);
+						yield return null;
+					}
+					string fileName = (string)fileL[i]["file"];
+					string localName = GCGNICILKLD_AssetFileInfo.NOCCMAKNLLD.Replace(fileName, "");
+					//UnityEngine.Debug.Log("Added file " + localName + " to remote name " + fileName);
+					serverFileList.Add(localName, fileName);
 				}
-				string fileName = (string)fileL[i]["file"];
-				string localName = GCGNICILKLD_AssetFileInfo.NOCCMAKNLLD.Replace(fileName, "");
-				//UnityEngine.Debug.Log("Added file " + localName + " to remote name " + fileName);
-				serverFileList.Add(localName, fileName);
 			}
 			isInitialized = true;
 		}
@@ -172,6 +195,76 @@ static class FileSystemProxy
 		if (onDone != null)
 			onDone(path);
 	}
+
+#if UNITY_ANDROID
+	public static string foundServer = "";
+
+	public static IEnumerator WaitServerInfo(bool reset = false)
+	{
+		if(reset)
+			foundServer = "";
+		if(foundServer != "")
+			yield break;
+
+		UdpClient udp = new UdpClient(8001);
+		bool cancel = false;
+        PopupWindowControl control = PopupWindowManager.Show(PopupWindowManager.CrateTextContent("UMO", SizeType.Small, "Searching for server, please start webserver and connect the phone on the same local network...", 
+		new ButtonInfo[1]
+        {
+            new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative }
+		}
+		//new ButtonInfo[0] {}
+		, false, true), (PopupWindowControl control_, PopupButton.ButtonType t, PopupButton.ButtonLabel label) =>
+		{
+			cancel = true;
+		}, null, null, null);
+		yield return null;
+        while (foundServer == "" && !cancel)
+		{
+			bool waiting = true;
+			udp.BeginReceive((IAsyncResult ar) =>
+			{
+				IPEndPoint ip = new IPEndPoint(IPAddress.Any, 8001);
+				byte[] bytes = udp.EndReceive(ar, ref ip);
+				string message = Encoding.ASCII.GetString(bytes);
+				if(message == "UMO")
+				{
+					foundServer = ip.Address.ToString();
+				}
+				waiting = false;
+			}, new object());
+			while(waiting && !cancel)
+				yield return null;
+		}
+		if(control.IsActive)
+		{
+			control.Close(null, null);
+		}
+		if(cancel)
+		{
+			InputPopupSetting s = new InputPopupSetting();
+			s.TitleText = "UMO";
+			s.WindowSize = SizeType.Small;
+			s.Description = "Enter IP of the server";
+			s.Notes = "";
+			s.InputText = "0.0.0.0";
+			s.DisableRegex = true;
+			s.CharacterLimit = 50;
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			bool done = false;
+			PopupWindowManager.Show(s, (PopupWindowControl control_, PopupButton.ButtonType t, PopupButton.ButtonLabel label) =>
+			{
+				foundServer = (control_.Content as InputContent).Text;
+				done = true;
+			}, null, null, null);
+			while(!done)
+				yield return null;
+		}
+	}
+#endif
 
 #if UNITY_EDITOR
 	//[UnityEditor.MenuItem("UMO/TestLoadBundle")]

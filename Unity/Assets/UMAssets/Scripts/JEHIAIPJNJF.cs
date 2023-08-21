@@ -7,6 +7,18 @@ using System.Threading;
 using System.IO;
 using CriWare;
 
+public class BatchInstallerException : Exception
+{
+	// RVA: 0x18F06EC Offset: 0x18F06EC VA: 0x18F06EC
+	public BatchInstallerException() : base() { }
+
+	// RVA: 0x18F0770 Offset: 0x18F0770 VA: 0x18F0770
+	public BatchInstallerException(string message) : base(message) { }
+
+	// RVA: 0x18F07FC Offset: 0x18F07FC VA: 0x18F07FC
+	public BatchInstallerException(string message, Exception inner) : base(message, inner) { }
+}
+
 [System.Obsolete("Use JEHIAIPJNJF_FileDownloader", true)]
 public class JEHIAIPJNJF { }
 public class JEHIAIPJNJF_FileDownloader : IDisposable
@@ -17,7 +29,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
         JGHMJIGGJHI = 1,
         FEJIMBDPMKI = 2,
         LLGCBKEOHNP = 3,
-        LPLEIJIFOKN = 4,
+        LPLEIJIFOKN_Error = 4,
         DNCJBLFALPA = 5,
     }
 
@@ -54,7 +66,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 	private static int GKJDDNOBIPM = 60; // 0x10
 	private static List<CriFsWebInstaller> CICJCFPNCNO = new List<CriFsWebInstaller>(); // 0x14
 	public JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status CMCKNKKCNDK_Status; // 0x8
-	public bool BHICPONFJKM; // 0xC // disk space error ?
+	public bool BHICPONFJKM_SpaceError; // 0xC // disk space error ?
 	private List<JEHIAIPJNJF_FileDownloader.HCJPJKCIBDL_DldFileInfo> JOJMBFBGMGN_DldQueue; // 0x10
 	public JEHIAIPJNJF_FileDownloader.FMOECHMCHPE LBGNKOJFOFC; // 0x14
 	private Queue<CriFsWebInstaller> GBFHGDHNDIE_WebInstallerPool; // 0x18
@@ -228,25 +240,32 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 	// // RVA: 0x1C355BC Offset: 0x1C355BC VA: 0x1C355BC
 	public void LAOEGNLOJHC()
 	{
+		Debug.Log(string.Format(JpStringLiterals.StringLiteral_11855, CMCKNKKCNDK_Status.ToString()));
 		IMDNPMAIJFO_UpdateStorageInfo();
-		BHICPONFJKM = false;
+		BHICPONFJKM_SpaceError = false;
 		if(CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_None/*0*/)
 			return;
+		Debug.Log(JpStringLiterals.StringLiteral_11856);
 		CMCKNKKCNDK_Status = JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.JGHMJIGGJHI/*1*/;
 	}
 
 	// // RVA: 0x1C3578C Offset: 0x1C3578C VA: 0x1C3578C
 	public void PBIMGBKLDPP()
 	{
-		if(CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.DNCJBLFALPA/*5*/)
+		UnityEngine.Debug.Log(string.Format(JpStringLiterals.StringLiteral_11857, CMCKNKKCNDK_Status.ToString()));
+		if(CMCKNKKCNDK_Status < JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LLGCBKEOHNP/*3*/ || CMCKNKKCNDK_Status > JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LPLEIJIFOKN_Error/*4*/)
 		{
-			CMCKNKKCNDK_Status = JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.JGHMJIGGJHI/*1*/;
-			return;
+			if(CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.FEJIMBDPMKI/*2*/)
+			{
+				CMCKNKKCNDK_Status = JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_None/*0*/;
+				return;
+			}
+			if(CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.JGHMJIGGJHI/*1*/)
+			{
+				return;
+			}
 		}
-		if(CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LPLEIJIFOKN/*4*/)
-		{
-			return;
-		}
+		UnityEngine.Debug.Log(JpStringLiterals.StringLiteral_11858);
 		for(int i = 0; i < KJIGCCPJBFK_List.Count; i++)
 		{
 			CriFsWebInstaller installer = KJIGCCPJBFK_List[i];
@@ -275,26 +294,26 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 				IMDNPMAIJFO_UpdateStorageInfo();
 			}
 		}
-		if(CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.JGHMJIGGJHI)
+		if(CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.JGHMJIGGJHI/*1*/)
 		{
-			if(CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.DNCJBLFALPA)
+			if(CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.DNCJBLFALPA/*5*/)
 			{
 				CriFsWebInstaller.ExecuteMain();
 				PKDGOJNCLBK();
 				string logTxt = "";
 				if(KJIGCCPJBFK_List.Count == 0)
 				{
-					//logTxt = JpStringLiterals.StringLiteral_11859;
+					logTxt = JpStringLiterals.StringLiteral_11859;
 				}
 				else
 				{
-					//logTxt = JpStringLiterals.StringLiteral_11860 + EMAEFFGBFIB;
+					Debug.Log(string.Format(JpStringLiterals.StringLiteral_11860, EMAEFFGBFIB));
 					EMAEFFGBFIB = EMAEFFGBFIB + 1;
 					if(EMAEFFGBFIB < GKJDDNOBIPM)
 						return;
-					// log JpStringLiterals.StringLiteral_11861
-					// log JpStringLiterals.StringLiteral_11862
+					Debug.Log(JpStringLiterals.StringLiteral_11861);
 					int numInstaller = KJIGCCPJBFK_List.Count;
+					Debug.Log(string.Format(JpStringLiterals.StringLiteral_11862, numInstaller));
 					while(KJIGCCPJBFK_List.Count > 0)
 					{
 						CriFsWebInstaller wi = KJIGCCPJBFK_List[0];
@@ -303,12 +322,13 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 						PLDKOCEHDAL_DldInfoByInstaller.Remove(wi);
 						if(info.ICKGJODOCBB != null)
 						{
+							info.ICKGJODOCBB.IKBKLPNADJM = false;
 							info.ICKGJODOCBB.NEDNDAKLBMJ = false;
 							info.ICKGJODOCBB.KMABBBKJFCB_Percent = 0;
 						}
 						CICJCFPNCNO.Add(wi);
 					}
-					//log JpStringLiterals.StringLiteral_11863
+					Debug.Log(string.Format(JpStringLiterals.StringLiteral_11863, numInstaller));
 					for (int i = 0; i < numInstaller; i++)
 					{
 						CriFsWebInstaller installer = new CriFsWebInstaller();
@@ -318,17 +338,19 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 						JLNFKNICIFD_DownloadsInfo[i] = info;
 						PLDKOCEHDAL_DldInfoByInstaller.Add(installer, info);
 					}
+					logTxt = string.Format(JpStringLiterals.StringLiteral_11865, KJIGCCPJBFK_List.Count, GBFHGDHNDIE_WebInstallerPool.Count);
 				}
+				Debug.Log(logTxt);
 				CMCKNKKCNDK_Status = 0;
 				EMAEFFGBFIB = 0;
 				return;
 			}
-			if(CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LLGCBKEOHNP)
+			if(CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LLGCBKEOHNP/*3*/)
 				return;
 		}
 		CriFsWebInstaller.ExecuteMain();
-		int a = PKDGOJNCLBK();
-		if(a < 1)
+		int numFailed = PKDGOJNCLBK();
+		if(numFailed < 1)
 		{
 			if(FCPPMGNCGNO() != 0)
 			{
@@ -337,17 +359,17 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 			}
 			if(KJIGCCPJBFK_List.Count != 0)
 				return;
-			CMCKNKKCNDK_Status = JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.FEJIMBDPMKI;
+			CMCKNKKCNDK_Status = JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.FEJIMBDPMKI/*2*/;
 		}
 		else
 		{
-			if(KJIGCCPJBFK_List.Count == a)
+			if(KJIGCCPJBFK_List.Count == numFailed)
 			{
-				CMCKNKKCNDK_Status = JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LPLEIJIFOKN;
+				CMCKNKKCNDK_Status = JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LPLEIJIFOKN_Error;
 			}
 			else
 			{
-				CMCKNKKCNDK_Status = JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LLGCBKEOHNP;
+				CMCKNKKCNDK_Status = JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LLGCBKEOHNP/*3*/;
 			}
 		}
 	}
@@ -472,7 +494,67 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 	// // RVA: 0x1C37140 Offset: 0x1C37140 VA: 0x1C37140
 	private void DLHJNILCAGE(JEHIAIPJNJF_FileDownloader.AFGDFAJEBFA_DldInfo PHKJOMLDNOB)
 	{
-		TodoLogger.LogError(0, "TODO");
+		if(PHKJOMLDNOB.GGFGJEDLKNC)
+			return;
+		bool a = false;
+		string str = "";
+		switch(PHKJOMLDNOB.IOKJFDPOEFP_InstallerStatusInfo.error)
+		{
+			case CriFsWebInstaller.Error.None:
+				str = "None";
+				break;
+			case CriFsWebInstaller.Error.Timeout:
+				str = "Timeout";
+				break;
+			case CriFsWebInstaller.Error.Memory:
+				str = "Memory";
+				break;
+			case CriFsWebInstaller.Error.LocalFs:
+				a = true;
+				BHICPONFJKM_SpaceError = true;
+				str = "LocalFs";
+				break;
+			case CriFsWebInstaller.Error.DNS:
+				str = "DNS";
+				break;
+			case CriFsWebInstaller.Error.Connection:
+				str = "Connection";
+				break;
+			case CriFsWebInstaller.Error.SSL:
+				str = "SSL";
+				a = true;
+				break;
+			case CriFsWebInstaller.Error.HTTP:
+				str = "HTTP";
+				a = true;
+				break;
+			case CriFsWebInstaller.Error.Internal:
+				str = "Internal";
+				a = true;
+				break;
+		}
+		UnityEngine.Debug.LogError(string.Concat(new string[5]
+		{
+			"Install Error = ",
+			str,
+			" [",
+			PHKJOMLDNOB.ICKGJODOCBB.NFCMNIEHJML_ServerPath,
+			"]"
+		}));
+		if(!(a && !BIBKLAMCKGN))
+		{
+			PHKJOMLDNOB.GGFGJEDLKNC = true;
+			return;
+		}
+		BIBKLAMCKGN = true;
+		throw new BatchInstallerException(string.Concat(new string[5]
+		{
+			"code=[",
+			str,
+			"],url=[",
+			PHKJOMLDNOB.ICKGJODOCBB.NFCMNIEHJML_ServerPath,
+			"]"
+		}));
 	}
 
 	// // RVA: 0x1C35730 Offset: 0x1C35730 VA: 0x1C35730

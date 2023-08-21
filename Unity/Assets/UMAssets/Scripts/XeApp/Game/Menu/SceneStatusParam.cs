@@ -737,22 +737,23 @@ namespace XeApp.Game.Menu
 			}
 			yield return this.StartCoroutineWatched(LoadTexture(sceneId, evolveId, null));
 			yield return GameManager.Instance.SceneIconCache.LoadKiraMaterial(null);
-			if (m_backImage.canvas.GetComponent<RectTransform>().transform.Find("Root") == null)
+			Transform t1 = m_backImage.canvas.GetComponent<RectTransform>().transform.Find("Root");
+			if (t1 == null)
 				yield break;
 			m_backImage.enabled = true;
-			m_backImage.rectTransform.sizeDelta = m_backImage.canvas.GetComponent<RectTransform>().sizeDelta;
+			m_backImage.rectTransform.sizeDelta = t1.GetComponent<RectTransform>().sizeDelta;
 			m_backImage.rectTransform.anchoredPosition = PopupWindowControl.GetContentCenterOffset(SizeType.Large, true) * -1;
 			m_zoomSceneImage.gameObject.SetActive(true);
 			speed = 10;
 			t = 0;
 			startPosition = m_zoomSceneImage.rectTransform.anchoredPosition;
-			startScale = SceneImageViewer.GetStartScale(m_sceneData.JKGFBFPIMGA_Rarity, m_backImage.canvas.GetComponent<RectTransform>().sizeDelta.x);
+			startScale = SceneImageViewer.GetStartScale(m_sceneData.JKGFBFPIMGA_Rarity, t1.GetComponent<RectTransform>().sizeDelta.x);
 			endPosition = Vector2.zero;
 			endScale = Vector3.one;
 			isEvolve = false;
 			if (!m_sceneData.JOKJBMJBLBB_Single && evolveId > 1)
 				isEvolve = true;
-			m_zoomSceneImage.rectTransform.sizeDelta = SceneImageViewer.GetCardSize(m_backImage.canvas.GetComponent<RectTransform>().sizeDelta.x);
+			m_zoomSceneImage.rectTransform.sizeDelta = SceneImageViewer.GetCardSize(t1.GetComponent<RectTransform>().sizeDelta.x);
 			m_zoomSceneImage.uvRect = SceneImageViewer.GetCardUv(m_sceneData.JKGFBFPIMGA_Rarity);
 			m_KiraImage.rectTransform.sizeDelta = m_zoomSceneImage.rectTransform.sizeDelta;
 			m_KiraImage.uvRect = m_zoomSceneImage.uvRect;

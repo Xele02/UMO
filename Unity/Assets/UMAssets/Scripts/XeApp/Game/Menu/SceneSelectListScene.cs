@@ -161,7 +161,7 @@ namespace XeApp.Game.Menu
 			TodoLogger.LogError(TodoLogger.ToCheck, "m_popupFilterSortScene init should not be here");
 			if (m_transitionName == TransitionList.Type.SCENE_SELECT)
 				m_popupFilterSortScene = PopupFilterSort.Scene.EpisodeSelect2;
-			if (m_transitionName == TransitionList.Type.SCENE_ABILITY_RELEASE_LIST)
+			else if (m_transitionName == TransitionList.Type.SCENE_ABILITY_RELEASE_LIST)
 				m_popupFilterSortScene = PopupFilterSort.Scene.EpisodeSelect2;
 			else
 				TodoLogger.LogError(0, "Set for transition " + m_transitionName);

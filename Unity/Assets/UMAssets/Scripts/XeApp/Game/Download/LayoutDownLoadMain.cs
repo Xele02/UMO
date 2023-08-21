@@ -209,7 +209,10 @@ namespace XeApp.Game.DownLoad
 		}
 
 		// // RVA: 0x11C2D7C Offset: 0x11C2D7C VA: 0x11C2D7C
-		// public bool IsFinishDownLoadAnim() { }
+		public bool IsFinishDownLoadAnim()
+		{
+			return !m_DownLoadFinishAnim.IsPlayingChildren();
+		}
 
 		// // RVA: 0x11C237C Offset: 0x11C237C VA: 0x11C237C
 		// public void SetupDownLoad(List<int> diva_list) { }
@@ -218,13 +221,21 @@ namespace XeApp.Game.DownLoad
 		// public void SetupDivaSelect(List<int> diva_list, int select_diva) { }
 
 		// // RVA: 0x11C2EA4 Offset: 0x11C2EA4 VA: 0x11C2EA4
-		// public void EnterDownLoad() { }
+		public void EnterDownLoad()
+		{
+			m_ChangeAnim.StartChildrenAnimGoStop("01");
+			m_DownLoadAnim.StartChildrenAnimGoStop("go_in", "st_in");
+			m_DownLoadProgressBarEffect.StartChildrenAnimLoop("logo_");
+		}
 
 		// // RVA: 0x11C2FB8 Offset: 0x11C2FB8 VA: 0x11C2FB8
 		// public void LeaveDownLoad() { }
 
 		// // RVA: 0x11C2DAC Offset: 0x11C2DAC VA: 0x11C2DAC
-		// public void Visible() { }
+		public void Visible()
+		{
+			m_ChangeDivaAnim.StartChildrenAnimGoStop("st_wait");
+		}
 
 		// // RVA: 0x11C3094 Offset: 0x11C3094 VA: 0x11C3094
 		public void InVisible()
