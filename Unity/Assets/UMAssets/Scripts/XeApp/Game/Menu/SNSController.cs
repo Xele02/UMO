@@ -82,7 +82,62 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB66374 Offset: 0xB66374 VA: 0xB66374
 		public void LayoutSetup(eType type, eObjectOrderType orderType)
 		{
-			TodoLogger.LogError(0, "LayoutSetup");
+			LayoutType = type;
+			if(type == eType.Room)
+			{
+				if(!isLayoutSetupRoom)
+				{
+					if(layoutScrollList != null)
+					{
+						layoutScrollList.AddViewRoom(layoutHeadline, layoutWindowL, layoutWindowR, layoutNextButton, layoutUnopened);
+					}
+					isLayoutSetupRoom = true;
+				}
+			}
+			else if(type == eType.Entrance && !isLayoutSetupEntrance)
+			{
+				if(layoutScrollList != null)
+				{
+					layoutScrollList.AddViewEntrance(layoutSnsEntrance);
+				}
+				isLayoutSetupEntrance = true;
+			}
+			if(orderType == eObjectOrderType.Last)
+			{
+				if (layoutBoot != null)
+					layoutBoot.transform.SetAsLastSibling();
+				if (layoutBg != null)
+					layoutBg.transform.SetAsLastSibling();
+				if (layoutScrollList != null)
+					layoutScrollList.transform.SetAsLastSibling();
+				if (layoutUnopened != null)
+					layoutUnopened.transform.SetAsLastSibling();
+				if (layoutTitleBar != null)
+					layoutTitleBar.transform.SetAsLastSibling();
+				if (layoutFooter != null)
+					layoutFooter.transform.SetAsLastSibling();
+				if (tapScreenButton != null)
+					tapScreenButton.transform.SetAsLastSibling();
+				if (tapGuardPanel != null)
+					tapGuardPanel.transform.SetAsLastSibling();
+			}
+			else if(orderType == eObjectOrderType.First)
+			{
+				if (tapScreenButton != null)
+					tapScreenButton.transform.SetAsFirstSibling();
+				if (layoutFooter != null)
+					layoutFooter.transform.SetAsFirstSibling();
+				if (layoutTitleBar != null)
+					layoutTitleBar.transform.SetAsFirstSibling();
+				if (layoutUnopened != null)
+					layoutUnopened.transform.SetAsFirstSibling();
+				if (layoutScrollList != null)
+					layoutScrollList.transform.SetAsFirstSibling();
+				if (layoutBg != null)
+					layoutBg.transform.SetAsFirstSibling();
+				if (layoutBoot != null)
+					layoutBoot.transform.SetAsFirstSibling();
+			}
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72970C Offset: 0x72970C VA: 0x72970C
@@ -90,8 +145,41 @@ namespace XeApp.Game.Menu
 		public IEnumerator SetupEntrance(Action exitCallback, Action<int> roomInCallback, bool isBackButtonEmpty, SNSTitleBar.eButtonType buttonType)
 		{
 			//0x1595F5C
-			TodoLogger.LogError(0, "SetupEntrance");
-			yield return null;
+			if(LayoutType == eType.Entrance)
+			{
+				int divaId = GameManager.Instance.GetHomeDiva().AHHJLDLAPAN_DivaId;
+				if (IsTutorial)
+					divaId = 1;
+				if(layoutBg != null)
+				{
+					layoutBg.SetStatus(divaId);
+				}
+				if(layoutScrollList != null)
+				{
+					yield return Co.R(layoutScrollList.SetStatusEntrance(m_viewDataSNS, roomInCallback));
+				}
+				if(layoutTitleBar != null)
+				{
+					layoutTitleBar.CallbackClose = exitCallback;
+					layoutTitleBar.SetStatusEntrance(buttonType);
+				}
+				if(m_backCallbackEntrance == null)
+				{
+					if(!isBackButtonEmpty)
+					{
+						m_backCallbackEntrance = exitCallback;
+					}
+					else
+					{
+						m_backCallbackEntrance = () =>
+						{
+							//0x158FE0C
+							return;
+						};
+					}
+				}
+				GameManager.Instance.AddPushBackButtonHandler(BackButtonEntrance);
+			}
 		}
 
 		//// RVA: 0xB66E14 Offset: 0xB66E14 VA: 0xB66E14
@@ -128,9 +216,9 @@ namespace XeApp.Game.Menu
 				{
 					for(int i = 0; i < g.CNEOPOINCBA.Count; i++)
 					{
-						if(!l.Contains(g.CNEOPOINCBA[i].IDELKEKDIFD))
+						if(!l.Contains(g.CNEOPOINCBA[i].IDELKEKDIFD_CharaId))
 						{
-							l.Add(g.CNEOPOINCBA[i].IDELKEKDIFD);
+							l.Add(g.CNEOPOINCBA[i].IDELKEKDIFD_CharaId);
 						}
 					}
 					for(int i = 0; i < l.Count; i++)
@@ -181,8 +269,11 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB68648 Offset: 0xB68648 VA: 0xB68648
 		public bool IsPlaying()
 		{
-			TodoLogger.LogError(0, "IsPlaygin");
-			return false;
+			return layoutTitleBar.IsPlaying() ||
+					layoutFooter.IsPlaying() ||
+					layoutScrollList.IsPlaying() ||
+					layoutBg.IsPlaying() ||
+					layoutBoot.IsPlaying();
 		}
 
 		// RVA: 0xB68718 Offset: 0xB68718 VA: 0xB68718
@@ -194,7 +285,63 @@ namespace XeApp.Game.Menu
 		// RVA: 0xB6871C Offset: 0xB6871C VA: 0xB6871C Slot: 4
 		public void Dispose()
 		{
-			TodoLogger.LogError(0, "Dispose");
+			RemoveBackButtonEntrance();
+			RemoveBackButtonRoom();
+			isOneSetup = false;
+			if (layoutTitleBar != null)
+				UnityEngine.Object.Destroy(layoutTitleBar.gameObject);
+			layoutTitleBar = null;
+			if (layoutFooter != null)
+				UnityEngine.Object.Destroy(layoutFooter.gameObject);
+			if (layoutNextButton != null)
+				UnityEngine.Object.Destroy(layoutNextButton.gameObject);
+			layoutNextButton = null;
+			if (layoutUnopened != null)
+				UnityEngine.Object.Destroy(layoutUnopened.gameObject);
+			layoutUnopened = null;
+			for (int i = 0; i < layoutSnsEntrance.Count; i++)
+			{
+				if (layoutSnsEntrance[i] != null)
+					UnityEngine.Object.Destroy(layoutSnsEntrance[i].gameObject);
+			}
+			layoutSnsEntrance.Clear();
+			for (int i = 0; i < layoutHeadline.Count; i++)
+			{
+				if (layoutHeadline[i] != null)
+					UnityEngine.Object.Destroy(layoutHeadline[i].gameObject);
+			}
+			layoutHeadline.Clear();
+			for (int i = 0; i < layoutWindowL.Count; i++)
+			{
+				if (layoutWindowL[i] != null)
+					UnityEngine.Object.Destroy(layoutWindowL[i].gameObject);
+			}
+			layoutWindowL.Clear();
+			for (int i = 0; i < layoutWindowR.Count; i++)
+			{
+				if (layoutWindowR[i] != null)
+					UnityEngine.Object.Destroy(layoutWindowR[i].gameObject);
+			}
+			layoutWindowR.Clear();
+			if (layoutScrollList != null)
+				UnityEngine.Object.Destroy(layoutScrollList.gameObject);
+			layoutScrollList = null;
+			if (layoutBg != null)
+				UnityEngine.Object.Destroy(layoutBg.gameObject);
+			layoutBg = null;
+			if (layoutBoot != null)
+				UnityEngine.Object.Destroy(layoutBoot.gameObject);
+			layoutBoot = null;
+			if (tapScreenButton != null)
+				UnityEngine.Object.Destroy(tapScreenButton.gameObject);
+			tapScreenButton = null;
+			if (tapScreenRect != null)
+				UnityEngine.Object.Destroy(tapScreenRect.gameObject);
+			tapScreenRect = null;
+			if (tapGuardPanel != null)
+				UnityEngine.Object.Destroy(tapGuardPanel.gameObject);
+			tapGuardPanel = null;
+			UnloadAssetBundle();
 		}
 
 		//// RVA: 0xB69838 Offset: 0xB69838 VA: 0xB69838
@@ -431,24 +578,69 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB69ADC Offset: 0xB69ADC VA: 0xB69ADC
 		public IEnumerator LoadLayoutFooter(Action callback)
 		{
-			TodoLogger.LogError(0, "LoadLayoutFooter");
-			yield return null;
+			//0x1592038
+			if(layoutFooter == null)
+			{
+				yield return Co.R(LoadLayoutInner("ly/050.xab", "root_sns_btm_grad_layout_root", (GameObject instance) =>
+				{
+					//0xB6A8C0
+					layoutFooter = instance.GetComponent<LayoutSNSFooter>();
+				}));
+				while (layoutFooter == null)
+					yield return null;
+				while (!layoutFooter.IsLoaded())
+					yield return null;
+				layoutFooter.transform.SetParent(Parent, false);
+				layoutFooter.gameObject.SetActive(false);
+			}
+			if (callback != null)
+				callback();
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7298EC Offset: 0x7298EC VA: 0x7298EC
 		//// RVA: 0xB69B80 Offset: 0xB69B80 VA: 0xB69B80
 		public IEnumerator LoadLayoutBg(Action callback)
 		{
-			TodoLogger.LogError(0, "LoadLayoutBg");
-			yield return null;
+			//0x15917F8
+			if(layoutBg == null)
+			{
+				yield return Co.R(LoadLayoutInner("ly/050.xab", "root_sns_bg_dot_layout_root", (GameObject instance) =>
+				{
+					//0xB6A93C
+					layoutBg = instance.GetComponent<LayoutSNSBg>();
+				}));
+				while (layoutBg == null)
+					yield return null;
+				while (!layoutBg.IsLoaded())
+					yield return null;
+				layoutBg.transform.SetParent(Parent, false);
+				layoutBg.gameObject.SetActive(false);
+			}
+			if (callback != null)
+				callback();
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x729964 Offset: 0x729964 VA: 0x729964
 		//// RVA: 0xB69C24 Offset: 0xB69C24 VA: 0xB69C24
 		public IEnumerator LoadLayoutScrollList(Action callback)
 		{
-			TodoLogger.LogError(0, "LoadLayoutScrollList");
-			yield return null;
+			//0x1593184
+			if(layoutScrollList == null)
+			{
+				yield return Co.R(LoadLayoutInner("ly/050.xab", "root_sns_window_scroll_layout_root", (GameObject instance) =>
+				{
+					//0xB6A9B8
+					layoutScrollList = instance.GetComponent<LayoutSNSScrollList>();
+				}));
+				while (layoutScrollList == null)
+					yield return null;
+				while (!layoutScrollList.IsLoaded())
+					yield return null;
+				layoutScrollList.transform.SetParent(Parent, false);
+				layoutScrollList.gameObject.SetActive(false);
+			}
+			if (callback != null)
+				callback();
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7299DC Offset: 0x7299DC VA: 0x7299DC
@@ -819,21 +1011,18 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB695DC Offset: 0xB695DC VA: 0xB695DC
-		//public void UnloadAssetBundle() { }
+		public void UnloadAssetBundle()
+		{
+			foreach(var k in m_bundleCounter)
+			{
+				for(int i = 0; i < k.Value; i++)
+				{
+					AssetBundleManager.UnloadAssetBundle(k.Key, false);
+				}
+			}
+		}
 
 		//// RVA: 0xB6A818 Offset: 0xB6A818 VA: 0xB6A818
 		//public void PerformExit() { }
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x729FAC Offset: 0x729FAC VA: 0x729FAC
-		//// RVA: 0xB6A8C0 Offset: 0xB6A8C0 VA: 0xB6A8C0
-		//private void <LoadLayoutFooter>b__101_0(GameObject instance) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x729FBC Offset: 0x729FBC VA: 0x729FBC
-		//// RVA: 0xB6A93C Offset: 0xB6A93C VA: 0xB6A93C
-		//private void <LoadLayoutBg>b__102_0(GameObject instance) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x729FCC Offset: 0x729FCC VA: 0x729FCC
-		//// RVA: 0xB6A9B8 Offset: 0xB6A9B8 VA: 0xB6A9B8
-		//private void <LoadLayoutScrollList>b__103_0(GameObject instance) { }
 	}
 }

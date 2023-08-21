@@ -2,6 +2,7 @@ using XeSys.Gfx;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using System;
 
 namespace XeApp.Game.Menu
 {
@@ -49,7 +50,57 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x727E9C Offset: 0x727E9C VA: 0x727E9C
 		//// RVA: 0x19345F0 Offset: 0x19345F0 VA: 0x19345F0
-		//public IEnumerator SetStatusEntrance(FDDIIKBJNNA viewDataSns, Action<int> pressCallback) { }
+		public IEnumerator SetStatusEntrance(FDDIIKBJNNA viewDataSns, Action<int> pressCallback)
+		{
+			//0x1939980
+			m_isScrollSetup = true;
+			m_viewList.Clear();
+			ResetScrollPosition(m_scrollSupport);
+			if(viewDataSns != null)
+			{
+				for(int i = 0; i < viewDataSns.NPKPBDIDBBG.Count; i++)
+				{
+					SnsItemObject item = new SnsItemObject();
+					item.type = SnsItemObject.eLayoutType.EntranceItem;
+					item.animType = SnsItemObject.eAnimType.In;
+					item.viewDataRoom = viewDataSns.NPKPBDIDBBG[i];
+					Action<int> closeControllerCallback = pressCallback;
+					item.entranceCallback = (int roomId) =>
+					{
+						//0x19393DC
+						if (closeControllerCallback != null)
+							closeControllerCallback(roomId);
+					};
+					m_viewList.Add(item);
+				}
+				Vector3 v = new Vector3(592, 45, 0);
+				int height = 45;
+				for(int i = 0; i < m_viewList.Count; i++)
+				{
+					m_viewList[i].pos = v;
+					m_viewList[i].size = new Vector3(708, 105, 0);
+					v.y += 135;
+					height += 135;
+				}
+				AdjustmentScrollRect();
+				if (m_viewList.Count > 0)
+					height += 15;
+				Vector2 v2 = new Vector2(708, height);
+				m_scrollSupport.ContentSize = v2;
+				AdjustmentScrollBarHeight();
+				SetPositionYInner(0);
+				for (int i = 0; i < m_viewList.Count; i++)
+				{
+					m_viewList[i].animType = SnsItemObject.eAnimType.Wait;
+					if (IsCheckRange(i, true))
+					{
+						m_viewList[i].animType = SnsItemObject.eAnimType.In;
+					}
+				}
+				SetVertical();
+			}
+			yield break;
+		}
 
 		//// RVA: 0x19346D0 Offset: 0x19346D0 VA: 0x19346D0
 		//public void SetStatusTalk(List<SNSTalkCreater.ViewTalk> talkList, int homeDivaId, int unReadIndex, Action setEndCallback, bool isVisibleNextButton = True) { }
@@ -71,7 +122,10 @@ namespace XeApp.Game.Menu
 		//private float GetLayoutHeight(SnsItemObject obj) { }
 
 		//// RVA: 0x19355E0 Offset: 0x19355E0 VA: 0x19355E0
-		//private void SetVertical() { }
+		private void SetVertical()
+		{
+			m_scrollSupport.scrollRect.vertical = m_scrollSupport.RangeSize.y < m_scrollSupport.ContentSize.y;
+		}
 
 		//// RVA: 0x19356A0 Offset: 0x19356A0 VA: 0x19356A0
 		//public void TalkIn(Action focusEndCallback) { }
@@ -99,13 +153,32 @@ namespace XeApp.Game.Menu
 		//public float GetPositionLastRoom() { }
 
 		//// RVA: 0x1935DBC Offset: 0x1935DBC VA: 0x1935DBC
-		//public bool IsCheckRange(int index, bool forceTop = False) { }
+		public bool IsCheckRange(int index, bool forceTop = false)
+		{
+			bool res = false;
+			if(index > -1)
+			{
+				if (index < m_viewList.Count)
+				{
+					float top, bottom;
+					CalcScrollVisibleRange(m_scrollSupport, out top, out bottom, forceTop);
+					res = m_viewList[index].pos.y <= bottom && top <= m_viewList[index].pos.y + m_viewList[index].size.y;
+				}
+			}
+			return res;
+		}
 
 		//// RVA: 0x1936080 Offset: 0x1936080 VA: 0x1936080
 		//public int GetListCount() { }
 
 		//// RVA: 0x1935C14 Offset: 0x1935C14 VA: 0x1935C14
-		//private void SetPositionYInner(float value) { }
+		private void SetPositionYInner(float value)
+		{
+			if(m_scrollRt != null)
+			{
+				m_scrollRt.anchoredPosition = new Vector2(m_scrollRt.anchoredPosition.x, value);
+			}
+		}
 
 		//// RVA: 0x19360F8 Offset: 0x19360F8 VA: 0x19360F8
 		//public float CalcSpace(int spaceCount, float layoutSpace, float topSpace, float bottomSpace) { }
@@ -117,19 +190,91 @@ namespace XeApp.Game.Menu
 		//private float CalcLayoutHeight() { }
 
 		//// RVA: 0x1936130 Offset: 0x1936130 VA: 0x1936130
-		//public void AddViewEntrance(List<LayoutSNSRoomItem> itemList) { }
+		public void AddViewEntrance(List<LayoutSNSRoomItem> itemList)
+		{
+			m_scrollSupport.BeginAddView();
+			for(int i = 0; i < itemList.Count; i++)
+			{
+				m_scrollSupport.AddView(itemList[i].gameObject, 0, 0);
+				m_freeEntranceItem.Add(itemList[i]);
+				itemList[i].Hide();
+			}
+			m_scrollSupport.EndAddView();
+		}
 
 		//// RVA: 0x1936390 Offset: 0x1936390 VA: 0x1936390
-		//public void AddViewRoom(List<LayoutSNSHeadline> headlineList, List<LayoutSNSTalkLeft> windowLList, List<LayoutSNSTalkRight> windowRList, LayoutSNSNextButton nextButton, LayoutSNSUnopened unopened) { }
+		public void AddViewRoom(List<LayoutSNSHeadline> headlineList, List<LayoutSNSTalkLeft> windowLList, List<LayoutSNSTalkRight> windowRList, LayoutSNSNextButton nextButton, LayoutSNSUnopened unopened)
+		{
+			m_scrollSupport.BeginAddView();
+			m_freeNextButton = nextButton;
+			m_freeUnopened = unopened;
+			m_scrollSupport.AddView(nextButton.gameObject, 0, 0);
+			for(int i = 0; i < headlineList.Count; i++)
+			{
+				m_scrollSupport.AddView(headlineList[i].gameObject, 0, 0);
+				m_freeHeadline.Add(headlineList[i]);
+				headlineList[i].Hide();
+			}
+			for(int i = 0; i < windowLList.Count; i++)
+			{
+				m_scrollSupport.AddView(windowLList[i].gameObject, 0, 0);
+				m_freeWindowL.Add(windowLList[i]);
+				windowLList[i].Hide();
+			}
+			for(int i = 0; i < windowRList.Count; i++)
+			{
+				m_scrollSupport.AddView(windowRList[i].gameObject, 0, 0);
+				m_freeWindowR.Add(windowRList[i]);
+				windowRList[i].Hide();
+			}
+			m_scrollSupport.EndAddView();
+		}
 
 		//// RVA: 0x19369A0 Offset: 0x19369A0 VA: 0x19369A0
-		//private RectTransform GetRectTransformRoot() { }
+		private RectTransform GetRectTransformRoot()
+		{
+			if(MenuScene.Instance != null)
+			{
+				TransitionRoot tr = MenuScene.Instance.GetCurrentTransitionRoot();
+				if(tr != null)
+				{
+					if(tr.transform.parent != null)
+					{
+						return tr.transform.parent.GetComponent<RectTransform>(); ;
+					}
+				}
+			}
+			return transform.parent.GetComponent<RectTransform>(); ;
+		}
 
 		//// RVA: 0x1934DD0 Offset: 0x1934DD0 VA: 0x1934DD0
-		//public void AdjustmentScrollRect() { }
+		public void AdjustmentScrollRect()
+		{
+			RectTransform rt = GetRectTransformRoot();
+			if(rt != null)
+			{
+				RectTransform rtScroll = m_scrollSupport.scrollRect.GetComponent<RectTransform>();
+				rtScroll.anchoredPosition = new Vector2(rtScroll.anchoredPosition.x, -80);
+				rtScroll.sizeDelta = new Vector2(rtScroll.sizeDelta.x, rt.sizeDelta.y - 80);
+				m_scrollSupport.RangeHeight = rt.sizeDelta.y - 80;
+			}
+		}
 
 		//// RVA: 0x1934FFC Offset: 0x1934FFC VA: 0x1934FFC
-		//public void AdjustmentScrollBarHeight() { }
+		public void AdjustmentScrollBarHeight()
+		{
+			if(m_scrollSupport != null)
+			{
+				if(m_scrollSupport.scrollRect != null)
+				{
+					if(m_scrollSupport.scrollRect.verticalScrollbar != null)
+					{
+						RectTransform rt = m_scrollSupport.scrollRect.verticalScrollbar.GetComponent<RectTransform>();
+						rt.sizeDelta = new Vector2(rt.sizeDelta.x, rt.sizeDelta.y - 65);
+					}
+				}
+			}
+		}
 
 		// RVA: 0x1936C9C Offset: 0x1936C9C VA: 0x1936C9C
 		public void Update()
@@ -181,7 +326,20 @@ namespace XeApp.Game.Menu
 		//public void ResetList() { }
 
 		//// RVA: 0x19380F4 Offset: 0x19380F4 VA: 0x19380F4
-		//public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			List<SnsItemObject> l = m_viewList.FindAll((SnsItemObject _) =>
+			{
+				//0x193929C
+				return _.layoutBase != null;
+			});
+			for(int i = 0; i < l.Count; i++)
+			{
+				if (l[i].layoutBase.IsPlaying())
+					return true;
+			}
+			return false;
+		}
 
 		//// RVA: 0x1938308 Offset: 0x1938308 VA: 0x1938308
 		//public void In() { }
@@ -240,13 +398,29 @@ namespace XeApp.Game.Menu
 		//private IEnumerator PlaySeScroll() { }
 
 		//// RVA: 0x1935F34 Offset: 0x1935F34 VA: 0x1935F34
-		//private void CalcScrollVisibleRange(LayoutUGUIScrollSupport support, out float yTop, out float yBottom, bool forceTop = False) { }
+		private void CalcScrollVisibleRange(LayoutUGUIScrollSupport support, out float yTop, out float yBottom, bool forceTop = false)
+		{
+			float f = 1;
+			if(!forceTop)
+			{
+				f = support.scrollRect.verticalNormalizedPosition;
+			}
+			yTop = (1 - f) * (support.ContentHeight - support.RangeSize.y);
+			yBottom = yTop + support.RangeSize.y;
+		}
 
 		//// RVA: 0x1936040 Offset: 0x1936040 VA: 0x1936040
 		//private bool InScrollView(float x, float y, int w, int h, float yTop, float yBottom) { }
 
 		//// RVA: 0x1937F80 Offset: 0x1937F80 VA: 0x1937F80
-		//private void ResetScrollPosition(LayoutUGUIScrollSupport support) { }
+		private void ResetScrollPosition(LayoutUGUIScrollSupport support)
+		{
+			if(support != null)
+			{
+				support.scrollRect.content.anchoredPosition = Vector2.zero;
+				support.scrollRect.StopMovement();
+			}
+		}
 
 		// RVA: 0x1938ED0 Offset: 0x1938ED0 VA: 0x1938ED0 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

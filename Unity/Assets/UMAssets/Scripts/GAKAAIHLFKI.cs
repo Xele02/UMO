@@ -3,17 +3,17 @@ using System.Collections.Generic;
 
 public class IMKNEDJDNGC
 {
-	public long BEBJKJKBOGH; // 0x8
-	public int FMDCAFCHBJH; // 0x10
+	public long BEBJKJKBOGH_Date; // 0x8
+	public int FMDCAFCHBJH_Offset; // 0x10
 	public int AIPLIEMLHGC; // 0x14
 	public int AJIDLAGFPGM; // 0x18
-	public int OIPCCBHIKIA; // 0x1C
+	public int OIPCCBHIKIA_Index; // 0x1C
 	public int HDBOIICCEIA; // 0x20
-	public short IDELKEKDIFD; // 0x24
-	public sbyte OKMMDJCAHNK; // 0x26
-	public sbyte HMKFHLLAKCI; // 0x27
-	public string OPFGFINHFCE; // 0x28
-	public string LJGOOOMOMMA; // 0x2C
+	public short IDELKEKDIFD_CharaId; // 0x24
+	public sbyte OKMMDJCAHNK_WinShapeId; // 0x26
+	public sbyte HMKFHLLAKCI_WindowSizeId; // 0x27
+	public string OPFGFINHFCE_Name; // 0x28
+	public string LJGOOOMOMMA_Desc; // 0x2C
 	public bool GAIEHFCHAOK; // 0x30
 	public bool EDCBHGECEBE; // 0x31
 
@@ -44,12 +44,33 @@ public class GAKAAIHLFKI
 	//// RVA: 0x13FFD7C Offset: 0x13FFD7C VA: 0x13FFD7C
 	public int MCGDHHHFBMO(long JHNMKKNEENE, bool BAOMADKMHKP = false)
 	{
-		TodoLogger.LogError(0, "MCGDHHHFBMO");
-		return 0;
+		int res = 0;
+		for(int i = 0; i < CNEOPOINCBA.Count; i++)
+		{
+			if (JHNMKKNEENE < CNEOPOINCBA[i].BEBJKJKBOGH_Date)
+				return res;
+			if (CNEOPOINCBA[i].OIPCCBHIKIA_Index + 1 <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.FLHMJHBOBEA_Sns.HAJEJPFGILG[CNEOPOINCBA[i].AIPLIEMLHGC - 1].LDJIMGPHFPA_Cnt)
+				res++;
+		}
+		return res;
 	}
 
 	//// RVA: 0x140001C Offset: 0x140001C VA: 0x140001C
-	//public int BDNLOOAGKKE(long JHNMKKNEENE, bool BAOMADKMHKP = False, bool MIENHPPDMNG = False) { }
+	public int BDNLOOAGKKE(long JHNMKKNEENE, bool BAOMADKMHKP = false, bool MIENHPPDMNG = false)
+	{
+		int res = 0;
+		for(int i = 0; i < CNEOPOINCBA.Count; i++)
+		{
+			if(!MIENHPPDMNG || !CNEOPOINCBA[i].EDCBHGECEBE)
+			{
+				if (JHNMKKNEENE < CNEOPOINCBA[i].BEBJKJKBOGH_Date)
+					return res;
+				if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.FLHMJHBOBEA_Sns.HAJEJPFGILG[CNEOPOINCBA[i].AIPLIEMLHGC - 1].LDJIMGPHFPA_Cnt < CNEOPOINCBA[i].OIPCCBHIKIA_Index + 1)
+					res++;
+			}
+		}
+		return res;
+	}
 
 	//// RVA: 0x1400320 Offset: 0x1400320 VA: 0x1400320
 	//public void NLBFHOGFHLA(long JHNMKKNEENE) { }

@@ -88,6 +88,7 @@ class JpStringLiterals
 	public const string StringLiteral_10304 = "今だけのごりっごりお得な歌晶石セット。もうすぐ買えなくなっちゃうんよ！"; // 0x03bb2bb8
 	public const string StringLiteral_10309 = "エナジー回復"; // 0x03bb2bcc
 	public const string StringLiteral_10310 = "エナジーが全回復しました！"; // 0x03bb2bd0
+	public const string StringLiteral_10314 = "？？？"; //0x03bb2be0
 	public const string StringLiteral_10346 = "LinkError : 自分自身のIDをリンクIDに指定している"; // 0x03bb2c60
 	public const string StringLiteral_10416 = "<color=pink>最高スコア更新 "; // 0x03bb2d78
 	public const string StringLiteral_10431 = "デビューガチャ"; //0x03bb2db4

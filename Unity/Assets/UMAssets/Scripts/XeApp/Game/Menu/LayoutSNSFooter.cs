@@ -79,7 +79,12 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1D1D884 Offset: 0x1D1D884 VA: 0x1D1D884
-		//public bool IsPlayingWriting() { }
+		public bool IsPlayingWriting()
+		{
+			if (m_writingAnim != null)
+				return m_writingAnim.IsPlaying();
+			return false;
+		}
 
 		//// RVA: 0x1D1D89C Offset: 0x1D1D89C VA: 0x1D1D89C
 		public void WritingWait()
@@ -126,7 +131,12 @@ namespace XeApp.Game.Menu
 		//public void Hide() { }
 
 		//// RVA: 0x1D1DF4C Offset: 0x1D1DF4C VA: 0x1D1DF4C
-		//public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			if (m_root != null)
+				return m_root.IsPlayingChildren();
+			return false;
+		}
 
 		// RVA: 0x1D1DF64 Offset: 0x1D1DF64 VA: 0x1D1DF64 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
