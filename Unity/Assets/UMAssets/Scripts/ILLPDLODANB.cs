@@ -1,4 +1,5 @@
 
+using System.Collections.Generic;
 using UnityEngine;
 using XeApp.Game.Common;
 
@@ -668,8 +669,37 @@ public class ILLPDLODANB
 	}
 
 	//// RVA: 0x9F5BC0 Offset: 0x9F5BC0 VA: 0x9F5BC0
-	//public static bool OHFOAIDPDEM(int MALFHCHNEFN, out int CMEJFJFOIIJ) { }
+	public static bool OHFOAIDPDEM(int MALFHCHNEFN, out int CMEJFJFOIIJ)
+	{
+		int a = BIFNGFAIEIL.HHCJCDFCLOB.CEDPKMOHANM(MALFHCHNEFN);
+		List<CNLPPCFJEID_QuestInfo> dbQuests = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests;
+		List<NFPHOINMHKN_QuestInfo> saveQuests = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests;
+		for(int i = 0; i < dbQuests.Count; i++)
+		{
+			if(FJFPHHEFMIB(dbQuests[i]))
+			{
+				if(dbQuests[i].CHOFDPDFPDC_ConfigValue == MALFHCHNEFN)
+				{
+					if(saveQuests[i].EALOBDHOCHP_Stat < 2)
+					{
+						if (dbQuests[i].FCDKJAKLGMB <= a)
+						{
+							CMEJFJFOIIJ = i;
+							return true;
+						}
+						CMEJFJFOIIJ = 0;
+						return false;
+					}
+				}
+			}
+		}
+		CMEJFJFOIIJ = 0;
+		return false;
+	}
 
 	//// RVA: 0x9F5F10 Offset: 0x9F5F10 VA: 0x9F5F10
-	//public static void CIEDCPPINCB(int CMEJFJFOIIJ, int EALOBDHOCHP = 2) { }
+	public static void CIEDCPPINCB(int CMEJFJFOIIJ, int EALOBDHOCHP = 2)
+	{
+		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[CMEJFJFOIIJ - 1].EALOBDHOCHP_Stat = EALOBDHOCHP;
+	}
 }

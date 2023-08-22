@@ -49,8 +49,8 @@ namespace XeApp.Game.Menu
 		private LayoutUGUIHitOnly m_pushLHitOnly; // 0x5C
 		private LayoutUGUIHitOnly m_pushRHitOnly; // 0x60
 
-		//public bool IsEnableBackButton { get; } 0x159032C
-		//public bool IsEnableExitButton { get; } 0x159035C
+		public bool IsEnableBackButton { get { return !m_backButton.Disable; } } //0x159032C
+		public bool IsEnableExitButton { get { return !m_exitButton.Disable; } } //0x159035C
 		public Action CallbackClose { get; set; } // 0x64
 		public Action CallbackReturn { get; set; } // 0x68
 		public Action CallbackNewTalk { get; set; } // 0x6C
@@ -212,7 +212,12 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x159E450 Offset: 0x159E450 VA: 0x159E450
-		//public void SetStatusRoom(GAKAAIHLFKI roomData, SNSTitleBar.eButtonType buttonType) { }
+		public void SetStatusRoom(GAKAAIHLFKI roomData, SNSTitleBar.eButtonType buttonType)
+		{
+			SetRoomName(roomData.OPFGFINHFCE);
+			SwitchTitle(SNSController.eType.Room);
+			SetButtonStatus(buttonType);
+		}
 
 		//// RVA: 0x159E358 Offset: 0x159E358 VA: 0x159E358
 		public void SetButtonStatus(eButtonType buttonType)
@@ -242,16 +247,38 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1598AC4 Offset: 0x1598AC4 VA: 0x1598AC4
-		//public void SetLogButton(int index, int max) { }
+		public void SetLogButton(int index, int max)
+		{
+			if (index == 0)
+				m_prevButton.Hidden = true;
+			else
+				m_prevButton.Hidden = false;
+			if (max - 1 != index)
+				m_nextButton.Hidden = false;
+			else
+				m_nextButton.Hidden = true;
+			m_logIcon.enabled = (max - 1 != index) || index != 0;
+		}
 
 		//// RVA: 0x159DC10 Offset: 0x159DC10 VA: 0x159DC10
 		//public void SwitchLogIcon(bool enable) { }
 
 		//// RVA: 0x159E560 Offset: 0x159E560 VA: 0x159E560
-		//public void In() { }
+		public void In()
+		{
+			if (m_root == null)
+				return;
+			gameObject.SetActive(true);
+			m_root.StartChildrenAnimGoStop("go_in", "st_in");
+		}
 
 		//// RVA: 0x159E628 Offset: 0x159E628 VA: 0x159E628
-		//public void Out() { }
+		public void Out()
+		{
+			if (m_root == null)
+				return;
+			m_root.StartChildrenAnimGoStop("go_out", "st_out");
+		}
 
 		//// RVA: 0x159E6A8 Offset: 0x159E6A8 VA: 0x159E6A8
 		//public void Hide() { }
@@ -266,7 +293,11 @@ namespace XeApp.Game.Menu
 		//public void WaitNewTalkIcon() { }
 
 		//// RVA: 0x159E49C Offset: 0x159E49C VA: 0x159E49C
-		//public void SetRoomName(string roomName) { }
+		public void SetRoomName(string roomName)
+		{
+			if (m_roomName != null)
+				m_roomName.text = roomName;
+		}
 
 		//// RVA: 0x159E294 Offset: 0x159E294 VA: 0x159E294
 		public void SetEntranceName(string name)

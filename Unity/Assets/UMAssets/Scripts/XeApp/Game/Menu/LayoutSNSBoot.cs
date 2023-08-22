@@ -43,11 +43,28 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1D1CF60 Offset: 0x1D1CF60 VA: 0x1D1CF60
-		//public void Out() { }
+		public void Out()
+		{
+			if (m_root == null)
+				return;
+			if (m_logoAnim == null || !IsOpen)
+				return;
+			IsOpen = false;
+			m_root.StartChildrenAnimGoStop("st_wait");
+			m_logoAnim.StartChildrenAnimGoStop("st_wait");
+			m_animList.Clear();
+			m_animList.Add(WaitAnimOut());
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72797C Offset: 0x72797C VA: 0x72797C
 		//// RVA: 0x1D1D088 Offset: 0x1D1D088 VA: 0x1D1D088
-		//private IEnumerator WaitAnimOut() { }
+		private IEnumerator WaitAnimOut()
+		{
+			//0x1D1D3E0
+			while (IsPlaying())
+				yield return null;
+			gameObject.SetActive(false);
+		}
 
 		//// RVA: 0x1D1D134 Offset: 0x1D1D134 VA: 0x1D1D134
 		public bool IsPlaying()
@@ -65,6 +82,7 @@ namespace XeApp.Game.Menu
 			m_root = layout.Root[0] as AbsoluteLayout;
 			m_root.StartChildrenAnimGoStop("st_wait");
 			m_logoAnim = layout.FindViewByExId("sw_start_sns_anim_sw_start_sns_logo_anim") as AbsoluteLayout;
+			m_logoAnim.StartChildrenAnimGoStop("st_wait");
 			Loaded();
 			return true;
 		}

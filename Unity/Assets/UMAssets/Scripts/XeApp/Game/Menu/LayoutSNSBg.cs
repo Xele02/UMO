@@ -22,7 +22,17 @@ namespace XeApp.Game.Menu
 		//public void SetPatternTbl(int index) { }
 
 		//// RVA: 0x1D1C300 Offset: 0x1D1C300 VA: 0x1D1C300
-		//public void In() { }
+		public void In()
+		{
+			if (m_root == null)
+				return;
+			if (IsOpen)
+				return;
+			IsOpen = true;
+			gameObject.SetActive(true);
+			m_root.StartChildrenAnimGoStop("go_in", "st_in");
+			m_animList.Clear();
+		}
 
 		//// RVA: 0x1D1C40C Offset: 0x1D1C40C VA: 0x1D1C40C
 		//public void Update() { }

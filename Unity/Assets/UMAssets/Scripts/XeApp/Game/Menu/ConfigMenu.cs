@@ -464,7 +464,7 @@ namespace XeApp.Game.Menu
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 			};
-			m_tabSetting.Content.transform.SetParent(transform.parent);
+			m_tabSetting.Content.transform.SetParent(transform.parent, false);
 			bool popupWait = true;
 			bool isOk = false;
 			PopupButton.ButtonLabel butLabel = 0;

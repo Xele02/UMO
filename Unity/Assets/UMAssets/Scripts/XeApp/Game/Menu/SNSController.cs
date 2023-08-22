@@ -183,7 +183,61 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB66E14 Offset: 0xB66E14 VA: 0xB66E14
-		//public void SetupRoom(int roomId, Action exitCallback, Action returnCallback, Action newTalkCallback, Action prevPageCallback, Action nextPageCallback, SNSTitleBar.eButtonType buttonType = 0, bool isBackButtonEmpty = False) { }
+		public void SetupRoom(int roomId, Action exitCallback, Action returnCallback, Action newTalkCallback, Action prevPageCallback, Action nextPageCallback, SNSTitleBar.eButtonType buttonType = 0, bool isBackButtonEmpty = false)
+		{
+			if(LayoutType == eType.Room)
+			{
+				int divaId = GameManager.Instance.GetHomeDiva().AHHJLDLAPAN_DivaId;
+				if (IsTutorial)
+					divaId = 1;
+				if (layoutBg != null)
+					layoutBg.SetStatus(divaId);
+				if(layoutTitleBar != null)
+				{
+					layoutTitleBar.SetStatusRoom(m_viewDataSNS.NPKPBDIDBBG.Find((GAKAAIHLFKI _) =>
+					{
+						//0x1590124
+						return _.MALFHCHNEFN == roomId;
+					}), buttonType);
+					layoutTitleBar.CallbackClose = exitCallback;
+					layoutTitleBar.CallbackReturn = returnCallback;
+					layoutTitleBar.CallbackNewTalk = newTalkCallback;
+					layoutTitleBar.CallbackNextPage = nextPageCallback;
+					layoutTitleBar.CallPrevPage = prevPageCallback;
+				}
+				if(m_backCallbackRoom == null)
+				{
+					if(isBackButtonEmpty)
+					{ 
+						m_backCallbackRoom = () =>
+						{
+							//0x158FE10
+							return;
+						};
+					}
+					else
+					{ 
+						m_backCallbackRoom = () =>
+						{
+							//0x159015C
+							if(tapGuardPanel != null)
+							{
+								if (tapGuardPanel.gameObject.activeSelf)
+									return;
+							}
+							if (layoutTitleBar.IsEnableBackButton)
+								returnCallback();
+							else
+							{
+								if (layoutTitleBar.IsEnableExitButton)
+									exitCallback();
+							}
+						};
+					}
+					GameManager.Instance.AddPushBackButtonHandler(BackButtonRoom);
+				}
+			}
+		}
 
 		//// RVA: 0xB67384 Offset: 0xB67384 VA: 0xB67384
 		public void LoadEntranceImage()
@@ -242,7 +296,14 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB67B5C Offset: 0xB67B5C VA: 0xB67B5C
 		public void In()
 		{
-			TodoLogger.LogError(0, "In");
+			if (layoutTitleBar != null)
+				layoutTitleBar.In();
+			if (layoutFooter != null)
+				layoutFooter.In();
+			if (layoutScrollList != null)
+				layoutScrollList.In();
+			if (layoutBg != null)
+				layoutBg.In();
 		}
 
 		//// RVA: 0xB67D48 Offset: 0xB67D48 VA: 0xB67D48
@@ -257,7 +318,14 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB68200 Offset: 0xB68200 VA: 0xB68200
 		public void EntranceOut()
 		{
-			TodoLogger.LogError(0, "EntranceOut");
+			if (layoutTitleBar != null)
+				layoutTitleBar.Out();
+			if (layoutFooter != null)
+				layoutFooter.Out();
+			if (layoutScrollList != null)
+				layoutScrollList.Out();
+			if (layoutBoot != null)
+				layoutBoot.Out();
 		}
 
 		//// RVA: 0xB683EC Offset: 0xB683EC VA: 0xB683EC
@@ -855,7 +923,7 @@ namespace XeApp.Game.Menu
 					yield return null;
 				while (!layoutBoot.IsLoaded())
 					yield return null;
-				layoutBoot.transform.SetParent(Parent);
+				layoutBoot.transform.SetParent(Parent, false);
 				layoutBoot.gameObject.SetActive(false);
 			}
 			if (callback != null)

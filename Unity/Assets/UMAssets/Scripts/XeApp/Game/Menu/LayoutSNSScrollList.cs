@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 using System;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -103,11 +104,70 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x19346D0 Offset: 0x19346D0 VA: 0x19346D0
-		//public void SetStatusTalk(List<SNSTalkCreater.ViewTalk> talkList, int homeDivaId, int unReadIndex, Action setEndCallback, bool isVisibleNextButton = True) { }
+		public void SetStatusTalk(List<SNSTalkCreater.ViewTalk> talkList, int homeDivaId, int unReadIndex, Action setEndCallback, bool isVisibleNextButton = true)
+		{
+			GameManager.Instance.StartCoroutineWatched(SetupTalk(talkList, homeDivaId, unReadIndex, setEndCallback, isVisibleNextButton));
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x727F14 Offset: 0x727F14 VA: 0x727F14
 		//// RVA: 0x19347A8 Offset: 0x19347A8 VA: 0x19347A8
-		//private IEnumerator SetupTalk(List<SNSTalkCreater.ViewTalk> talkList, int homeDivaId, int unReadIndex, Action setEndCallback, bool isVisibleNextButton) { }
+		private IEnumerator SetupTalk(List<SNSTalkCreater.ViewTalk> talkList, int homeDivaId, int unReadIndex, Action setEndCallback, bool isVisibleNextButton)
+		{
+			//0x193A04C
+			m_isScrollSetup = false;
+			ResetListObject();
+			m_viewList.Clear();
+			m_scrollSupport.scrollRect.StopMovement();
+			m_requestSeList.Clear();
+			for(int i = 0; i < talkList.Count; i++)
+			{
+				SnsItemObject data = new SnsItemObject();
+				data.viewTalk = talkList[i];
+				data.type = GetLayoutType(talkList[i], homeDivaId);
+				data.isPlaySeItemIn = true;
+				m_viewList.Add(data);
+			}
+			if(talkList.Count == 1 && talkList[0].talk.EDCBHGECEBE)
+			{
+				m_viewList[0].type = SnsItemObject.eLayoutType.Unopened;
+			}
+			else
+			{
+				if(talkList.Count < 1 && isVisibleNextButton)
+				{
+					SnsItemObject data = new SnsItemObject();
+					data.type = SnsItemObject.eLayoutType.NextButton;
+					data.viewTalk = null;
+					m_viewList.Add(data);
+				}
+			}
+			//LAB_0193a5a8
+			Vector3 v = new Vector3(0, 40, 0);
+			for(int i = 0; i < m_viewList.Count; i++)
+			{
+				m_viewList[i].pos = v;
+				m_viewList[i].size = new Vector3(708, GetLayoutHeight(m_viewList[i]));
+				v.y += 45 + m_viewList[i].size.y;
+			}
+			AdjustmentScrollRect();
+			m_scrollSupport.ContentSize = new Vector2(708, v.y);
+			AdjustmentScrollBarHeight();
+			yield return null;
+			SetPositionYInner(0);
+			for(int i = 0; i < m_viewList.Count; i++)
+			{
+				if(IsCheckRange(i, false))
+				{
+					m_viewList[i].isPlaySeItemIn = false;
+					m_viewList[i].animType = SnsItemObject.eAnimType.In;
+				}
+			}
+			m_isScrollSetup = true;
+			m_onePlaySeScroll = PlaySeScroll();
+			SetVertical();
+			if (setEndCallback != null)
+				setEndCallback();
+		}
 
 		//// RVA: 0x19348C0 Offset: 0x19348C0 VA: 0x19348C0
 		//public SnsItemObject SetStatusTalk(SNSTalkCreater.ViewTalk talk, int homeDivaId, int messageCount) { }
@@ -116,10 +176,39 @@ namespace XeApp.Game.Menu
 		//public SnsItemObject SetNextPageButton() { }
 
 		//// RVA: 0x1934CBC Offset: 0x1934CBC VA: 0x1934CBC
-		//private SnsItemObject.eLayoutType GetLayoutType(SNSTalkCreater.ViewTalk talk, int homeDivaId) { }
+		private SnsItemObject.eLayoutType GetLayoutType(SNSTalkCreater.ViewTalk talk, int homeDivaId)
+		{
+			if (talk.talk.EDCBHGECEBE)
+				return SnsItemObject.eLayoutType.HeaderLine;
+			if (talk.talk.IDELKEKDIFD_CharaId != homeDivaId)
+				return SnsItemObject.eLayoutType.TalkL;
+			return SnsItemObject.eLayoutType.TalkR;
+		}
 
 		//// RVA: 0x1934D28 Offset: 0x1934D28 VA: 0x1934D28
-		//private float GetLayoutHeight(SnsItemObject obj) { }
+		private float GetLayoutHeight(SnsItemObject obj)
+		{
+			int res = 106;
+			if(obj.type != SnsItemObject.eLayoutType.NextButton)
+			{
+				res = 128;
+				if(obj.viewTalk != null && obj.viewTalk.talk != null)
+				{
+					res = 106;
+					if(!obj.viewTalk.talk.EDCBHGECEBE)
+					{
+						res = 128;
+						if (obj.viewTalk.talk.HMKFHLLAKCI_WindowSizeId != 1)
+						{
+							res = 128;
+							if (obj.viewTalk.talk.HMKFHLLAKCI_WindowSizeId == 2)
+								res = 108;
+						}
+					}
+				}
+			}
+			return res;
+		}
 
 		//// RVA: 0x19355E0 Offset: 0x19355E0 VA: 0x19355E0
 		private void SetVertical()
@@ -298,7 +387,32 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1936FE0 Offset: 0x1936FE0 VA: 0x1936FE0
 		private void UpdateScrollInner()
 		{
-			TodoLogger.LogError(0, "UpdateScrollInner");
+			float top, bottom;
+			CalcScrollVisibleRange(m_scrollSupport, out top, out bottom, false);
+			for(int i = 0; i < m_viewList.Count; i++)
+			{
+				if(bottom < m_viewList[i].pos.y || m_viewList[i].pos.y + m_viewList[i].size.y < top)
+				{
+					if(IsObject(m_viewList[i]))
+					{
+						m_viewList[i].Hide();
+						ReleaseObject(m_viewList[i]);
+					}
+				}
+				else if(!IsObject(m_viewList[i]) && GetFreeObject(m_viewList[i]))
+				{
+					m_viewList[i].SetStatus(m_viewList[i]);
+					m_viewList[i].Show();
+					m_requestSeList.Add(m_viewList[i].PlayInItemSe());
+				}
+			}
+			UpdateNewIcon();
+			if(m_onePlaySeScroll != null)
+			{
+				if (!m_onePlaySeScroll.MoveNext())
+					m_onePlaySeScroll = null;
+			}
+			UpdateSeList();
 		}
 
 		//// RVA: 0x1936FB0 Offset: 0x1936FB0 VA: 0x1936FB0
@@ -314,12 +428,32 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1937AE4 Offset: 0x1937AE4 VA: 0x1937AE4
-		//private void UpdateSeList() { }
+		private void UpdateSeList()
+		{
+			if (m_requestSeList.Count < 1)
+				return;
+			if(m_requestSeList.Count < 2)
+			{
+				for(int i = 0; i < m_requestSeList.Count; i++)
+				{
+					m_requestSeList[i].MoveNext();
+				}
+			}
+			m_requestSeList.Clear();
+		}
 
 		//// RVA: 0x1937CE4 Offset: 0x1937CE4 VA: 0x1937CE4
 		public void ResetListObject()
 		{
-			TodoLogger.LogError(0, "ResetListObject");
+			for(int i = 0; i < m_viewList.Count; i++)
+			{
+				if(m_viewList[i] != null)
+				{
+					m_viewList[i].Hide();
+					ReleaseObject(m_viewList[i]);
+					m_viewList[i].Clear();
+				}
+			}
 		}
 
 		//// RVA: 0x1937E94 Offset: 0x1937E94 VA: 0x1937E94
@@ -342,60 +476,281 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1938308 Offset: 0x1938308 VA: 0x1938308
-		//public void In() { }
+		public void In()
+		{
+			if(m_root != null)
+			{
+				Show();
+			}
+		}
 
 		//// RVA: 0x19383D4 Offset: 0x19383D4 VA: 0x19383D4
-		//public void Out() { }
+		public void Out()
+		{
+			if (m_root == null || !IsOpen)
+				return;
+			IsOpen = false;
+			TalkOut();
+			ListInnerOut();
+			m_animList.Clear();
+			m_animList.Add(WaitAnimOut());
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x728004 Offset: 0x728004 VA: 0x728004
 		//// RVA: 0x19386B8 Offset: 0x19386B8 VA: 0x19386B8
-		//private IEnumerator WaitAnimOut() { }
+		private IEnumerator WaitAnimOut()
+		{
+			//0x193A9A4
+			while (IsPlayingListInner())
+				yield return null;
+			ResetListObject();
+			m_scrollSupport.ContentSize = Vector2.zero;
+			ResetScrollPosition(m_scrollSupport);
+			gameObject.SetActive(false);
+		}
 
 		//// RVA: 0x19380F8 Offset: 0x19380F8 VA: 0x19380F8
-		//private bool IsPlayingListInner() { }
+		private bool IsPlayingListInner()
+		{
+			List<SnsItemObject> l = m_viewList.FindAll((SnsItemObject _) =>
+			{
+				//0x193929C
+				return _.layoutBase != null;
+			});
+			for(int i = 0; i < l.Count; i++)
+			{
+				if (l[i].layoutBase.IsPlaying())
+					return true;
+			}
+			return false;
+		}
 
 		//// RVA: 0x19384B8 Offset: 0x19384B8 VA: 0x19384B8
-		//private void ListInnerOut() { }
+		private void ListInnerOut()
+		{
+			List<SnsItemObject> l = m_viewList.FindAll((SnsItemObject _) =>
+			{
+				//0x1939338
+				return _.layoutBase != null;
+			});
+			for(int i = 0; i < l.Count; i++)
+			{
+				l[i].layoutBase.Out();
+			}
+		}
 
 		//// RVA: 0x1938318 Offset: 0x1938318 VA: 0x1938318
-		//public void Show() { }
+		public void Show()
+		{
+			if (IsOpen)
+				return;
+			IsOpen = true;
+			m_animList.Clear();
+			gameObject.SetActive(true);
+		}
 
 		//// RVA: 0x1938764 Offset: 0x1938764 VA: 0x1938764
 		//public void Hide() { }
 
 		//// RVA: 0x1937288 Offset: 0x1937288 VA: 0x1937288
-		//private bool IsObject(SnsItemObject param) { }
+		private bool IsObject(SnsItemObject param)
+		{
+			if (param == null)
+				return false;
+			switch(param.type)
+			{
+				case SnsItemObject.eLayoutType.EntranceItem:
+					return param.entranceItem != null;
+				case SnsItemObject.eLayoutType.HeaderLine:
+					return param.headLine != null;
+				case SnsItemObject.eLayoutType.TalkR:
+					return param.talkWindowR != null;
+				case SnsItemObject.eLayoutType.TalkL:
+					return param.talkWindowL != null;
+				case SnsItemObject.eLayoutType.NextButton:
+					return param.nextButton != null;
+				case SnsItemObject.eLayoutType.Unopened:
+					return param.Unopened != null;
+				default:
+					return false;
+			}
+		}
 
 		//// RVA: 0x19373C0 Offset: 0x19373C0 VA: 0x19373C0
-		//private bool GetFreeObject(SnsItemObject param) { }
+		private bool GetFreeObject(SnsItemObject param)
+		{
+			if (param == null)
+				return false;
+			switch(param.type)
+			{
+				case SnsItemObject.eLayoutType.EntranceItem:
+					param.entranceItem = GetFreeEntranceItem(param);
+					param.layoutBase = param.entranceItem;
+					break;
+				case SnsItemObject.eLayoutType.HeaderLine:
+					param.headLine = GetFreeObjectHeadLine(param);
+					param.layoutBase = param.headLine;
+					break;
+				case SnsItemObject.eLayoutType.TalkR:
+					param.talkWindowR = GetFreeObjectTalkR(param);
+					param.layoutBase = param.talkWindowR;
+					break;
+				case SnsItemObject.eLayoutType.TalkL:
+					param.talkWindowL = GetFreeObjectTalkL(param);
+					param.layoutBase = param.talkWindowL;
+					break;
+				case SnsItemObject.eLayoutType.NextButton:
+					param.nextButton = GetFreeObjectNextButton(param);
+					param.layoutBase = param.nextButton;
+					break;
+				case SnsItemObject.eLayoutType.Unopened:
+					param.Unopened = GetFreeObjectUnopened(param);
+					param.layoutBase = param.Unopened;
+					break;
+				default:
+					return true;
+			}
+			return param.layoutBase != null;
+		}
 
 		//// RVA: 0x193889C Offset: 0x193889C VA: 0x193889C
-		//private LayoutSNSRoomItem GetFreeEntranceItem(SnsItemObject param) { }
+		private LayoutSNSRoomItem GetFreeEntranceItem(SnsItemObject param)
+		{
+			if (m_freeEntranceItem.Count < 1)
+				return null;
+			param.entranceItem = m_freeEntranceItem[0];
+			m_freeEntranceItem.RemoveAt(0);
+			return param.entranceItem;
+		}
 
 		//// RVA: 0x1938AAC Offset: 0x1938AAC VA: 0x1938AAC
-		//private LayoutSNSTalkLeft GetFreeObjectTalkL(SnsItemObject param) { }
+		private LayoutSNSTalkLeft GetFreeObjectTalkL(SnsItemObject param)
+		{
+			if (m_freeWindowL.Count < 1)
+				return null;
+			param.talkWindowL = m_freeWindowL[0];
+			m_freeWindowL.RemoveAt(0);
+			return param.talkWindowL;
+		}
 
 		//// RVA: 0x1938BB4 Offset: 0x1938BB4 VA: 0x1938BB4
-		//private LayoutSNSTalkRight GetFreeObjectTalkR(SnsItemObject param) { }
+		private LayoutSNSTalkRight GetFreeObjectTalkR(SnsItemObject param)
+		{
+			if (m_freeWindowR.Count < 1)
+				return null;
+			param.talkWindowR = m_freeWindowR[0];
+			m_freeWindowR.RemoveAt(0);
+			return param.talkWindowR;
+		}
 
 		//// RVA: 0x19389A4 Offset: 0x19389A4 VA: 0x19389A4
-		//private LayoutSNSHeadline GetFreeObjectHeadLine(SnsItemObject param) { }
+		private LayoutSNSHeadline GetFreeObjectHeadLine(SnsItemObject param)
+		{
+			if (m_freeHeadline.Count < 1)
+				return null;
+			param.headLine = m_freeHeadline[0];
+			m_freeHeadline.RemoveAt(0);
+			return param.headLine;
+		}
 
 		//// RVA: 0x1938CBC Offset: 0x1938CBC VA: 0x1938CBC
-		//private LayoutSNSNextButton GetFreeObjectNextButton(SnsItemObject param) { }
+		private LayoutSNSNextButton GetFreeObjectNextButton(SnsItemObject param)
+		{
+			if(m_freeNextButton != null)
+			{
+				param.nextButton = m_freeNextButton;
+				m_freeNextButton = null;
+				return param.nextButton;
+			}
+			return null;
+		}
 
 		//// RVA: 0x1938D7C Offset: 0x1938D7C VA: 0x1938D7C
-		//private LayoutSNSUnopened GetFreeObjectUnopened(SnsItemObject param) { }
+		private LayoutSNSUnopened GetFreeObjectUnopened(SnsItemObject param)
+		{
+			if (m_freeUnopened == null)
+				return null;
+			param.Unopened = m_freeUnopened;
+			m_freeUnopened = null;
+			return param.Unopened;
+		}
 
 		//// RVA: 0x1937568 Offset: 0x1937568 VA: 0x1937568
-		//private void ReleaseObject(SnsItemObject param) { }
+		private void ReleaseObject(SnsItemObject param)
+		{
+			param.layoutBase = null;
+			switch(param.type)
+			{
+				case SnsItemObject.eLayoutType.EntranceItem:
+					if(param.entranceItem != null)
+					{
+						m_freeEntranceItem.Add(param.entranceItem);
+					}
+					param.entranceItem = null;
+					break;
+				case SnsItemObject.eLayoutType.HeaderLine:
+					if(param.headLine != null)
+					{
+						m_freeHeadline.Add(param.headLine);
+					}
+					param.headLine = null;
+					break;
+				case SnsItemObject.eLayoutType.TalkR:
+					if(param.talkWindowR != null)
+					{
+						m_freeWindowR.Add(param.talkWindowR);
+					}
+					param.talkWindowR = null;
+					break;
+				case SnsItemObject.eLayoutType.TalkL:
+					if(param.talkWindowL != null)
+					{
+						m_freeWindowL.Add(param.talkWindowL);
+					}
+					param.talkWindowL = null;
+					break;
+				case SnsItemObject.eLayoutType.NextButton:
+					if(param.nextButton != null)
+					{
+						m_freeNextButton = param.nextButton;
+					}
+					param.nextButton = null;
+					break;
+				case SnsItemObject.eLayoutType.Unopened:
+					if(param.Unopened != null)
+					{
+						m_freeUnopened = param.Unopened;
+					}
+					param.Unopened = null;
+					break;
+				default:
+					return;
+			}
+		}
 
 		//// RVA: 0x19378EC Offset: 0x19378EC VA: 0x19378EC
-		//private void UpdateNewIcon() { }
+		private void UpdateNewIcon()
+		{
+			int start = m_syncNewIconAnimParam.UpdateFrame(TimeWrapper.deltaTime);
+			for(int i = 0; i < m_viewList.Count; i++)
+			{
+				if(m_viewList[i] != null)
+				{
+					if(m_viewList[i].entranceItem != null)
+					{
+						m_viewList[i].entranceItem.SetNewIconFrame(start);
+					}
+				}
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72807C Offset: 0x72807C VA: 0x72807C
 		//// RVA: 0x1938E3C Offset: 0x1938E3C VA: 0x1938E3C
-		//private IEnumerator PlaySeScroll() { }
+		private IEnumerator PlaySeScroll()
+		{
+			//0x19398CC
+			yield break;
+		}
 
 		//// RVA: 0x1935F34 Offset: 0x1935F34 VA: 0x1935F34
 		private void CalcScrollVisibleRange(LayoutUGUIScrollSupport support, out float yTop, out float yBottom, bool forceTop = false)

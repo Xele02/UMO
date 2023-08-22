@@ -74,7 +74,7 @@ namespace XeApp.Game.Menu
 		public static PopupUnlock Create(Transform parent)
 		{
 			GameObject g = new GameObject("PopupUnlock");
-			g.transform.SetParent(parent);
+			g.transform.parent = parent;
 			return g.AddComponent<PopupUnlock>();
 		}
 

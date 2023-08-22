@@ -1,5 +1,7 @@
 
 using System.Collections.Generic;
+using XeApp.Game.Common;
+using XeSys;
 
 public class IMKNEDJDNGC
 {
@@ -18,7 +20,16 @@ public class IMKNEDJDNGC
 	public bool EDCBHGECEBE; // 0x31
 
 	//// RVA: 0x9FB16C Offset: 0x9FB16C VA: 0x9FB16C
-	//public void FCFDHFAJKPB() { }
+	public void FCFDHFAJKPB()
+	{
+		if (EDCBHGECEBE)
+			return;
+		DDEMMEPBOIA_Sns.EFIFBJGKPJF saveSns = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.FLHMJHBOBEA_Sns.HAJEJPFGILG[AIPLIEMLHGC - 1];
+		SNSRoomTextData.Header header = Database.Instance.roomText.textData.FindHeader(AJIDLAGFPGM);
+		if (header.count <= saveSns.LDJIMGPHFPA_Cnt)
+			return;
+		saveSns.LDJIMGPHFPA_Cnt = (short)header.count;
+	}
 }
 
 public class GAKAAIHLFKI
@@ -37,8 +48,35 @@ public class GAKAAIHLFKI
 	//// RVA: 0x13FF9BC Offset: 0x13FF9BC VA: 0x13FF9BC
 	public int FOBEBCPEILE(long JHNMKKNEENE, bool BAOMADKMHKP = false, bool DGLDFDLGGBB = false)
 	{
-		TodoLogger.LogError(0, "FOBEBCPEILE");
-		return 0;
+		for(int i = 0; i < CNEOPOINCBA.Count; i++)
+		{
+			if (JHNMKKNEENE < CNEOPOINCBA[i].BEBJKJKBOGH_Date)
+				return i;
+			if(CNEOPOINCBA[i].GAIEHFCHAOK)
+			{
+				int a = i;
+				if(BAOMADKMHKP)
+				{
+					if (LKGLMCFEDBF == 0)
+						LKGLMCFEDBF = Utility.GetCurrentUnixTime();
+					long now = Utility.GetCurrentUnixTime();
+					if (now - LKGLMCFEDBF >= CNEOPOINCBA[i].FMDCAFCHBJH_Offset)
+					{
+						CNEOPOINCBA[i].GAIEHFCHAOK = false;
+						CNEOPOINCBA[i].FCFDHFAJKPB();
+						a = i + 1;
+						LKGLMCFEDBF = now;
+					}
+				}
+				if (!DGLDFDLGGBB)
+					return a;
+				CNEOPOINCBA[i].GAIEHFCHAOK = false;
+				CNEOPOINCBA[i].FCFDHFAJKPB();
+				LKGLMCFEDBF = JHNMKKNEENE;
+				return a + 1;
+			}
+		}
+		return CNEOPOINCBA.Count;
 	}
 
 	//// RVA: 0x13FFD7C Offset: 0x13FFD7C VA: 0x13FFD7C
@@ -76,5 +114,18 @@ public class GAKAAIHLFKI
 	//public void NLBFHOGFHLA(long JHNMKKNEENE) { }
 
 	//// RVA: 0x140060C Offset: 0x140060C VA: 0x140060C
-	//public bool PLKKMHBFDCJ(long JHNMKKNEENE) { }
+	public bool PLKKMHBFDCJ(long JHNMKKNEENE)
+	{
+		for(int i = CNEOPOINCBA.Count - 1; i >= 0; i--)
+		{
+			if(!CNEOPOINCBA[i].EDCBHGECEBE)
+			{
+				if (JHNMKKNEENE < CNEOPOINCBA[i].BEBJKJKBOGH_Date)
+					return false;
+				if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.FLHMJHBOBEA_Sns.HAJEJPFGILG[CNEOPOINCBA[i].AIPLIEMLHGC - 1].LDJIMGPHFPA_Cnt < CNEOPOINCBA[i].OIPCCBHIKIA_Index + 1)
+					return true;
+			}
+		}
+		return false;
+	}
 }

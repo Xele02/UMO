@@ -317,10 +317,22 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1598700 Offset: 0x1598700 VA: 0x1598700
-		//private SNSTalkCreater.ViewTalk RegisterViewTalk(int index) { }
+		private ViewTalk RegisterViewTalk(int index)
+		{
+			ViewTalk res = new ViewTalk();
+			res.talk = m_viewDataRoom.CNEOPOINCBA[index];
+			res.chara = m_viewDataSNS.KHCACDIKJLG[m_viewDataRoom.CNEOPOINCBA[index].IDELKEKDIFD_CharaId - 1];
+			m_talkList.Add(res);
+			return res;
+		}
 
 		//// RVA: 0x15988AC Offset: 0x15988AC VA: 0x15988AC
-		//private void UpdatePage() { }
+		private void UpdatePage()
+		{
+			m_currentTalkIndex = GetReadMessageCount();
+			m_isLatestPage = m_pageMax - 1 == m_pageIndex;
+			snsController.layoutTitleBar.SetLogButton(m_pageIndex, m_pageMax);
+		}
 
 		//// RVA: 0x15982CC Offset: 0x15982CC VA: 0x15982CC
 		private void ResetPage(bool isLatestPage = false)
@@ -352,12 +364,49 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1598B8C Offset: 0x1598B8C VA: 0x1598B8C
 		private IEnumerator ResetPageInner(bool isLatestPage, bool isUpdateAllRead, Action callback)
 		{
-			TodoLogger.LogError(0, "ResetPageInner");
-			yield return null;
+			//0x159B5D8
+			m_mainPhase.Clear();
+			UpdatePage();
+			int start, end;
+			GetPageIndex(m_pageIndex, out start, out end);
+			if (m_currentTalkIndex < end)
+				end = m_currentTalkIndex;
+			m_talkList.Clear();
+			for(int i = start; i < end; i++)
+			{
+				RegisterViewTalk(i);
+			}
+			int divaId = GameManager.Instance.GetHomeDiva().AHHJLDLAPAN_DivaId;
+			if (IsTutorial)
+				divaId = 1;
+			bool setupTalkStatus = false;
+			GetLayoutScrollList().SetStatusTalk(m_talkList, divaId, GetUnReadIndexValue(), () =>
+			{
+				//0x159A47C
+				setupTalkStatus = true;
+			}, !isLatestPage && m_viewDataRoom.IHCEJBAEEDO != 0);
+			while (!setupTalkStatus)
+				yield return null;
+			while (snsController.IsPlaying())
+				yield return null;
+			if(isUpdateAllRead && !IsTutorial)
+			{
+				UpdateAllRead(!IsTutorial, false);
+				while(m_isSaved)
+					yield return null;
+			}
+			if (callback != null)
+				callback();
 		}
 
 		//// RVA: 0x1598C84 Offset: 0x1598C84 VA: 0x1598C84
-		//public void NextPage() { }
+		public void NextPage()
+		{
+			if (m_pageMax - 1 <= m_pageIndex)
+				return;
+			m_pageIndex++;
+			ResetPage(!m_pageInexDict.ContainsKey(m_pageIndex + 1));
+		}
 
 		//// RVA: 0x1598D28 Offset: 0x1598D28 VA: 0x1598D28
 		//public void PrevPage() { }
@@ -366,13 +415,58 @@ namespace XeApp.Game.Menu
 		//public void LatestPage() { }
 
 		//// RVA: 0x1598D58 Offset: 0x1598D58 VA: 0x1598D58
-		//public void UnreadPage() { }
+		public void UnreadPage()
+		{
+			if (!m_pageInexDict.ContainsKey(m_pageIndex + 1))
+				return;
+			UpdateAllRead(false, false);
+			if (m_pageMax <= m_pageIndex + 1)
+			{
+				if (m_pageInexDict.ContainsKey(m_pageMax))
+				{
+					m_pageIndex = m_pageMax;
+					m_pageMax++;
+					ResetPage(true);
+					return;
+				}
+			}
+			NextPage();
+		}
 
 		//// RVA: 0x1598E64 Offset: 0x1598E64 VA: 0x1598E64
-		//public void UpdateAllRead(bool isSnsCheck = False, bool isReadMessage = False) { }
+		public void UpdateAllRead(bool isSnsCheck = false, bool isReadMessage = false)
+		{
+			if (isReadMessage)
+				ReadMessage();
+			if(!m_isSaved)
+			{
+				m_isSaved = true;
+				int start, end;
+				GetPageIndex(m_pageIndex, out start, out end);
+				for(int i = start; i < end; i++)
+				{
+					m_viewDataRoom.CNEOPOINCBA[i].FCFDHFAJKPB();
+				}
+				if (isSnsCheck)
+					CheckSNSQuest();
+				MenuScene.Save(() =>
+				{
+					//0x159A31C
+					m_isSaved = false;
+				}, null);
+			}
+		}
 
 		//// RVA: 0x1599014 Offset: 0x1599014 VA: 0x1599014
-		//private void ReadMessage() { }
+		private void ReadMessage()
+		{
+			int start, end;
+			GetPageIndex(m_pageIndex, out start, out end);
+			for(int i = start; i < end; i++)
+			{
+				m_viewDataRoom.CNEOPOINCBA[i].GAIEHFCHAOK = false;
+			}
+		}
 
 		//// RVA: 0x159932C Offset: 0x159932C VA: 0x159932C
 		private int GetUnReadIndexValue()
@@ -402,7 +496,65 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1599494 Offset: 0x1599494 VA: 0x1599494
 		public void Setup(Action exitCallback, Action returnCallback, int roomId, SNSTitleBar.eButtonType buttonType, bool isBackButtonEmpty)
 		{
-			TodoLogger.LogError(0, "Setup");
+			if (m_isManual)
+				m_callbackExit = exitCallback;
+			if(snsController != null)
+			{
+				if(snsController.layoutTitleBar != null)
+				{
+					snsController.SetupRoom(roomId, () =>
+					{
+						//0x159A488
+						if(m_achieveCoroutine != null)
+						{
+							this.StopCoroutineWatched(m_achieveCoroutine);
+							m_achieveCoroutine = null;
+						}
+						UpdateAllRead(true, true);
+						exitCallback();
+					}, () =>
+					{
+						//0x159A510
+						if(m_achieveCoroutine != null)
+						{
+							this.StopCoroutineWatched(m_achieveCoroutine);
+							m_achieveCoroutine = null;
+						}
+						UpdateAllRead(true, true);
+						returnCallback();
+					}, () =>
+					{
+						//0x159A598
+						m_pageIndex = m_pageMax - 1;
+						ResetPage(true);
+					}, () =>
+					{
+						//0x159A5D0
+						if(m_achieveCoroutine != null)
+						{
+							this.StopCoroutineWatched(m_achieveCoroutine);
+							m_achieveCoroutine = null;
+						}
+						UpdateAllRead(true, true);
+						if (m_pageIndex < 1)
+							return;
+						m_pageIndex--;
+						ResetPage(false);
+					}, () =>
+					{
+						//0x159A66C
+						NextPage();
+					}, buttonType, isBackButtonEmpty);
+				}
+				if(snsController.layoutNextButton != null)
+				{
+					snsController.layoutNextButton.CallbackButton = () =>
+					{
+						//0x159A694
+						UnreadPage();
+					};
+				}
+			}
 		}
 
 		//// RVA: 0x1597F00 Offset: 0x1597F00 VA: 0x1597F00
@@ -496,7 +648,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x159892C Offset: 0x159892C VA: 0x159892C
-		//private int GetReadMessageCount() { }
+		private int GetReadMessageCount()
+		{
+			return m_viewDataRoom.CNEOPOINCBA.FindAll((IMKNEDJDNGC _) =>
+			{
+				//0x159A3A8
+				return _.GAIEHFCHAOK == false;
+			}).Count;
+		}
 
 		//// RVA: 0x1599A94 Offset: 0x1599A94 VA: 0x1599A94
 		private int GetPageMsgCount(int page = -1)
@@ -518,7 +677,15 @@ namespace XeApp.Game.Menu
 		//private void StopShowPopupAchieve() { }
 
 		//// RVA: 0x159923C Offset: 0x159923C VA: 0x159923C
-		//private void CheckSNSQuest() { }
+		private void CheckSNSQuest()
+		{
+			if (IsTutorial)
+				return;
+			m_achieveQuestId = 0;
+			if (!ILLPDLODANB.OHFOAIDPDEM(m_roomId, out m_achieveQuestId))
+				return;
+			ILLPDLODANB.CIEDCPPINCB(m_achieveQuestId, 2);
+		}
 
 		//// RVA: 0x1599BDC Offset: 0x1599BDC VA: 0x1599BDC
 		private void UpdateTapSkip()
@@ -547,9 +714,5 @@ namespace XeApp.Game.Menu
 		//[CompilerGeneratedAttribute] // RVA: 0x72B25C Offset: 0x72B25C VA: 0x72B25C
 		//// RVA: 0x159A1A4 Offset: 0x159A1A4 VA: 0x159A1A4
 		//private void <ReceptionNewTalk>b__62_1() { }
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x72B27C Offset: 0x72B27C VA: 0x72B27C
-		//// RVA: 0x159A31C Offset: 0x159A31C VA: 0x159A31C
-		//private void <UpdateAllRead>b__71_0() { }
 	}
 }

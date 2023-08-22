@@ -1,5 +1,8 @@
+using mcrs;
 using System;
+using System.Collections;
 using UnityEngine;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
 {
@@ -41,19 +44,89 @@ namespace XeApp.Game.Menu
 		public bool isPlaySeItemIn; // 0x51
 
 		//// RVA: 0x12D0AA8 Offset: 0x12D0AA8 VA: 0x12D0AA8
-		//public void SetStatus(SnsItemObject obj) { }
+		public void SetStatus(SnsItemObject obj)
+		{
+			if(type == eLayoutType.EntranceItem)
+			{
+				if(layoutBase != null)
+				{
+					layoutBase.SetPosition(obj.pos.x, obj.pos.y, obj.size.y);
+					layoutBase.SetStatus(viewDataRoom, entranceCallback);
+					return;
+				}
+			}
+			else if(type >= eLayoutType.HeaderLine && type <= eLayoutType.Unopened)
+			{
+				if(layoutBase != null)
+				{
+					layoutBase.SetPosition(obj.pos.x, obj.pos.y);
+					layoutBase.SetStatus(viewTalk);
+				}
+			}
+		}
 
 		//// RVA: 0x12D0D04 Offset: 0x12D0D04 VA: 0x12D0D04
-		//public void Show() { }
+		public void Show()
+		{
+			if (type < eLayoutType.EntranceItem || type > eLayoutType.Unopened)
+				return;
+			if (layoutBase == null)
+				return;
+			if(animType == eAnimType.In)
+			{
+				layoutBase.SePlayEnable = isPlaySe;
+				isPlaySe = false;
+				animType = eAnimType.Wait;
+				layoutBase.In();
+			}
+			else
+			{
+				layoutBase.Show();
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72A5BC Offset: 0x72A5BC VA: 0x72A5BC
 		//// RVA: 0x12D0E40 Offset: 0x12D0E40 VA: 0x12D0E40
-		//public IEnumerator PlayInItemSe() { }
+		public IEnumerator PlayInItemSe()
+		{
+			//0x12D10F0
+			if (type >= eLayoutType.HeaderLine && type < eLayoutType.NextButton && isPlaySeItemIn)
+				SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_SNS_002);
+			yield break;
+		}
 
 		//// RVA: 0x12D0EEC Offset: 0x12D0EEC VA: 0x12D0EEC
-		//public void Hide() { }
+		public void Hide()
+		{
+			if(type >= eLayoutType.EntranceItem && type <= eLayoutType.Unopened)
+			{
+				if (layoutBase != null)
+					layoutBase.Hide();
+			}
+			if (type >= eLayoutType.HeaderLine && type <= eLayoutType.TalkL)
+				isPlaySeItemIn = true;
+		}
 
 		//// RVA: 0x12D0FCC Offset: 0x12D0FCC VA: 0x12D0FCC
-		//public void Clear() { }
+		public void Clear()
+		{
+			type = eLayoutType.None;
+			animType = eAnimType.Wait;
+			pos = Vector3.zero;
+			size = Vector3.zero;
+			if(viewTalk != null)
+			{
+				viewTalk.talk = null;
+				viewTalk.chara = null;
+			}
+			layoutBase = null;
+			viewTalk = null;
+			isPlaySe = false;
+			nextButton = null;
+			entranceItem = null;
+			talkWindowR = null;
+			talkWindowL = null;
+			headLine = null;
+		}
 	}
 }

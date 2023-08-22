@@ -15,7 +15,13 @@ namespace XeApp.Game.Menu
 		//public override void SetStatus(SNSTalkCreater.ViewTalk viewTalk) { }
 
 		//// RVA: 0x1932870 Offset: 0x1932870 VA: 0x1932870 Slot: 7
-		//public override void SetPosition(float pos_x, float pos_y) { }
+		public override void SetPosition(float pos_x, float pos_y)
+		{
+			if(m_rootRt != null)
+			{
+				m_rootRt.anchoredPosition = new Vector2(pos_x, -pos_y);
+			}
+		}
 
 		//// RVA: 0x19327AC Offset: 0x19327AC VA: 0x19327AC
 		public void SetText(string text)
@@ -42,13 +48,28 @@ namespace XeApp.Game.Menu
 		//private bool IsPlayingAnim() { }
 
 		//// RVA: 0x193298C Offset: 0x193298C VA: 0x193298C Slot: 10
-		//public override void In() { }
+		public override void In()
+		{
+			if (m_root == null)
+				return;
+			gameObject.SetActive(true);
+			m_root.StartChildrenAnimGoStop("go_in", "st_in");
+		}
 
 		//// RVA: 0x1932A54 Offset: 0x1932A54 VA: 0x1932A54 Slot: 11
-		//public override void Out() { }
+		public override void Out()
+		{
+			if (m_root == null)
+				return;
+			m_root.StartChildrenAnimGoStop("go_out", "st_out");
+		}
 
 		//// RVA: 0x1932AD4 Offset: 0x1932AD4 VA: 0x1932AD4 Slot: 8
-		//public override void Show() { }
+		public override void Show()
+		{
+			gameObject.SetActive(true);
+			m_root.StartChildrenAnimGoStop("st_in", "st_in");
+		}
 
 		// RVA: 0x1932B84 Offset: 0x1932B84 VA: 0x1932B84 Slot: 9
 		public override void Hide()
