@@ -309,7 +309,18 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB67D48 Offset: 0xB67D48 VA: 0xB67D48
 		public void Out()
 		{
-			TodoLogger.LogError(0, "Out");
+			if (layoutTitleBar != null)
+				layoutTitleBar.Out();
+			if (layoutFooter != null)
+				layoutFooter.Out();
+			if (layoutScrollList != null)
+				layoutScrollList.Out();
+			if (layoutUnopened != null)
+				layoutUnopened.Out();
+			if (layoutBg != null)
+				layoutBg.Out();
+			if (layoutBoot != null)
+				layoutBoot.Out();
 		}
 
 		//// RVA: 0xB6800C Offset: 0xB6800C VA: 0xB6800C
@@ -331,7 +342,16 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB683EC Offset: 0xB683EC VA: 0xB683EC
 		public void RoomOut()
 		{
-			TodoLogger.LogError(0, "RoomOut");
+			if (layoutTitleBar != null)
+				layoutTitleBar.Out();
+			if (layoutFooter != null)
+				layoutFooter.Out();
+			if (layoutScrollList != null)
+				layoutScrollList.Out();
+			if (layoutUnopened != null)
+				layoutUnopened.Out();
+			if (layoutBoot != null)
+				layoutBoot.Out();
 		}
 
 		//// RVA: 0xB68648 Offset: 0xB68648 VA: 0xB68648

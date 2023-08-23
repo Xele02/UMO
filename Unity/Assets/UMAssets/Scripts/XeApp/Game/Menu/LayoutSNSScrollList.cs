@@ -170,10 +170,57 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x19348C0 Offset: 0x19348C0 VA: 0x19348C0
-		//public SnsItemObject SetStatusTalk(SNSTalkCreater.ViewTalk talk, int homeDivaId, int messageCount) { }
+		public SnsItemObject SetStatusTalk(SNSTalkCreater.ViewTalk talk, int homeDivaId, int messageCount)
+		{
+			m_isScrollSetup = true;
+			SnsItemObject res = new SnsItemObject();
+			res.type = GetLayoutType(talk, homeDivaId);
+			res.viewTalk = talk;
+			res.isPlaySe = true;
+			if(messageCount == 1)
+			{
+				if (talk.talk.EDCBHGECEBE)
+					res.type = SnsItemObject.eLayoutType.Unopened;
+			}
+			Vector3 v = new Vector3(0, 40, 0);
+			Vector3 v2 = new Vector3(708, 106, 0);
+			if (m_viewList.Count > 0)
+			{
+				v.y = m_viewList[m_viewList.Count - 1].pos.y + m_viewList[m_viewList.Count - 1].size.y + 45;
+			}
+			res.pos = v;
+			v2.y = GetLayoutHeight(res);
+			res.size = v2;
+			m_viewList.Add(res);
+			AdjustmentScrollRect();
+			m_scrollSupport.ContentSize = new Vector2(708, m_scrollSupport.ContentSize.y + v2.y + 45);
+			AdjustmentScrollBarHeight();
+			m_isScrollUpdateOneSkip = true;
+			return res;
+		}
 
 		//// RVA: 0x1935250 Offset: 0x1935250 VA: 0x1935250
-		//public SnsItemObject SetNextPageButton() { }
+		public SnsItemObject SetNextPageButton()
+		{
+			m_isScrollSetup = true;
+			SnsItemObject res = new SnsItemObject();
+			res.type = SnsItemObject.eLayoutType.NextButton;
+			res.viewTalk = null;
+			Vector3 v = new Vector3(0, 40, 0);
+			Vector3 v2 = new Vector3(708, 106, 0);
+			if (m_viewList.Count > 0)
+			{
+				v.y = m_viewList[m_viewList.Count - 1].pos.y + m_viewList[m_viewList.Count - 1].size.y + 45;
+			}
+			res.pos = v;
+			res.size = v2;
+			m_viewList.Add(res);
+			AdjustmentScrollRect();
+			m_scrollSupport.ContentSize = new Vector2(708, m_scrollSupport.ContentSize.y + 151);
+			AdjustmentScrollBarHeight();
+			m_isScrollUpdateOneSkip = true;
+			return res;
+		}
 
 		//// RVA: 0x1934CBC Offset: 0x1934CBC VA: 0x1934CBC
 		private SnsItemObject.eLayoutType GetLayoutType(SNSTalkCreater.ViewTalk talk, int homeDivaId)
@@ -217,7 +264,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x19356A0 Offset: 0x19356A0 VA: 0x19356A0
-		//public void TalkIn(Action focusEndCallback) { }
+		public void TalkIn(Action focusEndCallback)
+		{
+			m_update.Clear();
+			m_update.Add(NewTalkFocus(focusEndCallback));
+		}
 
 		//// RVA: 0x1935804 Offset: 0x1935804 VA: 0x1935804
 		public void TalkOut()
@@ -227,10 +278,56 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x727F8C Offset: 0x727F8C VA: 0x727F8C
 		//// RVA: 0x193575C Offset: 0x193575C VA: 0x193575C
-		//private IEnumerator NewTalkFocus(Action focusEndCallback) { }
+		private IEnumerator NewTalkFocus(Action focusEndCallback)
+		{
+			float focus_value; // 0x18
+			bool isWaitMove; // 0x1C
+			Vector3 pos; // 0x20
+
+			//0x1939454
+			float f = 40;
+			if (m_viewList.Count > 0)
+				f = m_viewList.Count * 45 + 40;
+			float h = CalcLayoutHeight();
+			isWaitMove = true;
+			//focus_value = Mathf.Max(, h + f - m_scrollSupport.RangeHeight);
+			TodoLogger.LogError(TodoLogger.ToCheck, "Max value ?");
+			focus_value = h + f - m_scrollSupport.RangeHeight;
+			pos = m_scrollRt.anchoredPosition;
+			while(isWaitMove)
+			{
+				pos.y += (focus_value - pos.y) / 5.0f;
+				m_scrollRt.anchoredPosition = pos;
+				if(Mathf.Abs(focus_value - pos.y) < 10)
+				{
+					pos.y = focus_value;
+					m_scrollRt.anchoredPosition = pos;
+					isWaitMove = false;
+				}
+				yield return null;
+			}
+			while (IsPlayingTalkIn())
+				yield return null;
+			SetVertical();
+			if (focusEndCallback != null)
+				focusEndCallback();
+		}
 
 		//// RVA: 0x193589C Offset: 0x193589C VA: 0x193589C
-		//public bool IsPlayingTalkIn() { }
+		public bool IsPlayingTalkIn()
+		{
+			if(m_viewList.Count > 0)
+			{
+				if(m_viewList[m_viewList.Count - 1] != null)
+				{
+					if(m_viewList[m_viewList.Count - 1].layoutBase != null)
+					{
+						return m_viewList[m_viewList.Count - 1].layoutBase.IsPlaying();
+					}
+				}
+			}
+			return false;
+		}
 
 		//// RVA: 0x1935A18 Offset: 0x1935A18 VA: 0x1935A18
 		//public void SetPositionRoom() { }
@@ -258,7 +355,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1936080 Offset: 0x1936080 VA: 0x1936080
-		//public int GetListCount() { }
+		public int GetListCount()
+		{
+			return m_viewList.Count;
+		}
 
 		//// RVA: 0x1935C14 Offset: 0x1935C14 VA: 0x1935C14
 		private void SetPositionYInner(float value)
@@ -276,7 +376,15 @@ namespace XeApp.Game.Menu
 		//private float CalcPositionLast(int count, float layoutSpace = 0, float topSpace = 0, float bottomSpace = 0) { }
 
 		//// RVA: 0x1935A90 Offset: 0x1935A90 VA: 0x1935A90
-		//private float CalcLayoutHeight() { }
+		private float CalcLayoutHeight()
+		{
+			float res = 0;
+			for(int i = 0; i < m_viewList.Count; i++)
+			{
+				res += GetLayoutHeight(m_viewList[i]);
+			}
+			return res;
+		}
 
 		//// RVA: 0x1936130 Offset: 0x1936130 VA: 0x1936130
 		public void AddViewEntrance(List<LayoutSNSRoomItem> itemList)

@@ -38,11 +38,25 @@ namespace XeApp.Game.Menu
 		//public void Update() { }
 
 		//// RVA: 0x1D1C5A8 Offset: 0x1D1C5A8 VA: 0x1D1C5A8
-		//public void Out() { }
+		public void Out()
+		{
+			if (m_root == null || !IsOpen)
+				return;
+			IsOpen = false;
+			m_root.StartChildrenAnimGoStop("go_out", "st_out");
+			m_animList.Clear();
+			m_animList.Add(WaitAnimOut());
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x727894 Offset: 0x727894 VA: 0x727894
 		//// RVA: 0x1D1C6A4 Offset: 0x1D1C6A4 VA: 0x1D1C6A4
-		//private IEnumerator WaitAnimOut() { }
+		private IEnumerator WaitAnimOut()
+		{
+			//0x1D1CAD8
+			while (m_root != null && m_root.IsPlayingChildren())
+				yield return null;
+			gameObject.SetActive(false);
+		}
 
 		//// RVA: 0x1D1C750 Offset: 0x1D1C750 VA: 0x1D1C750
 		//public void Show() { }

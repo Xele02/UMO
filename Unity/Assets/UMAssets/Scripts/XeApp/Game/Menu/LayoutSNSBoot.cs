@@ -71,7 +71,9 @@ namespace XeApp.Game.Menu
 		{
 			if(m_root != null && m_logoAnim != null)
 			{
-				return m_root.IsPlayingChildren() || m_logoAnim.IsPlayingChildren();
+				bool rootPlaying = m_root.IsPlayingChildren();
+				bool logoPlaying = m_logoAnim.IsPlaying();
+				return rootPlaying || logoPlaying;
 			}
 			return false;
 		}

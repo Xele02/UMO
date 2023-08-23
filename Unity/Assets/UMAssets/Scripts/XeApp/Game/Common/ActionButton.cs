@@ -378,7 +378,7 @@ namespace XeApp.Game.Common
 			//0xE5F4EC
 			if(m_playRequestAnim.Count > 0)
 			{
-				while (m_abs.IsPlaying())
+				while (IsPlaying(m_abs))
 					yield return null;
 
 				string Label = m_playRequestAnim.Dequeue();

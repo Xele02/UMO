@@ -95,21 +95,49 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1D1D918 Offset: 0x1D1D918 VA: 0x1D1D918
-		//public void WritingIn() { }
+		public void WritingIn()
+		{
+			if (m_writingAnim == null)
+				return;
+			m_writingAnim.StartChildrenAnimGoStop("go_in", "st_in");
+			m_animList.Clear();
+			m_animList.Add(WaitAnimWritingIn());
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x727A44 Offset: 0x727A44 VA: 0x727A44
 		//// RVA: 0x1D1DA00 Offset: 0x1D1DA00 VA: 0x1D1DA00
-		//private IEnumerator WaitAnimWritingIn() { }
+		private IEnumerator WaitAnimWritingIn()
+		{
+			//0x1932528
+			while (IsPlayingWriting())
+				yield return null;
+			Loop();
+		}
 
 		//// RVA: 0x1D1DA88 Offset: 0x1D1DA88 VA: 0x1D1DA88
-		//public void WritingOut() { }
+		public void WritingOut()
+		{
+			if (m_writingAnim == null)
+				return;
+			m_animList.Clear();
+			m_writingAnim.StartChildrenAnimGoStop("go_out", "st_out");
+			m_animList.Add(WaitAnimWritingOut());
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x727ABC Offset: 0x727ABC VA: 0x727ABC
 		//// RVA: 0x1D1DB88 Offset: 0x1D1DB88 VA: 0x1D1DB88
-		//private IEnumerator WaitAnimWritingOut() { }
+		private IEnumerator WaitAnimWritingOut()
+		{
+			//0x193266C
+			while (IsPlayingWriting())
+				yield return null;
+		}
 
 		//// RVA: 0x1D1DC10 Offset: 0x1D1DC10 VA: 0x1D1DC10
-		//private void Loop() { }
+		private void Loop()
+		{
+			m_writingAnim.StartChildrenAnimLoop("logo_act", "loen_act");
+		}
 
 		// RVA: 0x1D1DC90 Offset: 0x1D1DC90 VA: 0x1D1DC90
 		public void Reset()

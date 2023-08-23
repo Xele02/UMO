@@ -21,7 +21,7 @@ namespace XeSys.Gfx
 		//public float ContentWidth { get; set; } 0x1F05CB0 0x1F05CB8
 		public float ContentHeight { get { return m_contentSize.y; } set { m_contentSize.y = value; UpdateContent(); } } //0x1F05CC0 0x1F05CC8
 		public Vector2 RangeSize { get { return m_range; } } //0x1F05CD0
-		public float RangeHeight { get { return m_range.x; } set { m_range.y = value; } } //0x1F05CE4 0x1F05CEC
+		public float RangeHeight { get { return m_range.y; } set { m_range.y = value; } } //0x1F05CE4 0x1F05CEC
 
 		// RVA: 0x1F04E64 Offset: 0x1F04E64 VA: 0x1F04E64
 		private void Awake()

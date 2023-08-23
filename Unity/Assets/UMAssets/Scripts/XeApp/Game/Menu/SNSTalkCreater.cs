@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -312,8 +313,142 @@ namespace XeApp.Game.Menu
 			SnsItemObject snsScrollObject; // 0x2C
 
 			//0x159A6D8
-			TodoLogger.LogError(0, "ReceptionNewTalk");
-			yield return null;
+			if (!m_isReception)
+				yield break;
+			m_isTap = false;
+			realCount = GetReadMessageCount();
+			if (!m_pageInexDict.ContainsKey(m_pageIndex))
+				yield break;
+			if(m_pageInexDict[m_pageIndex].end <= realCount)
+			{
+				IsClose = true;
+				m_isReception = false;
+			}
+			wait = 0;
+			while(wait < m_viewDataRoom.CNEOPOINCBA[realCount].FMDCAFCHBJH_Offset && !m_isSkip)
+			{
+				wait += TimeWrapper.deltaTime;
+				yield return null;
+			}
+			m_viewDataRoom.CNEOPOINCBA[realCount].GAIEHFCHAOK = false;
+			m_currentTalkIndex = realCount;
+			realCount++;
+			m_isReception = false;
+			if(!m_isLatestPage)
+			{
+				if(GetUnreadIndex() < 0)
+				{
+					snsController.layoutFooter.WritingOut();
+					yield break;
+				}
+				m_isReception = true;
+				m_isSkip = false;
+				m_isTap = true;
+				if (realCount < m_pageInexDict[m_pageIndex].end)
+					yield break;
+				m_isReception = false;
+				m_isTap = true;
+				yield break;
+			}
+			talk = RegisterViewTalk(m_currentTalkIndex);
+			if(talk.chara.IDELKEKDIFD_CharaId > 0)
+			{
+				snsController.SNSInputDisable();
+				GameManager.Instance.SnsIconCache.CharIconLoad(talk.chara.IDELKEKDIFD_CharaId, (IiconTexture texture) =>
+				{
+					//0x159A3A4
+					return;
+				});
+				while (GameManager.Instance.SnsIconCache.IsLoading())
+					yield return null;
+				snsController.SNSInputEnable();
+			}
+			scrollList = GetLayoutScrollList();
+			int diva = GameManager.Instance.GetHomeDiva().AHHJLDLAPAN_DivaId;
+			if (IsTutorial)
+				diva = 1;
+			snsScrollObject = scrollList.SetStatusTalk(talk, diva, GetPageMsgCount(m_pageIndex));
+			int a = 0;
+			if(scrollList.GetListCount() - 1 > -1)
+			{
+				a = scrollList.GetListCount() - 1;
+			}
+			snsController.layoutFooter.WritingOut();
+			if (scrollList.IsCheckRange(a, false))
+			{
+				IsPlayingTalk = true;
+				snsController.SNSInputDisable();
+				yield return null;
+				snsScrollObject.animType = SnsItemObject.eAnimType.In;
+				bool isWaitFocus = true;
+				scrollList.TalkIn(() =>
+				{
+					//0x159A454
+					isWaitFocus = false;
+				});
+				while (isWaitFocus)
+					yield return null;
+				snsController.SNSInputEnable();
+				IsPlayingTalk = false;
+			}
+			//LAB_0159afe8
+			if(GetUnreadIndex() > -1 && !m_isPause)
+			{
+				snsController.layoutFooter.WritingIn();
+			}
+			UpdatePage();
+			m_isReception = true;
+			m_isSkip = false;
+			m_isTap = true;
+			if (realCount < m_pageInexDict[m_pageIndex].end)
+				yield break;
+			m_isReception = false;
+			m_isTap = true;
+			if(GetPageMsgCount(m_pageIndex) == 1)
+			{
+				snsController.layoutFooter.SetIconHyphen();
+				yield break;
+			}
+			snsController.layoutFooter.SetIconEnd(true);
+			UpdateAllRead(false, false);
+			if(!IsTutorial)
+			{
+				m_achieveCoroutine = this.StartCoroutineWatched(ShowPopupAchieve(() =>
+				{
+					//0x159A1A4
+					m_achieveCoroutine = null;
+				}));
+			}
+			if (IsTutorial)
+				yield break;
+			if (!m_pageInexDict.ContainsKey(m_pageIndex + 1))
+				yield break;
+			snsScrollObject = null;
+			if(m_viewDataRoom.IHCEJBAEEDO != 0)
+			{
+				snsScrollObject = scrollList.SetNextPageButton();
+			}
+			a = 0;
+			if(scrollList.GetListCount() - 1 > -1)
+			{
+				a = scrollList.GetListCount() - 1;
+			}
+			if(scrollList.IsCheckRange(a, false))
+			{
+				IsPlayingTalk = true;
+				yield return null;
+				if (snsScrollObject != null)
+					snsScrollObject.animType = SnsItemObject.eAnimType.In;
+				bool isWaitFocus = true;
+				scrollList.TalkIn(() =>
+				{
+					//0x159A468
+					isWaitFocus = false;
+				});
+				while (isWaitFocus)
+					yield return null;
+				IsPlayingTalk = false;
+			}
 		}
 
 		//// RVA: 0x1598700 Offset: 0x1598700 VA: 0x1598700
@@ -671,7 +806,22 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72B1C4 Offset: 0x72B1C4 VA: 0x72B1C4
 		//// RVA: 0x1599AE4 Offset: 0x1599AE4 VA: 0x1599AE4
-		//private IEnumerator ShowPopupAchieve(Action finish) { }
+		private IEnumerator ShowPopupAchieve(Action finish)
+		{
+			GameManager.PushBackButtonHandler dummyCallback; // 0x1C
+			float wait; // 0x20
+			float waitTime; // 0x24
+			bool prevScrollEnable; // 0x28
+
+			//0x159BAE4
+			if(m_achieveQuestId > 0)
+			{
+				TodoLogger.LogError(0, "ShowPopupAchieve");
+				yield return null;
+			}
+			if (finish != null)
+				finish();
+		}
 
 		//// RVA: 0x1599BAC Offset: 0x1599BAC VA: 0x1599BAC
 		//private void StopShowPopupAchieve() { }
@@ -690,7 +840,29 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1599BDC Offset: 0x1599BDC VA: 0x1599BDC
 		private void UpdateTapSkip()
 		{
-			TodoLogger.LogError(0, "UpdateTapSkip");
+			if(!m_isManual && m_initialized)
+			{
+				TouchInfoRecord rec = InputManager.Instance.GetFirstInScreenTouchRecord();
+				if(rec != null)
+				{
+					if(rec.currentInfo.isBegan)
+					{
+						if(IsTapRect(rec.currentInfo.nativePosition))
+						{
+							m_startTapPos = rec.currentInfo.nativePosition;
+							return;
+						}
+					}
+					if(rec.currentInfo.isEnded)
+					{
+						if (IsTapRect(rec.currentInfo.nativePosition))
+						{
+							if (Vector3.Distance(m_startTapPos, rec.currentInfo.nativePosition) < 16)
+								m_isSkip = true;
+						}
+					}
+				}
+			}
 		}
 
 		//// RVA: 0x15983E0 Offset: 0x15983E0 VA: 0x15983E0
@@ -705,7 +877,17 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1599E88 Offset: 0x1599E88 VA: 0x1599E88
-		//private bool IsTapRect(Vector3 nativaPosition) { }
+		private bool IsTapRect(Vector3 nativaPosition)
+		{
+			if(m_screenCam != null)
+			{
+				if(snsController.tapScreenRect != null)
+				{
+					return RectTransformUtility.RectangleContainsScreenPoint(snsController.tapScreenRect, nativaPosition, m_screenCam);
+				}
+			}
+			return false;
+		}
 
 		//[CompilerGeneratedAttribute] // RVA: 0x72B23C Offset: 0x72B23C VA: 0x72B23C
 		//// RVA: 0x159A158 Offset: 0x159A158 VA: 0x159A158
