@@ -26,7 +26,10 @@ public class GPMHOAKFALE_Adventure : DIHHCBACKGG_DbSection
 	//// RVA: 0x1E5F1EC Offset: 0x1E5F1EC VA: 0x1E5F1EC
 	public NGDBKCKMDHE GCINIJEMHFK(int PPFNGGCBJKC)
 	{
-		TodoLogger.LogError(0, "GCINIJEMHFK");
+		if (PPFNGGCBJKC != 0 && PPFNGGCBJKC <= CDENCMNHNGA.Count)
+		{
+			return CDENCMNHNGA[PPFNGGCBJKC - 1];
+		}
 		return null;
 	}
 

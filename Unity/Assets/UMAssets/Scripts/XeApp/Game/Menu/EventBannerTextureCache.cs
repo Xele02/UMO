@@ -2,6 +2,10 @@ using System;
 
 namespace XeApp.Game.Menu
 {
+	public class EventBannerTexture : IconTexture
+	{
+	}
+
 	public class EventBannerTextureCache : IconTextureCache
 	{
 
@@ -20,8 +24,9 @@ namespace XeApp.Game.Menu
 		// RVA: 0xF0ED90 Offset: 0xF0ED90 VA: 0xF0ED90 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
 		{
-			TodoLogger.LogError(0, "EventBannerTextureCache CreateIconTexture");
-			return null;
+			EventBannerTexture tex = new EventBannerTexture();
+			SetupForSplitTexture(info, tex);
+			return tex;
 		}
 
 		// // RVA: 0xF0EE18 Offset: 0xF0EE18 VA: 0xF0EE18
@@ -34,7 +39,10 @@ namespace XeApp.Game.Menu
 		// public void LoadShortBanner(int id, Action<IiconTexture> callBack) { }
 
 		// // RVA: 0xF0EF90 Offset: 0xF0EF90 VA: 0xF0EF90
-		// public void LoadEventStoryThumbnail(int id, Action<IiconTexture> callback) { }
+		public void LoadEventStoryThumbnail(int id, Action<IiconTexture> callback)
+		{
+			Load(string.Format("ct/ev/tn/{0:D4}.xab", id), callback);
+		}
 
 		// // RVA: 0xF0F038 Offset: 0xF0F038 VA: 0xF0F038
 		// public void TryInstallEventStoryThumbnail(int id) { }

@@ -1,5 +1,24 @@
+using XeApp.Game.Menu;
+
 namespace XeApp.Game.Common
 {
+	public struct AdvSetupParam
+	{
+		public int eventUniqueId; // 0x0
+		public int restorBgmId; // 0x4
+		public float restorListPosition; // 0x8
+		public AdvReturnBgParam bgParam; // 0xC
+		public CCAAJNJGNDO eventStoryData; // 0x1C
+	}
+
+	public struct AdvReturnBgParam
+	{
+		public int bgId; // 0x0
+		public BgTextureType textureType; // 0x4
+		public BgType bgType; // 0x8
+		public GameAttribute.Type attr; // 0xC
+	}
+
 	public class AdvResultData
 	{
 		private string m_returnSceneName; // 0x8
@@ -9,8 +28,8 @@ namespace XeApp.Game.Common
 		private int m_eventUniqueId; // 0x18
 		private int m_restorBgmId; // 0x1C
 		private float m_restoreListPosition; // 0x20
-		//private AdvReturnBgParam m_restorBgParam; // 0x24
-		//private CCAAJNJGNDO m_eventStoryData; // 0x34
+		private AdvReturnBgParam m_restorBgParam; // 0x24
+		private CCAAJNJGNDO m_eventStoryData; // 0x34
 
 		//public string ReturnSceneName { get; } 0xE58000
 		//public TransitionUniqueId UniqueId { get; } 0xE5F7A0
@@ -43,10 +62,22 @@ namespace XeApp.Game.Common
 		// RVA: 0xE5F8B0 Offset: 0xE5F8B0 VA: 0xE5F8B0
 		public void Setup(string returnSceneName, TransitionUniqueId uniqueId)
 		{
-			TodoLogger.LogError(0, "Setup");
+			m_returnSceneName = returnSceneName;
+			m_uniqueId = uniqueId;
+			m_eventUniqueId = 0;
+			m_restoreListPosition = 0;
 		}
 
 		//// RVA: 0xE5F8C8 Offset: 0xE5F8C8 VA: 0xE5F8C8
-		//public void Setup(string returnSceneName, TransitionUniqueId uniqueId, AdvSetupParam setupParam) { }
+		public void Setup(string returnSceneName, TransitionUniqueId uniqueId, AdvSetupParam setupParam)
+		{
+			m_returnSceneName = returnSceneName;
+			m_uniqueId = uniqueId;
+			m_eventUniqueId = setupParam.eventUniqueId;
+			m_restorBgParam = setupParam.bgParam;
+			m_restorBgmId = setupParam.restorBgmId;
+			m_eventStoryData = setupParam.eventStoryData;
+			m_restoreListPosition = setupParam.restorListPosition;
+		}
 	}
 }

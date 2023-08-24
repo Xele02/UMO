@@ -71,7 +71,7 @@ namespace XeApp.Game.Menu
 		private GCIJNCFDNON_SceneInfo m_viewSceneData; // 0xDC
 		private AEKDNMPPOJN m_limitOverData = new AEKDNMPPOJN(); // 0xE0
 		private MNDAMOGGJBJ m_viewGrowItemData = new MNDAMOGGJBJ(); // 0xE4
-		//private CCAAJNJGNDO m_viewEventStoryData = new CCAAJNJGNDO(); // 0xE8
+		private CCAAJNJGNDO m_viewEventStoryData = new CCAAJNJGNDO(); // 0xE8
 		private List<byte> m_unLockTargetPanelIndex = new List<byte>(100); // 0xEC
 		private List<byte> m_unlockTargetRoadIndex = new List<byte>(100); // 0xF0
 		private PopupSceneGrowthSetting m_popupSetting = new PopupSceneGrowthSetting(); // 0xF4
@@ -315,7 +315,9 @@ namespace XeApp.Game.Menu
 					m_statusWindow.PushStoryButtonListener += () =>
 					{
 						//0x10E76B8
-						TodoLogger.LogNotImplemented("StatusWindow");
+						m_viewEventStoryData.MFMBGODNFGG(m_viewSceneData.BCCHOBPJJKE_SceneId);
+						EventStoryArgs arg = new EventStoryArgs(m_viewEventStoryData);
+						MenuScene.Instance.Call(TransitionList.Type.EVENT_STORY, arg, true);
 					};
 				}));
 				layoutOperation = null;

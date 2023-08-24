@@ -209,9 +209,9 @@ namespace XeApp.Game.Menu
 				bool b = true;
 				for(int i = 0; i < m_eventStoryData.FFPCLEONGHE.Count; i++)
 				{
-					if(m_eventStoryData.FFPCLEONGHE[i].CDOCOLOKCJK)
+					if(m_eventStoryData.FFPCLEONGHE[i].CDOCOLOKCJK_Unlocked)
 					{
-						if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN(m_eventStoryData.FFPCLEONGHE[i].PBPOLELIPJI))
+						if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN(m_eventStoryData.FFPCLEONGHE[i].PBPOLELIPJI_AdventureId))
 						{
 							b = false;
 							m_storyNewLayout.StartChildrenAnimGoStop("01");
@@ -265,7 +265,9 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10FA75C Offset: 0x10FA75C VA: 0x10FA75C
 		private void OnPushStoryButton()
 		{
-			TodoLogger.LogNotImplemented("OnPushStoryButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if (PushStoryButtonListener != null)
+				PushStoryButtonListener();
 		}
 
 		//// RVA: 0x10FA5E4 Offset: 0x10FA5E4 VA: 0x10FA5E4

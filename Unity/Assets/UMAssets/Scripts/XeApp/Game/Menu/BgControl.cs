@@ -152,7 +152,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x143CBC8 Offset: 0x143CBC8 VA: 0x143CBC8
-		// public BgTextureType GetCurrentTextureType() { }
+		public BgTextureType GetCurrentTextureType()
+		{
+			return m_textureType;
+		}
 
 		// // RVA: 0x143CBD0 Offset: 0x143CBD0 VA: 0x143CBD0
 		public int GetCurrentId()

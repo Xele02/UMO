@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using XeApp.Game.Common;
 using XeApp.Game.Tutorial;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -103,11 +104,41 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12D36E0 Offset: 0x12D36E0 VA: 0x12D36E0
-		//public void InRoom(SnsScreen.eSceneType sceneType, int roomId, SNSController.eObjectOrderType orderType = 2, int snsId = 0, bool isEventStory = False, bool isReview = False) { }
+		public void InRoom(eSceneType sceneType, int roomId, SNSController.eObjectOrderType orderType = SNSController.eObjectOrderType.Last, int snsId = 0, bool isEventStory = false, bool isReview = false)
+		{
+			m_sceneType = sceneType;
+			m_orderType = orderType;
+			m_currentRoomId = roomId;
+			if (sceneType == eSceneType.Menu)
+				this.StartCoroutineWatched(DefaultPhase(eInType.Room, snsId, isEventStory, false, isReview));
+			else if(((int)sceneType & 0xfffffffeU) == 2)
+			{
+				SetManualEnable(true);
+				this.StartCoroutineWatched(DefaultPhase(eInType.Room, snsId, isEventStory, false, isReview));
+				this.StartCoroutineWatched(Co_WaitTalkEnd());
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72A80C Offset: 0x72A80C VA: 0x72A80C
 		//// RVA: 0x12D3798 Offset: 0x12D3798 VA: 0x12D3798
-		//private IEnumerator Co_WaitTalkEnd() { }
+		private IEnumerator Co_WaitTalkEnd()
+		{
+			float timeWait;
+
+			//0x12D5784
+			while (!talkCreater.IsNextTalk())
+				yield return null;
+			yield return null;
+			while (GetCurrentTalkCount() < talkCreater.GetTotalTalkCount())
+				yield return null;
+			timeWait = 0;
+			while (timeWait < 1)
+			{
+				timeWait += TimeWrapper.deltaTime;
+				yield return null;
+			}
+			talkCreater.Close();
+		}
 
 		// RVA: 0x12D3844 Offset: 0x12D3844 VA: 0x12D3844 Slot: 4
 		public void Dispose()
@@ -130,7 +161,12 @@ namespace XeApp.Game.Menu
 		//public int GetCurrentTalkIndex() { }
 
 		//// RVA: 0x12D3A7C Offset: 0x12D3A7C VA: 0x12D3A7C
-		//public int GetCurrentTalkCount() { }
+		public int GetCurrentTalkCount()
+		{
+			if (talkCreater != null)
+				return talkCreater.GetCurrentIndex() + 1;
+			return 0;
+		}
 
 		//// RVA: 0x12D3624 Offset: 0x12D3624 VA: 0x12D3624
 		public void SetManualEnable(bool enable)

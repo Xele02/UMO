@@ -128,10 +128,28 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1597804 Offset: 0x1597804 VA: 0x1597804
-		//public int GetCurrentIndex() { }
+		public int GetCurrentIndex()
+		{
+			return m_currentTalkIndex;
+		}
 
 		//// RVA: 0x159780C Offset: 0x159780C VA: 0x159780C
-		//public int GetTotalTalkCount() { }
+		public int GetTotalTalkCount()
+		{
+			if (m_viewDataSNS != null && m_viewDataSNS.NPKPBDIDBBG_RoomData != null && m_viewDataSNS.NPKPBDIDBBG_RoomData.Count > 0)
+			{
+				GAKAAIHLFKI d = m_viewDataSNS.NPKPBDIDBBG_RoomData.Find((GAKAAIHLFKI _) =>
+				{
+					//0x159A158
+					return _.MALFHCHNEFN_Id == m_roomId;
+				});
+				if(d != null)
+				{
+					return d.CNEOPOINCBA.Count;
+				}
+			}
+			return 0;
+		}
 
 		//// RVA: 0x159794C Offset: 0x159794C VA: 0x159794C
 		public void NextTalk()
@@ -150,7 +168,16 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1597980 Offset: 0x1597980 VA: 0x1597980
-		//public bool IsNextTalk() { }
+		public bool IsNextTalk()
+		{
+			if (!m_isManual)
+				return true;
+			if(m_initialized)
+			{
+				return m_isTap;
+			}
+			return false;
+		}
 
 		//// RVA: 0x15979B0 Offset: 0x15979B0 VA: 0x15979B0
 		//public void PauseTalk() { }
@@ -159,7 +186,11 @@ namespace XeApp.Game.Menu
 		//public void RestartTalk() { }
 
 		//// RVA: 0x1597A70 Offset: 0x1597A70 VA: 0x1597A70
-		//public void Close() { }
+		public void Close()
+		{
+			if (m_callbackExit != null)
+				m_callbackExit();
+		}
 
 		//// RVA: 0x1597A84 Offset: 0x1597A84 VA: 0x1597A84
 		public void SetManualEnable(bool isManual)
@@ -890,10 +921,6 @@ namespace XeApp.Game.Menu
 			}
 			return false;
 		}
-
-		//[CompilerGeneratedAttribute] // RVA: 0x72B23C Offset: 0x72B23C VA: 0x72B23C
-		//// RVA: 0x159A158 Offset: 0x159A158 VA: 0x159A158
-		//private bool <GetTotalTalkCount>b__52_0(GAKAAIHLFKI _) { }
 		
 		//[CompilerGeneratedAttribute] // RVA: 0x72B25C Offset: 0x72B25C VA: 0x72B25C
 		//// RVA: 0x159A1A4 Offset: 0x159A1A4 VA: 0x159A1A4

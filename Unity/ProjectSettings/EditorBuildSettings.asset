@@ -35,7 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/UMAssets/Scene/Project/Scenes/RhythmGameSkip.unity
     guid: 8708893b8df59f34aa8d4f621652ba5a
-  - enabled: 0
+  - enabled: 1
     path: Assets/UMAssets/Scene/Project/Scenes/Adv.unity
     guid: 31aefc2ab9fa8c94983ff3dd235bceb4
   - enabled: 0

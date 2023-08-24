@@ -833,15 +833,36 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB31758 Offset: 0xB31758 VA: 0xB31758
 		public void GotoAdventure(bool isExecuteSceneExit = false)
 		{
-			TodoLogger.LogError(0, "GotoAdventure");
+			m_menuTransitionControl.SetHeaderMenuButtonDisable(MenuHeaderControl.Button.All);
+			m_menuTransitionControl.SetMenuContentButtonDisable();
+			m_menuTransitionControl.SetFooterMenuButtonDisable(MenuFooterControl.Button.All);
+			GameManager.Instance.RemovePushBackButtonHandler(OnBackButton);
+			this.StartCoroutineWatched(Co_GotoAdventure(isExecuteSceneExit));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7B7C Offset: 0x6C7B7C VA: 0x6C7B7C
 		// // RVA: 0xB318BC Offset: 0xB318BC VA: 0xB318BC
-		// private IEnumerator Co_GotoAdventure(bool isExecuteSceneExit) { }
+		private IEnumerator Co_GotoAdventure(bool isExecuteSceneExit)
+		{
+			//0xB391C4
+			enableFade = false;
+			GameManager.FadeOut(0.4f);
+			GameManager.Instance.snsNotification.Close();
+			if(isExecuteSceneExit)
+			{
+				yield return Co.R(m_menuTransitionControl.ExitTransition());
+			}
+			yield return GameManager.Instance.WaitFadeYielder;
+			yield return Co.R(m_menuTransitionControl.DestroyTransion());
+			GotoAdventureInner(true);
+		}
 
 		// // RVA: 0xB31984 Offset: 0xB31984 VA: 0xB31984
-		// private void GotoAdventureInner(bool isFade) { }
+		private void GotoAdventureInner(bool isFade)
+		{
+			enableFade = isFade;
+			NextScene("Adv");
+		}
 
 		// // RVA: 0xB31A00 Offset: 0xB31A00 VA: 0xB31A00
 		// public void GotoMiniGame(int miniGameId) { }

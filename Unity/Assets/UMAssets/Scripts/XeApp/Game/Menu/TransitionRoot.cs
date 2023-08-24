@@ -731,7 +731,18 @@ namespace XeApp.Game.Menu
 
 			// [IteratorStateMachineAttribute] // RVA: 0x6C8D4C Offset: 0x6C8D4C VA: 0x6C8D4C
 			// // RVA: 0xA3A184 Offset: 0xA3A184 VA: 0xA3A184
-			// public IEnumerator ExitTransition() { }
+			public IEnumerator ExitTransition()
+			{
+				//0xA40E9C
+				if(m_currentRoot != null)
+				{
+					m_currentRoot.OnStartExitAnimation();
+					m_currentRoot.OnStartExitTitleHeader();
+					m_helpButton.TryHide(TransitionList.Type.UNDEFINED);
+					while (!m_currentRoot.IsEndExitAnimation())
+						yield return null;
+				}
+			}
 
 			// [IteratorStateMachineAttribute] // RVA: 0x6C8DC4 Offset: 0x6C8DC4 VA: 0x6C8DC4
 			// // RVA: 0xA3A230 Offset: 0xA3A230 VA: 0xA3A230
