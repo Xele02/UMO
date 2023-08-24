@@ -359,6 +359,7 @@ namespace XeApp.Game.Menu
 			else if(panel is SceneGrowthRoad)
 			{
 				SceneGrowthRoad p = panel as SceneGrowthRoad;
+				p.Wait();
 				p.SetPossible(m_boardSquareList[sqrX][sqrY].isPossible);
 				bool isSubboard = this is SceneGrowthSubBoard;
 				if (!m_boardSquareList[sqrX][sqrY].isOpen)
@@ -366,7 +367,7 @@ namespace XeApp.Game.Menu
 				else
 					p.SetOpen(isSubboard, sqrY == 2);
 				p.SetIndex(m_boardSquareList[sqrX][sqrY].saveIndex);
-				panel.RectTransform.SetAsLastSibling();
+				panel.RectTransform.SetAsFirstSibling();
 			}
 		}
 
