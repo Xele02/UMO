@@ -34,7 +34,7 @@ public class IMKNEDJDNGC
 
 public class GAKAAIHLFKI
 {
-	public int MALFHCHNEFN; // 0x8
+	public int MALFHCHNEFN_Id; // 0x8
 	public string OPFGFINHFCE; // 0xC
 	public long LKGLMCFEDBF; // 0x10
 	public int HIDHLFCBIDE; // 0x18
@@ -46,7 +46,7 @@ public class GAKAAIHLFKI
 	public List<IMKNEDJDNGC> CNEOPOINCBA = new List<IMKNEDJDNGC>(); // 0x3C
 
 	//// RVA: 0x13FF9BC Offset: 0x13FF9BC VA: 0x13FF9BC
-	public int FOBEBCPEILE(long JHNMKKNEENE, bool BAOMADKMHKP = false, bool DGLDFDLGGBB = false)
+	public int FOBEBCPEILE_GetCurrentTalkIndex(long JHNMKKNEENE, bool BAOMADKMHKP = false, bool DGLDFDLGGBB = false)
 	{
 		for(int i = 0; i < CNEOPOINCBA.Count; i++)
 		{
@@ -80,7 +80,7 @@ public class GAKAAIHLFKI
 	}
 
 	//// RVA: 0x13FFD7C Offset: 0x13FFD7C VA: 0x13FFD7C
-	public int MCGDHHHFBMO(long JHNMKKNEENE, bool BAOMADKMHKP = false)
+	public int MCGDHHHFBMO_GetUnreadIndex(long JHNMKKNEENE, bool BAOMADKMHKP = false)
 	{
 		int res = 0;
 		for(int i = 0; i < CNEOPOINCBA.Count; i++)

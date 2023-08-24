@@ -31,7 +31,7 @@ namespace XeApp.Game.Menu
 			m_pressCallback = callback;
 			m_roomData = data;
 			m_roomName.text = data.OPFGFINHFCE;
-			SetImage(data.MALFHCHNEFN);
+			SetImage(data.MALFHCHNEFN_Id);
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			m_newEnable = data.PLKKMHBFDCJ(time);
 			SwitchNewIcon(m_newEnable);
@@ -178,7 +178,7 @@ namespace XeApp.Game.Menu
 					if (m_root != null && m_root.IsPlayingChildren())
 						return;
 					if (m_pressCallback != null)
-						m_pressCallback(m_roomData.MALFHCHNEFN);
+						m_pressCallback(m_roomData.MALFHCHNEFN_Id);
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				});
 			}

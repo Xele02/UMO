@@ -194,10 +194,10 @@ namespace XeApp.Game.Menu
 					layoutBg.SetStatus(divaId);
 				if(layoutTitleBar != null)
 				{
-					layoutTitleBar.SetStatusRoom(m_viewDataSNS.NPKPBDIDBBG.Find((GAKAAIHLFKI _) =>
+					layoutTitleBar.SetStatusRoom(m_viewDataSNS.NPKPBDIDBBG_RoomData.Find((GAKAAIHLFKI _) =>
 					{
 						//0x1590124
-						return _.MALFHCHNEFN == roomId;
+						return _.MALFHCHNEFN_Id == roomId;
 					}), buttonType);
 					layoutTitleBar.CallbackClose = exitCallback;
 					layoutTitleBar.CallbackReturn = returnCallback;
@@ -242,11 +242,11 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB67384 Offset: 0xB67384 VA: 0xB67384
 		public void LoadEntranceImage()
 		{
-			if(m_viewDataSNS != null && m_viewDataSNS.NPKPBDIDBBG != null)
+			if(m_viewDataSNS != null && m_viewDataSNS.NPKPBDIDBBG_RoomData != null)
 			{
-				for(int i = 0; i < m_viewDataSNS.NPKPBDIDBBG.Count; i++)
+				for(int i = 0; i < m_viewDataSNS.NPKPBDIDBBG_RoomData.Count; i++)
 				{
-					GameManager.Instance.SnsIconCache.RoomIconLoad(m_viewDataSNS.NPKPBDIDBBG[i].MALFHCHNEFN, (IiconTexture textture) =>
+					GameManager.Instance.SnsIconCache.RoomIconLoad(m_viewDataSNS.NPKPBDIDBBG_RoomData[i].MALFHCHNEFN_Id, (IiconTexture textture) =>
 					{
 						//0x158FE14
 						return;
@@ -261,10 +261,10 @@ namespace XeApp.Game.Menu
 			if(m_viewDataSNS != null && m_viewDataSNS.KHCACDIKJLG != null)
 			{
 				List<int> l = new List<int>(35);
-				GAKAAIHLFKI g = m_viewDataSNS.NPKPBDIDBBG.Find((GAKAAIHLFKI _) =>
+				GAKAAIHLFKI g = m_viewDataSNS.NPKPBDIDBBG_RoomData.Find((GAKAAIHLFKI _) =>
 				{
 					//0x1590394
-					return _.MALFHCHNEFN == roomId;
+					return _.MALFHCHNEFN_Id == roomId;
 				});
 				if(g != null)
 				{

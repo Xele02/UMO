@@ -59,12 +59,12 @@ namespace XeApp.Game.Menu
 			ResetScrollPosition(m_scrollSupport);
 			if(viewDataSns != null)
 			{
-				for(int i = 0; i < viewDataSns.NPKPBDIDBBG.Count; i++)
+				for(int i = 0; i < viewDataSns.NPKPBDIDBBG_RoomData.Count; i++)
 				{
 					SnsItemObject item = new SnsItemObject();
 					item.type = SnsItemObject.eLayoutType.EntranceItem;
 					item.animType = SnsItemObject.eAnimType.In;
-					item.viewDataRoom = viewDataSns.NPKPBDIDBBG[i];
+					item.viewDataRoom = viewDataSns.NPKPBDIDBBG_RoomData[i];
 					Action<int> closeControllerCallback = pressCallback;
 					item.entranceCallback = (int roomId) =>
 					{
@@ -133,7 +133,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				if(talkList.Count < 1 && isVisibleNextButton)
+				if(talkList.Count > 1 && isVisibleNextButton)
 				{
 					SnsItemObject data = new SnsItemObject();
 					data.type = SnsItemObject.eLayoutType.NextButton;

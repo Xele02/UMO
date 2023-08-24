@@ -213,15 +213,15 @@ namespace XeApp.Game.Menu
 				}
 			}
 			int rid = room_id;
-			m_viewDataRoom = m_viewDataSNS.NPKPBDIDBBG.Find((GAKAAIHLFKI x) =>
+			m_viewDataRoom = m_viewDataSNS.NPKPBDIDBBG_RoomData.Find((GAKAAIHLFKI x) =>
 			{
 				//0x159A3DC
-				return x.MALFHCHNEFN == rid;
+				return x.MALFHCHNEFN_Id == rid;
 			});
 			m_roomId = room_id;
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
-			m_currentTalkIndex = m_viewDataRoom.FOBEBCPEILE(time, false, false);
-			m_unReadIndex = m_viewDataRoom.MCGDHHHFBMO(time, false);
+			m_currentTalkIndex = m_viewDataRoom.FOBEBCPEILE_GetCurrentTalkIndex(time, false, false);
+			m_unReadIndex = m_viewDataRoom.MCGDHHHFBMO_GetUnreadIndex(time, false);
 			CalcPageIndex();
 			bool b = false;
 			int idx1 = 0;
@@ -323,6 +323,7 @@ namespace XeApp.Game.Menu
 			{
 				IsClose = true;
 				m_isReception = false;
+				yield break;
 			}
 			wait = 0;
 			while(wait < m_viewDataRoom.CNEOPOINCBA[realCount].FMDCAFCHBJH_Offset && !m_isSkip)
@@ -702,7 +703,7 @@ namespace XeApp.Game.Menu
 			bool b = false;
 			for(int i = 0; i < end; i++)
 			{
-				if(!m_viewDataRoom.CNEOPOINCBA[i].EDCBHGECEBE && !b)
+				if(m_viewDataRoom.CNEOPOINCBA[i].EDCBHGECEBE && !b)
 				{
 					b = true;
 					start = i;
@@ -712,6 +713,7 @@ namespace XeApp.Game.Menu
 					if(b && m_viewDataRoom.CNEOPOINCBA[i].EDCBHGECEBE)
 					{
 						SetPageIndex(page, start, i);
+						page++;
 						start = i;
 					}
 				}
