@@ -546,7 +546,7 @@ namespace XeApp.Game.Menu
 					if(idx > -1 && m_roadObjectCache.Count != 0)
 					{
 						res = m_roadObjectCache[idx];
-						m_roadObjectCache.RemoveAt(0);
+						m_roadObjectCache.RemoveAt(idx);
 					}
 					break;
 				default:
@@ -1411,7 +1411,7 @@ namespace XeApp.Game.Menu
 				bool canKeep = true;
 				if(lastBoard != null)
 				{
-					canKeep = lastBoard is SceneGrowthMainBoard;
+					canKeep = !(lastBoard is SceneGrowthMainBoard);
 				}
 				if(canKeep)
 				{
@@ -1429,7 +1429,7 @@ namespace XeApp.Game.Menu
 				bool canKeep = true;
 				if (lastBoard != null)
 				{
-					canKeep = lastBoard is SceneGrowthSubBoard;
+					canKeep = !(lastBoard is SceneGrowthSubBoard);
 				}
 				if(canKeep)
 				{
