@@ -4,7 +4,6 @@ using UnityEngine.UI;
 using UnityEngine;
 using XeApp.Game.Common;
 using XeSys;
-using UnityEditor.VersionControl;
 
 namespace XeApp.Game.Menu
 {
