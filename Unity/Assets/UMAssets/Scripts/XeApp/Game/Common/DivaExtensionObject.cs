@@ -321,7 +321,13 @@ namespace XeApp.Game.Common
 		{
 			if(m_pause)
 			{
-				TodoLogger.LogError(0, "LateUpdate DivaExtenssionObject when paused");
+				for(int i = 0; i < particleList.Count; i++)
+				{
+					if(particleList[i].gameObject.activeInHierarchy)
+					{
+						particleList[i].Pause();
+					}
+				}
 			}
 		}
 	}
