@@ -31,33 +31,53 @@ namespace XeApp.Game.Common
 		private AdvReturnBgParam m_restorBgParam; // 0x24
 		private CCAAJNJGNDO m_eventStoryData; // 0x34
 
-		//public string ReturnSceneName { get; } 0xE58000
+		public string ReturnSceneName { get { return m_returnSceneName; } } //0xE58000
 		//public TransitionUniqueId UniqueId { get; } 0xE5F7A0
-		//public int FreeMusicId { get; } 0xE58084
+		public int FreeMusicId { get { return m_freeMusicId; } } //0xE58084
 		//public int EventUniqueId { get; } 0xE5F7A8
-		//public int AdvId { get; } 0xE58108
+		public int AdvId { get { return m_advId; } } //0xE58108
 		//public int RestorBgmId { get; } 0xE5F7B0
 		//public float RestorListPosition { get; } 0xE5F7B8
 		//public AdvReturnBgParam RestorBgParam { get; } 0xE5F7C0
 		//public CCAAJNJGNDO EventStoryData { get; } 0xE5F7D0
 
 		//// RVA: 0xE58008 Offset: 0xE58008 VA: 0xE58008
-		//public bool IsCallRhythmGame() { }
+		public bool IsCallRhythmGame()
+		{
+			return m_returnSceneName == "RhythmGame";
+		}
 
 		//// RVA: 0xE5808C Offset: 0xE5808C VA: 0xE5808C
-		//public bool IsCallAdv() { }
+		public bool IsCallAdv()
+		{
+			return m_returnSceneName == "Adv";
+		}
 
 		//// RVA: 0xE58118 Offset: 0xE58118 VA: 0xE58118
-		//public void Clear() { }
+		public void Clear()
+		{
+			m_returnSceneName = "";
+		}
 
 		//// RVA: 0xE5F7D8 Offset: 0xE5F7D8 VA: 0xE5F7D8
-		//public void Setup(string returnSceneName) { }
+		public void Setup(string returnSceneName)
+		{
+			m_returnSceneName = returnSceneName;
+		}
 
 		//// RVA: 0xE5F7E0 Offset: 0xE5F7E0 VA: 0xE5F7E0
-		//public void Setup(int freeMusicId) { }
+		public void Setup(int freeMusicId)
+		{
+			m_freeMusicId = freeMusicId;
+			m_returnSceneName = "RhythmGame";
+		}
 
 		//// RVA: 0xE5F848 Offset: 0xE5F848 VA: 0xE5F848
-		//public void SetupNextAdv(short advId) { }
+		public void SetupNextAdv(short advId)
+		{
+			m_advId = advId;
+			m_returnSceneName = "Adv";
+		}
 
 		// RVA: 0xE5F8B0 Offset: 0xE5F8B0 VA: 0xE5F8B0
 		public void Setup(string returnSceneName, TransitionUniqueId uniqueId)

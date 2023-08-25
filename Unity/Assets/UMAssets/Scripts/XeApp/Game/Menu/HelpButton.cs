@@ -179,13 +179,13 @@ namespace XeApp.Game.Menu
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			for(int i = 0; i < hp.Length; i++)
 			{
-				if (hp[i].DIJHLDAIBCA_SearchId == searchId)
+				if (hp[i].DIJHLDAIBCA == searchId)
 				{
 					if(time >= hp[i].PDBPFJJCADD)
 					{
 						if(hp[i].FDBNFFNFOND >= time)
 						{
-							return hp[i].OBGBAOLONDD_UniqueId;
+							return hp[i].OBGBAOLONDD;
 						}
 					}
 				}

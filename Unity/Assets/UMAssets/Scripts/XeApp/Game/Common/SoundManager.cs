@@ -232,7 +232,11 @@ namespace XeApp.Game.Common
 		// public void RequestEntryGachaCueSheet(UnityAction onLoadedCallback) { }
 
 		// // RVA: 0x1396D70 Offset: 0x1396D70 VA: 0x1396D70
-		// public void RequestEntryAdvCueSheet(UnityAction onLoadedCallback) { }
+		public void RequestEntryAdvCueSheet(UnityAction onLoadedCallback)
+		{
+			RemoveSectionallySECueSheet();
+			this.StartCoroutineWatched(Co_InstallProcess(new string[1] { "cs_se_adv" }, onLoadedCallback));
+		}
 
 		// // RVA: 0x1396E78 Offset: 0x1396E78 VA: 0x1396E78
 		// public void RequestEntryMiniGameCueSheet(UnityAction onLoadedCallback) { }

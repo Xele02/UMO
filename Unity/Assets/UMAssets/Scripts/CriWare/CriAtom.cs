@@ -154,7 +154,27 @@ namespace CriWare
 		// public static void SetBusAnalyzer(string busName, bool sw) { }
 
 		// // RVA: 0x287C5DC Offset: 0x287C5DC VA: 0x287C5DC
-		// public static void SetBusAnalyzer(bool sw) { }
+		public static void SetBusAnalyzer(bool sw)
+		{
+			/*if(!sw)
+			{
+				for(int i = 0; i < 8; i++)
+				{
+					CriAtomExAsr.criAtomExAsr_DetachBusAnalyzer(i);
+				}
+			}
+			else
+			{
+				CriAtomExAsr.BusAnalyzerConfig config = new CriAtomExAsr.BusAnalyzerConfig();
+				config.interval = 50;
+				config.peakHoldTime = 1000;
+				for(int i = 0; i < 8; i++)
+				{
+					CriAtomExAsr.criAtomExAsr_DetachBusAnalyzer(i, config);
+				}
+			}*/
+			TodoLogger.LogError(0, "SetBusAnalyzer");
+		}
 
 		// // RVA: 0x287C69C Offset: 0x287C69C VA: 0x287C69C
 		// public static CriAtomExAsr.BusAnalyzerInfo GetBusAnalyzerInfo(string busName) { }

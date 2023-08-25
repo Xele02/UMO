@@ -30,16 +30,16 @@ namespace XeApp.Game.Common
 			wikis.Clear();
 			if(found > -1)
 			{
-				for(int i = 0; i < list[found].EBEMOEPADJB_Helps.Length; i++)
+				for(int i = 0; i < list[found].EBEMOEPADJB.Length; i++)
 				{
-					if(list[found].EBEMOEPADJB_Helps[i].OCPIODNOHKL_PLevel <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level)
+					if(list[found].EBEMOEPADJB[i].OCPIODNOHKL <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level)
 					{
-						if(CanShowContents((VeiwOptionHelpContentData.ConditionId)list[found].EBEMOEPADJB_Helps[i].KDBLHOFCPIO_CondId, list[found].EBEMOEPADJB_Helps[i].KLHAFHMFFNK_Value, (VeiwOptionHelpContentData.ConditionOperation) list[found].EBEMOEPADJB_Helps[i].BENBNKNPOAA_CondOp))
+						if(CanShowContents((VeiwOptionHelpContentData.ConditionId)list[found].EBEMOEPADJB[i].KDBLHOFCPIO, list[found].EBEMOEPADJB[i].KLHAFHMFFNK, (VeiwOptionHelpContentData.ConditionOperation) list[found].EBEMOEPADJB[i].BENBNKNPOAA))
 						{
 							VeiwOptionHelpContentData data = new VeiwOptionHelpContentData();
-							data.contentName = list[found].EBEMOEPADJB_Helps[i].OPFGFINHFCE_Name;
+							data.contentName = list[found].EBEMOEPADJB[i].OPFGFINHFCE;
 							data.contentType = VeiwOptionHelpContentData.ContentType.Help;
-							data.helpId = list[found].EBEMOEPADJB_Helps[i].EJBGHLOOLBC_HelpId;
+							data.helpId = list[found].EBEMOEPADJB[i].EJBGHLOOLBC;
 							helps.Add(data);
 						}
 					}
@@ -47,8 +47,8 @@ namespace XeApp.Game.Common
 				for(int i = 0; i < list[found].OJMEIBNMLNP.Length; i++)
 				{
 					VeiwOptionHelpContentData data = new VeiwOptionHelpContentData();
-					data.wikiURL = list[found].OJMEIBNMLNP[i].HJLDBEJOMIO_wikiURL;
-					data.contentName = list[found].OJMEIBNMLNP[i].OPFGFINHFCE_Name;
+					data.wikiURL = list[found].OJMEIBNMLNP[i].HJLDBEJOMIO;
+					data.contentName = list[found].OJMEIBNMLNP[i].OPFGFINHFCE;
 					data.contentType = VeiwOptionHelpContentData.ContentType.Wiki;
 					wikis.Add(data);
 				}

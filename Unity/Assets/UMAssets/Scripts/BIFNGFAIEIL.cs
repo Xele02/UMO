@@ -219,7 +219,10 @@ public class BIFNGFAIEIL
 	}
 
 	//// RVA: 0xC81550 Offset: 0xC81550 VA: 0xC81550
-	//public void DLKJAPDLDFG(bool HEDFNFLEPHI, int NIGMABNOBEF = 0) { }
+	public void DLKJAPDLDFG(bool HEDFNFLEPHI, int NIGMABNOBEF = 0)
+	{
+		TodoLogger.LogError(0, "DLKJAPDLDFG");
+	}
 
 	//// RVA: 0xC819F4 Offset: 0xC819F4 VA: 0xC819F4
 	public int OKBOEKMCBJM(long EOLFJGMAJAB = 0)

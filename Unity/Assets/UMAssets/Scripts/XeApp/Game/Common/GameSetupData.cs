@@ -391,7 +391,7 @@ namespace XeApp.Game.Common
 
 			// // RVA: 0xE9DAC8 Offset: 0xE9DAC8 VA: 0xE9DAC8
 			public void SetupInfoByFreeMusic(int freeMusicId, Difficulty.Type difficultyType, bool isEnergyRequired,
-				GameSetupData.MusicInfo.InitFreeMusicParam initParam, OHCAABOMEOF.KGOGMKMBCPP_EventType gameEventType = 0, 
+				InitFreeMusicParam initParam, OHCAABOMEOF.KGOGMKMBCPP_EventType gameEventType = 0, 
 				OHCAABOMEOF.KGOGMKMBCPP_EventType openEventType = 0, OHCAABOMEOF.KGOGMKMBCPP_EventType playEventType = 0, 
 				bool isMvMode = false, bool isLine6Mode = false, string musicLoadText = "", 
 				int overrideEnemyCenterSkillId = 0, int overrideEnemyLiveSkillId = 0, long mvLimitTime = -1, 
@@ -432,7 +432,10 @@ namespace XeApp.Game.Common
 			}
 
 			// // RVA: 0xE9DF78 Offset: 0xE9DF78 VA: 0xE9DF78
-			// public void SetupInfoByTutorial(TutorialGameMode.Type tutorialMode) { }
+			public void SetupInfoByTutorial(TutorialGameMode.Type tutorialMode)
+			{
+				TodoLogger.LogError(0, "SetupInfoByTutorial");
+			}
 
 			// // RVA: 0xE9E308 Offset: 0xE9E308 VA: 0xE9E308
 			public MHDFCLCMDKO_Enemy.CJLENGHPIDH_EnemyInfo GetEnemyInfo()

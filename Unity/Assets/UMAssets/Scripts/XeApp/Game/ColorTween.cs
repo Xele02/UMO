@@ -28,6 +28,9 @@ namespace XeApp.Game
 		}
 
 		// RVA: 0xE58F00 Offset: 0xE58F00 VA: 0xE58F00
-		//public void UpdateValue() { }
+		public void UpdateValue()
+		{
+			m_target.color = Color.Lerp(m_from, m_to, Evaluate());
+		}
 	}
 }

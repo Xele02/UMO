@@ -10,6 +10,22 @@ using XeApp.Game;
 
 public class ILDKBCLAFPB
 {
+	public enum CDIPJNPICCO
+	{
+		HJNNKCMLGFL = 0,
+		ENKHFKLKCPO = 1,
+		ICPCONCBPLH = 2,
+		DOEHLCLBCNN = 3,
+		FBFBGLONIME = 4,
+		DJPFJGKGOOF = 5,
+		BNLDNJNMFMC = 6,
+		KIDJFNEGAHO = 7,
+		GBECNPANBEA = 8,
+		AKPFBBEGGEF = 9,
+		CIJOMBLJANG = 10,
+		AEFCOHJBLPO = 11,
+	}
+
     public enum EJFLCPHPMCA
     {
         MKOILBFAONG = 0,

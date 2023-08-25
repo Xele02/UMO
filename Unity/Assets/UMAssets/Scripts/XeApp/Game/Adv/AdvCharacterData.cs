@@ -68,7 +68,10 @@ namespace XeApp.Game.Adv
 		// public void SetMouthPattern(Image mouth, int faceId, int pattern) { }
 
 		// // RVA: 0xBC46E4 Offset: 0xBC46E4 VA: 0xBC46E4
-		// public void SetBlurTexture(Texture2D texture) { }
+		public void SetBlurTexture(Texture2D texture)
+		{
+			_blurTexture = texture;
+		}
 
 		// // RVA: 0xBC0AEC Offset: 0xBC0AEC VA: 0xBC0AEC
 		public Texture2D GetBlurTexture()

@@ -546,7 +546,10 @@ namespace XeApp.Game.Tutorial
 		// public void UpdateLocalPlayerData() { }
 
 		// // RVA: 0xE419D0 Offset: 0xE419D0 VA: 0xE419D0
-		// public void UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO rPoint) { }
+		public void UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO rPoint)
+		{
+			TodoLogger.LogError(0, "UpdateRecoveryPoint");
+		}
 
 		// // RVA: 0xE41B10 Offset: 0xE41B10 VA: 0xE41B10
 		// public void SaveMusicResult() { }

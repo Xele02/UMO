@@ -63,11 +63,38 @@ namespace XeApp.Game.Adv
 		private AdvCharacter.State _state; // 0x6C
 
 		// public int FaceId { get; } 0xBBF5D4
-		// public int CharaId { get; } 0xBBF5DC
+		public int CharaId { get { return _charaId; } } //0xBBF5DC
 		// public int PositionId { get; } 0xBBF5E4
 
 		// // RVA: 0xBBF5EC Offset: 0xBBF5EC VA: 0xBBF5EC
-		// public void Clear() { }
+		public void Clear()
+		{
+			_faceId = 0;
+			_charaId = 0;
+			_positionId = 0;
+			_charaData = null;
+			if(_blinkCoroutine != null)
+			{
+				this.StopCoroutineWatched(_blinkCoroutine);
+				_blinkCoroutine = null;
+			}
+			if(_mouthCoroutine != null)
+			{
+				this.StopCoroutineWatched(_mouthCoroutine);
+				_mouthCoroutine = null;
+			}
+			_body.sprite = null;
+			_body.material = null;
+			_eye.sprite = null;
+			_eye.material = null;
+			_mouth.sprite = null;
+			_mouth.material = null;
+			_aura.material = null;
+			_prism.material = null;
+			_maskTexture = null;
+			_auraMaterialInstance = null;
+			_prismMaterialInstance = null;
+		}
 
 		// // RVA: 0xBBF7A4 Offset: 0xBBF7A4 VA: 0xBBF7A4
 		public void SetCharacterData(int charaId, AdvCharacterData data, int positionId, bool isPrism, int colorId)
@@ -164,13 +191,19 @@ namespace XeApp.Game.Adv
 		}
 
 		// // RVA: 0xBC0FD8 Offset: 0xBC0FD8 VA: 0xBC0FD8
-		// public void StartMouthAnime(float ms) { }
+		public void StartMouthAnime(float ms)
+		{
+			TodoLogger.LogError(0, "StartMouthAnime");
+		}
 
 		// // RVA: 0xBC1114 Offset: 0xBC1114 VA: 0xBC1114
 		// public void StartMouthOneAnime(UnityAction end) { }
 
 		// // RVA: 0xBC1244 Offset: 0xBC1244 VA: 0xBC1244
-		// public void EndMouthAnime() { }
+		public void EndMouthAnime()
+		{
+			TodoLogger.LogError(0, "EndMouthAnime");
+		}
 
 		// // RVA: 0xBC1350 Offset: 0xBC1350 VA: 0xBC1350
 		// public void EndMouthOneAnime() { }
@@ -197,26 +230,23 @@ namespace XeApp.Game.Adv
 			{
 				m_showTween[i].ResetTime();
 			}
-			while(true)
+			if (!isSkip)
 			{
-				if(!isSkip)
+				do
 				{
 					//LAB_00bc417c
-					for(int i = 0; i < m_showTween.Length; i++)
+					for (int i = 0; i < m_showTween.Length; i++)
 					{
 						m_showTween[i].UpdateCurve();
 					}
 					yield return null;
-					if(m_showTween[0].IsEnd())
-						break;
-				}
-				else
+				} while (!m_showTween[0].IsEnd());
+			}
+			else
+			{
+				for (int i = 0; i < m_showTween.Length; i++)
 				{
-					for(int i = 0; i < m_showTween.Length; i++)
-					{
-						m_showTween[i].End();
-					}
-					break;
+					m_showTween[i].End();
 				}
 			}
 			_isShowing = false;
@@ -227,13 +257,68 @@ namespace XeApp.Game.Adv
 
 		// [IteratorStateMachineAttribute] // RVA: 0x741DB4 Offset: 0x741DB4 VA: 0x741DB4
 		// // RVA: 0xBC18A8 Offset: 0xBC18A8 VA: 0xBC18A8
-		// public IEnumerator HideCoroutine(bool isSkip) { }
+		public IEnumerator HideCoroutine(bool isSkip)
+		{
+			//0xBC2EF8
+			_isShowing = true;
+			_eye.enabled = false;
+			_mouth.enabled = false;
+			_isTweenPlaying = true;
+			for(int i = 0; i < m_hideTween.Length; i++)
+			{
+				m_hideTween[i].ResetTime();
+			}
+			if (!isSkip)
+			{
+				do
+				{
+					for (int i = 0; i < m_hideTween.Length; i++)
+					{
+						m_hideTween[i].UpdateCurve();
+					}
+					yield return null;
+				} while (!m_hideTween[0].IsEnd());
+			}
+			else
+			{
+				for (int i = 0; i < m_showTween.Length; i++)
+				{
+					m_showTween[i].End();
+				}
+			}
+			_isShowing = false;
+			_eye.enabled = true;
+			_mouth.enabled = true;
+			_isTweenPlaying = false;
+		}
 
 		// // RVA: 0xBC1970 Offset: 0xBC1970 VA: 0xBC1970
-		// public void ChangeExpansion() { }
+		public void ChangeExpansion()
+		{
+			for(int i = 0; i < m_pickupTween.Length; i++)
+			{
+				if((i & 1) == 0)
+				{
+					m_pickupTween[i].End();
+					m_pickupTween[i].UpdateCurve();
+				}
+			}
+			_state = State.Expansion;
+		}
 
 		// // RVA: 0xBC1A68 Offset: 0xBC1A68 VA: 0xBC1A68
-		// public void ChangeShrink() { }
+		public void ChangeShrink()
+		{
+			for (int i = 0; i < m_pickupTween.Length; i++)
+			{
+				if ((i & 1) != 0)
+				{
+					m_pickupTween[i].End();
+					m_pickupTween[i].UpdateCurve();
+				}
+			}
+			_state = State.Shrink;
+		}
 
 		// // RVA: 0xBC0AF4 Offset: 0xBC0AF4 VA: 0xBC0AF4
 		public void ResetState()
@@ -251,26 +336,103 @@ namespace XeApp.Game.Adv
 
 		// [IteratorStateMachineAttribute] // RVA: 0x741E2C Offset: 0x741E2C VA: 0x741E2C
 		// // RVA: 0xBC1B60 Offset: 0xBC1B60 VA: 0xBC1B60
-		// public IEnumerator Expansion() { }
+		public IEnumerator Expansion()
+		{
+			//0xBC2C14
+			if (_state == State.Expansion)
+				yield break;
+			for(int i = 0; i < m_pickupTween.Length; i++)
+			{
+				if((i & 1) == 0)
+				{
+					m_pickupTween[i].ResetTime();
+				}
+			}
+			_state = State.Expansion;
+			_isTweenPlaying = true;
+			do
+			{
+				for (int i = 0; i < m_pickupTween.Length; i++)
+				{
+					if ((i & 1) == 0)
+					{
+						m_pickupTween[i].UpdateCurve();
+					}
+				}
+				UpdateEffectScale(null);
+				yield return null;
+			} while (!m_pickupTween[0].IsEnd());
+			_isTweenPlaying = false;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x741EA4 Offset: 0x741EA4 VA: 0x741EA4
 		// // RVA: 0xBC1C0C Offset: 0xBC1C0C VA: 0xBC1C0C
-		// public IEnumerator Shrink() { }
+		public IEnumerator Shrink()
+		{
+			//0xBC42B8
+			if (_state == State.Shrink)
+				yield break;
+			for(int i = 0; i < m_pickupTween.Length; i++)
+			{
+				if((i & 1) != 0)
+				{
+					m_pickupTween[i].ResetTime();
+				}
+			}
+			_state = State.Shrink;
+			_isTweenPlaying = true;
+			do
+			{
+				for (int i = 0; i < m_pickupTween.Length; i++)
+				{
+					if ((i & 1) != 0)
+					{
+						m_pickupTween[i].UpdateCurve();
+					}
+				}
+				UpdateEffectScale(null);
+			} while (!m_pickupTween[1].IsEnd());
+			_isTweenPlaying = false;
+		}
 
 		// // RVA: 0xBC1CB8 Offset: 0xBC1CB8 VA: 0xBC1CB8
-		// public bool IsTweenPlaying() { }
+		public bool IsTweenPlaying()
+		{
+			return _isTweenPlaying;
+		}
 
 		// // RVA: 0xBC1CC0 Offset: 0xBC1CC0 VA: 0xBC1CC0
-		// private void UpdateEffectScale(TweenBase tween) { }
+		private void UpdateEffectScale(TweenBase tween)
+		{
+			Vector3 v = new Vector3(1.0f / transform.localScale.x, 1.0f / transform.localScale.y, 1);
+			for(int i = 0; i < m_effAnimeList.Count; i++)
+			{
+				m_effAnimeList[i].GetComponentInChildren<RawImageEx>(true).transform.localScale = v;
+			}
+		}
 
 		// // RVA: 0xBC1ED0 Offset: 0xBC1ED0 VA: 0xBC1ED0
-		// public Vector2 GetEffectAttachAnchor() { }
+		public Vector2 GetEffectAttachAnchor()
+		{
+			return new Vector2(_eye.rectTransform.anchoredPosition.x / _body.rectTransform.sizeDelta.x + _eye.rectTransform.anchorMin.x, _eye.rectTransform.anchoredPosition.y / _body.rectTransform.sizeDelta.y);
+		}
 
 		// // RVA: 0xBC204C Offset: 0xBC204C VA: 0xBC204C
-		// public void AppendEffect(LayoutUGUIRuntime layout) { }
+		public void AppendEffect(LayoutUGUIRuntime layout)
+		{
+			Vector2 v = GetEffectAttachAnchor();
+			layout.transform.SetParent(transform, false);
+			layout.GetComponent<RectTransform>().anchorMax = v;
+			layout.GetComponent<RectTransform>().anchorMin = v;
+			layout.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+			m_effAnimeList.Add(layout);
+		}
 
 		// // RVA: 0xBC2220 Offset: 0xBC2220 VA: 0xBC2220
-		// public void RemoveEffect(Transform parent) { }
+		public void RemoveEffect(Transform parent)
+		{
+			TodoLogger.LogError(0, "RemoveEffect");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x741F1C Offset: 0x741F1C VA: 0x741F1C
 		// // RVA: 0xBC0F4C Offset: 0xBC0F4C VA: 0xBC0F4C
