@@ -48,6 +48,8 @@ namespace XeApp.Game.RhythmGame
 									skillIndex = k,
 									centerPlate = i == 0 && j == 0
 								});
+								if(RuntimeSettings.CurrentSettings.EnableDebugSkills)
+									UnityEngine.Debug.LogError("Added live skill "+skillId+" "+skillList.Count+" for "+i+"/"+j+" trigger:"+(SkillTrigger.Type)skillInfo.CPNAGMFCIJK_TriggerType+" effect:"+sk.buffEffectType+" value:"+sk.buffEffectValue+" duretion:"+sk.durationType+" "+sk.durationValue);
 								skillList.Add(sk);
 							}
 						}
@@ -73,6 +75,8 @@ namespace XeApp.Game.RhythmGame
 							centerPlate = false
 						});
 						skillList.Add(sk);
+						if(RuntimeSettings.CurrentSettings.EnableDebugSkills)
+							UnityEngine.Debug.LogError("Added active skill "+skillList.Count);
 					}
 				}
 			}
@@ -91,6 +95,8 @@ namespace XeApp.Game.RhythmGame
 						centerPlate = false
 					});
 					skillList.Add(sk);
+					if(RuntimeSettings.CurrentSettings.EnableDebugSkills)
+						UnityEngine.Debug.LogError("Added enemy skill "+skillList.Count);
 				}
 			}
 		}
@@ -102,6 +108,8 @@ namespace XeApp.Game.RhythmGame
 			{
 				if(skillList[i].IsFulfill(triggerParam))
 				{
+					if(RuntimeSettings.CurrentSettings.EnableDebugSkills)
+						UnityEngine.Debug.LogError("Skill "+i+" Fullfill "+skillList[i].durationType);
 					if(skillList[i].durationType != SkillDuration.Type.Instant)
 					{
 						CreateBuffEffect(i, triggerParam, buffOwner);
