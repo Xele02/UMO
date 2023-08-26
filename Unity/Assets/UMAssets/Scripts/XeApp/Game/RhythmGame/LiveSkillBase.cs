@@ -30,7 +30,7 @@ namespace XeApp.Game.RhythmGame
 				t.Initialize(masterSkill.ELEPHBOKIGK_LimitCount[0]);
 				triggers.Add(t);
 			}
-			else if (masterSkill.CPNAGMFCIJK_TriggerType != (int)SkillTrigger.Type.EveryTime && centerPlate)
+			else if (masterSkill.CPNAGMFCIJK_TriggerType != (int)SkillTrigger.Type.EveryTime || centerPlate)
 			{
 				t.Initialize(1);
 				triggers.Add(t);
