@@ -72,12 +72,12 @@ namespace XeApp.Game.RhythmGame
 					default:
 						return;
 				}
-				if (tr != null)
-				{
-					tr.Initialize(masterSkill.LFGFBMJNBKN_ConfigValue[skillLevelIndex]);
-					tr.m_type = (SkillTrigger.Type)masterSkill.CPNAGMFCIJK_TriggerType;
-					triggers.Add(tr);
-				}
+			}
+			if (tr != null)
+			{
+				tr.Initialize(masterSkill.LFGFBMJNBKN_ConfigValue[skillLevelIndex]);
+				tr.m_type = (SkillTrigger.Type)masterSkill.CPNAGMFCIJK_TriggerType;
+				triggers.Add(tr);
 			}
 		}
 	}

@@ -69,18 +69,18 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xC09A1C Offset: 0xC09A1C VA: 0xC09A1C
 		private void AssginFromList(List<RNote> rNoteList, ref List<int>[] a_temp_note_list, RhythmGameConsts.SpecialNoteType a_type, int a_index = -1)
 		{
-			int a = Random.Range(1, 4);
-			int b = Random.Range(0, a_temp_note_list[a].Count);
+			int step = Random.Range(1, 4);
+			int idx = Random.Range(0, a_temp_note_list[step].Count);
 			KLJCBKMHKNK.HHMPIIILOLD[] array = null;
-			if (a == 3)
+			if (step == 3)
 			{
-				array = new KLJCBKMHKNK.HHMPIIILOLD[3] { /*2*/KLJCBKMHKNK.HHMPIIILOLD.FMLPIOFBCMA, /*5*/KLJCBKMHKNK.HHMPIIILOLD.FDBLOGGAKOE, /*3*/ KLJCBKMHKNK.HHMPIIILOLD.CBHCEDGAGHL};
+				array = new KLJCBKMHKNK.HHMPIIILOLD[3] { /*2*/KLJCBKMHKNK.HHMPIIILOLD.FMLPIOFBCMA_Diva, /*5*/KLJCBKMHKNK.HHMPIIILOLD.FDBLOGGAKOE_DivaFail, /*3*/ KLJCBKMHKNK.HHMPIIILOLD.CBHCEDGAGHL_AwakenDiva};
 			}
-			else if(a == 2)
+			else if(step == 2)
 			{
-				array = new KLJCBKMHKNK.HHMPIIILOLD[2] { /*1*/KLJCBKMHKNK.HHMPIIILOLD.PFIOMNHDHCO, /*4*/KLJCBKMHKNK.HHMPIIILOLD.EOMCAODFBCN };
+				array = new KLJCBKMHKNK.HHMPIIILOLD[2] { /*1*/KLJCBKMHKNK.HHMPIIILOLD.PFIOMNHDHCO_Valkyrie, /*4*/KLJCBKMHKNK.HHMPIIILOLD.EOMCAODFBCN_ValkyrieFail };
 			}
-			else if(a == 1)
+			else if(step == 1)
 			{
 				array = new KLJCBKMHKNK.HHMPIIILOLD[1];
 			}
@@ -88,10 +88,10 @@ namespace XeApp.Game.RhythmGame
 			{
 				for(int i = 0; i < array.Length; i++)
 				{
-					onModeAttrAssignCallback(a_temp_note_list[a][b], array[i], a_type);
+					onModeAttrAssignCallback(a_temp_note_list[step][idx], array[i], a_type);
 				}
 			}
-			a_temp_note_list[a].RemoveAt(b);
+			a_temp_note_list[step].RemoveAt(idx);
 		}
 
 		// // RVA: 0xC09D54 Offset: 0xC09D54 VA: 0xC09D54
