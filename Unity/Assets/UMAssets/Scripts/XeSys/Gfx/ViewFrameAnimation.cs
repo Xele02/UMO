@@ -24,7 +24,7 @@ namespace XeSys.Gfx
 		private int m_NextFrameData = -1; // 0x28
 		private float m_FrameDataRate; // 0x2C
 		[SerializeField]
-		private float m_FrameSec = 0.03333334f; // 0x30
+		private float m_FrameSec = 1.0f/30;//0.03333334f; // 0x30
 		[SerializeField]
 		private float m_BaseX; // 0x34
 		[SerializeField]

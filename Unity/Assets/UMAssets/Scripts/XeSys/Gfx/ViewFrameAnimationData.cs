@@ -149,7 +149,13 @@ namespace XeSys.Gfx
 			{
 				rate = (count - m_FrameDataList[prev].Time) / (m_FrameDataList[next].Time - m_FrameDataList[prev].Time);
 				if((m_FrameDataList[next].FrameIdx - m_FrameDataList[prev].FrameIdx < 2) && (rate < 1.0f))
-					rate = 0.0f;
+				{
+					//rate = 0.0f;
+					// UMO :
+					// when frameIdx is 1 frame, looks like we want a immediate swap, not a lerp. But there is a precision bug...
+					// Shouldn't force to 0 when almost near 1. Trying with only a round for now.
+					rate = Mathf.Round(rate);
+				}
 			}
 		}
 

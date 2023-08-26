@@ -156,7 +156,7 @@ namespace XeSys
 		{
 			if(isLockBit == 0)
 			{
-				fpsRate = gameDeltaTime / 0.01666667f;
+				fpsRate = gameDeltaTime / (1.0f/60);
 				fpsRate = Mathf.Max(fpsRate, 1.0f);
 				fpsRateSq = fpsRate * fpsRate;
 				for(int i = 0; i < m_collider.Count; i++)

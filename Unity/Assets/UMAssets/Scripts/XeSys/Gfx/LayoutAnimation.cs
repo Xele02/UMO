@@ -149,7 +149,7 @@ namespace XeSys.Gfx
         private const int LabelLabelElmIdx = 0;
         private const int LabelFrameElmIdx = 1;
         private string m_Name; // 0x8
-        private static float DefaultFrameSec = 0.0333333f; // 0xC
+        private static float DefaultFrameSec = 1.0f/30; // 0xC
         private float m_FrameSec = DefaultFrameSec; // 0xC
         private Dictionary<string, ViewFrameAnimation> m_AnimLayers = new Dictionary<string, ViewFrameAnimation>(); // 0x10
         private Dictionary<string, string> m_TmpAttDic = new Dictionary<string, string>(20); // 0x14

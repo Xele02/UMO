@@ -40,8 +40,8 @@ namespace XeApp.Game.Adv
 		[SerializeField]
 		private Material prismMaterialSource; // 0x34
 		private static readonly WaitForSeconds BlinkIntervalWait = new WaitForSeconds(3); // 0x0
-		private static readonly WaitForSeconds BlinkFrameWait = new WaitForSeconds(0.06666667f); // 0x4
-		private static readonly WaitForSeconds BlinkFrameWait2 = new WaitForSeconds(0.03333334f); // 0x8
+		private static readonly WaitForSeconds BlinkFrameWait = new WaitForSeconds(1.0f/15); // 0x4
+		private static readonly WaitForSeconds BlinkFrameWait2 = new WaitForSeconds(1.0f/30); // 0x8
 		private const int BlinkAnimeStartRandMin = 1;
 		private const int BlinkAnimeStartRandMax = 6;
 		private Coroutine _blinkCoroutine; // 0x38

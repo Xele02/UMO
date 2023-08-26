@@ -18,7 +18,7 @@ namespace XeApp.Game.RhythmGame
 		private static readonly string[] animNameListAdjust = new string[1] { "line_animation_adjust" }; // 0xC
 		private static AnimData[,] animData = null; // 0x10
 		private static AnimData[] animDataJustTime = null; // 0x14
-		private static readonly float justNormalizeTime_ = 0.833333f; // 0x18
+		private static readonly float justNormalizeTime_ = 1.0f/12; // 0x18
 		private static int[] animHashCode; // 0x1C
 		private RNote rNote; // 0x8
 		private Animator animator; // 0xC

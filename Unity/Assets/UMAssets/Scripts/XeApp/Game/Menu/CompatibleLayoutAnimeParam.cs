@@ -9,7 +9,7 @@ namespace XeApp.Game.Menu
 		public float endMs; // 0x4
 		public float startFrame; // 0x8
 		public const float FrameRate = 60;
-		public const float FrameSec = 0.01666667f;
+		public const float FrameSec = 1.0f/60;
 
 		// RVA: 0x7FEE24 Offset: 0x7FEE24 VA: 0x7FEE24
 		public void Initialize(float startFrame, float endFrame)
