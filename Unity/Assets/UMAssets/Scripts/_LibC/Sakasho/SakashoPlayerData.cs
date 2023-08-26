@@ -124,6 +124,9 @@ namespace ExternLib
 								int idx2 = j % 8;
 								saveScene.PDNIFBEGMHC_Mb[idx] |= (byte)(1 << idx2);
 							}
+							for (int j = 0; j < 50; j++)
+								saveScene.EMOJHJGHJLN_Sb[j] = 0xFF;
+							saveScene.DMNIMMGGJJJ_Leaf = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HDGOHBFKKDM_LimitOver.ELFPIODODFF(dbScene.EKLIPGELKCL_Rarity);
 						}
 					}
 				}
