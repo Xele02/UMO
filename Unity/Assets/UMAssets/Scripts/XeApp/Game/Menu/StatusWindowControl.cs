@@ -296,7 +296,7 @@ namespace XeApp.Game.Menu
 					}
 					else
 					{
-						ShowSceneStatusPopupWindow(viewPlayerData.OPIBAPEGCLA_Scenes[s.id], viewPlayerData, isMoment, transitionName, closeCallBack, false, false, SceneStatusParam.PageSave.Player, false);
+						ShowSceneStatusPopupWindow(viewPlayerData.OPIBAPEGCLA_Scenes[s.id - 1], viewPlayerData, isMoment, transitionName, closeCallBack, false, false, SceneStatusParam.PageSave.Player, false);
 					}
 				}
 			}
