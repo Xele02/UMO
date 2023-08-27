@@ -144,7 +144,7 @@ namespace XeApp.Game.Menu
 		private void UpdateIdle()
 		{
 			Vector2 p = m_content.GetComponent<RectTransform>().anchoredPosition;
-			if(Mathf.Round(p.y / 360) != Mathf.Round(m_old_scroll_pos / 360))
+			if((int)(p.y / 360) != (int)(m_old_scroll_pos / 360))
 			{
 				UpdateDegreeBtn();
 			}
@@ -215,11 +215,11 @@ namespace XeApp.Game.Menu
 		public void UpdateDegreeBtn()
 		{
 			Vector2 v = m_content.GetComponent<RectTransform>().anchoredPosition;
-			int f = Mathf.RoundToInt(v.y / 360);
+			int f = (int)(v.y / 360);
 			m_start_view_icon_index = f * 8;
 			for (int i = 0; i < m_button_list.Count; i++)
 			{
-				Vector3 v3 = new Vector3((i % 2) * 325 - 10, i / 2 * -90 - Mathf.RoundToInt(f) * 360 + 360, 0);
+				Vector3 v3 = new Vector3((i % 2) * 325 - 10, i / 2 * -90 - (int)(f) * 360 + 360, 0);
 				m_button_list[i].transform.GetComponent<RectTransform>().localPosition = v3;
 				int btn_index = i;
 				int index = m_start_view_icon_index + i - 8;

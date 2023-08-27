@@ -63,7 +63,7 @@ namespace XeApp.Game.Common
 			if(m_enableClampValue)
 			{
 				float f = Mathf.Pow(10, m_imagesNum.Count);
-				num = Mathf.Clamp(num, 1 - Mathf.RoundToInt(f), Mathf.RoundToInt(f) - 1);
+				num = Mathf.Clamp(num, 1 - (int)(f), (int)(f) - 1);
 			}
 			UpdateNums(num);
 			UpdateDigits(num);

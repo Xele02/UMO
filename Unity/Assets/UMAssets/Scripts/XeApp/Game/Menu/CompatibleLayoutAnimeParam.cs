@@ -25,7 +25,7 @@ namespace XeApp.Game.Menu
 			nowMs += dt;
 			if (nowMs >= endMs)
 				nowMs = 0;
-			return Mathf.RoundToInt(startFrame + nowMs * 60);
+			return (int)(startFrame + nowMs * 60);
 		}
 	}
 }

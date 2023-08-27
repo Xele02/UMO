@@ -361,7 +361,7 @@ namespace XeApp.Game.Menu
 
 			//0x1D92F88
 			ViewFrameAnimation frameAnim = layout.GetView(0).FrameAnimation;
-			int target_frame = Mathf.RoundToInt(frameAnim.SearchLabelFrame("anim_end"));
+			int target_frame = (int)(frameAnim.SearchLabelFrame("anim_end"));
 			yield return new WaitWhile(() =>
 			{
 				//0x1D92BAC

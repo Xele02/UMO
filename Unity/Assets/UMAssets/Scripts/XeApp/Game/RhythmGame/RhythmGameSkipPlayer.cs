@@ -520,7 +520,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			if (buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.NoDamage, -1))
 				f = 0;
-			status.life.DamageValue(Mathf.RoundToInt(f * buff.effectValue));
+			status.life.DamageValue((int)(f * buff.effectValue));
 		}
 
 		//// RVA: 0xC03274 Offset: 0xC03274 VA: 0xC03274

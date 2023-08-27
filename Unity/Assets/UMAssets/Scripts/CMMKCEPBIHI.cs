@@ -1216,7 +1216,7 @@ public static class CMMKCEPBIHI
 			}
 		}
 		int c = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.ADBELGIDIEN_GetProgress(BAKLKJLPLOJ_FPt, GBNOALJPOBM_IsLine6);
-		return (scoreWithEnemy - scoreWithoutEnemy) + Mathf.RoundToInt(c * total / 1000.0f);
+		return (scoreWithEnemy - scoreWithoutEnemy) + (int)(c * total / 1000.0f);
 	}
 
 	// // RVA: 0x108E2F8 Offset: 0x108E2F8 VA: 0x108E2F8

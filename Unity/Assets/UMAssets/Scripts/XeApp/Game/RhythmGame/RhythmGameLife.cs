@@ -98,7 +98,7 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0x9A8D70 Offset: 0x9A8D70 VA: 0x9A8D70
 		private void ChangeLife(int value, float rate)
 		{
-			current = (int)Mathf.Clamp(current + Mathf.Round(value * rate), 0, max);
+			current = (int)Mathf.Clamp(current + (int)(value * rate), 0, max);
 			if(isLiveSkip)
 			{
 				current = Mathf.Max(1, current);

@@ -408,7 +408,7 @@ namespace XeApp.Game.Menu
 		{
 			if(num != 0)
 			{
-				return Mathf.RoundToInt(Mathf.Log10(num)) + 1;
+				return (int)(Mathf.Log10(num)) + 1;
 			}
 			return 1;
 		}

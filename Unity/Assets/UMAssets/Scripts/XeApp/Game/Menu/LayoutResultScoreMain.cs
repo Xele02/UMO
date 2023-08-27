@@ -111,7 +111,7 @@ namespace XeApp.Game.Menu
 			};
 			for(int i = 0; i < strs.Length; i++)
 			{
-				countStartFrameList[i] = Mathf.RoundToInt(layoutMainAnim.GetView(0).FrameAnimation.SearchLabelFrame(strs[i]));
+				countStartFrameList[i] = (int)(layoutMainAnim.GetView(0).FrameAnimation.SearchLabelFrame(strs[i]));
 			}
 
 			numberCombo = n.Find((NumberBase _) => {
@@ -549,7 +549,7 @@ namespace XeApp.Game.Menu
 				int a = l.GetView(0).FrameAnimation.FrameCount;
 				float f = layoutHighScoreMarkAnim.GetView(0).FrameAnimation.SearchLabelFrame("logo_act");
 				float f2 = layoutHighScoreMarkAnim.GetView(0).FrameAnimation.SearchLabelFrame("loen_act");
-				layoutHighScoreMarkAnim.StartChildrenAnimLoop(a + 1, Mathf.RoundToInt(f), Mathf.RoundToInt(f2));
+				layoutHighScoreMarkAnim.StartChildrenAnimLoop(a + 1, (int)(f), (int)(f2));
 			}
 			else
 			{

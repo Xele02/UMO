@@ -206,12 +206,12 @@ namespace XeApp.Game.RhythmGame
 						if(sum < 100 || (j + 1) == ar[i].DAPGDCPDCNA_Pri)
 						{
 							//LAB_00c0b118
-							m = Mathf.RoundToInt((Database.Instance.gameSetup.teamInfo.teamStatus.spNoteExpected[j + 1] / 10 + ar[i].JNNKKPNGPAA((SpecialNoteAttribute.Type)(j + 1))) / 100 * li2[i]);
+							m = Mathf.RoundToInt((Database.Instance.gameSetup.teamInfo.teamStatus.spNoteExpected[j + 1] / 10.0f + ar[i].JNNKKPNGPAA((SpecialNoteAttribute.Type)(j + 1))) / 100.0f * li2[i]);
 						}
 						else
 						{
 							int n = (Database.Instance.gameSetup.teamInfo.teamStatus.spNoteExpected[ar[i].DAPGDCPDCNA_Pri] / 10 + ar[i].JNNKKPNGPAA((SpecialNoteAttribute.Type)ar[i].DAPGDCPDCNA_Pri));
-							m = (Database.Instance.gameSetup.teamInfo.teamStatus.spNoteExpected[j + 1] / 10 + ar[i].JNNKKPNGPAA((SpecialNoteAttribute.Type)ar[i].DAPGDCPDCNA_Pri)) / (sum - n) * (li2[i] - Mathf.RoundToInt(n / 100 * li2[i]));
+							m = (int)((Database.Instance.gameSetup.teamInfo.teamStatus.spNoteExpected[j + 1] / 10 + ar[i].JNNKKPNGPAA((SpecialNoteAttribute.Type)ar[i].DAPGDCPDCNA_Pri)) * 1.0f / (sum - n) * (li2[i] - Mathf.RoundToInt(n / 100.0f * li2[i])));
 						}
 					}
 					li3[j + 1, i] = m;

@@ -328,7 +328,7 @@ namespace XeApp.Game.RhythmAdjust
 			adjustSlider.onValueChanged.AddListener((float value) =>
 			{
 				//0xF64578
-				noteOffsetMillisec = Mathf.RoundToInt(value) * 10;
+				noteOffsetMillisec = (int)(value) * 10;
 				if(notePrefOffsetMilllisec != noteOffsetMillisec && !isSliderSeDisable)
 				{
 					SoundManager.Instance.sePlayerBoot.Stop();
@@ -668,13 +668,13 @@ namespace XeApp.Game.RhythmAdjust
 		// // RVA: 0xF63824 Offset: 0xF63824 VA: 0xF63824
 		public void MinusAdjustValue()
 		{
-			SetAdjustValue(Mathf.RoundToInt(adjustSlider.value) - 1);
+			SetAdjustValue((int)(adjustSlider.value) - 1);
 		}
 
 		// // RVA: 0xF63874 Offset: 0xF63874 VA: 0xF63874
 		public void PlusAdjustValue()
 		{
-			SetAdjustValue(Mathf.RoundToInt(adjustSlider.value) + 1);
+			SetAdjustValue((int)(adjustSlider.value) + 1);
 		}
 
 		// // RVA: 0xF618B0 Offset: 0xF618B0 VA: 0xF618B0

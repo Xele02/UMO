@@ -93,7 +93,7 @@ namespace XeSys
 			{
 				weight *= 10000000;
 			}
-			processes[target].Weight = (uint)Mathf.RoundToInt(weight);
+			processes[target].Weight = (uint)(weight);
 			processes[target].Age = 0;
 			Link(ref registered, -1, registered, target);
 			return target;

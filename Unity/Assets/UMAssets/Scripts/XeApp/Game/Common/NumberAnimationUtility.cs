@@ -46,14 +46,14 @@ namespace XeApp.Game.Common
 					{
 						int rand = UnityEngine.Random.Range(1, 10);
 						float f = Mathf.Pow(10, i);
-						onChangeNumberCakllback(fixedNumber + Mathf.RoundToInt(f * rand));
+						onChangeNumberCakllback(fixedNumber + (int)(f * rand));
 						count += Time.deltaTime;
 						if (onSkiped == null || !onSkiped())
 							yield return null;
 						else
 							isSkip = true;
 					} while (count < time && !isSkip);
-					fixedNumber = fixedNumber + Mathf.RoundToInt(Mathf.Pow(10, i) * lastDigitNumber[i]);
+					fixedNumber = fixedNumber + (int)(Mathf.Pow(10, i) * lastDigitNumber[i]);
 					onChangeNumberCakllback(fixedNumber);
 				}
 			}

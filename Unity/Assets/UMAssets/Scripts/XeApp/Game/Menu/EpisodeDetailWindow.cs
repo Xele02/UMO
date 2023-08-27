@@ -135,7 +135,7 @@ namespace XeApp.Game.Menu
 			rt.pivot = new Vector2(0, 1);
 			rt.anchorMin = new Vector2(0, 1);
 			rt.anchorMax = new Vector2(0, 1);
-			GaugeMaxFrame = Mathf.RoundToInt(m_line_abs.FrameAnimation.SearchLabelFrame("st_out"));
+			GaugeMaxFrame = (int)(m_line_abs.FrameAnimation.SearchLabelFrame("st_out"));
 			m_available_episode_point = layout.FindViewByExId("sw_cnm_ep_icon_01_anim_sw_sel_ep_meter_eff_01_anim") as AbsoluteLayout;
 			m_episodeFeedPlateAttention = layout.FindViewByExId("sw_sel_ep_detail_sw_sw_sel_ep_icon_ep_onoff_anim") as AbsoluteLayout;
 			m_updater = UpdateLoad;
@@ -218,7 +218,7 @@ namespace XeApp.Game.Menu
 				int a = EpisodeUtility.CalcEpisodeGaugeFrame(data.ABLHIAEDJAI_CurrentPoint, data.DMHDNKILKGI_MaxPoint, GaugeMaxFrame);
 				m_mask.StartChildrenAnimGoStop(a, a);
 				m_point_den.SetNumber(data.JBFLCHFEIGL.DNBFMLBNAEE_TotalPoint - data.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint, 0);
-				SetGauge(Mathf.RoundToInt(((m_data.JBFLCHFEIGL.DNBFMLBNAEE_TotalPoint - m_data.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint) / m_data.JBFLCHFEIGL.DNBFMLBNAEE_TotalPoint - GetPoint0(data.KELFCMEOPPM_EpId)) * 100.0f));
+				SetGauge((int)(((m_data.JBFLCHFEIGL.DNBFMLBNAEE_TotalPoint - m_data.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint) / m_data.JBFLCHFEIGL.DNBFMLBNAEE_TotalPoint - GetPoint0(data.KELFCMEOPPM_EpId)) * 100.0f));
 				this.StartCoroutineWatched(SetItemGaugeLine(EpisodeUtility.CalcEpisodeGaugeFrame(data.JBFLCHFEIGL.DNBFMLBNAEE_TotalPoint, data.DMHDNKILKGI_MaxPoint, GaugeMaxFrame)));
 				SetHasEpisodeGauge(EpisodeUtility.CalcEpisodeGaugeFrame(data.LEGAKDFPPHA_AvaiablePoint, data.DMHDNKILKGI_MaxPoint, GaugeMaxFrame));
 			}
@@ -230,7 +230,7 @@ namespace XeApp.Game.Menu
 				m_line.gameObject.SetActive(false);
 				m_mask.StartChildrenAnimGoStop("st_out", "st_out");
 				m_point_den.SetNumber(data.DMHDNKILKGI_MaxPoint, 0);
-				SetGauge(Mathf.RoundToInt(((m_data.JBFLCHFEIGL.DNBFMLBNAEE_TotalPoint - GetPoint0(data.KELFCMEOPPM_EpId) - data.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint) / m_data.JBFLCHFEIGL.DNBFMLBNAEE_TotalPoint - GetPoint0(data.KELFCMEOPPM_EpId)) * 100.0f));
+				SetGauge((int)(((m_data.JBFLCHFEIGL.DNBFMLBNAEE_TotalPoint - GetPoint0(data.KELFCMEOPPM_EpId) - data.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint) / m_data.JBFLCHFEIGL.DNBFMLBNAEE_TotalPoint - GetPoint0(data.KELFCMEOPPM_EpId)) * 100.0f));
 				SetHasEpisodeGauge(0);
 			}
 			m_point_mol.SetNumber(data.DMHDNKILKGI_MaxPoint, 0);

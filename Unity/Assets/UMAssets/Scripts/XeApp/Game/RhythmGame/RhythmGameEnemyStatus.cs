@@ -174,7 +174,7 @@ namespace XeApp.Game.RhythmGame
 				if ((notesNumberInMode + 1 - AttackComboCount) < basicValueStepThresholdList[i])
 					break;
 			}
-			return Mathf.RoundToInt(hitRate * v / 100.0f * teamAttack * basicValues[i] / evaluationNotesNum * damageBonusRate);
+			return (int)(hitRate * v / 100.0f * teamAttack * basicValues[i] / evaluationNotesNum * damageBonusRate);
 		}
 
 		//// RVA: 0xDC4D48 Offset: 0xDC4D48 VA: 0xDC4D48
@@ -215,8 +215,8 @@ namespace XeApp.Game.RhythmGame
 						{
 							diff = Mathf.Clamp(diff - 2, 0, 7) + 5;
 						}
-						subgoalValue = Mathf.RoundToInt(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.BGDOCIBFLBM_EnemyBuffs[skill.buffEffectValue - 1].OMIMBPNKOKE_SubGoalPercent[diff] * 0.01f * subgoalValue);
-						goalValue = Mathf.RoundToInt(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.BGDOCIBFLBM_EnemyBuffs[skill.buffEffectValue - 1].HGIOBLMAAEO_GoalPercent[diff] * 0.01f * goalValue);
+						subgoalValue = (int)(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.BGDOCIBFLBM_EnemyBuffs[skill.buffEffectValue - 1].OMIMBPNKOKE_SubGoalPercent[diff] * 0.01f * subgoalValue);
+						goalValue = (int)(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.BGDOCIBFLBM_EnemyBuffs[skill.buffEffectValue - 1].HGIOBLMAAEO_GoalPercent[diff] * 0.01f * goalValue);
 						return true;
 					}
 				}
