@@ -328,7 +328,7 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < list.Count; i++)
 			{
 				FlexibleListItem_Rate r = new FlexibleListItem_Rate();
-				r.Top = new Vector2(0, -(i + 116 + 10));
+				r.Top = new Vector2(0, -(i * 116 + 10));
 				r.Height = 116;
 				r.ResourceType = 2;
 				r.ViewData = list[i];
