@@ -78,8 +78,8 @@ namespace XeApp.Game.Menu
 		{
 			layoutMainAnim = layout.FindViewById("sw_g_res_anim") as AbsoluteLayout;
 			layoutExcellentAnim[0] = layout.FindViewById("sw_g_res_font_jdg_perfect_ex_anim") as AbsoluteLayout;
-			layoutExcellentAnim[1] = layout.FindViewById("sw_g_res_anim_sw_g_res_anim") as AbsoluteLayout;
-			layoutExcellentAnim[2] = layout.FindViewById("sw_g_res_anim_swnum_score") as AbsoluteLayout;
+			layoutExcellentAnim[1] = layout.FindViewByExId("sw_g_res_anim_sw_g_res_anim") as AbsoluteLayout;
+			layoutExcellentAnim[2] = layout.FindViewByExId("sw_g_res_anim_swnum_score") as AbsoluteLayout;
 			NumberBase[] nbs = transform.Find("sw_g_res_anim (AbsoluteLayout)").GetComponentsInChildren<NumberBase>(true);
 			List<NumberBase> n = new List<NumberBase>(nbs);
 			numberNoteResultCountList[0] = n.Find((NumberBase _) => {

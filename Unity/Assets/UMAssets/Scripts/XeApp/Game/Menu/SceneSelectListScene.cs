@@ -163,6 +163,8 @@ namespace XeApp.Game.Menu
 				m_popupFilterSortScene = PopupFilterSort.Scene.EpisodeSelect2;
 			else if (m_transitionName == TransitionList.Type.SCENE_ABILITY_RELEASE_LIST)
 				m_popupFilterSortScene = PopupFilterSort.Scene.EpisodeSelect2;
+			else if (m_transitionName == TransitionList.Type.ASSIST_SELECT)
+				m_popupFilterSortScene = PopupFilterSort.Scene.EpisodeSelect2;
 			else
 				TodoLogger.LogError(0, "Set for transition " + m_transitionName);
 
@@ -1222,7 +1224,11 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1386EC0 Offset: 0x1386EC0 VA: 0x1386EC0
 		private void OnShowListSceneStatus(int listIndex)
 		{
-			TodoLogger.LogNotImplemented("OnShowListSceneStatus");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			bool isFriend = m_assistViewData != null || m_isHomeSceneBg;
+            GCIJNCFDNON_SceneInfo scene = PlayerData.OPIBAPEGCLA_Scenes[m_sceneIndexList[listIndex]];
+            m_selectedSceneId = scene.BCCHOBPJJKE_SceneId;
+			MenuScene.Instance.ShowSceneStatusPopupWindow(scene, PlayerData, false, TransitionName, UpdateListItem, isFriend, isFriend, SceneStatusParam.PageSave.Player, false);
 		}
 
 		// // RVA: 0x13870E4 Offset: 0x13870E4 VA: 0x13870E4
@@ -1259,7 +1265,53 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x13873F4 Offset: 0x13873F4 VA: 0x13873F4
 		private void OnShowEquipmentSceneStatus(int equipmentSlotIndex)
 		{
-			TodoLogger.LogNotImplemented("OnShowEquipmentSceneStatus");
+			bool isFriend = false;
+			GCIJNCFDNON_SceneInfo scene = null;
+			if(m_assistViewData == null)
+			{
+				if(!m_isHomeSceneBg)
+				{
+					if(!m_isGoDivaEvent)
+					{
+						if(equipmentSlotIndex == 0)
+						{
+							isFriend = false;
+							scene = PlayerData.OPIBAPEGCLA_Scenes[m_divaData.FGFIBOBAPIA_SceneId - 1];
+						}
+						else
+						{
+							isFriend = false;
+							scene = PlayerData.OPIBAPEGCLA_Scenes[m_divaData.DJICAKGOGFO_SubSceneIds[equipmentSlotIndex] - 1];
+						}
+					}
+					else
+					{
+						if(equipmentSlotIndex == 0)
+						{
+							isFriend = false;
+							scene = PlayerData.OPIBAPEGCLA_Scenes[m_divaData.FGFIBOBAPIA_SceneId - 1];
+						}
+						else
+						{
+							isFriend = false;
+							scene = PlayerData.OPIBAPEGCLA_Scenes[m_divaData.DJICAKGOGFO_SubSceneIds[equipmentSlotIndex] - 1];
+						}
+					}
+				}
+				else
+				{
+					isFriend = true;
+					scene = JKHEOEEPBMJ.AIEDAEPONAB_GetHomeSceneInfo(PlayerData);
+				}
+			}
+			else
+			{
+				isFriend = true;
+				scene = m_assistViewData.ELBLMMPEKPH_GetAssistScene(m_assistPageIndex, m_assistSlotIndex);
+			}
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			m_selectedSceneId = scene.BCCHOBPJJKE_SceneId;
+			MenuScene.Instance.ShowSceneStatusPopupWindow(scene, PlayerData, false, TransitionList.Type.SCENE_SELECT, UpdateListItem, isFriend, isFriend, SceneStatusParam.PageSave.Player, false);
 		}
 
 		// // RVA: 0x1386670 Offset: 0x1386670 VA: 0x1386670

@@ -1,4 +1,6 @@
 using System;
+using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace XeApp.Game.Common
 {
@@ -40,13 +42,44 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CCA700 Offset: 0x1CCA700 VA: 0x1CCA700
-		//private void UpdatePressed() { }
+		private void UpdatePressed()
+		{
+			if(IsPressed())
+			{
+				if(!Disable && !m_isStayDisable && !IsInputOff)
+				{
+					Debug.Log("SB.UpdatePressed");
+					if(Time.realtimeSinceStartup <= m_nextTime)
+						return;
+					SetOff();
+					PlayNormal();
+					m_stayEvent();
+					m_isLongPressed = true;
+				}
+			}
+			m_updater = UpdateIdel;
+		}
 
 		//// RVA: 0x1CCACE4 Offset: 0x1CCACE4 VA: 0x1CCACE4 Slot: 18
-		//public override void OnPointerDown(PointerEventData eventData) { }
+		public override void OnPointerDown(PointerEventData eventData)
+		{
+			base.OnPointerDown(eventData);
+			if(IsEventProcessed && m_stayEvent != null)
+			{
+				m_isClick = false;
+				m_nextTime = Time.realtimeSinceStartup + m_interval;
+				m_updater = UpdatePressed;
+			}
+			m_isLongPressed = false;
+		}
 
 		//// RVA: 0x1CCADC8 Offset: 0x1CCADC8 VA: 0x1CCADC8 Slot: 15
-		//public override void OnPointerClick(PointerEventData eventData) { }
+		public override void OnPointerClick(PointerEventData eventData)
+		{
+			if(m_isLongPressed)
+				return;
+			base.OnPointerClick(eventData);
+		}
 
 		//// RVA: 0x1CCADDC Offset: 0x1CCADDC VA: 0x1CCADDC
 		public void AddOnStayCallback(OnStayCallback callback)
