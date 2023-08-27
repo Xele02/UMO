@@ -221,11 +221,11 @@ namespace XeApp.Game.Menu
 					if (m_menuTransitionControl.DirtyChangeScene && !m_isInTransition)
 					{
 						this.StartCoroutineWatched(ChangeTransitionCoroutine());
-						if (m_playerStatusData != null)
-						{
-							m_playerStatusData.FBANBDCOEJL();
-							m_menuTransitionControl.ApplyPlayerStatus(m_playerStatusData);
-						}
+					}
+					if (m_playerStatusData != null)
+					{
+						m_playerStatusData.FBANBDCOEJL();
+						m_menuTransitionControl.ApplyPlayerStatus(m_playerStatusData);
 					}
 				};
 				return true;
