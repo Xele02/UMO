@@ -254,7 +254,7 @@ namespace XeApp.Game.MusicSelect
 #endif
 			{
 				_scrollValue += eventData.delta;
-				_velocity = Vector2.Lerp(_velocity, (_prevPosition - eventData.position) / 0.01666667f, 0.1666667f);
+				_velocity = Vector2.Lerp(_velocity, (_prevPosition - eventData.position) / (1.0f/60), 1.0f/60);
 				UpdateItemPosition(_scrollValue.y / 90.0f);
 				UpdateCenterItem(_scrollValue.y / 90.0f, false, false);
 				UpdateListPosition(false);

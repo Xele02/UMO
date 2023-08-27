@@ -55,12 +55,12 @@ namespace XeApp.Game.Common
 			{
 				float x = 1.0f;
 				float y = 1.0f;
-				int idx = Mathf.RoundToInt(m_change_param_obj.position.x);
+				int idx = (int)(m_change_param_obj.position.x);
 				if(idx != 0)
 				{
 					x = m_AdjustPosParam[m_diva_index[idx - 1]];
 				}
-				idx = Mathf.RoundToInt(m_change_param_obj.position.y);
+				idx = (int)(m_change_param_obj.position.y);
 				if(idx != 0)
 				{
 					y = m_AdjustPosParam[m_diva_index[idx - 1]];
@@ -80,12 +80,12 @@ namespace XeApp.Game.Common
 			{
 				float x = 1.0f;
 				float y = 1.0f;
-				int idx = Mathf.RoundToInt(m_change_param_obj.position.x);
+				int idx = (int)(m_change_param_obj.position.x);
 				if(idx != 0)
 				{
 					x = m_AdjustPosParam[m_diva_index[idx - 1]];
 				}
-				idx = Mathf.RoundToInt(m_change_param_obj.position.y);
+				idx = (int)(m_change_param_obj.position.y);
 				if(idx != 0)
 				{
 					y = m_AdjustPosParam[m_diva_index[idx - 1]];

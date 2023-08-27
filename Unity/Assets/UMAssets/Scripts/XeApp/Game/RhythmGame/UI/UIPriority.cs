@@ -47,8 +47,8 @@ namespace XeApp.Game.RhythmGame.UI
 		{
 			float f = (offset + 100) * 200;
 			if(priority != Priority.Default)
-				return Mathf.RoundToInt(f / 200) - Mathf.RoundToInt((int)priority * 200);
-			return Mathf.RoundToInt(f / 200);
+				return (int)(f / 200) - (int)((int)priority * 200);
+			return (int)(f / 200);
 		}
 
 		//// RVA: 0x15593BC Offset: 0x15593BC VA: 0x15593BC

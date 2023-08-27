@@ -86,7 +86,7 @@ namespace XeApp.Game.Common
 			{
 				m_ratio = 100;
 			}
-			int v = Mathf.RoundToInt(m_ratio);
+			int v = (int)(m_ratio);
 			m_per_number.SetNumber(v * 100, 3);
 			m_download_frame_layout.StartChildrenAnimGoStop(v, v);
 		}

@@ -99,6 +99,7 @@ namespace XeApp.Game.Menu
 				m_imageJacket.enabled = true;
 				image.Set(m_imageJacket);
 			});
+			m_initialized = true;
 		}
 
 		//// RVA: 0x1736300 Offset: 0x1736300 VA: 0x1736300

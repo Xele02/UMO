@@ -276,7 +276,7 @@ namespace XeSys
 					f += 2 * Mathf.PI / divCount * 0.5f;
 				if (f < 0)
 					f += 2* Mathf.PI;
-				return Mathf.RoundToInt(f / (2 * Mathf.PI) * divCount);
+				return (int)(f / (2 * Mathf.PI) * divCount);
 			}
 		}
 

@@ -29,7 +29,7 @@ namespace XeApp.Game.Menu
 				//0xF83470
 				if(m_setting.IsFriend)
 					return;
-				if(m_setting.IsChangeScene)
+				if(!m_setting.IsChangeScene)
 					return;
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				control.Close(() =>

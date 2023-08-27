@@ -107,12 +107,12 @@ namespace XeApp.Game.Menu
 				{
 					float v = scoreParams[i] / (t / r);
 					float max = m_scoreGauges[i].MaxValue * 0.5f;
-					vals[i] = Mathf.RoundToInt(Mathf.Clamp(max * (f2 + v), 0, max));
+					vals[i] = (int)(Mathf.Clamp(max * (f2 + v), 0, max));
 					float v2 = Mathf.Clamp(f2 * max, 0, max);
 					f2 += v;
 					if (v >= 0)
 					{
-						if(vals[i] == Mathf.RoundToInt(v2))
+						if(vals[i] == (int)(v2))
 						{
 							for(int j = i; j >= 0; j--)
 							{
@@ -131,7 +131,7 @@ namespace XeApp.Game.Menu
 			for(int i = 1; i < m_rankGauges.Count; i++)
 			{
 				float f = m_rankGauges[i].MaxValue * 0.5f * rankPosition[i];
-				m_rankGauges[i].CurrentValue = Mathf.RoundToInt((f + f) / m_viewRatio);
+				m_rankGauges[i].CurrentValue = (int)((f + f) / m_viewRatio);
 			}
 			SetScoreRank(scoreRank);
 		}

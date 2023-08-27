@@ -57,7 +57,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1244044 Offset: 0x1244044 VA: 0x1244044
 		public void Initialize(int danceNum, bool isUnitOnly)
 		{
-			m_buttonChangeLayout.StartChildrenAnimGoStop(MessageManager.Instance.GetBank("menu").GetMessageByLabel(isUnitOnly ? "02" : "01"));
+			m_buttonChangeLayout.StartChildrenAnimGoStop(isUnitOnly ? "02" : "01");
 			m_title.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_warning_window_title");
 			m_content.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel(isUnitOnly ? "unit_warning_window_text_002" : "unit_warning_window_text_001");
 			m_checkLabel.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_warning_window_check");

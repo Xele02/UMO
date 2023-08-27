@@ -100,7 +100,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17DFC0C Offset: 0x17DFC0C VA: 0x17DFC0C
 		public void SetGaugeValue(float value)
 		{
-			m_gaugeAnimeLayout.StartChildrenAnimGoStop(Mathf.RoundToInt(value * 100), Mathf.RoundToInt(value * 100));
+			m_gaugeAnimeLayout.StartChildrenAnimGoStop((int)(value * 100), (int)(value * 100));
 		}
 
 		//// RVA: 0x17DF404 Offset: 0x17DF404 VA: 0x17DF404

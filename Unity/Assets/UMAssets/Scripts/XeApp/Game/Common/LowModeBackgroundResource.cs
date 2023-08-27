@@ -108,7 +108,7 @@ namespace XeApp.Game.Common
 				}
 				operation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(Texture));
 				yield return operation;
-				cardTexture = operation.GetAsset<Texture>();
+				this.cardTexture = operation.GetAsset<Texture>();
 				AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			}
 		}

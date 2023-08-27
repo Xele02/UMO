@@ -131,6 +131,7 @@ class RuntimeSettings : ScriptableObject
 	public bool EnableProfileSaveCheck = false;
 	public bool EnableLocalSaveCheck = false;
 	public bool EnableDebugStopCoroutine = false;
+	public bool EnableDebugSkills = false;
 }
 
 #if UNITY_EDITOR

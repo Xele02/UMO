@@ -9,7 +9,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xEF3650 Offset: 0xEF3650 VA: 0xEF3650
 		public static int CalcEpisodeGaugeFrame(int currentPoint, int maxPoint, int flashFrame = 100)
 		{
-			return Mathf.RoundToInt(Mathf.Clamp01(currentPoint * 1.0f / maxPoint) * flashFrame);
+			return (int)(Mathf.Clamp01(currentPoint * 1.0f / maxPoint) * flashFrame);
 		}
 
 		// RVA: 0xF0A990 Offset: 0xF0A990 VA: 0xF0A990

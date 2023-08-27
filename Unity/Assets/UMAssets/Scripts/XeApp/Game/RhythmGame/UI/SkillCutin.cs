@@ -66,6 +66,8 @@ namespace XeApp.Game.RhythmGame.UI
 					return true;
 				return false;
 			});
+			if(RuntimeSettings.CurrentSettings.EnableDebugSkills)
+				UnityEngine.Debug.LogError("Show Live Skill "+liveSkill.SkillIndex+" "+liveSkill.ownerDivaIndex+" "+liveSkill.ownerSlotIndex+" "+liveSkill.skillId);
 			if(idx < 0)
 			{
 				m_skillQueue.Add(new CutinInfo()
@@ -141,7 +143,7 @@ namespace XeApp.Game.RhythmGame.UI
 
 			//0x1563E44
 			m_isPlaying = true;
-			for(int i = 0; m_skillQueue.Count > 1;)
+			for(int i = 0; m_skillQueue.Count > 0;)
 			{
 				stackValue = m_skillQueue[0];
 				isChanged = false;

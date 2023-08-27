@@ -326,7 +326,7 @@ namespace XeApp.Game.Menu
 				return;
 			if(sectionExp < 0)
 			{
-				sectionExp = Mathf.RoundToInt(gaugePercentage / 100.0f * expMaster.NDFGMMKGBAA_GetExpForPlayerLevel(playerLevel));
+				sectionExp = (int)(gaugePercentage / 100.0f * expMaster.NDFGMMKGBAA_GetExpForPlayerLevel(playerLevel));
 			}
 			numberCurrentExp.SetNumber(sectionExp, 0);
 		}
@@ -360,7 +360,7 @@ namespace XeApp.Game.Menu
 		{
 			if (IsLevelMax(playerLevel))
 				gaugePercentage = 100;
-			return Mathf.RoundToInt(Mathf.Clamp(gaugePercentage, 0, 100) * layoutExpGauge.GetView(0).FrameAnimation.FrameNum + 1 / 100);
+			return (int)(Mathf.Clamp(gaugePercentage, 0, 100) * layoutExpGauge.GetView(0).FrameAnimation.FrameNum + 1 / 100);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71C9F4 Offset: 0x71C9F4 VA: 0x71C9F4

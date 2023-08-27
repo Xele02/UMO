@@ -29,6 +29,9 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x159D388 Offset: 0x159D388 VA: 0x159D388
-		// public void RoomIconLoad(int room, Action<IiconTexture> callBack) { }
+		public void RoomIconLoad(int room, Action<IiconTexture> callBack)
+		{
+			Load(string.Format("ct/sn/ro/{0:D2}.xab", room), callBack);
+		}
 	}
 }

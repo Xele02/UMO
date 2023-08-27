@@ -294,7 +294,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x12CEF38 Offset: 0x12CEF38 VA: 0x12CEF38
 		private void OnClickOriginalSetting()
 		{
-			TodoLogger.LogNotImplemented("OnClickOriginalSetting");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			ShowOriginalPrismSettingPopup(Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH_MusicId, Database.Instance.gameSetup.musicInfo, false, () =>
+			{
+				//0x12CFD68
+				m_prismUnitInfo.UpdateContent(m_prismData, Database.Instance.gameSetup.musicInfo);
+				this.StartCoroutineWatched(Co_ApplyWait());
+			});
 		}
 
 		// // RVA: 0x12CF0E8 Offset: 0x12CF0E8 VA: 0x12CF0E8
@@ -397,9 +403,5 @@ namespace XeApp.Game.Menu
 			}
 			return false;
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x727694 Offset: 0x727694 VA: 0x727694
-		// // RVA: 0x12CFD68 Offset: 0x12CFD68 VA: 0x12CFD68
-		// private void <OnClickOriginalSetting>b__39_0() { }
 	}
 }

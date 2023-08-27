@@ -81,7 +81,7 @@ namespace XeApp.Game.UI
 			m_vertexColors.Add(m_vertexColor);
 
 			float endAngle = m_angleEnd * m_value;
-			int iangle = Mathf.RoundToInt(endAngle);
+			int iangle = (int)(endAngle);
 			int a = iangle + DivisionAngle;
 			int numDivision = a / DivisionAngle;
 			if(a > -DivisionAngle)

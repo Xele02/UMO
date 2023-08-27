@@ -136,7 +136,7 @@ namespace XeApp.Game.Menu
 				}
 				for(int i = 0; i < playlog.noteDataList.Count; i++)
 				{
-					data[Mathf.Min(Mathf.RoundToInt(playlog.noteDataList[i].millisec * 1.0f / endTime * GRAPH_COUNT), GRAPH_COUNT - 1)].Add(playlog.noteDataList[i]);
+					data[Mathf.Min((int)(playlog.noteDataList[i].millisec * 1.0f / endTime * GRAPH_COUNT), GRAPH_COUNT - 1)].Add(playlog.noteDataList[i]);
 				}
 				for(int i = 0; i < GRAPH_COUNT; i++)
 				{

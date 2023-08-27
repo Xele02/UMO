@@ -66,7 +66,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1A9FC48 Offset: 0x1A9FC48 VA: 0x1A9FC48
 		private void ShowSceneDetail()
 		{
-			if (m_info.DFIGPDCBAPB_IsInvalid)
+			if (!m_info.DFIGPDCBAPB_IsInvalid)
 			{
 				IsShowSceneDetail = true;
 				MenuScene.Instance.ShowSceneStatusPopupWindow(GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[m_info.PBPOLELIPJI_Id - 1], GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, () =>

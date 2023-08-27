@@ -249,7 +249,7 @@ namespace XeApp.Game.Menu
 					//0x177CE44
 					if(Parent != null)
 					{
-						instance.transform.SetParent(Parent.transform);
+						instance.transform.SetParent(Parent.transform, false);
 						m_newEpisodeSetting.SetContent(instance);
 					}
 				}));

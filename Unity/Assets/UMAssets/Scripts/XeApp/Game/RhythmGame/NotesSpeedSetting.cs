@@ -37,7 +37,7 @@ namespace XeApp.Game.RhythmGame
 						// 0xF779E0
 						return speed <= item.Speed;
 					});
-					return Mathf.RoundToInt(Mathf.Lerp(m_items[idx].DispTime, m_items[idx2].DispTime, (speed - m_items[idx].Speed) / (m_items[idx2].Speed - m_items[idx].Speed)));
+					return Mathf.RoundToInt(Mathf.Lerp(m_items[idx].DispTime, m_items[idx2].DispTime, (speed - m_items[idx].Speed) * 1.0f / (m_items[idx2].Speed - m_items[idx].Speed)));
 				}
 				return m_items[m_items.Count - 1].DispTime;
 			}

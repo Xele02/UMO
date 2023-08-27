@@ -152,28 +152,28 @@ namespace XeApp.Game.Menu
 			switch(GetNotesSpeedCurrentDiff())
 			{
 				case Difficulty.Type.Easy:
-					Option.DCHMOFLEFMI_NotesSpeedEasy = Mathf.RoundToInt(value);
+					Option.DCHMOFLEFMI_NotesSpeedEasy = (int)(value);
 					break;
 				case Difficulty.Type.Normal:
-					Option.MBOEPFLNDOD_NotesSpeedNormal = Mathf.RoundToInt(value);
+					Option.MBOEPFLNDOD_NotesSpeedNormal = (int)(value);
 					break;
 				case Difficulty.Type.Hard:
 					if(!IsNotesSpeedCurrentLine6Mode())
-						Option.MGOOLKHAPAF_NotesSpeedHard = Mathf.RoundToInt(value);
+						Option.MGOOLKHAPAF_NotesSpeedHard = (int)(value);
 					else
-						Option.LIPAPGABJOA_NotesSpeedHardPlus = Mathf.RoundToInt(value);
+						Option.LIPAPGABJOA_NotesSpeedHardPlus = (int)(value);
 					break;
 				case Difficulty.Type.VeryHard:
 					if (!IsNotesSpeedCurrentLine6Mode())
-						Option.AIKDLBAANLG_NotesSpeedVeryHard = Mathf.RoundToInt(value);
+						Option.AIKDLBAANLG_NotesSpeedVeryHard = (int)(value);
 					else
-						Option.JDJBFBPBLDC_NotesSpeedVeryHardPlus = Mathf.RoundToInt(value);
+						Option.JDJBFBPBLDC_NotesSpeedVeryHardPlus = (int)(value);
 					break;
 				case Difficulty.Type.Extreme:
 					if (!IsNotesSpeedCurrentLine6Mode())
-						Option.KOKDGGOFPPI_NotesSpeedExtreme = Mathf.RoundToInt(value);
+						Option.KOKDGGOFPPI_NotesSpeedExtreme = (int)(value);
 					else
-						Option.FJKNAHGFAPP_NotesSpeedExtremePlus = Mathf.RoundToInt(value);
+						Option.FJKNAHGFAPP_NotesSpeedExtremePlus = (int)(value);
 					break;
 			}
 		}
@@ -341,7 +341,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1B588B8 Offset: 0x1B588B8 VA: 0x1B588B8
 		public void SetNotesOffsetValue(float value)
 		{
-			Option.OJAJHIMOIEC_NoteOffset = Mathf.RoundToInt(value);
+			Option.OJAJHIMOIEC_NoteOffset = (int)(value);
 		}
 
 		// // RVA: 0x1B588EC Offset: 0x1B588EC VA: 0x1B588EC
@@ -361,7 +361,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1B58A9C Offset: 0x1B58A9C VA: 0x1B58A9C
 		public void SetDimmer2dValue(float value)
 		{
-			Option.FPFAMFOPJDJ_Dimmer2d = Mathf.RoundToInt(value);
+			Option.FPFAMFOPJDJ_Dimmer2d = (int)(value);
 		}
 
 		// // RVA: 0x1B58AD0 Offset: 0x1B58AD0 VA: 0x1B58AD0
@@ -381,7 +381,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1B58C80 Offset: 0x1B58C80 VA: 0x1B58C80
 		public void SetDimmer3dValue(float value)
 		{
-			Option.OLALFDCEHKJ_Dimmer3d = Mathf.RoundToInt(value);
+			Option.OLALFDCEHKJ_Dimmer3d = (int)(value);
 		}
 
 		// // RVA: 0x1B58CB4 Offset: 0x1B58CB4 VA: 0x1B58CB4
@@ -628,42 +628,42 @@ namespace XeApp.Game.Menu
 			switch(category)
 			{
 				case SoundManager.CategoryId.MENU_SE:
-					Option.BGLLCLEDHKK_VolSe = Mathf.RoundToInt(value);
+					Option.BGLLCLEDHKK_VolSe = (int)(value);
 					break;
 				case SoundManager.CategoryId.MENU_VOICE:
-					Option.CNCIMBGLKOB_VolVoice = Mathf.RoundToInt(value);
+					Option.CNCIMBGLKOB_VolVoice = (int)(value);
 					break;
 				case SoundManager.CategoryId.MENU_BGM:
-					Option.HOMPENLIHCK_VolBgm = Mathf.RoundToInt(value);
+					Option.HOMPENLIHCK_VolBgm = (int)(value);
 					break;
 				case SoundManager.CategoryId.GAME_SE:
 					if(simulation)
-						OptionSLive.LMDACNNJDOE_VolSeRhythm = Mathf.RoundToInt(value);
+						OptionSLive.LMDACNNJDOE_VolSeRhythm = (int)(value);
 					else
-						Option.LMDACNNJDOE_VolSeRhythm = Mathf.RoundToInt(value);
+						Option.LMDACNNJDOE_VolSeRhythm = (int)(value);
 					break;
 				case SoundManager.CategoryId.GAME_VOICE:
 					if (simulation)
-						OptionSLive.FCKEDCKCEFC_VolVoiceRhythm = Mathf.RoundToInt(value);
+						OptionSLive.FCKEDCKCEFC_VolVoiceRhythm = (int)(value);
 					else
-						Option.FCKEDCKCEFC_VolVoiceRhythm = Mathf.RoundToInt(value);
+						Option.FCKEDCKCEFC_VolVoiceRhythm = (int)(value);
 					break;
 				case SoundManager.CategoryId.GAME_BGM:
 					if (simulation)
-						OptionSLive.ICGAOAFIHFD_VolBgmRhythm = Mathf.RoundToInt(value);
+						OptionSLive.ICGAOAFIHFD_VolBgmRhythm = (int)(value);
 					else
-						Option.ICGAOAFIHFD_VolBgmRhythm = Mathf.RoundToInt(value);
+						Option.ICGAOAFIHFD_VolBgmRhythm = (int)(value);
 					break;
 				case SoundManager.CategoryId.GAME_NOTES:
 					if (simulation)
-						OptionSLive.IBEINHHMHAC_VolNotesRhythm = Mathf.RoundToInt(value);
+						OptionSLive.IBEINHHMHAC_VolNotesRhythm = (int)(value);
 					else
-						Option.IBEINHHMHAC_VolNotesRhythm = Mathf.RoundToInt(value);
+						Option.IBEINHHMHAC_VolNotesRhythm = (int)value;
 					break;
 				default:
 					break;
 			}
-			SoundManager.Instance.SetCategoryVolumeFromMark(category, Mathf.RoundToInt(value), false);
+			SoundManager.Instance.SetCategoryVolumeFromMark(category, (int)(value), false);
 		}
 
 		// // RVA: 0x1B599D4 Offset: 0x1B599D4 VA: 0x1B599D4

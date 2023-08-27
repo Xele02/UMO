@@ -220,8 +220,8 @@ namespace XeApp.Game.Menu
 			yield return new WaitWhile(() =>
 			{
 				//0x1D8C2D8
-				float r = elapsed / sec;
-				int val = Mathf.RoundToInt(Mathf.Lerp(start, end, r));
+				float r = Mathf.Clamp01(elapsed / sec);
+				int val = (int)(Mathf.Lerp(start, end, r));
 				SetTotalScore(val);
 				elapsed += Time.deltaTime;
 				return r < 1;

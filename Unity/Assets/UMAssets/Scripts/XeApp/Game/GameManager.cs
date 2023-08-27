@@ -611,7 +611,7 @@ namespace XeApp.Game
 			if(!divaResource)
 			{
 				GameObject d = new GameObject("DivaResource", typeof(DivaResource));
-				d.transform.SetParent(this.transform);
+				d.transform.SetParent(this.transform, false);
 				divaResource = d.GetComponent<DivaResource>();
 			}
 			for(int i = 0; i < 4; i++)
@@ -619,7 +619,7 @@ namespace XeApp.Game
 				if(subDivaResource[i] == null)
 				{
 					GameObject sd = new GameObject("SubDivaResource_"+i, typeof(DivaResource));
-					sd.transform.SetParent(this.transform);
+					sd.transform.SetParent(this.transform, false);
 					subDivaResource[i] = sd.GetComponent<DivaResource>();
 				}
 			}

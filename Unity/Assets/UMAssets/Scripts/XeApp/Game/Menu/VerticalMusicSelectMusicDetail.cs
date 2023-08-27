@@ -408,7 +408,7 @@ namespace XeApp.Game.Menu
 		{
 			if(num != 0)
 			{
-				return Mathf.RoundToInt(Mathf.Log10(num)) + 1;
+				return (int)(Mathf.Log10(num)) + 1;
 			}
 			return 1;
 		}
@@ -547,7 +547,7 @@ namespace XeApp.Game.Menu
 				}
 				if(musicData.HAMPEDFMIAD_HasOnlyMultiDivaMode() && musicData.DBIGDCOHOIC_IsMultiDanceUnlocked())
 				{
-					for(int i = 1; i < 3; i++)
+					for(int i = 1; i <= 3; i++)
 					{
 						m_unitToggleButtonGroupObj.alpha = 1;
 						m_unitToggleButtonGroupObj.blocksRaycasts = false;

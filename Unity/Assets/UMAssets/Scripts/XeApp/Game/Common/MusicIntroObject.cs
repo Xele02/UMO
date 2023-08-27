@@ -17,7 +17,7 @@ namespace XeApp.Game.Common
 
 		private static readonly int IdleStateHash = MusicIntroMotionRef.IdleStateHash; // 0x0
 		private static readonly int TakeoffStateHash = MusicIntroMotionRef.TakeoffStateHash; // 0x4
-		private static readonly float TakeoffFadeDuration = 0.0833333f; // 0x8
+		private static readonly float TakeoffFadeDuration = 1.0f/12; // 0x8
 		[SerializeField] // RVA: 0x6877F0 Offset: 0x6877F0 VA: 0x6877F0
 		private Camera m_musicCamera; // 0xC
 		[SerializeField] // RVA: 0x687800 Offset: 0x687800 VA: 0x687800

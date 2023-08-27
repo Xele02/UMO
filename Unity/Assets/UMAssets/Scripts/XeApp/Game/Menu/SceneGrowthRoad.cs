@@ -82,7 +82,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x10DD36C Offset: 0x10DD36C VA: 0x10DD36C
-		//public void Wait() { }
+		public void Wait()
+		{
+			m_abs.StartChildrenAnimGoStop("st_in");
+		}
 
 		//// RVA: 0x10DA8F8 Offset: 0x10DA8F8 VA: 0x10DA8F8
 		public void Expand()

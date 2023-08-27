@@ -55,7 +55,7 @@ namespace XeApp.Game.RhythmGame
 				int valBase = a_base_value;
 				for (int i = 0; i < listEffectValueUp.Count; i++)
 				{
-					a_base_value += Mathf.RoundToInt(listEffectValueUp[i].buffEffectValue / 100.0f * valBase);
+					a_base_value += (int)(listEffectValueUp[i].buffEffectValue / 100.0f * valBase);
 				}
 			}
 			return a_base_value;

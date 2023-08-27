@@ -662,13 +662,14 @@ namespace XeApp.Game.Common
 		private IEnumerator PlayPopupWindowAnim()
 		{
 			//0x1BBEEE8
-			while(m_time < 1.0f)
+			do
 			{
 				m_time += Time.deltaTime * m_speed;
 				float val = m_currentCurver.Evaluate(m_time);
 				m_image.rectTransform.localScale = Vector2.one * val;
 				yield return null;
 			}
+			while(m_time < 1.0f);
 		}
 
 		// // RVA: 0x1BB113C Offset: 0x1BB113C VA: 0x1BB113C

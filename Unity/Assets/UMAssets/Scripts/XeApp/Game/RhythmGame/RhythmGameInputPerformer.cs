@@ -380,7 +380,7 @@ namespace XeApp.Game.RhythmGame
 
 		private const int LongNoteSaveFrameDefault = 2;
 		private int _longNoteSaveFrame = 2; // 0x30
-		private float longNoteSaveSec = 0.03333334f; // 0x34
+		private float longNoteSaveSec = 1.0f/30; // 0x34
 		private float swipeDistanceRate; // 0x38
 		private List<int> touchLineNo; // 0x3C
 		private InputSaver inputSaver; // 0x40

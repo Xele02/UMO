@@ -720,7 +720,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					dl.numberMusicLevelNextExp.SetNumber(expMaster.IECLHMBPEIJ_GetMusicExp(lvl + 1) - Mathf.RoundToInt(endExp), 0);
+					dl.numberMusicLevelNextExp.SetNumber(expMaster.IECLHMBPEIJ_GetMusicExp(lvl + 1) - (int)(endExp), 0);
 					yield break;
 				}
 			}
@@ -1073,7 +1073,7 @@ namespace XeApp.Game.Menu
 				gaugePercentage = 100;
 			float f = Mathf.Clamp(gaugePercentage, 0, 100);
 			int frameNum = divaLayouts[divaIndex].layoutMusicLevelExpGauge.GetView(0).FrameAnimation.FrameNum;
-			int frame = Mathf.RoundToInt(f * (frameNum + 1) / 100);
+			int frame = (int)(f * (frameNum + 1) / 100);
 			divaLayouts[divaIndex].layoutMusicLevelOldExpGauge.StartAnimGoStop(frame, frame);
 			divaLayouts[divaIndex].layoutMusicLevelEffectOut.StartAnimGoStop(frame, frame);
 		}
@@ -1086,7 +1086,7 @@ namespace XeApp.Game.Menu
 				gaugePercentage = 100;
 			float f = Mathf.Clamp(gaugePercentage, 0, 100);
 			int frameNum = divaLayouts[divaIndex].layoutMusicLevelExpGauge.GetView(0).FrameAnimation.FrameNum;
-			int frame = Mathf.RoundToInt(f * (frameNum + 1) / 100);
+			int frame = (int)(f * (frameNum + 1) / 100);
 			divaLayouts[divaIndex].layoutMusicLevelExpGauge.StartChildrenAnimGoStop(frame, frame);
 			if(!prevInfo.HHBJAEOIGIH_IsLocked)
 			{
@@ -1107,7 +1107,7 @@ namespace XeApp.Game.Menu
 				}
 				if(!prevInfo.HHBJAEOIGIH_IsLocked && !prevInfo.NBHEBLNHOJO_IsMax)
 				{
-					SetMusicLevelNextExp(divaIndex, musicLevel, Mathf.RoundToInt(f * expMaster.CMENIBIIKPJ_GetMusicLevelExp(musicLevel + 1) / 100 + expMaster.IECLHMBPEIJ_GetMusicExp(musicLevel)));
+					SetMusicLevelNextExp(divaIndex, musicLevel, (int)(f * expMaster.CMENIBIIKPJ_GetMusicLevelExp(musicLevel + 1) / 100 + expMaster.IECLHMBPEIJ_GetMusicExp(musicLevel)));
 				}
 			}
 			SetMusicLevelGaugeType(divaIndex, musicLevel);
@@ -1118,7 +1118,7 @@ namespace XeApp.Game.Menu
 		{
 			float f = Mathf.Clamp(gaugePercentage, 0, 100);
 			int frame = divaLayouts[divaIndex].layoutDivaExpGauge.GetView(0).FrameAnimation.FrameNum;
-			int idx = Mathf.RoundToInt(f * (frame + 1) / 100);
+			int idx = (int)(f * (frame + 1) / 100);
 			divaLayouts[divaIndex].layoutDivaOldExpGauge.StartAnimGoStop(idx, idx);
 			divaLayouts[divaIndex].layoutDivaExpGaugeEffectOut.StartAnimGoStop(idx, idx);
 		}
@@ -1128,7 +1128,7 @@ namespace XeApp.Game.Menu
 		{
 			float f = Mathf.Clamp(gaugePercentage, 0, 100);
 			int frame = divaLayouts[divaIndex].layoutDivaExpGauge.GetView(0).FrameAnimation.FrameNum;
-			int idx = Mathf.RoundToInt(f * (frame + 1) / 100);
+			int idx = (int)(f * (frame + 1) / 100);
 			divaLayouts[divaIndex].layoutDivaExpGauge.StartChildrenAnimGoStop(idx, idx);
 			if(!divaLayouts[divaIndex].isDivaLevelup)
 			{
@@ -1140,7 +1140,7 @@ namespace XeApp.Game.Menu
 				divaLayouts[divaIndex].layoutDivaOldExpGauge.StartAnimGoStop(0, 0);
 				divaLayouts[divaIndex].layoutDivaExpGaugeEffectOut.StartAnimGoStop(0, 0);
 			}
-			SetDivaLevelCurrentExp(divaIndex, divaLevel, Mathf.RoundToInt(f * expMaster.PHGMKDILOGE_GetDivaLevelExp(divaLevel + 1) / 100 + expMaster.NHEBLEFJNDO_GetDivaExp(divaLevel)));
+			SetDivaLevelCurrentExp(divaIndex, divaLevel, (int)(f * expMaster.PHGMKDILOGE_GetDivaLevelExp(divaLevel + 1) / 100 + expMaster.NHEBLEFJNDO_GetDivaExp(divaLevel)));
 			SetDivaLevelNecessaryExp(divaIndex, divaLevel);
 		}
 

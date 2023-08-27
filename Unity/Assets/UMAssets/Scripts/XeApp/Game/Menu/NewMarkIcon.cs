@@ -11,8 +11,8 @@ namespace XeApp.Game.Menu
         private const string LoopStartAnimLabel = "lo_go_act";
         private const string LoopEndAnimLabel = "lo_en_act";
         private const string HideAnimLabel = "st_non";
-        private const float LoopStartTime = 0.01666667f;
-        private const float LoopEndTime = 0.9833334f;
+        private const float LoopStartTime = 1.0f/60;
+        private const float LoopEndTime = 1-LoopStartTime;
         private AbsoluteLayout m_iconEffectLayout; // 0x8
         private AbsoluteLayout m_iconLayout; // 0xC
         private LayoutObject m_object; // 0x10

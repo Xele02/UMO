@@ -390,7 +390,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF0DE78 Offset: 0xF0DE78 VA: 0xF0DE78
 		private void OnShowSceneStatus(int slotIndex)
 		{
-			TodoLogger.LogNotImplemented("OnShowSceneStatus");
+			m_onShowSceneStatusEvent.Invoke(slotIndex);
 		}
 
 		// // RVA: 0xF0C878 Offset: 0xF0C878 VA: 0xF0C878

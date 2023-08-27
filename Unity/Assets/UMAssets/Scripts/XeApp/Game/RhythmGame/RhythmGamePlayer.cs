@@ -1762,7 +1762,7 @@ namespace XeApp.Game.RhythmGame
 			{
 				f = 0;
 			}
-			status.life.DamageValue(Mathf.RoundToInt(f * buff.effectValue));
+			status.life.DamageValue((int)(f * buff.effectValue));
 		}
 
 		// // RVA: 0x9BE84C Offset: 0x9BE84C VA: 0x9BE84C
@@ -3379,7 +3379,7 @@ namespace XeApp.Game.RhythmGame
 			startTime = TimeWrapper.time;
 			while (TimeWrapper.time - startTime < waittime)
 				yield return null;
-			StartPlayMusic(Mathf.RoundToInt((TimeWrapper.time - startTime - waittime) * 1000));
+			StartPlayMusic((int)((TimeWrapper.time - startTime - waittime) * 1000));
 		}
 
 		// // RVA: 0x9C3750 Offset: 0x9C3750 VA: 0x9C3750
