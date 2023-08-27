@@ -106,7 +106,11 @@ public class NAKMCMEPAGH
 	}
 
 	// // RVA: 0x17C0824 Offset: 0x17C0824 VA: 0x17C0824
-	// public void FNLAFLEEAHC(int IDAEEHPLIIO) { }
+	public void FNLAFLEEAHC(int IDAEEHPLIIO)
+	{
+		TodoLogger.LogError(TodoLogger.ToCheck, "Find the max value (99999999?)");
+		NALPJPKDNGH_Dp += IDAEEHPLIIO;
+	}
 
 	// // RVA: 0x17C0868 Offset: 0x17C0868 VA: 0x17C0868
 	// public void MAFAKCMFHEE() { }
