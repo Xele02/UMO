@@ -871,12 +871,58 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA60488 Offset: 0xA60488 VA: 0xA60488
 		private void OnShowLimitBreakPopup()
 		{
-			TodoLogger.LogNotImplemented("OnShowLimitBreakPopup");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			m_limitOverData.KHEKNNFCAOI(m_sceneData.JKGFBFPIMGA_Rarity, m_sceneData.MKHFCGPJPFI_LimitOverCount, m_sceneData.MJBODMOLOBC_Luck);
+			if(!m_limitOverData.EOBACDCDGOF)
+			{
+				m_luckyLeafSetting.Setup(m_sceneData);
+				if(!m_limitOverData.JMHIDPKHELB)
+				{
+					m_luckyLeafSetting.Buttons = new ButtonInfo[2]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative },
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.SkillRelease, Type = PopupButton.ButtonType.Positive }
+					};
+				}
+				else
+				{
+					m_luckyLeafSetting.Buttons = new ButtonInfo[1]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+					};
+				}
+				PopupWindowManager.Show(m_luckyLeafSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0xA61244
+					if(type == PopupButton.ButtonType.Positive)
+					{
+						MNDAMOGGJBJ m = new MNDAMOGGJBJ();
+						m.KHEKNNFCAOI(null);
+						m.MDHKGJJBLNL();
+						m.INLBMFMOHCI.Add(new MNDAMOGGJBJ.JFJJNPJNBPI() { PPFNGGCBJKC_Id = m_limitOverData.MJNOAMAFNHA, HMFFHLPNMPH = m_limitOverData.IJEOIMGILCK });
+						m.CMBGGPOFBOO = m_limitOverData.GNKGDDMMJPF;
+						this.StartCoroutineWatched(LimitOverMainCoroutine(m));
+					}
+				}, null, null, null);
+			}
+			else
+			{
+				m_luckyLeafTerminateSetting.Setup(m_sceneData);
+				m_luckyLeafTerminateSetting.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+				};
+				PopupWindowManager.Show(m_luckyLeafTerminateSetting, null, null, null, null);
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x70FABC Offset: 0x70FABC VA: 0x70FABC
 		// // RVA: 0xA6099C Offset: 0xA6099C VA: 0xA6099C
-		// private IEnumerator LimitOverMainCoroutine(MNDAMOGGJBJ itemData) { }
+		private IEnumerator LimitOverMainCoroutine(MNDAMOGGJBJ itemData)
+		{
+			TodoLogger.LogError(0, "LimitOverMainCoroutine");
+			yield return null;
+		}
 
 		// // RVA: 0xA60A64 Offset: 0xA60A64 VA: 0xA60A64
 		private void OnShowEpisodePopup()
@@ -898,10 +944,6 @@ namespace XeApp.Game.Menu
 				return;
 			}, null, null, null);
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x70FB74 Offset: 0x70FB74 VA: 0x70FB74
-		// // RVA: 0xA61244 Offset: 0xA61244 VA: 0xA61244
-		// private void <OnShowLimitBreakPopup>b__81_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
 
 		// [CompilerGeneratedAttribute] // RVA: 0x70FB84 Offset: 0x70FB84 VA: 0x70FB84
 		// // RVA: 0xA61414 Offset: 0xA61414 VA: 0xA61414
