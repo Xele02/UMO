@@ -302,7 +302,7 @@ namespace XeApp.Game.Adv
 			}
 			_isShowing = false;
 			_eye.enabled = true;
-			_mouth.enabled = false;
+			_mouth.enabled = true;
 			_isTweenPlaying = false;
 		}
 

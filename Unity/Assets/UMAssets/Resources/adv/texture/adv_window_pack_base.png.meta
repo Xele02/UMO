@@ -1,13 +1,25 @@
 fileFormatVersion: 2
 guid: 7ea6ac2207c975d49b86cdcd034833ea
+timeCreated: 1661107312
+licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
-  externalObjects: {}
   serializedVersion: 9
+  objectHideFlags: 0
+  correspondingSourceObject: {fileID: 0}
+  prefabInstance: {fileID: 0}
+  prefabAsset: {fileID: 0}
+  name:
+  fileIDToRecycleName:
+  - 21300000: mess_window
+  - 21300002: send_icon
+  - 21300004: skip_button
+  - 21300006: name_plate
+  - 21300008: mess_window2
+  externalObjects: {}
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
-    sRGBTexture: 0
+    sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -27,20 +39,20 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: 1
-  maxTextureSize: 2048
+  textureFormat: 7
+  maxTextureSize: 512
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
-    wrapU: -1
-    wrapV: -1
-    wrapW: -1
-  nPOTScale: 1
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,9 +61,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -71,18 +83,226 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: mess_window
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 349
+        width: 55
+        height: 162
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 10, y: 0, z: 44, w: 0}
+      outline:
+      - - {x: 27.5, y: -81}
+        - {x: -27.5, y: -81}
+        - {x: -27.5, y: 81}
+        - {x: 27.5, y: 81}
+      physicsShape:
+      - - {x: -27.5, y: 81}
+        - {x: -27.5, y: -81}
+        - {x: 27.5, y: -81}
+        - {x: 27.5, y: 81}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 705e9f76089a460488e45a26d2a8e582
+      vertices:
+      - {x: 0, y: 162}
+      - {x: 55, y: 0}
+      - {x: 55, y: 162}
+      - {x: 0, y: 0}
+      indices:
+      - 3
+      - 0
+      - 1
+      - 2
+      - 1
+      - 0
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: send_icon
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 298
+        width: 42
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: -17}
+        - {x: -21, y: -17}
+        - {x: -21, y: 17}
+        - {x: 21, y: 17}
+      physicsShape:
+      - - {x: -21, y: 17}
+        - {x: -21, y: -17}
+        - {x: 21, y: -17}
+        - {x: 21, y: 17}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4377507c55324d4d943fdeb79b732931
+      vertices:
+      - {x: 0, y: 34}
+      - {x: 42, y: 0}
+      - {x: 42, y: 34}
+      - {x: 0, y: 0}
+      indices:
+      - 3
+      - 0
+      - 1
+      - 2
+      - 1
+      - 0
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skip_button
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 230
+        width: 180
+        height: 102
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 90, y: -51}
+        - {x: -90, y: -51}
+        - {x: -90, y: 51}
+        - {x: 90, y: 51}
+      physicsShape:
+      - - {x: -90, y: 51}
+        - {x: -90, y: -51}
+        - {x: 90, y: -51}
+        - {x: 90, y: 51}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1e94810abd14d8e8f6c873fa35b0474
+      vertices:
+      - {x: 0, y: 102}
+      - {x: 180, y: 0}
+      - {x: 180, y: 102}
+      - {x: 0, y: 0}
+      indices:
+      - 3
+      - 0
+      - 1
+      - 2
+      - 1
+      - 0
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: name_plate
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 333
+        width: 228
+        height: 178
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 88, y: 0, z: 138, w: 0}
+      outline:
+      - - {x: 114, y: -89}
+        - {x: -114, y: -89}
+        - {x: -114, y: 89}
+        - {x: 114, y: 89}
+      physicsShape:
+      - - {x: -114, y: 89}
+        - {x: -114, y: -89}
+        - {x: 114, y: -89}
+        - {x: 114, y: 89}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f75f5b5be434a26b260aade708c814a
+      vertices:
+      - {x: 0, y: 178}
+      - {x: 228, y: 0}
+      - {x: 228, y: 178}
+      - {x: 0, y: 0}
+      indices:
+      - 3
+      - 0
+      - 1
+      - 2
+      - 1
+      - 0
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mess_window2
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 351
+        width: 12
+        height: 158
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 8, z: 2, w: 8}
+      outline:
+      - - {x: -6, y: -79}
+        - {x: -6, y: 79}
+        - {x: 6, y: 79}
+        - {x: 6, y: -79}
+      physicsShape:
+      - - {x: -6, y: 79}
+        - {x: -6, y: -79}
+        - {x: 6, y: -79}
+        - {x: 6, y: 79}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64746ca8bd034301a5727c722611145d
+      vertices:
+      - {x: 0, y: 158}
+      - {x: 12, y: 158}
+      - {x: 0, y: 0}
+      - {x: 12, y: 0}
+      indices:
+      - 0
+      - 1
+      - 2
+      - 2
+      - 1
+      - 3
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID:
     vertices: []
-    indices: 
+    indices: []
     edges: []
     weights: []
-  spritePackingTag: 
+  spritePackingTag:
+  output:
+    textureImportInstructions:
+      compressedFormat: 0
+      uncompressedFormat: 0
+      desiredFormat: 0
+      usageMode: 0
+      colorSpace: 0
+      androidETC2FallbackFormat: 0
+      width: 0
+      height: 0
+      compressionQuality: 0
+      androidETC2FallbackDownscale: 0
+    sourceTextureInformation:
+      width: 0
+      height: 0
+      doesTextureContainAlpha: 0
+      sourceWasHDR: 0
+    importInspectorWarnings:
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  userData:
+  assetBundleName:
+  assetBundleVariant:
