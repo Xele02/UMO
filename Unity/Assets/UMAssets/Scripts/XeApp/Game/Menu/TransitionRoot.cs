@@ -1211,7 +1211,7 @@ namespace XeApp.Game.Menu
 					//0xA3D8E0
 					return (int)category.m_category == group;
 				});
-				RevivalStack(root, root.list[0], (TransitionUniqueId)root.list[0].m_uniquId);
+				RevivalStack(root, root.list[0], (TransitionUniqueId)m_next.uniqueId);
 			}
 
 			// // RVA: 0xA3ADFC Offset: 0xA3ADFC VA: 0xA3ADFC

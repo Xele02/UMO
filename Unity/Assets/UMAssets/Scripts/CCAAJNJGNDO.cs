@@ -149,7 +149,10 @@ public class CCAAJNJGNDO
 	public HGIFGFEJLAB IMAGLAKEMIE { get { return KDJHLBCMMAG; } } //0x18F9AC0 EFMJDECNOLP
 
 	//// RVA: 0x18F9AC8 Offset: 0x18F9AC8 VA: 0x18F9AC8
-	//public static int FCMFPPALLOM(int OAFJONPIFGM) { }
+	public static int FCMFPPALLOM(int OAFJONPIFGM)
+	{
+		return OAFJONPIFGM % 1000000;
+	}
 
 	//// RVA: 0x18F9AEC Offset: 0x18F9AEC VA: 0x18F9AEC
 	public static int NNDBMLNMDJM(int BCCHOBPJJKE)
@@ -320,7 +323,18 @@ public class CCAAJNJGNDO
 	//private bool KAOFEDMLMLI(int AAMKOMBOCNL) { }
 
 	//// RVA: 0x18FD4D0 Offset: 0x18FD4D0 VA: 0x18FD4D0
-	//public void HFLNCEOIBJI() { }
+	public void HFLNCEOIBJI()
+	{
+		if(KDJHLBCMMAG == HGIFGFEJLAB.EKJGOMKEJLK/*2*/)
+		{
+			bool b = true;
+			for(int i = 0; i < DHPMDOCLBGD.Count; i++)
+			{
+				DHPMDOCLBGD[i].GELLHOIEABC = b;
+				b &= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN(DHPMDOCLBGD[i].PBPOLELIPJI_AdventureId);
+			}
+		}
+	}
 
 	//// RVA: 0x18FD6C4 Offset: 0x18FD6C4 VA: 0x18FD6C4
 	private int CEAIGKOGLIN(GALFFONBIJG KCADLFGPNKH, GALFFONBIJG NEKKJMFOEDA)

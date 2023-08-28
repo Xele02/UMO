@@ -143,16 +143,97 @@ namespace XeApp.Game.Adv
 		private BgControl m_bgControl; // 0xA8
 
 		// RVA: 0xBC50CC Offset: 0xBC50CC VA: 0xBC50CC
-		private void Awake() { }
+		private void Awake()
+		{
+			AdvCharacter chara = Instantiate(m_advCharacterPrefab);
+			m_advCharacters.Add(chara);
+			chara.transform.localPosition = m_characterPoint[0];
+			chara.transform.SetParent(m_charaRoot.transform, false);
+			chara.transform.SetSiblingIndex(1);
+			chara.gameObject.SetActive(false);
+			for(int i = 1; i < 3; i++)
+			{
+				AdvCharacter chara2 = Instantiate(chara);
+				m_advCharacters.Add(chara2);
+				chara2.transform.localPosition = m_characterPoint[i];
+				chara2.transform.SetParent(m_charaRoot.transform, false);
+				chara2.transform.SetSiblingIndex(1);
+				chara2.gameObject.SetActive(false);
+			}
+			for(int i = 0; i < m_sendIconTween.Length; i++)
+			{
+				m_sendIconTween[i].gameObject.SetActive(false);
+			}
+			m_skipConfirmPopupSetting = new TextPopupSetting();
+			m_skipConfirmPopupSetting.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Skip, Type = PopupButton.ButtonType.Positive }
+			};
+			m_skipButton.onClick.AddListener(OnClickSkipButton);
+			m_touchArea.onClick.AddListener(() =>
+			{
+				//0xBC8E64
+				if (!m_isPushSkipButton)
+					m_isSendMessage = true;
+			});
+			exPlayerOutputAnalyzer = new CriAtomExOutputAnalyzer(new CriAtomExOutputAnalyzer.Config() { enableLevelmeter = true });
+			SoundManager.Instance.voAdv.source.AttachToAnalyzer(exPlayerOutputAnalyzer);
+		}
 
 		// RVA: 0xBC5944 Offset: 0xBC5944 VA: 0xBC5944
-		private void OnDestroy() { }
+		private void OnDestroy()
+		{
+			Release();
+			m_charaResourceDic = null;
+			m_bgResourceDic = null;
+			m_charaEffResourceDic = null;
+			SoundManager.Instance.voAdv.source.DetachFromAnalyzer(exPlayerOutputAnalyzer);
+		}
 
 		//// RVA: 0xBC59E0 Offset: 0xBC59E0 VA: 0xBC59E0
-		//private void Release() { }
+		private void Release()
+		{
+			for(int i = 0; i < m_advCharacters.Count; i++)
+			{
+				m_advCharacters[i].RemoveEffect(transform);
+				m_advCharacters[i].Clear();
+				m_advCharacters[i].ResetState();
+				m_advCharacters[i].gameObject.SetActive(false);
+			}
+			int cnt = m_charaEffResourceDic.Count;
+			foreach (var k in m_charaEffResourceDic)
+			{
+				for(int i = 0; i < k.Value.Count; i++)
+				{
+					Destroy(k.Value[i].gameObject);
+				}
+				k.Value.Clear();
+			}
+			foreach(var k in m_directionAnime)
+			{
+				Destroy(k.Value.gameObject);
+			}
+			m_directionAnime.Clear();
+			m_charaResourceDic.Clear();
+			m_bgResourceDic.Clear();
+			m_charaEffResourceDic.Clear();
+			for(int i = 0; i < cnt; i++)
+			{
+				AssetBundleManager.UnloadAssetBundle("ly/100.xab", false);
+			}
+		}
 
 		//// RVA: 0xBC61A0 Offset: 0xBC61A0 VA: 0xBC61A0
-		//private void SetDisp(bool isOn) { }
+		private void SetDisp(bool isOn)
+		{
+			for(int i = 0; i < m_advCharacters.Count; i++)
+			{
+				m_advCharacters[i].SetDisp(isOn);
+			}
+			m_bg.enabled = isOn;
+			m_currentMessageWindow.SetActive(isOn);
+		}
 
 		//// RVA: 0xBC62C8 Offset: 0xBC62C8 VA: 0xBC62C8
 		//private void SetCharacter(int charaId, AdvManager.Position position, bool isPrism, bool isSkip, int poseId = 1, int faceId = 1, int colorId = 0) { }
@@ -403,7 +484,11 @@ namespace XeApp.Game.Adv
 		//// RVA: 0xBC6F78 Offset: 0xBC6F78 VA: 0xBC6F78
 		private bool IsLoadingResource()
 		{
-			TodoLogger.LogError(0, "IsLoadingResource");
+			for(int i = 0; i < m_loadResourcesCount.Length; i++)
+			{
+				if (m_loadResourcesCount[i] > 0)
+					return true;
+			}
 			return false;
 		}
 
@@ -411,8 +496,60 @@ namespace XeApp.Game.Adv
 		//// RVA: 0xBC7004 Offset: 0xBC7004 VA: 0xBC7004
 		private IEnumerator ShowSnsCoroutine(int snsId)
 		{
-			TodoLogger.LogError(0, "ShowSnsCoroutine");
-			yield return null;
+			SnsScreen.eSceneType sceneType;
+
+			//0xE5424C
+			bool isWait = true;
+			sceneType = SnsScreen.eSceneType.Adventure;
+			if (snsId == 1)
+				sceneType = SnsScreen.eSceneType.Tutorial;
+			SoundManager.Instance.RequestEntryMenuCueSheet(() =>
+			{
+				//0xBC9484
+				isWait = false;
+			});
+			while(isWait)
+				yield return null;
+			if(m_snsScreen == null)
+			{
+				m_snsScreen = SnsScreen.Create(transform.parent);
+				yield return null;
+			}
+			isWait = true;
+			if(sceneType == SnsScreen.eSceneType.Tutorial)
+			{
+				m_snsScreen.Initialize(0, true);
+				m_snsScreen.In(sceneType, SNSController.eObjectOrderType.Last, !GameManager.Instance.IsTutorial);
+			}
+			else
+			{
+				m_snsScreen.Initialize(snsId, false);
+				m_snsScreen.InRoom(sceneType, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA[snsId - 1].MALFHCHNEFN, SNSController.eObjectOrderType.Last, snsId, false, false);
+			}
+			m_snsScreen.OutStartCallback = () =>
+			{
+				//0xBC9490
+				SetDisp(true);
+				isWait = false;
+			};
+			while (m_snsScreen.layoutController == null && m_snsScreen.layoutController.layoutBoot == null)
+				yield return null;
+			while (m_snsScreen.layoutController.layoutBoot.IsPlaying())
+				yield return null;
+			while (isWait)
+				yield return null;
+			while(m_snsScreen.IsPlaying)
+				yield return null;
+			m_snsScreen.Dispose();
+			m_snsScreen = null;
+			isWait = true;
+			SoundManager.Instance.RequestEntryAdvCueSheet(() =>
+			{
+				//0xBC94C8
+				isWait = false;
+			});
+			while (isWait)
+				yield return null;
 		}
 
 		//// RVA: 0xBC70A8 Offset: 0xBC70A8 VA: 0xBC70A8
@@ -910,7 +1047,9 @@ namespace XeApp.Game.Adv
 		//// RVA: 0xBC7364 Offset: 0xBC7364 VA: 0xBC7364
 		private void ChangeSpeakCharacterName(int speakerId)
 		{
-			TodoLogger.LogError(0, "ChangeSpeakCharacterName");
+			if (speakerId < 1)
+				return;
+			m_currentMessageWindow.SetName(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[speakerId - 1].OPFGFINHFCE_Name);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x742AA4 Offset: 0x742AA4 VA: 0x742AA4
@@ -960,48 +1099,132 @@ namespace XeApp.Game.Adv
 		//// RVA: 0xBC75B4 Offset: 0xBC75B4 VA: 0xBC75B4
 		private void OnClickSkipButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickSkipButton");
+			if (m_isSendMessage || m_isPushSkipButton)
+				return;
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+			this.StartCoroutineWatched(Co_ShowAdvSkipPopup());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x742B1C Offset: 0x742B1C VA: 0x742B1C
 		//// RVA: 0xBC76CC Offset: 0xBC76CC VA: 0xBC76CC
 		private IEnumerator Co_VoiceSync()
 		{
-			TodoLogger.LogError(0, "Co_VoiceSync");
-			yield return null;
+			//0xBCCFD4
+			bool isWait = false;
+			while(SoundManager.Instance.voAdv.isPlaying)
+			{
+				if(m_nextSpeakCharacter != null)
+				{
+					if(exPlayerOutputAnalyzer.GetRms(0) >= 0.001f)
+					{
+						isWait = true;
+						m_nextSpeakCharacter.StartMouthOneAnime(() =>
+						{
+							//0xBC9834
+							isWait = false;
+						});
+						while(isWait)
+						{
+							if(exPlayerOutputAnalyzer.GetRms(0) < 0.001f)
+							{
+								isWait = false;
+								m_nextSpeakCharacter.EndMouthOneAnime();
+								break;
+							}
+							yield return null;
+						}
+					}
+				}
+				yield return null;
+			}
+			m_nextSpeakCharacter.EndMouthOneAnime();
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x742B94 Offset: 0x742B94 VA: 0x742B94
 		//// RVA: 0xBC7778 Offset: 0xBC7778 VA: 0xBC7778
 		private IEnumerator Co_LoadDirectionAnime(int id)
 		{
-			TodoLogger.LogError(0, "Co_LoadDirectionAnime");
-			yield return null;
+			AssetBundleLoadLayoutOperationBase op;
+
+			//0xBC9F30
+			if(!m_directionAnime.ContainsKey(id))
+			{
+				m_strBuilder.SetFormat("ad/am/{0:D6}.xab", id);
+				string bundleName = m_strBuilder.ToString();
+				m_strBuilder.SetFormat("{0:D6}", id);
+				op = AssetBundleManager.LoadLayoutAsync(bundleName, m_strBuilder.ToString());
+				yield return op;
+				yield return Co.R(op.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject inst) =>
+				{
+					//0xBC9848
+					LayoutUGUIRuntime r = inst.GetComponent<LayoutUGUIRuntime>();
+					m_directionAnime.Add(id, r);
+					r.Layout.StartAllAnimDecoLoop();
+					inst.transform.SetParent(m_animeRoot.transform, false);
+					inst.gameObject.SetActive(false);
+				}));
+			}
 		}
 
 		//// RVA: 0xBC7840 Offset: 0xBC7840 VA: 0xBC7840
 		private void PlayAnime(int id, int playMode, string startLabel, string endLabel)
 		{
-			TodoLogger.LogError(0, "PlayAnime");
+			LayoutUGUIRuntime r;
+			if(m_directionAnime.TryGetValue(id, out r))
+			{
+				AbsoluteLayout a = r.Layout.FindViewById("all") as AbsoluteLayout;
+				if(a != null)
+				{
+					if (playMode == 0)
+					{
+						if (!string.IsNullOrEmpty(endLabel))
+							a.StartChildrenAnimGoStop(startLabel, endLabel);
+						else
+							a.StartChildrenAnimGoStop(startLabel);
+					}
+					else if (!string.IsNullOrEmpty(endLabel))
+						a.StartChildrenAnimLoop(startLabel, endLabel);
+					else
+						a.StartChildrenAnimLoop(startLabel);
+				}
+			}
 		}
 
 		//// RVA: 0xBC79FC Offset: 0xBC79FC VA: 0xBC79FC
 		private bool WaitAnime(int id)
 		{
-			TodoLogger.LogError(0, "WaitAnime");
+			LayoutUGUIRuntime r;
+			if (m_directionAnime.TryGetValue(id, out r))
+			{
+				AbsoluteLayout a = r.Layout.FindViewById("all") as AbsoluteLayout;
+				if (a != null)
+				{
+					return a.IsPlayingChildren();
+				}
+			}
 			return false;
 		}
 
 		//// RVA: 0xBC7B98 Offset: 0xBC7B98 VA: 0xBC7B98
 		private void DeleteDirectionAnime(int id)
 		{
-			TodoLogger.LogError(0, "DeleteDirectionAnime");
+			LayoutUGUIRuntime r;
+			if (m_directionAnime.TryGetValue(id, out r))
+			{
+				Destroy(r.gameObject);
+				m_directionAnime.Remove(id);
+			}
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x742C0C Offset: 0x742C0C VA: 0x742C0C
 		//// RVA: 0xBC7CC0 Offset: 0xBC7CC0 VA: 0xBC7CC0
 		private IEnumerator Co_LoadPrologueAnime()
 		{
+			int loadCount; // 0x14
+			string bundlePath; // 0x18
+			AssetBundleLoadLayoutOperationBase lyOpt; // 0x1C
+
+			//0xBCA35C
 			TodoLogger.LogError(0, "Co_LoadPrologueAnime");
 			yield return null;
 		}
@@ -1218,7 +1441,15 @@ namespace XeApp.Game.Adv
 
 		//[IteratorStateMachineAttribute] // RVA: 0x742E64 Offset: 0x742E64 VA: 0x742E64
 		//// RVA: 0xBC802C Offset: 0xBC802C VA: 0xBC802C
-		//private IEnumerator SendIconAnimeCoroutine() { }
+		private IEnumerator SendIconAnimeCoroutine()
+		{
+			//0xE53924
+			while (true)
+			{
+				m_currentSendIcon.UpdateCurve();
+				yield return null;
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x742EDC Offset: 0x742EDC VA: 0x742EDC
 		//// RVA: 0xBC80B4 Offset: 0xBC80B4 VA: 0xBC80B4
@@ -1239,7 +1470,13 @@ namespace XeApp.Game.Adv
 		//// RVA: 0xBC8190 Offset: 0xBC8190 VA: 0xBC8190
 		private void ShowSendCursor()
 		{
-			TodoLogger.LogError(0, "ShowSendCursor");
+			m_currentSendIcon.gameObject.SetActive(true);
+			if(m_sendIconCoroutine != null)
+			{
+				this.StopCoroutineWatched(m_sendIconCoroutine);
+				m_sendIconCoroutine = null;
+			}
+			m_sendIconCoroutine = this.StartCoroutineWatched(SendIconAnimeCoroutine());
 		}
 
 		//// RVA: 0xBC8220 Offset: 0xBC8220 VA: 0xBC8220
@@ -1258,7 +1495,37 @@ namespace XeApp.Game.Adv
 
 		//[IteratorStateMachineAttribute] // RVA: 0x742F54 Offset: 0x742F54 VA: 0x742F54
 		//// RVA: 0xBC7640 Offset: 0xBC7640 VA: 0xBC7640
-		//private IEnumerator Co_ShowAdvSkipPopup() { }
+		private IEnumerator Co_ShowAdvSkipPopup()
+		{
+			//0xBCAA8C
+			bool isOk = false;
+			bool isWait = true;
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			m_isPushSkipButton = true;
+			m_skipConfirmPopupSetting.TitleText = bk.GetMessageByLabel("popup_adv_skip_title");
+			m_skipConfirmPopupSetting.Text = string.Format(bk.GetMessageByLabel("popup_adv_skip_text"), bk.GetMessageByLabel(m_skipTarget == 0 ? "popup_adv_skip_target001" : "popup_adv_skip_target002"));
+			PopupWindowManager.Show(m_skipConfirmPopupSetting, (PopupWindowControl c, PopupButton.ButtonType t, PopupButton.ButtonLabel l) =>
+			{
+				//0xBC9280
+				if (t == PopupButton.ButtonType.Positive)
+					isOk = true;
+				isWait = false;
+			}, null, null, null);
+			while(isWait)
+				yield return null;
+			m_isPushSkipButton = false;
+			if(isOk)
+			{
+				m_skipButton.interactable = false;
+				GameManager.FadeOut(0.4f);
+				if(SoundManager.Instance.voAdv.isPlaying)
+				{
+					SoundManager.Instance.voAdv.Stop();
+				}
+				yield return GameManager.Instance.WaitFadeYielder;
+				m_isExecuteSkip = true;
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x742FCC Offset: 0x742FCC VA: 0x742FCC
 		//// RVA: 0xBC82D4 Offset: 0xBC82D4 VA: 0xBC82D4
@@ -1289,11 +1556,7 @@ namespace XeApp.Game.Adv
 			TodoLogger.LogError(0, "Co_ValkyrieGet");
 			yield return null;
 		}
-
-		//[CompilerGeneratedAttribute] // RVA: 0x7430BC Offset: 0x7430BC VA: 0x7430BC
-		//// RVA: 0xBC8E64 Offset: 0xBC8E64 VA: 0xBC8E64
-		//private void <Awake>b__62_0() { }
-
+		
 		//[CompilerGeneratedAttribute] // RVA: 0x7430CC Offset: 0x7430CC VA: 0x7430CC
 		//// RVA: 0xBC8E78 Offset: 0xBC8E78 VA: 0xBC8E78
 		//private void <Co_LoadPrologueAnime>b__97_0(GameObject instance) { }

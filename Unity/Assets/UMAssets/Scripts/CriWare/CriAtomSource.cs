@@ -454,10 +454,18 @@ namespace CriWare
 		// public void SetAisac(uint controlId, float value) { }
 
 		// // RVA: 0x28B6B5C Offset: 0x28B6B5C VA: 0x28B6B5C
-		// public void AttachToAnalyzer(CriAtomExOutputAnalyzer analyzer) { }
+		public void AttachToAnalyzer(CriAtomExOutputAnalyzer analyzer)
+		{
+			if (player == null)
+				return;
+			analyzer.AttachExPlayer(player);
+		}
 
 		// // RVA: 0x28B6B94 Offset: 0x28B6B94 VA: 0x28B6B94
-		// public void DetachFromAnalyzer(CriAtomExOutputAnalyzer analyzer) { }
+		public void DetachFromAnalyzer(CriAtomExOutputAnalyzer analyzer)
+		{
+			analyzer.DetachExPlayer();
+		}
 
 		//UMO
 		public void Preload(string cueName)

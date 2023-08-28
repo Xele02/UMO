@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using XeApp.Game;
 using XeSys;
@@ -128,7 +129,7 @@ namespace XeApp.Game.Adv
 				{
 					if(colorId == 0)
 					{
-						colorId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG[charaId - 1].HEHKNMCDBJJ_ColorId;
+						colorId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[charaId - 1].HEHKNMCDBJJ_ColorId;
 					}
 					_prism.enabled = true;
 					_aura.enabled = true;
@@ -193,29 +194,79 @@ namespace XeApp.Game.Adv
 		// // RVA: 0xBC0FD8 Offset: 0xBC0FD8 VA: 0xBC0FD8
 		public void StartMouthAnime(float ms)
 		{
-			TodoLogger.LogError(0, "StartMouthAnime");
+			if(_mouthCoroutine != null)
+			{
+				this.StopCoroutineWatched(_mouthCoroutine);
+				_mouthCoroutine = null;
+			}
+			if (!gameObject.activeInHierarchy)
+				return;
+			_mouthCoroutine = this.StartCoroutineWatched(MouthPatternCoroutine(ms));
 		}
 
 		// // RVA: 0xBC1114 Offset: 0xBC1114 VA: 0xBC1114
-		// public void StartMouthOneAnime(UnityAction end) { }
+		public void StartMouthOneAnime(UnityAction end)
+		{
+			if(_mouthCoroutine != null)
+			{
+				this.StopCoroutineWatched(_mouthCoroutine);
+				_mouthCoroutine = null;
+			}
+			if (!gameObject.activeInHierarchy)
+				return;
+			_mouthCoroutine = this.StartCoroutineWatched(MouthOnePatternCoroutine(end));
+		}
 
 		// // RVA: 0xBC1244 Offset: 0xBC1244 VA: 0xBC1244
 		public void EndMouthAnime()
 		{
-			TodoLogger.LogError(0, "EndMouthAnime");
+			if(_mouthCoroutine != null)
+			{
+				this.StopCoroutineWatched(_mouthCoroutine);
+				_mouthCoroutine = null;
+			}
+			if (!gameObject.activeInHierarchy)
+				return;
+			_mouthCoroutine = this.StartCoroutineWatched(MouthPatternFinishCoroutine());
 		}
 
 		// // RVA: 0xBC1350 Offset: 0xBC1350 VA: 0xBC1350
-		// public void EndMouthOneAnime() { }
+		public void EndMouthOneAnime()
+		{
+			if(_mouthCoroutine != null)
+			{
+				this.StopCoroutineWatched(_mouthCoroutine);
+				_mouthCoroutine = null;
+			}
+			if (!gameObject.activeInHierarchy)
+				return;
+			_mouthCoroutine = this.StartCoroutineWatched(MouthPatternOneFinishCoroutine());
+		}
 
 		// // RVA: 0xBC145C Offset: 0xBC145C VA: 0xBC145C
-		// public void SetEyePattern(int pattern) { }
+		public void SetEyePattern(int pattern)
+		{
+			_charaData.SetEyePattern(_eye, _faceId, pattern);
+		}
 
 		// // RVA: 0xBC15B4 Offset: 0xBC15B4 VA: 0xBC15B4
-		// public void SetMouthPattern(int pattern) { }
+		public void SetMouthPattern(int pattern)
+		{
+			_charaData.SetMouthPattern(_mouth, _faceId, pattern);
+		}
 
 		// // RVA: 0xBC170C Offset: 0xBC170C VA: 0xBC170C
-		// public void SetDisp(bool isOn) { }
+		public void SetDisp(bool isOn)
+		{
+			_body.enabled = isOn;
+			_eye.enabled = isOn;
+			_mouth.enabled = isOn;
+			if(_isPrism)
+			{
+				_aura.enabled = isOn;
+				_prism.enabled = isOn;
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x741D3C Offset: 0x741D3C VA: 0x741D3C
 		// // RVA: 0xBC17E0 Offset: 0xBC17E0 VA: 0xBC17E0
@@ -431,7 +482,12 @@ namespace XeApp.Game.Adv
 		// // RVA: 0xBC2220 Offset: 0xBC2220 VA: 0xBC2220
 		public void RemoveEffect(Transform parent)
 		{
-			TodoLogger.LogError(0, "RemoveEffect");
+			for(int i = 0; i < m_effAnimeList.Count; i++)
+			{
+				m_effAnimeList[i].transform.SetParent(parent, false);
+				m_effAnimeList[i].gameObject.SetActive(false);
+			}
+			m_effAnimeList.Clear();
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x741F1C Offset: 0x741F1C VA: 0x741F1C
@@ -448,7 +504,7 @@ namespace XeApp.Game.Adv
 			current = 0;
 			time = 0;
 			waitTime = 0;
-			_charaData.SetEyePattern(_eye, _faceId, 0);
+			SetEyePattern(0);
 			while(true)
 			{
 				//LAB_00bc2a48
@@ -466,14 +522,14 @@ namespace XeApp.Game.Adv
 					while(current < length)
 					{
 						//LAB_00bc2824
-						_charaData.SetEyePattern(_eye, _faceId, current);
+						SetEyePattern(current);
 						yield return BlinkFrameWait;
 						current++;
 					}
 					current = length;
-					if(current >= 0)
+					while(current >= 0)
 					{
-						_charaData.SetEyePattern(_eye, _faceId, current);
+						SetEyePattern(current);
 						yield return BlinkFrameWait;
 						current--;
 					}
@@ -487,22 +543,116 @@ namespace XeApp.Game.Adv
 
 		// [IteratorStateMachineAttribute] // RVA: 0x741F94 Offset: 0x741F94 VA: 0x741F94
 		// // RVA: 0xBC1060 Offset: 0xBC1060 VA: 0xBC1060
-		// private IEnumerator MouthPatternCoroutine(float ms) { }
+		private IEnumerator MouthPatternCoroutine(float ms)
+		{
+			int length; // 0x1C
+			int current; // 0x20
+
+			//0xBC3710
+			length = _charaData.GetMouthPatternLenght(_faceId) - 1;
+			current = 0;
+			bool isLoop = true;
+			SetMouthPattern(current);
+			if(_waitCoroutine != null)
+			{
+				this.StopCoroutineWatched(_waitCoroutine);
+				_waitCoroutine = null;
+			}
+			_waitCoroutine = this.StartCoroutineWatched(WaitMouthCoroutine(ms, () =>
+			{
+				//0xBC26DC
+				isLoop = false;
+			}));
+			while(isLoop)
+			{
+				current = 1;
+				while(current < length)
+				{
+					SetMouthPattern(current);
+					_mouth_current = current;
+					yield return BlinkFrameWait;
+					current++;
+				}
+				current = length;
+				while (current > 0)
+				{
+					SetMouthPattern(current);
+					_mouth_current = current;
+					yield return BlinkFrameWait;
+					current--;
+				}
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x74200C Offset: 0x74200C VA: 0x74200C
 		// // RVA: 0xBC23FC Offset: 0xBC23FC VA: 0xBC23FC
-		// private IEnumerator WaitMouthCoroutine(float ms, UnityAction end) { }
+		private IEnumerator WaitMouthCoroutine(float ms, UnityAction end)
+		{
+			float time;
+
+			//0xBC45A0
+			time = 0;
+			do
+			{
+				time += TimeWrapper.deltaTime;
+				yield return null;
+			} while (time < ms);
+			if (end != null)
+				end();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x742084 Offset: 0x742084 VA: 0x742084
 		// // RVA: 0xBC119C Offset: 0xBC119C VA: 0xBC119C
-		// private IEnumerator MouthOnePatternCoroutine(UnityAction end) { }
+		private IEnumerator MouthOnePatternCoroutine(UnityAction end)
+		{
+			int length; // 0x18
+			int current; // 0x1C
+
+			//0xBC32C8
+			length = _charaData.GetMouthPatternLenght(_faceId) - 1;
+			current = 0;
+			SetMouthPattern(current);
+			current = 1;
+			while(current < length)
+			{
+				SetMouthPattern(current);
+				_mouth_current = current;
+				yield return BlinkFrameWait;
+				current++;
+			}
+			current = length;
+			while (current >= 0)
+			{
+				SetMouthPattern(current);
+				_mouth_current = current;
+				yield return BlinkFrameWait2;
+				current--;
+			}
+			if (end != null)
+				end();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7420FC Offset: 0x7420FC VA: 0x7420FC
 		// // RVA: 0xBC12C4 Offset: 0xBC12C4 VA: 0xBC12C4
-		// private IEnumerator MouthPatternFinishCoroutine() { }
+		private IEnumerator MouthPatternFinishCoroutine()
+		{
+			//0xBC3B90
+			while(_mouth_current > -1)
+			{
+				SetMouthPattern(_mouth_current);
+				yield return BlinkFrameWait;
+				_mouth_current--;
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x742174 Offset: 0x742174 VA: 0x742174
 		// // RVA: 0xBC13D0 Offset: 0xBC13D0 VA: 0xBC13D0
-		// private IEnumerator MouthPatternOneFinishCoroutine() { }
+		private IEnumerator MouthPatternOneFinishCoroutine()
+		{
+			//0xBC3D84
+			_mouth_current = 0;
+			SetMouthPattern(0);
+			yield break;
+		}
 	}
 }

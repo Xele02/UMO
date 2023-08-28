@@ -187,7 +187,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x143CD18 Offset: 0x143CD18 VA: 0x143CD18
-		// public bool Comparer(int bgId, BgType type) { }
+		public bool Comparer(int bgId, BgType type)
+		{
+			if (m_id != bgId)
+				return false;
+			return m_type == type;
+		}
 
 		// // RVA: 0x143CD40 Offset: 0x143CD40 VA: 0x143CD40
 		// public void Destroy() { }
@@ -685,7 +690,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x143DF4C Offset: 0x143DF4C VA: 0x143DF4C
-		// public void ChangeTilingType(BgBehaviour.TilingType type) { }
+		public void ChangeTilingType(BgBehaviour.TilingType type)
+		{
+			m_bgBehaviour.ChangeTilingType(type, false);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C5B48 Offset: 0x6C5B48 VA: 0x6C5B48
 		// // RVA: 0x143DF80 Offset: 0x143DF80 VA: 0x143DF80

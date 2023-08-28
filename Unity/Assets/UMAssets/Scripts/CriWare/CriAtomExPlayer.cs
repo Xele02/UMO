@@ -37,6 +37,10 @@ namespace CriWare
 		private int max_path; // 0x2C
 		private IntPtr handle; // 0x30
 
+#if !UNITY_ANDROID
+		public CriAtomSource source;
+#endif
+
 		public IntPtr nativeHandle { get {return this.handle;} } // 0x289FA10
 		public bool isAvailable {get {return this.handle != IntPtr.Zero;} } // 0x289F9AC
 		// public int entryPoolCapacity { get; } // 0x28A51E4
@@ -122,6 +126,9 @@ namespace CriWare
 			
 			config.maxAisacs = 8;
 			config.updatesTime = true;
+			#if !UNITY_ANDROID
+			this.source = config.source;
+			#endif
 
 			hasExistingNativeHandle = (existingNativeHandle != IntPtr.Zero);
 			if (hasExistingNativeHandle) {

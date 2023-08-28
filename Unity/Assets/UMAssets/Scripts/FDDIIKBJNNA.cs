@@ -33,15 +33,15 @@ public class FDDIIKBJNNA
 	{
 		BOKMNHAFJHF_Sns snsDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns;
 		KHCACDIKJLG.Clear();
-		for(int i = 0; i < snsDb.KHCACDIKJLG.Count; i++)
+		for(int i = 0; i < snsDb.KHCACDIKJLG_Characters.Count; i++)
 		{
-			if(snsDb.KHCACDIKJLG[i].PPEGAKEIEGM_Enabled == 2)
+			if(snsDb.KHCACDIKJLG_Characters[i].PPEGAKEIEGM_Enabled == 2)
 			{
 				FHFEHOBCIIP data = new FHFEHOBCIIP();
-				data.IDELKEKDIFD_CharaId = snsDb.KHCACDIKJLG[i].IDELKEKDIFD;
-				data.EAHPLCJMPHD = snsDb.KHCACDIKJLG[i].EAHPLCJMPHD;
-				data.OPFGFINHFCE = snsDb.KHCACDIKJLG[i].OPFGFINHFCE;
-				data.HAPAFECPFEK = snsDb.KHCACDIKJLG[i].HAPAFECPFEK;
+				data.IDELKEKDIFD_CharaId = snsDb.KHCACDIKJLG_Characters[i].IDELKEKDIFD;
+				data.EAHPLCJMPHD = snsDb.KHCACDIKJLG_Characters[i].EAHPLCJMPHD;
+				data.OPFGFINHFCE = snsDb.KHCACDIKJLG_Characters[i].OPFGFINHFCE_Name;
+				data.HAPAFECPFEK = snsDb.KHCACDIKJLG_Characters[i].HAPAFECPFEK;
 				KHCACDIKJLG.Add(data);
 			}
 		}

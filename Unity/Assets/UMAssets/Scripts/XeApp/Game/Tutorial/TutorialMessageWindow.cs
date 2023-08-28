@@ -123,7 +123,7 @@ namespace XeApp.Game.Tutorial
 			while (isLoding)
 				yield return null;
 			m_messageWindowImage.sprite = m_windowPartsSprite[m_charaSpriteMap[charaNo]];
-			m_nameText.text = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG[charaNo - 1].OPFGFINHFCE;
+			m_nameText.text = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[charaNo - 1].OPFGFINHFCE_Name;
 			if (!m_isShow)
 				Show(pos);
 			m_messageText.StartMessage(message, m_messageSpeed, func);

@@ -55,7 +55,10 @@ namespace XeApp.Game.Adv
 		}
 
 		// // RVA: 0xBC35DC Offset: 0xBC35DC VA: 0xBC35DC
-		// public int GetMouthPatternLenght(int faceId) { }
+		public int GetMouthPatternLenght(int faceId)
+		{
+			return _mouthPattern[faceId - 1]._sprites.Length;
+		}
 
 		// // RVA: 0xBC14A4 Offset: 0xBC14A4 VA: 0xBC14A4
 		public void SetEyePattern(Image eye, int faceId, int pattern)
@@ -65,7 +68,10 @@ namespace XeApp.Game.Adv
 		}
 
 		// // RVA: 0xBC15FC Offset: 0xBC15FC VA: 0xBC15FC
-		// public void SetMouthPattern(Image mouth, int faceId, int pattern) { }
+		public void SetMouthPattern(Image mouth, int faceId, int pattern)
+		{
+			mouth.sprite = _mouthPattern[faceId - 1]._sprites[pattern];
+		}
 
 		// // RVA: 0xBC46E4 Offset: 0xBC46E4 VA: 0xBC46E4
 		public void SetBlurTexture(Texture2D texture)

@@ -63,8 +63,13 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				TodoLogger.LogError(0, "Event");
+				m_eventStoryData = Database.Instance.advResult.EventStoryData;
+				pos = Database.Instance.advResult.RestorListPosition;
 				m_isRestor = true;
+				if(m_eventStoryData.IMAGLAKEMIE == CCAAJNJGNDO.HGIFGFEJLAB.EKJGOMKEJLK/*2*/)
+				{
+					m_eventStoryData.HFLNCEOIBJI();
+				}
 			}
 			m_eventStoryList.Hide();
 			InitializeList(pos);
@@ -127,8 +132,14 @@ namespace XeApp.Game.Menu
 			{
 				return base.OnBgmStart();
 			}
-			TodoLogger.LogError(0, "Event");
-			return true;
+			else
+			{
+				if (Database.Instance.advResult.RestorBgmId < 0)
+					SoundManager.Instance.bgmPlayer.Stop();
+				else
+					SoundManager.Instance.bgmPlayer.Play(Database.Instance.advResult.RestorBgmId, 1);
+				return true;
+			}
 		}
 
 		// RVA: 0xB9504C Offset: 0xB9504C VA: 0xB9504C Slot: 14
@@ -140,12 +151,25 @@ namespace XeApp.Game.Menu
 		// RVA: 0xB95074 Offset: 0xB95074 VA: 0xB95074 Slot: 28
 		protected override TransitionArgs GetCallArgsReturn()
 		{
-			if(!m_isRestor)
+			if (!m_isRestor)
 			{
 				return base.GetCallArgsReturn();
 			}
-			TodoLogger.LogError(0, "Event");
-			return null;
+			else
+			{
+				if (m_eventStoryData.IMAGLAKEMIE == CCAAJNJGNDO.HGIFGFEJLAB.EKJGOMKEJLK/*2*/)
+				{
+					return new SceneGrowthSceneArgs(GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes.Find((GCIJNCFDNON_SceneInfo x) =>
+					{
+						//0xB972B8
+						return CCAAJNJGNDO.FCMFPPALLOM(m_eventStoryData.PPMNNKKFJNM) == x.BCCHOBPJJKE_SceneId;
+					}), false);
+				}
+				else
+				{
+					return new EventMusicSelectSceneArgs(m_eventStoryData.PPMNNKKFJNM, false, false);
+				}
+			}
 		}
 
 		// RVA: 0xB95274 Offset: 0xB95274 VA: 0xB95274 Slot: 15
@@ -296,8 +320,16 @@ namespace XeApp.Game.Menu
 			//0xB975E0
 			if(m_isRestor)
 			{
-				TodoLogger.LogError(0, "Event");
-				yield return null;
+				advResult = Database.Instance.advResult;
+				bgControl = MenuScene.Instance.BgControl;
+				if(!bgControl.Comparer(advResult.RestorBgParam.bgId, advResult.RestorBgParam.bgType))
+				{
+					m_isChangeBg = true;
+					yield return Co.R(bgControl.ChangeBgCoroutine(advResult.RestorBgParam.bgType, advResult.RestorBgParam.bgId, SceneGroupCategory.UNDEFINED, TransitionList.Type.UNDEFINED, -1));
+					bgControl.ChangeAttribute(advResult.RestorBgParam.attr);
+					bgControl.ChangeTilingType(BgBehaviour.TilingType.Dot);
+					m_isChangeBg = false;
+				}
 			}
 		}
 
@@ -412,11 +444,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 			MenuScene.Instance.InputEnable();
 		}
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6DC15C Offset: 0x6DC15C VA: 0x6DC15C
-		//// RVA: 0xB972B8 Offset: 0xB972B8 VA: 0xB972B8
-		//private bool <GetCallArgsReturn>b__18_0(GCIJNCFDNON x) { }
-
+		
 		//[CompilerGeneratedAttribute] // RVA: 0x6DC16C Offset: 0x6DC16C VA: 0x6DC16C
 		//// RVA: 0xB97318 Offset: 0xB97318 VA: 0xB97318
 		//private void <UnlockStory>b__24_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }

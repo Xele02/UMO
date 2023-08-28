@@ -173,7 +173,7 @@ namespace CriWare
 					CriAtomExAsr.criAtomExAsr_DetachBusAnalyzer(i, config);
 				}
 			}*/
-			TodoLogger.LogError(0, "SetBusAnalyzer");
+			TodoLogger.LogError(TodoLogger.CriAtom, "SetBusAnalyzer");
 		}
 
 		// // RVA: 0x287C69C Offset: 0x287C69C VA: 0x287C69C

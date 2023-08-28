@@ -32,14 +32,14 @@ namespace XeApp.Game.Common
 		private CCAAJNJGNDO m_eventStoryData; // 0x34
 
 		public string ReturnSceneName { get { return m_returnSceneName; } } //0xE58000
-		//public TransitionUniqueId UniqueId { get; } 0xE5F7A0
+		public TransitionUniqueId UniqueId { get { return m_uniqueId; } } //0xE5F7A0
 		public int FreeMusicId { get { return m_freeMusicId; } } //0xE58084
-		//public int EventUniqueId { get; } 0xE5F7A8
+		public int EventUniqueId { get { return m_eventUniqueId; } } //0xE5F7A8
 		public int AdvId { get { return m_advId; } } //0xE58108
-		//public int RestorBgmId { get; } 0xE5F7B0
-		//public float RestorListPosition { get; } 0xE5F7B8
-		//public AdvReturnBgParam RestorBgParam { get; } 0xE5F7C0
-		//public CCAAJNJGNDO EventStoryData { get; } 0xE5F7D0
+		public int RestorBgmId { get { return m_restorBgmId; } } //0xE5F7B0
+		public float RestorListPosition { get { return m_restoreListPosition; } } //0xE5F7B8
+		public AdvReturnBgParam RestorBgParam { get { return m_restorBgParam; } } //0xE5F7C0
+		public CCAAJNJGNDO EventStoryData { get { return m_eventStoryData; } } //0xE5F7D0
 
 		//// RVA: 0xE58008 Offset: 0xE58008 VA: 0xE58008
 		public bool IsCallRhythmGame()

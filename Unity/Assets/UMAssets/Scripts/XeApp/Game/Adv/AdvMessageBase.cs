@@ -151,7 +151,12 @@ namespace XeApp.Game.Adv
 		}
 
 		//// RVA: 0xE56790 Offset: 0xE56790 VA: 0xE56790
-		//public int GetNotRichTextLength(string str) { }
+		public int GetNotRichTextLength(string str)
+		{
+			StringBuilder strB = new StringBuilder();
+			strB.Append(str);
+			return GetNotRichTextLength(strB);
+		}
 
 		//// RVA: 0xE56890 Offset: 0xE56890 VA: 0xE56890
 		protected int SeekRichText(StringBuilder message, int index, ref StringBuilder str)

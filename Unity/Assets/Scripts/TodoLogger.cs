@@ -20,6 +20,7 @@ public static class TodoLogger
 	public static int CriWareDecrypter = _OnlyAndroid;
 	public static int CriWareInitializer = _OnlyAndroid;
 	public static int CriAtomExLib = _OnlyAndroid;
+	public static int CriAtom = _OnlyAndroid;
 	public static int AppQualitySetting = _NonVisible;
 	public static int SecureLibAPI = _NonVisible;
 	public static int FCMTokenReceiver = _NonVisible;

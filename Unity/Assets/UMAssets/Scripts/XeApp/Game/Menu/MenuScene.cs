@@ -306,8 +306,17 @@ namespace XeApp.Game.Menu
 				}
 				if(prevSceneName == "Adv")
 				{
-					TodoLogger.LogError(0, "init from Adv");
-					//256
+					info.uniqueId = Database.Instance.advResult.UniqueId;
+					info.camBackUnityScene = MenuSceneCamebackInfo.CamBackUnityScene.Adv;
+					if (info.uniqueId < TransitionUniqueId.EVENTQUEST_FRIENDSELECT)
+					{
+						if ((info.uniqueId | TransitionUniqueId.HOME) != TransitionUniqueId.EVENTQUEST)
+							return;
+					}
+					else if (info.uniqueId != TransitionUniqueId.EVENTGODIVA && info.uniqueId != TransitionUniqueId.EVENTBATTLE)
+						return;
+					TodoLogger.LogError(0, "Event");
+					//info.args = new EventMusicSelectSceneArgs(Database.Instance.advResult.EventUniqueId);
 					return;
 				}
 				if(GameManager.Instance.IsTutorial)

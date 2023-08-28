@@ -33,8 +33,7 @@ namespace XeApp.Game.Adv
 		//// RVA: 0xE521A8 Offset: 0xE521A8 VA: 0xE521A8
 		public int GetNotRichTextLength(string message)
 		{
-			TodoLogger.LogError(0, "GetNotRichTextLength");
-			return 0;
+			return m_message.GetNotRichTextLength(message);
 		}
 
 		//// RVA: 0xE518E4 Offset: 0xE518E4 VA: 0xE518E4

@@ -98,7 +98,7 @@ public class BIFNGFAIEIL
 													{
 														ILCCJNDFFOB.HHCJCDFCLOB.JOLBIMMKGIP(snsData.MALFHCHNEFN, snsData.AIPLIEMLHGC, snsData.AJIDLAGFPGM, 0);
 														SNSRoomTextData.TalkData tData = Database.Instance.roomText.textData.FindData(j + header.startIndex);
-														BOKMNHAFJHF_Sns.JFMDDEBLCAA charaInfo = db.OMGFKMANMAB_Sns.KHCACDIKJLG[tData.charaId - 1];
+														BOKMNHAFJHF_Sns.JFMDDEBLCAA charaInfo = db.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[tData.charaId - 1];
 														string msg = Database.Instance.roomText.textData.FindMessage(tData.messageIndex);
 														EOHDAOAJOHH.HHCJCDFCLOB.HKMEADILMGB(u9 + tData.timeOffset, snsData.AJIDLAGFPGM * 100 + j, msg, charaInfo.EAHPLCJMPHD);
 													}
@@ -137,8 +137,8 @@ public class BIFNGFAIEIL
 													{
 														ILCCJNDFFOB.HHCJCDFCLOB.JOLBIMMKGIP(snsData.MALFHCHNEFN, snsData.AIPLIEMLHGC, snsData.AJIDLAGFPGM, 0);
 														SNSRoomTextData.TalkData tData = Database.Instance.roomText.textData.FindData(j + header.startIndex);
-														BOKMNHAFJHF_Sns.JFMDDEBLCAA charaInfo = db.OMGFKMANMAB_Sns.KHCACDIKJLG[tData.charaId - 1];
-														string msg = charaInfo.OPFGFINHFCE + JpStringLiterals.StringLiteral_9630;
+														BOKMNHAFJHF_Sns.JFMDDEBLCAA charaInfo = db.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[tData.charaId - 1];
+														string msg = charaInfo.OPFGFINHFCE_Name + JpStringLiterals.StringLiteral_9630;
 														if(c)
 														{
 															EOHDAOAJOHH.HHCJCDFCLOB.HKMEADILMGB(i6468 + tData.timeOffset, snsData.AJIDLAGFPGM * 100 + j, msg, charaInfo.EAHPLCJMPHD);

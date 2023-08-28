@@ -43,7 +43,7 @@ public class BOKMNHAFJHF_Sns : DIHHCBACKGG_DbSection
 		public int EAHPLCJMPHD; // 0xC
 		public int HEHKNMCDBJJ_ColorId; // 0x10
 		public int CPKMLLNADLJ; // 0x14
-		public string OPFGFINHFCE; // 0x18
+		public string OPFGFINHFCE_Name; // 0x18
 		public string HAPAFECPFEK; // 0x1C
 		public sbyte PPEGAKEIEGM_Enabled; // 0x20
 
@@ -62,7 +62,7 @@ public class BOKMNHAFJHF_Sns : DIHHCBACKGG_DbSection
 
 	public List<KEIGMAOCJHK> CDENCMNHNGA { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
 	public List<LEBAGJNJJNG_Room> NPKPBDIDBBG_Room { get; private set; } // 0x24 APIEOMBDJJM OJBJIECLMKI KHEKLHLKDIJ
-	public List<JFMDDEBLCAA> KHCACDIKJLG { get; private set; } // 0x28 BMCJBCFBOJG ICPBCJDBBAI HHKFEJDAHNA
+	public List<JFMDDEBLCAA> KHCACDIKJLG_Characters { get; private set; } // 0x28 BMCJBCFBOJG ICPBCJDBBAI HHKFEJDAHNA
 	public List<EIJGEDBGBBI> LOCEHOMKJEI { get; private set; } // 0x2C GJFNINODHJK LLFHHFNLOPC CGEAKFHLBNF
 
 	//// RVA: 0x19CD998 Offset: 0x19CD998 VA: 0x19CD998
@@ -75,7 +75,7 @@ public class BOKMNHAFJHF_Sns : DIHHCBACKGG_DbSection
 		LNIMEIMBCMF = false;
 		CDENCMNHNGA = new List<KEIGMAOCJHK>();
 		NPKPBDIDBBG_Room = new List<LEBAGJNJJNG_Room>();
-		KHCACDIKJLG = new List<JFMDDEBLCAA>();
+		KHCACDIKJLG_Characters = new List<JFMDDEBLCAA>();
 		LOCEHOMKJEI = new List<EIJGEDBGBBI>();
 		LMHMIIKCGPE = 76;
 	}
@@ -91,17 +91,17 @@ public class BOKMNHAFJHF_Sns : DIHHCBACKGG_DbSection
 			data.AIPLIEMLHGC = i + 1;
 			CDENCMNHNGA.Add(data);
 		}
-		KHCACDIKJLG.Clear();
+		KHCACDIKJLG_Characters.Clear();
 		for(int i = 0; i < 100; i++)
 		{
 			JFMDDEBLCAA data = new JFMDDEBLCAA();
-			data.OPFGFINHFCE = "";
+			data.OPFGFINHFCE_Name = "";
 			data.HAPAFECPFEK = "";
 			data.IDELKEKDIFD = i + 1;
 			data.EAHPLCJMPHD = 1;
 			data.HEHKNMCDBJJ_ColorId = 1;
 			data.CPKMLLNADLJ = 0;
-			KHCACDIKJLG.Add(data);
+			KHCACDIKJLG_Characters.Add(data);
 		}
 	}
 
@@ -179,12 +179,12 @@ public class BOKMNHAFJHF_Sns : DIHHCBACKGG_DbSection
 	private bool LHFCGAJLMDL(MILDDOGCGLE LKDONLFHMEO)
 	{
 		EIDBDFGNCFB[] array = LKDONLFHMEO.CEPBAOMAHNH;
-		if (array.Length <= KHCACDIKJLG.Count)
+		if (array.Length <= KHCACDIKJLG_Characters.Count)
 		{
 			for (int i = 0; i < array.Length; i++)
 			{
-				JFMDDEBLCAA data = KHCACDIKJLG[i];
-				data.OPFGFINHFCE = array[i].OPFGFINHFCE;
+				JFMDDEBLCAA data = KHCACDIKJLG_Characters[i];
+				data.OPFGFINHFCE_Name = array[i].OPFGFINHFCE;
 				data.HAPAFECPFEK = array[i].ONOPACPKFPK;
 				data.EAHPLCJMPHD = (int)array[i].HANMDEBPBHG;
 				data.HEHKNMCDBJJ_ColorId = array[i].DJJNOCDIIAE;
