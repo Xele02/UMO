@@ -1762,7 +1762,7 @@ namespace XeApp.Game.RhythmGame
 			{
 				f = 0;
 			}
-			status.life.DamageValue(Mathf.RoundToInt(f * buff.effectValue));
+			status.life.DamageValue((int)(f * buff.effectValue));
 		}
 
 		// // RVA: 0x9BE84C Offset: 0x9BE84C VA: 0x9BE84C
@@ -2967,11 +2967,11 @@ namespace XeApp.Game.RhythmGame
 			}
 			if (buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.ScoreUpPercentage_FoldWave, noteObject.rNote.GetLineNo()))
 			{
-				f += buffOwner.effectiveBuffList.GetEffectValue(SkillBuffEffect.Type.ScoreUpPercentage_FoldWave, noteObject.rNote.GetLineNo(), a_result_ex.m_result);
+				f += buffOwner.effectiveBuffList.GetEffectValue(SkillBuffEffect.Type.ScoreUpPercentage_FoldWave, noteObject.rNote.GetLineNo(), a_result_ex.m_result) / 100.0f;
 			}
 			if (buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.ScoreUpPercentage_Intimacy, noteObject.rNote.GetLineNo()))
 			{
-				f += buffOwner.effectiveBuffList.GetEffectValue(SkillBuffEffect.Type.ScoreUpPercentage_Intimacy, noteObject.rNote.GetLineNo(), a_result_ex.m_result);
+				f += buffOwner.effectiveBuffList.GetEffectValue(SkillBuffEffect.Type.ScoreUpPercentage_Intimacy, noteObject.rNote.GetLineNo(), a_result_ex.m_result) / 100.0f;
 			}
 			int a = 0;
 			if (buffOwner.effectiveBuffList.IsConatinEffectType(SkillBuffEffect.Type.ScoreUpValue, noteObject.rNote.GetLineNo()))
@@ -3379,7 +3379,7 @@ namespace XeApp.Game.RhythmGame
 			startTime = TimeWrapper.time;
 			while (TimeWrapper.time - startTime < waittime)
 				yield return null;
-			StartPlayMusic(Mathf.RoundToInt((TimeWrapper.time - startTime - waittime) * 1000));
+			StartPlayMusic((int)((TimeWrapper.time - startTime - waittime) * 1000));
 		}
 
 		// // RVA: 0x9C3750 Offset: 0x9C3750 VA: 0x9C3750

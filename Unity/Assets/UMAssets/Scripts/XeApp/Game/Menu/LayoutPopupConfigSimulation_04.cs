@@ -52,7 +52,7 @@ namespace XeApp.Game.Menu
 				int index = i;
 				if(!string.IsNullOrEmpty(m_textTbl[i].label))
 				{
-					s = m_textTbl[i].label;
+					s = bk.GetMessageByLabel(m_textTbl[i].label);
 					index = m_textTbl[i].index;
 				}
 				SetText(index, s);

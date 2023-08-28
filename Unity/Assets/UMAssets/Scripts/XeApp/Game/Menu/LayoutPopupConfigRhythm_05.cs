@@ -137,7 +137,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x1ED1770
 				ConfigManager.Instance.SetNotesOffsetValue(value);
-				int n = Mathf.RoundToInt(value);
+				int n = (int)(value);
 				if (n < 0)
 					n = -n;
 				m_notes.SetNumber(n, 0);

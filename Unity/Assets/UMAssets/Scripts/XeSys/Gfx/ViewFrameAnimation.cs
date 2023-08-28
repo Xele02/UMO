@@ -24,7 +24,7 @@ namespace XeSys.Gfx
 		private int m_NextFrameData = -1; // 0x28
 		private float m_FrameDataRate; // 0x2C
 		[SerializeField]
-		private float m_FrameSec = 0.03333334f; // 0x30
+		private float m_FrameSec = 1.0f/30;//0.03333334f; // 0x30
 		[SerializeField]
 		private float m_BaseX; // 0x34
 		[SerializeField]
@@ -34,7 +34,7 @@ namespace XeSys.Gfx
 		public float AnimCount { get { return m_AnimCount; } set { m_AnimCount = value; } } //0x1EE958C 0x1EE9594
 		// public float TimeScale { get; set; } 0x1EE5EA4 0x1EE5EF8
 		// public float FrameSec { get; set; } 0x1EE959C 0x1EE95A4
-		public int FrameCount { get { return Mathf.RoundToInt(m_AnimCount / m_FrameSec); } private set { return; } } //0x1EE95AC 0x1EE95C4
+		public int FrameCount { get { return (int)(m_AnimCount / m_FrameSec); } private set { return; } } //0x1EE95AC 0x1EE95C4
 		// public float BaseX { get; set; } 0x1EE95C8 0x1EE95D0
 		// public float BaseY { get; set; } 0x1EE95D8 0x1EE95E0
 		public int FrameNum { get { return data.FrameNum; } } //0x1EE95E8

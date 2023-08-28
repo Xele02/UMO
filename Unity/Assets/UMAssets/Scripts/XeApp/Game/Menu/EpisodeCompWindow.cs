@@ -167,7 +167,7 @@ namespace XeApp.Game.Menu
 			m_old_value = data.ABLHIAEDJAI_CurrentPoint;
 			m_add_episode_point = add_point;
 			m_reward_list = LGMEPLIJLNB.FKDIMODKKJD_GetEpisodeRewards(data.KELFCMEOPPM_EpId);
-			m_reward_index = EpisodeUtility.GetAcquiredRewardLastIndex(m_reward_list, Mathf.RoundToInt(m_point));
+			m_reward_index = EpisodeUtility.GetAcquiredRewardLastIndex(m_reward_list, (int)(m_point));
 			m_next.text = data.JBFLCHFEIGL.GOOIIPFHOIG.HAAJGNCFNJM;
 			m_point_den.SetNumber(data.ABLHIAEDJAI_CurrentPoint, 0);
 			m_point_mol.SetNumber(data.DMHDNKILKGI_MaxPoint, 0);
@@ -293,7 +293,7 @@ namespace XeApp.Game.Menu
 					int a = Mathf.Max(currentReward.CCDPNBJMKDI_Idx, m_currentPoint);
 					int b = Mathf.Min(currentReward.DNBFMLBNAEE_TotalPoint, m_addPoint + m_currentPoint);
 					float f = Mathf.Lerp(a, b, time);
-					currentPoint = Mathf.RoundToInt(f);
+					currentPoint = (int)(f);
 					if (currentPoint >= b)
 					{
 						currentPoint = b;
@@ -485,7 +485,7 @@ namespace XeApp.Game.Menu
 		private void UpdateNext(LGMEPLIJLNB reward, int max, bool isComp)
 		{
 			float f = m_line_abs.FrameAnimation.SearchLabelFrame("st_out");
-			int start = Mathf.RoundToInt(f);
+			int start = (int)(f);
 			if(!isComp)
 			{
 				start = EpisodeUtility.CalcEpisodeGaugeFrame(reward.DNBFMLBNAEE_TotalPoint, max, (int)f);
@@ -499,7 +499,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x12810D8 Offset: 0x12810D8 VA: 0x12810D8
 		private void UpdateAddtiveRewardGauge(int currentPoint)
 		{
-			SetGauge(Mathf.RoundToInt(Mathf.Clamp01((currentPoint - m_reward_list[m_reward_index].CCDPNBJMKDI_Idx) * 1.0f / m_reward_list[m_reward_index].CCDPNBJMKDI_Idx) * 100));
+			SetGauge((int)(Mathf.Clamp01((currentPoint - m_reward_list[m_reward_index].CCDPNBJMKDI_Idx) * 1.0f / m_reward_list[m_reward_index].CCDPNBJMKDI_Idx) * 100));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DA8CC Offset: 0x6DA8CC VA: 0x6DA8CC

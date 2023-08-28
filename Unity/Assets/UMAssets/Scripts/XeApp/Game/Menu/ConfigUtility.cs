@@ -87,7 +87,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x1B65A84
 					if (callback != null)
-						callback(type == PopupButton.ButtonType.Negative);
+						callback(label == PopupButton.ButtonLabel.Ok);
 				}, null, null, null);
 		}
 

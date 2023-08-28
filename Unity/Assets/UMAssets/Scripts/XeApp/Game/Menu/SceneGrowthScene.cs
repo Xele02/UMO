@@ -582,6 +582,7 @@ namespace XeApp.Game.Menu
 			else if(panel is SceneGrowthInfinityPanel)
 			{
 				SceneGrowthInfinityPanel p = panel as SceneGrowthInfinityPanel;
+				m_infinityPanel = p;
 				GameObject g = p.DisConnectEffect(transform);
 				if (g != null)
 				{

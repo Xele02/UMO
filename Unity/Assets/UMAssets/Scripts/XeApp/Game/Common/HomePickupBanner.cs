@@ -222,11 +222,11 @@ namespace XeApp.Game.Common
 		{
 			if(vertical)
 			{
-				return (int)(Mathf.Min(m_list.Count, 5) * Mathf.Round(m_scrollView.ContentSize.y + m_scrollView.Spacing.y));
+				return Mathf.Min(m_list.Count, 5) * (int)(m_scrollView.ContentSize.y + m_scrollView.Spacing.y);
 			}
 			else
 			{
-				return (int)Mathf.Round(m_scrollView.ContentSize.x + m_scrollView.Spacing.x);
+				return (int)(m_scrollView.ContentSize.x + m_scrollView.Spacing.x);
 			}
 		}
 

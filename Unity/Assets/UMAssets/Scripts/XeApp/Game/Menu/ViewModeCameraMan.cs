@@ -215,7 +215,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_neutralDone)
 				return;
-			float dt = Mathf.Clamp(Time.deltaTime, 0, 0.06666667f);
+			float dt = Mathf.Clamp(Time.deltaTime, 0, 1.0f/15);
 			m_time += dt;
 			float t = Mathf.Clamp01(m_time);
 			if(t >= 1)

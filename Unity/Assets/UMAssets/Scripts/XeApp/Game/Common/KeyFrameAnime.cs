@@ -112,7 +112,7 @@ namespace XeApp.Game.Common
 							{
 								t += m_animeTable[i].time / 1000.0f;
 							}
-							m_animStartTime = m_animStartTime + t * Mathf.Round((Time.time - m_animStartTime) / t);
+							m_animStartTime = m_animStartTime + t * (int)((Time.time - m_animStartTime) / t);
 							while(m_animeTable[index].time / 1000.0f <= Time.time - m_animStartTime)
 							{
 								m_animStartTime += m_animeTable[index].time;

@@ -108,7 +108,7 @@ namespace XeApp.Game.Common
 				p = 100;
 			}
 			m_ratio = ratio + (per - ratio) * 0.7f;
-			int f = Mathf.RoundToInt(m_ratio);
+			int f = (int)(m_ratio);
 			m_layoutBar[(int)m_type].StartChildrenAnimGoStop(f, f);
 		}
 

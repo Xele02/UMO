@@ -78,8 +78,8 @@ namespace XeApp.Game.Menu
 		{
 			layoutMainAnim = layout.FindViewById("sw_g_res_anim") as AbsoluteLayout;
 			layoutExcellentAnim[0] = layout.FindViewById("sw_g_res_font_jdg_perfect_ex_anim") as AbsoluteLayout;
-			layoutExcellentAnim[1] = layout.FindViewById("sw_g_res_anim_sw_g_res_anim") as AbsoluteLayout;
-			layoutExcellentAnim[2] = layout.FindViewById("sw_g_res_anim_swnum_score") as AbsoluteLayout;
+			layoutExcellentAnim[1] = layout.FindViewByExId("sw_g_res_anim_sw_g_res_anim") as AbsoluteLayout;
+			layoutExcellentAnim[2] = layout.FindViewByExId("sw_g_res_anim_swnum_score") as AbsoluteLayout;
 			NumberBase[] nbs = transform.Find("sw_g_res_anim (AbsoluteLayout)").GetComponentsInChildren<NumberBase>(true);
 			List<NumberBase> n = new List<NumberBase>(nbs);
 			numberNoteResultCountList[0] = n.Find((NumberBase _) => {
@@ -111,7 +111,7 @@ namespace XeApp.Game.Menu
 			};
 			for(int i = 0; i < strs.Length; i++)
 			{
-				countStartFrameList[i] = Mathf.RoundToInt(layoutMainAnim.GetView(0).FrameAnimation.SearchLabelFrame(strs[i]));
+				countStartFrameList[i] = (int)(layoutMainAnim.GetView(0).FrameAnimation.SearchLabelFrame(strs[i]));
 			}
 
 			numberCombo = n.Find((NumberBase _) => {
@@ -549,7 +549,7 @@ namespace XeApp.Game.Menu
 				int a = l.GetView(0).FrameAnimation.FrameCount;
 				float f = layoutHighScoreMarkAnim.GetView(0).FrameAnimation.SearchLabelFrame("logo_act");
 				float f2 = layoutHighScoreMarkAnim.GetView(0).FrameAnimation.SearchLabelFrame("loen_act");
-				layoutHighScoreMarkAnim.StartChildrenAnimLoop(a + 1, Mathf.RoundToInt(f), Mathf.RoundToInt(f2));
+				layoutHighScoreMarkAnim.StartChildrenAnimLoop(a + 1, (int)(f), (int)(f2));
 			}
 			else
 			{

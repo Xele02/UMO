@@ -1216,7 +1216,7 @@ public static class CMMKCEPBIHI
 			}
 		}
 		int c = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.ADBELGIDIEN_GetProgress(BAKLKJLPLOJ_FPt, GBNOALJPOBM_IsLine6);
-		return (scoreWithEnemy - scoreWithoutEnemy) + Mathf.RoundToInt(c * total / 1000.0f);
+		return (scoreWithEnemy - scoreWithoutEnemy) + (int)(c * total / 1000.0f);
 	}
 
 	// // RVA: 0x108E2F8 Offset: 0x108E2F8 VA: 0x108E2F8
@@ -1528,7 +1528,7 @@ public static class CMMKCEPBIHI
 				else
 				{
 					KLJCBKMHKNK k = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.BBFNPHGDCOF(vals[(int)AKNELONELJK_Difficulty]);
-					EGLJKICMCPG e = k.GCINIJEMHFK(KLJCBKMHKNK.HHMPIIILOLD.CBHCEDGAGHL/*3*/);
+					EGLJKICMCPG e = k.GCINIJEMHFK(KLJCBKMHKNK.HHMPIIILOLD.CBHCEDGAGHL_AwakenDiva/*3*/);
 					int a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.GAHIBKLEDBF((int)AKNELONELJK_Difficulty, GBNOALJPOBM_IsLine6);
 					int b = (int)Mathf.Clamp(e.PHGLKBPLFDH_RMax / 100.0f * POMOLHBFAPM_Score.JJBOEMOJPEC_DivaNote, e.MPPANPOOIIB_NMin, e.GKPPCFMBANO_NMax);
 					res = 0;

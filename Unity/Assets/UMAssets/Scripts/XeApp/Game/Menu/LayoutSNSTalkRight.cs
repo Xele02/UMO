@@ -126,7 +126,7 @@ namespace XeApp.Game.Menu
 			for (int i = 0; i < m_talk.Length; i++)
 			{
 				if (m_talk[i] != null)
-					m_talk[i].text = name;
+					m_talk[i].text = talk;
 			}
 		}
 

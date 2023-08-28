@@ -633,6 +633,7 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 					data.DMNIMMGGJJJ_Leaf = CJAENOMGPDA_ReadInt(json, "leaf", 0, ref isInvalid);
 					data.DOAAOOHGODJ_PstNew = CJAENOMGPDA_ReadInt(json, AFEHLCGHAEE_Strings.EGPELMDJDCC_pst_new, 0, ref isInvalid);
 					CEDHHAGBIBA.IFOLECIIDPO_StringToByteArray(data.PDNIFBEGMHC_Mb, FGCNMLBACGO_ReadString(json, AFEHLCGHAEE_Strings.DANMJLOBLIE_mb, "", ref isInvalid));
+					CEDHHAGBIBA.IFOLECIIDPO_StringToByteArray(data.EMOJHJGHJLN_Sb, FGCNMLBACGO_ReadString(json, AFEHLCGHAEE_Strings.KOHNLDKIKPC_sb, "", ref isInvalid));
 					if(db != null)
 					{
 						if(data.PPFNGGCBJKC_Id != 0)

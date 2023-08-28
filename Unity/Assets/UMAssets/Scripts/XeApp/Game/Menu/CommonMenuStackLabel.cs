@@ -94,8 +94,8 @@ namespace XeApp.Game.Menu
 				str.SetFormat(s_labelImageUvFormat, i);
 				Rect r = LayoutUGUIUtility.MakeUnityUVRect(uvMan.GetUVData(str.ToString()));
 				m_labelUvRects.Add(r);
-				float w = Mathf.Round(m_labelTexSize.x * r.width);
-				float h = Mathf.Round(m_labelTexSize.y * r.height);
+				float w = Mathf.RoundToInt(m_labelTexSize.x * r.width);
+				float h = Mathf.RoundToInt(m_labelTexSize.y * r.height);
 				m_labelImageSizes.Add(new Vector2(w, h));
 			}
 			m_description.text = string.Empty;

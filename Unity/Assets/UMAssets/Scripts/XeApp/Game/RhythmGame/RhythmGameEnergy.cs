@@ -121,11 +121,11 @@ namespace XeApp.Game.RhythmGame
 			float f = 0;
 			if (subgoalValue < currentValue)
 			{
-				f = Mathf.Round((currentValue - subgoalValue) * 1.0f / (goalValue - subgoalValue) * 100) + 100;
+				f = (currentValue - subgoalValue) * 1.0f / (goalValue - subgoalValue) * 100 + 100;
 			}
 			else
 			{
-				f = Mathf.Round((currentValue * 1.0f / subgoalValue) * 100);
+				f = (currentValue * 1.0f / subgoalValue) * 100;
 			}
 			return (int)f;
 		}

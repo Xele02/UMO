@@ -169,7 +169,7 @@ namespace XeApp.Game.Common
 						int val = 0;
 						if (int.TryParse(word[1], out val))
 						{
-							RawImage icon = CreateIcon(val, Mathf.RoundToInt(w), lineCount);
+							RawImage icon = CreateIcon(val, (int)(w), lineCount);
 							m_lineImageTmpList.Add(icon);
 							m_imageObjectList.Add(icon);
 						}
@@ -191,13 +191,13 @@ namespace XeApp.Game.Common
 				}
 				if(c == '\n')
 				{
-					m_lineObjectList.Add(new LineInfo(m_lineImageTmpList, Mathf.RoundToInt(GetPreferredWidth(m_lineString.ToString()))));
+					m_lineObjectList.Add(new LineInfo(m_lineImageTmpList, (int)(GetPreferredWidth(m_lineString.ToString()))));
 					m_lineImageTmpList.Clear();
 					m_lineString.Clear();
 					lineCount++;
 				}
 			}
-			m_lineObjectList.Add(new LineInfo(m_lineImageTmpList, Mathf.RoundToInt(GetPreferredWidth(m_lineString.ToString()))));
+			m_lineObjectList.Add(new LineInfo(m_lineImageTmpList, (int)(GetPreferredWidth(m_lineString.ToString()))));
 			m_lineObjectList.ForEach((LineInfo info) =>
 			{
 				//0x10FE8E8

@@ -14,9 +14,9 @@ namespace XeSys
 		private Vector3 lowPassAcceleration; // 0x28
 		private List<TouchInfoRecord> touchListTempList = new List<TouchInfoRecord>(6); // 0x34
 		private List<Touch> unityTouchListTempList = new List<Touch>(6); // 0x38
-		private const float AccelerometerUpdateInterval = 0.01666667f;
+		private const float AccelerometerUpdateInterval = (1.0f/60);
 		private const float LowPassKernelWidthInSeconds = 1;
-		private const float LowPassFilterFactor = 0.01666667f;
+		private const float LowPassFilterFactor = (1.0f/60);
 
 		public static int fingerCount { get; private set; } // 0x4
 		public static int recordFrameSize { get; private set; } // 0x8
@@ -99,7 +99,7 @@ namespace XeSys
 		// // RVA: 0x1EF6424 Offset: 0x1EF6424 VA: 0x1EF6424
 		private void UpdateAcceleration()
 		{
-			lowPassAcceleration = Vector3.Lerp(Input.acceleration, lowPassAcceleration, 0.0166667f);
+			lowPassAcceleration = Vector3.Lerp(Input.acceleration, lowPassAcceleration, 1.0f/60);
 		}
 
 		// // RVA: 0x1EF64F4 Offset: 0x1EF64F4 VA: 0x1EF64F4
