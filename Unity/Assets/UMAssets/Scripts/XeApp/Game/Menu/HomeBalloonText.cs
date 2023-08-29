@@ -97,7 +97,21 @@ namespace XeApp.Game.Menu
 		// public void SetClearMark(bool isClear) { }
 
 		// // RVA: 0x956F24 Offset: 0x956F24 VA: 0x956F24
-		// public void SetActive(bool active) { }
+		public void SetActive(bool active)
+		{
+			if(active)
+			{
+				m_canvasGroup.alpha = 1;
+				m_canvasGroup.interactable = true;
+				m_canvasGroup.blocksRaycasts = true;
+			}
+			else
+			{
+				m_canvasGroup.alpha = 0;
+				m_canvasGroup.interactable = false;
+				m_canvasGroup.blocksRaycasts = false;
+			}
+		}
 
 		// // RVA: 0x956FFC Offset: 0x956FFC VA: 0x956FFC
 		public void Enter(bool force = false)
@@ -118,7 +132,10 @@ namespace XeApp.Game.Menu
 		// public void Leave(float animTime, bool force = False) { }
 
 		// // RVA: 0x957104 Offset: 0x957104 VA: 0x957104
-		// public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_inOutAnime.IsPlaying();
+		}
 
 		// // RVA: 0x957130 Offset: 0x957130 VA: 0x957130
 		public void SetEnable()

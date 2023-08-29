@@ -195,7 +195,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x14B0744 Offset: 0x14B0744 VA: 0x14B0744
-		//public void EnterCounter(float animTime) { }
+		public void EnterCounter(float animTime)
+		{
+			if (!CheckUnlock())
+				return;
+			m_intimacyCounter.Enter(animTime);
+			m_intimacyCounter.SetEnable(false);
+			m_prevEnableReaction = false;
+		}
 
 		//// RVA: 0x14B07B4 Offset: 0x14B07B4 VA: 0x14B07B4
 		public void LeaveCounter()
@@ -206,7 +213,12 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x14B07F0 Offset: 0x14B07F0 VA: 0x14B07F0
-		//public void LeaveCounter(float animTime) { }
+		public void LeaveCounter(float animTime)
+		{
+			if (!CheckUnlock())
+				return;
+			m_intimacyCounter.Leave(animTime);
+		}
 
 		//// RVA: 0x14B0834 Offset: 0x14B0834 VA: 0x14B0834
 		public void DisableLongTouchTips()
@@ -243,7 +255,24 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x14B0A74 Offset: 0x14B0A74 VA: 0x14B0A74
-		//public void EnterLongTouchTips(float animTime, bool force = False) { }
+		public void EnterLongTouchTips(float animTime, bool force = false)
+		{
+			if(m_enableLongTouchTips && m_divaTalk != null && m_divaTalk.IsEnableReaction())
+			{
+				bool enabled = m_viewIntimacyData.HFFOJIBDNOG();
+				if(m_viewIntimacyData.HHLEJPBEHNE() < 1)
+				{
+					if(enabled &&!m_viewIntimacyData.HBODCMLFDOB.PFIILLOIDIL)
+					{
+						bool b = GameMessageManager.CheckBasara(m_viewIntimacyData.AHHJLDLAPAN_DivaId);
+						MessageBank bk = MessageManager.Instance.GetBank("menu");
+						string str = bk.GetMessageByLabel(b ? "diva_intimacy_basara_tips" : "diva_intimacy_tips");
+						m_systemMessage.SetTextSystem(m_viewIntimacyData.AHHJLDLAPAN_DivaId, str);
+						m_systemMessage.Enter(animTime, force);
+					}
+				}
+			}
+		}
 
 		//// RVA: 0x14B0CB0 Offset: 0x14B0CB0 VA: 0x14B0CB0
 		public void LeaveLongTouchTips(bool force = false)
@@ -259,7 +288,17 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x14B0D74 Offset: 0x14B0D74 VA: 0x14B0D74
-		//public void LeaveLongTouchTips(float animTime, bool force = False) { }
+		public void LeaveLongTouchTips(float animTime, bool force = false)
+		{
+			bool enabled = m_viewIntimacyData.HFFOJIBDNOG();
+			if(m_viewIntimacyData.HHLEJPBEHNE() < 1)
+			{
+				if (enabled && !m_viewIntimacyData.HBODCMLFDOB.PFIILLOIDIL)
+				{
+					m_systemMessage.Leave(animTime, force);
+				}
+			}
+		}
 
 		//// RVA: 0x14B0E40 Offset: 0x14B0E40 VA: 0x14B0E40
 		//public void StartIntimacyUp(CharTouchButton button, Action<bool> reactionCallback, Action endCallback, Func<bool> restartFunc) { }

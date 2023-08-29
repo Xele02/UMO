@@ -66,7 +66,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x110211C Offset: 0x110211C VA: 0x110211C
-		// public void Enter(float animTime) { }
+		public void Enter(float animTime)
+		{
+			m_inOutCount.Enter(animTime, false, null);
+		}
 
 		// // RVA: 0x110215C Offset: 0x110215C VA: 0x110215C
 		public void Leave()
@@ -75,7 +78,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1102198 Offset: 0x1102198 VA: 0x1102198
-		// public void Leave(float animTime) { }
+		public void Leave(float animTime)
+		{
+			m_inOutCount.Leave(animTime, false);
+		}
 
 		// // RVA: 0x11021D8 Offset: 0x11021D8 VA: 0x11021D8
 		// public bool IsPlaying() { }

@@ -98,7 +98,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x966FCC Offset: 0x966FCC VA: 0x966FCC
-		// public void Show(bool isEnd = False) { }
+		public void Show(bool isEnd = false)
+		{
+			if (!m_EnableShow)
+				return;
+			m_lobbyTabBtn.Show(isEnd);
+		}
 
 		// // RVA: 0x9670D0 Offset: 0x9670D0 VA: 0x9670D0
 		public void Hide(bool isEnd = false)

@@ -87,7 +87,21 @@ namespace XeApp.Game.Common
 		// public void SetTicket(long currentTime) { }
 
 		// // RVA: 0xEACBD0 Offset: 0xEACBD0 VA: 0xEACBD0
-		// public void SetActive(bool active) { }
+		public void SetActive(bool active)
+		{
+			if (active)
+			{
+				m_canvasGroup.alpha = 1;
+				m_canvasGroup.interactable = true;
+				m_canvasGroup.blocksRaycasts = true;
+			}
+			else
+			{
+				m_canvasGroup.alpha = 0;
+				m_canvasGroup.interactable = false;
+				m_canvasGroup.blocksRaycasts = false;
+			}
+		}
 
 		// // RVA: 0xEACCA8 Offset: 0xEACCA8 VA: 0xEACCA8
 		public void Enter()

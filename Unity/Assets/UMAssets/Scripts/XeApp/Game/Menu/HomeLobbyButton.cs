@@ -21,7 +21,11 @@ namespace XeApp.Game.Menu
 		public Action onTabClickButton { private get; set; } // 0x30
 
 		//// RVA: 0x965F10 Offset: 0x965F10 VA: 0x965F10
-		//public void Show(bool isEnd = False) { }
+		public void Show(bool isEnd = false)
+		{
+			m_tabButtonsAnim.StartChildrenAnimGoStop(isEnd ? "st_in" : "go_in", "st_in");
+			m_is_show = true;
+		}
 
 		//// RVA: 0x965FCC Offset: 0x965FCC VA: 0x965FCC
 		public void Hide(bool isEnd = false)

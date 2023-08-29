@@ -1523,12 +1523,65 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x97A828 Offset: 0x97A828 VA: 0x97A828
 		private void OnClickUIHideView(bool hidden)
 		{
-			TodoLogger.LogNotImplemented("OnClickUIHideView");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			this.StartCoroutineWatched(Co_UIHideAnimation(hidden));
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3A5C Offset: 0x6E3A5C VA: 0x6E3A5C
 		// // RVA: 0x97A8A4 Offset: 0x97A8A4 VA: 0x97A8A4
-		// private IEnumerator Co_UIHideAnimation(bool hidden) { }
+		private IEnumerator Co_UIHideAnimation(bool hidden)
+		{
+			//0x13D8584
+			MenuScene.Instance.InputDisable();
+			m_isHiddenUI = hidden;
+			if(!m_isHiddenUI)
+			{
+				m_subMenu.SetActive(true);
+				m_buttonGroup.SetActive(true);
+				m_eventBanner.SetActive(true);
+				m_campaignBanner.SetActive(true);
+				m_fesBanner.SetActive(true);
+				m_leadBalloon.SetActive(true);
+				m_playRecordBanner.SetActive(true);
+				EnterIntimacy(0);
+				MenuScene.Instance.HeaderMenu.Enter(true);
+				MenuScene.Instance.FooterMenu.Enter(true);
+				MenuScene.Instance.LobbyButtonControl.Show(true);
+				if(m_isHomeShowDiva)
+				{
+					m_divaBalloon.SetActive(true);
+				}
+			}
+			else
+			{
+				m_subMenu.SetActive(false);
+				m_buttonGroup.SetActive(false);
+				m_eventBanner.SetActive(false);
+				m_campaignBanner.SetActive(false);
+				m_fesBanner.SetActive(false);
+				m_leadBalloon.SetActive(false);
+				m_playRecordBanner.SetActive(false);
+				LeaveIntimacy(0);
+				MenuScene.Instance.HeaderMenu.Leave(true);
+				MenuScene.Instance.FooterMenu.Leave(true);
+				MenuScene.Instance.LobbyButtonControl.Hide(true);
+				if(m_isHomeShowDiva)
+				{
+					m_divaBalloon.SetActive(false);
+				}
+			}
+			while (m_subMenu.IsPlaying())
+				yield return null;
+			while (m_buttonGroup.IsPlaying())
+				yield return null;
+			while (m_eventBanner.IsPlaying())
+				yield return null;
+			while (m_campaignBanner.IsPlaying())
+				yield return null;
+			while (m_leadBalloon.IsPlaying())
+				yield return null;
+			MenuScene.Instance.InputEnable();
+		}
 
 		// // RVA: 0x97A948 Offset: 0x97A948 VA: 0x97A948
 		private void OnClickPickupClose()
@@ -1896,11 +1949,16 @@ namespace XeApp.Game.Menu
 		{
 			m_intimacyControl.EnterCounter();
 			m_intimacyControl.EnableLongTouchTips();
-			m_intimacyControl.EnterLongTouchTips();
+			m_intimacyControl.EnterLongTouchTips(false);
 		}
 
 		// // RVA: 0x97BE14 Offset: 0x97BE14 VA: 0x97BE14
-		// private void EnterIntimacy(float animTime) { }
+		private void EnterIntimacy(float animTime)
+		{
+			m_intimacyControl.EnterCounter(animTime);
+			m_intimacyControl.EnableLongTouchTips();
+			m_intimacyControl.EnterLongTouchTips(animTime, true);
+		}
 
 		// // RVA: 0x9727F8 Offset: 0x9727F8 VA: 0x9727F8
 		private void LeaveIntimacy()
@@ -1911,7 +1969,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x97BE94 Offset: 0x97BE94 VA: 0x97BE94
-		// private void LeaveIntimacy(float animTime) { }
+		private void LeaveIntimacy(float animTime)
+		{
+			m_intimacyControl.LeaveCounter(animTime);
+			m_intimacyControl.DisableLongTouchTips();
+			m_intimacyControl.LeaveLongTouchTips(animTime, true);
+		}
 
 		// // RVA: 0x97BF14 Offset: 0x97BF14 VA: 0x97BF14
 		// private void StartIntimacyUp(CharTouchButton button) { }

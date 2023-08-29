@@ -45,7 +45,19 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xEA870C Offset: 0xEA870C VA: 0xEA870C
-		//public void SetActive(bool active) { }
+		public void SetActive(bool active)
+		{
+			if(active)
+			{
+				m_canvasGroup.alpha = 1;
+				m_canvasGroup.interactable = true;
+			}
+			else
+			{
+				m_canvasGroup.alpha = 0;
+				m_canvasGroup.interactable = false;
+			}
+		}
 
 		//// RVA: 0xEA879C Offset: 0xEA879C VA: 0xEA879C
 		public void Enter()

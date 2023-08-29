@@ -163,7 +163,21 @@ namespace XeApp.Game.Common
 		// private void ChangeBanner(int dir, float animTime) { }
 
 		// // RVA: 0xEAB708 Offset: 0xEAB708 VA: 0xEAB708
-		// public void SetActive(bool active) { }
+		public void SetActive(bool active)
+		{
+			if (active)
+			{
+				m_canvasGroup.alpha = 1;
+				m_canvasGroup.interactable = true;
+				m_canvasGroup.blocksRaycasts = true;
+			}
+			else
+			{
+				m_canvasGroup.alpha = 0;
+				m_canvasGroup.interactable = false;
+				m_canvasGroup.blocksRaycasts = false;
+			}
+		}
 
 		// // RVA: 0xEAB7E0 Offset: 0xEAB7E0 VA: 0xEAB7E0
 		public void Enter()
