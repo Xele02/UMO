@@ -206,19 +206,19 @@ namespace XeApp.Game.Menu
 				m_storyButton.Hidden = false;
 				m_eventStoryData.KHEKNNFCAOI(CCAAJNJGNDO.NNDBMLNMDJM(sceneData.BCCHOBPJJKE_SceneId));
 				m_storyNewLayout.StartChildrenAnimGoStop("02");
-				bool b = true;
+				bool disabled = true;
 				for(int i = 0; i < m_eventStoryData.FFPCLEONGHE.Count; i++)
 				{
 					if(m_eventStoryData.FFPCLEONGHE[i].CDOCOLOKCJK_Unlocked)
 					{
-						if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN(m_eventStoryData.FFPCLEONGHE[i].PBPOLELIPJI_AdventureId))
+						disabled = false;
+						if (!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN(m_eventStoryData.FFPCLEONGHE[i].PBPOLELIPJI_AdventureId))
 						{
-							b = false;
 							m_storyNewLayout.StartChildrenAnimGoStop("01");
 						}
 					}
 				}
-				m_storyButton.Disable = b;
+				m_storyButton.Disable = disabled;
 			}
 		}
 
