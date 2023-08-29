@@ -25,7 +25,10 @@ public class JKHEOEEPBMJ
 	}
 
 	// // RVA: 0x135FB74 Offset: 0x135FB74 VA: 0x135FB74
-	// public static void MLPMCLHGDFG(bool GOELFAECHGI) { }
+	public static void MLPMCLHGDFG_SetShowHomeDiva(bool GOELFAECHGI)
+	{
+		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.HLLEEFLLFPD_HomeShowDiva = GOELFAECHGI ? 1 : 0;
+	}
 
 	// // RVA: 0x135FC58 Offset: 0x135FC58 VA: 0x135FC58
 	public static bool NMKPJJLAONP_GetShowHomeDiva()

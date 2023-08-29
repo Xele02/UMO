@@ -1319,7 +1319,15 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E369C Offset: 0x6E369C VA: 0x6E369C
 		// // RVA: 0x9792E4 Offset: 0x9792E4 VA: 0x9792E4
-		// private IEnumerator Co_WaitIdleCrossFade() { }
+		private IEnumerator Co_WaitIdleCrossFade()
+		{
+			if(m_isHomeShowDiva)
+			{
+				m_isDivaCrossFade = true;
+				yield return this.StartCoroutineWatched(m_divaControl.Coroutine_IdleCrossFade());
+				m_isDivaCrossFade = false;
+			}
+		}
 
 		// // RVA: 0x979548 Offset: 0x979548 VA: 0x979548
 		private void OnClickDecoButton()
@@ -1492,7 +1500,11 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x97A5E0 Offset: 0x97A5E0 VA: 0x97A5E0
 		private void OnClickBgViewStart()
 		{
-			TodoLogger.LogNotImplemented("OnClickBgViewStart");
+			if (TryLobbyAnnounce())
+				return;
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+			MenuScene.Instance.Call(TransitionList.Type.HOME_BG_SELECT, new HomeBgSceneSelectArg(), true);
+			this.StartCoroutineWatched(Co_WaitIdleCrossFade());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E396C Offset: 0x6E396C VA: 0x6E396C

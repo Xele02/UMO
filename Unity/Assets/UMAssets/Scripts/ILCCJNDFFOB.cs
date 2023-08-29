@@ -1313,5 +1313,19 @@ public class ILCCJNDFFOB
 	// public void NBCACPPAAMC(int CHCPNKMNDOP, int KBMAMKCAIGD, int IGCLCOMCHHB, int IBKAENIBBIL, int DPJCPEIPAPN, int EKPGGDOOLFM) { }
 
 	// // RVA: 0x922A14 Offset: 0x922A14 VA: 0x922A14
-	// public void BBIBBNHCPPJ(int LKFPHAIMKMA, int HGBMBIBAEGG, int JBOMAOOPGAA, int HPBLCCLGFHH, int AICIPAHGLOE, int FOILMFGFFNH, int DLDODLGIOMC, int CNKFPJCGNFE, int EEJFLMKCCGN) { }
+	public void BBIBBNHCPPJ(int LKFPHAIMKMA, int HGBMBIBAEGG, int JBOMAOOPGAA, int HPBLCCLGFHH, int AICIPAHGLOE, int FOILMFGFFNH, int DLDODLGIOMC, int CNKFPJCGNFE, int EEJFLMKCCGN)
+	{
+		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
+		FLBFCCIEPNC_InitBaseJson(json, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
+		json["bf_view_model"] = LKFPHAIMKMA;
+		json["af_view_model"] = HGBMBIBAEGG;
+		json["bf_wallpaper_flag"] = JBOMAOOPGAA;
+		json["af_wallpaper_flag"] = HPBLCCLGFHH;
+		json["bf_light_flag"] = AICIPAHGLOE;
+		json["af_light_flag"] = FOILMFGFFNH;
+		json["illust_id"] = DLDODLGIOMC;
+		json["plate_id"] = CNKFPJCGNFE;
+		json["rare_up_flag"] = EEJFLMKCCGN;
+		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.BBIBBNHCPPJ, json, false);
+	}
 }

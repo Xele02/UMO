@@ -524,14 +524,144 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x143D498 Offset: 0x143D498 VA: 0x143D498
-		// public void ShowBgDark() { }
+		public void ShowBgDark()
+		{
+			if(m_limitedHomeBg.m_enable)
+			{
+				m_limitedHomeBg.m_darkImage.enabled = true;
+			}
+			m_bgBehaviour.ShowOverlay(BgBehaviour.HomeSceneOverlayAlpha);
+		}
 
 		// // RVA: 0x143D5A8 Offset: 0x143D5A8 VA: 0x143D5A8
-		// public void HideBgDark() { }
+		public void HideBgDark()
+		{
+			if(m_limitedHomeBg.m_enable)
+			{
+				m_limitedHomeBg.m_darkImage.enabled = false;
+			}
+			m_bgBehaviour.HideOverlay();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C5A58 Offset: 0x6C5A58 VA: 0x6C5A58
 		// // RVA: 0x143D62C Offset: 0x143D62C VA: 0x143D62C
-		// public IEnumerator ChangeHomeBgCoroutine(BgType bgType, int id = -1, int evolveId = -1, bool isBgDark = False, SceneGroupCategory category = -1, TransitionList.Type transitionType = -2, int attribute = -1) { }
+		public IEnumerator ChangeHomeBgCoroutine(BgType bgType, int id = -1, int evolveId = -1, bool isBgDark = false, SceneGroupCategory category = SceneGroupCategory.UNDEFINED, TransitionList.Type transitionType = TransitionList.Type.UNDEFINED, int attribute = -1)
+		{
+			BgTextureType textureType; // 0x30
+			float fadeTime; // 0x34
+			UGUIFader fader; // 0x38
+
+			//0x1440EAC
+			if (bgType < 0)
+				yield break;
+			if (id < 1)
+				id = 1;
+			int baseId = id;
+			textureType = BgTextureType.Normal;
+			ConvertBgType(bgType, ref textureType, ref id, ref evolveId);
+			m_limitedHomeBg.m_enable = false;
+			if(bgType == BgType.Home && evolveId == 0)
+			{
+				m_limitedHomeBg.m_master = CGFNKMNBNBN.ELKDCEEPLKB(baseId);
+				if(m_limitedHomeBg.m_master == null)
+				{
+					m_limitedHomeBg.m_master = CGFNKMNBNBN.ELKDCEEPLKB(GetDefaultHomeBg());
+				}
+				m_limitedHomeBg.m_enable = true;
+				m_textureType = textureType;
+				id = m_id;
+			}
+			m_fadeReserved = false;
+			fadeTime = m_fadeTime;
+			fader = m_bgBehaviour.Fader;
+			fader.Fade(m_fadeTime, new Color(m_fadeColor.r, m_fadeColor.g, m_fadeColor.b, 0), m_fadeColor);
+			while (fader.isFading)
+				yield return null;
+			m_limitedHomeBg.m_music_id = LimitedHomeBg.INVALID_MUSIC_ID;
+			if (bgType >= BgType.Home && bgType < BgType.Music)
+			{
+				CGFNKMNBNBN bgInfo;
+				if (CGFNKMNBNBN.DELFEMBCFCO_GetFirstAvaiableMusicBg(MenuScene.Instance.EnterToHomeTime, out bgInfo))
+				{
+					m_limitedHomeBg.m_music_id = bgInfo.KLMAMIOBDHP_MusicId;
+				}
+			}
+			if (m_limitedHomeBg.m_enable)
+			{
+				int a = GetHomeBgId(MenuScene.Instance.EnterToHomeTime);
+				if (m_limitedHomeBg.m_bg_id != m_limitedHomeBg.m_master.KEFGPJBKAOD_BgId ||
+					m_limitedHomeBg.m_time_zone != a ||
+					m_limitedHomeBg.m_prefab == null)
+				{
+					m_limitedHomeBg.m_bg_id = m_limitedHomeBg.m_master.KEFGPJBKAOD_BgId;
+					m_limitedHomeBg.m_time_zone = a;
+					yield return Co.R(Co_CreateLimitedBG(m_limitedHomeBg.m_bg_id, m_limitedHomeBg.m_time_zone));
+				}
+				//LAB_01440fb4
+				m_limitedHomeBg.m_darkImage.enabled = isBgDark;
+				if (m_limitedHomeBg.m_master.GJFPFFBAKGK_CloseAt != 0)
+				{
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().GBCEALJIKFN_Home.HBGKPLDGGLF(m_limitedHomeBg.m_master.GJFPFFBAKGK_CloseAt);
+				}
+				UnloadBgTexture();
+				m_bgBehaviour.SetBgTexture(null, false, false);
+				m_bgBehaviour.SetLimitedHomeScene();
+				StoryBgHide();
+				yield return null;
+			}
+			//LAB_014416cc
+			if (!m_limitedHomeBg.m_enable)
+			{
+				DeleteLimitedBG();
+				yield return Co.R(LoadBgTexture(textureType, id, bgType == BgType.GachaPickup));
+				if(bgType == BgType.Home)
+				{
+					if(evolveId == 0)
+					{
+						m_bgBehaviour.SetHome(isBgDark);
+						if(id == 3)
+						{
+							m_bgBehaviour.ChangeColor(BgBehaviour.ColorType.HomeNight);
+						}
+						else if(id == 2)
+						{
+							m_bgBehaviour.ChangeColor(BgBehaviour.ColorType.HomeEvening);
+						}
+						else if(id == 1)
+						{
+							m_bgBehaviour.ChangeColor(BgBehaviour.ColorType.Home);
+						}
+					}
+					else
+					{
+						m_bgBehaviour.SetHomeScene(isBgDark);
+					}
+					StoryBgHide();
+				}
+				else
+				{
+					UnloadBgTexture();
+					m_bgBehaviour.SetBgTexture(null, false, false);
+					m_bgBehaviour.SetMenu();
+					StoryBgHide();
+					ChangeColor(category, transitionType);
+				}
+			}
+			//LAB_01441864
+			if (attribute < 0)
+			{
+				if (m_type != bgType)
+					ChangeAttribute(GameAttribute.Type.None);
+			}
+			else
+			{
+				ChangeAttribute((GameAttribute.Type)attribute);
+			}
+			m_type = bgType;
+			fader.Fade(fadeTime, 0);
+			while (fader.isFading)
+				yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C5AD0 Offset: 0x6C5AD0 VA: 0x6C5AD0
 		// // RVA: 0x143D794 Offset: 0x143D794 VA: 0x143D794
@@ -891,7 +1021,21 @@ namespace XeApp.Game.Menu
 		// private bool CheckEqualBg(BgTextureType textureType, int id) { }
 
 		// // RVA: 0x143E424 Offset: 0x143E424 VA: 0x143E424
-		// private void ConvertBgType(BgType bgType, ref BgTextureType textureType, ref int id, ref int evolveId) { }
+		private void ConvertBgType(BgType bgType, ref BgTextureType textureType, ref int id, ref int evolveId)
+		{
+			if (bgType < BgType.Home || bgType > BgType.HomeNormal)
+				return;
+			if(evolveId == 0)
+			{
+				id = GetHomeBgId(MenuScene.Instance.EnterToHomeTime);
+				textureType = BgTextureType.Normal;
+			}
+			else
+			{
+				id += evolveId * 1000000;
+				textureType = BgTextureType.Scene;
+			}
+		}
 
 		// // RVA: 0x143E650 Offset: 0x143E650 VA: 0x143E650
 		private void ConvertBgType(BgType bgType, ref BgTextureType textureType, ref int id)
