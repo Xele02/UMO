@@ -1298,7 +1298,14 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x97936C Offset: 0x97936C VA: 0x97936C
 		private void OnClickStoryView()
 		{
-			TodoLogger.LogNotImplemented("OnClickStoryView");
+			if(!TryLobbyAnnounce())
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				if(!MenuScene.CheckDatelineAndAssetUpdate())
+				{
+					MenuScene.Instance.Mount(TransitionUniqueId.STORYSELECT, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+				}
+			}
 		}
 
 		// // RVA: 0x978124 Offset: 0x978124 VA: 0x978124

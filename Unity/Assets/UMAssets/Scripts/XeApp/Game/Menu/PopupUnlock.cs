@@ -269,7 +269,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1159C70 Offset: 0x1159C70 VA: 0x1159C70
-		// public bool IsClearStoryMusic(int musicId) { }
+		public bool IsClearStoryMusic(int musicId)
+		{
+			return m_paramList.FindIndex((UnlockParam x) =>
+			{
+				//0x115C4D8
+				if (x.unlockType != eUnlockType.Music)
+					return false;
+				return x.id == musicId;
+			}) > -1;
+		}
 
 		// // RVA: 0x1159D80 Offset: 0x1159D80 VA: 0x1159D80
 		public void Clear()
