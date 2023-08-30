@@ -113,7 +113,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					int row = sortListIndexList[index].index / m_scrollList.ColumnCount;
+					int row = index % m_scrollList.ColumnCount;
 					content.RectTransform.localPosition = new Vector3(m_scrollList.ContentSize.x * row + m_scrollList.LeftTopPosition.x, content.RectTransform.localPosition.y, 0);
 					if(m_isSelect && sortListIndexList[index].index == SelectSceneId - 1 && sortListIndexList[index].evolveId == SelectEvolveId)
 					{
@@ -186,8 +186,8 @@ namespace XeApp.Game.Menu
 					content.RectTransform.localPosition = new Vector3(-320, content.RectTransform.localPosition.y, 0);
 					return;
 				}
-				int row = index / m_scrollList.ColumnCount;
-				content.RectTransform.localPosition = new Vector3(m_scrollList.ContentSize.x * row + m_scrollList.LeftTopPosition.x, m_scrollList.ContentSize.y, 0);
+				int row = index % m_scrollList.ColumnCount;
+				content.RectTransform.localPosition = new Vector3(m_scrollList.ContentSize.x * row + m_scrollList.LeftTopPosition.x, content.RectTransform.localPosition.y, 0);
 				bool isSelect = false;
 				bool isLock = false;
 				if (m_isSelect && SelectSceneId == homeBgList[index].PPFNGGCBJKC_Id && SelectEvolveId == 0)

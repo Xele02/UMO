@@ -85,6 +85,13 @@ public class ALJHJDHNFFB_HomeBg : DIHHCBACKGG_DbSection
 			data.LEJOJFHKHIJ_Have = array[i].LEJOJFHKHIJ;
 			data.AIHCEGFANAM_Sa = (SeriesAttr.Type)array[i].JPFMJHLCMJL;
 			data.OPFGFINHFCE_Name = array[i].OPFGFINHFCE;
+
+			if(RuntimeSettings.CurrentSettings.RemoveHomeBgDateLimit)
+			{
+				data.FDBNFFNFOND_CloseAt = 0;
+				data.PDBPFJJCADD_OpenAt = 0;
+			}
+
 			CDENCMNHNGA.Add(data);
 		}
 		return true;

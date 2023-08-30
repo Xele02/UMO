@@ -838,24 +838,25 @@ namespace XeApp.Game.Menu
 			m_id = id;
 			m_strBuilder.Clear();
 			bool canBeMat = false;
+			string assetId = m_id.ToString("D2");
 			switch (textureType)
 			{
 				case BgTextureType.Scene:
-					int itemId = m_id % 1000000;
-					m_strBuilder.SetFormat("{0:D6}_{1:D2}", m_id / 1000000, itemId);
-					string s = m_strBuilder.ToString();
+					int itemId = m_id / 1000000;
+					m_strBuilder.SetFormat("{0:D6}_{1:D2}", m_id % 1000000, itemId);
+					assetId = m_strBuilder.ToString();
 					List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenesList = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList;
 					if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.LENJLNLNPEO_IsPlateAnimationHome == 0 
 						&& itemId > 0 
 						&& scenesList.Count >= itemId
 						&& scenesList[itemId - 1].EKLIPGELKCL_Rarity >= 6)
 					{
-						m_strBuilder.SetFormat("{0}{1}.xab", SceneBg2TextureBundlePath, m_id.ToString("D2"));
+						m_strBuilder.SetFormat("{0}{1}.xab", SceneBg2TextureBundlePath, assetId);
 						canBeMat = true;
 					}
 					else
 					{
-						m_strBuilder.SetFormat("{0}{1}.xab", SceneBgTextureBundlePath, m_id.ToString("D2"));
+						m_strBuilder.SetFormat("{0}{1}.xab", SceneBgTextureBundlePath, assetId);
 					}
 					break;
 				case BgTextureType.Music:
@@ -890,10 +891,11 @@ namespace XeApp.Game.Menu
 					break;
 				case BgTextureType.Raid:
 					m_strBuilder.AppendFormat("{0}{1:D3}_{2:D2}.xab", RaidBgTextureBundlePath, m_id, 1);
-					string.Format("{0:D3}_{1:D2}", id, 1);
+					assetId = string.Format("{0:D3}_{1:D2}", id, 1);
 					break;
 				case BgTextureType.LobbyMain:
 					m_strBuilder.AppendFormat("{0}{1:D3}.xab", LobbyMainBgTextureBundlePath, m_id);
+					assetId = m_id.ToString("D3");
 					break;
 				//case BgTextureType.Normal:
 				default:
@@ -909,7 +911,7 @@ namespace XeApp.Game.Menu
 					if(canBeMat)
 						types = typeof(Material);
 				}
-				operation = AssetBundleManager.LoadAssetAsync(m_strBuilder.ToString(), id.ToString("D2"), types);
+				operation = AssetBundleManager.LoadAssetAsync(m_strBuilder.ToString(), assetId, types);
 				yield return Co.R(operation);
 				tex = new BgTexture();
 				if(types == typeof(Texture2D))
@@ -1050,7 +1052,7 @@ namespace XeApp.Game.Menu
 					asset_id = -1;
 					if(JKHEOEEPBMJ.HDOOGKNLOGI_IsHomeSceneEvolve())
 					{
-						if(JKHEOEEPBMJ.KIIBKADPJAF_FillSceneEvoleInfo(out category_id, out asset_id))
+						if(JKHEOEEPBMJ.KIIBKADPJAF_FillSceneEvoleInfo(out asset_id, out category_id))
 						{
 							id = asset_id + category_id * 1000000;
 							textureType = BgTextureType.Scene;

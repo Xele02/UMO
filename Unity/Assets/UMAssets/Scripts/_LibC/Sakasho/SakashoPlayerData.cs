@@ -45,6 +45,12 @@ namespace ExternLib
 				{
 					commonBlock.LIPHECJKIDD(i, true);
 				}
+				// unlock home bgs
+				for(int i = 0; i < commonBlock.POCPLFJCHDD_HomeBg.Count; i++)
+				{
+					if (commonBlock.POCPLFJCHDD_HomeBg[i].BEBJKJKBOGH_Date == 0)
+						commonBlock.POCPLFJCHDD_HomeBg[i].BEBJKJKBOGH_Date = time;
+				}
 			}
 			{
 				FNBIIGJJGKA_Counter counterBlock = newData.LBDOLHGDIEB_GetBlock("counter") as FNBIIGJJGKA_Counter;

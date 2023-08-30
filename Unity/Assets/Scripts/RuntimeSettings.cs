@@ -88,6 +88,7 @@ class RuntimeSettings : ScriptableObject
 	//public bool ForceAllStoryMusicUnlock = true;
 	//public int ForcePlayerLevel = 90;
 	public bool CanSkipUnplayedSongs = false;
+	public bool RemoveHomeBgDateLimit = false;
 
 	[Header("Live")]
 	public bool IsInvincibleCheat = false;
