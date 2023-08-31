@@ -37,13 +37,13 @@ namespace XeApp.Game.Common
 			m_view = LIEJFHMGNIA.HDKCNAKPAAC(null);
 			if(m_view != null)
 			{
-				if(!m_view.MMEGDFPNONJ)
+				if(!m_view.MMEGDFPNONJ_HasDivaId)
 				{
 					m_infoWindow.Setup(MessageManager.Instance.GetMessage("menu", "home_story_release_music"), null);
 				}
 				else
 				{
-					m_infoWindow.Setup(string.Format(MessageManager.Instance.GetMessage("menu", "home_story_release_diva"), MessageManager.Instance.GetMessage("master", string.Format("diva_s_{0:D2}", m_view.AHHJLDLAPAN))), null);
+					m_infoWindow.Setup(string.Format(MessageManager.Instance.GetMessage("menu", "home_story_release_diva"), MessageManager.Instance.GetMessage("master", string.Format("diva_s_{0:D2}", m_view.AHHJLDLAPAN_DivaId))), null);
 				}
 			}
 		}

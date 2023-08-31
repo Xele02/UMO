@@ -1,3 +1,5 @@
+using System;
+
 namespace XeApp.Game.Menu
 {
 	public class BgTextureCache : IconTextureCache
@@ -19,11 +21,15 @@ namespace XeApp.Game.Menu
 		// RVA: 0x10980B8 Offset: 0x10980B8 VA: 0x10980B8 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
 		{
-			TodoLogger.LogError(0, "CreateIconTexture");
-			return null;
+			IconTexture res = new IconTexture();
+			SetupForSingleTexture(info, res);
+			return res;
 		}
 
 		// RVA: 0x1098140 Offset: 0x1098140 VA: 0x1098140
-		// public void Load(int map, int stage, Action<IiconTexture> callBack) { }
+		public void Load(int map, int stage, Action<IiconTexture> callBack)
+		{
+			Load(string.Format(TexutreBundleFormat, map, stage), callBack);
+		}
 	}
 }

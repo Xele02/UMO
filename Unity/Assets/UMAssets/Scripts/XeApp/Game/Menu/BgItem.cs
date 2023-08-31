@@ -29,6 +29,26 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x144480C Offset: 0x144480C VA: 0x144480C
-		//public void UpdateItem(int count) { }
+		public void UpdateItem(int count)
+		{
+			if(count > -1)
+			{
+				if(bgCount != count)
+				{
+					bgCount = count;
+					loading = true;
+					initialize = true;
+					GameManager.Instance.BgTextureCache.Load(1, count + 1, (IiconTexture icon) =>
+					{
+						//0x1444AAC
+						if (bgCount != count)
+							return;
+						icon.Set(image);
+						loading = false;
+						image.enabled = true;
+					});
+				}
+			}
+		}
 	}
 }

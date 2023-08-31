@@ -160,14 +160,14 @@ public class FAGCLBOACEE
 			{
 				if(l[i].DHPNLACAGPG)
 				{
-					if((saveStory[l[i].LFLLLOPAKCO - 1].OKJMIFELDMD_Opn & 4) == 0 || saveStory[l[i].LFLLLOPAKCO - 1].HCENOJKNCMK)
+					if((saveStory[l[i].LFLLLOPAKCO_StoryId - 1].OKJMIFELDMD_Opn & 4) == 0 || saveStory[l[i].LFLLLOPAKCO_StoryId - 1].HCENOJKNCMK)
 					{
 						FAGCLBOACEE data = new FAGCLBOACEE();
-						int divaId = l[i].AHHJLDLAPAN;
-						data.KHEKNNFCAOI(divaId < 1 ? BEFPBAIONFK.KDGLIKDMGCN/*1*/ : BEFPBAIONFK.EOBDILOCCHO/*3*/, divaId < 1 ? l[i].KLCIIHKFPPO : l[i].LFLLLOPAKCO, 0, false);
+						int divaId = l[i].AHHJLDLAPAN_DivaId;
+						data.KHEKNNFCAOI(divaId < 1 ? BEFPBAIONFK.KDGLIKDMGCN/*1*/ : BEFPBAIONFK.EOBDILOCCHO/*3*/, divaId < 1 ? l[i].KLCIIHKFPPO_StoryMusicId : l[i].LFLLLOPAKCO_StoryId, 0, false);
 						res.Add(data);
-						saveStory[l[i].LFLLLOPAKCO].HCENOJKNCMK = false;
-						saveStory[l[i].LFLLLOPAKCO].OKJMIFELDMD_Opn |= 4;
+						saveStory[l[i].LFLLLOPAKCO_StoryId].HCENOJKNCMK = false;
+						saveStory[l[i].LFLLLOPAKCO_StoryId].OKJMIFELDMD_Opn |= 4;
 						break;
 					}
 				}

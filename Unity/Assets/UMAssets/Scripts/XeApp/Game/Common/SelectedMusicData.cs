@@ -34,7 +34,7 @@ namespace XeApp.Game.Common
 			if(selectedMusic != null)
 			{
 				if (selectedMusic is LIEJFHMGNIA)
-					return (selectedMusic as LIEJFHMGNIA).HPBPDHPIBGN;
+					return (selectedMusic as LIEJFHMGNIA).HPBPDHPIBGN_EnnemyData;
 				if (selectedMusic is IBJAKJJICBC)
 					return (selectedMusic as IBJAKJJICBC).MGJKEJHEBPO_DiffInfos[(int)difficulty].HPBPDHPIBGN_EnemyData;
 			}

@@ -341,5 +341,19 @@ public class FDDIIKBJNNA
 	// public static bool MCCBDKEAMDK(FDDIIKBJNNA ANJGLKIGLAN, bool LODIBNOGMBE = False) { }
 
 	// // RVA: 0xFCB520 Offset: 0xFCB520 VA: 0xFCB520
-	// public static void FLKIIDJEJJM(FDDIIKBJNNA ANJGLKIGLAN) { }
+	public static void FLKIIDJEJJM(FDDIIKBJNNA ANJGLKIGLAN)
+	{
+		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		if(ANJGLKIGLAN == null)
+		{
+			ANJGLKIGLAN = new FDDIIKBJNNA();
+			ANJGLKIGLAN.KHEKNNFCAOI(false, false, -1);
+		}
+		int a = 0;
+		for(int i = 0; i < ANJGLKIGLAN.NPKPBDIDBBG_RoomData.Count; i++)
+		{
+			a += ANJGLKIGLAN.NPKPBDIDBBG_RoomData[i].FOBEBCPEILE_GetCurrentTalkIndex(time, false, false);
+		}
+		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.INAECNHELAM_ShowSnsBal = a;
+	}
 }

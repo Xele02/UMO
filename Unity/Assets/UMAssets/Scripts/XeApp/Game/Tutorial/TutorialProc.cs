@@ -231,7 +231,11 @@ namespace XeApp.Game.Tutorial
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF2D0 Offset: 0x6AF2D0 VA: 0x6AF2D0
 		//// RVA: 0xE4AEB8 Offset: 0xE4AEB8 VA: 0xE4AEB8
-		//public static IEnumerator Co_MusicOpenMission() { }
+		public static IEnumerator Co_MusicOpenMission()
+		{
+			TodoLogger.LogError(0, "Co_MusicOpenMission");
+			yield return null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF348 Offset: 0x6AF348 VA: 0x6AF348
 		//// RVA: 0xE4AF28 Offset: 0xE4AF28 VA: 0xE4AF28

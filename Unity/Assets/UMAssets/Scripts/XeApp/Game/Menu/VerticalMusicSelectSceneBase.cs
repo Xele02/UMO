@@ -853,12 +853,12 @@ namespace XeApp.Game.Menu
 			if(list.Count > 0)
 			{
 				LIEJFHMGNIA data = list[list.Count - 1];
-				if(!data.MMEGDFPNONJ)
+				if(!data.MMEGDFPNONJ_HasDivaId)
 				{
 					for(int i = 0; i < storyList.Count; i++)
 					{
 						LAEGMENIEDB_Story.ALGOILKGAAH story = storyList[i];
-						if(story.KLCIIHKFPPO == data.KLCIIHKFPPO && !data.HHBJAEOIGIH)
+						if(story.KLCIIHKFPPO == data.KLCIIHKFPPO_StoryMusicId && !data.HHBJAEOIGIH)
 						{
 							return story.OMMEPCGNHFM;
 						}

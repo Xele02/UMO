@@ -140,7 +140,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x17E3B88 Offset: 0x17E3B88 VA: 0x17E3B88
-		// public void LoadStoryIcon(int id, int modelId, Action<IiconTexture> callBack) { }
+		public void LoadStoryIcon(int id, int modelId, Action<IiconTexture> callBack)
+		{
+			Load(string.Format(DivaStoryIconPath, id, modelId), callBack);
+		}
 
 		// // RVA: 0x17E3C4C Offset: 0x17E3C4C VA: 0x17E3C4C
 		// public void LoadStandingCostumeIcon(int id, int modelId, Action<IiconTexture> callBack) { }

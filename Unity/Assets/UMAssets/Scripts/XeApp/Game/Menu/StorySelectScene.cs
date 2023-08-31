@@ -131,7 +131,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12E5D20 Offset: 0x12E5D20 VA: 0x12E5D20
-		//private void LeaveUI() { }
+		private void LeaveUI()
+		{
+			MenuScene.Instance.HeaderLeave();
+			MenuScene.Instance.FooterLeave();
+			m_storySelectController.layoutBgButton.Out();
+			m_storySelectController.layoutArrowLeft.Hide();
+			m_storySelectController.layoutArrowRight.Hide();
+		}
 
 		//// RVA: 0x12E5EA4 Offset: 0x12E5EA4 VA: 0x12E5EA4
 		//private void EnterUI() { }
@@ -186,7 +193,7 @@ namespace XeApp.Game.Menu
 					MenuScene.Instance.InputEnable();
 					if (!m_stageCreater.IsEffectStart)
 						return;
-					FDDIIKBJNNA.FLKIIDJEJJM(0);
+					FDDIIKBJNNA.FLKIIDJEJJM(null);
 					MenuScene.Instance.HeaderEnter();
 					MenuScene.Instance.FooterEnter();
 					m_storySelectController.layoutBgButton.Show();
@@ -202,14 +209,42 @@ namespace XeApp.Game.Menu
 				//0x12E6414
 				LeaveUI();
 			};
-			FDDIIKBJNNA.FLKIIDJEJJM(0);
+			FDDIIKBJNNA.FLKIIDJEJJM(null);
 			PGIGNJDPCAH.NNOBACMJHDM(PGIGNJDPCAH.FELLIEJEPIJ.LPBDIINNFEE/*5*/);
 			m_isEndPostSetCanvas = true;
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72D4D4 Offset: 0x72D4D4 VA: 0x72D4D4
 		//// RVA: 0x12E6008 Offset: 0x12E6008 VA: 0x12E6008
-		//private IEnumerator EffectEndAfter() { }
+		private IEnumerator EffectEndAfter()
+		{
+			//0x12E6AE0
+			PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.LPBDIINNFEE/*5*/);
+			if (MenuScene.Instance.DirtyChangeScene)
+				yield break;
+			if (MenuScene.Instance.IsTransition())
+				yield break;
+			if (MenuScene.CheckDatelineAndAssetUpdate())
+				yield break;
+			m_isNavigation = false;
+			if(m_stageCreater.IsBeginnerMissionTargetMusicClear)
+			{
+				m_isNavigation = true;
+				m_stageCreater.IsBeginnerMissionTargetMusicClear = false;
+				yield return Co.R(TutorialProc.Co_MusicOpenMission());
+				m_stageCreater.ClearIconPushEvent();
+				m_stageCreater.PushIconListener += HideNavigation;
+			}
+			if(BIFNGFAIEIL.HHCJCDFCLOB.DNFPMBFNDCA())
+			{
+				int snsId = BIFNGFAIEIL.HHCJCDFCLOB.FGGDEKAJCIF();
+				if(snsId != 0)
+				{
+					MenuScene.Instance.ShowSnsNotice(snsId, null);
+					BIFNGFAIEIL.HHCJCDFCLOB.ALIANOFCAEI();
+				}
+			}
+		}
 
 		//// RVA: 0x12E5380 Offset: 0x12E5380 VA: 0x12E5380
 		private void HideNavigation()

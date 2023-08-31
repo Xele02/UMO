@@ -342,7 +342,25 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	// public static int NBIAKELCBLC(int MJBODMOLOBC, int HLOHIMEAPLH, int BAFFAONJPCE, int BDMLMGBLGPC) { }
 
 	// // RVA: 0xDA1180 Offset: 0xDA1180 VA: 0xDA1180
-	// public int GFIPALLLPMF(int PMKBJMHIFCM, int EILKGEADKGH) { }
+	public int GFIPALLLPMF(int PMKBJMHIFCM, int EILKGEADKGH)
+	{
+		if(EILKGEADKGH != 1)
+		{
+			int a = 2;
+			for(int i = 0; i < JHPPLIGJFPI.Count; i++)
+			{
+				if(PMKBJMHIFCM != JHPPLIGJFPI[i])
+				{
+					if(a == EILKGEADKGH)
+					{
+						return JHPPLIGJFPI[i];
+					}
+					a++;
+				}
+			}
+		}
+		return PMKBJMHIFCM;
+	}
 
 	// // RVA: 0xDA12BC Offset: 0xDA12BC VA: 0xDA12BC
 	public int GAHIBKLEDBF(int AKNELONELJK_Difficulty, bool GIKLNODJKFK_IsLine6)

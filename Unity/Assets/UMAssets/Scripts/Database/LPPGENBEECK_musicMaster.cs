@@ -521,7 +521,7 @@ public class LPPGENBEECK_MusicMaster : DIHHCBACKGG_DbSection
 		{
 			DJNPIGEFPMF_StoryMusicInfo data = new DJNPIGEFPMF_StoryMusicInfo();
 			data.KLCIIHKFPPO = (short)array[i].BDJMFDKLHPM;
-			data.DEPGBBJMFED = (int)array[i].DMEDKJPOLCH;
+			data.DEPGBBJMFED_Serie = (int)array[i].DMEDKJPOLCH;
 			data.DLAEJOBELBH_Id = (int)array[i].KLMIFEKNBLL;
 			data.KEFGPJBKAOD_WavId = (int)array[i].CBBLAMDGOGK;
 			data.MHPAFEEPBNJ = (int)array[i].NHBLDIPBHNF;
@@ -839,7 +839,7 @@ public class DJNPIGEFPMF_StoryMusicInfo
 
 	public short KLCIIHKFPPO { get; set; }  // 0x8 GBNPEKLEHPH CPDGCNILCII IILKMGEKOBG
 	public int DLAEJOBELBH_Id { get; set; }  // 0xC CKJALIDGGOH MPGNHBOBFBD EPEMOAEGPLI
-	public int DEPGBBJMFED { get; set; } // 0x10 OGKJCKOPEPM FNMFOBJIIIC OBEDPJLBBEG
+	public int DEPGBBJMFED_Serie { get; set; } // 0x10 OGKJCKOPEPM FNMFOBJIIIC OBEDPJLBBEG
 	public int MHPAFEEPBNJ { get; set; } // 0x14 OHACHFCDBOF NODKIDEKNGJ CHFBEINBPKA
 	public int KEFGPJBKAOD_WavId { get; set; } // 0x18 CFNDJLELGFP MKJJKNIMMBC NACMHHKKBCJ
 	public int KCNHKNKNGNH { get; set; } // 0x1C APIBHBGLOCI BPPHFJDPDJO FGPEKMCHDKK

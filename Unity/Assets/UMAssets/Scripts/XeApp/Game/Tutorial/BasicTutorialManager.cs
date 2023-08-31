@@ -411,11 +411,18 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE413B4 Offset: 0xE413B4 VA: 0xE413B4
 		public void HideCursor()
 		{
-			TodoLogger.LogError(0, "TODO");
+			if (m_cursorInstance == null)
+				return;
+			m_cursorInstance.SetActive(false);
 		}
 
 		// // RVA: 0xE4146C Offset: 0xE4146C VA: 0xE4146C
-		// public void ChangeCursorLastSibling() { }
+		public void ChangeCursorLastSibling()
+		{
+			if (m_cursorInstance == null)
+				return;
+			m_cursorInstance.transform.SetAsLastSibling();
+		}
 
 		// // RVA: 0xE3FA90 Offset: 0xE3FA90 VA: 0xE3FA90
 		private void SetCursorPosition(RectTransform target, TutorialPointer.Direction dir)

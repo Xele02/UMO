@@ -5,6 +5,7 @@ using XeApp.Game;
 using XeSys.uGUI;
 using System.Collections.Generic;
 using XeApp.Game.Common;
+using System.Collections;
 
 namespace XeApp.Game.Menu
 {
@@ -726,7 +727,29 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C9F04 Offset: 0x6C9F04 VA: 0x6C9F04
 		// // RVA: 0x143BBDC Offset: 0x143BBDC VA: 0x143BBDC
-		// public IEnumerator SetupStoryBg(int map, Action finish) { }
+		public IEnumerator SetupStoryBg(int map, Action finish)
+		{
+			int story_bg_max;
+
+			//0x143C420
+			if(m_storyBgScroll != null)
+			{
+				story_bg_max = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.CAAMBBJBODI_StoryBgMax;
+				for(int i = 0; i < story_bg_max; i++)
+				{
+					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(string.Format("ct/bg/st/{0:D2}_{1:D2}.xab", map, i + 1));
+				}
+				yield return new WaitWhile(() =>
+				{
+					//0x143C0DC
+					return KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
+				});
+				m_bgScroll = GetComponentInChildren<BgScroll>(true);
+				yield return Co.R(m_bgScroll.SetupList(story_bg_max));
+			}
+			if (finish != null)
+				finish();
+		}
 
 		// // RVA: 0x143BCBC Offset: 0x143BCBC VA: 0x143BCBC
 		public void StoryBgShow()

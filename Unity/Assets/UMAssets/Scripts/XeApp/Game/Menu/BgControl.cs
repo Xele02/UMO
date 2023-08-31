@@ -115,7 +115,7 @@ namespace XeApp.Game.Menu
 		private bool storyBgLoading; // 0x58
 
 		public LimitedHomeBg limitedHomeBg { get { return m_limitedHomeBg; } private set { return; } } //0x143CA14 0x143CA1C
-		// public ScrollRect storyBgScrollRect { get; private set; } 0x143EA44 0x143EA68
+		public ScrollRect storyBgScrollRect { get { return m_bgBehaviour.storyBgScrollRect; } private set { return; } } //0x143EA44 0x143EA68
 
 		// RVA: 0x143CA20 Offset: 0x143CA20 VA: 0x143CA20
 		public BgControl(GameObject bgRoot)
@@ -1167,7 +1167,16 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C5CB0 Offset: 0x6C5CB0 VA: 0x6C5CB0
 		// // RVA: 0x143ED60 Offset: 0x143ED60 VA: 0x143ED60
-		// public IEnumerator SetStoryBgTexture(int map, Action callback) { }
+		public IEnumerator SetStoryBgTexture(int map, Action callback)
+		{
+			//0x14444E8
+			storyBgLoading = true;
+			storyBgParam.map = map;
+			yield return Co.R(m_bgBehaviour.SetupStoryBg(map, null));
+			storyBgLoading = false;
+			if (callback != null)
+				callback();
+		}
 
 		// // RVA: 0x143EE40 Offset: 0x143EE40 VA: 0x143EE40
 		public bool IsLoadingStoryBg()
