@@ -387,7 +387,31 @@ namespace XeApp.Game.Common
 			}
 
 			// // RVA: 0xE9D748 Offset: 0xE9D748 VA: 0xE9D748
-			// public void SetupInfoByStoryMusic(int storyMusicId, int onStageDivaNum = 1) { }
+			public void SetupInfoByStoryMusic(int storyMusicId, int onStageDivaNum = 1)
+			{
+				mode = GameMode.Type.StoryBattle;
+				freeMusicId = 0;
+				this.storyMusicId = storyMusicId;
+				DJNPIGEFPMF_StoryMusicInfo info = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.CLHIABAKKJM_StoryMusicData[storyMusicId - 1];
+				playEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL/*0*/;
+				openEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL/*0*/;
+				gameEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL/*0*/;
+				tutorial = TutorialGameMode.Type.None;
+				musicId = info.DLAEJOBELBH_Id;
+				m_prismMusicId = 0;
+				difficultyType = Difficulty.Type.Easy;
+				EventUniqueId = 0;
+				IsMvMode = false;
+				IsLine6Mode = false;
+				setupTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				mvLimitTime = -1;
+				LimitTime = 0;
+				this.onStageDivaNum = onStageDivaNum;
+				musicLoadText = "";
+				IsDisableBattleEventIntermediateResult = false;
+				returnTransitionUniqueId = TransitionUniqueId.HOME;
+				enemyInfo.ODDIHGPONFL_Copy(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.CKADCLJDCJK_EnemyList[IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(storyMusicId).LHICAKGHIGF[(int)difficultyType] - 1]);
+			}
 
 			// // RVA: 0xE9DAC8 Offset: 0xE9DAC8 VA: 0xE9DAC8
 			public void SetupInfoByFreeMusic(int freeMusicId, Difficulty.Type difficultyType, bool isEnergyRequired,

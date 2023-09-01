@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using XeSys;
 using System;
 using System.Collections;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -267,7 +268,10 @@ namespace XeApp.Game.Menu
 		//private void UpdateEmphasis() { }
 
 		//// RVA: 0x1A88254 Offset: 0x1A88254 VA: 0x1A88254
-		//public void In(StorySelectStageCreater.EffectType effectType) { }
+		public void In(StorySelectStageCreater.EffectType effectType)
+		{
+			PlayAnimInner(effectType, viewStageData);
+		}
 
 		//// RVA: 0x1A966D4 Offset: 0x1A966D4 VA: 0x1A966D4
 		//public void Out() { }
@@ -401,7 +405,59 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1A96374 Offset: 0x1A96374 VA: 0x1A96374
-		//private void PlayAnimInner(StorySelectStageCreater.EffectType effectType, LIEJFHMGNIA viewData) { }
+		private void PlayAnimInner(StorySelectStageCreater.EffectType effectType, LIEJFHMGNIA viewData)
+		{
+			if (viewData == null || m_stage_icon == null)
+				return;
+			if(effectType == StorySelectStageCreater.EffectType.RELEASE)
+			{
+				m_stage_icon.StartChildrenAnimGoStop("go_bot_act_02", "st_bot_act_02");
+				if(m_noiseAnim != null)
+				{
+					m_noiseAnim.StartChildrenAnimGoStop("go_bot_act_02", "st_bot_act_02");
+				}
+				if(m_stampAnim != null)
+				{
+					m_stampAnim.StartChildrenAnimGoStop("go_bot_act_02", "go_bot_act_02");
+				}
+				SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_SETTING_002);
+			}
+			else if(effectType == StorySelectStageCreater.EffectType.UNLOCK)
+			{
+				if (viewStageData.MMEGDFPNONJ_HasDivaId)
+					return;
+				m_stage_icon.StartChildrenAnimGoStop("go_bot_act_01", "st_bot_act_01");
+				if(m_noiseAnim != null)
+				{
+					m_noiseAnim.StartChildrenAnimGoStop("go_bot_act_01", "st_bot_act_01");
+				}
+				if(m_stampAnim != null)
+				{
+					m_stampAnim.StartChildrenAnimGoStop("go_bot_act_01", "st_bot_act_01");
+				}
+				SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_SETTING_002);
+			}
+			else if(effectType == StorySelectStageCreater.EffectType.APPEAR)
+			{
+				if(viewStageData.MMEGDFPNONJ_HasDivaId)
+				{
+					m_stage_icon.StartChildrenAnimGoStop("go_bot_act_02", "st_bot_act_02");
+					if (m_noiseAnim != null)
+					{
+						m_noiseAnim.StartChildrenAnimGoStop("go_bot_act_02", "st_bot_act_02");
+					}
+					if(m_stampAnim != null)
+					{
+						m_stampAnim.StartChildrenAnimGoStop("go_bot_act_02", "st_bot_act_02");
+					}
+				}
+				else
+				{
+					m_stage_icon.StartChildrenAnimGoStop("go_bot_act", "st_bot_act");
+				}
+				SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_STORY_000);
+			}
+		}
 
 		//// RVA: 0x1A83F24 Offset: 0x1A83F24 VA: 0x1A83F24
 		//public void NoneIcon() { }

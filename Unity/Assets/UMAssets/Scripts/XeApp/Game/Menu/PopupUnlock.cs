@@ -230,7 +230,7 @@ namespace XeApp.Game.Menu
 			switch(type)
 			{
 				case eSceneType.StorySelect:
-					TodoLogger.LogError(0, "ViewInitialize 1");
+					SetViewData(eSceneType.StorySelect, FAGCLBOACEE.ECKKHOCALEE());
 					return;
 				case eSceneType.Home:
 					SetViewData(eSceneType.Home, FAGCLBOACEE.OGGDOPACJOB());

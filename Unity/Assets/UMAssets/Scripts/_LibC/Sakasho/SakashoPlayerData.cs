@@ -51,6 +51,8 @@ namespace ExternLib
 					if (commonBlock.POCPLFJCHDD_HomeBg[i].BEBJKJKBOGH_Date == 0)
 						commonBlock.POCPLFJCHDD_HomeBg[i].BEBJKJKBOGH_Date = time;
 				}
+				commonBlock.ACNNFJJMEEO_StoryEnd = 999;
+				commonBlock.ENIPGFLGJHH_LastStory = 999;
 			}
 			{
 				FNBIIGJJGKA_Counter counterBlock = newData.LBDOLHGDIEB_GetBlock("counter") as FNBIIGJJGKA_Counter;
@@ -70,6 +72,7 @@ namespace ExternLib
 				for (int i = 0; i < storyDb.CDENCMNHNGA.Count; i++)
 				{
 					storyBlock.MMKAJBFBKNH[i].EALOBDHOCHP_Stat = 4;
+					storyBlock.MMKAJBFBKNH[i].OKJMIFELDMD_Opn = 0xffff;
 				}
 				storyBlock.EOHHFADHHBL_Complete = true;
 			}

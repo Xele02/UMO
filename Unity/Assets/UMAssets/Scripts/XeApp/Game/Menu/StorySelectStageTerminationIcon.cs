@@ -2,6 +2,7 @@ using XeSys.Gfx;
 using XeApp.Game.Common;
 using UnityEngine;
 using System;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -68,7 +69,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1A8824C Offset: 0x1A8824C VA: 0x1A8824C
-		//public void In(StorySelectStageCreater.EffectType effectType) { }
+		public void In(StorySelectStageCreater.EffectType effectType)
+		{
+			PlayAnimInner(effectType, viewStageData);
+		}
 
 		//// RVA: 0x1A97174 Offset: 0x1A97174 VA: 0x1A97174
 		//public void Out() { }
@@ -99,7 +103,22 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1A9706C Offset: 0x1A9706C VA: 0x1A9706C
-		//private void PlayAnimInner(StorySelectStageCreater.EffectType effectType, LIEJFHMGNIA viewData) { }
+		private void PlayAnimInner(StorySelectStageCreater.EffectType effectType, LIEJFHMGNIA viewData)
+		{
+			if (viewData == null || m_stage_icon == null)
+				return;
+			if(effectType == StorySelectStageCreater.EffectType.UPDATE)
+			{
+				m_stage_icon.StartChildrenAnimGoStop("go_bot_act_03", "st_bot_act_03");
+			}
+			else if(effectType == StorySelectStageCreater.EffectType.APPEAR)
+			{
+				m_stage_icon.StartChildrenAnimGoStop("go_bot_act", "st_bot_act");
+			}
+			else
+				return;
+			SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_STORY_000);
+		}
 
 		//// RVA: 0x1A97178 Offset: 0x1A97178 VA: 0x1A97178
 		//public void NoneIcon() { }

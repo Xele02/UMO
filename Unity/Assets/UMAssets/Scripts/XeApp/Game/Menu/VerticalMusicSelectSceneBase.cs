@@ -860,7 +860,7 @@ namespace XeApp.Game.Menu
 						LAEGMENIEDB_Story.ALGOILKGAAH story = storyList[i];
 						if(story.KLCIIHKFPPO == data.KLCIIHKFPPO_StoryMusicId && !data.HHBJAEOIGIH)
 						{
-							return story.OMMEPCGNHFM;
+							return story.OMMEPCGNHFM_FreeMusicId2;
 						}
 					}
 				}

@@ -85,7 +85,17 @@ public class EEDKAACNBBG_MusicData
 	}
 
 	// // RVA: 0x1C4917C Offset: 0x1C4917C VA: 0x1C4917C
-	// public int IOMLIADJJLD(bool FJNPMGBCBGJ = False) { }
+	public int IOMLIADJJLD(bool FJNPMGBCBGJ = false)
+	{
+		int a = FJNPMGBCBGJ ? 0 : 1;
+		do
+		{
+			if (a > 31)
+				return 1;
+			a++;
+		} while ((BNCMJNMIDIN_AvaiableDivaModes & (1 << (a - 1))) == 0);
+		return a;
+	}
 
 	// // RVA: 0x1C491B4 Offset: 0x1C491B4 VA: 0x1C491B4
 	public bool JAPLKHPLOOF(OHCAABOMEOF.KGOGMKMBCPP_EventType JONPKLHMOBL)

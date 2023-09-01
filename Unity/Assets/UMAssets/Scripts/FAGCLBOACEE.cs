@@ -61,7 +61,33 @@ public class FAGCLBOACEE
     }
 
 	// // RVA: 0xFC1EE8 Offset: 0xFC1EE8 VA: 0xFC1EE8
-	// public static List<FAGCLBOACEE> ECKKHOCALEE() { }
+	public static List<FAGCLBOACEE> ECKKHOCALEE()
+	{
+		List<FAGCLBOACEE> res = new List<FAGCLBOACEE>();
+		for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OHCIFMDPAPD_Story.CDENCMNHNGA.Count; i++)
+		{
+			LAEGMENIEDB_Story.ALGOILKGAAH dbStory = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OHCIFMDPAPD_Story.CDENCMNHNGA[i];
+			if(dbStory.PPEGAKEIEGM_Enabled == 2)
+			{
+				NEKDCJKANAH_StoryRecord.HKDNILFKCFC saveStory = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LNOOKHJBENO_StoryRecord.MMKAJBFBKNH[i];
+				if(saveStory.ICCJMCCJCBG)
+				{
+					if(dbStory.OMMEPCGNHFM_FreeMusicId2 != 0)
+					{
+						KEODKEGFDLD_FreeMusicInfo fm = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(dbStory.OMMEPCGNHFM_FreeMusicId2);
+						if (fm.PPEGAKEIEGM_Enabled == 2)
+						{
+							FAGCLBOACEE data = new FAGCLBOACEE();
+							data.KHEKNNFCAOI(BEFPBAIONFK.CELONIBHMBA/*2*/, fm.GHBPLHBNMBK_FreeMusicId, 0, false);
+							res.Add(data);
+							saveStory.ICCJMCCJCBG = false;
+						}
+					}
+				}
+			}
+		}
+		return res;
+	}
 
 	// // RVA: 0xFC2314 Offset: 0xFC2314 VA: 0xFC2314
 	public static List<FAGCLBOACEE> ICBFAFNOHIB(int IJEKNCDIIAE_RegularMasterVersion)
@@ -84,7 +110,7 @@ public class FAGCLBOACEE
 							int idx = mList.FindIndex((LAEGMENIEDB_Story.ALGOILKGAAH GHPLINIACBB) =>
 							{
 								//0xFC5950
-								return GHPLINIACBB.OMMEPCGNHFM == BPFBEOEFKMA;
+								return GHPLINIACBB.OMMEPCGNHFM_FreeMusicId2 == BPFBEOEFKMA;
 							});
 							if(idx < 0)
 							{
@@ -119,7 +145,7 @@ public class FAGCLBOACEE
 				int idx = dbStory.FindIndex((LAEGMENIEDB_Story.ALGOILKGAAH GHPLINIACBB) =>
 				{
 					//0xFC5994
-					return GHPLINIACBB.OMMEPCGNHFM == BPFBEOEFKMA;
+					return GHPLINIACBB.OMMEPCGNHFM_FreeMusicId2 == BPFBEOEFKMA;
 				});
 				if(idx > 0)
 				{
@@ -180,7 +206,7 @@ public class FAGCLBOACEE
 					if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ENIPGFLGJHH_LastStory == dbS.KLCIIHKFPPO)
 					{
 						FAGCLBOACEE data = new FAGCLBOACEE();
-						data.KHEKNNFCAOI(BEFPBAIONFK.CELONIBHMBA/*2*/, dbMusic.NOBCLJIAMLC_GetFreeMusicData(dbS.OMMEPCGNHFM).GHBPLHBNMBK_FreeMusicId, 0, false);
+						data.KHEKNNFCAOI(BEFPBAIONFK.CELONIBHMBA/*2*/, dbMusic.NOBCLJIAMLC_GetFreeMusicData(dbS.OMMEPCGNHFM_FreeMusicId2).GHBPLHBNMBK_FreeMusicId, 0, false);
 						res.Add(data);
 					}
 				}

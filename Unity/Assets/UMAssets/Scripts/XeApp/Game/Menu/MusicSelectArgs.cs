@@ -23,7 +23,7 @@ namespace XeApp.Game.Menu
             }
         }
 
-        internal MusicSelectArgs.SelectionData selection { get; private set; } // 0x8
+        internal SelectionData selection { get; private set; } // 0x8
         internal bool hasSelection { get { return selection != null; } } //0x1054A18
         internal bool isScoreRanking { get; private set; } // 0xC
         public bool isSimulation { get; set; } // 0xD
@@ -33,7 +33,11 @@ namespace XeApp.Game.Menu
         // public void SetSelection(int freeMusicid, Difficulty.Type difficulty) { }
 
         // // RVA: 0x1054B70 Offset: 0x1054B70 VA: 0x1054B70
-        // public void SetSelection(int freeMusicId) { }
+        public void SetSelection(int freeMusicId)
+		{
+			selection = new SelectionData();
+			selection.freeMusicId = freeMusicId;
+		}
 
         // // RVA: 0x1054C20 Offset: 0x1054C20 VA: 0x1054C20
         // public void SetSelection(Difficulty.Type difficulty) { }

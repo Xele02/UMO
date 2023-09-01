@@ -1,7 +1,11 @@
 
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
+using XeApp.Game;
+using XeApp.Game.Common;
 using XeApp.Game.Menu;
+using XeSys;
 
 public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 {
@@ -34,7 +38,7 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 	public bool MBJOBPJKGBO; // 0x5F
 	public bool CGDIFBMIJJH_AddDiva; // 0x60
 	public int KEFGPJBKAOD_WavId; // 0x64
-	public int JJPKBHLKILC; // 0x68
+	public int JJPKBHLKILC_BgId; // 0x68
 	public bool JJFMMNBEABA_IsStoryEnd; // 0x6C
 	public bool ELIHAGFNOBN; // 0x6D
 	public EJKBKMBJMGL_EnemyData HPBPDHPIBGN_EnnemyData; // 0x70
@@ -60,7 +64,7 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 		LAEGMENIEDB_Story.ALGOILKGAAH dbStory = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OHCIFMDPAPD_Story.CDENCMNHNGA[LFLLLOPAKCO - 1];
 		NEKDCJKANAH_StoryRecord.HKDNILFKCFC saveStory = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LNOOKHJBENO_StoryRecord.MMKAJBFBKNH[LFLLLOPAKCO - 1];
 		KLCIIHKFPPO_StoryMusicId = dbStory.KLCIIHKFPPO;
-		JJPKBHLKILC = dbStory.JJPKBHLKILC;
+		JJPKBHLKILC_BgId = dbStory.JJPKBHLKILC;
 		NDFOAINJPIN_Pos = saveStory.NDFOAINJPIN_Pos;
 		if (dbStory.KLCIIHKFPPO < 1)
 		{
@@ -133,7 +137,7 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 			if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level < dbStory.JIHMAJENMDO)
 				a = 1;
 		}
-		if(dbStory.ICKPLIABPKC > 0)
+		if(dbStory.ICKPLIABPKC_FreeMusicId > 0)
 		{
 			if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LNOOKHJBENO_StoryRecord.MMKAJBFBKNH[dbStory.LFLLLOPAKCO - 1].EJKHAFIALGK_MClr == 0)
 				a |= 2;
@@ -142,7 +146,7 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 		{
 			if(dbStory.JIHMAJENMDO > 0)
 			{
-				if (dbStory.ICKPLIABPKC > 0 && a - 1 <= 1)
+				if (dbStory.ICKPLIABPKC_FreeMusicId > 0 && a - 1 <= 1)
 					a = 0;
 			}
 		}
@@ -194,13 +198,115 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 	//// RVA: 0x17F87CC Offset: 0x17F87CC VA: 0x17F87CC
 	private void FLIFKFOGEAM()
 	{
-		TodoLogger.LogError(0, "FLIFKFOGEAM");
+		LAEGMENIEDB_Story.ALGOILKGAAH dbStory = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OHCIFMDPAPD_Story.CDENCMNHNGA[LFLLLOPAKCO_StoryId - 1];
+		NEKDCJKANAH_StoryRecord.HKDNILFKCFC asveStory = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LNOOKHJBENO_StoryRecord.MMKAJBFBKNH[LFLLLOPAKCO_StoryId - 1];
+		MessageBank bkMenu = MessageManager.Instance.GetBank("menu");
+		MessageBank bkMaster = MessageManager.Instance.GetBank("master");
+		if(DDNCFHEKBAF > 3)
+		{
+			if ((DDNCFHEKBAF & 7) != 7)
+			{
+				TodoLogger.LogError(TodoLogger.ToCheck, "Check test "+DDNCFHEKBAF);
+				return;
+			}
+			FHPHCFEEBMP = bkMaster.GetMessageByLabel("story_unlock_07");
+			Debug.Log(FHPHCFEEBMP);
+		}
+		else
+		{
+			StringBuilder str = new StringBuilder(200);
+			int a = dbStory.JIHMAJENMDO > 0 ? 1 : 0;
+			if (dbStory.ICKPLIABPKC_FreeMusicId > 0)
+				a += 1;
+			if(AHHJLDLAPAN_DivaId == 0)
+			{
+				if(a != 1)
+				{
+					str.Append(bkMenu.GetMessageByLabel("story_unlock_03"));
+					str.Append("\n\n");
+				}
+			}
+			else if(a != 1)
+			{
+				str.Append(bkMenu.GetMessageByLabel("story_unlock_11"));
+				str.Append("\n\n");
+			}
+			bool b = false;
+			if(dbStory.JIHMAJENMDO > 0)
+			{
+				str.AppendFormat(bkMenu.GetMessageByLabel("story_unlock_04"), dbStory.JIHMAJENMDO);
+				b = true;
+			}
+			if(dbStory.ICKPLIABPKC_FreeMusicId > 0)
+			{
+				if (b)
+					str.Append("\n");
+				KEODKEGFDLD_FreeMusicInfo fm = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(dbStory.ICKPLIABPKC_FreeMusicId);
+				EONOEHOKBEB_Music m = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(fm.DLAEJOBELBH_MusicId);
+				string mname = Database.Instance.musicText.Get(m.KNMGEEFGDNI_Nam).musicName;
+				string n = bkMaster.GetMessageByLabel("df_" + dbStory.JOPNDOKOIHI.ToString("00"));
+				if (dbStory.GGOCFLLMHPH < 1)
+				{
+					str.AppendFormat(bkMenu.GetMessageByLabel("story_unlock_05"), n, mname);
+				}
+				else
+				{
+					string s = "";
+					switch (dbStory.GGOCFLLMHPH)
+					{
+						case 1:
+							s = "B";
+							break;
+						case 2:
+							s = "A";
+							break;
+						case 3:
+							s = "S";
+							break;
+						case 4:
+							s = "SS";
+							break;
+						default:
+							break;
+					}
+					str.AppendFormat(bkMenu.GetMessageByLabel("story_unlock_06"), n, s, mname);
+				}
+			}
+			//LAB_017f904c
+			FHPHCFEEBMP = str.ToString();
+			Debug.Log(FHPHCFEEBMP);
+		}
 	}
 
 	//// RVA: 0x17F99CC Offset: 0x17F99CC VA: 0x17F99CC
 	public void JLHOLHCDELP()
 	{
-		TodoLogger.LogError(0, "JLHOLHCDELP");
+		NEKDCJKANAH_StoryRecord.HKDNILFKCFC saveStory = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LNOOKHJBENO_StoryRecord.MMKAJBFBKNH[LFLLLOPAKCO_StoryId - 1];
+		saveStory.EALOBDHOCHP_Stat = 2;
+		saveStory.OKJMIFELDMD_Opn |= 7;
+		if(AHHJLDLAPAN_DivaId > 0)
+		{
+			if(!JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA)
+			{
+				JDDGPJDKHNE.HHCJCDFCLOB.NFNLGGHMEAM();
+				JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = true;
+			}
+			ILCCJNDFFOB.HHCJCDFCLOB.AOPBBHMIEPB(LFLLLOPAKCO_StoryId);
+			PGCCOCKGCKO = true;
+			DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo dinfo = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[AHHJLDLAPAN_DivaId - 1];
+			saveStory.EALOBDHOCHP_Stat = 6;
+			dinfo.CPGFPEDMDEH_Have = 1;
+			CADENLBDAEB = false;
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.CGBCFBGJHKC(AHHJLDLAPAN_DivaId);
+			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB/*7*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
+			if(ev != null)
+			{
+				TodoLogger.LogError(0, "Event");
+			}
+			GameManager.Instance.ResetViewPlayerData();
+			ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.FMOCAEEMHFJ/*43*/, 2, false);
+		}
+		HCDGELDHFHB();
 	}
 
 	//// RVA: 0x17F9F24 Offset: 0x17F9F24 VA: 0x17F9F24
@@ -226,7 +332,13 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 	}
 
 	//// RVA: 0x17FA138 Offset: 0x17FA138 VA: 0x17FA138
-	//public void MFEGPPKFCEI() { }
+	public void MFEGPPKFCEI()
+	{
+		if (EOBACDCDGOF)
+			return;
+		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LNOOKHJBENO_StoryRecord.MMKAJBFBKNH[LFLLLOPAKCO_StoryId - 1].OKJMIFELDMD_Opn |= 8;
+		HCDGELDHFHB();
+	}
 
 	//// RVA: 0x17FA294 Offset: 0x17FA294 VA: 0x17FA294
 	public static int PJIJLMFBBCJ()

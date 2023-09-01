@@ -772,7 +772,42 @@ public class ILCCJNDFFOB
 	// public void EAEHILOBHDA(int DLAEJOBELBH_Id, string NEDBBJDAFBH) { }
 
 	// // RVA: 0x9028C8 Offset: 0x9028C8 VA: 0x9028C8
-	// public void AOPBBHMIEPB(int BMPFHHHCNJC) { }
+	public void AOPBBHMIEPB(int BMPFHHHCNJC)
+	{
+		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+		FLBFCCIEPNC_InitBaseJson(data, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
+		LAEGMENIEDB_Story.ALGOILKGAAH dbStory = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OHCIFMDPAPD_Story.CDENCMNHNGA[BMPFHHHCNJC - 1];
+		int aa = 0;
+		int type = 2;
+		if(dbStory.JHPPLIGJFPI < 1)
+		{
+			if (dbStory.NOCGGJPABMA != 1)
+			{
+				type = dbStory.NOCGGJPABMA;
+				if (dbStory.NOCGGJPABMA == 2)
+					aa = 8;
+				else
+					type = 1;
+			}
+			else
+				aa = 9;
+		}
+		else
+		{
+			aa = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.GFIPALLLPMF(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.NIKCFOALFJC_DivaFirst, dbStory.JHPPLIGJFPI);
+		}
+		//LAB_00902b6c
+		data["type"] = type;
+		if(type == 1)
+		{
+			data["opened_id"] = dbStory.OMMEPCGNHFM_FreeMusicId2;
+		}
+		else
+		{
+			data["opened_id"] = aa;
+		}
+		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.AOPBBHMIEPB/*14*/, data, false);
+	}
 
 	// // RVA: 0x902EF8 Offset: 0x902EF8 VA: 0x902EF8
 	// public void MNFOJMBPHEN(int LJEONGIBHGM, int JOBJHJCIMDN, int ADKIDBJCAJA, int HLJBAHBLBPL, int DKHKDNNIPCA) { }

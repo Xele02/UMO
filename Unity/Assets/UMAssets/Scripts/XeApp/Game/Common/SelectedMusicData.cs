@@ -14,7 +14,11 @@ namespace XeApp.Game.Common
 		}
 
 		// RVA: 0x1391C84 Offset: 0x1391C84 VA: 0x1391C84
-		//public void SetStoryMusic(EEDKAACNBBG storyMusicData) { }
+		public void SetStoryMusic(EEDKAACNBBG_MusicData storyMusicData)
+		{
+			selectedMusic = storyMusicData;
+			ghostData = null;
+		}
 
 		// RVA: 0x1391C94 Offset: 0x1391C94 VA: 0x1391C94
 		//public void SetGhostData(BKKMNPEEILG ghostData) { }

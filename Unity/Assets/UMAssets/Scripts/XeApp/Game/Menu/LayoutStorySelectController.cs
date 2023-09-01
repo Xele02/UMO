@@ -154,7 +154,7 @@ namespace XeApp.Game.Menu
 				UnityEngine.Object.Destroy(layoutArrowLeft.gameObject);
 			layoutArrowLeft = null;
 			if (layoutArrowRight != null)
-				UnityEngine.Object.Destroy(layoutArrowLeft.gameObject);
+				UnityEngine.Object.Destroy(layoutArrowRight.gameObject);
 			layoutArrowRight = null;
 			for(int i = 0; i < layoutIconL.Count; i++)
 			{
@@ -522,7 +522,20 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x728A44 Offset: 0x728A44 VA: 0x728A44
 		//// RVA: 0x194F420 Offset: 0x194F420 VA: 0x194F420
-		//public IEnumerator LoadLayoutInfo(Action callback) { }
+		public IEnumerator LoadLayoutInfo(Action callback)
+		{
+			//0x1532024
+			if(layoutInfo == null)
+			{
+				yield return Co.R(LoadLayoutInner("ly/011.xab", "root_story_info_layout_root", (GameObject instance) =>
+				{
+					//0x194FD7C
+					layoutInfo = instance.GetComponent<LayoutStorySelectInfo>();
+				}));
+			}
+			if (callback != null)
+				callback();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x728ABC Offset: 0x728ABC VA: 0x728ABC
 		//// RVA: 0x194F4C4 Offset: 0x194F4C4 VA: 0x194F4C4
@@ -625,9 +638,5 @@ namespace XeApp.Game.Menu
 		//[CompilerGeneratedAttribute] // RVA: 0x728D1C Offset: 0x728D1C VA: 0x728D1C
 		//// RVA: 0x194FC80 Offset: 0x194FC80 VA: 0x194FC80
 		//private void <Co_CompleteProduction>b__93_0(GameObject instance) { }
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x728D3C Offset: 0x728D3C VA: 0x728D3C
-		//// RVA: 0x194FD7C Offset: 0x194FD7C VA: 0x194FD7C
-		//private void <LoadLayoutInfo>b__95_0(GameObject instance) { }
 	}
 }

@@ -326,7 +326,16 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
     }
 
 	// // RVA: 0xD9B29C Offset: 0xD9B29C VA: 0xD9B29C
-	// public LCLCCHLDNHJ.ILODJKFJJDO MGENBBDAONJ(int AHHJLDLAPAN) { }
+	public ILODJKFJJDO_CostumeInfo MGENBBDAONJ(int AHHJLDLAPAN)
+	{
+		return CDENCMNHNGA_Costumes.Find((ILODJKFJJDO_CostumeInfo PKLPKMLGFGK) =>
+		{
+			//0xD9DD70
+			if (AHHJLDLAPAN != PKLPKMLGFGK.AHHJLDLAPAN_PrismDivaId)
+				return false;
+			return PKLPKMLGFGK.DAJGPBLEEOB_PrismCostumeModelId == 1;
+		});
+	}
 
 	// // RVA: 0xD9B39C Offset: 0xD9B39C VA: 0xD9B39C
 	public LCLCCHLDNHJ_Costume()

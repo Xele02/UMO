@@ -1406,7 +1406,7 @@ public class FOCPLKMMCAL
 			g2 = ds.JIHMAJENMDO <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 		}
 		bool g = true;
-		if(ds.ICKPLIABPKC != 0)
+		if(ds.ICKPLIABPKC_FreeMusicId != 0)
 		{
 			if(ss.EJKHAFIALGK_MClr == 0)
 			{
@@ -1416,7 +1416,7 @@ public class FOCPLKMMCAL
 				{
 					KEODKEGFDLD_FreeMusicInfo fData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(OMNOFMEBLAD.GHBPLHBNMBK_FreeMusicId);
 					bool b = true;
-					if (OMNOFMEBLAD.GHBPLHBNMBK_FreeMusicId == ds.ICKPLIABPKC)
+					if (OMNOFMEBLAD.GHBPLHBNMBK_FreeMusicId == ds.ICKPLIABPKC_FreeMusicId)
 					{
 						g = false;
 						if (OMNOFMEBLAD.AKNELONELJK_Difficulty < ds.JOPNDOKOIHI)
