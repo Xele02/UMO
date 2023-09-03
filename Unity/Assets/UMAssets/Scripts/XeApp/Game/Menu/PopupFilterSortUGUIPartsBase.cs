@@ -86,7 +86,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1C9EFD4 Offset: 0x1C9EFD4 VA: 0x1C9EFD4
-		// protected static void SetFilterButtons(UGUIToggleButton[] a_btn, uint a_bit) { }
+		protected static void SetFilterButtons(UGUIToggleButton[] a_btn, uint a_bit)
+		{
+			for(int i = 0; i < a_btn.Length; i++)
+			{
+				if((a_bit & (1 << i)) == 0)
+					a_btn[i].SetOff();
+				else
+					a_btn[i].SetOn();
+			}
+		}
 
 		// // RVA: 0x1C9F07C Offset: 0x1C9F07C VA: 0x1C9F07C
 		// protected static void SetFilterButtonsLong(UGUIToggleButton[] a_btn, ulong a_bit) { }
@@ -106,7 +115,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1C9F1F0 Offset: 0x1C9F1F0 VA: 0x1C9F1F0
-		// protected static uint GetFilterButtonsBit(UGUIToggleButton[] buttons) { }
+		protected static uint GetFilterButtonsBit(UGUIToggleButton[] buttons)
+		{
+			uint res = 0;
+			for(int i = 0; i < buttons.Length; i++)
+			{
+				if(buttons[i].IsOn)
+					res |= (uint)(1 << i);
+			}
+			return res;
+		}
 
 		// // RVA: 0x1C9F27C Offset: 0x1C9F27C VA: 0x1C9F27C
 		// protected static ulong GetFilterButtonsBitLong(UGUIToggleButton[] buttons) { }

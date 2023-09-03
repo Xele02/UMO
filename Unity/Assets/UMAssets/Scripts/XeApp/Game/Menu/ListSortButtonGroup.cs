@@ -66,7 +66,7 @@ namespace XeApp.Game.Menu
 		}; // 0x10
 		private static readonly List<SortItem>[] m_sortItemTbl = new List<SortItem>[6]
 		{
-			SceneSortItem, CostumeSortItem, DivaSortItem, SceneGrowthSortItem, AssistSortItem, null//??
+			DivaSortItem, SceneSortItem, CostumeSortItem, DivaSortItem, SceneGrowthSortItem, AssistSortItem
 		}; // 0x14
 		private static readonly string[] m_orderTextureUvNameTable = new string[2] { "cmn_btn_orde_fnt_01", "cmn_btn_orde_fnt_02" }; // 0x18
  
@@ -107,7 +107,10 @@ namespace XeApp.Game.Menu
 		{
 			m_sceneType = sceneType;
 			m_sortListButton.ClearOnClickCallback();
-			m_sortListButton.AddOnClickCallback(OnShowFilterSortPopup);
+			if(sceneType == PopupFilterSort.Scene.None)
+				m_sortListButton.AddOnClickCallback(OnShowSortList);
+			else
+				m_sortListButton.AddOnClickCallback(OnShowFilterSortPopup);
 		}
 
 		// // RVA: 0x1541C58 Offset: 0x1541C58 VA: 0x1541C58
@@ -142,7 +145,7 @@ namespace XeApp.Game.Menu
 					UpdateOrderFont();
 				}, null);
 			}
-			if(MenuScene.Instance.GetCurrentTransitionRoot().TransitionName == TransitionList.Type.SCENE_SELECT)
+			else if(MenuScene.Instance.GetCurrentTransitionRoot().TransitionName == TransitionList.Type.SCENE_SELECT)
 			{
 				MenuScene.Instance.ShowSortWindow(s, (PopupFilterSortUGUI content) =>
 				{

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using XeApp.Game.Common;
@@ -464,14 +465,37 @@ namespace XeApp.Game.Menu
 		//public void ResetMusicSelectFilter() { }
 
 		//// RVA: 0x1C9AA7C Offset: 0x1C9AA7C VA: 0x1C9AA7C
-		//private void PlateFilterSkillButtonShowHideAnim() { }
+		private void PlateFilterSkillButtonShowHideAnim()
+		{
+			this.StartCoroutineWatched(Co_PlateFilterSkillButtonShowHideAnim());
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7081E4 Offset: 0x7081E4 VA: 0x7081E4
 		//// RVA: 0x1C9AAA0 Offset: 0x1C9AAA0 VA: 0x1C9AAA0
-		//private IEnumerator Co_PlateFilterSkillButtonShowHideAnim() { }
+		private IEnumerator Co_PlateFilterSkillButtonShowHideAnim()
+		{
+			//0x1C9E290
+			while(m_plateFilterParts.filterSkill.IsPlaying() || 
+				m_plateFilterParts.filterActiveSkill.IsPlaying() || 
+				m_plateFilterParts.filterCenterSkill.IsPlaying())
+			{
+				PlateFilterHeightUpdate();
+				yield return null;
+			}
+			m_plateFilterParts.filterSkill.m_showBtn.IsInputLock = false;
+			m_plateFilterParts.filterActiveSkill.m_showBtn.IsInputLock = false;
+			m_plateFilterParts.filterCenterSkill.m_showBtn.IsInputLock = false;
+		}
 
 		//// RVA: 0x1C9AB4C Offset: 0x1C9AB4C VA: 0x1C9AB4C
-		//private void PlateFilterHeightUpdate() { }
+		private void PlateFilterHeightUpdate()
+		{
+			m_plateFilterParts.layoutGroup.CalculateLayoutInputVertical();
+			m_plateFilterParts.layoutGroup.SetLayoutVertical();
+			m_plateFilterParts.contentSizeFitter.SetLayoutVertical();
+			m_plateFilterContent.sizeDelta = m_plateFilterPartsRect.sizeDelta;
+
+		}
 
 		//// RVA: 0x1C961AC Offset: 0x1C961AC VA: 0x1C961AC
 		//public void PlateSelectSetUp(RectTransform popupContent) { }
@@ -479,37 +503,182 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1C935E0 Offset: 0x1C935E0 VA: 0x1C935E0
 		private void InitializePlateSelect()
 		{
-			TodoLogger.LogError(0, "InitializePlateSelect");
-		}
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+            ILDKBCLAFPB.IJDOCJCLAIL_SortProprty prop = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty;
+			m_plateFilterParts = m_setting.m_list_parts[0].m_base as PopupFilterSortUGUIParts_PlateFilter;
+			m_plateFilterPartsRect = m_plateFilterParts.GetComponent<RectTransform>();
+			m_plateFilterParts.titleH1[0].SetTitle(bk.GetMessageByLabel("popup_sort_title_h1"));
+			m_plateFilterParts.titleH1[0].EnableButton(false);
+			m_plateFilterParts.titleH1[1].SetTitle(bk.GetMessageByLabel("popup_filter_title_h1"));
+			m_plateFilterParts.titleH1[1].SetButton(bk.GetMessageByLabel("popup_sort_filter_reset"), ResetPlateSelectFilter);
+			m_plateFilterParts.filterRarity.SetBit(m_setting.m_param.EnableSave ? (uint)prop.FFAKMECDMFC_sceneSelectRarityFilter : 0);
+			m_plateFilterParts.filterAttribute.SetBit(m_setting.m_param.EnableSave ? (uint)prop.LMPKAPBCIFD_sceneSelectAttributeFilter : 0);
+			m_plateFilterParts.filterSeries.SetBit(m_setting.m_param.EnableSave ? (uint)prop.MNNCLIFBAOA_sceneSelectSeriaseFilter : 0);
+			m_plateFilterParts.filterNotesExpectation.SetBit(m_setting.m_param.EnableSave ? (uint)prop.DMKHBHDGABG_sceneSelectNotesExpectedFilter : 0);
+			m_plateFilterParts.filterSort.SetupItem(PopupSortMenu.SceneSortItem.ToArray());
+			m_plateFilterParts.filterSort.SetSortItem((SortItem)prop.LNFFKCDNCPN_sceneSelectSortItem);
+			m_plateFilterParts.filterDiva.SetBit(m_setting.m_param.EnableSave ? (uint)prop.NPFGKBKKCFL_sceneSelectCompatibleFilter : 0);
+			m_plateFilterParts.filterDiva.SetBitCompatible(m_setting.m_param.EnableSave ? (uint)prop.JACFDEKLDCK_isCompatibleDivaCheck : 0);
+			m_plateFilterParts.filterDiva.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas, true, true, false);
+			m_plateFilterParts.filterDiva.SetSelectedDiva(m_setting.m_param.PlateSelectParam.SelectedDivaId);
+			m_plateFilterParts.filterSkill.SetBitSkillRange(m_setting.m_param.EnableSave ? (uint)prop.IMFEPOFGPHN_sceneSelectLiveSkillRangeFilter : 0);
+			m_plateFilterParts.filterSkill.SetBitSkillRank(m_setting.m_param.EnableSave ? (uint)prop.AIPJDIPBDEA_sceneSelectLiveSkillRankFilter : 0);
+			m_plateFilterParts.filterSkill.SetBitSkill(m_setting.m_param.EnableSave ? (ulong)prop.OCKOEPFNGJG_sceneSelectLiveSkillFilter : 0);
+			m_plateFilterParts.filterSkill.SetupIcon();
+			m_plateFilterParts.filterSkill.SetAllButton();
+			m_plateFilterParts.filterSkill.OhClickShowHideButtonListener = PlateFilterSkillButtonShowHideAnim;
+			m_plateFilterParts.filterActiveSkill.SetBitSkillRange(0);
+ 			m_plateFilterParts.filterActiveSkill.SetBitSkillRank(m_setting.m_param.EnableSave ? (uint)prop.BIBBAIFCGLD_sceneSelectActiveSkillRankFilter : 0);
+			m_plateFilterParts.filterActiveSkill.SetBitSkill(m_setting.m_param.EnableSave ? (ulong)prop.POJHGOJDOND_sceneSelectActiveSkillFilter : 0);
+			m_plateFilterParts.filterActiveSkill.SetupIcon();
+			m_plateFilterParts.filterActiveSkill.SetAllButton();
+			m_plateFilterParts.filterActiveSkill.OhClickShowHideButtonListener = PlateFilterSkillButtonShowHideAnim;
+ 			m_plateFilterParts.filterCenterSkill.SetBitSkillRank(m_setting.m_param.EnableSave ? (uint)prop.BPFPFOJNFLC_sceneSelectCenterSkillRankFilter : 0);
+			m_plateFilterParts.filterCenterSkill.SetBitSkill(m_setting.m_param.EnableSave ? (ulong)prop.IHECEFMGKHO_sceneSelectCenterSkillFilter : 0);
+			m_plateFilterParts.filterCenterSkill.SetupIcon();
+			m_plateFilterParts.filterCenterSkill.SetAllButton();
+			m_plateFilterParts.filterCenterSkill.OhClickShowHideButtonListener = PlateFilterSkillButtonShowHideAnim;
+        }
 
 		//// RVA: 0x1C97AC0 Offset: 0x1C97AC0 VA: 0x1C97AC0
 		private void FinalizePlateSelect()
 		{
-			TodoLogger.LogError(0, "FinalizePlateSelect");
+			if(!m_setting.m_param.EnableSave)
+				return;
+            ILDKBCLAFPB.IJDOCJCLAIL_SortProprty prop = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty;
+			PopupFilterSortUGUIParts_PlateFilter p = m_setting.m_list_parts[0].m_base as PopupFilterSortUGUIParts_PlateFilter;
+			prop.LNFFKCDNCPN_sceneSelectSortItem = (int)p.filterSort.GetSortItem();
+			prop.FFAKMECDMFC_sceneSelectRarityFilter = (int)p.filterRarity.GetBit();
+			prop.LMPKAPBCIFD_sceneSelectAttributeFilter = (int)p.filterAttribute.GetBit();
+			prop.MNNCLIFBAOA_sceneSelectSeriaseFilter = (int)p.filterSeries.GetBit();
+			prop.DMKHBHDGABG_sceneSelectNotesExpectedFilter = (int)p.filterNotesExpectation.GetBit();
+			prop.NPFGKBKKCFL_sceneSelectCompatibleFilter = (int)p.filterDiva.GetBit();
+			prop.JACFDEKLDCK_isCompatibleDivaCheck = (int)p.filterDiva.GetBitCompatible();
+			prop.IMFEPOFGPHN_sceneSelectLiveSkillRangeFilter = (int)p.filterSkill.GetBitSkillRange();
+			prop.AIPJDIPBDEA_sceneSelectLiveSkillRankFilter = (int)p.filterSkill.GetBitSkillRank();
+			prop.OCKOEPFNGJG_sceneSelectLiveSkillFilter = (long)p.filterSkill.GetBitSkill();
+			prop.BIBBAIFCGLD_sceneSelectActiveSkillRankFilter = (int)p.filterActiveSkill.GetBitSkillRank();
+			prop.POJHGOJDOND_sceneSelectActiveSkillFilter = (long)p.filterActiveSkill.GetBitSkill();
+			prop.BPFPFOJNFLC_sceneSelectCenterSkillRankFilter = (int)p.filterCenterSkill.GetBitSkillRank();
+			prop.IHECEFMGKHO_sceneSelectCenterSkillFilter = (long)p.filterCenterSkill.GetBitSkill();
 		}
 
 		//// RVA: 0x1C9CAE8 Offset: 0x1C9CAE8 VA: 0x1C9CAE8
-		//private void ResetPlateSelectFilter() { }
+		private void ResetPlateSelectFilter()
+		{
+			PopupFilterSortUGUIParts_PlateFilter p = m_setting.m_list_parts[0].m_base as PopupFilterSortUGUIParts_PlateFilter;
+			p.filterRarity.SetBit(0);
+			p.filterAttribute.SetBit(0);
+			p.filterSeries.SetBit(0);
+			p.filterNotesExpectation.SetBit(0);
+			p.filterDiva.SetBit(0);
+			p.filterDiva.SetBitCompatible(0);
+			p.filterDiva.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas, true, false, false);
+			p.filterSkill.SetBitSkillRange(0);
+			p.filterSkill.SetBitSkillRank(0);
+			p.filterSkill.SetBitSkill(0);
+			p.filterSkill.AllRelease();
+			p.filterActiveSkill.SetBitSkillRange(0);
+			p.filterActiveSkill.SetBitSkillRank(0);
+			p.filterActiveSkill.SetBitSkill(0);
+			p.filterActiveSkill.AllRelease();
+			p.filterCenterSkill.SetBitSkillRank(0);
+			p.filterCenterSkill.SetBitSkill(0);
+			p.filterCenterSkill.AllRelease();
+		}
 
 		//// RVA: 0x1C94204 Offset: 0x1C94204 VA: 0x1C94204
 		private void InitializePlateSelectList()
 		{
-			TodoLogger.LogError(0, "InitializePlateSelectList");
-		}
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+            ILDKBCLAFPB.IJDOCJCLAIL_SortProprty prop = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty;
+			m_plateFilterParts = m_setting.m_list_parts[0].m_base as PopupFilterSortUGUIParts_PlateFilter;
+			m_plateFilterPartsRect = m_plateFilterParts.GetComponent<RectTransform>();
+			m_plateFilterParts.titleH1[0].SetTitle(bk.GetMessageByLabel("popup_sort_title_h1"));
+			m_plateFilterParts.titleH1[0].EnableButton(false);
+			m_plateFilterParts.titleH1[1].SetTitle(bk.GetMessageByLabel("popup_filter_title_h1"));
+			m_plateFilterParts.titleH1[1].SetButton(bk.GetMessageByLabel("popup_sort_filter_reset"), ResetPlateSelectList);
+			m_plateFilterParts.filterRarity.SetBit(m_setting.m_param.EnableSave ? (uint)prop.HMJNAGNIEJB_sceneListRarityFilter : 0);
+			m_plateFilterParts.filterAttribute.SetBit(m_setting.m_param.EnableSave ? (uint)prop.HFGAILIOFAN_sceneListAttributeFilter : 0);
+			m_plateFilterParts.filterSeries.SetBit(m_setting.m_param.EnableSave ? (uint)prop.AKFPHKLCHAA_sceneListSeriaseFilter : 0);
+			m_plateFilterParts.filterNotesExpectation.SetBit(m_setting.m_param.EnableSave ? (uint)prop.MCJBFHMJECO_sceneListNotesExpectedFilter : 0);
+			m_plateFilterParts.filterSort.SetupItem(PopupSortMenu.SceneSortItem.ToArray());
+			m_plateFilterParts.filterSort.SetSortItem((SortItem)prop.GEAECNMDMHH_sceneListSortItem);
+			m_plateFilterParts.filterDiva.SetBit(m_setting.m_param.EnableSave ? (uint)prop.PHCEMKLNJLH_sceneListCompatibleFilter : 0);
+			m_plateFilterParts.filterDiva.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas, true, false, false);
+			m_plateFilterParts.filterSkill.SetBitSkillRange(m_setting.m_param.EnableSave ? (uint)prop.LALFKJDFPOD_sceneListLiveSkillRangeFilter : 0);
+			m_plateFilterParts.filterSkill.SetBitSkillRank(m_setting.m_param.EnableSave ? (uint)prop.HKFPBAFALHO_sceneListLiveSkillRankFilter : 0);
+			m_plateFilterParts.filterSkill.SetBitSkill(m_setting.m_param.EnableSave ? (ulong)prop.BOMCDAIEFLN_sceneListLiveSkillFilter : 0);
+			m_plateFilterParts.filterSkill.SetupIcon();
+			m_plateFilterParts.filterSkill.SetAllButton();
+			m_plateFilterParts.filterSkill.OhClickShowHideButtonListener = PlateFilterSkillButtonShowHideAnim;
+			m_plateFilterParts.filterActiveSkill.SetBitSkillRange(0);
+ 			m_plateFilterParts.filterActiveSkill.SetBitSkillRank(m_setting.m_param.EnableSave ? (uint)prop.ALFGELGDIGC_sceneListActiveSkillRankFilter : 0);
+			m_plateFilterParts.filterActiveSkill.SetBitSkill(m_setting.m_param.EnableSave ? (ulong)prop.GIPNFAFFNLF_sceneListActiveSkillFilter : 0);
+			m_plateFilterParts.filterActiveSkill.SetupIcon();
+			m_plateFilterParts.filterActiveSkill.SetAllButton();
+			m_plateFilterParts.filterActiveSkill.OhClickShowHideButtonListener = PlateFilterSkillButtonShowHideAnim;
+ 			m_plateFilterParts.filterCenterSkill.SetBitSkillRank(m_setting.m_param.EnableSave ? (uint)prop.MECEGIJIGBN_sceneListCenterSkillRankFilter : 0);
+			m_plateFilterParts.filterCenterSkill.SetBitSkill(m_setting.m_param.EnableSave ? (ulong)prop.IOBABMJPAAE_sceneListCenterSkillFilter : 0);
+			m_plateFilterParts.filterCenterSkill.SetupIcon();
+			m_plateFilterParts.filterCenterSkill.SetAllButton();
+			m_plateFilterParts.filterCenterSkill.OhClickShowHideButtonListener = PlateFilterSkillButtonShowHideAnim;
+      }
 
 		//// RVA: 0x1C97E50 Offset: 0x1C97E50 VA: 0x1C97E50
 		private void FinalizePlateSelectList()
 		{
-			TodoLogger.LogError(0, "FinalizePlateSelectList");
+			if(!m_setting.m_param.EnableSave)
+				return;
+            ILDKBCLAFPB.IJDOCJCLAIL_SortProprty prop = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty;
+			PopupFilterSortUGUIParts_PlateFilter p = m_setting.m_list_parts[0].m_base as PopupFilterSortUGUIParts_PlateFilter;
+			prop.GEAECNMDMHH_sceneListSortItem = (int)p.filterSort.GetSortItem();
+			prop.HMJNAGNIEJB_sceneListRarityFilter = (int)p.filterRarity.GetBit();
+			prop.HFGAILIOFAN_sceneListAttributeFilter = (int)p.filterAttribute.GetBit();
+			prop.AKFPHKLCHAA_sceneListSeriaseFilter = (int)p.filterSeries.GetBit();
+			prop.MCJBFHMJECO_sceneListNotesExpectedFilter = (int)p.filterNotesExpectation.GetBit();
+			prop.PHCEMKLNJLH_sceneListCompatibleFilter = (int)p.filterDiva.GetBit();
+			prop.LALFKJDFPOD_sceneListLiveSkillRangeFilter = (int)p.filterSkill.GetBitSkillRange();
+			prop.HKFPBAFALHO_sceneListLiveSkillRankFilter = (int)p.filterSkill.GetBitSkillRank();
+			prop.BOMCDAIEFLN_sceneListLiveSkillFilter = (long)p.filterSkill.GetBitSkill();
+			prop.ALFGELGDIGC_sceneListActiveSkillRankFilter = (int)p.filterActiveSkill.GetBitSkillRank();
+			prop.GIPNFAFFNLF_sceneListActiveSkillFilter = (long)p.filterActiveSkill.GetBitSkill();
+			prop.MECEGIJIGBN_sceneListCenterSkillRankFilter = (int)p.filterCenterSkill.GetBitSkillRank();
+			prop.IOBABMJPAAE_sceneListCenterSkillFilter = (long)p.filterCenterSkill.GetBitSkill();
 		}
 
 		//// RVA: 0x1C9D088 Offset: 0x1C9D088 VA: 0x1C9D088
-		//private void ResetPlateSelectList() { }
+		private void ResetPlateSelectList()
+		{
+			PopupFilterSortUGUIParts_PlateFilter p = m_setting.m_list_parts[0].m_base as PopupFilterSortUGUIParts_PlateFilter;
+			p.filterRarity.SetBit(0);
+			p.filterAttribute.SetBit(0);
+			p.filterSeries.SetBit(0);
+			p.filterNotesExpectation.SetBit(0);
+			p.filterDiva.SetBit(0);
+			p.filterDiva.SetBitCompatible(0);
+			p.filterDiva.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas, true, false, false);
+			p.filterSkill.SetBitSkillRange(0);
+			p.filterSkill.SetBitSkillRank(0);
+			p.filterSkill.SetBitSkill(0);
+			p.filterSkill.AllRelease();
+			p.filterActiveSkill.SetBitSkillRange(0);
+			p.filterActiveSkill.SetBitSkillRank(0);
+			p.filterActiveSkill.SetBitSkill(0);
+			p.filterActiveSkill.AllRelease();
+			p.filterCenterSkill.SetBitSkillRank(0);
+			p.filterCenterSkill.SetBitSkill(0);
+			p.filterCenterSkill.AllRelease();
+		}
 
 		//// RVA: 0x1C98AAC Offset: 0x1C98AAC VA: 0x1C98AAC
 		private void ShowPlateSelect()
 		{
-			TodoLogger.LogError(0, "ShowPlateSelect");
+			PlateFilterHeightUpdate();
+			PopupFilterSortUGUIParts_PlateFilter p = m_setting.m_list_parts[0].m_base as PopupFilterSortUGUIParts_PlateFilter;
+			p.filterSkill.SetupStateFilter();
+			p.filterActiveSkill.SetupStateFilter();
+			p.filterCenterSkill.SetupStateFilter();
 		}
 
 		//// RVA: 0x1C9D484 Offset: 0x1C9D484 VA: 0x1C9D484

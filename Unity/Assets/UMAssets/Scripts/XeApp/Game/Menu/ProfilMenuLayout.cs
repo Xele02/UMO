@@ -1726,7 +1726,28 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1176014 Offset: 0x1176014 VA: 0x1176014
 		private void CB_ClickIcon_Emblem(IAPDFOPPGND a_data)
 		{
-			TodoLogger.LogNotImplemented("CB_ClickIcon_Emblem");
+			if(a_data != null)
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				m_degree_setting.TitleText = bk.GetMessageByLabel("popup_title_degree_01");
+				m_degree_setting.SetParent(transform);
+				m_degree_setting.data = a_data;
+				m_degree_setting.WindowSize = SizeType.Small;
+				m_degree_setting.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+				};
+				PopupWindowManager.Show(m_degree_setting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0x117C26C
+					return;
+				}, (IPopupContent content, PopupTabButton.ButtonLabel label) =>
+				{
+					//0x117C270
+					(content as PopupTabContents).ChangeContents((int)label);
+				}, null, null, true, true, false);
+			}
 		}
 
 		//// RVA: 0x11764A8 Offset: 0x11764A8 VA: 0x11764A8

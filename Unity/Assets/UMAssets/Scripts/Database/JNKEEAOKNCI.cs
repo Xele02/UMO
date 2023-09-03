@@ -1010,7 +1010,17 @@ public class BNHOEENHMDF
 	public int MKDDOJOADMF; // 0xC
 	public List<AFLHKMDNHID> NNDGIAEFMOG = new List<AFLHKMDNHID>(); // 0x10
 
-	//public int PLALNIIBLOF { get; } 0x19CABD8 JPCJNLHHIPE
+	public int PLALNIIBLOF { get
+	{
+		if(NNDGIAEFMOG.Count == 0)
+			return 0;
+		for(int i = 0; i < NNDGIAEFMOG.Count; i++)
+		{
+			if(NNDGIAEFMOG[i].PLALNIIBLOF != 2)
+				return 0;
+		}
+		return 2;
+	} } //0x19CABD8 JPCJNLHHIPE
 
 	//// RVA: 0x19CACF0 Offset: 0x19CACF0 VA: 0x19CACF0
 	//public uint CAOGDCBPBAN() { }
@@ -1036,7 +1046,16 @@ public class HCDIOPEOGEE // TypeDefIndex: 10027
 	public int MKDDOJOADMF; // 0xC
 	public List<CCINPCJDFJG> NNDGIAEFMOG = new List<CCINPCJDFJG>(); // 0x10
 
-	//public int PLALNIIBLOF { get; } 0x173F688 JPCJNLHHIPE
+	public int PLALNIIBLOF { get {
+		if(NNDGIAEFMOG.Count == 0)
+			return 0;
+		for(int i = 0; i < NNDGIAEFMOG.Count; i++)
+		{
+			if(NNDGIAEFMOG[i].PLALNIIBLOF != 2)
+				return 0;
+		}
+		return 2;
+	} } //0x173F688 JPCJNLHHIPE
 
 	//// RVA: 0x173F7A0 Offset: 0x173F7A0 VA: 0x173F7A0
 	//public uint CAOGDCBPBAN() { }
@@ -1060,7 +1079,16 @@ public class DNIDPGDJCOG
 	public int MKDDOJOADMF; // 0xC
 	public List<FCNGHAJPMEA> NNDGIAEFMOG = new List<FCNGHAJPMEA>(); // 0x10
 
-	//public int PLALNIIBLOF { get; } 0x1231D14 JPCJNLHHIPE
+	public int PLALNIIBLOF { get {
+		if(NNDGIAEFMOG.Count == 0)
+			return 0;
+		for(int i = 0; i < NNDGIAEFMOG.Count; i++)
+		{
+			if(NNDGIAEFMOG[i].PLALNIIBLOF != 2)
+				return 0;
+		}
+		return 2;
+	} } //0x1231D14 JPCJNLHHIPE
 
 	//// RVA: 0x1231E2C Offset: 0x1231E2C VA: 0x1231E2C
 	//public uint CAOGDCBPBAN() { }

@@ -281,14 +281,35 @@ namespace XeApp.Game.Menu
 				m_sortMenuWindow.ShowAssistSelectFilter();
 				m_sortMenuWindow.SetAssistSlotLabel();
 				m_sortMenuWindow.SetSelectAssistButton(GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.GDMIGCCMEEF_GuestSelect.NPEEPPCPEPE_assistItem);
+				m_seriaseButtonStateBit = s.SeriaseFilter;
+				m_sortMenuWindow.SetFilterButton(SortMenuWindow.FilterType.Series, ((m_seriaseButtonStateBit & 2) << 1) | (m_seriaseButtonStateBit & 16) | ((m_seriaseButtonStateBit & 1) << 3) | ((m_seriaseButtonStateBit >> 1) & 2) | ((m_seriaseButtonStateBit << 28) >> 31));
+				m_centerSkillButtonStateBit = s.CenterSkillFilter;
+				m_sortMenuWindow.SetFilterButton(SortMenuWindow.FilterType.CenterSkill, s.CenterSkillFilter);
 			}
 			else if(m_sortPlace == SortPlace.AssistList)
 			{
-				TodoLogger.LogError(0, "Initialize AssistList");
+				m_sortMenuWindow.ShowAssistEditFilter(s.SelectedAttrId);
+				m_attributeButtonStateBit = s.AttributeFilter;
+				m_sortMenuWindow.SetFilterButton(SortMenuWindow.FilterType.Attribute, s.AttributeFilter);
+				m_seriaseButtonStateBit = s.SeriaseFilter;
+				m_sortMenuWindow.SetFilterButton(SortMenuWindow.FilterType.Series, ((m_seriaseButtonStateBit & 2) << 1) | (m_seriaseButtonStateBit & 16) | ((m_seriaseButtonStateBit & 1) << 3) | ((m_seriaseButtonStateBit >> 1) & 2) | ((m_seriaseButtonStateBit << 28) >> 31));
+				m_centerSkillButtonStateBit = s.CenterSkillFilter;
+				m_sortMenuWindow.SetFilterButton(SortMenuWindow.FilterType.CenterSkill, s.CenterSkillFilter);
 			}
 			else if(m_sortPlace == SortPlace.SceneSelect || m_sortPlace == SortPlace.SceneList || (int)m_sortPlace > 9)
 			{
-				TodoLogger.LogError(0, "Initialize SceneSelect");
+				m_sortMenuWindow.ShowFilter(m_sortPlace == SortPlace.SceneSelect, (int)m_sortPlace > 9);
+				m_sortMenuWindow.SetDivaButtonIcon(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas);
+				m_rarityButtonStateBit = s.RarityFilter;
+				m_sortMenuWindow.SetFilterButton(SortMenuWindow.FilterType.Rare, s.RarityFilter);
+				m_attributeButtonStateBit = s.AttributeFilter;
+				m_sortMenuWindow.SetFilterButton(SortMenuWindow.FilterType.Attribute, s.AttributeFilter);
+				m_seriaseButtonStateBit = s.SeriaseFilter;
+				m_sortMenuWindow.SetFilterButton(SortMenuWindow.FilterType.Series, ((m_seriaseButtonStateBit & 2) << 1) | (m_seriaseButtonStateBit & 16) | ((m_seriaseButtonStateBit & 1) << 3) | ((m_seriaseButtonStateBit >> 1) & 2) | ((m_seriaseButtonStateBit << 28) >> 31));
+				m_compatibleButtonStateBit = s.CompatibleFilter;
+				m_sortMenuWindow.SetDivaFilterButton(s.CompatibleFilter);
+				m_sortMenuWindow.SelectedDivaId(s.SelectedDivaId);
+				m_sortMenuWindow.SetCompatibleDivaButtonState(m_isCompatibleDiva);
 			}
 			else if(((int)m_sortPlace & 0xfffffffe) == 8)
 			{

@@ -319,7 +319,10 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x10FFF68 Offset: 0x10FFF68 VA: 0x10FFF68
-		//public void SetMoveAmount(int move) { }
+		public void SetMoveAmount(int move)
+		{
+			moveAmount = move;
+		}
 
 		//// RVA: 0x10FEFA0 Offset: 0x10FEFA0 VA: 0x10FEFA0
 		private void SetInitPos()

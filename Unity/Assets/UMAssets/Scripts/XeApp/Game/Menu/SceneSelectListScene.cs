@@ -158,16 +158,6 @@ namespace XeApp.Game.Menu
 				yield return this.StartCoroutineWatched(m_sceneSelectList.LoadScrollObjectCoroutine(TransitionName));
 			}
 
-			TodoLogger.LogError(TodoLogger.ToCheck, "m_popupFilterSortScene init should not be here");
-			if (m_transitionName == TransitionList.Type.SCENE_SELECT)
-				m_popupFilterSortScene = PopupFilterSort.Scene.EpisodeSelect2;
-			else if (m_transitionName == TransitionList.Type.SCENE_ABILITY_RELEASE_LIST)
-				m_popupFilterSortScene = PopupFilterSort.Scene.EpisodeSelect2;
-			else if (m_transitionName == TransitionList.Type.ASSIST_SELECT)
-				m_popupFilterSortScene = PopupFilterSort.Scene.EpisodeSelect2;
-			else
-				TodoLogger.LogError(0, "Set for transition " + m_transitionName);
-
 			IsReady = true;
 		}
 
