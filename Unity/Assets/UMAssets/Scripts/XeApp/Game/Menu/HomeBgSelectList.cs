@@ -281,7 +281,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x95B27C
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-				MenuScene.Instance.ShowSortWindow(PopupFilterSort.Scene.EpisodeSelect2, (PopupFilterSort content) =>
+				MenuScene.Instance.ShowSortWindow(PopupFilterSort.Scene.SelectHomeBg, (PopupFilterSort content) =>
 				{
 					//0x95B3DC
 					OnClickSortEvent();

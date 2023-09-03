@@ -406,16 +406,58 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF916D8 Offset: 0xF916D8 VA: 0xF916D8
 		private void InitializeSelectHomeBg()
 		{
-			TodoLogger.LogError(0, "InitializeSelectHomeBg");
-		}
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+            ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.MCINLGMJPDM_SelectHomeBG prop = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.GIDCHFBCBML_SelectHomeBG;
+			{
+				PopupFilterSortParts_Title_H1 p = m_setting.m_list_parts[0].m_base as PopupFilterSortParts_Title_H1;
+				p.SetTitle(bk.GetMessageByLabel("popup_filter_title_h1"));
+				p.SetButton(bk.GetMessageByLabel("popup_sort_filter_reset"), ResetSelectHomeBg);
+			}
+			{
+				PopupFilterSortParts_Title_H2 p = m_setting.m_list_parts[1].m_base as PopupFilterSortParts_Title_H2;
+				p.SetTitle(bk.GetMessageByLabel("popup_filter_rarity_title_h2"));
+			}
+			{
+				PopupFilterSortParts_FilterRarity p = m_setting.m_list_parts[2].m_base as PopupFilterSortParts_FilterRarity;
+				p.SetBit((uint)prop.PLNMMHPILLO_FilterRarity);
+				p.RarityRestrictions(JKHEOEEPBMJ.DGGEAHIKPBB);
+				p.OnClickAllButton(JKHEOEEPBMJ.DGGEAHIKPBB);
+			}
+			{
+				PopupFilterSortParts_Title_H2 p = m_setting.m_list_parts[4].m_base as PopupFilterSortParts_Title_H2;
+				p.SetTitle(bk.GetMessageByLabel("popup_filter_series_title_h2"));
+			}
+			{
+				PopupFilterSortParts_FilterSeries p = m_setting.m_list_parts[5].m_base as PopupFilterSortParts_FilterSeries;
+				p.SetBit((uint)prop.HBEFGKLLMEC_FilterSeries);
+			}
+        }
 
 		// // RVA: 0xF93098 Offset: 0xF93098 VA: 0xF93098
 		private void FainalizeSelectHomeBg()
 		{
-			TodoLogger.LogError(0, "FainalizeSelectHomeBg");
+            ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.MCINLGMJPDM_SelectHomeBG prop = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.GIDCHFBCBML_SelectHomeBG;
+			{
+				PopupFilterSortParts_FilterRarity p = m_setting.m_list_parts[2].m_base as PopupFilterSortParts_FilterRarity;
+				prop.PLNMMHPILLO_FilterRarity = (int)p.GetBit();
+			}
+			{
+				PopupFilterSortParts_FilterSeries p = m_setting.m_list_parts[5].m_base as PopupFilterSortParts_FilterSeries;
+				prop.HBEFGKLLMEC_FilterSeries = (int)p.GetBit();
+			}
 		}
 
 		// // RVA: 0xF94928 Offset: 0xF94928 VA: 0xF94928
-		// public void ResetSelectHomeBg() { }
+		public void ResetSelectHomeBg()
+		{
+			{
+				PopupFilterSortParts_FilterRarity p = m_setting.m_list_parts[2].m_base as PopupFilterSortParts_FilterRarity;
+				p.SetBit(0);
+			}
+			{
+				PopupFilterSortParts_FilterSeries p = m_setting.m_list_parts[5].m_base as PopupFilterSortParts_FilterSeries;
+				p.SetBit(0);
+			}
+		}
 	}
 }
