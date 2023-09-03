@@ -1,12 +1,10 @@
 Rewrite project of UtaMacross mobile game. 
 
-**Current version : 0.4.2**
+**Current version : 0.4.3**
 
 Fonctionality : 
 * Basic loading of the game with default profile (all costume/cards unlocked and fully leveled)
-* Main menu : Only Music/Home & Diva button works.
-* Diva Menu : Most of stuff works, but not very stable, can crash the game.
-* Music menu
+* Main menu : Music/Home, Diva, SNS buttons works.
 * Playing song :
   * Editor gameplay : Use key S-D-F-H-J-K for the 6 lanes, and D-F-H-J for 4 lanes songs. Slide note are automatically valided on hit. Lane change on 6 lane mode don't work. Key can be changed in the options (menu UMO > Options).
 
