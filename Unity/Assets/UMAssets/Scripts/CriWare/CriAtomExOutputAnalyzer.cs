@@ -1,10 +1,12 @@
 using System;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 namespace CriWare
 {
 	public class CriAtomExOutputAnalyzer : CriDisposable
 	{
+		[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
 		public struct Config
 		{
 			public bool enableLevelmeter; // 0x0
@@ -99,6 +101,7 @@ namespace CriWare
 					player.StopWithoutReleaseTime();
 				}
 				criAtomExOutputAnalyzer_DetachExPlayer(handle, player.nativeHandle);
+				this.player = null;
 			}
 		}
 
@@ -128,7 +131,7 @@ namespace CriWare
 						return 0;
 				}
 #if UNITY_ANDROID
-				return CriAtomExOutputAnalyzer.criAtomExOutputAnalyzer_GetRms(handle, channel);
+				return criAtomExOutputAnalyzer_GetRms(handle, channel);
 #else
 				int numSample = player.source.unityAudioSource.clip.frequency / 30;
 				float[] sample = new float[numSample];
@@ -177,15 +180,15 @@ namespace CriWare
 		// // RVA: 0x289F33C Offset: 0x289F33C VA: 0x289F33C
 		protected void InitializeWithConfig(Config config)
 		{
-			handle = criAtomExOutputAnalyzer_Create(config);
+			handle = criAtomExOutputAnalyzer_Create(ref config);
 			if(handle != IntPtr.Zero)
 			{
 				numBands = config.numSpectrumAnalyzerBands;
 				numCapturedPcmSamples = config.numCapturedPcmSamples;
 				if(config.enablePcmCaptureCallback && dataL == null)
 				{
-					dataL = new float[512];
-					dataR = new float[512];
+					dataL = new float[pcmCapturerNumMaxData];
+					dataR = new float[pcmCapturerNumMaxData];
 				}
 			}
 			else
@@ -199,46 +202,68 @@ namespace CriWare
 		// private static void Callback(IntPtr ptrL, IntPtr ptrR, int numChannels, int numData) { }
 
 		// // RVA: 0x28A09E8 Offset: 0x28A09E8 VA: 0x28A09E8
-		// protected static extern IntPtr criAtomExOutputAnalyzer_Create(in CriAtomExOutputAnalyzer.Config config) { }
-		protected static IntPtr criAtomExOutputAnalyzer_Create(in Config config)
+		#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		protected static extern IntPtr criAtomExOutputAnalyzer_Create([In] ref Config config);
+		#else
+		protected static IntPtr criAtomExOutputAnalyzer_Create(ref Config config)
 		{
 			TodoLogger.Log(TodoLogger.CriAtom, "criAtomExOutputAnalyzer_Create");
 			return new IntPtr(1);
 		}
+		#endif
 
 		// // RVA: 0x289F7D8 Offset: 0x289F7D8 VA: 0x289F7D8
-		// protected static extern void criAtomExOutputAnalyzer_Destroy(IntPtr analyzer) { }
+		#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		protected static extern void criAtomExOutputAnalyzer_Destroy(IntPtr analyzer);
+		#else
 		protected static void criAtomExOutputAnalyzer_Destroy(IntPtr analyzer)
 		{
 			TodoLogger.Log(TodoLogger.CriAtom, "criAtomExOutputAnalyzer_Destroy");
 		}
+		#endif
 
 		// // RVA: 0x289FA18 Offset: 0x289FA18 VA: 0x289FA18
-		// protected static extern void criAtomExOutputAnalyzer_AttachExPlayer(IntPtr analyzer, IntPtr player) { }
+		#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		protected static extern void criAtomExOutputAnalyzer_AttachExPlayer(IntPtr analyzer, IntPtr player);
+		#else
 		protected static void criAtomExOutputAnalyzer_AttachExPlayer(IntPtr analyzer, IntPtr player)
 		{
 			TodoLogger.Log(TodoLogger.CriAtom, "criAtomExOutputAnalyzer_AttachExPlayer");
 		}
+		#endif
 
 		// // RVA: 0x289FB38 Offset: 0x289FB38 VA: 0x289FB38
-		// protected extern static void criAtomExOutputAnalyzer_DetachExPlayer(IntPtr analyzer, IntPtr player)
+		#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		protected static extern void criAtomExOutputAnalyzer_DetachExPlayer(IntPtr analyzer, IntPtr player);
+		#else
 		protected static void criAtomExOutputAnalyzer_DetachExPlayer(IntPtr analyzer, IntPtr player)
 		{
 			TodoLogger.Log(TodoLogger.CriAtom, "criAtomExOutputAnalyzer_DetachExPlayer");
 		}
+		#endif
 
 		// // RVA: 0x289FD00 Offset: 0x289FD00 VA: 0x289FD00
 		// protected static extern void criAtomExOutputAnalyzer_AttachDspBusByName(IntPtr analyzer, string busName) { }
 
 		// // RVA: 0x289FE10 Offset: 0x289FE10 VA: 0x289FE10
-		// protected static extern void criAtomExOutputAnalyzer_DetachDspBusByName(IntPtr analyzer, string busName) { }
+		#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		protected static extern void criAtomExOutputAnalyzer_DetachDspBusByName(IntPtr analyzer, string busName);
+		#else
 		protected static void criAtomExOutputAnalyzer_DetachDspBusByName(IntPtr analyzer, string busName)
 		{
 			TodoLogger.Log(TodoLogger.CriAtom, "criAtomExOutputAnalyzer_DetachDspBusByName");
 		}
+		#endif
 
-		// // RVA: 0x28A0020 Offset: 0x28A0020 VA: 0x28A0020
-		// protected static extern float criAtomExOutputAnalyzer_GetRms(IntPtr analyzer, int channel) { }
+		#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		protected static extern float criAtomExOutputAnalyzer_GetRms(IntPtr analyzer, int channel);
+		#endif
 
 		// // RVA: 0x28A0250 Offset: 0x28A0250 VA: 0x28A0250
 		// protected static extern IntPtr criAtomExOutputAnalyzer_GetSpectrumLevels(IntPtr analyzer) { }
