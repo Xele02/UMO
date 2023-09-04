@@ -45,7 +45,7 @@ public class GGHPEFNADEN_Ticket : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0xAA16D0 Offset: 0xAA16D0 VA: 0xAA16D0 Slot: 5
 	public override void OKJPIBHMKMJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, long MCKEOKFMLAH)
 	{
-		TodoLogger.LogError(TodoLogger.Event, "OKJPIBHMKMJ");
+		TodoLogger.LogError(TodoLogger.Event2, "OKJPIBHMKMJ");
 	}
 
 	// // RVA: 0xAA1A4C Offset: 0xAA1A4C VA: 0xAA1A4C Slot: 6

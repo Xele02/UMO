@@ -62,7 +62,7 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 	// public override void MJFKJHJJLMN(int LHJCOPMMIGO = 0, bool FBBNPFFEJBN = False) { }
 
 	// // RVA: 0x1135118 Offset: 0x1135118 VA: 0x1135118 Slot: 30
-	protected override bool JIHMLILFOPG(long JHNMKKNEENE)
+	protected override bool JIHMLILFOPG_IsEventActive(long JHNMKKNEENE)
 	{
 		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI);
 		if(db != null)
@@ -80,10 +80,16 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x1135790 Offset: 0x1135790 VA: 0x1135790 Slot: 40
-	// protected override void KKFLDCBHFJA(long JHNMKKNEENE) { }
+	protected override void KKFLDCBHFJA(long JHNMKKNEENE)
+	{
+		TodoLogger.LogError(0, "KKFLDCBHFJA");
+	}
 
 	// // RVA: 0x1136474 Offset: 0x1136474 VA: 0x1136474 Slot: 43
-	// protected override void FCHGHAAPIBH() { }
+	protected override void FCHGHAAPIBH()
+	{
+		TodoLogger.LogError(0, "FCHGHAAPIBH");
+	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6BCD6C Offset: 0x6BCD6C VA: 0x6BCD6C
 	// // RVA: 0x1136B28 Offset: 0x1136B28 VA: 0x1136B28 Slot: 44
@@ -173,7 +179,11 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 	// public override int BAEPGOAMBDK(string LJNAKDMILMC, int MNCOAGOKNAO) { }
 
 	// // RVA: 0x113C0B0 Offset: 0x113C0B0 VA: 0x113C0B0 Slot: 72
-	// public override string MAICAKMIBEM(string LJNAKDMILMC, string MNCOAGOKNAO) { }
+	public override string MAICAKMIBEM(string LJNAKDMILMC, string MNCOAGOKNAO)
+	{
+		TodoLogger.LogError(0, "MAICAKMIBEM");
+		return MNCOAGOKNAO;
+	}
 
 	// // RVA: 0x113C230 Offset: 0x113C230 VA: 0x113C230 Slot: 68
 	// public override bool GJMGKBDGMOP(long LPEKHFOMCAH) { }

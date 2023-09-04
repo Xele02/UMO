@@ -66,7 +66,7 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase // TypeDefIndex
 	// public override void MJFKJHJJLMN(int LHJCOPMMIGO = 0, bool FBBNPFFEJBN = False) { }
 
 	// // RVA: 0x183C5C0 Offset: 0x183C5C0 VA: 0x183C5C0 Slot: 30
-	protected override bool JIHMLILFOPG(long JHNMKKNEENE)
+	protected override bool JIHMLILFOPG_IsEventActive(long JHNMKKNEENE)
 	{
 		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI);
 		if(db != null)
@@ -84,7 +84,10 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase // TypeDefIndex
 	}
 
 	// // RVA: 0x183CE74 Offset: 0x183CE74 VA: 0x183CE74 Slot: 40
-	// protected override void KKFLDCBHFJA(long JHNMKKNEENE) { }
+	protected override void KKFLDCBHFJA(long JHNMKKNEENE)
+	{
+		TodoLogger.LogError(0, "KKFLDCBHFJA");
+	}
 
 	// // RVA: 0x183E158 Offset: 0x183E158 VA: 0x183E158 Slot: 41
 	// public override int DBOLCELMBJG() { }
@@ -93,7 +96,10 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase // TypeDefIndex
 	// public override int DEECKJADNMJ(int LAJNCHHNLBI) { }
 
 	// // RVA: 0x183E264 Offset: 0x183E264 VA: 0x183E264 Slot: 43
-	// protected override void FCHGHAAPIBH() { }
+	protected override void FCHGHAAPIBH()
+	{
+		TodoLogger.LogError(0, "FCHGHAAPIBH");
+	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6BC3F4 Offset: 0x6BC3F4 VA: 0x6BC3F4
 	// // RVA: 0x183E950 Offset: 0x183E950 VA: 0x183E950 Slot: 44
@@ -205,7 +211,11 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase // TypeDefIndex
 	// public override int BAEPGOAMBDK(string LJNAKDMILMC, int MNCOAGOKNAO) { }
 
 	// // RVA: 0x1844BA8 Offset: 0x1844BA8 VA: 0x1844BA8 Slot: 72
-	// public override string MAICAKMIBEM(string LJNAKDMILMC, string MNCOAGOKNAO) { }
+	public override string MAICAKMIBEM(string LJNAKDMILMC, string MNCOAGOKNAO)
+	{
+		TodoLogger.LogError(0, "MAICAKMIBEM");
+		return MNCOAGOKNAO;
+	}
 
 	// // RVA: 0x1844D28 Offset: 0x1844D28 VA: 0x1844D28 Slot: 68
 	// public override bool GJMGKBDGMOP(long LPEKHFOMCAH) { }
