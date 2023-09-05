@@ -15,8 +15,8 @@ public class CGJKNOCAPII
 	public int BCOKKAALGHC; // 0x30
 	public bool PNFDMBHDPAJ; // 0x34
 	public BadgeConstant.ID BEEIIJJKDBH; // 0x38
-	public string BHANMJKCCBC; // 0x3C
-	public int PKNLMLDKCLM; // 0x40
+	public string BHANMJKCCBC_QuestAchievedCountText; // 0x3C
+	public int PKNLMLDKCLM_AchievedQuests; // 0x40
 	public IKDICBBFBMI_EventBase COAMJFMEIBF; // 0x44
 	public BKANGIKIEML.NODKLJHEAJB NNHHNFFLCFO; // 0x48
 	public long BALFPCLMOGJ; // 0x50
@@ -25,7 +25,56 @@ public class CGJKNOCAPII
 	//public int KJILFMNCDLC() { }
 
 	//// RVA: 0x12BC584 Offset: 0x12BC584 VA: 0x12BC584
-	//public CGJKNOCAPII BJKJLDPDEFA(IKDICBBFBMI FBFNJMKPBBA, bool PNGKOHDEPFE = True) { }
+	public CGJKNOCAPII BJKJLDPDEFA(IKDICBBFBMI_EventBase FBFNJMKPBBA, bool PNGKOHDEPFE = true)
+	{
+		long l1 = 0;
+		long l2 = 0;
+		long l3 = 0;
+		long l4 = 0;
+		bool b1 = false;
+		CGJKNOCAPII res = new CGJKNOCAPII();
+		res.JOPOPMLFINI = FBFNJMKPBBA.JOPOPMLFINI;
+		res.LFCOJABLOEN = FBFNJMKPBBA.PGIIDPEGGPI;
+		res.DGCOMDILAKM = FBFNJMKPBBA.DGCOMDILAKM;
+		res.PGIIDPEGGPI = FBFNJMKPBBA.PGIIDPEGGPI;
+		res.JHAOHBNPMNA = FBFNJMKPBBA.PGIIDPEGGPI;
+		res.COAMJFMEIBF = FBFNJMKPBBA;
+		if(FBFNJMKPBBA.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI/*6*/)
+		{
+			res.KINJOEIAHFK_Start = FBFNJMKPBBA.GLIMIGNNGGB_Start;
+			res.PCCFAKEOBIC_End = FBFNJMKPBBA.DPJCPDKALGI_End1;
+		}
+		else
+		{
+			res.KINJOEIAHFK_Start = FBFNJMKPBBA.DPJCPDKALGI_End1 + 1;
+			res.PCCFAKEOBIC_End = FBFNJMKPBBA.LJOHLEGGGMC;
+		}
+		res.PNFDMBHDPAJ = FBFNJMKPBBA.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD.MEAJLPAHINL/*5*/;
+		res.BCOKKAALGHC = 0;
+		if(FBFNJMKPBBA is KNKDBNFMAKF_EventSp)
+		{
+			TodoLogger.LogError(0, "Event SP");
+		}
+		res.NNHHNFFLCFO = ILLPDLODANB.ODEHLBNBPPE(FBFNJMKPBBA);
+		res.BEEIIJJKDBH = 0;
+		res.BHANMJKCCBC_QuestAchievedCountText = "";
+		if(PNGKOHDEPFE)
+		{
+			List<FKMOKDCJFEN> l = QuestUtility.GetEventQuestList(res.JOPOPMLFINI);
+			if(l == null)
+			{
+				l = FKMOKDCJFEN.KJHKBBBDBAL(res.JOPOPMLFINI, false, res.BCOKKAALGHC);
+			}
+			PKNLMLDKCLM_AchievedQuests = QuestUtility.GetQuestCountByStatus(l, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
+			if(PKNLMLDKCLM_AchievedQuests > 0)
+			{
+				res.BEEIIJJKDBH = BadgeConstant.ID.Label;
+				res.BHANMJKCCBC_QuestAchievedCountText = QuestUtility.GetAchievedCountText(PKNLMLDKCLM_AchievedQuests);
+			}
+		}
+		res.BALFPCLMOGJ = 0;
+		return res;
+	}
 
 	//// RVA: 0x12BC978 Offset: 0x12BC978 VA: 0x12BC978
 	public static List<CGJKNOCAPII> JHCHAOJFHFG(bool PNGKOHDEPFE = true)
@@ -35,7 +84,35 @@ public class CGJKNOCAPII
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 		for(int i = 0; i < JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Count; i++)
 		{
-			TodoLogger.LogError(0, "JHCHAOJFHFG");
+			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN[i];
+			ev.HCDGELDHFHB_UpdateStatus(time);
+			if(ev.KKFEDJNIAAG(time) && ev.AGLILDLEFDK != null)
+			{
+				if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp)
+				{
+					TodoLogger.LogError(0, "Event SP");
+				}
+				if(ev is PKNOKJNLPOE_EventRaid)
+				{
+					TodoLogger.LogError(0, "Event Raid");
+				}
+				for(int j = 0; j < ev.AGLILDLEFDK.Count; j++)
+				{
+					if(ev.AGLILDLEFDK[j].PPEGAKEIEGM_Enabled == 2)
+					{
+						CGJKNOCAPII data = new CGJKNOCAPII();
+						data = data.BJKJLDPDEFA(ev, PNGKOHDEPFE);
+						if(!data.PNFDMBHDPAJ)
+						{
+							res.Add(data);
+						}
+						else
+						{
+							l2.Add(data);
+						}
+					}
+				}
+			}
 		}
 		res.Sort((CGJKNOCAPII HKICMNAACDA, CGJKNOCAPII BNKHBCBJBKI) =>
 		{
@@ -71,13 +148,13 @@ public class CGJKNOCAPII
 		res.BEEIIJJKDBH = 0;
 		res.PCCFAKEOBIC_End = bingo.FDBNFFNFOND_EndTime;
 		res.PNFDMBHDPAJ = false;
-		res.BHANMJKCCBC = "";
+		res.BHANMJKCCBC_QuestAchievedCountText = "";
 		if(PNGKOHDEPFE)
 		{
-			res.PKNLMLDKCLM = GNGMCIAIKMA.HHCJCDFCLOB.OBOGIOGEBPK(APFDNBGMMMM, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
-			if(res.PKNLMLDKCLM > 0)
+			res.PKNLMLDKCLM_AchievedQuests = GNGMCIAIKMA.HHCJCDFCLOB.OBOGIOGEBPK(APFDNBGMMMM, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
+			if(res.PKNLMLDKCLM_AchievedQuests > 0)
 			{
-				res.BHANMJKCCBC = QuestUtility.GetAchievedCountText(res.PKNLMLDKCLM);
+				res.BHANMJKCCBC_QuestAchievedCountText = QuestUtility.GetAchievedCountText(res.PKNLMLDKCLM_AchievedQuests);
 			}
 		}
 		res.BALFPCLMOGJ = 0;

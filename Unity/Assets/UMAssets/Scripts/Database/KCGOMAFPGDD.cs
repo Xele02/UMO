@@ -136,7 +136,12 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x101FF80 Offset: 0x101FF80 VA: 0x101FF80
-	//public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH) { }
+	public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH)
+	{
+		if (!OHJFBLFELNK.ContainsKey(LJNAKDMILMC))
+			return KKMJBMKHGNH;
+		return OHJFBLFELNK[LJNAKDMILMC].DNJEJEANJGL_Value;
+	}
 
 	// RVA: 0x1020064 Offset: 0x1020064 VA: 0x1020064
 	public KCGOMAFPGDD_EventAprilFool()
@@ -189,8 +194,14 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 		{
 			TodoLogger.LogError(TodoLogger.Event, "Switch to the real event enable");
 			System.DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
-			NGHKJOEDLIP.BONDDBOFBND_Start = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day - 1, 0, 0, 0);
-			NGHKJOEDLIP.KNLGKBBIBOH_End = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day + 10, 0, 0, 0);
+			System.DateTime date2 = Utility.GetLocalDateTime(NGHKJOEDLIP.BONDDBOFBND_Start);
+			long offset = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day - 1, date2.Hour, date2.Minute, date2.Second) - NGHKJOEDLIP.BONDDBOFBND_Start;
+			NGHKJOEDLIP.BONDDBOFBND_Start += offset;
+			NGHKJOEDLIP.HPNOGLIFJOP += offset;
+			NGHKJOEDLIP.LNFKGHNHJKE += offset;
+			NGHKJOEDLIP.JGMDAOACOJF += offset;
+			NGHKJOEDLIP.IDDBFFBPNGI += offset;
+			NGHKJOEDLIP.KNLGKBBIBOH_End += offset;
 		}
 		return true;
 	}

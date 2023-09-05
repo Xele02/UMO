@@ -112,6 +112,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x958058 Offset: 0x958058 VA: 0x958058
-		// public void LoadForMission(int missionId, Action<IiconTexture> callback) { }
+		public void LoadForMission(int missionId, Action<IiconTexture> callback)
+		{
+			m_bundleName.SetFormat(BundleFormatForMission, missionId);
+			Load(m_bundleName.ToString(), callback);
+		}
 	}
 }

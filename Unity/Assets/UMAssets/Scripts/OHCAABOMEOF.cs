@@ -10,7 +10,7 @@ public class OHCAABOMEOF
         KEILBOLBDHN = 4,
         ENMHPBGOOII = 5,
         NKDOEBONGNI_EventQuest = 6,
-        ENPJADLIFAB = 7,
+        ENPJADLIFAB_EventSp = 7,
         OCCGDMDBCHK_EventGacha = 8,
         DMPMKBCPHMA = 9,
         DAMDPLEBNCB_AprilFool = 10,

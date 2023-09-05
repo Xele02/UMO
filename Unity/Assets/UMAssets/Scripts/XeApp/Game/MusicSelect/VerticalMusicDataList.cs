@@ -243,7 +243,7 @@ namespace XeApp.Game.MusicSelect
 					}
 					else
 					{
-						eventPeriodString = GetEventPeriodString(eventController.GLIMIGNNGGB, eventController.DPJCPDKALGI);
+						eventPeriodString = GetEventPeriodString(eventController.GLIMIGNNGGB_Start, eventController.DPJCPDKALGI_End1);
 						if (musicData.AHAEGEHKONB_GetOtherTimeLeft() == 0)
 						{
 							continue;
@@ -357,8 +357,8 @@ namespace XeApp.Game.MusicSelect
 			});
 			for(int i = 0; i < list.Count; i++)
 			{
-				list[i].HCDGELDHFHB(currentTime);
-				if(list[i].NGOFCFJHOMI > KGCNCBOKCBA.GNENJEHKMHD.FFLKPBPBPEP && list[i].NGOFCFJHOMI <= term)
+				list[i].HCDGELDHFHB_UpdateStatus(currentTime);
+				if(list[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD.FFLKPBPBPEP && list[i].NGOFCFJHOMI_Status <= term)
 				{
 					res.Add(list[i]);
 				}

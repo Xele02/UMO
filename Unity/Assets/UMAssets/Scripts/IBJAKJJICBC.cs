@@ -559,7 +559,9 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 		});
 		for(int i = 0; i < evts.Count; i++)
 		{
-			TodoLogger.LogError(0, "DJPFFHLCCNL");
+			evts[i].HCDGELDHFHB_UpdateStatus(JHNMKKNEENE);
+			if (evts[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD.FFLKPBPBPEP && evts[i].NGOFCFJHOMI_Status <= BELFNAHNMDL)
+				res.Add(evts[i]);
 		}
 		return res;
 	}

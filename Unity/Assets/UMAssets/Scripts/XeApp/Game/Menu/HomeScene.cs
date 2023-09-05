@@ -145,7 +145,7 @@ namespace XeApp.Game.Menu
 			SetupPickup();
 			m_campaignBanner.onClickBannerButton = OnClickHomeBanner;
 			m_campaignBanner.Setup(m_pickupBannerList, m_bannerTexCache);
-			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB/*7*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
+			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp/*7*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
 			if(ev == null)
 			{
 				m_spEventCtrl = null;
@@ -1485,7 +1485,36 @@ namespace XeApp.Game.Menu
 			currentTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			foreach(var it in JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN)
 			{
-				TodoLogger.LogError(0, "Co_HomeMissionAnnounce");
+				if(it.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool)
+				{
+					if(it is AMLGMLNGMFB_EventAprilFool)
+					{
+						AMLGMLNGMFB_EventAprilFool af = it as AMLGMLNGMFB_EventAprilFool;
+						view = af.PBPJDMGEMAO(currentTime);
+						if (view != null)
+						{
+							if(view.DDIOHHEGANL != view.ELIFBFLFAFC)
+							{
+								HomeComebackPopup popup = null;
+								lyOp = AssetBundleManager.LoadLayoutAsync("ly/006.xab", "root_home_mission_window_layout_root");
+								yield return lyOp;
+								yield return Co.R(lyOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject obj) =>
+								{
+									//0x13C6E10
+									popup = obj.GetComponent<HomeComebackPopup>();
+									popup.transform.SetParent(transform.parent, false);
+								}));
+								AssetBundleManager.UnloadAssetBundle("ly/006.xab", false);
+								yield return Co.R(popup.Co_Open(m_bannerTexCache, view.CMJEGIEJNMD, view.DDIOHHEGANL, view.ELIFBFLFAFC));
+								Destroy(popup.gameObject);
+								localSaveData.KOGBMDOONFA.IDCGBCGNOLH_Day = currentDay;
+								localSaveData.HJMKBCFJOOH_Save();
+								view = null;
+								lyOp = null;
+							}
+						}
+					}
+				}
 			}
 
 		}
@@ -1865,7 +1894,78 @@ namespace XeApp.Game.Menu
 			eventControlers = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN;
 			for(i = 0; i < eventControlers.Count; i++)
 			{
-				TodoLogger.LogError(0, "Coroutine_EventReward");
+				long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				eventController = eventControlers[i];
+				eventController.HCDGELDHFHB_UpdateStatus(time);
+				if(eventController.NGOFCFJHOMI_Status == KGCNCBOKCBA.GNENJEHKMHD.DDEODFNANDO/*8*/)
+				{
+					rankingNum = eventController.NGIHFKHOJOK(false);
+					for(n = 0; n < rankingNum; n++)
+					{
+						rankingIndex = eventController.DEECKJADNMJ(n);
+						if(!eventController.PIDEAJOJKKC(rankingIndex))
+						{
+							eventController.LHAEPPFACOB(rankingIndex, true);
+						}
+						else
+						{
+							eventController.FPPNKEPDEBL(rankingIndex);
+							while (!eventController.PLOOEECNHFB)
+								yield return null;
+							if(eventController.NPNNPNAIONN)
+							{
+								OnNetErrorToTitle();
+								yield return null;
+								yield break;
+							}
+							isEnd = false;
+							isError = false;
+							CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
+							{
+								//0x13C7418
+								isEnd = true;
+							}, () =>
+							{
+								//0x13C7424
+								isEnd = true;
+								isError = true;
+							}, null);
+							while (!isEnd)
+								yield return null;
+							if(isError)
+							{
+								OnNetErrorToTitle();
+								yield return null;
+								yield break;
+							}
+							if(eventController.HLFHJIDHJMP != null)
+							{
+								isShowReward = false;
+								isCallRanking = false;
+								CIOECGOMILE.HHCJCDFCLOB.KPFKKDDOHCN.ECFNAOCFKKN_Date = 0;
+								NKGJPJPHLIF.HHCJCDFCLOB.OLDKENOLHLL = 0;
+								this.StartCoroutineWatched(PopupRewardEvResult.Co_ShowPopup_Ranking(rankingIndex, eventController, transform, rankingIndex + 1, (PopupWindowControl ctl, PopupButton.ButtonType type, PopupButton.ButtonLabel lbl) =>
+								{
+									//0x13C7430
+									if (lbl == PopupButton.ButtonLabel.FinalRankings)
+										isCallRanking = true;
+								}, () =>
+								{
+									//0x13C7440
+									isShowReward = true;
+								}));
+								while (!isShowReward)
+									yield return null;
+								if(isCallRanking)
+								{
+									EventRankingSceneArgs arg = new EventRankingSceneArgs(eventController, false, n, 0);
+									MenuScene.Instance.Call(TransitionList.Type.EVENT_RANKING, arg, true);
+									yield break;
+								}
+							}
+						}
+					}
+				}
 			}
 			eventControlers = null;
 			yield return null;
@@ -1937,7 +2037,20 @@ namespace XeApp.Game.Menu
 			{
 				for(int i = 0; i < JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Count; i++)
 				{
-					TodoLogger.LogError(0, "Event GetEventAdvId");
+					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN[i];
+					int advId = ev.BAEPGOAMBDK("adv_id", 0);
+					if (advId > 0)
+					{
+						if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN(advId))
+						{
+							long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+							if(time >= ev.GLIMIGNNGGB_Start)
+							{
+								if (ev.DPJCPDKALGI_End1 >= time)
+									return advId;
+							}
+						}
+					}
 				}
 			}
 			return 0;

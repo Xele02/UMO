@@ -1300,12 +1300,12 @@ namespace XeApp.Game.Menu
 				{
 					m_musicSelectUISapporter.SetScoreRankingNum(0);
 					m_musicSelectUISapporter.SetDetailEventType(true, VerticalMusicSelectMusicDetail.MusicRemainTimeType.ScoreRanking, false);
-					ApplyRemainTime(m_musicDetail, m_scoreEventCtrl.DPJCPDKALGI, VerticalMusicSelectMusicDetail.MusicRemainTimeType.ScoreRanking, null);
+					ApplyRemainTime(m_musicDetail, m_scoreEventCtrl.DPJCPDKALGI_End1, VerticalMusicSelectMusicDetail.MusicRemainTimeType.ScoreRanking, null);
 					m_musicDetail.EventCountingEnable(true);
 					return;
 				}
 				m_musicSelectUISapporter.SetDetailEventType(true, VerticalMusicSelectMusicDetail.MusicRemainTimeType.ScoreRanking, true);
-				ApplyRemainTime(m_musicDetail, m_scoreEventCtrl.DPJCPDKALGI, VerticalMusicSelectMusicDetail.MusicRemainTimeType.ScoreRanking, null);
+				ApplyRemainTime(m_musicDetail, m_scoreEventCtrl.DPJCPDKALGI_End1, VerticalMusicSelectMusicDetail.MusicRemainTimeType.ScoreRanking, null);
 				return;
 			}
 			if(selectMusicData.FGKMJHKLGLD)
