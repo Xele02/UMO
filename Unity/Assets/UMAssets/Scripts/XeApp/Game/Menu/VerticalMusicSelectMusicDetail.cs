@@ -438,7 +438,21 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBDFC90 Offset: 0xBDFC90 VA: 0xBDFC90
-		// public void SetEventTime(string time, VerticalMusicSelectMusicDetail.MusicRemainTimeType remainTimeType) { }
+		public void SetEventTime(string time, MusicRemainTimeType remainTimeType)
+		{
+			if(remainTimeType >= MusicRemainTimeType.ScoreRanking)
+			{
+				m_eventRemainTime.text = string.Format(m_eventRemainTimeFormat, time);
+			}
+			else if(remainTimeType == MusicRemainTimeType.HighLevel)
+			{
+				m_highLevelRemainTime.text = string.Format(m_eventRemainTimeFormat, time);
+			}
+			else if(remainTimeType == MusicRemainTimeType.Weekly)
+			{
+				m_weeklyRemainTime.text = string.Format(m_eventRemainTimeFormat, time);
+			}
+		}
 
 		// // RVA: 0xBDFD40 Offset: 0xBDFD40 VA: 0xBDFD40
 		public void SetWeeklyEventCount(int count)

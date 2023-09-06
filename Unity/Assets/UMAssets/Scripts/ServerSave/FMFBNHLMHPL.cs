@@ -127,7 +127,7 @@ public class FMFBNHLMHPL_EventAprilFool : KLFDBFMNLBL_ServerSaveBlock
 	public const int CCLDBKDCJEH = 1;
 	public List<LCFOEDLCCON> FBCJICEPLED = new List<LCFOEDLCCON>(9); // 0x24
 
-	public override bool DMICHEJIAJL { get { TodoLogger.LogError(0, "DMICHEJIAJL"); return false; } } // 0x119DF54 NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return false; } } // 0x119DF54 NFKFOODCJJB
 
 	// // RVA: 0x1198528 Offset: 0x1198528 VA: 0x1198528
 	public FMFBNHLMHPL_EventAprilFool()

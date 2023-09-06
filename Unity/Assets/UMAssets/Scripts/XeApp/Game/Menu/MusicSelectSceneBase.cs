@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -437,7 +438,32 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xF40494 Offset: 0xF40494 VA: 0xF40494
-		// public static string MakeRemainTime(int days, int hours, int minutes, int seconds) { }
+		public static string MakeRemainTime(int days, int hours, int minutes, int seconds)
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			if(days < 1)
+			{
+				if(hours < 1)
+				{
+					if(minutes < 1)
+					{
+						return string.Format(bk.GetMessageByLabel("music_event_remain_second"), seconds);
+					}
+					else
+					{
+						return string.Format(bk.GetMessageByLabel("music_event_remain_minute"), minutes);
+					}
+				}
+				else
+				{
+					return string.Format(bk.GetMessageByLabel("music_event_remain_hour"), hours);
+				}
+			}
+			else
+			{
+				return string.Format(bk.GetMessageByLabel("music_event_remain_day"), days);
+			}
+		}
 
 		// // RVA: 0xF3F63C Offset: 0xF3F63C VA: 0xF3F63C
 		// public static void ExtractDateTime(long unixTime, out int years, out int months, out int days, out int hours, out int minutes) { }

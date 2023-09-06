@@ -264,7 +264,7 @@ public class JBCAHMMCOKK
 								{
 									JBCAHMMCOKK data = new JBCAHMMCOKK();
 									data.KHEKNNFCAOI(KOGBMDOONFA.PPFNGGCBJKC);
-									data.EAHPLCJMPHD = ev.PGIIDPEGGPI;
+									data.EAHPLCJMPHD = ev.PGIIDPEGGPI_EventId;
 									data.PEDBFNIOCEN = ev.JOPOPMLFINI;
 									data.KJBGCLPMLCG = ev.GLIMIGNNGGB_Start;
 									data.GJFPFFBAKGK = ev.DPJCPDKALGI_End1;
@@ -339,10 +339,13 @@ public class JBCAHMMCOKK
 					int a = 0;
 					if (!int.TryParse(KOGBMDOONFA.PIBLLGLCJEO, out a) || a != DHABOCGMFLN)
 						return;
-					List<IBJAKJJICBC> l = IBJAKJJICBC.FKDIMODKKJD(5, JHNMKKNEENE, true, false, false);
+					List<IBJAKJJICBC> l = IBJAKJJICBC.FKDIMODKKJD(5, JHNMKKNEENE, true, false, false, false);
 					for(int i = 0; i < l.Count; i++)
 					{
-						TodoLogger.LogError(0, "HEGEKFMJNCC 10 event");
+						if(l[i].LHONOILACFL_IsWeeklyEvent)
+						{
+							TodoLogger.LogError(0, "HEGEKFMJNCC 10 event");
+						}
 					}
 				}
 				break;
@@ -359,7 +362,7 @@ public class JBCAHMMCOKK
 					for(int i = 0; i < JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Count; i++)
 					{
 						IKDICBBFBMI_EventBase ev2 = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN[i];
-						if(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MLKAJEDCPLP(ev2.PGIIDPEGGPI))
+						if(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MLKAJEDCPLP(ev2.PGIIDPEGGPI_EventId))
 						{
 							int idx = l2.FindIndex((int GHPLINIACBB) =>
 							{
@@ -371,7 +374,7 @@ public class JBCAHMMCOKK
 								int idx2 = l3.FindIndex((int GHPLINIACBB) =>
 								{
 									//0x14205F4
-									return ev2.PGIIDPEGGPI == GHPLINIACBB;
+									return ev2.PGIIDPEGGPI_EventId == GHPLINIACBB;
 								});
 								if(idx2 < 0)
 								{
@@ -381,7 +384,7 @@ public class JBCAHMMCOKK
 									{
 										data.BJIMIONBKDD = false;
 									}
-									data.EAHPLCJMPHD = ev2.PGIIDPEGGPI;
+									data.EAHPLCJMPHD = ev2.PGIIDPEGGPI_EventId;
 									data.PEDBFNIOCEN = ev2.JOPOPMLFINI;
 									data.KJBGCLPMLCG = ev2.GLIMIGNNGGB_Start;
 									data.GJFPFFBAKGK = ev2.DPJCPDKALGI_End1;

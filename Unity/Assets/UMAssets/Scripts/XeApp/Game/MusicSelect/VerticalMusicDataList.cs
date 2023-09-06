@@ -280,23 +280,22 @@ namespace XeApp.Game.MusicSelect
 						for (int j = 0; j < list.Count; j++)
 						{
 							AMLGMLNGMFB_EventAprilFool eventApril = list[j] as AMLGMLNGMFB_EventAprilFool;
-							if (musicData.EKANGPODCEP_EventId == eventApril.PGIIDPEGGPI)
+							if (musicData.EKANGPODCEP_EventId == eventApril.PGIIDPEGGPI_EventId)
 							{
-								TodoLogger.LogError(0, "CreateMusicDataList april event");
-								/*KCGOMAFPGDD.EIEGCBJHGCP dd = eventApril.KOBMFPACBMB().Find((KCGOMAFPGDD.EIEGCBJHGCP x) =>
+								KCGOMAFPGDD_EventAprilFool.EIEGCBJHGCP dd = eventApril.KOBMFPACBMB().Find((KCGOMAFPGDD_EventAprilFool.EIEGCBJHGCP x) =>
 								{
 									//0xCA3DB4
-									return x.MPLGPBNJDJB == musicData.GHBPLHBNMBK_FreeMusicId;
+									return x.MPLGPBNJDJB_FreeMusicId == musicData.GHBPLHBNMBK_FreeMusicId;
 								});
-								aprilFoolEndTime = eventApril.DPJCPDKALGI;
-								if (dd.FDBNFFNFOND != 0)
+								aprilFoolEndTime = eventApril.DPJCPDKALGI_End1;
+								if (dd.FDBNFFNFOND_CloseAt != 0)
 								{
-									aprilFoolEndTime = dd.FDBNFFNFOND;
+									aprilFoolEndTime = dd.FDBNFFNFOND_CloseAt;
 								}
-								if (eventApril.HLPEBPOPCPI() != 0 && dd.PPFNGGCBJKC == eventApril.HLPEBPOPCPI())
+								if (eventApril.HLPEBPOPCPI_GetChangeMusicSelectUI() != 0 && dd.PPFNGGCBJKC_Id == eventApril.HLPEBPOPCPI_GetChangeMusicSelectUI())
 								{
 									isHighLevel = true;
-								}*/
+								}
 							}
 						}
 					}

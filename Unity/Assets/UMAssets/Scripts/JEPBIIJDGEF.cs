@@ -173,7 +173,7 @@ public class JEPBIIJDGEF_EventInfo
 		return MPEOOINCGEN.Find((IKDICBBFBMI_EventBase PKLPKMLGFGK) =>
 		{
 			//0x1C40894
-			return PKLPKMLGFGK.PGIIDPEGGPI == EKANGPODCEP;
+			return PKLPKMLGFGK.PGIIDPEGGPI_EventId == EKANGPODCEP;
 		});
 	}
 
@@ -354,7 +354,24 @@ public class JEPBIIJDGEF_EventInfo
 		yield return null;
 		for(int i = 0; i < MPEOOINCGEN.Count; i++)
 		{
-			TodoLogger.LogError(0, "ACMHBOEOPLP_Coroutine_GetMyRanks Event");
+			IMMEEJNOKKK = MPEOOINCGEN[i];
+			if(IMMEEJNOKKK.IBNKPMPFLGI)
+			{
+				if(HIDHLFCBIDE != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL/*0*/)
+				{
+					if (IMMEEJNOKKK.HIDHLFCBIDE_EventType != HIDHLFCBIDE)
+						continue;
+					IMMEEJNOKKK.MJFKJHJJLMN(LHJCOPMMIGO, FBBNPFFEJBN);
+					while (!IMMEEJNOKKK.PLOOEECNHFB)
+						yield return null;
+					if(IMMEEJNOKKK.NPNNPNAIONN)
+					{
+						MOBEEPPKFLG();
+						yield break;
+					}
+				}
+			}
+			IMMEEJNOKKK = null;
 		}
 		BHFHGFKBOHH();
 	}
@@ -391,11 +408,11 @@ public class JEPBIIJDGEF_EventInfo
 						HODOGPOKOOJ.KCCLHODILPA_Event2.Add(4001);
 					}
 				}
-				HODOGPOKOOJ.BFHLPPDKOPC_Event1.Add(MPEOOINCGEN[i].PGIIDPEGGPI);
+				HODOGPOKOOJ.BFHLPPDKOPC_Event1.Add(MPEOOINCGEN[i].PGIIDPEGGPI_EventId);
 			}
 			else
 			{
-				HODOGPOKOOJ.KCCLHODILPA_Event2.Add(MPEOOINCGEN[i].PGIIDPEGGPI);
+				HODOGPOKOOJ.KCCLHODILPA_Event2.Add(MPEOOINCGEN[i].PGIIDPEGGPI_EventId);
 			}
 		}
     }

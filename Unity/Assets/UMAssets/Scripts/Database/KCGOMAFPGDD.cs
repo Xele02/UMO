@@ -196,12 +196,22 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 			System.DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
 			System.DateTime date2 = Utility.GetLocalDateTime(NGHKJOEDLIP.BONDDBOFBND_Start);
 			long offset = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day - 1, date2.Hour, date2.Minute, date2.Second) - NGHKJOEDLIP.BONDDBOFBND_Start;
-			NGHKJOEDLIP.BONDDBOFBND_Start += offset;
-			NGHKJOEDLIP.HPNOGLIFJOP += offset;
-			NGHKJOEDLIP.LNFKGHNHJKE += offset;
-			NGHKJOEDLIP.JGMDAOACOJF += offset;
-			NGHKJOEDLIP.IDDBFFBPNGI += offset;
-			NGHKJOEDLIP.KNLGKBBIBOH_End += offset;
+			if (NGHKJOEDLIP.BONDDBOFBND_Start != 0) NGHKJOEDLIP.BONDDBOFBND_Start += offset;
+			if (NGHKJOEDLIP.HPNOGLIFJOP != 0) NGHKJOEDLIP.HPNOGLIFJOP += offset;
+			if (NGHKJOEDLIP.LNFKGHNHJKE != 0) NGHKJOEDLIP.LNFKGHNHJKE += offset;
+			if (NGHKJOEDLIP.JGMDAOACOJF != 0) NGHKJOEDLIP.JGMDAOACOJF += offset;
+			if (NGHKJOEDLIP.IDDBFFBPNGI != 0) NGHKJOEDLIP.IDDBFFBPNGI += offset;
+			if (NGHKJOEDLIP.KNLGKBBIBOH_End != 0) NGHKJOEDLIP.KNLGKBBIBOH_End += offset;
+			for(int i = 0; i < IJJHFGOIDOK.Count; i++)
+			{
+				if (IJJHFGOIDOK[i].PDBPFJJCADD_OpenAt != 0) IJJHFGOIDOK[i].PDBPFJJCADD_OpenAt += offset;
+				if (IJJHFGOIDOK[i].FDBNFFNFOND_CloseAt != 0) IJJHFGOIDOK[i].FDBNFFNFOND_CloseAt += offset;
+			}
+			for (int i = 0; i < NNMPGOAGEOL.Count; i++)
+			{
+				if (NNMPGOAGEOL[i].KJBGCLPMLCG_Start != 0) NNMPGOAGEOL[i].KJBGCLPMLCG_Start += offset;
+				if (NNMPGOAGEOL[i].GJFPFFBAKGK_End != 0) NNMPGOAGEOL[i].GJFPFFBAKGK_End += offset;
+			}
 		}
 		return true;
 	}

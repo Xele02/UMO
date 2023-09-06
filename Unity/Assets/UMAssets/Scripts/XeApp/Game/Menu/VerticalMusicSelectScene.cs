@@ -89,7 +89,7 @@ namespace XeApp.Game.Menu
 				return m_filterMusicDataList;
 			return m_filterMusicEventDataList;
 		} } //0xBE5D14
-		protected override List<VerticalMusicDataList> originalMusicList { get { return m_originalEventMusicDataList; } } //0xBE5D2C
+		protected override List<VerticalMusicDataList> originalMusicList { get { return m_originalMusicDataList; } } //0xBE5D2C
 		protected override bool isLine6Mode { get { return m_musicSelectUISapporter.isLine6Mode; } } //0xBE5D34
 		private bool m_isLine6Mode { get { return m_musicSelectUISapporter.isLine6Mode;  } set { m_musicSelectUISapporter.isLine6Mode = value; } } //0xBE5D7C 0xBE5D58
 		// private List<VerticalMusicDataList> currentOriginalMusicDataList { get; } 0xBE5DA4
@@ -775,7 +775,7 @@ namespace XeApp.Game.Menu
 				VerticalMusicDataList.MusicListData l = musicList.Get(i, false, false);
 				if(l.ViewMusic.AJGCPCMLGKO_IsEvent)
 				{
-					bundleName.SetFormat("ct/ev/mc/{0:D4}.xab", l.ViewMusic.AFCMIOIGAJN_EventInfo.GOAPADIHAHG);
+					bundleName.SetFormat("ct/ev/mc/{0:D4}.xab", l.ViewMusic.AFCMIOIGAJN_EventInfo.GOAPADIHAHG_EventId);
 				}
 				else
 				{
@@ -785,7 +785,7 @@ namespace XeApp.Game.Menu
 					}
 					else
 					{
-						bundleName.SetFormat("ct/ev/mc/{0:D4}.xab", l.ViewMusic.NOKBLCDMLPP_MinigameEventInfo.GOAPADIHAHG);
+						bundleName.SetFormat("ct/ev/mc/{0:D4}.xab", l.ViewMusic.NOKBLCDMLPP_MinigameEventInfo.GOAPADIHAHG_EventId);
 					}
 				}
 				KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(bundleName.ToString());
@@ -1007,7 +1007,7 @@ namespace XeApp.Game.Menu
 			datalist2.AddList(list4, true, false);
 			datalist2.AddList(new List<VerticalMusicDataList.MusicListData>(), false, true);
 			datalist2.AddList(new List<VerticalMusicDataList.MusicListData>(), true, true);
-			m_originalMusicDataList.Add(datalist2);
+			m_originalEventMusicDataList.Add(datalist2);
 		}
 
 		// // RVA: 0xBE87B4 Offset: 0xBE87B4 VA: 0xBE87B4
@@ -1325,7 +1325,7 @@ namespace XeApp.Game.Menu
 			{
 				if(selectMusicListData.IsSimulation)
 				{
-					if(selectMusicListData.ViewMusic.EKANGPODCEP_EventId != m_eventCtrl.PGIIDPEGGPI || !m_isEventTimeLimit)
+					if(selectMusicListData.ViewMusic.EKANGPODCEP_EventId != m_eventCtrl.PGIIDPEGGPI_EventId || !m_isEventTimeLimit)
 					{
 						ApplyRemainTime(m_musicDetail, selectMusicData.ALMOMLMCHNA_OtherEndTime, VerticalMusicSelectMusicDetail.MusicRemainTimeType.Other, null);
 						m_musicSelectUISapporter.SetDetailEventType(true, VerticalMusicSelectMusicDetail.MusicRemainTimeType.Other, true);
@@ -1561,8 +1561,28 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBEE6D8 Offset: 0xBEE6D8 VA: 0xBEE6D8
 		private int EventMusicDataListSortCb(VerticalMusicDataList.MusicListData left, VerticalMusicDataList.MusicListData right)
 		{
-			TodoLogger.LogError(0, "EventMusicDataListSortCb");
-			return left.ViewMusic.DLAEJOBELBH_MusicId.CompareTo(right.ViewMusic.DLAEJOBELBH_MusicId);
+			int res = -1;
+			if(!left.ViewMusic.AJGCPCMLGKO_IsEvent)
+			{
+				if(!right.ViewMusic.AJGCPCMLGKO_IsEvent)
+				{
+					if(m_eventId == left.ViewMusic.EKANGPODCEP_EventId)
+					{
+						if (m_eventId == right.ViewMusic.EKANGPODCEP_EventId)
+							return 0;
+					}
+					res = -1;
+					if(m_eventId != left.ViewMusic.EKANGPODCEP_EventId)
+					{
+						res = 1;
+						if(m_eventId != right.ViewMusic.EKANGPODCEP_EventId)
+						{
+							return left.ViewMusic.EKANGPODCEP_EventId.CompareTo(right.ViewMusic.EKANGPODCEP_EventId);
+						}
+					}
+				}
+			}
+			return res;
 		}
 
 		// // RVA: 0xBEE8C0 Offset: 0xBEE8C0 VA: 0xBEE8C0
