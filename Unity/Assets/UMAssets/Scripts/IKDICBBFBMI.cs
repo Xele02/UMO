@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using XeApp.Game.Common;
 using XeApp.Game.Menu;
 
 public class NHGEHCMPDAI
@@ -301,10 +302,60 @@ public abstract class IKDICBBFBMI_EventBase
     }
 
 	// // RVA: 0x8DE830 Offset: 0x8DE830 VA: 0x8DE830 Slot: 20
-	// public virtual void EBHPADDEJKH(JGEOBNENMAH.EDHCNKBMLGI OMNOFMEBLAD, GBNDFCEDNMG.CJDGJFINBFH HDAMBOOCIAA) { }
+	public virtual void EBHPADDEJKH(JGEOBNENMAH.EDHCNKBMLGI OMNOFMEBLAD, GBNDFCEDNMG.CJDGJFINBFH HDAMBOOCIAA)
+	{
+		if(AGLILDLEFDK != null && OLDFFDMPEBM != null && OMNOFMEBLAD != null)
+		{
+			int c = AGLILDLEFDK.Count;
+			if (OLDFFDMPEBM.Count < c)
+				c = OLDFFDMPEBM.Count;
+			JGEOBNENMAH.HAJIFNABIFF data = new JGEOBNENMAH.HAJIFNABIFF();
+			data.KNIFCANOHOC_Score = -1;
+			data.GHBPLHBNMBK_FreeMusicId = OMNOFMEBLAD.GHBPLHBNMBK_FreeMusicId;
+			data.AKNELONELJK_Difficulty = OMNOFMEBLAD.AKNELONELJK_Difficulty;
+			data.LFGNLKKFOCD_IsLine6 = OMNOFMEBLAD.LFGNLKKFOCD_IsLine6;
+			data.MNNHHJBBICA_GameEventType = OMNOFMEBLAD.MNNHHJBBICA_GameEventType;
+			data.OEILJHENAHN_PlayEventType = OMNOFMEBLAD.OEILJHENAHN_PlayEventType;
+			data.OBOPMHBPCFE_MvMode = OMNOFMEBLAD.OBOPMHBPCFE_MvMode;
+			data.HNHCIGMKPDC_DivaIds = new List<int>(5);
+			for(int i = 0; i < Database.Instance.gameSetup.teamInfo.divaList.Length; i++)
+			{
+				data.HNHCIGMKPDC_DivaIds.Add(Database.Instance.gameSetup.teamInfo.divaList[i].divaId);
+			}
+			data.NFFDIGEJHGL_ServerTime = JGEOBNENMAH.HHCJCDFCLOB.GJIICCJMDIF_GetServerTime();
+			for(int i = 0; i < c; i++)
+			{
+				if(OLDFFDMPEBM[i].EALOBDHOCHP_Stat == 1)
+				{
+					if(GBNDFCEDNMG.DACHEKFEFNN(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, AGLILDLEFDK[i], data, this, false, HDAMBOOCIAA))
+					{
+						BOHCAIIBPEJ(AGLILDLEFDK[i], OLDFFDMPEBM[i], null, this);
+					}
+				}
+			}
+		}
+	}
 
 	// // RVA: 0x8DEE04 Offset: 0x8DEE04 VA: 0x8DEE04 Slot: 21
-	// public virtual void CNPHACDBLMD(JGEOBNENMAH.HAJIFNABIFF OMNOFMEBLAD) { }
+	public virtual void CNPHACDBLMD(JGEOBNENMAH.HAJIFNABIFF OMNOFMEBLAD)
+	{
+		if(AGLILDLEFDK != null && OLDFFDMPEBM != null && OMNOFMEBLAD != null)
+		{
+			int c = AGLILDLEFDK.Count;
+			if (OLDFFDMPEBM.Count < c)
+				c = OLDFFDMPEBM.Count;
+			for(int i = 0; i < c; i++)
+			{
+				if(OLDFFDMPEBM[i].EALOBDHOCHP_Stat == 1)
+				{
+					if(GBNDFCEDNMG.EIJIGDCMJLB(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, AGLILDLEFDK[i], OMNOFMEBLAD, this, false))
+					{
+						BOHCAIIBPEJ(AGLILDLEFDK[i], OLDFFDMPEBM[i], OMNOFMEBLAD, this);
+					}
+				}
+			}
+		}
+	}
 
 	// // RVA: 0x8DF144 Offset: 0x8DF144 VA: 0x8DF144 Slot: 22
 	// public virtual void FHGEJBKNBLP(List<int> CGCFENMHJIM) { }
@@ -397,10 +448,13 @@ public abstract class IKDICBBFBMI_EventBase
 	// public virtual int HLOGNJNGDJO(int OIPCCBHIKIA = 0) { }
 
 	// // RVA: -1 Offset: -1 Slot: 28
-	// public abstract long FBGDBGKNKOD();
+	public abstract long FBGDBGKNKOD();
 
 	// // RVA: 0x8DF6F0 Offset: 0x8DF6F0 VA: 0x8DF6F0
-	// public void ADFLCMBBNHH() { }
+	public void ADFLCMBBNHH()
+	{
+		EJDJIBPKKNO = FBGDBGKNKOD();
+	}
 
 	// // RVA: 0x8DF718 Offset: 0x8DF718 VA: 0x8DF718 Slot: 29
 	public virtual void MJFKJHJJLMN(int LHJCOPMMIGO = 0, bool FBBNPFFEJBN = false)
@@ -587,13 +641,22 @@ public abstract class IKDICBBFBMI_EventBase
 	// public virtual List<int> AEGDKBNNDBC() { }
 
 	// // RVA: 0x8DFD54 Offset: 0x8DFD54 VA: 0x8DFD54 Slot: 60
-	// public virtual bool PIBDBIKJKLD() { }
+	public virtual bool PIBDBIKJKLD_CanPickup()
+	{
+		return false;
+	}
 
 	// // RVA: 0x8DFD5C Offset: 0x8DFD5C VA: 0x8DFD5C Slot: 61
-	// public virtual bool EMNKNFNKPAD(bool JKDJCFEBDHC) { }
+	public virtual bool EMNKNFNKPAD_SetIsPickup(bool JKDJCFEBDHC)
+	{
+		return true;
+	}
 
 	// // RVA: 0x8DFD64 Offset: 0x8DFD64 VA: 0x8DFD64 Slot: 62
-	// public virtual bool MPJIJMMOHDM() { }
+	public virtual bool MPJIJMMOHDM_IsPickup()
+	{
+		return false;
+	}
 
 	// // RVA: 0x8DFD6C Offset: 0x8DFD6C VA: 0x8DFD6C Slot: 63
 	// public virtual MusicSelectCDSelect.EventType CFLLOAEALGN() { }

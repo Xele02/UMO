@@ -1018,7 +1018,31 @@ namespace XeApp.Game.Menu
 			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
 			if(ev != null)
 			{
-				TodoLogger.LogError(0, "Event");
+				if(ev is AMLGMLNGMFB_EventAprilFool)
+				{
+					if(ev.MPJIJMMOHDM_IsPickup())
+					{
+						ev.EMNKNFNKPAD_SetIsPickup(false);
+						if(ev.PIBDBIKJKLD_CanPickup())
+						{
+							m_musicSelectUISapporter.isLine6Mode = false;
+							List<int> l = ev.HEACCHAKMFG();
+							if(l.Count > 0)
+							{
+								for(int i = 0; i < musicListCount; i++)
+								{
+									int idx = m_filterMusicEventDataList.FindIndex(l[0], m_musicSelectUISapporter.isLine6Mode, false);
+									if(idx > -1)
+									{
+										VerticalMusicDataList.MusicListData data = m_filterMusicEventDataList.Get(idx, m_musicSelectUISapporter.isLine6Mode, false);
+										m_pickupFreeMusicId = data.ViewMusic.GHBPLHBNMBK_FreeMusicId;
+										m_pickupFreeCategoryId = FreeCategoryId.Type.Event;
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 

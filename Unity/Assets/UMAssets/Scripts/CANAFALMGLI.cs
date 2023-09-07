@@ -19,7 +19,11 @@ public class CANAFALMGLI_EventPresentCampaign : IKDICBBFBMI_EventBase
     }
 
 	// RVA: 0x18F414C Offset: 0x18F414C VA: 0x18F414C Slot: 28
-	// public override long FBGDBGKNKOD() { }
+	public override long FBGDBGKNKOD()
+	{
+		TodoLogger.LogError(0, "FBGDBGKNKOD");
+		return 0;
+	}
 
 	// // RVA: 0x18F4158 Offset: 0x18F4158 VA: 0x18F4158
 	// public HIADOIECMFP PFNALBDHBLE() { }
