@@ -51,6 +51,12 @@ namespace ExternLib
 					if (commonBlock.POCPLFJCHDD_HomeBg[i].BEBJKJKBOGH_Date == 0)
 						commonBlock.POCPLFJCHDD_HomeBg[i].BEBJKJKBOGH_Date = time;
 				}
+				// Setup a bg
+				if(commonBlock.GPHPNEGGGBG_HomeSceneId == 0)
+				{
+					commonBlock.GPHPNEGGGBG_HomeSceneId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas[0].CMBCBNEODPD_HomeBgId;
+					commonBlock.MDKELFPNCDB_HomeSceneEvolveId = 0;
+				}
 				commonBlock.ACNNFJJMEEO_StoryEnd = 999;
 				commonBlock.ENIPGFLGJHH_LastStory = 999;
 			}
