@@ -45,10 +45,23 @@ namespace XeApp.Game.Menu
 					for(int i = 0; i < m_eventViewList.Count; i++)
 					{
 						EventQuestData data = new EventQuestData();
-						/*data.m_masterName = l[i].JOPOPMLFINI;
-						data.m_uniqueId = */
-						TodoLogger.LogError(0, "UpdateQuestData event");
+						data.m_masterName = m_eventViewList[i].JOPOPMLFINI_MasterName;
+						data.m_uniqueId = m_eventViewList[i].JHAOHBNPMNA_EventId;
+						data.m_eventType = m_eventViewList[i].COAMJFMEIBF.HIDHLFCBIDE_EventType;
+						data.m_viewList = FKMOKDCJFEN.KJHKBBBDBAL(m_eventViewList[i].JOPOPMLFINI_MasterName, false, m_eventViewList[i].BCOKKAALGHC);
+						data.m_achievedCount = GetQuestCountByStatus(data.m_viewList, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
 						m_eventQuestDataList.Add(data);
+						m_eventViewList[i].PKNLMLDKCLM_AchievedQuests = data.m_achievedCount;
+						if(data.m_achievedCount < 1)
+						{
+							m_eventViewList[i].BEEIIJJKDBH = Common.BadgeConstant.ID.None;
+							m_eventViewList[i].BHANMJKCCBC_QuestAchievedCountText = "";
+						}
+						else
+						{
+							m_eventViewList[i].BEEIIJJKDBH = Common.BadgeConstant.ID.Label;
+							m_eventViewList[i].BHANMJKCCBC_QuestAchievedCountText = GetAchievedCountText(data.m_achievedCount);
+						}
 					}
 					break;
 				case LayoutQuestTab.eTabType.Normal:
@@ -73,8 +86,8 @@ namespace XeApp.Game.Menu
 					for (int i = 0; i < m_bingoViewList.Count; i++)
 					{
 						EventQuestData data = new EventQuestData();
-						data.m_masterName = m_bingoViewList[i].JOPOPMLFINI;
-						data.m_uniqueId = m_bingoViewList[i].JHAOHBNPMNA;
+						data.m_masterName = m_bingoViewList[i].JOPOPMLFINI_MasterName;
+						data.m_uniqueId = m_bingoViewList[i].JHAOHBNPMNA_EventId;
 						data.m_eventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.DIDJLIPNCKO;
 						data.m_achievedCount = GNGMCIAIKMA.HHCJCDFCLOB.OBOGIOGEBPK(m_bingoViewList[i].PGIIDPEGGPI, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
 						m_eventQuestDataList.Add(data);

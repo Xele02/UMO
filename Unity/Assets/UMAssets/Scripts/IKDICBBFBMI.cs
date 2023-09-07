@@ -245,7 +245,7 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8DE17C Offset: 0x8DE17C VA: 0x8DE17C Slot: 17
-	public virtual int GBADILEHLGC(int CMEJFJFOIIJ)
+	public virtual int GBADILEHLGC_GetStatus(int CMEJFJFOIIJ)
 	{
 		if(CMEJFJFOIIJ != 0)
 		{
@@ -260,7 +260,13 @@ public abstract class IKDICBBFBMI_EventBase
 	// // RVA: 0x8DE290 Offset: 0x8DE290 VA: 0x8DE290 Slot: 18
 	public virtual int GMFLMIHJAHB(int CMEJFJFOIIJ)
 	{
-		TodoLogger.LogError(0, "GMFLMIHJAHB");
+		if(CMEJFJFOIIJ != 0)
+		{
+			if(AGLILDLEFDK != null && OLDFFDMPEBM != null && CMEJFJFOIIJ <= AGLILDLEFDK.Count && CMEJFJFOIIJ <= OLDFFDMPEBM.Count)
+			{
+				return OLDFFDMPEBM[CMEJFJFOIIJ - 1].HMFFHLPNMPH_Count;
+			}
+		}
 		return 0;
 	}
 

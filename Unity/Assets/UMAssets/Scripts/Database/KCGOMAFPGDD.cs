@@ -190,7 +190,9 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 				v = 0;
 			IHKIFGPICLG_HelpIds.Add(v);
 		}
-		if(JIKKNHIAEKG_BlockName == "event_april_fool_a")
+		//if(JIKKNHIAEKG_BlockName == "event_april_fool_a")
+		//if (JIKKNHIAEKG_BlockName == "event_april_fool_b")
+		if (JIKKNHIAEKG_BlockName == "event_april_fool_c")
 		{
 			TodoLogger.LogError(TodoLogger.Event, "Switch to the real event enable");
 			System.DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());

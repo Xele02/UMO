@@ -68,7 +68,7 @@ public class PLADCDJLOBE
 							}
 							for(int j = 0; j < ev2.AGLILDLEFDK.Count; j++)
 							{
-								if(ev2.GBADILEHLGC(j + 1) == 1)
+								if(ev2.GBADILEHLGC_GetStatus(j + 1) == 1)
 								{
 									if(ev2.AGLILDLEFDK[j].KGICDMIJGDF_Group == group)
 									{

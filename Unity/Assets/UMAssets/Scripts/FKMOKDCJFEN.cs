@@ -236,8 +236,7 @@ public class FKMOKDCJFEN
 			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.LKJGDCBCLKO(JOPOPMLFINI);
 			if (ev == null)
 				return;
-			TodoLogger.LogError(0, "HCDGELDHFHB");
-			//CMCKNKKCNDK_Status = ev.GBADILEHLGC(CMEJFJFOIIJ);
+			CMCKNKKCNDK_Status = (ADCPCCNCOMD_Status)ev.GBADILEHLGC_GetStatus(CMEJFJFOIIJ_QuestId);
 		}
 		else
 		{
@@ -538,12 +537,12 @@ public class FKMOKDCJFEN
 			}
 			for(int i = 0; i < c; i++)
 			{
-				int d = ev.GBADILEHLGC(i + 1);
+				int d = ev.GBADILEHLGC_GetStatus(i + 1);
 				if (d != 0)
 				{
 					if(ev.AGLILDLEFDK[i].KGICDMIJGDF_Group == group)
 					{
-						int link = ev.AGLILDLEFDK[i].HHIBBHFHENH;
+						int link = ev.AGLILDLEFDK[i].HHIBBHFHENH_NextStepId;
 						if (link == ev.AGLILDLEFDK[i].PPFNGGCBJKC_Id)
 						{
 							Debug.LogError(JpStringLiterals.StringLiteral_10346);
@@ -553,12 +552,12 @@ public class FKMOKDCJFEN
 							bool b = false;
 							while(link != 0)
 							{
-								if(ev.GBADILEHLGC(link) < 2)
+								if(ev.GBADILEHLGC_GetStatus(link) < 2)
 								{
 									b = true;
 									break;
 								}
-								link = ev.AGLILDLEFDK[link - 1].HHIBBHFHENH;
+								link = ev.AGLILDLEFDK[link - 1].HHIBBHFHENH_NextStepId;
 							}
 							if (b)
 								continue;
