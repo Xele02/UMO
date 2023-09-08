@@ -13,7 +13,7 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 		public string HEDAGCNPHGD; // 0x10
 		public string OCGFKMHNEOF_Key; // 0x14
 		public long BONDDBOFBND_Start; // 0x18
-		public long HPNOGLIFJOP; // 0x20
+		public long HPNOGLIFJOP_End1; // 0x20
 		public long LNFKGHNHJKE; // 0x28
 		public long JGMDAOACOJF; // 0x30
 		public long IDDBFFBPNGI; // 0x38
@@ -41,7 +41,7 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 		public void LHPDDGIJKNB()
 		{
 			BONDDBOFBND_Start = 0;
-			HPNOGLIFJOP = 0;
+			HPNOGLIFJOP_End1 = 0;
 			JGMDAOACOJF = 0;
 			IDDBFFBPNGI = 0;
 			OBGBAOLONDD = 0;
@@ -119,8 +119,8 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 	}
 
 	public OEHCHEEEBDC NGHKJOEDLIP = new OEHCHEEEBDC(); // 0x20
-	public List<EIEGCBJHGCP> IJJHFGOIDOK = new List<EIEGCBJHGCP>(); // 0x24
-	public List<AKIIJBEJOEP> NNMPGOAGEOL = new List<AKIIJBEJOEP>(); // 0x28
+	public List<EIEGCBJHGCP> IJJHFGOIDOK_Songs = new List<EIEGCBJHGCP>(); // 0x24
+	public List<AKIIJBEJOEP> NNMPGOAGEOL_Missions = new List<AKIIJBEJOEP>(); // 0x28
 	public List<BMLAHOGDIAK> ADPFKHEMNBL = new List<BMLAHOGDIAK>(); // 0x34
 	public List<int> IHKIFGPICLG_HelpIds = new List<int>(); // 0x38
 
@@ -190,29 +190,54 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 				v = 0;
 			IHKIFGPICLG_HelpIds.Add(v);
 		}
-		//if(JIKKNHIAEKG_BlockName == "event_april_fool_a")
-		//if (JIKKNHIAEKG_BlockName == "event_april_fool_b")
-		if (JIKKNHIAEKG_BlockName == "event_april_fool_c")
+		UnityEngine.Debug.LogError(NGHKJOEDLIP.OPFGFINHFCE);
+		UnityEngine.Debug.LogError(NGHKJOEDLIP.HEDAGCNPHGD);
+		UnityEngine.Debug.LogError(NGHKJOEDLIP.OCGFKMHNEOF_Key);
+		//if(JIKKNHIAEKG_BlockName == "event_april_fool_a") // Yami_Q_ray Mission
+		//if (JIKKNHIAEKG_BlockName == "event_april_fool_b") // Happy birthday ～カナメ～
+		//if (JIKKNHIAEKG_BlockName == "event_april_fool_c") // レイド後ADV
+		//if (JIKKNHIAEKG_BlockName == "event_april_fool_d") // ラスト3日最終シナリオ
+		//if (JIKKNHIAEKG_BlockName == "event_april_fool_e") // Happy birthday ～マキナ～
+		//if (JIKKNHIAEKG_BlockName == "event_april_fool_f") // Happy birthday ～ランカ～
+		//if (JIKKNHIAEKG_BlockName == "event_april_fool_g") // 復刻エイプリル
+		if (JIKKNHIAEKG_BlockName == "event_april_fool_h") // 復刻エイプリル2021
+		//if (JIKKNHIAEKG_BlockName == "event_april_fool_i") // レアアップスタースペシャルミッション
 		{
 			TodoLogger.LogError(TodoLogger.Event, "Switch to the real event enable");
+			UnityEngine.Debug.LogError("Date : \n"
+				+ Utility.GetLocalDateTime(NGHKJOEDLIP.BONDDBOFBND_Start).ToShortDateString() + " " + Utility.GetLocalDateTime(NGHKJOEDLIP.BONDDBOFBND_Start).ToShortTimeString() + "\n"
+				+ Utility.GetLocalDateTime(NGHKJOEDLIP.HPNOGLIFJOP_End1).ToShortDateString() + " " + Utility.GetLocalDateTime(NGHKJOEDLIP.HPNOGLIFJOP_End1).ToShortTimeString() + "\n"
+				+ Utility.GetLocalDateTime(NGHKJOEDLIP.LNFKGHNHJKE).ToShortDateString() + " " + Utility.GetLocalDateTime(NGHKJOEDLIP.LNFKGHNHJKE).ToShortTimeString() + "\n"
+				+ Utility.GetLocalDateTime(NGHKJOEDLIP.JGMDAOACOJF).ToShortDateString() + " " + Utility.GetLocalDateTime(NGHKJOEDLIP.JGMDAOACOJF).ToShortTimeString() + "\n"
+				+ Utility.GetLocalDateTime(NGHKJOEDLIP.IDDBFFBPNGI).ToShortDateString() + " " + Utility.GetLocalDateTime(NGHKJOEDLIP.IDDBFFBPNGI).ToShortTimeString() + "\n"
+				+ Utility.GetLocalDateTime(NGHKJOEDLIP.KNLGKBBIBOH_End).ToShortDateString() + " " + Utility.GetLocalDateTime(NGHKJOEDLIP.KNLGKBBIBOH_End).ToShortTimeString() + "\n"
+			);
 			System.DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
 			System.DateTime date2 = Utility.GetLocalDateTime(NGHKJOEDLIP.BONDDBOFBND_Start);
 			long offset = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day - 1, date2.Hour, date2.Minute, date2.Second) - NGHKJOEDLIP.BONDDBOFBND_Start;
 			if (NGHKJOEDLIP.BONDDBOFBND_Start != 0) NGHKJOEDLIP.BONDDBOFBND_Start += offset;
-			if (NGHKJOEDLIP.HPNOGLIFJOP != 0) NGHKJOEDLIP.HPNOGLIFJOP += offset;
+			if (NGHKJOEDLIP.HPNOGLIFJOP_End1 != 0) NGHKJOEDLIP.HPNOGLIFJOP_End1 += offset;
 			if (NGHKJOEDLIP.LNFKGHNHJKE != 0) NGHKJOEDLIP.LNFKGHNHJKE += offset;
 			if (NGHKJOEDLIP.JGMDAOACOJF != 0) NGHKJOEDLIP.JGMDAOACOJF += offset;
 			if (NGHKJOEDLIP.IDDBFFBPNGI != 0) NGHKJOEDLIP.IDDBFFBPNGI += offset;
 			if (NGHKJOEDLIP.KNLGKBBIBOH_End != 0) NGHKJOEDLIP.KNLGKBBIBOH_End += offset;
-			for(int i = 0; i < IJJHFGOIDOK.Count; i++)
+			for (int i = 0; i < IJJHFGOIDOK_Songs.Count; i++)
 			{
-				if (IJJHFGOIDOK[i].PDBPFJJCADD_OpenAt != 0) IJJHFGOIDOK[i].PDBPFJJCADD_OpenAt += offset;
-				if (IJJHFGOIDOK[i].FDBNFFNFOND_CloseAt != 0) IJJHFGOIDOK[i].FDBNFFNFOND_CloseAt += offset;
+				UnityEngine.Debug.LogError("Date2 " + i + " : \n"
+				+ Utility.GetLocalDateTime(IJJHFGOIDOK_Songs[i].PDBPFJJCADD_OpenAt).ToShortDateString() + " " + Utility.GetLocalDateTime(IJJHFGOIDOK_Songs[i].PDBPFJJCADD_OpenAt).ToShortTimeString() + "\n"
+				+ Utility.GetLocalDateTime(IJJHFGOIDOK_Songs[i].FDBNFFNFOND_CloseAt).ToShortDateString() + " " + Utility.GetLocalDateTime(IJJHFGOIDOK_Songs[i].FDBNFFNFOND_CloseAt).ToShortTimeString() + "\n"
+				);
+				if (IJJHFGOIDOK_Songs[i].PDBPFJJCADD_OpenAt != 0) IJJHFGOIDOK_Songs[i].PDBPFJJCADD_OpenAt = NGHKJOEDLIP.BONDDBOFBND_Start;
+				if (IJJHFGOIDOK_Songs[i].FDBNFFNFOND_CloseAt != 0) IJJHFGOIDOK_Songs[i].FDBNFFNFOND_CloseAt = NGHKJOEDLIP.HPNOGLIFJOP_End1;
 			}
-			for (int i = 0; i < NNMPGOAGEOL.Count; i++)
+			for (int i = 0; i < NNMPGOAGEOL_Missions.Count; i++)
 			{
-				if (NNMPGOAGEOL[i].KJBGCLPMLCG_Start != 0) NNMPGOAGEOL[i].KJBGCLPMLCG_Start += offset;
-				if (NNMPGOAGEOL[i].GJFPFFBAKGK_End != 0) NNMPGOAGEOL[i].GJFPFFBAKGK_End += offset;
+				UnityEngine.Debug.LogError("Date3 " + i + " : \n"
+				+ Utility.GetLocalDateTime(NNMPGOAGEOL_Missions[i].KJBGCLPMLCG_Start).ToShortDateString() + " " + Utility.GetLocalDateTime(NNMPGOAGEOL_Missions[i].KJBGCLPMLCG_Start).ToShortTimeString() + "\n"
+				+ Utility.GetLocalDateTime(NNMPGOAGEOL_Missions[i].GJFPFFBAKGK_End).ToShortDateString() + " " + Utility.GetLocalDateTime(NNMPGOAGEOL_Missions[i].GJFPFFBAKGK_End).ToShortTimeString() + "\n"
+				);
+				if (NNMPGOAGEOL_Missions[i].KJBGCLPMLCG_Start != 0) NNMPGOAGEOL_Missions[i].KJBGCLPMLCG_Start = NGHKJOEDLIP.BONDDBOFBND_Start;
+				if (NNMPGOAGEOL_Missions[i].GJFPFFBAKGK_End != 0) NNMPGOAGEOL_Missions[i].GJFPFFBAKGK_End = NGHKJOEDLIP.HPNOGLIFJOP_End1;
 			}
 		}
 		return true;
@@ -232,7 +257,7 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 		NGHKJOEDLIP.HEDAGCNPHGD = JMHECKKKMLK.HMBHNLCFDIH.HEDAGCNPHGD;
 		NGHKJOEDLIP.OCGFKMHNEOF_Key = JMHECKKKMLK.HMBHNLCFDIH.OCGFKMHNEOF;
 		NGHKJOEDLIP.BONDDBOFBND_Start = JMHECKKKMLK.HMBHNLCFDIH.BONDDBOFBND;
-		NGHKJOEDLIP.HPNOGLIFJOP = JMHECKKKMLK.HMBHNLCFDIH.HPNOGLIFJOP;
+		NGHKJOEDLIP.HPNOGLIFJOP_End1 = JMHECKKKMLK.HMBHNLCFDIH.HPNOGLIFJOP;
 		NGHKJOEDLIP.LNFKGHNHJKE = JMHECKKKMLK.HMBHNLCFDIH.LNFKGHNHJKE;
 		NGHKJOEDLIP.JGMDAOACOJF = JMHECKKKMLK.HMBHNLCFDIH.JGMDAOACOJF;
 		NGHKJOEDLIP.IDDBFFBPNGI = JMHECKKKMLK.HMBHNLCFDIH.IDDBFFBPNGI;
@@ -271,7 +296,7 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 		{
 			EIEGCBJHGCP data = new EIEGCBJHGCP();
 			data.KHEKNNFCAOI(i + 1, JMHECKKKMLK);
-			IJJHFGOIDOK.Add(data);
+			IJJHFGOIDOK_Songs.Add(data);
 		}
 		return true;
 	}
@@ -288,7 +313,7 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 		{
 			AKIIJBEJOEP data = new AKIIJBEJOEP();
 			data.KHEKNNFCAOI(JIKKNHIAEKG_BlockName, i + 1, key, JMHECKKKMLK);
-			NNMPGOAGEOL.Add(data);
+			NNMPGOAGEOL_Missions.Add(data);
 			key += 13;
 		}
 		return true;

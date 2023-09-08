@@ -9,6 +9,7 @@ using System;
 using XeApp.Game.Tutorial;
 using System.Collections.Generic;
 using mcrs;
+using XeApp.Game.MiniGame;
 
 namespace XeApp.Game.Menu
 {
@@ -874,11 +875,30 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB31A00 Offset: 0xB31A00 VA: 0xB31A00
-		// public void GotoMiniGame(int miniGameId) { }
+		public void GotoMiniGame(int miniGameId)
+		{
+			m_menuTransitionControl.SetHeaderMenuButtonDisable(MenuHeaderControl.Button.All);
+			m_menuTransitionControl.SetMenuContentButtonDisable();
+			m_menuTransitionControl.SetFooterMenuButtonDisable(MenuFooterControl.Button.All);
+			GameManager.Instance.RemovePushBackButtonHandler(OnBackButton);
+			this.StartCoroutineWatched(Co_GotoMiniGame(miniGameId, 1));
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7BF4 Offset: 0x6C7BF4 VA: 0x6C7BF4
 		// // RVA: 0xB31B68 Offset: 0xB31B68 VA: 0xB31B68
-		// private IEnumerator Co_GotoMiniGame(int miniGameId, int stageNum = 1) { }
+		private IEnumerator Co_GotoMiniGame(int miniGameId, int stageNum = 1)
+		{
+			//0xB394B0
+			enableFade = false;
+			GameManager.FadeOut(0.4f);
+			GameManager.Instance.snsNotification.Close();
+			yield return Co.R(m_menuTransitionControl.ExitTransition());
+			yield return GameManager.Instance.WaitFadeYielder;
+			yield return Co.R(m_menuTransitionControl.DestroyTransion());
+			MiniGameScene.miniGameId = miniGameId;
+			MiniGameScene.stageNum = stageNum;
+			NextScene("MiniGame");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7C6C Offset: 0x6C7C6C VA: 0x6C7C6C
 		// // RVA: 0xB31C48 Offset: 0xB31C48 VA: 0xB31C48

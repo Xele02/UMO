@@ -1049,8 +1049,18 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBE8AE8 Offset: 0xBE8AE8 VA: 0xBE8AE8
 		private int GetMinigameListNo(int minigameId)
 		{
-			TodoLogger.LogError(0, "GetMinigameListNo");
-			return 0;
+			int res = 0;
+			for(int i = 0; i < currentMusicList.GetCount(isLine6Mode, false); i++)
+			{
+				if(currentMusicList.Get(i, isLine6Mode, false).ViewMusic.BNIAJAKIAJC_IsEventMinigame)
+				{
+					if(currentMusicList.Get(i, isLine6Mode, false).ViewMusic.NOKBLCDMLPP_MinigameEventInfo.OOCBPMNHLPM_MusicId == minigameId)
+					{
+						return i;
+					}
+				}
+			}
+			return res;
 		}
 
 		// // RVA: 0xBE8C6C Offset: 0xBE8C6C VA: 0xBE8C6C
@@ -1254,7 +1264,45 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xBEAC3C Offset: 0xBEAC3C VA: 0xBEAC3C
 		private void ApplyMusicInfoEventEntrance()
 		{
-			TodoLogger.LogError(0, "ApplyMusicInfoEventEntrance");
+			long endTime = 0;
+			if(selectMusicData.BNIAJAKIAJC_IsEventMinigame)
+			{
+				m_musicSelectUISapporter.SetMusicInfoStyle(VerticalMusicSelectUISapporter.MusicInfoStyle.MiniGameEventEntrance);
+				endTime = selectMusicData.NOKBLCDMLPP_MinigameEventInfo.PCCFAKEOBIC_CloseTime;
+			}
+			else
+			{
+				m_musicSelectUISapporter.SetMusicInfoStyle(VerticalMusicSelectUISapporter.MusicInfoStyle.OtherEventEntrance);
+				endTime = selectMusicData.AFCMIOIGAJN_EventInfo.PCCFAKEOBIC_CloseTime;
+			}
+			ApplyRemainTime(m_musicDetail, endTime, VerticalMusicSelectMusicDetail.MusicRemainTimeType.Other, null);
+			SetPlayButton(selectMusicListData);
+			SetSimulationButton(selectMusicListData);
+			if(selectMusicListData.ViewMusic.AJGCPCMLGKO_IsEvent)
+			{
+				m_musicSelectUISapporter.SetMusicEventJacket(selectMusicListData.ViewMusic.AFCMIOIGAJN_EventInfo.GOAPADIHAHG_EventId);
+			}
+			else if(selectMusicListData.ViewMusic.BNIAJAKIAJC_IsEventMinigame)
+			{
+				m_musicSelectUISapporter.SetMusicEventJacket(selectMusicListData.ViewMusic.NOKBLCDMLPP_MinigameEventInfo.GOAPADIHAHG_EventId);
+			}
+			if(m_eventCtrl != null && m_eventCtrl.PGIIDPEGGPI_EventId == selectMusicListData.ViewMusic.EKANGPODCEP_EventId && 
+				m_isEventTimeLimit)
+			{
+				m_musicDetail.EventCountingEnable(true);
+				m_musicSelectUISapporter.SetDetailEventType(false, VerticalMusicSelectMusicDetail.MusicRemainTimeType.Other, true);
+			}
+			else
+			{
+				m_musicDetail.EventCountingEnable(false);
+				m_musicSelectUISapporter.SetDetailEventType(true, VerticalMusicSelectMusicDetail.MusicRemainTimeType.Other, true);
+			}
+			m_musicSelectUISapporter.SetMusicUtaRating(selectMusicListData.ViewMusic.AKAPOCOIECA(), false);
+			m_musicSelectUISapporter.SetMusicTime(selectMusicListData.MusicTimeStr, false);
+			m_musicSelectUISapporter.SetBookMark(false, false);
+			m_musicSelectUISapporter.SetJacketAttr(4, true);
+			m_musicSelectUISapporter.SetWeeklyEventCountEmptyEnable(false);
+			m_difficultyButtonGroup.SetEnable(true);
 		}
 
 		// // RVA: 0xBEB120 Offset: 0xBEB120 VA: 0xBEB120

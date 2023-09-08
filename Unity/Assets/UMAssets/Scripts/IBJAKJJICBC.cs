@@ -634,7 +634,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 			for (int i = 0; i < list2.Count; i++)
 			{
 				AMLGMLNGMFB_EventAprilFool af = list2[i] as AMLGMLNGMFB_EventAprilFool;
-				if (af.NDIILFIFCDL() < 1)
+				if (af.NDIILFIFCDL_GetMinigameId() < 1)
 				{
 					List<KCGOMAFPGDD_EventAprilFool.EIEGCBJHGCP> l = af.KOBMFPACBMB();
 					for (int j = 0; j < l.Count; j++)
@@ -682,7 +682,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 				else
 				{
 					IBJAKJJICBC data = new IBJAKJJICBC();
-					data.OKLGJBKAJGH(af, af.NDIILFIFCDL());
+					data.OKLGJBKAJGH(af, af.NDIILFIFCDL_GetMinigameId());
 					if (EHBPHDPHPKF)
 					{
 						if (data.CADENLBDAEB)
@@ -835,7 +835,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 			if(ldata[i] != null)
 			{
 				AMLGMLNGMFB_EventAprilFool af = ldata[i] as AMLGMLNGMFB_EventAprilFool;
-				if(af.NDIILFIFCDL() < 1)
+				if(af.NDIILFIFCDL_GetMinigameId() < 1)
 				{
 					List<int> l = af.HEACCHAKMFG();
 					if(l != null)

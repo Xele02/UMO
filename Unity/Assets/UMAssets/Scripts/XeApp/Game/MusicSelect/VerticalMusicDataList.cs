@@ -368,8 +368,19 @@ namespace XeApp.Game.MusicSelect
 		//// RVA: 0xCA2728 Offset: 0xCA2728 VA: 0xCA2728
 		public static string GetEventPeriodString(long openTime, long closeTime)
 		{
-			TodoLogger.LogError(0, "GetEventPeriodString");
-			return "";
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			if(closeTime != 0)
+			{
+				if (closeTime % 100 == 0)
+					closeTime -= 1;
+			}
+			DateTime d1 = Utility.GetLocalDateTime(openTime);
+			DateTime d2 = Utility.GetLocalDateTime(closeTime);
+			return string.Format(bk.GetMessageByLabel("vertical_music_select_event_period"), new object[10]
+			{
+				d1.Year, d1.Month, d1.Day, d1.Hour, d1.Minute,
+				d2.Year, d2.Month, d2.Day, d2.Hour, d2.Minute
+			});
 		}
 
 		//// RVA: 0xCA2ED4 Offset: 0xCA2ED4 VA: 0xCA2ED4

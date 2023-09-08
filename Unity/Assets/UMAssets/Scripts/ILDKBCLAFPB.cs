@@ -4494,16 +4494,16 @@ public class ILDKBCLAFPB
 		{
 			private int FBGGEFFJJHB = 0x4a73b2f1; // 0x8
 			private int NFFKLFEOPMO_EventId = 0; // 0xC
-			private int NPIKKEHOKOG_HighScore = 0x4a73b2f1; // 0x10
+			private int NPIKKEHOKOG_HighScoreCrypted = 0x4a73b2f1; // 0x10
 			private bool BLGHBBEDGML_IsUseCommand = false; // 0x14
 
-			//private int LGDLEHHOIEL { get; set; } 0x201E6E8 OMFCCEBAODD 0x201E6F8 JGIJCMFGKEP
+			private int LGDLEHHOIEL_HighScore { get { return NPIKKEHOKOG_HighScoreCrypted ^ FBGGEFFJJHB; } set { NPIKKEHOKOG_HighScoreCrypted = value ^ FBGGEFFJJHB; } } //0x201E6E8 OMFCCEBAODD 0x201E6F8 JGIJCMFGKEP
 
 			//// RVA: 0x201E708 Offset: 0x201E708 VA: 0x201E708
 			public static bool CHDGLBBFEKH(OEAIOIHGMIH LFGLBIAODLE, OEAIOIHGMIH CJDJGHIIBHP)
 			{
 				if (LFGLBIAODLE.NFFKLFEOPMO_EventId == CJDJGHIIBHP.NFFKLFEOPMO_EventId &&
-					(LFGLBIAODLE.NPIKKEHOKOG_HighScore ^ LFGLBIAODLE.FBGGEFFJJHB) == (CJDJGHIIBHP.NPIKKEHOKOG_HighScore ^ CJDJGHIIBHP.FBGGEFFJJHB) &&
+					LFGLBIAODLE.LGDLEHHOIEL_HighScore == CJDJGHIIBHP.LGDLEHHOIEL_HighScore &&
 					LFGLBIAODLE.BLGHBBEDGML_IsUseCommand == CJDJGHIIBHP.BLGHBBEDGML_IsUseCommand)
 					return true;
 				return false;
@@ -4519,7 +4519,7 @@ public class ILDKBCLAFPB
 			public void ODDIHGPONFL(OEAIOIHGMIH PJFKNNNDMIA)
 			{
 				PJFKNNNDMIA.NFFKLFEOPMO_EventId = NFFKLFEOPMO_EventId;
-				PJFKNNNDMIA.NPIKKEHOKOG_HighScore = NPIKKEHOKOG_HighScore ^ FBGGEFFJJHB ^ PJFKNNNDMIA.FBGGEFFJJHB;
+				PJFKNNNDMIA.LGDLEHHOIEL_HighScore = LGDLEHHOIEL_HighScore;
 				PJFKNNNDMIA.BLGHBBEDGML_IsUseCommand = BLGHBBEDGML_IsUseCommand;
 			}
 
@@ -4528,7 +4528,7 @@ public class ILDKBCLAFPB
 			{
 				EDOHBJAPLPF_JsonData res = new EDOHBJAPLPF_JsonData();
 				res["eventId"] = NFFKLFEOPMO_EventId;
-				res["highScore"] = NPIKKEHOKOG_HighScore ^ FBGGEFFJJHB;
+				res["highScore"] = LGDLEHHOIEL_HighScore;
 				res["isUseCommand"] = BLGHBBEDGML_IsUseCommand ? 1 : 0;
 				return res;
 			}
@@ -4537,12 +4537,22 @@ public class ILDKBCLAFPB
 			public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG)
 			{
 				NFFKLFEOPMO_EventId = JsonUtil.GetInt(OBHAFLMHAKG, "eventId", 0);
-				NPIKKEHOKOG_HighScore = JsonUtil.GetInt(OBHAFLMHAKG, "highScore", 0) ^ FBGGEFFJJHB;
+				LGDLEHHOIEL_HighScore = JsonUtil.GetInt(OBHAFLMHAKG, "highScore", 0);
 				BLGHBBEDGML_IsUseCommand = JsonUtil.GetInt(OBHAFLMHAKG, "isUseCommand", 0) > 0;
 			}
 
 			//// RVA: 0x201E794 Offset: 0x201E794 VA: 0x201E794
-			//public bool FKEJBAHCMGC(int LHMJFCCBPPN) { }
+			public bool FKEJBAHCMGC(int LHMJFCCBPPN)
+			{
+				if(NFFKLFEOPMO_EventId != LHMJFCCBPPN)
+				{
+					BLGHBBEDGML_IsUseCommand = false;
+					NFFKLFEOPMO_EventId = LHMJFCCBPPN;
+					LGDLEHHOIEL_HighScore = 0;
+					return true;
+				}
+				return false;
+			}
 
 			//// RVA: 0x201E7C4 Offset: 0x201E7C4 VA: 0x201E7C4
 			//public int LJKLECGFIEN() { }

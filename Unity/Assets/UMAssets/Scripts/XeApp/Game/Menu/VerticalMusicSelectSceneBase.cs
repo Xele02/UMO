@@ -1255,14 +1255,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xACD354 Offset: 0xACD354 VA: 0xACD354
 		private void GotoRegularMusicSelect()
 		{
-			TodoLogger.LogError(0, "GotoRegularMusicSelect");
 			MenuScene.Instance.Mount(TransitionUniqueId.MUSICSELECT, null, true, 0);
 		}
 
 		// // RVA: 0xACD2B0 Offset: 0xACD2B0 VA: 0xACD2B0
 		private void GotoEventMiniGame(int miniGameId)
 		{
-			TodoLogger.LogError(0, "GotoEventMiniGame");
+			MenuScene.Instance.GotoMiniGame(miniGameId);
 		}
 
 		// // RVA: 0xACBE10 Offset: 0xACBE10 VA: 0xACBE10

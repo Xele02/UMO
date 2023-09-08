@@ -240,7 +240,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xADB4B4 Offset: 0xADB4B4 VA: 0xADB4B4
-		// public void SetMusicEventJacket(int jacketId) { }
+		public void SetMusicEventJacket(int jacketId)
+		{
+			m_musicDetail.SetImageJacketIsEvent(jacketId);
+		}
 
 		// // RVA: 0xADB4E8 Offset: 0xADB4E8 VA: 0xADB4E8
 		public void SetMusicJacketNew(IBJAKJJICBC musicData)

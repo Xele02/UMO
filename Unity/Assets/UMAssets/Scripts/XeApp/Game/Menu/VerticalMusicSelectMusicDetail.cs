@@ -313,7 +313,22 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBDF494 Offset: 0xBDF494 VA: 0xBDF494
-		// public void SetImageJacketIsEvent(int jacketId) { }
+		public void SetImageJacketIsEvent(int jacketId)
+		{
+			m_imageJacket.enabled = false;
+			m_isEventCover = true;
+			m_coverId = jacketId;
+			jacketTexCache.LoadForEvent(jacketId, (IiconTexture image) =>
+			{
+				//0xBE0CFC
+				if (m_coverId != jacketId)
+					return;
+				if (!m_isEventCover)
+					return;
+				m_imageJacket.enabled = true;
+				image.Set(m_imageJacket);
+			});
+		}
 
 		// // RVA: 0xBDF5E0 Offset: 0xBDF5E0 VA: 0xBDF5E0
 		public void EventCountingEnable(bool isEnabel)
