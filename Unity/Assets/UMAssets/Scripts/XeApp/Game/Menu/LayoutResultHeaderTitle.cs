@@ -106,7 +106,7 @@ namespace XeApp.Game.Menu
 				layoutSkipCount.StartChildrenAnimGoStop("02");
 				return;
 			}
-			m_textSkipCount.text = string.Format("{0}StringLiteral_17960", m_textSkipCount);
+			m_textSkipCount.text = string.Format(JpStringLiterals.StringLiteral_17960, count);
 			layoutSkipCount.StartChildrenAnimGoStop("01");
 		}
 

@@ -152,7 +152,7 @@ namespace XeSys
 				{
 					f2 = f2 * f2 * f * f2;
 				}
-				return f2 * start;
+				return f2 + start;
 			}
 
 			//// RVA: 0x2395980 Offset: 0x2395980 VA: 0x2395980
