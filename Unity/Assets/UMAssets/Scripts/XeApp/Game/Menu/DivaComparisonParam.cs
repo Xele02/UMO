@@ -213,14 +213,14 @@ namespace XeApp.Game.Menu
 							{
 								SetSkillLevel(pos, sceneInfo.DDEDANKHHPN_SkillLevel, 0);
 								SetSkillRank(pos, (SkillRank.Type)sceneInfo.DHEFMEGKKDN_CenterSkillRank, 0);
-								SetSkillDescription(pos, sceneInfo.IHLINMFMCDN_GetCenterSkillDesc(false));
+								SetSkillDescription(pos, sceneInfo.IHLINMFMCDN_GetCenterSkillDesc(false), 0);
 								m_skillInfos[pos].RegulationButton.Setup(musicId, RegulationButton.Type.Center, sceneInfo);
 								resetDisplay = false;
 								if(skillId2 > 0)
 								{
 									SetSkillLevel(pos, sceneInfo.DDEDANKHHPN_SkillLevel, 1);
 									SetSkillRank(pos, (SkillRank.Type)sceneInfo.FFDCGHDNDFJ_CenterSkillRank2, 1);
-									SetSkillDescription(pos, sceneInfo.IHLINMFMCDN_GetCenterSkillDesc(true));
+									SetSkillDescription(pos, sceneInfo.IHLINMFMCDN_GetCenterSkillDesc(true), 1);
 									SetSkillCrossFade(pos, true);
 								}
 							}
@@ -235,7 +235,7 @@ namespace XeApp.Game.Menu
 								m_isDisp2ndCenterSkill = skillId == skillId2;
 								SetSkillLevel(pos, sceneInfo.DDEDANKHHPN_SkillLevel, 0);
 								SetSkillRank(pos, (SkillRank.Type)(m_isDisp2ndCenterSkill ? sceneInfo.FFDCGHDNDFJ_CenterSkillRank2 : sceneInfo.DHEFMEGKKDN_CenterSkillRank), 0);
-								SetSkillDescription(pos, sceneInfo.IHLINMFMCDN_GetCenterSkillDesc(false));
+								SetSkillDescription(pos, sceneInfo.IHLINMFMCDN_GetCenterSkillDesc(false), 0);
 								resetDisplay = false;
 								m_skillInfos[pos].RegulationButton.Setup(musicId, RegulationButton.Type.Center, sceneInfo);
 							}
@@ -280,7 +280,7 @@ namespace XeApp.Game.Menu
 								{
 									SetSkillLevel(pos, sceneInfo.AADFFCIDJCB_LiveSkillLevel, 0);
 									SetSkillRank(pos, (SkillRank.Type)sceneInfo.OAHMFMJIENM_LiveSkillRank, 0);
-									SetSkillDescription(pos, sceneInfo.KDGACEJPGFG_GetLiveSkillDesc(false));
+									SetSkillDescription(pos, sceneInfo.KDGACEJPGFG_GetLiveSkillDesc(false), 0);
 									resetDisplay = false;
 									m_skillInfos[pos].RegulationButton.Setup(musicId, RegulationButton.Type.Live, sceneInfo);
 								}
@@ -288,7 +288,7 @@ namespace XeApp.Game.Menu
 								{
 									SetSkillLevel(pos, sceneInfo.AADFFCIDJCB_LiveSkillLevel, 1);
 									SetSkillRank(pos, (SkillRank.Type)sceneInfo.ELNJADBILOM_LiveSkillRank2, 1);
-									SetSkillDescription(pos, sceneInfo.KDGACEJPGFG_GetLiveSkillDesc(true));
+									SetSkillDescription(pos, sceneInfo.KDGACEJPGFG_GetLiveSkillDesc(true), 1);
 									SetSkillCrossFade(pos, true);
 								}
 								mask = ComparisonSkillInfo.SkillMask.None;
@@ -304,7 +304,7 @@ namespace XeApp.Game.Menu
 								}
 								SetSkillLevel(pos, sceneInfo.AADFFCIDJCB_LiveSkillLevel, 0);
 								SetSkillRank(pos, (SkillRank.Type)(m_isDisp2ndLiveSkill ? sceneInfo.ELNJADBILOM_LiveSkillRank2 : sceneInfo.OAHMFMJIENM_LiveSkillRank), 0);
-								SetSkillDescription(pos, sceneInfo.KDGACEJPGFG_GetLiveSkillDesc(m_isDisp2ndLiveSkill));
+								SetSkillDescription(pos, sceneInfo.KDGACEJPGFG_GetLiveSkillDesc(m_isDisp2ndLiveSkill), 0);
 								m_skillInfos[pos].RegulationButton.Setup(musicId, RegulationButton.Type.Live, sceneInfo);
 								resetDisplay = false;
 							}
@@ -356,7 +356,46 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17D5E38 Offset: 0x17D5E38 VA: 0x17D5E38
 		private void OnShowSkillDetials(ComparisonSkillInfo info, int index)
 		{
-			TodoLogger.LogNotImplemented("OnShowSkillDetials");
+			GCIJNCFDNON_SceneInfo scene = GetSlotSceneData((SkillDiapIndex)m_skillDispIndex);
+			if(scene == null)
+				return;
+			string name = "";
+			string desc = "";
+			if(m_skillDispIndex < 2 || m_skillDispIndex > 4)
+			{
+				if(m_skillDispIndex == 1)
+				{
+					name = scene.ILCLGGPHHJO_ActiveSkillName;
+					desc = scene.PCMEMHPDABG_GetActiveSkillDesc();
+				}
+				else if(m_skillDispIndex == 0)
+				{
+					if(index < 1 && !m_isDisp2ndCenterSkill)
+					{
+						name = scene.PFHJFIHGCKP_CenterSkillName1;
+						desc = scene.IHLINMFMCDN_GetCenterSkillDesc(false);
+					}
+					else
+					{
+						name = scene.EFELCLMJEOL_CenterSkillName2;
+						desc = scene.IHLINMFMCDN_GetCenterSkillDesc(true);
+					}
+				}
+			}
+			else
+			{
+				if(index < 1 || !m_isDisp2ndLiveSkill)
+				{
+					name = scene.NDPPEMCHKHA_LiveSkillName1;
+					desc = scene.KDGACEJPGFG_GetLiveSkillDesc(false);
+				}
+				else if(index == 1)
+				{
+					name = scene.LNLECENGMKK_LiveSkillName2;
+					name = scene.KDGACEJPGFG_GetLiveSkillDesc(true);
+				}
+			}
+			MenuScene.Instance.UnitSaveWindowControl.ShowSkillWindow(name, desc);
 		}
 	}
 }

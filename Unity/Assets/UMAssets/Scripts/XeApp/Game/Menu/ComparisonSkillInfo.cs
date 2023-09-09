@@ -218,19 +218,24 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1B570C4 Offset: 0x1B570C4 VA: 0x1B570C4
 		private void OnPushDetails()
 		{
-			TodoLogger.LogNotImplemented("OnPushDetails");
+			if(!m_descDetailsImage[0].enabled)
+				return;
+			OnPushDetailsEvent(this, 0);
 		}
 
 		//// RVA: 0x1B5719C Offset: 0x1B5719C VA: 0x1B5719C
 		private void OnPushDetails2()
 		{
-			TodoLogger.LogNotImplemented("OnPushDetails2");
+			if(!m_descDetailsImage[1].enabled)
+				return;
+			OnPushDetailsEvent(this, 1);
 		}
 
 		//// RVA: 0x1B57274 Offset: 0x1B57274 VA: 0x1B57274
 		private void OnPushRegulation()
 		{
-			TodoLogger.LogNotImplemented("OnPushRegulation");
+			if(OnPushRegulationEvent != null)
+				OnPushRegulationEvent();
 		}
 	}
 }
