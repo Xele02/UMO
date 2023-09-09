@@ -130,7 +130,7 @@ public class JHHBAFKMBDL
 		}
 		else
 		{
-			s.TitleText	= JpStringLiterals.StringLiteral_11929;
+			s.TitleText = JpStringLiterals.StringLiteral_11929;
 			s.Buttons = new ButtonInfo[1]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Retry, Type = PopupButton.ButtonType.Positive }

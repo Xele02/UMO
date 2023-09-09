@@ -659,7 +659,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_activeSkillRankImage, (SkillRank.Type) m_mainScene.BEKGEAMJGEN_ActiveSkillRank);
-				m_activeSkillEffectText.text = m_mainScene.PCMEMHPDABG_GetActiveSkillDesc().Replace(JpStringLiterals.StringLiteral_20382, string.Format(" <color={0}>StringLiteral_20383</color>", SystemTextColor.ImportantColor));
+				m_activeSkillEffectText.text = m_mainScene.PCMEMHPDABG_GetActiveSkillDesc().Replace(JpStringLiterals.StringLiteral_20382, string.Format(JpStringLiterals.StringLiteral_20383, SystemTextColor.ImportantColor));
 				m_activeSkillNameText.text = m_mainScene.ILCLGGPHHJO_ActiveSkillName;
 				m_activeSkillLevelText.text = string.Format("Lv{0}", m_mainScene.PNHJPCPFNFI_ActiveSkillLevel);
 				m_activeSkill.SetActive(true);

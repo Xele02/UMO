@@ -168,6 +168,7 @@ namespace XeApp.Game.Menu
 			{
 				textBonus[i].enabled = false;
 			}
+			m_is_bonus = is_bonus;
 		}
 
 		//// RVA: 0x1D90E2C Offset: 0x1D90E2C VA: 0x1D90E2C
@@ -326,6 +327,7 @@ namespace XeApp.Game.Menu
 				{
 					layoutStateTable.StartChildrenAnimGoStop(0, 0);
 					layoutNumStateTable.StartChildrenAnimGoStop(m_is_bonus ? 0 : 1, m_is_bonus ? 0 : 1);
+					normalItem.layoutRoot.StartChildrenAnimGoStop("st_in");
 					normalItem.layoutNumAnim.StartChildrenAnimGoStop("st_out");
 					shadowAnime.StartChildrenAnimGoStop("st_in");
 				}

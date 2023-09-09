@@ -382,15 +382,18 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1D96184 Offset: 0x1D96184 VA: 0x1D96184
 		private void StartNextNormalItemAnim()
 		{
-			AddItem();
-			itemList[currentItemIndex].onFinished = StartNormalItemBonusAnim;
+			int idx = currentItemIndex;
+			if(!AddItem())
+				itemList[idx].onFinished = StartNextNormalItemAnim;
+			else
+				itemList[idx].onFinished = StartNormalItemBonusAnim;
 			if(currentItemIndex < 7)
 			{
-				itemList[currentItemIndex].StartBeginAnim();
+				itemList[idx].StartBeginAnim();
 			}
 			else
 			{
-				this.StartCoroutineWatched(Co_AutoScrolling(1, nextItemMoveSec, itemList[currentItemIndex].StartBeginAnim));
+				this.StartCoroutineWatched(Co_AutoScrolling(1, nextItemMoveSec, itemList[idx].StartBeginAnim));
 			}
 		}
 
@@ -588,6 +591,7 @@ namespace XeApp.Game.Menu
 			float ct; // 0x24
 
 			//0x1D971E8
+			yield return null;
 			beginNormalizePos = scrollSupporter.scrollRect.horizontalNormalizedPosition;
 			ct = 0;
 			while(true)
@@ -616,7 +620,7 @@ namespace XeApp.Game.Menu
 				Vector2 pos = new Vector2(SCROLL_MARGIN_WIDTH + itemList[currentItemIndex].Width * currentItemIndex + SCROLL_MARGIN_WIDTH + itemList[currentItemIndex].Width, 0);
 				scrollSupporter.BeginAddView();
 				scrollSupporter.AddView(itemList[currentItemIndex].gameObject, SCROLL_MARGIN_WIDTH + itemList[currentItemIndex].Width * currentItemIndex, 0);
-				scrollSupporter.EndAddView();
+				scrollSupporter.EndAddView(new Vector2(SCROLL_MARGIN_WIDTH + itemList[currentItemIndex].Width * currentItemIndex + SCROLL_MARGIN_WIDTH + itemList[currentItemIndex].Width, 0));
 				currentItemIndex++;
 				return itemList.Count == currentItemIndex;
 			}
