@@ -364,7 +364,10 @@ namespace XeApp.Game.Menu
 			if(m_scoreGaugeLayout != null)
 			{
 				if(musicBaseData == null)
+				{
+					m_scoreGaugeLayout.StartChildrenAnimGoStop("02");
 					return;
+				}
 				GameManager.Instance.MusicJacketTextureCache.Load(musicBaseData.JNCPEGJGHOG_JacketId, (IiconTexture texture) => {
 					//0x137E320
 					texture.Set(m_jacketImage);
