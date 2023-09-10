@@ -1147,7 +1147,10 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDD22C4 Offset: 0xDD22C4 VA: 0xDD22C4
-		// public void OnPauseButtonSelected() { }
+		public void OnPauseButtonSelected()
+		{
+			OnPauseButtonSelected(false);
+		}
 
 		// // RVA: 0xDD21C8 Offset: 0xDD21C8 VA: 0xDD21C8 Slot: 79
 		public void OnPauseButtonSelected(bool a_suspend)

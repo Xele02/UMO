@@ -20,7 +20,10 @@ namespace Mana.Service.Ad
 		}
 
         // // RVA: 0x17BD520 Offset: 0x17BD520 VA: 0x17BD520
-        // public void SendResumeEvent() { }
+        public void SendResumeEvent()
+        {
+			TodoLogger.LogError(TodoLogger.ManaAd, "ManaAdAPIHelper.SendResumeEvent");
+        }
 
         // // RVA: 0x17BD65C Offset: 0x17BD65C VA: 0x17BD65C
         public void TryPendingSendResumeEvent()
@@ -38,7 +41,20 @@ namespace Mana.Service.Ad
         }
 
         // // RVA: 0x17BD75C Offset: 0x17BD75C VA: 0x17BD75C
-        // private void OnApplicationPause(bool pauseStatus) { }
+        private void OnApplicationPause(bool pauseStatus)
+        {
+            if(pauseStatus)
+                return;
+            _sendResumeEventRequest = true;
+            if(NKGJPJPHLIF.HHCJCDFCLOB != null)
+            {
+                if(NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD_GetPlayerId() != 0)
+                {
+                    SendResumeEvent();
+                    _sendResumeEventRequest = false;
+                }
+            }
+        }
 
         // // RVA: 0x17BD3A8 Offset: 0x17BD3A8 VA: 0x17BD3A8
         // private void SetLaunchURL() { }

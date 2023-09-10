@@ -52,5 +52,8 @@ public class OJIHOFLJOMK
 	//public static bool DCCNLMAODGN() { }
 
 	//// RVA: 0x148E394 Offset: 0x148E394 VA: 0x148E394
-	//public static void JOAJCEDHKFP() { }
+	public static void JOAJCEDHKFP()
+	{
+		return;
+	}
 }

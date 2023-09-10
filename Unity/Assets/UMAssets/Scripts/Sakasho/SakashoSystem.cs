@@ -40,10 +40,17 @@ public class SakashoSystem
 	}
 
 	// // RVA: 0x2E6B754 Offset: 0x2E6B754 VA: 0x2E6B754
-	// public static void Finish() { }
+	public static void Finish()
+	{
+		SakashoSystemFinish();
+		SakashoAPICallContext.Finish();
+	}
 
 	// // RVA: 0x2E6B86C Offset: 0x2E6B86C VA: 0x2E6B86C
-	// public static void Pause() { }
+	public static void Pause()
+	{
+		SakashoSystemPause();
+	}
 
 	// // RVA: 0x2E6B96C Offset: 0x2E6B96C VA: 0x2E6B96C
 	public static void Resume()
@@ -88,10 +95,10 @@ public class SakashoSystem
 	}
 
 	// // RVA: 0x2E6B770 Offset: 0x2E6B770 VA: 0x2E6B770
-	// private static extern void SakashoSystemFinish() { }
+	private static void SakashoSystemFinish() { }
 
 	// // RVA: 0x2E6B870 Offset: 0x2E6B870 VA: 0x2E6B870
-	// private static extern void SakashoSystemPause() { }
+	private static void SakashoSystemPause() { }
 
 	// // RVA: 0x2E6B970 Offset: 0x2E6B970 VA: 0x2E6B970
 	private static /*extern*/ void SakashoSystemResume()

@@ -8,6 +8,8 @@ namespace CriWare
 	// [AddComponentMenu] // RVA: 0x632920 Offset: 0x632920 VA: 0x632920
 	public class CriManaMovieMaterial : CriMonoBehaviour
 	{
+		public delegate void OnApplicationPauseCallback(CriManaMovieMaterial manaMovieMaterial, bool appPause);
+
 		public enum RenderMode
 		{
 			Always = 0,
@@ -33,8 +35,8 @@ namespace CriWare
 
 		public bool playOnStart; // 0x1C
 		public bool restartOnEnable; // 0x1D
-		public CriManaMovieMaterial.RenderMode renderMode; // 0x24
-		// public CriManaMovieMaterial.OnApplicationPauseCallback onApplicationPauseCallback; // 0x28
+		public RenderMode renderMode; // 0x24
+		public OnApplicationPauseCallback onApplicationPauseCallback; // 0x28
 		private Player.TimerType _timerType = Player.TimerType.Audio; // 0x2C
 		[SerializeField] // RVA: 0x634B84 Offset: 0x634B84 VA: 0x634B84
 		private Material _material; // 0x30
@@ -43,7 +45,7 @@ namespace CriWare
 		[SerializeField] // RVA: 0x634BA4 Offset: 0x634BA4 VA: 0x634BA4
 		private bool _loop; // 0x38
 		[SerializeField] // RVA: 0x634BB4 Offset: 0x634BB4 VA: 0x634BB4
-		private CriManaMovieMaterial.MaxFrameDrop _maxFrameDrop; // 0x3C
+		private MaxFrameDrop _maxFrameDrop; // 0x3C
 		[SerializeField] // RVA: 0x634BC4 Offset: 0x634BC4 VA: 0x634BC4
 		private bool _additiveMode; // 0x40
 		[SerializeField] // RVA: 0x634BD4 Offset: 0x634BD4 VA: 0x634BD4
@@ -60,7 +62,7 @@ namespace CriWare
 		private bool wasDisabled; // 0x4C
 		private bool wasPausedOnDisable; // 0x4D
 		// private WaitForEndOfFrame frameEnd = new WaitForEndOfFrame(); // 0x50
-		// private bool unpauseOnApplicationUnpause; // 0x54
+		private bool unpauseOnApplicationUnpause; // 0x54
 		private CriManaMoviePlayerHolder playerHolder; // 0x58
 		// public const int DONT_FORGET_COMMENT_OUT_PLAYER_PAUSE = 0;
 
@@ -342,10 +344,36 @@ namespace CriWare
 		// protected virtual void OnWillRenderObject() { }
 
 		// // RVA: 0x2963C60 Offset: 0x2963C60 VA: 0x2963C60
-		// private void OnApplicationPause(bool appPause) { }
+		private void OnApplicationPause(bool appPause)
+		{
+#if UNITY_EDITOR
+			/*if (!isEditorPaused && isApplicationPaused != appPause) {
+				ProcessApplicationPause(appPause);
+				isApplicationPaused = appPause;
+			}*/
+#else
+			ProcessApplicationPause(appPause);
+#endif
+		}
 
 		// // RVA: 0x2963C64 Offset: 0x2963C64 VA: 0x2963C64
-		// private void ProcessApplicationPause(bool appPause) { }
+		private void ProcessApplicationPause(bool appPause)
+		{
+			if (onApplicationPauseCallback != null) {
+				onApplicationPauseCallback(this, appPause);
+				return;
+			}
+
+
+			if (appPause) {
+				unpauseOnApplicationUnpause = !player.IsPaused();
+				if (unpauseOnApplicationUnpause) {
+					player.Pause(true);
+				}
+			} else {
+				unpauseOnApplicationUnpause = false;
+			}
+		}
 
 		// // RVA: 0x29636E0 Offset: 0x29636E0 VA: 0x29636E0
 		private void CreateMaterial()

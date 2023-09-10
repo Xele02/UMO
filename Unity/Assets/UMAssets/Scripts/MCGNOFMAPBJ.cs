@@ -135,7 +135,14 @@ public class MCGNOFMAPBJ
 	}
 
 	// // RVA: 0x130D15C Offset: 0x130D15C VA: 0x130D15C
-	// public long LEHHIGOOIJJ() { }
+	public long LEHHIGOOIJJ()
+	{
+		if(NEPIPMPAFIE_Stamina < DCBENCMNOGO_GainStamina)
+		{
+			TodoLogger.LogError(0, "LEHHIGOOIJJ");
+		}
+		return 0;
+	}
 
 	// // RVA: 0x130D2AC Offset: 0x130D2AC VA: 0x130D2AC
 	public bool IGFMNMADJPP(int CHIHFGDIBJM, bool DDGFCOPPBBN = true)
