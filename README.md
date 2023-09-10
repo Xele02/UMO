@@ -1,6 +1,6 @@
 Rewrite project of UtaMacross mobile game. 
 
-**Current version : 0.4.4**
+**Current version : 0.4.5**
 
 Fonctionality : 
 * Basic loading of the game with default profile (all costume/cards unlocked and fully leveled)
