@@ -59,7 +59,11 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase // TypeDefIndex
 	// public int OMJHBJPCFFC(int EHDDADDKMFI) { }
 
 	// // RVA: 0x183B864 Offset: 0x183B864 VA: 0x183B864 Slot: 27
-	// public override int HLOGNJNGDJO(int OIPCCBHIKIA = 0) { }
+	public override int HLOGNJNGDJO_GetHelpId(int OIPCCBHIKIA = 0)
+	{
+		TodoLogger.LogError(0, "HLOGNJNGDJO");
+		return 0;
+	}
 
 	// // RVA: 0x183BA20 Offset: 0x183BA20 VA: 0x183BA20 Slot: 67
 	// public override int LBNKDKDMMOK() { }

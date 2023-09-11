@@ -103,7 +103,7 @@ namespace XeApp.Game.MiniGame
 			m_player.SecretCommand = m_secretCommand;
 			m_player.OnAwake();
 			m_itemManager = GetComponentInChildren<ShootingItemManager>(true);
-			m_itemManager.ResultData = m_resultData;
+			m_itemManager.ResulData = m_resultData;
 			m_itemManager.CollisionManager = m_coliisionManager;
 			m_itemManager.MainScreen = m_mainSceenSize;
 			m_itemManager.OnAwake();
@@ -112,7 +112,7 @@ namespace XeApp.Game.MiniGame
 			m_enemyManager.BulletManager = m_bulletManager;
 			m_enemyManager.Player = m_player;
 			m_enemyManager.MainScreen = m_mainSceenSize;
-			m_enemyManager.ResultData = m_resultData;
+			m_enemyManager.ResulData = m_resultData;
 			m_enemyManager.EffectManager = m_effectManager;
 			m_enemyManager.SoundManager = m_soundManager;
 			m_enemyManager.ItemManager = m_itemManager;
@@ -172,7 +172,11 @@ namespace XeApp.Game.MiniGame
 		//private void WaitUpdate(float elapsedTime) { }
 
 		//// RVA: 0x1CEB2BC Offset: 0x1CEB2BC VA: 0x1CEB2BC
-		//private void EventSetUpInUpdate(float elapsedTime) { }
+		private void EventSetUpInUpdate(float elapsedTime)
+		{
+			m_update = WaitUpdate;
+			this.StartCoroutineWatched(EventSetUpIn());
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6B19E0 Offset: 0x6B19E0 VA: 0x6B19E0
 		//// RVA: 0x1CEB368 Offset: 0x1CEB368 VA: 0x1CEB368
@@ -264,19 +268,55 @@ namespace XeApp.Game.MiniGame
 		//private IEnumerator BackSceneOut() { }
 
 		//// RVA: 0x1CEC8D0 Offset: 0x1CEC8D0 VA: 0x1CEC8D0
-		//public void BackScene() { }
+		public void BackScene()
+		{
+			m_soundManager.SystemSePlay(3);
+			this.StartCoroutineWatched(BackSceneOut());
+		}
 
 		//// RVA: 0x1CEC91C Offset: 0x1CEC91C VA: 0x1CEC91C
-		//public void HelpButton() { }
+		public void HelpButton()
+		{
+			m_soundManager.SystemSePlay(3);
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			AMLGMLNGMFB_EventAprilFool af = m_viewShootingData.OEGDCBLNNFF(time, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
+			if(af != null)
+			{
+				int id = af.HLOGNJNGDJO_GetHelpId(0);
+				if(id > 0)
+				{
+					m_update = WaitUpdate;
+					ShootingButtonDisable();
+					this.StartCoroutineWatched(Showtutorial(id, () =>
+					{
+						//0x1CECF1C
+						m_update = TitleMainUpdate;
+						ShootingButtonEnable();
+					}));
+				}
+			}
+		}
 
 		//// RVA: 0x1CECBF8 Offset: 0x1CECBF8 VA: 0x1CECBF8
-		//public void ChangeSceneButton() { }
+		public void ChangeSceneButton()
+		{
+			if (ShootingGameSceneState.SceneState == ShootingGameSceneState.GameSceneState.Result)
+				this.StartCoroutineWatched(ResultOut());
+			else if (ShootingGameSceneState.SceneState == ShootingGameSceneState.GameSceneState.Title)
+				this.StartCoroutineWatched(TitleOut());
+		}
 
 		//// RVA: 0x1CECC90 Offset: 0x1CECC90 VA: 0x1CECC90
 		//public void ShootingButtonEnable() { }
 
 		//// RVA: 0x1CECB64 Offset: 0x1CECB64 VA: 0x1CECB64
-		//public void ShootingButtonDisable() { }
+		public void ShootingButtonDisable()
+		{
+			for(int i = 0; i < m_shootingButtons.Length; i++)
+			{
+				m_shootingButtons[i].IsInputLock = true;
+			}
+		}
 
 		//// RVA: 0x1CECD24 Offset: 0x1CECD24 VA: 0x1CECD24
 		//private void TaskPause() { }
@@ -290,7 +330,7 @@ namespace XeApp.Game.MiniGame
 		//// RVA: 0x1CE9C64 Offset: 0x1CE9C64 VA: 0x1CE9C64
 		public void Pause()
 		{
-			if(ShootingGameSceneState.SceneState == 2 && !m_isPause)
+			if(ShootingGameSceneState.SceneState == ShootingGameSceneState.GameSceneState.MainScene && !m_isPause)
 			{
 				m_isPause = true;
 				TaskPause();
@@ -341,19 +381,23 @@ namespace XeApp.Game.MiniGame
 		}
 
 		//// RVA: 0x1CECDF4 Offset: 0x1CECDF4 VA: 0x1CECDF4
-		//public void PauseButton() { }
+		public void PauseButton()
+		{
+			m_soundManager.SystemSePlay(3);
+			Pause();
+		}
 
 		//// RVA: 0x1CECE30 Offset: 0x1CECE30 VA: 0x1CECE30
-		//public void CommandSuccess() { }
+		public void CommandSuccess()
+		{
+			m_soundManager.SePlay(9);
+			m_titleLayout.UseCommandEnter();
+		}
 
 		//// RVA: 0x1CECE84 Offset: 0x1CECE84 VA: 0x1CECE84
 		//public void TitleBackButton() { }
 
 		//// RVA: 0x1CECE88 Offset: 0x1CECE88 VA: 0x1CECE88
 		//public void MainBackButton() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6B2070 Offset: 0x6B2070 VA: 0x6B2070
-		//// RVA: 0x1CECF1C Offset: 0x1CECF1C VA: 0x1CECF1C
-		//private void <HelpButton>b__65_0() { }
 	}
 }

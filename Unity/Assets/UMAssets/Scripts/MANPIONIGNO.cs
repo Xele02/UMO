@@ -59,7 +59,11 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	// public int OMJHBJPCFFC(int EHDDADDKMFI) { }
 
 	// // RVA: 0xA17C88 Offset: 0xA17C88 VA: 0xA17C88 Slot: 27
-	// public override int HLOGNJNGDJO(int OIPCCBHIKIA = 0) { }
+	public override int HLOGNJNGDJO_GetHelpId(int OIPCCBHIKIA = 0)
+	{
+		TodoLogger.LogError(0, "HLOGNJNGDJO");
+		return 0;
+	}
 
 	// // RVA: 0xA17E44 Offset: 0xA17E44 VA: 0xA17E44 Slot: 67
 	// public override int LBNKDKDMMOK() { }

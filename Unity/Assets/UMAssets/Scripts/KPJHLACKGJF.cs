@@ -58,7 +58,11 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 	// public override int OMJHBJPCFFC(int EHDDADDKMFI) { }
 
 	// // RVA: 0x11346A0 Offset: 0x11346A0 VA: 0x11346A0 Slot: 27
-	// public override int HLOGNJNGDJO(int OIPCCBHIKIA = 0) { }
+	public override int HLOGNJNGDJO_GetHelpId(int OIPCCBHIKIA = 0)
+	{
+		TodoLogger.LogError(0, "HLOGNJNGDJO");
+		return 0;
+	}
 
 	// // RVA: 0x113485C Offset: 0x113485C VA: 0x113485C Slot: 67
 	// public override int LBNKDKDMMOK() { }

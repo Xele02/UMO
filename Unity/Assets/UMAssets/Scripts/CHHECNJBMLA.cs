@@ -35,7 +35,11 @@ public class CHHECNJBMLA_EventBoxGacha : IKDICBBFBMI_EventBase
 	// public override string IFKKBHPMALH() { }
 
 	// // RVA: 0x12BF370 Offset: 0x12BF370 VA: 0x12BF370 Slot: 27
-	// public override int HLOGNJNGDJO(int OIPCCBHIKIA = 0) { }
+	public override int HLOGNJNGDJO_GetHelpId(int OIPCCBHIKIA = 0)
+	{
+		TodoLogger.LogError(0, "HLOGNJNGDJO");
+		return 0;
+	}
 
 	// // RVA: 0x12BF52C Offset: 0x12BF52C VA: 0x12BF52C Slot: 28
 	public override long FBGDBGKNKOD()

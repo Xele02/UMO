@@ -451,7 +451,10 @@ public abstract class IKDICBBFBMI_EventBase
 	// public int CHHHPIDCDMH() { }
 
 	// // RVA: 0x8DF6E8 Offset: 0x8DF6E8 VA: 0x8DF6E8 Slot: 27
-	// public virtual int HLOGNJNGDJO(int OIPCCBHIKIA = 0) { }
+	public virtual int HLOGNJNGDJO_GetHelpId(int OIPCCBHIKIA = 0)
+	{
+		return 0;
+	}
 
 	// // RVA: -1 Offset: -1 Slot: 28
 	public abstract long FBGDBGKNKOD();

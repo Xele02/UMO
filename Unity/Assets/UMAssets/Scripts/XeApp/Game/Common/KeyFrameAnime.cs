@@ -58,7 +58,7 @@ namespace XeApp.Game.Common
 		protected Coroutine m_animCoroutine; // 0x28
 		protected Action<KeyFrameAnime, int> m_animCallback; // 0x2C
 
-		//public KeyFrameAnime SyncAnime { set; } 0x1103474
+		public KeyFrameAnime SyncAnime { set { m_syncAnime = value; } } //0x1103474
 		//public int PlayIndex { get; } 0x110347C
 
 		// RVA: 0x1102CD4 Offset: 0x1102CD4 VA: 0x1102CD4
