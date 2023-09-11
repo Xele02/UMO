@@ -198,7 +198,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1B5229C Offset: 0x1B5229C VA: 0x1B5229C
 		private void OnPushDetails(ComparisonSkillInfo info, int index)
 		{
-			TodoLogger.LogNotImplemented("OnPushDetails");
+			if(OnPushDetailsEvent != null)
+				OnPushDetailsEvent(info, index);
 		}
 	}
 }

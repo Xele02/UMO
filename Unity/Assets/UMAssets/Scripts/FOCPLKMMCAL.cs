@@ -724,11 +724,11 @@ public class FOCPLKMMCAL
 								}
 								if(JCCBGECHIEI)
 								{
-									BDMIIPKOIKL(item, itemId, rateInfo2.HMFFHLPNMPH_Cnt[itemIdx] * LFGNFNDDLJH_TicketCount, false);
+									BDMIIPKOIKL(item, itemId, rateInfo.HMFFHLPNMPH_Cnt[itemIdx] * LFGNFNDDLJH_TicketCount, false);
 								}
 								else
 								{
-									DFKOELMCDDL(item, itemId, rateInfo2.HMFFHLPNMPH_Cnt[itemIdx] * LFGNFNDDLJH_TicketCount, false);
+									DFKOELMCDDL(item, itemId, rateInfo.HMFFHLPNMPH_Cnt[itemIdx] * LFGNFNDDLJH_TicketCount, false);
 								}
 							}
 						}

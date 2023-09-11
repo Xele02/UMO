@@ -331,6 +331,7 @@ class JpStringLiterals
 	public const string StringLiteral_17777 = "獲得したアイテムはありません。"; // 0x03bba07c
 	public const string StringLiteral_17787 = "％"; // 0x03bba0a4
 	public const string StringLiteral_17788 = "(UCアイテムは {0}UC に変換されました)"; // 0x03bba0a8
+	public const string StringLiteral_17960 = "{0}回"; //0x03bba358
 	public const string StringLiteral_18022 = "使用スキル"; // 0x03bba450
 	public const string StringLiteral_18023 = "{0}秒"; //0x03bba454
 	public const string StringLiteral_18024 = "：{0}"; //0x03bba458
@@ -347,6 +348,7 @@ class JpStringLiterals
 	public const string StringLiteral_20367 = "ー"; // 0x03bbc8f4
 	public const string StringLiteral_20369 = "±{0}"; // 0x03bbc8fc
 	public const string StringLiteral_20382 = "（2回使用可）"; // 0x03bbc930
+	public const string StringLiteral_20383 = "<color={0}>（2回使用可）</color>"; //0x03bbc934
 	public const string StringLiteral_20448 = "モーションが指定されていない、またはモーション数を超えています。[ "; //0x03bbca38
 	public const string StringLiteral_20457 = "シンプルモデルに歌姫IDが設定されておりません。"; //0x03bbca5c
 	public const string StringLiteral_20458 = "シンプルモデルに衣装モデルIDが設定されておりません。"; //0x03bbca60

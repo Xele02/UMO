@@ -221,6 +221,8 @@ namespace XeApp.Game.RhythmGame.UI
 		private IEnumerator CloseAnimeCoroutine(Action endCallback)
 		{
 			//0x1563B18
+			if(m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
+				yield break;
 			while (m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime < NormalizedCloseFrame)
 				yield return null;
 			float f = NormalizedCloseFrame;

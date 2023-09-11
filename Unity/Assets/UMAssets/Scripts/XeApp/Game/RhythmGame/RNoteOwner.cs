@@ -123,9 +123,15 @@ namespace XeApp.Game.RhythmGame
 					{
 						if(musicScoreData.inputNoteTrack[i].swipe != MusicScoreData.TouchState.Start)
 						{
-							if(musicScoreData.inputNoteTrack[i].longTouch != MusicScoreData.TouchState.End && musicScoreData.inputNoteTrack[i].swipe != MusicScoreData.TouchState.End)
+							if(musicScoreData.inputNoteTrack[i].longTouch != MusicScoreData.TouchState.End)
 							{
 								judgeType = j1;
+								if(musicScoreData.inputNoteTrack[i].swipe == MusicScoreData.TouchState.End)
+								{
+									judgeType = j3;
+									if (musicScoreData.inputNoteTrack[i].isSlide)
+										judgeType = j6;
+								}
 							}
 							else
 							{

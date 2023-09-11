@@ -357,6 +357,8 @@ namespace XeApp.Game.Menu
 					m_jacketScroll.transform.SetParent(transform, false);
 				});
 				GameManager.Instance.RemovePushBackButtonHandler(m_jacketScroll.PerformClickClose);
+				ApplyMusicInfo();
+				DelayedApplyMusicInfo();
 			};
 			m_jacketScroll.OnClickCloseButtonListener = () =>
 			{

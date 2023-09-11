@@ -84,7 +84,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			gapMilliSec = musicTimeMilliSec - noteInfo.time;
 			positionRate = (gapMilliSec + noteDisplayMilliSec) * 1.0f / noteDisplayMilliSec;
-			passingStatus_ = CalcEvaluation(0) == 0 ? PassingStatus.After : (IsInScreenNote(musicTimeMilliSec, noteDisplayMilliSec) ? PassingStatus.Alive : PassingStatus.Before);
+			passingStatus_ = passJudge.CalcEvaluation(gapMilliSec, 0) == 0 ? PassingStatus.After : (IsInScreenNote(musicTimeMilliSec, noteDisplayMilliSec) ? PassingStatus.Alive : PassingStatus.Before);
 		}
 
 		//// RVA: 0xF633BC Offset: 0xF633BC VA: 0xF633BC

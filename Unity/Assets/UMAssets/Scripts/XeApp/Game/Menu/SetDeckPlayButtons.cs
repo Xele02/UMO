@@ -115,7 +115,7 @@ namespace XeApp.Game.Menu
 				}
 			}
 			m_skipButtonLockImage.enabled = skipType == SkipButtoType.Lock;
-			m_skipRestCountText.text = string.Format("{0}", skipRestCount); // StringLiteral_17960
+			m_skipRestCountText.text = string.Format(JpStringLiterals.StringLiteral_17960, skipRestCount);
 			if(playType == PlayButtonType.Support_AP)
 			{
 				m_playObject.SetActive(false);
