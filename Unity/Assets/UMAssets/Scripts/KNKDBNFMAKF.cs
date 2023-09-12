@@ -128,7 +128,10 @@ public class KNKDBNFMAKF_EventSp : IKDICBBFBMI_EventBase
 	// public override void FGDDBFHGCGP(bool JKDJCFEBDHC, long JHNMKKNEENE = 0) { }
 
 	// // RVA: 0x11279E4 Offset: 0x11279E4 VA: 0x11279E4 Slot: 70
-	// public override void ADACMHAHHKC(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG) { }
+	public override void ADACMHAHHKC(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG)
+	{
+		TodoLogger.LogError(0, "ADACMHAHHKC");
+	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6BE10C Offset: 0x6BE10C VA: 0x6BE10C
 	// // RVA: 0x1127A3C Offset: 0x1127A3C VA: 0x1127A3C

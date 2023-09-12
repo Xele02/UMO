@@ -15,7 +15,11 @@ public class GKFPMAPFHIK_ViewEventAprilFoolMiniGameData
 	private sbyte ALPDMEILILP_ClearCrypted; // 0x8
 
 	public bool BCGLDMKODLC_IsClear { get { return ALPDMEILILP_ClearCrypted == CNECJGKECHK_True; } set { PNBAPMLNDLN_SetClear(value); } } //0xAB254C NNGALFPBDNA 0xAB2560 JJBMOHCMALD
-	//public int LGDLEHHOIEL { get; set; } 0xAB26C0 OMFCCEBAODD 0xAB27D8 JGIJCMFGKEP
+	public int LGDLEHHOIEL_HighScore { get { return OOBJBHJCLON_LocalSaveShooting.LJKLECGFIEN_GetHighScore(); } set
+		{
+			BIEBAEDGDIA_SetHighScore(value);
+		}
+	} //0xAB26C0 OMFCCEBAODD 0xAB27D8 JGIJCMFGKEP
 	private ILDKBCLAFPB.AKKDKBOBKGH_AprilFool.OEAIOIHGMIH OOBJBHJCLON_LocalSaveShooting { get
 		{
 			return GameManager.Instance.localSave.EPJOACOONAC_GetSave().ICFDECCGKIL_AprilFool.MNKOCOODFKH_MiniGameShooting;
@@ -76,5 +80,9 @@ public class GKFPMAPFHIK_ViewEventAprilFoolMiniGameData
 	}
 
 	//// RVA: 0xAB27DC Offset: 0xAB27DC VA: 0xAB27DC
-	//private void BIEBAEDGDIA(int LGDLEHHOIEL) { }
+	private void BIEBAEDGDIA_SetHighScore(int LGDLEHHOIEL)
+	{
+		OOBJBHJCLON_LocalSaveShooting.BIEBAEDGDIA_SetHighScore(LGDLEHHOIEL);
+		GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+	}
 }

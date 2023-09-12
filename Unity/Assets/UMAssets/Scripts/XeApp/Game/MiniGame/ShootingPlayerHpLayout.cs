@@ -14,7 +14,19 @@ namespace XeApp.Game.MiniGame
 		}
 
 		//// RVA: 0xC8F894 Offset: 0xC8F894 VA: 0xC8F894
-		//public void ResetParam(int hpMax) { }
+		public void ResetParam(int hpMax)
+		{
+			for(int i = 0; i < m_hp.Length; i++)
+			{
+				m_hp[i].gameObject.SetActive(false);
+			}
+			if (hpMax < 1)
+				return;
+			for (int i = 0; i < hpMax; i++)
+			{
+				m_hp[i].gameObject.SetActive(true);
+			}
+		}
 
 		// RVA: 0xC8DCD4 Offset: 0xC8DCD4 VA: 0xC8DCD4
 		public void Damege(int lifeNum)

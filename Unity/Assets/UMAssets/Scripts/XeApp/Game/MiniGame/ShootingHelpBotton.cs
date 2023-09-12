@@ -28,10 +28,16 @@ namespace XeApp.Game.MiniGame
 		}
 
 		//// RVA: 0x1CFE728 Offset: 0x1CFE728 VA: 0x1CFE728
-		//public void Enter() { }
+		public void Enter()
+		{
+			m_inOutAnime.Enter(false, null);
+		}
 
 		//// RVA: 0x1CFE75C Offset: 0x1CFE75C VA: 0x1CFE75C
-		//public void Leave() { }
+		public void Leave()
+		{
+			m_inOutAnime.Leave(false, null);
+		}
 
 		//// RVA: 0x1CFE928 Offset: 0x1CFE928 VA: 0x1CFE928
 		//public bool IsPlayeing() { }

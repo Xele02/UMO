@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using XeApp.Game.Common;
 
@@ -17,13 +18,22 @@ namespace XeApp.Game.MiniGame
 		private bool m_isSeInstall; // 0x10
 
 		//// RVA: 0xC91290 Offset: 0xC91290 VA: 0xC91290
-		//public bool IsReady() { }
+		public bool IsReady()
+		{
+			return m_isSeInstall;
+		}
 
 		//// RVA: 0xC91298 Offset: 0xC91298 VA: 0xC91298
-		//public void BgmPlay(ShootingSoundManager.BGM_ID id) { }
+		public void BgmPlay(BGM_ID id)
+		{
+			SoundManager.Instance.bgmPlayer.Play(BgmPlayer.MINIGAME_BGM_ID_BASE + (int)id, 1);
+		}
 
 		//// RVA: 0xC9137C Offset: 0xC9137C VA: 0xC9137C
-		//public void BgmFadeOut(float sec = 1, Action onStop) { }
+		public void BgmFadeOut(float sec = 1, Action onStop = null)
+		{
+			SoundManager.Instance.bgmPlayer.FadeOut(sec, onStop);
+		}
 
 		// RVA: 0xC8DC78 Offset: 0xC8DC78 VA: 0xC8DC78
 		public void SePlay(int id)
@@ -38,10 +48,21 @@ namespace XeApp.Game.MiniGame
 		}
 
 		//// RVA: 0xC9143C Offset: 0xC9143C VA: 0xC9143C
-		//public void InstallCueSheet() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6B29D0 Offset: 0x6B29D0 VA: 0x6B29D0
-		//// RVA: 0xC917D0 Offset: 0xC917D0 VA: 0xC917D0
-		//private void <InstallCueSheet>b__8_0() { }
+		public void InstallCueSheet()
+		{
+			m_isSeInstall = false;
+			SoundManager.Instance.RequestEntryMiniGameCueSheet(() =>
+			{
+				//0xC917D0
+				m_isSeInstall = true;
+			});
+			for(int i = 0; i < BGM_LIST.Length; i++)
+			{
+				if (!SoundResource.IsInstalledCueSheet(BGM_LIST[i]))
+				{
+					SoundResource.InstallCueSheet(BGM_LIST[i]);
+				}
+			}
+		}
 	}
 }

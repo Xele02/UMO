@@ -12,9 +12,15 @@ namespace XeApp.Game.MiniGame
 		public Action onCleckPauseBotton { set { m_pauseButton.onClickButton = value; } } //0x1CEADA0
 
 		//// RVA: 0x1CEEDE4 Offset: 0x1CEEDE4 VA: 0x1CEEDE4
-		//public void Enter() { }
+		public void Enter()
+		{
+			m_pauseButton.Enter();
+		}
 
 		//// RVA: 0x1CEF148 Offset: 0x1CEF148 VA: 0x1CEF148
-		//public void Leave() { }
+		public void Leave()
+		{
+			m_pauseButton.Leave();
+		}
 	}
 }

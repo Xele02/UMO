@@ -19,13 +19,13 @@ namespace XeApp.Game.MiniGame
 		public abstract void OnStart();
 
 		//// RVA: -1 Offset: -1 Slot: 13
-		//public abstract void Initialize();
+		public abstract void Initialize();
 
 		//// RVA: -1 Offset: -1 Slot: 14
-		//public abstract void Pause();
+		public abstract void Pause();
 
 		//// RVA: -1 Offset: -1 Slot: 15
-		//public abstract void UnPause();
+		public abstract void UnPause();
 
 		//// RVA: -1 Offset: -1 Slot: 16
 		public abstract void OnUpdate(float elapsedTime);

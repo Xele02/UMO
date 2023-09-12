@@ -42,7 +42,13 @@ namespace XeApp.Game.MiniGame
 		}
 
 		//// RVA: 0xC9201C Offset: 0xC9201C VA: 0xC9201C Slot: 6
-		//public void Initialize() { }
+		public void Initialize()
+		{
+			for(int i = 0; i < m_taskList.Count; i++)
+			{
+				m_taskList[i].Initialize();
+			}
+		}
 
 		//// RVA: 0xC92100 Offset: 0xC92100 VA: 0xC92100
 		public void CreateActiveTaskList()
@@ -58,10 +64,24 @@ namespace XeApp.Game.MiniGame
 		}
 
 		//// RVA: 0xC92240 Offset: 0xC92240 VA: 0xC92240 Slot: 7
-		//public void Pause() { }
+		public void Pause()
+		{
+			CreateActiveTaskList();
+			for(int i = 0; i < m_taskActiveList.Count; i++)
+			{
+				m_taskActiveList[i].Pause();
+			}
+		}
 
 		//// RVA: 0xC9232C Offset: 0xC9232C VA: 0xC9232C Slot: 8
-		//public void UnPause() { }
+		public void UnPause()
+		{
+			CreateActiveTaskList();
+			for(int i = 0; i < m_taskActiveList.Count; i++)
+			{
+				m_taskActiveList[i].UnPause();
+			}
+		}
 
 		// RVA: 0xC92418 Offset: 0xC92418 VA: 0xC92418 Slot: 9
 		public void OnUpdate(float elapsedTime)
@@ -91,7 +111,10 @@ namespace XeApp.Game.MiniGame
 		}
 
 		//// RVA: 0xC926B0 Offset: 0xC926B0 VA: 0xC926B0
-		//public void RemoveTask(ShootingTask task) { }
+		public void RemoveTask(ShootingTask task)
+		{
+			m_taskList.Remove(task);
+		}
 
 		//// RVA: 0xC92730 Offset: 0xC92730 VA: 0xC92730
 		//public void Clear() { }

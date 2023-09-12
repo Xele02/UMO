@@ -6,7 +6,7 @@ namespace XeApp.Game.MiniGame
 		private const int SCORE_MAX = 99999999;
 		private int m_score; // 0x8
 
-		public int Score { get; set
+		public int Score { get { return m_score ^ xor; } set
 			{
 				m_score = m_score ^ xor + value;
 				if (m_score > SCORE_MAX)

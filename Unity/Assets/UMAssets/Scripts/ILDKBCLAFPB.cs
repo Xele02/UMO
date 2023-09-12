@@ -4555,16 +4555,28 @@ public class ILDKBCLAFPB
 			}
 
 			//// RVA: 0x201E7C4 Offset: 0x201E7C4 VA: 0x201E7C4
-			//public int LJKLECGFIEN() { }
+			public int LJKLECGFIEN_GetHighScore()
+			{
+				return LGDLEHHOIEL_HighScore;
+			}
 
 			//// RVA: 0x201E7D4 Offset: 0x201E7D4 VA: 0x201E7D4
-			//public void BIEBAEDGDIA(int LGDLEHHOIEL) { }
+			public void BIEBAEDGDIA_SetHighScore(int LGDLEHHOIEL)
+			{
+				LGDLEHHOIEL_HighScore = LGDLEHHOIEL;
+			}
 
 			//// RVA: 0x201E7E4 Offset: 0x201E7E4 VA: 0x201E7E4
-			//public bool PFBGBGLGBLA() { }
+			public bool PFBGBGLGBLA_GetIsUseCommand()
+			{
+				return BLGHBBEDGML_IsUseCommand;
+			}
 
 			//// RVA: 0x201E7EC Offset: 0x201E7EC VA: 0x201E7EC
-			//public void JBCCMOKKCPA(bool CHPIFIEEEEC) { }
+			public void JBCCMOKKCPA_SetIsUseCommand(bool CHPIFIEEEEC)
+			{
+				BLGHBBEDGML_IsUseCommand = CHPIFIEEEEC;
+			}
 		}
 
 		public OEAIOIHGMIH MNKOCOODFKH_MiniGameShooting = new OEAIOIHGMIH(); // 0x8

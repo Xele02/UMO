@@ -341,13 +341,56 @@ namespace XeApp.Game.MiniGame
 		}
 
 		//// RVA: 0xC8F498 Offset: 0xC8F498 VA: 0xC8F498 Slot: 13
-		//public override void Initialize() { }
+		public override void Initialize()
+		{
+			OnActive();
+			CollisionManager.AddCollision(m_collision);
+			for(int i = 0; i < m_invincibleRender.Length; i++)
+			{
+				Color c = m_invincibleRender[i].color;
+				c.a = 1;
+				m_invincibleRender[i].color = c;
+			}
+			m_state = State.Entry;
+			m_damegeState = DamegeState.Wait;
+			transform.localPosition = m_entryLocalPos;
+			transform.rotation = Quaternion.identity;
+			m_deathAngle = 0;
+			m_isInvincible = false;
+			m_isInvincibleAnime = false;
+			m_invincibleElapsedTime = 0;
+			m_blinkingElapsedTime = 0;
+			m_fireElapsedTime = m_fireTimeMax;
+			float f = Vector3.Distance(m_startPos, transform.position);
+			m_entrySpeed = f / m_startEntryTimeMax;
+			m_damegEntrySpeed = f / m_damegeEntryTimeMax;
+			if (!SecretCommand.IsSecretCommand)
+			{
+				m_hp = m_hpMax - 1;
+				m_fireBulletNum = 1;
+			}
+			else
+			{
+				m_hp = m_hpSecretMax - 1;
+				m_fireBulletNum = m_spreadBulletAngle.Length;
+			}
+			m_hpLayout.gameObject.SetActive(true);
+			m_hpLayout.ResetParam(m_hp);
+			m_animator.speed = m_animSpeed;
+		}
 
 		//// RVA: 0xC8F9DC Offset: 0xC8F9DC VA: 0xC8F9DC Slot: 14
-		//public override void Pause() { }
+		public override void Pause()
+		{
+			m_animSpeed = m_animator.speed;
+			m_animator.speed = 0;
+		}
 
 		//// RVA: 0xC8FA34 Offset: 0xC8FA34 VA: 0xC8FA34 Slot: 15
-		//public override void UnPause() { }
+		public override void UnPause()
+		{
+			m_animator.speed = m_animSpeed;
+		}
 
 		// RVA: 0xC8FA70 Offset: 0xC8FA70 VA: 0xC8FA70 Slot: 16
 		public override void OnUpdate(float elapsedTime)

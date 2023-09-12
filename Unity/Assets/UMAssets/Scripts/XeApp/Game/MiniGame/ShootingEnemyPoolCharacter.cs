@@ -33,13 +33,23 @@ namespace XeApp.Game.MiniGame
 		}
 
 		//// RVA: 0x1CFBBF4 Offset: 0x1CFBBF4 VA: 0x1CFBBF4 Slot: 13
-		//public override void Initialize() { }
+		public override void Initialize()
+		{
+			OnActive();
+			m_taskManager.Initialize();
+		}
 
 		//// RVA: 0x1CFBC2C Offset: 0x1CFBC2C VA: 0x1CFBC2C Slot: 14
-		//public override void Pause() { }
+		public override void Pause()
+		{
+			m_taskManager.Pause();
+		}
 
 		//// RVA: 0x1CFBC58 Offset: 0x1CFBC58 VA: 0x1CFBC58 Slot: 15
-		//public override void UnPause() { }
+		public override void UnPause()
+		{
+			m_taskManager.UnPause();
+		}
 
 		// RVA: 0x1CFBC84 Offset: 0x1CFBC84 VA: 0x1CFBC84 Slot: 16
 		public override void OnUpdate(float elapsedTime)

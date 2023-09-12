@@ -41,13 +41,22 @@ namespace XeApp.Game.MiniGame
 		}
 
 		//// RVA: 0x1CF4884 Offset: 0x1CF4884 VA: 0x1CF4884 Slot: 6
-		//public void Initialize() { }
+		public void Initialize()
+		{
+			return;
+		}
 
 		//// RVA: 0x1CF4888 Offset: 0x1CF4888 VA: 0x1CF4888 Slot: 7
-		//public void Pause() { }
+		public void Pause()
+		{
+			return;
+		}
 
 		//// RVA: 0x1CF488C Offset: 0x1CF488C VA: 0x1CF488C Slot: 8
-		//public void UnPause() { }
+		public void UnPause()
+		{
+			return;
+		}
 
 		// RVA: g Offset: 0x1CF36BC VA: 0x1CF36BC Slot: 9
 		public void OnUpdate(float elapsedTime)

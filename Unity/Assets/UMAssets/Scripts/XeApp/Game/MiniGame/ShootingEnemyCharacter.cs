@@ -146,13 +146,30 @@ namespace XeApp.Game.MiniGame
 		}
 
 		//// RVA: 0x1CF9298 Offset: 0x1CF9298 VA: 0x1CF9298 Slot: 13
-		//public override void Initialize() { }
+		public override void Initialize()
+		{
+			OnSleep();
+		}
 
 		//// RVA: 0x1CF9DBC Offset: 0x1CF9DBC VA: 0x1CF9DBC Slot: 14
-		//public override void Pause() { }
+		public override void Pause()
+		{
+			for(int i = 0; i < m_anime.Length; i++)
+			{
+				m_anime[i].spriteAnim[m_animationType].Stop(false);
+				m_anime[i].damegeAnim.Stop(false);
+			}
+		}
 
 		//// RVA: 0x1CF9F04 Offset: 0x1CF9F04 VA: 0x1CF9F04 Slot: 15
-		//public override void UnPause() { }
+		public override void UnPause()
+		{
+			for (int i = 0; i < m_anime.Length; i++)
+			{
+				m_anime[i].spriteAnim[m_animationType].Play(m_anime[i].spriteAnim[m_animationType].PlayIndex, null);
+				m_anime[i].damegeAnim.Play(m_anime[i].damegeAnim.PlayIndex, null);
+			}
+		}
 
 		// RVA: 0x1CF9574 Offset: 0x1CF9574 VA: 0x1CF9574 Slot: 16
 		public override void OnUpdate(float elapsedTime)

@@ -64,31 +64,48 @@ namespace XeApp.Game.MiniGame
 		}
 
 		//// RVA: 0x1CED560 Offset: 0x1CED560 VA: 0x1CED560
-		//public void BackScene() { }
+		public void BackScene()
+		{
+			NextScene(prevSceneName);
+		}
 
 		//// RVA: 0x1CF0908 Offset: 0x1CF0908 VA: 0x1CF0908
-		//public bool CheckDateLineAndAssetUpdate() { }
+		public bool CheckDateLineAndAssetUpdate()
+		{
+			return PGIGNJDPCAH.MNANNMDBHMP(() =>
+			{
+				//0x1CF1090
+				this.StartCoroutineWatched(Co_GotoLoginBonus());
+			}, () =>
+			{
+				//0x1CF10B4
+				this.StartCoroutineWatched(Co_GotoTitle());
+			});
+		}
 
 		//// RVA: 0x1CED0E4 Offset: 0x1CED0E4 VA: 0x1CED0E4
-		//public void GotoTitle() { }
+		public void GotoTitle()
+		{
+			this.StartCoroutineWatched(Co_GotoTitle());
+		}
 
 		//// RVA: 0x1CF0EA8 Offset: 0x1CF0EA8 VA: 0x1CF0EA8
 		//public void GotoLoginBonus() { }
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6B1120 Offset: 0x6B1120 VA: 0x6B1120
 		//// RVA: 0x1CF0ECC Offset: 0x1CF0ECC VA: 0x1CF0ECC
-		//private IEnumerator Co_GotoLoginBonus() { }
+		private IEnumerator Co_GotoLoginBonus()
+		{
+			TodoLogger.LogError(0, "Co_GotoLoginBonus");
+			yield return null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6B1198 Offset: 0x6B1198 VA: 0x6B1198
 		//// RVA: 0x1CF0E1C Offset: 0x1CF0E1C VA: 0x1CF0E1C
-		//private IEnumerator Co_GotoTitle() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6B1210 Offset: 0x6B1210 VA: 0x6B1210
-		//// RVA: 0x1CF1090 Offset: 0x1CF1090 VA: 0x1CF1090
-		//private void <CheckDateLineAndAssetUpdate>b__10_0() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6B1220 Offset: 0x6B1220 VA: 0x6B1220
-		//// RVA: 0x1CF10B4 Offset: 0x1CF10B4 VA: 0x1CF10B4
-		//private void <CheckDateLineAndAssetUpdate>b__10_1() { }
+		private IEnumerator Co_GotoTitle()
+		{
+			TodoLogger.LogError(0, "Co_GotoTitle");
+			yield return null;
+		}
 	}
 }

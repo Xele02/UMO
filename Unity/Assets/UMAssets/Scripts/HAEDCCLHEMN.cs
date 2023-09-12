@@ -258,7 +258,10 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 	// private bool PLCLKINIGLO() { }
 
 	// // RVA: 0x1B76734 Offset: 0x1B76734 VA: 0x1B76734 Slot: 70
-	// public override void ADACMHAHHKC(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG) { }
+	public override void ADACMHAHHKC(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG)
+	{
+		TodoLogger.LogError(0, "ADACMHAHHKC");
+	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6BBF3C Offset: 0x6BBF3C VA: 0x6BBF3C
 	// // RVA: 0x1B7678C Offset: 0x1B7678C VA: 0x1B7678C

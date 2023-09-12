@@ -16,9 +16,17 @@ namespace XeApp.Game.MiniGame
 		public Action onCleckHelpBotton { set { m_helpButton.onClickButton = value; } } //0x1CEAD78
 
 		//// RVA: 0x1CF0600 Offset: 0x1CF0600 VA: 0x1CF0600
-		//public void Enter() { }
+		public void Enter()
+		{
+			m_backButton.Enter();
+			m_helpButton.Enter();
+		}
 
 		//// RVA: 0x1CF09F4 Offset: 0x1CF09F4 VA: 0x1CF09F4
-		//public void Leave() { }
+		public void Leave()
+		{
+			m_backButton.Leave();
+			m_helpButton.Leave();
+		}
 	}
 }

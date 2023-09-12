@@ -55,13 +55,38 @@ namespace XeApp.Game.MiniGame
 		}
 
 		//// RVA: 0x1CF4E20 Offset: 0x1CF4E20 VA: 0x1CF4E20 Slot: 13
-		//public override void Initialize() { }
+		public override void Initialize()
+		{
+			OnActive();
+			m_playerCollisons.Clear();
+			m_otherCollisons.Clear();
+		}
 
 		//// RVA: 0x1CF4ED0 Offset: 0x1CF4ED0 VA: 0x1CF4ED0 Slot: 14
-		//public override void Pause() { }
+		public override void Pause()
+		{
+			for(int i = 0; i < m_playerCollisons.Count; i++)
+			{
+				m_playerCollisons[i].Pause();
+			}
+			for (int i = 0; i < m_otherCollisons.Count; i++)
+			{
+				m_otherCollisons[i].Pause();
+			}
+		}
 
 		//// RVA: 0x1CF501C Offset: 0x1CF501C VA: 0x1CF501C Slot: 15
-		//public override void UnPause() { }
+		public override void UnPause()
+		{
+			for (int i = 0; i < m_playerCollisons.Count; i++)
+			{
+				m_playerCollisons[i].UnPause();
+			}
+			for (int i = 0; i < m_otherCollisons.Count; i++)
+			{
+				m_otherCollisons[i].UnPause();
+			}
+		}
 
 		// RVA: 0x1CF5168 Offset: 0x1CF5168 VA: 0x1CF5168 Slot: 16
 		public override void OnUpdate(float elapsedTime)
