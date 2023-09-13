@@ -14,7 +14,12 @@ namespace XeApp.Game.MiniGame
 		public EffectId GetId { get { return m_effectId; } } //0x1CF56E4
 
 		//// RVA: 0x1CF56EC Offset: 0x1CF56EC VA: 0x1CF56EC Slot: 19
-		//public virtual void Play(Transform trans) { }
+		public virtual void Play(Transform trans)
+		{
+			OnActive();
+			trans.position = trans.position;
+			m_spriteAnim.Play(0, null);
+		}
 
 		// RVA: 0x1CF578C Offset: 0x1CF578C VA: 0x1CF578C Slot: 11
 		public override void OnAwake()

@@ -49,7 +49,10 @@ namespace XeApp.Game.MiniGame
 		}
 
 		//// RVA: 0x1CF31EC Offset: 0x1CF31EC VA: 0x1CF31EC
-		//protected void Death() { }
+		protected void Death()
+		{
+			SetStatus(TaskStatus.Dead);
+		}
 
 		//// RVA: 0x1CF31F8 Offset: 0x1CF31F8 VA: 0x1CF31F8
 		protected void DestructMe()

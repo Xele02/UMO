@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace XeApp.Game.MiniGame
 {
@@ -9,7 +10,17 @@ namespace XeApp.Game.MiniGame
 		private ShootingTaskManager m_taskManager; // 0x18
 
 		//// RVA: 0x1CF5854 Offset: 0x1CF5854 VA: 0x1CF5854
-		//public void Play(EffectId effectId, Transform trans) { }
+		public void Play(EffectId effectId, Transform trans)
+		{
+			for(int i = 0; i < m_effectPoolList.Count; i++)
+			{
+				if(m_effectPoolList[i].m_taskObject.GetId == effectId)
+				{
+					ShootingEffect eff = m_effectPoolList[i].Alloc();
+					eff.Play(trans);
+				}
+			}
+		}
 
 		//// RVA: 0x1CF5C30 Offset: 0x1CF5C30 VA: 0x1CF5C30 Slot: 11
 		public override void OnAwake()

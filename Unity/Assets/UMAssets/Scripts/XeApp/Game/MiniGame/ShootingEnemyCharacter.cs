@@ -67,13 +67,42 @@ namespace XeApp.Game.MiniGame
 		}
 
 		//// RVA: 0x1CF99B8 Offset: 0x1CF99B8 VA: 0x1CF99B8 Slot: 24
-		//protected virtual void DeathMove(float elapsedTime) { }
+		protected virtual void DeathMove(float elapsedTime)
+		{
+			transform.position = ShootingUtility.PosAfterMovement(elapsedTime, transform.position, Vector3.right, m_deathSpeed);
+			m_deathAngle += elapsedTime * 720;
+			transform.eulerAngles = new Vector3(0, 0, -m_deathAngle);
+		}
 
 		//// RVA: 0x1CF8AE4 Offset: 0x1CF8AE4 VA: 0x1CF8AE4
-		//protected void Damege() { }
+		protected void Damege()
+		{
+			m_hp--;
+			ResulData.Score = m_damegeScore;
+			if(m_hp < 1)
+			{
+				ResulData.Score = m_deathScore;
+				ChangeDeathState();
+				if(m_dropItemType != ShootingStageData.StageItemType.None)
+				{
+					ItemManager.SetItem(m_dropItemType, transform.position);
+				}
+			}
+			else
+			{
+				m_damegeAlpha.Play();
+				SoundManager.SePlay(4);
+			}
+		}
 
 		//// RVA: 0x1CF87B0 Offset: 0x1CF87B0 VA: 0x1CF87B0 Slot: 25
-		//protected virtual void ChangeDeathState() { }
+		protected virtual void ChangeDeathState()
+		{
+			m_isCheckOutScreen = true;
+			CollisionManager.EraseCollision(m_collision);
+			EffectManager.Play(m_deathEffectId, transform);
+			SoundManager.SePlay(6);
+		}
 
 		//// RVA: 0x1CF9B78 Offset: 0x1CF9B78 VA: 0x1CF9B78 Slot: 26
 		protected virtual void Death()
@@ -105,7 +134,7 @@ namespace XeApp.Game.MiniGame
 		{
 			transform.position = new Vector3(data.pos.x + m_halfWidth, data.pos.y, data.pos.z);
 			m_dropItemType = data.itemType;
-			m_animationType = data.itemType != ShootingStageData.StageItemType.None ? 1 : 4;
+			m_animationType = data.itemType != ShootingStageData.StageItemType.None ? 1 : (int)data.itemType;
 			for(int i = 0; i < m_anime.Length; i++)
 			{
 				m_anime[i].spriteAnim[m_animationType].Play(0, null);

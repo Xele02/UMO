@@ -26,7 +26,15 @@ namespace XeApp.Game.MiniGame
 		}
 
 		//// RVA: 0x1CF3B84 Offset: 0x1CF3B84 VA: 0x1CF3B84
-		//public void MultipleShotBullet(BulletId bulletId, Transform transform, Vector3 targetPos, float angle, int fireNum) { }
+		public void MultipleShotBullet(BulletId bulletId, Transform transform, Vector3 targetPos, float angle, int fireNum)
+		{
+			Vector2 p = targetPos - transform.position;
+			p.Normalize();
+			for(int i = 0; i < fireNum; i++)
+			{
+				ShotBullet(BulletId.BossBullet, transform, Quaternion.Euler(0, 0, angle / (fireNum - 1) * i - angle * 0.5f) * p);
+			}
+		}
 
 		// RVA: 0x1CF3DF8 Offset: 0x1CF3DF8 VA: 0x1CF3DF8 Slot: 11
 		public override void OnAwake()

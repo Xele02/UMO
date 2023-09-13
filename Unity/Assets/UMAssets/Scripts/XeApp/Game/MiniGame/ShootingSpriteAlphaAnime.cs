@@ -62,7 +62,16 @@ namespace XeApp.Game.MiniGame
 		}
 
 		//// RVA: 0xC9199C Offset: 0xC9199C VA: 0xC9199C
-		//public void Play() { }
+		public void Play()
+		{
+			m_animTime = 0;
+			if(!m_isPlay)
+			{
+				m_blinkingTime = 0;
+				Blinking();
+			}
+			m_isPlay = true;
+		}
 
 		// RVA: 0xC919D4 Offset: 0xC919D4 VA: 0xC919D4
 		public void OnUpdate(float elapsedTime, Action finishCallBack)
