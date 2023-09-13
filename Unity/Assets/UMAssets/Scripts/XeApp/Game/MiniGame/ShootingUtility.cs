@@ -8,7 +8,7 @@ namespace XeApp.Game.MiniGame
 		public static bool CheckOutTheScreen(RectTransform screen, Vector3 pos, float width, float height)
 		{
 			Vector2 s = screen.sizeDelta;
-			if ((pos.x <= -s.x * 0.5f - width) || (s.x * .05f + width < pos.x) || (pos.y <= -s.y * 0.5f - height))
+			if ((pos.x <= -s.x * 0.5f - width) || (s.x * 0.5f + width < pos.x) || (pos.y <= -s.y * 0.5f - height))
 				return true;
 			return pos.y * 0.5f + height < pos.y;
 		}
