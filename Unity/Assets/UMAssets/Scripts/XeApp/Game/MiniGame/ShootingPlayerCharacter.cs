@@ -113,7 +113,8 @@ namespace XeApp.Game.MiniGame
 				if(m_hp > -1)
 				{
 					m_hpLayout.Damege(m_hp);
-					m_hp--;
+					if(!RuntimeSettings.CurrentSettings.MinigameAutoPlay)
+						m_hp--;
 					if(m_hp < 0)
 					{
 						SetStatus(TaskStatus.Dead);
@@ -188,11 +189,30 @@ namespace XeApp.Game.MiniGame
 			m_animator.SetBool("IsDescent", moveDir.y < 0);
 		}
 
+		bool debugGoUp = false;
+
 		//// RVA: 0xC8E4F4 Offset: 0xC8E4F4 VA: 0xC8E4F4
 		private void MoveStateUpdate(float elapsedTime)
 		{
 			Vector3 dir = new Vector3(VirtualPad.Stick.Axis.x, VirtualPad.Stick.Axis.y, 0);
 			dir.Normalize();
+			if(RuntimeSettings.CurrentSettings.MinigameAutoPlay)
+			{
+				if (debugGoUp)
+				{
+					if (transform.localPosition.y < MainScreen.sizeDelta.y * 0.5f - 2 * m_playerHalfHeight)
+						dir.y = 1;
+					else
+						debugGoUp = false;
+				}
+				else
+				{
+					if (transform.localPosition.y > -MainScreen.sizeDelta.y * 0.5f + 2 * m_playerHalfHeight)
+						dir.y = -1;
+					else
+						debugGoUp = true;
+				}
+			}
 			if(dir.x != 0 || dir.y != 0)
 			{
 				MoveUpdate(elapsedTime, dir);
@@ -203,7 +223,7 @@ namespace XeApp.Game.MiniGame
 				if(VirtualPad.Buttons[i].ButtonId == 1)
 				{
 					m_fireElapsedTime -= elapsedTime;
-					if(VirtualPad.Buttons[i].IsPress && m_fireElapsedTime < 0)
+					if((VirtualPad.Buttons[i].IsPress || RuntimeSettings.CurrentSettings.MinigameAutoPlay) && m_fireElapsedTime < 0)
 					{
 						m_fireElapsedTime = m_fireTimeMax;
 						Fire();

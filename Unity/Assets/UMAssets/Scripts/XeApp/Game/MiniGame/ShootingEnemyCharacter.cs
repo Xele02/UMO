@@ -213,7 +213,9 @@ namespace XeApp.Game.MiniGame
 			if(m_isCheckOutScreen)
 			{
 				if (ShootingUtility.CheckOutTheScreen(MainScreen, transform.localPosition, m_halfWidth, m_halfHeight))
+				{
 					Death();
+				}
 			}
 		}
 

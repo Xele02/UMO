@@ -37,7 +37,7 @@ namespace XeApp.Game.MiniGame
 			ParamReset();
 			this.transform.position = transform.position;
 			m_move = move;
-			transform.localPosition += m_move * m_halfWidth;
+			this.transform.localPosition += m_move * m_halfWidth;
 			CollisionManager.AddCollision(m_collision);
 			m_spriteAnim.Play(0, null);
 		}

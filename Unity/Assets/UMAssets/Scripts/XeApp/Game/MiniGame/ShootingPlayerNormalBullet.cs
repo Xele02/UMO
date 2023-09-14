@@ -51,7 +51,7 @@ namespace XeApp.Game.MiniGame
 		public override void SetBullet(Transform transform, Vector3 move)
 		{
 			base.SetBullet(transform, move);
-			transform.eulerAngles = new Vector3(0, 0, Vector3.SignedAngle(Vector3.right, m_move, Vector3.forward));
+			this.transform.eulerAngles = new Vector3(0, 0, Vector3.SignedAngle(Vector3.right, m_move, Vector3.forward));
 		}
 
 		// RVA: 0xC90018 Offset: 0xC90018 VA: 0xC90018 Slot: 21

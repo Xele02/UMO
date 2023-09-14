@@ -101,12 +101,12 @@ namespace XeApp.Game.MiniGame
 				ShootingCollision c = m_playerCollisons[i];
 				for(int j = 0; j < m_otherCollisons.Count; j++)
 				{
-					if(!m_otherCollisons[i].Owner.IsStatus(TaskStatus.Dead))
+					if(!m_otherCollisons[j].Owner.IsStatus(TaskStatus.Dead))
 					{
-						if(Vector2.Distance(c.m_pos, m_otherCollisons[i].m_pos) < c.m_radius + m_otherCollisons[i].m_radius)
+						if(Vector2.Distance(c.m_pos, m_otherCollisons[j].m_pos) < c.m_radius + m_otherCollisons[j].m_radius)
 						{
-							c.HitCallBack(m_otherCollisons[i]);
-							m_otherCollisons[i].HitCallBack(c);
+							c.HitCallBack(m_otherCollisons[j]);
+							m_otherCollisons[j].HitCallBack(c);
 						}
 						if (c.Owner.IsStatus(TaskStatus.Dead))
 							break;

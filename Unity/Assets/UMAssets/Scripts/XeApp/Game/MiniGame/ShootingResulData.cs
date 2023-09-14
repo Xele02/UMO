@@ -8,7 +8,7 @@ namespace XeApp.Game.MiniGame
 
 		public int Score { get { return m_score ^ xor; } set
 			{
-				m_score = m_score ^ xor + value;
+				m_score = (m_score ^ xor) + value;
 				if (m_score > SCORE_MAX)
 					m_score = SCORE_MAX;
 				m_score = m_score ^ xor;

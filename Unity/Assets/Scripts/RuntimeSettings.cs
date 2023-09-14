@@ -133,6 +133,7 @@ class RuntimeSettings : ScriptableObject
 	public bool EnableLocalSaveCheck = false;
 	public bool EnableDebugStopCoroutine = false;
 	public bool EnableDebugSkills = false;
+	public bool MinigameAutoPlay = false;
 }
 
 #if UNITY_EDITOR

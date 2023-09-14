@@ -10,7 +10,7 @@ namespace XeApp.Game.MiniGame
 			Vector2 s = screen.sizeDelta;
 			if ((pos.x <= -s.x * 0.5f - width) || (s.x * 0.5f + width < pos.x) || (pos.y <= -s.y * 0.5f - height))
 				return true;
-			return pos.y * 0.5f + height < pos.y;
+			return s.y * 0.5f + height < pos.y;
 		}
 
 		//// RVA: 0xC92C0C Offset: 0xC92C0C VA: 0xC92C0C
