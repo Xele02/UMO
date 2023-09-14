@@ -371,14 +371,47 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xECB90C Offset: 0xECB90C VA: 0xECB90C
-		//public void ChangeCameraRot(Vector3 rotation, float duration) { }
+		public void ChangeCameraRot(Vector3 rotation, float duration)
+		{
+			Vector3 v = divaCamera.transform.localEulerAngles;
+			if(rotation != v)
+			{
+				if (duration <= 0)
+					SetCameraRot(rotation);
+				else
+					this.StartCoroutineWatched(Co_ChangeCameraRot(rotation, duration));
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C7084 Offset: 0x6C7084 VA: 0x6C7084
 		//// RVA: 0xECBA4C Offset: 0xECBA4C VA: 0xECBA4C
-		//private IEnumerator Co_ChangeCameraRot(Vector3 rotation, float duration) { }
+		private IEnumerator Co_ChangeCameraRot(Vector3 rotation, float duration)
+		{
+			float currentTime; // 0x24
+			Vector3 preRotation; // 0x28
+			Vector3 distRotation; // 0x34
+
+			//0xECC0B0
+			m_isChangingDivaCameraRot = true;
+			currentTime = 0;
+			preRotation = divaCamera.transform.localEulerAngles;
+			divaCamera.transform.localEulerAngles = rotation;
+			distRotation = divaCamera.transform.localEulerAngles - preRotation;
+			while(duration < currentTime)
+			{
+				divaCamera.transform.localEulerAngles = preRotation + distRotation * (currentTime / duration);
+				currentTime += Time.deltaTime;
+				yield return null;
+			}
+			divaCamera.transform.localEulerAngles = rotation;
+			m_isChangingDivaCameraRot = false;
+		}
 
 		//// RVA: 0xECBB44 Offset: 0xECBB44 VA: 0xECBB44
-		//public bool IsChangingCameraRot() { }
+		public bool IsChangingCameraRot()
+		{
+			return m_isChangingDivaCameraRot;
+		}
 
 		//// RVA: 0xECAC40 Offset: 0xECAC40 VA: 0xECAC40
 		public void ApplyCameraPos(int divaId, DivaMenuParam.CameraPosType type = 0)

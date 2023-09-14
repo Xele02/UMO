@@ -71,7 +71,7 @@ namespace XeApp.Game.Menu
 		private ListType m_lsitType; // 0x4C
 		[SerializeField] // RVA: 0x670974 Offset: 0x670974 VA: 0x670974
 		private float m_SerifPlayTime = 1.5f; // 0x50
-		//private List<OJEGDIBEBHP> m_viewList; // 0x54
+		private List<OJEGDIBEBHP> m_viewList; // 0x54
 		public HomeDivaControl m_divaControl; // 0x58
 		public bool IsPupUpWindow; // 0x5C
 		private int m_preReactionIndex; // 0x60
@@ -556,7 +556,17 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E6CEC Offset: 0x6E6CEC VA: 0x6E6CEC
 		//// RVA: 0x14B2F04 Offset: 0x14B2F04 VA: 0x14B2F04
-		//public IEnumerator co_UpdateGakuyaList(Action callBack) { }
+		public IEnumerator co_UpdateGakuyaList(Action callBack)
+		{
+			//0x14BCAE4
+			m_viewList = OJEGDIBEBHP.FKDIMODKKJD();
+			SetGakuyaPresentListState();
+			SetPresentLimitCntLayout();
+			m_gakuyaPresentListWindow.SetItems(m_viewList);
+			if (callBack != null)
+				callBack();
+			yield break;
+		}
 
 		//// RVA: 0x14B2FCC Offset: 0x14B2FCC VA: 0x14B2FCC
 		//public void StartToPresentGakuya(int itemId, int useitemCount, Vector2 effectPos, Action endCallback) { }
@@ -567,13 +577,72 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E6DDC Offset: 0x6E6DDC VA: 0x6E6DDC
 		//// RVA: 0x14B312C Offset: 0x14B312C VA: 0x14B312C
-		//public IEnumerator GakuyaCancelReaction() { }
+		public IEnumerator GakuyaCancelReaction()
+		{
+			//0x14BBBC0
+			m_gakuyaDivaMessage.Hide();
+			if (m_divaControl != null)
+			{
+				yield return Co.R(m_divaControl.Coroutine_IdleCrossFade());
+			}
+			SoundManager.Instance.voDiva.Stop();
+			while (!m_divaTalk.IsEnableReaction())
+				yield return null;
+			while (m_gakuyaDivaMessage.IsPlaying())
+				yield return null;
+		}
 
 		//// RVA: 0x14B31D8 Offset: 0x14B31D8 VA: 0x14B31D8
-		//public void SetGakuyaType() { }
+		public void SetGakuyaType()
+		{
+			if(!IsPupUpWindow && !m_viewIntimacyData.HBODCMLFDOB.PFIILLOIDIL)
+			{
+				m_serifType = m_viewIntimacyData.NCNAPMHEINJ() ? SerifPlayType.TIPS : SerifPlayType.NONE;
+			}
+			else
+			{
+				m_serifType = SerifPlayType.NONE;
+			}
+			m_lsitType = ListType.ITEM_NONE;
+			if (!itemCountCheck())
+			{
+				m_lsitType = ListType.LEVEL_LIMIT;
+				if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.NJGEDPHNIKC_IsPresentLimitEnabled() || m_viewIntimacyData.HBODCMLFDOB.PFIILLOIDIL)
+				{
+					m_lsitType = ListType.COUNT_NONE;
+					if (m_viewIntimacyData.NCNAPMHEINJ())
+						m_lsitType = ListType.NOMAL;
+				}
+			}
+		}
 
 		//// RVA: 0x14B2B30 Offset: 0x14B2B30 VA: 0x14B2B30
-		//public void SetGakuyaPresentListState() { }
+		public void SetGakuyaPresentListState()
+		{
+			SetGakuyaType();
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			switch(m_lsitType)
+			{
+				case ListType.NOMAL:
+					m_gakuyaPresentListWindow.SetItemDark(false);
+					m_gakuyaPresentListWindow.SetDark(false, "");
+					break;
+				case ListType.LEVEL_LIMIT:
+					m_gakuyaPresentListWindow.SetItemDark(true);
+					m_gakuyaPresentListWindow.SetDark(false, "");
+					break;
+				case ListType.ITEM_NONE:
+					m_gakuyaPresentListWindow.SetItemDark(false);
+					m_gakuyaPresentListWindow.SetDark(true, "gakuya_intimacy_present_none");
+					break;
+				case ListType.COUNT_NONE:
+					m_gakuyaPresentListWindow.SetItemDark(true);
+					m_gakuyaPresentListWindow.SetDark(false, "");
+					break;
+				default:
+					return;
+			}
+		}
 
 		//// RVA: 0x14B2D5C Offset: 0x14B2D5C VA: 0x14B2D5C
 		//private void SetPresentLimitCntLayout() { }
@@ -592,7 +661,11 @@ namespace XeApp.Game.Menu
 		//public void GakuyaInfoEnter() { }
 
 		//// RVA: 0x14B3718 Offset: 0x14B3718 VA: 0x14B3718
-		//public void GakuyaInfoLeave() { }
+		public void GakuyaInfoLeave()
+		{
+			m_layoutInfo.TryLeave();
+			m_gakuyaPresentLimit.gameObject.SetActive(false);
+		}
 
 		//// RVA: 0x14B378C Offset: 0x14B378C VA: 0x14B378C
 		//public void GakuyaSerifChenge() { }

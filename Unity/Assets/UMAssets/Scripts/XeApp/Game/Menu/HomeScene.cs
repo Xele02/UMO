@@ -1292,7 +1292,15 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x979174 Offset: 0x979174 VA: 0x979174
 		private void OnClickDivaView()
 		{
-			TodoLogger.LogNotImplemented("OnClickDivaView");
+			if(!TryLobbyAnnounce())
+			{
+				if(!MenuScene.CheckDatelineAndAssetUpdate())
+				{
+					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+					MenuScene.Instance.Call(TransitionList.Type.GAKUYA, null, true);
+					this.StartCoroutineWatched(Co_WaitIdleCrossFade());
+				}
+			}
 		}
 
 		// // RVA: 0x97936C Offset: 0x97936C VA: 0x97936C

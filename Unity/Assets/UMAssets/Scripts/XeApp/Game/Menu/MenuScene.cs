@@ -1839,7 +1839,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB37B10 Offset: 0xB37B10 VA: 0xB37B10
-		// public Vector3 GetDivaCameraRotByScene(TransitionList.Type type) { }
+		public Vector3 GetDivaCameraRotByScene(TransitionList.Type type)
+		{
+			return m_menuTransitionControl.GetDivaCameraRotByScene(type);
+		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6C831C Offset: 0x6C831C VA: 0x6C831C
 		// // RVA: 0xB37CCC Offset: 0xB37CCC VA: 0xB37CCC
