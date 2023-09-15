@@ -253,7 +253,63 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DF094 Offset: 0x6DF094 VA: 0x6DF094
 		//// RVA: 0xB759B4 Offset: 0xB759B4 VA: 0xB759B4
-		//private IEnumerator Co_OnPreSetCanvas() { }
+		private IEnumerator Co_OnPreSetCanvas()
+		{
+			//0xB812C0
+			m_isEndPreSetCanvas = false;
+			m_episodeList = PIGBBNDPPJC.FKDIMODKKJD_GetAvaiableEpisodes(true);
+			if(PrevTransition != TransitionList.Type.GAKUYA_DIVA_VIEW)
+			{
+				InitDivaCostumeInfos();
+				bool isWaitIntimacyController = true;
+				m_divaManager = MenuScene.Instance.divaManager;
+				m_divaControl = new HomeDivaControl();
+				m_divaManager.BeginControl(m_divaControl);
+				m_divaTalk = new MenuDivaTalk(m_divaManager.DivaId, m_divaControl);
+				m_divaTalk.RequestDelayDownLoad();
+				m_divaTalk.TimerStop();
+				m_intimacyController = MenuScene.Instance.IntimacyControl;
+				m_intimacyController.InitGakuya(this, m_divaMessage, m_presentListWindow, m_presentLimit, m_divaTalk, m_divaControl, () =>
+				{
+					//0xB7AE10
+					isWaitIntimacyController = false;
+				});
+				while (isWaitIntimacyController)
+					yield return null;
+				if(m_divaId == 0)
+				{
+					m_divaId = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId;
+					if(m_divaId == 0)
+					{
+						m_divaId = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId;
+					}
+				}
+				yield return Co.R(Co_LoadDivaResource(m_divaId));
+				yield return Co.R(Co_ApplyDivaInfos(m_divaId));
+			}
+			//LAB_00b813f0
+			int intimacy_player_level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("intimacy_player_level", 8);
+			int level = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+			m_infos.SetGiftLock(level, intimacy_player_level);
+			m_homeButton.OnClickHomeButtonCallback = OnClickHomeButton;
+			m_viewModeButton.OnClickViewButtonCallback = OnClickViewButton;
+			m_infos.OnClickChangeDivaButtonCallback = OnClickChangeDiva;
+			m_infos.OnClickSelectButtonCallback = OnClickInfosSelectButton;
+			m_infos.OnFinishSelectAnimCallback = OnFinishSelectAnim;
+			m_status.OnClickDivaRankingButtonCallback = OnClickDivaRanking;
+			m_costumeListWindow.OnClickItemCallback = OnClickCostumeItem;
+			m_presentListWindow.OnClickItemCallback = OnClickPresentItem;
+			m_charTouchCheck.OnClickCallback = OnClickDiva;
+			m_curtain.Hide();
+			m_divaMessage.Hide();
+			m_homeButton.Hide();
+			m_viewModeButton.Hide();
+			m_infos.Hide();
+			m_presentLimit.gameObject.SetActive(false);
+			m_stateHashIdle = Animator.StringToHash("idle");
+			m_gotoEpisode = false;
+			m_isEndPreSetCanvas = true;
+		}
 
 		// RVA: 0xB75A60 Offset: 0xB75A60 VA: 0xB75A60 Slot: 17
 		protected override bool IsEndPreSetCanvas()
@@ -342,9 +398,10 @@ namespace XeApp.Game.Menu
 					}, false, true);
 				s.IsCaption = false;
 				bool waitPopup = true;
-				PopupWindowManager.Show(s, () =>
+				PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 				{
-					Method$XeApp.Game.Menu.GakuyaScene.<>c__DisplayClass60_0.<Co_OnActivateScene>b__0()
+					//0xB7AE24
+					waitPopup = false;
 				}, null, null, null);
 				while (waitPopup)
 					yield return null;
@@ -482,7 +539,50 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DF2EC Offset: 0x6DF2EC VA: 0x6DF2EC
 		//// RVA: 0xB76BF4 Offset: 0xB76BF4 VA: 0xB76BF4
-		//private IEnumerator Co_ApplyDivaInfos(int divaId) { }
+		private IEnumerator Co_ApplyDivaInfos(int divaId)
+		{
+			//0xB7C904
+			m_infos.SetActiveHideContent(true);
+			m_infos.SetDiva(divaId);
+			m_divaMessage.SetDiva(divaId);
+			FFHPBEPOMAK_DivaInfo d = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Find((FFHPBEPOMAK_DivaInfo _) =>
+			{
+				//0xB7AE80
+				return _.AHHJLDLAPAN_DivaId == divaId;
+			});
+			if(d == null)
+			{
+				d = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[0];
+			}
+			m_status.Setup(d);
+			bool isWaitRankingLoad = true;
+			m_status.UpdateDivaRanking(d, (LAMCONGFONF.OJFOLGKMBIG info) =>
+			{
+				//0xB7AEB8
+				isWaitRankingLoad = false;
+			}, () =>
+			{
+				//0xB7AEC4
+				isWaitRankingLoad = false;
+			});
+			while (isWaitRankingLoad)
+				yield return null;
+			DivaCostumeInfo c = GetDivaCostumeInfo(divaId);
+			m_costumeListWindow.SetItems(divaId, c.modelId, c.colorId, false);
+			m_presentListWindow.SetItems(OJEGDIBEBHP.FKDIMODKKJD());
+			m_profile.Setup(divaId);
+			for(int i = 0; i < m_costumeListWindow.ItemCount; i++)
+			{
+				GakuyaCostumeListWindow.ItemInfo cosInfo = m_costumeListWindow.GetItem(i);
+				string p = ItemTextureCache.MakeItemIconTexturePath(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume, cosInfo.m_cosId), cosInfo.m_cosColor);
+				KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(p);
+				p = CostumeTextureCache.MakeCostumeTexturePath(divaId, cosInfo.m_viewDiva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, cosInfo.m_cosColor);
+				KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(p);
+			}
+			while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+				yield return null;
+			m_infos.SetActiveHideContent(false);
+		}
 
 		//// RVA: 0xB76CBC Offset: 0xB76CBC VA: 0xB76CBC
 		//private void SetUIOrder(GakuyaScene.UIOrderType type) { }
@@ -504,10 +604,40 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB7730C Offset: 0xB7730C VA: 0xB7730C
-		//private void OnClickViewButton() { }
+		private void OnClickViewButton()
+		{
+			if(!MenuScene.Instance.DirtyChangeScene)
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+				GameManager.Instance.RemovePushBackButtonHandler(OnBackButton);
+				MenuScene.Instance.Call(TransitionList.Type.GAKUYA_DIVA_VIEW, null, true);
+			}
+		}
 
 		//// RVA: 0xB774FC Offset: 0xB774FC VA: 0xB774FC
-		//private void OnClickChangeDiva() { }
+		private void OnClickChangeDiva()
+		{
+			if(!MenuScene.Instance.DirtyChangeScene)
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+				PopupFilterSortInitParam s = new PopupFilterSortInitParam();
+				s.Scene = PopupFilterSort.Scene.DivaSelect;
+				s.FilterDiva = 1 << m_divaId;
+				s.DivaChangeMode = true;
+				int nextDivaId = m_divaId;
+				MenuScene.Instance.ShowSortWindow(s, (PopupFilterSort content) =>
+				{
+					//0xB7AED0
+					nextDivaId = content.ResultSelectDivaId;
+				}, () =>
+				{
+					//0xB7AEFC
+					if (nextDivaId == m_divaId)
+						return;
+					this.StartCoroutineWatched(Co_ChangeDiva(nextDivaId));
+				});
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DF364 Offset: 0x6DF364 VA: 0x6DF364
 		//// RVA: 0xB777C8 Offset: 0xB777C8 VA: 0xB777C8
@@ -518,7 +648,24 @@ namespace XeApp.Game.Menu
 		//private IEnumerator Co_LoadDivaModel(int divaId) { }
 
 		//// RVA: 0xB77958 Offset: 0xB77958 VA: 0xB77958
-		//private void OnClickInfosSelectButton(GakuyaInfos.SelectType selectType) { }
+		private void OnClickInfosSelectButton(GakuyaInfos.SelectType selectType)
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_000);
+			if(selectType == GakuyaInfos.SelectType.Gift)
+			{
+				if(!m_infos.IsLockGift)
+				{
+					m_intimacyController.GakuyaInfoEnter();
+					if(IsEnableIntimacyHint())
+						StartIntimacyHint();
+				}
+				return;
+			}
+			m_intimacyController.GakuyaInfoLeave();
+			if (selectType != GakuyaInfos.SelectType.Status)
+				return;
+			m_status.UpdateIntimacy();
+		}
 
 		//// RVA: 0xB77D44 Offset: 0xB77D44 VA: 0xB77D44
 		//private void OnFinishSelectAnim(GakuyaInfos.SelectType selectType) { }
@@ -565,7 +712,26 @@ namespace XeApp.Game.Menu
 		//private void OnClickDiva() { }
 
 		//// RVA: 0xB794A0 Offset: 0xB794A0 VA: 0xB794A0
-		//private void InitDivaCostumeInfos() { }
+		private void InitDivaCostumeInfos()
+		{
+			m_divaCostumeInfos.Clear();
+			int id = 0;
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId == 0)
+			{
+				id = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId;
+			}
+			foreach(var d in GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas)
+			{
+				if(id != d.AHHJLDLAPAN_DivaId)
+				{
+					m_divaCostumeInfos.Add(new DivaCostumeInfo(d.AHHJLDLAPAN_DivaId, d.EGAFMGDFFCH_HomeDivaCostume.DAJGPBLEEOB_PrismCostumeId, d.JFFLFIMIMOI_HomeColorId));
+				}
+				else
+				{
+					m_divaCostumeInfos.Add(new DivaCostumeInfo(d.AHHJLDLAPAN_DivaId, d.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, d.EKFONBFDAAP_ColorId));
+				}
+			}
+		}
 
 		//// RVA: 0xB79994 Offset: 0xB79994 VA: 0xB79994
 		private DivaCostumeInfo GetDivaCostumeInfo(int divaId)
@@ -585,7 +751,34 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DF5BC Offset: 0x6DF5BC VA: 0x6DF5BC
 		//// RVA: 0xB79C14 Offset: 0xB79C14 VA: 0xB79C14
-		//private IEnumerator Co_LoadDivaResource(int divaId) { }
+		private IEnumerator Co_LoadDivaResource(int divaId)
+		{
+			//0xB801F0
+			m_divaResource.Release();
+			m_divaResource.Initialize(divaId);
+			yield return Co.R(m_divaResource.Co_LoadBasicResource());
+			yield return Co.R(m_divaResource.Co_LoadMotion());
+			bool isWaitLoadCueSheet = true;
+			StringBuilder str = new StringBuilder(32);
+			str.SetFormat("cs_coschange_{0:D3}", divaId);
+			m_voicePlayer.RequestChangeCueSheet(str.ToString(), () =>
+			{
+				//0xB7B6C0
+				isWaitLoadCueSheet = false;
+			});
+			m_voicePlayIndex = 0;
+			while (isWaitLoadCueSheet)
+				yield return null;
+			CriAtomCueSheet sheet = CriAtom.GetCueSheet(m_voicePlayer.source.cueSheet);
+			if(sheet != null)
+			{
+				CriAtomEx.CueInfo[] l = sheet.acb.GetCueInfoList();
+				if(l != null)
+				{
+					m_voiceCueCount = l.Length;
+				}
+			}
+		}
 
 		//// RVA: 0xB79CDC Offset: 0xB79CDC VA: 0xB79CDC
 		//private void PreSetAllHomeCostume() { }
@@ -685,7 +878,15 @@ namespace XeApp.Game.Menu
 		//private void UpdateIntimacyHint() { }
 
 		//// RVA: 0xB77C5C Offset: 0xB77C5C VA: 0xB77C5C
-		//private void StartIntimacyHint() { }
+		private void StartIntimacyHint()
+		{
+			if (!IsEnableIntimacy())
+				return;
+			m_isPlayedIntimacyHint = true;
+			m_intimacyController.GakuyaSerifChenge();
+			m_intimacyHintTimeCount = 0;
+			StartLeaveIntimacyHint();
+		}
 
 		//// RVA: 0xB767F8 Offset: 0xB767F8 VA: 0xB767F8
 		private Coroutine CancelIntimacyHint()

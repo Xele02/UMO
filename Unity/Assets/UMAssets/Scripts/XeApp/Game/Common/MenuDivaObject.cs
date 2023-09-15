@@ -245,7 +245,14 @@ namespace XeApp.Game.Common
 		//public bool IsLoginIdle() { }
 
 		//// RVA: 0x11116A4 Offset: 0x11116A4 VA: 0x11116A4
-		//public void Reaction(int type) { }
+		public void Reaction(int type)
+		{
+			Anim_SetTrigger("menu_toReaction");
+			Anim_SetInteger("menu_reactionId", type);
+			Anim_SetBool("menu_breakReactionLoop", false);
+			isStopFrame = true;
+			UnlockBoneSpring(false, 0);
+		}
 
 		//// RVA: 0x111176C Offset: 0x111176C VA: 0x111176C
 		//public void PlayDivaUnlockAnim() { }
@@ -279,7 +286,13 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1111DB0 Offset: 0x1111DB0 VA: 0x1111DB0
-		//public void SimpleTalk(int type) { }
+		public void SimpleTalk(int type)
+		{
+			Anim_SetTrigger("menu_toSimpleTalk");
+			Anim_SetInteger("menu_simpleTalkId", type);
+			isStopFrame = true;
+			UnlockBoneSpring(false, 0);
+		}
 
 		//// RVA: 0x1111E58 Offset: 0x1111E58 VA: 0x1111E58
 		public void SetAnimInteger(string paramName, int value)
@@ -312,10 +325,20 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1112134 Offset: 0x1112134 VA: 0x1112134
-		//public void PlayAnimationPresent(int id) { }
+		public void PlayAnimationPresent(int id)
+		{
+			Anim_SetTrigger("menu_toPresent");
+			Anim_SetInteger("menu_presentId", id);
+			Anim_SetBool("menu_toPresentLoopEnd", false);
+			isStopFrame = true;
+			UnlockBoneSpring(false, 0);
+		}
 
 		//// RVA: 0x11121FC Offset: 0x11121FC VA: 0x11121FC
-		//public void StopAnimationPresent() { }
+		public void StopAnimationPresent()
+		{
+			Anim_SetBool("menu_toPresentLoopEnd", true);
+		}
 		
 		//// RVA: 0x111263C Offset: 0x111263C VA: 0x111263C
 		public MenuDivaGazeControl StartGazeControl()

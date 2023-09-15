@@ -129,7 +129,23 @@ namespace XeApp.Game.Menu
 		//public int RandomPresentReaction() { }
 
 		//// RVA: 0x961B88 Offset: 0x961B88 VA: 0x961B88
-		//public bool RequestPresentReaction(int a_index, Action onActionEndCallback) { }
+		public bool RequestPresentReaction(int a_index, Action onActionEndCallback)
+		{
+			if(!IsAnimatorRequested && m_runningCoroutine == null)
+			{
+				MenuDivaVoiceTable.Data data = VoiceTable.GetPresent(a_index);
+				if(data != null)
+				{
+					if(MotionStart(data.MotionType, onActionEndCallback))
+					{
+						SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.Present, data.VoiceId);
+						DivaManager.DivaTransformReset();
+						return true;
+					}
+				}
+			}
+			return false;
+		}
 
 		//// RVA: 0x961CAC Offset: 0x961CAC VA: 0x961CAC
 		//public int RandomIntimacyReaction() { }
@@ -254,7 +270,18 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C6698 Offset: 0x6C6698 VA: 0x6C6698
 		//// RVA: 0x96235C Offset: 0x96235C VA: 0x96235C
-		//private IEnumerator Coroutine_ReactionVoiceWait() { }
+		private IEnumerator Coroutine_ReactionVoiceWait()
+		{
+			//0x9630A0
+			yield return null;
+			while (SoundManager.Instance.voDiva.isPlaying)
+				yield return null;
+			while (SoundManager.Instance.voDivaCos.isPlaying)
+				yield return null;
+			while (IsAnimatorRequested)
+				yield return null;
+			DivaObject.ReactionLoopBreak();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C6710 Offset: 0x6C6710 VA: 0x6C6710
 		//// RVA: 0x9613CC Offset: 0x9613CC VA: 0x9613CC
@@ -291,10 +318,51 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C6800 Offset: 0x6C6800 VA: 0x6C6800
 		//// RVA: 0x962448 Offset: 0x962448 VA: 0x962448
-		//private IEnumerator Coroutine_PresentMotionWait() { }
+		private IEnumerator Coroutine_PresentMotionWait()
+		{
+			//0x962ECC
+			yield return null;
+			while (SoundManager.Instance.voDiva.isPlaying)
+				yield return null;
+			while (SoundManager.Instance.voDivaCos.isPlaying)
+				yield return null;
+			DivaObject.StopAnimationPresent();
+		}
 
 		//// RVA: 0x960DCC Offset: 0x960DCC VA: 0x960DCC
-		//private bool MotionStart(DivaMenuMotion.Type a_type, Action a_calback_action_end) { }
+		private bool MotionStart(DivaMenuMotion.Type a_type, Action a_calback_action_end)
+		{
+			if (IsAnimatorRequested || m_runningCoroutine != null)
+				return false;
+			isTalkMotion = false;
+			if(DivaMenuMotion.IsTalk(a_type))
+			{
+				DivaObject.Talk(DivaMenuMotion.ToMotionId(a_type));
+				StartRunningCoroutine(Coroutine_TalkVoiceWait(), true);
+				isTalkMotion = true;
+			}
+			else if(DivaMenuMotion.IsSimpleTalk(a_type))
+			{
+				DivaObject.SimpleTalk(DivaMenuMotion.ToMotionId(a_type));
+			}
+			else if(DivaMenuMotion.IsTouchReaction(a_type))
+			{
+				DivaObject.Reaction(DivaMenuMotion.ToMotionId(a_type));
+				StartRunningCoroutine(Coroutine_ReactionVoiceWait(), true);
+			}
+			else if(DivaMenuMotion.IsTimezoneTalk(a_type))
+			{
+				DivaObject.TimezoneTalk(DivaMenuMotion.ToMotionId(a_type));
+			}
+			else if(DivaMenuMotion.IsPresentReaction(a_type))
+			{
+				DivaObject.PlayAnimationPresent(DivaMenuMotion.ToMotionId(a_type));
+				StartRunningCoroutine(Coroutine_PresentMotionWait(), true);
+			}
+			OnActionEndCallback = a_calback_action_end;
+			IsAnimatorRequested = true;
+			return true;
+		}
 
 		//// RVA: 0x9624F4 Offset: 0x9624F4 VA: 0x9624F4
 		//private void OnReactionStart(int reactionType, out bool useTalkMotion) { }

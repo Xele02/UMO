@@ -323,6 +323,9 @@ class JpStringLiterals
 	public const string StringLiteral_15750 = "次の報酬まで {0} {1}"; // 0x03bb80d0
 	public const string StringLiteral_15778 = "追加報酬"; // 0x03bb8140
 	public const string StringLiteral_15794 = "あと {0} {1}"; // 0x03bb8180
+	public const string StringLiteral_16155 = "衣装リストをクリック : {0} : {1}"; //0x03bb8724
+	public const string StringLiteral_16162 = "【解放条件】\n\nプレイヤーランクを8にする。"; //0x03bb8740
+	public const string StringLiteral_16170 = "ギフトリストをクリック : {0} : {1}"; //0x03bb8760
 	public const string StringLiteral_16338 = "ユーザーリスト 失敗"; // 0x03bb8a00
 	public const string StringLiteral_16339 = "ユーザーフレンドリスト 成功 "; // 0x03bb8a04
 	public const string StringLiteral_17446 = "さしすせそ"; // 0x03bb9b50

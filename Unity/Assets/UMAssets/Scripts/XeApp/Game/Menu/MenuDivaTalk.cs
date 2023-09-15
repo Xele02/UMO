@@ -152,7 +152,16 @@ namespace XeApp.Game.Menu
 		// public void DoTouchReaction() { }
 
 		// // RVA: 0xECF740 Offset: 0xECF740 VA: 0xECF740
-		// public void DoPresentReaction(int a_idnex = -1, MenuDivaTalk.OnChangedMessage a_callback_msg) { }
+		public void DoPresentReaction(int a_idnex = -1, OnChangedMessage a_callback_msg = null)
+		{
+			if(!m_divaControl.IsActionRequested)
+			{
+				if(m_divaControl.RequestPresentReaction(a_idnex, OnTalkActionEnd))
+				{
+					DivaTalk("present_{0:D2}", a_idnex + 1, a_callback_msg);
+				}
+			}
+		}
 
 		// // RVA: 0xECF84C Offset: 0xECF84C VA: 0xECF84C
 		// public void DoIntimacyReaction(MenuDivaTalk.OnChangedMessage a_callback_msg) { }

@@ -36,19 +36,54 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1D52034 Offset: 0x1D52034 VA: 0x1D52034
-		// public void Setup(JJOELIOGMKK viewData, bool isHome) { }
+		public void Setup(JJOELIOGMKK_DivaIntimacyInfo viewData, bool isHome)
+		{
+			m_viewData = viewData;
+			m_layoutRoot.StartChildrenAnimGoStop(isHome ? "home" : "present");
+			m_layoutLevelMax.StartChildrenAnimGoStop(viewData.HBODCMLFDOB.PFIILLOIDIL ? "01" : "00");
+			m_numLevel.SetNumber(m_viewData.HEKJGCMNJAB_CurrentLevel, 0);
+			if(m_viewData.HBODCMLFDOB.PFIILLOIDIL)
+			{
+				SetExp(0, 0);
+				UpdateGaugePosition(1);
+			}
+			else
+			{
+				SetExp(m_viewData.KPEAGFJHNDP_CurrentLevelExp, m_viewData.KOKCFJDMJLI);
+				UpdateGaugePosition(m_viewData.KPEAGFJHNDP_CurrentLevelExp * 1.0f / m_viewData.KOKCFJDMJLI);
+			}
+		}
 
 		// // RVA: 0x1D5246C Offset: 0x1D5246C VA: 0x1D5246C
-		// public void TryEnter() { }
+		public void TryEnter()
+		{
+			if (m_isShown)
+				return;
+			Enter();
+		}
 
 		// // RVA: 0x1D5253C Offset: 0x1D5253C VA: 0x1D5253C
-		// public void TryLeave() { }
+		public void TryLeave()
+		{
+			if (!m_isShown)
+				return;
+			Leave();
+		}
 
 		// // RVA: 0x1D5247C Offset: 0x1D5247C VA: 0x1D5247C
-		// public void Enter() { }
+		public void Enter()
+		{
+			m_isShown = true;
+			m_layoutLevel.StartChildrenAnimGoStop("go_in", "st_in");
+			transform.SetAsLastSibling();
+		}
 
 		// // RVA: 0x1D5254C Offset: 0x1D5254C VA: 0x1D5254C
-		// public void Leave() { }
+		public void Leave()
+		{
+			m_isShown = false;
+			m_layoutLevel.StartChildrenAnimGoStop("go_out", "st_out");
+		}
 
 		// // RVA: 0x1D525E0 Offset: 0x1D525E0 VA: 0x1D525E0
 		// public void Show() { }
@@ -80,7 +115,11 @@ namespace XeApp.Game.Menu
 		// private IEnumerator Co_CountUpAnim(int point, int bonus) { }
 
 		// // RVA: 0x1D523A8 Offset: 0x1D523A8 VA: 0x1D523A8
-		// private void UpdateGaugePosition(float normalizePos) { }
+		private void UpdateGaugePosition(float normalizePos)
+		{
+			int s = (int)((m_layoutGauge.GetView(0).FrameAnimation.FrameNum + 1) * normalizePos);
+			m_layoutGauge.StartChildrenAnimGoStop(s, s);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E780C Offset: 0x6E780C VA: 0x6E780C
 		// // RVA: 0x1D52AA0 Offset: 0x1D52AA0 VA: 0x1D52AA0
@@ -96,10 +135,34 @@ namespace XeApp.Game.Menu
 		// private void SetLevel(int value) { }
 
 		// // RVA: 0x1D52288 Offset: 0x1D52288 VA: 0x1D52288
-		// private void SetExp(int now, int next) { }
+		private void SetExp(int now, int next)
+		{
+			if(next < 1)
+			{
+				m_layoutExpDigit.StartChildrenAnimGoStop("max");
+			}
+			else
+			{
+				string l = GetDigitLabel(next);
+				m_layoutExpDigit.StartChildrenAnimGoStop(l);
+				m_numExpNow.SetNumber(now, 0);
+				m_numExpNext.SetNumber(next, 0);
+			}
+		}
 
 		// // RVA: 0x1D52C9C Offset: 0x1D52C9C VA: 0x1D52C9C
-		// private string GetDigitLabel(int num) { }
+		private string GetDigitLabel(int num)
+		{
+			if (num == 0)
+				num = 1;
+			else
+				num = (int)Mathf.Log10(num) + 1;
+			if (num == 3)
+				return "02";
+			if (num >= 1 && num < 3)
+				return "01";
+			return "03";
+		}
 
 		// // RVA: 0x1D52D78 Offset: 0x1D52D78 VA: 0x1D52D78
 		// private void SetUpPoint(int value) { }
