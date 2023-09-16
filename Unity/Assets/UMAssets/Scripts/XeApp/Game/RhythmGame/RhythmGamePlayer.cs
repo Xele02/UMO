@@ -3396,7 +3396,7 @@ namespace XeApp.Game.RhythmGame
 			{
 				float val = resource.musicData.musicParam.stateOffsetSec;
 				resource.musicIntroResource.OverrideMusicStartTime(ref val);
-				if(val < 0.0f)
+				if(val <= 0.0f)
 				{
 					StartPlayMusic((int)(resource.musicData.musicParam.stateOffsetSec * -1000));
 				}

@@ -151,12 +151,12 @@ namespace XeApp.Game.Menu
 			if(m_isCrossFade)
 			{
 				m_crossFadeTime += deltaTime;
-				if (m_animeLengthSec <= m_crossFadeTime)
+				if (m_animeLengthSec < m_crossFadeTime)
 				{
 					do
 					{
 						m_crossFadeTime -= m_animeLengthSec;
-					} while (m_animeLengthSec <= m_crossFadeTime);
+					} while (m_animeLengthSec < m_crossFadeTime);
 				}
 				float f = m_animeCurve[0].Evaluate(m_crossFadeTime / m_animeLengthSec * m_animeCurve[0].keys[m_animeCurve[0].length - 1].time);
 				m_valueText.color = Color.Lerp(m_baseTextColor, m_enemyTextColor, f);

@@ -137,15 +137,19 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB9F18C Offset: 0xB9F18C VA: 0xB9F18C
 		private float GetScrollPosition(int index)
 		{
+			float f3 = 0;
 			if(index >= 0 && index < m_listItem.Count)
 			{
-				if(m_listItem[index].Top.y >= 0)
+				if(m_listItem[index].Top.y > 0)
 					return m_listItem[index].Top.y;
+				f3 = -m_listItem[index].Top.y;
 			}
 			float val = m_scroll.content.sizeDelta.y - m_scrollRectTransform.sizeDelta.y;
 			if(val >= 0)
 			{
 				val = m_scroll.content.sizeDelta.y - m_scrollRectTransform.sizeDelta.y;
+				if(f3 <= val)
+					val = f3;
 			}
 			return val;
 		}
@@ -153,6 +157,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB9FD3C Offset: 0xB9FD3C VA: 0xB9FD3C
 		private float GetScrollPositionBottom(int index)
 		{
+			float f3 = 0;
 			if(-1 < index)
 			{
 				if(index < m_listItem.Count)
@@ -161,12 +166,15 @@ namespace XeApp.Game.Menu
 					float f = top.y + (m_scrollRectTransform.sizeDelta.y - m_listItem[index].Height);
 					if (-f < 0)
 						return f;
+					f3 = -f;
 				}
 			}
 			float f2 = m_scroll.content.sizeDelta.y - m_scrollRectTransform.sizeDelta.y;
 			if(f2 >= 0)
 			{
 				f2 = m_scroll.content.sizeDelta.y - m_scrollRectTransform.sizeDelta.y;
+				if(f3 <= f2)
+					f2 = f3;
 			}
 			return f2;
 		}

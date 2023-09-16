@@ -98,7 +98,7 @@ namespace XeApp.Game.Common
 		{
 			if(m_animEndTime > 0)
 			{
-				if(m_animEndTime < m_animTime)
+				if(m_animEndTime <= m_animTime)
 				{
 					m_animTime = 0;
 					m_animEndTime = 0;

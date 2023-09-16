@@ -56,7 +56,7 @@ namespace XeApp.Game.Adv
 			float time; // 0x24
 
 			//0xBC4B9C
-			bool m_is_play = true;
+			m_is_play = true;
 			baseColor = Text.color;
 			Color col = baseColor;
 			col.a = 0;

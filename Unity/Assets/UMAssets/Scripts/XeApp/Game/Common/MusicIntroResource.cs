@@ -94,7 +94,7 @@ namespace XeApp.Game.Common
 		{
 			if(paramIntro != null)
 			{
-				if (paramIntro.secMusicStart < 0)
+				if (paramIntro.secMusicStart <= 0)
 					return;
 				a_sec = paramIntro.secMusicStart;
 			}
@@ -105,7 +105,7 @@ namespace XeApp.Game.Common
 		{
 			if (paramIntro != null)
 			{
-				if (paramIntro.secIntroEnd < 0)
+				if (paramIntro.secIntroEnd <= 0)
 					return;
 				a_msec = (int)(paramIntro.secIntroEnd * 1000.0f);
 			}
