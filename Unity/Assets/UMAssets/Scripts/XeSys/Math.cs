@@ -268,7 +268,7 @@ namespace XeSys
 		public static int CalcAngleType(int divCount, Vector2 start, Vector2 end, bool isHalfOffset)
 		{
 			if (divCount == 0)
-				return 0;
+				return -1;
 			else
 			{
 				float f = CalcRadian(start, end);
