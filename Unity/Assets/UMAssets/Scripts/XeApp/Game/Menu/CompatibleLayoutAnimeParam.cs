@@ -23,7 +23,7 @@ namespace XeApp.Game.Menu
 		public int UpdateFrame(float dt)
 		{
 			nowMs += dt;
-			if (nowMs >= endMs)
+			if (nowMs > endMs)
 				nowMs = 0;
 			return (int)(startFrame + nowMs * 60);
 		}

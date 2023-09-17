@@ -122,12 +122,12 @@ namespace XeApp.Game.Common
 				m_frame = 0;
 			}
 			m_frame_rate = 1;
-			if(m_interval >= 0)
+			if(m_interval > 0)
 			{
 				m_frame_rate = Mathf.Clamp(m_frame / m_interval, 0, 1);
 			}
 			Vector3 vec = Vector3.zero;
-			if(m_power >= 0)
+			if(m_power > 0)
 			{
 				if(m_wind_dir != Vector3.zero)
 				{
@@ -144,7 +144,7 @@ namespace XeApp.Game.Common
 			for(int i = 0; i < m_list_diva.Count; i++)
 			{
 				List<BoneSpringControlPoint> bscp = m_list_diva[i].m_bsc.GetListBSCP();
-				if(m_sub_power < 0)
+				if(m_sub_power <= 0)
 				{
 					for(int j = 0; j < bscp.Count; j++)
 					{

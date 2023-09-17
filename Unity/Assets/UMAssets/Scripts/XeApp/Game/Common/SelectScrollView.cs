@@ -49,7 +49,7 @@ namespace XeApp.Game.Common
 				cnt = scrollObjects.Count;
 			}
 			IEnumerator co = Co_SetPosition(Mathf.Clamp(pos, 0, cnt - 1), animTime);
-			if (animTime < 0)
+			if (animTime <= 0)
 			{
 				co.MoveNext();
 			}
@@ -161,7 +161,7 @@ namespace XeApp.Game.Common
 			{
 				if(verticalNormalizedPosition >= 0)
 				{
-					if(verticalNormalizedPosition < 1)
+					if(verticalNormalizedPosition <= 1)
 					{
 						float size = itemSize.y + spacing.y;
 						float f = pos.y % size;
@@ -191,7 +191,7 @@ namespace XeApp.Game.Common
 			{
 				if (horizontalNormalizedPosition >= 0)
 				{
-					if (horizontalNormalizedPosition < 1)
+					if (horizontalNormalizedPosition <= 1)
 					{
 						float size = itemSize.x + spacing.x;
 						float f = pos.x % size;

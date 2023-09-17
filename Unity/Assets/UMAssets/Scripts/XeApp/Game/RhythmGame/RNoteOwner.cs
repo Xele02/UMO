@@ -786,7 +786,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(!isPause)
 			{
-				if(neutralCounter[fingerId] < 0)
+				if(neutralCounter[fingerId] <= 0)
 				{
 					bool[] flag = new bool[5];
 					flag[1] = isLeft;
@@ -880,7 +880,7 @@ namespace XeApp.Game.RhythmGame
 				}
 				return;
 			}
-			if(neutralCounter[fingerId] >= 0)
+			if(neutralCounter[fingerId] > 0)
 			{
 				neutralCounter[fingerId] -= Time.deltaTime;
 			}

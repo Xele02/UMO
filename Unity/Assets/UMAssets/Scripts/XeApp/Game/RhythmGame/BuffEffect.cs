@@ -52,7 +52,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(initialParameter.effectType == SkillBuffEffect.Type.Poison)
 			{
-				if (checkParameter.musicTime - initialParameter.musicTime < perSecondCount)
+				if (checkParameter.musicTime - initialParameter.musicTime <= perSecondCount)
 					return;
 				OnPerSecondPoisonEffect.Invoke(this);
 				perSecondCount = perSecondCount + 1;
