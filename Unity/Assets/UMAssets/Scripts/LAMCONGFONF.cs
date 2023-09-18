@@ -87,7 +87,7 @@ public class LAMCONGFONF
 		PLOOEECNHFB = false;
 		NPNNPNAIONN = false;
 		EECOJKDJIFG e = DAKMIKNKHMF(LHJCOPMMIGO);
-		if(e != null)
+		if(e == null)
 		{
 			PLOOEECNHFB = true;
 			if (IDAEHNGOKAE != null)

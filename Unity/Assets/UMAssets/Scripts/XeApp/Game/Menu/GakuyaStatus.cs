@@ -67,7 +67,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB7311C Offset: 0xB7311C VA: 0xB7311C
-		//public void SetScrollTop() { }
+		public void SetScrollTop()
+		{
+			if(m_scroll.vertical)
+			{
+				m_scroll.verticalNormalizedPosition = 1;
+				m_scroll.velocity = Vector2.zero;
+			}
+		}
 
 		// RVA: 0xB7D3EC Offset: 0xB7D3EC VA: 0xB7D3EC
 		public void UpdateDivaRanking(FFHPBEPOMAK_DivaInfo divaData, Action<LAMCONGFONF.OJFOLGKMBIG> success, Action error)
@@ -96,7 +103,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB77CB0 Offset: 0xB77CB0 VA: 0xB77CB0
-		//public void UpdateIntimacy() { }
+		public void UpdateIntimacy()
+		{
+			m_intimacyData.KHEKNNFCAOI(m_intimacyData.AHHJLDLAPAN_DivaId);
+			m_textIntimacyLevel.text = m_intimacyData.HEKJGCMNJAB_CurrentLevel.ToString();
+		}
 
 		//// RVA: 0xB83A74 Offset: 0xB83A74 VA: 0xB83A74
 		private int GetDivaBaseTotalStatus(FFHPBEPOMAK_DivaInfo divaData)

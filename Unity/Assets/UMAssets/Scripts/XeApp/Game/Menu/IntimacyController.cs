@@ -1,4 +1,5 @@
 using CriWare;
+using mcrs;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -582,7 +583,12 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x14B2A48 Offset: 0x14B2A48 VA: 0x14B2A48
-		//public void GakuyaDivaChange(int divaId, MenuDivaTalk divaTalk) { }
+		public void GakuyaDivaChange(int divaId, MenuDivaTalk divaTalk)
+		{
+			m_divaTalk = divaTalk;
+			InitViewData(divaId);
+			InitialGakuyaSetting();
+		}
 
 		//// RVA: 0x14B2A68 Offset: 0x14B2A68 VA: 0x14B2A68
 		private void InitialGakuyaSetting()
@@ -715,7 +721,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x14B3568 Offset: 0x14B3568 VA: 0x14B3568
-		//public void charTouchPlaySe() { }
+		public void charTouchPlaySe()
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_HOME_000);
+		}
 
 		//// RVA: 0x14B35CC Offset: 0x14B35CC VA: 0x14B35CC
 		public void GakuyaInfoEnter()

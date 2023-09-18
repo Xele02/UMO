@@ -335,7 +335,16 @@ public class JJOELIOGMKK_DivaIntimacyInfo
 	//public bool MLEPCANKIIE(int HMFFHLPNMPH) { }
 
 	//// RVA: 0x1354534 Offset: 0x1354534 VA: 0x1354534
-	//public int LLFDOKOMJAN() { }
+	public int LLFDOKOMJAN_GetPresentLeft()
+	{
+		if (AHHJLDLAPAN_DivaId < 1)
+			return 0;
+		if(CIOECGOMILE.HHCJCDFCLOB != null)
+		{
+			return CIOECGOMILE.HHCJCDFCLOB.PAAMLFNPJGJ_IntimacyDivaPresentLeft[AHHJLDLAPAN_DivaId - 1];
+		}
+		return 0;
+	}
 
 	//// RVA: 0x1354620 Offset: 0x1354620 VA: 0x1354620
 	//public string IGLBKDDCKEJ() { }

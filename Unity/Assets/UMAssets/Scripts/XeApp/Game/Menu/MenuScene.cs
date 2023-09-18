@@ -1154,7 +1154,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB32D1C Offset: 0xB32D1C VA: 0xB32D1C
-		// public void ShowSortWindow(PopupFilterSortInitParam a_init_param, UnityAction<PopupFilterSort> okCallBack, Action endCallBack) { }
+		public void ShowSortWindow(PopupFilterSortInitParam a_init_param, UnityAction<PopupFilterSort> okCallBack, Action endCallBack)
+		{
+			m_popupFilterSortWindowContrl.Show(a_init_param, okCallBack, endCallBack);
+		}
 
 		// // RVA: 0xB32D6C Offset: 0xB32D6C VA: 0xB32D6C
 		// public void ShowSortWindow(PopupFilterSortUGUI.Scene a_type, UnityAction<PopupFilterSortUGUI> okCallBack, Action endCallBack, bool a_is_save = True) { }

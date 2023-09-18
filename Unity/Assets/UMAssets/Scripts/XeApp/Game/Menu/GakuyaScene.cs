@@ -127,6 +127,7 @@ namespace XeApp.Game.Menu
 			}));
 			bundleLoadCount++;
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "GakuyaViewModeButton");
+			yield return uguiOp;
 			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xB7A634
@@ -135,6 +136,7 @@ namespace XeApp.Game.Menu
 			}));
 			bundleLoadCount++;
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "GakuyaInfos");
+			yield return uguiOp;
 			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xB7A730
@@ -144,6 +146,7 @@ namespace XeApp.Game.Menu
 			bundleLoadCount++;
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "GakuyaInfoStatus");
 			GameObject objectStatus = null;
+			yield return uguiOp;
 			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xB7A82C
@@ -153,6 +156,7 @@ namespace XeApp.Game.Menu
 			bundleLoadCount++;
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "GakuyaInfoCostumeList");
 			GameObject objectCostumeList = null;
+			yield return uguiOp;
 			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xB7A8C4
@@ -161,6 +165,7 @@ namespace XeApp.Game.Menu
 			}));
 			bundleLoadCount++;
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "GakuyaInfoCostumeListContent");
+			yield return uguiOp;
 			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xB7A95C
@@ -169,6 +174,7 @@ namespace XeApp.Game.Menu
 			bundleLoadCount++;
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "GakuyaInfoPresentList");
 			GameObject objectPresentList = null;
+			yield return uguiOp;
 			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xB7A9A0
@@ -177,6 +183,7 @@ namespace XeApp.Game.Menu
 			}));
 			bundleLoadCount++;
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "GakuyaInfoPresentListContent");
+			yield return uguiOp;
 			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xB7AA38
@@ -185,6 +192,7 @@ namespace XeApp.Game.Menu
 			bundleLoadCount++;
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "GakuyaInfoProfile");
 			GameObject objectProfile = null;
+			yield return uguiOp;
 			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xB7AA7C
@@ -193,6 +201,7 @@ namespace XeApp.Game.Menu
 			}));
 			bundleLoadCount++;
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "GakuyaDivaMessage");
+			yield return uguiOp;
 			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xB7AB14
@@ -201,6 +210,7 @@ namespace XeApp.Game.Menu
 			}));
 			bundleLoadCount++;
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "GakuyaCurtain");
+			yield return uguiOp;
 			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xB7AC10
@@ -209,6 +219,7 @@ namespace XeApp.Game.Menu
 			}));
 			bundleLoadCount++;
 			uguiOp = AssetBundleManager.LoadUGUIAsync(bundleName.ToString(), "GakuyaPresentLimit");
+			yield return uguiOp;
 			yield return Co.R(uguiOp.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
 			{
 				//0xB7AD0C
@@ -326,7 +337,31 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DF10C Offset: 0x6DF10C VA: 0x6DF10C
 		//// RVA: 0xB75A98 Offset: 0xB75A98 VA: 0xB75A98
-		//private IEnumerator Co_OnPostSetCanvas() { }
+		private IEnumerator Co_OnPostSetCanvas()
+		{
+			//0xB80E7C
+			m_isEndPostSetCanvas = false;
+			SetUIOrder(UIOrderType.ChangeDiva);
+			if(PrevTransition == TransitionList.Type.HOME)
+			{
+				MenuScene.Instance.divaManager.SetCameraRot(MenuScene.Instance.GetDivaCameraRotByScene(TransitionList.Type.HOME));
+				MenuScene.Instance.divaManager.ChangeCameraRot(MenuScene.Instance.GetDivaCameraRotByScene(TransitionList.Type.GAKUYA), m_divaCameraRotDuration);
+			}
+			if(PrevTransition != TransitionList.Type.GAKUYA_DIVA_VIEW)
+			{
+				m_infos.SetSelectType(GakuyaInfos.SelectType.Status, true, false);
+				PreSetAllHomeCostume();
+			}
+			m_homeButton.TryEnter();
+			m_viewModeButton.TryEnter();
+			m_infos.TryEnter();
+			if(m_infos.CurrentSelectType == GakuyaInfos.SelectType.Gift)
+			{
+				m_intimacyController.GakuyaInfoEnter();
+			}
+			m_isEndPostSetCanvas = true;
+			yield break;
+		}
 
 		// RVA: 0xB75B44 Offset: 0xB75B44 VA: 0xB75B44 Slot: 19
 		protected override bool IsEndPostSetCanvas()
@@ -585,7 +620,27 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB76CBC Offset: 0xB76CBC VA: 0xB76CBC
-		//private void SetUIOrder(GakuyaScene.UIOrderType type) { }
+		private void SetUIOrder(UIOrderType type)
+		{
+			if(type == UIOrderType.ChangeCostume)
+			{
+				m_charTouchCheck.transform.SetAsLastSibling();
+				m_curtain.transform.SetAsLastSibling();
+				m_infos.transform.SetAsLastSibling();
+				m_viewModeButton.transform.SetAsLastSibling();
+				m_homeButton.transform.SetAsLastSibling();
+				m_divaMessage.transform.SetAsLastSibling();
+			}
+			else if(type == UIOrderType.ChangeDiva)
+			{
+				m_charTouchCheck.transform.SetAsLastSibling();
+				m_infos.transform.SetAsLastSibling();
+				m_viewModeButton.transform.SetAsLastSibling();
+				m_homeButton.transform.SetAsLastSibling();
+				m_divaMessage.transform.SetAsLastSibling();
+				m_curtain.transform.SetAsLastSibling();
+			}
+		}
 
 		//// RVA: 0xB76FA4 Offset: 0xB76FA4 VA: 0xB76FA4
 		private void OnClickHomeButton()
@@ -641,11 +696,69 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DF364 Offset: 0x6DF364 VA: 0x6DF364
 		//// RVA: 0xB777C8 Offset: 0xB777C8 VA: 0xB777C8
-		//private IEnumerator Co_ChangeDiva(int divaId) { }
+		private IEnumerator Co_ChangeDiva(int divaId)
+		{
+			Coroutine cancelCoroutine;
+
+			//0xB7ECA4
+			m_isChangingDiva = true;
+			MenuScene.Instance.InputDisable();
+			CancelReactionCostumeChange();
+			cancelCoroutine = CancelIntimacyHint();
+			SetUIOrder(UIOrderType.ChangeDiva);
+			m_curtain.SetDiva(divaId);
+			m_curtain.SetMessageType(GakuyaCurtain.MessageType.ChangeDiva);
+			m_curtain.TryEnter();
+			while (m_curtain.IsPlaying())
+				yield return null;
+			yield return cancelCoroutine;
+			yield return Co.R(Co_LoadDivaResource(divaId));
+			MenuScene.Instance.divaManager.SetActive(false, true);
+			yield return Co.R(Co_LoadDivaModel(divaId));
+			MenuScene.Instance.divaManager.SetActive(true, true);
+			yield return Co.R(Co_ApplyDivaInfos(divaId));
+			m_divaId = divaId;
+			m_divaTalk = new MenuDivaTalk(m_divaManager.DivaId, m_divaControl);
+			m_divaTalk.RequestDelayDownLoad();
+			m_divaTalk.TimerStop();
+			m_intimacyController.GakuyaDivaChange(divaId, m_divaTalk);
+			m_infos.SetSelectType(GakuyaInfos.SelectType.Status, false, false);
+			m_infos.SetScrollTop();
+			m_intimacyController.GakuyaInfoLeave();
+			m_curtain.Leave();
+			while(m_curtain.IsPlaying())
+				yield return null;
+			MenuScene.Instance.InputEnable();
+			m_isChangingDiva = false;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DF3DC Offset: 0x6DF3DC VA: 0x6DF3DC
 		//// RVA: 0xB77890 Offset: 0xB77890 VA: 0xB77890
-		//private IEnumerator Co_LoadDivaModel(int divaId) { }
+		private IEnumerator Co_LoadDivaModel(int divaId)
+		{
+			MenuFacialBlendAnimMediator blend;
+
+			//0xB7FC30
+			MenuScene.Instance.divaManager.Release(true);
+			Resources.UnloadUnusedAssets();
+			yield return null;
+			blend = m_divaManager.GetComponentInChildren<MenuFacialBlendAnimMediator>();
+			if(blend != null)
+			{
+				blend.enabled = false;
+			}
+			DivaCostumeInfo divaInfo = GetDivaCostumeInfo(divaId);
+			MenuScene.Instance.divaManager.Load(divaId, divaInfo.modelId, divaInfo.colorId, DivaResource.MenuFacialType.Home, false);
+			while (MenuScene.Instance.divaManager.IsLoading)
+				yield return null;
+			MenuScene.Instance.divaManager.OverrideAnimations(m_divaResource.overrideClipList);
+			if(blend != null)
+			{
+				blend.enabled = true;
+			}
+			m_isPlayedIntimacyHint = false;
+			MenuScene.Instance.divaManager.OnIdle("");
+		}
 
 		//// RVA: 0xB77958 Offset: 0xB77958 VA: 0xB77958
 		private void OnClickInfosSelectButton(GakuyaInfos.SelectType selectType)
@@ -668,21 +781,136 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB77D44 Offset: 0xB77D44 VA: 0xB77D44
-		//private void OnFinishSelectAnim(GakuyaInfos.SelectType selectType) { }
+		private void OnFinishSelectAnim(GakuyaInfos.SelectType selectType)
+		{
+			return;
+		}
 
 		//// RVA: 0xB77D48 Offset: 0xB77D48 VA: 0xB77D48
-		//private void OnClickDivaRanking() { }
+		private void OnClickDivaRanking()
+		{
+			if (MenuScene.Instance.DirtyChangeScene)
+				return;
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+			GameManager.Instance.RemovePushBackButtonHandler(OnBackButton);
+			IBJAKJJICBC d = new IBJAKJJICBC();
+			d.KHEKNNFCAOI(1, false, 0, 0, 0, false, false, false);
+			DivaTotalRankingSceneArgs args = new DivaTotalRankingSceneArgs();
+			args.MusicData = d;
+			args.DivaId = m_divaId;
+			this.StartCoroutineWatched(Co_ApplySavedata(() =>
+			{
+				//0xB7AF84
+				MenuScene.Instance.Call(TransitionList.Type.DIVA_RANKING, args, true);
+			}));
+		}
 
 		//// RVA: 0xB78064 Offset: 0xB78064 VA: 0xB78064
-		//private void OnClickCostumeItem(int index) { }
+		private void OnClickCostumeItem(int index)
+		{
+			if (MenuScene.Instance.DirtyChangeScene)
+				return;
+			GakuyaCostumeListWindow.ItemInfo item = m_costumeListWindow.GetItem(index);
+			if(!item.m_isHave)
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				this.StartCoroutineWatched(Co_ShowPopupUnlockInfo(item));
+				return;
+			}
+			if (item.m_isTry)
+				return;
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+			m_requestDivaCostumeInfo.divaId = item.m_viewDiva.AHHJLDLAPAN_DivaId;
+			m_requestDivaCostumeInfo.modelId = item.m_cosModelId;
+			m_requestDivaCostumeInfo.colorId = item.m_cosColor;
+			if(!m_isChangingCostume)
+			{
+				this.StartCoroutineWatched(Co_ChangeCostume());
+			}
+			if(item.m_isNew)
+			{
+				item.m_isNew = false;
+				if (item.m_cosColor == 0)
+					item.m_viewDiva.LEHDLBJJBNC();
+				else
+					item.m_viewDiva.FFKMJNHFFFL_Costume.PDADHMIODCA(item.m_cosColor, false);
+			}
+			m_costumeListWindow.SetTryIndex(index);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DF454 Offset: 0x6DF454 VA: 0x6DF454
 		//// RVA: 0xB78334 Offset: 0xB78334 VA: 0xB78334
-		//private IEnumerator Co_ChangeCostume() { }
+		private IEnumerator Co_ChangeCostume()
+		{
+			Coroutine cancelCoroutine;
+
+			//0xB7E5B8
+			if (IsMatchCostumeInfo(m_requestDivaCostumeInfo))
+				yield break;
+			m_isChangingCostume = true;
+			MenuScene.Instance.InputDisable();
+			m_costumeListWindow.SetInputEnable();
+			CancelReactionCostumeChange();
+			cancelCoroutine = CancelIntimacyHint();
+			SetUIOrder(UIOrderType.ChangeCostume);
+			do
+			{
+				do
+				{
+					m_curtain.SetDiva(m_requestDivaCostumeInfo.divaId);
+					m_curtain.SetMessageType(GakuyaCurtain.MessageType.ChangeCostume);
+					m_curtain.TryEnter();
+					while (m_curtain.IsPlaying())
+						yield return null;
+					yield return cancelCoroutine;
+					SetDivaCostumeInfo(m_requestDivaCostumeInfo.divaId, m_requestDivaCostumeInfo.modelId, m_requestDivaCostumeInfo.colorId);
+					MenuScene.Instance.divaManager.SetActive(false, true);
+					yield return Co.R(Co_LoadDivaModel(m_requestDivaCostumeInfo.divaId));
+					MenuScene.Instance.divaManager.SetActive(true, true);
+				}
+				while (!IsMatchCostumeInfo(m_requestDivaCostumeInfo));
+				MenuScene.Instance.divaManager.IdleCrossFade("simple_idle");
+				yield return new WaitForSeconds(0.2f);
+				m_curtain.Leave();
+				while (m_curtain.IsPlaying())
+					yield return null;
+			} while (!IsMatchCostumeInfo(m_requestDivaCostumeInfo));
+			if(!m_gotoEpisode)
+			{
+				MenuScene.Instance.InputEnable();
+				m_coroutineReactionCostumeChange = this.StartCoroutineWatched(Co_ReactionCostumeChange());
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DF4CC Offset: 0x6DF4CC VA: 0x6DF4CC
 		//// RVA: 0xB78488 Offset: 0xB78488 VA: 0xB78488
-		//private IEnumerator Co_ReactionCostumeChange() { }
+		private IEnumerator Co_ReactionCostumeChange()
+		{
+			int hash;
+
+			//0xB81F28
+			m_isReactionCostumeChange = true;
+			GameManager.Instance.SetFPS(60);
+			MenuScene.Instance.divaManager.SetAnimParamInteger("menu_simpleLoopStart_State", 1);
+			hash = Animator.StringToHash("simple_loop_start");
+			while (!MenuScene.Instance.divaManager.IsCurrentBodyState(hash))
+				yield return null;
+			m_voicePlayback = m_voicePlayer.source.Play(m_voicePlayIndex);
+			m_voicePlayIndex++;
+			if (m_voicePlayIndex >= m_voiceCueCount)
+				m_voicePlayIndex = 0;
+			while (m_voicePlayback.GetStatus() != CriAtomExPlayback.Status.Removed)
+				yield return null;
+			MenuScene.Instance.divaManager.SetAnimParamInteger("menu_simpleLoopStart_State", 2);
+			hash = Animator.StringToHash("simple_idle");
+			while(!MenuScene.Instance.divaManager.IsCurrentBodyState(hash))
+				yield return null;
+			MenuScene.Instance.divaManager.SetAnimParamInteger("menu_simpleLoopStart_State", 0);
+			MenuScene.Instance.divaManager.IdleCrossFade("");
+			GameManager.Instance.SetFPS(30);
+			m_coroutineReactionCostumeChange = null;
+			m_isReactionCostumeChange = false;
+		}
 
 		//// RVA: 0xB76570 Offset: 0xB76570 VA: 0xB76570
 		private void CancelReactionCostumeChange()
@@ -703,13 +931,109 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DF544 Offset: 0x6DF544 VA: 0x6DF544
 		//// RVA: 0xB783C0 Offset: 0xB783C0 VA: 0xB783C0
-		//private IEnumerator Co_ShowPopupUnlockInfo(GakuyaCostumeListWindow.ItemInfo costumeItemInfo) { }
+		private IEnumerator Co_ShowPopupUnlockInfo(GakuyaCostumeListWindow.ItemInfo costumeItemInfo)
+		{
+			TodoLogger.LogError(0, "Co_ShowPopupUnlockInfo");
+			yield return null;
+		}
 
 		//// RVA: 0xB78554 Offset: 0xB78554 VA: 0xB78554
-		//private void OnClickPresentItem(int index) { }
+		private void OnClickPresentItem(int index)
+		{
+			if (MenuScene.Instance.DirtyChangeScene)
+				return;
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+			bool presentDivaLimit = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.NJGEDPHNIKC_IsPresentLimitEnabled();
+			if(!m_intimacyController.viewData.HBODCMLFDOB.PFIILLOIDIL || presentDivaLimit)
+			{
+				if(m_intimacyController.viewData.NCNAPMHEINJ())
+				{
+					GakuyaPresentListWindow.ItemInfo itemInfo = m_presentListWindow.GetItem(index);
+					MessageBank bk = MessageManager.Instance.GetBank("menu");
+					if(!presentDivaLimit)
+					{
+						PopupGakuyaPresentUseSetting s = new PopupGakuyaPresentUseSetting();
+						s.TitleText = string.Format(bk.GetMessageByLabel("pop_gakuya_present_ask_title"), itemInfo.m_presentData.OPFGFINHFCE_Name);
+						s.Buttons = new ButtonInfo[2]
+						{
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive },
+						};
+						s.WindowSize = SizeType.Middle;
+						s.m_divaPresentData = itemInfo.m_presentData;
+						PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel buttonLabel) =>
+						{
+							//0xB7B278
+							TodoLogger.LogError(0, "OnClickPresentItem 1");
+						}, null, null, null);
+					}
+					else
+					{
+						PopupGakuyaPresentUse2Setting s = new PopupGakuyaPresentUse2Setting();
+						s.TitleText = string.Format(bk.GetMessageByLabel("pop_gakuya_present_ask_title"), itemInfo.m_presentData.OPFGFINHFCE_Name);
+						s.Buttons = new ButtonInfo[2]
+						{
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive },
+						};
+						s.WindowSize = SizeType.Large;
+						s.m_divaPresentData = itemInfo.m_presentData;
+						s.m_maxUseItemVal = m_intimacyController.viewData.LLFDOKOMJAN_GetPresentLeft();
+						s.m_haveItemVal = itemInfo.m_presentData.GLHBKPNFLOP_Count;
+						PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel buttonLabel) =>
+						{
+							//0xB7B278
+							TodoLogger.LogError(0, "OnClickPresentItem 1");
+						}, null, null, null);
+					}
+				}
+				else
+				{
+					MessageBank bk = MessageManager.Instance.GetBank("menu");
+					TextPopupSetting s = new TextPopupSetting();
+					s.TitleText = bk.GetMessageByLabel("pop_gakuya_present_limit_title");
+					s.Text = bk.GetMessageByLabel("pop_gakuya_present_limit");
+					s.Buttons = new ButtonInfo[1]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive },
+					};
+					s.WindowSize = SizeType.Small;
+					PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel buttonLabel) =>
+					{
+						//0xB7A52C
+						TodoLogger.LogError(0, "OnClickPresentItem 2");
+					}, null, null, null);
+				}
+			}
+			else
+			{
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				TextPopupSetting s = new TextPopupSetting();
+				s.TitleText = bk.GetMessageByLabel("pop_gakuya_present_limit_title");
+				s.Text = bk.GetMessageByLabel("pop_gakuya_present_lv_max");
+				s.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive },
+				};
+				s.WindowSize = SizeType.Small;
+				PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel buttonLabel) =>
+				{
+					//0xB7A528
+					TodoLogger.LogError(0, "OnClickPresentItem 3");
+				}, null, null, null);
+			}
+		}
 
 		//// RVA: 0xB793BC Offset: 0xB793BC VA: 0xB793BC
-		//private void OnClickDiva() { }
+		private void OnClickDiva()
+		{
+			if (MenuScene.Instance.DirtyChangeScene)
+				return;
+			if (!IsEnableIntimacyHint())
+				return;
+			m_intimacyController.charTouchPlaySe();
+			StartIntimacyHint();
+		}
 
 		//// RVA: 0xB794A0 Offset: 0xB794A0 VA: 0xB794A0
 		private void InitDivaCostumeInfos()
@@ -744,10 +1068,28 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB79A94 Offset: 0xB79A94 VA: 0xB79A94
-		//private void SetDivaCostumeInfo(int divaId, int modelId, int colorId) { }
+		private void SetDivaCostumeInfo(int divaId, int modelId, int colorId)
+		{
+			DivaCostumeInfo info = m_divaCostumeInfos.Find((DivaCostumeInfo _) =>
+			{
+				//0xB7B680
+				return _.divaId == divaId;
+			});
+			if(info != null)
+			{
+				info.modelId = modelId;
+				info.colorId = colorId;
+			}
+		}
 
 		//// RVA: 0xB79BA8 Offset: 0xB79BA8 VA: 0xB79BA8
-		//private bool IsMatchCostumeInfo(GakuyaScene.DivaCostumeInfo info) { }
+		private bool IsMatchCostumeInfo(DivaCostumeInfo info)
+		{
+			DivaCostumeInfo data = GetDivaCostumeInfo(info.divaId);
+			if (data == null)
+				return true;
+			else return data.modelId == info.modelId && data.colorId == info.colorId;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DF5BC Offset: 0x6DF5BC VA: 0x6DF5BC
 		//// RVA: 0xB79C14 Offset: 0xB79C14 VA: 0xB79C14
@@ -781,7 +1123,18 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB79CDC Offset: 0xB79CDC VA: 0xB79CDC
-		//private void PreSetAllHomeCostume() { }
+		private void PreSetAllHomeCostume()
+		{
+			foreach(var d in GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas)
+			{
+				if(d.FJODMPGPDDD)
+				{
+					DivaCostumeInfo info = GetDivaCostumeInfo(d.AHHJLDLAPAN_DivaId);
+					GameManager.Instance.ViewPlayerData.OPDBFHFKKJN_SetHomeCostume(d.AHHJLDLAPAN_DivaId, GetCostumeId(d.AHHJLDLAPAN_DivaId, info.modelId), info.colorId);
+					return;
+				}
+			}
+		}
 
 		//// RVA: 0xB772E8 Offset: 0xB772E8 VA: 0xB772E8
 		//private void ApplySaveData(Action onSuccess) { }
@@ -901,7 +1254,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_isEntered && IsEnableIntimacy())
 			{
-				if(m_infos.m_selectType == 2)
+				if(m_infos.CurrentSelectType == GakuyaInfos.SelectType.Gift)
 				{
 					if(!m_isChangingDiva && !m_isChangingCostume)
 					{
@@ -928,19 +1281,38 @@ namespace XeApp.Game.Menu
 		private bool IsEnableIntimacy()
 		{
 			if (m_infos != null)
-				return !m_infos.m_isLockGift();
+				return !m_infos.IsLockGift;
 			return false;
 		}
 
 		//// RVA: 0xB7A154 Offset: 0xB7A154 VA: 0xB7A154
-		//private void StartLeaveIntimacyHint() { }
+		private void StartLeaveIntimacyHint()
+		{
+			if (m_coroutineIntimacyHintLeave != null)
+				this.StopCoroutineWatched(m_coroutineIntimacyHintLeave);
+			m_coroutineIntimacyHintLeave = null;
+			m_coroutineIntimacyHintLeave = this.StartCoroutineWatched(Co_LeaveIntimacyHint());
+		}
 
 		//// RVA: 0xB7684C Offset: 0xB7684C VA: 0xB7684C
 		//private void CancelLeaveIntimacyHint() { }
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DF6AC Offset: 0x6DF6AC VA: 0x6DF6AC
 		//// RVA: 0xB7A1A0 Offset: 0xB7A1A0 VA: 0xB7A1A0
-		//private IEnumerator Co_LeaveIntimacyHint() { }
+		private IEnumerator Co_LeaveIntimacyHint()
+		{
+			float timeCount;
+
+			//0xB7FAD0
+			timeCount = 0;
+			while(timeCount <= m_intimacyHintDispTime)
+			{
+				timeCount += Time.deltaTime;
+				yield return null;
+			}
+			m_divaMessage.TryLeave();
+			m_coroutineIntimacyHintLeave = null;
+		}
 
 		//// RVA: 0xB7A24C Offset: 0xB7A24C VA: 0xB7A24C
 		private void OnBackButton()

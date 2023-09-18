@@ -210,7 +210,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xECAE80 Offset: 0xECAE80 VA: 0xECAE80
-		//public void IdleCrossFade(string stateName = "") { }
+		public void IdleCrossFade(string stateName = "")
+		{
+			divaObject.IdleCrossFade(stateName);
+		}
 
 		//// RVA: 0xECAEB4 Offset: 0xECAEB4 VA: 0xECAEB4
 		public void SetBodyCrossFade(string stateName, float duration = 0.07f)

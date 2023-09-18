@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
@@ -74,7 +75,12 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB6E190 Offset: 0xB6E190 VA: 0xB6E190
-		//public void SetScrollTop() { }
+		public void SetScrollTop()
+		{
+			m_scrollList.SetPosition(0, 0, 0, false);
+			m_scrollList.VisibleRegionUpdate();
+			m_scrollList.ResetScrollVelocity();
+		}
 
 		//// RVA: 0xB6E21C Offset: 0xB6E21C VA: 0xB6E21C
 		public void SetItems(int divaId, int modelId = 0, int colorId = 0, bool debugAllOpen = false)
@@ -206,16 +212,51 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB6F360 Offset: 0xB6F360 VA: 0xB6F360
-		//public void SetTryIndex(int index) { }
+		public void SetTryIndex(int index)
+		{
+			if(index < ItemCount)
+			{
+				foreach(var item in m_itemList)
+				{
+					item.m_isTry = false;
+				}
+				m_itemList[index].m_isTry = true;
+				if (!m_itemList[index].m_isSet)
+					m_isTaped = true;
+				m_scrollList.VisibleRegionUpdate();
+			}
+		}
 
 		//// RVA: 0xB6F58C Offset: 0xB6F58C VA: 0xB6F58C
-		//public void SetInputEnable() { }
+		public void SetInputEnable()
+		{
+			SetInput(true);
+		}
 
 		//// RVA: 0xB6F854 Offset: 0xB6F854 VA: 0xB6F854
-		//public void SetInputDisable() { }
+		public void SetInputDisable()
+		{
+			SetInput(false);
+		}
 
 		//// RVA: 0xB6F594 Offset: 0xB6F594 VA: 0xB6F594
-		//private void SetInput(bool enable) { }
+		private void SetInput(bool enable)
+		{
+			ScrollRect[] srs = GetComponentsInChildren<ScrollRect>();
+			for(int i = 0; i < srs.Length; i++)
+			{
+				srs[i].enabled = true;
+				if (srs[i].verticalScrollbar != null)
+					srs[i].verticalScrollbar.interactable = enable;
+				if (srs[i].horizontalScrollbar != null)
+					srs[i].horizontalScrollbar.interactable = enable;
+			}
+			ButtonBase[] btns = GetComponentsInChildren<ButtonBase>();
+			for(int i = 0; i < btns.Length; i++)
+			{
+				btns[i].IsInputOff = !enable;
+			}
+		}
 
 		//// RVA: 0xB6F85C Offset: 0xB6F85C VA: 0xB6F85C
 		private void OnUpdateList(int index, SwapScrollListContent content)

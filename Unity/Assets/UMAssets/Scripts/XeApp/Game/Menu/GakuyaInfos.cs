@@ -183,10 +183,31 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB72338 Offset: 0xB72338 VA: 0xB72338
-		//public void SetSelectType(GakuyaInfos.SelectType type, bool force = False, bool isAnim = False) { }
+		public void SetSelectType(SelectType type, bool force = false, bool isAnim = false)
+		{
+			if(isAnim)
+			{
+				ChangeSelectType(type);
+			}
+			else
+			{
+				if(force || m_selectType != type)
+				{
+					SetButtonsType(type);
+					SetContentsType(type);
+					m_selectType = type;
+				}
+			}
+		}
 
 		//// RVA: 0xB72FB0 Offset: 0xB72FB0 VA: 0xB72FB0
-		//public void SetScrollTop() { }
+		public void SetScrollTop()
+		{
+			m_objectStatus.GetComponentInChildren<GakuyaStatus>().SetScrollTop();
+			m_objectDressList.GetComponentInChildren<GakuyaCostumeListWindow>().SetScrollTop();
+			m_objectGiftList.GetComponentInChildren<GakuyaPresentListWindow>().SetScrollTop();
+			m_objectProfile.GetComponentInChildren<GakuyaProfile>().SetScrollTop();
+		}
 
 		//// RVA: 0xB733A0 Offset: 0xB733A0 VA: 0xB733A0
 		public void SetActiveHideContent(bool isActive)
@@ -201,7 +222,11 @@ namespace XeApp.Game.Menu
 		//public void Leave() { }
 
 		//// RVA: 0xB73458 Offset: 0xB73458 VA: 0xB73458
-		//public void TryEnter() { }
+		public void TryEnter()
+		{
+			SetButtonsType(m_selectType);
+			m_enterLeaveControl.TryEnter();
+		}
 
 		// RVA: 0xB73490 Offset: 0xB73490 VA: 0xB73490
 		public void TryLeave()
@@ -213,7 +238,10 @@ namespace XeApp.Game.Menu
 		//public void Show() { }
 
 		//// RVA: 0xB734E8 Offset: 0xB734E8 VA: 0xB734E8
-		//public void Hide() { }
+		public void Hide()
+		{
+			m_enterLeaveControl.Hide();
+		}
 
 		// RVA: 0xB73514 Offset: 0xB73514 VA: 0xB73514
 		public bool IsPlaying()

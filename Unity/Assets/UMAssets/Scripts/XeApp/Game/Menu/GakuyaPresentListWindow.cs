@@ -63,7 +63,12 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB73218 Offset: 0xB73218 VA: 0xB73218
-		//public void SetScrollTop() { }
+		public void SetScrollTop()
+		{
+			m_scrollList.SetPosition(0, 0, 0, false);
+			m_scrollList.VisibleRegionUpdate();
+			m_scrollList.ResetScrollVelocity();
+		}
 
 		// RVA: 0xB74C90 Offset: 0xB74C90 VA: 0xB74C90
 		public void SetItems(List<OJEGDIBEBHP> presentDataList)
