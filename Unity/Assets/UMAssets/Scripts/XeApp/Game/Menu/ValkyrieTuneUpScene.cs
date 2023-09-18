@@ -345,7 +345,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xBD6D5C
 					wait_time -= Time.deltaTime;
-					return wait_time >= 0;
+					return wait_time > 0;
 				});
 				m_layoutValSelect.NoticeAnimLeave();
 				m_IsDispNotice = false;

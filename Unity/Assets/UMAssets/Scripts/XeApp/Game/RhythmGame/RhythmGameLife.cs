@@ -124,7 +124,7 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(isChanging)
 			{
-				if(changeBeganTime + changeRequiredTime <= Time.time)
+				if(changeBeganTime + changeRequiredTime < Time.time)
 				{
 					isChanging = true;
 					view = changeTargetValue;

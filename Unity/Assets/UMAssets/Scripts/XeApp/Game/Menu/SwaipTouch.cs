@@ -360,11 +360,11 @@ namespace XeApp.Game.Menu
 			}
 			if(m_is_swaip_height_flag)
 			{
-				if(m_flick_height_value <= w)
+				if(m_flick_height_value <= h)
 				{
 					m_input_flick |= 8;
 				}
-				else if(-m_flick_height_value >= w)
+				else if(-m_flick_height_value >= h)
 				{
 					m_input_flick |= 4;
 				}

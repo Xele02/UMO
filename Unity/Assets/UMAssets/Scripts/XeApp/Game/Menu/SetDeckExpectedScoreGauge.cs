@@ -110,7 +110,7 @@ namespace XeApp.Game.Menu
 					vals[i] = (int)(Mathf.Clamp(max * (f2 + v), 0, max));
 					float v2 = Mathf.Clamp(f2 * max, 0, max);
 					f2 += v;
-					if (v >= 0)
+					if (v > 0)
 					{
 						if(vals[i] == (int)(v2))
 						{

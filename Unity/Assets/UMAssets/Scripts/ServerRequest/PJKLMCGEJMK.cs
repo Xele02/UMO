@@ -286,7 +286,7 @@ public class PJKLMCGEJMK
                 while(!ADKIDBJCAJA.EFGFPCBGDDK)
                 {
                     MEMLLCDHAIF = MEMLLCDHAIF + Time.deltaTime;
-                    if(MEMLLCDHAIF > ADKIDBJCAJA.ICDEFIIADDO_Timeout && GPBPFELFMFL != null)
+                    if(MEMLLCDHAIF >= ADKIDBJCAJA.ICDEFIIADDO_Timeout && GPBPFELFMFL != null)
                     {
                         if(GPBPFELFMFL.CancelAPICall())
                         {

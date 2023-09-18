@@ -117,7 +117,7 @@ namespace XeApp.Game.Menu
 			if(!m_isScroll && m_canAutoScroll)
 			{
 				m_scrollWaitSecond += TimeWrapper.deltaTime;
-				if(m_scrollWaitSecond >= 5)
+				if(m_scrollWaitSecond > 5)
 				{
 					this.StartCoroutineWatched(ScrollCoroutine(-1));
 					m_scrollWaitSecond = 0;

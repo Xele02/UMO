@@ -851,7 +851,7 @@ namespace XeApp.Game
 			}
 			float f = SystemManager.rawSafeAreaRect.y;
 			float f2 = baseHeight / nativeY;
-			if (f < 0)
+			if (f <= 0)
 			{
 				f = baseHeight;
 				if(SystemManager.isLongScreenDevice)
@@ -860,7 +860,7 @@ namespace XeApp.Game
 				}
 				else
 				{
-					if (1 - nativeY / baseHeight <= 1 - sX / baseWidth)
+					if (1 - nativeY / baseHeight < 1 - sX / baseWidth)
 						f = baseHeight / nativeY;
 					else
 						f = baseWidth / sX;
@@ -871,7 +871,7 @@ namespace XeApp.Game
 			{
 				if(!SystemManager.isLongScreenDevice)
 				{
-					if (1 - nativeY / baseHeight <= 1 - sX / baseWidth)
+					if (1 - nativeY / baseHeight < 1 - sX / baseWidth)
 						f = baseHeight / nativeY;
 					else
 						f = baseWidth / sX;

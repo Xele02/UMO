@@ -41,7 +41,7 @@ namespace XeApp.Game.Common
 			{
 				transform.position = m_targetTransform.position;
 				transform.rotation = m_targetTransform.rotation;
-				if(m_baseFov >= 0)
+				if(m_baseFov > 0)
 				{
 					float tan = CalcTan(m_targetCamera.fieldOfView);
 					float ratio = tan / m_baseTan;

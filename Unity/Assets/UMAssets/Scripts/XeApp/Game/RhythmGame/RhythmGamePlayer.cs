@@ -332,7 +332,13 @@ namespace XeApp.Game.RhythmGame
 				rNoteOwner.Pause();
 				Pause();
 			}
+			int c = currentRawMusicMillisec;
 			currentRawMusicMillisec = GetRawMusicMillisec();
+			if(currentRawMusicMillisec < c)
+			{
+				TodoLogger.LogError(TodoLogger.ToCheck, "Time goes back in time "+currentRawMusicMillisec+" "+c);
+				currentRawMusicMillisec = c;
+			}
 			notesMillisec = currentRawMusicMillisec - noteOffsetMillisec;
 			deviceMillisec = IncludeDeviceLatency(currentRawMusicMillisec);
 			deviceSec = deviceMillisec / 1000.0f;
@@ -3390,7 +3396,7 @@ namespace XeApp.Game.RhythmGame
 			{
 				float val = resource.musicData.musicParam.stateOffsetSec;
 				resource.musicIntroResource.OverrideMusicStartTime(ref val);
-				if(val < 0.0f)
+				if(val <= 0.0f)
 				{
 					StartPlayMusic((int)(resource.musicData.musicParam.stateOffsetSec * -1000));
 				}
@@ -3567,7 +3573,7 @@ namespace XeApp.Game.RhythmGame
 			if(tutorialPopupStartTime < 0)
 			{
 				res = (int)bgmPlayback.timeSyncedWithAudio;
-				if(currentRawMusicMillisec < -1)
+				if(res < 0)
 					res = musicRequestChangeMillisec;
 			}
 			return res;

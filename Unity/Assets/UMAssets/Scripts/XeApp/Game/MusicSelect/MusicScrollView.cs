@@ -133,7 +133,7 @@ namespace XeApp.Game.MusicSelect
 					b = true;
 			}
 			bool c = b || isForce;
-			if(centerUpdateRate <= absRate%1)
+			if(centerUpdateRate < absRate%1)
 				c = true;
 			if(!c)
 			{
@@ -145,7 +145,7 @@ namespace XeApp.Game.MusicSelect
 			index = index + step;
 			if(!isClip && !isForce)
 			{
-				if(absRate < 1.0f)
+				if(absRate <= 1.0f)
 				{
 					int a = !b ? 1 : 0;
 					if(rate < 0)
@@ -291,11 +291,11 @@ namespace XeApp.Game.MusicSelect
 						j = 1;
 					} while(i == 0);
 					int val = (int)(_scrollValue.y % 90.0f);
-					if(Math.Abs(eventData.delta.y) / Screen.height < scrollVelocity * Time.deltaTime)
+					if(Math.Abs(eventData.delta.y) / Screen.height <= scrollVelocity * Time.deltaTime)
 					{
-						if(Math.Abs(eventData.delta.y) / Screen.height < singleScrollVelocity * Time.deltaTime)
+						if(Math.Abs(eventData.delta.y) / Screen.height <= singleScrollVelocity * Time.deltaTime)
 						{
-							if(Math.Abs(val/90.0f) < centerUpdateRate)
+							if(Math.Abs(val/90.0f) <= centerUpdateRate)
 							{
 								j = 0;
 								_isSingleScroll = true;
