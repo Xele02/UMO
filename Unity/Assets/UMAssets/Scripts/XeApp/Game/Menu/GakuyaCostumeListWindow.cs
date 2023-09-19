@@ -63,7 +63,7 @@ namespace XeApp.Game.Menu
 					GameObject g2 = Instantiate(content);
 					g2.name = content.name.Replace("_00", i.ToString("D2"));
 					m_scrollList.AddScrollObject(g2.GetComponentInChildren<SwapScrollListContent>());
-					GakuyaCostumeListContent g3 = content.GetComponentInChildren<GakuyaCostumeListContent>();
+					GakuyaCostumeListContent g3 = g2.GetComponentInChildren<GakuyaCostumeListContent>();
 					g3.OnClickCallback = OnClickItem;
 					g3.SetParent(this);
 				}
@@ -270,7 +270,7 @@ namespace XeApp.Game.Menu
 		private void OnClickItem(int index)
 		{
 			ItemInfo item = GetItem(index);
-			Debug.Log(string.Format(JpStringLiterals.StringLiteral_16155, item.m_name));
+			Debug.Log(string.Format(JpStringLiterals.StringLiteral_16155, index, item.m_name));
 			if (item.m_isHave)
 				m_isTaped = true;
 			if (OnClickItemCallback != null)

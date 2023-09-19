@@ -17,7 +17,7 @@ namespace XeApp.Game.Menu
 		public bool IsAnimatorRequested { get; private set; } // 0x1D
 		public bool IsActionRequested { get
 			{
-				if (IsAnimatorRequested && m_runningCoroutine == null)
+				if (!IsAnimatorRequested && m_runningCoroutine == null)
 					return false;
 				return true;
 			}

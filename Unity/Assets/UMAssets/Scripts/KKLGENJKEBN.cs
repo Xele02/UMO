@@ -221,7 +221,22 @@ public class KKLGENJKEBN
 							req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 							{
 								//0x1A08168
-								TodoLogger.LogError(0, "OnFail");
+								CJMFJOMECKI_ErrorId = NHECPMNKEFK.CJMFJOMECKI_ErrorId;
+								if(NHECPMNKEFK.CJMFJOMECKI_ErrorId == SakashoErrorId.RANKING_PLAYER_NOT_FOUND)
+								{
+									if (KLMFJJCNBIP != null)
+										KLMFJJCNBIP(0, null);
+								}
+								else if(JGJFFKPFMDB.BDGBCCGLLAJ_IsRankingError(NHECPMNKEFK.CJMFJOMECKI_ErrorId))
+								{
+									if (IDAEHNGOKAE != null)
+										IDAEHNGOKAE();
+								}
+								else
+								{
+									if (JGKOLBLPMPG != null)
+										JGKOLBLPMPG();
+								}
 							};
 							req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 							{
@@ -271,7 +286,17 @@ public class KKLGENJKEBN
 		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 		{
 			//0x1A08614
-			TodoLogger.LogError(0, "On Error");
+			CJMFJOMECKI_ErrorId = NHECPMNKEFK.CJMFJOMECKI_ErrorId;
+			if(JGJFFKPFMDB.BDGBCCGLLAJ_IsRankingError(CJMFJOMECKI_ErrorId))
+			{
+				if (IDAEHNGOKAE != null)
+					IDAEHNGOKAE();
+			}
+			else
+			{
+				if (JGKOLBLPMPG != null)
+					JGKOLBLPMPG();
+			}
 		};
 		req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 		{

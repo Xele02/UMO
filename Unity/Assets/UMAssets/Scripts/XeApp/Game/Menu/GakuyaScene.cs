@@ -875,7 +875,8 @@ namespace XeApp.Game.Menu
 				while (m_curtain.IsPlaying())
 					yield return null;
 			} while (!IsMatchCostumeInfo(m_requestDivaCostumeInfo));
-			if(!m_gotoEpisode)
+			m_isChangingCostume = false;
+			if (!m_gotoEpisode)
 			{
 				MenuScene.Instance.InputEnable();
 				m_coroutineReactionCostumeChange = this.StartCoroutineWatched(Co_ReactionCostumeChange());

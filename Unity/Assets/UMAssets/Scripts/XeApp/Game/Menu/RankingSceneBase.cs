@@ -149,7 +149,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xCF49F4 Offset: 0xCF49F4 VA: 0xCF49F4
-		//protected bool CheckTransitByReturn() { }
+		protected bool CheckTransitByReturn()
+		{
+			return PrevTransition == TransitionList.Type.PROFIL;
+		}
 
 		//// RVA: 0xCF4A18 Offset: 0xCF4A18 VA: 0xCF4A18
 		protected int GetListEdgeRank(bool isUpper)
@@ -177,7 +180,19 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xCF4EAC Offset: 0xCF4EAC VA: 0xCF4EAC
-		//protected void ReleaseDecos() { }
+		protected void ReleaseDecos()
+		{
+			for(int i = 0; i < m_divaDecos.Count; i++)
+			{
+				m_divaDecos[i].Release();
+			}
+			m_divaDecos.Clear();
+			for(int i = 0; i < m_sceneDecos.Count; i++)
+			{
+				m_sceneDecos[i].Release();
+			}
+			m_sceneDecos.Clear();
+		}
 
 		//// RVA: 0xCF5050 Offset: 0xCF5050 VA: 0xCF5050
 		protected void OnSelectListItem(int value, SwapScrollListContent content)
@@ -291,7 +306,29 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xCF6048 Offset: 0xCF6048 VA: 0xCF6048
-		//protected void OnReceivedRankingList(List<RankingListInfo> a_list) { }
+		protected void OnReceivedRankingList(List<RankingListInfo> a_list)
+		{
+			currentInfoList.Clear();
+			if(a_list != null)
+			{
+				for(int i = 0; i < a_list.Count; i++)
+				{
+					a_list[i].TryInstall();
+				}
+				currentInfoList.AddRange(a_list);
+			}
+			m_windowUi.SetMessageVisible(currentInfoList.Count < 1);
+			if(currentInfoList.Count < 1)
+			{
+				m_windowUi.SetMessage(GetRankingNotFoundMessage());
+			}
+			OnChangedRankingList(0);
+			if (!m_isFriendList)
+				m_receivedTotalInfo = true;
+			else
+				m_receivedFriendInfo = true;
+			this.StartCoroutineWatched(Co_WaitDownLoadAsset());
+		}
 
 		//// RVA: 0xCF6284 Offset: 0xCF6284 VA: 0xCF6284
 		protected void OnReceivedRankingListAdditive(int dir, List<IBIGBMDANNM> list)
@@ -300,7 +337,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xCF64C4 Offset: 0xCF64C4 VA: 0xCF64C4
-		//protected void OnReceivedRankingListAdditive(int dir, List<RankingListInfo> a_list) { }
+		protected void OnReceivedRankingListAdditive(int dir, List<RankingListInfo> a_list)
+		{
+			TodoLogger.LogError(0, "OnReceivedRankingListAdditive2");
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E15E4 Offset: 0x6E15E4 VA: 0x6E15E4
 		//// RVA: 0xCF5FBC Offset: 0xCF5FBC VA: 0xCF5FBC
@@ -318,7 +358,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xCF66D4 Offset: 0xCF66D4 VA: 0xCF66D4
 		protected void OnRankingError()
 		{
-			TodoLogger.LogError(0, "OnRankingError");
+			Debug.LogWarning("Ranking Error.");
+			MenuScene.Instance.RaycastEnable();
 		}
 
 		//// RVA: 0xCF67B4 Offset: 0xCF67B4 VA: 0xCF67B4

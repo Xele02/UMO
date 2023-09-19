@@ -52,7 +52,7 @@ namespace XeApp.Game.Menu
 					GameObject g = Instantiate(content);
 					g.name = content.name.Replace("_00", i.ToString("D2"));
 					m_scrollList.AddScrollObject(g.GetComponentInChildren<SwapScrollListContent>());
-					GakuyaPresentListContent c2 = content.GetComponentInChildren<GakuyaPresentListContent>();
+					GakuyaPresentListContent c2 = g.GetComponentInChildren<GakuyaPresentListContent>();
 					c2.OnClickCallback = OnClickItem;
 				}
 				m_scrollList.SetContentEscapeMode(true);

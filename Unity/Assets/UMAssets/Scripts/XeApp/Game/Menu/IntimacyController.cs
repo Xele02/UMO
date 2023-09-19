@@ -682,7 +682,7 @@ namespace XeApp.Game.Menu
 					break;
 				case ListType.ITEM_NONE:
 					m_gakuyaPresentListWindow.SetItemDark(false);
-					m_gakuyaPresentListWindow.SetDark(true, "gakuya_intimacy_present_none");
+					m_gakuyaPresentListWindow.SetDark(true, bk.GetMessageByLabel("gakuya_intimacy_present_none"));
 					break;
 				case ListType.COUNT_NONE:
 					m_gakuyaPresentListWindow.SetItemDark(true);

@@ -86,7 +86,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xB83FA0
 				LAMCONGFONF.OJFOLGKMBIG obj = rankingManager.CEPOFDBHIAC(divaData.AHHJLDLAPAN_DivaId - 1, false);
-				SetDivaRanking(obj.FJOLNJLLJEJ);
+				SetDivaRanking(obj.FJOLNJLLJEJ_Rank);
 				if (success != null)
 					success(obj);
 			}, () =>

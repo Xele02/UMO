@@ -23,13 +23,31 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x963908 Offset: 0x963908 VA: 0x963908
-		//public void Create() { }
+		public void Create()
+		{
+			if (m_viewObj != null)
+				return;
+			m_viewObj = ViewScreenCostume.Create();
+			m_camera = m_viewObj.transform.GetComponent<ViewScreenCostume>();
+		}
 
 		//// RVA: 0x9639F8 Offset: 0x9639F8 VA: 0x9639F8
-		//public void Enter() { }
+		public void Enter()
+		{
+			if(m_viewObj != null && !m_isEntered)
+			{
+				ViewScreenCostume.Enter(m_viewObj, OnEntered);
+			}
+		}
 
 		//// RVA: 0x963AEC Offset: 0x963AEC VA: 0x963AEC
-		//public void Leave() { }
+		public void Leave()
+		{
+			if(m_viewObj != null)
+			{
+				ViewScreenCostume.Leave(m_viewObj, OnFinished);
+			}
+		}
 
 		//// RVA: 0x963BCC Offset: 0x963BCC VA: 0x963BCC
 		//public void OnDeleteCache() { }
@@ -38,13 +56,20 @@ namespace XeApp.Game.Menu
 		//public void Reinstate() { }
 
 		//// RVA: 0x963D18 Offset: 0x963D18 VA: 0x963D18
-		//public void InputOn() { }
+		public void InputOn()
+		{
+			SetDivaTargetObject();
+			m_camera.InputOn();
+		}
 
 		//// RVA: 0x963D4C Offset: 0x963D4C VA: 0x963D4C
 		//public void InputOff() { }
 
 		//// RVA: 0x963CEC Offset: 0x963CEC VA: 0x963CEC
-		//public void SetDivaTargetObject() { }
+		public void SetDivaTargetObject()
+		{
+			m_camera.SetDivaTargetObject();
+		}
 
 		//// RVA: 0x963D78 Offset: 0x963D78 VA: 0x963D78
 		//public void InitChangeDiva() { }
@@ -53,16 +78,29 @@ namespace XeApp.Game.Menu
 		//public void InitCameraRot() { }
 
 		//// RVA: 0x963DD0 Offset: 0x963DD0 VA: 0x963DD0
-		//private void OnEntered() { }
+		private void OnEntered()
+		{
+			m_isEntered = true;
+		}
 
 		//// RVA: 0x963AE4 Offset: 0x963AE4 VA: 0x963AE4
-		//public bool IsEntered() { }
+		public bool IsEntered()
+		{
+			return m_isEntered;
+		}
 
 		//// RVA: 0x963CA8 Offset: 0x963CA8 VA: 0x963CA8
-		//private void OnFinished() { }
+		private void OnFinished()
+		{
+			m_isEntered = false;
+			m_viewObj = null;
+		}
 
 		//// RVA: 0x963DDC Offset: 0x963DDC VA: 0x963DDC
-		//public bool IsFinished() { }
+		public bool IsFinished()
+		{
+			return m_viewObj == null;
+		}
 
 		//// RVA: 0x963E68 Offset: 0x963E68 VA: 0x963E68
 		//public int GetState() { }
