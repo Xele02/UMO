@@ -1347,7 +1347,59 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x979548 Offset: 0x979548 VA: 0x979548
 		private void OnClickDecoButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickDecoButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+			int decoLevel;
+			bool decoEnabled;
+			HNDLICBDEMI.FMLGCFKNKIA_GetDecoPlayerLevelAndEnabled(out decoLevel, out decoEnabled);
+			if(m_isHomeShowDiva)
+			{
+				this.StartCoroutineWatched(Co_WaitIdleCrossFade());
+				m_divaTalk.CancelRequest();
+				m_divaTalk.TimerStop();
+			}
+			if(!decoEnabled)
+			{
+				MenuScene.Instance.InputDisable();
+				TextPopupSetting s = new TextPopupSetting();
+				s.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				};
+				s.Text = JpStringLiterals.StringLiteral_16419;
+				PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0x97D218
+					MenuScene.Instance.InputEnable();
+					if (!m_isHomeShowDiva)
+						return;
+					m_divaTalk.TimerRestart();
+				}, null, null, null);
+				return;
+			}
+			if (TryLobbyAnnounce())
+				return;
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsDecolture))
+			{
+				int d = 0;
+				if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+					d = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("decolturemode_first_adv_id", 0);
+				GPMHOAKFALE_Adventure.NGDBKCKMDHE adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(d);
+				if(adv == null)
+				{
+					adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(1);
+				}
+				if(adv != null)
+				{
+					Database.Instance.advResult.Setup("Menu", TransitionUniqueId.DECO, new AdvSetupParam());
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA(d);
+					Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI);
+					MenuScene.Instance.GotoAdventure(true);
+					ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK(JpStringLiterals.StringLiteral_16417, 0);
+					return;
+				}
+			}
+			ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK(JpStringLiterals.StringLiteral_16418, 0);
+			MenuScene.Instance.Mount(TransitionUniqueId.DECO, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 		}
 
 		// // RVA: 0x979E58 Offset: 0x979E58 VA: 0x979E58
@@ -2207,11 +2259,7 @@ namespace XeApp.Game.Menu
 		// 	[CompilerGeneratedAttribute] // RVA: 0x6E44FC Offset: 0x6E44FC VA: 0x6E44FC
 		// 	// RVA: 0x97D1F4 Offset: 0x97D1F4 VA: 0x97D1F4
 		// 	private void <CheckSnsNotice>b__106_0() { }
-
-		// 	[CompilerGeneratedAttribute] // RVA: 0x6E450C Offset: 0x6E450C VA: 0x6E450C
-		// 	// RVA: 0x97D218 Offset: 0x97D218 VA: 0x97D218
-		// 	private void <OnClickDecoButton>b__121_0(PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
-
+		
 		// 	[CompilerGeneratedAttribute] // RVA: 0x6E452C Offset: 0x6E452C VA: 0x6E452C
 		// 	// RVA: 0x97D318 Offset: 0x97D318 VA: 0x97D318
 		// 	private void <SetupBeginnerLead>b__149_0(IiconTexture image) { }

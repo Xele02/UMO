@@ -12,7 +12,7 @@ public class DAJBODHMLAB_DecoPublicSet : KLFDBFMNLBL_ServerSaveBlock
 	{
 		public enum FDEMAPBAFGN
 		{
-			HGJCDIEALPL = 0,
+			HGJCDIEALPL_IsKira = 0,
 		}
 
 		public static class EKDCIMLMDNO

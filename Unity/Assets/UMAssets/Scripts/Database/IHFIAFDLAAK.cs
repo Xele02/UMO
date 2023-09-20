@@ -224,7 +224,12 @@ public class IHFIAFDLAAK_DecoStamp : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x11FA270 Offset: 0x11FA270 VA: 0x11FA270
-	//public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH) { }
+	public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH)
+	{
+		if (!OHJFBLFELNK.ContainsKey(LJNAKDMILMC))
+			return KKMJBMKHGNH;
+		return OHJFBLFELNK[LJNAKDMILMC].DNJEJEANJGL_Value;
+	}
 
 	//// RVA: 0x11FA354 Offset: 0x11FA354 VA: 0x11FA354
 	//public bool GMKNPOJDIPP(string LJNAKDMILMC, out int NANNGLGOFKH) { }

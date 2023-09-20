@@ -328,6 +328,9 @@ class JpStringLiterals
 	public const string StringLiteral_16170 = "ギフトリストをクリック : {0} : {1}"; //0x03bb8760
 	public const string StringLiteral_16338 = "ユーザーリスト 失敗"; // 0x03bb8a00
 	public const string StringLiteral_16339 = "ユーザーフレンドリスト 成功 "; // 0x03bb8a04
+	public const string StringLiteral_16417 = "初回アドベンチャー"; //0x03bb8b3c
+	public const string StringLiteral_16418 = "自分のデコルーム"; //0x03bb8b40
+	public const string StringLiteral_16419 = "【解放条件】\n\nプレイヤーランクを5にする。"; //0x03bb8b44
 	public const string StringLiteral_17446 = "さしすせそ"; // 0x03bb9b50
 	public const string StringLiteral_17754 = "(＋{0})"; // 0x03bba020
 	public const string StringLiteral_17777 = "獲得したアイテムはありません。"; // 0x03bba07c
