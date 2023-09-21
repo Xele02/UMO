@@ -79,7 +79,7 @@ namespace XeApp
 				}
 				base.SortingOrder = value;
 			} } //0x1AC609C 0x1AC61A0
-		//public bool IsPlayVoice { get; } 0x1AC89E0
+		public bool IsPlayVoice { get { return m_voicePlayer.isPlaying; } } //0x1AC89E0
 
 		// RVA: 0x1AC3BC8 Offset: 0x1AC3BC8 VA: 0x1AC3BC8
 		private void OnEnable()
@@ -138,10 +138,79 @@ namespace XeApp
 		//protected override void PostInitController() { }
 
 		//// RVA: 0x1AC43B8 Offset: 0x1AC43B8 VA: 0x1AC43B8
-		//private DecorationChara.CollStatus AdjustPos(Vector2 pos, bool isUpdatePos = True, Nullable<Vector2> dstPos, bool willEscape = False) { }
+		private CollStatus AdjustPos(Vector2 pos, bool isUpdatePos = true, Vector2? dstPos = null, bool willEscape = false)
+		{
+			if (dstPos.HasValue)
+				pos = dstPos.Value;
+			CollStatus res = CollStatus.None;
+			bool b1 = false;
+			DecorationItemBase hitItem = null;
+			bool b2 = decorationCanvas.ItemManager.HitCheckThinkness(this, pos, out hitItem);
+			if (b2)
+			{
+				res |= CollStatus.DecoItem;
+				b1 = willEscape;
+			}
+			if (b2 && b1)
+			{
+				int a = -1;
+				Vector2? r1 = null;
+				for(int i = 0; i < dirList.Count; i++)
+				{
+					Vector2 v = dirList[i];
+					Vector2 v2 = Vector2.zero;
+					if (SearchWalkableSpace(ref pos, hitItem, ref v, ref v2))
+					{
+						if(r1.HasValue || r1.Value.sqrMagnitude > v2.sqrMagnitude)
+						{
+							r1 = v2;
+							a = i;
+						}
+					}
+				}
+				if (a < 0)
+					charaControl.escapeDir = Vector2.zero;
+				else
+				{
+					charaControl.escapeDir = dirList[a];
+				}
+				res = CollStatus.None | CollStatus.DecoItem;
+			}
+			if(decorationBgManager.CheckAdjustPosition(this, ref pos))
+			{
+				if(isUpdatePos)
+				{
+					Position = pos;
+				}
+				res |= CollStatus.BgFloor;
+			}
+			return res;
+		}
 
 		//// RVA: 0x1AC4A88 Offset: 0x1AC4A88 VA: 0x1AC4A88
-		//private bool SearchWalkableSpace(ref Vector2 pos, DecorationItemBase hitItem, ref Vector2 dir, ref Vector2 escapeVec) { }
+		private bool SearchWalkableSpace(ref Vector2 pos, DecorationItemBase hitItem, ref Vector2 dir, ref Vector2 escapeVec)
+		{
+			callCnt++;
+			DecorationItemBase hitItem2 = null;
+			if (hitItem != null)
+			{
+				Vector2 v = dir * (hitItem.Size * 0.5f + Size) - pos * (pos - hitItem.Position).magnitude;
+				escapeVec += v;
+				if(!decorationCanvas.ItemManager.HitCheckThinkness(this, v + pos, out hitItem2))
+				{
+					callCnt = 0;
+					Vector2 v2 = v + pos;
+					return !decorationBgManager.CheckAdjustPosition(this, ref v2);
+				}
+				if(callCnt <= decorationCanvas.ItemManager.GetItemCount())
+				{
+					Vector2 v2 = v + pos;
+					return SearchWalkableSpace(ref v2, hitItem2, ref dir, ref escapeVec);
+				}
+			}
+			callCnt = 0;
+			return false;
+		}
 
 		// RVA: 0x1AC4F60 Offset: 0x1AC4F60 VA: 0x1AC4F60
 		public void WaitAnimation()
@@ -170,7 +239,7 @@ namespace XeApp
 			if(!pincher.IsFloating())
 			{
 				prevGroundPos = Position;
-				charaControl.hasPinched = false;
+				charaControl.OnGround();
 			}
 			else
 			{
@@ -202,8 +271,7 @@ namespace XeApp
 				a = AdjustPos(Position, false, p3, false);
 				if ((a & CollStatus.BgFloor) != 0)
 				{
-					if ((charaControl.coll | 2) == 2)
-						charaControl.coll = 1;
+					charaControl.OnCollide(false);
 				}
 				else
 					Position = p2;
@@ -214,8 +282,7 @@ namespace XeApp
 				a = AdjustPos(Position, false, p3, false);
 				if((a != CollStatus.None))
 				{
-					if ((charaControl.coll | 2) == 2)
-						charaControl.coll = 1;
+					charaControl.OnCollide(false);
 				}
 				else
 					Position = p2;
@@ -223,8 +290,7 @@ namespace XeApp
 			a = AdjustPos(Position, false, null, false);
 			if((a & CollStatus.BgFloor) != 0)
 			{
-				if ((charaControl.coll | 2) == 2)
-					charaControl.coll = 1;
+				charaControl.OnCollide(false);
 			}
 			if(pincher.IsFloating)
 			{
@@ -269,7 +335,12 @@ namespace XeApp
 		//public void RollbackSerif() { }
 
 		//// RVA: 0x1AC6710 Offset: 0x1AC6710 VA: 0x1AC6710
-		//public void ShowSerif() { }
+		public void ShowSerif()
+		{
+			HideReaction();
+			if(m_serif != null)
+				m_serif.Show();
+		}
 
 		//// RVA: 0x1AC6884 Offset: 0x1AC6884 VA: 0x1AC6884
 		public void HideSerif()
@@ -330,7 +401,7 @@ namespace XeApp
 			{
 				if(!charaControl.isReaction)
 				{
-					if(!decorationCanvas.m_decorationItemManager.ReactingPlushToys)
+					if(!decorationCanvas.ItemManager.ReactingPlushToys)
 					{
 						if(pincher.IsFloating())
 						{
@@ -356,9 +427,9 @@ namespace XeApp
 		{
 			if(Time.time - enterTouchTime < longTapThreshold)
 			{
-				if(!decorationCanvas.m_decorationItemManager.AnyCharaReacting())
+				if(!decorationCanvas.ItemManager.AnyCharaReacting())
 				{
-					if (!decorationCanvas.m_decorationItemManager.ReactingPlushToys)
+					if (!decorationCanvas.ItemManager.ReactingPlushToys)
 					{
 						bool old = charaControl.isReaction;
 						charaControl.OnTap();

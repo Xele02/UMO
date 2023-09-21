@@ -380,7 +380,16 @@ namespace XeApp
 		//public void StopAnimation() { }
 
 		//// RVA: 0x1ABDB10 Offset: 0x1ABDB10 VA: 0x1ABDB10
-		//public int GetItemCount() { }
+		public int GetItemCount()
+		{
+			int res = 0;
+			foreach(var k in m_decorationItemList)
+			{
+				if (!DecorationConstants.IsItemSpVisit(k))
+					res++;
+			}
+			return res;
+		}
 
 		//// RVA: 0x1ABDCBC Offset: 0x1ABDCBC VA: 0x1ABDCBC
 		//public int GetCanEditItemCount() { }
@@ -447,7 +456,45 @@ namespace XeApp
 		//public bool HitCheck(DecorationItemBase item, Vector2 position) { }
 
 		//// RVA: 0x1AC47E8 Offset: 0x1AC47E8 VA: 0x1AC47E8
-		//public bool HitCheckThinkness(DecorationItemBase item, Vector2 position, out DecorationItemBase hitItem) { }
+		public bool HitCheckThinkness(DecorationItemBase item, Vector2 position, out DecorationItemBase hitItem)
+		{
+			hitItem = null;
+			bool b = false;
+			foreach(var it in m_decorationItemList)
+			{
+				if(it != item)
+				{
+					if(item.Setting.AttributeType != DecorationConstants.Attribute.Type.None)
+					{
+						DecorationConstants.Attribute.Type a = DecorationConstants.Attribute.Type.None;
+						if((item.Setting.AttributeType & DecorationConstants.Attribute.Type.Wall) != 0)
+						{
+							a = it.Setting.AttributeType & DecorationConstants.Attribute.Type.Wall;
+							if((it.Setting.AttributeType & DecorationConstants.Attribute.Type.Wall) != 0)
+							{
+								a = DecorationConstants.Attribute.Type.WallTop;
+							}
+						}
+						if((item.Setting.AttributeType & DecorationConstants.Attribute.Type.Floor) != 0)
+						{
+							if ((it.Setting.AttributeType & DecorationConstants.Attribute.Type.Floor) != 0)
+								a |= DecorationConstants.Attribute.Type.WallTop;
+							else
+								a |= it.Setting.AttributeType & DecorationConstants.Attribute.Type.Floor;
+						}
+						if(a != DecorationConstants.Attribute.Type.None && CategoryCheckThinkness(item, it)
+							 && !it.HitCheckThinkness(item, position))
+						{
+							hitItem = it;
+							b = true;
+							break;
+						}
+					}
+				}
+			}
+			//LAB_01ac49d8
+			return b;
+		}
 
 		//// RVA: 0x1ABEAF0 Offset: 0x1ABEAF0 VA: 0x1ABEAF0
 		//public bool IsEdit() { }
@@ -496,7 +543,18 @@ namespace XeApp
 		//private bool CategoryCheck(DecorationItemBase item1, DecorationItemBase item2) { }
 
 		//// RVA: 0x1AD9AA0 Offset: 0x1AD9AA0 VA: 0x1AD9AA0
-		//private bool CategoryCheckThinkness(DecorationItemBase item1, DecorationItemBase item2) { }
+		private bool CategoryCheckThinkness(DecorationItemBase item1, DecorationItemBase item2)
+		{
+			if(item1.DecorationItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
+			{
+				if(item2.DecorationItemCategory != EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
+				{
+					return DecorationConstants.IsRug(item2);
+				}
+				return true;
+			}
+			return false;
+		}
 
 		//// RVA: 0x1AD9E04 Offset: 0x1AD9E04 VA: 0x1AD9E04
 		//private void OnClickPriorityButton(DecorationItemBase item, LayoutDecorationFrameButton.ButtonType type) { }

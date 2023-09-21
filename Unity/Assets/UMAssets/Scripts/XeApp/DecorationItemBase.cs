@@ -138,7 +138,7 @@ namespace XeApp
 				return m_viewDecoItemData;
 			} } //0x1AC85C4
 		public bool Lock { get; set; } // 0x15
-		//public DecorationConstants.Attribute.Type AttributeType { get; } 0x1ABC73C
+		public DecorationConstants.Attribute.Type AttributeType { get { return m_setting.AttributeType; } } //0x1ABC73C
 		public DecorationItemBaseSetting Setting { get { return m_setting; } } //0x1AC40D4
 		public int Id { get; protected set; } // 0x18
 		public bool IsEnablePost { get; set; } // 0x69
@@ -162,11 +162,28 @@ namespace XeApp
 				}
 			} } //0x1AC4E2C
 		public float Scale { get { return m_object.transform.localScale.x; } } //0x1AC6040
-		//public float HalfWidth { get; } 0x1AD2FE0
-		//public float HalfHeight { get; } 0x1AD2EAC
+		public float HalfWidth { get { return Size.x * Scale * 0.5f; } } //0x1AD2FE0
+		public float HalfHeight { get { return Size.y * Scale * 0.5f; } } //0x1AD2EAC
 		
 		//// RVA: 0x1AD08CC Offset: 0x1AD08CC VA: 0x1AD08CC
-		//public bool CheckAttribute(DecorationConstants.Attribute.Type attribute) { }
+		public bool CheckAttribute(DecorationConstants.Attribute.Type attribute)
+		{
+			if (attribute == DecorationConstants.Attribute.Type.None)
+				return false;
+			bool res = false;
+			if((attribute & DecorationConstants.Attribute.Type.Wall) != 0)
+			{
+				res = false;
+				if ((Setting.AttributeType & DecorationConstants.Attribute.Type.Wall) != 0)
+					res = true;
+			}
+			if((attribute & DecorationConstants.Attribute.Type.Floor) != 0)
+			{
+				if ((Setting.AttributeType & DecorationConstants.Attribute.Type.Floor) != 0)
+					res = true;
+			}
+			return res;
+		}
 
 		//// RVA: 0x1AD0984 Offset: 0x1AD0984 VA: 0x1AD0984
 		//public GameObject GetObject() { }
@@ -414,7 +431,10 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AD3CFC Offset: 0x1AD3CFC VA: 0x1AD3CFC Slot: 25
-		//public virtual void Show() { }
+		public virtual void Show()
+		{
+			m_spriteRenderer.enabled = true;
+		}
 
 		//// RVA: 0x1AD3D2C Offset: 0x1AD3D2C VA: 0x1AD3D2C Slot: 26
 		public virtual void Hide()
@@ -426,7 +446,18 @@ namespace XeApp
 		//public bool HitCheck(DecorationItemBase item, Vector2 position) { }
 
 		//// RVA: 0x1AD3F88 Offset: 0x1AD3F88 VA: 0x1AD3F88
-		//public bool HitCheckThinkness(DecorationItemBase item, Vector2 position) { }
+		public bool HitCheckThinkness(DecorationItemBase item, Vector2 position)
+		{
+			Vector2 v2 = Size * Scale;
+			Vector2 v1 = item.Size * item.Scale;
+			Rect r2 = new Rect(new Vector2(Position.x, -Position.y) - v2 / 2, v2);
+			r2.y += v2.y - Scale * Setting.Thickness;
+			r2.height = 0;
+			Rect r1 = new Rect(new Vector2(position.x, -position.y) - v1 / 2, v1);
+			r1.y += v1.y - item.Scale * item.Setting.Thickness;
+			r1.height = 0;
+			return r1.Overlaps(r2, false);
+		}
 
 		//// RVA: 0x1AD3F38 Offset: 0x1AD3F38 VA: 0x1AD3F38
 		//private bool HitCheck(Rect rect1, Rect rect2) { }

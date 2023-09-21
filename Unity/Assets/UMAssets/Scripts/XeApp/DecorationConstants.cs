@@ -50,10 +50,16 @@ namespace XeApp
 			//public static int AttributeBgId(DecorationConstants.Attribute.Type type) { }
 
 			//// RVA: 0x1ACDA98 Offset: 0x1ACDA98 VA: 0x1ACDA98
-			//public static bool CheckAttribute(DecorationConstants.Attribute.Type type1, DecorationConstants.Attribute.Type type2) { }
+			public static bool CheckAttribute(Type type1, Type type2)
+			{
+				return (type2 & type1) > 0;
+			}
 
 			//// RVA: 0x1ACDAAC Offset: 0x1ACDAAC VA: 0x1ACDAAC
-			//public static bool CheckArea(DecorationConstants.Attribute.AreaType type1, DecorationConstants.Attribute.AreaType type2) { }
+			public static bool CheckArea(AreaType type1, AreaType type2)
+			{
+				return (type2 & type1) > 0;
+			}
 		}
 
 		public static readonly string BundleName = "ly/201.xab"; // 0x0
@@ -90,13 +96,26 @@ namespace XeApp
 		//public static bool IsPoster(EKLNMHFCAOI.FKGCBLHOOCL ctg) { }
 
 		//// RVA: 0x1ACCE48 Offset: 0x1ACCE48 VA: 0x1ACCE48
-		//public static bool IsItemSpVisit(DecorationItemBase item) { }
+		public static bool IsItemSpVisit(DecorationItemBase item)
+		{
+			if (item.DecorationItemCategory != EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp)
+				return false;
+			return item.Id == 11;
+		}
 
 		//// RVA: 0x1ACCED0 Offset: 0x1ACCED0 VA: 0x1ACCED0
 		//public static bool IsItemSpVisit(DAJBODHMLAB.MMLACIFMNBN.MHODOAJPNHD item) { }
 
 		//// RVA: 0x1ACCFB4 Offset: 0x1ACCFB4 VA: 0x1ACCFB4
-		//public static bool IsRug(DecorationItemBase item) { }
+		public static bool IsRug(DecorationItemBase item)
+		{
+			if(item.DecorationItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj)
+			{
+				if (item.Setting.viewDecoItemData.GBJFNGCDKPM == 5)
+					return true;
+			}
+			return false;
+		}
 
 		//// RVA: 0x1ACD03C Offset: 0x1ACD03C VA: 0x1ACD03C
 		//public static string GetItemAssetPathFormat(KDKFHGHGFEK viewData, bool useRareBrakePosterAnim) { }
