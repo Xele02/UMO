@@ -30,7 +30,10 @@ namespace XeApp
 		}
 
 		//// RVA: 0xBB166C Offset: 0xBB166C VA: 0xBB166C Slot: 6
-		//public override void Update() { }
+		public override void Update()
+		{
+			return;
+		}
 
 		//// RVA: 0xBB1670 Offset: 0xBB1670 VA: 0xBB1670
 		public bool Translate(Vector3 translate)

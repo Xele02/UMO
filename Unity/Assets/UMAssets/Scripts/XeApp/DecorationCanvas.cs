@@ -1,8 +1,11 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
+using XeApp.Core;
+using XeApp.Game.Common;
 using XeApp.Game.Menu;
 
 namespace XeApp
@@ -37,7 +40,7 @@ namespace XeApp
 		public Action<DecorationItemBase> CreateItemCallback; // 0x5C
 		public Action<DecorationItemBase, bool> ChangeKiraCallback; // 0x60
 		private List<KDKFHGHGFEK> m_viewDecoItemDataList = new List<KDKFHGHGFEK>(); // 0x64
-		//public MDDBFCFOKFC DecoLocalSaveData = new MDDBFCFOKFC(); // 0x6C
+		public MDDBFCFOKFC DecoLocalSaveData = new MDDBFCFOKFC(); // 0x6C
 
 		public DecorationItemManager ItemManager { get { return m_decorationItemManager; } } //0x1AB8A4C
 		//public Material PosterKiraMaterial { get; } 0x1AB8A54
@@ -104,13 +107,34 @@ namespace XeApp
 		//public void LoadResource() { }
 
 		//// RVA: 0x1AB90C8 Offset: 0x1AB90C8 VA: 0x1AB90C8
-		//public void ReloadIntimacyController() { }
+		public void ReloadIntimacyController()
+		{
+			if(m_intimacyController == null)
+			{
+				m_intimacyController = MenuScene.Instance.IntimacyControl;
+			}
+			m_intimacyController.InitDeco(MenuScene.Instance.GetCurrentTransitionRoot(), () =>
+			{
+				//0x1ABFF20
+				m_intimacyController.SetEnableDecoCounter(GetDivaCount() > 0, true);
+			});
+		}
 
 		//// RVA: 0x1AB9274 Offset: 0x1AB9274 VA: 0x1AB9274
-		//public bool IsIntimacyControllerLoaded() { }
+		public bool IsIntimacyControllerLoaded()
+		{
+			if (m_intimacyController == null)
+				return true;
+			return !m_intimacyController.IsLoading();
+		}
 
 		//// RVA: 0x1AB9334 Offset: 0x1AB9334 VA: 0x1AB9334
-		//public void OnDestoryScene() { }
+		public void OnDestoryScene()
+		{
+			if (m_intimacyController == null)
+				return;
+			m_intimacyController.OnDestoryScene();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AAE1C Offset: 0x6AAE1C VA: 0x6AAE1C
 		//// RVA: 0x1AB903C Offset: 0x1AB903C VA: 0x1AB903C
@@ -126,13 +150,62 @@ namespace XeApp
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AAF84 Offset: 0x6AAF84 VA: 0x6AAF84
 		//// RVA: 0x1AB9560 Offset: 0x1AB9560 VA: 0x1AB9560
-		//public IEnumerator Co_LoadBgEffect() { }
+		public IEnumerator Co_LoadBgEffect()
+		{
+			int effId; // 0x1C
+			string bn; // 0x20
+			AssetBundleLoadAllAssetOperationBase op; // 0x24
+
+			//0x1AC0470
+			if (m_bgEffect != null)
+			{
+				DestroyImmediate(m_bgEffect);
+				m_bgEffect = null;
+			}
+			long ct = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			ViewDecoBgEffect found = new ViewDecoBgEffect();
+			if (!found.Init(ct))
+				yield break;
+			if(found.CanShowPopup())
+			{
+				bool isWait = true;
+				PopupFirstBgEffectSetting(found, (PopupButton.ButtonLabel _) =>
+				{
+					//0x1AC00D8
+					isWait = false;
+					found.SetLastShowTime(ct);
+					found.SetShowStatus(_ == PopupButton.ButtonLabel.GrowthConfirm);
+				});
+				while (isWait)
+					yield return null;
+				found.Save();
+			}
+			if (!found.IsEnableBgEffect())
+				yield break;
+			effId = found.EffectId;
+			if (effId < 1)
+				yield break;
+			bn = string.Format("dc/bg/eff/{0:D2}.xab", effId);
+			op = AssetBundleManager.LoadAllAssetAsync(bn);
+			yield return op;
+			GameObject eff = op.GetAsset<GameObject>(string.Format("bg_eff_{0:D2}", effId));
+			if(eff != null)
+			{
+				m_bgEffect = Instantiate(eff, m_decorationItemRoot, false);
+			}
+			AssetBundleManager.UnloadAssetBundle(bn, false);
+		}
 
 		//// RVA: 0x1AB960C Offset: 0x1AB960C VA: 0x1AB960C
 		//public void SetActiveBgEffect(bool isActive) { }
 
 		//// RVA: 0x1AB96C8 Offset: 0x1AB96C8 VA: 0x1AB96C8
-		//private void PopupFirstBgEffectSetting(ViewDecoBgEffect view, Action<PopupButton.ButtonLabel> callback) { }
+		private void PopupFirstBgEffectSetting(ViewDecoBgEffect view, Action<PopupButton.ButtonLabel> callback)
+		{
+			TodoLogger.LogError(0, "PopupFirstBgEffectSetting");
+			if (callback != null)
+				callback(PopupButton.ButtonLabel.Ok);
+		}
 
 		//// RVA: 0x1AB9BF4 Offset: 0x1AB9BF4 VA: 0x1AB9BF4
 		//private void InitItemManager() { }
@@ -216,7 +289,10 @@ namespace XeApp
 		//private void EnablePost(bool isEnable) { }
 
 		//// RVA: 0x1ABC854 Offset: 0x1ABC854 VA: 0x1ABC854
-		//public void SetActive(bool active) { }
+		public void SetActive(bool active)
+		{
+			gameObject.SetActive(active);
+		}
 
 		//// RVA: 0x1ABC890 Offset: 0x1ABC890 VA: 0x1ABC890
 		//public void EnableItemController(DecorationItemManager.EnableControlType type) { }
@@ -225,7 +301,10 @@ namespace XeApp
 		//public void EnableCanvasController(bool isEnable) { }
 
 		//// RVA: 0x1ABCC88 Offset: 0x1ABCC88 VA: 0x1ABCC88
-		//public void StartAnimation() { }
+		public void StartAnimation()
+		{
+			m_decorationItemManager.StartAnimation();
+		}
 
 		//// RVA: 0x1ABCE08 Offset: 0x1ABCE08 VA: 0x1ABCE08
 		//public void StopAnimation() { }
@@ -255,7 +334,10 @@ namespace XeApp
 		//public int GetCharaCount() { }
 
 		//// RVA: 0x1ABE00C Offset: 0x1ABE00C VA: 0x1ABE00C
-		//public int GetDivaCount() { }
+		public int GetDivaCount()
+		{
+			return m_decorationItemManager.GetDivaCount();
+		}
 
 		//// RVA: 0x1ABE1F4 Offset: 0x1ABE1F4 VA: 0x1ABE1F4
 		//public void RemoveEditItem() { }
@@ -331,13 +413,22 @@ namespace XeApp
 		//public int InitSortOrder(DecorationItemBaseSetting.PriorityControlType priorityControlType) { }
 
 		//// RVA: 0x1ABF1C4 Offset: 0x1ABF1C4 VA: 0x1ABF1C4
-		//public bool IsItemTouch() { }
+		public bool IsItemTouch()
+		{
+			return m_decorationItemManager.IsItemTouch();
+		}
 
 		//// RVA: 0x1ABF358 Offset: 0x1ABF358 VA: 0x1ABF358
 		//public void WaitingChara(bool isWait) { }
 
 		//// RVA: 0x1ABF388 Offset: 0x1ABF388 VA: 0x1ABF388
-		//public void SetEnableIntimacyCounter(bool isEnable) { }
+		public void SetEnableIntimacyCounter(bool isEnable)
+		{
+			if(m_intimacyController != null)
+			{
+				m_intimacyController.SetEnableDecoCounter(isEnable && GetDivaCount() > 0, false);
+			}
+		}
 
 		//// RVA: 0x1ABF478 Offset: 0x1ABF478 VA: 0x1ABF478
 		//public void ClearSprite() { }
@@ -347,7 +438,10 @@ namespace XeApp
 		//private IEnumerator Co_ClearSprite() { }
 
 		//// RVA: 0x1ABF554 Offset: 0x1ABF554 VA: 0x1ABF554
-		//public RectTransform GetItemRootRectTransform() { }
+		public RectTransform GetItemRootRectTransform()
+		{
+			return m_decorationItemRootRect;
+		}
 
 		//// RVA: 0x1ABF55C Offset: 0x1ABF55C VA: 0x1ABF55C
 		//public void BgSetActive(bool active) { }
@@ -360,11 +454,7 @@ namespace XeApp
 
 		//// RVA: 0x1ABFC1C Offset: 0x1ABFC1C VA: 0x1ABFC1C
 		//public void ItemUnLock() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6AB398 Offset: 0x6AB398 VA: 0x6AB398
-		//// RVA: 0x1ABFF20 Offset: 0x1ABFF20 VA: 0x1ABFF20
-		//private void <ReloadIntimacyController>b__70_0() { }
-
+		
 		//[CompilerGeneratedAttribute] // RVA: 0x6AB3A8 Offset: 0x6AB3A8 VA: 0x6AB3A8
 		//// RVA: 0x1ABFF64 Offset: 0x1ABFF64 VA: 0x1ABFF64
 		//private bool <Co_LoadDecoration>b__81_0() { }

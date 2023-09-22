@@ -1,5 +1,7 @@
+using System.Text;
 using UnityEngine;
 using XeApp.Game.Menu;
+using XeSys;
 
 namespace XeApp
 {
@@ -136,6 +138,11 @@ namespace XeApp
 		//public static string GetThumbnailBundleName(KDKFHGHGFEK viewData, DecorationConstants.Attribute.Type attr = 0) { }
 
 		//// RVA: 0x1AC85F8 Offset: 0x1AC85F8 VA: 0x1AC85F8
-		//public static string MakeCharaCueSheetName(int charaId) { }
+		public static string MakeCharaCueSheetName(int charaId)
+		{
+			StringBuilder str = new StringBuilder(32);
+			str.SetFormat("cs_dec_char_{0:D3}", charaId);
+			return str.ToString();
+		}
 	}
 }

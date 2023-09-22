@@ -249,16 +249,50 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1ACBAD4 Offset: 0x1ACBAD4 VA: 0x1ACBAD4
-		//private void AnimReactionGlad() { }
+		private void AnimReactionGlad()
+		{
+			state = State.GladJump;
+			if(chara != null)
+			{
+				chara.PrepareVoiceCueSheet(null);
+			}
+			isWaitStartAnim = true;
+		}
 
 		//// RVA: 0x1ACBB98 Offset: 0x1ACBB98 VA: 0x1ACBB98
-		//private void AnimReactionAngry() { }
+		private void AnimReactionAngry()
+		{
+			state = State.AngrySway;
+			if (chara != null)
+				chara.PrepareVoiceCueSheet(null);
+			isWaitStartAnim = true;
+		}
 
 		//// RVA: 0x1AC6B80 Offset: 0x1AC6B80 VA: 0x1AC6B80
 		//public void AnimReactionSpecified(DecorationCharaAnimController.ReactionSpecifiedType type) { }
 
 		//// RVA: 0x1ACBC5C Offset: 0x1ACBC5C VA: 0x1ACBC5C
-		//private void AnimPinch(bool isInitiation) { }
+		private void AnimPinch(bool isInitiation)
+		{
+			if(isInitiation)
+			{
+				state = State.Pinched;
+				ChangeAnim(HashWait, true);
+			}
+			else
+			{
+				if (GetAnimNormalizedTime() < 1)
+					return;
+				if(GetAnimHash() == HashWait)
+				{
+					ChangeAnim(HashGlad, true);
+				}
+				else
+				{
+					ChangeAnim(HashWait, true);
+				}
+			}
+		}
 
 		//// RVA: 0x1ACBEAC Offset: 0x1ACBEAC VA: 0x1ACBEAC
 		private void AnimTouchKeep()
@@ -275,7 +309,17 @@ namespace XeApp
 		//private void AnimIntimacyUp() { }
 
 		//// RVA: 0x1ACC128 Offset: 0x1ACC128 VA: 0x1ACC128
-		//public void Direct(Vector2 move, bool isChangeForced = False) { }
+		public void Direct(Vector2 move, bool isChangeForced = false)
+		{
+			if(move.x >= 0)
+			{
+				ChangeAnim(HashWalkR, isChangeForced);
+			}
+			else
+			{
+				ChangeAnim(HashWalkL, isChangeForced);
+			}
+		}
 
 		//// RVA: 0x1ACB884 Offset: 0x1ACB884 VA: 0x1ACB884
 		private void ChangeAnim(int hash, bool isChangeForced = true)
@@ -304,7 +348,14 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1ACBE08 Offset: 0x1ACBE08 VA: 0x1ACBE08
-		//private float GetAnimNormalizedTime() { }
+		private float GetAnimNormalizedTime()
+		{
+			if(CheckAnim())
+			{
+				return animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+			}
+			return 0;
+		}
 
 		//// RVA: 0x1ACAB14 Offset: 0x1ACAB14 VA: 0x1ACAB14
 		private int GetAnimHash()
@@ -338,10 +389,30 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AC7EC4 Offset: 0x1AC7EC4 VA: 0x1AC7EC4
-		//public void OnTap() { }
+		public void OnTap()
+		{
+			hasTouched = false;
+			if(!isReaction && !hasPinched)
+			{
+				touchCnt++;
+				if (touchCnt % angryInterval == 0)
+					AnimReactionAngry();
+				else
+					AnimReactionGlad();
+				diffPos = Vector2.zero;
+				isReaction = true;
+			}
+		}
 
 		//// RVA: 0x1AC79B0 Offset: 0x1AC79B0 VA: 0x1AC79B0
-		//public void OnPinch() { }
+		public void OnPinch()
+		{
+			hasPinched = true;
+			chara.HideReaction();
+			chara.HideSerif();
+			AnimPinch(true);
+			diffPos = Vector2.zero;
+		}
 
 		//// RVA: 0x1AC5928 Offset: 0x1AC5928 VA: 0x1AC5928
 		public void OnGround()
@@ -359,7 +430,10 @@ namespace XeApp
 		//public void OnLongTap() { }
 
 		//// RVA: 0x1AC7FB8 Offset: 0x1AC7FB8 VA: 0x1AC7FB8
-		//public void OnTouchUp() { }
+		public void OnTouchUp()
+		{
+			hasTouched = false;
+		}
 
 		//// RVA: 0x1ACAE84 Offset: 0x1ACAE84 VA: 0x1ACAE84
 		private void UpdateState_Wait(ref Vector2 pos)
@@ -407,7 +481,7 @@ namespace XeApp
 				{
 					if(chara != null)
 					{
-						if(chara.IsPlayVoice())
+						if(chara.IsPlayVoice)
 							return;
 					}
 					if(!isEscape || !DecideMoveDst(ref pos))
@@ -432,7 +506,7 @@ namespace XeApp
 				if(chara != null)
 				{
 					chara.ShowReactionGlad();
-					chara.PlayVoice(2, 0);
+					chara.PlayVoice(DecorationChara.VoiceType.Glad, 0);
 				}
 				isWaitNextAnim = true;
 				nextBlankSec = reactionGladBlank;
@@ -472,7 +546,7 @@ namespace XeApp
 				{
 					if(chara != null)
 					{
-						if(chara.IsPlayVoice())
+						if(chara.IsPlayVoice)
 							return;
 					}
 					if(!isEscape || !DecideMoveDst(ref pos))
@@ -497,7 +571,7 @@ namespace XeApp
 				if(chara != null)
 				{
 					chara.ShowReactionAngry();
-					chara.PlayVoice(1, 0);
+					chara.PlayVoice(DecorationChara.VoiceType.Angry, 0);
 				}
 				isWaitNextAnim = true;
 				nextBlankSec = reactionAngryBlank;
@@ -542,7 +616,11 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1ACC2E8 Offset: 0x1ACC2E8 VA: 0x1ACC2E8
-		//private void MoveTo(Vector2 to, Vector2 from) { }
+		private void MoveTo(Vector2 to, Vector2 from)
+		{
+			diffPos = (to - from) * Mathf.Clamp01(Time.deltaTime / moveSec);
+			Direct(diffPos, false);
+		}
 
 		//// RVA: 0x1ACAC50 Offset: 0x1ACAC50 VA: 0x1ACAC50
 		private bool DecideMoveDst(ref Vector2 fromPos)
@@ -553,12 +631,12 @@ namespace XeApp
 			isReaction = false;
 			if(!_hasEscaped)
 			{
-				if (!TryEscape(fromPos))
+				if (!TryEscape(ref fromPos))
 					return false;
 			}
 			else
 			{
-				if (!TryMoveRandom(fromPos))
+				if (!TryMoveRandom(ref fromPos))
 					return false;
 			}
 			if(coll == Coll.Enter)
@@ -576,19 +654,78 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1ACC984 Offset: 0x1ACC984 VA: 0x1ACC984
-		//private bool AdjustDst() { }
+		private bool AdjustDst()
+		{
+			if(coll != Coll.None)
+			{
+				if (prevTo.x * to.x > 0)
+					to.x = -to.x;
+				if (prevTo.y * to.y > 0)
+					to.y = -to.y;
+				to = to.normalized * rangeMin;
+				return true;
+			}
+			return false;
+		}
 
 		//// RVA: 0x1ACC42C Offset: 0x1ACC42C VA: 0x1ACC42C
-		//private bool TryEscape(ref Vector2 fromPos) { }
+		private bool TryEscape(ref Vector2 fromPos)
+		{
+			if(escapeDir.sqrMagnitude != 0)
+			{
+				Vector2 d = escapeDir.normalized;
+				to = d * rangeMin;
+				if(AdjustDst())
+				{
+					escapeDir = d;
+				}
+				d = to + fromPos;
+				to = d;
+				prevTo = to - fromPos;
+				return !CollDst(ref to);
+			}
+			return false;
+		}
 
 		//// RVA: 0x1ACC62C Offset: 0x1ACC62C VA: 0x1ACC62C
-		//private bool TryMoveRandom(ref Vector2 fromPos) { }
+		private bool TryMoveRandom(ref Vector2 fromPos)
+		{
+			int i = 0;
+			do
+			{
+				if (i > 7)
+					break;
+				int a = UnityEngine.Random.Range(0, 10000);
+				Vector2 v = new Vector2((a & 1) * -2 + 1, 0);
+				Quaternion c = Quaternion.Euler(0, 0, UnityEngine.Random.Range(-angleMax, angleMax));
+				to = (c * v) * UnityEngine.Random.Range(rangeMin, rangeMax);
+				AdjustDst();
+				i++;
+				if(i == 8)
+				{
+					ResetState(true, true, false, true, true);
+					return false;
+				}
+				to = to + fromPos;
+			} while(CollDst(ref to));
+			from = fromPos;
+			prevTo = to - fromPos;
+			return true;
+		}
 
 		//[ConditionalAttribute] // RVA: 0x6ABD9C Offset: 0x6ABD9C VA: 0x6ABD9C
 		//// RVA: 0x1ACCAA4 Offset: 0x1ACCAA4 VA: 0x1ACCAA4
 		//private void dbg_OverwriteDst() { }
 
 		//// RVA: 0x1ACC22C Offset: 0x1ACC22C VA: 0x1ACC22C
-		//private bool CollDst(ref Vector2 dst) { }
+		private bool CollDst(ref Vector2 dst)
+		{
+			DecorationChara.CollStatus c = hitcheck(dst);
+			if (_hasEscaped)
+				return c != DecorationChara.CollStatus.None;
+			if ((c & DecorationChara.CollStatus.BgFloor) != 0)
+				return true;
+			return false;
+		}
 	}
 }

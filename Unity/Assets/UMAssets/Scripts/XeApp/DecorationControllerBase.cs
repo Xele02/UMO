@@ -27,6 +27,9 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AD02A0 Offset: 0x1AD02A0 VA: 0x1AD02A0 Slot: 6
-		//public virtual void Update() { }
+		public virtual void Update()
+		{
+			return;
+		}
 	}
 }

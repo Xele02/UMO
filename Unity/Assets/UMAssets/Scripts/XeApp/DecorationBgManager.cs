@@ -117,7 +117,7 @@ namespace XeApp
 				Vector2[] checkRightOuterLine;
 				m_decorationBgData.GetInnerLine(DecorationConstants.Attribute.Type.Floor, item.Setting.AreaType, out checkLeftInnerLine, out checkRightInnerLine);
 				m_decorationBgData.GetOuterLine(DecorationConstants.Attribute.Type.Floor, item.Setting.AreaType, out checkLeftOuterLine, out checkRightOuterLine);
-				check |= FloorHorizonBoundaryLineCheck(item, checkLeftInnerLine, checkRightInnerLine, checkLeftOuterLine, checkRightOuterLine, adjustPos);
+				check |= FloorHorizonBoundaryLineCheck(item, checkLeftInnerLine, checkRightInnerLine, checkLeftOuterLine, checkRightOuterLine, ref adjustPos);
 			}
 			if(hasWall)
 			{
@@ -127,7 +127,7 @@ namespace XeApp
 				Vector2[] checkRightOuterLine;
 				m_decorationBgData.GetInnerLine(DecorationConstants.Attribute.Type.Wall, item.Setting.AreaType, out checkLeftInnerLine, out checkRightInnerLine);
 				m_decorationBgData.GetOuterLine(DecorationConstants.Attribute.Type.Wall, item.Setting.AreaType, out checkLeftOuterLine, out checkRightOuterLine);
-				check |= FloorHorizonBoundaryLineCheck(item, checkLeftInnerLine, checkRightInnerLine, checkLeftOuterLine, checkRightOuterLine, adjustPos);
+				check |= FloorHorizonBoundaryLineCheck(item, checkLeftInnerLine, checkRightInnerLine, checkLeftOuterLine, checkRightOuterLine, ref adjustPos);
 			}
 			return check;
 		}
@@ -142,7 +142,31 @@ namespace XeApp
 		//public void SetEnablePostArea(DecorationConstants.Attribute.Type type) { }
 
 		//// RVA: 0x1D84A5C Offset: 0x1D84A5C VA: 0x1D84A5C
-		//private bool FloorHorizonBoundaryLineCheck(DecorationItemBase item, Vector2[] checkLeftInnerLine, Vector2[] checkRightInnerLine, Vector2[] checkLeftOuterLine, Vector2[] checkRightOuterLine, ref Vector2 adjustPos) { }
+		private bool FloorHorizonBoundaryLineCheck(DecorationItemBase item, Vector2[] checkLeftInnerLine, Vector2[] checkRightInnerLine, Vector2[] checkLeftOuterLine, Vector2[] checkRightOuterLine, ref Vector2 adjustPos)
+		{
+			bool res = false;
+			Vector2 v;
+			Vector2 off;
+			if (item.Setting.AreaType == DecorationConstants.Attribute.AreaType.Inner)
+			{
+				off = GetSnapOffset(item, SnapType.Bottom);
+				v = new Vector2(adjustPos.x, DownRay.y * -0.5f);
+				BoundaryLineCheck(ref res, v, DownRay, off, checkLeftInnerLine, ref adjustPos);
+			}
+			else
+			{
+				v = adjustPos + GetRayStartPos(item, SnapType.Bottom);
+				BoundaryLineCheck(ref res, v, UpRay, GetSnapOffset(item, SnapType.Bottom), checkLeftOuterLine, ref adjustPos);
+				BoundaryLineCheck(ref res, v, UpRay, GetSnapOffset(item, SnapType.Bottom), checkRightOuterLine, ref adjustPos);
+				if (item.Setting.AttributeType == DecorationConstants.Attribute.Type.BgBoth)
+					return res;
+				v = adjustPos + GetRayStartPos(item, SnapType.Thickness);
+				BoundaryLineCheck(ref res, v, DownRay, GetSnapOffset(item, SnapType.Thickness), checkLeftInnerLine, ref adjustPos);
+				off = GetSnapOffset(item, SnapType.Thickness);
+			}
+			BoundaryLineCheck(ref res, v, DownRay, off, checkRightInnerLine, ref adjustPos);
+			return res;
+		}
 
 		//// RVA: 0x1D84EAC Offset: 0x1D84EAC VA: 0x1D84EAC
 		//private bool WallHorizonBoundaryLineCheck(DecorationItemBase item, Vector2[] checkLeftInnerLine, Vector2[] checkRightInnerLine, Vector2[] checkLeftOuterLine, Vector2[] checkRightOuterLine, ref Vector2 adjustPos) { }
@@ -171,7 +195,35 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1D85BC4 Offset: 0x1D85BC4 VA: 0x1D85BC4
-		//private void BoundaryLineCheck(ref bool isAdjust, Vector2 itemPosition, Vector2 rayDirection, Vector2 snapOffset, Vector2[] boundaryLine, ref Vector2 adjustPos) { }
+		private void BoundaryLineCheck(ref bool isAdjust, Vector2 itemPosition, Vector2 rayDirection, Vector2 snapOffset, Vector2[] boundaryLine, ref Vector2 adjustPos)
+		{
+			if (isAdjust)
+				return;
+			Vector2 v1 = itemPosition + rayDirection;
+			Vector2 v2 = v1 - itemPosition;
+			Vector2 v3 = boundaryLine[0] - boundaryLine[1];
+			Vector2 v4 = boundaryLine[1] - itemPosition;
+			Vector2 v5 = boundaryLine[0] - itemPosition;
+			Vector2 v6 = itemPosition - boundaryLine[0];
+			Vector2 v7 = v1 - boundaryLine[0];
+			float f1 = v3.y * v6.y - v3.x * v6.x;
+			if(Mathf.Abs(f1) > 0.01f)
+			{
+				float f2 = v2.y * v5.y - v2.x * v5.x;
+				float f3 = v2.y - v4.y - v2.x * v4.x;
+				if(f3 * f2 <= 0 && f1 * (v3.y * v7.y - v3.x * v7.x) <= 0)
+				{
+					v1 = v3 * Mathf.Abs(f3) / (Mathf.Abs(f3) + Mathf.Abs(f2));
+					v2 = boundaryLine[1] + v1;
+					adjustPos = v2;
+					v3 = v2 + snapOffset;
+					adjustPos = v3;
+					isAdjust = true;
+					return;
+				}
+			}
+			isAdjust = false;
+		}
 
 		//// RVA: 0x1D860F4 Offset: 0x1D860F4 VA: 0x1D860F4
 		private void VerticalBoundaryLineCheck(ref bool isAdjust, Vector2 itemPosition, Vector2 rayDirection, Vector2 snapOffset, Vector2[] boundaryLine, ref Vector2 adjustPos)

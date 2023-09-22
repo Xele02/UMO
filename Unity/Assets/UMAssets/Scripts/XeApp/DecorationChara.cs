@@ -1,10 +1,13 @@
 using mcrs;
 using System;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using XeApp.Game.Common;
 using XeApp.Game.Menu;
+using XeSys;
 
 namespace XeApp
 {
@@ -116,7 +119,7 @@ namespace XeApp
 				return;
 			}
 			viewIntimacyData = new JJOELIOGMKK_DivaIntimacyInfo();
-			viewIntimacyData.KHEKNNFCAOI(Setting.viewDecoItemData.FPCGPGJOKNH);
+			viewIntimacyData.KHEKNNFCAOI(Setting.viewDecoItemData.FPCGPGJOKNH_CharaId);
 			viewIntimacyData.HCDGELDHFHB(false);
 		}
 
@@ -236,7 +239,7 @@ namespace XeApp
 				isWaitAnim = false;
 				return;
 			}
-			if(!pincher.IsFloating())
+			if(!pincher.IsFloating)
 			{
 				prevGroundPos = Position;
 				charaControl.OnGround();
@@ -350,10 +353,22 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AC6940 Offset: 0x1AC6940 VA: 0x1AC6940
-		//public void ShowReactionGlad() { }
+		public void ShowReactionGlad()
+		{
+			HideReaction();
+			HideSerif();
+			if (reaction != null)
+				reaction.SetGlad(true);
+		}
 
 		//// RVA: 0x1AC6A04 Offset: 0x1AC6A04 VA: 0x1AC6A04
-		//public void ShowReactionAngry() { }
+		public void ShowReactionAngry()
+		{
+			HideReaction();
+			HideSerif();
+			if (reaction != null)
+				reaction.SetAngry(true);
+		}
 
 		//// RVA: 0x1AC67D4 Offset: 0x1AC67D4 VA: 0x1AC67D4
 		public void HideReaction()
@@ -366,7 +381,12 @@ namespace XeApp
 		//public void PlaySpecifiedReaction(DecorationCharaAnimController.ReactionSpecifiedType type) { }
 
 		//// RVA: 0x1AC6D14 Offset: 0x1AC6D14 VA: 0x1AC6D14
-		//public bool IsPlayReaction() { }
+		public bool IsPlayReaction()
+		{
+			if (charaControl != null)
+				return charaControl.isReaction;
+			return false;
+		}
 
 		//// RVA: 0x1AC6DD8 Offset: 0x1AC6DD8 VA: 0x1AC6DD8
 		//public bool IsAttachSerif() { }
@@ -388,14 +408,14 @@ namespace XeApp
 		public override void BeginDrag(Vector2 touchPosition)
 		{
 			prevGroundPos = Position;
-			beginDragPos = DecorationConstants.TouchToScreen((decorationCanvas.m_decorationItemRootRect.parent.parent as RectTransform), touchPosition.x);
+			beginDragPos = DecorationConstants.TouchToScreen(touchPosition, decorationCanvas.GetItemRootRectTransform().parent.parent as RectTransform);
 			beginDragOfs = Position - beginDragPos;
 		}
 
 		// RVA: 0x1AC75F8 Offset: 0x1AC75F8 VA: 0x1AC75F8 Slot: 14
 		public override void Drag(Vector2 touchPosition)
 		{
-			Vector2 p = DecorationConstants.TouchToScreen((decorationCanvas.m_decorationItemRootRect.parent.parent as RectTransform), touchPosition.x);
+			Vector2 p = DecorationConstants.TouchToScreen(touchPosition, decorationCanvas.GetItemRootRectTransform().parent.parent as RectTransform);
 			Vector2 d = p - beginDragPos;
 			if(d.sqrMagnitude >= dragThreshold * dragThreshold)
 			{
@@ -403,7 +423,7 @@ namespace XeApp
 				{
 					if(!decorationCanvas.ItemManager.ReactingPlushToys)
 					{
-						if(pincher.IsFloating())
+						if(pincher.IsFloating)
 						{
 							Position = p + beginDragPos;
 							AdjustPos(Position, true, null, false);
@@ -452,19 +472,26 @@ namespace XeApp
 				return;
 			if (charaControl == null)
 				return;
-			if(pincher.IsFloating())
+			if(pincher.IsFloating)
 			{
 				SetMenuEnabled(true);
 				SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_GIFT_001);
 			}
-			charaControl.hasTouched = false;
+			charaControl.OnTouchUp();
 			pincher.Release();
 			decorationController.scrollController.IsFollowTouch = true;
 			IsTouch = false;
 		}
 
 		//// RVA: 0x1AC7A94 Offset: 0x1AC7A94 VA: 0x1AC7A94
-		//private void SetMenuEnabled(bool enable) { }
+		private void SetMenuEnabled(bool enable)
+		{
+			DecoScene s = MenuScene.Instance.GetCurrentTransitionRoot() as DecoScene;
+			if(s != null)
+			{
+				s.MenuEnable(enable);
+			}
+		}
 
 		//// RVA: 0x1AC7FC4 Offset: 0x1AC7FC4 VA: 0x1AC7FC4
 		//public void SettingPrevSerif() { }
@@ -476,16 +503,35 @@ namespace XeApp
 		//private bool IsLoadedIntimacyData() { }
 
 		//// RVA: 0x1AC8308 Offset: 0x1AC8308 VA: 0x1AC8308
-		//public void PrepareVoiceCueSheet(UnityAction onEndCallback) { }
+		public void PrepareVoiceCueSheet(UnityAction onEndCallback)
+		{
+			decorationCanvas.ItemManager.RemoveOtherCharaVoiceCueSheet(this);
+			m_voicePlayer.RequestChangeCueSheet(DecorationConstants.MakeCharaCueSheetName(ViewData.FPCGPGJOKNH_CharaId), onEndCallback);
+		}
 
 		//// RVA: 0x1AC86D0 Offset: 0x1AC86D0 VA: 0x1AC86D0
-		//public void RemoveVoiceCueSheet() { }
+		public void RemoveVoiceCueSheet()
+		{
+			m_voicePlayer.RemoveCueSheet();
+		}
 
 		//// RVA: 0x1AC86FC Offset: 0x1AC86FC VA: 0x1AC86FC
-		//public bool IsReadyVoiceCueSheet() { }
+		public bool IsReadyVoiceCueSheet()
+		{
+			if(m_voicePlayer.source != null)
+			{
+				return m_voicePlayer.source.cueSheet != "";
+			}
+			return false;
+		}
 
 		//// RVA: 0x1AC8824 Offset: 0x1AC8824 VA: 0x1AC8824
-		//public void PlayVoice(DecorationChara.VoiceType type, int id = 0) { }
+		public void PlayVoice(VoiceType type, int id = 0)
+		{
+			StringBuilder str = new StringBuilder(32);
+			str.SetFormat("{0:D3}", id);
+			m_voicePlayer.Play(VoiceCueTbl[(int)type] + str.ToString());
+		}
 
 		//// RVA: 0x1AC89B4 Offset: 0x1AC89B4 VA: 0x1AC89B4
 		//public void StopVoice() { }

@@ -326,7 +326,13 @@ namespace XeSys
 		}
 
 		// // RVA: 0x1EF7814 Offset: 0x1EF7814 VA: 0x1EF7814
-		// public TouchInfo GetEndedTouchInfo(int fingerId) { }
+		public TouchInfo GetEndedTouchInfo(int fingerId)
+		{
+			TouchInfoRecord r = GetTouchInfoRecord(fingerId);
+			if (r == null)
+				return null;
+			return touchInfoRecords[fingerId].endedInfo;
+		}
 
 		// // RVA: 0x1EF7890 Offset: 0x1EF7890 VA: 0x1EF7890
 		// public TouchInfo FindRecentTouchInfo(int fingerId, int frameFromLatest) { }

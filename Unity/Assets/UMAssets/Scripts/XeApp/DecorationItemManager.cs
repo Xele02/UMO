@@ -374,7 +374,13 @@ namespace XeApp
 		//public void EnableController(DecorationItemManager.EnableControlType type) { }
 
 		//// RVA: 0x1ABCCB0 Offset: 0x1ABCCB0 VA: 0x1ABCCB0
-		//public void StartAnimation() { }
+		public void StartAnimation()
+		{
+			foreach(var d in m_decorationItemList)
+			{
+				d.IsStop = false;
+			}
+		}
 
 		//// RVA: 0x1ABCE30 Offset: 0x1ABCE30 VA: 0x1ABCE30
 		//public void StopAnimation() { }
@@ -401,7 +407,19 @@ namespace XeApp
 		//public int GetCharaCount() { }
 
 		//// RVA: 0x1ABE034 Offset: 0x1ABE034 VA: 0x1ABE034
-		//public int GetDivaCount() { }
+		public int GetDivaCount()
+		{
+			int res = 0;
+			foreach(var k in m_decorationItemList)
+			{
+				if(k.DecorationItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
+				{
+					if (k.Setting.viewDecoItemData.GBJFNGCDKPM == 1)
+						res++;
+				}
+			}
+			return res;
+		}
 
 		//// RVA: 0x1ABD98C Offset: 0x1ABD98C VA: 0x1ABD98C
 		//public List<DecorationItemBase> GetItemList(ref List<int> postId) { }
@@ -512,7 +530,15 @@ namespace XeApp
 		//public void InitSerifResource(Transform parent) { }
 
 		//// RVA: 0x1ABF1EC Offset: 0x1ABF1EC VA: 0x1ABF1EC
-		//public bool IsItemTouch() { }
+		public bool IsItemTouch()
+		{
+			foreach (var k in m_decorationItemList)
+			{
+				if (k.IsTouch)
+					return true;
+			}
+			return false;
+		}
 
 		//// RVA: 0x1ABF380 Offset: 0x1ABF380 VA: 0x1ABF380
 		//public void WaitingChara(bool isWait) { }
@@ -531,13 +557,47 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AD9B7C Offset: 0x1AD9B7C VA: 0x1AD9B7C
-		//public List<DecorationChara> GetCharaList() { }
+		public List<DecorationChara> GetCharaList()
+		{
+			List<DecorationChara> res = new List<DecorationChara>();
+			foreach(var c in m_decorationItemList)
+			{
+				DecorationChara chara = c as DecorationChara;
+				if(chara != null)
+				{
+					if(chara.ViewData.PPFNGGCBJKC > 0)
+					{
+						res.Add(chara);
+					}
+				}
+			}
+			return res;
+		}
 
 		//// RVA: 0x1AC7D4C Offset: 0x1AC7D4C VA: 0x1AC7D4C
-		//public bool AnyCharaReacting() { }
+		public bool AnyCharaReacting()
+		{
+			List<DecorationChara> l = GetCharaList();
+			foreach(var c in l)
+			{
+				if (c.IsPlayReaction())
+					return true;
+			}
+			return false;
+		}
 
 		//// RVA: 0x1AC8418 Offset: 0x1AC8418 VA: 0x1AC8418
-		//public void RemoveOtherCharaVoiceCueSheet(DecorationChara restChara) { }
+		public void RemoveOtherCharaVoiceCueSheet(DecorationChara restChara)
+		{
+			List<DecorationChara> l = GetCharaList();
+			foreach(var c in l)
+			{
+				if(c != restChara)
+				{
+					c.RemoveVoiceCueSheet();
+				}
+			}
+		}
 
 		//// RVA: 0x1AD9948 Offset: 0x1AD9948 VA: 0x1AD9948
 		//private bool CategoryCheck(DecorationItemBase item1, DecorationItemBase item2) { }

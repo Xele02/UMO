@@ -484,7 +484,25 @@ namespace XeApp.Game.Menu
 		//public void DetachDeco() { }
 
 		//// RVA: 0x14B17D4 Offset: 0x14B17D4 VA: 0x14B17D4
-		//public void SetEnableDecoCounter(bool isEnabled, bool isDisableImmediately = False) { }
+		public void SetEnableDecoCounter(bool isEnabled, bool isDisableImmediately = false)
+		{
+			if (m_layoutCounterDeco == null)
+				return;
+			if (m_root == null)
+				return;
+			if(isEnabled && !isDisableImmediately && CheckUnlock())
+			{
+				m_layoutCounterDeco.transform.SetParent(m_root.transform, false);
+			}
+			else
+			{
+				m_layoutCounterDeco.transform.SetParent(null, false);
+			}
+			if (!isEnabled)
+				m_layoutCounterDeco.Hide();
+			else
+				m_layoutCounterDeco.Show();
+		}
 
 		//// RVA: 0x14B1678 Offset: 0x14B1678 VA: 0x14B1678
 		//public void SetEnableDecoInfo(bool isEnabled) { }
@@ -493,23 +511,124 @@ namespace XeApp.Game.Menu
 		//public void SetEnableDecoMessage(bool isEnabled) { }
 
 		//// RVA: 0x14B1AFC Offset: 0x14B1AFC VA: 0x14B1AFC
-		//public void InitDeco(TransitionRoot root, Action callback) { }
+		public void InitDeco(TransitionRoot root, Action callback)
+		{
+			if (m_root != null)
+				return;
+			this.StartCoroutineWatched(InitDecoCoroutine(root, callback));
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E68B4 Offset: 0x6E68B4 VA: 0x6E68B4
 		//// RVA: 0x14B1BB8 Offset: 0x14B1BB8 VA: 0x14B1BB8
-		//public IEnumerator InitDecoCoroutine(TransitionRoot root, Action callback) { }
+		public IEnumerator InitDecoCoroutine(TransitionRoot root, Action callback)
+		{
+			string bundleName; // 0x1C
+			Font systemFont; // 0x20
+
+			//0x14BBE08
+			m_isLoading = true;
+			m_root = root;
+			InitViewData(0);
+			bundleName = "ly/116.xab";
+			systemFont = GameManager.Instance.GetSystemFont();
+			AssetBundleManager.LoadUnionAssetBundle(bundleName);
+			yield return null;
+			yield return Co.R(Co_LoadAssetsEffect(bundleName));
+			bundleName = "ly/201.xab";
+			yield return Co.R(Co_LoadAssetsLayoutInfoDeco(bundleName, systemFont));
+			yield return Co.R(Co_LoadAssetsLayoutMessageDeco(bundleName, systemFont));
+			yield return Co.R(Co_LoadAssetsLayoutCounterDeco(bundleName, systemFont));
+			while (!m_layoutCounterDeco.IsLoaded())
+				yield return null;
+			while (!m_layoutInfoDeco.IsLoaded())
+				yield return null;
+			while (!m_layoutMessageDeco.IsLoaded())
+				yield return null;
+			m_isLoading = false;
+			if (callback != null)
+				callback();
+			if (!CheckUnlock())
+				yield break;
+			m_layoutCounterDeco.Enter();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E692C Offset: 0x6E692C VA: 0x6E692C
 		//// RVA: 0x14B1C98 Offset: 0x14B1C98 VA: 0x14B1C98
-		//private IEnumerator Co_LoadAssetsLayoutCounterDeco(string bundleName, Font font) { }
+		private IEnumerator Co_LoadAssetsLayoutCounterDeco(string bundleName, Font font)
+		{
+			AssetBundleLoadLayoutOperationBase operation;
+
+			//0x14B7204
+			if(m_layoutCounterDeco == null)
+			{
+				operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_fs_to_layout_root");
+				yield return operation;
+				yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) =>
+				{
+					//0x14B3D28
+					instance.transform.SetParent(m_root.transform, false);
+					m_layoutCounterDeco = instance.GetComponent<LayoutIntimacyCounter>();
+				}));
+				AssetBundleManager.UnloadAssetBundle(bundleName, false);
+				operation = null;
+			}
+			else
+			{
+				m_layoutCounterDeco.transform.SetParent(m_root.transform, false);
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E69A4 Offset: 0x6E69A4 VA: 0x6E69A4
 		//// RVA: 0x14B1D78 Offset: 0x14B1D78 VA: 0x14B1D78
-		//private IEnumerator Co_LoadAssetsLayoutInfoDeco(string bundleName, Font font) { }
+		private IEnumerator Co_LoadAssetsLayoutInfoDeco(string bundleName, Font font)
+		{
+			AssetBundleLoadLayoutOperationBase operation;
+
+			//0x14B7854
+			if(m_layoutInfoDeco == null)
+			{
+				operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_deco_present_layout_root");
+				yield return operation;
+				yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) =>
+				{
+					//0x14B3E0C
+					instance.transform.SetParent(null, false);
+					m_layoutInfoDeco = GetComponent<LayoutDecoIntimacyInfo>();
+				}));
+				AssetBundleManager.UnloadAssetBundle(bundleName, false);
+				operation = null;
+			}
+			else
+			{
+				m_layoutInfoDeco.transform.SetParent(null, false);
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E6A1C Offset: 0x6E6A1C VA: 0x6E6A1C
 		//// RVA: 0x14B1E58 Offset: 0x14B1E58 VA: 0x14B1E58
-		//private IEnumerator Co_LoadAssetsLayoutMessageDeco(string bundleName, Font font) { }
+		private IEnumerator Co_LoadAssetsLayoutMessageDeco(string bundleName, Font font)
+		{
+			AssetBundleLoadLayoutOperationBase operation;
+
+			//0x14B7B58
+			if(m_layoutMessageDeco == null)
+			{
+				operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_pre_win_01_layout_root");
+				yield return operation;
+				yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) =>
+				{
+					//0x14B3ECC
+					instance.transform.SetParent(m_root.transform, false);
+					m_layoutMessageDeco = instance.GetComponent<LayoutDecoIntimacyMessage>();
+				}));
+				AssetBundleManager.UnloadAssetBundle(bundleName, false);
+				operation = null;
+			}
+			else
+			{
+				m_layoutMessageDeco.transform.SetParent(m_root.transform, false);
+			}
+		}
 
 		//// RVA: 0x14B1F38 Offset: 0x14B1F38 VA: 0x14B1F38
 		//public bool CheckIntimacyDeco(JJOELIOGMKK viewIntimacyData, DecorationChara chara) { }
@@ -811,19 +930,7 @@ namespace XeApp.Game.Menu
 
 		//// RVA: 0x14B3B18 Offset: 0x14B3B18 VA: 0x14B3B18
 		//private void HideGakuyaMessage() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6E6EEC Offset: 0x6E6EEC VA: 0x6E6EEC
-		//// RVA: 0x14B3D28 Offset: 0x14B3D28 VA: 0x14B3D28
-		//private void <Co_LoadAssetsLayoutCounterDeco>b__60_0(GameObject instance) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6E6EFC Offset: 0x6E6EFC VA: 0x6E6EFC
-		//// RVA: 0x14B3E0C Offset: 0x14B3E0C VA: 0x14B3E0C
-		//private void <Co_LoadAssetsLayoutInfoDeco>b__61_0(GameObject instance) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6E6F0C Offset: 0x6E6F0C VA: 0x6E6F0C
-		//// RVA: 0x14B3ECC Offset: 0x14B3ECC VA: 0x14B3ECC
-		//private void <Co_LoadAssetsLayoutMessageDeco>b__62_0(GameObject instance) { }
-
+		
 		//[CompilerGeneratedAttribute] // RVA: 0x6E6F1C Offset: 0x6E6F1C VA: 0x6E6F1C
 		//// RVA: 0x14B3FB0 Offset: 0x14B3FB0 VA: 0x14B3FB0
 		//private bool <Co_TapLockedChara>b__67_0() { }
