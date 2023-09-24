@@ -1,4 +1,6 @@
 
+using UnityEngine;
+
 namespace XeApp.Native
 {
     public class AppInfo
@@ -40,7 +42,7 @@ namespace XeApp.Native
             //"getVersionName"
             //Context var0 = UnityPlayer.currentActivity.getApplicationContext();
             //var2 = var0.getPackageManager().getPackageInfo(var0.getPackageName(), 0).versionName;
-            appVersion_ = "5.3.1";
+            appVersion_ = Application.version+" / 5.3.1";
 
             //"getVersionCode"
             //var0 = var1.getPackageManager().getPackageInfo(var1.getPackageName(), 0).versionCode;
