@@ -2,6 +2,9 @@ using XeSys.Gfx;
 using XeApp.Game.Common;
 using UnityEngine;
 using System;
+using XeApp.Game.Menu;
+using System.Collections;
+using XeSys;
 
 namespace XeApp.Game.Title
 {
@@ -12,6 +15,8 @@ namespace XeApp.Game.Title
 		private AbsoluteLayout m_buttonGpgsLayout; // 0x1C
 
 		public Action ButtonCallbackGpgs { get; set; } // 0x18
+
+		public Action OnUpdateBG { get; set; }
 
 		// // RVA: 0xE39670 Offset: 0xE39670 VA: 0xE39670
 		public void CallbackClear()
@@ -28,7 +33,7 @@ namespace XeApp.Game.Title
 				m_buttonGpgs.AddOnClickCallback(() => {
 					// 0xE399C4
 					//TodoLogger.LogNotImplemented("LayoutTitleLeftBottomButton");
-					PopupWindowManager.Show(PopupWindowManager.CrateTextContent("Check File?", SizeType.Small, "Recheck all file integrity ?", new ButtonInfo[2]
+					/*PopupWindowManager.Show(PopupWindowManager.CrateTextContent("Check File?", SizeType.Small, "Recheck all file integrity ?", new ButtonInfo[2]
 					{
 						new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive },
 						new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative }
@@ -38,9 +43,86 @@ namespace XeApp.Game.Title
 							KEHOJEJMGLJ.FJDOHLADGFI = true;
 						else
 							KEHOJEJMGLJ.FJDOHLADGFI = false;
-					}, null, null, null);
+					}, null, null, null);*/
+					//UMOPopupConfigSetting s = ;
+					this.StartCoroutineWatched(ShowUMOPopup());
 				});
 			}
+		}
+
+		private IEnumerator ShowUMOPopup()
+		{
+			PopupTabContents m_tabContents = null;
+			PopupTabSetting s = PopupWindowManager.CreateTabContents((PopupTabContents tabContents) =>
+			{
+				//0x9544EC
+				m_tabContents = tabContents;
+			});
+			while(m_tabContents == null)
+				yield return null;
+			while (!s.ISLoaded())
+					yield return null;
+			m_tabContents.ClearContents();
+			s.SetParent(transform);
+
+			UMOPopupConfigSetting umoSetting = new UMOPopupConfigSetting();
+			umoSetting.m_parent = transform;
+			bool isLoading = false;
+			ResourcesManager.Instance.Load(umoSetting.PrefabPath, (FileResultObject fro) =>
+			{
+				//0x13883F0
+				GameObject g = Instantiate(fro.unityObject) as GameObject;
+				umoSetting.SetContent(g);
+				//g.transform.SetParent(m_tabContents.transform, false);
+				isLoading = true;
+				return true;
+			});
+			while (!isLoading)
+				yield return null;
+
+			UMOPopupEventSetting umoEventSetting = new UMOPopupEventSetting();
+			umoEventSetting.m_parent = transform;
+			isLoading = false;
+			ResourcesManager.Instance.Load(umoEventSetting.PrefabPath, (FileResultObject fro) =>
+			{
+				//0x13883F0
+				GameObject g = Instantiate(fro.unityObject) as GameObject;
+				umoEventSetting.SetContent(g);
+				//g.transform.SetParent(m_tabContents.transform, false);
+				isLoading = true;
+				return true;
+			});
+			while (!isLoading)
+				yield return null;
+
+			m_tabContents.AddContents(new PopupTabContents.ContentsData((int)PopupTabButton.ButtonLabel.Menu, umoSetting, ""));
+			m_tabContents.AddContents(new PopupTabContents.ContentsData((int)PopupTabButton.ButtonLabel.EventInfomation, umoEventSetting, ""));
+			m_tabContents.SelectIndex = (int)PopupTabButton.ButtonLabel.Menu;
+			s.Tabs = new PopupTabButton.ButtonLabel[2]
+			{
+				PopupTabButton.ButtonLabel.Menu,
+				PopupTabButton.ButtonLabel.EventInfomation
+			};
+			s.DefaultTab = PopupTabButton.ButtonLabel.Menu;
+			s.WindowSize = SizeType.Large;
+			s.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive },
+			};
+			PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType t, PopupButton.ButtonLabel l) =>
+			{
+				if(t == PopupButton.ButtonType.Positive)
+				{
+					umoSetting.Content.GetComponent<UMOPopupConfig>().Save();
+					umoEventSetting.Content.GetComponent<UMOPopupEvent>().Save();
+					OnUpdateBG();
+				}
+			}, (IPopupContent content, PopupTabButton.ButtonLabel label) =>
+			{
+				//0x1B5FC9C
+				(content as PopupTabContents).ChangeContents((int)label);
+			}, null,null);
 		}
 
 		// // RVA: 0xE39814 Offset: 0xE39814 VA: 0xE39814

@@ -332,8 +332,8 @@ namespace XeApp.Game.Menu
 			m_decrationInstance[0].transform.localPosition = m_decorationPosition[1];
 			m_decrationInstance[0].transform.localScale = m_decorationScale[1];
 			m_decrationInstance[1].SetActive(true);
-			m_decrationInstance[0].transform.localPosition = m_decorationPosition[2];
-			m_decrationInstance[0].transform.localScale = m_decorationScale[2];
+			m_decrationInstance[1].transform.localPosition = m_decorationPosition[2];
+			m_decrationInstance[1].transform.localScale = m_decorationScale[2];
 			for(int i = 0; i < m_growImages.Length; i++)
 			{
 				m_growImages[i].gameObject.SetActive(true);

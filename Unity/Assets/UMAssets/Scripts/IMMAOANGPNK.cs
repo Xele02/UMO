@@ -403,21 +403,24 @@ public class IMMAOANGPNK
 			{
 				IOBIKMEGCAL data = IOBIKMEGCAL.HEGEKFMJNCC(item.DBBGALAPFGC_Data);
 				DMABOGLGILJ[] schedule_item = data.IHMCKPOIBDA;
-				TodoLogger.LogError(TodoLogger.Event, "Make a list of db block by event id");
+				UMOEventList.EventData currentEvent = UMOEventList.GetCurrentEvent();
 				for (int i = 0; i < schedule_item.Length; i++)
 				{
 					GDIPLANPCEI info = new GDIPLANPCEI();
 					info.OPFGFINHFCE_Name = schedule_item[i].OPFGFINHFCE;
 					info.KBFOIECIADN_OpenedAt = schedule_item[i].KBFOIECIADN;
 					info.EGBOHDFBAPB_ClosedAt = schedule_item[i].EGBOHDFBAPB;
-					// UMO Event TODO enable block for each manual activated event. Need to make a explicit list.
-					if(info.OPFGFINHFCE_Name.Contains("event_april_fool"))
+					// UMO Event
+					if(currentEvent != null && currentEvent.BlockName == info.OPFGFINHFCE_Name)
+					//if(info.OPFGFINHFCE_Name.Contains("april"))
 					{
 						DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
-						info.KBFOIECIADN_OpenedAt = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day - 1, 0, 0, 0);
-						info.EGBOHDFBAPB_ClosedAt = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day + 10, 0, 0, 0);
+						date = date.Subtract(new TimeSpan(1, 0, 0, 0));
+						info.KBFOIECIADN_OpenedAt = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0);
+						date = date.AddDays(11);
+						info.EGBOHDFBAPB_ClosedAt = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0);
 					}
-					// UMO Event
+					// UMO Event End
 					JOBKIDDLCPL_ScheduleEvent.Add(info);
 				}
 			}

@@ -1,0 +1,15 @@
+
+using System;
+using UnityEngine;
+using UnityEngine.UI;
+using XeApp.Game.Common;
+
+public class UMOPopupEventSetting : PopupSetting
+{
+    public override string PrefabPath { get { return "UMO/PopupUmoEvent"; } } //0x1101C0C
+    public void SetContent(GameObject content)
+    {
+        m_content = content;
+    }
+
+}

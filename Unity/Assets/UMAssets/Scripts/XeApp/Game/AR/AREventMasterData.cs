@@ -138,6 +138,18 @@ namespace XeApp.Game.AR
 		// // RVA: 0xBB8448 Offset: 0xBB8448 VA: 0xBB8448
 		public Chenge_bg FindChangeBG()
 		{
+			UMOEventList.EventData CurrentEvent = UMOEventList.GetCurrentEvent();
+			if(CurrentEvent != null && CurrentEvent.BgId.Count > 0)
+			{
+				int id = CurrentEvent.BgId[UnityEngine.Random.Range(0, CurrentEvent.BgId.Count)];
+				Chenge_bg res =  m_chengeBg.Find((Chenge_bg bg) =>
+				{
+					return bg.bgId == id;
+				});
+				if(res != null)
+					return res;
+			}
+
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			for(int i = 0; i < m_chengeBg.Count; i++)
 			{
@@ -149,7 +161,12 @@ namespace XeApp.Game.AR
 			}
 			TodoLogger.LogWarning(TodoLogger.Menu, "No BG found return the last one");
 			// HACK for game post close
-			return m_chengeBg[m_chengeBg.Count-1];
+			return m_chengeBg[UnityEngine.Random.Range(0, m_chengeBg.Count-1)];
+		}
+
+		public List<Chenge_bg> GetChangeBGList()
+		{
+			return m_chengeBg;
 		}
 
 		// // RVA: 0xBB7E4C Offset: 0xBB7E4C VA: 0xBB7E4C

@@ -190,20 +190,16 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 				v = 0;
 			IHKIFGPICLG_HelpIds.Add(v);
 		}
-		UnityEngine.Debug.LogError(NGHKJOEDLIP.OPFGFINHFCE);
-		UnityEngine.Debug.LogError(NGHKJOEDLIP.HEDAGCNPHGD);
-		UnityEngine.Debug.LogError(NGHKJOEDLIP.OCGFKMHNEOF_Key);
-		//if(JIKKNHIAEKG_BlockName == "event_april_fool_a") // Yami_Q_ray Mission
-		//if (JIKKNHIAEKG_BlockName == "event_april_fool_b") // Happy birthday ～カナメ～
-		//if (JIKKNHIAEKG_BlockName == "event_april_fool_c") // レイド後ADV
-		//if (JIKKNHIAEKG_BlockName == "event_april_fool_d") // ラスト3日最終シナリオ
-		//if (JIKKNHIAEKG_BlockName == "event_april_fool_e") // Happy birthday ～マキナ～
-		//if (JIKKNHIAEKG_BlockName == "event_april_fool_f") // Happy birthday ～ランカ～
-		//if (JIKKNHIAEKG_BlockName == "event_april_fool_g") // 復刻エイプリル
-		if (JIKKNHIAEKG_BlockName == "event_april_fool_h") // 復刻エイプリル2021
-		//if (JIKKNHIAEKG_BlockName == "event_april_fool_i") // レアアップスタースペシャルミッション
+		//UnityEngine.Debug.LogError(NGHKJOEDLIP.OBGBAOLONDD);
+		//UnityEngine.Debug.LogError(NGHKJOEDLIP.OPFGFINHFCE);
+		//UnityEngine.Debug.LogError(NGHKJOEDLIP.HEDAGCNPHGD);
+		//UnityEngine.Debug.LogError(JIKKNHIAEKG_BlockName);
+		//UnityEngine.Debug.LogError(NGHKJOEDLIP.OCGFKMHNEOF_Key);
+		//UnityEngine.Debug.LogError(NGHKJOEDLIP.HBACKHIOIBG);
+		UMOEventList.EventData CurrenEvent = UMOEventList.GetCurrentEvent();
+		if (CurrenEvent != null && CurrenEvent.BlockName == JIKKNHIAEKG_BlockName)
 		{
-			TodoLogger.LogError(TodoLogger.Event, "Switch to the real event enable");
+			/*TodoLogger.LogError(TodoLogger.Event, "Switch to the real event enable");
 			UnityEngine.Debug.LogError("Date : \n"
 				+ Utility.GetLocalDateTime(NGHKJOEDLIP.BONDDBOFBND_Start).ToShortDateString() + " " + Utility.GetLocalDateTime(NGHKJOEDLIP.BONDDBOFBND_Start).ToShortTimeString() + "\n"
 				+ Utility.GetLocalDateTime(NGHKJOEDLIP.HPNOGLIFJOP_End1).ToShortDateString() + " " + Utility.GetLocalDateTime(NGHKJOEDLIP.HPNOGLIFJOP_End1).ToShortTimeString() + "\n"
@@ -211,7 +207,7 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 				+ Utility.GetLocalDateTime(NGHKJOEDLIP.JGMDAOACOJF).ToShortDateString() + " " + Utility.GetLocalDateTime(NGHKJOEDLIP.JGMDAOACOJF).ToShortTimeString() + "\n"
 				+ Utility.GetLocalDateTime(NGHKJOEDLIP.IDDBFFBPNGI).ToShortDateString() + " " + Utility.GetLocalDateTime(NGHKJOEDLIP.IDDBFFBPNGI).ToShortTimeString() + "\n"
 				+ Utility.GetLocalDateTime(NGHKJOEDLIP.KNLGKBBIBOH_End).ToShortDateString() + " " + Utility.GetLocalDateTime(NGHKJOEDLIP.KNLGKBBIBOH_End).ToShortTimeString() + "\n"
-			);
+			);*/
 			System.DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
 			System.DateTime date2 = Utility.GetLocalDateTime(NGHKJOEDLIP.BONDDBOFBND_Start);
 			long offset = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day - 1, date2.Hour, date2.Minute, date2.Second) - NGHKJOEDLIP.BONDDBOFBND_Start;
@@ -223,19 +219,19 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 			if (NGHKJOEDLIP.KNLGKBBIBOH_End != 0) NGHKJOEDLIP.KNLGKBBIBOH_End += offset;
 			for (int i = 0; i < IJJHFGOIDOK_Songs.Count; i++)
 			{
-				UnityEngine.Debug.LogError("Date2 " + i + " : \n"
-				+ Utility.GetLocalDateTime(IJJHFGOIDOK_Songs[i].PDBPFJJCADD_OpenAt).ToShortDateString() + " " + Utility.GetLocalDateTime(IJJHFGOIDOK_Songs[i].PDBPFJJCADD_OpenAt).ToShortTimeString() + "\n"
-				+ Utility.GetLocalDateTime(IJJHFGOIDOK_Songs[i].FDBNFFNFOND_CloseAt).ToShortDateString() + " " + Utility.GetLocalDateTime(IJJHFGOIDOK_Songs[i].FDBNFFNFOND_CloseAt).ToShortTimeString() + "\n"
-				);
+				//UnityEngine.Debug.LogError("Date2 " + i + " : \n"
+				//+ Utility.GetLocalDateTime(IJJHFGOIDOK_Songs[i].PDBPFJJCADD_OpenAt).ToShortDateString() + " " + Utility.GetLocalDateTime(IJJHFGOIDOK_Songs[i].PDBPFJJCADD_OpenAt).ToShortTimeString() + "\n"
+				//+ Utility.GetLocalDateTime(IJJHFGOIDOK_Songs[i].FDBNFFNFOND_CloseAt).ToShortDateString() + " " + Utility.GetLocalDateTime(IJJHFGOIDOK_Songs[i].FDBNFFNFOND_CloseAt).ToShortTimeString() + "\n"
+				//);
 				if (IJJHFGOIDOK_Songs[i].PDBPFJJCADD_OpenAt != 0) IJJHFGOIDOK_Songs[i].PDBPFJJCADD_OpenAt = NGHKJOEDLIP.BONDDBOFBND_Start;
 				if (IJJHFGOIDOK_Songs[i].FDBNFFNFOND_CloseAt != 0) IJJHFGOIDOK_Songs[i].FDBNFFNFOND_CloseAt = NGHKJOEDLIP.HPNOGLIFJOP_End1;
 			}
 			for (int i = 0; i < NNMPGOAGEOL_Missions.Count; i++)
 			{
-				UnityEngine.Debug.LogError("Date3 " + i + " : \n"
-				+ Utility.GetLocalDateTime(NNMPGOAGEOL_Missions[i].KJBGCLPMLCG_Start).ToShortDateString() + " " + Utility.GetLocalDateTime(NNMPGOAGEOL_Missions[i].KJBGCLPMLCG_Start).ToShortTimeString() + "\n"
-				+ Utility.GetLocalDateTime(NNMPGOAGEOL_Missions[i].GJFPFFBAKGK_End).ToShortDateString() + " " + Utility.GetLocalDateTime(NNMPGOAGEOL_Missions[i].GJFPFFBAKGK_End).ToShortTimeString() + "\n"
-				);
+				//UnityEngine.Debug.LogError("Date3 " + i + " : \n"
+				//+ Utility.GetLocalDateTime(NNMPGOAGEOL_Missions[i].KJBGCLPMLCG_Start).ToShortDateString() + " " + Utility.GetLocalDateTime(NNMPGOAGEOL_Missions[i].KJBGCLPMLCG_Start).ToShortTimeString() + "\n"
+				//+ Utility.GetLocalDateTime(NNMPGOAGEOL_Missions[i].GJFPFFBAKGK_End).ToShortDateString() + " " + Utility.GetLocalDateTime(NNMPGOAGEOL_Missions[i].GJFPFFBAKGK_End).ToShortTimeString() + "\n"
+				//);
 				if (NNMPGOAGEOL_Missions[i].KJBGCLPMLCG_Start != 0) NNMPGOAGEOL_Missions[i].KJBGCLPMLCG_Start = NGHKJOEDLIP.BONDDBOFBND_Start;
 				if (NNMPGOAGEOL_Missions[i].GJFPFFBAKGK_End != 0) NNMPGOAGEOL_Missions[i].GJFPFFBAKGK_End = NGHKJOEDLIP.HPNOGLIFJOP_End1;
 			}
