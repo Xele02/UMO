@@ -606,7 +606,7 @@ namespace XeApp.Game.Menu
 		protected override TransitionArgs GetCallArgsReturn()
 		{
 			OHCAABOMEOF.KGOGMKMBCPP_EventType eventType = Database.Instance.gameSetup.musicInfo.gameEventType;
-			if(eventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB)
+			if(eventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp)
 			{
 				if(eventType > OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest || 
 				((1 << (int)eventType) & 78) == 0)

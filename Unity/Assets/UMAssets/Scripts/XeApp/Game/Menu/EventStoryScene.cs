@@ -242,7 +242,7 @@ namespace XeApp.Game.Menu
 					case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest:
 						uniqueId = TransitionUniqueId.EVENTQUEST_EVENTSTORY;
 						break;
-					case OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB/*7*/:
+					case OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp/*7*/:
 						IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB(m_eventStoryData.PPMNNKKFJNM);
 						KNKDBNFMAKF_EventSp k = null;
 						if (ev != null)

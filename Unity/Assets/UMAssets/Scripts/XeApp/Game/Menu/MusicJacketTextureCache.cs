@@ -32,17 +32,20 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x104B960 Offset: 0x104B960 VA: 0x104B960
 		public static string MakeJacketTexturePath(int jacketId)
 		{
-			return string.Format("ct/mc/{0:D3}.xab", jacketId);
+			return string.Format(SelectTexutreBundleFormat, jacketId);
 		}
 
 		// // RVA: 0x104B418 Offset: 0x104B418 VA: 0x104B418
 		public void LoadDetail(int jacketId, Action<IiconTexture> callBack)
 		{
-			Load(string.Format("ct/md/{0:D3}.xab", jacketId), callBack);
+			Load(string.Format(DetailTextureBundleFormat, jacketId), callBack);
 		}
 
 		// // RVA: 0x104B9EC Offset: 0x104B9EC VA: 0x104B9EC
-		// public void LoadForEvent(int eventId, Action<IiconTexture> callback) { }
+		public void LoadForEvent(int eventId, Action<IiconTexture> callback)
+		{
+			Load(string.Format(EventTextureBundleFormat, eventId), callback);
+		}
 
 		// // RVA: 0x104BA94 Offset: 0x104BA94 VA: 0x104BA94
 		public static void TryInstall(int jacketId)

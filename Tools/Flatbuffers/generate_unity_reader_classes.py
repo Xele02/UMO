@@ -240,7 +240,8 @@ class_to_generate = {
     "MMEGEEMJBDH" : {"FB_class":"CFOEKHAFGOJ"},
     "MDFCHKPOMAJ" : {"FB_class":"LBAGNFKGHIB"},
     "MAPLLKFHCLF" : {"FB_class":"IOOJDNCIHIC"},
-    "NCFKBGFDBAG" : {"FB_class":"JDKBJLPDAMB"}
+    "NCFKBGFDBAG" : {"FB_class":"JDKBJLPDAMB"},
+    "OLLJFONKEKO" : {"FB_class":"OGABIHKHGGD"}
 }
 
 

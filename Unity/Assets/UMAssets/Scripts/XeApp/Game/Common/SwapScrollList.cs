@@ -204,7 +204,7 @@ namespace XeApp.Game.Common
 				}
 				if (m_verticalScrollBarImage != null)
 				{
-					m_verticalScrollBarImage.enabled = m_scrollRect.horizontal;
+					m_verticalScrollBarImage.enabled = m_scrollRect.vertical;
 				}
 			}
 			if(m_isContentEscapeMode)

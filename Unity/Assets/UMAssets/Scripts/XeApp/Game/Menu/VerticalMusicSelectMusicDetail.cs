@@ -313,7 +313,22 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBDF494 Offset: 0xBDF494 VA: 0xBDF494
-		// public void SetImageJacketIsEvent(int jacketId) { }
+		public void SetImageJacketIsEvent(int jacketId)
+		{
+			m_imageJacket.enabled = false;
+			m_isEventCover = true;
+			m_coverId = jacketId;
+			jacketTexCache.LoadForEvent(jacketId, (IiconTexture image) =>
+			{
+				//0xBE0CFC
+				if (m_coverId != jacketId)
+					return;
+				if (!m_isEventCover)
+					return;
+				m_imageJacket.enabled = true;
+				image.Set(m_imageJacket);
+			});
+		}
 
 		// // RVA: 0xBDF5E0 Offset: 0xBDF5E0 VA: 0xBDF5E0
 		public void EventCountingEnable(bool isEnabel)
@@ -438,7 +453,21 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBDFC90 Offset: 0xBDFC90 VA: 0xBDFC90
-		// public void SetEventTime(string time, VerticalMusicSelectMusicDetail.MusicRemainTimeType remainTimeType) { }
+		public void SetEventTime(string time, MusicRemainTimeType remainTimeType)
+		{
+			if(remainTimeType >= MusicRemainTimeType.ScoreRanking)
+			{
+				m_eventRemainTime.text = string.Format(m_eventRemainTimeFormat, time);
+			}
+			else if(remainTimeType == MusicRemainTimeType.HighLevel)
+			{
+				m_highLevelRemainTime.text = string.Format(m_eventRemainTimeFormat, time);
+			}
+			else if(remainTimeType == MusicRemainTimeType.Weekly)
+			{
+				m_weeklyRemainTime.text = string.Format(m_eventRemainTimeFormat, time);
+			}
+		}
 
 		// // RVA: 0xBDFD40 Offset: 0xBDFD40 VA: 0xBDFD40
 		public void SetWeeklyEventCount(int count)

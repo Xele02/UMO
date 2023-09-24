@@ -856,7 +856,7 @@ public class OKGLGHCBCJP_Database
 					case BEOKNKGHFFE_Section.LJKEOODGGJF_VcItem: KCCDBKIOLDJ_VcItem = (DKJMDIFAKKD_VcItem)item; break;
 					case BEOKNKGHFFE_Section.NPOPGPFPLOL_HighscoreRating: DCNNPEDOGOG_HighScoreRanking = (HGPEFPFODHO_HighScoreRanking)item; break;
 					case BEOKNKGHFFE_Section.AHKEJPLNAJK_LimitedCompoItem: MBAGKLJDKMH_LimitedCompoItem = (JHAAHJNEBOG_LimitedCompoItem)item; break;
-					default: TodoLogger.LogError(TodoLogger.Database, "TODO" + INBBCDGDMLC[i]); break;
+					default: break;
 				}
 			}
 		}

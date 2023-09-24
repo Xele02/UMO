@@ -253,7 +253,31 @@ public class JBCAHMMCOKK
 				{
 					for(int i = 0; i < JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Count; i++)
 					{
-						TodoLogger.LogError(0, "HEGEKFMJNCC 4 event");
+						IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN[i];
+						if(ev != null)
+						{
+							ev.HCDGELDHFHB_UpdateStatus(JHNMKKNEENE);
+							if(ev.HIDHLFCBIDE_EventType > OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby || 
+								(((1 << (int)ev.HIDHLFCBIDE_EventType) & 0x2f90U) == 0))
+							{
+								if(ev.HJPNJBCJPNJ(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI/*6*/))
+								{
+									JBCAHMMCOKK data = new JBCAHMMCOKK();
+									data.KHEKNNFCAOI(KOGBMDOONFA.PPFNGGCBJKC);
+									data.EAHPLCJMPHD = ev.PGIIDPEGGPI_EventId;
+									data.PEDBFNIOCEN = ev.JOPOPMLFINI;
+									data.KJBGCLPMLCG = ev.GLIMIGNNGGB_Start;
+									data.GJFPFFBAKGK = ev.DPJCPDKALGI_End1;
+									data.KNNDNOKMAOI = data.INKBPPLCNFC(data.KJBGCLPMLCG, data.GJFPFFBAKGK, false);
+									data.HDBPGEMDLDN = data.INKBPPLCNFC(data.KJBGCLPMLCG, data.GJFPFFBAKGK, true);
+									if (!b)
+										data.BJIMIONBKDD = false;
+									if (ev.NGOFCFJHOMI_Status == KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI/*6*/)
+										data.BJIMIONBKDD = false;
+									NNDGIAEFMOG.Add(data);
+								}
+							}
+						}
 					}
 				}
 				break;
@@ -315,18 +339,21 @@ public class JBCAHMMCOKK
 					int a = 0;
 					if (!int.TryParse(KOGBMDOONFA.PIBLLGLCJEO, out a) || a != DHABOCGMFLN)
 						return;
-					List<IBJAKJJICBC> l = IBJAKJJICBC.FKDIMODKKJD(5, JHNMKKNEENE, true, false, false);
+					List<IBJAKJJICBC> l = IBJAKJJICBC.FKDIMODKKJD(5, JHNMKKNEENE, true, false, false, false);
 					for(int i = 0; i < l.Count; i++)
 					{
-						TodoLogger.LogError(0, "HEGEKFMJNCC 10 event");
+						if(l[i].LHONOILACFL_IsWeeklyEvent)
+						{
+							TodoLogger.LogError(0, "HEGEKFMJNCC 10 event");
+						}
 					}
 				}
 				break;
 			case 11:
 				{
-					List<int> l = new List<int>();
-					l.Clear();
-					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB/*7*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
+					List<int> l3 = new List<int>();
+					l3.Clear();
+					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp/*7*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
 					if (ev != null)
 					{
 						TodoLogger.LogError(0, "HEGEKFMJNCC 11 event");
@@ -334,7 +361,40 @@ public class JBCAHMMCOKK
 					List<int> l2 = FNDEJKMGFFO("type", KOGBMDOONFA.PIBLLGLCJEO);
 					for(int i = 0; i < JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Count; i++)
 					{
-						TodoLogger.LogError(0, "HEGEKFMJNCC 11-2 event");
+						IKDICBBFBMI_EventBase ev2 = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN[i];
+						if(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MLKAJEDCPLP(ev2.PGIIDPEGGPI_EventId))
+						{
+							int idx = l2.FindIndex((int GHPLINIACBB) =>
+							{
+								//0x14205AC
+								return (int)ev2.HIDHLFCBIDE_EventType == GHPLINIACBB;
+							});
+							if(idx > -1)
+							{
+								int idx2 = l3.FindIndex((int GHPLINIACBB) =>
+								{
+									//0x14205F4
+									return ev2.PGIIDPEGGPI_EventId == GHPLINIACBB;
+								});
+								if(idx2 < 0)
+								{
+									JBCAHMMCOKK data = new JBCAHMMCOKK();
+									data.KHEKNNFCAOI(KOGBMDOONFA.PPFNGGCBJKC);
+									if(!b)
+									{
+										data.BJIMIONBKDD = false;
+									}
+									data.EAHPLCJMPHD = ev2.PGIIDPEGGPI_EventId;
+									data.PEDBFNIOCEN = ev2.JOPOPMLFINI;
+									data.KJBGCLPMLCG = ev2.GLIMIGNNGGB_Start;
+									data.GJFPFFBAKGK = ev2.DPJCPDKALGI_End1;
+									data.HDBPGEMDLDN = MessageManager.Instance.GetMessage("menu", "home_event_epilogue");
+									data.IPHOLOBDEIK = true;
+									data.PIBLLGLCJEO = ev2.CAKEOPLJDAF.ToString();
+									NNDGIAEFMOG.Add(data);
+								}
+							}
+						}
 					}
 				}
 				break;
@@ -451,7 +511,11 @@ public class JBCAHMMCOKK
 				{
 					for(int i = 0; i < JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Count; i++)
 					{
-						TodoLogger.LogError(0, "HEGEKFMJNCC 26 event");
+						IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN[i];
+						if(ev != null && ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby)
+						{
+							TodoLogger.LogError(0, "HEGEKFMJNCC 26");
+						}
 					}
 				}
 				break;

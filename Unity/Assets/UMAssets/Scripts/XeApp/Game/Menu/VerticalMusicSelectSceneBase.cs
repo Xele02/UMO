@@ -590,7 +590,7 @@ namespace XeApp.Game.Menu
 		private void DecideCurrentMusic(bool isSimulation)
 		{
 			m_musicDecideInfo = MusicDecideInfo.Empty;
-			if(selectMusicData.OEILJHENAHN == 10 || selectMusicData.OEILJHENAHN == 4)
+			if(selectMusicData.OEILJHENAHN_EventType == 10 || selectMusicData.OEILJHENAHN_EventType == 4)
 			{
 				m_musicDecideInfo.overrideEnemyCenterSkill = selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].HPBPDHPIBGN_EnemyData.DCOALMMJDJK;
 				m_musicDecideInfo.overrideEnemyLiveSkill = selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].HPBPDHPIBGN_EnemyData.KKPLDFNDFDE;
@@ -598,7 +598,7 @@ namespace XeApp.Game.Menu
 			}
 			OnDecideCurrentMusic(ref m_musicDecideInfo);
 			int onStageDivaNum = GetDanceDivaCount();
-			Database.Instance.gameSetup.musicInfo.SetupInfoByFreeMusic(freeMusicId, diff, !selectMusicData.MNDFBBMNJGN, m_musicDecideInfo.initParam, (OHCAABOMEOF.KGOGMKMBCPP_EventType)selectMusicData.MNNHHJBBICA_EventType, (OHCAABOMEOF.KGOGMKMBCPP_EventType) selectMusicData.MFJKNCACBDG, (OHCAABOMEOF.KGOGMKMBCPP_EventType)selectMusicData.OEILJHENAHN, isSimulation, isLine6Mode, m_musicDecideInfo.missionText, m_musicDecideInfo.overrideEnemyCenterSkill, m_musicDecideInfo.overrideEnemyLiveSkill, selectMusicData.ALMOMLMCHNA_OtherEndTime, selectMusicData.IHPCKOMBGKJ, m_eventCtrl != null ? m_eventCtrl.PGIIDPEGGPI : 0, onStageDivaNum, m_musicDecideInfo.overrideCurrentTime);
+			Database.Instance.gameSetup.musicInfo.SetupInfoByFreeMusic(freeMusicId, diff, !selectMusicData.MNDFBBMNJGN, m_musicDecideInfo.initParam, (OHCAABOMEOF.KGOGMKMBCPP_EventType)selectMusicData.MNNHHJBBICA_EventType, (OHCAABOMEOF.KGOGMKMBCPP_EventType) selectMusicData.MFJKNCACBDG, (OHCAABOMEOF.KGOGMKMBCPP_EventType)selectMusicData.OEILJHENAHN_EventType, isSimulation, isLine6Mode, m_musicDecideInfo.missionText, m_musicDecideInfo.overrideEnemyCenterSkill, m_musicDecideInfo.overrideEnemyLiveSkill, selectMusicData.ALMOMLMCHNA_OtherEndTime, selectMusicData.IHPCKOMBGKJ, m_eventCtrl != null ? m_eventCtrl.PGIIDPEGGPI_EventId : 0, onStageDivaNum, m_musicDecideInfo.overrideCurrentTime);
 			Database.Instance.selectedMusic.SetMusicData(selectMusicData);
 			TransitionList.Type transition = TransitionList.Type.UNDEFINED;
 			if (selectMusicData.MNNHHJBBICA_EventType == 0)
@@ -680,7 +680,7 @@ namespace XeApp.Game.Menu
 				}
 				int val = 0;
 				if (m_eventCtrl != null)
-					val = m_eventCtrl.PGIIDPEGGPI;
+					val = m_eventCtrl.PGIIDPEGGPI_EventId;
 				if(!isSimulation)
 				{
 					if (!MenuScene.Instance.TryMusicPeriod(selectMusicData.IHPCKOMBGKJ, val, (OHCAABOMEOF.KGOGMKMBCPP_EventType)selectMusicData.MNNHHJBBICA_EventType, isSimulation, MenuScene.MusicPeriodMess.MusicSelect))
@@ -772,7 +772,9 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xACE260 Offset: 0xACE260 VA: 0xACE260
 		protected void ApplyEventRemainTime(VerticalMusicSelectMusicDetail musicDetail, long remainSec, VerticalMusicSelectMusicDetail.MusicRemainTimeType remainType)
 		{
-			TodoLogger.LogError(0, "ApplyEventRemainTime");
+			int days, hours, minutes, seconds;
+			MusicSelectSceneBase.ExtractRemainTime((int)remainSec, out days, out hours, out minutes, out seconds);
+			musicDetail.SetEventTime(MusicSelectSceneBase.MakeRemainTime(days, hours, minutes, seconds), remainType);
 		}
 
 		// // RVA: 0xACE2F0 Offset: 0xACE2F0 VA: 0xACE2F0
@@ -1253,14 +1255,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xACD354 Offset: 0xACD354 VA: 0xACD354
 		private void GotoRegularMusicSelect()
 		{
-			TodoLogger.LogError(0, "GotoRegularMusicSelect");
 			MenuScene.Instance.Mount(TransitionUniqueId.MUSICSELECT, null, true, 0);
 		}
 
 		// // RVA: 0xACD2B0 Offset: 0xACD2B0 VA: 0xACD2B0
 		private void GotoEventMiniGame(int miniGameId)
 		{
-			TodoLogger.LogError(0, "GotoEventMiniGame");
+			MenuScene.Instance.GotoMiniGame(miniGameId);
 		}
 
 		// // RVA: 0xACBE10 Offset: 0xACBE10 VA: 0xACBE10
@@ -1301,7 +1302,7 @@ namespace XeApp.Game.Menu
 		{
 			if(TransitionName == TransitionList.Type.EVENT_QUEST)
 			{
-				if(m_eventCtrl != null && m_eventCtrl.NGOFCFJHOMI < KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI/*6*/ && selectMusicData != null)
+				if(m_eventCtrl != null && m_eventCtrl.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI/*6*/ && selectMusicData != null)
 				{
 					TodoLogger.LogError(0, "IsEnableUnitDance event");
 				}
@@ -1317,7 +1318,7 @@ namespace XeApp.Game.Menu
 				{
 					b = OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection;
 				}
-				if(b == 0 || m_eventCtrl == null || m_eventCtrl.NGOFCFJHOMI < KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI/*6*/)
+				if(b == 0 || m_eventCtrl == null || m_eventCtrl.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI/*6*/)
 				{
 					if(musicListCount > 0)
 					{

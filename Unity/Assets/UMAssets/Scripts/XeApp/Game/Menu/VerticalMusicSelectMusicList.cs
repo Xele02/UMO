@@ -177,7 +177,6 @@ namespace XeApp.Game.Menu
 				obj.SetListType(MusicScrollCenterItem.ListType.EventEntrance);
 				obj.SetEventName(m_musicList[listIndex].ViewMusic.NOKBLCDMLPP_MinigameEventInfo.OPFGFINHFCE_EventName);
 				obj.SetEventDescription(m_musicList[listIndex].ViewMusic.NOKBLCDMLPP_MinigameEventInfo.KLMPFGOCBHC_EventDesc);
-				obj.SetEventDescription(m_musicList[listIndex].ViewMusic.AFCMIOIGAJN_EventInfo.KLMPFGOCBHC_EventDesc);
 				obj.SetEventPeriod(m_musicList[listIndex].EventPeriod);
 				obj.SetAttribute(4);
 			}

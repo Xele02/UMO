@@ -160,10 +160,10 @@ public class CoroutineWatcher : SingletonMonoBehaviour<CoroutineWatcher>
 		if (i_.ownerCoroutine != null)
 			i_.owner.StopCoroutine(i_.ownerCoroutine);
 		else if (i_.ownerEnumerator != null)
-			i_.owner.StopCoroutine(i_.ownerEnumerator);
+			StopCoroutine(i_.ownerEnumerator);
 		if(i_.hasWatcherCoroutine)
 			StopCoroutine(i_.watcherCoroutine);
-		else
+		else if(i_.watcherEnumerator != null)
 			StopCoroutine(i_.watcherEnumerator);
 		coroutines.Remove(i_);
 	}

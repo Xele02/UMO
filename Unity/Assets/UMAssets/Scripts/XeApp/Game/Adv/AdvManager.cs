@@ -1413,8 +1413,8 @@ namespace XeApp.Game.Adv
 								if (m_isVoiceSync)
 								{
 									SoundManager.Instance.voAdv.Stop();
-									break;
 								}
+								break;
 							}
 							else
 							{

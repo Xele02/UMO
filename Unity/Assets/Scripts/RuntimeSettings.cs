@@ -24,6 +24,15 @@ class RuntimeSettings : ScriptableObject
 				m_currentSettings = Resources.Load<RuntimeSettings>("EditorRuntimeSettings");
 				if (m_currentSettings == null)
 					m_currentSettings = new RuntimeSettings();
+				
+				UMO_PlayerPrefs.CheckLoad();
+				m_currentSettings.CanSkipUnplayedSongs = UMO_PlayerPrefs.GetInt("CanSkipSongs", 1) == 1;
+				m_currentSettings.IsInvincibleCheat = UMO_PlayerPrefs.GetInt("InvincibleMode", 0) == 1;
+				m_currentSettings.ForcePerfectNote = UMO_PlayerPrefs.GetInt("ForcePerfect", 0) == 1;
+				m_currentSettings.DisableNoteSound = UMO_PlayerPrefs.GetInt("DisableNoteSound", 1) == 1;
+				m_currentSettings.DisableWatermark = UMO_PlayerPrefs.GetInt("DisableWatermark", 1) == 1;
+				m_currentSettings.MinigameAutoPlay = UMO_PlayerPrefs.GetInt("MinigameAutoPlay", 0) == 1;
+
 #if UNITY_ANDROID && !UNITY_EDITOR
 				m_currentSettings.DataDirectory = Application.persistentDataPath + "/data/";
 #endif
@@ -87,12 +96,12 @@ class RuntimeSettings : ScriptableObject
 	public bool ForceTutoSkip = true;
 	//public bool ForceAllStoryMusicUnlock = true;
 	//public int ForcePlayerLevel = 90;
-	public bool CanSkipUnplayedSongs = false;
+	public bool CanSkipUnplayedSongs { get; private set; }
 	public bool RemoveHomeBgDateLimit = false;
 
+	public bool IsInvincibleCheat { get; private set; }
+	public bool ForcePerfectNote { get; private set; }
 	[Header("Live")]
-	public bool IsInvincibleCheat = false;
-	public bool ForcePerfectNote = false;
 	public bool ForceLiveValkyrieMode = false;
 	public bool ForceLiveDivaMode = false;
 	public bool ForceLiveAwakenDivaMode = false;
@@ -107,10 +116,10 @@ class RuntimeSettings : ScriptableObject
 	public KeyCode Lane6Touch = KeyCode.K;
 	public KeyCode ActiveSkillTouch = KeyCode.Space;
 
-	[Header("S-Live")]
 	//public bool ForceCutin = true;
-	public bool DisableNoteSound = false;
-	public bool DisableWatermark = false;
+	public bool DisableNoteSound { get; private set; }
+	public bool DisableWatermark { get; private set; }
+	[Header("S-Live")]
 	public bool DisableMovies = false;
 
 	[Header("Local directory where the android directory with asset bundle is. Accept crypted and decrypted bundle.")]
@@ -133,6 +142,7 @@ class RuntimeSettings : ScriptableObject
 	public bool EnableLocalSaveCheck = false;
 	public bool EnableDebugStopCoroutine = false;
 	public bool EnableDebugSkills = false;
+	public bool MinigameAutoPlay { get; set; }
 }
 
 #if UNITY_EDITOR
