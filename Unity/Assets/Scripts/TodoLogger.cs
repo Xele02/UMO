@@ -49,8 +49,8 @@ public static class TodoLogger
 	public static int Errors = _Todo;
 	public static int DbIntegrityCheck = _Todo;
 	public static int Xedec = _Todo;
-	public static int Event = _Todo;
 	public static int SaveLoad = _Todo;
+	public static int Event2 = _Todo;
 
 	public static int _Debug = 1;
 	public static int UI = _Debug;
@@ -67,6 +67,7 @@ public static class TodoLogger
 	public static int Base = _Debug;
 	public static int Coroutine = _Debug;
 	public static int Layout = _Debug;
+	public static int Event = _Debug;
 
 	public static void LogError(int priority, string str)
 	{

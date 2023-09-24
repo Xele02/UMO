@@ -27,7 +27,7 @@ namespace XeApp.Game.AR
 			public string eventId = ""; // 0x10
 			public string eventName = ""; // 0x14
 			public string[] snsTemplateTable = new string[2]; // 0x18
-			public AREventMasterData.Campaign campaign = new AREventMasterData.Campaign(); // 0x1C
+			public Campaign campaign = new Campaign(); // 0x1C
 
 			// RVA: 0xBB8728 Offset: 0xBB8728 VA: 0xBB8728
 			// public bool CanShowHelp() { }
@@ -42,9 +42,9 @@ namespace XeApp.Game.AR
 		}
 
 		private static AREventMasterData sm_instance; // 0x0
-		private List<AREventMasterData.Data> m_eventList = new List<AREventMasterData.Data>(); // 0x18
-		private List<AREventMasterData.Chenge_bg> m_chengeBg = new List<AREventMasterData.Chenge_bg>(); // 0x1C
-		private List<AREventMasterData.EventTime> m_eventTime = new List<AREventMasterData.EventTime>(); // 0x20
+		private List<Data> m_eventList = new List<Data>(); // 0x18
+		private List<Chenge_bg> m_chengeBg = new List<Chenge_bg>(); // 0x1C
+		private List<EventTime> m_eventTime = new List<EventTime>(); // 0x20
 		private long m_arStartTime; // 0x28
 		private long m_arEndTime; // 0x30
 
@@ -136,8 +136,20 @@ namespace XeApp.Game.AR
 		// public List<AREventMasterData.Campaign> GetEnableCampaigns() { }
 
 		// // RVA: 0xBB8448 Offset: 0xBB8448 VA: 0xBB8448
-		public AREventMasterData.Chenge_bg FindChangeBG()
+		public Chenge_bg FindChangeBG()
 		{
+			UMOEventList.EventData CurrentEvent = UMOEventList.GetCurrentEvent();
+			if(CurrentEvent != null && CurrentEvent.BgId.Count > 0)
+			{
+				int id = CurrentEvent.BgId[UnityEngine.Random.Range(0, CurrentEvent.BgId.Count)];
+				Chenge_bg res =  m_chengeBg.Find((Chenge_bg bg) =>
+				{
+					return bg.bgId == id;
+				});
+				if(res != null)
+					return res;
+			}
+
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			for(int i = 0; i < m_chengeBg.Count; i++)
 			{
@@ -149,7 +161,12 @@ namespace XeApp.Game.AR
 			}
 			TodoLogger.LogWarning(TodoLogger.Menu, "No BG found return the last one");
 			// HACK for game post close
-			return m_chengeBg[m_chengeBg.Count-1];
+			return m_chengeBg[UnityEngine.Random.Range(0, m_chengeBg.Count-1)];
+		}
+
+		public List<Chenge_bg> GetChangeBGList()
+		{
+			return m_chengeBg;
 		}
 
 		// // RVA: 0xBB7E4C Offset: 0xBB7E4C VA: 0xBB7E4C

@@ -78,9 +78,9 @@ public class HODOGPOKOOJ
 				if(BFHLPPDKOPC_Event1[i] == CEJDIAECJKD.EKANGPODCEP_EventId)
 					return KMBJEEFHJOH.CCAPCGPIIPF/*1*/;
 			}
-			if(BFHLPPDKOPC_Event1.Count < 1)
+			if(KCCLHODILPA_Event2.Count < 1)
 				return KMBJEEFHJOH.JFAGADLHIED/*3*/;
-			for(int i = 0; i < BFHLPPDKOPC_Event1.Count; i++)
+			for(int i = 0; i < KCCLHODILPA_Event2.Count; i++)
 			{
 				if(KCCLHODILPA_Event2[i] == CEJDIAECJKD.EKANGPODCEP_EventId)
 					return KMBJEEFHJOH.MCDCNJCJCAB/*2*/;

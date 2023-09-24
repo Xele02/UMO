@@ -4,6 +4,8 @@ using UnityEngine;
 using System.IO;
 using XeApp.Game.Common;
 using SecureLib;
+using System;
+using XeSys;
 
 public class IMMAOANGPNK
 {
@@ -44,7 +46,18 @@ public class IMMAOANGPNK
 	}
 
 	// // RVA: 0x9FB8AC Offset: 0x9FB8AC VA: 0x9FB8AC
-	// public GDIPLANPCEI ACEFBFLFKFD(string FJMNHCBPKCJ, long JHNMKKNEENE) { }
+	public GDIPLANPCEI ACEFBFLFKFD_GetScheduleEventData(string FJMNHCBPKCJ, long JHNMKKNEENE)
+	{
+		for(int i = 0; i < JOBKIDDLCPL_ScheduleEvent.Count; i++)
+		{
+			if(JHNMKKNEENE >= JOBKIDDLCPL_ScheduleEvent[i].KBFOIECIADN_OpenedAt && JOBKIDDLCPL_ScheduleEvent[i].EGBOHDFBAPB_ClosedAt >= JHNMKKNEENE)
+			{
+				if (JOBKIDDLCPL_ScheduleEvent[i].OPFGFINHFCE_Name.Contains(FJMNHCBPKCJ))
+					return JOBKIDDLCPL_ScheduleEvent[i];
+			}
+		}
+		return null;
+	}
 
 	// // RVA: 0x9FB9FC Offset: 0x9FB9FC VA: 0x9FB9FC
 	public void BAHKPIADOBI_LoadFromStorage(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
@@ -390,12 +403,24 @@ public class IMMAOANGPNK
 			{
 				IOBIKMEGCAL data = IOBIKMEGCAL.HEGEKFMJNCC(item.DBBGALAPFGC_Data);
 				DMABOGLGILJ[] schedule_item = data.IHMCKPOIBDA;
-				for(int i = 0; i < schedule_item.Length; i++)
+				UMOEventList.EventData currentEvent = UMOEventList.GetCurrentEvent();
+				for (int i = 0; i < schedule_item.Length; i++)
 				{
 					GDIPLANPCEI info = new GDIPLANPCEI();
 					info.OPFGFINHFCE_Name = schedule_item[i].OPFGFINHFCE;
 					info.KBFOIECIADN_OpenedAt = schedule_item[i].KBFOIECIADN;
 					info.EGBOHDFBAPB_ClosedAt = schedule_item[i].EGBOHDFBAPB;
+					// UMO Event
+					if(currentEvent != null && currentEvent.BlockName == info.OPFGFINHFCE_Name)
+					//if(info.OPFGFINHFCE_Name.Contains("april"))
+					{
+						DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
+						date = date.Subtract(new TimeSpan(1, 0, 0, 0));
+						info.KBFOIECIADN_OpenedAt = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0);
+						date = date.AddDays(11);
+						info.EGBOHDFBAPB_ClosedAt = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0);
+					}
+					// UMO Event End
 					JOBKIDDLCPL_ScheduleEvent.Add(info);
 				}
 			}
@@ -411,7 +436,7 @@ public class IMMAOANGPNK
 	}
 
 	// // RVA: 0x9FCE3C Offset: 0x9FCE3C VA: 0x9FCE3C
-	public bool JMAMHEJDNNN(long JHNMKKNEENE)
+	public bool JMAMHEJDNNN_IsScheduledEvent(long JHNMKKNEENE)
 	{
 		for(int i = 0; i < JOBKIDDLCPL_ScheduleEvent.Count; i++)
 		{

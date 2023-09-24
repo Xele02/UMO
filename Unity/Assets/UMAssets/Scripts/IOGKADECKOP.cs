@@ -145,6 +145,7 @@ public class IOGKADECKOP
 		{
 			SoundManager.Instance.voTitlecall.Play(divaId, 0);
 		}
+		NOFPJPHIPBD_LayoutTitleCtrl.LbButtons.OnUpdateBG = UpdateBG;
 		NOFPJPHIPBD_LayoutTitleCtrl.Show();
 		if(EHKDIJELHAO)
 		{
@@ -1089,7 +1090,7 @@ public class IOGKADECKOP
 				}
 				//L1304
 				NLJKCDHIPEG.OFGCPFFPGHE(false);
-				IKDICBBFBMI_EventBase o = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(/*7*/OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB, /*9*/KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ);
+				IKDICBBFBMI_EventBase o = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(/*7*/OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp, /*9*/KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ);
 				if(o != null)
 					o.HEFIKPAHCIA(/*18*/GBNDFCEDNMG.CJDGJFINBFH.KNPBBPNJNEM);
 				List<IKDICBBFBMI_EventBase> l = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN;
@@ -1490,6 +1491,62 @@ public class IOGKADECKOP
 			PDOILOAFKCF_BgImage.texture = GDKDBPHILKG.GetAsset<Texture>();
 			
 			AssetBundleManager.UnloadAssetBundle(FCFBGJOFEHO_bundleFile, false);
+			//N.a.StartCoroutineWatched(UpdateBGTest());
+		}
+	}
+
+	public void UpdateBG()
+	{
+		N.a.StartCoroutineWatched(UpdateBGCoroutine());
+	}
+
+	IEnumerator UpdateBGCoroutine()
+	{
+		if(PDOILOAFKCF_BgImage != null)
+		{
+			AREventMasterData.Chenge_bg bg = AREventMasterData.Instance.FindChangeBG();
+			if(bg == null)
+				yield break;
+			NLFFEOBGFMC_BgId = bg.bgId;
+			string FCFBGJOFEHO_bundleFile = BFGOCONGNDK.NLMBMNKEINP_GetBgFileName(NLFFEOBGFMC_BgId);
+			string s1 = String.Format("{0:D4}", NLFFEOBGFMC_BgId);
+			
+			AssetBundleLoadAssetOperation GDKDBPHILKG = AssetBundleManager.LoadAssetAsync(FCFBGJOFEHO_bundleFile, s1, typeof(Texture));
+			yield return Co.R(GDKDBPHILKG);
+			
+			PDOILOAFKCF_BgImage.texture = GDKDBPHILKG.GetAsset<Texture>();
+			
+			AssetBundleManager.UnloadAssetBundle(FCFBGJOFEHO_bundleFile, false);
+		}
+	}
+
+	IEnumerator UpdateBGTest()
+	{
+		List<AREventMasterData.Chenge_bg> bgs = AREventMasterData.Instance.GetChangeBGList();
+		int c = 0;
+		while(true)
+		{
+			while(!Input.GetKeyDown(KeyCode.N) && !Input.GetKeyDown(KeyCode.B))
+				yield return null;
+			if(Input.GetKeyDown(KeyCode.N))
+				c++;
+			else
+				c--;
+			c = Mathf.Clamp(c, 0, bgs.Count - 1);
+			UnityEngine.Debug.LogError("Bg "+bgs[c].bgId+" "+Utility.GetLocalDateTime(bgs[c].startTime).ToLongDateString()+" "+Utility.GetLocalDateTime(bgs[c].endTime).ToLongDateString());
+			yield return null;
+			string FCFBGJOFEHO_bundleFile = BFGOCONGNDK.NLMBMNKEINP_GetBgFileName(bgs[c].bgId);
+			string s1 = String.Format("{0:D4}", bgs[c].bgId);
+			
+			if(FileSystemProxy.FileExists(UnityEngine.Application.persistentDataPath + "/data/android/" + FCFBGJOFEHO_bundleFile))
+			{
+				AssetBundleLoadAssetOperation GDKDBPHILKG = AssetBundleManager.LoadAssetAsync(FCFBGJOFEHO_bundleFile, s1, typeof(Texture));
+				yield return Co.R(GDKDBPHILKG);
+				
+				PDOILOAFKCF_BgImage.texture = GDKDBPHILKG.GetAsset<Texture>();
+				
+				AssetBundleManager.UnloadAssetBundle(FCFBGJOFEHO_bundleFile, false);
+			}
 		}
 	}
 
