@@ -37,13 +37,22 @@ namespace XeApp.Game.Common
 		public const int SimpleTalkOffset = 400;
 
 		//// RVA: 0x1BF0054 Offset: 0x1BF0054 VA: 0x1BF0054
-		//public static bool IsTalk(DivaMenuMotion.Type type) { }
+		public static bool IsTalk(Type type)
+		{
+			return type >= Type.Talk_ST && type < Type.Talk_ED;
+		}
 
 		//// RVA: 0x1BF0068 Offset: 0x1BF0068 VA: 0x1BF0068
-		//public static bool IsSimpleTalk(DivaMenuMotion.Type type) { }
+		public static bool IsSimpleTalk(Type type)
+		{
+			return type == Type.SimpleTalk_ST;
+		}
 
 		//// RVA: 0x1BF0080 Offset: 0x1BF0080 VA: 0x1BF0080
-		//public static bool IsTouchReaction(DivaMenuMotion.Type type) { }
+		public static bool IsTouchReaction(Type type)
+		{
+			return type >= Type.Touch_ST && type < Type.Touch_ED;
+		}
 
 		//// RVA: 0x1BF0094 Offset: 0x1BF0094 VA: 0x1BF0094
 		public static bool IsTimezoneTalk(Type type)
@@ -52,7 +61,10 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF00A8 Offset: 0x1BF00A8 VA: 0x1BF00A8
-		//public static bool IsPresentReaction(DivaMenuMotion.Type type) { }
+		public static bool IsPresentReaction(Type type)
+		{
+			return type == Type.Present_ST;
+		}
 
 		// RVA: 0x1BF00C0 Offset: 0x1BF00C0 VA: 0x1BF00C0
 		public static int ToMotionId(Type type)

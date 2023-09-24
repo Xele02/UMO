@@ -426,7 +426,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB89124 Offset: 0xB89124 VA: 0xB89124
-		//public void SetRankButtonLabel(string label) { }
+		public void SetRankButtonLabel(string label)
+		{
+			m_rankButtonLabel.text = label;
+		}
 
 		//// RVA: 0xB89160 Offset: 0xB89160 VA: 0xB89160
 		public void SetMusicAttr(GameAttribute.Type attr)

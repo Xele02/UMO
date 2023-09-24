@@ -270,7 +270,19 @@ public class FFHPBEPOMAK_DivaInfo
 	}
 
 	// // RVA: 0x14E01A4 Offset: 0x14E01A4 VA: 0x14E01A4
-	// public StatusData FDFPMGHGBNN() { }
+	public StatusData FDFPMGHGBNN()
+	{
+		StatusData res = new StatusData();
+		if(EEBBAGGJOGH || BNFDBPPOAOE)
+		{
+			if(LDEGEHAEALK == null)
+			{
+				LDEGEHAEALK = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave;
+			}
+			res.Copy(LDEGEHAEALK.BEKHNNCGIEL_Costume.NNIKNCGNDHK_GetStatForDiva(AHHJLDLAPAN_DivaId));
+		}
+		return res;
+	}
 
 	// // RVA: 0x14DF39C Offset: 0x14DF39C VA: 0x14DF39C
 	public void HCDGELDHFHB()

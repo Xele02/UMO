@@ -13,7 +13,7 @@ namespace XeApp.Game.Common
 		private bool m_isShown; // 0x10
 		private bool m_isJustAnimaStart; // 0x11
 
-		// public bool IsShown { get; } 0x1CD30D4
+		public bool IsShown { get { return m_isShown; } } //0x1CD30D4
 
 		// // RVA: 0x1CD30DC Offset: 0x1CD30DC VA: 0x1CD30DC
 		private void Awake()

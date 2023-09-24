@@ -360,7 +360,11 @@ namespace XeApp.Game.Menu
 		//public void InitCameraRot() { }
 
 		//// RVA: 0xAE31BC Offset: 0xAE31BC VA: 0xAE31BC
-		//public void ClearCameraRot() { }
+		public void ClearCameraRot()
+		{
+			m_tgtRotCamZ = 0;
+			m_rotCamZ = 0;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CD75C Offset: 0x6CD75C VA: 0x6CD75C
 		//// RVA: 0xAE3128 Offset: 0xAE3128 VA: 0xAE3128

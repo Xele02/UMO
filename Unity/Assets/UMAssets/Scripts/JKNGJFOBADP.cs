@@ -685,10 +685,20 @@ public class JKNGJFOBADP
 	//public static string JKOAGEAPJHI(EKLNMHFCAOI.FKGCBLHOOCL INDDJNMPONH, int JBGEEPFKIGG, int HMFFHLPNMPH) { }
 
 	//// RVA: 0x1471FCC Offset: 0x1471FCC VA: 0x1471FCC
-	//public static string JKOAGEAPJHI(int KIJAPOFAGPN, int HMFFHLPNMPH, int OEBOKCMFMHG) { }
+	public static string JKOAGEAPJHI(int KIJAPOFAGPN, int HMFFHLPNMPH, int OEBOKCMFMHG)
+	{
+		EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(KIJAPOFAGPN);
+		int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(KIJAPOFAGPN);
+		return KJFKHPMPLBC(EKLNMHFCAOI.INCKKODFJAP_GetItemName(cat, id), OEBOKCMFMHG) + JpStringLiterals.StringLiteral_12037 + HMFFHLPNMPH.ToString() + EKLNMHFCAOI.NDBLEADIDLA(cat, id);
+	}
 
 	//// RVA: 0x14720E8 Offset: 0x14720E8 VA: 0x14720E8
-	//public static string KJFKHPMPLBC(string OPFGFINHFCE, int OEBOKCMFMHG) { }
+	public static string KJFKHPMPLBC(string OPFGFINHFCE, int OEBOKCMFMHG)
+	{
+		if (OPFGFINHFCE.Length < OEBOKCMFMHG)
+			return OPFGFINHFCE;
+		return OPFGFINHFCE.Substring(0, OEBOKCMFMHG - 1) + JpStringLiterals.StringLiteral_12038;
+	}
 
 	//// RVA: 0x147219C Offset: 0x147219C VA: 0x147219C
 	//public string OLAICLNDMFF() { }

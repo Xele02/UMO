@@ -111,12 +111,12 @@ namespace XeApp.Game.Menu
 				if((a_bit & (1 << (i - 1))) == 0)
 				{
 					a_btn[i].SetOff();
-					a_btn[i].IsInputLock = true;
+					a_btn[i].IsInputLock = false;
 				}
 				else
 				{
 					a_btn[i].SetOn();
-					a_btn[i].IsInputLock = false;
+					a_btn[i].IsInputLock = true;
 				}
 			}
 		}
@@ -126,7 +126,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 1; i < buttons.Length; i++)
 			{
-				if(index - 1 == i)
+				if(index == i)
 				{
 					buttons[i].IsInputLock = true;
 				}

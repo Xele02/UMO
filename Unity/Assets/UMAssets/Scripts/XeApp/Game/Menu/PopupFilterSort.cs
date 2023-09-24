@@ -275,13 +275,64 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF91E70 Offset: 0xF91E70 VA: 0xF91E70
 		private void InitializeDivaSelect(PopupFilterSortSetting a_setting)
 		{
-			TodoLogger.LogError(0, "InitializeDivaSelect");
+			int a = 0;
+			for(int i = 1; i < 11; i++)
+			{
+				if((a_setting.m_param.FilterDiva & (1 << i)) != 0)
+				{
+					a = i;
+					break;
+				}
+			}
+			ResultSelectDivaId = a;
+			PopupFilterSortParts_FilterDiva p = (m_setting.m_list_parts[0].m_base as PopupFilterSortParts_FilterDiva);
+			p.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas, false, PopupFilterSortParts_FilterDiva.ButtonType.Single, PopupFilterSortParts_FilterDiva.WindowType.Middle, a_setting.m_param.DivaChangeMode);
+			p.SetBit((uint)a_setting.m_param.FilterDiva);
+			if(a_setting.m_param.DivaChangeMode)
+			{
+				m_parentPopupControl.FindButton(PopupButton.ButtonLabel.Ok).Disable = true;
+				uint divaBits = p.GetBit();
+				int firstDivaId = 0;
+				for(int i = 1; i < 11; i++)
+				{
+					if ((divaBits & (1 << i)) != 0)
+					{
+						firstDivaId = i;
+						break;
+					}
+				}
+				p.OnChangeFilter = () =>
+				{
+					//0xF94DBC
+					uint b = p.GetBit();
+					int a2 = 0;
+					for (int i = 1; i < 11; i++)
+					{
+						if ((b & (1 << i)) != 0)
+						{
+							a2 = i;
+							break;
+						}
+					}
+					m_parentPopupControl.FindButton(PopupButton.ButtonLabel.Ok).Disable = firstDivaId == a2;
+				};
+			}
 		}
 
 		// // RVA: 0xF93308 Offset: 0xF93308 VA: 0xF93308
 		private void FainalizeDivaSelect()
 		{
-			TodoLogger.LogError(0, "FainalizeDivaSelect");
+			PopupFilterSortParts_FilterDiva p = (m_setting.m_list_parts[0].m_base as PopupFilterSortParts_FilterDiva);
+			uint b = p.GetBit();
+			ResultSelectDivaId = 0;
+			for (int i = 1; i < 11; i++)
+			{
+				if ((b & (1 << i)) != 0)
+				{
+					ResultSelectDivaId = i;
+					break;
+				}
+			}
 		}
 
 		// // RVA: 0xF93828 Offset: 0xF93828 VA: 0xF93828

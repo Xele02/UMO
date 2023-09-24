@@ -1174,7 +1174,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB32D1C Offset: 0xB32D1C VA: 0xB32D1C
-		// public void ShowSortWindow(PopupFilterSortInitParam a_init_param, UnityAction<PopupFilterSort> okCallBack, Action endCallBack) { }
+		public void ShowSortWindow(PopupFilterSortInitParam a_init_param, UnityAction<PopupFilterSort> okCallBack, Action endCallBack)
+		{
+			m_popupFilterSortWindowContrl.Show(a_init_param, okCallBack, endCallBack);
+		}
 
 		// // RVA: 0xB32D6C Offset: 0xB32D6C VA: 0xB32D6C
 		// public void ShowSortWindow(PopupFilterSortUGUI.Scene a_type, UnityAction<PopupFilterSortUGUI> okCallBack, Action endCallBack, bool a_is_save = True) { }
@@ -1939,7 +1942,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB37B10 Offset: 0xB37B10 VA: 0xB37B10
-		// public Vector3 GetDivaCameraRotByScene(TransitionList.Type type) { }
+		public Vector3 GetDivaCameraRotByScene(TransitionList.Type type)
+		{
+			return m_menuTransitionControl.GetDivaCameraRotByScene(type);
+		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6C831C Offset: 0x6C831C VA: 0x6C831C
 		// // RVA: 0xB37CCC Offset: 0xB37CCC VA: 0xB37CCC

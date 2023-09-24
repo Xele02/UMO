@@ -502,7 +502,15 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 	// public bool BNLJGNBGMFM(int AHHJLDLAPAN, int HMFFHLPNMPH) { }
 
 	// // RVA: 0x197B4D8 Offset: 0x197B4D8 VA: 0x197B4D8
-	// public int MCIPCILAJIN(int AHHJLDLAPAN) { }
+	public int MCIPCILAJIN(int AHHJLDLAPAN)
+	{
+		if (AHHJLDLAPAN < 1)
+			return 0;
+		int res = NBIGLBMHEDC_DivaList[AHHJLDLAPAN - 1].DDODJCCIENF_IntimacyPresentTotal;
+		if (res < -1)
+			res = 0;
+		return res;
+	}
 
 	// // RVA: 0x197B59C Offset: 0x197B59C VA: 0x197B59C
 	// public bool IGFOFCEKIAM(int AHHJLDLAPAN, int HMFFHLPNMPH) { }

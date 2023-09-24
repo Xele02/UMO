@@ -95,7 +95,12 @@ namespace XeApp.Game.Menu
 		// public MenuDivaVoiceTable.Data GetTouchReaction(DivaTouchReaction.Type i) { }
 
 		// // RVA: 0xED0A80 Offset: 0xED0A80 VA: 0xED0A80
-		// public MenuDivaVoiceTable.Data GetPresent(int a_index) { }
+		public Data GetPresent(int a_index)
+		{
+			if (m_presentReaction.Count <= a_index)
+				return null;
+			return m_presentReaction[a_index];
+		}
 
 		// // RVA: 0xED0B3C Offset: 0xED0B3C VA: 0xED0B3C
 		// public MenuDivaVoiceTable.Data GetIntimacy(int a_index) { }

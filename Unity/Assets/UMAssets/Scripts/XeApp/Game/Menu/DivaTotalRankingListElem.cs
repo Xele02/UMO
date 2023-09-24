@@ -2,9 +2,6 @@ namespace XeApp.Game.Menu
 {
 	public class DivaTotalRankingListElem : RankingListElemBase
 	{
-		private void Awake()
-		{
-			TodoLogger.LogError(0, "Implement monobehaviour");
-		}
+		//
 	}
 }

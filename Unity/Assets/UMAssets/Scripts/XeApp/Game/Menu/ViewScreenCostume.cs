@@ -202,6 +202,10 @@ namespace XeApp.Game.Menu
 		//public float GetTgtRotCamZ() { }
 
 		//// RVA: 0x1CE7560 Offset: 0x1CE7560 VA: 0x1CE7560
-		//public void ClearCameraRot() { }
+		public void ClearCameraRot()
+		{
+			if (m_cameraMan != null)
+				m_cameraMan.ClearCameraRot();
+		}
 	}
 }
