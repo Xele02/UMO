@@ -44,7 +44,6 @@ namespace XeApp.Game.Title
 						else
 							KEHOJEJMGLJ.FJDOHLADGFI = false;
 					}, null, null, null);*/
-					//UMOPopupConfigSetting s = ;
 					this.StartCoroutineWatched(ShowUMOPopup());
 				});
 			}

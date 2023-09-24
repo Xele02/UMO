@@ -12,6 +12,7 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
     public UMO_ToggleButtonGroup DisableNoteSound;
     public UMO_ToggleButtonGroup DisableWatermark;
     public UMO_ToggleButtonGroup MinigameAutoPlay;
+    public UMO_ToggleButtonGroup ForceIntegrityCheck;
 
     public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
     {
@@ -23,6 +24,7 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         DisableNoteSound.SetSelected(RuntimeSettings.CurrentSettings.DisableNoteSound ? 0 : 1);
         DisableWatermark.SetSelected(RuntimeSettings.CurrentSettings.DisableWatermark ? 0 : 1);
         MinigameAutoPlay.SetSelected(RuntimeSettings.CurrentSettings.MinigameAutoPlay ? 0 : 1);
+        ForceIntegrityCheck.SetSelected(KEHOJEJMGLJ.FJDOHLADGFI ? 0 : 1);
     }
 
     public void Save()
@@ -34,6 +36,7 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         UMO_PlayerPrefs.SetInt("DisableNoteSound", 1 - DisableNoteSound.GetSelected());
         UMO_PlayerPrefs.SetInt("DisableWatermark", 1 - DisableWatermark.GetSelected());
         UMO_PlayerPrefs.SetInt("MinigameAutoPlay", 1 - MinigameAutoPlay.GetSelected());
+        KEHOJEJMGLJ.FJDOHLADGFI = ForceIntegrityCheck.GetSelected() == 0;
         UMO_PlayerPrefs.Save();
     }
     public bool IsScrollable()
