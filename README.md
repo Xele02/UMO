@@ -1,12 +1,13 @@
 Rewrite project of UtaMacross mobile game. 
 
-**Current version : 0.4.6**
+**Current version : 0.5**
 
 Fonctionality : 
 * Basic loading of the game with default profile (all costume/cards unlocked and fully leveled)
-* Main menu : Music/Home, Diva, SNS, Home bg switch, Memory zone buttons works.
+* Main menu : Music/Home, Diva, SNS, Home bg switch, Home diva switch, Memory zone buttons works.
 * Playing song :
   * Editor gameplay : Use key S-D-F-H-J-K for the 6 lanes, and D-F-H-J for 4 lanes songs. Slide note are automatically valided on hit. Lane change on 6 lane mode don't work. Key can be changed in the options (menu UMO > Options).
+* A few event can be activated (Apil fools, ...). Can be acceded from UMO Setting popup on the title screen (pad icon)
 
 # Requirement
 
@@ -45,15 +46,11 @@ Fonctionality :
     * Force tuto skip : Unused actually
     * Can skip unplayed songs : Allow the skip button to be enabled even for song never played
   * Live
-    * Is Invincible Cheat : Will not lose the song even when life hit 0
-    * Force perfect note : All note will be a perfect. Work like an autoplay
     * Force Live Valkyrie Mode : Force going in valkyrie mode even if gauge is not filled
     * Force Live Diva Mode : Force going in standard diva mode
     * Force Live Awaken Diva Mode : Force going on awaken diva mode
     * Touch* : Select the key to use for each lane and the active skill button.
   * S-Live
-    * Disable note sound : Disable the note sound in SLive because setting the note sound in the option to 0 still play sound in this mode. This won't mute the sound in normal play mode.
-    * Disable watermak : Disable the UtaMacross watermark
     * Disable Movies : Disable playing movies
   * Data Directory : Local directory where game data was downloaded.
   * Data Web server URL : URL Where to download data (this require uploading the data somewhere accessible on a web server)
@@ -62,8 +59,12 @@ Fonctionality :
 * Create song notes data : Allow to generate a log of a song play to help doing a bug report when tapping note is broken.
 * (Linux user) Convert all movies. Allow to convert all movies at once.
 
+# UMO settings / event start
+
+Settings and starting event can be done from the config popup. It is accessible from the pad button in the title screen.
+
 # Android troubleshooting :
-* It's possible the game crash or stuff can be wrongly displayed because there was an error when downloading the file. If you use the encrypted version of the data, you can force a recheck of the files by clicking on the gamepad icon the the start menu, selecting ok and start the game. It will recheck all files (take a long time). If you use the decrypted version of the data, for now all the files will be redownloaded. This is because the game expect the crypted data for comparing data for now, this will be fixed at a later time.
+* It's possible the game crash or stuff can be wrongly displayed because there was an error when downloading the file. If you use the encrypted version of the data, you can force a recheck of the files by clicking on the gamepad icon the the start menu, selecting the option to force recheck and start the game. It will recheck all files (take a long time). If you use the decrypted version of the data, for now all the files will be redownloaded. This is because the game expect the crypted data for comparing data for now, this will be fixed at a later time.
 
 # Used library :
 

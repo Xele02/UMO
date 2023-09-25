@@ -12,7 +12,7 @@ namespace XeApp.Game.Menu
 			public string m_masterName; // 0x8
 			public int m_uniqueId; // 0xC
 			public OHCAABOMEOF.KGOGMKMBCPP_EventType m_eventType; // 0x10
-			//public List<FKMOKDCJFEN> m_viewList; // 0x14
+			public List<FKMOKDCJFEN> m_viewList; // 0x14
 			public int m_achievedCount; // 0x18
 		}
 
@@ -45,10 +45,23 @@ namespace XeApp.Game.Menu
 					for(int i = 0; i < m_eventViewList.Count; i++)
 					{
 						EventQuestData data = new EventQuestData();
-						/*data.m_masterName = l[i].JOPOPMLFINI;
-						data.m_uniqueId = */
-						TodoLogger.LogError(0, "UpdateQuestData event");
+						data.m_masterName = m_eventViewList[i].JOPOPMLFINI_MasterName;
+						data.m_uniqueId = m_eventViewList[i].JHAOHBNPMNA_EventId;
+						data.m_eventType = m_eventViewList[i].COAMJFMEIBF.HIDHLFCBIDE_EventType;
+						data.m_viewList = FKMOKDCJFEN.KJHKBBBDBAL(m_eventViewList[i].JOPOPMLFINI_MasterName, false, m_eventViewList[i].BCOKKAALGHC);
+						data.m_achievedCount = GetQuestCountByStatus(data.m_viewList, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
 						m_eventQuestDataList.Add(data);
+						m_eventViewList[i].PKNLMLDKCLM_AchievedQuests = data.m_achievedCount;
+						if(data.m_achievedCount < 1)
+						{
+							m_eventViewList[i].BEEIIJJKDBH = Common.BadgeConstant.ID.None;
+							m_eventViewList[i].BHANMJKCCBC_QuestAchievedCountText = "";
+						}
+						else
+						{
+							m_eventViewList[i].BEEIIJJKDBH = Common.BadgeConstant.ID.Label;
+							m_eventViewList[i].BHANMJKCCBC_QuestAchievedCountText = GetAchievedCountText(data.m_achievedCount);
+						}
 					}
 					break;
 				case LayoutQuestTab.eTabType.Normal:
@@ -73,21 +86,21 @@ namespace XeApp.Game.Menu
 					for (int i = 0; i < m_bingoViewList.Count; i++)
 					{
 						EventQuestData data = new EventQuestData();
-						data.m_masterName = m_bingoViewList[i].JOPOPMLFINI;
-						data.m_uniqueId = m_bingoViewList[i].JHAOHBNPMNA;
+						data.m_masterName = m_bingoViewList[i].JOPOPMLFINI_MasterName;
+						data.m_uniqueId = m_bingoViewList[i].JHAOHBNPMNA_EventId;
 						data.m_eventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.DIDJLIPNCKO;
 						data.m_achievedCount = GNGMCIAIKMA.HHCJCDFCLOB.OBOGIOGEBPK(m_bingoViewList[i].PGIIDPEGGPI, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
 						m_eventQuestDataList.Add(data);
-						m_bingoViewList[i].PKNLMLDKCLM = data.m_achievedCount;
+						m_bingoViewList[i].PKNLMLDKCLM_AchievedQuests = data.m_achievedCount;
 						if(data.m_achievedCount < 1)
 						{
 							m_bingoViewList[i].BEEIIJJKDBH = Common.BadgeConstant.ID.None;
-							m_bingoViewList[i].BHANMJKCCBC = "";
+							m_bingoViewList[i].BHANMJKCCBC_QuestAchievedCountText = "";
 						}
 						else
 						{
 							m_bingoViewList[i].BEEIIJJKDBH = Common.BadgeConstant.ID.Label;
-							m_bingoViewList[i].BHANMJKCCBC = GetAchievedCountText(data.m_achievedCount);
+							m_bingoViewList[i].BHANMJKCCBC_QuestAchievedCountText = GetAchievedCountText(data.m_achievedCount);
 						}
 					}
 					break;
@@ -109,7 +122,22 @@ namespace XeApp.Game.Menu
 		//public static bool FindAchievedQuestList(List<FKMOKDCJFEN> list) { }
 
 		//// RVA: 0x9E2CD8 Offset: 0x9E2CD8 VA: 0x9E2CD8
-		//public static List<FKMOKDCJFEN> GetEventQuestList(string masterName) { }
+		public static List<FKMOKDCJFEN> GetEventQuestList(string masterName)
+		{
+			if (m_eventQuestDataList != null)
+			{
+				EventQuestData data = m_eventQuestDataList.Find((EventQuestData _) =>
+				{
+					//0x9E7D50
+					return _.m_masterName == masterName;
+				});
+				if(data != null)
+				{
+					return data.m_viewList;
+				}
+			}
+			return null;
+		}
 
 		//// RVA: 0x9E29AC Offset: 0x9E29AC VA: 0x9E29AC
 		public static int GetQuestCountByStatus(List<FKMOKDCJFEN> list, FKMOKDCJFEN.ADCPCCNCOMD_Status status)
@@ -189,7 +217,7 @@ namespace XeApp.Game.Menu
 			return list.Find((CGJKNOCAPII _) =>
 			{
 				//0x9E7AF4
-				return _.PKNLMLDKCLM > 0;
+				return _.PKNLMLDKCLM_AchievedQuests > 0;
 			}) != null;
 		}
 
@@ -232,7 +260,7 @@ namespace XeApp.Game.Menu
 			int res = 0;
 			for(int i = 0; i < list.Count; i++)
 			{
-				res += list[i].PKNLMLDKCLM;
+				res += list[i].PKNLMLDKCLM_AchievedQuests;
 			}
 			return res;
 		}

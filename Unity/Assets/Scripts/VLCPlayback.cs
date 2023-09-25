@@ -63,7 +63,9 @@ public class VLCPlayback : MoviePlayback
         }
     }
 
-    public override void Init(string path, bool loop, Action<MovieInfo> onReady)
+	MovieInfo videoStreamInfo;
+
+	public override void Init(string path, bool loop, Action<MovieInfo> onReady)
     {
         CriUsmStream videoStream = new CriUsmStream(path);
         MpegStream.DemuxOptionsStruct demux = new MpegStream.DemuxOptionsStruct() { ExtractVideo = true, ExtractAudio = false };
@@ -73,6 +75,7 @@ public class VLCPlayback : MoviePlayback
         demux.ExtractInMemoryStream = true;
         demux.ExtractedMemoryStream = new List<MemoryStream>();
         videoStream.DemultiplexStreams(demux);
+		videoStreamInfo = videoStream.movieInfo;
         foreach(MemoryStream s in demux.ExtractedMemoryStream)
         {
             ms = s;
@@ -131,6 +134,13 @@ public class VLCPlayback : MoviePlayback
                         width = i_videoWidth;
                         height = i_videoHeight;
                     }
+					if(_mediaPlayer.Media.State == VLCState.Ended)
+					{
+						// video ended before getting info, switch to default size
+						width = videoStreamInfo.width;
+						height = videoStreamInfo.height;
+						break;
+					}
                     yield return null;
                 }
                 TodoLogger.Log(TodoLogger.Movie, "Video size : " + width+" "+height);

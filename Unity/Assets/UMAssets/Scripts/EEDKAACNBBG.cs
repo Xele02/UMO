@@ -138,5 +138,14 @@ public class EEDKAACNBBG_MusicData
 	}
 
 	// // RVA: 0x1C494DC Offset: 0x1C494DC VA: 0x1C494DC
-	// public static byte FFJPJEMCGKK(EONOEHOKBEB KLCDFACOILE) { }
+	public static byte FFJPJEMCGKK(EONOEHOKBEB_Music KLCDFACOILE)
+	{
+		byte res = 0;
+		res = (byte)(KLCDFACOILE.NJAOOMHCIHL_DivaSolo > 0 ? 1 : 0);
+		if(KLCDFACOILE.PECMGDOMLAF_DivaMulti > 1)
+		{
+			res |= (byte)(1 << (KLCDFACOILE.PECMGDOMLAF_DivaMulti - 1));
+		}
+		return res;
+	}
 }

@@ -111,7 +111,7 @@ namespace XeSys.Gfx
 			{
 				m_parentLUR = LayoutUGUIUtility.GetParentRuntime(transform);
 			}
-			if(m_scrollView == null)
+			if(m_scrollView == null && m_parentLUR != null)
 			{
 				m_scrollView = m_parentLUR.FindViewBase(m_scrollRect.transform as RectTransform) as ScrollView;
 			}

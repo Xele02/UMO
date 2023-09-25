@@ -243,7 +243,7 @@ namespace XeApp.Game.MusicSelect
 					}
 					else
 					{
-						eventPeriodString = GetEventPeriodString(eventController.GLIMIGNNGGB, eventController.DPJCPDKALGI);
+						eventPeriodString = GetEventPeriodString(eventController.GLIMIGNNGGB_Start, eventController.DPJCPDKALGI_End1);
 						if (musicData.AHAEGEHKONB_GetOtherTimeLeft() == 0)
 						{
 							continue;
@@ -280,23 +280,22 @@ namespace XeApp.Game.MusicSelect
 						for (int j = 0; j < list.Count; j++)
 						{
 							AMLGMLNGMFB_EventAprilFool eventApril = list[j] as AMLGMLNGMFB_EventAprilFool;
-							if (musicData.EKANGPODCEP_EventId == eventApril.PGIIDPEGGPI)
+							if (musicData.EKANGPODCEP_EventId == eventApril.PGIIDPEGGPI_EventId)
 							{
-								TodoLogger.LogError(0, "CreateMusicDataList april event");
-								/*KCGOMAFPGDD.EIEGCBJHGCP dd = eventApril.KOBMFPACBMB().Find((KCGOMAFPGDD.EIEGCBJHGCP x) =>
+								KCGOMAFPGDD_EventAprilFool.EIEGCBJHGCP dd = eventApril.KOBMFPACBMB().Find((KCGOMAFPGDD_EventAprilFool.EIEGCBJHGCP x) =>
 								{
 									//0xCA3DB4
-									return x.MPLGPBNJDJB == musicData.GHBPLHBNMBK_FreeMusicId;
+									return x.MPLGPBNJDJB_FreeMusicId == musicData.GHBPLHBNMBK_FreeMusicId;
 								});
-								aprilFoolEndTime = eventApril.DPJCPDKALGI;
-								if (dd.FDBNFFNFOND != 0)
+								aprilFoolEndTime = eventApril.DPJCPDKALGI_End1;
+								if (dd.FDBNFFNFOND_CloseAt != 0)
 								{
-									aprilFoolEndTime = dd.FDBNFFNFOND;
+									aprilFoolEndTime = dd.FDBNFFNFOND_CloseAt;
 								}
-								if (eventApril.HLPEBPOPCPI() != 0 && dd.PPFNGGCBJKC == eventApril.HLPEBPOPCPI())
+								if (eventApril.HLPEBPOPCPI_GetChangeMusicSelectUI() != 0 && dd.PPFNGGCBJKC_Id == eventApril.HLPEBPOPCPI_GetChangeMusicSelectUI())
 								{
 									isHighLevel = true;
-								}*/
+								}
 							}
 						}
 					}
@@ -357,8 +356,8 @@ namespace XeApp.Game.MusicSelect
 			});
 			for(int i = 0; i < list.Count; i++)
 			{
-				list[i].HCDGELDHFHB(currentTime);
-				if(list[i].NGOFCFJHOMI > KGCNCBOKCBA.GNENJEHKMHD.FFLKPBPBPEP && list[i].NGOFCFJHOMI <= term)
+				list[i].HCDGELDHFHB_UpdateStatus(currentTime);
+				if(list[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD.FFLKPBPBPEP && list[i].NGOFCFJHOMI_Status <= term)
 				{
 					res.Add(list[i]);
 				}
@@ -369,8 +368,19 @@ namespace XeApp.Game.MusicSelect
 		//// RVA: 0xCA2728 Offset: 0xCA2728 VA: 0xCA2728
 		public static string GetEventPeriodString(long openTime, long closeTime)
 		{
-			TodoLogger.LogError(0, "GetEventPeriodString");
-			return "";
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			if(closeTime != 0)
+			{
+				if (closeTime % 100 == 0)
+					closeTime -= 1;
+			}
+			DateTime d1 = Utility.GetLocalDateTime(openTime);
+			DateTime d2 = Utility.GetLocalDateTime(closeTime);
+			return string.Format(bk.GetMessageByLabel("vertical_music_select_event_period"), new object[10]
+			{
+				d1.Year, d1.Month, d1.Day, d1.Hour, d1.Minute,
+				d2.Year, d2.Month, d2.Day, d2.Hour, d2.Minute
+			});
 		}
 
 		//// RVA: 0xCA2ED4 Offset: 0xCA2ED4 VA: 0xCA2ED4

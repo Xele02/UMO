@@ -32,9 +32,26 @@ namespace XeApp.Core
 		}
 
 		// // RVA: 0x1D6ED14 Offset: 0x1D6ED14 VA: 0x1D6ED14
-		// public bool SwitchDefaultInputModule() { }
+		public bool SwitchDefaultInputModule()
+		{
+			BaseInputModule m = eventSystem.gameObject.GetComponent<BaseInputModule>();
+			if (m != null)
+			{
+				if (m is CustomInputModule)
+				{
+					UnityEngine.Object.Destroy(m);
+					eventSystem.gameObject.AddComponent<StandaloneInputModule>();
+					return true;
+				}
+			}
+			return false;
+		}
 
 		// // RVA: 0x1D6EE5C Offset: 0x1D6EE5C VA: 0x1D6EE5C
-		// public void SwitchCustomInputModle() { }
+		public void SwitchCustomInputModle()
+		{
+			UnityEngine.Object.Destroy(eventSystem.gameObject.GetComponent<BaseInputModule>());
+			eventSystem.gameObject.AddComponent<CustomInputModule>();
+		}
 	}
 }

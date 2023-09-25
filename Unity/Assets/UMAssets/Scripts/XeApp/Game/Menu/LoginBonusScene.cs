@@ -118,7 +118,31 @@ namespace XeApp.Game.Menu
 			GameManager.Instance.SetFPS(30);
 			foreach(var e in JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN)
 			{
-				TodoLogger.LogError(0, "LoginBonusScene.NextScene event");
+				if(e.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool)
+				{
+					if(e is AMLGMLNGMFB_EventAprilFool)
+					{
+						bool done = false;
+						bool err = false;
+						(e as AMLGMLNGMFB_EventAprilFool).LEGMNFOCKGE(() =>
+						{
+							//0xEB5D08
+							done = true;
+						}, () =>
+						{
+							//0xEB5D14
+							done = true;
+							err = true;
+						});
+						while (!done)
+							yield return null;
+						if(err)
+						{
+							MenuScene.Instance.GotoTitle();
+							yield break;
+						}
+					}
+				}
 			}
 			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA/*9*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
 			if(ev != null)

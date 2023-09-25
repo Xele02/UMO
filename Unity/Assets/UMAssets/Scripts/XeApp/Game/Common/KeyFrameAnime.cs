@@ -58,8 +58,8 @@ namespace XeApp.Game.Common
 		protected Coroutine m_animCoroutine; // 0x28
 		protected Action<KeyFrameAnime, int> m_animCallback; // 0x2C
 
-		//public KeyFrameAnime SyncAnime { set; } 0x1103474
-		//public int PlayIndex { get; } 0x110347C
+		public KeyFrameAnime SyncAnime { set { m_syncAnime = value; } } //0x1103474
+		public int PlayIndex { get { return m_playIndex; } } //0x110347C
 
 		// RVA: 0x1102CD4 Offset: 0x1102CD4 VA: 0x1102CD4
 		protected void Start()
@@ -220,7 +220,31 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x11031B4 Offset: 0x11031B4 VA: 0x11031B4
-		//public void SetKeyFrame(int index) { }
+		public void SetKeyFrame(int index)
+		{
+			if(index > -1)
+			{
+				if(index < m_animeTable.Length)
+				{
+					if (m_animCoroutine != null)
+						this.StopCoroutineWatched(m_animCoroutine);
+					m_playIndex = index;
+					m_animCoroutine = null;
+					if(m_animeTable[index].sprite != null)
+					{
+						SetSprite(m_animeTable[index].sprite);
+					}
+					if (m_animCallback != null)
+						m_animCallback(this, m_playIndex);
+					SetPosition(m_animeTable[index].pos);
+					SetScale(m_animeTable[index].scale);
+					SetEulerAngles(new Vector3(GetEulerAngles().x, GetEulerAngles().y, m_animeTable[index].angle));
+					SetColor(m_animeTable[index].color);
+					return;
+				}
+			}
+			Debug.Log(JpStringLiterals.StringLiteral_14032);
+		}
 
 		//// RVA: -1 Offset: -1 Slot: 4
 		protected abstract void Init();

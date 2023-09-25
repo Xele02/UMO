@@ -32,7 +32,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x95745C Offset: 0x95745C VA: 0x95745C
-		//public void SetForGachaTitle(RawImageEx image) { }
+		public void SetForGachaTitle(RawImageEx image)
+		{
+			base.Set(image);
+			image.uvRect = GachaTitleUv;
+		}
 
 		//// RVA: 0x957540 Offset: 0x957540 VA: 0x957540
 		//public void SetForGachaTitle(RawImage image) { }
@@ -112,6 +116,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x958058 Offset: 0x958058 VA: 0x958058
-		// public void LoadForMission(int missionId, Action<IiconTexture> callback) { }
+		public void LoadForMission(int missionId, Action<IiconTexture> callback)
+		{
+			m_bundleName.SetFormat(BundleFormatForMission, missionId);
+			Load(m_bundleName.ToString(), callback);
+		}
 	}
 }

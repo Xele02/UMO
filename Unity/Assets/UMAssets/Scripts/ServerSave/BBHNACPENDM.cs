@@ -151,7 +151,7 @@ public class BBHNACPENDM_ServerSaveData
 	public const ulong EFKHPIFNKIM_FlagBingo =					(ulong)1 << 36;
 	public const ulong MFHGLPDLDKG_FlagEventRaid =				(ulong)1 << 37;
 	public const ulong OBIPEOCMCLN_FlagEventRaidLobby =			(ulong)1 << 38;
-	public const ulong JLNKIFEPCHF_flagEventRaidPlayer =		(ulong)1 << 39;
+	public const ulong JLNKIFEPCHF_FlagEventRaidPlayer =		(ulong)1 << 39;
 	public const ulong CAHKIGMKMGB_FlagDecoPublicSet =			(ulong)1 << 40;
 	public const ulong NAHJFAEAAIN_FlagDecoPrivateSet =			(ulong)1 << 41;
 	public const ulong DDOOENPDKHL_FlagDecoItem =				(ulong)1 << 42;
@@ -262,12 +262,12 @@ public class BBHNACPENDM_ServerSaveData
 					case /*0x1e*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.EICBLKBKMKE_EventAprilFoolG:
 					case /*0x1f*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.FIKPHDFLIIM_EventAprilFoolH:
 					case /*0x20*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.FNLCLINDJAF_EventAprilFoolI:
-						val = val | /*0x40000000*/CFEFDIPHOIA_EventAprilFool;
+						val = val | /*0x40000000*/MDBDPNPAPFM_FlagEventAprilFool;
 					break;
 					case /*0x21*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.IEICONEHLFE_EventBattleA:
 					case /*0x22*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.CJLAEPKNNJE_EventBattleB:
 					case /*0x23*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.MPCNKNCKBAE_EventBattleC:
-						val = val | /*0x600000*/ JMKKPDNEOMC_EventBattle | IKBDIKPCKOG_EventBattlePlayer;
+						val = val | /*0x600000*/ FDBIJACKLGM_FlagEventBattle | JBIPCHCGOIE_FlagEventBattlePlayer;
 					break;
 					case /*0x24*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.COFHBPGDPML_EventBoxGachaA:
 					case /*0x25*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.BHJGBPLKMBK_EventBoxGachaB:
@@ -275,37 +275,37 @@ public class BBHNACPENDM_ServerSaveData
 					case /*0x27*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.LLEDCLGDDCD_EventBoxGachaD:
 					case /*0x28*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.ACNPHHGCHAF_EventBoxGachaE:
 					case /*0x29*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.FEICGBHOIPB_EventBoxGachaF:
-						val = val | /*0x8000000*/ GIKKNKGJBDJ_EventBoxGacha;
+						val = val | /*0x8000000*/ ODFDKLMEEIH_FlagEventBoxGacha;
 					break;
 					case /*0x2a*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.OAOKLHCDPON_EventCollectionA:
 					case /*0x2b*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.GGKFEJFMNGP_EventCollectionB:
 					case /*0x2c*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.LLHBBEMKIGD_EventCollectionC:
-						val = val | /*0x2000*/NCKGBJOMPIB_EventCollection;
+						val = val | /*0x2000*/ OEODGLNMCBD_FlagEventCollection;
 					break;
 					case /*0x2e*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.MBMNNEODFFP_EventGoDivaA:
 					case /*0x2f*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.NLIBPDOHAPH_EventGoDivaB:
 					case /*0x30*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.JLGODHLEBMK_EventGoDivaC:
-						val = val | /*0x4000000000000*/AICNPGADBCE_EventGoDiva;
+						val = val | /*0x4000000000000*/ EBEMNGJHLBO_FlagEventGoDiva;
 					break;
 					case /*0x33*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.DCBIDPBJHOC_EventMissionA:
 					case /*0x34*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.BNCLLKEHEFH_EventMissionB:
 					case /*0x35*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.BDGKKLAAJJB_EventMissionC:
-						val = val | /*0x2000000*/GIMPPHEENJI_EventMission;
+						val = val | /*0x2000000*/KMEJNGBCFKJ_FlagEventMission;
 					break;
 					case /*0x36*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.CLKOFJKPPEP_EventPresentCampaignA:
-						val = val | /*0x10000000*/GGHMGCGLDIF_Ticket;
+						val = val | /*0x10000000*/LJKHDGEBLOP_FlagTicket;
 					break;
 					case /*0x37*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.DCEHHGDDBPP_EventRaidA:
 					case /*0x38*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.PLNOKLOLJEP_EventRaidB:
 					case /*0x39*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.IJEIEHHAJNM_EventRaidC:
 					case /*0x3a*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.DMKFEJGOELJ_EventRaidD:
-						val = val | /*0x2000000000*/FENLNECLOON_EventRaid;
+						val = val | /*0x2000000000*/MFHGLPDLDKG_FlagEventRaid;
 					break;
 					case /*0x3b*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.IEBPINPALBD_EventRaidLobbyA:
 					case /*0x3c*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.CHNHFHCEKGN_EventRaidLobbyB:
 					case /*0x3d*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.FCAJCEOCDFF_EventRaidLobbyC:
 					case /*0x3e*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.IJOLIEAOOJC_EventRaidLobbyD:
-						val = val | /*0xc000000000*/ANNJOIOHDKJ_EventRaidLobby | MOOLMJMBMGB_EventRaidPlayer;
+						val = val | /*0xc000000000*/OBIPEOCMCLN_FlagEventRaidLobby | JLNKIFEPCHF_FlagEventRaidPlayer;
 					break;
 					case /*0x43*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.FMHLCBNFAOC_EventScoreA:
 					case /*0x44*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.LCJACACCKFC_EventScoreB:
@@ -313,10 +313,10 @@ public class BBHNACPENDM_ServerSaveData
 					case /*0x46*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.JPNKKKOHHLG_EventScoreD:
 					case /*0x47*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.ECHHEGJOHGI_EventScoreE:
 					case /*0x48*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.NLDGAHCIPAE_EventScoreF:
-						val = val | /*0x80000*/GEEOAMAMBHI_EventScore;
+						val = val | /*0x80000*/CKOBOGAHLMF_FlagEventScore;
 					break;
 					case /*0x49*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.MHGPKDOPEDJ_EventSpA:
-						val = val | /*0x4000000*/GONHNMGEOGC_EventSP;
+						val = val | /*0x4000000*/EPBMNPFALJL_FlagEventSP;
 					break;
 					default:
 					break;
@@ -433,7 +433,7 @@ public class BBHNACPENDM_ServerSaveData
 		if((HGNJJBLEMPH & EFKHPIFNKIM_FlagBingo) != 0)					{ PEGNNEFHDOP_Bingo = (NFMHCLHEMHB_Bingo)MNMFKKKFDCL_NewBlock(LBPMJOCELBC_Bingo); MGJKEJHEBPO_Blocks.Add(PEGNNEFHDOP_Bingo); }
 		if((HGNJJBLEMPH & MFHGLPDLDKG_FlagEventRaid) != 0)				{ DMDOCAPGOEE_EventRaid = (JLOGEHCIBEJ_EventRaid)MNMFKKKFDCL_NewBlock(FENLNECLOON_EventRaid); MGJKEJHEBPO_Blocks.Add(DMDOCAPGOEE_EventRaid); }
 		if((HGNJJBLEMPH & OBIPEOCMCLN_FlagEventRaidLobby) != 0)			{ PJCMHDEJLGF_EventRaidLobby = (KBAGKBIBGPM_EventRaidLobby)MNMFKKKFDCL_NewBlock(ANNJOIOHDKJ_EventRaidLobby); MGJKEJHEBPO_Blocks.Add(PJCMHDEJLGF_EventRaidLobby); }
-		if((HGNJJBLEMPH & JLNKIFEPCHF_flagEventRaidPlayer) != 0)		{ LLBECHBNIJG_EventRaidPlayer = (LGGPBMPINDL_EventRaidPlayer)MNMFKKKFDCL_NewBlock(MOOLMJMBMGB_EventRaidPlayer); MGJKEJHEBPO_Blocks.Add(LLBECHBNIJG_EventRaidPlayer); }
+		if((HGNJJBLEMPH & JLNKIFEPCHF_FlagEventRaidPlayer) != 0)		{ LLBECHBNIJG_EventRaidPlayer = (LGGPBMPINDL_EventRaidPlayer)MNMFKKKFDCL_NewBlock(MOOLMJMBMGB_EventRaidPlayer); MGJKEJHEBPO_Blocks.Add(LLBECHBNIJG_EventRaidPlayer); }
 		if((HGNJJBLEMPH & CAHKIGMKMGB_FlagDecoPublicSet) != 0)			{ PDKHANKAPCI_DecoPublicSet = (DAJBODHMLAB_DecoPublicSet)MNMFKKKFDCL_NewBlock(NEGNIBDPEEM_DecoPublicSet); MGJKEJHEBPO_Blocks.Add(PDKHANKAPCI_DecoPublicSet); }
 		if((HGNJJBLEMPH & NAHJFAEAAIN_FlagDecoPrivateSet) != 0)			{ DNIPIBICFGN_DecoPrivateSet = (AHHPBMBBCFM_DecoPrivateSet)MNMFKKKFDCL_NewBlock(HFPPAGFAOJL_DecoPrivateSet); MGJKEJHEBPO_Blocks.Add(DNIPIBICFGN_DecoPrivateSet); }
 		if((HGNJJBLEMPH & DDOOENPDKHL_FlagDecoItem) != 0)				{ OMMNKDEODJP_DecoItem = (BCGFHLIEKLJ_DecoItem)MNMFKKKFDCL_NewBlock(JONEDOPANFB_DecoItem); MGJKEJHEBPO_Blocks.Add(OMMNKDEODJP_DecoItem); }
