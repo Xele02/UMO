@@ -1005,6 +1005,10 @@ namespace XeApp.Game.Menu
 				m_decorationCanvas.HideSelectItemLayout();
 			else
 				m_decorationCanvas.EnablePostArea(type);
+			if(!data.isEditButton)
+				LeaveEditButton();
+			else
+				EnterEditButton();
 			if(!data.isDecorator)
 			{
 				if((m_decoratorType | DecorationDecorator.DecoratorType.ButtonNum) != DecorationDecorator.DecoratorType.ButtonNum)
@@ -2033,12 +2037,47 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC632F4 Offset: 0xC632F4 VA: 0xC632F4
 		private void NewPostItemCallback(LayoutDecorationSelectItemBase item, bool isTapSelect)
 		{
-			TodoLogger.LogError(0, "NewPostItemCallback");
+			if(m_decorationCanvas.IsLoadedItemDecoration)
+			{
+				this.StartCoroutineWatched(Co_NewPostItem(item, isTapSelect));
+			}
+			else
+			{
+				m_decorator.EnableSelectItem();
+			}
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D212C Offset: 0x6D212C VA: 0x6D212C
 		//// RVA: 0xC63378 Offset: 0xC63378 VA: 0xC63378
-		//private IEnumerator Co_NewPostItem(LayoutDecorationSelectItemBase item, bool isTapSelect) { }
+		private IEnumerator Co_NewPostItem(LayoutDecorationSelectItemBase item, bool isTapSelect)
+		{
+			//0x1579D38
+			MenuScene.Instance.InputDisable();
+			if(item.Type == LayoutDecorationWindow01.SelectItemType.Serif)
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_HOME_000);
+				yield return this.StartCoroutineWatched(PostSerif(item));
+			}
+			else if(item.Type == LayoutDecorationWindow01.SelectItemType.Bg)
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_HOME_000);
+				ChangeBg(item.Id, item.SubId);
+				ChangeState(StateType.SelectEditItem, DecorationConstants.Attribute.Type.None);
+			}
+			else if(!isTapSelect)
+			{
+				ChangeState(StateType.Edit, DecorationConstants.MakeAttribute(item.Data));
+				m_decorationCanvas.ItemLock();
+				yield return this.StartCoroutineWatched(PostItem(item, isTapSelect));
+			}
+			else
+			{
+				yield return this.StartCoroutineWatched(PostItem(item, true));
+			}
+			item.EnableSelectItem();
+			MenuScene.Instance.InputEnable();
+			m_decorationCanvas.ItemUnlock();
+		}
 
 		//// RVA: 0xC63434 Offset: 0xC63434 VA: 0xC63434
 		private void OnClickChangeTab(DecorationDecorator.TabType tab)
@@ -2087,11 +2126,37 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D21A4 Offset: 0x6D21A4 VA: 0x6D21A4
 		//// RVA: 0xC64774 Offset: 0xC64774 VA: 0xC64774
-		//private IEnumerator PostSerif(LayoutDecorationSelectItemBase item) { }
+		private IEnumerator PostSerif(LayoutDecorationSelectItemBase item)
+		{
+			//0x1586680
+			m_layoutDecorationSerifAttacher.SettingSerif(item.Id);
+			yield return Co.R(PostItem(item, true));
+			m_decorator.UpdateHaveRestNum();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D221C Offset: 0x6D221C VA: 0x6D221C
 		//// RVA: 0xC64818 Offset: 0xC64818 VA: 0xC64818
-		//private IEnumerator PostItem(LayoutDecorationSelectItemBase item, bool isTapSelect = True) { }
+		private IEnumerator PostItem(LayoutDecorationSelectItemBase item, bool isTapSelect = true)
+		{
+			//0x1586150
+			DecorationItemBaseSetting s = new DecorationItemBaseSetting(item.Data);
+			m_postType = isTapSelect ? DecorationItemManager.PostType.TapNewPost : DecorationItemManager.PostType.DragNewPost;
+			DecorationItemArgsBase arg = null;
+			if(item.Type == LayoutDecorationWindow01.SelectItemType.Serif)
+			{
+				arg = new DecorationSerifArgs(item.Data.GBJFNGCDKPM, item.Data.DOIGLOBENMG, item.Data.DBGAJBIBODC, m_speakChara);
+				m_postType = DecorationItemManager.PostType.Posted;
+			}
+			else
+			{
+				if(DecorationConstants.IsPoster(item.Data.NPADACLCNAN_Category))
+				{
+					arg = new DecorationPosterArgs(m_decorationCanvas.PosterKiraMaterial, m_decorationCanvas.PosterKiraMaterialFlip);
+				}
+			}
+			s.InitPosition = item.DragItemPostion;
+			yield return this.StartCoroutineWatched(Co_LoadItem(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(item.Data.NPADACLCNAN_Category, item.Id), s, arg));
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D2294 Offset: 0x6D2294 VA: 0x6D2294
 		//// RVA: 0xC648D4 Offset: 0xC648D4 VA: 0xC648D4
@@ -2873,10 +2938,19 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC5E528 Offset: 0xC5E528 VA: 0xC5E528
-		//private void EnterEditButton() { }
+		private void EnterEditButton()
+		{
+			m_layoutDecorationLeftEditButton.Enter();
+			m_layoutDecorationRightEditButton.Enter();
+			UpdateEditButton();
+		}
 
 		//// RVA: 0xC5E580 Offset: 0xC5E580 VA: 0xC5E580
-		//private void LeaveEditButton() { }
+		private void LeaveEditButton()
+		{
+			m_layoutDecorationLeftEditButton.Leave();
+			m_layoutDecorationRightEditButton.Leave();
+		}
 
 		//// RVA: 0xC5ECC8 Offset: 0xC5ECC8 VA: 0xC5ECC8
 		private void UpdateEditButton()

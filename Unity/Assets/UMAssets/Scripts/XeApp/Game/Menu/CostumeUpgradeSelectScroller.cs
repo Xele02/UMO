@@ -285,7 +285,13 @@ namespace XeApp.Game.Menu
 		{
 			if(m_inputEnable && !isAutoScroll)
 			{
-				if(eventData.pointerId == 0)
+				if(
+#if UNITY_ANDROID
+				eventData.pointerId == 0
+#else
+				eventData.pointerId == -1
+#endif
+				)
 				{
 					m_dragEventData = eventData;
 					m_isDragScroll = true;
@@ -301,7 +307,13 @@ namespace XeApp.Game.Menu
 		{
 			if(m_isDragScroll)
 			{
-				if(eventData.pointerId == 0)
+				if(
+#if UNITY_ANDROID
+				eventData.pointerId == 0
+#else
+				eventData.pointerId == -1
+#endif
+				)
 				{
 					EndScroll();
 					EndFlick(eventData.position);
@@ -318,7 +330,13 @@ namespace XeApp.Game.Menu
 		{
 			if(m_isDragScroll)
 			{
-				if(eventData.pointerId == 0)
+				if(
+#if UNITY_ANDROID
+				eventData.pointerId == 0
+#else
+				eventData.pointerId == -1
+#endif
+				)
 				{
 					m_dragEventData = eventData;
 					UpdateScroll(eventData.delta.x);

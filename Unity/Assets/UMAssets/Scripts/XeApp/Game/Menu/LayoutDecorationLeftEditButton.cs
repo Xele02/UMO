@@ -41,10 +41,20 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x18B0190 Offset: 0x18B0190 VA: 0x18B0190
-		// public void Enter() { }
+		public void Enter()
+		{
+			m_isEnter = true;
+			m_base.StartChildrenAnimGoStop("go_in", "st_in");
+		}
 
 		// // RVA: 0x18B0224 Offset: 0x18B0224 VA: 0x18B0224
-		// public void Leave() { }
+		public void Leave()
+		{
+			if(!m_isEnter)
+				return;
+			m_isEnter = false;
+			m_base.StartChildrenAnimGoStop("go_out", "st_out");
+		}
 
 		// // RVA: 0x18B02C4 Offset: 0x18B02C4 VA: 0x18B02C4
 		public void Hide()

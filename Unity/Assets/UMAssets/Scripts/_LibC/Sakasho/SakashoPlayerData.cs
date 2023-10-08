@@ -150,7 +150,7 @@ namespace ExternLib
 				}
 			}
 			{
-				List<JGGLDGNKELI_Emblem.AAHAAJEJNLJ> saveEmblems = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.OFAJDLJBMEM_Emblem.MDKOHOCONKE;
+				List<JGGLDGNKELI_Emblem.AAHAAJEJNLJ> saveEmblems = newData.OFAJDLJBMEM_Emblem.MDKOHOCONKE;
 				List<IHGBPAJMJFK_Emblem.AKJPPHFGEFG_EmblemInfo> dbEmblem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem.CDENCMNHNGA_EmblemList;
 				int cnt = saveEmblems.Count;
 				if (dbEmblem.Count < cnt)
@@ -235,6 +235,21 @@ namespace ExternLib
 			{
 				OCMJNBIFJNM_Offer offerBlock = newData.LBDOLHGDIEB_GetBlock("offer") as OCMJNBIFJNM_Offer;
 				offerBlock.JLFONLABECA_ShowTuto = -1; // set all tuto read
+			}
+
+			// Unlock deco
+			{
+				BCGFHLIEKLJ_DecoItem decoItem = newData.OMMNKDEODJP_DecoItem;
+				for(int i = 0; i < decoItem.PEBDEIKBCCM_Chars.Count; i++)
+				{
+					if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.KHCACDIKJLG_ItemsChara.Count <= i)
+						break;
+					if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.KHCACDIKJLG_ItemsChara[i].PLALNIIBLOF_Enabled == 2)
+					{
+						BCGFHLIEKLJ_DecoItem.AKAHOEBACGJ it = decoItem.PEBDEIKBCCM_Chars[i];
+						it.BFINGCJHOHI_Cnt = 1;
+					}
+				}
 			}
 
 			SerializeServerSave(newData, jsonRes);

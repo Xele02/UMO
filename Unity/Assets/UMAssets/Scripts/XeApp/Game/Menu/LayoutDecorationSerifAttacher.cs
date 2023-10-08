@@ -58,7 +58,13 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x18B9060 Offset: 0x18B9060 VA: 0x18B9060
-		// public void SettingSerif(int serifId) { }
+		public void SettingSerif(int serifId)
+		{
+			m_serifId = serifId;
+			UpdateSerif();
+			UpdateLayout();
+			LoadSerifResource();
+		}
 
 		// // RVA: 0x18B8D7C Offset: 0x18B8D7C VA: 0x18B8D7C
 		private void UpdateLayout()

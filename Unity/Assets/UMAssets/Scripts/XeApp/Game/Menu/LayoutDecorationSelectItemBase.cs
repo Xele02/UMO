@@ -216,7 +216,7 @@ namespace XeApp.Game.Menu
 			{
 				if(item.NPADACLCNAN_Category != EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef)
 				{
-					if(item.NPADACLCNAN_Category != EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft)
+					if(item.NPADACLCNAN_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft)
 						return 2;
 					return 0;
 				}
@@ -645,7 +645,13 @@ namespace XeApp.Game.Menu
 		{
 			if(!m_window.IsAnimPlaying && !IsTouchUp && m_enableSelectItem)
 			{
-				return pointerEventData.pointerId == 0;
+				return 
+#if UNITY_ANDROID
+				pointerEventData.pointerId == 0
+#else
+				pointerEventData.pointerId == -1
+#endif
+				;
 			}
 			return false;
 		}
@@ -655,7 +661,13 @@ namespace XeApp.Game.Menu
 		{
 			if(m_touchState.nowState != TouchState.State.TouchScroll && m_enableSelectItem)
 			{
-				return pointerEventData.pointerId == 0;
+				return 
+#if UNITY_ANDROID
+				pointerEventData.pointerId == 0
+#else
+				pointerEventData.pointerId == -1
+#endif
+				;
 			}
 			return false;
 		}

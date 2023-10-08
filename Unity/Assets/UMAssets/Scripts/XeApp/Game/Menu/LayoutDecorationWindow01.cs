@@ -436,7 +436,7 @@ namespace XeApp.Game.Menu
 		{
 			m_tabNum = tab.Length;
 			int frame = TabFrameByTabCount(tab.Length);
-			if(type != DecorationDecorator.DecoratorType.Extra)
+			if(type == DecorationDecorator.DecoratorType.Extra)
 			{
 				m_tabNum = 1;
 				frame = 6;
@@ -452,20 +452,21 @@ namespace XeApp.Game.Menu
 			m_tabChangeBase.StartChildrenAnimGoStop(frame, frame);
 			for(int i = 0; i < m_tabNum; i++)
 			{
-				int index = GetLayoutIndex(i);
-				if(index != -1)
+				int index = i;
+				int i2 = GetLayoutIndex(i);
+				if(i2 != -1)
 				{
-					m_tabLayoutList[index].ChangeTabCallback = changeTabCallBack;
+					m_tabLayoutList[i2].ChangeTabCallback = changeTabCallBack;
 					if(type == DecorationDecorator.DecoratorType.Extra)
 					{
-						m_tabButtons[index].ClearOnClickCallback();
+						m_tabButtons[i2].ClearOnClickCallback();
 					}
 					else
 					{
-						m_tabLayoutList[index].m_type.StartAllAnimGoStop((int)tab[i], (int)tab[i]);
-						m_tabLayoutList[index].m_typeSelect.StartAllAnimGoStop((int)tab[i], (int)tab[i]);
-						m_tabButtons[index].ClearOnClickCallback();
-						m_tabButtons[index].AddOnClickCallback(() =>
+						m_tabLayoutList[i2].m_type.StartAllAnimGoStop((int)tab[i], (int)tab[i]);
+						m_tabLayoutList[i2].m_typeSelect.StartAllAnimGoStop((int)tab[i], (int)tab[i]);
+						m_tabButtons[i2].ClearOnClickCallback();
+						m_tabButtons[i2].AddOnClickCallback(() =>
 						{
 							//0x18C7494
 							ChangeTab(index);
@@ -586,7 +587,7 @@ namespace XeApp.Game.Menu
 				KDKFHGHGFEK data = new KDKFHGHGFEK();
 				m_viewDecoItemDataList.Add(data);
 			}
-			for(int i = 0; i < m_viewDecoItemDataList.Count; i++)
+			for(int i = 0; i < selectItemDataList.Count; i++)
 			{
 				if(selectItemDataList[i].NPADACLCNAN_Category != 0)
 				{
