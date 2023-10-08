@@ -19,5 +19,7 @@ namespace XeApp.Game.Menu
 		private RawImageEx m_imageClass;
 		[SerializeField]
 		private ActionButton m_button;
-	}
+
+        protected override ButtonBase selectButton => throw new System.NotImplementedException();
+    }
 }

@@ -1,8 +1,14 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
+using UnityEngine.UI;
+using XeApp.Core;
+using XeApp.Game;
 using XeApp.Game.Menu;
 using XeSys;
+using XeSys.Gfx;
 
 namespace XeApp
 {
@@ -81,63 +87,305 @@ namespace XeApp
 		private List<DecorationItemBase> m_tapSetItemList = new List<DecorationItemBase>(); // 0x84
 		public bool ReactingPlushToys; // 0x88
 
-		//public GameObject SpriteBase { get; } 0x1ABB6E8
+		public GameObject SpriteBase { get { return m_spriteBase; } } //0x1ABB6E8
 		public EnableControlType m_controlType { get; private set; } // 0x7C
 		public bool IsLoadedItemManager { get; private set; } // 0x80
 
 		//// RVA: 0x1AB9C4C Offset: 0x1AB9C4C VA: 0x1AB9C4C
-		//public void Create(GameObject canvasPrefab, DecorationCanvas canvas) { }
+		public void Create(GameObject canvasPrefab, DecorationCanvas canvas)
+		{
+			m_decorationCanvas = canvas;
+			IsLoadedItemManager = true;
+			InitOrderOffset();
+			InitResource(canvasPrefab);
+		}
 
 		//// RVA: 0x1AD6348 Offset: 0x1AD6348 VA: 0x1AD6348
-		//private void InitOrderOffset() { }
+		private void InitOrderOffset()
+		{
+			int object_set_max = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA("object_set_max", 50);
+			int chara_set_max = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA("chara_set_max", 5);
+			int c = object_set_max + chara_set_max;
+			for(int i = 0; i < m_priorityOffset.Length; i++)
+			{
+				m_priorityOffset[i] = c;
+				c += object_set_max + chara_set_max;
+			}
+		}
 
 		//// RVA: 0x1AD6530 Offset: 0x1AD6530 VA: 0x1AD6530
-		//public void InitResource(GameObject canvasPrefab) { }
+		public void InitResource(GameObject canvasPrefab)
+		{
+			m_itemRootTransform = canvasPrefab.transform.Find(DecorationConstants.ItemRoot2 + "SpriteBase");
+			m_spriteBase = canvasPrefab.transform.Find(DecorationConstants.ItemRoot2 + "SpriteBase/DecorationItem").gameObject;
+			m_spriteBase.SetActive(false);
+			m_CanvasRect = m_itemRootTransform.parent.parent.GetComponent<RectTransform>();
+		}
 
 		//// RVA: 0x1AC1908 Offset: 0x1AC1908 VA: 0x1AC1908
-		//public void SetItemControllerLayout(DecorationItemControllerLayout layout) { }
+		public void SetItemControllerLayout(DecorationItemControllerLayout layout)
+		{
+			m_decorationItemControllerLayout = layout;
+			layout.transform.SetParent(m_itemRootTransform);
+			m_decorationItemControllerLayout.Hide();
+		}
 
 		//// RVA: 0x1ABB4D0 Offset: 0x1ABB4D0 VA: 0x1ABB4D0
-		//public void LoadItem(int resourceId, Transform parent, DecorationItemBaseSetting setting, DecorationItemManager.PostType postType, DecorationItemArgsBase args) { }
+		public void LoadItem(int resourceId, Transform parent, DecorationItemBaseSetting setting, DecorationItemManager.PostType postType, DecorationItemArgsBase args)
+		{
+			IsLoadedItemManager = false;
+			PreLoadItem(parent);
+			m_moveBeginOffsetPosition = Vector2.zero;
+			DecorationItemBase item = CreateDecorationItem(resourceId);
+			item.Prepare(m_decorationCanvas);
+			item.PostType = postType;
+			if(postType == PostType.Posted)
+			{
+				m_editItem = null;
+				setting.InitOrder = InitSortingOrder(setting.PriorityControl);
+			}
+			else if(postType == PostType.DragNewPost)
+			{
+				m_editItem = item;
+				m_isNewPostSetting = true;
+				m_isNewPostSettingBegin = true;
+				item.PostType = PostType.DragNewPost;
+				setting.InitOrder = InitSortingOrder(setting.PriorityControl);
+			}
+			else if(postType == PostType.TapNewPost)
+			{
+				m_editItem = null;
+				setting.InitOrder = InitSortingOrder(setting.PriorityControl);
+			}
+			this.StartCoroutineWatched(Co_LoadItem(item, resourceId, null, setting, args));
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AC228 Offset: 0x6AC228 VA: 0x6AC228
 		//// RVA: 0x1AD6A24 Offset: 0x1AD6A24 VA: 0x1AD6A24
-		//public IEnumerator Co_LoadItem(DecorationItemBase item, int resourceId, Transform parent, DecorationItemBaseSetting setting, DecorationItemArgsBase args) { }
+		public IEnumerator Co_LoadItem(DecorationItemBase item, int resourceId, Transform parent, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
+		{
+			//0xBB085C
+			item.LoadResource(m_spriteBase, EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(resourceId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(resourceId), setting, args);
+			yield return new WaitUntil(() =>
+			{
+				//0xBAF948
+				return item.IsLoaded;
+			});
+			InitItem(item);
+			AddItem(item);
+			if(item.IsNewPost())
+			{
+				if((GetFrameButtonType(item) & LayoutDecorationFrameButton.ButtonType.PriUp) != 0)
+				{
+					BringToFront(item);
+				}
+				item.AutoFlip();
+				if(item.PostType == PostType.TapNewPost)
+				{
+					SetTapPostion(item);
+				}
+				else
+				{
+					FirstSetting();
+				}
+				OnMoveCallback(item);
+				m_decorationItemControllerLayout.UpdateFramePosition(item);
+				CreateItemCallback(item);
+				item.Show();
+				UpdateOrder();
+			}
+			IsLoadedItemManager = true;
+		}
 
 		//// RVA: 0x1AD6B0C Offset: 0x1AD6B0C VA: 0x1AD6B0C
-		//private void SetTapPostion(DecorationItemBase item) { }
+		private void SetTapPostion(DecorationItemBase item)
+		{
+			List<DecorationItemBase> l = new  List<DecorationItemBase>();
+			foreach(var t in m_tapSetItemList)
+			{
+				if(item.Setting.AttributeType == t.Setting.AttributeType)
+					l.Add(t);
+			}
+			Vector2[] vs = new Vector2[2];
+			m_decorationCanvas.GetBgCenterLine(item.Setting.AttributeType, ref vs);
+			float f = m_decorationCanvas.GetVisibilityRect().width;
+			Vector2 v1 = new Vector2(0, (vs[0].y + vs[1].y) * 0.5f);
+			int tap_set_interval_rate = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA("tap_set_interval_rate", 50);
+			int tap_set_interval_loop_y = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA("tap_set_interval_loop_y", 64);
+			item.Position = v1;
+			int d = 0;
+			float f2 = 0;
+			for(int i = 0; i < l.Count; i++)
+			{
+				if(((l.Count | i) & 1) == 0 || (i & l.Count & 1) != 0)
+				{
+					//LAB_01ad7018
+					f2 += tap_set_interval_rate * 0.01f * l[i].Size.x;
+					if(f * 0.5f <= f2 + item.Size.x * 0.5)
+					{
+						d++;
+						f2 = 0;
+					}
+				}
+			}
+			float f3;
+			if((l.Count & 1) == 0)
+			{
+				f3 = item.Position.x - (f2 + item.Size.x * 0.5f);
+			}
+			else
+			{
+				f3 = item.Position.x + f2 + item.Size.x * 0.5f;
+			}
+			item.Position = new Vector2(f3, item.Position.y + d * -tap_set_interval_loop_y);
+			m_tapSetItemList.Add(item);
+		}
 
 		//// RVA: 0x1ABCFB0 Offset: 0x1ABCFB0 VA: 0x1ABCFB0
-		//public void TapSetItemClear() { }
+		public void TapSetItemClear()
+		{
+			m_tapSetItemList.Clear();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AC2A0 Offset: 0x6AC2A0 VA: 0x6AC2A0
 		//// RVA: 0x1AC1DB4 Offset: 0x1AC1DB4 VA: 0x1AC1DB4
-		//public IEnumerator Co_CreateLayoutCache() { }
+		public IEnumerator Co_CreateLayoutCache()
+		{
+			//0xBAFCC0
+			yield return Co.R(Co_CreateLayoutCache(LayoutCachaName.SpItemLeveupIcon, 3));
+			yield return Co.R(Co_CreateLayoutCache(LayoutCachaName.SpItemPopIcon, 20));
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AC318 Offset: 0x6AC318 VA: 0x6AC318
 		//// RVA: 0x1AD7320 Offset: 0x1AD7320 VA: 0x1AD7320
-		//private IEnumerator Co_CreateLayoutCache(DecorationItemManager.LayoutCachaName name, int count) { }
+		private IEnumerator Co_CreateLayoutCache(LayoutCachaName name, int count)
+		{
+			LayoutUGUIRuntime runtime; // 0x20
+			List<GameObject> list; // 0x24
+			Vector2 offsetPosition; // 0x28
+			AssetBundleLoadLayoutOperationBase op; // 0x30
+
+			//0xBAFE28
+			runtime = null;
+			list = null;
+			if(!m_layoutCacheDict.TryGetValue((int)name, out list))
+			{
+				list = new List<GameObject>();
+				m_layoutCacheDict.Add((int)name, list);
+			}
+			offsetPosition = new Vector2(0, 0);
+			string prefabName = "";
+			if(name == LayoutCachaName.SpItemPopIcon)
+			{
+				prefabName = LayoutDecorationItemCollection.AssetName;
+			}
+			else
+			{
+				prefabName = "root_deco_lvup_icon_layout_root";
+				offsetPosition = new Vector2(30, 50);
+			}
+			op = AssetBundleManager.LoadLayoutAsync(DecorationConstants.BundleName, prefabName);
+			GameObject go = null;
+			yield return op;
+			yield return Co.R(op.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject inst) =>
+			{
+				//0xBAF984
+				go = inst;
+			}));
+			Graphic[] gs = go.GetComponentsInChildren<Graphic>(true);
+			for(int i = 0; i < gs.Length; i++)
+			{
+				gs[i].raycastTarget = false;
+			}
+			runtime = go.GetComponent<LayoutUGUIRuntime>();
+			runtime.GetComponent<RectTransform>().anchoredPosition = offsetPosition;
+			for(int i = 1; i < count; i++)
+			{
+				LayoutUGUIRuntime r = Instantiate(runtime);
+				r.IsLayoutAutoLoad = false;
+				r.Layout = runtime.Layout.DeepClone();
+				r.UvMan = runtime.UvMan;
+				r.LoadLayout();
+				r.transform.SetParent(transform);
+				list.Add(r.gameObject);
+			}
+			runtime.transform.SetParent(transform, false);
+			yield return null;
+			list.Add(runtime.gameObject);
+			AssetBundleManager.UnloadAssetBundle(DecorationConstants.BundleName, false);
+			for(int i = 0; i < list.Count; i++)
+			{
+				list[i].SetActive(false);
+			}
+			
+		}
 
 		//// RVA: 0x1AD73DC Offset: 0x1AD73DC VA: 0x1AD73DC
-		//public GameObject AllocCache(DecorationItemManager.LayoutCachaName name) { }
+		public GameObject AllocCache(LayoutCachaName name)
+		{
+			List<GameObject> l;
+			if(m_layoutCacheDict.TryGetValue((int)name, out l))
+			{
+				GameObject r = l[0];
+				l.RemoveAt(0);
+				return r;
+			}
+			return null;
+		}
 
 		//// RVA: 0x1AD74E0 Offset: 0x1AD74E0 VA: 0x1AD74E0
-		//public void FreeCache(DecorationItemManager.LayoutCachaName name, GameObject go) { }
+		public void FreeCache(LayoutCachaName name, GameObject go)
+		{
+			List<GameObject> l;
+			if(m_layoutCacheDict.TryGetValue((int)name, out l))
+			{
+				go.transform.SetParent(transform, false);
+				go.SetActive(false);
+				l.Add(go);
+			}
+		}
 
 		//// RVA: 0x1ABF134 Offset: 0x1ABF134 VA: 0x1ABF134
-		//public int InitSortingOrder(DecorationItemBaseSetting.PriorityControlType priorityControlType) { }
+		public int InitSortingOrder(DecorationItemBaseSetting.PriorityControlType priorityControlType)
+		{
+			return m_decorationItemList.Count + BaseSortingOrder(priorityControlType);
+		}
 
 		//// RVA: 0x1AD7624 Offset: 0x1AD7624 VA: 0x1AD7624
-		//private int BaseSortingOrder(DecorationItemBaseSetting.PriorityControlType priorityControlType) { }
+		private int BaseSortingOrder(DecorationItemBaseSetting.PriorityControlType priorityControlType)
+		{
+			return m_priorityOffset[(int)priorityControlType];
+		}
 
 		//// RVA: 0x1AD673C Offset: 0x1AD673C VA: 0x1AD673C
-		//private void PreLoadItem(Transform parent) { }
+		private void PreLoadItem(Transform parent)
+		{
+			m_spriteBase.transform.SetParent(parent, false);
+			m_spriteBase.SetActive(true);
+		}
 
 		//// RVA: 0x1AD766C Offset: 0x1AD766C VA: 0x1AD766C
-		//private void InitItem(DecorationItemBase item) { }
+		private void InitItem(DecorationItemBase item)
+		{
+			item.InitController();
+			item.PointerDownCallback = SelectCallback;
+			item.ClickCallback = ClickCallback;
+			item.DragCallback = MoveCallback;
+			item.PointerUpCallback = LeaveCallback;
+			item.BeginDragCallback = MoveBeginCallback;
+			item.SerifButtonCallback = SerifButtonCallback;
+			item.PriorityButtonCallback = OnClickPriorityButton;
+			item.FlipButtonCallback = FlipButtonCallback;
+			item.ChangeKiraCallback = ChangeKiraCallback;
+		}
 
 		//// RVA: 0x1AD791C Offset: 0x1AD791C VA: 0x1AD791C
-		//private void AddItem(DecorationItemBase item) { }
+		private void AddItem(DecorationItemBase item)
+		{
+			if(item.DecorationItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif)
+				return;
+			m_decorationItemList.Add(item);
+		}
 
 		//// RVA: 0x1AD79BC Offset: 0x1AD79BC VA: 0x1AD79BC
 		//private void MoveBegin(DecorationItemBase item, Vector2 touchPostion) { }
@@ -166,7 +414,25 @@ namespace XeApp
 		//private void Select(DecorationItemBase item) { }
 
 		//// RVA: 0x1AD7C40 Offset: 0x1AD7C40 VA: 0x1AD7C40
-		//private void SelectCallback(DecorationItemBase item, Vector2 touchPosition) { }
+		private void SelectCallback(DecorationItemBase item, Vector2 touchPosition)
+		{
+			if(m_controlType == EnableControlType.Edit)
+			{
+				if(item.CanEdit)
+				{
+					if(item.Lock)
+						return;
+					m_isSelectItem = true;
+					OnSelectCallback(item);
+					return;
+				}
+			}
+			else if(item.CheckEnableControl(DecorationItemBase.ControlType.LongTap | DecorationItemBase.ControlType.Tap))
+			{
+				PointerDownCallback(item);
+				item.PointerDown(touchPosition);
+			}
+		}
 
 		//// RVA: 0x1AD7D84 Offset: 0x1AD7D84 VA: 0x1AD7D84
 		private void ShowDecorationItemController(DecorationItemBase item)
@@ -221,20 +487,78 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AD811C Offset: 0x1AD811C VA: 0x1AD811C
-		//public void ClickCallback(DecorationItemBase item) { }
+		public void ClickCallback(DecorationItemBase item)
+		{
+			if(m_controlType == EnableControlType.Edit)
+				return;
+			if(item.CheckEnableControl(DecorationItemBase.ControlType.Tap))
+			{
+				ItemClickCallback(item);
+				item.Click();
+			}
+		}
 
 		//// RVA: 0x1AD67BC Offset: 0x1AD67BC VA: 0x1AD67BC
-		//private DecorationItemBase CreateDecorationItem(int id) { }
+		private DecorationItemBase CreateDecorationItem(int id)
+		{
+			switch(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(id))
+			{
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj:
+					return m_itemRootTransform.gameObject.AddComponent<DecorationItem>();
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara:
+					return m_itemRootTransform.gameObject.AddComponent<DecorationChara>();
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif:
+					return m_itemRootTransform.gameObject.AddComponent<DecorationSerif>();
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp:
+					return m_itemRootTransform.gameObject.AddComponent<DecorationSp>();
+				default:
+					return null;
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster:
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef:
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft:
+					return m_itemRootTransform.gameObject.AddComponent<DecorationPoster>();
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.HEMGMACMGAB_DecoItemVFFigure:
+					return m_itemRootTransform.gameObject.AddComponent<DecorationItem>();
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso:
+					return m_itemRootTransform.gameObject.AddComponent<DecorationItem>();
+			}
+		}
 
 		//// RVA: 0x1AC03A4 Offset: 0x1AC03A4 VA: 0x1AC03A4
-		//public void Clear() { }
+		public void Clear()
+		{
+			m_isClearing = true;
+			this.StartCoroutineWatched(Co_Clear());
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AC390 Offset: 0x6AC390 VA: 0x6AC390
 		//// RVA: 0x1AD81DC Offset: 0x1AD81DC VA: 0x1AD81DC
-		//public IEnumerator Co_Clear() { }
+		public IEnumerator Co_Clear()
+		{
+			//0xBAF9B0
+			foreach(var c in m_decorationItemList)
+			{
+				c.Destory();
+			}
+			yield return new WaitUntil(() =>
+			{
+				//0x1AD9F70
+				foreach(var c in m_decorationItemList)
+				{
+					if(!c.IsDestoryed())
+						return false;
+				}
+				return true;
+			});
+			m_decorationItemList.Clear();
+			m_isClearing = false;
+		}
 
 		//// RVA: 0x1AC0008 Offset: 0x1AC0008 VA: 0x1AC0008
-		//public bool IsClearing() { }
+		public bool IsClearing()
+		{
+			return m_isClearing;
+		}
 
 		//// RVA: 0x1AD8264 Offset: 0x1AD8264 VA: 0x1AD8264
 		//public Dictionary<string, int> GetNumList() { }
@@ -283,7 +607,10 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1ABE980 Offset: 0x1ABE980 VA: 0x1ABE980
-		//public DecorationItemBase GetEditItem() { }
+		public DecorationItemBase GetEditItem()
+		{
+			return m_editItem;
+		}
 
 		//// RVA: 0x1AD87A4 Offset: 0x1AD87A4 VA: 0x1AD87A4
 		private void FirstSetting()
@@ -362,16 +689,113 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AD9174 Offset: 0x1AD9174 VA: 0x1AD9174
-		//private void BringToFront(DecorationItemBase item) { }
+		private void BringToFront(DecorationItemBase item)
+		{
+			ResetSortingOrder(item.Setting.PriorityControl);
+			int order = 1;
+			for(int i = 0; i < m_decorationItemList.Count; i++)
+			{
+				if(m_decorationItemList[i].Setting.PriorityControl == item.Setting.PriorityControl)
+					order++;
+			}
+			item.SortingOrder = order + m_priorityOffset[(int)item.Setting.PriorityControl];
+		}
 
 		//// RVA: 0x1AD98B4 Offset: 0x1AD98B4 VA: 0x1AD98B4
-		//private void SendToBack(DecorationItemBase item) { }
+		private void SendToBack(DecorationItemBase item)
+		{
+			ResetSortingOrder(item.Setting.PriorityControl);
+			item.SortingOrder = m_priorityOffset[(int)item.Setting.PriorityControl];
+		}
 
 		//// RVA: 0x1AD9310 Offset: 0x1AD9310 VA: 0x1AD9310
-		//private void ResetSortingOrder(DecorationItemBaseSetting.PriorityControlType type) { }
+		private void ResetSortingOrder(DecorationItemBaseSetting.PriorityControlType type)
+		{
+			bool[] bs = new bool[m_decorationItemList.Count];
+			for(int i = 0; i < bs.Length; i++)
+			{
+				bs[i] = false;
+			}
+			List<int> l = new List<int>();
+			for(int i = 0; i < m_decorationItemList.Count; i++)
+			{
+				int a = -1;
+				int c = int.MaxValue;
+				for(int j = 0; j < m_decorationItemList.Count; j++)
+				{
+					if(!bs[j])
+					{
+						if(m_decorationItemList[j].Setting.PriorityControl == type)
+						{
+							if(m_decorationItemList[j].SortingOrder < c)
+							{
+								c = m_decorationItemList[j].SortingOrder;
+								a = j;
+							}
+						}
+						else
+						{
+							bs[j] = true;
+						}
+					}
+				}
+				if(a == -1)
+					break;
+				bs[a] = true;
+				l.Add(a);
+			}
+			int order = 1;
+			foreach(var a in l)
+			{
+				if(m_decorationItemList[a].DecorationItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
+					order++;
+				m_decorationItemList[a].SortingOrder = order + m_priorityOffset[(int)type];
+				order++;
+			}
+		}
 
 		//// RVA: 0x1ABC8D4 Offset: 0x1ABC8D4 VA: 0x1ABC8D4
-		//public void EnableController(DecorationItemManager.EnableControlType type) { }
+		public void EnableController(EnableControlType type)
+		{
+			m_controlType = type;
+			foreach(var c in m_decorationItemList)
+			{
+				switch(m_controlType)
+				{
+					case EnableControlType.Edit:
+						c.EnableController(DecorationItemBase.ControlType.All);
+						break;
+					case EnableControlType.Unique:
+						if(c.DecorationItemCategory != EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara && c.DecorationItemCategory != EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp)
+						{
+							c.EnableController(false);
+						}
+						else
+						{
+							c.EnableController(DecorationItemBase.ControlType.All);
+						}
+						break;
+					case EnableControlType.ScreenShot:
+						if(c.DecorationItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
+						{
+							c.EnableController(DecorationItemBase.ControlType.Drag | DecorationItemBase.ControlType.Tap);
+						}
+						else
+						{
+							c.EnableController(false);
+						}
+						break;
+					case EnableControlType.None:
+						c.EnableController(false);
+						break;
+				}
+			}
+			if(type != EnableControlType.Edit)
+			{
+				m_editItem = null;
+				m_decorationItemControllerLayout.Hide();
+			}
+		}
 
 		//// RVA: 0x1ABCCB0 Offset: 0x1ABCCB0 VA: 0x1ABCCB0
 		public void StartAnimation()
@@ -398,13 +822,31 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1ABDCBC Offset: 0x1ABDCBC VA: 0x1ABDCBC
-		//public int GetCanEditItemCount() { }
+		public int GetCanEditItemCount()
+		{
+			int res = 0;
+			foreach(var k in m_decorationItemList)
+			{
+				if(k.CanEdit)
+					res++;
+			}
+			return res;
+		}
 
 		//// RVA: 0x1ABDE58 Offset: 0x1ABDE58 VA: 0x1ABDE58
 		//public int GetObjectCount() { }
 
 		//// RVA: 0x1ABDEA4 Offset: 0x1ABDEA4 VA: 0x1ABDEA4
-		//public int GetCharaCount() { }
+		public int GetCharaCount()
+		{
+			int res = 0;
+			foreach(var k in m_decorationItemList)
+			{
+				if (k.DecorationItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
+					res++;
+			}
+			return res;
+		}
 
 		//// RVA: 0x1ABE034 Offset: 0x1ABE034 VA: 0x1ABE034
 		public int GetDivaCount()
@@ -422,7 +864,17 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1ABD98C Offset: 0x1ABD98C VA: 0x1ABD98C
-		//public List<DecorationItemBase> GetItemList(ref List<int> postId) { }
+		public List<DecorationItemBase> GetItemList(ref List<int> postId)
+		{
+			List<DecorationItemBase> res = new List<DecorationItemBase>();
+			for(int i = 0; i < m_decorationItemList.Count; i++)
+			{
+				res.Add(m_decorationItemList[i]);
+				if(postId != null)
+					postId.Add(i);
+			}
+			return res;
+		}
 
 		//// RVA: 0x1ABD3B4 Offset: 0x1ABD3B4 VA: 0x1ABD3B4
 		//public List<DecorationItemBase> GetInteriorList(ref List<int> postId) { }
@@ -434,22 +886,52 @@ namespace XeApp
 		//public List<DecorationItemBase> GetExtraList(ref List<int> postId) { }
 
 		//// RVA: 0x1ABE21C Offset: 0x1ABE21C VA: 0x1ABE21C
-		//public void RemoveEditItem() { }
+		public void RemoveEditItem()
+		{
+			if(m_editItem == null)
+				return;
+			m_editItem.Destory();
+			m_decorationItemList.Remove(m_editItem);
+			m_editItem = null;
+		}
 
 		//// RVA: 0x1ABE69C Offset: 0x1ABE69C VA: 0x1ABE69C
-		//public void RemoveItem(DecorationItemBase item) { }
+		public void RemoveItem(DecorationItemBase item)
+		{
+			if(m_editItem == item)
+			{
+				RemoveEditItem();
+			}
+			else
+			{
+				item.Destory();
+				m_decorationItemList.Remove(item);
+			}
+		}
 
 		//// RVA: 0x1ABE338 Offset: 0x1ABE338 VA: 0x1ABE338
 		//public int GetItemPostId(DecorationItemBase item) { }
 
 		//// RVA: 0x1ABE478 Offset: 0x1ABE478 VA: 0x1ABE478
-		//public void HideLayoutController() { }
+		public void HideLayoutController()
+		{
+			m_decorationItemControllerLayout.Hide();
+		}
 
 		//// RVA: 0x1ABC824 Offset: 0x1ABC824 VA: 0x1ABC824
-		//public void EnablePost(bool isEnable) { }
+		public void EnablePost(bool isEnable)
+		{
+			m_decorationItemControllerLayout.EnablePost(isEnable);
+		}
 
 		//// RVA: 0x1ABB6F0 Offset: 0x1ABB6F0 VA: 0x1ABB6F0
-		//public void Show() { }
+		public void Show()
+		{
+			foreach(var c in m_decorationItemList)
+			{
+				c.Show();
+			}
+		}
 
 		//// RVA: 0x1AD7DC0 Offset: 0x1AD7DC0 VA: 0x1AD7DC0
 		private LayoutDecorationFrameButton.ButtonType GetFrameButtonType(DecorationItemBase item)
@@ -471,7 +953,33 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1ABC2C8 Offset: 0x1ABC2C8 VA: 0x1ABC2C8
-		//public bool HitCheck(DecorationItemBase item, Vector2 position) { }
+		public bool HitCheck(DecorationItemBase item, Vector2 position)
+		{
+			foreach(var c in m_decorationItemList)
+			{
+				if(c != item)
+				{
+					if(item.Setting.AttributeType != DecorationConstants.Attribute.Type.None)
+					{
+						if(c.CheckAttribute(item.Setting.AttributeType))
+						{
+							if(item.Setting.IsOverlay)
+							{
+								if(c.Setting.IsOverlay)
+								{
+									continue;
+								}
+							}
+							if(!CategoryCheck(item, c) && c.HitCheck(item, position))
+							{
+								return true;
+							}
+						}
+					}
+				}
+			}
+			return false;
+		}
 
 		//// RVA: 0x1AC47E8 Offset: 0x1AC47E8 VA: 0x1AC47E8
 		public bool HitCheckThinkness(DecorationItemBase item, Vector2 position, out DecorationItemBase hitItem)
@@ -521,13 +1029,60 @@ namespace XeApp
 		//public void RemoveAllItem() { }
 
 		//// RVA: 0x1ABED90 Offset: 0x1ABED90 VA: 0x1ABED90
-		//public void EditItem(DecorationItemBase item, DecorationScrollController scrollController) { }
+		public void EditItem(DecorationItemBase item, DecorationScrollController scrollController)
+		{
+			m_editItem = item;
+			m_editRestoreData.postion = item.Position;
+			m_editRestoreData.order = item.SortingOrder;
+			m_editRestoreData.flip = item.IsFlip();
+			m_editRestoreData.statusFlag = item.m_statusFlag;
+			m_editRestoreData.isNewPost = false;
+			m_scrollController = scrollController;
+		}
 
 		//// RVA: 0x1ABEEAC Offset: 0x1ABEEAC VA: 0x1ABEEAC
-		//public void RestroreEditItem() { }
+		public void RestroreEditItem()
+		{
+			if(m_editItem != null)
+			{
+				if(!m_editRestoreData.isNewPost)
+				{
+					if(m_editItem.IsEnablePost)
+						return;
+					m_editItem.Position = m_editRestoreData.postion;
+					m_editItem.SortingOrder = m_editRestoreData.order;
+					m_editItem.Flip(m_editRestoreData.flip);
+					m_editItem.m_statusFlag = m_editRestoreData.statusFlag;
+					EnablePost(true);
+					m_decorationItemControllerLayout.UpdateFramePosition(m_editItem);
+					m_editItem = null;
+				}
+			}
+		}
 
 		//// RVA: 0x1AC2620 Offset: 0x1AC2620 VA: 0x1AC2620
-		//public void InitSerifResource(Transform parent) { }
+		public void InitSerifResource(Transform parent)
+		{
+			foreach(var c in m_decorationItemList)
+			{
+				if(c is DecorationChara)
+				{
+					DecorationChara chara = c as DecorationChara;
+					if(chara.Setting.InitWord != 0)
+					{
+						foreach(var s in IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif)
+						{
+							if(s.PPFNGGCBJKC == chara.Setting.InitWord)
+							{
+								DecorationItemBaseSetting setting = new DecorationItemBaseSetting();
+								LoadItem(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif, chara.Setting.InitWord), parent, setting, PostType.Posted, new DecorationSerifArgs(s.GBJFNGCDKPM_FrameId, NCPPAHHCCAO.GHHOBKGGADG(s.PPFNGGCBJKC), s.LDLGLHBGOKE_FontSize, chara));
+								break;
+							}
+						}
+					}
+				}
+			}
+		}
 
 		//// RVA: 0x1ABF1EC Offset: 0x1ABF1EC VA: 0x1ABF1EC
 		public bool IsItemTouch()
@@ -541,7 +1096,10 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1ABF380 Offset: 0x1ABF380 VA: 0x1ABF380
-		//public void WaitingChara(bool isWait) { }
+		public void WaitingChara(bool isWait)
+		{
+			m_isWaitingChara = isWait;
+		}
 
 		//// RVA: 0x1AD85BC Offset: 0x1AD85BC VA: 0x1AD85BC
 		private void WaitingChara()
@@ -565,7 +1123,7 @@ namespace XeApp
 				DecorationChara chara = c as DecorationChara;
 				if(chara != null)
 				{
-					if(chara.ViewData.PPFNGGCBJKC > 0)
+					if(chara.ViewData.PPFNGGCBJKC_Id > 0)
 					{
 						res.Add(chara);
 					}
@@ -600,7 +1158,20 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AD9948 Offset: 0x1AD9948 VA: 0x1AD9948
-		//private bool CategoryCheck(DecorationItemBase item1, DecorationItemBase item2) { }
+		private bool CategoryCheck(DecorationItemBase item1, DecorationItemBase item2)
+		{
+			if(DecorationConstants.IsRug(item1))
+			{
+				if(!DecorationConstants.IsRug(item2))
+					return true;
+			}
+			if(DecorationConstants.IsRug(item2))
+			{
+				if(!DecorationConstants.IsRug(item1))
+					return true;
+			}
+			return false;
+		}
 
 		//// RVA: 0x1AD9AA0 Offset: 0x1AD9AA0 VA: 0x1AD9AA0
 		private bool CategoryCheckThinkness(DecorationItemBase item1, DecorationItemBase item2)
@@ -617,16 +1188,19 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AD9E04 Offset: 0x1AD9E04 VA: 0x1AD9E04
-		//private void OnClickPriorityButton(DecorationItemBase item, LayoutDecorationFrameButton.ButtonType type) { }
+		private void OnClickPriorityButton(DecorationItemBase item, LayoutDecorationFrameButton.ButtonType type)
+		{
+			if(type == LayoutDecorationFrameButton.ButtonType.PriDown)
+				SendToBack(item);
+			else if(type == LayoutDecorationFrameButton.ButtonType.PriUp)
+				BringToFront(item);
+			PriorityButtonCallback();
+		}
 
 		//// RVA: 0x1ABFAC4 Offset: 0x1ABFAC4 VA: 0x1ABFAC4
 		//public void Lock() { }
 
 		//// RVA: 0x1ABFC44 Offset: 0x1ABFC44 VA: 0x1ABFC44
 		//public void UnLock() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6AC408 Offset: 0x6AC408 VA: 0x6AC408
-		//// RVA: 0x1AD9F70 Offset: 0x1AD9F70 VA: 0x1AD9F70
-		//private bool <Co_Clear>b__75_0() { }
 	}
 }

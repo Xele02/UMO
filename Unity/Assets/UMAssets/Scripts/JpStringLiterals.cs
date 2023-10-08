@@ -8,6 +8,7 @@ class JpStringLiterals
 	public const string StringLiteral_8280 = "初期化されていません。"; // 0x03bb0c18
 	public const string StringLiteral_8676 = "ベース★3以下のカードでリーフ枚数が0でない"; //0x3bb1248
 	public const string StringLiteral_8686 = "なし"; // 0x03bb1270
+	public const string StringLiteral_9366 = "デコチャット"; //0x03bb1d10
 	public const string StringLiteral_9528 = "想定していない人数が入っています　id:"; //0x03bb1f98
 	public const string StringLiteral_9555 = "event_quest"; // 0x03bb2004
 	public const string StringLiteral_9630 = "から新しいメッセージがあります。"; // 0x03bb2130
@@ -89,6 +90,9 @@ class JpStringLiterals
 	public const string StringLiteral_10309 = "エナジー回復"; // 0x03bb2bcc
 	public const string StringLiteral_10310 = "エナジーが全回復しました！"; // 0x03bb2bd0
 	public const string StringLiteral_10314 = "？？？"; //0x03bb2be0
+	public const string StringLiteral_10338 = "購入上限数を超えている"; //0x03bb2c40
+	public const string StringLiteral_10339 = "所持数が足りない"; //0x03bb2c44
+	public const string StringLiteral_10340 = "Sakashoの商品がない"; //0x03bb2c48
 	public const string StringLiteral_10345 = "イベント クエストID="; //0x03bb2c5c
 	public const string StringLiteral_10346 = "LinkError : 自分自身のIDをリンクIDに指定している"; // 0x03bb2c60
 	public const string StringLiteral_10416 = "<color=pink>最高スコア更新 "; // 0x03bb2d78
@@ -115,6 +119,10 @@ class JpStringLiterals
 	public const string StringLiteral_11081 = "無限"; // 0x03bb37dc
 	public const string StringLiteral_11082 = "ストーリー"; // 0x03bb37e0
 	public const string StringLiteral_11083 = "あと"; // 0x03bb37e4
+	public const string StringLiteral_11086 = "SHOP 購入開始 label="; //0x03bb37f0
+	public const string StringLiteral_11088 = "SHOP 指定したラベルの商品が見つからない label="; //0x03bb37f8
+	public const string StringLiteral_11089 = "SHOP 商品の期限切れ label="; //0x03bb37fc
+	public const string StringLiteral_11090 = "SHOP 通信エラー発生 label="; //0x03bb3800
 	public const string StringLiteral_11117 = "デカルガチャ"; //0x03bb386c
 	public const string StringLiteral_11136 = "3D標準"; // 0x03bb38b8
 	public const string StringLiteral_11137 = "3D軽量"; // 0x03bb38bc
@@ -320,6 +328,15 @@ class JpStringLiterals
 	public const string StringLiteral_14529 = "ーーー"; // 0x03bb6dbc
 	public const string StringLiteral_14832 = "ふた"; // 0x03bb7278
 	public const string StringLiteral_15265 = "所持："; // 0x03bb793c
+	public const string StringLiteral_15475 = "ホームへ戻る"; //0x03bb7c84
+	public const string StringLiteral_15476 = "訪問リスト"; //0x03bb7c88
+	public const string StringLiteral_15477 = "一括回収"; //0x03bb7c8c
+	public const string StringLiteral_15478 = "拠点名変更"; //0x03bb7c90
+	public const string StringLiteral_15479 = "<color=red>** デコポイント交換所が見つからない **</color>"; //0x03bb7c94
+	public const string StringLiteral_15480 = "交換所"; //0x03bb7c98
+	public const string StringLiteral_15497 = "エネルギー充填機"; //0x03bb7cdc
+	public const string StringLiteral_15553 = "自分のデコルームへ戻る"; //0x03bb7dbc
+	public const string StringLiteral_15554 = "訪問デコルームからロビーへ戻る"; //0x03bb7dc0
 	public const string StringLiteral_15651 = "手動"; // 0x03bb7f44
 	public const string StringLiteral_15750 = "次の報酬まで {0} {1}"; // 0x03bb80d0
 	public const string StringLiteral_15778 = "追加報酬"; // 0x03bb8140
@@ -332,6 +349,8 @@ class JpStringLiterals
 	public const string StringLiteral_16417 = "初回アドベンチャー"; //0x03bb8b3c
 	public const string StringLiteral_16418 = "自分のデコルーム"; //0x03bb8b40
 	public const string StringLiteral_16419 = "【解放条件】\n\nプレイヤーランクを5にする。"; //0x03bb8b44
+	public const string StringLiteral_16496 = "解放していないキャラで\n親密度を上げることはできません。"; //0x03bb8c78
+	public const string StringLiteral_16775 = "配置数 {0:D2} / {1:D2}"; //0x03bb90d4
 	public const string StringLiteral_17446 = "さしすせそ"; // 0x03bb9b50
 	public const string StringLiteral_17754 = "(＋{0})"; // 0x03bba020
 	public const string StringLiteral_17777 = "獲得したアイテムはありません。"; // 0x03bba07c
@@ -355,6 +374,7 @@ class JpStringLiterals
 	public const string StringLiteral_20369 = "±{0}"; // 0x03bbc8fc
 	public const string StringLiteral_20382 = "（2回使用可）"; // 0x03bbc930
 	public const string StringLiteral_20383 = "<color={0}>（2回使用可）</color>"; //0x03bbc934
+	public const string StringLiteral_20406 = "フィルターボタンが押されました"; //0x03bbc990
 	public const string StringLiteral_20448 = "モーションが指定されていない、またはモーション数を超えています。[ "; //0x03bbca38
 	public const string StringLiteral_20457 = "シンプルモデルに歌姫IDが設定されておりません。"; //0x03bbca5c
 	public const string StringLiteral_20458 = "シンプルモデルに衣装モデルIDが設定されておりません。"; //0x03bbca60

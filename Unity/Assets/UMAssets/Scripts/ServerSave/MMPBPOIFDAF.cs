@@ -188,10 +188,16 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		// // RVA: 0x197210C Offset: 0x197210C VA: 0x197210C
-		// public bool JECJALJEDPP(int INDDJNMPONH) { }
+		public bool JECJALJEDPP(int INDDJNMPONH)
+		{
+			return (((INDDJNMPONH + 1) & DOAAOOHGODJ_PstNew) & 3) != 0;
+		}
 
 		// // RVA: 0x1972124 Offset: 0x1972124 VA: 0x1972124
-		// public void BILHHMGCPFC(int INDDJNMPONH) { }
+		public void BILHHMGCPFC(int INDDJNMPONH)
+		{
+			DOAAOOHGODJ_PstNew &= INDDJNMPONH == 0 ? 2 : 1;
+		}
 
 		// // RVA: 0x1972140 Offset: 0x1972140 VA: 0x1972140
 		public void DDLEICINOHK_Unlock(long BEBJKJKBOGH, int JKONPJKILCH)

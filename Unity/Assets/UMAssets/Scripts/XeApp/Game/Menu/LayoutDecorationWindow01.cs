@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using System;
 using System.Text;
+using mcrs;
+using System.Collections;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -141,14 +144,27 @@ namespace XeApp.Game.Menu
 		private int m_bgWallLeftId; // 0xDC
 		private int m_bgWallRightId; // 0xE0
 
-		//public bool LeftButtonHidden { set; } 0x18C1810
-		//public bool LeftButtonDisable { set; } 0x18C1844
-		//public bool RightButtonHidden { set; } 0x18C1878
-		//public bool RightButtonDisable { set; } 0x18C1978
-		//public ScrollRect ScrollRect { get; } 0x18B4FF8
+		public bool LeftButtonHidden { set { m_leftButton.Hidden = value; } } //0x18C1810
+		public bool LeftButtonDisable { set { m_leftButton.Disable = value; } } //0x18C1844
+		public bool RightButtonHidden { set {
+			m_rightButton.ForEach((ActionButton btn) =>
+			{
+				//0x18C6EBC
+				btn.Hidden = value;
+			});
+		} } //0x18C1878
+		public bool RightButtonDisable { set { m_rightButton.ForEach((ActionButton btn) =>
+		{
+			//0x18C6EF8
+			btn.Disable = value;
+		}); } } //0x18C1978
+		public ScrollRect ScrollRect { get { return m_scrollRect; } } //0x18B4FF8
 		public bool IsLoaded { get; private set; } // 0x84
 		public bool IsAnimPlaying { get; set; } // 0xAA
-		//private int ListCount { get; } 0x18C1A88
+		private int ListCount { get
+		{
+			return m_viewDecoItemDataList.Count + m_viewShopProductList.Count;
+		} } //0x18C1A88
 
 		// RVA: 0x18C1F64 Offset: 0x18C1F64 VA: 0x18C1F64
 		private void OnApplicationPause(bool pauseStatus)
@@ -163,7 +179,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x18B6F10 Offset: 0x18B6F10 VA: 0x18B6F10
-		//public bool GetIsDragCancel() { }
+		public bool GetIsDragCancel()
+		{
+			if(!m_isPower && !m_isPause)
+				return false;
+			m_isPower = false;
+			m_isPause = false;
+			return true;
+		}
 
 		// RVA: 0x18C1F7C Offset: 0x18C1F7C VA: 0x18C1F7C Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
@@ -174,7 +197,7 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < 8; i++)
 			{
 				AbsoluteLayout l = layout.FindViewByExId(TabViewNameTable[i]) as AbsoluteLayout;
-				if (l != null)
+				if (l == null)
 					m_tabLayoutList[i].m_select = null;
 				else
 				{
@@ -261,38 +284,218 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D6F6C Offset: 0x6D6F6C VA: 0x6D6F6C
 		//// RVA: 0x18C2980 Offset: 0x18C2980 VA: 0x18C2980
-		//public IEnumerator Co_LoadContentCache(LayoutDecorationWindow01.ContentCacheName cacheName, LayoutUGUIRuntime sourceInstance) { }
+		public IEnumerator Co_LoadContentCache(ContentCacheName cacheName, LayoutUGUIRuntime sourceInstance)
+		{
+			List<LayoutDecorationSelectItemBase> list;
+
+			//0x18C76BC
+			list = null;
+			Vector2 s = sourceInstance.GetComponent<LayoutDecorationSelectItemBase>().Size;
+			int row, column;
+			GetContentData(out row, out column, ref s);
+			int count = row * column;
+			if(!m_scrollContentCache.TryGetValue((int)cacheName, out list))
+			{
+				list = new List<LayoutDecorationSelectItemBase>();
+				m_scrollContentCache.Add((int)cacheName, list);
+			}
+			for(int i = 0; i < count; i++)
+			{
+				LayoutUGUIRuntime r = Instantiate(sourceInstance);
+				r.Layout = sourceInstance.Layout.DeepClone();
+				r.UvMan = sourceInstance.UvMan;
+				r.IsLayoutAutoLoad = false;
+				r.LoadLayout();
+				list.Add(r.GetComponent<LayoutDecorationSelectItemBase>());
+			}
+			yield return null;
+			foreach(var l in list)
+			{
+				l.transform.SetParent(transform, false);
+				l.gameObject.SetActive(false);
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D6FE4 Offset: 0x6D6FE4 VA: 0x6D6FE4
 		//// RVA: 0x18C2A60 Offset: 0x18C2A60 VA: 0x18C2A60
-		//private IEnumerator Co_LoadItemLayout(LayoutDecorationWindow01.SelectItemType type) { }
+		private IEnumerator Co_LoadItemLayout(SelectItemType type)
+		{
+			Vector2 size;
+			int row;
+			int col;
+
+			//0x18C7D00
+			int id = 0;
+			TodoLogger.LogError(0, "Check array");
+			if(type > 0 && (int)type - 1 < 4)
+				id = new int[4] { 1, 2, 2, 1 } [(int)type - 1];
+			List<LayoutDecorationSelectItemBase> l;
+			if(m_scrollContentCache.TryGetValue(id, out l))
+			{
+				size = l[0].Size;
+				GetContentData(out row, out col, ref size);
+				for(int i = 0; i < l.Count; i++)
+				{
+					m_swapScrollList.AddScrollObject(l[i]);
+					l[i].gameObject.SetActive(true);
+				}
+				yield return null;
+				m_swapScrollList.Apply(row, col, size, new Vector2(5, 5));
+				m_swapScrollList.SetContentEscapeMode(true);
+				if(m_swapScrollList != null)
+				{
+					m_swapScrollList.OnUpdateItem.RemoveAllListeners();
+					m_swapScrollList.OnUpdateItem.AddListener(Co_UpdateList);
+				}
+				m_windowText.text = "";
+				IsLoaded = true;
+			}
+		}
 
 		//// RVA: 0x18C2B28 Offset: 0x18C2B28 VA: 0x18C2B28
-		//private void ResetItem() { }
+		private void ResetItem()
+		{
+			m_isResetItem = true;
+			ResetTab();
+			foreach(var obj in m_swapScrollList.ScrollObjects)
+			{
+				obj.transform.SetParent(transform, false);
+				obj.gameObject.SetActive(false);
+			}
+			m_swapScrollList.RemoveScrollObject();
+		}
 
 		//// RVA: 0x18C2D58 Offset: 0x18C2D58 VA: 0x18C2D58
-		//private void ResetTab() { }
+		private void ResetTab()
+		{
+			m_viewDecoItemDataList.Clear();
+			m_viewShopProductList.Clear();
+		}
 
 		//// RVA: 0x18C2DFC Offset: 0x18C2DFC VA: 0x18C2DFC
-		//public void LoadResource(LayoutDecorationWindow01.SelectItemType type) { }
+		public void LoadResource(SelectItemType type)
+		{
+			m_type = type;
+			IsLoaded = false;
+			ResetItem();
+			this.StartCoroutineWatched(Co_LoadItemLayout(type));
+		}
 
 		//// RVA: 0x18C2E40 Offset: 0x18C2E40 VA: 0x18C2E40
-		//public void UpdateTabNewIcon(int tabIndex, bool isNew) { }
+		public void UpdateTabNewIcon(int tabIndex, bool isNew)
+		{
+			int idx = GetLayoutIndex(tabIndex);
+			if(idx == -1)
+				return;
+			m_tabLayoutList[idx].m_newIcon.StartChildrenAnimGoStop(!isNew ? 1 : 0, !isNew ? 1 : 0);
+		}
 
 		//// RVA: 0x18C2F4C Offset: 0x18C2F4C VA: 0x18C2F4C
-		//private void SettingTexture(DecorationDecorator.DecoratorType type) { }
+		private void SettingTexture(DecorationDecorator.DecoratorType type)
+		{
+			if(ButtonTextureIdTable[(int)type, 0] == 0)
+			{
+				m_leftButton.Hidden = true;
+			}
+			else
+			{
+				m_leftButton.Hidden = false;
+				m_leftButtonFont.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvManager.GetUVData(string.Format("deco_fnt_{0:D2}", ButtonTextureIdTable[(int)type, 0])));
+			}
+			if(ButtonTextureIdTable[(int)type, 1] == 0)
+			{
+				RightButtonHidden = true;
+			}
+			else
+			{
+				RightButtonHidden = false;
+				string k = string.Format("deco_fnt_{0:D2}", ButtonTextureIdTable[(int)type, 1]);
+				m_rightButtonFont.ForEach((RawImageEx font) =>
+				{
+					//0x18C7394
+					font.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvManager.GetUVData(k));
+				});
+				m_windowButtonTbl.StartChildrenAnimGoStop(ButtonTextureIdTable[(int)type, 1] == 15 ? 1 : 0, ButtonTextureIdTable[(int)type, 1] == 15 ? 1 : 0);
+			}
+		}
 
 		//// RVA: 0x18C33D4 Offset: 0x18C33D4 VA: 0x18C33D4
-		//public void Leave() { }
+		public void Leave()
+		{
+			if(!IsEnter)
+				return;
+			IsEnter = false;
+			m_windowBase.StartAllAnimGoStop("go_out", "st_out");
+			m_swapScrollList.ScrollRect.enabled = false;
+			m_swapScrollList.SetEnableScrollBar(false);
+			DisableSelectItem();
+		}
 
 		//// RVA: 0x18C3778 Offset: 0x18C3778 VA: 0x18C3778
-		//public void SetSetting(DecorationDecorator.DecoratorType type, DecorationDecorator.TabType[] tab, Action<int> changeTabCallBack) { }
+		public void SetSetting(DecorationDecorator.DecoratorType type, DecorationDecorator.TabType[] tab, Action<int> changeTabCallBack)
+		{
+			m_tabNum = tab.Length;
+			int frame = TabFrameByTabCount(tab.Length);
+			if(type != DecorationDecorator.DecoratorType.Extra)
+			{
+				m_tabNum = 1;
+				frame = 6;
+			}
+			else
+			{
+				if(type == DecorationDecorator.DecoratorType.Serif && !m_isEnableFamousPhrase4)
+				{
+					frame = TabFrameByTabCount(tab.Length - 1);
+					m_tabNum = tab.Length - 1;
+				}
+			}
+			m_tabChangeBase.StartChildrenAnimGoStop(frame, frame);
+			for(int i = 0; i < m_tabNum; i++)
+			{
+				int index = GetLayoutIndex(i);
+				if(index != -1)
+				{
+					m_tabLayoutList[index].ChangeTabCallback = changeTabCallBack;
+					if(type == DecorationDecorator.DecoratorType.Extra)
+					{
+						m_tabButtons[index].ClearOnClickCallback();
+					}
+					else
+					{
+						m_tabLayoutList[index].m_type.StartAllAnimGoStop((int)tab[i], (int)tab[i]);
+						m_tabLayoutList[index].m_typeSelect.StartAllAnimGoStop((int)tab[i], (int)tab[i]);
+						m_tabButtons[index].ClearOnClickCallback();
+						m_tabButtons[index].AddOnClickCallback(() =>
+						{
+							//0x18C7494
+							ChangeTab(index);
+							SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+						});
+					}
+				}
+			}
+			SettingTexture(type);
+			InitTabSetting(type);
+		}
 
 		//// RVA: 0x18C3DB4 Offset: 0x18C3DB4 VA: 0x18C3DB4
-		//public void Enter() { }
+		public void Enter()
+		{
+			if(IsEnter)
+				return;
+			IsEnter = true;
+			m_windowBase.StartAllAnimGoStop("go_in", "st_in");
+			m_swapScrollList.ScrollRect.enabled = true;
+			m_swapScrollList.SetEnableScrollBar(true);
+		}
 
 		//// RVA: 0x18C3EBC Offset: 0x18C3EBC VA: 0x18C3EBC
-		//public void Hide() { }
+		public void Hide() 
+		{
+			m_windowBase.StartAllAnimGoStop("st_wait", "st_wait");
+			m_swapScrollList.ScrollRect.enabled = false;
+			m_swapScrollList.SetEnableScrollBar(false);
+		}
 
 		//// RVA: 0x18C3FA4 Offset: 0x18C3FA4 VA: 0x18C3FA4
 		//private void SaveButtonCallBack() { }
@@ -301,16 +504,52 @@ namespace XeApp.Game.Menu
 		//private void ClearButtonCallBack() { }
 
 		//// RVA: 0x18C3FAC Offset: 0x18C3FAC VA: 0x18C3FAC
-		//private void ChangeTab(int tabIndex) { }
+		private void ChangeTab(int tabIndex)
+		{
+			m_selectTabIndex = tabIndex;
+			int index = GetLayoutIndex(tabIndex);
+			for(int i = 0; i < m_tabLayoutList.Length; i++)
+			{
+				if(m_tabLayoutList[i].m_select != null)
+					m_tabLayoutList[i].m_select.StartChildrenAnimGoStop(index == i ? 1 : 0, index == i ? 1 : 0);
+			}
+			if(index == -1)
+				return;
+			m_tabLayoutList[index].ChangeTabCallback(m_selectTabIndex);
+		}
 
 		//// RVA: 0x18C2ED8 Offset: 0x18C2ED8 VA: 0x18C2ED8
-		//private int GetLayoutIndex(int tabIndex) { }
+		private int GetLayoutIndex(int tabIndex)
+		{
+			if(m_tabNum <= tabIndex)
+				return -1;
+			if(m_tabNum - 1 <= tabIndex)
+				tabIndex = 7;
+			if(m_tabLayoutList[tabIndex].m_select == null)
+				tabIndex = -1;
+			return tabIndex;
+		}
 
 		//// RVA: 0x18C3CCC Offset: 0x18C3CCC VA: 0x18C3CCC
-		//private int TabFrameByTabCount(int tabCount) { }
+		private int TabFrameByTabCount(int tabCount)
+		{
+			if(tabCount < 1)
+				tabCount = 0;
+			if(tabCount >= TabFrameByCountTable.Length)
+				tabCount = TabFrameByCountTable.Length - 1;
+			return TabFrameByCountTable[tabCount];
+		}
 
 		//// RVA: 0x18C4164 Offset: 0x18C4164 VA: 0x18C4164
-		//public void GetContentData(out int row, out int column, ref Vector2 size) { }
+		public void GetContentData(out int row, out int column, ref Vector2 size)
+		{
+			row = 0;
+			column = 0;
+			size.x += 20;
+			size.y += 5;
+			column = Mathf.FloorToInt(m_windowSize.x / size.x);
+			row = Mathf.CeilToInt(m_windowSize.y / size.y) + 1;
+		}
 
 		//// RVA: 0x18C4254 Offset: 0x18C4254 VA: 0x18C4254
 		//public string AssetName(LayoutDecorationWindow01.SelectItemType type) { }
@@ -325,53 +564,258 @@ namespace XeApp.Game.Menu
 		//public void HideButton() { }
 
 		//// RVA: 0x18C44D0 Offset: 0x18C44D0 VA: 0x18C44D0
-		//public bool IsPlayingEnd() { }
+		public bool IsPlayingEnd()
+		{
+			return !m_windowBase.IsPlayingChildren();
+		}
 
 		//// RVA: 0x18C4500 Offset: 0x18C4500 VA: 0x18C4500
-		//public void ChangeTab(DecorationDecorator.TabType tabType, List<KDKFHGHGFEK> selectItemDataList, List<FJGOKILCBJA> productList) { }
+		public void ChangeTab(DecorationDecorator.TabType tabType, List<KDKFHGHGFEK> selectItemDataList, List<FJGOKILCBJA> productList)
+		{
+			SetSelectItemDataList(tabType, selectItemDataList, productList);
+			m_tab = tabType;
+			SetUpList();
+		}
 
 		//// RVA: 0x18C452C Offset: 0x18C452C VA: 0x18C452C
-		//private void SetSelectItemDataList(DecorationDecorator.TabType tabType, List<KDKFHGHGFEK> selectItemDataList, List<FJGOKILCBJA> productList) { }
+		private void SetSelectItemDataList(DecorationDecorator.TabType tabType, List<KDKFHGHGFEK> selectItemDataList, List<FJGOKILCBJA> productList)
+		{
+			ResetTab();
+			if(tabType == DecorationDecorator.TabType.Have && m_type == SelectItemType.Serif)
+			{
+				KDKFHGHGFEK data = new KDKFHGHGFEK();
+				m_viewDecoItemDataList.Add(data);
+			}
+			for(int i = 0; i < m_viewDecoItemDataList.Count; i++)
+			{
+				if(selectItemDataList[i].NPADACLCNAN_Category != 0)
+				{
+					m_viewDecoItemDataList.Add(selectItemDataList[i]);
+				}
+			}
+			if(tabType == DecorationDecorator.TabType.Have)
+				return;
+			m_viewShopProductList.AddRange(productList);
+		}
 
 		//// RVA: 0x18C4754 Offset: 0x18C4754 VA: 0x18C4754
 		//private void ChangeTabList(DecorationDecorator.TabType tab) { }
 
 		//// RVA: 0x18C475C Offset: 0x18C475C VA: 0x18C475C
-		//private void SetUpList() { }
+		private void SetUpList()
+		{
+			if(!m_isResetItem)
+				UpdateList(ListCount, !m_isReShow && (m_tab < DecorationDecorator.TabType.BgSet || m_tab > DecorationDecorator.TabType.BgFloor));
+			else
+			{
+				m_isResetItem = false;
+				UpdateList(ListCount, true);
+			}
+		}
 
 		//// RVA: 0x18C47C8 Offset: 0x18C47C8 VA: 0x18C47C8
 		//private bool IsResetScrollPosition(DecorationDecorator.TabType tab) { }
 
 		//// RVA: 0x18C4834 Offset: 0x18C4834 VA: 0x18C4834
-		//private void UpdateList(int count, bool resetScroll) { }
+		private void UpdateList(int count, bool resetScroll)
+		{
+			m_swapScrollList.SetItemCount(count);
+			float y;
+			if(resetScroll)
+			{
+				m_scrollPosition = 0;
+				y = 0;
+			}
+			else
+			{
+				m_scrollPosition = m_swapScrollList.ListTopPosition;
+				m_scrollPosition = Mathf.Clamp(m_scrollPosition, 0, m_scrollPosition);
+				y = Mathf.Abs(m_swapScrollList.RelativePositon);
+			}
+			m_swapScrollList.ResetScrollVelocity();
+			m_swapScrollList.SetPosition(m_scrollPosition, 0, y, false);
+			m_swapScrollList.VisibleRegionUpdate();
+			SetWindowText(ListCount);
+			m_isReShow = false;
+		}
 
 		//// RVA: 0x18C4A00 Offset: 0x18C4A00 VA: 0x18C4A00
-		//private void SetWindowText(int itemCount) { }
+		private void SetWindowText(int itemCount)
+		{
+			if(itemCount != 0)
+			{
+				m_windowText.text = "";
+			}
+			else
+			{
+				m_windowText.text = MessageManager.Instance.GetMessage("menu", m_type == SelectItemType.Serif ? "customstamp_have_serif_not" : "deco_no_have_text");
+			}
+		}
 
 		//// RVA: 0x18C3D70 Offset: 0x18C3D70 VA: 0x18C3D70
-		//private void InitTabSetting(DecorationDecorator.DecoratorType type) { }
+		private void InitTabSetting(DecorationDecorator.DecoratorType type)
+		{
+			if(m_decorationType == type)
+			{
+				m_isReShow = true;
+				ChangeTab(m_selectTabIndex);
+			}
+			else
+			{
+				ChangeTab(0);
+			}
+			m_decorationType = type;
+		}
 
 		//// RVA: 0x18C4B34 Offset: 0x18C4B34 VA: 0x18C4B34
-		//private void Co_UpdateList(int index, SwapScrollListContent content) { }
+		private void Co_UpdateList(int index, SwapScrollListContent content)
+		{
+			LayoutDecorationSelectItemBase c = content as LayoutDecorationSelectItemBase;
+			if(c == null)
+				return;
+			int itemId = 0;
+			if(index < m_viewDecoItemDataList.Count)
+			{
+				c.Setting(m_viewDecoItemDataList[index], GetPostNum(m_viewDecoItemDataList[index].KGBAOKCMALD), m_viewDecoItemDataList[index].FMGBBKHJDEC_CanKira, m_tab, m_type, this);
+				c.DecideItemCallback = (LayoutDecorationSelectItemBase it, bool isTapSelect) =>
+				{
+					//0x18C6AE0
+					OnDecideItem(it, isTapSelect);
+				};
+				itemId = m_viewDecoItemDataList[index].KGBAOKCMALD;
+			}
+			else
+			{
+				FJGOKILCBJA item = m_viewShopProductList[index - m_viewDecoItemDataList.Count];
+				c.SettingExchange(item, m_tab, m_type, this);
+				c.DecideItemCallback = (LayoutDecorationSelectItemBase _, bool isTapSelect) =>
+				{
+					//0x18C6C4C
+					TodoLogger.LogError(0, "DecideItemCallback");
+				};
+				itemId = item.KIJAPOFAGPN_ItemFullId;
+			}
+			if(itemId == 0 || !TryInstall(itemId))
+			{
+				c.EnableSelectItem();
+			}
+			else if(m_downLoadPolingCoroutine == null)
+			{
+				if(OnStartDownLoad != null)
+					return;
+				DisableSelectItem();
+				m_downLoadPolingCoroutine = this.StartCoroutineWatched(Co_AssetDownLoadPoling());
+			}
+			c.LoadTexture();
+			c.LayoutAllUpdate();
+		}
 
 		//// RVA: 0x18C5234 Offset: 0x18C5234 VA: 0x18C5234
-		//private bool TryInstall(int itemId) { }
+		private bool TryInstall(int itemId)
+		{
+			m_strBuilder.Clear();
+			KDKFHGHGFEK k = new KDKFHGHGFEK();
+            EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId);
+            k.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId), cat);
+			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg)
+			{
+				string str = DecorationConstants.GetItemBundleName(k, false, DecorationConstants.Attribute.Type.BgFloor);
+				if(str != "")
+					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(str);
+				str = DecorationConstants.GetItemBundleName(k, false, DecorationConstants.Attribute.Type.BgWallL);
+				if(str != "")
+					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(str);
+				str = DecorationConstants.GetItemBundleName(k, false, DecorationConstants.Attribute.Type.BgWallR);
+				if(str != "")
+					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(str);
+			}
+			else
+			{
+				string str = DecorationConstants.GetItemBundleName(k, false, DecorationConstants.Attribute.Type.None);
+				if(str != "")
+					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(str);
+				if(k.OHAMGNMKOII())
+				{
+					str = DecorationConstants.GetItemBundleName(k, true, DecorationConstants.Attribute.Type.None);
+					if(str != "")
+						KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(str);
+				}
+			}
+			return KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D705C Offset: 0x6D705C VA: 0x6D705C
 		//// RVA: 0x18C5638 Offset: 0x18C5638 VA: 0x18C5638
-		//private IEnumerator Co_AssetDownLoadPoling() { }
+		private IEnumerator Co_AssetDownLoadPoling()
+		{
+			//0x18C7514
+			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+				yield return null;
+			if(OnEndDownLoad != null)
+				OnEndDownLoad();
+			EnableSelectItem();
+			m_downLoadPolingCoroutine = null;
+		}
 
 		//// RVA: 0x18C4F50 Offset: 0x18C4F50 VA: 0x18C4F50
-		//private int GetPostNum(int id) { }
+		private int GetPostNum(int id)
+		{
+			int _id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(id);
+			if(m_type == SelectItemType.Bg)
+			{
+				if(m_tab >= DecorationDecorator.TabType.BgSet && m_tab <= DecorationDecorator.TabType.BgFloor)
+				{
+					switch(m_tab)
+					{
+						case DecorationDecorator.TabType.BgSet:
+							return -1;
+						case DecorationDecorator.TabType.BgWallL:
+							return _id == m_bgWallLeftId ? 1 : 0;
+						case DecorationDecorator.TabType.BgWallR:
+							return _id == m_bgWallRightId ? 1 : 0;
+						case DecorationDecorator.TabType.BgFloor:
+							return _id == m_bgFloorId ? 1 : 0;
+					}
+				}
+				return 0;
+			}
+			else if(m_type == SelectItemType.Serif)
+			{
+				if(m_speakChara != null)
+					return m_speakChara.GetSerifId() == _id ? 1 : 0;
+				return 0;
+			}
+			else
+			{
+				int r = 0;
+				foreach(var k in m_postItemList)
+				{
+					if(id == k.ResourceId)
+						r++;
+				}
+				return r;
+			}
+		}
 
 		//// RVA: 0x18C56E4 Offset: 0x18C56E4 VA: 0x18C56E4
-		//public void SetPostItemList(List<DecorationItemBase> list) { }
+		public void SetPostItemList(List<DecorationItemBase> list) 
+		{
+			m_postItemList = list;
+		}
 
 		//// RVA: 0x18C56EC Offset: 0x18C56EC VA: 0x18C56EC
-		//public void SetSpeakChara(DecorationChara chara) { }
+		public void SetSpeakChara(DecorationChara chara)
+		{
+			m_speakChara = chara;
+		}
 
 		//// RVA: 0x18C56F4 Offset: 0x18C56F4 VA: 0x18C56F4
-		//public void SetBgResourceId(int flId, int wlId, int wrId) { }
+		public void SetBgResourceId(int flId, int wlId, int wrId)
+		{
+			m_bgFloorId = flId;
+			m_bgWallLeftId = wlId;
+			m_bgWallRightId = wrId;
+		}
 
 		//// RVA: 0x18C5700 Offset: 0x18C5700 VA: 0x18C5700
 		//public void UpdateHaveRestNum(int resourceId, List<DecorationItemBase> list) { }
@@ -380,15 +824,25 @@ namespace XeApp.Game.Menu
 		//public void UpdateHaveRestNum() { }
 
 		//// RVA: 0x18C5CB8 Offset: 0x18C5CB8 VA: 0x18C5CB8
-		//public void EnableSelectItem() { }
+		public void EnableSelectItem()
+		{
+			foreach(var s in m_swapScrollList.ScrollObjects)
+			{
+				LayoutDecorationSelectItemBase l = s as LayoutDecorationSelectItemBase;
+				l.EnableSelectItem();
+			}
+		}
 
 		//// RVA: 0x18C34E4 Offset: 0x18C34E4 VA: 0x18C34E4
-		//public void DisableSelectItem() { }
+		public void DisableSelectItem()
+		{
+			foreach(var s in m_swapScrollList.ScrollObjects)
+			{
+				LayoutDecorationSelectItemBase layout = s as LayoutDecorationSelectItemBase;
+				layout.DisableSelectItem();
+			}
+		}
 		
-		//[CompilerGeneratedAttribute] // RVA: 0x6D7154 Offset: 0x6D7154 VA: 0x6D7154
-		//// RVA: 0x18C6AE0 Offset: 0x18C6AE0 VA: 0x18C6AE0
-		//private void <Co_UpdateList>b__115_0(LayoutDecorationSelectItemBase it, bool isTapSelect) { }
-
 		//[CompilerGeneratedAttribute] // RVA: 0x6D7164 Offset: 0x6D7164 VA: 0x6D7164
 		//// RVA: 0x18C6B1C Offset: 0x18C6B1C VA: 0x18C6B1C
 		//private void <Co_UpdateList>b__115_2() { }

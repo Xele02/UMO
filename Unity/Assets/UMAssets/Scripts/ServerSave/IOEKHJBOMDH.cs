@@ -136,7 +136,7 @@ public class IOEKHJBOMDH_DecoStamp : KLFDBFMNLBL_ServerSaveBlock
 	public List<GFPPDCEPLCM> FHBIIONKIDI_Stamps; // 0x28
 	public List<GFPPDCEPLCM> DMKMNGELNAE_Serif; // 0x2C
 
-	public override bool DMICHEJIAJL { get { TodoLogger.LogError(0, "DMICHEJIAJL"); return false; } } // 0xA0606C NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return true; } } // 0xA0606C NFKFOODCJJB
 
 	// // RVA: 0xA027AC Offset: 0xA027AC VA: 0xA027AC
 	public bool DDKEJHIGBGK_IsStampEnabled(IHFIAFDLAAK_DecoStamp GAPONCJOKAC, int PPFNGGCBJKC)

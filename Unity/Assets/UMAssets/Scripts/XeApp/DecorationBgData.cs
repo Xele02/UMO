@@ -57,10 +57,24 @@ namespace XeApp
 		//public void SettingInnerOuterBoundaryLine(Vector2[] leftFloor, Vector2[] rightFloor, Vector2[] leftFloorBottomFloor, Vector2[] rightFloorBottomFloor, Vector2[] leftWall, Vector2[] rightWall) { }
 
 		//// RVA: 0x1D81D10 Offset: 0x1D81D10 VA: 0x1D81D10
-		//public Rect GetRect() { }
+		public Rect GetRect()
+		{
+			if(m_rect.width <= 0)
+			{
+				return new Rect(m_LeftFloorBottomLine[0].x, m_LeftFloorBottomLine[1].y, m_RightFloorBottomLine[0].x - m_LeftFloorBottomLine[0].x, m_TopLeftLine[1].y - m_LeftFloorBottomLine[1].y);
+			}
+			return m_rect;
+		}
 
 		//// RVA: 0x1D81ED4 Offset: 0x1D81ED4 VA: 0x1D81ED4
-		//public Rect GetFloorRect() { }
+		public Rect GetFloorRect()
+		{
+			if(m_floorRect.width <= 0)
+			{
+				m_floorRect = new Rect(m_LeftFloorBottomLine[0].x, m_LeftFloorBottomLine[1].y, m_RightFloorBottomLine[0].x - m_LeftFloorBottomLine[0].x, m_LeftBoundaryLine[1].y - m_LeftFloorBottomLine[1].y);
+			}
+			return m_floorRect;
+		}
 
 		//// RVA: 0x1D82098 Offset: 0x1D82098 VA: 0x1D82098
 		public void GetInnerLine(DecorationConstants.Attribute.Type type, DecorationConstants.Attribute.AreaType areaType, out Vector2[] checkLeftInnerLine, out Vector2[] checkRightInnerLine)

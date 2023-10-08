@@ -203,7 +203,13 @@ namespace XeApp.Core
 		// public static string MakeAssetBundlePath(string assetBundleName) { }
 
 		// // RVA: 0xE130F4 Offset: 0xE130F4 VA: 0xE130F4
-		// public static AssetBundleLoadAllAssetOperationBase LoadDecorationItemAssetAsync(string assetBundleName) { }
+		public static AssetBundleLoadAllAssetOperationBase LoadDecorationItemAssetAsync(string assetBundleName)
+		{
+			LoadAssetBundle(assetBundleName, false);
+			AssetBundleLoadAllAssetOperation op = new AssetBundleLoadAllAssetOperation(assetBundleName);
+			m_InProgressOperations.Add(op);
+			return op;
+		}
 
 		// // RVA: 0xE131E4 Offset: 0xE131E4 VA: 0xE131E4
 		public static void UnloadAssetBundle(string assetBundleName, bool unloadAllLoadedObject = false)

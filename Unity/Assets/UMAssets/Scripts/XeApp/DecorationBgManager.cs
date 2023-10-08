@@ -1,5 +1,7 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XeApp.Core;
 
 namespace XeApp
 {
@@ -52,43 +54,158 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1D837DC Offset: 0x1D837DC VA: 0x1D837DC
-		//public void LoadResource() { }
+		public void LoadResource()
+		{
+			IsLoded = false;
+			this.StartCoroutineWatched(Co_LoadResource());
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AAB24 Offset: 0x6AAB24 VA: 0x6AAB24
 		//// RVA: 0x1D8380C Offset: 0x1D8380C VA: 0x1D8380C
-		//private IEnumerator Co_LoadResource() { }
+		private IEnumerator Co_LoadResource()
+		{
+			//0x1D871E8
+			yield return this.StartCoroutineWatched(Co_LoadBgResource());
+			SettingBgData();
+			IsLoded = true;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AAB9C Offset: 0x6AAB9C VA: 0x6AAB9C
 		//// RVA: 0x1D838B8 Offset: 0x1D838B8 VA: 0x1D838B8
-		//private IEnumerator Co_LoadBgResource() { }
+		private IEnumerator Co_LoadBgResource()
+		{
+			AssetBundleLoadAllAssetOperationBase op;
+
+			//0x1D86B50
+			op = AssetBundleManager.LoadAllAssetAsync(DecorationConstants.BgCmnAssetPath);
+			yield return op;
+			GameObject g = op.GetAsset<GameObject>(DecorationConstants.DecorationBgMeshPrefab);
+			GameObject g2 = GameObject.Find(DecorationConstants.BgRoot);
+			m_decorationBgPrefab = Instantiate(g, g2.transform, false);
+			m_decorationBgData = m_decorationBgPrefab.GetComponent<DecorationBgData>();
+			g = op.GetAsset<GameObject>(DecorationConstants.DecorationBgHitMeshPrefab);
+			g = Instantiate(g, g2.transform, false);
+			DecorationBgHitData d = g.GetComponent<DecorationBgHitData>();
+			m_hitGameObject.Clear();
+			for(int i = 0; i < 4; i++)
+			{
+				m_hitGameObject.Add(g.transform.Find(DecorationConstants.AreaName[i]).gameObject);
+			}
+			m_decorationBgData.m_LeftFloorBottomLine = d.m_LeftBottomSlopeLine;
+			m_decorationBgData.m_RightFloorBottomLine = d.m_RightBottomSlopeLine;
+			m_decorationBgData.m_LeftWallInnerOuterLine = d.m_LeftWallInnerOuterLine;
+			m_decorationBgData.m_LeftFloorInnerOuterLine = d.m_LeftFloorInnerOuterLine;
+			SetEnablePostArea(DecorationConstants.Attribute.Type.None);
+			SetActive(false);
+			AssetBundleManager.UnloadAssetBundle(DecorationConstants.BgCmnAssetPath);
+			m_undoAreaData.m_floorId = -1;
+			m_undoAreaData.m_wallLId = -1;
+			m_undoAreaData.m_wallRId = -1;
+			yield return 1;
+		}
 
 		//// RVA: 0x1D83964 Offset: 0x1D83964 VA: 0x1D83964
-		//private void SettingBgData() { }
+		private void SettingBgData()
+		{
+			DecorationBgBaseSetting[] ds = new DecorationBgBaseSetting[3];
+			ds[0] = new DecorationBgBaseSetting() { AttributeType = DecorationConstants.Attribute.Type.BgFloor, mesh = m_decorationBgData.m_floorMesh, material = m_decorationBgPrefab.GetComponent<MeshRenderer>().materials[DecorationConstants.Attribute.AttributeBgId(DecorationConstants.Attribute.Type.BgFloor)] };
+			ds[1] = new DecorationBgBaseSetting() { AttributeType = DecorationConstants.Attribute.Type.BgWallL, mesh = m_decorationBgData.m_wallLMesh, material = m_decorationBgPrefab.GetComponent<MeshRenderer>().materials[DecorationConstants.Attribute.AttributeBgId(DecorationConstants.Attribute.Type.BgWallL)] };
+			ds[2] = new DecorationBgBaseSetting() { AttributeType = DecorationConstants.Attribute.Type.BgWallR, mesh = m_decorationBgData.m_wallRMesh, material = m_decorationBgPrefab.GetComponent<MeshRenderer>().materials[DecorationConstants.Attribute.AttributeBgId(DecorationConstants.Attribute.Type.BgWallR)] };
+			GameObject g = m_decorationBgPrefab.transform.parent.gameObject;
+			for(int i = 0; i < DecorationConstants.AreaNum; i++)
+			{
+				m_decorationBgList.Add(g.AddComponent<DecorationBgBase>());
+				m_decorationBgList[i].SetSetting(ds[i]);
+			}
+		}
 
 		//// RVA: 0x1D83F2C Offset: 0x1D83F2C VA: 0x1D83F2C
-		//public void LoadTexutre(DecorationBgManager.AreaData areaData, bool isInit) { }
+		public void LoadTexutre(AreaData areaData, bool isInit)
+		{
+			IsLodedTexture = false;
+			m_undoAreaData = areaData;
+			this.StartCoroutineWatched(Co_LoadTexture(areaData, isInit));
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AAC14 Offset: 0x6AAC14 VA: 0x6AAC14
 		//// RVA: 0x1D83F84 Offset: 0x1D83F84 VA: 0x1D83F84
-		//private IEnumerator Co_LoadTexture(DecorationBgManager.AreaData areaData, bool isInit) { }
+		private IEnumerator Co_LoadTexture(DecorationBgManager.AreaData areaData, bool isInit)
+		{
+			//0x1D8734C
+			if(areaData.m_floorId != -1)
+				m_areaData.m_floorId = areaData.m_floorId;
+			if(areaData.m_wallLId != -1)
+				m_areaData.m_wallLId = areaData.m_wallLId;
+			if(areaData.m_wallRId != -1)
+				m_areaData.m_wallRId = areaData.m_wallRId;
+			int[] a = new int[3];
+			a[0] = m_areaData.m_floorId;
+			a[1] = m_areaData.m_wallLId;
+			a[2] = m_areaData.m_wallRId;
+			for(int i = 0; i < m_decorationBgList.Count; i++)
+			{
+				if(a[i] != -1)
+				{
+					m_decorationBgList[i].LoadResource(a[i]);
+				}
+			}
+			for(int i = 0; i < m_decorationBgList.Count; i++)
+			{
+				yield return new WaitUntil(() =>
+				{
+					//0x1D86AA0
+					return m_decorationBgList[i].IsLoaded;
+				});
+			}
+			if(isInit)
+			{
+				m_initAreaData = m_areaData;
+			}
+			IsLodedTexture = true;
+		}
 
 		//// RVA: 0x1D84074 Offset: 0x1D84074 VA: 0x1D84074
-		//public void SetActive(bool isActive) { }
+		public void SetActive(bool isActive)
+		{
+			if(m_decorationBgPrefab != null)
+				m_decorationBgPrefab.SetActive(isActive);
+		}
 
 		//// RVA: 0x1D84130 Offset: 0x1D84130 VA: 0x1D84130
-		//public Rect GetRect() { }
+		public Rect GetRect()
+		{
+			return m_decorationBgData.GetRect();
+		}
 
 		//// RVA: 0x1D84160 Offset: 0x1D84160 VA: 0x1D84160
-		//public Rect GetFloorRect() { }
+		public Rect GetFloorRect()
+		{
+			return m_decorationBgData.GetFloorRect();
+		}
 
 		//// RVA: 0x1D84190 Offset: 0x1D84190 VA: 0x1D84190
-		//public void GetWallTopLine(out Vector2[] leftLine, out Vector2[] rightLine) { }
+		public void GetWallTopLine(out Vector2[] leftLine, out Vector2[] rightLine)
+		{
+			m_decorationBgData.GetOuterLine(DecorationConstants.Attribute.Type.Wall, DecorationConstants.Attribute.AreaType.All, out leftLine, out rightLine);
+		}
 
 		//// RVA: 0x1D841D8 Offset: 0x1D841D8 VA: 0x1D841D8
-		//public DecorationBgBase GetFloor() { }
+		public DecorationBgBase GetFloor()
+		{
+			return m_decorationBgList[DecorationConstants.Attribute.AttributeBgId(DecorationConstants.Attribute.Type.BgFloor)];
+		}
 
 		//// RVA: 0x1D84264 Offset: 0x1D84264 VA: 0x1D84264
-		//public int GetId(DecorationConstants.Attribute.Type type) { }
+		public int GetId(DecorationConstants.Attribute.Type type)
+		{
+			if(type == DecorationConstants.Attribute.Type.BgWallL)
+				return m_areaData.m_wallLId;
+			else if(type == DecorationConstants.Attribute.Type.BgWallR)
+				return m_areaData.m_wallRId;
+			else if(type == DecorationConstants.Attribute.Type.BgFloor)
+				return m_areaData.m_floorId;
+			return -1;
+		}
 
 		//// RVA: 0x1D842A0 Offset: 0x1D842A0 VA: 0x1D842A0
 		//public void Return() { }
@@ -136,10 +253,37 @@ namespace XeApp
 		//public bool CheckPost(DecorationItemBase item, Vector2 position, DecorationConstants.Attribute.Type hitAttributeType) { }
 
 		//// RVA: 0x1D85440 Offset: 0x1D85440 VA: 0x1D85440
-		//public DecorationConstants.Attribute.Type GetAttribute(DecorationItemBase item, Vector2 position) { }
+		public DecorationConstants.Attribute.Type GetAttribute(DecorationItemBase item, Vector2 position)
+		{
+			if(item.CheckAttribute(DecorationConstants.Attribute.Type.Floor))
+			{
+				//s = item.Size;
+			}
+			for(int i = 0; i < DecorationConstants.AreaNum; i++)
+			{
+				if(m_decorationBgList[i].HitCheck(position))
+				{
+					return m_decorationBgList[i].Setting.AttributeType;
+				}
+			}
+			return DecorationConstants.Attribute.Type.None;
+		}
 
 		//// RVA: 0x1D85630 Offset: 0x1D85630 VA: 0x1D85630
-		//public void SetEnablePostArea(DecorationConstants.Attribute.Type type) { }
+		public void SetEnablePostArea(DecorationConstants.Attribute.Type type)
+		{
+			foreach(var h in m_hitGameObject)
+			{
+				h.SetActive(false);
+			}
+			for(int i = 0; i < 4; i++)
+			{
+				if(DecorationConstants.Attribute.CheckAttribute(type, (DecorationConstants.Attribute.Type)(1 << i)))
+				{
+					m_hitGameObject[i].SetActive(true);
+				}
+			}
+		}
 
 		//// RVA: 0x1D84A5C Offset: 0x1D84A5C VA: 0x1D84A5C
 		private bool FloorHorizonBoundaryLineCheck(DecorationItemBase item, Vector2[] checkLeftInnerLine, Vector2[] checkRightInnerLine, Vector2[] checkLeftOuterLine, Vector2[] checkRightOuterLine, ref Vector2 adjustPos)
@@ -293,12 +437,78 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1D8628C Offset: 0x1D8628C VA: 0x1D8628C
-		//public void GetCenterLine(DecorationConstants.Attribute.Type type, ref Vector2[] line) { }
+		public void GetCenterLine(DecorationConstants.Attribute.Type type, ref Vector2[] line)
+		{
+			switch(type)
+			{
+				case DecorationConstants.Attribute.Type.WallTop:
+					GetWallCenterLine(DecorationConstants.Attribute.AreaType.Outer, ref line);
+					break;
+				case DecorationConstants.Attribute.Type.WallBottom:
+					GetWallCenterLine(DecorationConstants.Attribute.AreaType.Inner, ref line);
+					break;
+				case DecorationConstants.Attribute.Type.Wall:
+					GetWallCenterLine(DecorationConstants.Attribute.AreaType.All, ref line);
+					break;
+				case DecorationConstants.Attribute.Type.FloorTop:
+					GetFloorCenterLine(DecorationConstants.Attribute.AreaType.Inner, ref line);
+					break;
+				default:
+					return;
+				case DecorationConstants.Attribute.Type.FloorBottom:
+					GetFloorCenterLine(DecorationConstants.Attribute.AreaType.Outer, ref line);
+					break;
+				case DecorationConstants.Attribute.Type.Floor:
+					GetFloorCenterLine(DecorationConstants.Attribute.AreaType.All, ref line);
+					break;
+				case DecorationConstants.Attribute.Type.Both:
+					Vector2[] v1s = new Vector2[2];
+					GetWallCenterLine(DecorationConstants.Attribute.AreaType.All, ref v1s);
+					line[0] = v1s[0];
+					GetFloorCenterLine(DecorationConstants.Attribute.AreaType.All, ref v1s);
+					line[1] = v1s[1];
+					break;
+			}
+		}
 
 		//// RVA: 0x1D866A0 Offset: 0x1D866A0 VA: 0x1D866A0
-		//private void GetFloorCenterLine(DecorationConstants.Attribute.AreaType areaType, ref Vector2[] line) { }
+		private void GetFloorCenterLine(DecorationConstants.Attribute.AreaType areaType, ref Vector2[] line)
+		{
+			if(areaType == DecorationConstants.Attribute.AreaType.All)
+			{
+				line[0] = m_decorationBgData.m_LeftBoundaryLine[1];
+				line[1] = m_decorationBgData.m_LeftFloorBottomLine[1];
+			}
+			else if(areaType == DecorationConstants.Attribute.AreaType.Inner)
+			{
+				line[0] = m_decorationBgData.m_LeftBoundaryLine[1];
+				line[1] = m_decorationBgData.m_LeftFloorInnerOuterLine[1];
+			}
+			else if(areaType == DecorationConstants.Attribute.AreaType.Outer)
+			{
+				line[0] = m_decorationBgData.m_LeftFloorInnerOuterLine[1];
+				line[1] = m_decorationBgData.m_LeftFloorBottomLine[1];
+			}
+		}
 
 		//// RVA: 0x1D864A8 Offset: 0x1D864A8 VA: 0x1D864A8
-		//private void GetWallCenterLine(DecorationConstants.Attribute.AreaType areaType, ref Vector2[] line) { }
+		private void GetWallCenterLine(DecorationConstants.Attribute.AreaType areaType, ref Vector2[] line)
+		{
+			if(areaType == DecorationConstants.Attribute.AreaType.All)
+			{
+				line[0] = m_decorationBgData.m_TopLeftLine[1];
+				line[1] = m_decorationBgData.m_LeftBoundaryLine[1];
+			}
+			else if(areaType == DecorationConstants.Attribute.AreaType.Inner)
+			{
+				line[0] = m_decorationBgData.m_TopLeftLine[1];
+				line[1] = m_decorationBgData.m_LeftWallInnerOuterLine[1];
+			}
+			else if(areaType == DecorationConstants.Attribute.AreaType.Outer)
+			{
+				line[0] = m_decorationBgData.m_LeftWallInnerOuterLine[1];
+				line[1] = m_decorationBgData.m_LeftBoundaryLine[1];
+			}
+		}
 	}
 }

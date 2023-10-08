@@ -135,7 +135,7 @@ namespace XeApp.Game.Menu
 		public EpisodeTextuteCache EpisodeIconCache { get { return GameManager.Instance.EpisodeIconCache; } } //0xB2E348
 		public StoryImageTextureCache StoryImageCache { get { return GameManager.Instance.storyImageCache; } } //0xB2E3E4
 		public SubPlateIconTextureCache SubPlateIconTextureCahe { get { return GameManager.Instance.subPlateIconCache; } } //0xB2E480
-		// public DecorationItemTextureCache DecorationItemTextureCache { get; } 0xB2E51C
+		public DecorationItemTextureCache DecorationItemTextureCache { get { return GameManager.Instance.decorationItemTextureCache; } } //0xB2E51C
 		public HomeBgIconBgTextureCache HomeBgIconTextureCache { get { return GameManager.Instance.HomeBgIconTextureCache; } } //0xB2E5B8
 		public BgControl BgControl { get { return m_menuTransitionControl.bgControl; } } //0xB2E654
 		public MenuHeaderControl HeaderMenu { get { return m_menuTransitionControl.MenuHeader; } } //0xB2E680
@@ -1271,10 +1271,43 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB3394C Offset: 0xB3394C VA: 0xB3394C
-		// public void ShowItemDetail(int id, int subId, int count, string name, string desc, Action closeCallback) { }
+		public void ShowItemDetail(int id, int subId, int count, string name, string desc, Action closeCallback)
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			m_popupItemDetailSettinig.TitleText = bk.GetMessageByLabel("item_detail_popup_title_00");
+			m_popupItemDetailSettinig.ItemId = id;
+			m_popupItemDetailSettinig.SubId = subId;
+			m_popupItemDetailSettinig.Count = count;
+			m_popupItemDetailSettinig.IsShop = false;
+			m_popupItemDetailSettinig.OverrideName = name;
+			m_popupItemDetailSettinig.OverrideText = desc;
+			m_popupItemDetailSettinig.WindowSize = SizeType.Middle;
+			m_popupItemDetailSettinig.SetParent(transform);
+			m_popupItemDetailSettinig.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			PopupWindowManager.Show(m_popupItemDetailSettinig, null, null, null, null, true, true, false, null, closeCallback);
+		}
 
 		// // RVA: 0xB33CB0 Offset: 0xB33CB0 VA: 0xB33CB0
-		// public PopupWindowControl ShowItemDetail(int id, string title, string desc, bool isShop = False) { }
+		public PopupWindowControl ShowItemDetail(int id, string title, string desc, bool isShop = false)
+		{
+			m_popupItemDetailSettinig.TitleText = title;
+			m_popupItemDetailSettinig.ItemId = id;
+			m_popupItemDetailSettinig.SubId = 0;
+			m_popupItemDetailSettinig.Count = 0;
+			m_popupItemDetailSettinig.IsShop = isShop;
+			m_popupItemDetailSettinig.OverrideName = "";
+			m_popupItemDetailSettinig.OverrideText = desc;
+			m_popupItemDetailSettinig.WindowSize = SizeType.Middle;
+			m_popupItemDetailSettinig.SetParent(transform);
+			m_popupItemDetailSettinig.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			return PopupWindowManager.Show(m_popupItemDetailSettinig, null, null, null, null);
+		}
 
 		// // RVA: 0xB33FA0 Offset: 0xB33FA0 VA: 0xB33FA0
 		public PopupWindowControl ShowGoDivaStatusDetail(FFHPBEPOMAK_DivaInfo divaData, Action endCallback)

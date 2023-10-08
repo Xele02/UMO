@@ -1,7 +1,9 @@
 using mcrs;
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using XeApp.Core;
 using XeApp.Game.Common;
 using XeApp.Game.Menu;
 
@@ -69,12 +71,17 @@ namespace XeApp
 
 		protected DecorationCanvas m_decoCanvas { get; private set; } // 0xC
 		public virtual bool IsLoaded { get { return m_isLoaded; } private set { m_isLoaded = value; } } //0x1AC3B3C 0x1AD02C0
-		//protected bool UseRareBrakePosterAnim { get; } 0x1AD02C8
-		//public string AssetPathFormat { get; } 0x1ACA3EC
-		//public string FileNameFormat { get; } 0x1AD03D0
-		//public int AssetId { get; } 0x1AD045C
-		//public string FileName { get; } 0x1AD04E8
-		//public string BundlePath { get; } 0x1AD05C8
+		protected bool UseRareBrakePosterAnim { get
+		{
+			if(!m_decoCanvas.DecoLocalSaveData.KOGBMDOONFA.HEKJKLJDHNN)
+				return false;
+			return ViewData.OHAMGNMKOII();
+		} } //0x1AD02C8
+		public string AssetPathFormat { get { return DecorationConstants.GetItemAssetPathFormat(ViewData, UseRareBrakePosterAnim); } } //0x1ACA3EC
+		public string FileNameFormat { get { return DecorationConstants.GetItemFileNameFormat(ViewData); } } //0x1AD03D0
+		public int AssetId { get { return DecorationConstants.GetItemAssetId(ViewData); } } //0x1AD045C
+		public string FileName { get { return FileNameFormat == "" ? "" : string.Format(FileNameFormat, AssetId); } } //0x1AD04E8
+		public string BundlePath { get { return DecorationConstants.GetItemBundleName(ViewData, UseRareBrakePosterAnim); } } //0x1AD05C8
 		public LayoutDecorationWindow01.SelectItemType ItemType { get
 			{
 				int a = 3;
@@ -118,7 +125,7 @@ namespace XeApp
 				return LayoutDecorationWindow01.SelectItemType.Chara;
 			} } //0x1AD0668
 		public EKLNMHFCAOI.FKGCBLHOOCL_Category DecorationItemCategory { get { return ViewData.NPADACLCNAN_Category; } } //0x1ACCEA0
-		//public int ResourceId { get; } 0x1AD074C
+		public int ResourceId { get { return EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(DecorationItemCategory, Id); } } //0x1AD074C
 		public bool CanEdit { get {
 				if(ViewData.NPADACLCNAN_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp)
 				{
@@ -127,7 +134,7 @@ namespace XeApp
 				return true;
 			} } //0x1AD07E4
 		public bool CanKira { get {
-				if(m_viewDecoItemData.PPFNGGCBJKC != 0)
+				if(m_viewDecoItemData.PPFNGGCBJKC_Id != 0)
 				{
 					return m_viewDecoItemData.FMGBBKHJDEC_CanKira;
 				}
@@ -186,10 +193,16 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AD0984 Offset: 0x1AD0984 VA: 0x1AD0984
-		//public GameObject GetObject() { }
+		public GameObject GetObject()
+		{
+			return m_object;
+		}
 
 		//// RVA: 0x1AD09B4 Offset: 0x1AD09B4 VA: 0x1AD09B4
-		//public bool IsNewPost() { }
+		public bool IsNewPost()
+		{
+			return PostType >= DecorationItemManager.PostType.DragNewPost && PostType <= DecorationItemManager.PostType.TapNewPost;
+		}
 
 		//// RVA: 0x1AD09DC Offset: 0x1AD09DC VA: 0x1AD09DC
 		//public void Moved() { }
@@ -215,45 +228,143 @@ namespace XeApp
 		}
 		
 		//// RVA: 0x1AD0A58 Offset: 0x1AD0A58 VA: 0x1AD0A58
-		//public void LoadResource(GameObject spriteBase, EKLNMHFCAOI.FKGCBLHOOCL itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args) { }
+		public void LoadResource(GameObject spriteBase, EKLNMHFCAOI.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
+		{
+			Id = id;
+			m_isLoaded = false;
+			this.StartCoroutineWatched(Co_LoadResource(spriteBase, setting, PreLoadResource(spriteBase, itemCategory, id, setting, args), args));
+			PostLoadResource(spriteBase, itemCategory, id, setting, args);
+		}
 
 		//// RVA: 0x1AC41EC Offset: 0x1AC41EC VA: 0x1AC41EC Slot: 5
-		//protected virtual Action PreLoadResource(GameObject spriteBase, EKLNMHFCAOI.FKGCBLHOOCL itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args) { }
+		protected virtual Action PreLoadResource(GameObject spriteBase, EKLNMHFCAOI.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
+		{
+			m_viewDecoItemData.KHEKNNFCAOI(id, itemCategory);
+			return null;
+		}
 
 		//// RVA: -1 Offset: -1 Slot: 6
-		//protected abstract void PostLoadResource(GameObject spriteBase, EKLNMHFCAOI.FKGCBLHOOCL itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args);
+		protected abstract void PostLoadResource(GameObject spriteBase, EKLNMHFCAOI.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args);
 
 		//// RVA: 0x1AD0AFC Offset: 0x1AD0AFC VA: 0x1AD0AFC
 		//protected void LoadResource(GameObject spriteBase, int id, DecorationItemBaseSetting setting, Action endCallBack, DecorationItemArgsBase args) { }
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6ABF60 Offset: 0x6ABF60 VA: 0x6ABF60
 		//// RVA: 0x1AD0B4C Offset: 0x1AD0B4C VA: 0x1AD0B4C
-		//private IEnumerator Co_LoadResource(GameObject spriteBase, DecorationItemBaseSetting setting, Action endCallBack, DecorationItemArgsBase args) { }
+		private IEnumerator Co_LoadResource(GameObject spriteBase, DecorationItemBaseSetting setting, Action endCallBack, DecorationItemArgsBase args)
+		{
+			string assetBundlePath;
+			AssetBundleLoadAllAssetOperationBase op;
+
+			//0x1AD42B4
+			if(FileNameFormat != "")
+			{
+				assetBundlePath = BundlePath;
+				op = AssetBundleManager.LoadDecorationItemAssetAsync(assetBundlePath);
+				yield return op;
+				if(DecorationItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft ||
+					DecorationItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef)
+				{
+					//LAB_01ad44a8
+					if(ViewData.FLJPIHEEKOJ > 5)
+						m_useFlipShaderParam = true;
+				}
+				LoadMaterial(FileName, op, out m_material);
+				LoadSprite(FileName, op, out m_sprite);
+				LoadTexture(FileName, op, out m_baseTexture, out m_maskTexture);
+				LoadMaterial(FileName + "_f", op, out m_materialFlip);
+				if(m_materialFlip == null)
+				{
+					m_materialFlip = new Material(m_material);
+				}
+				LoadSprite(FileName + "_f", op, out m_spriteFlip);
+				LoadTexture(FileName + "_f", op, out m_baseTextureFlip, out m_maskTextureFlip);
+				m_useFlipAsset = false;
+				if(m_spriteFlip != null)
+					m_useFlipAsset = true;
+				CreateAppendAsset(args);
+				AssetBundleManager.UnloadAssetBundle(assetBundlePath, false);
+				op = null;
+			}
+			InitData(spriteBase, setting);
+			yield return this.StartCoroutineWatched(OnObjectCreated());
+			if(endCallBack != null)
+				endCallBack();
+			Hide();
+			m_isLoaded = true;
+		}
 
 		//// RVA: 0x1AD0C64 Offset: 0x1AD0C64 VA: 0x1AD0C64 Slot: 7
-		//protected virtual void CreateAppendAsset(DecorationItemArgsBase args) { }
+		protected virtual void CreateAppendAsset(DecorationItemArgsBase args)
+		{
+			return;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6ABFD8 Offset: 0x6ABFD8 VA: 0x6ABFD8
 		//// RVA: 0x1AD0C68 Offset: 0x1AD0C68 VA: 0x1AD0C68 Slot: 8
-		//protected virtual IEnumerator OnObjectCreated() { }
+		protected virtual IEnumerator OnObjectCreated()
+		{
+			//0x1AD4988
+			yield return null;
+		}
 
 		//// RVA: 0x1AD0CFC Offset: 0x1AD0CFC VA: 0x1AD0CFC
-		//private void LoadMaterial(string path, AssetBundleLoadAllAssetOperationBase op, out Material material) { }
+		private void LoadMaterial(string path, AssetBundleLoadAllAssetOperationBase op, out Material material)
+		{
+			material = op.GetAsset<Material>(path + "_mul");
+			if(UseRareBrakePosterAnim)
+			{
+				if(material == null)
+					return;
+				material = new Material(material);
+			}
+		}
 
 		//// RVA: 0x1AD0E44 Offset: 0x1AD0E44 VA: 0x1AD0E44
-		//private void LoadSprite(string path, AssetBundleLoadAllAssetOperationBase op, out Sprite sprite) { }
+		private void LoadSprite(string path, AssetBundleLoadAllAssetOperationBase op, out Sprite sprite)
+		{
+			sprite = op.GetAsset<Sprite>(path + "_base");
+		}
 
 		//// RVA: 0x1AD0F04 Offset: 0x1AD0F04 VA: 0x1AD0F04
-		//private void LoadTexture(string path, AssetBundleLoadAllAssetOperationBase op, out Texture baseTexture, out Texture maskTexture) { }
+		private void LoadTexture(string path, AssetBundleLoadAllAssetOperationBase op, out Texture baseTexture, out Texture maskTexture)
+		{
+			baseTexture = op.GetAsset<Texture>(path + "_base");
+			maskTexture = op.GetAsset<Texture>(path + "_mask");
+		}
 
 		//// RVA: 0x1AD1034 Offset: 0x1AD1034 VA: 0x1AD1034
-		//protected void SetTexture(Material material, Texture baseTexture, Texture maskTexture) { }
+		protected void SetTexture(Material material, Texture baseTexture, Texture maskTexture)
+		{
+			material.SetTexture("_MainTex", baseTexture);
+			material.SetTexture("_MaskTex", maskTexture);
+		}
 
 		//// RVA: 0x1AD1104 Offset: 0x1AD1104 VA: 0x1AD1104
-		//private void InitData(GameObject spriteBase, DecorationItemBaseSetting setting) { }
+		private void InitData(GameObject spriteBase, DecorationItemBaseSetting setting)
+		{
+			m_object = Instantiate(spriteBase, spriteBase.transform.parent);
+			m_object.name = name;
+			m_setting = setting;
+			m_renderer = m_object.transform.Find("SpriteRenderer");
+			m_statusFlag = setting.InitStatusFlag;
+			Position = setting.InitPosition;
+			InitSprite(setting.InitOrder);
+			Hide();
+			IsTouch = false;
+			IsEnablePost = true;
+			IsStop = false;
+			IsMoved = false;
+			Lock = false;
+			Flip(setting.InitFlip);
+			CreateHit();
+		}
 
 		//// RVA: 0x1AD1634 Offset: 0x1AD1634 VA: 0x1AD1634
-		//public void Prepare(DecorationCanvas canvas) { }
+		public void Prepare(DecorationCanvas canvas)
+		{
+			m_decoCanvas = canvas;
+		}
 
 		//// RVA: 0x1AD163C Offset: 0x1AD163C VA: 0x1AD163C
 		//private static bool IntersectLineToLine(ref Vector2 a1, ref Vector2 a2, ref Vector2 b1, ref Vector2 b2) { }
@@ -265,28 +376,75 @@ namespace XeApp
 		//private static DecorationItemBase.Dir IntersectLineToRect(ref Vector2 s, ref Vector2 e, float l, float t, float r, float b) { }
 
 		//// RVA: 0x1AD1954 Offset: 0x1AD1954 VA: 0x1AD1954
-		//public void InitController() { }
+		public void InitController()
+		{
+			m_decorationContoller = m_renderer.GetComponent<DecorationItemController>();
+			m_decorationContoller.Setting(Size * Scale);
+			m_decorationContoller.onPointerDown = OnPointerDown;
+			m_decorationContoller.onBeginDrag = OnBeginDrag;
+			m_decorationContoller.onDrag = OnDrag;
+			m_decorationContoller.onPointerUp = OnPointerUp;
+			m_decorationContoller.onPointerClick = OnClick;
+			if(!(this is DecorationChara))
+			{
+				m_setting.Thickness = (int)(m_setting.Thickness * Size.y * 0.01f);
+			}
+			PostInitController();
+		}
 
 		//// RVA: -1 Offset: -1 Slot: 9
-		//protected abstract void PostInitController();
+		protected abstract void PostInitController();
 
 		//// RVA: 0x1AD1E50 Offset: 0x1AD1E50 VA: 0x1AD1E50
-		//private void OnClick(Vector2 touchPosition) { }
+		private void OnClick(Vector2 touchPosition)
+		{
+			if(!MenuScene.Instance.IsTransition() && IsDecoScene())
+			{
+				ClickCallback(this);
+			}
+		}
 
 		//// RVA: 0x1AD1FFC Offset: 0x1AD1FFC VA: 0x1AD1FFC
-		//private void OnPointerDown(Vector2 touchPosition) { }
+		private void OnPointerDown(Vector2 touchPosition)
+		{
+			if(!MenuScene.Instance.IsTransition() && IsDecoScene())
+			{
+				PointerDownCallback(this, touchPosition);
+			}
+		}
 
 		//// RVA: 0x1AD20FC Offset: 0x1AD20FC VA: 0x1AD20FC
-		//private void OnPointerUp() { }
+		private void OnPointerUp()
+		{
+			if(!MenuScene.Instance.IsTransition() && IsDecoScene())
+			{
+				PointerUpCallback(this);
+			}
+		}
 
 		//// RVA: 0x1AD21E4 Offset: 0x1AD21E4 VA: 0x1AD21E4
-		//private void OnBeginDrag(Vector2 touchPosition) { }
+		private void OnBeginDrag(Vector2 touchPosition)
+		{
+			if(!MenuScene.Instance.IsTransition() && IsDecoScene())
+			{
+				BeginDragCallback(this, touchPosition);
+			}
+		}
 
 		//// RVA: 0x1AD2ACC Offset: 0x1AD2ACC VA: 0x1AD2ACC
-		//private void OnDrag(Vector2 touchPosition) { }
+		private void OnDrag(Vector2 touchPosition)
+		{
+			if(!MenuScene.Instance.IsTransition() && IsDecoScene())
+			{
+				DragCallback(this, touchPosition);
+			}
+		}
 
 		//// RVA: 0x1AD1F38 Offset: 0x1AD1F38 VA: 0x1AD1F38
-		//private bool IsDecoScene() { }
+		private bool IsDecoScene()
+		{
+			return MenuScene.Instance.GetCurrentScene().name == TransitionList.Type.DECO;
+		}
 
 		//// RVA: 0x1AD2BB8 Offset: 0x1AD2BB8 VA: 0x1AD2BB8 Slot: 10
 		public virtual void PointerUp()
@@ -295,10 +453,16 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AD2BBC Offset: 0x1AD2BBC VA: 0x1AD2BBC Slot: 11
-		//public virtual void PointerDown(Vector2 touchPosition) { }
+		public virtual void PointerDown(Vector2 touchPosition)
+		{
+			return;
+		}
 
 		//// RVA: 0x1AD2BC0 Offset: 0x1AD2BC0 VA: 0x1AD2BC0 Slot: 12
-		//public virtual void Click() { }
+		public virtual void Click()
+		{
+			return;
+		}
 
 		//// RVA: 0x1AD2BC4 Offset: 0x1AD2BC4 VA: 0x1AD2BC4 Slot: 13
 		public virtual void BeginDrag(Vector2 touchPosition)
@@ -313,28 +477,55 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AD132C Offset: 0x1AD132C VA: 0x1AD132C
-		//private void InitSprite(int order) { }
+		private void InitSprite(int order)
+		{
+			m_spriteRenderer = m_renderer.GetComponent<SpriteRenderer>();
+			m_spriteRenderer.sortingOrder = order;
+			m_spriteRenderer.sprite = m_sprite;
+			m_spriteRenderer.material = GetCurrentMaterial();
+		}
 
 		//// RVA: 0x1AD2BCC Offset: 0x1AD2BCC VA: 0x1AD2BCC
-		//public void UpdateKiraMaterial() { }
+		public void UpdateKiraMaterial()
+		{
+			if(m_spriteRenderer != null)
+				m_spriteRenderer.material = GetCurrentMaterial();
+		}
 
 		//// RVA: 0x1AD2C9C Offset: 0x1AD2C9C VA: 0x1AD2C9C Slot: 15
-		//public virtual int GetSerifId() { }
+		public virtual int GetSerifId()
+		{
+			return 0;
+		}
 
 		//// RVA: 0x1AC6390 Offset: 0x1AC6390 VA: 0x1AC6390
-		//public void Destory() { }
+		public void Destory()
+		{
+			PreDestroy();
+			Destroy(m_decorationContoller);
+			Destroy(m_object);
+			Destroy(this);
+			m_renderer = null;
+			PostDestroy();
+		}
 
 		//// RVA: -1 Offset: -1 Slot: 16
-		//protected abstract void PreDestroy();
+		protected abstract void PreDestroy();
 
 		//// RVA: -1 Offset: -1 Slot: 17
-		//protected abstract void PostDestroy();
+		protected abstract void PostDestroy();
 
 		//// RVA: 0x1AD2CA4 Offset: 0x1AD2CA4 VA: 0x1AD2CA4
-		//public bool IsDestoryed() { }
+		public bool IsDestoryed()
+		{
+			return m_object == null;
+		}
 
 		//// RVA: 0x1ABC6E8 Offset: 0x1ABC6E8 VA: 0x1ABC6E8
-		//public Vector3 GetWorldPosition() { }
+		public Vector3 GetWorldPosition()
+		{
+			return m_object.transform.position;
+		}
 		
 		//// RVA:  Offset: 0x1AD2E38 VA: 0x1AD2E38
 		//public Vector2 GetBottomPosition() { }
@@ -355,10 +546,17 @@ namespace XeApp
 		}
 		
 		//// RVA: 0x1AD310C Offset: 0x1AD310C VA: 0x1AD310C
-		//public void EnableController(DecorationItemBase.ControlType control) { }
+		public void EnableController(ControlType control)
+		{
+			m_decorationContoller.SetEnable(true);
+			m_enableControl = control;
+		}
 
 		//// RVA: 0x1AD3150 Offset: 0x1AD3150 VA: 0x1AD3150
-		//public void EnableController(bool isEnable) { }
+		public void EnableController(bool isEnable)
+		{
+			m_decorationContoller.SetEnable(isEnable);
+		}
 
 		//// RVA: 0x1AD1434 Offset: 0x1AD1434 VA: 0x1AD1434
 		public void Flip(bool flipX)
@@ -383,7 +581,10 @@ namespace XeApp
 		//public void ChangeFlip() { }
 
 		//// RVA: 0x1AD31A0 Offset: 0x1AD31A0 VA: 0x1AD31A0
-		//public bool IsFlip() { }
+		public bool IsFlip()
+		{
+			return m_isFlip;
+		}
 
 		//// RVA: 0x1AD31A8 Offset: 0x1AD31A8 VA: 0x1AD31A8 Slot: 23
 		protected virtual Material GetCurrentMaterial()
@@ -394,7 +595,11 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AD31D0 Offset: 0x1AD31D0 VA: 0x1AD31D0 Slot: 24
-		//protected virtual void SetKiraCurrentMaterial(bool _isKira, int nameId) { }
+		protected virtual void SetKiraCurrentMaterial(bool _isKira, int nameId)
+		{
+			m_materialFlip.SetFloat(nameId, _isKira ? 1 : 0);
+			m_material.SetFloat(nameId, _isKira ? 1 : 0);
+		}
 
 		//// RVA: 0x1AD3254 Offset: 0x1AD3254 VA: 0x1AD3254
 		public void ButtonCallBack(LayoutDecorationFrameButton.ButtonType type)
@@ -443,7 +648,12 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AD3D5C Offset: 0x1AD3D5C VA: 0x1AD3D5C
-		//public bool HitCheck(DecorationItemBase item, Vector2 position) { }
+		public bool HitCheck(DecorationItemBase item, Vector2 position)
+		{
+			Rect r = new Rect(new Vector2(position.x, -position.y) - item.Size / 2, item.Size);
+			Rect r2 = new Rect(new Vector2(item.Position.x, -item.Position.y) - Size / 2, Size);
+			return r2.Overlaps(r);
+		}
 
 		//// RVA: 0x1AD3F88 Offset: 0x1AD3F88 VA: 0x1AD3F88
 		public bool HitCheckThinkness(DecorationItemBase item, Vector2 position)
@@ -463,12 +673,30 @@ namespace XeApp
 		//private bool HitCheck(Rect rect1, Rect rect2) { }
 
 		//// RVA: 0x1ABC660 Offset: 0x1ABC660 VA: 0x1ABC660
-		//public void AutoFlip() { }
+		public void AutoFlip()
+		{
+			if(m_setting.IsAutoFlip)
+			{
+				Flip(Position.x >= 0);
+			}
+		}
 
 		//// RVA: 0x1AC8094 Offset: 0x1AC8094 VA: 0x1AC8094 Slot: 27
-		//public virtual void SetInfo(DAJBODHMLAB.MMLACIFMNBN.MHODOAJPNHD info) { }
+		public virtual void SetInfo(DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.MHODOAJPNHD info)
+		{
+			Position = new Vector2(info.GHPLINIACBB_PosX, info.PMBEODGMMBB_PosY);
+			SortingOrder = info.BNHOEFJAAKK_Prio;
+			Flip(info.BDEEIPPDCLE_Rvs);
+			m_setting.InitWord = info.BEJGNPAAKNB_Word;
+			m_statusFlag = info.PMIPFEJFIHA_StatusFlag;
+			IsMoved = false;
+		}
 
 		//// RVA: 0x1AD1550 Offset: 0x1AD1550 VA: 0x1AD1550
-		//private void CreateHit() { }
+		private void CreateHit()
+		{
+			m_hitObject = m_object.transform.Find("HitImage");
+			m_hitObject.gameObject.SetActive(false);
+		}
 	}
 }

@@ -59,6 +59,9 @@ namespace ExternLib
 				}
 				commonBlock.ACNNFJJMEEO_StoryEnd = 999;
 				commonBlock.ENIPGFLGJHH_LastStory = 999;
+
+				commonBlock.BBFIGEOBOMB_SpItem[7].BFINGCJHOHI_Cnt = 9999999; // deco coin
+
 			}
 			{
 				FNBIIGJJGKA_Counter counterBlock = newData.LBDOLHGDIEB_GetBlock("counter") as FNBIIGJJGKA_Counter;
@@ -221,7 +224,7 @@ namespace ExternLib
 					}
 				}
 			}
-
+			
 			// End all normal quest
 			ODPNBADOFAN_Quest saveQuests = newData.LBDOLHGDIEB_GetBlock("quest") as ODPNBADOFAN_Quest;
 			for (int i = 0; i < saveQuests.GPMKFMFEKLN_NormalQuests.Count; i++)
@@ -288,7 +291,12 @@ namespace ExternLib
 			for (int i = 0; i < names.HNBFOAJIIAL_Count; i++)
 			{
 				string str = (string)names[i];
-				res["player"][str] = jsonRes[str];
+				if(!jsonRes.BBAJPINMOEP_Contains(str))
+				{
+					UnityEngine.Debug.LogError("player data not found : "+str);
+				}
+				else
+					res["player"][str] = jsonRes[str];
 			}
 
 			SendMessage(callbackId, res);

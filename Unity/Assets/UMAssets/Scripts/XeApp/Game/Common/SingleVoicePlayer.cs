@@ -161,9 +161,20 @@ namespace XeApp.Game.Common
 		//public bool Play(int cueId) { }
 
 		//// RVA: 0x1395160 Offset: 0x1395160 VA: 0x1395160
-		//public bool Stop() { }
+		public bool Stop()
+		{
+			return Stop(false);
+		}
 
 		//// RVA: 0x1395168 Offset: 0x1395168 VA: 0x1395168
-		//protected bool Stop(bool ignoresReleaseTime) { }
+		protected bool Stop(bool ignoresReleaseTime)
+		{
+			if(source != null)
+			{
+				source.player.Stop(ignoresReleaseTime);
+				return true;
+			}
+			return false;
+		}
 	}
 }

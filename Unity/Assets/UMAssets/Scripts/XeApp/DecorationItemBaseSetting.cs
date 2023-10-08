@@ -41,38 +41,127 @@ namespace XeApp
 		// RVA: 0x1AC30EC Offset: 0x1AC30EC VA: 0x1AC30EC
 		public DecorationItemBaseSetting(KDKFHGHGFEK viewDecoItemData)
 		{
-			TodoLogger.LogError(0, "DecorationItemBaseSetting");
+			AttributeType = DecorationConstants.MakeAttribute(viewDecoItemData);
+			this.viewDecoItemData = new KDKFHGHGFEK();
+			this.viewDecoItemData.ODDIHGPONFL(viewDecoItemData);
+			AreaType = MakeAreaType((int)AttributeType);
+			IsAutoFlip = MakeAutoFlip(viewDecoItemData);
+			IsOverlay = MakeOverlay(viewDecoItemData.NPADACLCNAN_Category, AttributeType, viewDecoItemData.FJFCNGNGIBN);
+			IsOnShelf = MakeOnShelf(viewDecoItemData);
+			IsShelf = false;
+			PriorityControl = MakePriortyControl(viewDecoItemData.NPADACLCNAN_Category, viewDecoItemData.GBJFNGCDKPM, AttributeType);
+			AdjustOffset.x = viewDecoItemData.EDEEMPJPFCP;
+			AdjustOffset.y = viewDecoItemData.HDHNEILDILJ;
+			FontSizeType = viewDecoItemData.DBGAJBIBODC;
+			Thickness = MakeThickness(viewDecoItemData);
+			Order = viewDecoItemData.EILKGEADKGH;
 		}
 
 		//// RVA: 0x1AD4EAC Offset: 0x1AD4EAC VA: 0x1AD4EAC
-		//private int MakeThickness(KDKFHGHGFEK viewDecoItemData) { }
+		private int MakeThickness(KDKFHGHGFEK viewDecoItemData)
+		{
+			int a = 0;
+			string str = "";
+			if(viewDecoItemData.NPADACLCNAN_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
+			{
+				str = "deco_chara_thickness";
+				a = 50;
+			}
+			else if(viewDecoItemData.NPADACLCNAN_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.HEMGMACMGAB_DecoItemVFFigure)
+			{
+				str = "deco_valkyrie_thickness";
+				a = 10;
+			}
+			else if(viewDecoItemData.NPADACLCNAN_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso)
+			{
+				str = "deco_costume_thickness";
+				a = 10;
+			}
+			else
+			{
+				return viewDecoItemData.BHDHPCDLICO_Thickness;
+			}
+			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA(str, a);
+		}
 
 		// RVA: 0x1ABF944 Offset: 0x1ABF944 VA: 0x1ABF944
 		public DecorationItemBaseSetting(NDBFKHKMMCE_DecoItem.FIDBAFHNGCF info)
 		{
-			TodoLogger.LogError(0, "DecorationItemBaseSetting 2");
+			AttributeType = (DecorationConstants.Attribute.Type)info.FJFCNGNGIBN_Attribute;
+			AreaType = MakeAreaType((int)AttributeType);
+			IsAutoFlip = info.FAKNMCIIAEM_IsAutoFlip == 1;
+			IsOnShelf = info.CMMNFCJNIOO_IsOnShelf == 1;
+			AdjustOffset.x = info.NGILPOOLBCF;
+			AdjustOffset.y = info.JINEKNIBOFI;
 		}
 
 		//// RVA: 0x1AD0934 Offset: 0x1AD0934 VA: 0x1AD0934
 		//public bool CheckAttribute(DecorationConstants.Attribute.Type attribute) { }
 
 		//// RVA: 0x1AD4D8C Offset: 0x1AD4D8C VA: 0x1AD4D8C
-		//private static bool MakeOnShelf(KDKFHGHGFEK viewDecoItemData) { }
+		private static bool MakeOnShelf(KDKFHGHGFEK viewDecoItemData)
+		{
+			if(viewDecoItemData.NPADACLCNAN_Category != EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
+			{
+				if(viewDecoItemData.NPADACLCNAN_Category < EKLNMHFCAOI.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster
+					|| viewDecoItemData.NPADACLCNAN_Category > EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft)
+					return viewDecoItemData.GEMAFKNIKJN_IsOnShelf;
+			}
+			return false;
+		}
 
 		//// RVA: 0x1AD4C14 Offset: 0x1AD4C14 VA: 0x1AD4C14
-		//private static bool MakeAutoFlip(KDKFHGHGFEK viewDecoItemData) { }
+		private static bool MakeAutoFlip(KDKFHGHGFEK viewDecoItemData)
+		{
+			if(viewDecoItemData.NPADACLCNAN_Category != EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
+			{
+				if(viewDecoItemData.NPADACLCNAN_Category < EKLNMHFCAOI.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster
+					|| viewDecoItemData.NPADACLCNAN_Category > EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft)
+					return false;
+				return true;
+			}
+			return false;
+		}
 
 		//// RVA: 0x1AD4E7C Offset: 0x1AD4E7C VA: 0x1AD4E7C
 		//private bool MakeIsShelf(EKLNMHFCAOI.FKGCBLHOOCL ctg, int type) { }
 
 		//// RVA: 0x1AD4D14 Offset: 0x1AD4D14 VA: 0x1AD4D14
-		//private bool MakeOverlay(EKLNMHFCAOI.FKGCBLHOOCL ctg, DecorationConstants.Attribute.Type attr, int type) { }
+		private bool MakeOverlay(EKLNMHFCAOI.FKGCBLHOOCL_Category ctg, DecorationConstants.Attribute.Type attr, int type)
+		{
+			return true;
+		}
 
 		//// RVA: 0x1AD4E84 Offset: 0x1AD4E84 VA: 0x1AD4E84
-		//private DecorationItemBaseSetting.PriorityControlType MakePriortyControl(EKLNMHFCAOI.FKGCBLHOOCL ctg, int type, DecorationConstants.Attribute.Type attr) { }
+		private PriorityControlType MakePriortyControl(EKLNMHFCAOI.FKGCBLHOOCL_Category ctg, int type, DecorationConstants.Attribute.Type attr)
+		{
+			PriorityControlType res = PriorityControlType.Wall;
+			if(((int)attr & 3) == 0)
+			{
+				res = PriorityControlType.Floor;
+				if(type == 5)
+					res = PriorityControlType.FloorBack;
+				if(ctg != EKLNMHFCAOI.FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj)
+					res = PriorityControlType.Floor;
+			}
+			return res;
+		}
 
 		//// RVA: 0x1AD4BF0 Offset: 0x1AD4BF0 VA: 0x1AD4BF0
-		//private DecorationConstants.Attribute.AreaType MakeAreaType(int attribute) { }
+		private DecorationConstants.Attribute.AreaType MakeAreaType(int attribute)
+		{
+			DecorationConstants.Attribute.AreaType res = 0;
+			if((attribute & 4) != 0)
+				res = DecorationConstants.Attribute.AreaType.Inner;
+			else if((attribute & 2) != 0)
+				res = DecorationConstants.Attribute.AreaType.Inner;
+
+			if((attribute & 8) != 0)
+				res |= DecorationConstants.Attribute.AreaType.Outer;
+			else if ((attribute & 1) != 0)
+				res |= DecorationConstants.Attribute.AreaType.Outer;
+			return res;
+		}
 
 		//// RVA: 0x1AD5168 Offset: 0x1AD5168 VA: 0x1AD5168
 		//private bool IsRug(EKLNMHFCAOI.FKGCBLHOOCL ctg, int type) { }

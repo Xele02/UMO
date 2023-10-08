@@ -1,4 +1,7 @@
 
+using System.Collections.Generic;
+using XeSys;
+
 public class NCPPAHHCCAO
 {
 	private int FBGGEFFJJHB; // 0x8
@@ -39,7 +42,10 @@ public class NCPPAHHCCAO
 	//public static List<NCPPAHHCCAO> FKDIMODKKJD() { }
 
 	//// RVA: 0x1ADACF8 Offset: 0x1ADACF8 VA: 0x1ADACF8
-	//public static string GHHOBKGGADG(int PPFNGGCBJKC) { }
+	public static string GHHOBKGGADG(int PPFNGGCBJKC)
+	{
+		return MessageManager.Instance.GetBank(AFEHLCGHAEE_Strings.NDFIEMPPMLF_master).GetMessageByLabel(string.Format("dc_itm_nm_{0:D4}_srf", PPFNGGCBJKC));
+	}
 
 	//// RVA: 0x1ADAE28 Offset: 0x1ADAE28 VA: 0x1ADAE28
 	public static string EFNHFKLKNHJ(int PPFNGGCBJKC)
@@ -64,8 +70,35 @@ public class NCPPAHHCCAO
 	}
 
 	//// RVA: 0x1ADB18C Offset: 0x1ADB18C VA: 0x1ADB18C
-	//public static List<int> MGHDHIJIGLD() { }
+	public static List<int> MGHDHIJIGLD()
+	{
+		List<int> res = new List<int>();
+		if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null && CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave != null)
+		{
+			res.AddRange(OCHICNLNALL(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.FKGCBLHOOCL_Category.GGEFMAAOMFH_StampItemChara, "initial_give_stamp"));
+			res.AddRange(OCHICNLNALL(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif, "initial_give_serif"));
+		}
+		return res;
+	}
 
 	//// RVA: 0x1ADB36C Offset: 0x1ADB36C VA: 0x1ADB36C
-	//private static List<int> OCHICNLNALL(OKGLGHCBCJP LKMHPJKIFDN, BBHNACPENDM LDEGEHAEALK, EKLNMHFCAOI.FKGCBLHOOCL INDDJNMPONH, string LJNAKDMILMC) { }
+	private static List<int> OCHICNLNALL(OKGLGHCBCJP_Database LKMHPJKIFDN, BBHNACPENDM_ServerSaveData LDEGEHAEALK, EKLNMHFCAOI.FKGCBLHOOCL_Category INDDJNMPONH, string LJNAKDMILMC)
+	{
+		List<int> res = new List<int>();
+		string str = LKMHPJKIFDN.GAPONCJOKAC_DecoStamp.EFEGBHACJAL(LJNAKDMILMC, "");
+		string[] strs = str.Split(new char[] { ',' });
+		for(int i = 0; i < strs.Length; i++)
+		{
+			int v = 0;
+			if(int.TryParse(strs[i], out v) && v > 0)
+			{
+				if(EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(LKMHPJKIFDN, LDEGEHAEALK, INDDJNMPONH, v, null) == 0)
+				{
+					EKLNMHFCAOI.DPHGFMEPOCA_SetNumItems(LKMHPJKIFDN, LDEGEHAEALK, INDDJNMPONH, v, 1, null);
+					res.Add(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(INDDJNMPONH, v));
+				}
+			}
+		}
+		return res;
+	}
 }

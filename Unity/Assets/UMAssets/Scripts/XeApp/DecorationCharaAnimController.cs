@@ -269,7 +269,27 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AC6B80 Offset: 0x1AC6B80 VA: 0x1AC6B80
-		//public void AnimReactionSpecified(DecorationCharaAnimController.ReactionSpecifiedType type) { }
+		public void AnimReactionSpecified(ReactionSpecifiedType type)
+		{
+			if(hasPinched)
+				return;
+			if(type == ReactionSpecifiedType.Angry)
+			{
+				state = State.AngrySway;
+				ChangeAnim(HashAngrySway);
+				nextBlankSec = reactionAngryBlank;
+				isWaitNextAnim = true;
+			}
+			else if(type == ReactionSpecifiedType.Glad)
+			{
+				state = State.GladJump;
+				ChangeAnim(HashGlad);
+				nextBlankSec = reactionGladBlank;
+				isWaitNextAnim = true;
+			}
+			diffPos = Vector2.zero;
+			isReaction = true;
+		}
 
 		//// RVA: 0x1ACBC5C Offset: 0x1ACBC5C VA: 0x1ACBC5C
 		private void AnimPinch(bool isInitiation)
@@ -303,10 +323,22 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1ACBF60 Offset: 0x1ACBF60 VA: 0x1ACBF60
-		//private void AnimTouchKeepIntimacy() { }
+		private void AnimTouchKeepIntimacy()
+		{
+			state = State.TouchKeepIntimacy;
+			ChangeAnim(HashWaitSway, true);
+		}
 
 		//// RVA: 0x1ACC008 Offset: 0x1ACC008 VA: 0x1ACC008
-		//private void AnimIntimacyUp() { }
+		private void AnimIntimacyUp()
+		{
+			state = State.GladJumpIntimacy;
+			ChangeAnim(HashGladJump, true);
+			if(chara != null)
+				chara.PlayVoice(DecorationChara.VoiceType.Intimacy, 0);
+			isWaitNextAnim = true;
+			nextBlankSec = intimacyBlank;
+		}
 
 		//// RVA: 0x1ACC128 Offset: 0x1ACC128 VA: 0x1ACC128
 		public void Direct(Vector2 move, bool isChangeForced = false)
@@ -421,13 +453,33 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AC70D4 Offset: 0x1AC70D4 VA: 0x1AC70D4
-		//public void OnTouchEnter() { }
+		public void OnTouchEnter()
+		{
+			hasTouched = true;
+			if(!isReaction)
+			{
+				AnimTouchKeep();
+				diffPos = Vector2.zero;
+			}
+		}
 
 		//// RVA: 0x1AC957C Offset: 0x1AC957C VA: 0x1AC957C
-		//public bool OnBeginIntimacyCheck() { }
+		public bool OnBeginIntimacyCheck()
+		{
+			if(!isReaction && _state == State.TouchKeep)
+			{
+				AnimTouchKeepIntimacy();
+				return true;
+			}
+			return false;
+		}
 
 		//// RVA: 0x1AC918C Offset: 0x1AC918C VA: 0x1AC918C
-		//public void OnLongTap() { }
+		public void OnLongTap()
+		{
+			hasTouched = false;
+			AnimIntimacyUp();
+		}
 
 		//// RVA: 0x1AC7FB8 Offset: 0x1AC7FB8 VA: 0x1AC7FB8
 		public void OnTouchUp()

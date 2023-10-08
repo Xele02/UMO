@@ -54,13 +54,58 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x19E7F9C Offset: 0x19E7F9C VA: 0x19E7F9C
-		// public void Setup(JJOELIOGMKK viewData, DecorationChara chara, Camera cam) { }
+		public void Setup(JJOELIOGMKK_DivaIntimacyInfo viewData, DecorationChara chara, Camera cam)
+		{
+			transform.SetParent(chara.GetObject().transform, false);
+			transform.localPosition = new Vector3(0, chara.bottomOfs.y * 0, 0);
+			m_viewData = viewData;
+			if(m_RightFarthestRelativePos == 0)
+			{
+				m_RightFarthestRelativePos = m_RightFarthest.transform.position.x - transform.position.x + m_RightFarthest.rect.width;
+			}
+			float f = 1;
+			if(chara.decorationController.scrollController.m_controlDataList.Count > 0)
+			{
+				f = chara.decorationController.scrollController.m_controlDataList[0].scaler.scaleFactor;
+			}
+			Vector3 v = cam.WorldToViewportPoint(transform.position + new Vector3(0, f * m_RightFarthestRelativePos, 0));
+			if(v.x >= 1)
+			{
+				m_layoutRoot.StartChildrenAnimGoStop("02");
+				m_layoutRoot_.StartChildrenAnimGoStop("02");
+				Setup(m_left);
+			}
+			else
+			{
+				m_layoutRoot.StartChildrenAnimGoStop("01");
+				m_layoutRoot_.StartChildrenAnimGoStop("01");
+				Setup(m_right);
+			}
+			m_layoutLevelMax.StartChildrenAnimGoStop(viewData.HBODCMLFDOB.PFIILLOIDIL ? "01" : "02");
+			m_numLevel.SetNumber(m_viewData.HEKJGCMNJAB_CurrentLevel, 0);
+			if(!m_viewData.HBODCMLFDOB.PFIILLOIDIL)
+			{
+				SetExp(m_viewData.KPEAGFJHNDP_CurrentLevelExp, m_viewData.KOKCFJDMJLI);
+				UpdateGaugePosition(m_viewData.KPEAGFJHNDP_CurrentLevelExp * 1.0f / m_viewData.KOKCFJDMJLI);
+			}
+			else
+			{
+				SetExp(0, 0);
+				UpdateGaugePosition(1);
+			}
+		}
 
 		// // RVA: 0x19E8864 Offset: 0x19E8864 VA: 0x19E8864
-		// public void Enter() { }
+		public void Enter()
+		{
+			m_layoutLevel.StartChildrenAnimGoStop("go_in", "st_in");
+		}
 
 		// // RVA: 0x19E88F0 Offset: 0x19E88F0 VA: 0x19E88F0
-		// public void Leave() { }
+		public void Leave()
+		{
+			m_layoutLevel.StartChildrenAnimGoStop("go_out", "st_out");
+		}
 
 		// // RVA: 0x19E897C Offset: 0x19E897C VA: 0x19E897C
 		// public void Show() { }
@@ -79,7 +124,10 @@ namespace XeApp.Game.Menu
 		// private IEnumerator Co_StartPointUp(Action callback) { }
 
 		// // RVA: 0x19E8B60 Offset: 0x19E8B60 VA: 0x19E8B60
-		// public bool IsLayoutLevelPlayingEnd() { }
+		public bool IsLayoutLevelPlayingEnd()
+		{
+			return !m_layoutLevel.IsPlayingChildren();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6D0F14 Offset: 0x6D0F14 VA: 0x6D0F14
 		// // RVA: 0x19E8B90 Offset: 0x19E8B90 VA: 0x19E8B90
@@ -94,7 +142,11 @@ namespace XeApp.Game.Menu
 		// private IEnumerator Co_CountUpAnim(int point, int bonus) { }
 
 		// // RVA: 0x19E87A0 Offset: 0x19E87A0 VA: 0x19E87A0
-		// private void UpdateGaugePosition(float normalizePos) { }
+		private void UpdateGaugePosition(float normalizePos)
+		{
+			int pos = (int)((m_layoutGauge.GetView(0).FrameAnimation.FrameNum + 1) * normalizePos);
+			m_layoutGauge.StartChildrenAnimGoStop(pos, pos);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6D107C Offset: 0x6D107C VA: 0x6D107C
 		// // RVA: 0x19E8E5C Offset: 0x19E8E5C VA: 0x19E8E5C
@@ -110,10 +162,32 @@ namespace XeApp.Game.Menu
 		// private void SetLevel(int value) { }
 
 		// // RVA: 0x19E8680 Offset: 0x19E8680 VA: 0x19E8680
-		// private void SetExp(int now, int next) { }
+		private void SetExp(int now, int next)
+		{
+			if(next < 1)
+			{
+				m_layoutExpDigit.StartChildrenAnimGoStop("max");
+			}
+			else
+			{
+				m_layoutExpDigit.StartChildrenAnimGoStop(GetDigitLabel(next));
+				m_numExpNow.SetNumber(now, 0);
+				m_numExpNext.SetNumber(next, 0);
+			}
+		}
 
 		// // RVA: 0x19E9058 Offset: 0x19E9058 VA: 0x19E9058
-		// private string GetDigitLabel(int num) { }
+		private string GetDigitLabel(int num)
+		{
+			int a = 1;
+			if(num != 0)
+				a = (int)Mathf.Log10(num) + 1;
+			if(a == 3)
+				return "02";
+			if(a > 0 && a < 3)
+				return "01";
+			return "03";
+		}
 
 		// // RVA: 0x19E9134 Offset: 0x19E9134 VA: 0x19E9134
 		// private void SetUpPoint(int value) { }
@@ -134,12 +208,41 @@ namespace XeApp.Game.Menu
 		// public void SetLeftSide() { }
 
 		// // RVA: 0x19E923C Offset: 0x19E923C VA: 0x19E923C
-		// private void Setup(LayoutDecoIntimacyInfo.Variables variables) { }
+		private void Setup(Variables variables)
+		{
+			m_numExpNow = variables.m_numExpNow;
+			m_numExpNext = variables.m_numExpNext;
+			m_numLevel = variables.m_numLevel;
+			m_numPoint = variables.m_numPoint;
+			m_layoutPoint = variables.m_layoutPoint;
+			m_layoutPointAnim = variables.m_layoutPointAnim;
+			m_layoutPointAnimTbl = variables.m_layoutPointAnimTbl;
+			m_layoutExpDigit = variables.m_layoutExpDigit;
+			m_layoutLevel = variables.m_layoutLevel;
+			m_layoutLevelMax = variables.m_layoutLevelMax;
+			m_layoutGauge = variables.m_layoutGauge;
+		}
 
 		// RVA: 0x19E9384 Offset: 0x19E9384 VA: 0x19E9384 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			TodoLogger.LogError(0, "InitializeFromLayout");
+			m_layoutRoot = layout.FindViewById("swtbl_deco_present") as AbsoluteLayout;
+			m_layoutRoot_ = layout.FindViewById("swtbl_fs_p_ga_anim") as AbsoluteLayout;
+			m_right.m_layoutLevel = layout.FindViewByExId("swtbl_fs_p_ga_anim_sw_fs_p_ga_anim_01") as AbsoluteLayout;
+			m_right.m_layoutExpDigit = m_right.m_layoutLevel.FindViewByExId("deco_fs_ga_swtbl_fs_num") as AbsoluteLayout;
+			m_right.m_layoutLevelMax = m_right.m_layoutLevel.FindViewByExId("deco_fs_ga_swtbl_fs_lv_num_max") as AbsoluteLayout;
+			m_right.m_layoutGauge = m_right.m_layoutLevel.FindViewByExId("deco_fs_ga_sw_ga_anim") as AbsoluteLayout;
+			m_right.m_layoutPointAnimTbl = new AbsoluteLayout[2];
+			m_right.m_layoutPointAnimTbl[0] = layout.FindViewByExId("swtbl_deco_present_sw_fs_p_num_s_anim") as AbsoluteLayout;
+			m_left.m_layoutLevel = layout.FindViewByExId("swtbl_fs_p_ga_anim_sw_fs_p_ga_anim_02") as AbsoluteLayout;
+			m_left.m_layoutExpDigit = m_left.m_layoutLevel.FindViewByExId("deco_fs_ga_swtbl_fs_num") as AbsoluteLayout;
+			m_left.m_layoutLevelMax = m_left.m_layoutLevel.FindViewByExId("deco_fs_ga_swtbl_fs_lv_num_max") as AbsoluteLayout;
+			m_left.m_layoutGauge = m_left.m_layoutLevel.FindViewByExId("deco_fs_ga_sw_ga_anim") as AbsoluteLayout;
+			m_left.m_layoutPointAnimTbl = new AbsoluteLayout[2];
+			m_left.m_layoutPointAnimTbl[0] = layout.FindViewByExId("swtbl_deco_present_sw_fs_p_num_s_anim") as AbsoluteLayout;
+			m_layoutRoot.StartAllAnimGoStop("st_wait");
+			Setup(m_right);
+			Loaded();
 			return true;
 		}
 	}

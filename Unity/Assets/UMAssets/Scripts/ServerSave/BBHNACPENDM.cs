@@ -9,9 +9,9 @@ public class BBHNACPENDM_ServerSaveData
 	public enum BDADJONBIBO
 	{
 		HJNNKCMLGFL = 0,
-		FKNGHCNOEHO = 1,
-		GGEELFGJAMP = 2,
-		AFGALHECDIJ = 3,
+		FKNGHCNOEHO_1 = 1,
+		GGEELFGJAMP_2 = 2,
+		AFGALHECDIJ_3 = 3,
 		LPKPFMHEKEM = 4
 	}
 	 
@@ -388,7 +388,10 @@ public class BBHNACPENDM_ServerSaveData
 	// public void GGBOGLKKKDM() { }
 
 	// // RVA: 0xF1F370 Offset: 0xF1F370 VA: 0xF1F370
-	// public void HIJAFAIOLIL() { }
+	public void HIJAFAIOLIL()
+	{
+		KHEKNNFCAOI_Init(0x230000000000);
+	}
 
 	// // RVA: 0xF1C554 Offset: 0xF1C554 VA: 0xF1C554
 	public void KHEKNNFCAOI_Init(ulong HGNJJBLEMPH)

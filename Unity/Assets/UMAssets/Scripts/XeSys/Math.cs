@@ -108,7 +108,18 @@ namespace XeSys
 			private const float BOUNCE_T = 2.75f;
 
 			//// RVA: 0x2394C40 Offset: 0x2394C40 VA: 0x2394C40
-			//public static float Evaluate(Math.Tween.EasingFunc type, float start, float end, float t) { }
+			public static float Evaluate(Math.Tween.EasingFunc type, float start, float end, float t)
+			{
+				switch(type)
+				{
+					case EasingFunc.InOutExpo:
+						return EasingInOutExpo(start, end, t);
+					default:
+						TodoLogger.LogError(0, "Todo Evaluate "+type);
+						break;
+				}
+				return 0;
+			}
 
 			//// RVA: 0x2396A6C Offset: 0x2396A6C VA: 0x2396A6C
 			//public static Vector3 Evaluate(Math.Tween.EasingFunc type, Vector3 start, Vector3 end, float t) { }
@@ -189,7 +200,29 @@ namespace XeSys
 			//public static float EasingOutExpo(float start, float end, float t) { }
 
 			//// RVA: 0x2395D20 Offset: 0x2395D20 VA: 0x2395D20
-			//public static float EasingInOutExpo(float start, float end, float t) { }
+			public static float EasingInOutExpo(float start, float end, float t)
+			{
+				float res = start;
+				if(t > 0)
+				{
+					res = end;
+					if(t < 1)
+					{
+						res = 2*t;
+						if(res >= 1)
+						{
+							res = Mathf.Pow(2, (res - 1) * 10);
+							res = 2 - res;
+						}
+						else
+						{
+							res = Mathf.Pow(2, (res - 1) * 10);
+						}
+						res = (end - start) * 0.5f * res + start;
+					}
+				}
+				return res;
+			}
 
 			//// RVA: 0x2395E74 Offset: 0x2395E74 VA: 0x2395E74
 			//public static float EasingInCirc(float start, float end, float t) { }

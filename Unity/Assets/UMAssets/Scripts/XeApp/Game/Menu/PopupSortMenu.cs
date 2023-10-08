@@ -216,7 +216,10 @@ namespace XeApp.Game.Menu
 		//public uint GetCompatibleFilter() { }
 
 		//// RVA: 0x1149F34 Offset: 0x1149F34 VA: 0x1149F34
-		//public uint GetInteriorFilter() { }
+		public uint GetInteriorFilter()
+		{
+			return m_interiorButtonStateBit;
+		}
 
 		//// RVA: 0x1149F3C Offset: 0x1149F3C VA: 0x1149F3C
 		private void Awake()
@@ -511,7 +514,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x114BA5C Offset: 0x114BA5C VA: 0x114BA5C
-		//public static bool IsHaveFilterOn(bool have, uint flags) { }
+		public static bool IsHaveFilterOn(bool have, uint flags)
+		{
+			if(flags != 0)
+			{
+				return (flags & (1 << (have ? 0 : 1))) != 0;
+			}
+			return true;
+		}
 
 		//// RVA: 0x114BB20 Offset: 0x114BB20 VA: 0x114BB20
 		public static bool IsRarityFilterOn(int rare, uint flags)
@@ -614,7 +624,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x114BF18 Offset: 0x114BF18 VA: 0x114BF18
-		//public static bool IsInteriorTypeFilterOn(int interiorType, uint flags) { }
+		public static bool IsInteriorTypeFilterOn(int interiorType, uint flags)
+		{
+			if(flags != 0)
+			{
+				return (flags & (1 << interiorType - 1)) != 0;
+			}
+			return true;
+		}
 
 		//// RVA: 0x114BFBC Offset: 0x114BFBC VA: 0x114BFBC
 		public static bool IsCenterSkillFilterOn(GCIJNCFDNON_SceneInfo scene, ulong flags)

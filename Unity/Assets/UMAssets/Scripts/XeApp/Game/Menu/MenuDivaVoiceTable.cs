@@ -68,7 +68,10 @@ namespace XeApp.Game.Menu
 		// public List<MenuDivaVoiceTable.Data> GetList_IntimacyReaction() { }
 
 		// // RVA: 0xED0870 Offset: 0xED0870 VA: 0xED0870
-		// public MenuDivaVoiceTable.Data GetTimeTalk(int i) { }
+		public Data GetTimeTalk(int i)
+		{
+			return m_timeTalk[i];
+		}
 
 		// // RVA: 0xED08F0 Offset: 0xED08F0 VA: 0xED08F0
 		public Data GetLoginTalk(DivaTimezoneTalk.Type i)
@@ -106,7 +109,10 @@ namespace XeApp.Game.Menu
 		// public MenuDivaVoiceTable.Data GetIntimacy(int a_index) { }
 
 		// // RVA: 0xECFB7C Offset: 0xECFB7C VA: 0xECFB7C
-		// public List<int> GetIntimacyLock_TimeTalk() { }
+		public List<int> GetIntimacyLock_TimeTalk()
+		{
+			return m_IntimacyLock_TimeTalk;
+		}
 
 		// // RVA: 0xECF3BC Offset: 0xECF3BC VA: 0xECF3BC
 		// public List<int> GetIntimacyLock_TouchReaction() { }

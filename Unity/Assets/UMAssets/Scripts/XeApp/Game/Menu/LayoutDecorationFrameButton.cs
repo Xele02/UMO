@@ -125,6 +125,13 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x19F0CCC Offset: 0x19F0CCC VA: 0x19F0CCC
-		//public void Hidden() { }
+		public void Hidden()
+		{
+			m_flipButon.Hidden = true;
+			m_serifButon.Hidden = true;
+			m_priorityDownButon.Hidden = true;
+			m_priorityUpButon.Hidden = true;
+			m_kiraButon.Hidden = true;
+		}
 	}
 }

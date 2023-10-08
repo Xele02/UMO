@@ -1,6 +1,9 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using XeApp.Core;
+using XeApp.Game;
 using XeApp.Game.Menu;
 using XeSys.Gfx;
 
@@ -29,11 +32,35 @@ namespace XeApp
 		public bool IsLoadedResource { get; private set; } // 0x28
 
 		//// RVA: 0x1AC18CC Offset: 0x1AC18CC VA: 0x1AC18CC
-		//public void LoadResource() { }
+		public void LoadResource()
+		{
+			if(IsLoadedResource)
+				return;
+			IsLoadedResource = false;
+			this.StartCoroutineWatched(Co_LoadControllerResource());
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AC110 Offset: 0x6AC110 VA: 0x6AC110
 		//// RVA: 0x1AD5560 Offset: 0x1AD5560 VA: 0x1AD5560
-		//private IEnumerator Co_LoadControllerResource() { }
+		private IEnumerator Co_LoadControllerResource()
+		{
+			AssetBundleLoadLayoutOperationBase op;
+
+			//0x1AD5F8C
+			op = AssetBundleManager.LoadLayoutAsync(BundleName, AssetName);
+			yield return op;
+			yield return Co.R(op.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+			{
+				//0x1AD5E08
+				instance.transform.SetParent(transform, false);
+				m_button = instance.GetComponent<LayoutDecorationFrameButton>();
+				m_button.Hidden();
+			}));
+			yield return null;
+			AssetBundleManager.UnloadAssetBundle(BundleName, false);
+			m_frameImage = GetComponent<Image>();
+			IsLoadedResource = true;
+		}
 
 		//// RVA: 0x1AD560C Offset: 0x1AD560C VA: 0x1AD560C
 		public void Show(DecorationItemBase item, LayoutDecorationFrameButton.ButtonType type)
@@ -67,16 +94,24 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AD5BA8 Offset: 0x1AD5BA8 VA: 0x1AD5BA8
-		//public void Hide() { }
+		public void Hide()
+		{
+			m_button.Hidden();
+			m_possibleMarker.SetActive(false);
+			m_frameImage.enabled = false;
+		}
 
 		//// RVA: 0x1AD5C20 Offset: 0x1AD5C20 VA: 0x1AD5C20
-		//public void EnablePost(bool isEnable) { }
+		public void EnablePost(bool isEnable)
+		{
+			m_disiblePostMarkerImage.color = isEnable ? EnableColor : DisableColor;
+		}
 
 		//// RVA: 0x1AC184C Offset: 0x1AC184C VA: 0x1AC184C
-		//public void SetPossibleMaker(GameObject PossibleMarker) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6AC188 Offset: 0x6AC188 VA: 0x6AC188
-		//// RVA: 0x1AD5E08 Offset: 0x1AD5E08 VA: 0x1AD5E08
-		//private void <Co_LoadControllerResource>b__15_0(GameObject instance) { }
+		public void SetPossibleMaker(GameObject PossibleMarker)
+		{
+			m_possibleMarker = PossibleMarker;
+			m_disiblePostMarkerImage = PossibleMarker.GetComponent<Image>();
+		}
 	}
 }

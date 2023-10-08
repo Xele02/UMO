@@ -173,7 +173,7 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GJLHEJPHEDA_ItemsBg.Count; i++)
 			{
 				NDBFKHKMMCE_DecoItem.EHLEEEBJLAM_BgItem dbItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GJLHEJPHEDA_ItemsBg[i];
-				if(dbItem.PLALNIIBLOF == 2)
+				if(dbItem.PLALNIIBLOF_Enabled == 2)
 				{
 					m_deco_bg_max++;
 					if (dbItem.PPFNGGCBJKC_Id - 1 < a_player_data.OMMNKDEODJP_DecoItem.DJHBDDGEKGO_Bgs.Count)
@@ -188,7 +188,7 @@ namespace XeApp.Game.Menu
 			for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GHOLIPLDMPJ_ItemsObj.Count; i++)
 			{
 				NDBFKHKMMCE_DecoItem.NIBEBIGPKLA_ObjItem dbItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GHOLIPLDMPJ_ItemsObj[i];
-				if (dbItem.PLALNIIBLOF == 2)
+				if (dbItem.PLALNIIBLOF_Enabled == 2)
 				{
 					m_deco_interia_max++;
 					if (dbItem.PPFNGGCBJKC_Id - 1 < a_player_data.OMMNKDEODJP_DecoItem.KPMFLNOELIN_Objs.Count)
@@ -200,10 +200,10 @@ namespace XeApp.Game.Menu
 			}
 			m_deco_mascot_now = 0;
 			m_deco_mascot_max = 0;
-			for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK.Count; i++)
+			for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp.Count; i++)
 			{
-				NDBFKHKMMCE_DecoItem.FIDBAFHNGCF dbItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK[i];
-				if (dbItem.PLALNIIBLOF == 2 && dbItem.GBJFNGCDKPM == 12)
+				NDBFKHKMMCE_DecoItem.FIDBAFHNGCF dbItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp[i];
+				if (dbItem.PLALNIIBLOF_Enabled == 2 && dbItem.GBJFNGCDKPM == 12)
 				{
 					m_deco_mascot_max++;
 					if (dbItem.PPFNGGCBJKC_Id - 1 < a_player_data.OMMNKDEODJP_DecoItem.NBKAMFFIOOG_Sp.Count)

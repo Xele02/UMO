@@ -1,5 +1,7 @@
 
+using System.Collections;
 using UnityEngine;
+using XeApp.Core;
 
 namespace XeApp
 { 
@@ -21,11 +23,44 @@ namespace XeApp
 		public float TargetHeight { get; private set; } // 0x34
 
 		//// RVA: 0x1923168 Offset: 0x1923168 VA: 0x1923168
-		//public static Pincher Instantiate(DecorationChara pinchTarget, SpriteRenderer sr) { }
+		public static Pincher Instantiate(DecorationChara pinchTarget, SpriteRenderer sr)
+		{
+			GameObject g = new GameObject("CharaHeightOffseter");
+			Pincher p = g.AddComponent<Pincher>();
+			p.gameObject.AddComponent<RectTransform>();
+			p.pt = p.transform;
+			p.target = pinchTarget;
+			p.tt = pinchTarget.GetObject().transform;
+			p.pt.SetParent(p.tt.parent, false);
+			p.tsr = sr;
+			p.StartCoroutineWatched(p.Co_LoadShadow());
+			p.TargetHeight = pinchTarget.Size.y;
+			return p;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6ABC20 Offset: 0x6ABC20 VA: 0x6ABC20
 		//// RVA: 0x1923478 Offset: 0x1923478 VA: 0x1923478
-		//private IEnumerator Co_LoadShadow() { }
+		private IEnumerator Co_LoadShadow()
+		{
+			string bn;
+			AssetBundleLoadAllAssetOperationBase op;
+
+			//0x1923AD0
+			bn = DecorationConstants.DecoAssetPath + "ch/cmn.xab";
+			op = AssetBundleManager.LoadAllAssetAsync(bn);
+			yield return op;
+			GameObject g = op.GetAsset<GameObject>("dc_chara_release_point");
+			if(g != null)
+			{
+				sr = Instantiate(g, pt, false).GetComponent<SpriteRenderer>();
+				sr.transform.localScale = tsr.transform.localScale * target.Scale;
+				sr.gameObject.layer = tsr.gameObject.layer;
+				sr.sortingOrder = tsr.sortingOrder - 1;
+				sr.enabled = false;
+				sr.transform.SetParent(pt, false);
+			}
+			AssetBundleManager.UnloadAssetBundle(bn, false);
+		}
 
 		// RVA: 0x1923524 Offset: 0x1923524 VA: 0x1923524
 		public void UpdateShadowPos()

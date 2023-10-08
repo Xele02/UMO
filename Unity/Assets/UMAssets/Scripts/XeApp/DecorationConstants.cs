@@ -46,10 +46,27 @@ namespace XeApp
 			//public static string GetAssetBundleName(DecorationConstants.Attribute.Type type) { }
 
 			//// RVA: 0x1ACD9F0 Offset: 0x1ACD9F0 VA: 0x1ACD9F0
-			//public static string GetTextureName(DecorationConstants.Attribute.Type type) { }
+			public static string GetTextureName(Type type)
+			{
+				if((int)type > 0 && (int)type - 1 < 4)
+					return new string[4] { "wallL", "wallR", "NONE", "floor" }[(int)type - 1];
+				else
+					return "NONE";
+			}
 
 			//// RVA: 0x1ACDA6C Offset: 0x1ACDA6C VA: 0x1ACDA6C
-			//public static int AttributeBgId(DecorationConstants.Attribute.Type type) { }
+			public static int AttributeBgId(Type type)
+			{
+				if(type == Type.BgWallL)
+					return 1;
+				if(type != Type.BgFloor)
+				{
+					if(type != Type.BgWallR)
+						return -1;
+					return (int)type;
+				}
+				return 0;
+			}
 
 			//// RVA: 0x1ACDA98 Offset: 0x1ACDA98 VA: 0x1ACDA98
 			public static bool CheckAttribute(Type type1, Type type2)
@@ -92,10 +109,23 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1ACCD2C Offset: 0x1ACCD2C VA: 0x1ACCD2C
-		//public static DecorationConstants.Attribute.Type MakeAttribute(KDKFHGHGFEK viewDecoItemData) { }
+		public static Attribute.Type MakeAttribute(KDKFHGHGFEK viewDecoItemData)
+		{
+			if(viewDecoItemData.NPADACLCNAN_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
+				return Attribute.Type.Floor;
+			if(viewDecoItemData.NPADACLCNAN_Category >= EKLNMHFCAOI.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster && 
+				viewDecoItemData.NPADACLCNAN_Category <= EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft)
+				return Attribute.Type.Wall;
+			return (Attribute.Type)viewDecoItemData.FJFCNGNGIBN;
+		}
 
 		//// RVA: 0x1ACCE24 Offset: 0x1ACCE24 VA: 0x1ACCE24
-		//public static bool IsPoster(EKLNMHFCAOI.FKGCBLHOOCL ctg) { }
+		public static bool IsPoster(EKLNMHFCAOI.FKGCBLHOOCL_Category ctg)
+		{
+			if(((int)ctg | 2) != 35)
+				return ctg == EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef;
+			return true;
+		}
 
 		//// RVA: 0x1ACCE48 Offset: 0x1ACCE48 VA: 0x1ACCE48
 		public static bool IsItemSpVisit(DecorationItemBase item)
@@ -106,7 +136,10 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1ACCED0 Offset: 0x1ACCED0 VA: 0x1ACCED0
-		//public static bool IsItemSpVisit(DAJBODHMLAB.MMLACIFMNBN.MHODOAJPNHD item) { }
+		public static bool IsItemSpVisit(DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.MHODOAJPNHD item)
+		{
+			return EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.HAJKNHNAIKL_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp && EKLNMHFCAOI.DEACAHNLMNI_getItemId(item.HAJKNHNAIKL_ItemId) == 11;
+		}
 
 		//// RVA: 0x1ACCFB4 Offset: 0x1ACCFB4 VA: 0x1ACCFB4
 		public static bool IsRug(DecorationItemBase item)
@@ -120,22 +153,148 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1ACD03C Offset: 0x1ACD03C VA: 0x1ACD03C
-		//public static string GetItemAssetPathFormat(KDKFHGHGFEK viewData, bool useRareBrakePosterAnim) { }
+		public static string GetItemAssetPathFormat(KDKFHGHGFEK viewData, bool useRareBrakePosterAnim)
+		{
+			if(viewData != null)
+			{
+				return GetItemAssetPathFormat(viewData.NPADACLCNAN_Category, useRareBrakePosterAnim);
+			}
+			return "";
+		}
 
 		//// RVA: 0x1ACD0F8 Offset: 0x1ACD0F8 VA: 0x1ACD0F8
-		//public static string GetItemAssetPathFormat(EKLNMHFCAOI.FKGCBLHOOCL category, bool useRareBrakePosterAnim) { }
+		public static string GetItemAssetPathFormat(EKLNMHFCAOI.FKGCBLHOOCL_Category category, bool useRareBrakePosterAnim)
+		{
+			switch(category)
+			{
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg:
+					return "bg/{0:D4}/{1}.xab";
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj:
+					return "it/{0:D4}.xab";
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara:
+					return "ch/{0:D2}.xab";
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif:
+					return "sf/{0:D4}.xab";
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp:
+					return "sp/{0:D4}.xab";
+				default:
+					break;
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster:
+					return "ps/{0:D6}.xab";
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef:
+					return useRareBrakePosterAnim ? "ps2/{0:D6}_01.xab" : "ps/{0:D6}_01.xab";
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft:
+					return useRareBrakePosterAnim ? "ps2/{0:D6}_02.xab" : "ps/{0:D6}_02.xab";
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.HEMGMACMGAB_DecoItemVFFigure:
+					return "vl/{0:D2}_01.xab";
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso:
+					return "cs/{0:D3}.xab";
+			}
+			return "";
+		}
 
 		//// RVA: 0x1ACD278 Offset: 0x1ACD278 VA: 0x1ACD278
-		//public static string GetItemFileNameFormat(KDKFHGHGFEK viewData) { }
+		public static string GetItemFileNameFormat(KDKFHGHGFEK viewData)
+		{
+			if(viewData == null)
+				return "";
+			switch(viewData.NPADACLCNAN_Category)
+			{
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj:
+					return "deco_{0:D4}";
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara:
+				default:
+					return "";
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif:
+					return "{0:D4}";
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp:
+					return "dc_sp_{0:D4}";
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster:
+					return "deco_{0:D6}";
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef:
+					return "deco_{0:D6}_01";
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft:
+					return "deco_{0:D6}_02";
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.HEMGMACMGAB_DecoItemVFFigure:
+					return "deco_{0:D2}_01";
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso:
+					return "deco_{0:D3}";
+			}
+		}
 
 		//// RVA: 0x1ACD3E4 Offset: 0x1ACD3E4 VA: 0x1ACD3E4
-		//public static int GetItemAssetId(KDKFHGHGFEK viewData) { }
+		public static int GetItemAssetId(KDKFHGHGFEK viewData)
+		{
+			if(viewData != null)
+			{
+				switch(viewData.NPADACLCNAN_Category)
+				{
+					case EKLNMHFCAOI.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg:
+					case EKLNMHFCAOI.FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj:
+					case EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara:
+					case EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp:
+					case EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef:
+					case EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft:
+					case EKLNMHFCAOI.FKGCBLHOOCL_Category.HEMGMACMGAB_DecoItemVFFigure:
+					case EKLNMHFCAOI.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso:
+						return viewData.PPFNGGCBJKC_Id;
+					case EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif:
+						return viewData.GBJFNGCDKPM;
+					case EKLNMHFCAOI.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster:
+						return EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(viewData.NPADACLCNAN_Category, viewData.PPFNGGCBJKC_Id);
+				}
+			}
+			return 0;
+		}
 
 		//// RVA: 0x1ABA630 Offset: 0x1ABA630 VA: 0x1ABA630
-		//public static string GetItemBundleName(KDKFHGHGFEK viewData, bool useRareBrakePosterAnim, DecorationConstants.Attribute.Type attr = 0) { }
+		public static string GetItemBundleName(KDKFHGHGFEK viewData, bool useRareBrakePosterAnim, Attribute.Type attr = 0)
+		{
+			string str = GetItemAssetPathFormat(viewData, useRareBrakePosterAnim);
+			if(str != "")
+			{
+				str = string.Format(DecoAssetPath + str, GetItemAssetId(viewData), (int)attr > 0 && (int)attr - 1 < 4 ? new string[4] { "wl", "wr", "NONE", "fl" }[(int)attr - 1] : "NONE");
+			}
+			return str;
+		}
 
 		//// RVA: 0x1ABA80C Offset: 0x1ABA80C VA: 0x1ABA80C
-		//public static string GetThumbnailBundleName(KDKFHGHGFEK viewData, DecorationConstants.Attribute.Type attr = 0) { }
+		public static string GetThumbnailBundleName(KDKFHGHGFEK viewData, DecorationConstants.Attribute.Type attr = 0)
+		{
+			if(viewData == null)
+				return "";
+			int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(viewData.NPADACLCNAN_Category, viewData.PPFNGGCBJKC_Id);
+			switch(viewData.NPADACLCNAN_Category)
+			{
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.GPMKJNDHDCP_DecoItemBg:
+					if(attr == Attribute.Type.BgWallL)
+						return ItemTextureCache.MakeDecoItemIconTexturePath(itemId, 2);
+					else if(attr == Attribute.Type.BgWallR)
+						return ItemTextureCache.MakeDecoItemIconTexturePath(itemId, 3);
+					else if(attr == Attribute.Type.BgFloor)
+						return ItemTextureCache.MakeDecoItemIconTexturePath(itemId, 1);
+					break;
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp:
+					if(viewData.GBJFNGCDKPM == 11)
+						return "";
+					return ItemTextureCache.MakeDecoItemIconTexturePath(itemId, 0);
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj:
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara:
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif:
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.HEMGMACMGAB_DecoItemVFFigure:
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso:
+					return ItemTextureCache.MakeDecoItemIconTexturePath(itemId, 0);
+				default:
+					return "";
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster:
+					return ItemTextureCache.MakeDecoPosterIconTexturePath(itemId, 0);
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef:
+					return ItemTextureCache.MakeDecoPosterIconTexturePath(itemId, 1);
+				case EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft:
+					return ItemTextureCache.MakeDecoPosterIconTexturePath(itemId, 2);
+			}
+			return "";
+		}
 
 		//// RVA: 0x1AC85F8 Offset: 0x1AC85F8 VA: 0x1AC85F8
 		public static string MakeCharaCueSheetName(int charaId)

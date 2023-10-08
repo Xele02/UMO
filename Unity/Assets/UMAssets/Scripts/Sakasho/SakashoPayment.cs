@@ -34,7 +34,14 @@ public class SakashoPayment : SakashoAPIBase
 	}
 
 	// RVA: 0x2E53D34 Offset: 0x2E53D34 VA: 0x2E53D34
-	//public static SakashoAPICallContext Purchase(int productId, int quantity, int currencyId, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext Purchase(int productId, int quantity, int currencyId, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		h["productId"] = productId;
+		h["quantity"] = quantity;
+		h["currencyId"] = currencyId;
+		return new SakashoAPICallContext(Call(SakashoPaymentPurchase, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	// RVA: 0x2E53F7C Offset: 0x2E53F7C VA: 0x2E53F7C
 	public static SakashoAPICallContext GetRemainingForCurrencyIds(int[] ids, OnSuccess onSuccess, OnError onError)
@@ -117,7 +124,10 @@ public class SakashoPayment : SakashoAPIBase
 	}
 
 	// RVA: 0x2E559E8 Offset: 0x2E559E8 VA: 0x2E559E8
-	//private static extern int SakashoPaymentPurchase(int callbackId, string json) { }
+	private static int SakashoPaymentPurchase(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoPaymentPurchase(callbackId, json);
+	}
 
 	// RVA: 0x2E55B28 Offset: 0x2E55B28 VA: 0x2E55B28
 	//private static extern int SakashoPaymentGetRemainingForCurrencyIds(int callbackId, string json) { }

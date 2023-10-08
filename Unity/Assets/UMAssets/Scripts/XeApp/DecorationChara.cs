@@ -1,10 +1,12 @@
 using mcrs;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using XeApp.Core;
 using XeApp.Game.Common;
 using XeApp.Game.Menu;
 using XeSys;
@@ -64,7 +66,7 @@ namespace XeApp
 		public override bool IsLoaded { get { return base.IsLoaded && m_isAnimationLoaded; } } //0x1AC3B1C
 		public Vector2 bottomOfs { get; private set; } // 0xDC
 		//private IntimacyController intimacyController { get; } 0x1AC3B64
-		//public Camera cam { get; } 0x1AC3B88
+		public Camera cam { get { return decorationController.scrollController.m_decorationCamera; } } //0x1AC3B88
 		public override Vector2 Position { get { return base.Position; } set {
 				base.Position = value;
 				if (m_serif != null)
@@ -108,7 +110,36 @@ namespace XeApp
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AB798 Offset: 0x6AB798 VA: 0x6AB798
 		//// RVA: 0x1AC4028 Offset: 0x1AC4028 VA: 0x1AC4028
-		//private IEnumerator Co_LoadAnim() { }
+		private IEnumerator Co_LoadAnim()
+		{
+			SpriteRenderer sr; // 0x14
+			string cbn; // 0x18
+			string bn; // 0x1C
+			AssetBundleLoadAllAssetOperationBase op; // 0x20
+			Animator animator; // 0x24
+
+			//0x1AC9D70
+			sr = m_spriteRenderer;
+			if(sr == null)
+				yield break;
+			int chara_long_tap_threshold_milli = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA("chara_long_tap_threshold_milli", 2000);
+			longTapThreshold = chara_long_tap_threshold_milli / 1000.0f;
+			cbn = DecorationConstants.DecoAssetPath + string.Format(AssetPathFormat, "cmn");
+			yield return AssetBundleManager.LoadAllAssetAsync(cbn);
+			bn = DecorationConstants.DecoAssetPath + string.Format(AssetPathFormat, Id);
+			op = AssetBundleManager.LoadAllAssetAsync(bn);
+			yield return op;
+			animator = sr.gameObject.AddComponent<Animator>();
+			animator.runtimeAnimatorController = op.GetAsset<AnimatorOverrideController>(string.Format("dc_chara_anim_{0:D2}", Id));
+			yield return new WaitUntil(() =>
+			{
+				//0x1AC8F58
+				return m_spriteRenderer.sprite != null;
+			});
+			dragThreshold = sr.sprite.bounds.size.x * sr.transform.localScale.x * 0.125f;
+			AssetBundleManager.UnloadAssetBundle(bn, false);
+			AssetBundleManager.UnloadAssetBundle(cbn, false);
+		}
 
 		//// RVA: 0x1AC3BFC Offset: 0x1AC3BFC VA: 0x1AC3BFC
 		private void InitViewIntimacy()
@@ -124,21 +155,71 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AC40DC Offset: 0x1AC40DC VA: 0x1AC40DC Slot: 5
-		//protected override Action PreLoadResource(GameObject spriteBase, EKLNMHFCAOI.FKGCBLHOOCL itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args) { }
+		protected override Action PreLoadResource(GameObject spriteBase, EKLNMHFCAOI.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
+		{
+			DecorationCharaArgs arg = args as DecorationCharaArgs;
+			decorationBgManager = arg.decorationBgManager;
+			decorationCanvas = arg.decorationCanvas;
+			decorationController = arg.decorationController;
+			return base.PreLoadResource(spriteBase, itemCategory, id, setting, args);
+		}
 
 		//// RVA: 0x1AC422C Offset: 0x1AC422C VA: 0x1AC422C Slot: 6
-		//protected override void PostLoadResource(GameObject spriteBase, EKLNMHFCAOI.FKGCBLHOOCL itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args) { }
+		protected override void PostLoadResource(GameObject spriteBase, EKLNMHFCAOI.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
+		{
+			m_isAnimationLoaded = false;
+			this.StartCoroutineWatched(Co_InitAfterLoadResource());
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AB810 Offset: 0x6AB810 VA: 0x6AB810
 		//// RVA: 0x1AC425C Offset: 0x1AC425C VA: 0x1AC425C
-		//private IEnumerator Co_InitAfterLoadResource() { }
+		private IEnumerator Co_InitAfterLoadResource()
+		{
+			//0x1AC9654
+			if(!IsLoaded)
+				yield return null;
+			yield return Co.R(Co_LoadAnim());
+			int deco_chara_scale = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA("deco_chara_scale", 1000);
+			m_object.transform.localScale = new Vector3(deco_chara_scale / 1000.0f, deco_chara_scale / 1000.0f, 1);
+			pincher = Pincher.Instantiate(this, m_spriteRenderer);
+			reaction = ReactionPhrase.Instantiate(m_spriteRenderer.transform, this);
+			InitViewIntimacy();
+			charaControl = gameObject.AddComponent<DecorationCharaAnimController>();
+			charaControl.Init(this, animator, (Vector2 v) =>
+			{
+				//0x1AC9004
+				decorationBgManager.GetFloor();
+				return AdjustPos(v, false, null, false);
+			});
+			bottomOfs = new Vector2(0, Size.y * -0.5f);
+			m_isAnimationLoaded = true;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AB888 Offset: 0x6AB888 VA: 0x6AB888
 		//// RVA: 0x1AC4308 Offset: 0x1AC4308 VA: 0x1AC4308 Slot: 8
-		//protected override IEnumerator OnObjectCreated() { }
+		protected override IEnumerator OnObjectCreated()
+		{
+			//0x1ACA524
+			m_voicePlayer = m_object.AddComponent<SingleVoicePlayer>();
+			bool isReadyCueSheet = false;
+			m_voicePlayer.RequestChangeCueSheet(DecorationConstants.MakeCharaCueSheetName(ViewData.FPCGPGJOKNH_CharaId), () =>
+			{
+				//0x1AC922C
+				isReadyCueSheet = true;
+			});
+			yield return new WaitUntil(() =>
+			{
+				//0x1AC9238
+				return isReadyCueSheet;
+			});
+			m_voicePlayer.RemoveCueSheet();
+		}
 
 		//// RVA: 0x1AC43B4 Offset: 0x1AC43B4 VA: 0x1AC43B4 Slot: 9
-		//protected override void PostInitController() { }
+		protected override void PostInitController()
+		{
+			return;
+		}
 
 		//// RVA: 0x1AC43B8 Offset: 0x1AC43B8 VA: 0x1AC43B8
 		private CollStatus AdjustPos(Vector2 pos, bool isUpdatePos = true, Vector2? dstPos = null, bool willEscape = false)
@@ -302,10 +383,16 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AC5B78 Offset: 0x1AC5B78 VA: 0x1AC5B78 Slot: 16
-		//protected override void PreDestroy() { }
+		protected override void PreDestroy()
+		{
+			DetachSerif();
+		}
 
 		//// RVA: 0x1AC5CA0 Offset: 0x1AC5CA0 VA: 0x1AC5CA0 Slot: 17
-		//protected override void PostDestroy() { }
+		protected override void PostDestroy()
+		{
+			return;
+		}
 
 		// RVA: 0x1AC5FC0 Offset: 0x1AC5FC0 VA: 0x1AC5FC0 Slot: 20
 		public override float GetOrderPositionY()
@@ -314,10 +401,22 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AC61D0 Offset: 0x1AC61D0 VA: 0x1AC61D0 Slot: 15
-		//public override int GetSerifId() { }
+		public override int GetSerifId()
+		{
+			return m_serif != null && !m_isNoSerif ? m_serif.Id : 0;
+		}
 
 		//// RVA: 0x1AC628C Offset: 0x1AC628C VA: 0x1AC628C
-		//public void AttachSerif(DecorationSerif serif) { }
+		public void AttachSerif(DecorationSerif serif)
+		{
+			if(m_prevSerif != m_serif)
+			{
+				m_serif.Destory();
+			}
+			m_serif = serif;
+			serif.SortingOrder = SortingOrder;
+			UpdateSerif();
+		}
 
 		//// RVA: 0x1AC5F18 Offset: 0x1AC5F18 VA: 0x1AC5F18
 		private void UpdateSerif()
@@ -329,13 +428,51 @@ namespace XeApp
 		//public void NoSerif(bool isNoSerif) { }
 
 		//// RVA: 0x1AC5B7C Offset: 0x1AC5B7C VA: 0x1AC5B7C
-		//public void DetachSerif() { }
+		public void DetachSerif()
+		{
+			if(m_serif != null)
+			{
+				m_serif.Destory();
+				m_serif = null;
+			}
+			if(m_prevSerif != null)
+			{
+				m_prevSerif.Destory();
+				m_prevSerif = null;
+			}
+		}
 
 		//// RVA: 0x1AC6468 Offset: 0x1AC6468 VA: 0x1AC6468
-		//public void DecideSerif() { }
+		public void DecideSerif()
+		{
+			if(m_isNoSerif)
+				DetachSerif();
+			if(m_prevSerif != null)
+			{
+				m_prevSerif.Destory();
+				m_prevSerif = null;
+			}
+		}
 
 		//// RVA: 0x1AC6530 Offset: 0x1AC6530 VA: 0x1AC6530
-		//public void RollbackSerif() { }
+		public void RollbackSerif()
+		{
+			if(m_serif == null && m_prevSerif == null)
+				return;
+			if(m_prevSerif == null)
+			{
+				DetachSerif();
+				return;
+			}
+			if(m_serif != null)
+			{
+				if(m_serif.Id == m_prevSerif.Id)
+					return;
+			}
+			m_serif.Destory();
+			m_serif = m_prevSerif;
+			UpdateSerif();
+		}
 
 		//// RVA: 0x1AC6710 Offset: 0x1AC6710 VA: 0x1AC6710
 		public void ShowSerif()
@@ -378,7 +515,11 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AC6AC8 Offset: 0x1AC6AC8 VA: 0x1AC6AC8
-		//public void PlaySpecifiedReaction(DecorationCharaAnimController.ReactionSpecifiedType type) { }
+		public void PlaySpecifiedReaction(DecorationCharaAnimController.ReactionSpecifiedType type)
+		{
+			if(charaControl != null)
+				charaControl.AnimReactionSpecified(type);
+		}
 
 		//// RVA: 0x1AC6D14 Offset: 0x1AC6D14 VA: 0x1AC6D14
 		public bool IsPlayReaction()
@@ -392,17 +533,95 @@ namespace XeApp
 		//public bool IsAttachSerif() { }
 
 		//// RVA: 0x1AC6E64 Offset: 0x1AC6E64 VA: 0x1AC6E64
-		//public bool IsChangeSerif() { }
+		public bool IsChangeSerif()
+		{
+			if(m_prevSerif != null || !m_isNoSerif)
+			{
+				if(m_prevSerif != null && !m_isNoSerif)
+				{
+					if(m_prevSerif.Id != m_serif.Id)
+						return true;
+					return false;
+				}
+				return true;
+			}
+			return false;
+		}
 
 		//// RVA: 0x1AC6F9C Offset: 0x1AC6F9C VA: 0x1AC6F9C Slot: 12
-		//public override void Click() { }
+		public override void Click()
+		{
+			return;
+		}
 
 		//// RVA: 0x1AC6FA0 Offset: 0x1AC6FA0 VA: 0x1AC6FA0 Slot: 11
-		//public override void PointerDown(Vector2 touchPosition) { }
+		public override void PointerDown(Vector2 touchPosition)
+		{
+			IsTouch = true;
+			enterTouchTime = Time.time;
+			if(charaControl != null)
+			{
+				charaControl.OnTouchEnter();
+			}
+			decorationController.scrollController.IsFollowTouch = false;
+			if(CheckEnableControl(ControlType.LongTap))
+			{
+				this.StartCoroutineWatched(Co_DetectLongTap(touchPosition));
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AB900 Offset: 0x6AB900 VA: 0x6AB900
 		//// RVA: 0x1AC71A0 Offset: 0x1AC71A0 VA: 0x1AC71A0
-		//private IEnumerator Co_DetectLongTap(Vector2 touchPosition) { }
+		private IEnumerator Co_DetectLongTap(Vector2 touchPosition)
+		{
+			//0x1AC9244
+			while(Mathf.Abs(enterTouchTime - Time.time) <= longTapThreshold)
+			{
+				if(!charaControl.hasTouched)
+					yield break;
+				if(pincher.IsFloating)
+					yield break;
+				yield return null;
+			}
+			if(IsLoadedIntimacyData())
+			{
+				if(decorationCanvas.m_intimacyController.CheckIntimacyDeco(viewIntimacyData, this))
+				{
+					if(!decorationCanvas.ItemManager.ReactingPlushToys)
+					{
+						if(!charaControl.OnBeginIntimacyCheck())
+						{
+							decorationCanvas.m_intimacyController.TouchDecoCharactor(viewIntimacyData, this, touchPosition, () =>
+							{
+								//0x1AC9074
+								if(charaControl.hasTouched)
+									return !charaControl.hasPinched;
+								return false;
+							}, (bool isLongTap) =>
+							{
+								//0x1AC90D8
+								if(!isLongTap)
+								{
+									m_decoCanvas.m_intimacyController.DetachDeco();
+								}
+								else
+								{
+									charaControl.OnLongTap();
+									m_decoCanvas.EnableItemController(DecorationItemManager.EnableControlType.None);
+									m_decoCanvas.EnableCanvasController(false);
+								}
+							}, () =>
+							{
+								//0x1AC91A0
+								m_decoCanvas.m_intimacyController.DetachDeco();
+								m_decoCanvas.EnableItemController(DecorationItemManager.EnableControlType.Unique);
+								m_decoCanvas.EnableCanvasController(true);
+							});
+						}
+					}
+				}
+			}
+		}
 
 		// RVA: 0x1AC7270 Offset: 0x1AC7270 VA: 0x1AC7270 Slot: 13
 		public override void BeginDrag(Vector2 touchPosition)
@@ -494,13 +713,28 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AC7FC4 Offset: 0x1AC7FC4 VA: 0x1AC7FC4
-		//public void SettingPrevSerif() { }
+		public void SettingPrevSerif()
+		{
+			m_prevSerif = m_serif;
+			m_isNoSerif = m_serif == null;
+		}
 
 		//// RVA: 0x1AC8058 Offset: 0x1AC8058 VA: 0x1AC8058 Slot: 27
-		//public override void SetInfo(DAJBODHMLAB.MMLACIFMNBN.MHODOAJPNHD info) { }
+		public override void SetInfo(DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.MHODOAJPNHD info)
+		{
+			base.SetInfo(info);
+			if(Setting.InitWord != 0)
+				return;
+			DetachSerif();
+		}
 
 		//// RVA: 0x1AC820C Offset: 0x1AC820C VA: 0x1AC820C
-		//private bool IsLoadedIntimacyData() { }
+		private bool IsLoadedIntimacyData()
+		{
+			if(viewIntimacyData == null)
+				return false;
+			return decorationCanvas.m_intimacyController != null && !decorationCanvas.m_intimacyController.IsLoading();
+		}
 
 		//// RVA: 0x1AC8308 Offset: 0x1AC8308 VA: 0x1AC8308
 		public void PrepareVoiceCueSheet(UnityAction onEndCallback)
@@ -534,31 +768,14 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AC89B4 Offset: 0x1AC89B4 VA: 0x1AC89B4
-		//public void StopVoice() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6AB978 Offset: 0x6AB978 VA: 0x6AB978
-		//// RVA: 0x1AC8F58 Offset: 0x1AC8F58 VA: 0x1AC8F58
-		//private bool <Co_LoadAnim>b__37_0() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6AB988 Offset: 0x6AB988 VA: 0x6AB988
-		//// RVA: 0x1AC9004 Offset: 0x1AC9004 VA: 0x1AC9004
-		//private DecorationChara.CollStatus <Co_InitAfterLoadResource>b__41_0(Vector2 v) { }
+		public void StopVoice()
+		{
+			m_voicePlayer.Stop();
+		}
 
 		//[DebuggerHiddenAttribute] // RVA: 0x6AB998 Offset: 0x6AB998 VA: 0x6AB998
 		//[CompilerGeneratedAttribute] // RVA: 0x6AB998 Offset: 0x6AB998 VA: 0x6AB998
 		//// RVA: 0x1AC906C Offset: 0x1AC906C VA: 0x1AC906C
 		//private bool <>n__0() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6AB9C8 Offset: 0x6AB9C8 VA: 0x6AB9C8
-		//// RVA: 0x1AC9074 Offset: 0x1AC9074 VA: 0x1AC9074
-		//private bool <Co_DetectLongTap>b__77_0() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6AB9D8 Offset: 0x6AB9D8 VA: 0x6AB9D8
-		//// RVA: 0x1AC90D8 Offset: 0x1AC90D8 VA: 0x1AC90D8
-		//private void <Co_DetectLongTap>b__77_1(bool isLongTap) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6AB9E8 Offset: 0x6AB9E8 VA: 0x6AB9E8
-		//// RVA: 0x1AC91A0 Offset: 0x1AC91A0 VA: 0x1AC91A0
-		//private void <Co_DetectLongTap>b__77_2() { }
 	}
 }

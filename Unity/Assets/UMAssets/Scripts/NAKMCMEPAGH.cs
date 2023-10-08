@@ -133,10 +133,20 @@ public class NAKMCMEPAGH
 	// public void KPNLMLPFKMJ(int MHKJEBNOPIM) { }
 
 	// // RVA: 0x17C0900 Offset: 0x17C0900 VA: 0x17C0900
-	// public void AGNDGJOPIDL(int HMFFHLPNMPH) { }
+	public void AGNDGJOPIDL_AddShop(int HMFFHLPNMPH)
+	{
+		PFOMECFACLL_Shp += HMFFHLPNMPH;
+		if(PFOMECFACLL_Shp > 99999999)
+			PFOMECFACLL_Shp = 99999999;
+	}
 
 	// // RVA: 0x17C0920 Offset: 0x17C0920 VA: 0x17C0920
-	// public void MFCKAGIINJL(int HMFFHLPNMPH) { }
+	public void MFCKAGIINJL_AddDecoShop(int HMFFHLPNMPH)
+	{
+		DHNOLFBEHKN_Dcshp += HMFFHLPNMPH;
+		if(DHNOLFBEHKN_Dcshp > 99999999)
+			DHNOLFBEHKN_Dcshp = 99999999;
+	}
 
 	// // RVA: 0x17B5CFC Offset: 0x17B5CFC VA: 0x17B5CFC
 	// public void CIKKGHDIDPJ(int HMFFHLPNMPH) { }

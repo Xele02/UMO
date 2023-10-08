@@ -196,9 +196,36 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xECEBE4 Offset: 0xECEBE4 VA: 0xECEBE4
 		private void DoAutoTalk()
 		{
-			TodoLogger.LogError(0, "DoAutoTalk");
-			m_autoTalkWatch.Reset();
-			m_autoTalkWatch.Start();
+			List<int> l = new List<int>();
+			l.AddRange(m_autoTalkWeights);
+			if(m_prevAutoTalkIndex > -1)
+				l[m_prevAutoTalkIndex] = 0;
+			for(int i = 0; i < m_divaControl.VoiceTable.GetIntimacyLock_TimeTalk().Count; i++)
+			{
+				if(viewIntimacyData == null || !viewIntimacyData.NJAKNMGEKFB(JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK.POBNHLKGMPF_1, i + 1))
+				{
+					if(m_divaControl.VoiceTable.GetIntimacyLock_TimeTalk()[i] < l.Count)
+						l[m_divaControl.VoiceTable.GetIntimacyLock_TimeTalk()[i]] = 0;
+				}
+			}
+			int idx = RandomUtil.SelectByWeights(l);
+			int idx2 = m_limitedTalkIndex.FindIndex((int x) =>
+			{
+				//0xED07E8
+				return idx == x;
+			});
+			if(idx2 < 0)
+			{
+				if(idx == m_birthdayTalkIndex)
+					RequestBirthdayTalk();
+				else
+					RequestAutoTalk(idx);
+			}
+			else
+			{
+				RequestLimitedTalk(idx2);
+			}
+			m_prevAutoTalkIndex = idx;
 		}
 
 		// // RVA: 0xECE9F8 Offset: 0xECE9F8 VA: 0xECE9F8
@@ -279,7 +306,14 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xECFB84 Offset: 0xECFB84 VA: 0xECFB84
-		// private void RequestAutoTalk(int talkType) { }
+		private void RequestAutoTalk(int talkType)
+		{
+			if(m_divaControl.RequestAutoTalk(talkType, OnTalkActionEnd))
+			{
+				DivaTalk("talk_time_{0:D2}", talkType - 1, null);
+				TimerStop();
+			}
+		}
 
 		// // RVA: 0xECFD44 Offset: 0xECFD44 VA: 0xECFD44
 		private void OnTalkActionEnd()

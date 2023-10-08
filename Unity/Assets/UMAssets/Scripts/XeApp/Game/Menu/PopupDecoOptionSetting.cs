@@ -10,15 +10,14 @@ namespace XeApp.Game.Menu
 	{
 		private LayoutPopupConfigDeco m_layoutPopupConfigDeco; // 0x34
 
-		// Properties
 		public override string PrefabPath { get { return ""; } } //0x1346E64
 		public override string BundleName { get { return "ly/211.xab"; } } //0x1346EC0
 		public override string AssetName { get { return "UI_DecoConfig"; } } //0x1346F1C
 		public override bool IsAssetBundle { get { return true; } } //0x1346F78
 		public override bool IsPreload { get { return true; } } //0x1346F80
 		public override GameObject Content { get { return m_content; } } //0x1346F88
-		//public LayoutPopupConfigDeco LayoutPopupConfigDeco { get; } 0x1346D28
-		//public MDDBFCFOKFC DecorationLocalSaveData { get; set; } // 0x38
+		public LayoutPopupConfigDeco LayoutPopupConfigDeco { get { return m_layoutPopupConfigDeco; } } //0x1346D28
+		public MDDBFCFOKFC DecorationLocalSaveData { get; set; } // 0x38
 
 		//// RVA: 0x1346F90 Offset: 0x1346F90 VA: 0x1346F90
 		//public void SetContent(GameObject content) { }

@@ -2,6 +2,8 @@ using XeSys.Gfx;
 using UnityEngine.UI;
 using UnityEngine;
 using XeApp.Game.Common;
+using System;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -75,12 +77,33 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1D51AC0 Offset: 0x1D51AC0 VA: 0x1D51AC0
-		//public void SetEnable(bool enable) { }
+		public void SetEnable(bool enable)
+		{
+			m_layoutSwitch.StartChildrenAnimGoStop(enable ? "01" : "02");
+		}
 
 		//// RVA: 0x1D51B58 Offset: 0x1D51B58 VA: 0x1D51B58
-		//public void SetCount(int count) { }
+		public void SetCount(int count)
+		{
+			m_numCount.SetNumber(count, 0);
+		}
 
 		//// RVA: 0x1D51B98 Offset: 0x1D51B98 VA: 0x1D51B98
-		//public void SetTime(long time) { }
+		public void SetTime(long time)
+		{
+			if(time < 0)
+			{
+				m_textTime.text = "MAX";
+			}
+			else
+			{
+				TimeSpan t = new TimeSpan(0, 0, (int)time);
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				if(t.Hours < 1)
+					m_textTime.text = string.Format(bk.GetMessageByLabel("diva_intimacy_time_count"), t.Minutes, t.Seconds);
+				else
+					m_textTime.text = string.Format(bk.GetMessageByLabel("diva_intimacy_time_count_2"), t.Hours, t.Minutes, t.Seconds);
+			}
+		}
 	}
 }
