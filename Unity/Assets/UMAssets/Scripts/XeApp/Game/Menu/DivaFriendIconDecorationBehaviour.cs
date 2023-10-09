@@ -73,7 +73,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17DED18 Offset: 0x17DED18 VA: 0x17DED18
-		//public void FadeFrienFanAnimationSetFrame(int frame) { }
+		public void FadeFrienFanAnimationSetFrame(int frame)
+		{
+			m_frienFanAnimation.StartChildrenAnimLoop(frame, 1, 404);
+		}
 
 		//// RVA: 0x17DED60 Offset: 0x17DED60 VA: 0x17DED60
 		public void SetDegreeNumber(int number)

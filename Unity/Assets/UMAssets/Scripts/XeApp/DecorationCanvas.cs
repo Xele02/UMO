@@ -44,8 +44,8 @@ namespace XeApp
 		public MDDBFCFOKFC DecoLocalSaveData = new MDDBFCFOKFC(); // 0x6C
 
 		public DecorationItemManager ItemManager { get { return m_decorationItemManager; } } //0x1AB8A4C
-		//public Material PosterKiraMaterial { get; } 0x1AB8A54
-		//public Material PosterKiraMaterialFlip { get; } 0x1AB8A5C
+		public Material PosterKiraMaterial { get { return m_posterKiraMaterial; } } //0x1AB8A54
+		public Material PosterKiraMaterialFlip { get { return m_posterKiraMaterialFlip; } } //0x1AB8A5C
 		public IntimacyController m_intimacyController { get; private set; } // 0x44
 		public Action<DecorationItemBase> OnClickSerifButton { set { m_decorationItemManager.SerifButtonCallback = value; } } //0x1AB8A74
 		public Action OnClickPriorityButton { set { m_decorationItemManager.PriorityButtonCallback = value; } } //0x1AB8A9C
@@ -844,9 +844,15 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1ABFA9C Offset: 0x1ABFA9C VA: 0x1ABFA9C
-		//public void ItemLock() { }
+		public void ItemLock()
+		{
+			m_decorationItemManager.Lock();
+		}
 
 		//// RVA: 0x1ABFC1C Offset: 0x1ABFC1C VA: 0x1ABFC1C
-		//public void ItemUnLock() { }
+		public void ItemUnLock()
+		{
+			m_decorationItemManager.UnLock();
+		}
 	}
 }

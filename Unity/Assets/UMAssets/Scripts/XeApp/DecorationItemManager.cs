@@ -1198,9 +1198,21 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1ABFAC4 Offset: 0x1ABFAC4 VA: 0x1ABFAC4
-		//public void Lock() { }
+		public void Lock()
+		{
+			foreach(var k in m_decorationItemList)
+			{
+				k.Lock = true;
+			}
+		}
 
 		//// RVA: 0x1ABFC44 Offset: 0x1ABFC44 VA: 0x1ABFC44
-		//public void UnLock() { }
+		public void UnLock()
+		{
+			foreach (var k in m_decorationItemList)
+			{
+				k.Lock = false;
+			}
+		}
 	}
 }

@@ -207,7 +207,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17E2C64 Offset: 0x17E2C64 VA: 0x17E2C64
-		//public void FadeFrienFanAnimationSetFrame(int frame) { }
+		public void FadeFrienFanAnimationSetFrame(int frame)
+		{
+			if (m_divaFriendIconDecrationBehaviour != null)
+				m_divaFriendIconDecrationBehaviour.FadeFrienFanAnimationSetFrame(frame);
+		}
 
 		//// RVA: 0x17E2380 Offset: 0x17E2380 VA: 0x17E2380
 		private void Change(FFHPBEPOMAK_DivaInfo divaData, StatusData statusData, int luck, int rarity, DisplayType type)

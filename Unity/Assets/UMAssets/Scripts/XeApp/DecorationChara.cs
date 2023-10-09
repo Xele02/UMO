@@ -176,7 +176,7 @@ namespace XeApp
 		private IEnumerator Co_InitAfterLoadResource()
 		{
 			//0x1AC9654
-			if(!IsLoaded)
+			while(!base.IsLoaded)
 				yield return null;
 			yield return Co.R(Co_LoadAnim());
 			int deco_chara_scale = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.LPJLEHAJADA("deco_chara_scale", 1000);
@@ -425,7 +425,10 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AC6460 Offset: 0x1AC6460 VA: 0x1AC6460
-		//public void NoSerif(bool isNoSerif) { }
+		public void NoSerif(bool isNoSerif)
+		{
+			m_isNoSerif = isNoSerif;
+		}
 
 		//// RVA: 0x1AC5B7C Offset: 0x1AC5B7C VA: 0x1AC5B7C
 		public void DetachSerif()
@@ -777,5 +780,13 @@ namespace XeApp
 		//[CompilerGeneratedAttribute] // RVA: 0x6AB998 Offset: 0x6AB998 VA: 0x6AB998
 		//// RVA: 0x1AC906C Offset: 0x1AC906C VA: 0x1AC906C
 		//private bool <>n__0() { }
+
+		public void LateUpdate()
+		{
+#if UNITY_EDITOR || UNITY_STANDALONE
+			if (m_spriteRenderer != null && m_spriteRenderer.material != null)
+				BundleShaderInfo.Instance.FixMaterialShader(m_spriteRenderer.material);
+#endif
+		}
 	}
 }

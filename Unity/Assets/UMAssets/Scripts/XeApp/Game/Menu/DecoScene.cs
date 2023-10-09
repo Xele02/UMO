@@ -2076,7 +2076,7 @@ namespace XeApp.Game.Menu
 			}
 			item.EnableSelectItem();
 			MenuScene.Instance.InputEnable();
-			m_decorationCanvas.ItemUnlock();
+			m_decorationCanvas.ItemUnLock();
 		}
 
 		//// RVA: 0xC63434 Offset: 0xC63434 VA: 0xC63434
@@ -2122,7 +2122,26 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC6467C Offset: 0xC6467C VA: 0xC6467C
-		//private void ChangeBg(int id, int subId) { }
+		private void ChangeBg(int id, int subId)
+		{
+			switch (subId)
+			{
+				case 0:
+					m_decorationCanvas.LoadBgResource(id, id, id, false);
+					break;
+				case 1:
+					m_decorationCanvas.LoadBgResource(id, -1, id, false);
+					break;
+				case 2:
+					m_decorationCanvas.LoadBgResource(id, -1, -1, false);
+					break;
+				case 3:
+					m_decorationCanvas.LoadBgResource(-1, -1, id, false);
+					break;
+				default:
+					break;
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D21A4 Offset: 0x6D21A4 VA: 0x6D21A4
 		//// RVA: 0xC64774 Offset: 0xC64774 VA: 0xC64774
@@ -2160,7 +2179,34 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D2294 Offset: 0x6D2294 VA: 0x6D2294
 		//// RVA: 0xC648D4 Offset: 0xC648D4 VA: 0xC648D4
-		//private IEnumerator Co_LoadItem(int resourceId, DecorationItemBaseSetting setting, DecorationItemArgsBase args) { }
+		private IEnumerator Co_LoadItem(int resourceId, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
+		{
+			//0x1575D58
+			if(resourceId != 0)
+			{
+				m_decorationCanvas.LoadItemResource(resourceId, setting, m_postType, args);
+				yield return new WaitUntil(() =>
+				{
+					//0xC6DCD4
+					return m_decorationCanvas.IsLoadedItemDecoration;
+				});
+			}
+			if(args != null)
+			{
+				if(args is DecorationSerifArgs)
+				{
+					if(m_speakChara != null)
+					{
+						m_speakChara.NoSerif(resourceId == 0);
+					}
+					UpdateSerifSelectWindowButton(m_speakChara.IsChangeSerif());
+				}
+			}
+			if(m_postType == DecorationItemManager.PostType.TapNewPost)
+			{
+				m_decorator.UpdateHaveRestNum(resourceId, m_decorationCanvas.GetItemList());
+			}
+		}
 
 		//// RVA: 0xC649A8 Offset: 0xC649A8 VA: 0xC649A8
 		private void OnClickExchangeButton()
@@ -4540,11 +4586,7 @@ namespace XeApp.Game.Menu
 
 		//// RVA: 0xC6BD28 Offset: 0xC6BD28 VA: 0xC6BD28
 		//private string MakePhotoSavePath() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6D2E5C Offset: 0x6D2E5C VA: 0x6D2E5C
-		//// RVA: 0xC6DCD4 Offset: 0xC6DCD4 VA: 0xC6DCD4
-		//private bool <Co_LoadItem>b__160_0() { }
-
+		
 		//[CompilerGeneratedAttribute] // RVA: 0x6D2E6C Offset: 0x6D2E6C VA: 0x6D2E6C
 		//// RVA: 0xC6DD00 Offset: 0xC6DD00 VA: 0xC6DD00
 		//private bool <Co_AllBack>b__195_3() { }

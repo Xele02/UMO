@@ -1368,7 +1368,16 @@ public class ILCCJNDFFOB
 	}
 
 	// // RVA: 0x91F9A4 Offset: 0x91F9A4 VA: 0x91F9A4
-	// public void PFBIHCIFFKM(int HHFIMKIKJBC, bool MLEHCBKPNGK, bool FMNNBGOFBPB, int GLCLFMGPMAN = 0) { }
+	public void PFBIHCIFFKM(int HHFIMKIKJBC, bool MLEHCBKPNGK, bool FMNNBGOFBPB, int GLCLFMGPMAN = 0)
+	{
+		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
+		FLBFCCIEPNC_InitBaseJson(json, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
+		json["visit_user_id"] = HHFIMKIKJBC;
+		json["is_friend"] = MLEHCBKPNGK ? 1 : 2;
+		json["is_visit"] = FMNNBGOFBPB ? 1 : 2;
+		json["item"] = GLCLFMGPMAN;
+		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.PFBIHCIFFKM_86, json, false);
+	}
 
 	// // RVA: 0x91FD94 Offset: 0x91FD94 VA: 0x91FD94
 	public void CEFIPAIKAKN(List<int> GMFMGJNPNKA, List<int> GNGFCCBHLPO)

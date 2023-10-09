@@ -307,10 +307,16 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x11DF1D0 Offset: 0x11DF1D0 VA: 0x11DF1D0
-		//public void UpdateHaveRestNum(int resourceId, List<DecorationItemBase> list) { }
+		public void UpdateHaveRestNum(int resourceId, List<DecorationItemBase> list)
+		{
+			m_layoutDecorationWindow01.UpdateHaveRestNum(resourceId, list);
+		}
 
 		//// RVA: 0x11DF20C Offset: 0x11DF20C VA: 0x11DF20C
-		//public void UpdateHaveRestNum() { }
+		public void UpdateHaveRestNum()
+		{
+			m_layoutDecorationWindow01.UpdateHaveRestNum();
+		}
 
 		//// RVA: 0x11DF238 Offset: 0x11DF238 VA: 0x11DF238
 		public void SetNewIcon(List<bool> isNewList)
@@ -322,7 +328,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x11DF324 Offset: 0x11DF324 VA: 0x11DF324
-		//public void EnableSelectItem() { }
+		public void EnableSelectItem()
+		{
+			m_layoutDecorationWindow01.EnableSelectItem();
+		}
 
 		//// RVA: 0x11DF350 Offset: 0x11DF350 VA: 0x11DF350
 		//public void DisableSelectItem() { }

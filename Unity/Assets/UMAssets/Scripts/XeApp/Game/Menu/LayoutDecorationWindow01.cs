@@ -819,10 +819,37 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x18C5700 Offset: 0x18C5700 VA: 0x18C5700
-		//public void UpdateHaveRestNum(int resourceId, List<DecorationItemBase> list) { }
+		public void UpdateHaveRestNum(int resourceId, List<DecorationItemBase> list)
+		{
+			m_postItemList = list;
+			foreach (var s in m_swapScrollList.ScrollObjects)
+			{
+				LayoutDecorationSelectItemBase ss = s as LayoutDecorationSelectItemBase;
+				if(ss.Data != null && ss.IsUpdateRestNum && ss.Data.KGBAOKCMALD == resourceId)
+				{
+					int c = GetPostNum(ss.Data.KGBAOKCMALD);
+					ss.SetStatusIcon(c > -1);
+					ss.SetNum(ss.Data.BFINGCJHOHI, ss.Data.BFINGCJHOHI - c);
+					return;
+				}
+			}
+		}
 
 		//// RVA: 0x18C59F0 Offset: 0x18C59F0 VA: 0x18C59F0
-		//public void UpdateHaveRestNum() { }
+		public void UpdateHaveRestNum()
+		{
+			foreach(var s in m_swapScrollList.ScrollObjects)
+			{
+				LayoutDecorationSelectItemBase ss = s as LayoutDecorationSelectItemBase;
+				KDKFHGHGFEK d = ss.Data;
+				if(d != null)
+				{
+					int c = GetPostNum(d.KGBAOKCMALD);
+					ss.SetStatusIcon(c > -1);
+					ss.SetNum(d.BFINGCJHOHI, d.BFINGCJHOHI - c);
+				}
+			}
+		}
 
 		//// RVA: 0x18C5CB8 Offset: 0x18C5CB8 VA: 0x18C5CB8
 		public void EnableSelectItem()

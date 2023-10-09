@@ -89,7 +89,7 @@ public class OAGBCBBHMPF
         FJIPPAPEBID = 83,
         BOIIMIEPMLG = 84,
         HONFKODFAPA = 85,
-        PFBIHCIFFKM = 86,
+        PFBIHCIFFKM_86 = 86,
         CEFIPAIKAKN_87 = 87,
         NOMCHDMPFFE_88 = 88,
         CHMEOKEKABD = 89,
