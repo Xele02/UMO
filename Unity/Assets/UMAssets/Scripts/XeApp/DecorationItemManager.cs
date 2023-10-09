@@ -424,6 +424,7 @@ namespace XeApp
 						return;
 					m_isSelectItem = true;
 					OnSelectCallback(item);
+					ShowDecorationItemController(item);
 					return;
 				}
 			}
