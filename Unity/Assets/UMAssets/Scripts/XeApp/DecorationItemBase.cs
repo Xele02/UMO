@@ -73,7 +73,7 @@ namespace XeApp
 		public virtual bool IsLoaded { get { return m_isLoaded; } private set { m_isLoaded = value; } } //0x1AC3B3C 0x1AD02C0
 		protected bool UseRareBrakePosterAnim { get
 		{
-			if(!m_decoCanvas.DecoLocalSaveData.KOGBMDOONFA.HEKJKLJDHNN)
+			if(!m_decoCanvas.DecoLocalSaveData.KOGBMDOONFA.HEKJKLJDHNN_EnablePosterAnim)
 				return false;
 			return ViewData.OHAMGNMKOII();
 		} } //0x1AD02C8

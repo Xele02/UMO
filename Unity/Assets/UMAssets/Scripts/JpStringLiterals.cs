@@ -341,6 +341,8 @@ class JpStringLiterals
 	public const string StringLiteral_15750 = "次の報酬まで {0} {1}"; // 0x03bb80d0
 	public const string StringLiteral_15778 = "追加報酬"; // 0x03bb8140
 	public const string StringLiteral_15794 = "あと {0} {1}"; // 0x03bb8180
+	public const string StringLiteral_16059 = "最終ログイン："; //0x03bb85a4
+	public const string StringLiteral_16060 = "申請："; //0x03bb85a8
 	public const string StringLiteral_16095 = "他人のデコルーム:フレンドリスト経由"; //0x03bb8634
 	public const string StringLiteral_16155 = "衣装リストをクリック : {0} : {1}"; //0x03bb8724
 	public const string StringLiteral_16162 = "【解放条件】\n\nプレイヤーランクを8にする。"; //0x03bb8740

@@ -194,10 +194,16 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xBA8C6C Offset: 0xBA8C6C VA: 0xBA8C6C
-		//public void SetDivaIconDelegate(Func<IiconTexture> iconDelegate) { }
+		public void SetDivaIconDelegate(Func<IiconTexture> iconDelegate)
+		{
+			divaIconDelegate = iconDelegate;
+		}
 
 		//// RVA: 0xBA8C74 Offset: 0xBA8C74 VA: 0xBA8C74
-		//public void SetSceneIconDelegate(Func<IiconTexture> iconDelegate) { }
+		public void SetSceneIconDelegate(Func<IiconTexture> iconDelegate)
+		{
+			sceneIconDelegate = iconDelegate;
+		}
 
 		//// RVA: 0xBA878C Offset: 0xBA878C VA: 0xBA878C
 		public void SetDivaIcon(IiconTexture iconTex)
@@ -213,70 +219,157 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xBA8C7C Offset: 0xBA8C7C VA: 0xBA8C7C
-		//public void SetSceneStarNum(int starNum) { }
+		public void SetSceneStarNum(int starNum)
+		{
+			m_symbolStarNum.StartAnim(s_starNums[starNum]);
+		}
 
 		//// RVA: 0xBA592C Offset: 0xBA592C VA: 0xBA592C
 		//public void SetParamTable(SortItem sortBy) { }
 
 		//// RVA: 0xBA8DB0 Offset: 0xBA8DB0 VA: 0xBA8DB0
-		//public void SetName(string name) { }
+		public void SetName(string name)
+		{
+			m_nameText.text = name;
+		}
 
 		//// RVA: 0xBA8DEC Offset: 0xBA8DEC VA: 0xBA8DEC
-		//public void SetLevel(string level) { }
+		public void SetLevel(string level)
+		{
+			m_levelText.text = level;
+		}
 
 		//// RVA: 0xBA8E28 Offset: 0xBA8E28 VA: 0xBA8E28
-		//public void SetLoginDate(string date) { }
+		public void SetLoginDate(string date)
+		{
+			m_loginDateString = date;
+			ApplyDateString();
+		}
 
 		//// RVA: 0xBA8E30 Offset: 0xBA8E30 VA: 0xBA8E30
-		//public void SetRequestDate(string date) { }
+		public void SetRequestDate(string date)
+		{
+			m_requestDateString = date;
+			ApplyDateString();
+		}
 
 		//// RVA: 0xBA8E38 Offset: 0xBA8E38 VA: 0xBA8E38
-		//public void SetTotal(string total) { }
+		public void SetTotal(string total)
+		{
+			m_totalText.text = total;
+		}
 
 		//// RVA: 0xBA8E74 Offset: 0xBA8E74 VA: 0xBA8E74
-		//public void SetSoul(string soul) { }
+		public void SetSoul(string soul)
+		{
+			m_soulText.text = soul;
+		}
 
 		//// RVA: 0xBA8EB0 Offset: 0xBA8EB0 VA: 0xBA8EB0
-		//public void SetVoice(string voice) { }
+		public void SetVoice(string voice)
+		{
+			m_voiceText.text = voice;
+		}
 
 		//// RVA: 0xBA8EEC Offset: 0xBA8EEC VA: 0xBA8EEC
-		//public void SetCharm(string charm) { }
+		public void SetCharm(string charm)
+		{
+			m_charmText.text = charm;
+		}
 
 		//// RVA: 0xBA8F28 Offset: 0xBA8F28 VA: 0xBA8F28
-		//public void SetLife(string life) { }
+		public void SetLife(string life)
+		{
+			m_lifeText.text = life;
+		}
 
 		//// RVA: 0xBA8F64 Offset: 0xBA8F64 VA: 0xBA8F64
-		//public void SetSupport(string support) { }
+		public void SetSupport(string support)
+		{
+			m_supportText.text = support;
+		}
 
 		//// RVA: 0xBA8FA0 Offset: 0xBA8FA0 VA: 0xBA8FA0
-		//public void SetFold(string fold) { }
+		public void SetFold(string fold)
+		{
+			m_foldText.text = fold;
+		}
 
 		//// RVA: 0xBA8FDC Offset: 0xBA8FDC VA: 0xBA8FDC
-		//public void SetLuck(string luck) { }
+		public void SetLuck(string luck)
+		{
+			m_luckText.text = luck;
+		}
 
 		//// RVA: 0xBA9018 Offset: 0xBA9018 VA: 0xBA9018
-		//public void SetComment(string comment) { }
+		public void SetComment(string comment)
+		{
+			m_commentText.text = comment;
+		}
 
 		//// RVA: 0xBA9054 Offset: 0xBA9054 VA: 0xBA9054
-		//public void SetMusicRatio(string ratio) { }
+		public void SetMusicRatio(string ratio)
+		{
+			m_musicRatioText.text = ratio;
+		}
 
 		//// RVA: 0xBA9090 Offset: 0xBA9090 VA: 0xBA9090
-		//public void SetSkill(string skill) { }
+		public void SetSkill(string skill)
+		{
+			if(string.IsNullOrEmpty(skill))
+			{
+				UnitWindowConstant.SetInvalidText(m_skillText, TextAnchor.MiddleCenter);
+			}
+			else
+			{
+				m_skillText.alignment = TextAnchor.MiddleLeft;
+				m_skillText.text = skill;
+			}
+		}
 
 		//// RVA: 0xBA9184 Offset: 0xBA9184 VA: 0xBA9184
-		//public void SetSkillLevel(int level) { }
+		public void SetSkillLevel(int level)
+		{
+			if(level > 0)
+			{
+				m_skillLevelText.text = "Lv" + level.ToString();
+			}
+			else
+			{
+				m_skillLevelText.text = "";
+			}
+		}
 
 		//// RVA: 0xBA9288 Offset: 0xBA9288 VA: 0xBA9288
-		//public void SetSkillRank(SkillRank.Type rank) { }
+		public void SetSkillRank(SkillRank.Type rank)
+		{
+			GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_skillRankImage, rank);
+		}
 
 		//// RVA: 0xBA9358 Offset: 0xBA9358 VA: 0xBA9358
-		//public void SetMusicRank(HighScoreRatingRank.Type rank) { }
+		public void SetMusicRank(HighScoreRatingRank.Type rank)
+		{
+			GameManager.Instance.MusicRatioTextureCache.Load(rank, (IiconTexture texture) =>
+			{
+				//0xBAA27C
+				if(texture != null && texture is MusicRatioTextureCache.MusicRatioTexture)
+				{
+					(texture as MusicRatioTextureCache.MusicRatioTexture).Set(m_musicRatioIconImage, rank);
+				}
+			});
+		}
 
 		//// RVA: 0xBA94C0 Offset: 0xBA94C0 VA: 0xBA94C0
-		//public void SetMusicRateRank(IBIGBMDANNM a_friend_data) { }
+		public void SetMusicRateRank(IBIGBMDANNM a_friend_data)
+		{
+			m_musicRateRankText.text = OEGIPPCADNA.GEEFFAEGHAH(OEGIPPCADNA.BFKAHKBKBJE(a_friend_data.AHEFHIMGIBI_ServerData.MHEAEGMIKIE_PublicStatus.AILEOFKIELL_UtaRateRank, a_friend_data.AJECHDLMKOE_LastLogin), true);
+		}
 
 		//// RVA: 0xBA959C Offset: 0xBA959C VA: 0xBA959C
-		//public void SetKira(bool isKira) { }
+		public void SetKira(bool isKira)
+		{
+			m_isKira = isKira;
+		}
 
 		//// RVA: 0xBA8B5C Offset: 0xBA8B5C VA: 0xBA8B5C
 		private void SetPosiButtonType(PosiButtonType type)
@@ -317,7 +410,13 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xBA8D68 Offset: 0xBA8D68 VA: 0xBA8D68
-		//private void ApplyDateString() { }
+		private void ApplyDateString()
+		{
+			if (!m_useRequestDate)
+				m_loginDateText.text = m_loginDateString;
+			else
+				m_loginDateText.text = m_requestDateString;
+		}
 
 		// RVA: 0xBA95D4 Offset: 0xBA95D4 VA: 0xBA95D4 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

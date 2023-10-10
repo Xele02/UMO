@@ -240,16 +240,174 @@ namespace XeApp.Game.Menu
 		//protected void OnClickOrderButton() { }
 
 		//// RVA: 0xBA4B40 Offset: 0xBA4B40 VA: 0xBA4B40
-		//protected void SortFriendList() { }
+		protected void SortFriendList()
+		{
+			m_friendInfoAllList.Sort(SortDelegate);
+			m_friendInfoList.Clear();
+			m_friendInfoList.Capacity = m_friendInfoAllList.Count;
+			for(int i = 0; i < m_friendInfoAllList.Count; i++)
+			{
+				if (PopupSortMenu.IsRarityFilterOn(m_friendInfoAllList[i].sceneRarity, m_rarityFilter) &&
+					PopupSortMenu.IsAttributeFilterOn((int)m_friendInfoAllList[i].sceneAttr, m_attrFilter) &&
+					PopupSortMenu.IsSerializeFilterOn((int)m_friendInfoAllList[i].sceneSeries, m_seriesFilter))
+				{
+					m_friendInfoList.Add(m_friendInfoAllList[i]);
+				}
+			}
+			if(m_friendInfoList.IsEmpty())
+			{
+				m_windowUi.SetMessageVisible(true);
+				if(m_friendInfoAllList.IsEmpty())
+				{
+					m_buttonRuntime.SetFriendButtonLock(emptyButtonLock);
+					m_windowUi.SetMessage(friendNotFoundMessage);
+				}
+				else
+				{
+					m_buttonRuntime.SetFriendButtonLock(false);
+					m_windowUi.SetMessage(friendAllFilteredMessage);
+				}
+			}
+			else
+			{
+				m_windowUi.SetMessageVisible(false);
+				m_buttonRuntime.SetFriendButtonLock(false);
+			}
+			UpdateCautionMessage();
+			UpdateListCounter();
+			m_scrollList.SetItemCount(m_friendInfoList.Count);
+			m_scrollList.OnUpdateItem.RemoveAllListeners();
+			m_scrollList.OnUpdateItem.AddListener((int index, SwapScrollListContent content) =>
+			{
+				//0xBAF470
+				OnUpdateListItem(index, content as GeneralListContent, m_friendInfoList[index]);
+			});
+			m_scrollList.SetPosition(0, 0, 0, false);
+			m_scrollList.VisibleRegionUpdate();
+		}
 
 		//// RVA: 0xBACB5C Offset: 0xBACB5C VA: 0xBACB5C
-		//private int SortDelegate(FriendListInfo a, FriendListInfo b) { }
+		private int SortDelegate(FriendListInfo a, FriendListInfo b)
+		{
+			int res = 0;
+			switch(m_sortType)
+			{
+				case SortItem.Total:
+					res = a.total.CompareTo(b.total);
+					break;
+				case SortItem.Soul:
+					res = a.soul.CompareTo(b.soul);
+					break;
+				case SortItem.Voice:
+					res = a.voice.CompareTo(b.voice);
+					break;
+				case SortItem.Charm:
+					res = a.charm.CompareTo(b.charm);
+					break;
+				default:
+					break;
+				case SortItem.Rarity:
+					res = a.sceneRarity.CompareTo(b.sceneRarity);
+					break;
+				case SortItem.Level:
+					res = a.sceneLevel.CompareTo(b.sceneLevel);
+					break;
+				case SortItem.Life:
+					res = a.life.CompareTo(b.life);
+					break;
+				case SortItem.Luck:
+					res = a.luck.CompareTo(b.luck);
+					break;
+				case SortItem.Support:
+					res = a.support.CompareTo(b.support);
+					break;
+				case SortItem.Fold:
+					res = a.fold.CompareTo(b.fold);
+					break;
+				case SortItem.LastPlayDate:
+					res = a.lastLogin.CompareTo(b.lastLogin);
+					break;
+				case SortItem.PlayerRunk:
+					res = a.playerRank.CompareTo(b.playerRank);
+					break;
+				case SortItem.Request:
+					res = a.requestDate.CompareTo(b.requestDate);
+					break;
+				case SortItem.HighScoreRating:
+					res = a.musicRatio.CompareTo(b.musicRatio);
+					break;
+			}
+			if(res == 0)
+			{
+				res = GetBaseRaritySortValue(a, b);
+				if(res == 0)
+				{
+					res = b.sceneId.CompareTo(a.sceneId);
+					if (res != 0)
+						return res;
+					return a.ListIndex.CompareTo(b.ListIndex);
+				}
+			}
+			if (m_sortOrder == GeneralList.SortOrder.Descend)
+				res = -res;
+			return res;
+		}
 
 		//// RVA: 0xBACF50 Offset: 0xBACF50 VA: 0xBACF50
-		//private int GetBaseRaritySortValue(FriendListInfo a, FriendListInfo b) { }
+		private int GetBaseRaritySortValue(FriendListInfo a, FriendListInfo b)
+		{
+			int rarA = 0;
+			if (a.friend.AFBMEMCHJCL_MainScene != null)
+				rarA = a.friend.AFBMEMCHJCL_MainScene.JKGFBFPIMGA_Rarity;
+			int rarB = 0;
+			if (b.friend.AFBMEMCHJCL_MainScene != null)
+				rarB = b.friend.AFBMEMCHJCL_MainScene.JKGFBFPIMGA_Rarity;
+			int res = rarA - rarB;
+			if (res != 0)
+				return res;
+
+			rarA = 0;
+			if (a.friend.AFBMEMCHJCL_MainScene != null)
+				rarA = a.friend.AFBMEMCHJCL_MainScene.EKLIPGELKCL_SceneRarity;
+			rarB = 0;
+			if (b.friend.AFBMEMCHJCL_MainScene != null)
+				rarB = b.friend.AFBMEMCHJCL_MainScene.EKLIPGELKCL_SceneRarity;
+			return rarA - rarB;
+		}
 
 		//// RVA: 0xBAD0E0 Offset: 0xBAD0E0 VA: 0xBAD0E0
-		//private void OnUpdateListItem(int index, GeneralListContent content, FriendListInfo info) { }
+		private void OnUpdateListItem(int index, GeneralListContent content, FriendListInfo info)
+		{
+			FriendListElem elem = content.GetElemUI<FriendListElem>();
+			elem.SetName(info.name);
+			elem.SetLevel(info.playerRank.ToString());
+			elem.SetLoginDate(info.login);
+			elem.SetRequestDate(info.request);
+			elem.SetTotal(info.total.ToString());
+			elem.SetSoul(info.soul.ToString());
+			elem.SetVoice(info.voice.ToString());
+			elem.SetCharm(info.charm.ToString());
+			elem.SetLife(info.life.ToString());
+			elem.SetSupport(info.support.ToString());
+			elem.SetFold(info.fold.ToString());
+			elem.SetLuck(UnitWindowConstant.MakeLuckText(info.luck));
+			elem.SetSceneStarNum(info.sceneRarity);
+			elem.SetComment(info.comment);
+			elem.SetSkill(info.skill);
+			elem.SetSkillLevel(info.skillLevel);
+			elem.SetSkillRank(info.skillRank);
+			elem.SetMusicRatio(info.musicRatio.ToString());
+			elem.SetMusicRank(info.scoreRatingRank);
+			elem.SetMusicRateRank(info.friend.PCEGKKLKFNO);
+			elem.SetKira(info.isKira);
+			elem.SetDivaIconDelegate(info.GetFriendDivaIconTex);
+			elem.SetSceneIconDelegate(info.GetFriendSceneIconTex);
+			int idx = m_elems.IndexOf(elem);
+			m_divaDecos[idx].SetActive(true);
+			m_divaDecos[idx].Change(info.friend.JIGONEMPPNP_Diva, info.friend, DisplayType.Level, info.friend.AFBMEMCHJCL_MainScene);
+			m_sceneDecos[idx].SetActive(true);
+			m_sceneDecos[idx].Change(info.friend.AFBMEMCHJCL_MainScene, DisplayType.Level);
+		}
 
 		//// RVA: 0xBA38F8 Offset: 0xBA38F8 VA: 0xBA38F8
 		protected void JumpToProfile(EAJCBFGKKFA_FriendInfo friendData, ProfilMenuLayout.ButtonType btnType = 0)
@@ -303,10 +461,17 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xBA3A70 Offset: 0xBA3A70 VA: 0xBA3A70
-		//protected void ConnectStart() { }
+		protected void ConnectStart()
+		{
+			m_connectCount++;
+		}
 
 		//// RVA: 0xBA3F14 Offset: 0xBA3F14 VA: 0xBA3F14
-		//protected void ConnectEnd() { }
+		protected void ConnectEnd()
+		{
+			if (m_connectCount > 0)
+				m_connectCount--;
+		}
 
 		//// RVA: 0xBABFC8 Offset: 0xBABFC8 VA: 0xBABFC8
 		//protected bool IsConnecting() { }
@@ -469,15 +634,14 @@ namespace XeApp.Game.Menu
 		//protected virtual void OnNetRequestErrorToTitle(CACGCMBKHDI error) { }
 
 		//// RVA: 0xBA4090 Offset: 0xBA4090 VA: 0xBA4090
-		//protected void NetErrorToTitle() { }
+		protected void NetErrorToTitle()
+		{
+			TodoLogger.LogError(0, "NetErrorToTitle");
+		}
 		
 		//[CompilerGeneratedAttribute] // RVA: 0x6E0304 Offset: 0x6E0304 VA: 0x6E0304
 		//// RVA: 0xBAF3B0 Offset: 0xBAF3B0 VA: 0xBAF3B0
 		//private void <OnClickSortButton>b__68_0(PopupSortMenu popup) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6E0314 Offset: 0x6E0314 VA: 0x6E0314
-		//// RVA: 0xBAF470 Offset: 0xBAF470 VA: 0xBAF470
-		//private void <SortFriendList>b__70_0(int index, SwapScrollListContent content) { }
 		
 		//[CompilerGeneratedAttribute] // RVA: 0x6E0354 Offset: 0x6E0354 VA: 0x6E0354
 		//// RVA: 0xBAF88C Offset: 0xBAF88C VA: 0xBAF88C

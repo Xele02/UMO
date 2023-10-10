@@ -73,8 +73,30 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xED91A8 Offset: 0xED91A8 VA: 0xED91A8
 		private IEnumerator Co_ReceiveFriendPlayerIdList()
 		{
-			TodoLogger.LogError(0, "Co_ReceiveFriendPlayerIdList");
-			yield return null;
+			//0xEDAECC
+			bool isDone = false;
+			bool isError = false;
+			m_isWaitPreSetCanvas = true;
+			friendManager.CKJHFFHFPLH_GetFriends(() =>
+			{
+				//0xEDAB70
+				isDone = true;
+			}, (CACGCMBKHDI_Request action) =>
+			{
+				//0xEDAB7C
+				isDone = true;
+				isError = true;
+			}, (CACGCMBKHDI_Request action) =>
+			{
+				//0xEDAB88
+				isDone = true;
+				isError = true;
+			});
+			while (!isDone)
+				yield return null;
+			m_isWaitPreSetCanvas = false;
+			if (isError)
+				GotoTitle();
 		}
 
 		// RVA: 0xED926C Offset: 0xED926C VA: 0xED926C Slot: 42
@@ -115,32 +137,158 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xED9694 Offset: 0xED9694 VA: 0xED9694
-		//private void OnClickPopupCopyButton(string myId) { }
+		private void OnClickPopupCopyButton(string myId)
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			ClipboardSupport.CopyText(myId);
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_myid_copy_title"), SizeType.Small, bk.GetMessageByLabel("popup_myid_copy_msg"), new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				}, false, true), null, null, null, null);
+		}
 
 		//// RVA: 0xED991C Offset: 0xED991C VA: 0xED991C
-		//private void OnClickPopupSearchButton(string searchId) { }
+		private void OnClickPopupSearchButton(string searchId)
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(int.TryParse(searchId, out m_searchId))
+			{
+				PopupWindowManager.Close(null, () =>
+				{
+					//0xEDA79C
+					if(m_searchId == m_myId)
+					{
+						m_buttonRuntime.SetReloadButtonLock(true);
+						ShowSearchingMySelfPopup();
+					}
+					else
+					{
+						m_buttonRuntime.SetReloadButtonLock(false);
+						SearchFriend(m_searchId);
+					}
+				});
+			}
+			else
+			{
+				m_searchId = -1;
+			}
+		}
 
 		//// RVA: 0xED9A54 Offset: 0xED9A54 VA: 0xED9A54
 		private void OnClickSearchButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickSearchButton");
+			ShowFriendSearchPopup();
 		}
 
 		//// RVA: 0xED9EC0 Offset: 0xED9EC0 VA: 0xED9EC0
-		//private void SearchFriend(int searchId) { }
+		private void SearchFriend(int searchId)
+		{
+			MenuScene.Instance.InputDisable();
+			friends.Clear();
+			m_windowUi.SetMessageVisible(false);
+			ConnectStart();
+			friendManager.LJMOBJNEHPM(searchId, () =>
+			{
+				//0xEDA804
+				ConnectEnd();
+				for(int i = 0; i < friendManager.BFDEHIANFOG.Count; i++)
+				{
+					EAJCBFGKKFA_FriendInfo data = new EAJCBFGKKFA_FriendInfo();
+					data.KHEKNNFCAOI(friendManager.BFDEHIANFOG[i]);
+					friends.Add(data);
+				}
+				this.StartCoroutineWatched(OnSuccessSearchFriend());
+			}, (CACGCMBKHDI_Request error) =>
+			{
+				//0xEDA99C
+				ConnectEnd();
+				OnFailedSearchFriend();
+				MenuScene.Instance.InputEnable();
+			}, (CACGCMBKHDI_Request error) =>
+			{
+				//0xEDAA50
+				ConnectEnd();
+				NetErrorToTitle();
+			});
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E0614 Offset: 0x6E0614 VA: 0x6E0614
 		//// RVA: 0xEDA0A0 Offset: 0xEDA0A0 VA: 0xEDA0A0
-		//private IEnumerator OnSuccessSearchFriend() { }
+		private IEnumerator OnSuccessSearchFriend()
+		{
+			//0xEDB1E0
+			m_friendInfoAllList.Clear();
+			for(int i = 0; i < friends.Count; i++)
+			{
+				FriendListInfo info = new FriendListInfo((short)i, true, friends[i]);
+				if(ParentTransition == TransitionList.Type.DECO)
+				{
+					if(friendManager.AONMOEOHFGP_TargetPlayerIds != null)
+					{
+						if(friendManager.PDEACDHIJJJ_IsFriend(info.playerId))
+						{
+							info.friend.PDIPANKOKOL_FriendType = IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend;
+						}
+					}
+				}
+				m_friendInfoAllList.Add(info);
+				info.TryInstall();
+			}
+			yield return null;
+			while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+				yield return null;
+			SortFriendList();
+			m_searchId = -1;
+			MenuScene.Instance.InputEnable();
+		}
 
 		//// RVA: 0xEDA14C Offset: 0xEDA14C VA: 0xEDA14C
-		//private void OnFailedSearchFriend() { }
+		private void OnFailedSearchFriend()
+		{
+			TodoLogger.LogError(0, "OnFailedSearchFriend");
+		}
 
 		//// RVA: 0xED9A58 Offset: 0xED9A58 VA: 0xED9A58
-		//private void ShowFriendSearchPopup() { }
+		private void ShowFriendSearchPopup()
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			m_searchIdPopupSetting.TitleText = bk.GetMessageByLabel("popup_friend_search_title");
+			m_searchIdPopupSetting.SetParent(transform);
+			m_searchIdPopupSetting.WindowSize = SizeType.Middle;
+			m_searchIdPopupSetting.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			m_searchIdPopupSetting.myId = m_myId.ToString();
+			if (m_searchId < 0)
+			{
+				m_searchIdPopupSetting.friendId = "";
+			}
+			else
+			{
+				m_searchIdPopupSetting.friendId = m_searchId.ToString();
+			}
+			m_searchIdPopupSetting.friendIdPlaceholder = bk.GetMessageByLabel("popup_friend_search_placeholder");
+			m_searchIdPopupSetting.onClickCopyButton = OnClickPopupCopyButton;
+			m_searchIdPopupSetting.onClickSearchButton = OnClickPopupSearchButton;
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			PopupWindowManager.Show(m_searchIdPopupSetting, null, null, null, null);
+		}
 
 		//// RVA: 0xEDA3C8 Offset: 0xEDA3C8 VA: 0xEDA3C8
-		//private void ShowSearchingMySelfPopup() { }
+		private void ShowSearchingMySelfPopup()
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_friend_search_myself_title"), SizeType.Small, bk.GetMessageByLabel("popup_friend_search_myself_msg"), new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Negative }
+				}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0xEDAAF8
+					ShowFriendSearchPopup();
+				}, null, null, null);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E068C Offset: 0x6E068C VA: 0x6E068C
 		// RVA: 0xEDA644 Offset: 0xEDA644 VA: 0xEDA644 Slot: 43
@@ -170,29 +318,9 @@ namespace XeApp.Game.Menu
 
 		//// RVA: 0xEDA70C Offset: 0xEDA70C VA: 0xEDA70C Slot: 44
 		//protected override void OnNetRequestSuccess() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6E0704 Offset: 0x6E0704 VA: 0x6E0704
-		//// RVA: 0xEDA79C Offset: 0xEDA79C VA: 0xEDA79C
-		//private void <OnClickPopupSearchButton>b__25_0() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6E0714 Offset: 0x6E0714 VA: 0x6E0714
-		//// RVA: 0xEDA804 Offset: 0xEDA804 VA: 0xEDA804
-		//private void <SearchFriend>b__27_0() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6E0724 Offset: 0x6E0724 VA: 0x6E0724
-		//// RVA: 0xEDA99C Offset: 0xEDA99C VA: 0xEDA99C
-		//private void <SearchFriend>b__27_1(CACGCMBKHDI error) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6E0734 Offset: 0x6E0734 VA: 0x6E0734
-		//// RVA: 0xEDAA50 Offset: 0xEDAA50 VA: 0xEDAA50
-		//private void <SearchFriend>b__27_2(CACGCMBKHDI error) { }
-
+		
 		//[CompilerGeneratedAttribute] // RVA: 0x6E0744 Offset: 0x6E0744 VA: 0x6E0744
 		//// RVA: 0xEDAA74 Offset: 0xEDAA74 VA: 0xEDAA74
 		//private void <OnFailedSearchFriend>b__29_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6E0754 Offset: 0x6E0754 VA: 0x6E0754
-		//// RVA: 0xEDAAF8 Offset: 0xEDAAF8 VA: 0xEDAAF8
-		//private void <ShowSearchingMySelfPopup>b__31_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
 	}
 }

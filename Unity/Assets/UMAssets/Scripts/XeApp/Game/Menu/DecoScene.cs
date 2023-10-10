@@ -1231,7 +1231,7 @@ namespace XeApp.Game.Menu
 				//LAB_0157439c
 				if(data.HBHMAKNGKFK_Items[i].HAJKNHNAIKL_ItemId != 0)
 				{
-					bool b = false;
+					bool found = false;
 					for(int j = 0; j < saveData.HBHMAKNGKFK_Items.Count; j++)
 					{
 						if(saveData.HBHMAKNGKFK_Items[j].HAJKNHNAIKL_ItemId != 0)
@@ -1243,15 +1243,14 @@ namespace XeApp.Game.Menu
 									//code_r0x0157428c
 									ToKeep.Add(j);
 									itemList[i].SetInfo(saveData.HBHMAKNGKFK_Items[j]);
-									b = true;
+									found = true;
 									break;
 								}
 							}
 						}
 					}
-					if(!b)
+					if(!found)
 						toRemove.Add(i);
-					break;
 				}
 				//LAB_01574398
 			}
@@ -1262,7 +1261,7 @@ namespace XeApp.Game.Menu
 				//LAB_01574790
 				if(saveData.HBHMAKNGKFK_Items[i].HAJKNHNAIKL_ItemId != 0)
 				{
-					bool b = false;
+					bool found = false;
 					for(int j = 0; j < data.HBHMAKNGKFK_Items.Count; j++)
 					{
 						if(data.HBHMAKNGKFK_Items[j].HAJKNHNAIKL_ItemId != 0)
@@ -1273,12 +1272,12 @@ namespace XeApp.Game.Menu
 								{
 									//code_r0x01574738
 									ToKeep.Add(j);
-									b = true;
+									found = true;
 								}
 							}
 						}
 					}
-					if(!b)
+					if(!found)
 						toCreate.Add(i);
 				}
 				//LAB_0157478c
@@ -1566,7 +1565,13 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC5E518 Offset: 0xC5E518 VA: 0xC5E518
-		//private void UpdatePostLayout(EKLNMHFCAOI.FKGCBLHOOCL ctg) { }
+		private void UpdatePostLayout(EKLNMHFCAOI.FKGCBLHOOCL_Category ctg)
+		{
+			if (ctg == EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
+				UpdateCharaPostLayout();
+			else
+				UpdateItemPostLayout();
+		}
 
 		//// RVA: 0xC5FB20 Offset: 0xC5FB20 VA: 0xC5FB20
 		private void UpdateDecoNumLayout()
@@ -3619,8 +3624,45 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC6A3E8 Offset: 0xC6A3E8 VA: 0xC6A3E8
 		private IEnumerator Co_RemoveItem(DecorationItemBase item)
 		{
-			//0x1582F4C
-			yield return this.StartCoroutineWatched(Co_RemoveItem(m_decorationCanvas.GetEditItem()));
+			DecorationItemBase selectItem;
+
+			//0x15830A4
+			selectItem = item;
+			bool isWait = true;
+			bool isDecide = true;
+			if (selectItem == null)
+				yield break;
+			if(KDKFHGHGFEK.HANJGFKOGGO(selectItem.ResourceId))
+			{
+				m_spItemRemovePopup.TitleText = MessageManager.Instance.GetMessage("menu", "pop_deco_sp_item_remove_title");
+				m_spItemRemovePopup.m_parent = transform;
+				m_spItemRemovePopup.Buttons = new ButtonInfo[2]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				};
+				m_spItemRemovePopup.itemList.Clear();
+				m_spItemRemovePopup.itemList.Add(item.ResourceId);
+				m_spItemRemovePopup.WindowSize = SizeType.Middle;
+				isDecide = false;
+				PopupWindowManager.Show(m_spItemRemovePopup, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0xC6F128
+					if (type == PopupButton.ButtonType.Positive)
+						isDecide = true;
+					isWait = false;
+				}, null, null, null);
+				while (isWait)
+					yield return null;
+			}
+			//LAB_0158358c
+			if(isDecide)
+			{
+				m_decorationCanvas.RemoveItem(selectItem);
+				m_decorationCanvas.HideSelectItemLayout();
+				UpdatePostLayout(item.DecorationItemCategory);
+				UpdateEditButton();
+			}
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D2834 Offset: 0x6D2834 VA: 0x6D2834
@@ -3758,11 +3800,11 @@ namespace XeApp.Game.Menu
 				if(type == PopupButton.ButtonType.Positive)
 				{
 					bool b1 = m_decorationCanvas.DecoLocalSaveData.KOGBMDOONFA.CINLIMIKCAL_EnableBgEffect;
-					bool b2 = m_decorationCanvas.DecoLocalSaveData.KOGBMDOONFA.HEKJKLJDHNN;
+					bool b2 = m_decorationCanvas.DecoLocalSaveData.KOGBMDOONFA.HEKJKLJDHNN_EnablePosterAnim;
 					(control.Content as PopupDecoOptionPopup).LayoutPopupConfigDeco.SetDecoOption(m_decorationCanvas.DecoLocalSaveData);
 					m_decorationCanvas.DecoLocalSaveData.HJMKBCFJOOH_Save();
 					isBgDiff = m_decorationCanvas.DecoLocalSaveData.KOGBMDOONFA.CINLIMIKCAL_EnableBgEffect != b1;
-					isPosterAnimeDiff = m_decorationCanvas.DecoLocalSaveData.KOGBMDOONFA.HEKJKLJDHNN != b2;
+					isPosterAnimeDiff = m_decorationCanvas.DecoLocalSaveData.KOGBMDOONFA.HEKJKLJDHNN_EnablePosterAnim != b2;
 					isDecide = true;
 				}
 				isDone = true;
@@ -4586,13 +4628,5 @@ namespace XeApp.Game.Menu
 
 		//// RVA: 0xC6BD28 Offset: 0xC6BD28 VA: 0xC6BD28
 		//private string MakePhotoSavePath() { }
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x6D2E6C Offset: 0x6D2E6C VA: 0x6D2E6C
-		//// RVA: 0xC6DD00 Offset: 0xC6DD00 VA: 0xC6DD00
-		//private bool <Co_AllBack>b__195_3() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6D2E7C Offset: 0x6D2E7C VA: 0x6D2E7C
-		//// RVA: 0xC6DD04 Offset: 0xC6DD04 VA: 0xC6DD04
-		//private bool <Co_AllBack>b__195_0() { }
 	}
 }
