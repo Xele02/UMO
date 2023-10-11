@@ -263,6 +263,7 @@ class JpStringLiterals
 	public const string StringLiteral_11219 = "ノーマルミッション"; // 0x03bb3a04
 	public const string StringLiteral_11220 = "イベントミッション"; // 0x03bb3a08
 	public const string StringLiteral_11221 = "ビンゴミッション"; // 0x03BB3A0C
+	public const string StringLiteral_11225 = "削除"; //0x03bb3a1c
 	public const string StringLiteral_11248 = "既に回答済み"; //0x03bb3a78
 	public const string StringLiteral_12894 = "イベント達成pt"; // 0x03bb5430
 	public const string StringLiteral_12895 = "ログボ"; // 0x03bb5434
@@ -335,6 +336,9 @@ class JpStringLiterals
 	public const string StringLiteral_15479 = "<color=red>** デコポイント交換所が見つからない **</color>"; //0x03bb7c94
 	public const string StringLiteral_15480 = "交換所"; //0x03bb7c98
 	public const string StringLiteral_15497 = "エネルギー充填機"; //0x03bb7cdc
+	public const string StringLiteral_15528 = "選択"; //0x03bb7d58
+	public const string StringLiteral_15538 = "保存"; //0x03bb7d80
+	public const string StringLiteral_15542 = "名前変更"; //0x03bb7d90
 	public const string StringLiteral_15553 = "自分のデコルームへ戻る"; //0x03bb7dbc
 	public const string StringLiteral_15554 = "訪問デコルームからロビーへ戻る"; //0x03bb7dc0
 	public const string StringLiteral_15651 = "手動"; // 0x03bb7f44

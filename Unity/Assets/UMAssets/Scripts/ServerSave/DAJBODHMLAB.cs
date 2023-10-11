@@ -240,7 +240,7 @@ public class DAJBODHMLAB_DecoPublicSet : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		//// RVA: 0x176B024 Offset: 0x176B024 VA: 0x176B024
-		public void BMGGKONLFIC(MMLACIFMNBN GPBJHKLFCEP)
+		public void BMGGKONLFIC_Copy(MMLACIFMNBN GPBJHKLFCEP)
 		{
 			for(int i = 0; i < HBHMAKNGKFK_Items.Count; i++)
 			{
@@ -288,7 +288,19 @@ public class DAJBODHMLAB_DecoPublicSet : KLFDBFMNLBL_ServerSaveBlock
 		//public void MFILDLFMGDC(StringBuilder JBBHNIACMFJ) { }
 
 		//// RVA: 0x176D65C Offset: 0x176D65C VA: 0x176D65C
-		//public bool CIKOPIFGLGA() { }
+		public bool CIKOPIFGLGA()
+		{
+			if(KIDHLCNFCKN_FloorId == 0 && DJCJMCHMIMA_WallLId == 0)
+			{
+				foreach(var c in HBHMAKNGKFK_Items)
+				{
+					if (c.HAJKNHNAIKL_ItemId > 0)
+						return true;
+				}
+				return false;
+			}
+			return true;
+		}
 	}
 
 	private const int ECFEMKGFDCE = 1;
@@ -365,7 +377,7 @@ public class DAJBODHMLAB_DecoPublicSet : KLFDBFMNLBL_ServerSaveBlock
 	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
 		DAJBODHMLAB_DecoPublicSet other = GPBJHKLFCEP as DAJBODHMLAB_DecoPublicSet;
-		LJMCPFACDGJ.BMGGKONLFIC(other.LJMCPFACDGJ);
+		LJMCPFACDGJ.BMGGKONLFIC_Copy(other.LJMCPFACDGJ);
 	}
 
 	// // RVA: 0x176B214 Offset: 0x176B214 VA: 0x176B214 Slot: 8

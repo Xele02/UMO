@@ -25,7 +25,7 @@ public class JFOBOMOMENL
         List<JEPMHCPBIGD_DecoItemInit.MPIILICCLDD> l3 = new List<JEPMHCPBIGD_DecoItemInit.MPIILICCLDD>();
         List<JEPMHCPBIGD_DecoItemInit.MPIILICCLDD> l4 = new List<JEPMHCPBIGD_DecoItemInit.MPIILICCLDD>();
         List<JEPMHCPBIGD_DecoItemInit.MPIILICCLDD> l5 = new List<JEPMHCPBIGD_DecoItemInit.MPIILICCLDD>();
-        BBHNACPENDM_ServerSaveData serverSave = CIOECGOMILE.HHCJCDFCLOB.LGBMDHOLOIF.AHEFHIMGIBI;
+        BBHNACPENDM_ServerSaveData serverSave = CIOECGOMILE.HHCJCDFCLOB.LGBMDHOLOIF_decoPlayerData.AHEFHIMGIBI;
         AOFAHDGAMKH(serverSave.PDKHANKAPCI_DecoPublicSet, l1, l2, l3, l4, l5, serverSave.OBDEIEHEPHC_DecoPublicInfo.DGNMOIBJBBJ_HasEnabled);
         List<JEPMHCPBIGD_DecoItemInit.MPIILICCLDD> l7 = new List<JEPMHCPBIGD_DecoItemInit.MPIILICCLDD>();
         l7.AddRange(l1);

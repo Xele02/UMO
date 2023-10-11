@@ -106,7 +106,7 @@ public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 		AHHPBMBBCFM_DecoPrivateSet other = GPBJHKLFCEP as AHHPBMBBCFM_DecoPrivateSet;
 		for(int i = 0; i < JBJHCJFOICD.Count; i++)
 		{
-			JBJHCJFOICD[i].BMGGKONLFIC(other.JBJHCJFOICD[i]);
+			JBJHCJFOICD[i].BMGGKONLFIC_Copy(other.JBJHCJFOICD[i]);
 		}
 	}
 
@@ -131,7 +131,7 @@ public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x15C8268 Offset: 0x15C8268 VA: 0x15C8268 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
 	{
-		TodoLogger.LogError(0, "TODO");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "TODO");
 		return null;
 	}
 }
