@@ -27,13 +27,23 @@ namespace XeApp.Game.Menu
 		public Action<string> onClickSearchButton { private get; set; } // 0x34
 
 		//// RVA: 0x160B154 Offset: 0x160B154 VA: 0x160B154
-		//public void SetMyId(string myId) { }
+		public void SetMyId(string myId)
+		{
+			m_myIdText.text = myId;
+		}
 
 		//// RVA: 0x160B190 Offset: 0x160B190 VA: 0x160B190
-		//public void SetFriendId(string friendId) { }
+		public void SetFriendId(string friendId)
+		{
+			m_friendIdTextField.text = friendId;
+		}
 
 		//// RVA: 0x160B1C4 Offset: 0x160B1C4 VA: 0x160B1C4
-		//public void SetFriendIdPlaceholder(string placeholder) { }
+		public void SetFriendIdPlaceholder(string placeholder)
+		{
+			m_friendIdPlaceholder.horizontalOverflow = HorizontalWrapMode.Wrap;
+			m_friendIdPlaceholder.text = placeholder;
+		}
 
 		//// RVA: 0x160B310 Offset: 0x160B310 VA: 0x160B310
 		private char OnValidateInput(string text, int charIndex, char addedChar)
