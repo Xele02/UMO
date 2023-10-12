@@ -288,6 +288,9 @@ namespace XeApp.Game.Menu
 			SettingData();
 			this.StartCoroutineWatched(Co_LoadingSeq());
 			m_screenShotViewInstance = Instantiate(m_screenShotViewPrefab);
+#if UNITY_EDITOR || UNITY_STANDALONE
+			BundleShaderInfo.Instance.FixMaterialShader(m_screenShotViewInstance.gameObject);
+#endif
 			m_screenShotViewInstance.transform.SetParent(transform, false);
 			InitializeScreenShot();
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
@@ -2135,10 +2138,10 @@ namespace XeApp.Game.Menu
 					m_decorationCanvas.LoadBgResource(id, id, id, false);
 					break;
 				case 1:
-					m_decorationCanvas.LoadBgResource(id, -1, id, false);
+					m_decorationCanvas.LoadBgResource(id, -1, -1, false);
 					break;
 				case 2:
-					m_decorationCanvas.LoadBgResource(id, -1, -1, false);
+					m_decorationCanvas.LoadBgResource(-1, id, -1, false);
 					break;
 				case 3:
 					m_decorationCanvas.LoadBgResource(-1, -1, id, false);
