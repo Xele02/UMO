@@ -339,6 +339,7 @@ class JpStringLiterals
 	public const string StringLiteral_15528 = "選択"; //0x03bb7d58
 	public const string StringLiteral_15538 = "保存"; //0x03bb7d80
 	public const string StringLiteral_15542 = "名前変更"; //0x03bb7d90
+	public const string StringLiteral_15546 = "他人のデコルーム:訪問リスト経由"; //0x03bb7da0
 	public const string StringLiteral_15553 = "自分のデコルームへ戻る"; //0x03bb7dbc
 	public const string StringLiteral_15554 = "訪問デコルームからロビーへ戻る"; //0x03bb7dc0
 	public const string StringLiteral_15651 = "手動"; // 0x03bb7f44

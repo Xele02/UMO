@@ -489,7 +489,16 @@ public class NDBFKHKMMCE_DecoItem : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x1ADE830 Offset: 0x1ADE830 VA: 0x1ADE830
-	// public bool GMKNPOJDIPP(string LJNAKDMILMC, out int NANNGLGOFKH) { }
+	public bool GMKNPOJDIPP(string LJNAKDMILMC, out int NANNGLGOFKH)
+	{
+		NANNGLGOFKH = 0;
+		if(OHJFBLFELNK_IntArray.ContainsKey(LJNAKDMILMC))
+		{
+			NANNGLGOFKH = OHJFBLFELNK_IntArray[LJNAKDMILMC].DNJEJEANJGL_Value;
+			return true;
+		}
+		return false;
+	}
 
 	// // RVA: 0x1ADE920 Offset: 0x1ADE920 VA: 0x1ADE920
 	public void MFIAFCCJHOF(BBLECJKKKLA_DecoSetItem MJALLIOHKEJ)

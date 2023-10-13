@@ -338,7 +338,18 @@ public class BBHNACPENDM_ServerSaveData
 	}
 
 	// // RVA: 0xF1C1E0 Offset: 0xF1C1E0 VA: 0xF1C1E0
-	// public static List<string> KPIDBPEKMFD(ulong MKDDOJOADMF) { }
+	public static List<string> KPIDBPEKMFD_GetBlockList(ulong MKDDOJOADMF)
+	{
+		List<string> res = new List<string>(OHNJJIMGKGK_Names.Length);
+		for(int i = 0; i < OHNJJIMGKGK_Names.Length; i++)
+		{
+			if((((ulong)1 << i) & MKDDOJOADMF) != 0)
+			{
+				res.Add(OHNJJIMGKGK_Names[i]);
+			}
+		}
+		return res;
+	}
 
 	// // RVA: 0xF1C428 Offset: 0xF1C428 VA: 0xF1C428
 	public KLFDBFMNLBL_ServerSaveBlock LBDOLHGDIEB_GetBlock(string OPFGFINHFCE)

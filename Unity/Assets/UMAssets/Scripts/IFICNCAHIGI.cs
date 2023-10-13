@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class IFICNCAHIGI : IBIGBMDANNM
 {
-	public int AGDBNNEAIIC { get; set; } // 0x48 KIHAEDNHHAN NDEDOLKIOIE HACPPJDBEOJ
+	public int AGDBNNEAIIC_FanNum { get; set; } // 0x48 KIHAEDNHHAN NDEDOLKIOIE HACPPJDBEOJ
 	public bool BBNAEPGAMMA { get; set; } // 0x4C FEPMDHPMCJN JMPMCEFAGBB BJEPEENJLJB
 
 	// RVA: 0x11EEFD0 Offset: 0x11EEFD0 VA: 0x11EEFD0 Slot: 5

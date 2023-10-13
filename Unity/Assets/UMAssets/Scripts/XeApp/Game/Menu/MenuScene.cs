@@ -1159,7 +1159,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB32C00 Offset: 0xB32C00 VA: 0xB32C00
-		// public void ShowSortWindow(PopupSortMenu.SortPlace place, SortItem sortItem, UnityAction<PopupSortMenu> okCallBack, Action endCallBack) { }
+		public void ShowSortWindow(PopupSortMenu.SortPlace place, SortItem sortItem, UnityAction<PopupSortMenu> okCallBack, Action endCallBack)
+		{
+			m_sortWindowControl.Show(place, 0, 0, okCallBack, endCallBack, sortItem);
+		}
 
 		// // RVA: 0xB32C5C Offset: 0xB32C5C VA: 0xB32C5C
 		public void ShowSortWindow(PopupSortMenu.SortPlace place, int divaId, int attrId, UnityAction<PopupSortMenu> okCallBack, Action endCallBack)

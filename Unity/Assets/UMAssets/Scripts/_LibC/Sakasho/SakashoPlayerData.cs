@@ -586,8 +586,8 @@ namespace ExternLib
 			EDOHBJAPLPF_JsonData jsonRes = playerAccount.players[999999998].serverData;
 
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
-			res["next_page"] = -1;
-			res["previous_page"] = -1;
+			res["next_page"] = 0;
+			res["previous_page"] = 0;
 			res["current_page"] = 1;
 			res["players"] = new EDOHBJAPLPF_JsonData();
 			res["players"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
