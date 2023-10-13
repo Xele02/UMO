@@ -354,8 +354,9 @@ namespace XeApp
 			if(Mathf.Abs(f1) > 0.01f)
 			{
 				float f2 = v2.y * v5.y - v2.x * v5.x;
-				float f3 = v2.y - v4.y - v2.x * v4.x;
-				if(f3 * f2 <= 0 && f1 * (v3.y * v7.y - v3.x * v7.x) <= 0)
+				float f3 = v2.y * v4.y - v2.x * v4.x;
+				float f4 = v3.y * v7.y - v3.x * v7.x;
+				if(f3 * f2 <= 0 && f1 * f4 <= 0)
 				{
 					v1 = v3 * Mathf.Abs(f3) / (Mathf.Abs(f3) + Mathf.Abs(f2));
 					v2 = boundaryLine[1] + v1;
