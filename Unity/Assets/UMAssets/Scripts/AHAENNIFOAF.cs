@@ -9,9 +9,9 @@ public static class AHAENNIFOAF
         IDGJGMNNJEF = 0,
         JBMJEOBODHH = 1,
         ANLJMCJAMFJ = 2,
-        BJNAMAANNMB = 3,
+        BJNAMAANNMB_3 = 3,
         AEFCOHJBLPO = 4,
-        HJNNKCMLGFL = -1,
+        HJNNKCMLGFL_M1 = -1,
     }
 
 	public const int BDAOPCMONCO = 4;
@@ -26,7 +26,10 @@ public static class AHAENNIFOAF
 	// public static void PAMKDBAMMIE(StringBuilder KOHNLDKIKPC, int EKANGPODCEP, int AIBFGKBACCB, NKOBMDPHNGP.FLHJEJGJJGE KLMCILEDMEL) { }
 
 	// // RVA: 0x15C5230 Offset: 0x15C5230 VA: 0x15C5230
-	// public static void BCJOMHAIGGJ(StringBuilder KOHNLDKIKPC, int MLPEHNBNOGD) { }
+	public static void BCJOMHAIGGJ(StringBuilder KOHNLDKIKPC, int MLPEHNBNOGD)
+	{
+		KOHNLDKIKPC.SetFormat("{0}_deco", MLPEHNBNOGD);
+	}
 
 	// // RVA: 0x15C52C4 Offset: 0x15C52C4 VA: 0x15C52C4
 	public static void DNEIBFNPNIA(StringBuilder KOHNLDKIKPC, int EKANGPODCEP, int AIBFGKBACCB)

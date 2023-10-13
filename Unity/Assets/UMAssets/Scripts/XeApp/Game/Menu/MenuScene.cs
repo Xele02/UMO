@@ -1007,7 +1007,10 @@ namespace XeApp.Game.Menu
 		// public bool OnPushReturnButton() { }
 
 		// // RVA: 0xB322B8 Offset: 0xB322B8 VA: 0xB322B8
-		// public int GetDefaultBgmId(SceneGroupCategory category) { }
+		public int GetDefaultBgmId(SceneGroupCategory category)
+		{
+			return m_menuTransitionControl.GetDefaultBgmId(category);
+		}
 
 		// // RVA: 0xB2B190 Offset: 0xB2B190 VA: 0xB2B190
 		public void InputEnable()

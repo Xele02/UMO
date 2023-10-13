@@ -587,7 +587,10 @@ namespace XeApp.Game.Menu
 			}
 
 			// // RVA: 0xA39A58 Offset: 0xA39A58 VA: 0xA39A58
-			// public int GetDefaultBgmId(SceneGroupCategory category) { }
+			public int GetDefaultBgmId(SceneGroupCategory category)
+			{
+				return sceneGroupCategoryBgmId[(int)category];
+			}
 
 			// [IteratorStateMachineAttribute] // RVA: 0x6C8B6C Offset: 0x6C8B6C VA: 0x6C8B6C
 			// // RVA: 0xA39B1C Offset: 0xA39B1C VA: 0xA39B1C
