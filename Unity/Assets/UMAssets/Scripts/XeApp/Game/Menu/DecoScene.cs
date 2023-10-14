@@ -2126,7 +2126,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC6419C Offset: 0xC6419C VA: 0xC6419C
 		private void BuyItemCallback()
 		{
-			TodoLogger.LogError(0, "BuyItemCallback");
+			m_decorationCanvas.UpdateViewDecoItemList();
+			UpdateDecoNumLayout();
+			UpdateNewIcon();
+			if(m_speakChara != null)
+				UpdateSerifNewIcon(m_speakChara.Id);
+			SetResetNewFlag(m_decoratorType, m_decorator.GetTabType());
 		}
 
 		//// RVA: 0xC6467C Offset: 0xC6467C VA: 0xC6467C

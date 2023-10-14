@@ -107,7 +107,7 @@ namespace XeApp.Game.Menu
 			{
 				name += "(" + NCPPAHHCCAO.EFNHFKLKNHJ(id) + ")";
 			}
-			name += " " + view.JDLJPNMLFID.ToString() + EKLNMHFCAOI.NDBLEADIDLA(cat, id);
+			name += " " + view.JDLJPNMLFID_Count.ToString() + EKLNMHFCAOI.NDBLEADIDLA(cat, id);
 			m_textName.text = name;
 			int num = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, cat, id, null);
 			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit)

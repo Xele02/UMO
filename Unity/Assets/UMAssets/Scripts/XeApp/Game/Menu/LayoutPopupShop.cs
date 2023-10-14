@@ -102,7 +102,7 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
             EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.KIJAPOFAGPN_ItemFullId);
             int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemFullId);
-			m_textName.text = name + " " + view.JDLJPNMLFID + EKLNMHFCAOI.NDBLEADIDLA(cat, id);
+			m_textName.text = name + " " + view.JDLJPNMLFID_Count + EKLNMHFCAOI.NDBLEADIDLA(cat, id);
 			m_ownItemNum = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, cat, id, null);
 			m_textOwn4d[1].text = m_ownItemNum.ToString();
 			m_textOwn8d[1].text = m_ownItemNum.ToString();
@@ -236,9 +236,9 @@ namespace XeApp.Game.Menu
 			{
 				m_textRemain.text = string.Format(bk.GetMessageByLabel("item_popup_shop_text_04"), l[0] - m_count);
 			}
-			m_textOwn4d[2].text = (m_ownItemNum + m_view.JDLJPNMLFID * m_count).ToString();
-			m_textOwn8d[2].text = (m_ownItemNum + m_view.JDLJPNMLFID * m_count).ToString();
-			m_layoutDigit.StartChildrenAnimGoStop(m_ownItemNum + m_view.JDLJPNMLFID * m_count < 10000 ? "4digits" : "8digits");
+			m_textOwn4d[2].text = (m_ownItemNum + m_view.JDLJPNMLFID_Count * m_count).ToString();
+			m_textOwn8d[2].text = (m_ownItemNum + m_view.JDLJPNMLFID_Count * m_count).ToString();
+			m_layoutDigit.StartChildrenAnimGoStop(m_ownItemNum + m_view.JDLJPNMLFID_Count * m_count < 10000 ? "4digits" : "8digits");
 			m_textCostCoinNum.text = (m_count * m_view.DKEPCPPCIKA_Price).ToString();
 			m_ownNeedItemNum = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(m_view.JPJMHLNOIAJ_ItemCostFullId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(m_view.JPJMHLNOIAJ_ItemCostFullId), null);
 			m_textOwnCoinNum.text = m_ownNeedItemNum.ToString();
