@@ -117,7 +117,7 @@ namespace XeApp
 			{
 				if(viewDecoItemData.NPADACLCNAN_Category < EKLNMHFCAOI.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster
 					|| viewDecoItemData.NPADACLCNAN_Category > EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft)
-					return false;
+					return viewDecoItemData.FAKNMCIIAEM_IsAutoFlip == 1;
 				return true;
 			}
 			return false;
