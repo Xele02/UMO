@@ -103,8 +103,9 @@ namespace XeApp
 		//// RVA: 0x1AC3D30 Offset: 0x1AC3D30 VA: 0x1AC3D30
 		private void ResetInputEvent()
 		{
-			EventSystem.current.enabled = false;
-			EventSystem.current.enabled = true;
+			EventSystem ev = EventSystem.current;
+			ev.enabled = false;
+			ev.enabled = true;
 			ResetTouch();
 		}
 
@@ -647,7 +648,7 @@ namespace XeApp
 					{
 						if(pincher.IsFloating)
 						{
-							Position = p + beginDragPos;
+							Position = p + beginDragOfs;
 							AdjustPos(Position, true, null, false);
 							pincher.UpdateShadowPos();
 							return;

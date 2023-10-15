@@ -28,7 +28,7 @@ namespace XeApp
 				//0x1924790
 				rp.angry = rcv;
 			}));
-			rp.transform.localPosition += new Vector3(chara.Size.x, chara.Size.y, 0);
+			rp.transform.localPosition += new Vector3(chara.Size.x / 2, chara.Size.y / 2, 0);
 			return rp;
 		}
 

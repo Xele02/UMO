@@ -57,7 +57,8 @@ namespace XeApp
 				sr.gameObject.layer = tsr.gameObject.layer;
 				sr.sortingOrder = tsr.sortingOrder - 1;
 				sr.enabled = false;
-				sr.transform.SetParent(pt, false);
+				st = sr.transform;
+				st.SetParent(pt, false);
 			}
 			AssetBundleManager.UnloadAssetBundle(bn, false);
 		}

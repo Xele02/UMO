@@ -326,7 +326,6 @@ namespace XeApp.Game.Menu
 
 			//0x18C7D00
 			int id = 0;
-			TodoLogger.LogError(0, "Check array");
 			if(type > 0 && (int)type - 1 < 4)
 				id = new int[4] { 1, 2, 2, 1 } [(int)type - 1];
 			List<LayoutDecorationSelectItemBase> l;

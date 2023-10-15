@@ -612,15 +612,9 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 			{
 				if(CDENCMNHNGA_SceneList[BCCHOBPJJKE - 1].PPEGAKEIEGM_En == 2)
 				{
-					int r = CDENCMNHNGA_SceneList[BCCHOBPJJKE - 1].EKLIPGELKCL_Rarity - 4;
-					if (CDENCMNHNGA_SceneList[BCCHOBPJJKE - 1].EKLIPGELKCL_Rarity > 3)
+					if(CDENCMNHNGA_SceneList[BCCHOBPJJKE - 1].EKLIPGELKCL_Rarity >= 4 && CDENCMNHNGA_SceneList[BCCHOBPJJKE - 1].LFPEIEOHABE_Pstv > 0)
 					{
-						r = CDENCMNHNGA_SceneList[BCCHOBPJJKE - 1].LFPEIEOHABE_Pstv - 1;
-					}
-					TodoLogger.LogError(TodoLogger.ToCheck, "check test puVar1 < 0 == bVar6");
-					if(r >= 1)
-					{
-						return r <= IEFOPDOOLOK_MasterVersion;
+						return CDENCMNHNGA_SceneList[BCCHOBPJJKE - 1].LFPEIEOHABE_Pstv <= IEFOPDOOLOK_MasterVersion;
 					}
 				}
 			}

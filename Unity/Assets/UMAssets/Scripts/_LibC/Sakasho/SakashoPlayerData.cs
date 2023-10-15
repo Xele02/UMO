@@ -150,6 +150,28 @@ namespace ExternLib
 				}
 			}
 			{
+				// posters
+				for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.COLIEKINOPB_ItemsPoster.Count; i++)
+				{
+					NDBFKHKMMCE_DecoItem.IEOEMNPLANK_PosterItem item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.COLIEKINOPB_ItemsPoster[i];
+					if (item.PLALNIIBLOF_Enabled == 2)
+					{
+						BCGFHLIEKLJ_DecoItem.AKAHOEBACGJ saveItem = newData.OMMNKDEODJP_DecoItem.PFNNIMBMKDL_Posters.Find((BCGFHLIEKLJ_DecoItem.AKAHOEBACGJ JPAEDJJFFOI) =>
+						{
+							//0xE7B830
+							return i + 1 == JPAEDJJFFOI.PPFNGGCBJKC_Id;
+						});
+						if(saveItem != null)
+						{			
+							if(saveItem.BFINGCJHOHI_Cnt < 1)
+							{
+								saveItem.PPJAGFPBFHJ(1);
+							}
+						}
+					}
+				}
+			}
+			{
 				List<JGGLDGNKELI_Emblem.AAHAAJEJNLJ> saveEmblems = newData.OFAJDLJBMEM_Emblem.MDKOHOCONKE;
 				List<IHGBPAJMJFK_Emblem.AKJPPHFGEFG_EmblemInfo> dbEmblem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem.CDENCMNHNGA_EmblemList;
 				int cnt = saveEmblems.Count;
