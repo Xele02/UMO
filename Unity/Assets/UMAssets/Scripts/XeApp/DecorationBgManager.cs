@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using XeApp.Core;
+using XeApp.Game.Menu;
 
 namespace XeApp
 {
@@ -244,7 +245,7 @@ namespace XeApp
 				Vector2[] checkRightOuterLine;
 				m_decorationBgData.GetInnerLine(DecorationConstants.Attribute.Type.Wall, item.Setting.AreaType, out checkLeftInnerLine, out checkRightInnerLine);
 				m_decorationBgData.GetOuterLine(DecorationConstants.Attribute.Type.Wall, item.Setting.AreaType, out checkLeftOuterLine, out checkRightOuterLine);
-				check |= FloorHorizonBoundaryLineCheck(item, checkLeftInnerLine, checkRightInnerLine, checkLeftOuterLine, checkRightOuterLine, ref adjustPos);
+				check |= WallHorizonBoundaryLineCheck(item, checkLeftInnerLine, checkRightInnerLine, checkLeftOuterLine, checkRightOuterLine, ref adjustPos);
 			}
 			return check;
 		}
@@ -313,7 +314,35 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1D84EAC Offset: 0x1D84EAC VA: 0x1D84EAC
-		//private bool WallHorizonBoundaryLineCheck(DecorationItemBase item, Vector2[] checkLeftInnerLine, Vector2[] checkRightInnerLine, Vector2[] checkLeftOuterLine, Vector2[] checkRightOuterLine, ref Vector2 adjustPos) { }
+		private bool WallHorizonBoundaryLineCheck(DecorationItemBase item, Vector2[] checkLeftInnerLine, Vector2[] checkRightInnerLine, Vector2[] checkLeftOuterLine, Vector2[] checkRightOuterLine, ref Vector2 adjustPos)
+		{
+			bool res = false;
+			Vector2 size = item.Size;
+			Vector2 v;
+			Vector2 off;
+			Vector2 dir;
+			if(item.Setting.AreaType == DecorationConstants.Attribute.AreaType.Inner)
+			{
+				off = GetSnapOffset(item, SnapType.Bottom);
+				v = new Vector2(adjustPos.x, UpRay.y * -0.5f);
+				dir = UpRay;
+				BoundaryLineCheck(ref res, v, dir, off, checkLeftInnerLine, ref adjustPos);
+			}
+			else
+			{
+				v = adjustPos + GetRayStartPos(item, SnapType.Top);
+				BoundaryLineCheck(ref res, v, DownRay, GetSnapOffset(item, SnapType.Top), checkLeftOuterLine, ref adjustPos);
+				BoundaryLineCheck(ref res, v, DownRay, GetSnapOffset(item, SnapType.Top), checkRightOuterLine, ref adjustPos);
+				if (item.Setting.AttributeType == DecorationConstants.Attribute.Type.BgBoth)
+					return res;
+				v = adjustPos + GetRayStartPos(item, SnapType.Bottom);
+				BoundaryLineCheck(ref res, v, UpRay, GetSnapOffset(item, SnapType.Bottom), checkLeftInnerLine, ref adjustPos);
+				off = GetSnapOffset(item, SnapType.Bottom);
+				dir = UpRay;
+			}
+			BoundaryLineCheck(ref res, v, dir, off, checkRightInnerLine, ref adjustPos);
+			return res;
+		}
 
 		//// RVA: 0x1D846CC Offset: 0x1D846CC VA: 0x1D846CC
 		private bool VerticalBoundaryLineCheck(DecorationItemBase item, Vector2[] centerLine, Vector2[] leftSizeLine, Vector2[] rightSizeLine, ref Vector2 adjustPos)
@@ -333,7 +362,7 @@ namespace XeApp
 			}
 			Vector2 rayStartPos2 = GetRayStartPos(item, item.Position.x <= 0 ? SnapType.Left : SnapType.Right);
 			rayStartPos2 += adjustPos;
-			Vector2 snapOffset2 = GetSnapOffset(item, item.Position.x > 0 ? SnapType.Left : SnapType.Right);
+			Vector2 snapOffset2 = GetSnapOffset(item, item.Position.x > 0 ? SnapType.Right : SnapType.Left);
 			VerticalBoundaryLineCheck(ref isAdjust, rayStartPos2, item.Position.x > 0 ? LeftRay : RightRay, snapOffset2, item.Position.x <= 0 ? leftSizeLine : rightSizeLine, ref adjustPos);
 			return isAdjust;
 		}
@@ -350,12 +379,12 @@ namespace XeApp
 			Vector2 v5 = boundaryLine[0] - itemPosition;
 			Vector2 v6 = itemPosition - boundaryLine[0];
 			Vector2 v7 = v1 - boundaryLine[0];
-			float f1 = v3.y * v6.y - v3.x * v6.x;
+			float f1 = v3.x * v6.y - v3.y * v6.x;
 			if(Mathf.Abs(f1) > 0.01f)
 			{
-				float f2 = v2.y * v5.y - v2.x * v5.x;
-				float f3 = v2.y * v4.y - v2.x * v4.x;
-				float f4 = v3.y * v7.y - v3.x * v7.x;
+				float f2 = v2.x * v5.y - v2.y * v5.x;
+				float f3 = v2.x * v4.y - v2.y * v4.x;
+				float f4 = v3.x * v7.y - v3.y * v7.x;
 				if(f3 * f2 <= 0 && f1 * f4 <= 0)
 				{
 					v1 = v3 * Mathf.Abs(f3) / (Mathf.Abs(f3) + Mathf.Abs(f2));
@@ -430,6 +459,9 @@ namespace XeApp
 					res.x = item.HalfWidth + item.Setting.AdjustOffset.x;
 					break;
 				case SnapType.Right:
+					res.x = item.Setting.AdjustOffset.x - item.HalfWidth;
+					break;
+				case SnapType.Center:
 					res.x += item.Setting.AdjustOffset.x;
 					res.y = res.x - item.Setting.AdjustOffset.y;
 					break;

@@ -100,7 +100,10 @@ namespace XeApp.Game.Menu
 		public bool LeftButtonDisable { set { m_layoutDecorationWindow01.LeftButtonDisable = value; } } //0x11DEBC0
 
 		//// RVA: 0x11DE858 Offset: 0x11DE858 VA: 0x11DE858
-		//public DecorationDecorator.TabType GetTabType() { }
+		public TabType GetTabType()
+		{
+			return m_tabType;
+		}
 
 		//// RVA: 0x11DE860 Offset: 0x11DE860 VA: 0x11DE860
 		public void LoadResoruce()

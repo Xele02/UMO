@@ -481,7 +481,7 @@ namespace XeApp
 					return;
 				}
 			}
-			else if(item.CheckEnableControl(DecorationItemBase.ControlType.Tap & DecorationItemBase.ControlType.LongTap))
+			else if(item.CheckEnableControl(DecorationItemBase.ControlType.Tap | DecorationItemBase.ControlType.LongTap))
 			{
 				item.PointerUp();
 			}

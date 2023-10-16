@@ -74,7 +74,7 @@ namespace XeApp
                     return m_kiraMaterialFlip;
             }
             SetKiraCurrentMaterial(IsKiraPoster, IsKiraShaderParam);
-            return GetCurrentMaterial();
+            return base.GetCurrentMaterial();
         }
     }
 }

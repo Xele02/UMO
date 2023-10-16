@@ -127,7 +127,7 @@ namespace XeApp.Game.Menu
 		private Dictionary<int, List<LayoutDecorationSelectItemBase>> m_scrollContentCache = new Dictionary<int, List<LayoutDecorationSelectItemBase>>(); // 0xA4
 		private bool m_isPower; // 0xA8
 		private bool m_isPause; // 0xA9
-		//private CKPOGHOIBEP buyer = new CKPOGHOIBEP(); // 0xAC
+		private CKPOGHOIBEP buyer = new CKPOGHOIBEP(); // 0xAC
 		private int m_scrollPosition; // 0xB0
 		private bool m_isEnableFamousPhrase4; // 0xB4
 		private int m_tabNum; // 0xB8
@@ -326,7 +326,6 @@ namespace XeApp.Game.Menu
 
 			//0x18C7D00
 			int id = 0;
-			TodoLogger.LogError(0, "Check array");
 			if(type > 0 && (int)type - 1 < 4)
 				id = new int[4] { 1, 2, 2, 1 } [(int)type - 1];
 			List<LayoutDecorationSelectItemBase> l;
@@ -692,7 +691,20 @@ namespace XeApp.Game.Menu
 				c.DecideItemCallback = (LayoutDecorationSelectItemBase _, bool isTapSelect) =>
 				{
 					//0x18C6C4C
-					TodoLogger.LogError(0, "DecideItemCallback");
+					buyer.IJELHNMHAJH(this, item, () =>
+					{
+						//0x18C6B1C
+						if(OnUpdateTab != null)
+							OnUpdateTab();
+					}, null, () =>
+					{
+						//0x18C6BAC
+						MenuScene.Instance.GotoTitle();
+					}, () =>
+					{
+						//0x18C6C48
+						return;
+					});
 				};
 				itemId = item.KIJAPOFAGPN_ItemFullId;
 			}

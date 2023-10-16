@@ -494,7 +494,7 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			itemType = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.KIJAPOFAGPN_ItemFullId);
 			TextPopupSetting s = PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("item_popup_shop_text_05"), SizeType.Middle, 
-				string.Format(bk.GetMessageByLabel("pbox_text_03"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(view.KIJAPOFAGPN_ItemFullId) + " " + (value * view.JDLJPNMLFID).ToString() + EKLNMHFCAOI.NDBLEADIDLA(itemType, EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemFullId))), new ButtonInfo[1]
+				string.Format(bk.GetMessageByLabel("pbox_text_03"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(view.KIJAPOFAGPN_ItemFullId) + " " + (value * view.JDLJPNMLFID_Count).ToString() + EKLNMHFCAOI.NDBLEADIDLA(itemType, EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemFullId))), new ButtonInfo[1]
 				{
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 				}, false, true);
