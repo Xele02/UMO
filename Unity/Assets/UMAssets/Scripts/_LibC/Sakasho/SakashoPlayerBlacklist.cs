@@ -20,5 +20,15 @@ namespace ExternLib
 			SendMessage(callbackId, res);
 			return 0;
 		}
+		public static int SakashoPlayerBlacklistIsOnBlacklistOf(int callbackId, string json)
+		{
+			CheckDefaultRankingCreated();
+
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res["blacklisted"] = false;
+
+			SendMessage(callbackId, res);
+			return 0;
+		}
 	}
 }

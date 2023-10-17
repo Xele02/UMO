@@ -52,7 +52,7 @@ namespace XeApp.Game.Menu
 		private string PreText = ""; // 0x44
 		private bool IsLoaded; // 0x48
 
-		//public bool IsKeyBoardOpen { get; private set; } 0x154FDB0 0x154FDD4
+		public bool IsKeyBoardOpen { get { return m_keyBoard.IsOpenKeyboard; } private set { return; } } //0x154FDB0 0x154FDD4
 		public Action onSendClickButton { private get; set; } // 0x4C
 		public Action onStampClickButton { private get; set; } // 0x50
 		public Action<string, bool> onMessgeSend { get; set; } // 0x54
@@ -177,13 +177,43 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1550BBC Offset: 0x1550BBC VA: 0x1550BBC
-		//public void SetEnableMemberButton(bool _enable) { }
+		public void SetEnableMemberButton(bool _enable)
+		{
+			m_memberButton.Hidden = !enabled;
+		}
 
 		//// RVA: 0x1550BF0 Offset: 0x1550BF0 VA: 0x1550BF0
-		//public void SetFooterSwitchButtonAnimation(LobbyFooter.FooterButtonAnimType _type) { }
+		public void SetFooterSwitchButtonAnimation(FooterButtonAnimType _type)
+		{
+			switch(_type)
+			{
+				case FooterButtonAnimType.Main:
+					m_footerButtonSwitch.StartChildrenAnimGoStop("01");
+					break;
+				case FooterButtonAnimType.BattleLog:
+					m_footerButtonSwitch.StartChildrenAnimGoStop("02");
+					break;
+				case FooterButtonAnimType.Age:
+					m_footerButtonSwitch.StartChildrenAnimGoStop("03");
+					break;
+				case FooterButtonAnimType.Live:
+					m_footerButtonSwitch.StartChildrenAnimGoStop("04");
+					break;
+				case FooterButtonAnimType.DecoChat:
+					m_footerButtonSwitch.StartChildrenAnimGoStop("05");
+					break;
+				default:
+					break;
+			}
+		}
 
 		//// RVA: 0x1550D2C Offset: 0x1550D2C VA: 0x1550D2C
-		//public void Setting() { }
+		public void Setting()
+		{
+			IsEnableSendButton = true;
+			m_sendButton.Disable = true;
+			SetMessgeInputOut();
+		}
 
 		//// RVA: 0x1550664 Offset: 0x1550664 VA: 0x1550664
 		private void SetPlaceholder()
@@ -240,10 +270,21 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x155114C Offset: 0x155114C VA: 0x155114C
-		//public void IsButtonDisable(bool isDisable) { }
+		public void IsButtonDisable(bool isDisable)
+		{
+			if(!IsEnableSendButton)
+			{
+				m_sendButton.Disable = isDisable;
+			}
+			m_stampButton.Disable = isDisable;
+		}
 
 		//// RVA: 0x1550D70 Offset: 0x1550D70 VA: 0x1550D70
-		//public void SetMessgeInputOut() { }
+		public void SetMessgeInputOut()
+		{
+			if (m_textTextField != null)
+				m_textTextField.text = "";
+		}
 
 		//// RVA: 0x1551060 Offset: 0x1551060 VA: 0x1551060
 		private bool IsWhiteSpace(string str)

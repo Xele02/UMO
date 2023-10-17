@@ -591,7 +591,7 @@ public class CIOECGOMILE
 		{
 			//0x100A420
 			GGKHIHFPKDH_SavePlayerData req = CPHFEPHDJIB.IFFNCAFNEAG_AddRequest(new GGKHIHFPKDH_SavePlayerData());
-			req.GJAEJFLLKGC = 1;
+			req.GJAEJFLLKGC_RetryTime = 1;
 			req.DOMFHDPMCCO(JEHOEIKANFL, JCJDPGMKJAJ, AMOMNBEAHBF);
 			return req;
 		}, BHFHGFKBOHH, MOBEEPPKFLG);
@@ -791,7 +791,7 @@ public class CIOECGOMILE
 								}
 								LGBMDHOLOIF_decoPlayerData.KONHMOLMOCI = true;
 								GGKHIHFPKDH_SavePlayerData data = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new GGKHIHFPKDH_SavePlayerData());
-								data.GJAEJFLLKGC = 1.0f;
+								data.GJAEJFLLKGC_RetryTime = 1.0f;
 								data.DOMFHDPMCCO(d, AMOMNBEAHBF);
 								LGBMDHOLOIF_decoPlayerData.CCNKAKCBBDJ.ODDIHGPONFL_Copy(LGBMDHOLOIF_decoPlayerData.AHEFHIMGIBI);
 								N.a.StartCoroutineWatched(CAJOAKIOCEF_Coroutine_SaveDecoData(LGBMDHOLOIF_decoPlayerData, data, BHFHGFKBOHH, MOBEEPPKFLG));
@@ -969,7 +969,7 @@ public class CIOECGOMILE
 									if(ls.Count > 0)
 									{
 										MOMPDFMMICK_ClaimAchievementPrizesAndSave req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new MOMPDFMMICK_ClaimAchievementPrizesAndSave());
-										req.GJAEJFLLKGC = 1;
+										req.GJAEJFLLKGC_RetryTime = 1;
 										req.DOMFHDPMCCO(e, ls, b2);
 										req.MEGNAIJPBFF = li;
 										CCNKAKCBBDJ.ODDIHGPONFL_Copy(AHEFHIMGIBI_ServerSave);
@@ -983,7 +983,7 @@ public class CIOECGOMILE
 										{
 											//0x100A1B8
 											GGKHIHFPKDH_SavePlayerData savereq = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new GGKHIHFPKDH_SavePlayerData());
-											savereq.GJAEJFLLKGC = 1;
+											savereq.GJAEJFLLKGC_RetryTime = 1;
 											savereq.DOMFHDPMCCO(IPIFBCIMHMP, JCJDPGMKJAJ, null);
 											return savereq;
 										}, e, BHFHGFKBOHH, MOBEEPPKFLG));
@@ -1430,7 +1430,7 @@ public class CIOECGOMILE
 						}
 						CCNKAKCBBDJ.ODDIHGPONFL_Copy(AHEFHIMGIBI_ServerSave);
 						FNPBAENIEPG_PurchaseAndSave COJNCNGHIJC = OKDOIAEGADK.IFFNCAFNEAG_AddRequest(new FNPBAENIEPG_PurchaseAndSave());
-						COJNCNGHIJC.GJAEJFLLKGC = 1;
+						COJNCNGHIJC.GJAEJFLLKGC_RetryTime = 1;
 						COJNCNGHIJC.CLBFPFLNGKF = true;
 						COJNCNGHIJC.DOMFHDPMCCO(e, CDPHPAIAFDG_Continue_ProdId, 1, 1001);
 						COJNCNGHIJC.LGEKLPJFJEI = DEAPMEIDCGC_GetTotalPaidCurrency();

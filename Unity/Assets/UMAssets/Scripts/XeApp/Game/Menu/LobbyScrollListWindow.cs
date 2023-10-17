@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System;
 using System.Linq;
 using System.Collections;
+using XeApp.Core;
 
 namespace XeApp.Game.Menu
 {
@@ -152,13 +153,13 @@ namespace XeApp.Game.Menu
 		public Action<LobbyLayoutItemR.CannonMovieInfo> OnClickMovieIcon; // 0xB0
 		public Action OnClickGotoListTop; // 0xB4
 		private bool IsChatButtonGrayOut; // 0xB9
-		private LobbyScrollListWindow.EnWindowType m_window_type; // 0xBC
+		private EnWindowType m_window_type; // 0xBC
 		private bool m_isIconChange; // 0xC0
 
 		public bool IsLoadedTexture { get; protected set; } // 0xB8
-		//public EnWindowType WindowType { get; set; } 0xD1A10C 0xD1A114
+		public EnWindowType WindowType { get { return m_window_type; } set { m_window_type = value; } } //0xD1A10C 0xD1A114
 		//public int RaidSelectType { get; set; } 0xD0BB10 0xD1A11C
-		//public bool IsIconChange { get; set; } 0xD1A124 0xD1A12C
+		public bool IsIconChange { get { return m_isIconChange; } set { m_isIconChange = value; } } //0xD1A124 0xD1A12C
 
 		//// RVA: 0xD130A8 Offset: 0xD130A8 VA: 0xD130A8
 		//public ButtonBase GetGuidCharaBtn() { }
@@ -216,11 +217,45 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E99BC Offset: 0x6E99BC VA: 0x6E99BC
 		//// RVA: 0xD0E404 Offset: 0xD0E404 VA: 0xD0E404
-		//public IEnumerator Co_LoadAssetsLayoutListItemR(string bundleName, Font font) { }
+		public IEnumerator Co_LoadAssetsLayoutListItemR(string bundleName, Font font)
+		{
+			AssetBundleLoadLayoutOperationBase operation;
+
+			//0xD1F80C
+			operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_lobby_win_l_01_layout_root");
+			yield return operation;
+			LayoutUGUIRuntime baseRuntime = null;
+			yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) =>
+			{
+				//0xD1F274
+				baseRuntime = instance.GetComponent<LayoutUGUIRuntime>();
+				instance.transform.SetParent(transform, false);
+			}));
+			m_fxScrollView.AddLayoutCache(2, baseRuntime, 5);
+			Destroy(baseRuntime.gameObject);
+			baseRuntime = null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E9A34 Offset: 0x6E9A34 VA: 0x6E9A34
 		//// RVA: 0xD0E4C4 Offset: 0xD0E4C4 VA: 0xD0E4C4
-		//public IEnumerator Co_LoadAssetsLayoutListItemL(string bundleName, Font font) { }
+		public IEnumerator Co_LoadAssetsLayoutListItemL(string bundleName, Font font)
+		{
+			AssetBundleLoadLayoutOperationBase operation;
+
+			//0xD1F48C
+			operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_lobby_win_r_01_layout_root");
+			yield return operation;
+			LayoutUGUIRuntime baseRuntime = null;
+			yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) =>
+			{
+				//0xD1F378
+				baseRuntime = instance.GetComponent<LayoutUGUIRuntime>();
+				instance.transform.SetParent(transform, false);
+			}));
+			m_fxScrollView.AddLayoutCache(1, baseRuntime, 5);
+			Destroy(baseRuntime.gameObject);
+			baseRuntime = null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E9AAC Offset: 0x6E9AAC VA: 0x6E9AAC
 		//// RVA: 0xD1301C Offset: 0xD1301C VA: 0xD1301C
@@ -230,7 +265,11 @@ namespace XeApp.Game.Menu
 		//public void EffectAnimLoop(bool _IsAnimStart) { }
 
 		//// RVA: 0xD1A95C Offset: 0xD1A95C VA: 0xD1A95C
-		//public void HideGotoTopButton(bool _isListBottom) { }
+		public void HideGotoTopButton(bool _isListBottom)
+		{
+			if (m_gotoListTopButton != null)
+				m_gotoListTopButton.Hidden = _isListBottom;
+		}
 
 		//// RVA: 0xD1AA18 Offset: 0xD1AA18 VA: 0xD1AA18
 		//public void Co_AddStampItemPost(CommentType _type) { }
@@ -239,25 +278,78 @@ namespace XeApp.Game.Menu
 		//public void ResetList() { }
 
 		//// RVA: 0xD1AB28 Offset: 0xD1AB28 VA: 0xD1AB28
-		//public void AddScrollItem() { }
+		public void AddScrollItem()
+		{
+			TodoLogger.LogError(0, "AddScrollItem");
+		}
 
 		//// RVA: 0xD1B514 Offset: 0xD1B514 VA: 0xD1B514
-		//public void AddBbsListItem(ANPBHCNJIDI.NNPGLGHDBKN _cm, ANPBHCNJIDI.NOJONDLAMOC m_bbsType, int _playerId, int _index, bool _isMember) { }
+		public void AddBbsListItem(ANPBHCNJIDI.NNPGLGHDBKN _cm, ANPBHCNJIDI.NOJONDLAMOC m_bbsType, int _playerId, int _index, bool _isMember)
+		{
+			TodoLogger.LogError(0, "AddBbsListItem");
+		}
 
 		//// RVA: 0xD1C818 Offset: 0xD1C818 VA: 0xD1C818
-		//public void UpdateDivaIconThum(bool _change) { }
+		public void UpdateDivaIconThum(bool _change)
+		{
+			m_isIconChange = _change;
+			m_switchIcon.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData(_change ? "lb_btn_ch_01" : "lb_btn_ch_02"));
+		}
 
 		//// RVA: 0xD1C96C Offset: 0xD1C96C VA: 0xD1C96C
-		//private void OnUpdateScrollItem(IFlexibleListItem obj) { }
+		private void OnUpdateScrollItem(IFlexibleListItem obj)
+		{
+			TodoLogger.LogError(0, "OnUpdateScrollItem");
+			/*LobbyLayoutItemR l = obj.Layout.GetComponent<LobbyLayoutItemR>();
+			if(l != null)
+			{
+				l.DispMusicRateRank(m_window_type != EnWindowType.Lobby);
+			}
+			if(obj != null)
+			{
+				if(obj is MessgeListItem)
+				{
+					MessgeListItem m = obj as MessgeListItem;
+					if (l != null)
+					{
+						l.SetPostItemAnimation(m.ChatType);
+						l.SetDivaIcon(m.DivaCosId, m.DivaCosColorId, m.EnmblemId, m.EnmblemCount, m_isIconChange);
+						l.SetChatPostInfo(m.Index, m.UserName, m.Messge, m.Time);
+						l.SetPickUpIconAnimation(m.IsPickUp);
+						l.SetPostButtonDisable(IsChatButtonGrayOut);
+						l.SetEnablePostButton(m_raidSelect == 1 && m.IsMember);
+						l.SetMember(m.IsMember);
+						l.EnableEmblemCount();
+						l.OnClickChatButton = ReprintButtonAction;
+						l.SetPlayerId(m.PlayerId);
+						l.SetMusicRateRank(m.utarate_rank, m.utarate);
+
+					}
+				}
+			}*/
+		}
 
 		//// RVA: 0xD0E280 Offset: 0xD0E280 VA: 0xD0E280
-		//public void Co_SettingList() { }
+		public void Co_SettingList()
+		{
+			m_fxScrollView = new FlexibleItemScrollView();
+			m_fxScrollView.Initialize(m_ScrollRect);
+			m_fxScrollView.UpdateItemListener += OnUpdateScrollItem;
+			m_fxScrollView.SetupListItem(m_list);
+			m_fxScrollView.SetlistTop(0);
+			m_fxScrollView.SetZeroVelocity();
+			m_fxScrollView.VisibleRangeUpdate();
+		}
 
 		//// RVA: 0xD1DB78 Offset: 0xD1DB78 VA: 0xD1DB78
 		//public void EnableUpdateButton(bool _enable) { }
 
 		//// RVA: 0xD13240 Offset: 0xD13240 VA: 0xD13240
-		//public void SetHiddengotoListTopButton(bool _isListBottom) { }
+		public void SetHiddengotoListTopButton(bool _isListBottom)
+		{
+			if (m_gotoListTopButton != null)
+				m_gotoListTopButton.Hidden = _isListBottom;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E9B24 Offset: 0x6E9B24 VA: 0x6E9B24
 		//// RVA: 0xD1DBAC Offset: 0xD1DBAC VA: 0xD1DBAC
@@ -270,25 +362,65 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xD1DC58 Offset: 0xD1DC58 VA: 0xD1DC58
-		//public void ResetItem() { }
+		public void ResetItem()
+		{
+			if (m_list.Count < 1)
+				return;
+			if (m_fxScrollView != null)
+			{
+				m_fxScrollView.AllFree();
+				m_fxScrollView.SetZeroVelocity();
+				m_fxScrollView.VisibleRangeUpdate();
+			}
+			m_list.Clear();
+		}
 
 		//// RVA: 0xD1DD58 Offset: 0xD1DD58 VA: 0xD1DD58
-		//public void UpdateScroll() { }
+		public void UpdateScroll()
+		{
+			m_fxScrollView.SetupListItem(m_list);
+			m_fxScrollView.SetlistBottom(m_list.Count - 1);
+			m_fxScrollView.SetZeroVelocity();
+			m_fxScrollView.VisibleRangeUpdate();
+		}
 
 		//// RVA: 0xD1DE50 Offset: 0xD1DE50 VA: 0xD1DE50
 		//public void NextCommentAddScrollLsit(int index) { }
 
 		//// RVA: 0xD1DEA0 Offset: 0xD1DEA0 VA: 0xD1DEA0
-		//public void UpdateDisplayOnly() { }
+		public void UpdateDisplayOnly()
+		{
+			if (m_fxScrollView == null)
+				return;
+			m_fxScrollView.SetupListItem(m_list);
+			m_fxScrollView.SetlistUpdateOnly();
+			float f = m_fxScrollView.CurrentVerticalScrollPositon();
+			if(f <= 0)
+			{
+				m_fxScrollView.SetlistBottom(m_list.Count - 1);
+			}
+			else if(f >= 1)
+			{
+				m_fxScrollView.SetlistTop(0);
+			}
+		}
 
 		//// RVA: 0xD1E004 Offset: 0xD1E004 VA: 0xD1E004
-		//public void GotoListTop() { }
+		public void GotoListTop()
+		{
+			if (m_fxScrollView == null)
+				return;
+			m_fxScrollView.SetlistTop(m_list.Count - 1);
+		}
 
 		//// RVA: 0xD1E098 Offset: 0xD1E098 VA: 0xD1E098
 		//public void ScrollContentPostButtonGrayOut(bool isGrayOut) { }
 
 		//// RVA: 0xD1E0C4 Offset: 0xD1E0C4 VA: 0xD1E0C4
-		//public void StopScrollMove() { }
+		public void StopScrollMove()
+		{
+			m_fxScrollView.StopScrollMove();
+		}
 
 		//// RVA: 0xD0A4F4 Offset: 0xD0A4F4 VA: 0xD0A4F4
 		public void LockScroll()
@@ -303,10 +435,31 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xD1E0F0 Offset: 0xD1E0F0 VA: 0xD1E0F0
-		//public bool IsUpdatePossible() { }
+		public bool IsUpdatePossible()
+		{
+			bool res = true;
+			if(m_list.Count > 9)
+			{
+				float f = 0;
+				for(int i = m_list.Count - 1; i <= m_list.Count - 6; i++)
+				{
+					f += m_list[i].Height;
+				}
+				res = m_scrollAllArea - f <= m_fxScrollView.CurrentContentAnchorBottomPos().y;
+			}
+			SetHiddengotoListTopButton(res);
+			return res;
+		}
 
 		//// RVA: 0xD1E360 Offset: 0xD1E360 VA: 0xD1E360
-		//public bool IsNextUpdate() { }
+		public bool IsNextUpdate()
+		{
+			if(m_list.Count > 4)
+			{
+				return 120.0f / m_scrollAllArea + 1 <= m_fxScrollView.CurrentVerticalScrollPositon();// m_list[0].Height;
+			}
+			return false;
+		}
 
 		//// RVA: 0xD1122C Offset: 0xD1122C VA: 0xD1122C
 		//public void Hide() { }
@@ -330,7 +483,12 @@ namespace XeApp.Game.Menu
 		//public void LoadIconTexture(int id, int emotion, bool isLeft = True) { }
 
 		//// RVA: 0xD1E648 Offset: 0xD1E648 VA: 0xD1E648
-		//public void HideMiniChara() { }
+		public void HideMiniChara()
+		{
+			m_decoIconImage01.enabled = false;
+			m_decoIconImage02.enabled = false;
+			m_GuideTextAnim.StartChildrenAnimGoStop("st_out");
+		}
 
 		//// RVA: 0xD09DBC Offset: 0xD09DBC VA: 0xD09DBC
 		//public void OnClickGuideChara(NKOBMDPHNGP.FIPGKDJHKCH phase) { }

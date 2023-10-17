@@ -102,7 +102,19 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBA00B4 Offset: 0xBA00B4 VA: 0xBA00B4
-		// public void SetlistUpdateOnly() { }
+		public void SetlistUpdateOnly()
+		{
+			AllFree();
+			CalcIndex(out m_dispBeginIndex, out m_dispEndIndex);
+			AllocRange(m_dispBeginIndex, m_dispEndIndex);
+			for(int i = 0; i < m_listItem.Count; i++)
+			{
+				if(m_listItem[i].Layout != null)
+				{
+					OnUpdateItem(m_listItem[i]);
+				}
+			}
+		}
 
 		// // RVA: 0xBA02D0 Offset: 0xBA02D0 VA: 0xBA02D0
 		public void VisibleRangeUpdate()
@@ -344,7 +356,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBA1320 Offset: 0xBA1320 VA: 0xBA1320
-		// public void StopScrollMove() { }
+		public void StopScrollMove()
+		{
+			m_scroll.StopMovement();
+		}
 
 		// // RVA: 0xBA1354 Offset: 0xBA1354 VA: 0xBA1354
 		public float GetVerticalScrollSizeRatio()
@@ -365,7 +380,10 @@ namespace XeApp.Game.Menu
 		// public Vector2 CurrentContentAnchorTopPos() { }
 
 		// // RVA: 0xBA1498 Offset: 0xBA1498 VA: 0xBA1498
-		// public Vector2 CurrentContentAnchorBottomPos() { }
+		public Vector2 CurrentContentAnchorBottomPos()
+		{
+			return new Vector2(m_scrollRectTransform.sizeDelta.x - m_scrollRectTransform.localPosition.x + m_scroll.content.anchoredPosition.x, m_scrollRectTransform.sizeDelta.y - m_scrollRectTransform.localPosition.y + m_scroll.content.anchoredPosition.y);
+		}
 
 		// // RVA: 0xBA1648 Offset: 0xBA1648 VA: 0xBA1648
 		// public void SetVerticalScrollPositon(float pos) { }

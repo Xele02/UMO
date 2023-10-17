@@ -148,10 +148,10 @@ public class PJKLMCGEJMK
 
         double time = Time.realtimeSinceStartup;
         ADKIDBJCAJA_Request.KINJOEIAHFK_StartTime = time;
-        ADKIDBJCAJA_Request.DMOBOIOFPCM = time;
-        ADKIDBJCAJA_Request.LHGPAJGIAME = time;
-        ADKIDBJCAJA_Request.CFICLNJACCD = NLGJBBGAOLH;
-        ADKIDBJCAJA_Request.GJAEJFLLKGC = BLKIMNAILKK;
+        ADKIDBJCAJA_Request.DMOBOIOFPCM_EndTime = time;
+        ADKIDBJCAJA_Request.LHGPAJGIAME_ResultTime = time;
+        ADKIDBJCAJA_Request.CFICLNJACCD_NumRetry = NLGJBBGAOLH;
+        ADKIDBJCAJA_Request.GJAEJFLLKGC_RetryTime = BLKIMNAILKK;
         ADKIDBJCAJA_Request.KAEMPHIPDFN = KAEMPHIPDFN;
         ADKIDBJCAJA_Request.CKOOCBJGHBI = NNODMPKKCJH;
         NNODMPKKCJH++;
@@ -170,10 +170,10 @@ public class PJKLMCGEJMK
 
         double time = Time.realtimeSinceStartup;
         ADKIDBJCAJA_Request.KINJOEIAHFK_StartTime = time;
-        ADKIDBJCAJA_Request.DMOBOIOFPCM = time;
-        ADKIDBJCAJA_Request.LHGPAJGIAME = time;
-        ADKIDBJCAJA_Request.CFICLNJACCD = NLGJBBGAOLH;
-        ADKIDBJCAJA_Request.GJAEJFLLKGC = BLKIMNAILKK;
+        ADKIDBJCAJA_Request.DMOBOIOFPCM_EndTime = time;
+        ADKIDBJCAJA_Request.LHGPAJGIAME_ResultTime = time;
+        ADKIDBJCAJA_Request.CFICLNJACCD_NumRetry = NLGJBBGAOLH;
+        ADKIDBJCAJA_Request.GJAEJFLLKGC_RetryTime = BLKIMNAILKK;
         ADKIDBJCAJA_Request.CKOOCBJGHBI = NNODMPKKCJH;
         NNODMPKKCJH++;
 
@@ -386,7 +386,7 @@ public class PJKLMCGEJMK
                         break;
                     }
                     // L 556
-                    ADKIDBJCAJA.DMOBOIOFPCM = Time.realtimeSinceStartup;
+                    ADKIDBJCAJA.DMOBOIOFPCM_EndTime = Time.realtimeSinceStartup;
                     ADKIDBJCAJA.MGFNKDPHFGI(N.a);
                     //goto LAB_00933de0;
                     // To 9
@@ -395,7 +395,7 @@ public class PJKLMCGEJMK
                         yield return null;
                     }
                     ADKIDBJCAJA.NLDKLFODOJJ();
-                    ADKIDBJCAJA.LHGPAJGIAME = Time.realtimeSinceStartup;
+                    ADKIDBJCAJA.LHGPAJGIAME_ResultTime = Time.realtimeSinceStartup;
                     break;
                 }
                 // L 573
@@ -411,7 +411,7 @@ public class PJKLMCGEJMK
                 {
                     MFNENCLNGKF = MFNENCLNGKF + 1;
                     OANLLFOHEPJ = OANLLFOHEPJ + 1;
-                    if(ADKIDBJCAJA.CFICLNJACCD > MFNENCLNGKF)
+                    if(ADKIDBJCAJA.CFICLNJACCD_NumRetry > MFNENCLNGKF)
                     {
                         yield return new WaitForSeconds(0);
                         //To6
@@ -477,9 +477,9 @@ public class PJKLMCGEJMK
     {
 		if(!ADKIDBJCAJA.BNCFONNOHFO)
 		{
-			if(JGJFFKPFMDB.BDPBNKPKAJJ(KLCMLLLIANB) != GOBDOEHKLHN.KLPAIDGGGCN/*5*/)
+			if(JGJFFKPFMDB.BDPBNKPKAJJ(KLCMLLLIANB) != GOBDOEHKLHN.KLPAIDGGGCN_5/*5*/)
 			{
-				if(JGJFFKPFMDB.BDPBNKPKAJJ(KLCMLLLIANB) == GOBDOEHKLHN.FJGMPDJFELN/*4*/)
+				if(JGJFFKPFMDB.BDPBNKPKAJJ(KLCMLLLIANB) == GOBDOEHKLHN.FJGMPDJFELN_4/*4*/)
 				{
 					if(KLCMLLLIANB != SakashoErrorId.INTERNAL_SERVER_ERROR && !ADKIDBJCAJA.OIDCBBGLPHL)
 					{

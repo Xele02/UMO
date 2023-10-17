@@ -47,7 +47,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x11E0E2C Offset: 0x11E0E2C VA: 0x11E0E2C
-		// public void LoadForDecoCustom(int id, int subId, Action<IiconTexture> callBack) { }
+		public void LoadForDecoCustom(int id, int subId, Action<IiconTexture> callBack)
+		{
+			m_bundleName.SetFormat(BundleFormatForChara01, id, subId);
+			Load(m_bundleName.ToString(), callBack);
+		}
 
 		// // RVA: 0x11E0F24 Offset: 0x11E0F24 VA: 0x11E0F24
 		public void LoadForSelectedDecoCustom(int id, int subId, Action<IiconTexture> callBack)
