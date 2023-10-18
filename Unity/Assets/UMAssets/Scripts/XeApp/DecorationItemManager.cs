@@ -1009,8 +1009,8 @@ namespace XeApp
 							else
 								a |= it.Setting.AttributeType & DecorationConstants.Attribute.Type.Floor;
 						}
-						if(a != DecorationConstants.Attribute.Type.None && CategoryCheckThinkness(item, it)
-							 && !it.HitCheckThinkness(item, position))
+						if(a != DecorationConstants.Attribute.Type.None && !CategoryCheckThinkness(item, it)
+							 && it.HitCheckThinkness(item, position))
 						{
 							hitItem = it;
 							b = true;

@@ -652,7 +652,7 @@ namespace XeApp
 		{
 			Rect r = new Rect(new Vector2(position.x, -position.y) - item.Size / 2, item.Size);
 			Rect r2 = new Rect(new Vector2(item.Position.x, -item.Position.y) - Size / 2, Size);
-			return r2.Overlaps(r);
+			return r.Overlaps(r2);
 		}
 
 		//// RVA: 0x1AD3F88 Offset: 0x1AD3F88 VA: 0x1AD3F88
@@ -662,11 +662,11 @@ namespace XeApp
 			Vector2 v1 = item.Size * item.Scale;
 			Rect r2 = new Rect(new Vector2(Position.x, -Position.y) - v2 / 2, v2);
 			r2.y += v2.y - Scale * Setting.Thickness;
-			r2.height = 0;
+			r2.height = Scale * Setting.Thickness;
 			Rect r1 = new Rect(new Vector2(position.x, -position.y) - v1 / 2, v1);
 			r1.y += v1.y - item.Scale * item.Setting.Thickness;
-			r1.height = 0;
-			return r1.Overlaps(r2, false);
+			r1.height = item.Setting.Thickness;
+			return r2.Overlaps(r1);
 		}
 
 		//// RVA: 0x1AD3F38 Offset: 0x1AD3F38 VA: 0x1AD3F38

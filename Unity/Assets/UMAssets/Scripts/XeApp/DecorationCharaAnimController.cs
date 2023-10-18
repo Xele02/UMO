@@ -161,7 +161,7 @@ namespace XeApp
 			switch(_state)
 			{
 				case State.Wait:
-					if (!isEscape && !DecideMoveDst(ref pos))
+					if (!isEscape || !DecideMoveDst(ref pos))
 						UpdateState_Wait(ref pos);
 					break;
 				case State.Move:
@@ -360,7 +360,7 @@ namespace XeApp
 			{
 				if(isChangeForced || enabledHash != hash)
 				{
-					animator.Play(hash);
+					animator.Play(hash, 0, 0);
 					enabledHash = hash;
 				}
 			}
