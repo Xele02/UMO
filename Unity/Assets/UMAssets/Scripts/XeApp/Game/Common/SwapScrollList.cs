@@ -346,7 +346,7 @@ namespace XeApp.Game.Common
 					diff = m_diffPrePosition;
 					listTop = m_listTopPosition;
 					cnt = 0;
-					if(0 <= (ScrollMergin + AnchoredPosition - m_diffPrePosition))
+					if(0 < (ScrollMergin + AnchoredPosition - m_diffPrePosition))
 					{
 						do
 						{
@@ -360,7 +360,7 @@ namespace XeApp.Game.Common
 						m_listTopPosition = listTop + itemCount;
 						m_diffPrePosition = diff - ItemSize * itemCount;
 					}
-					while (0 <= (ScrollMergin + AnchoredPosition - m_diffPrePosition))
+					while (0 < (ScrollMergin + AnchoredPosition - m_diffPrePosition))
 					{
 						m_listTopPosition--;
 						m_diffPrePosition += ItemSize;
