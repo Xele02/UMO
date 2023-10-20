@@ -26,8 +26,17 @@ public class SakashoBbs : SakashoAPIBase
 	//// RVA: 0x2BB448C Offset: 0x2BB448C VA: 0x2BB448C
 	public static SakashoAPICallContext GetThreadComments(int threadId, SakashoBbsCommentCriteria criteria, int sortOrder, int page, int ipp, OnSuccess onSuccess, OnError onError)
 	{
-		TodoLogger.LogError(0, "GetThreadComments");
-		return null;
+		Hashtable h = new Hashtable();
+		h["threadId"] = threadId;
+		if(criteria != null)
+		{
+			h["writerId"] = criteria.WriterId;
+			h["excludeDeleted"] = criteria.ExcludeDeleted;
+		}
+		h["sortOrder"] = sortOrder;
+		h["page"] = page;
+		h["ipp"] = ipp;
+		return new SakashoAPICallContext(Call(SakashoBbsGetThreadComments, MiniJSON.jsonEncode(h), onSuccess, onError));
 	}
 
 	//// RVA: 0x2BB4790 Offset: 0x2BB4790 VA: 0x2BB4790
@@ -96,7 +105,20 @@ public class SakashoBbs : SakashoAPIBase
 	}
 
 	//// RVA: 0x2BB563C Offset: 0x2BB563C VA: 0x2BB563C
-	//public static SakashoAPICallContext CreateThreadComment(int threadId, SakashoBbsCommentInfo info, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext CreateThreadComment(int threadId, SakashoBbsCommentInfo info, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		h["threadId"] = threadId;
+		if(info != null)
+		{
+			h["content"] = info.Content;
+			h["nickname"] = info.Nickname;
+			h["extra"] = info.Extra;
+			h["replyTo"] = info.ReplyTo;
+			h["sage"] = info.Sage;
+		}
+		return new SakashoAPICallContext(Call(SakashoBbsCreateThreadComment, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	//// RVA: 0x2BB5934 Offset: 0x2BB5934 VA: 0x2BB5934
 	//public static SakashoAPICallContext UpdateThread(int threadId, SakashoBbsThreadInfo info, OnSuccess onSuccess, OnError onError) { }
@@ -120,7 +142,10 @@ public class SakashoBbs : SakashoAPIBase
 	//private static extern int SakashoBbsGetThreadCommentRecord(int callbackId, string json) { }
 
 	//// RVA: 0x2BB6D40 Offset: 0x2BB6D40 VA: 0x2BB6D40
-	//private static extern int SakashoBbsGetThreadComments(int callbackId, string json) { }
+	private static int SakashoBbsGetThreadComments(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoBbsGetThreadComments(callbackId, json);
+	}
 
 	//// RVA: 0x2BB6E48 Offset: 0x2BB6E48 VA: 0x2BB6E48
 	//private static extern int SakashoBbsGetThreadCommentMarks(int callbackId, string json) { }
@@ -138,7 +163,10 @@ public class SakashoBbs : SakashoAPIBase
 	}
 
 	//// RVA: 0x2BB71D8 Offset: 0x2BB71D8 VA: 0x2BB71D8
-	//private static extern int SakashoBbsCreateThreadComment(int callbackId, string json) { }
+	private static int SakashoBbsCreateThreadComment(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoBbsCreateThreadComment(callbackId, json);
+	}
 
 	//// RVA: 0x2BB72E8 Offset: 0x2BB72E8 VA: 0x2BB72E8
 	//private static extern int SakashoBbsUpdateThread(int callbackId, string json) { }

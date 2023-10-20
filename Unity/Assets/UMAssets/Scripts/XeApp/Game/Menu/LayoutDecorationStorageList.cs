@@ -76,7 +76,7 @@ namespace XeApp.Game.Menu
 			m_setting = setting;
 			m_selectButton.button.Disable = !setting.m_isUse;
 			m_deleteButton.button.Disable = !setting.m_isUse;
-			m_mapNameEditButton.Hidden = setting.m_isUse;
+			m_mapNameEditButton.Hidden = !setting.m_isUse;
 			m_mapNameText.text = setting.m_name;
 		}
 

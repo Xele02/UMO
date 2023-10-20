@@ -8,7 +8,12 @@ class JpStringLiterals
 	public const string StringLiteral_8280 = "初期化されていません。"; // 0x03bb0c18
 	public const string StringLiteral_8676 = "ベース★3以下のカードでリーフ枚数が0でない"; //0x3bb1248
 	public const string StringLiteral_8686 = "なし"; // 0x03bb1270
+	public const string StringLiteral_9360 = "ロビーメイン"; //0x03bb1cf8
+	public const string StringLiteral_9362 = "ロビーバトルログ"; //0x03bb1d00
+	public const string StringLiteral_9364 = "ロビー攻略"; //0x03bb1d08
 	public const string StringLiteral_9366 = "デコチャット"; //0x03bb1d10
+	public const string StringLiteral_9368 = "協力ミッション"; //0x03bb1d18
+	public const string StringLiteral_9370 = "未知のタイプ"; //0x03bb1d20
 	public const string StringLiteral_9528 = "想定していない人数が入っています　id:"; //0x03bb1f98
 	public const string StringLiteral_9555 = "event_quest"; // 0x03bb2004
 	public const string StringLiteral_9630 = "から新しいメッセージがあります。"; // 0x03bb2130
@@ -336,6 +341,10 @@ class JpStringLiterals
 	public const string StringLiteral_15479 = "<color=red>** デコポイント交換所が見つからない **</color>"; //0x03bb7c94
 	public const string StringLiteral_15480 = "交換所"; //0x03bb7c98
 	public const string StringLiteral_15497 = "エネルギー充填機"; //0x03bb7cdc
+	public const string StringLiteral_15509 = "スタンプ一覧"; //0x03bb7d0c
+	public const string StringLiteral_15510 = "スタンプ作成"; //0x03bb7d10
+	public const string StringLiteral_15524 = "更新"; //0x03bb7d48
+	public const string StringLiteral_15525 = "作成"; //0x03bb7d4c
 	public const string StringLiteral_15528 = "選択"; //0x03bb7d58
 	public const string StringLiteral_15538 = "保存"; //0x03bb7d80
 	public const string StringLiteral_15542 = "名前変更"; //0x03bb7d90

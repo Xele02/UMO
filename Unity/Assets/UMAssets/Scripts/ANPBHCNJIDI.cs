@@ -310,7 +310,7 @@ public class ANPBHCNJIDI
 		json["type"] = (int)HCAHCFGPJIF.INDDJNMPONH;
 		HCAHCFGPJIF.OPFGFINHFCE_PlayerName = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName;
 		HCAHCFGPJIF.EFOOHDOMCAI(res, json);
-		res.Extra = IKPIMINCOPI_JsonMapper.EJCOJCGIBNG_ToJson(json);
+		res.Extra = json.EJCOJCGIBNG_ToJson(); //IKPIMINCOPI_JsonMapper.EJCOJCGIBNG_ToJson(json);
 		return res;
 	}
 

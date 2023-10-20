@@ -186,11 +186,11 @@ public class IOEKHJBOMDH_DecoStamp : KLFDBFMNLBL_ServerSaveBlock
 		}
 		for(int i = 0; i < 900; i++)
 		{
-			FHBIIONKIDI_Stamps.Add(new GFPPDCEPLCM());
+			FHBIIONKIDI_Stamps.Add(new GFPPDCEPLCM(i + 1));
 		}
 		for (int i = 0; i < 400; i++)
 		{
-			DMKMNGELNAE_Serif.Add(new GFPPDCEPLCM());
+			DMKMNGELNAE_Serif.Add(new GFPPDCEPLCM(i + 1));
 		}
 	}
 

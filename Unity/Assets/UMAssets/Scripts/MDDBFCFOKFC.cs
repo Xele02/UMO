@@ -28,7 +28,7 @@ public class MDDBFCFOKFC
 		public void FPEKCEGADMG(BinaryWriter OMLLGAKPMAN)
 		{
 			OMLLGAKPMAN.Write(NPDKEIIMCDI_LastShowtime);
-			OMLLGAKPMAN.Write(DIFBAMPAOJI);
+			OMLLGAKPMAN.Write(CINLIMIKCAL_EnableBgEffect);
 			OMLLGAKPMAN.Write(HEKJKLJDHNN_EnablePosterAnim);
 		}
 

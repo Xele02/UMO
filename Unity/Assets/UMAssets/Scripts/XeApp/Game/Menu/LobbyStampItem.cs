@@ -61,7 +61,7 @@ namespace XeApp.Game.Menu
 				//0xD21314
 				return item.PPFNGGCBJKC == m_stampId;
 			});
-			MenuScene.Instance.DecorationItemTextureCache.LoadForDecoCustom(n.IDELKEKDIFD, n.BEHMEDMNJMC, (IiconTexture image) =>
+			MenuScene.Instance.DecorationItemTextureCache.LoadForDecoCustom(n.IDELKEKDIFD_CharaId, n.BEHMEDMNJMC_EmotionId, (IiconTexture image) =>
 			{
 				//0xD21358
 				SetDecoCharImageIcon(image);

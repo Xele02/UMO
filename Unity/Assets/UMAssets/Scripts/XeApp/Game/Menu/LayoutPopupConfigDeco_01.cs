@@ -98,6 +98,7 @@ namespace XeApp.Game.Menu
 				ConfigUtility.PlaySeToggleButton();
 				m_configInfo.isPosterAnime = value == 1;
 			});
+			Loaded();
 			yield break;
 		}
 

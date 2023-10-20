@@ -308,7 +308,7 @@ namespace XeApp.Game.Menu
 				m_netDecoSetControl.INBANHBGIFC_ResetSet(setting.m_id);
 				ILCCJNDFFOB.HHCJCDFCLOB.BOIIMIEPMLG(JpStringLiterals.StringLiteral_11225, setting.m_id, UnusedStorageName());
 				bool succeeded = false;
-				yield return this.StartCoroutineWatched(Co_SavePrivateStorageData(setting, (bool _result) =>
+				yield return this.StartCoroutineWatched(Co_SavePrivateStorageData(new LayoutDecorationStorageList.StorageSetting() { m_id = setting.m_id, m_name = UnusedStorageName(), m_isUse = false }, (bool _result) =>
 				{
 					//0x11CAB14
 					succeeded = _result;
@@ -335,7 +335,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_StorageListSelect(LayoutDecorationStorageList.StorageSetting setting)
 		{
 			//0x11CED90
-			yield return new WaitUntil(() =>
+			yield return new WaitWhile(() =>
 			{
 				//0x11CA748
 				return GameManager.IsFading();
@@ -352,7 +352,7 @@ namespace XeApp.Game.Menu
 			m_netDecoSetControl.HGDIEHFFLMO_LoadFromSlot(setting.m_id);
 			yield return this.StartCoroutineWatched(Co_LoadCanvas());
 			GameManager.FadeIn(0.4f);
-			yield return new WaitUntil(() =>
+			yield return new WaitWhile(() =>
 			{
 				//0x11CA7C4
 				return GameManager.IsFading();

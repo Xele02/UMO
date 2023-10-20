@@ -99,7 +99,7 @@ public class LayoutDecorationBottomButtons : LayoutUGUIScriptBase
 		{
 			m_type = type;
 			IsEnter = true;
-			int idx = ButtonData[(int)type].num;
+			int idx = numToIndexList[ButtonData[(int)type].num];
 			m_text.text = MessageManager.Instance.GetMessage("menu", ButtonData[(int)type].attentionText);
 			m_textTable.StartChildrenAnimGoStop(m_text.text != "" ? 0 : 1, m_text.text != "" ? 0 : 1);
 			m_buttonBase[idx].StartChildrenAnimGoStop("go_in", "st_in");

@@ -280,7 +280,46 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xD1AB28 Offset: 0xD1AB28 VA: 0xD1AB28
 		public void AddScrollItem()
 		{
-			TodoLogger.LogError(0, "AddScrollItem");
+			float f = 0;
+			int f2 = 30;
+			m_scrollAllArea = 0;
+			for(int i = 0; i < m_list.Count; i++)
+			{
+				//LAB_00d1b464
+				ChatMessgeListItemBase l = m_list[i] as ChatMessgeListItemBase;
+				f += f2;
+				switch(l.ChatType)
+				{
+					case CommentType.Chat:
+						l.Top = new Vector2(6, -f);
+						l.Height = 150;
+						f += 150;
+						f2 = 30;
+						m_scrollAllArea += l.Height;
+						break;
+					case CommentType.BattleLog:
+						l.Top = new Vector2(6, -f);
+						l.Height = 150;
+						f += 120;
+						f2 = 30;
+						m_scrollAllArea += l.Height;
+						break;
+					case CommentType.Stamp:
+						l.Top = new Vector2(6, -f);
+						l.Height = 250;
+						f += 200;
+						f2 = 50;
+						m_scrollAllArea += l.Height;
+						break;
+					case CommentType.MoveThum:
+						l.Top = new Vector2(6, -f);
+						l.Height = 310;
+						f += 250;
+						f2 = 60;
+						m_scrollAllArea += l.Height;
+						break;
+				}
+			}
 		}
 
 		//// RVA: 0xD1B514 Offset: 0xD1B514 VA: 0xD1B514

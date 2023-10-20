@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XeApp.Game;
 
 public class OKLFOAPMJAA
 {
@@ -262,7 +263,27 @@ public class OKLFOAPMJAA
 	//// RVA: 0x14A1328 Offset: 0x14A1328 VA: 0x14A1328
 	private void CNIGPEOGKAD()
 	{
-		TodoLogger.LogError(0, "CNIGPEOGKAD");
+		if(JNBFDCGMECE.LKMKNEGCCHF.Count > 0 && JNBFDCGMECE.DCPBHPPFJOH != AHAENNIFOAF.IAOPMEAIHLH.HJNNKCMLGFL_M1)
+		{
+			long a = GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.FPOJOFFFLFK_Bbs.DPKGNBIAFDO_GetUpdateAt(JNBFDCGMECE.DCPBHPPFJOH);
+			if(a >= JNBFDCGMECE.LKMKNEGCCHF[JNBFDCGMECE.LKMKNEGCCHF.Count - 1].EKEGHNPNCEH)
+			{
+				for(int i = 0; i < JNBFDCGMECE.LKMKNEGCCHF.Count; i++)
+				{
+					if(a >= JNBFDCGMECE.LKMKNEGCCHF[i].EKEGHNPNCEH)
+					{
+						JNBFDCGMECE.LJMIFOIACKO = i;
+						break;
+					}
+				}
+			}
+			else
+			{
+				JNBFDCGMECE.LJMIFOIACKO = JNBFDCGMECE.LKMKNEGCCHF.Count;
+			}
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.FPOJOFFFLFK_Bbs.ICKOFGNMPDE_SetUpdateAt(JNBFDCGMECE.DCPBHPPFJOH, JNBFDCGMECE.LKMKNEGCCHF[0].EKEGHNPNCEH);
+			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+		}
 	}
 
 	//// RVA: 0x14A1760 Offset: 0x14A1760 VA: 0x14A1760

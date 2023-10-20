@@ -18,7 +18,37 @@ public class BNAAJMBJFPG
 	//public bool ILGKMOJFEDK { get; } 0x19CA8F0 ELBMCFAOJNB
 
 	//// RVA: 0x19CA3E0 Offset: 0x19CA3E0 VA: 0x19CA3E0
-	//public void KHEKNNFCAOI(EDOHBJAPLPF IDLHJIOMJBK) { }
+	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+	{
+		NPAHGHOHMHN_Idx = (int)IDLHJIOMJBK["comment_index"];
+		NLBNJIFGPJL_Content = CEDHHAGBIBA.BNCLNFJHEND_ReadString(IDLHJIOMJBK, "content");
+		MNKCOFJKJJM_Nickname = CEDHHAGBIBA.BNCLNFJHEND_ReadString(IDLHJIOMJBK, "nickname");
+		PNDINAAEGBE_WriterId = CEDHHAGBIBA.GNJBKANDLEE_ReadInt(IDLHJIOMJBK, "comment_writer_id");
+		JMDGOLBCOAJ_WrittenAt = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(IDLHJIOMJBK, "written_at");
+		IFNLEKOILPM_UpdatedAt = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(IDLHJIOMJBK, "updated_at");
+		LOIIMNGCHBI_ReplyTo = -1;
+		if (IDLHJIOMJBK.BBAJPINMOEP_Contains("reply_to"))
+		{
+			if (IDLHJIOMJBK["reply_to"] != null)
+				LOIIMNGCHBI_ReplyTo = (int)IDLHJIOMJBK["reply_to"];
+		}
+		GKCNMFDNMPC_ReplyFrom = new List<int>();
+		if(IDLHJIOMJBK.BBAJPINMOEP_Contains("reply_from"))
+		{
+			for(int i = 0; i < IDLHJIOMJBK["reply_from"].HNBFOAJIIAL_Count; i++)
+			{
+				GKCNMFDNMPC_ReplyFrom.Add((int)IDLHJIOMJBK["reply_from"][i]);
+			}
+		}
+		if(IDLHJIOMJBK.BBAJPINMOEP_Contains("sage"))
+		{
+			GJCINKIGNPI_Sage = (bool)IDLHJIOMJBK["sage"];
+			if(IDLHJIOMJBK.BBAJPINMOEP_Contains("extra"))
+			{
+				KACECFNECON_Extra = (string)IDLHJIOMJBK["extra"];
+			}
+		}
+	}
 }
 
 [System.Obsolete("Use NFIMGIABIOI_GetBbsThreadComments", true)]
@@ -29,14 +59,24 @@ public class NFIMGIABIOI_GetBbsThreadComments : CACGCMBKHDI_Request
 	{
 		public JKHBHIGMJIC OHJPNDKBFEC_Thread = new JKHBHIGMJIC(); // 0x8
 		public List<BNAAJMBJFPG> GLNIHJIDABD_Comments = new List<BNAAJMBJFPG>(); // 0xC
-		public int CJNNMLLEKEF; // 0x10
-		public int GPPOJHNNINK; // 0x14
-		public int MDIBIIHAAPN; // 0x18
+		public int CJNNMLLEKEF_PreviousPage; // 0x10
+		public int GPPOJHNNINK_CurrentPage; // 0x14
+		public int MDIBIIHAAPN_NextPage; // 0x18
 
 		//// RVA: 0x1AE9D9C Offset: 0x1AE9D9C VA: 0x1AE9D9C
 		public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
 		{
-			TodoLogger.LogError(0, "KHEKNNFCAOI");
+			OHJPNDKBFEC_Thread.KHEKNNFCAOI(IDLHJIOMJBK["thread"]);
+			GLNIHJIDABD_Comments.Clear();
+			EDOHBJAPLPF_JsonData comments = IDLHJIOMJBK["comments"];
+			for(int i = 0; i < comments.HNBFOAJIIAL_Count; i++)
+			{
+				BNAAJMBJFPG comment = new BNAAJMBJFPG();
+				comment.KHEKNNFCAOI(comments[i]);
+			}
+			CJNNMLLEKEF_PreviousPage = (int)IDLHJIOMJBK["previous_page"];
+			GPPOJHNNINK_CurrentPage = (int)IDLHJIOMJBK["current_page"];
+			MDIBIIHAAPN_NextPage = (int)IDLHJIOMJBK["next_page"];
 		}
 	}
 
