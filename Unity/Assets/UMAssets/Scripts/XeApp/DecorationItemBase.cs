@@ -224,7 +224,7 @@ namespace XeApp
 		{
 			m_statusFlag &= ~(1 << (int)status);
 			if(on)
-				m_statusFlag |= ~(1 << (int)status);
+				m_statusFlag |= (1 << (int)status);
 		}
 		
 		//// RVA: 0x1AD0A58 Offset: 0x1AD0A58 VA: 0x1AD0A58

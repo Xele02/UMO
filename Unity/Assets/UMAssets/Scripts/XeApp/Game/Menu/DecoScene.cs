@@ -2323,16 +2323,19 @@ namespace XeApp.Game.Menu
 					List<KDKFHGHGFEK> l3 = KDKFHGHGFEK.FKDIMODKKJD(NDBFKHKMMCE_DecoItem.ANMODBDBNPK.DBAMIACJODJ.JKMLKAMHJIF_Obj);
 					foreach(var it in l3)
 					{
-						if(tab != DecorationDecorator.TabType.Poster)
+						if (tab == DecorationDecorator.TabType.Poster)
 						{
-							if(t == -1 || t == it.GJMHALIIPME_Type)
+							if (DecorationConstants.IsPoster(it.NPADACLCNAN_Category))
 							{
 								l1.Add(it);
 							}
 						}
-						if(DecorationConstants.IsPoster(it.NPADACLCNAN_Category))
-						{
-							l1.Add(it);
+						else
+						{ 
+							if (t == -1 || t == it.GJMHALIIPME_Type)
+							{
+								l1.Add(it);
+							}
 						}
 					}
 					l3 = KDKFHGHGFEK.FKDIMODKKJD(NDBFKHKMMCE_DecoItem.ANMODBDBNPK.DBAMIACJODJ.AAAOOKJAMGE_Sp);
