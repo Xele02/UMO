@@ -137,6 +137,7 @@ namespace XeApp
 				//0x1AC8F58
 				return m_spriteRenderer.sprite != null;
 			});
+			this.animator = animator;
 			dragThreshold = sr.sprite.bounds.size.x * sr.transform.localScale.x * 0.125f;
 			AssetBundleManager.UnloadAssetBundle(bn, false);
 			AssetBundleManager.UnloadAssetBundle(cbn, false);
@@ -246,7 +247,7 @@ namespace XeApp
 					Vector2 v2 = Vector2.zero;
 					if (SearchWalkableSpace(ref pos, hitItem, ref v, ref v2))
 					{
-						if(r1.HasValue || r1.Value.sqrMagnitude > v2.sqrMagnitude)
+						if(!r1.HasValue || r1.Value.sqrMagnitude > v2.sqrMagnitude)
 						{
 							r1 = v2;
 							a = i;
@@ -279,7 +280,7 @@ namespace XeApp
 			DecorationItemBase hitItem2 = null;
 			if (hitItem != null)
 			{
-				Vector2 v = dir * (hitItem.Size * 0.5f + Size) - pos * (pos - hitItem.Position).magnitude;
+				Vector2 v = dir * (hitItem.Size * 0.5f + Size) - dir * (pos - hitItem.Position).magnitude;
 				escapeVec += v;
 				if(!decorationCanvas.ItemManager.HitCheckThinkness(this, v + pos, out hitItem2))
 				{
@@ -352,8 +353,7 @@ namespace XeApp
 			Vector2 p2 = Position + p;
 			if(!charaControl.hasEscaped)
 			{
-				Vector3 p3 = new Vector3();
-				a = AdjustPos(Position, false, p3, false);
+				a = AdjustPos(Position, false, p2, false);
 				if ((a & CollStatus.BgFloor) != 0)
 				{
 					charaControl.OnCollide(false);
@@ -363,8 +363,7 @@ namespace XeApp
 			}
 			else
 			{
-				Vector3 p3 = new Vector3();
-				a = AdjustPos(Position, false, p3, false);
+				a = AdjustPos(Position, false, p2, false);
 				if((a != CollStatus.None))
 				{
 					charaControl.OnCollide(false);
@@ -372,7 +371,7 @@ namespace XeApp
 				else
 					Position = p2;
 			}
-			a = AdjustPos(Position, false, null, false);
+			a = AdjustPos(Position, true, null, false);
 			if((a & CollStatus.BgFloor) != 0)
 			{
 				charaControl.OnCollide(false);
