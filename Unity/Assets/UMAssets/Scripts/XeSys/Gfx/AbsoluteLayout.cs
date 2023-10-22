@@ -767,10 +767,27 @@ namespace XeSys.Gfx
 		// public void StartAllAnimOut() { }
 
 		// // RVA: 0x2043DAC Offset: 0x2043DAC VA: 0x2043DAC
-		// private void StopAllAnim(List<ViewBase> listView) { }
+		private void StopAllAnim(List<ViewBase> listView)
+		{
+			StopAnim();
+			for(int i = 0; i < listView.Count; i++)
+			{
+				if(!(listView[i] is AbsoluteLayout))
+				{
+					listView[i].StopAnim();
+				}
+				else
+				{
+					(listView[i] as AbsoluteLayout).StopAllAnim();
+				}
+			}
+		}
 
 		// // RVA: 0x2043ED8 Offset: 0x2043ED8 VA: 0x2043ED8
-		// public void StopAllAnim() { }
+		public void StopAllAnim()
+		{
+			StopAllAnim(m_List);
+		}
 
 		// // RVA: 0x2043EE0 Offset: 0x2043EE0 VA: 0x2043EE0
 		// private void EnableTouchCheck(List<ViewBase> listView, bool flag) { }

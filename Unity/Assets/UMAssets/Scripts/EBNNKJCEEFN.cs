@@ -1,0 +1,22 @@
+
+using System;
+using System.Text;
+
+public class EBNNKJCEEFN
+{
+	//// RVA: 0x14FFA04 Offset: 0x14FFA04 VA: 0x14FFA04
+	//public static void NOADMFIACCH(int KPNKPGLPDHI, int MLPEHNBNOGD, Action<bool> BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG) { }
+
+	// RVA: 0x14FFC0C Offset: 0x14FFC0C VA: 0x14FFC0C
+	public static OKLFOAPMJAA LIFAAGMJFEB(int MLPEHNBNOGD)
+	{
+		OKLFOAPMJAA res = new OKLFOAPMJAA();
+		StringBuilder str = new StringBuilder(32);
+		AHAENNIFOAF.BCJOMHAIGGJ(str, MLPEHNBNOGD);
+		res.OBKGEDCKHHE(str.ToString(), 60, true, null);
+		res.EEBMKLOIEMB(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("bbs_auto_update_interval_deco", 10));
+		if (MLPEHNBNOGD == NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId)
+			res.PFMOHFOOBCL(AHAENNIFOAF.IAOPMEAIHLH.BJNAMAANNMB_3);
+		return res;
+	}
+}

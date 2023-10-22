@@ -295,6 +295,9 @@ MonoBehaviour:
   - fileName: plateshaderoverray
     internalName: MCRS/PlateOverrayShader
     shader: {fileID: 4800000, guid: d86b415ea3978c84183664b2d848e5d0, type: 3}
+  - fileName: postershader
+    internalName: MCRS/PosterShader
+    shader: {fileID: 4800000, guid: b1101ec03bff5564abf81acaf16a42a7, type: 3}
   - fileName: projectorcolormultiply
     internalName: Projector/ColorMultiply
     shader: {fileID: 4800000, guid: c7126b3ee133b774691555f7880acf63, type: 3}

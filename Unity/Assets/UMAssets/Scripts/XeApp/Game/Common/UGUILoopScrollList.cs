@@ -431,7 +431,7 @@ namespace XeApp.Game.Common
 					top = m_listTopPosition;
 					diffPre = m_diffPrePosition;
 					cnt = 0;
-					if (0 <= AnchoredPosition - m_diffPrePosition)
+					if (0 < AnchoredPosition - m_diffPrePosition)
 					{
 						cnt = 0;
 						do
@@ -446,7 +446,7 @@ namespace XeApp.Game.Common
 						m_listTopPosition = top + count1;
 						m_diffPrePosition = diffPre - ItemSize * count1;
 					}
-					while (0 <= AnchoredPosition - m_diffPrePosition)
+					while (0 < AnchoredPosition - m_diffPrePosition)
 					{
 						m_listTopPosition--;
 						m_diffPrePosition += ItemSize;

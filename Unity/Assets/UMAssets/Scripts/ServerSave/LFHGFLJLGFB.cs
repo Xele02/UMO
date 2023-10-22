@@ -45,10 +45,16 @@ public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 	// public void LJBFHCDHOHP(int PPFNGGCBJKC) { }
 
 	// // RVA: 0xD6B8D0 Offset: 0xD6B8D0 VA: 0xD6B8D0
-	// public int EFNAAHDHCEL() { }
+	public int EFNAAHDHCEL()
+	{
+		return FNDJLOMNECG.Count;
+	}
 
 	// // RVA: 0xD6B948 Offset: 0xD6B948 VA: 0xD6B948
-	// public int OKAOABMKPGP(int OIPCCBHIKIA) { }
+	public int OKAOABMKPGP(int OIPCCBHIKIA)
+	{
+		return FNDJLOMNECG[OIPCCBHIKIA].DNJEJEANJGL_Value;
+	}
 
 	// // RVA: 0xD6B9E8 Offset: 0xD6B9E8 VA: 0xD6B9E8
 	public bool FFKIDMKHIOE(int PPFNGGCBJKC)

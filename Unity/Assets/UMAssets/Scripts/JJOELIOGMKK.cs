@@ -10,7 +10,7 @@ public class JJOELIOGMKK_DivaIntimacyInfo
 	public enum LPBGKOJDNJK
 	{
 		HJNNKCMLGFL = 0,
-		POBNHLKGMPF = 1,
+		POBNHLKGMPF_1 = 1,
 		EHJDMAOKHHP = 2,
 		JFEKIMDCKIH = 3,
 		GBINCMPKLOF = 4,
@@ -186,7 +186,21 @@ public class JJOELIOGMKK_DivaIntimacyInfo
 	}
 
 	//// RVA: 0x1353CC0 Offset: 0x1353CC0 VA: 0x1353CC0
-	//public bool NJAKNMGEKFB(JJOELIOGMKK.LPBGKOJDNJK GBJFNGCDKPM, int KDCMPJNGLBL) { }
+	public bool NJAKNMGEKFB(JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK GBJFNGCDKPM, int KDCMPJNGLBL)
+	{
+		for(int i = 0; i < LGPDCPDDECG.Count; i++)
+		{
+			if(LGPDCPDDECG[i].CIEOBFIIPLD <= HEKJGCMNJAB_CurrentLevel)
+			{
+				if(LGPDCPDDECG[i].GBJFNGCDKPM == GBJFNGCDKPM)
+				{
+					if(LGPDCPDDECG[i].KDCMPJNGLBL == KDCMPJNGLBL)
+						return true;
+				}
+			}
+		}
+		return false;
+	}
 
 	//// RVA: 0x1353E74 Offset: 0x1353E74 VA: 0x1353E74
 	public bool DOMNLGKLGEH_SetMaxSkillLevel(BBHNACPENDM_ServerSaveData LDEGEHAEALK_ServerSave, LPBGKOJDNJK GBJFNGCDKPM, int KDCMPJNGLBL_SkillLevel, bool FBBNPFFEJBN_SetValue)

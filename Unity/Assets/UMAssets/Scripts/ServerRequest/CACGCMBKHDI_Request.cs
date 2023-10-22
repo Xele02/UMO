@@ -17,8 +17,8 @@ public abstract class CACGCMBKHDI_Request
     public delegate void HDHIKGLMOGF(CACGCMBKHDI_Request ADKIDBJCAJA);
 
     public long CKOOCBJGHBI; // 0x8
-    public int CFICLNJACCD = 3; // 0x10
-    public float GJAEJFLLKGC = 3.0f; // 0x14
+    public int CFICLNJACCD_NumRetry = 3; // 0x10
+    public float GJAEJFLLKGC_RetryTime = 3.0f; // 0x14
     public float ICDEFIIADDO_Timeout = 120.0f; // 0x18
     protected string ECGDADGLAMM; // 0x28
     public MMACCEADALH NBFDEFGFLPJ; // 0x50
@@ -50,8 +50,8 @@ public abstract class CACGCMBKHDI_Request
     public string JNDJDDBAIAJ { get; set; } // 0x4C APGMLBJEHPH NHPMIODGLEJ NJGFHKKAKEM
     // public virtual bool DCLHBCFKIJI { get; set; } IHGGDFHAGGM 0x18F2320 AHLIMCFMAHO 0x18F2328 
     public double KINJOEIAHFK_StartTime { get; set; } // 0x58 BLHFJCJNIGC CMNMHDELKND IOPPCLACPOF
-    public double DMOBOIOFPCM { get; set; } // 0x60 GJKEKJMCFLB IBBPAJGOFFA FNIKLDHAPEG
-    public double LHGPAJGIAME { get; set; }  // 0x68 FOFFKBHGEPC OJCLNCIEHLL BPAIAMDPKBJ
+    public double DMOBOIOFPCM_EndTime { get; set; } // 0x60 GJKEKJMCFLB IBBPAJGOFFA FNIKLDHAPEG
+    public double LHGPAJGIAME_ResultTime { get; set; }  // 0x68 FOFFKBHGEPC OJCLNCIEHLL BPAIAMDPKBJ
     // public double MOCNPGKAPKE { get; } // FLDLAOCPFCP 0x18F23E0
     public virtual bool OIDCBBGLPHL { get { return false; } } // GINMIBJOABO 0x18F256C
     public virtual bool ICFMKEFJOIE { get { return false; } } // HOPDAAAEBBG 0x18F2574 

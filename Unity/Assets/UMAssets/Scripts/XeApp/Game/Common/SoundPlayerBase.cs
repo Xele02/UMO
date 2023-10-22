@@ -34,7 +34,11 @@ namespace XeApp.Game.Common
 		// public float secTime { get; private set; } 0x1398050 0x1398078
 		public bool isPlaying { get { return playBack.GetStatus() != CriAtomExPlayback.Status.Removed; } private set {} } //0x1388C94 0x139807C
 		public bool isFading { get { return fadeCoroutine != null; } private set { } } //0x1398080 0x1398090
-		// public string cueSheetName { get; } 0x1397434
+		public string cueSheetName { get {
+				if (source == null)
+					return "";
+				return source.cueSheet;
+			} } //0x1397434
 
 		// // RVA: 0x1397D54 Offset: 0x1397D54 VA: 0x1397D54
 		private void Awake()

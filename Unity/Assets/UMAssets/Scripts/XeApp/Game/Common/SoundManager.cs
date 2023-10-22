@@ -370,7 +370,19 @@ namespace XeApp.Game.Common
 		// public void StopAllSounds() { }
 
 		// // RVA: 0x1394B14 Offset: 0x1394B14 VA: 0x1394B14
-		// public bool IsUingCueSheetByVoicePlayer(string cueSheetName) { }
+		public bool IsUingCueSheetByVoicePlayer(string cueSheetName)
+		{
+			VoicePlayerBase[] vs = new VoicePlayerBase[8]
+			{
+				voDiva, voOtherDiva, voTitlecall, voGreeting, voPilot, voSeasonEvent, voAdv, voARDiva
+			};
+			for(int i = 0; i < vs.Length; i++)
+			{
+				if (vs[i] != null && vs[i].cueSheetName == cueSheetName)
+					return true;
+			}
+			return false;
+		}
 
 		private bool isInGame = false;
 		public void SetInGame(bool isInGame)

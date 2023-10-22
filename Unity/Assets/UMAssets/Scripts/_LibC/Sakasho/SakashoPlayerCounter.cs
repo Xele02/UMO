@@ -35,5 +35,27 @@ namespace ExternLib
 			SendMessage(callbackId, res);
 			return 0;
 		}
+
+		public static int SakashoPlayerCounterUpdatePlayerCounter(int callbackId, string json)
+		{
+			CheckDefaultRankingCreated();
+
+			string toReturn = "";
+
+			EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
+			if(data.BBAJPINMOEP_Contains("playerCounterMasterName"))
+			{
+				toReturn = (string)data["playerCounterMasterName"];;
+			}
+			int playerId = (int)data["playerId"];
+			int delta = (int)data["countDelta"];
+
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res["player_counter"] = 0;
+			res["effective_count_delta"] = 0;
+
+			SendMessage(callbackId, res);
+			return 0;
+		}
 	}
 }

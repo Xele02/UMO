@@ -32,7 +32,10 @@ public class BBLECJKKKLA_DecoSetItem : DIHHCBACKGG_DbSection
 		}
 
 		// // RVA: 0xF2C628 Offset: 0xF2C628 VA: 0xF2C628
-		// public int NKOHMLHLJGL(int BMBBDIAEOMP) { }
+		public int NKOHMLHLJGL(int BMBBDIAEOMP)
+		{
+			return OMALMJLHABC_SetContent[BMBBDIAEOMP * 2 + 1] ^ FBGGEFFJJHB;
+		}
 
 		// // RVA: 0xF2C700 Offset: 0xF2C700 VA: 0xF2C700
 		public int JJBNDDDGEAN_GetNumItems()

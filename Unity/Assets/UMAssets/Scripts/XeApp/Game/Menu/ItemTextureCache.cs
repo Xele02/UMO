@@ -179,7 +179,7 @@ namespace XeApp.Game.Menu
 			string path = "ct/im/" + MakeDecoItemDirectoryPath(cat);
 			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif)
 			{
-				return string.Format("{0}{1:D5}.xab", path, EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif[EKLNMHFCAOI.DEACAHNLMNI_getItemId(id) - 1].GBJFNGCDKPM));
+				return string.Format("{0}{1:D5}.xab", path, EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif[EKLNMHFCAOI.DEACAHNLMNI_getItemId(id) - 1].GBJFNGCDKPM_FrameId));
 			}
 			else
 			{

@@ -1,6 +1,10 @@
 using XeSys.Gfx;
 using UnityEngine.UI;
 using UnityEngine;
+using XeApp.Game.Common;
+using mcrs;
+using XeSys;
+using System.Collections;
 
 namespace XeApp.Game.Menu
 {
@@ -41,23 +45,62 @@ namespace XeApp.Game.Menu
 		// public void SetTextSystem(int divaId, string text) { }
 
 		// // RVA: 0x19EB420 Offset: 0x19EB420 VA: 0x19EB420
-		// public void SetTextLock(int divaId, string text) { }
+		public void SetTextLock(int divaId, string text)
+		{
+			m_layoutColorLocked.StartChildrenAnimGoStop(divaId.ToString("D2"));
+			m_textInfoLocked.text = text;
+			m_layoutUsing = m_layoutInfoLocked;
+			m_layoutRoot.StartChildrenAnimGoStop("02", "02");
+		}
 
 		// // RVA: 0x19EB528 Offset: 0x19EB528 VA: 0x19EB528
 		// public void SetTextUnlock(int divaId, string text) { }
 
 		// // RVA: 0x19EB630 Offset: 0x19EB630 VA: 0x19EB630
-		// public void Enter() { }
+		public void Enter()
+		{
+			if(m_layoutUsing == m_layoutInfo)
+			{
+				SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_INTIMACY_002);
+			}
+			gameObject.SetActive(true);
+			m_layoutUsing.StartChildrenAnimGoStop("go_in", "st_in");
+			m_layoutUsing.UpdateAllAnimation(2 * TimeWrapper.deltaTime, false);
+			m_layoutUsing.UpdateAll(new Matrix23(), Color.white);
+			m_isOpen = true;
+		}
 
 		// // RVA: 0x19EB7FC Offset: 0x19EB7FC VA: 0x19EB7FC
-		// public void Leave() { }
+		public void Leave()
+		{
+			if(gameObject.activeInHierarchy)
+			{
+				m_coroutine = this.StartCoroutineWatched(Co_Leave());
+			}
+			else
+				Hide();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6D1284 Offset: 0x6D1284 VA: 0x6D1284
 		// // RVA: 0x19EB864 Offset: 0x19EB864 VA: 0x19EB864
-		// private IEnumerator Co_Leave() { }
+		private IEnumerator Co_Leave()
+		{
+			//0x19EBD38
+			m_layoutUsing.StartChildrenAnimGoStop("go_out", "st_out");
+			yield return null;
+			yield return new WaitWhile(() =>
+			{
+				//0x19EBD08
+				return m_layoutUsing.IsPlayingChildren();
+			});
+			Hide();
+		}
 
 		// // RVA: 0x19EB910 Offset: 0x19EB910 VA: 0x19EB910
-		// public bool IsOpenWindow() { }
+		public bool IsOpenWindow()
+		{
+			return m_isOpen;
+		}
 
 		// // RVA: 0x19EB918 Offset: 0x19EB918 VA: 0x19EB918
 		// public void Show() { }
@@ -74,12 +117,16 @@ namespace XeApp.Game.Menu
 		// RVA: 0x19EB9C0 Offset: 0x19EB9C0 VA: 0x19EB9C0 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			TodoLogger.LogError(0, "InitializeFromLayout");
+			m_layoutRoot = layout.FindViewByExId("root_pre_win_01_swtbl_pre_win_01") as AbsoluteLayout;
+			m_layoutInfo = layout.FindViewByExId("swtbl_pre_win_01_sw_fs_win_col_anim") as AbsoluteLayout;
+			m_layoutInfoLocked = layout.FindViewByExId("swtbl_pre_win_01_sw_fs_win_colno_anim") as AbsoluteLayout;
+			m_layoutColor = layout.FindViewByExId("sw_fs_win_col_anim_swtbl_fs_win_col") as AbsoluteLayout;
+			m_layoutColorLocked = layout.FindViewByExId("sw_fs_win_colno_anim_swtbl_fs_win_col") as AbsoluteLayout;
+			m_layoutRoot.StartAllAnimGoStop("st_wait");
+			m_imageTipsWindow.raycastTarget = false;
+			m_imageTipsWindowLocked.raycastTarget = false;
+			Loaded();
 			return true;
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6D12FC Offset: 0x6D12FC VA: 0x6D12FC
-		// // RVA: 0x19EBD08 Offset: 0x19EBD08 VA: 0x19EBD08
-		// private bool <Co_Leave>b__19_0() { }
 	}
 }

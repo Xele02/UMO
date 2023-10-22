@@ -193,10 +193,25 @@ namespace XeApp.Game.Menu
 		//public void Change(FFHPBEPOMAK divaData, DisplayType type) { }
 
 		//// RVA: 0x17E2A90 Offset: 0x17E2A90 VA: 0x17E2A90
-		//public void Change(FFHPBEPOMAK divaData, EAJCBFGKKFA friendPlayerData, bool isFavorite, DisplayType type) { }
+		public void Change(FFHPBEPOMAK_DivaInfo divaData, EAJCBFGKKFA_FriendInfo friendPlayerData, bool isFavorite, DisplayType type)
+		{
+			if(m_divaFriendIconDecrationBehaviour != null)
+			{
+				m_divaFriendIconDecrationBehaviour.SetFriendFavoriteIcon(friendPlayerData.PDIPANKOKOL_FriendType == IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend, isFavorite);
+				m_divaFriendIconDecrationBehaviour.SetDegreeIcon(friendPlayerData.NDOLELKAJNL_DegreeData.MDPKLNFFDBO_EmblemId);
+				m_divaFriendIconDecrationBehaviour.SetDegreeNumber(friendPlayerData.NDOLELKAJNL_DegreeData.HMFFHLPNMPH);
+			}
+			m_status.Clear();
+			m_status.Add(divaData.CMCKNKKCNDK_EquippedStatus);
+			Change(divaData, null, 0, 0, type);
+		}
 
 		//// RVA: 0x17E2C64 Offset: 0x17E2C64 VA: 0x17E2C64
-		//public void FadeFrienFanAnimationSetFrame(int frame) { }
+		public void FadeFrienFanAnimationSetFrame(int frame)
+		{
+			if (m_divaFriendIconDecrationBehaviour != null)
+				m_divaFriendIconDecrationBehaviour.FadeFrienFanAnimationSetFrame(frame);
+		}
 
 		//// RVA: 0x17E2380 Offset: 0x17E2380 VA: 0x17E2380
 		private void Change(FFHPBEPOMAK_DivaInfo divaData, StatusData statusData, int luck, int rarity, DisplayType type)

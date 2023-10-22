@@ -80,7 +80,18 @@ namespace XeApp.Game.Menu
 		//public bool RequestTouchReactionCos(int a_index, Action onActionEndCallback) { }
 
 		//// RVA: 0x96117C Offset: 0x96117C VA: 0x96117C
-		//public bool RequestAutoTalk(int talkType, Action onActionEndCallback) { }
+		public bool RequestAutoTalk(int talkType, Action onActionEndCallback)
+		{
+			if(!IsAnimatorRequested && m_runningCoroutine == null)
+			{
+				OnTimeTalkStart(talkType);
+				OnActionEndCallback = onActionEndCallback;
+				IsAnimatorRequested = true;
+				StartRunningCoroutine(Coroutine_TalkVoiceWait(), true);
+				return true;
+			}
+			return false;
+		}
 
 		//// RVA: 0x9614A8 Offset: 0x9614A8 VA: 0x9614A8
 		public bool RequestTimezoneTalk(int talkType, Action onActionEndCallback)
@@ -368,7 +379,20 @@ namespace XeApp.Game.Menu
 		//private void OnReactionStart(int reactionType, out bool useTalkMotion) { }
 
 		//// RVA: 0x9611DC Offset: 0x9611DC VA: 0x9611DC
-		//private void OnTimeTalkStart(int talkType) { }
+		private void OnTimeTalkStart(int talkType)
+		{
+			DivaManager.DivaTransformReset();
+            MenuDivaVoiceTable.Data voiceData = VoiceTable.GetTimeTalk(talkType);
+            SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.Home, voiceData.VoiceId);
+			if(DivaMenuMotion.IsTalk(voiceData.MotionType))
+			{
+				DivaObject.Talk(DivaMenuMotion.ToMotionId(voiceData.MotionType));
+			}
+			else if(DivaMenuMotion.IsSimpleTalk(voiceData.MotionType))
+			{
+				DivaObject.SimpleTalk(DivaMenuMotion.ToMotionId(voiceData.MotionType));
+			}
+		}
 
 		//// RVA: 0x961540 Offset: 0x961540 VA: 0x961540
 		private void OnLoginTalkStart(int talkType, out bool useTalkMotion)

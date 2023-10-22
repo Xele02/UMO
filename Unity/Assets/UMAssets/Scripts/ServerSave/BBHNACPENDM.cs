@@ -9,9 +9,9 @@ public class BBHNACPENDM_ServerSaveData
 	public enum BDADJONBIBO
 	{
 		HJNNKCMLGFL = 0,
-		FKNGHCNOEHO = 1,
-		GGEELFGJAMP = 2,
-		AFGALHECDIJ = 3,
+		FKNGHCNOEHO_1 = 1,
+		GGEELFGJAMP_2 = 2,
+		AFGALHECDIJ_3 = 3,
 		LPKPFMHEKEM = 4
 	}
 	 
@@ -338,7 +338,18 @@ public class BBHNACPENDM_ServerSaveData
 	}
 
 	// // RVA: 0xF1C1E0 Offset: 0xF1C1E0 VA: 0xF1C1E0
-	// public static List<string> KPIDBPEKMFD(ulong MKDDOJOADMF) { }
+	public static List<string> KPIDBPEKMFD_GetBlockList(ulong MKDDOJOADMF)
+	{
+		List<string> res = new List<string>(OHNJJIMGKGK_Names.Length);
+		for(int i = 0; i < OHNJJIMGKGK_Names.Length; i++)
+		{
+			if((((ulong)1 << i) & MKDDOJOADMF) != 0)
+			{
+				res.Add(OHNJJIMGKGK_Names[i]);
+			}
+		}
+		return res;
+	}
 
 	// // RVA: 0xF1C428 Offset: 0xF1C428 VA: 0xF1C428
 	public KLFDBFMNLBL_ServerSaveBlock LBDOLHGDIEB_GetBlock(string OPFGFINHFCE)
@@ -388,7 +399,10 @@ public class BBHNACPENDM_ServerSaveData
 	// public void GGBOGLKKKDM() { }
 
 	// // RVA: 0xF1F370 Offset: 0xF1F370 VA: 0xF1F370
-	// public void HIJAFAIOLIL() { }
+	public void HIJAFAIOLIL()
+	{
+		KHEKNNFCAOI_Init(0x230000000000);
+	}
 
 	// // RVA: 0xF1C554 Offset: 0xF1C554 VA: 0xF1C554
 	public void KHEKNNFCAOI_Init(ulong HGNJJBLEMPH)
@@ -672,7 +686,11 @@ public class BBHNACPENDM_ServerSaveData
 	}
 
 	// // RVA: 0xF21E34 Offset: 0xF21E34 VA: 0xF21E34
-	// public void DOPABKCMOOI(FKAFHLIDAFD KOFLKLHPOBJ, long JHNMKKNEENE) { }
+	public void DOPABKCMOOI(FKAFHLIDAFD KOFLKLHPOBJ, long JHNMKKNEENE)
+	{
+		MHEAEGMIKIE_PublicStatus.NAKJJBEIION_DcNm = KOFLKLHPOBJ.AHEFHIMGIBI.PDKHANKAPCI_DecoPublicSet.LJMCPFACDGJ.CPOONLHIMKC_DecoRoomName;
+		MHEAEGMIKIE_PublicStatus.DALCINDEJLC_DcTm = JHNMKKNEENE;
+	}
 
 	// // RVA: 0xF21F10 Offset: 0xF21F10 VA: 0xF21F10
 	public FENCAJJBLBH PFAKPFKJJKA(bool DHNFPAGENLN = true)

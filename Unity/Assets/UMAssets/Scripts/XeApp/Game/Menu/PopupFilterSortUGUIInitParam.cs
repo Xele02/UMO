@@ -75,6 +75,13 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1C9EB38 Offset: 0x1C9EB38 VA: 0x1C9EB38
-		//public void SetShopProductParam(int rarityMin, int rarityMax, bool enableSave = True) { }
+		public void SetShopProductParam(int rarityMin, int rarityMax, bool enableSave = true)
+		{
+			EnableSave = enableSave;
+			Scene = PopupFilterSortUGUI.Scene.ShopProduct;
+			ShopProductParam = new ShopProductParamClass();
+			ShopProductParam.RarityMin = rarityMin;
+			ShopProductParam.RarityMax = rarityMax;
+		}
 	}
 }

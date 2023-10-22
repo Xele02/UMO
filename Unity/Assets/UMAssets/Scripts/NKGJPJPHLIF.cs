@@ -13,6 +13,7 @@ using CriWare;
 using XeApp.Game.Menu;
 using XeApp.Game;
 using XeApp.Core;
+using UnityEditor.PackageManager.Requests;
 
 public class NKGJPJPHLIF
 {
@@ -870,5 +871,18 @@ public class NKGJPJPHLIF
 	}
 
 	// // RVA: 0xC19EEC Offset: 0xC19EEC VA: 0xC19EEC
-	// public void CADNBFCHAKM(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG) { }
+	public void CADNBFCHAKM(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG)
+	{
+		NADBPLMLIJA_GetToken req = IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new NADBPLMLIJA_GetToken());
+		req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
+		{
+			//0xC1A714
+			BHFHGFKBOHH();
+		};
+		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
+		{
+			//0xC1A740
+			AOCANKOMKFG();
+		};
+	}
 }

@@ -14,16 +14,16 @@ public class NEGELNMPEPH_DecoSpSetting : DIHHCBACKGG_DbSection
 		private int OHMGPDPKGLF = 0; // 0x14
 
 		public int BCGKLONODHO { get { return OAKFKBJFHBJ ^ FBGGEFFJJHB; } set { OAKFKBJFHBJ = value ^ FBGGEFFJJHB; } } //0x1AE6688 KAINPELLHFF 0x1AE628C EJPIFOFOINA
-		public int KPBJHHHMOJE { get { return COLOLEGLONK ^ FBGGEFFJJHB; } set { COLOLEGLONK = value ^ FBGGEFFJJHB; } } //0x1AE6698 NNBONJFLKFM 0x1AE629C FIOMMOICJLL
-		public int NANNGLGOFKH { get { return OHMGPDPKGLF ^ FBGGEFFJJHB; } set { OHMGPDPKGLF = value ^ FBGGEFFJJHB; } } //0x1AE66A8 EDFAHCMGHKM 0x1AE62AC BKPDFNKGNHA
+		public int KPBJHHHMOJE_TimeToChargeMin { get { return COLOLEGLONK ^ FBGGEFFJJHB; } set { COLOLEGLONK = value ^ FBGGEFFJJHB; } } //0x1AE6698 NNBONJFLKFM 0x1AE629C FIOMMOICJLL
+		public int NANNGLGOFKH_MaxNumber { get { return OHMGPDPKGLF ^ FBGGEFFJJHB; } set { OHMGPDPKGLF = value ^ FBGGEFFJJHB; } } //0x1AE66A8 EDFAHCMGHKM 0x1AE62AC BKPDFNKGNHA
 		
 		// RVA: 0x1AE6264 Offset: 0x1AE6264 VA: 0x1AE6264
 		public DAGLEHBMBLF(int FBGGEFFJJHB)
 		{
 			this.FBGGEFFJJHB = FBGGEFFJJHB;
 			BCGKLONODHO = 0;
-			KPBJHHHMOJE = 0;
-			NANNGLGOFKH = 0;
+			KPBJHHHMOJE_TimeToChargeMin = 0;
+			NANNGLGOFKH_MaxNumber = 0;
 		}
 
 		// RVA: 0x1AE6630 Offset: 0x1AE6630 VA: 0x1AE6630
@@ -86,8 +86,8 @@ public class NEGELNMPEPH_DecoSpSetting : DIHHCBACKGG_DbSection
 					{
 						DAGLEHBMBLF data = new DAGLEHBMBLF(FBGGEFFJJHB);
 						data.BCGKLONODHO = array2[j];
-						data.KPBJHHHMOJE = array[i].KPBJHHHMOJE[j];
-						data.NANNGLGOFKH = array[i].JBGEEPFKIGG[j];
+						data.KPBJHHHMOJE_TimeToChargeMin = array[i].KPBJHHHMOJE[j];
+						data.NANNGLGOFKH_MaxNumber = array[i].JBGEEPFKIGG[j];
 						lData.Add(data);
 					}
 				}

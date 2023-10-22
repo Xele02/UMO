@@ -17,7 +17,12 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1619EFC Offset: 0x1619EFC VA: 0x1619EFC
-		//public static IEnumerator Show(RecordPlateUtility.eSceneType sceneType, JKNGJFOBADP inventoryUtil, Action callbackClose, bool allReceive = False) { }
+		public static IEnumerator Show(RecordPlateUtility.eSceneType sceneType, JKNGJFOBADP inventoryUtil, Action callbackClose, bool allReceive = false)
+		{
+			RecordPlateUtility.inventoryUtil = inventoryUtil;
+			RecordPlateUtility.IsResultConfirm = false;
+			return Coroutine_Show(sceneType, callbackClose, allReceive);
+		}
 
 		//// RVA: 0x1619FA8 Offset: 0x1619FA8 VA: 0x1619FA8
 		//public static IEnumerator ResultShow(RecordPlateUtility.eSceneType sceneType, Action callbackClose, bool allReceive = False) { }

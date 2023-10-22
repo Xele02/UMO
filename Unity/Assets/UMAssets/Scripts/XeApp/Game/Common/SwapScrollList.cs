@@ -45,7 +45,7 @@ namespace XeApp.Game.Common
 		public int RowCount { get { return m_rowCount; } } //0x1CCB0DC
 		public int ColumnCount { get { return m_columnCount; } } //0x1CCB0E4
 		public ScrollRect ScrollRect { get { return m_scrollRect; } } //0x1CCB0EC
-		//public float RelativePositon { get; } 0x1CCB0F4
+		public float RelativePositon { get { return AnchoredPosition % ItemSize; } } //0x1CCB0F4
 		public bool Vertical { set { m_isVertical = true; } } //0x1CCB198
 		private RectTransform ScrollRectTransfom { get {
 				if(m_scrollRectTransfom == null)
@@ -91,7 +91,14 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CCB6F4 Offset: 0x1CCB6F4 VA: 0x1CCB6F4
-		//public void Apply(int rowCount, int columnCount, Vector2 contentSize, Vector2 leftTopPosition) { }
+		public void Apply(int rowCount, int columnCount, Vector2 contentSize, Vector2 leftTopPosition)
+		{
+			m_rowCount = rowCount;
+			m_columnCount = columnCount;
+			m_contentRect = contentSize;
+			m_leftTopPosition = leftTopPosition;
+			Apply();
+		}
 
 		//// RVA: 0x1CCB724 Offset: 0x1CCB724 VA: 0x1CCB724
 		public void Apply()
@@ -339,7 +346,7 @@ namespace XeApp.Game.Common
 					diff = m_diffPrePosition;
 					listTop = m_listTopPosition;
 					cnt = 0;
-					if(0 <= (ScrollMergin + AnchoredPosition - m_diffPrePosition))
+					if(0 < (ScrollMergin + AnchoredPosition - m_diffPrePosition))
 					{
 						do
 						{
@@ -353,7 +360,7 @@ namespace XeApp.Game.Common
 						m_listTopPosition = listTop + itemCount;
 						m_diffPrePosition = diff - ItemSize * itemCount;
 					}
-					while (0 <= (ScrollMergin + AnchoredPosition - m_diffPrePosition))
+					while (0 < (ScrollMergin + AnchoredPosition - m_diffPrePosition))
 					{
 						m_listTopPosition--;
 						m_diffPrePosition += ItemSize;

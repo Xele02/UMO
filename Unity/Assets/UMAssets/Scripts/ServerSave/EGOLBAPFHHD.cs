@@ -539,7 +539,10 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1C51C44 Offset: 0x1C51C44 VA: 0x1C51C44
-	// public bool GAFDKEENNJO(int IJEKNCDIIAE) { }
+	public bool GAFDKEENNJO(int IJEKNCDIIAE)
+	{
+		return CDJDKAMIJDG_DMasVer < IJEKNCDIIAE;
+	}
 
 	// // RVA: 0x1C51C60 Offset: 0x1C51C60 VA: 0x1C51C60
 	public void GHKOOOHLHDC(LastGameUnlockStatus.TypeBit BJMJKILHLDF)

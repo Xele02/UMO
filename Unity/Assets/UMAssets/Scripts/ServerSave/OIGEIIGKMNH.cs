@@ -66,7 +66,7 @@ public class OIGEIIGKMNH_Valkyrie : KLFDBFMNLBL_ServerSaveBlock
 	public static string POFDDFCGEGP = "_"; // 0x0
 
 	public List<HLNPGNNPCGO_ValkyrieInfo> CNGNBKNBKGI_ValkList { get; private set; } // 0x24 HPMHJMMCOKA PGNBHFIAMPP BDMGCKFBDMI
-	public override bool DMICHEJIAJL { get { TodoLogger.LogError(0, "DMICHEJIAJL"); return false; } } // 0x1DE68D0 NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return true; } } // 0x1DE68D0 NFKFOODCJJB
 
 	// // RVA: 0x1DE34C8 Offset: 0x1DE34C8 VA: 0x1DE34C8
 	public int IJHGOONDKLI_GetNumUnlocked(JPIANKEOOMB_Valkyrie PEOALFEGNDH)

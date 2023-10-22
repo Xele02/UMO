@@ -76,13 +76,28 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xE2FE24 Offset: 0xE2FE24 VA: 0xE2FE24
-		//public void SetCount(string count) { }
+		public void SetCount(string count)
+		{
+			for(int i = 0; i < m_countValues.Count; i++)
+			{
+				m_countValues[i].text = count;
+			}
+		}
 
 		//// RVA: 0xE2FF10 Offset: 0xE2FF10 VA: 0xE2FF10
-		//public void SetMax(string max) { }
+		public void SetMax(string max)
+		{
+			for (int i = 0; i < m_maxValues.Count; i++)
+			{
+				m_maxValues[i].text = max;
+			}
+		}
 
 		//// RVA: 0xE2FFFC Offset: 0xE2FFFC VA: 0xE2FFFC
-		//public void SetCaution(string message) { }
+		public void SetCaution(string message)
+		{
+			m_cautionMessage.text = message;
+		}
 
 		//// RVA: 0xE2ADF4 Offset: 0xE2ADF4 VA: 0xE2ADF4
 		public void SetCautionVisible(bool isVisible)

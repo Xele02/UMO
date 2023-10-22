@@ -177,7 +177,17 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB874E0 Offset: 0xB874E0 VA: 0xB874E0
-		//public void SetFriendButtonLock(bool isLock) { }
+		public void SetFriendButtonLock(bool isLock)
+		{
+			if(m_friendButtonLeft.Disable != isLock)
+			{
+				m_friendButtonLeft.Disable = isLock;
+			}
+			if(m_friendButtonRight.Disable != isLock)
+			{
+				m_friendButtonRight.Disable = isLock;
+			}
+		}
 
 		//// RVA: 0xB870A0 Offset: 0xB870A0 VA: 0xB870A0
 		private void ClearButtonCallback()

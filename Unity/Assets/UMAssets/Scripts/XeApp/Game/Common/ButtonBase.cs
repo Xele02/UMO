@@ -234,13 +234,16 @@ namespace XeApp.Game.Common
 		}
 
 		// RVA: 0xE60008 Offset: 0xE60008 VA: 0xE60008
-		public void AddOnClickCallback(ButtonBase.OnClickCallback OnClickEvent)
+		public void AddOnClickCallback(OnClickCallback OnClickEvent)
 		{
 			this.OnClickEvent += OnClickEvent;
 		}
 
 		// // RVA: 0xE645C4 Offset: 0xE645C4 VA: 0xE645C4
-		// public void RemoveOnClickCallback(ButtonBase.OnClickCallback OnClickEvent) { }
+		public void RemoveOnClickCallback(OnClickCallback OnClickEvent)
+		{
+			this.OnClickEvent -= OnClickEvent;
+		}
 
 		// // RVA: 0xE646B0 Offset: 0xE646B0 VA: 0xE646B0
 		// public void ClearAnimEndCallback() { }

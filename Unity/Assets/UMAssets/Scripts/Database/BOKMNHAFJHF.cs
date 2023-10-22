@@ -42,7 +42,7 @@ public class BOKMNHAFJHF_Sns : DIHHCBACKGG_DbSection
 		public int IDELKEKDIFD; // 0x8
 		public int EAHPLCJMPHD; // 0xC
 		public int HEHKNMCDBJJ_ColorId; // 0x10
-		public int CPKMLLNADLJ; // 0x14
+		public int CPKMLLNADLJ_Serie; // 0x14
 		public string OPFGFINHFCE_Name; // 0x18
 		public string HAPAFECPFEK; // 0x1C
 		public sbyte PPEGAKEIEGM_Enabled; // 0x20
@@ -100,7 +100,7 @@ public class BOKMNHAFJHF_Sns : DIHHCBACKGG_DbSection
 			data.IDELKEKDIFD = i + 1;
 			data.EAHPLCJMPHD = 1;
 			data.HEHKNMCDBJJ_ColorId = 1;
-			data.CPKMLLNADLJ = 0;
+			data.CPKMLLNADLJ_Serie = 0;
 			KHCACDIKJLG_Characters.Add(data);
 		}
 	}
@@ -188,7 +188,7 @@ public class BOKMNHAFJHF_Sns : DIHHCBACKGG_DbSection
 				data.HAPAFECPFEK = array[i].ONOPACPKFPK;
 				data.EAHPLCJMPHD = (int)array[i].HANMDEBPBHG;
 				data.HEHKNMCDBJJ_ColorId = array[i].DJJNOCDIIAE;
-				data.CPKMLLNADLJ = array[i].CPKMLLNADLJ;
+				data.CPKMLLNADLJ_Serie = array[i].CPKMLLNADLJ;
 				data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(1, (int)array[i].PLALNIIBLOF, 0);
 			}
 			return true;

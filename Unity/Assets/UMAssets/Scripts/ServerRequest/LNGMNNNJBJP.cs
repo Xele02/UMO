@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LNGMNNNJBJP : CACGCMBKHDI_Request
+[System.Obsolete("Use LNGMNNNJBJP_SearchForPlayer", true)]
+public abstract class LNGMNNNJBJP { }
+public class LNGMNNNJBJP_SearchForPlayer : CACGCMBKHDI_Request
 {
 	public class JNHAEJLAPDC_PlayerInfo
 	{
@@ -16,13 +18,11 @@ public class LNGMNNNJBJP : CACGCMBKHDI_Request
 
 	public class FKNFPJEGMOO
 	{
-		public List<LNGMNNNJBJP.JNHAEJLAPDC_PlayerInfo> AIGKNOKPMEJ_Players; // 0x8
+		public List<LNGMNNNJBJP_SearchForPlayer.JNHAEJLAPDC_PlayerInfo> AIGKNOKPMEJ_Players; // 0x8
 		public int CJNNMLLEKEF_PreviousPage; // 0xC
 		public int GPPOJHNNINK_CurrentPage; // 0x10
 		public int MDIBIIHAAPN_NextPage; // 0x14
 	}
-
-	public delegate bool CCHAFMBDGOB(int BMBBDIAEOMP, int EHGBICNIBKE, long IFNLEKOILPM, bool DMBJLEIGCCG, List<string> OHNJJIMGKGK, EDOHBJAPLPF_JsonData NMICBJDPLOH);
 
 	public const int GBBILKJEBCO = 100;
 	public List<string> HHIHCJKLJFF_ServerInfoBlockList; // 0x80

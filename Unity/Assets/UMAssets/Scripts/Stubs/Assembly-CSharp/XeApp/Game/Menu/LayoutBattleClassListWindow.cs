@@ -1,5 +1,7 @@
 using UnityEngine.UI;
 using UnityEngine;
+using XeApp.Game.Common;
+using XeSys.Gfx;
 
 namespace XeApp.Game.Menu
 {
@@ -9,7 +11,20 @@ namespace XeApp.Game.Menu
 		{
 			TodoLogger.LogError(0, "Implement monobehaviour");
 		}
-		[SerializeField]
+
+        protected override void OnSelectListItem(int value, SwapScrollListContent content)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        protected override void OnUpdateListItem(int index, SwapScrollListContent content)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        [SerializeField]
 		private Text[] m_textCaution;
-	}
+
+        protected override AbsoluteLayout layoutRoot => throw new System.NotImplementedException();
+    }
 }
