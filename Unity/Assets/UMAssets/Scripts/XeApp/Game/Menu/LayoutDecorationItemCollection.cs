@@ -68,7 +68,7 @@ namespace XeApp.Game.Menu
 			int start = 0;
 			if(m_type < NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JJNIMNEJPOF_3/*3*/)
 			{
-				if(m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.FIHMIDDLAKH_1/*1*/)
+				if(m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.FIHMIDDLAKH_CanonFillSp/*1*/)
 					start = 0;
 				else
 				{
@@ -82,7 +82,7 @@ namespace XeApp.Game.Menu
 				}
 			}
 			else if(m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JJNIMNEJPOF_3/*3*/ ||
-				m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_11/*11*/)
+				m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_VisitItemSp/*11*/)
 			{
 				start = 0;
 			}
@@ -95,9 +95,9 @@ namespace XeApp.Game.Menu
 			m_base.StartChildrenAnimGoStop(start, start);
 			switch(m_type)
 			{
-				case NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.FIHMIDDLAKH_1/*1*/:
+				case NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.FIHMIDDLAKH_CanonFillSp/*1*/:
 				case NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JJNIMNEJPOF_3/*3*/:
-				case NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_11/*11*/:
+				case NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_VisitItemSp/*11*/:
 					m_exclamationAnim.StartChildrenAnimLoop("logo_on", "loen_on");
 					break;
 				case NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.IOEGFJMNDBM_2/*2*/:
@@ -173,7 +173,7 @@ namespace XeApp.Game.Menu
 			BaseFrame frame = BaseFrame.None;
 			if(m_type < NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JJNIMNEJPOF_3)
 			{
-				if(m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.FIHMIDDLAKH_1)
+				if(m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.FIHMIDDLAKH_CanonFillSp)
 				{
 					IsPlayingReceiveAnime = false;
 					Off();
@@ -185,7 +185,7 @@ namespace XeApp.Game.Menu
 					frame = BaseFrame.Point;
 				}
 			}
-			else if(m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JJNIMNEJPOF_3 || m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_11)
+			else if(m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JJNIMNEJPOF_3 || m_type == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_VisitItemSp)
 			{
 				m_itemNum.SetNumber(value, 0);
 				frame = BaseFrame.Item;
@@ -203,7 +203,7 @@ namespace XeApp.Game.Menu
 			IsPlayingReceiveAnime = true;
 			m_base.StartChildrenAnimGoStop((int)frame, (int)frame);
 			currentLayout = null;
-			if(m_type >= NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.FIHMIDDLAKH_1 && m_type < NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JJNIMNEJPOF_3)
+			if(m_type >= NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.FIHMIDDLAKH_CanonFillSp && m_type < NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JJNIMNEJPOF_3)
 			{
 				m_pointAnim.StartChildrenAnimGoStop("st_wait", "st_out");
 				currentLayout = m_pointAnim;

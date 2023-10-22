@@ -1,6 +1,7 @@
 using XeSys.Gfx;
 using UnityEngine.UI;
 using UnityEngine;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -49,16 +50,38 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x18B9DC4 Offset: 0x18B9DC4 VA: 0x18B9DC4
-		// public void Setting(DecorationSpCollectInfo info) { }
+		public void Setting(DecorationSpCollectInfo info)
+		{
+			LoadItem(info.itemId);
+			m_restTimeText.text = info.restTime;
+			SetLv(info.lv, info.lvNext, info.lvMax, info.isAvailableLevelup);
+			SetTime(info.nowTime, info.nextTime, info.lv == info.lvNext, info.isDiffrentTime, info.isAvailableLevelup);
+			SetItem(info.nowPoint, info.nextPoint, info.lv == info.lvNext, info.isDiffrentPoint, info.isCannon, info.isAvailableLevelup);
+			SetLvUpRestItemNum(info.lvUpRestItemNum, info.lv == info.lvNext, info.isReceivable, info.isAvailableLevelup);
+			m_receiveTbl.StartChildrenAnimGoStop(info.isCannon ? "02" : "01");
+			m_collectTimeTbl.StartChildrenAnimGoStop(info.isCannon ? "02" : "01");
+		}
 
 		// // RVA: 0x18BA4FC Offset: 0x18BA4FC VA: 0x18BA4FC
-		// public bool IsLoading() { }
+		public bool IsLoading()
+		{
+			return !m_isLoadedTexture;
+		}
 
 		// // RVA: 0x18BA510 Offset: 0x18BA510 VA: 0x18BA510
 		// public bool IsPlayingEnd() { }
 
 		// // RVA: 0x18B9FB4 Offset: 0x18B9FB4 VA: 0x18B9FB4
-		// private void LoadItem(int itemId) { }
+		private void LoadItem(int itemId)
+		{
+			m_isLoadedTexture = false;
+			GameManager.Instance.ItemTextureCache.Load(itemId, (IiconTexture texture) =>
+			{
+				//0x18BA5FC
+				texture.Set(m_itemImage);
+				m_isLoadedTexture = true;
+			});
+		}
 
 		// // RVA: 0x18BA518 Offset: 0x18BA518 VA: 0x18BA518
 		// private int GetLvTblFrame(int currentLevel, int nextLevel, int maxLevel, bool isAvailableLevelup) { }
@@ -73,19 +96,54 @@ namespace XeApp.Game.Menu
 		// private void SetRestTime(string restTime) { }
 
 		// // RVA: 0x18BA108 Offset: 0x18BA108 VA: 0x18BA108
-		// private void SetLv(int lv, int next, int max, bool isAvailable) { }
+		private void SetLv(int lv, int next, int max, bool isAvailable)
+		{
+			m_lvText.text = lv.ToString();
+			m_nextLvText.text = next.ToString();
+			int v = 0;
+			int v2 = 1;
+			if(next == max)
+				v2 = 2;
+			if(lv == max)
+				v = 3;
+			if(isAvailable)
+				v = v2;
+			m_lvTbl.StartChildrenAnimGoStop(v, v);
+		}
 
 		// // RVA: 0x18BA1F8 Offset: 0x18BA1F8 VA: 0x18BA1F8
-		// private void SetTime(string nowTime, string nextTime, bool isLvMax, bool isDiffrent, bool isAvailable) { }
+		private void SetTime(string nowTime, string nextTime, bool isLvMax, bool isDiffrent, bool isAvailable)
+		{
+			m_collectTimeText.text = nowTime;
+			m_collectNextTimeText.text = nextTime;
+			int v = isAvailable && isDiffrent && !isLvMax ? 1 : 0;
+			m_timeTbl.StartChildrenAnimGoStop(v, v);
+		}
 
 		// // RVA: 0x18BA2AC Offset: 0x18BA2AC VA: 0x18BA2AC
-		// private void SetItem(string nowPoint, string nextPoint, bool isLvMax, bool isDiffrent, bool isCannon, bool isAvailable) { }
+		private void SetItem(string nowPoint, string nextPoint, bool isLvMax, bool isDiffrent, bool isCannon, bool isAvailable)
+		{
+			m_collectItemText.text = nowPoint;
+			m_collectNextItemText.text = nextPoint;
+			int v = 2;
+			if(isAvailable && isDiffrent && !isLvMax)
+				v = 3;
+			if(!isCannon)
+				v = isAvailable && isDiffrent && !isLvMax ? 1 : 0;
+			m_itemTbl.StartChildrenAnimGoStop(v, v);
+		}
 
 		// // RVA: 0x18BA37C Offset: 0x18BA37C VA: 0x18BA37C
-		// private void SetLvUpRestItemNum(int num, bool isMax, bool isReceivable, bool isAvailable) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6D6C6C Offset: 0x6D6C6C VA: 0x6D6C6C
-		// // RVA: 0x18BA5FC Offset: 0x18BA5FC VA: 0x18BA5FC
-		// private void <LoadItem>b__25_0(IiconTexture texture) { }
+		private void SetLvUpRestItemNum(int num, bool isMax, bool isReceivable, bool isAvailable)
+		{
+			if(isAvailable)
+			{
+				m_lvUpRestItemNumText.text = MessageManager.Instance.GetMessage("menu", isReceivable ? "pop_deco_sp_item_004" : "pop_deco_sp_item_002");
+			}
+			else
+			{
+				m_lvUpRestItemNumText.text = string.Format(MessageManager.Instance.GetMessage("menu", isMax ? "pop_deco_sp_item_003" : "pop_deco_sp_item_001"), num);
+			}
+		}
 	}
 }

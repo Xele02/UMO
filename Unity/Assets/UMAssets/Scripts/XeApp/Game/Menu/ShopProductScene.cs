@@ -825,7 +825,7 @@ namespace XeApp.Game.Menu
 							//0xC46280
 							return item.PPFNGGCBJKC_Id == id;
 						});
-						if(!PopupSortMenu.IsInteriorTypeFilterOn(it.GBJFNGCDKPM, m_interiorFilter))
+						if(!PopupSortMenu.IsInteriorTypeFilterOn(it.GBJFNGCDKPM_SpType, m_interiorFilter))
 							continue;
 					}
 					//LAB_00c40fe8

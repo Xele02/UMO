@@ -147,7 +147,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xBAC6F8 Offset: 0xBAC6F8 VA: 0xBAC6F8 Slot: 13
 		protected override bool IsEndExitAnimation()
 		{
-			if(m_buttonRuntime.IsPlaying() && !m_windowUi.IsPlaying())
+			if(!m_buttonRuntime.IsPlaying() && !m_windowUi.IsPlaying())
 			{
 				if (!m_holdFriendInfo)
 				{

@@ -273,6 +273,19 @@ namespace ExternLib
 					}
 				}
 			}
+			// Unlock deco sp
+			{
+				for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp.Count; i++)
+				{
+					NDBFKHKMMCE_DecoItem.FIDBAFHNGCF dbSp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp[i];
+					if(dbSp.PLALNIIBLOF_Enabled == 2)
+					{
+						BCGFHLIEKLJ_DecoItem.GNGFGEIAGJL saveSp = newData.OMMNKDEODJP_DecoItem.NBKAMFFIOOG_Sp[i];
+						if(saveSp.BFINGCJHOHI_Cnt == 0)
+							saveSp.BFINGCJHOHI_Cnt = 1;
+					}
+				}
+			}
 
 			SerializeServerSave(newData, jsonRes);
 		}

@@ -109,7 +109,7 @@ namespace XeApp.Game.Menu
 					{
 						int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(it.HAJKNHNAIKL_ItemId);
 						NDBFKHKMMCE_DecoItem.FIDBAFHNGCF dbSp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp[id - 1];
-						if(dbSp.GBJFNGCDKPM <= 3)
+						if(dbSp.GBJFNGCDKPM_SpType <= 3)
 						{
 							BCGFHLIEKLJ_DecoItem.GNGFGEIAGJL saveSp = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.OMMNKDEODJP_DecoItem.NBKAMFFIOOG_Sp[id - 1];
 							saveSp.FOONCJDLLIK_ChargeTime = chargeTime;
@@ -375,7 +375,7 @@ namespace XeApp.Game.Menu
 			bool b = l.Exists((DecorationItemBase x) =>
 			{
 				//0x11CA840
-				return x is DecorationSp && (x as DecorationSp).SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_11;
+				return x is DecorationSp && (x as DecorationSp).SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_VisitItemSp;
 			});
 			if (!m_spItemOriginalListupList.Exists(FindVisitItemFunc))
 			{
@@ -385,7 +385,7 @@ namespace XeApp.Game.Menu
 				}
 				foreach(var it in l)
 				{
-					if(it is DecorationSp && (it as DecorationSp).SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_11)
+					if(it is DecorationSp && (it as DecorationSp).SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_VisitItemSp)
 					{
 						m_decorationCanvas.RemoveItem(it);
 						yield break;
@@ -415,7 +415,7 @@ namespace XeApp.Game.Menu
 			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId);
 			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp)
 			{
-				return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp[id - 1].GBJFNGCDKPM == 11;
+				return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp[id - 1].GBJFNGCDKPM_SpType == 11;
 			}
 			return false;
 		}
@@ -484,7 +484,7 @@ namespace XeApp.Game.Menu
 				{
 					int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(m_copyPublicData.LJMCPFACDGJ.HBHMAKNGKFK_Items[i].HAJKNHNAIKL_ItemId);
 					NDBFKHKMMCE_DecoItem.FIDBAFHNGCF dbSp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp[id - 1];
-					if(dbSp.GBJFNGCDKPM < 4)
+					if(dbSp.GBJFNGCDKPM_SpType < 4)
 					{
 						m_spItemListupList.Add(m_copyPublicData.LJMCPFACDGJ.HBHMAKNGKFK_Items[i].HAJKNHNAIKL_ItemId);
 					}

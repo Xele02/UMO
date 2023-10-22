@@ -203,7 +203,7 @@ namespace XeApp.Game.Menu
 			for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp.Count; i++)
 			{
 				NDBFKHKMMCE_DecoItem.FIDBAFHNGCF dbItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp[i];
-				if (dbItem.PLALNIIBLOF_Enabled == 2 && dbItem.GBJFNGCDKPM == 12)
+				if (dbItem.PLALNIIBLOF_Enabled == 2 && dbItem.GBJFNGCDKPM_SpType == 12)
 				{
 					m_deco_mascot_max++;
 					if (dbItem.PPFNGGCBJKC_Id - 1 < a_player_data.OMMNKDEODJP_DecoItem.NBKAMFFIOOG_Sp.Count)

@@ -449,12 +449,16 @@ public class EKLNMHFCAOI
 				if(a > 3 && a < 6)
 					a++;
 				return a;
+			case FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp:
+				return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp[PPFNGGCBJKC - 1].EKLIPGELKCL;
 			default:
 				TodoLogger.LogError(0, "FABCKNDLPDH " + INDDJNMPONH);
 				break;
 			case FKGCBLHOOCL_Category.HEMGMACMGAB_DecoItemVFFigure:
 			case FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso:
 				break;
+			case FKGCBLHOOCL_Category.ADCAAALBAIF_Medal:
+				return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ICICKEBMEFA_Medal.CDENCMNHNGA[PPFNGGCBJKC - 1].EKLIPGELKCL;
 		}
 		return 1;
 	}

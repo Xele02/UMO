@@ -63,6 +63,12 @@ namespace XeApp
 		private void Awake()
 		{
 			m_decoCanvasCamera = GetComponentInChildren<Camera>(true);
+#if UNITY_EDITOR || UNITY_STANDALONE
+			if(m_posterKiraMaterial != null)
+				BundleShaderInfo.Instance.FixMaterialShader(m_posterKiraMaterial);
+			if(m_posterKiraMaterialFlip != null)
+				BundleShaderInfo.Instance.FixMaterialShader(m_posterKiraMaterialFlip);
+#endif
 		}
 
 		// RVA: 0x1AB8BF8 Offset: 0x1AB8BF8 VA: 0x1AB8BF8
@@ -829,7 +835,7 @@ namespace XeApp
                 NDBFKHKMMCE_DecoItem.FIDBAFHNGCF item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp.Find((NDBFKHKMMCE_DecoItem.FIDBAFHNGCF p) =>
 				{
 					//0x1AC008C
-					return p.GBJFNGCDKPM == 11;
+					return p.GBJFNGCDKPM_SpType == 11;
 				});
 				if(item != null)
 				{
