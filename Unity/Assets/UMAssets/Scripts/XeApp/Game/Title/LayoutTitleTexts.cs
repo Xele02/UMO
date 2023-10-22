@@ -25,6 +25,9 @@ namespace XeApp.Game.Title
 			if(m_version != null)
 			{
 				m_version.text = text;
+				Vector2 v = m_version.GetComponent<RectTransform>().sizeDelta;
+				v.x *= 2;
+				m_version.GetComponent<RectTransform>().sizeDelta = v;
 			}
 		}
 
