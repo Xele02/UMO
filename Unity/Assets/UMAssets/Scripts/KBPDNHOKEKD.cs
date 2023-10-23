@@ -107,7 +107,15 @@ public class KBPDNHOKEKD_ProductId
 	public int CANACBAPKFK; // 0x60
 
 	//public bool EJENFBLDAIN { get; } 0x101CE84 KNLOMFHAKEG
-	//public int JHAIOJELFHI { get; } 0x101CEAC DLEHIBPEDIK
+	public int JHAIOJELFHI { get
+		{
+			if (CANACBAPKFK > 0)
+				return CANACBAPKFK;
+			if (GJEBPJHECIK_ItemSetNameForApi != null)
+				return GJEBPJHECIK_ItemSetNameForApi.Count;
+			return 0;
+		}
+	} //0x101CEAC DLEHIBPEDIK
 
 	//// RVA: 0x101CF2C Offset: 0x101CF2C VA: 0x101CF2C
 	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)

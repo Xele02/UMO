@@ -26,10 +26,17 @@ namespace XeApp.Game.Common
 		public Action<bool> OnSwipe { private get; set; } // 0x128
 
 		// // RVA: 0x13900D0 Offset: 0x13900D0 VA: 0x13900D0
-		// public void SetItemCount(int count) { }
+		public void SetItemCount(int count)
+		{
+			m_itemCount = count;
+		}
 
 		// // RVA: 0x13900D8 Offset: 0x13900D8 VA: 0x13900D8 Slot: 61
-		// public virtual void AddScrollObject(SelectScrollViewContent obj) { }
+		public virtual void AddScrollObject(SelectScrollViewContent obj)
+		{
+			scrollObjects.Add(obj);
+			obj.transform.SetParent(content, false);
+		}
 
 		// // RVA: 0x13901AC Offset: 0x13901AC VA: 0x13901AC Slot: 62
 		// public virtual void RemoveScrollObject(SelectScrollViewContent obj) { }
@@ -38,7 +45,16 @@ namespace XeApp.Game.Common
 		// public virtual void ClearScrollObject() { }
 
 		// // RVA: 0x13903C0 Offset: 0x13903C0 VA: 0x13903C0
-		// public void SetPosition(SelectScrollViewContent content, float animTime = 0) { }
+		public void SetPosition(SelectScrollViewContent content, float animTime = 0)
+		{
+			int idx = scrollObjects.FindIndex((SelectScrollViewContent x) =>
+			{
+				//0x1391660
+				return x.GetIndex() == content.GetIndex();
+			});
+			if (idx > -1)
+				SetPosition(idx, animTime);
+		}
 
 		// // RVA: 0x13904EC Offset: 0x13904EC VA: 0x13904EC Slot: 64
 		public virtual void SetPosition(int pos, float animTime = 0)

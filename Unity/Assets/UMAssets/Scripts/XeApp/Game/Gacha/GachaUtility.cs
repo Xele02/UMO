@@ -1,5 +1,6 @@
 
 using System;
+using System.Collections.Generic;
 using XeApp.Game.Common;
 using XeApp.Game.Menu;
 using XeSys;
@@ -56,8 +57,8 @@ namespace XeApp.Game.Gacha
 		public const int DirectionCardMax = 10;
 		// private static DirectionInfo s_directionInfo = null; // 0x3C
 
-		// public static GCAHJLOGMCI.KNMMOMEHDON selectCategory { get; set; } 0x9873E8 0x9902C8
-		// public static int typeAndSeriesId { get; set; } 0x990C3C 0x990E78
+		public static GCAHJLOGMCI.KNMMOMEHDON selectCategory { get { return m_selectCategory; } set { m_selectCategory = value; } } //0x9873E8 0x9902C8
+		public static int typeAndSeriesId { get { return m_typeAndSeriesId; } set { m_typeAndSeriesId = value; } } //0x990C3C 0x990E78
 		public static GachaUtility.LotType selectedLotType { get; private set; } // 0x8
 		public static GachaUtility.CountType selectedCountType { get; set; } // 0xC
 		private static long currentGachaLimitTime { get; set; } // 0x18
@@ -72,7 +73,7 @@ namespace XeApp.Game.Gacha
 		public static GCAHJLOGMCI.NFCAJPIJFAM netGachaCount { get; set; } // 0x40
 		public static GCAHJLOGMCI.NFCAJPIJFAM netGachaCountForAppearRate { get; private set; } // 0x44
 		private static int netGachaProductIndex { get; set; } // 0x48
-		// private static HPBDNNACBAK gpm { get; } 0x990CC8
+		private static HPBDNNACBAK gpm { get { return NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI; } } //0x990CC8
 		// private static CIOECGOMILE pdm { get; } 0x995E58
 		// public static List<LOBDIAABMKG> netGachaProducts { get; } 0x995ED4
 		// public static LOBDIAABMKG netGachaProductData { get; } 0x9872D8
@@ -82,7 +83,87 @@ namespace XeApp.Game.Gacha
 		// public static int currentHavePaidVC { get; } 0x996010
 
 		// // RVA: 0x990358 Offset: 0x990358 VA: 0x990358
-		// public static void UpdateGachaProductCategory() { }
+		public static void UpdateGachaProductCategory()
+		{
+			selectedLotType = LotType.None;
+			switch(selectCategory)
+			{
+				case GCAHJLOGMCI.KNMMOMEHDON.CCAPCGPIIPF_1:
+					netGachaCountForAppearRate = GCAHJLOGMCI.NFCAJPIJFAM.ODDGKAKAGLE_3;
+					break;
+				case GCAHJLOGMCI.KNMMOMEHDON.PHABJLGFJNI_2:
+					selectedLotType = LotType.PaidVC;
+					netGachaCountForAppearRate = GCAHJLOGMCI.NFCAJPIJFAM.DIHBOGEPHFI_2;
+					break;
+				case GCAHJLOGMCI.KNMMOMEHDON.GENEIBGNMPH_3:
+					selectedLotType = LotType.PaidVC;
+					break;
+				case GCAHJLOGMCI.KNMMOMEHDON.JGDEHOGIENP_4:
+					selectedLotType = LotType.PaidVC;
+					netGachaCountForAppearRate = GCAHJLOGMCI.NFCAJPIJFAM.DIHBOGEPHFI_2;
+					break;
+				case GCAHJLOGMCI.KNMMOMEHDON.GKDFKDLFNAJ_5:
+					selectedLotType = LotType.Ticket;
+					netGachaCountForAppearRate = GCAHJLOGMCI.NFCAJPIJFAM.LMHDFEKIDKG_6;
+					break;
+				case GCAHJLOGMCI.KNMMOMEHDON.BKNHBNINDOC_6:
+					selectedLotType = LotType.Ticket;
+					netGachaCountForAppearRate = GCAHJLOGMCI.NFCAJPIJFAM.DIHBOGEPHFI_2;
+					break;
+				case GCAHJLOGMCI.KNMMOMEHDON.ANFKBNLLJFN_7:
+					selectedLotType = LotType.PaidVC;
+					netGachaCountForAppearRate = GCAHJLOGMCI.NFCAJPIJFAM.AIMPCCIHKAJ_1;
+					break;
+				case GCAHJLOGMCI.KNMMOMEHDON.BCBJMKDAAKA_8:
+					selectedLotType = LotType.PaidVC;
+					netGachaCountForAppearRate = GCAHJLOGMCI.NFCAJPIJFAM.OBLEFFEJGIJ_8;
+					break;
+				case GCAHJLOGMCI.KNMMOMEHDON.OOABDNHIEFK_9:
+					selectedLotType = LotType.Ticket;
+					netGachaCountForAppearRate = GCAHJLOGMCI.NFCAJPIJFAM.GOAHICNDICO_5;
+					break;
+				case GCAHJLOGMCI.KNMMOMEHDON.DLOPEFGOAPD_10:
+					selectedLotType = LotType.Ticket;
+					netGachaCountForAppearRate = GCAHJLOGMCI.NFCAJPIJFAM.AIMPCCIHKAJ_1;
+					break;
+				default:
+					break;
+			}
+			int idx;
+			if (typeAndSeriesId == -1)
+			{
+				idx = gpm.MHKCPJDNJKI_GatchaProducts.FindIndex((LOBDIAABMKG p) =>
+				{
+					//0x996CE4
+					return p.INDDJNMPONH_Category == m_selectCategory;
+				});
+			}
+			else
+			{
+				idx = gpm.MHKCPJDNJKI_GatchaProducts.FindIndex((LOBDIAABMKG p) =>
+				{
+					//0x996D94
+					return p.FDEBLMKEMLF_TypeAndSeriesId == typeAndSeriesId;
+				});
+			}
+			netGachaProductIndex = idx;
+			LOBDIAABMKG d = null;
+			if (netGachaProductIndex > 0)
+			{
+				d = gpm.MHKCPJDNJKI_GatchaProducts[netGachaProductIndex];
+			}
+			if (selectCategory != GCAHJLOGMCI.KNMMOMEHDON.GENEIBGNMPH_3)
+				return;
+			if(d.DBHIEABGKII(GCAHJLOGMCI.NFCAJPIJFAM.AKHEAGMMIAM_4) != null)
+			{
+				netGachaCountForAppearRate = GCAHJLOGMCI.NFCAJPIJFAM.AKHEAGMMIAM_4;
+				return;
+			}
+			if(d.DBHIEABGKII(GCAHJLOGMCI.NFCAJPIJFAM.DIHBOGEPHFI_2) != null)
+			{
+				netGachaCountForAppearRate = GCAHJLOGMCI.NFCAJPIJFAM.DIHBOGEPHFI_2;
+			}
+		}
 
 		// // RVA: 0x990F98 Offset: 0x990F98 VA: 0x990F98
 		// public static void UpdateCountType(bool isTicket) { }
@@ -126,7 +207,38 @@ namespace XeApp.Game.Gacha
 		// public static IEnumerator OpenGachaPopupCoroutine(BEPHBEGDFFK.DMBKENKBIJD selectProductInfo, DenominationManager denomControl, Action onOk, Action<GachaUtility.CancelCause> onCancel, DJBHIFLHJLK onNetError, OnDenomChangeDate onChangeDate) { }
 
 		// // RVA: 0x986F80 Offset: 0x986F80 VA: 0x986F80
-		// public static void SetupGachaLimitTime(long unixTime) { }
+		public static void SetupGachaLimitTime(long unixTime)
+		{
+			DateTime t = Utility.GetLocalDateTime(unixTime);
+			currentGachaLimitTime = -1;
+			if (selectCategory != GCAHJLOGMCI.KNMMOMEHDON.CCAPCGPIIPF_1)
+				return;
+			currentTimezone = GetTimezoneFor(unixTime);
+			int h;
+			if(currentTimezone == Timezone.Morning)
+			{
+				h = timezoneNoon;
+			}
+			else if(currentTimezone == Timezone.Noon)
+			{
+				h = timezoneNight;
+			}
+			else if(currentTimezone == Timezone.Night)
+			{
+				h = timezoneEnd;
+			}
+			else
+			{
+				h = 0;
+			}
+			if(h > 23)
+			{
+				t = t.AddDays(1);
+				h -= 24;
+			}
+			currentGachaLimitTime = Utility.GetTargetUnixTime(t.Year, t.Month, t.Day, h, 0, 0);
+			canLotCurrentTimezone = LKBGPLDLNIK.JPIMHNNGJGI(unixTime) == 0;
+		}
 
 		// // RVA: 0x992564 Offset: 0x992564 VA: 0x992564
 		// private static bool CheckLimitTime() { }
@@ -310,6 +422,19 @@ namespace XeApp.Game.Gacha
 		}
 
 		// // RVA: 0x996A48 Offset: 0x996A48 VA: 0x996A48
-		// public static long GetGachaProductsLastOpenTime() { }
+		public static long GetGachaProductsLastOpenTime()
+		{
+			List<LOBDIAABMKG> l = gpm.MHKCPJDNJKI_GatchaProducts;
+			if (l.Count < 1)
+				return 0;
+			long res = 0;
+			for(int i = 0; i < l.Count; i++)
+			{
+				long t = GetGachaProductOpenTime(l[i]);
+				if (res < t)
+					res = t;
+			}
+			return res;
+		}
 	}
 }

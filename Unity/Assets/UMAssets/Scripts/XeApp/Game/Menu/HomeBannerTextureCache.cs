@@ -52,7 +52,11 @@ namespace XeApp.Game.Menu
 		//public void SetForGachaPickupIcon(RawImage image) { }
 
 		//// RVA: 0x95787C Offset: 0x95787C VA: 0x95787C
-		//public void SetForGachaListIcon(RawImageEx image) { }
+		public void SetForGachaListIcon(RawImageEx image)
+		{
+			base.Set(image);
+			image.uvRect = GachaListIconUv;
+		}
 
 		//// RVA: 0x957960 Offset: 0x957960 VA: 0x957960
 		//public void SetForGachaListIcon(RawImage image) { }

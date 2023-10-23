@@ -87,7 +87,17 @@ public class CIOECGOMILE
 	}
 
 	// // RVA: 0xFFA4A4 Offset: 0xFFA4A4 VA: 0xFFA4A4
-	// public int NBJOCMAJLPK(int APHNELOFGAK) { }
+	public int NBJOCMAJLPK_GetTotalCurrency(int APHNELOFGAK)
+	{
+		MCKCJMLOAFP_CurrencyInfo m = BBEPLKNMICJ_Currencies.Find((MCKCJMLOAFP_CurrencyInfo BNKHBCBJBKI) =>
+		{
+			//0x100CD54
+			return BNKHBCBJBKI.PPFNGGCBJKC_Id == APHNELOFGAK;
+		});
+		if (m == null)
+			return 0;
+		return m.BDLNMOIOMHK_Total;
+	}
 
 	// // RVA: 0xFFA5B0 Offset: 0xFFA5B0 VA: 0xFFA5B0
 	public int NOJDLFKKMDD(int MHFBCINOJEE)
