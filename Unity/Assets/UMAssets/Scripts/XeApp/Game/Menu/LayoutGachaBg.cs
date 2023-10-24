@@ -95,7 +95,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x199A934 Offset: 0x199A934 VA: 0x199A934
-		//public bool IsFading() { }
+		public bool IsFading()
+		{
+			return m_fade;
+		}
 
 		// RVA: 0x199A93C Offset: 0x199A93C VA: 0x199A93C
 		public void Setup(BEPHBEGDFFK view, bool isFade)
@@ -201,14 +204,58 @@ namespace XeApp.Game.Menu
 		//public void SwitchRarity(bool rarity) { }
 
 		//// RVA: 0x199B5C8 Offset: 0x199B5C8 VA: 0x199B5C8
-		//public void StartChangeBgLoop() { }
+		public void StartChangeBgLoop()
+		{
+			if (m_coroutine != null)
+				return;
+			m_coroutine = this.StartCoroutineWatched(Co_ChangeBgLoop());
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DD94C Offset: 0x6DD94C VA: 0x6DD94C
 		//// RVA: 0x199B600 Offset: 0x199B600 VA: 0x199B600
-		//private IEnumerator Co_ChangeBgLoop() { }
+		private IEnumerator Co_ChangeBgLoop()
+		{
+			float interval;
+
+			//0x199C56C
+			interval = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.LPJLEHAJADA("interval_time_gacha_bg", 5000);
+			while(true)
+			{
+				while (m_loopStop)
+					yield return null;
+				while (m_sceneIds == null || m_sceneIds.Count < 1)
+					yield return null;
+				if(MenuScene.Instance.IsTransition())
+				{
+					m_coroutine = null;
+					yield break;
+				}
+				if(interval <= m_waitTime)
+				{
+					m_waitTime = 0;
+					m_index++;
+					if (m_index >= m_sceneIds.Count)
+						m_index = 0;
+					int v = m_sceneIds[m_index].DNJEJEANJGL_Value;
+					if(m_view.BADFIKBADNH_PickupId != v)
+					{
+						yield return Co.R(Co_FadeChangeSceneBgImage(v, m_view.EFCJADAPOMN));
+					}
+				}
+				m_waitTime += Time.deltaTime;
+				yield return null;
+			}
+		}
 
 		//// RVA: 0x199B6AC Offset: 0x199B6AC VA: 0x199B6AC
-		//public void SetChangeBgLoopState(bool stop, float waitTime = -1) { }
+		public void SetChangeBgLoopState(bool stop, float waitTime = -1)
+		{
+			if (m_loadGachaId > 0)
+				return;
+			m_loopStop = stop;
+			if (waitTime >= 0)
+				m_waitTime = waitTime;
+		}
 
 		//// RVA: 0x199B0B4 Offset: 0x199B0B4 VA: 0x199B0B4
 		public void LoadSceneBgImage(int sceneId, bool rarity, Action callback)

@@ -77,11 +77,11 @@ public class KBPDNHOKEKD_ProductId
 {
 	public enum KNEKLJHNHAK
 	{
-		HJNNKCMLGFL = 0,
-		LCLLMJGIMHC = 1,
-		PBEMIDKNPNH = 2,
-		DKIKNLEDDBK = 3,
-		AAPLMEGMNJA = 4,
+		HJNNKCMLGFL_0 = 0,
+		LCLLMJGIMHC_1 = 1,
+		PBEMIDKNPNH_2 = 2,
+		DKIKNLEDDBK_3 = 3,
+		AAPLMEGMNJA_4 = 4,
 	}
 
 	public int PPFNGGCBJKC_Id; // 0x8
@@ -199,7 +199,12 @@ public class KBPDNHOKEKD_ProductId
 	//public bool HFEFJALCHMM() { }
 
 	//// RVA: 0x101D83C Offset: 0x101D83C VA: 0x101D83C
-	//public int HCMGHDNNJOM() { }
+	public int HCMGHDNNJOM()
+	{
+		if (JENBPPBNAHP_PlayerNormalLotFreeState == null)
+			return -1;
+		return JENBPPBNAHP_PlayerNormalLotFreeState.LJPIOGBFEKA_RemainsCount;
+	}
 
 	//// RVA: 0x101D850 Offset: 0x101D850 VA: 0x101D850
 	//public int EDODPNCAGKN() { }

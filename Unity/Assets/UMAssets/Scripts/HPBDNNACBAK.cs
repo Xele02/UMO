@@ -653,7 +653,7 @@ public class HPBDNNACBAK
 		for(int i = 0; i < MHKCPJDNJKI_GatchaProducts.Count; i++)
 		{
 			KBPDNHOKEKD_ProductId.KNEKLJHNHAK r = MHKCPJDNJKI_GatchaProducts[i].FJICMLBOJCH();
-			if(r != KBPDNHOKEKD_ProductId.KNEKLJHNHAK.HJNNKCMLGFL/*0*/ && r != KBPDNHOKEKD_ProductId.KNEKLJHNHAK.DKIKNLEDDBK/*3*/)
+			if(r != KBPDNHOKEKD_ProductId.KNEKLJHNHAK.HJNNKCMLGFL_0/*0*/ && r != KBPDNHOKEKD_ProductId.KNEKLJHNHAK.DKIKNLEDDBK_3/*3*/)
 			{
 				if(res == 0 || res > r)
 				{

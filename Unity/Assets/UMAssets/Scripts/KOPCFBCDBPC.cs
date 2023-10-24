@@ -1,4 +1,6 @@
-﻿
+
+using System.Collections.Generic;
+
 public class KOPCFBCDBPC
 {
 	private const long BHEHGCHGBDG = 6520467866191157850;
@@ -8,8 +10,8 @@ public class KOPCFBCDBPC
 	public NABANOOIECF LKPHIGAFJKD; // 0x14
 	public long JJLCCDHHOKK = 0x5a7d5afa35ac5a5a; // 0x18
 	public long JLFFBIOJBAO = 0x5a7d5afa35ac5a5a; // 0x20
-	//public List<MMNNAPPLHFM> BMFEGOMNECF; // 0x28
-	//public IAPIDHGIEED LKHAAGIJEPG; // 0x2C
+	public List<MMNNAPPLHFM> BMFEGOMNECF; // 0x28
+	public IAPIDHGIEED LKHAAGIJEPG; // 0x2C
 
 	//public long KBFOIECIADN { get; set; }
 	//public long EGBOHDFBAPB { get; set; }

@@ -59,8 +59,8 @@ namespace XeApp.Game.Gacha
 
 		public static GCAHJLOGMCI.KNMMOMEHDON selectCategory { get { return m_selectCategory; } set { m_selectCategory = value; } } //0x9873E8 0x9902C8
 		public static int typeAndSeriesId { get { return m_typeAndSeriesId; } set { m_typeAndSeriesId = value; } } //0x990C3C 0x990E78
-		public static GachaUtility.LotType selectedLotType { get; private set; } // 0x8
-		public static GachaUtility.CountType selectedCountType { get; set; } // 0xC
+		public static LotType selectedLotType { get; private set; } // 0x8
+		public static CountType selectedCountType { get; set; } // 0xC
 		private static long currentGachaLimitTime { get; set; } // 0x18
 		private static int timezoneMorn { get; set; } // 0x20
 		private static int timezoneNoon { get; set; } // 0x24
@@ -193,7 +193,10 @@ namespace XeApp.Game.Gacha
 		// public static void RegisterLegalDesc(Action<Action> onClickButton) { }
 
 		// // RVA: 0x985C44 Offset: 0x985C44 VA: 0x985C44
-		// public static void UnregisterLegalDesc() { }
+		public static void UnregisterLegalDesc()
+		{
+			m_onClickLegalDesc = null;
+		}
 
 		// // RVA: 0x991C30 Offset: 0x991C30 VA: 0x991C30
 		// private static void OnClickLegalDesc(Action endAction) { }
@@ -391,15 +394,15 @@ namespace XeApp.Game.Gacha
 			{
 				switch(v)
 				{
-					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.LCLLMJGIMHC/*1*/:
+					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.LCLLMJGIMHC_1/*1*/:
 						badgeText = MessageManager.Instance.GetMessage("menu", "badge_label_gacha_oneday");
 						break;
-					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.PBEMIDKNPNH/*2*/:
+					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.PBEMIDKNPNH_2/*2*/:
 						badgeText = MessageManager.Instance.GetMessage("menu", "badge_label_gacha_firsttime");
 						break;
-					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.DKIKNLEDDBK/*3*/:
+					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.DKIKNLEDDBK_3/*3*/:
 						return 0;
-					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.AAPLMEGMNJA/*4*/:
+					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.AAPLMEGMNJA_4/*4*/:
 						badgeText = MessageManager.Instance.GetMessage("menu", "badge_label_gacha_thistime");
 						break;
 				}
