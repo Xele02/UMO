@@ -215,7 +215,7 @@ Shader "MCRS/Diva/Opaque_Outline_Low" {
 				v2f o;
 
 				o.texcoord0 = v.texcoord0;
-				float4 screenvertex = UnityObjectToClipPos(v.position0);
+				float4 screenvertex = v.position0;
 				float4 projSpacePos;
 				projSpacePos.zw = screenvertex.zw;
 				float4 normaldir;
@@ -225,9 +225,10 @@ Shader "MCRS/Diva/Opaque_Outline_Low" {
 				float4 scaledNormal = (((
 					(v.color0.x * _EdgeThickness)
 					* 0.00285) * normalize(
-					(UnityObjectToClipPos(float4(normaldir)))
+					(float4(normaldir))
 				)) * zbias);
 				projSpacePos.xy = (screenvertex.xy + scaledNormal.xy);
+				projSpacePos = UnityObjectToClipPos(projSpacePos);
 				o.position0 = projSpacePos;
 				return o; 
 			}
