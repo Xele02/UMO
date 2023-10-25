@@ -693,7 +693,7 @@ namespace XeApp.Game
 		{
 			if(SystemManager.isLongScreenDevice)
 			{
-				if(SystemManager.HasSafeArea)
+				if(!SystemManager.HasSafeArea)
 				{
 					if(LongScreenFrame != null)
 					{
@@ -718,7 +718,7 @@ namespace XeApp.Game
 			float baseHeight;
 			if (screenSizeType == 0)
 			{
-				if(SystemManager.isLongScreenDevice)
+				if(!SystemManager.isLongScreenDevice)
 				{
 					Debug.Log("SetupResolution:AppEnv");
 					baseWidth = 1184;
@@ -849,22 +849,22 @@ namespace XeApp.Game
 			{
 				sX = nativeY * 16.0f / 9.0f;
 			}
-			float f = SystemManager.rawSafeAreaRect.y;
-			float f2 = baseHeight / nativeY;
-			if (f <= 0)
+			float d0, d1;
+			if (SystemManager.rawSafeAreaRect.y <= 0)
 			{
-				f = baseHeight;
+				d0 = baseHeight;
 				if(SystemManager.isLongScreenDevice)
 				{
-					f /= nativeY;
+					d1 = baseHeight / nativeY;
+					d0 /= nativeY;
 				}
 				else
 				{
 					if (1 - nativeY / baseHeight < 1 - sX / baseWidth)
-						f = baseHeight / nativeY;
+						d0 = baseHeight / nativeY;
 					else
-						f = baseWidth / sX;
-					f2 = f;
+						d0 = baseWidth / sX;
+					d1 = d0;
 				}
 			}
 			else
@@ -872,20 +872,21 @@ namespace XeApp.Game
 				if(!SystemManager.isLongScreenDevice)
 				{
 					if (1 - nativeY / baseHeight < 1 - sX / baseWidth)
-						f = baseHeight / nativeY;
+						d0 = baseHeight / nativeY;
 					else
-						f = baseWidth / sX;
-					f2 = f;
+						d0 = baseWidth / sX;
+					d1 = d0;
 				}
 				else
 				{
-					f = (SystemManager.rawSafeAreaRect.y * baseHeight) / (SystemManager.rawScreenAreaRect.height - SystemManager.rawSafeAreaRect.y) + baseHeight;
-					f /= nativeY;
+					d0 = (SystemManager.rawSafeAreaRect.y * baseHeight) / (SystemManager.rawScreenAreaRect.height - SystemManager.rawSafeAreaRect.y) + baseHeight;
+					d0 /= nativeY;
+					d1 = baseHeight / nativeY;
 				}
 			}
 			// not sure of those 2 min
-			float r2 = Mathf.Min(f2, 1);
-			float r = Mathf.Min(f, 1);
+			float r2 = Mathf.Min(d1, 1);
+			float r = Mathf.Min(d0, 1);
 			float width = Mathf.RoundToInt(sX * r);
 			float height = Mathf.RoundToInt(nativeY * r);
 			SystemManager.longScreenReferenceResolution = new Vector2(sX * r2, nativeY * r2);
@@ -1074,8 +1075,8 @@ namespace XeApp.Game
 
 			root = new GameObject("Root");
 			canvasSystemGo.AddComponent<FlexibleCanvasLayoutChanger>();
-			le = canvasSystemGo.AddComponent<LayoutElement>();
-			CanvasScaler cs = canvasSystemGo.AddComponent<CanvasScaler>();
+			le = canvasSystemGo.GetComponent<LayoutElement>();
+			CanvasScaler cs = canvasSystemGo.GetComponent<CanvasScaler>();
 
 			rt = root.AddComponent<RectTransform>();
 			rt.SetParent(systemLayoutCanvas.transform,false);

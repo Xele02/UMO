@@ -68,10 +68,10 @@ namespace XeApp.Core
 			if(SystemManager.isLongScreenDevice)
 			{
 				canvasScaler.referenceResolution = SystemManager.longScreenReferenceResolution;
-				if(SystemManager.rawSafeAreaRect.xMin >= 0)
+				if(SystemManager.rawSafeAreaRect.y > 0)
 				{
 					childRootRect.localScale = new Vector3(SystemManager.rawSafeAreaRect.height * 1.0f / SystemManager.rawScreenAreaRect.height, SystemManager.rawSafeAreaRect.height * 1.0f / SystemManager.rawScreenAreaRect.height, 1);
-					childRootRect.localPosition = new Vector3(0, (SystemManager.rawSafeAreaRect.yMin * SystemManager.longScreenReferenceResolution.y * 1.0f / SystemManager.rawSafeAreaRect.height ) * 0.5f, 0);
+					childRootRect.localPosition = new Vector3(0, SystemManager.rawSafeAreaRect.position.y * SystemManager.longScreenReferenceResolution.y * 1.0f / SystemManager.rawScreenAreaRect.height * 0.5f, 0);
 				}
 			}
 		}

@@ -104,7 +104,7 @@ namespace XeApp.Game.Menu
 		private PopupUseItemWindow m_popupUseItemWindow; // 0x7C
 		private PopupDetailCostumeSetting m_popupDetailCostumeSetting = new PopupDetailCostumeSetting(); // 0x80
 		private HomeLobbyButtonController m_lobbyButtonControl; // 0x84
-		// private FlexibleLayoutCamera _flexibleLayoutCamera; // 0x88
+		private FlexibleLayoutCamera _flexibleLayoutCamera; // 0x88
 		private DenominationManager m_denomControl; // 0x8C
 		private long m_enterToHomeTime; // 0x90
 		private MenuSceneUpdater MenuUpdater; // 0x98
@@ -143,7 +143,12 @@ namespace XeApp.Game.Menu
 		public HelpButton HelpButton { get { return m_menuTransitionControl.HelpButton; } } //0xB2E6D8
 		public bool DirtyChangeScene { get { return m_menuTransitionControl.DirtyChangeScene; } } //0xB2E704
 		public HomeLobbyButtonController LobbyButtonControl { get { return m_lobbyButtonControl; } } //0xB2E730
-		// public FlexibleLayoutCamera FlexibleLayoutCamera { get; } 0xB2E738
+		public FlexibleLayoutCamera FlexibleLayoutCamera { get
+		{
+			if(_flexibleLayoutCamera == null)
+				_flexibleLayoutCamera = GetComponent<FlexibleLayoutCamera>();
+			return _flexibleLayoutCamera;
+		} } //0xB2E738
 		public DenominationManager DenomControl { get { return m_denomControl; } } //0xB2AB9C
 		public long EnterToHomeTime { get { return m_enterToHomeTime; } } //0xB2E7EC
 
@@ -474,7 +479,9 @@ namespace XeApp.Game.Menu
 			
 			if(SystemManager.isLongScreenDevice)
 			{
-				TodoLogger.LogError(0, "isLongScreenDevice");
+				FlexibleLayoutCamera.IsEnableFov = false;
+				int a = Mathf.CeilToInt(FlexibleLayoutCamera.GetDefaultFov(0) * GetLongScreenScale());
+				divaManager.SetCameraFov(a);
 			}
 			SetActiveDivaModel(m_sceneCamebackInfo.isDivaActive, true);
 			if(m_sceneCamebackInfo.flags == MenuSceneCamebackInfo.Flags.GotoTitle)

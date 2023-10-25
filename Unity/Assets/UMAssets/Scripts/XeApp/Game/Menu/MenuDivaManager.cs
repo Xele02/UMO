@@ -431,7 +431,10 @@ namespace XeApp.Game.Menu
 		//public void SwitchCameraRender(DivaCameraRenderSwitch renderSwitch) { }
 
 		//// RVA: 0xECBB88 Offset: 0xECBB88 VA: 0xECBB88
-		//public void SetCameraFov(float fov) { }
+		public void SetCameraFov(float fov)
+		{
+			divaCamera.fieldOfView = fov;
+		}
 
 		//// RVA: 0xECBBBC Offset: 0xECBBBC VA: 0xECBBBC
 		//public VectorI2 GetCameraPixelSize() { }
