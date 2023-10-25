@@ -2,9 +2,13 @@ using mcrs;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
+using UnityEngine;
+using XeApp.Core;
 using XeApp.Game.Common;
 using XeApp.Game.Gacha;
 using XeApp.Game.Tutorial;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -119,7 +123,7 @@ namespace XeApp.Game.Menu
 		private void Update()
 		{
 			if (m_view != null)
-				m_view.FBANBDCOEJL();
+				m_view.FBANBDCOEJL_Update();
 		}
 
 		// RVA: 0xEE6AE0 Offset: 0xEE6AE0 VA: 0xEE6AE0 Slot: 16
@@ -137,7 +141,7 @@ namespace XeApp.Game.Menu
 			HPBDNNACBAK gpm; // 0x2C
 
 			//0xEEF650
-			bool m_isEndOnPreSetCanvas = false;
+			m_isEndOnPreSetCanvas = false;
 			isGetGachaProduct = true;
 			int defaultGahcaId = 0;
 			if(PrevTransition == TransitionList.Type.EPISODE_APPEAL || PrevTransition == TransitionList.Type.GACHA_CHECK_NEW_COSTUME || PrevTransition == TransitionList.Type.GACHA_CHECK_NEW_VALKYRIE)
@@ -568,23 +572,141 @@ namespace XeApp.Game.Menu
 		//private void ResetLotInfo() { }
 
 		//// RVA: 0xEE7B18 Offset: 0xEE7B18 VA: 0xEE7B18
-		//private void OnClickEpisodeReward() { }
+		private void OnClickEpisodeReward()
+		{
+			TodoLogger.LogNotImplemented("OnClickEpisodeReward");
+		}
 
 		//// RVA: 0xEE7FE4 Offset: 0xEE7FE4 VA: 0xEE7FE4
-		//private void OnClickEpisodeAppeal() { }
+		private void OnClickEpisodeAppeal()
+		{
+			TodoLogger.LogNotImplemented("OnClickEpisodeAppeal");
+		}
 
 		//// RVA: 0xEE8188 Offset: 0xEE8188 VA: 0xEE8188
-		//private void OnClickDrawGacha(int lotCount) { }
+		private void OnClickDrawGacha(int lotCount)
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+			this.StartCoroutineWatched(OpenGachaPopup(GachaUtility.netGachaProductData.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON.GENEIBGNMPH_3 || lotCount > 1 ? GachaUtility.CountType.Multi : GachaUtility.CountType.Single));
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DCFEC Offset: 0x6DCFEC VA: 0x6DCFEC
 		//// RVA: 0xEE829C Offset: 0xEE829C VA: 0xEE829C
-		//private IEnumerator OpenGachaPopup(GachaUtility.CountType type) { }
+		private IEnumerator OpenGachaPopup(GachaUtility.CountType type)
+		{
+			//0xB6BD94
+			bool isOk = false;
+			bool isCancel = false;
+			GachaUtility.CancelCause cancelCause = GachaUtility.CancelCause.ClickButton;
+			MenuScene.Instance.InputDisable();
+			if (!MenuScene.CheckDatelineAndAssetUpdate())
+			{
+				GachaUtility.selectedCountType = type;
+				yield return Co.R(GachaUtility.OpenGachaTicketSelectPopupCoroutine(m_view, MenuScene.Instance.DenomControl, () =>
+				{
+					//0xEEDDF0
+					isOk = true;
+				}, (GachaUtility.CancelCause cause) =>
+				{
+					//0xEEDDFC
+					cancelCause = cause;
+					isCancel = true;
+				}, () =>
+				{
+					//0xEEDE0C
+					OnGachaNetError();
+				}, (TransitionList.Type gotoSceneType) =>
+				{
+					//0xEED198
+					if (gotoSceneType == TransitionList.Type.TITLE)
+						MenuScene.Instance.GotoTitle();
+					else if (gotoSceneType == TransitionList.Type.LOGIN_BONUS)
+						MenuScene.Instance.GotoLoginBonus();
+					MenuScene.Instance.InputEnable();
+				}));
+			}
+			else
+			{
+				isOk = false;
+				isCancel = false;
+			}
+			if (isOk)
+			{
+				if (MenuScene.CheckDatelineAndAssetUpdate())
+				{
+					isOk = false;
+					isCancel = false;
+				}
+			}
+			if(!isOk)
+			{
+				if(isCancel)
+				{
+					if (cancelCause == GachaUtility.CancelCause.TimeLimit)
+						OntimeLimit();
+				}
+				MenuScene.Instance.InputEnable();
+				yield break;
+			}
+			bool isSuccess = false;
+			bool isFewVc = false;
+			bool isError = false;
+			List<MFDJIFIIPJD> itemList = null;
+			GachaUtility.DrawLot(SelectProductInfo, () =>
+			{
+				Method$XeApp.Game.Menu.GachaScene.<>c__DisplayClass53_1.<OpenGachaPopup>b__4()
+			}, () =>
+			{
+				Method$XeApp.Game.Menu.GachaScene.<>c__DisplayClass53_1.<OpenGachaPopup>b__5()
+			}, () =>
+			{
+				Method$XeApp.Game.Menu.GachaScene.<>c__DisplayClass53_1.<OpenGachaPopup>b__6()
+			});
+			while (!isSuccess && !isFewVc && !isError)
+				yield return null;
+			if(!isSuccess)
+			{
+				if (!isFewVc)
+					OnGachaNetError();
+				else
+					OnGachaFewVC();
+			}
+			else
+			{
+				OnDoGachaSuccess(itemList);
+			}
+			MenuScene.Instance.InputEnable();
+		}
 
 		//// RVA: 0xEE8340 Offset: 0xEE8340 VA: 0xEE8340
-		//private void OnSwipeToLeft() { }
+		private void OnSwipeToLeft()
+		{
+			if(MenuScene.Instance.GetInputDisableCount() < 1)
+			{
+				if(MenuScene.Instance.GetRaycastDisableCount() < 1)
+				{
+					if (MenuScene.Instance.IsTransition())
+						return;
+					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_004);
+					m_layoutBg.NextChangeBg();
+				}
+			}
+		}
 
 		//// RVA: 0xEE8510 Offset: 0xEE8510 VA: 0xEE8510
-		//private void OnSwipeToRight() { }
+		private void OnSwipeToRight()
+		{
+			if(MenuScene.Instance.GetInputDisableCount() < 1)
+			{
+				if(MenuScene.Instance.GetRaycastDisableCount() < 1)
+				{
+					if (MenuScene.Instance.IsTransition())
+						return;
+					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_004);
+					m_layoutBg.PrevChangeBg();
+				}
+			}
+		}
 
 		//// RVA: 0xEE86E0 Offset: 0xEE86E0 VA: 0xEE86E0
 		private void OnClickCardImage()
@@ -608,10 +730,16 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEE895C Offset: 0xEE895C VA: 0xEE895C
-		//private void OnClickGachaDetail() { }
+		private void OnClickGachaDetail()
+		{
+			TodoLogger.LogNotImplemented("OnClickGachaDetail");
+		}
 
 		//// RVA: 0xEE8CB4 Offset: 0xEE8CB4 VA: 0xEE8CB4
-		//private void OnClickPurchaseButton() { }
+		private void OnClickPurchaseButton()
+		{
+			TodoLogger.LogNotImplemented("OnClickPurchaseButton");
+		}
 
 		//// RVA: 0xEE8E48 Offset: 0xEE8E48 VA: 0xEE8E48
 		//private void OnClickBonusTicketPurchaseButton() { }
@@ -621,28 +749,126 @@ namespace XeApp.Game.Menu
 		//private IEnumerator Co_PurchaseButton(ProductListFilter filter) { }
 
 		//// RVA: 0xEE9038 Offset: 0xEE9038 VA: 0xEE9038
-		//private void OnClickPassPurchaseButton() { }
+		private void OnClickPassPurchaseButton()
+		{
+			TodoLogger.LogNotImplemented("OnClickPassPurchaseButton");
+		}
 
 		//// RVA: 0xEE9118 Offset: 0xEE9118 VA: 0xEE9118
 		//private void OnClickTicketConfirmButton() { }
 
 		//// RVA: 0xEE9698 Offset: 0xEE9698 VA: 0xEE9698
-		//private void OnClickRarityChange() { }
+		private void OnClickRarityChange()
+		{
+			TodoLogger.LogNotImplemented("OnClickRarityChange");
+		}
 
 		//// RVA: 0xEE97B0 Offset: 0xEE97B0 VA: 0xEE97B0
 		//private void OnClickLegalDesc(Action callback) { }
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DD0DC Offset: 0x6DD0DC VA: 0x6DD0DC
 		//// RVA: 0xEE6A40 Offset: 0xEE6A40 VA: 0xEE6A40
-		//private IEnumerator Co_LoadResources() { }
+		private IEnumerator Co_LoadResources()
+		{
+			//0xEEF32C
+			this.StartCoroutineWatched(Co_LoadLayout());
+			GachaUtility.InitPurchasePassWindow(transform);
+			yield return Co.R(Co_WaitForLoaded());
+			IsReady = true;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DD154 Offset: 0x6DD154 VA: 0x6DD154
 		//// RVA: 0xEE9974 Offset: 0xEE9974 VA: 0xEE9974
-		//private IEnumerator Co_LoadLayout() { }
+		private IEnumerator Co_LoadLayout()
+		{
+			StringBuilder bundleName; // 0x14
+			Font font; // 0x18
+			int bundleLoadCount; // 0x1C
+			AssetBundleLoadLayoutOperationBase layoutOp; // 0x20
+
+			//0xEEE9FC
+			bundleName = new StringBuilder();
+			font = GameManager.Instance.GetSystemFont();
+			bundleLoadCount = 0;
+			bundleName.Set("ly/155.xab");
+			layoutOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "root_gacha_bg_layout_root");
+			yield return layoutOp;
+			yield return Co.R(layoutOp.InitializeLayoutCoroutine(font, (GameObject instance) =>
+			{
+				//0xEECC3C
+				instance.transform.SetParent(transform, false);
+				m_layoutBg = instance.GetComponent<LayoutGachaBg>();
+			}));
+			bundleLoadCount++;
+			layoutOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "root_gacha_title_layout_root");
+			yield return layoutOp;
+			yield return Co.R(layoutOp.InitializeLayoutCoroutine(font, (GameObject instance) =>
+			{
+				//0xEECD0C
+				instance.transform.SetParent(transform, false);
+				m_layoutTitle = instance.GetComponent<LayoutGachaTitle>();
+			}));
+			bundleLoadCount++;
+			layoutOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "root_bannar_area_layout_root");
+			yield return layoutOp;
+			yield return Co.R(layoutOp.InitializeLayoutCoroutine(font, (GameObject instance) =>
+			{
+				//0xEECDDC
+				instance.transform.SetParent(transform, false);
+				m_layoutBannerList = instance.GetComponent<LayoutGachaBannerList>();
+			}));
+			bundleLoadCount++;
+			layoutOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "root_gacha_stone_layout_root");
+			yield return layoutOp;
+			yield return Co.R(layoutOp.InitializeLayoutCoroutine(font, (GameObject instance) =>
+			{
+				//0xEECEAC
+				instance.transform.SetParent(transform, false);
+				m_layoutHeaderInfo = instance.GetComponent<LayoutGachaHeaderInfo>();
+			}));
+			bundleLoadCount++;
+			layoutOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "root_gacha_legal_layout_root");
+			yield return layoutOp;
+			yield return Co.R(layoutOp.InitializeLayoutCoroutine(font, (GameObject instance) =>
+			{
+				//0xEECF7C
+				instance.transform.SetParent(transform, false);
+				m_layoutLegalButton = instance.GetComponent<LayoutGachaLegalButton>();
+			}));
+			bundleLoadCount++;
+			layoutOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "root_gacha_btn_layout_root");
+			yield return layoutOp;
+			yield return Co.R(layoutOp.InitializeLayoutCoroutine(font, (GameObject instance) =>
+			{
+				//0xEED04C
+				instance.transform.SetParent(transform, false);
+				m_layoutDrawButtonGroup = instance.GetComponent<LayoutGachaDrawButtonGroup>();
+			}));
+			bundleLoadCount++;
+			for(int i = 0; i < bundleLoadCount; i++)
+			{
+				AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DD1CC Offset: 0x6DD1CC VA: 0x6DD1CC
 		//// RVA: 0xEE9A20 Offset: 0xEE9A20 VA: 0xEE9A20
-		//private IEnumerator Co_WaitForLoaded() { }
+		private IEnumerator Co_WaitForLoaded()
+		{
+			//0xB6B8BC
+			while (m_layoutBg == null || !m_layoutBg.IsLoaded())
+				yield return null;
+			while (m_layoutTitle == null || !m_layoutTitle.IsLoaded())
+				yield return null;
+			while (m_layoutBannerList == null || !m_layoutBannerList.IsLoaded())
+				yield return null;
+			while (m_layoutHeaderInfo == null || !m_layoutHeaderInfo.IsLoaded())
+				yield return null;
+			while (m_layoutLegalButton == null || !m_layoutLegalButton.IsLoaded())
+				yield return null;
+			while (m_layoutDrawButtonGroup == null || !m_layoutDrawButtonGroup.IsLoaded())
+				yield return null;
+		}
 
 		//// RVA: 0xEE9AA8 Offset: 0xEE9AA8 VA: 0xEE9AA8
 		//private void OnDoGachaSuccess(List<MFDJIFIIPJD> items) { }
@@ -684,43 +910,25 @@ namespace XeApp.Game.Menu
 		//private static GameAttribute.Type GetCardAttributeType(int app_item_id) { }
 
 		//// RVA: 0xEEBCE4 Offset: 0xEEBCE4 VA: 0xEEBCE4
-		//private void OnClickTutorialAppearRate() { }
+		private void OnClickTutorialAppearRate()
+		{
+			TodoLogger.LogNotImplemented("OnClickTutorialAppearRate");
+		}
 
 		//// RVA: 0xEEC0EC Offset: 0xEEC0EC VA: 0xEEC0EC
-		//private void OnClickAppearRate() { }
+		private void OnClickAppearRate()
+		{
+			TodoLogger.LogNotImplemented("OnClickAppearRate");
+		}
 
 		//// RVA: 0xEEC680 Offset: 0xEEC680 VA: 0xEEC680
 		//private void OnClickEpisodeReward(int episodeId) { }
 
 		//// RVA: 0xEEC948 Offset: 0xEEC948 VA: 0xEEC948
 		//private void OnClickStepInfo(int stepIndex) { }
-		
+
 		//[CompilerGeneratedAttribute] // RVA: 0x6DD274 Offset: 0x6DD274 VA: 0x6DD274
 		//// RVA: 0xEECC38 Offset: 0xEECC38 VA: 0xEECC38
 		//private void <Co_PurchaseButton>b__60_0() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6DD284 Offset: 0x6DD284 VA: 0x6DD284
-		//// RVA: 0xEECC3C Offset: 0xEECC3C VA: 0xEECC3C
-		//private void <Co_LoadLayout>b__66_0(GameObject instance) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6DD294 Offset: 0x6DD294 VA: 0x6DD294
-		//// RVA: 0xEECD0C Offset: 0xEECD0C VA: 0xEECD0C
-		//private void <Co_LoadLayout>b__66_1(GameObject instance) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6DD2A4 Offset: 0x6DD2A4 VA: 0x6DD2A4
-		//// RVA: 0xEECDDC Offset: 0xEECDDC VA: 0xEECDDC
-		//private void <Co_LoadLayout>b__66_2(GameObject instance) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6DD2B4 Offset: 0x6DD2B4 VA: 0x6DD2B4
-		//// RVA: 0xEECEAC Offset: 0xEECEAC VA: 0xEECEAC
-		//private void <Co_LoadLayout>b__66_3(GameObject instance) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6DD2C4 Offset: 0x6DD2C4 VA: 0x6DD2C4
-		//// RVA: 0xEECF7C Offset: 0xEECF7C VA: 0xEECF7C
-		//private void <Co_LoadLayout>b__66_4(GameObject instance) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6DD2D4 Offset: 0x6DD2D4 VA: 0x6DD2D4
-		//// RVA: 0xEED04C Offset: 0xEED04C VA: 0xEED04C
-		//private void <Co_LoadLayout>b__66_5(GameObject instance) { }
 	}
 }

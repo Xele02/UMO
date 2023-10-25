@@ -1,7 +1,10 @@
+using mcrs;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -31,7 +34,145 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FFA2C Offset: 0x6FFA2C VA: 0x6FFA2C
 		//// RVA: 0xDE71A0 Offset: 0xDE71A0 VA: 0xDE71A0
-		//public IEnumerator CoroutineOpen() { }
+		public IEnumerator CoroutineOpen()
+		{
+			//0xDEA12C
+			MenuScene.Instance.InputDisable();
+			MenuScene.Instance.RaycastDisable();
+			GameManager.Instance.CloseSnsNotice();
+			bool t_done = false;
+			bool t_err = false;
+			bool t_jump_home = false;
+			bool t_goto_title = false;
+			NHPDPKHMFEP.HHCJCDFCLOB.FADCFLIHEPB_PreparePurchase(() =>
+			{
+				//0xDE8730
+				t_done = true;
+			}, () =>
+			{
+				//0xDE873C
+				t_done = true;
+				t_err = true;
+			}, () =>
+			{
+				//0xDE8748
+				t_jump_home = true;
+				t_done = true;
+			}, () =>
+			{
+				//0xDE8758
+				t_goto_title = true;
+				t_done = true;
+			});
+			while(!t_done)
+				yield return null;
+			MenuScene.Instance.InputEnable();
+			MenuScene.Instance.RaycastEnable();
+			if(t_jump_home)
+			{
+				MenuScene.Instance.Mount(TransitionUniqueId.LOGINBONUS, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+				yield break;
+			}
+			if (t_err)
+				yield break;
+			if(t_goto_title)
+			{
+				MenuScene.Instance.GotoTitle();
+				yield break;
+			}
+			int a = NHPDPKHMFEP.HHCJCDFCLOB.MENKMJPCELJ();
+			if (a < 0)
+				yield break;
+			if (a == 0 || (!NHPDPKHMFEP.HHCJCDFCLOB.ENAAHAPDMCO() && NHPDPKHMFEP.HHCJCDFCLOB.DCDDAAONHHC() && NHPDPKHMFEP.HHCJCDFCLOB.NGHHJMJPEHN()))
+			{
+				//LAB_00deb294
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				bool t_wait = true;
+				bool t_cancel = false;
+				PopPassSelectSetting t_setting = new PopPassSelectSetting();
+				t_setting.TitleText = bk.GetMessageByLabel("pop_pass_select_title");
+				t_setting.IsCaption = true;
+				t_setting.WindowSize = 2;
+				t_setting.Buttons = new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative };
+				t_setting.EnableNormalPlan = 0 < a;
+				PopupWindowControl t_cont = PopupWindowManager.Show(t_setting, () =>
+				{
+					Method$XeApp.Game.Menu.PopPassController.<>c__DisplayClass9_1.<CoroutineOpen>b__4()
+				}, null, null, null);
+				t_setting.OnClickLoginBonus = () =>
+				{
+					Method$XeApp.Game.Menu.PopPassController.<>c__DisplayClass9_1.<CoroutineOpen>b__5()
+				};
+				t_setting.OnClickNormal = () =>
+				{
+					Method$XeApp.Game.Menu.PopPassController.<>c__DisplayClass9_1.<CoroutineOpen>b__6()
+				};
+				t_setting.OnClickSpecial = () =>
+				{
+					Method$XeApp.Game.Menu.PopPassController.<>c__DisplayClass9_1.<CoroutineOpen>b__7()
+				};
+				while (t_wait)
+					yield return null;
+				if (t_cancel)
+					yield break;
+				MenuScene.Instance.RaycastDisable();
+				DestroyLayout();
+				GameObject gl = GameObject.Find("Canvas-Popup");
+				m_result = Result.None;
+				m_open_window = true;
+				MenuScene.Instance.InputDisable();
+				yield return Co.R(Co_LoadLayout(gl.transform.GetChild(0)));
+				m_layout_window.Initialize(NHPDPKHMFEP.HHCJCDFCLOB.BAFEDCMCONG() < 1, m_plan);
+				m_layout_window.m_cb_law_1 += CB_Law1;
+				m_layout_window.m_cb_law_2 += CB_Law2;
+				m_layout_window.m_cb_cancel += CB_Close;
+				m_layout_window.m_cb_buy += CB_CheckBuy;
+				m_layout_window.m_cb_agre += CB_Agre;
+				m_layout_window.m_cb_bonus += CB_Bonus;
+				m_layout_window.m_cb_detail += CB_Detail;
+				m_layout_window.m_cb_contract += CB_Contract;
+				m_layout_window.m_cb_privacy += CB_Privacy;
+				m_layout_popup.Initialize(m_plan);
+				m_list_btn.Clear();
+				m_list_btn.AddRange(m_layout_window.GetComponentsInChildren<ActionButton>(true));
+				m_list_scroll.Clear();
+				m_list_scroll.AddRange(m_layout_window.GetComponentsInChildren<ScrollRect>(true));
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_WND_000);
+				m_layout_window.Enter();
+				while (m_layout_window.IsPlayingAnim())
+					yield return null;
+				MenuScene.Instance.InputEnable();
+				//LAB_00deae18
+				while (m_result == Result.None)
+					yield return null;
+				MenuScene.Instance.InputDisable();
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_WND_001);
+				m_layout_window.Leave();
+				while (m_layout_window.IsPlayingAnim())
+					yield return null;
+				if(m_result != Result.Buy)
+				{
+					if(m_result == Result.Error)
+					{
+						MenuScene.Instance.GotoTitle();
+					}
+				}
+				else
+				{
+					yield return Co.R(Co_GotoHomePopupOpen());
+					MenuScene.Instance.Mount(TransitionUniqueId.LOGINBONUS, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+				}
+				//LAB_00deaf74
+				DestroyLayout();
+				MenuScene.Instance.InputEnable();
+				MenuScene.Instance.RaycastEnable();
+				m_open_window = false;
+			}
+			else
+			{
+				yield return Co.R(PopupLoginBonusMonthlyPass.Show(PopupLoginBonusMonthlyPass.Type.TitleMonthlyPass, false, null, null));
+			}
+		}
 
 		// RVA: 0xDE6FFC Offset: 0xDE6FFC VA: 0xDE6FFC
 		public void DestroyLayout()
