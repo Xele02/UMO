@@ -7,6 +7,7 @@ public static class UMO_PlayerPrefs
     static Dictionary<string, int> intValues = new Dictionary<string, int>();
     static string path = Application.persistentDataPath + "/pref.json";
     static bool isLoaded = false;
+    static int version = 1;
 
     public static void SetInt(string key, int value)
     {
@@ -33,6 +34,10 @@ public static class UMO_PlayerPrefs
                 intValues.Add((string)b[i]["k"], (int)b[i]["v"]);
             }
         }
+        if(GetInt("version", 0) < 1)
+        {
+            SetInt("forceWideScreen", 1);
+        }
     }
 
     public static int GetInt(string key, int defaultValue)
@@ -44,6 +49,7 @@ public static class UMO_PlayerPrefs
     }
     public static void Save()
     {
+        SetInt("version", 1);
         EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
         data["ints"] = new EDOHBJAPLPF_JsonData();
         data["ints"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);

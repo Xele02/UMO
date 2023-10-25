@@ -58,7 +58,7 @@ namespace XeSys
 		private Action DoUpdate { get; set; } // 0x20
 		public static Vector2 safeAreaScale { get; set; } // 0xA0
 		public static bool CanWideScreenMenu { get; set; } // 0xA8
-		public static bool HasSafeArea { get { return rawSafeAreaRect.width > 0; } } // get_HasSafeArea 0x23A50A4 
+		public static bool HasSafeArea { get { return rawSafeAreaRect.y > 0; } } // get_HasSafeArea 0x23A50A4 
 		public static bool IsForceWideScreen { get { return isForceWideScreen; } } // get_IsForceWideScreen 0x23A5150
 
 		// // RVA: 0x23A51DC Offset: 0x23A51DC VA: 0x23A51DC
@@ -99,13 +99,11 @@ namespace XeSys
 				NativeScreenSize = new Vector2(sHeight, sWidth);
 			else
 				NativeScreenSize = new Vector2(sWidth, sHeight);
-			rawSafeAreaRect = new Rect(Vector2.zero, NativeScreenSize);
+			rawSafeAreaRect = XeSafeArea.GetScreenArea();
 			rawScreenAreaRect = XeSafeArea.GetScreenArea();
 			BaseScreenSize = new Vector2(1184, 792);
 
-			int isForceWideScreen = UMO_PlayerPrefs.GetInt("forceWideScreen", 1);
-			if(isForceWideScreen != 1)
-				isForceWideScreen = 0;
+			isForceWideScreen = UMO_PlayerPrefs.GetInt("forceWideScreen", 1) == 1;
 			
 			AddToSystemGroup(InputManager.Create(inputManagerPrefab));
 			AddToSystemGroup(CriFileRequestManager.HEGEKFMJNCC(criFileRequestManagerPrefab));
@@ -153,8 +151,7 @@ namespace XeSys
 		public void UpdateScreenSize()
 		{
 			BaseScreenHalfSize = BaseScreenSize * 0.5f;
-			BaseAspect = BaseScreenSize.x / BaseScreenSize.y;
-			// ? Weird base aspect calc. Round to 2 digit ?
+			BaseAspect = Mathf.RoundToInt(BaseScreenSize.x / BaseScreenSize.y * 100) / 100;
 			if(CheckOverPermissionAspectRatio() == OverPermissionAspectResult.None)
 			{
 				ScreenSize = new Vector2(1184, 792);
@@ -164,8 +161,7 @@ namespace XeSys
 				ScreenSize = new Vector2(Screen.width, Screen.height);
 			}
 			ScreenHalfSize = ScreenSize * 0.5f;
-			ScreenAspect = ScreenSize.x / ScreenSize.y;
-			// ? Like BaseAspect
+			ScreenAspect = Mathf.RoundToInt(ScreenSize.x / ScreenSize.y * 100) / 100;
 			AdjustScale = ScreenSize / BaseScreenSize;
 			AdjustInvScale = Vector2.one / AdjustScale;
 			if(ScreenAspect < BaseAspect)
@@ -179,6 +175,7 @@ namespace XeSys
 				AdjustScaleValue = AdjustScale.x;
 			}
 			AdjustScaleInvValue = 1.0f / AdjustScaleValue;
+			isLongScreenDevice = false;
 			CanWideScreenMenu = false;
 			if(CheckOverPermissionAspectRatio() == OverPermissionAspectResult.HdivV)
 			{

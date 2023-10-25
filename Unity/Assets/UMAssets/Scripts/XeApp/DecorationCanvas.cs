@@ -187,7 +187,7 @@ namespace XeApp
 			Transform t = transform.Find(DecorationConstants.ItemRoot2 + "SpriteBase");
 			m_decorationItemRoot = t.transform;
 			m_decorationItemRootRect = m_decorationItemRoot.GetComponent<RectTransform>();
-			yield return 1;
+			yield return null;
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AAF0C Offset: 0x6AAF0C VA: 0x6AAF0C
