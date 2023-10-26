@@ -102,7 +102,7 @@ namespace XeApp
 			m_undoAreaData.m_floorId = -1;
 			m_undoAreaData.m_wallLId = -1;
 			m_undoAreaData.m_wallRId = -1;
-			yield return 1;
+			yield return null;
 		}
 
 		//// RVA: 0x1D83964 Offset: 0x1D83964 VA: 0x1D83964

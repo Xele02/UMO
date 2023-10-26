@@ -93,7 +93,7 @@ namespace XeApp
 					f2 = f1;
 					f1 = f;
 				} while((int)f2 < (int)f);
-				f2 = f2 % f;
+				f2 = (int)f2 % (int)f;
 			} while(f2 != 0);
 			int a1 = (int)m_screenRect.width / (int)f;
 			int a2 = (int)m_screenRect.height / (int)f;

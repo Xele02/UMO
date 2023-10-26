@@ -296,7 +296,7 @@ Shader "MCRS/Diva/Opaque_Outline_High" {
 				v2f o;
 
 				o.texcoord0 = v.texcoord0;
-				float4 screenvertex = UnityObjectToClipPos(v.position0);
+				float4 screenvertex = v.position0;
 				float4 projSpacePos;
 				projSpacePos.zw = screenvertex.zw;
 				float4 normaldir;
@@ -306,9 +306,10 @@ Shader "MCRS/Diva/Opaque_Outline_High" {
 				float4 scaledNormal = (((
 					(v.color0.x * _EdgeThickness)
 					* 0.00285) * normalize(
-					(UnityObjectToClipPos(float4(normaldir)))
+					(float4(normaldir))
 				)) * zbias);
 				projSpacePos.xy = (screenvertex.xy + scaledNormal.xy);
+				projSpacePos = UnityObjectToClipPos(projSpacePos); // while the original is correct on android gpu's this is typically the compilers job to fix
 				o.position0 = projSpacePos;
 				return o; 
 			}
