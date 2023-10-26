@@ -351,10 +351,10 @@ namespace XeApp.Game.Menu
 			else
 			{
 				m_layoutStepOnOff.StartChildrenAnimGoStop("02");
-				int stepNum = view.DPBDFPPMIPH.NECDFDNBHFK.LKHAAGIJEPG.DBNAGGGJDAB;
+				int stepNum = view.DPBDFPPMIPH.NECDFDNBHFK.LKHAAGIJEPG.DBNAGGGJDAB_CurrentStepIndex;
 				m_numberStepNum.SetNumber(stepNum, 0);
 				m_numberStepMax.SetNumber(view.DPBDFPPMIPH.NECDFDNBHFK.BMFEGOMNECF.Count);
-				m_layoutStepNum.StartChildrenAnimGoStop(view.DPBDFPPMIPH.NECDFDNBHFK.LKHAAGIJEPG.NMNLJFIDFJE < 0 ? "02" : "01");
+				m_layoutStepNum.StartChildrenAnimGoStop(view.DPBDFPPMIPH.NECDFDNBHFK.LKHAAGIJEPG.NMNLJFIDFJE_CurrentStepRestCount < 0 ? "02" : "01");
 				MMNNAPPLHFM m = view.DPBDFPPMIPH.NECDFDNBHFK.BMFEGOMNECF[stepNum - 1];
 				if(m != null)
 				{

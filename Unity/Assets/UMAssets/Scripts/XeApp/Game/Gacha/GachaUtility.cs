@@ -297,7 +297,7 @@ namespace XeApp.Game.Gacha
 				}
 				else if(type == GCAHJLOGMCI.KNMMOMEHDON.BCBJMKDAAKA_8)
 				{
-					return netGachaProductData.CHNFEEOJJCO(netGachaProductData.NECDFDNBHFK.LKHAAGIJEPG.DBNAGGGJDAB).LCJPKJMMIAP;
+					return netGachaProductData.CHNFEEOJJCO(netGachaProductData.NECDFDNBHFK.LKHAAGIJEPG.DBNAGGGJDAB_CurrentStepIndex).LCJPKJMMIAP;
 				}
 				if(lotType == LotType.Ticket)
 				{
@@ -338,7 +338,7 @@ namespace XeApp.Game.Gacha
 			}
 			if(type == GCAHJLOGMCI.KNMMOMEHDON.BCBJMKDAAKA_8)
 			{
-				MMNNAPPLHFM m = netGachaProductData.CHNFEEOJJCO(netGachaProductData.NECDFDNBHFK.LKHAAGIJEPG.DBNAGGGJDAB);
+				MMNNAPPLHFM m = netGachaProductData.CHNFEEOJJCO(netGachaProductData.NECDFDNBHFK.LKHAAGIJEPG.DBNAGGGJDAB_CurrentStepIndex);
 				return m.MFFNDOEPJFO + m.EKOFPNGPCIP;
 			}
 			if (netGachaMultiProduct == null)
@@ -665,7 +665,7 @@ namespace XeApp.Game.Gacha
 				{
 					if(selectCategory == GCAHJLOGMCI.KNMMOMEHDON.DLOPEFGOAPD_10)
 					{
-						yield return Co.R(OpenPurchasePassWindow());
+						yield return Co.R(OpenPurchasePassWindow(null));
 					}
 					else if(selectCategory == GCAHJLOGMCI.KNMMOMEHDON.OOABDNHIEFK_9)
 					{
@@ -777,13 +777,31 @@ namespace XeApp.Game.Gacha
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C4788 Offset: 0x6C4788 VA: 0x6C4788
 		// // RVA: 0x9931A0 Offset: 0x9931A0 VA: 0x9931A0
-		// public static IEnumerator OpenPurchaseVCWindow(DenominationManager denomControl, DJBHIFLHJLK onNetError, OnDenomChangeDate onChangeDate, ProductListFilter filter) { }
+		public static IEnumerator OpenPurchaseVCWindow(DenominationManager denomControl, DJBHIFLHJLK onNetError, OnDenomChangeDate onChangeDate, ProductListFilter filter)
+		{
+			//0x9990CC
+			bool isWait = true;
+			denomControl.StartPurchaseSequence(() =>
+			{
+				//0x9972E0
+				isWait = false;
+			}, () =>
+			{
+				//0x997378
+				isWait = false;
+			}, onNetError, onChangeDate, filter);
+			while (isWait)
+				yield return null;
+		}
 
 		// // RVA: 0x993298 Offset: 0x993298 VA: 0x993298
 		// public static void OpenFewVCPopup(Action onClose) { }
 
 		// // RVA: 0x9935E4 Offset: 0x9935E4 VA: 0x9935E4
-		// public static void OpenTimeLimitPopup(Action onClose) { }
+		public static void OpenTimeLimitPopup(Action onClose)
+		{
+			TodoLogger.LogNotImplemented("OpenTimeLimitPopup");
+		}
 
 		// // RVA: 0x993928 Offset: 0x993928 VA: 0x993928
 		public static void InitPurchasePassWindow(Transform transform)
@@ -1017,7 +1035,19 @@ namespace XeApp.Game.Gacha
 		// public static long GetCurrentHaveTicketPeriod() { }
 
 		// // RVA: 0x996394 Offset: 0x996394 VA: 0x996394
-		// public static void DrawLot(BEPHBEGDFFK.DMBKENKBIJD selectProductInfo, CDOPFBOHDEF onSuccess, DJBHIFLHJLK onFewVC, DJBHIFLHJLK onNetError) { }
+		public static void DrawLot(BEPHBEGDFFK.DMBKENKBIJD selectProductInfo, CDOPFBOHDEF onSuccess, DJBHIFLHJLK onFewVC, DJBHIFLHJLK onNetError)
+		{
+			if(selectCategory != GCAHJLOGMCI.KNMMOMEHDON.DLOPEFGOAPD_10)
+			{
+				if((!GameManager.Instance.IsTutorial && selectedLotType == LotType.PaidVC) || selectedLotType == LotType.Ticket)
+				{
+					//LAB_009964e4
+					pdm.DLFDPCDKHOB(netGachaProductData, netGachaCount, onSuccess, onFewVC, onNetError);
+					return;
+				}
+			}
+			pdm.JBOAMLIDAKF(netGachaProductData, netGachaCount, onSuccess, onFewVC, onNetError, GameManager.Instance.IsTutorial);
+		}
 
 		// // RVA: 0x98DF10 Offset: 0x98DF10 VA: 0x98DF10
 		// public static void DrawLotRetry(CDOPFBOHDEF onSuccess, DJBHIFLHJLK onFewVC, DJBHIFLHJLK onNetError) { }

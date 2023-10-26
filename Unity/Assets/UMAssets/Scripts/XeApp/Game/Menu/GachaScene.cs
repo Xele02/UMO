@@ -566,10 +566,23 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEE7948 Offset: 0xEE7948 VA: 0xEE7948
-		//private void OnTimeLimit() { }
+		private void OnTimeLimit()
+		{
+			if(m_view.DPBDFPPMIPH.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON.CCAPCGPIIPF_1)
+			{
+				GachaUtility.OpenTimeLimitPopup(ResetLotInfo);
+			}
+			else
+			{
+				JHHBAFKMBDL.HHCJCDFCLOB.HMIHFLGLHBA(OnGachaNetError);
+			}
+		}
 
 		//// RVA: 0xEE7AE4 Offset: 0xEE7AE4 VA: 0xEE7AE4
-		//private void ResetLotInfo() { }
+		private void ResetLotInfo()
+		{
+			m_layoutDrawButtonGroup.Setup(m_view);
+		}
 
 		//// RVA: 0xEE7B18 Offset: 0xEE7B18 VA: 0xEE7B18
 		private void OnClickEpisodeReward()
@@ -643,7 +656,7 @@ namespace XeApp.Game.Menu
 				if(isCancel)
 				{
 					if (cancelCause == GachaUtility.CancelCause.TimeLimit)
-						OntimeLimit();
+						OnTimeLimit();
 				}
 				MenuScene.Instance.InputEnable();
 				yield break;
@@ -652,15 +665,19 @@ namespace XeApp.Game.Menu
 			bool isFewVc = false;
 			bool isError = false;
 			List<MFDJIFIIPJD> itemList = null;
-			GachaUtility.DrawLot(SelectProductInfo, () =>
+			GachaUtility.DrawLot(SelectProductInfo, (List<MFDJIFIIPJD> items) =>
 			{
-				Method$XeApp.Game.Menu.GachaScene.<>c__DisplayClass53_1.<OpenGachaPopup>b__4()
+				//0xEEDE3C
+				isSuccess = true;
+				itemList = items;
 			}, () =>
 			{
-				Method$XeApp.Game.Menu.GachaScene.<>c__DisplayClass53_1.<OpenGachaPopup>b__5()
+				//
+				isFewVc = true;
 			}, () =>
 			{
-				Method$XeApp.Game.Menu.GachaScene.<>c__DisplayClass53_1.<OpenGachaPopup>b__6()
+				//0xEEDE58
+				isError = true;
 			});
 			while (!isSuccess && !isFewVc && !isError)
 				yield return null;
@@ -877,7 +894,10 @@ namespace XeApp.Game.Menu
 		//private void OnGachaFewVC() { }
 
 		//// RVA: 0xEE9D38 Offset: 0xEE9D38 VA: 0xEE9D38
-		//private void OnGachaNetError() { }
+		private void OnGachaNetError()
+		{
+			MenuScene.Instance.GotoTitle();
+		}
 
 		//// RVA: 0xEE9DD4 Offset: 0xEE9DD4 VA: 0xEE9DD4
 		//private void FetchAppearRate(Action onSuccess) { }

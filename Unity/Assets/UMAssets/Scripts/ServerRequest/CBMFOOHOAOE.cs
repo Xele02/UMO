@@ -8,8 +8,8 @@ public class CBMFOOHOAOE_Purchase : CACGCMBKHDI_Request
 	public int AFKAGFOFAHM_ProductId; // 0x7C
 	public int BPNPBJALGHM_Quantity; // 0x80
 	public int APHNELOFGAK_CurrencyId = 2; // 0x84
-	public int LGEKLPJFJEI; // 0x88
-	public int ICKAMKNDAEB; // 0x8C
+	public int LGEKLPJFJEI_TotalCurrency; // 0x88
+	public int ICKAMKNDAEB_Label; // 0x8C
 	public int LHMIIJEALCA; // 0x90
 	public bool JJHCNJKPAOK; // 0x94
 

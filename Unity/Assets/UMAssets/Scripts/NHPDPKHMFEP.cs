@@ -48,8 +48,8 @@ public class NHPDPKHMFEP
 
 	public enum GGNEBJEIFCP
 	{
-		CCAPCGPIIPF = 0,
-		AJAHGGBMOJE = 1,
+		CCAPCGPIIPF_0 = 0,
+		AJAHGGBMOJE_1 = 1,
 	}
 	
 	private const long HEJACPECLEH = 9223372036854775807;
@@ -280,13 +280,22 @@ public class NHPDPKHMFEP
 	// private void MMGBNBPAJAL() { }
 
 	// // RVA: 0x18994E8 Offset: 0x18994E8 VA: 0x18994E8
-	// public int BAFEDCMCONG() { }
+	public int BAFEDCMCONG_GetMonthlyPassRareGetCount()
+	{
+		return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HMMNDKHKEBC_MonthlyPass.HKABHJKHFKL_RareGetCnt;
+	}
 
 	// // RVA: 0x18995C4 Offset: 0x18995C4 VA: 0x18995C4
 	// public int KPEHCDMGHJC(NHPDPKHMFEP.GGNEBJEIFCP LDKJENNJPFL) { }
 
 	// // RVA: 0x18998DC Offset: 0x18998DC VA: 0x18998DC
-	// public string MNAMCPDKFGI(NHPDPKHMFEP.GGNEBJEIFCP LDKJENNJPFL) { }
+	public string MNAMCPDKFGI_GetPassPriceString(GGNEBJEIFCP LDKJENNJPFL)
+	{
+		FHPFLAGNCAF d = OHEIMMDOHOJ(MHKCPJDNJKI, LDKJENNJPFL);
+		if (d != null)
+			return d.NGIKLCDKAMB;
+		return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL("pass_price", "\\1,200");
+	}
 
 	// // RVA: 0x18999F8 Offset: 0x18999F8 VA: 0x18999F8
 	// public bool GJMGKBDGMOP(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG) { }
@@ -412,7 +421,10 @@ public class NHPDPKHMFEP
 	}
 
 	// // RVA: 0x189B788 Offset: 0x189B788 VA: 0x189B788
-	// public bool DCDDAAONHHC() { }
+	public bool DCDDAAONHHC()
+	{
+		return MKBOKLLDCFI == JAILOEFCNJP.BEBLECKOAPK.GIDILNEPILF_1;
+	}
 
 	// // RVA: 0x189B798 Offset: 0x189B798 VA: 0x189B798
 	// public void JDCDHJPBNIC() { }
@@ -504,8 +516,37 @@ public class NHPDPKHMFEP
 	}
 
 	// // RVA: 0x18996D4 Offset: 0x18996D4 VA: 0x18996D4
-	// private FHPFLAGNCAF OHEIMMDOHOJ(List<FHPFLAGNCAF> MHKCPJDNJKI, NHPDPKHMFEP.GGNEBJEIFCP LDKJENNJPFL) { }
+	private FHPFLAGNCAF OHEIMMDOHOJ(List<FHPFLAGNCAF> MHKCPJDNJKI, GGNEBJEIFCP LDKJENNJPFL)
+	{
+		string topplan_unique_key = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MEGJDBJCEOC_MonthlyPass.EFEGBHACJAL("topplan_unique_key", "");
+		if(LDKJENNJPFL == GGNEBJEIFCP.AJAHGGBMOJE_1)
+		{
+			return MHKCPJDNJKI.Find((FHPFLAGNCAF GHPLINIACBB) =>
+			{
+				//0x189E900
+				return GHPLINIACBB.FJGCDPLCIAK == topplan_unique_key;
+			});
+		}
+		else if(LDKJENNJPFL == GGNEBJEIFCP.CCAPCGPIIPF_0)
+		{
+			return MHKCPJDNJKI.Find((FHPFLAGNCAF GHPLINIACBB) =>
+			{
+				//0x189E8CC
+				return GHPLINIACBB.FJGCDPLCIAK != topplan_unique_key;
+			});
+		}
+		return null;
+	}
 
 	// // RVA: 0x189BBE8 Offset: 0x189BBE8 VA: 0x189BBE8
-	// public string EAHHCPGNCMF(NHPDPKHMFEP.GGNEBJEIFCP LDKJENNJPFL) { }
+	public string EAHHCPGNCMF(GGNEBJEIFCP LDKJENNJPFL)
+	{
+		MessageBank bk = MessageManager.Instance.GetBank("menu");
+		string str = "";
+		if (LDKJENNJPFL == GGNEBJEIFCP.AJAHGGBMOJE_1)
+			str = "pop_pass_sp_text";
+		if (LDKJENNJPFL == GGNEBJEIFCP.CCAPCGPIIPF_0)
+			str = "pop_pass_text";
+		return string.Format("{0}\n{1}\n{2}", bk.GetMessageByLabel(str + "01"), bk.GetMessageByLabel(str + "02"), bk.GetMessageByLabel(str + "_android"));
+	}
 }

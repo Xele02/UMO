@@ -53,7 +53,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x19ABD00 Offset: 0x19ABD00 VA: 0x19ABD00
 		public void Setup(KOPCFBCDBPC stepUpRecord, BEPHBEGDFFK view)
 		{
-			int step = stepUpRecord.LKHAAGIJEPG.DBNAGGGJDAB;
+			int step = stepUpRecord.LKHAAGIJEPG.DBNAGGGJDAB_CurrentStepIndex;
 			MMNNAPPLHFM m = stepUpRecord.BMFEGOMNECF.Find((MMNNAPPLHFM x) =>
 			{
 				//0x19AD67C
