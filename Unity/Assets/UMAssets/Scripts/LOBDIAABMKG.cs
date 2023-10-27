@@ -487,7 +487,30 @@ public class LOBDIAABMKG
 	}
 
 	// // RVA: 0x10C8500 Offset: 0x10C8500 VA: 0x10C8500
-	// public bool ICBNPNKJCBK(GCAHJLOGMCI.NFCAJPIJFAM BJLONGBNPCI, CDOPFBOHDEF BHFHGFKBOHH, DJBHIFLHJLK JGKOLBLPMPG, int BPNPBJALGHM = 1) { }
+	public bool ICBNPNKJCBK(GCAHJLOGMCI.NFCAJPIJFAM BJLONGBNPCI, CDOPFBOHDEF BHFHGFKBOHH, DJBHIFLHJLK JGKOLBLPMPG, int BPNPBJALGHM = 1)
+	{
+		KBPDNHOKEKD_ProductId k = DBHIEABGKII(BJLONGBNPCI);
+		if (BJLONGBNPCI != GCAHJLOGMCI.NFCAJPIJFAM.OBLEFFEJGIJ_8 && k != null)
+		{
+			AAOCPMCMPCP_GetNormalLotItems req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new AAOCPMCMPCP_GetNormalLotItems());
+			req.AFKAGFOFAHM = k.PPFNGGCBJKC_Id;
+			req.BPNPBJALGHM = BPNPBJALGHM;
+			req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request NHECPMNKEFK) =>
+			{
+				//0x10CC810
+				AAOCPMCMPCP_GetNormalLotItems r = NHECPMNKEFK as AAOCPMCMPCP_GetNormalLotItems;
+				r.NFEAMMJIMPG.HBHMAKNGKFK_Items = r.NFEAMMJIMPG.HBHMAKNGKFK_Items;
+				BHFHGFKBOHH(r.NFEAMMJIMPG.HBHMAKNGKFK_Items);
+			};
+			req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request NHECPMNKEFK) =>
+			{
+				//0x10CC9FC
+				JGKOLBLPMPG();
+			};
+			return true;
+		}
+		return false;
+	}
 
 	// // RVA: 0x10C875C Offset: 0x10C875C VA: 0x10C875C
 	// public void AHOOLEAGACO(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK JGKOLBLPMPG) { }
@@ -504,7 +527,43 @@ public class LOBDIAABMKG
 	// private IEnumerator BAKEDPGFOLF_GetStepUpItemRecord(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG) { }
 
 	// // RVA: 0x10C89CC Offset: 0x10C89CC VA: 0x10C89CC
-	// public static List<ANGEDJODMKO> KECIGJBEHBG(List<ANGEDJODMKO> PJJFEAHIPGL) { }
+	public static List<ANGEDJODMKO> KECIGJBEHBG(List<ANGEDJODMKO> PJJFEAHIPGL)
+	{
+		if (EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(PJJFEAHIPGL[PJJFEAHIPGL.Count - 1].JJBGOIMEIPF_ItemFullId) > 4)
+			return PJJFEAHIPGL;
+		if(EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(PJJFEAHIPGL[0].JJBGOIMEIPF_ItemFullId) < 5)
+		{
+			if (EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(PJJFEAHIPGL[0].JJBGOIMEIPF_ItemFullId) > 3)
+				return PJJFEAHIPGL;
+			List<ANGEDJODMKO> res = new List<ANGEDJODMKO>(10);
+			int idx = -1;
+			for(int i = 0; i < PJJFEAHIPGL.Count; i++)
+			{
+				if(idx != -1 || EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(PJJFEAHIPGL[i].JJBGOIMEIPF_ItemFullId) < 4)
+				{
+					res.Add(PJJFEAHIPGL[i]);
+				}
+				else
+				{
+					idx = i;
+				}
+			}
+			if (idx < 0)
+				return res;
+			res.Add(PJJFEAHIPGL[idx]);
+			return res;
+		}
+		else
+		{
+			List<ANGEDJODMKO> res = new List<ANGEDJODMKO>();
+			for(int i = 1; i < PJJFEAHIPGL.Count; i++)
+			{
+				res.Add(PJJFEAHIPGL[i]);
+			}
+			res.Add(PJJFEAHIPGL[0]);
+			return res;
+		}
+	}
 
 	// // RVA: 0x10C8F34 Offset: 0x10C8F34 VA: 0x10C8F34
 	// public static List<MFDJIFIIPJD> ENFHLLHHJKE(List<MFDJIFIIPJD> HBHMAKNGKFK) { }

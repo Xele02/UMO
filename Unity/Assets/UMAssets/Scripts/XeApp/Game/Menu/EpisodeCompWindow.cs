@@ -168,7 +168,7 @@ namespace XeApp.Game.Menu
 			m_add_episode_point = add_point;
 			m_reward_list = LGMEPLIJLNB.FKDIMODKKJD_GetEpisodeRewards(data.KELFCMEOPPM_EpId);
 			m_reward_index = EpisodeUtility.GetAcquiredRewardLastIndex(m_reward_list, (int)(m_point));
-			m_next.text = data.JBFLCHFEIGL.GOOIIPFHOIG.HAAJGNCFNJM;
+			m_next.text = data.JBFLCHFEIGL.GOOIIPFHOIG.HAAJGNCFNJM_ItemName;
 			m_point_den.SetNumber(data.ABLHIAEDJAI_CurrentPoint, 0);
 			m_point_mol.SetNumber(data.DMHDNKILKGI_MaxPoint, 0);
 			m_point_item_num.SetNumber(data.JBFLCHFEIGL.GOOIIPFHOIG.MBJIFDBEDAC_Cnt, 0);

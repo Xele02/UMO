@@ -10,7 +10,7 @@ public class OAGBCBBHMPF
         FKODKMNGCEH = 4,
         IMJLLLNHICJ = 5,
         KHMDGNKEFOD = 6,
-        JNBKOAKJDAL = 7,
+        JNBKOAKJDAL_7 = 7,
         NNAPCDMAAJM = 8,
         JAHALBMOANH = 9,
         OJOLFJGNEMO = 10,

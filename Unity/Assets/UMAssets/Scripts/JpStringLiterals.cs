@@ -262,6 +262,8 @@ class JpStringLiterals
 	public const string StringLiteral_12891 = "ガチャ"; // 0x03bb5424
 	public const string StringLiteral_12892 = "ライブ達成"; // 0x03bb5428
 	public const string StringLiteral_12893 = "プレゼントBOX"; // 0x03bb542c
+	public const string StringLiteral_11202 = "無料ガチャ"; //0x03bb39c0
+	public const string StringLiteral_11203 = "超時空ガチャチケット"; //0x03bb39c4
 	public const string StringLiteral_11216 = "デイリーミッション"; // 0x03bb39f8
 	public const string StringLiteral_11217 = "SNSミッション"; // 0x03bb39fc
 	public const string StringLiteral_11218 = "デビューミッション"; // 0x03bb3a00

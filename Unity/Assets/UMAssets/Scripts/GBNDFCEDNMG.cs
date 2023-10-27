@@ -77,7 +77,7 @@ public class GBNDFCEDNMG
         APIDIDMAKHL = 29,
         OOGEAGAJKAG = 30,
         PMMOLBAAHEM = 31,
-        JLFJCIOOABC = 32,
+        JLFJCIOOABC_32 = 32,
         CHIIAHIJFCB = 33,
         DMNIOHMDJEI = 34,
         KMHJDFJHMEP = 35,
