@@ -142,7 +142,6 @@ namespace XeApp
 			if(postType == PostType.Posted)
 			{
 				m_editItem = null;
-				setting.InitOrder = InitSortingOrder(setting.PriorityControl);
 			}
 			else if(postType == PostType.DragNewPost)
 			{
