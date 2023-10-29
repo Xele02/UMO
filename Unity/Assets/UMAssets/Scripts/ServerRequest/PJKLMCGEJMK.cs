@@ -29,8 +29,8 @@ public class PJKLMCGEJMK
     private const double IACPOAJPMNO = 1;
     private int MFNENCLNGKF; // 0x10
     private int OANLLFOHEPJ; // 0x14
-    private long NNODMPKKCJH = 1; // 0x18
-    private long JDIBBDGNFKH = 1; // 0x20
+    private long NNODMPKKCJH_RequestId = 1; // 0x18
+    private long JDIBBDGNFKH_PrevRequestId = 1; // 0x20
     public static long DALFMJFKCGJ; // 0x0
     public static bool KCEDAACIBFG; // 0x8
     private KPKEOIJHIMN OPFEFKOOMED = new KPKEOIJHIMN(); // 0x2C
@@ -143,6 +143,7 @@ public class PJKLMCGEJMK
     // // RVA: 0x931BD0 Offset: 0x931BD0 VA: 0x931BD0
     public CACGCMBKHDI_Request IFFNCAFNEAG_AddRequest(CACGCMBKHDI_Request ADKIDBJCAJA_Request)
     {
+        TodoLogger.Log(TodoLogger.Job, "AddRequest "+ADKIDBJCAJA_Request);
         ADKIDBJCAJA_Request.BNJPAKLNOPA_WorkerThreadQueue = BNJPAKLNOPA_WorkerThreadQueue;
         ADKIDBJCAJA_Request.PLOOEECNHFB_IsDone = false;
 
@@ -153,8 +154,8 @@ public class PJKLMCGEJMK
         ADKIDBJCAJA_Request.CFICLNJACCD_NumRetry = NLGJBBGAOLH;
         ADKIDBJCAJA_Request.GJAEJFLLKGC_RetryTime = BLKIMNAILKK;
         ADKIDBJCAJA_Request.KAEMPHIPDFN = KAEMPHIPDFN;
-        ADKIDBJCAJA_Request.CKOOCBJGHBI = NNODMPKKCJH;
-        NNODMPKKCJH++;
+        ADKIDBJCAJA_Request.CKOOCBJGHBI_RequestId = NNODMPKKCJH_RequestId;
+        NNODMPKKCJH_RequestId++;
 
         FCICFIAOLAM_RequestList.Add(ADKIDBJCAJA_Request);
 
@@ -165,6 +166,7 @@ public class PJKLMCGEJMK
     // RVA: 0x1AB65FC Offset: 0x1AB65FC VA: 0x1AB65FC
     public T IFFNCAFNEAG_AddRequest<T>(T ADKIDBJCAJA_Request)  where T : CACGCMBKHDI_Request
     { 
+        TodoLogger.Log(TodoLogger.Job, "AddRequest "+ADKIDBJCAJA_Request);
         ADKIDBJCAJA_Request.BNJPAKLNOPA_WorkerThreadQueue = BNJPAKLNOPA_WorkerThreadQueue;
         ADKIDBJCAJA_Request.PLOOEECNHFB_IsDone = false;
 
@@ -174,8 +176,8 @@ public class PJKLMCGEJMK
         ADKIDBJCAJA_Request.LHGPAJGIAME_ResultTime = time;
         ADKIDBJCAJA_Request.CFICLNJACCD_NumRetry = NLGJBBGAOLH;
         ADKIDBJCAJA_Request.GJAEJFLLKGC_RetryTime = BLKIMNAILKK;
-        ADKIDBJCAJA_Request.CKOOCBJGHBI = NNODMPKKCJH;
-        NNODMPKKCJH++;
+        ADKIDBJCAJA_Request.CKOOCBJGHBI_RequestId = NNODMPKKCJH_RequestId;
+        NNODMPKKCJH_RequestId++;
 
         FCICFIAOLAM_RequestList.Add(ADKIDBJCAJA_Request);
         return ADKIDBJCAJA_Request;
@@ -214,7 +216,6 @@ public class PJKLMCGEJMK
         // private float MEMLLCDHAIF; // 0x28
         // private SakashoAPICallContext GPBPFELFMFL; // 0x2C
         //0x933B50
-
         // 0
         yield return null;
         // 1
@@ -270,7 +271,7 @@ public class PJKLMCGEJMK
                 }
             }
 
-            bool enterIf = ADKIDBJCAJA.CKOOCBJGHBI >= JDIBBDGNFKH;
+            bool enterIf = ADKIDBJCAJA.CKOOCBJGHBI_RequestId >= JDIBBDGNFKH_PrevRequestId;
             if(!enterIf)
             {
                 OHFKAECPJPO(ADKIDBJCAJA);
@@ -279,7 +280,7 @@ public class PJKLMCGEJMK
             if(enterIf)
             {
                 ADKIDBJCAJA.OGPFKGAKOFD();
-                ADKIDBJCAJA.CKOOCBJGHBI = JDIBBDGNFKH;
+                JDIBBDGNFKH_PrevRequestId = ADKIDBJCAJA.CKOOCBJGHBI_RequestId;
                 float MEMLLCDHAIF = 0.0f;
                 SakashoAPICallContext GPBPFELFMFL = ADKIDBJCAJA.EBGACDGNCAA_CallContext;
                 //LAB_00934228
@@ -558,9 +559,9 @@ public class PJKLMCGEJMK
         objs[0] = "class=";
         objs[1] = ADKIDBJCAJA.GetType().FullName;
         objs[2] = ",";
-        objs[3] = JDIBBDGNFKH;
+        objs[3] = JDIBBDGNFKH_PrevRequestId;
         objs[4] = "->";
-        objs[5] = ADKIDBJCAJA.CKOOCBJGHBI;
+        objs[5] = ADKIDBJCAJA.CKOOCBJGHBI_RequestId;
 
         throw new Exception(string.Concat(objs));
     }

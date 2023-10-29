@@ -5,7 +5,10 @@ namespace XeSys
 	public class RandomUtil
 	{
 		// // RVA: 0x239AB64 Offset: 0x239AB64 VA: 0x239AB64
-		// public static bool RandomBool() { }
+		public static bool RandomBool()
+		{
+			return UnityEngine.Random.Range(0, 2) == 0;
+		}
 
 		// // RVA: 0x239AB90 Offset: 0x239AB90 VA: 0x239AB90
 		// public static float RandomSign() { }

@@ -59,7 +59,7 @@ namespace XeApp.Game.Gacha
 		private static Action<Action> m_onClickLegalDesc = null; // 0x10
 		private static PopPassController m_pop_pass_ctrl = null; // 0x38
 		public const int DirectionCardMax = 10;
-		// private static DirectionInfo s_directionInfo = null; // 0x3C
+		private static DirectionInfo s_directionInfo = null; // 0x3C
 
 		public static GCAHJLOGMCI.KNMMOMEHDON selectCategory { get { return m_selectCategory; } set { m_selectCategory = value; } } //0x9873E8 0x9902C8
 		public static int typeAndSeriesId { get { return m_typeAndSeriesId; } set { m_typeAndSeriesId = value; } } //0x990C3C 0x990E78
@@ -297,7 +297,7 @@ namespace XeApp.Game.Gacha
 				}
 				else if(type == GCAHJLOGMCI.KNMMOMEHDON.BCBJMKDAAKA_8)
 				{
-					return netGachaProductData.CHNFEEOJJCO(netGachaProductData.NECDFDNBHFK.LKHAAGIJEPG.DBNAGGGJDAB_CurrentStepIndex).LCJPKJMMIAP;
+					return netGachaProductData.CHNFEEOJJCO(netGachaProductData.NECDFDNBHFK.LKHAAGIJEPG_PlayerStatus.DBNAGGGJDAB_CurrentStepIndex).LCJPKJMMIAP_CurrencyAmmount;
 				}
 				if(lotType == LotType.Ticket)
 				{
@@ -338,8 +338,8 @@ namespace XeApp.Game.Gacha
 			}
 			if(type == GCAHJLOGMCI.KNMMOMEHDON.BCBJMKDAAKA_8)
 			{
-				MMNNAPPLHFM m = netGachaProductData.CHNFEEOJJCO(netGachaProductData.NECDFDNBHFK.LKHAAGIJEPG.DBNAGGGJDAB_CurrentStepIndex);
-				return m.MFFNDOEPJFO + m.EKOFPNGPCIP;
+				MMNNAPPLHFM m = netGachaProductData.CHNFEEOJJCO(netGachaProductData.NECDFDNBHFK.LKHAAGIJEPG_PlayerStatus.DBNAGGGJDAB_CurrentStepIndex);
+				return m.MFFNDOEPJFO_NormalCount + m.EKOFPNGPCIP_RareCount;
 			}
 			if (netGachaMultiProduct == null)
 				return 0;
@@ -378,7 +378,10 @@ namespace XeApp.Game.Gacha
 		// public static string GetGachaDetailWebViewTemplate() { }
 
 		// // RVA: 0x9855F4 Offset: 0x9855F4 VA: 0x9855F4
-		// public static void RegisterLegalDesc(Action<Action> onClickButton) { }
+		public static void RegisterLegalDesc(Action<Action> onClickButton)
+		{
+			m_onClickLegalDesc = onClickButton;
+		}
 
 		// // RVA: 0x985C44 Offset: 0x985C44 VA: 0x985C44
 		public static void UnregisterLegalDesc()
@@ -795,7 +798,10 @@ namespace XeApp.Game.Gacha
 		}
 
 		// // RVA: 0x993298 Offset: 0x993298 VA: 0x993298
-		// public static void OpenFewVCPopup(Action onClose) { }
+		public static void OpenFewVCPopup(Action onClose)
+		{
+			TodoLogger.LogNotImplemented("OpenFewVCPopup");
+		}
 
 		// // RVA: 0x9935E4 Offset: 0x9935E4 VA: 0x9935E4
 		public static void OpenTimeLimitPopup(Action onClose)
@@ -998,16 +1004,44 @@ namespace XeApp.Game.Gacha
 		}
 
 		// // RVA: 0x98AC48 Offset: 0x98AC48 VA: 0x98AC48
-		// public static void Register(List<MFDJIFIIPJD> items) { }
+		public static void Register(List<MFDJIFIIPJD> items)
+		{
+			int id = GetDivaIdForCutin();
+			bool byPaid = true;
+			if(selectedLotType != LotType.PaidVC)
+			{
+				byPaid = false;
+				if(selectedLotType == LotType.Ticket)
+					byPaid = true;
+			}
+			s_directionInfo = new DirectionInfo(items, byPaid, id);
+		}
 
 		// // RVA: 0x988F00 Offset: 0x988F00 VA: 0x988F00
 		// public static void Unregister() { }
 
 		// // RVA: 0x995CCC Offset: 0x995CCC VA: 0x995CCC
-		// public static int GetSeIdForMenuLeaving() { }
+		public static int GetSeIdForMenuLeaving()
+		{
+			if(selectCategory == GCAHJLOGMCI.KNMMOMEHDON.CCAPCGPIIPF_1)
+			{
+				if(!s_directionInfo.CheckContainsStarNum(4))
+					return -1;
+				return 22;
+			}
+			return -1;
+		}
 
 		// // RVA: 0x995AA0 Offset: 0x995AA0 VA: 0x995AA0
-		// private static int GetDivaIdForCutin() { }
+		private static int GetDivaIdForCutin()
+		{
+			int res = 10;
+			if(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0] != null)
+				res = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId;
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId > 0)
+				res = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId;
+			return res;
+		}
 
 		// // RVA: 0x9960DC Offset: 0x9960DC VA: 0x9960DC
 		public static bool IsNextFree()
@@ -1105,9 +1139,9 @@ namespace XeApp.Game.Gacha
 		// // RVA: 0x9969C8 Offset: 0x9969C8 VA: 0x9969C8
 		public static long GetGachaProductOpenTime(LOBDIAABMKG product)
 		{
-			if(product.KACECFNECON != null && product.KACECFNECON.JOFAGCFNKIO != 0)
+			if(product.KACECFNECON != null && product.KACECFNECON.JOFAGCFNKIO_OpenTime != 0)
 			{
-				return product.KACECFNECON.JOFAGCFNKIO;
+				return product.KACECFNECON.JOFAGCFNKIO_OpenTime;
 			}
 			return product.KJBGCLPMLCG_OpenedAt;
 		}

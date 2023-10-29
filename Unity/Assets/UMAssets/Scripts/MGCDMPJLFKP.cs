@@ -33,7 +33,59 @@ public class MGCDMPJLFKP
 		DHDCHLAIAMP.Clear();
 		if(File.Exists(ELLBAAFKDCH_FilePath))
 		{
-			TodoLogger.LogError(0, "PCODDPDFLHK");
+			using(FileStream f = new FileStream(ELLBAAFKDCH_FilePath, FileMode.Open))
+			{
+				using(BinaryReader r = new BinaryReader(f))
+				{
+					int version = r.ReadInt32();
+					if(version == 1)
+					{
+						int cnt = r.ReadInt32();
+						for(int i = 0; i < cnt; i++)
+						{
+							MIIIIBANPPB m = new MIIIIBANPPB();
+							m.FDEBLMKEMLF = r.ReadInt32();
+							m.CLDKMLONBHJ = r.ReadInt32();
+							m.JDDIOOJHIHP = r.ReadInt32();
+							m.INHOGJODJFJ = 0;
+							m.CADENLBDAEB = false;
+							m.NPDKEIIMCDI = 0;
+							DHDCHLAIAMP.Add(m);
+						}
+					}
+					else if(version == 2)
+					{
+						int cnt = r.ReadInt32();
+						for(int i = 0; i < cnt; i++)
+						{
+							MIIIIBANPPB m = new MIIIIBANPPB();
+							m.FDEBLMKEMLF = r.ReadInt32();
+							m.CLDKMLONBHJ = 0;
+							m.INHOGJODJFJ = r.ReadInt32();
+							m.CADENLBDAEB = r.ReadBoolean();
+							m.JDDIOOJHIHP = r.ReadInt32();
+							m.NPDKEIIMCDI = 0;
+							DHDCHLAIAMP.Add(m);
+						}
+					}
+					else if(version == 3)
+					{
+						int cnt = r.ReadInt32();
+						for(int i = 0; i < cnt; i++)
+						{
+							MIIIIBANPPB m = new MIIIIBANPPB();
+							m.CADENLBDAEB = false;
+							m.FDEBLMKEMLF = 0;
+							m.CLDKMLONBHJ = 0;
+							m.INHOGJODJFJ = 0;
+							m.JDDIOOJHIHP = 0;
+							m.NPDKEIIMCDI = r.ReadInt64();
+							DHDCHLAIAMP.Add(m);
+						}
+					}
+					r.Close();
+				}
+			}
 		}
 	}
 

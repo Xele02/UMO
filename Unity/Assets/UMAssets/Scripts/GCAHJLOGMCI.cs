@@ -42,7 +42,10 @@ public class GCAHJLOGMCI
 	}
 
 	//// RVA: 0x16A96CC Offset: 0x16A96CC VA: 0x16A96CC
-	//public static int GPAJHMLOPNP(int KAPMOPMDHJE) { }
+	public static int GPAJHMLOPNP(int KAPMOPMDHJE)
+	{
+		return (KAPMOPMDHJE % 1000000) / 100;
+	}
 
 	//// RVA: 0x16A9704 Offset: 0x16A9704 VA: 0x16A9704
 	//public static int AIAOCEGMOJP(int KAPMOPMDHJE) { }

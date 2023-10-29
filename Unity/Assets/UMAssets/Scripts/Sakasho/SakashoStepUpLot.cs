@@ -5,7 +5,10 @@ using System.Collections;
 public class SakashoStepUpLot : SakashoAPIBase
 {
 	//// RVA: 0x2E684B4 Offset: 0x2E684B4 VA: 0x2E684B4
-	//public static SakashoAPICallContext GetStepUpLotRecords(OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext GetStepUpLotRecords(OnSuccess onSuccess, OnError onError)
+	{
+		return new SakashoAPICallContext(Call(SakashoStepUpLotGetStepUpLotRecords, "", onSuccess, onError));
+	}
 
 	//// RVA: 0x2E68598 Offset: 0x2E68598 VA: 0x2E68598
 	//public static SakashoAPICallContext GetStepUpLotDetail(string key, int itemProbabilityDisplayDigit, int groupKeyProbabilityDisplayDigit, OnSuccess onSuccess, OnError onError) { }
@@ -22,7 +25,10 @@ public class SakashoStepUpLot : SakashoAPIBase
 	}
 
 	//// RVA: 0x2E68988 Offset: 0x2E68988 VA: 0x2E68988
-	//private static extern int SakashoStepUpLotGetStepUpLotRecords(int callbackId, string json) { }
+	private static int SakashoStepUpLotGetStepUpLotRecords(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoStepUpLotGetStepUpLotRecords(callbackId, json);
+	}
 
 	//// RVA: 0x2E68A98 Offset: 0x2E68A98 VA: 0x2E68A98
 	//private static extern int SakashoStepUpLotGetStepUpLotDetail(int callbackId, string json) { }

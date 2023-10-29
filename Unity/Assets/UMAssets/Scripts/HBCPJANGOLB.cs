@@ -24,12 +24,15 @@ public class HBCPJANGOLB
             long t = GachaUtility.GetGachaProductOpenTime(l[i]);
             if(t2 < t)
             {
-                for(int j = 0; j < l[i].KACECFNECON.NNDMIOEKKMM.Count; j++)
+                if(l[i].KACECFNECON != null)
                 {
-                    MNJNCKPELGE.Add(l[i].KACECFNECON.NNDMIOEKKMM[j]);
+                    for(int j = 0; j < l[i].KACECFNECON.NNDMIOEKKMM_NewEpisode.Count; j++)
+                    {
+                        MNJNCKPELGE.Add(l[i].KACECFNECON.NNDMIOEKKMM_NewEpisode[j]);
+                    }
+                    if(date < t && MNJNCKPELGE.Count > 0)
+                        date = t;
                 }
-                if(date < t && MNJNCKPELGE.Count > 0)
-                    date = t;
             }
         }
         if(date != 0)

@@ -94,7 +94,7 @@ namespace XeApp.Game.Menu
 		private LayoutGachaLegalButton m_layoutLegalButton; // 0x5C
 		private LayoutGachaDrawButtonGroup m_layoutDrawButtonGroup; // 0x60
 		private bool m_isEndOnPreSetCanvas; // 0x64
-		private GachaRatePopupSetting m_gachaRatePopupSetting = new GachaRatePopupSetting(); // 0x68
+		// private GachaRatePopupSetting m_gachaRatePopupSetting = new GachaRatePopupSetting(); // 0x68
 		private EpisodeRewardPopupSetting m_episodeRewardPopupSetting = new EpisodeRewardPopupSetting(); // 0x6C
 		private SceneStatePopupSetting m_sceneStatePopup; // 0x70
 		private GachaScene.AppearLot m_appearLot; // 0x74
@@ -283,7 +283,7 @@ namespace XeApp.Game.Menu
 					{
 						//0xEEDCFC
 						m_layoutBg.SetChangeBgLoopState(isSwipe, 0);
-					}
+					};
 					m_layoutHeaderInfo.OnClickVCButton = OnClickPurchaseButton;
 					if (GameManager.Instance.IsTutorial)
 						m_layoutLegalButton.OnClickDetailButton = OnClickTutorialAppearRate;
@@ -759,7 +759,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEE8E48 Offset: 0xEE8E48 VA: 0xEE8E48
-		//private void OnClickBonusTicketPurchaseButton() { }
+		private void OnClickBonusTicketPurchaseButton()
+		{
+			TodoLogger.LogNotImplemented("OnClickBonusTicketPurchaseButton");
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DD064 Offset: 0x6DD064 VA: 0x6DD064
 		//// RVA: 0xEE8DA4 Offset: 0xEE8DA4 VA: 0xEE8DA4
@@ -772,7 +775,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEE9118 Offset: 0xEE9118 VA: 0xEE9118
-		//private void OnClickTicketConfirmButton() { }
+		private void OnClickTicketConfirmButton()
+		{
+			TodoLogger.LogNotImplemented("OnClickTicketConfirmButton");
+		}
 
 		//// RVA: 0xEE9698 Offset: 0xEE9698 VA: 0xEE9698
 		private void OnClickRarityChange()
@@ -781,7 +787,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEE97B0 Offset: 0xEE97B0 VA: 0xEE97B0
-		//private void OnClickLegalDesc(Action callback) { }
+		private void OnClickLegalDesc(Action callback)
+		{
+			TodoLogger.LogNotImplemented("OnClickLegalDesc");
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DD0DC Offset: 0x6DD0DC VA: 0x6DD0DC
 		//// RVA: 0xEE6A40 Offset: 0xEE6A40 VA: 0xEE6A40
@@ -888,10 +897,20 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEE9AA8 Offset: 0xEE9AA8 VA: 0xEE9AA8
-		//private void OnDoGachaSuccess(List<MFDJIFIIPJD> items) { }
+		private void OnDoGachaSuccess(List<MFDJIFIIPJD> items)
+		{
+			GachaUtility.Register(items);
+			MenuScene.Instance.GotoGachaDirection();
+			if(!GameManager.Instance.IsTutorial)
+				return;
+			TodoLogger.LogError(0, "Tuto");
+		}
 
 		//// RVA: 0xEE9C74 Offset: 0xEE9C74 VA: 0xEE9C74
-		//private void OnGachaFewVC() { }
+		private void OnGachaFewVC()
+		{
+			GachaUtility.OpenFewVCPopup(MenuScene.Instance.InputEnable);
+		}
 
 		//// RVA: 0xEE9D38 Offset: 0xEE9D38 VA: 0xEE9D38
 		private void OnGachaNetError()

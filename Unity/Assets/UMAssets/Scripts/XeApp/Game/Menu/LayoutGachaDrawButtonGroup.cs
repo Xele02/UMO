@@ -77,7 +77,7 @@ namespace XeApp.Game.Menu
 					{
 						d = view.IIPOPGHKHBA(false);
 					}
-					if(view.DPBDFPPMIPH.KACECFNECON.CICLLABDFFK)
+					if(view.DPBDFPPMIPH.KACECFNECON.CICLLABDFFK_SaleButtonVisible)
 					{
 						ButtonL.Setup(view.DPBDFPPMIPH, d.APHNELOFGAK_CurrencyId, d.KPIHBPMOGKL_LotCount, d.MEANCEOIMGE.NPPGKNGIFGK_Price, d.MDEIKCBEHHC_Kakutei, false, 0, 0, 0);
 						ButtonR.Hidden = true;
@@ -161,7 +161,7 @@ namespace XeApp.Game.Menu
 						break;
 					if (string.IsNullOrEmpty(view.DPBDFPPMIPH.KACECFNECON.KLMPFGOCBHC_Description))
 					{
-						if(view.DPBDFPPMIPH.KACECFNECON.FLADABCFDFA.Count < 1)
+						if(view.DPBDFPPMIPH.KACECFNECON.FLADABCFDFA_Pickup.Count < 1)
 						{
 							b1 = false;
 							break;
@@ -179,7 +179,7 @@ namespace XeApp.Game.Menu
 					break;
 				case GCAHJLOGMCI.KNMMOMEHDON.OOABDNHIEFK_9:
 					b1 = false;
-					b2 = !view.DPBDFPPMIPH.KACECFNECON.CICLLABDFFK;
+					b2 = !view.DPBDFPPMIPH.KACECFNECON.CICLLABDFFK_SaleButtonVisible;
 					if(!b2)
 					{
 						int a = view.DPBDFPPMIPH.OMNAPCHLBHF(GCAHJLOGMCI.NFCAJPIJFAM.GOAHICNDICO_5);
@@ -345,17 +345,17 @@ namespace XeApp.Game.Menu
 				m_layoutStepOnOff.StartChildrenAnimGoStop("01");
 				if(view.DPBDFPPMIPH.KACECFNECON != null)
 				{
-					str = view.DPBDFPPMIPH.KACECFNECON.MKJPDIHLGBF;
+					str = view.DPBDFPPMIPH.KACECFNECON.MKJPDIHLGBF_FreeMulti;
 				}
 			}
 			else
 			{
 				m_layoutStepOnOff.StartChildrenAnimGoStop("02");
-				int stepNum = view.DPBDFPPMIPH.NECDFDNBHFK.LKHAAGIJEPG.DBNAGGGJDAB_CurrentStepIndex;
+				int stepNum = view.DPBDFPPMIPH.NECDFDNBHFK.LKHAAGIJEPG_PlayerStatus.DBNAGGGJDAB_CurrentStepIndex;
 				m_numberStepNum.SetNumber(stepNum, 0);
-				m_numberStepMax.SetNumber(view.DPBDFPPMIPH.NECDFDNBHFK.BMFEGOMNECF.Count);
-				m_layoutStepNum.StartChildrenAnimGoStop(view.DPBDFPPMIPH.NECDFDNBHFK.LKHAAGIJEPG.NMNLJFIDFJE_CurrentStepRestCount < 0 ? "02" : "01");
-				MMNNAPPLHFM m = view.DPBDFPPMIPH.NECDFDNBHFK.BMFEGOMNECF[stepNum - 1];
+				m_numberStepMax.SetNumber(view.DPBDFPPMIPH.NECDFDNBHFK.BMFEGOMNECF_Step.Count);
+				m_layoutStepNum.StartChildrenAnimGoStop(view.DPBDFPPMIPH.NECDFDNBHFK.LKHAAGIJEPG_PlayerStatus.NMNLJFIDFJE_CurrentStepRestCount < 0 ? "02" : "01");
+				MMNNAPPLHFM m = view.DPBDFPPMIPH.NECDFDNBHFK.BMFEGOMNECF_Step[stepNum - 1];
 				if(m != null)
 				{
 					str = m.KACECFNECON.KLMPFGOCBHC_Description;

@@ -32,6 +32,8 @@ class JpStringLiterals
 	public const string StringLiteral_9807 = "よろしくおねがいします"; // 0x03bb23f4
 	public const string StringLiteral_9829 = "デコルーム"; // 0x03bb244c
 	public const string StringLiteral_9874 = "未取得"; // 0x03bb2500
+	public const string StringLiteral_9949 = "★{0}1枚確定"; //0x03bb262c
+	public const string StringLiteral_9950 = "★{0}以上1枚確定"; //0x03bb2630
 	public const string StringLiteral_10040 = "お気に入り1"; // 0x03bb2798
 	public const string StringLiteral_10041 = "お気に入り2"; // 0x03bb279c
 	public const string StringLiteral_10042 = "お気に入り3"; // 0x03bb27a0
@@ -128,7 +130,9 @@ class JpStringLiterals
 	public const string StringLiteral_11088 = "SHOP 指定したラベルの商品が見つからない label="; //0x03bb37f8
 	public const string StringLiteral_11089 = "SHOP 商品の期限切れ label="; //0x03bb37fc
 	public const string StringLiteral_11090 = "SHOP 通信エラー発生 label="; //0x03bb3800
+	public const string StringLiteral_11115 = "★５1枚確定"; //0x03bb3864
 	public const string StringLiteral_11117 = "デカルガチャ"; //0x03bb386c
+	public const string StringLiteral_11118 = "★４以上1枚確定"; //0x03bb3870
 	public const string StringLiteral_11136 = "3D標準"; // 0x03bb38b8
 	public const string StringLiteral_11137 = "3D軽量"; // 0x03bb38bc
 	public const string StringLiteral_11139 = "カスタム"; // 0x03bb38c4
@@ -317,6 +321,7 @@ class JpStringLiterals
 	public const string StringLiteral_12936 = "ホーム自動再生"; // 0x03bb54d8
 	public const string StringLiteral_12937 = "能力ボード"; // 0x03bb54dc
 	public const string StringLiteral_12943 = "バルキリー小隊"; //0x03bb54f4
+	public const string StringLiteral_13053 = "★[0-9]"; //0x03bb56ac
 	public const string StringLiteral_13101 = "5分以内"; // 0x03bb576c
 	public const string StringLiteral_13102 = "分前"; // 0x03bb5770
 	public const string StringLiteral_13103 = "時間前"; // 0x03bb5774

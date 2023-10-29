@@ -1,11 +1,11 @@
-﻿
+
 using System.Text.RegularExpressions;
 
-public class EBOCABJKMFB : IKMBBPDBECA
+public class PDMEOLIBGJD : IKMBBPDBECA
 {
-	//// RVA: 0x14FFF40 Offset: 0x14FFF40 VA: 0x14FFF40 Slot: 4
+	// RVA: 0xCC1EC0 Offset: 0xCC1EC0 VA: 0xCC1EC0 Slot: 4
 	public override void KHEKNNFCAOI(string DLENPPIJNPA)
-	{
+    {
 		EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(DLENPPIJNPA);
 		if(data.BBAJPINMOEP_Contains("name"))
 		{
@@ -63,27 +63,16 @@ public class EBOCABJKMFB : IKMBBPDBECA
 		MDEIKCBEHHC = "";
 		if(data.BBAJPINMOEP_Contains("kakutei"))
 		{
-			int kakutei = (int)data["kakutei"];
-			if(kakutei > 4)
-			{
-				string s = kakutei.ToString();
-				s = Regex.Replace(s, "[0-9]", (Match MABBBOEAPAA) =>
-				{
-					//0x15023C8
-					return (MABBBOEAPAA.Value[0] - 0x120).ToString();
-				});
-				MDEIKCBEHHC = string.Format(JpStringLiterals.StringLiteral_9949, s);
-			}
-			if(kakutei == 4)
-			{
-				string s = kakutei.ToString();
-				s = Regex.Replace(s, "[0-9]", (Match MABBBOEAPAA) =>
-				{
-					//0x1502440
-					return (MABBBOEAPAA.Value[0] - 0x120).ToString();
-				});
-				MDEIKCBEHHC = string.Format(JpStringLiterals.StringLiteral_9950, s);
-			}
+            MDEIKCBEHHC = data["kakutei"].ToString();
+            if(Regex.IsMatch(MDEIKCBEHHC, JpStringLiterals.StringLiteral_13053))
+            {
+                string s = Regex.Replace(Regex.Match(MDEIKCBEHHC, JpStringLiterals.StringLiteral_13053).Value, "[0-9]", (Match MABBBOEAPAA) =>
+                {
+                    //0xCC431C
+                    return (MABBBOEAPAA.Value[0] - 0x120).ToString();
+                });
+                MDEIKCBEHHC = Regex.Replace(MDEIKCBEHHC, JpStringLiterals.StringLiteral_13053, s);
+            }
 		}
 		MFICPBJPCCJ_GachaBgId = 0;
 		HNKHCIDOKFF_PlateBgId = 0;
@@ -198,7 +187,7 @@ public class EBOCABJKMFB : IKMBBPDBECA
 					int ep = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[a - 1].KELFCMEOPPM_Ep;
 					HGBOODNMNFM h = NNDMIOEKKMM_NewEpisode.Find((HGBOODNMNFM GHPLINIACBB) =>
 					{
-						//0x15024B8
+						//0xCC4394
 						return ep == GHPLINIACBB.KELFCMEOPPM_EpisodeId;
 					});
 					if(h != null)
@@ -263,5 +252,5 @@ public class EBOCABJKMFB : IKMBBPDBECA
 		{
 			CICLLABDFFK_SaleButtonVisible = (int)data["sale_button_visible"] != 0;
 		}
-	}
+    }
 }

@@ -109,7 +109,7 @@ namespace XeApp.Game.Menu
 			m_sceneIds = null;
 			if (view.DPBDFPPMIPH.KACECFNECON != null)
 			{
-				m_sceneIds = m_view.DPBDFPPMIPH.KACECFNECON.PGKIHFOKEHL;
+				m_sceneIds = m_view.DPBDFPPMIPH.KACECFNECON.PGKIHFOKEHL_Feature;
 			}
 			if(m_view.DPBDFPPMIPH.MFICPBJPCCJ < 1)
 			{

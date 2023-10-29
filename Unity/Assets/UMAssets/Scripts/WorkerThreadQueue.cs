@@ -58,7 +58,7 @@ namespace XeApp
 					Monitor.Enter(sync, ref isLocked);
 					jobs.Add(job);
 					resetEvent.Set();
-					TodoLogger.Log(TodoLogger.Job, "Added job " +job);
+					TodoLogger.Log(TodoLogger.Job, "Added job " +job.Method+" "+job.Target);
 					if(isLocked)
 						Monitor.Exit(sync);
 				}
@@ -69,9 +69,9 @@ namespace XeApp
 					Action job = GetJob();
 					while(job != null)
 					{
-						TodoLogger.Log(TodoLogger.Job, "Executing job " + job);
+						TodoLogger.Log(TodoLogger.Job, "Executing job " +job.Method+" "+job.Target);
 						job();
-						TodoLogger.Log(TodoLogger.Job, "Executed job " + job);
+						TodoLogger.Log(TodoLogger.Job, "Executed job " +job.Method+" "+job.Target);
 						bool isLocked = false;
 						Monitor.Enter(sync, ref isLocked);
 
