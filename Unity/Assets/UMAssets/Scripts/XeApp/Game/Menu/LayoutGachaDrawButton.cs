@@ -78,9 +78,13 @@ namespace XeApp.Game.Menu
 				Disable = LKBGPLDLNIK.JPIMHNNGJGI(currentTime) != 0;
 			}
 			else if (ticketCount < 1 || tkt == null)
+			{
 				Disable = false;
+			}
 			else
+			{
 				Disable = ticketCount < lotCount;
+			}
 		}
 
 		//// RVA: 0x19ABFC0 Offset: 0x19ABFC0 VA: 0x19ABFC0

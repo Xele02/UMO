@@ -296,7 +296,7 @@ namespace XeApp.Game.Menu
 				int id = view.DPBDFPPMIPH.FKKCFICCGMM(d.APHNELOFGAK_CurrencyId);
 				if(id > 0)
 				{
-					GameManager.Instance.ItemTextureCache.Load(a, (IiconTexture icon) =>
+					GameManager.Instance.ItemTextureCache.Load(id, (IiconTexture icon) =>
 					{
 						//0x19B051C
 						m_imageTicketIcon.enabled = true;
@@ -438,10 +438,11 @@ namespace XeApp.Game.Menu
 			m_layoutEvTicket = layout.FindViewById("sw_gacha_frm_ticket_eve_onoff_anim") as AbsoluteLayout;
 			for(int i = 0; i < m_button.Length; i++)
 			{
+				int index = i;
 				m_button[i].AddOnClickCallback(() =>
 				{
 					//0x19B07A8
-					LayoutGachaDrawButton button = m_button[i];
+					LayoutGachaDrawButton button = m_button[index];
 					if (OnClickButton != null)
 						OnClickButton(button.LotCount);
 				});

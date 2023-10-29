@@ -804,6 +804,7 @@ namespace ExternLib
 			{
 				for (int i = 0; i < arrayData2.HNBFOAJIIAL_Count; i++)
 				{
+					arrayData2[i]["closed_at"] = Utility.GetCurrentUnixTime() + 24*3600;
 					res["products"].Add(arrayData2[i]);
 				}
 			}

@@ -2255,8 +2255,51 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x97C4A8 Offset: 0x97C4A8 VA: 0x97C4A8
 		private IEnumerator Co_LimitedItemPeriodPopup(int itemId, int itemCount, long currentTime, long period)
 		{
-			TodoLogger.LogError(0, "Co_LimitedItemPeriodPopup");
-			yield return null;
+			int itemValue; // 0x2C
+			ILDKBCLAFPB.FIDNFICGLEE_LimitedItemWarning saveDataLimit; // 0x30
+
+			//0x13CEFD4
+			bool isClose = false;
+			itemValue = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId);
+			saveDataLimit = GameManager.Instance.localSave.EPJOACOONAC_GetSave().KPHPNFBBLPA_LimitedItemWarning;
+			long t = 0;
+			if(itemValue == 3)
+			{
+				t = saveDataLimit.NKJODNGKFPB_LimitedItemGachaTicketDate;
+			}
+			else if(itemValue == 2)
+			{
+				t = saveDataLimit.LANFKFKIADL_LogboGachaTicketDate;
+			}
+			else if(itemValue == 1)
+			{
+				t = saveDataLimit.HCKHMGNIKMB_GachaTicketDate;
+			}
+			TimeSpan ts;
+			int range = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("limited_item_show_warning_time", 3);
+			long expire = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.AFHFIPLOKMN_LimitedItem.BLKPKBICPKK(itemValue, currentTime);
+			if(IsShowLimitedPopup(currentTime, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, t, expire, range, out ts))
+			{
+				yield return Co.R(ShowLimitedItemPopup(itemId, itemCount, (int)expire, ts, () =>
+				{
+					//0x13C7810
+					isClose = true;
+				}));
+				while(!isClose)
+					yield return null;
+				if(itemValue == 3)
+				{
+					saveDataLimit.NKJODNGKFPB_LimitedItemGachaTicketDate = currentTime;
+				}
+				else if(itemValue == 2)
+				{
+					saveDataLimit.LANFKFKIADL_LogboGachaTicketDate = currentTime;
+				}
+				else if(itemValue == 1)
+				{
+					saveDataLimit.HCKHMGNIKMB_GachaTicketDate = currentTime;
+				}
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E4254 Offset: 0x6E4254 VA: 0x6E4254

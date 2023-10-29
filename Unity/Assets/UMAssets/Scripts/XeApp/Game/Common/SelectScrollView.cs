@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine.EventSystems;
 using System.Collections;
+using UnityEditor.Build.Content;
 
 namespace XeApp.Game.Common
 {
@@ -252,19 +253,81 @@ namespace XeApp.Game.Common
 		// RVA: 0x139102C Offset: 0x139102C VA: 0x139102C Slot: 46
 		public override void OnDrag(PointerEventData eventData)
 		{
-			TodoLogger.LogError(0, "OnDrag()");
+			if(!isEnableTouch)
+				return;
+			base.OnDrag(eventData);
 		}
 
 		// RVA: 0x1391040 Offset: 0x1391040 VA: 0x1391040 Slot: 44
 		public override void OnBeginDrag(PointerEventData eventData)
 		{
-			TodoLogger.LogError(0, "OnBeginDrag()");
+			if(
+#if UNITY_ANDROID
+				eventData.pointerId == 0
+#else
+				eventData.pointerId == -1
+#endif
+			)
+			{
+				isEnableTouch = true;
+			}
+			else
+			{
+				isEnableTouch = !isSingleTouch;
+				if(isSingleTouch)
+					return;
+			}
+			base.OnBeginDrag(eventData);
+			isDrag = true;
+			if(OnSwipe != null)
+				OnSwipe(true);
 		}
 
 		// RVA: 0x1391124 Offset: 0x1391124 VA: 0x1391124 Slot: 45
 		public override void OnEndDrag(PointerEventData eventData)
 		{
-			TodoLogger.LogError(0, "OnEndDrag()");
+			base.OnEndDrag(eventData);
+			isDrag = false;
+			Vector2 pos = content.anchoredPosition;
+			RectTransform rt = transform as RectTransform;
+			if(vertical)
+			{
+				float prev = verticalNormalizedPosition;
+				if(rt.sizeDelta.y <= content.sizeDelta.y)
+				{
+					if(verticalNormalizedPosition <= 0)
+					{
+						verticalNormalizedPosition = 0;
+						pos = content.anchoredPosition;
+						verticalNormalizedPosition = prev;
+					}
+				}
+				else
+				{
+					pos = Vector2.zero;
+				}
+				SetPosition(Mathf.RoundToInt(pos.y / (itemSize.y + spacing.y)), 0.1f);
+			}
+			if(horizontal)
+			{
+				float prev = horizontalNormalizedPosition;
+				if(rt.sizeDelta.x <= content.sizeDelta.x)
+				{
+					if(horizontalNormalizedPosition >= 1)
+					{
+						horizontalNormalizedPosition = 1;
+						pos = content.anchoredPosition;
+						horizontalNormalizedPosition = prev;
+					}
+				}
+				else
+				{
+					pos = Vector2.zero;
+				}
+				SetPosition(Mathf.RoundToInt(-pos.x / (itemSize.x + spacing.x)), 0.1f);
+			}
+			if(OnSwipe != null)
+				OnSwipe(isDrag);
 		}
 	}
 }
