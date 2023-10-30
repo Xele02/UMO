@@ -54,7 +54,7 @@ namespace XeApp.Game.Gacha
 			}
 		}
 
-		private static GCAHJLOGMCI.KNMMOMEHDON m_selectCategory = GCAHJLOGMCI.KNMMOMEHDON.HJNNKCMLGFL; // 0x0
+		private static GCAHJLOGMCI.KNMMOMEHDON m_selectCategory = GCAHJLOGMCI.KNMMOMEHDON.HJNNKCMLGFL_0; // 0x0
 		private static int m_typeAndSeriesId = -1; // 0x4
 		private static Action<Action> m_onClickLegalDesc = null; // 0x10
 		private static PopPassController m_pop_pass_ctrl = null; // 0x38
@@ -73,7 +73,7 @@ namespace XeApp.Game.Gacha
 		public static GachaUtility.Timezone currentTimezone { get; private set; } // 0x30
 		public static bool canLotCurrentTimezone { get; private set; } // 0x34
 		// public static bool hasDirectionInfo { get; } 0x995C38
-		// public static DirectionInfo directionInfo { get; } 0x989904
+		public static DirectionInfo directionInfo { get { return s_directionInfo; } } //0x989904
 		public static GCAHJLOGMCI.NFCAJPIJFAM netGachaCount { get; set; } // 0x40
 		public static GCAHJLOGMCI.NFCAJPIJFAM netGachaCountForAppearRate { get; private set; } // 0x44
 		private static int netGachaProductIndex { get; set; } // 0x48
@@ -1018,7 +1018,10 @@ namespace XeApp.Game.Gacha
 		}
 
 		// // RVA: 0x988F00 Offset: 0x988F00 VA: 0x988F00
-		// public static void Unregister() { }
+		public static void Unregister()
+		{
+			s_directionInfo = null;
+		}
 
 		// // RVA: 0x995CCC Offset: 0x995CCC VA: 0x995CCC
 		public static int GetSeIdForMenuLeaving()
@@ -1084,7 +1087,18 @@ namespace XeApp.Game.Gacha
 		}
 
 		// // RVA: 0x98DF10 Offset: 0x98DF10 VA: 0x98DF10
-		// public static void DrawLotRetry(CDOPFBOHDEF onSuccess, DJBHIFLHJLK onFewVC, DJBHIFLHJLK onNetError) { }
+		public static void DrawLotRetry(CDOPFBOHDEF onSuccess, DJBHIFLHJLK onFewVC, DJBHIFLHJLK onNetError)
+		{
+			if(selectCategory != GCAHJLOGMCI.KNMMOMEHDON.DLOPEFGOAPD_10)
+			{
+				if(selectedLotType == LotType.PaidVC || selectedLotType == LotType.Ticket)
+				{
+					pdm.DLFDPCDKHOB(netGachaProductData, netGachaCount, onSuccess, onFewVC, onNetError);
+					return;
+				}
+			}
+			pdm.JBOAMLIDAKF(netGachaProductData, netGachaCount, onSuccess, onFewVC, onNetError, false);
+		}
 
 		// // RVA: 0x9965FC Offset: 0x9965FC VA: 0x9965FC
 		// public static void ClearNetData() { }

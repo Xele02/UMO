@@ -229,7 +229,12 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1396BFC Offset: 0x1396BFC VA: 0x1396BFC
-		// public void RequestEntryGachaCueSheet(UnityAction onLoadedCallback) { }
+		public void RequestEntryGachaCueSheet(UnityAction onLoadedCallback)
+		{
+			RemoveSectionallySECueSheet();
+			string[] l = new string[2] { "cs_se_menu", "cs_se_gacha" };
+			this.StartCoroutineWatched(Co_InstallProcess(l, onLoadedCallback));
+		}
 
 		// // RVA: 0x1396D70 Offset: 0x1396D70 VA: 0x1396D70
 		public void RequestEntryAdvCueSheet(UnityAction onLoadedCallback)

@@ -3,7 +3,7 @@ public class GCAHJLOGMCI
 {
 	public enum KNMMOMEHDON
 	{
-		HJNNKCMLGFL = 0,
+		HJNNKCMLGFL_0 = 0,
 		CCAPCGPIIPF_1 = 1,
 		PHABJLGFJNI_2 = 2,
 		GENEIBGNMPH_3 = 3,

@@ -25,7 +25,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1619FA8 Offset: 0x1619FA8 VA: 0x1619FA8
-		//public static IEnumerator ResultShow(RecordPlateUtility.eSceneType sceneType, Action callbackClose, bool allReceive = False) { }
+		public static IEnumerator ResultShow(RecordPlateUtility.eSceneType sceneType, Action callbackClose, bool allReceive = false)
+		{
+			RecordPlateUtility.IsResultConfirm = true;
+			return Coroutine_Show(sceneType, callbackClose, allReceive);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70D414 Offset: 0x70D414 VA: 0x70D414
 		//// RVA: 0x1619E3C Offset: 0x1619E3C VA: 0x1619E3C
@@ -116,7 +120,7 @@ namespace XeApp.Game.Menu
 			episodeList = new List<int>();
 			if(RecordPlateUtility.IsResultConfirm)
 			{
-				if (!viewData.JDKOAKDLHMG(/*4*/GONMPHKGKHI_RewardView.CECMLGBLHHG.INJNLJHGGKB, ref highList, ref infoList, ref episodeList))
+				if (!viewData.JDKOAKDLHMG(/*4*/GONMPHKGKHI_RewardView.CECMLGBLHHG.INJNLJHGGKB_4, ref highList, ref infoList, ref episodeList))
 					yield break;
 				yield return Co.R(m_prpController.ListPhase(highList, infoList, null));
 			}
@@ -137,7 +141,7 @@ namespace XeApp.Game.Menu
 				}
 				if(sceneType != RecordPlateUtility.eSceneType.RarityUp)
 				{
-					if (viewData.JDKOAKDLHMG(/*4*/GONMPHKGKHI_RewardView.CECMLGBLHHG.INJNLJHGGKB, ref highList, ref infoList, ref episodeList))
+					if (viewData.JDKOAKDLHMG(/*4*/GONMPHKGKHI_RewardView.CECMLGBLHHG.INJNLJHGGKB_4, ref highList, ref infoList, ref episodeList))
 					{
 						yield return Co.R(m_prpController.ListPhase(highList, infoList, null));
 					}

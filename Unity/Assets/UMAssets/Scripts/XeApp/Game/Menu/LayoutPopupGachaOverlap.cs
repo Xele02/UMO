@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 				return;
 			}
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			if(m_showType == GONMPHKGKHI_RewardView.CECMLGBLHHG.INJNLJHGGKB)
+			if(m_showType == GONMPHKGKHI_RewardView.CECMLGBLHHG.INJNLJHGGKB_4)
 			{
 				SetDesc(bk.GetMessageByLabel("popup_record_plate_002"));
 			}
