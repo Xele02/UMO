@@ -25,21 +25,27 @@ namespace XeApp.Game.Gacha
         private GachaDirectionQuartzTable.PhaseData m_quartzPhaseData; // 0x24
         private bool m_isFeed; // 0x28
 
-        // public int cardId { get; } 0x9837FC
+        public int cardId { get { return m_cardId; } } //0x9837FC
         public int starNum { get { return m_starNum; } } //0x983804
-        // public string name { get; } 0x98380C
-        // public int attrId { get; } 0x983814
-        // public int seriesId { get; } 0x98381C
+        public string name { get { return m_name; } } //0x98380C
+        public int attrId { get { return m_attrId; } } //0x983814
+        public int seriesId { get { return m_seriesId; } } //0x98381C
         // public bool isNew { get; } 0x983824
-        // public bool hasSpAnim { get; } 0x98382C
-        // public int spAnimId { get; } 0x983834
+        public bool hasSpAnim { get { return m_hasSpAnim; } } //0x98382C
+        public int spAnimId { get { return m_spAnimId; } } //0x983834
         // public int quartzPhaseNum { get; } 0x98383C
 
         // // RVA: 0x983844 Offset: 0x983844 VA: 0x983844
-        // public GachaDirectionQuartzTable.QuartzType GetQuartzType(int index) { }
+        public GachaDirectionQuartzTable.QuartzType GetQuartzType(int index)
+		{
+			return m_quartzPhaseData[index];
+		}
 
         // // RVA: 0x983878 Offset: 0x983878 VA: 0x983878
-        // public GachaDirectionQuartzTable.QuartzType GetLastQuartzType() { }
+        public GachaDirectionQuartzTable.QuartzType GetLastQuartzType()
+		{
+			return GetQuartzType(2);
+		}
 
         // RVA: 0x983880 Offset: 0x983880 VA: 0x983880
         public CardInfo(MFDJIFIIPJD item)

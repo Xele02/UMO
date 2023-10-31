@@ -13,14 +13,17 @@ namespace XeApp.Game.Gacha
         private int m_divaId; // 0x14
         private List<CardInfo> m_cardInfo; // 0x18
 
-        // public bool isPaid { get; } 0x9842F8
+        public bool isPaid { get { return m_isPaid; } } //0x9842F8
         // public AuraColorType auraColor { get; } 0x984300
         // public GachaDirectionOrbTable.ExpectType expectLevel { get; } 0x984308
-        // public int divaId { get; } 0x984310
+        public int divaId { get { return m_divaId; } } //0x984310
         public int cardNum { get { return m_cardInfo.Count; } } //0x984318
 
         // // RVA: 0x984390 Offset: 0x984390 VA: 0x984390
-        // public CardInfo GetCardInfo(int index) { }
+        public CardInfo GetCardInfo(int index)
+		{
+			return m_cardInfo[index];
+		}
 
         // RVA: 0x984410 Offset: 0x984410 VA: 0x984410
         public DirectionInfo(List<MFDJIFIIPJD> items, bool byPaid, int divaId)

@@ -241,7 +241,43 @@ namespace XeApp.Game.Gacha
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C4B10 Offset: 0x6C4B10 VA: 0x6C4B10
 		//// RVA: 0x9862EC Offset: 0x9862EC VA: 0x9862EC
-		//private IEnumerator Co_LoadRetryResource(Action onEnd) { }
+		private IEnumerator Co_LoadRetryResource(Action onEnd)
+		{
+			DirectionInfo directionInfo;
+
+			//0x98CA48
+			directionInfo = GachaUtility.directionInfo;
+			for(int i = 0; i < m_newMarkDecos.Count; i++)
+			{
+				m_newMarkDecos[i].Release();
+			}
+			m_newMarkDecos.Clear();
+			yield return Resources.UnloadUnusedAssets();
+			yield return Co.R(m_resource.LoadResources(directionInfo, true));
+			while (!m_resource.isAllLoaded)
+				yield return null;
+			directionInfo.SetupQuartzTable(currentSetting.quartzTable);
+			directionInfo.SetupOrbTable(currentSetting.orbTable);
+			m_modelObject.RegisterDirectionInfo(directionInfo);
+			m_modelObject.Setup(true);
+			m_resultUi = m_resource.resultUiPrefab.GetComponent<GachaResultRoot>();
+			m_resultUi.transform.SetParent(m_mainCanvasRoot, false);
+			m_resultUi.onClickCard = OnClickCardButton;
+			m_resultUi.Setup(m_resource, directionInfo, (int index, GameObject go) =>
+			{
+				//0x98A698
+				m_newMarkDecos.Add(new NewMarkIcon(go));
+			});
+			m_resultButtonUi.HideConfirm();
+			m_resultUi.transform.SetAsLastSibling();
+			m_resultButtonUi.transform.SetAsLastSibling();
+			m_userInfoUi.transform.SetAsLastSibling();
+			m_resultUi.gameObject.SetActive(false);
+			m_resultButtonUi.gameObject.SetActive(false);
+			m_userInfoUi.gameObject.SetActive(false);
+			if (onEnd != null)
+				onEnd();
+		}
 
 		//// RVA: 0x985684 Offset: 0x985684 VA: 0x985684
 		private void StartDirection(bool isRetry)
@@ -851,11 +887,7 @@ namespace XeApp.Game.Gacha
 				this.StartCoroutineWatched(Co_GotoLoginBonus());
 			}
 		}
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6C4F10 Offset: 0x6C4F10 VA: 0x6C4F10
-		//// RVA: 0x98A698 Offset: 0x98A698 VA: 0x98A698
-		//private void <Co_LoadRetryResource>b__47_0(int index, GameObject go) { }
-
+		
 		//[CompilerGeneratedAttribute] // RVA: 0x6C4F50 Offset: 0x6C4F50 VA: 0x6C4F50
 		//// RVA: 0x98A780 Offset: 0x98A780 VA: 0x98A780
 		//private void <OnClickRecovEne>b__63_0() { }
