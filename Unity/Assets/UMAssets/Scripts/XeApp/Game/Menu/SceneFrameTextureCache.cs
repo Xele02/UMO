@@ -69,7 +69,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x15A66C4 Offset: 0x15A66C4 VA: 0x15A66C4
 		public void Load(GameAttribute.Type attribute, int baseRare, int evolveId, Action<IiconTexture> callback)
 		{
-			Load(string.Format("ct/sc/fr/{0:D2}/{1:D1}_{2:D1}.xab", attribute, baseRare, evolveId), callback);
+			Load(string.Format("ct/sc/fr/{0:D2}/{1:D1}_{2:D1}.xab", (int)attribute, baseRare, evolveId), callback);
 		}
 	}
 }

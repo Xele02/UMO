@@ -130,9 +130,9 @@ namespace XeApp.Game.Menu
 				{
 					yield return Co.R(m_prpController.NewGetPhase(infoList, null));
 				}
-				if(viewData.JDKOAKDLHMG(/*2*/GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM, ref highList, ref infoList, ref episodeList))
+				if(viewData.JDKOAKDLHMG(/*2*/GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM_2, ref highList, ref infoList, ref episodeList))
 				{
-					yield return Co.R(m_prpController.EpisodePhase(GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM/*2*/, episodeList, null));
+					yield return Co.R(m_prpController.EpisodePhase(GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM_2/*2*/, episodeList, null));
 				}
 				if (viewData.JDKOAKDLHMG(GONMPHKGKHI_RewardView.CECMLGBLHHG.NNEOHGFGLKM/*3*/, ref highList, ref infoList, ref episodeList))
 				{
@@ -152,7 +152,7 @@ namespace XeApp.Game.Menu
 				}
 				if(HNDLICBDEMI.AFGKIJMPNNN_IsDecoEnabled())
 				{
-					if (viewData.JDKOAKDLHMG(/*8*/GONMPHKGKHI_RewardView.CECMLGBLHHG.JCGKGFLCKCP, ref highList, ref infoList, ref episodeList))
+					if (viewData.JDKOAKDLHMG(/*8*/GONMPHKGKHI_RewardView.CECMLGBLHHG.JCGKGFLCKCP_8, ref highList, ref infoList, ref episodeList))
 					{
 						yield return Co.R(m_prpController.GetPosterPhase(infoList, null));
 					}

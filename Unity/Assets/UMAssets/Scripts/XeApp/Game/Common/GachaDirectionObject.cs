@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using mcrs;
 using UnityEngine;
 using XeApp.Game.Gacha;
 using XeSys.uGUI;
@@ -47,7 +48,7 @@ namespace XeApp.Game.Common
 		private bool m_isInMain; // 0x65
 		private int m_skipLockCount; // 0x68
 
-		//public Transform elementRoot { get; } 0x1C19AC8
+		public Transform elementRoot { get { return m_elementRoot; } } //0x1C19AC8
 		//public Transform quartzRoot { get; } 0x1C19AD0
 		private GachaDirectionRareSet currentRareSet { get; set; } // 0x30
 		private DirectionInfo directionInfo { get
@@ -62,10 +63,21 @@ namespace XeApp.Game.Common
 		public Action onEndIntroCallback { private get; set; } // 0x4C
 		public Action onEndAllCallback { private get; set; } // 0x50
 		public Action<CardInfo> onRequestDelayLoad { private get; set; } // 0x54
-		//public bool canAllSkip { get; } 0x1C19C68
+		public bool canAllSkip { get 
+		{
+			if(m_currentPhase < Phase.Result)
+			{
+				if(((1 << (int)m_currentPhase) & 0x6cU) != 0)
+					return true;
+				if(m_currentPhase != Phase.Start)
+					return false;
+				return m_isInMain;
+			}
+			return false; 
+		} } //0x1C19C68
 		public bool isLastCard { get { return directionInfo.cardNum - 1 <= m_currentCardIndex; } } //0x1C18F3C
 		//private bool isRareCard { get; } 0x1C19CA8
-		//public bool isOrbChange { get; } 0x1C18FC8
+		public bool isOrbChange { get { return directionInfo.auraColor != AuraColorType.Blue; } } //0x1C18FC8
 		public bool isIgnoreEventFade { get; private set; } // 0x58
 
 		// RVA: 0x1C19D1C Offset: 0x1C19D1C VA: 0x1C19D1C
@@ -110,9 +122,9 @@ namespace XeApp.Game.Common
 			}
 			for(int i = 0; i < directionInfo.cardNum; i++)
 			{
-				m_stones[i].meshRefData.SetParent(m_quartzSet.GetQuartzRefData(i - directionInfo.cardNum == -1 ? 9 : i));
+				m_stones[i].meshRefData.SetParent(m_quartzSet.GetQuartzRefData(i - directionInfo.cardNum == -1 ? 9 : i), false);
 			}
-			m_stoneForCutin.meshRefData.SetParent(m_cutinSet.m_quartzRefData, false);
+			m_stoneForCutin.meshRefData.SetParent(m_cutinSet.GetQuartzRefData(), false);
 			m_startSet.Setup(directionInfo);
 			m_trailSet.Setup(directionInfo);
 			m_quartzSet.Setup(directionInfo);
@@ -233,40 +245,25 @@ namespace XeApp.Game.Common
 					currentRareSet = m_rareSet;
 				}
 			}
-			int cutinType = 2;
+            GachaDirectionCutinSet.CutinType cutinType = GachaDirectionCutinSet.CutinType.S6;
 			if(info.starNum != 6)
 			{
-				cutinType = (info.GetLastQuartzType() != GachaDirectionQuartzTable.QuartzType.LV3_Gold && info.starNum == 5) ? 1 : 0;
+				cutinType = (info.GetLastQuartzType() != GachaDirectionQuartzTable.QuartzType.LV3_Gold && info.starNum == 5) ? GachaDirectionCutinSet.CutinType.Long : GachaDirectionCutinSet.CutinType.Default;
 			}
 			m_cutinSet.SetQuartzType(info.GetLastQuartzType(), cutinType);
 			m_cardSet.SetCardStarNum(info.starNum);
 			m_cardSet.SetCardAttribute(info.attrId);
 			m_cardSet.SetCardSeries(info.seriesId);
 			m_cardSet.SetCardNameParent(m_cardName.transform);
-			m_cardSet.SetCardFrameParent(m_cardFrame.m_animationNode);
+			m_cardSet.SetCardFrameParent(m_cardFrame.animationNode);
 			if (resource.cardMaterial != null)
 				m_cardSet.ApplyCardMaterial(resource.cardMaterial);
 			else
 				m_cardSet.ApplyCardTexture(resource.cardTexture);
 			m_cardName.SetText(info.name);
-			m_cardName.SetAttribute(info.attrId);
+			m_cardName.SetAttribute((GameAttribute.Type)info.attrId);
 			m_cardFrame.SetStarNum(info.starNum);
-			switch(info.attrId - 1)
-			{
-				case 0:
-					m_cardFrame.m_vIndex = 1;
-					break;
-				case 1:
-					m_cardFrame.m_vIndex = 0;
-					break;
-				case 2:
-				case 3:
-					m_cardFrame.m_vIndex = info.attrId - 1;
-					break;
-				default:
-					break;
-			}
-			m_cardFrame.m_uvDirty = true;
+			m_cardFrame.SetAttribute(info.attrId);
 			StartCardSet(info);
 		}
 
@@ -284,42 +281,107 @@ namespace XeApp.Game.Common
 		{
 			m_isInMain = true;
 			m_startSet.Leave();
-			m_trailSet.Begin(m_startSet.m_valkyrieRoot);
+			m_trailSet.Begin(m_startSet.valkyrieRoot);
 			m_cameraObject.Start_Leave();
 		}
 
 		//// RVA: 0x1C190C4 Offset: 0x1C190C4 VA: 0x1C190C4
-		//public void NotifyOrbFlash() { }
+		public void NotifyOrbFlash()
+		{
+			m_startSet.NotifyOrbFlash();
+		}
 
 		//// RVA: 0x1C19114 Offset: 0x1C19114 VA: 0x1C19114
-		//public void NotifyOrbChange() { }
+		public void NotifyOrbChange()
+		{
+			m_startSet.NotifyOrbChange();
+		}
 
 		//// RVA: 0x1C191C4 Offset: 0x1C191C4 VA: 0x1C191C4
-		//public void NotifyValkyrieFly(int phaseIndex) { }
+		public void NotifyValkyrieFly(int phaseIndex)
+		{
+			m_trailSet.NotifyFly(phaseIndex);
+		}
 
 		//// RVA: 0x1C19228 Offset: 0x1C19228 VA: 0x1C19228
-		//public void NotifyQuartzChange(int phaseIndex) { }
+		public void NotifyQuartzChange(int phaseIndex)
+		{
+			if(phaseIndex == 2)
+			{
+				SoundManager.Instance.sePlayerGacha.Play((int)cs_se_gacha.SE_GACHA_007);
+			}
+			else if(phaseIndex == 1)
+			{
+				SoundManager.Instance.sePlayerGacha.Play((int)cs_se_gacha.SE_GACHA_006);
+			}
+			for(int i = 0; i < directionInfo.cardNum; i++)
+			{
+				m_stones[i].ChangeQuartzType(directionInfo.GetCardInfo(i).GetQuartzType(phaseIndex));
+			}
+		}
 
 		//// RVA: 0x1C19480 Offset: 0x1C19480 VA: 0x1C19480
-		//public void NotifyQuartzBreak() { }
+		public void NotifyQuartzBreak()
+		{
+			switch(directionInfo.GetCardInfo(m_currentCardIndex).starNum)
+			{
+				case 1:
+				case 2:
+				case 3:
+					SoundManager.Instance.sePlayerGacha.Play((int)cs_se_gacha.SE_GACHA_020);
+					break;
+				case 4:
+					SoundManager.Instance.sePlayerGacha.Play((int)cs_se_gacha.SE_GACHA_021);
+					break;
+				case 5:
+					SoundManager.Instance.sePlayerGacha.Play((int)cs_se_gacha.SE_GACHA_022);
+					break;
+				case 6:
+					SoundManager.Instance.sePlayerGacha.Play((int)cs_se_gacha.SE_GACHA_024);
+					break;
+				default:
+					break;
+			}
+		}
 
 		//// RVA: 0x1C1965C Offset: 0x1C1965C VA: 0x1C1965C
-		//public void NotifyCutinVoice() { }
+		public void NotifyCutinVoice()
+		{
+			SoundManager.Instance.sePlayerGacha.Play((int)cs_se_gacha.SE_GACHA_017);
+			SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.Gacha, directionInfo.GetCardInfo(m_currentCardIndex).starNum == 6 ? 1 : 0);
+		}
 
 		//// RVA: 0x1C19788 Offset: 0x1C19788 VA: 0x1C19788
-		//public void NotifyCutinEvolve() { }
+		public void NotifyCutinEvolve()
+		{
+			m_stoneForCutin.ChangeQuartzType(GachaDirectionQuartzTable.QuartzType.LV3_Gold);
+			SoundManager.Instance.sePlayerGacha.Play((int)cs_se_gacha.SE_GACHA_018);
+		}
 
 		//// RVA: 0x1C199C0 Offset: 0x1C199C0 VA: 0x1C199C0
-		//public void NotifySkipLock() { }
+		public void NotifySkipLock()
+		{
+			m_skipLockCount++;
+		}
 
 		//// RVA: 0x1C19A00 Offset: 0x1C19A00 VA: 0x1C19A00
-		//public void NotifySkipUnlock() { }
+		public void NotifySkipUnlock()
+		{
+			if(m_skipLockCount > 0)
+				m_skipLockCount--;
+		}
 
 		//// RVA: 0x1C1982C Offset: 0x1C1982C VA: 0x1C1982C
-		//public void NotifyQuartzRotateS6() { }
+		public void NotifyQuartzRotateS6()
+		{
+			SoundManager.Instance.sePlayerGacha.Play((int)cs_se_gacha.SE_GACHA_023);
+		}
 
 		//// RVA: 0x1C198AC Offset: 0x1C198AC VA: 0x1C198AC
-		//public void NotifyLastStarS6() { }
+		public void NotifyLastStarS6()
+		{
+			SoundManager.Instance.sePlayerGacha.Play((int)cs_se_gacha.SE_GACHA_025);
+		}
 
 		// RVA: 0x1C1C4B8 Offset: 0x1C1C4B8 VA: 0x1C1C4B8
 		public void RequestSkip()

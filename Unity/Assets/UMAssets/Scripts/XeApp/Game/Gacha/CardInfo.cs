@@ -30,7 +30,7 @@ namespace XeApp.Game.Gacha
         public string name { get { return m_name; } } //0x98380C
         public int attrId { get { return m_attrId; } } //0x983814
         public int seriesId { get { return m_seriesId; } } //0x98381C
-        // public bool isNew { get; } 0x983824
+        public bool isNew { get { return m_isNew; } } //0x983824
         public bool hasSpAnim { get { return m_hasSpAnim; } } //0x98382C
         public int spAnimId { get { return m_spAnimId; } } //0x983834
         // public int quartzPhaseNum { get; } 0x98383C
@@ -98,7 +98,10 @@ namespace XeApp.Game.Gacha
         }
 
         // // RVA: 0x9842F0 Offset: 0x9842F0 VA: 0x9842F0
-        // public void SetupQuartzPhaseData(GachaDirectionQuartzTable.PhaseData phaseData) { }
+        public void SetupQuartzPhaseData(GachaDirectionQuartzTable.PhaseData phaseData)
+        {
+            m_quartzPhaseData = phaseData;
+        }
 
         // // RVA: 0x9840A8 Offset: 0x9840A8 VA: 0x9840A8
         // private void SetupSpAnim() { }

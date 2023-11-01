@@ -477,7 +477,22 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x20416F8 Offset: 0x20416F8 VA: 0x20416F8
-		// public bool IsPlayingSibling() { }
+		public bool IsPlayingSibling()
+		{
+			AbsoluteLayout p = Parent as AbsoluteLayout;
+			if (p != null)
+			{
+				for (int i = 0; i < p.m_List.Count; i++)
+				{
+					if(p.m_List[i].enabled && p.m_List[i].IsPlaying())
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+			return IsPlaying();
+		}
 
 		// [ObsoleteAttribute] // RVA: 0x692588 Offset: 0x692588 VA: 0x692588
 		// // RVA: 0x204184C Offset: 0x204184C VA: 0x204184C

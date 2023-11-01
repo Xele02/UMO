@@ -9,12 +9,12 @@ namespace XeApp.Game.Gacha
     {
         private bool m_isPaid; // 0x8
         private AuraColorType m_auraColor; // 0xC
-        // private GachaDirectionOrbTable.ExpectType m_expectLevel; // 0x10
+        private GachaDirectionOrbTable.ExpectType m_expectLevel; // 0x10
         private int m_divaId; // 0x14
         private List<CardInfo> m_cardInfo; // 0x18
 
         public bool isPaid { get { return m_isPaid; } } //0x9842F8
-        // public AuraColorType auraColor { get; } 0x984300
+        public AuraColorType auraColor { get { return m_auraColor; } } //0x984300
         // public GachaDirectionOrbTable.ExpectType expectLevel { get; } 0x984308
         public int divaId { get { return m_divaId; } } //0x984310
         public int cardNum { get { return m_cardInfo.Count; } } //0x984318
@@ -52,10 +52,39 @@ namespace XeApp.Game.Gacha
         }
 
         // // RVA: 0x9846C0 Offset: 0x9846C0 VA: 0x9846C0
-        // public void SetupQuartzTable(GachaDirectionQuartzTable table) { }
+        public void SetupQuartzTable(GachaDirectionQuartzTable table)
+        {
+            for(int i = 0; i < cardNum; i++)
+            {
+                GetCardInfo(i).SetupQuartzPhaseData(table.RandomSelect(GetCardInfo(i).starNum));
+            }
+        }
 
         // // RVA: 0x984740 Offset: 0x984740 VA: 0x984740
-        // public void SetupOrbTable(GachaDirectionOrbTable table) { }
+        public void SetupOrbTable(GachaDirectionOrbTable table)
+        {
+            bool b1 = CheckContainsStarNum(4);
+            bool b2 = CheckContainsStarNum(5);
+            if(!b2)
+            {
+                if(b1)
+                {
+                    m_expectLevel = table.SelectForRare4();
+                }
+                else
+                {
+                    m_expectLevel = table.SelectForMiss();
+                }
+            }
+            else
+            {
+                m_expectLevel = table.SelectForRare5();
+                if(table.SelectForHitExpansion(m_expectLevel))
+                    m_auraColor = AuraColorType.Gold;
+                else
+                    m_auraColor = AuraColorType.Blue;
+            }
+        }
 
         // // RVA: 0x9847F4 Offset: 0x9847F4 VA: 0x9847F4
         public bool CheckContainsStarNum(int starNum)

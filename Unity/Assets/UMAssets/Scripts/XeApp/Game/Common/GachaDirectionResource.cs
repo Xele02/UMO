@@ -51,7 +51,17 @@ namespace XeApp.Game.Common
 		public bool isLoadedCardTex { get; private set; } // 0x69
 		public bool isLoadedUserInfoUi { get; private set; } // 0x6A
 		private bool isMainLoading { get; set; } // 0x6B
-		//public bool isAllLoaded { get; } 0x1C1EEE4
+		public bool isAllLoaded { get
+		{
+			return isLoadedStartSet && isLoadedTrailSet && 
+				isLoadedQuartzSet && isLoadedCutinSet && 
+				isLoadedRareSet && isLoadedCardSet && 
+				isLoadedStone && isLoadedCardName && 
+				isLoadedCardFrame && isLoadedCameraAnimator && 
+				isLoadedMainHud && isLoadedResultUi && 
+				isLoadedResultButtonUi && isLoadedUserInfoUi && 
+				isLoadedCardTex;
+		} } //0x1C1EEE4
 		private bool isDelayLoading { get; set; } // 0x6C
 		public bool isDelayLoaded { get; private set; } // 0x6D
 		public Material cardMaterial { get; private set; } // 0x70

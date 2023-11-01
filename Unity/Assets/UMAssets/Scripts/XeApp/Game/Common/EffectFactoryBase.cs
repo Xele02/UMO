@@ -345,6 +345,9 @@ namespace XeApp.Game.Common
 		public Instance Instantiate(Setting setting)
 		{
 			GameObject go = Instantiate<GameObject>(setting.effectPrefab);
+#if UNITY_EDITOR || UNITY_STANDALONE
+			BundleShaderInfo.Instance.FixMaterialShader(go);
+#endif
 			go.transform.SetParent(setting.parent, false);
 			go.transform.localPosition = setting.position;
 			go.transform.localRotation = setting.rotation;

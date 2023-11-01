@@ -153,7 +153,29 @@ namespace XeApp.Game.Gacha
 		}
 
 		//// RVA: 0x985CD4 Offset: 0x985CD4 VA: 0x985CD4
-		//private void ShowSceneStatusPopup(GCIJNCFDNON sceneData, DFKGGBMFFGB playerData, Action onClose) { }
+		private void ShowSceneStatusPopup(GCIJNCFDNON_SceneInfo sceneData, DFKGGBMFFGB_PlayerInfo playerData, Action onClose)
+		{
+			m_sceneStatePopup.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			m_sceneStatePopup.Scene = sceneData;
+			m_sceneStatePopup.PlayerData = playerData;
+			m_sceneStatePopup.IsOpenAnimeMoment = false;
+			m_sceneStatePopup.IsFriend = false;
+			m_sceneStatePopup.IsDiableLuckyLeaf = true;
+			m_sceneStatePopup.TitleText = sceneData.OPFGFINHFCE_SceneName;
+			if(sceneData.OPFGFINHFCE_SceneName == "")
+			{
+				m_sceneStatePopup.TitleText = GameMessageManager.GetSceneCardName(sceneData.BCCHOBPJJKE_SceneId, sceneData.JPIPENJGGDD_NumBoard, "");
+			}
+			PopupWindowManager.Show(m_sceneStatePopup, (PopupWindowControl control, PopupButton.ButtonType label, PopupButton.ButtonLabel type) =>
+			{
+				//0x98A9C0
+				if(onClose != null)
+					onClose();
+			}, null, null, null);
+		}
 
 		//// RVA: 0x98606C Offset: 0x98606C VA: 0x98606C
 		private void OnTimeLimit()
@@ -186,7 +208,8 @@ namespace XeApp.Game.Gacha
 
 			//0x98B9E4
 			directionInfo = GachaUtility.directionInfo;
-			yield return Co.R(m_resource.LoadResources(directionInfo, false));
+			m_resource.LoadResources(directionInfo, false);
+			yield return null;
 			while (!m_resource.isAllLoaded)
 				yield return null;
 			directionInfo.SetupQuartzTable(currentSetting.quartzTable);
@@ -253,7 +276,8 @@ namespace XeApp.Game.Gacha
 			}
 			m_newMarkDecos.Clear();
 			yield return Resources.UnloadUnusedAssets();
-			yield return Co.R(m_resource.LoadResources(directionInfo, true));
+			m_resource.LoadResources(directionInfo, true);
+			yield return null;
 			while (!m_resource.isAllLoaded)
 				yield return null;
 			directionInfo.SetupQuartzTable(currentSetting.quartzTable);
@@ -356,7 +380,7 @@ namespace XeApp.Game.Gacha
 					if (price <= currentTicket)
 					{
 						int ticketId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(GachaUtility.netGachaProductData.OMNAPCHLBHF(GachaUtility.netGachaCount)).PPFNGGCBJKC_Id;
-						m_resultButtonUi.SetRetryConsume(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket, ticketId));
+						m_resultButtonUi.SetRetryConsume(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket, ticketId), price);
 						b1 = false;
 					}
 					else
@@ -390,14 +414,14 @@ namespace XeApp.Game.Gacha
 						int ticketId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(GachaUtility.netGachaProductData.OMNAPCHLBHF(GachaUtility.netGachaCount)).PPFNGGCBJKC_Id;
 						//LAB_009867b0
 						//LAB_0098690c
-						m_resultButtonUi.SetRetryConsume(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket, ticketId));
+						m_resultButtonUi.SetRetryConsume(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.OBHECJMAEIO_GachaTicket, ticketId), price);
 						b1 = false;
 					}
 					break;
 				case GCAHJLOGMCI.KNMMOMEHDON.DLOPEFGOAPD_10:
 					if (price <= currentTicket)
 					{
-						m_resultButtonUi.SetRetryConsume(GachaUtility.netGachaProductData.MJNOAMAFNHA);
+						m_resultButtonUi.SetRetryConsume(GachaUtility.netGachaProductData.MJNOAMAFNHA, price);
 						b1 = false;
 					}
 					else
@@ -676,7 +700,7 @@ namespace XeApp.Game.Gacha
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			inputEnable = false;
-			ShowSceneStatusPopup(GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[GachaUtility.directionInfo.GetCardInfo(cardIndex).m_cardId - 1], GameManager.Instance.ViewPlayerData, () =>
+			ShowSceneStatusPopup(GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[GachaUtility.directionInfo.GetCardInfo(cardIndex).cardId - 1], GameManager.Instance.ViewPlayerData, () =>
 			{
 				//0x98A778
 				inputEnable = true;
@@ -698,13 +722,17 @@ namespace XeApp.Game.Gacha
 					inputEnable = false;
 					PopupWindowManager.OpenStaminaWindow(m_denomControl, () =>
 					{
-						Method$XeApp.Game.Gacha.GachaDirectionScene.<OnClickRecovEne>b__63_0()
+						//0x98A780
+						inputEnable = true;
 					}, () =>
 					{
-						Method$XeApp.Game.Gacha.GachaDirectionScene.<OnClickRecovEne>b__63_1()
-					}, OnGachaNetError, () =>
+						//0x98A788
+						inputEnable = true;
+					}, OnGachaNetError, (TransitionList.Type gotoSceneType) =>
 					{
-						Method$XeApp.Game.Gacha.GachaDirectionScene.<OnClickRecovEne>b__63_2()
+						//0x98A790
+						OnChangeDate(gotoSceneType);
+						inputEnable = true;
 					});
 					return;
 				}
@@ -727,13 +755,17 @@ namespace XeApp.Game.Gacha
 					inputEnable = false;
 					m_denomControl.StartPurchaseSequence(() =>
 					{
-						Method$XeApp.Game.Gacha.GachaDirectionScene.<OnClickChargeMoney>b__64_0()
+						//0x98A7B0
+						inputEnable = true;
 					}, () =>
 					{
-						Method$XeApp.Game.Gacha.GachaDirectionScene.<OnClickChargeMoney>b__64_1()
-					}, OnGachaNetError, () =>
+						//0x98A7B8
+						inputEnable = true;
+					}, OnGachaNetError, (TransitionList.Type type) =>
 					{
-						Method$XeApp.Game.Gacha.GachaDirectionScene.<OnClickChargeMoney>b__64_2()
+						//0x98A7C0
+						OnChangeDate(type);
+						inputEnable = true;
 					}, null);
 				}
 			}
@@ -887,29 +919,5 @@ namespace XeApp.Game.Gacha
 				this.StartCoroutineWatched(Co_GotoLoginBonus());
 			}
 		}
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x6C4F50 Offset: 0x6C4F50 VA: 0x6C4F50
-		//// RVA: 0x98A780 Offset: 0x98A780 VA: 0x98A780
-		//private void <OnClickRecovEne>b__63_0() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6C4F60 Offset: 0x6C4F60 VA: 0x6C4F60
-		//// RVA: 0x98A788 Offset: 0x98A788 VA: 0x98A788
-		//private void <OnClickRecovEne>b__63_1() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6C4F70 Offset: 0x6C4F70 VA: 0x6C4F70
-		//// RVA: 0x98A790 Offset: 0x98A790 VA: 0x98A790
-		//private void <OnClickRecovEne>b__63_2(TransitionList.Type gotoSceneType) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6C4F80 Offset: 0x6C4F80 VA: 0x6C4F80
-		//// RVA: 0x98A7B0 Offset: 0x98A7B0 VA: 0x98A7B0
-		//private void <OnClickChargeMoney>b__64_0() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6C4F90 Offset: 0x6C4F90 VA: 0x6C4F90
-		//// RVA: 0x98A7B8 Offset: 0x98A7B8 VA: 0x98A7B8
-		//private void <OnClickChargeMoney>b__64_1() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6C4FA0 Offset: 0x6C4FA0 VA: 0x6C4FA0
-		//// RVA: 0x98A7C0 Offset: 0x98A7C0 VA: 0x98A7C0
-		//private void <OnClickChargeMoney>b__64_2(TransitionList.Type type) { }
 	}
 }

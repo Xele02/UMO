@@ -116,7 +116,7 @@ namespace XeApp.Game.Menu
 		public static MenuScene Instance { get; private set; } // 0x0
 		public static bool IsAlreadyHome { get; set; } // 0x4
 		public static bool IsFirstTitleFlow { get; set; } // 0x5
-		public static bool ComebackByRestart { get; private set; } // 0x6
+		public static bool ComebackByRestart { private get;  set; } // 0x6
 		public MenuDivaManager divaManager { get; set; } // 0x2C
 		public SceneIconTextureCache SceneIconCache { get { return GameManager.Instance.SceneIconCache; } } //0xB2DCF8
 		public DivaIconTextureCache DivaIconCache { get { return GameManager.Instance.DivaIconCache; } } //0xB2DD94
@@ -284,8 +284,10 @@ namespace XeApp.Game.Menu
 			{
 				if(prevSceneName == "GachaDirection")
 				{
-					TodoLogger.LogError(0, "init from gacha");
-					//L141
+					info.category = SceneGroupCategory.GACHA;
+					info.nextName = TransitionList.Type.GACHA_2;
+					info.uniqueId = TransitionUniqueId.GACHA2;
+					info.args = new GachaScene.GachaArgs(GachaScene.GachaProductList[GachaScene.SelectIndex].FDEBLMKEMLF_TypeAndSeriesId, true);
 					return;
 				}
 				if(prevSceneName == "RhythmAdjust")
