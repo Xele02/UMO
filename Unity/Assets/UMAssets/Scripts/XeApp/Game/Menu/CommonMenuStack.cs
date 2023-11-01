@@ -101,6 +101,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1B4AB2C Offset: 0x1B4AB2C VA: 0x1B4AB2C
-		//public bool TryPerformBackButton() { }
+		public bool TryPerformBackButton()
+		{
+			if(m_buttonVisible)
+			{
+				m_backButton.PerformClick();
+				return true;
+			}
+			return false;
+		}
 	}
 }

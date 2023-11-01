@@ -111,7 +111,10 @@ namespace XeApp.Game.Menu
 		{
 			base.OnDestoryScene();
 			m_appeal.Release();
-
+			GameManager.Instance.RemovePushBackButtonHandler(OnBackButton);
+			Destroy(m_appeal.gameObject);
+			HomeDivaViewCamera.enabled = true;
+			GameManager.Instance.SetFPS(30);
 		}
 
 		// RVA: 0x127D92C Offset: 0x127D92C VA: 0x127D92C Slot: 20
@@ -168,7 +171,8 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x127DA4C Offset: 0x127DA4C VA: 0x127DA4C
 		private void OnBackButton()
 		{
-			TodoLogger.LogNotImplemented("EpisodeAppealScene.OnBackButton");
+			if(m_appeal != null)
+				m_appeal.IsSkip = true;
 		}
 	}
 }
