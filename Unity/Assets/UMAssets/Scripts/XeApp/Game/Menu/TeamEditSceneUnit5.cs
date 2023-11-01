@@ -364,7 +364,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xFA1C68 Offset: 0xFA1C68 VA: 0xFA1C68 Slot: 14
 		protected override void OnDestoryScene()
 		{
-			GameManager.Instance.AddPushBackButtonHandler(OnBackButton);
+			GameManager.Instance.RemovePushBackButtonHandler(OnBackButton); // Fix original game bug (AddPushBackButtonHandler)
 			FinalizeUGUIObject();
 		}
 

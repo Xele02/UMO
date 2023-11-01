@@ -242,7 +242,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xEC5D74 Offset: 0xEC5D74 VA: 0xEC5D74
-		// public void PerformHomeClick() { }
+		public void PerformHomeClick()
+		{
+			mMenuButtons[0].PerformClick();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6CC6E4 Offset: 0x6CC6E4 VA: 0x6CC6E4
 		// // RVA: 0xEC5E10 Offset: 0xEC5E10 VA: 0xEC5E10

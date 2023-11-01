@@ -8,6 +8,7 @@ using System.Collections;
 using XeApp.Game.Menu;
 using mcrs;
 using XeSys;
+using XeApp.Core;
 
 namespace XeApp.Game.Tutorial
 {
@@ -407,7 +408,21 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0x19194B0 Offset: 0x19194B0 VA: 0x19194B0
 		private void OnBackButton()
 		{
-			TodoLogger.LogNotImplemented("OnBackButton");
+			bool b = false;
+			for(int i = 0; i < m_okButton.Length; i++)
+			{
+				if(m_okButton[i].gameObject.activeInHierarchy)
+				{
+					if(m_okButton[i].enabled)
+					{
+						OnSendButton();
+						b = true;
+					}
+				}
+			}
+			if(b)
+				return;
+			ToastSupport.Post(MessageManager.Instance.GetMessage("menu", "android_backbutton_disable"));
 		}
 	}
 }
