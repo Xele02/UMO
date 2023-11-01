@@ -304,7 +304,21 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BC5C10 Offset: 0x1BC5C10 VA: 0x1BC5C10
 		public static void ApplicationQuitPopupShow(Action cancelAction)
 		{
-			TodoLogger.LogError(0, "TODO");
+			PopupWindowManager.Show(PopupWindowManager.CreateMessageBankTextContent("menu", "pupup_app_exit_title", "popup_app_exit", SizeType.Small, new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			}), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1387DE8
+				if(type == PopupButton.ButtonType.Positive)
+					Application.Quit();
+				else
+				{
+					if(cancelAction != null)
+						cancelAction();
+				}
+			}, null, null, null);
 		}
 
 		// // RVA: 0x1BC5E74 Offset: 0x1BC5E74 VA: 0x1BC5E74

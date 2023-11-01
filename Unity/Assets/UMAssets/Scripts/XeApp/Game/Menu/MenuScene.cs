@@ -2004,7 +2004,101 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB372CC Offset: 0xB372CC VA: 0xB372CC
 		private void OnBackButton()
 		{
-			TodoLogger.LogError(0, "OnBackButton");
+			if(m_inputDisableCount < 1 && m_raycastDisableCount < 1)
+			{
+				if(!GameManager.Instance.IsTutorial && !IsRequestChangeScene)
+				{
+					if(!m_menuTransitionControl.DirtyChangeScene)
+					{
+						TransitionInfo info = m_menuTransitionControl.GetCurrentScene();
+						TransitionList.Type name = info.name;
+						TransitionUniqueId transId = (TransitionUniqueId)info.uniqueId;
+						if(!m_menuTransitionControl.MenuFooter.IsShow())
+						{
+							TransitionUniqueId backId = transId;
+							if(transId != TransitionUniqueId.DECO_FRIENDSEARCH)
+							{
+								backId = TransitionUniqueId.MUSICSELECT_RAID_RAIDACTSELECT_FRIENDSELECT;
+							}
+							if(transId != TransitionUniqueId.DECO_FRIENDSEARCH && transId != backId)
+							{
+								backId = TransitionUniqueId.HOME_LOBBYMAIN_RAID_RAIDACTSELECT_FRIENDSELECT;
+								if(transId != TransitionUniqueId.HOME_RAID_RAIDACTSELECT_FRIENDSELECT)
+								{
+									if(transId != TransitionUniqueId.HOME_LOBBYMAIN_RAID_RAIDACTSELECT_FRIENDSELECT)
+									{
+										backId = TransitionUniqueId.DECO_FRIENDSEARCH_PROFIL_LOBBYMAIN;
+									}
+									if(transId != TransitionUniqueId.HOME_LOBBYMAIN_RAID_RAIDACTSELECT_FRIENDSELECT && transId != backId)
+									{
+										backId = TransitionUniqueId.DECO_DECOCHAT_PROFIL_LOBBYMAIN;
+										if(transId != TransitionUniqueId.DECO_DECOCHAT_PROFIL_LOBBYMAIN)
+										{
+											backId = transId;
+										}
+										if(transId != TransitionUniqueId.DECO_DECOCHAT_PROFIL_LOBBYMAIN && backId != TransitionUniqueId.DECO_DECOVISIT_DECOVISITLIST_PROFIL_LOBBYMAIN)
+										{
+											backId = TransitionUniqueId.DECO_DECOVISITLIST_PROFIL_LOBBYMAIN;
+											if(transId != TransitionUniqueId.DECO_DECOVISITLIST_PROFIL_LOBBYMAIN && name != TransitionList.Type.GODIVA_SAVE_UNIT_DETAIL)
+											{
+												if(name != TransitionList.Type.DECO_STAMP && 
+													name != TransitionList.Type.PROFIL && 
+													name != TransitionList.Type.DECO_CHAT && 
+													name != TransitionList.Type.LOBBY_MISSION && 
+													name != TransitionList.Type.RAID_ACT_SELECT && 
+													name != TransitionList.Type.RAID && 
+													name != TransitionList.Type.DECO_VISIT_LIST && 
+													name != TransitionList.Type.DECO_XAOS_STORE && 
+													name != TransitionList.Type.DECO_BAST_STORAGE && 
+													name != TransitionList.Type.LOBBY_MEMBER && 
+													name != TransitionList.Type.LOBBY_GROUP_SEARCH && 
+													name != TransitionList.Type.LOBBY_GROUP_SELECT && 
+													name != TransitionList.Type.SHOP_PRODUCT && 
+													name != TransitionList.Type.VALKYRIE_TUNEUP && 
+													name != TransitionList.Type.SIMULATIONLIVE_SETTING && 
+													name != TransitionList.Type.TEAM_SELECT && 
+													name != TransitionList.Type.BINGO_SELECT && 
+													name != TransitionList.Type.BINGO_MISSION && 
+													name != TransitionList.Type.OFFER_TRANSFORMATION && 
+													name != TransitionList.Type.OFFER_VALKYRIESELECT && 
+													name != TransitionList.Type.OFFER_FORMATION && 
+													name != TransitionList.Type.OFFER_SELECT && 
+													name != TransitionList.Type.SAVE_UNIT_DETAIL && 
+													name != TransitionList.Type.VALKYRIE_SELECT && 
+													name != TransitionList.Type.COSTUME_SELECT && 
+													name != TransitionList.Type.SCENE_SELECT && 
+													name != TransitionList.Type.SCENE_GROWTH
+												)
+												{
+													return;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+						if(!PopupWindowManager.IsOpenPopupWindow())
+						{
+							if(!m_menuTransitionControl.MenuHeader.MenuStack.TryPerformBackButton())
+							{
+								if(name != TransitionList.Type.HOME)
+								{
+									m_menuTransitionControl.MenuFooter.MenuBar.PerformHomeClick();
+									return;
+								}
+								GameManager.Instance.RemovePushBackButtonHandler(OnBackButton);
+								GameManager.Instance.snsNotification.Close();
+								PopupWindowManager.ApplicationQuitPopupShow(() =>
+								{
+									//0xB37E3C
+									GameManager.Instance.AddPushBackButtonHandler(OnBackButton);
+								});
+							}
+						}
+					}
+				}
+			}
 		}
 
 		// // RVA: 0xB37B00 Offset: 0xB37B00 VA: 0xB37B00
@@ -2028,9 +2122,5 @@ namespace XeApp.Game.Menu
 		// [CompilerGeneratedAttribute] // RVA: 0x6C831C Offset: 0x6C831C VA: 0x6C831C
 		// // RVA: 0xB37CCC Offset: 0xB37CCC VA: 0xB37CCC
 		// private IEnumerator <GotoRhythmGame>b__148_0() { }
-		
-		// [CompilerGeneratedAttribute] // RVA: 0x6C836C Offset: 0x6C836C VA: 0x6C836C
-		// // RVA: 0xB37E3C Offset: 0xB37E3C VA: 0xB37E3C
-		// private void <OnBackButton>b__233_0() { }
 	}
 }

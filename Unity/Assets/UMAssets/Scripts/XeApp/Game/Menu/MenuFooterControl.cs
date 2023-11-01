@@ -381,6 +381,9 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xED33D4 Offset: 0xED33D4 VA: 0xED33D4
-		// public bool IsShow() { }
+		public bool IsShow()
+		{
+			return m_menuBar != null && m_menuBar.IsEnter;
+		}
 	}
 }
