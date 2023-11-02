@@ -78,7 +78,27 @@ public abstract class IKMBBPDBECA
 	}
 
 	//// RVA: 0x8E8880 Offset: 0x8E8880 VA: 0x8E8880
-	//public int GGBDGHNAIDG(int KELFCMEOPPM) { }
+	public int GGBDGHNAIDG(int KELFCMEOPPM)
+	{
+		for (int i = 0; i < FLADABCFDFA_Pickup.Count; i++)
+		{
+			MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[FLADABCFDFA_Pickup[i].DNJEJEANJGL_Value - 1];
+			if(KELFCMEOPPM == dbScene.KELFCMEOPPM_Ep)
+			{
+				int idx = IOKIFFAFPDI_Episode.FindIndex((CEBFFLDKAEC_SecureInt GHPLINIACBB) =>
+				{
+					//0x8E90B8
+					return KELFCMEOPPM == GHPLINIACBB.DNJEJEANJGL_Value;
+				});
+				if(idx < 0)
+				{
+					return 100000 + KELFCMEOPPM;
+				}
+				return idx;
+			}
+		}
+		return 400000 + KELFCMEOPPM;
+	}
 
 	//// RVA: 0x8E8B44 Offset: 0x8E8B44 VA: 0x8E8B44
 	public static IKMBBPDBECA HEGEKFMJNCC(string FEMMDNIELFC)

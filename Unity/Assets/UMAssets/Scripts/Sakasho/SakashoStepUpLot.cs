@@ -11,7 +11,15 @@ public class SakashoStepUpLot : SakashoAPIBase
 	}
 
 	//// RVA: 0x2E68598 Offset: 0x2E68598 VA: 0x2E68598
-	//public static SakashoAPICallContext GetStepUpLotDetail(string key, int itemProbabilityDisplayDigit, int groupKeyProbabilityDisplayDigit, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext GetStepUpLotDetail(string key, int itemProbabilityDisplayDigit, int groupKeyProbabilityDisplayDigit, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		if (key != null)
+			h["key"] = key;
+		h["itemProbabilityDisplayDigit"] = itemProbabilityDisplayDigit;
+		h["groupKeyProbabilityDisplayDigit"] = groupKeyProbabilityDisplayDigit;
+		return new SakashoAPICallContext(Call(SakashoStepUpLotGetStepUpLotDetail, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	//// RVA: 0x2E687C8 Offset: 0x2E687C8 VA: 0x2E687C8
 	public static SakashoAPICallContext Purchase(string key, string hash, OnSuccess onSuccess, OnError onError)
@@ -31,7 +39,10 @@ public class SakashoStepUpLot : SakashoAPIBase
 	}
 
 	//// RVA: 0x2E68A98 Offset: 0x2E68A98 VA: 0x2E68A98
-	//private static extern int SakashoStepUpLotGetStepUpLotDetail(int callbackId, string json) { }
+	private static int SakashoStepUpLotGetStepUpLotDetail(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoStepUpLotGetStepUpLotDetail(callbackId, json);
+	}
 
 	//// RVA: 0x2E68BA8 Offset: 0x2E68BA8 VA: 0x2E68BA8
 	private static int SakashoStepUpLotPurchase(int callbackId, string json)

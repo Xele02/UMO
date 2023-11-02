@@ -17,7 +17,7 @@ public class EDOGNHECOMI_GetStepUpLotDetail : CACGCMBKHDI_Request
 	// RVA: 0x1509CAC Offset: 0x1509CAC VA: 0x1509CAC Slot: 12
 	public override void DHLDNIEELHO()
 	{
-		TodoLogger.LogError(0, "EDOGNHECOMI_GetStepUpLotDetail.DHLDNIEELHO");
+		EBGACDGNCAA_CallContext = SakashoStepUpLot.GetStepUpLotDetail(MMEBLOIJBKE, KHDLOLOPCOK, LLPOINKCHEJ, DCKLDDCAJAP, MEOCKCJBDAD);
 	}
 
 	// RVA: 0x1509DA8 Offset: 0x1509DA8 VA: 0x1509DA8
@@ -29,9 +29,15 @@ public class EDOGNHECOMI_GetStepUpLotDetail : CACGCMBKHDI_Request
 	// RVA: 0x1509E44 Offset: 0x1509E44 VA: 0x1509E44 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
 	{
-		TodoLogger.LogError(0, "EDOGNHECOMI_GetStepUpLotDetail.MGFNKDPHFGI");
+		NFEAMMJIMPG = null;
+		BNJPAKLNOPA_WorkerThreadQueue.Add(DIAMDBHBKBH);
 	}
 
 	// RVA: 0x1509F10 Offset: 0x1509F10 VA: 0x1509F10
-	//private void DIAMDBHBKBH() { }
+	private void DIAMDBHBKBH()
+	{
+		JBHCLFDBPKP data = new JBHCLFDBPKP();
+		data.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result), ENDFGMBBBEE);
+		NFEAMMJIMPG = data;
+	}
 }

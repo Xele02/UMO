@@ -38,5 +38,17 @@ namespace ExternLib
 
 			return 0;
 		}
+
+		public static int SakashoStepUpLotGetStepUpLotDetail(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res[AFEHLCGHAEE_Strings.OPFGFINHFCE_name] = "Test";
+			res[AFEHLCGHAEE_Strings.BMFEGOMNECF_steps] = new EDOHBJAPLPF_JsonData();
+			res[AFEHLCGHAEE_Strings.BMFEGOMNECF_steps].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+			SendMessage(callbackId, res);
+			// end hack
+
+			return 0;
+		}
 	}
 }
