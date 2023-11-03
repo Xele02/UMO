@@ -5,6 +5,6 @@ namespace XeApp.Game.Menu
 	{
 		public int starNum; // 0x18
 
-		//public override int typeId { get; } 0xEE49A8  Slot: 4
+		public override int typeId { get { return 5; } } //0xEE49A8  Slot: 4
 	}
 }

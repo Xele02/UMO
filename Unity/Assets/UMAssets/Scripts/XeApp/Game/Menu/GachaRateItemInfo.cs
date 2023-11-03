@@ -10,6 +10,6 @@ namespace XeApp.Game.Menu
 		public string percent; // 0x10
 		public bool pickup; // 0x14
 
-		//public override int typeId { get; } 0xEE5890  Slot: 4
+		public override int typeId { get { return 2; } } //0xEE5890  Slot: 4
 	}
 }

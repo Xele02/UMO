@@ -12,7 +12,7 @@ public class BLHOHLGCJHI_GetItemSetRecord : CACGCMBKHDI_Request
 	public IKMBBPDBECA KACECFNECON; // 0x88
 
 	public HIMAFGJCECK NFEAMMJIMPG { get; private set; } // 0x8C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
-	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG != null } } //0x19C1A6C HGPAELCGELL
+	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG != null; } } //0x19C1A6C HGPAELCGELL
 
 	// RVA: 0x19C18B4 Offset: 0x19C18B4 VA: 0x19C18B4 Slot: 12
 	public override void DHLDNIEELHO()
@@ -37,7 +37,7 @@ public class BLHOHLGCJHI_GetItemSetRecord : CACGCMBKHDI_Request
 	private void DIAMDBHBKBH()
 	{
 		HIMAFGJCECK data = new HIMAFGJCECK();
-		data.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.EJCOJCGIBNG_ToJson(NGCAIEGPLKD_result), KACECFNECON);
+		data.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result), KACECFNECON);
 		NFEAMMJIMPG = data;
 	}
 }

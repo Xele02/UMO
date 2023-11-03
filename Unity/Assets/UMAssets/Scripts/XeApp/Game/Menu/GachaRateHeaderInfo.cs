@@ -13,7 +13,7 @@ namespace XeApp.Game.Menu
 		public string s1Percent; // 0x24
 		public string listTitle; // 0x28
 
-		//public override int typeId { get; } 0xEE558C  Slot: 4
+		public override int typeId { get { return 0; } } //0xEE558C  Slot: 4
 		//public bool IsRare5Only { get; } 0xEE559C
 		//public bool IsRare2Less { get; } 0xEE55D0
 	}

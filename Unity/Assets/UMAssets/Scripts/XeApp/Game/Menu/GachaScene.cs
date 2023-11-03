@@ -1127,7 +1127,7 @@ namespace XeApp.Game.Menu
 				info.headerTitle = bk.GetMessageByLabel(lot.basic_groups == null ? "popup_gacha_rate_basic_header" : (isHideRareMark ? "popup_gacha_rate_limited5_header" : "popup_gacha_rate_limited_header"));
 				info.listTitle = bk.GetMessageByLabel(lot.basic_groups == null ? "popup_gacha_rate_basic_list" : (isHideRareMark ? "popup_gacha_rate_limited5_list" : "popup_gacha_rate_limited_list"));
 				infoList.Add(info);
-				for (int i = 0; i < lot.basic_episodes.Count; i++)
+				for (int i = 0; i < lot.limited_episodes.Count; i++)
 				{
 					MakeAppearRateInEpisode(infoList, lot.limited_episodes[i]);
 				}
@@ -1217,7 +1217,7 @@ namespace XeApp.Game.Menu
 				m_gachaRatePopupSetting.SetParent(transform);
 				m_gachaRatePopupSetting.Data = GachaUtility.netGachaProductData;
 				m_gachaRatePopupSetting.Mode = GachaUtility.selectCategory;
-				m_gachaRatePopupSetting.WindowSize = 2;
+				m_gachaRatePopupSetting.WindowSize = SizeType.Large;
 				m_gachaRatePopupSetting.Buttons = new ButtonInfo[1]
 				{
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
@@ -1257,7 +1257,18 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEEC680 Offset: 0xEEC680 VA: 0xEEC680
-		//private void OnClickEpisodeReward(int episodeId) { }
+		private void OnClickEpisodeReward(int episodeId)
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			m_episodeRewardPopupSetting.TitleText = MessageManager.Instance.GetMessage("menu", "popup_title_episode_01");
+			m_episodeRewardPopupSetting.SetParent(transform);
+			m_episodeRewardPopupSetting.WindowSize = SizeType.Large;
+			m_episodeRewardPopupSetting.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			PopupWindowManager.Show(m_episodeRewardPopupSetting, null, null, null, null);
+		}
 
 		//// RVA: 0xEEC948 Offset: 0xEEC948 VA: 0xEEC948
 		private void OnClickStepInfo(int stepIndex)
