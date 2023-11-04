@@ -15,7 +15,7 @@ namespace XeApp.Game.Gacha
 
         public bool isPaid { get { return m_isPaid; } } //0x9842F8
         public AuraColorType auraColor { get { return m_auraColor; } } //0x984300
-        // public GachaDirectionOrbTable.ExpectType expectLevel { get; } 0x984308
+        public GachaDirectionOrbTable.ExpectType expectLevel { get { return m_expectLevel; } } //0x984308
         public int divaId { get { return m_divaId; } } //0x984310
         public int cardNum { get { return m_cardInfo.Count; } } //0x984318
 

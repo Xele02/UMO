@@ -134,7 +134,7 @@ namespace XeApp.Game.Menu
 				{
 					yield return Co.R(m_prpController.EpisodePhase(GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM_2/*2*/, episodeList, null));
 				}
-				if (viewData.JDKOAKDLHMG(GONMPHKGKHI_RewardView.CECMLGBLHHG.NNEOHGFGLKM/*3*/, ref highList, ref infoList, ref episodeList))
+				if (viewData.JDKOAKDLHMG(GONMPHKGKHI_RewardView.CECMLGBLHHG.NNEOHGFGLKM_3/*3*/, ref highList, ref infoList, ref episodeList))
 				{
 					yield return Co.R(m_prpController.RarityUpPhase(highList, null));
 					yield return Co.R(m_prpController.SkillEvolutionPhase(highList, null));

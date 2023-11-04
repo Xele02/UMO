@@ -53,7 +53,7 @@ namespace XeApp.Game.Menu
 			{
 				SetDesc("");
 			}
-			SetPlateName(RecordPlateUtility.GetPlateName(info.BCCHOBPJJKE_SceneId, m_showType, m_showType != GONMPHKGKHI_RewardView.CECMLGBLHHG.GBIDBHKEPGL/*1*/ && m_showType != GONMPHKGKHI_RewardView.CECMLGBLHHG.NNEOHGFGLKM/*3*/));
+			SetPlateName(RecordPlateUtility.GetPlateName(info.BCCHOBPJJKE_SceneId, m_showType, m_showType != GONMPHKGKHI_RewardView.CECMLGBLHHG.GBIDBHKEPGL/*1*/ && m_showType != GONMPHKGKHI_RewardView.CECMLGBLHHG.NNEOHGFGLKM_3/*3*/));
 			SetPlateImage(info.BCCHOBPJJKE_SceneId, info.JKGFBFPIMGA < info.HNNAODKJGPD ? 1 : 2);
 			SwitchTblShowType(m_showType);
 		}
@@ -176,7 +176,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x172BAFC Offset: 0x172BAFC VA: 0x172BAFC
 		public void CallbackOpenEnd()
 		{
-			if(m_showType == GONMPHKGKHI_RewardView.CECMLGBLHHG.NNEOHGFGLKM)
+			if(m_showType == GONMPHKGKHI_RewardView.CECMLGBLHHG.NNEOHGFGLKM_3)
 			{
 				AnimPlayPlateRarityUp();
 				AnimPlayLogo();
@@ -263,7 +263,7 @@ namespace XeApp.Game.Menu
 		private void SetDesc()
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			if(m_showType == GONMPHKGKHI_RewardView.CECMLGBLHHG.NNEOHGFGLKM)
+			if(m_showType == GONMPHKGKHI_RewardView.CECMLGBLHHG.NNEOHGFGLKM_3)
 			{
 				SetDesc(bk.GetMessageByLabel("popup_record_plate_001"));
 				return;

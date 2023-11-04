@@ -11,7 +11,7 @@ public class GONMPHKGKHI_RewardView
 		HJNNKCMLGFL = 0,
 		GBIDBHKEPGL = 1,
 		AGLFBCCGHJM_2 = 2,
-		NNEOHGFGLKM = 3,
+		NNEOHGFGLKM_3 = 3,
 		INJNLJHGGKB_4 = 4,
 		CEFPGLBAGAC = 5,
 		MNGOJCFMBPP = 6,
@@ -404,13 +404,13 @@ public class GONMPHKGKHI_RewardView
 			List<LCMJJMNMIKG_RewardInfo> rewards3 = NJCMJLPPIGK.FindAll((LCMJJMNMIKG_RewardInfo JPAEDJJFFOI) =>
 			{
 				//0x1E5D5AC
-				return JPAEDJJFFOI.IPMJIODJGBC == CECMLGBLHHG.NNEOHGFGLKM/*3*/;
+				return JPAEDJJFFOI.IPMJIODJGBC == CECMLGBLHHG.NNEOHGFGLKM_3/*3*/;
 			});
 			rewards.InsertRange(0, rewards3);
 			rewards3 = JPMPIFCKEHH_RewardsInfo.FindAll((LCMJJMNMIKG_RewardInfo JPAEDJJFFOI) =>
 			{
 				//0x1E5D5DC
-				return JPAEDJJFFOI.IPMJIODJGBC == CECMLGBLHHG.NNEOHGFGLKM/*3*/;
+				return JPAEDJJFFOI.IPMJIODJGBC == CECMLGBLHHG.NNEOHGFGLKM_3/*3*/;
 			});
 			rewards2.InsertRange(0, rewards3);
 		}
@@ -419,7 +419,7 @@ public class GONMPHKGKHI_RewardView
 			case CECMLGBLHHG.AGLFBCCGHJM_2/*2*/:
 				BBAJKJPKOHD.AddRange(DKJLFPMHDJC);
 				break;
-			case CECMLGBLHHG.NNEOHGFGLKM/*3*/:
+			case CECMLGBLHHG.NNEOHGFGLKM_3/*3*/:
 				PJFOENCFNEK.AddRange(rewards);
 				MPCJGPEBCCD.AddRange(rewards);
 				MPCJGPEBCCD.AddRange(rewards2);

@@ -34,15 +34,19 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB9DFBC Offset: 0xB9DFBC VA: 0xB9DFBC
 		public void Initialize(ScrollRect scroll)
 		{
-			scroll.onValueChanged.RemoveListener(this.OnUpdateScroll);
-			scroll.onValueChanged.AddListener(this.OnUpdateScroll);
+			scroll.onValueChanged.RemoveListener(OnUpdateScroll);
+			scroll.onValueChanged.AddListener(OnUpdateScroll);
 			m_scrollRectTransform = scroll.GetComponent<RectTransform>();
 			m_scroll = scroll;
 			m_scrollVertical = scroll.vertical;
 		}
 
 		// // RVA: 0xB9E19C Offset: 0xB9E19C VA: 0xB9E19C
-		// public void Release() { }
+		public void Release()
+		{
+			m_scroll.vertical = m_scrollVertical;
+			m_scroll.onValueChanged.RemoveListener(OnUpdateScroll);
+		}
 
 		// // RVA: 0xB9E2AC Offset: 0xB9E2AC VA: 0xB9E2AC
 		// public void ReleaseCache() { }

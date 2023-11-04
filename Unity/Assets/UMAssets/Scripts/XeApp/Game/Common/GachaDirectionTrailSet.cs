@@ -35,7 +35,12 @@ namespace XeApp.Game.Common
 		public Action onEndAnim { private get; set; } // 0x24
 
 		// RVA: 0xE95774 Offset: 0xE95774 VA: 0xE95774 Slot: 5
-		protected override void OnSetup(DirectionInfo directionInfo) { }
+		protected override void OnSetup(DirectionInfo directionInfo)
+		{
+			if(directionInfo.expectLevel <= GachaDirectionOrbTable.ExpectType.LV3)
+				m_preset = (Preset)directionInfo.expectLevel;
+			gameObject.SetActive(false);
+		}
 
 		// RVA: 0xE957DC Offset: 0xE957DC VA: 0xE957DC
 		public void Begin(Transform parent)
