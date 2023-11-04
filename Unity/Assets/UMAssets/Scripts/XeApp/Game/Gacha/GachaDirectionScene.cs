@@ -337,12 +337,12 @@ namespace XeApp.Game.Gacha
 			bool b1 = false;
 			switch(GachaUtility.selectCategory)
 			{
-				case GCAHJLOGMCI.KNMMOMEHDON.HJNNKCMLGFL_0:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.HJNNKCMLGFL_0:
 					break;
-				case GCAHJLOGMCI.KNMMOMEHDON.CCAPCGPIIPF_1:
-				case GCAHJLOGMCI.KNMMOMEHDON.ANFKBNLLJFN_7:
-				case GCAHJLOGMCI.KNMMOMEHDON.BCBJMKDAAKA_8:
-				case GCAHJLOGMCI.KNMMOMEHDON.OOABDNHIEFK_9:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.ANFKBNLLJFN_7:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9:
 					m_resultButtonUi.HideRetry();
 					b1 = true;
 					break;
@@ -389,7 +389,7 @@ namespace XeApp.Game.Gacha
 						b1 = true;
 					}
 					break;
-				case GCAHJLOGMCI.KNMMOMEHDON.GENEIBGNMPH_3:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.GENEIBGNMPH_3:
 					//LAB_00986958
 					if (maxLimit < 1 || count2 > 0)
 					{
@@ -402,8 +402,8 @@ namespace XeApp.Game.Gacha
 						b1 = true;
 					}
 					break;
-				case GCAHJLOGMCI.KNMMOMEHDON.GKDFKDLFNAJ_5:
-				case GCAHJLOGMCI.KNMMOMEHDON.BKNHBNINDOC_6:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.GKDFKDLFNAJ_5:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.BKNHBNINDOC_6:
 					if (currentTicket < price)
 					{
 						m_resultButtonUi.HideRetry();
@@ -418,10 +418,10 @@ namespace XeApp.Game.Gacha
 						b1 = false;
 					}
 					break;
-				case GCAHJLOGMCI.KNMMOMEHDON.DLOPEFGOAPD_10:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10:
 					if (price <= currentTicket)
 					{
-						m_resultButtonUi.SetRetryConsume(GachaUtility.netGachaProductData.MJNOAMAFNHA, price);
+						m_resultButtonUi.SetRetryConsume(GachaUtility.netGachaProductData.MJNOAMAFNHA_CostItemId, price);
 						b1 = false;
 					}
 					else
@@ -431,10 +431,10 @@ namespace XeApp.Game.Gacha
 					}
 					break;
 			}
-			if(GachaUtility.netGachaProductData.FJAOAGNFABN)
+			if(GachaUtility.netGachaProductData.FJAOAGNFABN_HasOneDay)
 			{
 				EGOLBAPFHHD_Common.PCHECKGDJDK d = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BGDMJGDEKFJ_GetGachaDraw(GachaUtility.netGachaProductData.FDEBLMKEMLF_TypeAndSeriesId);
-				if(d != null && GachaUtility.netGachaProductData.ABNMIDCBENB <= d.HMFFHLPNMPH)
+				if(d != null && GachaUtility.netGachaProductData.ABNMIDCBENB_OneDay <= d.HMFFHLPNMPH)
 				{
 					m_resultButtonUi.HideRetry();
 					b1 = true;
@@ -448,7 +448,7 @@ namespace XeApp.Game.Gacha
 			{
 				if(GachaUtility.selectedCountType == GachaUtility.CountType.Multi)
 				{
-					if(GachaUtility.netGachaCount >= GCAHJLOGMCI.NFCAJPIJFAM.GOAHICNDICO_5 && GachaUtility.netGachaCount <= GCAHJLOGMCI.NFCAJPIJFAM.LMHDFEKIDKG_6)
+					if(GachaUtility.netGachaCount >= GCAHJLOGMCI.NFCAJPIJFAM_SummonType.GOAHICNDICO_5 && GachaUtility.netGachaCount <= GCAHJLOGMCI.NFCAJPIJFAM_SummonType.LMHDFEKIDKG_6)
 					{
 						count2 = 0;
 						maxLimit = 1;
@@ -458,7 +458,7 @@ namespace XeApp.Game.Gacha
 				}
 				else if(GachaUtility.selectedCountType == GachaUtility.CountType.Single)
 				{
-					if (GachaUtility.netGachaCount >= GCAHJLOGMCI.NFCAJPIJFAM.GOAHICNDICO_5 && GachaUtility.netGachaCount <= GCAHJLOGMCI.NFCAJPIJFAM.LMHDFEKIDKG_6)
+					if (GachaUtility.netGachaCount >= GCAHJLOGMCI.NFCAJPIJFAM_SummonType.GOAHICNDICO_5 && GachaUtility.netGachaCount <= GCAHJLOGMCI.NFCAJPIJFAM_SummonType.LMHDFEKIDKG_6)
 					{
 						count2 = 0;
 						maxLimit = 1;
@@ -466,7 +466,7 @@ namespace XeApp.Game.Gacha
 					m_resultButtonUi.SetRemainCount(count, max);
 					m_resultButtonUi.SetTelopType(GachaUtility.selectCategory, GachaUtility.netGachaSingleProduct, GachaUtility.netGachaProductData.KACECFNECON == null ? "" : GachaUtility.netGachaProductData.KACECFNECON.NEBCAAGLDHA_FreeSingle);
 				}
-				m_resultButtonUi.SetDrawRarity(GachaUtility.netGachaProductData.KKODAOIJHMC(GachaUtility.netGachaCount));
+				m_resultButtonUi.SetDrawRarity(GachaUtility.netGachaProductData.KKODAOIJHMC_GetKakuteiText(GachaUtility.netGachaCount));
 			}
 			//LAB_00986cf0;
 			GameManager.Instance.ResetViewPlayerData();

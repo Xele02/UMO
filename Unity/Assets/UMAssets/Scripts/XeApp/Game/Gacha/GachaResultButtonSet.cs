@@ -144,10 +144,10 @@ namespace XeApp.Game.Gacha
 		}
 
 		// RVA: 0x987E10 Offset: 0x987E10 VA: 0x987E10
-		public void SetTelopType(GCAHJLOGMCI.KNMMOMEHDON selectMode, KBPDNHOKEKD_ProductId productData, string msg)
+		public void SetTelopType(GCAHJLOGMCI.KNMMOMEHDON_GachaType selectMode, KBPDNHOKEKD_ProductId productData, string msg)
 		{
             KBPDNHOKEKD_ProductId.KNEKLJHNHAK a = KBPDNHOKEKD_ProductId.KNEKLJHNHAK.HJNNKCMLGFL_0;
-			if(selectMode == GCAHJLOGMCI.KNMMOMEHDON.DLOPEFGOAPD_10)
+			if(selectMode == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10)
 			{
 				m_textTelop.text = "";
 			}
@@ -192,7 +192,7 @@ namespace XeApp.Game.Gacha
 					int.TryParse(Regex.Replace(Regex.Match(kakutei, JpStringLiterals.StringLiteral_14845).Value, JpStringLiterals.StringLiteral_14845, (Match p) =>
 					{
 						//0x98ECF4
-						return (p.Value[0] + 0x120).ToString();
+						return Convert.ToChar((p.Value[0] + 0x120) % 0xffff).ToString();
 					}), out a);
 					if(a < 5)
 					{

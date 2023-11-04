@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using XeSys;
 using System.Text.RegularExpressions;
+using System;
 
 namespace XeApp.Game.Menu
 {
@@ -43,11 +44,11 @@ namespace XeApp.Game.Menu
 		public void Setup(BEPHBEGDFFK.DMBKENKBIJD info, BEPHBEGDFFK.ABBPGMEDDHD zone = 0)
 		{
 			int ticketCount = info.CMHHHCAKPCD();
-			if(info.BJLONGBNPCI == GCAHJLOGMCI.NFCAJPIJFAM.NGAHKKOBGPA_9 || info.BJLONGBNPCI == GCAHJLOGMCI.NFCAJPIJFAM.BPPLDIBMPKH_10)
+			if(info.BJLONGBNPCI_SummonType == GCAHJLOGMCI.NFCAJPIJFAM_SummonType.NGAHKKOBGPA_9 || info.BJLONGBNPCI_SummonType == GCAHJLOGMCI.NFCAJPIJFAM_SummonType.BPPLDIBMPKH_10)
 			{
 				ticketCount = info.CMHHHCAKPCD();
 			}
-			Setup(info.DPBDFPPMIPH, info.APHNELOFGAK_CurrencyId, info.KPIHBPMOGKL_LotCount, info.ILFAHJEJCMH(), info.MDEIKCBEHHC_Kakutei, info.JNMMPPILMBC, ticketCount, zone, info.JHNMKKNEENE);
+			Setup(info.DPBDFPPMIPH_Gacha, info.APHNELOFGAK_CurrencyId, info.KPIHBPMOGKL_LotCount, info.ILFAHJEJCMH_GetPrice(), info.MDEIKCBEHHC_Kakutei, info.JNMMPPILMBC, ticketCount, zone, info.JHNMKKNEENE_Time);
 		}
 
 		// RVA: 0x19ABD00 Offset: 0x19ABD00 VA: 0x19ABD00
@@ -59,7 +60,7 @@ namespace XeApp.Game.Menu
 				//0x19AD67C
 				return step == x.AGBCJMMMLON_StepIndex;
 			});
-			Setup(view.DPBDFPPMIPH, stepUpRecord.LKPHIGAFJKD_VirtualCurrency.PPFNGGCBJKC_Id, m.EKOFPNGPCIP_RareCount + m.MFFNDOEPJFO_NormalCount, m.LCJPKJMMIAP_CurrencyAmmount, m.KACECFNECON != null ? m.KACECFNECON.MDEIKCBEHHC : "", false, 0, view.MFMBCIKGCFC(), view.JHNMKKNEENE);
+			Setup(view.DPBDFPPMIPH_Gacha, stepUpRecord.LKPHIGAFJKD_VirtualCurrency.PPFNGGCBJKC_Id, m.EKOFPNGPCIP_RareCount + m.MFFNDOEPJFO_NormalCount, m.LCJPKJMMIAP_CurrencyAmmount, m.KACECFNECON != null ? m.KACECFNECON.MDEIKCBEHHC : "", false, 0, view.MFMBCIKGCFC(), view.JHNMKKNEENE_Time);
 		}
 
 		// RVA: 0x19ABA40 Offset: 0x19ABA40 VA: 0x19ABA40
@@ -73,7 +74,7 @@ namespace XeApp.Game.Menu
 			m_layoutFirstSale.StartChildrenAnimGoStop(isFirstSale ? "01" : "02");
 			PMDCIJMMNGK_GachaTicket.EJAKHFONNGN tkt = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(currencyId);
 			SetButtonColor(isFirstSale, tkt != null);
-			if (gachaProduct.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON.CCAPCGPIIPF_1)
+			if (gachaProduct.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1)
 			{
 				Disable = LKBGPLDLNIK.JPIMHNNGJGI(currentTime) != 0;
 			}
@@ -186,7 +187,7 @@ namespace XeApp.Game.Menu
 					int.TryParse(Regex.Replace(match.Value, JpStringLiterals.StringLiteral_14845, (Match p) =>
 					{
 						//0x19AD608
-						return (p.Value[0] + 288).ToString();
+						return Convert.ToChar((p.Value[0] + 288) % 0xffff).ToString();
 					}), out v);
 					if (v < 5)
 						s = "gacha_button_ribbon_b";
@@ -223,6 +224,9 @@ namespace XeApp.Game.Menu
 			m_uvMan = uvMan;
 			m_textKakutei.font = m_fontKakutei;
 			m_textKakutei.material = m_fontKakutei.material;
+#if UNITY_EDITOR || UNITY_STANDALONE
+			BundleShaderInfo.Instance.FixMaterialShader(m_textKakutei.material);
+#endif
 			m_textKakutei.verticalOverflow = VerticalWrapMode.Overflow;
 			m_textKakutei.horizontalOverflow = HorizontalWrapMode.Overflow;
 			LayoutUGUIRuntime r = GetComponentInParent<LayoutUGUIRuntime>();

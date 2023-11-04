@@ -107,11 +107,11 @@ namespace XeApp.Game.Menu
 			m_view = view;
 			m_waitTime = 0;
 			m_sceneIds = null;
-			if (view.DPBDFPPMIPH.KACECFNECON != null)
+			if (view.DPBDFPPMIPH_Gacha.KACECFNECON != null)
 			{
-				m_sceneIds = m_view.DPBDFPPMIPH.KACECFNECON.PGKIHFOKEHL_Feature;
+				m_sceneIds = m_view.DPBDFPPMIPH_Gacha.KACECFNECON.PGKIHFOKEHL_Feature;
 			}
-			if(m_view.DPBDFPPMIPH.MFICPBJPCCJ < 1)
+			if(m_view.DPBDFPPMIPH_Gacha.MFICPBJPCCJ_GachaBgId < 1)
 			{
 				if(m_sceneIds != null && m_sceneIds.Count > 0)
 				{
@@ -156,11 +156,11 @@ namespace XeApp.Game.Menu
 			{
 				if(isFade)
 				{
-					this.StartCoroutineWatched(Co_FadeChangeGachaBgImage(m_view.DPBDFPPMIPH.MFICPBJPCCJ));
+					this.StartCoroutineWatched(Co_FadeChangeGachaBgImage(m_view.DPBDFPPMIPH_Gacha.MFICPBJPCCJ_GachaBgId));
 				}
 				else
 				{
-					LoadGachaBgImage(m_view.DPBDFPPMIPH.MFICPBJPCCJ, null);
+					LoadGachaBgImage(m_view.DPBDFPPMIPH_Gacha.MFICPBJPCCJ_GachaBgId, null);
 				}
 				m_loopStop = true;
 				m_arrowButton[0].SetActive(false);

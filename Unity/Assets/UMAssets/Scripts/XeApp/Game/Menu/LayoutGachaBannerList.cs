@@ -56,7 +56,7 @@ namespace XeApp.Game.Menu
 				{
 					m_scrollList.scrollObjects[i].gameObject.SetActive(true);
 					LayoutGachaBannerItem it = m_scrollList.scrollObjects[i].gameObject.GetComponent<LayoutGachaBannerItem>();
-					it.Setup(m_productList[i], view.CEPJKBFGKEN, view.MFMBCIKGCFC(), view.JHNMKKNEENE);
+					it.Setup(m_productList[i], view.CEPJKBFGKEN, view.MFMBCIKGCFC(), view.JHNMKKNEENE_Time);
 					it.OnClickButton = (LayoutGachaBannerItem select) =>
 					{
 						//0x1998B94

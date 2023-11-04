@@ -67,31 +67,31 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x19AD7AC Offset: 0x19AD7AC VA: 0x19AD7AC
 		public void SetButtonType(BEPHBEGDFFK view)
 		{
-			KOPCFBCDBPC stepRecord = view.DPBDFPPMIPH.NECDFDNBHFK;
+			KOPCFBCDBPC stepRecord = view.DPBDFPPMIPH_Gacha.NECDFDNBHFK;
 			if(stepRecord == null)
 			{
-				if(view.DPBDFPPMIPH.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON.OOABDNHIEFK_9)
+				if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9)
 				{
 					BEPHBEGDFFK.DMBKENKBIJD d = view.EIPFDJBIOKN(false);
 					if(d == null)
 					{
 						d = view.IIPOPGHKHBA(false);
 					}
-					if(view.DPBDFPPMIPH.KACECFNECON.CICLLABDFFK_SaleButtonVisible)
+					if(view.DPBDFPPMIPH_Gacha.KACECFNECON.CICLLABDFFK_SaleButtonVisible)
 					{
-						ButtonL.Setup(view.DPBDFPPMIPH, d.APHNELOFGAK_CurrencyId, d.KPIHBPMOGKL_LotCount, d.MEANCEOIMGE.NPPGKNGIFGK_Price, d.MDEIKCBEHHC_Kakutei, false, 0, 0, 0);
+						ButtonL.Setup(view.DPBDFPPMIPH_Gacha, d.APHNELOFGAK_CurrencyId, d.KPIHBPMOGKL_LotCount, d.MEANCEOIMGE_Summon.NPPGKNGIFGK_Price, d.MDEIKCBEHHC_Kakutei, false, 0, 0, 0);
 						ButtonR.Hidden = true;
 						ButtonL.Hidden = false;
 					}
 					else
 					{
-						ButtonR.Setup(view.DPBDFPPMIPH, d.APHNELOFGAK_CurrencyId, d.KPIHBPMOGKL_LotCount, d.MEANCEOIMGE.NPPGKNGIFGK_Price, d.MDEIKCBEHHC_Kakutei, false, 0, 0, 0);
+						ButtonR.Setup(view.DPBDFPPMIPH_Gacha, d.APHNELOFGAK_CurrencyId, d.KPIHBPMOGKL_LotCount, d.MEANCEOIMGE_Summon.NPPGKNGIFGK_Price, d.MDEIKCBEHHC_Kakutei, false, 0, 0, 0);
 						ButtonR.Disable = d.CMHHHCAKPCD() < 1;
 						ButtonR.Hidden = false;
 						ButtonL.Hidden = true;
 					}
 				}
-				else if(view.DPBDFPPMIPH.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON.DLOPEFGOAPD_10)
+				else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10)
 				{
 					BEPHBEGDFFK.DMBKENKBIJD d = view.EIPFDJBIOKN(true);
 					if(d == null)
@@ -100,14 +100,14 @@ namespace XeApp.Game.Menu
 					}
 					if(d.KPIHBPMOGKL_LotCount > 1)
 					{
-						ButtonR.Setup(view.DPBDFPPMIPH, d.APHNELOFGAK_CurrencyId, d.KPIHBPMOGKL_LotCount, d.KPIHBPMOGKL_LotCount, d.MDEIKCBEHHC_Kakutei, false, 0, 0, 0);
-						ButtonL.Setup(view.DPBDFPPMIPH, d.APHNELOFGAK_CurrencyId, 1, 1, d.MDEIKCBEHHC_Kakutei, false, 0, 0, 0);
+						ButtonR.Setup(view.DPBDFPPMIPH_Gacha, d.APHNELOFGAK_CurrencyId, d.KPIHBPMOGKL_LotCount, d.KPIHBPMOGKL_LotCount, d.MDEIKCBEHHC_Kakutei, false, 0, 0, 0);
+						ButtonL.Setup(view.DPBDFPPMIPH_Gacha, d.APHNELOFGAK_CurrencyId, 1, 1, d.MDEIKCBEHHC_Kakutei, false, 0, 0, 0);
 						ButtonR.Hidden = false;
 						ButtonL.Hidden = false;
 					}
 					else
 					{
-						ButtonR.Setup(view.DPBDFPPMIPH, d.APHNELOFGAK_CurrencyId, 1, 1, d.MDEIKCBEHHC_Kakutei, false, 0, 0, 0);
+						ButtonR.Setup(view.DPBDFPPMIPH_Gacha, d.APHNELOFGAK_CurrencyId, 1, 1, d.MDEIKCBEHHC_Kakutei, false, 0, 0, 0);
 						ButtonR.Hidden = false;
 						ButtonL.Hidden = true;
 					}
@@ -115,7 +115,7 @@ namespace XeApp.Game.Menu
 				else
 				{
 					BEPHBEGDFFK.DMBKENKBIJD d = view.EIPFDJBIOKN(true);
-					if(view.DPBDFPPMIPH.INDDJNMPONH_Category != GCAHJLOGMCI.KNMMOMEHDON.ANFKBNLLJFN_7)
+					if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category != GCAHJLOGMCI.KNMMOMEHDON_GachaType.ANFKBNLLJFN_7)
 					{
 						BEPHBEGDFFK.DMBKENKBIJD d2 = view.IIPOPGHKHBA(true);
 						if(d != null && d2 != null)
@@ -150,18 +150,18 @@ namespace XeApp.Game.Menu
 			string str = "";
 			bool b1 = false;
 			bool b2 = true;
-			switch(view.DPBDFPPMIPH.INDDJNMPONH_Category)
+			switch(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category)
 			{
-				case GCAHJLOGMCI.KNMMOMEHDON.PHABJLGFJNI_2:
-				case GCAHJLOGMCI.KNMMOMEHDON.GENEIBGNMPH_3:
-				case GCAHJLOGMCI.KNMMOMEHDON.JGDEHOGIENP_4:
-				case GCAHJLOGMCI.KNMMOMEHDON.BCBJMKDAAKA_8:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.PHABJLGFJNI_2:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.GENEIBGNMPH_3:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.JGDEHOGIENP_4:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8:
 					b1 = false;
-					if (view.DPBDFPPMIPH.KACECFNECON == null)
+					if (view.DPBDFPPMIPH_Gacha.KACECFNECON == null)
 						break;
-					if (string.IsNullOrEmpty(view.DPBDFPPMIPH.KACECFNECON.KLMPFGOCBHC_Description))
+					if (string.IsNullOrEmpty(view.DPBDFPPMIPH_Gacha.KACECFNECON.KLMPFGOCBHC_Description))
 					{
-						if(view.DPBDFPPMIPH.KACECFNECON.FLADABCFDFA_Pickup.Count < 1)
+						if(view.DPBDFPPMIPH_Gacha.KACECFNECON.FLADABCFDFA_Pickup.Count < 1)
 						{
 							b1 = false;
 							break;
@@ -172,23 +172,23 @@ namespace XeApp.Game.Menu
 					else
 					{
 						b1 = false;
-						str = bk.GetMessageByLabel(view.DPBDFPPMIPH.KLMPFGOCBHC_Description);
+						str = bk.GetMessageByLabel(view.DPBDFPPMIPH_Gacha.KLMPFGOCBHC_Description);
 					}
 					break;
 				default:
 					break;
-				case GCAHJLOGMCI.KNMMOMEHDON.OOABDNHIEFK_9:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9:
 					b1 = false;
-					b2 = !view.DPBDFPPMIPH.KACECFNECON.CICLLABDFFK_SaleButtonVisible;
+					b2 = !view.DPBDFPPMIPH_Gacha.KACECFNECON.CICLLABDFFK_SaleButtonVisible;
 					if(!b2)
 					{
-						int a = view.DPBDFPPMIPH.OMNAPCHLBHF(GCAHJLOGMCI.NFCAJPIJFAM.GOAHICNDICO_5);
+						int a = view.DPBDFPPMIPH_Gacha.OMNAPCHLBHF(GCAHJLOGMCI.NFCAJPIJFAM_SummonType.GOAHICNDICO_5);
 						if (a == 0)
 						{
-							a = view.DPBDFPPMIPH.OMNAPCHLBHF(GCAHJLOGMCI.NFCAJPIJFAM.LMHDFEKIDKG_6);
+							a = view.DPBDFPPMIPH_Gacha.OMNAPCHLBHF(GCAHJLOGMCI.NFCAJPIJFAM_SummonType.LMHDFEKIDKG_6);
 						}
 						string s = bk.GetMessageByLabel("gacha_main_ticket_sale_period");
-						DateTime d = Utility.GetLocalDateTime(view.DPBDFPPMIPH.HIPBEKBFNBG(a));
+						DateTime d = Utility.GetLocalDateTime(view.DPBDFPPMIPH_Gacha.HIPBEKBFNBG(a));
 						str = string.Format(s, new object[4]
 						{
 							d.Month,
@@ -219,7 +219,7 @@ namespace XeApp.Game.Menu
 						}
 					}
 					break;
-				case GCAHJLOGMCI.KNMMOMEHDON.DLOPEFGOAPD_10:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10:
 					str = bk.GetMessageByLabel("gacha_desc_03");
 					b1 = false;
 					break;
@@ -247,12 +247,12 @@ namespace XeApp.Game.Menu
 			bool b1 = false;
 			bool b2;
 			string str;
-			if(view.DPBDFPPMIPH.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON.OOABDNHIEFK_9)
+			if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9)
 			{
 				b2 = true;
 				str = "02";
 			}
-			else if(view.DPBDFPPMIPH.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON.DLOPEFGOAPD_10)
+			else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10)
 			{
 				b2 = true;
 				b1 = true;
@@ -293,7 +293,7 @@ namespace XeApp.Game.Menu
 			if(b2)
 			{
 				m_imageTicketIcon.enabled = false;
-				int id = view.DPBDFPPMIPH.FKKCFICCGMM(d.APHNELOFGAK_CurrencyId);
+				int id = view.DPBDFPPMIPH_Gacha.FKKCFICCGMM(d.APHNELOFGAK_CurrencyId);
 				if(id > 0)
 				{
 					GameManager.Instance.ItemTextureCache.Load(id, (IiconTexture icon) =>
@@ -308,7 +308,7 @@ namespace XeApp.Game.Menu
 				m_textTicketNum.text = string.Format(JpStringLiterals.StringLiteral_14007, a);
 			}
 			m_layoutTicket.StartChildrenAnimGoStop(str);
-			int c = view.DPBDFPPMIPH.EDCAFNOBCOJ();
+			int c = view.DPBDFPPMIPH_Gacha.EDCAFNOBCOJ();
 			if (c < 1)
 			{
 				m_layoutEvTicket.StartChildrenAnimGoStop("02");
@@ -340,22 +340,22 @@ namespace XeApp.Game.Menu
 		public void SetTelopType(BEPHBEGDFFK view)
 		{
 			string str = null;
-			if(view.DPBDFPPMIPH.NECDFDNBHFK == null)
+			if(view.DPBDFPPMIPH_Gacha.NECDFDNBHFK == null)
 			{
 				m_layoutStepOnOff.StartChildrenAnimGoStop("01");
-				if(view.DPBDFPPMIPH.KACECFNECON != null)
+				if(view.DPBDFPPMIPH_Gacha.KACECFNECON != null)
 				{
-					str = view.DPBDFPPMIPH.KACECFNECON.MKJPDIHLGBF_FreeMulti;
+					str = view.DPBDFPPMIPH_Gacha.KACECFNECON.MKJPDIHLGBF_FreeMulti;
 				}
 			}
 			else
 			{
 				m_layoutStepOnOff.StartChildrenAnimGoStop("02");
-				int stepNum = view.DPBDFPPMIPH.NECDFDNBHFK.LKHAAGIJEPG_PlayerStatus.DBNAGGGJDAB_CurrentStepIndex;
+				int stepNum = view.DPBDFPPMIPH_Gacha.NECDFDNBHFK.LKHAAGIJEPG_PlayerStatus.DBNAGGGJDAB_CurrentStepIndex;
 				m_numberStepNum.SetNumber(stepNum, 0);
-				m_numberStepMax.SetNumber(view.DPBDFPPMIPH.NECDFDNBHFK.BMFEGOMNECF_Step.Count);
-				m_layoutStepNum.StartChildrenAnimGoStop(view.DPBDFPPMIPH.NECDFDNBHFK.LKHAAGIJEPG_PlayerStatus.NMNLJFIDFJE_CurrentStepRestCount < 0 ? "02" : "01");
-				MMNNAPPLHFM m = view.DPBDFPPMIPH.NECDFDNBHFK.BMFEGOMNECF_Step[stepNum - 1];
+				m_numberStepMax.SetNumber(view.DPBDFPPMIPH_Gacha.NECDFDNBHFK.BMFEGOMNECF_Step.Count);
+				m_layoutStepNum.StartChildrenAnimGoStop(view.DPBDFPPMIPH_Gacha.NECDFDNBHFK.LKHAAGIJEPG_PlayerStatus.NMNLJFIDFJE_CurrentStepRestCount < 0 ? "02" : "01");
+				MMNNAPPLHFM m = view.DPBDFPPMIPH_Gacha.NECDFDNBHFK.BMFEGOMNECF_Step[stepNum - 1];
 				if(m != null)
 				{
 					str = m.KACECFNECON.KLMPFGOCBHC_Description;
@@ -381,7 +381,7 @@ namespace XeApp.Game.Menu
 					m_layoutTelop.StartChildrenAnimGoStop("01");
 					return;
 				}
-				switch (view.DPBDFPPMIPH.FJICMLBOJCH())
+				switch (view.DPBDFPPMIPH_Gacha.FJICMLBOJCH())
 				{
 					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.HJNNKCMLGFL_0:
 						m_layoutTelop.StartChildrenAnimGoStop("02");
@@ -396,7 +396,7 @@ namespace XeApp.Game.Menu
 						break;
 					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.DKIKNLEDDBK_3:
 						m_layoutTelop.StartChildrenAnimGoStop("01");
-						m_textTelop.text = string.Format(bk.GetMessageByLabel("gacha_telop_04"), d.MEANCEOIMGE.HCMGHDNNJOM());
+						m_textTelop.text = string.Format(bk.GetMessageByLabel("gacha_telop_04"), d.MEANCEOIMGE_Summon.HCMGHDNNJOM());
 						break;
 					case KBPDNHOKEKD_ProductId.KNEKLJHNHAK.AAPLMEGMNJA_4:
 						m_layoutTelop.StartChildrenAnimGoStop("01");

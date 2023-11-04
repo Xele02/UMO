@@ -104,17 +104,17 @@ public class KBPDNHOKEKD_ProductId
 	public HFDMKKIFNNP KHEGONOKLPN_NormalLotFreeSetting; // 0x54
 	public PFIJNPCEOIL JENBPPBNAHP_PlayerNormalLotFreeState; // 0x58
 	public bool PAFFIBGPOJN_Rare4Only; // 0x5C
-	public int CANACBAPKFK; // 0x60
+	public int CANACBAPKFK_ForcedCount; // 0x60
 
 	public bool EJENFBLDAIN_IsOwnedMax { get { 
 		if(HMFDJHEEGNN_BuyLimit > 0)
 			return GIEBJDKLCDH_BoughtQuantity == HMFDJHEEGNN_BuyLimit;
 		return false;
 	 } } //0x101CE84 KNLOMFHAKEG
-	public int JHAIOJELFHI { get
+	public int JHAIOJELFHI_GetNumLot { get
 		{
-			if (CANACBAPKFK > 0)
-				return CANACBAPKFK;
+			if (CANACBAPKFK_ForcedCount > 0)
+				return CANACBAPKFK_ForcedCount;
 			if (GJEBPJHECIK_ItemSetNameForApi != null)
 				return GJEBPJHECIK_ItemSetNameForApi.Count;
 			return 0;
@@ -190,7 +190,7 @@ public class KBPDNHOKEKD_ProductId
 	{
 		OPFGFINHFCE_Name = MessageManager.Instance.GetMessage("menu", "tuto_gacha_title");
 		KLMPFGOCBHC_Description = MessageManager.Instance.GetMessage("menu", "tuto_gacha_desc");
-		CANACBAPKFK = HMFFHLPNMPH;
+		CANACBAPKFK_ForcedCount = HMFFHLPNMPH;
 		HMFDJHEEGNN_BuyLimit = 0;
 		GIEBJDKLCDH_BoughtQuantity = 0;
 		KAPMOPMDHJE_Label = (HMFFHLPNMPH == 10) ? 7000102 : 7000101;

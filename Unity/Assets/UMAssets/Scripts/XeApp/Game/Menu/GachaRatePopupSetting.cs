@@ -9,7 +9,7 @@ namespace XeApp.Game.Menu
 { 
 	public class GachaRatePopupSetting : PopupSetting
 	{
-		public GCAHJLOGMCI.KNMMOMEHDON Mode; // 0x48
+		public GCAHJLOGMCI.KNMMOMEHDON_GachaType Mode; // 0x48
 
 		public List<GachaRateInfo> RarityInfoList { get; set; } // 0x34
 		public List<GachaRateInfo> EpisodeInfoList { get; set; } // 0x38

@@ -2201,7 +2201,7 @@ namespace XeApp.Game.Menu
 				if(l2.Count > 0)
 				{
 					period = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.AFHFIPLOKMN_LimitedItem.BLKPKBICPKK(l[i], time);
-					if (l[i] > 0 || l2[0].EABMLBFHJBH >= period)
+					if (l[i] > 0 || l2[0].EABMLBFHJBH_CloseAt >= period)
 					{
 						m_coLimitedItemList.Add(new limitedWarning(Co_LimitedItemPeriodPopup(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem, l[i]), CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.AFHFIPLOKMN_LimitedItem.HPPKOGKNKMH(l[i], time), time, period), period));
 					}
@@ -2373,13 +2373,13 @@ namespace XeApp.Game.Menu
 						List<LOBDIAABMKG> l2 = NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.FIGBNDFBKPE(ticketId);
 						if (l2.Count < 1)
 							continue;
-						if(l2[0].EABMLBFHJBH >= p)
+						if(l2[0].EABMLBFHJBH_CloseAt >= p)
 						{
 							m_coCurrencyItemList.Add(new limitedWarning(Co_CurrencyItemPeriodPopup(ticketId, count, time, p), p));
 						}
 						else
 						{
-							m_coCurrencyItemList.Add(new limitedWarning(Co_CurrencyItemGachaProductPeriodPopup(ticketId, count, time, l2[0].EABMLBFHJBH), l2[0].EABMLBFHJBH));
+							m_coCurrencyItemList.Add(new limitedWarning(Co_CurrencyItemGachaProductPeriodPopup(ticketId, count, time, l2[0].EABMLBFHJBH_CloseAt), l2[0].EABMLBFHJBH_CloseAt));
 						}
 					}
 				}

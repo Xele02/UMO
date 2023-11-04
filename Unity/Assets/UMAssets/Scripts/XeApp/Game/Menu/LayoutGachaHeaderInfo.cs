@@ -19,7 +19,7 @@ namespace XeApp.Game.Menu
 		public void Setup(BEPHBEGDFFK view)
 		{
 			m_numberVC.SetNumber(view.BJLPJAAIMKC(), 0);
-			m_buttonVC.Disable = view.DPBDFPPMIPH.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON.ANFKBNLLJFN_7;
+			m_buttonVC.Disable = view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.ANFKBNLLJFN_7;
 		}
 
 		// RVA: 0x19B0944 Offset: 0x19B0944 VA: 0x19B0944

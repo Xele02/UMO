@@ -21,8 +21,8 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1D4F0AC Offset: 0x1D4F0AC VA: 0x1D4F0AC
 		public void Setup(BEPHBEGDFFK view)
 		{
-			int v = view.DPBDFPPMIPH.FDEBLMKEMLF_TypeAndSeriesId;
-			int.TryParse(view.DPBDFPPMIPH.IJADMGDHEIE, out v);
+			int v = view.DPBDFPPMIPH_Gacha.FDEBLMKEMLF_TypeAndSeriesId;
+			int.TryParse(view.DPBDFPPMIPH_Gacha.IJADMGDHEIE, out v);
 			m_imageTitle.enabled = false;
 			view.CEPJKBFGKEN.LoadForGacha(v, (IiconTexture iconTex) =>
 			{
@@ -30,7 +30,7 @@ namespace XeApp.Game.Menu
 				m_imageTitle.enabled = true;
 				(iconTex as HomeBannerTexture).SetForGachaTitle(m_imageTitle);
 			});
-			int a = view.DPBDFPPMIPH.EDCAFNOBCOJ();
+			int a = view.DPBDFPPMIPH_Gacha.EDCAFNOBCOJ();
 			if (a < 1)
 			{
 				m_layoutEvTicket.StartChildrenAnimGoStop("02");
@@ -48,24 +48,24 @@ namespace XeApp.Game.Menu
 					m_layoutEvTicket.StartChildrenAnimGoStop("01");
 				}
 			}
-			if(view.DPBDFPPMIPH.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON.CCAPCGPIIPF_1)
+			if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1)
 			{
 				m_layoutPeriod.StartChildrenAnimGoStop("02");
 				m_textPeriod.text = view.IFLJEIDBBPP();
 			}
-			else if(view.DPBDFPPMIPH.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON.DLOPEFGOAPD_10)
+			else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10)
 			{
 				m_layoutPeriod.StartChildrenAnimGoStop("04");
-				m_textDesc.text = view.DPBDFPPMIPH.KACECFNECON.KLMPFGOCBHC_Description;
+				m_textDesc.text = view.DPBDFPPMIPH_Gacha.KACECFNECON.KLMPFGOCBHC_Description;
 			}
-			else if(view.DPBDFPPMIPH.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON.ANFKBNLLJFN_7)
+			else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.ANFKBNLLJFN_7)
 			{
 				m_layoutPeriod.StartChildrenAnimGoStop("03");
 				return;
 			}
 			else
 			{
-				m_layoutPeriod.StartChildrenAnimGoStop(view.DPBDFPPMIPH.KNMLPAAHAOF_IsStartGacha ? "03" : "01");
+				m_layoutPeriod.StartChildrenAnimGoStop(view.DPBDFPPMIPH_Gacha.KNMLPAAHAOF_IsStartGacha ? "03" : "01");
 				m_textPeriod.text = view.MJLAFJJOGEE();
 			}
 		}

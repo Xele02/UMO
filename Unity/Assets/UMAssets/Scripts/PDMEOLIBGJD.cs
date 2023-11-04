@@ -1,4 +1,5 @@
 
+using System;
 using System.Text.RegularExpressions;
 
 public class PDMEOLIBGJD : IKMBBPDBECA
@@ -69,7 +70,7 @@ public class PDMEOLIBGJD : IKMBBPDBECA
                 string s = Regex.Replace(Regex.Match(MDEIKCBEHHC, JpStringLiterals.StringLiteral_13053).Value, "[0-9]", (Match MABBBOEAPAA) =>
                 {
                     //0xCC431C
-                    return (MABBBOEAPAA.Value[0] - 0x120).ToString();
+                    return Convert.ToChar(MABBBOEAPAA.Value[0] + 65248).ToString();
                 });
                 MDEIKCBEHHC = Regex.Replace(MDEIKCBEHHC, JpStringLiterals.StringLiteral_13053, s);
             }

@@ -152,7 +152,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17A2208 Offset: 0x17A2208 VA: 0x17A2208
 		private void SetupContent(float scrollPos)
 		{
-			if(m_setting.Mode == GCAHJLOGMCI.KNMMOMEHDON.BCBJMKDAAKA_8)
+			if(m_setting.Mode == GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8)
 			{
 				RectTransform rt = transform as RectTransform;
 				rt.anchoredPosition3D = Vector3.zero;
@@ -486,7 +486,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x17A4BDC Offset: 0x17A4BDC VA: 0x17A4BDC Slot: 18
 		public bool IsScrollable()
 		{
-			return m_setting.Mode != GCAHJLOGMCI.KNMMOMEHDON.BCBJMKDAAKA_8;
+			return m_setting.Mode != GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8;
 		}
 
 		// RVA: 0x17A4C0C Offset: 0x17A4C0C VA: 0x17A4C0C Slot: 19

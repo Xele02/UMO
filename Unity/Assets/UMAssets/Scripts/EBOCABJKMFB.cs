@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Text.RegularExpressions;
 
 public class EBOCABJKMFB : IKMBBPDBECA
@@ -70,7 +71,7 @@ public class EBOCABJKMFB : IKMBBPDBECA
 				s = Regex.Replace(s, "[0-9]", (Match MABBBOEAPAA) =>
 				{
 					//0x15023C8
-					return (MABBBOEAPAA.Value[0] - 0x120).ToString();
+					return Convert.ToChar(MABBBOEAPAA.Value[0] + 65248).ToString();
 				});
 				MDEIKCBEHHC = string.Format(JpStringLiterals.StringLiteral_9949, s);
 			}
@@ -80,7 +81,7 @@ public class EBOCABJKMFB : IKMBBPDBECA
 				s = Regex.Replace(s, "[0-9]", (Match MABBBOEAPAA) =>
 				{
 					//0x1502440
-					return (MABBBOEAPAA.Value[0] - 0x120).ToString();
+					return Convert.ToChar(MABBBOEAPAA.Value[0] + 65248).ToString();
 				});
 				MDEIKCBEHHC = string.Format(JpStringLiterals.StringLiteral_9950, s);
 			}
