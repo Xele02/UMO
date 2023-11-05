@@ -255,11 +255,12 @@ namespace XeApp.Game.Menu
 						return data.BCCHOBPJJKE_SceneId == x.BCCHOBPJJKE_SceneId;
 					});
 					OverlapListItem h = new OverlapListItem();
-					h.Top = new Vector2((i % 4) * 235 + 20, -(f + (i / 4) * 183 + 5));
+					h.Top = new Vector2((j % 4) * 235 + 20, -(f + (j / 4) * 183 + 5));
 					h.Height = 183;
 					h.ResourceType = 2;
 					h.Info = data;
 					h.IsKira = card != null ? card.MBMFJILMOBP_IsKira() : false;
+					m_list.Add(h);
 				}
 				if(l[i].Count > 0)
 				{

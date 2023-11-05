@@ -43,6 +43,7 @@ public class MFDJIFIIPJD
 		OCNINMIMHGC_ItemFullId = NANNGLGOFKH;
 		MBJIFDBEDAC_Cnt = HMFFHLPNMPH;
 		MJBKGOJBPAD_Type = INDDJNMPONH;
+		MCDEKMIABEN();
 	}
 
 	//// RVA: 0x1313134 Offset: 0x1313134 VA: 0x1313134
@@ -182,7 +183,7 @@ public class MFDJIFIIPJD
 		{
 			if(MJBKGOJBPAD_Type != 1)
 			{
-				if(OCNINMIMHGC_ItemFullId > 999)
+				if(OCNINMIMHGC_ItemFullId > 9999)
 				{
 					JJBGOIMEIPF_ItemFullId = OCNINMIMHGC_ItemFullId;
 					NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(OCNINMIMHGC_ItemFullId);

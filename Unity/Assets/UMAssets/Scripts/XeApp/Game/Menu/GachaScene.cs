@@ -789,7 +789,19 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEE97B0 Offset: 0xEE97B0 VA: 0xEE97B0
 		private void OnClickLegalDesc(Action callback)
 		{
-			TodoLogger.LogNotImplemented("OnClickLegalDesc");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.LCCLAEBKMLD_6, () =>
+			{
+				//0xEEDE64
+				if(callback != null)
+					callback();
+			}, () =>
+			{
+				//0xEEDE78
+				MenuScene.Instance.GotoTitle();
+				if(callback != null)
+					callback();
+			});
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DD0DC Offset: 0x6DD0DC VA: 0x6DD0DC

@@ -1351,7 +1351,7 @@ public class CIOECGOMILE
 					return GHPLINIACBB.AGBCJMMMLON_StepIndex == DBNAGGGJDAB;
 				});
 				//LAB_01004cec
-				if (DBNAGGGJDAB >= m.LCJPKJMMIAP_CurrencyAmmount)
+				if (DEAPMEIDCGC_GetTotalPaidCurrency() >= m.LCJPKJMMIAP_CurrencyAmmount)
 				{
 					canRequest = true;
 				}

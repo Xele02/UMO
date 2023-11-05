@@ -115,25 +115,25 @@ namespace XeApp.Game.Gacha
         // // RVA: 0x983A64 Offset: 0x983A64 VA: 0x983A64
         private int GetCardStarNum(int app_item_id)
         {
-            return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[EKLNMHFCAOI.DEACAHNLMNI_getItemId(app_item_id)].EKLIPGELKCL_Rarity;
+            return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[EKLNMHFCAOI.DEACAHNLMNI_getItemId(app_item_id) - 1].EKLIPGELKCL_Rarity;
         }
 
         // // RVA: 0x983C58 Offset: 0x983C58 VA: 0x983C58
         private int GetCardAttribute(int app_item_id)
         {
-            return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[EKLNMHFCAOI.DEACAHNLMNI_getItemId(app_item_id)].FKDCCLPGKDK_Ma;
+            return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[EKLNMHFCAOI.DEACAHNLMNI_getItemId(app_item_id) - 1].FKDCCLPGKDK_Ma;
         }
 
         // // RVA: 0x983DC8 Offset: 0x983DC8 VA: 0x983DC8
         private int GetCardSeries(int app_item_id)
         {
-            return (int)IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[EKLNMHFCAOI.DEACAHNLMNI_getItemId(app_item_id)].AIHCEGFANAM_Serie;
+            return (int)IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[EKLNMHFCAOI.DEACAHNLMNI_getItemId(app_item_id) - 1].AIHCEGFANAM_Serie;
         }
 
         // // RVA: 0x983F38 Offset: 0x983F38 VA: 0x983F38
         private bool IsFeed(int app_item_id)
         {
-            return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[EKLNMHFCAOI.DEACAHNLMNI_getItemId(app_item_id)].MCCIFLKCNKO_Feed;
+            return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[EKLNMHFCAOI.DEACAHNLMNI_getItemId(app_item_id) - 1].MCCIFLKCNKO_Feed;
         }
 
         // // RVA: 0x983BD4 Offset: 0x983BD4 VA: 0x983BD4
