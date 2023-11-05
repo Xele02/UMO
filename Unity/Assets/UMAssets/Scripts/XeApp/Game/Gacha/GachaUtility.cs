@@ -375,7 +375,20 @@ namespace XeApp.Game.Gacha
 		}
 
 		// // RVA: 0x991AE8 Offset: 0x991AE8 VA: 0x991AE8
-		// public static string GetGachaDetailWebViewTemplate() { }
+		public static string GetGachaDetailWebViewTemplate()
+		{
+			if(m_selectCategory == GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8)
+			{
+				if(netGachaProductData.NJLONELPNCD.KACECFNECON_Desc != null)
+					return netGachaProductData.NJLONELPNCD.KACECFNECON_Desc.OKDLGFMLLFH_Templ;
+			}
+			else
+			{
+				if(netGachaProductData.KACECFNECON != null)
+					return netGachaProductData.KACECFNECON.OKDLGFMLLFH_Templ;
+			}
+			return "";
+		}
 
 		// // RVA: 0x9855F4 Offset: 0x9855F4 VA: 0x9855F4
 		public static void RegisterLegalDesc(Action<Action> onClickButton)

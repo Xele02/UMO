@@ -85,7 +85,12 @@ namespace XeApp.Game.Common
 		//public void CrossFadeIdle(string IdleStateName) { }
 
 		//// RVA: 0x1393024 Offset: 0x1393024 VA: 0x1393024
-		//public void CrossFadeIdle(string IdleStateName, float bodyTime) { }
+		public void CrossFadeIdle(string IdleStateName, float bodyTime)
+		{
+			animator.CrossFade(IdleStateName, bodyTime);
+			facialBlendAnimMediator.selfAnimator.Play(IdleStateName, 0);
+			facialBlendAnimMediator.selfAnimator.Play(IdleStateName, 1);
+		}
 
 		//// RVA: 0x13930F4 Offset: 0x13930F4 VA: 0x13930F4
 		//public void CrossFadeFixedIdle(string IdleStateName, float bodyTime) { }
@@ -102,7 +107,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1393278 Offset: 0x1393278 VA: 0x1393278
 		public int GetBodyHash()
 		{
-			return animator.GetCurrentAnimatorStateInfo(0).shortNameHash;
+			return animator.GetCurrentAnimatorStateInfo(0).fullPathHash;
 		}
 
 		//// RVA: 0x13932F4 Offset: 0x13932F4 VA: 0x13932F4

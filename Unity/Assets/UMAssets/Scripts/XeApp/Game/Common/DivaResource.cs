@@ -389,10 +389,10 @@ namespace XeApp.Game.Common
 		public bool isLoadedMenuAnimationResource { get; set; } // 0x155
 		public bool isMenuAllLoaded { get { return isLoadedBasicResource && isLoadedMenuAnimationResource; } set {} } // get_isMenuAllLoaded 0x1BF9E54 set_isMenuAllLoaded 0x1BF9E74  
 		public bool IsSimpleLoaded { get { return isLoadedBasicResource && isLoadedSimpleResource; } } // get_IsSimpleLoaded 0x1BF9F84 
-		public bool isLoadedSubCostumeResource { get; set; } // 0x157
-		public bool isLoadedRivalResultAnimationResource { get; set; } // 0x158
+		public bool isLoadedSubCostumeResource { get; private set; } // 0x157
+		public bool isLoadedRivalResultAnimationResource { get; private set; } // 0x158
 		public bool isRivalResultAllLoaded { get { return isLoadedBasicResource && isLoadedRivalResultAnimationResource; } set {} } //  get_isRivalResultAllLoaded 0x1BFA218 set_isRivalResultAllLoaded 0x1BFA238
-		public bool isLoadedARAnimationResource { get; set; } // 0x159
+		public bool isLoadedARAnimationResource { get; private set; } // 0x159
 		public bool isARAllLoaded { get { return isLoadedBasicResource && isLoadedARAnimationResource; } set {} } //  get_isARAllLoaded 0x1BFA598 set_isARAllLoaded 0x1BFA5B8 
 
 		// // RVA: 0x1BF7FE8 Offset: 0x1BF7FE8 VA: 0x1BF7FE8
@@ -1552,19 +1552,22 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BF9E78 Offset: 0x1BF9E78 VA: 0x1BF9E78
-		// public void LoadSimpleResource(int divaId, int modelId, DivaResource.MenuFacialType facialType) { }
+		public void LoadSimpleResource(int divaId, int modelId, MenuFacialType facialType)
+		{
+			this.StartCoroutineWatched(Co_LoadSimpleResource(divaId, modelId, facialType));
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x736DD0 Offset: 0x736DD0 VA: 0x736DD0
 		// // RVA: 0x1BF9EA4 Offset: 0x1BF9EA4 VA: 0x1BF9EA4
-		// private IEnumerator Co_LoadSimpleResource(int divaId, int modelId, DivaResource.MenuFacialType facialType) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x736E48 Offset: 0x736E48 VA: 0x736E48
-		// // RVA: 0x1BF9FA4 Offset: 0x1BF9FA4 VA: 0x1BF9FA4
-		// public bool get_isLoadedSubCostumeResource() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x736E58 Offset: 0x736E58 VA: 0x736E58
-		// // RVA: 0x1BF85AC Offset: 0x1BF85AC VA: 0x1BF85AC
-		// private void set_isLoadedSubCostumeResource(bool value) { }
+		private IEnumerator Co_LoadSimpleResource(int divaId, int modelId, DivaResource.MenuFacialType facialType)
+		{
+			//0x1C071F4
+			if(isLoadedSimpleResource)
+				yield break;
+			yield return this.StartCoroutineWatched(Co_LoadCharacter(divaId));
+			yield return this.StartCoroutineWatched(Co_LoadFacialClip(divaId, facialType));
+			isLoadedSimpleResource = true;
+		}
 
 		// // RVA: 0x1BF9FAC Offset: 0x1BF9FAC VA: 0x1BF9FAC
 		// public void LoadSubResource(int modelId, int colorId, int divaId = 0) { }
@@ -1573,28 +1576,12 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BFA004 Offset: 0x1BFA004 VA: 0x1BFA004
 		// private IEnumerator Co_LoadSubResource(int divaId, int modelId, int colorId) { }
 
-		// [CompilerGeneratedAttribute] // RVA: 0x736EE0 Offset: 0x736EE0 VA: 0x736EE0
-		// // RVA: 0x1BFA0FC Offset: 0x1BFA0FC VA: 0x1BFA0FC
-		// public bool get_isLoadedRivalResultAnimationResource() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x736EF0 Offset: 0x736EF0 VA: 0x736EF0
-		// // RVA: 0x1BF87D0 Offset: 0x1BF87D0 VA: 0x1BF87D0
-		// private void set_isLoadedRivalResultAnimationResource(bool value) { }
-
 		// // RVA: 0x1BFA104 Offset: 0x1BFA104 VA: 0x1BFA104
 		// public void LoadRivalResultResource(int divaId, int modelId) { }
 
 		// [IteratorStateMachineAttribute] // RVA: 0x736F00 Offset: 0x736F00 VA: 0x736F00
 		// // RVA: 0x1BFA138 Offset: 0x1BFA138 VA: 0x1BFA138
 		// private IEnumerator Co_LoadRivalResultResource(int divaId, int modelId) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x736F78 Offset: 0x736F78 VA: 0x736F78
-		// // RVA: 0x1BFA23C Offset: 0x1BFA23C VA: 0x1BFA23C
-		// public bool get_isLoadedARAnimationResource() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x736F88 Offset: 0x736F88 VA: 0x736F88
-		// // RVA: 0x1BF8594 Offset: 0x1BF8594 VA: 0x1BF8594
-		// private void set_isLoadedARAnimationResource(bool value) { }
 
 		// // RVA: 0x1BFA244 Offset: 0x1BFA244 VA: 0x1BFA244
 		// public void LoadARResource(int divaId, int modelId) { }

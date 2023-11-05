@@ -541,7 +541,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEE74D0 Offset: 0xEE74D0 VA: 0xEE74D0
-		//private int FindRelatedEpisodeId(int cardId) { }
+		private int FindRelatedEpisodeId(int cardId)
+		{
+			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[cardId - 1].KELFCMEOPPM_Ep;
+		}
 
 		//// RVA: 0xEE7600 Offset: 0xEE7600 VA: 0xEE7600
 		private void ShowSceneStatusPopup(GCIJNCFDNON_SceneInfo sceneData, DFKGGBMFFGB_PlayerInfo playerData, bool isDiableLuckyLeaf, Action onClose)
@@ -587,7 +590,30 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEE7B18 Offset: 0xEE7B18 VA: 0xEE7B18
 		private void OnClickEpisodeReward()
 		{
-			TodoLogger.LogNotImplemented("OnClickEpisodeReward");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+			int id = FindRelatedEpisodeId(m_view.BADFIKBADNH_PickupId);
+			LGMEPLIJLNB data = LGMEPLIJLNB.BMFKMFNPGPC(id, true);
+			PIGBBNDPPJC p = new PIGBBNDPPJC();
+			p.KHEKNNFCAOI(id);
+			int fullItemId = data.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId;
+            EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(fullItemId);
+            int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(fullItemId);
+			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie)
+			{
+				JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo valk = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[itemId - 1];
+				CheckNewValkyrieArgs arg = new CheckNewValkyrieArgs();
+				arg.pilot_id = valk.PFGJJLGLPAC_PilotId;
+				arg.val_id = valk.GPPEFLKGGGJ_Id;
+				MenuScene.Instance.Call(TransitionList.Type.GACHA_CHECK_NEW_VALKYRIE, arg, true);
+			}
+			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
+			{
+				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[itemId - 1];
+				CheckNewCostumeArgs arg = new CheckNewCostumeArgs();
+				arg.cos_id = cos.DAJGPBLEEOB_PrismCostumeModelId;
+				arg.diva_id = cos.AHHJLDLAPAN_PrismDivaId;
+				MenuScene.Instance.Call(TransitionList.Type.GACHA_CHECK_NEW_COSTUME, arg, true);
+			}
 		}
 
 		//// RVA: 0xEE7FE4 Offset: 0xEE7FE4 VA: 0xEE7FE4
@@ -749,7 +775,21 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEE895C Offset: 0xEE895C VA: 0xEE895C
 		private void OnClickGachaDetail()
 		{
-			TodoLogger.LogNotImplemented("OnClickGachaDetail");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(!MenuScene.CheckDatelineAndAssetUpdate())
+			{
+				MenuScene.Instance.InputDisable();
+				string s = GachaUtility.GetGachaDetailWebViewTemplate();
+				MBCPNPNMFHB.HHCJCDFCLOB.FLLLPBIECCP(s, () =>
+				{
+					//0xEED2F4
+					MenuScene.Instance.InputEnable();
+				}, () =>
+				{
+					//0xEED390
+					MenuScene.Instance.GotoTitle();
+				});
+			}
 		}
 
 		//// RVA: 0xEE8CB4 Offset: 0xEE8CB4 VA: 0xEE8CB4
@@ -783,7 +823,10 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEE9698 Offset: 0xEE9698 VA: 0xEE9698
 		private void OnClickRarityChange()
 		{
-			TodoLogger.LogNotImplemented("OnClickRarityChange");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			m_view.EFCJADAPOMN = !m_view.EFCJADAPOMN;
+			m_layoutBg.SwitchRarity(m_view.EFCJADAPOMN);
+			m_layoutLegalButton.SwitchRarity(m_view.EFCJADAPOMN);
 		}
 
 		//// RVA: 0xEE97B0 Offset: 0xEE97B0 VA: 0xEE97B0

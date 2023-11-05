@@ -201,7 +201,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x199B500 Offset: 0x199B500 VA: 0x199B500
-		//public void SwitchRarity(bool rarity) { }
+		public void SwitchRarity(bool rarity)
+		{
+			m_waitTime = 0;
+			LoadSceneBgImage(m_sceneIds[m_index].DNJEJEANJGL_Value, rarity, null);
+		}
 
 		//// RVA: 0x199B5C8 Offset: 0x199B5C8 VA: 0x199B5C8
 		public void StartChangeBgLoop()

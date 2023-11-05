@@ -342,6 +342,9 @@ class JpStringLiterals
 	public const string StringLiteral_14832 = "ふた"; // 0x03bb7278
 	public const string StringLiteral_14844 = "★[０-９]"; //0x03bb72a8
 	public const string StringLiteral_14845 = "[０-９]"; //0x03bb72ac
+	public const string StringLiteral_15053 = "エピソード「"; //0x03bb75ec
+	public const string StringLiteral_15054 = "」"; //0x03bb75f0
+	public const string StringLiteral_15055 = " 専用衣装"; //0x03bb75f4
 	public const string StringLiteral_15265 = "所持："; // 0x03bb793c
 	public const string StringLiteral_15475 = "ホームへ戻る"; //0x03bb7c84
 	public const string StringLiteral_15476 = "訪問リスト"; //0x03bb7c88
