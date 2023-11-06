@@ -3,7 +3,7 @@ public class OHCAABOMEOF
 {
     public enum KGOGMKMBCPP_EventType
     {
-        HJNNKCMLGFL = 0,
+        HJNNKCMLGFL_0 = 0,
         AOPKACCDKPA_EventCollection = 1,
         MKKOHBGHADL = 2,
         PFKOKHODEGL_EventBattle = 3,

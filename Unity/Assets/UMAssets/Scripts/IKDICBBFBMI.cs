@@ -121,7 +121,7 @@ public abstract class IKDICBBFBMI_EventBase
 	public const string PKCHABKLDOC = "event_prologue_achv_item_id";
 	public const string HMEFMAPKOBF = "event_epilogue_achv_item_id";
 
-	public virtual OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL; } } //0x8DD514 DKHCGLCNKCD Slot: 4
+	public virtual OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0; } } //0x8DD514 DKHCGLCNKCD Slot: 4
 	// public int OENLHLCKMDI { get; } // ?
 	// public bool NBCFEEFEDHH { get; } // ?
 	// public bool BEGOPNADOJL { get; } // ?

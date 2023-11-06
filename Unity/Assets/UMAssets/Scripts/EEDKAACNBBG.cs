@@ -103,7 +103,7 @@ public class EEDKAACNBBG_MusicData
 		int multi_dance_player_level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("multi_dance_player_level", 3);
 		if (JONPKLHMOBL != 0 || CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level >= multi_dance_player_level)
 		{
-			if(JONPKLHMOBL == OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL && BNCMJNMIDIN_AvaiableDivaModes > 1 && (BNCMJNMIDIN_AvaiableDivaModes & 1) == 0)
+			if(JONPKLHMOBL == OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 && BNCMJNMIDIN_AvaiableDivaModes > 1 && (BNCMJNMIDIN_AvaiableDivaModes & 1) == 0)
 			{
 				int numDiva = 1;
 				for(int i = 1; i <= 31; i++)

@@ -2489,7 +2489,7 @@ namespace XeApp.Game.Menu
 
 			Database.Instance.gameSetup.teamInfo.valkyrieId = 0;
 			Database.Instance.gameSetup.teamInfo.prismValkyrieId = 0;
-			Database.Instance.gameSetup.musicInfo.SetupInfoByFreeMusic(freemusicNum + 1, (Difficulty.Type) UnityEngine.Random.Range(0, (int)Difficulty.Type.Num)/*difficulty*/, false, new GameSetupData.MusicInfo.InitFreeMusicParam(), OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, true, UnityEngine.Random.Range(0, 2) != 0, "", 0, 0, -1, 0, 0, numDiva);
+			Database.Instance.gameSetup.musicInfo.SetupInfoByFreeMusic(freemusicNum + 1, (Difficulty.Type) UnityEngine.Random.Range(0, (int)Difficulty.Type.Num)/*difficulty*/, false, new GameSetupData.MusicInfo.InitFreeMusicParam(), OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0, true, UnityEngine.Random.Range(0, 2) != 0, "", 0, 0, -1, 0, 0, numDiva);
 			GameSetupData.TeamInfo team = Database.Instance.gameSetup.teamInfo;
 			for(int i = 0; i < 5; i++)
 			{

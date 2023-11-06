@@ -372,10 +372,10 @@ namespace XeApp.Game.Common
 				mode = 0;
 				IsMvMode = false;
 				IsLine6Mode = false;
-				playEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL;
-				openEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL;
-				gameEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL;
-				openEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL;
+				playEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0;
+				openEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0;
+				gameEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0;
+				openEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0;
 				musicId = 0;
 				freeMusicId = 0;
 				mvLimitTime = -1;
@@ -393,9 +393,9 @@ namespace XeApp.Game.Common
 				freeMusicId = 0;
 				this.storyMusicId = storyMusicId;
 				DJNPIGEFPMF_StoryMusicInfo info = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.CLHIABAKKJM_StoryMusicData[storyMusicId - 1];
-				playEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL/*0*/;
-				openEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL/*0*/;
-				gameEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL/*0*/;
+				playEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0/*0*/;
+				openEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0/*0*/;
+				gameEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0/*0*/;
 				tutorial = TutorialGameMode.Type.None;
 				musicId = info.DLAEJOBELBH_Id;
 				m_prismMusicId = 0;

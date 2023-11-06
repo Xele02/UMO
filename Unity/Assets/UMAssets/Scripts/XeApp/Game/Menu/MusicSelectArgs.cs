@@ -43,7 +43,10 @@ namespace XeApp.Game.Menu
         // public void SetSelection(Difficulty.Type difficulty) { }
 
         // // RVA: 0x1054CD0 Offset: 0x1054CD0 VA: 0x1054CD0
-        // public void SetSelection(FreeCategoryId.Type categoryId) { }
+        public void SetSelection(FreeCategoryId.Type categoryId)
+		{
+			!!!
+		}
 
         // // RVA: 0x1054D88 Offset: 0x1054D88 VA: 0x1054D88
         // public void SetSelection(OHCAABOMEOF.KGOGMKMBCPP eventCategory) { }

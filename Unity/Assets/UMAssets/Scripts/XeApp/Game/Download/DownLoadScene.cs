@@ -108,9 +108,9 @@ namespace XeApp.Game.DownLoad
 					{
 						KEHOJEJMGLJ.HHCJCDFCLOB.FBGNDKKDOIE.AddRange(path);
 					}
-					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.ACGKEJKPFIA((FreeCategoryId.Type)fminfo.DEPGBBJMFED_CategoryId, fminfo.GHBPLHBNMBK_FreeMusicId, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL);
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.ACGKEJKPFIA((FreeCategoryId.Type)fminfo.DEPGBBJMFED_CategoryId, fminfo.GHBPLHBNMBK_FreeMusicId, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0);
 					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.NGNECOFAMKP((FreeCategoryId.Type)fminfo.DEPGBBJMFED_CategoryId);
-					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ADHMDONLHLJ_NewLive.ACGKEJKPFIA_SetSelectedSong(false, fminfo.GHBPLHBNMBK_FreeMusicId, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL);
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ADHMDONLHLJ_NewLive.ACGKEJKPFIA_SetSelectedSong(false, fminfo.GHBPLHBNMBK_FreeMusicId, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0);
 					GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ADHMDONLHLJ_NewLive.GJDEHJBAMNH_SetSeries(MusicSelectConsts.SeriesType.All);
 				}
 			}

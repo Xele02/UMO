@@ -100,7 +100,7 @@ public class PLADCDJLOBE
 					{
 						if (l[i].LMPPENOILPF != 0)
 						{
-							if (l[i].CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ/*1*/)
+							if (l[i].CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1/*1*/)
 							{
 								if (idx != -1)
 								{
