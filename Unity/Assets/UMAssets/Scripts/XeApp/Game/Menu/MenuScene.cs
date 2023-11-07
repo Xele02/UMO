@@ -1808,7 +1808,24 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB3568C Offset: 0xB3568C VA: 0xB3568C
-		// public static bool SaveWithAchievement(ulong checkTarget, IMCBBOAFION onSuccess, IMCBBOAFION onError) { }
+		public static bool SaveWithAchievement(ulong checkTarget, IMCBBOAFION onSuccess, IMCBBOAFION onError)
+		{
+			return CIOECGOMILE.HHCJCDFCLOB.BMKEBEJJKBE(() =>
+			{
+				//0xB38964
+				JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
+				if (onSuccess != null)
+					onSuccess();
+			}, () =>
+			{
+				//0xB389AC
+				JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
+				JDDGPJDKHNE.HHCJCDFCLOB.FOKEGEOKGDG();
+				if (onError != null)
+					onError();
+				Instance.StartCoroutineWatched(Instance.GotoTitleCoroutine());
+			}, checkTarget);
+		}
 
 		// // RVA: 0xB2A834 Offset: 0xB2A834 VA: 0xB2A834
 		public static bool CheckDatelineAndAssetUpdate()

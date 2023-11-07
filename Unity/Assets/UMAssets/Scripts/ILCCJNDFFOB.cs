@@ -865,10 +865,42 @@ public class ILCCJNDFFOB
 	}
 
 	// // RVA: 0x9011EC Offset: 0x9011EC VA: 0x9011EC
-	// public void GCCAFBHKAEG(int JOMGCCBFKEF) { }
+	public void GCCAFBHKAEG(int JOMGCCBFKEF)
+	{
+		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
+		FLBFCCIEPNC_InitBaseJson(json, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
+		CNLPPCFJEID_QuestInfo quest = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.BEGCHDHHEKC_DailyQuests[JOMGCCBFKEF - 1];
+		json[AFEHLCGHAEE_Strings.KOEAHHAHDNP_mission_type] = JpStringLiterals.StringLiteral_11216;
+		json[AFEHLCGHAEE_Strings.LBOIEJKNCGG_mission_id] = JOMGCCBFKEF;
+		json[AFEHLCGHAEE_Strings.DHMKKJNGDEN_mission_name] = MessageManager.Instance.GetMessage("master", "qd_dsc_" + JOMGCCBFKEF.ToString("D4"));
+		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.IEEKNBEEMMM_12, json, false);
+	}
 
 	// // RVA: 0x9016DC Offset: 0x9016DC VA: 0x9016DC
-	// public void MOCDNABNBAO(int JOMGCCBFKEF) { }
+	public void MOCDNABNBAO(int JOMGCCBFKEF)
+	{
+		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
+		FLBFCCIEPNC_InitBaseJson(json, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
+		CNLPPCFJEID_QuestInfo quest = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests[JOMGCCBFKEF - 1];
+		if(ILLPDLODANB.FJFPHHEFMIB(quest))
+		{
+			json[AFEHLCGHAEE_Strings.KOEAHHAHDNP_mission_type] = JpStringLiterals.StringLiteral_11217;
+		}
+		else
+		{
+			if (ILLPDLODANB.HHMKDAIGMKC((ILLPDLODANB.LOEGALDKHPL)quest.INDDJNMPONH_Type))
+			{
+				json[AFEHLCGHAEE_Strings.KOEAHHAHDNP_mission_type] = JpStringLiterals.StringLiteral_11218;
+			}
+			else
+			{
+				json[AFEHLCGHAEE_Strings.KOEAHHAHDNP_mission_type] = JpStringLiterals.StringLiteral_11219;
+			}
+		}
+		json[AFEHLCGHAEE_Strings.LBOIEJKNCGG_mission_id] = JOMGCCBFKEF;
+		json[AFEHLCGHAEE_Strings.DHMKKJNGDEN_mission_name] = MessageManager.Instance.GetMessage("master", "qn_dsc_" + JOMGCCBFKEF.ToString("D4"));
+		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.IEEKNBEEMMM_12, json, false);
+	}
 
 	// // RVA: 0x901E50 Offset: 0x901E50 VA: 0x901E50
 	// public void APAJMNOBNLL(IKDICBBFBMI MOHDLLIJELH, int JOMGCCBFKEF) { }

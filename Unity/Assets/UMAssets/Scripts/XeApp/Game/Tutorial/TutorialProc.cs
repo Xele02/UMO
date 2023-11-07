@@ -96,7 +96,7 @@ namespace XeApp.Game.Tutorial
 						//0xE4C030
 						return x.CMEJFJFOIIJ_QuestId == 1;
 					});
-					if(f != null && f.CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.CADDNFIKDLG_3/*3*/)
+					if(f != null && f.CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.CADDNFIKDLG_Received/*3*/)
 						return true;
 				}
 			}

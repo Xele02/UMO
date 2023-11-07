@@ -45,14 +45,19 @@ namespace XeApp.Game.Menu
         // // RVA: 0x1054CD0 Offset: 0x1054CD0 VA: 0x1054CD0
         public void SetSelection(FreeCategoryId.Type categoryId)
 		{
-			!!!
+			selection = new SelectionData();
+			selection.categoryId = categoryId;
 		}
 
         // // RVA: 0x1054D88 Offset: 0x1054D88 VA: 0x1054D88
         // public void SetSelection(OHCAABOMEOF.KGOGMKMBCPP eventCategory) { }
 
         // // RVA: 0x1054E40 Offset: 0x1054E40 VA: 0x1054E40
-        // public void SetSelectionMiniGame(int miniGameId) { }
+        public void SetSelectionMiniGame(int miniGameId)
+		{
+			selection = new SelectionData();
+			selection.miniGameId = miniGameId;
+		}
 
         // // RVA: 0x1054EF8 Offset: 0x1054EF8 VA: 0x1054EF8
         // public void SetScoreRanking() { }

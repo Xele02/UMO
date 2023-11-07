@@ -346,7 +346,7 @@ namespace XeApp.Game.MusicSelect
 		}
 
 		//// RVA: 0xCA24B0 Offset: 0xCA24B0 VA: 0xCA24B0
-		private static List<IKDICBBFBMI_EventBase> GetEventControllerList(OHCAABOMEOF.KGOGMKMBCPP_EventType type, long currentTime, KGCNCBOKCBA.GNENJEHKMHD term = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ)
+		private static List<IKDICBBFBMI_EventBase> GetEventControllerList(OHCAABOMEOF.KGOGMKMBCPP_EventType type, long currentTime, KGCNCBOKCBA.GNENJEHKMHD term = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9)
 		{
 			List<IKDICBBFBMI_EventBase> res = new List<IKDICBBFBMI_EventBase>();
 			List<IKDICBBFBMI_EventBase> list = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.FindAll((IKDICBBFBMI_EventBase _) =>

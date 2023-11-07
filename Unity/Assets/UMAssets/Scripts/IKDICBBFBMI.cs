@@ -1,4 +1,7 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 using XeApp.Game.Common;
 using XeApp.Game.Menu;
 
@@ -87,7 +90,7 @@ public abstract class IKDICBBFBMI_EventBase
 	private int HAJJBEFHPKG; // 0x90
 	private bool OEHCGLGNNPD; // 0x94
 	protected bool CMEOKJMCEBH; // 0x95
-	public int GFIBLLLHMPD; // 0x98
+	public int GFIBLLLHMPD_AdventureId; // 0x98
 	public int CAKEOPLJDAF; // 0x9C
 	public bool FKKDIDMGLMI; // 0xA0
 	public bool PLOOEECNHFB; // 0xA1
@@ -700,10 +703,16 @@ public abstract class IKDICBBFBMI_EventBase
 	// public int CEICDKGEONG(int BMMPAHHEOJC, int MHADLGMJKGK) { }
 
 	// // RVA: 0x8E2288 Offset: 0x8E2288 VA: 0x8E2288
-	// public bool FBLGGLDPFDF() { }
+	public bool FBLGGLDPFDF()
+	{
+		return JLPDECMHLIM();
+	}
 
 	// // RVA: 0x8E2298 Offset: 0x8E2298 VA: 0x8E2298 Slot: 65
-	// protected virtual bool JLPDECMHLIM() { }
+	protected virtual bool JLPDECMHLIM()
+	{
+		return false;
+	}
 
 	// // RVA: 0x8E22A0 Offset: 0x8E22A0 VA: 0x8E22A0 Slot: 66
 	// public virtual void FGDDBFHGCGP(bool JKDJCFEBDHC, long JHNMKKNEENE = 0) { }
@@ -793,7 +802,28 @@ public abstract class IKDICBBFBMI_EventBase
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6BBC94 Offset: 0x6BBC94 VA: 0x6BBC94
 	// // RVA: 0x8E257C Offset: 0x8E257C VA: 0x8E257C
-	// public IEnumerator EPOOEDJCBDN(Action<bool> GEIFEILEGGE) { }
+	public IEnumerator EPOOEDJCBDN_Co_CheckClosedEvent(Action<bool> GEIFEILEGGE)
+	{
+		//0x8E355C
+		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		if(IONOAFPLANN || time >= LJOHLEGGGMC)
+		{
+			IONOAFPLANN = false;
+			bool IMCBLDILPGA = false;
+			JHHBAFKMBDL.HHCJCDFCLOB.DNABPEOICIJ(() =>
+			{
+				//0x8E2A54
+				IMCBLDILPGA = true;
+			}, false);
+			yield return new WaitWhile(() =>
+			{
+				return !IMCBLDILPGA;
+			});
+			GEIFEILEGGE(true);
+		}
+		else
+			GEIFEILEGGE(false);
+	}
 
 	// // RVA: 0x8E2644 Offset: 0x8E2644 VA: 0x8E2644
 	public bool HJPNJBCJPNJ(KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL)

@@ -176,7 +176,11 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 	// public void PNKKJJFBBIH(DJDJHGJHAJA.IOPLHHNPLGM LGADCGFMLLD) { }
 
 	// // RVA: 0x113B4D4 Offset: 0x113B4D4 VA: 0x113B4D4 Slot: 65
-	// protected override bool JLPDECMHLIM() { }
+	protected override bool JLPDECMHLIM()
+	{
+		TodoLogger.LogError(0, "JLPDECMHLIM");
+		return false;
+	}
 
 	// // RVA: 0x113B810 Offset: 0x113B810 VA: 0x113B810 Slot: 66
 	// public override void FGDDBFHGCGP(bool JKDJCFEBDHC, long JHNMKKNEENE = 0) { }

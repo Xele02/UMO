@@ -12,7 +12,7 @@ public class OHCAABOMEOF
         NKDOEBONGNI_EventQuest = 6,
         ENPJADLIFAB_EventSp = 7,
         OCCGDMDBCHK_EventGacha = 8,
-        DMPMKBCPHMA = 9,
+        DMPMKBCPHMA_9 = 9,
         DAMDPLEBNCB_AprilFool = 10,
         CADKONMJEDA_EventRaid = 11,
         DIDJLIPNCKO = 12,

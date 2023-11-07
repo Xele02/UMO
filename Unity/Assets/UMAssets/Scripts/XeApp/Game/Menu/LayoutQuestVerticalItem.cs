@@ -86,7 +86,7 @@ namespace XeApp.Game.Menu
 			switch(status)
 			{
 				case FKMOKDCJFEN.ADCPCCNCOMD_Status.HJNNKCMLGFL_0:
-				case FKMOKDCJFEN.ADCPCCNCOMD_Status.CADDNFIKDLG_3:
+				case FKMOKDCJFEN.ADCPCCNCOMD_Status.CADDNFIKDLG_Received:
 					SetTimeEnable(false);
 					break;
 				case FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1:
@@ -149,7 +149,7 @@ namespace XeApp.Game.Menu
 				case FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved:
 					SwitchButton(eButtonType.Receive);
 					break;
-				case FKMOKDCJFEN.ADCPCCNCOMD_Status.CADDNFIKDLG_3:
+				case FKMOKDCJFEN.ADCPCCNCOMD_Status.CADDNFIKDLG_Received:
 					SwitchButton(eButtonType.Clear);
 					break;
 				default:
@@ -286,13 +286,49 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1882318 Offset: 0x1882318 VA: 0x1882318
-		//private void OnClickReceive() { }
+		private void OnClickReceive()
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+			QuestUtility.Receive(m_viewData, this, () =>
+			{
+				//0x18830A0
+				if (OnReceiveCallback != null)
+					OnReceiveCallback();
+			});
+		}
 
 		//// RVA: 0x188242C Offset: 0x188242C VA: 0x188242C
-		//private void OnShowItemDetails() { }
+		private void OnShowItemDetails()
+		{
+			if(m_viewData != null && m_viewData.GOOIIPFHOIG != null)
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+				EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(m_viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId);
+				if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
+				{
+					InitCostumeData(costumeData, m_viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId);
+					MenuScene.Instance.ShowCostumeDetailWindow(costumeData, 0);
+				}
+				else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+				{
+					if (sceneData == null)
+						sceneData = new GCIJNCFDNON_SceneInfo();
+					sceneData.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(m_viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId), null, null, 0, 0, 0, false, 0, 0);
+					MenuScene.Instance.ShowSceneStatusPopupWindow(sceneData, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, true, true, SceneStatusParam.PageSave.None, false);
+				}
+				else
+				{
+					MenuScene.Instance.ShowItemDetail(m_viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId, m_viewData.GOOIIPFHOIG.MBJIFDBEDAC_Cnt, null);
+				}
+			}
+		}
 
 		//// RVA: 0x1882870 Offset: 0x1882870 VA: 0x1882870
-		//private void InitCostumeData(CKFGMNAIBNG costumeData, int appItemId) { }
+		private void InitCostumeData(CKFGMNAIBNG costumeData, int appItemId)
+		{
+			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[EKLNMHFCAOI.DEACAHNLMNI_getItemId(appItemId) - 1];
+			costumeData.KHEKNNFCAOI(cos.AHHJLDLAPAN_PrismDivaId, EKLNMHFCAOI.DEACAHNLMNI_getItemId(appItemId), 0, false);
+		}
 
 		// RVA: 0x1882A1C Offset: 0x1882A1C VA: 0x1882A1C Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
@@ -305,7 +341,7 @@ namespace XeApp.Game.Menu
 			m_layoutDailyAnim = layout.FindViewById("sw_sel_que_badge_anim") as AbsoluteLayout;
 			m_layoutButtonTbl = layout.FindViewById("swtbl_sel_que_btn") as AbsoluteLayout;
 			m_rtTransform = GetComponent<RectTransform>();
-			SwitchButton(1);
+			SwitchButton(eButtonType.Challenge);
 			if(m_buttonChallenge != null)
 			{
 				m_buttonChallenge.AddOnClickCallback(OnClickChallenge);
@@ -322,9 +358,5 @@ namespace XeApp.Game.Menu
 			Loaded();
 			return true;
 		}
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x7102F4 Offset: 0x7102F4 VA: 0x7102F4
-		//// RVA: 0x18830A0 Offset: 0x18830A0 VA: 0x18830A0
-		//private void <OnClickReceive>b__49_0() { }
 	}
 }

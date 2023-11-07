@@ -44,7 +44,14 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x710894 Offset: 0x710894 VA: 0x710894
 		//// RVA: 0x9DB288 Offset: 0x9DB288 VA: 0x9DB288
-		//public IEnumerator Co_TutorialBeginnerComplete(FKMOKDCJFEN view, LayoutQuestVerticalItem layout) { }
+		public IEnumerator Co_TutorialBeginnerComplete(FKMOKDCJFEN view, LayoutQuestVerticalItem layout)
+		{
+			AssetBundleLoadLayoutOperationBase operation;
+
+			//0x9E1020
+			TodoLogger.LogError(0, "Co_TutorialBeginnerComplete");
+			yield return null;
+		}
 
 		//// RVA: 0x9DB368 Offset: 0x9DB368 VA: 0x9DB368
 		//private int GetNowDivaId() { }

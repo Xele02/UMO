@@ -754,7 +754,7 @@ namespace XeApp.Game.Menu
 				}
 			}
 			//LAB_00acb654
-			return MenuScene.Instance.CheckEventLimit(data, true, true, m_eventStatus < KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI/*6*/ ? KGCNCBOKCBA.GNENJEHKMHD.MEAJLPAHINL/*5*/ : KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/, m_eventId);
+			return MenuScene.Instance.CheckEventLimit(data, true, true, m_eventStatus < KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI/*6*/ ? KGCNCBOKCBA.GNENJEHKMHD.MEAJLPAHINL/*5*/ : KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/, m_eventId);
 		}
 
 		// // RVA: 0xACE0E0 Offset: 0xACE0E0 VA: 0xACE0E0
