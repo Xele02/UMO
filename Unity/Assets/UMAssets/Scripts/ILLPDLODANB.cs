@@ -51,7 +51,7 @@ public class ILLPDLODANB
 		IDAIIJEMNMP_47 = 47,
 		AFLMHBMBNBO = 48,
 		DDGKOJFPGFF = 49,
-		NEIJFCOANMA = 50,
+		NEIJFCOANMA_50 = 50,
 		NEMNEDBLJEM = 51,
 		OECOMFPCPAI = 52,
 		LOKMFLKHIPG = 53,
@@ -96,7 +96,7 @@ public class ILLPDLODANB
 	private static LOEGALDKHPL NNLCKKMJPLJ; // 0x0
 
 	//// RVA: 0x9F1AF4 Offset: 0x9F1AF4 VA: 0x9F1AF4
-	public static bool HHMKDAIGMKC(LOEGALDKHPL INDDJNMPONH)
+	public static bool HHMKDAIGMKC_IsDebugMission(LOEGALDKHPL INDDJNMPONH)
 	{
 		return INDDJNMPONH >= LOEGALDKHPL.BDJBKMFEHHC/*40*/ && INDDJNMPONH < LOEGALDKHPL.LOKMFLKHIPG/*53*/;
 	}
@@ -300,7 +300,7 @@ public class ILLPDLODANB
 							{
 								if (saveQuest.INDDJNMPONH_Type != 52)
 								{
-									res += (dbQuest.EALOBDHOCHP_Stat > 2 && HHMKDAIGMKC((LOEGALDKHPL)saveQuest.INDDJNMPONH_Type)) ? 1 : 0;
+									res += (dbQuest.EALOBDHOCHP_Stat > 2 && HHMKDAIGMKC_IsDebugMission((LOEGALDKHPL)saveQuest.INDDJNMPONH_Type)) ? 1 : 0;
 								}
 							}
 						}
@@ -451,7 +451,7 @@ public class ILLPDLODANB
 			case LOEGALDKHPL.PAGIHFIMLCK/*0x59*/:
 				return BKANGIKIEML.NODKLJHEAJB.ADNIADMMBPM_21/*0x15*/;
 			case LOEGALDKHPL.GKHJKFJFAHO/*0x14*/:
-			case LOEGALDKHPL.NEIJFCOANMA/*0x32*/:
+			case LOEGALDKHPL.NEIJFCOANMA_50/*0x32*/:
 			case LOEGALDKHPL.HIFAMABBNIE/*0x41*/:
 				return BKANGIKIEML.NODKLJHEAJB.EKHDECEEFFJ_4/*4*/;
 			case LOEGALDKHPL.OLPLKIAHMOG/*0x18*/:
@@ -780,7 +780,7 @@ public class ILLPDLODANB
 	}
 
 	//// RVA: 0x9F5B78 Offset: 0x9F5B78 VA: 0x9F5B78
-	public static bool FJFPHHEFMIB(CNLPPCFJEID_QuestInfo MABBBOEAPAA)
+	public static bool FJFPHHEFMIB_IsSnsMission(CNLPPCFJEID_QuestInfo MABBBOEAPAA)
 	{
 		if (MABBBOEAPAA.INDDJNMPONH_Type != 28)
 			return MABBBOEAPAA.INDDJNMPONH_Type == 56;
@@ -795,7 +795,7 @@ public class ILLPDLODANB
 		List<NFPHOINMHKN_QuestInfo> saveQuests = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests;
 		for(int i = 0; i < dbQuests.Count; i++)
 		{
-			if(FJFPHHEFMIB(dbQuests[i]))
+			if(FJFPHHEFMIB_IsSnsMission(dbQuests[i]))
 			{
 				if(dbQuests[i].CHOFDPDFPDC_ConfigValue == MALFHCHNEFN)
 				{

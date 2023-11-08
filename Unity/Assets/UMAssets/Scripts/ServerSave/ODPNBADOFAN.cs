@@ -265,7 +265,7 @@ public class NFPHOINMHKN_QuestInfo
 		{
 			if(!MHGPMMIDKMM.GPMKFMFEKLN_NormalQuests[i].OAPCHMHAJID)
 			{
-				if(!ILLPDLODANB.FJFPHHEFMIB(MHGPMMIDKMM.GPMKFMFEKLN_NormalQuests[i]))
+				if(!ILLPDLODANB.FJFPHHEFMIB_IsSnsMission(MHGPMMIDKMM.GPMKFMFEKLN_NormalQuests[i]))
 				{
 					if (NNDGIAEFMOG[i].EALOBDHOCHP_Stat > 1)
 						res++;

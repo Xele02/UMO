@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using mcrs;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -43,13 +44,34 @@ namespace XeApp.Game.Menu
 		public Action<eTabType> OnClickTabButton { get; set; } // 0x1C
 
 		//// RVA: 0x187FA60 Offset: 0x187FA60 VA: 0x187FA60
-		//public void SetStatus(int defaultTabIndex) { }
+		public void SetStatus(int defaultTabIndex)
+		{
+			SetTime(FKMOKDCJFEN.IHKAGLGBDEE);
+			SetTab(defaultTabIndex);
+		}
 
 		//// RVA: 0x187FAE4 Offset: 0x187FAE4 VA: 0x187FAE4
-		//public void SetTime(long remainTime) { }
+		public void SetTime(long remainTime)
+		{
+			if(remainTime != 0)
+			{
+				m_timeWatcher.onElapsedCallback = (long current, long limit, long remain) =>
+				{
+					//0x18812A8
+					ApplyRemainTime(remain);
+				};
+				m_timeWatcher.onEndCallback = null;
+				m_timeWatcher.WatchStart(remainTime, true);
+			}
+		}
 
 		//// RVA: 0x187FCF0 Offset: 0x187FCF0 VA: 0x187FCF0
-		//private void ApplyRemainTime(long remainSec) { }
+		private void ApplyRemainTime(long remainSec)
+		{
+			int d, h, m, s;
+			MusicSelectSceneBase.ExtractRemainTime((int)remainSec, out d, out h, out m, out s);
+			SetTextTimer(MessageManager.Instance.GetBank("menu").GetMessageByLabel("music_event_remain_prefix") + MusicSelectSceneBase.MakeRemainTime(d, h, m, s));
+		}
 
 		// RVA: 0x187FECC Offset: 0x187FECC VA: 0x187FECC
 		private void Update()
@@ -183,9 +205,5 @@ namespace XeApp.Game.Menu
 			Loaded();
 			return true;
 		}
-
-		//[CompilerGeneratedAttribute] // RVA: 0x7102A4 Offset: 0x7102A4 VA: 0x7102A4
-		//// RVA: 0x18812A8 Offset: 0x18812A8 VA: 0x18812A8
-		//private void <SetTime>b__18_0(long current, long limit, long remain) { }
 	}
 }

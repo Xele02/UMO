@@ -74,13 +74,71 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x187D5B8 Offset: 0x187D5B8 VA: 0x187D5B8
-		//public void Setup(int type, List<CGJKNOCAPII> viewList) { }
+		public void Setup(int type, List<CGJKNOCAPII> viewList)
+		{
+			if(m_paramDict.ContainsKey(type))
+			{
+				m_paramDict[type].Clear();
+			}
+			else
+			{
+				m_paramDict.Add(type, new List<ItemParam>());
+			}
+			if(viewList != null)
+			{
+				for(int i = 0; i < viewList.Count; i++)
+				{
+					m_paramDict[type].Add(new ItemParam(viewList[i], Vector2.zero, BASIC_SIZE));
+				}
+			}
+		}
 
 		//// RVA: 0x187D8E4 Offset: 0x187D8E4 VA: 0x187D8E4
-		//public void SetStatus(int type) { }
+		public void SetStatus(int type)
+		{
+			if (!m_paramDict.ContainsKey(type))
+				return;
+			m_paramList = m_paramDict[type];
+			float sizeX = BASIC_SIZE.x;
+			float posX = START_POS.x;
+			if(m_paramList.Count == 1)
+			{
+				if (m_scrollSupport != null)
+					posX = m_scrollSupport.RangeSize.x * 0.5f;
+				else
+					posX = 0;
+				posX += sizeX * -0.5f + 13;
+				m_paramList[0].pos = new Vector2(posX, 0);
+			}
+			else
+			{
+				if(m_paramList.Count != 2)
+				{
+					for(int i = 0; i < m_paramList.Count; i++)
+					{
+						m_paramList[i].pos = new Vector2(posX, 0);
+						posX += sizeX;
+					}
+				}
+				else
+				{
+					m_paramList[0].pos = new Vector2(130, 0);
+					m_paramList[1].pos = new Vector2(540, 0);
+				}
+			}
+			SwitchNoneText(m_paramList.Count == 0);
+			SetContentsSizeWidth(m_paramList.Count * sizeX);
+		}
 
 		//// RVA: 0x187DE44 Offset: 0x187DE44 VA: 0x187DE44
-		//public void SetContentsSizeWidth(float width) { }
+		public void SetContentsSizeWidth(float width)
+		{
+			if(m_scrollSupport != null)
+			{
+				m_contentsAreaSize.x = width;
+				m_scrollSupport.ContentSize = m_contentsAreaSize;
+			}
+		}
 
 		//// RVA: 0x187DF14 Offset: 0x187DF14 VA: 0x187DF14
 		public void SwitchGuideEnable(float posX)
@@ -104,7 +162,19 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x187E024 Offset: 0x187E024 VA: 0x187E024
-		//public void ResetList() { }
+		public void ResetList()
+		{
+			for(int i = 0; i < m_paramList.Count; i++)
+			{
+				if(m_paramList[i].item != null)
+				{
+					m_paramList[i].item.Hide();
+					ReleaseObject(m_paramList[i].item);
+					m_paramList[i].item = null;
+				}
+			}
+			ResetScrollPosition();
+		}
 
 		// RVA: 0x187E49C Offset: 0x187E49C VA: 0x187E49C
 		public void Enter()
@@ -125,10 +195,23 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x187E5DC Offset: 0x187E5DC VA: 0x187E5DC
-		//public void Show() { }
+		public void Show()
+		{
+			if (IsOpen)
+				return;
+			IsOpen = true;
+			m_root.StartChildrenAnimGoStop("st_in", "st_in");
+		}
 
 		//// RVA: 0x187E670 Offset: 0x187E670 VA: 0x187E670
-		//public void Hide() { }
+		public void Hide()
+		{
+			if (!IsOpen)
+				return;
+			IsOpen = false;
+			m_root.StartChildrenAnimGoStop("st_out", "st_out");
+			ResetScrollPosition();
+		}
 
 		// RVA: 0x187E70C Offset: 0x187E70C VA: 0x187E70C
 		public bool IsPlaying()
@@ -137,7 +220,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x187E31C Offset: 0x187E31C VA: 0x187E31C
-		//public void ResetScrollPosition() { }
+		public void ResetScrollPosition()
+		{
+			if(m_scrollSupport != null)
+			{
+				m_scrollSupport.scrollRect.content.anchoredPosition = Vector2.zero;
+				m_scrollSupport.scrollRect.StopMovement();
+			}
+		}
 
 		//// RVA: 0x187CFF0 Offset: 0x187CFF0 VA: 0x187CFF0
 		private void UpdateScroll()

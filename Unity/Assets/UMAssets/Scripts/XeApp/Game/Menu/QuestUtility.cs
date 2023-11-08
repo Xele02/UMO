@@ -189,7 +189,10 @@ namespace XeApp.Game.Menu
 		//public static long GetCurrentServerUnixTime() { }
 
 		//// RVA: 0x9DB754 Offset: 0x9DB754 VA: 0x9DB754
-		//public static bool IsCrossDateline() { }
+		public static bool IsCrossDateline()
+		{
+			return MenuScene.CheckDatelineAndAssetUpdate();
+		}
 
 		//// RVA: 0x9E3308 Offset: 0x9E3308 VA: 0x9E3308
 		//public static int TimeInteger(long unix_time) { }
@@ -735,11 +738,97 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x9D6458 Offset: 0x9D6458 VA: 0x9D6458
-		//public static void ReceiveAll(List<FKMOKDCJFEN> list, Action endCallback) { }
+		public static void ReceiveAll(List<FKMOKDCJFEN> list, Action endCallback)
+		{
+			GameManager.Instance.StartCoroutineWatched(Co_ReceiveAll(list, endCallback));
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x710E2C Offset: 0x710E2C VA: 0x710E2C
 		//// RVA: 0x9E7008 Offset: 0x9E7008 VA: 0x9E7008
-		//private static IEnumerator Co_ReceiveAll(List<FKMOKDCJFEN> list, Action endCallback) { }
+		private static IEnumerator Co_ReceiveAll(List<FKMOKDCJFEN> list, Action endCallback)
+		{
+			List<FKMOKDCJFEN> viewList; // 0x20
+			FKMOKDCJFEN view; // 0x24
+
+			//0x9E94C4
+			viewList = new List<FKMOKDCJFEN>();
+			for(int i = 0; i < list.Count; i++)
+			{
+				if(list[i].CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved)
+				{
+					viewList.Add(list[i]);
+				}
+			}
+			if(viewList.Count > 0)
+			{
+				view = viewList[0];
+				if(view.COAMJFMEIBF != null)
+				{
+					bool isClosed = false;
+					yield return Co.R(view.COAMJFMEIBF.EPOOEDJCBDN_Co_CheckClosedEvent((bool result) =>
+					{
+						//0x9E7E5C
+						isClosed = result;
+					}));
+					if(isClosed)
+					{
+						MenuScene.Instance.Mount(TransitionUniqueId.HOME, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+						if (endCallback != null)
+							endCallback();
+						yield break;
+					}
+				}
+				if(!MenuScene.CheckDatelineAndAssetUpdate())
+				{
+					List<int> idList = new List<int>();
+					for(int i = 0; i < viewList.Count; i++)
+					{
+						idList.Add(viewList[i].CMEJFJFOIIJ_QuestId);
+					}
+					MenuScene.Instance.RaycastDisable();
+					bool done = false;
+					bool err = false;
+					bool isLimit = false;
+					FKMOKDCJFEN.JKBOOMAPOBL(view.JONPKLHMOBL, idList, view.JOPOPMLFINI, (List<int> _list, bool limit) =>
+					{
+						//0x9E7E30
+						isLimit = limit;
+						done = true;
+						idList = _list;
+					}, () =>
+					{
+						//0x9E7E44
+						err = true;
+						done = true;
+					}, false);
+					while (!done)
+						yield return null;
+					MenuScene.Instance.RaycastEnable();
+					if(!err)
+					{
+						GameManager.Instance.ResetViewPlayerData();
+						List<MFDJIFIIPJD> l3 = new List<MFDJIFIIPJD>();
+						for(int i = 0; i < viewList.Count; i++)
+						{
+							view = viewList[i];
+							if(idList.Contains(view.CMEJFJFOIIJ_QuestId))
+							{
+								l3.Add(view.GOOIIPFHOIG);
+							}
+						}
+						l3.Sort((MFDJIFIIPJD a, MFDJIFIIPJD b) =>
+						{
+							//0x9E7B24
+							return a.JJBGOIMEIPF_ItemFullId - b.JJBGOIMEIPF_ItemFullId;
+						});
+						yield return Co.R(PopupReceiveAll(l3, isLimit));
+					}
+				}
+				//LAB_009e989c
+			}
+			if (endCallback != null)
+				endCallback();
+		}
 
 		//// RVA: 0x9E70D0 Offset: 0x9E70D0 VA: 0x9E70D0
 		private static int CheckItemPossessionLimit(BBHNACPENDM_ServerSaveData pd, OKGLGHCBCJP_Database md, int itemId, int addCount)
@@ -963,7 +1052,67 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x71100C Offset: 0x71100C VA: 0x71100C
 		//// RVA: 0x9E74B0 Offset: 0x9E74B0 VA: 0x9E74B0
-		//public static IEnumerator PopupReceiveAll(List<MFDJIFIIPJD> list, bool isLimit) { }
+		public static IEnumerator PopupReceiveAll(List<MFDJIFIIPJD> list, bool isLimit)
+		{
+			//0x9EB0E8
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			PopupSetting s;
+			if(list.Count < 1)
+			{
+				s = PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_quest_receive_limit_title"), SizeType.Small, bk.GetMessageByLabel("popup_quest_receive_limit_failure_02"), new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+				}, false, true);
+			}
+			else
+			{
+				s = new PopupQuestRewardListSetting()
+				{
+					WindowSize = SizeType.Large,
+					TitleText = bk.GetMessageByLabel("popup_quest_reward_title"),
+					Buttons = new ButtonInfo[1] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive } },
+					PopupType = PopupQuestRewardListSetting.Type.Receive,
+					ItemList = list,
+					IsLimit = isLimit
+				};
+			}
+			bool done = false;
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x9E7ED8
+				done = true;
+			}, null, null, null);
+			while (!done)
+				yield return null;
+			MenuScene.Instance.RaycastDisable();
+			MFDJIFIIPJD m = list.Find((MFDJIFIIPJD x) =>
+			{
+				//0x9E7CE8
+				return x.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene;
+			});
+			if(m != null)
+			{
+				bool popupWait = true;
+				yield return Co.R(PopupRecordPlate.Show(RecordPlateUtility.eSceneType.Quest, () =>
+				{
+					//0x9E7EEC
+					popupWait = false;
+				}, false));
+				while (popupWait)
+					yield return null;
+			}
+			//LAB_009eb810
+			MenuScene.Instance.RaycastEnable();
+			m = list.Find((MFDJIFIIPJD x) =>
+			{
+				//0x9E7D18
+				return x.NPPNDDMPFJJ_ItemCategory >= EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume && x.NPPNDDMPFJJ_ItemCategory <= EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie;
+			});
+			if(m != null)
+			{
+				yield return Co.R(CallUnlockScene(m));
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x711084 Offset: 0x711084 VA: 0x711084
 		//// RVA: 0x9E7578 Offset: 0x9E7578 VA: 0x9E7578

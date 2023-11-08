@@ -31,16 +31,107 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x9D9C4C Offset: 0x9D9C4C VA: 0x9D9C4C
-		//private void SetupLayout() { }
+		private void SetupLayout()
+		{
+			if (m_isSetupLayout)
+				RefleshQuestList();
+			else
+			{
+				m_layoutScrollListV.OnClickReceiveAll = OnClickReceiveAll;
+				for(int i = 0; i < m_layoutScrollListV.List.ScrollObjects.Count; i++)
+				{
+					(m_layoutScrollListV.List.ScrollObjects[i] as LayoutQuestVerticalItem).OnReceiveCallback = UpdateList;
+				}
+				m_layoutScrollListH.Setup(0, QuestUtility.m_eventViewList);
+				m_layoutScrollListH.Setup(5, QuestUtility.m_bingoViewList);
+				m_layoutTab.OnClickTabButton = (LayoutQuestTab.eTabType tabType) =>
+				{
+					//0x9DDFA4
+					ChangeTab(tabType);
+				};
+				SetupInCurrentTab();
+				CheckTabIcon();
+				QuestUtility.FooterMenuBadge();
+				if (m_tabType == LayoutQuestTab.eTabType.Bingo || m_tabType == LayoutQuestTab.eTabType.Event)
+					m_layoutScrollListH.SetStatus((int)m_tabType);
+				else
+					m_layoutScrollListV.SetStatus(m_tabType);
+				m_isSetupLayout = true;
+			}
+		}
 
 		//// RVA: 0x9DA404 Offset: 0x9DA404 VA: 0x9DA404
-		//private void SetupInCurrentTab() { }
+		private void SetupInCurrentTab()
+		{
+			LayoutQuestTab.eTabNum tabNum;
+			if (!QuestUtility.IsBeginnerQuest())
+			{
+				tabNum = LayoutQuestTab.eTabNum.Normal;
+				if (IsBingoMissionEnable())
+					tabNum = LayoutQuestTab.eTabNum.Bingo;
+				m_tabType = LayoutQuestTab.eTabType.Bingo;
+				if(!IsBingoMissionHelp() && PrevTransition != TransitionList.Type.BINGO_SELECT && PrevTransition != TransitionList.Type.BINGO_MISSION)
+				{
+					m_tabType = LayoutQuestTab.eTabType.Event;
+					if(!QuestUtility.IsEmphasis(LayoutQuestTab.eTabType.Event))
+					{
+						m_tabType = LayoutQuestTab.eTabType.Daily;
+						if(!QuestUtility.IsEmphasis(LayoutQuestTab.eTabType.Daily))
+						{
+							m_tabType = LayoutQuestTab.eTabType.Normal;
+							if(!QuestUtility.IsEmphasis(LayoutQuestTab.eTabType.Normal))
+							{
+								m_tabType = LayoutQuestTab.eTabType.Diva;
+								if(!QuestUtility.IsEmphasis(LayoutQuestTab.eTabType.Diva))
+								{
+									if(QuestUtility.m_dailyViewList.FindAll((FKMOKDCJFEN _) =>
+									{
+										//0x9DE2D0
+										return _.CMCKNKKCNDK_Status != FKMOKDCJFEN.ADCPCCNCOMD_Status.CADDNFIKDLG_Received;
+									}).Count == 0)
+									{
+										m_tabType = LayoutQuestTab.eTabType.Normal;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			else
+			{
+				tabNum = LayoutQuestTab.eTabNum.Beginner;
+				m_tabType = LayoutQuestTab.eTabType.Beginner;
+			}
+			if(ArgsReturn != null && ArgsReturn is QuestTopArgs)
+			{
+				Args = ArgsReturn;
+			}
+			QuestTopArgs arg = Args as QuestTopArgs;
+			if(arg != null && arg.tabType > 0)
+			{
+				if(arg.tabType < m_tabTbl.Length)
+				{
+					m_tabType = m_tabTbl[arg.tabType];
+				}
+			}
+			m_layoutTab.SetStatus((int)m_tabType);
+			m_layoutTab.SetTabType((int)m_tabType, tabNum);
+			CheckTabIcon();
+			QuestUtility.FooterMenuBadge();
+		}
 
 		//// RVA: 0x9DAC70 Offset: 0x9DAC70 VA: 0x9DAC70
-		//private bool IsBingoMissionEnable() { }
+		private bool IsBingoMissionEnable()
+		{
+			return GNGMCIAIKMA.HHCJCDFCLOB != null && GNGMCIAIKMA.HHCJCDFCLOB.GBCPDBJEDHL(m_currentTime);
+		}
 
 		//// RVA: 0x9DACB4 Offset: 0x9DACB4 VA: 0x9DACB4
-		//private bool IsBingoMissionHelp() { }
+		private bool IsBingoMissionHelp()
+		{
+			return IsBingoMissionEnable() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsBingoMission);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x710894 Offset: 0x710894 VA: 0x710894
 		//// RVA: 0x9DB288 Offset: 0x9DB288 VA: 0x9DB288
@@ -57,7 +148,29 @@ namespace XeApp.Game.Menu
 		//private int GetNowDivaId() { }
 
 		//// RVA: 0x9DB53C Offset: 0x9DB53C VA: 0x9DB53C
-		//private void ChangeTab(LayoutQuestTab.eTabType type) { }
+		private void ChangeTab(LayoutQuestTab.eTabType tabType)
+		{
+			m_tabType = tabType;
+			if (tabType == LayoutQuestTab.eTabType.Event || tabType == LayoutQuestTab.eTabType.Bingo)
+			{
+				m_layoutScrollListV.Hide();
+				m_layoutScrollListH.ResetList();
+				m_layoutScrollListH.SetStatus((int)tabType);
+				m_layoutScrollListH.Show();
+			}
+			else
+			{
+				if (tabType == LayoutQuestTab.eTabType.Daily)
+				{
+					if (QuestUtility.IsCrossDateline())
+						return;
+				}
+				m_layoutScrollListH.Hide();
+				m_layoutScrollListV.SetStatus(tabType);
+				m_layoutScrollListV.Show();
+			}
+			this.StartCoroutineWatched(TutorialManager.TryShowTutorialCoroutine(TutorialChecker));
+		}
 
 		//// RVA: 0x9DB7D0 Offset: 0x9DB7D0 VA: 0x9DB7D0
 		private bool TutorialChecker(TutorialConditionId conditionId)
@@ -86,10 +199,61 @@ namespace XeApp.Game.Menu
 		//private void CheckTabIcon(LayoutQuestTab.eTabType type) { }
 
 		//// RVA: 0x9DA05C Offset: 0x9DA05C VA: 0x9DA05C
-		//private void RefleshQuestList() { }
+		private void RefleshQuestList()
+		{
+			LayoutQuestTab.eTabNum tabNum = LayoutQuestTab.eTabNum.Normal;
+			if (IsBingoMissionEnable())
+				tabNum = LayoutQuestTab.eTabNum.Bingo;
+			if (QuestUtility.IsBeginnerQuest())
+				tabNum = LayoutQuestTab.eTabNum.Beginner;
+			if (PrevTransition == TransitionList.Type.QUEST_SELECT)
+				ConnectEventQuest(LayoutQuestTab.eTabType.Event, QuestUtility.m_eventViewList);
+			else if(PrevTransition == TransitionList.Type.BINGO_SELECT || PrevTransition == TransitionList.Type.BINGO_MISSION)
+			{
+				if(IsBingoMissionEnable())
+				{
+					m_tabType = LayoutQuestTab.eTabType.Bingo;
+					ConnectEventQuest(LayoutQuestTab.eTabType.Bingo, QuestUtility.m_bingoViewList);
+					QuestTopArgs args = Args as QuestTopArgs;
+					if(args != null && args.tabType > 0)
+					{
+						if(m_tabTbl.Length > args.tabType)
+						{
+							if(args.tabType == 4)
+							{
+								m_tabType = LayoutQuestTab.eTabType.Event;
+								ConnectEventQuest(LayoutQuestTab.eTabType.Event, QuestUtility.m_eventViewList);
+							}
+							if(args.tabType == 1)
+							{
+								m_tabType = LayoutQuestTab.eTabType.Daily;
+								QuestUtility.UpdateQuestData(LayoutQuestTab.eTabType.Daily);
+								m_layoutScrollListV.SetStatus(LayoutQuestTab.eTabType.Daily);
+							}
+						}
+					}
+				}
+				else
+				{
+					m_tabType = LayoutQuestTab.eTabType.Normal;
+					QuestUtility.UpdateQuestData(LayoutQuestTab.eTabType.Normal);
+					m_layoutScrollListV.SetStatus(LayoutQuestTab.eTabType.Normal);
+				}
+			}
+			m_layoutTab.SetStatus((int)m_tabType);
+			m_layoutTab.SetTabType((int)m_tabType, tabNum);
+			CheckTabIcon();
+			QuestUtility.FooterMenuBadge();
+		}
 
 		//// RVA: 0x9DB870 Offset: 0x9DB870 VA: 0x9DB870
-		//private void ConnectEventQuest(LayoutQuestTab.eTabType tab, List<CGJKNOCAPII> viewList) { }
+		private void ConnectEventQuest(LayoutQuestTab.eTabType tab, List<CGJKNOCAPII> viewList)
+		{
+			QuestUtility.UpdateQuestData(tab);
+			m_layoutScrollListH.ResetList();
+			m_layoutScrollListH.Setup((int)tab, viewList);
+			m_layoutScrollListH.SetStatus((int)tab);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x71090C Offset: 0x71090C VA: 0x71090C
 		//// RVA: 0x9D9BC0 Offset: 0x9D9BC0 VA: 0x9D9BC0
@@ -190,7 +354,7 @@ namespace XeApp.Game.Menu
 				}
 				for(poolSize = 0; poolSize < m_eventMissionButtonList.Count; poolSize++)
 				{
-					while (!m_eventMissionButtonList[i].IsLoaded())
+					while (!m_eventMissionButtonList[poolSize].IsLoaded())
 						yield return null;
 				}
 				Destroy(runtime.gameObject);
@@ -267,7 +431,34 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x9DCFDC Offset: 0x9DCFDC VA: 0x9DCFDC
-		//private void OnClickReceiveAll() { }
+		private void OnClickReceiveAll()
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_001);
+			List<FKMOKDCJFEN> l = null;
+			if(m_tabType == LayoutQuestTab.eTabType.Normal)
+			{
+				l = QuestUtility.m_normalViewList;
+			}
+			else if(m_tabType == LayoutQuestTab.eTabType.Diva)
+			{
+				l = QuestUtility.m_snsViewList;
+			}
+			else if(m_tabType == LayoutQuestTab.eTabType.Daily)
+			{
+				l = QuestUtility.m_dailyViewList;
+			}
+			List<FKMOKDCJFEN> l2 = new List<FKMOKDCJFEN>();
+			for(int i = 0; i < l.Count; i++)
+			{
+				if (l[i].CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved)
+					l2.Add(l[i]);
+			}
+			QuestUtility.ReceiveAll(l2, () =>
+			{
+				//0x9DE11C
+				UpdateList();
+			});
+		}
 
 		//// RVA: 0x9DD318 Offset: 0x9DD318 VA: 0x9DD318
 		//private void LayoutIn() { }
@@ -277,10 +468,49 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x710984 Offset: 0x710984 VA: 0x710984
 		//// RVA: 0x9DD49C Offset: 0x9DD49C VA: 0x9DD49C
-		//private IEnumerator ShowSns() { }
+		private IEnumerator ShowSns()
+		{
+			//0x9E22E8
+			if(m_snsScreen == null)
+			{
+				m_snsScreen = SnsScreen.Create(transform.parent);
+			}
+			GameManager.Instance.AddPushBackButtonHandler(SetBackButtonSnsEmpty);
+			MenuScene.Instance.RaycastDisable();
+			m_snsScreen.Initialize(0, false);
+			yield return null;
+			m_snsScreen.InStartCallback = () =>
+			{
+				//0x9DE30C
+				MenuScene.Save(null, null);
+				MenuScene.Instance.RaycastEnable();
+			};
+			m_snsScreen.OutStartCallback = () =>
+			{
+				//0x9DE120
+				MenuScene.Instance.RaycastDisable();
+				QuestUtility.UpdateQuestData(LayoutQuestTab.eTabType.Beginner);
+				QuestUtility.UpdateQuestData(LayoutQuestTab.eTabType.Diva);
+				m_layoutScrollListV.SetStatus(m_tabType);
+				CheckTabIcon();
+				QuestUtility.FooterMenuBadge();
+			};
+			m_snsScreen.In(SnsScreen.eSceneType.Menu, SNSController.eObjectOrderType.Last, false);
+			while (m_snsScreen != null && m_snsScreen.IsPlaying)
+				yield return null;
+			if (m_snsScreen == null)
+				yield break;
+			while (CIOECGOMILE.HHCJCDFCLOB.KONHMOLMOCI)
+				yield return null;
+			MenuScene.Instance.RaycastEnable();
+			GameManager.Instance.RemovePushBackButtonHandler(SetBackButtonSnsEmpty);
+		}
 
 		//// RVA: 0x9DD548 Offset: 0x9DD548 VA: 0x9DD548
-		//private void SetBackButtonSnsEmpty() { }
+		private void SetBackButtonSnsEmpty()
+		{
+			return;
+		}
 
 		// RVA: 0x9DD54C Offset: 0x9DD54C VA: 0x9DD54C Slot: 9
 		protected override void OnStartEnterAnimation()
@@ -320,6 +550,7 @@ namespace XeApp.Game.Menu
 			{
 				m_eventMissionButtonList[i].InitializeBadge();
 			}
+			SetupLayout();
 			QuestUtility.SetCallbackSns(() =>
 			{
 				//0x9DE230
@@ -428,17 +659,5 @@ namespace XeApp.Game.Menu
 			yield return this.StartCoroutineWatched(TutorialManager.TryShowTutorialCoroutine(TutorialChecker));
 			MenuScene.Instance.InputEnable();
 		}
-
-		//[CompilerGeneratedAttribute] // RVA: 0x710B64 Offset: 0x710B64 VA: 0x710B64
-		//// RVA: 0x9DDFA4 Offset: 0x9DDFA4 VA: 0x9DDFA4
-		//private void <SetupLayout>b__12_0(LayoutQuestTab.eTabType tabType) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x710BA4 Offset: 0x710BA4 VA: 0x710BA4
-		//// RVA: 0x9DE11C Offset: 0x9DE11C VA: 0x9DE11C
-		//private void <OnClickReceiveAll>b__30_0() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x710BB4 Offset: 0x710BB4 VA: 0x710BB4
-		//// RVA: 0x9DE120 Offset: 0x9DE120 VA: 0x9DE120
-		//private void <ShowSns>b__33_1() { }
 	}
 }

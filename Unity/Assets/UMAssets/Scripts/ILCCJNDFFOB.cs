@@ -882,13 +882,13 @@ public class ILCCJNDFFOB
 		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
 		FLBFCCIEPNC_InitBaseJson(json, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
 		CNLPPCFJEID_QuestInfo quest = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests[JOMGCCBFKEF - 1];
-		if(ILLPDLODANB.FJFPHHEFMIB(quest))
+		if(ILLPDLODANB.FJFPHHEFMIB_IsSnsMission(quest))
 		{
 			json[AFEHLCGHAEE_Strings.KOEAHHAHDNP_mission_type] = JpStringLiterals.StringLiteral_11217;
 		}
 		else
 		{
-			if (ILLPDLODANB.HHMKDAIGMKC((ILLPDLODANB.LOEGALDKHPL)quest.INDDJNMPONH_Type))
+			if (ILLPDLODANB.HHMKDAIGMKC_IsDebugMission((ILLPDLODANB.LOEGALDKHPL)quest.INDDJNMPONH_Type))
 			{
 				json[AFEHLCGHAEE_Strings.KOEAHHAHDNP_mission_type] = JpStringLiterals.StringLiteral_11218;
 			}

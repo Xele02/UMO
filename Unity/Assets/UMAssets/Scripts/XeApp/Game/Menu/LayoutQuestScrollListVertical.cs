@@ -110,10 +110,22 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x187F728 Offset: 0x187F728 VA: 0x187F728
-		//public void Show() { }
+		public void Show()
+		{
+			if (IsOpen)
+				return;
+			IsOpen = true;
+			m_root.StartChildrenAnimGoStop("st_in", "st_in");
+		}
 
 		//// RVA: 0x187F7BC Offset: 0x187F7BC VA: 0x187F7BC
-		//public void Hide() { }
+		public void Hide()
+		{
+			if (!IsOpen)
+				return;
+			IsOpen = false;
+			m_root.StartChildrenAnimGoStop("st_out", "st_out");
+		}
 
 		// RVA: 0x187F850 Offset: 0x187F850 VA: 0x187F850
 		public bool IsPlaying()
