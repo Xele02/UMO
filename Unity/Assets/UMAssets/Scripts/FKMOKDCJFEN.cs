@@ -372,13 +372,13 @@ public class FKMOKDCJFEN
 	}
 
 	//// RVA: 0x118B9C8 Offset: 0x118B9C8 VA: 0x118B9C8
-	public static List<FKMOKDCJFEN> IHEMBPBBIEO(bool FBBNPFFEJBN = false)
+	public static List<FKMOKDCJFEN> IHEMBPBBIEO_GetSnsQuest(bool FBBNPFFEJBN = false)
 	{
 		return CMLEFPDNBCB(FBBNPFFEJBN, 1, false);
 	}
 
 	//// RVA: 0x118B9D4 Offset: 0x118B9D4 VA: 0x118B9D4
-	public static List<FKMOKDCJFEN> BAENBNLMPMO(bool FBBNPFFEJBN = false)
+	public static List<FKMOKDCJFEN> BAENBNLMPMO_GetBeginnerQuest(bool FBBNPFFEJBN = false)
 	{
 		return CMLEFPDNBCB(FBBNPFFEJBN, 2, false);
 	}
@@ -406,7 +406,7 @@ public class FKMOKDCJFEN
 					{
 						if (EMJFHKHLHDB == 2)
 						{
-							if (ILLPDLODANB.HHMKDAIGMKC_IsDebugMission((ILLPDLODANB.LOEGALDKHPL)MABBBOEAPAA_dbQuest.INDDJNMPONH_Type))
+							if (ILLPDLODANB.HHMKDAIGMKC_IsDebutMission((ILLPDLODANB.LOEGALDKHPL)MABBBOEAPAA_dbQuest.INDDJNMPONH_Type))
 							{
 								//LAB_0118b218
 								zz = true;
@@ -430,7 +430,7 @@ public class FKMOKDCJFEN
 								{
 									continue;
 								}
-								b = ILLPDLODANB.HHMKDAIGMKC_IsDebugMission((ILLPDLODANB.LOEGALDKHPL)MABBBOEAPAA_dbQuest.INDDJNMPONH_Type);
+								b = !ILLPDLODANB.HHMKDAIGMKC_IsDebutMission((ILLPDLODANB.LOEGALDKHPL)MABBBOEAPAA_dbQuest.INDDJNMPONH_Type);
 							}
 							if (b)
 							{
@@ -446,7 +446,7 @@ public class FKMOKDCJFEN
 					}
 					if(zz)
 					{ 
-						if (ILLPDLODANB.HHMKDAIGMKC_IsDebugMission((ILLPDLODANB.LOEGALDKHPL)MABBBOEAPAA_dbQuest.INDDJNMPONH_Type))
+						if (ILLPDLODANB.HHMKDAIGMKC_IsDebutMission((ILLPDLODANB.LOEGALDKHPL)MABBBOEAPAA_dbQuest.INDDJNMPONH_Type))
 						{
 							if(saveQuestsList[i].EALOBDHOCHP_Stat > 2)
 							{
@@ -473,7 +473,7 @@ public class FKMOKDCJFEN
 								{
 									int a = ILLPDLODANB.OBOJKHIJBGL(saveQuestsList[i].EALOBDHOCHP_Stat, db, serverSave, false);
 									CNLPPCFJEID_QuestInfo q2 = dbQuestsList[MABBBOEAPAA_dbQuest.HHIBBHFHENH_LinkQuestId - 1];
-									bool d = ILLPDLODANB.HHMKDAIGMKC_IsDebugMission((ILLPDLODANB.LOEGALDKHPL)q2.INDDJNMPONH_Type);
+									bool d = ILLPDLODANB.HHMKDAIGMKC_IsDebutMission((ILLPDLODANB.LOEGALDKHPL)q2.INDDJNMPONH_Type);
 									int e = 1;
 									if (d)
 										e = 2;

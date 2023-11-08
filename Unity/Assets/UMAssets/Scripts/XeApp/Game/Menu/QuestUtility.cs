@@ -76,11 +76,11 @@ namespace XeApp.Game.Menu
 					m_dailyAchievedCount = GetQuestCountByStatus(m_dailyViewList, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
 					break;
 				case LayoutQuestTab.eTabType.Diva:
-					m_snsViewList = FKMOKDCJFEN.IHEMBPBBIEO(false);
+					m_snsViewList = FKMOKDCJFEN.IHEMBPBBIEO_GetSnsQuest(false);
 					m_snsAchievedCount = GetQuestCountByStatus(m_snsViewList, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
 					break;
 				case LayoutQuestTab.eTabType.Beginner:
-					m_beginnerViewList = FKMOKDCJFEN.BAENBNLMPMO(false);
+					m_beginnerViewList = FKMOKDCJFEN.BAENBNLMPMO_GetBeginnerQuest(false);
 					m_beginnerAchievedCount = GetQuestCountByStatus(m_beginnerViewList, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
 					break;
 				case LayoutQuestTab.eTabType.Bingo:

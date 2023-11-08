@@ -1044,7 +1044,7 @@ public class CIOECGOMILE
 											}
 											else
 											{
-												if(ILLPDLODANB.HHMKDAIGMKC_IsDebugMission((ILLPDLODANB.LOEGALDKHPL)qInfo.INDDJNMPONH_Type))
+												if(ILLPDLODANB.HHMKDAIGMKC_IsDebutMission((ILLPDLODANB.LOEGALDKHPL)qInfo.INDDJNMPONH_Type))
 												{
 													data.ADCMNODJBGJ = JpStringLiterals.StringLiteral_9774;
 													EBEGGFECPOE.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.NJCPDNAHPDP_13, normalQuest[i].PPFNGGCBJKC_Id.ToString());

@@ -888,7 +888,7 @@ public class ILCCJNDFFOB
 		}
 		else
 		{
-			if (ILLPDLODANB.HHMKDAIGMKC_IsDebugMission((ILLPDLODANB.LOEGALDKHPL)quest.INDDJNMPONH_Type))
+			if (ILLPDLODANB.HHMKDAIGMKC_IsDebutMission((ILLPDLODANB.LOEGALDKHPL)quest.INDDJNMPONH_Type))
 			{
 				json[AFEHLCGHAEE_Strings.KOEAHHAHDNP_mission_type] = JpStringLiterals.StringLiteral_11218;
 			}

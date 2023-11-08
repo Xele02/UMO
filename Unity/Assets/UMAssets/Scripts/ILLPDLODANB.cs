@@ -96,7 +96,7 @@ public class ILLPDLODANB
 	private static LOEGALDKHPL NNLCKKMJPLJ; // 0x0
 
 	//// RVA: 0x9F1AF4 Offset: 0x9F1AF4 VA: 0x9F1AF4
-	public static bool HHMKDAIGMKC_IsDebugMission(LOEGALDKHPL INDDJNMPONH)
+	public static bool HHMKDAIGMKC_IsDebutMission(LOEGALDKHPL INDDJNMPONH)
 	{
 		return INDDJNMPONH >= LOEGALDKHPL.BDJBKMFEHHC/*40*/ && INDDJNMPONH < LOEGALDKHPL.LOKMFLKHIPG/*53*/;
 	}
@@ -300,7 +300,7 @@ public class ILLPDLODANB
 							{
 								if (saveQuest.INDDJNMPONH_Type != 52)
 								{
-									res += (dbQuest.EALOBDHOCHP_Stat > 2 && HHMKDAIGMKC_IsDebugMission((LOEGALDKHPL)saveQuest.INDDJNMPONH_Type)) ? 1 : 0;
+									res += (dbQuest.EALOBDHOCHP_Stat > 2 && HHMKDAIGMKC_IsDebutMission((LOEGALDKHPL)saveQuest.INDDJNMPONH_Type)) ? 1 : 0;
 								}
 							}
 						}
