@@ -225,7 +225,10 @@ public class CKFGMNAIBNG
 	}
 
 	// // RVA: 0x107F7B4 Offset: 0x107F7B4 VA: 0x107F7B4
-	// public static string EJOJNFDHDHN(int AHHJLDLAPAN, int JPIDIENBGKH) { }
+	public static string EJOJNFDHDHN_GetCostumeName(int AHHJLDLAPAN, int JPIDIENBGKH)
+	{
+		return MessageManager.Instance.GetMessage("master", "cos_" + IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_GetUnlockedCostumeOrDefault(AHHJLDLAPAN, JPIDIENBGKH).JPIDIENBGKH_CostumeId.ToString("D4"));
+	}
 
 	// // RVA: 0x107F958 Offset: 0x107F958 VA: 0x107F958 Slot: 3
 	// public override string ToString() { }
