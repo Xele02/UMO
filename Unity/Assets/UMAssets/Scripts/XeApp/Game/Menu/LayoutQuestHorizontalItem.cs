@@ -69,7 +69,7 @@ namespace XeApp.Game.Menu
 								{
 									if (GNGMCIAIKMA.HHCJCDFCLOB == null)
 										return;
-									GNGMCIAIKMA.HHCJCDFCLOB.DJGFICMNGGP(itemParam.questData.PGIIDPEGGPI);
+									GNGMCIAIKMA.HHCJCDFCLOB.DJGFICMNGGP_SetBingoId(itemParam.questData.PGIIDPEGGPI);
 									GNGMCIAIKMA.HHCJCDFCLOB.BHFGBNNEMLI(itemParam.questData.PGIIDPEGGPI);
 									if (!GNGMCIAIKMA.HHCJCDFCLOB.IDKFAMEFCPD(itemParam.questData.PGIIDPEGGPI) &&
 										GNGMCIAIKMA.HHCJCDFCLOB.MLCGJAJCFDP(itemParam.questData.PGIIDPEGGPI, 0, 0) != 0)
@@ -93,7 +93,7 @@ namespace XeApp.Game.Menu
 					{
 						if (GNGMCIAIKMA.HHCJCDFCLOB == null)
 							return;
-						GNGMCIAIKMA.HHCJCDFCLOB.DJGFICMNGGP(itemParam.questData.PGIIDPEGGPI);
+						GNGMCIAIKMA.HHCJCDFCLOB.DJGFICMNGGP_SetBingoId(itemParam.questData.PGIIDPEGGPI);
 						GNGMCIAIKMA.HHCJCDFCLOB.BHFGBNNEMLI(itemParam.questData.PGIIDPEGGPI);
 						if (!GNGMCIAIKMA.HHCJCDFCLOB.IDKFAMEFCPD(itemParam.questData.PGIIDPEGGPI) &&
 							GNGMCIAIKMA.HHCJCDFCLOB.MLCGJAJCFDP(itemParam.questData.PGIIDPEGGPI, 0, 0) != 0)

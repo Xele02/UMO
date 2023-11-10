@@ -173,7 +173,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x14C8388 Offset: 0x14C8388 VA: 0x14C8388
 		public BingoRewardContents ChangeReward(int order, int bingoId)
 		{
-			return contentList[s_orderdBingoIndex[order]];
+			return contentList[s_orderdBingoIndex[order] - 1];
 		}
 
 		//// RVA: 0x14C8484 Offset: 0x14C8484 VA: 0x14C8484

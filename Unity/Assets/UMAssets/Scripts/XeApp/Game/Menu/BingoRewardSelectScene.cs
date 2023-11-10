@@ -172,7 +172,7 @@ namespace XeApp.Game.Menu
 		{
 			base.OnPreSetCanvas();
 			if (GNGMCIAIKMA.HHCJCDFCLOB != null)
-				bingoId = GNGMCIAIKMA.HHCJCDFCLOB.MGAHOPFMKHB();
+				bingoId = GNGMCIAIKMA.HHCJCDFCLOB.MGAHOPFMKHB_GetBingoId();
 			this.StartCoroutineWatched(AssetLoad());
 		}
 
