@@ -131,13 +131,13 @@ namespace XeApp.Game.Menu
 			GetVisibleAreaIndex(out begin, out end);
 			if(end >= m_beginElemIndex && m_endElemIndex >= begin)
 			{
-				if (m_beginElemIndex - begin < 0)
+				if (m_beginElemIndex < begin)
 					ReleaseCacheRange(m_beginElemIndex, begin - 1);
-				if (end - m_endElemIndex < 0)
+				if (end < m_endElemIndex)
 					ReleaseCacheRange(end + 1, m_endElemIndex);
-				if (m_beginElemIndex - begin > 0)
+				if (m_beginElemIndex > begin)
 					LockCacheRange(begin, m_beginElemIndex - 1);
-				if (end - m_endElemIndex > 0)
+				if (end > m_endElemIndex)
 					LockCacheRange(m_endElemIndex + 1, end);
 			}
 			else
@@ -171,34 +171,34 @@ namespace XeApp.Game.Menu
 				m_headerElems[i].transform.SetParent(m_scrollTrans, false);
 				HideElem(m_headerElems[i]);
 			}
-			for (int i = 0; i < m_headerElems.Count; i++)
+			for (int i = 0; i < m_rarityElems.Count; i++)
 			{
 				m_rarityElems[i].transform.SetParent(m_scrollTrans, false);
 				HideElem(m_rarityElems[i]);
 			}
-			for (int i = 0; i < m_headerElems.Count; i++)
+			for (int i = 0; i < m_itemElems.Count; i++)
 			{
 				m_itemElems[i].transform.SetParent(m_scrollTrans, false);
 				m_itemElems[i].SetNameAutoSize(true);
 				HideElem(m_itemElems[i]);
 			}
-			for (int i = 0; i < m_headerElems.Count; i++)
+			for (int i = 0; i < m_messageElems.Count; i++)
 			{
 				m_messageElems[i].transform.SetParent(m_scrollTrans, false);
 				HideElem(m_messageElems[i]);
 			}
-			for (int i = 0; i < m_headerElems.Count; i++)
+			for (int i = 0; i < m_epDetailElems.Count; i++)
 			{
 				m_epDetailElems[i].transform.SetParent(m_scrollTrans, false);
 				HideElem(m_epDetailElems[i]);
 			}
-			for (int i = 0; i < m_headerElems.Count; i++)
+			for (int i = 0; i < m_epItemElems.Count; i++)
 			{
 				m_epItemElems[i].transform.SetParent(m_scrollTrans, false);
 				m_epItemElems[i].SetNameAutoSize(true);
 				HideElem(m_epItemElems[i]);
 			}
-			for (int i = 0; i < m_headerElems.Count; i++)
+			for (int i = 0; i < m_separatorElems.Count; i++)
 			{
 				m_separatorElems[i].transform.SetParent(m_scrollTrans, false);
 				HideElem(m_separatorElems[i]);
@@ -368,6 +368,7 @@ namespace XeApp.Game.Menu
 				if (d.TryGetValue(i, out s))
 				{
 					elem.SetPercent(idx, i, s);
+					idx++;
 				}
 			}
 			elem.SetStyle(d.Count);

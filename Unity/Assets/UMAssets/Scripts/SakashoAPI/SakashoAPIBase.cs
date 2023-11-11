@@ -19,7 +19,7 @@ public abstract class SakashoAPIBase
 	public static int Call(APICall method, string json, int callbackId, OnSuccess onSuccess, OnError onError)
     {
         SakashoCallbackRegistry.SetCallback(callbackId, onSuccess, onError);
-        TodoLogger.Log(TodoLogger.SakashoSystem, "[Sakasho] Call : "+method.Method.ToString()+"\n"+(json != null ? json.Substring(0, Mathf.Min(json.Length, 500)) : ""));
+        TodoLogger.Log(0, "[Sakasho] Call : "+method.Method.ToString()+"\n"+(json != null ? json.Substring(0, Mathf.Min(json.Length, 500)) : ""));
         int callId = method(callbackId, json);
         SakashoCallbackRegistry.SetCallbackIdPair(callbackId, callId);
         return callId;
