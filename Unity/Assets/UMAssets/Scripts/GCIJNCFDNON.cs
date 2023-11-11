@@ -545,6 +545,8 @@ public class GCIJNCFDNON_SceneInfo
 			IDMLDEJMMED_Name = MessageManager.Instance.GetBank("master").GetMessageByLabel("sn_" + BCCHOBPJJKE_SceneId.ToString("D4"));
 		}
 		OPFGFINHFCE_SceneName = IDMLDEJMMED_Name;
+		if(RuntimeSettings.CurrentSettings.DisplayIdInName)
+			OPFGFINHFCE_SceneName = "["+BCCHOBPJJKE_SceneId+"] "+OPFGFINHFCE_SceneName;
 		if (DMNIMMGGJJJ_Leaf < 0)
 		{
 			DMNIMMGGJJJ_Leaf = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA[BCCHOBPJJKE_SceneId - 1].DMNIMMGGJJJ_Leaf;
