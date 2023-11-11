@@ -11,5 +11,6 @@ public class UMOPopupEventSetting : PopupSetting
     {
         m_content = content;
     }
+	public override bool IsPreload { get { return true; } }
 
 }

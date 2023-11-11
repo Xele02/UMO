@@ -49,59 +49,70 @@ namespace XeApp.Game.Title
 			}
 		}
 
+		UMOPopupConfigSetting umoSetting = null;
+		UMOPopupEventSetting umoEventSetting = null;
 		private IEnumerator ShowUMOPopup()
 		{
+			if(umoSetting == null)
+			{
+				umoSetting = new UMOPopupConfigSetting();
+				umoSetting.m_parent = transform;
+				bool isLoading = false;
+				ResourcesManager.Instance.Load(umoSetting.PrefabPath, (FileResultObject fro) =>
+				{
+					//0x13883F0
+					GameObject g = Instantiate(fro.unityObject) as GameObject;
+					g.transform.SetParent(transform, false);
+					umoSetting.SetContent(g);
+					isLoading = true;
+					return true;
+				});
+				while (!isLoading)
+					yield return null;
+			}
+			
+			if(umoEventSetting == null)
+			{
+				umoEventSetting = new UMOPopupEventSetting();
+				umoEventSetting.m_parent = transform;
+				bool isLoading = false;
+				ResourcesManager.Instance.Load(umoEventSetting.PrefabPath, (FileResultObject fro) =>
+				{
+					//0x13883F0
+					GameObject g = Instantiate(fro.unityObject) as GameObject;
+					g.transform.SetParent(transform, false);
+					umoEventSetting.SetContent(g);
+					isLoading = true;
+					return true;
+				});
+				while (!isLoading)
+					yield return null;
+			}
+
 			PopupTabContents m_tabContents = null;
 			PopupTabSetting s = PopupWindowManager.CreateTabContents((PopupTabContents tabContents) =>
 			{
 				//0x9544EC
 				m_tabContents = tabContents;
+				if(m_tabContents != null)
+				{
+					m_tabContents.AddContents(new PopupTabContents.ContentsData((int)PopupTabButton.ButtonLabel.Menu, umoSetting, ""));
+					m_tabContents.AddContents(new PopupTabContents.ContentsData((int)PopupTabButton.ButtonLabel.EventInfomation, umoEventSetting, ""));
+				}
 			});
 			while(m_tabContents == null)
 				yield return null;
 			while (!s.ISLoaded())
-					yield return null;
-			m_tabContents.ClearContents();
-			s.SetParent(transform);
-
-			UMOPopupConfigSetting umoSetting = new UMOPopupConfigSetting();
-			umoSetting.m_parent = transform;
-			bool isLoading = false;
-			ResourcesManager.Instance.Load(umoSetting.PrefabPath, (FileResultObject fro) =>
-			{
-				//0x13883F0
-				GameObject g = Instantiate(fro.unityObject) as GameObject;
-				umoSetting.SetContent(g);
-				//g.transform.SetParent(m_tabContents.transform, false);
-				isLoading = true;
-				return true;
-			});
-			while (!isLoading)
 				yield return null;
 
-			UMOPopupEventSetting umoEventSetting = new UMOPopupEventSetting();
-			umoEventSetting.m_parent = transform;
-			isLoading = false;
-			ResourcesManager.Instance.Load(umoEventSetting.PrefabPath, (FileResultObject fro) =>
-			{
-				//0x13883F0
-				GameObject g = Instantiate(fro.unityObject) as GameObject;
-				umoEventSetting.SetContent(g);
-				//g.transform.SetParent(m_tabContents.transform, false);
-				isLoading = true;
-				return true;
-			});
-			while (!isLoading)
-				yield return null;
-
-			m_tabContents.AddContents(new PopupTabContents.ContentsData((int)PopupTabButton.ButtonLabel.Menu, umoSetting, ""));
-			m_tabContents.AddContents(new PopupTabContents.ContentsData((int)PopupTabButton.ButtonLabel.EventInfomation, umoEventSetting, ""));
+			m_tabContents.DefaultSelect = (int)PopupTabButton.ButtonLabel.Menu;
 			m_tabContents.SelectIndex = (int)PopupTabButton.ButtonLabel.Menu;
 			s.Tabs = new PopupTabButton.ButtonLabel[2]
 			{
 				PopupTabButton.ButtonLabel.Menu,
 				PopupTabButton.ButtonLabel.EventInfomation
 			};
+			s.m_parent = transform;
 			s.DefaultTab = PopupTabButton.ButtonLabel.Menu;
 			s.WindowSize = SizeType.Large;
 			s.Buttons = new ButtonInfo[2]
@@ -109,6 +120,7 @@ namespace XeApp.Game.Title
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive },
 			};
+			s.Content.transform.SetParent(transform.parent, false);
 			PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType t, PopupButton.ButtonLabel l) =>
 			{
 				if(t == PopupButton.ButtonType.Positive)
@@ -121,7 +133,10 @@ namespace XeApp.Game.Title
 			{
 				//0x1B5FC9C
 				(content as PopupTabContents).ChangeContents((int)label);
-			}, null,null);
+			}, () =>
+			{
+				m_tabContents.ChangeContents((int)s.DefaultTab);
+			},null);
 		}
 
 		// // RVA: 0xE39814 Offset: 0xE39814 VA: 0xE39814

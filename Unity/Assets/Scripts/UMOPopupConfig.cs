@@ -26,6 +26,7 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         MinigameAutoPlay.SetSelected(RuntimeSettings.CurrentSettings.MinigameAutoPlay ? 0 : 1);
         ForceIntegrityCheck.SetSelected(KEHOJEJMGLJ.FJDOHLADGFI ? 0 : 1);
         DisplayItemId.SetSelected(RuntimeSettings.CurrentSettings.DisplayIdInName ? 0 : 1);
+        gameObject.SetActive(true);
     }
 
     public void Save()
@@ -47,12 +48,12 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
 
     public void Show()
     {
-        //gameObject.SetActive(true);
+        gameObject.SetActive(true);
     }
 
     public void Hide()
     {
-        //gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     public bool IsReady()
