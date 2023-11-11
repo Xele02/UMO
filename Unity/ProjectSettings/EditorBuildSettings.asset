@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/UMAssets/Scene/Project/Scenes/DownLoad.unity
     guid: 7a724ebf2031d04439df09e534dd0d96
-  - enabled: 0
+  - enabled: 1
     path: Assets/UMAssets/Scene/Project/Scenes/GachaDirection.unity
     guid: 6f9ab348d75edf546bb68530ce5fa808
   - enabled: 1

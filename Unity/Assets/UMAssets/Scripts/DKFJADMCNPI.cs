@@ -1,4 +1,4 @@
-﻿
+
 public class DKFJADMCNPI
 {
 	public enum PBIBFAHJOKC
@@ -30,7 +30,7 @@ public class DKFJADMCNPI
 		KJAFDMGNBPO = 11,
 		CLJHDIKFECG = 12,
 		OBNEIGIFMFD_13 = 13,
-		DOEHLCLBCNN = 14,
+		DOEHLCLBCNN_14 = 14,
 		GJPEANBALKF = 15,
 	}
 

@@ -10,6 +10,9 @@ using XeApp.Game.Tutorial;
 using System.Collections.Generic;
 using mcrs;
 using XeApp.Game.MiniGame;
+using XeSys.uGUI;
+using CriWare;
+using XeApp.Game.Gacha;
 
 namespace XeApp.Game.Menu
 {
@@ -113,7 +116,7 @@ namespace XeApp.Game.Menu
 		public static MenuScene Instance { get; private set; } // 0x0
 		public static bool IsAlreadyHome { get; set; } // 0x4
 		public static bool IsFirstTitleFlow { get; set; } // 0x5
-		public static bool ComebackByRestart { get; private set; } // 0x6
+		public static bool ComebackByRestart { private get;  set; } // 0x6
 		public MenuDivaManager divaManager { get; set; } // 0x2C
 		public SceneIconTextureCache SceneIconCache { get { return GameManager.Instance.SceneIconCache; } } //0xB2DCF8
 		public DivaIconTextureCache DivaIconCache { get { return GameManager.Instance.DivaIconCache; } } //0xB2DD94
@@ -281,8 +284,10 @@ namespace XeApp.Game.Menu
 			{
 				if(prevSceneName == "GachaDirection")
 				{
-					TodoLogger.LogError(0, "init from gacha");
-					//L141
+					info.category = SceneGroupCategory.GACHA;
+					info.nextName = TransitionList.Type.GACHA_2;
+					info.uniqueId = TransitionUniqueId.GACHA2;
+					info.args = new GachaScene.GachaArgs(GachaScene.GachaProductList[GachaScene.SelectIndex].FDEBLMKEMLF_TypeAndSeriesId, true);
 					return;
 				}
 				if(prevSceneName == "RhythmAdjust")
@@ -936,11 +941,40 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB31DA0 Offset: 0xB31DA0 VA: 0xB31DA0
-		// public void GotoGachaDirection() { }
+		public void GotoGachaDirection()
+		{
+			this.StartCoroutineWatched(GotoGachaDirectionCoroutine());
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7D5C Offset: 0x6C7D5C VA: 0x6C7D5C
 		// // RVA: 0xB31DC4 Offset: 0xB31DC4 VA: 0xB31DC4
-		// private IEnumerator GotoGachaDirectionCoroutine() { }
+		private IEnumerator GotoGachaDirectionCoroutine()
+		{
+			UGUIFader fader; // 0x14
+			CriAtomExPlayback playback; // 0x18
+
+			//0xB3A9B0
+			RaycastDisable();
+			int id = GachaUtility.GetSeIdForMenuLeaving();
+			if(id > -1)
+			{
+				playback = SoundManager.Instance.sePlayerMenu.Play((int)id);
+				yield return null;
+				while(playback.GetStatus() == CriAtomExPlayback.Status.Playing)
+					yield return null;
+				playback = new CriAtomExPlayback(0);
+			}
+			//LAB_00b3abe4
+			fader = GameManager.Instance.fullscreenFader;
+			fader.Fade(0.1f, Color.black);
+			while(fader.isFading)
+				yield return null;
+			yield return Co.R(m_menuTransitionControl.DestroyTransion());
+			GameManager.Instance.SetTouchEffectVisible(false);
+			SoundManager.Instance.bgmPlayer.Stop();
+			RaycastEnable();
+			NextScene("GachaDirection");
+		}
 
 		// // RVA: 0xB31E70 Offset: 0xB31E70 VA: 0xB31E70
 		// public void GotoNameEntry() { }

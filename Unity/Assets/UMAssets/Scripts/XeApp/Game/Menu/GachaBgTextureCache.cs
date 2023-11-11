@@ -1,3 +1,5 @@
+using System;
+
 namespace XeApp.Game.Menu
 {
 	public class GachaBgTextureCache : IconTextureCache
@@ -19,11 +21,15 @@ namespace XeApp.Game.Menu
 		// RVA: 0xEDB6C8 Offset: 0xEDB6C8 VA: 0xEDB6C8 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
 		{
-			TodoLogger.LogError(0, "CreateIconTexture");
-			return null;
+			IconTexture tex = new IconTexture();
+			SetupForSingleTexture(info, tex);
+			return tex;
 		}
 
 		// RVA: 0xEDB750 Offset: 0xEDB750 VA: 0xEDB750
-		// public void Load(int gachaId, Action<IiconTexture> callBack) { }
+		public void Load(int gachaId, Action<IiconTexture> callBack)
+		{
+			Load(string.Format("ct/bg/gc/{0:D5}.xab", gachaId), callBack);
+		}
 	}
 }

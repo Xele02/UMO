@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine.EventSystems;
 using System.Collections;
+using UnityEditor.Build.Content;
 
 namespace XeApp.Game.Common
 {
@@ -26,10 +27,17 @@ namespace XeApp.Game.Common
 		public Action<bool> OnSwipe { private get; set; } // 0x128
 
 		// // RVA: 0x13900D0 Offset: 0x13900D0 VA: 0x13900D0
-		// public void SetItemCount(int count) { }
+		public void SetItemCount(int count)
+		{
+			m_itemCount = count;
+		}
 
 		// // RVA: 0x13900D8 Offset: 0x13900D8 VA: 0x13900D8 Slot: 61
-		// public virtual void AddScrollObject(SelectScrollViewContent obj) { }
+		public virtual void AddScrollObject(SelectScrollViewContent obj)
+		{
+			scrollObjects.Add(obj);
+			obj.transform.SetParent(content, false);
+		}
 
 		// // RVA: 0x13901AC Offset: 0x13901AC VA: 0x13901AC Slot: 62
 		// public virtual void RemoveScrollObject(SelectScrollViewContent obj) { }
@@ -38,7 +46,16 @@ namespace XeApp.Game.Common
 		// public virtual void ClearScrollObject() { }
 
 		// // RVA: 0x13903C0 Offset: 0x13903C0 VA: 0x13903C0
-		// public void SetPosition(SelectScrollViewContent content, float animTime = 0) { }
+		public void SetPosition(SelectScrollViewContent content, float animTime = 0)
+		{
+			int idx = scrollObjects.FindIndex((SelectScrollViewContent x) =>
+			{
+				//0x1391660
+				return x.GetIndex() == content.GetIndex();
+			});
+			if (idx > -1)
+				SetPosition(idx, animTime);
+		}
 
 		// // RVA: 0x13904EC Offset: 0x13904EC VA: 0x13904EC Slot: 64
 		public virtual void SetPosition(int pos, float animTime = 0)
@@ -236,19 +253,81 @@ namespace XeApp.Game.Common
 		// RVA: 0x139102C Offset: 0x139102C VA: 0x139102C Slot: 46
 		public override void OnDrag(PointerEventData eventData)
 		{
-			TodoLogger.LogError(0, "OnDrag()");
+			if(!isEnableTouch)
+				return;
+			base.OnDrag(eventData);
 		}
 
 		// RVA: 0x1391040 Offset: 0x1391040 VA: 0x1391040 Slot: 44
 		public override void OnBeginDrag(PointerEventData eventData)
 		{
-			TodoLogger.LogError(0, "OnBeginDrag()");
+			if(
+#if UNITY_ANDROID
+				eventData.pointerId == 0
+#else
+				eventData.pointerId == -1
+#endif
+			)
+			{
+				isEnableTouch = true;
+			}
+			else
+			{
+				isEnableTouch = !isSingleTouch;
+				if(isSingleTouch)
+					return;
+			}
+			base.OnBeginDrag(eventData);
+			isDrag = true;
+			if(OnSwipe != null)
+				OnSwipe(true);
 		}
 
 		// RVA: 0x1391124 Offset: 0x1391124 VA: 0x1391124 Slot: 45
 		public override void OnEndDrag(PointerEventData eventData)
 		{
-			TodoLogger.LogError(0, "OnEndDrag()");
+			base.OnEndDrag(eventData);
+			isDrag = false;
+			Vector2 pos = content.anchoredPosition;
+			RectTransform rt = transform as RectTransform;
+			if(vertical)
+			{
+				float prev = verticalNormalizedPosition;
+				if(rt.sizeDelta.y <= content.sizeDelta.y)
+				{
+					if(verticalNormalizedPosition <= 0)
+					{
+						verticalNormalizedPosition = 0;
+						pos = content.anchoredPosition;
+						verticalNormalizedPosition = prev;
+					}
+				}
+				else
+				{
+					pos = Vector2.zero;
+				}
+				SetPosition(Mathf.RoundToInt(pos.y / (itemSize.y + spacing.y)), 0.1f);
+			}
+			if(horizontal)
+			{
+				float prev = horizontalNormalizedPosition;
+				if(rt.sizeDelta.x <= content.sizeDelta.x)
+				{
+					if(horizontalNormalizedPosition >= 1)
+					{
+						horizontalNormalizedPosition = 1;
+						pos = content.anchoredPosition;
+						horizontalNormalizedPosition = prev;
+					}
+				}
+				else
+				{
+					pos = Vector2.zero;
+				}
+				SetPosition(Mathf.RoundToInt(-pos.x / (itemSize.x + spacing.x)), 0.1f);
+			}
+			if(OnSwipe != null)
+				OnSwipe(isDrag);
 		}
 	}
 }

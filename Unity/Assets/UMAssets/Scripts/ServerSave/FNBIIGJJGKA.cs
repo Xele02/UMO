@@ -502,7 +502,12 @@ public class OHDCBNFDHLA
 	}
 
 	//// RVA: 0x1DE0A00 Offset: 0x1DE0A00 VA: 0x1DE0A00
-	//public void BFAJMALBALG(int HMFFHLPNMPH) { }
+	public void BFAJMALBALG_AddGacha(int HMFFHLPNMPH)
+	{
+		NDNHHGJKJGM_Gach += HMFFHLPNMPH;
+		if (NDNHHGJKJGM_Gach > 99999999)
+			NDNHHGJKJGM_Gach = 99999999;
+	}
 
 	//// RVA: 0x1DE0A20 Offset: 0x1DE0A20 VA: 0x1DE0A20
 	public void MAFAKCMFHEE_AddSdv()

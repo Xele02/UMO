@@ -285,7 +285,22 @@ namespace XeApp.Game.Common
 		// public static void OpenStaminaCompletionWindow(Action recoveryCallBack) { }
 
 		// // RVA: 0x1BC51BC Offset: 0x1BC51BC VA: 0x1BC51BC
-		// public static void OpenStaminaMaxWindow(Action endCallBack) { }
+		public static void OpenStaminaMaxWindow(Action endCallBack)
+		{
+			GameManager.Instance.CloseSnsNotice();
+			GameManager.Instance.CloseOfferNotice();
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_title_stamina_01"), 
+			SizeType.Small, bk.GetMessageByLabel("popup_text_stamina_04"), new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1BC8C04
+				if(endCallBack != null)
+					endCallBack();
+			}, null, null, null);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73F42C Offset: 0x73F42C VA: 0x73F42C
 		// // RVA: 0x1BC54E8 Offset: 0x1BC54E8 VA: 0x1BC54E8

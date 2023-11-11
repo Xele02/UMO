@@ -16,8 +16,8 @@ namespace XeSys.uGUI
 		private Action mUpdate; // 0x48
 		private Image mImage; // 0x4C
 
-		// public float currentTime { get; } 0x274AEBC
-		// public float targetTime { get; }  0x274AEC4
+		public float currentTime { get { return mCurrentTime; } } //0x274AEBC
+		public float targetTime { get { return mTargetTime; } }  //0x274AEC4
 		public bool isFading { get {
 			return mUpdate != this.UpdateIdle;
 		} } //0x274AECC

@@ -77,11 +77,11 @@ public class KBPDNHOKEKD_ProductId
 {
 	public enum KNEKLJHNHAK
 	{
-		HJNNKCMLGFL = 0,
-		LCLLMJGIMHC = 1,
-		PBEMIDKNPNH = 2,
-		DKIKNLEDDBK = 3,
-		AAPLMEGMNJA = 4,
+		HJNNKCMLGFL_0 = 0,
+		LCLLMJGIMHC_1 = 1,
+		PBEMIDKNPNH_2 = 2,
+		DKIKNLEDDBK_3 = 3,
+		AAPLMEGMNJA_4 = 4,
 	}
 
 	public int PPFNGGCBJKC_Id; // 0x8
@@ -104,10 +104,22 @@ public class KBPDNHOKEKD_ProductId
 	public HFDMKKIFNNP KHEGONOKLPN_NormalLotFreeSetting; // 0x54
 	public PFIJNPCEOIL JENBPPBNAHP_PlayerNormalLotFreeState; // 0x58
 	public bool PAFFIBGPOJN_Rare4Only; // 0x5C
-	public int CANACBAPKFK; // 0x60
+	public int CANACBAPKFK_ForcedCount; // 0x60
 
-	//public bool EJENFBLDAIN { get; } 0x101CE84 KNLOMFHAKEG
-	//public int JHAIOJELFHI { get; } 0x101CEAC DLEHIBPEDIK
+	public bool EJENFBLDAIN_IsOwnedMax { get { 
+		if(HMFDJHEEGNN_BuyLimit > 0)
+			return GIEBJDKLCDH_BoughtQuantity == HMFDJHEEGNN_BuyLimit;
+		return false;
+	 } } //0x101CE84 KNLOMFHAKEG
+	public int JHAIOJELFHI_GetNumLot { get
+		{
+			if (CANACBAPKFK_ForcedCount > 0)
+				return CANACBAPKFK_ForcedCount;
+			if (GJEBPJHECIK_ItemSetNameForApi != null)
+				return GJEBPJHECIK_ItemSetNameForApi.Count;
+			return 0;
+		}
+	} //0x101CEAC DLEHIBPEDIK
 
 	//// RVA: 0x101CF2C Offset: 0x101CF2C VA: 0x101CF2C
 	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
@@ -178,7 +190,7 @@ public class KBPDNHOKEKD_ProductId
 	{
 		OPFGFINHFCE_Name = MessageManager.Instance.GetMessage("menu", "tuto_gacha_title");
 		KLMPFGOCBHC_Description = MessageManager.Instance.GetMessage("menu", "tuto_gacha_desc");
-		CANACBAPKFK = HMFFHLPNMPH;
+		CANACBAPKFK_ForcedCount = HMFFHLPNMPH;
 		HMFDJHEEGNN_BuyLimit = 0;
 		GIEBJDKLCDH_BoughtQuantity = 0;
 		KAPMOPMDHJE_Label = (HMFFHLPNMPH == 10) ? 7000102 : 7000101;
@@ -191,7 +203,12 @@ public class KBPDNHOKEKD_ProductId
 	//public bool HFEFJALCHMM() { }
 
 	//// RVA: 0x101D83C Offset: 0x101D83C VA: 0x101D83C
-	//public int HCMGHDNNJOM() { }
+	public int HCMGHDNNJOM()
+	{
+		if (JENBPPBNAHP_PlayerNormalLotFreeState == null)
+			return -1;
+		return JENBPPBNAHP_PlayerNormalLotFreeState.LJPIOGBFEKA_RemainsCount;
+	}
 
 	//// RVA: 0x101D850 Offset: 0x101D850 VA: 0x101D850
 	//public int EDODPNCAGKN() { }
@@ -205,7 +222,29 @@ public class KBPDNHOKEKD_ProductId
 	//// RVA: 0x101D8E0 Offset: 0x101D8E0 VA: 0x101D8E0
 	public KNEKLJHNHAK FJICMLBOJCH()
 	{
-		TodoLogger.LogError(0, "FJICMLBOJCH");
-		return 0;
+		if(JENBPPBNAHP_PlayerNormalLotFreeState == null)
+		{
+			if(KHEGONOKLPN_NormalLotFreeSetting == null)
+				return KNEKLJHNHAK.HJNNKCMLGFL_0;
+		}
+		else
+		{
+			if(KHEGONOKLPN_NormalLotFreeSetting == null)
+				return KNEKLJHNHAK.HJNNKCMLGFL_0;
+			if(JENBPPBNAHP_PlayerNormalLotFreeState.LDBPAJKIPKD_IsNextFree && KHEGONOKLPN_NormalLotFreeSetting.EDHFIFDAJPA_IsFirstTime && KHEGONOKLPN_NormalLotFreeSetting.CDHKHOLCGAC_DurationDays < 0)
+				return KNEKLJHNHAK.PBEMIDKNPNH_2;
+			if(JENBPPBNAHP_PlayerNormalLotFreeState.LDBPAJKIPKD_IsNextFree && KHEGONOKLPN_NormalLotFreeSetting.CDHKHOLCGAC_DurationDays > 0)
+				return KNEKLJHNHAK.LCLLMJGIMHC_1;
+		}
+		if(KHEGONOKLPN_NormalLotFreeSetting.ACGICAHHCIG_ResetCount < 1)
+			return KNEKLJHNHAK.HJNNKCMLGFL_0;
+		else
+		{
+			if(JENBPPBNAHP_PlayerNormalLotFreeState == null)
+				return KNEKLJHNHAK.AAPLMEGMNJA_4;
+			if(JENBPPBNAHP_PlayerNormalLotFreeState.LJPIOGBFEKA_RemainsCount > 0)
+				return KNEKLJHNHAK.DKIKNLEDDBK_3;
+			return KNEKLJHNHAK.AAPLMEGMNJA_4;
+		}
 	}
 }

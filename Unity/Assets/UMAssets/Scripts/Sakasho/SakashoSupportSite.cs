@@ -1,3 +1,5 @@
+using System.Collections;
+using Sakasho.JSON;
 using SakashoSystemCallback;
 
 public class SakashoSupportSite : SakashoAPIBase
@@ -35,7 +37,15 @@ public class SakashoSupportSite : SakashoAPIBase
 	// public static SakashoAPICallContext GetConstrainedPlayerDataEditURL(string label, OnSuccess onSuccess, OnError onError) { }
 
 	// // RVA: 0x2E69694 Offset: 0x2E69694 VA: 0x2E69694
-	// public static SakashoAPICallContext GetOriginalTemplateURL(string name, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext GetOriginalTemplateURL(string name, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		if(name != null)
+		{
+			h["name"] = name;
+		}
+		return new SakashoAPICallContext(Call(SakashoSupportSiteGetOriginalTemplateURL, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	// // RVA: 0x2E6980C Offset: 0x2E6980C VA: 0x2E6980C
 	// public static SakashoAPICallContext GetViolationReportURL(int offenderPlayerId, string offenderPlayerName, string violationContentExtra, OnSuccess onSuccess, OnError onError) { }
@@ -90,7 +100,10 @@ public class SakashoSupportSite : SakashoAPIBase
 	// private static extern int SakashoSupportSiteGetConstrainedPlayerDataEditURL(int callbackId, string json) { }
 
 	// // RVA: 0x2E6AA50 Offset: 0x2E6AA50 VA: 0x2E6AA50
-	// private static extern int SakashoSupportSiteGetOriginalTemplateURL(int callbackId, string json) { }
+	private static int SakashoSupportSiteGetOriginalTemplateURL(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoSupportSiteGetOriginalTemplateURL(callbackId, json);
+	}
 
 	// // RVA: 0x2E6AB68 Offset: 0x2E6AB68 VA: 0x2E6AB68
 	// private static extern int SakashoSupportSiteGetViolationReportURL(int callbackId, string json) { }

@@ -22,6 +22,12 @@ MonoBehaviour:
   - fileName: customvertexcolor
     internalName: Custom/vertexcolor
     shader: {fileID: 4800000, guid: 283f8fc321ad3924798d56dc1459fd74, type: 3}
+  - fileName: debri_light
+    internalName: Shader Forge/debri_light
+    shader: {fileID: 4800000, guid: cc48c8f61c9986642873e85e9c7b8401, type: 3}
+  - fileName: debris_memory
+    internalName: Shader Forge/testSkyBox
+    shader: {fileID: 4800000, guid: c8049af5bfdc8d5488759f539a762653, type: 3}
   - fileName: diva_additive
     internalName: MCRS/Diva/Additive
     shader: {fileID: 4800000, guid: c7699bf93c890aea0a4554e07aea2747, type: 3}
@@ -79,9 +85,18 @@ MonoBehaviour:
   - fileName: effect_simpleadditive
     internalName: MCRS/Effect/SimpleAdditive
     shader: {fileID: 4800000, guid: d5c20f6b1b19eaa4482208b5d8ed9565, type: 3}
+  - fileName: gacha_unlit_color
+    internalName: MCRS/Gacha/Unlit_Color
+    shader: {fileID: 4800000, guid: 33d90d01404dbde4e8dada38dfd8e335, type: 3}
+  - fileName: gacha_unlit_splitcolor
+    internalName: MCRS/Gacha/Unlit_SplitColor
+    shader: {fileID: 4800000, guid: 8126ddd04a4858e4b8bd0f29dbf3fc3d, type: 3}
   - fileName: kuma_shader
     internalName: Shader Forge/NewShader
     shader: {fileID: 4800000, guid: dd2a815fb530c43e6b287209048771fa, type: 3}
+  - fileName: quartz_shader
+    internalName: MCRS/quartz_shader
+    shader: {fileID: 4800000, guid: 46a5f8e7617cc164284d4a32c290fb0a, type: 3}
   - fileName: rhythmuiaddcolor
     internalName: MCRS/RhythmUI/RhythmUIAddColor
     shader: {fileID: 4800000, guid: 16534ba0af7b84b438125e4ce11e6d41, type: 3}
@@ -100,6 +115,9 @@ MonoBehaviour:
   - fileName: rhythmuivertexcolor_maskblend
     internalName: MCRS/RhythmUI/RhythmUIVertexColor_MaskBlend
     shader: {fileID: 4800000, guid: a7827d5de4830244b960ec7b8aeefecd, type: 3}
+  - fileName: smoke_shader
+    internalName: Shader Forge/smoke_Shader
+    shader: {fileID: 4800000, guid: 18108598b3a23f547801efad947d974f, type: 3}
   - fileName: stage_additive
     internalName: MCRS/Stage/Additive
     shader: {fileID: 4800000, guid: 4eb5d7b0c69c6f24a8e7e0b586031b23, type: 3}

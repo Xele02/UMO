@@ -70,7 +70,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0xE63BE8 Offset: 0xE63BE8 VA: 0xE63BE8
 		private void DetectHitCheck()
 		{
-			if(m_hitCheck != null)
+			if(m_hitCheck == null)
 			{
 				m_hitCheck = GetComponentInChildren<LayoutUGUIHitOnly>(true);
 			}
@@ -92,6 +92,7 @@ namespace XeApp.Game.Common
 					hits[i].raycastTarget = true;
 				}
 			}
+			DetectHitCheck();
 		}
 
 		// RVA: 0xE63CAC Offset: 0xE63CAC VA: 0xE63CAC Slot: 12

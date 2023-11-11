@@ -1,9 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using mcrs;
 using UnityEngine;
 using XeApp.Core;
 using XeApp.Game.Common;
+using XeApp.Game.Tutorial;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -76,14 +79,74 @@ namespace XeApp.Game.Menu
 		//private void PopupShowAddScrollEpisode(List<int> episodeIds, LayoutPopupAddEpisode.Type type, Action callback) { }
 
 		//// RVA: 0x177ABBC Offset: 0x177ABBC VA: 0x177ABBC
-		//private void PopupShowList(List<GONMPHKGKHI.LCMJJMNMIKG> list, Action callback) { }
+		private void PopupShowList(List<GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo> list, Action callback)
+		{
+			if(list.Count < 1)
+			{
+				if(callback != null)
+					callback();
+			}
+			else
+			{
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				GONMPHKGKHI_RewardView.CECMLGBLHHG type = GONMPHKGKHI_RewardView.CECMLGBLHHG.INJNLJHGGKB_4;
+				if(list[0] is GONMPHKGKHI_RewardView.GCHFDJMNCAF)
+					type = GONMPHKGKHI_RewardView.CECMLGBLHHG.JCGKGFLCKCP_8;
+				m_overlapListSetting.TitleText = bk.GetMessageByLabel("popup_record_plate_008");
+				m_overlapListSetting.WindowSize = list.Count == 1 ? SizeType.Small : SizeType.Large;
+				m_overlapListSetting.Type = type;
+				m_overlapListSetting.List = list;
+				m_overlapListSetting.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				};
+				PopupWindowManager.Show(m_overlapListSetting, (PopupWindowControl control, PopupButton.ButtonType buttonType, PopupButton.ButtonLabel buttonLabel) =>
+				{
+					//0x177D2CC
+					if(callback != null)
+						callback();
+				}, null, null, ShowTutorial_21, true, true, false, null, null, (PopupWindowControl.SeType seType) =>
+				{
+					//0x177CFE4
+					if(seType == PopupWindowControl.SeType.WindowOpen && !RecordPlateUtility.IsResultConfirm)
+					{
+						SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_WND_004);
+						return true;
+					}
+					return false;
+				});
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70BD2C Offset: 0x70BD2C VA: 0x70BD2C
 		//// RVA: 0x177B0D0 Offset: 0x177B0D0 VA: 0x177B0D0
 		public IEnumerator ListPhase(List<GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo> highList, List<GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo> infoList, Action callback)
 		{
-			TodoLogger.LogError(0, "ListPhase");
-			yield return null;
+			//0x177EA90
+			GameManager.Instance.NowLoading.Show();
+			if(infoList.Count > 0)
+			{
+				List<GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo> reward = infoList.FindAll((GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo _) =>
+				{
+					//0x177D0C8
+					return _.IPMJIODJGBC == GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM_2;
+				});
+				if(reward.Count > 0)
+				{
+					yield return Co.R(LoadLayoutNewEpisodeSetup(GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM_2, null));
+				}
+			}
+			GameManager.Instance.NowLoading.Hide();
+			bool isWait = true;
+			PopupShowList(infoList, () =>
+			{
+				//0x177D2E8
+				isWait = false;
+			});
+			while(isWait)
+				yield return null;
+			if(callback != null)
+				callback();
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70BDA4 Offset: 0x70BDA4 VA: 0x70BDA4
@@ -182,7 +245,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator LoadLayoutNewEpisodeSetup(GONMPHKGKHI_RewardView.CECMLGBLHHG type, Action callback)
 		{
 			//0x177FB04
-			if(type == GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM/*2*/)
+			if(type == GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM_2/*2*/)
 			{
 				bool isLoading = false;
 				GameManager.Instance.NowLoading.Show();
@@ -345,10 +408,20 @@ namespace XeApp.Game.Menu
 		//private void TerminatedSceneCard(List<GONMPHKGKHI.LCMJJMNMIKG> highList) { }
 
 		//// RVA: 0x177C72C Offset: 0x177C72C VA: 0x177C72C
-		//private void ShowTutorial_21() { }
+		private void ShowTutorial_21()
+		{
+			GameManager.Instance.StartCoroutineWatched(TutorialManager.TryShowTutorialCoroutine(CheckTutorialFunc_21));
+		}
 
 		//// RVA: 0x177C850 Offset: 0x177C850 VA: 0x177C850
-		//private bool CheckTutorialFunc_21(TutorialConditionId conditionId) { }
+		private bool CheckTutorialFunc_21(TutorialConditionId conditionId)
+		{
+			if(conditionId != TutorialConditionId.Condition21)
+				return false;
+			if(m_sceneType == RecordPlateUtility.eSceneType.RarityUp)
+				return false;
+			return IsShowRarityUp;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C6AC Offset: 0x70C6AC VA: 0x70C6AC
 		//// RVA: 0x177C888 Offset: 0x177C888 VA: 0x177C888

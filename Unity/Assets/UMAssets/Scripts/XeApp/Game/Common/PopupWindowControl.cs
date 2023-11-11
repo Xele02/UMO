@@ -784,7 +784,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BBC534 Offset: 0x1BBC534 VA: 0x1BBC534
-		// public void StopScrollMovement() { }
+		public void StopScrollMovement()
+		{
+			m_scrollRect.StopMovement();
+		}
 
 		// // RVA: 0x1BBC568 Offset: 0x1BBC568 VA: 0x1BBC568
 		public static void PlayPopupButtonSe(PopupButton.ButtonLabel label, PopupButton.ButtonType type, CriAtomSource source)

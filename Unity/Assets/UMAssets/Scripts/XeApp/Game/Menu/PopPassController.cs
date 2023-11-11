@@ -1,7 +1,11 @@
+using mcrs;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using XeApp.Core;
 using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -31,7 +35,165 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FFA2C Offset: 0x6FFA2C VA: 0x6FFA2C
 		//// RVA: 0xDE71A0 Offset: 0xDE71A0 VA: 0xDE71A0
-		//public IEnumerator CoroutineOpen() { }
+		public IEnumerator CoroutineOpen()
+		{
+			//0xDEA12C
+			MenuScene.Instance.InputDisable();
+			MenuScene.Instance.RaycastDisable();
+			GameManager.Instance.CloseSnsNotice();
+			bool t_done = false;
+			bool t_err = false;
+			bool t_jump_home = false;
+			bool t_goto_title = false;
+			NHPDPKHMFEP.HHCJCDFCLOB.FADCFLIHEPB_PreparePurchase(() =>
+			{
+				//0xDE8730
+				t_done = true;
+			}, () =>
+			{
+				//0xDE873C
+				t_done = true;
+				t_err = true;
+			}, () =>
+			{
+				//0xDE8748
+				t_jump_home = true;
+				t_done = true;
+			}, () =>
+			{
+				//0xDE8758
+				t_goto_title = true;
+				t_done = true;
+			});
+			while(!t_done)
+				yield return null;
+			MenuScene.Instance.InputEnable();
+			MenuScene.Instance.RaycastEnable();
+			if(t_jump_home)
+			{
+				MenuScene.Instance.Mount(TransitionUniqueId.LOGINBONUS, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+				yield break;
+			}
+			if (t_err)
+				yield break;
+			if(t_goto_title)
+			{
+				MenuScene.Instance.GotoTitle();
+				yield break;
+			}
+			int a = NHPDPKHMFEP.HHCJCDFCLOB.MENKMJPCELJ();
+			if (a < 0)
+				yield break;
+			if (a == 0 || (!NHPDPKHMFEP.HHCJCDFCLOB.ENAAHAPDMCO() && NHPDPKHMFEP.HHCJCDFCLOB.DCDDAAONHHC() && NHPDPKHMFEP.HHCJCDFCLOB.NGHHJMJPEHN()))
+			{
+				//LAB_00deb294
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				bool t_wait = true;
+				bool t_cancel = false;
+				PopPassSelectSetting t_setting = new PopPassSelectSetting();
+				t_setting.TitleText = bk.GetMessageByLabel("pop_pass_select_title");
+				t_setting.IsCaption = true;
+				t_setting.WindowSize = SizeType.Large;
+				t_setting.Buttons = new ButtonInfo[1] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative } };
+				t_setting.EnableNormalPlan = 0 < a;
+				PopupWindowControl t_cont = PopupWindowManager.Show(t_setting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel buttonLabel) =>
+				{
+					//0xDE8770
+					t_wait = false;
+					t_cancel = true;
+				}, null, null, null);
+				t_setting.OnClickLoginBonus = () =>
+				{
+					//0xDE877C
+					t_cont.InputDisable();
+					this.StartCoroutineWatched(PopupLoginBonusMonthlyPass.Show(PopupLoginBonusMonthlyPass.Type.TitleMonthlyPass, false, t_setting.Content.transform, (bool received) =>
+					{
+						//0xDE8914
+						t_cont.InputEnable();
+					}));
+				};
+				t_setting.OnClickNormal = () =>
+				{
+					//0xDE8940
+					m_plan = NHPDPKHMFEP.GGNEBJEIFCP.CCAPCGPIIPF_0;
+					t_cont.Close(() =>
+					{
+						//0xDE8A2C
+						t_wait = false;
+					}, null);
+				};
+				t_setting.OnClickSpecial = () =>
+				{
+					//0xDE8A38
+					m_plan = NHPDPKHMFEP.GGNEBJEIFCP.AJAHGGBMOJE_1;
+					t_cont.Close(() =>
+					{
+						//0xDE8B24
+						t_wait = false;
+					}, null);
+				};
+				while (t_wait)
+					yield return null;
+				if (t_cancel)
+					yield break;
+				MenuScene.Instance.RaycastDisable();
+				DestroyLayout();
+				GameObject gl = GameObject.Find("Canvas-Popup");
+				m_result = Result.None;
+				m_open_window = true;
+				MenuScene.Instance.InputDisable();
+				yield return Co.R(Co_LoadLayout(gl.transform.GetChild(0)));
+				m_layout_window.Initialize(NHPDPKHMFEP.HHCJCDFCLOB.BAFEDCMCONG_GetMonthlyPassRareGetCount() < 1, m_plan);
+				m_layout_window.m_cb_law_1 += CB_Law1;
+				m_layout_window.m_cb_law_2 += CB_Law2;
+				m_layout_window.m_cb_cancel += CB_Close;
+				m_layout_window.m_cb_buy += CB_CheckBuy;
+				m_layout_window.m_cb_agre += CB_Agre;
+				m_layout_window.m_cb_bonus += CB_Bonus;
+				m_layout_window.m_cb_detail += CB_Detail;
+				m_layout_window.m_cb_contract += CB_Contract;
+				m_layout_window.m_cb_privacy += CB_Privacy;
+				m_layout_popup.Initialize(m_plan);
+				m_list_btn.Clear();
+				m_list_btn.AddRange(m_layout_window.GetComponentsInChildren<ActionButton>(true));
+				m_list_scroll.Clear();
+				m_list_scroll.AddRange(m_layout_window.GetComponentsInChildren<ScrollRect>(true));
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_WND_000);
+				m_layout_window.Enter();
+				while (m_layout_window.IsPlayingAnim())
+					yield return null;
+				MenuScene.Instance.InputEnable();
+				//LAB_00deae18
+				while (m_result == Result.None)
+					yield return null;
+				MenuScene.Instance.InputDisable();
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_WND_001);
+				m_layout_window.Leave();
+				while (m_layout_window.IsPlayingAnim())
+					yield return null;
+				if(m_result != Result.Buy)
+				{
+					if(m_result == Result.Error)
+					{
+						MenuScene.Instance.GotoTitle();
+					}
+				}
+				else
+				{
+					yield return Co.R(Co_GotoHomePopupOpen());
+					MenuScene.Instance.Mount(TransitionUniqueId.LOGINBONUS, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+				}
+				//LAB_00deaf74
+				DestroyLayout();
+				MenuScene.Instance.InputEnable();
+				MenuScene.Instance.RaycastEnable();
+				m_open_window = false;
+			}
+			else
+			{
+				yield return Co.R(PopupLoginBonusMonthlyPass.Show(PopupLoginBonusMonthlyPass.Type.TitleMonthlyPass, false, null, null));
+			}
+		}
 
 		// RVA: 0xDE6FFC Offset: 0xDE6FFC VA: 0xDE6FFC
 		public void DestroyLayout()
@@ -50,7 +212,46 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FFAA4 Offset: 0x6FFAA4 VA: 0x6FFAA4
 		//// RVA: 0xDE724C Offset: 0xDE724C VA: 0xDE724C
-		//private IEnumerator Co_LoadLayout(Transform a_transform) { }
+		private IEnumerator Co_LoadLayout(Transform a_transform)
+		{
+			Font font; // 0x1C
+			string bundleName; // 0x20
+			int bundleLoadCount; // 0x24
+			AssetBundleLoadLayoutOperationBase lytOp; // 0x28
+
+			//0xDE96A4
+			font = GameManager.Instance.GetSystemFont();
+			bundleName = "ly/150.xab";
+			bundleLoadCount = 0;
+			lytOp = AssetBundleManager.LoadLayoutAsync(bundleName, "root_pop_pass_window_layout_root");
+			yield return lytOp;
+			yield return Co.R(lytOp.InitializeLayoutCoroutine(font, (GameObject instance) =>
+			{
+				//0xDE84BC
+				instance.transform.SetParent(a_transform, false);
+				m_layout_window = instance.GetComponent<PopPassListWin>();
+				m_layout_window.transform.SetSiblingIndex(0);
+			}));
+			bundleLoadCount++;
+			yield return Co.R(m_layout_window.Co_LoadListContent());
+			lytOp = AssetBundleManager.LoadLayoutAsync(bundleName, "root_pop_pass_agre_layout_root");
+			yield return lytOp;
+			yield return Co.R(lytOp.InitializeLayoutCoroutine(font, (GameObject instance) =>
+			{
+				//0xDE85F0
+				instance.transform.SetParent(m_layout_window.transform, false);
+				m_layout_popup = instance.GetComponent<PopPassPurchaseConfirmationPopup>();
+			}));
+			bundleLoadCount++;
+			for(int i = 0; i < bundleLoadCount; i++)
+			{
+				AssetBundleManager.UnloadAssetBundle(bundleName, false);
+			}
+			while (!m_layout_window.IsReady())
+				yield return null;
+			while (!m_layout_popup.IsReady())
+				yield return null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FFB1C Offset: 0x6FFB1C VA: 0x6FFB1C
 		//// RVA: 0xDE7314 Offset: 0xDE7314 VA: 0xDE7314
@@ -58,7 +259,26 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FFB94 Offset: 0x6FFB94 VA: 0x6FFB94
 		//// RVA: 0xDE7428 Offset: 0xDE7428 VA: 0xDE7428
-		//private IEnumerator Co_GotoHomePopupOpen() { }
+		private IEnumerator Co_GotoHomePopupOpen()
+		{
+			//0xDE9288
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			bool t_wait = true;
+			TextPopupSetting s = new TextPopupSetting();
+			s.TitleText = "";
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			s.Text = bk.GetMessageByLabel("pop_pass_goto_home");
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel buttonLabel) =>
+			{
+				//0xDE8708
+				t_wait = true;
+			}, null, null, null);
+			while (t_wait)
+				yield return null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FFC0C Offset: 0x6FFC0C VA: 0x6FFC0C
 		//// RVA: 0xDE74BC Offset: 0xDE74BC VA: 0xDE74BC
@@ -68,31 +288,59 @@ namespace XeApp.Game.Menu
 		//private void EnableButton(bool a_enable) { }
 
 		//// RVA: 0xDE76D4 Offset: 0xDE76D4 VA: 0xDE76D4
-		//private void CB_Law1() { }
+		private void CB_Law1()
+		{
+			TodoLogger.LogNotImplemented("CB_Law1");
+		}
 
 		//// RVA: 0xDE7848 Offset: 0xDE7848 VA: 0xDE7848
-		//private void CB_Law2() { }
+		private void CB_Law2()
+		{
+			TodoLogger.LogNotImplemented("CB_Law2");
+		}
 
 		//// RVA: 0xDE79BC Offset: 0xDE79BC VA: 0xDE79BC
-		//private void CB_Close() { }
+		private void CB_Close()
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_002);
+			m_result = Result.Close;
+		}
 
 		//// RVA: 0xDE7A20 Offset: 0xDE7A20 VA: 0xDE7A20
-		//private void CB_CheckBuy() { }
+		private void CB_CheckBuy()
+		{
+			TodoLogger.LogNotImplemented("CB_CheckBuy");
+		}
 
 		//// RVA: 0xDE7BB0 Offset: 0xDE7BB0 VA: 0xDE7BB0
-		//private void CB_Agre() { }
+		private void CB_Agre()
+		{
+			TodoLogger.LogNotImplemented("CB_Agre");
+		}
 
 		//// RVA: 0xDE7D3C Offset: 0xDE7D3C VA: 0xDE7D3C
-		//private void CB_Bonus(bool forceAvailableTopplan) { }
+		private void CB_Bonus(bool forceAvailableTopplan)
+		{
+			TodoLogger.LogNotImplemented("CB_Bonus");
+		}
 
 		//// RVA: 0xDE7EAC Offset: 0xDE7EAC VA: 0xDE7EAC
-		//private void CB_Detail() { }
+		private void CB_Detail()
+		{
+			TodoLogger.LogNotImplemented("CB_Detail");
+		}
 
 		//// RVA: 0xDE806C Offset: 0xDE806C VA: 0xDE806C
-		//private void CB_Contract() { }
+		private void CB_Contract()
+		{
+			TodoLogger.LogNotImplemented("CB_Contract");
+		}
 
 		//// RVA: 0xDE81E0 Offset: 0xDE81E0 VA: 0xDE81E0
-		//private void CB_Privacy() { }
+		private void CB_Privacy()
+		{
+			TodoLogger.LogNotImplemented("CB_Privacy");
+		}
 
 		//[CompilerGeneratedAttribute] // RVA: 0x6FFC84 Offset: 0x6FFC84 VA: 0x6FFC84
 		//// RVA: 0xDE8414 Offset: 0xDE8414 VA: 0xDE8414

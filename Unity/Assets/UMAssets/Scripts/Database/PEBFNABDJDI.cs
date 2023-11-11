@@ -90,7 +90,7 @@ public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xCC4880 Offset: 0xCC4880 VA: 0xCC4880
-	public int NCEMAEDMJLO(long EOLFJGMAJAB)
+	public int NCEMAEDMJLO_GetBeginnerGachaVersion(long EOLFJGMAJAB)
 	{
 		if (BMAHEAMPCED_BeginnerGachaInfo.Count < 1)
 			return 1;

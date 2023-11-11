@@ -16,7 +16,7 @@ public abstract class CACGCMBKHDI_Request
 {
     public delegate void HDHIKGLMOGF(CACGCMBKHDI_Request ADKIDBJCAJA);
 
-    public long CKOOCBJGHBI; // 0x8
+    public long CKOOCBJGHBI_RequestId; // 0x8
     public int CFICLNJACCD_NumRetry = 3; // 0x10
     public float GJAEJFLLKGC_RetryTime = 3.0f; // 0x14
     public float ICDEFIIADDO_Timeout = 120.0f; // 0x18

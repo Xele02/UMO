@@ -562,7 +562,11 @@ namespace XeApp.Game.Tutorial
 		// public void SaveMusicResult() { }
 
 		// // RVA: 0xE41D24 Offset: 0xE41D24 VA: 0xE41D24
-		// public ILDKBCLAFPB.CDIPJNPICCO GetRecoveryPoint() { }
+		public ILDKBCLAFPB.CDIPJNPICCO GetRecoveryPoint()
+		{
+			TodoLogger.LogError(0, "GetRecoveryPoint");
+			return 0;
+		}
 
 		// // RVA: 0xE41E18 Offset: 0xE41E18 VA: 0xE41E18
 		// public JGEOBNENMAH.EDHCNKBMLGI SetupTutorialGame(TutorialGameMode.Type type) { }

@@ -20,7 +20,7 @@ namespace XeApp.Core
 		private float baseHeight; // 0x20
 
 		//public bool IsEnableFlexibleViewport { get; set; } 0x1D6EF60 0x1D6EF68
-		//public bool IsEnableFlexibleFov { get; set; } 0x1D6EF70 0x1D6EF78
+		public bool IsEnableFlexibleFov { get { return isEnableFlexibleFov; } set { isEnableFlexibleFov = value; } } //0x1D6EF70 0x1D6EF78
 
 		// RVA: 0x1D6EF80 Offset: 0x1D6EF80 VA: 0x1D6EF80
 		private void Start()
@@ -194,6 +194,9 @@ namespace XeApp.Core
 		}
 
 		//// RVA: 0x1D6FD0C Offset: 0x1D6FD0C VA: 0x1D6FD0C
-		//public float GetDefaultFov(int cameraListIndex) { }
+		public float GetDefaultFov(int cameraListIndex)
+		{
+			return flexibleDefaultFovList[cameraListIndex];
+		}
 	}
 }

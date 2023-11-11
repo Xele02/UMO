@@ -32,6 +32,8 @@ class JpStringLiterals
 	public const string StringLiteral_9807 = "よろしくおねがいします"; // 0x03bb23f4
 	public const string StringLiteral_9829 = "デコルーム"; // 0x03bb244c
 	public const string StringLiteral_9874 = "未取得"; // 0x03bb2500
+	public const string StringLiteral_9949 = "★{0}1枚確定"; //0x03bb262c
+	public const string StringLiteral_9950 = "★{0}以上1枚確定"; //0x03bb2630
 	public const string StringLiteral_10040 = "お気に入り1"; // 0x03bb2798
 	public const string StringLiteral_10041 = "お気に入り2"; // 0x03bb279c
 	public const string StringLiteral_10042 = "お気に入り3"; // 0x03bb27a0
@@ -128,7 +130,9 @@ class JpStringLiterals
 	public const string StringLiteral_11088 = "SHOP 指定したラベルの商品が見つからない label="; //0x03bb37f8
 	public const string StringLiteral_11089 = "SHOP 商品の期限切れ label="; //0x03bb37fc
 	public const string StringLiteral_11090 = "SHOP 通信エラー発生 label="; //0x03bb3800
+	public const string StringLiteral_11115 = "★５1枚確定"; //0x03bb3864
 	public const string StringLiteral_11117 = "デカルガチャ"; //0x03bb386c
+	public const string StringLiteral_11118 = "★４以上1枚確定"; //0x03bb3870
 	public const string StringLiteral_11136 = "3D標準"; // 0x03bb38b8
 	public const string StringLiteral_11137 = "3D軽量"; // 0x03bb38bc
 	public const string StringLiteral_11139 = "カスタム"; // 0x03bb38c4
@@ -262,6 +266,8 @@ class JpStringLiterals
 	public const string StringLiteral_12891 = "ガチャ"; // 0x03bb5424
 	public const string StringLiteral_12892 = "ライブ達成"; // 0x03bb5428
 	public const string StringLiteral_12893 = "プレゼントBOX"; // 0x03bb542c
+	public const string StringLiteral_11202 = "無料ガチャ"; //0x03bb39c0
+	public const string StringLiteral_11203 = "超時空ガチャチケット"; //0x03bb39c4
 	public const string StringLiteral_11216 = "デイリーミッション"; // 0x03bb39f8
 	public const string StringLiteral_11217 = "SNSミッション"; // 0x03bb39fc
 	public const string StringLiteral_11218 = "デビューミッション"; // 0x03bb3a00
@@ -315,6 +321,7 @@ class JpStringLiterals
 	public const string StringLiteral_12936 = "ホーム自動再生"; // 0x03bb54d8
 	public const string StringLiteral_12937 = "能力ボード"; // 0x03bb54dc
 	public const string StringLiteral_12943 = "バルキリー小隊"; //0x03bb54f4
+	public const string StringLiteral_13053 = "★[0-9]"; //0x03bb56ac
 	public const string StringLiteral_13101 = "5分以内"; // 0x03bb576c
 	public const string StringLiteral_13102 = "分前"; // 0x03bb5770
 	public const string StringLiteral_13103 = "時間前"; // 0x03bb5774
@@ -333,6 +340,11 @@ class JpStringLiterals
 	public const string StringLiteral_14032 = "アニメーションテーブル数以上のキーフレーム番号が指定されました。"; // 0x03bb65f8
 	public const string StringLiteral_14529 = "ーーー"; // 0x03bb6dbc
 	public const string StringLiteral_14832 = "ふた"; // 0x03bb7278
+	public const string StringLiteral_14844 = "★[０-９]"; //0x03bb72a8
+	public const string StringLiteral_14845 = "[０-９]"; //0x03bb72ac
+	public const string StringLiteral_15053 = "エピソード「"; //0x03bb75ec
+	public const string StringLiteral_15054 = "」"; //0x03bb75f0
+	public const string StringLiteral_15055 = " 専用衣装"; //0x03bb75f4
 	public const string StringLiteral_15265 = "所持："; // 0x03bb793c
 	public const string StringLiteral_15475 = "ホームへ戻る"; //0x03bb7c84
 	public const string StringLiteral_15476 = "訪問リスト"; //0x03bb7c88

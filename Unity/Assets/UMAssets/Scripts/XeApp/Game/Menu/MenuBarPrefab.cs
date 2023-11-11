@@ -210,7 +210,20 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEC55DC Offset: 0xEC55DC VA: 0xEC55DC
 		private void CallBackGacha()
 		{
-			TodoLogger.LogNotImplemented("CallBackGacha");
+			if(OnInterruptEvent != null && OnInterruptEvent(TransitionList.Type.GACHA_2))
+			{
+				mMenuButtons[4].buttonAnimeDisable = true;
+				return;
+			}
+			mMenuButtons[4].buttonAnimeDisable = false;
+			int cueId = (int)cs_se_boot.SE_BTN_005;
+			if (IsTopLevelScene(SceneGroupCategory.GACHA, TransitionList.Type.GACHA_2))
+			{
+				MenuScene.Instance.Mount(TransitionUniqueId.GACHA2, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+				cueId = (int)cs_se_boot.SE_BTN_000;
+				MenuScene.Instance.StatusWindowControl.ResetHistory();
+			}
+			SoundManager.Instance.sePlayerBoot.Play(cueId);
 		}
 
 		// // RVA: 0xEC5818 Offset: 0xEC5818 VA: 0xEC5818

@@ -121,6 +121,7 @@ public class CKFGMNAIBNG
 				JEHFDJPOEFF.SetFormat("cs_dsc_{0:D4}", NDFIEMPPMLF.HGHFFJKGNCO_SkillId);
 				str.SetFormat(GDMBMJBMNME.GetMessageByLabel(JEHFDJPOEFF.ToString()), a);
 				HCAHCFGPJIF_Desc = str.ToString();
+				return;
 			}
 			OPFGFINHFCE_Name = TextConstant.InvalidText;
 		}
