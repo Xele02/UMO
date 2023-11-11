@@ -11,8 +11,8 @@ Fonctionality :
 
 # Requirement / Installation
 
-* [Install on PC using Unity Editor](Install-on-PC-with-Unity-Editor)
-* [Install on Android](Install-on-android)
+* [Install on PC using Unity Editor](https://github.com/Xele02/UMO/wiki/Install-on-PC-with-Unity-Editor)
+* [Install on Android](https://github.com/Xele02/UMO/wiki/Install-on-android)
 
 # Support
 
