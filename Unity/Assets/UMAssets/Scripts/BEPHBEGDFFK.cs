@@ -406,14 +406,14 @@ public class BEPHBEGDFFK
 		if (t != 0)
 		{
 			DateTime dt = Utility.GetLocalDateTime(t);
-			return string.Format(bk.GetMessageByLabel(bk.GetMessageByLabel("gacha_period")), new object[4]
+			return string.Format(bk.GetMessageByLabel("gacha_period"), new object[4]
 			{
 				dt.Month, dt.Day, dt.Hour, dt.Minute
 			});
 		}
 		else
 		{
-			return string.Format(bk.GetMessageByLabel(bk.GetMessageByLabel("gacha_period")), new object[4]
+			return string.Format(bk.GetMessageByLabel("gacha_period"), new object[4]
 			{
 				"--", "--", "--", "--"
 			});
