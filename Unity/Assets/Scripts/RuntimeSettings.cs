@@ -32,6 +32,7 @@ class RuntimeSettings : ScriptableObject
 				m_currentSettings.DisableNoteSound = UMO_PlayerPrefs.GetInt("DisableNoteSound", 1) == 1;
 				m_currentSettings.DisableWatermark = UMO_PlayerPrefs.GetInt("DisableWatermark", 1) == 1;
 				m_currentSettings.MinigameAutoPlay = UMO_PlayerPrefs.GetInt("MinigameAutoPlay", 0) == 1;
+				m_currentSettings.DisplayIdInName = UMO_PlayerPrefs.GetInt("DisplayIdInName", 0) == 1;
 
 #if UNITY_ANDROID && !UNITY_EDITOR
 				m_currentSettings.DataDirectory = Application.persistentDataPath + "/data/";
@@ -39,6 +40,18 @@ class RuntimeSettings : ScriptableObject
 			}
 			return m_currentSettings;
 		}
+	}
+
+	public void Save()
+	{
+        UMO_PlayerPrefs.SetInt("CanSkipSongs", m_currentSettings.CanSkipUnplayedSongs ? 1 : 0);
+        UMO_PlayerPrefs.SetInt("InvincibleMode", m_currentSettings.IsInvincibleCheat ? 1 : 0);
+        UMO_PlayerPrefs.SetInt("ForcePerfect", m_currentSettings.ForcePerfectNote ? 1 : 0);
+        UMO_PlayerPrefs.SetInt("DisableNoteSound", m_currentSettings.DisableNoteSound ? 1 : 0);
+        UMO_PlayerPrefs.SetInt("DisableWatermark", m_currentSettings.DisableWatermark ? 1 : 0);
+        UMO_PlayerPrefs.SetInt("MinigameAutoPlay", m_currentSettings.MinigameAutoPlay ? 1 : 0);
+        UMO_PlayerPrefs.SetInt("DisplayIdInName", m_currentSettings.DisplayIdInName ? 1 : 0);
+		UMO_PlayerPrefs.Save();
 	}
 
 	public bool IsPathValid()
@@ -96,11 +109,11 @@ class RuntimeSettings : ScriptableObject
 	public bool ForceTutoSkip = true;
 	//public bool ForceAllStoryMusicUnlock = true;
 	//public int ForcePlayerLevel = 90;
-	public bool CanSkipUnplayedSongs { get; private set; }
+	public bool CanSkipUnplayedSongs { get; set; }
 	public bool RemoveHomeBgDateLimit = false;
 
-	public bool IsInvincibleCheat { get; private set; }
-	public bool ForcePerfectNote { get; private set; }
+	public bool IsInvincibleCheat { get; set; }
+	public bool ForcePerfectNote { get; set; }
 	[Header("Live")]
 	public bool ForceLiveValkyrieMode = false;
 	public bool ForceLiveDivaMode = false;
@@ -117,8 +130,8 @@ class RuntimeSettings : ScriptableObject
 	public KeyCode ActiveSkillTouch = KeyCode.Space;
 
 	//public bool ForceCutin = true;
-	public bool DisableNoteSound { get; private set; }
-	public bool DisableWatermark { get; private set; }
+	public bool DisableNoteSound { get; set; }
+	public bool DisableWatermark { get; set; }
 	[Header("S-Live")]
 	public bool DisableMovies = false;
 
@@ -143,6 +156,7 @@ class RuntimeSettings : ScriptableObject
 	public bool EnableDebugStopCoroutine = false;
 	public bool EnableDebugSkills = false;
 	public bool MinigameAutoPlay { get; set; }
+	public bool DisplayIdInName { get; set; }
 }
 
 #if UNITY_EDITOR

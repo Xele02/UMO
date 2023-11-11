@@ -321,6 +321,8 @@ public class EKLNMHFCAOI
 				id = g.PPFNGGCBJKC_Id;
 		}
 		string str = MessageManager.Instance.GetBank(AFEHLCGHAEE_Strings.NDFIEMPPMLF_master).GetMessageByLabel(FKMCHHDOAAB(INDDJNMPONH, id));
+		if(RuntimeSettings.CurrentSettings.DisplayIdInName)
+			str = "["+JBGEEPFKIGG+"] "+str;
 		if (INDDJNMPONH != FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif)
 			return str;
 		return str.Replace("\n", "");

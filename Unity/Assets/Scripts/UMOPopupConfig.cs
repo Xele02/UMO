@@ -13,11 +13,11 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
     public UMO_ToggleButtonGroup DisableWatermark;
     public UMO_ToggleButtonGroup MinigameAutoPlay;
     public UMO_ToggleButtonGroup ForceIntegrityCheck;
+    public UMO_ToggleButtonGroup DisplayItemId;
 
     public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
     {
         Parent = setting.m_parent;
-        UMO_PlayerPrefs.CheckLoad();
         CanSkipSongs.SetSelected(RuntimeSettings.CurrentSettings.CanSkipUnplayedSongs ? 0 : 1);
         InvincibleMode.SetSelected(RuntimeSettings.CurrentSettings.IsInvincibleCheat ? 0 : 1);
         ForcePerfect.SetSelected(RuntimeSettings.CurrentSettings.ForcePerfectNote ? 0 : 1);
@@ -25,33 +25,35 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         DisableWatermark.SetSelected(RuntimeSettings.CurrentSettings.DisableWatermark ? 0 : 1);
         MinigameAutoPlay.SetSelected(RuntimeSettings.CurrentSettings.MinigameAutoPlay ? 0 : 1);
         ForceIntegrityCheck.SetSelected(KEHOJEJMGLJ.FJDOHLADGFI ? 0 : 1);
+        DisplayItemId.SetSelected(RuntimeSettings.CurrentSettings.DisplayIdInName ? 0 : 1);
+        gameObject.SetActive(true);
     }
 
     public void Save()
     {
-        UMO_PlayerPrefs.CheckLoad();
-        UMO_PlayerPrefs.SetInt("CanSkipSongs", 1 - CanSkipSongs.GetSelected());
-        UMO_PlayerPrefs.SetInt("InvincibleMode", 1 - InvincibleMode.GetSelected());
-        UMO_PlayerPrefs.SetInt("ForcePerfect", 1 - ForcePerfect.GetSelected());
-        UMO_PlayerPrefs.SetInt("DisableNoteSound", 1 - DisableNoteSound.GetSelected());
-        UMO_PlayerPrefs.SetInt("DisableWatermark", 1 - DisableWatermark.GetSelected());
-        UMO_PlayerPrefs.SetInt("MinigameAutoPlay", 1 - MinigameAutoPlay.GetSelected());
+        RuntimeSettings.CurrentSettings.CanSkipUnplayedSongs = CanSkipSongs.GetSelected() == 0;
+        RuntimeSettings.CurrentSettings.IsInvincibleCheat = InvincibleMode.GetSelected() == 0;
+        RuntimeSettings.CurrentSettings.ForcePerfectNote = ForcePerfect.GetSelected() == 0;
+        RuntimeSettings.CurrentSettings.DisableNoteSound = DisableNoteSound.GetSelected() == 0;
+        RuntimeSettings.CurrentSettings.DisableWatermark = DisableWatermark.GetSelected() == 0;
+        RuntimeSettings.CurrentSettings.MinigameAutoPlay = MinigameAutoPlay.GetSelected() == 0;
         KEHOJEJMGLJ.FJDOHLADGFI = ForceIntegrityCheck.GetSelected() == 0;
+        RuntimeSettings.CurrentSettings.DisplayIdInName = DisplayItemId.GetSelected() == 0;
         UMO_PlayerPrefs.Save();
     }
     public bool IsScrollable()
     {
-        return false;
+        return true;
     }
 
     public void Show()
     {
-        //gameObject.SetActive(true);
+        gameObject.SetActive(true);
     }
 
     public void Hide()
     {
-        //gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     public bool IsReady()

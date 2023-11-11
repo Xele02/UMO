@@ -42,6 +42,7 @@ public class UMOPopupEvent : UIBehaviour, IPopupContent
 		scrollList.SetContentEscapeMode(true);
         scrollList.SetPosition(0, 0, 0, false);
         scrollList.VisibleRegionUpdate();
+        gameObject.SetActive(true);
     }
 
     public void Save()
@@ -77,12 +78,12 @@ public class UMOPopupEvent : UIBehaviour, IPopupContent
 
     public void Show()
     {
-        //gameObject.SetActive(true);
+        gameObject.SetActive(true);
     }
 
     public void Hide()
     {
-        //gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     public bool IsReady()
