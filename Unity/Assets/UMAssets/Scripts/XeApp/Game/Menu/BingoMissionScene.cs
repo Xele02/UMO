@@ -80,13 +80,13 @@ namespace XeApp.Game.Menu
 			int divaId = m_bingoInfo.AHHJLDLAPAN_DivaId;
 			if (divaId > 0)
 				m_layout.SetDivaIcon(divaId, m_bingoInfo.DAJGPBLEEOB_CostumeModelId);
-			m_layout.SetRewardItemIcon(m_bingoInfo.LPLDJDCELAN_RewardsId[m_bingoInfo.OLPBIMOPHLM_ReceiveCount], 1, null);
+			m_layout.SetRewardItemIcon(m_bingoInfo.LPLDJDCELAN_RewardsId[m_bingoInfo.OLPBIMOPHLM_ReceiveCount].DNJEJEANJGL_Value, 1, null);
 			SetBingoText();
 			List<JJPEIELNEJB.JLHHGLANHGE> rewardInfo = m_bingoInfo.KONJMFICNJJ_RewardsInfo;
 			for(int i = 0; i < ItemList.Length; i++)
 			{
 				ItemList[i] = new JJPEIELNEJB.JLHHGLANHGE();
-				ItemList[i].GLCLFMGPMAN_ItemId = rewardInfo[i].GLCLFMGPMAN_ItemId;
+				ItemList[i].GLCLFMGPMAN_ItemFullId = rewardInfo[i].GLCLFMGPMAN_ItemFullId;
 				ItemList[i].LJKMKCOAICL_ItemCount = rewardInfo[i].LJKMKCOAICL_ItemCount;
 			}
 			if(BingoRewardListPopup == null)
@@ -94,7 +94,7 @@ namespace XeApp.Game.Menu
 				BingoRewardListPopup = new PupupBingoRewardWindowSetting();
 			}
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			BingoRewardListPopup.WindowSize = 2;
+			BingoRewardListPopup.WindowSize = SizeType.Large;
 			BingoRewardListPopup.TitleText = bk.GetMessageByLabel("bingo_reward_pop_title");
 			BingoRewardListPopup.ItemList = m_bingoInfo.KONJMFICNJJ_RewardsInfo.ToArray();
 			BingoRewardListPopup.ReceivedBingoCount = m_bingoInfo.OLPBIMOPHLM_ReceiveCount;
@@ -105,15 +105,19 @@ namespace XeApp.Game.Menu
 			BingoRewardListPopup.OnClickIcon = (int i) =>
 			{
 				//0x109C794
-				OnclickItemIcon(rewardInfo[i].GLCLFMGPMAN_ItemId, 0);
+				OnclickItemIcon(rewardInfo[i].GLCLFMGPMAN_ItemFullId, 0);
 			};
 			m_layout.SetCompButtonCallback(() =>
 			{
 				//0x109C85C
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
-				PopupWindowManager.Show(BingoRewardListPopup, null, null, null);
+				PopupWindowManager.Show(BingoRewardListPopup, (PopupWindowControl cont, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0x109C5E0
+					return;
+				}, null, null, null);
 			});
-			m_layout.SetContentButtonCallback(() =>
+			m_layout.SetContentButtonCallback((int i) =>
 			{
 				//0x109CA5C
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
@@ -128,7 +132,7 @@ namespace XeApp.Game.Menu
 			List<int> l = GNGMCIAIKMA.HHCJCDFCLOB.OAHPJJCHIPF(bingoId);
 			for(int i = 0; i < l.Count; i++)
 			{
-				m_layout.ClearIconSetting(l[i], 2);
+				m_layout.ClearIconSeting(l[i], LayoutBingoMission.ClearState.Cleared);
 			}
 			l = GNGMCIAIKMA.HHCJCDFCLOB.NCCCEBGHCOL(bingoId);
 			m_layout.BingoCompAnimReset();
@@ -143,7 +147,7 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			string str = "";
 			if(_bingoCount > 0)
-				str = string.Format("bingo_ribbon_bingo_count_text", _bingoCount) + "\r\n";
+				str = string.Format(bk.GetMessageByLabel("bingo_ribbon_bingo_count_text"), _bingoCount) + "\r\n";
 			if (m_bingoInfo.DAKIMDGPHNE_IsReleaseEpisode)
 				str += string.Format(bk.GetMessageByLabel("bingo_ribbon_costume_text"), a1);
 			else
@@ -223,16 +227,115 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x10990CC Offset: 0x10990CC VA: 0x10990CC
-		//private void ShowBingoRewaedPopup(int BingoNum, int ItemId, int ItemCount, Action popEnd) { }
+		private void ShowBingoRewaedPopup(int BingoNum, int ItemId, int ItemCount, Action popEnd)
+		{
+			PopupGetBingoRewaedSetting s = new PopupGetBingoRewaedSetting();
+			s.ItemId = ItemId;
+			s.GetItemCount = ItemCount;
+			s.BingoCount = BingoNum;
+			s.IsCaption = false;
+			s.WindowSize = SizeType.Small;
+			s.Buttons = new ButtonInfo[1] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive } };
+			PopupWindowManager.Show(s, (PopupWindowControl cont, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x109CCF4
+				popEnd();
+			}, null, null, null, playSeEvent:(PopupWindowControl.SeType type) =>
+			{
+				//0x109C5E4
+				if(type != PopupWindowControl.SeType.WindowOpen)
+					return false;
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_WND_004);
+				return true;
+			});
+		}
 
 		//// RVA: 0x1099450 Offset: 0x1099450 VA: 0x1099450
-		//private void ShowGetItemPopup(Action endPopupAct) { }
+		private void ShowGetItemPopup(Action endPopupAct)
+		{
+			if(m_bingoInfo.CIDBGGOGGPL.Count == 0)
+			{
+				endPopupAct();
+			}
+			else
+			{
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				PopupBingoMissionRewardWindowSetting s = new PopupBingoMissionRewardWindowSetting();
+				for(int i = 0; i < m_bingoInfo.CIDBGGOGGPL.Count; i++)
+				{
+					GNGMCIAIKMA.JCIFAFBDALP data = new GNGMCIAIKMA.JCIFAFBDALP();
+					data.PPFNGGCBJKC_Id = m_bingoInfo.CIDBGGOGGPL[i].GLCLFMGPMAN_ItemFullId;
+					data.BFINGCJHOHI_Cnt = m_bingoInfo.CIDBGGOGGPL[i].LJKMKCOAICL_ItemCount;
+					s.ItemInfoList.Add(data);
+					s.MissionTextList.Add(m_bingoInfo.CIDBGGOGGPL[i].FLGEGLADKHC_MissionText);
+				}
+				s.TitleText = bk.GetMessageByLabel("bingo_mission_reward_get_pop_title");
+				s.WindowSize = SizeType.Middle;
+				s.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				};
+				PopupWindowManager.Show(s, (PopupWindowControl cont, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0x109CD20
+					endPopupAct();
+				}, null, null, null);
+			}
+		}
 
 		//// RVA: 0x10999D0 Offset: 0x10999D0 VA: 0x10999D0
-		//private void ShowBingoEndPopup(bool IsNextBingo, Action ClosedPopup) { }
+		private void ShowBingoEndPopup(bool IsNextBingo, Action ClosedPopup)
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			string str;
+			if(IsNextBingo)
+			{
+				str = string.Format(bk.GetMessageByLabel("bingo_mission_change__bingo_text"), m_view.MEAPAEMIOBB.MALACFEDHDE_CurrentCount);
+			}
+			else
+			{
+				str = bk.GetMessageByLabel("bingo_mission_end_pop_text");
+			}
+			TextPopupSetting s = new TextPopupSetting();
+			s.IsCaption = false;
+			s.Text = str;
+			s.WindowSize = SizeType.Small;
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			PopupWindowManager.Show(s, (PopupWindowControl cont, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x109CD4C
+				ClosedPopup();
+			}, null, null, null);
+		}
 
 		//// RVA: 0x1099D34 Offset: 0x1099D34 VA: 0x1099D34
-		//private void ShowBingoStartPopup(Action _closePopupAct) { }
+		private void ShowBingoStartPopup(Action _closePopupAct)
+		{
+			if(!m_bingoInfo.DAKIMDGPHNE_IsReleaseEpisode)
+			{
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				TextPopupSetting s = new TextPopupSetting();
+				s.IsCaption = false;
+				s.WindowSize = SizeType.Small;
+				s.Text = string.Format(bk.GetMessageByLabel("bingo_normal_bingo_start_text"), m_bingoInfo.MALACFEDHDE_CurrentCount);
+				s.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				};
+				PopupWindowManager.Show(s, (PopupWindowControl cont, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0x109CD78
+					_closePopupAct();
+				}, null, null, null);
+			}
+			else
+			{
+				_closePopupAct();
+			}
+		}
 
 		//// RVA: 0x109A0A4 Offset: 0x109A0A4 VA: 0x109A0A4
 		private void OnClickChallenge(BKANGIKIEML.NODKLJHEAJB sceneType, int conditionId)
@@ -557,7 +660,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x109C494
 				instance.transform.SetParent(transform, false);
-				m_layout.GetComponent<LayoutBingoMission>();
+				m_layout = instance.GetComponent<LayoutBingoMission>();
 			}));
 			AssetBundleManager.UnloadAssetBundle(bundleName, false);
 		}
@@ -630,9 +733,9 @@ namespace XeApp.Game.Menu
 			{
 				reward = m_bingoInfo.KONJMFICNJJ_RewardsInfo[i + bingonum];
 				_currntBingoNum = reward.PPFNGGCBJKC;
-				_getItemID = reward.GLCLFMGPMAN_ItemId;
+				_getItemID = reward.GLCLFMGPMAN_ItemFullId;
 				_getItemNum = reward.LJKMKCOAICL_ItemCount;
-				GNGMCIAIKMA.HHCJCDFCLOB.CPIICACGNBH(inventoryUtil, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, reward.GLCLFMGPMAN_ItemId, reward.LJKMKCOAICL_ItemCount, bingoId);
+				GNGMCIAIKMA.HHCJCDFCLOB.CPIICACGNBH(inventoryUtil, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, reward.GLCLFMGPMAN_ItemFullId, reward.LJKMKCOAICL_ItemCount, bingoId);
 				if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(_getItemID) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 				{
 					GameManager.Instance.ResetViewPlayerData();
@@ -650,10 +753,10 @@ namespace XeApp.Game.Menu
 				if(bingonum + i + 1 < 8)
 				{
 					bool IsIconLoaded = false;
-					m_layout.SetRewardItemIcon(m_bingoInfo.LPLDJDCELAN_RewardsId[bingonum + i + 1], 1, () =>
+					m_layout.SetRewardItemIcon(m_bingoInfo.LPLDJDCELAN_RewardsId[bingonum + i + 1].DNJEJEANJGL_Value, 1, () =>
 					{
 						//0x109CFE0
-						_IsIconLoaded = true;
+						IsIconLoaded = true;
 					});
 					while (!IsIconLoaded)
 						yield return null;
@@ -666,7 +769,7 @@ namespace XeApp.Game.Menu
 				});
 				while (!isPopEnd)
 					yield return null;
-				if (ChackScenePlate(reward.GLCLFMGPMAN_ItemId))
+				if (ChackScenePlate(reward.GLCLFMGPMAN_ItemFullId))
 				{
 					RecordPlateUtility.CheckPlateId(reward);
 					yield return Co.R(SceneCardCheck());
@@ -684,7 +787,7 @@ namespace XeApp.Game.Menu
 				GNGMCIAIKMA.HHCJCDFCLOB.NJJLNPOCKFO(bingoId);
 				IsNextBingo = GNGMCIAIKMA.HHCJCDFCLOB.CGOIJPBINCF(bingoId, true) > 0;
 				IsNextBingoEnable = GNGMCIAIKMA.HHCJCDFCLOB.DHPLHALIDHH(bingoId);
-				GNGMCIAIKMA.HHCJCDFCLOB.KGABKGKGNCA(bingoId, !IsNextBingo); ;
+				GNGMCIAIKMA.HHCJCDFCLOB.KGABKGKGNCA(bingoId, !IsNextBingo);
 				QuestUtility.UpdateQuestData();
 				GNGMCIAIKMA.HHCJCDFCLOB.FBHHEBDDIMO(bingoId, false);
 				BingoSave(() =>
@@ -753,11 +856,39 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x109BAD0 Offset: 0x109BAD0 VA: 0x109BAD0
-		//public void BingoSave(Action successAct, Action errorAct) { }
+		public void BingoSave(Action successAct, Action errorAct)
+		{
+			CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
+			{
+				//0x109CFEC
+				successAct();
+			}, () =>
+			{
+				//0x109D018
+				errorAct();
+				MenuScene.Instance.GotoTitle();
+			}, null);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CA24C Offset: 0x6CA24C VA: 0x6CA24C
 		//// RVA: 0x109BC50 Offset: 0x109BC50 VA: 0x109BC50
-		//private IEnumerator StartChangeBingoCard() { }
+		private IEnumerator StartChangeBingoCard()
+		{
+			//0x10A0438
+			GameManager.Instance.fullscreenFader.Fade(1, Color.white);
+			yield return null;
+			while(GameManager.Instance.fullscreenFader.isFading)
+				yield return null;
+			m_layout.ResetClearIcon();
+			yield return Co.R(Initialize());
+			yield return null;
+			yield return null;
+			GameManager.Instance.fullscreenFader.Fade(1, Bingo_FadeIn);
+			yield return null;
+			while(GameManager.Instance.fullscreenFader.isFading)
+				yield return null;
+			updaterSetting();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CA2C4 Offset: 0x6CA2C4 VA: 0x6CA2C4
 		//// RVA: 0x109BCFC Offset: 0x109BCFC VA: 0x109BCFC
@@ -777,11 +908,38 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x109BDB4 Offset: 0x109BDB4 VA: 0x109BDB4
-		//private bool ChackScenePlate(int itemId) { }
+		private bool ChackScenePlate(int itemId)
+		{
+			return EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CA33C Offset: 0x6CA33C VA: 0x6CA33C
 		//// RVA: 0x109BE48 Offset: 0x109BE48 VA: 0x109BE48
-		//private IEnumerator SceneCardCheck() { }
+		private IEnumerator SceneCardCheck()
+		{
+			bool prevInput;
+
+			//0x109FFC4
+			prevInput = GameManager.Instance.InputEnabled;
+			GameManager.Instance.InputEnabled = true;
+			bool isOpenRecordPlateInfo = true;
+			this.StartCoroutineWatched(PopupRecordPlate.Show(RecordPlateUtility.eSceneType.Bingo, () =>
+			{
+				//0x109D0E0
+				isOpenRecordPlateInfo = false;
+			}, false));
+			yield return new WaitWhile(() =>
+			{
+				//0x109D0EC
+				return isOpenRecordPlateInfo;
+			});
+			RecordPlateUtility.ClearShowedList();
+			GameManager.Instance.InputEnabled = prevInput;
+			while(CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.FIGHNFKAMGI.Count > 0)
+			{
+				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.FIGHNFKAMGI.RemoveAt(0);
+			}
+		}
 
 		//// RVA: 0x109BEF4 Offset: 0x109BEF4 VA: 0x109BEF4
 		private void SetBingoText()

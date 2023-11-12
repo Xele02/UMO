@@ -1319,7 +1319,41 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x978124 Offset: 0x978124 VA: 0x978124
 		private void OnClickBingoView(int _bingoId)
 		{
-			TodoLogger.LogNotImplemented("OnClickBingoView");
+			if(!TryLobbyAnnounce())
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				if(_bingoId > 0)
+				{
+					if(GNGMCIAIKMA.HHCJCDFCLOB != null)
+					{
+						int a1 = GNGMCIAIKMA.HHCJCDFCLOB.JBEDFJHAAFP(_bingoId, false);
+						bool b1 = GNGMCIAIKMA.HHCJCDFCLOB.KJNFBLAMJOH(_bingoId);
+						bool b2 = GNGMCIAIKMA.HHCJCDFCLOB.DOEGBMNNFKH(_bingoId);
+						bool b3 = false;
+						if(!b2)
+						{
+							b3 = !GNGMCIAIKMA.HHCJCDFCLOB.DHPLHALIDHH(_bingoId);
+						}
+						if(!(b3 && a1 < 1 && b1))
+						{
+							GNGMCIAIKMA.HHCJCDFCLOB.DJGFICMNGGP_SetBingoId(_bingoId);
+							GNGMCIAIKMA.HHCJCDFCLOB.BHFGBNNEMLI(_bingoId);
+							if(!GNGMCIAIKMA.HHCJCDFCLOB.IDKFAMEFCPD(_bingoId) && GNGMCIAIKMA.HHCJCDFCLOB.MLCGJAJCFDP(_bingoId, 0, 0) != 0)
+							{
+								MenuScene.Instance.Mount(TransitionUniqueId.QUEST_BINGOSELECT, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+							}
+							else
+							{
+								MenuScene.Instance.Mount(TransitionUniqueId.QUEST_BINGOMISSITON, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+							}
+						}
+						else
+						{
+							MenuScene.Instance.Mount(TransitionUniqueId.QUEST, new QuestTopArgs(PLADCDJLOBE.ENNOBKHBNCG.DIDJLIPNCKO_6), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+						}
+					}
+				}
+			}
 		}
 
 		// // RVA: 0x978038 Offset: 0x978038 VA: 0x978038
