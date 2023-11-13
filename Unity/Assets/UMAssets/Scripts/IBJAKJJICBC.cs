@@ -376,7 +376,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 				MJEPJCDOAML = weekData.CIOJJBOHEEJ;
 			}
 			DateTime date = Utility.GetLocalDateTime(JHNMKKNEENE);
-			NKEIFPPGNLH_WeeklyendTime = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0) + 40;
+			NKEIFPPGNLH_WeeklyendTime = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0) + 86400;
 			BELHFPMBAPJ_WeekPlay = saveInfo.FECIGAOOFBE_Wply;
 			JOJNGDPHOKG = IOFOHHOJCBE;
 			EKANGPODCEP_EventId = LMPNAPIGAEA(IHKFMJDOBAH);
@@ -855,7 +855,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 					if (ok)
 					{
 						IBJAKJJICBC songInfo = new IBJAKJJICBC();
-						songInfo.KHEKNNFCAOI(musicInfo.GHBPLHBNMBK_FreeMusicId, b, time.Millisecond/*??*/, val, JHNMKKNEENE_Date, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.FPGDAPAILAK_ExtremeUnlock == 2, false, JCOJKAHFADL);
+						songInfo.KHEKNNFCAOI(musicInfo.GHBPLHBNMBK_FreeMusicId, b, (int)time.DayOfWeek, val, JHNMKKNEENE_Date, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.FPGDAPAILAK_ExtremeUnlock == 2, false, JCOJKAHFADL);
 						songInfo.MFJKNCACBDG = (int)type;
 						songInfo.GDLNCHCPMCK_HasBoost = b2;
 						if (EHBPHDPHPKF)
@@ -978,7 +978,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 				for(int i = 0; i < l.Count; i++)
 				{
 					IBJAKJJICBC d = new IBJAKJJICBC();
-					d.JBOHCKEIHKI(l[i], Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0) + 44, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.FPGDAPAILAK_ExtremeUnlock == 2, 0);
+					d.JBOHCKEIHKI(l[i], Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0) + 86400, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.FPGDAPAILAK_ExtremeUnlock == 2, 0);
 					d.LHONOILACFL_IsWeeklyEvent = true;
 					res.Add(d);
 				}

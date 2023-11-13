@@ -95,9 +95,9 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 			data.KINJOEIAHFK = array[i].FNEIADJMHHO;
 			data.PCCFAKEOBIC = array[i].KOMKKBDABJP;
 			data.CIOJJBOHEEJ = array[i].GENIJOLKBNH;
-			//UnityEngine.Debug.LogError(Utility.GetLocalDateTime(data.KINJOEIAHFK).ToShortDateString() + " " + Utility.GetLocalDateTime(data.KINJOEIAHFK).ToShortTimeString()+" "+ Utility.GetLocalDateTime(data.PCCFAKEOBIC).ToShortDateString() + " " + Utility.GetLocalDateTime(data.PCCFAKEOBIC).ToShortTimeString() + " " + data.CIOJJBOHEEJ);
 			data.ELEPHBOKIGK = array[i].BFINGCJHOHI;
 			data.AEHCKNNGAKF = array[i].OEOIHIIIMCK;
+			//UnityEngine.Debug.LogError(Utility.GetLocalDateTime(data.KINJOEIAHFK).ToShortDateString() + " " + Utility.GetLocalDateTime(data.KINJOEIAHFK).ToShortTimeString()+" "+ Utility.GetLocalDateTime(data.PCCFAKEOBIC).ToShortDateString() + " " + Utility.GetLocalDateTime(data.PCCFAKEOBIC).ToShortTimeString() + " " + data.CIOJJBOHEEJ+" "+data.ELEPHBOKIGK+" "+data.AEHCKNNGAKF);
 			for(int j = 0; j < array[i].EHDDADDKMFI.Length; j++)
 			{
 				data.BEPAMEEBPGI.Add(JCAGLPANMFC(array[i].EHDDADDKMFI[j]));
