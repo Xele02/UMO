@@ -8,7 +8,7 @@ public class OHCAABOMEOF
         MKKOHBGHADL = 2,
         PFKOKHODEGL_EventBattle = 3,
         KEILBOLBDHN = 4,
-        ENMHPBGOOII = 5,
+        ENMHPBGOOII_Week = 5,
         NKDOEBONGNI_EventQuest = 6,
         ENPJADLIFAB_EventSp = 7,
         OCCGDMDBCHK_EventGacha = 8,

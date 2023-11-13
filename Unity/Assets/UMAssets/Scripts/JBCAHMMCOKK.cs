@@ -229,6 +229,7 @@ public class JBCAHMMCOKK
 		}
 		if (!c)
 			return;
+		bool doSp = false;
 		switch(KOGBMDOONFA.GMELAKNFKMG)
 		{
 			case 0:
@@ -380,7 +381,17 @@ public class JBCAHMMCOKK
 					{
 						if(l[i].LHONOILACFL_IsWeeklyEvent)
 						{
-							TodoLogger.LogError(0, "HEGEKFMJNCC 10 event");
+							if(l[i].BELHFPMBAPJ_WeekPlay < l[i].JOJNGDPHOKG)
+							{
+								JBCAHMMCOKK data = new JBCAHMMCOKK();
+								data.KHEKNNFCAOI(KOGBMDOONFA.PPFNGGCBJKC);
+								if(!b)
+								{
+									data.BJIMIONBKDD = false;
+								}
+								NNDGIAEFMOG.Add(data);
+								break;
+							}
 						}
 					}
 				}

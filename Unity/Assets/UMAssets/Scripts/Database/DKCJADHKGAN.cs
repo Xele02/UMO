@@ -21,7 +21,10 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 		public int AEHCKNNGAKF { get { return DJCHKGLCLPD ^ 0x5717f14f; } set { DJCHKGLCLPD = value ^ 0x5717f14f; } } //0x198E5B4 KKNJPEMGEBF 0x198E174 NPDLLBHCIJP
 
 		//// RVA: 0x198E5C8 Offset: 0x198E5C8 VA: 0x198E5C8
-		//public List<int> OPCBHOLFCHO(int IAPNPKAGEGH) { }
+		public List<int> OPCBHOLFCHO(int IAPNPKAGEGH)
+		{
+			return BEPAMEEBPGI[IAPNPKAGEGH];
+		}
 
 		//// RVA: 0x198DA90 Offset: 0x198DA90 VA: 0x198DA90
 		public bool FLPDCNBLOKL(int IAPNPKAGEGH, int GHBPLHBNMBK)
@@ -92,6 +95,7 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 			data.KINJOEIAHFK = array[i].FNEIADJMHHO;
 			data.PCCFAKEOBIC = array[i].KOMKKBDABJP;
 			data.CIOJJBOHEEJ = array[i].GENIJOLKBNH;
+			//UnityEngine.Debug.LogError(Utility.GetLocalDateTime(data.KINJOEIAHFK).ToShortDateString() + " " + Utility.GetLocalDateTime(data.KINJOEIAHFK).ToShortTimeString()+" "+ Utility.GetLocalDateTime(data.PCCFAKEOBIC).ToShortDateString() + " " + Utility.GetLocalDateTime(data.PCCFAKEOBIC).ToShortTimeString() + " " + data.CIOJJBOHEEJ);
 			data.ELEPHBOKIGK = array[i].BFINGCJHOHI;
 			data.AEHCKNNGAKF = array[i].OEOIHIIIMCK;
 			for(int j = 0; j < array[i].EHDDADDKMFI.Length; j++)
@@ -100,6 +104,9 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 			}
 			MPCJGPEBCCD.Add(data);
 		}
+		// UMO, enable last one
+		if (MPCJGPEBCCD.Count > 0)
+			MPCJGPEBCCD[MPCJGPEBCCD.Count - 1].PCCFAKEOBIC = Utility.GetTargetUnixTime(2100, 1, 1, 0, 0, 0);
 		return true;
 	}
 
