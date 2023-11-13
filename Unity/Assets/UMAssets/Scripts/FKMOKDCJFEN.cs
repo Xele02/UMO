@@ -650,7 +650,7 @@ public class FKMOKDCJFEN
 						PKCIICBKEMG(newData, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, data.GLCLFMGPMAN, data.HMFFHLPNMPH);
 						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GOACJBOCLHH_Quest.BEGCHDHHEKC_DailyQuests[MBFCHNDGNDP[i] - 1].JIOMCDGKIAF = 1;
 						cnt++;
-						if(a <= cnt)
+						if(quest_lump_receive_max_num <= cnt)
 						{
 							GHEHKJFGOIE = false;
 							break;
@@ -667,7 +667,7 @@ public class FKMOKDCJFEN
 					TodoLogger.LogError(0, "Event");
 				}
 				if (JONPKLHMOBL == MEDJADCKPKH.CCAPCGPIIPF_Normal)
-				{
+				{ 
 					cnt = 0;
 					checkTarget = 8;
 					for (int i = 0; i < MBFCHNDGNDP.Count; i++)
@@ -679,7 +679,7 @@ public class FKMOKDCJFEN
 							PKCIICBKEMG(newData, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, data.GLCLFMGPMAN, data.HMFFHLPNMPH);
 							CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[MBFCHNDGNDP[i] - 1].JIOMCDGKIAF = 1;
 							cnt++;
-							if (a <= cnt)
+							if (quest_lump_receive_max_num <= cnt)
 							{
 								GHEHKJFGOIE = false;
 								break;

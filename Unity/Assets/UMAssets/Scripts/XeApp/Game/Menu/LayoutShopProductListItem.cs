@@ -46,7 +46,15 @@ namespace XeApp.Game.Menu
 		public Action<FJGOKILCBJA> OnClickDetailButton { get; set; } // 0x64
 
 		// // RVA: 0x1941750 Offset: 0x1941750 VA: 0x1941750
-		// public bool IsLoaded() { }
+		public new bool IsLoaded()
+		{
+			for(int i = 0; i < m_imageItem.Length; i++)
+			{
+				if (!m_imageItem[i].enabled)
+					return false;
+			}
+			return true;
+		}
 
 		// // RVA: 0x1942F18 Offset: 0x1942F18 VA: 0x1942F18
 		public void SetStatus(AODFBGCCBPE.NJMPLEENNPO type, FJGOKILCBJA view)

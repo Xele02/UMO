@@ -68,7 +68,15 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x193F7A0 Offset: 0x193F7A0 VA: 0x193F7A0
-		// public bool IsLoaded() { }
+		public new bool IsLoaded()
+		{
+			for(int i = 0; i < m_scrollList.ScrollObjectCount; i++)
+			{
+				if (!m_scrollList.ScrollObjects[i].IsLoaded())
+					return false;
+			}
+			return true;
+		}
 
 		// // RVA: 0x193F288 Offset: 0x193F288 VA: 0x193F288
 		// private void InitializeList() { }

@@ -34,25 +34,87 @@ namespace XeApp.Game.Menu
 		//public bool ILayoutLoaded() { }
 
 		//// RVA: 0x14CB664 Offset: 0x14CB664 VA: 0x14CB664
-		//public void SetUp(int _receivedCount) { }
+		public void SetUp(int _receivedCount)
+		{
+			m_receivedBingoCount = _receivedCount;
+			for(int i = 0; i < m_scrollList.ScrollObjectCount; i++)
+			{
+				ItemIconLoadedList.Add(false);
+			}
+			InitializeList();
+			SetupList(m_scrollList.ScrollObjectCount, true);
+		}
 
 		//// RVA: 0x14CBA14 Offset: 0x14CBA14 VA: 0x14CBA14
-		//public void SettingButton(Action<int> act) { }
+		public void SettingButton(Action<int> act)
+		{
+			OnClickIcon = (int i) =>
+			{
+				//0x14CBEC4
+				act(i);
+			};
+		}
 
 		//// RVA: 0x14CBAE8 Offset: 0x14CBAE8 VA: 0x14CBAE8
-		//public void SettingItemList(JJPEIELNEJB.JLHHGLANHGE[] _itemlist) { }
+		public void SettingItemList(JJPEIELNEJB.JLHHGLANHGE[] _itemlist)
+		{
+			ItemList = _itemlist;
+		}
 
 		//// RVA: 0x14CB754 Offset: 0x14CB754 VA: 0x14CB754
-		//private void InitializeList() { }
+		private void InitializeList()
+		{
+			for(int i = 0; i < m_scrollList.ScrollObjects.Count; i++)
+			{
+				m_scrollList.SetItemCount(0);
+				m_scrollList.VisibleRegionUpdate();
+			}
+		}
 
 		//// RVA: 0x14CB844 Offset: 0x14CB844 VA: 0x14CB844
-		//private void SetupList(int count, bool resetScroll) { }
+		private void SetupList(int count, bool resetScroll)
+		{
+			m_scrollList.SetItemCount(count);
+			m_scrollList.OnUpdateItem.RemoveAllListeners();
+			m_scrollList.OnUpdateItem.AddListener(OnUpdateListItem);
+			m_scrollList.ResetScrollVelocity();
+			if(resetScroll)
+			{
+				m_scrollList.SetPosition(0, 0, 0, false);
+			}
+			m_scrollList.VisibleRegionUpdate();
+		}
 
 		//// RVA: 0x14CBAF0 Offset: 0x14CBAF0 VA: 0x14CBAF0
-		//private void OnUpdateListItem(int index, SwapScrollListContent content) { }
+		private void OnUpdateListItem(int index, SwapScrollListContent content)
+		{
+			LayoutBingoRewardContents c = content as LayoutBingoRewardContents;
+			if(c != null)
+			{
+				c.SetUp(ItemList[index], () =>
+				{
+					//0x14CBF44
+					ItemIconLoadedList[index] = true;
+				}, (int itemId) =>
+				{
+					//0x14CBFDC
+					if (OnClickIcon != null)
+						OnClickIcon(itemId);
+				});
+				c.ClearIconEnable(index < m_receivedBingoCount);
+			}
+		}
 
 		//// RVA: 0x14CBD3C Offset: 0x14CBD3C VA: 0x14CBD3C
-		//public bool IsLoaded() { }
+		public new bool IsLoaded()
+		{
+			for(int i = 0; i < ItemIconLoadedList.Count; i++)
+			{
+				if (!ItemIconLoadedList[i])
+					return false;
+			}
+			return true;
+		}
 
 		// RVA: 0x14CBE04 Offset: 0x14CBE04 VA: 0x14CBE04 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
