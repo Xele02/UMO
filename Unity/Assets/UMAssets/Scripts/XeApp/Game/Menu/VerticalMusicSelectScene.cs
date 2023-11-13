@@ -281,7 +281,7 @@ namespace XeApp.Game.Menu
 			m_musicDetail.OnEventDetailClickListener = () =>
 			{
 				//0xBF0370
-				TodoLogger.LogNotImplemented("OnEventDetailClickListener");
+				OnClickEventDetailButton();
 			};
 			m_musicDetail.OnEventRewardClickListener = () =>
 			{

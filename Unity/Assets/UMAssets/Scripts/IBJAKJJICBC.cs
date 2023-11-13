@@ -195,7 +195,15 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 	}
 
 	// // RVA: 0x1213A74 Offset: 0x1213A74 VA: 0x1213A74
-	// public string CIOCOOMCMKO(WeekdayEventAttr.Type INDDJNMPONH) { }
+	public string CIOCOOMCMKO(WeekdayEventAttr.Type INDDJNMPONH)
+	{
+		int a = LMPNAPIGAEA(INDDJNMPONH);
+		if (a >= 5001 && a < 5007)
+		{
+			return MJEPJCDOAML + "_rule_" + (a % 5000);
+		}
+		return null;
+	}
 
 	// // RVA: 0x1213B4C Offset: 0x1213B4C VA: 0x1213B4C
 	private void KDPFCMAALPO(int GHBPLHBNMBK, bool GIKLNODJKFK)
