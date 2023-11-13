@@ -890,7 +890,15 @@ namespace XeApp.Game.Menu
 		// private void OnClickBeginnerLead() { }
 
 		// // RVA: 0x977868 Offset: 0x977868 VA: 0x977868
-		// private void OnClickMissionLead() { }
+		private void OnClickMissionLead()
+		{
+			if(!TryLobbyAnnounce())
+			{
+				QuestTopArgs arg = new QuestTopArgs(m_balloonLeadData.BGOCBNPGNKM);
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				MenuScene.Instance.Mount(TransitionUniqueId.QUEST, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+			}
+		}
 
 		// // RVA: 0x978578 Offset: 0x978578 VA: 0x978578
 		// private void OnClickStoryLead() { }
@@ -1816,7 +1824,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x97ACF0 Offset: 0x97ACF0 VA: 0x97ACF0
-		// private static string GetLeadBalloonDesc(PLADCDJLOBE leadData) { }
+		private static string GetLeadBalloonDesc(PLADCDJLOBE leadData)
+		{
+			if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(leadData.DEKECNIBBIB_ItemFullId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			{
+				int idx = leadData.KLMPFGOCBHC_Desc.IndexOf('\n');
+				if (idx > -1)
+					return leadData.KLMPFGOCBHC_Desc.Remove(idx);
+			}
+			return leadData.KLMPFGOCBHC_Desc;
+		}
 
 		// // RVA: 0x96FAF8 Offset: 0x96FAF8 VA: 0x96FAF8
 		private void SetupBeginnerLead()
@@ -1827,7 +1844,21 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x96FD5C Offset: 0x96FD5C VA: 0x96FD5C
 		private void SetupMissionLead()
 		{
-			TodoLogger.LogError(0, "SetupMissionLead");
+			m_leadBalloon.SetStyle(HomeBalloonText.Style.Mission);
+			m_leadBalloon.SetMessage(GetLeadBalloonDesc(m_balloonLeadData));
+			m_leadBalloon.SetClearMark(m_balloonLeadData.JDBLMAHMHJO_IsAchieved);
+			m_leadBalloon.onClickButton = OnClickMissionLead;
+			if (m_balloonLeadData.DEKECNIBBIB_ItemFullId == 0)
+				m_leadBalloon.SetExistsItem(false);
+			else
+			{
+				m_leadBalloon.SetExistsItem(true);
+				GameManager.Instance.ItemTextureCache.Load(m_balloonLeadData.DEKECNIBBIB_ItemFullId, (IiconTexture image) =>
+				{
+					//0x97D348
+					m_leadBalloon.SetItemIcon(image);
+				});
+			}
 		}
 
 		// // RVA: 0x96FFC0 Offset: 0x96FFC0 VA: 0x96FFC0
@@ -2453,11 +2484,7 @@ namespace XeApp.Game.Menu
 		// 	[CompilerGeneratedAttribute] // RVA: 0x6E452C Offset: 0x6E452C VA: 0x6E452C
 		// 	// RVA: 0x97D318 Offset: 0x97D318 VA: 0x97D318
 		// 	private void <SetupBeginnerLead>b__149_0(IiconTexture image) { }
-
-		// 	[CompilerGeneratedAttribute] // RVA: 0x6E453C Offset: 0x6E453C VA: 0x6E453C
-		// 	// RVA: 0x97D348 Offset: 0x97D348 VA: 0x97D348
-		// 	private void <SetupMissionLead>b__150_0(IiconTexture image) { }
-
+		
 		// 	[CompilerGeneratedAttribute] // RVA: 0x6E454C Offset: 0x6E454C VA: 0x6E454C
 		// 	// RVA: 0x97D378 Offset: 0x97D378 VA: 0x97D378
 		// 	private void <SetupStoryDivaLead>b__152_0(IiconTexture image) { }

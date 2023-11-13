@@ -247,12 +247,19 @@ namespace ExternLib
 				}
 			}
 			
-			// End all normal quest
+			// Reset End all normal quest which shouldn't have been, only end beginner quests
 			ODPNBADOFAN_Quest saveQuests = newData.LBDOLHGDIEB_GetBlock("quest") as ODPNBADOFAN_Quest;
 			for (int i = 0; i < saveQuests.GPMKFMFEKLN_NormalQuests.Count; i++)
 			{
 				saveQuests.GPMKFMFEKLN_NormalQuests[i].EALOBDHOCHP_Stat = 3;
-				saveQuests.GPMKFMFEKLN_NormalQuests[i].CADENLBDAEB_New = false;
+			}
+			for (int i = 0; i < saveQuests.GPMKFMFEKLN_NormalQuests.Count; i++)
+			{
+				CNLPPCFJEID_QuestInfo MABBBOEAPAA_dbQuest = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests[i];
+				if(ILLPDLODANB.HHMKDAIGMKC_IsDebutMission((ILLPDLODANB.LOEGALDKHPL)MABBBOEAPAA_dbQuest.INDDJNMPONH_Type))
+					saveQuests.GPMKFMFEKLN_NormalQuests[i].EALOBDHOCHP_Stat = 3;
+				else if (saveQuests.GPMKFMFEKLN_NormalQuests[i].BEBJKJKBOGH_Date == 0 && saveQuests.GPMKFMFEKLN_NormalQuests[i].EALOBDHOCHP_Stat == 3)
+					saveQuests.GPMKFMFEKLN_NormalQuests[i].EALOBDHOCHP_Stat = 0;
 			}
 			{
 				OCMJNBIFJNM_Offer offerBlock = newData.LBDOLHGDIEB_GetBlock("offer") as OCMJNBIFJNM_Offer;

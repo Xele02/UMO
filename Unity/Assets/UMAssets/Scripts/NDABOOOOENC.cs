@@ -210,7 +210,7 @@ public class NDABOOOOENC
 						{
 							if(dbquest.HDBFCIOCNPA_AchievementId != 0)
 							{
-								if(ILLPDLODANB.OBOJKHIJBGL(dbquest.PPFNGGCBJKC, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, true) > 1)
+								if(ILLPDLODANB.OBOJKHIJBGL_GetNormalQuestStatus(dbquest.PPFNGGCBJKC, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, true) > 1)
 								{
 									res.Add(dbquest.HDBFCIOCNPA_AchievementId);
 								}
@@ -251,7 +251,7 @@ public class NDABOOOOENC
 						{
 							if(dbQuest.HDBFCIOCNPA_AchievementId != 0)
 							{
-								if(ILLPDLODANB.OBOJKHIJBGL(dbQuest.PPFNGGCBJKC, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, true) > 1)
+								if(ILLPDLODANB.OBOJKHIJBGL_GetNormalQuestStatus(dbQuest.PPFNGGCBJKC, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, true) > 1)
 								{
 									GLHANCMGNDM_UpdateAchievement(dbQuest.HDBFCIOCNPA_AchievementId, 100);
 								}

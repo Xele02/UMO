@@ -76,7 +76,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x956C58 Offset: 0x956C58 VA: 0x956C58
-		// public void SetStyle(HomeBalloonText.Style style) { }
+		public void SetStyle(Style style)
+		{
+			m_imageType.sprite = m_tableReplace[(int)style].type;
+			m_imageText.sprite = m_tableReplace[(int)style].text;
+			m_imageClear.enabled = style != Style.Event;
+		}
 
 		// // RVA: 0x956C24 Offset: 0x956C24 VA: 0x956C24
 		public void SetExistsItem(bool existsItem)
@@ -85,16 +90,25 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x956D30 Offset: 0x956D30 VA: 0x956D30
-		// public void SetItemIcon(IiconTexture icon) { }
+		public void SetItemIcon(IiconTexture icon)
+		{
+			icon.Set(m_imageIcon);
+		}
 
 		// // RVA: 0x956E10 Offset: 0x956E10 VA: 0x956E10
 		// public void SetDivaIcon(IiconTexture icon) { }
 
 		// // RVA: 0x956E14 Offset: 0x956E14 VA: 0x956E14
-		// public void SetMessage(string msg) { }
+		public void SetMessage(string msg)
+		{
+			m_textScroll.text = msg.Replace("\n", "");
+		}
 
 		// // RVA: 0x956ED0 Offset: 0x956ED0 VA: 0x956ED0
-		// public void SetClearMark(bool isClear) { }
+		public void SetClearMark(bool isClear)
+		{
+			m_imageClear.gameObject.SetActive(isClear);
+		}
 
 		// // RVA: 0x956F24 Offset: 0x956F24 VA: 0x956F24
 		public void SetActive(bool active)
