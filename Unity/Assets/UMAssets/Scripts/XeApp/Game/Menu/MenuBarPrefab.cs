@@ -182,11 +182,55 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEC4BB8 Offset: 0xEC4BB8 VA: 0xEC4BB8
 		private void CallBackVOP()
 		{
-			TodoLogger.LogNotImplemented("CallBackVOP");
+			if(OnInterruptEvent != null && OnInterruptEvent(TransitionList.Type.OFFER_SELECT))
+			{
+				mMenuButtons[2].buttonAnimeDisable = true;
+				return;
+			}
+			mMenuButtons[2].buttonAnimeDisable = false;
+			int cueId = 0;
+			if(!MenuScene.CheckDatelineAndAssetUpdate())
+			{
+				if(!CheckFirstAdvVOP())
+				{
+					cueId = 6;
+					if (IsTopLevelScene(SceneGroupCategory.VOP, TransitionList.Type.OFFER_SELECT))
+					{
+						MenuScene.Instance.Mount(TransitionUniqueId.OFFERSELECT, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+						GameManager.Instance.SelectedGuestData = null;
+						cueId = 0;
+						MenuScene.Instance.StatusWindowControl.ResetHistory();
+					}
+				}
+			}
+			SoundManager.Instance.sePlayerBoot.Play(cueId);
 		}
 
 		// // RVA: 0xEC4E90 Offset: 0xEC4E90 VA: 0xEC4E90
-		// private bool CheckFirstAdvVOP() { }
+		private bool CheckFirstAdvVOP()
+		{
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DAEJHMCMFJD_Offer.MLBBKNLPBBD(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0))
+			{
+				int advId = 88;
+				if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+					advId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.LPJLEHAJADA("first_adv_id", 88);
+				GPMHOAKFALE_Adventure.NGDBKCKMDHE adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(advId);
+				if(adv == null)
+				{
+					IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(1);
+				}
+				else
+				{
+					Database.Instance.advResult.Setup("Menu", TransitionUniqueId.OFFERSELECT, new AdvSetupParam());
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA(advId);
+					Database.Instance.advSetup.Setup(advId);
+					MenuScene.Instance.GotoAdventure(true);
+					ILCCJNDFFOB.HHCJCDFCLOB.BKLNHBHDDEJ(JpStringLiterals.StringLiteral_16417);
+					return true;
+				}
+			}
+			return false;
+		}
 
 		// // RVA: 0xEC53A4 Offset: 0xEC53A4 VA: 0xEC53A4
 		private void CallBackFreeBattle()

@@ -167,7 +167,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC4A9E8 Offset: 0xC4A9E8 VA: 0xC4A9E8
-		//public void StartIdleMotion() { }
+		public void StartIdleMotion()
+		{
+			m_divaObject.Play("simple_idle");
+		}
 
 		//// RVA: 0xC4AA64 Offset: 0xC4AA64 VA: 0xC4AA64
 		//public void StartSimpleMotion(string motionName) { }
@@ -193,7 +196,18 @@ namespace XeApp.Game.Menu
 		//public void StartSimpleLoopMotion(string motionName) { }
 
 		//// RVA: 0xC4B140 Offset: 0xC4B140 VA: 0xC4B140
-		//public void StartSimpleLoopMotion(int motionNo) { }
+		public void StartSimpleLoopMotion(int motionNo)
+		{
+			if(m_loopMotionNameList != null && m_loopMotionNameList.Count <= motionNo)
+			{
+				Debug.LogError(new object[5]
+				{
+					"StringLiteral_20450", motionNo, "/", m_loopMotionNameList.Count, " ]"
+				});
+			}
+			m_divaObject.Anim_SetTrigger("menu_toSimpleLoop");
+			m_divaObject.Anim_SetInteger("menu_simpleId", motionNo + 1);
+		}
 
 		//// RVA: 0xC4B4EC Offset: 0xC4B4EC VA: 0xC4B4EC
 		//public void CrossFadeIdel(string stateName) { }

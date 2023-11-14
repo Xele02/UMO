@@ -210,7 +210,7 @@ namespace XeApp.Game.Menu
 				LeaveUI();
 			};
 			FDDIIKBJNNA.FLKIIDJEJJM(null);
-			PGIGNJDPCAH.NNOBACMJHDM(PGIGNJDPCAH.FELLIEJEPIJ.LPBDIINNFEE/*5*/);
+			PGIGNJDPCAH.NNOBACMJHDM(PGIGNJDPCAH.FELLIEJEPIJ.LPBDIINNFEE_5/*5*/);
 			m_isEndPostSetCanvas = true;
 		}
 
@@ -219,7 +219,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator EffectEndAfter()
 		{
 			//0x12E6AE0
-			PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.LPBDIINNFEE/*5*/);
+			PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.LPBDIINNFEE_5/*5*/);
 			if (MenuScene.Instance.DirtyChangeScene)
 				yield break;
 			if (MenuScene.Instance.IsTransition())

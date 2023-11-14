@@ -160,7 +160,7 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 	
 	public enum NDOPBOCEPJO
 	{
-		NHIOLMNADIO = 0,
+		NHIOLMNADIO_0 = 0,
 		CAPLNONHNCO = 1,
 		LEHHJINPFHA = 2,
 	}

@@ -398,6 +398,7 @@ class JpStringLiterals
 	public const string StringLiteral_18024 = "：{0}"; //0x03bba458
 	public const string StringLiteral_18054 = "～{0}秒"; //0x03bba4d0
 	public const string StringLiteral_18280 = "プリズム"; //0x03bba858
+	public const string StringLiteral_18923 = "オファー選択"; //0x03bbb264
 	public const string StringLiteral_19017 = "誕生日"; // 0x03bbb3dc
 	public const string StringLiteral_19018 = "{0}/{1}/{2}　{3}"; // 0x03bbb3e0
 	public const string StringLiteral_19612 = "ユニットセット"; // 0x03bbbd28

@@ -1278,7 +1278,7 @@ namespace XeApp.Game.Menu
 			GameManager.Instance.RemovePushBackButtonHandler(ShowInfoBackButton);
 			if (selectLabel != 1)
 			{
-				PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.LPBDIINNFEE/*5*/);
+				PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.LPBDIINNFEE_5/*5*/);
 				if (MenuScene.CheckDatelineAndAssetUpdate())
 				{
 					if (finish != null)
