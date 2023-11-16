@@ -45,7 +45,12 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 		public int LJNAKDMILMC { get { return MLCELGHBCLK ^ FBGGEFFJJHB; } set { MLCELGHBCLK = value ^ FBGGEFFJJHB; } } //0xD833EC LIIHHICIBKM 0xD7B7EC OACJGKPBHIK
 
 		//// RVA: 0xD83484 Offset: 0xD83484 VA: 0xD83484
-		//public int GNLAKGANAPG(int IOPHIHFOOEP) { }
+		public int GNLAKGANAPG(int IOPHIHFOOEP)
+		{
+			if (FGNPIJIDIID.Length <= IOPHIHFOOEP)
+				return 0;
+			return FGNPIJIDIID[IOPHIHFOOEP] ^ FBGGEFFJJHB;
+		}
 
 		//// RVA: 0xD7B888 Offset: 0xD7B888 VA: 0xD7B888
 		public bool PGBPLOHNAOC(int IOPHIHFOOEP, int JBGEEPFKIGG)
@@ -57,10 +62,24 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xD83578 Offset: 0xD83578 VA: 0xD83578
-		//public int AGMPIKBJPPB() { }
+		public int AGMPIKBJPPB()
+		{
+			int res = 0;
+			for(int i = 0; i < FGNPIJIDIID.Length; i++)
+			{
+				if (GNLAKGANAPG(i) > 0)
+					res++;
+			}
+			return res;
+		}
 
 		//// RVA: 0xD835D0 Offset: 0xD835D0 VA: 0xD835D0
-		//public int FALLJIODMBC(int IOPHIHFOOEP) { }
+		public int FALLJIODMBC(int IOPHIHFOOEP)
+		{
+			if (ABICFGIHNDO.Length <= IOPHIHFOOEP)
+				return 0;
+			return ABICFGIHNDO[IOPHIHFOOEP] ^ FBGGEFFJJHB;
+		}
 
 		//// RVA: 0xD7B984 Offset: 0xD7B984 VA: 0xD7B984
 		public bool HHIOOFDNPFF(int IOPHIHFOOEP, int JBGEEPFKIGG)

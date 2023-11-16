@@ -1,3 +1,4 @@
+using mcrs;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -98,18 +99,21 @@ namespace XeApp.Game.Menu
 			bool IsSaveDone = false;
 			this.StartCoroutineWatched(Co_Save(() =>
 			{
-				Method$XeApp.Game.Menu.OfferSelectController.<>c__DisplayClass22_0.<Co_GoToGetValkyrie>b__0()
+				//0x186B6CC
+				IsSaveDone = true;
 			}, () =>
 			{
-				Method$XeApp.Game.Menu.OfferSelectController.<>c.<Co_GoToGetValkyrie>b__22_1()
+				//0x186B088
+				return;
 			}));
 			while (!IsSaveDone)
 				yield return null;
 			yield return Co.R(KDHGBOOECKC.HHCJCDFCLOB.FMGMIKPJNKG(1, false, null));
 			IsGoToHome = false;
-			JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo valk = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList.Where(() =>
+			JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo valk = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList.Where((JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo _) =>
 			{
-				Method$XeApp.Game.Menu.OfferSelectController.<>c__DisplayClass22_0.<Co_GoToGetValkyrie>b__2()
+				//0x186B6D8
+				return _.GPPEFLKGGGJ_Id == VfId;
 			}).First;
 			int attr = 1;
 			if (valk != null)
@@ -184,21 +188,26 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1865DE0 Offset: 0x1865DE0 VA: 0x1865DE0
 		public void SetOrderButton(Action order, Action progress, Action complete)
 		{
-			m_orderListLayout.SetContentButtonCallback(() =>
+			m_orderListLayout.SetContentButtonCallback((int index) =>
 			{
-				Method$XeApp.Game.Menu.OfferSelectController.<>c__DisplayClass24_0.<SetOrderButton>b__0()
+				//0x186B71C
+				OnOrdersActionButton(index, order);
+			}, (int index) =>
+			{
+				//0x186B754
+				OnProgressActionButton(index, progress);
+			}, (int index) =>
+			{
+				//0x186B78C
+				OnDoneActionButton(index, complete);
 			}, () =>
 			{
-				Method$XeApp.Game.Menu.OfferSelectController.<>c__DisplayClass24_0.<SetOrderButton>b__1()
+				//0x186B7C4
+				ItemCheck.ButtonDisable();
 			}, () =>
 			{
-				Method$XeApp.Game.Menu.OfferSelectController.<>c__DisplayClass24_0.<SetOrderButton>b__2()
-			}, () =>
-			{
-				Method$XeApp.Game.Menu.OfferSelectController.<>c__DisplayClass24_0.<SetOrderButton>b__3()
-			}, () =>
-			{
-				Method$XeApp.Game.Menu.OfferSelectController.<>c__DisplayClass24_0.<SetOrderButton>b__4()
+				//0x186B800
+				ItemCheck.ButtonEnable();
 			});
 		}
 
@@ -206,7 +215,12 @@ namespace XeApp.Game.Menu
 		//private void UpDownButtonAction() { }
 
 		//// RVA: 0x1865A28 Offset: 0x1865A28 VA: 0x1865A28
-		//private void CheckAllRecvButtonState() { }
+		private void CheckAllRecvButtonState()
+		{
+			if (IsBeginner)
+				return;
+			m_orderNumLayout.AllGet_ButtonDisable(GetAchivedOfferList().Count == 0);
+		}
 
 		//// RVA: 0x18665EC Offset: 0x18665EC VA: 0x18665EC
 		//public void layoutAllEnter() { }
@@ -230,7 +244,42 @@ namespace XeApp.Game.Menu
 		//private List<HEFCLPGPMLK.AAOPGOGGMID> GetAchivedOfferList() { }
 
 		//// RVA: 0x1866748 Offset: 0x1866748 VA: 0x1866748
-		//public void OnOrdersActionButton(int index, Action act) { }
+		public void OnOrdersActionButton(int index, Action act)
+		{
+			GameManager.Instance.CloseSnsNotice();
+			MenuScene.Instance.RaycastDisable();
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+			if(!CheckChengeDate())
+			{
+				if (act != null)
+					act();
+				ItemCheck.ButtonDisable();
+				this.StartCoroutineWatched(Co_serverTimeUpdateWait(() =>
+				{
+					//0x186B83C
+					ItemCheck.ButtonEnable();
+					if(OnClickOperationTimeCheck(index))
+					{
+						if(OnClickSortieValkyrieCheck())
+						{
+							m_orderListLayout.IsExitBefore = true;
+							m_divaController.CrossChangeLeaveMotion(() =>
+							{
+								//0x186BA2C
+								this.StartCoroutineWatched(Co_GotoSelectFormation(index));
+							});
+							IsGoToHome = false;
+							return;
+						}
+					}
+					MenuScene.Instance.RaycastEnable();
+				}));
+			}
+			else
+			{
+				MenuScene.Instance.RaycastEnable();
+			}
+		}
 
 		//// RVA: 0x1866C00 Offset: 0x1866C00 VA: 0x1866C00
 		//private bool OnClickSortieValkyrieCheck() { }
@@ -285,7 +334,18 @@ namespace XeApp.Game.Menu
 		//private IEnumerator Co_WaitSave(Action SaveEnd) { }
 
 		//// RVA: 0x18669C8 Offset: 0x18669C8 VA: 0x18669C8
-		//private bool CheckChengeDate() { }
+		private bool CheckChengeDate()
+		{
+			return PGIGNJDPCAH.MNANNMDBHMP(() =>
+			{
+				//0x186B588
+				MenuScene.Instance.GotoLoginBonus();
+			}, () =>
+			{
+				//0x186B624
+				MenuScene.Instance.GotoTitle();
+			});
+		}
 
 		//// RVA: 0x186986C Offset: 0x186986C VA: 0x186986C
 		//private void TabClickCallBack(int tabstate) { }

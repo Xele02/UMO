@@ -1156,7 +1156,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xB37DC0
 					m_menuTransitionControl.Mount(TransitionUniqueId.OFFERSELECT, null, true, MenuSceneCamebackInfo.CamBackUnityScene.None);
-					KDHGBOOECKC.HHCJCDFCLOB.HJOLFCDAIGE(BOPFPIHGJMD.MLBMHDCCGHI.FMLPIOFBCMA/*3*/);
+					KDHGBOOECKC.HHCJCDFCLOB.HJOLFCDAIGE(BOPFPIHGJMD.MLBMHDCCGHI.FMLPIOFBCMA_3_Diva/*3*/);
 				};
 			}
 			GameManager.Instance.ShowOfferNotice(pushAction, true);
