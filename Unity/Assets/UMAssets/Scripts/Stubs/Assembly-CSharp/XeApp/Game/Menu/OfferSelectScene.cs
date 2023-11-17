@@ -214,7 +214,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.RaycastDisable();
 			bool IsDone = false;
 			bool IsError = false;
-			NKGJPJPHLIF.HHCJCDFCLOB.CADNBFCHAKM(() =>
+			NKGJPJPHLIF.HHCJCDFCLOB.CADNBFCHAKM_GetToken(() =>
 			{
 				//0x170BC58
 				IsDone = true;
@@ -732,6 +732,15 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x170B7D4 Offset: 0x170B7D4 VA: 0x170B7D4
-		//public static void GetMiddleTime(int totalSec, out int hours, out int minutes, out int seconds, bool IsSec = False) { }
+		public static void GetMiddleTime(int totalSec, out int hours, out int minutes, out int seconds, bool IsSec = false)
+		{
+			if(!IsSec)
+			{
+				totalSec = totalSec / 1000;
+			}
+			hours = totalSec / 3600;
+			minutes = totalSec - hours * 3600;
+			seconds = totalSec - hours * 3600 - minutes * 60;
+		}
 	}
 }

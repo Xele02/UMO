@@ -122,7 +122,10 @@ namespace XeSys
 			}
 
 			//// RVA: 0x2396A6C Offset: 0x2396A6C VA: 0x2396A6C
-			//public static Vector3 Evaluate(Math.Tween.EasingFunc type, Vector3 start, Vector3 end, float t) { }
+			public static Vector3 Evaluate(EasingFunc type, Vector3 start, Vector3 end, float t)
+			{
+				return new Vector3(Evaluate(type, start.x, end.x, t), Evaluate(type, start.y, end.y, t), Evaluate(type, start.z, end.z, t));
+			}
 
 			//// RVA: 0x2396B78 Offset: 0x2396B78 VA: 0x2396B78
 			//public static Vector2 Evaluate(Math.Tween.EasingFunc efunc, Vector2 start, Vector2 end, float t) { }

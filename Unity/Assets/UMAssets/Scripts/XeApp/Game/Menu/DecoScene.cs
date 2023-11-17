@@ -1901,7 +1901,7 @@ namespace XeApp.Game.Menu
 				m_decorationCanvas.EnableCanvasController(false);
 				m_decorationCanvas.EnableItemController(DecorationItemManager.EnableControlType.None);
 				bool isDone = false;
-				NKGJPJPHLIF.HHCJCDFCLOB.CADNBFCHAKM(() =>
+				NKGJPJPHLIF.HHCJCDFCLOB.CADNBFCHAKM_GetToken(() =>
 				{
 					//0xC6E8F8
 					isDone = true;
@@ -2734,7 +2734,7 @@ namespace XeApp.Game.Menu
 				m_decorationCanvas.EnableCanvasController(false);
 				m_decorationCanvas.EnableItemController(DecorationItemManager.EnableControlType.None);
 				bool isDone = false;
-				NKGJPJPHLIF.HHCJCDFCLOB.CADNBFCHAKM(() =>
+				NKGJPJPHLIF.HHCJCDFCLOB.CADNBFCHAKM_GetToken(() =>
 				{
 					//0xC6EE90
 					isDone = true;
@@ -2821,7 +2821,7 @@ namespace XeApp.Game.Menu
 			if(NKGJPJPHLIF.HHCJCDFCLOB.DPJBHHIHJJK)
 			{
 				bool isDone = false;
-				NKGJPJPHLIF.HHCJCDFCLOB.CADNBFCHAKM(() =>
+				NKGJPJPHLIF.HHCJCDFCLOB.CADNBFCHAKM_GetToken(() =>
 				{
 					//0xC6EEA4
 					isDone = true;
@@ -3303,7 +3303,7 @@ namespace XeApp.Game.Menu
 			if(NKGJPJPHLIF.HHCJCDFCLOB.DPJBHHIHJJK)
 			{
 				bool isDone = false;
-				NKGJPJPHLIF.HHCJCDFCLOB.CADNBFCHAKM(() =>
+				NKGJPJPHLIF.HHCJCDFCLOB.CADNBFCHAKM_GetToken(() =>
 				{
 					//0xC6EFE0
 					isDone = true;
