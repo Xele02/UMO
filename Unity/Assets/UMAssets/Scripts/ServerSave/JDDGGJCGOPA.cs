@@ -82,7 +82,7 @@ public class JDDGGJCGOPA_RecordMusic : KLFDBFMNLBL_ServerSaveBlock
 		{
 			DateTime date1 = Utility.GetLocalDateTime(LKCCMBEOLLA);
 			DateTime date2 = Utility.GetLocalDateTime(CAPAIICHDMH_WDat);
-			if(date1.Year == date2.Year && date1.Month == date2.Month && date1.Day == date2.Day)
+			if(date1.Year != date2.Year || date1.Month != date2.Month || date1.Day != date2.Day)
 			{
 				CAPAIICHDMH_WDat = LKCCMBEOLLA;
 				FECIGAOOFBE_Wply = 0;

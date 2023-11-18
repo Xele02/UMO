@@ -190,7 +190,7 @@ namespace XeApp.Game.Menu
 		{
 			if (!IsOpen)
 				return;
-			IsOpen = true;
+			IsOpen = false;
 			m_root.StartChildrenAnimGoStop("go_out", "st_out");
 		}
 
