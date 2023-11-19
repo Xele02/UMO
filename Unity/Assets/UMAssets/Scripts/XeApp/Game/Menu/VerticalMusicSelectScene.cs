@@ -281,7 +281,7 @@ namespace XeApp.Game.Menu
 			m_musicDetail.OnEventDetailClickListener = () =>
 			{
 				//0xBF0370
-				TodoLogger.LogNotImplemented("OnEventDetailClickListener");
+				OnClickEventDetailButton();
 			};
 			m_musicDetail.OnEventRewardClickListener = () =>
 			{
@@ -1017,7 +1017,7 @@ namespace XeApp.Game.Menu
 		{
 			m_pickupFreeMusicId = 0;
 			m_pickupFreeCategoryId = 0;
-			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
+			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/);
 			if(ev != null)
 			{
 				if(ev is AMLGMLNGMFB_EventAprilFool)
@@ -1113,12 +1113,86 @@ namespace XeApp.Game.Menu
 					if (select_index < 0)
 						select_index = 0;
 				}
+				list_no = select_index;
 			}
 			else
 			{
-				TodoLogger.LogError(0, "SelectArgsFocus when args");
+				if(args.selection.eventCategory != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0)
+				{
+					m_musicTab = VerticalMusicSelecChoiceMusicListTab.MusicTab.Event;
+					SetMusicTab(m_musicTab);
+					list_no = -1;
+					for(int i = 0; i < currentMusicList.GetCount(m_musicSelectUISapporter.isLine6Mode, false); i++)
+					{
+                        IBJAKJJICBC info = currentMusicList.Get(i, m_musicSelectUISapporter.isLine6Mode, false).ViewMusic;
+                        if (args.selection.eventCategory == OHCAABOMEOF.KGOGMKMBCPP_EventType.ENMHPBGOOII_Week)
+						{
+							if(info.LHONOILACFL_IsWeeklyEvent)
+							{
+								if(info.BELHFPMBAPJ_WeekPlay < info.JOJNGDPHOKG)
+								{
+									list_no = i;
+									break;
+								}
+							}
+						}
+						else
+						{
+							if(info.MNNHHJBBICA_EventType == (int)args.selection.eventCategory)
+							{
+								list_no = i;
+								break;
+							}
+						}
+					}
+					if(list_no < 0)
+						list_no = 0;
+				}
+				else if(args.selection.categoryId != FreeCategoryId.Type.None)
+				{
+					m_musicTab = VerticalMusicSelecChoiceMusicListTab.MusicTab.Event;
+					if(args.selection.categoryId != FreeCategoryId.Type.Event)
+					{
+						series = CategoryToSeriesType[(int)args.selection.categoryId];
+						m_musicTab = VerticalMusicSelecChoiceMusicListTab.MusicTab.Normal;
+					}
+					SetMusicTab(m_musicTab);
+					save.HJHBGHMNGKL_SetDifficulty(diff);
+					save.GJDEHJBAMNH_SetSeries(series);
+					list_no = 0;
+				}
+				else if(args.selection.miniGameId >= 0)
+				{
+					m_musicTab = VerticalMusicSelecChoiceMusicListTab.MusicTab.Event;
+					SetMusicTab(VerticalMusicSelecChoiceMusicListTab.MusicTab.Event);
+					list_no = GetMinigameListNo(args.selection.miniGameId);
+					if(list_no < 0)
+						list_no = 0;
+				}
+				else if(args.selection.freeMusicId >= 0)
+				{
+					m_musicTab = VerticalMusicSelecChoiceMusicListTab.MusicTab.Normal;
+					int idx = m_filterMusicDataList.FindIndex(args.selection.freeMusicId, m_musicSelectUISapporter.isLine6Mode, false);
+					if(idx < 0)
+					{
+						idx = m_filterMusicEventDataList.FindIndex(args.selection.freeMusicId, m_musicSelectUISapporter.isLine6Mode, false);
+						if(idx > 0)
+							m_musicTab = VerticalMusicSelecChoiceMusicListTab.MusicTab.Event;
+					}
+					if(idx < 0)
+						idx = 0;
+					list_no = idx;
+					if(args.selection.difficulty == Difficulty.Type.Illegal)
+					{
+						m_musicSelectUISapporter.SetDiffity(diff);
+					}
+					else
+					{
+						m_musicSelectUISapporter.SetDiffity(args.selection.difficulty);
+						diff = args.selection.difficulty;
+					}
+				}
 			}
-			list_no = select_index;
 			save.HJHBGHMNGKL_SetDifficulty(diff);
 			save.GJDEHJBAMNH_SetSeries(series);
 			save.ABGEMNAHALF_SetIsEventTab(m_musicTab == VerticalMusicSelecChoiceMusicListTab.MusicTab.Event);
@@ -1141,7 +1215,7 @@ namespace XeApp.Game.Menu
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			m_eventBanner.SetType(VerticalMusicSelectEventBanner.ButtonType.Disable);
 			m_eventItem.SetEnable(false);
-			IKDICBBFBMI_EventBase eventInfo = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ);
+			IKDICBBFBMI_EventBase eventInfo = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9);
 			if(eventInfo != null)
 			{
 				TodoLogger.LogError(0, "ApplyEventInfo");

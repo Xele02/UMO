@@ -1,5 +1,12 @@
+using System;
+
 namespace XeApp.Game.Menu
 {
+	public class QuestEventIconTexture : IconTexture
+	{
+		//
+	}
+
 	public class QuestEventTextureCache : IconTextureCache
 	{
 
@@ -18,14 +25,21 @@ namespace XeApp.Game.Menu
 		// RVA: 0x9D5A14 Offset: 0x9D5A14 VA: 0x9D5A14 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
 		{
-			TodoLogger.LogError(0, "CreateIconTexture");
-			return null;
+			QuestEventIconTexture tex = new QuestEventIconTexture();
+			SetupForSplitTexture(info, tex);
+			return tex;
 		}
 
 		// RVA: 0x9D5A9C Offset: 0x9D5A9C VA: 0x9D5A9C
-		// public void LoadIcon(int id, Action<IiconTexture> callback) { }
+		public void LoadIcon(int id, Action<IiconTexture> callback)
+		{
+			Load(string.Format("ct/qu/qi/{0:d5}.xab", id), callback);
+		}
 
 		// // RVA: 0x9D5B44 Offset: 0x9D5B44 VA: 0x9D5B44
-		// public void LoadFont(int id, Action<IiconTexture> callback) { }
+		public void LoadFont(int id, Action<IiconTexture> callback)
+		{
+			Load(string.Format("ct/qu/qf/{0:d5}.xab", id), callback);
+		}
 	}
 }

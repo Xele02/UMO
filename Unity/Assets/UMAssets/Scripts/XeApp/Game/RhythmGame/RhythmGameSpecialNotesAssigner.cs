@@ -125,7 +125,7 @@ namespace XeApp.Game.RhythmGame
 			}
 			rareItemRandSeed = Random.Range(0, 100000);
 			int numItems = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.NBIAKELCBLC_GetNumItems(Database.Instance.gameSetup.teamInfo.teamLuck, rareItemRandSeed);
-			if (Database.Instance.gameSetup.musicInfo.gameEventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL || Database.Instance.gameSetup.musicInfo.openEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
+			if (Database.Instance.gameSetup.musicInfo.gameEventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 || Database.Instance.gameSetup.musicInfo.openEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 			{
 				numItems = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.NBIAKELCBLC((int)Database.Instance.gameSetup.musicInfo.gameEventType, (int)Database.Instance.gameSetup.musicInfo.openEventType, (int)Database.Instance.gameSetup.musicInfo.difficultyType, Database.Instance.gameSetup.musicInfo.IsLine6Mode, Database.Instance.gameSetup.teamInfo.teamLuck, rareItemRandSeed);
 			}
@@ -330,7 +330,7 @@ namespace XeApp.Game.RhythmGame
 			int v = 0;
 			if (Database.Instance.gameSetup.musicInfo.isFreeMode)
 			{
-				v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId).KDIKCKEEPDA(Database.Instance.gameSetup.musicInfo.IsLine6Mode);
+				v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId).KDIKCKEEPDA_GetNormalRateId(Database.Instance.gameSetup.musicInfo.IsLine6Mode);
 				if (JEPBIIJDGEF_EventInfo.HHCJCDFCLOB != null && JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI, false) != null)
 				{
 					TodoLogger.LogError(0, "GetDropItemSet event");
@@ -350,7 +350,7 @@ namespace XeApp.Game.RhythmGame
 			int v = 0;
 			if(Database.Instance.gameSetup.musicInfo.isFreeMode)
 			{
-				v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId).MGLDIOILOFF;
+				v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId).MGLDIOILOFF_NormalSetId;
 				if (JEPBIIJDGEF_EventInfo.HHCJCDFCLOB != null && JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI, false) != null)
 				{
 					TodoLogger.LogError(0, "GetDropItemSet event");

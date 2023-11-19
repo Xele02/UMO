@@ -66,7 +66,7 @@ public class JEPBIIJDGEF_EventInfo
 	}
 
 	// // RVA: 0x1C33488 Offset: 0x1C33488 VA: 0x1C33488
-	public IKDICBBFBMI_EventBase OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType INDDJNMPONH, KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/)
+	public IKDICBBFBMI_EventBase OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType INDDJNMPONH, KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/)
     {
 		IKDICBBFBMI_EventBase res = null;
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
@@ -85,7 +85,7 @@ public class JEPBIIJDGEF_EventInfo
     }
 
 	// // RVA: 0x1C395FC Offset: 0x1C395FC VA: 0x1C395FC
-	public IKDICBBFBMI_EventBase MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/, bool BJIOJJDLODJ = false)
+	public IKDICBBFBMI_EventBase MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/, bool BJIOJJDLODJ = false)
 	{
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 		IKDICBBFBMI_EventBase res = null;
@@ -126,7 +126,7 @@ public class JEPBIIJDGEF_EventInfo
 	// public List<IKDICBBFBMI> CMDEHIMPHBL(KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL = 9, bool BJIOJJDLODJ = False) { }
 
 	// // RVA: 0x1C39BD4 Offset: 0x1C39BD4 VA: 0x1C39BD4
-	public IKDICBBFBMI_EventBase AJLEDCKMFLP(KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/)
+	public IKDICBBFBMI_EventBase AJLEDCKMFLP(KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/)
 	{
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 		for(int i = 0; i < MPEOOINCGEN.Count; i++)
@@ -181,7 +181,120 @@ public class JEPBIIJDGEF_EventInfo
 	// public IKDICBBFBMI IMJNOBGABHN(int EKANGPODCEP) { }
 
 	// // RVA: 0x1C3A430 Offset: 0x1C3A430 VA: 0x1C3A430
-	// public IKDICBBFBMI HADLGKFCGLK(ulong MKDDOJOADMF) { }
+	public IKDICBBFBMI_EventBase HADLGKFCGLK(ulong MKDDOJOADMF)
+	{
+		string JOPOPMLFINI = "";
+		switch(MKDDOJOADMF)
+		{
+			case 0x10:
+				JOPOPMLFINI = "event_collection_a";
+				break;
+			case 0x20:
+				JOPOPMLFINI = "event_collection_b";
+				break;
+			case 0x40:
+				JOPOPMLFINI = "event_collection_c";
+				break;
+			case 0x80:
+				JOPOPMLFINI = "event_quest_a";
+				break;
+			case 0x100:
+				JOPOPMLFINI = "event_quest_b";
+				break;
+			case 0x200:
+				JOPOPMLFINI = "event_quest_c";
+				break;
+			case 0x400:
+				JOPOPMLFINI = "event_battle_a";
+				break;
+			case 0x800:
+				JOPOPMLFINI = "event_battle_b";
+				break;
+			case 0x1000:
+				JOPOPMLFINI = "event_battle_c";
+				break;
+			case 0x2000:
+				JOPOPMLFINI = "event_mission_a";
+				break;
+			case 0x4000:
+				JOPOPMLFINI = "event_mission_b";
+				break;
+			case 0x8000:
+				JOPOPMLFINI = "event_mission_c";
+				break;
+			case 0x10000:
+				JOPOPMLFINI = "event_sp_a";
+				break;
+			case 0x20000:
+				JOPOPMLFINI = "event_sp_b";
+				break;
+			case 0x40000:
+				JOPOPMLFINI = "event_sp_c";
+				break;
+			case 0x80000:
+				JOPOPMLFINI = "event_box_gacha_a";
+				break;
+			case 0x100000:
+				JOPOPMLFINI = "event_box_gacha_b";
+				break;
+			case 0x200000:
+				JOPOPMLFINI = "event_box_gacha_c";
+				break;
+			case 0x400000:
+				JOPOPMLFINI = "event_april_fool_a";
+				break;
+			case 0x800000:
+				JOPOPMLFINI = "event_april_fool_b";
+				break;
+			case 0x1000000:
+				JOPOPMLFINI = "event_april_fool_c";
+				break;
+			case 0x2000000:
+				JOPOPMLFINI = "event_april_fool_d";
+				break;
+			case 0x4000000:
+				JOPOPMLFINI = "event_april_fool_e";
+				break;
+			case 0x8000000:
+				JOPOPMLFINI = "event_april_fool_f";
+				break;
+			case 0x10000000:
+				JOPOPMLFINI = "event_april_fool_g";
+				break;
+			case 0x20000000:
+				JOPOPMLFINI = "event_april_fool_h";
+				break;
+			case 0x40000000:
+				JOPOPMLFINI = "event_april_fool_i";
+				break;
+			case 0x80000000:
+				JOPOPMLFINI = "event_raid_a";
+				break;
+			case 0x100000000:
+				JOPOPMLFINI = "event_raid_b";
+				break;
+			case 0x200000000:
+				JOPOPMLFINI = "event_raid_c";
+				break;
+			case 0x400000000:
+				JOPOPMLFINI = "event_raid_d";
+				break;
+			case 0x4000000000:
+				JOPOPMLFINI = "event_godiva_a";
+				break;
+			case 0x8000000000:
+				JOPOPMLFINI = "event_godiva_b";
+				break;
+			case 0x10000000000:
+				JOPOPMLFINI = "event_godiva_c";
+				break;
+		}
+		return MPEOOINCGEN.Find((IKDICBBFBMI_EventBase PKLPKMLGFGK) =>
+		{
+			//0x1C40904
+			return PKLPKMLGFGK.JOPOPMLFINI == JOPOPMLFINI;
+		});
+	}
 
 	// // RVA: 0x1C3AA14 Offset: 0x1C3AA14 VA: 0x1C3AA14
 	public bool GPKMEOKPDIP(int PGIIDPEGGPI)
@@ -301,7 +414,7 @@ public class JEPBIIJDGEF_EventInfo
 				}
 				IMMEEJNOKKK_Event.HCDGELDHFHB_UpdateStatus(JHNMKKNEENE);
 			}
-			IKDICBBFBMI_EventBase evt = OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ);
+			IKDICBBFBMI_EventBase evt = OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9);
 			if(evt != null)
 			{
 				if(evt is PKNOKJNLPOE_EventRaid)
@@ -357,7 +470,7 @@ public class JEPBIIJDGEF_EventInfo
 			IMMEEJNOKKK = MPEOOINCGEN[i];
 			if(IMMEEJNOKKK.IBNKPMPFLGI)
 			{
-				if(HIDHLFCBIDE != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL/*0*/)
+				if(HIDHLFCBIDE != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0/*0*/)
 				{
 					if (IMMEEJNOKKK.HIDHLFCBIDE_EventType != HIDHLFCBIDE)
 						continue;
@@ -385,7 +498,7 @@ public class JEPBIIJDGEF_EventInfo
 		for(int i = 0; i < MPEOOINCGEN.Count; i++)
 		{
 			MPEOOINCGEN[i].HCDGELDHFHB_UpdateStatus(time);
-			if(MPEOOINCGEN[i].NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/)
+			if(MPEOOINCGEN[i].NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/)
 			{
 				if(MPEOOINCGEN[i].HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN/*4*/)
 				{
@@ -458,7 +571,7 @@ public class JEPBIIJDGEF_EventInfo
 	{
 		if (LIKDEHHKFEH.HIDHLFCBIDE_EventType >= OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp && LIKDEHHKFEH.HIDHLFCBIDE_EventType <= OHCAABOMEOF.KGOGMKMBCPP_EventType.OCCGDMDBCHK_EventGacha)
 		{
-			LIKDEHHKFEH = MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/, false);
+			LIKDEHHKFEH = MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/, false);
 			if (LIKDEHHKFEH == null)
 				return new List<int>();
 		}

@@ -754,7 +754,7 @@ namespace XeApp.Game.Menu
 				}
 			}
 			//LAB_00acb654
-			return MenuScene.Instance.CheckEventLimit(data, true, true, m_eventStatus < KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI/*6*/ ? KGCNCBOKCBA.GNENJEHKMHD.MEAJLPAHINL/*5*/ : KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/, m_eventId);
+			return MenuScene.Instance.CheckEventLimit(data, true, true, m_eventStatus < KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI/*6*/ ? KGCNCBOKCBA.GNENJEHKMHD.MEAJLPAHINL/*5*/ : KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/, m_eventId);
 		}
 
 		// // RVA: 0xACE0E0 Offset: 0xACE0E0 VA: 0xACE0E0
@@ -833,10 +833,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xACEC6C Offset: 0xACEC6C VA: 0xACEC6C
-		// private void OnWebViewClose() { }
+		private void OnWebViewClose()
+		{
+			MenuScene.Instance.InputEnable();
+		}
 
 		// // RVA: 0xACED08 Offset: 0xACED08 VA: 0xACED08
-		// private void OnNetErrorToTitle() { }
+		private void OnNetErrorToTitle()
+		{
+			MenuScene.Instance.GotoTitle();
+		}
 
 		// // RVA: 0xACEDA4 Offset: 0xACEDA4 VA: 0xACEDA4
 		// private VerticalMusicSelectSceneBase.MusicLockData GetLastStoryData() { }
@@ -990,7 +996,26 @@ namespace XeApp.Game.Menu
 		// protected void OnScrollEnded() { }
 
 		// // RVA: 0xACFDB8 Offset: 0xACFDB8 VA: 0xACFDB8
-		// protected void OnClickEventDetailButton() { }
+		protected void OnClickEventDetailButton()
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(!CheckEventLimit())
+			{
+				if(selectMusicData.LHONOILACFL_IsWeeklyEvent)
+				{
+					MenuScene.Instance.InputDisable();
+					MBCPNPNMFHB.HHCJCDFCLOB.FLLLPBIECCP(selectMusicData.CIOCOOMCMKO(selectMusicData.IHKFMJDOBAH), OnWebViewClose, OnNetErrorToTitle);
+				}
+				else
+				{
+					if (selectMusicData.LEBDMNIGOJB)
+					{
+						MenuScene.Instance.InputDisable();
+						//m_scoreEventCtrl.HAAEJDGMICH(0, OnWebViewClose, OnNetErrorToTitle);
+					}
+				}
+			}
+		}
 
 		// // RVA: 0xAD012C Offset: 0xAD012C VA: 0xAD012C
 		protected void OnClickRankingButton(IBJAKJJICBC musicData)

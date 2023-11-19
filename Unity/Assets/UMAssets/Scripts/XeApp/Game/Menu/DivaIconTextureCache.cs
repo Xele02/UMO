@@ -146,7 +146,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x17E3C4C Offset: 0x17E3C4C VA: 0x17E3C4C
-		// public void LoadStandingCostumeIcon(int id, int modelId, Action<IiconTexture> callBack) { }
+		public void LoadStandingCostumeIcon(int id, int modelId, Action<IiconTexture> callBack)
+		{
+			Load(string.Format(DivaStandingCostumeIconPath, id, modelId), callBack);
+		}
 
 		// // RVA: 0x17E3D10 Offset: 0x17E3D10 VA: 0x17E3D10
 		public void LoadTutorialIcon(int charId, Action<IiconTexture> callBack)
@@ -182,7 +185,10 @@ namespace XeApp.Game.Menu
 		// public void LoadEventGoDivaIcon(int id, DivaIconTextureCache.GoDivaIconType type, Action<IiconTexture> callBack) { }
 
 		// // RVA: 0x17E41B4 Offset: 0x17E41B4 VA: 0x17E41B4
-		// public static string GetDivaStandingCostumeIconPath(int id, int modelId) { }
+		public static string GetDivaStandingCostumeIconPath(int id, int modelId)
+		{
+			return string.Format(DivaStandingCostumeIconPath, id, modelId);
+		}
 
 		// // RVA: 0x17E3DAC Offset: 0x17E3DAC VA: 0x17E3DAC
 		public static string MakeTutorialIconPath(int charId)

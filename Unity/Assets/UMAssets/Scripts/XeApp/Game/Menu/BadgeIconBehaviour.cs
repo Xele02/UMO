@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using XeApp.Game.Common;
 using XeSys.Gfx;
 
 namespace XeApp.Game.Menu
@@ -39,12 +40,27 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1435B88 Offset: 0x1435B88 VA: 0x1435B88
-		//public void SetType(BadgeIconBehaviour.Type type) { }
+		public void SetType(Type type)
+		{
+			if (type == Type.Hide)
+				gameObject.SetActive(false);
+			else
+			{
+				gameObject.SetActive(true);
+				m_root.StartChildrenAnimGoStop(animeLabelTbl[(int)type]);
+			}
+		}
 
 		//// RVA: 0x1435CBC Offset: 0x1435CBC VA: 0x1435CBC
-		//public void SetTextureUv(BadgeConstant.ID id) { }
+		public void SetTextureUv(BadgeConstant.ID id)
+		{
+			m_image.uvRect = m_uvRectList[(int)id - 2];
+		}
 
 		//// RVA: 0x1435D78 Offset: 0x1435D78 VA: 0x1435D78
-		//public void SetText(string text) { }
+		public void SetText(string text)
+		{
+			m_text.text = text;
+		}
 	}
 }

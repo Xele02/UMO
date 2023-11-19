@@ -151,7 +151,7 @@ public class LIFGJMIHHKM_LimitedItem : KLFDBFMNLBL_ServerSaveBlock
 			int b = int.MaxValue;
 			int c = -1;
 			int d = -1;
-			for(; index > -1; index--)
+			for(index = index - 1; index > -1; index--)
 			{
 				if(!ODHBHOGFNAA[PPFNGGCBJKC - 1].PJADHDHKOEJ[index].NIENPFFLMCH(JHNMKKNEENE))
 				{

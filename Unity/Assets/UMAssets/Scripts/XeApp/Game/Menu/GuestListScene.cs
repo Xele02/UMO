@@ -158,7 +158,7 @@ namespace XeApp.Game.Menu
 		{
 			if(!MenuScene.CheckDatelineAndAssetUpdate())
 			{
-				if(Database.Instance.gameSetup.musicInfo.gameEventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL/*0*/)
+				if(Database.Instance.gameSetup.musicInfo.gameEventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0/*0*/)
 				{
 					TodoLogger.LogError(0, "CheckEventLimit");
 				}

@@ -351,8 +351,8 @@ namespace XeApp.Game.Menu
 								break;
 							case MenuButtonAnim.ButtonType.QUEST:
 								m_QuestbadgeData.FBANBDCOEJL(true);
-								badgeText = m_QuestbadgeData.BHANMJKCCBC;
-								badgeId = m_QuestbadgeData.BEEIIJJKDBH;
+								badgeText = m_QuestbadgeData.BHANMJKCCBC_BadgeText;
+								badgeId = m_QuestbadgeData.BEEIIJJKDBH_BadgeId;
 								break;
 						}
 						string[] values = new string[6] { "buttonType:", buttonType.ToString(), " / badgeID:", badgeId.ToString(), " / badgeText:", badgeText };

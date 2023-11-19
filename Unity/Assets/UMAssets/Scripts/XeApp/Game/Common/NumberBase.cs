@@ -24,7 +24,7 @@ namespace XeApp.Game.Common
 		private int m_number; // 0x3C
 
 		// public int Number { get; } 0xAF3F14
-		// public int DigitMax { get; } 0xAF3F1C
+		public int DigitMax { get { return m_digitMax; } } //0xAF3F1C
 
 		// RVA: 0xAF3F24 Offset: 0xAF3F24 VA: 0xAF3F24 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
@@ -80,7 +80,13 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAF4618 Offset: 0xAF4618 VA: 0xAF4618 Slot: 7
-		// public virtual void SetDigitNuber(int digit, int number) { }
+		public virtual void SetDigitNuber(int digit, int number)
+		{
+			if(number < 10 && digit <= m_digitMax)
+			{
+				m_numberImage[digit - 1].uvRect = m_numberRect[number];
+			}
+		}
 
 		// // RVA: 0xAF46F8 Offset: 0xAF46F8 VA: 0xAF46F8 Slot: 8
 		// public virtual void SetDigitLength(int length, bool isForce = False) { }

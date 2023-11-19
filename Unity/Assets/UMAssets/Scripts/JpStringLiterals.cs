@@ -20,6 +20,13 @@ class JpStringLiterals
 	public const string StringLiteral_9714 = "第"; //0x03bb2280
 	public const string StringLiteral_9715 = "話"; //0x03bb2284
 	public const string StringLiteral_9767 = "超時空ユニット"; // 0x03bb2354
+	public const string StringLiteral_9768 = "エピソード達成報酬"; //0x03bb2358
+	public const string StringLiteral_9769 = "くりかえしエピソード解放報酬達成！"; //0x03bb235c
+	public const string StringLiteral_9771 = "デイリーミッション達成報酬"; //0x03bb2364
+	public const string StringLiteral_9773 = "SNSミッション達成報酬"; //0x03bb236c
+	public const string StringLiteral_9774 = "デビューミッション達成報酬"; // 03bb2370
+	public const string StringLiteral_9775 = "ノーマルミッション達成報酬"; //0x03bb2374
+	public const string StringLiteral_9777 = "イベントミッション達成報酬"; //0x03bb237c
 	public const string StringLiteral_9787 = "<color=yellow>期間限定エナジーアイテムの削除</color>"; // 0x03bb23a4
 	public const string StringLiteral_9788 = "<color=pink>ログイン日数="; // 0x03bb23a8
 	public const string StringLiteral_9793 = "エナジー"; // 0x03bb23bc
@@ -174,6 +181,7 @@ class JpStringLiterals
 	public const string StringLiteral_11929 = "ダウンロードエラー"; // 0x03bb451c
 	public const string StringLiteral_11930 = "ファイルのダウンロードに失敗しました。\nインターネットへの接続や電波の状況を確認して、\nもう一度お試しください。"; // 0x03bb4520
 	public const string StringLiteral_11992 = "バッチインストーラ　インストールモジュール作成失敗"; // 0x03bb4618
+	public const string StringLiteral_12010 = "コスチューム名"; //0x03bb4660
 	public const string StringLiteral_12037 = "　"; // 0x03bb46cc
 	public const string StringLiteral_12038 = "…"; // 0x03bb46d0
 	public const string StringLiteral_12097 = " (歌マクロス"; // 0x03bb47bc

@@ -93,7 +93,12 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xCF860C Offset: 0xCF860C VA: 0xCF860C
-		//public static void CheckPlateId(JJPEIELNEJB.JLHHGLANHGE item) { }
+		public static void CheckPlateId(JJPEIELNEJB.JLHHGLANHGE item)
+		{
+			if (item == null)
+				return;
+			RegisterPlateIdInner(item.GLCLFMGPMAN_ItemFullId);
+		}
 
 		//// RVA: 0xCF86A4 Offset: 0xCF86A4 VA: 0xCF86A4
 		//public static void CheckPlateId(ViewOfferGetItem item) { }

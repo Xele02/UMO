@@ -22,7 +22,10 @@ public class CGJKNOCAPII
 	public long BALFPCLMOGJ; // 0x50
 
 	//// RVA: 0x12BC47C Offset: 0x12BC47C VA: 0x12BC47C
-	//public int KJILFMNCDLC() { }
+	public int KJILFMNCDLC()
+	{
+		return (int)(PCCFAKEOBIC_End - NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime());
+	}
 
 	//// RVA: 0x12BC584 Offset: 0x12BC584 VA: 0x12BC584
 	public CGJKNOCAPII BJKJLDPDEFA(IKDICBBFBMI_EventBase FBFNJMKPBBA, bool PNGKOHDEPFE = true)
@@ -110,6 +113,7 @@ public class CGJKNOCAPII
 						{
 							l2.Add(data);
 						}
+						break;
 					}
 				}
 			}
@@ -144,7 +148,7 @@ public class CGJKNOCAPII
 		res.COAMJFMEIBF = null;
 		JKICPBIIHNE_Bingo.HNOGDJFJGPM bingo = GNGMCIAIKMA.HHCJCDFCLOB.EBEDAPJFHCE_GetBingo(APFDNBGMMMM);
 		res.KINJOEIAHFK_Start = bingo.PDBPFJJCADD_StartTime;
-		res.NNHHNFFLCFO = BKANGIKIEML.NODKLJHEAJB.BPNDHDHHKGE/*38*/;
+		res.NNHHNFFLCFO = BKANGIKIEML.NODKLJHEAJB.BPNDHDHHKGE_38/*38*/;
 		res.BEEIIJJKDBH = 0;
 		res.PCCFAKEOBIC_End = bingo.FDBNFFNFOND_EndTime;
 		res.PNFDMBHDPAJ = false;

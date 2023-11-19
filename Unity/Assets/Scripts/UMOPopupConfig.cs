@@ -39,7 +39,7 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         RuntimeSettings.CurrentSettings.MinigameAutoPlay = MinigameAutoPlay.GetSelected() == 0;
         KEHOJEJMGLJ.FJDOHLADGFI = ForceIntegrityCheck.GetSelected() == 0;
         RuntimeSettings.CurrentSettings.DisplayIdInName = DisplayItemId.GetSelected() == 0;
-        UMO_PlayerPrefs.Save();
+        RuntimeSettings.CurrentSettings.Save();
     }
     public bool IsScrollable()
     {

@@ -233,7 +233,7 @@ namespace XeApp.Game.Menu
 						break;
 					case OHCAABOMEOF.KGOGMKMBCPP_EventType.MKKOHBGHADL/*2*/:
 					case OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN/*4*/:
-					case OHCAABOMEOF.KGOGMKMBCPP_EventType.ENMHPBGOOII/*5*/:
+					case OHCAABOMEOF.KGOGMKMBCPP_EventType.ENMHPBGOOII_Week/*5*/:
 					default:
 						break;
 					case OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle:

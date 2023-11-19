@@ -675,10 +675,24 @@ public class KDHGBOOECKC
 	}
 
 	// // RVA: 0x10351B0 Offset: 0x10351B0 VA: 0x10351B0
-	// public bool NKEKPBALJGD() { }
+	public bool NKEKPBALJGD_IsFirstAdvOfferDone()
+	{
+		if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database == null || CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave == null)
+			return false;
+		return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.LPJLEHAJADA("first_adv_id", 88));
+	}
 
 	// // RVA: 0x1035330 Offset: 0x1035330 VA: 0x1035330
-	// public TransitionUniqueId OOFNEPBLPEA() { }
+	public TransitionUniqueId OOFNEPBLPEA()
+	{
+		if(LOCAIBNPKDL_IsPlayerLevelOk())
+		{
+			if (NKEKPBALJGD_IsFirstAdvOfferDone())
+				return TransitionUniqueId.OFFERSELECT;
+			return TransitionUniqueId.HOME;
+		}
+		return TransitionUniqueId.MUSICSELECT;
+	}
 
 	// // RVA: 0x1035360 Offset: 0x1035360 VA: 0x1035360
 	// public bool GNJCAJKEOGB() { }

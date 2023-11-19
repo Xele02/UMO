@@ -109,7 +109,16 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool;} }// 0xCE1CB0 DKHCGLCNKCD  Slot: 4
 
 	// // RVA: 0xCE1CB8 Offset: 0xCE1CB8 VA: 0xCE1CB8 Slot: 5
-	// public override string IFKKBHPMALH() { }
+	public override string IFKKBHPMALH()
+	{
+		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI);
+		if (db != null)
+		{
+			KCGOMAFPGDD_EventAprilFool dbAf = db as KCGOMAFPGDD_EventAprilFool;
+			return dbAf.NGHKJOEDLIP.OCDMGOGMHGE;
+		}
+		return null;
+	}
 
 	// RVA: 0xCE1E40 Offset: 0xCE1E40 VA: 0xCE1E40
 	public AMLGMLNGMFB_EventAprilFool(string OPFGFINHFCE) : base(OPFGFINHFCE)
@@ -135,7 +144,7 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 		List<FKMOKDCJFEN> l2 = FKMOKDCJFEN.KJHKBBBDBAL(JOPOPMLFINI, true, -1);
 		for(int i = 0; i < l2.Count; i++)
 		{
-			if(l2[i].DLAFBGPFEON > 0 && l2[i].CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ/*1*/)
+			if(l2[i].DLAFBGPFEON > 0 && l2[i].CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1/*1*/)
 			{
 				l.Remove(l2[i].DLAFBGPFEON);
 			}
@@ -144,7 +153,26 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0xCE224C Offset: 0xCE224C VA: 0xCE224C
-	// public int BMBELGEDKEG(int PPFNGGCBJKC_Id) { }
+	public int BMBELGEDKEG(int PPFNGGCBJKC_Id)
+	{
+		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI);
+		if (db != null)
+		{
+			KCGOMAFPGDD_EventAprilFool dbAf = db as KCGOMAFPGDD_EventAprilFool;
+			if(PPFNGGCBJKC_Id > 0)
+			{
+				if(PPFNGGCBJKC_Id <= dbAf.IJJHFGOIDOK_Songs.Count)
+				{
+					KCGOMAFPGDD_EventAprilFool.EIEGCBJHGCP data = dbAf.IJJHFGOIDOK_Songs[PPFNGGCBJKC_Id - 1];
+					if(data.PLALNIIBLOF_Enabled == 2)
+					{
+						return data.MPLGPBNJDJB_FreeMusicId;
+					}
+				}
+			}
+		}
+		return 0;
+	}
 
 	// // RVA: 0xCE24AC Offset: 0xCE24AC VA: 0xCE24AC
 	public int GOHABONFBDM(JGEOBNENMAH.HAJIFNABIFF OMNOFMEBLAD)
@@ -323,10 +351,14 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 			FMFBNHLMHPL_EventAprilFool.LCFOEDLCCON save = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.ILINBDKMAPM_EventAprilFool.FBCJICEPLED[dbAf.NGHKJOEDLIP.MOEKELIIDEO_SaveIdx];
 			AGLILDLEFDK = dbAf.NNMPGOAGEOL_Missions;
 			OLDFFDMPEBM = save.NNMPGOAGEOL;
-			if (save.MPCAGEPEJJJ_Key != dbAf.NGHKJOEDLIP.OCGFKMHNEOF_Key || save.EGBOHDFBAPB_End < dbAf.NGHKJOEDLIP.BONDDBOFBND_Start)
+			if (save.MPCAGEPEJJJ_Key != dbAf.NGHKJOEDLIP.OCGFKMHNEOF_Key
+				/* || save.EGBOHDFBAPB_End < dbAf.NGHKJOEDLIP.BONDDBOFBND_Start*/ // UMO : don't check date as event date are dynamically updated.
+				|| save.EGBOHDFBAPB_End == 0 || (save.NNMPGOAGEOL.Count == 0 || save.NNMPGOAGEOL[0].PPFNGGCBJKC_Id == 0) // UMO detect old save not initialized
+			)
 			{
 				save.LHPDDGIJKNB();
 				save.MPCAGEPEJJJ_Key = dbAf.NGHKJOEDLIP.OCGFKMHNEOF_Key;
+				save.EGBOHDFBAPB_End = dbAf.NGHKJOEDLIP.IDDBFFBPNGI;
 				save.LGADCGFMLLD_Step = 0;
 				save.BEBJKJKBOGH_Date = JHNMKKNEENE;
 				KOMAHOAEMEK(true);
@@ -356,7 +388,7 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 			EMEKFFHCHMH_End = dbAf.NGHKJOEDLIP.KNLGKBBIBOH_End;
 			PGIIDPEGGPI_EventId = dbAf.NGHKJOEDLIP.OBGBAOLONDD;
 			FBHONHONKGD_MusicSelectDesc = MAICAKMIBEM("music_select_desc", "");
-			GFIBLLLHMPD = 0;
+			GFIBLLLHMPD_AdventureId = 0;
 			CAKEOPLJDAF = 0;
 			LHAKGDAGEMM.Clear();
 			MNDFBBMNJGN = false;
@@ -387,7 +419,7 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 					NGOFCFJHOMI_Status = KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI/*6*/;
 					if(JHNMKKNEENE >= dbAf.NGHKJOEDLIP.JGMDAOACOJF)
 					{
-						NGOFCFJHOMI_Status = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/;
+						NGOFCFJHOMI_Status = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/;
 						if(JHNMKKNEENE >= dbAf.NGHKJOEDLIP.IDDBFFBPNGI)
 						{
 							NGOFCFJHOMI_Status = KGCNCBOKCBA.GNENJEHKMHD.DOAENCHBAEO/*11*/;

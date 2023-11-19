@@ -52,7 +52,7 @@ namespace XeApp.Game.Tutorial
 						});
 						if(f != null)
 						{
-							return f.CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ;
+							return f.CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1;
 						}
 					}
 				}
@@ -96,7 +96,7 @@ namespace XeApp.Game.Tutorial
 						//0xE4C030
 						return x.CMEJFJFOIIJ_QuestId == 1;
 					});
-					if(f != null && f.CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.CADDNFIKDLG/*3*/)
+					if(f != null && f.CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.CADDNFIKDLG_Received/*3*/)
 						return true;
 				}
 			}
@@ -223,11 +223,36 @@ namespace XeApp.Game.Tutorial
 		//public static IEnumerator Co_RaidUseFoldRadar(ButtonBase button, Func<bool> waitPopupWindowFunc, IEnumerator popupItemGetColoutine, Func<int> waitRaidBossEncountFunc) { }
 
 		//// RVA: 0xE4AB98 Offset: 0xE4AB98 VA: 0xE4AB98
-		//public static bool CanBeginnerMissionLiveClearMissionList(TransitionList.Type prevType) { }
+		public static bool CanBeginnerMissionLiveClearMissionList(TransitionList.Type prevType)
+		{
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsBeginnerLiveMission))
+			{
+				if (prevType < TransitionList.Type.EPISODE_SELECT)
+				{
+					if (prevType != TransitionList.Type.HOME && prevType != TransitionList.Type.MUSIC_SELECT && prevType != TransitionList.Type.EVENT_MUSIC_SELECT)
+						return false;
+
+				}
+				else if (prevType != TransitionList.Type.EVENT_QUEST && prevType != TransitionList.Type.EVENT_GODIVA && prevType != TransitionList.Type.EVENT_BATTLE)
+					return false;
+				FKMOKDCJFEN f = QuestUtility.m_beginnerViewList.Find((FKMOKDCJFEN x) =>
+				{
+					//0xE4C07C
+					return x.CMEJFJFOIIJ_QuestId == 1;
+				});
+				if (f != null && f.CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved)
+					return true;
+			}
+			return false;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF258 Offset: 0x6AF258 VA: 0x6AF258
 		//// RVA: 0xE4AE24 Offset: 0xE4AE24 VA: 0xE4AE24
-		//public static IEnumerator Co_BeginnerMissionLiveClearMissionList() { }
+		public static IEnumerator Co_BeginnerMissionLiveClearMissionList()
+		{
+			TodoLogger.LogError(0, "Co_BeginnerMissionLiveClearMissionList");
+			yield return null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF2D0 Offset: 0x6AF2D0 VA: 0x6AF2D0
 		//// RVA: 0xE4AEB8 Offset: 0xE4AEB8 VA: 0xE4AEB8
@@ -349,7 +374,7 @@ namespace XeApp.Game.Tutorial
 					});
 					if (f != null)
 					{
-						if(f.CMCKNKKCNDK_Status != FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ)
+						if(f.CMCKNKKCNDK_Status != FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1)
 							return false;
 						return true;
 					}

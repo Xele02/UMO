@@ -242,7 +242,7 @@ namespace XeApp.Game.Menu
 			if (PrevTransition != TransitionList.Type.STORY_SELECT && PrevTransition != TransitionList.Type.FRIEND_SELECT && PrevTransition != TransitionList.Type.EVENT_BATTLE && PrevTransition != TransitionList.Type.EVENT_GODIVA)
 				m_updateBaseScoreRatio = false;
 			m_eventCtrl = null;
-			if (Database.Instance.gameSetup.musicInfo.gameEventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL)
+			if (Database.Instance.gameSetup.musicInfo.gameEventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0)
 			{
 				TodoLogger.LogError(0, "Todo Event");
 			}

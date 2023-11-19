@@ -229,7 +229,20 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEC5818 Offset: 0xEC5818 VA: 0xEC5818
 		private void CallBackQuest()
 		{
-			TodoLogger.LogNotImplemented("CallBackQuest");
+			if(OnInterruptEvent != null && OnInterruptEvent(TransitionList.Type.QUEST))
+			{
+				mMenuButtons[5].buttonAnimeDisable = true;
+				return;
+			}
+			mMenuButtons[5].buttonAnimeDisable = false;
+			int cueId = (int)cs_se_boot.SE_BTN_005;
+			if (IsTopLevelScene(SceneGroupCategory.QUEST, TransitionList.Type.QUEST))
+			{
+				MenuScene.Instance.Mount(TransitionUniqueId.QUEST, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+				cueId = (int)cs_se_boot.SE_BTN_000;
+				MenuScene.Instance.StatusWindowControl.ResetHistory();
+			}
+			SoundManager.Instance.sePlayerBoot.Play(cueId);
 		}
 
 		// // RVA: 0xEC5A50 Offset: 0xEC5A50 VA: 0xEC5A50
@@ -241,7 +254,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEC5C88 Offset: 0xEC5C88 VA: 0xEC5C88
 		private void CallBackBack()
 		{
-			TodoLogger.LogNotImplemented("CallBackBack");
+			return;
 		}
 
 		// // RVA: 0xEC5C8C Offset: 0xEC5C8C VA: 0xEC5C8C

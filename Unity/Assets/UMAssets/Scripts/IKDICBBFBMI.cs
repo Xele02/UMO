@@ -1,4 +1,7 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 using XeApp.Game.Common;
 using XeApp.Game.Menu;
 
@@ -87,7 +90,7 @@ public abstract class IKDICBBFBMI_EventBase
 	private int HAJJBEFHPKG; // 0x90
 	private bool OEHCGLGNNPD; // 0x94
 	protected bool CMEOKJMCEBH; // 0x95
-	public int GFIBLLLHMPD; // 0x98
+	public int GFIBLLLHMPD_AdventureId; // 0x98
 	public int CAKEOPLJDAF; // 0x9C
 	public bool FKKDIDMGLMI; // 0xA0
 	public bool PLOOEECNHFB; // 0xA1
@@ -121,7 +124,7 @@ public abstract class IKDICBBFBMI_EventBase
 	public const string PKCHABKLDOC = "event_prologue_achv_item_id";
 	public const string HMEFMAPKOBF = "event_epilogue_achv_item_id";
 
-	public virtual OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL; } } //0x8DD514 DKHCGLCNKCD Slot: 4
+	public virtual OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0; } } //0x8DD514 DKHCGLCNKCD Slot: 4
 	// public int OENLHLCKMDI { get; } // ?
 	// public bool NBCFEEFEDHH { get; } // ?
 	// public bool BEGOPNADOJL { get; } // ?
@@ -135,10 +138,16 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8DD51C Offset: 0x8DD51C VA: 0x8DD51C Slot: 5
-	// public virtual string IFKKBHPMALH() { }
+	public virtual string IFKKBHPMALH()
+	{
+		return null;
+	}
 
 	// // RVA: 0x8DD524 Offset: 0x8DD524 VA: 0x8DD524 Slot: 6
-	// public virtual string DCODGEOEDPG() { }
+	public virtual string DCODGEOEDPG()
+	{ 
+		return null;
+	}
 
 	// // RVA: 0x8DD52C Offset: 0x8DD52C VA: 0x8DD52C Slot: 7
 	public virtual List<int> HEACCHAKMFG()
@@ -364,7 +373,22 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8DF144 Offset: 0x8DF144 VA: 0x8DF144 Slot: 22
-	// public virtual void FHGEJBKNBLP(List<int> CGCFENMHJIM) { }
+	public virtual void FHGEJBKNBLP(List<int> CGCFENMHJIM)
+	{
+		if(AGLILDLEFDK != null && OLDFFDMPEBM != null)
+		{
+			int cnt = AGLILDLEFDK.Count;
+			if(OLDFFDMPEBM.Count < cnt)
+				cnt = OLDFFDMPEBM.Count;
+			for(int i = 0; i < CGCFENMHJIM.Count; i++)
+			{
+				if(OLDFFDMPEBM[CGCFENMHJIM[i] - 1].EALOBDHOCHP_Stat == 2)
+				{
+					OLDFFDMPEBM[CGCFENMHJIM[i] - 1].JIOMCDGKIAF = 1;
+				}
+			}
+		}
+	}
 
 	// // RVA: 0x8DDBB0 Offset: 0x8DDBB0 VA: 0x8DDBB0
 	private int IOBGPMINKFI(List<AKIIJBEJOEP> NJEKJBDJKLH, List<IKCGAJKCPFN> KLGILMKOHOI)
@@ -700,10 +724,16 @@ public abstract class IKDICBBFBMI_EventBase
 	// public int CEICDKGEONG(int BMMPAHHEOJC, int MHADLGMJKGK) { }
 
 	// // RVA: 0x8E2288 Offset: 0x8E2288 VA: 0x8E2288
-	// public bool FBLGGLDPFDF() { }
+	public bool FBLGGLDPFDF()
+	{
+		return JLPDECMHLIM();
+	}
 
 	// // RVA: 0x8E2298 Offset: 0x8E2298 VA: 0x8E2298 Slot: 65
-	// protected virtual bool JLPDECMHLIM() { }
+	protected virtual bool JLPDECMHLIM()
+	{
+		return false;
+	}
 
 	// // RVA: 0x8E22A0 Offset: 0x8E22A0 VA: 0x8E22A0 Slot: 66
 	// public virtual void FGDDBFHGCGP(bool JKDJCFEBDHC, long JHNMKKNEENE = 0) { }
@@ -786,14 +816,38 @@ public abstract class IKDICBBFBMI_EventBase
 	// public virtual string DBEMCLMPCFA() { }
 
 	// // RVA: 0x8E2568 Offset: 0x8E2568 VA: 0x8E2568 Slot: 78
-	// public virtual long OEGAJJANHGL() { }
+	public virtual long OEGAJJANHGL()
+	{
+		return 0;
+	}
 
 	// // RVA: 0x8E2574 Offset: 0x8E2574 VA: 0x8E2574 Slot: 79
 	// public virtual bool GNGPNMHGDGE() { }
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6BBC94 Offset: 0x6BBC94 VA: 0x6BBC94
 	// // RVA: 0x8E257C Offset: 0x8E257C VA: 0x8E257C
-	// public IEnumerator EPOOEDJCBDN(Action<bool> GEIFEILEGGE) { }
+	public IEnumerator EPOOEDJCBDN_Co_CheckClosedEvent(Action<bool> GEIFEILEGGE)
+	{
+		//0x8E355C
+		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		if(IONOAFPLANN || time >= LJOHLEGGGMC)
+		{
+			IONOAFPLANN = false;
+			bool IMCBLDILPGA = false;
+			JHHBAFKMBDL.HHCJCDFCLOB.DNABPEOICIJ(() =>
+			{
+				//0x8E2A54
+				IMCBLDILPGA = true;
+			}, false);
+			yield return new WaitWhile(() =>
+			{
+				return !IMCBLDILPGA;
+			});
+			GEIFEILEGGE(true);
+		}
+		else
+			GEIFEILEGGE(false);
+	}
 
 	// // RVA: 0x8E2644 Offset: 0x8E2644 VA: 0x8E2644
 	public bool HJPNJBCJPNJ(KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL)

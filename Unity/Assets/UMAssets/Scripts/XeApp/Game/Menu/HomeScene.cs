@@ -141,11 +141,11 @@ namespace XeApp.Game.Menu
 			m_buttonGroup.onClickBingoButton = OnClickBingoView;
 			m_buttonGroup.Setup(time);
 			m_eventBanner.onClickBannerButton = OnClickEventBannerButton;
-			m_eventBanner.Setup(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/, false), time);
+			m_eventBanner.Setup(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/, false), time);
 			SetupPickup();
 			m_campaignBanner.onClickBannerButton = OnClickHomeBanner;
 			m_campaignBanner.Setup(m_pickupBannerList, m_bannerTexCache);
-			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp/*7*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ/*9*/);
+			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp/*7*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/);
 			if(ev == null)
 			{
 				m_spEventCtrl = null;
@@ -890,7 +890,15 @@ namespace XeApp.Game.Menu
 		// private void OnClickBeginnerLead() { }
 
 		// // RVA: 0x977868 Offset: 0x977868 VA: 0x977868
-		// private void OnClickMissionLead() { }
+		private void OnClickMissionLead()
+		{
+			if(!TryLobbyAnnounce())
+			{
+				QuestTopArgs arg = new QuestTopArgs(m_balloonLeadData.BGOCBNPGNKM);
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				MenuScene.Instance.Mount(TransitionUniqueId.QUEST, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+			}
+		}
 
 		// // RVA: 0x978578 Offset: 0x978578 VA: 0x978578
 		// private void OnClickStoryLead() { }
@@ -1319,7 +1327,41 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x978124 Offset: 0x978124 VA: 0x978124
 		private void OnClickBingoView(int _bingoId)
 		{
-			TodoLogger.LogNotImplemented("OnClickBingoView");
+			if(!TryLobbyAnnounce())
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				if(_bingoId > 0)
+				{
+					if(GNGMCIAIKMA.HHCJCDFCLOB != null)
+					{
+						int a1 = GNGMCIAIKMA.HHCJCDFCLOB.JBEDFJHAAFP(_bingoId, false);
+						bool b1 = GNGMCIAIKMA.HHCJCDFCLOB.KJNFBLAMJOH(_bingoId);
+						bool b2 = GNGMCIAIKMA.HHCJCDFCLOB.DOEGBMNNFKH(_bingoId);
+						bool b3 = false;
+						if(!b2)
+						{
+							b3 = !GNGMCIAIKMA.HHCJCDFCLOB.DHPLHALIDHH(_bingoId);
+						}
+						if(!(b3 && a1 < 1 && b1))
+						{
+							GNGMCIAIKMA.HHCJCDFCLOB.DJGFICMNGGP_SetBingoId(_bingoId);
+							GNGMCIAIKMA.HHCJCDFCLOB.BHFGBNNEMLI(_bingoId);
+							if(!GNGMCIAIKMA.HHCJCDFCLOB.IDKFAMEFCPD(_bingoId) && GNGMCIAIKMA.HHCJCDFCLOB.MLCGJAJCFDP(_bingoId, 0, 0) != 0)
+							{
+								MenuScene.Instance.Mount(TransitionUniqueId.QUEST_BINGOSELECT, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+							}
+							else
+							{
+								MenuScene.Instance.Mount(TransitionUniqueId.QUEST_BINGOMISSITON, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+							}
+						}
+						else
+						{
+							MenuScene.Instance.Mount(TransitionUniqueId.QUEST, new QuestTopArgs(PLADCDJLOBE.ENNOBKHBNCG.DIDJLIPNCKO_6), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+						}
+					}
+				}
+			}
 		}
 
 		// // RVA: 0x978038 Offset: 0x978038 VA: 0x978038
@@ -1782,7 +1824,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x97ACF0 Offset: 0x97ACF0 VA: 0x97ACF0
-		// private static string GetLeadBalloonDesc(PLADCDJLOBE leadData) { }
+		private static string GetLeadBalloonDesc(PLADCDJLOBE leadData)
+		{
+			if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(leadData.DEKECNIBBIB_ItemFullId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			{
+				int idx = leadData.KLMPFGOCBHC_Desc.IndexOf('\n');
+				if (idx > -1)
+					return leadData.KLMPFGOCBHC_Desc.Remove(idx);
+			}
+			return leadData.KLMPFGOCBHC_Desc;
+		}
 
 		// // RVA: 0x96FAF8 Offset: 0x96FAF8 VA: 0x96FAF8
 		private void SetupBeginnerLead()
@@ -1793,7 +1844,21 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x96FD5C Offset: 0x96FD5C VA: 0x96FD5C
 		private void SetupMissionLead()
 		{
-			TodoLogger.LogError(0, "SetupMissionLead");
+			m_leadBalloon.SetStyle(HomeBalloonText.Style.Mission);
+			m_leadBalloon.SetMessage(GetLeadBalloonDesc(m_balloonLeadData));
+			m_leadBalloon.SetClearMark(m_balloonLeadData.JDBLMAHMHJO_IsAchieved);
+			m_leadBalloon.onClickButton = OnClickMissionLead;
+			if (m_balloonLeadData.DEKECNIBBIB_ItemFullId == 0)
+				m_leadBalloon.SetExistsItem(false);
+			else
+			{
+				m_leadBalloon.SetExistsItem(true);
+				GameManager.Instance.ItemTextureCache.Load(m_balloonLeadData.DEKECNIBBIB_ItemFullId, (IiconTexture image) =>
+				{
+					//0x97D348
+					m_leadBalloon.SetItemIcon(image);
+				});
+			}
 		}
 
 		// // RVA: 0x96FFC0 Offset: 0x96FFC0 VA: 0x96FFC0
@@ -2419,11 +2484,7 @@ namespace XeApp.Game.Menu
 		// 	[CompilerGeneratedAttribute] // RVA: 0x6E452C Offset: 0x6E452C VA: 0x6E452C
 		// 	// RVA: 0x97D318 Offset: 0x97D318 VA: 0x97D318
 		// 	private void <SetupBeginnerLead>b__149_0(IiconTexture image) { }
-
-		// 	[CompilerGeneratedAttribute] // RVA: 0x6E453C Offset: 0x6E453C VA: 0x6E453C
-		// 	// RVA: 0x97D348 Offset: 0x97D348 VA: 0x97D348
-		// 	private void <SetupMissionLead>b__150_0(IiconTexture image) { }
-
+		
 		// 	[CompilerGeneratedAttribute] // RVA: 0x6E454C Offset: 0x6E454C VA: 0x6E454C
 		// 	// RVA: 0x97D378 Offset: 0x97D378 VA: 0x97D378
 		// 	private void <SetupStoryDivaLead>b__152_0(IiconTexture image) { }
@@ -2489,7 +2550,7 @@ namespace XeApp.Game.Menu
 
 			Database.Instance.gameSetup.teamInfo.valkyrieId = 0;
 			Database.Instance.gameSetup.teamInfo.prismValkyrieId = 0;
-			Database.Instance.gameSetup.musicInfo.SetupInfoByFreeMusic(freemusicNum + 1, (Difficulty.Type) UnityEngine.Random.Range(0, (int)Difficulty.Type.Num)/*difficulty*/, false, new GameSetupData.MusicInfo.InitFreeMusicParam(), OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL, true, UnityEngine.Random.Range(0, 2) != 0, "", 0, 0, -1, 0, 0, numDiva);
+			Database.Instance.gameSetup.musicInfo.SetupInfoByFreeMusic(freemusicNum + 1, (Difficulty.Type) UnityEngine.Random.Range(0, (int)Difficulty.Type.Num)/*difficulty*/, false, new GameSetupData.MusicInfo.InitFreeMusicParam(), OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0, OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0, true, UnityEngine.Random.Range(0, 2) != 0, "", 0, 0, -1, 0, 0, numDiva);
 			GameSetupData.TeamInfo team = Database.Instance.gameSetup.teamInfo;
 			for(int i = 0; i < 5; i++)
 			{
