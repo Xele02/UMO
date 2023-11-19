@@ -4,7 +4,7 @@ public class JBMPOAAMGNB { }
 public class JBMPOAAMGNB_Base : KLFDBFMNLBL_ServerSaveBlock
 {
 	private const int ECFEMKGFDCE = 2;
-	private const int JDNKJIFMONK = 1;
+	public const int JDNKJIFMONK_CurrentVersion = 2;
 	private static string IMHFIDMLLNI = JpStringLiterals.StringLiteral_9806; // 0x0
 	private static string NBPICMBNPPB = JpStringLiterals.StringLiteral_9807; // 0x4
 	public static bool NICIAENCMEG = false; // 0x8
@@ -27,7 +27,7 @@ public class JBMPOAAMGNB_Base : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1421668 Offset: 0x1421668 VA: 0x1421668 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		LLNDMKBBNIJ_Version = 1;
+		LLNDMKBBNIJ_Version = JDNKJIFMONK_CurrentVersion;
 		OPFGFINHFCE_PlayerName = IMHFIDMLLNI;
 		AFPONJEJKCO_RenameDate = 0;
 		CMKKFCGBILD_Prof = NBPICMBNPPB;

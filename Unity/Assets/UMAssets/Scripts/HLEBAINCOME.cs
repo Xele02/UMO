@@ -20,7 +20,11 @@ public class HLEBAINCOME_EventScore : IKDICBBFBMI_EventBase
     }
 
 	// // RVA: 0x15EAB88 Offset: 0x15EAB88 VA: 0x15EAB88 Slot: 5
-	// public override string IFKKBHPMALH() { }
+	public override string IFKKBHPMALH()
+	{
+		TodoLogger.LogError(0, "IFKKBHPMALH");
+		return null;
+	}
 
 	// // RVA: 0x15EAD10 Offset: 0x15EAD10 VA: 0x15EAD10 Slot: 7
 	public override List<int> HEACCHAKMFG()

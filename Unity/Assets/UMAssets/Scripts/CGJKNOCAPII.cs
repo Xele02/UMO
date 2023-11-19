@@ -113,6 +113,7 @@ public class CGJKNOCAPII
 						{
 							l2.Add(data);
 						}
+						break;
 					}
 				}
 			}

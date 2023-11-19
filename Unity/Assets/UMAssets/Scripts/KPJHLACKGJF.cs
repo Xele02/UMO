@@ -31,7 +31,11 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
     }
 
 	// // RVA: 0x1133250 Offset: 0x1133250 VA: 0x1133250 Slot: 5
-	// public override string IFKKBHPMALH() { }
+	public override string IFKKBHPMALH()
+	{
+		TodoLogger.LogError(0, "IFKKBHPMALH");
+		return null;
+	}
 
 	// // RVA: 0x11333D8 Offset: 0x11333D8 VA: 0x11333D8 Slot: 7
 	public override List<int> HEACCHAKMFG()
@@ -327,7 +331,11 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 	// public override string DBEMCLMPCFA() { }
 
 	// // RVA: 0x1141670 Offset: 0x1141670 VA: 0x1141670 Slot: 78
-	// public override long OEGAJJANHGL() { }
+	public override long OEGAJJANHGL()
+	{
+		TodoLogger.LogError(0, "OEGAJJANHGL");
+		return 0;
+	}
 
 	// [CompilerGeneratedAttribute] // RVA: 0x6BCED4 Offset: 0x6BCED4 VA: 0x6BCED4
 	// // RVA: 0x11417FC Offset: 0x11417FC VA: 0x11417FC

@@ -26,6 +26,7 @@ class JpStringLiterals
 	public const string StringLiteral_9773 = "SNSミッション達成報酬"; //0x03bb236c
 	public const string StringLiteral_9774 = "デビューミッション達成報酬"; // 03bb2370
 	public const string StringLiteral_9775 = "ノーマルミッション達成報酬"; //0x03bb2374
+	public const string StringLiteral_9777 = "イベントミッション達成報酬"; //0x03bb237c
 	public const string StringLiteral_9787 = "<color=yellow>期間限定エナジーアイテムの削除</color>"; // 0x03bb23a4
 	public const string StringLiteral_9788 = "<color=pink>ログイン日数="; // 0x03bb23a8
 	public const string StringLiteral_9793 = "エナジー"; // 0x03bb23bc

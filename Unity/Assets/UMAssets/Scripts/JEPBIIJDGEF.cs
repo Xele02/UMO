@@ -181,7 +181,120 @@ public class JEPBIIJDGEF_EventInfo
 	// public IKDICBBFBMI IMJNOBGABHN(int EKANGPODCEP) { }
 
 	// // RVA: 0x1C3A430 Offset: 0x1C3A430 VA: 0x1C3A430
-	// public IKDICBBFBMI HADLGKFCGLK(ulong MKDDOJOADMF) { }
+	public IKDICBBFBMI_EventBase HADLGKFCGLK(ulong MKDDOJOADMF)
+	{
+		string JOPOPMLFINI = "";
+		switch(MKDDOJOADMF)
+		{
+			case 0x10:
+				JOPOPMLFINI = "event_collection_a";
+				break;
+			case 0x20:
+				JOPOPMLFINI = "event_collection_b";
+				break;
+			case 0x40:
+				JOPOPMLFINI = "event_collection_c";
+				break;
+			case 0x80:
+				JOPOPMLFINI = "event_quest_a";
+				break;
+			case 0x100:
+				JOPOPMLFINI = "event_quest_b";
+				break;
+			case 0x200:
+				JOPOPMLFINI = "event_quest_c";
+				break;
+			case 0x400:
+				JOPOPMLFINI = "event_battle_a";
+				break;
+			case 0x800:
+				JOPOPMLFINI = "event_battle_b";
+				break;
+			case 0x1000:
+				JOPOPMLFINI = "event_battle_c";
+				break;
+			case 0x2000:
+				JOPOPMLFINI = "event_mission_a";
+				break;
+			case 0x4000:
+				JOPOPMLFINI = "event_mission_b";
+				break;
+			case 0x8000:
+				JOPOPMLFINI = "event_mission_c";
+				break;
+			case 0x10000:
+				JOPOPMLFINI = "event_sp_a";
+				break;
+			case 0x20000:
+				JOPOPMLFINI = "event_sp_b";
+				break;
+			case 0x40000:
+				JOPOPMLFINI = "event_sp_c";
+				break;
+			case 0x80000:
+				JOPOPMLFINI = "event_box_gacha_a";
+				break;
+			case 0x100000:
+				JOPOPMLFINI = "event_box_gacha_b";
+				break;
+			case 0x200000:
+				JOPOPMLFINI = "event_box_gacha_c";
+				break;
+			case 0x400000:
+				JOPOPMLFINI = "event_april_fool_a";
+				break;
+			case 0x800000:
+				JOPOPMLFINI = "event_april_fool_b";
+				break;
+			case 0x1000000:
+				JOPOPMLFINI = "event_april_fool_c";
+				break;
+			case 0x2000000:
+				JOPOPMLFINI = "event_april_fool_d";
+				break;
+			case 0x4000000:
+				JOPOPMLFINI = "event_april_fool_e";
+				break;
+			case 0x8000000:
+				JOPOPMLFINI = "event_april_fool_f";
+				break;
+			case 0x10000000:
+				JOPOPMLFINI = "event_april_fool_g";
+				break;
+			case 0x20000000:
+				JOPOPMLFINI = "event_april_fool_h";
+				break;
+			case 0x40000000:
+				JOPOPMLFINI = "event_april_fool_i";
+				break;
+			case 0x80000000:
+				JOPOPMLFINI = "event_raid_a";
+				break;
+			case 0x100000000:
+				JOPOPMLFINI = "event_raid_b";
+				break;
+			case 0x200000000:
+				JOPOPMLFINI = "event_raid_c";
+				break;
+			case 0x400000000:
+				JOPOPMLFINI = "event_raid_d";
+				break;
+			case 0x4000000000:
+				JOPOPMLFINI = "event_godiva_a";
+				break;
+			case 0x8000000000:
+				JOPOPMLFINI = "event_godiva_b";
+				break;
+			case 0x10000000000:
+				JOPOPMLFINI = "event_godiva_c";
+				break;
+		}
+		return MPEOOINCGEN.Find((IKDICBBFBMI_EventBase PKLPKMLGFGK) =>
+		{
+			//0x1C40904
+			return PKLPKMLGFGK.JOPOPMLFINI == JOPOPMLFINI;
+		});
+	}
 
 	// // RVA: 0x1C3AA14 Offset: 0x1C3AA14 VA: 0x1C3AA14
 	public bool GPKMEOKPDIP(int PGIIDPEGGPI)
