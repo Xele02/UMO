@@ -16,7 +16,7 @@ Fonctionality :
 
 # Support
 
-You can join the discrod server for support and more information on release : https://discord.gg/QsUgY7pMs . (Open an issue if the link expire and I forget to update it)
+You can join the discrod server for support and more information on release : https://discord.gg/xeT57fyayE .
 
 # Used library :
 
