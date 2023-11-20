@@ -280,11 +280,11 @@ namespace XeApp.Game.Menu
 					yield return null;
 			}
 			yield return null;
-			while(m_controller.IsAllLayoutPlaying())
+			while(m_controller.IsAllLayoutIsPlaying())
 				yield return null;
 			m_divaController.Initialize(false);
 			m_controller.SetDivaController(m_divaController);
-			m_controller.OnEndAllDoneAction = Co_OnEndAllDoneAction;
+			m_controller.OnEndAllDoneAction = Co_OnEndAllDoneAction();
 			yield return null;
 			while(!m_divaController.IsModelLoad)
 				yield return null;
@@ -383,7 +383,7 @@ namespace XeApp.Game.Menu
 			}
 			//LAB_0170dfa8
 			SoundManager.Instance.bgmPlayer.ContinuousPlay(1025, 1);
-			m_controller.LayoutAllEnter();
+			m_controller.layoutAllEnter();
 			KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.LHPDDGIJKNB();
 			KDHGBOOECKC.HHCJCDFCLOB.CPDBAIILNPL(true);
 			yield return null;
@@ -696,7 +696,7 @@ namespace XeApp.Game.Menu
 			yield return null;
 			while (m_controller.IsAllLayoutIsPlaying())
 				yield return null;
-			while (m_divaController.IsLeaving())
+			while (m_divaController.IsLeaving)
 				yield return null;
 			m_controller.DestroyScene();
 			if(_isGotoHome)

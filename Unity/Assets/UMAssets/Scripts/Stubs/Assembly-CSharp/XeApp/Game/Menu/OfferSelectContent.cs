@@ -386,7 +386,7 @@ namespace XeApp.Game.Menu
 			s.ItemName = ItemName;
 			s.ItemDetail = ItemDetail;
 			s.ItemId = id;
-			s.WindowSize = 1;
+			s.WindowSize = SizeType.Middle;
 			s.SetParent(transform);
 			s.Buttons = new ButtonInfo[1] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative } };
 			PopupWindowManager.Show(s, (PopupWindowControl cont, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
@@ -415,7 +415,7 @@ namespace XeApp.Game.Menu
 						//0x1864150
 						m_currentRemainingTime = limit;
 						SetTimeText(AfterClearTime, limit);
-						if(!CIOECGOMILE.HHCJCDFCLOB.KONHMOLMOCI)
+						if(!CIOECGOMILE.HHCJCDFCLOB.KONHMOLMOCI_IsSaving)
 						{
 							if (buttonStateCheck(limit) && !IsServerUpdateEnd && !IsServerUpdating)
 								ServerUpdate();
@@ -567,7 +567,7 @@ namespace XeApp.Game.Menu
 				{
 					SetTimeText(AfterClearTime, m_currentRemainingTime);
 				}
-				while(CIOECGOMILE.HHCJCDFCLOB.KONHMOLMOCI)
+				while(CIOECGOMILE.HHCJCDFCLOB.KONHMOLMOCI_IsSaving)
 				{
 					yield return null;
 				}

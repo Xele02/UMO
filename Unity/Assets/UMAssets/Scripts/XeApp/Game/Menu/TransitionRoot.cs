@@ -914,7 +914,7 @@ namespace XeApp.Game.Menu
 					_.Release();
 				});
 				m_newMarkIconList.Clear();
-				while(CIOECGOMILE.HHCJCDFCLOB.KONHMOLMOCI)
+				while(CIOECGOMILE.HHCJCDFCLOB.KONHMOLMOCI_IsSaving)
 					yield return null;
 				if(isSaveError)
 				{

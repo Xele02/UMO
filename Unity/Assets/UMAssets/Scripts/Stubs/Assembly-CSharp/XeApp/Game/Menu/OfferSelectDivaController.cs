@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -35,7 +36,7 @@ namespace XeApp.Game.Menu
 		private bool IsInCamera; // 0x59
 		private Camera HomeDivaCamera; // 0x5C
 
-		//public bool IsInTransition { get; } 0x170182C
+		public bool IsInTransition { get { return m_divaObject.IsInTransition; } } //0x170182C
 
 		// RVA: 0x17032F0 Offset: 0x17032F0 VA: 0x17032F0
 		private void Start()
@@ -176,11 +177,25 @@ namespace XeApp.Game.Menu
 		//private IEnumerator CoCrossChengeLeave(Action act) { }
 
 		//// RVA: 0x170170C Offset: 0x170170C VA: 0x170170C
-		//public void CrossChangeIdle(Action ChengeEndAction) { }
+		public void CrossChangeIdle(Action ChengeEndAction)
+		{
+			if (!IsModelLoad)
+				return;
+			this.StartCoroutineWatched(Co_CrossChengeIdle(ChengeEndAction));
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FB81C Offset: 0x6FB81C VA: 0x6FB81C
 		//// RVA: 0x170413C Offset: 0x170413C VA: 0x170413C
-		//private IEnumerator Co_CrossChengeIdle(Action ChengeEndAction) { }
+		private IEnumerator Co_CrossChengeIdle(Action ChengeEndAction)
+		{
+			//0x1704BB4
+			DivaStopVoice();
+			m_simpleDivaAnimation.CrossFadeIdel("simple_idle");
+			while (!m_simpleDivaAnimation.IsPlayingIdle())
+				yield return null;
+			if (ChengeEndAction != null)
+				ChengeEndAction();
+		}
 
 		// RVA: 0x1704204 Offset: 0x1704204 VA: 0x1704204
 		public void DivaPlayEntry()
@@ -296,7 +311,7 @@ namespace XeApp.Game.Menu
 			do
 			{
 				ct = Mathf.Clamp(ct + Time.deltaTime, 0, time);
-				m_divaCamera.transform.rotation = Quaternion.Euler(DefaultCamRot.x, Math.Tween.Evaluate(Math.Tween.EasingFunc.Liner, endNormalizePos, beginNormalizePos, ct / time), DefaultCamRot.z);
+				m_divaCamera.transform.rotation = Quaternion.Euler(DefaultCamRot.x, XeSys.Math.Tween.Evaluate(XeSys.Math.Tween.EasingFunc.Liner, endNormalizePos, beginNormalizePos, ct / time), DefaultCamRot.z);
 				if (ct >= time)
 					break;
 				yield return null;
@@ -333,7 +348,7 @@ namespace XeApp.Game.Menu
 			do
 			{
 				ct = Mathf.Clamp(ct + Time.deltaTime, 0, time);
-				m_divaCamera.transform.rotation = Quaternion.Euler(DefaultCamRot.x, Math.Tween.Evaluate(Math.Tween.EasingFunc.Liner, beginNormalizePos, endNormalizePos, ct / time), DefaultCamRot.z);
+				m_divaCamera.transform.rotation = Quaternion.Euler(DefaultCamRot.x, XeSys.Math.Tween.Evaluate(XeSys.Math.Tween.EasingFunc.Liner, beginNormalizePos, endNormalizePos, ct / time), DefaultCamRot.z);
 				if (ct >= time)
 					break;
 				yield return null;

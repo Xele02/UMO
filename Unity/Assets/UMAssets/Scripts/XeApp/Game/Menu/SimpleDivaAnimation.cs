@@ -210,7 +210,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC4B4EC Offset: 0xC4B4EC VA: 0xC4B4EC
-		//public void CrossFadeIdel(string stateName) { }
+		public void CrossFadeIdel(string stateName)
+		{
+			m_divaObject.CrossFadeIdle(stateName);
+		}
 
 		//// RVA: 0xC4B520 Offset: 0xC4B520 VA: 0xC4B520
 		public bool IsPlayingEntry()
