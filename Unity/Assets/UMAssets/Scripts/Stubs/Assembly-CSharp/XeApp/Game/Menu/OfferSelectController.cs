@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 using XeApp.Core;
 using XeApp.Game.Common;
 using XeApp.Game.Tutorial;
@@ -177,9 +178,9 @@ namespace XeApp.Game.Menu
 			});
 			m_orderNumLayout.AllGet_ButtonHide(IsBeginner);
 			if (!IsBeginner)
-				m_orderNumLayout.m_orderLayout.enabled = true;
+				m_orderNumLayout.OrderNumShow();
 			else
-				m_orderNumLayout.m_orderLayout.enabled = false;
+				m_orderNumLayout.OrderNumHide();
 			m_orderListLayout.Initialize();
 			m_orderListLayout.List.Apply();
 			m_orderListLayout.List.SetContentEscapeMode(true);
@@ -628,14 +629,14 @@ namespace XeApp.Game.Menu
 							CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
 							{
 								//0x186D0AC
-								ILCCJNDFFOB.HHCJCDFCLOB.FDFMKBGPALI(target.FGHGMHPNEMG_Category, target.PPFNGGCBJKC, 210002, fastCompleteItemData.ADPPAIPFHML_UseCount, KDHGBOOECKC.HHCJCDFCLOB.CKINCELGOEE_GetNumFastProgramAvaiable(), rest_time);
+								ILCCJNDFFOB.HHCJCDFCLOB.FDFMKBGPALI(target.FGHGMHPNEMG_Category, target.PPFNGGCBJKC, 210002, fastCompleteItemData.ADPPAIPFHML_UseCount, KDHGBOOECKC.HHCJCDFCLOB.CKINCELGOEE_GetNumFastProgramAvaiable(), (int)rest_time);
 								KDHGBOOECKC.HHCJCDFCLOB.BCJNPJKGNHF(1);
 								IsSaveSuccess = true;
 							}, () =>
 							{
 								//0x186B254
 								MenuScene.Instance.GotoTitle();
-							});
+							}, null);
 						}
 						else
 						{
@@ -837,7 +838,7 @@ namespace XeApp.Game.Menu
 				bool b = false;
 				KDHGBOOECKC.HHCJCDFCLOB.MOOJLBNGNOB(allOfferData[i].FGHGMHPNEMG_Category, allOfferData[i].PPFNGGCBJKC, BOPFPIHGJMD.IGHPDAGKIKO.CADDNFIKDLG_4_Complete);
 				KDHGBOOECKC.HHCJCDFCLOB.PGGLEDMJEHB(allOfferData[i].FGHGMHPNEMG_Category, allOfferData[i].PPFNGGCBJKC, 1);
-				KDHGBOOECKC.HHCJCDFCLOB.EBJOGGIHHBA(JDDGPJDKHNE.HHCJCDFCLOB, allOfferData[i].FGHGMHPNEMG_Category, allOfferData[i].PPFNGGCBJKC, out b);
+				KDHGBOOECKC.HHCJCDFCLOB.EBJOGGIHHBA(CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL, allOfferData[i].FGHGMHPNEMG_Category, allOfferData[i].PPFNGGCBJKC, ref b);
 				if (b)
 					isLimit = true;
 				JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.HEFIKPAHCIA(GBNDFCEDNMG.CJDGJFINBFH.PMMOLBAAHEM_31);
@@ -848,22 +849,38 @@ namespace XeApp.Game.Menu
 					{
 						ViewOfferGetItem d = new ViewOfferGetItem();
 						d.itemId = 10001;
-						d.itemType = 4;
+						d.itemType = ViewOfferGetItem.ItemType.NUM;
 						d.itemNum = allOfferData[i].KPFHAMNOIAG;
 						item.ItemList.Add(d);
 					}
 				}
 				compensationList.Add(item);
 				contentLayoutList[i].SetSuccessIcon(item.IsGreatSuccess);
-				ILCCJNDFFOB.HHCJCDFCLOB.ONPIDKLOPIP(allOfferData[i].FGHGMHPNEMG_Category, allOfferData[i].PPFNGGCBJKC, IsGreatSuccess);
+				ILCCJNDFFOB.HHCJCDFCLOB.ONPIDKLOPIP(allOfferData[i].FGHGMHPNEMG_Category, allOfferData[i].PPFNGGCBJKC, item.IsGreatSuccess ? 2 : 1);
 			}
 			OfferAllRecvItemPopup.SetLastCompensationList(compensationList);
 			MenuScene.SaveWithAchievement(0x1000000000, () =>
 			{
-				Method$XeApp.Game.Menu.OfferSelectController.<>c__DisplayClass43_0.<Co_OnAllDoneActionButton>b__0()
+				//0x186D520
+				JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
+				isSave = true;
+				GameManager.Instance.ResetViewPlayerData();
 			}, () =>
 			{
-				Method$XeApp.Game.Menu.OfferSelectController.<>c__DisplayClass43_0.<Co_OnAllDoneActionButton>b__1()
+				//0x186D5EC
+				SoundManager.Instance.sePlayerMenu.Stop();
+				JDDGPJDKHNE.HHCJCDFCLOB.FOKEGEOKGDG();
+				JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
+				MenuScene.Instance.InputEnable();
+				ItemCheck.ButtonEnable();
+				m_orderNumLayout.AllGetButtonActEnable();
+				for(int j = 0; j < contentLayoutList.Count; j++)
+				{
+					Destroy(contentLayoutList[j].gameObject);
+				}
+				Destroy(connectLayout.gameObject);
+				Destroy(bgLayout.gameObject);
+				Destroy(bgButtonLayout.gameObject);
 			});
 			while(!GameManager.Instance.transmissionIcon.activeSelf)
 				yield return null;
@@ -872,12 +889,15 @@ namespace XeApp.Game.Menu
 				yield return null;
 			bool done = false;
 			bool err = false;
-			IMCBBOAFION.NPIJAIOCACL(() =>
+			PBJPACKDIIB.NPIJAIOCACL(() =>
 			{
-				Method$XeApp.Game.Menu.OfferSelectController.<>c__DisplayClass43_1.<Co_OnAllDoneActionButton>b__3()
+				//0x186D900
+				done = true;
 			}, () =>
 			{
-				Method$XeApp.Game.Menu.OfferSelectController.<>c__DisplayClass43_1.<Co_OnAllDoneActionButton>b__4()
+				//0x186D90C
+				done = true;
+				err = true;
 			});
 			while (!done)
 				yield return null;
@@ -919,7 +939,9 @@ namespace XeApp.Game.Menu
 			bool isClick = false;
 			bgLayout.m_okButton.AddOnClickCallback(() =>
 			{
-				Method$XeApp.Game.Menu.OfferSelectController.<>c__DisplayClass43_2.<Co_OnAllDoneActionButton>b__5()
+				//0x186D920
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				isClick = true;
 			});
 			while (!isClick)
 				yield return null;
@@ -934,7 +956,7 @@ namespace XeApp.Game.Menu
 			if(m_orderListLayout != null)
 			{
 				m_orderListLayout.InitializeBadge();
-				this.StartCoroutineWatched(m_orderListLayout.Co_StartListUpdate());
+				m_orderListLayout.StartListUpdate();
 			}
 			bool b2 = KDHGBOOECKC.HHCJCDFCLOB.PPPLNJCFAID();
 			KDHGBOOECKC.HHCJCDFCLOB.JPNPPIHOJFC(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime());
@@ -1089,7 +1111,7 @@ namespace XeApp.Game.Menu
 			//0x1702E8C
 			IsOrderInduction = true;
 			//CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DAEJHMCMFJD_Offer
-			ButtonBase[] btns = m_orderListLayout.m_scrollList.ScrollObjects[0].GetComponentsInChildren<ButtonBase>();
+			ButtonBase[] btns = m_orderListLayout.List.ScrollObjects[0].GetComponentsInChildren<ButtonBase>();
 			ButtonBase b = null;
 			for (int i = 0; i < btns.Length; i++)
 			{
@@ -1109,7 +1131,18 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FABAC Offset: 0x6FABAC VA: 0x6FABAC
 		//// RVA: 0x1869A1C Offset: 0x1869A1C VA: 0x1869A1C
-		//private IEnumerator Co_GotoSelectFormation(int index) { }
+		private IEnumerator Co_GotoSelectFormation(int index)
+		{
+			//0x186FEE4
+			if(KDHGBOOECKC.HHCJCDFCLOB != null)
+			{
+				KDHGBOOECKC.HHCJCDFCLOB.JPHPEIFPKDL(viewList[index].FGHGMHPNEMG_Category, viewList[index].PPFNGGCBJKC);
+			}
+			yield return KDHGBOOECKC.HHCJCDFCLOB.FMGMIKPJNKG_Co_wait(MOTION_WAIT_TIME, false, null);
+			MenuScene.Instance.RaycastEnable();
+			OfferFormationArgs args = new OfferFormationArgs(viewList[index], ItemCheck, m_divaController);
+			MenuScene.Instance.Call(TransitionList.Type.OFFER_FORMATION, args, true);
+		}
 
 		//// RVA: 0x1865AE0 Offset: 0x1865AE0 VA: 0x1865AE0
 		public void SetViewList(OfferSelectList.OfferSelectTab tab, bool IsListUpdata = false)
@@ -1155,7 +1188,7 @@ namespace XeApp.Game.Menu
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 			};
-			s.WindowSize = 0;
+			s.WindowSize = SizeType.Small;
 			s.IsCaption = false;
 			s.nextPlatoonNum = KDHGBOOECKC.HHCJCDFCLOB.JGFHJPGJJHP();
 			s.ReleasePlatoonNum = viewOfferData.JGFHJPGJJHP() - 1;
@@ -1263,8 +1296,8 @@ namespace XeApp.Game.Menu
 			s.popupMsg = label;
 			s.preDiff = preLv;
 			s.nextDiff = nextLv;
-			s.WindowSize = 0;
-			s.ButtonInfo = new ButtonInfo[1]
+			s.WindowSize = SizeType.Small;
+			s.Buttons = new ButtonInfo[1]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 			};
@@ -1282,8 +1315,8 @@ namespace XeApp.Game.Menu
 			s.IsCaption = false;
 			s.nextPlatoonNum = prePlatoon;
 			s.ReleasePlatoonNum = nextPlatoon;
-			s.WindowSize = 0;
-			s.ButtonInfo = new ButtonInfo[1]
+			s.WindowSize = SizeType.Small;
+			s.Buttons = new ButtonInfo[1]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 			};
@@ -1435,13 +1468,13 @@ namespace XeApp.Game.Menu
 			int i; // 0x28
 
 			//0x16FE470
-			if(m_orderListLayout.m_scrollList.ScrollObjects.Count < 1)
+			if(m_orderListLayout.List.ScrollObjects.Count < 1)
 			{
 				operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_vfo_list_layout_root");
 				yield return operation;
 				List<SwapScrollListContent> contentList = new List<SwapScrollListContent>();
 				LayoutUGUIRuntime baseRuntime = null;
-				poolSize = m_orderListLayout.m_scrollList.ScrollObjectCount;
+				poolSize = m_orderListLayout.List.ScrollObjectCount;
 				yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) =>
 				{
 					//0x186E364
@@ -1465,7 +1498,7 @@ namespace XeApp.Game.Menu
 				{
 					while (!contentList[i].IsLoaded())
 						yield return null;
-					m_orderListLayout.m_scrollList.AddScrollObject(contentList[i]);
+					m_orderListLayout.List.AddScrollObject(contentList[i]);
 				}
 				operation = null;
 			}
@@ -1473,7 +1506,98 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FB05C Offset: 0x6FB05C VA: 0x6FB05C
 		//// RVA: 0x186A94C Offset: 0x186A94C VA: 0x186A94C
-		//private IEnumerator Co_LoadAssetsAllDoneLayout(string bundleName, Font font, List<HEFCLPGPMLK.AAOPGOGGMID> compOfferInfo, Action<OfferAllRecvBgLayout, OfferAllRecvBgButton, OfferAllRecvConnectLayout, List<OfferAllRecvContentLayout>> loadSuccess) { }
+		private IEnumerator Co_LoadAssetsAllDoneLayout(string bundleName, Font font, List<HEFCLPGPMLK.AAOPGOGGMID> compOfferInfo, Action<OfferAllRecvBgLayout, OfferAllRecvBgButton, OfferAllRecvConnectLayout, List<OfferAllRecvContentLayout>> loadSuccess)
+		{
+			AssetBundleLoadLayoutOperationBase operation; // 0x28
+			int poolSize; // 0x2C
+			int i; // 0x30
+
+			//0x16FCF74
+			OfferAllRecvBgLayout offerGetAllBg = null;
+			OfferAllRecvBgButton offerGetAllBgButton = null;
+			OfferAllRecvConnectLayout offerAllRecvConnect = null;
+			List<OfferAllRecvContentLayout> offerGetAllContentList = new List<OfferAllRecvContentLayout>();
+			ScrollRect scrollRect = null;
+			operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_vfo_result_bg_layout_root");
+			yield return operation;
+			yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) =>
+			{
+				//0x186E530
+				instance.transform.SetParent(transform.parent, false);
+				offerGetAllBg = instance.GetComponent<OfferAllRecvBgLayout>();
+				scrollRect = instance.GetComponentInChildren<ScrollRect>(true);
+			}));
+			while (!offerGetAllBg.IsLoaded())
+				yield return null;
+			operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_vfo_result_btn_layout_root");
+			yield return operation;
+			yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) =>
+			{
+				//0x186E668
+				instance.transform.SetParent(transform.parent, false);
+				offerGetAllBgButton = instance.GetComponent<OfferAllRecvBgButton>();
+			}));
+			while (!offerGetAllBgButton.IsLoaded())
+				yield return null;
+			offerGetAllBg.m_okButton = offerGetAllBgButton.GetComponentInChildren<ActionButton>(true);
+			offerGetAllBg.SetOkButtonHidden(true);
+			operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_vfo_connecting_layout_root");
+			yield return operation;
+			yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) =>
+			{
+				//0x186E76C
+				instance.transform.SetParent(transform.parent, false);
+				offerAllRecvConnect = instance.GetComponent<OfferAllRecvConnectLayout>();
+			}));
+			while (!offerAllRecvConnect.IsLoaded())
+				yield return null;
+			LayoutUGUIRuntime baseRuntime = null;
+			operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_vfo_result_layout_root");
+			yield return operation;
+			yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) =>
+			{
+				//0x186E870
+				baseRuntime = instance.GetComponent<LayoutUGUIRuntime>();
+				baseRuntime.name = baseRuntime.name.Replace("(Clone)", "_00");
+				instance.transform.SetParent(scrollRect.content, false);
+				offerGetAllContentList.Add(instance.GetComponent<OfferAllRecvContentLayout>());
+			}));
+			AssetBundleManager.UnloadAssetBundle(bundleName, false);
+			poolSize = offerGetAllBg.List.ScrollObjectCount;
+			for(i = 1; i < poolSize; i++)
+			{
+				LayoutUGUIRuntime r = Instantiate(baseRuntime);
+				r.name = r.name.Replace("00", i.ToString("D2"));
+				r.IsLayoutAutoLoad = false;
+				r.Layout = baseRuntime.Layout.DeepClone();
+				r.UvMan = baseRuntime.UvMan;
+				r.LoadLayout();
+				offerGetAllContentList.Add(r.GetComponent<OfferAllRecvContentLayout>());
+			}
+			HEFCLPGPMLK view = new HEFCLPGPMLK();
+			compOfferInfo.Sort((HEFCLPGPMLK.AAOPGOGGMID a, HEFCLPGPMLK.AAOPGOGGMID b) =>
+			{
+				//0x186EA3C
+				return view.LLMEKDNIOEF(a.FGHGMHPNEMG_Category, a.PPFNGGCBJKC) - view.LLMEKDNIOEF(b.FGHGMHPNEMG_Category, b.PPFNGGCBJKC);
+			});
+			for(i = 0; i < compOfferInfo.Count; i++)
+			{
+				while (!offerGetAllContentList[i].IsLoaded())
+					yield return null;
+				offerGetAllContentList[i].gameObject.transform.SetParent(scrollRect.content, false);
+				HEFCLPGPMLK data = new HEFCLPGPMLK();
+				int a = data.LLMEKDNIOEF(compOfferInfo[i].FGHGMHPNEMG_Category, compOfferInfo[i].PPFNGGCBJKC);
+				offerGetAllContentList[i].Setup(data.PMFIOHGEPPD(a, true), compOfferInfo[i], data.NPMKEEANPBE(a));
+				while (!offerGetAllContentList[i].IsSetup())
+					yield return null;
+			}
+			for(i = 0; i < poolSize; i++)
+			{
+				offerGetAllContentList[i].Setup();
+				offerGetAllBg.List.AddScrollObject(offerGetAllContentList[i]);
+			}
+			loadSuccess(offerGetAllBg, offerGetAllBgButton, offerAllRecvConnect, offerGetAllContentList);
+		}
 
 		// RVA: 0x186AA38 Offset: 0x186AA38 VA: 0x186AA38
 		public void SetDivaController(OfferSelectDivaController controller)

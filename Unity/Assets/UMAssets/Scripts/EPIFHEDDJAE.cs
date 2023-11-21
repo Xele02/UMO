@@ -5,7 +5,7 @@ public class EPIFHEDDJAE
 	{
 		HJNNKCMLGFL = 0,
 		MGJDKBFHDML = 1,
-		FJFMLFPJKNB = 2,
+		FJFMLFPJKNB_2 = 2,
 	}
 
 	public enum JAOBCBKBKJJ
@@ -24,8 +24,8 @@ public class EPIFHEDDJAE
 		KNMIMAAFAEB = 3,
 		CIFHKBNKGKJ = 4,
 		FANOODOOCFP = 5,
-		PPNNBADDNKB = 11,
-		FHBJEIEPABF = 12,
+		PPNNBADDNKB_11 = 11,
+		FHBJEIEPABF_12 = 12,
 	}
 
 	public const int IOGIPEHCGLF = 4;

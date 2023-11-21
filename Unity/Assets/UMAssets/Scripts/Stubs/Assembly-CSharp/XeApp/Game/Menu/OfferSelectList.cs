@@ -490,7 +490,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1707F0C Offset: 0x1707F0C VA: 0x1707F0C
-		//public void Enter() { }
+		public void Enter()
+		{
+			m_layoutRoot.StartChildrenAnimGoStop("go_in", "st_in");
+		}
 
 		// RVA: 0x1707F98 Offset: 0x1707F98 VA: 0x1707F98
 		public void Leave()

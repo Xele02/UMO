@@ -115,10 +115,16 @@ namespace XeApp.Game.Menu
 		//private void EnableCamera(bool isEnable) { }
 
 		//// RVA: 0x1701858 Offset: 0x1701858 VA: 0x1701858
-		//public void AnimPause() { }
+		public void AnimPause()
+		{
+			m_divaObject.Pause();
+		}
 
 		//// RVA: 0x17019B4 Offset: 0x17019B4 VA: 0x17019B4
-		//public void AnimResume() { }
+		public void AnimResume()
+		{
+			m_divaObject.Resume();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FB6B4 Offset: 0x6FB6B4 VA: 0x6FB6B4
 		//// RVA: 0x170368C Offset: 0x170368C VA: 0x170368C
@@ -170,11 +176,35 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1704044 Offset: 0x1704044 VA: 0x1704044
-		//public void CrossChangeLeaveMotion(Action act) { }
+		public void CrossChangeLeaveMotion(Action act)
+		{
+			IsDivaLeaveMotion = true;
+			this.StartCoroutineWatched(CoCrossChengeLeave(act));
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FB7A4 Offset: 0x6FB7A4 VA: 0x6FB7A4
 		//// RVA: 0x1704074 Offset: 0x1704074 VA: 0x1704074
-		//private IEnumerator CoCrossChengeLeave(Action act) { }
+		private IEnumerator CoCrossChengeLeave(Action act)
+		{
+			//0x1704904
+			if(!IsModelLoad)
+			{
+				m_simpleDivaAnimation.PlayVoiceOnly(OfferVoiceDataTable.VoiceTable(OfferVoiceDataTable.VoiceType.OperationDecide));
+				if (act != null)
+					act();
+			}
+			else
+			{
+				IsAloneMotion = false;
+				DivaStopVoice();
+				m_simpleDivaAnimation.CrossFadeIdel("simple_anime01");
+				while (!m_simpleDivaAnimation.IsPlayingSelectMotion(0))
+					yield return null;
+				DivaPlayVoice(OfferVoiceDataTable.VoiceType.OperationDecide);
+				if (act != null)
+					act();
+			}
+		}
 
 		//// RVA: 0x170170C Offset: 0x170170C VA: 0x170170C
 		public void CrossChangeIdle(Action ChengeEndAction)

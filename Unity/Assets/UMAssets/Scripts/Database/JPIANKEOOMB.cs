@@ -24,8 +24,8 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 		public short GPPEFLKGGGJ_Id { get { return (short)(IFGMKBKBFJI ^ FBGGEFFJJHB); } set { IFGMKBKBFJI = (short)(value ^ FBGGEFFJJHB); } } //0x1BA72D8 PCDKIHHDCHI 0x1BA6D54 LANEIFNCIAA
 		public short PFGJJLGLPAC_PilotId { get { return (short)(IMGMAKOGIFP_CryptedPilotId ^ FBGGEFFJJHB); } set { IMGMAKOGIFP_CryptedPilotId = (short)(value ^ FBGGEFFJJHB); } } //0x1BA7530 PODJOBBGCNC 0x1BA7178 AMDGADPHLEF
 		public short DAJGPBLEEOB_ModelId { get { return (short)(HNJNKCPDKAL_CryptedModelId ^ FBGGEFFJJHB); } set { HNJNKCPDKAL_CryptedModelId = (short)(value ^ FBGGEFFJJHB); } } //0x1BA7544 LHPKEPPBKPF 0x1BA6D64 OIOEEEDODJA
-		//public short KINFGHHNFCF { get; set; } 0x1BA7558 BNLKPIIJCDF 0x1BA756C PKEDNGJNJNC
-		//public short NONBCCLGBAO { get; set; } 0x1BA757C AEJBEGKBPCO 0x1BA7590 JPIBPFANBNG
+		public short KINFGHHNFCF { get { return (short)(KIDNEIEHOMN ^ FBGGEFFJJHB); } set { KIDNEIEHOMN = (short)(value ^ FBGGEFFJJHB); } } //0x1BA7558 BNLKPIIJCDF 0x1BA756C PKEDNGJNJNC
+		public short NONBCCLGBAO { get { return (short)(CDDLNKAPCFB ^ FBGGEFFJJHB); } set { CDDLNKAPCFB = (short)(value ^ FBGGEFFJJHB); } } //0x1BA757C AEJBEGKBPCO 0x1BA7590 JPIBPFANBNG
 		public short BMIJDLBGFNP_SkillId { get { return (short)(AENGKBBMPGM ^ FBGGEFFJJHB); } } //0x1BA75A0 NIHGHMNFOAO
 		public int MIHAHCEANII { get { return BFFGMECIOIA ^ FBGGEFFJJHB; } set { BFFGMECIOIA = value ^ FBGGEFFJJHB; } } //0x1BA7434 FOKDFFJIDDI 0x1BA7188 KMILCNKADIO
 		public bool IPJMPBANBPP_IsEnabled { get { return PPEGAKEIEGM_Enabled == 2; } } //0x1BA75B4 IJMCHOOIMBB

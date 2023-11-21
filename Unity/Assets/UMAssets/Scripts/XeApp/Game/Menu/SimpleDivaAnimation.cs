@@ -234,7 +234,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC4B76C Offset: 0xC4B76C VA: 0xC4B76C
-		//public bool IsPlayingSelectMotion(int animNum) { }
+		public bool IsPlayingSelectMotion(int animNum)
+		{
+			return m_divaObject.GetBodyHash() == Animator.StringToHash(string.Format("body.sub_simple.simple_anime{0:D2}", animNum + 1));
+		}
 
 		//// RVA: 0xC4B83C Offset: 0xC4B83C VA: 0xC4B83C
 		//public bool IsPlayingSelectLoopMotion(int loopAnimNum) { }
@@ -298,7 +301,10 @@ namespace XeApp.Game.Menu
 		//public void PlayVoice(SimpleDivaVoiceSetting setting, int id) { }
 
 		//// RVA: 0xC4BE80 Offset: 0xC4BE80 VA: 0xC4BE80
-		//public void PlayVoiceOnly(SimpleDivaVoiceSetting setting) { }
+		public void PlayVoiceOnly(SimpleDivaVoiceSetting setting)
+		{
+			m_voicePlayer.PlayVoiceRandom(setting.m_voiceSetting, -1);
+		}
 
 		//// RVA: 0xC4BECC Offset: 0xC4BECC VA: 0xC4BECC
 		//public void StartLipSync(SimpleDivaVoiceSetting setting) { }

@@ -143,10 +143,16 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1854944 Offset: 0x1854944 VA: 0x1854944
-		//public void OrderNumHide() { }
+		public void OrderNumHide()
+		{
+			m_orderLayout.enabled = false;
+		}
 
 		//// RVA: 0x185497C Offset: 0x185497C VA: 0x185497C
-		//public void OrderNumShow() { }
+		public void OrderNumShow()
+		{
+			m_orderLayout.enabled = true;
+		}
 
 		// RVA: 0x18549B4 Offset: 0x18549B4 VA: 0x18549B4 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
