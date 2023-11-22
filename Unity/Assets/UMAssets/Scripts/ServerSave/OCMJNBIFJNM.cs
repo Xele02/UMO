@@ -268,7 +268,7 @@ public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 	public override bool DMICHEJIAJL { get { return true; } } // 0x1B373C0 NFKFOODCJJB
 
 	// // RVA: 0x1B30F5C Offset: 0x1B30F5C VA: 0x1B30F5C
-	public bool MLBBKNLPBBD(BOPFPIHGJMD.PDLKAKEABDP COONLEFJBMP)
+	public bool MLBBKNLPBBD_HasShowTuto(BOPFPIHGJMD.PDLKAKEABDP COONLEFJBMP)
 	{
 		if(RuntimeSettings.CurrentSettings.ForceTutoSkip)
 			return true;
