@@ -57,8 +57,8 @@ public class HEFCLPGPMLK
 	{
 		public int LLOBHDMHJIG_Id; // 0x8
 		public int LABKKJAGDFN; // 0xC
-		public int KINFGHHNFCF; // 0x10
-		public int NONBCCLGBAO; // 0x14
+		public int KINFGHHNFCF_Atk; // 0x10
+		public int NONBCCLGBAO_Hit; // 0x14
 		public int JMHKMDFNAIN; // 0x18
 		public SeriesAttr.Type CPKMLLNADLJ_Attr; // 0x1C
 		public int PFGJJLGLPAC_PilotId; // 0x20
@@ -459,8 +459,8 @@ public class HEFCLPGPMLK
 									ANKPCIEKPAH data = new ANKPCIEKPAH();
 									data.LLOBHDMHJIG_Id = vList[i].FODKKJIDDKN_Id;
 									data.LABKKJAGDFN = LHFJMGDOBEK(data.LLOBHDMHJIG_Id);
-									data.KINFGHHNFCF = dbValk.KINFGHHNFCF;
-									data.NONBCCLGBAO = dbValk.NONBCCLGBAO;
+									data.KINFGHHNFCF_Atk = dbValk.KINFGHHNFCF;
+									data.NONBCCLGBAO_Hit = dbValk.NONBCCLGBAO;
 									data.JMHKMDFNAIN = NAEMOCCOGAA(data.LABKKJAGDFN, data.LLOBHDMHJIG_Id);
 									data.CPKMLLNADLJ_Attr = (SeriesAttr.Type)dbValk.AIHCEGFANAM_Sa;
 									data.PFGJJLGLPAC_PilotId = dbValk.PFGJJLGLPAC_PilotId;

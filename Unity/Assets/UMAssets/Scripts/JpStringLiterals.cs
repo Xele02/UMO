@@ -401,6 +401,7 @@ class JpStringLiterals
 	public const string StringLiteral_18787 = "獲得ユニオンクレジット"; // 03bbb044
 	public const string StringLiteral_18797 = "小隊選択"; //0x03bbb06c
 	public const string StringLiteral_18923 = "オファー選択"; //0x03bbb264
+	public const string StringLiteral_18949 = "ヴァルキリー選択"; //0x03bbb2cc
 	public const string StringLiteral_19017 = "誕生日"; // 0x03bbb3dc
 	public const string StringLiteral_19018 = "{0}/{1}/{2}　{3}"; // 0x03bbb3e0
 	public const string StringLiteral_19612 = "ユニットセット"; // 0x03bbbd28
