@@ -1,3 +1,4 @@
+using mcrs;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -99,19 +100,19 @@ namespace XeApp.Game.Menu
 				m_layout.SetSotiePlatoonButton(i, m_view.NAIBONEPAOJ(i + 1));
 			}
 			bool IsSortie = m_view.NAIBONEPAOJ(selectFormation + 1);
-			m_layout.ButtonDisable = IsSortie || m_view.JGFHJPGJJHP() <= selectFormation;
+			m_layout.ButtonDisable(IsSortie || m_view.JGFHJPGJJHP() <= selectFormation);
 			m_layout.BounsIconDisable(b2);
 			m_layout.PlatoonEnpty(IsSortie || b1);
 			m_layout.DisplaySortieIcon(IsSortie);
 			m_layout.LackPowerIconDisable(IsLackPower);
 			m_layout.SetAttackText(attack.ToString());
-			m_layout.SetAccuracyText(hit.ToString());
+			m_layout.SetAcccuracyText(hit.ToString());
 		}
 
 		// RVA: 0x1523830 Offset: 0x1523830 VA: 0x1523830
 		public bool IsPlaying()
 		{
-			return m_layout.IsPlauing();
+			return m_layout.IsPlaying();
 		}
 
 		// RVA: 0x152385C Offset: 0x152385C VA: 0x152385C
@@ -186,24 +187,118 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1523B10 Offset: 0x1523B10 VA: 0x1523B10
-		//private bool IsChangeComment(string changedComment) { }
+		private bool IsChangeComment(string changedComment)
+		{
+			return m_layout.GetPlatoonName() != changedComment;
+		}
 
 		//// RVA: 0x1523B4C Offset: 0x1523B4C VA: 0x1523B4C
-		//private void ShowNotChangedCommentPopup() { }
+		private void ShowNotChangedCommentPopup()
+		{
+			PopupWindowManager.Show(m_notChangedCommentPopupSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1524980
+				MenuScene.Instance.RaycastEnable();
+			}, null, null, null);
+		}
 
 		//// RVA: 0x1523CEC Offset: 0x1523CEC VA: 0x1523CEC
-		//private void OnChangeComment(string comment) { }
+		private void OnChangeComment(string comment)
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			this.StartCoroutineWatched(OnChangeCommentCoroutine(comment));
+			MenuScene.Instance.RaycastDisable();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6F859C Offset: 0x6F859C VA: 0x6F859C
 		//// RVA: 0x1523DF8 Offset: 0x1523DF8 VA: 0x1523DF8
-		//private IEnumerator OnChangeCommentCoroutine(string comment) { }
+		private IEnumerator OnChangeCommentCoroutine(string comment)
+		{
+			//0x1525CA0
+			bool isWait = true;
+			bool isDecide = false;
+			string inputComment = "";
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			InputPopupSetting s = new InputPopupSetting();
+			s.TitleText = bk.GetMessageByLabel("offer_formation_name_chenge_popup_title");
+			s.InputText = comment;
+			s.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			s.InputLineCount = 1;
+			s.CharacterLimit = 15;
+			s.WindowSize = SizeType.Middle;
+			s.Description = bk.GetMessageByLabel("offer_formation_name_chenge_popup_text_01");
+			s.Notes = bk.GetMessageByLabel("offer_formation_name_chenge_popup_text_02");
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1524AF8
+				if(type == PopupButton.ButtonType.Negative)
+				{
+					MenuScene.Instance.RaycastEnable();
+				}
+				else if(type == PopupButton.ButtonType.Positive)
+				{
+					InputContent c = control.Content as InputContent;
+					isDecide = true;
+					inputComment = c.Text;
+				}
+				isWait = false;
+			}, null, null, null);
+			while (isWait)
+				yield return null;
+			if(isDecide)
+			{
+				if(IsChangeComment(inputComment))
+				{
+					this.StartCoroutineWatched(OnChangeCommentCoroutine2(inputComment));
+				}
+				else
+				{
+					ShowNotChangedCommentPopup();
+				}
+			}
+	}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6F8614 Offset: 0x6F8614 VA: 0x6F8614
 		//// RVA: 0x1523EC0 Offset: 0x1523EC0 VA: 0x1523EC0
-		//private IEnumerator OnChangeCommentCoroutine2(string inputComment) { }
+		private IEnumerator OnChangeCommentCoroutine2(string inputComment)
+		{
+			//0x152598C
+			m_layout.SetPlatoonName(inputComment);
+			m_view.PFEMFIICBCE(selectFormation + 1, inputComment);
+			bool isError = false;
+			MenuScene.Save(null, () =>
+			{
+				//0x1524CA8
+				isError = true;
+			});
+			while (CIOECGOMILE.HHCJCDFCLOB.KONHMOLMOCI_IsSaving)
+				yield return null;
+			while (isError)
+				yield return null;
+			ChangeComment();
+		}
 
 		//// RVA: 0x1523F88 Offset: 0x1523F88 VA: 0x1523F88
-		//private void ChangeComment() { }
+		private void ChangeComment()
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("offer_formation_name_chenge_popup_title"), SizeType.Small, bk.GetMessageByLabel("offer_formation_name_chenge_popup_text_03"), new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1524A1C
+				MenuScene.Instance.RaycastEnable();
+			}, (IPopupContent content, PopupTabButton.ButtonLabel label) =>
+			{
+				//0x1524AB8
+				return;
+			}, null, null);
+		}
 
 		//// RVA: 0x1524398 Offset: 0x1524398 VA: 0x1524398
 		public void StartAssetLoad()

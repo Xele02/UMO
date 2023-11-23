@@ -3,12 +3,12 @@ public class BOPFPIHGJMD
 {
 	public enum ADMNKELOLPN
 	{
-		HJNNKCMLGFL = 0,
+		HJNNKCMLGFL_0 = 0,
 		CCAPCGPIIPF_1 = 1,
 		NBHIECDDJHH_2 = 2,
 		HFPIACELNLL_3 = 3,
 		HIIPBAMPCEM_4 = 4,
-		GEJGMBBCFEE = 5,
+		GEJGMBBCFEE_5 = 5,
 	}
 
     public enum JFHCHOILMEL
@@ -167,8 +167,8 @@ public class BOPFPIHGJMD
 	
 	public enum HBJMIJIOCAM
 	{
-		FMHLGHDKJBC = 0,
-		JIOPJDJBLFK = 1,
+		FMHLGHDKJBC_0 = 0,
+		JIOPJDJBLFK_1 = 1,
 	}
 	
 	public enum CJDCPBACOLH

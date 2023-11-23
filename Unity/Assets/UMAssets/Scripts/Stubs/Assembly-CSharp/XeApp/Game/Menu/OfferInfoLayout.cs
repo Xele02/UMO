@@ -47,7 +47,16 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x18526F8 Offset: 0x18526F8 VA: 0x18526F8
-		//public void SetOfferInfomation(HEFCLPGPMLK.AAOPGOGGMID _view) { }
+		public void SetOfferInfomation(HEFCLPGPMLK.AAOPGOGGMID _view)
+		{
+			ViewOfferInfo = _view;
+			SetRecomValue(_view.KINFGHHNFCF, _view.NONBCCLGBAO);
+			SetofferType(ViewOfferInfo.CGKPIIFCCLD_OfferType);
+			m_OfferName.text = ViewOfferInfo.IJOLPDKFLPO_OfferName;
+			SetenemyDataText((int)ViewOfferInfo.JGAMLEMMJCJ, ViewOfferInfo.JGAMLEMMJCJ);
+			ChengeSeriesLogo(ViewOfferInfo.DFMOGBOPLEF_Series);
+			currntClearTime = ViewOfferInfo.JGAMLEMMJCJ;
+		}
 
 		// RVA: 0x1852E68 Offset: 0x1852E68 VA: 0x1852E68
 		public void StartChengeEnemyPower(int vfpId, bool Isinitialize, int vfForm = 0, bool IsCorrent = true)
@@ -70,7 +79,7 @@ namespace XeApp.Game.Menu
 			bool IsMoreEnemyForces; // 0x38
 
 			//0x18539B8
-			NextClearTime = KDHGBOOECKC.HHCJCDFCLOB.NPEFMNPOMMJ(ViewOfferInfo.FGHGMHPNEMG_Category, ViewOfferInfo.PPFNGGCBJKC, vfpId, vfForm, IsCorrent);
+			NextClearTime = KDHGBOOECKC.HHCJCDFCLOB.NPEFMNPOMMJ(ViewOfferInfo.FGHGMHPNEMG_Category, ViewOfferInfo.PPFNGGCBJKC, vfpId, (FKGMGBHBNOC.HPJOCKGKNCC_Form) vfForm, IsCorrent);
 			ChengeTime = currntClearTime;
 			IsLackPower = ViewOfferInfo.IMPNNOLLMBK < NextClearTime;
 			StartLackPowerAnim();
@@ -94,13 +103,13 @@ namespace XeApp.Game.Menu
 					}
 					else
 					{
-						SetenemyDataText(ViewOfferInfo.JGAMLEMMJCJ, ChengeTime / 1000);
+						SetenemyDataText((int)ViewOfferInfo.JGAMLEMMJCJ, ChengeTime / 1000);
 						yield return null;
 					}
 				}
 			}
 			//LAB_01853c74
-			SetenemyDataText(ViewOfferInfo.JGAMLEMMJCJ, NextClearTime);
+			SetenemyDataText((int)ViewOfferInfo.JGAMLEMMJCJ, NextClearTime);
 			currntClearTime = NextClearTime;
 		}
 
@@ -129,25 +138,85 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1853228 Offset: 0x1853228 VA: 0x1853228
-		//private void StartLackPowerAnim() { }
+		private void StartLackPowerAnim()
+		{
+			if (!IsLackPower)
+				m_LackPowerFrame.StartChildrenAnimGoStop("02");
+			else
+			{
+				m_LackPowerFrame.StartChildrenAnimGoStop("01");
+				m_LackPowerAnim.StartChildrenAnimLoop("lo_");
+			}
+		}
 
 		//// RVA: 0x18529D8 Offset: 0x18529D8 VA: 0x18529D8
 		//private void SetOfferName(string offerName) { }
 
 		//// RVA: 0x1852828 Offset: 0x1852828 VA: 0x1852828
-		//private void SetRecomValue(int attack, int hit) { }
+		private void SetRecomValue(int attack, int hit)
+		{
+			m_Attack.text = attack.ToString();
+			m_Hit.text = hit.ToString();
+		}
 
 		//// RVA: 0x1852A14 Offset: 0x1852A14 VA: 0x1852A14
-		//private void SetenemyDataText(int enemyPower, long clearTime) { }
+		private void SetenemyDataText(int enemyPower, long clearTime)
+		{
+			int h, m, s;
+			OfferSelectScene.GetMiddleTime(enemyPower, out h, out m, out s, true);
+			m_EnemyPower.text = string.Format("{0:D2}:{1:D2}:{2:D2}", h, m, s);
+			OfferSelectScene.GetMiddleTime((int)clearTime, out h, out m, out s, true);
+			m_OfferClearTime.text = colorChange(string.Format("{0:D2}:{1:D2}:{2:D2}", h, m, s), enemyPower, clearTime);
+		}
 
 		//// RVA: 0x1853300 Offset: 0x1853300 VA: 0x1853300
-		//private string colorChange(string label, int enemyPower, long clearTime) { }
+		private string colorChange(string label, int enemyPower, long clearTime)
+		{
+			if(clearTime >= enemyPower)
+			{
+				if (enemyPower >= clearTime)
+					return label;
+				return "<color=#FFF000>" + label + "</color>";
+			}
+			return "<color=#00D2FF>" + label + "</color>";
+		}
 
 		//// RVA: 0x18528C0 Offset: 0x18528C0 VA: 0x18528C0
-		//private void SetofferType(BOPFPIHGJMD.ADMNKELOLPN offerType) { }
+		private void SetofferType(BOPFPIHGJMD.ADMNKELOLPN offerType)
+		{
+			switch (offerType)
+			{
+				case BOPFPIHGJMD.ADMNKELOLPN.CCAPCGPIIPF_1:
+					m_offerType.StartChildrenAnimGoStop("01");
+					break;
+				case BOPFPIHGJMD.ADMNKELOLPN.NBHIECDDJHH_2:
+					m_offerType.StartChildrenAnimGoStop("04");
+					break;
+				case BOPFPIHGJMD.ADMNKELOLPN.HFPIACELNLL_3:
+					m_offerType.StartChildrenAnimGoStop("02");
+					break;
+				case BOPFPIHGJMD.ADMNKELOLPN.HIIPBAMPCEM_4:
+					m_offerType.StartChildrenAnimGoStop("03");
+					break;
+				default:
+					return;
+			}
+		}
 
 		//// RVA: 0x1852C24 Offset: 0x1852C24 VA: 0x1852C24
-		//private void ChengeSeriesLogo(BOPFPIHGJMD.LGEIPIHHNPH seriesIcon) { }
+		private void ChengeSeriesLogo(BOPFPIHGJMD.LGEIPIHHNPH seriesIcon)
+		{
+			if(seriesIcon > BOPFPIHGJMD.LGEIPIHHNPH.HJNNKCMLGFL_0 && seriesIcon <= BOPFPIHGJMD.LGEIPIHHNPH.LCBPJOKNKPL_7)
+			{
+				if (m_LogoTextureUvNameTable[(int)seriesIcon - 1] == null)
+					m_SeriesLog.enabled = false;
+				else
+				{
+					m_SeriesLog.enabled = true;
+					m_SeriesLog.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_texUvList.GetUVData(m_LogoTextureUvNameTable[(int)seriesIcon - 1]));
+				}
+			}
+		}
 
 		// RVA: 0x18533B4 Offset: 0x18533B4 VA: 0x18533B4 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

@@ -325,7 +325,7 @@ namespace XeApp.Game.Menu
 			yield return Co.R(Co_LoadAssetsOrderListLayout());
 			if (PrevTransition == TransitionList.Type.OFFER_SELECT)
 			{
-				m_InfoLayout.SetOfferInformation(m_offerViewInfoData);
+				m_InfoLayout.SetOfferInfomation(m_offerViewInfoData);
 				for (int i = 0; i < 5; i++)
 				{
 					if (m_view.NAIBONEPAOJ(i + 1))
@@ -449,7 +449,7 @@ namespace XeApp.Game.Menu
 		{
 			m_offerFormationController.selectFormation = _SelectFormation;
 			m_InfoLayout.StartChengeEnemyPower(m_offerFormationController.selectFormation + 1, false, 0, false);
-			m_offerFormationController.platoonSetting(FormationList[m_offerFormationController.selectFormation], textColorChenge(m_offerViewInfoData.KINFGHHNFCF, KDHGBOOECKC.HHCJCDFCLOB.LBDENPEGONA(_SelectFormation + 1, 0)), textColorChenge(m_offerViewInfoData.NONBCCLGBAO, KDHGBOOECKC.HHCJCDFCLOB.LBDENPEGONA(_SelectFormation + 1, 1)), m_InfoLayout.IsLackPower);
+			m_offerFormationController.platoonSetting(FormationList[m_offerFormationController.selectFormation], textColorChenge(m_offerViewInfoData.KINFGHHNFCF, KDHGBOOECKC.HHCJCDFCLOB.LBDENPEGONA(_SelectFormation + 1, BOPFPIHGJMD.HBJMIJIOCAM.FMHLGHDKJBC_0)), textColorChenge(m_offerViewInfoData.NONBCCLGBAO, KDHGBOOECKC.HHCJCDFCLOB.LBDENPEGONA(_SelectFormation + 1, BOPFPIHGJMD.HBJMIJIOCAM.JIOPJDJBLFK_1)), m_offerViewInfoData.DFMOGBOPLEF_Series, m_InfoLayout.IsLackPower);
 		}
 
 		//// RVA: 0x1527EEC Offset: 0x1527EEC VA: 0x1527EEC
@@ -583,6 +583,13 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1527E28 Offset: 0x1527E28 VA: 0x1527E28
-		//public static string textColorChenge(int offerData, int platoonData) { }
+		public static string textColorChenge(int offerData, int platoonData)
+		{
+			if (offerData < platoonData)
+				return "<color=#008200>" + platoonData + "</color>";
+			else if (offerData <= platoonData)
+				return platoonData.ToString();
+			return "<color=#8E0529>" + platoonData + "</color>";
+		}
 	}
 }

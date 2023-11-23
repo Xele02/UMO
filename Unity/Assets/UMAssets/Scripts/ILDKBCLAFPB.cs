@@ -4223,7 +4223,7 @@ public class ILDKBCLAFPB
 		{
 			if (AHHJLDLAPAN < 1 || AHHJLDLAPAN > 10)
 				return 0;
-			return IDCCFDHKJNP_LastVOP_DivaLv[AHHJLDLAPAN];
+			return IDCCFDHKJNP_LastVOP_DivaLv[AHHJLDLAPAN - 1];
 		}
 
 		//// RVA: 0x201C840 Offset: 0x201C840 VA: 0x201C840

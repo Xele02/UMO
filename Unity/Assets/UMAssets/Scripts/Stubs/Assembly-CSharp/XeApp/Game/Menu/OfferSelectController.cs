@@ -1173,7 +1173,6 @@ namespace XeApp.Game.Menu
 					break;
 				case OfferSelectList.OfferSelectTab.DebutTab:
 					viewList = viewOfferData.PDFOBMKIKKJ(BOPFPIHGJMD.MLBMHDCCGHI.GENEIBGNMPH_4_Debut, IsListUpdata, KDHGBOOECKC.HHCJCDFCLOB.LBKNBKPBAPJ_IsSortDesc());
-					m_timeWatcherFirstCompOffer.WatchStart(d.PCCFAKEOBIC_EndDate, false);
 					break;
 			}
 			m_orderListLayout.SetView(viewList, viewOfferData);

@@ -598,12 +598,12 @@ namespace XeApp.Game.Menu
 			{
 				m_tab[i] = layout.FindViewByExId(string.Format("sw_s_v_win_03_swtbl_s_v_tab_0{0:D1}", (i + 1))) as AbsoluteLayout;
 			}
-			m_buttonLayouts = new AbsoluteLayout[operationTabList.Length];
-			m_badgeParentLayouts = new AbsoluteLayout[operationTabList.Length];
-			m_badgeParentObject = new GameObject[operationTabList.Length];
-			m_badgeIcons = new BadgeIcon[operationTabList.Length];
+			m_buttonLayouts = new AbsoluteLayout[operationTabList.Length - 1];
+			m_badgeParentLayouts = new AbsoluteLayout[operationTabList.Length - 1];
+			m_badgeParentObject = new GameObject[operationTabList.Length - 1];
+			m_badgeIcons = new BadgeIcon[operationTabList.Length - 1];
 			LayoutUGUIRuntime r = GetComponentInParent<LayoutUGUIRuntime>();
-			for(int i = 0; i < operationTabList.Length; i++)
+			for(int i = 0; i < operationTabList.Length - 1; i++)
 			{
 				m_buttonLayouts[i] = layout.FindViewByExId(string.Format("sw_s_v_win_03_swtbl_s_v_tab_{0:D2}", i + 1)) as AbsoluteLayout;
 				m_badgeParentLayouts[i] = m_buttonLayouts[i].FindViewByExId(string.Format("swtbl_s_v_tab_{0:D2}_badge", i + 1)) as AbsoluteLayout;
