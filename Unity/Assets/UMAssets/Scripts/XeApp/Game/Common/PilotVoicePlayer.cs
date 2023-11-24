@@ -45,7 +45,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAF6F98 Offset: 0xAF6F98 VA: 0xAF6F98
-		// public void RequestChangeCueSheet_offer(int valkrieyId, UnityAction onChangeCallback) { }
+		public void RequestChangeCueSheet_offer(int valkrieyId, UnityAction onChangeCallback)
+		{
+			RequestChangeCueSheet(string.Format("cs_pilot_vop_{0:D3}", valkrieyId), onChangeCallback);
+		}
 
 		// // RVA: 0xAF7040 Offset: 0xAF7040 VA: 0xAF7040
 		public void Play(VoiceCategory categoryType, int voiceId)

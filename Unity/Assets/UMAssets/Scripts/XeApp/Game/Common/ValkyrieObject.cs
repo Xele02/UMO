@@ -165,13 +165,36 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xD29C3C Offset: 0xD29C3C VA: 0xD29C3C
-		// public void Release() { }
+		public void Release()
+		{
+			OnRelease();
+			eventListener.Release();
+			if (usingEffectFactory)
+				effectFactories.ReleaseAll();
+			DestroyValkyrie();
+		}
 
 		// // RVA: 0xD29D7C Offset: 0xD29D7C VA: 0xD29D7C Slot: 8
-		// protected virtual void OnRelease() { }
+		protected virtual void OnRelease()
+		{
+			return;
+		}
 
 		// // RVA: 0xD29CC4 Offset: 0xD29CC4 VA: 0xD29CC4
-		// private void DestroyValkyrie() { }
+		private void DestroyValkyrie()
+		{
+			effectFactories = null;
+			soundOrderer = null;
+			eventListener = null;
+			Destroy(overrideController);
+			overrideController = null;
+			animator = null;
+			fighter = null;
+			gerwalk = null;
+			battroid = null;
+			Destroy(m_valkyrie);
+			m_valkyrie = null;
+		}
 
 		// // RVA: 0xD29D80 Offset: 0xD29D80 VA: 0xD29D80
 		public void Activate(bool toActive)

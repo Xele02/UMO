@@ -49,7 +49,13 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1C0E9F0 Offset: 0x1C0E9F0 VA: 0x1C0E9F0
-		//public void ReleaseAll() { }
+		public void ReleaseAll()
+		{
+			for(int i = 0; i < m_collection.Count; i++)
+			{
+				m_collection[i].Release();
+			}
+		}
 
 		//// RVA: 0x1C0EAC8 Offset: 0x1C0EAC8 VA: 0x1C0EAC8
 		public void ChangeAnimationTime(double time)

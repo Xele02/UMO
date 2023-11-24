@@ -70,7 +70,15 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1114CE4 Offset: 0x1114CE4 VA: 0x1114CE4 Slot: 8
-		//protected override void OnRelease() { }
+		protected override void OnRelease()
+		{
+			for(int i = 0; i < m_model.Length; i++)
+			{
+				m_model[i] = null;
+			}
+			m_useEffects = true;
+			m_effectNameList.Clear();
+		}
 
 		//// RVA: 0x1114DCC Offset: 0x1114DCC VA: 0x1114DCC
 		public void SetForm(int form)

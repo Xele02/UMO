@@ -552,7 +552,7 @@ public class HEFCLPGPMLK
 			{
 				for(int j = 0; j < 3; j++)
 				{
-					if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DAEJHMCMFJD_Offer.NEGDGHKOFFF_VFplatoon[i].LBCCCKNANMJ(j) == FODKKJIDDKN)
+					if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DAEJHMCMFJD_Offer.NEGDGHKOFFF_VFplatoon[i].LBCCCKNANMJ_GetValkyrieId(j) == FODKKJIDDKN)
 						return i + 1;
 				}
 			}
@@ -570,7 +570,7 @@ public class HEFCLPGPMLK
 				OCMJNBIFJNM_Offer.PMOECIDOLNA d = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DAEJHMCMFJD_Offer.NEGDGHKOFFF_VFplatoon[PPFNGGCBJKC - 1];
 				for (int j = 0; j < 3; j++)
 				{
-					if (d.LBCCCKNANMJ(j) == FODKKJIDDKN)
+					if (d.LBCCCKNANMJ_GetValkyrieId(j) == FODKKJIDDKN)
 						return j;
 				}
 			}

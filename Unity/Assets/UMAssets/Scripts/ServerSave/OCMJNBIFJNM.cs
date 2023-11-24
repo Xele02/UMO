@@ -168,7 +168,7 @@ public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 		public string OPFGFINHFCE_Name { get { return FINCFIGKHPA.DNJEJEANJGL_Value; } set { FINCFIGKHPA.DNJEJEANJGL_Value = value; } } //0x1B334F0 DKJOHDGOIJE 0x1B34484 MJAMIGECMMF
 
 		//// RVA: 0x1B3351C Offset: 0x1B3351C VA: 0x1B3351C
-		public int LBCCCKNANMJ(int IOPHIHFOOEP)
+		public int LBCCCKNANMJ_GetValkyrieId(int IOPHIHFOOEP)
 		{
 			if(2 < IOPHIHFOOEP)
 				return 0;
@@ -210,7 +210,7 @@ public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 			OPFGFINHFCE_Name = GPBJHKLFCEP.OPFGFINHFCE_Name;
 			for(int i = 0; i < 3; i++)
 			{
-				ODGFPJFJPFP(i, GPBJHKLFCEP.LBCCCKNANMJ(i));
+				ODGFPJFJPFP(i, GPBJHKLFCEP.LBCCCKNANMJ_GetValkyrieId(i));
 			}
 		}
 
@@ -221,7 +221,7 @@ public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 				return false;
 			for(int i = 0; i < 3; i++)
 			{
-				if (LBCCCKNANMJ(i) != OIKJFMGEICL.LBCCCKNANMJ(i))
+				if (LBCCCKNANMJ_GetValkyrieId(i) != OIKJFMGEICL.LBCCCKNANMJ_GetValkyrieId(i))
 					return false;
 			}
 			return true;
@@ -462,7 +462,7 @@ public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 			data2.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
 			for(int i = 0; i < 3; i++)
 			{
-				data2.Add(FFOINHDALAM.LBCCCKNANMJ(i));
+				data2.Add(FFOINHDALAM.LBCCCKNANMJ_GetValkyrieId(i));
 			}
 			data[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = data2;
 		}
