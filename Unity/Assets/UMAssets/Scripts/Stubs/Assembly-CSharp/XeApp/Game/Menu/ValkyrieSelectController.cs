@@ -1,7 +1,9 @@
 using mcrs;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XeApp.Core;
 using XeApp.Game.Common;
 using XeSys;
 
@@ -263,20 +265,36 @@ namespace XeApp.Game.Menu
 			bool b = KDHGBOOECKC.HHCJCDFCLOB.CKBDHFNLLJE((BOPFPIHGJMD.LGEIPIHHNPH)offerSeries, (SeriesAttr.Type)m_SelectSeries + 1);
 			if(m_SeriesValkyrieList[m_SelectSeries].Count < 2)
 			{
-				m_layoutSortie.IconSetting(0, m_view.JHBMCGABHMD(m_SeriesValkyrieList[m_SelectSeries][m_Select].LLOBHDMHJIG_Id), b, m_SeriesValkyrieList[m_SelectSeries][m_Select].LABKKJAGDFN > 0, m_SeriesValkyrieList[m_SelectSeries][m_Select].LABKKJAGDFN);
+				m_layoutSortie.IconSetting(0, m_view.JHBMCGABHMD(m_SeriesValkyrieList[m_SelectSeries][m_Select].LLOBHDMHJIG_Id), b, m_SeriesValkyrieList[m_SelectSeries][m_Select].LABKKJAGDFN_FormationId > 0, m_SeriesValkyrieList[m_SelectSeries][m_Select].LABKKJAGDFN_FormationId);
 			}
 			else
 			{
 				for(int i = 0; i < 3; i++)
 				{
-					HEFCLPGPMLK.ANKPCIEKPAH valk = m_SeriesValkyrieList[m_SelectSeries][GetSelectIndex(i - 1, m_SeriesValkyrieList[m_SelectSeries])];
-					m_layoutSortie.IconSetting(i, m_view.JHBMCGABHMD(valk.LLOBHDMHJIG_Id), b, valk.LABKKJAGDFN > 0, valk.LABKKJAGDFN);
+					HEFCLPGPMLK.ANKPCIEKPAH valk = m_SeriesValkyrieList[m_SelectSeries][GetSelectIndex((LayoutValkyrieSelect.Direction) i - 1, m_SeriesValkyrieList[m_SelectSeries])];
+					m_layoutSortie.IconSetting(i, m_view.JHBMCGABHMD(valk.LLOBHDMHJIG_Id), b, valk.LABKKJAGDFN_FormationId > 0, valk.LABKKJAGDFN_FormationId);
 				}
 			}
 		}
 
 		//// RVA: 0x1657E18 Offset: 0x1657E18 VA: 0x1657E18
-		//private int GetSelectIndex(LayoutValkyrieSelect.Direction dir, List<HEFCLPGPMLK.ANKPCIEKPAH> list) { }
+		private int GetSelectIndex(LayoutValkyrieSelect.Direction dir, List<HEFCLPGPMLK.ANKPCIEKPAH> list)
+		{
+			int res = m_Select;
+			if(dir == LayoutValkyrieSelect.Direction.RIGHT)
+			{
+				res++;
+				if (list.Count <= res)
+					res -= list.Count;
+			}
+			else if(dir == LayoutValkyrieSelect.Direction.LEFT)
+			{
+				res--;
+				if (res < 0)
+					res += list.Count;
+			}
+			return res;
+		}
 
 		//// RVA: 0x1656B80 Offset: 0x1656B80 VA: 0x1656B80
 		public void sortieDisableDoneBtn()
@@ -311,19 +329,109 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6F9234 Offset: 0x6F9234 VA: 0x6F9234
 		//// RVA: 0x165808C Offset: 0x165808C VA: 0x165808C
-		//private IEnumerator Co_LayoutAssetLoad() { }
+		private IEnumerator Co_LayoutAssetLoad()
+		{
+			string bundleName; // 0x14
+			Font systemFont; // 0x18
+
+			//0x1658978
+			if (IsAssetLoad)
+				yield break;
+			bundleName = "ly/045.xab";
+			systemFont = GameManager.Instance.GetSystemFont();
+			yield return AssetBundleManager.LoadUnionAssetBundle(bundleName);
+			yield return Co.R(Co_LoadAssetsLayoutValkyrieSelect(bundleName, systemFont));
+			yield return Co.R(Co_LoadAssetsLayoutSeriesButton(bundleName, systemFont));
+			yield return Co.R(Co_LoadAssetsLayoutSortieIcon(bundleName, systemFont));
+			AssetBundleManager.UnloadAssetBundle(bundleName, false);
+			while (m_layoutValSelect == null)
+				yield return null;
+			while (m_SeriesTab == null)
+				yield return null;
+			while (m_layoutSortie == null)
+				yield return null;
+			IsAssetLoad = true;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6F92AC Offset: 0x6F92AC VA: 0x6F92AC
 		//// RVA: 0x1658138 Offset: 0x1658138 VA: 0x1658138
-		//private IEnumerator Co_LoadAssetsLayoutValkyrieSelect(string bundleName, Font font) { }
+		private IEnumerator Co_LoadAssetsLayoutValkyrieSelect(string bundleName, Font font)
+		{
+			AssetBundleLoadLayoutOperationBase operation;
+
+			//0x1659434
+			if(m_layoutValSelect == null)
+			{
+				operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_valkyrie01_layout_root");
+				yield return operation;
+				yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) =>
+				{
+					//0x16585C4
+					instance.transform.SetParent(transform, false);
+					m_layoutValSelect = instance.GetComponent<LayoutValkyrieSelect>();
+				}));
+				AssetBundleManager.UnloadAssetBundle(bundleName, false);
+				operation = null;
+			}
+			else
+			{
+				m_layoutValSelect.transform.SetParent(transform, false);
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6F9324 Offset: 0x6F9324 VA: 0x6F9324
 		//// RVA: 0x1658218 Offset: 0x1658218 VA: 0x1658218
-		//private IEnumerator Co_LoadAssetsLayoutSeriesButton(string bundleName, Font font) { }
+		private IEnumerator Co_LoadAssetsLayoutSeriesButton(string bundleName, Font font)
+		{
+			AssetBundleLoadLayoutOperationBase operation;
+
+			//0x1658DEC
+			if(m_SeriesTab == null)
+			{
+				operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_val_btn_layout_root");
+				yield return operation;
+				yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) =>
+				{
+					//0x1658694
+					instance.transform.SetParent(transform, false);
+					m_SeriesTab = instance.GetComponent<LayoutSeriesTab>();
+				}));
+				AssetBundleManager.UnloadAssetBundle(bundleName, false);
+				operation = null;
+			}
+			else
+			{
+				m_SeriesTab.transform.SetParent(transform, false);
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6F939C Offset: 0x6F939C VA: 0x6F939C
 		//// RVA: 0x16582F8 Offset: 0x16582F8 VA: 0x16582F8
-		//private IEnumerator Co_LoadAssetsLayoutSortieIcon(string bundleName, Font font) { }
+		private IEnumerator Co_LoadAssetsLayoutSortieIcon(string bundleName, Font font)
+		{
+			AssetBundleLoadLayoutOperationBase operation;
+
+			//0x1659100
+			if(m_layoutSortie == null)
+			{
+				operation = AssetBundleManager.LoadLayoutAsync(bundleName, "root_sel_vfo_valkyrie_layout_root");
+				yield return operation;
+				yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) =>
+				{
+					//0x1658764
+					instance.transform.SetParent(transform, false);
+					m_layoutSortie = instance.GetComponent<LayoutOfferValkyrieSelectModification>();
+					m_layoutSortie.initialize();
+				}));
+				AssetBundleManager.UnloadAssetBundle(bundleName, false);
+				operation = null;
+			}
+			else
+			{
+				m_layoutSortie.transform.SetParent(transform, false);
+				m_layoutSortie.initialize();
+			}
+		}
 
 		// RVA: 0x16583D8 Offset: 0x16583D8 VA: 0x16583D8
 		public void EnterLayout()
@@ -355,7 +463,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1658520 Offset: 0x1658520 VA: 0x1658520
-		//public void GetSelectSeries(out int _series, out int _select) { }
+		public void GetSelectSeries(out int _series, out int _select)
+		{
+			_series = m_SelectSeries;
+			_select = m_Select;
+		}
 
 		// RVA: 0x1658534 Offset: 0x1658534 VA: 0x1658534
 		public void SetValKyrieList(List<HEFCLPGPMLK.ANKPCIEKPAH>[] list)
@@ -374,17 +486,5 @@ namespace XeApp.Game.Menu
 		{
 			offerSeries = _series;
 		}
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x6F9424 Offset: 0x6F9424 VA: 0x6F9424
-		//// RVA: 0x16585C4 Offset: 0x16585C4 VA: 0x16585C4
-		//private void <Co_LoadAssetsLayoutValkyrieSelect>b__39_0(GameObject instance) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6F9434 Offset: 0x6F9434 VA: 0x6F9434
-		//// RVA: 0x1658694 Offset: 0x1658694 VA: 0x1658694
-		//private void <Co_LoadAssetsLayoutSeriesButton>b__40_0(GameObject instance) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6F9444 Offset: 0x6F9444 VA: 0x6F9444
-		//// RVA: 0x1658764 Offset: 0x1658764 VA: 0x1658764
-		//private void <Co_LoadAssetsLayoutSortieIcon>b__41_0(GameObject instance) { }
 	}
 }

@@ -1,8 +1,10 @@
+using mcrs;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -89,7 +91,7 @@ namespace XeApp.Game.Menu
 			IsReturn = true;
 			m_view = new HEFCLPGPMLK();
 			m_valkyrieSelectController.SetView(m_view);
-			m_valkyrieSelectController.SetOfferSeries(OfferInfo.DFMOGBOPLEF_Series);
+			m_valkyrieSelectController.SetOfferSeries((int)OfferInfo.DFMOGBOPLEF_Series);
 			m_valkyrieSelectController.StartAssetLoad();
 			m_valkyrieSelectController.SetValKyrieList(m_SeriesValkyrieList);
 			m_valkyrieSelectController.SetSelectSeries(m_SelectSeries, m_Select);
@@ -174,7 +176,7 @@ namespace XeApp.Game.Menu
 				}
 			}
 			m_valkyrieSelectController.DisableDetachBtn(cur.LLOBHDMHJIG_Id < 1);
-			m_valkyrieSelectController.ChangeSelectValkyrie(-1);
+			m_valkyrieSelectController.ChangeSelectValkyrie(LayoutValkyrieSelect.Direction.NONE);
 			m_valkyrieSelectController.renewalSeriesTab();
 			yield return null;
 			IsInitialize = true;
@@ -206,19 +208,60 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x171A6EC Offset: 0x171A6EC VA: 0x171A6EC
-		//private void platoonChengePopup() { }
+		private void platoonChengePopup()
+		{
+			m_valkyrieSelectController.GetSelectSeries(out m_SelectSeries, out m_Select);
+			if (SelectionAnotherPlatoon())
+				ValkyrieSelectDone();
+			else
+			{
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("offer_chenge_popup_title"), SizeType.Small, bk.GetMessageByLabel("offer_plantoon_chenge_popup_text_01"), new ButtonInfo[2]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0x171B15C
+					if (type != PopupButton.ButtonType.Positive)
+						return;
+					MenuScene.SaveRequest();
+					ValkyrieSelectDone();
+				}, (IPopupContent content, PopupTabButton.ButtonLabel label) =>
+				{
+					//0x171B26C
+					return;
+				}, null, null);
+			}
+		}
 
 		//// RVA: 0x171AC00 Offset: 0x171AC00 VA: 0x171AC00
-		//private void ValkyrieSelectDone() { }
+		private void ValkyrieSelectDone()
+		{
+			IsReturn = false;
+			m_view.JBHBEKJHLFE(formationId, selectformationIndex, m_SeriesValkyrieList[m_SelectSeries][m_Select].LLOBHDMHJIG_Id);
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.AHMOGDDPIFL_LastVfId = m_SeriesValkyrieList[m_SelectSeries][m_Select].LLOBHDMHJIG_Id;
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.CPKMLLNADLJ_Series = m_SelectSeries + 1;
+			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			MenuScene.Instance.Mount(TransitionUniqueId.OFFERSELECT_OFFERFORMATION, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+			this.StartCoroutineWatched(Co_LeaveLayout());
+		}
 
 		//// RVA: 0x171AF04 Offset: 0x171AF04 VA: 0x171AF04
-		//private void ValkyrieSelectDetach() { }
+		private void ValkyrieSelectDetach()
+		{
+			IsReturn = false;
+			m_view.JBHBEKJHLFE(formationId, selectformationIndex, 0);
+			MenuScene.Instance.Mount(TransitionUniqueId.OFFERSELECT_OFFERFORMATION, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+			this.StartCoroutineWatched(Co_LeaveLayout());
+		}
 
 		//// RVA: 0x171AB20 Offset: 0x171AB20 VA: 0x171AB20
-		//private bool SelectionAnotherPlatoon() { }
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x6F9074 Offset: 0x6F9074 VA: 0x6F9074
-		//// RVA: 0x171B15C Offset: 0x171B15C VA: 0x171B15C
-		//private void <platoonChengePopup>b__32_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private bool SelectionAnotherPlatoon()
+		{
+			if (m_SeriesValkyrieList[m_SelectSeries][m_Select] != null && m_SeriesValkyrieList[m_SelectSeries][m_Select].LABKKJAGDFN_FormationId != formationId)
+				return m_SeriesValkyrieList[m_SelectSeries][m_Select].LABKKJAGDFN_FormationId < 1;
+			return true;
+		}
 	}
 }

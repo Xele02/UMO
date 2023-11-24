@@ -56,7 +56,7 @@ public class HEFCLPGPMLK
 	public class ANKPCIEKPAH
 	{
 		public int LLOBHDMHJIG_Id; // 0x8
-		public int LABKKJAGDFN; // 0xC
+		public int LABKKJAGDFN_FormationId; // 0xC
 		public int KINFGHHNFCF_Atk; // 0x10
 		public int NONBCCLGBAO_Hit; // 0x14
 		public int JMHKMDFNAIN; // 0x18
@@ -458,10 +458,10 @@ public class HEFCLPGPMLK
 								{
 									ANKPCIEKPAH data = new ANKPCIEKPAH();
 									data.LLOBHDMHJIG_Id = vList[i].FODKKJIDDKN_Id;
-									data.LABKKJAGDFN = LHFJMGDOBEK(data.LLOBHDMHJIG_Id);
+									data.LABKKJAGDFN_FormationId = LHFJMGDOBEK(data.LLOBHDMHJIG_Id);
 									data.KINFGHHNFCF_Atk = dbValk.KINFGHHNFCF;
 									data.NONBCCLGBAO_Hit = dbValk.NONBCCLGBAO;
-									data.JMHKMDFNAIN = NAEMOCCOGAA(data.LABKKJAGDFN, data.LLOBHDMHJIG_Id);
+									data.JMHKMDFNAIN = NAEMOCCOGAA(data.LABKKJAGDFN_FormationId, data.LLOBHDMHJIG_Id);
 									data.CPKMLLNADLJ_Attr = (SeriesAttr.Type)dbValk.AIHCEGFANAM_Sa;
 									data.PFGJJLGLPAC_PilotId = dbValk.PFGJJLGLPAC_PilotId;
 									data.PMKFOEIFBLB_PilotName = bk.GetMessageByLabel("plt_nm_" + data.PFGJJLGLPAC_PilotId.ToString("D4"));
@@ -490,7 +490,7 @@ public class HEFCLPGPMLK
 			MDNHCIKGEAE = AANFIKBAJPI_GetValkyrieList();
 		for(int i = 0; i < MDNHCIKGEAE.Count; i++)
 		{
-			if (MDNHCIKGEAE[i].LABKKJAGDFN == PPFNGGCBJKC)
+			if (MDNHCIKGEAE[i].LABKKJAGDFN_FormationId == PPFNGGCBJKC)
 				res.Add(MDNHCIKGEAE[i]);
 		}
 		if(res.Count < 3)
