@@ -6,6 +6,7 @@ using UnityEngine;
 using System.Threading;
 using System.IO;
 using CriWare;
+using System.Security.Cryptography;
 
 public class BatchInstallerException : Exception
 {
@@ -433,7 +434,26 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 					GBFHGDHNDIE_WebInstallerPool.Enqueue(installer);
 				}
 				if(status == CriFsWebInstaller.Status.Complete)
-					break;
+				{
+					// UMO Add : check CRC
+					if(KEHOJEJMGLJ.HHCJCDFCLOB != null && KEHOJEJMGLJ.HHCJCDFCLOB.IDJBKGBMDAJ != null)
+					{
+						GCGNICILKLD_AssetFileInfo g = KEHOJEJMGLJ.HHCJCDFCLOB.IDJBKGBMDAJ.BIKLNKNFFMK_GetAssetFileInfo(info.ICKGJODOCBB.AJPIGKBIDDL_LocalFileName.Replace("/android/", ""));
+						if(g != null)
+						{
+							MD5 md5 = MD5.Create();
+							string h = KEHOJEJMGLJ.IFCHFDEDCGF_GetFileHash(md5, info.ICKGJODOCBB.ADHHKEMDOIK_LocalPath);
+							if(h != g.POEGMFKLFJG_Hash)
+							{
+								UnityEngine.Debug.LogError("Wrong hash for "+info.ICKGJODOCBB.AJPIGKBIDDL_LocalFileName+" "+h+" != "+g.POEGMFKLFJG_Hash);
+								status = CriFsWebInstaller.Status.Error;
+								info.IOKJFDPOEFP_InstallerStatusInfo.status = status;
+							}
+						}
+					}
+					if(status == CriFsWebInstaller.Status.Complete)
+						break;
+				}
 				if(status == CriFsWebInstaller.Status.Error)
 				{
 					DLHJNILCAGE(info);

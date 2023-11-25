@@ -2,6 +2,7 @@ using UnityEngine;
 using XeSys;
 using System.Collections.Generic;
 using CriWare;
+using XeApp.Game.Common;
 
 public class BDFPCPHIJCN : LBHFILLFAGA
 {
@@ -73,14 +74,37 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 #endif
 		if(!FHHAFJMELMD_alreadyLoading)
 		{
-			if(LGADCGFMLLD == 1)
+			if(LGADCGFMLLD == 2)
+			{
+				return false;
+			}
+			else if(LGADCGFMLLD == 1)
 			{
 				TodoLogger.Log(TodoLogger.Filesystem, "Bundle wait for load in memory");
 				if(NMNCMNNPNCI.isDone)
 				{
-					TodoLogger.Log(TodoLogger.Filesystem, "Bundle loaded in memory");
-					IMGIFJHHEED_fro.assetBundle = NMNCMNNPNCI.assetBundle;
-					NMNCMNNPNCI = null;
+					if(NMNCMNNPNCI.assetBundle == null)
+					{
+						NMNCMNNPNCI = null;
+						TodoLogger.LogError(TodoLogger.Filesystem, "Error loading bundle");
+						LGADCGFMLLD = 2;
+						PopupWindowControl control = PopupWindowManager.Show(PopupWindowManager.CrateTextContent("UMO", SizeType.Large, "Error loading asset bundle \n"+HHHEFALNMJO_mPath+"\nReplace it and retry or relaunch the game and enable Integrity Check.", 
+						new ButtonInfo[1]
+						{
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Retry, Type = PopupButton.ButtonType.Positive }
+						}
+						, false, true), (PopupWindowControl control_, PopupButton.ButtonType t, PopupButton.ButtonLabel label) =>
+						{
+							BDALHEMDIDC_DoStart();
+						}, null, null, null);
+						return false;
+					}
+					else
+					{
+						TodoLogger.Log(TodoLogger.Filesystem, "Bundle loaded in memory");
+						IMGIFJHHEED_fro.assetBundle = NMNCMNNPNCI.assetBundle;
+						NMNCMNNPNCI = null;
+					}
 				}
 				else
 				{

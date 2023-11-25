@@ -33,8 +33,10 @@ class RuntimeSettings : ScriptableObject
 				m_currentSettings.DisableWatermark = UMO_PlayerPrefs.GetInt("DisableWatermark", 1) == 1;
 				m_currentSettings.MinigameAutoPlay = UMO_PlayerPrefs.GetInt("MinigameAutoPlay", 0) == 1;
 				m_currentSettings.DisplayIdInName = UMO_PlayerPrefs.GetInt("DisplayIdInName", 0) == 1;
+				m_currentSettings.EnableInfoLog = UMO_PlayerPrefs.GetInt("EnableInfoLog", 0) == 1;
+				m_currentSettings.EnableErrorLog = UMO_PlayerPrefs.GetInt("EnableErrorLog", 0) == 1;
 
-#if UNITY_ANDROID && !UNITY_EDITOR
+#if (UNITY_ANDROID && !UNITY_EDITOR) || DEBUG_ANDROID_FILESYSTEM
 				m_currentSettings.DataDirectory = Application.persistentDataPath + "/data/";
 #endif
 			}
@@ -51,6 +53,8 @@ class RuntimeSettings : ScriptableObject
         UMO_PlayerPrefs.SetInt("DisableWatermark", m_currentSettings.DisableWatermark ? 1 : 0);
         UMO_PlayerPrefs.SetInt("MinigameAutoPlay", m_currentSettings.MinigameAutoPlay ? 1 : 0);
         UMO_PlayerPrefs.SetInt("DisplayIdInName", m_currentSettings.DisplayIdInName ? 1 : 0);
+        UMO_PlayerPrefs.SetInt("EnableInfoLog", m_currentSettings.EnableInfoLog ? 1 : 0);
+        UMO_PlayerPrefs.SetInt("EnableErrorLog", m_currentSettings.EnableErrorLog ? 1 : 0);
 		UMO_PlayerPrefs.Save();
 	}
 
@@ -157,6 +161,8 @@ class RuntimeSettings : ScriptableObject
 	public bool EnableDebugSkills = false;
 	public bool MinigameAutoPlay { get; set; }
 	public bool DisplayIdInName { get; set; }
+	public bool EnableInfoLog { get; set; }
+	public bool EnableErrorLog { get; set; }
 }
 
 #if UNITY_EDITOR

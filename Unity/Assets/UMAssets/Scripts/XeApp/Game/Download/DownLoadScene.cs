@@ -264,7 +264,7 @@ namespace XeApp.Game.DownLoad
 		// // RVA: 0x11BEAA4 Offset: 0x11BEAA4 VA: 0x11BEAA4
 		private void DownLoadError()
 		{
-			TodoLogger.LogError(0, "DownloadScene.DownLoadError");
+			NextScene("Title");
 		}
 
 		// // RVA: 0x11BEB0C Offset: 0x11BEB0C VA: 0x11BEB0C

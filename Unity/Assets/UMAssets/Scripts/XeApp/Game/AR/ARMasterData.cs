@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using UnityEngine;
 using System.Security.Cryptography;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.AR
 {
@@ -208,17 +209,31 @@ namespace XeApp.Game.AR
 			{
 				Directory.CreateDirectory(dir);
 			}
-			if(File.Exists(dest))
+			while(true)
 			{
-				if(CalcMD5(dest) == found.POEGMFKLFJG_Hash)
+				if(File.Exists(dest))
 				{
-					TodoLogger.Log(TodoLogger.Filesystem, "File match, don't dld");
-					yield break;
+					if(CalcMD5(dest) == found.POEGMFKLFJG_Hash)
+					{
+						TodoLogger.Log(TodoLogger.Filesystem, "File match, don't dld");
+						yield break;
+					}
 				}
-			}
-#if UNITY_ANDROID
-			yield return Co.R(FileSystemProxy.WaitServerInfo(false));
+#if UNITY_ANDROID || DEBUG_ANDROID_FILESYSTEM
+				bool retry = false;
+				yield return Co.R(FileSystemProxy.WaitServerInfo("Missing file :\n"+dest, true, true, (PopupButton.ButtonLabel btn) =>
+				{
+					if(btn == PopupButton.ButtonLabel.Retry)
+						retry = true;
+				}));
+				if(retry)
+					continue;
+				else
+					break;
+#else
+				break;
 #endif
+			}
 			string src = FileSystemProxy.ConvertURL(req.NFEAMMJIMPG.GLMGHMCOMEC_BaseUrl + found.MFBMBPJAADA_FileName);
 			TodoLogger.Log(TodoLogger.Filesystem, "Dld from " + src+" to "+dest);
 

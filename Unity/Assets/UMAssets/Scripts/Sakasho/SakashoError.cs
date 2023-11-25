@@ -68,6 +68,8 @@ public class SakashoError
 	{
 		if (ErrorCode == "RANKING_PLAYER_NOT_FOUND")
 			return SakashoErrorId.RANKING_PLAYER_NOT_FOUND;
+		if(ErrorCode == "NETWORK_ERROR")
+			return SakashoErrorId.NETWORK_ERROR;
 		TodoLogger.LogError(0, "getErrorId "+ErrorCode);
 		return SakashoErrorId.UNKNOWN;
 	}
