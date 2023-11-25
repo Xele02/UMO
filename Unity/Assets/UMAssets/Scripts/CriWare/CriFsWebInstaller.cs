@@ -290,14 +290,15 @@ namespace CriWare
                     status.receivedSize = (long)(1000 * installer.www.progress);
                     if(installer.www.isDone)
                     {
-                        status.status = Status.Complete;
 						if (string.IsNullOrEmpty(installer.www.error))
 						{
+                            status.status = Status.Complete;
 							TodoLogger.Log(TodoLogger.Filesystem, "Write file " + installer.fileSavePath);
 							System.IO.File.WriteAllBytes(installer.fileSavePath, installer.www.bytes);
 						}
                         else
                         {
+                            status.status = Status.Error;
                             TodoLogger.LogError(TodoLogger.Filesystem, "Install Error for "+installer.www.url+" : "+installer.www.error);
                         }
                     }

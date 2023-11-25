@@ -118,7 +118,7 @@ public class IMMAOANGPNK
 				}
 				if(GBEGLNMFLIE.NPNNPNAIONN == true)
 				{
-					yield return N.a.StartCoroutineWatched(LGFPCADOCAA_ShowError());
+					yield return N.a.StartCoroutineWatched(LGFPCADOCAA_Coroutine_ShowError());
 					MOBEEPPKFLG();
 					GBEGLNMFLIE = null;
         			TodoLogger.LogError(TodoLogger.Coroutine, "Exit  Error MHEKMICKGDM_LoadFromStorage");
@@ -162,7 +162,7 @@ public class IMMAOANGPNK
 				
 				if(!HBODCMLFDOB)
 				{
-					yield return N.a.StartCoroutineWatched(LGFPCADOCAA_ShowError());
+					yield return N.a.StartCoroutineWatched(LGFPCADOCAA_Coroutine_ShowError());
 					MOBEEPPKFLG();
         			TodoLogger.LogError(TodoLogger.Coroutine, "Exit  Error MHEKMICKGDM_LoadFromStorage");
 					yield break;
@@ -338,17 +338,24 @@ public class IMMAOANGPNK
 				yield break;
 			}
 		}
-		yield return N.a.StartCoroutineWatched(LGFPCADOCAA_ShowError());
+		yield return N.a.StartCoroutineWatched(LGFPCADOCAA_Coroutine_ShowError());
 		MOBEEPPKFLG();
         TodoLogger.LogError(TodoLogger.Coroutine, "Exit  Error MHEKMICKGDM_LoadFromStorage");
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B7760 Offset: 0x6B7760 VA: 0x6B7760
 	// // RVA: 0x9FBCFC Offset: 0x9FBCFC VA: 0x9FBCFC
-	private IEnumerator LGFPCADOCAA_ShowError()
+	private IEnumerator LGFPCADOCAA_Coroutine_ShowError()
 	{
-		TodoLogger.LogError(0, "TODO");
-		yield break;
+		//0xA0093C
+		bool BEKAMBBOLBO = false;
+		JHHBAFKMBDL.HHCJCDFCLOB.LIBDGGBAINI(() =>
+		{
+			//0x9FE348
+			BEKAMBBOLBO = true;
+		});
+		while(!BEKAMBBOLBO)
+			yield return null;
 	}
 
 	// // RVA: 0x9FBD90 Offset: 0x9FBD90 VA: 0x9FBD90

@@ -89,7 +89,7 @@ public class UMOStart : MonoBehaviour
     bool canStart = false;
     void Start()
     {
-#if !UNITY_ANDROID
+#if !UNITY_ANDROID && !DEBUG_ANDROID_FILESYSTEM
         if(!RuntimeSettings.CurrentSettings.IsPathValid())
         {
             if(!TrySelectDirectory(StartGameMenuInternal))

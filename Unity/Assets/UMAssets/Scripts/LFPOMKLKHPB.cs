@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using UnityEngine;
+using XeApp.Game.Common;
 
 public class LFPOMKLKHPB
 {
@@ -60,11 +61,27 @@ public class LFPOMKLKHPB
 		do
 		{
 			JHHBAFKMBDL.HHCJCDFCLOB.NIGGABHIFEE_ShowTransmissionIcon(true);
-#if UNITY_ANDROID
-			yield return Co.R(FileSystemProxy.WaitServerInfo(false));
-#endif
+#if UNITY_ANDROID || DEBUG_ANDROID_FILESYSTEM
+			string url;
+			if(!FileSystemProxy.FileExists(HJLDBEJOMIO))
+			{
+				bool retry = false;
+				yield return Co.R(FileSystemProxy.WaitServerInfo("Missing file "+FileSystemProxy.ConvertPath(HJLDBEJOMIO), true, true, (PopupButton.ButtonLabel btn) =>
+				{
+					if(btn == PopupButton.ButtonLabel.Retry)
+						retry = true;
+				}));
+				if(retry)
+					continue;
+				url = FileSystemProxy.ConvertURL(HJLDBEJOMIO + "?t=" + DateTime.Now.ToString("yyyyMMddHHmmss"));
+			}
+			else
+			{
+				url = "file://"+FileSystemProxy.ConvertPath(HJLDBEJOMIO);
+			}
+#else
 			string url = FileSystemProxy.ConvertURL(HJLDBEJOMIO + "?t=" + DateTime.Now.ToString("yyyyMMddHHmmss"));
-			UnityEngine.Debug.LogError(url);
+#endif
 			JMNNBKPAAKF = new WWW(url);
 			DFIEJHNOBOC = 0;
 			OLEKCNABLNH = false;
@@ -92,6 +109,7 @@ public class LFPOMKLKHPB
 			}
 			else
 			{
+				UnityEngine.Debug.LogError(JMNNBKPAAKF.error);
 				OLEKCNABLNH = true;
 			}
 			bool BEKAMBBOLBO = false;

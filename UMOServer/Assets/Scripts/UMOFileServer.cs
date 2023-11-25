@@ -5,6 +5,7 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
@@ -119,6 +120,11 @@ public class UMOFileServer : MonoBehaviour
                 else
                 {
                     string f = FileSystemProxy.ConvertPath(UnityEngine.Application.persistentDataPath + "/data" + req.Url.AbsolutePath);
+                    if(!File.Exists(f))
+                    {
+                        Regex NOCCMAKNLLD = new Regex("!s[0-9a-fA-F]+z!"); // 0x0
+                        f = FileSystemProxy.ConvertPath(NOCCMAKNLLD.Replace(UnityEngine.Application.persistentDataPath + "/data" + req.Url.AbsolutePath, ""));
+                    }
                     Log("Received request on "+req.Url.AbsolutePath+" for "+f);
                     if(File.Exists(f))
                     {

@@ -191,7 +191,18 @@ public class JHHBAFKMBDL
 	// // RVA: 0xB21710 Offset: 0xB21710 VA: 0xB21710
 	public void LIBDGGBAINI(IMCBBOAFION BHEOPIPFEFJ)
 	{
-		TodoLogger.LogError(0, "TODO");
+		TextPopupSetting s = new TextPopupSetting();
+		s.TitleText = MessageManager.Instance.GetMessage(LGNLCJIKOEO, "popup_title_data_error");
+		s.Buttons = new ButtonInfo[1]
+		{
+			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType. Negative }
+		};
+		s.Text = MessageManager.Instance.GetMessage(LGNLCJIKOEO, "popup_data_error");
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		{
+			//0x1347BB0
+			BHEOPIPFEFJ();
+		}, null ,null, null);
 	}
 
 	// // RVA: 0xB21A54 Offset: 0xB21A54 VA: 0xB21A54
@@ -292,7 +303,10 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB23F80 Offset: 0xB23F80 VA: 0xB23F80
-	// public void LHHMCNLONCI(IMCBBOAFION HIDFAIBOHCC, string HJLDBEJOMIO) { }
+	public void LHHMCNLONCI(IMCBBOAFION HIDFAIBOHCC, string HJLDBEJOMIO)
+	{
+		TodoLogger.LogError(0, "LHHMCNLONCI");
+	}
 
 	// // RVA: 0xB240CC Offset: 0xB240CC VA: 0xB240CC
 	// public void PGBDJBGIPKN(IMCBBOAFION HIDFAIBOHCC) { }

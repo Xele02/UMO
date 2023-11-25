@@ -46,7 +46,7 @@ static class FileSystemProxy
 			}
 		}
 
-#if !UNITY_ANDROID
+#if !UNITY_ANDROID && !DEBUG_ANDROID_FILESYSTEM
 		if (RuntimeSettings.CurrentSettings == null || string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.DataWebServerURL))
 		{
 			if (!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.DataDirectory))
@@ -69,6 +69,8 @@ static class FileSystemProxy
 	static public string ConvertPath(string path)
 	{
 		path = path.Replace("\\", "/");
+		path = path.Replace("!s00000000z!", "");
+		path = path.Replace("[SERVER_DATA_PATH]", Application.persistentDataPath + "/data");
 		if (File.Exists(path))
 			return path;
 		if (RuntimeSettings.CurrentSettings == null)
@@ -137,7 +139,7 @@ static class FileSystemProxy
 		{
 			serverFileList = new Dictionary<string, string>();
 			string filePath = UnityEngine.Application.dataPath + "/../../Data/RequestGetFiles.json";
-#if UNITY_ANDROID && !UNITY_EDITOR
+#if (UNITY_ANDROID && !UNITY_EDITOR) || DEBUG_ANDROID_FILESYSTEM
 			filePath = Application.persistentDataPath+"/data/RequestGetFiles.json";
 #endif
 			if(File.Exists(filePath))
@@ -196,19 +198,69 @@ static class FileSystemProxy
 			onDone(path);
 	}
 
-#if UNITY_ANDROID
+#if UNITY_ANDROID || DEBUG_ANDROID_FILESYSTEM
 	public static string foundServer = "";
 
-	public static IEnumerator WaitServerInfo(bool reset = false)
+	public static IEnumerator WaitServerInfo(string message_, bool allowRetry, bool allowServer, Action<PopupButton.ButtonLabel> cb = null)
 	{
-		if(reset)
-			foundServer = "";
-		if(foundServer != "")
+		string prevServer = foundServer;
+		foundServer = "";
+		//if(foundServer != "")
+		//	yield break;
+
+		bool retry = false;
+		bool next = false;
+		string choice = "";
+		if(allowRetry)
+		{
+			choice += "\n- Copy missing file and select Retry button to recheck";
+		}
+		if(allowServer)
+		{
+			choice += "\n- Select Next button to download from UMO server";
+		}
+		ButtonInfo[] buttons = null;
+		if(allowRetry && allowServer)
+		{
+			buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Retry, Type = PopupButton.ButtonType.Positive },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Next, Type = PopupButton.ButtonType.Positive }
+			};
+		}
+		else if(allowServer)
+		{
+			buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Next, Type = PopupButton.ButtonType.Positive }
+			};
+		}
+		else if(allowRetry)
+		{
+			buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Retry, Type = PopupButton.ButtonType.Positive }
+			};
+		}
+        PopupWindowManager.Show(PopupWindowManager.CrateTextContent("UMO", SizeType.Large, message_ + "\nCheck install process on project wiki\n"+choice, buttons, false, true), (PopupWindowControl control_, PopupButton.ButtonType t, PopupButton.ButtonLabel label) =>
+		{
+			if(label == PopupButton.ButtonLabel.Retry)
+				retry = true;
+			else
+				next = true;
+		}, null, null, null);
+		while(!next && !retry)
+			yield return null;
+		if(retry)
+		{
+			if(cb != null)
+				cb(PopupButton.ButtonLabel.Retry);
 			yield break;
+		}
 
 		UdpClient udp = new UdpClient(8001);
 		bool cancel = false;
-        PopupWindowControl control = PopupWindowManager.Show(PopupWindowManager.CrateTextContent("UMO", SizeType.Small, "Searching for server, please start webserver and connect the phone on the same local network...", 
+        PopupWindowControl control = PopupWindowManager.Show(PopupWindowManager.CrateTextContent("UMO", SizeType.Middle, "Searching for server, please start webserver and connect the phone on the same local network...", 
 		new ButtonInfo[1]
         {
             new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative }
@@ -247,7 +299,7 @@ static class FileSystemProxy
 			s.WindowSize = SizeType.Small;
 			s.Description = "Enter IP of the server";
 			s.Notes = "";
-			s.InputText = "0.0.0.0";
+			s.InputText = prevServer == "" ? "0.0.0.0" : prevServer;
 			s.DisableRegex = true;
 			s.CharacterLimit = 50;
 			s.Buttons = new ButtonInfo[1]
@@ -263,6 +315,8 @@ static class FileSystemProxy
 			while(!done)
 				yield return null;
 		}
+		if(cb != null)
+			cb(PopupButton.ButtonLabel.Next);
 	}
 #endif
 
