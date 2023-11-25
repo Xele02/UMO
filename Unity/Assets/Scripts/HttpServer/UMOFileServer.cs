@@ -33,7 +33,7 @@ public class UMOFileServer : MonoBehaviour
 
     void Start()
     {
-#if !UNITY_ANDROID
+#if !UNITY_ANDROID && !DEBUG_ANDROID_FILESYSTEM
         if(!RuntimeSettings.CurrentSettings.IsPathValid())
         {
             if(!UMOStart.TrySelectDirectory(TryStartServer))

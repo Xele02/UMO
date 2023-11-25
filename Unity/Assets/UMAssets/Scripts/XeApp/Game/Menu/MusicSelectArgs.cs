@@ -10,7 +10,7 @@ namespace XeApp.Game.Menu
             public FreeCategoryId.Type categoryId { get; internal set; } // 0x8
             public int freeMusicId { get; internal set; } // 0xC
             public Difficulty.Type difficulty { get; internal set; } // 0x10
-            // public OHCAABOMEOF.KGOGMKMBCPP eventCategory { get; internal set; } // 0x14
+            public OHCAABOMEOF.KGOGMKMBCPP_EventType eventCategory { get; internal set; } // 0x14
             public int miniGameId { get; internal set; } // 0x18
 
             // // RVA: 0x1054B20 Offset: 0x1054B20 VA: 0x1054B20

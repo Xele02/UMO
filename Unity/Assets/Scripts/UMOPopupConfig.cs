@@ -14,6 +14,8 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
     public UMO_ToggleButtonGroup MinigameAutoPlay;
     public UMO_ToggleButtonGroup ForceIntegrityCheck;
     public UMO_ToggleButtonGroup DisplayItemId;
+    public UMO_ToggleButtonGroup EnableInfoLog;
+    public UMO_ToggleButtonGroup EnableErrorLog;
 
     public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
     {
@@ -26,6 +28,8 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         MinigameAutoPlay.SetSelected(RuntimeSettings.CurrentSettings.MinigameAutoPlay ? 0 : 1);
         ForceIntegrityCheck.SetSelected(KEHOJEJMGLJ.FJDOHLADGFI ? 0 : 1);
         DisplayItemId.SetSelected(RuntimeSettings.CurrentSettings.DisplayIdInName ? 0 : 1);
+        EnableInfoLog.SetSelected(RuntimeSettings.CurrentSettings.EnableInfoLog ? 0 : 1);
+        EnableErrorLog.SetSelected(RuntimeSettings.CurrentSettings.EnableErrorLog ? 0 : 1);
         gameObject.SetActive(true);
     }
 
@@ -39,6 +43,8 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         RuntimeSettings.CurrentSettings.MinigameAutoPlay = MinigameAutoPlay.GetSelected() == 0;
         KEHOJEJMGLJ.FJDOHLADGFI = ForceIntegrityCheck.GetSelected() == 0;
         RuntimeSettings.CurrentSettings.DisplayIdInName = DisplayItemId.GetSelected() == 0;
+        RuntimeSettings.CurrentSettings.EnableInfoLog = EnableInfoLog.GetSelected() == 0;
+        RuntimeSettings.CurrentSettings.EnableErrorLog = EnableErrorLog.GetSelected() == 0;
         RuntimeSettings.CurrentSettings.Save();
     }
     public bool IsScrollable()

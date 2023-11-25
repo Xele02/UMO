@@ -23,9 +23,15 @@ namespace ExternLib
 
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 
+			int baseVersion = 1;
 			// Config full unlocked profile
-			(newData.LBDOLHGDIEB_GetBlock("base") as JBMPOAAMGNB_Base).PBEKKMOPENN_AgreeTosVer = 1;
-			(newData.LBDOLHGDIEB_GetBlock("base") as JBMPOAAMGNB_Base).IJHBIMNKOMC_TutorialEnd = 2;
+			{
+				JBMPOAAMGNB_Base baseBlock = newData.LBDOLHGDIEB_GetBlock("base") as JBMPOAAMGNB_Base;
+				baseVersion = baseBlock.LLNDMKBBNIJ_Version;
+				baseBlock.LLNDMKBBNIJ_Version = JBMPOAAMGNB_Base.JDNKJIFMONK_CurrentVersion;
+				baseBlock.PBEKKMOPENN_AgreeTosVer = 1;
+				baseBlock.IJHBIMNKOMC_TutorialEnd = 2;
+			}
 			{
 				EGOLBAPFHHD_Common commonBlock = newData.LBDOLHGDIEB_GetBlock("common") as EGOLBAPFHHD_Common;
 				// set max level
@@ -251,15 +257,13 @@ namespace ExternLib
 			ODPNBADOFAN_Quest saveQuests = newData.LBDOLHGDIEB_GetBlock("quest") as ODPNBADOFAN_Quest;
 			for (int i = 0; i < saveQuests.GPMKFMFEKLN_NormalQuests.Count; i++)
 			{
-				saveQuests.GPMKFMFEKLN_NormalQuests[i].EALOBDHOCHP_Stat = 3;
-			}
-			for (int i = 0; i < saveQuests.GPMKFMFEKLN_NormalQuests.Count; i++)
-			{
+				if(baseVersion <= 1)
+				{
+					saveQuests.GPMKFMFEKLN_NormalQuests[i].EALOBDHOCHP_Stat = 0;
+				}
 				CNLPPCFJEID_QuestInfo MABBBOEAPAA_dbQuest = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests[i];
 				if(ILLPDLODANB.HHMKDAIGMKC_IsDebutMission((ILLPDLODANB.LOEGALDKHPL)MABBBOEAPAA_dbQuest.INDDJNMPONH_Type))
 					saveQuests.GPMKFMFEKLN_NormalQuests[i].EALOBDHOCHP_Stat = 3;
-				else if (saveQuests.GPMKFMFEKLN_NormalQuests[i].BEBJKJKBOGH_Date == 0 && saveQuests.GPMKFMFEKLN_NormalQuests[i].EALOBDHOCHP_Stat == 3)
-					saveQuests.GPMKFMFEKLN_NormalQuests[i].EALOBDHOCHP_Stat = 0;
 			}
 			{
 				OCMJNBIFJNM_Offer offerBlock = newData.LBDOLHGDIEB_GetBlock("offer") as OCMJNBIFJNM_Offer;

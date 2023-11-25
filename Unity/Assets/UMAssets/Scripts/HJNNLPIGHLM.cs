@@ -23,7 +23,11 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase // TypeDefIndex
     }
 
 	// // RVA: 0x183A7EC Offset: 0x183A7EC VA: 0x183A7EC Slot: 5
-	// public override string IFKKBHPMALH() { }
+	public override string IFKKBHPMALH()
+	{
+		TodoLogger.LogError(0, "IFKKBHPMALH");
+		return null;
+	}
 
 	// // RVA: 0x183A974 Offset: 0x183A974 VA: 0x183A974
 	// private List<PHBACNMCMHG.LLFNMNJGLNL> LEAGIGKFMPE() { }
@@ -297,7 +301,11 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase // TypeDefIndex
 	// public override string DBEMCLMPCFA() { }
 
 	// // RVA: 0x1846D7C Offset: 0x1846D7C VA: 0x1846D7C Slot: 78
-	// public override long OEGAJJANHGL() { }
+	public override long OEGAJJANHGL()
+	{
+		TodoLogger.LogError(0, "OEGAJJANHGL");
+		return 0;
+	}
 
 	// [CompilerGeneratedAttribute] // RVA: 0x6BC5D4 Offset: 0x6BC5D4 VA: 0x6BC5D4
 	// // RVA: 0x1846F08 Offset: 0x1846F08 VA: 0x1846F08

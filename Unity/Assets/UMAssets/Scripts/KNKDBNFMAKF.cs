@@ -28,7 +28,11 @@ public class KNKDBNFMAKF_EventSp : IKDICBBFBMI_EventBase
     }
 
 	// // RVA: 0x1123108 Offset: 0x1123108 VA: 0x1123108 Slot: 5
-	// public override string IFKKBHPMALH() { }
+	public override string IFKKBHPMALH()
+	{
+		TodoLogger.LogError(0, "IFKKBHPMALH");
+		return null;
+	}
 
 	// // RVA: 0x1123290 Offset: 0x1123290 VA: 0x1123290
 	// public List<int> GFPCPHOEAFG() { }

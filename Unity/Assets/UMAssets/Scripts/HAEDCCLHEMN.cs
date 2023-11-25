@@ -60,7 +60,11 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
     }
 
 	// // RVA: 0x1B6CF48 Offset: 0x1B6CF48 VA: 0x1B6CF48 Slot: 5
-	// public override string IFKKBHPMALH() { }
+	public override string IFKKBHPMALH()
+	{
+		TodoLogger.LogError(0, "IFKKBHPMALH");
+		return null;
+	}
 
 	// // RVA: 0x1B6D0D0 Offset: 0x1B6D0D0 VA: 0x1B6D0D0
 	// private List<ICFLJACCIKF.OABJKIKLDKP> LEAGIGKFMPE() { }
@@ -534,7 +538,11 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 	// public override string DBEMCLMPCFA() { }
 
 	// // RVA: 0x1B87958 Offset: 0x1B87958 VA: 0x1B87958 Slot: 78
-	// public override long OEGAJJANHGL() { }
+	public override long OEGAJJANHGL()
+	{
+		TodoLogger.LogError(0, "OEGAJJANHGL");
+		return 0;
+	}
 
 	// [CompilerGeneratedAttribute] // RVA: 0x6BC11C Offset: 0x6BC11C VA: 0x6BC11C
 	// // RVA: 0x1B87AE8 Offset: 0x1B87AE8 VA: 0x1B87AE8

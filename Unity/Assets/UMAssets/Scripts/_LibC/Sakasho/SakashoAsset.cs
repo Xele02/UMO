@@ -2,6 +2,7 @@ using System.Collections;
 using System.IO;
 using UnityEngine;
 using XeApp.Game;
+using XeApp.Game.Common;
 using XeSys;
 
 namespace ExternLib
@@ -136,7 +137,7 @@ namespace ExternLib
             }
             else if(json.Contains("android"))
             {
-#if UNITY_ANDROID// && !UNITY_EDITOR
+#if UNITY_ANDROID || DEBUG_ANDROID_FILESYSTEM// && !UNITY_EDITOR
                 if(File.Exists(Application.persistentDataPath+"/data/RequestGetFiles.json"))
                 {
                     message = System.Text.Encoding.UTF8.GetString(System.IO.File.ReadAllBytes(Application.persistentDataPath+"/data/RequestGetFiles.json"));
@@ -162,29 +163,37 @@ namespace ExternLib
 
             return 0;
         }
-#if UNITY_ANDROID
+#if UNITY_ANDROID || DEBUG_ANDROID_FILESYSTEM
         public static IEnumerator DownloadRequestGetFiles(int callbackId, string json)
         {
-			yield return Co.R(FileSystemProxy.WaitServerInfo(false));
-            WWW req = new WWW("http://"+FileSystemProxy.foundServer+":8000/RequestGetFiles.json");
-            while(!req.isDone)
-                yield return null;
-            if(req.error == null)
+            bool retry = false;
+            yield return Co.R(FileSystemProxy.WaitServerInfo("Missing "+Application.persistentDataPath+"/data/RequestGetFiles.json"+ ".", true, true, (PopupButton.ButtonLabel btn) =>
             {
-                if(!Directory.Exists(Application.persistentDataPath+"/data/"))
-                    Directory.CreateDirectory(Application.persistentDataPath+"/data/");
-                File.WriteAllBytes(Application.persistentDataPath+"/data/RequestGetFiles.json", req.bytes);
-                yield return Co.R(FileSystemProxy.ReloadFileList());
-                SakashoAssetGetAssetList(callbackId, json);
-            }
-            else
+                if(btn == PopupButton.ButtonLabel.Retry)
+                    retry = true;
+            }));
+            if(!retry)
             {
-                UnityEngine.Debug.LogError("Error downloading json : "+req.error);
-                EDOHBJAPLPF_JsonData res = GetBaseMessage();
-                res["error_code"] = "NETWORK_ERROR";
-				res["error_detail"] = null;
-                SendMessage(callbackId, res);
+                WWW req = new WWW("http://"+FileSystemProxy.foundServer+":8000/RequestGetFiles.json");
+                while(!req.isDone)
+                    yield return null;
+                if(req.error == null)
+                {
+                    if(!Directory.Exists(Application.persistentDataPath+"/data/"))
+                        Directory.CreateDirectory(Application.persistentDataPath+"/data/");
+                    File.WriteAllBytes(Application.persistentDataPath+"/data/RequestGetFiles.json", req.bytes);
+                    yield return Co.R(FileSystemProxy.ReloadFileList());
+                }
+                else
+                {
+                    UnityEngine.Debug.LogError("Error downloading json : "+req.error);
+                    /*EDOHBJAPLPF_JsonData res = GetBaseMessage();
+                    res["error_code"] = "NETWORK_ERROR";
+                    res["error_detail"] = null;
+                    SendMessage(callbackId, res);*/
+                }
             }
+            SakashoAssetGetAssetList(callbackId, json);
         }
 #endif
     }

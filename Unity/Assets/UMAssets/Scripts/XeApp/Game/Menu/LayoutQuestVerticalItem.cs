@@ -170,7 +170,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1879BB8 Offset: 0x1879BB8 VA: 0x1879BB8
-		//public void SetDailyAnimFrame(int frame) { }
+		public void SetDailyAnimFrame(int frame)
+		{
+			m_layoutDailyAnim.StartChildrenAnimGoStop(frame % m_dailyAnimFrame, frame % m_dailyAnimFrame);
+		}
 
 		//// RVA: 0x18816A8 Offset: 0x18816A8 VA: 0x18816A8
 		public void SetDesc(string text)

@@ -782,12 +782,12 @@ namespace XeApp.Game.Menu
 			m_bingoInfo.FBANBDCOEJL();
 			BingoRewardListPopup.ReceivedBingoCount = m_bingoInfo.OLPBIMOPHLM_ReceiveCount;
 			IsRewardNextPlate = m_bingoInfo.JOJINPEMEBC;
-			if(m_bingoInfo.FHLGEKGBLLN)
+			if(m_bingoInfo.FHLGEKGBLLN_AllReceived)
 			{
 				GNGMCIAIKMA.HHCJCDFCLOB.NJJLNPOCKFO(bingoId);
-				IsNextBingo = GNGMCIAIKMA.HHCJCDFCLOB.CGOIJPBINCF(bingoId, true) > 0;
+				IsNextBingo = GNGMCIAIKMA.HHCJCDFCLOB.CGOIJPBINCF_GetNextBingoStepId(bingoId, true) > 0;
 				IsNextBingoEnable = GNGMCIAIKMA.HHCJCDFCLOB.DHPLHALIDHH(bingoId);
-				GNGMCIAIKMA.HHCJCDFCLOB.KGABKGKGNCA(bingoId, !IsNextBingo);
+				GNGMCIAIKMA.HHCJCDFCLOB.KGABKGKGNCA_SetBingoClear(bingoId, !IsNextBingo);
 				QuestUtility.UpdateQuestData();
 				GNGMCIAIKMA.HHCJCDFCLOB.FBHHEBDDIMO(bingoId, false);
 				BingoSave(() =>
@@ -955,7 +955,7 @@ namespace XeApp.Game.Menu
 						"(",
 						data.GIKJNDFJFPM_MsCnt,
 						"/",
-						data.MPBADMODLOJ,
+						data.MPBADMODLOJ_MsTarget,
 						")"
 					});
 				}

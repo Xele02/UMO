@@ -138,10 +138,16 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8DD51C Offset: 0x8DD51C VA: 0x8DD51C Slot: 5
-	// public virtual string IFKKBHPMALH() { }
+	public virtual string IFKKBHPMALH()
+	{
+		return null;
+	}
 
 	// // RVA: 0x8DD524 Offset: 0x8DD524 VA: 0x8DD524 Slot: 6
-	// public virtual string DCODGEOEDPG() { }
+	public virtual string DCODGEOEDPG()
+	{ 
+		return null;
+	}
 
 	// // RVA: 0x8DD52C Offset: 0x8DD52C VA: 0x8DD52C Slot: 7
 	public virtual List<int> HEACCHAKMFG()
@@ -367,7 +373,22 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8DF144 Offset: 0x8DF144 VA: 0x8DF144 Slot: 22
-	// public virtual void FHGEJBKNBLP(List<int> CGCFENMHJIM) { }
+	public virtual void FHGEJBKNBLP(List<int> CGCFENMHJIM)
+	{
+		if(AGLILDLEFDK != null && OLDFFDMPEBM != null)
+		{
+			int cnt = AGLILDLEFDK.Count;
+			if(OLDFFDMPEBM.Count < cnt)
+				cnt = OLDFFDMPEBM.Count;
+			for(int i = 0; i < CGCFENMHJIM.Count; i++)
+			{
+				if(OLDFFDMPEBM[CGCFENMHJIM[i] - 1].EALOBDHOCHP_Stat == 2)
+				{
+					OLDFFDMPEBM[CGCFENMHJIM[i] - 1].JIOMCDGKIAF = 1;
+				}
+			}
+		}
+	}
 
 	// // RVA: 0x8DDBB0 Offset: 0x8DDBB0 VA: 0x8DDBB0
 	private int IOBGPMINKFI(List<AKIIJBEJOEP> NJEKJBDJKLH, List<IKCGAJKCPFN> KLGILMKOHOI)
@@ -795,7 +816,10 @@ public abstract class IKDICBBFBMI_EventBase
 	// public virtual string DBEMCLMPCFA() { }
 
 	// // RVA: 0x8E2568 Offset: 0x8E2568 VA: 0x8E2568 Slot: 78
-	// public virtual long OEGAJJANHGL() { }
+	public virtual long OEGAJJANHGL()
+	{
+		return 0;
+	}
 
 	// // RVA: 0x8E2574 Offset: 0x8E2574 VA: 0x8E2574 Slot: 79
 	// public virtual bool GNGPNMHGDGE() { }

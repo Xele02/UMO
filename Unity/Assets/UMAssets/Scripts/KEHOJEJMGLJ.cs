@@ -8,6 +8,7 @@ using XeApp.Game;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using System.Text;
+using XeApp.Game.Common;
 
 public class KEHOJEJMGLJ
 {
@@ -286,269 +287,280 @@ public class KEHOJEJMGLJ
 			{
 				if(LHJNPJFNDNA != COJNCNGHIJC.HOHOBEOJPBK_ServerInfo.AJBPBEALBOB_ServerCurrentAssetRevision)
 				{
-					ICCMKHKNAMJ = new List<GCGNICILKLD_AssetFileInfo>();
-					Dictionary<string, int> FAOOOLDDBBB = new Dictionary<string, int>();
-					bool KOMKKBDABJP = false;
-					JFAIABBIPEO.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
-						//0xE8CE74
-						//FCPBCDOKOPD?
-						KLIJFOBEKBE.EBCAKALIAHH_RemoveExpiredSongs();
-						PAIGMDNFNDJ = 0;
-						DIDACHONHJA_ListExistingFiles(ref FAOOOLDDBBB, JCMJBMBMJAK_PersistentDataPath);
-						string[] str = new string[5];
-						str[0] = ""+COJNCNGHIJC.NFEAMMJIMPG.KGHAJGGMPKL_Files.Count;
-						str[1] = ",installed=";
-						str[2] = ""+PAIGMDNFNDJ;
-						str[3] = ",timestamp=";
-						str[4] = ""+0;
-						UnityEngine.Debug.Log(string.Concat(str));
-						//FCPBCDOKOPD
-						NFIDKHELFDK = 0;
-						IAPEABPJPOE(COJNCNGHIJC.NFEAMMJIMPG, ref FAOOOLDDBBB);
-						BEINKAGIHJB_CheckMediaFile();
-						KOMKKBDABJP = true;
-					});
-					//goto LAB_00e8dd6c;
-					//2
-					while(KOMKKBDABJP == false)
-						yield return null;
-
-					//FCPBCDOKOPD?
-					DLAEPJPPEKI = false;
-					// L 482
-					//*************
-					TodoLogger.LogError(TodoLogger._Todo, "Todo File on disk check");
-#if !UNITY_ANDROID
-					ICCMKHKNAMJ.Clear();// UMO hack, not file check for now on editor, all files are here.
-#endif
-					//*************
-					if (ICCMKHKNAMJ.Count == 0)
-					{
-						KOMKKBDABJP = false;
-						JFAIABBIPEO.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
-							//0xE8D3C0
-							TodoLogger.LogError(TodoLogger._Todo, "Disabled file deletion");
-							//CIDPPOGCODB(FAOOOLDDBBB);
-							KOMKKBDABJP = true;
-						});
-						//goto LAB_00e8eab0;
-						//3
-						//LAB_00e8eab0:
-						while(!KOMKKBDABJP)
-						{
-							yield return null;
-						}
-						LHJNPJFNDNA = COJNCNGHIJC.HOHOBEOJPBK_ServerInfo.AJBPBEALBOB_ServerCurrentAssetRevision;
-						if(MLPDBGFBAAC != null)
-						{
-							MLPDBGFBAAC.HJMKBCFJOOH();
-						}
-						if(EMJFHKHLHDB == KEHOJEJMGLJ.ACGGHEIMPHC.GGCIMLDFDOC/*1*/)
-						{
-							PKLPEIBEGNO();
-						}
-						ICCMKHKNAMJ.Clear();
-						KLIJFOBEKBE.HJMKBCFJOOH();
-						KDHNLDOIOAL();
-						GC.Collect();
-						GameManager.Instance.SetNeverSleep(false);
-						//FCPBCDOKOPD
-						if(BHFHGFKBOHH != null)
-						{
-							BHFHGFKBOHH();
-						}
-						//goto LAB_00e8f334;
-						FBGNDKKDOIE = null;
-						yield break;
-					}
-					// L518
-					GameManager.Instance.SetNeverSleep(true);
-					LFPOMKLKHPB NOAMCCLDODN = new LFPOMKLKHPB();
-					NOAMCCLDODN.LKLCOEJLBGG();
-					//break;
-					while (!NOAMCCLDODN.PLOOEECNHFB_IsDone)
-					{
-						yield return null;
-					}
-
-					NOAMCCLDODN.NKIKBOJOCNN_ShowInstallFileSize(ICCMKHKNAMJ);
-					//LAB_00e8e7d8
-					while(!NOAMCCLDODN.PLOOEECNHFB_IsDone)
-					{
-						yield return null;
-						// To 5
-						//5
-					}
-
-					if(NOAMCCLDODN.AAAOKDDILCP_IsError)
-					{
-						if(MOBEEPPKFLG != null)
-						{
-							MOBEEPPKFLG();
-						}
-						TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error EOFJPNPFGDM_Coroutine_Install");
-						yield break;
-					}
-					OEPPEGHGNNO(1, 0);
-					//LAB_00e8e87c:
-					while(!OEPPEGHGNNO(4, 0))
-					{
-						yield return null;
-						// to 6
-						//6
-					}
-#if UNITY_ANDROID
-					yield return Co.R(FileSystemProxy.WaitServerInfo(false));
-#endif
-					PMDNNKAPIKJ = new JEHIAIPJNJF_FileDownloader(3);
-					PMDNNKAPIKJ.DOMFHDPMCCO_AddFiles(ICCMKHKNAMJ, FLHOFIEOKDH_BaseUrl, JCMJBMBMJAK_PersistentDataPath);
-					PMDNNKAPIKJ.LBGNKOJFOFC = (JEHIAIPJNJF_FileDownloader.HCJPJKCIBDL_DldFileInfo JGBPLIGAILE) => {
-						//0xE8D424
-						GFOMKMANCPP(JGBPLIGAILE.ADHHKEMDOIK_LocalPath, JGBPLIGAILE.LAPFOLJGJMB_AssetFileInfo.CALJIGKCAAH_LastUpdated, JGBPLIGAILE.LAPFOLJGJMB_AssetFileInfo.HHPEMFKDHLK_FileHash, true);
-						FAOOOLDDBBB[JGBPLIGAILE.LAPFOLJGJMB_AssetFileInfo.OIEAICNAMNB_LocalFileName] = 2;
-						DMPNAEEIANJ = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
-						PKKHIEAEDPC p = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IELDDHJMFKN_Asset.NBHDIKJMLEN(JGBPLIGAILE.AJPIGKBIDDL_LocalFileName);
-						if(p != null)
-						{
-							if(p.NKGJOAEDCPH.PAAPNEMBHGN_Day > 0)
-							{
-								KLIJFOBEKBE.OJCJPCHFPGO_DeleteFileInfo(JGBPLIGAILE.AJPIGKBIDDL_LocalFileName);
-                                FECDBKKBAHO.FHOPNIJCFKA_FileInfo f = KLIJFOBEKBE.ANIJHEBLMGB(JGBPLIGAILE.AJPIGKBIDDL_LocalFileName, DMPNAEEIANJ, p.KKPAHLMJKIH_WavId);
-								f.FNALNKKMKDC_ExpireTime = DMPNAEEIANJ + 86400 * p.NKGJOAEDCPH.PAAPNEMBHGN_Day;
-								f.GEJJEDDEPMI = p.NKGJOAEDCPH.PEOIMDCECDL;
-							}
-						}
-					};
-					NJDHMNBBCLK = 60;
-					// goto LAB_00e8f360
-					//LAB_00e8f360:
-					PMDNNKAPIKJ.LAOEGNLOJHC();
+					Dictionary<string, int> FAOOOLDDBBB;
+					bool KOMKKBDABJP;
+					List<GCGNICILKLD_AssetFileInfo> listToCheck = null;
+					LFPOMKLKHPB NOAMCCLDODN;
 					while(true)
 					{
-						//LAB_00e8f368
-						yield return null;
-						//To 7
-						//7
-						PMDNNKAPIKJ.FBANBDCOEJL();
-						if(PMDNNKAPIKJ.CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.FEJIMBDPMKI/*2*/)
+						ICCMKHKNAMJ = new List<GCGNICILKLD_AssetFileInfo>();
+						FAOOOLDDBBB = new Dictionary<string, int>();
+						KOMKKBDABJP = false;
+						GameManager.Instance.NowLoading.Show();
+
+						TextContent content = null;
+						PopupWindowControl control = null;
+						if(listToCheck == null)
 						{
-							OEPPEGHGNNO(3, 100);
-							PMDNNKAPIKJ.Dispose();
-							PMDNNKAPIKJ = null;
-							BDGGNOAIIFK(100);
-							OEPPEGHGNNO(3, 100);
-							GameManager.Instance.SetNeverSleep(false);
+							listToCheck = COJNCNGHIJC.NFEAMMJIMPG.KGHAJGGMPKL_Files;
+						}
+						if(FJDOHLADGFI)
+						{
+							bool shown = false;
+							control = PopupWindowManager.Show(PopupWindowManager.CrateTextContent("Integrity Check", SizeType.Small, "Checking files : 0/"+listToCheck.Count, new ButtonInfo[0], false, true), null, null, null, () =>
+							{
+								shown = true;
+							});
+							while(!shown)
+								yield return null;
+							content = control.Content as TextContent;
+						}
+						float t = Time.realtimeSinceStartup;
+						int cnt = 0;
+
+						JFAIABBIPEO.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
+							//0xE8CE74
+							//FCPBCDOKOPD?
+							KLIJFOBEKBE.EBCAKALIAHH_RemoveExpiredSongs();
+							PAIGMDNFNDJ = 0;
+							DIDACHONHJA_ListExistingFiles(ref FAOOOLDDBBB, JCMJBMBMJAK_PersistentDataPath);
+							string[] str = new string[5];
+							str[0] = ""+listToCheck.Count;
+							str[1] = ",installed=";
+							str[2] = ""+PAIGMDNFNDJ;
+							str[3] = ",timestamp=";
+							str[4] = ""+0;
+							UnityEngine.Debug.Log(string.Concat(str));
+							//FCPBCDOKOPD
+							NFIDKHELFDK = 0;
+							IAPEABPJPOE(listToCheck, ref FAOOOLDDBBB, ref cnt);
+							BEINKAGIHJB_CheckMediaFile();
+							KOMKKBDABJP = true;
+						});
+						//goto LAB_00e8dd6c;
+						//2
+						while(KOMKKBDABJP == false)
+						{
+							yield return null;
+							if(FJDOHLADGFI && Time.realtimeSinceStartup - t > 1 && COJNCNGHIJC.NFEAMMJIMPG != null && COJNCNGHIJC.NFEAMMJIMPG.KGHAJGGMPKL_Files != null)
+							{
+								t = Time.realtimeSinceStartup;
+								content.SetText(string.Format("Checking files : {0}/{1}\nFiles to fix : {2}", cnt, listToCheck.Count, ICCMKHKNAMJ.Count));
+							}
+						}
+						GameManager.Instance.NowLoading.Hide();
+						if(FJDOHLADGFI)
+						{
+							control.Close(null, null);
+						}
+
+						//FCPBCDOKOPD?
+						DLAEPJPPEKI = false;
+						// L 482
+						//*************
+						TodoLogger.LogError(TodoLogger._Todo, "Todo File on disk check");
+	#if !UNITY_ANDROID && !DEBUG_ANDROID_FILESYSTEM
+						ICCMKHKNAMJ.Clear();// UMO hack, not file check for now on editor, all files are here.
+	#endif
+						//*************
+						if (ICCMKHKNAMJ.Count == 0)
+						{
 							KOMKKBDABJP = false;
 							JFAIABBIPEO.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
-								//0xE8D8B0
-								CIDPPOGCODB(FAOOOLDDBBB);
+								//0xE8D3C0
+								TodoLogger.LogError(TodoLogger._Todo, "Disabled file deletion");
+								//CIDPPOGCODB(FAOOOLDDBBB);
 								KOMKKBDABJP = true;
 							});
-							//goto LAB_00e8e0f8;
-							//0xd
-							//LAB_00e8e0f8
+							//goto LAB_00e8eab0;
+							//3
+							//LAB_00e8eab0:
 							while(!KOMKKBDABJP)
+							{
 								yield return null;
-							KLIJFOBEKBE.HJMKBCFJOOH();
-							GC.Collect();
-							NGDBJIAFCKE = true;
+							}
 							LHJNPJFNDNA = COJNCNGHIJC.HOHOBEOJPBK_ServerInfo.AJBPBEALBOB_ServerCurrentAssetRevision;
+							if(MLPDBGFBAAC != null)
+							{
+								MLPDBGFBAAC.HJMKBCFJOOH();
+							}
 							if(EMJFHKHLHDB == KEHOJEJMGLJ.ACGGHEIMPHC.GGCIMLDFDOC/*1*/)
 							{
 								PKLPEIBEGNO();
 							}
-							NOAMCCLDODN = null;
-							//LAB_00e8e258:
-							break;
-						}
-						//L731
-						if(PMDNNKAPIKJ.CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LPLEIJIFOKN_Error/*4*/)
-						{
-							// private KEHOJEJMGLJ.<>c__DisplayClass75_2 PHPPCOBECCA; // 0x24
-								// public int APGOAMNGFFF; // 0x8
-								// // RVA: 0xE8D91C Offset: 0xE8D91C VA: 0xE8D91C
-								// internal void EKHEBHFBKID() { }
-								// // RVA: 0xE8D928 Offset: 0xE8D928 VA: 0xE8D928
-								// internal void OIIFKBGOJKO() { }
-							int APGOAMNGFFF = 0;
-							string errorStr = "network";
-							if(PMDNNKAPIKJ.BHICPONFJKM_SpaceError)
-								errorStr = "storage";
-							int avaiable = StorageSupport.GetAvailableStorageSizeMB();
-							if(avaiable > -1 && avaiable < 50)
-								errorStr = "storage";
-							MAIHLKPEHJN(errorStr, () => {
-								//0xE8D91C
-								APGOAMNGFFF = 1;
-							}, () => {
-								//0xE8D928
-								TodoLogger.LogError(0, "TODO");
-							});
-							//goto LAB_00e8dffc;
-							// 8
-							while(APGOAMNGFFF == 0)
-								yield return null;
-							if(APGOAMNGFFF == 1)
+							ICCMKHKNAMJ.Clear();
+							KLIJFOBEKBE.HJMKBCFJOOH();
+							KDHNLDOIOAL();
+							GC.Collect();
+							GameManager.Instance.SetNeverSleep(false);
+							if(OEPPEGHGNNO(4, 0))
+								OEPPEGHGNNO(2, 100);
+							//FCPBCDOKOPD
+							if(BHFHGFKBOHH != null)
 							{
-								PMDNNKAPIKJ.PBIMGBKLDPP();
-								//goto LAB_00e8e088;
-								//9
-								while(PMDNNKAPIKJ.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_None/*0*/)
-								{
-									PMDNNKAPIKJ.FBANBDCOEJL();
-									yield return null;
-								}
-								//goto LAB_00e8f360;
-								PMDNNKAPIKJ.LAOEGNLOJHC();
-								continue;
+								BHFHGFKBOHH();
 							}
-							// LAB_00e8f30c;
-							PMDNNKAPIKJ.Dispose();
-							PMDNNKAPIKJ = null;
-							if(FGGJNGCAFGK != null)
-								FGGJNGCAFGK();
-							//LAB_00e8f334
+							//goto LAB_00e8f334;
 							FBGNDKKDOIE = null;
+							yield break;
+						}
+						listToCheck = ICCMKHKNAMJ;
+						// L518
+						GameManager.Instance.SetNeverSleep(true);
+						NOAMCCLDODN = new LFPOMKLKHPB();
+						NOAMCCLDODN.LKLCOEJLBGG();
+						//break;
+						while (!NOAMCCLDODN.PLOOEECNHFB_IsDone)
+						{
+							yield return null;
+						}
+
+						NOAMCCLDODN.NKIKBOJOCNN_ShowInstallFileSize(ICCMKHKNAMJ);
+						//LAB_00e8e7d8
+						while(!NOAMCCLDODN.PLOOEECNHFB_IsDone)
+						{
+							yield return null;
+							// To 5
+							//5
+						}
+
+						if(NOAMCCLDODN.AAAOKDDILCP_IsError)
+						{
+							if(MOBEEPPKFLG != null)
+							{
+								MOBEEPPKFLG();
+							}
 							TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error EOFJPNPFGDM_Coroutine_Install");
 							yield break;
 						}
-						// L.780
-						OEPPEGHGNNO(3, PMDNNKAPIKJ.HCAJCKCOCHC());
-						BDGGNOAIIFK(PMDNNKAPIKJ.HCAJCKCOCHC());
-						if(PMDNNKAPIKJ.MNFGKBAEFFL() || PMDNNKAPIKJ.KAMPHNKAHAB_IsDiskFull)
+
+#if UNITY_ANDROID || DEBUG_ANDROID_FILESYSTEM
+						bool retry = false;
+						FJDOHLADGFI = true;
+						yield return Co.R(FileSystemProxy.WaitServerInfo("Missing "+ICCMKHKNAMJ[0].OIEAICNAMNB_LocalFileName+(ICCMKHKNAMJ.Count > 1 ? " + "+(ICCMKHKNAMJ.Count - 1)+" files" : "") + " in "+JCMJBMBMJAK_PersistentDataPath, true, true, (PopupButton.ButtonLabel btn) =>
 						{
-							//LAB_00e8f064:
-							PMDNNKAPIKJ.PBIMGBKLDPP();
-							//goto LAB_00e8f0a4;
-							//LAB_00e8f0a4:
-							while(PMDNNKAPIKJ.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_None/*0*/)
+							if(btn == PopupButton.ButtonLabel.Retry)
+								retry = true;
+						}));
+						if(retry)
+							continue;
+#endif
+
+						OEPPEGHGNNO(1, 0);
+						//LAB_00e8e87c:
+						while(!OEPPEGHGNNO(4, 0))
+						{
+							yield return null;
+							// to 6
+							//6
+						}
+						PMDNNKAPIKJ = new JEHIAIPJNJF_FileDownloader(3);
+						PMDNNKAPIKJ.DOMFHDPMCCO_AddFiles(ICCMKHKNAMJ, FLHOFIEOKDH_BaseUrl, JCMJBMBMJAK_PersistentDataPath);
+						PMDNNKAPIKJ.LBGNKOJFOFC = (JEHIAIPJNJF_FileDownloader.HCJPJKCIBDL_DldFileInfo JGBPLIGAILE) => {
+							//0xE8D424
+							GFOMKMANCPP(JGBPLIGAILE.ADHHKEMDOIK_LocalPath, JGBPLIGAILE.LAPFOLJGJMB_AssetFileInfo.CALJIGKCAAH_LastUpdated, JGBPLIGAILE.LAPFOLJGJMB_AssetFileInfo.HHPEMFKDHLK_FileHash, true);
+							FAOOOLDDBBB[JGBPLIGAILE.LAPFOLJGJMB_AssetFileInfo.OIEAICNAMNB_LocalFileName] = 2;
+							DMPNAEEIANJ = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+							PKKHIEAEDPC p = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IELDDHJMFKN_Asset.NBHDIKJMLEN(JGBPLIGAILE.AJPIGKBIDDL_LocalFileName);
+							if(p != null)
 							{
-								PMDNNKAPIKJ.FBANBDCOEJL();
-								yield return null;
+								if(p.NKGJOAEDCPH.PAAPNEMBHGN_Day > 0)
+								{
+									KLIJFOBEKBE.OJCJPCHFPGO_DeleteFileInfo(JGBPLIGAILE.AJPIGKBIDDL_LocalFileName);
+									FECDBKKBAHO.FHOPNIJCFKA_FileInfo f = KLIJFOBEKBE.ANIJHEBLMGB(JGBPLIGAILE.AJPIGKBIDDL_LocalFileName, DMPNAEEIANJ, p.KKPAHLMJKIH_WavId);
+									f.FNALNKKMKDC_ExpireTime = DMPNAEEIANJ + 86400 * p.NKGJOAEDCPH.PAAPNEMBHGN_Day;
+									f.GEJJEDDEPMI = p.NKGJOAEDCPH.PEOIMDCECDL;
+								}
 							}
-							int APGOAMNGFFF = 0;
-							string errorStr = "network";
-							if(PMDNNKAPIKJ.KAMPHNKAHAB_IsDiskFull)
+						};
+						NJDHMNBBCLK = 60;
+						// goto LAB_00e8f360
+						//LAB_00e8f360:
+						PMDNNKAPIKJ.LAOEGNLOJHC();
+						bool isretry = false;
+						while(true)
+						{
+							if(isretry)
+								break;
+							//LAB_00e8f368
+							yield return null;
+							//To 7
+							//7
+							PMDNNKAPIKJ.FBANBDCOEJL();
+							if(PMDNNKAPIKJ.CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.FEJIMBDPMKI/*2*/)
 							{
-								errorStr = "storage";
+								OEPPEGHGNNO(3, 100);
+								PMDNNKAPIKJ.Dispose();
+								PMDNNKAPIKJ = null;
+								BDGGNOAIIFK(100);
+								OEPPEGHGNNO(3, 100);
+								GameManager.Instance.SetNeverSleep(false);
+								KOMKKBDABJP = false;
+								JFAIABBIPEO.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
+									//0xE8D8B0
+									CIDPPOGCODB(FAOOOLDDBBB);
+									KOMKKBDABJP = true;
+								});
+								//goto LAB_00e8e0f8;
+								//0xd
+								//LAB_00e8e0f8
+								while(!KOMKKBDABJP)
+									yield return null;
+								KLIJFOBEKBE.HJMKBCFJOOH();
+								GC.Collect();
+								NGDBJIAFCKE = true;
+								LHJNPJFNDNA = COJNCNGHIJC.HOHOBEOJPBK_ServerInfo.AJBPBEALBOB_ServerCurrentAssetRevision;
+								if(EMJFHKHLHDB == KEHOJEJMGLJ.ACGGHEIMPHC.GGCIMLDFDOC/*1*/)
+								{
+									PKLPEIBEGNO();
+								}
+								NOAMCCLDODN = null;
+								//LAB_00e8e258:
+								isretry = true; // Force a recheck on downloaded files directly
+								break;
 							}
-							int avaiable = StorageSupport.GetAvailableStorageSizeMB();
-							if(avaiable > -1 && avaiable < 50)
-								errorStr = "storage";
-							MAIHLKPEHJN(errorStr, () => {
-								//0xE8D93C
-								APGOAMNGFFF = 1;
-							}, () => {
-								//0xE8D948
-								TodoLogger.LogError(0, "TODO");
-							});
-							//goto LAB_00e8f260;
-							//0xb
-							while(APGOAMNGFFF == 0)
-								yield return null;
-							if(APGOAMNGFFF != 1)
+							//L731
+							if(PMDNNKAPIKJ.CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LPLEIJIFOKN_Error/*4*/)
 							{
-								//LAB_00e8f30c:
+								// private KEHOJEJMGLJ.<>c__DisplayClass75_2 PHPPCOBECCA; // 0x24
+									// public int APGOAMNGFFF; // 0x8
+									// // RVA: 0xE8D91C Offset: 0xE8D91C VA: 0xE8D91C
+									// internal void EKHEBHFBKID() { }
+									// // RVA: 0xE8D928 Offset: 0xE8D928 VA: 0xE8D928
+									// internal void OIIFKBGOJKO() { }
+								int APGOAMNGFFF = 0;
+								string errorStr = "network";
+								if(PMDNNKAPIKJ.BHICPONFJKM_SpaceError)
+									errorStr = "storage";
+								int avaiable = StorageSupport.GetAvailableStorageSizeMB();
+								if(avaiable > -1 && avaiable < 50)
+									errorStr = "storage";
+								MAIHLKPEHJN(errorStr, () => {
+									//0xE8D91C
+									APGOAMNGFFF = 1;
+								}, () => {
+									//0xE8D928
+									TodoLogger.LogError(0, "TODO");
+								});
+								//goto LAB_00e8dffc;
+								// 8
+								while(APGOAMNGFFF == 0)
+									yield return null;
+								if(APGOAMNGFFF == 1)
+								{
+									PMDNNKAPIKJ.PBIMGBKLDPP();
+									//goto LAB_00e8e088;
+									//9
+									while(PMDNNKAPIKJ.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_None)
+									{
+										PMDNNKAPIKJ.FBANBDCOEJL();
+										yield return null;
+									}
+									//goto LAB_00e8f360;
+									PMDNNKAPIKJ.LAOEGNLOJHC();
+									continue;
+								}
+								// LAB_00e8f30c;
 								PMDNNKAPIKJ.Dispose();
 								PMDNNKAPIKJ = null;
 								if(FGGJNGCAFGK != null)
@@ -558,56 +570,105 @@ public class KEHOJEJMGLJ
 								TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error EOFJPNPFGDM_Coroutine_Install");
 								yield break;
 							}
-							PMDNNKAPIKJ.PBIMGBKLDPP();
-							//LAB_00e8f2d0:
-							while(PMDNNKAPIKJ.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_None/*0*/)
+							// L.780
+							OEPPEGHGNNO(3, PMDNNKAPIKJ.HCAJCKCOCHC());
+							BDGGNOAIIFK(PMDNNKAPIKJ.HCAJCKCOCHC());
+							if(PMDNNKAPIKJ.MNFGKBAEFFL() || PMDNNKAPIKJ.KAMPHNKAHAB_IsDiskFull)
 							{
-								PMDNNKAPIKJ.FBANBDCOEJL();
-								//LAB_00e8f2fc:
-								yield return null;
-								// 0xc
-								//goto LAB_00e8f2d0
+								//LAB_00e8f064:
+								PMDNNKAPIKJ.PBIMGBKLDPP();
+								//goto LAB_00e8f0a4;
+								//LAB_00e8f0a4:
+								while(PMDNNKAPIKJ.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_None/*0*/)
+								{
+									PMDNNKAPIKJ.FBANBDCOEJL();
+									yield return null;
+								}
+								int APGOAMNGFFF = 0;
+								string errorStr = "network";
+								if(PMDNNKAPIKJ.KAMPHNKAHAB_IsDiskFull)
+								{
+									errorStr = "storage";
+								}
+								int avaiable = StorageSupport.GetAvailableStorageSizeMB();
+								if(avaiable > -1 && avaiable < 50)
+									errorStr = "storage";
+								MAIHLKPEHJN(errorStr, () => {
+									//0xE8D93C
+									APGOAMNGFFF = 1;
+								}, () => {
+									//0xE8D948
+									TodoLogger.LogError(0, "TODO");
+								});
+								//goto LAB_00e8f260;
+								//0xb
+								while(APGOAMNGFFF == 0)
+									yield return null;
+								if(APGOAMNGFFF != 1)
+								{
+									//LAB_00e8f30c:
+									PMDNNKAPIKJ.Dispose();
+									PMDNNKAPIKJ = null;
+									if(FGGJNGCAFGK != null)
+										FGGJNGCAFGK();
+									//LAB_00e8f334
+									FBGNDKKDOIE = null;
+									TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error EOFJPNPFGDM_Coroutine_Install");
+									yield break;
+								}
+								PMDNNKAPIKJ.PBIMGBKLDPP();
+								//LAB_00e8f2d0:
+								while(PMDNNKAPIKJ.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_None/*0*/)
+								{
+									PMDNNKAPIKJ.FBANBDCOEJL();
+									//LAB_00e8f2fc:
+									yield return null;
+									// 0xc
+									//goto LAB_00e8f2d0
+								}
+								//goto LAB_00e8f360;
+								PMDNNKAPIKJ.LAOEGNLOJHC();
+								continue;
 							}
-							//goto LAB_00e8f360;
-							PMDNNKAPIKJ.LAOEGNLOJHC();
+							NJDHMNBBCLK = NJDHMNBBCLK - 1;
+							if(NJDHMNBBCLK < 0)
+							{
+								GC.Collect();
+								NJDHMNBBCLK = 60;
+							}
+							//goto LAB_00e8f368;
 							continue;
 						}
-						NJDHMNBBCLK = NJDHMNBBCLK - 1;
-						if(NJDHMNBBCLK < 0)
+						if(isretry)
+							continue;
+						//L 380
+						if(NGDBJIAFCKE)
 						{
-							GC.Collect();
-							NJDHMNBBCLK = 60;
+							OEPPEGHGNNO(2, 100);
 						}
-						//goto LAB_00e8f368;
-						continue;
-					}
-					//L 380
-					if(NGDBJIAFCKE)
-					{
-						OEPPEGHGNNO(2, 100);
-					}
-					GC.Collect();
-					if(BHFHGFKBOHH != null)
-					{
-						BHFHGFKBOHH();
-					}
-					//FCPBCDOKOPD
-					if(MLPDBGFBAAC != null)
-					{
-						if(DLAEPJPPEKI)
+						GC.Collect();
+						if(BHFHGFKBOHH != null)
 						{
-							MLPDBGFBAAC.PNMIOGBPDFN();
+							BHFHGFKBOHH();
 						}
-						MLPDBGFBAAC.HJMKBCFJOOH();
+						//FCPBCDOKOPD
+						if(MLPDBGFBAAC != null)
+						{
+							if(DLAEPJPPEKI)
+							{
+								MLPDBGFBAAC.PNMIOGBPDFN();
+							}
+							MLPDBGFBAAC.HJMKBCFJOOH();
+						}
+						if(ICCMKHKNAMJ != null)
+						{
+							ICCMKHKNAMJ.Clear();
+							ICCMKHKNAMJ = null;
+						}
+						KLIJFOBEKBE.HJMKBCFJOOH();
+						KDHNLDOIOAL();
+						break;
 					}
-					if(ICCMKHKNAMJ != null)
-					{
-						ICCMKHKNAMJ.Clear();
-						ICCMKHKNAMJ = null;
-					}
-					KLIJFOBEKBE.HJMKBCFJOOH();
-					KDHNLDOIOAL();
-					break;
 				}
 			}
 			GameManager.Instance.SetNeverSleep(false);
@@ -765,12 +826,13 @@ public class KEHOJEJMGLJ
 	}
 
 	// // RVA: 0xE8A2C4 Offset: 0xE8A2C4 VA: 0xE8A2C4
-	private void IAPEABPJPOE(IKAHKDKIGNA CBLEBKOJJDB, ref Dictionary<string, int> FAOOOLDDBBB)
+	private void IAPEABPJPOE(/*IKAHKDKIGNA CBLEBKOJJDB*/List<GCGNICILKLD_AssetFileInfo> KGHAJGGMPKL_Files, ref Dictionary<string, int> FAOOOLDDBBB, ref int cnt)
 	{
 		MD5 md5 = MD5.Create();
-		for(int i = 0; i < CBLEBKOJJDB.KGHAJGGMPKL_Files.Count; i++)
+		for(int i = 0; i < KGHAJGGMPKL_Files.Count; i++)
 		{
-			GCGNICILKLD_AssetFileInfo afinfo = CBLEBKOJJDB.KGHAJGGMPKL_Files[i];
+			cnt = i;
+			GCGNICILKLD_AssetFileInfo afinfo = KGHAJGGMPKL_Files[i];
 			bool b = false;
 			if(FBGNDKKDOIE != null && FBGNDKKDOIE.Count > 0)
 			{
@@ -796,7 +858,7 @@ public class KEHOJEJMGLJ
 				string localPath = KEHOJEJMGLJ.JCMJBMBMJAK_PersistentDataPath + afinfo.OIEAICNAMNB_LocalFileName;
 				if(FAOOOLDDBBB.ContainsKey(afinfo.OIEAICNAMNB_LocalFileName))
 				{
-#if !UNITY_ANDROID // don't check date or hash on android, we keep everything
+#if !UNITY_ANDROID && !DEBUG_ANDROID_FILESYSTEM // don't check date or hash on android, we keep everything
                     PKKHIEAEDPC dbAsset = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IELDDHJMFKN_Asset.NBHDIKJMLEN(afinfo.OIEAICNAMNB_LocalFileName);
                     HODOGPOKOOJ.KMBJEEFHJOH fileKeepStatus = HODOGPOKOOJ.FABLNMEEKKF_GetFileKeepStatus(dbAsset, EMJFHKHLHDB != ACGGHEIMPHC.GGCIMLDFDOC ? HODOGPOKOOJ.KNNLDAHADJB.ANFKBNLLJFN : HODOGPOKOOJ.KNNLDAHADJB.CCAPCGPIIPF);
 					if(b)
@@ -896,7 +958,7 @@ public class KEHOJEJMGLJ
 				else
 				{
 					KLIJFOBEKBE.OJCJPCHFPGO_DeleteFileInfo(afinfo.OIEAICNAMNB_LocalFileName);
-#if !UNITY_ANDROID // Dld all on android
+#if !UNITY_ANDROID && !DEBUG_ANDROID_FILESYSTEM // Dld all on android
 					HODOGPOKOOJ.KMBJEEFHJOH a = HODOGPOKOOJ.FABLNMEEKKF_GetFileKeepStatus(afinfo.OIEAICNAMNB_LocalFileName, EMJFHKHLHDB != ACGGHEIMPHC.GGCIMLDFDOC ? HODOGPOKOOJ.KNNLDAHADJB.ANFKBNLLJFN : HODOGPOKOOJ.KNNLDAHADJB.CCAPCGPIIPF);
 					if(b || a == HODOGPOKOOJ.KMBJEEFHJOH.CCAPCGPIIPF/*2*/)
 #endif
@@ -956,7 +1018,7 @@ public class KEHOJEJMGLJ
 	// public static void JKIBGMKGMCK(bool CPBPOIMHIML) { }
 
 	// // RVA: 0xE8AFF8 Offset: 0xE8AFF8 VA: 0xE8AFF8
-	private static string IFCHFDEDCGF_GetFileHash(MD5 DMIPFEIICDP, string CJEKGLGBIHF_path)
+	public static string IFCHFDEDCGF_GetFileHash(MD5 DMIPFEIICDP, string CJEKGLGBIHF_path)
 	{
 		FileStream f = File.OpenRead(CJEKGLGBIHF_path);
         byte[] data = DMIPFEIICDP.ComputeHash(f);

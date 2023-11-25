@@ -667,6 +667,11 @@ public class IOGKADECKOP
 	// private NHPDPKHMFEP MGPMDNDOBFI; // 0x2C
 	// private int FHACAEAHPIA; // 0x30
 		//0xA0B93C
+		if(UMOLogWritter.Instance != null)
+		{
+			UMOLogWritter.Instance.CheckEnabled();
+		}
+
 		// 0
 		PGIGNJDPCAH.NNOBACMJHDM(0);
 		PGIGNJDPCAH.IPJMPBANBPP = true;
@@ -1371,9 +1376,24 @@ public class IOGKADECKOP
 	private IEnumerator NNPDJBJGBFA_Coroutine_ReturnToTitle()
 	{
 		//0x1405D14
-		
-        TodoLogger.LogError(0, "TODO");
-		yield break;
+		if(!JJHGAKDMGLJ_NoTutorial)
+		{
+			GameManager.Instance.fullscreenFader.Fade(0.5f, 0);
+			yield return new WaitForSeconds(1);
+		}
+		else
+		{
+			GameManager.Instance.fullscreenFader.Fade(0.5f, Color.black);
+			yield return GameManager.Instance.WaitFadeYielder;
+			NOFPJPHIPBD_LayoutTitleCtrl.SetVisible(true);
+			IJCPLBPLJLJ.gameObject.SetActive(false);
+			HFIBEEMGOND_EndLoading();
+			GameManager.Instance.fullscreenFader.Fade(0.5f, 0);
+			yield return GameManager.Instance.WaitFadeYielder;
+		}
+		NOFPJPHIPBD_LayoutTitleCtrl.ScreenTap.SetCallback();
+		NOFPJPHIPBD_LayoutTitleCtrl.Buttons.SetCallback();
+		NOFPJPHIPBD_LayoutTitleCtrl.LbButtons.SetCallback();
 	}
 
 	// // RVA: 0xA075FC Offset: 0xA075FC VA: 0xA075FC
