@@ -74,7 +74,7 @@ namespace XeApp.Game.Menu
 			m_layout.SetPlatoonName(m_view.NPMKEEANPBE(selectFormation + 1));
 			bool b1 = true;
 			bool b2 = false;
-			for(int i = 0; i < 4; i++)
+			for(int i = 0; i < 3; i++)
 			{
 				m_layout.SettingAbilityAnim(list[i].LLOBHDMHJIG_Id, list[i].JMHKMDFNAIN);
 				m_layout.DisplayLockIcon(m_view.JGFHJPGJJHP() <= selectFormation, i);

@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using XeApp.Game.Common;
 using System;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -20,7 +21,13 @@ namespace XeApp.Game.Menu
 		public Action CallbackButtonContract { get; set; } // 0x28
 
 		//// RVA: 0x15DD4D0 Offset: 0x15DD4D0 VA: 0x15DD4D0
-		//public void SetStatus(string str, string str2, bool IsLegalButton) { }
+		public void SetStatus(string str, string str2, bool IsLegalButton)
+		{
+			m_text00.text = str;
+			m_text01.text = str2;
+			SetButtonCallback();
+			IsLegal = !IsLegalButton;
+		}
 
 		// RVA: 0x15DD554 Offset: 0x15DD554 VA: 0x15DD554
 		public void SetMainText(string str)
@@ -32,7 +39,20 @@ namespace XeApp.Game.Menu
 		//public void SetLimitText(string str) { }
 
 		//// RVA: 0x15DD5CC Offset: 0x15DD5CC VA: 0x15DD5CC
-		//private void SetButtonCallback() { }
+		private void SetButtonCallback()
+		{
+			if(m_button != null)
+			{
+				m_button.ClearOnClickCallback();
+				m_button.AddOnClickCallback(() =>
+				{
+					//0x15DDA64
+					if(CallbackButtonContract != null)
+						CallbackButtonContract();
+					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+				});
+			}
+		}
 
 		// RVA: 0x15DD6DC Offset: 0x15DD6DC VA: 0x15DD6DC
 		public void Reset()
@@ -41,10 +61,18 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x15DD6E0 Offset: 0x15DD6E0 VA: 0x15DD6E0
-		//public void Show() { }
+		public void Show()
+		{
+			SetButtonHidden();
+			checkLimitTextDisable();
+			gameObject.SetActive(true);
+		}
 
 		//// RVA: 0x15DD8A0 Offset: 0x15DD8A0 VA: 0x15DD8A0
-		//public void Hide() { }
+		public void Hide()
+		{
+			gameObject.SetActive(false);
+		}
 
 		//// RVA: 0x15DD768 Offset: 0x15DD768 VA: 0x15DD768
 		public bool checkLimitTextDisable()
@@ -65,10 +93,16 @@ namespace XeApp.Game.Menu
 		//public bool IsButtonHidden() { }
 
 		//// RVA: 0x15DD72C Offset: 0x15DD72C VA: 0x15DD72C
-		//public void SetButtonHidden() { }
+		public void SetButtonHidden()
+		{
+			m_button.Hidden = IsLegal;
+		}
 
 		//// RVA: 0x15DD904 Offset: 0x15DD904 VA: 0x15DD904
-		//public bool IsReady() { }
+		public bool IsReady()
+		{
+			return m_button.IsLoaded() && IsLoaded();
+		}
 
 		// RVA: 0x15DD948 Offset: 0x15DD948 VA: 0x15DD948 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
@@ -79,9 +113,5 @@ namespace XeApp.Game.Menu
 			Loaded();
 			return true;
 		}
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x704DDC Offset: 0x704DDC VA: 0x704DDC
-		//// RVA: 0x15DDA64 Offset: 0x15DDA64 VA: 0x15DDA64
-		//private void <SetButtonCallback>b__12_0() { }
 	}
 }

@@ -203,7 +203,7 @@ namespace XeApp.Game.Menu
 						{
 							form++;
 							if (form > 2)
-								form -= 2;
+								form -= 3;
 							m_InfoLayout.StartChengeEnemyPower(platoonId, false, form, true);
 							BOPFPIHGJMD.ADMNKELOLPN a1 = KDHGBOOECKC.HHCJCDFCLOB.KJGAJBOBIHK(m_offerInfo.FGHGMHPNEMG_Category, m_offerInfo.PPFNGGCBJKC);
 							m_layout.SettingText(KDHGBOOECKC.HHCJCDFCLOB.KGLLKKCFDEL((FKGMGBHBNOC.HPJOCKGKNCC_Form)form, a1, BOPFPIHGJMD.HBJMIJIOCAM.FMHLGHDKJBC_0) * KDHGBOOECKC.HHCJCDFCLOB.LBDENPEGONA(platoonId, BOPFPIHGJMD.HBJMIJIOCAM.FMHLGHDKJBC_0) / 100,
@@ -264,7 +264,65 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FC8F4 Offset: 0x6FC8F4 VA: 0x6FC8F4
 		//// RVA: 0x1715998 Offset: 0x1715998 VA: 0x1715998
-		//private IEnumerator Animation() { }
+		private IEnumerator Animation()
+		{
+			//0x1718074
+			bool IsSaveing = true;
+			CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
+			{
+				//0x171713C
+				JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
+				IsSaveing = false;
+			}, () =>
+			{
+				//0x1716F68
+				JDDGPJDKHNE.HHCJCDFCLOB.FOKEGEOKGDG();
+				JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
+				SoundManager.Instance.sePlayerMenu.Stop();
+				MenuScene.Instance.GotoTitle();
+			}, null);
+			while(m_layout.IsPlaying())
+				yield return null;
+			if(cameraAnim == null)
+			{
+				m_viewValkyrie.ValkyrieCamera.GetComponent<ViewModeCameraMan>().IsInfluence = false;
+				cameraAnim = m_viewValkyrie.ValkyrieCamera.gameObject.AddComponent<OfferSortCamAnimController>();
+				yield return Co.R(cameraAnim.Co_loadAssets(form, () =>
+				{
+					//0x1717174
+					m_pilotCutIn.Enter();
+					SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_VFOPS_002);
+					SoundManager.Instance.voPilot.Play(PilotVoicePlayer.VoiceCategory.Offer_Sortie, 0);
+				}));
+			}
+			while(m_pilotCutIn.IsPlaying())
+				yield return null;
+			SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_VFOPS_004);
+			if(cameraAnim != null)
+			{
+				while(cameraAnim.IsPlayingAnim())
+					yield return null;
+			}
+			//LAB_0171845c
+			SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_VFOPS_003);
+			m_pilotCutIn.SortieLeave();
+			m_sortieLayout.AnimStart();
+			yield return null;
+			yield return null;
+			ValkyrieRelease();
+			while(IsSaveing)
+				yield return null;
+			while(!m_sortieLayout.IsSortieEnd)
+				yield return null;
+			m_sortieLayout.AnimLeave();
+			yield return null;
+			while(m_sortieLayout.IsPlaying())
+				yield return null;
+			SoundManager.Instance.sePlayerMenu.Stop();
+			yield return Co.R(AllRelease(null));
+			MenuScene.Instance.InputEnable();
+			MenuScene.Instance.Mount(TransitionUniqueId.OFFERSELECT, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FC96C Offset: 0x6FC96C VA: 0x6FC96C
 		//// RVA: 0x17145FC Offset: 0x17145FC VA: 0x17145FC
@@ -299,8 +357,8 @@ namespace XeApp.Game.Menu
 			KDHGBOOECKC.NKMCJCAJIGD d1 = KDHGBOOECKC.HHCJCDFCLOB.CNNICINEKBJ();
 			KDHGBOOECKC.JNHGHDKLDEM d = new KDHGBOOECKC.JNHGHDKLDEM();
 			m_transFormationData = d.JGJOAFJPIIH(d1.FGHGMHPNEMG, d1.MLDPDLPHJPM);
-			m_transFormationData.FMHLGHDKJBC = KDHGBOOECKC.HHCJCDFCLOB.LBDENPEGONA(platoonId, 0);
-			m_transFormationData.JIOPJDJBLFK = KDHGBOOECKC.HHCJCDFCLOB.LBDENPEGONA(platoonId, 1);
+			m_transFormationData.FMHLGHDKJBC = KDHGBOOECKC.HHCJCDFCLOB.LBDENPEGONA(platoonId, BOPFPIHGJMD.HBJMIJIOCAM.FMHLGHDKJBC_0);
+			m_transFormationData.JIOPJDJBLFK = KDHGBOOECKC.HHCJCDFCLOB.LBDENPEGONA(platoonId, BOPFPIHGJMD.HBJMIJIOCAM.JIOPJDJBLFK_1);
 			m_layout.initialize(m_transFormationData, m_offerInfo, platoonId);
 			m_layout.SetSortieCallback(() =>
 			{

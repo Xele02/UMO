@@ -53,9 +53,9 @@ namespace XeApp.Game.Menu
 			SetRecomValue(_view.KINFGHHNFCF, _view.NONBCCLGBAO);
 			SetofferType(ViewOfferInfo.CGKPIIFCCLD_OfferType);
 			m_OfferName.text = ViewOfferInfo.IJOLPDKFLPO_OfferName;
-			SetenemyDataText((int)ViewOfferInfo.JGAMLEMMJCJ, ViewOfferInfo.JGAMLEMMJCJ);
+			SetenemyDataText((int)ViewOfferInfo.JGAMLEMMJCJ_ClearTime, ViewOfferInfo.JGAMLEMMJCJ_ClearTime);
 			ChengeSeriesLogo(ViewOfferInfo.DFMOGBOPLEF_Series);
-			currntClearTime = ViewOfferInfo.JGAMLEMMJCJ;
+			currntClearTime = ViewOfferInfo.JGAMLEMMJCJ_ClearTime;
 		}
 
 		// RVA: 0x1852E68 Offset: 0x1852E68 VA: 0x1852E68
@@ -103,13 +103,13 @@ namespace XeApp.Game.Menu
 					}
 					else
 					{
-						SetenemyDataText((int)ViewOfferInfo.JGAMLEMMJCJ, ChengeTime / 1000);
+						SetenemyDataText((int)ViewOfferInfo.JGAMLEMMJCJ_ClearTime, ChengeTime / 1000);
 						yield return null;
 					}
 				}
 			}
 			//LAB_01853c74
-			SetenemyDataText((int)ViewOfferInfo.JGAMLEMMJCJ, NextClearTime);
+			SetenemyDataText((int)ViewOfferInfo.JGAMLEMMJCJ_ClearTime, NextClearTime);
 			currntClearTime = NextClearTime;
 		}
 

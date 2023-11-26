@@ -832,6 +832,18 @@ namespace ExternLib
 			return 0;
 		}	
 
+		public static int SakashoPaymentPurchaseAndSave(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res[AFEHLCGHAEE_Strings.BIOGKIEECGN_created_at] = Utility.GetCurrentUnixTime();
+			res[AFEHLCGHAEE_Strings.IFNLEKOILPM_updated_at] = Utility.GetCurrentUnixTime();
+			res[AFEHLCGHAEE_Strings.MLGKDBJLNBM_data_status] = 0;
+			res[AFEHLCGHAEE_Strings.BBEPLKNMICJ_balances] = new EDOHBJAPLPF_JsonData();
+			res[AFEHLCGHAEE_Strings.BBEPLKNMICJ_balances].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+			SendMessage(callbackId, res);
+			return 0;
+		}
+
 		public static int SakashoPaymentPurchase(int callbackId, string json)
 		{
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();

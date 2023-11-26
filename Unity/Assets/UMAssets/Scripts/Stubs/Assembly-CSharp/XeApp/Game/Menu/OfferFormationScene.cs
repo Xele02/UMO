@@ -289,7 +289,7 @@ namespace XeApp.Game.Menu
 				yield return Co.R(operation.InitializeLayoutCoroutine(font, (GameObject instance) =>
 				{
 					//0x1528D20
-					m_InfoLayout.GetComponent<OfferInfoLayout>();
+					m_InfoLayout = instance.GetComponent<OfferInfoLayout>();
 				}));
 				AssetBundleManager.UnloadAssetBundle(bundleName);
 				bundleName = null;

@@ -23,7 +23,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_root != null && m_logoAnim != null && !IsOpen)
 			{
-				IsOpen = false;
+				IsOpen = true;
 				gameObject.SetActive(true);
 				m_root.StartChildrenAnimGoStop("go_in", "st_in");
 				m_logoAnim.StartChildrenAnimGoStop("go_in", "st_in");
@@ -80,7 +80,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x15D0730 Offset: 0x15D0730 VA: 0x15D0730 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			m_root = layout.Root as AbsoluteLayout;
+			m_root = layout.Root[0] as AbsoluteLayout;
 			m_root.StartChildrenAnimGoStop("st_wait");
 			m_logoAnim = layout.FindViewByExId("sw_start_vfo_anim_sw_start_sns_logo_anim") as AbsoluteLayout;
 			m_logoAnim.StartChildrenAnimGoStop("st_wait");

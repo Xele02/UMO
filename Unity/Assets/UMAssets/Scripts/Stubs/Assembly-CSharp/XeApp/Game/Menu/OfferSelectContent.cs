@@ -187,7 +187,7 @@ namespace XeApp.Game.Menu
 			OfferName.text = m_view.IJOLPDKFLPO_OfferName;
 			EventIconSetting(m_view.HBJEDMOMAEE_SpOfferType);
 			OfferCategoryChenge();
-			SetTimeText(ClearTime, m_view.JGAMLEMMJCJ);
+			SetTimeText(ClearTime, m_view.JGAMLEMMJCJ_ClearTime);
 			SetTimeWatcher(m_view.PCCFAKEOBIC_EndDate);
 			SetItemIconButton();
 			OfferDebutIcon.StartChildrenAnimGoStop(!IsBeginner ? "02" : "01");
@@ -286,7 +286,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				OfferButtonState.enabled = true;
-				OfferButtonState.StartChildrenAnimGoStop(((int)_state - 1).ToString("D2"));
+				OfferButtonState.StartChildrenAnimGoStop(((int)_state + 1).ToString("D2"));
 				OfferClearIcon.StartChildrenAnimGoStop("02");
 				ItemIconSpButton.Disable = false;
 			}
@@ -308,6 +308,7 @@ namespace XeApp.Game.Menu
 				}
 				if(i == 1)
 				{
+					ExecuBtn[i].ClearOnClickCallback();
 					ExecuBtn[i].AddOnClickCallback(() =>
 					{
 						//0x186489C
@@ -316,6 +317,7 @@ namespace XeApp.Game.Menu
 				}
 				if(i == 2)
 				{
+					ExecuBtn[i].ClearOnClickCallback();
 					ExecuBtn[i].AddOnClickCallback(() =>
 					{
 						//0x18648C8
@@ -413,11 +415,11 @@ namespace XeApp.Game.Menu
 					m_timeWatcher.onElapsedCallback = (long current, long limit, long remain) =>
 					{
 						//0x1864150
-						m_currentRemainingTime = limit;
-						SetTimeText(AfterClearTime, limit);
+						m_currentRemainingTime = remain;
+						SetTimeText(AfterClearTime, remain);
 						if(!CIOECGOMILE.HHCJCDFCLOB.KONHMOLMOCI_IsSaving)
 						{
-							if (buttonStateCheck(limit) && !IsServerUpdateEnd && !IsServerUpdating)
+							if (buttonStateCheck(remain) && !IsServerUpdateEnd && !IsServerUpdating)
 								ServerUpdate();
 						}
 					};

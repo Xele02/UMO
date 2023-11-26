@@ -192,7 +192,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x17132EC Offset: 0x17132EC VA: 0x17132EC
 		public void LowPowerIconEnable(int platoonId, int form)
 		{
-			if (m_info.JGAMLEMMJCJ < KDHGBOOECKC.HHCJCDFCLOB.NPEFMNPOMMJ(m_info.FGHGMHPNEMG_Category, m_info.PPFNGGCBJKC, platoonId, (FKGMGBHBNOC.HPJOCKGKNCC_Form)form, true))
+			if (m_info.JGAMLEMMJCJ_ClearTime < KDHGBOOECKC.HHCJCDFCLOB.NPEFMNPOMMJ(m_info.FGHGMHPNEMG_Category, m_info.PPFNGGCBJKC, platoonId, (FKGMGBHBNOC.HPJOCKGKNCC_Form)form, true))
 			{
 				m_lowPowerLayout.StartChildrenAnimGoStop("01");
 				m_lackPowerAnim.StartChildrenAnimLoop("lo_");
@@ -222,7 +222,10 @@ namespace XeApp.Game.Menu
 		//public void Show() { }
 
 		//// RVA: 0x1713688 Offset: 0x1713688 VA: 0x1713688
-		//public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_layoutRoot.IsPlaying();
+		}
 
 		// RVA: 0x17136B4 Offset: 0x17136B4 VA: 0x17136B4 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

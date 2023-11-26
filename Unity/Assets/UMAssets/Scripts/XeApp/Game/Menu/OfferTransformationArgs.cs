@@ -14,7 +14,7 @@ namespace XeApp.Game.Menu
 		{
 			valData = _valData;
 			offerInfo = _offerInfo;
-			_itemCheckButton = itemCheckButton;
+			itemCheckButton = _itemCheckButton;
 			plattonId = _plattonId;
 		}
 	}

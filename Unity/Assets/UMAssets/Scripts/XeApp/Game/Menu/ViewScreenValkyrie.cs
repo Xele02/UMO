@@ -30,7 +30,7 @@ namespace XeApp.Game.Menu
 		private Action HideLoadingEffect; // 0x4C
 		private bool IsCreateCameraMan = true; // 0x50
 
-		//public Camera ValkyrieCamera { get; } 0x1CE786C
+		public Camera ValkyrieCamera { get { return m_camera; } } //0x1CE786C
 		public bool IsLoading { get { return m_loading; } } //0x1CE7874
 
 		// RVA: 0x1CE787C Offset: 0x1CE787C VA: 0x1CE787C

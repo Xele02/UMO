@@ -2,6 +2,7 @@ using mcrs;
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.XR.WSA.Input;
 using XeApp.Core;
 using XeApp.Game.Common;
 using XeApp.Game.Tutorial;
@@ -739,7 +740,7 @@ namespace XeApp.Game.Menu
 				totalSec = totalSec / 1000;
 			}
 			hours = totalSec / 3600;
-			minutes = totalSec - hours * 3600;
+			minutes = (totalSec - hours * 3600) / 60;
 			seconds = totalSec - hours * 3600 - minutes * 60;
 		}
 	}
