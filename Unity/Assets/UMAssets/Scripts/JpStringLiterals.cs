@@ -401,6 +401,7 @@ class JpStringLiterals
 	public const string StringLiteral_18280 = "プリズム"; //0x03bba858
 	public const string StringLiteral_18787 = "獲得ユニオンクレジット"; // 03bbb044
 	public const string StringLiteral_18797 = "小隊選択"; //0x03bbb06c
+	public const string StringLiteral_18843 = "リザルト画面"; //0x03bbb124
 	public const string StringLiteral_18923 = "オファー選択"; //0x03bbb264
 	public const string StringLiteral_18944 = "形態選択"; //0x03bbb2b8
 	public const string StringLiteral_18949 = "ヴァルキリー選択"; //0x03bbb2cc

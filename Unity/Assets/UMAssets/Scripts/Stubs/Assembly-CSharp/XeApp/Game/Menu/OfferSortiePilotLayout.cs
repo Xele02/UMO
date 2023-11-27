@@ -52,7 +52,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1711574 Offset: 0x1711574 VA: 0x1711574
-		// public void ResultLeave() { }
+		public void ResultLeave()
+		{
+			m_layoutRoot.StartChildrenAnimGoStop("out", "st_out");
+		}
 
 		// RVA: 0x1711600 Offset: 0x1711600 VA: 0x1711600
 		public void Hide()
@@ -70,10 +73,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1711724 Offset: 0x1711724 VA: 0x1711724
-		// public bool IsPlayingChildren() { }
+		public bool IsPlayingChildren()
+		{
+			return m_layoutRoot.IsPlayingChildren();
+		}
 
 		// // RVA: 0x1711750 Offset: 0x1711750 VA: 0x1711750
-		// public bool IsImageLoading() { }
+		public bool IsImageLoading()
+		{
+			return m_IsLoading;
+		}
 
 		// RVA: 0x1711758 Offset: 0x1711758 VA: 0x1711758 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
