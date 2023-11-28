@@ -138,18 +138,43 @@ namespace XeSys.Gfx
 		}
 
 		//// RVA: 0x1F063B8 Offset: 0x1F063B8 VA: 0x1F063B8
-		//public int GetChildCount() { }
+		public int GetChildCount()
+		{
+			return m_scrollRange.transform.childCount;
+		}
 
 		//// RVA: 0x1F06404 Offset: 0x1F06404 VA: 0x1F06404
 		//public void RemoveView(int childIndex) { }
 
 		//// RVA: 0x1F0640C Offset: 0x1F0640C VA: 0x1F0640C
-		//public void RemoveView(int childIndex, bool isDestroy) { }
+		public void RemoveView(int childIndex, bool isDestroy)
+		{
+			if (childIndex >= GetChildCount())
+			{
+				Debug.LogError("LayoutUGUIScrollSupport.RemoveView error:childIndex invalid.");
+				return;
+			}
+			GameObject obj = m_scrollRange.transform.GetChild(childIndex).gameObject;
+			LayoutUGUIUtility.RemoveView(null, m_scrollView, obj);
+			if (!isDestroy)
+				return;
+			Destroy(obj);
+		}
 
 		//// RVA: 0x1F065DC Offset: 0x1F065DC VA: 0x1F065DC
-		//public void RemoveAllView() { }
+		public void RemoveAllView()
+		{
+			RemoveAllView(true);
+		}
 
 		//// RVA: 0x1F065E4 Offset: 0x1F065E4 VA: 0x1F065E4
-		//public void RemoveAllView(bool isDestroy) { }
+		public void RemoveAllView(bool isDestroy)
+		{
+			int cnt = GetChildCount();
+			for (int i = 0; i < cnt; i++)
+				RemoveView(0, isDestroy);
+			m_contentSize = Vector3.zero;
+			UpdateContent();
+		}
 	}
 }

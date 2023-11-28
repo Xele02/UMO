@@ -7,6 +7,7 @@ using System;
 using CriWare;
 using System.Collections;
 using XeSys;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -63,107 +64,322 @@ namespace XeApp.Game.Menu
 		public bool IsSkip { get { return m_isSkip; } set { m_isSkip = value; } } //0x152DF70 0x152DF78
 
 		// RVA: 0x152DF80 Offset: 0x152DF80 VA: 0x152DF80
-		private void Start() { }
+		private void Start()
+		{
+			return;
+		}
 
 		// RVA: 0x152DF84 Offset: 0x152DF84 VA: 0x152DF84
-		private void Update() { }
+		private void Update()
+		{
+			return;
+		}
 
 		// RVA: 0x152DF88 Offset: 0x152DF88 VA: 0x152DF88
-		public void ResetScrollList() { }
+		public void ResetScrollList()
+		{
+			itemList.Clear();
+			scrollSupporter.RemoveAllView();
+		}
 
 		// RVA: 0x152E020 Offset: 0x152E020 VA: 0x152E020
-		public void AddScrollContent(List<OfferGetItemContent> list) { }
+		public void AddScrollContent(List<OfferGetItemContent> list)
+		{
+			itemList = list;
+		}
 
 		// RVA: 0x152E028 Offset: 0x152E028 VA: 0x152E028
-		public void Initialize() { }
+		public void Initialize()
+		{
+			for(int i = 0; i < itemList.Count; i++)
+			{
+				if(i < itemList.Count)
+				{
+					itemList[i].Setup(m_viewCompItem.ItemList[i]);
+					itemList[i].SetStatus();
+				}
+			}
+			SetText();
+			SetBonusAnum();
+			layoutUCRoot.StartChildrenAnimGoStop("02");
+		}
 
 		//// RVA: 0x152E1E4 Offset: 0x152E1E4 VA: 0x152E1E4
-		//public void SetText() { }
+		public void SetText()
+		{
+			textNomralItemNum.text = m_viewCompItem.Nomal.ToString();
+			textRareItemNum.text = m_viewCompItem.Rare.ToString();
+			textConfirmItemNum.text = m_viewCompItem.Confirm.ToString();
+		}
 
 		//// RVA: 0x152E2E4 Offset: 0x152E2E4 VA: 0x152E2E4
 		//public void SetLuckAnim() { }
 
 		//// RVA: 0x152E3C4 Offset: 0x152E3C4 VA: 0x152E3C4
-		//public void SetUcAnim(int number) { }
+		public void SetUcAnim(int number)
+		{
+			numberTotalUC.SetNumber(number, 0);
+		}
 
 		//// RVA: 0x152E2E8 Offset: 0x152E2E8 VA: 0x152E2E8
-		//public void SetBonusAnum() { }
+		public void SetBonusAnum()
+		{
+			IsBonus = m_viewCompItem.IsBonus;
+			for(int i = 0; i < textScoreRankBonus.Length; i++)
+			{
+				textScoreRankBonus[i].text = m_viewCompItem.BonusNum.ToString();
+			}
+		}
 
 		// RVA: 0x152E404 Offset: 0x152E404 VA: 0x152E404
-		public void SettingValkyrieFormIcon(int from, int offerType, int offerId) { }
+		public void SettingValkyrieFormIcon(int from, int offerType, int offerId)
+		{
+			ChengeValkyrieForm(from);
+			KDHGBOOECKC.JNHGHDKLDEM data = new KDHGBOOECKC.JNHGHDKLDEM();
+			data = data.JGJOAFJPIIH((BOPFPIHGJMD.MLBMHDCCGHI)offerType, offerId);
+			for(int i = 0; i < data.NNDGIAEFMOG[from].LHMDABPNDDH.Length; i++)
+			{
+				if(data.NNDGIAEFMOG[from].LHMDABPNDDH[i] >= 0 && data.NNDGIAEFMOG[from].LHMDABPNDDH[i] <= BOPFPIHGJMD.MGPIJGMDLOM.HJNNKCMLGFL_3)
+				{
+					DisplayItemIdList.Add(data.NNDGIAEFMOG[from].LNADJDFHHAI[i]);
+				}
+			}
+			SettingBonusItemIcon(DisplayItemIdList);
+			ItemIconSettingEneble();
+		}
 
 		// RVA: 0x152E930 Offset: 0x152E930 VA: 0x152E930
-		public void ReleaseBonusIconList() { }
+		public void ReleaseBonusIconList()
+		{
+			DisplayItemIdList.Clear();
+		}
 
 		//// RVA: 0x152E5F4 Offset: 0x152E5F4 VA: 0x152E5F4
-		//private void ChengeValkyrieForm(int from) { }
+		private void ChengeValkyrieForm(int from)
+		{
+			m_layoutFormType.StartChildrenAnimGoStop(string.Format("{0:d2}", from + 1));
+		}
 
 		//// RVA: 0x152E9A8 Offset: 0x152E9A8 VA: 0x152E9A8
 		//private bool CheckBonusItemIcon() { }
 
 		//// RVA: 0x152EA30 Offset: 0x152EA30 VA: 0x152EA30
-		//private int CountBonusItem() { }
+		private int CountBonusItem()
+		{
+			return DisplayItemIdList.Count;
+		}
 
 		// RVA: 0x152EAA8 Offset: 0x152EAA8 VA: 0x152EAA8
-		public bool ItemIconLoded() { }
+		public bool ItemIconLoded()
+		{
+			for(int i = 0; i < CountBonusItem(); i++)
+			{
+				if (!IsFormIconLoaded[i])
+					return false;
+			}
+			return true;
+		}
 
 		//// RVA: 0x152E6B0 Offset: 0x152E6B0 VA: 0x152E6B0
-		//private void SettingBonusItemIcon(List<int> itemIdList) { }
+		private void SettingBonusItemIcon(List<int> itemIdList)
+		{
+			for(int i = 0; i < BonusItemIcon.Count; i++)
+			{
+				IsFormIconLoaded[i] = true;
+				if(i < CountBonusItem())
+				{
+					BonusItemIcon[i].enabled = false;
+					SettingIcon(itemIdList[i], i);
+				}
+			}
+		}
 
 		//// RVA: 0x152EB30 Offset: 0x152EB30 VA: 0x152EB30
-		//private void SettingIcon(int itemId, int index) { }
+		private void SettingIcon(int itemId, int index)
+		{
+			IsFormIconLoaded[index] = false;
+			MenuScene.Instance.InputDisable();
+			GameManager.Instance.ItemTextureCache.Load(itemId, (IiconTexture image) =>
+			{
+				//0x1850E20
+				BonusItemIcon[index].enabled = true;
+				image.Set(BonusItemIcon[index]);
+				IsFormIconLoaded[index] = true;
+				MenuScene.Instance.InputEnable();
+			});
+		}
 
 		//// RVA: 0x152E834 Offset: 0x152E834 VA: 0x152E834
-		//private void ItemIconSettingEneble() { }
+		private void ItemIconSettingEneble()
+		{
+			for(int i = 0; i < m_layoutBonusItemEnable.Length; i++)
+			{
+				m_layoutBonusItemEnable[i].StartChildrenAnimGoStop(i < CountBonusItem() ? "01" : "02");
+			}
+		}
 
 		// RVA: 0x152ED38 Offset: 0x152ED38 VA: 0x152ED38
-		public void BonusIconLoopAnimStart() { }
+		public void BonusIconLoopAnimStart()
+		{
+			m_layoutBonusItemAnim.StartChildrenAnimGoStop(CountBonusItem() < 2 ? "st_wait" : "lo_");
+		}
 
 		// RVA: 0x152EDD8 Offset: 0x152EDD8 VA: 0x152EDD8
-		public void Enter() { }
+		public void Enter()
+		{
+			if (m_isSkip)
+				Show();
+			else
+				m_layoutRoot.StartChildrenAnimGoStop("go_in", "st_in");
+		}
 
 		// RVA: 0x152EEF8 Offset: 0x152EEF8 VA: 0x152EEF8
-		public void Leave() { }
+		public void Leave()
+		{
+			m_layoutRoot.StartChildrenAnimGoStop("go_out", "st_out");
+		}
 
 		// RVA: 0x152EF84 Offset: 0x152EF84 VA: 0x152EF84
-		public void Hide() { }
+		public void Hide()
+		{
+			m_layoutRoot.StartChildrenAnimGoStop("st_out");
+		}
 
 		//// RVA: 0x152EE7C Offset: 0x152EE7C VA: 0x152EE7C
-		//public void Show() { }
+		public void Show()
+		{
+			m_layoutRoot.StartChildrenAnimGoStop("st_in");
+		}
 
 		// RVA: 0x152F000 Offset: 0x152F000 VA: 0x152F000
-		public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_layoutRoot.IsPlaying();
+		}
 
 		// RVA: 0x152F02C Offset: 0x152F02C VA: 0x152F02C
-		public void EnterChild() { }
+		public void EnterChild()
+		{
+			if (m_isSkip)
+				ShowChild();
+			else
+				m_layoutMain.StartChildrenAnimGoStop("go_evedrop_02", "st_nomaldrop_02");
+		}
 
 		// RVA: 0x152F0D0 Offset: 0x152F0D0 VA: 0x152F0D0
-		public void ShowChild() { }
+		public void ShowChild()
+		{
+			m_layoutMain.StartChildrenAnimGoStop(!IsBonus ? "st_nomaldrop_02" : "st_bonusnum_02");
+		}
 
 		// RVA: 0x152F16C Offset: 0x152F16C VA: 0x152F16C
-		public void UCEnter() { }
+		public void UCEnter()
+		{
+			m_layoutMain.StartChildrenAnimGoStop(!IsBonus ? "go_getuc2_02" : "go_getuc_02", !IsBonus ? "st_getuc2_02" : "st_getuc_02");
+		}
 
 		// RVA: 0x152F220 Offset: 0x152F220 VA: 0x152F220
-		public void UCShow() { }
+		public void UCShow()
+		{
+			m_layoutMain.StartChildrenAnimGoStop(!IsBonus ? "st_getuc2_02" : "st_getuc_02");
+		}
 
 		// RVA: 0x152F2BC Offset: 0x152F2BC VA: 0x152F2BC
-		public void CampaignAnimStart() { }
+		public void CampaignAnimStart()
+		{
+			if (!IsBonus)
+				return;
+			m_layoutMain.StartChildrenAnimGoStop("go_rankbonus_02", "st_bonusnum_02");
+		}
 
 		// RVA: 0x152F354 Offset: 0x152F354 VA: 0x152F354
-		public void CampaignAnimShow() { }
+		public void CampaignAnimShow()
+		{
+			if (!IsBonus)
+				return;
+			m_layoutMain.StartChildrenAnimGoStop("st_bonusnum_02", "st_bonusnum_02");
+		}
 
 		// RVA: 0x152F3E0 Offset: 0x152F3E0 VA: 0x152F3E0
-		public bool IsPlayingInWindow() { }
+		public bool IsPlayingInWindow()
+		{
+			return m_layoutMain.IsPlayingChildren();
+		}
 
 		// RVA: 0x152F40C Offset: 0x152F40C VA: 0x152F40C
-		public void ScrollContentAllHide() { }
+		public void ScrollContentAllHide()
+		{
+			for(int i = 0; i < itemList.Count; i++)
+			{
+				itemList[i].Hide();
+			}
+			scrollSupporter.scrollRect.content.localPosition = Vector3.zero;
+			currentItemIndex = 0;
+		}
 
 		// RVA: 0x152F590 Offset: 0x152F590 VA: 0x152F590
-		public void ShowDropItem() { }
+		public void ShowDropItem()
+		{
+			for(int i = 0; i < itemList.Count; i++)
+			{
+				scrollSupporter.scrollRect.horizontalNormalizedPosition = 0;
+				AddItem();
+				itemList[i].ShowBeginAnim();
+				RecordPlateUtility.CheckPlateId(m_viewCompItem.ItemList[i]);
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6F95B4 Offset: 0x6F95B4 VA: 0x6F95B4
 		// RVA: 0x152F9C0 Offset: 0x152F9C0 VA: 0x152F9C0
-		public IEnumerator ScrollAnimPlay() { }
+		public IEnumerator ScrollAnimPlay()
+		{
+			int i; // 0x14
+			bool IsLast; // 0x18
+			OfferGetItemContent content; // 0x1C
+
+			//0x1851C88
+			//LAB_01851ea4
+			for(i = 0; i < itemList.Count; i++)
+			{
+				IsLast = false;
+				content = itemList[i];
+				if (!m_isSkip)
+				{
+					IsLast = AddItem();
+					if (currentItemIndex < 7)
+					{
+						content.StartBeginAnim();
+						yield return null;
+					}
+					else
+					{
+						yield return Co.R(Co_AutoScrolling(1, nextItemMoveSec, content.StartBeginAnim));
+						yield return null;
+					}
+					if (IsLast)
+					{
+						//LAB_01851d44
+						while (content.IsPlayng())
+							yield return null;
+					}
+					//LAB_01851d78
+					if (m_viewCompItem.ItemList[i].itemType == ViewOfferGetItem.ItemType.NOMAL)
+					{
+						yield return Co.R(KDHGBOOECKC.HHCJCDFCLOB.FMGMIKPJNKG_Co_wait(0.1f, false, null));
+					}
+					else
+					{
+						//5
+						while (content.IsPlayng())
+							yield return null;
+					}
+					//LAB_01851e90
+					content = null;
+				}
+				else
+					break;
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6F962C Offset: 0x6F962C VA: 0x6F962C
 		// RVA: 0x152FA48 Offset: 0x152FA48 VA: 0x152FA48
@@ -172,16 +388,18 @@ namespace XeApp.Game.Menu
 			bool prevInput;
 
 			//0x18517F4
-			prevInput = GameManager.Instance.InputEnabled();
+			prevInput = GameManager.Instance.InputEnabled;
 			GameManager.Instance.InputEnabled = true;
 			bool isOpenRecordPlateInfo = true;
 			this.StartCoroutineWatched(PopupRecordPlate.Show(RecordPlateUtility.eSceneType.Offer, () =>
 			{
-				Method$XeApp.Game.Menu.OfferGetItemLayout.<>c__DisplayClass73_0.<SceneCardCheck>b__0()
+				//0x1851064
+				isOpenRecordPlateInfo = false;
 			}, false));
 			yield return new WaitWhile(() =>
 			{
-				Method$XeApp.Game.Menu.OfferGetItemLayout.<>c__DisplayClass73_0.<SceneCardCheck>b__1()
+				//0x1851070
+				return isOpenRecordPlateInfo;
 			});
 			RecordPlateUtility.ClearShowedList();
 			GameManager.Instance.InputEnabled = prevInput;
@@ -198,7 +416,7 @@ namespace XeApp.Game.Menu
 				{
 					if(m_viewCompItem.ItemList[i].itemType == ViewOfferGetItem.ItemType.NOMAL)
 					{
-						m_viewCompItem.ItemList[i].BounsNumAnumStart();
+						itemList[i].BounsNumAnumStart();
 					}
 				}
 			}
@@ -213,7 +431,7 @@ namespace XeApp.Game.Menu
 				{
 					if(m_viewCompItem.ItemList[i].itemType == ViewOfferGetItem.ItemType.NOMAL)
 					{
-						m_viewCompItem.ItemList[i].BounsNumAnumShow();
+						itemList[i].BounsNumAnumShow();
 					}
 				}
 			}
@@ -250,8 +468,9 @@ namespace XeApp.Game.Menu
 				PlayCountUpLoopSE();
 				coroutin = this.StartCoroutineWatched(NumberAnimationUtility.Co_FakeCountup(m_viewCompItem.UCNum, l, SetUcAnim, () =>
 				{
-					Method$XeApp.Game.Menu.OfferGetItemLayout.<>c__DisplayClass77_0.<Co_PlayingUCAnim>b__0()
-				}));
+					//0x1851080
+					CountPlaying = false;
+				}, null));
 				while (CountPlaying && !m_isSkip)
 					yield return null;
 				if (CountPlaying)
@@ -276,13 +495,29 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x152FF60 Offset: 0x152FF60 VA: 0x152FF60
-		//private void PlayCountUpLoopSE() { }
+		private void PlayCountUpLoopSE()
+		{
+			countUpSEPlayback = SoundManager.Instance.sePlayerResult.Play((int)cs_se_result.SE_RESULT_000);
+		}
 
 		//// RVA: 0x152FFC0 Offset: 0x152FFC0 VA: 0x152FFC0
-		//private void StopCountUpLoopSE() { }
+		private void StopCountUpLoopSE()
+		{
+			countUpSEPlayback.Stop();
+		}
 
 		//// RVA: 0x152F73C Offset: 0x152F73C VA: 0x152F73C
-		//private bool AddItem() { }
+		private bool AddItem()
+		{
+			if(currentItemIndex < itemList.Count)
+			{
+				scrollSupporter.BeginAddView();
+				scrollSupporter.AddView(itemList[currentItemIndex].gameObject, SCROLL_MARGIN_WIDTH + itemList[currentItemIndex].Width * currentItemIndex + SCROLL_MARGIN_WIDTH + itemList[currentItemIndex].Width, 0);
+				currentItemIndex++;
+				return itemList.Count == currentItemIndex;
+			}
+			return true;
+		}
 
 		// RVA: 0x152FFCC Offset: 0x152FFCC VA: 0x152FFCC
 		public void ResetScrollBar()

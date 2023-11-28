@@ -101,7 +101,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xCF86A4 Offset: 0xCF86A4 VA: 0xCF86A4
-		//public static void CheckPlateId(ViewOfferGetItem item) { }
+		public static void CheckPlateId(ViewOfferGetItem item)
+		{
+			RegisterPlateIdInner(item.itemId);
+		}
 
 		//// RVA: 0xCF8730 Offset: 0xCF8730 VA: 0xCF8730
 		//public static bool CheckPlateId(List<ViewOfferGetItem> itemList) { }

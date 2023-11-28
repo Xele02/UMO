@@ -252,7 +252,7 @@ namespace XeApp.Game.Menu
 					return false;
 				return _.MLDPDLPHJPM_OfferId == m_viewOfferInfo.PPFNGGCBJKC;
 			});
-			m_layout.SettingValkyrieFormIcon(of.MNCEBKHBBEF_VFform, m_viewOfferInfo.FGHGMHPNEMG_Category, m_viewOfferInfo.PPFNGGCBJKC);
+			m_layout.SettingValkyrieFormIcon(of.MNCEBKHBBEF_VFform, (int)m_viewOfferInfo.FGHGMHPNEMG_Category, m_viewOfferInfo.PPFNGGCBJKC);
 			while (!m_layout.ItemIconLoded())
 				yield return null;
 			yield return null;
@@ -389,13 +389,13 @@ namespace XeApp.Game.Menu
 					m_Effect.Play(0);
 					if(!IsGreatSuccessState)
 					{
-						m_Effect.Play(1);
+						m_Effect.Play(OfferResultEffect.OfferEfectType.SuccessA);
 						SoundManager.Instance.voPilot.Play(PilotVoicePlayer.VoiceCategory.Offer_Success, 0);
 						SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_VFOPS_005);
 					}
 					else
 					{
-						m_Effect.Play(2);
+						m_Effect.Play(OfferResultEffect.OfferEfectType.SuccessB);
 						SoundManager.Instance.voPilot.Play(PilotVoicePlayer.VoiceCategory.Offer_Great, 0);
 						SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_VFOPS_006);
 					}
@@ -450,7 +450,7 @@ namespace XeApp.Game.Menu
 				m_layout.ResetScrollBar();
 				m_layout.CampaignAnimStart();
 				yield return null;
-				while (m_layout.IsPlayingInWindow && !m_layout.IsSkip)
+				while (m_layout.IsPlayingInWindow() && !m_layout.IsSkip)
 					yield return null;
 				m_layout.DropItemBounsNumAnumStart();
 				yield return null;
