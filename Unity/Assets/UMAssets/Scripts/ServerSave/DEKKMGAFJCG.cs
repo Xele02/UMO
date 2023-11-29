@@ -476,7 +476,34 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 	// public void OBDIJIHNKLE(List<int> HNHCIGMKPDC, ref List<int> ONOICEHIHPJ) { }
 
 	// // RVA: 0x197AFF8 Offset: 0x197AFF8 VA: 0x197AFF8
-	// public int BJBKCMPCPME(int AHHJLDLAPAN, int DNBFMLBNAEE, GJALOMELEHD NDFIEMPPMLF) { }
+	public int BJBKCMPCPME(int AHHJLDLAPAN, int DNBFMLBNAEE, GJALOMELEHD_Intimacy NDFIEMPPMLF)
+	{
+		if(AHHJLDLAPAN > 0 && NDFIEMPPMLF != null)
+		{
+			MNNLOBDPCCH_DivaInfo diva = NBIGLBMHEDC_DivaList[AHHJLDLAPAN - 1];
+			int exp = diva.BNDNNCHJGBB_IntimacyExp;
+			int maxLevel = NDFIEMPPMLF.GLHEHGGKILG_GetMaxLevel();
+			int level = diva.KCCONFODCPN_IntimacyLevel;
+			int baseLevel = level;
+			int lvlExp = exp;
+			while (DNBFMLBNAEE > 0)
+			{
+				if (maxLevel <= level)
+					break;
+				lvlExp = NDFIEMPPMLF.JBKMPBPGFHA(level);
+				if (exp + DNBFMLBNAEE < lvlExp)
+					break;
+				if (0 < lvlExp - exp)
+					DNBFMLBNAEE -= lvlExp - exp;
+				exp = lvlExp;
+				level++;
+			}
+			diva.KCCONFODCPN_IntimacyLevel = level;
+			diva.BNDNNCHJGBB_IntimacyExp = lvlExp;
+			return level - baseLevel;
+		}
+		return 0;
+	}
 
 	// // RVA: 0x197B1C8 Offset: 0x197B1C8 VA: 0x197B1C8
 	public int BOOKOGDDJGM_GetIntimacyTension(int AHHJLDLAPAN_DivaId)

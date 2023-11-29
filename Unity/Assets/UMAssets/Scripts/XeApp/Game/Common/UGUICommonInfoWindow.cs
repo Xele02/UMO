@@ -140,6 +140,9 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CD1E4C Offset: 0x1CD1E4C VA: 0x1CD1E4C
-		//public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_inOutAnime.IsPlaying();
+		}
 	}
 }

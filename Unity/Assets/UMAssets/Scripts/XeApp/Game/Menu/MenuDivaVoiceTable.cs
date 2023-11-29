@@ -65,7 +65,10 @@ namespace XeApp.Game.Menu
 		// public List<MenuDivaVoiceTable.Data> GetList_PresentReaction() { }
 
 		// // RVA: 0xED0868 Offset: 0xED0868 VA: 0xED0868
-		// public List<MenuDivaVoiceTable.Data> GetList_IntimacyReaction() { }
+		public List<Data> GetList_IntimacyReaction()
+		{
+			return m_intimacyReaction;
+		}
 
 		// // RVA: 0xED0870 Offset: 0xED0870 VA: 0xED0870
 		public Data GetTimeTalk(int i)
@@ -95,7 +98,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xED0A00 Offset: 0xED0A00 VA: 0xED0A00
-		// public MenuDivaVoiceTable.Data GetTouchReaction(DivaTouchReaction.Type i) { }
+		public Data GetTouchReaction(DivaTouchReaction.Type i)
+		{
+			return m_touchReaction[(int)i];
+		}
 
 		// // RVA: 0xED0A80 Offset: 0xED0A80 VA: 0xED0A80
 		public Data GetPresent(int a_index)
@@ -106,7 +112,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xED0B3C Offset: 0xED0B3C VA: 0xED0B3C
-		// public MenuDivaVoiceTable.Data GetIntimacy(int a_index) { }
+		public Data GetIntimacy(int a_index)
+		{
+			if (m_intimacyReaction.Count <= a_index)
+				return null;
+			return m_intimacyReaction[a_index];
+		}
 
 		// // RVA: 0xECFB7C Offset: 0xECFB7C VA: 0xECFB7C
 		public List<int> GetIntimacyLock_TimeTalk()
@@ -115,6 +126,9 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xECF3BC Offset: 0xECF3BC VA: 0xECF3BC
-		// public List<int> GetIntimacyLock_TouchReaction() { }
+		public List<int> GetIntimacyLock_TouchReaction()
+		{
+			return m_IntimacyLock_TouchReaction;
+		}
 	}
 }

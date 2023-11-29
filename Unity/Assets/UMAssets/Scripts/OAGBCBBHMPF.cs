@@ -60,7 +60,7 @@ public class OAGBCBBHMPF
         ILLBGAFIBDE = 54,
         KIFPDEFNEPB = 55,
         PHLHLIDCNNN = 56,
-        DNNLEIKNHKL = 57,
+        DNNLEIKNHKL_57 = 57,
         CDNFJBAJAMM = 58,
         BLDDKDNOCFA = 59,
         DADNPOJNIBL = 60,

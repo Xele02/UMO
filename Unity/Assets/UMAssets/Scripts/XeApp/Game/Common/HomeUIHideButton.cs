@@ -17,7 +17,10 @@ namespace XeApp.Game.Common
 		private bool m_hidden; // 0x18
 
 		public Action<bool> onClickButton { private get; set; } // 0x1C
-		//public bool IsInputLock { set; } 0xEB2C10
+		public bool IsInputLock { set {
+				m_buttonHide.IsInputLock = value;
+				m_buttonShow.IsInputLock = value;
+			} } //0xEB2C10
 
 		// RVA: 0xEB2ACC Offset: 0xEB2ACC VA: 0xEB2ACC
 		private void Start()

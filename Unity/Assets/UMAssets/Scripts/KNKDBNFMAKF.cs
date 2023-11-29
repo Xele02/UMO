@@ -198,7 +198,10 @@ public class KNKDBNFMAKF_EventSp : IKDICBBFBMI_EventBase
 	// public OEIJEFBBJBD.AODDNOGBFLP ILJMDJCGMPA(int DFFPLNMAKKD) { }
 
 	// // RVA: 0x1128DB4 Offset: 0x1128DB4 VA: 0x1128DB4
-	// public void CIHGOMNFPNJ() { }
+	public void CIHGOMNFPNJ()
+	{
+		TodoLogger.LogError(0, "CIHGOMNFPNJ");
+	}
 
 	// // RVA: 0x1129064 Offset: 0x1129064 VA: 0x1129064
 	// public int CAHDMMAHEJC() { }

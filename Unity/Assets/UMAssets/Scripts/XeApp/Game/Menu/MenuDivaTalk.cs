@@ -1,3 +1,4 @@
+using mcrs;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -146,10 +147,54 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xECEF3C Offset: 0xECEF3C VA: 0xECEF3C
-		// public int RandomTouchReactionIndex() { }
+		public int RandomTouchReactionIndex()
+		{
+			List<int> l = new List<int>();
+			l.AddRange(m_reactionWeights);
+			if(m_divaControl.VoiceTableCos != null)
+			{
+				l.AddRange(m_divaControl.VoiceTableCos.CreateTouchReactionWeightTable());
+			}
+			if(m_prevReactionIndex > -1)
+			{
+				if (m_prevReactionIndex < l.Count)
+					l[m_prevReactionIndex] = 0;
+			}
+			for(int i = 0; i < m_divaControl.VoiceTable.GetIntimacyLock_TouchReaction().Count; i++)
+			{
+				if(viewIntimacyData == null || !viewIntimacyData.NJAKNMGEKFB(JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK.EHJDMAOKHHP_2, i + 1))
+				{
+					if (m_divaControl.VoiceTable.GetIntimacyLock_TouchReaction()[i] < l.Count)
+						l[m_divaControl.VoiceTable.GetIntimacyLock_TouchReaction()[i]] = 0;
+				}
+			}
+			m_prevReactionIndex = RandomUtil.SelectByWeights(l);
+			return m_prevReactionIndex;
+		}
 
 		// // RVA: 0xECF3C4 Offset: 0xECF3C4 VA: 0xECF3C4
-		// public void DoTouchReaction() { }
+		public void DoTouchReaction()
+		{
+			if(!m_divaControl.IsActionRequested)
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_HOME_000);
+				int idx = RandomTouchReactionIndex();
+				if(idx < m_reactionWeights.Count)
+				{
+					if (m_divaControl.RequestTouchReaction(idx, OnTalkActionEnd))
+					{
+						DivaTalk("touch_reaction_{0:D2}", idx + 1, null);
+					}
+				}
+				else
+				{
+					if(m_divaControl.RequestTouchReactionCos(idx - m_reactionWeights.Count, OnTalkActionEnd))
+					{
+						DivaTalk(string.Format("cs_touch_reaction_{0:D2}", idx - m_reactionWeights.Count + 1), null);
+					}
+				}
+			}
+		}
 
 		// // RVA: 0xECF740 Offset: 0xECF740 VA: 0xECF740
 		public void DoPresentReaction(int a_idnex = -1, OnChangedMessage a_callback_msg = null)
@@ -164,7 +209,15 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xECF84C Offset: 0xECF84C VA: 0xECF84C
-		// public void DoIntimacyReaction(MenuDivaTalk.OnChangedMessage a_callback_msg) { }
+		public void DoIntimacyReaction(OnChangedMessage a_callback_msg)
+		{
+			if(!m_divaControl.IsActionRequested)
+			{
+				int a = m_divaControl.RandomIntimacyReaction();
+				if (m_divaControl.RequestIntimacyReaction(a, OnTalkActionEnd))
+					DivaTalk("intimacy_pointup_{0:D2}", a + 1, a_callback_msg);
+			}
+		}
 
 		// // RVA: 0xECF978 Offset: 0xECF978 VA: 0xECF978
 		public void CancelRequest()

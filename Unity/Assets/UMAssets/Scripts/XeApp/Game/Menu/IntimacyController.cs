@@ -302,11 +302,226 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x14B0E40 Offset: 0x14B0E40 VA: 0x14B0E40
-		//public void StartIntimacyUp(CharTouchButton button, Action<bool> reactionCallback, Action endCallback, Func<bool> restartFunc) { }
+		public void StartIntimacyUp(CharTouchButton button, Action<bool> reactionCallback, Action endCallback, Func<bool> restartFunc)
+		{
+			if(!MenuScene.CheckDatelineAndAssetUpdate() && m_coroutine == null)
+			{
+				m_coroutine = m_root.StartCoroutineWatched(Co_IntimacyUp(button, reactionCallback, endCallback, restartFunc));
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E654C Offset: 0x6E654C VA: 0x6E654C
 		//// RVA: 0x14B0F2C Offset: 0x14B0F2C VA: 0x14B0F2C
-		//public IEnumerator Co_IntimacyUp(CharTouchButton button, Action<bool> reactionCallback, Action endCallback, Func<bool> restartFunc) { }
+		public IEnumerator Co_IntimacyUp(CharTouchButton button, Action<bool> reactionCallback, Action endCallback, Func<bool> restartFunc)
+		{
+			bool isLevelMax; // 0x30
+			float time; // 0x34
+			int offerMaxDifficult; // 0x38
+			Coroutine saveCoroutine; // 0x3C
+			List<JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK> typeList; // 0x40
+			List<int> paramList; // 0x44
+			bool levelUpBonus; // 0x48
+			int prev; // 0x4C
+			bool IsDivaOfferLvUp; // 0x50
+			int i; // 0x54
+
+			//0x14B5004
+			bool m_isPause = false;
+			isLevelMax = m_viewIntimacyData.HBODCMLFDOB.PFIILLOIDIL;
+			LeaveLongTouchTips(false);
+			m_layoutInfo.Setup(m_viewIntimacyData, true);
+			m_layoutInfo.Enter();
+			yield return Co.R(Co_CheckIntimacyCount(button, () =>
+			{
+				//0x14B428C
+				m_layoutInfo.Leave();
+			}));
+			m_effectObject.TouchPlay(button.touchPosition);
+			m_loopSE = SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_INTIMACY_000);
+			time = 0;
+			//LAB_014b5248
+			while (true)
+			{
+				time += Time.deltaTime;
+				if (button.isTouch)
+				{
+					if (!m_isPause)
+					{
+						yield return null;
+						if(time > 1.5f)
+						{
+							if(m_isPause)
+							{
+								break;
+							}
+							offerMaxDifficult = KDHGBOOECKC.HHCJCDFCLOB.HFLNFKFGEJH(m_viewIntimacyData.AHHJLDLAPAN_DivaId);
+							MenuScene.Instance.RaycastDisable();
+							if(NKGJPJPHLIF.HHCJCDFCLOB.DPJBHHIHJJK)
+							{
+								bool isDone_UpdateServerTime = false;
+								NKGJPJPHLIF.HHCJCDFCLOB.CADNBFCHAKM_GetToken(() =>
+								{
+									//0x14B4354
+									isDone_UpdateServerTime = true;
+								}, () =>
+								{
+									//0x14B414C
+									MenuScene.Instance.GotoTitle();
+								});
+								//LAB_014b52b4
+								while (!isDone_UpdateServerTime)
+									yield return null;
+							}
+							//LAB_014b52dc
+							MenuScene.Instance.RaycastEnable();
+							CIOECGOMILE.HHCJCDFCLOB.IOCLFHJLHLE_IntimacyUpdater.FJDBNGEPKHL_Time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+							if(CIOECGOMILE.HHCJCDFCLOB.IOCLFHJLHLE_IntimacyUpdater.DCLKMNGMIKC(true) < 1)
+							{
+								m_effectObject.TouchCancel();
+								m_loopSE.Stop();
+								break;
+							}
+							saveCoroutine = null;
+							if(m_viewIntimacyData.FNGFADPFKOD())
+							{
+								saveCoroutine = this.StartCoroutineWatched(Co_Save());
+							}
+							//LAB_014b5514
+							m_effectObject.TouchEnd();
+							m_loopSE.Stop();
+							if (reactionCallback != null)
+								reactionCallback(true);
+							typeList = m_viewIntimacyData.HBODCMLFDOB.CKDNPHLDIEM;
+							paramList = m_viewIntimacyData.HBODCMLFDOB.EEIBCALKFFF;
+							levelUpBonus = false;
+							if (m_viewIntimacyData.HBODCMLFDOB.LDHOOPGDBJC)
+							{
+								levelUpBonus = typeList.Count > 0;
+							}
+							if (levelUpBonus)
+							{
+								MenuScene.Instance.RaycastDisable();
+							}
+							prev = offerMaxDifficult;
+							int next = KDHGBOOECKC.HHCJCDFCLOB.HFLNFKFGEJH(m_viewIntimacyData.AHHJLDLAPAN_DivaId);
+							IsDivaOfferLvUp = false;
+							if (prev < next)
+							{
+								IsDivaOfferLvUp = KDHGBOOECKC.HHCJCDFCLOB.MGHPDFMDFCJ();
+							}
+							if(IsDivaOfferLvUp)
+							{
+								MenuScene.Instance.RaycastDisable();
+							}
+							if(!isLevelMax)
+							{
+								UpdateLayout();
+								bool done = false;
+								m_layoutInfo.StartPointUp(() =>
+								{
+									//0x14B4368
+									done = true;
+								});
+								while (!done && m_layoutInfo != null)
+									yield return null;
+							}
+							if(levelUpBonus)
+							{
+								if(m_divaBalloon != null && levelUpBonus)
+								{
+									m_divaBalloon.Leave(false);
+								}
+								for(i = 0; i < typeList.Count; i++) //LAB_014b5ee8
+								{
+									m_systemMessage.SetTextLevelUpBonus(m_viewIntimacyData.AHHJLDLAPAN_DivaId, m_viewIntimacyData.IGLBKDDCKEJ(), typeList[i], paramList[i]);
+									m_systemMessage.Enter(false);
+									yield return new WaitForSeconds(3);
+									m_systemMessage.Leave(false);
+									yield return new WaitWhile(() =>
+									{
+										//0x14B42CC
+										return m_systemMessage.IsPlaying();
+									});
+								}
+								MenuScene.Instance.RaycastEnable();
+							}
+							if(IsDivaOfferLvUp)
+							{
+								bool isClosePopup = false;
+								MessageBank bk = MessageManager.Instance.GetBank("menu");
+								PopupOfferUnclokDiffSetting s = new PopupOfferUnclokDiffSetting();
+								s.TitleText = "";
+								s.IsCaption = false;
+								s.popupMsg = string.Format(bk.GetMessageByLabel("offer_diva_offer_levelup_text"), MessageManager.Instance.GetMessage("master", string.Format("diva_s_{0:D2}", m_viewIntimacyData.AHHJLDLAPAN_DivaId)));
+								s.preDiff = prev;
+								s.nextDiff = next;
+								s.WindowSize = SizeType.Small;
+								s.Buttons = new ButtonInfo[1]
+								{
+									new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+								};
+								PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType typ, PopupButton.ButtonLabel lbl) =>
+								{
+									//0x14B437C
+									isClosePopup = true;
+									GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.AHOBDLOOLHD(m_viewIntimacyData.AHHJLDLAPAN_DivaId, next);
+									GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+								}, null, null, null);
+								yield return new WaitUntil(() =>
+								{
+									//0x14B4520
+									return isClosePopup;
+								});
+								MenuScene.Instance.RaycastEnable();
+							}
+							else if(isLevelMax)
+							{
+								button.IsInputOff = true;
+								yield return new WaitForSeconds(1);
+								if (m_divaBalloon != null)
+									m_divaBalloon.Leave(false);
+								MessageBank bk = MessageManager.Instance.GetBank("menu");
+								m_systemMessage.SetTextSystem(m_viewIntimacyData.AHHJLDLAPAN_DivaId, bk.GetMessageByLabel("diva_intimacy_max"));
+								m_systemMessage.Enter(false);
+								yield return new WaitForSeconds(3);
+								m_systemMessage.Leave(false);
+								yield return new WaitWhile(() =>
+								{
+									//0x14B430C
+									return m_systemMessage.IsPlaying();
+								});
+								button.IsInputOff = false;
+							}
+							else
+							{ 
+								yield return new WaitForSeconds(1.5f);
+							}
+							m_layoutInfo.Leave();
+							if (saveCoroutine != null)
+								yield return saveCoroutine;
+							if (restartFunc == null || !restartFunc())
+							{
+								m_coroutine = null;
+								if (endCallback != null)
+									endCallback();
+								yield break;
+							}
+							m_coroutine = m_root.StartCoroutineWatched(Co_IntimacyUp(button, reactionCallback, endCallback, restartFunc));
+							yield break;
+						}
+						continue;
+					}
+				}
+				m_effectObject.TouchCancel();
+				m_loopSE.Stop();
+				break;
+			}
+			m_layoutInfo.Leave();
+			EnterLongTouchTips(false);
+			if (reactionCallback != null)
+				reactionCallback(false);
+			m_coroutine = null;
+		}
 
 		//// RVA: 0x14B1040 Offset: 0x14B1040 VA: 0x14B1040
 		private void InitViewData(int divaId = 0)
@@ -332,7 +547,7 @@ namespace XeApp.Game.Menu
 						cnt = 0;
 					long t = m_viewIntimacyData.BPBIHCAMNBJ();
 					JKNNIKNKMNJ j = new JKNNIKNKMNJ();
-					int countMax = j.GPBGFJONHPB();
+					int countMax = j.GPBGFJONHPB_GetMaxIntimacy();
 					if (countMax <= cnt)
 						t = -1;
 					m_intimacyCounter.SetTime(t);
@@ -361,11 +576,46 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E65C4 Offset: 0x6E65C4 VA: 0x6E65C4
 		//// RVA: 0x14B116C Offset: 0x14B116C VA: 0x14B116C
-		//private IEnumerator Co_CheckIntimacyCount(CharTouchButton button, Action callback) { }
+		private IEnumerator Co_CheckIntimacyCount(CharTouchButton button, Action callback)
+		{
+			int intimacyCount;
+
+			//0x14B4BB4
+			intimacyCount = m_viewIntimacyData.GMIEFBELJJH();
+			while(intimacyCount < 1)
+			{
+				if(!button.isTouch)
+				{
+					if (callback != null)
+						callback();
+					break;
+				}
+				yield return null;
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E663C Offset: 0x6E663C VA: 0x6E663C
 		//// RVA: 0x14B124C Offset: 0x14B124C VA: 0x14B124C
-		//private IEnumerator Co_Save() { }
+		private IEnumerator Co_Save()
+		{
+			//0x14B8528
+			MenuScene.Instance.RaycastDisable();
+			bool done = false;
+			bool err = false;
+			MenuScene.Save(() =>
+			{
+				//0x14B4530
+				done = true;
+			}, () =>
+			{
+				//0x14B453C
+				done = true;
+				err = true;
+			});
+			while(!done)
+				yield return null;
+			MenuScene.Instance.RaycastEnable();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E66B4 Offset: 0x6E66B4 VA: 0x6E66B4
 		//// RVA: 0x14B12E0 Offset: 0x14B12E0 VA: 0x14B12E0
@@ -753,7 +1003,7 @@ namespace XeApp.Game.Menu
 						count = m_viewIntimacyData.GMIEFBELJJH();
 					JKNNIKNKMNJ data = new JKNNIKNKMNJ();
 					long time = m_viewIntimacyData.BPBIHCAMNBJ();
-					if(data.GPBGFJONHPB() <= count)
+					if(data.GPBGFJONHPB_GetMaxIntimacy() <= count)
 						time = -1;
 					m_layoutCounterDeco.SetTime(time);
 					m_layoutCounterDeco.SetCount(count);
@@ -984,9 +1234,9 @@ namespace XeApp.Game.Menu
 						{
 							if (index != -1 && m_preReactionIndex != index)
 								break;
-							if (m_viewIntimacyData.NHCCINMHEAB - 1 > 2)
+							if (m_viewIntimacyData.NHCCINMHEAB_Tension - 1 > 2)
 								return;
-							index = UnityEngine.Random.Range(new int[] { 7, 1, 4 }[m_viewIntimacyData.NHCCINMHEAB - 1], new int[] { 10, 4, 7 }[m_viewIntimacyData.NHCCINMHEAB - 1]);
+							index = UnityEngine.Random.Range(new int[] { 7, 1, 4 }[m_viewIntimacyData.NHCCINMHEAB_Tension - 1], new int[] { 10, 4, 7 }[m_viewIntimacyData.NHCCINMHEAB_Tension - 1]);
 							if (index == -1)
 								return;
 						}
