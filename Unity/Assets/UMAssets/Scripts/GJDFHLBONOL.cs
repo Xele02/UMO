@@ -22,7 +22,10 @@ public class GJDFHLBONOL
 	public bool MBFGLMEECOO; // 0x5E
 
 	// // RVA: 0xAAB4C8 Offset: 0xAAB4C8 VA: 0xAAB4C8
-	// public bool JLFHLOCONEE() { }
+	public bool JLFHLOCONEE()
+	{
+		return BGOJPEJJJFB_IsAvaiable;
+	}
 
 	// // RVA: 0xAAB4D0 Offset: 0xAAB4D0 VA: 0xAAB4D0
 	public void DPKCOKLMFMK(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
