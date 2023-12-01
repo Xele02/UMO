@@ -682,7 +682,17 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1B5ED6C Offset: 0x1B5ED6C VA: 0x1B5ED6C
-		//public void ShowPopupConfig(UnityAction showEndCb, UnityAction<PopupButton.ButtonLabel> finishCb) { }
+		public void ShowPopupConfig(UnityAction showEndCb, UnityAction<PopupButton.ButtonLabel> finishCb)
+		{
+			this.StartCoroutineWatched(SetupTabWindow(eType.Menu, new PopupTabButton.ButtonLabel[5]
+			{
+				PopupTabButton.ButtonLabel.LiveView,
+				PopupTabButton.ButtonLabel.LiveSystem,
+				PopupTabButton.ButtonLabel.SLive,
+				PopupTabButton.ButtonLabel.Menu,
+				PopupTabButton.ButtonLabel.OtherItem
+			}, showEndCb, finishCb));
+		}
 
 		//// RVA: 0x1B5EE28 Offset: 0x1B5EE28 VA: 0x1B5EE28
 		public void ShowPopupRhythm(UnityAction showEndCb, UnityAction<PopupButton.ButtonLabel> finishCb)
