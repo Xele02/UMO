@@ -102,7 +102,7 @@ namespace XeApp.Game.Menu
 		protected override void Start()
 		{
 			base.Start();
-			m_charTouch = new CharTouchHitCheck();
+			m_charTouch = GetComponentInChildren<CharTouchHitCheck>();
 			MenuScene.Instance.UpdateEnterToHomeTime();
 		}
 
@@ -310,12 +310,18 @@ namespace XeApp.Game.Menu
 				m_charTouch.OnClickCallback = () =>
 				{
 					//0x97CE94
-					TodoLogger.LogNotImplemented("charTouch.OnClickCallback");
+					if (!m_isHomeShowDiva)
+						return;
+					m_divaTalk.DoTouchReaction();
+					if (m_spEventCtrl != null)
+						m_spEventCtrl.CIHGOMNFPNJ();
 				};
 				m_charTouch.OnStayCallback = (CharTouchButton button) =>
 				{
 					//0x97CEE8
-					TodoLogger.LogNotImplemented("charTouch.OnStayCallback");
+					if (!m_isHomeShowDiva)
+						return;
+					StartIntimacyUp(button);
 				};
 				MenuScene.Instance.LobbyButtonControl.OnStartAnnounce = () =>
 				{
@@ -2234,10 +2240,62 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x97BF14 Offset: 0x97BF14 VA: 0x97BF14
-		// private void StartIntimacyUp(CharTouchButton button) { }
+		private void StartIntimacyUp(CharTouchButton button)
+		{
+			if(m_divaTalk.IsEnableReaction())
+			{
+				if(m_intimacyControl.CheckUnlock())
+				{
+					m_divaTalk.TimerRestart();
+					m_divaTalk.TimerStop();
+					m_buttonGroup.buttonUIHide.IsInputLock = true;
+					m_intimacyControl.StartIntimacyUp(button, (bool success) =>
+					{
+						//0x13C7630
+						if(success)
+						{
+							SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_INTIMACY_001);
+							m_divaTalk.DoIntimacyReaction(null);
+						}
+						else
+						{
+							m_buttonGroup.buttonUIHide.IsInputLock = false;
+						}
+						m_divaTalk.TimerStart();
+					}, () =>
+					{
+						//0x13C775C
+						m_buttonGroup.buttonUIHide.IsInputLock = false;
+					}, () =>
+					{
+						//0x13C77C0
+						return ContinueConfirm(button);
+					});
+				}
+			}
+		}
 
 		// // RVA: 0x97C180 Offset: 0x97C180 VA: 0x97C180
-		// private bool ContinueConfirm(CharTouchButton button) { }
+		private bool ContinueConfirm(CharTouchButton button)
+		{
+			TouchInfoRecord record = InputManager.Instance.GetTouchInfoRecord(0);
+			if (record != null)
+			{
+				TouchInfo info = record.beganInfo;
+				if (record.currentInfo != null)
+					info = record.currentInfo;
+				if(!info.isIllegal)
+				{
+					if(RectTransformUtility.RectangleContainsScreenPoint(button.GetComponent<RectTransform>(), info.GetSceneInnerPosition()))
+					{
+						if (info.isBegan)
+							return true;
+						return info.isMoved;
+					}
+				}
+			}
+			return false;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E40EC Offset: 0x6E40EC VA: 0x6E40EC
 		// // RVA: 0x97C348 Offset: 0x97C348 VA: 0x97C348

@@ -232,5 +232,10 @@ public class GJALOMELEHD_Intimacy : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xAAAAF4 Offset: 0xAAAAF4 VA: 0xAAAAF4
-	// public int JBKMPBPGFHA(int CIEOBFIIPLD) { }
+	public int JBKMPBPGFHA(int CIEOBFIIPLD)
+	{
+		if (CIEOBFIIPLD < 1 || GLHEHGGKILG_GetMaxLevel() <= CIEOBFIIPLD)
+			return 0;
+		return OOCKOCAACMD_DataByLevel[CIEOBFIIPLD].BDLNMOIOMHK_StartExp;
+	}
 }

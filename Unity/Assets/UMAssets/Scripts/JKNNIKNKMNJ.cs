@@ -38,8 +38,8 @@ public class JKNNIKNKMNJ
 			PINPIHODOKP = value;
 			if (value < 1)
 				PINPIHODOKP = 0;
-			if (value > GPBGFJONHPB())
-				PINPIHODOKP = GPBGFJONHPB();
+			if (value > GPBGFJONHPB_GetMaxIntimacy())
+				PINPIHODOKP = GPBGFJONHPB_GetMaxIntimacy();
 			HICKJFPDBEG = PINPIHODOKP ^ FBGGEFFJJHB;
 		} } //0x1472770 DNNADJLKBPC 0x14724A8 BJOJAFDBOBL
 	public int DCBENCMNOGO_Gain { get
@@ -53,8 +53,8 @@ public class JKNNIKNKMNJ
 			BPADHGOCPIH = value;
 			if (value < 1)
 				BPADHGOCPIH = 0;
-			if (value > GPBGFJONHPB())
-				BPADHGOCPIH = GPBGFJONHPB();
+			if (value > GPBGFJONHPB_GetMaxIntimacy())
+				BPADHGOCPIH = GPBGFJONHPB_GetMaxIntimacy();
 			EMGIAPOEKLL = BPADHGOCPIH ^ FBGGEFFJJHB;
 		}
 	} //0x1472798 HHBCMCGODFP 0x14724E4 NPANKNNLDOB
@@ -89,11 +89,11 @@ public class JKNNIKNKMNJ
         DDPGLABEIEM = 0;
         FBGGEFFJJHB = (int)time ^ 0x71020923;
         EHCBKLCHFHE = FBGGEFFJJHB;
-        PINPIHODOKP = GPBGFJONHPB();
+        PINPIHODOKP = GPBGFJONHPB_GetMaxIntimacy();
         HICKJFPDBEG = PINPIHODOKP ^ FBGGEFFJJHB;
         OPDBPKLCEFO = 60;
         MKMBHBOGFHM = 0;
-        BPADHGOCPIH = GPBGFJONHPB();
+        BPADHGOCPIH = GPBGFJONHPB_GetMaxIntimacy();
         EMGIAPOEKLL = BPADHGOCPIH ^ FBGGEFFJJHB;
         JCGIEJGOEIM = FBGGEFFJJHB ^ 0x3c;
         HFMOEKIBNKA = FBGGEFFJJHB;
@@ -103,7 +103,7 @@ public class JKNNIKNKMNJ
 	// public void ODDIHGPONFL(JKNNIKNKMNJ GPBJHKLFCEP) { }
 
 	// // RVA: 0x1472838 Offset: 0x1472838 VA: 0x1472838
-	public int GPBGFJONHPB()
+	public int GPBGFJONHPB_GetMaxIntimacy()
     {
         if(IMMAOANGPNK.HHCJCDFCLOB != null)
         {
@@ -167,7 +167,22 @@ public class JKNNIKNKMNJ
 	// public long LEHHIGOOIJJ() { }
 
 	// // RVA: 0x1472DCC Offset: 0x1472DCC VA: 0x1472DCC
-	// public bool IGFMNMADJPP(int CHIHFGDIBJM, bool DDGFCOPPBBN = True) { }
+	public bool IGFMNMADJPP(int CHIHFGDIBJM, bool DDGFCOPPBBN = true)
+	{
+		long l1 = DCLKMNGMIKC(false);
+		if (CHIHFGDIBJM <= l1 && !DDGFCOPPBBN)
+		{
+			long r = CKEJFCLAOHP_GetRemainingTime();
+			NEPIPMPAFIE_CntVal = (int)l1 - CHIHFGDIBJM;
+			DLPEEDCCNMJ_CntSaveTime = FJDBNGEPKHL_Time;
+			if(r != 0)
+			{
+				DLPEEDCCNMJ_CntSaveTime = r - FLJGHBLEDDB_UpdateInterval + FJDBNGEPKHL_Time;
+			}
+			return true;
+		}
+		return CHIHFGDIBJM <= l1;
+	}
 
 	// // RVA: 0x1472F08 Offset: 0x1472F08 VA: 0x1472F08
 	// public bool MAPPOEFALIP(int BBCCIJGFKHD, bool MDNODGAFHJN = True, bool DDGFCOPPBBN = True) { }

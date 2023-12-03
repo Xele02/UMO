@@ -1,4 +1,5 @@
 using UnityEngine;
+using XeSys;
 
 namespace XeApp.Game.Common
 {
@@ -62,7 +63,30 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1102568 Offset: 0x1102568 VA: 0x1102568
-		// public void SetTextLevelUpBonus(int divaId, string name, JJOELIOGMKK.LPBGKOJDNJK type, int param) { }
+		public void SetTextLevelUpBonus(int divaId, string name, JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK type, int param)
+		{
+			m_systemWindow.SetTelopColor(m_colorTable[divaId - 1]);
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			string str = "";
+			switch (type)
+			{
+				case JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK.POBNHLKGMPF_1:
+					str = bk.GetMessageByLabel("diva_intimacy_lvup_text_001");
+					break;
+				case JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK.EHJDMAOKHHP_2:
+					str = bk.GetMessageByLabel("diva_intimacy_lvup_text_002");
+					break;
+				case JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK.JFEKIMDCKIH_3:
+					str = bk.GetMessageByLabel("diva_intimacy_lvup_text_003");
+					break;
+				case JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK.GBINCMPKLOF_4:
+					str = bk.GetMessageByLabel("diva_intimacy_lvup_text_004");
+					break;
+				default:
+					break;
+			}
+			m_systemWindow.Setup(string.Format(str, name, param), null);
+		}
 
 		// // RVA: 0x11027FC Offset: 0x11027FC VA: 0x11027FC
 		public void SetTextSystem(int divaId, string text)
@@ -96,6 +120,9 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x11029A0 Offset: 0x11029A0 VA: 0x11029A0
-		// public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_systemWindow.IsPlaying();
+		}
 	}
 }

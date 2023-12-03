@@ -181,6 +181,7 @@ class JpStringLiterals
 	public const string StringLiteral_11929 = "ダウンロードエラー"; // 0x03bb451c
 	public const string StringLiteral_11930 = "ファイルのダウンロードに失敗しました。\nインターネットへの接続や電波の状況を確認して、\nもう一度お試しください。"; // 0x03bb4520
 	public const string StringLiteral_11992 = "バッチインストーラ　インストールモジュール作成失敗"; // 0x03bb4618
+	public const string StringLiteral_12005 = "タッチ"; //0x03bb464c
 	public const string StringLiteral_12010 = "コスチューム名"; //0x03bb4660
 	public const string StringLiteral_12037 = "　"; // 0x03bb46cc
 	public const string StringLiteral_12038 = "…"; // 0x03bb46d0

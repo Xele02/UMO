@@ -74,10 +74,42 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x960C70 Offset: 0x960C70 VA: 0x960C70
-		//public bool RequestTouchReaction(int reactionType, Action onActionEndCallback) { }
+		public bool RequestTouchReaction(int reactionType, Action onActionEndCallback)
+		{
+			if(!IsAnimatorRequested && m_runningCoroutine == null)
+			{
+				MenuDivaVoiceTable.Data data = VoiceTable.GetTouchReaction((DivaTouchReaction.Type)reactionType);
+				if (MotionStart(data.MotionType, onActionEndCallback))
+				{
+					SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.Touch, data.VoiceId);
+					DivaManager.DivaTransformReset();
+					return true;
+				}
+			}
+			return false;
+		}
 
 		//// RVA: 0x960FD0 Offset: 0x960FD0 VA: 0x960FD0
-		//public bool RequestTouchReactionCos(int a_index, Action onActionEndCallback) { }
+		public bool RequestTouchReactionCos(int a_index, Action onActionEndCallback)
+		{
+			if (!IsAnimatorRequested && m_runningCoroutine == null)
+			{
+				if(VoiceTableCos != null)
+				{
+					MenuDivaVoiceTableCos.Data data = VoiceTableCos.GetTouchReactionData(a_index);
+					if(data != null)
+					{
+						if(MotionStart(data.MotionType, onActionEndCallback))
+						{
+							SoundManager.Instance.voDivaCos.Play(DivaCosVoicePlayer.Category.TouchReaction, data.VoiceId);
+							DivaManager.DivaTransformReset();
+							return true;
+						}
+					}
+				}
+			}
+			return false;
+		}
 
 		//// RVA: 0x96117C Offset: 0x96117C VA: 0x96117C
 		public bool RequestAutoTalk(int talkType, Action onActionEndCallback)
@@ -159,10 +191,29 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x961CAC Offset: 0x961CAC VA: 0x961CAC
-		//public int RandomIntimacyReaction() { }
+		public int RandomIntimacyReaction()
+		{
+			return new System.Random().Next(VoiceTable.GetList_IntimacyReaction().Count);
+		}
 
 		//// RVA: 0x961D90 Offset: 0x961D90 VA: 0x961D90
-		//public bool RequestIntimacyReaction(int a_index, Action onActionEndCallback) { }
+		public bool RequestIntimacyReaction(int a_index, Action onActionEndCallback)
+		{
+			if(!IsAnimatorRequested && m_runningCoroutine == null)
+			{
+				MenuDivaVoiceTable.Data t = VoiceTable.GetIntimacy(a_index);
+				if (t != null)
+				{
+					if(MotionStart(t.MotionType, onActionEndCallback))
+					{
+						SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.Intimacy, t.VoiceId);
+						DivaManager.DivaTransformReset();
+						return true;
+					}
+				}
+			}
+			return false;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C64D0 Offset: 0x6C64D0 VA: 0x6C64D0
 		//// RVA: 0x9619FC Offset: 0x9619FC VA: 0x9619FC

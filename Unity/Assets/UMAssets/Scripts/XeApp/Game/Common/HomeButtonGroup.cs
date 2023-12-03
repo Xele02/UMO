@@ -27,7 +27,7 @@ namespace XeApp.Game.Common
 		[SerializeField]
 		private CanvasGroup m_canvasGroup; // 0x24
 
-		//public HomeUIHideButton buttonUIHide { get; } 0xEA8138
+		public HomeUIHideButton buttonUIHide { get { return m_buttonUIHide; } } //0xEA8138
 		public Action onClickBgChangeButton { set { m_buttonBgChange.onClickButton = value; } } //0xEA8140
 		public Action<bool> onClickUIHideButton { set { m_buttonUIHide.onClickButton = value; } } //0xEA8168
 		public Action onClickStoryButton { set { m_buttonStory.onClickButton = value; } } //0xEA8198
