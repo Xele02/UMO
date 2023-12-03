@@ -1153,7 +1153,49 @@ public class CIOECGOMILE
 						if ((FIBPIDELFBB & 0x1000000000) != 0)
 						{
 							//1876
-							TodoLogger.LogError(0, "BMKEBEJJKBE Episode");
+							if(AHEFHIMGIBI_ServerSave.DAEJHMCMFJD_Offer != null)
+							{
+								while(true)
+								{
+									OCMJNBIFJNM_Offer.JPOHOLBBFGP of = AHEFHIMGIBI_ServerSave.DAEJHMCMFJD_Offer.FOFLMHELILC.Find((OCMJNBIFJNM_Offer.JPOHOLBBFGP JPAEDJJFFOI) =>
+									{
+										//0x100A184
+										return JPAEDJJFFOI.JIOMCDGKIAF == 1;
+									});
+									if(of == null)
+										break;
+									int a = 0;
+									switch(of.GBJFNGCDKPM_Type)
+									{
+										case 1:
+											a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.HOJPJAFDIAD[of.MLDPDLPHJPM_OfferId - 1].LJNAKDMILMC;
+											break;
+										case 2:
+											a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.FFKIBJKEBNP[of.MLDPDLPHJPM_OfferId - 1].LJNAKDMILMC;
+											break;
+										case 3:
+											a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.PMCDKBBHCJK[of.MLDPDLPHJPM_OfferId - 1].LJNAKDMILMC;
+											break;
+										case 4:
+											a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.OICGEEKOLOG[of.MLDPDLPHJPM_OfferId - 1].LJNAKDMILMC;
+											break;
+										default:
+											break;
+									}
+									if(a > 0)
+									{
+										DGMPLJFDOHF.Clear();
+										DGMPLJFDOHF.AppendFormat("new_offer_clear_key_" + a.ToString("D4"), Array.Empty<object>());
+										ls.Add(DGMPLJFDOHF.ToString());
+										EBEGGFECPOE.OBCINIPHGGH = 0;
+										EBEGGFECPOE.PJBJCBEMEEC = 0;
+										EBEGGFECPOE.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.JMLJADADEEF_28, of.GBJFNGCDKPM_Type + ":" + of.MLDPDLPHJPM_OfferId);
+										EBEGGFECPOE.CPIICACGNBH(AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC, 1), 5, null, 0);
+										b2 = false;
+									}
+									of.JIOMCDGKIAF = 0;
+								}
+							}
 						}
 						AHEFHIMGIBI_ServerSave.IPLNOMCCNBI_UpdatePublicStatus();
 						BBHNACPENDM_ServerSaveData.EMHDCKMFCGE e = FMFKHDPKLOC.LEMFJICBALP(AHEFHIMGIBI_ServerSave, true);
@@ -2591,7 +2633,7 @@ public class CIOECGOMILE
 							ILCCJNDFFOB.HHCJCDFCLOB.PMFGEJJDMCK((int)FGHGMHPNEMG * 10000 + MLDPDLPHJPM, 2, JpStringLiterals.StringLiteral_9797, prev - next, 0);
 							if (BHFHGFKBOHH != null)
 								BHFHGFKBOHH();
-							KONHMOLMOCI_IsSaving = true;
+							KONHMOLMOCI_IsSaving = false;
 						};
 						COJNCNGHIJC.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 						{

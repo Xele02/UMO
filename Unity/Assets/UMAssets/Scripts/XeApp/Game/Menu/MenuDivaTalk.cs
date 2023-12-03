@@ -363,7 +363,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_divaControl.RequestAutoTalk(talkType, OnTalkActionEnd))
 			{
-				DivaTalk("talk_time_{0:D2}", talkType - 1, null);
+				DivaTalk("talk_time_{0:D2}", talkType + 1, null);
 				TimerStop();
 			}
 		}

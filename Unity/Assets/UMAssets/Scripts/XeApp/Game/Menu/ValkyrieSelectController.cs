@@ -133,8 +133,8 @@ namespace XeApp.Game.Menu
 			NHDJHOPLMDE n = new NHDJHOPLMDE(m_SeriesValkyrieList[m_SelectSeries][m_Select].LLOBHDMHJIG_Id, 0);
 			m_layoutValSelect.SetAtkArrowEnable(false);
 			m_layoutValSelect.SetHitArrowEnable(false);
-			string strAtk = n.KINFGHHNFCF_Atk.ToString();
-			string strHit = n.NONBCCLGBAO_Hit.ToString();
+			string strAtk = m_SeriesValkyrieList[m_SelectSeries][m_Select].KINFGHHNFCF_Atk.ToString();
+			string strHit = m_SeriesValkyrieList[m_SelectSeries][m_Select].NONBCCLGBAO_Hit.ToString();
 			if (n.LAKLFHGMCLI(EPIFHEDDJAE.NGEDJNHECKN.FJFMLFPJKNB_2, IsLeader ? EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition.FHBJEIEPABF_12 : EPIFHEDDJAE.JFEIHHBGFPF_AbilityCondition.PPNNBADDNKB_11))
 			{
 				if(n.KINFGHHNFCF_Atk > 0)

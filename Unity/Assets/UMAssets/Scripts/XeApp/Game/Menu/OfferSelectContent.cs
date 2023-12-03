@@ -465,7 +465,7 @@ namespace XeApp.Game.Menu
 				m_DivaTimeWatcher.onElapsedCallback = (long current, long limit, long remain) =>
 				{
 					//0x18643F0
-					SetTimeText(OfferDeadLine, limit);
+					SetTimeText(OfferDeadLine, remain);
 				};
 				m_DivaTimeWatcher.onEndCallback = null;
 				m_DivaTimeWatcher.WatchStart(remainTime, false);
@@ -539,8 +539,8 @@ namespace XeApp.Game.Menu
 			fast_time = 2;
 			if (MaxTime < 61)
 				fast_time = 0.5f;
-			CountTime = 1; // ??
-			while (m_currentRemainingTime != 0)
+			CountTime = m_currentRemainingTime;
+			while (m_currentRemainingTime > 0)
 			{
 				AfterClearTime.color = Color.red;
 				float f;
@@ -550,14 +550,17 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					CountTime = CountTime < 1 ? CountTime + Time.deltaTime : (MaxTime / (1.0f / Time.deltaTime)) / fast_time;
+					CountTime = (MaxTime / (1.0f / Time.deltaTime)) / fast_time + (CountTime < 1 ? CountTime : 0);
 					f = CountTime;
 				}
 				m_currentRemainingTime -= (int)f;
-				if(m_currentRemainingTime == 0)
+				if(m_currentRemainingTime <= 0)
 				{
-					IsPlayingSE = false;
-					countUpSEPlayback.Stop();
+					if(IsPlayingSE)
+					{
+						IsPlayingSE = false;
+						countUpSEPlayback.Stop();
+					}
 					SetTimeText(AfterClearTime, 0);
 					yield return Co.R(KDHGBOOECKC.HHCJCDFCLOB.FMGMIKPJNKG_Co_wait(0.3f, false, () =>
 					{
@@ -583,7 +586,7 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerResult.Play((int)cs_se_result.SE_RESULT_026);
 			StateUpdate();
 			ListUpdateStart();
-			MenuScene.Instance.RaycastDisable();
+			MenuScene.Instance.RaycastEnable();
 		}
 
 		//// RVA: 0x18601CC Offset: 0x18601CC VA: 0x18601CC
