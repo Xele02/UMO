@@ -139,7 +139,7 @@ namespace XeApp.Game.Menu
 			data = data.JGJOAFJPIIH((BOPFPIHGJMD.MLBMHDCCGHI)offerType, offerId);
 			for(int i = 0; i < data.NNDGIAEFMOG[from].LHMDABPNDDH.Length; i++)
 			{
-				if(data.NNDGIAEFMOG[from].LHMDABPNDDH[i] >= 0 && data.NNDGIAEFMOG[from].LHMDABPNDDH[i] <= BOPFPIHGJMD.MGPIJGMDLOM.HJNNKCMLGFL_3)
+				if(data.NNDGIAEFMOG[from].LHMDABPNDDH[i] == BOPFPIHGJMD.MGPIJGMDLOM.INIMBLOHIEF_0)
 				{
 					DisplayItemIdList.Add(data.NNDGIAEFMOG[from].LNADJDFHHAI[i]);
 				}
@@ -511,8 +511,10 @@ namespace XeApp.Game.Menu
 		{
 			if(currentItemIndex < itemList.Count)
 			{
+				float f = SCROLL_MARGIN_WIDTH + itemList[currentItemIndex].Width * currentItemIndex;
 				scrollSupporter.BeginAddView();
-				scrollSupporter.AddView(itemList[currentItemIndex].gameObject, SCROLL_MARGIN_WIDTH + itemList[currentItemIndex].Width * currentItemIndex + SCROLL_MARGIN_WIDTH + itemList[currentItemIndex].Width, 0);
+				scrollSupporter.AddView(itemList[currentItemIndex].gameObject, f, 0);
+				scrollSupporter.EndAddView(new Vector2(f + SCROLL_MARGIN_WIDTH + itemList[currentItemIndex].Width, 0));
 				currentItemIndex++;
 				return itemList.Count == currentItemIndex;
 			}
@@ -561,9 +563,9 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1530108 Offset: 0x1530108 VA: 0x1530108 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			m_layoutRoot = layout.FindViewByExId("sw_drop_set_anim") as AbsoluteLayout;
-			m_layoutMain = layout.FindViewByExId("sw_drop_set") as AbsoluteLayout;
-			layoutBonus = layout.FindViewByExId("sw_g_r_drop_txt_no_bns_in_anim") as AbsoluteLayout;
+			m_layoutRoot = layout.FindViewById("sw_drop_set_anim") as AbsoluteLayout;
+			m_layoutMain = m_layoutRoot.FindViewById("sw_drop_set") as AbsoluteLayout;
+			layoutBonus = layout.FindViewById("sw_g_r_drop_txt_no_bns_in_anim") as AbsoluteLayout;
 			layoutScoreRankIcon = m_layoutMain.FindViewById("swtbl_rank_icon") as AbsoluteLayout;
 			layoutScoreRankLoop = m_layoutMain.FindViewById("sw_txt_rbonus") as AbsoluteLayout;
 			layoutZeroItem = m_layoutMain.FindViewById("sw_nonitem_in_anim") as AbsoluteLayout;

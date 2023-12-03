@@ -214,7 +214,7 @@ namespace XeApp.Game.Menu
 			{
 				if (seriesIcon == BOPFPIHGJMD.LGEIPIHHNPH.GDEJFFFHFGP_6)
 					seriesIcon = BOPFPIHGJMD.LGEIPIHHNPH.CFBJGAGBJEN_5;
-				TexUVData data = m_texUvList_3.GetUVData(string.Format(m_LogoTextureUvName, seriesIcon));
+				TexUVData data = m_texUvList_3.GetUVData(string.Format(m_LogoTextureUvName, (int)seriesIcon));
 				if(data != null)
 				{
 					m_seriesLogo.uvRect = LayoutUGUIUtility.MakeUnityUVRect(data);
@@ -227,7 +227,7 @@ namespace XeApp.Game.Menu
 		{
 			if(seriesIcon > 0 && seriesIcon <= BOPFPIHGJMD.LGEIPIHHNPH.LCBPJOKNKPL_7)
 			{
-				TexUVData data = m_texUvList_3.GetUVData(string.Format(m_IconTextureUvName, seriesIcon));
+				TexUVData data = m_texUvList_3.GetUVData(string.Format(m_IconTextureUvName, (int)seriesIcon));
 				if(data != null)
 				{
 					m_seriesIcon.uvRect = LayoutUGUIUtility.MakeUnityUVRect(data);
