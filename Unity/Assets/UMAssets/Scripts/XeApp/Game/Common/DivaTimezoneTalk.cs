@@ -35,7 +35,7 @@ namespace XeApp.Game.Common
 			}
 			for(int i = LoginTalkTimeZone.Count - 1; i >= 0; i--)
 			{
-				if (hour < LoginTalkTimeZone[i])
+				if (hour >= LoginTalkTimeZone[i])
 					return (Type)i;
 			}
 			return Type.Midnight;
