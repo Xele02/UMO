@@ -61,7 +61,29 @@ public class SakashoPayment : SakashoAPIBase
 	}
 
 	// RVA: 0x2E541B8 Offset: 0x2E541B8 VA: 0x2E541B8
-	//public static SakashoAPICallContext PurchaseAndSave(int productId, int quantity, int currencyId, string[] names, string playerData, bool replace, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext PurchaseAndSave(int productId, int quantity, int currencyId, string[] names, string playerData, bool replace, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		h["productId"] = productId;
+		h["quantity"] = quantity;
+		h["currencyId"] = currencyId;
+		ArrayList ar = null;
+		if(names != null)
+		{
+			ar = new ArrayList();
+			for(int i = 0; i < names.Length; i++)
+			{
+				if(names[i] != null)
+				{
+					ar.Add(names[i]);
+				}
+			}
+		}
+		h["names"] = ar;
+		h["playerData"] = playerData;
+		h["replace"] = replace;
+		return new SakashoAPICallContext(Call(SakashoPaymentPurchaseAndSave, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	// RVA: 0x2E54580 Offset: 0x2E54580 VA: 0x2E54580
 	//public static SakashoAPICallContext GetGroupedProductBoughtCount(int[] groupKeys, OnSuccess onSuccess, OnError onError) { }
@@ -137,7 +159,10 @@ public class SakashoPayment : SakashoAPIBase
 	}
 
 	// RVA: 0x2E55C40 Offset: 0x2E55C40 VA: 0x2E55C40
-	//private static extern int SakashoPaymentPurchaseAndSave(int callbackId, string json) { }
+	private static int SakashoPaymentPurchaseAndSave(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoPaymentPurchaseAndSave(callbackId, json);
+	}
 
 	// RVA: 0x2E55D50 Offset: 0x2E55D50 VA: 0x2E55D50
 	//private static extern int SakashoPaymentGetGroupedProductBoughtCount(int callbackId, string json) { }

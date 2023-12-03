@@ -46,10 +46,27 @@ namespace XeApp.Core
 		}
 
 		//// RVA: 0x1D70F6C Offset: 0x1D70F6C VA: 0x1D70F6C
-		//public void CameraListClear() { }
+		public void CameraListClear()
+		{
+			flexibleFovCameraList.Clear();
+			flexibleViewportCameraList.Clear();
+			if (flexibleDefaultFovList != null)
+				flexibleDefaultFovList.Clear();
+		}
 
 		//// RVA: 0x1D71030 Offset: 0x1D71030 VA: 0x1D71030
-		//public void AddCamera(Camera camera, float fov) { }
+		public void AddCamera(Camera camera, float fov)
+		{
+			flexibleFovCameraList.Add(camera);
+			flexibleViewportCameraList.Add(camera);
+			flexibleDefaultFovList = new List<float>(flexibleFovCameraList.Count);
+			for(int i = 0; i < flexibleFovCameraList.Count; i++)
+			{
+				flexibleDefaultFovList.Add(fov);
+			}
+			FlexibleAspectProcess();
+			FlexibleFovProcess();
+		}
 
 		//// RVA: 0x1D70CCC Offset: 0x1D70CCC VA: 0x1D70CCC
 		private void FlexibleFovProcess()

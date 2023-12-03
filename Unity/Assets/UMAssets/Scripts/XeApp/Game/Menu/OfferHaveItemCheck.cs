@@ -24,10 +24,16 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x18520AC Offset: 0x18520AC VA: 0x18520AC
-		//public void ButtonDisable() { }
+		public void ButtonDisable()
+		{
+			m_button.enabled = false;
+		}
 
 		//// RVA: 0x18520DC Offset: 0x18520DC VA: 0x18520DC
-		//public void ButtonEnable() { }
+		public void ButtonEnable()
+		{
+			m_button.enabled = true;
+		}
 
 		// RVA: 0x185210C Offset: 0x185210C VA: 0x185210C
 		public void Enter()

@@ -991,7 +991,7 @@ namespace XeApp.Game.Menu
 				//0x117CD7C
 				isError = true;
 			});
-			while (CIOECGOMILE.HHCJCDFCLOB.KONHMOLMOCI)
+			while (CIOECGOMILE.HHCJCDFCLOB.KONHMOLMOCI_IsSaving)
 				yield return null;
 			while(isError)
 				yield return null;
@@ -1145,7 +1145,7 @@ namespace XeApp.Game.Menu
 				//0x117CF40
 				isError = true;
 			});
-			while (CIOECGOMILE.HHCJCDFCLOB.KONHMOLMOCI)
+			while (CIOECGOMILE.HHCJCDFCLOB.KONHMOLMOCI_IsSaving)
 				yield return null;
 			while (isError)
 				yield return null;

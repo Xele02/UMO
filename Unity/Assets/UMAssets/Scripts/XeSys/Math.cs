@@ -112,6 +112,10 @@ namespace XeSys
 			{
 				switch(type)
 				{
+					case EasingFunc.Liner:
+						return EasingLerp(start, end, t);
+					case EasingFunc.InOutCubic:
+						return EasingInOutCubic(start, end, t);
 					case EasingFunc.InOutExpo:
 						return EasingInOutExpo(start, end, t);
 					default:
@@ -122,7 +126,10 @@ namespace XeSys
 			}
 
 			//// RVA: 0x2396A6C Offset: 0x2396A6C VA: 0x2396A6C
-			//public static Vector3 Evaluate(Math.Tween.EasingFunc type, Vector3 start, Vector3 end, float t) { }
+			public static Vector3 Evaluate(EasingFunc type, Vector3 start, Vector3 end, float t)
+			{
+				return new Vector3(Evaluate(type, start.x, end.x, t), Evaluate(type, start.y, end.y, t), Evaluate(type, start.z, end.z, t));
+			}
 
 			//// RVA: 0x2396B78 Offset: 0x2396B78 VA: 0x2396B78
 			//public static Vector2 Evaluate(Math.Tween.EasingFunc efunc, Vector2 start, Vector2 end, float t) { }
@@ -131,7 +138,10 @@ namespace XeSys
 			//public static Color Evaluate(Math.Tween.EasingFunc efunc, Color start, Color end, float t) { }
 
 			//// RVA: 0x2395638 Offset: 0x2395638 VA: 0x2395638
-			//public static float EasingLerp(float start, float end, float t) { }
+			public static float EasingLerp(float start, float end, float t)
+			{
+				return (end - start) * t + start;
+			}
 
 			//// RVA: 0x2395658 Offset: 0x2395658 VA: 0x2395658
 			//public static float EasingInQuad(float start, float end, float t) { }

@@ -372,6 +372,7 @@ class JpStringLiterals
 	public const string StringLiteral_15553 = "自分のデコルームへ戻る"; //0x03bb7dbc
 	public const string StringLiteral_15554 = "訪問デコルームからロビーへ戻る"; //0x03bb7dc0
 	public const string StringLiteral_15651 = "手動"; // 0x03bb7f44
+	public const string StringLiteral_15697 = "{0}　{1}{2}"; //0x03bb7ffc
 	public const string StringLiteral_15750 = "次の報酬まで {0} {1}"; // 0x03bb80d0
 	public const string StringLiteral_15778 = "追加報酬"; // 0x03bb8140
 	public const string StringLiteral_15794 = "あと {0} {1}"; // 0x03bb8180
@@ -399,6 +400,12 @@ class JpStringLiterals
 	public const string StringLiteral_18024 = "：{0}"; //0x03bba458
 	public const string StringLiteral_18054 = "～{0}秒"; //0x03bba4d0
 	public const string StringLiteral_18280 = "プリズム"; //0x03bba858
+	public const string StringLiteral_18787 = "獲得ユニオンクレジット"; // 03bbb044
+	public const string StringLiteral_18797 = "小隊選択"; //0x03bbb06c
+	public const string StringLiteral_18843 = "リザルト画面"; //0x03bbb124
+	public const string StringLiteral_18923 = "オファー選択"; //0x03bbb264
+	public const string StringLiteral_18944 = "形態選択"; //0x03bbb2b8
+	public const string StringLiteral_18949 = "ヴァルキリー選択"; //0x03bbb2cc
 	public const string StringLiteral_19017 = "誕生日"; // 0x03bbb3dc
 	public const string StringLiteral_19018 = "{0}/{1}/{2}　{3}"; // 0x03bbb3e0
 	public const string StringLiteral_19612 = "ユニットセット"; // 0x03bbbd28

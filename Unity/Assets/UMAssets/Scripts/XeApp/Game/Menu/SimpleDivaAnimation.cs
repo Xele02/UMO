@@ -167,7 +167,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC4A9E8 Offset: 0xC4A9E8 VA: 0xC4A9E8
-		//public void StartIdleMotion() { }
+		public void StartIdleMotion()
+		{
+			m_divaObject.Play("simple_idle");
+		}
 
 		//// RVA: 0xC4AA64 Offset: 0xC4AA64 VA: 0xC4AA64
 		//public void StartSimpleMotion(string motionName) { }
@@ -193,10 +196,24 @@ namespace XeApp.Game.Menu
 		//public void StartSimpleLoopMotion(string motionName) { }
 
 		//// RVA: 0xC4B140 Offset: 0xC4B140 VA: 0xC4B140
-		//public void StartSimpleLoopMotion(int motionNo) { }
+		public void StartSimpleLoopMotion(int motionNo)
+		{
+			if(m_loopMotionNameList != null && m_loopMotionNameList.Count <= motionNo)
+			{
+				Debug.LogError(new object[5]
+				{
+					"StringLiteral_20450", motionNo, "/", m_loopMotionNameList.Count, " ]"
+				});
+			}
+			m_divaObject.Anim_SetTrigger("menu_toSimpleLoop");
+			m_divaObject.Anim_SetInteger("menu_simpleId", motionNo + 1);
+		}
 
 		//// RVA: 0xC4B4EC Offset: 0xC4B4EC VA: 0xC4B4EC
-		//public void CrossFadeIdel(string stateName) { }
+		public void CrossFadeIdel(string stateName)
+		{
+			m_divaObject.CrossFadeIdle(stateName);
+		}
 
 		//// RVA: 0xC4B520 Offset: 0xC4B520 VA: 0xC4B520
 		public bool IsPlayingEntry()
@@ -217,7 +234,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC4B76C Offset: 0xC4B76C VA: 0xC4B76C
-		//public bool IsPlayingSelectMotion(int animNum) { }
+		public bool IsPlayingSelectMotion(int animNum)
+		{
+			return m_divaObject.GetBodyHash() == Animator.StringToHash(string.Format("body.sub_simple.simple_anime{0:D2}", animNum + 1));
+		}
 
 		//// RVA: 0xC4B83C Offset: 0xC4B83C VA: 0xC4B83C
 		//public bool IsPlayingSelectLoopMotion(int loopAnimNum) { }
@@ -281,7 +301,10 @@ namespace XeApp.Game.Menu
 		//public void PlayVoice(SimpleDivaVoiceSetting setting, int id) { }
 
 		//// RVA: 0xC4BE80 Offset: 0xC4BE80 VA: 0xC4BE80
-		//public void PlayVoiceOnly(SimpleDivaVoiceSetting setting) { }
+		public void PlayVoiceOnly(SimpleDivaVoiceSetting setting)
+		{
+			m_voicePlayer.PlayVoiceRandom(setting.m_voiceSetting, -1);
+		}
 
 		//// RVA: 0xC4BECC Offset: 0xC4BECC VA: 0xC4BECC
 		//public void StartLipSync(SimpleDivaVoiceSetting setting) { }

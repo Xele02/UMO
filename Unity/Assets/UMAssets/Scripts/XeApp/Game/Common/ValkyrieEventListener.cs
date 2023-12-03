@@ -43,7 +43,10 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CE01C4 Offset: 0x1CE01C4 VA: 0x1CE01C4
-		//public void Release() { }
+		public void Release()
+		{
+			m_formSwitchListeners.Clear();
+		}
 
 		//// RVA: 0x1CE023C Offset: 0x1CE023C VA: 0x1CE023C
 		public void PauseAll()

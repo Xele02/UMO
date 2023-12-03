@@ -82,7 +82,12 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1392F54 Offset: 0x1392F54 VA: 0x1392F54
-		//public void CrossFadeIdle(string IdleStateName) { }
+		public void CrossFadeIdle(string IdleStateName)
+		{
+			animator.CrossFade(IdleStateName, 0.07f);
+			facialBlendAnimMediator.selfAnimator.Play(IdleStateName, 0);
+			facialBlendAnimMediator.selfAnimator.Play(IdleStateName, 1);
+		}
 
 		//// RVA: 0x1393024 Offset: 0x1393024 VA: 0x1393024
 		public void CrossFadeIdle(string IdleStateName, float bodyTime)

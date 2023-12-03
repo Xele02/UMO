@@ -500,7 +500,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 			if (m_snsScreen == null)
 				yield break;
-			while (CIOECGOMILE.HHCJCDFCLOB.KONHMOLMOCI)
+			while (CIOECGOMILE.HHCJCDFCLOB.KONHMOLMOCI_IsSaving)
 				yield return null;
 			MenuScene.Instance.RaycastEnable();
 			GameManager.Instance.RemovePushBackButtonHandler(SetBackButtonSnsEmpty);

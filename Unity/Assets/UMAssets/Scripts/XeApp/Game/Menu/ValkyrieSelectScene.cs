@@ -871,7 +871,7 @@ namespace XeApp.Game.Menu
 				{
 					if(!MenuScene.Instance.DirtyChangeScene && IsLoadedValkyrie())
 					{
-						PGIGNJDPCAH.NNOBACMJHDM(PGIGNJDPCAH.FELLIEJEPIJ.LPBDIINNFEE/*5*/);
+						PGIGNJDPCAH.NNOBACMJHDM(PGIGNJDPCAH.FELLIEJEPIJ.LPBDIINNFEE_5/*5*/);
 						SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 						MenuScene.Instance.Call(TransitionList.Type.MODEL_VIEW_MODE, null, true);
 						m_viewSceneFlag = true;

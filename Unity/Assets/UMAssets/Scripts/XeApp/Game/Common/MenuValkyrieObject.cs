@@ -33,7 +33,11 @@ namespace XeApp.Game.Common
 		//protected override bool usingQualitySetting { get; } 0x11144F4
 
 		//// RVA: 0x11144FC Offset: 0x11144FC VA: 0x11144FC
-		//public void AddUseEffectName(string effectName) { }
+		public void AddUseEffectName(string effectName)
+		{
+			m_useEffects = true;
+			m_effectNameList.Add(effectName);
+		}
 
 		//// RVA: 0x1114584 Offset: 0x1114584 VA: 0x1114584
 		//public void DisableEffect(string effectName) { }
@@ -70,7 +74,15 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1114CE4 Offset: 0x1114CE4 VA: 0x1114CE4 Slot: 8
-		//protected override void OnRelease() { }
+		protected override void OnRelease()
+		{
+			for(int i = 0; i < m_model.Length; i++)
+			{
+				m_model[i] = null;
+			}
+			m_useEffects = true;
+			m_effectNameList.Clear();
+		}
 
 		//// RVA: 0x1114DCC Offset: 0x1114DCC VA: 0x1114DCC
 		public void SetForm(int form)
@@ -114,16 +126,35 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1115244 Offset: 0x1115244 VA: 0x1115244
-		//public void Unlock() { }
+		public void Unlock()
+		{
+			if(m_coUnlockFinish == null)
+			{
+				animator.Play(UnlockStateHash, -1, 0);
+				m_coUnlockFinish = this.StartCoroutineWatched(Co_WaitAnimationEnd(UnlockStateHash, () =>
+				{
+					//0x1115A5C
+					m_coUnlockFinish = null;
+				}));
+			}
+		}
 
 		//// RVA: 0x111539C Offset: 0x111539C VA: 0x111539C
 		//public void Watch() { }
 
 		//// RVA: 0x11154F4 Offset: 0x11154F4 VA: 0x11154F4
-		//public void AnimSpeedChenge(float speed) { }
+		public void AnimSpeedChenge(float speed)
+		{
+			if (m_coUnlockFinish != null)
+				return;
+			animator.speed = speed;
+		}
 
 		//// RVA: 0x111553C Offset: 0x111553C VA: 0x111553C
-		//public bool IsPlayingUnlockAnim() { }
+		public bool IsPlayingUnlockAnim()
+		{
+			return m_coUnlockFinish != null;
+		}
 
 		//[CompilerGeneratedAttribute] // RVA: 0x73C188 Offset: 0x73C188 VA: 0x73C188
 		//// RVA: 0x1115A5C Offset: 0x1115A5C VA: 0x1115A5C

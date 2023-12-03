@@ -30,8 +30,8 @@ namespace XeApp.Game.Menu
 		private Action HideLoadingEffect; // 0x4C
 		private bool IsCreateCameraMan = true; // 0x50
 
-		//public Camera ValkyrieCamera { get; } 0x1CE786C
-		//public bool IsLoading { get; } 0x1CE7874
+		public Camera ValkyrieCamera { get { return m_camera; } } //0x1CE786C
+		public bool IsLoading { get { return m_loading; } } //0x1CE7874
 
 		// RVA: 0x1CE787C Offset: 0x1CE787C VA: 0x1CE787C
 		private void Start()
@@ -287,7 +287,13 @@ namespace XeApp.Game.Menu
 		//public void ValkyrieChenge(int NextVfId, int NextForm) { }
 
 		//// RVA: 0x1CE8684 Offset: 0x1CE8684 VA: 0x1CE8684
-		//public void ValkyrieAllRelease() { }
+		public void ValkyrieAllRelease()
+		{
+			m_valkyrieObj.Release();
+			Destroy(m_valkyrieObj.gameObject);
+			m_valkyrieRes = null;
+			m_valkyrieObj = null;
+		}
 
 		// RVA: 0x1CE7BD0 Offset: 0x1CE7BD0 VA: 0x1CE7BD0
 		public static void Destroy(GameObject obj)

@@ -53,7 +53,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xEA0D40 Offset: 0xEA0D40 VA: 0xEA0D40 Slot: 8
-		// protected override void OnRelease() { }
+		protected override void OnRelease()
+		{
+			return;
+		}
 
 		// // RVA: 0xEA0D44 Offset: 0xEA0D44 VA: 0xEA0D44
 		// public void ResetAnimationBaseTime() { }

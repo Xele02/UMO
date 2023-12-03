@@ -246,7 +246,15 @@ namespace XeApp.Game.Menu
 		// public void HideEventHelpButton() { }
 
 		// // RVA: 0xE30DCC Offset: 0xE30DCC VA: 0xE30DCC
-		// public void HideOfferHelpButton() { }
+		public void HideOfferHelpButton()
+		{
+			if(m_isShow)
+			{
+				m_buttonAnimLayout.StartChildrenAnimGoStop("go_out", "st_out");
+				m_isShow = false;
+			}
+			m_state = State.Hide;
+		}
 
 		// // RVA: 0xE30DD0 Offset: 0xE30DD0 VA: 0xE30DD0
 		// public void HideDecoStorageHelpButton() { }

@@ -34,7 +34,7 @@ namespace XeApp.Game.Menu
 				ViewModeCameraMan.Instance.StartNeutralPose();
 			}
 			GetComponentInChildren<LayoutViewModeViewOff>(true).Exit();
-			PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.LPBDIINNFEE/*5*/);
+			PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.LPBDIINNFEE_5/*5*/);
 		}
 
 		// RVA: 0xBDAF8C Offset: 0xBDAF8C VA: 0xBDAF8C Slot: 32

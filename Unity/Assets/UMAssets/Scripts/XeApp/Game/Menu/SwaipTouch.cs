@@ -291,16 +291,19 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xF973E8 Offset: 0xF973E8 VA: 0xF973E8
-		public bool IsSwaip(SwaipTouch.Direction dir)
+		public bool IsSwaip(Direction dir)
 		{
 			return (m_input_swaip & (int)dir) == (int)dir;
 		}
 
 		// // RVA: 0xF97400 Offset: 0xF97400 VA: 0xF97400
-		// public bool IsFlick(SwaipTouch.Direction dir) { }
+		public bool IsFlick(Direction dir)
+		{
+			return (m_input_flick & (int)dir) == (int)dir;
+		}
 
 		// // RVA: 0xF97418 Offset: 0xF97418 VA: 0xF97418
-		public bool IsFlickNoSwaip(SwaipTouch.Direction dir)
+		public bool IsFlickNoSwaip(Direction dir)
 		{
 			if(m_is_swaip)
 			{

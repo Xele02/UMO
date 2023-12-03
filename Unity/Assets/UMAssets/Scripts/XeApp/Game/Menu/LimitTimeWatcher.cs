@@ -62,7 +62,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x154118C Offset: 0x154118C VA: 0x154118C
-		// public void WatchStop() { }
+		public void WatchStop()
+		{
+			m_limitTime = 0;
+			m_savedCurrentTime = 0;
+			isRunning = false;
+		}
 
 		// // RVA: 0x15406BC Offset: 0x15406BC VA: 0x15406BC
 		public void CheckRestart()

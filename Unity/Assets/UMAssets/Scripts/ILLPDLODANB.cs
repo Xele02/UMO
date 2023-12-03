@@ -324,7 +324,7 @@ public class ILLPDLODANB
 				}
 				return 0;
 			case 57: //0x39
-				return LDEGEHAEALK.DAEJHMCMFJD_Offer.MLBBKNLPBBD((BOPFPIHGJMD.PDLKAKEABDP)questValue) ? 1 : 0;
+				return LDEGEHAEALK.DAEJHMCMFJD_Offer.MLBBKNLPBBD_HasShowTuto((BOPFPIHGJMD.PDLKAKEABDP)questValue) ? 1 : 0;
 			case 58: //0x3a
 				return LDEGEHAEALK.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(questValue) ? 1 : 0;
 			case 59: //0x3b

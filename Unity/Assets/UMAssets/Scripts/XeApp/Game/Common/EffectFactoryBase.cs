@@ -339,7 +339,15 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1C0C0B4 Offset: 0x1C0C0B4 VA: 0x1C0C0B4
-		//public void Release() { }
+		public void Release()
+		{
+			for(int i = 0; i < m_instances.Count; i++)
+			{
+				OnRelease(m_instances[i]);
+				Destroy(m_instances[i].gameObject);
+			}
+			m_instances.Clear();
+		}
 
 		//// RVA: 0x1C0BB08 Offset: 0x1C0BB08 VA: 0x1C0BB08
 		public Instance Instantiate(Setting setting)
@@ -356,13 +364,16 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1C0C4C0 Offset: 0x1C0C4C0 VA: 0x1C0C4C0 Slot: 6
-		protected virtual void OnInstantiate(EffectFactoryBase.Instance instance)
+		protected virtual void OnInstantiate(Instance instance)
 		{
 			return;
 		}
 
 		//// RVA: 0x1C0C4C4 Offset: 0x1C0C4C4 VA: 0x1C0C4C4 Slot: 7
-		//protected virtual void OnRelease(EffectFactoryBase.Instance instance) { }
+		protected virtual void OnRelease(Instance instance)
+		{
+			return;
+		}
 
 		//// RVA: 0x1C0C4C8 Offset: 0x1C0C4C8 VA: 0x1C0C4C8 Slot: 8
 		//protected virtual void OnPause(EffectFactoryBase.Instance instance) { }
