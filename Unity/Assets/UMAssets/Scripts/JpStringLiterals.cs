@@ -372,6 +372,7 @@ class JpStringLiterals
 	public const string StringLiteral_15553 = "自分のデコルームへ戻る"; //0x03bb7dbc
 	public const string StringLiteral_15554 = "訪問デコルームからロビーへ戻る"; //0x03bb7dc0
 	public const string StringLiteral_15651 = "手動"; // 0x03bb7f44
+	public const string StringLiteral_15697 = "{0}　{1}{2}"; //0x03bb7ffc
 	public const string StringLiteral_15750 = "次の報酬まで {0} {1}"; // 0x03bb80d0
 	public const string StringLiteral_15778 = "追加報酬"; // 0x03bb8140
 	public const string StringLiteral_15794 = "あと {0} {1}"; // 0x03bb8180

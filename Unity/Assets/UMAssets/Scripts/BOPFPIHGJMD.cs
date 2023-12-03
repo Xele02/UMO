@@ -78,9 +78,9 @@ public class BOPFPIHGJMD
 
     public enum LEIPFJHOFPC
     {
-        HJNNKCMLGFL = 0,
-        NBDBAFGEEGA = 1,
-        GLFGNEILACA = 2,
+        HJNNKCMLGFL_0 = 0,
+        NBDBAFGEEGA_1 = 1,
+        GLFGNEILACA_2 = 2,
         GEJGMBBCFEE = 3,
     }
 	

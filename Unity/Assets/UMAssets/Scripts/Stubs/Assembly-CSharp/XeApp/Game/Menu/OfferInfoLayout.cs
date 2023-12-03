@@ -94,7 +94,7 @@ namespace XeApp.Game.Menu
 					//LAB_01853b70;
 					float t = diffTime * 1.0f / (1.0f / Time.deltaTime);
 					ChengeTime += (long)(2 * t * 1000);
-					if ((!IsMoreEnemyForces && NextClearTime < ChengeTime) || NextClearTime < ChengeTime)
+					if ((!IsMoreEnemyForces && NextClearTime < ChengeTime) || (IsMoreEnemyForces && NextClearTime >= ChengeTime))
 					{
 						//LAB_01853c3c
 						NextClearTime = NextClearTime / 1000;

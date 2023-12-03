@@ -616,7 +616,7 @@ namespace XeApp.Game.Menu
 				{
 					if(KDHGBOOECKC.HHCJCDFCLOB != null)
 					{
-						bool IsSaveSuccess = false;
+						IsSaveSuccess = false;
 						HEFCLPGPMLK.AAOPGOGGMID target = viewList[index];
 						long rest_time = target.PCCFAKEOBIC_EndDate - NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 						if(KDHGBOOECKC.HHCJCDFCLOB.KOGFFBBKOPB(target.FGHGMHPNEMG_Category, target.PPFNGGCBJKC) == BOPFPIHGJMD.IGHPDAGKIKO.LGOIJAPMEBG_2_Progress)
@@ -882,11 +882,16 @@ namespace XeApp.Game.Menu
 				Destroy(bgLayout.gameObject);
 				Destroy(bgButtonLayout.gameObject);
 			});
-			while(!GameManager.Instance.transmissionIcon.activeSelf)
-				yield return null;
+			// UMO, call are instant, no transmission icon will be displayed
+			//while(!GameManager.Instance.transmissionIcon.activeSelf)
+			//	yield return null;
 			JHHBAFKMBDL.HHCJCDFCLOB.NIGGABHIFEE_ShowTransmissionIcon(false);
 			while (!isSave)
+			{
+				if(GameManager.Instance.transmissionIcon.activeSelf)
+					TodoLogger.LogError(0, "Fix transmissoin icon");
 				yield return null;
+			}
 			bool done = false;
 			bool err = false;
 			PBJPACKDIIB.NPIJAIOCACL(() =>
@@ -1069,7 +1074,7 @@ namespace XeApp.Game.Menu
 				m_divaController.IsAloneMotion = false;
 			MenuScene.Instance.InputDisable();
 			ItemCheck.ButtonDisable();
-			while (!CIOECGOMILE.HHCJCDFCLOB.KONHMOLMOCI_IsSaving)
+			while (CIOECGOMILE.HHCJCDFCLOB.KONHMOLMOCI_IsSaving)
 				yield return null;
 			if (m_divaController != null)
 				m_divaController.IsAloneMotion = true;

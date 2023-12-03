@@ -54,7 +54,7 @@ namespace XeApp.Game.Menu
 			yield return new WaitWhile(() =>
 			{
 				//0x1651260
-				return m_Resource.isAllLoaded;
+				return !m_Resource.isAllLoaded;
 			});
 			m_ValkyrieObject = new GameObject("MenuValkyrieObject").AddComponent<MenuValkyrieObject>();
 			m_ValkyrieObject.AddUseEffectName("EF_Con_vernier");
@@ -64,7 +64,7 @@ namespace XeApp.Game.Menu
 			m_ValkyrieObject.transform.SetParent(m_Object.transform, false);
 			Hide();
 			m_CameraObj = new GameObject("Valkyrie Camera");
-			m_CameraObj.transform.SetParent(transform, false);
+			m_CameraObj.transform.SetParent(m_Object.transform, false);
 			m_Camera = m_CameraObj.AddComponent<Camera>();
 			m_Camera.clearFlags = CameraClearFlags.Nothing;
 			m_Camera.cullingMask = 1 << LayerMask.NameToLayer("Valkyrie");
