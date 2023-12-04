@@ -48,7 +48,10 @@ namespace XeApp.Game.Menu
 		// public void TryInstallEventStoryThumbnail(int id) { }
 
 		// // RVA: 0xF0EE48 Offset: 0xF0EE48 VA: 0xF0EE48
-		// public static string MakeBannerPath(int id) { }
+		public static string MakeBannerPath(int id)
+		{
+			return string.Format("ct/ev/ba/01/{0:D4}.xab", id);
+		}
 
 		// // RVA: 0xF0EF04 Offset: 0xF0EF04 VA: 0xF0EF04
 		// public static string MakeShortBannerPath(int id) { }

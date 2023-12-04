@@ -10,9 +10,9 @@ public class DKKPBBBDKMJ
 	public class AGAAGMGKNCO
 	{
 		public int PGIIDPEGGPI_EventId; // 0x8
-		public string LLNKMABDDEB; // 0xC
+		public string LLNKMABDDEB_Period; // 0xC
 		public byte CPKMLLNADLJ; // 0x10
-		public bool CADENLBDAEB; // 0x11
+		public bool CADENLBDAEB_IsNew; // 0x11
 	}
 
 	private StringBuilder FAEDHJHCEFJ = new StringBuilder(256); // 0x8
@@ -108,7 +108,7 @@ public class DKKPBBBDKMJ
 					}
 					AGAAGMGKNCO data = new AGAAGMGKNCO();
 					data.PGIIDPEGGPI_EventId = storyEvent.OAFJONPIFGM_EventId;
-					data.CADENLBDAEB = b1;
+					data.CADENLBDAEB_IsNew = b1;
 					data.CPKMLLNADLJ = storyEvent.MGBDCFIKBPM;
 					DateTime dt = Utility.GetLocalDateTime(storyEvent.PDBPFJJCADD);
 					DateTime dt2 = Utility.GetLocalDateTime(storyEvent.FDBNFFNFOND);
@@ -117,10 +117,10 @@ public class DKKPBBBDKMJ
 					{
 						dt.Year, dt.Month, dt.Day, dt2.Year, dt2.Month, dt2.Day
 					});
-					data.LLNKMABDDEB = "";
+					data.LLNKMABDDEB_Period = "";
 					if (!b2)
 					{
-						data.LLNKMABDDEB = FAEDHJHCEFJ.ToString();
+						data.LLNKMABDDEB_Period = FAEDHJHCEFJ.ToString();
 					}
 					NNDGIAEFMOG.Add(data);
 				}
@@ -172,13 +172,21 @@ public class DKKPBBBDKMJ
 						}
 					}
 				}
-				k.CADENLBDAEB = !b1;
+				k.CADENLBDAEB_IsNew = !b1;
 			}
 		}
 	}
 
 	//// RVA: 0x1226BD4 Offset: 0x1226BD4 VA: 0x1226BD4
-	//public bool ONIBJLOEMDF(int CPKMLLNADLJ) { }
+	public bool ONIBJLOEMDF_IsNewInCategorie(int CPKMLLNADLJ)
+	{
+		foreach(var k in NNDGIAEFMOG)
+		{
+			if (k.CPKMLLNADLJ == CPKMLLNADLJ && k.CADENLBDAEB_IsNew)
+				return true;
+		}
+		return false;
+	}
 
 	//// RVA: 0x1226D50 Offset: 0x1226D50 VA: 0x1226D50
 	public static bool CADENLBDAEB()
@@ -192,5 +200,8 @@ public class DKKPBBBDKMJ
 	}
 
 	//// RVA: 0x1226E78 Offset: 0x1226E78 VA: 0x1226E78
-	//public static void EMNNLEFCKHM(bool CNNHEENBECK) { }
+	public static void EMNNLEFCKHM(bool CNNHEENBECK)
+	{
+		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(XeApp.Game.Common.GPFlagConstant.ID.IsNewEventStory, CNNHEENBECK);
+	}
 }

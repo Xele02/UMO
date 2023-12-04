@@ -881,7 +881,7 @@ namespace XeApp.Game.Menu
 					int advId = dbAdv.KKPPFAHFOJI;
 					AdvSetupParam param = new AdvSetupParam();
 					param.eventUniqueId = ev.PGIIDPEGGPI_EventId;
-					if(ev.HIDHLFCBIDE_EventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN)
+					if(ev.HIDHLFCBIDE_EventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
 					{
 						if (ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 						{
@@ -914,7 +914,7 @@ namespace XeApp.Game.Menu
 					return;
 				}
 			}
-			if(ev.HIDHLFCBIDE_EventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN)
+			if(ev.HIDHLFCBIDE_EventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
 			{
 				if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 				{

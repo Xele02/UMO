@@ -14,7 +14,11 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase // TypeDefIndex
 	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection; } } //0x183A61C DKHCGLCNKCD  Slot: 4
 
 	// // RVA: 0x183A624 Offset: 0x183A624 VA: 0x183A624 Slot: 32
-	// public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO) { }
+	public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO)
+	{
+		TodoLogger.LogError(0, "DAKMIKNKHMF");
+		return null;
+	}
 
 	// // RVA: 0x183A6CC Offset: 0x183A6CC VA: 0x183A6CC
 	public HJNNLPIGHLM_EventCollection(string OPFGFINHFCE) : base(OPFGFINHFCE)

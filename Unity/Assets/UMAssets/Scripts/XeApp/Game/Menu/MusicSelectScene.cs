@@ -221,7 +221,7 @@ namespace XeApp.Game.Menu
 			while(!m_isEndRaidLobbyRequest)
 				yield return null;
 			m_isEndMyRankRequest = false;
-			JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN/*4*/, 0, () => {
+			JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore/*4*/, 0, () => {
 				//0x1685C50
 				m_isEndMyRankRequest = true;
 			}, () => {

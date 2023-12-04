@@ -367,7 +367,7 @@ namespace XeApp.Game.Menu
 				if(!Database.Instance.gameResult.IsClear())
 				{
 					// L558
-					if(Database.Instance.gameSetup.musicInfo.gameEventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN)
+					if(Database.Instance.gameSetup.musicInfo.gameEventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
 					{
 						if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 						{

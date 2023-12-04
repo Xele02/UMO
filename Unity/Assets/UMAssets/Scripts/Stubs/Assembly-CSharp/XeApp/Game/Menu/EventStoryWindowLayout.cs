@@ -118,12 +118,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB99F50 Offset: 0xB99F50 VA: 0xB99F50
 		private void newIconUpdate()
 		{
-			m_mcrs_tab_btn.setNewIcon(m_view.ONIBJLOEMDF(4));
-			m_mcrs_seven_tab_btn.setNewIcon(m_view.ONIBJLOEMDF(3));
-			m_mcrs_frontier_tab_btn.setNewIcon(m_view.ONIBJLOEMDF(2));
-			m_mcrs_delta_tab_btn.setNewIcon(m_view.ONIBJLOEMDF(1));
-			m_other_tab_btn.setNewIcon(m_view.ONIBJLOEMDF(0));
-			m_plate_tab_btn.setNewIcon(m_view.ONIBJLOEMDF(5));
+			m_mcrs_tab_btn.setNewIcon(m_view.ONIBJLOEMDF_IsNewInCategorie(4));
+			m_mcrs_seven_tab_btn.setNewIcon(m_view.ONIBJLOEMDF_IsNewInCategorie(3));
+			m_mcrs_frontier_tab_btn.setNewIcon(m_view.ONIBJLOEMDF_IsNewInCategorie(2));
+			m_mcrs_delta_tab_btn.setNewIcon(m_view.ONIBJLOEMDF_IsNewInCategorie(1));
+			m_other_tab_btn.setNewIcon(m_view.ONIBJLOEMDF_IsNewInCategorie(0));
+			m_plate_tab_btn.setNewIcon(m_view.ONIBJLOEMDF_IsNewInCategorie(5));
 		}
 
 		//// RVA: 0xB9A4BC Offset: 0xB9A4BC VA: 0xB9A4BC
@@ -159,7 +159,10 @@ namespace XeApp.Game.Menu
 		//private void InitializeList() { }
 
 		//// RVA: 0xB9A7DC Offset: 0xB9A7DC VA: 0xB9A7DC
-		//private void OnSelectListItem(int index, SwapScrollListContent content) { }
+		private void OnSelectListItem(int index, SwapScrollListContent content)
+		{
+			return;
+		}
 
 		//// RVA: 0xB9A110 Offset: 0xB9A110 VA: 0xB9A110
 		public void SetupList(int count, bool resetScroll = true, int settingPos = 0)
@@ -181,7 +184,19 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB9A8A8 Offset: 0xB9A8A8 VA: 0xB9A8A8
-		//private void OnUpdateListItem(int index, SwapScrollListContent content) { }
+		private void OnUpdateListItem(int index, SwapScrollListContent content)
+		{
+			EventStoryBannerListContent c = content as EventStoryBannerListContent;
+			if(c != null)
+			{
+				if (index < m_seriesDataList.Count)
+				{
+					c.Setup(m_seriesDataList[index].PGIIDPEGGPI_EventId, m_seriesDataList[index].LLNKMABDDEB_Period);
+					c.SetStatus(OnBannerClick);
+					c.ShowNewMark(m_seriesDataList[index].CADENLBDAEB_IsNew);
+				}
+			}
+		}
 
 		// RVA: 0xB9AB48 Offset: 0xB9AB48 VA: 0xB9AB48
 		public void OpenWindow()
@@ -223,7 +238,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB9AEA8 Offset: 0xB9AEA8 VA: 0xB9AEA8
-		//public void Leave() { }
+		public void Leave()
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_WND_001);
+			m_layoutRoot.StartChildrenAnimGoStop("go_out", "st_out");
+		}
 
 		//// RVA: 0xB9AF80 Offset: 0xB9AF80 VA: 0xB9AF80
 		//public void Show() { }
@@ -330,7 +349,7 @@ namespace XeApp.Game.Menu
 			{
 				ChangeTablistener(m_selectSeries);
 			}
-			SetSeriesData(m_selectSeries);
+			SetSeriesData((int)m_selectSeries);
 			install = KDLPEDBKMID.HHCJCDFCLOB;
 			InstallCheck = false;
 			for(int i = 0; i < m_seriesDataList.Count; i++)
@@ -339,7 +358,8 @@ namespace XeApp.Game.Menu
 			}
 			install.OFLDICKPNFD(true, () =>
 			{
-				Method$XeApp.Game.Menu.EventStoryWindowLayout.<>c.<Co_ChangeTab>b__51_0()
+				//0xB9C348
+				MenuScene.Instance.GotoTitle();
 			});
 			yield return null;
 			if(InstallCheck)
@@ -356,7 +376,16 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FD7CC Offset: 0x6FD7CC VA: 0x6FD7CC
 		//// RVA: 0xB9BC9C Offset: 0xB9BC9C VA: 0xB9BC9C
-		//private IEnumerator WaitTextureLoad() { }
+		private IEnumerator WaitTextureLoad()
+		{
+			bool isLoading;
+
+			//0xB9C890
+			isLoading = true;
+			while (GameManager.Instance.EventBannerTextureCache.IsLoading())
+				yield return null;
+			isLoading = false;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FD844 Offset: 0x6FD844 VA: 0x6FD844
 		//// RVA: 0xB9BD30 Offset: 0xB9BD30 VA: 0xB9BD30
@@ -375,7 +404,7 @@ namespace XeApp.Game.Menu
 				CCAAJNJGNDO data = new CCAAJNJGNDO();
 				data.KHEKNNFCAOI(eventId);
 				EventStoryArgs args = new EventStoryArgs(data);
-				MenuScene.Instance.Call(TransitionList.Type.EVENT_STORY, data, true);
+				MenuScene.Instance.Call(TransitionList.Type.EVENT_STORY, args, true);
 			}
 			GameManager.Instance.InputEnabled = true;
 			m_isInput = false;
@@ -383,7 +412,15 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB9BE10 Offset: 0xB9BE10 VA: 0xB9BE10
-		//private void OnBannerClick(int eventId) { }
+		private void OnBannerClick(int eventId)
+		{
+			if (m_isInput)
+				return;
+			InputDisable();
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+			this.StartCoroutineWatched(co_close(true, eventId));
+			Database.Instance.selectedEventStoryEventId = eventId;
+		}
 
 		//// RVA: 0xB9BF0C Offset: 0xB9BF0C VA: 0xB9BF0C
 		private void OnBackButton()

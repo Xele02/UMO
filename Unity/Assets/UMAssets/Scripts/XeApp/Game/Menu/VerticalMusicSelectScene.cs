@@ -383,7 +383,7 @@ namespace XeApp.Game.Menu
 			ApplyCommonInfo();
 			OnChangeFilter();
 			m_isEndMyRankRequest = false;
-			JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN, 0, () =>
+			JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore, 0, () =>
 			{
 				//0xBF0888
 				m_isEndMyRankRequest = true;

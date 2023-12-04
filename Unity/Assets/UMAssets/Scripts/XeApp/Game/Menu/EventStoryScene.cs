@@ -232,7 +232,7 @@ namespace XeApp.Game.Menu
 						uniqueId = TransitionUniqueId.EVENTMUSICSELECT_EVENTSTORY;
 						break;
 					case OHCAABOMEOF.KGOGMKMBCPP_EventType.MKKOHBGHADL/*2*/:
-					case OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN/*4*/:
+					case OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore/*4*/:
 					case OHCAABOMEOF.KGOGMKMBCPP_EventType.ENMHPBGOOII_Week/*5*/:
 					default:
 						break;

@@ -14,7 +14,11 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva; } } //0xA168C0 DKHCGLCNKCD Slot: 4
 
 	// // RVA: 0xA168C8 Offset: 0xA168C8 VA: 0xA168C8 Slot: 32
-	// public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO) { }
+	public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO)
+	{
+		TodoLogger.LogError(0, "DAKMIKNKHMF");
+		return null;
+	}
 
 	// RVA: 0xA1693C Offset: 0xA1693C VA: 0xA1693C
 	public MANPIONIGNO_EventGoDiva(string OPFGFINHFCE) : base(OPFGFINHFCE)

@@ -31,6 +31,9 @@ namespace XeApp.Game.Menu
 		//public void SetDisable(bool isDisable) { }
 
 		//// RVA: 0x1273FC0 Offset: 0x1273FC0 VA: 0x1273FC0
-		//public void SetInputOff(bool isInputOff) { }
+		public void SetInputOff(bool isInputOff)
+		{
+			m_cancelButton.IsInputOff = isInputOff;
+		}
 	}
 }

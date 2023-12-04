@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XeApp.Core;
 using XeApp.Game.Common;
+using XeSys;
 using XeSys.Gfx;
 
 namespace XeApp.Game.Menu
@@ -316,8 +317,8 @@ namespace XeApp.Game.Menu
 			{
 				total += l[i].CADENLBDAEB ? 1 : 0;
 			}
-			m_option_anim.SetBadge(0, total > 0 ? 7 : 0);
-			int id = NKGJPJPHLIF.HHCJCDFCLOB.AFJEOKGBCNA_NumReplies > 0 ? 9 : 0;
+			m_option_anim.SetBadge(0, total > 0 ? BadgeConstant.ID.Menu_ShopCheck : BadgeConstant.ID.None);
+			BadgeConstant.ID id = NKGJPJPHLIF.HHCJCDFCLOB.AFJEOKGBCNA_NumReplies > 0 ? BadgeConstant.ID.Menu_ResvMsg : BadgeConstant.ID.None;
 			if(AppEnv.IsCBT())
 			{
 				m_option_anim.SetBadge(13, id);
@@ -326,7 +327,7 @@ namespace XeApp.Game.Menu
 			{
 				m_option_anim.SetBadge(12, id);
 			}
-			m_option_anim.SetBadge(14, DKKPBBBDKMJ.CADENLBDAEB() ? 8 : 0);
+			m_option_anim.SetBadge(14, DKKPBBBDKMJ.CADENLBDAEB() ? BadgeConstant.ID.Menu_NewFuncAdd : BadgeConstant.ID.None);
 		}
 
 		// RVA: 0xDD7410 Offset: 0xDD7410 VA: 0xDD7410 Slot: 12
@@ -426,25 +427,31 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xDD7C64 Offset: 0xDD7C64 VA: 0xDD7C64
 		private void OnClickProfile()
 		{
-			TodoLogger.LogNotImplemented("OnClickProfile");
+			ProfilDateArgs args = new ProfilDateArgs();
+			args.infoType = ProfilMenuLayout.InfoType.PLAYER;
+			args.isShowMyProfil = true;
+			MenuScene.Instance.Call(TransitionList.Type.PROFIL, null, true);
 		}
 
 		//// RVA: 0xDD7D6C Offset: 0xDD7D6C VA: 0xDD7D6C
 		private void OnClickItem()
 		{
-			TodoLogger.LogNotImplemented("OnClickItem");
+			if (MenuScene.CheckDatelineAndAssetUpdate())
+				return;
+
+			MenuScene.Instance.ShowItemListWindow(PopupItemList.ItemType.Growth, true);
 		}
 
 		//// RVA: 0xDD7E4C Offset: 0xDD7E4C VA: 0xDD7E4C
 		private void OnClickConfig()
 		{
-			TodoLogger.LogNotImplemented("OnClickConfig");
+			m_configMenu.ShowPopupConfig(null, null);
 		}
 
 		//// RVA: 0xDD7E80 Offset: 0xDD7E80 VA: 0xDD7E80
 		private void OnClickHelp()
 		{
-			TodoLogger.LogNotImplemented("OnClickHelp");
+			MenuScene.Instance.Call(TransitionList.Type.HELP_LIST, null, true);
 		}
 
 		//// RVA: 0xDD7F34 Offset: 0xDD7F34 VA: 0xDD7F34
@@ -474,7 +481,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xDD8288 Offset: 0xDD8288 VA: 0xDD8288
 		private void OnClickTitle()
 		{
-			TodoLogger.LogNotImplemented("OnClickTitle");
+			this.StartCoroutineWatched(Co_GoTitle());
 		}
 
 		//// RVA: 0xDD8320 Offset: 0xDD8320 VA: 0xDD8320
@@ -500,7 +507,25 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xDD8550 Offset: 0xDD8550 VA: 0xDD8550
 		private void OnClickDataManagement()
 		{
-			TodoLogger.LogNotImplemented("OnClickDataManagement");
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			PopupDataOptionSetting s = new PopupDataOptionSetting();
+			s.TitleText = bk.GetMessageByLabel("popup_option_data_title");
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			s.WindowSize = SizeType.Middle;
+			s.IsCaption = true;
+			s.OnClickBunchInstall = (PopupWindowControl popupControl) =>
+			{
+				//0xDD9A6C
+				this.StartCoroutineWatched(Co_AllInstall(popupControl));
+			};
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel buttonLabel) =>
+			{
+				//0xDD9CD0
+				return;
+			}, null, null, null);
 		}
 
 		//// RVA: 0xDD8918 Offset: 0xDD8918 VA: 0xDD8918
@@ -524,13 +549,15 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xDD8C84 Offset: 0xDD8C84 VA: 0xDD8C84
 		private void OnClickRanking()
 		{
-			TodoLogger.LogNotImplemented("OnClickRanking");
+			if (MenuScene.CheckDatelineAndAssetUpdate())
+				return;
+			this.StartCoroutineWatched(Co_OpenPastRankingPopup());
 		}
 
 		//// RVA: 0xDD8D94 Offset: 0xDD8D94 VA: 0xDD8D94
 		private void OnClickHonorary()
 		{
-			TodoLogger.LogNotImplemented("OnClickHonorary");
+			MenuScene.Instance.Call(TransitionList.Type.DEGREE_SELECT, null, true);
 		}
 
 		//// RVA: 0xDD8E48 Offset: 0xDD8E48 VA: 0xDD8E48
@@ -542,7 +569,25 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xDD8E4C Offset: 0xDD8E4C VA: 0xDD8E4C
 		private void OnEventReview()
 		{
-			TodoLogger.LogNotImplemented("OnEventReview");
+			if(DKKPBBBDKMJ.CADENLBDAEB())
+			{
+				DKKPBBBDKMJ.EMNNLEFCKHM(true);
+				CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
+				{
+					//0xDD9A90
+					setNewIcon();
+					m_option_anim.SetBadge(14, DKKPBBBDKMJ.CADENLBDAEB() ? BadgeConstant.ID.Menu_NewFuncAdd : BadgeConstant.ID.None);
+					JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
+				}, () =>
+				{
+					//0xDD9CD4
+					JDDGPJDKHNE.HHCJCDFCLOB.FOKEGEOKGDG();
+					JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
+					MenuScene.Instance.GotoTitle();
+				}, null);
+			}
+			Database.Instance.selectedEventStoryEventId = -1;
+			m_storyEventLayout.OpenWindow();
 		}
 
 		//// RVA: 0xDD9078 Offset: 0xDD9078 VA: 0xDD9078
@@ -553,11 +598,137 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FE004 Offset: 0x6FE004 VA: 0x6FE004
 		//// RVA: 0xDD8D20 Offset: 0xDD8D20 VA: 0xDD8D20
-		//private IEnumerator Co_OpenPastRankingPopup() { }
+		private IEnumerator Co_OpenPastRankingPopup()
+		{
+			bool inputDisable; // 0x14
+			IKDICBBFBMI_EventBase scoreCtrl; // 0x18
+			IKDICBBFBMI_EventBase eventCtrl; // 0x1C
+
+			//0xDDEA0C
+			MenuScene.Instance.InputDisable();
+			inputDisable = false;
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			eventCtrl = null;
+			scoreCtrl = null;
+			bool toScore = false;
+			bool toEvent = false;
+			List<IKDICBBFBMI_EventBase> evList = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.CADBMICNIJJ();
+			if(evList == null || evList.Count == 0)
+			{
+				PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_option_ranking_notfound_title"), SizeType.Middle, bk.GetMessageByLabel("popup_option_ranking_notfound_msg"), new ButtonInfo[1]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+					}, false, true), (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+					{
+						//0xDD9DC0
+						return;
+					}, null, null, null);
+			}
+			else
+			{
+				for(int i = 0; i < evList.Count; i++)
+				{
+					if (evList[i].HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
+						scoreCtrl = evList[i];
+					else
+						eventCtrl = evList[i];
+				}
+				PopupPastRankingSetting s = new PopupPastRankingSetting();
+				s.TitleText = bk.GetMessageByLabel("popup_option_ranking_title");
+				s.WindowSize = SizeType.Small;
+				s.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+				};
+				if(scoreCtrl != null)
+				{
+					s.ScoreRankingIconId = scoreCtrl.PGIIDPEGGPI_EventId;
+					s.OnClickScoreRanking = () =>
+					{
+						//0xDDA43C
+						SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+						toScore = true;
+						PopupWindowManager.Close(null, null);
+					};
+				}
+				if(eventCtrl != null)
+				{
+					s.EventRankingIconId = eventCtrl.PGIIDPEGGPI_EventId;
+					s.OnClickEventRanking = () =>
+					{
+						//0xDDA518
+						SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+						toEvent = true;
+						PopupWindowManager.Close(null, null);
+					};
+				}
+				PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0xDD9DC4
+					return;
+				}, null, null, null);
+			}
+			while (!PopupWindowManager.IsActivePopupWindow())
+				yield return null;
+			while (PopupWindowManager.IsActivePopupWindow())
+				yield return null;
+			if(!toScore)
+			{
+				if(toEvent)
+				{
+					EventRankingSceneArgs args = new EventRankingSceneArgs(eventCtrl, true, 0, 0);
+					MenuScene.Instance.Call(TransitionList.Type.EVENT_RANKING, args, true);
+					inputDisable = true;
+				}
+			}
+			else
+			{
+				EventRankingSceneArgs args = new EventRankingSceneArgs(scoreCtrl, true, 0, 0);
+				MenuScene.Instance.Call(TransitionList.Type.EVENT_RANKING, args, true);
+				inputDisable = true;
+			}
+			if (inputDisable)
+			{
+				while (MenuScene.Instance.DirtyChangeScene)
+					yield return null;
+			}
+			MenuScene.Instance.InputEnable();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FE07C Offset: 0x6FE07C VA: 0x6FE07C
 		//// RVA: 0xDD82AC Offset: 0xDD82AC VA: 0xDD82AC
-		//private IEnumerator Co_GoTitle() { }
+		private IEnumerator Co_GoTitle()
+		{
+			//0xDDD034
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			TextPopupSetting s = new TextPopupSetting();
+			s.TitleText = "";
+			s.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			s.WindowSize = SizeType.Small;
+			s.Text = bk.GetMessageByLabel("popup_gotitle_001");
+			s.IsCaption = false;
+			bool isOk = false;
+			bool isWait = true;
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel buttonLabel) =>
+			{
+				//0xDDA5FC
+				if (type == PopupButton.ButtonType.Positive)
+					isOk = true;
+			}, null, null, null, closeWaitCallBack: () =>
+			{
+				//0xDDA60C
+				isWait = false;
+				return true;
+			});
+			while (isWait)
+				yield return null;
+			if (isOk)
+				MenuScene.Instance.GotoTitle();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FE0F4 Offset: 0x6FE0F4 VA: 0x6FE0F4
 		//// RVA: 0xDD7FF0 Offset: 0xDD7FF0 VA: 0xDD7FF0
@@ -572,12 +743,172 @@ namespace XeApp.Game.Menu
 		//private IEnumerator Opinion() { }
 
 		//// RVA: 0xDD9164 Offset: 0xDD9164 VA: 0xDD9164
-		//private void setNewIcon() { }
+		private void setNewIcon()
+		{
+			bool isNew = true;
+			if (NKGJPJPHLIF.HHCJCDFCLOB.AFJEOKGBCNA_NumReplies < 1 && !AODFBGCCBPE.PLKKMHBFDCJ())
+				isNew = DKKPBBBDKMJ.CADENLBDAEB();
+			MenuScene.Instance.FooterMenu.SetButtonNew(MenuFooterControl.Button.Menu, isNew);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FE25C Offset: 0x6FE25C VA: 0x6FE25C
 		//// RVA: 0xDD92A4 Offset: 0xDD92A4 VA: 0xDD92A4
-		//private IEnumerator Co_AllInstall(PopupWindowControl dataManagementPopupControl) { }
-		
+		private IEnumerator Co_AllInstall(PopupWindowControl dataManagementPopupControl)
+		{
+			//0xDDC0DC
+			if (MenuScene.CheckDatelineAndAssetUpdate())
+			{
+				dataManagementPopupControl.Close(() =>
+				{
+					//0xDDA210
+					return;
+				}, null);
+				yield break;
+			}
+			dataManagementPopupControl.InputDisable();
+			MenuScene.Instance.InputDisable();
+			XeSys.uGUI.UGUIFader fader = GameManager.Instance.fullscreenFader;
+			TipsControl tipsCtrl = TipsControl.Instance;
+			NHMKBENBIPI installManager = new NHMKBENBIPI();
+			bool isEnterTips = false;
+			bool waitPopupClose = false;
+			bool isClosePopup = false;
+			Transform cancelButtonParent = m_bunchInstallCancelButton.transform.parent;
+			m_bunchInstallCancelButton.transform.SetParent(TipsControl.Instance.transform, false);
+			installManager.OEPPEGHGNNO = (int type, float per) =>
+			{
+				//0xDDA644
+				bool res = false;
+				switch(type)
+				{
+					case 1:
+						fader.Fade(0.5f, new Color(0, 0, 0, 0.5f));
+						tipsCtrl.Show(10);
+						isEnterTips = true;
+						waitPopupClose = true;
+						dataManagementPopupControl.Close(() =>
+						{
+							//0xDDAB78
+							waitPopupClose = false;
+						}, null);
+						isClosePopup = true;
+						m_bunchInstallCancelButton.gameObject.SetActive(true);
+						m_bunchInstallCancelButton.OnClickCancelButton = () =>
+						{
+							//0xDDAB84
+							installManager.CEDCKHPBKLL(true);
+						};
+						m_bunchInstallCancelButton.SetInputOff(false);
+						break;
+					case 2:
+						m_bunchInstallCancelButton.gameObject.SetActive(false);
+						m_bunchInstallCancelButton.OnClickCancelButton = null;
+						break;
+					case 3:
+						GameManager.Instance.DownloadBar.HighResolutionModeFlag = true;
+						break;
+					case 4:
+						if(!fader.isFading)
+						{
+							if(!tipsCtrl.IsLoading)
+							{
+								if (!tipsCtrl.isPlayingAnime() && !waitPopupClose)
+									res = true;
+							}
+						}
+						break;
+					default:
+						break;
+				}
+				OMIFMMJPMDJ o = KDLPEDBKMID.HHCJCDFCLOB.OEPPEGHGNNO;
+				if(o != null)
+				{
+					res &= o(type, per);
+				}
+				return res;
+			};
+			installManager.OFLDICKPNFD(true, () =>
+			{
+				//0xDDABB4
+				m_bunchInstallCancelButton.transform.SetParent(cancelButtonParent, false);
+				MenuScene.Instance.GotoTitle();
+			});
+			bool isWait = true;
+			bool isComplete = false;
+			bool isError = false;
+			installManager.PAHGEEOFEPM(true, () =>
+			{
+				//0xDDACB4
+				isComplete = true;
+				isWait = false;
+			}, () =>
+			{
+				//0xDDACC0
+				isWait = false;
+			}, () =>
+			{
+				//0xDDACCC
+				isWait = false;
+				isError = true;
+			});
+			yield return new WaitWhile(() =>
+			{
+				//0xDDACD8
+				return isWait;
+			});
+			if(isError)
+			{
+				m_bunchInstallCancelButton.transform.SetParent(cancelButtonParent, false);
+				MenuScene.Instance.GotoTitle();
+			}
+			else
+			{
+				if(isComplete)
+				{
+					bool waitPopup = true;
+					TextPopupSetting s = new TextPopupSetting();
+					s.TitleText = MessageManager.Instance.GetMessage("menu", "popup_bunchdownload_complete_title");
+					s.Text = MessageManager.Instance.GetMessage("menu", "popup_bunchdownload_complete");
+					s.Buttons = new ButtonInfo[1] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive } };
+					PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel buttonLabel) =>
+					{
+						//0xDDADA0
+						waitPopup = false;
+					}, null, null, null);
+					yield return new WaitWhile(() =>
+					{
+						//0xDDADAC
+						return waitPopup;
+					});
+				}
+				if(isEnterTips)
+				{
+					fader.Fade(0.5f, 0);
+					tipsCtrl.Close();
+				}
+				MenuScene.Instance.InputEnable();
+				if(!isClosePopup)
+				{
+					yield return new WaitWhile(() =>
+					{
+						//0xDDACE0
+						return fader.isFading || tipsCtrl.isPlayingAnime();
+					});
+					dataManagementPopupControl.InputEnable();
+				}
+				else
+				{
+					OnClickDataManagement();
+				}
+				yield return new WaitWhile(() =>
+				{
+					//0xDDAD3C
+					return fader.isFading || tipsCtrl.isPlayingAnime();
+				});
+				m_bunchInstallCancelButton.transform.SetParent(cancelButtonParent, false);
+			}
+		}
+
 		//[CompilerGeneratedAttribute] // RVA: 0x6FE2F4 Offset: 0x6FE2F4 VA: 0x6FE2F4
 		//// RVA: 0xDD95BC Offset: 0xDD95BC VA: 0xDD95BC
 		//private void <Co_LoadAccountRemoveLayout>b__46_0(GameObject instance) { }
@@ -593,13 +924,5 @@ namespace XeApp.Game.Menu
 		//[CompilerGeneratedAttribute] // RVA: 0x6FE324 Offset: 0x6FE324 VA: 0x6FE324
 		//// RVA: 0xDD9940 Offset: 0xDD9940 VA: 0xDD9940
 		//private void <Co_LoadAccountRemoveLayout>b__46_3(GameObject instance) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6FE334 Offset: 0x6FE334 VA: 0x6FE334
-		//// RVA: 0xDD9A6C Offset: 0xDD9A6C VA: 0xDD9A6C
-		//private void <OnClickDataManagement>b__47_1(PopupWindowControl popupControl) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6FE344 Offset: 0x6FE344 VA: 0x6FE344
-		//// RVA: 0xDD9A90 Offset: 0xDD9A90 VA: 0xDD9A90
-		//private void <OnEventReview>b__54_0() { }
 	}
 }
