@@ -57,7 +57,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1EC3F18 Offset: 0x1EC3F18 VA: 0x1EC3F18
 		public bool IsLoaded()
 		{
-			TodoLogger.LogError(0, "IsLoaded");
+			TodoLogger.LogError(1, "IsLoaded");
 			return true;
 		}
 

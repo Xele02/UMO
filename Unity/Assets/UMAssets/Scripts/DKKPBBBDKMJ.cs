@@ -84,7 +84,9 @@ public class DKKPBBBDKMJ
 							else if(storyEvent2.CHOFDPDFPDC == 3)
 							{
 								if (!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN(storyEvent2.LOHMKCPKBON))
+								{
 									b3 = true;
+								}
 								else
 								{
 									if(storyEvent.MGBDCFIKBPM == 5)

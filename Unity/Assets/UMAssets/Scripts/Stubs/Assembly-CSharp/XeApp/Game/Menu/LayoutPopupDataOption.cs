@@ -7,7 +7,7 @@ namespace XeApp.Game.Menu
 {
 	public class LayoutPopupDataOption : LayoutUGUIScriptBase
 	{
-    public void Awake() { TodoLogger.LogError(0, "Implement LayoutUGUIScriptBase"); }
+    public void Awake() { TodoLogger.LogError(1, "Implement LayoutUGUIScriptBase"); }
 		[SerializeField]
 		private ActionButton[] m_buttons;
 		[SerializeField]

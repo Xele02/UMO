@@ -923,7 +923,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB2B4A8 Offset: 0xB2B4A8 VA: 0xB2B4A8
 		public void GotoTitle()
 		{
-			TodoLogger.LogError(0, "GotoTitle");
+			TodoLogger.LogError(1, "GotoTitle");
 		}
 
 		// // RVA: 0xB2B620 Offset: 0xB2B620 VA: 0xB2B620

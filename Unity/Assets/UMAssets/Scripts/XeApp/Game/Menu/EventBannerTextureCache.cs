@@ -32,7 +32,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF0EE18 Offset: 0xF0EE18 VA: 0xF0EE18
 		public void LoadBanner(int id, Action<IiconTexture> callback)
 		{
-			TodoLogger.LogError(0, "EventBannerTextureCache LoadBanner");
+			TodoLogger.LogError(1, "EventBannerTextureCache LoadBanner");
 		}
 
 		// // RVA: 0xF0EED4 Offset: 0xF0EED4 VA: 0xF0EED4

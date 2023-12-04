@@ -83,6 +83,7 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 			{
 				GIEHECAKIFC data = new GIEHECAKIFC();
 				data.PPFNGGCBJKC = array[i].PPFNGGCBJKC;
+				data.PPEGAKEIEGM = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 				data.OAFJONPIFGM_EventId = array[i].BCKCEEMNKCH;
 				data.MGBDCFIKBPM = (byte)array[i].BDJMFDKLHPM;
 				data.PDBPFJJCADD = array[i].PDBPFJJCADD;
