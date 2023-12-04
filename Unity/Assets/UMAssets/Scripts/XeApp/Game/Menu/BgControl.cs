@@ -1130,8 +1130,20 @@ namespace XeApp.Game.Menu
 		public static int GetHomeBgId(long unixTime)
 		{
 			bool b = false;
-			int a = (int)DivaTimezoneTalk.GetByUnixTime(unixTime, out b);
-			int c = 0;
+			DivaTimezoneTalk.Type dayType = DivaTimezoneTalk.GetByUnixTime(unixTime, out b);
+			switch(dayType)
+			{
+				case DivaTimezoneTalk.Type.Morning:
+				case DivaTimezoneTalk.Type.Noon:
+				default:
+					return 1;
+				case DivaTimezoneTalk.Type.Evening:
+					return 2;
+				case DivaTimezoneTalk.Type.Night:
+				case DivaTimezoneTalk.Type.Midnight:
+					return 3;
+			}
+			/*int c = 0;
 			if(a < 5)
 			{
 				c = 0x7fad >> ((a * 3) & 0xff);
@@ -1141,7 +1153,7 @@ namespace XeApp.Game.Menu
 				res = 2;
 			if ((c & 7) == 7)
 				res = 3;
-			return res;
+			return res;*/
 		}
 
 		// // RVA: 0x143EA6C Offset: 0x143EA6C VA: 0x143EA6C

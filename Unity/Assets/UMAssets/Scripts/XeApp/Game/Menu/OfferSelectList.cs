@@ -348,7 +348,7 @@ namespace XeApp.Game.Menu
 				m_timeWatcherDayly.onElapsedCallback = (long current, long limit, long remain) =>
 				{
 					//0x1709234
-					ApplyRemainTime(limit, OfferSelectTab.DaylyTab);
+					ApplyRemainTime(remain, OfferSelectTab.DaylyTab);
 				};
 				m_timeWatcherDayly.onEndCallback = null;
 				m_timeWatcherDayly.WatchStart(remainTime, true);
@@ -363,7 +363,7 @@ namespace XeApp.Game.Menu
 				m_timeWatcherWeekly.onElapsedCallback = (long current, long limit, long remain) =>
 				{
 					//0x170925C
-					ApplyRemainTime(limit, OfferSelectTab.WeeklyTab);
+					ApplyRemainTime(remain, OfferSelectTab.WeeklyTab);
 				};
 				m_timeWatcherWeekly.onEndCallback = null;
 				m_timeWatcherWeekly.WatchStart(remainTime, true);
@@ -481,6 +481,7 @@ namespace XeApp.Game.Menu
 		private void UpdateGaugePosition(float normalizePos)
 		{
 			int s = (int)((m_layoutGauge.GetView(0).FrameAnimation.FrameNum + 1) * normalizePos);
+			m_layoutGauge.StartChildrenAnimGoStop(s, s);
 		}
 
 		//// RVA: 0x1706B3C Offset: 0x1706B3C VA: 0x1706B3C

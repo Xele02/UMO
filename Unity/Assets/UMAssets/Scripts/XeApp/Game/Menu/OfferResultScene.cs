@@ -565,6 +565,7 @@ namespace XeApp.Game.Menu
 			//0x185E03C
 			m_model_loaded = false;
 			m_Object = GetComponentInChildren<UnlockValkyrieObject>(true);
+			ApplyCameraParameter();
 			m_Object.LoadResource(valkyrieId);
 			bool IsCueChenged = false;
 			SoundManager.Instance.voPilot.RequestChangeCueSheet_offer(m_pilotId, () =>

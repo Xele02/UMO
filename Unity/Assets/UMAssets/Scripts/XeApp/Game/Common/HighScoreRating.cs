@@ -116,7 +116,7 @@ namespace XeApp.Game.Common
 				{
 					//0xEA759C
 					if (a.Score != b.Score)
-						return a.Score.CompareTo(b.Score);
+						return b.Score.CompareTo(a.Score);
 					return a.FreeMusicId.CompareTo(b.FreeMusicId);
 				});
 				rateAttr[0] = 0;

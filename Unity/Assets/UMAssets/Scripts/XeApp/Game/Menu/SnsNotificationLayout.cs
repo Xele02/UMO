@@ -118,7 +118,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x12D2AD8 Offset: 0x12D2AD8 VA: 0x12D2AD8
 		private void SettingOfferNotifi()
 		{
-			TodoLogger.LogError(0, "SettingOfferNotifi");
+            KDHGBOOECKC.GBAGPIKOGAN_DivaOfferInfo offerinfo = KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE;
+            m_divaNameChange.StartChildrenAnimGoStop(offerinfo.AHHJLDLAPAN_DivaId == 9 ? "02" : "01");
+			m_releaseLevel.StartChildrenAnimGoStop(offerinfo.CIEOBFIIPLD_Level.ToString("D2"));
+			m_maxIconLayout.StartChildrenAnimGoStop(offerinfo.NBHEBLNHOJO_IsMaxLevel ? "01" : "02");
+			offerinfo.LHPDDGIJKNB();
+			KDHGBOOECKC.HHCJCDFCLOB.CPDBAIILNPL(true);
 		}
 
 		//// RVA: 0x12D2D0C Offset: 0x12D2D0C VA: 0x12D2D0C
@@ -128,7 +133,7 @@ namespace XeApp.Game.Menu
 		public void ButtonDisable()
 		{
 			m_button.IsInputOff = true;
-			m_offerButton.IsInputLock = true;
+			m_offerButton.IsInputOff = true;
 		}
 
 		//// RVA: 0x12D20E4 Offset: 0x12D20E4 VA: 0x12D20E4

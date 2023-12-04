@@ -893,7 +893,7 @@ namespace XeApp.Game.Menu
 		{
 			if (KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.OAFPGJLCNFM_Cond == 0)
 				return;
-			TodoLogger.LogError(0, "CheckOfferNotice");
+			MenuScene.Instance.ShowOfferNotice(null);
 		}
 
 		// // RVA: 0xAC3AA8 Offset: 0xAC3AA8 VA: 0xAC3AA8
