@@ -586,7 +586,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 			for(i = 0; i < m_elems.Count; i++)
 			{
-				while (m_elems[i].IsLoaded())
+				while (!m_elems[i].IsLoaded())
 					yield return null;
 			}
 		}
