@@ -786,7 +786,11 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x9739F0 Offset: 0x9739F0 VA: 0x9739F0
 		private void OnClickPresentButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickPresentButton");
+			if(!TryLobbyAnnounce())
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				MenuScene.Instance.Call(TransitionList.Type.PRESENT_LIST, null, true);
+			}
 		}
 
 		// // RVA: 0x973B04 Offset: 0x973B04 VA: 0x973B04

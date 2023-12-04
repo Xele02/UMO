@@ -294,7 +294,22 @@ public class JHHBAFKMBDL
 	// public void JNFBLHKMMBI(string ADCMNODJBGJ, string LJGOOOMOMMA, IMCBBOAFION HIDFAIBOHCC) { }
 
 	// // RVA: 0xB23944 Offset: 0xB23944 VA: 0xB23944
-	// public void ACJOEBNHBMF(DJBHIFLHJLK JGKOLBLPMPG, bool MBJKHOOMAFE) { }
+	public void ACJOEBNHBMF_DisplayExpiredPopup(DJBHIFLHJLK JGKOLBLPMPG, bool MBJKHOOMAFE)
+	{
+		MessageBank bk = MessageManager.Instance.GetBank(JHHBAFKMBDL.LGNLCJIKOEO);
+		TextPopupSetting s = new TextPopupSetting();
+		s.TitleText = bk.GetMessageByLabel("popup_present_expire_title");
+		s.Buttons = new ButtonInfo[1]
+		{
+			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+		};
+		s.Text = bk.GetMessageByLabel(MBJKHOOMAFE ? "popup_present_expire_01" : "popup_present_expire_02");
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		{
+			//0x134826C
+			JGKOLBLPMPG();
+		}, null, null, null);
+	}
 
 	// // RVA: 0xB23C98 Offset: 0xB23C98 VA: 0xB23C98
 	public void HMIHFLGLHBA(DJBHIFLHJLK JGKOLBLPMPG)

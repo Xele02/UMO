@@ -352,14 +352,19 @@ namespace ExternLib
 			for (int i = 0; i < names.HNBFOAJIIAL_Count; i++)
 			{
 				string str = (string)names[i];
-				if(!jsonRes.BBAJPINMOEP_Contains(str))
+				if(str == "inventory_record")
+				{
+					// tmp add inventory_record. Need to do something for save when needed
+					res["player"]["inventory_record"] = new EDOHBJAPLPF_JsonData();
+					res["player"]["inventory_record"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+				}
+				else if(!jsonRes.BBAJPINMOEP_Contains(str))
 				{
 					UnityEngine.Debug.LogError("player data not found : "+str);
 				}
 				else
 					res["player"][str] = jsonRes[str];
 			}
-
 			SendMessage(callbackId, res);
 			// end hack
 

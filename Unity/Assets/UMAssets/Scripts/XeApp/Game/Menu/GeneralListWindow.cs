@@ -374,7 +374,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB88D58 Offset: 0xB88D58 VA: 0xB88D58
-		//public void SetLockInnerButton2(bool isLock) { }
+		public void SetLockInnerButton2(bool isLock)
+		{
+			m_innerButton2.Disable = isLock;
+		}
 
 		//// RVA: 0xB88D8C Offset: 0xB88D8C VA: 0xB88D8C
 		public void SelectTotalRankingTab()
@@ -403,7 +406,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB88FB8 Offset: 0xB88FB8 VA: 0xB88FB8
-		//public void SetWarningMessage(string warning) { }
+		public void SetWarningMessage(string warning)
+		{
+			m_warningMessage.text = warning;
+		}
 
 		//// RVA: 0xB88FF4 Offset: 0xB88FF4 VA: 0xB88FF4
 		public void SetMusicTitle(string title, string colorCode)
@@ -480,10 +486,16 @@ namespace XeApp.Game.Menu
 		//public void SetEventBanner(IiconTexture iconTex) { }
 
 		//// RVA: 0xB89664 Offset: 0xB89664 VA: 0xB89664
-		//public void SetItemCount(int count) { }
+		public void SetItemCount(int count)
+		{
+			m_itemCount.SetNumber(count, 0);
+		}
 
 		//// RVA: 0xB896A4 Offset: 0xB896A4 VA: 0xB896A4
-		//public void SetItemMax(int max) { }
+		public void SetItemMax(int max)
+		{
+			m_itemMax.SetNumber(max, 0);
+		}
 
 		//// RVA: 0xB88960 Offset: 0xB88960 VA: 0xB88960
 		private void ClearButtonCallback()

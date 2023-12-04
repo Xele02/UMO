@@ -181,7 +181,7 @@ public class BBHNACPENDM_ServerSaveData
 	public const ulong DBBGFKKHGOA = 16391;
 	public const ulong ICEMOLCMHGG = 1;
 	private int BFACFIBJBPA; // 0xDC
-	public long MCKEOKFMLAH; // 0xE0
+	public long MCKEOKFMLAH_SaveId; // 0xE0
 	// private KIJECNFNNDB LAFGAPBDKML = new KIJECNFNNDB(); // 0xE8
 	public List<KLFDBFMNLBL_ServerSaveBlock> MGJKEJHEBPO_Blocks; // 0xEC
 	private static Dictionary<ulong, FFECIIHJDJA_CreateBlockDelegate> BGEJFKHOMOC_CreateFuncs; // 0xC
@@ -407,7 +407,7 @@ public class BBHNACPENDM_ServerSaveData
 	// // RVA: 0xF1C554 Offset: 0xF1C554 VA: 0xF1C554
 	public void KHEKNNFCAOI_Init(ulong HGNJJBLEMPH)
 	{
-		MCKEOKFMLAH = 0;
+		MCKEOKFMLAH_SaveId = 0;
 		MGJKEJHEBPO_Blocks = new List<KLFDBFMNLBL_ServerSaveBlock>();
 		if((HGNJJBLEMPH & EFBHIFFOKAB_FlagBase) != 0)					{ JHFIPCIHJNL_Base = (JBMPOAAMGNB_Base)MNMFKKKFDCL_NewBlock(CFDJGBNJMIM_Base); MGJKEJHEBPO_Blocks.Add(JHFIPCIHJNL_Base); }
 		if((HGNJJBLEMPH & MLGABKNBICG_FlagCommon) != 0)					{ KCCLEHLLOFG_Common = (EGOLBAPFHHD_Common)MNMFKKKFDCL_NewBlock(IGCDFADKKML_Common); MGJKEJHEBPO_Blocks.Add(KCCLEHLLOFG_Common); }
@@ -531,8 +531,8 @@ public class BBHNACPENDM_ServerSaveData
 				else
 				{
 					save_id = JsonUtil.GetLong(jsonData, AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id, 0);
-					if(MCKEOKFMLAH < save_id)
-						MCKEOKFMLAH = save_id;
+					if(MCKEOKFMLAH_SaveId < save_id)
+						MCKEOKFMLAH_SaveId = save_id;
 				}
 			}
 		}
@@ -566,7 +566,7 @@ public class BBHNACPENDM_ServerSaveData
 		}
 		if (l1.Count == 0)
 			return null;
-		long v = GJLFANGDGCL.MCKEOKFMLAH + 1;
+		long v = GJLFANGDGCL.MCKEOKFMLAH_SaveId + 1;
 		if (NNPGPAPDDMC)
 		{
 			BHBONAHFKHD data = new BHBONAHFKHD();
@@ -598,7 +598,7 @@ public class BBHNACPENDM_ServerSaveData
 	// // RVA: 0xF20BE0 Offset: 0xF20BE0 VA: 0xF20BE0
 	public void PLCFEICAKBC(List<string> HHIHCJKLJFF)
 	{
-		MCKEOKFMLAH++;
+		MCKEOKFMLAH_SaveId++;
 		for(int i = 0; i < HHIHCJKLJFF.Count; i++)
 		{
             KLFDBFMNLBL_ServerSaveBlock block = LBDOLHGDIEB_GetBlock(HHIHCJKLJFF[i]);

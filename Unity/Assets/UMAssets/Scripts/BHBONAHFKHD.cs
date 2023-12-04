@@ -35,16 +35,28 @@ public class BHBONAHFKHD
 	//public void OJCJPCHFPGO(string JIKKNHIAEKG, string ALGBKNAAEKO) { }
 
 	//// RVA: 0xC7DB18 Offset: 0xC7DB18 VA: 0xC7DB18
-	//public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, EDOHBJAPLPF JBGEEPFKIGG) { }
+	public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, EDOHBJAPLPF_JsonData JBGEEPFKIGG)
+	{
+		TodoLogger.LogError(0, "OJLJAHAGBLK");
+	}
 
 	//// RVA: 0xC7DCD8 Offset: 0xC7DCD8 VA: 0xC7DCD8
-	//public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, bool JBGEEPFKIGG) { }
+	public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, bool JBGEEPFKIGG)
+	{
+		TodoLogger.LogError(0, "OJLJAHAGBLK");
+	}
 
 	//// RVA: 0xC7DEA8 Offset: 0xC7DEA8 VA: 0xC7DEA8
-	//public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, int JBGEEPFKIGG) { }
+	public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, int JBGEEPFKIGG)
+	{
+		TodoLogger.LogError(0, "OJLJAHAGBLK");
+	}
 
 	//// RVA: 0xC7E078 Offset: 0xC7E078 VA: 0xC7E078
-	//public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, string JBGEEPFKIGG) { }
+	public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, string JBGEEPFKIGG)
+	{
+		TodoLogger.LogError(0, "OJLJAHAGBLK");
+	}
 
 	//// RVA: 0xC7E248 Offset: 0xC7E248 VA: 0xC7E248
 	//public void AKBLDNCONGK(string JIKKNHIAEKG, string NHPCKCOPKAM, string ALGBKNAAEKO) { }
