@@ -6,6 +6,7 @@ namespace XeApp.Game.Menu
 	{
 		public HelpListCategoryInfo(VeiwOptionHelpCategoryData view)
 		{
+			TodoLogger.LogError(1, "TODO");
 		}
 
 		public string name;

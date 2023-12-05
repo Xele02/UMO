@@ -6,8 +6,10 @@ namespace ExternLib
 	{
 		public static int SakashoSupportSiteGetInquiryURL(int callbackId, string json)
 		{
-			TodoLogger.LogError(0, "SakashoSupportSiteGetInquiryURL");
+			TodoLogger.LogError(1, "SakashoSupportSiteGetInquiryURL");
 
+		//res.EEDAHFGPNPH_TempToken = (string)data[AFEHLCGHAEE_Strings.EEDAHFGPNPH_sss_temporary_token];
+		//res.MCHAINJKMEB_UrlWithToken = (string)data[AFEHLCGHAEE_Strings.MCHAINJKMEB_url_with_token];
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			SendMessage(callbackId, res);
 			return 0;

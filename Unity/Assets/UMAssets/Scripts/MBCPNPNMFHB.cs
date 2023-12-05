@@ -121,7 +121,7 @@ public class MBCPNPNMFHB
 				TodoLogger.LogError(TodoLogger.WebRequest, "RequestURL GCCBFIFJHII_Information");
 				break;
 			default:
-				TodoLogger.LogError(0, "MBCPNPNMFHB.BAGOKKHNLDB");
+				TodoLogger.LogError(1, "MBCPNPNMFHB.BAGOKKHNLDB");
 				break;
 		}
 		return null;
