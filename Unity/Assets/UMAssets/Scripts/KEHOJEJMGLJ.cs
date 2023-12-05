@@ -1033,7 +1033,32 @@ public class KEHOJEJMGLJ
 	}
 
 	// // RVA: 0xE8B3C8 Offset: 0xE8B3C8 VA: 0xE8B3C8
-	// public void OANLHPBJIND() { }
+	public void OANLHPBJIND()
+	{
+		KLIJFOBEKBE.JCHLONCMPAJ();
+		PBAHJENPLFM = false;
+		if(string.IsNullOrEmpty(CJMOKHDNBNB.FIPFFELDIOG_PersistentPath))
+		{
+			Debug.LogError("Install.InstallPathManager.CriWare_installTargetPath is empty");
+			PBAHJENPLFM = true;
+		}
+		else
+		{
+			//string HPOCPGLJHME = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/data";
+			string OOOEIAFOJKF = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/sys";
+			string DKGFGHCBJEG = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/tmp";
+			string LDAHMAIDPCM = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/mx";
+			NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.BNJPAKLNOPA_WorkerThreadQueue.Add(() =>
+			{
+				//0xE8D954
+				ALKHIONADIP(OOOEIAFOJKF);
+				ALKHIONADIP(DKGFGHCBJEG);
+				//ALKHIONADIP(HPOCPGLJHME);
+				ALKHIONADIP(LDAHMAIDPCM);
+				PBAHJENPLFM = true;
+			});
+		}
+	}
 
 	// // RVA: 0xE89CF8 Offset: 0xE89CF8 VA: 0xE89CF8
 	public static void INLICKMJHHK_DeleteFile(string CJEKGLGBIHF_path)

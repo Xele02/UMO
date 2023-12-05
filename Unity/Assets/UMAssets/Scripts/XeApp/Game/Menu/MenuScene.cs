@@ -916,14 +916,41 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB31C48 Offset: 0xB31C48 VA: 0xB31C48
 		private IEnumerator GotoTitleCoroutine()
 		{
-			TodoLogger.LogError(0, "GotoTitleCoroutine");
-			yield return null;
+			UGUIFader fade;
+
+			//0xB3B940
+			GameManager.Instance.ClearPushBackButtonHandler();
+			while(m_menuTransitionControl.IsTransition)
+				yield return null;
+			TipsControl.Instance.Close();
+			GameManager.Instance.NowLoading.Hide();
+			fade = GameManager.Instance.fullscreenFader;
+			if(fade.currentColor.a < 1)
+			{
+				fade.Fade(0.1f, Color.black);
+				while (fade.isFading)
+					yield return null;
+			}
+			yield return Co.R(m_menuTransitionControl.DestroyTransion());
+			PopupWindowManager.Close(null, null);
+			SoundManager.Instance.bgmPlayer.Stop();
+			NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.MBOIDKCMCDL = false;
+			SoundManager.Instance.voDiva.Stop();
+			while (SoundManager.Instance.voDiva.isPlaying)
+				yield return null;
+			SoundManager.Instance.voDiva.RemoveCueSheet();
+			SoundManager.Instance.voDivaCos.Stop();
+			while (SoundManager.Instance.voDivaCos.isPlaying)
+				yield return null;
+			SoundManager.Instance.voDivaCos.RemoveCueSheet();
+			EventGoDivaScene.IsViewedBonusOpenPopup = false;
+			NextScene("Title");
 		}
 
 		// // RVA: 0xB2B4A8 Offset: 0xB2B4A8 VA: 0xB2B4A8
 		public void GotoTitle()
 		{
-			TodoLogger.LogError(1, "GotoTitle");
+			this.StartCoroutineWatched(GotoTitleCoroutine());
 		}
 
 		// // RVA: 0xB2B620 Offset: 0xB2B620 VA: 0xB2B620

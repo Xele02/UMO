@@ -549,19 +549,34 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1B59458 Offset: 0x1B59458 VA: 0x1B59458
-		// public void SetHomeDiva(int value) { }
+		public void SetHomeDiva(int value)
+		{
+			HomeDiva = value;
+		}
 
 		// // RVA: 0x1B59460 Offset: 0x1B59460 VA: 0x1B59460
-		// public void SetDrawKira(int value) { }
+		public void SetDrawKira(int value)
+		{
+			Option.GACNKPOMOFA_IsDrawKira = value;
+		}
 
 		// // RVA: 0x1B59488 Offset: 0x1B59488 VA: 0x1B59488
-		// public void SetPlateAnimationHome(int value) { }
+		public void SetPlateAnimationHome(int value)
+		{
+			Option.LENJLNLNPEO_IsPlateAnimationHome = value;
+		}
 
 		// // RVA: 0x1B594B0 Offset: 0x1B594B0 VA: 0x1B594B0
-		// public void SetPlateAnimationOther(int value) { }
+		public void SetPlateAnimationOther(int value)
+		{
+			Option.DFLJOKOKLIL_IsPlateAnimationOther = value;
+		}
 
 		// // RVA: 0x1B594D8 Offset: 0x1B594D8 VA: 0x1B594D8
-		// public void SetDivaEffect(int value) { }
+		public void SetDivaEffect(int value)
+		{
+			Option.MDMDEAFFIMB_IsDivaEffect = value;
+		}
 
 		// // RVA: 0x1B59500 Offset: 0x1B59500 VA: 0x1B59500
 		private float ChangeVolume(SoundManager.CategoryId category, int num, bool simulation = false)
@@ -667,7 +682,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1B599D4 Offset: 0x1B599D4 VA: 0x1B599D4
-		// public void SetOrientation(int value) { }
+		public void SetOrientation(int value)
+		{
+			Option.CJFAJNMADBA_ScreenRotation = value;
+		}
 
 		// // RVA: 0x1B599FC Offset: 0x1B599FC VA: 0x1B599FC
 		private void SetOrientationInner(int type)
