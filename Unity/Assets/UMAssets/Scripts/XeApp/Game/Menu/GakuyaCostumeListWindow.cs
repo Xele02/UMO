@@ -163,16 +163,16 @@ namespace XeApp.Game.Menu
 					{
 						if(!info2.m_isHave)
 						{
-							l3.Add(info);
+							l3.Add(info2);
 						}
 						else
 						{
-							l.Add(info);
+							l.Add(info2);
 						}
 					}
 					else
 					{
-						l.Insert(0, info);
+						l.Insert(0, info2);
 					}
 				}
 			}
