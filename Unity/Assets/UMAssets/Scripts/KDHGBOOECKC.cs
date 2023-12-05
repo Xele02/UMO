@@ -3082,9 +3082,9 @@ public class KDHGBOOECKC
 	{
 		if (!LOCAIBNPKDL_IsPlayerLevelOk())
 			return false;
-		if (!PEMMDEMCHAH())
+		if (PEMMDEMCHAH())
 			return false;
-		TodoLogger.LogError(0, "PPPLNJCFAID");
+		TodoLogger.LogError(1, "PPPLNJCFAID");
 		/*long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 		if(OONMAICCONN())
 		{
@@ -3098,7 +3098,7 @@ public class KDHGBOOECKC
 	// // RVA: 0x1035CB8 Offset: 0x1035CB8 VA: 0x1035CB8
 	public bool CCPNBHCKNDC()
 	{
-		if (!PEMMDEMCHAH())
+		if (PEMMDEMCHAH())
 			return false;
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 		return CCPNBHCKNDC(time, false);
@@ -3110,7 +3110,7 @@ public class KDHGBOOECKC
 	// // RVA: 0x1035DD0 Offset: 0x1035DD0 VA: 0x1035DD0
 	private bool CCPNBHCKNDC(long JHNMKKNEENE, bool CGKINNALDGE)
 	{
-		TodoLogger.LogError(0, "CCPNBHCKNDC");
+		TodoLogger.LogError(1, "CCPNBHCKNDC");
 		return false;
 	}
 
