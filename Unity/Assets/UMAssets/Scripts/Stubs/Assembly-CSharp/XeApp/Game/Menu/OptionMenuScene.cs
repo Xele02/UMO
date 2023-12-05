@@ -457,25 +457,25 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xDD7F34 Offset: 0xDD7F34 VA: 0xDD7F34
 		private void OnClickOpinion()
 		{
-			TodoLogger.LogNotImplemented("OnClickOpinion");
+			this.StartCoroutineWatched(Opinion());
 		}
 
 		//// RVA: 0xDD7FCC Offset: 0xDD7FCC VA: 0xDD7FCC
 		private void OnClickContact()
 		{
-			TodoLogger.LogNotImplemented("OnClickContact");
+			this.StartCoroutineWatched(Inquery());
 		}
 
 		//// RVA: 0xDD807C Offset: 0xDD807C VA: 0xDD807C
 		private void OnClickBalance()
 		{
-			TodoLogger.LogNotImplemented("OnClickBalance");
+			this.StartCoroutineWatched(Balance());
 		}
 
 		//// RVA: 0xDD8114 Offset: 0xDD8114 VA: 0xDD8114
 		private void OnClickFAQ()
 		{
-			TodoLogger.LogNotImplemented("OnClickFAQ");
+			NKGJPJPHLIF.HHCJCDFCLOB.NBLAOIPJFGL_OpenURL(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE["official_wiki_faq"]);
 		}
 
 		//// RVA: 0xDD8288 Offset: 0xDD8288 VA: 0xDD8288
@@ -543,7 +543,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xDD8920 Offset: 0xDD8920 VA: 0xDD8920
 		private void OnClickLink()
 		{
-			TodoLogger.LogNotImplemented("OnClickLink");
+			PopupShowVariousInfo();
 		}
 
 		//// RVA: 0xDD8C84 Offset: 0xDD8C84 VA: 0xDD8C84
@@ -594,7 +594,23 @@ namespace XeApp.Game.Menu
 		//private void OpenStartPopupCallback() { }
 
 		//// RVA: 0xDD8924 Offset: 0xDD8924 VA: 0xDD8924
-		//private void PopupShowVariousInfo() { }
+		private void PopupShowVariousInfo()
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			PopupVariousInfoSetting s = new PopupVariousInfoSetting();
+			s.TitleText = bk.GetMessageByLabel("popup_option_various_info");
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			s.WindowSize = SizeType.Large;
+			s.IsCaption = true;
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel buttonLabel) =>
+			{
+				//0xDD9DBC
+				return;
+			}, null, null, null);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FE004 Offset: 0x6FE004 VA: 0x6FE004
 		//// RVA: 0xDD8D20 Offset: 0xDD8D20 VA: 0xDD8D20
@@ -732,15 +748,78 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FE0F4 Offset: 0x6FE0F4 VA: 0x6FE0F4
 		//// RVA: 0xDD7FF0 Offset: 0xDD7FF0 VA: 0xDD7FF0
-		//private IEnumerator Inquery() { }
+		private IEnumerator Inquery()
+		{
+			//0xDDF6BC
+			bool isDone = false;
+			MenuScene.Instance.RaycastDisable();
+			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.CCFMGBNHMNN_Inquiry, () =>
+			{
+				//0xDDA624
+				isDone = true;
+			}, () =>
+			{
+				//0xDD9DC8
+				MenuScene.Instance.RaycastEnable();
+				MenuScene.Instance.GotoTitle();
+			});
+			while(!isDone)
+				yield return null;
+			isDone = false;
+			NKGJPJPHLIF.HHCJCDFCLOB.LLMEJNALPJD(true, () =>
+			{
+				//0xDDA630
+				isDone = true;
+			}, () =>
+			{
+				//0xDD9E8C
+				MenuScene.Instance.RaycastEnable();
+				MenuScene.Instance.GotoTitle();
+			}, true);
+			while (!isDone)
+				yield return null;
+			MenuScene.Instance.RaycastEnable();
+			setNewIcon();
+			m_option_anim.SetBadge(AppEnv.IsCBT() ? 13 : 12, NKGJPJPHLIF.HHCJCDFCLOB.AFJEOKGBCNA_NumReplies > 0 ? BadgeConstant.ID.Menu_ResvMsg : BadgeConstant.ID.None);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FE16C Offset: 0x6FE16C VA: 0x6FE16C
 		//// RVA: 0xDD80A0 Offset: 0xDD80A0 VA: 0xDD80A0
-		//private IEnumerator Balance() { }
+		private IEnumerator Balance()
+		{
+			//0xDDADB8
+			MenuScene.Instance.RaycastDisable();
+			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.LCNNIHGFBMP_3, () =>
+			{
+				//0xDD9F50
+				MenuScene.Instance.RaycastEnable();
+			}, () =>
+			{
+				//0xDD9FEC
+				MenuScene.Instance.RaycastEnable();
+				MenuScene.Instance.GotoTitle();
+			});
+			yield break;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FE1E4 Offset: 0x6FE1E4 VA: 0x6FE1E4
 		//// RVA: 0xDD7F58 Offset: 0xDD7F58 VA: 0xDD7F58
-		//private IEnumerator Opinion() { }
+		private IEnumerator Opinion()
+		{
+			//0xDDFD5C
+			MenuScene.Instance.RaycastDisable();
+			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.FFIDPICMNKN_2, () =>
+			{
+				//0xDDA0B0
+				MenuScene.Instance.RaycastEnable();
+			}, () =>
+			{
+				//0xDDA14C
+				MenuScene.Instance.RaycastEnable();
+				MenuScene.Instance.GotoTitle();
+			});
+			yield break;
+		}
 
 		//// RVA: 0xDD9164 Offset: 0xDD9164 VA: 0xDD9164
 		private void setNewIcon()
