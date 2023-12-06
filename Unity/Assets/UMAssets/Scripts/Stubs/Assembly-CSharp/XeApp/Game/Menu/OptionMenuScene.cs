@@ -493,16 +493,215 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xDD83D4 Offset: 0xDD83D4 VA: 0xDD83D4
 		private void OnClickTakeOverData()
 		{
-			TodoLogger.LogNotImplemented("OnClickTakeOverData");
+			this.StartCoroutineWatched(Co_AccountManagment());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FDF14 Offset: 0x6FDF14 VA: 0x6FDF14
 		//// RVA: 0xDD83F8 Offset: 0xDD83F8 VA: 0xDD83F8
-		//private IEnumerator Co_AccountManagment() { }
+		private IEnumerator Co_AccountManagment()
+		{
+			BBHNACPENDM_ServerSaveData playerData; // 0x18
+			NKGJPJPHLIF sakashoMrg; // 0x1C
+			HDEEBKIFLNI linkageMrg; // 0x20
+			MCKCJMLOAFP_CurrencyInfo balanceData; // 0x24
+			MessageBank messageBank; // 0x28
+			bool isLoop; // 0x2C
+			bool startAccountRemove; // 0x2D
+			AccountRemove accountRemove; // 0x30
+
+			//0xDDB108
+			MenuScene.Instance.InputDisable();
+			if(!m_isLoadedAccountLayout)
+			{
+				yield return Co.R(Co_LoadAccountRemoveLayout());
+				m_isLoadedAccountLayout = true;
+			}
+			//LAB_00ddb27c
+			playerData = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave;
+			sakashoMrg = NKGJPJPHLIF.HHCJCDFCLOB;
+			linkageMrg = HDEEBKIFLNI.HHCJCDFCLOB;
+			balanceData = CIOECGOMILE.HHCJCDFCLOB.JBEKNFEGFFI();
+			messageBank = MessageManager.Instance.GetBank("common");
+			bool isWait = true;
+			bool isCancel = false;
+			bool isGotoTitle = false;
+			isLoop = true;
+			//LAB_00ddb83c
+			startAccountRemove = false;
+			//LAB_00ddb840
+			while(true)
+			{ 
+				if (!isLoop)
+				{
+					yield return Co.R(m_accountManagementWindow.Co_Close());
+					if(!startAccountRemove)
+					{
+						//LAB_00ddbb5c
+						MenuScene.Instance.InputEnable();
+						break;
+					}
+					yield return Co.R(m_accountRemoveTextWindow.Co_Show(messageBank.GetMessageByLabel("popup_account_remove_title"), messageBank.GetMessageByLabel("popup_account_remove_text001")));
+					accountRemove = new AccountRemove();
+					yield return Co.R(accountRemove.Execute());
+					if (accountRemove.RemoveAcctounResult == AccountRemove.Result.Failure)
+					{
+						//LAB_00ddbb04
+						MenuScene.Instance.GotoTitle();
+						break;
+					}
+					if(accountRemove.RemoveAcctounResult != AccountRemove.Result.Success)
+					{
+						accountRemove = null;
+						//LAB_00ddbb5c
+						MenuScene.Instance.InputEnable();
+						break;
+					}
+					yield return Co.R(m_accountRemoveTextWindow.Co_Close());
+					yield return Co.R(m_accountRemoveTextWindow.Co_Show(messageBank.GetMessageByLabel("popup_account_remove_title"), messageBank.GetMessageByLabel("popup_account_remove_text002")));
+					break;
+				}
+				else
+				{
+					yield return Co.R(m_accountManagementWindow.Co_Show());
+					yield return Co.R(m_accountManagementWindow.Co_Run());
+					if(m_accountManagementWindow.WindowResult != AccountManagementWindow.Result.AccountRemove)
+					{
+						if(m_accountManagementWindow.WindowResult != AccountManagementWindow.Result.TakeOver)
+						{
+							if (m_accountManagementWindow.WindowResult == AccountManagementWindow.Result.Close)
+								isLoop = false;
+							//LAB_00ddb840;
+							continue;
+						}
+						isWait = true;
+						m_inheritingMenu.PopupShowMenu(true, () =>
+						{
+							//0xDD9CCC
+							return;
+						}, () =>
+						{
+							//0xDDA3FC
+							isWait = false;
+						}, null);
+						//LAB_00ddbd38;
+						while (isWait)
+							yield return null;
+						//LAB_00ddbd70;
+						continue;
+					}
+					yield return Co.R(m_accountAgreeWindow.Co_Show());
+					yield return Co.R(m_accountAgreeWindow.Co_Run());
+					yield return Co.R(m_accountAgreeWindow.Co_Close());
+					if(m_accountAgreeWindow.WindowResult == AccountAgreeWindow.Result.AccountRemove)
+					{
+						isWait = true;
+						isCancel = false;
+						isGotoTitle = false;
+						linkageMrg.NLCBOJBAJFB_GetLinkageStatuses(() =>
+						{
+							//0xDDA408
+							isWait = false;
+						}, () =>
+						{
+							//0xDDA414
+							isWait = false;
+							isCancel = true;
+						}, () =>
+						{
+							//0xDDA420
+							isWait = false;
+							isGotoTitle = true;
+						});
+						//LAB_00ddb710
+						while (isWait)
+							yield return null;
+						if(!isCancel)
+						{
+							if(!isGotoTitle)
+							{
+								m_accountConfirmWindow.SetContent(sakashoMrg.MDAMJIGBOLD_PlayerId, playerData.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName, playerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level,
+									linkageMrg.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook),
+									linkageMrg.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter),
+									linkageMrg.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line),
+									false, balanceData, NHPDPKHMFEP.HHCJCDFCLOB.GBCPDBJEDHL(false), NHPDPKHMFEP.HHCJCDFCLOB.ENAAHAPDMCO());
+								yield return null;
+								yield return Co.R(m_accountConfirmWindow.Co_Show());
+								yield return Co.R(m_accountConfirmWindow.Co_Wait());
+								yield return Co.R(m_accountConfirmWindow.Co_Close());
+								if (m_accountConfirmWindow.WindowResult == AccountConfirmWindow.Result.OK)
+								{
+									isLoop = false;
+									startAccountRemove = true;
+									//LAB_00ddb83c;
+								}
+								//LAB_00ddb840;
+								continue;
+							}
+							//LAB_00ddbb04
+							MenuScene.Instance.GotoTitle();
+							break;
+						}
+						//LAB_00ddbd70
+						continue;
+					}
+					//LAB_00ddb840
+					continue;
+				}
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FDF8C Offset: 0x6FDF8C VA: 0x6FDF8C
 		//// RVA: 0xDD84A4 Offset: 0xDD84A4 VA: 0xDD84A4
-		//private IEnumerator Co_LoadAccountRemoveLayout() { }
+		private IEnumerator Co_LoadAccountRemoveLayout()
+		{
+			int loadCount; // 0x14
+			Font systemFont; // 0x18
+			AssetBundleLoadUGUIOperationBase op; // 0x1C
+
+			//0xDDD5B8
+			loadCount = 0;
+			systemFont = GameManager.Instance.GetSystemFont();
+			op = AssetBundleManager.LoadUGUIAsync("ly/300.xab", "AccountManagmentWindow");
+			yield return op;
+			yield return Co.R(op.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			{
+				//0xDD95BC
+				instance.transform.SetParent(MenuScene.Instance.m_uiRootObject.transform, false);
+				m_accountManagementWindow = instance.GetComponent<AccountManagementWindow>();
+			}));
+			loadCount++;
+			op = AssetBundleManager.LoadUGUIAsync("ly/300.xab", "AccountAgreeWindow");
+			yield return op;
+			yield return Co.R(op.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			{
+				//0xDD96E8
+				instance.transform.SetParent(MenuScene.Instance.m_uiRootObject.transform, false);
+				m_accountAgreeWindow = instance.GetComponent<AccountAgreeWindow>();
+			}));
+			loadCount++;
+			op = AssetBundleManager.LoadUGUIAsync("ly/300.xab", "AccountConfirmWindow");
+			yield return op;
+			yield return Co.R(op.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			{
+				//0xDD9814
+				instance.transform.SetParent(MenuScene.Instance.m_uiRootObject.transform, false);
+				m_accountConfirmWindow = instance.GetComponent<AccountConfirmWindow>();
+			}));
+			loadCount++;
+			op = AssetBundleManager.LoadUGUIAsync("ly/300.xab", "AccountRemoveTextWindow");
+			yield return op;
+			yield return Co.R(op.InitializeUGUICoroutine(systemFont, (GameObject instance) =>
+			{
+				//0xDD9940
+				instance.transform.SetParent(MenuScene.Instance.m_uiRootObject.transform, false);
+				m_accountRemoveTextWindow = instance.GetComponent<AccountRemoveTextWindow>();
+			}));
+			loadCount++;
+			for(int i = 0; i < loadCount; i++)
+			{
+				AssetBundleManager.UnloadAssetBundle("ly/300.xab", false);
+			}
+		}
 
 		//// RVA: 0xDD8550 Offset: 0xDD8550 VA: 0xDD8550
 		private void OnClickDataManagement()
@@ -987,21 +1186,5 @@ namespace XeApp.Game.Menu
 				m_bunchInstallCancelButton.transform.SetParent(cancelButtonParent, false);
 			}
 		}
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6FE2F4 Offset: 0x6FE2F4 VA: 0x6FE2F4
-		//// RVA: 0xDD95BC Offset: 0xDD95BC VA: 0xDD95BC
-		//private void <Co_LoadAccountRemoveLayout>b__46_0(GameObject instance) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6FE304 Offset: 0x6FE304 VA: 0x6FE304
-		//// RVA: 0xDD96E8 Offset: 0xDD96E8 VA: 0xDD96E8
-		//private void <Co_LoadAccountRemoveLayout>b__46_1(GameObject instance) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6FE314 Offset: 0x6FE314 VA: 0x6FE314
-		//// RVA: 0xDD9814 Offset: 0xDD9814 VA: 0xDD9814
-		//private void <Co_LoadAccountRemoveLayout>b__46_2(GameObject instance) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6FE324 Offset: 0x6FE324 VA: 0x6FE324
-		//// RVA: 0xDD9940 Offset: 0xDD9940 VA: 0xDD9940
-		//private void <Co_LoadAccountRemoveLayout>b__46_3(GameObject instance) { }
 	}
 }

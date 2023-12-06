@@ -719,11 +719,20 @@ public class NKGJPJPHLIF
 	}
 
 	// // RVA: 0xC1929C Offset: 0xC1929C VA: 0xC1929C
-	// public void NBLAOIPJFGL(string HJLDBEJOMIO, IMCBBOAFION HIDFAIBOHCC) { }
+	public void NBLAOIPJFGL_OpenURL(string HJLDBEJOMIO, IMCBBOAFION HIDFAIBOHCC)
+	{
+		N.a.StartCoroutineWatched(LOBOGDLABMH_Coroutine_CustomOpenURL(HJLDBEJOMIO, HIDFAIBOHCC));
+	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B9A90 Offset: 0x6B9A90 VA: 0x6B9A90
 	// // RVA: 0xC192EC Offset: 0xC192EC VA: 0xC192EC
-	// private IEnumerator LOBOGDLABMH(string HJLDBEJOMIO, IMCBBOAFION HIDFAIBOHCC) { }
+	private IEnumerator LOBOGDLABMH_Coroutine_CustomOpenURL(string HJLDBEJOMIO, IMCBBOAFION HIDFAIBOHCC)
+	{
+		//0xC1AA78
+		Application.OpenURL(HJLDBEJOMIO);
+		yield return new WaitForSeconds(0.5f);
+		HIDFAIBOHCC();
+	}
 
 	// RVA: 0xC17AC4 Offset: 0xC17AC4 VA: 0xC17AC4
 	private void CADNBFCHAKM_UpdateServerTime()
