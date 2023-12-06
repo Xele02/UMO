@@ -3444,7 +3444,7 @@ public class KDHGBOOECKC
 		MessageBank bank = MessageManager.Instance.GetBank("menu");
 		if(!LOCAIBNPKDL_IsPlayerLevelOk())
 		{
-			return string.Format("home_unlock_rank", EJBPEBIIMPG_GetVfoPlayerLevelUnlock());
+			return string.Format(bank.GetMessageByLabel("home_unlock_rank"), EJBPEBIIMPG_GetVfoPlayerLevelUnlock());
 		}
 		else
 		{
@@ -3453,7 +3453,7 @@ public class KDHGBOOECKC
 			{
 				a += LJMOMAGLEGL((BOPFPIHGJMD.MLBMHDCCGHI) i, BOPFPIHGJMD.IGHPDAGKIKO.FJGFAPKLLCL_3_Achieved/* 3*/, false);
 			}
-			return string.Format("offer_operation_badge_text", a);
+			return string.Format(bank.GetMessageByLabel("offer_operation_badge_text"), a);
 		}
 	}
 
