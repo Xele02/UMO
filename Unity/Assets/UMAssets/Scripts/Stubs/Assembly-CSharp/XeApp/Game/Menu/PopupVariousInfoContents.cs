@@ -84,7 +84,7 @@ namespace XeApp.Game.Menu
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 					if (m_popupControl != null)
 						m_popupControl.InputDisable();
-					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.EMAOPPMGKBD_7, () =>
+					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.EMAOPPMGKBD_Policy, () =>
 					{
 						//0x1163978
 						CallbackSupportSiteClose();
@@ -96,7 +96,7 @@ namespace XeApp.Game.Menu
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 					if (m_popupControl != null)
 						m_popupControl.InputDisable();
-					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.LCCLAEBKMLD_6, () =>
+					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.LCCLAEBKMLD_Legals, () =>
 					{
 						//0x1163B90
 						CallbackSupportSiteClose();
@@ -120,7 +120,7 @@ namespace XeApp.Game.Menu
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 					if (m_popupControl != null)
 						m_popupControl.InputDisable();
-					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.BFKFPEDCFCL_5, () =>
+					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.BFKFPEDCFCL_Settlement, () =>
 					{
 						//0x1163FC0
 						CallbackSupportSiteClose();
@@ -132,7 +132,7 @@ namespace XeApp.Game.Menu
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 					if (m_popupControl != null)
 						m_popupControl.InputDisable();
-					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.EHDHJCGOGGN_4, () =>
+					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.EHDHJCGOGGN_Copyright, () =>
 					{
 						//0x11641D8
 						CallbackSupportSiteClose();
@@ -174,7 +174,7 @@ namespace XeApp.Game.Menu
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 					if (m_popupControl != null)
 						m_popupControl.InputDisable();
-					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.JMIDCMFKPOE_10, () =>
+					MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.JMIDCMFKPOE_Credit, () =>
 					{
 						//0x11647F8
 						CallbackSupportSiteClose();

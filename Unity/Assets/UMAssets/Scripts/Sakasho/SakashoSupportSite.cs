@@ -12,7 +12,10 @@ public class SakashoSupportSite : SakashoAPIBase
     }
 
 	// // RVA: 0x2E68DD8 Offset: 0x2E68DD8 VA: 0x2E68DD8
-	// public static SakashoAPICallContext GetInformationURL(OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext GetInformationURL(OnSuccess onSuccess, OnError onError)
+	{
+		return new SakashoAPICallContext(Call(SakashoSupportSiteGetInformationURL, "", onSuccess, onError));
+	}
 
 	// // RVA: 0x2E68EBC Offset: 0x2E68EBC VA: 0x2E68EBC
 	public static SakashoAPICallContext GetInquiryURL(OnSuccess onSuccess, OnError onError)
@@ -22,13 +25,36 @@ public class SakashoSupportSite : SakashoAPIBase
 	}
 
 	// // RVA: 0x2E68FA0 Offset: 0x2E68FA0 VA: 0x2E68FA0
-	// public static SakashoAPICallContext GetOpinionURL(OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext GetOpinionURL(OnSuccess onSuccess, OnError onError)
+	{
+		return new SakashoAPICallContext(Call(SakashoSupportSiteGetOpinionURL, "", onSuccess, onError));
+	}
 
 	// // RVA: 0x2E69084 Offset: 0x2E69084 VA: 0x2E69084
-	// public static SakashoAPICallContext GetCommonTemplateURL(string name, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext GetCommonTemplateURL(string name, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		if (name != null)
+			h["name"] = name;
+		return new SakashoAPICallContext(Call(SakashoSupportSiteGetCommonTemplateURL, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	// // RVA: 0x2E691FC Offset: 0x2E691FC VA: 0x2E691FC
-	// public static SakashoAPICallContext GetRemainingForCurrencyIdsURL(int[] ids, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext GetRemainingForCurrencyIdsURL(int[] ids, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		ArrayList l = null;
+		if(ids != null)
+		{
+			l = new ArrayList();
+			for(int i = 0; i < ids.Length; i++)
+			{
+				l.Add(ids[i]);
+			}
+		}
+		h["ids"] = l;
+		return new SakashoAPICallContext(Call(SakashoSupportSiteGetRemainingForCurrencyIdsURL, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	// // RVA: 0x2E69438 Offset: 0x2E69438 VA: 0x2E69438
 	// public static SakashoAPICallContext GetConstrainedPlayerDataURL(OnSuccess onSuccess, OnError onError) { }
@@ -65,8 +91,20 @@ public class SakashoSupportSite : SakashoAPIBase
 	// // RVA: 0x2E69F00 Offset: 0x2E69F00 VA: 0x2E69F00
 	// public static SakashoAPICallContext GetInformationTopURL(OnSuccess onSuccess, OnError onError) { }
 
-	// // RVA: 0x2E69FE4 Offset: 0x2E69FE4 VA: 0x2E69FE4
-	// public static SakashoAPICallContext BuildUrl(string path, string lang, OnSuccess onSuccess, OnError onError) { }
+	// // RVA: g Offset: 0x2E69FE4 VA: 0x2E69FE4
+	public static SakashoAPICallContext BuildUrl(string path, string lang, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		if(path != null)
+		{
+			h["path"] = path;
+		}
+		if(lang != null)
+		{
+			h["lang"] = lang;
+		}
+		return new SakashoAPICallContext(Call(SakashoSupportSiteBuildUrl, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	// // RVA: 0x2E6A1A0 Offset: 0x2E6A1A0 VA: 0x2E6A1A0
 	private static /*extern*/ int SakashoSupportSiteGetToken(int callbackId, string json)
@@ -76,7 +114,10 @@ public class SakashoSupportSite : SakashoAPIBase
     }
 
 	// // RVA: 0x2E6A2A8 Offset: 0x2E6A2A8 VA: 0x2E6A2A8
-	// private static extern int SakashoSupportSiteGetInformationURL(int callbackId, string json) { }
+	private static int SakashoSupportSiteGetInformationURL(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoSupportSiteGetInformationURL(callbackId, json);
+	}
 
 	// // RVA: 0x2E6A3B8 Offset: 0x2E6A3B8 VA: 0x2E6A3B8
 	private static /*extern*/ int SakashoSupportSiteGetInquiryURL(int callbackId, string json)
@@ -85,13 +126,22 @@ public class SakashoSupportSite : SakashoAPIBase
 	}
 
 	// // RVA: 0x2E6A4C8 Offset: 0x2E6A4C8 VA: 0x2E6A4C8
-	// private static extern int SakashoSupportSiteGetOpinionURL(int callbackId, string json) { }
+	private static int SakashoSupportSiteGetOpinionURL(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoSupportSiteGetOpinionURL(callbackId, json);
+	}
 
 	// // RVA: 0x2E6A5D8 Offset: 0x2E6A5D8 VA: 0x2E6A5D8
-	// private static extern int SakashoSupportSiteGetCommonTemplateURL(int callbackId, string json) { }
+	private static int SakashoSupportSiteGetCommonTemplateURL(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoSupportSiteGetCommonTemplateURL(callbackId, json);
+	}
 
 	// // RVA: 0x2E6A6F0 Offset: 0x2E6A6F0 VA: 0x2E6A6F0
-	// private static extern int SakashoSupportSiteGetRemainingForCurrencyIdsURL(int callbackId, string json) { }
+	private static int SakashoSupportSiteGetRemainingForCurrencyIdsURL(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoSupportSiteGetRemainingForCurrencyIdsURL(callbackId, json);
+	}
 
 	// // RVA: 0x2E6A810 Offset: 0x2E6A810 VA: 0x2E6A810
 	// private static extern int SakashoSupportSiteGetConstrainedPlayerDataURL(int callbackId, string json) { }
@@ -124,5 +174,8 @@ public class SakashoSupportSite : SakashoAPIBase
 	// private static extern int SakashoSupportSiteGetInformationTopURL(int callbackId, string json) { }
 
 	// // RVA: 0x2E6B1F8 Offset: 0x2E6B1F8 VA: 0x2E6B1F8
-	// private static extern int SakashoSupportSiteBuildUrl(int callbackId, string json) { }
+	private static int SakashoSupportSiteBuildUrl(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoSupportSiteBuildUrl(callbackId, json);
+	}
 }

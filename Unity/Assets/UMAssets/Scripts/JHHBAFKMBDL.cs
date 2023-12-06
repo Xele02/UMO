@@ -239,7 +239,7 @@ public class JHHBAFKMBDL
 	private IEnumerator LDGPIGGPKMG_Coroutine_ShowWebView(string HJLDBEJOMIO, IMCBBOAFION HIDFAIBOHCC, bool EFDMHILHFPJ, bool OPEDAAIEOGN)
 	{
         //0x1348FFC
-        XeApp.Game.Common.PopupWindowControl crtrl = TodoLogger.LogNotImplemented("JHHBAFKMBDL.LDGPIGGPKMG_Coroutine_ShowWebView");
+        PopupWindowControl crtrl = TodoLogger.LogNotImplemented("Web URL not avaiable in Utamacross Offline");
 		yield return crtrl.IsOpenPopupWindow();
 		HIDFAIBOHCC();
 	}

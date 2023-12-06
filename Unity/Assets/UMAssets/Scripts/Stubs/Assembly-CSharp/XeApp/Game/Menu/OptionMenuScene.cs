@@ -789,7 +789,7 @@ namespace XeApp.Game.Menu
 		{
 			//0xDDADB8
 			MenuScene.Instance.RaycastDisable();
-			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.LCNNIHGFBMP_3, () =>
+			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.LCNNIHGFBMP_Balance, () =>
 			{
 				//0xDD9F50
 				MenuScene.Instance.RaycastEnable();
@@ -808,7 +808,7 @@ namespace XeApp.Game.Menu
 		{
 			//0xDDFD5C
 			MenuScene.Instance.RaycastDisable();
-			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.FFIDPICMNKN_2, () =>
+			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.FFIDPICMNKN_Opinion, () =>
 			{
 				//0xDDA0B0
 				MenuScene.Instance.RaycastEnable();

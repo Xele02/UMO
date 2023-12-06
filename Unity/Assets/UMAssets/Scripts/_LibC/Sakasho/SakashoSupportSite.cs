@@ -6,14 +6,56 @@ namespace ExternLib
 	{
 		public static int SakashoSupportSiteGetInquiryURL(int callbackId, string json)
 		{
-			TodoLogger.LogError(1, "SakashoSupportSiteGetInquiryURL");
-
-		//res.EEDAHFGPNPH_TempToken = (string)data[AFEHLCGHAEE_Strings.EEDAHFGPNPH_sss_temporary_token];
-		//res.MCHAINJKMEB_UrlWithToken = (string)data[AFEHLCGHAEE_Strings.MCHAINJKMEB_url_with_token];
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res[AFEHLCGHAEE_Strings.EEDAHFGPNPH_sss_temporary_token] = "";
+			res[AFEHLCGHAEE_Strings.MCHAINJKMEB_url_with_token] = "";
 			SendMessage(callbackId, res);
 			return 0;
 		}
+
+		public static int SakashoSupportSiteGetOpinionURL(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res[AFEHLCGHAEE_Strings.EEDAHFGPNPH_sss_temporary_token] = "";
+			res[AFEHLCGHAEE_Strings.MCHAINJKMEB_url_with_token] = "";
+			SendMessage(callbackId, res);
+			return 0;
+		}
+
+		public static int SakashoSupportSiteGetRemainingForCurrencyIdsURL(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res[AFEHLCGHAEE_Strings.EEDAHFGPNPH_sss_temporary_token] = "";
+			res[AFEHLCGHAEE_Strings.MCHAINJKMEB_url_with_token] = "";
+			SendMessage(callbackId, res);
+			return 0;
+		}
+
+		public static int SakashoSupportSiteGetInformationURL(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res[AFEHLCGHAEE_Strings.EEDAHFGPNPH_sss_temporary_token] = "";
+			res[AFEHLCGHAEE_Strings.MCHAINJKMEB_url_with_token] = "";
+			SendMessage(callbackId, res);
+			return 0;
+		}
+		public static int SakashoSupportSiteBuildUrl(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res[AFEHLCGHAEE_Strings.EEDAHFGPNPH_sss_temporary_token] = "";
+			res[AFEHLCGHAEE_Strings.MCHAINJKMEB_url_with_token] = "";
+			SendMessage(callbackId, res);
+			return 0;
+		}
+		public static int SakashoSupportSiteGetCommonTemplateURL(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res[AFEHLCGHAEE_Strings.EEDAHFGPNPH_sss_temporary_token] = "";
+			res[AFEHLCGHAEE_Strings.MCHAINJKMEB_url_with_token] = "";
+			SendMessage(callbackId, res);
+			return 0;
+		}
+		
 		public static int SakashoSupportSiteGetToken(int callbackId, string json)
 		{
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();

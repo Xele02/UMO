@@ -68,7 +68,10 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1EC3FB4 Offset: 0x1EC3FB4 VA: 0x1EC3FB4
 		public void SetStatus(ScrollRect scroll)
 		{
-			TodoLogger.LogError(1, "SetStatus");
+			for(int i = 0; i < m_layouts.Length; i++)
+			{
+				m_layouts[i].SetStatus(scroll);
+			}
 		}
 
 		// RVA: 0x1EC4054 Offset: 0x1EC4054 VA: 0x1EC4054
