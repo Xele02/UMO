@@ -783,7 +783,7 @@ namespace XeApp.Game.Menu
 			{
 				bool b = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PKEMELMMEKM_IsDivaHighQuality();
 				bool b2 = Option.PKEMELMMEKM_IsDivaHighQuality();
-				SetOrientationInner(b2 ? 1 : 0);
+				SetOrientationInner(Option.CJFAJNMADBA_ScreenRotation);
 				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.HOMPENLIHCK_VolBgm = Option.HOMPENLIHCK_VolBgm;
 				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BGLLCLEDHKK_VolSe = Option.BGLLCLEDHKK_VolSe;
 				GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CNCIMBGLKOB_VolVoice = Option.CNCIMBGLKOB_VolVoice;
