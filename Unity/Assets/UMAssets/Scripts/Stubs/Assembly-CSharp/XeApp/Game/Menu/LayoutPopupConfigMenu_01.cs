@@ -94,6 +94,7 @@ namespace XeApp.Game.Menu
 			SetTextDivaTitle(bk.GetMessageByLabel("config_text_47"));
 			SetTextDivaDesc(bk.GetMessageByLabel("config_text_48"));
 			SetTextDivaCenerDesc(bk.GetMessageByLabel("config_text_49"));
+			SetTextDivaSelectDesc(bk.GetMessageByLabel("config_text_50"));
 			SetTextKiraTitle(bk.GetMessageByLabel("config_text_93"));
 			SetTextKiraDesc(bk.GetMessageByLabel("config_text_94"));
 			SetTextKiraOnDesc(bk.GetMessageByLabel("config_text_95"));

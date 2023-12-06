@@ -56,7 +56,8 @@ namespace XeApp.Game.Menu
 			int res = 0;
 			for (int i = 0; i < m_layouts.Length; i++)
 			{
-				res += m_layouts[i].GetContentsHeight();
+				if(m_layouts[i].IsShow())
+					res += m_layouts[i].GetContentsHeight();
 			}
 			return res + 10;
 		}

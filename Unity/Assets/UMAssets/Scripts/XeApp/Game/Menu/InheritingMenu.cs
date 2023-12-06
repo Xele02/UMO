@@ -49,7 +49,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x13DE4B0 Offset: 0x13DE4B0 VA: 0x13DE4B0
 		public void PopupShowMenu(bool isPreparation, Action inheritingSuccess, Action closeCallback, LayoutMonthlyPassTakeover monthlylayout)
 		{
-			TodoLogger.LogError(TodoLogger.Popup, "PopupShowMenu");
+			TodoLogger.LogError(1, "PopupShowMenu");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E588C Offset: 0x6E588C VA: 0x6E588C

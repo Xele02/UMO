@@ -76,7 +76,7 @@ namespace XeApp.Game.Menu
 			if (accountRemoveButtonText != null)
 				accountRemoveButtonText.text = bk.GetMessageByLabel("popup_account_management_text006");
 			if (closeButtonText != null)
-				closeButtonText.text = bk.GetMessageByLabel("closeButtonText");
+				closeButtonText.text = bk.GetMessageByLabel("popup_account_management_text010");
 			if(takeOverButton != null)
 			{ 
 				takeOverButton.AddOnClickCallback(() =>
