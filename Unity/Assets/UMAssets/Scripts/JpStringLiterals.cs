@@ -156,6 +156,8 @@ class JpStringLiterals
 	public const string StringLiteral_11429 = "全力攻撃"; // 0x03bb3d4c
 	public const string StringLiteral_11430 = "マクロスキャノン"; // 0x03bb3d50
 	public const string StringLiteral_11431 = "通常攻撃"; // 0x03bb3d54
+	public const string StringLiteral_11476 = "登録"; //0x03bb3e08
+	public const string StringLiteral_11477 = "解除"; //0x03babc2c
 	public const string StringLiteral_11781 = "新しいバージョン検知 mver= "; // 0x03bb42cc
 	public const string StringLiteral_11855 = "Install : Start reception. / バッチインストーラ　開始受付  status = {0}"; //0x03bb43f4
 	public const string StringLiteral_11856 = "Install : Accept debut reception / バッチインストーラ　開始受付受理"; //0x03bb43f8

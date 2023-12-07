@@ -1,4 +1,5 @@
 using mcrs;
+using System;
 using System.Collections;
 using UnityEngine;
 using XeApp.Core;
@@ -16,9 +17,9 @@ namespace XeApp.Game.Menu
 
 		//private bool IsDecoVisit { get; } 0xED8934
 		//protected override SortItem[] sortTypeList { get; } 0xED8958
-		//protected override SortItem defaultSortType { get; } 0xED89E0
-		//protected override PopupSortMenu.SortPlace sortPlace { get; } 0xED8A68
-		//protected override ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.MMALELPFEBH sortSaveData { get; } 0xED8AF0
+		protected override SortItem defaultSortType { get { new NotImplementedException(); return SortItem.None; } } //0xED89E0
+		protected override PopupSortMenu.SortPlace sortPlace { get { new NotImplementedException(); return PopupSortMenu.SortPlace.None; } } //0xED8A68
+		protected override ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.MMALELPFEBH_UserList sortSaveData { get { new NotImplementedException(); return null; } } //0xED8AF0
 		protected override GuestListWindow.CounterStyle listCounterSyle { get { return GuestListWindow.CounterStyle.None; } } //0xED8B78
 		protected override bool emptyButtonLock { get { return false; } } //0xED8B80
 

@@ -487,7 +487,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xDD8320 Offset: 0xDD8320 VA: 0xDD8320
 		private void OnClickBlockList()
 		{
-			TodoLogger.LogNotImplemented("OnClickBlockList");
+			MenuScene.Instance.Call(TransitionList.Type.BLOCK_LIST, null, false);
 		}
 
 		//// RVA: 0xDD83D4 Offset: 0xDD83D4 VA: 0xDD83D4

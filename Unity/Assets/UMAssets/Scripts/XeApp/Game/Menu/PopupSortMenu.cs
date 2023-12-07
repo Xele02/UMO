@@ -195,10 +195,16 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1149F0C Offset: 0x1149F0C VA: 0x1149F0C
-		//public uint GetRarityFilter() { }
+		public uint GetRarityFilter()
+		{
+			return m_rarityButtonStateBit;
+		}
 
 		//// RVA: 0x1149F14 Offset: 0x1149F14 VA: 0x1149F14
-		//public uint GetAttributeFilter() { }
+		public uint GetAttributeFilter()
+		{
+			return m_attributeButtonStateBit;
+		}
 
 		//// RVA: 0x1149F1C Offset: 0x1149F1C VA: 0x1149F1C
 		public uint GetSeriaseFilter()
