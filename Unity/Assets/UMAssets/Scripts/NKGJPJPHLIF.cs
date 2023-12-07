@@ -86,7 +86,11 @@ public class NKGJPJPHLIF
 	// public bool KKMCBNKDDPN(int MLPEHNBNOGD) { }
 
 	// // RVA: 0xC16624 Offset: 0xC16624 VA: 0xC16624
-	// public void IJMGMJHLGDG(int NJPGHGIICME) { }
+	public void IJMGMJHLGDG(int NJPGHGIICME)
+	{
+		MDAMJIGBOLD_PlayerId = NJPGHGIICME;
+		LFGOHEKCDFN(NJPGHGIICME);
+	}
 
 	// RVA: 0xC16A5C Offset: 0xC16A5C VA: 0xC16A5C
 	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)

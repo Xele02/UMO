@@ -1,12 +1,20 @@
+using Sakasho.JSON;
 using SakashoSystemCallback;
+using System.Collections;
 
 public class SakashoLine : SakashoAPIBase
 {
 	//// RVA: 0x2BC9A74 Offset: 0x2BC9A74 VA: 0x2BC9A74
-	//public static void CallCreatePlayerFromLineAfterOAuth() { }
+	public static void CallCreatePlayerFromLineAfterOAuth()
+	{
+		Call(SakashoLineCallCreatePlayerFromLineAfterOAuth, "", null, null);
+	}
 
 	//// RVA: 0x2BC9B10 Offset: 0x2BC9B10 VA: 0x2BC9B10
-	//public static void CallLinkWithLineAfterOAuth() { }
+	public static void CallLinkWithLineAfterOAuth()
+	{
+		Call(SakashoLineCallLinkWithLineAfterOAuth, "", null, null);
+	}
 
 	//// RVA: 0x2BC9BAC Offset: 0x2BC9BAC VA: 0x2BC9BAC
 	public static SakashoAPICallContext GetLineLinkageStatus(OnSuccess onSuccess, OnError onError)
@@ -15,10 +23,18 @@ public class SakashoLine : SakashoAPIBase
 	}
 
 	//// RVA: 0x2BC9C90 Offset: 0x2BC9C90 VA: 0x2BC9C90
-	//public static SakashoAPICallContext LinkWithLine(bool isOverwritable, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext LinkWithLine(bool isOverwritable, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		h["isOverwritable"] = isOverwritable;
+		return new SakashoAPICallContext(Call(SakashoLineLinkWithLine, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	//// RVA: 0x2BC9E20 Offset: 0x2BC9E20 VA: 0x2BC9E20
-	//public static SakashoAPICallContext UnlinkLine(OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext UnlinkLine(OnSuccess onSuccess, OnError onError)
+	{
+		return new SakashoAPICallContext(Call(SakashoLineUnlinkLine, "", onSuccess, onError));
+	}
 
 	//// RVA: 0x2BC9F04 Offset: 0x2BC9F04 VA: 0x2BC9F04
 	//public static void ClearCallback() { }
@@ -36,10 +52,16 @@ public class SakashoLine : SakashoAPIBase
 	//public static void CancelLinkWithLineBeforeOauth() { }
 
 	//// RVA: 0x2BCA398 Offset: 0x2BCA398 VA: 0x2BCA398
-	//private static extern int SakashoLineCallCreatePlayerFromLineAfterOAuth(int callbackId, string json) { }
+	private static int SakashoLineCallCreatePlayerFromLineAfterOAuth(int callbackId, string json)
+	{
+		return 0;
+	}
 
 	//// RVA: 0x2BCA4B8 Offset: 0x2BCA4B8 VA: 0x2BCA4B8
-	//private static extern int SakashoLineCallLinkWithLineAfterOAuth(int callbackId, string json) { }
+	private static int SakashoLineCallLinkWithLineAfterOAuth(int callbackId, string json)
+	{
+		return 0;
+	}
 
 	//// RVA: 0x2BCA5D0 Offset: 0x2BCA5D0 VA: 0x2BCA5D0
 	private static int SakashoLineGetLineLinkageStatus(int callbackId, string json)
@@ -48,10 +70,16 @@ public class SakashoLine : SakashoAPIBase
 	}
 
 	//// RVA: 0x2BCA6E0 Offset: 0x2BCA6E0 VA: 0x2BCA6E0
-	//private static extern int SakashoLineLinkWithLine(int callbackId, string json) { }
+	private static int SakashoLineLinkWithLine(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoLineLinkWithLine(callbackId, json);
+	}
 
 	//// RVA: 0x2BCA820 Offset: 0x2BCA820 VA: 0x2BCA820
-	//private static extern int SakashoLineUnlinkLine(int callbackId, string json) { }
+	private static int SakashoLineUnlinkLine(int callbackId, string json)
+	{
+		return 0;
+	}
 
 	//// RVA: 0x2BCA960 Offset: 0x2BCA960 VA: 0x2BCA960
 	//private static extern int SakashoLineClearCallback(int callbackId, string json) { }

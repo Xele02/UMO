@@ -1,4 +1,4 @@
-﻿using XeSys;
+using XeSys;
 
 namespace ExternLib
 {
@@ -11,5 +11,11 @@ namespace ExternLib
 			SendMessage(callbackId, res);
 			return 0;
 		}
+
+		public static int SakashoLineLinkWithLine(int callbackId, string json)
+		{
+			return 0;
+		}
+		
 	}
 }

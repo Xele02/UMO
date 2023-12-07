@@ -209,6 +209,19 @@ namespace ExternLib
 			return 0;
 		}
 
+		public static int SakashoUserTokenCreatePlayerFromLine(int callbackId, string json)
+		{
+			return SakashoUserTokenGetPlayerStatus(callbackId, json);
+		}
+		public static int SakashoUserTokenCreatePlayerFromFacebook(int callbackId, string json)
+		{
+			return SakashoUserTokenGetPlayerStatus(callbackId, json);
+		}
+		public static int SakashoUserTokenCreatePlayerFromTwitter(int callbackId, string json)
+		{
+			return SakashoUserTokenGetPlayerStatus(callbackId, json);
+		}
+
 		public static int SakashoUserTokenGetPlayerStatus(int callbackId, string json)
         {
 			//ExternLib.Java_Sakasho.jp.dena.sakasho.api.SakashoAPICallContext context = ExternLib.Java_Sakasho.jp.dena.sakasho.api.SakashoUserToken.getPlayerStatus(null, null);
