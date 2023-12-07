@@ -60,13 +60,13 @@ public class SakashoTwitter : SakashoAPIBase
 	//// RVA: 0x2E6CB38 Offset: 0x2E6CB38 VA: 0x2E6CB38
 	private static int SakashoTwitterLinkWithTwitter(int callbackId, string json)
 	{
-		return 0;
+		return ExternLib.LibSakasho.SakashoTwitterLinkWithTwitter(callbackId, json);
 	}
 
 	//// RVA: 0x2E6CC48 Offset: 0x2E6CC48 VA: 0x2E6CC48
 	private static int SakashoTwitterUnlinkTwitter(int callbackId, string json)
 	{
-		return 0;
+		return ExternLib.LibSakasho.SakashoTwitterUnlinkTwitter(callbackId, json);
 	}
 
 	//// RVA: 0x2E6CD50 Offset: 0x2E6CD50 VA: 0x2E6CD50

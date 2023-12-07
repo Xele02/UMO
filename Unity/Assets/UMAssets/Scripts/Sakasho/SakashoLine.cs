@@ -54,13 +54,13 @@ public class SakashoLine : SakashoAPIBase
 	//// RVA: 0x2BCA398 Offset: 0x2BCA398 VA: 0x2BCA398
 	private static int SakashoLineCallCreatePlayerFromLineAfterOAuth(int callbackId, string json)
 	{
-		return 0;
+		return ExternLib.LibSakasho.SakashoLineCallCreatePlayerFromLineAfterOAuth(callbackId, json);
 	}
 
 	//// RVA: 0x2BCA4B8 Offset: 0x2BCA4B8 VA: 0x2BCA4B8
 	private static int SakashoLineCallLinkWithLineAfterOAuth(int callbackId, string json)
 	{
-		return 0;
+		return ExternLib.LibSakasho.SakashoLineCallLinkWithLineAfterOAuth(callbackId, json);
 	}
 
 	//// RVA: 0x2BCA5D0 Offset: 0x2BCA5D0 VA: 0x2BCA5D0
@@ -78,7 +78,7 @@ public class SakashoLine : SakashoAPIBase
 	//// RVA: 0x2BCA820 Offset: 0x2BCA820 VA: 0x2BCA820
 	private static int SakashoLineUnlinkLine(int callbackId, string json)
 	{
-		return 0;
+		return ExternLib.LibSakasho.SakashoLineUnlinkLine(callbackId, json);
 	}
 
 	//// RVA: 0x2BCA960 Offset: 0x2BCA960 VA: 0x2BCA960

@@ -127,9 +127,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BADFE0 Offset: 0x1BADFE0 VA: 0x1BADFE0
 		public static Vector2 GetContentSize2(SizeType size, bool isCaption = true)
 		{
-			if (isCaption)
-				size += 5;
-			return s_contentSizeTbl2[(int)size];
+			return s_contentSizeTbl2[CalcTblIndex(size, isCaption)];
 		}
 
 		// // RVA: 0x1BB8988 Offset: 0x1BB8988 VA: 0x1BB8988

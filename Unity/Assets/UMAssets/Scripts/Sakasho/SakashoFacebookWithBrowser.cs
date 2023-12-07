@@ -63,13 +63,13 @@ public class SakashoFacebookWithBrowser : SakashoAPIBase
 	//// RVA: 0x2BBCD38 Offset: 0x2BBCD38 VA: 0x2BBCD38
 	private static int SakashoFacebookWithBrowserLinkWithFacebook(int callbackId, string json)
 	{
-		return 0;
+		return ExternLib.LibSakasho.SakashoFacebookWithBrowserLinkWithFacebook(callbackId, json);
 	}
 
 	//// RVA: 0x2BBCE50 Offset: 0x2BBCE50 VA: 0x2BBCE50
 	private static int SakashoFacebookWithBrowserUnlinkFacebook(int callbackId, string json)
 	{
-		return 0;
+		return ExternLib.LibSakasho.SakashoFacebookWithBrowserUnlinkFacebook(callbackId, json);
 	}
 
 	//// RVA: 0x2BBCF68 Offset: 0x2BBCF68 VA: 0x2BBCF68

@@ -85,8 +85,9 @@ public class NHMKBENBIPI
 		float BNNHBBCCPDD; // 0x40
 
 		//0x1895D34
-		TodoLogger.LogError(0, "EOFJPNPFGDM_Coroutine_Install");
+		TodoLogger.LogError(1, "EOFJPNPFGDM_Coroutine_Install");
 		yield return null;
+		BHFHGFKBOHH();
 	}
 
 	//// RVA: 0x1891C74 Offset: 0x1891C74 VA: 0x1891C74
