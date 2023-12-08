@@ -21,8 +21,8 @@ public class DFHCLGPLJCP_Rules
 	public bool NGPLFEMNNPP_GachaFlag { get { return ((KPNKPGLPDHI_Op >> 8) & 1) != 0; } } //0x197E4CC NHIFINDFAJF
 	public bool NIPNNJBPBFL_PickupFlag { get { return ((KPNKPGLPDHI_Op >> 9) & 1) != 0; } } //0x197E4D8 NNECCEFDGMB
 	public bool ALKDIKCBKDC_ItemFlag { get { return ((KPNKPGLPDHI_Op >> 10) & 1) != 0; } } //0x197E4E4 IAHFHFALMDB
-	// public bool ABKMOFPEHEF { get; } 0x197E4F0 DHMLEGIECEC
-	// public bool PNKPHBHMLNM { get; } 0x197E4FC COJEDBKBBHK
+	public bool ABKMOFPEHEF { get { return ((KPNKPGLPDHI_Op >> 11) & 1) != 0; } } //0x197E4F0 DHMLEGIECEC
+	public bool PNKPHBHMLNM { get { return ((KPNKPGLPDHI_Op >> 12) & 1) != 0; } } //0x197E4FC COJEDBKBBHK
 
 	// // RVA: 0x197E508 Offset: 0x197E508 VA: 0x197E508
 	// public uint CAOGDCBPBAN() { }
