@@ -421,7 +421,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xDD7BB0 Offset: 0xDD7BB0 VA: 0xDD7BB0
 		private void OnClickShop()
 		{
-			TodoLogger.LogNotImplemented("OnClickShop");
+			MenuScene.Instance.Call(TransitionList.Type.SHOP, null, true);
 		}
 
 		//// RVA: 0xDD7C64 Offset: 0xDD7C64 VA: 0xDD7C64
