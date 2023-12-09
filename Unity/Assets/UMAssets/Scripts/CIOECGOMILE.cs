@@ -105,7 +105,17 @@ public class CIOECGOMILE
 	// // RVA: 0xFFA5B0 Offset: 0xFFA5B0 VA: 0xFFA5B0
 	public int NOJDLFKKMDD(int MHFBCINOJEE)
 	{
-		TodoLogger.LogError(0, "NOJDLFKKMDD");
+		if(IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
+		{
+			HHJHIFJIKAC_BonusVc.MNGJPJBCMBH db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.CDENCMNHNGA[MHFBCINOJEE - 1];
+			MCKCJMLOAFP_CurrencyInfo m = BBEPLKNMICJ_Currencies.Find((MCKCJMLOAFP_CurrencyInfo BNKHBCBJBKI) =>
+			{
+				//0x100CD8C
+				return BNKHBCBJBKI.PPFNGGCBJKC_Id == db.CPGFOBNKKBF;
+			});
+			if(m != null)
+				return m.BDLNMOIOMHK_Total;
+		}
 		return 0;
 	}
 
