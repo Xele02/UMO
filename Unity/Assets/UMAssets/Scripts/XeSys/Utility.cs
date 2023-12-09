@@ -48,14 +48,14 @@ namespace XeSys
 		{
 			//UMO, get real timeline
 			double diff = (DateTime.Now - DateTime.UtcNow).TotalSeconds;
-			return TimeZoneInfo.ConvertTimeToUtc(UNIX_EPOCH.AddSeconds(unixTime + diff/* + 32400*/));
+			return /*TimeZoneInfo.ConvertTimeToUtc(*/UNIX_EPOCH.AddSeconds(unixTime + diff/* + 32400*/)/*)*/;
 		}
 
 		// // RVA: 0x23A90F8 Offset: 0x23A90F8 VA: 0x23A90F8
 		public static long GetTargetUnixTime(int year, int month, int day, int hour, int minute, int second)
 		{
-			DateTime date = new DateTime(year, month, day, hour, minute, second, DateTimeKind.Utc);
-			return (long)(TimeZoneInfo.ConvertTimeToUtc(date, TimeZoneInfo.Utc) - UNIX_EPOCH).TotalSeconds;
+			DateTime date = new DateTime(year, month, day, hour, minute, second, DateTimeKind.Local);
+			return (long)(TimeZoneInfo.ConvertTimeToUtc(date) - UNIX_EPOCH).TotalSeconds;
 		}
 
 		// // RVA: 0x23A9268 Offset: 0x23A9268 VA: 0x23A9268
