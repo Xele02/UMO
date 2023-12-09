@@ -118,7 +118,16 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1390774 Offset: 0x1390774 VA: 0x1390774
-		// public bool IsEnableTouchId(PointerEventData eventData) { }
+		public bool IsEnableTouchId(PointerEventData eventData)
+		{
+			return
+#if UNITY_ANDROID
+				eventData.pointerId == 0
+#else
+				eventData.pointerId == -1 || eventData.pointerId == 0
+#endif
+			;
+		}
 
 		// RVA: 0x13907B0 Offset: 0x13907B0 VA: 0x13907B0 Slot: 4
 		protected override void Awake()
@@ -260,13 +269,7 @@ namespace XeApp.Game.Common
 		// RVA: 0x1391040 Offset: 0x1391040 VA: 0x1391040 Slot: 44
 		public override void OnBeginDrag(PointerEventData eventData)
 		{
-			if(
-#if UNITY_ANDROID
-				eventData.pointerId == 0
-#else
-				eventData.pointerId == -1
-#endif
-			)
+			if(IsEnableTouchId(eventData))
 			{
 				isEnableTouch = true;
 			}

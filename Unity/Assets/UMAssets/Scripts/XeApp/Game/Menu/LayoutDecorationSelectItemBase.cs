@@ -649,7 +649,7 @@ namespace XeApp.Game.Menu
 #if UNITY_ANDROID
 				pointerEventData.pointerId == 0
 #else
-				pointerEventData.pointerId == -1
+				pointerEventData.pointerId == -1 || pointerEventData.pointerId == 0
 #endif
 				;
 			}
@@ -665,7 +665,7 @@ namespace XeApp.Game.Menu
 #if UNITY_ANDROID
 				pointerEventData.pointerId == 0
 #else
-				pointerEventData.pointerId == -1
+				pointerEventData.pointerId == -1 || pointerEventData.pointerId == 0
 #endif
 				;
 			}
