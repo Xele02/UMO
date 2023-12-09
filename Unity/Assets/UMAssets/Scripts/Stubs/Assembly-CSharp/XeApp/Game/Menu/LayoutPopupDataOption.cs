@@ -43,6 +43,7 @@ namespace XeApp.Game.Menu
 			m_desc1Texts[0].text = bk.GetMessageByLabel("popup_option_bunchinstall_desc1");
 			m_desc2Texts[0].text = bk.GetMessageByLabel("popup_option_bunchinstall_desc2");
 			SetupButton(m_buttons[0], m_buttonImages[0], "sel_opt_btn_fnt_02", CallbackBunchInstall);
+			m_buttons[0].Disable = true; // Disable on UMO, all files are here
 		}
 
 		// RVA: 0x171CE2C Offset: 0x171CE2C VA: 0x171CE2C
