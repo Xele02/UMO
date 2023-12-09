@@ -47,9 +47,9 @@ namespace XeApp.Game.Menu
 		protected string friendNotFoundMessage { get; set; } // 0x98
 		protected string friendAllFilteredMessage { get; set; } // 0x9C
 		//protected abstract SortItem[] sortTypeList { get; } // RVA: -1 Offset: -1 Slot: 31
-		//protected abstract SortItem defaultSortType { get; } // RVA: -1 Offset: -1 Slot: 32
-		//protected abstract PopupSortMenu.SortPlace sortPlace { get; } // RVA: -1 Offset: -1 Slot: 33
-		//protected abstract ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.MMALELPFEBH sortSaveData { get; } // RVA: -1 Offset: -1 Slot: 34
+		protected abstract SortItem defaultSortType { get; } // RVA: -1 Offset: -1 Slot: 32
+		protected abstract PopupSortMenu.SortPlace sortPlace { get; } // RVA: -1 Offset: -1 Slot: 33
+		protected abstract ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.MMALELPFEBH_UserList sortSaveData { get; } // RVA: -1 Offset: -1 Slot: 34
 		protected abstract GuestListWindow.CounterStyle listCounterSyle { get; } // RVA: -1 Offset: -1 Slot: 35
 		protected virtual int listCounterCount { get { return 0; } } //0xBAC8C0 Slot: 36
 		protected virtual int listCounterMax { get { return 0; } } //0xBAC8C8 Slot: 37
@@ -225,19 +225,60 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xBA246C Offset: 0xBA246C VA: 0xBA246C
-		//protected void InitializeSortSetting() { }
+		protected void InitializeSortSetting()
+		{
+			m_sortType = (SortItem)sortSaveData.LHPDCGNKPHD_sortItem;
+			m_sortOrder = (GeneralList.SortOrder)sortSaveData.EILKGEADKGH_order;
+			m_rarityFilter = (uint)sortSaveData.ACCHOFLOOEC_filter;
+			m_attrFilter = (uint)sortSaveData.BOFFOHHLLFG_attributeFilter;
+			m_seriesFilter = (uint)sortSaveData.BBIIHLNBHDE_seriaseFilter;
+		}
 
 		//// RVA: 0xBA2520 Offset: 0xBA2520 VA: 0xBA2520
-		//protected void OnChangeSortType() { }
+		protected void OnChangeSortType()
+		{
+			m_buttonRuntime.SetSortType(m_sortType);
+			SortItem sortType = m_sortType;
+			if (m_sortType < SortItem.Request && ((1 << (int)m_sortType) & 0x20060U) != 0) // 0010 0000 0000 0110 0000
+				sortType = defaultSortType;
+			for(int i = 0; i < m_elems.Count; i++)
+			{
+				m_elems[i].SetParamTable(sortType);
+			}
+		}
 
 		//// RVA: 0xBA265C Offset: 0xBA265C VA: 0xBA265C
-		//protected void OnChangeSortOrder() { }
+		protected void OnChangeSortOrder()
+		{
+			m_buttonRuntime.SetSortOrder(m_sortOrder);
+		}
 
 		//// RVA: 0xBAC944 Offset: 0xBAC944 VA: 0xBAC944
-		//protected void OnClickSortButton() { }
+		protected void OnClickSortButton()
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MenuScene.Instance.ShowSortWindow(sortPlace, (PopupSortMenu popup) =>
+			{
+				//0xBAF3B0
+				m_sortType = popup.SortItem;
+				m_rarityFilter = popup.GetRarityFilter();
+				m_attrFilter = popup.GetAttributeFilter();
+				m_seriesFilter = popup.GetSeriaseFilter();
+				OnChangeSortType();
+				SortFriendList();
+			}, null);
+		}
 
 		//// RVA: 0xBACAA4 Offset: 0xBACAA4 VA: 0xBACAA4
-		//protected void OnClickOrderButton() { }
+		protected void OnClickOrderButton()
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			m_sortOrder = m_sortOrder == GeneralList.SortOrder.Ascend ? GeneralList.SortOrder.Descend : GeneralList.SortOrder.Ascend;
+			m_saveDataDirty = true;
+			sortSaveData.EILKGEADKGH_order = (int)m_sortOrder;
+			OnChangeSortOrder();
+			SortFriendList();
+		}
 
 		//// RVA: 0xBA4B40 Offset: 0xBA4B40 VA: 0xBA4B40
 		protected void SortFriendList()
@@ -638,10 +679,6 @@ namespace XeApp.Game.Menu
 		{
 			TodoLogger.LogError(0, "NetErrorToTitle");
 		}
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x6E0304 Offset: 0x6E0304 VA: 0x6E0304
-		//// RVA: 0xBAF3B0 Offset: 0xBAF3B0 VA: 0xBAF3B0
-		//private void <OnClickSortButton>b__68_0(PopupSortMenu popup) { }
 		
 		//[CompilerGeneratedAttribute] // RVA: 0x6E0354 Offset: 0x6E0354 VA: 0x6E0354
 		//// RVA: 0xBAF88C Offset: 0xBAF88C VA: 0xBAF88C

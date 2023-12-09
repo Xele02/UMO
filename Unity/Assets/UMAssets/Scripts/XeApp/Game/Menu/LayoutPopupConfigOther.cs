@@ -56,7 +56,8 @@ namespace XeApp.Game.Menu
 			int res = 0;
 			for (int i = 0; i < m_layouts.Length; i++)
 			{
-				res += m_layouts[i].GetContentsHeight();
+				if(m_layouts[i].IsShow())
+					res += m_layouts[i].GetContentsHeight();
 			}
 			return res + 10;
 		}
@@ -64,14 +65,21 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1EC72C4 Offset: 0x1EC72C4 VA: 0x1EC72C4
 		public bool IsLoaded()
 		{
-			TodoLogger.LogError(0, "IsLoaded");
+			for(int i = 0; i < m_layouts.Length; i++)
+			{
+				if (!m_layouts[i].IsLoaded())
+					return false;
+			}
 			return true;
 		}
 
 		//// RVA: 0x1EC7360 Offset: 0x1EC7360 VA: 0x1EC7360
 		public void SetStatus(ScrollRect scroll)
 		{
-			TodoLogger.LogError(0, "SetStatus");
+			for(int i = 0; i < m_layouts.Length; i++)
+			{
+				m_layouts[i].SetStatus(scroll);
+			}
 		}
 
 		// RVA: 0x1EC7400 Offset: 0x1EC7400 VA: 0x1EC7400

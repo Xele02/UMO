@@ -260,7 +260,7 @@ public class CCAAJNJGNDO
 								"", g != 0 ? NIPDOAIGCIB.OEDCONLFLHD/*2*/ : NIPDOAIGCIB.JFEDIMKFDNH/*0*/, dbEventStory.LOHMKCPKBON, OAFJONPIFGM, 0, false, true);
 							g++;
 							break;
-						case FBIOJHECAHB_EventStory.NMIGMCJHAIE.MOPAEGFEGCB/*5*/:
+						case FBIOJHECAHB_EventStory.NMIGMCJHAIE.MOPAEGFEGCB_5/*5*/:
 							string str3 = masterBk.GetMessageByLabel("adv_nm_" + dbEventStory.LOHMKCPKBON.ToString("D4"));
 							if (str3 == "")
 								str3 = JpStringLiterals.StringLiteral_9714 + e.ToString() + JpStringLiterals.StringLiteral_9715;

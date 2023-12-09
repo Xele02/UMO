@@ -1,4 +1,6 @@
+using Sakasho.JSON;
 using SakashoSystemCallback;
+using System.Collections;
 
 public class SakashoTwitter : SakashoAPIBase
 {
@@ -15,10 +17,18 @@ public class SakashoTwitter : SakashoAPIBase
 	}
 
 	//// RVA: 0x2E6C0E0 Offset: 0x2E6C0E0 VA: 0x2E6C0E0
-	//public static SakashoAPICallContext LinkWithTwitter(bool isOverwritable, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext LinkWithTwitter(bool isOverwritable, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		h["isOverwritable"] = isOverwritable;
+		return new SakashoAPICallContext(Call(SakashoTwitterLinkWithTwitter, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	//// RVA: 0x2E6C270 Offset: 0x2E6C270 VA: 0x2E6C270
-	//public static SakashoAPICallContext UnlinkTwitter(OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext UnlinkTwitter(OnSuccess onSuccess, OnError onError)
+	{
+		return new SakashoAPICallContext(Call(SakashoTwitterUnlinkTwitter, "", onSuccess, onError));
+	}
 
 	//// RVA: 0x2E6C354 Offset: 0x2E6C354 VA: 0x2E6C354
 	//public static void ClearCallback() { }
@@ -48,10 +58,16 @@ public class SakashoTwitter : SakashoAPIBase
 	}
 
 	//// RVA: 0x2E6CB38 Offset: 0x2E6CB38 VA: 0x2E6CB38
-	//private static extern int SakashoTwitterLinkWithTwitter(int callbackId, string json) { }
+	private static int SakashoTwitterLinkWithTwitter(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoTwitterLinkWithTwitter(callbackId, json);
+	}
 
 	//// RVA: 0x2E6CC48 Offset: 0x2E6CC48 VA: 0x2E6CC48
-	//private static extern int SakashoTwitterUnlinkTwitter(int callbackId, string json) { }
+	private static int SakashoTwitterUnlinkTwitter(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoTwitterUnlinkTwitter(callbackId, json);
+	}
 
 	//// RVA: 0x2E6CD50 Offset: 0x2E6CD50 VA: 0x2E6CD50
 	//private static extern int SakashoTwitterClearCallback(int callbackId, string json) { }

@@ -61,8 +61,8 @@ public class LFPOMKLKHPB
 		do
 		{
 			JHHBAFKMBDL.HHCJCDFCLOB.NIGGABHIFEE_ShowTransmissionIcon(true);
-#if UNITY_ANDROID || DEBUG_ANDROID_FILESYSTEM
 			string url;
+#if UNITY_ANDROID || DEBUG_ANDROID_FILESYSTEM
 			if(!FileSystemProxy.FileExists(HJLDBEJOMIO))
 			{
 				bool retry = false;
@@ -80,7 +80,14 @@ public class LFPOMKLKHPB
 				url = "file://"+FileSystemProxy.ConvertPath(HJLDBEJOMIO);
 			}
 #else
-			string url = FileSystemProxy.ConvertURL(HJLDBEJOMIO + "?t=" + DateTime.Now.ToString("yyyyMMddHHmmss"));
+			if(!FileSystemProxy.FileExists(HJLDBEJOMIO))
+			{
+				url = FileSystemProxy.ConvertURL(HJLDBEJOMIO + "?t=" + DateTime.Now.ToString("yyyyMMddHHmmss"));
+			}
+			else
+			{
+				url = "file://"+FileSystemProxy.ConvertPath(HJLDBEJOMIO);
+			}
 #endif
 			JMNNBKPAAKF = new WWW(url);
 			DFIEJHNOBOC = 0;

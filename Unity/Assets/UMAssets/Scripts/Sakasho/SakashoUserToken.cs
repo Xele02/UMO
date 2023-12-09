@@ -49,19 +49,34 @@ public class SakashoUserToken : SakashoAPIBase
 	// public static SakashoAPICallContext CreatePlayerFromPassphraseWithPlayerId(int originalPlayerId, string passphrase, bool keepOtherPlayerDevices, OnSuccess onSuccess, OnError onError) { }
 
 	// // RVA: 0x2E6E3C0 Offset: 0x2E6E3C0 VA: 0x2E6E3C0
-	// public static SakashoAPICallContext CreatePlayerFromTwitter(OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext CreatePlayerFromTwitter(OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		h["keepOtherPlayerDevices"] = false;
+		return new SakashoAPICallContext(Call(SakashoUserTokenCreatePlayerFromTwitter, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	// // RVA: 0x2E6E550 Offset: 0x2E6E550 VA: 0x2E6E550
 	// public static SakashoAPICallContext CreatePlayerFromTwitter(bool keepOtherPlayerDevices, OnSuccess onSuccess, OnError onError) { }
 
 	// // RVA: 0x2E6E6E0 Offset: 0x2E6E6E0 VA: 0x2E6E6E0
-	// public static SakashoAPICallContext CreatePlayerFromLine(OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext CreatePlayerFromLine(OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		h["keepOtherPlayerDevices"] = false;
+		return new SakashoAPICallContext(Call(SakashoUserTokenCreatePlayerFromLine, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	// // RVA: 0x2E6E870 Offset: 0x2E6E870 VA: 0x2E6E870
 	// public static SakashoAPICallContext CreatePlayerFromLine(bool keepOtherPlayerDevices, OnSuccess onSuccess, OnError onError) { }
 
 	// // RVA: 0x2E6EA00 Offset: 0x2E6EA00 VA: 0x2E6EA00
-	// public static SakashoAPICallContext CreatePlayerFromFacebook(OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext CreatePlayerFromFacebook(OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		h["keepOtherPlayerDevices"] = false;
+		return new SakashoAPICallContext(Call(SakashoUserTokenCreatePlayerFromFacebook, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	// // RVA: 0x2E6EB90 Offset: 0x2E6EB90 VA: 0x2E6EB90
 	// public static SakashoAPICallContext CreatePlayerFromFacebook(bool keepOtherPlayerDevices, OnSuccess onSuccess, OnError onError) { }
@@ -139,13 +154,22 @@ public class SakashoUserToken : SakashoAPIBase
 	// private static extern int SakashoUserTokenCreatePlayerFromPassphraseWithPlayerId(int callbackId, string json) { }
 
 	// // RVA: 0x2E70680 Offset: 0x2E70680 VA: 0x2E70680
-	// private static extern int SakashoUserTokenCreatePlayerFromTwitter(int callbackId, string json) { }
+	private static int SakashoUserTokenCreatePlayerFromTwitter(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoUserTokenCreatePlayerFromTwitter(callbackId, json);
+	}
 
 	// // RVA: 0x2E70798 Offset: 0x2E70798 VA: 0x2E70798
-	// private static extern int SakashoUserTokenCreatePlayerFromLine(int callbackId, string json) { }
+	private static int SakashoUserTokenCreatePlayerFromLine(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoUserTokenCreatePlayerFromLine(callbackId, json);
+	}
 
 	// // RVA: 0x2E708B0 Offset: 0x2E708B0 VA: 0x2E708B0
-	// private static extern int SakashoUserTokenCreatePlayerFromFacebook(int callbackId, string json) { }
+	private static int SakashoUserTokenCreatePlayerFromFacebook(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoUserTokenCreatePlayerFromFacebook(callbackId, json);
+	}
 
 	// // RVA: 0x2E709C8 Offset: 0x2E709C8 VA: 0x2E709C8
 	// private static extern int SakashoUserTokenActivateDevice(int callbackId, string json) { }

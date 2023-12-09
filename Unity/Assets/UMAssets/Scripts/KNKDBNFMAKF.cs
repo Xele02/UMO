@@ -19,7 +19,11 @@ public class KNKDBNFMAKF_EventSp : IKDICBBFBMI_EventBase
 	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp; } } //0x1123014 DKHCGLCNKCD  Slot: 4
 
 	// // RVA: 0x112301C Offset: 0x112301C VA: 0x112301C Slot: 32
-	// public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO = 0) { }
+	public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO = 0)
+	{
+		TodoLogger.LogError(0, "DAKMIKNKHMF");
+		return null;
+	}
 
 	// RVA: 0x1123024 Offset: 0x1123024 VA: 0x1123024
 	public KNKDBNFMAKF_EventSp(string OPFGFINHFCE) : base(OPFGFINHFCE)

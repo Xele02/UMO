@@ -304,22 +304,89 @@ namespace XeApp.Game.Common
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73F42C Offset: 0x73F42C VA: 0x73F42C
 		// // RVA: 0x1BC54E8 Offset: 0x1BC54E8 VA: 0x1BC54E8
-		// private static IEnumerator CacheClear(Action callback) { }
+		private static IEnumerator CacheClear(Action callback)
+		{
+			//0x1388544
+			if(MenuScene.Instance != null)
+			{
+				SoundManager.Instance.bgmPlayer.Stop();
+				SoundManager.Instance.voDiva.Stop();
+				while (SoundManager.Instance.bgmPlayer.isPlaying)
+					yield return null;
+				while (SoundManager.Instance.voDiva.isPlaying)
+					yield return null;
+				SoundManager.Instance.bgmPlayer.RemoveCueSheet();
+				SoundManager.Instance.voPilot.RemoveCueSheet();
+				SoundManager.Instance.voDiva.RemoveCueSheet();
+				SoundManager.Instance.voDivaCos.RemoveCueSheet();
+				SoundManager.Instance.voSeasonEvent.RemoveCueSheet();
+			}
+			//LAB_01388a60
+			KEHOJEJMGLJ.HHCJCDFCLOB.OANLHPBJIND();
+			GameManager.Instance.StartCoroutineWatched(CacheClearPopupShow(callback));
+		}
 
 		// // RVA: 0x1BC5570 Offset: 0x1BC5570 VA: 0x1BC5570
-		// public static void OpenCacheClearWindow(Action callback) { }
+		public static void OpenCacheClearWindow(Action callback)
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("common");
+			Show(CrateTextContent(bk.GetMessageByLabel("cache_clear_02"), SizeType.Middle, bk.GetMessageByLabel("cache_clear_00"), new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.CacheClear, Type = PopupButton.ButtonType.Positive }
+			}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1BC8C18
+				if (type != PopupButton.ButtonType.Positive)
+					return;
+				OpenCacheClearCheckWindow(callback);
+			}, null, null, null);
+		}
 
 		// // RVA: 0x1BC587C Offset: 0x1BC587C VA: 0x1BC587C
-		// private static void OpenCacheClearCheckWindow(Action callback) { }
+		private static void OpenCacheClearCheckWindow(Action callback)
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("common");
+			Show(CrateTextContent(bk.GetMessageByLabel("cache_clear_02"), SizeType.Middle, bk.GetMessageByLabel("cache_clear_05"), new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1BC8CA8
+				if (type != PopupButton.ButtonType.Positive)
+					return;
+				if(MenuScene.Instance != null)
+				{
+					MenuScene.Instance.InputDisable();
+				}
+				GameManager.Instance.StartCoroutineWatched(CacheClear(callback));
+			}, null, null, null);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73F4A4 Offset: 0x73F4A4 VA: 0x73F4A4
 		// // RVA: 0x1BC5B88 Offset: 0x1BC5B88 VA: 0x1BC5B88
-		// private static IEnumerator CacheClearPopupShow(Action callback) { }
+		private static IEnumerator CacheClearPopupShow(Action callback)
+		{
+			//0x1388F60
+			yield return null;
+			MessageBank bk = MessageManager.Instance.GetBank("common");
+			Show(CrateTextContent(bk.GetMessageByLabel("cache_clear_03"), SizeType.Middle, bk.GetMessageByLabel(MenuScene.Instance != null ? "cache_clear_04" : "cache_clear_01"), new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			}, false, true), (PopupWindowControl control2, PopupButton.ButtonType type2, PopupButton.ButtonLabel label2) =>
+			{
+				//0x1387DB4
+				if (callback != null)
+					callback();
+				callback = null;
+			}, null, null, null);
+		}
 
 		// // RVA: 0x1BC5C10 Offset: 0x1BC5C10 VA: 0x1BC5C10
 		public static void ApplicationQuitPopupShow(Action cancelAction)
 		{
-			PopupWindowManager.Show(PopupWindowManager.CreateMessageBankTextContent("menu", "pupup_app_exit_title", "popup_app_exit", SizeType.Small, new ButtonInfo[2]
+			Show(CreateMessageBankTextContent("menu", "pupup_app_exit_title", "popup_app_exit", SizeType.Small, new ButtonInfo[2]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }

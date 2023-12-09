@@ -90,7 +90,7 @@ namespace XeApp.Game.Common
 			}
 			bool isWait = true;
 			bool isGotoTitle = false;
-			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.LCCLAEBKMLD_6, () =>
+			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.LCCLAEBKMLD_Legals, () =>
 			{
 				//0x1BB52E0
 				isWait = false;

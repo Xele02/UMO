@@ -504,7 +504,10 @@ public abstract class IKDICBBFBMI_EventBase
 	protected abstract bool IMCMNOPNGHO(long JHNMKKNEENE);
 
 	// // RVA: 0x8DF774 Offset: 0x8DF774 VA: 0x8DF774 Slot: 32
-	// public virtual EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO) { }
+	public virtual EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO)
+	{
+		return null;
+	}
 
 	// // RVA: 0x8DF77C Offset: 0x8DF77C VA: 0x8DF77C Slot: 33
 	public virtual bool MPMKJNJGFEF()

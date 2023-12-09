@@ -28,7 +28,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
     {
         PBIMGBKLDPP_None = 0,
         JGHMJIGGJHI = 1,
-        FEJIMBDPMKI = 2,
+        FEJIMBDPMKI_2 = 2,
         LLGCBKEOHNP = 3,
         LPLEIJIFOKN_Error = 4,
         DNCJBLFALPA = 5,
@@ -142,7 +142,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 	public float HCAJCKCOCHC()
 	{
 		double res = 0.0f;
-		if(CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.FEJIMBDPMKI && JOJMBFBGMGN_DldQueue != null)
+		if(CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.FEJIMBDPMKI_2 && JOJMBFBGMGN_DldQueue != null)
 		{
 			for(int i = 0; i < JOJMBFBGMGN_DldQueue.Count; i++)
 			{
@@ -256,7 +256,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 		UnityEngine.Debug.Log(string.Format(JpStringLiterals.StringLiteral_11857, CMCKNKKCNDK_Status.ToString()));
 		if(CMCKNKKCNDK_Status < JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LLGCBKEOHNP/*3*/ || CMCKNKKCNDK_Status > JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LPLEIJIFOKN_Error/*4*/)
 		{
-			if(CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.FEJIMBDPMKI/*2*/)
+			if(CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.FEJIMBDPMKI_2/*2*/)
 			{
 				CMCKNKKCNDK_Status = JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_None/*0*/;
 				return;
@@ -360,7 +360,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 			}
 			if(KJIGCCPJBFK_List.Count != 0)
 				return;
-			CMCKNKKCNDK_Status = JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.FEJIMBDPMKI/*2*/;
+			CMCKNKKCNDK_Status = JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.FEJIMBDPMKI_2/*2*/;
 		}
 		else
 		{

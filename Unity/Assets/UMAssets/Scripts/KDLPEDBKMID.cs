@@ -353,7 +353,7 @@ public class KDLPEDBKMID
 				yield return null;
 				//2
 				PMDNNKAPIKJ_FileDownloader.FBANBDCOEJL();
-				if(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_Status == /*2*/JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.FEJIMBDPMKI)
+				if(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_Status == /*2*/JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.FEJIMBDPMKI_2)
 				{
 					HANBBBBLLGP = 100.0f;
 					OEPPEGHGNNO(3, 100);

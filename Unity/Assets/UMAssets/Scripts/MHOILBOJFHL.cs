@@ -5,15 +5,15 @@ public class MHOILBOJFHL
 	{
 		GCCBFIFJHII_Information = 0,
 		CCFMGBNHMNN_Inquiry = 1,
-		FFIDPICMNKN = 2,
-		LCNNIHGFBMP = 3,
-		EHDHJCGOGGN = 4,
-		BFKFPEDCFCL = 5,
-		LCCLAEBKMLD_6 = 6,
-		EMAOPPMGKBD = 7,
+		FFIDPICMNKN_Opinion = 2,
+		LCNNIHGFBMP_Balance = 3,
+		EHDHJCGOGGN_Copyright = 4,
+		BFKFPEDCFCL_Settlement = 5,
+		LCCLAEBKMLD_Legals = 6,
+		EMAOPPMGKBD_Policy = 7,
 		GHDACOGLNLJ_Contract = 8,
 		GOMOJLPBCAN = 9,
-		JMIDCMFKPOE = 10,
+		JMIDCMFKPOE_Credit = 10,
 		AEFCOHJBLPO = 11,
 	}
 }

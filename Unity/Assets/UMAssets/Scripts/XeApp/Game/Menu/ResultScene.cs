@@ -1033,7 +1033,7 @@ namespace XeApp.Game.Menu
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle:
 							TodoLogger.LogError(0, "Event");
 							break;
-						case OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN:
+						case OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore:
 							TodoLogger.LogError(0, "Event");
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest:

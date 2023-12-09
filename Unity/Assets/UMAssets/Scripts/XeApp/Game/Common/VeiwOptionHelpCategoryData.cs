@@ -9,8 +9,8 @@ namespace XeApp.Game.Common
 		public List<VeiwOptionHelpContentData> helps = new List<VeiwOptionHelpContentData>(); // 0x10
 		public List<VeiwOptionHelpContentData> wikis = new List<VeiwOptionHelpContentData>(); // 0x14
 
-		//public bool isContainHelp { get; } 0xD301B4
-		//public bool isContainWiki { get; } 0xD3023C
+		public bool isContainHelp { get { return helps.Count > 0; } } //0xD301B4
+		public bool isContainWiki { get { return wikis.Count > 0; } } //0xD3023C
 
 		//// RVA: 0xD302C4 Offset: 0xD302C4 VA: 0xD302C4
 		public void Init(int uniqueId)
@@ -81,6 +81,32 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xD30A1C Offset: 0xD30A1C VA: 0xD30A1C
-		//public static List<VeiwOptionHelpCategoryData> CreateList() { }
+		public static List<VeiwOptionHelpCategoryData> CreateList()
+		{
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			List<VeiwOptionHelpCategoryData> res = new List<VeiwOptionHelpCategoryData>();
+			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser.LOMHJBIJMOD.Length; i++)
+			{
+				DPGPEALHJOB h = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser.LOMHJBIJMOD[i];
+				if (h.PLALNIIBLOF == 2)
+				{
+					if(t >= h.PDBPFJJCADD)
+					{
+						if(h.FDBNFFNFOND >= t)
+						{
+							VeiwOptionHelpCategoryData data = new VeiwOptionHelpCategoryData();
+							data.Init(h.OBGBAOLONDD);
+							if (!data.isContainHelp && !data.isContainWiki)
+							{
+								continue;
+							}
+							data.categoryName = h.OPFGFINHFCE;
+							res.Add(data);
+						}
+					}
+				}
+			}
+			return res;
+		}
 	}
 }

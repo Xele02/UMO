@@ -4,6 +4,12 @@ namespace XeApp.Game.Menu
 	{
 		protected override GuestListWindow.CounterStyle listCounterSyle => throw new System.NotImplementedException();
 
+		protected override SortItem defaultSortType => throw new System.NotImplementedException();
+
+		protected override PopupSortMenu.SortPlace sortPlace => throw new System.NotImplementedException();
+
+		protected override ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.MMALELPFEBH_UserList sortSaveData => throw new System.NotImplementedException();
+
 		protected override void Initialize()
 		{
 			throw new System.NotImplementedException();

@@ -225,7 +225,72 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xBA592C Offset: 0xBA592C VA: 0xBA592C
-		//public void SetParamTable(SortItem sortBy) { }
+		public void SetParamTable(SortItem sortBy)
+		{
+			if(sortBy > SortItem.Request)
+			{
+				m_symbolParamTable.GoToFrame("tbl", 0);
+				m_symbolPlayerRank.GoToFrame("rank", sortBy == SortItem.HighScoreRating ? 1 : 0);
+			}
+			else
+			{
+				switch(sortBy)
+				{
+					case SortItem.Total:
+						m_symbolParamTable.GoToFrame("tbl", 2);
+						m_symbolPlayerRank.GoToFrame("rank", 0);
+						break;
+					case SortItem.Soul:
+						m_symbolParamTable.GoToFrame("tbl", 3);
+						m_symbolPlayerRank.GoToFrame("rank", 0);
+						break;
+					case SortItem.Voice:
+						m_symbolParamTable.GoToFrame("tbl", 4);
+						m_symbolPlayerRank.GoToFrame("rank", 0);
+						break;
+					case SortItem.Charm:
+						m_symbolParamTable.GoToFrame("tbl", 5);
+						m_symbolPlayerRank.GoToFrame("rank", 0);
+						break;
+					default:
+						m_symbolParamTable.GoToFrame("tbl", 0);
+						m_symbolPlayerRank.GoToFrame("rank", 0);
+						break;
+					case SortItem.Rarity:
+						m_symbolParamTable.GoToFrame("tbl", 1);
+						m_symbolPlayerRank.GoToFrame("rank", 0);
+						break;
+					case SortItem.Life:
+						m_symbolParamTable.GoToFrame("tbl", 6);
+						m_symbolPlayerRank.GoToFrame("rank", 0);
+						break;
+					case SortItem.Luck:
+						m_symbolParamTable.GoToFrame("tbl", 9);
+						m_symbolPlayerRank.GoToFrame("rank", 0);
+						break;
+					case SortItem.Support:
+						m_symbolParamTable.GoToFrame("tbl", 7);
+						m_symbolPlayerRank.GoToFrame("rank", 0);
+						break;
+					case SortItem.Fold:
+						m_symbolParamTable.GoToFrame("tbl", 8);
+						m_symbolPlayerRank.GoToFrame("rank", 0);
+						break;
+					case SortItem.LastPlayDate:
+						m_useRequestDate = false;
+						ApplyDateString();
+						m_symbolParamTable.GoToFrame("tbl", 0);
+						m_symbolPlayerRank.GoToFrame("rank", 0);
+						break;
+					case SortItem.Request:
+						m_useRequestDate = true;
+						ApplyDateString();
+						m_symbolParamTable.GoToFrame("tbl", 0);
+						m_symbolPlayerRank.GoToFrame("rank", 0);
+						break;
+				}
+			}
+		}
 
 		//// RVA: 0xBA8DB0 Offset: 0xBA8DB0 VA: 0xBA8DB0
 		public void SetName(string name)

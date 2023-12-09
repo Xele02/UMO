@@ -85,7 +85,7 @@ namespace XeApp.Game.Menu
 
 		public bool IsInitialized { get; private set; } // 0x40
 		public WaitWhile WaitLoadingYield { get { return m_waitLoading; } } //0xA974F4
-		// public bool IsLoading { get; } 0xA974FC
+		public bool IsLoading { get { return m_isLoding; } } //0xA974FC
 
 		// // RVA: 0xA97284 Offset: 0xA97284 VA: 0xA97284
 		public static void SetSituationValue(SituationId id, int val)

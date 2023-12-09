@@ -1,4 +1,6 @@
 
+using System.Collections.Generic;
+using XeApp;
 using XeSys;
 
 public delegate void BODAGDPODNB(string HJLDBEJOMIO, IMCBBOAFION HIDFAIBOHCC, bool EFDMHILHFPJ, bool OPEDAAIEOGN);
@@ -112,17 +114,35 @@ public class MBCPNPNMFHB
 	{
 		switch(INDDJNMPONH)
 		{
+			case MHOILBOJFHL.KCAEDEHGAFO.GCCBFIFJHII_Information:
+				return new KNOINKGFINE_GetInformationURL();
 			case MHOILBOJFHL.KCAEDEHGAFO.CCFMGBNHMNN_Inquiry:
 				return new IHCPIPBJCJL_GetInquiryURL();
+			case MHOILBOJFHL.KCAEDEHGAFO.FFIDPICMNKN_Opinion:
+				return new OIMLBEGNFNN_GetOpinionURL();
+			case MHOILBOJFHL.KCAEDEHGAFO.LCNNIHGFBMP_Balance:
+				{
+					KAEOJLJDOBI_GetRemainingForCurrencyIdsURL res = new KAEOJLJDOBI_GetRemainingForCurrencyIdsURL();
+					res.JHPMKDEEJGM = new List<int>();
+					res.JHPMKDEEJGM.Add(1001);
+					return res;
+				}
+			case MHOILBOJFHL.KCAEDEHGAFO.EHDHJCGOGGN_Copyright:
+				return new DDCHNOGMOHK_GetCommonTemplateURL("use_of_legend_sub");
+			case MHOILBOJFHL.KCAEDEHGAFO.BFKFPEDCFCL_Settlement:
+				return new DDCHNOGMOHK_GetCommonTemplateURL("shikin_kessai_ho_sub");
+			case MHOILBOJFHL.KCAEDEHGAFO.LCCLAEBKMLD_Legals:
+				return new DDCHNOGMOHK_GetCommonTemplateURL("tokusho_ho_android");
+			case MHOILBOJFHL.KCAEDEHGAFO.EMAOPPMGKBD_Policy:
+				return new DDCHNOGMOHK_GetCommonTemplateURL("android_privacypolicy");
 			case MHOILBOJFHL.KCAEDEHGAFO.GHDACOGLNLJ_Contract:
-				TodoLogger.LogNotImplemented("RequestURL GHDACOGLNLJ_Contract");
-				break;
-			case MHOILBOJFHL.KCAEDEHGAFO.GCCBFIFJHII_Information:
-				TodoLogger.LogError(TodoLogger.WebRequest, "RequestURL GCCBFIFJHII_Information");
-				break;
-			default:
-				TodoLogger.LogError(0, "MBCPNPNMFHB.BAGOKKHNLDB");
-				break;
+				return new DDCHNOGMOHK_GetCommonTemplateURL(AppEnv.IsCBT() ? "riyou_kiyaku_sub" : "riyou_kiyaku");
+			case MHOILBOJFHL.KCAEDEHGAFO.JMIDCMFKPOE_Credit:
+				{
+					AMFBEGANJGC_GetOriginalTemplateURL res = new AMFBEGANJGC_GetOriginalTemplateURL();
+					res.COHBIBEAMAF = "credit";
+					return res;
+				}
 		}
 		return null;
 	}

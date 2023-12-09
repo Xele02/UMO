@@ -79,7 +79,7 @@ public class OAGBCBBHMPF
         KCCMKAEPGPE = 73,
         PEBDGCDNPDM = 74,
         PHCLHGPCFNL = 75,
-        HGNLDJNEGJM = 76,
+        HGNLDJNEGJM_76 = 76,
         ICDCMLKMEHI = 77,
         CLGHLKLHEAK = 78,
         ELDCONNMDGN = 79,

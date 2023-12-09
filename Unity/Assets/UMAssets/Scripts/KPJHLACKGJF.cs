@@ -22,7 +22,11 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 	// public List<KPJHLACKGJF.HLMINENBCKO> AFOIGLCEBAE { get; } 0x1133180 FFPIOJEFCCL
 
 	// // RVA: 0x1133188 Offset: 0x1133188 VA: 0x1133188 Slot: 32
-	// public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO = 0) { }
+	public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO = 0)
+	{
+		TodoLogger.LogError(0, "DAKMIKNKHMF");
+		return null;
+	}
 
 	// RVA: 0x1133190 Offset: 0x1133190 VA: 0x1133190
 	public KPJHLACKGJF_EventMission(string OPFGFINHFCE) : base(OPFGFINHFCE)
