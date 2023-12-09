@@ -232,7 +232,7 @@ namespace XeApp.Game.Menu
 						uniqueId = TransitionUniqueId.EVENTMUSICSELECT_EVENTSTORY;
 						break;
 					case OHCAABOMEOF.KGOGMKMBCPP_EventType.MKKOHBGHADL/*2*/:
-					case OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN/*4*/:
+					case OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore/*4*/:
 					case OHCAABOMEOF.KGOGMKMBCPP_EventType.ENMHPBGOOII_Week/*5*/:
 					default:
 						break;
@@ -401,7 +401,7 @@ namespace XeApp.Game.Menu
 				c.EnableThumbnail(true);
 				c.EnableArrow(true);
 				c.EnableNoise(!d.CDOCOLOKCJK_Unlocked);
-				c.SetThumbnail(d.HIGLGJBBPAP_ThumbId == 2 ? 1 : 0, d.BMCJDCOEJFH == CCAAJNJGNDO.NIPDOAIGCIB.OEDCONLFLHD/*2*/);
+				c.SetThumbnail(d.HIGLGJBBPAP_ThumbId, d.BMCJDCOEJFH == CCAAJNJGNDO.NIPDOAIGCIB.OEDCONLFLHD/*2*/);
 				c.EnableNewIcon(false);
 			}
 			c.SetButtonLabel(d.FICACPOCAPG ? EventStoryListContent.ButtonLabel.Release : EventStoryListContent.ButtonLabel.Look);

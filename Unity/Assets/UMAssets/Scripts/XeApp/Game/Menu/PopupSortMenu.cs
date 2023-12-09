@@ -195,10 +195,16 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1149F0C Offset: 0x1149F0C VA: 0x1149F0C
-		//public uint GetRarityFilter() { }
+		public uint GetRarityFilter()
+		{
+			return m_rarityButtonStateBit;
+		}
 
 		//// RVA: 0x1149F14 Offset: 0x1149F14 VA: 0x1149F14
-		//public uint GetAttributeFilter() { }
+		public uint GetAttributeFilter()
+		{
+			return m_attributeButtonStateBit;
+		}
 
 		//// RVA: 0x1149F1C Offset: 0x1149F1C VA: 0x1149F1C
 		public uint GetSeriaseFilter()
@@ -316,7 +322,14 @@ namespace XeApp.Game.Menu
 			}
 			else if(((int)m_sortPlace & 0xfffffffe) == 8)
 			{
-				TodoLogger.LogError(0, "Initialize Deco");
+				m_sortMenuWindow.ShowDecoFilter(m_sortPlace == SortPlace.DecoInteriorList);
+				m_sortMenuWindow.SetDivaButtonIcon(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas);
+				m_seriaseButtonStateBit = s.SeriaseFilter;
+				m_sortMenuWindow.SetFilterButton(SortMenuWindow.FilterType.Series, ((m_seriaseButtonStateBit & 2) << 1) | (m_seriaseButtonStateBit & 16) | ((m_seriaseButtonStateBit & 1) << 3) | ((m_seriaseButtonStateBit >> 1) & 2) | ((m_seriaseButtonStateBit << 28) >> 31));
+				if(m_sortPlace != SortPlace.DecoInteriorList)
+					return;
+				m_interiorButtonStateBit = s.InteriorFilter;
+				m_sortMenuWindow.SetFilterButton(SortMenuWindow.FilterType.Interior, m_interiorButtonStateBit);
 			}
 			else
 			{

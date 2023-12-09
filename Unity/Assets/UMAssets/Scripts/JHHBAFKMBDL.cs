@@ -145,7 +145,10 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB2000C Offset: 0xB2000C VA: 0xB2000C
-	// public void JDIDDHBIGIO(string LJPMEHDDBGP, IMCBBOAFION EDIIEFHAOGP, JFDNPFFOACP NEFKBBNKNPP) { }
+	public void JDIDDHBIGIO(string LJPMEHDDBGP, IMCBBOAFION EDIIEFHAOGP, JFDNPFFOACP NEFKBBNKNPP)
+	{
+		TodoLogger.LogError(0, "JDIDDHBIGIO");
+	}
 
 	// // RVA: 0xB20594 Offset: 0xB20594 VA: 0xB20594
 	public void APEODCECEON(SakashoErrorId PPFNGGCBJKC, CACGCMBKHDI_Request ADKIDBJCAJA, string LJGOOOMOMMA, IMCBBOAFION EDIIEFHAOGP)
@@ -236,7 +239,7 @@ public class JHHBAFKMBDL
 	private IEnumerator LDGPIGGPKMG_Coroutine_ShowWebView(string HJLDBEJOMIO, IMCBBOAFION HIDFAIBOHCC, bool EFDMHILHFPJ, bool OPEDAAIEOGN)
 	{
         //0x1348FFC
-        XeApp.Game.Common.PopupWindowControl crtrl = TodoLogger.LogNotImplemented("JHHBAFKMBDL.LDGPIGGPKMG_Coroutine_ShowWebView");
+        PopupWindowControl crtrl = TodoLogger.LogNotImplemented("Web URL not avaiable in Utamacross Offline");
 		yield return crtrl.IsOpenPopupWindow();
 		HIDFAIBOHCC();
 	}

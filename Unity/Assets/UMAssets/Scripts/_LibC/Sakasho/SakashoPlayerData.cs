@@ -297,6 +297,21 @@ namespace ExternLib
 					}
 				}
 			}
+			// Unlock event story
+			{
+				for(int j = 0; j < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBEMLGADAGK_EventStory.JPIGOBGOMON.Count; j++)
+				{
+					FBIOJHECAHB_EventStory.ENDMMNNOAIL storyEvent2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBEMLGADAGK_EventStory.JPIGOBGOMON[j];
+					if(storyEvent2.JDJNNJEJDAJ == FBIOJHECAHB_EventStory.NMIGMCJHAIE.MOPAEGFEGCB_5)
+					{
+						if(storyEvent2.LOHMKCPKBON > 0)
+						{
+							if(!newData.HBPPNFHOMNB_Adventure.FABEJIHKFGN(storyEvent2.LOHMKCPKBON))
+								newData.HBPPNFHOMNB_Adventure.GFANLIOMMNA(storyEvent2.LOHMKCPKBON);
+						}
+					}
+				}
+			}
 
 			SerializeServerSave(newData, jsonRes);
 		}

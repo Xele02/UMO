@@ -295,7 +295,12 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12D8D70 Offset: 0x12D8D70 VA: 0x12D8D70
-		//public void ShowDecoFilter(bool isDecoShopInterior = False) { }
+		public void ShowDecoFilter(bool isDecoShopInterior = false)
+		{
+			m_childfilterAnimeLayout.StartChildrenAnimGoStop("01");
+			m_filterAnimeLayout.StartChildrenAnimGoStop("04");
+			m_childfilterAnimeLayout.StartChildrenAnimGoStop(isDecoShopInterior ? "03" : "02");
+		}
 
 		//// RVA: 0x12D8E68 Offset: 0x12D8E68 VA: 0x12D8E68
 		public void ShowAssistSelectFilter()

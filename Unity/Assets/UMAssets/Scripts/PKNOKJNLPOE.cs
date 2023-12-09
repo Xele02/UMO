@@ -82,7 +82,11 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 	// public bool NMDNCFGEJGJ() { }
 
 	// // RVA: 0x9400D4 Offset: 0x9400D4 VA: 0x9400D4 Slot: 32
-	// public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO = 0) { }
+	public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO = 0)
+	{
+		TodoLogger.LogError(0, "DAKMIKNKHMF");
+		return null;
+	}
 
 	// RVA: 0x9400DC Offset: 0x9400DC VA: 0x9400DC
 	public PKNOKJNLPOE_EventRaid(string OPFGFINHFCE) : base(OPFGFINHFCE)

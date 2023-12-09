@@ -1,4 +1,6 @@
+using Sakasho.JSON;
 using SakashoSystemCallback;
+using System.Collections;
 
 public class SakashoFacebookWithBrowser : SakashoAPIBase
 {
@@ -18,10 +20,18 @@ public class SakashoFacebookWithBrowser : SakashoAPIBase
 	}
 
 	//// RVA: 0x2BBC14C Offset: 0x2BBC14C VA: 0x2BBC14C
-	//public static SakashoAPICallContext LinkWithFacebook(bool isOverwritable, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext LinkWithFacebook(bool isOverwritable, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		h["isOverwritable"] = isOverwritable;
+		return new SakashoAPICallContext(Call(SakashoFacebookWithBrowserLinkWithFacebook, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	//// RVA: 0x2BBC2DC Offset: 0x2BBC2DC VA: 0x2BBC2DC
-	//public static SakashoAPICallContext UnlinkFacebook(OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext UnlinkFacebook(OnSuccess onSuccess, OnError onError)
+	{
+		return new SakashoAPICallContext(Call(SakashoFacebookWithBrowserUnlinkFacebook, "", onSuccess, onError));
+	}
 
 	//// RVA: 0x2BBC3C0 Offset: 0x2BBC3C0 VA: 0x2BBC3C0
 	//public static SakashoAPICallContext GetAuthenticateUrl(bool isOverwritable, OnSuccess onSuccess, OnError onError) { }
@@ -51,10 +61,16 @@ public class SakashoFacebookWithBrowser : SakashoAPIBase
 	}
 
 	//// RVA: 0x2BBCD38 Offset: 0x2BBCD38 VA: 0x2BBCD38
-	//private static extern int SakashoFacebookWithBrowserLinkWithFacebook(int callbackId, string json) { }
+	private static int SakashoFacebookWithBrowserLinkWithFacebook(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoFacebookWithBrowserLinkWithFacebook(callbackId, json);
+	}
 
 	//// RVA: 0x2BBCE50 Offset: 0x2BBCE50 VA: 0x2BBCE50
-	//private static extern int SakashoFacebookWithBrowserUnlinkFacebook(int callbackId, string json) { }
+	private static int SakashoFacebookWithBrowserUnlinkFacebook(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoFacebookWithBrowserUnlinkFacebook(callbackId, json);
+	}
 
 	//// RVA: 0x2BBCF68 Offset: 0x2BBCF68 VA: 0x2BBCF68
 	//private static extern int SakashoFacebookWithBrowserGetAuthenticateUrl(int callbackId, string json) { }

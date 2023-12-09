@@ -256,7 +256,7 @@ public class BBGDKLLEPIB
 				yield return null;
 				MHHFMCPJONH.FBANBDCOEJL();
 				//L.312
-				if(MHHFMCPJONH.CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.FEJIMBDPMKI/*2*/)
+				if(MHHFMCPJONH.CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.FEJIMBDPMKI_2/*2*/)
 				{
 					OEPPEGHGNNO(3, 100);
 					if(MHHFMCPJONH != null)

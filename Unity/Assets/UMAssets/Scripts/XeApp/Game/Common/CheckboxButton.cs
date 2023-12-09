@@ -32,7 +32,7 @@ namespace XeApp.Game.Common
 #if UNITY_ANDROID
 					if(eventData.pointerId == 0)
 #else
-					if (eventData.pointerId == -1)
+					if (eventData.pointerId == -1 || eventData.pointerId == 0)
 #endif
 					{
 						m_isChecked = !m_isChecked;

@@ -9,6 +9,8 @@ using System.Net.Sockets;
 using System.Net;
 using System.Text;
 using XeApp.Game.Common;
+using System.Text.RegularExpressions;
+
 #if UNITY_EDITOR
 using System.Reflection;
 using System.Linq;
@@ -66,10 +68,16 @@ static class FileSystemProxy
 		return url.Replace("[SERVER_DATA_PATH]", serverPath) + urlExt;
 	}
 
+	public static Regex NOCCMAKNLLD = new Regex("!s[0-9a-fA-F]+z!"); 
+
 	static public string ConvertPath(string path)
 	{
 		path = path.Replace("\\", "/");
-		path = path.Replace("!s00000000z!", "");
+		if(path.Contains("!s"))
+		{
+			path = path.Replace("!s00000000z!", "");
+			path = NOCCMAKNLLD.Replace(path, "");
+		}
 		path = path.Replace("[SERVER_DATA_PATH]", Application.persistentDataPath + "/data");
 		if (File.Exists(path))
 			return path;

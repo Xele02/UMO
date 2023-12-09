@@ -11,5 +11,17 @@ namespace ExternLib
 			SendMessage(callbackId, res);
 			return 0;
 		}
+		public static int SakashoTwitterLinkWithTwitter(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			SendMessage(callbackId, res);
+			return 0;
+		}
+		public static int SakashoTwitterUnlinkTwitter(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			SendMessage(callbackId, res);
+			return 0;
+		}
 	}
 }

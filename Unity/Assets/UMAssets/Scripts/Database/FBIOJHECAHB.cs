@@ -9,7 +9,7 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 	{
 		public int PPFNGGCBJKC; // 0x8
 		public int PPEGAKEIEGM; // 0xC
-		public int OAFJONPIFGM; // 0x10
+		public int OAFJONPIFGM_EventId; // 0x10
 		public byte MGBDCFIKBPM; // 0x14
 		public long PDBPFJJCADD; // 0x18
 		public long FDBNFFNFOND; // 0x20
@@ -40,7 +40,7 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 		GBECNPANBEA = 2,
 		OEDCONLFLHD = 3,
 		DCDEBCIMEMM = 4,
-		MOPAEGFEGCB = 5,
+		MOPAEGFEGCB_5 = 5,
 	}
 
 	public enum CHMHPDHPDCD
@@ -83,7 +83,8 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 			{
 				GIEHECAKIFC data = new GIEHECAKIFC();
 				data.PPFNGGCBJKC = array[i].PPFNGGCBJKC;
-				data.OAFJONPIFGM = array[i].BCKCEEMNKCH;
+				data.PPEGAKEIEGM = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
+				data.OAFJONPIFGM_EventId = array[i].BCKCEEMNKCH;
 				data.MGBDCFIKBPM = (byte)array[i].BDJMFDKLHPM;
 				data.PDBPFJJCADD = array[i].PDBPFJJCADD;
 				data.FDBNFFNFOND = array[i].FDBNFFNFOND;

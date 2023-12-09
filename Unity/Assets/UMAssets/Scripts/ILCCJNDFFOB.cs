@@ -1626,7 +1626,21 @@ public class ILCCJNDFFOB
 	}
 
 	// // RVA: 0x91F36C Offset: 0x91F36C VA: 0x91F36C
-	// public void HEKBPBPLPJL(int NPMIJMFMEKB, int BEPIOAIFCEC) { }
+	public void HEKBPBPLPJL(int NPMIJMFMEKB, int BEPIOAIFCEC)
+	{
+		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
+		FLBFCCIEPNC_InitBaseJson(json, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
+		json["target_user_id"] = NPMIJMFMEKB;
+		if(BEPIOAIFCEC == 1)
+		{
+			json["action"] = JpStringLiterals.StringLiteral_11476;
+		}
+		else
+		{
+			json["action"] = JpStringLiterals.StringLiteral_11477;
+		}
+		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.HGNLDJNEGJM_76, json, false);
+	}
 
 	// // RVA: 0x91F708 Offset: 0x91F708 VA: 0x91F708
 	public void CLGHLKLHEAK(string INDDJNMPONH, int HHFIMKIKJBC)

@@ -29,5 +29,11 @@ public class HNDLICBDEMI
 	}
 
 	//// RVA: 0x15FAF84 Offset: 0x15FAF84 VA: 0x15FAF84
-	//public static bool AAFGGLHPPJN() { }
+	public static bool AAFGGLHPPJN()
+	{
+		int a;
+		bool b;
+		FMLGCFKNKIA_GetDecoPlayerLevelAndEnabled(out a, out b);
+		return a > 0;
+	}
 }

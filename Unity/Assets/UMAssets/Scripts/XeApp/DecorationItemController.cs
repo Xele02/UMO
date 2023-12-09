@@ -30,13 +30,7 @@ namespace XeApp
 		// RVA: 0x1AD51B4 Offset: 0x1AD51B4 VA: 0x1AD51B4 Slot: 4
 		public void OnPointerClick(PointerEventData eventData)
 		{
-			if(
-#if UNITY_ANDROID
-				eventData.pointerId == 0
-#else
-				eventData.pointerId == -1
-#endif
-				&& onPointerClick != null)
+			if(IsEnableTouchId(eventData) && onPointerClick != null)
 			{
 				onPointerClick.Invoke(eventData.position);
 			}
@@ -45,13 +39,7 @@ namespace XeApp
 		// RVA: 0x1AD52B4 Offset: 0x1AD52B4 VA: 0x1AD52B4 Slot: 5
 		public void OnPointerDown(PointerEventData eventData)
 		{
-			if(
-#if UNITY_ANDROID
-				eventData.pointerId == 0
-#else
-				eventData.pointerId == -1
-#endif
-				&& onPointerDown != null)
+			if(IsEnableTouchId(eventData) && onPointerDown != null)
 			{
 				onPointerDown.Invoke(eventData.position);
 			}
@@ -60,13 +48,7 @@ namespace XeApp
 		// RVA: 0x1AD5378 Offset: 0x1AD5378 VA: 0x1AD5378 Slot: 6
 		public void OnPointerUp(PointerEventData eventData)
 		{
-			if(
-#if UNITY_ANDROID
-				eventData.pointerId == 0
-#else
-				eventData.pointerId == -1
-#endif
-				&& onPointerUp != null)
+			if(IsEnableTouchId(eventData) && onPointerUp != null)
 			{
 				onPointerUp.Invoke();
 			}
@@ -75,13 +57,7 @@ namespace XeApp
 		// RVA: 0x1AD53C8 Offset: 0x1AD53C8 VA: 0x1AD53C8 Slot: 7
 		public void OnBeginDrag(PointerEventData eventData)
 		{
-			if(
-#if UNITY_ANDROID
-				eventData.pointerId == 0
-#else
-				eventData.pointerId == -1
-#endif
-				&& onBeginDrag != null)
+			if(IsEnableTouchId(eventData) && onBeginDrag != null)
 			{
 				onBeginDrag.Invoke(eventData.position);
 			}
@@ -90,19 +66,22 @@ namespace XeApp
 		// RVA: 0x1AD548C Offset: 0x1AD548C VA: 0x1AD548C Slot: 8
 		public void OnDrag(PointerEventData eventData)
 		{
-			if(
-#if UNITY_ANDROID
-				eventData.pointerId == 0
-#else
-				eventData.pointerId == -1
-#endif
-				&& onDrag != null)
+			if(IsEnableTouchId(eventData) && onDrag != null)
 			{
 				onDrag.Invoke(eventData.position);
 			}
 		}
 
 		// // RVA: 0x1AD5278 Offset: 0x1AD5278 VA: 0x1AD5278
-		// public bool IsEnableTouchId(PointerEventData eventData) { }
+		public bool IsEnableTouchId(PointerEventData eventData)
+		{
+			return
+#if UNITY_ANDROID
+				eventData.pointerId == 0
+#else
+				eventData.pointerId == -1 || eventData.pointerId == 0
+#endif
+			;
+		}
 	}
 }

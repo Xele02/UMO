@@ -37,7 +37,7 @@ namespace XeApp.Game.Common
 				}
 				RectTransform r = GetComponent<RectTransform>();
 				Vector2 s = r.sizeDelta;
-				float h = m_text.lineSpacing * m_text.font.fontSize * m_text.fontSize * numLine;
+				float h = m_text.lineSpacing * m_text.font.fontSize + m_text.fontSize * numLine;
 				if (s.y < h)
 				{
 					r.anchorMax = new Vector2(0.5f, 1.0f);

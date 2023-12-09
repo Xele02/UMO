@@ -372,10 +372,18 @@ public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xCC8404 Offset: 0xCC8404 VA: 0xCC8404
-	// public bool BEFGHIJNEBL() { }
+	public bool BEFGHIJNEBL()
+	{
+		int a = LPJLEHAJADA("ap_recovery_enable_master_version", 1);
+		return a > 0 && a <= IEFOPDOOLOK_MasterVersion;
+	}
 
 	// // RVA: 0xCC84D0 Offset: 0xCC84D0 VA: 0xCC84D0
-	// public bool MDECFOOCLHG() { }
+	public bool MDECFOOCLHG_IsBlockListEnabled()
+	{
+		int val = LPJLEHAJADA("blocklist_enable_master_version", 0);
+		return val > 0 && val <= IEFOPDOOLOK_MasterVersion;
+	}
 
 	// // RVA: 0xCC859C Offset: 0xCC859C VA: 0xCC859C
 	public bool OANJBOPLCKP_IsUnit5Enabled()

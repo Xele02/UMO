@@ -171,7 +171,7 @@ namespace XeApp.Game.Menu
 					{
 						m_DecoTypeButtons[i].enabled = false;
 						m_DecoTypeButtons[i].SetOn();
-						if(SelectSeries == 1)
+						if(i == 1)
 						{
 							m_extraTabButton.enabled = false;
 							m_extraTabButton.SetOn();
@@ -181,7 +181,7 @@ namespace XeApp.Game.Menu
 					{
 						m_DecoTypeButtons[i].enabled = true;
 						m_DecoTypeButtons[i].SetOff();
-						if(SelectSeries == 1)
+						if(i == 1)
 						{
 							m_extraTabButton.enabled = true;
 							m_extraTabButton.SetOff();

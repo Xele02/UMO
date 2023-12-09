@@ -225,6 +225,8 @@ namespace XeApp.Game.Menu
 				m_view.PHBCFNIJLJH(),
 				m_view.JNLPLBJKGDC
 			};
+			if(l[0] == -1)
+				l[0] = l[1];
 			int max = Mathf.Min(l);
 			m_count = Mathf.Clamp(m_count + count, 0, max);
 			m_textCount.text = m_count.ToString();

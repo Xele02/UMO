@@ -124,7 +124,12 @@ namespace XeApp.Game.AR
 		// public string GetStringParam(string key, string noval) { }
 
 		// // RVA: 0xBB7D50 Offset: 0xBB7D50 VA: 0xBB7D50
-		// public int GetIntParam(string key, int noval) { }
+		public int GetIntParam(string key, int noval)
+		{
+			if (!m_intParam.ContainsKey(key))
+				return noval;
+			return m_intParam[key].DNJEJEANJGL_Value;
+		}
 
 		// // RVA: 0xBB7E34 Offset: 0xBB7E34 VA: 0xBB7E34
 		// public bool IsEnableARMode() { }

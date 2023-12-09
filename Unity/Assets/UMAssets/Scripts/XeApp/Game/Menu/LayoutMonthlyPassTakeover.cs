@@ -2,6 +2,9 @@ using XeSys.Gfx;
 using XeApp.Game.Common;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+using XeSys;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -30,16 +33,45 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1D6A334 Offset: 0x1D6A334 VA: 0x1D6A334
-		//public void SettingLayout(Action _contracted, Action _notContract) { }
+		public void SettingLayout(Action _contracted, Action _notContract)
+		{
+			SetOnClickButton(_contracted, _notContract);
+			MessageBank bk = MessageManager.Instance.GetBank("common");
+			ConfirmationText.text = bk.GetMessageByLabel("pop_subscription_confirmation_text");
+			ConfirmationText.horizontalOverflow = HorizontalWrapMode.Overflow;
+			ConfirmationText.verticalOverflow = VerticalWrapMode.Overflow;
+		}
 
 		//// RVA: 0x1D6A484 Offset: 0x1D6A484 VA: 0x1D6A484
-		//private void SetOnClickButton(Action _contracted, Action _notContract) { }
+		private void SetOnClickButton(Action _contracted, Action _notContract)
+		{
+			ContractedButton.AddOnClickCallback(() =>
+			{
+				//0x15C9A10
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				_contracted();
+			});
+			NotContractButton.AddOnClickCallback(() =>
+			{
+				//0x15C9A8C
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				_notContract();
+			});
+		}
 
 		//// RVA: 0x1D6A5DC Offset: 0x1D6A5DC VA: 0x1D6A5DC
-		//public void Enter() { }
+		public void Enter()
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_WND_000);
+			m_layoutRoot.StartChildrenAnimGoStop("go_in", "st_in");
+		}
 
 		//// RVA: 0x1D6A6B4 Offset: 0x1D6A6B4 VA: 0x1D6A6B4
-		//public void Leave() { }
+		public void Leave()
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_WND_001);
+			m_layoutRoot.StartChildrenAnimGoStop("go_out", "st_out");
+		}
 
 		//// RVA: 0x1D6A78C Offset: 0x1D6A78C VA: 0x1D6A78C
 		//public void Hide() { }
@@ -48,7 +80,10 @@ namespace XeApp.Game.Menu
 		//public void Show() { }
 
 		//// RVA: 0x1D6A91C Offset: 0x1D6A91C VA: 0x1D6A91C
-		//public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_layoutRoot.IsPlaying();
+		}
 
 		// RVA: 0x1D6A948 Offset: 0x1D6A948 VA: 0x1D6A948 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

@@ -3683,13 +3683,24 @@ public class ILDKBCLAFPB
         public sbyte OKGKFFLMFKH_LimitedReceive = 1; // 0xE
         public int OLBKCGKDBBL_TimeSlotAndBoss; // 0x10
 
-        // public sbyte EJGJPICOCBI { get; set; } ILKOBMOJIPG 0x2035A10 IONHLLLJLAI 0x2035A20
+        public sbyte EJGJPICOCBI { get { return (sbyte)(~((OLBKCGKDBBL_TimeSlotAndBoss >> 8) & 1)); } set {
+				if (value == 0)
+					OLBKCGKDBBL_TimeSlotAndBoss |= 0x100;
+				else
+					OLBKCGKDBBL_TimeSlotAndBoss &= ~0x100;
+			} } //ILKOBMOJIPG 0x2035A10 IONHLLLJLAI 0x2035A20
 
-        // // RVA: 0x2035A38 Offset: 0x2035A38 VA: 0x2035A38
-        // public void AAHGFMHAJFG(int ICDJHNPILBC, bool JKDJCFEBDHC) { }
+		// // RVA: 0x2035A38 Offset: 0x2035A38 VA: 0x2035A38
+		public void AAHGFMHAJFG(int ICDJHNPILBC, bool JKDJCFEBDHC)
+		{
+			if (JKDJCFEBDHC)
+				OLBKCGKDBBL_TimeSlotAndBoss &= ~(1 << ICDJHNPILBC);
+			else
+				OLBKCGKDBBL_TimeSlotAndBoss |= 1 << ICDJHNPILBC;
+		}
 
-        // // RVA: 0x2035A60 Offset: 0x2035A60 VA: 0x2035A60
-        public bool OCKFGNLLBFA(int ICDJHNPILBC)
+		// // RVA: 0x2035A60 Offset: 0x2035A60 VA: 0x2035A60
+		public bool OCKFGNLLBFA(int ICDJHNPILBC)
 		{
 			return (OLBKCGKDBBL_TimeSlotAndBoss & (1 << ICDJHNPILBC)) == 0;
 		}

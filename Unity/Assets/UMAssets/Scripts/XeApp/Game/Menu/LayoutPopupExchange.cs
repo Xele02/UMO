@@ -145,6 +145,8 @@ namespace XeApp.Game.Menu
 			li[1] = m_view.CMOPCCPOEBA();
 			li[2] = m_view.PHBCFNIJLJH();
 			li[3] = m_view.JNLPLBJKGDC;
+			if(li[0] == -1)
+				li[0] = li[1];
 			m_count = Mathf.Clamp(m_count + count, 0, Mathf.Min(li));
 			if(li[0] == -1)
 			{

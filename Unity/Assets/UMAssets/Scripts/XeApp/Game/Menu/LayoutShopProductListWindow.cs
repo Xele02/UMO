@@ -196,7 +196,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				MenuScene.Instance.ShowItemDetail(id, MessageManager.Instance.GetBank("menu").GetMessageByLabel("item_detail_popup_title_00"), EKLNMHFCAOI.ILKGBGOCLAO_GetItemDesc(cat, id), true);
+				MenuScene.Instance.ShowItemDetail(view.KIJAPOFAGPN_ItemFullId, MessageManager.Instance.GetBank("menu").GetMessageByLabel("item_detail_popup_title_00"), EKLNMHFCAOI.ILKGBGOCLAO_GetItemDesc(cat, id), true);
 			}
         }
 
@@ -268,11 +268,13 @@ namespace XeApp.Game.Menu
 			{
 				{
 					LayoutShopProductListItem item = content as LayoutShopProductListItem;
-					item.SetStatus(m_view.INDDJNMPONH, m_productList[index]);
+					if(item != null)
+						item.SetStatus(m_view.INDDJNMPONH, m_productList[index]);
 				}
 				{
 					LayoutShopProductListItem2 item = content as LayoutShopProductListItem2;
-					item.SetStatus(m_view.INDDJNMPONH, m_productList[index]);
+					if(item != null)
+						item.SetStatus(m_view.INDDJNMPONH, m_productList[index]);
 				}
 			}
 		}

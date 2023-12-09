@@ -37,7 +37,10 @@ public class FECDBKKBAHO
 	}
 
 	// // RVA: 0xFCF7E8 Offset: 0xFCF7E8 VA: 0xFCF7E8
-	// public void JCHLONCMPAJ() { }
+	public void JCHLONCMPAJ()
+	{
+		MLHACNBJAGM_FilesInfoByHash.Clear();
+	}
 
 	// // RVA: 0xFCF860 Offset: 0xFCF860 VA: 0xFCF860
 	public FHOPNIJCFKA_FileInfo LBDOLHGDIEB_GetFileInfo(string CJEKGLGBIHF)

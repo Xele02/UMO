@@ -1,4 +1,5 @@
 
+using System.Collections;
 using System.Collections.Generic;
 using XeApp.Game;
 using XeApp.Game.Menu;
@@ -32,7 +33,7 @@ public class AODFBGCCBPE
 	public int OCGCPJHDJEN; // 0x38
 	public bool CADENLBDAEB; // 0x3C
 	public List<FJGOKILCBJA> MHKCPJDNJKI; // 0x40
-	//public IGCPCHNCJCF GLHFDCKOJDN; // 0x44
+	public IGCPCHNCJCF GLHFDCKOJDN; // 0x44
 
 	//// RVA: 0xD57ACC Offset: 0xD57ACC VA: 0xD57ACC
 	public int JJPAFPIOBCK_GetCount()
@@ -194,9 +195,61 @@ public class AODFBGCCBPE
 	}
 
 	//// RVA: 0xD58F80 Offset: 0xD58F80 VA: 0xD58F80
-	//public void GKHAMEAMKCN(IMCBBOAFION CFHALLLJAOP, DJBHIFLHJLK AOCANKOMKFG) { }
+	public void GKHAMEAMKCN(IMCBBOAFION CFHALLLJAOP, DJBHIFLHJLK AOCANKOMKFG)
+	{
+		if(INDDJNMPONH != NJMPLEENNPO.AOMIBCNBBOD_1)
+		{
+			CFHALLLJAOP();
+			return;
+		}
+		if (GLHFDCKOJDN == null)
+			GLHFDCKOJDN = new IGCPCHNCJCF();
+		HHJHIFJIKAC_BonusVc.MNGJPJBCMBH dbVc = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.CDENCMNHNGA[JPGALGPNJAI - 1];
+		GLHFDCKOJDN.COAIAEOOELG(dbVc.CPGFOBNKKBF, () =>
+		{
+			//0xD593C4
+			for(int i = 0; i < MHKCPJDNJKI.Count; i++)
+			{
+				MHKCPJDNJKI[i].EOJNOOHFOKA(GLHFDCKOJDN);
+			}
+			CFHALLLJAOP();
+		}, () =>
+		{
+			//0xD59504
+			AOCANKOMKFG();
+		});
+	}
 
 	//[IteratorStateMachineAttribute] // RVA: 0x7414BC Offset: 0x7414BC VA: 0x7414BC
 	//// RVA: 0xD59220 Offset: 0xD59220 VA: 0xD59220
-	//public static IEnumerator OMBGMOFMCLD_UpdateViewShopList(List<AODFBGCCBPE> NNDGIAEFMOG, DJBHIFLHJLK BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG) { }
+	public static IEnumerator OMBGMOFMCLD_Coroutine_UpdateViewShopList(List<AODFBGCCBPE> NNDGIAEFMOG, DJBHIFLHJLK BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG)
+	{
+		//0xD59554
+		for(int i = 0; i < NNDGIAEFMOG.Count; i++)
+		{
+			if(NNDGIAEFMOG[i].INDDJNMPONH == NJMPLEENNPO.AOMIBCNBBOD_1)
+			{
+				bool BEKAMBBOLBO = false;
+				bool CNAIDEAFAAM = false;
+				NNDGIAEFMOG[i].GKHAMEAMKCN(() =>
+				{
+					//0xD59538
+					BEKAMBBOLBO = true;
+				}, () =>
+				{
+					//0xD59544
+					BEKAMBBOLBO = true;
+					CNAIDEAFAAM = true;
+				});
+				while (!BEKAMBBOLBO)
+					yield return null;
+				if(CNAIDEAFAAM)
+				{
+					AOCANKOMKFG();
+					yield break;
+				}
+			}
+		}
+		BHFHGFKBOHH();
+	}
 }

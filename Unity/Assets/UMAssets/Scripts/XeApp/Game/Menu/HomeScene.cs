@@ -707,7 +707,8 @@ namespace XeApp.Game.Menu
 				}
 				MenuScene.Instance.InputDisable();
 				m_isDisplayingInfo = true;
-				MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.GCCBFIFJHII_Information, () =>
+				// UMO Disable login information screen
+				/*MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.GCCBFIFJHII_Information, () =>
 				{
 					//0x13C84B4
 					m_isDisplayingInfo = false;
@@ -722,7 +723,13 @@ namespace XeApp.Game.Menu
 					m_isDisplayingInfo = false;
 					MenuScene.Instance.InputEnable();
 					OnNetErrorToTitle();
-				});
+				});*/
+				m_isDisplayingInfo = false;
+				MenuScene.Instance.InputEnable();
+				if (m_isHomeShowDiva && disableDivaTalk)
+				{
+					m_divaTalk.TimerRestart();
+				}
 			}
 		}
 
