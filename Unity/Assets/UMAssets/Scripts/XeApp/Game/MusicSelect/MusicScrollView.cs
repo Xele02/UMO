@@ -65,7 +65,16 @@ namespace XeApp.Game.MusicSelect
 		}
 
 		//// RVA: 0xC9F840 Offset: 0xC9F840 VA: 0xC9F840
-		//public bool IsEnableTouchId(PointerEventData eventData) { }
+		public bool IsEnableTouchId(PointerEventData eventData)
+		{
+			return
+#if UNITY_ANDROID
+				eventData.pointerId == 0
+#else
+				eventData.pointerId == -1 || eventData.pointerId == 0
+#endif
+			;
+		}
 
 		//// RVA: 0xC9F87C Offset: 0xC9F87C VA: 0xC9F87C
 		public void ScrollEnable(bool isEnable)
@@ -196,11 +205,7 @@ namespace XeApp.Game.MusicSelect
 		// RVA: 0xCA00C0 Offset: 0xCA00C0 VA: 0xCA00C0 Slot: 17
 		public void OnPointerDown(PointerEventData eventData)
 		{
-#if UNITY_ANDROID
-			if(eventData.pointerId == 0)
-#else
-			if(eventData.pointerId == -1)
-#endif
+			if(IsEnableTouchId(eventData))
 			{
 				_isTouch = true;
 				_velocity = new Vector2(0, 0);
@@ -210,11 +215,7 @@ namespace XeApp.Game.MusicSelect
 		// RVA: 0xCA0134 Offset: 0xCA0134 VA: 0xCA0134 Slot: 18
 		public void OnPointerUp(PointerEventData eventData)
 		{
-#if UNITY_ANDROID
-			if(eventData.pointerId == 0)
-#else
-			if(eventData.pointerId == -1)
-#endif
+			if(IsEnableTouchId(eventData))
 			{
 				_isTouch = false;
 			}
@@ -226,11 +227,7 @@ namespace XeApp.Game.MusicSelect
 			if(_isScrollCancel) // ?? _isScrollCancel + 3U & 3) != 3)
 				return;
 
-#if UNITY_ANDROID
-			if(eventData.pointerId == 0)
-#else
-			if(eventData.pointerId == -1)
-#endif
+			if(IsEnableTouchId(eventData))
 			{
 				if(OnScrollStartEvent != null)
 					OnScrollStartEvent.Invoke();
@@ -247,11 +244,7 @@ namespace XeApp.Game.MusicSelect
 			if(_isScrollCancel) // ?? _isScrollCancel + 3U & 3) != 3)
 				return;
 
-#if UNITY_ANDROID
-			if(eventData.pointerId == 0)
-#else
-			if(eventData.pointerId == -1)
-#endif
+			if(IsEnableTouchId(eventData))
 			{
 				_scrollValue += eventData.delta;
 				_velocity = Vector2.Lerp(_velocity, (_prevPosition - eventData.position) / (1.0f/60), 1.0f/60);
@@ -271,11 +264,7 @@ namespace XeApp.Game.MusicSelect
 			if(_isScrollCancel) // ?? _isScrollCancel + 3U & 3) != 3)
 				return;
 
-#if UNITY_ANDROID
-			if(eventData.pointerId == 0)
-#else
-			if(eventData.pointerId == -1)
-#endif
+			if(IsEnableTouchId(eventData))
 			{
 				_isSingleScroll = false;
 				_isDraging = false;

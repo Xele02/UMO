@@ -116,11 +116,7 @@ namespace XeApp.Game.Common
 			IsEventProcessed = false;
 			if(!IsInputOff && !IsInputLock && !Disable && !Hidden)
 			{
-#if UNITY_ANDROID
-				if(eventData.pointerId == 0)
-#else
-				if(eventData.pointerId == -1)
-#endif
+				if(IsEnableTouchId(eventData))
 				{
 					m_selectionState = ButtonBase.SelectState.Decide;
 					IsEventProcessed = true;
@@ -137,11 +133,7 @@ namespace XeApp.Game.Common
 			IsEventProcessed = false;
 			if (!IsInputOff && !IsInputLock)
 			{
-#if UNITY_ANDROID
-				if(eventData.pointerId == 0)
-#else
-				if (eventData.pointerId == -1)
-#endif
+				if(IsEnableTouchId(eventData))
 				{
 					IsEventProcessed = true;
 					m_isPointerInside = true;
@@ -162,11 +154,7 @@ namespace XeApp.Game.Common
 			IsEventProcessed = false;
 			if (!IsInputOff && !IsInputLock)
 			{
-#if UNITY_ANDROID
-				if(eventData.pointerId == 0)
-#else
-				if (eventData.pointerId == -1)
-#endif
+				if(IsEnableTouchId(eventData))
 				{
 					IsEventProcessed = true;
 					m_isPointerInside = false;
@@ -184,11 +172,7 @@ namespace XeApp.Game.Common
 			{
 				if (eventData.button == PointerEventData.InputButton.Left)
 				{
-#if UNITY_ANDROID
-					if(eventData.pointerId == 0)
-#else
-					if (eventData.pointerId == -1)
-#endif
+					if(IsEnableTouchId(eventData))
 					{
 						IsEventProcessed = true;
 						m_isPointerDown = true;
@@ -211,11 +195,7 @@ namespace XeApp.Game.Common
 			{
 				if (eventData.button == PointerEventData.InputButton.Left)
 				{
-#if UNITY_ANDROID
-					if(eventData.pointerId == 0)
-#else
-					if (eventData.pointerId == -1)
-#endif
+					if(IsEnableTouchId(eventData))
 					{
 						m_isPointerDown = false;
 						m_selectionState = IsHighlighted(eventData) ? SelectState.Highlighted : SelectState.Normal; ;
@@ -258,13 +238,13 @@ namespace XeApp.Game.Common
 		// // RVA: 0xE64118 Offset: 0xE64118 VA: 0xE64118
 		public bool IsEnableTouchId(PointerEventData eventData)
 		{
+			return
 #if UNITY_ANDROID
-			if(eventData.pointerId == 0)
+				eventData.pointerId == 0
 #else
-			if (eventData.pointerId == -1)
+				eventData.pointerId == -1 || eventData.pointerId == 0
 #endif
-				return true;
-			return false;
+			;
 		}
 
 		// // RVA: 0xE649CC Offset: 0xE649CC VA: 0xE649CC

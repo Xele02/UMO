@@ -325,9 +325,9 @@ namespace XeApp.Game.Menu
 #if UNITY_ANDROID
 				eventData.pointerId == 0
 #else
-				eventData.pointerId == -1
+				eventData.pointerId == -1 || eventData.pointerId == 0
 #endif
-				;
+			;
 		}
 
 		//// RVA: 0x14CA338 Offset: 0x14CA338 VA: 0x14CA338

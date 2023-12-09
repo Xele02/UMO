@@ -285,13 +285,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_inputEnable && !isAutoScroll)
 			{
-				if(
-#if UNITY_ANDROID
-				eventData.pointerId == 0
-#else
-				eventData.pointerId == -1
-#endif
-				)
+				if(CheckTouchId(eventData))
 				{
 					m_dragEventData = eventData;
 					m_isDragScroll = true;
@@ -307,13 +301,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_isDragScroll)
 			{
-				if(
-#if UNITY_ANDROID
-				eventData.pointerId == 0
-#else
-				eventData.pointerId == -1
-#endif
-				)
+				if(CheckTouchId(eventData))
 				{
 					EndScroll();
 					EndFlick(eventData.position);
@@ -330,13 +318,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_isDragScroll)
 			{
-				if(
-#if UNITY_ANDROID
-				eventData.pointerId == 0
-#else
-				eventData.pointerId == -1
-#endif
-				)
+				if(CheckTouchId(eventData))
 				{
 					m_dragEventData = eventData;
 					UpdateScroll(eventData.delta.x);
@@ -347,7 +329,16 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x16FA444 Offset: 0x16FA444 VA: 0x16FA444
-		//private bool CheckTouchId(PointerEventData eventData) { }
+		private bool CheckTouchId(PointerEventData eventData)
+		{
+			return
+#if UNITY_ANDROID
+				eventData.pointerId == 0
+#else
+				eventData.pointerId == -1 || eventData.pointerId == 0
+#endif
+			;
+		}
 
 		// RVA: 0x16FA648 Offset: 0x16FA648 VA: 0x16FA648 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
