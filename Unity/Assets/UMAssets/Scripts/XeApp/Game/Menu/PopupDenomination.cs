@@ -76,8 +76,22 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xF7B8D4 Offset: 0xF7B8D4 VA: 0xF7B8D4
 		public static IEnumerator Co_ClosePopup(Action onClosed)
 		{
-			TodoLogger.LogError(0, "Co_ClosePopup");
-			yield return null;
+			//0xF7E8D0
+			if(sm_Control != null)
+			{
+				bool is_close = false;
+				sm_Control.Close(() =>
+				{
+					//0xF7E3F0
+					sm_Control = null;
+					is_close = true;
+				}, null);
+				yield return new WaitWhile(() =>
+				{
+					//0xF7E48C
+					return !is_close;
+				});
+			}
 			if(onClosed != null)
 				onClosed();
 		}

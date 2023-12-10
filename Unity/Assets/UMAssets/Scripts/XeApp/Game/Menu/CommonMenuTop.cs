@@ -240,7 +240,25 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1B4E59C Offset: 0x1B4E59C VA: 0x1B4E59C
 		private void OnClickUtaRateInfo()
 		{
-			TodoLogger.LogNotImplemented("CommonMenuTop.OnClickUtaRateInfo");
+			if(m_miniWindow == null)
+			{
+				m_miniWindow = Instantiate(m_miniWindowPrefab);
+#if UNITY_EDITOR || UNITY_STANDALONE
+				BundleShaderInfo.Instance.FixMaterialShader(m_miniWindow.gameObject);
+#endif
+				m_miniWindow.transform.SetParent(transform.parent, false);
+				m_miniWindow.transform.SetAsLastSibling();
+				m_miniWindow.SetFont(m_layout.fontInfo.font);
+			}
+			IFBCGCCJBHI d = new IFBCGCCJBHI();
+			d.KHEKNNFCAOI();
+			string s = string.Format("{0}", "----");
+			if(d.JHKAEJBNGKE_RateLeftToNext > 0)
+			{
+				s = string.Format("{0}", d.JHKAEJBNGKE_RateLeftToNext);
+			}
+			m_miniWindow.Setup(0, s, d.JHKAEJBNGKE_RateLeftToNext);
+			m_miniWindow.Enter();
 		}
 
 		// // RVA: 0x1B4E8E4 Offset: 0x1B4E8E4 VA: 0x1B4E8E4
@@ -248,7 +266,7 @@ namespace XeApp.Game.Menu
 		{
 			if (m_miniWindow != null)
 			{
-				TodoLogger.LogError(0, "LeaveMiniWindow");
+				m_miniWindow.Leave();
 			}
 		}
 
@@ -257,7 +275,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_miniWindow != null)
 			{
-				TodoLogger.LogError(0, "IsPlayingMiniWindow");
+				return m_miniWindow.IsPlaying();
 			}
 			return false;
 		}

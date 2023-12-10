@@ -84,7 +84,24 @@ namespace XeApp.Game.Common
 		// public void SetIcon(IKDICBBFBMI cont, long currentTime) { }
 
 		// // RVA: 0xEAC4E8 Offset: 0xEAC4E8 VA: 0xEAC4E8
-		// public void SetTicket(long currentTime) { }
+		public void SetTicket(long currentTime)
+		{
+			if(m_controller == null)
+				return;
+			if(m_controller is KNKDBNFMAKF_EventSp)
+			{
+				TodoLogger.LogError(0, "Event SP");
+			}
+			else if(m_controller is CHHECNJBMLA_EventBoxGacha)
+			{
+				TodoLogger.LogError(0, "Event Box Gacha");
+			}
+			else
+			{
+				return;
+			}
+			TodoLogger.LogError(0, "Event");
+		}
 
 		// // RVA: 0xEACBD0 Offset: 0xEACBD0 VA: 0xEACBD0
 		public void SetActive(bool active)

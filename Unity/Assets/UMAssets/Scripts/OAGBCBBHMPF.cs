@@ -43,7 +43,7 @@ public class OAGBCBBHMPF
         HHGEPDNBGAI = 37,
         PMHLIBHEBBB = 38,
         FEIOPIIEIKB = 39,
-        EAGAKGNNINL = 40,
+        EAGAKGNNINL_40 = 40,
         EEOLHMGNJGO = 41,
         LKOICKMAADB = 42,
         GHJEAPLGKHJ = 43,

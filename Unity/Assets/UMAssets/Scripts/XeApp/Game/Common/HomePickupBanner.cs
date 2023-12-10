@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections;
 using System.Text;
 using XeSys;
+using mcrs;
 
 namespace XeApp.Game.Common
 {
@@ -134,12 +135,40 @@ namespace XeApp.Game.Common
 			m_scrollView.OnDragBegin = () =>
 			{
 				//0xEAF00C
-				TodoLogger.LogError(0, "OnDragBegin ");
+				if(m_vertical)
+					return;
+				m_repeatTimer.Init(0);
 			};
 			m_scrollView.OnDragEnd = (Vector2 vec) =>
 			{
 				//0xEAF048
-				TodoLogger.LogError(0, "OnDragEnd ");
+				if(!m_vertical)
+				{
+					m_scrollView.velocity = Vector2.zero;
+					StartAutoScroll();
+					int pos;
+					if(Mathf.Abs(vec.x) < m_swipeMinDistance || m_swipeMaxDistance <= Mathf.Abs(vec.x))
+					{
+						pos = m_scrollView.PosIndex;
+					}
+					else
+					{
+						pos = m_scrollView.PosIndex + (vec.x < 0 ? 1 : -1);
+					}
+					m_scrollView.SetPosition(pos, m_changeTime);
+					if(pos < m_list.Count)
+					{
+						if(pos < 0)
+						{
+							pos = m_list.Count - 1;
+						}
+					}
+					else
+					{
+						pos = pos % m_list.Count;
+					}
+					SetPageNum(pos + 1);
+				}
 			};
 			m_repeatTimer.OnRepeatTiming = () =>
 			{
@@ -157,7 +186,7 @@ namespace XeApp.Game.Common
 				{
 					idx = idx % m_list.Count;
 				}
-				SetPageNum(idx);
+				SetPageNum(idx + 1);
 			};
 		}
 
@@ -253,7 +282,14 @@ namespace XeApp.Game.Common
 		// // RVA: 0xEADE44 Offset: 0xEADE44 VA: 0xEADE44
 		private void OnClickToggle()
 		{
-			TodoLogger.LogNotImplemented("OnClickToggle");
+			if(m_scrollView.IsPlaying)
+				return;
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(!m_toggleOpenClose)
+				ToggleAnimation(false, m_openAnimTime);
+			else
+				ToggleAnimation(true, m_closeAnimTime);
+			m_toggleOpenClose = !m_toggleOpenClose;
 		}
 
 		// // RVA: 0xEAD840 Offset: 0xEAD840 VA: 0xEAD840
@@ -395,7 +431,7 @@ namespace XeApp.Game.Common
 			bool b = false;
 			for(int i = 0; i < list.Count; i++)
 			{
-				if(list[i].NNHHNFFLCFO >= JBCAHMMCOKK.ALEKHDPDOEA.KCOEIKAMLBD)
+				if(list[i].NNHHNFFLCFO >= JBCAHMMCOKK.ALEKHDPDOEA.KCOEIKAMLBD_27)
 				{
 					str.SetFormat("ct/ba/hm/{0:D3}.xab", list[i].EAHPLCJMPHD);
 				}
@@ -444,7 +480,7 @@ namespace XeApp.Game.Common
 				//0xEAF490
 				return x.EAHPLCJMPHD == pictId;
 			});
-			if(v.NNHHNFFLCFO <= JBCAHMMCOKK.ALEKHDPDOEA.KCOEIKAMLBD)
+			if(v.NNHHNFFLCFO <= JBCAHMMCOKK.ALEKHDPDOEA.KCOEIKAMLBD_27)
 			{
 				if(((1 << (int)v.NNHHNFFLCFO) & 0x4030e10U) != 0)
 				{

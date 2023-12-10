@@ -674,6 +674,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10E00A8 Offset: 0x10E00A8 VA: 0x10E00A8
 		private IEnumerator ShowFinalConfirmPopupCoroutine()
 		{
+			TodoLogger.LogError(1, "TODO");
 			TodoLogger.LogNotImplemented("ShowFinalConfirmPopupCoroutine");
 			yield return null;
 		}

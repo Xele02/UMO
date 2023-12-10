@@ -128,6 +128,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEF7F1C Offset: 0xEF7F1C VA: 0xEF7F1C
 		private void OnClickUseItem(int item_type)
 		{
+			TodoLogger.LogError(1, "TODO");
 			TodoLogger.LogNotImplemented("OnClickUseItem");
 		}
 

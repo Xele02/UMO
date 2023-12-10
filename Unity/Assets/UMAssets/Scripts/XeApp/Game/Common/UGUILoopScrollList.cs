@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using XeSys.Gfx;
 using System;
 using UnityEngine.EventSystems;
+using UnityScript.TypeSystem;
 
 namespace XeApp.Game.Common
 {
@@ -58,11 +59,11 @@ namespace XeApp.Game.Common
 		//public MovementType ScrollMovementType { get; set; } 0x1CD3DB0 0x1CD3DB8
 		public int PosIndex { get { 
 			if(vertical)
-				return Mathf.RoundToInt(AnchoredPosition / (m_contentSize.x + m_spacing.x));
+				return Mathf.RoundToInt(AnchoredPosition / ItemSize);
 			else
-				return Mathf.RoundToInt(-AnchoredPosition / (m_contentSize.y + m_spacing.y));
+				return Mathf.RoundToInt(-AnchoredPosition / ItemSize);
 		 } } //0x1CD3DC0
-		//public bool IsPlaying { get; } 0x1CD3F58
+		public bool IsPlaying { get { return m_animEndTime > 0; } } //0x1CD3F58
 		private float AnchoredPosition { get {
 			if(vertical)
 				return -content.anchoredPosition.y;
@@ -167,25 +168,34 @@ namespace XeApp.Game.Common
 		// RVA: 0x1CD55AC Offset: 0x1CD55AC VA: 0x1CD55AC Slot: 42
 		public override void OnScroll(PointerEventData eventData)
 		{
-			TodoLogger.LogError(0, "OnScroll");
+			base.OnScroll(eventData);
 		}
 
 		// RVA: 0x1CD55B4 Offset: 0x1CD55B4 VA: 0x1CD55B4 Slot: 44
 		public override void OnBeginDrag(PointerEventData eventData)
 		{
-			TodoLogger.LogError(0, "OnBeginDrag");
+			base.OnBeginDrag(eventData);
+			if(OnDragBegin != null)
+				OnDragBegin();
+			m_dragTotalDelta = Vector2.zero;
+			IsDrag = true;
 		}
 
 		// RVA: 0x1CD567C Offset: 0x1CD567C VA: 0x1CD567C Slot: 46
 		public override void OnDrag(PointerEventData eventData)
 		{
-			TodoLogger.LogError(0, "OnDrag");
+			base.OnDrag(eventData);
+			m_dragTotalDelta += eventData.delta;
 		}
 
 		// RVA: 0x1CD5768 Offset: 0x1CD5768 VA: 0x1CD5768 Slot: 45
 		public override void OnEndDrag(PointerEventData eventData)
 		{
-			TodoLogger.LogError(0, "OnEndDrag");
+			base.OnEndDrag(eventData);
+			if(OnDragEnd != null)
+				OnDragEnd(m_dragTotalDelta);
+			m_dragTotalDelta = Vector2.zero;
+			IsDrag = false;
 		}
 
 		//// RVA: 0x1CD5844 Offset: 0x1CD5844 VA: 0x1CD5844
@@ -323,7 +333,7 @@ namespace XeApp.Game.Common
 						v.x = f;
 				}
 			}
-			if(animTime < 0)
+			if(animTime <= 0)
 			{
 				UpdatePosition(v.x, v.y);
 				VisibleRegionUpdate();
@@ -360,8 +370,8 @@ namespace XeApp.Game.Common
 					if(m_scrollObjects.Count > (i * nCount + k))
 					{
 						m_scrollObjects[(i * nCount + k)].AnchoredPosition = new Vector2(
-								vertical ? (m_contentSize.x + m_spacing.x) * k : (m_contentSize.x + m_spacing.x) * i,
-								vertical ? i : k
+								(m_contentSize.x + m_spacing.x) * (vertical ? k : i),
+								-(m_contentSize.y + m_spacing.y) * (vertical ?  i : k)
 							);
 						m_scrollObjects[(i * nCount + k)].RectTransform.SetSiblingIndex(i * nCount + j);
 					}
@@ -464,13 +474,7 @@ namespace XeApp.Game.Common
 							{
 								item.AnchoredPosition = new Vector2(item.AnchoredPosition.x, -f);
 							}
-							int a = m_itemCount;
-							if (m_itemCount > 0)
-								a = m_listTopPosition;
-							int c = m_itemCount - 1;
-							if (m_itemCount >= 1)
-								c = a;
-							if(m_itemCount > 0 && c >= 0) // not sure
+							if(m_itemCount > 0 && m_listTopPosition >= 0)
 							{
 								ShowItem(item);
 								if (OnUpdateItem != null)

@@ -129,7 +129,7 @@ namespace XeApp.Game.Menu
 				OnClickScene();
 			});
 			m_image_uv = new Rect(0.1171875f, 0, 0.765625f, 1);
-			m_next_image.uvRect = m_image_uv;
+			m_episode_image.uvRect = m_image_uv;
 			m_mask_obj1.uvRect = m_image_uv;
 			RectTransform rt = GetComponentInChildren<Mask>(true).transform.GetChild(0) as RectTransform;
 			rt.pivot = new Vector2(0, 1);

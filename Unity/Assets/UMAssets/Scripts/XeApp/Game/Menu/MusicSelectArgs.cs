@@ -50,7 +50,11 @@ namespace XeApp.Game.Menu
 		}
 
         // // RVA: 0x1054D88 Offset: 0x1054D88 VA: 0x1054D88
-        // public void SetSelection(OHCAABOMEOF.KGOGMKMBCPP eventCategory) { }
+        public void SetSelection(OHCAABOMEOF.KGOGMKMBCPP_EventType eventCategory)
+        {
+            selection = new SelectionData();
+            selection.eventCategory = eventCategory;
+        }
 
         // // RVA: 0x1054E40 Offset: 0x1054E40 VA: 0x1054E40
         public void SetSelectionMiniGame(int miniGameId)

@@ -34,7 +34,11 @@ namespace XeApp.Game.Menu
 			}
 
 			//// RVA: 0xB6C878 Offset: 0xB6C878 VA: 0xB6C878
-			//public void Init(int typeAndSeriesId, bool updateGachaProduct = True) { }
+			public void Init(int typeAndSeriesId, bool updateGachaProduct = true)
+			{
+				UpdateGachaProduct = updateGachaProduct;
+				TypeAndSeriesId = typeAndSeriesId;
+			}
 		}
 
 		private class AppearLot

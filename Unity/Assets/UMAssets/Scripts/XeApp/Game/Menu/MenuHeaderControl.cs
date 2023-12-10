@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using mcrs;
 using UnityEngine;
 using UnityEngine.Events;
 using XeApp.Core;
@@ -35,7 +36,7 @@ namespace XeApp.Game.Menu
 		private CommonMenuStack m_menuStack; // 0x18
 		private List<LayoutUGUIHitOnly> m_buttons = new List<LayoutUGUIHitOnly>(); // 0x1C
 		private int[] m_buttonBlockCount; // 0x20
-		// private UnityEvent m_onChargeMoneyEvent = new UnityEvent(); // 0x24
+		private UnityEvent m_onChargeMoneyEvent = new UnityEvent(); // 0x24
 		private List<TransitionUniqueId> m_disableTitleBarUniqueScene = new List<TransitionUniqueId>(); // 0x28
 		private List<TransitionList.Type> m_disableTitleBarScene = new List<TransitionList.Type>() {
 			TransitionList.Type.TITLE,
@@ -519,18 +520,83 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB2A28C Offset: 0xB2A28C VA: 0xB2A28C
 		private void OnClickRecovEne()
 		{
-			TodoLogger.LogError(0, "OnClickRecovEne");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(!MenuScene.CheckDatelineAndAssetUpdate())
+			{
+				if(CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCBENCMNOGO_GainStamina <= CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC())
+				{
+					PopupWindowManager.OpenStaminaMaxWindow(null);
+				}
+				else
+				{
+					MenuScene.Instance.InputDisable();
+					PopupWindowManager.OpenStaminaWindow(MenuScene.Instance.DenomControl, () =>
+					{
+						//0xB2B2DC
+						MenuScene.Instance.InputEnable();
+					}, () =>
+					{
+						//0xB2B370
+						MenuScene.Instance.InputEnable();
+					}, () =>
+					{
+						//0xB2B404
+						MenuScene.Instance.GotoTitle();
+					}, (TransitionList.Type gotoSceneType) =>
+					{
+						//0xB2B4CC
+						if(gotoSceneType == TransitionList.Type.TITLE)
+						{
+							MenuScene.Instance.GotoTitle();
+						}
+						else if(gotoSceneType == TransitionList.Type.LOGIN_BONUS)
+						{
+							MenuScene.Instance.GotoLoginBonus();
+						}
+						MenuScene.Instance.InputEnable();
+					});
+				}
+			}
 		}
 
 		// // RVA: 0xB2ABA4 Offset: 0xB2ABA4 VA: 0xB2ABA4
 		private void OnClickChargeMoney()
 		{
-			TodoLogger.LogError(0, "OnClickChargeMoney");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(!MenuScene.CheckDatelineAndAssetUpdate())
+			{
+				if(MenuScene.Instance.DenomControl != null)
+				{
+					MenuScene.Instance.InputDisable();
+					MenuScene.Instance.DenomControl.StartPurchaseSequence(() =>
+					{
+						//0xB2B0D8
+						MenuScene.Instance.InputEnable();
+						m_onChargeMoneyEvent.Invoke();
+					}, () =>
+					{
+						//0xB2B644
+						MenuScene.Instance.InputEnable();
+					}, () =>
+					{
+						//0xB2B6D8
+						MenuScene.Instance.GotoTitle();
+					}, (TransitionList.Type type) =>
+					{
+						//0xB2B77C
+						if(type == TransitionList.Type.TITLE)
+						{
+							MenuScene.Instance.GotoTitle();
+						}
+						else if(type == TransitionList.Type.LOGIN_BONUS)
+						{
+							MenuScene.Instance.GotoLoginBonus();
+						}
+						MenuScene.Instance.InputEnable();
+					}, null);
+				}
+			}
 		}
-		
-		// [CompilerGeneratedAttribute] // RVA: 0x6C7734 Offset: 0x6C7734 VA: 0x6C7734
-		// // RVA: 0xB2B0D8 Offset: 0xB2B0D8 VA: 0xB2B0D8
-		// private void <OnClickChargeMoney>b__37_0() { }
 
 	}
 }
