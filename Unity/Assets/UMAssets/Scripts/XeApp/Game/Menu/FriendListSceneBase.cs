@@ -515,7 +515,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xBABFC8 Offset: 0xBABFC8 VA: 0xBABFC8
-		//protected bool IsConnecting() { }
+		protected bool IsConnecting()
+		{
+			return m_connectCount > 0;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E00E4 Offset: 0x6E00E4 VA: 0x6E00E4
 		//// RVA: 0xBAC178 Offset: 0xBAC178 VA: 0xBAC178
@@ -622,7 +625,26 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xBAB1D4 Offset: 0xBAB1D4 VA: 0xBAB1D4
-		//protected void ShowFriendReleasePopup(FriendListInfo info) { }
+		protected void ShowFriendReleasePopup(FriendListInfo info)
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			TextPopupSetting s = PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_friend_release_title"), SizeType.Small, string.Format(bk.GetMessageByLabel("popup_friend_release_msg"), info.name), new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.FriendRemove, Type = PopupButton.ButtonType.Positive }
+			}, false, true);
+			MenuScene.Instance.RaycastDisable();
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0xED38B4
+				if (type == PopupButton.ButtonType.Positive)
+				{
+					DoFriendRelease(info);
+				}
+				MenuScene.Instance.RaycastEnable();
+			}, null, null, null);
+		}
 
 		//// RVA: 0xBAD8F4 Offset: 0xBAD8F4 VA: 0xBAD8F4
 		protected void ShowFriendRequestPopup(FriendListInfo info)
@@ -631,16 +653,70 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xBADCF0 Offset: 0xBADCF0 VA: 0xBADCF0
-		//protected void ShowFriendRequestCancelPopup(FriendListInfo info) { }
+		protected void ShowFriendRequestCancelPopup(FriendListInfo info)
+		{
+			TodoLogger.LogNotImplemented("ShowFriendRequestCancelPopup");
+		}
 
 		//// RVA: 0xBA3100 Offset: 0xBA3100 VA: 0xBA3100
-		//protected void ShowFriendAcceptPopup(FriendListInfo info) { }
+		protected void ShowFriendAcceptPopup(FriendListInfo info)
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			TextPopupSetting s = PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_friend_accept_title"), SizeType.Small, string.Format(bk.GetMessageByLabel("popup_friend_accept_msg"), info.name), new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Accept, Type = PopupButton.ButtonType.Positive }
+			}, false, true);
+			MenuScene.Instance.RaycastDisable();
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0xED3B48
+				if (type == PopupButton.ButtonType.Positive)
+				{
+					DoFriendAccept(info);
+				}
+				MenuScene.Instance.RaycastEnable();
+			}, null, null, null);
+		}
 
 		//// RVA: 0xBA34FC Offset: 0xBA34FC VA: 0xBA34FC
-		//protected void ShowFriendRejectPopup(FriendListInfo info) { }
+		protected void ShowFriendRejectPopup(FriendListInfo info)
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			TextPopupSetting s = PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_friend_reject_title"), SizeType.Small, string.Format(bk.GetMessageByLabel("popup_friend_reject_msg"), info.name), new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Reject, Type = PopupButton.ButtonType.Positive }
+			}, false, true);
+			MenuScene.Instance.RaycastDisable();
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0xED3C24
+				if(type == PopupButton.ButtonType.Positive)
+				{
+					DoFriendReject(info);
+				}
+				MenuScene.Instance.RaycastEnable();
+			}, null, null, null);
+		}
 
 		//// RVA: 0xBAE0EC Offset: 0xBAE0EC VA: 0xBAE0EC
-		//private void ShowNetRequestSuccessPopup(string title, string message) { }
+		private void ShowNetRequestSuccessPopup(string title, string message)
+		{
+			TextPopupSetting s = PopupWindowManager.CrateTextContent(title, SizeType.Small, message, new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			}, false, true);
+			MenuScene.Instance.RaycastDisable();
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0xBAF88C
+				OnNetRequestSuccess();
+				MenuScene.Instance.RaycastEnable();
+			}, null, null, null);
+		}
 
 		//[CompilerGeneratedAttribute] // RVA: 0x6E02C4 Offset: 0x6E02C4 VA: 0x6E02C4
 		//// RVA: 0xBA3B40 Offset: 0xBA3B40 VA: 0xBA3B40
@@ -657,31 +733,69 @@ namespace XeApp.Game.Menu
 		//protected void DoFriendRequestCancel(FriendListInfo info) { }
 
 		//// RVA: 0xBAE864 Offset: 0xBAE864 VA: 0xBAE864
-		//protected void DoFriendAccept(FriendListInfo info) { }
+		protected void DoFriendAccept(FriendListInfo info)
+		{
+			MessageBank msgBank = MessageManager.Instance.GetBank("menu");
+			string messageFormat = msgBank.GetMessageByLabel("popup_friend_accepted_msg");
+			lastNetType = NetType.FriendAccept;
+			MenuScene.Instance.RaycastDisable();
+			friendManager.ADOIKCJALGM(info.playerId, info.name, info.playerRank, () =>
+			{
+				//0xED3F80
+				ShowNetRequestSuccessPopup(msgBank.GetMessageByLabel("popup_friend_accepted_title"), string.Format(messageFormat, info.name));
+				MenuScene.Instance.RaycastEnable();
+			}, OnNetRequestError, OnNetRequestErrorToTitle);
+		}
 
 		//// RVA: 0xBAEB0C Offset: 0xBAEB0C VA: 0xBAEB0C
-		//protected void DoFriendReject(FriendListInfo info) { }
+		protected void DoFriendReject(FriendListInfo info)
+		{
+			MessageBank msgBank = MessageManager.Instance.GetBank("menu");
+			string messageFormat = msgBank.GetMessageByLabel("popup_friend_rejected_msg");
+			lastNetType = NetType.FriendReject;
+			MenuScene.Instance.RaycastDisable();
+			friendManager.CCBALBLFNDN(info.playerId, info.name, info.playerRank, () =>
+			{
+				//0xED3538
+				ShowNetRequestSuccessPopup(msgBank.GetMessageByLabel("popup_friend_rejected_title"), string.Format(messageFormat, info.name));
+				MenuScene.Instance.RaycastEnable();
+			}, OnNetRequestError, OnNetRequestErrorToTitle);
+		}
 
 		//// RVA: 0xBAEDB4 Offset: 0xBAEDB4 VA: 0xBAEDB4
-		//protected void DoFriendRelease(FriendListInfo info) { }
+		protected void DoFriendRelease(FriendListInfo info)
+		{
+			TodoLogger.LogError(0, "DoFriendRelease");
+		}
 
 		//// RVA: 0xBAF05C Offset: 0xBAF05C VA: 0xBAF05C Slot: 44
-		//protected virtual void OnNetRequestSuccess() { }
+		protected virtual void OnNetRequestSuccess()
+		{
+			return;
+		}
 
 		//// RVA: 0xBAF060 Offset: 0xBAF060 VA: 0xBAF060 Slot: 45
-		//protected virtual void OnNetRequestError(CACGCMBKHDI error) { }
+		protected virtual void OnNetRequestError(CACGCMBKHDI_Request error)
+		{
+			ConnectEnd();
+			MenuScene.Instance.RaycastEnable();
+		}
 
 		//// RVA: 0xBAF110 Offset: 0xBAF110 VA: 0xBAF110 Slot: 46
-		//protected virtual void OnNetRequestErrorToTitle(CACGCMBKHDI error) { }
+		protected virtual void OnNetRequestErrorToTitle(CACGCMBKHDI_Request error)
+		{
+			ConnectEnd();
+			MenuScene.Instance.RaycastEnable();
+			NetErrorToTitle();
+		}
 
 		//// RVA: 0xBA4090 Offset: 0xBA4090 VA: 0xBA4090
 		protected void NetErrorToTitle()
 		{
-			TodoLogger.LogError(0, "NetErrorToTitle");
+			if (MenuScene.Instance.IsTransition())
+				GotoTitle();
+			else
+				MenuScene.Instance.GotoTitle();
 		}
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x6E0354 Offset: 0x6E0354 VA: 0x6E0354
-		//// RVA: 0xBAF88C Offset: 0xBAF88C VA: 0xBAF88C
-		//private void <ShowNetRequestSuccessPopup>b__89_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
 	}
 }

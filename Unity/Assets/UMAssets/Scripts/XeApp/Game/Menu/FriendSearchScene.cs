@@ -318,8 +318,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEDA70C Offset: 0xEDA70C VA: 0xEDA70C Slot: 44
-		//protected override void OnNetRequestSuccess() { }
-		
+		protected override void OnNetRequestSuccess()
+		{
+			//lastNetType
+		}
+
 		//[CompilerGeneratedAttribute] // RVA: 0x6E0744 Offset: 0x6E0744 VA: 0x6E0744
 		//// RVA: 0xEDAA74 Offset: 0xEDAA74 VA: 0xEDAA74
 		//private void <OnFailedSearchFriend>b__29_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }

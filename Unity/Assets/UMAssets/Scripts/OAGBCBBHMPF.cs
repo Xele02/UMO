@@ -18,7 +18,7 @@ public class OAGBCBBHMPF
         IEEKNBEEMMM_12 = 12,
         EAEHILOBHDA = 13,
         AOPBBHMIEPB = 14,
-        MNFOJMBPHEN = 15,
+        MNFOJMBPHEN_15 = 15,
         JOLBIMMKGIP = 16,
         HGOGFPOCKFA = 17,
         BBDKHAMANCB = 18,

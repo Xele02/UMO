@@ -184,7 +184,7 @@ namespace XeApp.Game.Menu
 			friendManager.HHDGOABFEPC_GetFriendLimit(null, OnNetRequestErrorToTitle, false);
 			yield return this.StartCoroutineWatched(Co_WaitForConnection(null));
 			m_stringBuilder.SetFormat("/{0}", friendManager.JPEIBHJIHPI_FriendLimit);
-			m_menuUi.SetupFriendList(friendManager.AIIOKIHEPDP.ToString(), m_stringBuilder.ToString(), true, friendManager.NMOJPDCBGMK_NumFriendNoFav.ToString());
+			m_menuUi.SetupFriendList(friendManager.AIIOKIHEPDP_FriendCount.ToString(), m_stringBuilder.ToString(), true, friendManager.NMOJPDCBGMK_NumFriendNoFav.ToString());
 			friendManager.MEJHFCBFPED_GetSentRequests(null, OnNetRequestErrorToTitle, false);
 			yield return this.StartCoroutineWatched(Co_WaitForConnection(null));
 			if(friendManager.EMBDPGBMCBF_HasMoreSentRequest)

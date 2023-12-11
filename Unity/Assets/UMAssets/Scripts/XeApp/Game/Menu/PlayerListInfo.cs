@@ -7,7 +7,7 @@ namespace XeApp.Game.Menu
 		public EAJCBFGKKFA_FriendInfo friend; // 0x10
 		public string name = ""; // 0x14
 
-		//public bool IsNew { get; } 0xDE6CB8
+		public bool IsNew { get { return IsAvailable && isNew; } } //0xDE6CB8
 		public int ListIndex { get; set; } // 0x8
 		public bool IsInvalid { get; set; } // 0xC
 		public bool IsAvailable { get; set; } // 0xD

@@ -206,6 +206,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xBA5E50 Offset: 0xBA5E50 VA: 0xBA5E50 Slot: 44
-		//protected override void OnNetRequestSuccess() { }
+		protected override void OnNetRequestSuccess()
+		{
+			if (((int)lastNetType & 0xfffffffe) != 1)
+				return;
+			SearchFriend();
+		}
 	}
 }

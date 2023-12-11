@@ -285,7 +285,11 @@ class JpStringLiterals
 	public const string StringLiteral_11219 = "ノーマルミッション"; // 0x03bb3a04
 	public const string StringLiteral_11220 = "イベントミッション"; // 0x03bb3a08
 	public const string StringLiteral_11221 = "ビンゴミッション"; // 0x03BB3A0C
+	public const string StringLiteral_11223 = "申請"; //0x03bb3a14
+	public const string StringLiteral_11224 = "承認"; //0x03bb3a18
 	public const string StringLiteral_11225 = "削除"; //0x03bb3a1c
+	public const string StringLiteral_11226 = "申請拒否"; //0x03bb3a20
+	public const string StringLiteral_11227 = "申請取り消し"; //0x03bb3a24
 	public const string StringLiteral_11248 = "既に回答済み"; //0x03bb3a78
 	public const string StringLiteral_12894 = "イベント達成pt"; // 0x03bb5430
 	public const string StringLiteral_12895 = "ログボ"; // 0x03bb5434
