@@ -347,7 +347,22 @@ public class JHHBAFKMBDL
 	// public void PHDFLIFNEKC(IMCBBOAFION HIDFAIBOHCC) { }
 
 	// // RVA: 0xB246EC Offset: 0xB246EC VA: 0xB246EC
-	// public void OODNEKINHLO(IMCBBOAFION HIDFAIBOHCC) { }
+	public void OODNEKINHLO(IMCBBOAFION HIDFAIBOHCC)
+	{
+		MessageBank bk = MessageManager.Instance.GetBank(LGNLCJIKOEO);
+		TextPopupSetting s = new TextPopupSetting();
+		s.TitleText = JpStringLiterals.StringLiteral_11972;
+		s.Buttons = new ButtonInfo[1]
+		{
+			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+		};
+		s.Text = JpStringLiterals.StringLiteral_11973;
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		{
+			//0x134840C
+			HIDFAIBOHCC();
+		}, null, null, null);
+	}
 
 	// // RVA: 0xB249DC Offset: 0xB249DC VA: 0xB249DC
 	// public void PEIONAKEPCN(DJBHIFLHJLK HIDFAIBOHCC) { }

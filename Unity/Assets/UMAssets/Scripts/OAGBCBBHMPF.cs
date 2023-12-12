@@ -21,7 +21,7 @@ public class OAGBCBBHMPF
         MNFOJMBPHEN_15 = 15,
         JOLBIMMKGIP = 16,
         HGOGFPOCKFA = 17,
-        BBDKHAMANCB = 18,
+        BBDKHAMANCB_18 = 18,
         AMBIOHGPBNH = 19,
         EEPIDKPPLJI_ValkyrieChange = 20,
         PNMJDKOLGEG = 21,

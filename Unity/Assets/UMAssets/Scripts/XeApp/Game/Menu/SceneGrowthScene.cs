@@ -674,9 +674,34 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10E00A8 Offset: 0x10E00A8 VA: 0x10E00A8
 		private IEnumerator ShowFinalConfirmPopupCoroutine()
 		{
-			TodoLogger.LogError(1, "TODO");
-			TodoLogger.LogNotImplemented("ShowFinalConfirmPopupCoroutine");
-			yield return null;
+			//0x10F461C
+			MenuScene.Instance.InputDisable();
+			if (!m_popupGrowthConfirmSetting.ISLoaded())
+			{
+				yield return this.StartCoroutineWatched(m_popupGrowthConfirmSetting.LoadAssetBundlePrefab(transform));
+			}
+			PopupGrowthConfirm p = m_popupGrowthConfirmSetting.Content.GetComponent<PopupGrowthConfirm>();
+			yield return this.StartCoroutineWatched(p.LoadAppendLayoutCoroutine(m_addStatuList, m_episodeData.DMHDNKILKGI_MaxPoint <= m_episodeData.ABLHIAEDJAI_CurrentPoint));
+			MenuScene.Instance.InputEnable();
+			m_popupGrowthConfirmSetting.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Release, Type = PopupButton.ButtonType.Positive }
+			};
+			m_popupGrowthConfirmSetting.WindowSize = PopupGrowthConfirm.GetValidStatusValue(m_addStatuList) > 6 ? SizeType.Middle : SizeType.Small;
+			PopupWindowManager.Show(m_popupGrowthConfirmSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x10E6224
+				if(type == PopupButton.ButtonType.Positive)
+				{
+					ApplyConsume();
+					MenuScene.Instance.InitAssitPlate();
+				}
+				else
+				{
+					Array.Clear(m_addStatuList, 0, m_addStatuList.Length);
+				}
+			}, null, null, null);
 		}
 
 		//// RVA: 0x10E0154 Offset: 0x10E0154 VA: 0x10E0154
@@ -1723,7 +1748,103 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x10E4610 Offset: 0x10E4610 VA: 0x10E4610
-		//private void ApplyConsume() { }
+		private void ApplyConsume()
+		{
+			if(m_viewGrowItemData.KMIFDLLCBEL() > 0)
+			{
+				List<int> l = new List<int>();
+				for (int i = 0; i < 22; i++)
+					l.Add(0);
+				MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA[m_viewSceneData.BCCHOBPJJKE_SceneId - 1];
+				if(!m_viewSceneData.KEJMFDLFIEO())
+				{
+					JHHBAFKMBDL.HHCJCDFCLOB.GKMAHMLNMEK(() =>
+					{
+						//0x10E6714
+						MenuScene.Instance.GotoTitle();
+					}, "");
+					return;
+				}
+				if(m_boardType == SceneGrowthBoard.BoardType.Main)
+				{
+					bool b = false;
+					for(int i = 0; i < m_unLockTargetPanelIndex.Count; i++)
+					{
+						m_viewSceneData.EFLDHMMGALP(m_unLockTargetPanelIndex[i], GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG_2);
+						AFIFDLOAKGI af = m_viewSceneData.LDGCIDPEMPG(m_unLockTargetPanelIndex[i]);
+						if(af != null)
+						{
+							l[af.INDDJNMPONH_StatType]++;
+						}
+						b |= scene.IEPGLOIICLJ(m_unLockTargetPanelIndex[i]);
+					}
+					if(b)
+					{
+						//LAB_010e4f38
+						JHHBAFKMBDL.HHCJCDFCLOB.OODNEKINHLO(() =>
+						{
+							//0x10E6714
+							MenuScene.Instance.GotoTitle();
+						});
+						return;
+					}
+				}
+				else
+				{
+					bool b = false;
+					for(int i = 0; i < m_unLockTargetPanelIndex.Count; i++)
+					{
+						m_viewSceneData.GIAPABMCNOC(m_unLockTargetPanelIndex[i], GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG_2);
+						AFIFDLOAKGI af = m_viewSceneData.CDDHNNLPOLG(m_unLockTargetPanelIndex[i], m_viewSceneData.ILABPFOMEAG_Va, m_viewSceneData.JGJFIJOCPAG_SceneAttr);
+						if(af != null)
+						{
+							if(af.INDDJNMPONH_StatType == 20)
+							{
+								if(m_infinityPanelUnlockInfo.index > -1 && m_infinityPanelUnlockInfo.count > 0)
+								{
+									m_viewSceneData.OEIFKIPOHME(m_infinityPanelUnlockInfo.index, m_infinityPanelUnlockInfo.count);
+									AFIFDLOAKGI af2 = m_viewSceneData.CDDHNNLPOLG(m_infinityPanelUnlockInfo.index, m_viewSceneData.ILABPFOMEAG_Va, m_viewSceneData.JGJFIJOCPAG_SceneAttr);
+									if(af2 != null)
+									{
+										l[af2.INDDJNMPONH_StatType]++;
+									}
+								}
+							}
+							else
+							{
+								l[af.INDDJNMPONH_StatType]++;
+								b |= scene.PJLNENPKEDD(m_unLockTargetPanelIndex[i]) ? false : true;
+							}
+						}
+					}
+					if(b)
+					{
+						JHHBAFKMBDL.HHCJCDFCLOB.OODNEKINHLO(() =>
+						{
+							//0x10E6678
+							MenuScene.Instance.GotoTitle();
+						});
+						return;
+					}
+				}
+				m_prevStatus.Copy(m_viewSceneData.CMCKNKKCNDK_Status);
+				m_prevLuck = m_viewSceneData.MJBODMOLOBC_Luck;
+				m_prevCenterSkillLevel = m_viewSceneData.DDEDANKHHPN_SkillLevel;
+				m_prevActiveSkillLevel = m_viewSceneData.PNHJPCPFNFI_ActiveSkillLevel;
+				m_prevLiveSkillLevel = m_viewSceneData.AADFFCIDJCB_LiveSkillLevel;
+				m_viewSceneData.HCDGELDHFHB();
+				GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(false).HCDGELDHFHB();
+				GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(true).HCDGELDHFHB();
+				m_viewSceneData.OHJIKMCAOLE();
+				m_viewSceneData.EJLGAMEIMEG(m_viewGrowItemData, l);
+				this.StartCoroutineWatched(PlayUnlockPanelAnimationCoroutine(null));
+				m_mainBoard.UpdateBoardLayout();
+				if (m_subBoard != null)
+					m_subBoard.UpdateBoardLayout();
+				m_itemUnlockButtonLayout.UpdateLayout(m_currentBoard);
+				GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA_IsBingoValid(null, -1);
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x725A24 Offset: 0x725A24 VA: 0x725A24
 		//// RVA: 0x10E5408 Offset: 0x10E5408 VA: 0x10E5408
@@ -1769,10 +1890,6 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10E61F4 Offset: 0x10E61F4 VA: 0x10E61F4
 		//private void <ShowConfirmPopupCoroutine>b__94_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
 
-		//[CompilerGeneratedAttribute] // RVA: 0x725AAC Offset: 0x725AAC VA: 0x725AAC
-		//// RVA: 0x10E6224 Offset: 0x10E6224 VA: 0x10E6224
-		//private void <ShowFinalConfirmPopupCoroutine>b__95_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
-		
 		//[CompilerGeneratedAttribute] // RVA: 0x725B1C Offset: 0x725B1C VA: 0x725B1C
 		//// RVA: 0x10E6514 Offset: 0x10E6514 VA: 0x10E6514
 		//private void <LimitOverMainCoroutine>b__119_2() { }

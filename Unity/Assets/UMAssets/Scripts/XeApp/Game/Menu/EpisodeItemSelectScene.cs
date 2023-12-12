@@ -1,7 +1,10 @@
+using mcrs;
 using System;
 using System.Collections;
 using UnityEngine;
 using XeApp.Core;
+using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -128,19 +131,65 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEF7F1C Offset: 0xEF7F1C VA: 0xEF7F1C
 		private void OnClickUseItem(int item_type)
 		{
-			TodoLogger.LogError(1, "TODO");
-			TodoLogger.LogNotImplemented("OnClickUseItem");
+			MenuScene.Instance.InputDisable();
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			this.StartCoroutineWatched(WaitOpenUseItemWindow(item_type));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DADF4 Offset: 0x6DADF4 VA: 0x6DADF4
 		//// RVA: 0xEF8028 Offset: 0xEF8028 VA: 0xEF8028
-		//private IEnumerator WaitOpenUseItemWindow(int item_type) { }
+		private IEnumerator WaitOpenUseItemWindow(int item_type)
+		{
+			//0xEF8D6C
+			yield return Co.R(m_item_use_window.CO_Init(m_data, item_type));
+			MenuScene.Instance.InputEnable();
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			m_release_window.TitleText = bk.GetMessageByLabel("popup_title_episode_02");
+			m_release_window.SetParent(transform);
+			m_release_window.data = m_data;
+			m_release_window.item_type = item_type;
+			m_release_window.WindowSize = SizeType.Large;
+			m_release_window.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.UsedItem, Type = PopupButton.ButtonType.Positive }
+			};
+			PopupWindowManager.Show(m_release_window, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0xEF8450
+				if (type != PopupButton.ButtonType.Positive)
+					return;
+				OnClickUseItemOK();
+			}, (IPopupContent content, PopupTabButton.ButtonLabel label) =>
+			{
+				//0xEF84D8
+				(content as PopupTabContents).ChangeContents((int)label);
+			}, null, null);
+		}
 
 		//// RVA: 0xEF80F0 Offset: 0xEF80F0 VA: 0xEF80F0
-		//private void OnClickUseItemOK() { }
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x6DAE7C Offset: 0x6DAE7C VA: 0x6DAE7C
-		//// RVA: 0xEF8450 Offset: 0xEF8450 VA: 0xEF8450
-		//private void <WaitOpenUseItemWindow>b__18_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
+		private void OnClickUseItemOK()
+		{
+			if(m_item_use_window.GetItemUseCount() > 0)
+			{
+				if(m_data.HADPDBAGEIB(m_item_use_window.GetItemUseType() + 1, m_item_use_window.GetItemUseCount()) > 0)
+				{
+					int point = m_item_use_window.GetAddEpisodePoint();
+					MenuScene.Instance.InputDisable();
+					m_data.PFMLAOPEAMJ(m_item_use_window.GetItemUseType() + 1, m_item_use_window.GetItemUseCount(), () =>
+					{
+						//0xEF8600
+						MenuScene.Instance.InputEnable();
+						m_data.AFGOBPPKFBF();
+						m_item_select.Init(m_data);
+						m_reward_get_window.Show(ref m_data, point, CIOECGOMILE.HHCJCDFCLOB.EBEGGFECPOE, (PopupButton.ButtonLabel label) =>
+						{
+							//0xEF88BC
+							m_item_select.Init(m_data);
+						}, false);
+					});
+				}
+			}
+		}
 	}
 }
