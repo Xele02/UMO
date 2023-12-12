@@ -76,13 +76,13 @@ public class CoroutineWatcher : SingletonMonoBehaviour<CoroutineWatcher>
         i.ownerEnumerator = e;
 		i.ownerCoroutine = c_;
 		i.Id = cntRun++;
-        //UnityEngine.Debug.LogError(""+i.Id+" Begin "+e);
+        TodoLogger.Log(998, ""+i.Id+" Begin "+e);
         coroutines.Add(i);
 		if(c_ != null)
 			yield return c_;
 		else
         	yield return e;
-        //UnityEngine.Debug.LogError(""+i.Id+" End "+e);
+        TodoLogger.Log(998, ""+i.Id+" End "+e);
         coroutines.Remove(i);
     }
 
@@ -215,14 +215,26 @@ public class CoroutineWatcher : SingletonMonoBehaviour<CoroutineWatcher>
 				cs.RemoveAt(i);
 			}
 		}
+		if(RuntimeSettings.CurrentSettings.EnableErrorLog)
+		{
+			if(lastUpdate == 0)
+				lastUpdate = Time.realtimeSinceStartup;
+			if(Time.realtimeSinceStartup - lastUpdate > 10)
+			{
+				DumpCoroutineInfo(false);
+				lastUpdate = Time.realtimeSinceStartup;
+			}
+		}
 	}
+	float lastUpdate = 0;
 
 #if UNITY_EDITOR
 	[MenuItem("UMO/Dump Coroutines Info")]
 #endif
-    static public void DumpCoroutineInfo()
+    static public void DumpCoroutineInfo(bool canUpdate = true)
     {
-		Instance.Update();
+		if(canUpdate)
+			Instance.Update();
         List<Info> cs = Instance.coroutines;
 		List<int> displayed = new List<int>();
 		for (int i = 0; i < cs.Count; i++)
