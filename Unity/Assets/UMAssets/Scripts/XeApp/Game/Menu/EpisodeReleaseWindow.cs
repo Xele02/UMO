@@ -97,7 +97,7 @@ namespace XeApp.Game.Menu
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
 			m_next_gauge = layout.FindViewById("sw_sel_ep_progress_02_anim") as AbsoluteLayout;
-			m_gauge_table = layout.FindViewById("swtbl_sel_ep_bar_sw_bar_after_anim") as AbsoluteLayout;
+			m_gauge_table = layout.FindViewByExId("swtbl_sel_ep_bar_sw_bar_after_anim") as AbsoluteLayout;
 			m_lock_gauge.under = layout.FindViewByExId("sw_bar_before_anim_sel_ep_bar_under") as AbsoluteLayout;
 			m_lock_gauge.up = layout.FindViewByExId("sw_bar_before_anim_sel_ep_bar_up") as AbsoluteLayout;
 			m_lock_gauge.on = layout.FindViewByExId("sw_bar_before_anim_sel_ep_bar_on") as AbsoluteLayout;
@@ -124,7 +124,7 @@ namespace XeApp.Game.Menu
 				str.Clear();
 				str.AppendFormat("swtbl_get_icon_{0:D2} (AbsoluteLayout)", i);
 				t2 = t1.Find(str.ToString());
-				image.get_icon = t2.Find("sel_ep_clear_icon (AbsoluteLayout)").GetComponent<RawImageEx>();
+				image.get_icon = t2.Find("sel_ep_clear_icon (AbsoluteLayout)").GetComponentInChildren<RawImageEx>();
 				str.Clear();
 				str.Clear();
 				str.AppendFormat("swtbl_item_lane_swtbl_scaling_frm_{0:D2}", i);
@@ -157,21 +157,25 @@ namespace XeApp.Game.Menu
 			m_plas.AddOnClickCallback(() =>
 			{
 				//0xEFCD7C
+				TodoLogger.LogError(1, "TODO");
 				TodoLogger.LogNotImplemented("m_plas");
 			});
 			m_minus.AddOnClickCallback(() =>
 			{
 				//0xEFCEBC
+				TodoLogger.LogError(1, "TODO");
 				TodoLogger.LogNotImplemented("m_minus");
 			});
 			m_plas_ten.AddOnClickCallback(() =>
 			{
 				//0xEFCFC4
+				TodoLogger.LogError(1, "TODO");
 				TodoLogger.LogNotImplemented("m_plas_ten");
 			});
 			m_minus_ten.AddOnClickCallback(() =>
 			{
 				//0xEFD160
+				TodoLogger.LogError(1, "TODO");
 				TodoLogger.LogNotImplemented("m_minus_ten");
 			});
 			mUpdater = UpdateLoad;

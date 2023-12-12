@@ -799,6 +799,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEE8CB4 Offset: 0xEE8CB4 VA: 0xEE8CB4
 		private void OnClickPurchaseButton()
 		{
+			TodoLogger.LogError(1, "TODO");
 			TodoLogger.LogNotImplemented("OnClickPurchaseButton");
 		}
 
@@ -821,6 +822,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEE9118 Offset: 0xEE9118 VA: 0xEE9118
 		private void OnClickTicketConfirmButton()
 		{
+			TodoLogger.LogError(1, "TODO");
 			TodoLogger.LogNotImplemented("OnClickTicketConfirmButton");
 		}
 

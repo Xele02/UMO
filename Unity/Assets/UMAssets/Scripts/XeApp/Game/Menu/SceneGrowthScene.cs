@@ -707,6 +707,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10E0154 Offset: 0x10E0154 VA: 0x10E0154
 		private void OpenPopupSubBoardReleaseConfirm()
 		{
+			TodoLogger.LogError(1, "TODO");
 			TodoLogger.LogNotImplemented("OpenPopupSubBoardReleaseConfirm");
 		}
 

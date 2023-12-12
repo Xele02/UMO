@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using XeSys.Gfx;
 using System;
 using UnityEngine.EventSystems;
-using UnityScript.TypeSystem;
 
 namespace XeApp.Game.Common
 {

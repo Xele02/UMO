@@ -205,6 +205,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator OnBuyMusicCoroutine(int musicId, MusicTextDatabase.TextInfo musicInfo)
 		{
 			//0x104CE08
+			TodoLogger.LogError(1, "TODO");
 			TodoLogger.LogNotImplemented("OnBuyMusicCoroutine");
 			yield return null;
 		}

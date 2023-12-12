@@ -57,6 +57,7 @@ namespace XeApp.Game.Title
 			{
 				m_Support.AddOnClickCallback(() => {
 					//0xE36198
+					TodoLogger.LogError(1, "TODO");
 					TodoLogger.LogNotImplemented("LayoutTitleButtons.Support");
 				});
 			}
