@@ -28,7 +28,7 @@ public class HDPDEAJGJEO_PaymentGetPurchasingStatus : CACGCMBKHDI_Request
 	// RVA: 0x1742CFC Offset: 0x1742CFC VA: 0x1742CFC Slot: 12
 	public override void DHLDNIEELHO()
 	{
-		TodoLogger.LogError(0, "HDPDEAJGJEO_PaymentGetPurchasingStatus.DHLDNIEELHO");
+		TodoLogger.LogError(1, "HDPDEAJGJEO_PaymentGetPurchasingStatus.DHLDNIEELHO");
 	}
 
 	// RVA: 0x1742DD8 Offset: 0x1742DD8 VA: 0x1742DD8 Slot: 13
