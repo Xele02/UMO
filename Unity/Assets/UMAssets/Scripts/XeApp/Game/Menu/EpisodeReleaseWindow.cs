@@ -8,6 +8,7 @@ using System.Text;
 using System.Linq;
 using System.Collections;
 using XeSys;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -157,26 +158,46 @@ namespace XeApp.Game.Menu
 			m_plas.AddOnClickCallback(() =>
 			{
 				//0xEFCD7C
-				TodoLogger.LogError(1, "TODO");
-				TodoLogger.LogNotImplemented("m_plas");
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				if (m_have_item <= m_item_use_num)
+					return;
+				if (m_use_item_max <= m_item_use_num)
+					return;
+				m_item_use_num++;
+				UpdateItemValue();
+				UpdateLine();
 			});
 			m_minus.AddOnClickCallback(() =>
 			{
 				//0xEFCEBC
-				TodoLogger.LogError(1, "TODO");
-				TodoLogger.LogNotImplemented("m_minus");
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				if (m_item_use_num <= m_use_item_min)
+					return;
+				m_item_use_num--;
+				UpdateItemValue();
+				UpdateLine();
 			});
 			m_plas_ten.AddOnClickCallback(() =>
 			{
 				//0xEFCFC4
-				TodoLogger.LogError(1, "TODO");
-				TodoLogger.LogNotImplemented("m_plas_ten");
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				m_item_use_num += 10;
+				if (m_have_item < m_item_use_num)
+					m_item_use_num = m_have_item;
+				if (m_use_item_max < m_item_use_num)
+					m_item_use_num = m_use_item_max;
+				UpdateItemValue();
+				UpdateLine();
 			});
 			m_minus_ten.AddOnClickCallback(() =>
 			{
 				//0xEFD160
-				TodoLogger.LogError(1, "TODO");
-				TodoLogger.LogNotImplemented("m_minus_ten");
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				m_item_use_num -= 10;
+				if (m_item_use_num < m_use_item_min)
+					m_item_use_num = m_use_item_min;
+				UpdateItemValue();
+				UpdateLine();
 			});
 			mUpdater = UpdateLoad;
 			return true;

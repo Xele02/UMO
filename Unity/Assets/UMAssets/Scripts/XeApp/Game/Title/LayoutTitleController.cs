@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 using XeSys;
+using XeApp.Game.Common;
 
 namespace XeApp.Game.Title
 {
@@ -273,7 +274,26 @@ namespace XeApp.Game.Title
 		// // RVA: 0xE37424 Offset: 0xE37424 VA: 0xE37424
 		public void PopupShowSupport(Action closeCallback)
 		{
-			TodoLogger.LogNotImplemented("PopupShowSupport");
+			MessageBank bk = MessageManager.Instance.GetBank("common");
+			PopupTitlePopupSupportSetting s = new PopupTitlePopupSupportSetting();
+			s.TitleText = bk.GetMessageByLabel("popup_support_title");
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			s.WindowSize = SizeType.Small;
+			IsSupportPopupOpen = true;
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0xE381F4
+				if (closeCallback != null)
+					closeCallback();
+			}, null, null, null, closeWaitCallBack: () =>
+			{
+				//0xE38208
+				IsSupportPopupOpen = false;
+				return true;
+			});
 		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6B3610 Offset: 0x6B3610 VA: 0x6B3610

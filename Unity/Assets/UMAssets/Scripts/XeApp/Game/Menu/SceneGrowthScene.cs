@@ -707,17 +707,174 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10E0154 Offset: 0x10E0154 VA: 0x10E0154
 		private void OpenPopupSubBoardReleaseConfirm()
 		{
-			TodoLogger.LogError(1, "TODO");
-			TodoLogger.LogNotImplemented("OpenPopupSubBoardReleaseConfirm");
+			this.StartCoroutineWatched(ShowSubBoardReleaseConfirmPopupCoroutine());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7251B4 Offset: 0x7251B4 VA: 0x7251B4
 		//// RVA: 0x10E0178 Offset: 0x10E0178 VA: 0x10E0178
-		//private IEnumerator ShowSubBoardReleaseConfirmPopupCoroutine() { }
+		private IEnumerator ShowSubBoardReleaseConfirmPopupCoroutine()
+		{
+			MessageBank bank; // 0x1C
+			EKLNMHFCAOI.FKGCBLHOOCL_Category itemType; // 0x20
+			int itemId; // 0x24
+
+			//0x10F67C8
+			MenuScene.Instance.InputDisable();
+			if(!m_popupItemUseConfirmSetting.ISLoaded())
+			{
+				yield return this.StartCoroutineWatched(m_popupItemUseConfirmSetting.LoadAssetBundlePrefab(transform));
+			}
+			MenuScene.Instance.InputEnable();
+			bank = MessageManager.Instance.GetBank("menu");
+			int secret_board_item_id = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("secret_board_item_id", 70027);
+			itemType = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(secret_board_item_id);
+			itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(secret_board_item_id);
+			m_popupItemUseConfirmSetting.TitleText = bank.GetMessageByLabel("secret_board_item_use_title");
+			m_popupItemUseConfirmSetting.WindowSize = SizeType.Middle;
+			m_popupItemUseConfirmSetting.TypeItemId = secret_board_item_id;
+			m_popupItemUseConfirmSetting.Cost = 1;
+			m_popupItemUseConfirmSetting.OwnCount = EKLNMHFCAOI.DLNFNHMPGLI_GetNumClamped(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, itemType, itemId, null);
+			m_popupItemUseConfirmSetting.Period = 0;
+			m_popupItemUseConfirmSetting.OverrideText = bank.GetMessageByLabel("secret_board_item_use_desc_2");
+			if (m_popupItemUseConfirmSetting.OwnCount < 1)
+			{
+				m_popupItemUseConfirmSetting.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+				};
+			}
+			else
+			{
+				m_popupItemUseConfirmSetting.Buttons = new ButtonInfo[2]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				};
+			}
+			bool isCancel = false;
+			bool isClose = false;
+			PopupWindowManager.Show(m_popupItemUseConfirmSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x10E7DCC
+				if (type == PopupButton.ButtonType.Negative)
+					isCancel = true;
+				else
+				{
+					if (MenuScene.CheckDatelineAndAssetUpdate())
+						return;
+				}
+				isClose = true;
+			}, null, null, null);
+			while(!isClose)
+				yield return null;
+			if(!isCancel)
+			{
+				if(m_viewSceneData.JKGFBFPIMGA_Rarity < 5)
+				{
+					TextPopupSetting s = PopupWindowManager.CrateTextContent("", SizeType.Small, string.Format(bank.GetMessageByLabel("secret_board_item_use_warning"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(itemType, itemId)), new ButtonInfo[2]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+					}, false, false);
+					isCancel = false;
+					isClose = false;
+					PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+					{
+						//0x10E7E7C
+						if (type == PopupButton.ButtonType.Negative)
+							isCancel = true;
+						else
+						{
+							if (MenuScene.CheckDatelineAndAssetUpdate())
+								return;
+						}
+						isClose = true;
+					}, null, null, null);
+					while (!isClose)
+						yield return null;
+				}
+				if (!isCancel)
+				{
+					this.StartCoroutineWatched(ApplySubBoardReleaseCoroutine());
+				}
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72522C Offset: 0x72522C VA: 0x72522C
 		//// RVA: 0x10E0224 Offset: 0x10E0224 VA: 0x10E0224
-		//private IEnumerator ApplySubBoardReleaseCoroutine() { }
+		private IEnumerator ApplySubBoardReleaseCoroutine()
+		{
+			bool isVisibleSubBoardRelease; // 0x18
+			bool isEnableSubBoardRelease; // 0x19
+
+			//0x10E8F10
+			MenuScene.Instance.InputDisable();
+			m_viewSceneData.JPIPENJGGDD_NumBoard++;
+			JKNGJFOBADP d = new JKNGJFOBADP();
+			d.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.MIDINHNHGNP_43, "");
+			d.CPIICACGNBH(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, m_viewSceneData.BCCHOBPJJKE_SceneId, 1, null, 0);
+			int typeItemId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("secret_board_item_id", 70027);
+			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(typeItemId);
+			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId);
+			int cnt = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, cat, id, null);
+			if(cnt > 0)
+			{
+				EKLNMHFCAOI.DPHGFMEPOCA_SetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, cat, id, cnt - 1,  null);
+			}
+			bool isWaitSave = true;
+			MenuScene.Save(() =>
+			{
+				//0x10E7F2C
+				ILCCJNDFFOB.HHCJCDFCLOB.NNAPCDMAAJM(m_viewSceneData.BCCHOBPJJKE_SceneId, m_viewSceneData.JPIPENJGGDD_NumBoard, m_viewSceneData.CIEOBFIIPLD_SceneLevel, m_viewSceneData.CIEOBFIIPLD_SceneLevel, new List<int>() { typeItemId }, new List<int>(), 0, new List<int>());
+				isWaitSave = false;
+			}, null);
+			while (isWaitSave)
+				yield return null;
+			SoundResource.AddCueSheet(SoundManager.Instance.sePlayerGacha.cueSheet);
+			m_isAddtiveSubBoard = m_viewSceneData.NFILJJGGKNG_IsAdditiveSubBoard();
+			m_isAddtiveFirstSubBoard = m_viewSceneData.IELENGDJPHF < 2;
+			m_viewSceneData.JGNBHPJCICN();
+			if(m_currentBoard != null)
+			{
+				m_itemUnlockButtonLayout.UpdateLayout(m_subBoard);
+				yield return Co.R(HideBoardCoroutine(m_currentBoard));
+				m_currentBoard = m_subBoard;
+			}
+			//LAB_010e95d4
+			if (m_isAddtiveSubBoard)
+			{
+				yield return Co.R(LoadAppendLayoutCoroutine(true));
+			}
+			//LAB_010e9600
+			isVisibleSubBoardRelease = m_viewSceneData.JHNNCPCBFDK();
+			isEnableSubBoardRelease = m_viewSceneData.JFDLBEOGGID();
+			m_statusWindow.UpdateContent(m_viewSceneData, m_transitionUniqueId);
+			m_statusWindow.UpdateEpisode(m_episodeData);
+			m_subBoard.SetBoardLayout(m_viewSceneData);
+			m_subBoard.ClearUnlockAction();
+			m_subBoard.OnUnlockAction += UnLockPanel;
+			m_subBoard.BoardChangeAction = ChangeMainBoard;
+			m_subBoard.SetEnableBoardChangeButton(true);
+			m_subBoard.SetEnableSubBoardReleaseButton(isVisibleSubBoardRelease, isEnableSubBoardRelease);
+			m_subBoard.SetLimitOverLayout(m_limitOverData);
+			m_subBoard.LimitOverAction = OpenPopupLimitOver;
+			m_subBoard.SubBoardReleaseAction = OpenPopupSubBoardReleaseConfirm;
+			m_subBoard.SetMultCount(m_viewSceneData.JPIPENJGGDD_NumBoard - 1);
+			(m_subBoard as SceneGrowthSubBoard).IsFirstInfinityPanelOpen = m_isFirstInfinityPanelOpen;
+			yield return Co.R(StartAddtivePanelDirectionCoroutine());
+			m_mainBoard.SetEnableBoardChangeButton(m_viewSceneData.JPIPENJGGDD_NumBoard > 1);
+			m_mainBoard.SetEnableSubBoardReleaseButton(isVisibleSubBoardRelease, isEnableSubBoardRelease);
+			SoundResource.RemoveCueSheet(SoundManager.Instance.sePlayerGacha.cueSheet);
+			isWaitSave = true;
+			MenuScene.Save(() =>
+			{
+				//0x10E81A4
+				isWaitSave = false;
+			}, null);
+			while (isWaitSave)
+				yield return null;
+			MenuScene.Instance.InputEnable();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7252A4 Offset: 0x7252A4 VA: 0x7252A4
 		//// RVA: 0x10E02D0 Offset: 0x10E02D0 VA: 0x10E02D0

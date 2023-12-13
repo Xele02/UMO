@@ -205,9 +205,36 @@ namespace XeApp.Game.Menu
 		private IEnumerator OnBuyMusicCoroutine(int musicId, MusicTextDatabase.TextInfo musicInfo)
 		{
 			//0x104CE08
-			TodoLogger.LogError(1, "TODO");
-			TodoLogger.LogNotImplemented("OnBuyMusicCoroutine");
-			yield return null;
+			TextPopupSetting s = PopupWindowManager.CrateTextContent("", SizeType.Small, MessageManager.Instance.GetMessage("menu", "popup_buy_music_msg_android"), new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			}, false, true);
+			s.IsCaption = false;
+			bool isClosed = false;
+			bool openUrl = false;
+			PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x104CDE8
+				if (type == PopupButton.ButtonType.Positive)
+					openUrl = true;
+			}, null, null, null, endCallBaack: () =>
+			{
+				//0x104CDF8
+				isClosed = true;
+			}, buttonSeEvent: OtherUtility.PopupWindowOpenUrlButtonSe);
+			while (!isClosed)
+				yield return null;
+			if(openUrl)
+			{
+				ILCCJNDFFOB.HHCJCDFCLOB.EAEHILOBHDA(musicId, musicInfo.musicName);
+				PopupWindowManager.SetInputState(false);
+				OtherUtility.OpenURL(musicInfo.buyURL, () =>
+				{
+					//0x104CC88
+					PopupWindowManager.SetInputState(true);
+				}, 0.5f);
+			}
 		}
 	}
 }

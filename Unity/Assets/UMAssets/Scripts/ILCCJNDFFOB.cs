@@ -926,7 +926,14 @@ public class ILCCJNDFFOB
 	}
 
 	// // RVA: 0x9025E0 Offset: 0x9025E0 VA: 0x9025E0
-	// public void EAEHILOBHDA(int DLAEJOBELBH_Id, string NEDBBJDAFBH) { }
+	public void EAEHILOBHDA(int DLAEJOBELBH_Id, string NEDBBJDAFBH)
+	{
+		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+		FLBFCCIEPNC_InitBaseJson(data, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
+		data["music_id"] = DLAEJOBELBH_Id;
+		data["music_name"] = NEDBBJDAFBH;
+		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.EAEHILOBHDA_13, data, false);
+	}
 
 	// // RVA: 0x9028C8 Offset: 0x9028C8 VA: 0x9028C8
 	public void AOPBBHMIEPB(int BMPFHHHCNJC)
