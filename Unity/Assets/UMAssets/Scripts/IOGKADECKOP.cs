@@ -250,7 +250,8 @@ public class IOGKADECKOP
 			{
 				yield return null;
 			}
-			if(IOSBridge.GetOSMajorVersion() < 14)
+			EOHDAOAJOHH.HHCJCDFCLOB.OJKIKODJJCD();
+			if (IOSBridge.GetOSMajorVersion() < 14)
 			{
 				yield break;
 			}

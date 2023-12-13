@@ -74,7 +74,7 @@ public class NMFABEKNBKJ
 			yield return null;
 		}
 		float FBFKMOECEIM = 0;
-		if (string.IsNullOrEmpty(FCMTokenReceiver.fcmToken) && FBFKMOECEIM < 3)
+		while (string.IsNullOrEmpty(FCMTokenReceiver.fcmToken) && FBFKMOECEIM < 3)
 		{
 			FBFKMOECEIM += Time.deltaTime;
 			yield return null;
@@ -278,7 +278,21 @@ public class NMFABEKNBKJ
 	private void MABFNKCMEDL_CreateNotification(string PPFNGGCBJKC, string OPFGFINHFCE, int PDJFAPLAPAG = 3)
 	{
 		#if UNITY_ANDROID
-		TodoLogger.Log(TodoLogger.AndroidNotification, "NMFABEKNBKJ.createNotificationChannel");
+		AndroidJavaClass c = new AndroidJavaClass("android.os.Build$VERSION");
+		int sdk = c.GetStatic<int>("SDK_INT");
+		c.Dispose();
+		if(sdk > 25)
+		{
+			AndroidJavaObject notif = new AndroidJavaObject("android.app.NotificationChannel", new object[3] { PPFNGGCBJKC, OPFGFINHFCE, PDJFAPLAPAG });
+			AndroidJavaClass cl = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+			AndroidJavaObject activity = cl.GetStatic<AndroidJavaObject>("currentActivity");
+			AndroidJavaObject systemService = activity.Call<AndroidJavaObject>("getSystemService", new object[1] { "notification" });
+			systemService.Call("createNotificationChannel", new object[1] { notif });
+			systemService.Dispose();
+			activity.Dispose();
+			cl.Dispose();
+			notif.Dispose();
+		}
 		#endif
 	}
 
