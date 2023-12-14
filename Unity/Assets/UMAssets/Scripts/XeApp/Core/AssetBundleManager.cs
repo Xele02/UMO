@@ -142,7 +142,13 @@ namespace XeApp.Core
 		}
 
 		// // RVA: 0xE12C98 Offset: 0xE12C98 VA: 0xE12C98
-		// public static ShaderAssetBundleLoadOperation LoadShaderAssetBundle(string assetBundleName) { }
+		public static ShaderAssetBundleLoadOperation LoadShaderAssetBundle(string assetBundleName)
+		{
+			LoadAssetBundle(assetBundleName, false);
+			ShaderAssetBundleLoadOperation operation = new ShaderAssetBundleLoadOperation(assetBundleName);
+			m_InProgressOperations.Add(operation);
+			return operation;
+		}
 
 		// // RVA: 0xE12D88 Offset: 0xE12D88 VA: 0xE12D88
 		public static AssetBundleLoadAllAssetOperationBase LoadAllAssetAsync(string assetBundleName)

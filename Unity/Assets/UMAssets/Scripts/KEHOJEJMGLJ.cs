@@ -44,7 +44,7 @@ public class KEHOJEJMGLJ
 
 	public enum ACGGHEIMPHC
 	{
-		ANFKBNLLJFN = 0,
+		ANFKBNLLJFN_0 = 0,
 		GGCIMLDFDOC = 1,
 		DEKNOKPEIHO_2 = 2,
 	}
@@ -1171,7 +1171,7 @@ public class KEHOJEJMGLJ
 		}
 		else
 		{
-			if(EMJFHKHLHDB != ACGGHEIMPHC.ANFKBNLLJFN/*0*/)
+			if(EMJFHKHLHDB != ACGGHEIMPHC.ANFKBNLLJFN_0/*0*/)
 				return;
 			if(OLDAGCNLJOI_Progress < KIEBFLDPBPA * 10)
 				return;

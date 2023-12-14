@@ -142,12 +142,19 @@ namespace XeApp.Game.Tutorial
 		}
 
 		// // RVA: 0xE3D7CC Offset: 0xE3D7CC VA: 0xE3D7CC
-		// public static void SetupFirstTutorialLog() { }
+		public static void SetupFirstTutorialLog()
+		{
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.KINJOEIAHFK_StartTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.OLDAGCNLJOI_Progress != 0)
+				return;
+			Log(OAGBCBBHMPF.OGBCFNIKAFI.FKPEAGGKNLC_0);
+		}
 
 		// // RVA: 0xE3D9B0 Offset: 0xE3D9B0 VA: 0xE3D9B0
 		public static void Log(OAGBCBBHMPF.OGBCFNIKAFI step)
 		{
-			TodoLogger.LogError(0, "Log");
+			ILCCJNDFFOB.HHCJCDFCLOB.ALABPEPENHH(step, GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.KINJOEIAHFK_StartTime);
 		}
 
 		// // RVA: 0xE3DB08 Offset: 0xE3DB08 VA: 0xE3DB08
