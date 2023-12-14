@@ -832,6 +832,16 @@ namespace ExternLib
 			return 0;
 		}	
 
+		public static int SakashoPaymentGetPurchasingStatus(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res[AFEHLCGHAEE_Strings.OIJLNFJALJP_aborted_transaction_exists] = false;
+			res[AFEHLCGHAEE_Strings.HIAIAJJPCDE_recoverable_products] = new EDOHBJAPLPF_JsonData();
+			res[AFEHLCGHAEE_Strings.HIAIAJJPCDE_recoverable_products].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+			SendMessage(callbackId, res);
+			return 0;
+		}
+
 		public static int SakashoPaymentPurchaseAndSave(int callbackId, string json)
 		{
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();

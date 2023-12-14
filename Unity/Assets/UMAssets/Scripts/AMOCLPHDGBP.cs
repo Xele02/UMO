@@ -426,7 +426,7 @@ public class AMOCLPHDGBP
 		//9
 		if(!CDDGCHNKLGJ_GetPurchasingStatus.NPNNPNAIONN_IsError)
 		{
-			if(!CDDGCHNKLGJ_GetPurchasingStatus.NFEAMMJIMPG.OIJLNFJALJP)
+			if(!CDDGCHNKLGJ_GetPurchasingStatus.NFEAMMJIMPG.OIJLNFJALJP_aborted_transaction_exists)
 			{
 				// go LAB_00d48a60
 				KLMFJJCNBIP();
@@ -526,7 +526,7 @@ public class AMOCLPHDGBP
 				NEFKBBNKNPP();
 				yield break;
 			}
-			PBCJCAOLLKI = !NFJGANOGEFP_GetPurchasingStatus.NFEAMMJIMPG.OIJLNFJALJP;
+			PBCJCAOLLKI = !NFJGANOGEFP_GetPurchasingStatus.NFEAMMJIMPG.OIJLNFJALJP_aborted_transaction_exists;
 			if(!PBCJCAOLLKI)
 			{
 				JNBNLCNBILD_PaymentRecover = OKDOIAEGADK_Server.IFFNCAFNEAG_AddRequest(new IBBMABBJFOA_PaymentRecover());
@@ -587,7 +587,7 @@ public class AMOCLPHDGBP
 			if(!DNHGKGHCJOE_GetPurchasingStatus.NPNNPNAIONN_IsError)
 			{
 				JMKKFJOMNEE = false;
-				JMKKFJOMNEE = !DNHGKGHCJOE_GetPurchasingStatus.NFEAMMJIMPG.OIJLNFJALJP;
+				JMKKFJOMNEE = !DNHGKGHCJOE_GetPurchasingStatus.NFEAMMJIMPG.OIJLNFJALJP_aborted_transaction_exists;
 				BKICHGFLJPF_RequestRemainingForCurrency = OKDOIAEGADK_Server.IFFNCAFNEAG_AddRequest(new DOLDMCAMEOD_RequestRemainingForCurrencyIds());
 				BKICHGFLJPF_RequestRemainingForCurrency.CGCFENMHJIM_Ids = new List<int>() { 1001, 3001, 3002, 3003, 3004, 4001 };
 				BKICHGFLJPF_RequestRemainingForCurrency.CGCFENMHJIM_Ids.AddRange(FIPNIIFHOBE_dbGacha.DHIACJMOEBH);
@@ -794,7 +794,7 @@ public class AMOCLPHDGBP
 		IGIFAMIOHMP = false;
 		if(!ALILLFMEOOJ.NPNNPNAIONN_IsError)
 		{
-			IGIFAMIOHMP = ALILLFMEOOJ.NFEAMMJIMPG.OIJLNFJALJP;
+			IGIFAMIOHMP = ALILLFMEOOJ.NFEAMMJIMPG.OIJLNFJALJP_aborted_transaction_exists;
 		}
 		BMLCHDIEAAO = OKDOIAEGADK.IFFNCAFNEAG_AddRequest(new PPJGPCKAMDC_PlatformPaymentRecover());
 		BMLCHDIEAAO.NBFDEFGFLPJ = DDGIEBFGGDF_CheckIsError;
@@ -835,10 +835,10 @@ public class AMOCLPHDGBP
 		{
 			if(IGIFAMIOHMP)
 			{
-				if (!JFBEAOHKCEB.NFEAMMJIMPG.OIJLNFJALJP)
+				if (!JFBEAOHKCEB.NFEAMMJIMPG.OIJLNFJALJP_aborted_transaction_exists)
 					KDBFKPNNKCB = true;
 			}
-			IGIFAMIOHMP = JFBEAOHKCEB.NFEAMMJIMPG.OIJLNFJALJP;
+			IGIFAMIOHMP = JFBEAOHKCEB.NFEAMMJIMPG.OIJLNFJALJP_aborted_transaction_exists;
 		}
 		string title;
 		string msg;
