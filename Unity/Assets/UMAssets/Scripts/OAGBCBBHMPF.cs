@@ -55,7 +55,7 @@ public class OAGBCBBHMPF
         CBKENDJIBDM = 49,
         LIPHGGFEJFJ = 50,
         LCDPEMIFNKJ = 51,
-        ICAHGJMMGLM = 52,
+        ICAHGJMMGLM_52 = 52,
         BGJDJBOCLEA = 53,
         ILLBGAFIBDE = 54,
         KIFPDEFNEPB = 55,

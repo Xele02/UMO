@@ -206,7 +206,7 @@ namespace XeApp.Game.Menu
 			IEnumerator loginBonus;
 
 			//0xEB6920
-			PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.JBAIEADLAGH/*0*/);
+			PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.JBAIEADLAGH_0/*0*/);
 			loginBonus = /*Co.R(*/CheckLoginBonus()/*)*/;
 			while (loginBonus.MoveNext())
 				yield return null;

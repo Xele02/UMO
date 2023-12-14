@@ -393,7 +393,7 @@ namespace XeApp.Game.Menu
 							TodoLogger.LogError(0, "init from event 6");
 						}
 					}
-					PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.JBAIEADLAGH/*0*/);
+					PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.JBAIEADLAGH_0/*0*/);
 					if (!Database.Instance.gameSetup.musicInfo.IsMvMode && !Database.Instance.gameSetup.musicInfo.IsLine6Mode)
 					{
 						;
