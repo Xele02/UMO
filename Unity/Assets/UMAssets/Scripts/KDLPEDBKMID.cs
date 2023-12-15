@@ -550,7 +550,27 @@ public class KDLPEDBKMID
 	// // RVA: 0xE7F898 Offset: 0xE7F898 VA: 0xE7F898
 	public void LIDGJKCOGFA(int ECOIBKOIPFP, int DNHLEPCFPFC, int MOBOJNCPCGD, List<string> NNDGIAEFMOG, int HADONLEBKLD)
 	{
-		!!!
+		StringBuilder str = new StringBuilder(124);
+		string[] sounds = JAAOIKIALFJ(ECOIBKOIPFP);
+		for(int i = 0; i < sounds.Length; i++)
+		{
+			if(sounds[i].IndexOf("mc", 0) == 0)
+			{
+				str.SetFormat(sounds[i], GameManager.Instance.GetWavDirectoryName(ECOIBKOIPFP, sounds[i], HADONLEBKLD, 1, 1, false));
+			}
+			else
+			{
+				str.SetFormat(sounds[i], ECOIBKOIPFP);
+			}
+			NNDGIAEFMOG.Add(str.ToString());
+		}
+		str.SetFormat(MFDEFIILPGM_StageFileFormat, DNHLEPCFPFC);
+		NNDGIAEFMOG.Add(str.ToString());
+		if(MOBOJNCPCGD > 0)
+		{
+			str.SetFormat(JOLFLDNELHO_VideoFileFormat, ECOIBKOIPFP, "", MOBOJNCPCGD);
+			NNDGIAEFMOG.Add(str.ToString());
+		}
 	}
 
 	// // RVA: 0xE7FD38 Offset: 0xE7FD38 VA: 0xE7FD38
@@ -595,7 +615,7 @@ public class KDLPEDBKMID
 	public void IDCJNAFJLAA(int ECOIBKOIPFP, int IMPALJEMHJJ, int DNHLEPCFPFC, List<int> KJAIAJIIOMA, List<int> DJPOMCAOKKD, List<int> KBGIODFCIGN, List<int> LMIFMHACFID, List<int> DDFCBCNPGHD, List<int> MEJEDAJBJKN, int MCFPOJBDIHP, List<int> HPDJEIFEADB, List<string> NNDGIAEFMOG, int HADONLEBKLD)
 	{
 		StringBuilder str = new StringBuilder(128);
-		LIDGJKCOGFA(HADONLEBKLD, ECOIBKOIPFP, DNHLEPCFPFC, MCFPOJBDIHP, NNDGIAEFMOG, HADONLEBKLD);
+		LIDGJKCOGFA(ECOIBKOIPFP, DNHLEPCFPFC, MCFPOJBDIHP, NNDGIAEFMOG, HADONLEBKLD);
 		if(IMPALJEMHJJ == 2)
 		{
 			str.SetFormat(NMFLPJMFPFN_MoveTrackFileFormat, GameManager.Instance.GetWavDirectoryName(ECOIBKOIPFP, NMFLPJMFPFN_MoveTrackFileFormat, HADONLEBKLD, 2, 1, true));

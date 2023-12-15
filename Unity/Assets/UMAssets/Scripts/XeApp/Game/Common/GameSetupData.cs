@@ -458,7 +458,7 @@ namespace XeApp.Game.Common
 			// // RVA: 0xE9DF78 Offset: 0xE9DF78 VA: 0xE9DF78
 			public void SetupInfoByTutorial(TutorialGameMode.Type tutorialMode)
 			{
-				TodoLogger.LogError(0, "SetupInfoByTutorial");
+				TodoLogger.LogError(1, "SetupInfoByTutorial");
 			}
 
 			// // RVA: 0xE9E308 Offset: 0xE9E308 VA: 0xE9E308

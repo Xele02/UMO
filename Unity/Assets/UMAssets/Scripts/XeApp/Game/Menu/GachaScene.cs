@@ -1021,7 +1021,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.GotoGachaDirection();
 			if(!GameManager.Instance.IsTutorial)
 				return;
-			TodoLogger.LogError(0, "Tuto");
+			TodoLogger.LogError(1, "Tuto 21");
 		}
 
 		//// RVA: 0xEE9C74 Offset: 0xEE9C74 VA: 0xEE9C74

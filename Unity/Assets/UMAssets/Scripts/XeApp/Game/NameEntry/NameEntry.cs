@@ -7,10 +7,13 @@ namespace XeApp.Game.NameEntry
 		// RVA: 0xCA4010 Offset: 0xCA4010 VA: 0xCA4010
 		public static void ShowPlayerNameEntry(string defaultName, UnityAction<string> onSuccess, UnityAction onFailed)
 		{
-			TodoLogger.LogError(0, "ShowPlayerNameEntry");
+			TodoLogger.LogError(1, "ShowPlayerNameEntry Tuto 31");
 		}
 
 		//// RVA: 0xCA44C0 Offset: 0xCA44C0 VA: 0xCA44C0
-		//private static void ShowPlayerNameConfirmPopup(string name, UnityAction<string> onSuccess, UnityAction onFailed) { }
+		private static void ShowPlayerNameConfirmPopup(string name, UnityAction<string> onSuccess, UnityAction onFailed)
+		{
+			TodoLogger.LogError(1, "ShowPlayerNameEntry Tuto 32");
+		}
 	}
 }

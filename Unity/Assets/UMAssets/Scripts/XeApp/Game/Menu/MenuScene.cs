@@ -332,9 +332,42 @@ namespace XeApp.Game.Menu
 				}
 				if(GameManager.Instance.IsTutorial)
 				{
-					TodoLogger.LogError(0, "init from Tutorial");
-					//299
-					return;
+					ILDKBCLAFPB.CDIPJNPICCO recovery = BasicTutorialManager.Instance.GetRecoveryPoint();
+					switch(recovery)
+					{
+						case ILDKBCLAFPB.CDIPJNPICCO.DOEHLCLBCNN_3:
+						case ILDKBCLAFPB.CDIPJNPICCO.FBFBGLONIME_4:
+							info.category = SceneGroupCategory.GACHA;
+							info.nextName = TransitionList.Type.GACHA_2;
+							info.uniqueId = TransitionUniqueId.GACHA2;
+							return;
+						case ILDKBCLAFPB.CDIPJNPICCO.DJPFJGKGOOF_5:
+							info.category = SceneGroupCategory.FORMATION;
+							info.nextName = TransitionList.Type.SETTING_MENU;
+							info.uniqueId = TransitionUniqueId.SETTINGMENU;
+							return;
+						case ILDKBCLAFPB.CDIPJNPICCO.BNLDNJNMFMC_6:
+							{
+								TeamSelectSceneListArgs arg = new TeamSelectSceneListArgs();
+								arg.defaultSelectScene = 0;
+								arg.divaSlotIndex = 0;
+								arg.divaData = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_MainDivas[0].DIPKCALNIII_Id - 1];
+								info.category = SceneGroupCategory.FORMATION;
+								info.nextName = TransitionList.Type.SCENE_SELECT;
+								info.parentName = TransitionList.Type.TEAM_EDIT;
+								info.uniqueId = TransitionUniqueId.SETTINGMENU_TEAMEDIT;
+								info.args = arg;
+								return;
+							}
+						case ILDKBCLAFPB.CDIPJNPICCO.KIDJFNEGAHO_7:
+							info.isDivaActive = true;
+							info.category = SceneGroupCategory.RESULT;
+							info.nextName = TransitionList.Type.RESULT;
+							info.uniqueId = TransitionUniqueId.RESULT;
+							return;
+						default:
+							return;
+					}
 				}
 				if(prevSceneName == "MiniGame")
 				{
@@ -354,7 +387,26 @@ namespace XeApp.Game.Menu
 
 			if(GameManager.Instance.IsTutorial)
 			{
-				TodoLogger.LogError(0, "init from Tutorial");
+				if(Database.Instance.gameResult.tutorialOneResult == GameResultData.TutorialOneResult.RETRY)
+				{
+					info.flags = MenuSceneCamebackInfo.Flags.RetryGame;
+					return;
+				}
+				if (Database.Instance.gameResult.tutorialOneResult == GameResultData.TutorialOneResult.GACHA)
+				{
+					BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.HOIECIKEIHB_18);
+					Database.Instance.advSetup.Setup(2);
+					Database.Instance.advResult.Setup("Menu", TransitionUniqueId.GACHA2);
+					info.flags = MenuSceneCamebackInfo.Flags.Adventure;
+					return;
+				}
+				BasicTutorialManager.Instance.SaveMusicResult();
+				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.BJBDDPHJHFA_27);
+				info.isDivaActive = true;
+				info.category = SceneGroupCategory.RESULT;
+				info.nextName = TransitionList.Type.RESULT;
+				info.uniqueId = TransitionUniqueId.RESULT;
+				return;
 				// L 415
 			}
 			else

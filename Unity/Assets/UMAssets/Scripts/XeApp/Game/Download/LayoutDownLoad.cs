@@ -115,7 +115,12 @@ namespace XeApp.Game.DownLoad
 		}
 
 		// // RVA: 0x11BC5A4 Offset: 0x11BC5A4 VA: 0x11BC5A4
-		// public void SetupDivaSelect() { }
+		public void SetupDivaSelect()
+		{
+			m_LayoutDownLoadMain.SetupDivaSelect(m_DivaIdList, m_SelectDiva);
+			m_LayoutDownLoadMain.OnClickIcon = OnClickIcon;
+			m_LayoutDownLoadMain.OnClickOk = OnClickOkCallback;
+		}
 
 		// // RVA: 0x11B9AEC Offset: 0x11B9AEC VA: 0x11B9AEC
 		public bool IsReady()
@@ -128,7 +133,10 @@ namespace XeApp.Game.DownLoad
 		}
 
 		// // RVA: 0x11BB28C Offset: 0x11BB28C VA: 0x11BB28C
-		// public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return false;
+		}
 
 		// // RVA: 0x11BF018 Offset: 0x11BF018 VA: 0x11BF018
 		public bool IsFinishDownLoadAnim()
@@ -238,7 +246,15 @@ namespace XeApp.Game.DownLoad
 		}
 
 		// // RVA: 0x11C3CA0 Offset: 0x11C3CA0 VA: 0x11C3CA0
-		// private void OnClickIcon(int index) { }
+		private void OnClickIcon(int index)
+		{
+			if (m_SelectDiva == index)
+				return;
+			if (m_IsChangeDiva)
+				return;
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			this.StartCoroutineWatched(Co_ChangeDiva(m_SelectDiva < index ? LayoutDownLoadDefine.DirectionType.Right : LayoutDownLoadDefine.DirectionType.Left, index));
+		}
 
 		// // RVA: 0x11C3E10 Offset: 0x11C3E10 VA: 0x11C3E10
 		private void OnClickArrow(LayoutDownLoadDefine.DirectionType dir)
@@ -298,7 +314,13 @@ namespace XeApp.Game.DownLoad
 		}
 
 		// // RVA: 0x11C3EA8 Offset: 0x11C3EA8 VA: 0x11C3EA8
-		// private void OnClickOkCallback() { }
+		private void OnClickOkCallback()
+		{
+			if (m_OnClickOk == null)
+				return;
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			m_OnClickOk();
+		}
 
 		// // RVA: 0x11C3F30 Offset: 0x11C3F30 VA: 0x11C3F30
 		private void OnClickVoice()

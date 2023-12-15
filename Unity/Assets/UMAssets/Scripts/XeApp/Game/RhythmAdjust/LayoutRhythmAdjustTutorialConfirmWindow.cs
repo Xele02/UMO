@@ -2,6 +2,7 @@ using XeSys.Gfx;
 using XeApp.Game.Common;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 
 namespace XeApp.Game.RhythmAdjust
 {
@@ -41,10 +42,16 @@ namespace XeApp.Game.RhythmAdjust
 		}
 
 		// // RVA: 0xF5B4AC Offset: 0xF5B4AC VA: 0xF5B4AC
-		// public void Open(UnityAction endCb) { }
+		public void Open(UnityAction endCb)
+		{
+			this.StartCoroutineWatched(Co_Open(endCb));
+		}
 
 		// // RVA: 0xF5B510 Offset: 0xF5B510 VA: 0xF5B510
-		// public void Close(UnityAction endCb) { }
+		public void Close(UnityAction endCb)
+		{
+			this.StartCoroutineWatched(Co_Close(endCb));
+		}
 
 		// // RVA: 0xF5B6E0 Offset: 0xF5B6E0 VA: 0xF5B6E0
 		public bool IsReady()
@@ -60,11 +67,30 @@ namespace XeApp.Game.RhythmAdjust
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B09C8 Offset: 0x6B09C8 VA: 0x6B09C8
 		// // RVA: 0xF5C668 Offset: 0xF5C668 VA: 0xF5C668
-		// private IEnumerator Co_Open(UnityAction endCb) { }
+		private IEnumerator Co_Open(UnityAction endCb)
+		{
+			//0xF5CBA0
+			ButtonDisable();
+			m_windowAnimeLayout.StartChildrenAnimGoStop("go_in", "st_in");
+			while (m_windowAnimeLayout.IsPlayingChildren())
+				yield return null;
+			if (endCb != null)
+				endCb();
+			ButtonEnable();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B0A40 Offset: 0x6B0A40 VA: 0x6B0A40
 		// // RVA: 0xF5C710 Offset: 0xF5C710 VA: 0xF5C710
-		// private IEnumerator Co_Close(UnityAction endCb) { }
+		private IEnumerator Co_Close(UnityAction endCb)
+		{
+			//0xF5C9B0
+			ButtonDisable();
+			m_windowAnimeLayout.StartChildrenAnimGoStop("go_out", "st_out");
+			while (m_windowAnimeLayout.IsPlayingChildren())
+				yield return null;
+			if (endCb != null)
+				endCb();
+		}
 
 		// // RVA: 0xF5C7F8 Offset: 0xF5C7F8 VA: 0xF5C7F8
 		private void OnPushButton(ButtonType type)
@@ -73,12 +99,27 @@ namespace XeApp.Game.RhythmAdjust
 		}
 
 		// // RVA: 0xF5C86C Offset: 0xF5C86C VA: 0xF5C86C
-		// private void ButtonDisable() { }
+		private void ButtonDisable()
+		{
+			for(int i = 0; i < m_buttons.Length; i++)
+			{
+				m_buttons[i].IsInputOff = true;
+			}
+		}
 
 		// // RVA: 0xF5C900 Offset: 0xF5C900 VA: 0xF5C900
-		// private void ButtonEnable() { }
+		private void ButtonEnable()
+		{
+			for(int i = 0; i < m_buttons.Length; i++)
+			{
+				m_buttons[i].IsInputOff = false;
+			}
+		}
 
 		// // RVA: 0xF5B5D4 Offset: 0xF5B5D4 VA: 0xF5B5D4
-		// public void PerformClickCancel() { }
+		public void PerformClickCancel()
+		{
+			m_buttons[0].PerformClick();
+		}
 	}
 }

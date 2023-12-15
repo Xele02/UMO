@@ -646,7 +646,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x9DD964 Offset: 0x9DD964 VA: 0x9DD964
 		private IEnumerator Co_ShowBeginnerTutorial()
 		{
-			TodoLogger.LogError(0, "Co_ShowBeginnerTutorial");
+			TodoLogger.LogError(1, "Co_ShowBeginnerTutorial Tuto 49");
 			yield return null;
 		}
 

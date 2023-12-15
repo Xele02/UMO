@@ -303,10 +303,72 @@ namespace XeApp.Game.Prologue
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6B0D88 Offset: 0x6B0D88 VA: 0x6B0D88
 		//// RVA: 0xCA6FE4 Offset: 0xCA6FE4 VA: 0xCA6FE4
-		//private IEnumerator Co_PlayPrologue() { }
+		private IEnumerator Co_PlayPrologue()
+		{
+			//0xCA9764
+			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.BABBMOJCMDM_1);
+			SoundManager.Instance.bgmPlayer.Play(BgmConstant.Name.Prologue1);
+			GameManager.Instance.fullscreenFader.Fade(1, 0);
+			m_control.Play();
+			while (m_control.IsPlaying() && !m_isSkip)
+				yield return null;
+			GameManager.Instance.fullscreenFader.Fade(1, Color.black);
+			yield return GameManager.Instance.WaitFadeYielder;
+			m_control.gameObject.SetActive(false);
+		}
 
 		//// RVA: 0xCA7090 Offset: 0xCA7090 VA: 0xCA7090
-		//private void SceneEnd() { }
+		private void SceneEnd()
+		{
+			int progress = GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.OLDAGCNLJOI_Progress;
+			if(progress > 0)
+			{
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.AHEFHIMGIBI_PlayerData.INBCGKAFHDO(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave);
+			}
+			switch(progress)
+			{
+				case 1:
+				case 2:
+					NextScene("RhythmAdjust");
+					break;
+				case 3:
+				case 4:
+				case 5:
+				case 6:
+					NextScene("Menu");
+					break;
+				case 7:
+					Database.Instance.gameSetup.musicInfo.SetupInfoByTutorial(TutorialGameMode.Type.TutorialTwo);
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.AHEFHIMGIBI_PlayerData.MFNPKIACGLM(JGEOBNENMAH.HHCJCDFCLOB, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, Database.Instance.gameSetup, Database.Instance.gameResult);
+					Database.Instance.advSetup.Setup(4);
+					NextScene("Menu");
+					break;
+				case 8:
+					Database.Instance.advSetup.Setup(4);
+					NextScene("Adv");
+					break;
+				case 9:
+					Database.Instance.advSetup.Setup(5);
+					NextScene("Adv");
+					break;
+				case 10:
+					NextScene("DivaSelect");
+					break;
+				default:
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(1).CPGFPEDMDEH_Have = 1;
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().LHPDDGIJKNB_Reset();
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_MainDivas[0].DIPKCALNIII_Id = 1;
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_MainDivas[0].BEEAIAAJOHD_CId = 1;
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_MainDivas[0].AFNIOJHODAG_ColId = 0;
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.AHEFHIMGIBI_PlayerData.MNGKOHKKAHI(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave);
+					Database.Instance.advSetup.Setup(1);
+					Database.Instance.advResult.Setup("RhythmAdjust");
+					NextScene("Adv");
+					break;
+			}
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.NELPFCBCJAO();
+			GameManager.Instance.CreateViewPlayerData();
+		}
 
 		//// RVA: 0xCA77B4 Offset: 0xCA77B4 VA: 0xCA77B4
 		private void BgmChange()
@@ -315,7 +377,29 @@ namespace XeApp.Game.Prologue
 		}
 
 		//// RVA: 0xCA7890 Offset: 0xCA7890 VA: 0xCA7890
-		//private void LoadResource() { }
+		private void LoadResource()
+		{
+			List<int> l = new List<int>();
+			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+			{
+				for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas.Count; i++)
+				{
+					BJPLLEBHAGO_DivaInfo dInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas[i];
+					if(dInfo.PPEGAKEIEGM_Enabled == 2)
+					{
+						l.Add(dInfo.AHHJLDLAPAN_DivaId);
+					}
+				}
+				if(GameManager.Instance.IsTutorial)
+				{
+					for(int i = 0; i < m_kickDivaId.Count; i++)
+					{
+						l.Remove(m_kickDivaId[i]);
+					}
+				}
+			}
+			DownLoadUIManager.Instance.LoadResouce(l);
+		}
 
 		//// RVA: 0xCA7BF4 Offset: 0xCA7BF4 VA: 0xCA7BF4
 		private bool InstallGuiEvent(int type, float per)
@@ -350,6 +434,60 @@ namespace XeApp.Game.Prologue
 		}
 
 		//// RVA: 0xCA7DF4 Offset: 0xCA7DF4 VA: 0xCA7DF4
-		//private List<string> ListupSceneAssetPath(int sceneId) { }
+		private List<string> ListupSceneAssetPath(int sceneId)
+		{
+			List<string> res = new List<string>();
+			MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[sceneId - 1];
+			res.Add(string.Format("ct/sc/me/01/{0:D6}_01.xab", sceneId));
+			res.Add(string.Format("ct/sc/me/01/{0:D6}_02.xab", sceneId));
+			res.Add(string.Format("ct/sc/me/02/{0:D6}_01.xab", sceneId));
+			if(scene.PBEPKDEEBBK_AS > 0)
+			{
+				CDNKOFIELMK skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[scene.PBEPKDEEBBK_AS - 1];
+				for(int i = 0; i < skill.EGLDFPILJLG_BuffEffectType.Length; i++)
+				{
+					if(skill.EGLDFPILJLG_BuffEffectType[i] != 0)
+					{
+						res.Add(string.Format("ct/gm/as/{0:D3}.xab", skill.EGLDFPILJLG_BuffEffectType[i]));
+					}
+				}
+			}
+			if (scene.ECKJJCGPOPN_AS2 > 0)
+			{
+				CDNKOFIELMK skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[scene.ECKJJCGPOPN_AS2 - 1];
+				for (int i = 0; i < skill.EGLDFPILJLG_BuffEffectType.Length; i++)
+				{
+					if (skill.EGLDFPILJLG_BuffEffectType[i] != 0)
+					{
+						res.Add(string.Format("ct/gm/as/{0:D3}.xab", skill.EGLDFPILJLG_BuffEffectType[i]));
+					}
+				}
+			}
+			GCIJNCFDNON_SceneInfo sceneInfo = new GCIJNCFDNON_SceneInfo();
+			sceneInfo.KHEKNNFCAOI(sceneId, null, null, 0, 0, 0, false, 0, 0);
+			if(scene.KPIIIEGGPIB_LS > 0)
+			{
+				PPGHMBNIAEC skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[sceneInfo.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) - 1];
+				for (int i = 0; i < skill.EGLDFPILJLG_SkillBuffEffect.Length; i++)
+				{
+					if (skill.EGLDFPILJLG_SkillBuffEffect[i] != 0)
+					{
+						res.Add(string.Format("ct/gm/as/{0:D3}.xab", skill.EGLDFPILJLG_SkillBuffEffect[i]));
+					}
+				}
+			}
+			if (scene.PJKJFIOKBGJ_LS2 > 0)
+			{
+				PPGHMBNIAEC skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[sceneInfo.FILPDDHMKEJ_GetLiveSkillId(true, 0, 0) - 1];
+				for (int i = 0; i < skill.EGLDFPILJLG_SkillBuffEffect.Length; i++)
+				{
+					if (skill.EGLDFPILJLG_SkillBuffEffect[i] != 0)
+					{
+						res.Add(string.Format("ct/gm/as/{0:D3}.xab", skill.EGLDFPILJLG_SkillBuffEffect[i]));
+					}
+				}
+			}
+			return res;
+		}
 	}
 }

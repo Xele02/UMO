@@ -964,7 +964,13 @@ public class BBHNACPENDM_ServerSaveData
 	// public void NGJEPEPIHIL(int OLNBNMKAGJG) { }
 
 	// // RVA: 0xF25954 Offset: 0xF25954 VA: 0xF25954
-	// public void NELPFCBCJAO() { }
+	public void NELPFCBCJAO()
+	{
+		OIGEIIGKMNH_Valkyrie.HLNPGNNPCGO_ValkyrieInfo valk = JJFFBDLIOCF_Valkyrie.CNGNBKNBKGI_ValkList[FBFCCLFFIAF - 1];
+		valk.BEBJKJKBOGH_Date = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		valk.CADENLBDAEB_New = true;
+		MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FODKKJIDDKN_VfId = FBFCCLFFIAF;
+	}
 
 	// // RVA: 0xF25F74 Offset: 0xF25F74 VA: 0xF25F74
 	static BBHNACPENDM_ServerSaveData()

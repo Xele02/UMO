@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 using XeApp.Game.Common;
+using XeApp.Game.Menu;
 using XeSys.Gfx;
 
 namespace XeApp.Game.DownLoad
@@ -218,7 +219,23 @@ namespace XeApp.Game.DownLoad
 		// public void SetupDownLoad(List<int> diva_list) { }
 
 		// // RVA: 0x11C2994 Offset: 0x11C2994 VA: 0x11C2994
-		// public void SetupDivaSelect(List<int> diva_list, int select_diva) { }
+		public void SetupDivaSelect(List<int> diva_list, int select_diva)
+		{
+			for(int i = 0; i < m_DivaIcons.Length; i++)
+			{
+				int index = i;
+				if (diva_list.Count <= i)
+					break;
+				m_LoadingDivaIconCount++;
+				GameManager.Instance.DivaIconCache.Load(diva_list[index], 1, 0, (IiconTexture texture) =>
+				{
+					//0x97DC14
+					texture.Set(m_DivaIcons[index]);
+					m_LoadingDivaIconCount--;
+				});
+			}
+			SelectIcon(select_diva);
+		}
 
 		// // RVA: 0x11C2EA4 Offset: 0x11C2EA4 VA: 0x11C2EA4
 		public void EnterDownLoad()

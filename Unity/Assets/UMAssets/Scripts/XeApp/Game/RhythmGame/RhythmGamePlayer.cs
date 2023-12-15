@@ -2771,7 +2771,14 @@ namespace XeApp.Game.RhythmGame
 		// private void GotoTutorialGacha() { }
 
 		// // RVA: 0x9C2C34 Offset: 0x9C2C34 VA: 0x9C2C34
-		// private void GotoTutorialSkip() { }
+		private void GotoTutorialSkip()
+		{
+			if (Database.Instance.gameSetup.musicInfo.isTutorialOne)
+				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.BMIDACPCELO_17);
+			else if(Database.Instance.gameSetup.musicInfo.isTutorialTwo)
+				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.JAPPCJMLAMJ_26);
+			TutorialClearEndRhythmGame();
+		}
 
 		// // RVA: 0x9C2DFC Offset: 0x9C2DFC VA: 0x9C2DFC
 		// private void GotoStorySkip() { }

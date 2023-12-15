@@ -7,7 +7,7 @@ namespace XeApp.Game.NameEntry
 	{
 		private void Awake()
 		{
-			TodoLogger.LogError(0, "Implement monobehaviour");
+			TodoLogger.LogError(1, "Implement monobehaviour Tuto 31/32");
 		}
 		[SerializeField]
 		private GameObject m_bgRoot;

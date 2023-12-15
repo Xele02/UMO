@@ -814,7 +814,7 @@ namespace XeApp.Game.Gacha
 			yield return Co.R(PopupRecordPlate.Show(RecordPlateUtility.eSceneType.Gacha, null, false));
 			if(GameManager.Instance.IsTutorial)
 			{
-				TodoLogger.LogError(0, "Tuto");
+				TodoLogger.LogError(1, "Tuto 22");
 			}
 			inputEnable = true;
 		}

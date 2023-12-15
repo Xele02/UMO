@@ -14,6 +14,13 @@ using XeSys.Gfx;
 
 namespace XeApp.Game.Tutorial
 {
+	public enum CursorPosition
+	{
+		None = -1,
+		RhythmAdjust = 0,
+		ActiveSkill = 1,
+		MissionMenuButton = 2,
+	}
 	public enum BasicTutorialMessageId
 	{
 		Id_BeginAdjust = 1,
@@ -164,7 +171,7 @@ namespace XeApp.Game.Tutorial
 			{
 				if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level != 1)
 					return;
-				TodoLogger.LogError(0, "TutorialAfterFirstLoginBonus");
+				TodoLogger.LogError(1, "TutorialAfterFirstLoginBonus tuto 47");
 			}
 		}
 
@@ -177,7 +184,7 @@ namespace XeApp.Game.Tutorial
 				{
 					return;
 				}
-				TodoLogger.LogError(0, "TutorialAfterFirstHome");
+				TodoLogger.LogError(1, "TutorialAfterFirstHome Tuto 48");
 			}
 		}
 
@@ -413,7 +420,48 @@ namespace XeApp.Game.Tutorial
 		// private bool ObjectFindFunc(Transform ts, string name, string parentName) { }
 
 		// // RVA: 0xE40AD4 Offset: 0xE40AD4 VA: 0xE40AD4
-		// public void ShowCursor(CursorPosition positionType) { }
+		public void ShowCursor(CursorPosition positionType)
+		{
+			if (m_cursorInstance == null)
+				return;
+			Transform t = GameManager.Instance.PopupCanvas.transform.Find("Root");
+			m_pointer.RectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+			m_pointer.RectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+			LayoutUGUIHitOnly l = null;
+			TutorialPointer.Direction dir = TutorialPointer.Direction.Normal;
+			Vector2 anchor = new Vector2(0.5f, 0.5f);
+			Vector2 pos = new Vector2(0, 0);
+			if (positionType == CursorPosition.MissionMenuButton)
+			{
+				l = MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.Mission).GetComponentInChildren<LayoutUGUIHitOnly>(true);
+				dir = TutorialPointer.Direction.Down;
+			}
+			else if(positionType == CursorPosition.ActiveSkill)
+			{
+				pos = new Vector2(t.localScale.x * 0, (t.localPosition.y * 2 + 56) * t.localScale.y);
+				anchor = new Vector2(0.5f, 0);
+			}
+			else if(positionType == CursorPosition.RhythmAdjust)
+			{
+				pos = new Vector2(t.localScale.x * 300, (t.localPosition.y * 2 - 200) * t.localScale.y);
+				if(SystemManager.isLongScreenDevice)
+				{
+					pos.y -= t.localPosition.y;
+				}
+			}
+			m_cursorInstance.SetActive(true);
+			m_cursorInstance.transform.SetAsFirstSibling();
+			if(l != null)
+			{
+				SetCursorPosition(l.transform as RectTransform, dir);
+			}
+			else
+			{
+				m_pointer.RectTransform.anchorMax = anchor;
+				m_pointer.RectTransform.anchorMin = anchor;
+				m_pointer.ShowAnchorPosition(pos, dir);
+			}
+		}
 
 		// // RVA: 0xE413B4 Offset: 0xE413B4 VA: 0xE413B4
 		public void HideCursor()
@@ -562,21 +610,60 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE419D0 Offset: 0xE419D0 VA: 0xE419D0
 		public void UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO rPoint)
 		{
-			TodoLogger.LogError(0, "UpdateRecoveryPoint");
+			TodoLogger.LogError(1, "UpdateRecoveryPoint");
 		}
 
 		// // RVA: 0xE41B10 Offset: 0xE41B10 VA: 0xE41B10
-		// public void SaveMusicResult() { }
+		public void SaveMusicResult()
+		{
+			TodoLogger.LogError(1, "SaveMusicResult");
+		}
 
 		// // RVA: 0xE41D24 Offset: 0xE41D24 VA: 0xE41D24
 		public ILDKBCLAFPB.CDIPJNPICCO GetRecoveryPoint()
 		{
-			TodoLogger.LogError(0, "GetRecoveryPoint");
+			TodoLogger.LogError(1, "GetRecoveryPoint");
 			return 0;
 		}
 
 		// // RVA: 0xE41E18 Offset: 0xE41E18 VA: 0xE41E18
-		// public JGEOBNENMAH.EDHCNKBMLGI SetupTutorialGame(TutorialGameMode.Type type) { }
+		public JGEOBNENMAH.EDHCNKBMLGI SetupTutorialGame(TutorialGameMode.Type type)
+		{
+			StatusData status1 = new StatusData();
+			StatusData status2 = new StatusData();
+			Database.Instance.gameSetup.musicInfo.SetupInfoByTutorial(type);
+			AEGLGBOGDHH a = new AEGLGBOGDHH();
+			a.OBKGEDCKHHE();
+			IBJAKJJICBC ib = new IBJAKJJICBC();
+			ib.KHEKNNFCAOI(Database.Instance.gameSetup.musicInfo.freeMusicId, false, 0, 0, 0, false, false, false);
+			CMMKCEPBIHI.DIDENKKDJKI(ref a, GameManager.Instance.ViewPlayerData.NPFCMHCCDDH, GameManager.Instance.ViewPlayerData, ib, null, ib.MGJKEJHEBPO_DiffInfos[0].HPBPDHPIBGN_EnemyData);
+			a.GEEDEOHGMOM(ref status1);
+			status2.Clear();
+			status2.Copy(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.CMCKNKKCNDK_GoDivaStatus);
+			status2.Add(status1);
+			Database.Instance.gameSetup.teamInfo.SetupInfo(status2, GameManager.Instance.ViewPlayerData, 0, ib, null, null, null, false);
+			JGEOBNENMAH.EDHCNKBMLGI res = new JGEOBNENMAH.EDHCNKBMLGI();
+			res.GHBPLHBNMBK_FreeMusicId = Database.Instance.gameSetup.musicInfo.freeMusicId;
+			res.KLCIIHKFPPO_StoryMusicId = Database.Instance.gameSetup.musicInfo.storyMusicId;
+			res.AKNELONELJK_Difficulty = (int)Database.Instance.gameSetup.musicInfo.difficultyType;
+			res.OALJNDABDHK = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH;
+			res.NHPGGBCKLHC_FriendData = null;
+			res.KAIPAEILJHO_TicketCount = 0;
+			res.PMCGHPOGLGM_IsSkip = false;
+			res.MNNHHJBBICA_GameEventType = 0;
+			res.MFJKNCACBDG_OpenEventType = 0;
+			res.OEILJHENAHN_PlayEventType = 0;
+			res.JPJMALBLKDI_Tutorial = 1;
+			int luck = 0;
+			for(int i = 0; i < GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas.Count; i++)
+			{
+				luck += DivaIconDecoration.GetEquipmentLuck(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[i], GameManager.Instance.ViewPlayerData);
+			}
+			StatusData status = new StatusData();
+			status.Clear();
+			a.DIJOPLHIMBO(res.ENMGODCHGAC_Log, GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.JLJGCBOHJID_Status, status, luck, 0);
+			return res;
+		}
 
 		// // RVA: 0xE42544 Offset: 0xE42544 VA: 0xE42544
 		public static bool IsBeginnerMission()

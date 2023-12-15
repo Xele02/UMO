@@ -43,7 +43,13 @@ namespace XeApp.Game.Tutorial
 		}
 
 		//// RVA: 0xE4122C Offset: 0xE4122C VA: 0xE4122C
-		//public void ShowAnchorPosition(Vector3 localPosition, TutorialPointer.Direction dir) { }
+		public void ShowAnchorPosition(Vector3 localPosition, Direction dir)
+		{
+			RectTransform.anchoredPosition = localPosition;
+			m_cursorLayer.StartChildrenAnimGoStop(((int)dir).ToString("00"));
+			m_rootLayer.StartChildrenAnimLoop("logo_");
+			gameObject.SetActive(true);
+		}
 
 		//// RVA: 0xE49B14 Offset: 0xE49B14 VA: 0xE49B14
 		//public void Hide() { }

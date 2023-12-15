@@ -98,7 +98,7 @@ namespace XeApp.Game.Adv
 			if(musicId < 0)
 			{
 				Database.Instance.gameSetup.musicInfo.SetupInfoByTutorial(TutorialGameMode.Type.TutorialTwo);
-				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.NBFHAMJNMMG/*25*/);
+				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.NBFHAMJNMMG_25/*25*/);
 			}
 			else
 			{

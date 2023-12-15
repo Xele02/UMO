@@ -6,7 +6,7 @@ namespace XeApp.Game.DownLoad
 	{
 		private void Awake()
 		{
-			TodoLogger.LogError(0, "Implement monobehaviour");
+			TodoLogger.LogError(1, "Implement monobehaviour Tuto 34/33");
 		}
 	}
 }

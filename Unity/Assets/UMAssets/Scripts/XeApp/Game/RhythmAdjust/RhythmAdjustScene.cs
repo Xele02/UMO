@@ -363,7 +363,7 @@ namespace XeApp.Game.RhythmAdjust
 			}
 			else
 			{
-				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.JHMCNBGOOJF/*14*/);
+				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.JHMCNBGOOJF_14/*14*/);
 				this.StartCoroutineWatched(Co_TutorialIntroFlow());
 			}
 		}
@@ -390,20 +390,94 @@ namespace XeApp.Game.RhythmAdjust
 		}
 
 		// // RVA: 0xF61DCC Offset: 0xF61DCC VA: 0xF61DCC
-		// private void ShowTutorialConfirmPopup(bool isDecide) { }
+		private void ShowTutorialConfirmPopup(bool isDecide)
+		{
+			if (!isTutorialConfirm)
+			{
+				this.StartCoroutineWatched(Co_TutorialConfirmEvent());
+			}
+			else
+			{
+				ShowAdjustFinishCheckPopup();
+			}
+			updater = UpdatePopupTask;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B04F0 Offset: 0x6B04F0 VA: 0x6B04F0
 		// // RVA: 0xF61E84 Offset: 0xF61E84 VA: 0xF61E84
-		// private IEnumerator Co_TutorialConfirmEvent() { }
+		private IEnumerator Co_TutorialConfirmEvent()
+		{
+			WaitWhile waitYield;
+
+			//0xF6647C
+			bool isWait = true;
+			waitYield = new WaitWhile(() =>
+			{
+				//0xF64C74
+				return isWait;
+			});
+			BasicTutorialManager.Instance.HideCursor();
+			BasicTutorialManager.Instance.ShowMessageWindow(BasicTutorialMessageId.Id_ConfirmAdjust, () =>
+			{
+				//0xF64C7C
+				isWait = false;
+			}, null);
+			yield return waitYield;
+			isWait = true;
+			m_confirmButtonType = 0;
+			m_decideConfirmButton = false;
+			layoutData.ConfirmmButtonHandler += PushConfirmWindowButton;
+			layoutData.OpenConfirmWindow(null);
+			GameManager.Instance.AddPushBackButtonHandler(OnBackButton);
+			while (m_decideConfirmButton)
+				yield return null;
+			layoutData.ConfirmmButtonHandler -= PushConfirmWindowButton;
+			GameManager.Instance.RemovePushBackButtonHandler(OnBackButton);
+			layoutData.CloseConfirmWindow(() =>
+			{
+				//0xF64C88
+				isWait = false;
+			});
+			yield return waitYield;
+			ConfirmWindowResult(m_confirmButtonType);
+		}
 
 		// // RVA: 0xF61F30 Offset: 0xF61F30 VA: 0xF61F30
-		// private void OnBackButton() { }
+		private void OnBackButton()
+		{
+			layoutData.PerformClickCancel();
+		}
 
 		// // RVA: 0xF61F58 Offset: 0xF61F58 VA: 0xF61F58
-		// private void PushConfirmWindowButton(LayoutRhythmAdjustTutorialConfirmWindow.ButtonType type) { }
+		private void PushConfirmWindowButton(LayoutRhythmAdjustTutorialConfirmWindow.ButtonType type)
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+			m_confirmButtonType = type;
+			m_decideConfirmButton = true;
+		}
 
 		// // RVA: 0xF61FC4 Offset: 0xF61FC4 VA: 0xF61FC4
-		// private void ConfirmWindowResult(LayoutRhythmAdjustTutorialConfirmWindow.ButtonType type) { }
+		private void ConfirmWindowResult(LayoutRhythmAdjustTutorialConfirmWindow.ButtonType type)
+		{
+			if(type != LayoutRhythmAdjustTutorialConfirmWindow.ButtonType.ReAdjust)
+			{
+				if(type != LayoutRhythmAdjustTutorialConfirmWindow.ButtonType.NoProblem)
+				{
+					return;
+				}
+				EndTutorialAdjust();
+				return;
+			}
+			adjustSlider.enabled = true;
+			ChangeAdjustTask(ShowConfirmPopup);
+			BasicTutorialManager.Instance.ShowCursor(CursorPosition.RhythmAdjust);
+			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.EKEBEGIELBJ_15);
+			m_character.gameObject.SetActive(false);
+			SwitchMode(false);
+			layoutData.ChangeMode(LayoutRhythmAdjust.ModeType.ADJUST);
+			layoutData.OpenWindow();
+			isTutorialConfirm = true;
+		}
 
 		// // RVA: 0xF62414 Offset: 0xF62414 VA: 0xF62414
 		private void UpdateAdjustTask()
@@ -746,7 +820,8 @@ namespace XeApp.Game.RhythmAdjust
 		// // RVA: 0xF639BC Offset: 0xF639BC VA: 0xF639BC
 		private void AdjustTutorialMoveConfirmMode(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
 		{
-			TodoLogger.LogError(0, "AdjustTutorialMoveConfirmMode");
+			AdjustMoveConfirmMode(control, type, label);
+			BasicTutorialManager.Instance.ShowCursor(CursorPosition.RhythmAdjust);
 		}
 
 		// // RVA: 0xF63A58 Offset: 0xF63A58 VA: 0xF63A58
@@ -769,7 +844,18 @@ namespace XeApp.Game.RhythmAdjust
 		// // RVA: 0xF63BEC Offset: 0xF63BEC VA: 0xF63BEC
 		private void AdjustTutorialConfirmPopupResult(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
 		{
-			TodoLogger.LogError(0, "AdjustTutorialConfirmPopupResult");
+			if(type != PopupButton.ButtonType.Negative)
+			{
+				if (type != PopupButton.ButtonType.Positive)
+					return;
+				EndTutorialAdjust();
+				return;
+			}
+			adjustSlider.enabled = true;
+			SwitchMode(false);
+			layoutData.ChangeMode(LayoutRhythmAdjust.ModeType.ADJUST);
+			ChangeAdjustTask(ShowConfirmPopup);
+			BasicTutorialManager.Instance.ShowCursor(CursorPosition.RhythmAdjust);
 		}
 
 		// // RVA: 0xF60F40 Offset: 0xF60F40 VA: 0xF60F40
@@ -800,7 +886,8 @@ namespace XeApp.Game.RhythmAdjust
 		// // RVA: 0xF63DF0 Offset: 0xF63DF0 VA: 0xF63DF0
 		private void AdjustTutorialPopupResult(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
 		{
-			TodoLogger.LogError(0, "AdjustTutorialPopupResult");
+			AdjustPopupResult(control, type, label);
+			BasicTutorialManager.Instance.ShowCursor(CursorPosition.RhythmAdjust);
 		}
 
 		// // RVA: 0xF62288 Offset: 0xF62288 VA: 0xF62288
@@ -816,29 +903,129 @@ namespace XeApp.Game.RhythmAdjust
 		}
 
 		// // RVA: 0xF6217C Offset: 0xF6217C VA: 0xF6217C
-		// private void EndTutorialAdjust() { }
+		private void EndTutorialAdjust()
+		{
+			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			BasicTutorialManager.Instance.HideCursor();
+			this.StartCoroutineWatched(Co_TutorialEndFlow());
+		}
 
 		// // RVA: 0xF63E84 Offset: 0xF63E84 VA: 0xF63E84
-		// private void GotoTutorialGame() { }
+		private void GotoTutorialGame()
+		{
+			JGEOBNENMAH.EDHCNKBMLGI setup = BasicTutorialManager.Instance.SetupTutorialGame(TutorialGameMode.Type.TutorialOne);
+			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.HIAAKPMJJGD_16);
+			GameManager.Instance.SetSystemCanvasRenderMode(RenderMode.ScreenSpaceOverlay);
+			GameManager.Instance.ChangePopupPriority(true);
+			this.StartCoroutineWatched(GotoTutorialGameCoroutine(setup));
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B0568 Offset: 0x6B0568 VA: 0x6B0568
 		// // RVA: 0xF63FB8 Offset: 0xF63FB8 VA: 0xF63FB8
-		// private IEnumerator GotoTutorialGameCoroutine(JGEOBNENMAH.EDHCNKBMLGI setup) { }
+		private IEnumerator GotoTutorialGameCoroutine(JGEOBNENMAH.EDHCNKBMLGI setup)
+		{
+			//0xF67358
+			bool isSuccess = false;
+			JGEOBNENMAH.HHCJCDFCLOB.OLDDILMKJND(setup, () =>
+			{
+				//0xF648EC
+				isSuccess = true;
+			}, () =>
+			{
+				//0xF648D4
+				return;
+			}, () =>
+			{
+				//0xF648D8
+				return;
+			}, () =>
+			{
+				//0xF648DC
+				return;
+			}, () =>
+			{
+				//0xF648E0
+			}, null);
+			while (!isSuccess)
+				yield return null;
+			yield return this.StartCoroutineWatched(GameManager.Instance.TryInstallRhythmGameResource(Database.Instance.gameSetup));
+			int divaId = Database.Instance.gameSetup.teamInfo.divaList[0].divaId;
+			bool isChangedCueSheet = false;
+			SoundManager.Instance.voDiva.RequestChangeCueSheet(divaId, () =>
+			{
+				//0xF648F8
+				isChangedCueSheet = true;
+			});
+			yield return new WaitUntil(() =>
+			{
+				//0xF64904
+				return isChangedCueSheet;
+			});
+			SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.StartGame, 0);
+			GameManager.Instance.fullscreenFader.Fade(0.1f, Color.black);
+			yield return GameManager.Instance.WaitFadeYielder;
+			yield return this.StartCoroutineWatched(GameManager.Instance.ShowGameIntroCoroutine());
+			enableFade = false;
+			NextScene("RhythmGame");
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B05E0 Offset: 0x6B05E0 VA: 0x6B05E0
 		// // RVA: 0xF60EB4 Offset: 0xF60EB4 VA: 0xF60EB4
 		private IEnumerator Co_TutorialIntroFlow()
 		{
-			TodoLogger.LogError(0, "Co_TutorialIntroFlow");
-			yield return null;
+			//0xF66F34
+			bool isWait = false;
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.OLDAGCNLJOI_Progress = 1;
+			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			updater = UpdatePopupTask;
+			isWait = true;
+			BasicTutorialManager.Instance.ShowMessageWindow(BasicTutorialMessageId.Id_BeginAdjust, () =>
+			{
+				//0xF6491C
+				isWait = false;
+			}, null);
+			yield return new WaitWhile(() =>
+			{
+				//0xF64914
+				return isWait;
+			});
+			ChangeAdjustTask(ShowTutorialConfirmPopup);
+			BasicTutorialManager.Instance.ShowCursor(0);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B0658 Offset: 0x6B0658 VA: 0x6B0658
 		// // RVA: 0xF60E28 Offset: 0xF60E28 VA: 0xF60E28
 		private IEnumerator Co_TutorialEndFlow()
 		{
-			TodoLogger.LogError(0, "Co_TutorialEndFlow");
-			yield return null;
+			WaitWhile wait;
+
+			//0xF66A74
+			bool isWait = false;
+			wait = new WaitWhile(() =>
+			{
+				//0xF64930
+				return isWait;
+			});
+			updater = UpdatePopupTask;
+			if(!m_character.gameObject.activeSelf)
+			{
+				layoutData.CloseWindow();
+				layoutData.CloseBalloon();
+				while (layoutData.IsPlayingWindow())
+					yield return null;
+				m_character.gameObject.SetActive(true);
+				m_character.SetCharacterData(1, m_characterData, 0, false, 0);
+				m_character.SetFace(1);
+				m_character.SetPosition(new Vector2(-270, 0));
+			}
+			isWait = true;
+			BasicTutorialManager.Instance.ShowMessageWindow(BasicTutorialMessageId.Id_EndAdjust, () =>
+			{
+				//0xF64938
+				isWait = false;
+			}, null);
+			yield return wait;
+			GotoTutorialGame();
 		}
 	}
 }
