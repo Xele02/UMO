@@ -34,7 +34,7 @@ public struct EDMIONMCICN
 	public MKHCIKICBOI NOEFMBAIAMP_MalusTypeFlag; // 0x20
 
 	// RVA: 0x7FC8FC Offset: 0x7FC8FC VA: 0x7FC8FC
-	public void OBKGEDCKHHE_Reset()
+	public void OBKGEDCKHHE_Init()
 	{
 		ELFAIDEBLJB = new StatusData();
 		BJABFKMIJHB_StatusMainScene = new StatusData();

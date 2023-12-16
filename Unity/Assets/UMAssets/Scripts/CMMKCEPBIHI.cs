@@ -1176,7 +1176,7 @@ public static class CMMKCEPBIHI
 	private static int CBILJEAECKP_GetBaseScore(DFKGGBMFFGB_PlayerInfo DJLNOAMJECI_PlayerData, EAJCBFGKKFA_FriendInfo ALOBLKOHIKD_FriendData, EJKBKMBJMGL_EnemyData BGJGFPPDNEP_EnemyData, EEDKAACNBBG_MusicData GMFMMDAKENC_MusicData, Difficulty.Type AKNELONELJK_Difficulty, bool GBNOALJPOBM_IsLine6, int BAKLKJLPLOJ_FPt, int DHIPGHBJLIL_Progress, JLKEOGLJNOD_TeamInfo HEDKFICAPIJ_Team)
 	{
 		EDMIONMCICN data = new EDMIONMCICN();
-		data.OBKGEDCKHHE_Reset();
+		data.OBKGEDCKHHE_Init();
 		CFHDKAFLNEP data2 = new CFHDKAFLNEP();
 		data2.OBKGEDCKHHE();
 		int scoreWithEnemy = DBHEBCCLIJG(ref data, DJLNOAMJECI_PlayerData, ALOBLKOHIKD_FriendData, GMFMMDAKENC_MusicData, BGJGFPPDNEP_EnemyData, ref data2, DHIPGHBJLIL_Progress, true, HEDKFICAPIJ_Team);
@@ -1223,7 +1223,7 @@ public static class CMMKCEPBIHI
 	private static int CHCGGEPAAOE(DFKGGBMFFGB_PlayerInfo AHEFHIMGIBI_PlayerData, EEDKAACNBBG_MusicData KKHIDFKKFJE_MusicData, EAJCBFGKKFA_FriendInfo PCEGKKLKFNO_FriendData, EJKBKMBJMGL_EnemyData KDOLMBEAGCI_EnemyData, int DHIPGHBJLIL, JLKEOGLJNOD_TeamInfo HEDKFICAPIJ_Team)
 	{
 		EDMIONMCICN data = new EDMIONMCICN();
-		data.OBKGEDCKHHE_Reset();
+		data.OBKGEDCKHHE_Init();
 		int total = 0;
 		for(int i = 0; i < HEDKFICAPIJ_Team.BCJEAJPLGMB_MainDivas.Count; i++)
 		{
@@ -1242,7 +1242,7 @@ public static class CMMKCEPBIHI
 	private static int DONJDICAMJB(DFKGGBMFFGB_PlayerInfo DJLNOAMJECI_PlayerData, EAJCBFGKKFA_FriendInfo ALOBLKOHIKD_FriendData, EEDKAACNBBG_MusicData GMFMMDAKENC_MusicData, EJKBKMBJMGL_EnemyData BGJGFPPDNEP_EnemyData, ref CFHDKAFLNEP LNMECJDKFDN, int DHIPGHBJLIL, JLKEOGLJNOD_TeamInfo HEDKFICAPIJ_Team)
 	{
 		EDMIONMCICN data = new EDMIONMCICN();
-		data.OBKGEDCKHHE_Reset();
+		data.OBKGEDCKHHE_Init();
 		int total = 0;
 		for (int i = 0; i < HEDKFICAPIJ_Team.BCJEAJPLGMB_MainDivas.Count; i++)
 		{
@@ -1277,7 +1277,7 @@ public static class CMMKCEPBIHI
 	// // RVA: 0x108E93C Offset: 0x108E93C VA: 0x108E93C
 	private static int DBHEBCCLIJG(ref EDMIONMCICN HBODCMLFDOB, DFKGGBMFFGB_PlayerInfo DJLNOAMJECI_PlayerData, EAJCBFGKKFA_FriendInfo ALOBLKOHIKD_FriendData, EEDKAACNBBG_MusicData GMFMMDAKENC_MusicData, EJKBKMBJMGL_EnemyData BGJGFPPDNEP_EnemyData, ref CFHDKAFLNEP LNMECJDKFDN, int DHIPGHBJLIL, bool CCPIGKONMMH, JLKEOGLJNOD_TeamInfo HEDKFICAPIJ_Team)
 	{
-		HBODCMLFDOB.OBKGEDCKHHE_Reset();
+		HBODCMLFDOB.OBKGEDCKHHE_Init();
 		int val = 0;
 		for(int i = 0; i < HEDKFICAPIJ_Team.BCJEAJPLGMB_MainDivas.Count; i++)
 		{
