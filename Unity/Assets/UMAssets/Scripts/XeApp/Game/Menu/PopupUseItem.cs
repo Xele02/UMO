@@ -21,6 +21,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x115FA94 Offset: 0x115FA94 VA: 0x115FA94 Slot: 17
 		public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
 		{
+			Parent = setting.m_parent;
 			PopupUseItemSetting s = setting as PopupUseItemSetting;
 			if(!s.IsValidate)
 			{

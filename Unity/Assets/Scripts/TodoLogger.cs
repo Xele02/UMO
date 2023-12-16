@@ -71,7 +71,7 @@ public static class TodoLogger
 
 	public static void LogError(int priority, string str)
 	{
-		if(priority < RuntimeSettings.CurrentSettings.MinLogError)
+		if(priority < RuntimeSettings.CurrentSettings.MinLogError || (RuntimeSettings.CurrentSettings.EnableErrorLog && priority < 999))
 		{
 			UnityEngine.Debug.LogError(str);
 		}
@@ -79,7 +79,7 @@ public static class TodoLogger
 
 	public static void LogWarning(int priority, string str)
 	{
-		if (priority < RuntimeSettings.CurrentSettings.MinLogWarning)
+		if (priority < RuntimeSettings.CurrentSettings.MinLogWarning || (RuntimeSettings.CurrentSettings.EnableErrorLog && priority < 999))
 		{
 			UnityEngine.Debug.LogWarning(str);
 		}
@@ -87,7 +87,7 @@ public static class TodoLogger
 
 	public static void Log(int priority, string str)
 	{
-		if (priority < RuntimeSettings.CurrentSettings.MinLogInfo)
+		if (priority < RuntimeSettings.CurrentSettings.MinLogInfo || (RuntimeSettings.CurrentSettings.EnableErrorLog && priority < 999))
 		{
 			UnityEngine.Debug.Log(str);
 		}

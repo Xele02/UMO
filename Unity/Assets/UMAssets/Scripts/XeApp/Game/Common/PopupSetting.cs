@@ -55,6 +55,7 @@ namespace XeApp.Game.Common
         {
             //0x1BB2568
             AssetBundleLoadLayoutOperationBase operation;
+            m_parent = parent;
             if(m_content != null)
                 yield break;
             operation = AssetBundleManager.LoadLayoutAsync(BundleName, AssetName);
