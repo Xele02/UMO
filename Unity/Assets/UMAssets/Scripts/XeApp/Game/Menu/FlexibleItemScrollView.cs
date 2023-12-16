@@ -154,19 +154,17 @@ namespace XeApp.Game.Menu
 		private float GetScrollPosition(int index)
 		{
 			float f3 = 0;
-			if(index >= 0 && index < m_listItem.Count)
+			if(index >= 1 && index < m_listItem.Count)
 			{
 				if(m_listItem[index].Top.y > 0)
-					return m_listItem[index].Top.y;
+					return 0;
 				f3 = -m_listItem[index].Top.y;
 			}
 			float val = m_scroll.content.sizeDelta.y - m_scrollRectTransform.sizeDelta.y;
-			if(val >= 0)
-			{
-				val = m_scroll.content.sizeDelta.y - m_scrollRectTransform.sizeDelta.y;
-				if(f3 <= val)
-					val = f3;
-			}
+			if(val < 0)
+				return 0;
+			if(f3 <= val)
+				val = f3;
 			return val;
 		}
 
@@ -181,17 +179,15 @@ namespace XeApp.Game.Menu
 					Vector2 top = m_listItem[index].Top;
 					float f = top.y + (m_scrollRectTransform.sizeDelta.y - m_listItem[index].Height);
 					if (-f < 0)
-						return f;
+						return 0;
 					f3 = -f;
 				}
 			}
 			float f2 = m_scroll.content.sizeDelta.y - m_scrollRectTransform.sizeDelta.y;
-			if(f2 >= 0)
-			{
-				f2 = m_scroll.content.sizeDelta.y - m_scrollRectTransform.sizeDelta.y;
-				if(f3 <= f2)
-					f2 = f3;
-			}
+			if(f2 < 0)
+				return 0;
+			if(f3 <= f2)
+				f2 = f3;
 			return f2;
 		}
 

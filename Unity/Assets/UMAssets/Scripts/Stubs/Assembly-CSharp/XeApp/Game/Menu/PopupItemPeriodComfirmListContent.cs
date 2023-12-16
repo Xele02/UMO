@@ -41,7 +41,7 @@ namespace XeApp.Game.Menu
 			Parent = setting.m_parent;
 			transform.GetComponent<RectTransform>().sizeDelta = size;
 			transform.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
-			this.StartCoroutineWatched(LoadAssetBundlePrefab());
+			control.StartCoroutineWatched(LoadAssetBundlePrefab());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x703C1C Offset: 0x703C1C VA: 0x703C1C
@@ -95,7 +95,7 @@ namespace XeApp.Game.Menu
 			h.Height = 34;
 			h.ResourceType = 1;
 			m_list.Add(h);
-			int a = 0;
+			int a = 43;
 			for(int i = 0; i < list.Count; i++)
 			{
 				ItemPeriodComfirmListItem item = new ItemPeriodComfirmListItem();
@@ -181,7 +181,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x17ADC90 Offset: 0x17ADC90 VA: 0x17ADC90 Slot: 10
 		public bool IsReady()
 		{
-			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning && (layoutSingle == null || fxScrollView != null);
+			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning && (layoutSingle != null || fxScrollView != null);
 		}
 
 		// RVA: 0x17ADD98 Offset: 0x17ADD98 VA: 0x17ADD98 Slot: 11
