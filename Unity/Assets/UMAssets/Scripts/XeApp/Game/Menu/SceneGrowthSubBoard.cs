@@ -77,7 +77,7 @@ namespace XeApp.Game.Menu
 							m_boardSquareList[n2.GHPLINIACBB_Col + x][n2.PMBEODGMMBB_Row].id = a_.INDDJNMPONH_StatType;
 							m_boardSquareList[n2.GHPLINIACBB_Col + x][n2.PMBEODGMMBB_Row].saveIndex = (short)idx;
 							m_boardSquareList[n2.GHPLINIACBB_Col + x][n2.PMBEODGMMBB_Row].type = SquareType.Panel;
-							m_boardSquareList[n2.GHPLINIACBB_Col + x][n2.PMBEODGMMBB_Row].isOpen = sceneData.OIEHPHINMIO(idx) == GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG/*2*/;
+							m_boardSquareList[n2.GHPLINIACBB_Col + x][n2.PMBEODGMMBB_Row].isOpen = sceneData.OIEHPHINMIO(idx) == GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG_2/*2*/;
 							if(a_.INDDJNMPONH_StatType > 1 && a_.INDDJNMPONH_StatType < 5)
 							{
 								if(v3 == 0)
@@ -173,7 +173,7 @@ namespace XeApp.Game.Menu
 					m_boardSquareList[x][n.PMBEODGMMBB_Row].id = a_.INDDJNMPONH_StatType;
 					m_boardSquareList[x][n.PMBEODGMMBB_Row].saveIndex = (short)j;
 					m_boardSquareList[x][n.PMBEODGMMBB_Row].type = SquareType.Panel;
-					m_boardSquareList[x][n.PMBEODGMMBB_Row].isOpen = sceneData.OIEHPHINMIO(j) == GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG/*2*/;
+					m_boardSquareList[x][n.PMBEODGMMBB_Row].isOpen = sceneData.OIEHPHINMIO(j) == GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG_2/*2*/;
 					if(a_.INDDJNMPONH_StatType == 21 || a_.INDDJNMPONH_StatType == 19)
 					{
 						m_boardSquareList[x][n.PMBEODGMMBB_Row].value = 1;
@@ -233,7 +233,7 @@ namespace XeApp.Game.Menu
 					{
 						if (m_boardSquareList[j][k].type == SquareType.Panel)
 						{
-							m_boardSquareList[j][k].isOpen = m_sceneData.OIEHPHINMIO(m_boardSquareList[j][k].saveIndex) == GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG/*2*/;
+							m_boardSquareList[j][k].isOpen = m_sceneData.OIEHPHINMIO(m_boardSquareList[j][k].saveIndex) == GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG_2/*2*/;
 							AFIFDLOAKGI a2 = GetPanelItem(m_boardSquareList[j][k].saveIndex);
 							if (a2.INDDJNMPONH_StatType == 20)
 							{
@@ -266,8 +266,8 @@ namespace XeApp.Game.Menu
 				{
 					if(m_boardSquareList[i][j].type == SquareType.Panel)
 					{
-						if(m_sceneData.OIEHPHINMIO(m_boardSquareList[i][j].saveIndex) >= GCIJNCFDNON_SceneInfo.HINAICIJJJC.LAHFPKEJLCA/*3*/ &&
-							m_sceneData.OIEHPHINMIO(m_boardSquareList[i][j].saveIndex) <= GCIJNCFDNON_SceneInfo.HINAICIJJJC.LBODGCPCGHA/*4*/)
+						if(m_sceneData.OIEHPHINMIO(m_boardSquareList[i][j].saveIndex) >= GCIJNCFDNON_SceneInfo.HINAICIJJJC.LAHFPKEJLCA_3/*3*/ &&
+							m_sceneData.OIEHPHINMIO(m_boardSquareList[i][j].saveIndex) <= GCIJNCFDNON_SceneInfo.HINAICIJJJC.LBODGCPCGHA_4/*4*/)
 						{
 							return GetScrollAreaInPosition(i * 120 - 120 + 170, 0.5f);
 						}

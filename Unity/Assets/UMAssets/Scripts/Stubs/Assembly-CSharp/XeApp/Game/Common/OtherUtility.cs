@@ -13,6 +13,9 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xAF4B64 Offset: 0xAF4B64 VA: 0xAF4B64
-		//public static bool PopupWindowOpenUrlButtonSe(PopupButton.ButtonLabel label, PopupButton.ButtonType type) { }
+		public static bool PopupWindowOpenUrlButtonSe(PopupButton.ButtonLabel label, PopupButton.ButtonType type)
+		{
+			return type == PopupButton.ButtonType.Positive;
+		}
 	}
 }

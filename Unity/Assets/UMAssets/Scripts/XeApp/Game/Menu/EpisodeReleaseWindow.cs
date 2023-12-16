@@ -6,6 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using System.Collections;
+using XeSys;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -95,7 +98,7 @@ namespace XeApp.Game.Menu
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
 			m_next_gauge = layout.FindViewById("sw_sel_ep_progress_02_anim") as AbsoluteLayout;
-			m_gauge_table = layout.FindViewById("swtbl_sel_ep_bar_sw_bar_after_anim") as AbsoluteLayout;
+			m_gauge_table = layout.FindViewByExId("swtbl_sel_ep_bar_sw_bar_after_anim") as AbsoluteLayout;
 			m_lock_gauge.under = layout.FindViewByExId("sw_bar_before_anim_sel_ep_bar_under") as AbsoluteLayout;
 			m_lock_gauge.up = layout.FindViewByExId("sw_bar_before_anim_sel_ep_bar_up") as AbsoluteLayout;
 			m_lock_gauge.on = layout.FindViewByExId("sw_bar_before_anim_sel_ep_bar_on") as AbsoluteLayout;
@@ -122,7 +125,7 @@ namespace XeApp.Game.Menu
 				str.Clear();
 				str.AppendFormat("swtbl_get_icon_{0:D2} (AbsoluteLayout)", i);
 				t2 = t1.Find(str.ToString());
-				image.get_icon = t2.Find("sel_ep_clear_icon (AbsoluteLayout)").GetComponent<RawImageEx>();
+				image.get_icon = t2.Find("sel_ep_clear_icon (AbsoluteLayout)").GetComponentInChildren<RawImageEx>();
 				str.Clear();
 				str.Clear();
 				str.AppendFormat("swtbl_item_lane_swtbl_scaling_frm_{0:D2}", i);
@@ -155,22 +158,46 @@ namespace XeApp.Game.Menu
 			m_plas.AddOnClickCallback(() =>
 			{
 				//0xEFCD7C
-				TodoLogger.LogNotImplemented("m_plas");
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				if (m_have_item <= m_item_use_num)
+					return;
+				if (m_use_item_max <= m_item_use_num)
+					return;
+				m_item_use_num++;
+				UpdateItemValue();
+				UpdateLine();
 			});
 			m_minus.AddOnClickCallback(() =>
 			{
 				//0xEFCEBC
-				TodoLogger.LogNotImplemented("m_minus");
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				if (m_item_use_num <= m_use_item_min)
+					return;
+				m_item_use_num--;
+				UpdateItemValue();
+				UpdateLine();
 			});
 			m_plas_ten.AddOnClickCallback(() =>
 			{
 				//0xEFCFC4
-				TodoLogger.LogNotImplemented("m_plas_ten");
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				m_item_use_num += 10;
+				if (m_have_item < m_item_use_num)
+					m_item_use_num = m_have_item;
+				if (m_use_item_max < m_item_use_num)
+					m_item_use_num = m_use_item_max;
+				UpdateItemValue();
+				UpdateLine();
 			});
 			m_minus_ten.AddOnClickCallback(() =>
 			{
 				//0xEFD160
-				TodoLogger.LogNotImplemented("m_minus_ten");
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				m_item_use_num -= 10;
+				if (m_item_use_num < m_use_item_min)
+					m_item_use_num = m_use_item_min;
+				UpdateItemValue();
+				UpdateLine();
 			});
 			mUpdater = UpdateLoad;
 			return true;
@@ -206,20 +233,147 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEFABE4 Offset: 0xEFABE4 VA: 0xEFABE4
-		//private void UpdateItemValue() { }
+		private void UpdateItemValue()
+		{
+			m_item_value.text = m_item_use_num.ToString() + " / " + m_have_item.ToString();
+			m_episode_item_num.text = m_item_use_num.ToString();
+			RewardIndex();
+			int a = item_data.IILKAJBHLMJ_Value * m_item_use_num + m_data.ABLHIAEDJAI_CurrentPoint;
+			if(!m_data.CCBKMCLDGAD_HasReward)
+			{
+				SetGauge((int)(m_data.ABLHIAEDJAI_CurrentPoint * 100.0f / m_data.DMHDNKILKGI_MaxPoint), (int)(a * 100.0f / m_data.DMHDNKILKGI_MaxPoint));
+				m_point_den.SetNumber(a, 0);
+				m_point_mol.SetNumber(m_data.DMHDNKILKGI_MaxPoint, 0);
+			}
+			else
+			{
+				SetGauge((int)((m_data.ABLHIAEDJAI_CurrentPoint - m_data.DMHDNKILKGI_MaxPoint) * 100.0f / (m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_TotalPoint - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_Idx)),
+						(int)((a - m_data.DMHDNKILKGI_MaxPoint) * 100.0f / (m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_TotalPoint - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_Idx)));
+				m_point_den.SetNumber(a - m_data.DMHDNKILKGI_MaxPoint, 0);
+				m_point_mol.SetNumber(m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_TotalPoint - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_Idx);
+			}
+			int a2 = Mathf.Min(m_have_item, m_use_item_max);
+			if(m_item_use_num == a2)
+			{
+				m_plas.Disable = true;
+				m_plas_ten.Disable = true;
+			}
+			else
+			{
+				m_plas.Disable = false;
+				m_plas_ten.Disable = false;
+			}
+			if(m_item_use_num == m_use_item_min)
+			{
+				m_minus.Disable = true;
+				m_minus_ten.Disable = true;
+			}
+			else
+			{
+				m_minus.Disable = false;
+				m_minus_ten.Disable = false;
+			}
+			m_pop_window.SetDisable(m_item_use_num == 0);
+		}
 
 		//// RVA: 0xEFB1DC Offset: 0xEFB1DC VA: 0xEFB1DC
-		//private int RewardIndex() { }
+		private int RewardIndex()
+		{
+			for(int i = 0; i < m_reward_list.Count - 1; i++)
+			{
+				if (item_data.IILKAJBHLMJ_Value * m_item_use_num + m_data.ABLHIAEDJAI_CurrentPoint < m_reward_list[i].DNBFMLBNAEE_TotalPoint)
+					return i;
+			}
+			return m_reward_list.Count - 1;
+		}
 
 		//// RVA: 0xEFB568 Offset: 0xEFB568 VA: 0xEFB568
-		//private int GetAcquiredRewardIndex() { }
+		private int GetAcquiredRewardIndex()
+		{
+			for(int i = 0; i < m_reward_list.Count - 1; i++)
+			{
+				if (m_data.ABLHIAEDJAI_CurrentPoint < m_reward_list[i].DNBFMLBNAEE_TotalPoint)
+					return i;
+			}
+			return m_reward_list.Count - 1;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DAF2C Offset: 0x6DAF2C VA: 0x6DAF2C
 		//// RVA: 0xEF9284 Offset: 0xEF9284 VA: 0xEF9284
-		//public IEnumerator CO_Init(PIGBBNDPPJC data, int item_type) { }
+		public IEnumerator CO_Init(PIGBBNDPPJC data, int item_type)
+		{
+			int i;
+
+			//0xEFD5C4
+			gameObject.SetActive(true);
+			transform.localPosition = new Vector3(1000, 1000, 0);
+			yield return null;
+			Init(data, item_type);
+			yield return null;
+			GetRoot();
+			UpdateLine();
+			if(!m_is_line_update)
+			{
+				for(i = 0; i < rewardItemNum; i++)
+				{
+					while (!m_item_icon_list[i].image.enabled)
+						yield return null;
+				}
+			}
+			while(!m_item_image.enabled)
+				yield return null;
+			while (!m_episode_item_image.enabled)
+				yield return null;
+			yield return null;
+			gameObject.SetActive(false);
+			transform.localPosition = Vector3.zero;
+		}
 
 		//// RVA: 0xEFB6A8 Offset: 0xEFB6A8 VA: 0xEFB6A8
-		//public void Init(PIGBBNDPPJC data, int item_type) { }
+		public void Init(PIGBBNDPPJC data, int item_type)
+		{
+			m_data = data;
+			item_data = EEDBNJAEKBI.FKDIMODKKJD()[item_type];
+			m_item_use_type = item_type;
+			m_reward_list = LGMEPLIJLNB.FKDIMODKKJD_GetEpisodeRewards(data.KELFCMEOPPM_EpId);
+			m_have_item = item_data.HMFFHLPNMPH_Count;
+			if (!m_data.CCBKMCLDGAD_HasReward)
+			{
+				m_use_item_max = m_data.DMHDNKILKGI_MaxPoint / item_data.IILKAJBHLMJ_Value;
+			}
+			else
+			{
+				m_use_item_max = (m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_TotalPoint - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_Idx) / item_data.IILKAJBHLMJ_Value;
+			}
+			m_caution.text = JpStringLiterals.StringLiteral_15830 + m_use_item_max.ToString() + JpStringLiterals.StringLiteral_15831;
+			m_episode_item.text = item_data.OPFGFINHFCE_Name;
+			m_item_use_num = 0;
+			UpdateItemValue();
+			rewardItemNum = m_reward_list.Count - 1;
+			m_item_list_changeNum.StartChildrenAnimGoStop(rewardItemNum < 6 ? "01" : "02");
+			for(int i = 0; i < rewardItemNum; i++)
+			{
+				int index = i;
+				m_item_icon_list[i].num.SetNumber(m_reward_list[i].GOOIIPFHOIG.MBJIFDBEDAC_Cnt, 0);
+				m_item_icon_list[i].num2.SetNumber(m_reward_list[i].GOOIIPFHOIG.MBJIFDBEDAC_Cnt, 0);
+				m_item_icon_list[i].get_icon.enabled = m_reward_list[i].HMEOAKCLKJE_IsReceived;
+				m_item_icon_list[i].image.enabled = false;
+				m_item_icon_list[i].image2.enabled = false;
+				MenuScene.Instance.ItemTextureCache.Load(m_reward_list[i].GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId, (IiconTexture icon) =>
+				{
+					//0xEFD298
+					icon.Set(m_item_icon_list[index].image);
+					icon.Set(m_item_icon_list[index].image2);
+					m_item_icon_list[index].image.enabled = true;
+					m_item_icon_list[index].image2.enabled = true;
+				});
+			}
+			m_item_name.text = JpStringLiterals.StringLiteral_15778;
+			SetItemImage(m_reward_list[m_reward_list.Count - 1].GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId);
+			m_point_item_num.SetNumber(m_reward_list[m_reward_list.Count - 1].GOOIIPFHOIG.MBJIFDBEDAC_Cnt, 0);
+			m_next_point = data.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint;
+			SetEpiItemImage(item_type + 80001);
+		}
 
 		//// RVA: 0xEFC460 Offset: 0xEFC460 VA: 0xEFC460
 		public void Enter()
@@ -236,29 +390,150 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEFC62C Offset: 0xEFC62C VA: 0xEFC62C
-		//private void UpdateLine() { }
+		private void UpdateLine()
+		{
+			if(!m_data.CCBKMCLDGAD_HasReward)
+			{
+				int idx = RewardIndex();
+				int idx2 = GetAcquiredRewardIndex();
+				for(int i = 0; i < rewardItemNum; i++)
+				{
+					this.StartCoroutineWatched(SetItemGaugeLine(i, idx == i, i < idx2, i + 1 == rewardItemNum && rewardItemNum < 6));
+				}
+			}
+			else
+			{
+				for(int i = 0; i < rewardItemNum; i++)
+				{
+					m_item_icon_list[i].table.StartSiblingAnimGoStop(0, 0);
+					m_item_icon_list[i].line_abs.StartAllAnimGoStop(0, 0);
+					m_item_icon_list[i].line1.SetActive(false);
+					m_item_icon_list[i].line2.SetActive(false);
+				}
+			}
+		}
 
 		//// RVA: 0xEFC1F8 Offset: 0xEFC1F8 VA: 0xEFC1F8
-		//private void SetItemImage(int index) { }
+		private void SetItemImage(int index)
+		{
+			m_item_image.enabled = false;
+			MenuScene.Instance.ItemTextureCache.Load(index, (IiconTexture icon) =>
+			{
+				//0xEFCB08
+				icon.Set(m_item_image);
+				m_item_image.enabled = true;
+			});
+		}
 
 		//// RVA: 0xEFC32C Offset: 0xEFC32C VA: 0xEFC32C
-		//private void SetEpiItemImage(int index) { }
+		private void SetEpiItemImage(int index)
+		{
+			m_episode_item_image.enabled = false;
+			MenuScene.Instance.ItemTextureCache.Load(index, (IiconTexture icon) =>
+			{
+				//0xEFCC0C
+				icon.Set(m_episode_item_image);
+				m_episode_item_image.enabled = true;
+			});
+		}
 
 		//// RVA: 0xEFB31C Offset: 0xEFB31C VA: 0xEFB31C
-		//private void SetGauge(int gauge, int up) { }
+		private void SetGauge(int gauge, int up)
+		{
+			int start0 = (int)(up * 1.01f);
+			int start1 = (int)(gauge * 1.01f);
+			int start = start0 - 101;
+			if (start0 > 100)
+				start0 = 101;
+			if (start < 1)
+				start = 0;
+			if(!m_data.CCBKMCLDGAD_HasReward)
+			{
+				m_gauge_table.StartSiblingAnimGoStop(1, 1);
+				m_next_gauge.StartChildrenAnimGoStop(start1, start1);
+				if (start1 == 0)
+					start1 = 1;
+				m_lock_gauge.on.StartAllAnimGoStop(start1, start1);
+				m_lock_gauge.up.StartAllAnimGoStop(start0, start0);
+				m_lock_gauge.over.StartAllAnimGoStop(start, start);
+			}
+			else
+			{
+				m_gauge_table.StartSiblingAnimGoStop(0, 0);
+				m_next_gauge.StartChildrenAnimGoStop(start1, start1);
+				m_unlock_gauge.on.StartAllAnimGoStop(start1, start1);
+				m_unlock_gauge.up.StartAllAnimGoStop(start0, start0);
+				m_unlock_gauge.over.StartAllAnimGoStop(start, start);
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DAFA4 Offset: 0x6DAFA4 VA: 0x6DAFA4
 		//// RVA: 0xEFC918 Offset: 0xEFC918 VA: 0xEFC918
-		//private IEnumerator SetItemGaugeLine(int index, bool is_next, bool isAcquired, bool is_line_skip) { }
+		private IEnumerator SetItemGaugeLine(int index, bool is_next, bool isAcquired, bool is_line_skip)
+		{
+			int _index;
+
+			//0xEFDAA8
+			m_is_line_update = true;
+			_index = index;
+			if(is_line_skip)
+			{
+				if(_index + 1 < m_item_icon_list.Count())
+				{
+					_index++;
+				}
+			}
+			int a = (int)(m_reward_list[index].DNBFMLBNAEE_TotalPoint * 100.0f / m_data.DMHDNKILKGI_MaxPoint);
+			if (isAcquired)
+				a = 0;
+			m_item_icon_list[_index].line_abs.StartAllAnimGoStop(a, a);
+			m_item_icon_list[index].table.StartSiblingAnimGoStop(is_next ? 1 : 0, is_next ? 1 : 0);
+			yield return null;
+			Camera c = GameManager.Instance.transform.Find("SystemCanvasCamera").GetComponent<Camera>();
+			Vector3 p;
+			GameObject g;
+			if(!is_next)
+			{
+				g = m_item_icon_list[index].line1;
+				m_item_icon_list[index].line1.GetComponent<RawImageEx>().color = new Color(0.1607843f, 0.7176471f, 0.9215686f, 1);
+				m_item_icon_list[index].line1.SetActive(!isAcquired);
+				p = RectTransformUtility.WorldToScreenPoint(c, m_item_icon_list[index].start_pos.transform.position);
+			}
+			else
+			{
+				g = m_item_icon_list[index].line2;
+				m_item_icon_list[index].line2.GetComponent<RawImageEx>().color = new Color(0.9921569f, 0.2666667f, 1.0f, 1);
+				m_item_icon_list[index].line2.SetActive(!isAcquired);
+				p = RectTransformUtility.WorldToScreenPoint(c, m_item_icon_list[index].start_pos2.transform.position);
+			}
+			Vector3 p2 = c.WorldToScreenPoint(m_item_icon_list[_index].end_pos.GetChild(0).position);
+			Vector2 r, r2;
+			RectTransformUtility.ScreenPointToLocalPointInRectangle(m_root, p, c, out r2);
+			RectTransformUtility.ScreenPointToLocalPointInRectangle(m_root, p2, c, out r);
+			g.transform.transform.SetLocalEulerAngleZ(57.29578f * Mathf.Atan2(r.y - 10 - r2.y, r.x - 2 - r2.x));
+			g.transform.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
+			g.transform.GetComponent<RectTransform>().pivot = new Vector2(0, 1);
+			g.transform.GetComponent<RectTransform>().sizeDelta = new Vector2(Vector3.Distance(r + new Vector2(-2, -10), r2), 5);
+			m_is_line_update = true;
+		}
 
 		//// RVA: 0xEF82F4 Offset: 0xEF82F4 VA: 0xEF82F4
-		//public int GetItemUseCount() { }
+		public int GetItemUseCount()
+		{
+			return m_item_use_num;
+		}
 
 		//// RVA: 0xEF82FC Offset: 0xEF82FC VA: 0xEF82FC
-		//public int GetItemUseType() { }
+		public int GetItemUseType()
+		{
+			return m_item_use_type;
+		}
 
 		//// RVA: 0xEF8304 Offset: 0xEF8304 VA: 0xEF8304
-		//public int GetAddEpisodePoint() { }
+		public int GetAddEpisodePoint()
+		{
+			return item_data.IILKAJBHLMJ_Value * m_item_use_num;
+		}
 
 		//// RVA: 0xEFC4FC Offset: 0xEFC4FC VA: 0xEFC4FC
 		private void GetRoot()
@@ -271,13 +546,5 @@ namespace XeApp.Game.Menu
 				t = t.parent;
 			}
 		}
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6DB01C Offset: 0x6DB01C VA: 0x6DB01C
-		//// RVA: 0xEFCB08 Offset: 0xEFCB08 VA: 0xEFCB08
-		//private void <SetItemImage>b__53_0(IiconTexture icon) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6DB02C Offset: 0x6DB02C VA: 0x6DB02C
-		//// RVA: 0xEFCC0C Offset: 0xEFCC0C VA: 0xEFCC0C
-		//private void <SetEpiItemImage>b__54_0(IiconTexture icon) { }
 	}
 }

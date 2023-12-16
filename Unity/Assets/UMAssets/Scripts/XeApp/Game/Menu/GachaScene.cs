@@ -34,7 +34,11 @@ namespace XeApp.Game.Menu
 			}
 
 			//// RVA: 0xB6C878 Offset: 0xB6C878 VA: 0xB6C878
-			//public void Init(int typeAndSeriesId, bool updateGachaProduct = True) { }
+			public void Init(int typeAndSeriesId, bool updateGachaProduct = true)
+			{
+				UpdateGachaProduct = updateGachaProduct;
+				TypeAndSeriesId = typeAndSeriesId;
+			}
 		}
 
 		private class AppearLot
@@ -795,7 +799,10 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEE8CB4 Offset: 0xEE8CB4 VA: 0xEE8CB4
 		private void OnClickPurchaseButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickPurchaseButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if (MenuScene.CheckDatelineAndAssetUpdate())
+				return;
+			this.StartCoroutineWatched(Co_PurchaseButton(null));
 		}
 
 		//// RVA: 0xEE8E48 Offset: 0xEE8E48 VA: 0xEE8E48
@@ -806,7 +813,30 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DD064 Offset: 0x6DD064 VA: 0x6DD064
 		//// RVA: 0xEE8DA4 Offset: 0xEE8DA4 VA: 0xEE8DA4
-		//private IEnumerator Co_PurchaseButton(ProductListFilter filter) { }
+		private IEnumerator Co_PurchaseButton(ProductListFilter filter)
+		{
+			//0xB6B1E8
+			MenuScene.Instance.InputDisable();
+			yield return Co.R(GachaUtility.OpenPurchaseVCWindow(MenuScene.Instance.DenomControl, () =>
+			{
+				//0xEECC38
+				OnGachaNetError();
+			}, (TransitionList.Type gotoSceneType) =>
+			{
+				//0xEED544
+				if(gotoSceneType == TransitionList.Type.TITLE)
+				{
+					MenuScene.Instance.GotoTitle();
+				}
+				else if(gotoSceneType == TransitionList.Type.LOGIN_BONUS)
+				{
+					MenuScene.Instance.GotoLoginBonus();
+				}
+				MenuScene.Instance.InputEnable();
+			}, filter));
+			m_layoutHeaderInfo.Setup(m_view);
+			MenuScene.Instance.InputEnable();
+		}
 
 		//// RVA: 0xEE9038 Offset: 0xEE9038 VA: 0xEE9038
 		private void OnClickPassPurchaseButton()
@@ -817,7 +847,40 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEE9118 Offset: 0xEE9118 VA: 0xEE9118
 		private void OnClickTicketConfirmButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickTicketConfirmButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			List<NKFJNAANPNP.MOJLCADLMKH> v = m_view.BNGLMLIMFDM();
+			int v2 = m_view.DPBDFPPMIPH_Gacha.OMNAPCHLBHF(GCAHJLOGMCI.NFCAJPIJFAM_SummonType.GOAHICNDICO_5);
+			if (v2 == 0)
+			{
+				v2 = m_view.DPBDFPPMIPH_Gacha.OMNAPCHLBHF(GCAHJLOGMCI.NFCAJPIJFAM_SummonType.LMHDFEKIDKG_6);
+			}
+			int v3 = 0;
+			string s = "";
+			if(m_view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10)
+			{
+				v3 = m_view.DPBDFPPMIPH_Gacha.MJNOAMAFNHA_CostItemId;
+				s = EKLNMHFCAOI.INCKKODFJAP_GetItemName(v3);
+			}
+			else
+			{
+				PMDCIJMMNGK_GachaTicket.EJAKHFONNGN tkt = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(v2);
+				if (tkt != null)
+				{
+					v3 = tkt.PPFNGGCBJKC_Id;
+					s = EKLNMHFCAOI.INCKKODFJAP_GetItemName(v3);
+				}
+			}
+			PopupItemPeriodComfirmListSetting setting = new PopupItemPeriodComfirmListSetting();
+			setting.TitleText = string.Format(bk.GetMessageByLabel("item_use_period_title"), s);
+			setting.WindowSize = SizeType.Middle;
+			setting.TypeItemId = v3;
+			setting.List = v;
+			setting.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			PopupWindowManager.Show(setting, null, null, null, null);
 		}
 
 		//// RVA: 0xEE9698 Offset: 0xEE9698 VA: 0xEE9698
@@ -1335,9 +1398,5 @@ namespace XeApp.Game.Menu
 			m_gachaRatePopupSetting.RarityInfoList = m_rateInfoList;
 			m_gachaRatePopupSetting.EpisodeInfoList = m_episodeInfoList;
 		}
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6DD274 Offset: 0x6DD274 VA: 0x6DD274
-		//// RVA: 0xEECC38 Offset: 0xEECC38 VA: 0xEECC38
-		//private void <Co_PurchaseButton>b__60_0() { }
 	}
 }

@@ -6,7 +6,7 @@ public class IBIGBMDANNM
 	{
 		CCAPCGPIIPF_Guest = 0,
 		HEEJBCDDOJJ_Friend = 1,
-		BGHNFBANAMN = 2,
+		BGHNFBANAMN_2 = 2,
 		FCDDHHKAGEP = 3,
 	}
 	

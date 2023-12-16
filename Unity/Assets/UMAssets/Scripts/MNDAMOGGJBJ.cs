@@ -58,7 +58,12 @@ public class MNDAMOGGJBJ
 	}
 
 	//// RVA: 0x17B0310 Offset: 0x17B0310 VA: 0x17B0310
-	//public void JGAAANGEIFK() { }
+	public void JGAAANGEIFK()
+	{
+		MHGAOHAHFDN.Clear();
+		MHGAOHAHFDN.AddRange(INLBMFMOHCI);
+		PGGKBIIJOND = CMBGGPOFBOO;
+	}
 
 	//// RVA: 0x17B03CC Offset: 0x17B03CC VA: 0x17B03CC
 	public int JPLMJPGDPAN(int PPFNGGCBJKC)
@@ -161,7 +166,40 @@ public class MNDAMOGGJBJ
 	}
 
 	//// RVA: 0x17B0D40 Offset: 0x17B0D40 VA: 0x17B0D40
-	//public int KMIFDLLCBEL() { }
+	public int KMIFDLLCBEL()
+	{
+		int res = EFFBJDMGIGO();
+		if(res > 0)
+		{
+			if(KCCLEHLLOFG != null)
+			{
+				for(int i = 0; i < 27; i++)
+				{
+					EGOLBAPFHHD_Common.OFAPDOKONML it = KCCLEHLLOFG.KBMDMEEMGLK_GrowItem[i];
+					if (it.PFAKPFKJJKA())
+						return -20;
+				}
+				if (KCCLEHLLOFG.NFHLDFJIBKI_HaveUc != KCCLEHLLOFG.HIGJEJKADDP_HaveUcCheck)
+					return -21;
+			}
+			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave != null && IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+			{
+				for(int i = 0; i < INLBMFMOHCI.Count; i++)
+				{
+					EKLNMHFCAOI.DPHGFMEPOCA_SetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(INLBMFMOHCI[i].PPFNGGCBJKC_Id), EKLNMHFCAOI.DEACAHNLMNI_getItemId(INLBMFMOHCI[i].PPFNGGCBJKC_Id), CPBDJHKHEFN(i + 1), null);
+				}
+				if(CMBGGPOFBOO > 0)
+				{
+					KCCLEHLLOFG.LLEGCIMFPGD(CMBGGPOFBOO);
+				}
+				JGAAANGEIFK();
+				MDHKGJJBLNL();
+				return 1;
+			}
+			return 0;
+		}
+		return res;
+	}
 
 	//// RVA: 0x17B1084 Offset: 0x17B1084 VA: 0x17B1084
 	//public string MNNKOKNBJNC() { }

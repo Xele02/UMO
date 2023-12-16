@@ -43,7 +43,7 @@ namespace XeApp.Game.Menu
 						squares[idx].id = a_.INDDJNMPONH_StatType;
 						squares[idx].saveIndex = (short)i;
 						squares[idx].type = SquareType.Panel;
-						squares[idx].isOpen = sceneData.FAPMGGOMCOE(i) == GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG/*2*/;
+						squares[idx].isOpen = sceneData.FAPMGGOMCOE(i) == GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG_2/*2*/;
 						squares[idx].value = dbScene.GDHGEECAJGI_BoardValue[i];
 					}
 				}
@@ -170,7 +170,7 @@ namespace XeApp.Game.Menu
 				{
 					if(m_boardSquareList[i][j].type == SquareType.Panel)
 					{
-						m_boardSquareList[i][j].isOpen = m_sceneData.FAPMGGOMCOE(m_boardSquareList[i][j].saveIndex) == GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG/*2*/;
+						m_boardSquareList[i][j].isOpen = m_sceneData.FAPMGGOMCOE(m_boardSquareList[i][j].saveIndex) == GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG_2/*2*/;
 						m_boardSquareList[i][j].isPossible = m_boardSquareList[i - 1][j].isPossible;
 					}
 				}

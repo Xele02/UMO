@@ -1627,18 +1627,18 @@ public class CIOECGOMILE
 		MessageBank bk = MessageManager.Instance.GetBank("menu");
 		if(JANMJPOKLFL.OMGJFMMJPJD)
 		{
-			if(JANMJPOKLFL.EPPFEAIMFOE == 1)
+			if(JANMJPOKLFL.EPPFEAIMFOE_ItemCount == 1)
 			{
 				return string.Format(bk.GetMessageByLabel("pbox_text_03"), JANMJPOKLFL.OLAICLNDMFF());
 			}
 		}
 		if(!JANMJPOKLFL.OMGJFMMJPJD)
 		{
-			if(JANMJPOKLFL.EPPFEAIMFOE > 0)
+			if(JANMJPOKLFL.EPPFEAIMFOE_ItemCount > 0)
 			{
 				if(!GPOGFJFGNCA)
 				{
-					return string.Format(bk.GetMessageByLabel("pbox_text_08"), JANMJPOKLFL.EPPFEAIMFOE);
+					return string.Format(bk.GetMessageByLabel("pbox_text_08"), JANMJPOKLFL.EPPFEAIMFOE_ItemCount);
 				}
 				return bk.GetMessageByLabel("pbox_text_07");
 			}

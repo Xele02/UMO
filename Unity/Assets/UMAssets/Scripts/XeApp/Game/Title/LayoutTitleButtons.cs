@@ -3,6 +3,7 @@ using XeApp.Game.Common;
 using UnityEngine;
 using System;
 using System.Collections;
+using mcrs;
 
 namespace XeApp.Game.Title
 {
@@ -57,7 +58,9 @@ namespace XeApp.Game.Title
 			{
 				m_Support.AddOnClickCallback(() => {
 					//0xE36198
-					TodoLogger.LogNotImplemented("LayoutTitleButtons.Support");
+					if (ButtonCallbackSupport != null)
+						ButtonCallbackSupport();
+					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				});
 			}
 		}

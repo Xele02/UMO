@@ -102,7 +102,7 @@ namespace XeApp.Game.Common
 			diff = end - start;
 			time = 0;
 			speed = 1.0f / animTime;
-			while(time <= animTime)
+			while(time < animTime)
 			{
 				time += Time.deltaTime;
 				float v = curve.Evaluate(time * speed);

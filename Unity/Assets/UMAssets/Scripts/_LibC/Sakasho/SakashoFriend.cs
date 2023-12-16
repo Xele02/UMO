@@ -16,6 +16,15 @@ namespace ExternLib
 
 			return 0;
 		}
+
+		public static int SakashoFriendSetFriendsFavoriteValue(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			SendMessage(callbackId, res);
+
+			return 0;
+		}
+		
 		public static int SakashoFriendSetFriendsLimit(int callbackId, string json)
 		{
 			EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
@@ -66,6 +75,24 @@ namespace ExternLib
 
 			return 0;
 		}
+
+		public static int SakashoFriendRefuseFriendRequest(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			SendMessage(callbackId, res);
+
+			return 0;
+		}
+
+		public static int SakashoFriendAcceptFriendRequest(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			SendMessage(callbackId, res);
+
+			return 0;
+		}
+		
+
 		public static int SakashoFriendGetFriends(int callbackId, string json)
 		{
 			EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);

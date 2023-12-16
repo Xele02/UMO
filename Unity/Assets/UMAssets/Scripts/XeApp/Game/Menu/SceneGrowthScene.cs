@@ -674,23 +674,207 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10E00A8 Offset: 0x10E00A8 VA: 0x10E00A8
 		private IEnumerator ShowFinalConfirmPopupCoroutine()
 		{
-			TodoLogger.LogNotImplemented("ShowFinalConfirmPopupCoroutine");
-			yield return null;
+			//0x10F461C
+			MenuScene.Instance.InputDisable();
+			if (!m_popupGrowthConfirmSetting.ISLoaded())
+			{
+				yield return this.StartCoroutineWatched(m_popupGrowthConfirmSetting.LoadAssetBundlePrefab(transform));
+			}
+			PopupGrowthConfirm p = m_popupGrowthConfirmSetting.Content.GetComponent<PopupGrowthConfirm>();
+			yield return this.StartCoroutineWatched(p.LoadAppendLayoutCoroutine(m_addStatuList, m_episodeData.DMHDNKILKGI_MaxPoint <= m_episodeData.ABLHIAEDJAI_CurrentPoint));
+			MenuScene.Instance.InputEnable();
+			m_popupGrowthConfirmSetting.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Release, Type = PopupButton.ButtonType.Positive }
+			};
+			m_popupGrowthConfirmSetting.WindowSize = PopupGrowthConfirm.GetValidStatusValue(m_addStatuList) > 6 ? SizeType.Middle : SizeType.Small;
+			PopupWindowManager.Show(m_popupGrowthConfirmSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x10E6224
+				if(type == PopupButton.ButtonType.Positive)
+				{
+					ApplyConsume();
+					MenuScene.Instance.InitAssitPlate();
+				}
+				else
+				{
+					Array.Clear(m_addStatuList, 0, m_addStatuList.Length);
+				}
+			}, null, null, null);
 		}
 
 		//// RVA: 0x10E0154 Offset: 0x10E0154 VA: 0x10E0154
 		private void OpenPopupSubBoardReleaseConfirm()
 		{
-			TodoLogger.LogNotImplemented("OpenPopupSubBoardReleaseConfirm");
+			this.StartCoroutineWatched(ShowSubBoardReleaseConfirmPopupCoroutine());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7251B4 Offset: 0x7251B4 VA: 0x7251B4
 		//// RVA: 0x10E0178 Offset: 0x10E0178 VA: 0x10E0178
-		//private IEnumerator ShowSubBoardReleaseConfirmPopupCoroutine() { }
+		private IEnumerator ShowSubBoardReleaseConfirmPopupCoroutine()
+		{
+			MessageBank bank; // 0x1C
+			EKLNMHFCAOI.FKGCBLHOOCL_Category itemType; // 0x20
+			int itemId; // 0x24
+
+			//0x10F67C8
+			MenuScene.Instance.InputDisable();
+			if(!m_popupItemUseConfirmSetting.ISLoaded())
+			{
+				yield return this.StartCoroutineWatched(m_popupItemUseConfirmSetting.LoadAssetBundlePrefab(transform));
+			}
+			MenuScene.Instance.InputEnable();
+			bank = MessageManager.Instance.GetBank("menu");
+			int secret_board_item_id = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("secret_board_item_id", 70027);
+			itemType = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(secret_board_item_id);
+			itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(secret_board_item_id);
+			m_popupItemUseConfirmSetting.TitleText = bank.GetMessageByLabel("secret_board_item_use_title");
+			m_popupItemUseConfirmSetting.WindowSize = SizeType.Middle;
+			m_popupItemUseConfirmSetting.TypeItemId = secret_board_item_id;
+			m_popupItemUseConfirmSetting.Cost = 1;
+			m_popupItemUseConfirmSetting.OwnCount = EKLNMHFCAOI.DLNFNHMPGLI_GetNumClamped(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, itemType, itemId, null);
+			m_popupItemUseConfirmSetting.Period = 0;
+			m_popupItemUseConfirmSetting.OverrideText = bank.GetMessageByLabel("secret_board_item_use_desc_2");
+			if (m_popupItemUseConfirmSetting.OwnCount < 1)
+			{
+				m_popupItemUseConfirmSetting.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+				};
+			}
+			else
+			{
+				m_popupItemUseConfirmSetting.Buttons = new ButtonInfo[2]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				};
+			}
+			bool isCancel = false;
+			bool isClose = false;
+			PopupWindowManager.Show(m_popupItemUseConfirmSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x10E7DCC
+				if (type == PopupButton.ButtonType.Negative)
+					isCancel = true;
+				else
+				{
+					if (MenuScene.CheckDatelineAndAssetUpdate())
+						return;
+				}
+				isClose = true;
+			}, null, null, null);
+			while(!isClose)
+				yield return null;
+			if(!isCancel)
+			{
+				if(m_viewSceneData.JKGFBFPIMGA_Rarity < 5)
+				{
+					TextPopupSetting s = PopupWindowManager.CrateTextContent("", SizeType.Small, string.Format(bank.GetMessageByLabel("secret_board_item_use_warning"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(itemType, itemId)), new ButtonInfo[2]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+					}, false, false);
+					isCancel = false;
+					isClose = false;
+					PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+					{
+						//0x10E7E7C
+						if (type == PopupButton.ButtonType.Negative)
+							isCancel = true;
+						else
+						{
+							if (MenuScene.CheckDatelineAndAssetUpdate())
+								return;
+						}
+						isClose = true;
+					}, null, null, null);
+					while (!isClose)
+						yield return null;
+				}
+				if (!isCancel)
+				{
+					this.StartCoroutineWatched(ApplySubBoardReleaseCoroutine());
+				}
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72522C Offset: 0x72522C VA: 0x72522C
 		//// RVA: 0x10E0224 Offset: 0x10E0224 VA: 0x10E0224
-		//private IEnumerator ApplySubBoardReleaseCoroutine() { }
+		private IEnumerator ApplySubBoardReleaseCoroutine()
+		{
+			bool isVisibleSubBoardRelease; // 0x18
+			bool isEnableSubBoardRelease; // 0x19
+
+			//0x10E8F10
+			MenuScene.Instance.InputDisable();
+			m_viewSceneData.JPIPENJGGDD_NumBoard++;
+			JKNGJFOBADP d = new JKNGJFOBADP();
+			d.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.MIDINHNHGNP_43, "");
+			d.CPIICACGNBH(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, m_viewSceneData.BCCHOBPJJKE_SceneId, 1, null, 0);
+			int typeItemId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("secret_board_item_id", 70027);
+			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(typeItemId);
+			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId);
+			int cnt = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, cat, id, null);
+			if(cnt > 0)
+			{
+				EKLNMHFCAOI.DPHGFMEPOCA_SetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, cat, id, cnt - 1,  null);
+			}
+			bool isWaitSave = true;
+			MenuScene.Save(() =>
+			{
+				//0x10E7F2C
+				ILCCJNDFFOB.HHCJCDFCLOB.NNAPCDMAAJM(m_viewSceneData.BCCHOBPJJKE_SceneId, m_viewSceneData.JPIPENJGGDD_NumBoard, m_viewSceneData.CIEOBFIIPLD_SceneLevel, m_viewSceneData.CIEOBFIIPLD_SceneLevel, new List<int>() { typeItemId }, new List<int>(), 0, new List<int>());
+				isWaitSave = false;
+			}, null);
+			while (isWaitSave)
+				yield return null;
+			SoundResource.AddCueSheet(SoundManager.Instance.sePlayerGacha.cueSheet);
+			m_isAddtiveSubBoard = m_viewSceneData.NFILJJGGKNG_IsAdditiveSubBoard();
+			m_isAddtiveFirstSubBoard = m_viewSceneData.IELENGDJPHF < 2;
+			m_viewSceneData.JGNBHPJCICN();
+			if(m_currentBoard != null)
+			{
+				m_itemUnlockButtonLayout.UpdateLayout(m_subBoard);
+				yield return Co.R(HideBoardCoroutine(m_currentBoard));
+				m_currentBoard = m_subBoard;
+			}
+			//LAB_010e95d4
+			if (m_isAddtiveSubBoard)
+			{
+				yield return Co.R(LoadAppendLayoutCoroutine(true));
+			}
+			//LAB_010e9600
+			isVisibleSubBoardRelease = m_viewSceneData.JHNNCPCBFDK();
+			isEnableSubBoardRelease = m_viewSceneData.JFDLBEOGGID();
+			m_statusWindow.UpdateContent(m_viewSceneData, m_transitionUniqueId);
+			m_statusWindow.UpdateEpisode(m_episodeData);
+			m_subBoard.SetBoardLayout(m_viewSceneData);
+			m_subBoard.ClearUnlockAction();
+			m_subBoard.OnUnlockAction += UnLockPanel;
+			m_subBoard.BoardChangeAction = ChangeMainBoard;
+			m_subBoard.SetEnableBoardChangeButton(true);
+			m_subBoard.SetEnableSubBoardReleaseButton(isVisibleSubBoardRelease, isEnableSubBoardRelease);
+			m_subBoard.SetLimitOverLayout(m_limitOverData);
+			m_subBoard.LimitOverAction = OpenPopupLimitOver;
+			m_subBoard.SubBoardReleaseAction = OpenPopupSubBoardReleaseConfirm;
+			m_subBoard.SetMultCount(m_viewSceneData.JPIPENJGGDD_NumBoard - 1);
+			(m_subBoard as SceneGrowthSubBoard).IsFirstInfinityPanelOpen = m_isFirstInfinityPanelOpen;
+			yield return Co.R(StartAddtivePanelDirectionCoroutine());
+			m_mainBoard.SetEnableBoardChangeButton(m_viewSceneData.JPIPENJGGDD_NumBoard > 1);
+			m_mainBoard.SetEnableSubBoardReleaseButton(isVisibleSubBoardRelease, isEnableSubBoardRelease);
+			SoundResource.RemoveCueSheet(SoundManager.Instance.sePlayerGacha.cueSheet);
+			isWaitSave = true;
+			MenuScene.Save(() =>
+			{
+				//0x10E81A4
+				isWaitSave = false;
+			}, null);
+			while (isWaitSave)
+				yield return null;
+			MenuScene.Instance.InputEnable();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7252A4 Offset: 0x7252A4 VA: 0x7252A4
 		//// RVA: 0x10E02D0 Offset: 0x10E02D0 VA: 0x10E02D0
@@ -1722,7 +1906,103 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x10E4610 Offset: 0x10E4610 VA: 0x10E4610
-		//private void ApplyConsume() { }
+		private void ApplyConsume()
+		{
+			if(m_viewGrowItemData.KMIFDLLCBEL() > 0)
+			{
+				List<int> l = new List<int>();
+				for (int i = 0; i < 22; i++)
+					l.Add(0);
+				MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA[m_viewSceneData.BCCHOBPJJKE_SceneId - 1];
+				if(!m_viewSceneData.KEJMFDLFIEO())
+				{
+					JHHBAFKMBDL.HHCJCDFCLOB.GKMAHMLNMEK(() =>
+					{
+						//0x10E6714
+						MenuScene.Instance.GotoTitle();
+					}, "");
+					return;
+				}
+				if(m_boardType == SceneGrowthBoard.BoardType.Main)
+				{
+					bool b = false;
+					for(int i = 0; i < m_unLockTargetPanelIndex.Count; i++)
+					{
+						m_viewSceneData.EFLDHMMGALP(m_unLockTargetPanelIndex[i], GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG_2);
+						AFIFDLOAKGI af = m_viewSceneData.LDGCIDPEMPG(m_unLockTargetPanelIndex[i]);
+						if(af != null)
+						{
+							l[af.INDDJNMPONH_StatType]++;
+						}
+						b |= scene.IEPGLOIICLJ(m_unLockTargetPanelIndex[i]);
+					}
+					if(b)
+					{
+						//LAB_010e4f38
+						JHHBAFKMBDL.HHCJCDFCLOB.OODNEKINHLO(() =>
+						{
+							//0x10E6714
+							MenuScene.Instance.GotoTitle();
+						});
+						return;
+					}
+				}
+				else
+				{
+					bool b = false;
+					for(int i = 0; i < m_unLockTargetPanelIndex.Count; i++)
+					{
+						m_viewSceneData.GIAPABMCNOC(m_unLockTargetPanelIndex[i], GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG_2);
+						AFIFDLOAKGI af = m_viewSceneData.CDDHNNLPOLG(m_unLockTargetPanelIndex[i], m_viewSceneData.ILABPFOMEAG_Va, m_viewSceneData.JGJFIJOCPAG_SceneAttr);
+						if(af != null)
+						{
+							if(af.INDDJNMPONH_StatType == 20)
+							{
+								if(m_infinityPanelUnlockInfo.index > -1 && m_infinityPanelUnlockInfo.count > 0)
+								{
+									m_viewSceneData.OEIFKIPOHME(m_infinityPanelUnlockInfo.index, m_infinityPanelUnlockInfo.count);
+									AFIFDLOAKGI af2 = m_viewSceneData.CDDHNNLPOLG(m_infinityPanelUnlockInfo.index, m_viewSceneData.ILABPFOMEAG_Va, m_viewSceneData.JGJFIJOCPAG_SceneAttr);
+									if(af2 != null)
+									{
+										l[af2.INDDJNMPONH_StatType]++;
+									}
+								}
+							}
+							else
+							{
+								l[af.INDDJNMPONH_StatType]++;
+								b |= scene.PJLNENPKEDD(m_unLockTargetPanelIndex[i]) ? false : true;
+							}
+						}
+					}
+					if(b)
+					{
+						JHHBAFKMBDL.HHCJCDFCLOB.OODNEKINHLO(() =>
+						{
+							//0x10E6678
+							MenuScene.Instance.GotoTitle();
+						});
+						return;
+					}
+				}
+				m_prevStatus.Copy(m_viewSceneData.CMCKNKKCNDK_Status);
+				m_prevLuck = m_viewSceneData.MJBODMOLOBC_Luck;
+				m_prevCenterSkillLevel = m_viewSceneData.DDEDANKHHPN_SkillLevel;
+				m_prevActiveSkillLevel = m_viewSceneData.PNHJPCPFNFI_ActiveSkillLevel;
+				m_prevLiveSkillLevel = m_viewSceneData.AADFFCIDJCB_LiveSkillLevel;
+				m_viewSceneData.HCDGELDHFHB();
+				GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(false).HCDGELDHFHB();
+				GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(true).HCDGELDHFHB();
+				m_viewSceneData.OHJIKMCAOLE();
+				m_viewSceneData.EJLGAMEIMEG(m_viewGrowItemData, l);
+				this.StartCoroutineWatched(PlayUnlockPanelAnimationCoroutine(null));
+				m_mainBoard.UpdateBoardLayout();
+				if (m_subBoard != null)
+					m_subBoard.UpdateBoardLayout();
+				m_itemUnlockButtonLayout.UpdateLayout(m_currentBoard);
+				GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA_IsBingoValid(null, -1);
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x725A24 Offset: 0x725A24 VA: 0x725A24
 		//// RVA: 0x10E5408 Offset: 0x10E5408 VA: 0x10E5408
@@ -1768,10 +2048,6 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10E61F4 Offset: 0x10E61F4 VA: 0x10E61F4
 		//private void <ShowConfirmPopupCoroutine>b__94_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
 
-		//[CompilerGeneratedAttribute] // RVA: 0x725AAC Offset: 0x725AAC VA: 0x725AAC
-		//// RVA: 0x10E6224 Offset: 0x10E6224 VA: 0x10E6224
-		//private void <ShowFinalConfirmPopupCoroutine>b__95_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
-		
 		//[CompilerGeneratedAttribute] // RVA: 0x725B1C Offset: 0x725B1C VA: 0x725B1C
 		//// RVA: 0x10E6514 Offset: 0x10E6514 VA: 0x10E6514
 		//private void <LimitOverMainCoroutine>b__119_2() { }

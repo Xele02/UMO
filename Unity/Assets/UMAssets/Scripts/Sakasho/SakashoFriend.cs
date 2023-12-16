@@ -35,10 +35,20 @@ public class SakashoFriend : SakashoAPIBase
 	}
 
 	//// RVA: 0x2BBDB58 Offset: 0x2BBDB58 VA: 0x2BBDB58
-	//public static SakashoAPICallContext AcceptFriendRequest(int id, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext AcceptFriendRequest(int id, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		h["id"] = id;
+		return new SakashoAPICallContext(Call(SakashoFriendAcceptFriendRequest, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	//// RVA: 0x2BBDCE8 Offset: 0x2BBDCE8 VA: 0x2BBDCE8
-	//public static SakashoAPICallContext RefuseFriendRequest(int id, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext RefuseFriendRequest(int id, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		h["id"] = id;
+		return new SakashoAPICallContext(Call(SakashoFriendRefuseFriendRequest, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	//// RVA: 0x2BBDE78 Offset: 0x2BBDE78 VA: 0x2BBDE78
 	//public static SakashoAPICallContext DeleteFriendRequest(int id, OnSuccess onSuccess, OnError onError) { }
@@ -61,7 +71,22 @@ public class SakashoFriend : SakashoAPIBase
 	}
 
 	//// RVA: 0x2BBE40C Offset: 0x2BBE40C VA: 0x2BBE40C
-	//public static SakashoAPICallContext SetFriendsFavoriteValue(int[] playerIds, int favorite, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext SetFriendsFavoriteValue(int[] playerIds, int favorite, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		ArrayList l = null;
+		if(playerIds != null)
+		{
+			l = new ArrayList();
+			for(int i = 0; i < playerIds.Length; i++)
+			{
+				l.Add(playerIds[i]);
+			}
+		}
+		h["playerIds"] = l;
+		h["favorite"] = favorite;
+		return new SakashoAPICallContext(Call(SakashoFriendSetFriendsFavoriteValue, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	//// RVA: 0x2BBE6B4 Offset: 0x2BBE6B4 VA: 0x2BBE6B4
 	//public static SakashoAPICallContext RefuseFriendsRequest(int[] player_ids, OnSuccess onSuccess, OnError onError) { }
@@ -94,10 +119,16 @@ public class SakashoFriend : SakashoAPIBase
 	}
 
 	//// RVA: 0x2BBF070 Offset: 0x2BBF070 VA: 0x2BBF070
-	//private static extern int SakashoFriendAcceptFriendRequest(int callbackId, string json) { }
+	private static int SakashoFriendAcceptFriendRequest(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoFriendAcceptFriendRequest(callbackId, json);
+	}
 
 	//// RVA: 0x2BBF180 Offset: 0x2BBF180 VA: 0x2BBF180
-	//private static extern int SakashoFriendRefuseFriendRequest(int callbackId, string json) { }
+	private static int SakashoFriendRefuseFriendRequest(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoFriendRefuseFriendRequest(callbackId, json);
+	}
 
 	//// RVA: 0x2BBF290 Offset: 0x2BBF290 VA: 0x2BBF290
 	//private static extern int SakashoFriendDeleteFriendRequest(int callbackId, string json) { }
@@ -120,7 +151,10 @@ public class SakashoFriend : SakashoAPIBase
 	}
 
 	//// RVA: 0x2BBF708 Offset: 0x2BBF708 VA: 0x2BBF708
-	//private static extern int SakashoFriendSetFriendsFavoriteValue(int callbackId, string json) { }
+	private static int SakashoFriendSetFriendsFavoriteValue(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoFriendSetFriendsFavoriteValue(callbackId, json);
+	}
 
 	//// RVA: 0x2BBF820 Offset: 0x2BBF820 VA: 0x2BBF820
 	//private static extern int SakashoFriendRefuseFriendsRequest(int callbackId, string json) { }

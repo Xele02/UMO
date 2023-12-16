@@ -111,6 +111,7 @@ class JpStringLiterals
 	public const string StringLiteral_10346 = "LinkError : 自分自身のIDをリンクIDに指定している"; // 0x03bb2c60
 	public const string StringLiteral_10416 = "<color=pink>最高スコア更新 "; // 0x03bb2d78
 	public const string StringLiteral_10431 = "デビューガチャ"; //0x03bb2db4
+	public const string StringLiteral_10443 = "プレート"; //0x03bb2de4
 	public const string StringLiteral_11015 = "master_gacha_ticket.xlsxにデカルガチャチケットの設定がありません"; //0x03bb36d4
 	public const string StringLiteral_11062 = "ライフ"; // 0x03bb3790
 	public const string StringLiteral_11063 = "ソウル"; // 0x03bb3794
@@ -182,6 +183,8 @@ class JpStringLiterals
 	public const string StringLiteral_11928 = "ファイルのダウンロードに失敗しました。\nストレージに十分な空き容量がない場合に\nこのメッセージが表示される可能性があります。\nリトライしますか？"; // 0x03bb4518
 	public const string StringLiteral_11929 = "ダウンロードエラー"; // 0x03bb451c
 	public const string StringLiteral_11930 = "ファイルのダウンロードに失敗しました。\nインターネットへの接続や電波の状況を確認して、\nもう一度お試しください。"; // 0x03bb4520
+	public const string StringLiteral_11972 = "内部エラー"; //0x03bb45c8
+	public const string StringLiteral_11973 = "エラーが発生しました。\nタイトル画面に戻ります。"; //0x03bb45cc
 	public const string StringLiteral_11992 = "バッチインストーラ　インストールモジュール作成失敗"; // 0x03bb4618
 	public const string StringLiteral_12005 = "タッチ"; //0x03bb464c
 	public const string StringLiteral_12010 = "コスチューム名"; //0x03bb4660
@@ -285,7 +288,11 @@ class JpStringLiterals
 	public const string StringLiteral_11219 = "ノーマルミッション"; // 0x03bb3a04
 	public const string StringLiteral_11220 = "イベントミッション"; // 0x03bb3a08
 	public const string StringLiteral_11221 = "ビンゴミッション"; // 0x03BB3A0C
+	public const string StringLiteral_11223 = "申請"; //0x03bb3a14
+	public const string StringLiteral_11224 = "承認"; //0x03bb3a18
 	public const string StringLiteral_11225 = "削除"; //0x03bb3a1c
+	public const string StringLiteral_11226 = "申請拒否"; //0x03bb3a20
+	public const string StringLiteral_11227 = "申請取り消し"; //0x03bb3a24
 	public const string StringLiteral_11248 = "既に回答済み"; //0x03bb3a78
 	public const string StringLiteral_12894 = "イベント達成pt"; // 0x03bb5430
 	public const string StringLiteral_12895 = "ログボ"; // 0x03bb5434
@@ -333,6 +340,7 @@ class JpStringLiterals
 	public const string StringLiteral_12937 = "能力ボード"; // 0x03bb54dc
 	public const string StringLiteral_12943 = "バルキリー小隊"; //0x03bb54f4
 	public const string StringLiteral_13053 = "★[0-9]"; //0x03bb56ac
+	public const string StringLiteral_13085 = "アイテム"; //0x03bb572c
 	public const string StringLiteral_13101 = "5分以内"; // 0x03bb576c
 	public const string StringLiteral_13102 = "分前"; // 0x03bb5770
 	public const string StringLiteral_13103 = "時間前"; // 0x03bb5774
@@ -379,6 +387,8 @@ class JpStringLiterals
 	public const string StringLiteral_15750 = "次の報酬まで {0} {1}"; // 0x03bb80d0
 	public const string StringLiteral_15778 = "追加報酬"; // 0x03bb8140
 	public const string StringLiteral_15794 = "あと {0} {1}"; // 0x03bb8180
+	public const string StringLiteral_15830 = "一度に使用できるアイテムは"; //0x03bb8210
+	public const string StringLiteral_15831 = "個までです。"; //0x03bb8214
 	public const string StringLiteral_16059 = "最終ログイン："; //0x03bb85a4
 	public const string StringLiteral_16060 = "申請："; //0x03bb85a8
 	public const string StringLiteral_16095 = "他人のデコルーム:フレンドリスト経由"; //0x03bb8634

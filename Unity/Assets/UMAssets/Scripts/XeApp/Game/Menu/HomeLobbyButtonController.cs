@@ -150,7 +150,12 @@ namespace XeApp.Game.Menu
 		// public void SetAsLastSibling() { }
 
 		// // RVA: 0x9673B8 Offset: 0x9673B8 VA: 0x9673B8
-		// public void TransitionLobbyMain() { }
+		public void TransitionLobbyMain()
+		{
+			if(!m_IsInitialize)
+				return;
+			TodoLogger.LogError(0, "LobbyButton TransitionLobbyMain");
+		}
 
 		// // RVA: 0x9682F0 Offset: 0x9682F0 VA: 0x9682F0
 		public void RequestInitRaidLobby(IMCBBOAFION onSuccess, DJBHIFLHJLK onErrorToTitle)

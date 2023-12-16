@@ -192,7 +192,7 @@ namespace XeApp.Game.Gacha
 			}
 			netGachaProductIndex = idx;
 			LOBDIAABMKG d = null;
-			if (netGachaProductIndex > 0)
+			if (netGachaProductIndex >= 0)
 			{
 				d = gpm.MHKCPJDNJKI_GatchaProducts[netGachaProductIndex];
 			}

@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using XeApp.Core;
 using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -36,10 +37,54 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEF8848 Offset: 0xEF8848 VA: 0xEF8848
-		//public void Show(ref PIGBBNDPPJC data, int add_point, JKNGJFOBADP rewards, EpisodeRewardGet.CloseEpisodeCompWindowHandler onClose, bool episodeInfoBtn = True) { }
+		public void Show(ref PIGBBNDPPJC data, int add_point, JKNGJFOBADP rewards, CloseEpisodeCompWindowHandler onClose, bool episodeInfoBtn = true)
+		{
+			Show(ref data, add_point, rewards.HBHMAKNGKFK_Items, rewards.EPPFEAIMFOE_ItemCount, onClose, episodeInfoBtn);
+		}
 
 		//// RVA: 0xEFE760 Offset: 0xEFE760 VA: 0xEFE760
-		//public void Show(ref PIGBBNDPPJC data, int add_point, List<MFDJIFIIPJD> items, int itemCount, EpisodeRewardGet.CloseEpisodeCompWindowHandler onClose, bool episodeInfoBtn = True) { }
+		public void Show(ref PIGBBNDPPJC data, int add_point, List<MFDJIFIIPJD> items, int itemCount, CloseEpisodeCompWindowHandler onClose, bool episodeInfoBtn = true)
+		{
+			m_is_restart = false;
+			m_items = items;
+			m_receiveCount = itemCount;
+			m_reward_index = 0;
+			m_data = data;
+			if (itemCount > 0)
+			{
+				for (int i = 0; i < m_receiveCount; i++)
+				{
+					InstallItem(items[i].NPPNDDMPFJJ_ItemCategory, items[i].JJBGOIMEIPF_ItemFullId);
+				}
+			}
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			m_comp_window.TitleText = bk.GetMessageByLabel("popup_title_episode_03");
+			m_comp_window.SetParent(transform);
+			m_comp_window.data = m_data;
+			m_comp_window.ItemList = m_items;
+			m_comp_window.add_episode_point = add_point;
+			m_comp_window.WindowSize = SizeType.Middle;
+			m_comp_window.is_restart = false;
+			if(!episodeInfoBtn)
+			{
+				m_comp_window.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				};
+				m_comp_window.NegativeButtonLabel = PopupButton.ButtonLabel.None;
+			}
+			else
+			{
+				m_comp_window.Buttons = new ButtonInfo[2]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Episode, Type = PopupButton.ButtonType.Episode },
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				};
+				m_comp_window.NegativeButtonLabel = PopupButton.ButtonLabel.Ok;
+			}
+			m_comp_window.BackButtonLabel = PopupButton.ButtonLabel.Ok;
+			this.StartCoroutineWatched(ShowCoroutine(onClose));
+		}
 
 		//// RVA: 0xEF7E70 Offset: 0xEF7E70 VA: 0xEF7E70
 		public void ReStart(CloseEpisodeCompWindowHandler onClose)
@@ -121,7 +166,20 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEFEC1C Offset: 0xEFEC1C VA: 0xEFEC1C
-		//private bool InstallItem(EKLNMHFCAOI.FKGCBLHOOCL type, int id) { }
+		private bool InstallItem(EKLNMHFCAOI.FKGCBLHOOCL_Category type, int id)
+		{
+			if(type == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie)
+			{
+				KDLPEDBKMID.HHCJCDFCLOB.OANDCKGGJIP(id);
+				return true;
+			}
+			else if(type == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
+			{
+				KDLPEDBKMID.HHCJCDFCLOB.FKIJBFJBIOC(id, false);
+				return true;
+			}
+			return false;
+		}
 
 		//// RVA: 0xEFF45C Offset: 0xEFF45C VA: 0xEFF45C
 		private void DummyBackButton()

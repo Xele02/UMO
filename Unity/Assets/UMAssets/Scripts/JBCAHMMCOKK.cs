@@ -11,32 +11,32 @@ public class JBCAHMMCOKK
     {
         HJNNKCMLGFL = 0,
         NIGFMKCDCNP = 1,
-        HMGJAOOGHMM = 2,
-        CNCMFECBJHP = 3,
-        BPCPDNGLNGO = 4,
-        IDAIIJEMNMP = 5,
-        NCBMILKEFCF = 6,
-        OLJOBADEFGB = 7,
-        NHANNKGPAHM = 8,
-        KAEBCNOCLPJ = 9,
-        FKGINHFBLJE = 10,
-        AHJNOIGCCFC = 11,
+        HMGJAOOGHMM_2 = 2,
+        CNCMFECBJHP_3 = 3,
+        BPCPDNGLNGO_4 = 4,
+        IDAIIJEMNMP_5 = 5,
+        NCBMILKEFCF_6 = 6,
+        OLJOBADEFGB_7 = 7,
+        NHANNKGPAHM_8 = 8,
+        KAEBCNOCLPJ_9 = 9,
+        FKGINHFBLJE_10 = 10,
+        AHJNOIGCCFC_11 = 11,
         OJBBCGGNCKM = 12,
         CPKDCDBLDDG = 13,
         GNLFMDOELFC = 14,
-        MGJDKBFHDML = 15,
-        GINEDIDMAAO = 16,
-        DMPMKBCPHMA = 17,
-        KBAKCIJPCAL = 18,
-        KOLKHFLCBNP = 19,
-        JNFDONGNAGP = 20,
-        KJBGPOMJFBE = 21,
-        CIGFHJNCKPE = 22,
-        BMHJMLDAPCE = 23,
+        MGJDKBFHDML_15 = 15,
+        GINEDIDMAAO_16 = 16,
+        DMPMKBCPHMA_17 = 17,
+        KBAKCIJPCAL_18 = 18,
+        KOLKHFLCBNP_19 = 19,
+        JNFDONGNAGP_20 = 20,
+        KJBGPOMJFBE_21 = 21,
+        CIGFHJNCKPE_22 = 22,
+        BMHJMLDAPCE_23 = 23,
         GFFIILLPAMN = 24,
         OJEHIGOLJAL = 25,
-        CADKONMJEDA = 26,
-        KCOEIKAMLBD = 27,
+        CADKONMJEDA_26 = 26,
+        KCOEIKAMLBD_27 = 27,
     }
 
     public enum CFBANNFILFK
@@ -453,7 +453,7 @@ public class JBCAHMMCOKK
 					{
 						j.BJIMIONBKDD = false;
 					}
-					j.NNHHNFFLCFO = ALEKHDPDOEA.HMGJAOOGHMM/*2*/;
+					j.NNHHNFFLCFO = ALEKHDPDOEA.HMGJAOOGHMM_2/*2*/;
 					NNDGIAEFMOG.Add(j);
 					return;
 				}
@@ -466,7 +466,7 @@ public class JBCAHMMCOKK
 					{
 						j.BJIMIONBKDD = false;
 					}
-					j.NNHHNFFLCFO = ALEKHDPDOEA.HMGJAOOGHMM/*2*/;
+					j.NNHHNFFLCFO = ALEKHDPDOEA.HMGJAOOGHMM_2/*2*/;
 					NNDGIAEFMOG.Add(j);
 					return;
 				}
@@ -478,7 +478,7 @@ public class JBCAHMMCOKK
 					{
 						j.BJIMIONBKDD = false;
 					}
-					j.NNHHNFFLCFO = ALEKHDPDOEA.HMGJAOOGHMM/*2*/;
+					j.NNHHNFFLCFO = ALEKHDPDOEA.HMGJAOOGHMM_2/*2*/;
 					NNDGIAEFMOG.Add(j);
 					return;
 				}
@@ -637,7 +637,7 @@ public class JBCAHMMCOKK
 						data.EAHPLCJMPHD = pickup.KNHOMNONOEB;
 						if (!b)
 							data.BJIMIONBKDD = false;
-						data.NNHHNFFLCFO = ALEKHDPDOEA.HMGJAOOGHMM/*2*/;
+						data.NNHHNFFLCFO = ALEKHDPDOEA.HMGJAOOGHMM_2/*2*/;
 						NNDGIAEFMOG.Add(data);
 					}
 				}

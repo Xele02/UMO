@@ -349,7 +349,32 @@ public class GNGMCIAIKMA
 	}
 
 	// // RVA: 0xABA480 Offset: 0xABA480 VA: 0xABA480
-	// public int AMIBPGONGFE(long JHNMKKNEENE, bool HLCDBGGEHPD) { }
+	public int AMIBPGONGFE(long JHNMKKNEENE, bool HLCDBGGEHPD)
+	{
+		JKICPBIIHNE_Bingo bingoDb = FJLIDJJAGOM_GetBingoDb();
+		if(bingoDb != null)
+		{
+			List<int> l = CNADOFDDNLO_GetActiveBingos(JHNMKKNEENE);
+			for(int i = 0; i < l.Count; i++)
+			{
+				if(l[i] > 0)
+				{
+					JKICPBIIHNE_Bingo.HNOGDJFJGPM b = bingoDb.JJAICEAEGKF[l[i] - 1];
+					if(!HLCDBGGEHPD)
+					{
+						if(b.FDBNFFNFOND_EndTime != 0)
+							return l[i];
+					}
+					else
+					{
+						if(b.FDBNFFNFOND_EndTime == 0)
+							return l[i];
+					}
+				}
+			}
+		}
+		return 0;
+	}
 
 	// // RVA: 0xABA5FC Offset: 0xABA5FC VA: 0xABA5FC
 	public void KGABKGKGNCA_SetBingoClear(int APFDNBGMMMM, bool BCGLDMKODLC)
