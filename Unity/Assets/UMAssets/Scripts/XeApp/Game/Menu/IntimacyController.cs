@@ -104,7 +104,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x14B0204 Offset: 0x14B0204 VA: 0x14B0204
 		private void OnApplicationPause(bool pauseStatus)
 		{
-			TodoLogger.LogError(0, "IntimacyController.OnApplicationPause");
+			m_isPause = true;
 		}
 
 		//// RVA: 0x14B0210 Offset: 0x14B0210 VA: 0x14B0210

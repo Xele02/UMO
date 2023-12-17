@@ -269,7 +269,10 @@ public class NMFABEKNBKJ
 	}
 
 	// // RVA: 0x1CABE20 Offset: 0x1CABE20 VA: 0x1CABE20
-	// public void FGDBKOCCKOE(bool CKLGHFBPFPJ) { }
+	public void FGDBKOCCKOE(bool CKLGHFBPFPJ)
+	{
+		return;
+	}
 
 	// // RVA: 0x1CABE24 Offset: 0x1CABE24 VA: 0x1CABE24
 	// private void IJLKOHNHIFO() { }
@@ -283,6 +286,7 @@ public class NMFABEKNBKJ
 		c.Dispose();
 		if(sdk > 25)
 		{
+			UnityEngine.Debug.LogError("Create notif channel " + PPFNGGCBJKC + " " + OPFGFINHFCE);
 			AndroidJavaObject notif = new AndroidJavaObject("android.app.NotificationChannel", new object[3] { PPFNGGCBJKC, OPFGFINHFCE, PDJFAPLAPAG });
 			AndroidJavaClass cl = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
 			AndroidJavaObject activity = cl.GetStatic<AndroidJavaObject>("currentActivity");

@@ -135,7 +135,19 @@ public class MCGNOFMAPBJ
 	}
 
 	// // RVA: 0x130D15C Offset: 0x130D15C VA: 0x130D15C
-	// public long LEHHIGOOIJJ() { }
+	public long LEHHIGOOIJJ()
+	{
+		if(NEPIPMPAFIE_Stamina < DCBENCMNOGO_GainStamina)
+		{
+			long v1 = FJDBNGEPKHL_Time - DLPEEDCCNMJ_StaminaSaveTime;
+			long v2 = FLJGHBLEDDB_HealSec * (DCBENCMNOGO_GainStamina - NEPIPMPAFIE_Stamina);
+			if(v1 < v2)
+			{
+				return v2 - v1 + FJDBNGEPKHL_Time;
+			}
+		}
+		return 0;
+	}
 
 	// // RVA: 0x130D2AC Offset: 0x130D2AC VA: 0x130D2AC
 	public bool IGFMNMADJPP(int CHIHFGDIBJM, bool DDGFCOPPBBN = true)

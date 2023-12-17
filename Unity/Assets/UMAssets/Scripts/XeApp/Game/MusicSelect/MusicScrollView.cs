@@ -320,7 +320,35 @@ namespace XeApp.Game.MusicSelect
 		}
 
 		//// RVA: 0xCA07F8 Offset: 0xCA07F8 VA: 0xCA07F8
-		//private void OnApplicationPause(bool pauseStatus) { }
+		private void OnApplicationPause(bool pauseStatus)
+		{
+			if(pauseStatus && _isDraging)
+			{
+				_isSingleScroll = false;
+				_isDraging = false;
+				target = 0;
+				prev = 0;
+				int a = 0;
+				int b;
+				do
+				{
+					do
+					{
+						b = a;
+						a = 1;
+					} while(b == 0);
+					_isSingleScroll = true;
+					_isReturn = true;
+					_velocity[b] = 0;
+					target = target - (_scrollValue.y % 90) / 90.0f * 90;
+					if(OnScrollStartEvent != null)
+					{
+						OnScrollStartEvent.Invoke();
+					}
+					a = b + 1;
+				} while(b + 1 != 2);
+			}
+		}
 
 		//// RVA: 0xCA045C Offset: 0xCA045C VA: 0xCA045C
 		private void UpdateItemPosition(float rate)
