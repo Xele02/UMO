@@ -27,7 +27,7 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
     {
         Parent = setting.m_parent;
 
-        float y = 10;
+        float y = -10;
         AddToggleButton(ref y, "Can skip unplayed song", () =>
         {
             return RuntimeSettings.CurrentSettings.CanSkipUnplayedSongs;
@@ -106,6 +106,14 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         }, (bool b) =>
         {
             RuntimeSettings.CurrentSettings.EnableErrorLog = b;
+        });
+        
+        AddToggleButton(ref y, "Debug : Disable Cryware low latency", () =>
+        {
+            return RuntimeSettings.CurrentSettings.DisableCrywareLowLatency;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.DisableCrywareLowLatency = b;
         });
         GetComponent<RectTransform>().sizeDelta = new Vector2(GetComponent<RectTransform>().sizeDelta.x, -y);
         gameObject.SetActive(true);

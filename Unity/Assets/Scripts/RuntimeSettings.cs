@@ -35,6 +35,7 @@ class RuntimeSettings : ScriptableObject
 				m_currentSettings.DisplayIdInName = UMO_PlayerPrefs.GetInt("DisplayIdInName", 0) == 1;
 				m_currentSettings.EnableInfoLog = UMO_PlayerPrefs.GetInt("EnableInfoLog", 0) == 1;
 				m_currentSettings.EnableErrorLog = UMO_PlayerPrefs.GetInt("EnableErrorLog", 0) == 1;
+				m_currentSettings.DisableCrywareLowLatency = UMO_PlayerPrefs.GetInt("DisableCrywareLowLatency", 0) == 1;
 
 #if (UNITY_ANDROID && !UNITY_EDITOR) || DEBUG_ANDROID_FILESYSTEM
 				m_currentSettings.DataDirectory = Application.persistentDataPath + "/data/";
@@ -55,6 +56,7 @@ class RuntimeSettings : ScriptableObject
         UMO_PlayerPrefs.SetInt("DisplayIdInName", m_currentSettings.DisplayIdInName ? 1 : 0);
         UMO_PlayerPrefs.SetInt("EnableInfoLog", m_currentSettings.EnableInfoLog ? 1 : 0);
         UMO_PlayerPrefs.SetInt("EnableErrorLog", m_currentSettings.EnableErrorLog ? 1 : 0);
+        UMO_PlayerPrefs.SetInt("DisableCrywareLowLatency", m_currentSettings.DisableCrywareLowLatency ? 1 : 0);
 		UMO_PlayerPrefs.Save();
 	}
 
@@ -114,6 +116,7 @@ class RuntimeSettings : ScriptableObject
 	//public bool ForceAllStoryMusicUnlock = true;
 	//public int ForcePlayerLevel = 90;
 	public bool CanSkipUnplayedSongs { get; set; }
+	public bool DisableCrywareLowLatency { get; set; }
 	public bool RemoveHomeBgDateLimit = false;
 
 	public bool IsInvincibleCheat { get; set; }
