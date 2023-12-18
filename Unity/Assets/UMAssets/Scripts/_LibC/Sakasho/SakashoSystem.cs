@@ -6,6 +6,14 @@ namespace ExternLib
 {
     public static partial class LibSakasho
     {
+        public static void SakashoSystemFinish()
+        {
+            TodoLogger.LogError(TodoLogger.SakashoSystem, "LibSakasho.SakashoSystemFinish");
+        }
+        public static void SakashoSystemPause()
+        {
+            TodoLogger.LogError(TodoLogger.SakashoSystem, "LibSakasho.SakashoSystemPause");
+        }
         public static void SakashoSystemResume()
         {
             TodoLogger.LogError(TodoLogger.SakashoSystem, "LibSakasho.SakashoSystemResume");

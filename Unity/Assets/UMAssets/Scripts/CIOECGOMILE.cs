@@ -259,7 +259,6 @@ public class CIOECGOMILE
 		PDKNJAEGNIL();
 		PDKNJAEGNIL(LGBMDHOLOIF_decoPlayerData);
 		PDKNJAEGNIL(LGBMDHOLOIF_decoPlayerData);
-		TodoLogger.LogError(0, "TODO");
 	}
 
 	// // RVA: 0xFFB7A8 Offset: 0xFFB7A8 VA: 0xFFB7A8

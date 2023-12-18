@@ -466,7 +466,27 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0x9B3334 Offset: 0x9B3334 VA: 0x9B3334
-		// private void OnApplicationPause(bool pauseStatus) { }
+		private void OnApplicationPause(bool pauseStatus)
+		{
+			if(!pauseStatus)
+			{
+				if(isVisiblePauseWindow)
+					return;
+				rNoteOwner.Resume();
+				Resume();
+			}
+			if(uiController != null)
+			{
+				if(uiController.Hud != null)
+				{
+					uiController.Hud.OnPauseButtonSelected(true);
+				}
+			}
+			if(isVisiblePauseWindow)
+				return;
+			rNoteOwner.Pause();
+			Pause();
+		}
 
 		// // RVA: 0x9B0A08 Offset: 0x9B0A08 VA: 0x9B0A08
 		private void Initialize()

@@ -58,7 +58,10 @@ namespace XeApp.Core
 		}
 
 		// // RVA: 0x1D7376C Offset: 0x1D7376C VA: 0x1D7376C
-		// private void OnApplicationQuit() { }
+		private void OnApplicationQuit()
+		{
+			DoOnApplicationQuit();
+		}
 
 		// // RVA: 0x1D7377C Offset: 0x1D7377C VA: 0x1D7377C Slot: 4
 		public void UpdateEnter()
@@ -186,7 +189,10 @@ namespace XeApp.Core
 		}
 
 		// // RVA: 0x1D73E48 Offset: 0x1D73E48 VA: 0x1D73E48 Slot: 15
-		// protected virtual void DoOnApplicationQuit() { }
+		protected virtual void DoOnApplicationQuit()
+		{
+			return;
+		}
 
 		// // RVA: 0x1D73E4C Offset: 0x1D73E4C VA: 0x1D73E4C
 		protected void NextScene(string nextSceneName)

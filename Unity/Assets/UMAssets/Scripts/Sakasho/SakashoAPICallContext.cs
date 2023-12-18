@@ -25,7 +25,11 @@ public class SakashoAPICallContext
 	}
 
 	// // RVA: 0x307855C Offset: 0x307855C VA: 0x307855C
-	// public static void Finish() { }
+	public static void Finish()
+	{
+		cancelAPICallDelegate = null;
+		initialized = false;
+	}
 
 	// // RVA: 0x30785CC Offset: 0x30785CC VA: 0x30785CC
 	public bool CancelAPICall()

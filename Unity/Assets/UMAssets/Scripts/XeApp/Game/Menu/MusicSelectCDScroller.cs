@@ -29,7 +29,7 @@ namespace XeApp.Game.Menu
 		// private int m_savedFrame; // 0x3C
 		private bool m_inputEnable = true; // 0x44
 		// private bool m_isDragScroll; // 0x45
-		// private PointerEventData m_dragEventData; // 0x48
+		private PointerEventData m_dragEventData; // 0x48
 		// private float scrolled; // 0x4C
 		// private float scrollTimer; // 0x50
 		// private float scrollPerSec; // 0x54
@@ -87,7 +87,14 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x166E9C8 Offset: 0x166E9C8 VA: 0x166E9C8
-		// private void OnApplicationPause(bool pauseStatus) { }
+		private void OnApplicationPause(bool pauseStatus)
+		{
+			if(!pauseStatus)
+				return;
+			if(m_dragEventData == null)
+				return;
+			OnEndDrag(m_dragEventData);
+		}
 
 		// // RVA: 0x166EAAC Offset: 0x166EAAC VA: 0x166EAAC
 		// private void UpdateIdle() { }

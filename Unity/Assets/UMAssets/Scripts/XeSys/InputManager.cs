@@ -83,11 +83,12 @@ namespace XeSys
 		private void Update()
 		{
 			UpdateAcceleration();
-			if(Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+			//if(Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
 			{
 				MobileAction();
 			}
-			else
+			//else
+			if(Application.platform != RuntimePlatform.Android && Application.platform != RuntimePlatform.IPhonePlayer)
 			{
 				MouseAction();
 #if !UNITY_ANDROID

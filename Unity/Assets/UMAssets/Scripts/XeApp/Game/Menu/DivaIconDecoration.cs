@@ -31,20 +31,20 @@ namespace XeApp.Game.Menu
 		public DivaIconDecoration(GameObject parent, Size size, AbsoluteLayout parentLayout, GameObject positionParent)
 		{
 			Initialize(parent, size, true, false, parentLayout, positionParent);
-			m_calcStatusResult.OBKGEDCKHHE_Reset();
+			m_calcStatusResult.OBKGEDCKHHE_Init();
 		}
 
 		//// RVA: 0x17E1650 Offset: 0x17E1650 VA: 0x17E1650
 		public DivaIconDecoration(GameObject parent, Size size, bool useDiva, bool useFriend, AbsoluteLayout parentLayout, GameObject positionParent)
 		{
 			Initialize(parent, size, useDiva, useFriend, parentLayout, positionParent);
-			m_calcStatusResult.OBKGEDCKHHE_Reset();
+			m_calcStatusResult.OBKGEDCKHHE_Init();
 		}
 
 		//// RVA: 0x17D60A4 Offset: 0x17D60A4 VA: 0x17D60A4
 		public DivaIconDecoration()
 		{
-			m_calcStatusResult.OBKGEDCKHHE_Reset();
+			m_calcStatusResult.OBKGEDCKHHE_Init();
 		}
 
 		//// RVA: 0x17D2C14 Offset: 0x17D2C14 VA: 0x17D2C14

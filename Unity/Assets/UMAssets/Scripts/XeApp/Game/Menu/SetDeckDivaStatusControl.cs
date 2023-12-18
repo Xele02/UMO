@@ -96,6 +96,7 @@ namespace XeApp.Game.Menu
 				}
 				return;
 			}
+			m_calcStatusResult.OBKGEDCKHHE_Init();
 			CMMKCEPBIHI.AECDJDIJJKD_ApplySkills(ref m_calcStatusResult, divaData, null, playerData, null, null, null);
 			m_status.Clear();
 			m_calcStatusResult.IMLOCECFHGK(ref m_status);

@@ -62,8 +62,17 @@ public class SakashoInitializer : MonoBehaviour
 	}
 
 	// // RVA: 0x2BC7A1C Offset: 0x2BC7A1C VA: 0x2BC7A1C
-	// private void OnApplicationPause(bool pauseState) { }
+	private void OnApplicationPause(bool pauseState)
+	{
+		if(pauseState)
+			SakashoSystem.Pause();
+		else
+			SakashoSystem.Resume();
+	}
 
 	// // RVA: 0x2BC7A30 Offset: 0x2BC7A30 VA: 0x2BC7A30
-	// private void OnApplicationQuit() { }
+	private void OnApplicationQuit()
+	{
+		SakashoSystem.Finish();
+	}
 }
