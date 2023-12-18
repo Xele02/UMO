@@ -1,12 +1,15 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using XeApp.Game.Common;
+using XeApp.Game.Menu;
 
 public class UMOPopupConfig : UIBehaviour, IPopupContent
 {
 	public Transform Parent { get; private set; } // 0xC
 
-    public UMO_ToggleButtonGroup CanSkipSongs;
+    /*public UMO_ToggleButtonGroup CanSkipSongs;
     public UMO_ToggleButtonGroup InvincibleMode;
     public UMO_ToggleButtonGroup ForcePerfect;
     public UMO_ToggleButtonGroup DisableNoteSound;
@@ -15,37 +18,122 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
     public UMO_ToggleButtonGroup ForceIntegrityCheck;
     public UMO_ToggleButtonGroup DisplayItemId;
     public UMO_ToggleButtonGroup EnableInfoLog;
-    public UMO_ToggleButtonGroup EnableErrorLog;
+    public UMO_ToggleButtonGroup EnableErrorLog;*/
+    
+    [SerializeField]
+	private GameObject ToggleButtonPrefab;
 
     public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
     {
         Parent = setting.m_parent;
-        CanSkipSongs.SetSelected(RuntimeSettings.CurrentSettings.CanSkipUnplayedSongs ? 0 : 1);
-        InvincibleMode.SetSelected(RuntimeSettings.CurrentSettings.IsInvincibleCheat ? 0 : 1);
-        ForcePerfect.SetSelected(RuntimeSettings.CurrentSettings.ForcePerfectNote ? 0 : 1);
-        DisableNoteSound.SetSelected(RuntimeSettings.CurrentSettings.DisableNoteSound ? 0 : 1);
-        DisableWatermark.SetSelected(RuntimeSettings.CurrentSettings.DisableWatermark ? 0 : 1);
-        MinigameAutoPlay.SetSelected(RuntimeSettings.CurrentSettings.MinigameAutoPlay ? 0 : 1);
-        ForceIntegrityCheck.SetSelected(KEHOJEJMGLJ.FJDOHLADGFI ? 0 : 1);
-        DisplayItemId.SetSelected(RuntimeSettings.CurrentSettings.DisplayIdInName ? 0 : 1);
-        EnableInfoLog.SetSelected(RuntimeSettings.CurrentSettings.EnableInfoLog ? 0 : 1);
-        EnableErrorLog.SetSelected(RuntimeSettings.CurrentSettings.EnableErrorLog ? 0 : 1);
+
+        float y = 10;
+        AddToggleButton(ref y, "Can skip unplayed song", () =>
+        {
+            return RuntimeSettings.CurrentSettings.CanSkipUnplayedSongs;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.CanSkipUnplayedSongs = b;
+        });
+        
+        AddToggleButton(ref y, "Live : Invincible mode", () =>
+        {
+            return RuntimeSettings.CurrentSettings.IsInvincibleCheat;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.IsInvincibleCheat = b;
+        });
+        
+        AddToggleButton(ref y, "Live : Force perfect", () =>
+        {
+            return RuntimeSettings.CurrentSettings.ForcePerfectNote;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.ForcePerfectNote = b;
+        });
+        
+        AddToggleButton(ref y, "SLive : Disable note sound", () =>
+        {
+            return RuntimeSettings.CurrentSettings.DisableNoteSound;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.DisableNoteSound = b;
+        });
+        
+        AddToggleButton(ref y, "SLive : Disable watermark", () =>
+        {
+            return RuntimeSettings.CurrentSettings.DisableWatermark;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.DisableWatermark = b;
+        });
+        
+        AddToggleButton(ref y, "April fool minigame : Autoplay", () =>
+        {
+            return RuntimeSettings.CurrentSettings.MinigameAutoPlay;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.MinigameAutoPlay = b;
+        });
+        
+        AddToggleButton(ref y, "Data : Force integrity check on next launch", () =>
+        {
+            return KEHOJEJMGLJ.FJDOHLADGFI;
+        }, (bool b) =>
+        {
+            KEHOJEJMGLJ.FJDOHLADGFI = b;
+        });
+        
+        AddToggleButton(ref y, "Debug : Display item id in name", () =>
+        {
+            return RuntimeSettings.CurrentSettings.DisplayIdInName;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.DisplayIdInName = b;
+        });
+        
+        AddToggleButton(ref y, "Debug : Enable info log", () =>
+        {
+            return RuntimeSettings.CurrentSettings.EnableInfoLog;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.EnableInfoLog = b;
+        });
+        
+        AddToggleButton(ref y, "Debug : Enable error log", () =>
+        {
+            return RuntimeSettings.CurrentSettings.EnableErrorLog;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.EnableErrorLog = b;
+        });
+        GetComponent<RectTransform>().sizeDelta = new Vector2(GetComponent<RectTransform>().sizeDelta.x, -y);
         gameObject.SetActive(true);
     }
 
     public void Save()
     {
-        RuntimeSettings.CurrentSettings.CanSkipUnplayedSongs = CanSkipSongs.GetSelected() == 0;
-        RuntimeSettings.CurrentSettings.IsInvincibleCheat = InvincibleMode.GetSelected() == 0;
-        RuntimeSettings.CurrentSettings.ForcePerfectNote = ForcePerfect.GetSelected() == 0;
-        RuntimeSettings.CurrentSettings.DisableNoteSound = DisableNoteSound.GetSelected() == 0;
-        RuntimeSettings.CurrentSettings.DisableWatermark = DisableWatermark.GetSelected() == 0;
-        RuntimeSettings.CurrentSettings.MinigameAutoPlay = MinigameAutoPlay.GetSelected() == 0;
-        KEHOJEJMGLJ.FJDOHLADGFI = ForceIntegrityCheck.GetSelected() == 0;
-        RuntimeSettings.CurrentSettings.DisplayIdInName = DisplayItemId.GetSelected() == 0;
-        RuntimeSettings.CurrentSettings.EnableInfoLog = EnableInfoLog.GetSelected() == 0;
-        RuntimeSettings.CurrentSettings.EnableErrorLog = EnableErrorLog.GetSelected() == 0;
+        UMO_ToggleButtonGroup[] btns = GetComponentsInChildren<UMO_ToggleButtonGroup>();
+        for(int i = 0; i < btns.Length; i++)
+        {
+            btns[i].Save();
+        }
         RuntimeSettings.CurrentSettings.Save();
+    }
+
+    void AddToggleButton(ref float y, string txt, Func<bool> isOnCallback, Action<bool> setOnCallback)
+    {
+        GameObject g = Instantiate(ToggleButtonPrefab);
+        UMO_ToggleButtonGroup toggle = g.GetComponentInChildren<UMO_ToggleButtonGroup>();
+        g.transform.SetParent(transform, false);
+        y -= 52;
+        (g.transform as RectTransform).anchoredPosition = new Vector2(71, y);
+        y -= 10;
+        toggle.IsOnCallback = isOnCallback;
+        toggle.SetOnCallback = setOnCallback;
+        Text text = g.GetComponentInChildren<Text>();
+        text.text = txt;
+        toggle.Init();
     }
     public bool IsScrollable()
     {

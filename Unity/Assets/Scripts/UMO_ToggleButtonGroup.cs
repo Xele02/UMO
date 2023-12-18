@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,10 @@ public class UMO_ToggleButtonGroup : MonoBehaviour
     private Button[] buttons;
     [SerializeField]
     private GameObject[] onObjects;
+    [SerializeField]
+
+    public Func<bool> IsOnCallback { private get; set; }
+    public Action<bool> SetOnCallback { private get; set; }
 
     int selected = 0;
 
@@ -49,5 +54,17 @@ public class UMO_ToggleButtonGroup : MonoBehaviour
     public int GetSelected()
     {
         return selected;
+    }
+
+    public void Init()
+    {
+        if(IsOnCallback != null)
+            SetSelected(IsOnCallback() ? 0 : 1);
+    }
+
+    public void Save()
+    {
+        if(SetOnCallback != null)
+            SetOnCallback(GetSelected() == 0);
     }
 }
