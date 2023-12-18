@@ -26,7 +26,10 @@ namespace com.adjust.sdk
 		}
 
 		// // RVA: 0x274D108 Offset: 0x274D108 VA: 0x274D108
-		// private void OnApplicationPause(bool pauseStatus) { }
+		private void OnApplicationPause(bool pauseStatus)
+		{
+			TodoLogger.LogError(TodoLogger.Adjust, "Adjust.OnApplicationPause");
+		}
 
 		// // RVA: 0x274D038 Offset: 0x274D038 VA: 0x274D038
 		// public static void start(AdjustConfig adjustConfig) { }

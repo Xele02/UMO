@@ -51,7 +51,6 @@ public class BIFNGFAIEIL
 					int i78 = 0;
 					for(int i = 0; i < 2000; i++)
 					{
-						long i7c80 = time;
 						BOKMNHAFJHF_Sns.KEIGMAOCJHK snsData = dbSns[i];
 						if(snsData.PPEGAKEIEGM_Enabled == 2)
 						{
@@ -63,19 +62,19 @@ public class BIFNGFAIEIL
 								{
 									if(HLMJIADBPIJ.IBHJAMDGGMC((NJLGICBHIOC.EOFJDIACFEC)snsData.JKNGNIMLDDJ, snsData.DPIBHFNDJII, snsData.EKPBOLNFGJB, serverSave, db, time))
 									{
-										long i6468 = i7c80 + i78;
+										long i6468 = time + i78;
 										long l3 = time + i78;
 										if(snsData.MALFHCHNEFN == 0)
 										{
 											if(snsData.JKNGNIMLDDJ == 10)
 											{
-												if(i7c80 >= snsData.DPIBHFNDJII)
+												if(time >= snsData.DPIBHFNDJII)
 													i6468 = snsData.DPIBHFNDJII;
 												l3 = i6468;
 											}
 											else if(snsData.JKNGNIMLDDJ == 12)
 											{
-												if(i7c80 >= JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.IALIHKHGMFJ((int)snsData.DPIBHFNDJII))
+												if(time >= JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.IALIHKHGMFJ((int)snsData.DPIBHFNDJII))
 												{
 													l3 = snsData.DPIBHFNDJII;
 												}
@@ -111,7 +110,7 @@ public class BIFNGFAIEIL
 											bool c = false;
 											if(snsData.JKNGNIMLDDJ == 10)
 											{
-												if(i7c80 >= snsData.DPIBHFNDJII)
+												if(time >= snsData.DPIBHFNDJII)
 												{
 													i6468 = snsData.DPIBHFNDJII;
 													c = true;
@@ -119,7 +118,7 @@ public class BIFNGFAIEIL
 											}
 											else if(snsData.JKNGNIMLDDJ == 12)
 											{
-												if(i7c80 >= JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.IALIHKHGMFJ((int)snsData.DPIBHFNDJII))
+												if(time >= JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.IALIHKHGMFJ((int)snsData.DPIBHFNDJII))
 												{
 													i6468 = snsData.DPIBHFNDJII;
 												}

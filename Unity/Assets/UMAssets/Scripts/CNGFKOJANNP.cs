@@ -1,3 +1,4 @@
+using SecureLib;
 using UnityEngine;
 using XeSys;
 
@@ -56,7 +57,13 @@ public class CNGFKOJANNP
 	}
 
 	// // RVA: 0x175B730 Offset: 0x175B730 VA: 0x175B730
-	// public void FGDBKOCCKOE(bool JKDJCFEBDHC) { }
+	public void FGDBKOCCKOE(bool JKDJCFEBDHC)
+	{
+		if(SecureLibAPI.isDebuggerAttachedJava())
+			AKPCMLEPPGC_IsInvalid = true;
+		if(SecureLibAPI.isDebuggerAttachedNative())
+			AKPCMLEPPGC_IsInvalid = true;
+	}
 
 	// // RVA: 0x175B80C Offset: 0x175B80C VA: 0x175B80C
 	public void BAGMHFKPFIF_Update()

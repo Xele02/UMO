@@ -25,7 +25,11 @@ public class S
 	//public void E() { }
 
 	// RVA: 0xDFDCB4 Offset: 0xDFDCB4 VA: 0xDFDCB4
-	//public void F(bool b) { }
+	public void F(bool b)
+	{
+		if(a != null)
+			a.FGDBKOCCKOE(b);
+	}
 
 	// RVA: 0xDFDCC8 Offset: 0xDFDCC8 VA: 0xDFDCC8
 	public void G()
