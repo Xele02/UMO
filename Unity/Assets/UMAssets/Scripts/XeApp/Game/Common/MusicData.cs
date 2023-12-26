@@ -103,11 +103,30 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAE63F4 Offset: 0xAE63F4 VA: 0xAE63F4
-		// public void LoadARData(int wavId) { }
+		public void LoadARData(int wavId)
+		{
+			this.Co_LoadARData(wavId);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73A49C Offset: 0x73A49C VA: 0x73A49C
 		// // RVA: 0xAE6418 Offset: 0xAE6418 VA: 0xAE6418
-		// private IEnumerator Co_LoadARData(int wavId) { }
+		private IEnumerator Co_LoadARData(int wavId)
+		{
+			StringBuilder bundleName; // 0x18
+			AssetBundleLoadAllAssetOperationBase allOperation; // 0x1C
+
+			//0xAE707C
+			isLoadedCheerData = false;
+			isLoadedCommonData = false;
+			isLoadedScoreData = false;
+			isLoadedParam = false;
+			bundleName = new StringBuilder();
+			bundleName.SetFormat("mc/{0:D4}/sc.xab", wavId);
+			allOperation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+			yield return allOperation;
+			yield return this.StartCoroutineWatched(LoadDirectionParam(allOperation, wavId));
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73A514 Offset: 0x73A514 VA: 0x73A514
 		// // RVA: 0xAE64E0 Offset: 0xAE64E0 VA: 0xAE64E0

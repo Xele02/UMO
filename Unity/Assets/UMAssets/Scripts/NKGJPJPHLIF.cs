@@ -13,6 +13,7 @@ using CriWare;
 using XeApp.Game.Menu;
 using XeApp.Game;
 using XeApp.Core;
+using XeApp.Game.AR;
 
 public class NKGJPJPHLIF
 {
@@ -51,6 +52,7 @@ public class NKGJPJPHLIF
 	private CNGFKOJANNP BHEDLCLHGPB; // 0x90
 	public long OLDKENOLHLL; // 0x98
 	public int DHMLDAGGKCD; // 0xA0
+	public ARMarkerSaveManager NJMOAHNLDBO;  // 0x9C // 3.1.0
 	private long GOEPLCHCCBC; // 0xB0
 	private int NMMCABJNNLH; // 0xB8
 	public bool DPJBHHIHJJK = true; // 0xBC
@@ -211,6 +213,8 @@ public class NKGJPJPHLIF
 		JAECPEDLEMN.IJBGPAENLJA();
 
 		DCPCLHOJEHE = false;
+
+		NJMOAHNLDBO = new ARMarkerSaveManager();
 	}
 
 	// RVA: 0xC179B0 Offset: 0xC179B0 VA: 0xC179B0
