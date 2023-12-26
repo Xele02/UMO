@@ -231,6 +231,10 @@ public class CoroutineWatcher : SingletonMonoBehaviour<CoroutineWatcher>
 #if UNITY_EDITOR
 	[MenuItem("UMO/Dump Coroutines Info")]
 #endif
+    static public void DumpCoroutineInfo2()
+    {
+		DumpCoroutineInfo();
+	}
     static public void DumpCoroutineInfo(bool canUpdate = true)
     {
 		if(canUpdate)

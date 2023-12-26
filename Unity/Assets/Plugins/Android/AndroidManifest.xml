@@ -9,5 +9,9 @@
       </intent-filter>
       <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
     </activity>
+    <receiver
+          android:name='jp.co.xeen.xeapp.LocalNotification$Receiver'
+          android:process=':remote'>
+    </receiver>
   </application>
 </manifest>

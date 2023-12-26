@@ -29,7 +29,13 @@ public class N : MonoBehaviour
 		}
 
         // RVA: 0x17BEE08 Offset: 0x17BEE08 VA: 0x17BEE08
-        //private void OnApplicationPause(bool a) { }
+        private void OnApplicationPause(bool a)
+		{
+			if(e != null)
+			{
+				e.F(a);
+			}
+		}
 
         public void OnDestroy() 
 		{ 

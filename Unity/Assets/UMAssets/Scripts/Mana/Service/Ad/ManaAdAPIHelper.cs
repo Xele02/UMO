@@ -38,7 +38,10 @@ namespace Mana.Service.Ad
         }
 
         // // RVA: 0x17BD75C Offset: 0x17BD75C VA: 0x17BD75C
-        // private void OnApplicationPause(bool pauseStatus) { }
+        private void OnApplicationPause(bool pauseStatus)
+        {
+			TodoLogger.LogError(TodoLogger.ManaAd, "ManaAdAPIHelper.OnApplicationPause ");
+        }
 
         // // RVA: 0x17BD3A8 Offset: 0x17BD3A8 VA: 0x17BD3A8
         // private void SetLaunchURL() { }

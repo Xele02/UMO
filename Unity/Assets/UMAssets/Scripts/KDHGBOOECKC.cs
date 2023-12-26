@@ -3247,10 +3247,28 @@ public class KDHGBOOECKC
 	}
 
 	// // RVA: 0x1036320 Offset: 0x1036320 VA: 0x1036320
-	// public string IJEFGJHHELK() { }
+	public string IJEFGJHHELK()
+	{
+		MessageBank bk = MessageManager.Instance.GetBank("menu");
+		if(bk != null)
+			return bk.GetMessageByLabel("offer_notification_return_vfp_title");
+		return JpStringLiterals.StringLiteral_12139;
+	}
 
 	// // RVA: 0x10363E4 Offset: 0x10363E4 VA: 0x10363E4
-	// public string GOIOHEOGOFK(int OIOECMEEFKJ) { }
+	public string GOIOHEOGOFK(int OIOECMEEFKJ)
+	{
+		if(OIOECMEEFKJ > 0 && OIOECMEEFKJ <= 5)
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			if(bk != null)
+			{
+				return bk.GetMessageByLabel("offer_notification_return_vfp_" + OIOECMEEFKJ);
+			}
+			return JpStringLiterals.StringLiteral_12141 + JPJADDADKDA[OIOECMEEFKJ - 1];
+		}
+		return "";
+	}
 
 	// // RVA: 0x102EF84 Offset: 0x102EF84 VA: 0x102EF84
 	public string PBKNBDCABDM_CreateSessionId(OCMJNBIFJNM_Offer.JPOHOLBBFGP GJLFANGDGCL, bool FBBNPFFEJBN = false)

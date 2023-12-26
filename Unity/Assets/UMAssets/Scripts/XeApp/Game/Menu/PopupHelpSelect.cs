@@ -18,6 +18,7 @@ namespace XeApp.Game.Menu
 		{
 			HelpSelectPopupSetting s = setting as HelpSelectPopupSetting;
 			transform.GetComponent<RectTransform>().sizeDelta = size;
+			Parent = setting.m_parent;
 			transform.localPosition = new Vector3(0, 0, 0);
 			HelpSelectWindow w = transform.GetComponent<HelpSelectWindow>();
 			w.Init(s.uniqueId, s.IsWiki);

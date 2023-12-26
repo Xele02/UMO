@@ -199,7 +199,7 @@ namespace XeApp.Game.Menu
 				m_liveSkillTypeTbl[i * 2 + 1] = l.FindViewByExId("live_skill_swtbl_lskill") as AbsoluteLayout;
 			}
 			m_divaIconDecoration = new DivaIconDecoration();
-			m_calcStatusResult.OBKGEDCKHHE_Reset();
+			m_calcStatusResult.OBKGEDCKHHE_Init();
 			ClearLoadedCallback();
 			return true;
 		}
