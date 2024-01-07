@@ -696,19 +696,18 @@ namespace XeApp.Game.Menu
 				currentTime += TimeWrapper.deltaTime;
 				float r = XeSys.Math.Tween.EasingInOutCubic(startExp, endExp, currentTime / timeLength);
 				int lvl = currentFrameLevel;
-				float f = expMaster.BOLBEBNHJHG_GetMusicLevelAndExp(r, out lvl);
-				if (lvl < currentFrameLevel)
-				{
-					lvl = currentFrameLevel;
-				}
-				ChangeCurrentMusicLevelExp(divaIndex, currentFrameLevel, CalcMusicLevelExpSectionPercentage(lvl, f));
+				float f = expMaster.BOLBEBNHJHG_GetMusicLevelAndExp(r, out currentFrameLevel);
 				if (currentFrameLevel < lvl)
+				{
+					currentFrameLevel = lvl;
+				}
+				ChangeCurrentMusicLevelExp(divaIndex, currentFrameLevel, CalcMusicLevelExpSectionPercentage(currentFrameLevel, f));
+				if (lvl < currentFrameLevel)
 				{
 					dl.isMusicLevelup = true;
 					StartMusicLevelup(divaIndex, currentFrameLevel, !BonusExp);
-					lvl = currentFrameLevel;
 				}
-				KDOMGMCGHDC.HJNMIKNAMFH h = viewResultDivaData.LNHIFELKOJF_GetPrevInfo(divaIndex, lvl);
+				KDOMGMCGHDC.HJNMIKNAMFH h = viewResultDivaData.LNHIFELKOJF_GetPrevInfo(divaIndex, currentFrameLevel);
 				bool end = true;
 				if (!h.HHBJAEOIGIH_IsLocked)
 					end = h.NBHEBLNHOJO_IsMax;
@@ -720,7 +719,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					dl.numberMusicLevelNextExp.SetNumber(expMaster.IECLHMBPEIJ_GetMusicExp(lvl + 1) - (int)(endExp), 0);
+					dl.numberMusicLevelNextExp.SetNumber(expMaster.IECLHMBPEIJ_GetMusicExp(currentFrameLevel + 1) - (int)(endExp), 0);
 					yield break;
 				}
 			}
@@ -867,7 +866,6 @@ namespace XeApp.Game.Menu
 
 			while(true)
 			{
-				float prevTime = currentTime;
 				currentTime += TimeWrapper.deltaTime;
 				int level = currentFrameLevel;
 				float r = XeSys.Math.Tween.EasingInOutCubic(startExp, endExp, currentTime / timeLength);
@@ -1128,8 +1126,7 @@ namespace XeApp.Game.Menu
 		{
 			float f = Mathf.Clamp(gaugePercentage, 0, 100);
 			int frame = divaLayouts[divaIndex].layoutDivaExpGauge.GetView(0).FrameAnimation.FrameNum;
-			int idx = (int)(f * (frame + 1) / 100);
-			divaLayouts[divaIndex].layoutDivaExpGauge.StartChildrenAnimGoStop(idx, idx);
+			int idx = (int)(f * (frame + 1) / 100.0f);
 			if(!divaLayouts[divaIndex].isDivaLevelup)
 			{
 				GNIFOHMFDMO_DivaResultData.IKODHMDOMMP d = viewResultDivaData.NAIHIJAJPNK_Divas[divaIndex];

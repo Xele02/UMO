@@ -387,7 +387,8 @@ namespace XeApp.Game.RhythmGame
 			m_laneController.SetVisibility(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.NFMEIILKACN_NotesRoute == 0);
 			if(GameManager.Instance.IsTutorial)
 			{
-				TodoLogger.LogError(0, "Tutorial");
+				if(music.isTutorialOne)
+					m_foldWaveGauge.HideGauge();
 			}
 		}
 

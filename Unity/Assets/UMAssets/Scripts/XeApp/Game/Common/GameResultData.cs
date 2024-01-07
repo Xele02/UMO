@@ -31,10 +31,16 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xE9C8C4 Offset: 0xE9C8C4 VA: 0xE9C8C4
-		//public void SetupForTutorialOne(GameResultData.TutorialOneResult result) { }
+		public void SetupForTutorialOne(TutorialOneResult result)
+		{
+			tutorialOneResult = result;
+		}
 
 		//// RVA: 0xE9C8CC Offset: 0xE9C8CC VA: 0xE9C8CC
-		//public void SetupForTutorialTow() { }
+		public void SetupForTutorialTow()
+		{
+			tutorialOneResult = TutorialOneResult.NONE;
+		}
 
 		//// RVA: 0xE9C8D8 Offset: 0xE9C8D8 VA: 0xE9C8D8
 		public void Reset()

@@ -195,7 +195,6 @@ namespace ExternLib
 		{
 			EDOHBJAPLPF_JsonData inData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
 			int accountType = (int)inData["accountType"];
-
 			CreateAccount(accountType == 1);
 
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
@@ -227,8 +226,6 @@ namespace ExternLib
 			//ExternLib.Java_Sakasho.jp.dena.sakasho.api.SakashoAPICallContext context = ExternLib.Java_Sakasho.jp.dena.sakasho.api.SakashoUserToken.getPlayerStatus(null, null);
 
 			int playerId = UMO_PlayerPrefs.GetInt("cpid", 0);
-			if(playerId != 999999999)
-				playerId = 0; // for now user is locked to the cheat account
 			if(playerId == 0)
 			{
 				playerAccount = null;

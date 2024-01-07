@@ -691,7 +691,7 @@ namespace XeApp.Game.Gacha
 							int a = netGachaProductData.OMNAPCHLBHF(GCAHJLOGMCI.NFCAJPIJFAM_SummonType.GOAHICNDICO_5);
 							if (a == 0)
 								a = netGachaProductData.OMNAPCHLBHF(GCAHJLOGMCI.NFCAJPIJFAM_SummonType.LMHDFEKIDKG_6);
-							return paidVCProductData.LHENLPLKGLP == netGachaProductData.LPPJMOMKPKA(a);
+							return paidVCProductData.LHENLPLKGLP_StuffId == netGachaProductData.LPPJMOMKPKA(a);
 						}));
 					}
 					else

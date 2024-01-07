@@ -77,8 +77,8 @@ namespace XeApp.Game.Menu
 			m_layoutMedal.StartChildrenAnimGoStop(view.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.FNLODOLMLML_3 ? "coin_off" : "coin_on");
 			for(int i = 0; i < m_imageMedal.Length; i++)
 			{
-                EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.EAHPLCJMPHD);
-                int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.EAHPLCJMPHD);
+                EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.EAHPLCJMPHD_PayItemId);
+                int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.EAHPLCJMPHD_PayItemId);
 				switch(cat)
 				{
 					case EKLNMHFCAOI.FKGCBLHOOCL_Category.GIMBFBNKPNO_CompoItem:

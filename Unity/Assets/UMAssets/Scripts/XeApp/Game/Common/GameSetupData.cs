@@ -458,7 +458,27 @@ namespace XeApp.Game.Common
 			// // RVA: 0xE9DF78 Offset: 0xE9DF78 VA: 0xE9DF78
 			public void SetupInfoByTutorial(TutorialGameMode.Type tutorialMode)
 			{
-				TodoLogger.LogError(1, "SetupInfoByTutorial");
+				mode = GameMode.Type.FreeBattle;
+				freeMusicId = tutorialMode == TutorialGameMode.Type.TutorialOne ? 37 : 38;
+				storyMusicId = 0;
+				playEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0;
+				openEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0;
+				gameEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0;
+				musicId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[freeMusicId - 1].DLAEJOBELBH_MusicId;
+				m_prismMusicId = 0;
+				tutorial = tutorialMode;
+				difficultyType = 0;
+				EventUniqueId = 0;
+				IsMvMode = false;
+				IsLine6Mode = false;
+				setupTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				mvLimitTime = -1;
+				LimitTime = 0;
+				onStageDivaNum = 1;
+				musicLoadText = "";
+				IsDisableBattleEventIntermediateResult = false;
+				returnTransitionUniqueId = TransitionUniqueId.HOME;
+				enemyInfo.ODDIHGPONFL_Copy(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.CKADCLJDCJK_EnemyList[IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(freeMusicId).LHICAKGHIGF[(int)difficultyType] - 1]);
 			}
 
 			// // RVA: 0xE9E308 Offset: 0xE9E308 VA: 0xE9E308

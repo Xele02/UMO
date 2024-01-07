@@ -154,7 +154,7 @@ namespace XeApp.Game.Menu
 			SetSeriesLogoImage(stageData.EMIKBGHIOMN_SerieLogoId);
 			SetStoryOne(GetStoryTitle(stageData.DLAEJOBELBH_MusicId));
 			SetStoryMain(stageData.OLLHCHDEHHM_StoryDesc);
-			if (!stageData.HHBJAEOIGIH && !m_isRequireStoryDescription)
+			if (!stageData.HHBJAEOIGIH_IsLocked && !m_isRequireStoryDescription)
 				return;
 			SetText(stageData.FHPHCFEEBMP);
 		}
@@ -241,16 +241,18 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x15337E0 Offset: 0x15337E0 VA: 0x15337E0
 		public void SwitchButtonType(LIEJFHMGNIA stageData)
 		{
-			if(!stageData.BCGLDMKODLC)
+			if(m_buttonTbl == null)
+				return;
+			if(!stageData.BCGLDMKODLC_StatusCompleted)
 			{
-				if(stageData.HHBJAEOIGIH)
+				if(stageData.HHBJAEOIGIH_IsLocked)
 				{
 					SwitchButtonType(eButtonTblType.GoLive);
 					return;
 				}
 				if(stageData.MMEGDFPNONJ_HasDivaId || stageData.IFNPBIJEPBO_IsDlded)
 				{
-					if (stageData.MMEGDFPNONJ_HasDivaId)
+					if (!stageData.MMEGDFPNONJ_HasDivaId)
 						SwitchButtonType(eButtonTblType.GoPlay);
 					else
 						SwitchButtonType(eButtonTblType.Close);
@@ -421,7 +423,7 @@ namespace XeApp.Game.Menu
 			m_animList.Clear();
 			m_animList.Add(WaitAnimIn());
 			m_openAnim.StartChildrenAnimGoStop("st_wait", "st_wait");
-			if(!m_viewData.HHBJAEOIGIH)
+			if(!m_viewData.HHBJAEOIGIH_IsLocked)
 			{
 				m_openAnim.StartChildrenAnimGoStop("st_stop", "st_stop");
 			}

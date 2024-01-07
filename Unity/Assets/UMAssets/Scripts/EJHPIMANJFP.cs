@@ -209,10 +209,10 @@ public class EJHPIMANJFP
 				{
 					if (time >= nextCheck)
 						continue;
-					if (nextCheck < data.EMEKFFHCHMH)
-						data.EMEKFFHCHMH = nextCheck;
+					if (nextCheck < data.EMEKFFHCHMH_CloseAt)
+						data.EMEKFFHCHMH_CloseAt = nextCheck;
 				}
-				if(data.GCJMGMBNBCB < 1 || data.GCJMGMBNBCB != data.AJIFADGGAAJ)
+				if(data.GCJMGMBNBCB_BuyLimit < 1 || data.GCJMGMBNBCB_BuyLimit != data.AJIFADGGAAJ_BoughtQuantity)
 				{
 					MHKCPJDNJKI.Add(data);
 				}
@@ -246,7 +246,7 @@ public class EJHPIMANJFP
 					return res;
 			}
 			if (BNKHBCBJBKI.EEFLOOBOAGF == HKICMNAACDA.EEFLOOBOAGF)
-				return HKICMNAACDA.NPPGKNGIFGK.CompareTo(BNKHBCBJBKI.NPPGKNGIFGK);
+				return HKICMNAACDA.NPPGKNGIFGK_Price.CompareTo(BNKHBCBJBKI.NPPGKNGIFGK_Price);
 			return HKICMNAACDA.EEFLOOBOAGF.CompareTo(BNKHBCBJBKI.EEFLOOBOAGF);
 		});
 		return true;

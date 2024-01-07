@@ -1750,8 +1750,8 @@ public class IOGKADECKOP
 	// // RVA: 0xA0809C Offset: 0xA0809C VA: 0xA0809C
 	private void GCGFGMICEGF()
 	{
-		//EHKDIJELHAO = false;
-		EHKDIJELHAO = true; // enable AR
+		EHKDIJELHAO = false;
+		//EHKDIJELHAO = true; // enable AR
 		OOIBKCCMCAG_HasCustomBg = false;
 		if (AREventMasterData.Instance.IsReady())
 		{

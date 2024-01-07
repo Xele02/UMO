@@ -91,15 +91,29 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x178A6CC Offset: 0x178A6CC VA: 0x178A6CC
 		private IEnumerator MusicUnlockPhase()
 		{
-			TodoLogger.LogError(0, "MusicUnlockPhase");
-			yield break;
+			//0x178BCB4
+			if(MusicDirection == null)
+				yield break;
+			MusicDirection.SetStatus(m_info);
+			while(MusicDirection.IsLoading())
+				yield return null;
+			MusicDirection.Show();
+			while(!MusicDirection.IsClosed)
+				yield return null;
+			MusicDirection.Hide();
+			if(Parent != null)
+			{
+				MusicDirection.Hide();
+				MusicDirection.gameObject.SetActive(false);
+				MusicDirection.transform.SetParent(Parent.transform, false);
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7041C4 Offset: 0x7041C4 VA: 0x7041C4
 		// // RVA: 0x178A778 Offset: 0x178A778 VA: 0x178A778
 		private IEnumerator StageUnlockPhase()
 		{
-			TodoLogger.LogError(0, "StageUnlockPhase");
+			//0x178C3B0
 			yield break;
 		}
 
@@ -107,7 +121,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x178A80C Offset: 0x178A80C VA: 0x178A80C
 		private IEnumerator DivaNotifyPhase()
 		{
-			TodoLogger.LogError(0, "DivaNotifyPhase");
+			//0x178B434
 			yield break;
 		}
 
@@ -115,7 +129,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x178A8A0 Offset: 0x178A8A0 VA: 0x178A8A0
 		private IEnumerator DivaUnlockPhase()
 		{
-			TodoLogger.LogError(0, "DivaUnlockPhase");
+			//0x178B4E8
 			yield break;
 		}
 
@@ -145,7 +159,7 @@ namespace XeApp.Game.Menu
 						instance.transform.SetParent(CanvasParent.transform, false);
 					}
 					MusicDirection = instance.GetComponent<LayoutPopupUnlockMusicDirection>();
-					instance.transform.SetAsLastSibling();
+					MusicDirection.transform.SetAsLastSibling();
 				});
 			}
 			if (callback != null)

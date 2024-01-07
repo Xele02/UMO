@@ -114,7 +114,7 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 					data.OIPCCBHIKIA_ItemIdx = 0x20000000 | i;
 					data.KIJAPOFAGPN_ItemId = a;
 					data.MKNDAOHGOAK_Rate = b;
-					int d = r.DOOGFEGEKLG_Max[i];
+					int d = rr.DOOGFEGEKLG_Max[i];
 					if (d == 0)
 						d = 9999;
 					data.OBKKLILJJFP_Max = d;

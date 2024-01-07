@@ -248,29 +248,244 @@ namespace XeApp.Game.Common
 		// public static void OpenWeekRecoveryCompletionWindow(int recovery, Action closeCallBack) { }
 
 		// // RVA: 0x1BC2BC8 Offset: 0x1BC2BC8 VA: 0x1BC2BC8
-		// private static bool IsStaminaMax() { }
+		private static bool IsStaminaMax()
+		{
+			return CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCBENCMNOGO_MaxStamina <= CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC_GetCurrent(); 
+		}
 
 		// // RVA: 0x1BC2CE8 Offset: 0x1BC2CE8 VA: 0x1BC2CE8
 		public static void OpenStaminaWindow(DenominationManager denomControl, Action recoveryCallBack, JFDNPFFOACP cancelCallBack, DJBHIFLHJLK errorCallBack, OnDenomChangeDate changeDateCallBack)
 		{
-			TodoLogger.LogError(0, "OpenStaminaWindow");
+			GameManager.Instance.CloseSnsNotice();
+			GameManager.Instance.CloseOfferNotice();
+            List<ViewEnergyItemData> l2 = ViewEnergyItemData.CreateList();
+            List<ViewEnergyItemData> l = new List<ViewEnergyItemData>();
+			for(int i = 0; i < l2.Count; i++)
+			{
+				if(l2[i].haveCount > 0)
+				{
+					l.Add(l2[i]);
+				}
+			}
+			if(l.Count > 0)
+			{
+				OpenStaminaWindowHaveItem(l, recoveryCallBack, cancelCallBack, errorCallBack, changeDateCallBack);
+			}
+			else
+			{
+				if(CIOECGOMILE.HHCJCDFCLOB.FDFDGEMMKKJ())
+				{
+					OpenStaminaWindowHaveStone(recoveryCallBack, cancelCallBack, errorCallBack);
+				}
+				else
+				{
+					OpenStaminaWindowNoneStone(denomControl, recoveryCallBack, cancelCallBack, errorCallBack, changeDateCallBack);
+				}
+			}
 		}
 
 		// // RVA: 0x1BC3048 Offset: 0x1BC3048 VA: 0x1BC3048
-		// private static void OpenStaminaWindowHaveItem(List<ViewEnergyItemData> list, Action recoveryCallBack, JFDNPFFOACP cancelCallBack, DJBHIFLHJLK errorCallBack, OnDenomChangeDate changeDateCallBack) { }
+		private static void OpenStaminaWindowHaveItem(List<ViewEnergyItemData> list, Action recoveryCallBack, JFDNPFFOACP cancelCallBack, DJBHIFLHJLK errorCallBack, OnDenomChangeDate changeDateCallBack)
+		{
+			ViewEnergyItemData item = list.Find((ViewEnergyItemData x) =>
+			{
+				//0x1BC793C
+				return x.id == 2;
+			});
+			if(item == null)
+			{
+				item = list.Find((ViewEnergyItemData x) =>
+				{
+					//0x1BC796C
+					return x.id == 1;
+				});
+			}
+			OpenStaminaWindowHaveItem(item, recoveryCallBack, cancelCallBack, errorCallBack, changeDateCallBack);
+		}
 
 		// // RVA: 0x1BC3DFC Offset: 0x1BC3DFC VA: 0x1BC3DFC
-		// private static void OpenStaminaWindowHaveItem(ViewEnergyItemData item, Action recoveryCallBack, JFDNPFFOACP cancelCallBack, DJBHIFLHJLK errorCallBack, OnDenomChangeDate changeDateCallBack) { }
+		private static void OpenStaminaWindowHaveItem(ViewEnergyItemData item, Action recoveryCallBack, JFDNPFFOACP cancelCallBack, DJBHIFLHJLK errorCallBack, OnDenomChangeDate changeDateCallBack)
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			int v = item.healValue;
+			if(item.healValue == 0)
+			{
+				v = CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCBENCMNOGO_MaxStamina;
+			}
+			string s = string.Format(bk.GetMessageByLabel("popup_text_stamina_05"), new object[5]
+			{
+				item.name, "1", v, item.haveCount, item.haveCount - 1
+			});
+			Show(CrateTextContent(bk.GetMessageByLabel("popup_title_stamina_01"), SizeType.Small, s, new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.UsedItem, Type = PopupButton.ButtonType.Positive }
+			}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1BC80F0
+				if(label == PopupButton.ButtonLabel.Cancel)
+				{
+					if(cancelCallBack != null)
+						cancelCallBack();
+				}
+				else if(label == PopupButton.ButtonLabel.UsedItem)
+				{
+					if(IsStaminaMax())
+					{
+						OpenStaminaMaxWindow(() =>
+						{
+							//0x1BC83F0
+							if(cancelCallBack != null)
+								cancelCallBack();
+						});
+					}
+					else
+					{
+						if(!PGIGNJDPCAH.MNANNMDBHMP(() =>
+						{
+							//0x1BC8404
+							changeDateCallBack(TransitionList.Type.LOGIN_BONUS);
+						}, () =>
+						{
+							//0x1BC8434
+							changeDateCallBack(TransitionList.Type.TITLE);
+						}))
+						{
+							CIOECGOMILE.HHCJCDFCLOB.GNNHEDHCJAE(EKLNMHFCAOI.FKGCBLHOOCL_Category.DMMIIBCMCFG_EnergyItem, item.id, () =>
+							{
+								//0x1BC8464
+								OpenStaminaCompletionWindow(recoveryCallBack);
+							}, cancelCallBack, cancelCallBack, errorCallBack, JpStringLiterals.StringLiteral_14401);
+						}
+					}
+				}
+			}, null, null, null);
+		}
 
 		// // RVA: 0x1BC3310 Offset: 0x1BC3310 VA: 0x1BC3310
-		// private static void OpenStaminaWindowHaveStone(Action recoveryCallBack, JFDNPFFOACP cancelCallBack, DJBHIFLHJLK errorCallBack) { }
+		private static void OpenStaminaWindowHaveStone(Action recoveryCallBack, JFDNPFFOACP cancelCallBack, DJBHIFLHJLK errorCallBack)
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			PopupUseStoneSetting s = new PopupUseStoneSetting();
+			s.TitleText = bk.GetMessageByLabel("popup_title_stamina_01");
+			s.WindowSize = SizeType.Small;
+			s.Text = string.Format("popup_text_stamina_01", new object[4]
+			{
+				CIOECGOMILE.HHCJCDFCLOB.CIPHAHDGGPH(),
+				CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCBENCMNOGO_MaxStamina,
+				CIOECGOMILE.HHCJCDFCLOB.DEAPMEIDCGC_GetTotalPaidCurrency(),
+				CIOECGOMILE.HHCJCDFCLOB.DEAPMEIDCGC_GetTotalPaidCurrency() - CIOECGOMILE.HHCJCDFCLOB.CIPHAHDGGPH()
+			});
+			s.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.UsedChargesItem, Type = PopupButton.ButtonType.Positive }
+			};
+			s.GotoTitleListener = errorCallBack;
+			Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1BC84E8
+				if(label == PopupButton.ButtonLabel.Cancel)
+				{
+					if(cancelCallBack != null)
+						cancelCallBack();
+				}
+				else if(label == PopupButton.ButtonLabel.UsedChargesItem)
+				{
+					if(IsStaminaMax())
+					{
+						OpenStaminaMaxWindow(() =>
+						{
+							//0x1BC86FC
+							if(cancelCallBack != null)
+								cancelCallBack();
+						});
+					}
+					else
+					{
+						CIOECGOMILE.HHCJCDFCLOB.GNNHEDHCJAE(EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC, 0, () =>
+						{
+							//0x1BC8710
+							OpenStaminaCompletionWindow(recoveryCallBack);
+						}, cancelCallBack, cancelCallBack, errorCallBack, JpStringLiterals.StringLiteral_14401);
+					}
+				}
+			}, null, null, null);
+		}
 
 		// // RVA: 0x1BC396C Offset: 0x1BC396C VA: 0x1BC396C
-		// private static void OpenStaminaWindowNoneStone(DenominationManager denomControl, Action recoveryCallBack, JFDNPFFOACP cancelCallBack, DJBHIFLHJLK errorCallBack, OnDenomChangeDate changeDateCallBack) { }
+		private static void OpenStaminaWindowNoneStone(DenominationManager denomControl, Action recoveryCallBack, JFDNPFFOACP cancelCallBack, DJBHIFLHJLK errorCallBack, OnDenomChangeDate changeDateCallBack)
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			TextPopupSetting s = new TextPopupSetting();
+			s.TitleText = bk.GetMessageByLabel("popup_title_stamina_01");
+			s.WindowSize = SizeType.Small;
+			s.Text = string.Format(bk.GetMessageByLabel("popup_text_stamina_02"), CIOECGOMILE.HHCJCDFCLOB.CIPHAHDGGPH(), CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCBENCMNOGO_MaxStamina);
+			s.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Purchase, Type = PopupButton.ButtonType.Positive }
+			};
+			Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1BC8794
+				if(label == PopupButton.ButtonLabel.Purchase)
+				{
+					control.StartCoroutineWatched(Co_PurchaseStaminaNoneItem(denomControl, recoveryCallBack, cancelCallBack, errorCallBack, changeDateCallBack));
+				}
+				else
+				{
+					if(cancelCallBack != null)
+						cancelCallBack();
+				}
+			}, null, null, null);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73F3B4 Offset: 0x73F3B4 VA: 0x73F3B4
 		// // RVA: 0x1BC4484 Offset: 0x1BC4484 VA: 0x1BC4484
-		// private static IEnumerator Co_PurchaseStaminaNoneItem(DenominationManager denomControl, Action recoveryCallBack, JFDNPFFOACP cancelCallBack, DJBHIFLHJLK errorCallBack, OnDenomChangeDate changeDateCallBack) { }
+		private static IEnumerator Co_PurchaseStaminaNoneItem(DenominationManager denomControl, Action recoveryCallBack, JFDNPFFOACP cancelCallBack, DJBHIFLHJLK errorCallBack, OnDenomChangeDate changeDateCallBack)
+		{
+			bool isChangeDate;
+
+			//0x1389C14
+			TransitionList.Type result = TransitionList.Type.UNDEFINED;
+			isChangeDate = PGIGNJDPCAH.MNANNMDBHMP(() =>
+			{
+				//0x1BC8898
+				result = TransitionList.Type.LOGIN_BONUS;
+			}, () =>
+			{
+				//0x1BC88A4
+				result = TransitionList.Type.TITLE;
+			});
+			yield return null;
+			if(!isChangeDate)
+			{
+                DenominationManager cont = denomControl;
+                if (cont != null)
+				{
+					cont.StartPurchaseSequence(() =>
+					{
+						//0x1BC88C4
+						OpenStaminaWindowHaveStone(recoveryCallBack, cancelCallBack, errorCallBack);
+					}, () =>
+					{
+						//0x1BC8958
+						OpenStaminaWindowNoneStone(cont, recoveryCallBack, cancelCallBack, errorCallBack, changeDateCallBack);
+					}, errorCallBack, changeDateCallBack, null);
+				}
+			}
+			else
+			{
+				yield return new WaitWhile(() =>
+				{
+					//0x1BC88B0
+					return result == TransitionList.Type.UNDEFINED;
+				});
+				if(changeDateCallBack != null)
+					changeDateCallBack(result);
+			}
+		}
 
 		// // RVA: 0x1BC4570 Offset: 0x1BC4570 VA: 0x1BC4570
 		// public static void OpenNoneStaminaWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> buttonCallBack) { }
@@ -282,7 +497,18 @@ namespace XeApp.Game.Common
 		// public static void OpenUseGameItemWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> buttonCallBack) { }
 
 		// // RVA: 0x1BC4E84 Offset: 0x1BC4E84 VA: 0x1BC4E84
-		// public static void OpenStaminaCompletionWindow(Action recoveryCallBack) { }
+		public static void OpenStaminaCompletionWindow(Action recoveryCallBack)
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			Show(CrateTextContent(bk.GetMessageByLabel("popup_title_stamina_01"), SizeType.Small, string.Format("popup_text_stamina_03", CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC_GetCurrent()), new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1BC8BD8
+				recoveryCallBack();
+			}, null, null, null);
+		}
 
 		// // RVA: 0x1BC51BC Offset: 0x1BC51BC VA: 0x1BC51BC
 		public static void OpenStaminaMaxWindow(Action endCallBack)
@@ -290,7 +516,7 @@ namespace XeApp.Game.Common
 			GameManager.Instance.CloseSnsNotice();
 			GameManager.Instance.CloseOfferNotice();
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_title_stamina_01"), 
+			Show(CrateTextContent(bk.GetMessageByLabel("popup_title_stamina_01"), 
 			SizeType.Small, bk.GetMessageByLabel("popup_text_stamina_04"), new ButtonInfo[1]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }

@@ -1766,19 +1766,37 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10E3C18 Offset: 0x10E3C18 VA: 0x10E3C18
 		private void UnLockAllPanel(SceneGrowthBoard board)
 		{
-			TodoLogger.LogNotImplemented("UnLockAllPanel");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(MenuScene.CheckDatelineAndAssetUpdate())
+				return;
+			m_unLockTargetPanelIndex.Clear();
+			m_unlockTargetRoadIndex.Clear();
+			board.UnlockAllPanelListup(m_unLockTargetPanelIndex, m_unlockTargetRoadIndex);
+			this.StartCoroutineWatched(UnlockPanelCoroutine(board, UseItemList.Unlock.All));
 		}
 
 		//// RVA: 0x10E3D94 Offset: 0x10E3D94 VA: 0x10E3D94
 		private void UnLockEpisodePanel(SceneGrowthBoard board)
 		{
-			TodoLogger.LogNotImplemented("UnLockEpisodePanel");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(MenuScene.CheckDatelineAndAssetUpdate())
+				return;
+			m_unLockTargetPanelIndex.Clear();
+			m_unlockTargetRoadIndex.Clear();
+			board.UnlockEpisodePanelListup(m_unLockTargetPanelIndex, m_unlockTargetRoadIndex);
+			this.StartCoroutineWatched(UnlockPanelCoroutine(board, UseItemList.Unlock.Episode));
 		}
 
 		//// RVA: 0x10E3F10 Offset: 0x10E3F10 VA: 0x10E3F10
 		private void UnLockStatusPanel(SceneGrowthBoard board)
 		{
-			TodoLogger.LogNotImplemented("UnLockStatusPanel");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(MenuScene.CheckDatelineAndAssetUpdate())
+				return;
+			m_unLockTargetPanelIndex.Clear();
+			m_unlockTargetRoadIndex.Clear();
+			board.UnlockStatusPanelListup(m_unLockTargetPanelIndex, m_unlockTargetRoadIndex);
+			this.StartCoroutineWatched(UnlockPanelCoroutine(board, UseItemList.Unlock.Status));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x725934 Offset: 0x725934 VA: 0x725934

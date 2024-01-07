@@ -25,7 +25,7 @@ public class AODFBGCCBPE
 	public int OPKDAIMPJBH; // 0x1C
 	public int IBAKPKKEDJM; // 0x20
 	public int JPGALGPNJAI; // 0x24
-	public int EAHPLCJMPHD; // 0x28
+	public int EAHPLCJMPHD_PayItemId; // 0x28
 	public NJMPLEENNPO INDDJNMPONH; // 0x2C
 	public bool FPJBMCDMAMO; // 0x30
 	public bool HKKPNKOIOKL; // 0x31
@@ -44,7 +44,7 @@ public class AODFBGCCBPE
         switch (INDDJNMPONH)
 		{
 			case NJMPLEENNPO.AOMIBCNBBOD_1:
-				return CIOECGOMILE.HHCJCDFCLOB.NOJDLFKKMDD(JPGALGPNJAI);
+				return CIOECGOMILE.HHCJCDFCLOB.NOJDLFKKMDD_GetCurrencyTotal(JPGALGPNJAI);
 			case NJMPLEENNPO.BDMFENCIPEB_2:
 			{
 				int index = IBAKPKKEDJM - 1;
@@ -88,7 +88,7 @@ public class AODFBGCCBPE
 		NEMKDKDIIDK = dbShop.NEMKDKDIIDK_ShopName;
 		this.OPKDAIMPJBH = dbShop.OPKDAIMPJBH_ShopId;
 		IBAKPKKEDJM = dbShop.IBAKPKKEDJM_Month;
-		EAHPLCJMPHD = dbShop.EAHPLCJMPHD;
+		EAHPLCJMPHD_PayItemId = dbShop.EAHPLCJMPHD_PayItemId;
 		INDDJNMPONH = (NJMPLEENNPO)dbShop.HCCEFDMGPEA;
 		FPJBMCDMAMO = dbShop.FPJBMCDMAMO != 0;
 		HKKPNKOIOKL = dbShop.FPJBMCDMAMO != 0;
@@ -147,7 +147,7 @@ public class AODFBGCCBPE
 				{
 					if (time >= dbShopList[i].KJBGCLPMLCG && dbShopList[i].GJFPFFBAKGK >= time && dbShopList[i].HCCEFDMGPEA == 1)
 					{
-						HHJHIFJIKAC_BonusVc.MNGJPJBCMBH bonus = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.NPOALOFHFPN(EKLNMHFCAOI.DEACAHNLMNI_getItemId(dbShopList[i].EAHPLCJMPHD));
+						HHJHIFJIKAC_BonusVc.MNGJPJBCMBH bonus = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.NPOALOFHFPN(EKLNMHFCAOI.DEACAHNLMNI_getItemId(dbShopList[i].EAHPLCJMPHD_PayItemId));
 						if (bonus == null || time < bonus.PDBPFJJCADD || bonus.EGBOHDFBAPB_ClosedAt < time)
 							continue;
 					}

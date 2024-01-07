@@ -15,7 +15,7 @@ public class GONMPHKGKHI_RewardView
 		INJNLJHGGKB_4 = 4,
 		CEFPGLBAGAC = 5,
 		MNGOJCFMBPP = 6,
-		BKHAAGAAIHJ = 7,
+		BKHAAGAAIHJ_7 = 7,
 		JCGKGFLCKCP_8 = 8,
 		AEFCOHJBLPO = 9,
 	}
@@ -321,7 +321,7 @@ public class GONMPHKGKHI_RewardView
 			{
 				if (JPMPIFCKEHH_RewardsInfo[i].IPMJIODJGBC == CECMLGBLHHG.GBIDBHKEPGL/*1*/)
 				{
-					MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[NJCMJLPPIGK[i].BCCHOBPJJKE_SceneId - 1];
+					MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[JPMPIFCKEHH_RewardsInfo[i].BCCHOBPJJKE_SceneId - 1];
 					for (int j = 0; j < l.Count; j++)
 					{
 						if (l[j] == scene.KELFCMEOPPM_Ep)
@@ -428,7 +428,7 @@ public class GONMPHKGKHI_RewardView
 				MPCJGPEBCCD.AddRange(rewards);
 				MPCJGPEBCCD.AddRange(rewards2);
 				break;
-			case CECMLGBLHHG.BKHAAGAAIHJ/*7*/:
+			case CECMLGBLHHG.BKHAAGAAIHJ_7/*7*/:
 				BBAJKJPKOHD.AddRange(NPOFCCEBOGC);
 				break;
 			case CECMLGBLHHG.JCGKGFLCKCP_8/*8*/:

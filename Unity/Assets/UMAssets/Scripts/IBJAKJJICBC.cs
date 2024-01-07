@@ -648,7 +648,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 	}
 
 	// // RVA: 0x1218DB8 Offset: 0x1218DB8 VA: 0x1218DB8
-	public static bool LBHPMGDNPHK(int GHBPLHBNMBK_FreeMusicId, int DEPGBBJMFED_CategoryId)
+	public static bool LBHPMGDNPHK_IsMusicOpen(int GHBPLHBNMBK_FreeMusicId, int DEPGBBJMFED_CategoryId)
 	{
 		KEODKEGFDLD_FreeMusicInfo musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(GHBPLHBNMBK_FreeMusicId);
 		if(musicInfo.PPEGAKEIEGM_Enabled == 2)
@@ -658,10 +658,10 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 				if (musicInfo.DEPGBBJMFED_CategoryId != DEPGBBJMFED_CategoryId)
 					return false;
 			}
-			int v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OHCIFMDPAPD_Story.JOHMIPPKPPM(GHBPLHBNMBK_FreeMusicId);
+			int v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OHCIFMDPAPD_Story.JOHMIPPKPPM_GetStoryUnlockingMusic(GHBPLHBNMBK_FreeMusicId);
 			if (v > 0)
 			{
-				return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LNOOKHJBENO_StoryRecord.MMKAJBFBKNH[v - 1].HALOKFOJMLA;
+				return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LNOOKHJBENO_StoryRecord.MMKAJBFBKNH[v - 1].HALOKFOJMLA_IsCompleted;
 			}
 			JPCKBFBCJKD data = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.LLJOPJMIGPD(GHBPLHBNMBK_FreeMusicId);
 			if (data == null)
@@ -695,7 +695,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 		for(int i = 0; i < cnt; i++)
 		{
 			KEODKEGFDLD_FreeMusicInfo fminfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(i + 1);
-			if(LBHPMGDNPHK(i + 1, fminfo.DEPGBBJMFED_CategoryId))
+			if(LBHPMGDNPHK_IsMusicOpen(i + 1, fminfo.DEPGBBJMFED_CategoryId))
 			{
 				l.Add(i + 1);
 			}
@@ -848,7 +848,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 							// set vars
 							b = false;
 							val = 0;
-							if (!LBHPMGDNPHK(musicInfo.GHBPLHBNMBK_FreeMusicId, DEPGBBJMFED_Serie))
+							if (!LBHPMGDNPHK_IsMusicOpen(musicInfo.GHBPLHBNMBK_FreeMusicId, DEPGBBJMFED_Serie))
 								continue;
 						}
 					}

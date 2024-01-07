@@ -486,11 +486,15 @@ namespace XeApp.Game.Menu
 			m_isWaitActivateScene = true;
 			if(TutorialProc.CanAutoSettingHelp())
 			{
-				TodoLogger.LogError(0, "Co_ShowHelp");
+				yield return this.StartCoroutineWatched(TutorialProc.Co_TutorialAutoUnitSetting(m_headButtons.AutoSettingButton, () =>
+				{
+					//0xA9203C
+					return m_isOpenEndAutoSetting;
+				}));
 			}
 			if(TutorialProc.CanUnit5Help(Database.Instance.gameSetup.musicInfo))
 			{
-				TodoLogger.LogError(0, "Co_ShowHelp");
+				yield return Co.R(TutorialProc.Co_TutorialUnit5(m_unitInfoChangeButton.ChangeButton));
 			}
 			MenuScene.Instance.InputDisable();
 			yield return Co.R(TutorialManager.TryShowTutorialCoroutine(CheckTutorialCondition));

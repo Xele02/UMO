@@ -5,6 +5,7 @@ using System.Text;
 using UnityEngine;
 using XeApp.Core;
 using XeApp.Game.Common;
+using XeApp.Game.Tutorial;
 using XeSys;
 using XeSys.Gfx;
 
@@ -1008,7 +1009,11 @@ namespace XeApp.Game.Menu
 			{
 				if(GameManager.Instance.IsTutorial)
 				{
-					TodoLogger.LogError(0, "Tuto");
+					BasicTutorialManager.Instance.UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO.GBECNPANBEA_8);
+					if(Database.Instance.advSetup.IsCallResultAfterAdv)
+					{
+						MenuScene.Instance.GotoAdventure(false);
+					}
 				}
 				else
 				{

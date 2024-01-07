@@ -99,6 +99,8 @@ class JpStringLiterals
 	public const string StringLiteral_10178 = "ガチャ天井アイテム"; // 0x03bb29c0
 	public const string StringLiteral_10282 = "AP全回復"; //0x03bb2b60
 	public const string StringLiteral_10294 = "超時空SNS"; // 0x03bb2b90
+	public const string StringLiteral_10298 = "ログボを受け取ろう！"; //0x03bb2ba0
+	public const string StringLiteral_10299 = "歌晶石100個を2日目ログボでプレゼント！今すぐログインしよう！"; // 0x03bb2ba4
 	public const string StringLiteral_10303 = "歌晶石セール開催中！"; // 0x03bb2bb4
 	public const string StringLiteral_10304 = "今だけのごりっごりお得な歌晶石セット。もうすぐ買えなくなっちゃうんよ！"; // 0x03bb2bb8
 	public const string StringLiteral_10309 = "エナジー回復"; // 0x03bb2bcc
@@ -141,6 +143,9 @@ class JpStringLiterals
 	public const string StringLiteral_11115 = "★５1枚確定"; //0x03bb3864
 	public const string StringLiteral_11117 = "デカルガチャ"; //0x03bb386c
 	public const string StringLiteral_11118 = "★４以上1枚確定"; //0x03bb3870
+	public const string StringLiteral_11128 = "初心者"; //0x03bb3898
+	public const string StringLiteral_11129 = "割引"; //0x03bb389c
+	public const string StringLiteral_11130 = "通常"; // 0x03bb38a0
 	public const string StringLiteral_11136 = "3D標準"; // 0x03bb38b8
 	public const string StringLiteral_11137 = "3D軽量"; // 0x03bb38bc
 	public const string StringLiteral_11139 = "カスタム"; // 0x03bb38c4
@@ -295,6 +300,7 @@ class JpStringLiterals
 	public const string StringLiteral_11225 = "削除"; //0x03bb3a1c
 	public const string StringLiteral_11226 = "申請拒否"; //0x03bb3a20
 	public const string StringLiteral_11227 = "申請取り消し"; //0x03bb3a24
+	public const string StringLiteral_11245 = "歌唱石"; // 0x03bb3a6c
 	public const string StringLiteral_11248 = "既に回答済み"; //0x03bb3a78
 	public const string StringLiteral_12894 = "イベント達成pt"; // 0x03bb5430
 	public const string StringLiteral_12895 = "ログボ"; // 0x03bb5434
@@ -359,7 +365,9 @@ class JpStringLiterals
 	public const string StringLiteral_14007 = "×{0}"; // 0x03bb6594
 	public const string StringLiteral_14024 = "\r"; //0x03bb65d8
 	public const string StringLiteral_14032 = "アニメーションテーブル数以上のキーフレーム番号が指定されました。"; // 0x03bb65f8
+	public const string StringLiteral_14401 = "+ボタン"; // 0x03bb6bbc
 	public const string StringLiteral_14529 = "ーーー"; // 0x03bb6dbc
+	public const string StringLiteral_14769 = "{0}さん"; // 0x03bb717c
 	public const string StringLiteral_14832 = "ふた"; // 0x03bb7278
 	public const string StringLiteral_14844 = "★[０-９]"; //0x03bb72a8
 	public const string StringLiteral_14845 = "[０-９]"; //0x03bb72ac

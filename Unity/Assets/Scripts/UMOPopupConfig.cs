@@ -107,7 +107,7 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         {
             RuntimeSettings.CurrentSettings.EnableErrorLog = b;
         });
-        
+        #if UNITY_ANDROID
         AddToggleButton(ref y, "Debug : Disable Cryware low latency", () =>
         {
             return RuntimeSettings.CurrentSettings.DisableCrywareLowLatency;
@@ -115,6 +115,16 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         {
             RuntimeSettings.CurrentSettings.DisableCrywareLowLatency = b;
         });
+        #endif
+        #if UNITY_EDITOR
+        AddToggleButton(ref y, "Use touch screen", () =>
+        {
+            return RuntimeSettings.CurrentSettings.UseTouchScreen;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.UseTouchScreen = b;
+        });
+        #endif
         GetComponent<RectTransform>().sizeDelta = new Vector2(GetComponent<RectTransform>().sizeDelta.x, -y);
         gameObject.SetActive(true);
     }

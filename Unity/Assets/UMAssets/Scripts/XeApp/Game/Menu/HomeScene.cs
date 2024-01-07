@@ -1054,7 +1054,15 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x978424 Offset: 0x978424 VA: 0x978424
-		// private void OnClickBeginnerLead() { }
+		private void OnClickBeginnerLead()
+		{
+			if(!TryLobbyAnnounce())
+			{
+				QuestTopArgs arg = new QuestTopArgs(m_balloonLeadData.BGOCBNPGNKM);
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+				MenuScene.Instance.Mount(TransitionUniqueId.QUEST, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+			}
+		}
 
 		// // RVA: 0x977868 Offset: 0x977868 VA: 0x977868
 		private void OnClickMissionLead()
@@ -1530,7 +1538,15 @@ namespace XeApp.Game.Menu
 		{
 			if (!BIFNGFAIEIL.HHCJCDFCLOB.DNFPMBFNDCA())
 				return;
-			TodoLogger.LogError(0, "CheckSnsNotice");
+			int snsId = BIFNGFAIEIL.HHCJCDFCLOB.FGGDEKAJCIF();
+			if(snsId == 0)
+				return;
+			MenuScene.Instance.ShowSnsNotice(snsId, () =>
+			{
+				//0x97D1F4
+				this.StartCoroutineWatched(Co_OpenSnsScreen());
+			});
+			BIFNGFAIEIL.HHCJCDFCLOB.ALIANOFCAEI();
 		}
 
 		// // RVA: 0x978E2C Offset: 0x978E2C VA: 0x978E2C
@@ -1538,7 +1554,7 @@ namespace XeApp.Game.Menu
 		{
 			if (KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.OAFPGJLCNFM_Cond == 0)
 				return;
-			TodoLogger.LogError(0, "CheckOfferNotice");
+			MenuScene.Instance.ShowOfferNotice(null);
 		}
 
 		// // RVA: 0x978F14 Offset: 0x978F14 VA: 0x978F14
@@ -1768,7 +1784,7 @@ namespace XeApp.Game.Menu
 				return NKGJPJPHLIF.HHCJCDFCLOB.DHEFMDMGPMG_LoginBonusManager.FMAMKPJMFHJ.Find((EPLAAEHPCDM _) =>
 				{
 					//0x13C6AE4
-					return _.CKHOBDIKJFN == ANPGILOLNFK.CDOGFBNLIPG.MKADAMIGMPO/*7*/;
+					return _.CKHOBDIKJFN_Type == ANPGILOLNFK.CDOGFBNLIPG.MKADAMIGMPO_7/*7*/;
 				});
 			}
 			return null;
@@ -2127,7 +2143,21 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x96FAF8 Offset: 0x96FAF8 VA: 0x96FAF8
 		private void SetupBeginnerLead()
 		{
-			TodoLogger.LogError(0, "SetupBeginnerLead");
+			m_leadBalloon.SetStyle(HomeBalloonText.Style.Beginner);
+			m_leadBalloon.SetMessage(GetLeadBalloonDesc(m_balloonLeadData));
+			m_leadBalloon.SetClearMark(m_balloonLeadData.JDBLMAHMHJO_IsAchieved);
+			m_leadBalloon.onClickButton = OnClickBeginnerLead;
+			if(m_balloonLeadData.DEKECNIBBIB_ItemFullId == 0)
+				m_leadBalloon.SetExistsItem(false);
+			else
+			{
+				m_leadBalloon.SetExistsItem(true);
+				GameManager.Instance.ItemTextureCache.Load(m_balloonLeadData.DEKECNIBBIB_ItemFullId, (IiconTexture image) =>
+				{
+					//0x97D318
+					m_leadBalloon.SetItemIcon(image);
+				});
+			}
 		}
 
 		// // RVA: 0x96FD5C Offset: 0x96FD5C VA: 0x96FD5C
@@ -2270,14 +2300,134 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x97AF0C Offset: 0x97AF0C VA: 0x97AF0C
-		// private bool IsCenterKaname() { }
+		private bool IsCenterKaname()
+		{
+			return GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId == 3;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3E94 Offset: 0x6E3E94 VA: 0x6E3E94
 		// // RVA: 0x97B034 Offset: 0x97B034 VA: 0x97B034
 		private IEnumerator Co_BeginnerMissionMiniAdv()
 		{
-			TodoLogger.LogError(0, "Co_BeginnerMissionMiniAdv");
-			yield return null;
+			BasicTutorialMessageId messageId; // 0x1C
+			List<GJDFHLBONOL> presentList; // 0x20
+			
+			//0x13C9190
+			MenuScene.Instance.InputDisable();
+			BasicTutorialManager.Initialize();
+			BasicTutorialManager mrg = BasicTutorialManager.Instance;
+			bool isWait = true;
+			messageId = IsCenterKaname() ? BasicTutorialMessageId.Id_StartMission2 : BasicTutorialMessageId.Id_StartMission1;
+			mrg.PreLoadResource(() =>
+			{
+				//0x13C7300
+				isWait = false;
+			}, true);
+			while(isWait)
+				yield return null;
+			yield return Co.R(mrg.PreDownLoadTextureResource(messageId));
+			isWait = true;
+			bool err = false;
+			CIOECGOMILE.HHCJCDFCLOB.KPFKKDDOHCN.MHMOFLCJDPH_FirstPresent(() =>
+			{
+				//0x13C730C
+				isWait = false;
+			}, () =>
+			{
+				//0x13C7318
+				isWait = false;
+				err = true;
+			});
+			while(isWait)
+				yield return null;
+			if(err)
+			{
+				//LAB_013c9ab8
+				//LAB_013c9ce8
+				//LAB_013c9cf8
+				MenuScene.Instance.GotoTitle();
+				yield break;
+			}
+			MenuScene.Instance.InputEnable();
+			presentList = CIOECGOMILE.HHCJCDFCLOB.KPFKKDDOHCN.PGFCIDHBMNB;
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.AABHAHFCEMF();
+			if(presentList.Count != 0)
+			{
+				isWait = true;
+				mrg.ShowMessageWindow(messageId, () =>
+				{
+					//0x13C7324
+					isWait = false;
+				}, null);
+				while(isWait)
+					yield return null;
+				bool isError = false;
+				isWait = true;
+				MenuScene.Instance.InputDisable();
+				CIOECGOMILE.HHCJCDFCLOB.KPFKKDDOHCN.EAOGDGAEJPH(() =>
+				{
+					//0x13C7330
+					isWait = false;
+				}, (CACGCMBKHDI_Request error) =>
+				{
+					//0x13C73AC
+					isWait = false;
+					isError = true;
+				});
+				while(isWait)
+					yield return null;
+				if(isError)
+				{
+					MenuScene.Instance.GotoTitle();
+					yield break;	
+				}
+				ILLPDLODANB.IHKAKFFAGPC(ILLPDLODANB.LOEGALDKHPL.PBKOKCHKGGL_46);
+				isError = false;
+				isWait = true;
+				CIOECGOMILE.HHCJCDFCLOB.PKKCKFCLACK(presentList, () =>
+				{
+					//0x13C733C
+					isWait = false;
+				}, null, () =>
+				{
+					//0x13C73E0
+					isError = true;
+					isWait = false;
+				}, false);
+				while(isWait)
+					yield return null;
+				if(isError)
+				{
+					MenuScene.Instance.GotoTitle();
+					yield break;	
+				}
+				MenuScene.Instance.InputEnable();
+				GameManager.Instance.ResetViewPlayerData();
+				this.StartCoroutineWatched(PopupRecordPlate.Show(RecordPlateUtility.eSceneType.PresentBox, () =>
+				{
+					//0x13C6B18
+					ILLPDLODANB.ILOGJDALEOO();
+				}, true));
+			}
+			//LAB_013c95ec
+			isWait = true;
+			messageId = BasicTutorialMessageId.Id_StartMission3;
+			mrg.ShowMessageWindow(BasicTutorialMessageId.Id_StartMission3, () =>
+			{
+				//0x13C7348
+				isWait = false;
+			}, null);
+			while(isWait)
+				yield return null;
+			isWait = true;
+			mrg.SetInputLimit(InputLimitButton.Mission, () =>
+			{
+				//0x13C7354
+				mrg.SetInputLimit(InputLimitButton.None, null, null, TutorialPointer.Direction.Normal);
+				isWait = false;
+			}, null, TutorialPointer.Direction.Normal);
+			while(isWait)
+				yield return null;
 		}
 
 		// // RVA: 0x97B0BC Offset: 0x97B0BC VA: 0x97B0BC

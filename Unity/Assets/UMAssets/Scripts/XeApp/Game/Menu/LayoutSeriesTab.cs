@@ -125,7 +125,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x193EAA8 Offset: 0x193EAA8 VA: 0x193EAA8
 		public void ButtonDisable(int seriesIndex, bool IsDisable)
 		{
-			m_SeriesButtons[seriesIndex].Disable = IsDisable;
+			m_SeriesButtons[(int)s_SeriesButtonIndex[seriesIndex] - 1].Disable = IsDisable;
 		}
 
 		// // RVA: 0x193EBCC Offset: 0x193EBCC VA: 0x193EBCC

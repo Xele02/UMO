@@ -4,6 +4,11 @@ using XeApp.Game.Tutorial;
 
 namespace XeApp.Game.Menu
 {
+	public class StorySelectArgs : TransitionArgs
+	{
+		//
+	}
+
 	public class StorySelectScene : TransitionRoot
 	{
 		private LayoutStorySelectController m_storySelectController = new LayoutStorySelectController(); // 0x48

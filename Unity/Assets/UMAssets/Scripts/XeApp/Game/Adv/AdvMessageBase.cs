@@ -45,25 +45,25 @@ namespace XeApp.Game.Adv
 					int j = i + 1;
 					for (; j < strBuilder.Length; j++)
 					{
-						c = strBuilder[i];
+						c = strBuilder[j];
 						if (c == '>')
 						{
+							if(func != null)
+							{
+								string s = func(m_str.ToString());
+								if(!string.IsNullOrEmpty(s))
+								{
+									m_tmp.Append(s);
+									i += j;
+									break;
+								}
+							}
+							m_tmp.Append(strBuilder.ToString(), i, j + 1 - i);
+							i += j;
 							break;
 						}
 						m_str.Append(c);
 					}
-					if(func != null)
-					{
-						string s = func(m_str.ToString());
-						if(!string.IsNullOrEmpty(s))
-						{
-							m_tmp.Append(s);
-							i = i * 2 + j;
-							continue;
-						}
-					}
-					m_tmp.Append(strBuilder.ToString(), i, j + 1);
-					i = i * 2 + j;
 				}
 				else
 				{

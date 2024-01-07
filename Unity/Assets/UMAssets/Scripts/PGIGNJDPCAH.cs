@@ -20,7 +20,7 @@ public class PGIGNJDPCAH
         JBAIEADLAGH_0 = 0,
         FFPANKMKAPD = 1,
         NADCOIBMMJM = 2,
-        ONHOCOBCINO = 3,
+        ONHOCOBCINO_3 = 3,
         ANGNLABPOIH = 4,
         LPBDIINNFEE_5 = 5,
     }
@@ -77,7 +77,7 @@ public class PGIGNJDPCAH
 				EPDEBBDHFCH = FELLIEJEPIJ.JBAIEADLAGH_0/*0*/;
 				IPJMPBANBPP = true;
 				break;
-			case FELLIEJEPIJ.ONHOCOBCINO/*3*/:
+			case FELLIEJEPIJ.ONHOCOBCINO_3/*3*/:
 				OGAIOKGEMDE = false;
 				return;
 			case FELLIEJEPIJ.ANGNLABPOIH/*4*/:

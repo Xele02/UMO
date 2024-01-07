@@ -351,16 +351,66 @@ public class JBCAHMMCOKK
 							l.Add(a);
 						}
 					}
-					if (EJHPIMANJFP.HHCJCDFCLOB.MHKCPJDNJKI.Count < 1)
-						return;
-					TodoLogger.LogError(0, "HEGEKFMJNCC 7");
+                    List<LGDNAJACFHI> l2 = EJHPIMANJFP.HHCJCDFCLOB.MHKCPJDNJKI;
+                    for(int i = 0; i < l2.Count; i++)
+					{
+						LGDNAJACFHI OHDPMGMGJBI = l2[i];
+						int idx = l.FindIndex((int JPAEDJJFFOI) =>
+						{
+							//0x1420578
+							return OHDPMGMGJBI.LHENLPLKGLP_StuffId == JPAEDJJFFOI;
+						});
+						if(idx > -1)
+						{
+							if(OHDPMGMGJBI.GCJMGMBNBCB_BuyLimit != 0)
+							{
+								if(OHDPMGMGJBI.GCJMGMBNBCB_BuyLimit != OHDPMGMGJBI.AJIFADGGAAJ_BoughtQuantity)
+								{
+									if(OHDPMGMGJBI.JLGHMCBLENL)
+									{
+										JBCAHMMCOKK j = new JBCAHMMCOKK();
+										j.KHEKNNFCAOI(KOGBMDOONFA.PPFNGGCBJKC);
+										if(!b)
+										{
+											j.BJIMIONBKDD = false;
+										}
+										j.KJBGCLPMLCG_OpenedAt = OHDPMGMGJBI.EBEOPONDEKB_OpenedAt;
+										j.GJFPFFBAKGK_CloseAt = OHDPMGMGJBI.EMEKFFHCHMH_CloseAt;
+										j.KNNDNOKMAOI = j.INKBPPLCNFC(j.KJBGCLPMLCG_OpenedAt, j.GJFPFFBAKGK_CloseAt, false);
+										j.HDBPGEMDLDN = j.INKBPPLCNFC(j.KJBGCLPMLCG_OpenedAt, j.GJFPFFBAKGK_CloseAt, true);
+										break;
+									}
+									if(OHDPMGMGJBI.NIIIKPNBLNP)
+									{
+										JBCAHMMCOKK j = new JBCAHMMCOKK();
+										j.KHEKNNFCAOI(KOGBMDOONFA.PPFNGGCBJKC);
+										if(!b)
+										{
+											j.BJIMIONBKDD = false;
+										}
+										j.KJBGCLPMLCG_OpenedAt = OHDPMGMGJBI.EBEOPONDEKB_OpenedAt;
+										j.GJFPFFBAKGK_CloseAt = OHDPMGMGJBI.EMEKFFHCHMH_CloseAt;
+										j.KNNDNOKMAOI = j.INKBPPLCNFC(j.KJBGCLPMLCG_OpenedAt, j.GJFPFFBAKGK_CloseAt, false);
+										j.HDBPGEMDLDN = j.INKBPPLCNFC(j.KJBGCLPMLCG_OpenedAt, j.GJFPFFBAKGK_CloseAt, true);
+										break;
+									}
+								}
+							}
+						}
+					}
 				}
 				break;
 			case 8:
 				{
 					if (FKMOKDCJFEN.KFHCJLFAHAG() == null)
 						return;
-					TodoLogger.LogError(0, "HEGEKFMJNCC 8");
+					JBCAHMMCOKK j = new JBCAHMMCOKK();
+					j.KHEKNNFCAOI(KOGBMDOONFA.PPFNGGCBJKC);
+					if(!b)
+					{
+						j.BJIMIONBKDD = false;
+					}
+					NNDGIAEFMOG.Add(j);
 				}
 				break;
 			case 9:

@@ -532,7 +532,7 @@ namespace XeApp.Game.Adv
 				SetDisp(true);
 				isWait = false;
 			};
-			while (m_snsScreen.layoutController == null && m_snsScreen.layoutController.layoutBoot == null)
+			while (m_snsScreen.layoutController == null || m_snsScreen.layoutController.layoutBoot == null)
 				yield return null;
 			while (m_snsScreen.layoutController.layoutBoot.IsPlaying())
 				yield return null;
@@ -1531,8 +1531,69 @@ namespace XeApp.Game.Adv
 		//// RVA: 0xBC82D4 Offset: 0xBC82D4 VA: 0xBC82D4
 		private IEnumerator Co_TutorialFinish()
 		{
-			TodoLogger.LogError(0, "Co_TutorialFinish");
-			yield return null;
+			//0xBCB3B8
+			FENCAJJBLBH f = GameManager.Instance.localSave.KPOCKNCJBPN_CheckSecure();
+			if(f != null)
+			{
+				JHHBAFKMBDL.HHCJCDFCLOB.GKMAHMLNMEK(() =>
+				{
+					//0xBC8FF0
+					NetErrorHandler();
+				}, "");
+				yield break;
+			}
+			BIFNGFAIEIL.HHCJCDFCLOB.ALIANOFCAEI();
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LNOOKHJBENO_StoryRecord.LOAOLBNFNNP_InitDefault();
+			CIOECGOMILE.HHCJCDFCLOB.OIEBCNPOMIB_UpdateDayChange(true);
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.MNLAJEDKLCI_StamineLotTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.JLJJHDGEHLK_RecvSns = 1;
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd = 1;
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PPOJCDCCFNI_TutorialEnd = 1;
+			BIFNGFAIEIL.HHCJCDFCLOB.DLKJAPDLDFG(true, 0);
+			bool isWait = true;
+			JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.GHKKPKBBEAN_Prepare(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime(), () =>
+			{
+				//0xBC92A0
+				isWait = false;
+			}, () =>
+			{
+				//0xBC8F6C
+				NetErrorHandler();
+			});
+			while(isWait)
+				yield return null;
+			isWait = true;
+			CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
+			{
+				//0xBC92AC
+				isWait = false;
+			}, () =>
+			{
+				//0xBC8F98
+				NetErrorHandler();
+			}, null);
+			while(isWait)
+				yield return null;
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.AGEAPKNODHO();
+			BasicTutorialManager.Instance.Release();
+			Destroy(BasicTutorialManager.Instance);
+			GameManager.Instance.IsTutorial = false;
+			PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.ONHOCOBCINO_3);
+			if(AssetBundleManager.isTutorialNow)
+			{
+				if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("tuto_after_title", 1) == 1)
+				{
+					AssetBundleManager.isTutorialNow = false;
+					JHHBAFKMBDL.HHCJCDFCLOB.CIKMDHMMCIL_ShowErrorPopup(2, () =>
+					{
+						//0xBC8FC4
+						NetErrorHandler();
+					});
+					yield break;
+				}
+			}
+			AssetBundleManager.isTutorialNow = false;
+			Database.Instance.advResult.Setup("DownLoad");
 		}
 
 		//// RVA: 0xBC8380 Offset: 0xBC8380 VA: 0xBC8380
@@ -1553,21 +1614,88 @@ namespace XeApp.Game.Adv
 		//// RVA: 0xBC84D8 Offset: 0xBC84D8 VA: 0xBC84D8
 		private IEnumerator Co_ValkyrieGet(int valId = 1)
 		{
-			TodoLogger.LogError(0, "Co_ValkyrieGet");
-			yield return null;
+			string bundleName; // 0x1C
+			AssetBundleLoadAssetOperation op; // 0x20
+			LayoutLogoCutin effect; // 0x24
+			UnityAction ok; // 0x28
+
+			//0xBCC12C
+			bool isWait = true;
+			m_bgControl = new BgControl(transform.parent.gameObject);
+			yield return this.StartCoroutineWatched(m_bgControl.Load(null));
+			m_bgControl.SetPriority(BgPriority.Bottom);
+			yield return this.StartCoroutineWatched(m_bgControl.ChangeBgCoroutine(BgType.UnlockValkyrie, -1, SceneGroupCategory.UNDEFINED, TransitionList.Type.UNDEFINED, -1));
+			bundleName = "ly/086.xab";
+			op = AssetBundleManager.LoadAssetAsync(bundleName, "UnlockValkyrieManager", typeof(GameObject));
+			yield return op;
+			GameObject g = Instantiate(op.GetAsset<GameObject>());
+			g.transform.SetParent(transform.parent, false);
+			UnlockValkyrieManager unlockValkyrieManager = g.GetComponent<UnlockValkyrieManager>();
+			unlockValkyrieManager.InitializeLayout();
+			yield return new WaitWhile(() =>
+			{
+				//0xBC92C0
+				return !unlockValkyrieManager.IsInitializedLayout;
+			});
+			unlockValkyrieManager.InitializeValkyrie(valId, 10);
+			yield return new WaitWhile(() =>
+			{
+				//0xBC92F0
+				return !unlockValkyrieManager.IsInitializedValkyrie;
+			});
+			isWait = true;
+			SoundManager.Instance.RequestEntryMenuCueSheet(() =>
+			{
+				//0xBC9320
+				isWait = false;
+			});
+			while(isWait)
+				yield return null;
+			UnlockFadeManager.Create();
+			this.StartCoroutineWatched(UnlockFadeManager.Instance.Co_LoadFadeEffect(unlockValkyrieManager.SeriesAttr));
+			yield return new WaitWhile(() =>
+			{
+				//0xBC9178
+				return !UnlockFadeManager.Instance.IsLoaded();
+			});
+			AssetBundleManager.UnloadAssetBundle(bundleName, false);
+			UnlockFadeManager.Instance.GetEffect().Enter();
+			effect = UnlockFadeManager.Instance.GetEffect();
+			while(effect.IsPlaying())
+				yield return null;
+			unlockValkyrieManager.StartDirection();
+			SetDisp(false);
+			isWait = true;
+			ok = () =>
+			{
+				//0xBC932C
+				isWait = false;
+			};
+			unlockValkyrieManager.PushOkButtonHandler += ok;
+			while(isWait)
+				yield return null;
+			unlockValkyrieManager.PushOkButtonHandler -= ok;
+			GameManager.FadeOut(0.4f);
+			yield return GameManager.Instance.WaitFadeYielder;
+			unlockValkyrieManager.Release();
+			Destroy(unlockValkyrieManager.gameObject);
+			m_bgControl.Destroy();
+			m_bgControl = null;
+			SetDisp(true);
+			GameManager.Instance.SetFPS(30);
+			isWait = true;
+			SoundManager.Instance.RequestEntryAdvCueSheet(() =>
+			{
+				//0xBC9338
+				isWait = false;
+			});
+			while(isWait)
+				yield return null;
 		}
 		
 		//[CompilerGeneratedAttribute] // RVA: 0x7430CC Offset: 0x7430CC VA: 0x7430CC
 		//// RVA: 0xBC8E78 Offset: 0xBC8E78 VA: 0xBC8E78
 		//private void <Co_LoadPrologueAnime>b__97_0(GameObject instance) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x7430DC Offset: 0x7430DC VA: 0x7430DC
-		//// RVA: 0xBC8F6C Offset: 0xBC8F6C VA: 0xBC8F6C
-		//private void <Co_TutorialFinish>b__109_2() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x7430EC Offset: 0x7430EC VA: 0x7430EC
-		//// RVA: 0xBC8F98 Offset: 0xBC8F98 VA: 0xBC8F98
-		//private void <Co_TutorialFinish>b__109_4() { }
 
 		//[CompilerGeneratedAttribute] // RVA: 0x7430FC Offset: 0x7430FC VA: 0x7430FC
 		//// RVA: 0xBC8FC4 Offset: 0xBC8FC4 VA: 0xBC8FC4

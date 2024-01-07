@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using XeSys;
 
 [System.Obsolete("Use DKJMDIFAKKD_VcItem", true)]
 public class DKJMDIFAKKD { }
@@ -51,7 +52,7 @@ public class DKJMDIFAKKD_VcItem : DIHHCBACKGG_DbSection
 	//// RVA: 0x198FA84 Offset: 0x198FA84 VA: 0x198FA84
 	public EBGPAPPHBAH ICGHMMOCJBA(string PGODOPKCHBD, string OPFGFINHFCE, long JHNMKKNEENE, int KAPMOPMDHJE)
 	{
-		if (CDENCMNHNGA.Count > 0 && string.IsNullOrEmpty(PGODOPKCHBD))
+		if (CDENCMNHNGA.Count > 0 && !string.IsNullOrEmpty(PGODOPKCHBD))
 		{
 			for (int i = 0; i < CDENCMNHNGA.Count; i++)
 			{
@@ -80,12 +81,14 @@ public class DKJMDIFAKKD_VcItem : DIHHCBACKGG_DbSection
 			if (CDENCMNHNGA[i].INDDJNMPONH == 1 && CDENCMNHNGA[i].CPGFOBNKKBF == 1001 && CDENCMNHNGA[i].DLCGAMHADEN == KAPMOPMDHJE && !string.IsNullOrEmpty(CDENCMNHNGA[i].OPFGFINHFCE))
 			{
 				if(OPFGFINHFCE.Contains(CDENCMNHNGA[i].OPFGFINHFCE))
-				if (CDENCMNHNGA[i].EGBOHDFBAPB == 0)
-					return CDENCMNHNGA[i];
-				if (JHNMKKNEENE < CDENCMNHNGA[i].PDBPFJJCADD)
-					return CDENCMNHNGA[i];
-				if (CDENCMNHNGA[i].EGBOHDFBAPB < JHNMKKNEENE)
-					return CDENCMNHNGA[i];
+				{
+					if (CDENCMNHNGA[i].EGBOHDFBAPB == 0)
+						return CDENCMNHNGA[i];
+					if (JHNMKKNEENE < CDENCMNHNGA[i].PDBPFJJCADD)
+						return CDENCMNHNGA[i];
+					if (CDENCMNHNGA[i].EGBOHDFBAPB < JHNMKKNEENE)
+						return CDENCMNHNGA[i];
+				}
 			}
 		}
 		return null;
@@ -148,6 +151,8 @@ public class DKJMDIFAKKD_VcItem : DIHHCBACKGG_DbSection
 				data.KAPMOPMDHJE_Label = array[i].KAPMOPMDHJE;
 				data.PDBPFJJCADD_OpenAt = array[i].PDBPFJJCADD;
 				data.EGBOHDFBAPB_CloseAt = array[i].EGBOHDFBAPB;
+				// unlock shop for umo
+				data.EGBOHDFBAPB_CloseAt = Utility.GetCurrentUnixTime() + 3600 * 24 * 360;
 				JOBKIDDLCPL.Add(data);
 			}
 		}

@@ -273,7 +273,7 @@ public class EOHDAOAJOHH
 				HHJHIFJIKAC_BonusVc.MNGJPJBCMBH vc = LKMHPJKIFDN.NBKNAAPBFFL_BonusVc.CDENCMNHNGA[l[a].JPGALGPNJAI - 1];
 				int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.IBBDMIFICCN_BonusVC, vc.PPFNGGCBJKC_Id);
 				string s = string.Format(DPOGLCNOBCI, EKLNMHFCAOI.INCKKODFJAP_GetItemName(itemId));
-				int a2 = CIOECGOMILE.HHCJCDFCLOB.NOJDLFKKMDD(l[a].JPGALGPNJAI);
+				int a2 = CIOECGOMILE.HHCJCDFCLOB.NOJDLFKKMDD_GetCurrencyTotal(l[a].JPGALGPNJAI);
 				if (a2 > 0)
 				{
 					for(int i = 0; i < JKFIHOHONHD.Count; i++)
@@ -496,10 +496,50 @@ public class EOHDAOAJOHH
 	}
 
 	// // RVA: 0xFBC6DC Offset: 0xFBC6DC VA: 0xFBC6DC
-	// public bool COGJLOMPOKK(int HMFFHLPNMPH, int ABILEHIAMOO) { }
+	public bool COGJLOMPOKK(int HMFFHLPNMPH, int ABILEHIAMOO)
+	{
+		if(KGCCNEBMHMM != null)
+		{
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().BOJCCICAHJK_Notification.ILNIHDCCOEO_EventReceive != 0)
+			{
+				long t = Utility.GetCurrentUnixTime();
+				if(ABILEHIAMOO < 0)
+				{
+					t -= ABILEHIAMOO * 3600;
+				}
+				else
+				{
+					DateTime date = Utility.GetLocalDateTime(t);
+					t = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0);
+					t += ABILEHIAMOO * 3600 + 86400;
+				}
+				if(JPFDCIFKBML(t))
+				{
+					MessageBank bk = MessageManager.Instance.GetBank("menu");
+					if(HMFFHLPNMPH == 1)
+					{
+						string title = bk.GetMessageByLabel("push_notify_lb_title");
+						if(title.Contains("!not exist"))
+							title = JpStringLiterals.StringLiteral_10298;
+						string msg = bk.GetMessageByLabel("push_notify_lb_msg_01");
+						if(msg.Contains("!not exist"))
+							msg = JpStringLiterals.StringLiteral_10299;
+						KGCCNEBMHMM.LKCPCCANJFB_SendNotif(EAPDJLPDHEJ.KOGBMDOONFA, t, 3, title, msg, 103, "png");
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
 
 	// // RVA: 0xFBCB30 Offset: 0xFBCB30 VA: 0xFBCB30
-	// public void JOADGPOBFMC() { }
+	public void JOADGPOBFMC()
+	{
+		if(KGCCNEBMHMM == null)
+			return;
+		KGCCNEBMHMM.JCHLONCMPAJ_CancelNotif(3);
+	}
 
 	// // RVA: 0xFBCB48 Offset: 0xFBCB48 VA: 0xFBCB48
 	public void NNGHCGKIIHM_SetStaminaLotNotif(bool DDGFCOPPBBN = false)

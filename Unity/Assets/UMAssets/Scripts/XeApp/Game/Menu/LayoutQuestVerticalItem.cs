@@ -55,7 +55,7 @@ namespace XeApp.Game.Menu
 		private Matrix23 m_identity; // 0x80
 
 		public Action OnReceiveCallback { get; set; } // 0x6C
-		//public ActionButton ChallengeButton { get; } 0x187EEF0
+		public ActionButton ChallengeButton { get { return m_buttonChallenge; } } //0x187EEF0
 
 		// RVA: 0x1881308 Offset: 0x1881308 VA: 0x1881308
 		private void Update()
@@ -64,7 +64,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x187EEDC Offset: 0x187EEDC VA: 0x187EEDC
-		//public bool Compare(FKMOKDCJFEN viewData) { }
+		public bool Compare(FKMOKDCJFEN viewData)
+		{
+			return m_viewData == viewData;
+		}
 
 		//// RVA: 0x1881334 Offset: 0x1881334 VA: 0x1881334
 		//public GameObject GetBase() { }

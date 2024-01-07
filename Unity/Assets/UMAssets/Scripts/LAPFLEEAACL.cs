@@ -73,7 +73,7 @@ public class LAPFLEEAACL
 			PLOOEECNHFB_IsDone = true;
 			return;
 		}
-		if(CIOECGOMILE.HHCJCDFCLOB.NOJDLFKKMDD(item.PPFNGGCBJKC_Id) < 1 || MHKCPJDNJKI_ProductsList.Count == 0)
+		if(CIOECGOMILE.HHCJCDFCLOB.NOJDLFKKMDD_GetCurrencyTotal(item.PPFNGGCBJKC_Id) < 1 || MHKCPJDNJKI_ProductsList.Count == 0)
 		{
 			PLOOEECNHFB_IsDone = true;
 			return;

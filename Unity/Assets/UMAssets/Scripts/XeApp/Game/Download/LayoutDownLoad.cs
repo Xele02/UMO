@@ -24,7 +24,7 @@ namespace XeApp.Game.DownLoad
 		private bool m_IsChangeDiva; // 0x30
 		private List<int> m_VoicePlayCounters = new List<int>(10); // 0x34
 
-		// public Action OnClickOk { set; } 0x11BC6C8
+		public Action OnClickOk { set { m_OnClickOk = value; } } //0x11BC6C8
 		public SwaipTouch SwaipTouch { get
 			{
 				if (m_SwaipTouch != null)
@@ -171,7 +171,10 @@ namespace XeApp.Game.DownLoad
 		// public void HideDownLoad() { }
 
 		// // RVA: 0x11BD4E8 Offset: 0x11BD4E8 VA: 0x11BD4E8
-		// public void EnterDivaSelect() { }
+		public void EnterDivaSelect()
+		{
+			m_LayoutDownLoadMain.EnterDivaSelect();
+		}
 
 		// // RVA: 0x11C32EC Offset: 0x11C32EC VA: 0x11C32EC
 		// public void LeaveDivaSelect() { }
@@ -186,11 +189,24 @@ namespace XeApp.Game.DownLoad
 		// public void LeaveVoiceButton() { }
 
 		// // RVA: 0x11BD538 Offset: 0x11BD538 VA: 0x11BD538
-		// public void PlayStartVoice() { }
+		public void PlayStartVoice()
+		{
+			this.StartCoroutineWatched(Co_PlayStartVoice());
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B5610 Offset: 0x6B5610 VA: 0x6B5610
 		// // RVA: 0x11C3538 Offset: 0x11C3538 VA: 0x11C3538
-		// private IEnumerator Co_PlayStartVoice() { }
+		private IEnumerator Co_PlayStartVoice()
+		{
+			//0x11C52DC
+			yield return null;
+			yield return new WaitWhile(() =>
+			{
+				//0x11C45E0
+				return m_LayoutDownLoadMain.IsPlaying();
+			});
+			OnClickVoice();
+		}
 
 		// // RVA: 0x11BA3B8 Offset: 0x11BA3B8 VA: 0x11BA3B8
 		public void SetEnabledOperation(bool is_enable, bool is_change = false)
@@ -341,13 +357,17 @@ namespace XeApp.Game.DownLoad
 		}
 
 		// // RVA: 0x11B9F80 Offset: 0x11B9F80 VA: 0x11B9F80
-		// public void SetButtonEnable() { }
+		public void SetButtonEnable()
+		{
+			m_LayoutDownLoadMain.SetButtonEnable();
+			m_LayoutDownLoadArrow.SetButtonEnable();
+		}
 
 		// // RVA: 0x11BBB78 Offset: 0x11BBB78 VA: 0x11BBB78
-		// public void SetButtonDisable() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6B5700 Offset: 0x6B5700 VA: 0x6B5700
-		// // RVA: 0x11C45E0 Offset: 0x11C45E0 VA: 0x11C45E0
-		// private bool <Co_PlayStartVoice>b__35_0() { }
+		public void SetButtonDisable()
+		{
+			m_LayoutDownLoadMain.SetButtonDisable();
+			m_LayoutDownLoadArrow.SetButtonDisable();
+		}
 	}
 }

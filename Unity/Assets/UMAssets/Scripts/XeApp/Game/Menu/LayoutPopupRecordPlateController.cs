@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using mcrs;
 using UnityEngine;
 using XeApp.Core;
@@ -73,10 +74,48 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x177A664 Offset: 0x177A664 VA: 0x177A664
-		//private void PopupShowEpisode(int episodeId, LayoutPopupAddEpisode.Type type, Action callback) { }
+		private void PopupShowEpisode(int episodeId, LayoutPopupAddEpisode.Type type, Action callback)
+		{
+			m_newEpisodeSetting.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			m_newEpisodeSetting.EpisodeId = episodeId;
+			m_newEpisodeSetting.Type = type;
+            PopupWindowControl cont = null;
+			cont = PopupWindowManager.Show(m_newEpisodeSetting, (PopupWindowControl control, PopupButton.ButtonType buttonType, PopupButton.ButtonLabel buttonLabel) =>
+			{
+				//0x177D10C
+				if (callback != null)
+					callback();
+			}, null, () =>
+			{
+				//0x177D120
+				GameManager.Instance.StartCoroutineWatched(Co_ShowTutorial_39(cont));
+			}, null);
+        }
 
 		//// RVA: 0x177A910 Offset: 0x177A910 VA: 0x177A910
-		//private void PopupShowAddScrollEpisode(List<int> episodeIds, LayoutPopupAddEpisode.Type type, Action callback) { }
+		private void PopupShowAddScrollEpisode(List<int> episodeIds, LayoutPopupAddEpisode.Type type, Action callback)
+		{
+			m_newEpisodeScrollSetting.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			m_newEpisodeScrollSetting.EpisodeIds = episodeIds;
+			m_newEpisodeScrollSetting.Type = type;
+            PopupWindowControl cont = null;
+			cont = PopupWindowManager.Show(m_newEpisodeScrollSetting, (PopupWindowControl control, PopupButton.ButtonType buttonType, PopupButton.ButtonLabel buttonLabel) =>
+			{
+				//0x177D1EC
+				if (callback != null)
+					callback();
+			}, null, () =>
+			{
+				//0x177D200
+				GameManager.Instance.StartCoroutineWatched(Co_ShowTutorial_39(cont));
+			}, null);
+        }
 
 		//// RVA: 0x177ABBC Offset: 0x177ABBC VA: 0x177ABBC
 		private void PopupShowList(List<GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo> list, Action callback)
@@ -216,16 +255,69 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x177B7E8 Offset: 0x177B7E8 VA: 0x177B7E8
 		public IEnumerator EpisodePhase(GONMPHKGKHI_RewardView.CECMLGBLHHG type, List<int> episodeList, Action callback)
 		{
-			TodoLogger.LogError(0, "EpisodePhase");
-			yield return null;
+			LayoutPopupAddEpisode.Type layoutType; // 0x28
+			int i; // 0x2C
+
+			//0x177D690
+			if(episodeList.Count > 0)
+			{
+				yield return Co.R(LoadLayoutNewEpisodeSetup(GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM_2, null));
+			}
+			if(episodeList.Count > 0)
+			{
+				yield return Co.R(LoadLayoutNewEpisodeListSetup(GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM_2, null));
+			}
+			layoutType = type == GONMPHKGKHI_RewardView.CECMLGBLHHG.BKHAAGAAIHJ_7 ? LayoutPopupAddEpisode.Type.AvailableEpisode : LayoutPopupAddEpisode.Type.AddEpisode;
+			if(type == GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM_2)
+			{
+				if(episodeList.Count > 1)
+				{
+					layoutType = LayoutPopupAddEpisode.Type.AddEpisodeListContent;
+					bool isWait = true;
+					episodeList.Sort();
+					PopupShowAddScrollEpisode(episodeList, layoutType, () =>
+					{
+						//0x177D3C0
+						isWait = false;
+					});
+					while(isWait)
+						yield return null;
+					if(callback != null)
+						callback();
+					yield break;
+				}
+			}
+			for(i = 0; i < episodeList.Count; i++)
+			{
+				bool isWait = true;
+				PopupShowEpisode(episodeList[i], layoutType, () =>
+				{
+					//0x177D3D4
+					isWait = false;
+				});
+				while(isWait)
+					yield return null;
+				
+			}
+			if(callback != null)
+				callback();
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C164 Offset: 0x70C164 VA: 0x70C164
 		//// RVA: 0x177B8E0 Offset: 0x177B8E0 VA: 0x177B8E0
 		public IEnumerator GetPosterPhase(List<GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo> posterList, Action callback)
 		{
-			TodoLogger.LogError(0, "GetPosterPhase");
-			yield return null;
+			//0x177DBD0
+			bool isWait = true;
+			PopupShowList(posterList, () =>
+			{
+				//0x177D3E8
+				isWait = false;
+			});
+			while(isWait)
+				yield return null;
+			if(callback != null)
+				callback();
 		}
 
 		// RVA: 0x177B9C0 Offset: 0x177B9C0 VA: 0x177B9C0 Slot: 4
@@ -265,7 +357,26 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C254 Offset: 0x70C254 VA: 0x70C254
 		//// RVA: 0x177BD00 Offset: 0x177BD00 VA: 0x177BD00
-		//private IEnumerator LoadLayoutNewEpisodeListSetup(GONMPHKGKHI.CECMLGBLHHG type, Action callback) { }
+		private IEnumerator LoadLayoutNewEpisodeListSetup(GONMPHKGKHI_RewardView.CECMLGBLHHG type, Action callback)
+		{
+			//0x177F7B0
+			if(type == GONMPHKGKHI_RewardView.CECMLGBLHHG.AGLFBCCGHJM_2)
+			{
+				bool isLoading = false;
+				GameManager.Instance.NowLoading.Show();
+				mb.StartCoroutineWatched(LoadLayoutNewEpisodeList(() =>
+				{
+					//0x177D410
+					isLoading = true;
+				}));
+				while(!isLoading)
+					yield return null;
+				GameManager.Instance.NowLoading.Hide();
+			}
+			//LAB_0177fa14
+			if(callback != null)
+				callback();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C2CC Offset: 0x70C2CC VA: 0x70C2CC
 		//// RVA: 0x177BDE0 Offset: 0x177BDE0 VA: 0x177BDE0
@@ -323,7 +434,19 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C434 Offset: 0x70C434 VA: 0x70C434
 		//// RVA: 0x177C038 Offset: 0x177C038 VA: 0x177C038
-		//private IEnumerator LoadLayoutNewEpisodeList(Action callback) { }
+		private IEnumerator LoadLayoutNewEpisodeList(Action callback)
+		{
+			//0x177F510
+			if(m_newEpisodeScrollSetting.Content == null)
+			{
+				m_newEpisodeScrollSetting.m_parent = Parent.transform;
+				m_newEpisodeScrollSetting.IsCaption = false;
+				m_newEpisodeScrollSetting.WindowSize = SizeType.Middle;
+				yield return Co.R(m_newEpisodeScrollSetting.LoadAssetBundlePrefab(Parent.transform));
+			}
+			if(callback != null)
+				callback();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C4AC Offset: 0x70C4AC VA: 0x70C4AC
 		//// RVA: 0x177C100 Offset: 0x177C100 VA: 0x177C100
@@ -425,10 +548,19 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C6AC Offset: 0x70C6AC VA: 0x70C6AC
 		//// RVA: 0x177C888 Offset: 0x177C888 VA: 0x177C888
-		//private IEnumerator Co_ShowTutorial_39(PopupWindowControl control) { }
+		private IEnumerator Co_ShowTutorial_39(PopupWindowControl control)
+		{
+			//0x177D4A8
+			control.InputDisable();
+			yield return TutorialManager.TryShowTutorialCoroutine(CheckTutorialFunc_39);
+			control.InputEnable();
+		}
 
 		//// RVA: 0x177C950 Offset: 0x177C950 VA: 0x177C950
-		//private bool CheckTutorialFunc_39(TutorialConditionId conditionId) { }
+		private bool CheckTutorialFunc_39(TutorialConditionId conditionId)
+		{
+			return conditionId == TutorialConditionId.Condition39;
+		}
 		
 		//[CompilerGeneratedAttribute] // RVA: 0x70C734 Offset: 0x70C734 VA: 0x70C734
 		//// RVA: 0x177CD18 Offset: 0x177CD18 VA: 0x177CD18

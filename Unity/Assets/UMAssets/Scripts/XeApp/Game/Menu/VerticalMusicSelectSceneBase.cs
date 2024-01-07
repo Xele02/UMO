@@ -2,8 +2,10 @@ using mcrs;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Experimental.UIElements;
 using XeApp.Game.Common;
 using XeApp.Game.MusicSelect;
 using XeApp.Game.Tutorial;
@@ -525,7 +527,7 @@ namespace XeApp.Game.Menu
 						TodoLogger.LogError(0, "CurrentMusicDecisionCheck Event");
 					}
 				}
-				if (selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].BPLOEAHOPFI_Energy <= CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC())
+				if (selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].BPLOEAHOPFI_Energy <= CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC_GetCurrent())
 					return true;
 				OpenStaminaWindow(() =>
 				{
@@ -845,10 +847,44 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xACEDA4 Offset: 0xACEDA4 VA: 0xACEDA4
-		// private VerticalMusicSelectSceneBase.MusicLockData GetLastStoryData() { }
+		private MusicLockData GetLastStoryData()
+		{
+			MusicLockData data = new MusicLockData();
+			List<LIEJFHMGNIA> l = LIEJFHMGNIA. FKDIMODKKJD(LIEJFHMGNIA.PJIJLMFBBCJ() - 1, true, true, false);
+			if(l.Count > 0)
+			{
+				LIEJFHMGNIA data2 = l[l.Count - 1];
+				if(!data2.MMEGDFPNONJ_HasDivaId)
+				{
+					for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OHCIFMDPAPD_Story.CDENCMNHNGA.Count; i++)
+					{
+                        LAEGMENIEDB_Story.ALGOILKGAAH dbStory = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OHCIFMDPAPD_Story.CDENCMNHNGA[i];
+						if(dbStory.KLCIIHKFPPO_StoryMusicId == data2.KLCIIHKFPPO_StoryMusicId)
+						{
+							data.freeMusicId = dbStory.OMMEPCGNHFM_FreeMusicId2;
+							data.lockDetail = data2.EJKPLJCMHMP_GetLockDetails();
+							data.isLock = data2.HHBJAEOIGIH_IsLocked;
+							return data;
+						}
+                    }
+				}
+			}
+			return null;
+		}
 
 		// // RVA: 0xACF194 Offset: 0xACF194 VA: 0xACF194
-		// private bool CheckStoryMusic(int freeMusicId) { }
+		private bool CheckStoryMusic(int freeMusicId)
+		{
+			if(freeMusicId != 0)
+			{
+				for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OHCIFMDPAPD_Story.CDENCMNHNGA.Count; i++)
+				{
+					if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OHCIFMDPAPD_Story.CDENCMNHNGA[i].OMMEPCGNHFM_FreeMusicId2 == freeMusicId)
+						return true;
+				}
+			}
+			return false;
+		}
 
 		// // RVA: 0xACF30C Offset: 0xACF30C VA: 0xACF30C
 		protected int GetLastStoryFreeMusicId()
@@ -866,7 +902,7 @@ namespace XeApp.Game.Menu
 					for(int i = 0; i < storyList.Count; i++)
 					{
 						LAEGMENIEDB_Story.ALGOILKGAAH story = storyList[i];
-						if(story.KLCIIHKFPPO == data.KLCIIHKFPPO_StoryMusicId && !data.HHBJAEOIGIH)
+						if(story.KLCIIHKFPPO_StoryMusicId == data.KLCIIHKFPPO_StoryMusicId && !data.HHBJAEOIGIH_IsLocked)
 						{
 							return story.OMMEPCGNHFM_FreeMusicId2;
 						}
@@ -1140,13 +1176,80 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xACD40C Offset: 0xACD40C VA: 0xACD40C
 		protected void OpenLockSimulationLiveWindow()
 		{
-			TodoLogger.LogError(0, "OpenLockSimulationLiveWindow");
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			TextPopupSetting s = new TextPopupSetting();
+			StringBuilder str = new StringBuilder(64);
+			str.Append(bk.GetMessageByLabel("story_unlock_01"));
+			str.Append("\n\n");
+			str.AppendFormat(bk.GetMessageByLabel("popup_music_unlock_text05"), IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("mv_player_level", 5));
+			s.Text = str.ToString();
+			s.WindowSize = SizeType.Small;
+			s.IsCaption = false;
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			PopupWindowManager.Show(s, null, null, null, null);
 		}
 
 		// // RVA: 0xACD850 Offset: 0xACD850 VA: 0xACD850
 		protected void OpenLockMusicInfoWindow()
 		{
-			TodoLogger.LogError(0, "OpenLockMusicInfoWindow");
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			string title = bk.GetMessageByLabel("popup_music_unlock_title");
+			StringBuilder str = new StringBuilder(200);
+			JPCKBFBCJKD m = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.LLJOPJMIGPD(freeMusicId);
+			if(m == null)
+			{
+				MusicLockData lockData = GetLastStoryData();
+				if(lockData != null && selectMusicData.GHBPLHBNMBK_FreeMusicId == lockData.freeMusicId)
+				{
+					if(!lockData.isLock)
+					{
+						GotoStorySelect();
+					}
+					else
+					{
+						str.Append(lockData.lockDetail);
+					}
+				}
+				else
+				{
+					if(CheckStoryMusic(selectMusicData.GHBPLHBNMBK_FreeMusicId))
+					{
+						str.AppendFormat(bk.GetMessageByLabel("popup_music_unlock_text04"), selectMusicData.NEDBBJDAFBH_MusicName);
+					}
+					else
+					{
+						str.AppendFormat(bk.GetMessageByLabel("popup_music_unlock_text05"), IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("multi_dance_player_level", 3));
+					}
+				}
+			}
+			else
+			{
+				str.Append(bk.GetMessageByLabel("popup_music_unlock_text01"));
+				str.Append("\n\n");
+				str.AppendFormat(bk.GetMessageByLabel("popup_music_unlock_text02"), m.ADBHJCDINFL);
+				str.Append("\n\n");
+				str.Append(bk.GetMessageByLabel("popup_music_unlock_text03"));
+				str.Append("\n\n");
+			}
+			if(str.Length != 0)
+			{
+				TextPopupSetting s = new TextPopupSetting();
+				s.TitleText = title;
+				s.Text = str.ToString();
+				s.WindowSize = SizeType.Middle;
+				s.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				};
+				PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0xAD31A8
+					return;
+				}, null, null, null);
+			}
 		}
 
 		// // RVA: 0xAD1F18 Offset: 0xAD1F18 VA: 0xAD1F18
@@ -1320,7 +1423,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xAD1E40 Offset: 0xAD1E40 VA: 0xAD1E40
-		// private void GotoStorySelect() { }
+		private void GotoStorySelect()
+		{
+			MenuScene.Instance.Mount(TransitionUniqueId.STORYSELECT, new StorySelectArgs(), true, 0);
+		}
 
 		// // RVA: 0xAD22C0 Offset: 0xAD22C0 VA: 0xAD22C0
 		private bool IsEnableUnitDance(bool line6Mode = false)

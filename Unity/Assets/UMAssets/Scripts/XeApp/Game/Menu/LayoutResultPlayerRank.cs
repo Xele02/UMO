@@ -193,7 +193,7 @@ namespace XeApp.Game.Menu
 					layoutOldExpGauge.StartAnimGoStop(0, 0);
 					layoutEffectOutGauge.StartAnimGoStop(0, 0);
 				}
-				if (IsLevelMax(currentFrameLevel) || timeLength < currentTime)
+				if (IsLevelMax(currentFrameLevel) || timeLength <= currentTime)
 					break;
 				if(!m_isSkiped)
 				{
@@ -360,7 +360,7 @@ namespace XeApp.Game.Menu
 		{
 			if (IsLevelMax(playerLevel))
 				gaugePercentage = 100;
-			return (int)(Mathf.Clamp(gaugePercentage, 0, 100) * layoutExpGauge.GetView(0).FrameAnimation.FrameNum + 1 / 100);
+			return (int)(Mathf.Clamp(gaugePercentage, 0, 100) * (layoutExpGauge.GetView(0).FrameAnimation.FrameNum + 1) / 100.0f);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71C9F4 Offset: 0x71C9F4 VA: 0x71C9F4

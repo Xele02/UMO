@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine.UI;
 using XeSys.Gfx;
 
@@ -63,9 +64,21 @@ namespace XeApp.Game.DownLoad
 		}
 
 		// // RVA: 0x11C4264 Offset: 0x11C4264 VA: 0x11C4264
-		// public void SetButtonEnable() { }
+		public void SetButtonEnable()
+		{
+			for(int i = 0; i < m_ArrowButtons.Length; i++)
+			{
+				m_ArrowButtons[i].interactable = true;
+			}
+		}
 
 		// // RVA: 0x11C4420 Offset: 0x11C4420 VA: 0x11C4420
-		// public void SetButtonDisable() { }
+		public void SetButtonDisable()
+		{
+			for(int i = 0; i < m_ArrowButtons.Length; i++)
+			{
+				m_ArrowButtons[i].interactable = false;
+			}
+		}
 	}
 }

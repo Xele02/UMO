@@ -522,7 +522,7 @@ namespace XeApp.Game.Menu
 							m_sceneSelectList.UpdateScore(m_musicBaseData);
 							if(!GameManager.Instance.IsTutorial)
 							{
-								ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.AFLMHBMBNBO, 2, false);
+								ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.AFLMHBMBNBO_48, 2, false);
 							}
 							ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD(JpStringLiterals.StringLiteral_15651, 0, false, false, 1);
 						}
@@ -921,13 +921,34 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1385A84 Offset: 0x1385A84 VA: 0x1385A84 Slot: 25
 		protected override void OnTutorial()
 		{
-			TodoLogger.LogError(0, "Tutorial");
+			if(BasicTutorialManager.Instance.GetRecoveryPoint() != ILDKBCLAFPB.CDIPJNPICCO.BNLDNJNMFMC_6)
+			{
+				BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.Scene, null, null);
+			}
+			else
+			{
+				BasicTutorialManager.Instance.ShowMessageWindow(BasicTutorialMessageId.Id_PlateSelected, () =>
+				{
+					//0xA56B70
+					Database.Instance.advSetup.Setup(3);
+					MenuScene.Instance.GotoAdventure(false);
+				}, null);
+			}
 		}
 
 		// RVA: 0x1385C64 Offset: 0x1385C64 VA: 0x1385C64
 		private void SetTutorialPopupDecide()
 		{
-			TodoLogger.LogError(0, "Tutorial");
+			BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.PopupPositiveButton, () =>
+			{
+				//0xA56C5C
+				BasicTutorialManager.Instance.ShowMessageWindow(BasicTutorialMessageId.Id_PlateSelected, () =>
+				{
+					//0xA56DC0
+					Database.Instance.advSetup.Setup(3);
+					MenuScene.Instance.GotoAdventure(false);
+				}, null);
+			}, null, TutorialPointer.Direction.Down);
 		}
 
 		// // RVA: 0x13844DC Offset: 0x13844DC VA: 0x13844DC

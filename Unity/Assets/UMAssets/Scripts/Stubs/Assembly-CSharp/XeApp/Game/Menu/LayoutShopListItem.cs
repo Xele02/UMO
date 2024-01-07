@@ -90,14 +90,14 @@ namespace XeApp.Game.Menu
 				}
 			}
 			m_imageMedal[1].enabled = false;
-			GameManager.Instance.ItemTextureCache.Load(view.EAHPLCJMPHD, (IiconTexture image) =>
+			GameManager.Instance.ItemTextureCache.Load(view.EAHPLCJMPHD_PayItemId, (IiconTexture image) =>
 			{
 				//0x1940F38
 				m_imageMedal[1].enabled = true;
 				image.Set(m_imageMedal[1]);
 			});
-			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.EAHPLCJMPHD);
-			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.EAHPLCJMPHD);
+			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.EAHPLCJMPHD_PayItemId);
+			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.EAHPLCJMPHD_PayItemId);
 			if(cat < EKLNMHFCAOI.FKGCBLHOOCL_Category.IBBDMIFICCN_BonusVC)
 			{
 				if(cat != EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit)

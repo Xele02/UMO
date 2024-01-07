@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -126,11 +127,42 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x17D026C Offset: 0x17D026C VA: 0x17D026C
 		private void OnOpenVCProducts(AMOCLPHDGBP p, ELBOJBBIBFM onPurchase, JFDNPFFOACP onCancel)
 		{
-			TodoLogger.LogError(0, "OnOpenVCProducts");
+			if(GetProcuctListCount(p, m_productListFilter) == 0)
+			{
+				TextPopupSetting s = new TextPopupSetting();
+				s.Text = MessageManager.Instance.GetMessage("common", "popup_purchase_error_not_product");
+				s.IsCaption = false;
+				s.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+				};
+				PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0x17D1148
+					if(onCancel != null)
+						onCancel();
+				}, null, null, null);
+			}
+			else
+			{
+				this.StartCoroutineWatched(PopupDenomination.Co_ShowPopup(transform, p, onPurchase, onCancel, errorHandler, m_OnChangeDate, m_productListFilter));
+			}
 		}
 
 		// // RVA: 0x17D05C8 Offset: 0x17D05C8 VA: 0x17D05C8
-		// private int GetProcuctListCount(AMOCLPHDGBP p, ProductListFilter filter) { }
+		private int GetProcuctListCount(AMOCLPHDGBP p, ProductListFilter filter)
+		{
+			if(filter == null)
+			{
+				return p.HFCNOINEPLB.MHKCPJDNJKI.Count;
+			}
+			int a = 0;
+			for(int i = 0; i < p.HFCNOINEPLB.MHKCPJDNJKI.Count; i++)
+			{
+				a += filter(p.HFCNOINEPLB.MHKCPJDNJKI[i]) ? 1 : 0;
+			}
+			return a;
+		}
 
 		// // RVA: 0x17D079C Offset: 0x17D079C VA: 0x17D079C
 		private void OnOpenBirthdayRegistration(PJHHCHAKGKI onRegisterBirth, JFDNPFFOACP onCencel)

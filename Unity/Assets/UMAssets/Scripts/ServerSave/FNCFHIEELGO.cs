@@ -33,7 +33,7 @@ public class FNCFHIEELGO_DecoVisit : KLFDBFMNLBL_ServerSaveBlock
 	public int IAOOCOKEECB_VisitPrevCntOther { get { return IDFIKBHHLNN ^ (int)ENOBDCFHELD; } set { IDFIKBHHLNN = value ^ (int)ENOBDCFHELD; KCAJLAACCKN = value ^ (int)FCEJCHGLFGN; } } //HKCHBKHDOLK 0x13E4820 OKPAIAMOBHI 0x13E4830
 	public long EILGNIEGDOI_PresentAcquiredAt { get { return OHCKMGGLMPB ^ ENOBDCFHELD; } set { OHCKMGGLMPB = value ^ ENOBDCFHELD; MCCBJMKHPCP = value ^ FCEJCHGLFGN; } } //FHPOOMLLOCL 0x13E4848 MOFBHEJEGPK 0x13E485C
 	public int GHEBKKHAAPM_PresentPrevCnt { get { return IIKOHDBHLPI ^ (int)ENOBDCFHELD; } set { IIKOHDBHLPI = value ^ (int)ENOBDCFHELD; CMPBMCDNBLN = value ^ (int)FCEJCHGLFGN; } } //KODNPBIFNBI 0x13E4880 BCLOKNHJDNJ 0x13E4890
-	public override bool DMICHEJIAJL { get { TodoLogger.LogError(0, "DMICHEJIAJL"); return false; } } // 0x13E5E3C NFKFOODCJJB
+	public override bool DMICHEJIAJL { get { return true; } } // 0x13E5E3C NFKFOODCJJB
 
 	// // RVA: 0x13E48A8 Offset: 0x13E48A8 VA: 0x13E48A8
 	public FNCFHIEELGO_DecoVisit()

@@ -108,8 +108,7 @@ namespace XeApp.Game.Common
 					}
 					else
 					{
-						cueName = "cs_bgm_tutorial";
-						return;
+						str.SetFormat("opening_{0:D3}", bgmId - PROLOGUE_BGM);
 					}
 				}
 				else

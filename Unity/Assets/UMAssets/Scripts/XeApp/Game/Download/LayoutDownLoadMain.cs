@@ -264,7 +264,11 @@ namespace XeApp.Game.DownLoad
 		// public void HideDownLoad() { }
 
 		// // RVA: 0x11C3230 Offset: 0x11C3230 VA: 0x11C3230
-		// public void EnterDivaSelect() { }
+		public void EnterDivaSelect()
+		{
+			m_ChangeAnim.StartChildrenAnimGoStop("02");
+			m_DivaSelectAnim.StartChildrenAnimGoStop("go_in", "st_in");
+		}
 
 		// // RVA: 0x11C3314 Offset: 0x11C3314 VA: 0x11C3314
 		// public void LeaveDivaSelect() { }
@@ -448,9 +452,25 @@ namespace XeApp.Game.DownLoad
 		}
 
 		// // RVA: 0x11C413C Offset: 0x11C413C VA: 0x11C413C
-		// public void SetButtonEnable() { }
+		public void SetButtonEnable()
+		{
+			m_DivaSelectOkBtn.IsInputOff = false;
+			m_DivaSelectVoiceBtn.IsInputOff = false;
+			for(int i = 0; i < m_DivaIconBtnList.Count; i++)
+			{
+				m_DivaIconBtnList[i].IsInputOff = false;
+			}
+		}
 
 		// // RVA: 0x11C42F8 Offset: 0x11C42F8 VA: 0x11C42F8
-		// public void SetButtonDisable() { }
+		public void SetButtonDisable()
+		{
+			m_DivaSelectOkBtn.IsInputOff = true;
+			m_DivaSelectVoiceBtn.IsInputOff = true;
+			for(int i = 0; i < m_DivaIconBtnList.Count; i++)
+			{
+				m_DivaIconBtnList[i].IsInputOff = false;
+			}
+		}
 	}
 }

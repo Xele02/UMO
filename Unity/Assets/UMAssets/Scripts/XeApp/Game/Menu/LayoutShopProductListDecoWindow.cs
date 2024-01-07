@@ -107,8 +107,8 @@ namespace XeApp.Game.Menu
 			m_layoutKyrr.StartChildrenAnimGoStop("01", "01");
 			for(int i = 0; i < m_imageMedal.Length; i++)
 			{
-                EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.EAHPLCJMPHD);
-				int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.EAHPLCJMPHD);
+                EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.EAHPLCJMPHD_PayItemId);
+				int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.EAHPLCJMPHD_PayItemId);
 				if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem)
 				{
 					if(id == 7)

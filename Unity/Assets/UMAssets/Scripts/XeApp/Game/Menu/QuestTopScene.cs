@@ -646,8 +646,61 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x9DD964 Offset: 0x9DD964 VA: 0x9DD964
 		private IEnumerator Co_ShowBeginnerTutorial()
 		{
-			TodoLogger.LogError(1, "Co_ShowBeginnerTutorial Tuto 49");
-			yield return null;
+			//0x9E05F0
+			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.HDMADAHNLDN_49);
+			GameManager.PushBackButtonHandler backButtonDummy = () =>
+			{
+				//0x9DE3BC
+				return;
+			};
+			MenuScene.Instance.InputDisable();
+			yield return Co.R(TutorialManager.ShowTutorial(107, null));
+			if(!BasicTutorialManager.HasInstanced)
+				BasicTutorialManager.Initialize();
+			bool isWait = true;
+			if(!BasicTutorialManager.Instance.IsLoadedLayout())
+			{
+				BasicTutorialManager.Instance.PreLoadResource(() =>
+				{
+					//0x9DE8FC
+					isWait = false;
+				}, true);
+				//LAB_009e0900
+				while(isWait)
+					yield return null;
+			}
+			//LAB_009e0928
+			isWait = true;
+			GameManager.Instance.AddPushBackButtonHandler(backButtonDummy);
+			BasicTutorialManager.Instance.ShowMessageWindow(BasicTutorialMessageId.Id_Mission, () =>
+			{
+				//0x9DE908
+				isWait = false;
+			}, null);
+			while(isWait)
+				yield return null;
+			ButtonBase targetButton = m_layoutScrollListV.GetChallengeButton(0);
+			if(targetButton != null)
+			{
+				BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.Delegate,() =>
+				{
+					//0x9DE914
+					LHFOAFAOPLC.FPCGNJMEHCI();
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd = 2;
+					MenuScene.SaveRequest();
+					GameManager.Instance.RemovePushBackButtonHandler(backButtonDummy);
+					MenuScene.Instance.InputEnable();
+				}, () =>
+				{
+					//0x9DEAE4
+					return targetButton;
+				}, TutorialPointer.Direction.Down);
+			}
+			else
+			{
+				GameManager.Instance.RemovePushBackButtonHandler(backButtonDummy);
+				MenuScene.Instance.InputEnable();
+			}
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x710AEC Offset: 0x710AEC VA: 0x710AEC

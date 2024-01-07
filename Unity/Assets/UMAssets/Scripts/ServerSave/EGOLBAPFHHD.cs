@@ -582,7 +582,10 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1C51CEC Offset: 0x1C51CEC VA: 0x1C51CEC
-	// public void LOBOPFFFPGP() { }
+	public void LOBOPFFFPGP()
+	{
+		HCIFHBIHHKK_ClSt &= (int)(HCIFHBIHHKK_ClSt & 0xfffffb04);
+	}
 
 	// // RVA: 0x1C51D14 Offset: 0x1C51D14 VA: 0x1C51D14
 	public void EMHMCOBNMLI()
@@ -949,13 +952,16 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	{
 		TodoLogger.LogError(TodoLogger._Todo, "EGOLBAPFHHD_Common.BCLKCMDGDLD Todo with calc office");
 		if(JKDJCFEBDHC)
-			CKDPJCLINAB_GpFlg[0] &= 1 << (int)PPFNGGCBJKC;
+			CKDPJCLINAB_GpFlg[0] |= 1 << (int)PPFNGGCBJKC;
 		else
-			CKDPJCLINAB_GpFlg[0] |= ~(1 << (int)PPFNGGCBJKC);
+			CKDPJCLINAB_GpFlg[0] &= ~(1 << (int)PPFNGGCBJKC);
 	}
 
 	// // RVA: 0x1C53CC4 Offset: 0x1C53CC4 VA: 0x1C53CC4
-	// public void AABHAHFCEMF() { }
+	public void AABHAHFCEMF()
+	{
+		BCLKCMDGDLD(0, true);
+	}
 
 	// // RVA: 0x1C53D88 Offset: 0x1C53D88 VA: 0x1C53D88
 	public EGOLBAPFHHD_Common()

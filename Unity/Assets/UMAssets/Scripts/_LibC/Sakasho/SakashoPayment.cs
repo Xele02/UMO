@@ -27,8 +27,8 @@ namespace ExternLib
 					""free"": 0,
 					""id"": 3001,
 					""name"": ""\u30b9\u30d7\u30ea\u30f3\u30b0\u30b9\u30d5\u30a3\u30a2"",
-					""paid"": 0,
-					""total"": 0
+					""paid"": 9999,
+					""total"": 9999
 
 				},
 				{
@@ -36,8 +36,8 @@ namespace ExternLib
 					""free"": 0,
 					""id"": 3002,
 					""name"": ""\u30b5\u30de\u30fc\u30b9\u30d5\u30a3\u30a2"",
-					""paid"": 0,
-					""total"": 0
+					""paid"": 9999,
+					""total"": 9999
 
 				},
 				{
@@ -608,6 +608,585 @@ namespace ExternLib
 			}
 		]");
 
+		static EDOHBJAPLPF_JsonData arrayData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(@"[
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 32520895200,
+				""description"": ""\u30b2\u30fc\u30e0\u4e2d\u306b\u30b3\u30f3\u30c6\u30cb\u30e5\u30fc\u3067\u304d\u307e\u3059\u3002"",
+				""group_key"": null,
+				""id"": 67554,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 10,
+				""name"": ""\u30b3\u30f3\u30c6\u30cb\u30e5\u30fc"",
+				""opened_at"": 1497856800,
+				""platform_product_id"": null,
+				""price"": 10
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 32520895200,
+				""description"": ""\u30b9\u30bf\u30df\u30ca\u56de\u5fa9"",
+				""group_key"": null,
+				""id"": 67572,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 10,
+				""name"": ""\u30b9\u30bf\u30df\u30ca\u56de\u5fa9"",
+				""opened_at"": 1497870000,
+				""platform_product_id"": null,
+				""price"": 10
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 32525902800,
+				""description"": ""VOP\u9ad8\u901f\u5b8c\u4e86\u306e\u5b9f\u884c\u306b\u4f7f\u7528\u3057\u307e\u3059\u3002"",
+				""group_key"": null,
+				""id"": 153192,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 10,
+				""name"": ""VOP\u9ad8\u901f\u5b8c\u4e86"",
+				""opened_at"": 1535342400,
+				""platform_product_id"": null,
+				""price"": 5
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 32512611600,
+				""description"": ""AP\u56de\u5fa9"",
+				""group_key"": null,
+				""id"": 167079,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 10,
+				""name"": ""AP\u56de\u5fa9"",
+				""normal_lot_free_setting"": {
+					""duration_days"": null,
+					""is_first_time"": false,
+					""reset_count"": null,
+					""reset_hours"": null
+				},
+				""opened_at"": 1552575600,
+				""platform_product_id"": null,
+				""player_normal_lot_free_state"": {
+					""is_next_free"": false
+				},
+				""price"": 10
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 32530057200,
+				""description"": ""AP\u56de\u5fa9(\u5c0f)"",
+				""group_key"": null,
+				""id"": 222423,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 10,
+				""name"": ""AP\u56de\u5fa92"",
+				""opened_at"": 1570086000,
+				""platform_product_id"": null,
+				""price"": 5
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 32530057200,
+				""description"": ""AP\u56de\u5fa9\uff08\u5927\uff09"",
+				""group_key"": null,
+				""id"": 222424,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 10,
+				""name"": ""AP\u56de\u5fa93"",
+				""opened_at"": 1570086000,
+				""platform_product_id"": null,
+				""price"": 20
+			}
+		]");
+
+		static EDOHBJAPLPF_JsonData arrayData3 = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(@"[
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1656396000,
+				""description"": ""{\n  \""bg_id\"":\""gc=41252\"",\n  \""day_count\"":0,\n  \""disable_carousel\"":0,\n  \""free_badge_mess\"":\""1\u56de\u7121\u6599\uff01\"",\n  \""free_texture_id\"":0,\n  \""group_id\"":41252,\n  \""label\"":\""popup_gacha_once_rate_warning\"",\n  \""name\"":\""\u26055\u4ee5\u4e0a\u78ba\u5b9a\u30ac\u30c1\u30e3\"",\n  \""open_time\"":1651330800,\n  \""sale_button_visible\"":0,\n  \""templ\"":\""gacha_season_detail_41252\"",\n  \""ver\"":2,\n  \""view_order\"":52531521659076608\n}"",
+				""group_key"": null,
+				""id"": 429928,
+				""imageUrl"": null,
+				""item_set_name_for_api"": [
+					""normal_lot_4_1252_0_rare4only""
+				],
+				""label"": 4125201,
+				""name"": ""\u30d4\u30c3\u30af\u30a2\u30c3\u30d7\u30ac\u30c1\u30e3159"",
+				""normal_lot_free_setting"": {
+					""duration_days"": null,
+					""is_first_time"": true,
+					""reset_count"": 0,
+					""reset_hours"": null
+				},
+				""opened_at"": 1651330800,
+				""platform_product_id"": null,
+				""player_normal_lot_free_state"": {
+					""is_next_free"": true
+				},
+				""price"": 1
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1656396000,
+				""description"": ""{\r\n  \""bg_id\"":\""gc=41252\"",\r\n  \""day_count\"":0,\r\n  \""disable_carousel\"":0,\r\n  \""free_badge_mess\"":\""1\u56de\u7121\u6599\uff01\"",\r\n  \""free_texture_id\"":0,\r\n  \""group_id\"":41252,\r\n  \""kakutei\"":\""\u26055\u4ee5\u4e0a10\u679a\u78ba\u5b9a\"",\r\n  \""label\"":\""popup_gacha_once_rate_warning\"",\r\n  \""name\"":\""\u26055\u4ee5\u4e0a\u78ba\u5b9a\u30ac\u30c1\u30e3\"",\r\n  \""open_time\"":1651330800,\r\n  \""sale_button_visible\"":0,\r\n  \""templ\"":\""gacha_season_detail_41252\"",\r\n  \""ver\"":2,\r\n  \""view_order\"":52531521659076608\r\n}"",
+				""group_key"": null,
+				""id"": 429929,
+				""imageUrl"": null,
+				""item_set_name_for_api"": [
+					""normal_lot_4_1252_0_rare4only"",
+					""normal_lot_4_1252_1_rare4only"",
+					""normal_lot_4_1252_0_rare4only"",
+					""normal_lot_4_1252_0_rare4only"",
+					""normal_lot_4_1252_0_rare4only"",
+					""normal_lot_4_1252_0_rare4only"",
+					""normal_lot_4_1252_0_rare4only"",
+					""normal_lot_4_1252_0_rare4only"",
+					""normal_lot_4_1252_0_rare4only"",
+					""normal_lot_4_1252_0_rare4only""
+				],
+				""label"": 4125202,
+				""name"": ""\u30d4\u30c3\u30af\u30a2\u30c3\u30d7\u30ac\u30c1\u30e3159 10\u9023"",
+				""opened_at"": 1651330800,
+				""platform_product_id"": null,
+				""price"": 10
+			}
+		]");
+
+		static EDOHBJAPLPF_JsonData arrayData4 = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(@"[
+			{
+				""bought_quantity"": 0,
+				""buy_limit"": 5,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428662,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 39,
+				""name"": ""2022\u5e74\u6625 5\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u5e78\u904b\u306e\u714c\u77f3\u00d71\uff08\u8cfc\u5165\u5236\u9650\u6709\uff065\u6708\uff09"",
+				""opened_at"": 1651330800,
+				""platform_product_id"": null,
+				""price"": 2200
+			},
+			{
+				""bought_quantity"": 0,
+				""buy_limit"": 10,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428665,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 40,
+				""name"": ""2022\u5e74\u6625 5\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u5e78\u904b\u306e\u8f1d\u77f3\u00d71\uff08\u8cfc\u5165\u5236\u9650\u6709\uff065\u6708\uff09"",
+				""opened_at"": 1651330800,
+				""platform_product_id"": null,
+				""price"": 500
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428666,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 41,
+				""name"": ""2022\u5e74\u6625 2\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u661f\u306e\u7d50\u6676\uff08\u5c0f\uff09\u00d75"",
+				""opened_at"": 1646017200,
+				""platform_product_id"": null,
+				""price"": 30
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428667,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 42,
+				""name"": ""2022\u5e74\u6625 2\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u661f\u306e\u7d50\u6676\uff08\u4e2d\uff09\u00d75"",
+				""opened_at"": 1646017200,
+				""platform_product_id"": null,
+				""price"": 60
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428668,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 43,
+				""name"": ""2022\u5e74\u6625 2\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u661f\u306e\u7d50\u6676\uff08\u5927\uff09\u00d75"",
+				""opened_at"": 1646017200,
+				""platform_product_id"": null,
+				""price"": 120
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428669,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 44,
+				""name"": ""2022\u5e74\u6625 2\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u611b\u306e\u7d50\u6676\uff08\u5c0f\uff09\u00d75"",
+				""opened_at"": 1646017200,
+				""platform_product_id"": null,
+				""price"": 30
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428670,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 45,
+				""name"": ""2022\u5e74\u6625 2\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u611b\u306e\u7d50\u6676\uff08\u4e2d\uff09\u00d75"",
+				""opened_at"": 1646017200,
+				""platform_product_id"": null,
+				""price"": 60
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428671,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 46,
+				""name"": ""2022\u5e74\u6625 2\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u611b\u306e\u7d50\u6676\uff08\u5927\uff09\u00d75"",
+				""opened_at"": 1646017200,
+				""platform_product_id"": null,
+				""price"": 120
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428672,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 47,
+				""name"": ""2022\u5e74\u6625 2\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u547d\u306e\u7d50\u6676\uff08\u5c0f\uff09\u00d75"",
+				""opened_at"": 1646017200,
+				""platform_product_id"": null,
+				""price"": 30
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428673,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 48,
+				""name"": ""2022\u5e74\u6625 2\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u547d\u306e\u7d50\u6676\uff08\u4e2d\uff09\u00d75"",
+				""opened_at"": 1646017200,
+				""platform_product_id"": null,
+				""price"": 60
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428674,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 49,
+				""name"": ""2022\u5e74\u6625 2\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u547d\u306e\u7d50\u6676\uff08\u5927\uff09\u00d75"",
+				""opened_at"": 1646017200,
+				""platform_product_id"": null,
+				""price"": 120
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428675,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 50,
+				""name"": ""2022\u5e74\u6625 2\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u30e1\u30ed\u30c7\u30a3\u30b9\u30c8\u30fc\u30f3\uff08\u5c0f\uff09\u00d720"",
+				""opened_at"": 1646017200,
+				""platform_product_id"": null,
+				""price"": 10
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428676,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 51,
+				""name"": ""2022\u5e74\u6625 2\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u30e1\u30ed\u30c7\u30a3\u30b9\u30c8\u30fc\u30f3\uff08\u4e2d\uff09\u00d720"",
+				""opened_at"": 1646017200,
+				""platform_product_id"": null,
+				""price"": 20
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428677,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 52,
+				""name"": ""2022\u5e74\u6625 2\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u30e1\u30ed\u30c7\u30a3\u30b9\u30c8\u30fc\u30f3\uff08\u5927\uff09\u00d720"",
+				""opened_at"": 1646017200,
+				""platform_product_id"": null,
+				""price"": 30
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428678,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 56,
+				""name"": ""2022\u5e74\u6625 2\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u30bd\u30a6\u30eb\u30b9\u30c8\u30fc\u30f3\uff08\u5c0f\uff09\u00d720"",
+				""opened_at"": 1646017200,
+				""platform_product_id"": null,
+				""price"": 20
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428679,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 57,
+				""name"": ""2022\u5e74\u6625 2\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u30bd\u30a6\u30eb\u30b9\u30c8\u30fc\u30f3\uff08\u4e2d\uff09\u00d720"",
+				""opened_at"": 1646017200,
+				""platform_product_id"": null,
+				""price"": 40
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428680,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 58,
+				""name"": ""2022\u5e74\u6625 2\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u30bd\u30a6\u30eb\u30b9\u30c8\u30fc\u30f3\uff08\u5927\uff09\u00d720"",
+				""opened_at"": 1646017200,
+				""platform_product_id"": null,
+				""price"": 80
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428681,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 59,
+				""name"": ""2022\u5e74\u6625 2\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u30dc\u30a4\u30b9\u30b9\u30c8\u30fc\u30f3\uff08\u5c0f\uff09\u00d720"",
+				""opened_at"": 1646017200,
+				""platform_product_id"": null,
+				""price"": 20
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428682,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 60,
+				""name"": ""2022\u5e74\u6625 2\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u30dc\u30a4\u30b9\u30b9\u30c8\u30fc\u30f3\uff08\u4e2d\uff09\u00d720"",
+				""opened_at"": 1646017200,
+				""platform_product_id"": null,
+				""price"": 40
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428683,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 61,
+				""name"": ""2022\u5e74\u6625 2\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u30dc\u30a4\u30b9\u30b9\u30c8\u30fc\u30f3\uff08\u5927\uff09\u00d720"",
+				""opened_at"": 1646017200,
+				""platform_product_id"": null,
+				""price"": 80
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428684,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 62,
+				""name"": ""2022\u5e74\u6625 2\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u30c1\u30e3\u30fc\u30e0\u30b9\u30c8\u30fc\u30f3\uff08\u5c0f\uff09\u00d720"",
+				""opened_at"": 1646017200,
+				""platform_product_id"": null,
+				""price"": 20
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428685,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 63,
+				""name"": ""2022\u5e74\u6625 2\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u30c1\u30e3\u30fc\u30e0\u30b9\u30c8\u30fc\u30f3\uff08\u4e2d\uff09\u00d720"",
+				""opened_at"": 1646017200,
+				""platform_product_id"": null,
+				""price"": 40
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428686,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 64,
+				""name"": ""2022\u5e74\u6625 2\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u30c1\u30e3\u30fc\u30e0\u30b9\u30c8\u30fc\u30f3\uff08\u5927\uff09\u00d720"",
+				""opened_at"": 1646017200,
+				""platform_product_id"": null,
+				""price"": 80
+			},
+			{
+				""bought_quantity"": null,
+				""buy_limit"": 0,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428687,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 65,
+				""name"": ""2022\u5e74\u6625 2\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1aUC\u00d72000"",
+				""opened_at"": 1646017200,
+				""platform_product_id"": null,
+				""price"": 10
+			},
+			{
+				""bought_quantity"": 0,
+				""buy_limit"": 1,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428690,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 66,
+				""name"": ""2022\u5e74\u6625 5\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u26055\u78ba\u5b9a\u30ac\u30c1\u30e3\u30c1\u30b1\u00d71\uff08\u8cfc\u5165\u5236\u9650\u6709\uff065\u6708\uff09"",
+				""opened_at"": 1651330800,
+				""platform_product_id"": null,
+				""price"": 3000
+			},
+			{
+				""bought_quantity"": 0,
+				""buy_limit"": 20,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428693,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 67,
+				""name"": ""2022\u5e74\u6625 5\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u8d85\u6642\u7a7a\u30ac\u30c1\u30e3\u30c1\u30b1\u00d71\uff08\u8cfc\u5165\u5236\u9650\u6709\uff065\u6708\uff09"",
+				""opened_at"": 1651330800,
+				""platform_product_id"": null,
+				""price"": 200
+			},
+			{
+				""bought_quantity"": 0,
+				""buy_limit"": 1,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428696,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 68,
+				""name"": ""2022\u5e74\u6625 5\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a\u30b7\u30fc\u30af\u30ec\u30c3\u30c8\u30b9\u30c8\u30fc\u30f3\u00d71\uff08\u8cfc\u5165\u5236\u9650\u6709\uff065\u6708\uff09"",
+				""opened_at"": 1651330800,
+				""platform_product_id"": null,
+				""price"": 6000
+			},
+			{
+				""bought_quantity"": 0,
+				""buy_limit"": 1,
+				""closed_at"": 1655305199,
+				""description"": null,
+				""group_key"": null,
+				""id"": 428699,
+				""imageUrl"": null,
+				""item_set_name_for_api"": null,
+				""label"": 69,
+				""name"": ""2022\u5e74\u6625 5\u6708 : \u6625\u30b9\u30d5\u30a3\u30a2\uff1a \u30a8\u30d4\u30bd\u30fc\u30c9\u30aa\u30fc\u30d6\uff08\u5927\uff09\u00d71\uff08\u8cfc\u5165\u5236\u9650\u6709\uff065\u6708\uff09"",
+				""opened_at"": 1651330800,
+				""platform_product_id"": null,
+				""price"": 500
+			}
+		]");
 
 		public static int SakashoPaymentGetProducts(int callbackId, string json)
 		{
@@ -630,163 +1209,6 @@ namespace ExternLib
 
 			string message = "";
 
-			EDOHBJAPLPF_JsonData arrayData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(@"[
-				{
-					""bought_quantity"": null,
-					""buy_limit"": 0,
-					""closed_at"": 32520895200,
-					""description"": ""\u30b2\u30fc\u30e0\u4e2d\u306b\u30b3\u30f3\u30c6\u30cb\u30e5\u30fc\u3067\u304d\u307e\u3059\u3002"",
-					""group_key"": null,
-					""id"": 67554,
-					""imageUrl"": null,
-					""item_set_name_for_api"": null,
-					""label"": 10,
-					""name"": ""\u30b3\u30f3\u30c6\u30cb\u30e5\u30fc"",
-					""opened_at"": 1497856800,
-					""platform_product_id"": null,
-					""price"": 10
-				},
-				{
-					""bought_quantity"": null,
-					""buy_limit"": 0,
-					""closed_at"": 32520895200,
-					""description"": ""\u30b9\u30bf\u30df\u30ca\u56de\u5fa9"",
-					""group_key"": null,
-					""id"": 67572,
-					""imageUrl"": null,
-					""item_set_name_for_api"": null,
-					""label"": 10,
-					""name"": ""\u30b9\u30bf\u30df\u30ca\u56de\u5fa9"",
-					""opened_at"": 1497870000,
-					""platform_product_id"": null,
-					""price"": 10
-				},
-				{
-					""bought_quantity"": null,
-					""buy_limit"": 0,
-					""closed_at"": 32525902800,
-					""description"": ""VOP\u9ad8\u901f\u5b8c\u4e86\u306e\u5b9f\u884c\u306b\u4f7f\u7528\u3057\u307e\u3059\u3002"",
-					""group_key"": null,
-					""id"": 153192,
-					""imageUrl"": null,
-					""item_set_name_for_api"": null,
-					""label"": 10,
-					""name"": ""VOP\u9ad8\u901f\u5b8c\u4e86"",
-					""opened_at"": 1535342400,
-					""platform_product_id"": null,
-					""price"": 5
-				},
-				{
-					""bought_quantity"": null,
-					""buy_limit"": 0,
-					""closed_at"": 32512611600,
-					""description"": ""AP\u56de\u5fa9"",
-					""group_key"": null,
-					""id"": 167079,
-					""imageUrl"": null,
-					""item_set_name_for_api"": null,
-					""label"": 10,
-					""name"": ""AP\u56de\u5fa9"",
-					""normal_lot_free_setting"": {
-						""duration_days"": null,
-						""is_first_time"": false,
-						""reset_count"": null,
-						""reset_hours"": null
-					},
-					""opened_at"": 1552575600,
-					""platform_product_id"": null,
-					""player_normal_lot_free_state"": {
-						""is_next_free"": false
-					},
-					""price"": 10
-				},
-				{
-					""bought_quantity"": null,
-					""buy_limit"": 0,
-					""closed_at"": 32530057200,
-					""description"": ""AP\u56de\u5fa9(\u5c0f)"",
-					""group_key"": null,
-					""id"": 222423,
-					""imageUrl"": null,
-					""item_set_name_for_api"": null,
-					""label"": 10,
-					""name"": ""AP\u56de\u5fa92"",
-					""opened_at"": 1570086000,
-					""platform_product_id"": null,
-					""price"": 5
-				},
-				{
-					""bought_quantity"": null,
-					""buy_limit"": 0,
-					""closed_at"": 32530057200,
-					""description"": ""AP\u56de\u5fa9\uff08\u5927\uff09"",
-					""group_key"": null,
-					""id"": 222424,
-					""imageUrl"": null,
-					""item_set_name_for_api"": null,
-					""label"": 10,
-					""name"": ""AP\u56de\u5fa93"",
-					""opened_at"": 1570086000,
-					""platform_product_id"": null,
-					""price"": 20
-				}
-			]");
-
-			EDOHBJAPLPF_JsonData arrayData3 = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(@"[
-				{
-					""bought_quantity"": null,
-					""buy_limit"": 0,
-					""closed_at"": 1656396000,
-					""description"": ""{\n  \""bg_id\"":\""gc=41252\"",\n  \""day_count\"":0,\n  \""disable_carousel\"":0,\n  \""free_badge_mess\"":\""1\u56de\u7121\u6599\uff01\"",\n  \""free_texture_id\"":0,\n  \""group_id\"":41252,\n  \""label\"":\""popup_gacha_once_rate_warning\"",\n  \""name\"":\""\u26055\u4ee5\u4e0a\u78ba\u5b9a\u30ac\u30c1\u30e3\"",\n  \""open_time\"":1651330800,\n  \""sale_button_visible\"":0,\n  \""templ\"":\""gacha_season_detail_41252\"",\n  \""ver\"":2,\n  \""view_order\"":52531521659076608\n}"",
-					""group_key"": null,
-					""id"": 429928,
-					""imageUrl"": null,
-					""item_set_name_for_api"": [
-						""normal_lot_4_1252_0_rare4only""
-					],
-					""label"": 4125201,
-					""name"": ""\u30d4\u30c3\u30af\u30a2\u30c3\u30d7\u30ac\u30c1\u30e3159"",
-					""normal_lot_free_setting"": {
-						""duration_days"": null,
-						""is_first_time"": true,
-						""reset_count"": 0,
-						""reset_hours"": null
-					},
-					""opened_at"": 1651330800,
-					""platform_product_id"": null,
-					""player_normal_lot_free_state"": {
-						""is_next_free"": true
-					},
-					""price"": 1
-				},
-				{
-					""bought_quantity"": null,
-					""buy_limit"": 0,
-					""closed_at"": 1656396000,
-					""description"": ""{\r\n  \""bg_id\"":\""gc=41252\"",\r\n  \""day_count\"":0,\r\n  \""disable_carousel\"":0,\r\n  \""free_badge_mess\"":\""1\u56de\u7121\u6599\uff01\"",\r\n  \""free_texture_id\"":0,\r\n  \""group_id\"":41252,\r\n  \""kakutei\"":\""\u26055\u4ee5\u4e0a10\u679a\u78ba\u5b9a\"",\r\n  \""label\"":\""popup_gacha_once_rate_warning\"",\r\n  \""name\"":\""\u26055\u4ee5\u4e0a\u78ba\u5b9a\u30ac\u30c1\u30e3\"",\r\n  \""open_time\"":1651330800,\r\n  \""sale_button_visible\"":0,\r\n  \""templ\"":\""gacha_season_detail_41252\"",\r\n  \""ver\"":2,\r\n  \""view_order\"":52531521659076608\r\n}"",
-					""group_key"": null,
-					""id"": 429929,
-					""imageUrl"": null,
-					""item_set_name_for_api"": [
-						""normal_lot_4_1252_0_rare4only"",
-						""normal_lot_4_1252_1_rare4only"",
-						""normal_lot_4_1252_0_rare4only"",
-						""normal_lot_4_1252_0_rare4only"",
-						""normal_lot_4_1252_0_rare4only"",
-						""normal_lot_4_1252_0_rare4only"",
-						""normal_lot_4_1252_0_rare4only"",
-						""normal_lot_4_1252_0_rare4only"",
-						""normal_lot_4_1252_0_rare4only"",
-						""normal_lot_4_1252_0_rare4only""
-					],
-					""label"": 4125202,
-					""name"": ""\u30d4\u30c3\u30af\u30a2\u30c3\u30d7\u30ac\u30c1\u30e3159 10\u9023"",
-					""opened_at"": 1651330800,
-					""platform_product_id"": null,
-					""price"": 10
-				}
-			]");
-
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res["current_page"] = page;
 			res["next_page"] = 0;
@@ -799,6 +1221,31 @@ namespace ExternLib
 				{
 					if((int)arrayData[i]["label"] == label)
 						res["products"].Add(arrayData[i]);
+				}
+			}
+			else if(productType == 0 && currencyId == 3001)
+			{
+				for (int i = 0; i < arrayData4.HNBFOAJIIAL_Count; i++)
+				{
+					arrayData4[i]["closed_at"] = Utility.GetCurrentUnixTime() + 24*3600;
+					res["products"].Add(arrayData4[i]);
+				}
+			}
+			else if(productType == 0 && currencyId == 2)
+			{
+				for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem.CDENCMNHNGA.Count; i++)
+				{
+                    DKJMDIFAKKD_VcItem.EBGPAPPHBAH item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem.CDENCMNHNGA[i];
+                    if (item.DLCGAMHADEN == label)
+					{
+						EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+						data[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = item.PPFNGGCBJKC;
+						data[AFEHLCGHAEE_Strings.GLHKICCPGKJ_platform_product_id] = item.GLHKICCPGKJ.Length > 0 ? item.GLHKICCPGKJ[0] : "UMO."+label+"."+item.PPFNGGCBJKC;
+						data[AFEHLCGHAEE_Strings.OPFGFINHFCE_name] = item.OPFGFINHFCE;
+						data[AFEHLCGHAEE_Strings.KLMPFGOCBHC_description] = "Desc "+item.OPFGFINHFCE;
+						data[AFEHLCGHAEE_Strings.KAPMOPMDHJE_label] = label;
+						res["products"].Add(data);
+					}
 				}
 			}
 			else if(productType == 2 && currencyId == 1001)
@@ -861,38 +1308,84 @@ namespace ExternLib
 			EDOHBJAPLPF_JsonData inv = res[AFEHLCGHAEE_Strings.PJJFEAHIPGL_inventories];
 			inv.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
 
-			//{"quantity":1, "productId":429930, "currencyId":1001}
+			//{"quantity":1, "productId":429930, "currencyId":1001} gacha
+			//{"quantity":11, "productId":428666, "currencyId":3001} // buy shop
 			EDOHBJAPLPF_JsonData req = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
 
-            List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenesList = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList.FindAll((MLIBEPGADJH_Scene.KKLDOOJBJMN _) =>
+			bool found = false;
 			{
-				return _.PPEGAKEIEGM_En == 2/* && _.EKLIPGELKCL_Rarity == 5*/;
-			});
-            EDOHBJAPLPF_JsonData gachaData = arrayData2;
-			for(int i = 0; i < gachaData.HNBFOAJIIAL_Count; i++)
-			{
-				if((int)gachaData[i]["id"] == (int)req["productId"])
+				EDOHBJAPLPF_JsonData gachaData = arrayData2;
+				for(int i = 0; i < gachaData.HNBFOAJIIAL_Count; i++)
 				{
-					EDOHBJAPLPF_JsonData summons = gachaData[i]["item_set_name_for_api"];
-					for(int j = 0; j < summons.HNBFOAJIIAL_Count; j++)
+					if((int)gachaData[i]["id"] == (int)req["productId"])
 					{
-						int id = scenesList[UnityEngine.Random.Range(0, scenesList.Count - 1)].BCCHOBPJJKE_Id;
-						EDOHBJAPLPF_JsonData invData = new EDOHBJAPLPF_JsonData();
-						inv.Add(invData);
-						invData[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = id; // long
-						invData[AFEHLCGHAEE_Strings.LJGOOOMOMMA_message] = ""; // string
-						invData[AFEHLCGHAEE_Strings.HAAJGNCFNJM_item_name] = AFEHLCGHAEE_Strings.COIODGJDJEJ_scene; // string
-						invData[AFEHLCGHAEE_Strings.OCNINMIMHGC_item_value] = id; // int
-						invData[AFEHLCGHAEE_Strings.MJBKGOJBPAD_item_type] = 3; // int
-						invData[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = 1; // int
-						invData[AFEHLCGHAEE_Strings.INDDJNMPONH_type] = 0; // int
-						invData[AFEHLCGHAEE_Strings.BIOGKIEECGN_created_at] = Utility.GetCurrentUnixTime(); // long
-						invData[AFEHLCGHAEE_Strings.EGBOHDFBAPB_closed_at] = Utility.GetTargetUnixTime(2030, 1, 1, 0, 0, 0); // long
-						invData[AFEHLCGHAEE_Strings.LNDEFMALKAN_received_at] = Utility.GetCurrentUnixTime(); // long
-						invData["order"] = j; // long
+						List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenesList = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList.FindAll((MLIBEPGADJH_Scene.KKLDOOJBJMN _) =>
+						{
+							return _.PPEGAKEIEGM_En == 2/* && _.EKLIPGELKCL_Rarity == 5*/;
+						});
+						EDOHBJAPLPF_JsonData summons = gachaData[i]["item_set_name_for_api"];
+						for(int j = 0; j < summons.HNBFOAJIIAL_Count; j++)
+						{
+							int id = scenesList[UnityEngine.Random.Range(0, scenesList.Count - 1)].BCCHOBPJJKE_Id;
+							EDOHBJAPLPF_JsonData invData = new EDOHBJAPLPF_JsonData();
+							inv.Add(invData);
+							invData[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = id; // long
+							invData[AFEHLCGHAEE_Strings.LJGOOOMOMMA_message] = ""; // string
+							invData[AFEHLCGHAEE_Strings.HAAJGNCFNJM_item_name] = AFEHLCGHAEE_Strings.COIODGJDJEJ_scene; // string
+							invData[AFEHLCGHAEE_Strings.OCNINMIMHGC_item_value] = id; // int
+							invData[AFEHLCGHAEE_Strings.MJBKGOJBPAD_item_type] = 3; // int
+							invData[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = 1; // int
+							invData[AFEHLCGHAEE_Strings.INDDJNMPONH_type] = 0; // int
+							invData[AFEHLCGHAEE_Strings.BIOGKIEECGN_created_at] = Utility.GetCurrentUnixTime(); // long
+							invData[AFEHLCGHAEE_Strings.EGBOHDFBAPB_closed_at] = Utility.GetTargetUnixTime(2030, 1, 1, 0, 0, 0); // long
+							invData[AFEHLCGHAEE_Strings.LNDEFMALKAN_received_at] = Utility.GetCurrentUnixTime(); // long
+							invData["order"] = j; // long
+						}
+						found = true;
+						break;
 					}
-					break;
 				}
+			}
+			if(!found)
+			{
+				EDOHBJAPLPF_JsonData shopData = arrayData4;
+				for(int i = 0; i < shopData.HNBFOAJIIAL_Count; i++)
+				{
+					if((int)shopData[i]["id"] == (int)req["productId"])
+					{
+						BKPAPCMJKHE_Shop.BOMCAJJCPME dbItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IFLGCDGOLOP_Shop.MHKCPJDNJKI.Find((BKPAPCMJKHE_Shop.BOMCAJJCPME _) =>
+						{
+							return _.ICKAMKNDAEB == (int)shopData[i]["label"];
+						});
+						if(dbItem != null)
+						{
+							BKPAPCMJKHE_Shop.GPNPMJJKONJ dbItem2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IFLGCDGOLOP_Shop.HMKKLPPEOHL[dbItem.GJGNOFAPFJD - 1];
+							EDOHBJAPLPF_JsonData invData = new EDOHBJAPLPF_JsonData();
+							inv.Add(invData);
+							//UnityEngine.Debug.LogError(dbItem2.EJHMPCJNHBP_ItemFullId);
+							invData[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = dbItem2.EJHMPCJNHBP_ItemFullId; // long
+							invData[AFEHLCGHAEE_Strings.LJGOOOMOMMA_message] = ""; // string
+							MFDJIFIIPJD data = new MFDJIFIIPJD();
+							data.KHEKNNFCAOI(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(dbItem2.EJHMPCJNHBP_ItemFullId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(dbItem2.EJHMPCJNHBP_ItemFullId), 0);
+							invData[AFEHLCGHAEE_Strings.HAAJGNCFNJM_item_name] = data.HAAJGNCFNJM_ItemName; // string
+							invData[AFEHLCGHAEE_Strings.OCNINMIMHGC_item_value] = data.NNFNGLJOKKF_ItemId; // int
+							invData[AFEHLCGHAEE_Strings.MJBKGOJBPAD_item_type] = 0; // int
+							invData[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = dbItem2.LBCNKLPIMHL_Count * (int)req["quantity"]; // int
+							invData[AFEHLCGHAEE_Strings.INDDJNMPONH_type] = 0; // int
+							invData[AFEHLCGHAEE_Strings.BIOGKIEECGN_created_at] = Utility.GetCurrentUnixTime(); // long
+							invData[AFEHLCGHAEE_Strings.EGBOHDFBAPB_closed_at] = Utility.GetTargetUnixTime(2030, 1, 1, 0, 0, 0); // long
+							invData[AFEHLCGHAEE_Strings.LNDEFMALKAN_received_at] = Utility.GetCurrentUnixTime(); // long
+							invData["order"] = 0; // long
+
+							found = true;
+							break;
+						}
+					}
+				}
+			}
+			if(!found)
+			{
+				TodoLogger.LogError(0, "Item to buy not found : " + json);
 			}
 
 			SendMessage(callbackId, res);

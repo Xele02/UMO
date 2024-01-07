@@ -26,14 +26,17 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1A8F0BC Offset: 0x1A8F0BC VA: 0x1A8F0BC
-		//public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_stage_icon != null && m_stage_icon.IsPlayingChildren();
+		}
 
 		//// RVA: 0x1A82784 Offset: 0x1A82784 VA: 0x1A82784
 		public void SetStatus()
 		{
 			gameObject.SetActive(true);
 			SetButtonEnable(false);
-			if (!viewStageData.NDLKPJDHHCN)
+			if (!viewStageData.NDLKPJDHHCN_NotShown)
 				SetButtonEnable(true);
 			SetWaitAnim(viewStageData);
 		}
@@ -96,7 +99,7 @@ namespace XeApp.Game.Menu
 		{
 			if (viewData == null || m_stage_icon == null)
 				return;
-			if (!viewData.NDLKPJDHHCN || viewData.ENEKMHMKNFK)
+			if (!viewData.NDLKPJDHHCN_NotShown || viewData.ENEKMHMKNFK)
 				m_stage_icon.StartChildrenAnimGoStop("st_wait");
 			else
 				m_stage_icon.StartChildrenAnimGoStop("st_non");
@@ -127,12 +130,18 @@ namespace XeApp.Game.Menu
 		//public void LockIcon() { }
 
 		//// RVA: 0x1A94D78 Offset: 0x1A94D78 VA: 0x1A94D78
-		//public void LockAppearIn() { }
+		public void LockAppearIn()
+		{
+			m_stage_icon.StartChildrenAnimGoStop("go_bot_act", "st_bot_act");
+		}
 
 		//// RVA: 0x1A97264 Offset: 0x1A97264 VA: 0x1A97264
 		//public void AppearIn() { }
 
 		//// RVA: 0x1A94CF8 Offset: 0x1A94CF8 VA: 0x1A94CF8
-		//public void ShrinkingIn() { }
+		public void ShrinkingIn()
+		{
+			m_stage_icon.StartChildrenAnimGoStop("st_bot_act_02", "go_bot_act_02");
+		}
 	}
 }

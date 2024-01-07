@@ -98,11 +98,31 @@ public class PopupItemListItemIcon : FlexibleListItemLayout
 		{
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 		};
+		AODFBGCCBPE viewShopData = null;
 		if (MenuScene.Instance != null)
 		{
 			if(MenuScene.Instance.GetCurrentScene().name == TransitionList.Type.OPTION_MENU)
 			{
-				TodoLogger.LogError(0, "From Options");
+				if(CheckGrowItemData(itemId))
+				{
+					btns = new ButtonInfo[2]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative },
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.PlateGrowth, Type = PopupButton.ButtonType.Positive }
+					};
+				}
+				else
+				{
+					viewShopData = CheckItemShopData(itemId);
+					if(viewShopData != null)
+					{
+						btns = new ButtonInfo[2]
+						{
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative },
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.ExchangeOffices, Type = PopupButton.ButtonType.Positive }
+						};
+					}
+				}
 			}
 		}
 		MenuScene.Instance.ShowItemDetail(itemId, count, btns, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
@@ -110,11 +130,13 @@ public class PopupItemListItemIcon : FlexibleListItemLayout
 			//0xDFB4A0
 			if(label == PopupButton.ButtonLabel.ExchangeOffices)
 			{
-				TodoLogger.LogError(0, "ExchangeOffices");
+				PopupWindowManager.Close(control, null);
+				MenuScene.Instance.Mount(TransitionUniqueId.OPTIONMENU_SHOP_SHOPPRODUCT, new ShopProductScene.ShopProductArgs() { view = viewShopData }, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 			}
 			else if(label == PopupButton.ButtonLabel.PlateGrowth)
 			{
-				TodoLogger.LogError(0, "PlateGrowth");
+				PopupWindowManager.Close(control, null);
+				MenuScene.Instance.Mount(TransitionUniqueId.SETTINGMENU_SCENEABILITYRELEASELIST, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 			}
 		});
 	}
@@ -143,8 +165,27 @@ public class PopupItemListItemIcon : FlexibleListItemLayout
 	}
 
 	//// RVA: 0xDFAE94 Offset: 0xDFAE94 VA: 0xDFAE94
-	//private static bool CheckGrowItemData(int itemId) { }
+	private static bool CheckGrowItemData(int itemId)
+	{
+		return EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.HLCHKCJLEGK_GrowItem;
+	}
 
 	//// RVA: 0xDFAF28 Offset: 0xDFAF28 VA: 0xDFAF28
-	//private static AODFBGCCBPE CheckItemShopData(int costItemId) { }
+	private static AODFBGCCBPE CheckItemShopData(int costItemId)
+	{
+		AODFBGCCBPE d = AODFBGCCBPE.FKDIMODKKJD(false).Find((AODFBGCCBPE x) =>
+		{
+			//0xDFB234
+			return x.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.FNLODOLMLML_3;
+		});
+		if(d != null)
+		{
+			for(int i = 0; i < d.MHKCPJDNJKI.Count; i++)
+			{
+				if(d.MHKCPJDNJKI[i].JPJMHLNOIAJ_ItemCostFullId == costItemId)
+					return d;
+			}
+		}
+		return null;
+	}
 }

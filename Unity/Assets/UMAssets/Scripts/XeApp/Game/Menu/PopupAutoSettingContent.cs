@@ -282,7 +282,7 @@ namespace XeApp.Game.Menu
 			if(unitData != null)
 			{
 				unitData.HCDGELDHFHB();
-				ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.AFLMHBMBNBO/*48*/, 2, false);
+				ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.AFLMHBMBNBO_48/*48*/, 2, false);
 			}
 		}
 

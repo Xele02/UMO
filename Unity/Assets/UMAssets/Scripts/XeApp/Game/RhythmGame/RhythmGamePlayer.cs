@@ -1202,7 +1202,7 @@ namespace XeApp.Game.RhythmGame
 				tutorialOneEndEvent.onFireEvent = () =>
 				{
 					//0xBF1658
-					TodoLogger.LogError(0, "TutorialOnEndEvent");
+					return;
 				};
 				tutorialOneEndEvent.millisec = resource.musicData.tutorialOneEndGameStartMillisec;
 			}
@@ -1223,7 +1223,8 @@ namespace XeApp.Game.RhythmGame
 			{
 				tutorialTwoModeDescriptionEvent.onFireEvent = () =>
 				{
-					//Method$XeApp.Game.RhythmGame.RhythmGamePlayer.<>c.<InitializeMusicScoreEvent>b__227_1()
+					//0xBF165C
+					return;
 				};
 				tutorialTwoModeDescriptionEvent.millisec = resource.musicData.tutorialTwoModeDescriptionlStartMillisec;
 			}
@@ -2156,11 +2157,30 @@ namespace XeApp.Game.RhythmGame
 			if (Database.Instance.gameSetup.musicInfo.isTutorialOne)
 			{
 				//__this_03 = c__DisplayClass276_1
-				TodoLogger.LogError(0, "TODO tuto");
+				isShowingDescription = true;
+				BasicTutorialManager mrg = BasicTutorialManager.Instance;
+				mrg.ShowMessageWindow(BasicTutorialMessageId.Id_StartGame, () =>
+				{
+					//0xBF17A8
+					uiController.ShowNotesDescriptionTutorialWindow(() =>
+					{
+						//0xBF198C
+						mrg.ShowMessageWindow(BasicTutorialMessageId.Id_ManualEnd, () =>
+						{
+							//0xBF1774
+							isShowingDescription = false;
+						}, null);
+					});
+				}, null);
 			}
 			else if(Database.Instance.gameSetup.musicInfo.isTutorialTwo)
 			{
-				TodoLogger.LogError(0, "TODO tuto");
+				isShowingDescription = true;
+				uiController.ShowFWaveDescriptionTutorialWindow(() =>
+				{
+					//0xBF1780
+					isShowingDescription = false;
+				});
 			}
 			else
 			{
@@ -2208,13 +2228,28 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C16F0 Offset: 0x9C16F0 VA: 0x9C16F0
 		private void ForceChangePercentage100ForTutorial()
 		{
-			TodoLogger.LogError(0, "ForceChangePercentage100ForTutorial");
+			if(Database.Instance.gameSetup.musicInfo.isTutorialTwo)
+			{
+				status.energy.ForceChangePercentage100();
+				uiController.UpdateEnergy(status.energy.GetGaugeValue());
+			}
 		}
 
 		// // RVA: 0x9C1854 Offset: 0x9C1854 VA: 0x9C1854
 		private void ForceDefeatEnemyForTutorial()
 		{
-			TodoLogger.LogError(0, "ForceDefeatEnemyForTutorial");
+			if(Database.Instance.gameSetup.musicInfo.isTutorialTwo)
+			{
+				bool is3DMode = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CIGAPPFDFKL_Is3D;
+				status.enemy.ForceDefeat();
+				uiController.UpdateEnemyLife(status.enemy.currentValue, status.enemy.subgoalValue, status.enemy.goalValue, () =>
+				{
+					//0xBF1A88
+					if(!is3DMode)
+						return;
+					valkyrieObject.StartTransformAnimation();
+				});
+			}
 		}
 
 		// // RVA: 0x9C1B60 Offset: 0x9C1B60 VA: 0x9C1B60
@@ -2223,9 +2258,9 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C1C84 Offset: 0x9C1C84 VA: 0x9C1C84
 		private void ShowTutorialActiveSkillGuide()
 		{
-			if(Database.Instance.gameSetup.musicInfo.isTutorialTwo)
+			if(Database.Instance.gameSetup.musicInfo.isTutorialTwo && !skillTouched)
 			{
-				TodoLogger.LogError(0, "ShowTutorialActiveSkillGuide");
+				BasicTutorialManager.Instance.ShowCursor(CursorPosition.ActiveSkill);
 			}
 		}
 
@@ -2335,7 +2370,14 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C2B68 Offset: 0x9C2B68 VA: 0x9C2B68
 		private void SkipTutorialWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
 		{
-			TodoLogger.LogError(0, "SkipTutorialWindowCallBack");
+			if(type == PopupButton.ButtonType.Negative)
+			{
+				uiController.ShowPauseWindow(PauseWindowCallBack);
+			}
+			else
+			{
+				GotoTutorialSkip();
+			}
 		}
 
 		// // RVA: 0x9C2D30 Offset: 0x9C2D30 VA: 0x9C2D30
@@ -2344,13 +2386,19 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C2DEC Offset: 0x9C2DEC VA: 0x9C2DEC
 		private void SkipStoryWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
 		{
-			TodoLogger.LogError(0, "SkipStoryWindowCallBack");
+			if(type == PopupButton.ButtonType.Negative)
+				ShowConfirmationWindow();
+			else
+				ClearEndRhythmGame();
 		}
 
 		// // RVA: 0x9C2E00 Offset: 0x9C2E00 VA: 0x9C2E00
 		private void SkipStoryPauseWindowCallBack(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
 		{
-			TodoLogger.LogError(0, "SkipStoryPauseWindowCallBack");
+			if(type == PopupButton.ButtonType.Negative)
+				uiController.ShowPauseWindow(PauseWindowCallBack);
+			else
+				ClearEndRhythmGame();
 		}
 
 		// // RVA: 0x9C2ECC Offset: 0x9C2ECC VA: 0x9C2ECC
@@ -2587,7 +2635,15 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C48F0 Offset: 0x9C48F0 VA: 0x9C48F0
 		private void TutorialClearEndRhythmGame()
 		{
-			TodoLogger.LogError(0, "TutorialClearEndRhythmGame");
+			if(Database.Instance.gameSetup.musicInfo.isTutorialOne)
+			{
+				Database.Instance.gameResult.SetupForTutorialOne(GameResultData.TutorialOneResult.GACHA);
+			}
+			else if(Database.Instance.gameSetup.musicInfo.isTutorialTwo)
+			{
+				Database.Instance.gameResult.SetupForTutorialTow();
+			}
+			ClearEndRhythmGame();
 		}
 
 		// // RVA: 0x9C4A70 Offset: 0x9C4A70 VA: 0x9C4A70

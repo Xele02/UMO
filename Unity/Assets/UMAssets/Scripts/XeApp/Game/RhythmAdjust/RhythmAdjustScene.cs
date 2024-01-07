@@ -429,7 +429,7 @@ namespace XeApp.Game.RhythmAdjust
 			layoutData.ConfirmmButtonHandler += PushConfirmWindowButton;
 			layoutData.OpenConfirmWindow(null);
 			GameManager.Instance.AddPushBackButtonHandler(OnBackButton);
-			while (m_decideConfirmButton)
+			while (!m_decideConfirmButton)
 				yield return null;
 			layoutData.ConfirmmButtonHandler -= PushConfirmWindowButton;
 			GameManager.Instance.RemovePushBackButtonHandler(OnBackButton);

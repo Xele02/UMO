@@ -73,7 +73,7 @@ public static class TodoLogger
 	{
 		if(priority < RuntimeSettings.CurrentSettings.MinLogError || (RuntimeSettings.CurrentSettings.EnableErrorLog && priority < 999))
 		{
-			UnityEngine.Debug.LogError(str);
+			UnityEngine.Debug.LogError("TODO "+str);
 		}
 	}
 
@@ -81,7 +81,7 @@ public static class TodoLogger
 	{
 		if (priority < RuntimeSettings.CurrentSettings.MinLogWarning || (RuntimeSettings.CurrentSettings.EnableErrorLog && priority < 999))
 		{
-			UnityEngine.Debug.LogWarning(str);
+			UnityEngine.Debug.LogWarning("TODO "+str);
 		}
 	}
 
@@ -89,7 +89,7 @@ public static class TodoLogger
 	{
 		if (priority < RuntimeSettings.CurrentSettings.MinLogInfo || (RuntimeSettings.CurrentSettings.EnableErrorLog && priority < 999))
 		{
-			UnityEngine.Debug.Log(str);
+			UnityEngine.Debug.Log("TODO "+str);
 		}
 	}
 

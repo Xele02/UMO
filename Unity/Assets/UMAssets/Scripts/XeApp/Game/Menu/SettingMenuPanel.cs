@@ -230,7 +230,13 @@ namespace XeApp.Game.Menu
 		// RVA: 0xC3C92C Offset: 0xC3C92C VA: 0xC3C92C Slot: 25
 		protected override void OnTutorial()
 		{
-			TodoLogger.LogError(1, "OnTutorial 23");
+			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.JKGGACIFBOM_23);
+			BasicTutorialManager.Instance.UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO.DJPFJGKGOOF_5);
+			BasicTutorialManager.Instance.ShowMessageWindow(BasicTutorialMessageId.Id_Setting, () =>
+			{
+				//0xC3CBEC
+				BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.UnitSetting, null, null);
+			}, null);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7264AC Offset: 0x7264AC VA: 0x7264AC
