@@ -200,8 +200,8 @@ namespace XeApp.Game.Menu
 			}
 			if(!m_isNextReward)
 			{
-				SwitchIcon(m_stampPlayDay + 1, 1);
-				SwitchNext(m_stampPlayDay + 1, 1);
+				SwitchIcon(m_stampPlayDay + 1, eIconLayoutType.Big);
+				SwitchNext(m_stampPlayDay + 1, eNextType.Next);
 			}
 		}
 
@@ -244,14 +244,14 @@ namespace XeApp.Game.Menu
 						{
 							m_prizeObject[arrayIdx].iconLayout.enabled = true;
 							SwitchDayEnable(arrayIdx, true);
-							if(arraIdx < currentReciveCount)
+							if(arrayIdx < currentReciveCount)
 							{
-								SwitchStampAnim(arrayIdx, 2);
+								SwitchStampAnim(arrayIdx, eStampStatus.Press);
 							}
 							if(d.HBHMAKNGKFK_Items.Count < 2)
 							{
 								SetItemIcon(arrayIdx, d.HBHMAKNGKFK_Items[0].JJBGOIMEIPF_ItemFullId);
-								SwitchUnitPrice(arrayIdx, d.HBHMAKNGKFK_Items[0].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit);
+								SwitchUnitPrice(arrayIdx, d.HBHMAKNGKFK_Items[0].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit ? eUnitPrice.Uc : eUnitPrice.Num);
 								SetNumItem(arrayIdx, d.HBHMAKNGKFK_Items[0].MBJIFDBEDAC_Cnt);
 							}
 							else
@@ -260,13 +260,13 @@ namespace XeApp.Game.Menu
 								{
 									int val;
 									int.TryParse(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL("comeback_login_bonus_pack_id", "1,1,1,1,1,1,1,1,1,1").Split(new char[] { ',' })[i], out val);
-									SetItemPackIcon(arrayIdx, val);
+									SetItemPackIcon(arrayIdx, (ItemPackImageTextureCache.Type)val);
 								}
 								else
 								{
-									SetItemPackIcon(arrayIdx, 1);
+									SetItemPackIcon(arrayIdx, ItemPackImageTextureCache.Type.Pack1);
 								}
-								SwitchUnitPrice(arrayIdx, 0);
+								SwitchUnitPrice(arrayIdx, eUnitPrice.Num);
 								SetNumItem(arrayIdx, 1);
 							}
 							SwitchDay(arrayIdx, arrayIdx + 1);
@@ -282,28 +282,96 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1D6205C Offset: 0x1D6205C VA: 0x1D6205C
-		// private bool IsIconLayoutArrayRange(int arrayIndex) { }
+		private bool IsIconLayoutArrayRange(int arrayIndex)
+		{
+			if(arrayIndex > -1)
+			{
+				if(arrayIndex < m_prizeObject.Length)
+				{
+					return m_prizeObject[arrayIndex].iconLayout != null;
+				}
+			}
+			return false;
+		}
 
 		// // RVA: 0x1D620F4 Offset: 0x1D620F4 VA: 0x1D620F4
 		// private void SetButtonVisibleEnable(bool enable) { }
 
 		// // RVA: 0x1D61EF8 Offset: 0x1D61EF8 VA: 0x1D61EF8
-		// public void SwitchDay(int arrayIndex, int day) { }
+		public void SwitchDay(int arrayIndex, int day)
+		{
+			if(arrayIndex > -1 && day > -1)
+			{
+				if(arrayIndex < m_day.Length)
+				{
+					if (m_day[arrayIndex] == null)
+						return;
+					m_day[arrayIndex].SetNumber(day, 0);
+				}
+			}
+		}
 
 		// // RVA: 0x1D61080 Offset: 0x1D61080 VA: 0x1D61080
-		// public void SwitchDayEnable(int arrayIndex, bool enable) { }
+		public void SwitchDayEnable(int arrayIndex, bool enable)
+		{
+			if(arrayIndex > -1)
+			{
+				if(arrayIndex < m_day.Length)
+				{
+					if (m_dayLayout[arrayIndex] == null)
+						return;
+					m_dayLayout[arrayIndex].StartAllAnimGoStop(enable ? "00" : "01");
+				}
+			}
+		}
 
 		// // RVA: 0x1D60CD8 Offset: 0x1D60CD8 VA: 0x1D60CD8
-		// public void SwitchIcon(int arrayIndex, LayoutLoginBonusStanding.eIconLayoutType type) { }
+		public void SwitchIcon(int arrayIndex, eIconLayoutType type)
+		{
+			if (!IsIconLayoutArrayRange(arrayIndex))
+				return;
+			if(type == eIconLayoutType.Big)
+			{
+				m_prizeObject[arrayIndex].iconLayout.StartAllAnimGoStop("icon_01");
+			}
+			else if(type == eIconLayoutType.Normal)
+			{
+				m_prizeObject[arrayIndex].iconLayout.StartAllAnimGoStop("icon_00");
+			}
+		}
 
 		// // RVA: 0x1D621B0 Offset: 0x1D621B0 VA: 0x1D621B0
 		// public void SwitchIconEnable(int arrayIndex, bool enable) { }
 
 		// // RVA: 0x1D60E38 Offset: 0x1D60E38 VA: 0x1D60E38
-		// public void SwitchNext(int arrayIndex, LayoutLoginBonusStanding.eNextType type) { }
+		public void SwitchNext(int arrayIndex, eNextType type)
+		{
+			if (!IsIconLayoutArrayRange(arrayIndex))
+				return;
+			if(type == eNextType.Next)
+			{
+				m_prizeObject[arrayIndex].iconLayout.StartAllAnimGoStop("next_00");
+			}
+			else
+			{
+				m_prizeObject[arrayIndex].iconLayout.StartAllAnimGoStop("next_01");
+			}
+		}
 
 		// // RVA: 0x1D617D4 Offset: 0x1D617D4 VA: 0x1D617D4
-		// public void SwitchUnitPrice(int arrayIndex, LayoutLoginBonusStanding.eUnitPrice type) { }
+		public void SwitchUnitPrice(int arrayIndex, eUnitPrice type)
+		{
+			if (!IsIconLayoutArrayRange(arrayIndex))
+				return;
+			if(type == eUnitPrice.Uc)
+			{
+				m_prizeObject[arrayIndex].iconLayout.StartAllAnimGoStop("itemcount_00");
+			}
+			else if(type == eUnitPrice.Num)
+			{
+				m_prizeObject[arrayIndex].iconLayout.StartAllAnimGoStop("itemcount_01");
+			}
+		}
 
 		// // RVA: 0x1D62248 Offset: 0x1D62248 VA: 0x1D62248
 		// public void SwitchItemFrameAnim(int arrayIndex, LayoutLoginBonusStanding.eIconLayoutType layoutType, LayoutLoginBonusStanding.eIconFrameAnim type) { }
@@ -319,7 +387,28 @@ namespace XeApp.Game.Menu
 		// private void ResetAnimationIconFrame() { }
 
 		// // RVA: 0x1D611B8 Offset: 0x1D611B8 VA: 0x1D611B8
-		// public void SwitchStampAnim(int arrayIndex, LayoutLoginBonusStanding.eStampStatus status) { }
+		public void SwitchStampAnim(int arrayIndex, eStampStatus status)
+		{
+			if (!IsIconLayoutArrayRange(arrayIndex))
+				return;
+			switch(status)
+			{
+				case eStampStatus.None:
+					m_prizeObject[arrayIndex].stampAnim.StartAllAnimGoStop("st_wait_stamp");
+					m_prizeObject[arrayIndex].iconLayout.StartAllAnimGoStop("st_wait_stamp");
+					break;
+				case eStampStatus.Play:
+					m_prizeObject[arrayIndex].stampAnim.StartAllAnimGoStop("go_in_stamp", "st_in_stamp");
+					m_animationList.Add(WaitStampAnim(arrayIndex));
+					break;
+				case eStampStatus.Press:
+					m_prizeObject[arrayIndex].iconLayout.StartAllAnimGoStop("st_press_stamp");
+					break;
+				case eStampStatus.Loop:
+					m_prizeObject[arrayIndex].stampAnim.StartAllAnimLoop("logo_act_01", "loen_act_01");
+					break;
+			}
+		}
 
 		// // RVA: 0x1D604B8 Offset: 0x1D604B8 VA: 0x1D604B8
 		public void SwitchType(eType type)
@@ -351,13 +440,57 @@ namespace XeApp.Game.Menu
 		// public void SwitchTitleAnim(LayoutLoginBonusStanding.eType type) { }
 
 		// // RVA: 0x1D61500 Offset: 0x1D61500 VA: 0x1D61500
-		// public void SetItemPackIcon(int arrayIndex, ItemPackImageTextureCache.Type type) { }
+		public void SetItemPackIcon(int arrayIndex, ItemPackImageTextureCache.Type type)
+		{
+			m_prizeObject[arrayIndex].isLoadingIconS = true;
+			m_itemPackTextureCache.Load(type, (IiconTexture texture) =>
+			{
+				//0x1D6498C
+				if (texture != null && texture is ItemPackImageTextureCache.ItemPackImageTexture)
+					((ItemPackImageTextureCache.ItemPackImageTexture)texture).Set(m_prizeObject[arrayIndex].iconS, type);
+				m_prizeObject[arrayIndex].isLoadingIconS = false;
+			});
+			m_prizeObject[arrayIndex].isLoadingIconL = true;
+			m_itemPackTextureCache.Load(type, (IiconTexture texture) =>
+			{
+				//0x1D64A98
+				if (texture != null && texture is ItemPackImageTextureCache.ItemPackImageTexture)
+					((ItemPackImageTextureCache.ItemPackImageTexture)texture).Set(m_prizeObject[arrayIndex].iconL, type);
+				m_prizeObject[arrayIndex].isLoadingIconL = false;
+			});
+		}
 
 		// // RVA: 0x1D61B2C Offset: 0x1D61B2C VA: 0x1D61B2C
-		// public void SetItemIcon(int arrayIndex, int itemId) { }
+		public void SetItemIcon(int arrayIndex, int itemId)
+		{
+			m_prizeObject[arrayIndex].iconS.uvRect = new Rect(0, 0, 1, 1);
+			m_prizeObject[arrayIndex].isLoadingIconS = true;
+			GameManager.Instance.ItemTextureCache.Load(itemId, (IiconTexture texture) =>
+			{
+				//0x1D64BA4
+				if (texture != null)
+					texture.Set(m_prizeObject[arrayIndex].iconS);
+				m_prizeObject[arrayIndex].isLoadingIconS = false;
+			});
+			m_prizeObject[arrayIndex].iconL.uvRect = new Rect(0, 0, 1, 1);
+			m_prizeObject[arrayIndex].isLoadingIconL = true;
+			GameManager.Instance.ItemTextureCache.Load(itemId, (IiconTexture texture) =>
+			{
+				//0x1D64CE4
+				if (texture != null)
+					texture.Set(m_prizeObject[arrayIndex].iconL);
+				m_prizeObject[arrayIndex].isLoadingIconL = false;
+			});
+		}
 
 		// // RVA: 0x1D61934 Offset: 0x1D61934 VA: 0x1D61934
-		// public void SetNumItem(int arrayIndex, int num) { }
+		public void SetNumItem(int arrayIndex, int num)
+		{
+			m_prizeObject[arrayIndex].itemNumL.SetNumber(num, 0);
+			m_prizeObject[arrayIndex].itemNumS.SetNumber(num, 0);
+			m_prizeObject[arrayIndex].ucL.SetNumber(num, 0);
+			m_prizeObject[arrayIndex].ucS.SetNumber(num, 0);
+		}
 
 		// RVA: 0x1D6275C Offset: 0x1D6275C VA: 0x1D6275C
 		public void Update()
@@ -400,7 +533,65 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EC17C Offset: 0x6EC17C VA: 0x6EC17C
 		// // RVA: 0x1D62568 Offset: 0x1D62568 VA: 0x1D62568
-		// private IEnumerator WaitStampAnim(int arrayIndex) { }
+		private IEnumerator WaitStampAnim(int arrayIndex)
+		{
+			AbsoluteLayout layout; // 0x18
+			CAEDGOPBDNK data; // 0x1C
+
+			//0x1D65CE4
+			ResetObjectSibiling();
+			if (m_prizeObject[arrayIndex].stampAnim == null)
+				yield break;
+			layout = m_prizeObject[arrayIndex].stampAnim;
+			int cnt = layout.GetView(0).FrameAnimation.FrameCount;
+			float lbl = layout.GetView(0).FrameAnimation.SearchLabelFrame("stamp_se");
+			while (cnt < lbl)
+				yield return null;
+			if (!m_isPlayStampSe && !m_isSkip)
+			{
+				m_isPlayStampSe = true;
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_LOGIN_000);
+			}
+			//LAB_01d65fe8
+			while (layout.IsPlayingChildren())
+				yield return null;
+			data = m_rewardData.JPILDOGJLDG_LoginBonusPrizes[m_stampPlayDay];
+			if(data.HBHMAKNGKFK_Items.Count >= 2)
+			{
+				if(OnWaitDivaVoice != null)
+				{
+					//LAB_01d66128
+					while (OnWaitDivaVoice())
+						yield return null;
+				}
+				OpenItemPackPopup(data, () =>
+				{
+					//0x1D64714
+					m_isCheckItemPack = true;
+				});
+				yield return new WaitWhile(() =>
+				{
+					//0x1D64720
+					return !m_isCheckItemPack;
+				});
+			}
+			//LAB_01d660c4
+			if(!m_isNextReward)
+			{
+				m_skipEnd = true;
+				m_isSkip = true;
+				SetButtonVisibleEnable(true);
+				SwitchItemFrameAnim(m_stampPlayDay, 0, 5);
+				SwitchItemFrameAnim(m_stampPlayDay + 1, 1, 2);
+				SetObjectSibiling(1, m_prizeObject[m_stampPlayDay + 1].iconLayout);
+				SwitchStampAnim(arrayIndex, eStampStatus.Loop);
+			}
+			else
+			{
+				m_animationList.Add(ChangeRewardAnim());
+				SwitchStampAnim(arrayIndex, eStampStatus.Loop);
+			}
+		}
 
 		// // RVA: 0x1D63088 Offset: 0x1D63088 VA: 0x1D63088
 		// private void OpenItemPackPopup(CAEDGOPBDNK data, Action callback) { }
@@ -443,7 +634,7 @@ namespace XeApp.Game.Menu
 			if(!m_isNextReward)
 			{
 				m_root.StartChildrenAnimGoStop("st_in", "st_in");
-				SwitchStampAnim(m_stampPlayDay, 3);
+				SwitchStampAnim(m_stampPlayDay, eStampStatus.Loop);
 				m_animItemIconL = null;
 				m_animItemIconS = null;
 				SwitchItemFrameAnim(m_stampPlayDay, 0, 5);
@@ -455,11 +646,11 @@ namespace XeApp.Game.Menu
 				m_iconsAnim.StartAllAnimGoStop("st_out_change", "st_out_change");
 				ResetRewardData();
 				SetStatusInner(m_rewardData, 0, true);
-				SwitchNext(0, 1);
+				SwitchNext(0, eNextType.Next);
 				m_iconsAnim.StartAllAnimGoStop("st_in_change", "st_in_change");
 				m_animItemIconL = null;
 				m_animItemIconS = null;
-				SwitchIcon(0, 1);
+				SwitchIcon(0, eIconLayoutType.Big);
 				SwitchItemFrameAnim(0, 1, 2);
 				SetObjectSibiling(1, m_prizeObject[0].iconLayout);
 			}
@@ -508,12 +699,12 @@ namespace XeApp.Game.Menu
 			{
 				if(m_prizeObject[i] != null)
 				{
-					SwitchStampAnim(i, 0);
-					SwitchIcon(i, 0);
-					SwitchUnitPrice(i, 0);
+					SwitchStampAnim(i, eStampStatus.None);
+					SwitchIcon(i, eIconLayoutType.Normal);
+					SwitchUnitPrice(i, eUnitPrice.Num);
 					SwitchItemFrameAnim(i, 0, 1);
 					SwitchItemFrameAnim(i, 1, 1);
-					SwitchNext(i, 0);
+					SwitchNext(i, eNextType.None);
 					SwitchIconEnable(i, false);
 					SwitchDayEnable(i, false);
 					m_prizeObject[i].isLoadingIconS = false;
@@ -557,13 +748,5 @@ namespace XeApp.Game.Menu
 			Loaded();
 			return true;
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6EC2E4 Offset: 0x6EC2E4 VA: 0x6EC2E4
-		// // RVA: 0x1D64714 Offset: 0x1D64714 VA: 0x1D64714
-		// private void <WaitStampAnim>b__70_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6EC2F4 Offset: 0x6EC2F4 VA: 0x6EC2F4
-		// // RVA: 0x1D64720 Offset: 0x1D64720 VA: 0x1D64720
-		// private bool <WaitStampAnim>b__70_1() { }
 	}
 }

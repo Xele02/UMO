@@ -128,7 +128,7 @@ namespace XeApp.Game.Menu
 					{
 						if(data.CKHOBDIKJFN_Type >= ANPGILOLNFK.CDOGFBNLIPG.PHABJLGFJNI_1 || data.CKHOBDIKJFN_Type <= ANPGILOLNFK.CDOGFBNLIPG.CEIJKIOOIPE_4)
 						{
-							m_divaControl.RequestLoginAnimLoopBreak()
+							m_divaControl.RequestLoginAnimLoopBreak();
 						}
 					}
 					m_layoutLoginbonusStanding.Hide();
