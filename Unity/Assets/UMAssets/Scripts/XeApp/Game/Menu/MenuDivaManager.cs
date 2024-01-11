@@ -365,7 +365,10 @@ namespace XeApp.Game.Menu
 		//public string GetMessageByIndex(int index) { }
 
 		//// RVA: 0xEB4454 Offset: 0xEB4454 VA: 0xEB4454
-		//public string GetFullName() { }
+		public string GetFullName()
+		{
+			return fullName;
+		}
 
 		//// RVA: 0xECB89C Offset: 0xECB89C VA: 0xECB89C
 		public void SetCameraRot(Vector3 rotation)

@@ -239,7 +239,15 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x11113D8 Offset: 0x11113D8 VA: 0x11113D8
-		//public void LoginAnimStart(int reactionId = 1) { }
+		public void LoginAnimStart(int reactionId = 1)
+		{
+			Anim_SetTrigger("login_toReaction");
+			Anim_SetInteger("login_reactionId", reactionId);
+			Anim_SetBool("login_breakTalkLoop", false);
+			Anim_SetTrigger("login_toTalk");
+			isStopFrame = true;
+			UnlockBoneSpring(false, 0);
+		}
 
 		//// RVA: 0x11114BC Offset: 0x11114BC VA: 0x11114BC
 		public void LoginReactionLoopBreak()
@@ -248,7 +256,10 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1111524 Offset: 0x1111524 VA: 0x1111524
-		//public void LoginTalkLoopBreak() { }
+		public void LoginTalkLoopBreak()
+		{
+			Anim_SetBool("login_breakTalkLoop", true);
+		}
 
 		//// RVA: 0x1111590 Offset: 0x1111590 VA: 0x1111590
 		public bool IsLoginIdle()

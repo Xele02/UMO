@@ -1106,7 +1106,10 @@ namespace XeApp.Game.Menu
 		// public GameObject GetCurrentBg() { }
 
 		// // RVA: 0xB32170 Offset: 0xB32170 VA: 0xB32170
-		// public IEnumerator ChangeBgTexture(BgTextureType textureType, int bgId) { }
+		public IEnumerator ChangeBgTexture(BgTextureType textureType, int bgId)
+		{
+			return m_menuTransitionControl.bgControl.LoadBgTexture(textureType, bgId, false);
+		}
 
 		// // RVA: 0xB321DC Offset: 0xB321DC VA: 0xB321DC
 		public TransitionInfo GetCurrentScene()

@@ -119,7 +119,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xECE310 Offset: 0xECE310 VA: 0xECE310
 		public void DoIntroTalk(bool resetTalkFlags = false)
 		{
-			DateTime d1 = Utility.GetLocalDateTime(CIOECGOMILE.HHCJCDFCLOB.PKBOFLOJNIJ);
+			DateTime d1 = Utility.GetLocalDateTime(CIOECGOMILE.HHCJCDFCLOB.PKBOFLOJNIJ_LastLoginTime);
 			DateTime d2 = Utility.GetLocalDateTime(m_loginTime);
 			if(d1.DayOfYear != d2.DayOfYear || resetTalkFlags)
 			{

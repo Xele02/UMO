@@ -591,7 +591,24 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1D62BBC Offset: 0x1D62BBC VA: 0x1D62BBC
-		// public void Show() { }
+		public void Show()
+		{
+			if (m_root == null)
+				return;
+			if (m_isOpen)
+				return;
+			m_isOpen = true;
+			m_isClosed = false;
+			m_animationList.Clear();
+			if (m_type >= eType.Comeback && m_type <= eType.ComebackSp)
+				m_root.StartChildrenAnimGoStop("go_in_2", "st_in_2");
+			else
+				m_root.StartChildrenAnimGoStop("go_in", "st_in");
+			m_animationList.Add(WaitOpenAnim());
+			gameObject.SetActive(true);
+			SetButtonVisibleEnable(false);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_WND_000);
+		}
 
 		// // RVA: 0x1D62E1C Offset: 0x1D62E1C VA: 0x1D62E1C
 		public void Hide()
@@ -610,7 +627,21 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EC08C Offset: 0x6EC08C VA: 0x6EC08C
 		// // RVA: 0x1D62D90 Offset: 0x1D62D90 VA: 0x1D62D90
-		// private IEnumerator WaitOpenAnim() { }
+		private IEnumerator WaitOpenAnim()
+		{
+			//0x1D65B50
+			yield return null;
+			while(m_root.IsPlayingChildren())
+				yield return null;
+			if (m_prevStampPlayCallback != null)
+			{
+				m_prevStampPlayCallback();
+				m_prevStampPlayCallback = null;
+			}
+			SwitchTitleAnim(m_type);
+			SwitchStampAnim(m_stampPlayDay, eStampStatus.Play);
+			SwitchItemFrameAnim(m_stampPlayDay, eIconLayoutType.Normal, eIconFrameAnim.In);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EC104 Offset: 0x6EC104 VA: 0x6EC104
 		// // RVA: 0x1D62F9C Offset: 0x1D62F9C VA: 0x1D62F9C

@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using XeApp.Core;
 using XeApp.Game.Common;
 using XeApp.Game.Tutorial;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -305,7 +307,13 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EC83C Offset: 0x6EC83C VA: 0x6EC83C
 		// // RVA: 0xEB3A18 Offset: 0xEB3A18 VA: 0xEB3A18
-		// private IEnumerator Co_LoadBg(int bgId, UnityAction endCallBack) { }
+		private IEnumerator Co_LoadBg(int bgId, UnityAction endCallBack)
+		{
+			//0xEB606C
+			yield return this.StartCoroutineWatched(MenuScene.Instance.ChangeBgTexture(BgTextureType.LoginBonus, bgId));
+			if (endCallBack != null)
+				endCallBack();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EC8B4 Offset: 0x6EC8B4 VA: 0x6EC8B4
 		// // RVA: 0xEB3AF8 Offset: 0xEB3AF8 VA: 0xEB3AF8
@@ -350,13 +358,55 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xEB3F6C Offset: 0xEB3F6C VA: 0xEB3F6C
-		// private void DivaPlay(ANPGILOLNFK.CDOGFBNLIPG type) { }
+		private void DivaPlay(ANPGILOLNFK.CDOGFBNLIPG type)
+		{
+			m_layoutDivaSerifWindow.SetTitle(MenuScene.Instance.divaManager.GetFullName());
+			m_layoutDivaSerifWindow.Enter();
+			if(type >= ANPGILOLNFK.CDOGFBNLIPG.DHGCJEOPEIE_3 && type < ANPGILOLNFK.CDOGFBNLIPG.LAOEGNLOJHC_5)
+			{
+				if (CheckComebackTalk(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime(), CIOECGOMILE.HHCJCDFCLOB.PKBOFLOJNIJ_LastLoginTime))
+				{
+					m_layoutDivaSerifWindow.SetText(MenuScene.Instance.divaManager.GetMessageByLabel("talk_comeback_01"));
+					m_divaControl.RequestLoginBonus(LoginBonusDivaControl.Type.Comeback_001);
+				}
+				else
+				{
+					m_layoutDivaSerifWindow.SetText(MenuScene.Instance.divaManager.GetMessageByLabel("talk_comeback_02"));
+					m_divaControl.RequestLoginBonus(LoginBonusDivaControl.Type.Comeback_002);
+				}
+				m_divaControl.CallbackChangeDivaSerif = null;
+			}
+			else
+			{
+				m_layoutDivaSerifWindow.SetText(MenuScene.Instance.divaManager.GetMessageByLabel("login_reaction_01"));
+				m_divaControl.RequestLoginBonus(LoginBonusDivaControl.Type.Regular);
+				m_divaControl.CallbackChangeDivaSerif = () =>
+				{
+					//0xEB59A8
+					ChangeDivaSerif("login_reaction_02");
+				};
+			}
+		}
 
 		// // RVA: 0xEB4740 Offset: 0xEB4740 VA: 0xEB4740
-		// private void ChangeDivaSerif(string label) { }
+		private void ChangeDivaSerif(string label)
+		{
+			if(m_layoutDivaSerifWindow != null)
+			{
+				m_layoutDivaSerifWindow.SetText(MenuScene.Instance.divaManager.GetMessageByLabel(label));
+			}
+		}
 
 		// // RVA: 0xEB445C Offset: 0xEB445C VA: 0xEB445C
-		// private bool CheckComebackTalk(long loginTime, long lastLoginTime) { }
+		private bool CheckComebackTalk(long loginTime, long lastLoginTime)
+		{
+			long prev = GameManager.Instance.localSave.EPJOACOONAC_GetSave().NDOKECOAPML_Login.CCIMAHFKOGO_LastLoginDate;
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().NDOKECOAPML_Login.CCIMAHFKOGO_LastLoginDate = loginTime;
+			if (lastLoginTime < prev)
+				lastLoginTime = prev;
+			TimeSpan s = Utility.GetLocalDateTime(loginTime) - Utility.GetLocalDateTime(lastLoginTime);
+			return s.Days >= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("comeback_login_bonus_talk", 7);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EC92C Offset: 0x6EC92C VA: 0x6EC92C
 		// // RVA: 0xEB4874 Offset: 0xEB4874 VA: 0xEB4874
@@ -652,9 +702,5 @@ namespace XeApp.Game.Menu
 			m_itemPackTextureCache.Terminated();
 			m_itemPackTextureCache = null;
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6ECCA4 Offset: 0x6ECCA4 VA: 0x6ECCA4
-		// // RVA: 0xEB59A8 Offset: 0xEB59A8 VA: 0xEB59A8
-		// private void <DivaPlay>b__30_0() { }
 	}
 }

@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -31,15 +33,40 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xD234D4 Offset: 0xD234D4 VA: 0xD234D4
-		// public void RequestLoginBonus(LoginBonusDivaControl.Type type) { }
+		public void RequestLoginBonus(Type type)
+		{
+			StartCoroutine(Co_RequestLoginBonus(type));
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C6B3C Offset: 0x6C6B3C VA: 0x6C6B3C
 		// // RVA: 0xD234F8 Offset: 0xD234F8 VA: 0xD234F8
-		// private IEnumerator Co_RequestLoginBonus(LoginBonusDivaControl.Type type) { }
+		private IEnumerator Co_RequestLoginBonus(Type type)
+		{
+			//0xD23E0C
+			while (IsBreakReactionPlaying)
+				yield return null;
+			DivaObject.LoginAnimStart(1);
+			m_loginVoiceWait = StartCoroutine(Co_LoginVoiceWait());
+			SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.Login, (int)type);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C6BB4 Offset: 0x6C6BB4 VA: 0x6C6BB4
 		// // RVA: 0xD235C0 Offset: 0xD235C0 VA: 0xD235C0
-		// private IEnumerator Co_LoginVoiceWait() { }
+		private IEnumerator Co_LoginVoiceWait()
+		{
+			//0xD2392C
+			while (SoundManager.Instance.voDiva.isPlaying)
+			{
+				IsVoicePlaying = true;
+				yield return null;
+			}
+			if(DivaObject != null)
+			{
+				DivaObject.LoginTalkLoopBreak();
+			}
+			m_changeDivaSerif = StartCoroutine(Coroutine_ChangeDivaSerif());
+			IsVoicePlaying = false;
+		}
 
 		// RVA: 0xD2366C Offset: 0xD2366C VA: 0xD2366C
 		public void RequestLoginAnimLoopBreak()
@@ -82,6 +109,21 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C6CA4 Offset: 0x6C6CA4 VA: 0x6C6CA4
 		// // RVA: 0xD2379C Offset: 0xD2379C VA: 0xD2379C
-		// private IEnumerator Coroutine_ChangeDivaSerif() { }
+		private IEnumerator Coroutine_ChangeDivaSerif()
+		{
+			float wait;
+
+			//0xD23FAC
+			wait = 0;
+			while(true)
+			{
+				wait += TimeWrapper.deltaTime;
+				yield return null;
+				if (wait >= 1)
+					break;
+			}
+			if (CallbackChangeDivaSerif != null)
+				CallbackChangeDivaSerif();
+		}
 	}
 }

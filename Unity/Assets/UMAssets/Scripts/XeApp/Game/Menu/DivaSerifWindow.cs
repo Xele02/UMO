@@ -2,6 +2,7 @@ using XeSys.Gfx;
 using UnityEngine.UI;
 using UnityEngine;
 using XeApp.Game.Common;
+using System.Collections;
 
 namespace XeApp.Game.Menu
 {
@@ -76,11 +77,29 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1265890 Offset: 0x1265890 VA: 0x1265890
-		// public void Leave() { }
+		public void Leave()
+		{
+			if (gameObject.activeInHierarchy)
+			{
+				m_coroutine = this.StartCoroutineWatched(Co_Leave());
+			}
+			else
+			{
+				Hide();
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6CC514 Offset: 0x6CC514 VA: 0x6CC514
 		// // RVA: 0x12658F8 Offset: 0x12658F8 VA: 0x12658F8
-		// private IEnumerator Co_Leave() { }
+		private IEnumerator Co_Leave()
+		{
+			//0x126635C
+			m_layoutRoot.StartChildrenAnimGoStop("go_out", "st_out");
+			yield return null;
+			while (m_layoutRoot.IsPlayingChildren())
+				yield return null;
+			Hide();
+		}
 
 		// // RVA: 0x1265538 Offset: 0x1265538 VA: 0x1265538
 		public void Hide()
