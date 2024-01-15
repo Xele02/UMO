@@ -559,11 +559,26 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6EBBFC Offset: 0x6EBBFC VA: 0x6EBBFC
 		//// RVA: 0x1D58664 Offset: 0x1D58664 VA: 0x1D58664
-		//private IEnumerator WaitOpenAnim() { }
+		private IEnumerator WaitOpenAnim()
+		{
+			//0x1D5A554
+			yield return null;
+			while(m_root.IsPlayingChildren())
+				yield return null;
+			SwitchStampAnim(m_stampPlayDay, eStampStatus.Play);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6EBC74 Offset: 0x6EBC74 VA: 0x6EBC74
 		//// RVA: 0x1D587F8 Offset: 0x1D587F8 VA: 0x1D587F8
-		//private IEnumerator WaitCloseAnim() { }
+		private IEnumerator WaitCloseAnim()
+		{
+			//0x1D5A1C8
+			yield return null;
+			while(m_root.IsPlayingChildren())
+				yield return null;
+			m_isClosed = true;
+			gameObject.SetActive(false);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6EBCEC Offset: 0x6EBCEC VA: 0x6EBCEC
 		//// RVA: 0x1D57E4C Offset: 0x1D57E4C VA: 0x1D57E4C
@@ -609,7 +624,31 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1D588E4 Offset: 0x1D588E4 VA: 0x1D588E4
-		//private void OpenItemPackPopup(CAEDGOPBDNK data, Action callback) { }
+		private void OpenItemPackPopup(CAEDGOPBDNK data, Action callback)
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			string str = bk.GetMessageByLabel(string.Format(m_rewardData.BPEAIOBHMFD_NameForApis + "_{0:00}", m_stampPlayDay + 1));
+			if(str.Contains("!not exist"))
+				str = bk.GetMessageByLabel("popup_loginbonus_comeback_pack_001");
+			PopupLoginBonusPackSetting s = new PopupLoginBonusPackSetting();
+			s.TitleText = str;
+			s.WindowSize = SizeType.Middle;
+			s.Data = data;
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1D597C4
+				return;
+			}, null, null, null, endCallBaack:() =>
+			{
+				//0x1D59E0C
+				if(callback != null)
+					callback();
+			});
+		}
 
 		//// RVA: 0x1D58D8C Offset: 0x1D58D8C VA: 0x1D58D8C
 		//public bool IsPlayingAnim() { }

@@ -553,6 +553,7 @@ namespace XeApp.Game.Menu
 				m_layoutLoginbonusStanding.transform.SetParent(transform, false);
 				m_layoutLoginbonusStanding.gameObject.SetActive(false);
 			}
+			m_isLoading = true;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ECB84 Offset: 0x6ECB84 VA: 0x6ECB84
