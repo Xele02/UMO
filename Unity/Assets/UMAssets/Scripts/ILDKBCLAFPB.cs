@@ -873,6 +873,7 @@ public class ILDKBCLAFPB
 			{
 				GHBPLHBNMBK_SongId = LGMDOEIPLAK_SongIds[FAGEBAKNAOB_IsEvent ? 1 : 0];
 				HIDHLFCBIDE_EventType = (OHCAABOMEOF.KGOGMKMBCPP_EventType)AADOPBAMLJK_EventType[FAGEBAKNAOB_IsEvent ? 1 : 0];
+				Debug.Log("Get Song : IsEvent="+FAGEBAKNAOB_IsEvent+" songId="+GHBPLHBNMBK_SongId+" EventType="+HIDHLFCBIDE_EventType);
 			}
 
 			// // RVA: 0x202454C Offset: 0x202454C VA: 0x202454C
@@ -911,6 +912,7 @@ public class ILDKBCLAFPB
 			// // RVA: 0x2024580 Offset: 0x2024580 VA: 0x2024580
 			public void ACGKEJKPFIA_SetSelectedSong(bool FAGEBAKNAOB_IsEvent, int GHBPLHBNMBK_SongId, OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType)
 			{
+				Debug.Log("Save Song : IsEvent="+FAGEBAKNAOB_IsEvent+" songId="+GHBPLHBNMBK_SongId+" EventType="+HIDHLFCBIDE_EventType);
 				LGMDOEIPLAK_SongIds[FAGEBAKNAOB_IsEvent ? 1 : 0] = GHBPLHBNMBK_SongId;
 				AADOPBAMLJK_EventType[FAGEBAKNAOB_IsEvent ? 1 : 0] = (int)HIDHLFCBIDE_EventType;
 			}
