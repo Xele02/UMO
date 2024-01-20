@@ -1110,10 +1110,12 @@ namespace XeApp.Game.Menu
 				else
 				{
 					select_index = currentMusicList.FindIndex(songId, gameEventType, m_musicSelectUISapporter.isLine6Mode, false);
+					Debug.Log("Restore music from save : select_index=" + select_index);
 					if (select_index < 0)
 						select_index = 0;
 				}
 				list_no = select_index;
+				Debug.Log("Restore music from save : songId=" + songId+" gameEventType="+gameEventType+" isLine6Mode="+m_musicSelectUISapporter.isLine6Mode);
 			}
 			else
 			{
@@ -1173,9 +1175,11 @@ namespace XeApp.Game.Menu
 				{
 					m_musicTab = VerticalMusicSelecChoiceMusicListTab.MusicTab.Normal;
 					int idx = m_filterMusicDataList.FindIndex(args.selection.freeMusicId, m_musicSelectUISapporter.isLine6Mode, false);
+					Debug.Log("Restore music : Idx1 = " + idx);
 					if(idx < 0)
 					{
 						idx = m_filterMusicEventDataList.FindIndex(args.selection.freeMusicId, m_musicSelectUISapporter.isLine6Mode, false);
+						Debug.Log("Restore music : Idx2 = " + idx);
 						if(idx > 0)
 							m_musicTab = VerticalMusicSelecChoiceMusicListTab.MusicTab.Event;
 					}
@@ -1192,6 +1196,7 @@ namespace XeApp.Game.Menu
 						diff = args.selection.difficulty;
 					}
 				}
+				Debug.Log("Restore music : freemusicid=" + args.selection.freeMusicId+" eventCat="+args.selection.eventCategory+" categoryId="+args.selection.categoryId+" minigameId="+args.selection.miniGameId+" difficulty="+args.selection.difficulty+" list_no="+list_no+" musicTab="+m_musicTab);
 			}
 			save.HJHBGHMNGKL_SetDifficulty(diff);
 			save.GJDEHJBAMNH_SetSeries(series);

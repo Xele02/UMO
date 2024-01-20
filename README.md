@@ -1,9 +1,9 @@
 Rewrite project of UtaMacross mobile game. 
 
-**Current version : 0.11**
+**Current version : 0.11.1**
 
 Fonctionality : 
-* Almosteverything of the game with default profile (all costume/cards unlocked and fully leveled)
+* Almost everything of the game with default profile (all costume/cards unlocked and fully leveled)
 * Playing song :
   * Editor gameplay : Use key S-D-F-H-J-K for the 6 lanes, and D-F-H-J for 4 lanes songs. Slide note are automatically valided on hit. Lane change on 6 lane mode don't work. Key can be changed in the options (menu UMO > Options).
 * A few event can be activated (Apil fools, ...). Can be acceded from UMO Setting popup on the title screen (pad icon)

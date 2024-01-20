@@ -605,7 +605,7 @@ public class KDLPEDBKMID
 		if(MCFPOJBDIHP_VidQuality > 0 && MEJEDAJBJKN_SpecialMovieResource[0] > 0)
 		{
 			str.SetFormat("dr_{0:D3}_", MEJEDAJBJKN_SpecialMovieResource[0]);
-			str.SetFormat(EMLADNPGDOG_VideoFileFormat, ECOIBKOIPFP_WavId, str, MCFPOJBDIHP_VidQuality);
+			str.SetFormat(EMLADNPGDOG_VideoFileFormat, ECOIBKOIPFP_WavId, str.ToString(), MCFPOJBDIHP_VidQuality);
 			res |= BDOFDNICMLC_StartInstallIfNeeded(str.ToString());
 		}
 		return res;
