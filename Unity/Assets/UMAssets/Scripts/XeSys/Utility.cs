@@ -55,7 +55,18 @@ namespace XeSys
 		public static long GetTargetUnixTime(int year, int month, int day, int hour, int minute, int second)
 		{
 			DateTime date = new DateTime(year, month, day, hour, minute, second, DateTimeKind.Local);
-			return (long)(TimeZoneInfo.ConvertTimeToUtc(date) - UNIX_EPOCH).TotalSeconds;
+			long t = 0;
+			try
+			{
+				t = (long)(TimeZoneInfo.ConvertTimeToUtc(date) - UNIX_EPOCH).TotalSeconds;
+			} catch(Exception e)
+			{
+				Debug.LogError(e.ToString()+" / "+date.ToLongDateString() + " " + date.ToLongTimeString() + " is not valid, backup");
+				date = new DateTime(year, month, day, hour, minute, second, DateTimeKind.Utc);
+				double diff = (DateTime.Now - DateTime.UtcNow).TotalSeconds;
+				t = (long)(date - UNIX_EPOCH).TotalSeconds + (long)diff; // UMO, ConvertTimeToUtc with no throw not avaiable ? doing it manually. Use date as UTC and add diff
+			}
+			return t;
 		}
 
 		// // RVA: 0x23A9268 Offset: 0x23A9268 VA: 0x23A9268
