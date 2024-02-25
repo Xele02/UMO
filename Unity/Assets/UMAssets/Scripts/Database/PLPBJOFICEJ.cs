@@ -9,7 +9,7 @@ public class PLPBJOFICEJ_CosItem : DIHHCBACKGG_DbSection
 	{
 		HJNNKCMLGFL = 0,
 		GLFGNEILACA = 1,
-		GLHANCMGNDM = 2,
+		GLHANCMGNDM_2 = 2,
 	}
 
 	public class IBEMFIAFIKH

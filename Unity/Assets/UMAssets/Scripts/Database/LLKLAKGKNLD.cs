@@ -183,7 +183,7 @@ public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
 				int[] array2 = array[i].CBDOEDKIOJK;
 				for(int j = 0; j < array2.Length; j++)
 				{
-					data.IOKDGIGCJDA.Add(array2[i] ^ FBGGEFFJJHB);
+					data.IOKDGIGCJDA.Add(array2[j] ^ FBGGEFFJJHB);
 				}
 				BODDKCKFLJF.Add(data);
 			}
@@ -197,7 +197,7 @@ public class LLKLAKGKNLD_LimitOver : DIHHCBACKGG_DbSection
 				int[] array2 = array[i].CBDOEDKIOJK;
 				for (int j = 0; j < array2.Length; j++)
 				{
-					data.IOKDGIGCJDA.Add(array2[i] ^ FBGGEFFJJHB);
+					data.IOKDGIGCJDA.Add(array2[j] ^ FBGGEFFJJHB);
 				}
 				GPPJBOCJOFI.Add(data);
 			}

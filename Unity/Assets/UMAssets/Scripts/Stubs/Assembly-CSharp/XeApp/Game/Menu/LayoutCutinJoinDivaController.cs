@@ -116,7 +116,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x19DA7EC
 					if(Parent != null)
-						instance.transform.SetParent(Parent.transform);
+						instance.transform.SetParent(Parent.transform, false);
 					m_fireDiva = instance.GetComponent<LayoutCutinFireDiva>();
 				}));
 			}
@@ -140,7 +140,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x19DA918
 					if(Parent != null)
-						instance.transform.SetParent(Parent.transform);
+						instance.transform.SetParent(Parent.transform, false);
 					m_starDiva = instance.GetComponent<LayoutCutinStarDiva>();
 				}));
 			}

@@ -667,7 +667,7 @@ namespace XeApp.Game.Menu
 			{
 				parentTransf = parentTransf.GetChild(0).GetComponent<RectTransform>();
 			}
-			transf.localScale = new Vector3(parentTransf.sizeDelta.x / transf.sizeDelta.x, parentTransf.sizeDelta.y / transf.sizeDelta.y, 1);
+			transf.localScale = new Vector3(parentTransf.sizeDelta.x / transf.sizeDelta.x, parentTransf.sizeDelta.x / transf.sizeDelta.x, 1);
 			if(!isPlate)
 			{
 				m_bgImage.uvRect = TextureUv4_3;

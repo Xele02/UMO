@@ -140,12 +140,136 @@ namespace XeApp.Game.Menu
 			AssetBundleLoadLayoutOperationBase operation;
 
 			//0x9E1020
-			TodoLogger.LogError(0, "Co_TutorialBeginnerComplete");
+			MenuScene.Instance.RaycastDisable();
+			LayoutQuestComplete layoutComplete = null;
+			operation = AssetBundleManager.LoadLayoutAsync("ly/059.xab", "root_sel_que_comp_beg_layout_root");
+			yield return operation;
+			yield return Co.R(operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+			{
+				//0x9DE3C8
+				layoutComplete = instance.GetComponent<LayoutQuestComplete>();
+			}));
+			AssetBundleManager.UnloadAssetBundle("ly/059.xab", false);
+			layoutComplete.transform.SetParent(MenuScene.Instance.GetCurrentTransitionRoot().transform.parent, false);
+			layoutComplete.transform.SetAsLastSibling();
+			layoutComplete.transform.localPosition = layout.transform.localPosition;
 			yield return null;
+			layoutComplete.SetStatus(view);
+			while(!layoutComplete.IsReady())
+				yield return null;
+			layoutComplete.In();
+			yield return null;
+			while(layoutComplete.IsPlaying())
+				yield return null;
+			yield return Co.R(QuestUtility.PopupReceive(view.GOOIIPFHOIG));
+			QuestUtility.SetBackButton();
+			bool isChangedCueSheet = true;
+			SoundManager.Instance.voDiva.RequestChangeCueSheet(3, () =>
+			{
+				//0x9DE444
+				isChangedCueSheet = false;
+			});
+			while(isChangedCueSheet)
+				yield return null;
+			if(!BasicTutorialManager.HasInstanced)
+				BasicTutorialManager.Initialize();
+			bool isWait = true;
+			if(!BasicTutorialManager.Instance.IsLoadedLayout())
+			{
+				BasicTutorialManager.Instance.PreLoadResource(() =>
+				{
+					//0x9DE450
+					isWait = false;
+				}, true);
+				while(isWait)
+					yield return null;
+			}
+			isWait = true;
+			SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.Mission, 0);
+			BasicTutorialManager.Instance.ShowMessageWindow(BasicTutorialMessageId.Id_ClearMission, () =>
+			{
+				//0x9DE45C
+				SoundManager.Instance.voDiva.Stop();
+				isWait = false;
+			}, null);
+			while(isWait)
+				yield return null;
+			isChangedCueSheet = true;
+			SoundManager.Instance.voDiva.RequestChangeCueSheet(GetNowDivaId(), () =>
+			{
+				//0x9DE4BC
+				isChangedCueSheet = false;
+			});
+			while(isChangedCueSheet)
+				yield return null;
+			layoutComplete.OnFadeOut = () =>
+			{
+				//0x9DE4C8
+				if(m_tabType == LayoutQuestTab.eTabType.Beginner)
+				{
+					QuestUtility.UpdateQuestData(LayoutQuestTab.eTabType.Beginner);
+					m_layoutScrollListV.SetStatus(LayoutQuestTab.eTabType.Beginner);
+					if(IsBingoMissionEnable())
+					{
+						ChangeTab(LayoutQuestTab.eTabType.Bingo);
+						m_layoutTab.SetTabType((int)m_tabType, LayoutQuestTab.eTabNum.Bingo);
+					}
+					else
+					{
+						ChangeTab(LayoutQuestTab.eTabType.Normal);
+						m_layoutTab.SetTabType((int)m_tabType, LayoutQuestTab.eTabNum.Normal);
+					}
+					MenuTransitionControl.UpdateMenuNewIcon(TransitionList.Type.UNDEFINED, TransitionList.Type.UNDEFINED);
+				}
+			};
+			layoutComplete.Out();
+			yield return null;
+			while(layoutComplete.IsPlaying())
+				yield return null;
+			Destroy(layoutComplete.gameObject);
+			layoutComplete = null;
+			if(!IsBingoMissionHelp())
+			{
+				MenuScene.Instance.RaycastEnable();
+				yield break;
+			}
+			isWait = true;
+			BasicTutorialManager.Instance.ShowMessageWindow(BasicTutorialMessageId.Id_BingoMission, () =>
+			{
+				//0x9DE6D4
+				isWait = false;
+			}, null);
+			while(isWait)
+				yield return null;
+			isWait = true;
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsBingoMission, true);
+			MenuScene.Save(() =>
+			{
+				//0x9DE6E0
+				isWait = false;
+			}, null);
+			while(isWait)
+				yield return null;
+			MenuScene.Instance.RaycastEnable();
+			QuestUtility.RemoveBackButton();
 		}
 
 		//// RVA: 0x9DB368 Offset: 0x9DB368 VA: 0x9DB368
-		//private int GetNowDivaId() { }
+		private int GetNowDivaId()
+		{
+			FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
+			int divaId = 10;
+			if(diva == null)
+			{
+				divaId = diva.AHHJLDLAPAN_DivaId;
+			}
+			int homeDivaId = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId;
+			if(homeDivaId > 0)
+			{
+				divaId = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[homeDivaId - 1].AHHJLDLAPAN_DivaId;
+			}
+			return divaId;
+		}
 
 		//// RVA: 0x9DB53C Offset: 0x9DB53C VA: 0x9DB53C
 		private void ChangeTab(LayoutQuestTab.eTabType tabType)

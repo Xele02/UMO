@@ -35,7 +35,7 @@ namespace XeApp.Game.Menu
 		{
 			if(info.param.id < 0)
 				return;
-			FFHPBEPOMAK_DivaInfo f = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[info.param.id - 1];
+			FFHPBEPOMAK_DivaInfo f = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[info.param.id];
 			SetDivaIcon(f.AHHJLDLAPAN_DivaId);
 			SetDivaName(f.OPFGFINHFCE_DivaName);
 			SetDivaStatus(f.AHHJLDLAPAN_DivaId);
@@ -93,7 +93,7 @@ namespace XeApp.Game.Menu
 		{
 			if(info.param.id < 0)
 				return;
-			SoundManager.Instance.voGreeting.Play(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[info.param.id - 1].AHHJLDLAPAN_DivaId, 0);
+			SoundManager.Instance.voGreeting.Play(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[info.param.id].AHHJLDLAPAN_DivaId, 0);
 		}
 
 		// RVA: 0x178F23C Offset: 0x178F23C VA: 0x178F23C

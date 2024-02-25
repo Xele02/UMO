@@ -320,7 +320,7 @@ namespace XeApp.Game.Menu
 					}
 					else
 					{
-						if(hints[j].is_special)
+						if(hints[j].is_special && hints[j].IsCheckHint(playlog))
 						{
 							hints2.Add(hints[j]);
 						}

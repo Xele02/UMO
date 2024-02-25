@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XeApp.Core;
 using XeApp.Game.Common;
+using XeApp.Game.Tutorial;
 using XeSys;
 
 namespace XeApp.Game.Menu
@@ -695,8 +696,26 @@ namespace XeApp.Game.Menu
 			//0xBD9F88
 			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgradeHelp))
 			{
-				TodoLogger.LogError(0, "Tuto");
-				yield return null;
+				MenuScene.Instance.InputDisable();
+				backButtonDummy = () =>
+				{
+					//0xBD6D4C
+					return;
+				};
+				yield return Co.R(TutorialManager.ShowTutorial(117, null));
+				bool done = false;
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsValkyrieUpgrade, true);
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsValkyrieUpgradeHelp, true);
+				MenuScene.Save(() =>
+				{
+					//0xBD6E54
+					done = true;
+				}, null);
+				while(!done)
+					yield return null;
+				GameManager.Instance.RemovePushBackButtonHandler(backButtonDummy);
+				MenuScene.Instance.InputEnable();
+				backButtonDummy = null;
 			}
 			//LAB_00bda480
 			m_IsSceneActivate = true;
@@ -875,7 +894,7 @@ namespace XeApp.Game.Menu
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 				};
 				m_PopupSetting.before_data = new ALEKLHIANJN(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId, m_SeriesValkyrieList[SelectSeries][Select].CNLIAMIIJID_AbilityLevel);
-				m_PopupSetting.after_data = new ALEKLHIANJN(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId, m_SeriesValkyrieList[SelectSeries][Select].CNLIAMIIJID_AbilityLevel);
+				m_PopupSetting.after_data = new ALEKLHIANJN(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId, m_SeriesValkyrieList[SelectSeries][Select].CNLIAMIIJID_AbilityLevel + 1);
 				PopupWindowManager.Show(m_PopupSetting, OnClickPopupButton, null, null, null);
 			}
 		}

@@ -362,7 +362,7 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB246EC Offset: 0xB246EC VA: 0xB246EC
-	public void OODNEKINHLO(IMCBBOAFION HIDFAIBOHCC)
+	public void OODNEKINHLO_ShowError(IMCBBOAFION HIDFAIBOHCC)
 	{
 		MessageBank bk = MessageManager.Instance.GetBank(LGNLCJIKOEO);
 		TextPopupSetting s = new TextPopupSetting();

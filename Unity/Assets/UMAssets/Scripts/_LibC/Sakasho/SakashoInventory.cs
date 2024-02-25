@@ -31,6 +31,58 @@ namespace ExternLib
 			},
 			 
 			 */
+			EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+			data["id"] = 1;
+			data["item_count"] = 200;
+			data["item_name"] = AFEHLCGHAEE_Strings.KBMDMEEMGLK_grow_item;
+			data["item_type"] = 0;
+			data["item_value"] = 70004;
+			data["message"] = "msg";
+			data["received_at"] = 0;
+			data["closed_at"] = Utility.GetCurrentUnixTime() + 24 * 3600;
+			data["created_at"] = 0;
+			data["type"] = 1;
+			res["inventories"].Add(data);
+
+			data = new EDOHBJAPLPF_JsonData();
+			data["id"] = 2;
+			data["item_count"] = 200;
+			data["item_name"] = AFEHLCGHAEE_Strings.KBMDMEEMGLK_grow_item;
+			data["item_type"] = 0;
+			data["item_value"] = 70005;
+			data["message"] = "msg";
+			data["received_at"] = 0;
+			data["closed_at"] = Utility.GetCurrentUnixTime() + 24 * 3600;
+			data["created_at"] = 0;
+			data["type"] = 1;
+			res["inventories"].Add(data);
+
+			data = new EDOHBJAPLPF_JsonData();
+			data["id"] = 3;
+			data["item_count"] = 200;
+			data["item_name"] = AFEHLCGHAEE_Strings.KBMDMEEMGLK_grow_item;
+			data["item_type"] = 0;
+			data["item_value"] = 70006;
+			data["message"] = "msg";
+			data["received_at"] = 0;
+			data["closed_at"] = Utility.GetCurrentUnixTime() + 24 * 3600;
+			data["created_at"] = 0;
+			data["type"] = 1;
+			res["inventories"].Add(data);
+			
+			data = new EDOHBJAPLPF_JsonData();
+			data["id"] = 3;
+			data["item_count"] = 100000;
+			data["item_name"] = AFEHLCGHAEE_Strings.PJPGBPACBFA_uc_item;
+			data["item_type"] = 0;
+			data["item_value"] = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit, 1);
+			data["message"] = "msg";
+			data["received_at"] = 0;
+			data["closed_at"] = Utility.GetCurrentUnixTime() + 24 * 3600;
+			data["created_at"] = 0;
+			data["type"] = 1;
+			res["inventories"].Add(data);
+			
 			res["next_page"] = 0;
 			res["previous_page"] = 0;
 

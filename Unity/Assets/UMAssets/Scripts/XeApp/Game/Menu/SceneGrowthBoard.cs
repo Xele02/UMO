@@ -440,7 +440,40 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x15A9E54 Offset: 0x15A9E54 VA: 0x15A9E54
-		//public void UpdateBoard() { }
+		public void UpdateBoard()
+		{
+			for(int i = 0; i < m_boardSquareList.Count; i++)
+			{
+				for(int j = 0; j <  m_boardSquareList[i].Length; j++)
+				{
+					if(m_boardSquareList[i][j].panelObject != null)
+					{
+						bool isOpen = m_boardSquareList[i][j].isOpen;
+						bool isPossible = m_boardSquareList[i][j].isPossible;
+						if(m_boardSquareList[i][j].panelObject is SceneGrowthRoad)
+						{
+							if(!isOpen)
+							{
+								(m_boardSquareList[i][j].panelObject as SceneGrowthRoad).SetPossible(isPossible);
+								(m_boardSquareList[i][j].panelObject as SceneGrowthRoad).SetClose();
+							}
+						}
+						else if(m_boardSquareList[i][j].panelObject is SceneGrowthPanel)
+						{
+							if(isOpen || !isPossible)
+							{
+								(m_boardSquareList[i][j].panelObject as SceneGrowthPanel).StopLoopEffect();
+							}
+						}
+						else if(m_boardSquareList[i][j].panelObject is SceneGrowthInfinityPanel)
+						{
+							if(!isPossible || (m_boardSquareList[i][j].panelObject as SceneGrowthInfinityPanel).Stock == 0)
+								(m_boardSquareList[i][j].panelObject as SceneGrowthInfinityPanel).StopLoopEffect();
+						}
+					}
+				}
+			}
+		}
 
 		//// RVA: 0x15AA258 Offset: 0x15AA258 VA: 0x15AA258
 		public void Show()
@@ -496,7 +529,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x15AA694 Offset: 0x15AA694 VA: 0x15AA694
 		public void SetScrollNormalizePosition(float normalPosition)
 		{
-			(m_scrollRect.transform as RectTransform).anchoredPosition = new Vector2((m_scrollRect.content.sizeDelta.x - (m_scrollRect.transform as RectTransform).sizeDelta.x) * normalPosition, m_scrollRect.content.anchoredPosition.y);
+			m_scrollRect.content.anchoredPosition = new Vector2(-((m_scrollRect.content.sizeDelta.x - (m_scrollRect.transform as RectTransform).sizeDelta.x) * normalPosition), m_scrollRect.content.anchoredPosition.y);
 			OnChangeScroll(new Vector2(normalPosition, 0));
 		}
 
@@ -581,17 +614,17 @@ namespace XeApp.Game.Menu
 				OpenPanelSearch(l[i][0], l[i][1], (BoardSquare board, int bx, int by) =>
 				{
 					//0x15AC540
-					if (by == 3)
+					if (board.type == SquareType.Road)
 					{
-						if (roadList.Contains((byte)bx))
+						if (roadList.Contains((byte)board.saveIndex))
 							return;
-						roadList.Add((byte)bx);
+						roadList.Add((byte)board.saveIndex);
 					}
 					else
 					{
-						if (panelList.Contains((byte)bx))
+						if (panelList.Contains((byte)board.saveIndex))
 							return;
-						panelList.Add((byte)bx);
+						panelList.Add((byte)board.saveIndex);
 					}
 				});
 			}
@@ -638,17 +671,17 @@ namespace XeApp.Game.Menu
 				OpenPanelSearch(l[i][0], l[i][1], (BoardSquare board, int bx, int by) =>
 				{
 					//0x15AC66C
-					if(by == 3)
+					if(board.type == SquareType.Road)
 					{
-						if (roadList.Contains((byte)bx))
+						if (roadList.Contains((byte)board.saveIndex))
 							return;
-						roadList.Add((byte)bx);
+						roadList.Add((byte)board.saveIndex);
 					}
 					else
 					{
-						if (panelList.Contains((byte)bx))
+						if (panelList.Contains((byte)board.saveIndex))
 							return;
-						panelList.Add((byte)bx);
+						panelList.Add((byte)board.saveIndex);
 					}
 				});
 			}
@@ -661,13 +694,13 @@ namespace XeApp.Game.Menu
 			OpenPanelSearch(x - 1, y, (BoardSquare board, int bx, int by) =>
 			{
 				//0x15AC798
-				if (by == 3)
+				if (board.type == SquareType.Road)
 				{
-					roadList.Add((byte)bx);
+					roadList.Add((byte)board.saveIndex);
 				}
 				else
 				{
-					panelList.Add((byte)bx);
+					panelList.Add((byte)board.saveIndex);
 				}
 			});
 		}
@@ -696,6 +729,8 @@ namespace XeApp.Game.Menu
 				}
 				else if (m_boardSquareList[x][y].type == SquareType.Panel)
 				{
+					if(m_boardSquareList[x][y].isOpen)
+						return;
 					if (func != null)
 					{
 						func(m_boardSquareList[x][y], x, y);
@@ -705,7 +740,48 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x15ABE08 Offset: 0x15ABE08 VA: 0x15ABE08
-		//public void GetUnlockParts(List<ISceneGrowthPanel> panelList, List<SceneGrowthRoad> roadList, List<byte> unlockPanelIndexList, List<byte> unlockRoadIndexList) { }
+		public void GetUnlockParts(List<ISceneGrowthPanel> panelList, List<SceneGrowthRoad> roadList, List<byte> unlockPanelIndexList, List<byte> unlockRoadIndexList)
+		{
+			panelList.Clear();
+			roadList.Clear();
+			m_boardSquareList.ForEach((BoardSquare[] col) =>
+			{
+				//0x15AC848
+				for(int j = 0; j < col.Length; j++)
+				{
+					if(col[j].type == SquareType.Lock || col[j].type == SquareType.Panel)
+					{
+						if(col[j].panelObject != null)
+						{
+							int idx = unlockPanelIndexList.FindIndex((byte _) =>
+							{
+								//0x15ACDDC
+								return col[j].saveIndex == _;
+							});
+							if(idx > -1)
+							{
+								panelList.Add(col[j].panelObject as ISceneGrowthPanel);
+							}
+						}
+					}
+					else if(col[j].type == SquareType.Road)
+					{
+						if(col[j].panelObject != null)
+						{
+							int idx = unlockRoadIndexList.FindIndex((byte _) =>
+							{
+								//0x15ACE50
+								return col[j].saveIndex == _;
+							});
+							if(idx > -1)
+							{
+								roadList.Add(col[j].panelObject as SceneGrowthRoad);
+							}
+						}
+					}
+				}
+			});
+		}
 
 		//// RVA: 0x15A8BD0 Offset: 0x15A8BD0 VA: 0x15A8BD0
 		public void OnChangeScroll(Vector2 position)
@@ -751,18 +827,18 @@ namespace XeApp.Game.Menu
 				OpenPanelSearch(x, y, (BoardSquare board, int bx, int by) =>
 				{
 					//0x15AC3C0
-					if (by != 1)
+					if (board.type != SquareType.Panel)
 						return;
-					AFIFDLOAKGI a = GetPanelItem(bx);
+					AFIFDLOAKGI a = GetPanelItem(board.saveIndex);
 					if(a.INDDJNMPONH_StatType == 20)
 					{
-						if (m_sceneData.KPCLNEADGEM(bx) == 0)
+						if (m_sceneData.KPCLNEADGEM(board.saveIndex) == 0)
 							return;
 					}
 					PCKLFFNPPLF p = new PCKLFFNPPLF();
 					p.NCMOCCDGKBP(a, m_tempItemData);
 				});
-				return m_tempItemData.EFFBJDMGIGO() > 0;
+				return m_tempItemData.EFFBJDMGIGO_GetBuyPossible() > 0;
 			}
 			return false;
 		}

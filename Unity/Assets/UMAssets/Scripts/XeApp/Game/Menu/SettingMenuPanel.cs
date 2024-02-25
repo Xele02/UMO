@@ -123,7 +123,23 @@ namespace XeApp.Game.Menu
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade))
 				{
-					TodoLogger.LogError(0, "Tuto");
+					int valkyrietuneup_first_adv_id = 0;
+					if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
+					{
+						valkyrietuneup_first_adv_id = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("valkyrietuneup_first_adv_id", 89);
+					}
+					GPMHOAKFALE_Adventure.NGDBKCKMDHE dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(valkyrietuneup_first_adv_id);
+					if(dbAdv == null)
+					{
+						dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(1);
+						if(dbAdv == null)
+							return;
+					}
+					Database.Instance.advResult.Setup("Menu", TransitionUniqueId.SETTINGMENU_VALKYRIETUNEUP, new AdvSetupParam());
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA(valkyrietuneup_first_adv_id);
+					Database.Instance.advSetup.Setup(dbAdv.KKPPFAHFOJI);
+					MenuScene.Instance.GotoAdventure(true);
+					MenuScene.Instance.InputDisable();
 				}
 				else
 				{

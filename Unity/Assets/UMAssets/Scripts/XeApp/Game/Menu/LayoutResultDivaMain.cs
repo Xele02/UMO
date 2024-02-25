@@ -1127,6 +1127,7 @@ namespace XeApp.Game.Menu
 			float f = Mathf.Clamp(gaugePercentage, 0, 100);
 			int frame = divaLayouts[divaIndex].layoutDivaExpGauge.GetView(0).FrameAnimation.FrameNum;
 			int idx = (int)(f * (frame + 1) / 100.0f);
+			divaLayouts[divaIndex].layoutDivaExpGauge.StartChildrenAnimGoStop(idx, idx);
 			if(!divaLayouts[divaIndex].isDivaLevelup)
 			{
 				GNIFOHMFDMO_DivaResultData.IKODHMDOMMP d = viewResultDivaData.NAIHIJAJPNK_Divas[divaIndex];

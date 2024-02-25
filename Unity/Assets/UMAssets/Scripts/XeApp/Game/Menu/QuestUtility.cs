@@ -338,9 +338,11 @@ namespace XeApp.Game.Menu
 			int b = GetAchievedCount(LayoutQuestTab.eTabType.Normal);
 			int c = GetAchievedCount(LayoutQuestTab.eTabType.Event);
 			int d = GetAchievedCount(LayoutQuestTab.eTabType.Diva);
-			int e = 5;
+			int e = 0;
 			if (IsBeginnerQuest())
-				e = 4;
+				e = GetAchievedCount(LayoutQuestTab.eTabType.Beginner);
+			else
+				e = GetAchievedCount(LayoutQuestTab.eTabType.Bingo);
 			return b + a + c + d + e;
 		}
 

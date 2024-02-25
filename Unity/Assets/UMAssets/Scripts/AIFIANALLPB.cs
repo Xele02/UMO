@@ -141,14 +141,13 @@ public class AIFIANALLPB
 		List<GJDFHLBONOL> items = res.NFEAMMJIMPG_ResultData.PJJFEAHIPGL;
 		string firstPresentItemName = MessageManager.Instance.GetMessage("common", "first_present_item_name");
 		bool stpoRequest = false;
-		GJDFHLBONOL g = null;
 		for (int i = 0; i < items.Count; i++)
 		{
 			if(EKLNMHFCAOI.KGANFNCODNG_IsValidCategory(items[i].NPPNDDMPFJJ_ItemCategory))
 			{
 				if (GAKDCMLCAFC_IsItemNotExpired(items[i]))
 				{
-					g = items[i];
+					AACJKHBODGM.Add(items[i]);
 				}
 				else
 				{
@@ -157,7 +156,7 @@ public class AIFIANALLPB
 						stpoRequest = true;
 						break;
 					}
-					g = items[i];
+					GNDBGCIECCN.Add(items[i]);
 				}
 			}
 		}

@@ -446,14 +446,50 @@ namespace XeApp.Game.Menu
 		//public void RevertCameraRender(DivaCameraRenderSwitch renderSwitch) { }
 
 		//// RVA: 0xECBC68 Offset: 0xECBC68 VA: 0xECBC68
-		//public void LoadSub(int modelId, int colorId, int divaId = 0) { }
+		public void LoadSub(int modelId, int colorId, int divaId = 0)
+		{
+			IsLoading = true;
+			this.StartCoroutineWatched(Coroutine_LoadSub(modelId, colorId, divaId));
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C70FC Offset: 0x6C70FC VA: 0x6C70FC
 		//// RVA: 0xECBCA0 Offset: 0xECBCA0 VA: 0xECBCA0
-		//private IEnumerator Coroutine_LoadSub(int modelId, int colorId, int divaId) { }
+		private IEnumerator Coroutine_LoadSub(int modelId, int colorId, int divaId)
+		{
+			//0xECD2DC
+			if(divaSubObject == null)
+			{
+				GameObject go = Instantiate(divaPrefab);
+				go.transform.parent = gameObject.transform;
+				divaSubObject = go.GetComponent<MenuDivaObject>();
+			}
+			if(divaId == 0)
+			{
+				resource.LoadSubResource(modelId, colorId, 0);
+				divaId = DivaId;
+			}
+			else
+			{
+				resource.LoadSubResource(modelId, colorId, divaId);
+			}
+			yield return new WaitUntil(() =>
+			{
+				//0xECC008
+				return resource.isLoadedSubCostumeResource;
+			});
+			divaSubObject.InitializeSub(resource, DivaId, false);
+			divaSubObject.name = "SubDivaMenuObject";
+			IsLoading = false;
+		}
 
 		//// RVA: 0xECBD98 Offset: 0xECBD98 VA: 0xECBD98
-		//public void ReleaseSub() { }
+		public void ReleaseSub()
+		{
+			divaSubObject.Release();
+			Destroy(divaSubObject.gameObject);
+			if(resource.isLoadedSubCostumeResource)
+				resource.ReleaseSubCostumeResource();
+		}
 
 		//// RVA: 0xEB536C Offset: 0xEB536C VA: 0xEB536C
 		public void BeginControl(MenuDivaControlBase control)
@@ -476,9 +512,5 @@ namespace XeApp.Game.Menu
 				return true;
 			return false;
 		}
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x6C7174 Offset: 0x6C7174 VA: 0x6C7174
-		//// RVA: 0xECC008 Offset: 0xECC008 VA: 0xECC008
-		//private bool <Coroutine_LoadSub>b__76_0() { }
 	}
 }

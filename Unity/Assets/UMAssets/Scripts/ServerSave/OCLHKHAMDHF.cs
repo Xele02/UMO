@@ -151,22 +151,22 @@ public class OCLHKHAMDHF_Episode : KLFDBFMNLBL_ServerSaveBlock
 					int s = EBIIIAELNAA_Step;
 					List<int> l = new List<int>();
 					bool b = true;
-					for(int i = 0; i < GNDJCANPLDJ && b; i++)
+					do
 					{
 						while(true)
 						{
 							p += GNDJCANPLDJ;
-							if (p < step.JENFHJDFFAD_Pt[i])
+							if (p < step.JENFHJDFFAD_Pt[s])
 							{
 								b = false;
 								break;
 							}
 							l.Add(s);
-							GNDJCANPLDJ = p - step.JENFHJDFFAD_Pt[i];
+							GNDJCANPLDJ = p - step.JENFHJDFFAD_Pt[s];
 							if(s < step.FGOGPCMHPIN_Count - 1)
 							{
+								p = step.JENFHJDFFAD_Pt[s];
 								s++;
-								p = step.JENFHJDFFAD_Pt[i];
 								break;
 							}
 							p = step.JENFHJDFFAD_Pt[step.FGOGPCMHPIN_Count - 2];
@@ -176,7 +176,7 @@ public class OCLHKHAMDHF_Episode : KLFDBFMNLBL_ServerSaveBlock
 								break;
 							}
 						}
-					}
+					} while(GNDJCANPLDJ > 0 && b);
 					if(!DDGFCOPPBBN)
 					{
 						OGDBKJKIGAJ_CurrentPoint = p;
@@ -244,7 +244,7 @@ public class OCLHKHAMDHF_Episode : KLFDBFMNLBL_ServerSaveBlock
 						MGGPEOCPIEG data = new MGGPEOCPIEG();
 						data.HODPFJGODDN_EpIdx = i;
 						data.CPNGJMKFCJI = ep.PHJFOJLMFGK[j];
-						data.KONJMFICNJJ = MOLEPBNJAGE.LFAAEPAAEMB_Rewards[dbEp.HHJGBJCIFON_Rewards[j]];
+						data.KONJMFICNJJ = MOLEPBNJAGE.LFAAEPAAEMB_Rewards[dbEp.HHJGBJCIFON_Rewards[data.CPNGJMKFCJI]];
 						if (data.KONJMFICNJJ.MFKJAOLIPMA_IsVc)
 							AJFHCEEKPPA = true;
 						res.Add(data);

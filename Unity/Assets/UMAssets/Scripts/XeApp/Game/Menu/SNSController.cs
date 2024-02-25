@@ -145,6 +145,7 @@ namespace XeApp.Game.Menu
 		public IEnumerator SetupEntrance(Action exitCallback, Action<int> roomInCallback, bool isBackButtonEmpty, SNSTitleBar.eButtonType buttonType)
 		{
 			//0x1595F5C
+			UnityEngine.Debug.LogError(LayoutType);
 			if(LayoutType == eType.Entrance)
 			{
 				int divaId = GameManager.Instance.GetHomeDiva().AHHJLDLAPAN_DivaId;
@@ -157,6 +158,7 @@ namespace XeApp.Game.Menu
 				if(layoutScrollList != null)
 				{
 					yield return Co.R(layoutScrollList.SetStatusEntrance(m_viewDataSNS, roomInCallback));
+					UnityEngine.Debug.LogError("SetStatusEntrance ok");
 				}
 				if(layoutTitleBar != null)
 				{

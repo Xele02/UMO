@@ -191,6 +191,7 @@ class JpStringLiterals
 	public const string StringLiteral_11972 = "内部エラー"; //0x03bb45c8
 	public const string StringLiteral_11973 = "エラーが発生しました。\nタイトル画面に戻ります。"; //0x03bb45cc
 	public const string StringLiteral_11992 = "バッチインストーラ　インストールモジュール作成失敗"; // 0x03bb4618
+	public const string StringLiteral_12004 = "プレゼント"; //0x03bb4648
 	public const string StringLiteral_12005 = "タッチ"; //0x03bb464c
 	public const string StringLiteral_12010 = "コスチューム名"; //0x03bb4660
 	public const string StringLiteral_12037 = "　"; // 0x03bb46cc
@@ -422,6 +423,7 @@ class JpStringLiterals
 	public const string StringLiteral_18023 = "{0}秒"; //0x03bba454
 	public const string StringLiteral_18024 = "：{0}"; //0x03bba458
 	public const string StringLiteral_18054 = "～{0}秒"; //0x03bba4d0
+	public const string StringLiteral_18067 = "エナジーが{0}に回復しました"; //0x03bba504
 	public const string StringLiteral_18280 = "プリズム"; //0x03bba858
 	public const string StringLiteral_18787 = "獲得ユニオンクレジット"; // 03bbb044
 	public const string StringLiteral_18797 = "小隊選択"; //0x03bbb06c

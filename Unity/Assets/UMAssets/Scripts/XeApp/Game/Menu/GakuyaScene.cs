@@ -984,7 +984,23 @@ namespace XeApp.Game.Menu
 						PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel buttonLabel) =>
 						{
 							//0xB7B278
-							TodoLogger.LogError(0, "OnClickPresentItem 1");
+							if(type == PopupButton.ButtonType.Positive)
+							{
+								m_isGivingPresent = true;
+								Vector2 pos = RectTransformUtility.WorldToScreenPoint(GameManager.Instance.GetSystemCanvasCamera(), m_intimacyPresentEffectPos.position);
+								int useItemCount = 1;
+								if(presentDivaLimit)
+								{
+									useItemCount = (control.Content as PopupGakuyaPresentUse2Contents).UseItemVal;
+								}
+								GameManager.Instance.SetFPS(60);
+								m_intimacyController.StartToPresentGakuya(itemInfo.m_presentData.ADJBIEOILPJ_Id, useItemCount, pos, () =>
+								{
+									//0xB7B1B8
+									GameManager.Instance.SetFPS(30);
+									m_isGivingPresent = false;
+								});
+							}
 						}, null, null, null);
 					}
 				}

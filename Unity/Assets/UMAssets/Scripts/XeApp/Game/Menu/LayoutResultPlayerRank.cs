@@ -131,7 +131,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_StartAnim()
 		{
 			//0x18E8424
-			if(IsLevelMax(viewLevelupData.APIIHFJGEAO_Level))
+			if(IsLevelMax(viewLevelupData.APIIHFJGEAO_PrevLevel))
 			{
 				m_isSkiped = true;
 				if (onFinished != null)
@@ -140,10 +140,10 @@ namespace XeApp.Game.Menu
 			else
 			{
 				int restAcquiredExp = viewLevelupData.FDNEEPFGPLH_GainExp;
-				currentGaugePercentage = CalcExpPercentage(viewLevelupData.APIIHFJGEAO_Level, viewLevelupData.ALBCEALLGJG_PrevExp);
-				ChangePlayerLevel(viewLevelupData.APIIHFJGEAO_Level);
-				ChangeCurrentExp(viewLevelupData.APIIHFJGEAO_Level, currentGaugePercentage, viewLevelupData.ALBCEALLGJG_PrevExp);
-				ChangeRequiredPlayerExp(viewLevelupData.APIIHFJGEAO_Level);
+				currentGaugePercentage = CalcExpPercentage(viewLevelupData.APIIHFJGEAO_PrevLevel, viewLevelupData.ALBCEALLGJG_PrevExp);
+				ChangePlayerLevel(viewLevelupData.APIIHFJGEAO_PrevLevel);
+				ChangeCurrentExp(viewLevelupData.APIIHFJGEAO_PrevLevel, currentGaugePercentage, viewLevelupData.ALBCEALLGJG_PrevExp);
+				ChangeRequiredPlayerExp(viewLevelupData.APIIHFJGEAO_PrevLevel);
 				layoutRoot.StartChildrenAnimGoStop("go_in", "st_in");
 				yield return Co.R(Co_WaitAnim(layoutRoot, true));
 				yield return Co.R(Co_ExpIncreaseAnim());
@@ -164,9 +164,9 @@ namespace XeApp.Game.Menu
 
 			//0x18E75E8
 			PlayCountUpLoopSE();
-			startExp = viewLevelupData.ALBCEALLGJG_PrevExp + expMaster.DGPJNADIFNE_GetExpUpToPlayerLevel(viewLevelupData.APIIHFJGEAO_Level);
+			startExp = viewLevelupData.ALBCEALLGJG_PrevExp + expMaster.DGPJNADIFNE_GetExpUpToPlayerLevel(viewLevelupData.APIIHFJGEAO_PrevLevel);
 			endExp = startExp + viewLevelupData.FDNEEPFGPLH_GainExp;
-			currentFrameLevel = viewLevelupData.APIIHFJGEAO_Level;
+			currentFrameLevel = viewLevelupData.APIIHFJGEAO_PrevLevel;
 			currentTime = 0;
 			timeLength = 3;
 			while(true)
@@ -228,10 +228,36 @@ namespace XeApp.Game.Menu
 		public IEnumerator Co_ShowRankupPopup()
 		{
 			//0x18E7F4C
-			if(viewLevelupData.APIIHFJGEAO_Level < viewLevelupData.IANDPFDFAKP_Level2)
+			if(viewLevelupData.APIIHFJGEAO_PrevLevel < viewLevelupData.IANDPFDFAKP_Level)
 			{
-				TodoLogger.LogError(0, "Co_ShowRankupPopup() 1");
-				yield break;
+				PopupPlayerRankupSetting.SettingParam param = new PopupPlayerRankupSetting.SettingParam();
+				param.prevPlayerLevel = viewLevelupData.APIIHFJGEAO_PrevLevel;
+				param.currentPlayerLevel = viewLevelupData.IANDPFDFAKP_Level;
+				param.prevStaminaMax = viewLevelupData.GIEHGPCHKPF_PrevMaxStamina;
+				param.currentStaminaMax = viewLevelupData.JCMCBGMEKJG_MaxStamina;
+				param.currentStamina = viewLevelupData.EPNALMONMHB_CurrentStamina;
+				param.prevFriendMax = viewLevelupData.EDCAHIECMCE_PrevMaxFriend;
+				param.currentFriendMax = viewLevelupData.OFILPHEMLCB_MaxFriend;
+				PopupPlayerRankupSetting s = new PopupPlayerRankupSetting();
+				s.TitleText = "";
+				s.IsCaption = false;
+				s.WindowSize = 0;
+				s.param = param;
+				s.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				};
+				bool isOpenRankupPopup = true;
+				PopupWindowManager.Show(s, null, null, null, null, endCallBaack:() =>
+				{
+					//0x18E7354
+					isOpenRankupPopup = false;
+				});
+				yield return new WaitWhile(() =>
+				{
+					//0x18E7360
+					return isOpenRankupPopup;
+				});
 			}
 		}
 
@@ -294,7 +320,7 @@ namespace XeApp.Game.Menu
 				this.StopCoroutineWatched(GaugeAnimFinishCoroutine);
 				GaugeAnimFinishCoroutine = null;
 			}
-			ChangeOldExp(viewLevelupData.IANDPFDFAKP_Level2, CalcExpPercentage(viewLevelupData.IANDPFDFAKP_Level2, viewLevelupData.GLAJCLEAKJJ_Exp));
+			ChangeOldExp(viewLevelupData.IANDPFDFAKP_Level, CalcExpPercentage(viewLevelupData.IANDPFDFAKP_Level, viewLevelupData.GLAJCLEAKJJ_Exp));
 		}
 
 		// // RVA: 0x18E6B84 Offset: 0x18E6B84 VA: 0x18E6B84
@@ -314,7 +340,7 @@ namespace XeApp.Game.Menu
 			{
 				if(!isLevelupFirst)
 				{
-					ChangeOldExp(viewLevelupData.APIIHFJGEAO_Level, CalcExpPercentage(viewLevelupData.APIIHFJGEAO_Level, viewLevelupData.ALBCEALLGJG_PrevExp));
+					ChangeOldExp(viewLevelupData.APIIHFJGEAO_PrevLevel, CalcExpPercentage(viewLevelupData.APIIHFJGEAO_PrevLevel, viewLevelupData.ALBCEALLGJG_PrevExp));
 				}
 				else
 				{
@@ -409,13 +435,5 @@ namespace XeApp.Game.Menu
 		{
 			return level >= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP.PIAMMJNADJH_PlayerMaxLevel;
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71CA6C Offset: 0x71CA6C VA: 0x71CA6C
-		// // RVA: 0x18E7354 Offset: 0x18E7354 VA: 0x18E7354
-		// private void <Co_ShowRankupPopup>b__40_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71CA7C Offset: 0x71CA7C VA: 0x71CA7C
-		// // RVA: 0x18E7360 Offset: 0x18E7360 VA: 0x18E7360
-		// private bool <Co_ShowRankupPopup>b__40_1() { }
 	}
 }

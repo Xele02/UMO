@@ -33,7 +33,7 @@ namespace XeApp.Game.Menu
 
 		public bool IsInitializedLayout { get { return _isInitializedLayout; } } //0x164DE9C
 		public bool IsInitializedValkyrie { get { return _isInitialized3dResource; } } //0x164DEA4
-		// public bool IsInitializedPilotVoice { get; } 0x164DEAC
+		public bool IsInitializedPilotVoice { get { return _isInitializedPilotVoice; } } //0x164DEAC
 		public int SeriesAttr { get { return _seriesAttr; } } //0x164DEB4
 
 		// // RVA: 0x164DEBC Offset: 0x164DEBC VA: 0x164DEBC

@@ -292,6 +292,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1A81ABC Offset: 0x1A81ABC VA: 0x1A81ABC
 		public IEnumerator Check()
 		{
+			//0x1A8B370
 			if((m_viewDataList[m_stageEffectIndex].AHHJLDLAPAN_DivaId & 0xfffffffeU) == 8)
 			{
 				int i = m_stageEffectIndex + 1;
@@ -516,7 +517,6 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1A8412C Offset: 0x1A8412C VA: 0x1A8412C
 		private Coroutine EffectPhaseStart(EffectType effectType, int index)
 		{
-			UnityEngine.Debug.LogError("start effect : "+effectType);
 			if (effectType == EffectType.ADD_DIVA)
 			{
 				StorySelectStageIcon layout = m_scrollViewList[index].layoutIcon;

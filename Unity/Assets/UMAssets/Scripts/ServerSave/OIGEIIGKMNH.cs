@@ -103,7 +103,16 @@ public class OIGEIIGKMNH_Valkyrie : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1DE3734 Offset: 0x1DE3734 VA: 0x1DE3734
-	// public bool KBBNHBBGDEC(int FODKKJIDDKN, int CIEOBFIIPLD) { }
+	public bool KBBNHBBGDEC(int FODKKJIDDKN, int CIEOBFIIPLD)
+	{
+		HLNPGNNPCGO_ValkyrieInfo d = JMJOPCDNHKK(FODKKJIDDKN);
+		if(d != null && d.BEBJKJKBOGH_Date != 0)
+		{
+			d.CIEOBFIIPLD_Level = CIEOBFIIPLD;
+			return true;
+		}
+		return false;
+	}
 
 	// // RVA: 0x1DE378C Offset: 0x1DE378C VA: 0x1DE378C
 	public int HEGDAMANPMF(JPIANKEOOMB_Valkyrie PEOALFEGNDH, int NDKJCDGHPLD, int MIHAHCEANII)

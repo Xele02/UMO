@@ -294,16 +294,33 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1111974 Offset: 0x1111974 VA: 0x1111974
-		//public void PlayUnlockCostumeAnim() { }
+		public void PlayUnlockCostumeAnim()
+		{
+			facialBlendAnimMediator.selfAnimator.Play("start", 1);
+			Anim_Play("costume_start", 0);
+			isStopFrame = true;
+			this.StartCoroutineWatched(WaitUnlockBoneSpring(0));
+		}
 
 		//// RVA: 0x1111A70 Offset: 0x1111A70 VA: 0x1111A70
 		//public void PlayUnlockPoseCostumeAnim() { }
 
 		//// RVA: 0x1111B6C Offset: 0x1111B6C VA: 0x1111B6C
-		//public void SetAnimationSpeed(float speed) { }
+		public void SetAnimationSpeed(float speed)
+		{
+			Anim_speed = speed;
+		}
 
 		//// RVA: 0x1111B74 Offset: 0x1111B74 VA: 0x1111B74
-		//public bool IsMatchUnlockCostumeAnimStep(MenuDivaObject.eUnlockCostumeAnimStep step) { }
+		public bool IsMatchUnlockCostumeAnimStep(eUnlockCostumeAnimStep step)
+		{
+			if(step <= eUnlockCostumeAnimStep.Loop)
+			{
+				if(animator.GetCurrentAnimatorStateInfo(0).fullPathHash == Animator.StringToHash(new string[] { "body.sub_costume.costume_start", "body.sub_costume.costume_pose", "body.sub_costume.costume_loop" } [(int)step]))
+					return true;
+			}
+			return false;
+		}
 
 		//// RVA: 0x1111C6C Offset: 0x1111C6C VA: 0x1111C6C
 		public float GetNormalizedTime()

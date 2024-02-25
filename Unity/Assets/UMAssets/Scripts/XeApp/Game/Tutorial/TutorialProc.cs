@@ -344,8 +344,58 @@ namespace XeApp.Game.Tutorial
 		{
 			if (RuntimeSettings.CurrentSettings.ForceTutoSkip)
 				yield break;
-			TodoLogger.LogError(0, "Co_CostumeUpgrade");
-			yield return null;
+			EBFLJMOCLNA_Costume pd; // 0x28
+			BasicTutorialManager mrg; // 0x2C
+			GameManager.PushBackButtonHandler dymmyBackHandler; // 0x30
+
+			//0xE4DC20
+			pd = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume;
+			if(pd.MLBBKNLPBBD_IsTutoDone((int)type))
+				yield break;
+			MenuScene.Instance.InputDisable();
+			BasicTutorialManager.Initialize();
+			mrg = BasicTutorialManager.Instance;
+			bool isWait = true;
+			mrg.PreLoadResource(() =>
+			{
+				//0xE4C184
+				isWait = false;
+			}, true);
+			while(isWait)
+				yield return null;
+			yield return Co.R(mrg.PreDownLoadTextureResource(messageId));
+			MenuScene.Instance.InputEnable();
+			dymmyBackHandler = () =>
+			{
+				//0xE4C064
+				return;
+			};
+			GameManager.Instance.AddPushBackButtonHandler(dymmyBackHandler);
+			isWait = true;
+			mrg.ShowMessageWindow(messageId, () =>
+			{
+				//0xE4C190
+				isWait = false;
+			}, null);
+			while(isWait)
+				yield return null;
+			if(button != null)
+			{
+				isWait = true;
+				mrg.SetInputLimit(limitButton, () =>
+				{
+					//0xE4C19C
+					isWait = false;
+				}, () =>
+				{
+					//0xE4C1A8
+					return button;
+				}, direction);
+				while(isWait)
+					yield return null;
+			}
+			GameManager.Instance.RemovePushBackButtonHandler(dymmyBackHandler);
+			pd.ILMPHFPFLJE_SetTutoStatus((int)type, true);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF000 Offset: 0x6AF000 VA: 0x6AF000
@@ -360,7 +410,57 @@ namespace XeApp.Game.Tutorial
 				yield break;
 			if(RuntimeSettings.CurrentSettings.ForceTutoSkip)
 				yield break;
-			TodoLogger.LogError(0, "Co_ValkyrieUpgrade");
+			MenuScene.Instance.InputDisable();
+			BasicTutorialManager.Initialize();
+			mrg = BasicTutorialManager.Instance;
+			bool isWait = true;
+			mrg.PreLoadResource(() =>
+			{
+				//0xE4C1B8
+				isWait = false;
+			}, true);
+			while(isWait)
+				yield return null;
+			yield return Co.R(mrg.PreDownLoadTextureResource(messageId));
+			MenuScene.Instance.InputEnable();
+			dymmyBackHandler = () =>
+			{
+				//0xE4C068
+				return;
+			};
+			GameManager.Instance.AddPushBackButtonHandler(dymmyBackHandler);
+			if(cdSelect != null)
+			{
+				cdSelect.ScrollDisable();
+			}
+			if(musicScrollView != null)
+			{
+				musicScrollView.ScrollEnable(false);
+			}
+			isWait = true;
+			mrg.ShowMessageWindow(messageId, () =>
+			{
+				//0xE4C1C4
+				isWait = false;
+			}, null);
+			while(isWait)
+				yield return null;
+			if(button != null)
+			{
+				isWait = true;
+				BasicTutorialManager.Instance.SetInputLimit(limitButton, () =>
+				{
+					//0xE4C1D0
+					isWait = false;
+				}, () =>
+				{
+					//0xE4C1DC
+					return button;
+				}, direction);
+				while(isWait)
+					yield return null;
+			}
+			GameManager.Instance.RemovePushBackButtonHandler(dymmyBackHandler);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF078 Offset: 0x6AF078 VA: 0x6AF078

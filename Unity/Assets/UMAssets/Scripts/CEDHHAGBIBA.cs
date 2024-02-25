@@ -189,7 +189,7 @@ public class CEDHHAGBIBA
 		for(int i = 0; i < IFIKNDBPOKO.Length; i++)
 		{
 			byte puVar1 = IFIKNDBPOKO[i];
-			val += (puVar1 >> 0 & 1)
+			val += ((puVar1 >> 0) & 1)
 				+ ((puVar1 >> 1) & 1)
 				+ ((puVar1 >> 2) & 1)
 				+ ((puVar1 >> 3) & 1)

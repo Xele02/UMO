@@ -1088,11 +1088,120 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x14B2FCC Offset: 0x14B2FCC VA: 0x14B2FCC
-		//public void StartToPresentGakuya(int itemId, int useitemCount, Vector2 effectPos, Action endCallback) { }
+		public void StartToPresentGakuya(int itemId, int useitemCount, Vector2 effectPos, Action endCallback)
+		{
+			this.StartCoroutineWatched(Co_ToPresentGakuya(itemId, useitemCount, effectPos, endCallback));
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E6D64 Offset: 0x6E6D64 VA: 0x6E6D64
 		//// RVA: 0x14B3008 Offset: 0x14B3008 VA: 0x14B3008
-		//public IEnumerator Co_ToPresentGakuya(int itemId, int useitemCount, Vector2 effectPos, Action endCallback) { }
+		public IEnumerator Co_ToPresentGakuya(int itemId, int useitemCount, Vector2 effectPos, Action endCallback)
+		{
+			int offerMaxDifficult; // 0x30
+			Coroutine saveCoroutine; // 0x34
+			float time; // 0x38
+			List<JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK> typeList; // 0x3C
+			List<int> paramList; // 0x40
+			int i; // 0x44
+
+			//0x14B9114
+			m_effectObject.TouchPlay(effectPos);
+			m_effectObject.TouchEnd();
+			SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_INTIMACY_001);
+			HideGakuyaMessage();
+			MenuScene.Instance.InputDisable();
+			yield return Co.R(m_divaControl.Coroutine_IdleCrossFade());
+			SoundManager.Instance.voDiva.Stop();
+			while(!m_divaTalk.IsEnableReaction())
+				yield return null;
+			offerMaxDifficult = KDHGBOOECKC.HHCJCDFCLOB.HFLNFKFGEJH(m_viewIntimacyData.AHHJLDLAPAN_DivaId);
+			saveCoroutine = null;
+			if(m_viewIntimacyData.HNMJKLEJLPC(itemId, useitemCount))
+			{
+				if(m_viewIntimacyData.MLEPCANKIIE(useitemCount))
+				{
+					saveCoroutine = this.StartCoroutineWatched(Co_Data_Save());
+				}
+			}
+			m_viewList = OJEGDIBEBHP.FKDIMODKKJD();
+			SetGakuyaType();
+			m_serifType = SerifPlayType.N_GRATEFUL;
+			if(m_viewIntimacyData.HBODCMLFDOB.HOMOKJEKKNK_Bonus > 0)
+				m_serifType = SerifPlayType.B_GRATEFUL;
+			if(m_divaTalk != null)
+				OnChangedGakuyaDivaTalk();
+			time = 0;
+			while(time <= m_SerifPlayTime)
+			{
+				time += Time.deltaTime;
+				yield return null;
+			}
+			SetGakuyaPresentListState();
+			SetPresentLimitCntLayout();
+			m_gakuyaPresentListWindow.SetItems(m_viewList);
+			m_gakuyaDivaMessage.TryLeave();
+			bool done = false;
+			m_layoutInfo.StartPointUp(() =>
+			{
+				//0x14B49D0
+				done = true;
+			});
+			while(!done && m_layoutInfo != null)
+			{
+				yield return null;
+			}
+			typeList = m_viewIntimacyData.HBODCMLFDOB.CKDNPHLDIEM;
+			paramList = m_viewIntimacyData.HBODCMLFDOB.EEIBCALKFFF;
+			for(i = 0; i < typeList.Count; i++)
+			{
+				m_systemMessage.SetTextLevelUpBonus(m_viewIntimacyData.AHHJLDLAPAN_DivaId, m_viewIntimacyData.IGLBKDDCKEJ(), typeList[i], paramList[i]);
+				m_systemMessage.Enter();
+				yield return new WaitForSeconds(3);
+				m_systemMessage.Leave(false);
+				yield return new WaitWhile(() =>
+				{
+					//0x14B4988
+					return m_systemMessage.IsPlaying();
+				});
+			}
+			int next = KDHGBOOECKC.HHCJCDFCLOB.HFLNFKFGEJH(m_viewIntimacyData.AHHJLDLAPAN_DivaId);
+			if(offerMaxDifficult < next)
+			{
+				if(KDHGBOOECKC.HHCJCDFCLOB.MGHPDFMDFCJ())
+				{
+					bool isLoad = false;
+					MessageBank bk = MessageManager.Instance.GetBank("menu");
+					PopupOfferUnclokDiffSetting s = new PopupOfferUnclokDiffSetting();
+					s.TitleText = "";
+					s.IsCaption = false;
+					s.popupMsg = string.Format(bk.GetMessageByLabel("offer_diva_offer_levelup_text"), MessageManager.Instance.GetMessage("master", string.Format("diva_s_{0:D2}", m_viewIntimacyData.AHHJLDLAPAN_DivaId)));
+					s.preDiff = offerMaxDifficult;
+					s.nextDiff = next;
+					s.WindowSize = SizeType.Small;
+					s.Buttons = new ButtonInfo[1]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+					};
+					PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType typ, PopupButton.ButtonLabel lbl) =>
+					{
+						//0x14B49E4
+						isLoad = true;
+						GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.AHOBDLOOLHD(m_viewIntimacyData.AHHJLDLAPAN_DivaId, next);
+						GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+					}, null, null, null);
+					yield return new WaitUntil(() =>
+					{
+						//0x14B4B88
+						return isLoad;
+					});
+				}
+			}
+			if(saveCoroutine != null)
+				yield return saveCoroutine;
+			MenuScene.Instance.InputEnable();
+			if(endCallback != null)
+				endCallback();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E6DDC Offset: 0x6E6DDC VA: 0x6E6DDC
 		//// RVA: 0x14B312C Offset: 0x14B312C VA: 0x14B312C
@@ -1175,7 +1284,28 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E6E54 Offset: 0x6E6E54 VA: 0x6E6E54
 		//// RVA: 0x14B34D4 Offset: 0x14B34D4 VA: 0x14B34D4
-		//private IEnumerator Co_Data_Save() { }
+		private IEnumerator Co_Data_Save()
+		{
+			//0x14B4D2C
+			bool done = false;
+			bool err = false;
+			MenuScene.Save(() =>
+			{
+				//0x14B4B98
+				done = true;
+			}, () =>
+			{
+				//0x14B4BA4
+				done = true;
+				err = true;
+			});
+			while(!done)
+				yield return null;
+			if(err)
+			{
+				MenuScene.Instance.GotoTitle();
+			}
+		}
 
 		//// RVA: 0x14B33BC Offset: 0x14B33BC VA: 0x14B33BC
 		private bool itemCountCheck()
@@ -1280,7 +1410,12 @@ namespace XeApp.Game.Menu
 		//private void LeaveGakuyaMessage() { }
 
 		//// RVA: 0x14B3B18 Offset: 0x14B3B18 VA: 0x14B3B18
-		//private void HideGakuyaMessage() { }
+		private void HideGakuyaMessage()
+		{
+			if(m_serifType == SerifPlayType.NONE)
+				return;
+			m_gakuyaDivaMessage.Hide();
+		}
 		
 		//[CompilerGeneratedAttribute] // RVA: 0x6E6F3C Offset: 0x6E6F3C VA: 0x6E6F3C
 		//// RVA: 0x14B4008 Offset: 0x14B4008 VA: 0x14B4008

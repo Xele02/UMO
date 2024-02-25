@@ -933,6 +933,7 @@ namespace XeApp.Game.Menu
 				AssetBundleManager.UnloadAssetBundle(m_strBuilder.ToString());
 			}
 			m_bgBehaviour.SetHomeBgTexture(tex, m_textureType == BgTextureType.Scene, isBlur);
+			UnloadBgTexture();
 			m_bgTexture = tex;
 		}
 

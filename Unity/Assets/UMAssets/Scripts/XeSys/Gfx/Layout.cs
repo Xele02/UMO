@@ -370,7 +370,10 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x2050C70 Offset: 0x2050C70 VA: 0x2050C70
-		// public bool IsPlayingAll() { }
+		public bool IsPlayingAll()
+		{
+			return m_Root.IsPlayingAll();
+		}
 
 		// [ObsoleteAttribute] // RVA: 0x692424 Offset: 0x692424 VA: 0x692424
 		// // RVA: 0x2050C9C Offset: 0x2050C9C VA: 0x2050C9C

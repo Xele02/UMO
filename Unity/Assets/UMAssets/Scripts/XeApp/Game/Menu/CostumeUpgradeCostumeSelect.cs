@@ -73,7 +73,7 @@ namespace XeApp.Game.Menu
 		private const float CostumeScrollSec = 0.2f;
 		private bool m_isKeyScrool; // 0xC8
 		private CostumeDivaSelectPopupSetting m_diva_select_window = new CostumeDivaSelectPopupSetting(); // 0xCC
-		//private CostumeRankUpUnlockPopupSetting m_rank_unlock_window = new CostumeRankUpUnlockPopupSetting(); // 0xD0
+		private CostumeRankUpUnlockPopupSetting m_rank_unlock_window = new CostumeRankUpUnlockPopupSetting(); // 0xD0
 		public bool isPrevCostumeSelect; // 0xD5
 		private AbsoluteLayout m_rewadIconChildAnim; // 0xD8
 		private int m_itemDetailAnimFrame; // 0xDC
@@ -419,14 +419,14 @@ namespace XeApp.Game.Menu
 			m_baseColorAnim.StartAllAnimGoStop(m_selectCostumeData.AHHJLDLAPAN_DivaId + 1, m_selectCostumeData.AHHJLDLAPAN_DivaId + 1);
 			SetDivaImage(m_divaId, 1, 0);
 			int level = m_selectCostumeData.GKIKAABHAAD_Level;
-			if(m_selectCostumeData.JHLKLPEHHCD() == null || m_selectCostumeData.LLLCMHENKKN_LevelMax <= m_selectCostumeData.GKIKAABHAAD_Level)
+			if(m_selectCostumeData.JHLKLPEHHCD_GetCurrentLevelInfo() == null || m_selectCostumeData.LLLCMHENKKN_LevelMax <= m_selectCostumeData.GKIKAABHAAD_Level)
 			{
 				m_useItemButton.Disable = true;
 				m_rankUpUnlockButton.Disable = true;
 				m_conditionCheckButton.Disable = true;
 				level = m_selectCostumeData.LLLCMHENKKN_LevelMax - 1;
-				m_releaseValue.num.SetNumber(m_selectCostumeData.OCOOHBINGBG[m_selectCostumeData.LLLCMHENKKN_LevelMax - 1].DNBFMLBNAEE, 0);
-				m_releaseValue.max.SetNumber(m_selectCostumeData.OCOOHBINGBG[m_selectCostumeData.LLLCMHENKKN_LevelMax - 1].DNBFMLBNAEE, 0);
+				m_releaseValue.num.SetNumber(m_selectCostumeData.OCOOHBINGBG_LevelInfo[m_selectCostumeData.LLLCMHENKKN_LevelMax - 1].DNBFMLBNAEE_NeedPoint, 0);
+				m_releaseValue.max.SetNumber(m_selectCostumeData.OCOOHBINGBG_LevelInfo[m_selectCostumeData.LLLCMHENKKN_LevelMax - 1].DNBFMLBNAEE_NeedPoint, 0);
 			}
 			else
 			{
@@ -434,7 +434,7 @@ namespace XeApp.Game.Menu
 				m_rankUpUnlockButton.Disable = false;
 				m_conditionCheckButton.Disable = false;
 				m_releaseValue.num.SetNumber(m_selectCostumeData.ABLHIAEDJAI_Point, 0);
-				m_releaseValue.max.SetNumber(m_selectCostumeData.JHLKLPEHHCD().DNBFMLBNAEE, 0);
+				m_releaseValue.max.SetNumber(m_selectCostumeData.JHLKLPEHHCD_GetCurrentLevelInfo().DNBFMLBNAEE_NeedPoint, 0);
 			}
 			SettingRewardIcon(level);
 			bool b = true;
@@ -745,19 +745,82 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x16EFFBC Offset: 0x16EFFBC VA: 0x16EFFBC
 		private void CallBackUseItem()
 		{
-			TodoLogger.LogNotImplemented("CallBackUseItem");
+			isItemSelectScene = true;
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			CostumeUpgradeItemSelectSceneArgs arg = new CostumeUpgradeItemSelectSceneArgs();
+			arg.upgradeData = m_filterCostumeDataList[m_cursorIndex];
+			arg.data = m_costumeUpgradeData;
+			arg.isPrevCostumeSelect = isPrevCostumeSelect;
+			MenuScene.Instance.Call(TransitionList.Type.COSTUME_UPGRADE_ITEM_SELECT, arg, true);
 		}
 
 		//// RVA: 0x16F0178 Offset: 0x16F0178 VA: 0x16F0178
 		private void CallBackRankUpUnlock()
 		{
-			TodoLogger.LogNotImplemented("CallBackRankUpUnlock");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			CostumeRankUpUnlockPopupSetting s = new CostumeRankUpUnlockPopupSetting();
+			s.TitleText = bk.GetMessageByLabel("costume_upgrade_rankup_title_text");
+			s.m_parent = transform;
+			s.m_data = m_selectCostumeData;
+			s.m_upgrade = m_costumeUpgradeData;
+			s.WindowSize = SizeType.Middle;
+			s.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Release, Type = PopupButton.ButtonType.Positive }
+			};
+			m_rank_unlock_window = s;
+			bool isApplyUnlockConnected = false;
+			bool isStartApplyCostumeUnlock = false;
+			bool isRankUpAnimation = false;
+			PopupWindowManager.Show(m_rank_unlock_window, null, null, null, null, closeStartWaitCallBack: (PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x16F18FC
+				if(label == PopupButton.ButtonLabel.Release)
+				{
+					if(!isStartApplyCostumeUnlock)
+					{
+						isStartApplyCostumeUnlock = true;
+						m_costumeUpgradeData.JDLAFDBFLOM(m_selectCostumeData, () =>
+						{
+							//0x16F1AB4
+							m_costumeUpgradeData.COLOGGOJGAJ();
+							SettingRelase(true);
+							isApplyUnlockConnected = true;
+						});
+					}
+					if(!isApplyUnlockConnected)
+						return false;
+					else
+					{
+						if(!isRankUpAnimation)
+						{
+							m_rank_unlock_window.StartRankUnlockAnimation();
+							isRankUpAnimation = true;
+						}
+						return !m_rank_unlock_window.IsPlayingAnimation();
+					}
+				}
+				else
+					return true;
+			});
 		}
 
 		//// RVA: 0x16F0564 Offset: 0x16F0564 VA: 0x16F0564
 		private void CallBackConditionCheck()
 		{
-			TodoLogger.LogNotImplemented("CallBackConditionCheck");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			CostumeRankUpUnlockPopupSetting s = new CostumeRankUpUnlockPopupSetting();
+			s.TitleText = bk.GetMessageByLabel("costume_upgrade_rankup_title_text");
+			s.m_parent = transform;
+			s.m_data = m_selectCostumeData;
+			s.m_upgrade = m_costumeUpgradeData;
+			s.WindowSize = SizeType.Middle;
+			s.Buttons = new ButtonInfo[1] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative } };
+			m_rank_unlock_window = s;
+			PopupWindowManager.Show(s, null, null, null, null);
 		}
 
 		//// RVA: 0x16EFAE0 Offset: 0x16EFAE0 VA: 0x16EFAE0
@@ -837,13 +900,13 @@ namespace XeApp.Game.Menu
 				MenuScene.Instance.CostumeIconCache.TryInstallCostume(m_costumeUpgradeData.MGJKEJHEBPO[i].AHHJLDLAPAN_DivaId, m_costumeUpgradeData.MGJKEJHEBPO[i].DAJGPBLEEOB_PrismCostumeId, 0);
 				MenuScene.Instance.DivaIconCache.TryInstall(m_costumeUpgradeData.MGJKEJHEBPO[i].AHHJLDLAPAN_DivaId, 1, 0);
 				MenuScene.Instance.DivaIconCache.TryStateDivaIconInstall(m_costumeUpgradeData.MGJKEJHEBPO[i].AHHJLDLAPAN_DivaId, 1, 0);
-				for(int j = 0; j < m_costumeUpgradeData.MGJKEJHEBPO[i].OCOOHBINGBG.Count; j++)
+				for(int j = 0; j < m_costumeUpgradeData.MGJKEJHEBPO[i].OCOOHBINGBG_LevelInfo.Count; j++)
 				{
-					if(m_costumeUpgradeData.MGJKEJHEBPO[i].OCOOHBINGBG[j].PEEAGFNOFFO_UnlockType == LCLCCHLDNHJ_Costume.FPDJGDGEBNG.CFOEMAAKOMC/*4*/)
+					if(m_costumeUpgradeData.MGJKEJHEBPO[i].OCOOHBINGBG_LevelInfo[j].PEEAGFNOFFO_UnlockType == LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_Costume/*4*/)
 					{
-						MenuScene.Instance.ItemTextureCache.TryInstall(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume, m_costumeUpgradeData.MGJKEJHEBPO[i].JPIDIENBGKH_CostumeId), m_costumeUpgradeData.MGJKEJHEBPO[i].OCOOHBINGBG[j].KJNAHLOODKD_Value[0]);
+						MenuScene.Instance.ItemTextureCache.TryInstall(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume, m_costumeUpgradeData.MGJKEJHEBPO[i].JPIDIENBGKH_CostumeId), m_costumeUpgradeData.MGJKEJHEBPO[i].OCOOHBINGBG_LevelInfo[j].KJNAHLOODKD_Value[0]);
 					}
-					else if(m_costumeUpgradeData.MGJKEJHEBPO[i].OCOOHBINGBG[j].PEEAGFNOFFO_UnlockType == LCLCCHLDNHJ_Costume.FPDJGDGEBNG.NKKIKONDGPF/*1*/)
+					else if(m_costumeUpgradeData.MGJKEJHEBPO[i].OCOOHBINGBG_LevelInfo[j].PEEAGFNOFFO_UnlockType == LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.NKKIKONDGPF_1/*1*/)
 					{
 						MenuScene.Instance.ItemTextureCache.TryInstall(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume, m_costumeUpgradeData.MGJKEJHEBPO[i].JPIDIENBGKH_CostumeId), 0);
 					}

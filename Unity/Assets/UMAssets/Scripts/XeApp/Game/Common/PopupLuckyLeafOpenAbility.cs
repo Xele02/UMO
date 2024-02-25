@@ -1,5 +1,7 @@
+using mcrs;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using XeApp.Game.Menu;
 
 namespace XeApp.Game.Common
 {
@@ -8,7 +10,7 @@ namespace XeApp.Game.Common
 		private Transform parent; // 0xC
 		private LuckyLeafOpenAbility luckyLeafOpenAbilityLayout; // 0x10
 
-		public Transform Parent { get; } // 0x1BAEEDC
+		public Transform Parent { get { return parent; } } // 0x1BAEEDC
 
 		// RVA: 0x1BAEC4C Offset: 0x1BAEC4C VA: 0x1BAEC4C Slot: 17
 		public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
@@ -54,7 +56,18 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1BAEEE4 Offset: 0x1BAEEE4 VA: 0x1BAEEE4
 		private void HelpButtonEvent()
 		{
-			TodoLogger.LogNotImplemented("HelpButtonEvent");
+			int id = HelpButton.FindHelpUniqueId(113);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(id > -1)
+			{
+				GameManager.Instance.CloseSnsNotice();
+				MenuScene.Instance.InputDisable();
+				MenuScene.Instance.HelpPopupWindowControl.Show(MenuScene.Instance, id, () =>
+				{
+					//0x1BAF1F8
+					MenuScene.Instance.InputEnable();
+				});
+			}
 		}
 	}
 }

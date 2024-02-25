@@ -47,7 +47,15 @@ namespace XeApp.Game.Common
 		public bool isWaitUnlockBoneSpring { get; private set; } // 0x54
 		//public bool isWaitLockBoneSpring { get; private set; } 0x1BF2268 0x1BF2270
 		protected virtual bool useQualitySetting { get { return true; } } //0x1BF2274 
-		//protected float Anim_speed { set; } 0x1BF6CA0
+		protected float Anim_speed { set 
+		{
+			animator.speed = value;
+			facialBlendAnimMediator.selfAnimator.speed = value;
+			if(m_boneSpringAnim != null && m_boneSpringAnim.animator != null)
+				m_boneSpringAnim.animator.speed = value;
+			if(mikeStandObject != null)
+				mikeStandObject.animator.speed = value;
+		} } //0x1BF6CA0
 		
 		//// RVA: 0x1BF227C Offset: 0x1BF227C VA: 0x1BF227C
 		public void Initialize(DivaResource resource, int divaId, bool useCommonMike = false)
@@ -58,7 +66,12 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF25B4 Offset: 0x1BF25B4 VA: 0x1BF25B4
-		//public void InitializeSub(DivaResource resource, int divaId, bool useCommonMike = False) { }
+		public void InitializeSub(DivaResource resource, int divaId, bool useCommonMike = false)
+		{
+			InnerInitialize(resource, divaId, useCommonMike, false);
+			SetupEffectObject(resource.subPrefabEffect);
+			SetupWind(resource.subPrefabWind, resource.subBoneSpringResource);
+		}
 
 		//// RVA: 0x1BF2314 Offset: 0x1BF2314 VA: 0x1BF2314
 		private void InnerInitialize(DivaResource resource, int divaId, bool useCommonMike, bool isMain)

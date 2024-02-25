@@ -42,7 +42,7 @@ public class JKNNIKNKMNJ
 				PINPIHODOKP = GPBGFJONHPB_GetMaxIntimacy();
 			HICKJFPDBEG = PINPIHODOKP ^ FBGGEFFJJHB;
 		} } //0x1472770 DNNADJLKBPC 0x14724A8 BJOJAFDBOBL
-	public int DCBENCMNOGO_Gain { get
+	public int DCBENCMNOGO_MaxCount { get
 		{
 			if ((EMGIAPOEKLL ^ FBGGEFFJJHB) != BPADHGOCPIH)
 				MNJAPFEIOKD |= 4;
@@ -123,41 +123,41 @@ public class JKNNIKNKMNJ
 	{
 		if(!LIFPCFFJEOA)
 		{
-			if(DCBENCMNOGO_Gain <= NEPIPMPAFIE_CntVal)
+			if(DCBENCMNOGO_MaxCount <= NEPIPMPAFIE_CntVal)
 			{
 				return NEPIPMPAFIE_CntVal;
 			}
 		}
-		int diff = NEPIPMPAFIE_CntVal - DCBENCMNOGO_Gain;
+		int diff = DCBENCMNOGO_MaxCount - NEPIPMPAFIE_CntVal;
 		long updateDiff = diff * FLJGHBLEDDB_UpdateInterval;
 		long diff2 = FJDBNGEPKHL_Time - DLPEEDCCNMJ_CntSaveTime;
 		if(updateDiff < diff2)
 		{
 			diff2 = updateDiff;
 		}
-		long v = NEPIPMPAFIE_CntVal + diff2 % FLJGHBLEDDB_UpdateInterval; // % or/ ?
-		if(v <= DCBENCMNOGO_Gain)
+		long v = NEPIPMPAFIE_CntVal + diff2 / FLJGHBLEDDB_UpdateInterval; // % or/ ?
+		if(v <= DCBENCMNOGO_MaxCount)
 		{
 			return (int)v;
 		}
-		return DCBENCMNOGO_Gain;
+		return DCBENCMNOGO_MaxCount;
 	}
 
 	// // RVA: 0x1472B28 Offset: 0x1472B28 VA: 0x1472B28
 	public long CKEJFCLAOHP_GetRemainingTime()
 	{
-		if (NEPIPMPAFIE_CntVal < DCBENCMNOGO_Gain)
+		if (NEPIPMPAFIE_CntVal < DCBENCMNOGO_MaxCount)
 		{
-			int staminaDiff = DCBENCMNOGO_Gain - NEPIPMPAFIE_CntVal;
-			int stamTime = (int)(staminaDiff * FLJGHBLEDDB_UpdateInterval);
+			int cntLeft = DCBENCMNOGO_MaxCount - NEPIPMPAFIE_CntVal;
+			int stamTime = (int)(cntLeft * FLJGHBLEDDB_UpdateInterval);
 			if ((FJDBNGEPKHL_Time - DLPEEDCCNMJ_CntSaveTime) < stamTime)
 			{
-				long delta = (FJDBNGEPKHL_Time - DLPEEDCCNMJ_CntSaveTime) / FLJGHBLEDDB_UpdateInterval;
+				long delta = (stamTime - (FJDBNGEPKHL_Time - DLPEEDCCNMJ_CntSaveTime)) % FLJGHBLEDDB_UpdateInterval;
 				if (delta != 0)
 				{
 					return delta;
 				}
-				return stamTime;
+				return FLJGHBLEDDB_UpdateInterval;
 			}
 		}
 		return 0;

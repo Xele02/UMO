@@ -2822,6 +2822,7 @@ public class KDHGBOOECKC
 								{
 									if (ECBHIIOABCK() - LJMOMAGLEGL(BOPFPIHGJMD.MLBMHDCCGHI.GENEIBGNMPH_4_Debut, BOPFPIHGJMD.IGHPDAGKIKO.CADDNFIKDLG_4_Complete, true) > 0)
 										return res;
+									res = of.ADPPAIPFHML;
 								}
 								else if(of.OAFPGJLCNFM_ReleaseCondition == 0)
 									res = of.ADPPAIPFHML;
@@ -2836,7 +2837,10 @@ public class KDHGBOOECKC
 	}
 
 	// // RVA: 0x1033E30 Offset: 0x1033E30 VA: 0x1033E30
-	// public bool OOOMMBCDOBO() { }
+	public bool OOOMMBCDOBO()
+	{
+		return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DAEJHMCMFJD_Offer.GHKKEFGDIBC_LastVfpUnlock < JGFHJPGJJHP();
+	}
 
 	// // RVA: 0x1033F2C Offset: 0x1033F2C VA: 0x1033F2C
 	public string OMPLNLDPOFN_GetReleaseCondText(int OIOECMEEFKJ)

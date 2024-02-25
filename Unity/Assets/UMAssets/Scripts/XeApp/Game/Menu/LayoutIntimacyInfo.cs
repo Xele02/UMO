@@ -230,10 +230,10 @@ namespace XeApp.Game.Menu
 			crntMaxExp = m_viewData.JCFAPAOLDOI(result.KBHJOBKOOGC_NextLevel + 1);
 			float f = 1;
 			if(!result.EDPNAEOKGNM)
-				f = result.BJHAMEJPGAJ_Exp / a1;
+				f = result.BJHAMEJPGAJ_Exp * 1.0f / a1;
 			endNormExp = 1;
 			if (!result.PFIILLOIDIL)
-				endNormExp = result.EOIJEGJDLAN_AfterExp / crntMaxExp;
+				endNormExp = result.EOIJEGJDLAN_AfterExp * 1.0f / crntMaxExp;
 			startValue = f + result.CPDEMMFGKED_Level;
 			if (result.EDPNAEOKGNM)
 				startValue = result.CPDEMMFGKED_Level;
@@ -254,7 +254,7 @@ namespace XeApp.Game.Menu
 				if (result.KBHJOBKOOGC_NextLevel == currentFrameLevel)
 					UpdateGaugePosition(result.PFIILLOIDIL ? 1 : (f2 % 1));
 				else
-					UpdateGaugePosition(1);
+					UpdateGaugePosition(f2 % 1);
 				int exp = m_viewData.JCFAPAOLDOI(currentFrameLevel + 1);
 				SetExp((int)(exp * (f2 % 1)), exp);
 				if(prevLevel < currentFrameLevel)

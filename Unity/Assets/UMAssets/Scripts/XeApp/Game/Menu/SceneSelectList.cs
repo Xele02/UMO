@@ -442,7 +442,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x137D038 Offset: 0x137D038 VA: 0x137D038
 		public static uint GetSceneIconBitFlag(DFKGGBMFFGB_PlayerInfo playerData, GCIJNCFDNON_SceneInfo sceneData, bool isGoDiva)
 		{
-			int res = sceneData.CADENLBDAEB ? 1 : 0;
+			int res = sceneData.CADENLBDAEB_New ? 1 : 0;
 			if(IsUnitScene(playerData, sceneData, isGoDiva))
 				res |= 2;
 			if(sceneData.MCCIFLKCNKO_Feed)

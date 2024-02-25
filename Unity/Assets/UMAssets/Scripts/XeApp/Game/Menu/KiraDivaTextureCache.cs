@@ -1,3 +1,5 @@
+using System;
+
 namespace XeApp.Game.Menu
 {
 	public class KiraDivaTextureCache : IconTextureCache
@@ -19,11 +21,15 @@ namespace XeApp.Game.Menu
 		// RVA: 0x14BE49C Offset: 0x14BE49C VA: 0x14BE49C Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
 		{
-			TodoLogger.LogError(0, "CreateIconTexture");
-			return null;
+			QuestEventIconTexture tex = new QuestEventIconTexture();
+			SetupForSplitTexture(info, tex);
+			return tex;
 		}
 
 		// RVA: 0x14BE524 Offset: 0x14BE524 VA: 0x14BE524
-		// public void Load(int id, Action<IiconTexture> callback) { }
+		public void Load(int id, Action<IiconTexture> callback)
+		{
+			Load(string.Format("ct/dv/gc/kira/{0:D2}.xab", id), callback);
+		}
 	}
 }

@@ -192,33 +192,216 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x177B1B0 Offset: 0x177B1B0 VA: 0x177B1B0
 		public IEnumerator RarityUpPhase(List<GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo> highList, Action callback)
 		{
-			TodoLogger.LogError(0, "RarityUpPhase");
-			yield return null;
+			int i;
+
+			//0x1781078
+			if(highList.Count < 1)
+				yield break;
+			IsShowRarityUp = true;
+			GameManager.Instance.NowLoading.Show();
+			bool isLoading = false;
+			mb.StartCoroutineWatched(LoadLayoutPlate(() =>
+			{
+				//0x177D2FC
+				isLoading = true;
+			}));
+			while(!isLoading)
+				yield return null;
+			isLoading = false;
+			mb.StartCoroutineWatched(InitializeSceneCard(() =>
+			{
+				//0x177D308
+				isLoading = true;
+			}));
+			while(!isLoading)
+				yield return null;
+			isLoading = false;
+			mb.StartCoroutineWatched(LoadLayoutPlateLvup(() =>
+			{
+				//0x177D314
+				isLoading = true;
+			}));
+			while(!isLoading)
+				yield return null;
+			GameManager.Instance.NowLoading.Hide();
+			m_overlapLvup.transform.SetParent(CanvasParent.transform, false);
+			m_overlapLvup.transform.SetAsLastSibling();
+			for(i = 0; i < highList.Count; i++)
+			{
+				if(MenuScene.Instance != null)
+					MenuScene.Instance.RaycastDisable();
+				m_overlapLvup.SetStatus(highList[i], m_sceneCard, m_sceneFrame);
+				while(IsLoadingSceneCard())
+					yield return null;
+				bool isWait = true;
+				m_overlapLvup.In();
+				m_overlapLvup.CallbackAnimEnd = () =>
+				{
+					//0x177D328
+					isWait = false;
+				};
+				while(isWait)
+					yield return null;
+				if(MenuScene.Instance != null)
+					MenuScene.Instance.RaycastEnable();
+				TerminatedSceneCard(highList);
+			}
+			m_overlapLvup.transform.SetParent(Parent.transform, false);
+			if(callback != null)
+				callback();
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70BE1C Offset: 0x70BE1C VA: 0x70BE1C
 		//// RVA: 0x177B290 Offset: 0x177B290 VA: 0x177B290
 		public IEnumerator SkillEvolutionPhase(List<GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo> highList, Action callback)
 		{
-			TodoLogger.LogError(0, "SkillEvolutionPhase");
-			yield return null;
+			GCIJNCFDNON_SceneInfo view1; // 0x1C
+			GCIJNCFDNON_SceneInfo view2; // 0x20
+			int i; // 0x24
+
+			//0x1781B00
+			if(highList.Count < 1)
+				yield break;
+			view1 = new GCIJNCFDNON_SceneInfo();
+			view2 = new GCIJNCFDNON_SceneInfo();
+			m_gachaSkillUpSetting.IsCaption = false;
+			m_gachaSkillUpSetting.WindowSize = SizeType.Middle;
+			m_gachaSkillUpSetting.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			for(i = 0; i < highList.Count; i++)
+			{
+				view1.KHEKNNFCAOI(highList[i].BCCHOBPJJKE_SceneId, null, null, 0, 0, 0, false, 0, 0);
+				view2.KHEKNNFCAOI(highList[i].BCCHOBPJJKE_SceneId, null, null, 1, 0, 0, false, 0, 0);
+				if(MenuScene.Instance != null)
+					MenuScene.Instance.RaycastDisable();
+				m_gachaSkillUpSetting.SceneId = highList[i].BCCHOBPJJKE_SceneId;
+				yield return Co.R(PopupActiveSkillUP(view1, view2));
+				yield return Co.R(PopupCenterSkillUP(view1, view2));
+				yield return Co.R(PopupLiveSkillUP(view1, view2));
+				if(MenuScene.Instance != null)
+					MenuScene.Instance.RaycastEnable();
+			}
+			if(callback != null)
+				callback();
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70BE94 Offset: 0x70BE94 VA: 0x70BE94
 		//// RVA: 0x177B370 Offset: 0x177B370 VA: 0x177B370
-		//private IEnumerator PopupActiveSkillUP(GCIJNCFDNON view1, GCIJNCFDNON view2) { }
+		private IEnumerator PopupActiveSkillUP(GCIJNCFDNON_SceneInfo view1, GCIJNCFDNON_SceneInfo view2)
+		{
+			//0x17807C8
+			if(view1.HGONFBDIBPM_ActiveSkillId == view2.HGONFBDIBPM_ActiveSkillId)
+				yield break;
+			bool isWait = true;
+			m_gachaSkillUpSetting.SkillType = GCIJNCFDNON_SceneInfo.DLAMEBMGKDO.DJECFFENCND;
+			PopupWindowManager.Show(m_gachaSkillUpSetting, (PopupWindowControl cont, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x177D33C
+				isWait = false;
+			}, null, null, null);
+			while(isWait)
+				yield return null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70BF0C Offset: 0x70BF0C VA: 0x70BF0C
 		//// RVA: 0x177B450 Offset: 0x177B450 VA: 0x177B450
-		//private IEnumerator PopupCenterSkillUP(GCIJNCFDNON view1, GCIJNCFDNON view2) { }
+		private IEnumerator PopupCenterSkillUP(GCIJNCFDNON_SceneInfo view1, GCIJNCFDNON_SceneInfo view2)
+		{
+			//0x1780A8C
+			if(view1.MEOOLHNNMHL_GetCenterSkillId(false, 0, 0) == view2.MEOOLHNNMHL_GetCenterSkillId(false, 0, 0))
+				yield break;
+			bool isWait = true;
+			m_gachaSkillUpSetting.SkillType = GCIJNCFDNON_SceneInfo.DLAMEBMGKDO.DFAPCDGNNPN;
+			PopupWindowManager.Show(m_gachaSkillUpSetting, (PopupWindowControl cont, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x177D350
+				isWait = false;
+			}, null, null, null);
+			while(isWait)
+				yield return null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70BF84 Offset: 0x70BF84 VA: 0x70BF84
 		//// RVA: 0x177B530 Offset: 0x177B530 VA: 0x177B530
-		//private IEnumerator PopupLiveSkillUP(GCIJNCFDNON view1, GCIJNCFDNON view2) { }
+		private IEnumerator PopupLiveSkillUP(GCIJNCFDNON_SceneInfo view1, GCIJNCFDNON_SceneInfo view2)
+		{
+			//0x1780D80
+			if(view1.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) == view2.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0))
+				yield break;
+			bool isWait = true;
+			m_gachaSkillUpSetting.SkillType = GCIJNCFDNON_SceneInfo.DLAMEBMGKDO.OONCLCEAICE;
+			PopupWindowManager.Show(m_gachaSkillUpSetting, (PopupWindowControl cont, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x177D364
+				isWait = false;
+			}, null, null, null);
+			while(isWait)
+				yield return null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70BFFC Offset: 0x70BFFC VA: 0x70BFFC
 		//// RVA: 0x177B610 Offset: 0x177B610 VA: 0x177B610
-		//public IEnumerator KiraUpPhase(int sceneId, int baseRare, Action callback) { }
+		public IEnumerator KiraUpPhase(int sceneId, int baseRare, Action callback)
+		{
+			int _divaId; // 0x24
+			bool _isPlayDivaVoice; // 0x28
+
+			//0x177E0EC
+			if(sceneId < 1)
+				yield break;
+			IsShowKiraUp = true;
+			_divaId = 1;
+			FFHPBEPOMAK_DivaInfo data = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
+			if(data != null)
+				_divaId = data.AHHJLDLAPAN_DivaId;
+			int homeDiva = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId;
+			if(homeDiva > 0)
+				_divaId = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[homeDiva - 1].AHHJLDLAPAN_DivaId;
+			GameManager.Instance.NowLoading.Show();
+			bool isLoading = false;
+			mb.StartCoroutineWatched(LoadLayoutPlate(() =>
+			{
+				//0x177D378
+				isLoading = true;
+			}));
+			while(!isLoading)
+				yield return null;
+			isLoading = false;
+			mb.StartCoroutineWatched(InitializeSceneCard(() =>
+			{
+				//0x177D384
+				isLoading = true;
+			}));
+			while(!isLoading)
+				yield return null;
+			isLoading = false;
+			yield return Co.R(m_kiraProduct.Co_LoadLayout(CanvasParent.transform));
+			while(!m_kiraProduct.IsLayoutLoaded)
+				yield return null;
+			yield return Co.R(m_kiraProduct.SettingDivaVoice(_divaId));
+			GameManager.Instance.NowLoading.Hide();
+			m_kiraProduct.AllLayoutSetAsLastSibling();
+			_isPlayDivaVoice = false;
+			m_kiraProduct.SettingAnimLayout(_divaId, m_sceneCard, m_sceneFrame, sceneId, baseRare);
+			while(!m_kiraProduct.IsEndSetting())
+				yield return null;
+			if(!_isPlayDivaVoice)
+			{
+				_isPlayDivaVoice = true;
+				yield return Co.R(m_kiraProduct.StartDivaVoice());
+			}
+			//LAB_0177e78c
+			yield return Co.R(m_kiraProduct.StartKiraAnimation());
+			m_kiraProduct.AllLayoutHide();
+			m_sceneCard.Terminated();
+			m_sceneFrame.Terminated();
+			yield return Co.R(m_kiraProduct.ResetDivaVoice(_divaId));
+			m_kiraProduct.AllLayoutChangeParent(Parent.transform, false);
+			if(callback != null)
+				callback();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C074 Offset: 0x70C074 VA: 0x70C074
 		//// RVA: 0x177B708 Offset: 0x177B708 VA: 0x177B708
@@ -406,7 +589,24 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C344 Offset: 0x70C344 VA: 0x70C344
 		//// RVA: 0x177BEA8 Offset: 0x177BEA8 VA: 0x177BEA8
-		//private IEnumerator LoadLayoutPlateLvup(Action callback) { }
+		private IEnumerator LoadLayoutPlateLvup(Action callback)
+		{
+			//0x1780160
+			if(m_overlapLvup == null)
+			{
+				yield return Co.R(LoadLayout("ly/073.xab", "root_gacha_overlap_plate_lvup_layout_root", (GameObject instance) =>
+				{
+					//0x177CD18
+					if(Parent != null)
+					{
+						instance.transform.SetParent(Parent.transform, false);
+					}
+					m_overlapLvup = instance.GetComponent<LayoutOverlapPlateLvup>();
+				}));
+			}
+			if(callback != null)
+				callback();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C3BC Offset: 0x70C3BC VA: 0x70C3BC
 		//// RVA: 0x177BF70 Offset: 0x177BF70 VA: 0x177BF70
@@ -450,7 +650,16 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C4AC Offset: 0x70C4AC VA: 0x70C4AC
 		//// RVA: 0x177C100 Offset: 0x177C100 VA: 0x177C100
-		//private IEnumerator InitializeSceneCard(Action callback) { }
+		private IEnumerator InitializeSceneCard(Action callback)
+		{
+			//0x177DDDC
+			if(m_sceneCard != null)
+			{
+				yield return Co.R(m_sceneCard.Initialize(false));
+			}
+			if(callback != null)
+				callback();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70C524 Offset: 0x70C524 VA: 0x70C524
 		//// RVA: 0x177C1C8 Offset: 0x177C1C8 VA: 0x177C1C8
@@ -525,10 +734,22 @@ namespace XeApp.Game.Menu
 		//private void SceneCardUpdete() { }
 
 		//// RVA: 0x177C5F4 Offset: 0x177C5F4 VA: 0x177C5F4
-		//private bool IsLoadingSceneCard() { }
+		private bool IsLoadingSceneCard()
+		{
+			return m_sceneCard.IsLoading() || m_sceneFrame.IsLoading();
+		}
 
 		//// RVA: 0x177C650 Offset: 0x177C650 VA: 0x177C650
-		//private void TerminatedSceneCard(List<GONMPHKGKHI.LCMJJMNMIKG> highList) { }
+		private void TerminatedSceneCard(List<GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo> highList)
+		{
+			if(m_sceneType == RecordPlateUtility.eSceneType.Gacha)
+			{
+				if(highList.Count < 2)
+					return;
+			}
+			m_sceneCard.Terminated();
+			m_sceneFrame.Terminated();
+		}
 
 		//// RVA: 0x177C72C Offset: 0x177C72C VA: 0x177C72C
 		private void ShowTutorial_21()
@@ -561,9 +782,5 @@ namespace XeApp.Game.Menu
 		{
 			return conditionId == TutorialConditionId.Condition39;
 		}
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x70C734 Offset: 0x70C734 VA: 0x70C734
-		//// RVA: 0x177CD18 Offset: 0x177CD18 VA: 0x177CD18
-		//private void <LoadLayoutPlateLvup>b__52_0(GameObject instance) { }
 	}
 }

@@ -169,7 +169,6 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 		MBJOBPJKGBO = false;
 		CGDIFBMIJJH_AddDiva = false;
 		DDNCFHEKBAF_LockCondition = MGKOEEMNFJD(LFLLLOPAKCO_StoryId);
-		UnityEngine.Debug.LogError(NDFOAINJPIN_Pos+" LockStatus = "+DDNCFHEKBAF_LockCondition);
 		NEKDCJKANAH_StoryRecord.HKDNILFKCFC saveStory = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LNOOKHJBENO_StoryRecord.MMKAJBFBKNH[LFLLLOPAKCO_StoryId - 1];
 		if((saveStory.OKJMIFELDMD_Opn & 1) == 0)
 		{
@@ -267,9 +266,8 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 		MessageBank bkMaster = MessageManager.Instance.GetBank("master");
 		if(DDNCFHEKBAF_LockCondition > 3)
 		{
-			if ((DDNCFHEKBAF_LockCondition & 7) != 7)
+			if (((DDNCFHEKBAF_LockCondition / 4) % 2) != 0) // 4-7 / 12-15 / ...
 			{
-				TodoLogger.LogError(0, "Check test "+DDNCFHEKBAF_LockCondition);
 				return;
 			}
 			FHPHCFEEBMP = bkMaster.GetMessageByLabel("story_unlock_07");
@@ -357,7 +355,7 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 			ILCCJNDFFOB.HHCJCDFCLOB.AOPBBHMIEPB(LFLLLOPAKCO_StoryId);
 			PGCCOCKGCKO = true;
 			DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo dinfo = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[AHHJLDLAPAN_DivaId - 1];
-			saveStory.EALOBDHOCHP_Stat = 6;
+			saveStory.EALOBDHOCHP_Stat = 4;
 			dinfo.CPGFPEDMDEH_Have = 1;
 			CADENLBDAEB = false;
 			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.CGBCFBGJHKC(AHHJLDLAPAN_DivaId);

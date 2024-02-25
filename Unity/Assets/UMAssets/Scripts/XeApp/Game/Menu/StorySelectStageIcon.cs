@@ -316,7 +316,6 @@ namespace XeApp.Game.Menu
 						{
 							if(!viewData.PGCCOCKGCKO)
 							{
-								UnityEngine.Debug.LogError(viewData.NDFOAINJPIN_Pos + "st_wait");
 								m_stage_icon.StartChildrenAnimGoStop("st_wait");
 								if(viewData.HHBJAEOIGIH_IsLocked)
 								{
@@ -333,7 +332,6 @@ namespace XeApp.Game.Menu
 							{
 								if(viewData.MMEGDFPNONJ_HasDivaId)
 								{
-									UnityEngine.Debug.LogError(viewData.NDFOAINJPIN_Pos + "st_wait");
 									m_stage_icon.StartChildrenAnimGoStop("st_wait");
 									if(m_noiseAnim != null)
 									{
@@ -350,14 +348,12 @@ namespace XeApp.Game.Menu
 						}
 						else
 						{
-							UnityEngine.Debug.LogError(viewData.NDFOAINJPIN_Pos + "st_wait");
 							m_stage_icon.StartChildrenAnimGoStop("st_wait");
 							if (m_iconStatusTbl != null)
 								m_iconStatusTbl.StartChildrenAnimGoStop("01");
 							if (viewData.MMEGDFPNONJ_HasDivaId)
 							{
 								SetStamp(viewData.AHHJLDLAPAN_DivaId);
-								UnityEngine.Debug.LogError(viewData.NDFOAINJPIN_Pos + "st_get_wait");
 								m_stage_icon.StartChildrenAnimGoStop("st_get_wait");
 								if(m_stampAnim != null)
 								{
@@ -373,7 +369,6 @@ namespace XeApp.Game.Menu
 					{
 						if(viewData.MMEGDFPNONJ_HasDivaId)
 						{
-							UnityEngine.Debug.LogError(viewData.NDFOAINJPIN_Pos + "st_wait");
 							m_stage_icon.StartChildrenAnimGoStop("st_wait");
 							if(m_noiseAnim != null)
 							{
@@ -388,7 +383,6 @@ namespace XeApp.Game.Menu
 						}
 						else
 						{
-							UnityEngine.Debug.LogError(viewData.NDFOAINJPIN_Pos + "st_lock");
 							m_stage_icon.StartChildrenAnimGoStop("st_lock");
 							if(m_noiseAnim != null)
 							{
@@ -400,7 +394,6 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					UnityEngine.Debug.LogError(viewData.NDFOAINJPIN_Pos + "st_non");
 					m_stage_icon.StartChildrenAnimGoStop("st_non");
 					if (m_iconStatusTbl != null)
 						m_iconStatusTbl.StartChildrenAnimGoStop("02");
@@ -467,7 +460,6 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					UnityEngine.Debug.LogError(viewData.NDFOAINJPIN_Pos + "go_bot_act > st_bot_act");
 					m_stage_icon.StartChildrenAnimGoStop("go_bot_act", "st_bot_act");
 				}
 				SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_STORY_000);

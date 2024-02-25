@@ -464,7 +464,7 @@ namespace XeApp.Game.Menu
 		{
 			if(afterScene != null)
 			{
-				afterScene.CADENLBDAEB = false;
+				afterScene.CADENLBDAEB_New = false;
 			}
 			Action ac = null;
 			if(GameManager.Instance.IsTutorial)
@@ -907,7 +907,15 @@ namespace XeApp.Game.Menu
 									GameManager.Instance.AddPushBackButtonHandler(dymmyBackHandler);
 									BasicTutorialManager.Instance.ShowMessageWindow(BasicTutorialMessageId.Id_EpisodeMission2, () => {
 										//0xA5846C
-										TodoLogger.LogError(0, "Tutorial");
+										BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.Delegate, () =>
+										{
+											//0xA585D0
+											GameManager.Instance.RemovePushBackButtonHandler(dymmyBackHandler);
+										}, () =>
+										{
+											//0xA5845C
+											return button;
+										}, TutorialPointer.Direction.Normal);
 									}, null);
 								}
 							}
@@ -1192,7 +1200,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				sceneInfo.CADENLBDAEB = false;
+				sceneInfo.CADENLBDAEB_New = false;
 				sceneInfo.LEHDLBJJBNC_SetNotNew();
 				m_selectedSceneId = sceneInfo.BCCHOBPJJKE_SceneId;
 				MenuScene.Instance.Call(TransitionList.Type.SCENE_GROWTH, new SceneGrowthSceneArgs(sceneInfo, m_isBeginner), true);

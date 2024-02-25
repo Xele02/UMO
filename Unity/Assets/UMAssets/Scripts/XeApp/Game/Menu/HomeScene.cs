@@ -1244,13 +1244,13 @@ namespace XeApp.Game.Menu
 			m_isWaitIntro = true;
 			m_isAbortIntro = false;
 			coList = new List<Func<IEnumerator>>();
-			if (UI_PlayRecord.IsFirstLaunch())
+			/*if (UI_PlayRecord.IsFirstLaunch())
 			{
 				if (m_playRecordBanner.IsSetup())
 				{
 					coList.Add(CO_ExecutePlayRecordFirst);
 				}
-			}
+			}*/ // Disable on UMO cause new account don't need this
 			isFirstHome = !MenuScene.IsAlreadyHome;
 			isFirstTitleFlow = MenuScene.IsFirstTitleFlow;
 			if (isFirstHome)
@@ -2208,8 +2208,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x97ADFC Offset: 0x97ADFC VA: 0x97ADFC
 		private IEnumerator Co_SnsScreen()
 		{
-			TodoLogger.LogError(0, "Co_SnsScreen");
-			yield return null;
+			//0x13D8380
+			yield return Co.R(Co_OpenSnsScreen());
+			if(m_snsScreen != null)
+			{
+				while(m_snsScreen.IsPlaying)
+					yield return null;
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E3DA4 Offset: 0x6E3DA4 VA: 0x6E3DA4

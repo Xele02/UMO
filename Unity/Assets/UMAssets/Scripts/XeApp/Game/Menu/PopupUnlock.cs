@@ -137,11 +137,9 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1158E48 Offset: 0x1158E48 VA: 0x1158E48
 		private void SetViewData(eSceneType sceneType, List<FAGCLBOACEE> viewData)
 		{
-			UnityEngine.Debug.LogError(viewData.Count);
 			for(int i = 0; i < viewData.Count; i++)
 			{
 				UnlockParam param = new UnlockParam();
-				UnityEngine.Debug.LogError(viewData[i].DEPGBBJMFED);
 				switch(viewData[i].DEPGBBJMFED)
 				{
 					case FAGCLBOACEE.BEFPBAIONFK.KDGLIKDMGCN/*1*/:
@@ -229,7 +227,6 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1159878 Offset: 0x1159878 VA: 0x1159878
 		public void ViewInitialize(eSceneType type)
 		{
-			UnityEngine.Debug.LogError(type);
 			switch(type)
 			{
 				case eSceneType.StorySelect:
@@ -542,7 +539,7 @@ namespace XeApp.Game.Menu
 					break;
 				case eUnlockType.DivaNotify:
 					{
-						PopupUnlockDivaContentSetting s = new PopupUnlockDivaContentSetting();
+						PopupUnlockNotifyDivaSetting s = new PopupUnlockNotifyDivaSetting();
 						s.TitleText = "";
 						s.WindowSize = SizeType.Small;
 						s.Buttons = new ButtonInfo[2]

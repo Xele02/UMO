@@ -228,6 +228,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator EntranceDefault(bool isBootAnimIn = true, SNSTitleBar.eButtonType buttonType = SNSTitleBar.eButtonType.Default, bool isReviewTutorial = false)
 		{
 			//0x12D5C60
+			UnityEngine.Debug.LogError("EntranceDefault");
 			if(m_sceneType == eSceneType.Menu)
 			{
 				ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.PEPILDAEIEL/*45*/, 2, false);

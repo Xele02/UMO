@@ -104,7 +104,7 @@ public class FDDIIKBJNNA
 								}
 								//IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.NPKPBDIDBBG_Room[NDFIEMPPMLF.MALFHCHNEFN]
 								DDEMMEPBOIA_Sns.EFIFBJGKPJF saveSns = GHCOHBMCNNJ[i];
-								if(DENGEJFHAFA || JHNMKKNEENE >= saveSns.BEBJKJKBOGH_Date)
+								if(DENGEJFHAFA || (saveSns.BEBJKJKBOGH_Date != 0 && JHNMKKNEENE >= saveSns.BEBJKJKBOGH_Date))
 								{
 									SNSRoomTextData.Header header = Database.Instance.roomText.textData.FindHeader(NDFIEMPPMLF.AJIDLAGFPGM);
 									if(header != null)

@@ -667,9 +667,8 @@ namespace XeApp.Game.Menu
 			if (m_prizeObject[arrayIndex].stampAnim == null)
 				yield break;
 			layout = m_prizeObject[arrayIndex].stampAnim;
-			int cnt = layout.GetView(0).FrameAnimation.FrameCount;
 			float lbl = layout.GetView(0).FrameAnimation.SearchLabelFrame("stamp_se");
-			while (cnt < lbl)
+			while (layout.GetView(0).FrameAnimation.FrameCount < lbl)
 				yield return null;
 			if (!m_isPlayStampSe && !m_isSkip)
 			{
@@ -842,7 +841,7 @@ namespace XeApp.Game.Menu
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_LOGIN_000);
 				m_isPlayStampSe = true;
 			}
-			if(m_rewardData.JPILDOGJLDG_LoginBonusPrizes[m_stampPlayDay].HBHMAKNGKFK_Items.Count > 1 && !m_isCheckItemPack)
+			if(m_rewardData.JPILDOGJLDG_LoginBonusPrizes[m_stampPlayDay].HBHMAKNGKFK_Items.Count >= 1 && !m_isCheckItemPack)
 			{
 				OpenItemPackPopup(m_rewardData.JPILDOGJLDG_LoginBonusPrizes[m_stampPlayDay], () =>
 				{
@@ -855,6 +854,7 @@ namespace XeApp.Game.Menu
 					return !m_isCheckItemPack;
 				});
 			}
+			m_skipEnd = true;
 		}
 
 		// RVA: 0x1D636A0 Offset: 0x1D636A0 VA: 0x1D636A0

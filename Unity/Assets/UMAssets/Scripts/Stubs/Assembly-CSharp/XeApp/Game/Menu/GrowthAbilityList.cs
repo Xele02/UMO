@@ -16,7 +16,7 @@ namespace XeApp.Game.Menu
 		[SerializeField]
 		private Text m_headerText; // 0x18
 		private LayoutUGUIRuntime m_sourceObject; // 0x1C
-		private List<LayoutUGUIRuntime> m_scrollObjects; // 0x20
+		private List<LayoutUGUIRuntime> m_scrollObjects = new List<LayoutUGUIRuntime>(); // 0x20
 
 		// RVA: 0xE21D98 Offset: 0xE21D98 VA: 0xE21D98 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
@@ -49,7 +49,7 @@ namespace XeApp.Game.Menu
 		public void SetValue(int index, int label, int value)
 		{
 			GrowthAbilityIcon icon = m_scrollObjects[index].GetComponent<GrowthAbilityIcon>();
-			icon.gameObject.SetActive(false);
+			icon.gameObject.SetActive(true);
 			icon.SetValue(label, value);
 		}
 
@@ -99,7 +99,7 @@ namespace XeApp.Game.Menu
 			yield return null;
 			for(int i = addStartIndex; i < m_scrollObjects.Count; i++)
 			{
-				m_scrollObjects[i].transform.SetParent(m_rootObject.transform);
+				m_scrollObjects[i].transform.SetParent(m_rootObject.transform, false);
 				(m_scrollObjects[i].transform as RectTransform).anchoredPosition = new Vector2((i % 2) * 291, (i / 2) * -41);
 			}
 		}

@@ -32,7 +32,14 @@ public class OJEGDIBEBHP
 	//public bool FBANBDCOEJL() { }
 
 	//// RVA: 0x148C700 Offset: 0x148C700 VA: 0x148C700
-	//public bool MCLFHOABKGP(int AHHJLDLAPAN) { }
+	public bool MCLFHOABKGP(int AHHJLDLAPAN)
+	{
+		if(AHHJLDLAPAN > 0)
+		{
+			return (BMBACIHEICJ & (1 << AHHJLDLAPAN - 1)) != 0;
+		}
+		return false;
+	}
 
 	//// RVA: 0x148C72C Offset: 0x148C72C VA: 0x148C72C
 	public static List<OJEGDIBEBHP> FKDIMODKKJD()
@@ -85,7 +92,10 @@ public class OJEGDIBEBHP
 	}
 
 	//// RVA: 0x148CD00 Offset: 0x148CD00 VA: 0x148CD00
-	//public static string MPKLLGIOBIP(int ADJBIEOILPJ) { }
+	public static string MPKLLGIOBIP_GetDesc2(int ADJBIEOILPJ)
+	{
+		return MessageManager.Instance.GetMessage("master", "itp_dsc2_" + ADJBIEOILPJ.ToString("D4"));
+	}
 
 	//// RVA: 0x148CDD8 Offset: 0x148CDD8 VA: 0x148CDD8
 	//public static void HCDGELDHFHB(List<OJEGDIBEBHP> NNDGIAEFMOG) { }

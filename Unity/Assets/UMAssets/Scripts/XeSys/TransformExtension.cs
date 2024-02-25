@@ -58,7 +58,10 @@ namespace XeSys
 
 		//[ExtensionAttribute] // RVA: 0x690520 Offset: 0x690520 VA: 0x690520
 		//// RVA: 0x23A7D18 Offset: 0x23A7D18 VA: 0x23A7D18
-		//public static void SetLocalPositionY(Transform transform, float y) { }
+		public static void SetLocalPositionY(this Transform transform, float y)
+		{
+			transform.localPosition = new Vector3(transform.localPosition.x, y, transform.localPosition.z);
+		}
 
 		//[ExtensionAttribute] // RVA: 0x690530 Offset: 0x690530 VA: 0x690530
 		//// RVA: 0x23A7DD0 Offset: 0x23A7DD0 VA: 0x23A7DD0
@@ -73,7 +76,10 @@ namespace XeSys
 
 		//[ExtensionAttribute] // RVA: 0x690550 Offset: 0x690550 VA: 0x690550
 		//// RVA: 0x23A7EE0 Offset: 0x23A7EE0 VA: 0x23A7EE0
-		//public static void AddLocalPositionY(Transform transform, float y) { }
+		public static void AddLocalPositionY(this Transform transform, float y)
+		{
+			transform.SetLocalPositionY(transform.localPosition.y + y);
+		}
 
 		//[ExtensionAttribute] // RVA: 0x690560 Offset: 0x690560 VA: 0x690560
 		//// RVA: 0x23A7F38 Offset: 0x23A7F38 VA: 0x23A7F38

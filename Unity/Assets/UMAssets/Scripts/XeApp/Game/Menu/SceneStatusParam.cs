@@ -899,8 +899,8 @@ namespace XeApp.Game.Menu
 						MNDAMOGGJBJ m = new MNDAMOGGJBJ();
 						m.KHEKNNFCAOI(null);
 						m.MDHKGJJBLNL();
-						m.INLBMFMOHCI.Add(new MNDAMOGGJBJ.JFJJNPJNBPI() { PPFNGGCBJKC_Id = m_limitOverData.MJNOAMAFNHA, HMFFHLPNMPH = m_limitOverData.IJEOIMGILCK });
-						m.CMBGGPOFBOO = m_limitOverData.GNKGDDMMJPF;
+						m.INLBMFMOHCI_CostItems.Add(new MNDAMOGGJBJ.JFJJNPJNBPI() { PPFNGGCBJKC_Id = m_limitOverData.MJNOAMAFNHA, HMFFHLPNMPH_Cnt = m_limitOverData.IJEOIMGILCK });
+						m.CMBGGPOFBOO_UcCost = m_limitOverData.GNKGDDMMJPF;
 						this.StartCoroutineWatched(LimitOverMainCoroutine(m));
 					}
 				}, null, null, null);

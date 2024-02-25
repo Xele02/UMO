@@ -185,7 +185,7 @@ namespace XeSys
 			//// RVA: 0x2395AEC Offset: 0x2395AEC VA: 0x2395AEC
 			public static float EasingInOutSine(float start, float end, float t)
 			{
-				return (end - start) * 0.5f * (Mathf.Cos(t * 3.141593f) - 1) + start;
+				return (end - start) * -0.5f * (Mathf.Cos(t * 3.141593f) - 1) + start;
 			}
 
 			//// RVA: 0x23957C8 Offset: 0x23957C8 VA: 0x23957C8

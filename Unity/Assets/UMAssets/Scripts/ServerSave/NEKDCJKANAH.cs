@@ -19,8 +19,7 @@ public class NEKDCJKANAH_StoryRecord : KLFDBFMNLBL_ServerSaveBlock
 		public int BMPFHHHCNJC_Id; // 0x8
 		public int EALOBDHOCHP_Stat; // 0xC
 		public int NDFOAINJPIN_Pos; // 0x10
-		private int tmp;
-		public int OKJMIFELDMD_Opn { get { return tmp; } set { if(value != 0 || tmp != 0) { UnityEngine.Debug.LogError(BMPFHHHCNJC_Id + " : " + tmp + " > " + value); } tmp = value;  } } // 0x14
+		public int OKJMIFELDMD_Opn; // 0x14
 		public int EJKHAFIALGK_MClr; // 0x18
 		public int PDNJGJNGPNJ_MaxCombo; // 0x1C
 		public int ODEHJGPDFCL_Score; // 0x20

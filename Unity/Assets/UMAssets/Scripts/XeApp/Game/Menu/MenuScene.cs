@@ -128,7 +128,7 @@ namespace XeApp.Game.Menu
 		public StatusWindowControl StatusWindowControl { get { return m_statusWindowControl; } } //0xB2E0A8
 		public MusicPopupWindowControl MusicPopupWindowControl { get { return m_musicPopupWindowControl; } } //0xB2E0B0
 		public HelpPopupWindowControl HelpPopupWindowControl { get { return m_helpPopupWindowControl; } } //0xB2E0B8
-		// public LimitOverControl LimitOverControl { get; } 0xB2E0C0
+		public LimitOverControl LimitOverControl { get { return m_limitOverControl; } } //0xB2E0C0
 		public IntimacyController IntimacyControl { get { return m_intimacyControl; } } //0xB2E0C8
 		public PopupUseItemWindow PopupUseItemWindow { get { return m_popupUseItemWindow; } } //0xB2E0D0
 		public ValkyrieIconTextureCache ValkyrieIconCache { get { return GameManager.Instance.ValkyrieIconCache; } } //0xB2E0D8
@@ -1268,7 +1268,7 @@ namespace XeApp.Game.Menu
 			if(!isFriend && !isReward)
 			{
 				scene.LEHDLBJJBNC_SetNotNew();
-				scene.CADENLBDAEB = false;
+				scene.CADENLBDAEB_New = false;
 			}
 			m_statusWindowControl.ShowSceneStatusPopupWindow(scene, playerData, isMoment, 
 			transitionName, callBack, isFriend, isReward, pageSave, isDisableZoom);

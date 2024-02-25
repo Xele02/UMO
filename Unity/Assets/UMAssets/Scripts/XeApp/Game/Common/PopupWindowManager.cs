@@ -500,7 +500,7 @@ namespace XeApp.Game.Common
 		public static void OpenStaminaCompletionWindow(Action recoveryCallBack)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			Show(CrateTextContent(bk.GetMessageByLabel("popup_title_stamina_01"), SizeType.Small, string.Format("popup_text_stamina_03", CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC_GetCurrent()), new ButtonInfo[1]
+			Show(CrateTextContent(bk.GetMessageByLabel("popup_title_stamina_01"), SizeType.Small, string.Format(bk.GetMessageByLabel("popup_text_stamina_03"), CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC_GetCurrent()), new ButtonInfo[1]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 			}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
