@@ -73,7 +73,7 @@ public class IGCPCHNCJCF
 		});
 		if(PPMJJBAGPOG == null)
 		{
-			Debug.LogError(JpStringLiterals.StringLiteral_11088 + KAPMOPMDHJE);
+			Debug.LogError(JpStringLiterals.StringLiteral_11088 + KAPMOPMDHJE+" Currency : "+APHNELOFGAK);
 			NIMPEHIECJH();
 			yield break;
 		}

@@ -186,7 +186,7 @@ namespace XeApp.Game.Menu
 		public static List<SortItem> UnitDivaSortItem { get { return UnitDivaSortItemList; } }  //0x1149BB0
 		public static List<SortItem> SceneSortItem { get { return SceneSortItemList; } } //0x1149C3C
 		public static List<SortItem> MusicSelectSortItem { get { return MusicSelectSortList; } }//0x1149CC8
-		//public static List<SortItem> ShopSortItem { get; } 0x1149D54
+		public static List<SortItem> ShopSortItem { get { return ShopSortItemList; } } //0x1149D54
 		
 		//// RVA: 0x1149DE0 Offset: 0x1149DE0 VA: 0x1149DE0
 		public static string GetMsg_SortItem(SortItem a_item)

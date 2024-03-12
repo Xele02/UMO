@@ -60,6 +60,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1C9D680 Offset: 0x1C9D680 VA: 0x1C9D680
-		// public void SetRarity(uint bitFlag) { }
+		public void SetRarity(uint bitFlag)
+		{
+			for(int i = 0; i < m_btnRoot.Length; i++)
+			{
+				m_btnRoot[i].gameObject.SetActive((bitFlag & (1 << i)) != 0);
+			}
+		}
 	}
 }

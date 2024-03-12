@@ -68,7 +68,7 @@ namespace XeApp.Game.Menu
 				m_layoutLimit.StartChildrenAnimGoStop("limit_on");
 			}
 			m_layoutNew.enabled = view.CADENLBDAEB;
-			if(view.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.FNLODOLMLML_3)
+			if(view.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.FNLODOLMLML_3)
 			{
 				m_layoutMedal.StartChildrenAnimGoStop("coin_off");
 			}

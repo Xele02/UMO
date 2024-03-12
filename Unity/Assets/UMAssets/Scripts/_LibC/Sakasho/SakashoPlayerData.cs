@@ -676,13 +676,20 @@ namespace ExternLib
 			return 0;
 		}
 		static int saveCnt = 0;
-		public static int SakashoPlayerDataSavePlayerData(int callbackId, string json)
+
+		static void SavePlayerData(EDOHBJAPLPF_JsonData msgData, EDOHBJAPLPF_JsonData res)
 		{
-			EDOHBJAPLPF_JsonData msgData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
 			List<string> blockNames = new List<string>();
 			for (int i = 0; i < msgData["names"].HNBFOAJIIAL_Count; i++)
 			{
 				blockNames.Add((string)msgData["names"][i]);
+			}
+			if(msgData.BBAJPINMOEP_Contains("inventoryIds") && msgData["inventoryIds"] != null)
+			{
+				for(int i = 0; i < msgData["inventoryIds"].HNBFOAJIIAL_Count; i++)
+				{
+					ConsumeInventoryItem(JsonUtil.GetLong(msgData["inventoryIds"][i]));
+				}
 			}
 
 			if (msgData.BBAJPINMOEP_Contains("playerData"))
@@ -710,11 +717,16 @@ namespace ExternLib
 
 				saveCnt++;
 			}
-
-			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res["created_at"] = 1501751856;
 			res["data_status"] = 1;
 			res["updated_at"] = 1656166393;
+		}
+
+		public static int SakashoPlayerDataSavePlayerData(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData msgData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			SavePlayerData(msgData, res);
 			SendMessage(callbackId, res);
 			return 0;
 		}

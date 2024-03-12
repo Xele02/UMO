@@ -11,9 +11,9 @@ public class BEPHBEGDFFK
 {
 	public enum ABBPGMEDDHD
 	{
-		HNOJIKHAPHA_0 = 0,
-		HCBFMFONIOE_1 = 1,
-		KHLPAOENONH_2 = 2,
+		HNOJIKHAPHA_0_Morning = 0,
+		HCBFMFONIOE_1_Afternoon = 1,
+		KHLPAOENONH_2_Evening = 2,
 	}
 
 	public class DMBKENKBIJD
@@ -73,10 +73,10 @@ public class BEPHBEGDFFK
 	public GachaBgTextureCache MMJONIHIOFI { get; private set; } // 0x10 EAMBMEAHNMG DAONIFMJHND IMHEFBMPECP
 	public LOBDIAABMKG DPBDFPPMIPH_Gacha { get; private set; } // 0x14 MEMIBJHJPHG HLFDKACMMPC POCCHIIKMHM
 	public long JHNMKKNEENE_Time { get; private set; } // 0x18 ONDHIJNKPFO NBICELIKAMG IAGCKLBBEJE
-	public int BGMDABJBHDM_Hour1 { get; private set; } // 0x20 AJDKMIJGILO MJAHOGAKIFN ACEHDFGCEDH
-	public int NDNHABFJNDB_Hour2 { get; private set; } // 0x24 PLPEDAFOMEO NMNPPNGMBMD NNNOHPKKLOP
-	public int ACDBBJBNLLG_Hour3 { get; private set; } // 0x28 MMDJFDBBJMD OGMCAHJCKOO IKCOANPHPGL
-	public int IDADEHNGHPO_Hour4 { get; private set; } // 0x2C JNEODDGOEFL MGIBGJPEDHA LIGGEFLLMKB
+	public int BGMDABJBHDM_Hour_Morning_4 { get; private set; } // 0x20 AJDKMIJGILO MJAHOGAKIFN ACEHDFGCEDH
+	public int NDNHABFJNDB_Hour2_Noon_12 { get; private set; } // 0x24 PLPEDAFOMEO NMNPPNGMBMD NNNOHPKKLOP
+	public int ACDBBJBNLLG_Hour3_Evening_20 { get; private set; } // 0x28 MMDJFDBBJMD OGMCAHJCKOO IKCOANPHPGL
+	public int IDADEHNGHPO_Hour4_NextMorning_4 { get; private set; } // 0x2C JNEODDGOEFL MGIBGJPEDHA LIGGEFLLMKB
 
 	//// RVA: 0xC76548 Offset: 0xC76548 VA: 0xC76548
 	public void KHEKNNFCAOI()
@@ -181,10 +181,10 @@ public class BEPHBEGDFFK
 	//// RVA: 0xC7672C Offset: 0xC7672C VA: 0xC7672C
 	public void NAIHICDHICH()
 	{
-		BGMDABJBHDM_Hour1 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP.FPBEBCIPEPI_GachaHour[0];
-		NDNHABFJNDB_Hour2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP.FPBEBCIPEPI_GachaHour[1];
-		ACDBBJBNLLG_Hour3 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP.FPBEBCIPEPI_GachaHour[2];
-		IDADEHNGHPO_Hour4 = BGMDABJBHDM_Hour1;
+		BGMDABJBHDM_Hour_Morning_4 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP.FPBEBCIPEPI_GachaHour[0];
+		NDNHABFJNDB_Hour2_Noon_12 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP.FPBEBCIPEPI_GachaHour[1];
+		ACDBBJBNLLG_Hour3_Evening_20 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP.FPBEBCIPEPI_GachaHour[2];
+		IDADEHNGHPO_Hour4_NextMorning_4 = BGMDABJBHDM_Hour_Morning_4 + 24;
 	}
 
 	//// RVA: 0xC770DC Offset: 0xC770DC VA: 0xC770DC
@@ -375,30 +375,20 @@ public class BEPHBEGDFFK
 	public ABBPGMEDDHD MFMBCIKGCFC()
 	{
 		DateTime t = Utility.GetLocalDateTime(JHNMKKNEENE_Time);
-		if(t.Hour < 0 || BGMDABJBHDM_Hour1 <= t.Hour)
+		if(t.Hour >= 0 && t.Hour < BGMDABJBHDM_Hour_Morning_4)
+			return ABBPGMEDDHD.KHLPAOENONH_2_Evening;
+		if(t.Hour >= BGMDABJBHDM_Hour_Morning_4 && t.Hour < NDNHABFJNDB_Hour2_Noon_12)
+			return ABBPGMEDDHD.HNOJIKHAPHA_0_Morning;
+		if(t.Hour >= NDNHABFJNDB_Hour2_Noon_12 && t.Hour < ACDBBJBNLLG_Hour3_Evening_20)
+			return ABBPGMEDDHD.HCBFMFONIOE_1_Afternoon;
+		if(t.Hour >= ACDBBJBNLLG_Hour3_Evening_20)
 		{
-			if(BGMDABJBHDM_Hour1 > t.Hour || t.Hour >= NDNHABFJNDB_Hour2)
-			{
-				if(NDNHABFJNDB_Hour2 > t.Hour)
-				{
-					if(t.Hour >= ACDBBJBNLLG_Hour3)
-					{
-						if (ACDBBJBNLLG_Hour3 > t.Hour)
-							return ABBPGMEDDHD.HNOJIKHAPHA_0;
-						else
-						{
-							if (t.Hour >= IDADEHNGHPO_Hour4)
-								return ABBPGMEDDHD.HNOJIKHAPHA_0;
-							else
-								return ABBPGMEDDHD.KHLPAOENONH_2;
-						}
-					}
-				}
-				return ABBPGMEDDHD.HCBFMFONIOE_1;
-			}
-			return ABBPGMEDDHD.HNOJIKHAPHA_0;
+			if(t.Hour >= IDADEHNGHPO_Hour4_NextMorning_4)
+				return ABBPGMEDDHD.HNOJIKHAPHA_0_Morning;
+			else
+				return ABBPGMEDDHD.KHLPAOENONH_2_Evening;
 		}
-		return ABBPGMEDDHD.KHLPAOENONH_2;
+		return ABBPGMEDDHD.HNOJIKHAPHA_0_Morning;
 	}
 
 	//// RVA: 0xC78420 Offset: 0xC78420 VA: 0xC78420
@@ -429,12 +419,12 @@ public class BEPHBEGDFFK
 		MessageBank bk = MessageManager.Instance.GetBank("menu");
 		return string.Format(bk.GetMessageByLabel("gacha_main_timezone"), new object[6]
 		{
-			LPBKEJGPMFJ(bk.GetMessageByLabel("gacha_main_timezone_time"), BGMDABJBHDM_Hour1 * 60),
-			LPBKEJGPMFJ(bk.GetMessageByLabel("gacha_main_timezone_time"), NDNHABFJNDB_Hour2 * 60 - 1),
-			LPBKEJGPMFJ(bk.GetMessageByLabel("gacha_main_timezone_time"), NDNHABFJNDB_Hour2 * 60),
-			LPBKEJGPMFJ(bk.GetMessageByLabel("gacha_main_timezone_time"), ACDBBJBNLLG_Hour3 * 60 - 1),
-			LPBKEJGPMFJ(bk.GetMessageByLabel("gacha_main_timezone_time"), ACDBBJBNLLG_Hour3 * 60),
-			LPBKEJGPMFJ(bk.GetMessageByLabel("gacha_main_timezone_time"), BGMDABJBHDM_Hour1 * 60 - 1)
+			LPBKEJGPMFJ(bk.GetMessageByLabel("gacha_main_timezone_time"), BGMDABJBHDM_Hour_Morning_4 * 60),
+			LPBKEJGPMFJ(bk.GetMessageByLabel("gacha_main_timezone_time"), NDNHABFJNDB_Hour2_Noon_12 * 60 - 1),
+			LPBKEJGPMFJ(bk.GetMessageByLabel("gacha_main_timezone_time"), NDNHABFJNDB_Hour2_Noon_12 * 60),
+			LPBKEJGPMFJ(bk.GetMessageByLabel("gacha_main_timezone_time"), ACDBBJBNLLG_Hour3_Evening_20 * 60 - 1),
+			LPBKEJGPMFJ(bk.GetMessageByLabel("gacha_main_timezone_time"), ACDBBJBNLLG_Hour3_Evening_20 * 60),
+			LPBKEJGPMFJ(bk.GetMessageByLabel("gacha_main_timezone_time"), BGMDABJBHDM_Hour_Morning_4 * 60 - 1)
 		});
 	}
 

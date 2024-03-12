@@ -756,7 +756,7 @@ namespace XeApp.Game.Menu
 			AODFBGCCBPE a = l.Find((AODFBGCCBPE item) =>
 			{
 				//0x158C3E0
-				return item.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5;
+				return item.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5;
 			});
 			if(a == null)
 			{

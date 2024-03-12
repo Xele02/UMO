@@ -125,7 +125,7 @@ public class CIOECGOMILE
 			MCKCJMLOAFP_CurrencyInfo m = BBEPLKNMICJ_Currencies.Find((MCKCJMLOAFP_CurrencyInfo BNKHBCBJBKI) =>
 			{
 				//0x100CD8C
-				return BNKHBCBJBKI.PPFNGGCBJKC_Id == db.CPGFOBNKKBF;
+				return BNKHBCBJBKI.PPFNGGCBJKC_Id == db.CPGFOBNKKBF_CurrencyId;
 			});
 			if(m != null)
 			{
@@ -1472,7 +1472,6 @@ public class CIOECGOMILE
 			if (KAJNAMKKKBN(l) == 1)
 			{
 				List<GJDFHLBONOL> l2 = FJPIIDAEMHC_FilterByType(PJJFEAHIPGL, 1);
-				UnityEngine.Debug.LogError(l2.Count);
 				if (l2.Count != 0)
 				{
 					CIJGKKBOGPB(FJPIIDAEMHC_FilterByType(l2, 1));
@@ -1652,7 +1651,7 @@ public class CIOECGOMILE
 	private void HKMNAICEDNE_OnSuccessReceiveInventory_VC(CACGCMBKHDI_Request KFBCOGJKEJP)
 	{
 		MEBJLFMDGEH_ReceiveVirtualCurrencyFromInventory req = KFBCOGJKEJP as MEBJLFMDGEH_ReceiveVirtualCurrencyFromInventory;
-		DJICHKCLMCD_UpdateCurrencies(req.NFEAMMJIMPG.BBEPLKNMICJ);
+		DJICHKCLMCD_UpdateCurrencies(req.NFEAMMJIMPG.BBEPLKNMICJ_Balances);
 		ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.PBKOKCHKGGL_46, 2, false);
 		KPFKKDDOHCN.PBBEPILMAHO(req.AMOMNBEAHBF_Ids, (GJDFHLBONOL AIMLPJOGPID) =>
 		{
@@ -3068,11 +3067,11 @@ public class CIOECGOMILE
 				int idx = res.FindIndex((int GHPLINIACBB) =>
 				{
 					//0x100CD40
-					return l[i].CPGFOBNKKBF == GHPLINIACBB;
+					return l[i].CPGFOBNKKBF_CurrencyId == GHPLINIACBB;
 				});
-				if(idx < 0 && l[i].CPGFOBNKKBF != 0)
+				if(idx < 0 && l[i].CPGFOBNKKBF_CurrencyId != 0)
 				{
-					res.Add(l[i].CPGFOBNKKBF);
+					res.Add(l[i].CPGFOBNKKBF_CurrencyId);
 				}
 			}
 		}

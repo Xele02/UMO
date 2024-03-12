@@ -56,15 +56,15 @@ public class EPLAAEHPCDM : MKCJNKIEADB
 	public int CJNNMLLEKEF_PreviousPage; // 0x54
 	public int GPPOJHNNINK_CurrentPage; // 0x58
 	public int MDIBIIHAAPN_NextPage; // 0x5C
-	public int KNDAAAAHICA; // 0x60
-	public int MGANCKPFONE; // 0x64
+	public int KNDAAAAHICA_CurrentCount; // 0x60
+	public int MGANCKPFONE_CurrentCountModulo; // 0x64
 
 	//// RVA: 0xFC0810 Offset: 0xFC0810 VA: 0xFC0810 Slot: 4
 	public override void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
 	{
 		base.KHEKNNFCAOI(IDLHJIOMJBK);
-		KNDAAAAHICA = 0;
-		MGANCKPFONE = 0;
+		KNDAAAAHICA_CurrentCount = 0;
+		MGANCKPFONE_CurrentCountModulo = 0;
 		FHBJOLPCAPN_MaxCount = 0;
 		if(IDLHJIOMJBK.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.FHBJOLPCAPN_max_count) && IDLHJIOMJBK[AFEHLCGHAEE_Strings.FHBJOLPCAPN_max_count] != null)
 		{

@@ -176,7 +176,7 @@ public class PopupItemListItemIcon : FlexibleListItemLayout
 		AODFBGCCBPE d = AODFBGCCBPE.FKDIMODKKJD(false).Find((AODFBGCCBPE x) =>
 		{
 			//0xDFB234
-			return x.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.FNLODOLMLML_3;
+			return x.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.FNLODOLMLML_3;
 		});
 		if(d != null)
 		{

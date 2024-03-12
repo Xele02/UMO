@@ -157,6 +157,7 @@ namespace XeApp.Game.Menu
 						m_prizeObject[i].iconLayout.enabled = true;
 						if (i < a1)
 							SwitchStampAnim(i, eStampStatus.Press);
+						a2++;
 						if(data.JPILDOGJLDG_LoginBonusPrizes[i].HBHMAKNGKFK_Items[0] == null)
 						{
 							m_prizeObject[i].iconLayout.enabled = false;

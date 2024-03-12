@@ -420,6 +420,8 @@ public class EDOHBJAPLPF_JsonData : IHIFCPDDDKN_IJsonWrapper, IEquatable<EDOHBJA
 	// // RVA: 0x150C7DC Offset: 0x150C7DC VA: 0x150C7DC
 	public static /*long HBPCIELOBKD*/explicit operator Int64(EDOHBJAPLPF_JsonData IDLHJIOMJBK_data)
 	{
+		if (IDLHJIOMJBK_data.INDDJNMPONH_type == JFBMDLGBPEN_JsonType.CEIBAFOCNCA_Int)
+			return IDLHJIOMJBK_data.NFGINMFAEOB_inst_int;
 		if (IDLHJIOMJBK_data.INDDJNMPONH_type != JFBMDLGBPEN_JsonType.HJBKGEBNJMP_Long)
 			throw new InvalidCastException (
 				"Instance of JsonData doesn't hold an long but " + IDLHJIOMJBK_data.INDDJNMPONH_type);
@@ -539,6 +541,8 @@ public class EDOHBJAPLPF_JsonData : IHIFCPDDDKN_IJsonWrapper, IEquatable<EDOHBJA
 	// // RVA: 0x150D594 Offset: 0x150D594 VA: 0x150D594 Slot: 15
 	long /*ENPHDGBDANH*/IHIFCPDDDKN_IJsonWrapper.DKMPHAPBDLH_GetLong()
 	{
+		if (INDDJNMPONH_type == JFBMDLGBPEN_JsonType.CEIBAFOCNCA_Int)
+			return NFGINMFAEOB_inst_int;
 		if (INDDJNMPONH_type != JFBMDLGBPEN_JsonType.HJBKGEBNJMP_Long)
 			throw new InvalidOperationException (
 				"JsonData instance doesn't hold a long");

@@ -682,14 +682,34 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1C9D484 Offset: 0x1C9D484 VA: 0x1C9D484
-		//private void ShopProductSkillButtonShowHideAnim() { }
+		private void ShopProductSkillButtonShowHideAnim()
+		{
+			this.StartCoroutineWatched(Co_ShopProductSkillButtonShowHideAnim());
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70825C Offset: 0x70825C VA: 0x70825C
 		//// RVA: 0x1C9D4A8 Offset: 0x1C9D4A8 VA: 0x1C9D4A8
-		//private IEnumerator Co_ShopProductSkillButtonShowHideAnim() { }
+		private IEnumerator Co_ShopProductSkillButtonShowHideAnim()
+		{
+			//0x1C9E544
+			while(m_shopProductParts.filterSkill.IsPlaying() || m_shopProductParts.filterActiveSkill.IsPlaying() || m_shopProductParts.filterCenterSkill.IsPlaying())
+			{
+				ShopProductHeightUpdate();
+				yield return null;
+			}
+			m_shopProductParts.filterSkill.m_showBtn.IsInputLock = false;
+			m_shopProductParts.filterActiveSkill.m_showBtn.IsInputLock = false;
+			m_shopProductParts.filterCenterSkill.m_showBtn.IsInputLock = false;
+		}
 
 		//// RVA: 0x1C9D554 Offset: 0x1C9D554 VA: 0x1C9D554
-		//private void ShopProductHeightUpdate() { }
+		private void ShopProductHeightUpdate()
+		{
+			m_shopProductParts.layoutGroup.CalculateLayoutInputVertical();
+			m_shopProductParts.layoutGroup.SetLayoutVertical();
+			m_shopProductParts.contentSizeFitter.SetLayoutVertical();
+			m_shopProductContent.sizeDelta = m_shopProductPartsRect.sizeDelta;
+		}
 
 		//// RVA: 0x1C961B4 Offset: 0x1C961B4 VA: 0x1C961B4
 		//public void ShopProductSetUp(RectTransform popupContent) { }
@@ -697,22 +717,121 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1C953EC Offset: 0x1C953EC VA: 0x1C953EC
 		private void InitializeShopProductList()
 		{
-			TodoLogger.LogError(0, "InitializeShopProductList");
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.POCEANNLGLP_ShopProduct sort;
+			if(m_setting.m_param.ShopProductParam.RarityMax < 5)
+			{
+                sort = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CCJMAIPBELA_ShopProduct1_4;
+            }
+			else
+			{
+				sort = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.HDKDFCCJEEP_ShopProduct5_6;
+			}
+			m_shopProductParts = m_setting.m_list_parts[0].m_base as PopupFilterSortUGUIParts_ShopProduct;
+			m_shopProductPartsRect = m_shopProductParts.gameObject.GetComponent<RectTransform>();
+			m_shopProductParts.titleH1[0].SetTitle(bk.GetMessageByLabel("popup_sort_title_h1"));
+			m_shopProductParts.titleH1[0].EnableButton(false);
+			m_shopProductParts.titleH1[1].SetTitle(bk.GetMessageByLabel("popup_filter_title_h1"));
+			m_shopProductParts.titleH1[1].SetButton(bk.GetMessageByLabel("popup_sort_filter_reset"), ResetShopProductList);
+			m_shopProductParts.filterRarity.SetBit(m_setting.m_param.EnableSave ? (uint)sort.ACCHOFLOOEC_RarityFilter : 0);
+			uint bitFlag = 0;
+			for(int i = m_setting.m_param.ShopProductParam.RarityMin; i <= m_setting.m_param.ShopProductParam.RarityMax; i++)
+			{
+				if(i - 1 > -1)
+					bitFlag |= (uint)(1 << (i - 1));
+			}
+			m_shopProductParts.filterRarity.SetRarity(bitFlag);
+			m_shopProductParts.filterAttribute.SetBit(m_setting.m_param.EnableSave ? (uint)sort.BOFFOHHLLFG_AttrFilter : 0);
+			m_shopProductParts.filterSeries.SetBit(m_setting.m_param.EnableSave ? (uint)sort.BBIIHLNBHDE_SerieFilter : 0);
+			m_shopProductParts.filterHave.SetBit(m_setting.m_param.EnableSave ? (uint)sort.EGBPCFOGOCK_HaveFilter : 0);
+			m_shopProductParts.filterNotesExpectation.SetBit(m_setting.m_param.EnableSave ? (uint)sort.NLLEDCOAPIG_NoteExpectedFilter : 0);
+			m_shopProductParts.filterSort.SetupItem(PopupSortMenu.ShopSortItem.ToArray());
+			m_shopProductParts.filterSort.SetSortItem((SortItem)sort.LHPDCGNKPHD_SortItem);
+			m_shopProductParts.filterDiva.SetBit(m_setting.m_param.EnableSave ? (uint)sort.ABLBLOEKBKA_CompatibleFilter : 0);
+			m_shopProductParts.filterDiva.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas, true, false, false);
+			m_shopProductParts.filterSkill.SetBitSkillRange(m_setting.m_param.EnableSave ? (uint)sort.OAJNACDACDF_LiveSkillRangeFilter : 0);
+			m_shopProductParts.filterSkill.SetBitSkillRank(m_setting.m_param.EnableSave ? (uint)sort.EAPCPNGAPBB_LiveSkillRankFilter : 0);
+			m_shopProductParts.filterSkill.SetBitSkill(m_setting.m_param.EnableSave ? (ulong)sort.PPEFJBBGGHI_LiveSkillFilter : 0);
+			m_shopProductParts.filterSkill.SetupIcon();
+			m_shopProductParts.filterSkill.SetAllButton();
+			m_shopProductParts.filterSkill.OhClickShowHideButtonListener = ShopProductSkillButtonShowHideAnim;
+			m_shopProductParts.filterActiveSkill.SetBitSkillRange(0);
+			m_shopProductParts.filterActiveSkill.SetBitSkillRank(m_setting.m_param.EnableSave ? (uint)sort.DNLJMMBEKAA_ActiveSkillRankFilter : 0);
+			m_shopProductParts.filterActiveSkill.SetBitSkill(m_setting.m_param.EnableSave ? (ulong)sort.LACACEBKHCM_ActiveSkillFilter : 0);
+			m_shopProductParts.filterActiveSkill.SetupIcon();
+			m_shopProductParts.filterActiveSkill.SetAllButton();
+			m_shopProductParts.filterActiveSkill.OhClickShowHideButtonListener = ShopProductSkillButtonShowHideAnim;
+			m_shopProductParts.filterCenterSkill.SetBitSkillRank(m_setting.m_param.EnableSave ? (uint)sort.PFNPLBNHDJK_CenterSkillRankFilter : 0);
+			m_shopProductParts.filterCenterSkill.SetBitSkill(m_setting.m_param.EnableSave ? (ulong)sort.LKPCKPJGJKN_CenterSkillFilter : 0);
+			m_shopProductParts.filterCenterSkill.SetupIcon();
+			m_shopProductParts.filterCenterSkill.SetAllButton();
+			m_shopProductParts.filterCenterSkill.OhClickShowHideButtonListener = ShopProductSkillButtonShowHideAnim;
 		}
 
 		//// RVA: 0x1C984AC Offset: 0x1C984AC VA: 0x1C984AC
 		private void FinalizeShopProductList()
 		{
-			TodoLogger.LogError(0, "FinalizeShopProductList");
+			if(!m_setting.m_param.EnableSave)
+				return;
+			ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.POCEANNLGLP_ShopProduct sort;
+			if(m_setting.m_param.ShopProductParam.RarityMax < 5)
+			{
+                sort = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CCJMAIPBELA_ShopProduct1_4;
+            }
+			else
+			{
+				sort = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.HDKDFCCJEEP_ShopProduct5_6;
+			}
+			PopupFilterSortUGUIParts_ShopProduct p = m_setting.m_list_parts[0].m_base as PopupFilterSortUGUIParts_ShopProduct;
+			sort.LHPDCGNKPHD_SortItem = (int)p.filterSort.GetSortItem();
+			sort.ACCHOFLOOEC_RarityFilter = (int)p.filterRarity.GetBit();
+			sort.BOFFOHHLLFG_AttrFilter = (int)p.filterAttribute.GetBit();
+			sort.BBIIHLNBHDE_SerieFilter = (int)p.filterSeries.GetBit();
+			sort.EGBPCFOGOCK_HaveFilter = (int)p.filterHave.GetBit();
+			sort.NLLEDCOAPIG_NoteExpectedFilter = (int)p.filterNotesExpectation.GetBit();
+			sort.ABLBLOEKBKA_CompatibleFilter = (int)p.filterDiva.GetBit();
+			sort.OAJNACDACDF_LiveSkillRangeFilter = (int)p.filterSkill.GetBitSkillRange();
+			sort.EAPCPNGAPBB_LiveSkillRankFilter = (int)p.filterSkill.GetBitSkillRank();
+			sort.PPEFJBBGGHI_LiveSkillFilter = (long)p.filterSkill.GetBitSkill();
+			sort.DNLJMMBEKAA_ActiveSkillRankFilter = (int)p.filterActiveSkill.GetBitSkillRank();
+			sort.LACACEBKHCM_ActiveSkillFilter = (long)p.filterActiveSkill.GetBitSkill();
+			sort.PFNPLBNHDJK_CenterSkillRankFilter = (int)p.filterCenterSkill.GetBitSkillRank();
+			sort.LKPCKPJGJKN_CenterSkillFilter = (long)p.filterCenterSkill.GetBitSkill();
 		}
 
 		//// RVA: 0x1C9D758 Offset: 0x1C9D758 VA: 0x1C9D758
-		//private void ResetShopProductList() { }
+		private void ResetShopProductList()
+		{
+			PopupFilterSortUGUIParts_ShopProduct p = m_setting.m_list_parts[0].m_base as PopupFilterSortUGUIParts_ShopProduct;
+			p.filterRarity.SetBit(0);
+			p.filterAttribute.SetBit(0);
+			p.filterSeries.SetBit(0);
+			p.filterHave.SetBit(0);
+			p.filterNotesExpectation.SetBit(0);
+			p.filterDiva.SetBit(0);
+			p.filterDiva.SetBitCompatible(0);
+			p.filterDiva.Initialize(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas, true, false, false);
+			p.filterSkill.SetBitSkillRange(0);
+			p.filterSkill.SetBitSkillRank(0);
+			p.filterSkill.SetBitSkill(0);
+			p.filterSkill.AllRelease();
+			p.filterActiveSkill.SetBitSkillRange(0);
+			p.filterActiveSkill.SetBitSkillRank(0);
+			p.filterActiveSkill.SetBitSkill(0);
+			p.filterActiveSkill.AllRelease();
+			p.filterCenterSkill.SetBitSkillRank(0);
+			p.filterCenterSkill.SetBitSkill(0);
+			p.filterCenterSkill.AllRelease();
+		}
 
 		//// RVA: 0x1C98BFC Offset: 0x1C98BFC VA: 0x1C98BFC
 		private void ShowShopProduct()
 		{
-			TodoLogger.LogError(0, "ShowShopProduct");
+			ShopProductHeightUpdate();
+			PopupFilterSortUGUIParts_ShopProduct p = m_setting.m_list_parts[0].m_base as PopupFilterSortUGUIParts_ShopProduct;
+			p.filterSkill.SetupStateFilter();
+			p.filterActiveSkill.SetupStateFilter();
+			p.filterCenterSkill.SetupStateFilter();
 		}
 
 		//// RVA: 0x1C92FD8 Offset: 0x1C92FD8 VA: 0x1C92FD8

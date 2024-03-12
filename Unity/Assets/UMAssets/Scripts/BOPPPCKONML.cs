@@ -213,7 +213,7 @@ public class BOPPPCKONML
 				res = PJJFEAHIPGL[i].EILKGEADKGH_Order;
 			}
 		}
-		return res;
+		return res + 1;
 	}
 
 	//// RVA: 0x19D2D50 Offset: 0x19D2D50 VA: 0x19D2D50

@@ -102,15 +102,15 @@ namespace XeApp.Game.Menu
 				case 0:
 					m_layoutCostIcon.StartChildrenAnimGoStop("02");
 					m_layoutLotCost.StartChildrenAnimGoStop("03");
-					if(zone == BEPHBEGDFFK.ABBPGMEDDHD.KHLPAOENONH_2)
+					if(zone == BEPHBEGDFFK.ABBPGMEDDHD.KHLPAOENONH_2_Evening)
 					{
 						str = bk.GetMessageByLabel("gacha_cost_05");
 					}
-					else if(zone == BEPHBEGDFFK.ABBPGMEDDHD.HCBFMFONIOE_1)
+					else if(zone == BEPHBEGDFFK.ABBPGMEDDHD.HCBFMFONIOE_1_Afternoon)
 					{
 						str = bk.GetMessageByLabel("gacha_cost_04");
 					}
-					else if(zone == BEPHBEGDFFK.ABBPGMEDDHD.HNOJIKHAPHA_0)
+					else if(zone == BEPHBEGDFFK.ABBPGMEDDHD.HNOJIKHAPHA_0_Morning)
 					{
 						str = bk.GetMessageByLabel("gacha_cost_03");
 					}

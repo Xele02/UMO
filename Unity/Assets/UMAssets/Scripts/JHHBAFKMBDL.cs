@@ -313,7 +313,7 @@ public class JHHBAFKMBDL
 	// // RVA: 0xB23944 Offset: 0xB23944 VA: 0xB23944
 	public void ACJOEBNHBMF_DisplayExpiredPopup(DJBHIFLHJLK JGKOLBLPMPG, bool MBJKHOOMAFE)
 	{
-		MessageBank bk = MessageManager.Instance.GetBank(JHHBAFKMBDL.LGNLCJIKOEO);
+		MessageBank bk = MessageManager.Instance.GetBank(LGNLCJIKOEO);
 		TextPopupSetting s = new TextPopupSetting();
 		s.TitleText = bk.GetMessageByLabel("popup_present_expire_title");
 		s.Buttons = new ButtonInfo[1]
@@ -331,7 +331,19 @@ public class JHHBAFKMBDL
 	// // RVA: 0xB23C98 Offset: 0xB23C98 VA: 0xB23C98
 	public void HMIHFLGLHBA(DJBHIFLHJLK JGKOLBLPMPG)
 	{
-		TodoLogger.LogError(0, "HMIHFLGLHBA");
+		MessageBank bk = MessageManager.Instance.GetBank(LGNLCJIKOEO);
+		TextPopupSetting s = new TextPopupSetting();
+		s.IsCaption = false;
+		s.Buttons = new ButtonInfo[1]
+		{
+			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+		};
+		s.Text = bk.GetMessageByLabel("popup_gacha_expire_01");
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		{
+			//0x13482A0
+			JGKOLBLPMPG();
+		}, null, null, null);
 	}
 
 	// // RVA: 0xB23F80 Offset: 0xB23F80 VA: 0xB23F80

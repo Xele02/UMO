@@ -572,6 +572,7 @@ namespace XeApp.Game.Menu
 					{
 						//0xB2B0D8
 						MenuScene.Instance.InputEnable();
+						UnityEngine.Debug.LogError("Buy ok Event");
 						m_onChargeMoneyEvent.Invoke();
 					}, () =>
 					{

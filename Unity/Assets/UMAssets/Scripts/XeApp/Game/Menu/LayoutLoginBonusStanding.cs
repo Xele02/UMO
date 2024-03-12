@@ -171,7 +171,7 @@ namespace XeApp.Game.Menu
 			m_type = (eType)data.CKHOBDIKJFN_Type;
 			SwitchType(m_type);
 			List<GMHKBJLIILI> l = manager.GAOEDFGMHFD;
-			int a1 = 0;
+			int currentCount = 0;
 			if(l != null)
 			{
 				GMHKBJLIILI d = l.Find((GMHKBJLIILI _) =>
@@ -181,16 +181,16 @@ namespace XeApp.Game.Menu
 				});
 				if(d != null && d.HMFFHLPNMPH_Count > 0)
 				{
-					a1 = d.HMFFHLPNMPH_Count - 1;
+					currentCount = d.HMFFHLPNMPH_Count - 1;
 				}
 				if(data.CKHOBDIKJFN_Type == ANPGILOLNFK.CDOGFBNLIPG.PHABJLGFJNI_1)
 				{
-					a1 = data.MGANCKPFONE;
+					currentCount = data.MGANCKPFONE_CurrentCountModulo;
 				}
 			}
-			SetStatusInner(data, a1, false);
+			SetStatusInner(data, currentCount, false);
 			m_isNextReward = false;
-			m_stampPlayDay = a1;
+			m_stampPlayDay = currentCount;
 			if(data.CKHOBDIKJFN_Type == ANPGILOLNFK.CDOGFBNLIPG.PHABJLGFJNI_1)
 			{
 				if(data.JPILDOGJLDG_LoginBonusPrizes.Count >= 8)
@@ -232,52 +232,47 @@ namespace XeApp.Game.Menu
 				a1 = data.JPILDOGJLDG_LoginBonusPrizes.Count;
 				idx = 7;
 			}
-			if(idx < a1)
+			int arrayIdx = 0;
+			for(int i = idx; i < a1 && i < data.JPILDOGJLDG_LoginBonusPrizes.Count; i++)
 			{
-				int arrayIdx = 0;
-				for(int i = 0; i < data.JPILDOGJLDG_LoginBonusPrizes.Count; i++)
+				CAEDGOPBDNK d = data.JPILDOGJLDG_LoginBonusPrizes[i];
+				if(d.HBHMAKNGKFK_Items != null)
 				{
-                    CAEDGOPBDNK d = data.JPILDOGJLDG_LoginBonusPrizes[i];
-                    if(d.HBHMAKNGKFK_Items != null)
+					if(d.HBHMAKNGKFK_Items.Count > 0)
 					{
-						if(d.HBHMAKNGKFK_Items.Count > 0)
+						m_prizeObject[arrayIdx].iconLayout.enabled = true;
+						SwitchDayEnable(arrayIdx, true);
+						if(arrayIdx < currentReciveCount)
 						{
-							m_prizeObject[arrayIdx].iconLayout.enabled = true;
-							SwitchDayEnable(arrayIdx, true);
-							if(arrayIdx < currentReciveCount)
+							SwitchStampAnim(arrayIdx, eStampStatus.Press);
+						}
+						if(d.HBHMAKNGKFK_Items.Count < 2)
+						{
+							SetItemIcon(arrayIdx, d.HBHMAKNGKFK_Items[0].JJBGOIMEIPF_ItemFullId);
+							SwitchUnitPrice(arrayIdx, d.HBHMAKNGKFK_Items[0].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit ? eUnitPrice.Uc : eUnitPrice.Num);
+							SetNumItem(arrayIdx, d.HBHMAKNGKFK_Items[0].MBJIFDBEDAC_Cnt);
+						}
+						else
+						{
+							if(data.CKHOBDIKJFN_Type >= ANPGILOLNFK.CDOGFBNLIPG.DHGCJEOPEIE_3 && data.CKHOBDIKJFN_Type < ANPGILOLNFK.CDOGFBNLIPG.LAOEGNLOJHC_5)
 							{
-								SwitchStampAnim(arrayIdx, eStampStatus.Press);
-							}
-							if(d.HBHMAKNGKFK_Items.Count < 2)
-							{
-								SetItemIcon(arrayIdx, d.HBHMAKNGKFK_Items[0].JJBGOIMEIPF_ItemFullId);
-								SwitchUnitPrice(arrayIdx, d.HBHMAKNGKFK_Items[0].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit ? eUnitPrice.Uc : eUnitPrice.Num);
-								SetNumItem(arrayIdx, d.HBHMAKNGKFK_Items[0].MBJIFDBEDAC_Cnt);
+								int val;
+								int.TryParse(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL("comeback_login_bonus_pack_id", "1,1,1,1,1,1,1,1,1,1").Split(new char[] { ',' })[i], out val);
+								SetItemPackIcon(arrayIdx, (ItemPackImageTextureCache.Type)val);
 							}
 							else
 							{
-								if(data.CKHOBDIKJFN_Type >= ANPGILOLNFK.CDOGFBNLIPG.DHGCJEOPEIE_3 && data.CKHOBDIKJFN_Type < ANPGILOLNFK.CDOGFBNLIPG.LAOEGNLOJHC_5)
-								{
-									int val;
-									int.TryParse(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.EFEGBHACJAL("comeback_login_bonus_pack_id", "1,1,1,1,1,1,1,1,1,1").Split(new char[] { ',' })[i], out val);
-									SetItemPackIcon(arrayIdx, (ItemPackImageTextureCache.Type)val);
-								}
-								else
-								{
-									SetItemPackIcon(arrayIdx, ItemPackImageTextureCache.Type.Pack1);
-								}
-								SwitchUnitPrice(arrayIdx, eUnitPrice.Num);
-								SetNumItem(arrayIdx, 1);
+								SetItemPackIcon(arrayIdx, ItemPackImageTextureCache.Type.Pack1);
 							}
-							SwitchDay(arrayIdx, arrayIdx + 1);
-							arrayIdx++;
+							SwitchUnitPrice(arrayIdx, eUnitPrice.Num);
+							SetNumItem(arrayIdx, 1);
 						}
+						SwitchDay(arrayIdx, arrayIdx + 1);
+						arrayIdx++;
 					}
-					if(a1 <= i + 1)
-						return;
-					if(arrayIdx > 9)
-						return;
 				}
+				if(arrayIdx > 9)
+					return;
 			}
 		}
 
@@ -755,7 +750,7 @@ namespace XeApp.Game.Menu
 			waitCounter = 0;
 			while(true)
 			{
-				waitCounter = TimeWrapper.deltaTime;
+				waitCounter += TimeWrapper.deltaTime;
 				yield return null;
 				if (wait <= waitCounter)
 					break;
