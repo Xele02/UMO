@@ -90,9 +90,30 @@ namespace ExternLib
 			}
 		}
 
+		public class UserProductInfo
+		{
+			public int id;
+			public int buy_count;
+
+			public void Load(EDOHBJAPLPF_JsonData data)
+			{
+				id = (int)data["id"];
+				buy_count = (int)data["buy_count"];
+			}
+
+			public EDOHBJAPLPF_JsonData Save()
+			{
+				EDOHBJAPLPF_JsonData res = new EDOHBJAPLPF_JsonData();
+				res["id"] = id;
+				res["buy_count"] = buy_count;
+				return res;
+			}
+		}
+
 		public class UserProducts
 		{
 			public List<UserCurrencyInfo> Currencies = new List<UserCurrencyInfo>();
+			public List<UserProductInfo> Products = new List<UserProductInfo>();
 
 			public void Load(EDOHBJAPLPF_JsonData data)
 			{
@@ -111,6 +132,16 @@ namespace ExternLib
 						Currencies.Add(d);
 					}
 				}
+				if(json.BBAJPINMOEP_Contains("products"))
+				{
+					EDOHBJAPLPF_JsonData array = json["products"];
+					for(int i = 0; i < array.HNBFOAJIIAL_Count; i++)
+					{
+						UserProductInfo d = new UserProductInfo();
+						d.Load(array[i]);
+						Products.Add(d);
+					}
+				}
 			}
 
 			public void Save(EDOHBJAPLPF_JsonData data)
@@ -124,6 +155,12 @@ namespace ExternLib
 				for(int i = 0; i < Currencies.Count; i++)
 				{
 					data["user_data"]["products"]["currencies"].Add(Currencies[i].Save());
+				}
+				data["user_data"]["products"]["products"] = new EDOHBJAPLPF_JsonData();
+				data["user_data"]["products"]["products"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+				for(int i = 0; i < Products.Count; i++)
+				{
+					data["user_data"]["products"]["products"].Add(Products[i].Save());
 				}
 			}
 
@@ -1425,12 +1462,22 @@ namespace ExternLib
 				TodoLogger.LogError(0, "Missing product info for "+json);
 			}
 
+
+			UserProducts userProducts = new UserProducts();
+			userProducts.Load(playerAccount.playerData.serverData);
+
 			int start = (page - 1) * ipp;
 			for(int i = start; i < start + ipp && i < plist.Count; i++)
 			{
 				EDOHBJAPLPF_JsonData p = new EDOHBJAPLPF_JsonData();
 				res["products"].Add(p);
-				p["bought_quantity"] = 0; // TODO
+
+				UserProductInfo up = userProducts.Products.Find((UserProductInfo _) =>
+				{
+					return _.id == plist[i].id;
+				});
+
+				p["bought_quantity"] = up != null ? up.buy_count : 0;
 				p["buy_limit"] = plist[i].buy_limit;
 				p["closed_at"] = plist[i].closed_at;
 				p["closed_at"] = Utility.GetCurrentUnixTime() + 24*3600;
@@ -1627,7 +1674,6 @@ namespace ExternLib
 								GetBalances(res, new List<int>() { item.CPGFOBNKKBF_Currency });
 								for(int i = 0; i < item.KGOFMDMDFCJ_BonusId.Length; i++)
 								{
-									UnityEngine.Debug.LogError(item.KGOFMDMDFCJ_BonusId[i]);
 									if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.KGOFMDMDFCJ_BonusId[i]) == EKLNMHFCAOI.FKGCBLHOOCL_Category.IBBDMIFICCN_BonusVC)
 									{
 										HHJHIFJIKAC_BonusVc.MNGJPJBCMBH db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.CDENCMNHNGA[EKLNMHFCAOI.DEACAHNLMNI_getItemId(item.KGOFMDMDFCJ_BonusId[i]) - 1];
@@ -1704,6 +1750,24 @@ namespace ExternLib
 						GetBalances(res, new List<int>() { currency });
 					}
 				}
+
+				UserProducts userProducts = new UserProducts();
+				userProducts.Load(playerAccount.playerData.serverData);
+				UserProductInfo p = userProducts.Products.Find((UserProductInfo _) =>
+				{
+					return _.id == product.id;
+				});
+				if(p == null)
+				{
+					p = new UserProductInfo();
+					p.id = product.id;
+					userProducts.Products.Add(p);
+				}
+				p.buy_count += (int)req["quantity"];
+
+				userProducts.Save(playerAccount.playerData.serverData);
+				SaveAccountServerData();
+
 			}
 			else
 			{

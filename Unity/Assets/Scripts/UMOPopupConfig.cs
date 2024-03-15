@@ -75,6 +75,13 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         {
             RuntimeSettings.CurrentSettings.MinigameAutoPlay = b;
         });
+        AddToggleButton(ref y, "Shop : Unloc max buy limit", () =>
+        {
+            return RuntimeSettings.CurrentSettings.RemoveShopLimit;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.RemoveShopLimit = b;
+        });
         
         AddToggleButton(ref y, "Data : Force integrity check on next launch", () =>
         {

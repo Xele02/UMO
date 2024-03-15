@@ -289,6 +289,8 @@ public class BKPAPCMJKHE_Shop : DIHHCBACKGG_DbSection
 			BOMCAJJCPME data = new BOMCAJJCPME();
 			data.FBGGEFFJJHB = k;
 			data.JLENMGOCHDG_BuyLimit = array[i].KMFLNILNPJD;
+			if(RuntimeSettings.CurrentSettings.RemoveShopLimit)
+				data.JLENMGOCHDG_BuyLimit = -1;
 			data.GJGNOFAPFJD = array[i].JBFLEDKDFCO;
 			data.EFNMDPKEJIM_LineupId = array[i].GHNAPCBBEHH;
 			data.EILKGEADKGH = array[i].EILKGEADKGH;

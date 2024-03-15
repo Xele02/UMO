@@ -234,6 +234,10 @@ namespace XeApp.Game.Gacha
 			m_uvMan = uvMan;
 			m_textKakutei.font = m_fontKakutei;
 			m_textKakutei.material = m_fontKakutei.material;
+			#if UNITY_EDITOR || UNITY_STANDALONE
+			if(m_textKakutei.material != null)
+				BundleShaderInfo.Instance.FixMaterialShader(m_textKakutei.material);
+			#endif
 			m_textKakutei.verticalOverflow = VerticalWrapMode.Overflow;
 			m_textKakutei.horizontalOverflow = HorizontalWrapMode.Overflow;
 			m_symbolMain = CreateSymbol("main", layout);

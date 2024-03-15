@@ -550,7 +550,7 @@ namespace XeApp.Game.Gacha
 					s = MakePopupSettingForTicket(ticketName, v1_have, v3_price, v2_lotCount);
 					//LAB_00998190;
 				}
-				if (EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem, 1) != netGachaProductData.MJNOAMAFNHA_CostItemId)
+				else if (EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem, 1) != netGachaProductData.MJNOAMAFNHA_CostItemId)
 				{
 					//LAB_009980f0
 					s = MakePopupSettingForFewLimitedItem(ticketName, v1_have, v3_price);

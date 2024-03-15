@@ -185,7 +185,7 @@ namespace XeApp.Game.Menu
 				yield return Co.R(m_storySelectController.SetupBg(m_stageCreater.page + 1));
 				SetCallbackButton();
 			}
-			else
+			else if(PrevTransition == TransitionList.Type.UNLOCK_DIVA)
 			{
 				yield return Co.R(m_stageCreater.Check());
 			}
