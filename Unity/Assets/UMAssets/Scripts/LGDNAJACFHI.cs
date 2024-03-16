@@ -15,7 +15,7 @@ public class LGDNAJACFHI
 	public int GCJMGMBNBCB_BuyLimit; // 0x34
 	public int AJIFADGGAAJ_BoughtQuantity; // 0x38
 	public string GBOGEOPOCFJ; // 0x3C
-	public bool JLGHMCBLENL; // 0x40
+	public bool JLGHMCBLENL_IsBeginner; // 0x40
 	public bool NIIIKPNBLNP; // 0x41
 	public bool IPKEFHPAMBP; // 0x42
 	public bool PBELOKPKJKN; // 0x43
@@ -25,9 +25,9 @@ public class LGDNAJACFHI
 	public string NGIKLCDKAMB_FormatedPrice; // 0x50
 	public string JKKNIEHJBAP; // 0x54
 	public int[] BIOHCFLJDCH_BonusItemId; // 0x58
-	public int[] HBHLKLGBKIJ; // 0x5C
+	public int[] HBHLKLGBKIJ_BonusCount; // 0x5C
 	public int EEFLOOBOAGF; // 0x60
-	public bool CHPMJNAFPMA; // 0x64
+	public bool CHPMJNAFPMA_HasMonthlyPassBonus; // 0x64
 	public bool NLHLBKDNGFJ; // 0x65
 	public int OJIMENABACH_PriceAmountMicros; // 0x68
 	public string JMEMGIPGGIK; // 0x6C
@@ -57,7 +57,7 @@ public class LGDNAJACFHI
 		NPPGKNGIFGK_Price = MEANCEOIMGE.NPPGKNGIFGK_Price;
 		GCJMGMBNBCB_BuyLimit = MEANCEOIMGE.HMFDJHEEGNN_BuyLimit;
 		AJIFADGGAAJ_BoughtQuantity = MEANCEOIMGE.GIEBJDKLCDH_BoughtQuantity;
-		JLGHMCBLENL = false;
+		JLGHMCBLENL_IsBeginner = false;
 		NIIIKPNBLNP = true;
 		KAPMOPMDHJE_Label = MEANCEOIMGE.KAPMOPMDHJE_Label;
 		NGIKLCDKAMB_FormatedPrice = MEANCEOIMGE.NGIKLCDKAMB_FormatedPrice;
@@ -66,20 +66,20 @@ public class LGDNAJACFHI
         DKJMDIFAKKD_VcItem.EBGPAPPHBAH vcItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem.ICGHMMOCJBA(PGODOPKCHBD_PlatformProductId, OPFGFINHFCE_Name, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime(), KAPMOPMDHJE_Label);
         LHENLPLKGLP_StuffId = vcItem.PPFNGGCBJKC_Id;
 		EAHPLCJMPHD = vcItem.HEOLEHDFLJO;
-		JLGHMCBLENL = vcItem.HPGNBPIBAOM;
+		JLGHMCBLENL_IsBeginner = vcItem.HPGNBPIBAOM_IsBeginner;
 		NIIIKPNBLNP = vcItem.AFHPLBPHEGA;
 		KLMPFGOCBHC = vcItem.KLMPFGOCBHC_Desc;
 		BIOHCFLJDCH_BonusItemId = vcItem.KGOFMDMDFCJ_BonusId;
-		HBHLKLGBKIJ = vcItem.NNIIINKFDBG_BonusCount;
+		HBHLKLGBKIJ_BonusCount = vcItem.NNIIINKFDBG_BonusCount;
 		EEFLOOBOAGF = vcItem.EILKGEADKGH;
-		if(JLGHMCBLENL || NIIIKPNBLNP)
+		if(JLGHMCBLENL_IsBeginner || NIIIKPNBLNP)
 			IPKEFHPAMBP = true;
-		CHPMJNAFPMA = false;
+		CHPMJNAFPMA_HasMonthlyPassBonus = false;
 		for(int i = 0; i < BIOHCFLJDCH_BonusItemId.Length; i++)
 		{
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.IIEKKOHBNLA(BIOHCFLJDCH_BonusItemId[i]))
+			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.IIEKKOHBNLA_HasMonthlyPassBonus(BIOHCFLJDCH_BonusItemId[i]))
 			{
-				CHPMJNAFPMA = true;
+				CHPMJNAFPMA_HasMonthlyPassBonus = true;
 				break;
 			}
 		}

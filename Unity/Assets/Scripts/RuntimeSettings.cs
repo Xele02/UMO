@@ -38,6 +38,7 @@ class RuntimeSettings : ScriptableObject
 				m_currentSettings.DisableCrywareLowLatency = UMO_PlayerPrefs.GetInt("DisableCrywareLowLatency", 0) == 1;
 				m_currentSettings.UseTouchScreen = UMO_PlayerPrefs.GetInt("UseTouchScreen", 0) == 1;
 				m_currentSettings.RemoveShopLimit = UMO_PlayerPrefs.GetInt("RemoveShopLimit", 0) == 1;
+				m_currentSettings.RemoveCrystalLimit = UMO_PlayerPrefs.GetInt("RemoveCrystalLimit", 0) == 1;
 
 #if (UNITY_ANDROID && !UNITY_EDITOR) || DEBUG_ANDROID_FILESYSTEM
 				m_currentSettings.DataDirectory = Application.persistentDataPath + "/data/";
@@ -61,6 +62,7 @@ class RuntimeSettings : ScriptableObject
         UMO_PlayerPrefs.SetInt("DisableCrywareLowLatency", m_currentSettings.DisableCrywareLowLatency ? 1 : 0);
 		UMO_PlayerPrefs.SetInt("UseTouchScreen", m_currentSettings.UseTouchScreen ? 1 : 0);
 		UMO_PlayerPrefs.SetInt("RemoveShopLimit", m_currentSettings.RemoveShopLimit ? 1 : 0);
+		UMO_PlayerPrefs.SetInt("RemoveCrystalLimit", m_currentSettings.RemoveCrystalLimit ? 1 : 0);
 		UMO_PlayerPrefs.Save();
 	}
 
@@ -172,6 +174,7 @@ class RuntimeSettings : ScriptableObject
 	public bool EnableErrorLog { get; set; }
 	public bool UseTouchScreen { get; set; }
 	public bool RemoveShopLimit { get; set; }
+	public bool RemoveCrystalLimit { get; set; }
 }
 
 #if UNITY_EDITOR

@@ -1961,7 +1961,7 @@ namespace XeApp.Game.Menu
 					count = infLoopCount;
 				}
 				//a.PKLGGJPPBAN();
-				for (int j = 1; j != 0; j--)
+				for (int j = count; j != 0; j--)
 				{
 					PCKLFFNPPLF p = new PCKLFFNPPLF();
 					p.NCMOCCDGKBP(a, itemData);
@@ -1995,8 +1995,29 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10E44E4 Offset: 0x10E44E4 VA: 0x10E44E4
 		private IEnumerator ShowInfinityItemuPopupCoroutine(short unlockCount, short stockCount, short episodeUnit, MNDAMOGGJBJ.MNDGNJLBANB reason, UnityAction<PopupButton.ButtonType, int> callBack)
 		{
-			TodoLogger.LogNotImplemented("ShowInfinityItemuPopupCoroutine");
-			yield return null;
+			//0x10F4B8C
+			bool isWait = true;
+			int count = 0;
+			PopupButton.ButtonType button = PopupButton.ButtonType.Other;
+			m_popupInfinityPanelSetting.UnlockCount = unlockCount;
+			m_popupInfinityPanelSetting.EpisodeUnit = episodeUnit;
+			m_popupInfinityPanelSetting.StockCount = stockCount;
+			m_popupInfinityPanelSetting.Reason = reason;
+			m_popupInfinityPanelSetting.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			PopupWindowManager.Show(m_popupInfinityPanelSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x10E6D80
+				button = type;
+				count = (control.Content as PopupGrowthInfinityPanel).Value;
+				isWait = false;
+			}, null, null, null);
+			while(isWait)
+				yield return null;
+			callBack(button, count);
 		}
 
 		//// RVA: 0x10E4610 Offset: 0x10E4610 VA: 0x10E4610

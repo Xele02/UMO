@@ -1377,9 +1377,8 @@ namespace ExternLib
 						platform_product_id = item.GLHKICCPGKJ_PlatformProductIds.Length > 0 ? item.GLHKICCPGKJ_PlatformProductIds[0] : "UMO."+item.DLCGAMHADEN_Label+"."+item.PPFNGGCBJKC_Id,
 						name = item.OPFGFINHFCE_Name,
 						label = item.DLCGAMHADEN_Label,
-						price_by_currency = new Dictionary<int, int>() { { 2, 0 } }
+						price_by_currency = new Dictionary<int, int>() { { 2, item.HMFFHLPNMPH_Count } }
 					});
-					//UnityEngine.Debug.LogError(item.PPFNGGCBJKC_Id+" "+item.OPFGFINHFCE_Name);
 					for(int j = 0; j < item.KGOFMDMDFCJ_BonusId.Count(); j++)
 					{
 						//UnityEngine.Debug.LogError(item.KGOFMDMDFCJ_BonusId[j]+" "+item.NNIIINKFDBG_BonusCount[j]);
@@ -1620,6 +1619,7 @@ namespace ExternLib
 			EDOHBJAPLPF_JsonData req = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
 
 			int pId = (int)req["productId"];
+			int quantity = (int)req["quantity"];
 			ProductInfo product = Products.Find((ProductInfo _) =>
 			{
 				return _.id == pId;
@@ -1665,19 +1665,19 @@ namespace ExternLib
 							// VC
 							DKJMDIFAKKD_VcItem.EBGPAPPHBAH item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem.CDENCMNHNGA.Find((DKJMDIFAKKD_VcItem.EBGPAPPHBAH _) =>
 							{
-								return _.DLCGAMHADEN_Label == product.label;
+								return _.PPFNGGCBJKC_Id == product.id % 10000000;
 							});
 							if(item != null)
 							{
 								// bought vc, update balance
-								AddToBalance(item.CPGFOBNKKBF_Currency, item.HMFFHLPNMPH_Count * (int)req["quantity"]);
+								AddToBalance(item.CPGFOBNKKBF_Currency, item.HMFFHLPNMPH_Count * quantity);
 								GetBalances(res, new List<int>() { item.CPGFOBNKKBF_Currency });
 								for(int i = 0; i < item.KGOFMDMDFCJ_BonusId.Length; i++)
 								{
 									if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.KGOFMDMDFCJ_BonusId[i]) == EKLNMHFCAOI.FKGCBLHOOCL_Category.IBBDMIFICCN_BonusVC)
 									{
 										HHJHIFJIKAC_BonusVc.MNGJPJBCMBH db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.CDENCMNHNGA[EKLNMHFCAOI.DEACAHNLMNI_getItemId(item.KGOFMDMDFCJ_BonusId[i]) - 1];
-										AddToBalance(db.CPGFOBNKKBF_CurrencyId, item.NNIIINKFDBG_BonusCount[i] * (int)req["quantity"]);
+										AddToBalance(db.CPGFOBNKKBF_CurrencyId, item.NNIIINKFDBG_BonusCount[i] * quantity);
 										GetBalances(res, new List<int>() { db.CPGFOBNKKBF_CurrencyId });
 									}
 									else
@@ -1704,7 +1704,7 @@ namespace ExternLib
 								invData[AFEHLCGHAEE_Strings.HAAJGNCFNJM_item_name] = data.HAAJGNCFNJM_ItemName; // string
 								invData[AFEHLCGHAEE_Strings.OCNINMIMHGC_item_value] = data.NNFNGLJOKKF_ItemId; // int
 								invData[AFEHLCGHAEE_Strings.MJBKGOJBPAD_item_type] = 0; // int
-								invData[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = cnt * (int)req["quantity"]; // int
+								invData[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = cnt * quantity; // int
 								invData[AFEHLCGHAEE_Strings.INDDJNMPONH_type] = 0; // int
 								invData[AFEHLCGHAEE_Strings.BIOGKIEECGN_created_at] = Utility.GetCurrentUnixTime(); // long
 								invData[AFEHLCGHAEE_Strings.EGBOHDFBAPB_closed_at] = Utility.GetTargetUnixTime(2030, 1, 1, 0, 0, 0); // long
@@ -1731,7 +1731,7 @@ namespace ExternLib
 								invData[AFEHLCGHAEE_Strings.HAAJGNCFNJM_item_name] = data.HAAJGNCFNJM_ItemName; // string
 								invData[AFEHLCGHAEE_Strings.OCNINMIMHGC_item_value] = data.NNFNGLJOKKF_ItemId; // int
 								invData[AFEHLCGHAEE_Strings.MJBKGOJBPAD_item_type] = 0; // int
-								invData[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = dbItem2.LBCNKLPIMHL_Count * (int)req["quantity"]; // int
+								invData[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = dbItem2.LBCNKLPIMHL_Count * quantity; // int
 								invData[AFEHLCGHAEE_Strings.INDDJNMPONH_type] = 0; // int
 								invData[AFEHLCGHAEE_Strings.BIOGKIEECGN_created_at] = Utility.GetCurrentUnixTime(); // long
 								invData[AFEHLCGHAEE_Strings.EGBOHDFBAPB_closed_at] = Utility.GetTargetUnixTime(2030, 1, 1, 0, 0, 0); // long
@@ -1746,7 +1746,7 @@ namespace ExternLib
 					}
 					if(currency != 2)
 					{
-						ConsumeCurrency(currency, product.price_by_currency[currency]);
+						ConsumeCurrency(currency, product.price_by_currency[currency] * quantity);
 						GetBalances(res, new List<int>() { currency });
 					}
 				}
@@ -1763,7 +1763,7 @@ namespace ExternLib
 					p.id = product.id;
 					userProducts.Products.Add(p);
 				}
-				p.buy_count += (int)req["quantity"];
+				p.buy_count += quantity;
 
 				userProducts.Save(playerAccount.playerData.serverData);
 				SaveAccountServerData();

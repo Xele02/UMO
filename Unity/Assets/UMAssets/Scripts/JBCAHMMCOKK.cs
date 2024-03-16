@@ -366,7 +366,7 @@ public class JBCAHMMCOKK
 							{
 								if(OHDPMGMGJBI.GCJMGMBNBCB_BuyLimit != OHDPMGMGJBI.AJIFADGGAAJ_BoughtQuantity)
 								{
-									if(OHDPMGMGJBI.JLGHMCBLENL)
+									if(OHDPMGMGJBI.JLGHMCBLENL_IsBeginner)
 									{
 										JBCAHMMCOKK j = new JBCAHMMCOKK();
 										j.KHEKNNFCAOI(KOGBMDOONFA.PPFNGGCBJKC);

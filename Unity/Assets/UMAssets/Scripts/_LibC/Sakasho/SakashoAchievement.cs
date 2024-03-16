@@ -122,9 +122,9 @@ namespace ExternLib
 						TodoLogger.LogError(0, "Unknown item : " + rinfo.FKNBLDPIPMC_GetGlobalId(reward));
 					addedItem.AddInInventoryResult(d);
 				}
-				else if(key.StartsWith("episode_"))
+				else if(key.StartsWith("episode_key_"))
 				{
-					string k2 = key.Replace("free_key_", "").Replace("_l6", "");
+					string k2 = key.Replace("episode_key_", "");
 					string[] vals = k2.Split(new char[] { '_' });
 					int epId = int.Parse(vals[0]);
 					int rewardId = int.Parse(vals[1]);
@@ -188,7 +188,6 @@ namespace ExternLib
 					}
 					if(of != null)
 					{
-						TodoLogger.LogError(0, "reward check : 5");
 						UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 						{
 							item_count = 5,
@@ -209,7 +208,6 @@ namespace ExternLib
 					int cosId = int.Parse(vals[0]);
 					int levelId = int.Parse(vals[1]);
 					int costume_upgrade_vc_count = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("costume_upgrade_vc_count", 5);
-					TodoLogger.LogError(0, "reward check :"+costume_upgrade_vc_count);
 					UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 					{
 						item_count = costume_upgrade_vc_count,

@@ -15,7 +15,7 @@ public class DKJMDIFAKKD_VcItem : DIHHCBACKGG_DbSection
 		public int INDDJNMPONH_Category; // 0x10
 		public int HEOLEHDFLJO; // 0x14
 		public int EILKGEADKGH; // 0x18
-		public bool HPGNBPIBAOM; // 0x1C
+		public bool HPGNBPIBAOM_IsBeginner; // 0x1C
 		public bool AFHPLBPHEGA; // 0x1D
 		public long PDBPFJJCADD_StartDate; // 0x20
 		public long EGBOHDFBAPB_EndDate; // 0x28
@@ -131,7 +131,7 @@ public class DKJMDIFAKKD_VcItem : DIHHCBACKGG_DbSection
 				data.INDDJNMPONH_Category = array[i].GBJFNGCDKPM;
 				data.PDBPFJJCADD_StartDate = array[i].PDBPFJJCADD;
 				data.EGBOHDFBAPB_EndDate = array[i].EGBOHDFBAPB;
-				data.HPGNBPIBAOM = array[i].HPGNBPIBAOM != 0;
+				data.HPGNBPIBAOM_IsBeginner = array[i].HPGNBPIBAOM != 0;
 				data.AFHPLBPHEGA = array[i].AFHPLBPHEGA != 0;
 				data.HEOLEHDFLJO = array[i].HEOLEHDFLJO;
 				data.KLMPFGOCBHC_Desc = array[i].KLMPFGOCBHC;

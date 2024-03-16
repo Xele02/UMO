@@ -82,6 +82,13 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         {
             RuntimeSettings.CurrentSettings.RemoveShopLimit = b;
         });
+        AddToggleButton(ref y, "Shop : Remove crystal limit", () =>
+        {
+            return RuntimeSettings.CurrentSettings.RemoveCrystalLimit;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.RemoveCrystalLimit = b;
+        });
         
         AddToggleButton(ref y, "Data : Force integrity check on next launch", () =>
         {

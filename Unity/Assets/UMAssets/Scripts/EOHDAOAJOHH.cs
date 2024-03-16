@@ -571,7 +571,7 @@ public class EOHDAOAJOHH
 						int idx = EJHPIMANJFP.HHCJCDFCLOB.MHKCPJDNJKI.FindIndex((LGDNAJACFHI GHPLINIACBB) =>
 						{
 							//0xFBDD4C
-							return GHPLINIACBB.JLGHMCBLENL;
+							return GHPLINIACBB.JLGHMCBLENL_IsBeginner;
 						});
 						if(idx < 0 && DDGFCOPPBBN)
 						{

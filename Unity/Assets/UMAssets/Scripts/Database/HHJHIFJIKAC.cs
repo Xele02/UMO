@@ -48,7 +48,7 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
 	public List<MNGJPJBCMBH> CDENCMNHNGA = new List<MNGJPJBCMBH>(); // 0x20
 
 	// // RVA: 0x1830F38 Offset: 0x1830F38 VA: 0x1830F38
-	public bool IIEKKOHBNLA(int INFIBMLIHLO)
+	public bool IIEKKOHBNLA_HasMonthlyPassBonus(int INFIBMLIHLO)
 	{
         EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(INFIBMLIHLO);
         int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(INFIBMLIHLO);
