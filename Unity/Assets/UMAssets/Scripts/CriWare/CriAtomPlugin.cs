@@ -32,7 +32,7 @@ namespace CriWare {
 		// // RVA: 0x28B1480 Offset: 0x28B1480 VA: 0x28B1480
 		private static IntPtr GetSpatializerCoreInterfaceFromAtomOculusAudioBridge()
 		{
-			TodoLogger.LogError(0, "GetSpatializerCoreInterfaceFromAtomOculusAudioBridge");
+			TodoLogger.LogError(TodoLogger.CriAtomPlugin, "GetSpatializerCoreInterfaceFromAtomOculusAudioBridge");
 			return IntPtr.Zero;
 		}
 
@@ -168,7 +168,7 @@ namespace CriWare {
 			{
 				for(int i = 0; i < effectInterfaceList.Count; i++)
 				{
-					TodoLogger.LogError(0, "call effectInterfaceList RegisterEffectInterface");
+					TodoLogger.LogError(TodoLogger.CriAtomPlugin, "call effectInterfaceList RegisterEffectInterface");
 				}
 			}
 

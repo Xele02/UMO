@@ -191,7 +191,7 @@ public class LAPFLEEAACL
 	// // RVA: 0xD94E0C Offset: 0xD94E0C VA: 0xD94E0C
 	private IEnumerator CAIJJOKCOAB_ConvertMonthlyPass(int LGMBMMMAFKK)
 	{
-		TodoLogger.LogError(0, "CAIJJOKCOAB_ConvertMonthlyPass");
+		TodoLogger.LogError(TodoLogger.MonthlyPass, "CAIJJOKCOAB_ConvertMonthlyPass");
 		yield return null;
 		PLOOEECNHFB_IsDone = true;
 	}

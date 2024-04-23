@@ -370,20 +370,20 @@ public class ICFLJACCIKF_EventBattle : DIHHCBACKGG_DbSection
 	// RVA: 0x1221594 Offset: 0x1221594 VA: 0x1221594 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.LogError(TodoLogger.Database, "ICFLJACCIKF_EventBattle.KMBPACJNEOF");
+		TodoLogger.LogError(TodoLogger.EventBattle_3, "ICFLJACCIKF_EventBattle.KMBPACJNEOF");
 	}
 
 	// RVA: 0x122183C Offset: 0x122183C VA: 0x122183C Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
 	{
-		TodoLogger.LogError(TodoLogger.Database, "ICFLJACCIKF_EventBattle.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.EventBattle_3, "ICFLJACCIKF_EventBattle.IIEMACPEEBJ");
 		return true;
 	}
 
 	// RVA: 0x122413C Offset: 0x122413C VA: 0x122413C Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(TodoLogger.Database, "ICFLJACCIKF_EventBattle.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbJson, "ICFLJACCIKF_EventBattle.IIEMACPEEBJ");
 		return true;
 	}
 

@@ -11,7 +11,37 @@ namespace ExternLib
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res[AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes] = new EDOHBJAPLPF_JsonData();
 			res[AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
-			TodoLogger.LogError(0, "SakashoAchievementGetAchievementRecords");
+			TodoLogger.LogError(TodoLogger.SakashoServer, "SakashoAchievementGetAchievementRecords");
+
+			SendMessage(callbackId, res);
+			// end hack
+
+			return 0;
+		}
+
+		public static int SakashoAchievementClaimAchievementPrizes(int callbackId, string json)
+		{
+			// Hack directly send response
+
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res[AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes] = new EDOHBJAPLPF_JsonData();
+			res[AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+			TodoLogger.LogError(TodoLogger.SakashoServer, "SakashoAchievementClaimAchievementPrizes");
+
+			SendMessage(callbackId, res);
+			// end hack
+
+			return 0;
+		}
+
+		public static int SakashoAchievementClaimAchievementPrizesSetInventoryClosedAt(int callbackId, string json)
+		{
+			// Hack directly send response
+
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res[AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes] = new EDOHBJAPLPF_JsonData();
+			res[AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+			TodoLogger.LogError(TodoLogger.SakashoServer, "SakashoAchievementClaimAchievementPrizesSetInventoryClosedAt");
 
 			SendMessage(callbackId, res);
 			// end hack
@@ -22,7 +52,7 @@ namespace ExternLib
 		public static int SakashoAchievementClaimAchievementPrizesAndSaveSetInventoryClosedAt(int callbackId, string json)
 		{
 			// Hack directly send response
-			TodoLogger.LogError(0, "SakashoAchievementClaimAchievementPrizesAndSaveSetInventoryClosedAt");
+			TodoLogger.LogError(TodoLogger.SakashoServer, "SakashoAchievementClaimAchievementPrizesAndSaveSetInventoryClosedAt");
 			return SakashoPlayerDataSavePlayerData(callbackId, json);
 		}
 
@@ -56,7 +86,7 @@ namespace ExternLib
 						return _.EIHOBHDKCDB_RewardId == reward.PPFNGGCBJKC;
 					});
                     if (reward.GLCLFMGPMAN_ItemFullId != 10000)
-						TodoLogger.LogError(0, "Unknown item : " + reward.GLCLFMGPMAN_ItemFullId);
+						TodoLogger.LogError(TodoLogger.SakashoServer, "Unknown item : " + reward.GLCLFMGPMAN_ItemFullId);
 
                     UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 					{
@@ -83,7 +113,7 @@ namespace ExternLib
 						return _.EIHOBHDKCDB_RewardId == reward.PPFNGGCBJKC;
 					});
                     if (reward.GLCLFMGPMAN_ItemFullId != 10000)
-						TodoLogger.LogError(0, "Unknown item : " + reward.GLCLFMGPMAN_ItemFullId);
+						TodoLogger.LogError(TodoLogger.SakashoServer, "Unknown item : " + reward.GLCLFMGPMAN_ItemFullId);
 
                     UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 					{
@@ -119,7 +149,7 @@ namespace ExternLib
 						closed_at = 32535097200
 					});
 					if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(rinfo.FKNBLDPIPMC_GetGlobalId(reward)) != EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC)
-						TodoLogger.LogError(0, "Unknown item : " + rinfo.FKNBLDPIPMC_GetGlobalId(reward));
+						TodoLogger.LogError(TodoLogger.SakashoServer, "Unknown item : " + rinfo.FKNBLDPIPMC_GetGlobalId(reward));
 					addedItem.AddInInventoryResult(d);
 				}
 				else if(key.StartsWith("episode_key_"))
@@ -141,7 +171,7 @@ namespace ExternLib
 						closed_at = 32535097200
 					});
 					if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(reward.KIJAPOFAGPN_Item) != EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC)
-						TodoLogger.LogError(0, "Unknown item : " + reward.KIJAPOFAGPN_Item);
+						TodoLogger.LogError(TodoLogger.SakashoServer, "Unknown item : " + reward.KIJAPOFAGPN_Item);
 					addedItem.AddInInventoryResult(d);
 				}
 				else if(key.StartsWith("new_offer_clear_key_"))

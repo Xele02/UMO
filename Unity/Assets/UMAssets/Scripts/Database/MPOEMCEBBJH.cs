@@ -53,7 +53,7 @@ public class MPOEMCEBBJH_Pilot : DIHHCBACKGG_DbSection
 	// RVA: 0x17BCC98 Offset: 0x17BCC98 VA: 0x17BCC98 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(100, "Pilot IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbJson, "Pilot IIEMACPEEBJ");
 		return true;
 	}
 

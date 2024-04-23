@@ -59,7 +59,7 @@ namespace XeApp.Game.Common
 					}
 					if(Database.Instance.gameSetup.SelectedDashIndex > -1)
 					{
-						return data.KLOOIJIDKGO[Database.Instance.gameSetup.SelectedDashIndex];
+						return data.KLOOIJIDKGO_Cost[Database.Instance.gameSetup.SelectedDashIndex];
 					}
 				}
 			}

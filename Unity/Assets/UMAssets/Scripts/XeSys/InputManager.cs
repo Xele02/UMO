@@ -126,24 +126,22 @@ namespace XeSys
 			MobilePinchAction();
 		}
 
-		// // RVA: 0x1EF6744 Offset: 0x1EF6744 VA: 0x1EF6744
-		private void MouseAction()
+		private void MouseAction(int idx)
 		{
-			TouchInfoRecord info = touchInfoRecords[0];
-			touchCount = 0;
+			TouchInfoRecord info = touchInfoRecords[idx];
 			TouchPhase phase = TouchPhase.Began;
 			Vector2 position = Vector2.zero;
-			if(Input.GetMouseButtonDown(0))
+			if(Input.GetMouseButtonDown(idx))
 			{
 				phase = TouchPhase.Began;
 				position = Input.mousePosition;
 			}
-			else if(Input.GetMouseButtonUp(0))
+			else if(Input.GetMouseButtonUp(idx))
 			{
 				position = Input.mousePosition;
 				phase = TouchPhase.Ended;
 			}
-			else if(Input.GetMouseButton(0))
+			else if(Input.GetMouseButton(idx))
 			{
 				position = Input.mousePosition;
 				phase = TouchPhase.Stationary;
@@ -151,11 +149,18 @@ namespace XeSys
 			else
 			{
 				info.UpdateReleased();
-				MousePinchAction();
 				return;
 			}
 			info.Update(phase, position);
 			touchCount++;
+		}
+
+		// // RVA: 0x1EF6744 Offset: 0x1EF6744 VA: 0x1EF6744
+		private void MouseAction()
+		{
+			touchCount = 0;
+			MouseAction(0);
+			MouseAction(1);
 			MousePinchAction();
 		}
 
@@ -248,7 +253,27 @@ namespace XeSys
 		}
 
 		// // RVA: 0x1EF74FC Offset: 0x1EF74FC VA: 0x1EF74FC
-		// public TouchInfoRecord GetInScreenTouchRecord(int order) { }
+		public TouchInfoRecord GetInScreenTouchRecord(int order)
+		{
+			touchListTempList.Clear();
+			for(int i = 0; i < touchCount; i++)
+			{
+				if(IsTouchPositionInScreen(GetTouchInfoRecord(i).beganInfo.GetSceneInnerPosition()))
+				{
+					touchListTempList.Add(GetTouchInfoRecord(i));
+				}
+			}
+			touchListTempList.Sort((TouchInfoRecord left, TouchInfoRecord right) =>
+			{
+				//0x23899D4
+				return left.beganInfo.id - right.beganInfo.id;
+			});
+			if(touchListTempList.Count > order)
+			{
+				return touchListTempList[order];
+			}
+			return null;
+		}
 
 		// // RVA: 0x1EF6DD0 Offset: 0x1EF6DD0 VA: 0x1EF6DD0
 		public bool GetInScreenTouch(int order, out Touch touch)
@@ -282,7 +307,8 @@ namespace XeSys
 			// UMO Update, always update pinchdelta
 			float wheel = Input.GetAxis("Mouse ScrollWheel");
 			pinchDelta = -wheel;
-			if(!Input.GetMouseButton(0) && !Input.GetMouseButton(1))
+			//if(!Input.GetMouseButton(0) && !Input.GetMouseButton(1))
+			if(wheel == 0)
 			{
 				pinchRatio = 1.0f;
 				//pinchDelta = 0.0f;

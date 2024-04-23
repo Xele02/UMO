@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
@@ -95,7 +96,7 @@ namespace XeApp.Game.Menu
 			m_isEnableEpisodeBonus = false;
 			if (isRaid)
 			{
-				TodoLogger.LogError(0, "event");
+				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "event");
 			}
 			else
 			{
@@ -357,7 +358,15 @@ namespace XeApp.Game.Menu
 			bonusPoint = 0;
 			if (list != null && list.Count > 0)
 			{
-				TodoLogger.LogError(0, "CanBonusEpisode Event");
+				for(int i = 0; i < list.Count; i++)
+				{
+					if(list[i].JKDJCFEBDHC)
+					{
+						bonusPoint += list[i].HEDODOBGPPM;
+					}
+				}
+				bonusPoint = Mathf.Min(bonusPoint, 999);
+				return true;
 			}
 			return false;
 		}

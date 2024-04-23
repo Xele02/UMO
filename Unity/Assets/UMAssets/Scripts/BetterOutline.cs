@@ -43,7 +43,7 @@ public class BetterOutline : Shadow
 			ApplyShadowZeroAlloc(verts, effectColor, start, end, 0, effectDistance.y);
 			if(GetComponent<Text>().material.shader == Shader.Find("Text Effects/Fancy Text"))
 			{
-				TodoLogger.LogError(0, "Todo better outline");
+				TodoLogger.LogError(TodoLogger.Shader, "Todo better outline");
 			}
             vh.Clear();
             vh.AddUIVertexTriangleStream(verts);

@@ -98,7 +98,7 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 	// RVA: 0x1BA7168 Offset: 0x1BA7168 VA: 0x1BA7168 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(100, "Valkyrie Json Load");
+		TodoLogger.LogError(TodoLogger.DbJson, "Valkyrie Json Load");
 		return false;
 	}
 

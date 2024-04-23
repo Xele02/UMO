@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using XeApp.Game.Common;
@@ -35,14 +36,34 @@ namespace XeApp.Game.Menu
 		[SerializeField]
 		private InOutAnime m_inOut; // 0x2C
 
-		// public Action OnRewardButtonClickListener { private get; set; } // 0x30
-		// public Action OnRankingButtonClickListener { private get; set; } // 0x34
-		// public Action OnSpecialPerformButtonClickListener { private get; set; } // 0x38
+		public Action OnRewardButtonClickListener { private get; set; } // 0x30
+		public Action OnRankingButtonClickListener { private get; set; } // 0x34
+		public Action OnSpecialPerformButtonClickListener { private get; set; } // 0x38
 
 		// // RVA: 0xBE4DC0 Offset: 0xBE4DC0 VA: 0xBE4DC0
 		private void Awake()
 		{
-			TodoLogger.LogError(0, "Vertical Music Select Music List Detail Awake");
+			m_rewardButton.ClearOnClickCallback();
+			m_rewardButton.AddOnClickCallback(() =>
+			{
+				//0xBE522C
+				if(OnRewardButtonClickListener != null)
+					OnRewardButtonClickListener();
+			});
+			m_rankingButton.ClearOnClickCallback();
+			m_rankingButton.AddOnClickCallback(() =>
+			{
+				//0xBE5240
+				if(OnRankingButtonClickListener != null)
+					OnRankingButtonClickListener();
+			});
+			m_specialPerformButton.ClearOnClickCallback();
+			m_specialPerformButton.AddOnClickCallback(() =>
+			{
+				//0xBE5254
+				if(OnSpecialPerformButtonClickListener != null)
+					OnSpecialPerformButtonClickListener();
+			});
 		}
 
 		// // RVA: 0xBE4F80 Offset: 0xBE4F80 VA: 0xBE4F80
@@ -62,17 +83,5 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0xBE51F8 Offset: 0xBE51F8 VA: 0xBE51F8
 		// public bool IsPlaying() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F5DCC Offset: 0x6F5DCC VA: 0x6F5DCC
-		// // RVA: 0xBE522C Offset: 0xBE522C VA: 0xBE522C
-		// private void <Awake>b__21_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F5DDC Offset: 0x6F5DDC VA: 0x6F5DDC
-		// // RVA: 0xBE5240 Offset: 0xBE5240 VA: 0xBE5240
-		// private void <Awake>b__21_1() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F5DEC Offset: 0x6F5DEC VA: 0x6F5DEC
-		// // RVA: 0xBE5254 Offset: 0xBE5254 VA: 0xBE5254
-		// private void <Awake>b__21_2() { }
 	}
 }

@@ -30,6 +30,12 @@ namespace XeSys
 		}
 
 		// // RVA: 0x203A9F0 Offset: 0x203A9F0 VA: 0x203A9F0
-		// public bool Failed(FileResultObject fro) { }
+		public bool Failed(FileResultObject fro)
+		{
+			resultObject = fro;
+			if(failedCallback != null)
+				return failedCallback(fro);
+			return true;
+		}
 	}
 }

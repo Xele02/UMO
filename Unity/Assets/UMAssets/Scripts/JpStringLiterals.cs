@@ -1,6 +1,8 @@
 
 class JpStringLiterals
 {
+	public const string StringLiteral_367 = " "; //0x03ba9074
+	public const string StringLiteral_1374 = "年"; //0x03baa030
 	public const string StringLiteral_1376 = "月"; // 0x03baa038
 	public const string StringLiteral_1378 = "日"; // 0x03baa040
 	public const string StringLiteral_5812 = "\n"; // 0x03bae588
@@ -14,6 +16,7 @@ class JpStringLiterals
 	public const string StringLiteral_9366 = "デコチャット"; //0x03bb1d10
 	public const string StringLiteral_9368 = "協力ミッション"; //0x03bb1d18
 	public const string StringLiteral_9370 = "未知のタイプ"; //0x03bb1d20
+	public const string StringLiteral_9477 = "ボス名"; //0x03bb1ecc
 	public const string StringLiteral_9528 = "想定していない人数が入っています　id:"; //0x03bb1f98
 	public const string StringLiteral_9555 = "event_quest"; // 0x03bb2004
 	public const string StringLiteral_9630 = "から新しいメッセージがあります。"; // 0x03bb2130
@@ -164,6 +167,7 @@ class JpStringLiterals
 	public const string StringLiteral_11431 = "通常攻撃"; // 0x03bb3d54
 	public const string StringLiteral_11476 = "登録"; //0x03bb3e08
 	public const string StringLiteral_11477 = "解除"; //0x03babc2c
+	public const string StringLiteral_11776 = "情報"; //0x03bb42b8
 	public const string StringLiteral_11781 = "新しいバージョン検知 mver= "; // 0x03bb42cc
 	public const string StringLiteral_11855 = "Install : Start reception. / バッチインストーラ　開始受付  status = {0}"; //0x03bb43f4
 	public const string StringLiteral_11856 = "Install : Accept debut reception / バッチインストーラ　開始受付受理"; //0x03bb43f8
@@ -180,6 +184,14 @@ class JpStringLiterals
 	public const string StringLiteral_11847 = "木"; // 03bb43d4
 	public const string StringLiteral_11848 = "金"; // 03bb43d8
 	public const string StringLiteral_11849 = "土"; // 03bb43dc
+	public const string StringLiteral_11911 = "クライアントエラー"; // 03bb44d4
+	public const string StringLiteral_11912 = "フレンド申請済み"; // 03bb44d8
+	public const string StringLiteral_11913 = "フレンド上限"; // 03bb44dc
+	public const string StringLiteral_11914 = "フレンド確認"; // 03bb44e0
+	public const string StringLiteral_11915 = "検索失敗"; // 03bb44e4
+	public const string StringLiteral_11916 = "連携失敗"; // 0x03bb44e8
+	public const string StringLiteral_11917 = "申請失敗"; // 03bb44ec
+	public const string StringLiteral_11918 = "通信エラー"; // 03bb44f0
 	public const string StringLiteral_11920 = "\n\nエラーコード : "; // 0x03bb44f8
 	public const string StringLiteral_11921 = "データ更新"; // 0x03bb44fc
 	public const string StringLiteral_11922 = "日付変更"; // 0x03bb4500
@@ -188,6 +200,9 @@ class JpStringLiterals
 	public const string StringLiteral_11928 = "ファイルのダウンロードに失敗しました。\nストレージに十分な空き容量がない場合に\nこのメッセージが表示される可能性があります。\nリトライしますか？"; // 0x03bb4518
 	public const string StringLiteral_11929 = "ダウンロードエラー"; // 0x03bb451c
 	public const string StringLiteral_11930 = "ファイルのダウンロードに失敗しました。\nインターネットへの接続や電波の状況を確認して、\nもう一度お試しください。"; // 0x03bb4520
+	public const string StringLiteral_11955 = "通信がタイムアウトしました。リトライしますか？\nキャンセルした場合はタイトル画面に戻ります。"; //0x03bb4584
+	public const string StringLiteral_11956 = "通信がタイムアウトしました。\nタイトル画面に戻ります。"; //0x03bb4588
+	public const string StringLiteral_11962 = "エラー"; //0x03bb45a0
 	public const string StringLiteral_11972 = "内部エラー"; //0x03bb45c8
 	public const string StringLiteral_11973 = "エラーが発生しました。\nタイトル画面に戻ります。"; //0x03bb45cc
 	public const string StringLiteral_11992 = "バッチインストーラ　インストールモジュール作成失敗"; // 0x03bb4618
@@ -219,6 +234,8 @@ class JpStringLiterals
 	public const string StringLiteral_12333 = "歌晶石セットE"; // 0x03bb4b6c
 	public const string StringLiteral_12334 = "歌晶石セットF"; // 0x03bb4b70
 	public const string StringLiteral_12335 = "歌晶石セットG"; // 0x03bb4b74
+	public const string StringLiteral_12459 = "通信がタイムアウトしました。"; //0x03bb4d64
+	public const string StringLiteral_12462 = "エラーが発生しました。\n\n(エラーコード : {0})"; // 03bb4d70
 	public const string StringLiteral_12526 = "汎用"; //0x03bb4e70
 	public const string StringLiteral_12528 = "専用"; //0x03bb4e78
 	public const string StringLiteral_12532 = "GPGSログインボタンを表示"; // 0x03bb4e88
@@ -228,6 +245,7 @@ class JpStringLiterals
 	public const string StringLiteral_12541 = "ログアウトされた"; // 0x03bb4eac
 	public const string StringLiteral_12573 = "GPGSログイン成功"; // 0x03bb4f2c
 	public const string StringLiteral_12574 = "GPGSログイン失敗"; // 0x03bb4f30
+	public const string StringLiteral_12619 = "no data"; //0x03bb4fe4
 	public const string StringLiteral_12640 = "<color=cyan>ローカルセーブデータ再作成</color>"; // 0x03bb5038
 	public const string StringLiteral_12692 = "エナジー全回復"; // 0x03bb5108
 	public const string StringLiteral_12693 = "お知らせ"; // 0x03bb510c
@@ -366,6 +384,7 @@ class JpStringLiterals
 	public const string StringLiteral_14007 = "×{0}"; // 0x03bb6594
 	public const string StringLiteral_14024 = "\r"; //0x03bb65d8
 	public const string StringLiteral_14032 = "アニメーションテーブル数以上のキーフレーム番号が指定されました。"; // 0x03bb65f8
+	public const string StringLiteral_14355 = "今日は表示しない"; //0x03bb6b04
 	public const string StringLiteral_14401 = "+ボタン"; // 0x03bb6bbc
 	public const string StringLiteral_14529 = "ーーー"; // 0x03bb6dbc
 	public const string StringLiteral_14769 = "{0}さん"; // 0x03bb717c
@@ -433,8 +452,15 @@ class JpStringLiterals
 	public const string StringLiteral_18949 = "ヴァルキリー選択"; //0x03bbb2cc
 	public const string StringLiteral_19017 = "誕生日"; // 0x03bbb3dc
 	public const string StringLiteral_19018 = "{0}/{1}/{2}　{3}"; // 0x03bbb3e0
+	public const string StringLiteral_19422 = "ランキング"; //0x03bbba30
+	public const string StringLiteral_19427 = "～"; // 0x03bbba44
+	public const string StringLiteral_19428 = "位:"; //0x03bbba48
+	public const string StringLiteral_19432 = "【{0}】"; //0x03bbba58
+	public const string StringLiteral_19433 = "イベント楽曲でのレアドロップ"; //0x03bbba5c
+	public const string StringLiteral_19538 = "インパクト"; //0x03bbbc00
 	public const string StringLiteral_19639 = "無期限"; //0x03bbbd94
 	public const string StringLiteral_19612 = "ユニットセット"; // 0x03bbbd28
+	public const string StringLiteral_19704 = "他人のデコルーム:プロフィール経由"; //0x03bbbe98
 	public const string StringLiteral_20178 = " ★"; // 0x03bbc600
 	public const string StringLiteral_20179 = "の最大マス数="; // 0x03bbc604
 	public const string StringLiteral_20180 = "なのに "; // 0x03bbc608

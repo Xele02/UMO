@@ -86,7 +86,11 @@ namespace XeApp.Game.Adv
 		//// RVA: 0xE56CEC Offset: 0xE56CEC VA: 0xE56CEC
 		private void GotoTitle()
 		{
-			TodoLogger.LogError(0, "GotoTitle");
+			PopupWindowManager.Close(null, null);
+			SoundManager.Instance.bgmPlayer.Stop();
+			NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.MBOIDKCMCDL = false;
+			GameManager.Instance.ClearPushBackButtonHandler();
+			NextScene("Title");
 		}
 
 		//// RVA: 0xE56EAC Offset: 0xE56EAC VA: 0xE56EAC

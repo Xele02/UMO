@@ -66,7 +66,7 @@ namespace XeApp.Game.Menu
 				BOKMNHAFJHF_Sns.KEIGMAOCJHK dbSns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA[i];
 				if(dbSns.PPEGAKEIEGM_Enabled == 2)
 				{
-					if(dbSns.MALFHCHNEFN == 3 && dbSns.JKNGNIMLDDJ == 10)
+					if(dbSns.MALFHCHNEFN_RoomId == 3 && dbSns.JKNGNIMLDDJ == 10)
 					{
 						DateTime date = Utility.GetLocalDateTime(dbSns.DPIBHFNDJII);
 						if(date.Month == dbDiva.DOAJJALOKLI_Month && date.Day == dbDiva.PKNONBBKCCP_Day)

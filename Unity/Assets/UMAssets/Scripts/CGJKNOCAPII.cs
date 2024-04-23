@@ -42,7 +42,7 @@ public class CGJKNOCAPII
 		res.PGIIDPEGGPI = FBFNJMKPBBA.PGIIDPEGGPI_EventId;
 		res.JHAOHBNPMNA_EventId = FBFNJMKPBBA.PGIIDPEGGPI_EventId;
 		res.COAMJFMEIBF = FBFNJMKPBBA;
-		if(FBFNJMKPBBA.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI/*6*/)
+		if(FBFNJMKPBBA.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI_6/*6*/)
 		{
 			res.KINJOEIAHFK_Start = FBFNJMKPBBA.GLIMIGNNGGB_Start;
 			res.PCCFAKEOBIC_End = FBFNJMKPBBA.DPJCPDKALGI_End1;
@@ -52,11 +52,11 @@ public class CGJKNOCAPII
 			res.KINJOEIAHFK_Start = FBFNJMKPBBA.DPJCPDKALGI_End1 + 1;
 			res.PCCFAKEOBIC_End = FBFNJMKPBBA.LJOHLEGGGMC;
 		}
-		res.PNFDMBHDPAJ = FBFNJMKPBBA.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD.MEAJLPAHINL/*5*/;
+		res.PNFDMBHDPAJ = FBFNJMKPBBA.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD.MEAJLPAHINL_5/*5*/;
 		res.BCOKKAALGHC = 0;
 		if(FBFNJMKPBBA is KNKDBNFMAKF_EventSp)
 		{
-			TodoLogger.LogError(0, "Event SP");
+			TodoLogger.LogError(TodoLogger.EventSp_7, "Event SP");
 		}
 		res.NNHHNFFLCFO = ILLPDLODANB.ODEHLBNBPPE(FBFNJMKPBBA);
 		res.BEEIIJJKDBH = 0;
@@ -93,11 +93,11 @@ public class CGJKNOCAPII
 			{
 				if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp)
 				{
-					TodoLogger.LogError(0, "Event SP");
+					TodoLogger.LogError(TodoLogger.EventSp_7, "Event SP");
 				}
 				if(ev is PKNOKJNLPOE_EventRaid)
 				{
-					TodoLogger.LogError(0, "Event Raid");
+					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event Raid");
 				}
 				for(int j = 0; j < ev.AGLILDLEFDK.Count; j++)
 				{

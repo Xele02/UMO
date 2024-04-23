@@ -206,7 +206,7 @@ namespace XeApp.Game.Menu
 				obj.SetLockIcon(m_musicList[listIndex].IsOpen, m_musicList[listIndex].IsUnlockable);
 				if(!m_musicList[listIndex].ViewMusic.BJANNALFGGA)
 				{
-					obj.SetRankingButton(m_musicList[listIndex].ViewMusic.LEBDMNIGOJB);
+					obj.SetRankingButton(m_musicList[listIndex].ViewMusic.LEBDMNIGOJB_IsScoreEvent);
 				}
 				else
 				{

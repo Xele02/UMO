@@ -614,7 +614,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10DFB00 Offset: 0x10DFB00 VA: 0x10DFB00
 		private void OnPushPassPurchaseButton()
 		{
-			TodoLogger.LogNotImplemented("OnPushPassPurchaseButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			this.StartCoroutineWatched(ShowPassPurchasePopupCoroutine());
 		}
 
 		//// RVA: 0x10DFC00 Offset: 0x10DFC00 VA: 0x10DFC00
@@ -1095,7 +1096,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10DFB74 Offset: 0x10DFB74 VA: 0x10DFB74
 		private IEnumerator ShowPassPurchasePopupCoroutine()
 		{
-			TodoLogger.LogError(0, "ShowPassPurchasePopupCoroutine");
+			TodoLogger.LogError(TodoLogger.MonthlyPass, "ShowPassPurchasePopupCoroutine");
 			yield return null;
 		}
 

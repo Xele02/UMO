@@ -965,7 +965,21 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E6B84 Offset: 0x6E6B84 VA: 0x6E6B84
 		//// RVA: 0x14B24EC Offset: 0x14B24EC VA: 0x14B24EC
-		//private IEnumerator Co_NotifyLevelMax(JJOELIOGMKK v) { }
+		private IEnumerator Co_NotifyLevelMax(JJOELIOGMKK_DivaIntimacyInfo v)
+		{
+			//0x14B8204
+			yield return new WaitForSeconds(1);
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			m_layoutMessageDeco.SetTextSystem(v.AHHJLDLAPAN_DivaId,bk.GetMessageByLabel("diva_intimacy_max"));
+			m_layoutMessageDeco.Enter();
+			yield return new WaitForSeconds(3);
+			m_layoutMessageDeco.Leave();
+			yield return new WaitWhile(() =>
+			{
+				//0x14B4008
+				return m_layoutMessageDeco.IsOpenWindow();
+			});
+		}
 
 		//// RVA: 0x14B25B4 Offset: 0x14B25B4 VA: 0x14B25B4
 		public void TouchDecoCharactor(JJOELIOGMKK_DivaIntimacyInfo viewIntimacyData, DecorationChara chara, Vector2 touchPos, Func<bool> checkTouchKeeping, Action<bool> reactionCallback, Action endCallback)
@@ -985,10 +999,238 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E6BFC Offset: 0x6E6BFC VA: 0x6E6BFC
 		//// RVA: 0x14B2770 Offset: 0x14B2770 VA: 0x14B2770
-		private IEnumerator Co_TouchDecoCharactor(IntimacyController.CharTouchInterface charTouch, DecorationChara chara, Action<bool> reactionCallback, Action endCallback)
+		private IEnumerator Co_TouchDecoCharactor(CharTouchInterface charTouch, DecorationChara chara, Action<bool> reactionCallback, Action endCallback)
 		{
-			TodoLogger.LogError(0, "Co_TouchDecoCharactor");
-			yield return null;
+			bool isLevelMax; // 0x30
+			float touchTime; // 0x34
+			int offerMaxDifficult; // 0x38
+			Coroutine saveCoroutine; // 0x3C
+			List<JJOELIOGMKK_DivaIntimacyInfo.LPBGKOJDNJK> typeList; // 0x40
+			List<int> paramList; // 0x44
+			bool levelUpBonus; // 0x48
+			int prev; // 0x4C
+			bool IsDivaOfferLvUp; // 0x50
+			int intimacyCount; // 0x54
+
+			//0x14BA09C
+			m_isPause = false;
+			isLevelMax = m_viewIntimacyData.HBODCMLFDOB.PFIILLOIDIL;
+			intimacyCount = m_viewIntimacyData.GMIEFBELJJH();
+			while(true)
+			{
+				if(intimacyCount < 1)
+				{
+					if(charTouch.isTouch)
+					{
+						yield return null;
+					}
+					else
+						break;
+				}
+				else
+				{
+					chara.HideReaction();
+					chara.HideSerif();
+					m_layoutInfoDeco.Setup(m_viewIntimacyData, chara, chara.cam);
+					m_loopSE = SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_INTIMACY_000);
+					m_effectObject.TouchPlay(charTouch.touchPosition);
+					touchTime = 0;
+					//LAB_014bac44
+					while(true)
+					{
+						touchTime += Time.deltaTime;
+						if(charTouch.isTouch && !m_isPause)
+						{
+							yield return null;
+							if(touchTime > 1.5f)
+							{
+								if(m_isPause)
+								{
+									if(reactionCallback != null)
+										reactionCallback(false);
+									m_coroutine = null;
+									yield break;
+								}
+								offerMaxDifficult = KDHGBOOECKC.HHCJCDFCLOB.HFLNFKFGEJH(m_viewIntimacyData.AHHJLDLAPAN_DivaId);
+								MenuScene.Instance.RaycastDisable();
+								if(NKGJPJPHLIF.HHCJCDFCLOB.DPJBHHIHJJK)
+								{
+									bool isDone_UpdateServerTime = false;
+									NKGJPJPHLIF.HHCJCDFCLOB.CADNBFCHAKM_GetToken(() =>
+									{
+										//0x14B47AC
+										isDone_UpdateServerTime = true;
+									}, () =>
+									{
+										//0x14B41E8
+										MenuScene.Instance.GotoTitle();
+									});
+									while(!isDone_UpdateServerTime)
+										yield return null;
+								}
+								//LAB_014ba248
+								MenuScene.Instance.RaycastEnable();
+								CIOECGOMILE.HHCJCDFCLOB.IOCLFHJLHLE_IntimacyUpdater.FJDBNGEPKHL_Time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+								if(CIOECGOMILE.HHCJCDFCLOB.IOCLFHJLHLE_IntimacyUpdater.DCLKMNGMIKC(true) > 0)
+								{
+									saveCoroutine = null;
+									if(m_viewIntimacyData.FNGFADPFKOD())
+									{
+										saveCoroutine = this.StartCoroutineWatched(Co_Save());
+										yield return null;
+									}
+									//LAB_014ba47c
+									m_effectObject.TouchEnd();
+									m_loopSE.Stop();
+									bool isReadyVoice = false;
+									chara.PrepareVoiceCueSheet(() =>
+									{
+										//0x14B4704
+										isReadyVoice = true;
+									});
+									yield return new WaitWhile(() =>
+									{
+										//0x14B4710
+										return !isReadyVoice;
+									});
+									if(reactionCallback != null)
+										reactionCallback(true);
+									MenuScene.Instance.InputDisable();
+									m_layoutInfoDeco.Enter();
+									typeList = m_viewIntimacyData.HBODCMLFDOB.CKDNPHLDIEM;
+									paramList = m_viewIntimacyData.HBODCMLFDOB.EEIBCALKFFF;
+									if(!m_viewIntimacyData.HBODCMLFDOB.LDHOOPGDBJC)
+									{
+										levelUpBonus = false;
+									}
+									else
+									{
+										levelUpBonus = typeList.Count > 0;
+									}
+									if(levelUpBonus)
+									{
+										MenuScene.Instance.RaycastDisable();
+									}
+									prev = offerMaxDifficult;
+									int next = KDHGBOOECKC.HHCJCDFCLOB.HFLNFKFGEJH(m_viewIntimacyData.AHHJLDLAPAN_DivaId);
+									IsDivaOfferLvUp = false;
+									if(prev < next)
+									{
+										IsDivaOfferLvUp = KDHGBOOECKC.HHCJCDFCLOB.MGHPDFMDFCJ();
+									}
+									if(IsDivaOfferLvUp)
+									{
+										MenuScene.Instance.RaycastDisable();
+									}
+									if(!isLevelMax)
+									{
+										UpdateLayoutDeco();
+										bool done = false;
+										m_layoutInfoDeco.StartPointUp(() =>
+										{
+											//0x14B47C0
+											done = true;
+										});
+										while(!done && m_layoutInfoDeco == null)
+											yield return null;
+									}
+									//LAB_014bb038
+									if(levelUpBonus)
+									{
+										//LAB_014bb048
+										for(intimacyCount = 0; intimacyCount < typeList.Count; intimacyCount++)
+										{
+											m_layoutMessageDeco.SetTextLevelUpBonus(m_viewIntimacyData.AHHJLDLAPAN_DivaId, m_viewIntimacyData.IGLBKDDCKEJ(), typeList[intimacyCount], paramList[intimacyCount]);
+											m_layoutMessageDeco.Enter();
+											yield return new WaitForSeconds(3);
+											m_layoutMessageDeco.Leave();
+											yield return new WaitWhile(() =>
+											{
+												//0x14B4724
+												return m_layoutMessageDeco.IsOpenWindow();
+											});
+										}
+										MenuScene.Instance.RaycastEnable();
+									}
+									if(IsDivaOfferLvUp)
+									{
+										bool isClosePopup = false;
+										MessageBank bk = MessageManager.Instance.GetBank("menu");
+										PopupOfferUnclokDiffSetting s = new PopupOfferUnclokDiffSetting();
+										s.TitleText = "";
+										s.IsCaption = false;
+										s.popupMsg = string.Format(bk.GetMessageByLabel("offer_diva_offer_levelup_text"), MessageManager.Instance.GetMessage("master", string.Format("diva_s_{0:D2}", m_viewIntimacyData.AHHJLDLAPAN_DivaId)));
+										s.preDiff = prev;
+										s.nextDiff = next;
+										s.WindowSize = SizeType.Small;
+										s.Buttons = new ButtonInfo[1]
+										{
+											new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+										};
+										PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType typ, PopupButton.ButtonLabel lbl) =>
+										{
+											//0x14B47D4
+											isClosePopup = true;
+											GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.AHOBDLOOLHD(m_viewIntimacyData.AHHJLDLAPAN_DivaId, next);
+											GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+										}, null, null, null);
+										yield return new WaitUntil(() =>
+										{
+											//0x14B4978
+											return isClosePopup;
+										});
+										MenuScene.Instance.RaycastEnable();
+										//LAB_014ba844
+									}
+									else if(isLevelMax)
+									{
+										yield return Co.R(Co_NotifyLevelMax(m_viewIntimacyData));
+										//10
+										//LAB_014ba844
+									}
+									else
+									{
+										yield return new WaitForSeconds(1.5f);
+										//11
+										//LAB_014ba844
+									}
+									//LAB_014ba844
+									m_layoutInfoDeco.Leave();
+									if(saveCoroutine != null)
+										yield return saveCoroutine;
+									m_coroutine = null;
+									yield return new WaitUntil(() =>
+									{
+										//0x14B4764
+										return m_layoutInfoDeco.IsLayoutLevelPlayingEnd();
+									});
+									MenuScene.Instance.InputEnable();
+									if(endCallback != null)
+										endCallback();
+									yield break;
+								}
+								m_effectObject.TouchCancel();
+								m_loopSE.Stop();
+								if(reactionCallback != null)
+									reactionCallback(false);
+								m_coroutine = null;
+								yield break;
+							}
+							//LAB_014bac44
+						}
+						else
+						{
+							m_effectObject.TouchCancel();
+							m_loopSE.Stop();
+							if(reactionCallback != null)
+								reactionCallback(false);
+							m_coroutine = null;
+							yield break;
+						}
+					}
+				}
+			}
+			m_coroutine = null;
 		}
 
 		//// RVA: 0x14AFFAC Offset: 0x14AFFAC VA: 0x14AFFAC
@@ -1416,9 +1658,5 @@ namespace XeApp.Game.Menu
 				return;
 			m_gakuyaDivaMessage.Hide();
 		}
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x6E6F3C Offset: 0x6E6F3C VA: 0x6E6F3C
-		//// RVA: 0x14B4008 Offset: 0x14B4008 VA: 0x14B4008
-		//private bool <Co_NotifyLevelMax>b__69_0() { }
 	}
 }

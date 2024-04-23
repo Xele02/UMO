@@ -36,8 +36,36 @@ namespace XeSys.Gfx
 		//// RVA: 0x8025CC Offset: 0x8025CC VA: 0x8025CC
 		public float GetPlayFrameCustom(float time, float start, float end)
 		{
-			TodoLogger.LogError(0, "GetPlayFrameCustom");
-			return 0;
+			float t = 0;
+			float r = (time - start) / (end - start);
+			if(r >= 0)
+			{
+				t = r;
+				if(t >= 1)
+					t = 1;
+			}
+			int found = -1;
+			int foundNext = -1;
+			float s = 0;
+			float n = 0;
+			for(int i = 0; i < CustomTimeMapElmList.Length; i++)
+			{
+				if(CustomTimeMapElmList[i].Prev <= t && (found == -1 || CustomTimeMapElmList[i].Prev > s))
+				{
+					found = i;
+					s = CustomTimeMapElmList[i].Prev;
+				}
+				if(CustomTimeMapElmList[i].Prev >= t && (foundNext == -1 || CustomTimeMapElmList[i].Prev <= n))
+				{
+					foundNext = i;
+					n = CustomTimeMapElmList[i].Prev;
+				}
+			}
+			if(found > -1 && foundNext > -1)
+			{
+				t = XeSys.Math.CurveBezier3.Evaluate(t, CustomTimeMapElmList[found].Point, CustomTimeMapElmList[found].Next, CustomTimeMapElmList[foundNext].Prev, CustomTimeMapElmList[foundNext].Point);
+			}
+			return (end - start) * t + start;
 		}
 	}
 }

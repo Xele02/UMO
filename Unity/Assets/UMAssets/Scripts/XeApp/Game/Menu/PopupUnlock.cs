@@ -142,25 +142,25 @@ namespace XeApp.Game.Menu
 				UnlockParam param = new UnlockParam();
 				switch(viewData[i].DEPGBBJMFED)
 				{
-					case FAGCLBOACEE.BEFPBAIONFK.KDGLIKDMGCN/*1*/:
+					case FAGCLBOACEE.BEFPBAIONFK.KDGLIKDMGCN_Stage/*1*/:
 						param.unlockType = eUnlockType.Stage;
 						param.sceneType = sceneType;
 						param.id = viewData[i].PPFNGGCBJKC;
 						AddParam(param);
 						break;
-					case FAGCLBOACEE.BEFPBAIONFK.CELONIBHMBA/*2*/:
+					case FAGCLBOACEE.BEFPBAIONFK.CELONIBHMBA_Music/*2*/:
 						param.unlockType = eUnlockType.Music;
 						param.sceneType = sceneType;
 						param.id = viewData[i].PPFNGGCBJKC;
 						AddParam(param);
 						break;
-					case FAGCLBOACEE.BEFPBAIONFK.EOBDILOCCHO/*3*/:
+					case FAGCLBOACEE.BEFPBAIONFK.EOBDILOCCHO_Diva/*3*/:
 						param.unlockType = eUnlockType.DivaNotify;
 						param.sceneType = sceneType;
 						param.id = viewData[i].PPFNGGCBJKC;
 						AddParam(param);
 						break;
-					case FAGCLBOACEE.BEFPBAIONFK.FCHMGAHKMLG/*4*/:
+					case FAGCLBOACEE.BEFPBAIONFK.FCHMGAHKMLG_Difficulty/*4*/:
 						param.unlockType = eUnlockType.DifficultyUnlock;
 						param.sceneType = sceneType;
 						param.id = viewData[i].PPFNGGCBJKC;
@@ -178,13 +178,13 @@ namespace XeApp.Game.Menu
 						param.isLine6 = viewData[i].GIKLNODJKFK_6Line;
 						AddParam(param);
 						break;
-					case FAGCLBOACEE.BEFPBAIONFK.OPPDJDDHHFM/*5*/:
+					case FAGCLBOACEE.BEFPBAIONFK.OPPDJDDHHFM_MultDivaMusic/*5*/:
 						param.unlockType = eUnlockType.MultiDivaMusic;
 						param.sceneType = sceneType;
 						param.id = viewData[i].PPFNGGCBJKC;
 						AddParam(param);
 						break;
-					case FAGCLBOACEE.BEFPBAIONFK.AJPJOJNIHKH/*6*/:
+					case FAGCLBOACEE.BEFPBAIONFK.AJPJOJNIHKH_Live6Music/*6*/:
 						param.unlockType = eUnlockType.Line6Music;
 						param.sceneType = sceneType;
 						param.id = viewData[i].PPFNGGCBJKC;
@@ -198,7 +198,7 @@ namespace XeApp.Game.Menu
 						//LAB_01159728;
 						AddParam(param);
 						break;
-					case FAGCLBOACEE.BEFPBAIONFK.KHBEKPMMALI/*7*/:
+					case FAGCLBOACEE.BEFPBAIONFK.KHBEKPMMALI_LiveSkip/*7*/:
 						param.unlockType = eUnlockType.LiveSkip;
 						param.sceneType = sceneType;
 						param.id = viewData[i].PPFNGGCBJKC;
@@ -420,8 +420,22 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x115A6EC Offset: 0x115A6EC VA: 0x115A6EC
 		private IEnumerator ShowPopupDiva(eUnlockType unlockType, List<UnlockParam> param)
 		{
-			TodoLogger.LogError(0, "ShowPopupDiva");
-			yield break;
+			//0x115CDB0
+			SoundManager.Instance.voGreeting.EntrySheet();
+			bool popupWait = true;
+			PopupShowCommon(unlockType, param, () =>
+			{
+				//0x115C1D8
+				SoundManager.Instance.voGreeting.Stop();
+			}, null, () =>
+			{
+				//0x115C58C
+				popupWait = false;
+				return true;
+			});
+			while(popupWait)
+				yield return null;
+			SoundManager.Instance.voGreeting.RequestRemoveCueSheet();
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x70AE84 Offset: 0x70AE84 VA: 0x70AE84

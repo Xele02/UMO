@@ -257,7 +257,7 @@ public class AMOCLPHDGBP
 						{
 
 						}
-						TodoLogger.LogError(0, "Error");
+						TodoLogger.LogError(TodoLogger.RequestFail, "Error");
 						//LAB_00d4c03c
 						FCPBCDOKOPD(a2, str);
 						LNHFLJBGGJB = false;
@@ -906,8 +906,27 @@ public class AMOCLPHDGBP
 	{
 		if (PPFNGGCBJKC_Id >= SakashoErrorId.CANNOT_MAKE_PAYMENTS && PPFNGGCBJKC_Id < SakashoErrorId.PURCHASING_CANCELLED)
 		{
-			TodoLogger.LogError(TodoLogger.ToCheck, "Check ELDMAINJHJI");
-			return ((0x5cf >> (((int)PPFNGGCBJKC_Id - 59) & 0xff)) & 1) != 0;
+			//return ((0x5cf >> (((int)PPFNGGCBJKC_Id - 89) & 0xff)) & 1) != 0;
+			return PPFNGGCBJKC_Id == SakashoErrorId.CANNOT_MAKE_PAYMENTS || 
+					PPFNGGCBJKC_Id == SakashoErrorId.CURRENCY_ID_NOT_FOUND || 
+					PPFNGGCBJKC_Id == SakashoErrorId.IAB_APP_PUBLIC_KEY_NOT_FOUND || 
+					PPFNGGCBJKC_Id == SakashoErrorId.PRODUCT_TRANSACTION_EXISTS || 
+					PPFNGGCBJKC_Id == SakashoErrorId.PLATFORM_RECEIPT_INVALID || 
+					PPFNGGCBJKC_Id == SakashoErrorId.TRANSACTION_INVALID || 
+					PPFNGGCBJKC_Id == SakashoErrorId.TRANSACTION_NOT_FOUND || 
+					PPFNGGCBJKC_Id == SakashoErrorId.PLATFORM_PRODUCT_ID_NOT_REGISTERED;
+			// 101 1100 1111
+			// > CANNOT_MAKE_PAYMENTS = 89,
+			// > CURRENCY_ID_NOT_FOUND = 90,
+			// > IAB_APP_PUBLIC_KEY_NOT_FOUND = 91,
+			// > PRODUCT_TRANSACTION_EXISTS = 92,
+			// EXCEEDED_PRODUCT_QUANTITY_LIMIT = 93,
+			// ANOTHER_PROCESS_IN_PROGRESS = 94,
+			// > PLATFORM_RECEIPT_INVALID = 95,
+			// > TRANSACTION_INVALID = 96,
+			// > TRANSACTION_NOT_FOUND = 97,
+			// PLAYER_AGE_UNKNOWN = 98,
+			// > PLATFORM_PRODUCT_ID_NOT_REGISTERED = 99,
 		}
 		return false;
 	}
@@ -1051,7 +1070,109 @@ public class AMOCLPHDGBP
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B9370 Offset: 0x6B9370 VA: 0x6B9370
 	// // RVA: 0xCEA3AC Offset: 0xCEA3AC VA: 0xCEA3AC
-	// public IEnumerator HELKENJBJBH_AccountRemoveRecover(IMCBBOAFION KLMFJJCNBIP, DJBHIFLHJLK BFKEGJMPELF) { }
+	public IEnumerator HELKENJBJBH_Coroutine_AccountRemoveRecover(IMCBBOAFION KLMFJJCNBIP, DJBHIFLHJLK BFKEGJMPELF)
+	{
+		PJKLMCGEJMK OKDOIAEGADK; // 0x20
+		bool KDBFKPNNKCB; // 0x24
+		bool OHPOPJFGGPI; // 0x25
+		HDPDEAJGJEO_PaymentGetPurchasingStatus ALILLFMEOOJ; // 0x28
+		bool IGIFAMIOHMP; // 0x2C
+		PPJGPCKAMDC_PlatformPaymentRecover BMLCHDIEAAO; // 0x30
+		IBBMABBJFOA_PaymentRecover GMODLKDMFCO; // 0x34
+		HDPDEAJGJEO_PaymentGetPurchasingStatus JFBEAOHKCEB; // 0x38
+		int DNNHOKJKHJK; // 0x3C
+
+		//0xD45F78
+		OKDOIAEGADK = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester;
+		bool BEKAMBBOLBO = false;
+		KDBFKPNNKCB = false;
+		OHPOPJFGGPI = false;
+		ALILLFMEOOJ = OKDOIAEGADK.IFFNCAFNEAG_AddRequest(new HDPDEAJGJEO_PaymentGetPurchasingStatus());
+		ALILLFMEOOJ.NBFDEFGFLPJ = MJOKGGCMOMD_IsStoreServerError;
+		yield return ALILLFMEOOJ.GDPDELLNOBO_WaitDone(N.a);
+		IGIFAMIOHMP = false;
+		if(!ALILLFMEOOJ.NPNNPNAIONN_IsError)
+		{
+			IGIFAMIOHMP = ALILLFMEOOJ.NFEAMMJIMPG.OIJLNFJALJP_aborted_transaction_exists;
+		}
+		BMLCHDIEAAO = OKDOIAEGADK.IFFNCAFNEAG_AddRequest(new PPJGPCKAMDC_PlatformPaymentRecover());
+		BMLCHDIEAAO.NBFDEFGFLPJ = DDGIEBFGGDF_CheckIsError;
+		yield return BMLCHDIEAAO.GDPDELLNOBO_WaitDone(N.a);
+		if(BMLCHDIEAAO.NPNNPNAIONN_IsError)
+		{
+			if(!DDGIEBFGGDF_CheckIsError(BMLCHDIEAAO.CJMFJOMECKI_ErrorId))
+			{
+				//LAB_00d467b0;
+				BFKEGJMPELF();
+				yield break;
+			}
+		}
+		GMODLKDMFCO = OKDOIAEGADK.IFFNCAFNEAG_AddRequest(new IBBMABBJFOA_PaymentRecover());
+		GMODLKDMFCO.NBFDEFGFLPJ = DDGIEBFGGDF_CheckIsError;
+		yield return GMODLKDMFCO.GDPDELLNOBO_WaitDone(N.a);
+		if(GMODLKDMFCO.NPNNPNAIONN_IsError)
+		{
+			if(!DDGIEBFGGDF_CheckIsError(GMODLKDMFCO.CJMFJOMECKI_ErrorId))
+			{
+				//LAB_00d467b0;
+				BFKEGJMPELF();
+				yield break;
+			}
+		}
+		else
+		{
+			if(GMODLKDMFCO.NFEAMMJIMPG.FHANAFNKIFC_Success != null)
+			{
+				if(GMODLKDMFCO.NFEAMMJIMPG.FHANAFNKIFC_Success.Count > 0)
+					KDBFKPNNKCB = true;
+				if(GMODLKDMFCO.NFEAMMJIMPG.DOGDHKIEBJA_Errors.Count > 0)
+					OHPOPJFGGPI = true;
+			}
+		}
+		JFBEAOHKCEB = OKDOIAEGADK.IFFNCAFNEAG_AddRequest(new HDPDEAJGJEO_PaymentGetPurchasingStatus());
+		JFBEAOHKCEB.NBFDEFGFLPJ = MJOKGGCMOMD_IsStoreServerError;
+		yield return JFBEAOHKCEB.GDPDELLNOBO_WaitDone(N.a);
+		if(!JFBEAOHKCEB.NPNNPNAIONN_IsError && IGIFAMIOHMP)
+		{
+			if(!JFBEAOHKCEB.NFEAMMJIMPG.OIJLNFJALJP_aborted_transaction_exists)
+				KDBFKPNNKCB = true;
+		}
+		DNNHOKJKHJK = 0;
+		if(!OHPOPJFGGPI)
+		{
+			DNNHOKJKHJK = KDBFKPNNKCB ? 1 : 0;
+			//LAB_00d469c4
+			KLMFJJCNBIP();
+			yield break;
+		}
+		DNNHOKJKHJK = 2;
+		BEKAMBBOLBO = false;
+		TextPopupSetting s = new TextPopupSetting();
+		s.TitleText = MessageManager.Instance.GetMessage("common", "popup_purchase_recover_fail_title");
+		s.IsCaption = !string.IsNullOrEmpty(s.TitleText);
+		s.Buttons = new ButtonInfo[1]
+		{
+			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+		};
+		s.Text = MessageManager.Instance.GetMessage("common", "popup_purchase_recover_fail");
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		{
+			//0xD45F14
+			BEKAMBBOLBO = true;
+		}, null, null, null);
+		while(!BEKAMBBOLBO)
+			yield return null;
+		if(DNNHOKJKHJK > 1)
+		{
+			//LAB_00d467b0
+			BFKEGJMPELF();
+		}
+		else
+		{
+			//LAB_00d469c4
+			KLMFJJCNBIP();
+		}
+	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B93E8 Offset: 0x6B93E8 VA: 0x6B93E8
 	// // RVA: 0xCEA468 Offset: 0xCEA468 VA: 0xCEA468

@@ -124,7 +124,7 @@ public class EOHDAOAJOHH
 				PKNOKJNLPOE_EventRaid p = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9) as PKNOKJNLPOE_EventRaid;
 				if(p != null)
 				{
-					TodoLogger.LogError(0, "Event Raid");
+					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event Raid");
 				}
 			}
 		}
@@ -359,7 +359,7 @@ public class EOHDAOAJOHH
 			CHHECNJBMLA_EventBoxGacha ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.JNHHEMLIDGJ() as CHHECNJBMLA_EventBoxGacha;
 			if(ev != null)
 			{
-				TodoLogger.LogError(0, "Event Gacha");
+				TodoLogger.LogError(TodoLogger.EventBoxGacha_8, "Event Gacha");
 			}
 		}
 	}
@@ -751,5 +751,12 @@ public class EOHDAOAJOHH
 	}
 
 	// // RVA: 0xFBDA10 Offset: 0xFBDA10 VA: 0xFBDA10
-	// public void KOFIBEMHONI() { }
+	public void KOFIBEMHONI()
+	{
+		if(KGCCNEBMHMM !=null)
+		{
+			KGCCNEBMHMM.EMLBCNAHHLD();
+			MOEDFPOIJDM = true;
+		}
+	}
 }

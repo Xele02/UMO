@@ -196,7 +196,7 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 	//// RVA: 0x1B95F10 Offset: 0x1B95F10 VA: 0x1B95F10 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(0, "DB Skills IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbJson, "DB Skills IIEMACPEEBJ");
 		return true;
 	}
 

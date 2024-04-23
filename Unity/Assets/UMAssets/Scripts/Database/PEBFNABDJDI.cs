@@ -330,7 +330,7 @@ public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 	// // RVA: 0xCC6E38 Offset: 0xCC6E38 VA: 0xCC6E38 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(100, "TODO");
+		TodoLogger.LogError(TodoLogger.DbJson, "TODO");
 		return true;
 	}
 

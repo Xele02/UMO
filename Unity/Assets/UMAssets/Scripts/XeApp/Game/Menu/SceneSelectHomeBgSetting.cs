@@ -1,6 +1,7 @@
 
 using System.Collections;
 using UnityEngine;
+using XeApp.Core;
 using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
@@ -26,8 +27,12 @@ namespace XeApp.Game.Menu
         // // RVA: 0x137A9A4 Offset: 0x137A9A4 VA: 0x137A9A4 Slot: 4
         public override IEnumerator LoadAssetBundlePrefab(Transform parent)
 		{
-			TodoLogger.LogError(0, "LoadAssetBundlePrefab");
-			yield return base.LoadAssetBundlePrefab(parent);
+			//0x137AA80
+            m_parent = parent;
+            yield return AssetBundleManager.LoadUnionAssetBundle(BundleName);
+            yield return Co.R(base.LoadAssetBundlePrefab(parent));
+            SceneSelectHomeBgLayout = m_content.GetComponent<SceneSelectHomeBgLayout>();
+            AssetBundleManager.UnloadAssetBundle(BundleName, false);
 		}
 
         // [CompilerGeneratedAttribute] // RVA: 0x72DE04 Offset: 0x72DE04 VA: 0x72DE04

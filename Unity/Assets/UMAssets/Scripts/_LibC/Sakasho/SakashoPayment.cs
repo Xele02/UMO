@@ -419,7 +419,7 @@ namespace ExternLib
 			}
 			if(r == null)
 			{
-				TodoLogger.LogError(0, "GetBalance, missing id "+val);
+				TodoLogger.LogError(TodoLogger.SakashoServer, "GetBalance, missing id "+val);
 				r = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(@"{
 				""description"": ""No desc"",
 				""free"": 0,
@@ -575,7 +575,7 @@ namespace ExternLib
 				}
 				if(r == null)
 				{
-					TodoLogger.LogError(0, "SakashoPaymentGetVirtualCurrencyBalancesWithExpiredAt, missing id " + val);
+					TodoLogger.LogError(TodoLogger.SakashoServer, "SakashoPaymentGetVirtualCurrencyBalancesWithExpiredAt, missing id " + val);
 					r = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(@"{
 					""description"": ""No desc"",
 					""free"": [],
@@ -1357,7 +1357,7 @@ namespace ExternLib
 			int ipp = (int)jsonData["ipp"];
 
 			if(masterGroupName != null)
-				TodoLogger.LogError(0, "masterGroupName == "+masterGroupName+", check");
+				TodoLogger.LogError(TodoLogger.SakashoServer, "masterGroupName == "+masterGroupName+", check");
 
 			string message = "";
 
@@ -1407,7 +1407,7 @@ namespace ExternLib
 								});
 								if(giftId == 0)
 								{
-									TodoLogger.LogError(0, "Unknow gift for bonus VC "+bonusId+" "+bonusItem.CPGFOBNKKBF_CurrencyId);
+									TodoLogger.LogError(TodoLogger.SakashoServer, "Unknow gift for bonus VC "+bonusId+" "+bonusItem.CPGFOBNKKBF_CurrencyId);
 								}
 							}
                         }
@@ -1458,7 +1458,7 @@ namespace ExternLib
 			});
 			if(plist.Count == 0)
 			{
-				TodoLogger.LogError(0, "Missing product info for "+json);
+				TodoLogger.LogError(TodoLogger.SakashoServer, "Missing product info for "+json);
 			}
 
 
@@ -1598,11 +1598,11 @@ namespace ExternLib
 		public static int SakashoPaymentPurchaseAndSave(int callbackId, string json)
 		{
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
-			res[AFEHLCGHAEE_Strings.BIOGKIEECGN_created_at] = Utility.GetCurrentUnixTime();
-			res[AFEHLCGHAEE_Strings.IFNLEKOILPM_updated_at] = Utility.GetCurrentUnixTime();
-			res[AFEHLCGHAEE_Strings.MLGKDBJLNBM_data_status] = 0;
-			res[AFEHLCGHAEE_Strings.BBEPLKNMICJ_balances] = new EDOHBJAPLPF_JsonData();
-			res[AFEHLCGHAEE_Strings.BBEPLKNMICJ_balances].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+
+			SakashoPaymentPurchaseInternal(json, res);
+			EDOHBJAPLPF_JsonData msgData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
+			SavePlayerData(msgData, res);
+			
 			SendMessage(callbackId, res);
 			return 0;
 		}
@@ -1610,6 +1610,15 @@ namespace ExternLib
 		public static int SakashoPaymentPurchase(int callbackId, string json)
 		{
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+
+			SakashoPaymentPurchaseInternal(json, res);
+
+			SendMessage(callbackId, res);
+			return 0;
+		}
+
+		public static void SakashoPaymentPurchaseInternal(string json, EDOHBJAPLPF_JsonData res)
+		{
 			res[AFEHLCGHAEE_Strings.PJJFEAHIPGL_inventories] = new EDOHBJAPLPF_JsonData();
 			EDOHBJAPLPF_JsonData inv = res[AFEHLCGHAEE_Strings.PJJFEAHIPGL_inventories];
 			inv.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
@@ -1682,7 +1691,7 @@ namespace ExternLib
 									}
 									else
 									{
-										TodoLogger.LogError(0, "Bonus not vc "+item.KGOFMDMDFCJ_BonusId[i]+" "+json);
+										TodoLogger.LogError(TodoLogger.SakashoServer, "Bonus not vc "+item.KGOFMDMDFCJ_BonusId[i]+" "+json);
 									}
 								}
 							}
@@ -1740,7 +1749,7 @@ namespace ExternLib
 							}
 							else
 							{
-								TodoLogger.LogError(0, "Unknown shop label "+product.label+" "+json);
+								TodoLogger.LogError(TodoLogger.SakashoServer, "Unknown shop label "+product.label+" "+json);
 							}
 						}
 					}
@@ -1771,15 +1780,12 @@ namespace ExternLib
 			}
 			else
 			{
-				TodoLogger.LogError(0, "Unknown product "+json);
+				TodoLogger.LogError(TodoLogger.SakashoServer, "Unknown product "+json);
 			}
 
 			//BOKJNFPGGIB EFHCKFKLJDK_purchased_virtual_currency 
 			//List<BOKJNFPGGIB> DPHEHNKLHEI_gained_virtual_currencies
 			//PFIJNPCEOIL JENBPPBNAHP_player_normal_lot_free_state
-
-			SendMessage(callbackId, res);
-			return 0;
 		}
 	}
 }

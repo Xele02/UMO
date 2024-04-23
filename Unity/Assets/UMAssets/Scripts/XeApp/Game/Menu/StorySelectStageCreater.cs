@@ -1841,7 +1841,51 @@ namespace XeApp.Game.Menu
 			//0x1A8BA48
 			if (stageData.IFNPBIJEPBO_IsDlded)
 				yield break;
-			TodoLogger.LogError(0, "DownLoadMusic");
+			fader = GameManager.Instance.fullscreenFader;
+			tipsCtrl = TipsControl.Instance;
+			MenuScene.Instance.InputDisable();
+			fader.Fade(0.5f, new Color(0, 0, 0, 0.5f));
+			tipsCtrl.Show(3);
+			while(fader.isFading)
+				yield return null;
+			yield return TipsControl.Instance.WaitLoadingYield;
+			while(tipsCtrl.isPlayingAnime())
+				yield return null;
+			musicId = stageData.KKPAHLMJKIH_WavId;
+			int a1 = stageData.KEFGPJBKAOD_WavId;
+			int videoQuality = 0;
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PMGMMMGCEEI_Video == 0)
+			{
+				videoQuality = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CBLEFELBNDN_GetVideoQuality();
+			}
+			KDLPEDBKMID.HHCJCDFCLOB.HANBBBBLLGP = 0;
+			lw = ILCCJNDFFOB.HHCJCDFCLOB;
+			lw.OJOLFJGNEMO(0, musicId);
+			pre = 0;
+			KDLPEDBKMID.HHCJCDFCLOB.OKJCGCOGDIA(musicId, a1, videoQuality, 1);
+			while(!KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			{
+				if(pre < 50)
+				{
+					if(KDLPEDBKMID.HHCJCDFCLOB.HANBBBBLLGP >= 50)
+					{
+						lw.OJOLFJGNEMO(1, musicId);
+					}
+				}
+				pre = KDLPEDBKMID.HHCJCDFCLOB.HANBBBBLLGP;
+				yield return null;
+			}
+			lw.OJOLFJGNEMO(2, musicId);
+			stageData.OBGKIMDIAJF_CheckIsDlded();
+			fader.Fade(0.5f, 0);
+			tipsCtrl.Close();
+			while(fader.isFading)
+				yield return null;
+			while(tipsCtrl.isPlayingAnime())
+				yield return null;
+			MenuScene.Instance.InputEnable();
+			if(finish != null)
+				finish();
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72C684 Offset: 0x72C684 VA: 0x72C684

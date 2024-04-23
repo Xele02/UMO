@@ -25,13 +25,13 @@ namespace CriWare
 		// // RVA: 0x2946AC0 Offset: 0x2946AC0 VA: 0x2946AC0
 		public CriFsInstaller()
 		{
-			TodoLogger.LogError(0, "TODO");
+			TodoLogger.LogError(TodoLogger.CriFsPlugin, "TODO");
 		}
 
 		// // RVA: 0x29471D0 Offset: 0x29471D0 VA: 0x29471D0 Slot: 5
 		public override void Dispose()
 		{
-			TodoLogger.LogError(0, "TODO");
+			TodoLogger.LogError(TodoLogger.CriFsPlugin, "TODO");
 		}
 
 		// // RVA: 0x2947260 Offset: 0x2947260 VA: 0x2947260

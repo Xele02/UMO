@@ -525,7 +525,7 @@ public class FJGOKILCBJA
 	//// RVA: 0x1181DB8 Offset: 0x1181DB8 VA: 0x1181DB8
 	private IEnumerator NLFNKKCPGNJ_Co_Falsification(DJBHIFLHJLK AOCANKOMKFG)
 	{
-		TodoLogger.LogError(0, "NLFNKKCPGNJ_Co_Falsification");
+		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "NLFNKKCPGNJ_Co_Falsification");
 		yield return null;
 	}
 

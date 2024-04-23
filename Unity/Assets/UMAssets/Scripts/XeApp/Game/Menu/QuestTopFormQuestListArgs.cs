@@ -16,7 +16,7 @@ namespace XeApp.Game.Menu
 		{
 			if(viewData.COAMJFMEIBF != null && viewData.COAMJFMEIBF is KNKDBNFMAKF_EventSp)
 			{
-				TodoLogger.LogError(0, "Event Sp");
+				TodoLogger.LogError(TodoLogger.EventSp_7, "Event Sp");
 				//return (viewData.COAMJFMEIBF as KNKDBNFMAKF_EventSp).GEPPAGIEMOK(viewData.BCOKKAALGHC);
 			}
 			return false;
@@ -27,7 +27,7 @@ namespace XeApp.Game.Menu
 		{
 			if(viewData.COAMJFMEIBF != null && viewData.COAMJFMEIBF is KNKDBNFMAKF_EventSp)
 			{
-				TodoLogger.LogError(0, "Event Sp");
+				TodoLogger.LogError(TodoLogger.EventSp_7, "Event Sp");
 				//return (viewData.COAMJFMEIBF as KNKDBNFMAKF_EventSp).EDHFKGEIAHB(viewData.BCOKKAALGHC);
 			}
 			return 0;

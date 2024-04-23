@@ -35,7 +35,7 @@ namespace XeApp.Game.Menu
 		[SerializeField]
 		//[TooltipAttribute] // RVA: 0x67EE7C Offset: 0x67EE7C VA: 0x67EE7C
 		private int m_switchDispTypeWaitFrame; // 0x64
-		private static TeamSelectSceneUnit5.DispType m_dispType; // 0x8
+		private static DispType m_dispType; // 0x8
 		private UGUIObject m_headButtonsObject; // 0x68
 		private UGUIObject m_unitStatusObject; // 0x6C
 		private UGUIObject m_valkyrieButtonObject; // 0x70
@@ -88,7 +88,7 @@ namespace XeApp.Game.Menu
 		private TeamSelectDivaListArgs m_selectDivaListArgs = new TeamSelectDivaListArgs(); // 0x114
 		private CostumeChangeDivaArgs m_costumeChangeDivaArgs = new CostumeChangeDivaArgs(); // 0x118
 		private TeamSelectSceneListArgs m_selectSceneListArgs = new TeamSelectSceneListArgs(); // 0x11C
-		//private CIKHPBBNEIM m_viewEpisodeBonus = new CIKHPBBNEIM(); // 0x120
+		private CIKHPBBNEIM m_viewEpisodeBonus = new CIKHPBBNEIM(); // 0x120
 		private PopupFilterSortUGUIInitParam m_dispTypePopupParam = new PopupFilterSortUGUIInitParam(); // 0x124
 		private PopupEpisodeBonusListSetting m_episodeBonusPopupSetting = new PopupEpisodeBonusListSetting(); // 0x128
 		private PopupUnitBonusContentSetting m_unitBonusPopupSetting = new PopupUnitBonusContentSetting(); // 0x12C
@@ -226,7 +226,7 @@ namespace XeApp.Game.Menu
 			m_isGoDivaEvent = m_transitionName == TransitionList.Type.GODIVA_TEAM_SELECT;
 			if(m_isGoDivaEvent)
 			{
-				TodoLogger.LogError(0, "TODO Event");
+				TodoLogger.LogError(TodoLogger.EventGoDiva_14, "TODO Event");
 			}
 			m_viewMusicData = Database.Instance.selectedMusic.GetSelectedMusicData();
 			m_viewEnemyData = Database.Instance.selectedMusic.GetEnemyData(Database.Instance.gameSetup.musicInfo.difficultyType);
@@ -243,9 +243,17 @@ namespace XeApp.Game.Menu
 			if (PrevTransition != TransitionList.Type.STORY_SELECT && PrevTransition != TransitionList.Type.FRIEND_SELECT && PrevTransition != TransitionList.Type.EVENT_BATTLE && PrevTransition != TransitionList.Type.EVENT_GODIVA)
 				m_updateBaseScoreRatio = false;
 			m_eventCtrl = null;
-			if (Database.Instance.gameSetup.musicInfo.gameEventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0)
+			if(m_isRaidEvent)
 			{
-				TodoLogger.LogError(0, "Todo Event");
+				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event Raid");
+				//L 722
+			}
+			else
+			{
+				if (Database.Instance.gameSetup.musicInfo.gameEventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0)
+				{
+					m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(Database.Instance.gameSetup.musicInfo.EventUniqueId);
+				}
 			}
 			UpdateEpisodeBonusList();
 			m_viewUnitData = m_playerData.DPLBHAIKPGL_GetTeam(m_isGoDivaEvent);
@@ -270,7 +278,7 @@ namespace XeApp.Game.Menu
 			{
 				if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 				{
-					TodoLogger.LogError(0, "Event");
+					TodoLogger.LogError(TodoLogger.EventBattle_3, "Event");
 				}
 				else
 				{
@@ -512,7 +520,7 @@ namespace XeApp.Game.Menu
 			FinalizeUGUIObject();
 			if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 			{
-				TodoLogger.LogError(0, "Event");
+				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
 			}
 		}
 
@@ -729,11 +737,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8406C Offset: 0xA8406C VA: 0xA8406C
 		private void UpdateEpisodeBonusList()
 		{
-			if (((int)Database.Instance.gameSetup.musicInfo.gameEventType | 4) == 4)
+			if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 || 
+				Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
 				return;
 			if (m_eventCtrl == null)
 				return;
-			TodoLogger.LogError(0, "Event");
+			Database.Instance.bonusData.SetEpisodeBonus(m_eventCtrl.LMDENICBIIB(0, 0));
 		}
 
 		//// RVA: 0xA86E48 Offset: 0xA86E48 VA: 0xA86E48
@@ -743,7 +752,7 @@ namespace XeApp.Game.Menu
 				return;
 			if (m_eventCtrl == null)
 				return;
-			TodoLogger.LogError(0, "Event");
+			Database.Instance.bonusData.SetEpisodeBonus(m_eventCtrl.NFMDGIFKPMM(unitSetIndex, 0, 0));
 		}
 
 		//// RVA: 0xA86FA0 Offset: 0xA86FA0 VA: 0xA86FA0
@@ -751,7 +760,7 @@ namespace XeApp.Game.Menu
 		{
 			if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 			{
-				TodoLogger.LogError(0, "Event");
+				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
 			}
 		}
 
@@ -760,7 +769,7 @@ namespace XeApp.Game.Menu
 		{
 			if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 			{
-				TodoLogger.LogError(0, "Event");
+				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
 			}
 		}
 
@@ -769,7 +778,7 @@ namespace XeApp.Game.Menu
 		{
 			if(musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid && m_eventCtrl != null)
 			{
-				TodoLogger.LogError(0, "Event");
+				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
 			}
 			if (!musicInfo.isEnergyRequired)
 				return SetDeckPlayButtons.PlayButtonType.Play;
@@ -786,11 +795,11 @@ namespace XeApp.Game.Menu
 			{
 				if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 				{
-					TodoLogger.LogError(0, "Event");
+					TodoLogger.LogError(TodoLogger.EventBattle_3, "Event");
 				}
 				if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid && m_eventCtrl != null)
 				{
-					TodoLogger.LogError(0, "Event");
+					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
 				}
 				res = SkipStatusType.Boost;
 				if(Database.Instance.gameSetup.SelectedDashIndex < 1)
@@ -1334,7 +1343,7 @@ namespace XeApp.Game.Menu
 			IBJAKJJICBC d = m_viewMusicData as IBJAKJJICBC;
 			if (d == null)
 				return;
-			if (MenuScene.Instance.CheckEventLimit(d, true, true, KGCNCBOKCBA.GNENJEHKMHD.MEAJLPAHINL/*5*/, Database.Instance.gameSetup.musicInfo.EventUniqueId))
+			if (MenuScene.Instance.CheckEventLimit(d, true, true, KGCNCBOKCBA.GNENJEHKMHD.MEAJLPAHINL_5/*5*/, Database.Instance.gameSetup.musicInfo.EventUniqueId))
 				return;
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			int cnt = Mathf.Min(CIOECGOMILE.HHCJCDFCLOB.KJBENABMBCA(time), CIOECGOMILE.HHCJCDFCLOB.GGJMFEGHGIA());
@@ -1364,8 +1373,47 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				TodoLogger.LogError(0, "PreGameSkipShow event");
+				if(m_eventCtrl is PKNOKJNLPOE_EventRaid)
+				{
+					// L 619
+					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "PreGameSkipShow event raid");
+				}
+				else if(m_eventCtrl is HJNNLPIGHLM_EventCollection)
+				{
+					// L 508
+					TodoLogger.LogError(TodoLogger.EventCollection_1, "PreGameSkipShow event collection");
+				}
+				else
+				{
+					m_skipTicketPopupSetting.ConsumeItem = PopupSkipTicketUseConfirm.ConsumeItem.Energy;
+					m_skipTicketPopupSetting.ConsumeItemMax = MenuScene.Instance.GetCurrentStamina();
+					m_skipTicketPopupSetting.IsWeekdayEvent = false;
+					cnt = Mathf.Min(MenuScene.Instance.GetCurrentStamina() / Database.Instance.selectedMusic.GetNeedEnergy(Database.Instance.gameSetup.musicInfo.difficultyType, Database.Instance.gameSetup.musicInfo.IsLine6Mode), cnt);
+					if(m_eventCtrl is HAEDCCLHEMN_EventBattle)
+					{
+						// L464
+						TodoLogger.LogError(TodoLogger.EventBattle_3, "Event battle");
+					}
+					else if(m_eventCtrl is MANPIONIGNO_EventGoDiva && m_isGoDivaBonus)
+					{
+						// L394
+						TodoLogger.LogError(TodoLogger.EventGoDiva_14, "Event godiva");
+					}
+					else
+					{
+						if(weeklyEventCount < 1)
+						{
+							m_skipTicketPopupSetting.IsWeekdayEvent = false;
+						}
+						else
+						{
+							cnt = Mathf.Min(cnt, weeklyEventCount);
+							m_skipTicketPopupSetting.IsWeekdayEvent = true;
+						}
+					}
+				}
 			}
+			//LAB_00a8b0e8
 			PopupWindowManager.Show(m_skipTicketPopupSetting, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{
 				//0xA92B3C
@@ -1431,7 +1479,7 @@ namespace XeApp.Game.Menu
 			bool isNotUpdate = false;
 			if(m_isRaidEvent)
 			{
-				TodoLogger.LogError(0, "Event raid");
+				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event raid");
 			}
 			Database.Instance.gameSetup.teamInfo.SetupInfo(m_paramCalculator.AddStatus, m_playerData, 0, m_viewMusicData, m_viewFriendPlayerData, m_paramCalculator.LimitOverStatus, m_prismData, m_isGoDivaEvent);
 			AdvanceGame(m_paramCalculator.AddStatus, m_playerData, m_viewFriendPlayerData, m_paramCalculator.LimitOverStatus, m_isDoSkip, UseLiveSkipTicketCount, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime(), m_paramCalculator.LogParams, isNotUpdate);
@@ -1538,7 +1586,7 @@ namespace XeApp.Game.Menu
 			{
 				if(m_viewMusicData is IBJAKJJICBC && Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid && m_eventCtrl != null)
 				{
-					TodoLogger.LogError(0, "Event");
+					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
 				}
 			}
 			return false;
@@ -1580,7 +1628,33 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8DCDC Offset: 0xA8DCDC VA: 0xA8DCDC
 		private void OnShowEpisodeBonusScenePopup()
 		{
-			TodoLogger.LogNotImplemented("OnShowEpisodeBonusScenePopup");
+			OnClickAnyButtons();
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(!m_isRaidEvent)
+			{
+				if(m_dispType == DispType.UnitSet)
+				{
+					m_viewEpisodeBonus.NFEECBNKKHD(m_eventCtrl, UnitSetIndex, m_isGoDivaEvent);
+				}
+				else
+				{
+					m_viewEpisodeBonus.OBKGEDCKHHE(m_eventCtrl, m_isGoDivaEvent);
+				}
+				m_episodeBonusPopupSetting.Setup(Database.Instance.bonusData.EffectiveEpisodeBonus, m_viewEpisodeBonus);
+				PopupWindowManager.Show(m_episodeBonusPopupSetting, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0xA92A9C
+					return;
+				}, null, null, null);
+			}
+			else
+			{
+				PopupWindowManager.Show(m_unitBonusPopupSetting, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0xA92A98
+					return;
+				}, null, null, null);
+			}
 		}
 
 		//// RVA: 0xA8E110 Offset: 0xA8E110 VA: 0xA8E110
@@ -1718,7 +1792,24 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA8EC70 Offset: 0xA8EC70 VA: 0xA8EC70
 		private void ShowSubPlateWindow(bool isReShow = false)
 		{
-			TodoLogger.LogError(0, "ShowSubPlateWindow");
+			CFHDKAFLNEP c = new CFHDKAFLNEP();
+			if(m_dispType == DispType.UnitSet)
+			{
+				c = m_unitSetParamCalculator.SubPlateResult;
+			}
+			if(c.CDOCOLOKCJK())
+			{
+				m_isShowSubPlate = true;
+				MenuScene.Instance.UnitSaveWindowControl.ShowSubPlateWindow(c, null, UnitWindowConstant.OperationMode.Edit, null, () =>
+				{
+					//0xA92578
+					m_isShowSubPlate = false;
+				}, isReShow);
+			}
+			else
+			{
+				MenuScene.Instance.UnitSaveWindowControl.ShowSubPlateLockWindow(null);
+			}
 		}
 
 		//// RVA: 0xA8EEE0 Offset: 0xA8EEE0 VA: 0xA8EEE0
@@ -2145,7 +2236,8 @@ namespace XeApp.Game.Menu
 			if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva ||
 				Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
-				TodoLogger.LogError(0, "Event");
+				TodoLogger.LogError(TodoLogger.EventBattle_3, "Event");
+				TodoLogger.LogError(TodoLogger.EventGoDiva_14, "Event");
 			}
 			return null;
 		}

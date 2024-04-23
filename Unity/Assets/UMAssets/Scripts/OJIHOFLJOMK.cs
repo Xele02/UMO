@@ -65,7 +65,10 @@ public class OJIHOFLJOMK
 	}
 
 	//// RVA: 0x148E25C Offset: 0x148E25C VA: 0x148E25C
-	//public void EMLBCNAHHLD() { }
+	public void EMLBCNAHHLD()
+	{
+		return;
+	}
 
 	//// RVA: 0x148E260 Offset: 0x148E260 VA: 0x148E260
 	public bool PLIGGNOHLJE()

@@ -103,7 +103,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xCFA0F8 Offset: 0xCFA0F8 VA: 0xCFA0F8
 		private void OnClickCornerButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickCornerButton");
+			return;
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E184C Offset: 0x6E184C VA: 0x6E184C

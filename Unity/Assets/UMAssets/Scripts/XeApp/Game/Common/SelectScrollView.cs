@@ -39,7 +39,11 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x13901AC Offset: 0x13901AC VA: 0x13901AC Slot: 62
-		// public virtual void RemoveScrollObject(SelectScrollViewContent obj) { }
+		public virtual void RemoveScrollObject(SelectScrollViewContent obj)
+		{
+			scrollObjects.Remove(obj);
+			Destroy(obj.gameObject);
+		}
 
 		// // RVA: 0x1390284 Offset: 0x1390284 VA: 0x1390284 Slot: 63
 		// public virtual void ClearScrollObject() { }
@@ -255,7 +259,9 @@ namespace XeApp.Game.Common
 		// RVA: 0x1391018 Offset: 0x1391018 VA: 0x1391018 Slot: 42
 		public override void OnScroll(PointerEventData eventData)
 		{
-			TodoLogger.LogError(0, "OnScroll()");
+			if(!isEnableTouch)
+				return;
+			OnScroll(eventData);
 		}
 
 		// RVA: 0x139102C Offset: 0x139102C VA: 0x139102C Slot: 46

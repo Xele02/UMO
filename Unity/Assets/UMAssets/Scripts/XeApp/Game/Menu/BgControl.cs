@@ -1166,7 +1166,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x143EA6C Offset: 0x143EA6C VA: 0x143EA6C
-		// public void SetStoryParam(StoryBgParam param) { }
+		public void SetStoryParam(StoryBgParam param)
+		{
+			storyBgParam = param;
+		}
 
 		// // RVA: 0x143EA78 Offset: 0x143EA78 VA: 0x143EA78
 		public StoryBgParam OutputStoryBgParam(bool isStory)

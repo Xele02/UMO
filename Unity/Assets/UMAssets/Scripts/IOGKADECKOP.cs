@@ -197,7 +197,7 @@ public class IOGKADECKOP
 		DANMJLOBLIE.StartCoroutineWatched(IMDAHCEDGFK_Coroutine_TitleLogo());
 		if(AppEnv.IsCBT())
 		{
-			TodoLogger.LogError(0, "TODO");
+			TodoLogger.LogError(TodoLogger.CBT, "TODO");
 		}
 		else
 		{

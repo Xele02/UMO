@@ -90,17 +90,16 @@ namespace XeApp.Game.Common
 				return;
 			if(m_controller is KNKDBNFMAKF_EventSp)
 			{
-				TodoLogger.LogError(0, "Event SP");
+				TodoLogger.LogError(TodoLogger.EventSp_7, "Event SP");
 			}
 			else if(m_controller is CHHECNJBMLA_EventBoxGacha)
 			{
-				TodoLogger.LogError(0, "Event Box Gacha");
+				TodoLogger.LogError(TodoLogger.EventBoxGacha_8, "Event Box Gacha");
 			}
 			else
 			{
 				return;
 			}
-			TodoLogger.LogError(0, "Event");
 		}
 
 		// // RVA: 0xEACBD0 Offset: 0xEACBD0 VA: 0xEACBD0

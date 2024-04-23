@@ -3,6 +3,8 @@ using XeApp.Game.Common;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using mcrs;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -143,7 +145,19 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x171F83C Offset: 0x171F83C VA: 0x171F83C
 		private void OnClickCallbackConditionsButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickCallbackConditionsButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(m_conditionsCallback != null)
+				m_conditionsCallback();
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("growth_popup_title_01"), SizeType.Small, m_unlockMessage, new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1720188
+				if(m_conditionsCloseCallback != null)
+					m_conditionsCloseCallback();
+			}, null, null, null);
 		}
 
 		//// RVA: 0x171F3DC Offset: 0x171F3DC VA: 0x171F3DC
@@ -280,9 +294,5 @@ namespace XeApp.Game.Menu
 		{
 			return m_base;
 		}
-
-		//[CompilerGeneratedAttribute] // RVA: 0x703F84 Offset: 0x703F84 VA: 0x703F84
-		//// RVA: 0x1720188 Offset: 0x1720188 VA: 0x1720188
-		//private void <OnClickCallbackConditionsButton>b__26_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
 	}
 }

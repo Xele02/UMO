@@ -413,7 +413,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xF7D4A0 Offset: 0xF7D4A0 VA: 0xF7D4A0
-		//public static void ChangeDate(TransitionList.Type type) { }
+		public static void ChangeDate(TransitionList.Type type)
+		{
+			if(sm_Setting == null)
+				return;
+			if(sm_Setting.Content == null)
+				return;
+			sm_Setting.Content.GetComponent<PopupDenomination>().OnChangeDate(type);
+		}
 
 		//// RVA: 0xF7D694 Offset: 0xF7D694 VA: 0xF7D694
 		private void OnChangeDate(TransitionList.Type type)

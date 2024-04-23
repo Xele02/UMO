@@ -241,7 +241,7 @@ namespace XeApp.Game.Common
 				}
 				else
 				{
-					TodoLogger.LogError(0, "GoDiva");
+					TodoLogger.LogError(TodoLogger.EventGoDiva_14, "GoDiva");
 				}
 				for(int i = 0; i < divaList_.Length; i++)
 				{
@@ -567,7 +567,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xE9CF18 Offset: 0xE9CF18 VA: 0xE9CF18
-		// public void SetSelectedDashIndex(int index) { }
+		public void SetSelectedDashIndex(int index)
+		{
+			SelectedDashIndex = index;
+		}
 
 		// // RVA: 0xE9CF20 Offset: 0xE9CF20 VA: 0xE9CF20
 		public void ForcePrismSetting()

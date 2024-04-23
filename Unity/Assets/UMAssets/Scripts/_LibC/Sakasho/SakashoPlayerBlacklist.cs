@@ -7,8 +7,6 @@ namespace ExternLib
 	{
 		public static int SakashoPlayerBlacklistGetBlacklist(int callbackId, string json)
 		{
-			CheckDefaultRankingCreated();
-
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res["player_blacklist"] = new EDOHBJAPLPF_JsonData();
 			res["player_blacklist"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
@@ -22,8 +20,6 @@ namespace ExternLib
 		}
 		public static int SakashoPlayerBlacklistIsOnBlacklistOf(int callbackId, string json)
 		{
-			CheckDefaultRankingCreated();
-
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res["blacklisted"] = false;
 
@@ -31,10 +27,24 @@ namespace ExternLib
 			return 0;
 		}
 
+		public static int SakashoPlayerBlacklistIsBlacklisted(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res["blacklisted"] = false;
+
+			SendMessage(callbackId, res);
+			return 0;
+		}
+
+		public static int SakashoPlayerBlacklistAddToBlacklist(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			SendMessage(callbackId, res);
+			return 0;
+		}
+
 		public static int SakashoPlayerBlacklistRemoveFromBlacklist(int callbackId, string json)
 		{
-			CheckDefaultRankingCreated();
-
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			SendMessage(callbackId, res);
 			return 0;

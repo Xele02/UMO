@@ -6,6 +6,7 @@ using XeApp.Game.Common;
 using SecureLib;
 using System;
 using XeSys;
+using System.Text;
 
 public class IMMAOANGPNK
 {
@@ -406,11 +407,11 @@ public class IMMAOANGPNK
 		});
 		if(item != null)
 		{
+			UMOEventList.EventData currentEvent = UMOEventList.GetCurrentEvent();
 			if(item.OPFGFINHFCE_Name.Contains(".bytes"))
 			{
 				IOBIKMEGCAL data = IOBIKMEGCAL.HEGEKFMJNCC(item.DBBGALAPFGC_Data);
 				DMABOGLGILJ[] schedule_item = data.IHMCKPOIBDA;
-				UMOEventList.EventData currentEvent = UMOEventList.GetCurrentEvent();
 				for (int i = 0; i < schedule_item.Length; i++)
 				{
 					GDIPLANPCEI info = new GDIPLANPCEI();
@@ -433,11 +434,28 @@ public class IMMAOANGPNK
 			}
 			else if(item.OPFGFINHFCE_Name.Contains(".json"))
 			{
-				TodoLogger.LogError(0, "TODO");
-				//schedules
-				//name
-				//opened_at
-				//closed_at
+				string str = Encoding.UTF8.GetString(item.DBBGALAPFGC_Data);
+				EDOHBJAPLPF_JsonData json = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(str);
+				EDOHBJAPLPF_JsonData data = json[AFEHLCGHAEE_Strings.JOBKIDDLCPL_schedules];
+				for(int i = 0; i < data.HNBFOAJIIAL_Count; i++)
+				{
+					GDIPLANPCEI info = new GDIPLANPCEI();
+					info.OPFGFINHFCE_Name = (string)data[i][AFEHLCGHAEE_Strings.OPFGFINHFCE_name];
+					info.KBFOIECIADN_OpenedAt = JsonUtil.GetLong(data[i], AFEHLCGHAEE_Strings.KBFOIECIADN_opened_at);
+					info.EGBOHDFBAPB_ClosedAt = JsonUtil.GetLong(data[i], AFEHLCGHAEE_Strings.EGBOHDFBAPB_closed_at);
+					// UMO Event
+					if(currentEvent != null && currentEvent.BlockName == info.OPFGFINHFCE_Name)
+					//if(info.OPFGFINHFCE_Name.Contains("april"))
+					{
+						DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
+						date = date.Subtract(new TimeSpan(1, 0, 0, 0));
+						info.KBFOIECIADN_OpenedAt = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0);
+						date = date.AddDays(11);
+						info.EGBOHDFBAPB_ClosedAt = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0);
+					}
+					// UMO Event End
+					JOBKIDDLCPL_ScheduleEvent.Add(info);
+				}
 			}
 		}
 	}

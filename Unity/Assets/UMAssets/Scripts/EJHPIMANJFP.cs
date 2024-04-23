@@ -26,8 +26,9 @@ public class EJHPIMANJFP
 	// // RVA: 0x12EFB58 Offset: 0x12EFB58 VA: 0x12EFB58
 	private bool AIJFDCIDDLO(SakashoErrorId PPFNGGCBJKC)
 	{
-		TodoLogger.LogError(0, "EJHPIMANJFP.AIJFDCIDDLO");
-		return false;
+		if((PPFNGGCBJKC < SakashoErrorId.STORE_SERVER_ERROR || PPFNGGCBJKC > SakashoErrorId.CANNOT_MAKE_PAYMENTS) && PPFNGGCBJKC != SakashoErrorId.UNSUPPORTED_API_CALLED)
+			return PPFNGGCBJKC == SakashoErrorId.IAB_APP_PUBLIC_KEY_NOT_FOUND; 
+		return true;
 	}
 
 	// // RVA: 0x12EFB84 Offset: 0x12EFB84 VA: 0x12EFB84

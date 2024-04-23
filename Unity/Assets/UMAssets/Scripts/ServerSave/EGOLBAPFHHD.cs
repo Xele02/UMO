@@ -662,7 +662,22 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	// public bool POOOHJIJLNN(int PPFNGGCBJKC, int HMFFHLPNMPH) { }
 
 	// // RVA: 0x1C528D0 Offset: 0x1C528D0 VA: 0x1C528D0
-	// public bool NLOGLGKPMNI(int PPFNGGCBJKC, int HMFFHLPNMPH) { }
+	public bool NLOGLGKPMNI(int PPFNGGCBJKC, int HMFFHLPNMPH)
+	{
+		if(PPFNGGCBJKC > 0 && PPFNGGCBJKC <= 16)
+		{
+			if(FOECFMNNNMP_GetEnabledSpItem(PPFNGGCBJKC) != null && HMFFHLPNMPH > -1)
+			{
+				KPMNLAHNDAI spItem = BBFIGEOBOMB_SpItem[PPFNGGCBJKC - 1];
+				if(spItem.BFINGCJHOHI_Cnt - HMFFHLPNMPH > -1)
+				{
+					spItem.BFINGCJHOHI_Cnt -= HMFFHLPNMPH;
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 
 	// // RVA: 0x1C52A08 Offset: 0x1C52A08 VA: 0x1C52A08
 	public int JJKEDPHDEDO_GetSpItemCount(int PPFNGGCBJKC)
@@ -1968,31 +1983,7 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1C6043C Offset: 0x1C6043C VA: 0x1C6043C Slot: 10
-	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
-	{
-		EGOLBAPFHHD_Common b = GJLFANGDGCL as EGOLBAPFHHD_Common;
-		string str;
-		string str3;
-		/*if (!EMBGIDLFKGM)
-		{
-			JBBHNIACMFJ.OJLJAHAGBLK(JIKKNHIAEKG_BlockName, AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash + AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id, MCKEOKFMLAH);
-			JBBHNIACMFJ.OJLJAHAGBLK(JIKKNHIAEKG_BlockName, AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash + AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev, 4);
-			str = AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash;
-			str3 = JIKKNHIAEKG_BlockName;
-		}
-		else
-		{
-			str = JIKKNHIAEKG_BlockName + AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash;
-			str3 = AFEHLCGHAEE_Strings.JCIBKDHKNFH_alldata;
-		}
-		if (EFOEPDLNLJG || DLBLONNCCCE_MainTeamId == b.DLBLONNCCCE_MainTeamId)
-		{
-			string str2 = str + AFEHLCGHAEE_Strings.DLBLONNCCCE_main_team_id;
-			JBBHNIACMFJ.OJLJAHAGBLK(str3, str2, b.DLBLONNCCCE_MainTeamId);
-		}*/
-		TodoLogger.LogError(0, "AGHKODFKOJI");
-
-	}
+	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH);
 
 	// // RVA: 0x1C69388 Offset: 0x1C69388 VA: 0x1C69388 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()

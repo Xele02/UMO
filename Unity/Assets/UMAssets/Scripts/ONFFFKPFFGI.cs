@@ -64,5 +64,11 @@ public class ONFFFKPFFGI
     }
 
 	// // RVA: 0xCAEBB0 Offset: 0xCAEBB0 VA: 0xCAEBB0
-	// public void HJMKBCFJOOH() { }
+	public void HJMKBCFJOOH()
+    {
+        long t = JPAICCMDGHD(CDCKLGCKHFG);
+        CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.FMBNOBGLMKB_RichbannerLastShowTime = t;
+        JADNGGIOOJH.KOGBMDOONFA.NPDKEIIMCDI = t;
+        JADNGGIOOJH.HJMKBCFJOOH();
+    }
 }

@@ -626,7 +626,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEE7FE4 Offset: 0xEE7FE4 VA: 0xEE7FE4
 		private void OnClickEpisodeAppeal()
 		{
-			TodoLogger.LogNotImplemented("OnClickEpisodeAppeal");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+			List<HGBOODNMNFM> l = m_view.BMJOENJMFEL(m_view.BADFIKBADNH_PickupId);
+			if(l.Count > 0)
+			{
+				MenuScene.Instance.Call(TransitionList.Type.EPISODE_APPEAL, new EpisodeAppealScene.EpisodeAppealArgs(l), true);
+			}
 		}
 
 		//// RVA: 0xEE8188 Offset: 0xEE8188 VA: 0xEE8188
@@ -811,7 +816,19 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEE8E48 Offset: 0xEE8E48 VA: 0xEE8E48
 		private void OnClickBonusTicketPurchaseButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickBonusTicketPurchaseButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(MenuScene.CheckDatelineAndAssetUpdate())
+				return;
+			this.StartCoroutineWatched(Co_PurchaseButton((LGDNAJACFHI paidVCProductData) =>
+			{
+				//0xEED42C
+				int a1 = GachaUtility.netGachaProductData.OMNAPCHLBHF(GCAHJLOGMCI.NFCAJPIJFAM_SummonType.GOAHICNDICO_5);
+				if(a1 == 0)
+				{
+					a1 = GachaUtility.netGachaProductData.OMNAPCHLBHF(GCAHJLOGMCI.NFCAJPIJFAM_SummonType.LMHDFEKIDKG_6);
+				}
+				return paidVCProductData.LHENLPLKGLP_StuffId == GachaUtility.netGachaProductData.LPPJMOMKPKA(a1);
+			}));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DD064 Offset: 0x6DD064 VA: 0x6DD064
@@ -844,7 +861,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEE9038 Offset: 0xEE9038 VA: 0xEE9038
 		private void OnClickPassPurchaseButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickPassPurchaseButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			this.StartCoroutineWatched(GachaUtility.OpenPurchasePassWindow(null));
 		}
 
 		//// RVA: 0xEE9118 Offset: 0xEE9118 VA: 0xEE9118

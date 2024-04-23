@@ -69,7 +69,7 @@ namespace ExternLib
         {
             if(acb_binder != null || awb_binder != null)
             {
-                TodoLogger.LogError(0, "criAtomExAcb_LoadAcbFile with binder");
+                TodoLogger.LogError(TodoLogger.CriAtomExLib, "criAtomExAcb_LoadAcbFile with binder");
                 return IntPtr.Zero;
             }
             using(FileStream fs = File.Open(acb_path, FileMode.Open, FileAccess.Read, FileShare.Read))

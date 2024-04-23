@@ -1609,7 +1609,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA9D810 Offset: 0xA9D810 VA: 0xA9D810
 		protected void GotoTitle()
 		{
-			TodoLogger.LogError(0, "Goto Title");
+			IsRequestGotoTitle = true;
 		}
 
 		// // RVA: 0xA9D81C Offset: 0xA9D81C VA: 0xA9D81C Slot: 29

@@ -41,7 +41,7 @@ namespace CriWare
 			Type t = Type.GetType("CriManaVp9");
 			if(t == null)
 				return;
-			TodoLogger.LogError(0, "SetupVp9");
+			TodoLogger.LogError(TodoLogger.CriManaPlugin, "SetupVp9");
 		}
 
 		// [ObsoleteAttribute] // RVA: 0x636358 Offset: 0x636358 VA: 0x636358

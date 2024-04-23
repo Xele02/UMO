@@ -43,7 +43,22 @@ public class PLLMDGNCGFL
     }
 
 	// // RVA: 0xFEA788 Offset: 0xFEA788 VA: 0xFEA788
-	// public void HJMKBCFJOOH() { }
+	public void HJMKBCFJOOH()
+    {
+        string dir = Path.GetDirectoryName(ELLBAAFKDCH_Filename);
+        if(!Directory.Exists(dir))
+            Directory.CreateDirectory(dir);
+        using(FileStream fs = new FileStream(ELLBAAFKDCH_Filename, FileMode.Create))
+        {
+            using(BinaryWriter bw = new BinaryWriter(fs))
+            {
+                bw.Write(1);
+                bw.Write(KOGBMDOONFA.NPDKEIIMCDI);
+                bw.Flush();
+                bw.Close();
+            }
+        }
+    }
 
 	// // RVA: 0xFEAD1C Offset: 0xFEAD1C VA: 0xFEAD1C
 	// public void JCHLONCMPAJ(bool OGBEGDKPDGK) { }

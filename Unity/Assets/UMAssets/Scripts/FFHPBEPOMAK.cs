@@ -750,7 +750,7 @@ public class FFHPBEPOMAK_DivaInfo
 	// // RVA: 0x14E2F68 Offset: 0x14E2F68 VA: 0x14E2F68
 	public static List<FFHPBEPOMAK_DivaInfo> OOJFGDKBOHK(int AHHJLDLAPAN, bool OJEBNBLHPNP = false)
 	{
-		TodoLogger.LogError(0, "OOJFGDKBOHK");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "OOJFGDKBOHK");
 		return new List<FFHPBEPOMAK_DivaInfo>();
 	}
 }

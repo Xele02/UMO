@@ -1206,7 +1206,10 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x9A0808 Offset: 0x9A0808 VA: 0x9A0808
-		// public static void FadeReset() { }
+		public static void FadeReset()
+		{
+			GameManager.Instance.fullscreenFader.Fade(0, Color.clear);
+		}
 
 		// // RVA: 0x9A08E0 Offset: 0x9A08E0 VA: 0x9A08E0
 		public void ShowSnsNotice(int snsId, UnityAction pushAction, bool isButtonEnable = true)

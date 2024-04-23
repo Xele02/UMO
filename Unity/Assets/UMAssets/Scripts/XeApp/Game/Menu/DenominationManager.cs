@@ -167,13 +167,53 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x17D079C Offset: 0x17D079C VA: 0x17D079C
 		private void OnOpenBirthdayRegistration(PJHHCHAKGKI onRegisterBirth, JFDNPFFOACP onCencel)
 		{
-			TodoLogger.LogError(0, "OnOpenBirthdayRegistration");
+			PopupRegistrationBirthday.ShowPopup(transform, onRegisterBirth, onCencel, errorHandler, m_OnChangeDate != null);
 		}
 
 		// // RVA: 0x17D0860 Offset: 0x17D0860 VA: 0x17D0860
 		private void OnOpenBirthdayRegistrationConfirm(int year, int mon, IMCBBOAFION onEnter, JFDNPFFOACP onCancel, DJBHIFLHJLK onError)
 		{
-			TodoLogger.LogError(0, "OnOpenBirthdayRegistrationConfirm");
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			TextPopupSetting s = new TextPopupSetting();
+			s.TitleText = bk.GetMessageByLabel("popup_denom_check_birthday_title");
+			s.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			s.Text = string.Format(bk.GetMessageByLabel("popup_denom_check_birthday_text"), year, mon);
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x17D115C
+				if(label == PopupButton.ButtonLabel.Ok)
+				{
+					if(m_OnChangeDate != null)
+					{
+						if(PGIGNJDPCAH.MNANNMDBHMP(() =>
+						{
+							//0x17D12E0
+							PopupDenomination.ChangeDate(TransitionList.Type.LOGIN_BONUS);
+							if(onError != null)
+								onError();
+						}, () =>
+						{
+							//0x17D1378
+							PopupDenomination.ChangeDate(TransitionList.Type.TITLE);
+							if(onError != null)
+								onError();
+						}))
+						{
+							return;
+						}
+					}
+					if(onEnter != null)
+						onEnter();
+				}
+				else if(label == PopupButton.ButtonLabel.Cancel && onCancel != null)
+				{
+					onCancel();
+				}
+			}, null, null, null);
 		}
 	}
 }

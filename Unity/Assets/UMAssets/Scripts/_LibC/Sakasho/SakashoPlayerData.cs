@@ -330,7 +330,7 @@ namespace ExternLib
 					string str = (string)names[i];
 					if (!jsonRes.BBAJPINMOEP_Contains(str))
 					{
-						TodoLogger.LogError(0, "Server data missing block "+str);
+						TodoLogger.LogError(TodoLogger.SakashoServer, "Server data missing block "+str);
 						missingBlock.Add(str);
 					}
 				}
@@ -413,7 +413,7 @@ namespace ExternLib
 			}
 			else
 			{
-				TodoLogger.LogError(0, "Error in save file check "+ fileName);
+				TodoLogger.LogError(TodoLogger.SakashoServer, "Error in save file check "+ fileName);
 				if (replaceIfDiff != null)
 				{
 					List<string> block = blocks.Keys.ToList();

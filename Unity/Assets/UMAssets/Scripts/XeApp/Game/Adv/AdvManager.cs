@@ -524,7 +524,7 @@ namespace XeApp.Game.Adv
 			else
 			{
 				m_snsScreen.Initialize(snsId, false);
-				m_snsScreen.InRoom(sceneType, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA[snsId - 1].MALFHCHNEFN, SNSController.eObjectOrderType.Last, snsId, false, false);
+				m_snsScreen.InRoom(sceneType, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA[snsId - 1].MALFHCHNEFN_RoomId, SNSController.eObjectOrderType.Last, snsId, false, false);
 			}
 			m_snsScreen.OutStartCallback = () =>
 			{
@@ -1225,32 +1225,81 @@ namespace XeApp.Game.Adv
 			AssetBundleLoadLayoutOperationBase lyOpt; // 0x1C
 
 			//0xBCA35C
-			TodoLogger.LogError(0, "Co_LoadPrologueAnime");
-			yield return null;
+			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded("snd/bgm/cs_bgm_tutorial.acb");
+			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded("snd/bgm/cs_bgm_tutorial.awb");
+			loadCount = 0;
+			bundlePath = "ly/083.xab";
+			lyOpt = AssetBundleManager.LoadLayoutAsync(bundlePath, "root_cmn_tuto02_layout_root");
+			yield return lyOpt;
+			yield return Co.R(lyOpt.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+			{
+				//0xBC8E78
+				instance.transform.SetParent(transform.GetChild(0), false);
+				m_prologueControl = instance.GetComponent<PrologueControl>();
+			}));
+			loadCount++;
+			for(int i = 0; i < loadCount; i++)
+			{
+				AssetBundleManager.UnloadAssetBundle(bundlePath, false);
+			}
+			while(!m_prologueControl.IsInitialized)
+				yield return null;
+			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+				yield return null;
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x742C84 Offset: 0x742C84 VA: 0x742C84
 		//// RVA: 0xBC7D6C Offset: 0xBC7D6C VA: 0xBC7D6C
 		private IEnumerator Co_StartPrologueAnime()
 		{
-			TodoLogger.LogError(0, "Co_StartPrologueAnime");
-			yield return null;
+			//0xBCB054
+			m_prologueControl.BgmChangeEventHandler += () =>
+			{
+				//0xBC909C
+				SoundManager.Instance.bgmPlayer.ContinuousPlay(BgmConstant.Name.Prologue2, 1);
+			};
+			SoundManager.Instance.bgmPlayer.Play(BgmConstant.Name.Prologue1, 1);
+			GameManager.Instance.fullscreenFader.Fade(1, 0);
+			m_prologueControl.Play();
+			m_touchArea.interactable = false;
+			m_skipTarget = SkipTarget.Prologue;
+			yield break;
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x742CFC Offset: 0x742CFC VA: 0x742CFC
 		//// RVA: 0xBC7E18 Offset: 0xBC7E18 VA: 0xBC7E18
 		private IEnumerator Co_WaitPrologueAnime()
 		{
-			TodoLogger.LogError(0, "Co_WaitPrologueAnime");
-			yield return null;
+			//0xBCD3C0
+			m_skipButton.interactable = true;
+			m_isSendMessage = false;
+			while(m_prologueControl.IsPlaying() && !m_isExecuteSkip)
+				yield return null;
+			m_skipButton.interactable = false;
+			if(PopupWindowManager.IsOpenPopupWindow())
+			{
+				bool isWait = true;
+				PopupWindowManager.Close(null, () =>
+				{
+					//0xBC9A10
+					isWait = false;
+				});
+				while(isWait)
+					yield return null;
+			}
+			m_skipTarget = SkipTarget.Talk;
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x742D74 Offset: 0x742D74 VA: 0x742D74
 		//// RVA: 0xBC7EC4 Offset: 0xBC7EC4 VA: 0xBC7EC4
 		private IEnumerator Co_ReleasePrologueAnime()
 		{
-			TodoLogger.LogError(0, "Co_ReleasePrologueAnime");
-			yield return null;
+			//0xBCA7D0
+			SoundManager.Instance.bgmPlayer.FadeOut(1, null);
+			GameManager.Instance.fullscreenFader.Fade(1, Color.black);
+			yield return GameManager.Instance.WaitFadeYielder;
+			m_prologueControl.gameObject.SetActive(false);
+			m_touchArea.interactable = true;
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x742DEC Offset: 0x742DEC VA: 0x742DEC
@@ -1693,10 +1742,6 @@ namespace XeApp.Game.Adv
 				yield return null;
 		}
 		
-		//[CompilerGeneratedAttribute] // RVA: 0x7430CC Offset: 0x7430CC VA: 0x7430CC
-		//// RVA: 0xBC8E78 Offset: 0xBC8E78 VA: 0xBC8E78
-		//private void <Co_LoadPrologueAnime>b__97_0(GameObject instance) { }
-
 		//[CompilerGeneratedAttribute] // RVA: 0x7430FC Offset: 0x7430FC VA: 0x7430FC
 		//// RVA: 0xBC8FC4 Offset: 0xBC8FC4 VA: 0xBC8FC4
 		//private void <Co_TutorialFinish>b__109_5() { }

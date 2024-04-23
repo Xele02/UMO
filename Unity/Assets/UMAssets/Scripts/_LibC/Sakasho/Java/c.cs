@@ -33,7 +33,7 @@ namespace ExternLib.Java_Sakasho
 
         public void a(int var1, string var2, byte[] var3)
         {
-            TodoLogger.LogError(0, "TODO");
+            TodoLogger.LogError(TodoLogger.SakashoSystem, "TODO");
             //jp.dena.sakasho.core.SakashoSystem.a(new c.__2(this, var1, var2, var3), true);
         }
         public void a(int var1, bv[] var2, byte[] var3) {

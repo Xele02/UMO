@@ -905,7 +905,38 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x165E9C8 Offset: 0x165E9C8 VA: 0x165E9C8
 		private void OnClickEpisodeButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickEpisodeButton");
+			if(!m_SwaipTouch.IsMoveFlickDistance())
+			{
+				if(InputManager.Instance.GetInScreenTouchCount() < 2)
+				{
+					if(!MenuScene.Instance.DirtyChangeScene)
+					{
+						SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+						PIGBBNDPPJC p = GetEpisodeData(m_SeriesValkyrieList[SelectSeries][Select].KELFCMEOPPM_EpisodeId);
+						string n = "";
+						if(p != null)
+							n = p.OPFGFINHFCE_Name;
+						if(p == null || !m_SeriesValkyrieList[SelectSeries][Select].CPGDEPMPMFK)
+						{
+							MessageBank bk = MessageManager.Instance.GetBank("menu");
+							PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("costume_select_text_03"), SizeType.Small, string.Format(bk.GetMessageByLabel("costume_select_text_04"), n), new ButtonInfo[1]
+							{
+								new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+							}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+							{
+								//0x165FD38
+								return;
+							}, null, null, null);
+						}
+						else
+						{
+							EpisodeDetailArgs args = new EpisodeDetailArgs();
+							args.data = p;
+							MenuScene.Instance.Mount(TransitionUniqueId.SETTINGMENU_EPISODESELECT_EPISODEDETAIL, args, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+						}
+					}
+				}
+			}
 		}
 
 		// // RVA: 0x165D5BC Offset: 0x165D5BC VA: 0x165D5BC

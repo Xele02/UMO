@@ -37,8 +37,8 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	public List<int> IIDJCNEOLAL; // 0x12C
 	public List<int> JJBJKENKAJP_ClrRarCoef; // 0x130
 	private List<KLJCBKMHKNK> HPEFFMGGIBC_Spn; // 0x134
-	private int PNEMPHGJLKG_LuckCoef0; // 0x138
-	private int NPEECLODIKB_LuckCoef1; // 0x13C
+	private int PNEMPHGJLKG_LuckCoef0_Crypted; // 0x138
+	private int NPEECLODIKB_LuckCoef1_Crypted; // 0x13C
 	public List<sbyte> JHPPLIGJFPI; // 0x140
 	private List<int> DOAAGIMJOMM; // 0x144
 	private List<int> KMJNLIMMCED; // 0x148
@@ -86,8 +86,8 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	public List<byte[]> HFHMMOMMFON { get; private set; } // 0xF8 LIKKAOPIJPL HCEPMKIIAFM BELEAEECDBA
 	public List<int> KDIJDAKMODE { get; private set; } // 0x100 LIIEMFJHMJG LKFIODIJCHM PKJMLBKLIGE
 	public List<int> AJBKGOPDGFI { get; private set; } // 0x104 AFKBJPJLHIN DMAGCOAEFFH AFDEABEKAFG
-	// public int JJIBDCAIBIO { get; set; } // CODJHFNCMMC 0xDA1000 IPLMEIKMCJB 0xDA1010
-	// public int AMNBEMCJCHF { get; set; } // KEFFGJGHPIF 0xDA1020 HDOCBIIBDPG 0xDA1030
+	public int JJIBDCAIBIO_LuckCoef0 { get { return PNEMPHGJLKG_LuckCoef0_Crypted ^ FBGGEFFJJHB; } set { PNEMPHGJLKG_LuckCoef0_Crypted = value ^ FBGGEFFJJHB; } } // CODJHFNCMMC 0xDA1000 IPLMEIKMCJB 0xDA1010
+	public int AMNBEMCJCHF_LuckCoef1 { get { return NPEECLODIKB_LuckCoef1_Crypted ^ FBGGEFFJJHB; } set { NPEECLODIKB_LuckCoef1_Crypted = value ^ FBGGEFFJJHB; } } // KEFFGJGHPIF 0xDA1020 HDOCBIIBDPG 0xDA1030
 	public Dictionary<string, int> OHJFBLFELNK { get; private set; } // 0x14C KLDCHOIPJGB AEMNOGNEBOJ DGKDBOAMNBB
 
 	// // RVA: 0xDA0338 Offset: 0xDA0338 VA: 0xDA0338
@@ -322,16 +322,16 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	{
 		if (MJBODMOLOBC_teamLuck < 1)
 			MJBODMOLOBC_teamLuck = 0;
-		int v = PNEMPHGJLKG_LuckCoef0 ^ FBGGEFFJJHB;
+		int v = JJIBDCAIBIO_LuckCoef0;
 		if (MJBODMOLOBC_teamLuck < 251)
 			v += MJBODMOLOBC_teamLuck;
-		int res = v / (NPEECLODIKB_LuckCoef1 ^ FBGGEFFJJHB);
-		int mod = v % (NPEECLODIKB_LuckCoef1 ^ FBGGEFFJJHB);
+		int res = v / AMNBEMCJCHF_LuckCoef1;
+		int mod = v % AMNBEMCJCHF_LuckCoef1;
 		if (mod > 0)
 		{
 			if (HLOHIMEAPLH_Seed < 0)
 				HLOHIMEAPLH_Seed = -HLOHIMEAPLH_Seed;
-			int mod2 = HLOHIMEAPLH_Seed % (NPEECLODIKB_LuckCoef1 ^ FBGGEFFJJHB);
+			int mod2 = HLOHIMEAPLH_Seed % AMNBEMCJCHF_LuckCoef1;
 			if (mod2 < mod)
 				res++;
 		}
@@ -339,7 +339,22 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xDA1120 Offset: 0xDA1120 VA: 0xDA1120
-	// public static int NBIAKELCBLC(int MJBODMOLOBC, int HLOHIMEAPLH, int BAFFAONJPCE, int BDMLMGBLGPC) { }
+	public static int NBIAKELCBLC_GetNumItems(int MJBODMOLOBC, int HLOHIMEAPLH, int BAFFAONJPCE, int BDMLMGBLGPC)
+	{
+		if(MJBODMOLOBC < 1)
+			MJBODMOLOBC = 0;
+		if(MJBODMOLOBC < 251)
+			BAFFAONJPCE += MJBODMOLOBC;
+		int res = BAFFAONJPCE / BDMLMGBLGPC;
+		if(BAFFAONJPCE % BDMLMGBLGPC > 0)
+		{
+			if(HLOHIMEAPLH < 0)
+				HLOHIMEAPLH = -HLOHIMEAPLH;
+			if((HLOHIMEAPLH % BDMLMGBLGPC) < (BAFFAONJPCE % BDMLMGBLGPC))
+				res++;
+		}
+		return res;
+	}
 
 	// // RVA: 0xDA1180 Offset: 0xDA1180 VA: 0xDA1180
 	public int GFIPALLLPMF(int PMKBJMHIFCM, int EILKGEADKGH)
@@ -443,8 +458,8 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 		PNDCOGFIGJO_RarFeedLvMax = new List<sbyte>(12);
 		HFHMMOMMFON = new List<byte[]>(12);
 		JJBJKENKAJP_ClrRarCoef = new List<int>(5);
-		PNEMPHGJLKG_LuckCoef0 = FBGGEFFJJHB;
-		NPEECLODIKB_LuckCoef1 = FBGGEFFJJHB;
+		JJIBDCAIBIO_LuckCoef0 = 0;
+		AMNBEMCJCHF_LuckCoef1 = 0;
 		JHPPLIGJFPI = new List<sbyte>(8);
 		KDIJDAKMODE = new List<int>(5);
 		AJBKGOPDGFI = new List<int>(5);
@@ -519,8 +534,8 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 		HFHMMOMMFON.Clear();
 		JHPPLIGJFPI.Clear();
 		KDIJDAKMODE.Clear();
-		PNEMPHGJLKG_LuckCoef0 = FBGGEFFJJHB;
-		NPEECLODIKB_LuckCoef1 = FBGGEFFJJHB ^ 10;
+		JJIBDCAIBIO_LuckCoef0 = 0;
+		AMNBEMCJCHF_LuckCoef1 = 10;
 		AJBKGOPDGFI.Clear();
 		GEDEIGJKMGI.Clear();
 		DOAAGIMJOMM.Clear();
@@ -878,8 +893,8 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 
 		{
 			int[] array = reader.BLPPPLONCGI;
-			PNEMPHGJLKG_LuckCoef0 = FBGGEFFJJHB ^ array[0];
-			NPEECLODIKB_LuckCoef1 = FBGGEFFJJHB ^ (array[1] == 0 ? 1 : array[1]);
+			JJIBDCAIBIO_LuckCoef0 = array[0];
+			AMNBEMCJCHF_LuckCoef1 = array[1] == 0 ? 1 : array[1];
 		}
 		{
 			JMELOFNPNBJ[] array = reader.BHGDNGHDDAC;
@@ -894,7 +909,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	// // RVA: 0xDA5A70 Offset: 0xDA5A70 VA: 0xDA5A70 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(100, "Json Load");
+		TodoLogger.LogError(TodoLogger.DbJson, "Json Load");
 		return true;
 	}
 

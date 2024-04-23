@@ -889,7 +889,7 @@ namespace XeApp.Game.Menu
 			while (!isSave)
 			{
 				if(GameManager.Instance.transmissionIcon.activeSelf)
-					TodoLogger.LogError(0, "Fix transmissoin icon");
+					Debug.LogError("Sould not pass here, fix transmissoin icon");
 				yield return null;
 			}
 			bool done = false;

@@ -66,7 +66,7 @@ namespace CriWare.CriMana.Detail
             useUserShader = userShader != null;
             if(movieInfo.codecType == CodecType.VP9)
             {
-                TodoLogger.LogError(0, "Codec VP9");
+                TodoLogger.LogError(TodoLogger.CriManaPlugin, "Codec VP9");
             }
             else if(movieInfo.codecType == CodecType.SofdecPrime)
             {
@@ -78,7 +78,7 @@ namespace CriWare.CriMana.Detail
             {
                 if(movieInfo.codecType == CodecType.VP9)
                 {
-                    TodoLogger.LogError(0, "Codec VP9");
+                    TodoLogger.LogError(TodoLogger.CriManaPlugin, "Codec VP9");
                 }
                 else if(movieInfo.codecType == CodecType.SofdecPrime)
                 {
@@ -161,7 +161,7 @@ namespace CriWare.CriMana.Detail
             {
                 /*x = (((movieInfo.width + 1) & 0xfffffffe) + 7) & 0xfffffff8;
                 y = (((movieInfo.height + 1) & 0xfffffffe) + 7) & 0xfffffff8;*/
-                TodoLogger.LogError(0, "VP9");
+                TodoLogger.LogError(TodoLogger.CriManaPlugin, "VP9");
             }
             else if(movieInfo.codecType == CodecType.SofdecPrime)
             {
@@ -292,7 +292,7 @@ namespace CriWare.CriMana.Detail
         {
             if(type == CodecType.VP9)
             {
-                TodoLogger.LogError(0, "VP9");
+                TodoLogger.LogError(TodoLogger.CriManaPlugin, "VP9");
             }
             else if(type == CodecType.SofdecPrime)
             {

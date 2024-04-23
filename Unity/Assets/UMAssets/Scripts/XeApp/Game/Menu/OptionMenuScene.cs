@@ -730,13 +730,13 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xDD8918 Offset: 0xDD8918 VA: 0xDD8918
 		private void OnClickInfo()
 		{
-			TodoLogger.LogNotImplemented("OnClickInfo");
+			return;
 		}
 
 		//// RVA: 0xDD891C Offset: 0xDD891C VA: 0xDD891C
 		private void OnClickInquiry()
 		{
-			TodoLogger.LogNotImplemented("OnClickInquiry");
+			return;
 		}
 
 		//// RVA: 0xDD8920 Offset: 0xDD8920 VA: 0xDD8920
@@ -762,7 +762,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xDD8E48 Offset: 0xDD8E48 VA: 0xDD8E48
 		private void OnClickOption()
 		{
-			TodoLogger.LogNotImplemented("OnClickOption");
+			return;
 		}
 
 		//// RVA: 0xDD8E4C Offset: 0xDD8E4C VA: 0xDD8E4C

@@ -40,7 +40,7 @@ namespace com.adjust.sdk
 		// // RVA: 0x274FDC4 Offset: 0x274FDC4 VA: 0x274FDC4
 		public static void setEnabled(bool enabled)
 		{
-			TodoLogger.LogError(0, "TODO");
+			TodoLogger.LogError(TodoLogger.Adjust, "TODO");
 		}
 
 		// // RVA: 0x274FFA8 Offset: 0x274FFA8 VA: 0x274FFA8
@@ -100,7 +100,7 @@ namespace com.adjust.sdk
 		// // RVA: 0x2753290 Offset: 0x2753290 VA: 0x2753290
 		public static void requestTrackingAuthorizationWithCompletionHandler(Action<int> statusCallback, string sceneName = "Adjust")
 		{
-			TodoLogger.LogError(0, "TODO");
+			TodoLogger.LogError(TodoLogger.Adjust, "TODO");
 		}
 
 		// // RVA: 0x275331C Offset: 0x275331C VA: 0x275331C

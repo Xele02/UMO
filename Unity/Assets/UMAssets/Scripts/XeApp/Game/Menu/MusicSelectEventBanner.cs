@@ -44,13 +44,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1675AE4 Offset: 0x1675AE4 VA: 0x1675AE4
 		public void TryEnter()
 		{
-			TodoLogger.LogError(0, "MusicSelectEventBanner TryEnter");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectEventBanner TryEnter");
 		}
 
 		// // RVA: 0x1675B78 Offset: 0x1675B78 VA: 0x1675B78
 		public void TryLeave()
 		{
-			TodoLogger.LogError(0, "MusicSelectEventBanner TryLeave");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectEventBanner TryLeave");
 		}
 
 		// // RVA: 0x1675AF4 Offset: 0x1675AF4 VA: 0x1675AF4
@@ -65,13 +65,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1675C90 Offset: 0x1675C90 VA: 0x1675C90
 		public void Hide()
 		{
-			TodoLogger.LogError(0, "MusicSelectEventBanner Hide");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectEventBanner Hide");
 		}
 
 		// // RVA: 0x1675D14 Offset: 0x1675D14 VA: 0x1675D14
 		public bool IsPlaying()
 		{
-			TodoLogger.LogError(0, "MusicSelectEventBanner IsPlaying");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectEventBanner IsPlaying");
 			return false;
 		}
 
@@ -99,7 +99,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1676098 Offset: 0x1676098 VA: 0x1676098
 		public void SetStyle(MusicSelectEventBanner.Style style)
 		{
-			TodoLogger.LogError(0, "MusicSelectEventBanner SetStyle");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectEventBanner SetStyle");
 		}
 
 		// // RVA: 0x1676218 Offset: 0x1676218 VA: 0x1676218
@@ -108,7 +108,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1676258 Offset: 0x1676258 VA: 0x1676258 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			TodoLogger.LogError(0, "InitializeFromLayout MusicSelectEventBanner");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "InitializeFromLayout MusicSelectEventBanner");
 			return true;
 		}
 

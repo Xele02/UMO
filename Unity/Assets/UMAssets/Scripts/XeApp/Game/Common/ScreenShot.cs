@@ -68,21 +68,21 @@ namespace XeApp.Game.Common
 		{
 			if(string.IsNullOrEmpty(shareImageFile))
 				return;
-			TodoLogger.LogError(0, "Share");
+			TodoLogger.LogError(TodoLogger.Android, "Share");
 			//AndroidUtils.OnShare2(shareImageFile, teamplate, StringLiteral_14411);
 		}
 
 		// // RVA: 0x138C99C Offset: 0x138C99C VA: 0x138C99C
 		private static bool IsAvailableStoreage(long fileSize)
 		{
-			TodoLogger.LogError(0, "IsAvailableStoreage");
+			TodoLogger.LogError(TodoLogger.Android, "IsAvailableStoreage");
 			return true;
 		}
 
 		// // RVA: 0x138CA34 Offset: 0x138CA34 VA: 0x138CA34
 		private static bool IsAvailableStoreageAccess()
 		{
-			TodoLogger.LogError(0, "IsAvailableStoreageAccess");
+			TodoLogger.LogError(TodoLogger.Android, "IsAvailableStoreageAccess");
 			return true;
 		}
 
@@ -101,7 +101,7 @@ namespace XeApp.Game.Common
 		{
 			if(Application.platform == RuntimePlatform.Android)
 			{
-				TodoLogger.LogError(0, "ScanMedia");
+				TodoLogger.LogError(TodoLogger.Android, "ScanMedia");
 			}
 		}
 
@@ -112,7 +112,7 @@ namespace XeApp.Game.Common
 			int i;
 
 			//0x138D828
-			TodoLogger.LogError(0, "Co_RequestPermission");
+			TodoLogger.LogError(TodoLogger.Android, "Co_RequestPermission");
 			yield return null;
 		}
 
@@ -122,7 +122,7 @@ namespace XeApp.Game.Common
 			string str = "";
 			if(Application.platform == RuntimePlatform.Android)
 			{
-				TodoLogger.LogError(0, "GetImageSavePath");
+				TodoLogger.LogError(TodoLogger.Android, "GetImageSavePath");
 			}
 			else
 			{

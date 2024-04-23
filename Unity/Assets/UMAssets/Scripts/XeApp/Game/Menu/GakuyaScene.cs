@@ -934,8 +934,78 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB783C0 Offset: 0xB783C0 VA: 0xB783C0
 		private IEnumerator Co_ShowPopupUnlockInfo(GakuyaCostumeListWindow.ItemInfo costumeItemInfo)
 		{
-			TodoLogger.LogError(0, "Co_ShowPopupUnlockInfo");
-			yield return null;
+			//0xB82860
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			PIGBBNDPPJC episodeData = null;
+			for(int i = 0; i < m_episodeList.Count; i++)
+			{
+				if(m_episodeList[i].KELFCMEOPPM_EpId == costumeItemInfo.m_viewDiva.KELFCMEOPPM_EpisodeId)
+				{
+					episodeData = m_episodeList[i];
+				}
+			}
+			CostumeSelectListTermsPopup.Setting s = new CostumeSelectListTermsPopup.Setting();
+			s.m_type = costumeItemInfo.m_cosColor != 0 ? CostumeSelectListTermsPopup.Type.CostumeColorChange : CostumeSelectListTermsPopup.Type.CostumeBase;
+			s.TitleText = bk.GetMessageByLabel("popup_sel_cos_terms_title");
+			s.m_diva_id = costumeItemInfo.m_viewDiva.AHHJLDLAPAN_DivaId;
+			s.m_costume_color = costumeItemInfo.m_cosColor;
+			s.m_costume_model_id = costumeItemInfo.m_cosModelId;
+			s.WindowSize = SizeType.Middle;
+			if(s.m_type == CostumeSelectListTermsPopup.Type.CostumeBase)
+			{
+				s.Buttons = new ButtonInfo[2]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative },
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Episode, Type = PopupButton.ButtonType.Episode }
+				};
+				m_stringBuilder.SetFormat(bk.GetMessageByLabel("popup_sel_cos_terms_text_base"), episodeData.OPFGFINHFCE_Name);
+				s.m_text = m_stringBuilder.ToString();
+			}
+			else
+			{
+				s.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+				};
+				s.m_text = "";
+				if(MOEALEGLGCH.CDOCOLOKCJK())
+				{
+					s.m_text += bk.GetMessageByLabel("popup_sel_cos_terms_text_color02");
+					s.m_text += JpStringLiterals.StringLiteral_5812;
+				}
+				m_stringBuilder.SetFormat(bk.GetMessageByLabel("popup_sel_cos_terms_text_color01"), costumeItemInfo.m_nameBase, CKFGMNAIBNG.MHIKGGMOPOJ(costumeItemInfo.m_viewDiva.AHHJLDLAPAN_DivaId, costumeItemInfo.m_cosId, costumeItemInfo.m_cosColor));
+				s.m_text += m_stringBuilder.ToString();
+			}
+			m_gotoEpisode = false;
+			bool isEntPopup = false;
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0xB7B048
+				m_gotoEpisode = label == PopupButton.ButtonLabel.Episode;
+				m_costumeListWindow.SetInputDisable();
+			}, null, null, null, endCallBaack:() =>
+			{
+				//0xB7B0B4
+				isEntPopup = true;
+			});
+			while(!isEntPopup)
+				yield return null;
+			if(!m_gotoEpisode)
+			{
+				if(!m_isChangingCostume)
+					yield break;
+				m_costumeListWindow.SetInputEnable();
+			}
+			else
+			{
+				while(m_isChangingCostume)
+					yield return null;
+				this.StartCoroutineWatched(Co_ApplySavedata(() =>
+				{
+					//0xB7B0C0
+					MenuScene.Instance.Mount(TransitionUniqueId.SETTINGMENU_EPISODESELECT_EPISODEDETAIL, new EpisodeDetailArgs() { data = episodeData }, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+				}));
+			}
 		}
 
 		//// RVA: 0xB78554 Offset: 0xB78554 VA: 0xB78554
@@ -965,7 +1035,23 @@ namespace XeApp.Game.Menu
 						PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel buttonLabel) =>
 						{
 							//0xB7B278
-							TodoLogger.LogError(0, "OnClickPresentItem 1");
+							if(type == PopupButton.ButtonType.Positive)
+							{
+								m_isGivingPresent = true;
+								Vector2 v = RectTransformUtility.WorldToScreenPoint(GameManager.Instance.GetSystemCanvasCamera(), m_intimacyPresentEffectPos.position);
+								int useItemCount = 1;
+								if(presentDivaLimit)
+								{
+									useItemCount = (control.Content as PopupGakuyaPresentUse2Contents).UseItemVal;
+								}
+								GameManager.Instance.SetFPS(60);
+								m_intimacyController.StartToPresentGakuya(itemInfo.m_presentData.ADJBIEOILPJ_Id, useItemCount, v, () =>
+								{
+									//0xB7B1B8
+									GameManager.Instance.SetFPS(30);
+									m_isGivingPresent = false;
+								});
+							}
 						}, null, null, null);
 					}
 					else
@@ -1018,7 +1104,7 @@ namespace XeApp.Game.Menu
 					PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel buttonLabel) =>
 					{
 						//0xB7A52C
-						TodoLogger.LogError(0, "OnClickPresentItem 2");
+						return;
 					}, null, null, null);
 				}
 			}
@@ -1036,7 +1122,7 @@ namespace XeApp.Game.Menu
 				PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel buttonLabel) =>
 				{
 					//0xB7A528
-					TodoLogger.LogError(0, "OnClickPresentItem 3");
+					return;
 				}, null, null, null);
 			}
 		}

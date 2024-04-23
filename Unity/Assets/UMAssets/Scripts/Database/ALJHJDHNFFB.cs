@@ -100,7 +100,7 @@ public class ALJHJDHNFFB_HomeBg : DIHHCBACKGG_DbSection
 	// RVA: 0xCDE9DC Offset: 0xCDE9DC VA: 0xCDE9DC Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(TodoLogger.Database, "ALJHJDHNFFB_HomeBg.KMBPACJNEOF");
+		TodoLogger.LogError(TodoLogger.DbJson, "ALJHJDHNFFB_HomeBg.KMBPACJNEOF");
 		return true;
 	}
 

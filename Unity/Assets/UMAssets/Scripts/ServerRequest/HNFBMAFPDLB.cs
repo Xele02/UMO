@@ -11,7 +11,14 @@ public class PIKEPLLPNNH
 	// RVA: 0x92F268 Offset: 0x92F268 VA: 0x92F268
 	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
 	{
-		TodoLogger.LogError(0, "KHEKNNFCAOI");
+		EDOHBJAPLPF_JsonData regular_ranking_ranks = IDLHJIOMJBK[AFEHLCGHAEE_Strings.DHDHHHOAIKF_regular_ranking_ranks];
+		DHDHHHOAIKF = new List<OBGBKHKMDNF>(regular_ranking_ranks.HNBFOAJIIAL_Count);
+		for(int i = 0; i < regular_ranking_ranks.HNBFOAJIIAL_Count; i++)
+		{
+			OBGBKHKMDNF data = new OBGBKHKMDNF();
+			data.KHEKNNFCAOI(regular_ranking_ranks[i]);
+			DHDHHHOAIKF.Add(data);
+		}
 	}
 }
 
@@ -31,12 +38,13 @@ public class HNFBMAFPDLB_GetRegularRankingRanksAroundTarget : CACGCMBKHDI_Reques
 	// RVA: 0x15FAFE0 Offset: 0x15FAFE0 VA: 0x15FAFE0 Slot: 12
 	public override void DHLDNIEELHO()
 	{
-		TodoLogger.LogError(0, "DHLDNIEELHO");
+		EBGACDGNCAA_CallContext = SakashoRegularRanking.GetRegularRankingRanksAroundTarget(DEPGBBJMFED, HHNFHJCAPJO, NHPCKCOPKAM, PJFKNNNDMIA, MLPEHNBNOGD, DCKLDDCAJAP, MEOCKCJBDAD);
 	}
 
 	// RVA: 0x15FB0FC Offset: 0x15FB0FC VA: 0x15FB0FC Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
 	{
-		TodoLogger.LogError(0, "MGFNKDPHFGI");
+		NFEAMMJIMPG = new PIKEPLLPNNH();
+		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
 	}
 }

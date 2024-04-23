@@ -154,7 +154,7 @@ public class FKMOKDCJFEN
 			else
 			{
 				//b2 =
-				TodoLogger.LogError(0, "KAFDDLPNOCF sp");
+				TodoLogger.LogError(TodoLogger.EventSp_7, "KAFDDLPNOCF sp");
 			}
 			KJBGCLPMLCG_Start = FBFNJMKPBBA.AGLILDLEFDK[CMEJFJFOIIJ - 1].KJBGCLPMLCG_Start;
 			GJFPFFBAKGK_End = FBFNJMKPBBA.AGLILDLEFDK[CMEJFJFOIIJ - 1].GJFPFFBAKGK_End;
@@ -182,7 +182,7 @@ public class FKMOKDCJFEN
 					long t4 = Utility.GetTargetUnixTime(d1.Year, d1.Month, d1.Day, 23, 59, 59);
 					if(FBFNJMKPBBA.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp)
 					{
-						TodoLogger.LogError(0, "Event SP");
+						TodoLogger.LogError(TodoLogger.EventSp_7, "Event SP");
 					}
 					BLHJBMPONHC = t4;
 				}
@@ -936,5 +936,37 @@ public class FKMOKDCJFEN
 	}
 
 	//// RVA: 0x118E2AC Offset: 0x118E2AC VA: 0x118E2AC
-	//public void KKFFEJEKFEG(IMCBBOAFION BHFHGFKBOHH, JFDNPFFOACP NIMPEHIECJH) { }
+	public void KKFFEJEKFEG(IMCBBOAFION BHFHGFKBOHH, JFDNPFFOACP NIMPEHIECJH)
+	{
+		CNLPPCFJEID_QuestInfo q = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests.Find((CNLPPCFJEID_QuestInfo GHPLINIACBB) =>
+		{
+			//0x118ED80
+			return CMEJFJFOIIJ_QuestId == GHPLINIACBB.PPFNGGCBJKC;
+		});
+		if(q != null && q.INDDJNMPONH_Type == 25)
+		{
+			string key = "normal_quest_url_" + q.CHOFDPDFPDC_ConfigValue.ToString("00");
+			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE.ContainsKey(key))
+			{
+				string url = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE[key];
+				NFPHOINMHKN_QuestInfo n = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[q.PPFNGGCBJKC - 1];
+				if(n.EALOBDHOCHP_Stat < 2)
+				{
+					n.EALOBDHOCHP_Stat = 2;
+					CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
+					{
+						//0x118EDDC
+						NKGJPJPHLIF.HHCJCDFCLOB.NBLAOIPJFGL_OpenURL(url);
+						BHFHGFKBOHH();
+					}, () =>
+					{
+						//0x118E968
+						MenuScene.Instance.GotoTitle();
+					}, null);
+					return;
+				}
+			}
+		}
+		NIMPEHIECJH();
+	}
 }

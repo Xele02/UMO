@@ -45,9 +45,7 @@ namespace XeApp.Game.Menu
 			//0xC3D044
 			if(!IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.OANJBOPLCKP_IsUnit5Enabled())
 			{
-				TodoLogger.LogError(0, "InitializeLayoutUnitSetting");
-				//yield return Co.R(LayoutObjectCacheUtility.InitializeLayoutUnitSetting());
-				yield return null;
+				yield return Co.R(LayoutObjectCacheUtility.InitializeLayoutUnitSetting(this));
 			}
 			while (!m_settingMenu.IsLoaded())
 				yield return null;

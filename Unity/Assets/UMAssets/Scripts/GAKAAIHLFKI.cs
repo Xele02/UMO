@@ -35,7 +35,7 @@ public class IMKNEDJDNGC
 public class GAKAAIHLFKI
 {
 	public int MALFHCHNEFN_Id; // 0x8
-	public string OPFGFINHFCE; // 0xC
+	public string OPFGFINHFCE_Name; // 0xC
 	public long LKGLMCFEDBF; // 0x10
 	public int HIDHLFCBIDE; // 0x18
 	public long JBOECJOONLP; // 0x20

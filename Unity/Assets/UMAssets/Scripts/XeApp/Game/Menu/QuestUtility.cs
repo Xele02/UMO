@@ -847,13 +847,34 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x9E721C Offset: 0x9E721C VA: 0x9E721C
 		public static void OpenURL(FKMOKDCJFEN view, Action onSuccess)
 		{
-			TodoLogger.LogError(0, "OpenURL");
-			onSuccess();
+			GameManager.Instance.StartCoroutineWatched(Co_OpenURL(view, onSuccess));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x710EA4 Offset: 0x710EA4 VA: 0x710EA4
 		//// RVA: 0x9E7300 Offset: 0x9E7300 VA: 0x9E7300
-		//private static IEnumerator Co_OpenURL(FKMOKDCJFEN view, Action onSuccess) { }
+		private static IEnumerator Co_OpenURL(FKMOKDCJFEN view, Action onSuccess)
+		{
+			//0x9E88BC
+			bool isWait = true;
+			bool isSuccess = false;
+			view.KKFFEJEKFEG(() =>
+			{
+				//0x9E7E6C
+				isWait = false;
+				isSuccess = true;
+			}, () =>
+			{
+				//0x9E7E78
+				isWait = false;
+			});
+			while(isWait)
+				yield return null;
+			if(isSuccess)
+			{
+				if(onSuccess != null)
+					onSuccess();
+			}
+		}
 
 		//// RVA: 0x9E6D18 Offset: 0x9E6D18 VA: 0x9E6D18
 		private static void GoToFreeMusic(int freeMusicId)
@@ -870,9 +891,9 @@ namespace XeApp.Game.Menu
 		private static void GotoCurrentEventScene(FKMOKDCJFEN view)
 		{
 			IKDICBBFBMI_EventBase ev = view.COAMJFMEIBF;
-			if(ev.HIDHLFCBIDE_EventType >= OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp && ev.HIDHLFCBIDE_EventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_9)
+			if(ev.HIDHLFCBIDE_EventType >= OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp && ev.HIDHLFCBIDE_EventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign)
 			{
-				ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9, false);
+				ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9, false);
 			}
 			TransitionUniqueId goScene = TransitionUniqueId.MUSICSELECT_RAID;
 			if (ev.FBLGGLDPFDF())
@@ -903,7 +924,7 @@ namespace XeApp.Game.Menu
 					}
 					else if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 					{
-						TodoLogger.LogError(0, "Event raid");
+						TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event raid");
 					}
 					else if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
 					{
@@ -933,7 +954,7 @@ namespace XeApp.Game.Menu
 			}
 			else if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 			{
-				TodoLogger.LogError(0, "Event raid");
+				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event raid");
 			}
 			else if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
 			{

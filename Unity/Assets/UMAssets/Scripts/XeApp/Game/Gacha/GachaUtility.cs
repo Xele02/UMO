@@ -813,13 +813,47 @@ namespace XeApp.Game.Gacha
 		// // RVA: 0x993298 Offset: 0x993298 VA: 0x993298
 		public static void OpenFewVCPopup(Action onClose)
 		{
-			TodoLogger.LogNotImplemented("OpenFewVCPopup");
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			TextPopupSetting s = new TextPopupSetting();
+			s.TitleText = netGachaProductData.OPFGFINHFCE_Name;
+			s.WindowSize = SizeType.Middle;
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			s.Text = bk.GetMessageByLabel("popup_gacha_lot_paid_few_msg");
+			PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x997410
+				if(onClose != null)
+					onClose();
+			}, null, null, null);
 		}
 
 		// // RVA: 0x9935E4 Offset: 0x9935E4 VA: 0x9935E4
 		public static void OpenTimeLimitPopup(Action onClose)
 		{
-			TodoLogger.LogNotImplemented("OpenTimeLimitPopup");
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			string msg = "";
+			if(selectCategory == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1)
+			{
+				msg = bk.GetMessageByLabel("popup_gacha_reject_free_timeout_msg");
+			}
+			else if(selectCategory >= GCAHJLOGMCI.KNMMOMEHDON_GachaType.GKDFKDLFNAJ_5 && selectCategory <= GCAHJLOGMCI.KNMMOMEHDON_GachaType.BKNHBNINDOC_6)
+			{
+				msg = bk.GetMessageByLabel("popup_gacha_reject_ticket_timeout_msg");
+			}
+            TextPopupSetting s = PopupWindowManager.CrateTextContent("", SizeType.Small, msg, new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			}, false, true);
+			s.IsCaption = !string.IsNullOrEmpty(s.TitleText);
+            PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x997424
+				if(onClose != null)
+					onClose();
+			}, null, null, null);
 		}
 
 		// // RVA: 0x993928 Offset: 0x993928 VA: 0x993928

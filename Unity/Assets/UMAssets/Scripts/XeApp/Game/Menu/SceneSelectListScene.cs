@@ -528,7 +528,7 @@ namespace XeApp.Game.Menu
 						}
 						else
 						{
-							TodoLogger.LogError(0, "GoDiva");
+							TodoLogger.LogError(TodoLogger.EventGoDiva_14, "GoDiva");
 						}
 					}
 					else
@@ -553,7 +553,28 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1382B50 Offset: 0x1382B50 VA: 0x1382B50
 		private void ShowSelectHomeBgPopupWindow(SceneSelectHomeBgLayout.SetBgType bgType, GCIJNCFDNON_SceneInfo sceneData)
 		{
-			TodoLogger.LogNotImplemented("ShowSelectHomeBgPopupWindow");
+			m_sceneSelectHomeBgSetting.BgType = bgType;
+			m_sceneSelectHomeBgSetting.SceneData = sceneData;
+			m_sceneSelectHomeBgSetting.HomeBgSceneData = JKHEOEEPBMJ.AIEDAEPONAB_GetHomeSceneInfo(PlayerData);
+			PopupWindowManager.Show(m_sceneSelectHomeBgSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0xA57FFC
+				if(label == PopupButton.ButtonLabel.Ok)
+				{
+					int sceneId = 0;
+					int evolveId = 0;
+					if(m_sceneSelectHomeBgSetting.BgType == SceneSelectHomeBgLayout.SetBgType.Evole || m_sceneSelectHomeBgSetting.BgType == SceneSelectHomeBgLayout.SetBgType.EvoleOnly || m_sceneSelectHomeBgSetting.BgType == SceneSelectHomeBgLayout.SetBgType.Undeveloped)
+					{
+						sceneId = m_sceneSelectHomeBgSetting.SceneSelectHomeBgLayout.SceneData.BCCHOBPJJKE_SceneId;
+						evolveId = m_sceneSelectHomeBgSetting.SceneSelectHomeBgLayout.SceneEvolveId;
+					}
+					JKHEOEEPBMJ.NDFFOBHACPE_SetHomeSceneId(sceneId, evolveId);
+					m_equipmentScene.UpdateHomeBgSceneContent(sceneData, evolveId);
+					m_equipmentScene.SelectSlot(0);
+					m_sceneSelectList.UpdateRemoveButton(sceneData);
+				}
+				m_sceneSelectList.UpdateRegion();
+			}, null, null, null);
 		}
 
 		// RVA: 0x1382D3C Offset: 0x1382D3C VA: 0x1382D3C Slot: 16
@@ -1237,7 +1258,8 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1386DEC Offset: 0x1386DEC VA: 0x1386DEC
 		private void RemoveHomeBgPopupWindow()
 		{
-			TodoLogger.LogNotImplemented("RemoveHomeBgPopupWindow");
+			CGFNKMNBNBN tmp;
+			ShowSelectHomeBgPopupWindow(CGFNKMNBNBN.CLBDFPACPKE(MenuScene.Instance.EnterToHomeTime, out tmp) ? SceneSelectHomeBgLayout.SetBgType.LimitBg : SceneSelectHomeBgLayout.SetBgType.Default, null);
 		}
 
 		// // RVA: 0x1386EC0 Offset: 0x1386EC0 VA: 0x1386EC0

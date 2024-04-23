@@ -26,6 +26,9 @@ namespace XeApp.Game.Common
 		}
 
 		// RVA: 0x13920B0 Offset: 0x13920B0 VA: 0x13920B0
-		//public static bool ValidateSeriesAttr(SeriesAttr.Type type) { }
+		public static bool ValidateSeriesAttr(Type type)
+		{
+			return type < Type.Num;
+		}
 	}
 }

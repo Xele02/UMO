@@ -40,7 +40,11 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1114584 Offset: 0x1114584 VA: 0x1114584
-		//public void DisableEffect(string effectName) { }
+		public void DisableEffect(string effectName)
+		{
+			m_useEffects = false;
+			effectFactories.Disable(effectName);
+		}
 
 		// RVA: 0x11145C8 Offset: 0x11145C8 VA: 0x11145C8 Slot: 7
 		protected override void OnInitialize(ValkyrieResource resource)

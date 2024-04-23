@@ -362,7 +362,7 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp/*7*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/);
 			if(ev != null)
 			{
-				TodoLogger.LogError(0, "Event");
+				TodoLogger.LogError(TodoLogger.EventSp_7, "Event");
 			}
 			GameManager.Instance.ResetViewPlayerData();
 			ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.FMOCAEEMHFJ/*43*/, 2, false);

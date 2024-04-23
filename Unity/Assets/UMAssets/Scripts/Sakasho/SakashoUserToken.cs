@@ -115,7 +115,10 @@ public class SakashoUserToken : SakashoAPIBase
 	// public static void CancelCreatePlayerFromTwitterBeforeOauth() { }
 
 	// // RVA: 0x2E6FAC8 Offset: 0x2E6FAC8 VA: 0x2E6FAC8
-	// public static SakashoAPICallContext ClearDeviceLoginDataWithLog(OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext ClearDeviceLoginDataWithLog(OnSuccess onSuccess, OnError onError)
+	{
+		return new SakashoAPICallContext(Call(SakashoUserTokenClearDeviceLoginDataWithLog, "", onSuccess, onError));
+	}
 
 	// // RVA: 0x2E6FBB0 Offset: 0x2E6FBB0 VA: 0x2E6FBB0
 	private static /*extern */int SakashoUserTokenCreatePlayer(int callbackId, string json)
@@ -205,5 +208,8 @@ public class SakashoUserToken : SakashoAPIBase
 	// private static extern int SakashoUserTokenCancelCreatePlayerFromTwitterBeforeOauth(int callbackId, string json) { }
 
 	// // RVA: 0x2E715F0 Offset: 0x2E715F0 VA: 0x2E715F0
-	// private static extern int SakashoUserTokenClearDeviceLoginDataWithLog(int callbackId, string json) { }
+	private static int SakashoUserTokenClearDeviceLoginDataWithLog(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoUserTokenClearDeviceLoginDataWithLog(callbackId, json);
+	}
 }

@@ -413,8 +413,21 @@ namespace XeApp.Game.RhythmGame
 			}
 			else
 			{
-				TodoLogger.LogError(0, "CreateConfirmationSetting");
-				return null;
+				MessageBank bk = MessageManager.Instance.GetBank("common");
+				PopupUseStoneSetting s = new PopupUseStoneSetting();
+				s.WindowSize = SizeType.Small;
+				s.TitleText = bk.GetMessageByLabel("game_popup_continue_title");
+				s.Text = PopupWindowManager.FormatTextBank(bk, "game_popup_continue_text", new object[3]
+				{
+					CIOECGOMILE.HHCJCDFCLOB.BPPGDBHGMDA_Continue_Price, CIOECGOMILE.HHCJCDFCLOB.DEAPMEIDCGC_GetTotalPaidCurrency(), diff
+				});
+				s.Buttons = new ButtonInfo[2]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.UsedChargesItem, Type = PopupButton.ButtonType.Positive }
+				};
+				s.GotoTitleListener = errorGotoTitle;
+				return s;
 			}
 		}
 
@@ -436,8 +449,17 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xC0EE70 Offset: 0xC0EE70 VA: 0xC0EE70
 		private PopupSetting CreateConfirmationSettingForStory()
 		{
-			TodoLogger.LogError(0, "CreateConfirmationSettingForStory");
-			return null;
+			MessageBank bk = MessageManager.Instance.GetBank("common");
+			TextPopupSetting s = new TextPopupSetting();
+			s.WindowSize = SizeType.Small;
+			s.TitleText = bk.GetMessageByLabel("game_popup_continue_title");
+			s.Text = bk.GetMessageByLabel("game_popup_continue_story_text");
+			s.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Skip, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Continue, Type = PopupButton.ButtonType.Positive }
+			};
+			return s;
 		}
 
 		// // RVA: 0xC0F5DC Offset: 0xC0F5DC VA: 0xC0F5DC

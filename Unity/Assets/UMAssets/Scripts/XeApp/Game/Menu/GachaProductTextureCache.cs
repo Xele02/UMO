@@ -1,5 +1,10 @@
 namespace XeApp.Game.Menu
 {
+	public class GachaProductTexture : IconTexture
+	{
+		//
+	}
+
 	public class GachaProductTextureCache : IconTextureCache
 	{
 		// RVA: 0xEE42A0 Offset: 0xEE42A0 VA: 0xEE42A0
@@ -17,8 +22,9 @@ namespace XeApp.Game.Menu
 		// RVA: 0xEE42B4 Offset: 0xEE42B4 VA: 0xEE42B4 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
 		{
-			TodoLogger.LogError(0, "CreateIconTexture");
-			return null;
+			GachaProductTexture tex = new GachaProductTexture();
+			SetupForSplitTexture(info, tex);
+			return tex;
 		}
 
 		// RVA: 0xEE433C Offset: 0xEE433C VA: 0xEE433C Slot: 6

@@ -100,15 +100,15 @@ public class NGJOPPIGCPM_ResultData
 		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo mInfo2 = OEELDFNNLKK_SaveRecordMusic2.FAMANJGJANN_FreeMusicInfo[GHBPLHBNMBK_FreeMusicId - 1];
 		if(MNNHHJBBICA_GameEventType == 2)
 		{
-			TodoLogger.LogError(0, "Event");
+			TodoLogger.LogError(TodoLogger.Event_Unknwown_2, "Event");
 		}
 		else if(MNNHHJBBICA_GameEventType == 3)
 		{
-			TodoLogger.LogError(0, "Event");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "Event");
 		}
 		else if(MNNHHJBBICA_GameEventType == 4)
 		{
-			TodoLogger.LogError(0, "Event");
+			TodoLogger.LogError(TodoLogger.EventScore_4, "Event");
 		}
 		PBGLMBMEKAA_ComboCount = mInfo1.PDNJGJNGPNJ_MaxCombo;
 		GCAPLLEIAAI_HighScore = mInfo1.ODEHJGPDFCL_Score;

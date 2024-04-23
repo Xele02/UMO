@@ -68,13 +68,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1679374 Offset: 0x1679374 VA: 0x1679374
 		public void TryLeave()
 		{
-			TodoLogger.LogError(0, "MusicSelectMusicInfo TryLeave");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectMusicInfo TryLeave");
 		}
 
 		// // RVA: 0x16792F0 Offset: 0x16792F0 VA: 0x16792F0
 		public void Enter()
 		{
-			TodoLogger.LogError(0, "MusicSelectMusicInfo Enter");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectMusicInfo Enter");
 		}
 
 		// // RVA: 0x1679384 Offset: 0x1679384 VA: 0x1679384
@@ -86,20 +86,20 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x167948C Offset: 0x167948C VA: 0x167948C
 		public void Hide()
 		{
-			TodoLogger.LogError(0, "MusicSelectMusicInfo Hide");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectMusicInfo Hide");
 		}
 
 		// // RVA: 0x1679510 Offset: 0x1679510 VA: 0x1679510
 		public bool IsPlaying()
 		{
-			TodoLogger.LogError(0, "MusicSelectMusicInfo IsPlaying");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectMusicInfo IsPlaying");
 			return false;
 		}
 
 		// // RVA: 0x167953C Offset: 0x167953C VA: 0x167953C
 		public void MakeCache()
 		{
-			TodoLogger.LogError(0, "MusicSelectMusicInfo MakeCache");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectMusicInfo MakeCache");
 		}
 
 		// // RVA: 0x1679614 Offset: 0x1679614 VA: 0x1679614
@@ -147,7 +147,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x167B6E0 Offset: 0x167B6E0 VA: 0x167B6E0
 		public void SetNoInfoMessage(string message4, string message6)
 		{
-			TodoLogger.LogError(0, "MusicSelectMusicInfo SetNoInfoMessage");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectMusicInfo SetNoInfoMessage");
 		}
 
 		// // RVA: 0x167B72C Offset: 0x167B72C VA: 0x167B72C
@@ -200,7 +200,7 @@ namespace XeApp.Game.Menu
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
 			base.InitializeFromLayout(layout, uvMan);
-			TodoLogger.LogError(0, "InitializeFromLayout MusicSelectionMusicInfo");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "InitializeFromLayout MusicSelectionMusicInfo");
 			return true;
 		}
 	}

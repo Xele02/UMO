@@ -195,7 +195,10 @@ public class MCGNOFMAPBJ
 	}
 
 	// // RVA: 0x130D4C8 Offset: 0x130D4C8 VA: 0x130D4C8
-	// public bool FCEMLLDEJFL(bool MDNODGAFHJN = True, bool DDGFCOPPBBN = True) { }
+	public bool FCEMLLDEJFL(bool MDNODGAFHJN = true, bool DDGFCOPPBBN = true)
+	{
+		return MAPPOEFALIP(DCBENCMNOGO_MaxStamina, MDNODGAFHJN, DDGFCOPPBBN);
+	}
 
 	// // RVA: 0x130D520 Offset: 0x130D520 VA: 0x130D520
 	public void GFOAJNICANO(int GDDFDGNEACK)

@@ -394,7 +394,10 @@ public class BBHNACPENDM_ServerSaveData
 	// public void PNHOEMIMCGC() { }
 
 	// // RVA: 0xF1F330 Offset: 0xF1F330 VA: 0xF1F330
-	// public void CAKOEJHBIHF() { }
+	public void CAKOEJHBIHF()
+	{
+		KHEKNNFCAOI_Init(1);
+	}
 
 	// // RVA: 0xF1F350 Offset: 0xF1F350 VA: 0xF1F350
 	// public void GGBOGLKKKDM() { }
@@ -541,7 +544,28 @@ public class BBHNACPENDM_ServerSaveData
 	}
 
 	// // RVA: 0xF202A4 Offset: 0xF202A4 VA: 0xF202A4
-	// public BBHNACPENDM.EMHDCKMFCGE IMMANCAIDLP() { }
+	public EMHDCKMFCGE IMMANCAIDLP()
+	{
+		if(MGJKEJHEBPO_Blocks == null)
+			return null;
+		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
+		List<string> ls = new List<string>();
+		long saveId = MCKEOKFMLAH_SaveId + 1;
+		for(int i = 0; i < MGJKEJHEBPO_Blocks.Count; i++)
+		{
+			if(MGJKEJHEBPO_Blocks[i] != null)
+			{
+				MGJKEJHEBPO_Blocks[i].OKJPIBHMKMJ(json, saveId);
+				ls.Add(MGJKEJHEBPO_Blocks[i].JIKKNHIAEKG_BlockName);
+			}
+		}
+		EMHDCKMFCGE res = new EMHDCKMFCGE(json, ls, false, saveId);
+		res.KFGDPMNCCFO = ls;
+		res.MCKEOKFMLAH = saveId;
+		res.OBHAFLMHAKG = json;
+		res.BLOCFLFHCFJ = false;
+		return res;
+	}
 
 	// // RVA: 0xF20570 Offset: 0xF20570 VA: 0xF20570
 	public EMHDCKMFCGE LEMFJICBALP(BBHNACPENDM_ServerSaveData GJLFANGDGCL, bool NNPGPAPDDMC = true)
@@ -575,9 +599,6 @@ public class BBHNACPENDM_ServerSaveData
 			{
 				TodoLogger.LogError(TodoLogger.OptimizedSave, "OptimizedSave not neededd for now as we are only local");
 				continue;
-				KLFDBFMNLBL_ServerSaveBlock b = MGJKEJHEBPO_Blocks[l1[i]];
-				KLFDBFMNLBL_ServerSaveBlock b2 = GJLFANGDGCL.MGJKEJHEBPO_Blocks[l1[i]];
-				b.AGHKODFKOJI(data, b2, v);
 			}
 			/*if (data.MGPEIGDOMPH.HNBFOAJIIAL_Count < 101)
 			{
@@ -680,8 +701,8 @@ public class BBHNACPENDM_ServerSaveData
 		{
 			int uptime = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("lobby_uptime_duration", 300);
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
-			if (uptime < time - LLBECHBNIJG_EventRaidPlayer.NFIOKIBPJCJ)
-				LLBECHBNIJG_EventRaidPlayer.NFIOKIBPJCJ = time;
+			if (uptime < time - LLBECHBNIJG_EventRaidPlayer.NFIOKIBPJCJ_Uptime)
+				LLBECHBNIJG_EventRaidPlayer.NFIOKIBPJCJ_Uptime = time;
 		}
 		return true;
 	}
@@ -740,7 +761,7 @@ public class BBHNACPENDM_ServerSaveData
 	// // RVA: 0xF220F8 Offset: 0xF220F8 VA: 0xF220F8
 	public void JCFDDJIBKPA()
 	{
-		TodoLogger.LogError(0, "TODO");
+		TodoLogger.LogError(TodoLogger.CBT, "TODO");
 	}
 
 	// // RVA: 0xF23B4C Offset: 0xF23B4C VA: 0xF23B4C

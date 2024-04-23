@@ -67,7 +67,15 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 		int b = GEAANLPDJBP_MusicInfo.CCLIOBOGFHC;
 		if (MFJKNCACBDG_OpenEventType != 0)
 		{
-			TodoLogger.LogError(0, "DGMNLKDEDDC event");
+            IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI_6, false);
+			if(ev != null)
+			{
+            	b = ev.EEMGDCPJNEG(b, (OHCAABOMEOF.KGOGMKMBCPP_EventType)MNNHHJBBICA_GameEventType);
+				if(b != 0)
+				{
+					a = ev.DJHOMGLGAHA(a, (OHCAABOMEOF.KGOGMKMBCPP_EventType)MNNHHJBBICA_GameEventType);
+				}
+			}
 		}
 		return DGMNLKDEDDC(GEAANLPDJBP_MusicInfo.JCDKMICANJO_RareSetId, GEAANLPDJBP_MusicInfo.ONLFLGPMAAN_GetRareRateId(GIKLNODJKFK_IsLine6) + EBBCGFOGKNE_Diff, b, a + EBBCGFOGKNE_Diff);
 	}
@@ -217,7 +225,7 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 	// RVA: 0x17CA22C Offset: 0x17CA22C VA: 0x17CA22C Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(0, "Deserialize NBPHJDCOECH_Drop");
+		TodoLogger.LogError(TodoLogger.DbJson, "Deserialize NBPHJDCOECH_Drop");
 		return false;
 	}
 

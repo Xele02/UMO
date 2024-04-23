@@ -349,7 +349,7 @@ namespace XeApp.Game.Common
 			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/);
 			if(ev != null)
 			{
-				TodoLogger.LogError(0, "Event");
+				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
 			}
 			List<ViewEnergyItemData> l1 = ViewEnergyItemData.CreateList();
 			for(int i = 0; i < l1.Count; i++)

@@ -42,13 +42,13 @@ namespace CriWare
 		// // RVA: 0x289CA74 Offset: 0x289CA74 VA: 0x289CA74
 		private CriAtomExMic(IntPtr handle)
 		{
-			TodoLogger.LogError(0, "TODO");
+			TodoLogger.LogError(TodoLogger.CriAtomExLib, "TODO");
 		}
 
 		// // RVA: 0x289CBD8 Offset: 0x289CBD8 VA: 0x289CBD8 Slot: 5
 		public override void Dispose()
 		{
-			TodoLogger.LogError(0, "TODO");
+			TodoLogger.LogError(TodoLogger.CriAtomExLib, "TODO");
 		}
 
 		// // RVA: 0x289CC68 Offset: 0x289CC68 VA: 0x289CC68
@@ -57,7 +57,7 @@ namespace CriWare
 		// // RVA: 0x289CE4C Offset: 0x289CE4C VA: 0x289CE4C
 		public void Start()
 		{
-			TodoLogger.LogError(0, "TODO");
+			TodoLogger.LogError(TodoLogger.CriAtomExLib, "TODO");
 		}
 
 		// // RVA: 0x289CFD8 Offset: 0x289CFD8 VA: 0x289CFD8

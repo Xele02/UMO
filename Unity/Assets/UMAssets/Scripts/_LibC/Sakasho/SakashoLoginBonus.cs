@@ -856,7 +856,7 @@ namespace ExternLib
 			}
 			else
 			{
-				TodoLogger.LogError(0, "Request "+json);
+				TodoLogger.LogError(TodoLogger.SakashoServer, "Request "+json);
 			}
 			/*if(id == 6541)
 			{
@@ -1412,7 +1412,7 @@ namespace ExternLib
 			}
 			else
 			{
-				TodoLogger.LogError(0, "Request "+json);
+				TodoLogger.LogError(TodoLogger.SakashoServer, "Request "+json);
 			}*/
 
 			SendMessage(callbackId, res);
@@ -1427,7 +1427,7 @@ namespace ExternLib
 			res["last_played_at"] = 1654416444;
 			res["login_bonuses"] = new EDOHBJAPLPF_JsonData();
 			res["login_bonuses"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
-			TodoLogger.LogError(0, "SakashoLoginBonusIncrementLoginCount");
+			TodoLogger.LogError(TodoLogger.SakashoServer, "SakashoLoginBonusIncrementLoginCount");
 
 			SendMessage(callbackId, res);
 			return 0;
@@ -1508,7 +1508,7 @@ namespace ExternLib
 				}
 				else
 				{
-					TodoLogger.LogError(0, "Request "+json);
+					TodoLogger.LogError(TodoLogger.SakashoServer, "Request "+json);
 				}
 				/*if(id == 6541)
 				{
@@ -1578,7 +1578,7 @@ namespace ExternLib
 				}
 				else
 				{
-					TodoLogger.LogError(0, "Request "+json);
+					TodoLogger.LogError(TodoLogger.SakashoServer, "Request "+json);
 				}*/
 			}
 			userLoginData.Save(playerAccount.playerData.serverData);

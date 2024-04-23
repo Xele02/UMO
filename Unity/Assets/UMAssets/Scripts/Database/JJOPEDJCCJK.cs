@@ -366,7 +366,7 @@ public class JJOPEDJCCJK_Exp : DIHHCBACKGG_DbSection
 	// // RVA: 0x1357044 Offset: 0x1357044 VA: 0x1357044 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
     {
-        TodoLogger.LogError(100, "Exp Json IIEMACPEEBJ");
+        TodoLogger.LogError(TodoLogger.DbJson, "Exp Json IIEMACPEEBJ");
         return true;
     }
 

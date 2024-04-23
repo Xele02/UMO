@@ -265,7 +265,7 @@ namespace XeApp.Game.Tutorial
 						//0xE4C030
 						return x.CMEJFJFOIIJ_QuestId == 1;
 					});
-					if(f != null && f.CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.CADDNFIKDLG_Received/*3*/)
+					if(f != null && f.CMCKNKKCNDK_Status == FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved)
 						return true;
 				}
 			}
@@ -276,8 +276,55 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE4A4C0 Offset: 0xE4A4C0 VA: 0xE4A4C0
 		public static IEnumerator Co_BeginnerMissionLiveClear(MusicSelectCDSelect cdSelect, MusicScrollView musicScrollView)
 		{
-			TodoLogger.LogError(0, "Co_BeginnerMissionLiveClear");
-			yield return null;
+			BasicTutorialManager mrg; // 0x1C
+			BasicTutorialMessageId messageId; // 0x20
+			GameManager.PushBackButtonHandler dymmyBackHandler; // 0x24
+
+			//0xE4CD74
+			MenuScene.Instance.InputDisable();
+			mrg = BasicTutorialManager.Instance;
+			bool isWait = true;
+			mrg.PreLoadResource(() =>
+			{
+				//0xE4C0F8
+				isWait = false;
+			}, false);
+			while(isWait)
+				yield return null;
+			messageId = BasicTutorialMessageId.Id_LiveClear1;
+			yield return mrg.PreDownLoadTextureResource(messageId);
+			MenuScene.Instance.InputEnable();
+			dymmyBackHandler = () =>
+			{
+				//0xE4C05C
+				return;
+			};
+			GameManager.Instance.AddPushBackButtonHandler(dymmyBackHandler);
+			if(cdSelect != null)
+			{
+				cdSelect.ScrollDisable();
+			}
+			if(musicScrollView != null)
+			{
+				musicScrollView.ScrollEnable(false);
+			}
+			isWait = true;
+			mrg.ShowMessageWindow(messageId, () =>
+			{
+				//0xE4C104
+				isWait = false;
+			}, null);
+			while(isWait)
+				yield return null;
+			isWait = true;
+			mrg.SetInputLimit(InputLimitButton.Mission, () =>
+			{
+				//0xE4C110
+				isWait = false;
+			}, null, TutorialPointer.Direction.Down);
+			while(isWait)
+				yield return null;
+			GameManager.Instance.RemovePushBackButtonHandler(dymmyBackHandler);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AEF10 Offset: 0x6AEF10 VA: 0x6AEF10

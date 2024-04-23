@@ -303,5 +303,52 @@ namespace ExternLib
 			SendMessage(callbackId, res);
 			return 0;
 		}
+
+		public static int SakashoInventoryGetInventoryRecords(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
+
+			List<long> ids = new List<long>();
+			EDOHBJAPLPF_JsonData l = jsonData["ids"];
+			for(int i = 0; i < l.HNBFOAJIIAL_Count; i++)
+			{
+				ids.Add(JsonUtil.GetLong(l[i]));
+			}
+
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res["inventories"] = new EDOHBJAPLPF_JsonData();
+			res["inventories"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+
+			UserInventory inv = new UserInventory();
+			inv.Load(playerAccount.playerData.serverData);
+
+			List<UserInventoryItem> filtered = inv.Items.FindAll((UserInventoryItem _) =>
+			{
+				return ids.Contains(_.id);
+			});
+			filtered.Sort((UserInventoryItem a, UserInventoryItem b) =>
+			{
+				return b.created_at.CompareTo(a.created_at);
+			});
+			int start = 0;
+			for(int i = start; i < filtered.Count; i++)
+			{
+				EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+				data["id"] = filtered[i].id;
+				data["item_count"] = filtered[i].item_count;
+				data["item_name"] = filtered[i].item_name;
+				data["item_type"] = filtered[i].item_type;
+				data["item_value"] = filtered[i].item_value;
+				data["message"] = filtered[i].message;
+				data["received_at"] = filtered[i].received_at;
+				data["closed_at"] = filtered[i].closed_at;
+				data["created_at"] = filtered[i].created_at;
+				data["type"] = filtered[i].type;
+				res["inventories"].Add(data);
+			}
+
+			SendMessage(callbackId, res);
+			return 0;
+		}
 	}
 }

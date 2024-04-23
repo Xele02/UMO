@@ -13,8 +13,8 @@ public class BOKMNHAFJHF_Sns : DIHHCBACKGG_DbSection
 		public long DPIBHFNDJII; // 0x8
 		public long EKPBOLNFGJB; // 0x10
 		public int AIPLIEMLHGC; // 0x18
-		public int MALFHCHNEFN; // 0x1C
-		public int AJIDLAGFPGM; // 0x20
+		public int MALFHCHNEFN_RoomId; // 0x1C
+		public int AJIDLAGFPGM_TalkId; // 0x20
 		public sbyte JKNGNIMLDDJ; // 0x24
 		public sbyte PPEGAKEIEGM_Enabled; // 0x25
 		public ushort IJEKNCDIIAE; // 0x26
@@ -139,10 +139,10 @@ public class BOKMNHAFJHF_Sns : DIHHCBACKGG_DbSection
 				data.AIPLIEMLHGC = (int)array[i].PPFNGGCBJKC;
 				data.DPIBHFNDJII = array[i].KFCIJBLDHOK;
 				data.EKPBOLNFGJB = array[i].JLEIHOEGMOP;
-				data.MALFHCHNEFN = (int)array[i].OKECOPNBAGP;
+				data.MALFHCHNEFN_RoomId = (int)array[i].OKECOPNBAGP;
 				data.JKNGNIMLDDJ = (sbyte)array[i].ODMJFHDIGLP;
 				data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
-				data.AJIDLAGFPGM = (int)array[i].EPKOHDLIKAN;
+				data.AJIDLAGFPGM_TalkId = (int)array[i].EPKOHDLIKAN;
 				data.IJEKNCDIIAE = (ushort)array[i].IJEKNCDIIAE;
 			}
 			return true;

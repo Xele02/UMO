@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using XeApp.Game.Common;
 using XeApp.Game.Tutorial;
 using XeSys;
@@ -447,7 +448,9 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x12D4104 Offset: 0x12D4104 VA: 0x12D4104
 		private void TutorialRoomSelect(int roomId)
 		{
-			TodoLogger.LogError(0, "Tutorial");
+			BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.None, null, null, TutorialPointer.Direction.Normal);
+			layoutController.layoutScrollList.GetComponentInChildren<ScrollRect>(true).enabled = true;
+			this.StartCoroutineWatched(Co_TalkTutorial());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72ABCC Offset: 0x72ABCC VA: 0x72ABCC
@@ -457,12 +460,105 @@ namespace XeApp.Game.Menu
 			BasicTutorialManager mgr;
 
 			//0x12D4BA8
-			TodoLogger.LogError(0, "Tutorial");
-			yield return null;
+			bool isWait = false;
+			mgr = BasicTutorialManager.Instance;
+			isWait = true;
+			mgr.ShowMessageWindow(BasicTutorialMessageId.Id_SnsStart, () =>
+			{
+				//0x12D4700
+				isWait = false;
+			}, null);
+			while(isWait)
+				yield return null;
+			isWait = true;
+			mgr.SetInputLimit(InputLimitButton.SnsRoomButton, () =>
+			{
+				//0x12D470C
+				isWait = false;
+			}, null, TutorialPointer.Direction.Normal);
+			layoutController.layoutScrollList.GetComponentInChildren<ScrollRect>().enabled = false;
+			while(isWait)
+				yield return null;
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72AC44 Offset: 0x72AC44 VA: 0x72AC44
 		//// RVA: 0x12D4230 Offset: 0x12D4230 VA: 0x12D4230
-		//private IEnumerator Co_TalkTutorial() { }
+		private IEnumerator Co_TalkTutorial()
+		{
+			BasicTutorialManager mgr; // 0x18
+			int talkCount; // 0x1C
+			float timeWait; // 0x20
+			float tiemr; // 0x24
+
+			//0x12D4F40
+			mgr = BasicTutorialManager.Instance;
+			bool isWait = false;
+			talkCount = 0;
+			timeWait = 0;
+			tiemr = 1;
+			while(!talkCreater.IsPlayingTalk)
+				yield return null;
+			talkCreater.PauseTalk();
+			while(!talkCreater.IsNextTalk())
+				yield return null;
+			isWait = true;
+			mgr.ShowMessageWindow(BasicTutorialMessageId.Id_RoomSelected, () =>
+			{
+				//0x12D4720
+				isWait = false;
+			}, null);
+			while(isWait)
+				yield return null;
+			talkCreater.RestartTalk();
+			while(talkCount < 4)
+			{
+				talkCount = GetCurrentTalkCount();
+				yield return null;
+			}
+			talkCreater.PauseTalk();
+			while(!talkCreater.IsNextTalk())
+				yield return null;
+			timeWait = 0;
+			while(timeWait < tiemr)
+			{
+				tiemr += TimeWrapper.deltaTime;
+				yield return null;
+			}
+			isWait = true;
+			mgr.ShowMessageWindow(BasicTutorialMessageId.Id_Sns1, () =>
+			{
+				//0x12D472C
+				isWait = false;
+			}, null);
+			while(isWait)
+				yield return null;
+			talkCreater.RestartTalk();
+			while(talkCount < talkCreater.GetTotalTalkCount())
+			{
+				talkCount = GetCurrentTalkCount();
+				yield return null;
+			}
+			talkCreater.PauseTalk();
+			while(!talkCreater.IsNextTalk())
+				yield return null;
+			timeWait = 0;
+			while(timeWait < tiemr)
+			{
+				tiemr += TimeWrapper.deltaTime;
+				yield return null;
+			}
+			if(GameManager.Instance.IsTutorial)
+			{
+				isWait = true;
+				yield return Co.R(TutorialManager.ShowTutorial(69, () =>
+				{
+					//0x12D4738
+					isWait = false;
+				}));
+				while(isWait)
+					yield return null;
+			}
+			talkCreater.Close();
+		}
 	}
 }

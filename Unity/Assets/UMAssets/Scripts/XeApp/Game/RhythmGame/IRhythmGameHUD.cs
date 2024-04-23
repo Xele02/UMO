@@ -86,7 +86,7 @@ namespace XeApp.Game.RhythmGame
 		void ChangeHpGaugeFrame(int percent);
 
 		// // RVA: -1 Offset: -1 Slot: 22
-		// public abstract void SetContinue();
+		void SetContinue();
 
 		// // RVA: -1 Offset: -1 Slot: 23
 		void ChangeRankGaugeFrame(ResultScoreRank.Type rankType, float ratio);

@@ -526,7 +526,7 @@ namespace XeApp.Game.Menu
 			FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
 			data.AHHJLDLAPAN_DivaId = diva.AHHJLDLAPAN_DivaId;
 			data.NNOHKLNKGAD_CostumeId = diva.JPIDIENBGKH_CostumeId;
-			data.LIBPMIHHEJD = diva.AHHJLDLAPAN_DivaId;
+			data.LIBPMIHHEJD_StampDiva = diva.AHHJLDLAPAN_DivaId;
 			data.DJHMGDKKKFO_ColorId = diva.EKFONBFDAAP_ColorId;
 			data.HEKIEDEBAEO_StampId = stampId;
 			data.EKAMPLIAENM_SerifId = serifId;
@@ -645,7 +645,18 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC548E0 Offset: 0xC548E0 VA: 0xC548E0
-		//private void NextAddComment(int index) { }
+		private void NextAddComment(int index)
+		{
+			m_commentCount = m_chatContller.NJMOALFKKIK();
+			m_windowUi.ResetItem();
+			for(int i = m_commentCount - 1; i > -1; i--)
+			{
+                ANPBHCNJIDI.NNPGLGHDBKN cm = m_chatContller.NOEMAKFEICB(i);
+                m_windowUi.AddBbsListItem(cm, cm.INDDJNMPONH, m_myPlayerId, i, true);
+			}
+			m_windowUi.AddScrollItem();
+			m_windowUi.NextCommentAddScrollLsit(index);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D024C Offset: 0x6D024C VA: 0x6D024C
 		//// RVA: 0xC54A18 Offset: 0xC54A18 VA: 0xC54A18
@@ -684,7 +695,7 @@ namespace XeApp.Game.Menu
 			m_chatContller.MFFPEIEMGGM();
 			ANPBHCNJIDI.AIFBLOAGFOP data = new ANPBHCNJIDI.AIFBLOAGFOP();
 			data.AHHJLDLAPAN_DivaId = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId;
-			data.EBBJPBGHJOL = m_messgeText;
+			data.EBBJPBGHJOL_Content = m_messgeText;
 			data.PCEHLFNFIDA(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave);
 			m_chatContller.NPIBJOGODKG(0, data, () =>
 			{
@@ -726,8 +737,46 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC54B70 Offset: 0xC54B70 VA: 0xC54B70
 		private IEnumerator Co_GetNextCommentList()
 		{
-			TodoLogger.LogError(0, "Co_GetNextCommentList");
+			int optionBits; // 0x18
+			int preCommentCount; // 0x1C
+
+			//0xC57598
+			bool IsDone = false;
+			bool IsError = false;
+			bool success = false;
+			optionBits = 0;
+			IsTapGuardON = true;
 			yield return null;
+			while(m_chatContller.OKNCPELPJJO)
+				yield return null;
+			preCommentCount = m_chatContller.NJMOALFKKIK();
+			m_chatContller.HDHACKFJKGM(optionBits, () =>
+			{
+				//0xC5631C
+				IsDone = true;
+				success = true;
+			}, () =>
+			{
+				//0xC56328
+				IsDone = true;
+				IsError = true;
+			});
+			while(!IsDone)
+				yield return null;
+			if(success)
+			{
+				yield return null;
+				NextAddComment(m_chatContller.NJMOALFKKIK() - preCommentCount);
+			}
+			//LAB_00c57864
+			if(IsError)
+			{
+				MenuScene.Instance.GotoTitle();
+				IsRequestGotoTitle = true;
+			}
+			IsTapGuardOFF = true;
+			IsRequestNextList = false;
+			yield break;
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D03B4 Offset: 0x6D03B4 VA: 0x6D03B4

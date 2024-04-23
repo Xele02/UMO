@@ -2,6 +2,11 @@ using System.Text;
 
 namespace XeApp.Game.Menu
 {
+	public class LobbyTexture : IconTexture
+	{
+		//
+	}
+
 	public class LobbyTextureCache : IconTextureCache
 	{
 		public const string BundleFormatForGroupSelect = "ct/lb/gr/{0:D3}.xab";
@@ -23,8 +28,9 @@ namespace XeApp.Game.Menu
 		// RVA: 0xD23098 Offset: 0xD23098 VA: 0xD23098 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
 		{
-			TodoLogger.LogError(0, "CreateIconTexture");
-			return null;
+			LobbyTexture tex = new LobbyTexture();
+			SetupForSplitTexture(info, tex);
+			return tex;
 		}
 
 		// RVA: 0xD23120 Offset: 0xD23120 VA: 0xD23120

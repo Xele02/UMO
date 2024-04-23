@@ -60,7 +60,7 @@ public class KIICLPJJBNL_EpiItem : DIHHCBACKGG_DbSection
 	// RVA: 0x19FFACC Offset: 0x19FFACC VA: 0x19FFACC Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(TodoLogger.Database, "KIICLPJJBNL_EpiItem.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbJson, "KIICLPJJBNL_EpiItem.IIEMACPEEBJ");
 		return true;
 	}
 

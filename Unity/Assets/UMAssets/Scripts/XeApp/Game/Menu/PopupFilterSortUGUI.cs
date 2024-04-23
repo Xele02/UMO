@@ -422,13 +422,13 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1C907C4 Offset: 0x1C907C4 VA: 0x1C907C4
 		private void InitializeGoDivaMusicSelect()
 		{
-			TodoLogger.LogError(0, "InitializeGoDivaMusicSelect");
+			TodoLogger.LogError(TodoLogger.EventGoDiva_14, "InitializeGoDivaMusicSelect");
 		}
 
 		//// RVA: 0x1C96A14 Offset: 0x1C96A14 VA: 0x1C96A14
 		private void FinalizeGoDivaMusicSelect()
 		{
-			TodoLogger.LogError(0, "FinalizeGoDivaMusicSelect");
+			TodoLogger.LogError(TodoLogger.EventGoDiva_14, "FinalizeGoDivaMusicSelect");
 		}
 
 		//// RVA: 0x1C99598 Offset: 0x1C99598 VA: 0x1C99598
@@ -437,13 +437,13 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1C91AA0 Offset: 0x1C91AA0 VA: 0x1C91AA0
 		private void InitializeMissionMusicSelect()
 		{
-			TodoLogger.LogError(0, "InitializeMissionMusicSelect");
+			TodoLogger.LogError(TodoLogger.EventMission_6, "InitializeMissionMusicSelect");
 		}
 
 		//// RVA: 0x1C970C4 Offset: 0x1C970C4 VA: 0x1C970C4
 		private void FinalizeMissionMusicSelect()
 		{
-			TodoLogger.LogError(0, "FinalizeMissionMusicSelect");
+			TodoLogger.LogError(TodoLogger.EventMission_6, "FinalizeMissionMusicSelect");
 		}
 
 		//// RVA: 0x1C99C34 Offset: 0x1C99C34 VA: 0x1C99C34
@@ -452,13 +452,13 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1C8F4E4 Offset: 0x1C8F4E4 VA: 0x1C8F4E4
 		private void InitializeMusicSelect()
 		{
-			TodoLogger.LogError(0, "InitializeMusicSelect");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "InitializeMusicSelect");
 		}
 
 		//// RVA: 0x1C96350 Offset: 0x1C96350 VA: 0x1C96350
 		private void FinalizeMusicSelect()
 		{
-			TodoLogger.LogError(0, "FinalizeMusicSelect");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "FinalizeMusicSelect");
 		}
 
 		//// RVA: 0x1C9A3F8 Offset: 0x1C9A3F8 VA: 0x1C9A3F8

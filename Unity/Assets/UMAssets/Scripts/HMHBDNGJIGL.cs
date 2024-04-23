@@ -2,19 +2,21 @@ using XeSys;
 using System.Collections.Generic;
 using UnityEngine;
 using CriWare;
+using System;
+using System.IO;
 
 public class HMHBDNGJIGL : LBHFILLFAGA
 {
 	public struct BIIAHJNILEE
 	{
-		public int PHHAMBAEGPI; // 0x0
-		public int MABJPACAAPI; // 0x4
+		public int PHHAMBAEGPI_Width; // 0x0
+		public int MABJPACAAPI_Height; // 0x4
 
 		// RVA: 0x7FD02C Offset: 0x7FD02C VA: 0x7FD02C
 		public BIIAHJNILEE(int GHPLINIACBB, int PMBEODGMMBB)
 		{
-			PHHAMBAEGPI = GHPLINIACBB;
-			MABJPACAAPI = PMBEODGMMBB;
+			PHHAMBAEGPI_Width = GHPLINIACBB;
+			MABJPACAAPI_Height = PMBEODGMMBB;
 		}
 	}
 
@@ -71,8 +73,8 @@ public class HMHBDNGJIGL : LBHFILLFAGA
 			{
 				size = BAGLLAKJMPO(CHPPDDBBEFF.bytes);
 			}
-			IMGIFJHHEED_fro.texture = new Texture2D(size.PHHAMBAEGPI, size.MABJPACAAPI);
-			if(size.PHHAMBAEGPI > 1 && size.MABJPACAAPI > 1)
+			IMGIFJHHEED_fro.texture = new Texture2D(size.PHHAMBAEGPI_Width, size.MABJPACAAPI_Height);
+			if(size.PHHAMBAEGPI_Width > 1 && size.MABJPACAAPI_Height > 1)
 			{
 				ImageConversion.LoadImage(IMGIFJHHEED_fro.texture, CHPPDDBBEFF.bytes);
 			}
@@ -95,14 +97,13 @@ public class HMHBDNGJIGL : LBHFILLFAGA
 	{
 		if(IMGIFJHHEED_fro.texture == null)
 			return;
-		Object.Destroy(IMGIFJHHEED_fro.texture);
+		UnityEngine.Object.Destroy(IMGIFJHHEED_fro.texture);
 		IMGIFJHHEED_fro.texture = null;
 	}
 
 	// // RVA: 0x15F521C Offset: 0x15F521C VA: 0x15F521C
 	private static bool KGDPFAPANIH(byte[] GKBDHBJDGAH)
 	{
-        TodoLogger.LogError(0, "static HMHBDNGJIGL");
 		if(GKBDHBJDGAH.Length > 20)
 		{
 			for(int i = 0; i < 7; i++)
@@ -110,24 +111,61 @@ public class HMHBDNGJIGL : LBHFILLFAGA
 				if(JIEHGOCHDGB[i] != GKBDHBJDGAH[i])
 					return false;
 			}
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	// // RVA: 0x15F5A50 Offset: 0x15F5A50 VA: 0x15F5A50
-	// private static uint LDOAOKFCOEE(byte[] IDLHJIOMJBK, int MMENOGLLOKL) { }
+	private static uint LDOAOKFCOEE(byte[] IDLHJIOMJBK, int MMENOGLLOKL)
+	{
+		byte[] b = new byte[4];
+		b[0] = IDLHJIOMJBK[MMENOGLLOKL + 3];
+		b[1] = IDLHJIOMJBK[MMENOGLLOKL + 2];
+		b[2] = IDLHJIOMJBK[MMENOGLLOKL + 1];
+		b[3] = IDLHJIOMJBK[MMENOGLLOKL + 0];
+		return BitConverter.ToUInt32(b, 0);
+	}
 
 	// // RVA: 0x15F5344 Offset: 0x15F5344 VA: 0x15F5344
 	private static BIIAHJNILEE BNPBLFMLECC(byte[] GKBDHBJDGAH)
 	{
-		TodoLogger.LogError(0, "BNPBLFMLECC");
-		return new BIIAHJNILEE(0, 0);
+		if(LDOAOKFCOEE(GKBDHBJDGAH, 8) == 13)
+		{
+			return new BIIAHJNILEE((int)LDOAOKFCOEE(GKBDHBJDGAH, 16), (int)LDOAOKFCOEE(GKBDHBJDGAH, 20));
+		}
+		return new BIIAHJNILEE(1, 1);
 	}
 
 	// // RVA: 0x15F542C Offset: 0x15F542C VA: 0x15F542C
 	private static BIIAHJNILEE BAGLLAKJMPO(byte[] FLOEPENHMCO)
 	{
-		TodoLogger.LogError(0, "BAGLLAKJMPO");
+		using(MemoryStream ms = new MemoryStream(FLOEPENHMCO))
+		{
+			byte[] b = new byte[8];
+			while(true)
+			{
+				int v = ms.Read(b, 0, 2);
+				if(v == 2)
+				{
+					if(b[0] == 0xff)
+					{
+						if(b[1] == 0xc0 && ms.Read(b, 0, 7) == 7)
+						{
+							return new BIIAHJNILEE(b[3] << 8 + b[4], b[5] << 8 + b[6]);
+						}
+						else if(b[1] == 0xd8 && ms.Read(b, 0, 2) == 2)
+						{
+							long pos = ms.Position;
+							int offset = b[0] << 8 + b[1] - 2;
+							ms.Position = pos + offset;
+						}
+						else
+							break;
+					}
+				}
+			}
+		}
 		return new BIIAHJNILEE(0, 0);
 	}
 }

@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using XeApp.Core;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -106,6 +108,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xADC158 Offset: 0xADC158 VA: 0xADC158
 		private void Start()
 		{
+			ms_instance = this;
 			m_camera = GetComponent<Camera>();
 			if(m_camera == null)
 				return;
@@ -202,12 +205,319 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xADDFA8 Offset: 0xADDFA8 VA: 0xADDFA8
-		// private bool IsInCameraValkyrie(bool is_up) { }
+		private bool IsInCameraValkyrie(bool is_up)
+		{
+			if(m_currentRend != null)
+			{
+				Bounds b = m_currentRend.localBounds;
+				Vector3 v1 = m_camera.WorldToViewportPoint(new Vector3(m_center.x, ((is_up ? b.max.y : b.min.y) - b.center.y) + (is_up ? m_currentCamAdjYUp : m_currentCamAdjYDown), m_center.z));
+				if(v1.x >= 0 && v1.x <= 1)
+					return v1.y >= 0 && v1.y <= 1;
+				return false;
+			}
+			return true;
+		}
 
 		// // RVA: 0xADC350 Offset: 0xADC350 VA: 0xADC350
 		private void updateCameraOperation()
 		{
-			TodoLogger.LogError(0, "updateCameraOperation");
+			if(InputManager.Instance == null)
+				return;
+			float f2, f3;
+			if(InputManager.Instance.GetInScreenTouchCount() == 1 && m_twoPointTapMode == TwoPointTapMode.NONE)
+			{
+                TouchInfo touchInfo1 = InputManager.Instance.GetFirstInScreenTouchRecord().FindRecentInfo(0);
+                if (!touchInfo1.isMoved)
+				{
+					f2 = m_rotSpeed.y * 0.5f;
+					f3 = m_rotSpeed.x * 0.5f;
+				}
+				else
+				{
+					TouchInfo touchInfo2 = InputManager.Instance.GetFirstInScreenTouchRecord().FindRecentInfo(1);
+					Quaternion q = Quaternion.AngleAxis(-m_rotCamZ, Vector3.forward);
+					Vector3 v1 = q * new Vector3(touchInfo2.x, touchInfo2.y, 0);
+					Vector3 v2 = q * new Vector3(touchInfo1.x, touchInfo1.y, 0);
+					m_neutralDone = false;
+					f2 = (v2.x - v1.x) * 0.375f;
+					f3 = 0;
+					if(m_operationType == OperationType.VERTICAL_ROT_X)
+						f3 = (v2.y - v1.y) * -0.25f;
+				}
+			}
+			else
+			{
+				f2 = m_rotSpeed.y * 0.9f;
+				f3 = m_rotSpeed.x * 0.9f;
+			}
+			m_rotSpeed.x = f3;
+			m_rotSpeed.y = f2;
+			m_rotAngle += m_rotSpeed;
+			if(Screen.orientation == ScreenOrientation.LandscapeRight)
+			{
+				m_deviceRotateFlag = 1;
+				m_ScreenOrientation = Screen.orientation;
+			}
+			else if(Screen.orientation == ScreenOrientation.Landscape)
+			{
+				m_deviceRotateFlag = -1;
+				m_ScreenOrientation = Screen.orientation;
+			}
+			if(Input.deviceOrientation >= DeviceOrientation.LandscapeLeft && Input.deviceOrientation < DeviceOrientation.FaceUp)
+			{
+				m_tgtRotCamZ = 0;
+				m_DeviceOrientation = Input.deviceOrientation;
+			}
+			else if(Input.deviceOrientation == DeviceOrientation.Portrait)
+			{
+				m_tgtRotCamZ = 90 * m_deviceRotateFlag;
+			}
+			else if(Input.deviceOrientation == DeviceOrientation.PortraitUpsideDown)
+			{
+				m_tgtRotCamZ = -90 * m_deviceRotateFlag;
+			}
+			m_rotCamZ = Mathf.Lerp(m_rotCamZ, m_tgtRotCamZ, Time.deltaTime * 10);
+			m_rotCamZLast = m_rotCamZ;
+			m_rotAngle.x = Mathf.Clamp(m_rotAngle.x, -50, 30);
+			m_rot = Quaternion.Euler(m_rotAngle.x, m_rotAngle.y, 0);
+			float f6 = 0;
+			#if !UNITY_ANDROID
+			f6 = InputManager.Instance.pinchDelta;
+			#endif
+			if(InputManager.Instance.GetInScreenTouchCount() != 2 && f6 == 0)
+			{
+				m_twoPointTapMode = TwoPointTapMode.NONE;
+				return;
+			}
+			TouchInfoRecord r1 = InputManager.Instance.GetInScreenTouchRecord(0);
+			TouchInfo info1 = null;
+			if(r1 != null)
+				info1 = r1.FindRecentInfo(0);
+
+		#if UNITY_ANDROID
+			TouchInfoRecord r2 = InputManager.Instance.GetInScreenTouchRecord(1);
+			if(r2 == null)
+				return;
+			TouchInfo info2 = r2.FindRecentInfo(0);
+			if(r1 == null)
+				return;
+			if(!info1.isMoved)
+				return;
+			if(!info2.isMoved)
+				return;
+			TouchInfo info3 = r1.FindRecentInfo(1);
+			TouchInfo info4 = r2.FindRecentInfo(1);
+			if(m_twoPointTapMode == TwoPointTapMode.NONE)
+			{
+				Vector3 v2 = info3.nativePosition - info1.nativePosition;
+				Vector3 v1 = info4.nativePosition - info2.nativePosition;
+				if(v2.magnitude < 0.5f || v1.magnitude < 0.5f)
+				{
+					;
+				}
+				else
+				{
+					float f = Vector3.Dot(v2.normalized, v1.normalized);
+					if(f < 0.8f)
+					{
+						m_twoPointTapMode = TwoPointTapMode.ZOOM;
+					}
+					else
+					{
+						m_twoPointTapMode = TwoPointTapMode.MOVE_Y;
+					}
+				}
+			}
+		#else
+			TouchInfo info3 = null;
+			TouchInfo info4 = null;
+			if(m_twoPointTapMode == TwoPointTapMode.NONE)
+			{
+				if(f6 != 0)
+				{
+					m_twoPointTapMode = TwoPointTapMode.ZOOM;
+				}
+				else
+				{
+					TouchInfoRecord r2 = InputManager.Instance.GetInScreenTouchRecord(1);
+					if(r2 == null)
+						return;
+					TouchInfo info2 = r2.FindRecentInfo(0);
+					if(r1 == null)
+						return;
+					if(!info1.isMoved)
+						return;
+					if(!info2.isMoved)
+						return;
+					info3 = r1.FindRecentInfo(1);
+					info4 = r2.FindRecentInfo(1);
+					Vector3 v2 = info3.nativePosition - info1.nativePosition;
+					Vector3 v1 = info4.nativePosition - info2.nativePosition;
+					if(v2.magnitude < 0.5f || v1.magnitude < 0.5f)
+					{
+						;
+					}
+					else
+					{
+						float f = Vector3.Dot(v2.normalized, v1.normalized);
+						if(f < 0.8f)
+						{
+							m_twoPointTapMode = TwoPointTapMode.ZOOM;
+						}
+						else
+						{
+							m_twoPointTapMode = TwoPointTapMode.MOVE_Y;
+						}
+					}
+				}
+			}
+			else if(m_twoPointTapMode == TwoPointTapMode.MOVE_Y)
+			{
+				TouchInfoRecord r2 = InputManager.Instance.GetInScreenTouchRecord(1);
+				if(r2 == null)
+					return;
+				TouchInfo info2 = r2.FindRecentInfo(0);
+				if(r1 == null)
+					return;
+				if(!info1.isMoved)
+					return;
+				if(!info2.isMoved)
+					return;
+				info3 = r1.FindRecentInfo(1);
+				info4 = r2.FindRecentInfo(1);
+			}
+		#endif
+			//LAB_00adcb58
+			if(m_twoPointTapMode == TwoPointTapMode.ZOOM)
+			{
+				//LAB_00add0ec
+				m_camera.fieldOfView = Mathf.Clamp(m_camera.fieldOfView + InputManager.Instance.pinchDelta * -20, 20, 75);
+				//LAB_00add2f8
+				if(m_twoPointTapMode != TwoPointTapMode.NONE)
+					m_neutralDone = false;
+				return;
+			}
+			if(m_twoPointTapMode != TwoPointTapMode.MOVE_Y)
+			{
+				//LAB_00add2f8
+				if(m_twoPointTapMode != TwoPointTapMode.NONE)
+					m_neutralDone = false;
+				return;
+			}
+
+			Vector2 v3 = (info3.nativePosition - info1.nativePosition).normalized;
+			Vector2 v4 = (Quaternion.Euler(0, 0, m_tgtRotCamZ) * Vector2.up).normalized;
+			float f4 = Vector2.Dot(v3, v4);
+			if(Mathf.Abs(f4) <= 0.8660254f)
+			{
+				//LAB_00add2f8
+				if(m_twoPointTapMode != TwoPointTapMode.NONE)
+					m_neutralDone = false;
+				return;
+			}
+			Vector3 p = m_camera.ScreenToWorldPoint(new Vector3(info1.nativePosition.x, info1.nativePosition.y, m_eye.z));
+			Vector3 p2 = m_camera.ScreenToWorldPoint(new Vector3(info3.nativePosition.x, info3.nativePosition.y, m_eye.z));
+			float f5 = Vector3.Distance(p, p2);
+			if(m_DeviceOrientation == DeviceOrientation.PortraitUpsideDown)
+			{
+				//LAB_00add244
+				if(m_ScreenOrientation != ScreenOrientation.LandscapeRight)
+				{
+					if(info1.nativePosition.x >= info3.nativePosition.x)
+					{
+						f5 = -f5;
+					}
+				}
+				else if(info1.nativePosition.x < info3.nativePosition.x)
+				{
+					f5 = -f5;
+				}
+			}
+			else
+			{
+				if(m_DeviceOrientation == DeviceOrientation.Portrait)
+				{
+					//LAB_00add244
+					if(m_ScreenOrientation != ScreenOrientation.Landscape)
+					{
+						if(info1.nativePosition.x >= info3.nativePosition.x)
+						{
+							f5 = -f5;
+						}
+					}
+					else if(info1.nativePosition.x < info3.nativePosition.x)
+					{
+						f5 = -f5;
+					}
+				}
+				else
+				{
+					if(info3.nativePosition.y <= info1.nativePosition.y)
+					{
+						if(m_DeviceOrientation >= DeviceOrientation.LandscapeLeft && m_DeviceOrientation < DeviceOrientation.FaceUp)
+							f5 = -f5;
+					}
+				}
+			}
+			if(f5 != 0)
+			{
+				if(!IsInCameraValkyrie(f5 > 0))
+				{
+					if(m_centerMoveY != 0)
+					{
+						if(f5 <= 0)
+						{
+							if(m_centerMoveY < 0)
+							{
+								//LAB_00add2f8
+								if(m_twoPointTapMode != TwoPointTapMode.NONE)
+									m_neutralDone = false;
+								return;
+							}
+							else
+							{
+								m_centerMoveY = f5 + m_centerMoveY;
+								if(m_centerMoveY >= 0)
+								{
+									//LAB_00add2f8
+									if(m_twoPointTapMode != TwoPointTapMode.NONE)
+										m_neutralDone = false;
+									return;
+								}
+							}
+						}
+						else
+						{
+							if(m_centerMoveY >= 0)
+							{
+								//LAB_00add2f8
+								if(m_twoPointTapMode != TwoPointTapMode.NONE)
+									m_neutralDone = false;
+								return;
+							}
+							else
+							{
+								m_centerMoveY = f5 + m_centerMoveY;
+								if(m_centerMoveY < 0)
+								{
+									//LAB_00add2f8
+									if(m_twoPointTapMode != TwoPointTapMode.NONE)
+										m_neutralDone = false;
+									return;
+								}
+							}
+							m_centerMoveY = 0;
+						}
+					}
+				}
+				else
+				{
+					m_centerMoveY = f5 + m_centerMoveY;
+				}
+			}
+			//LAB_00add2f8
+			if(m_twoPointTapMode != TwoPointTapMode.NONE)
+				m_neutralDone = false;
 		}
 
 		// // RVA: 0xADD3A0 Offset: 0xADD3A0 VA: 0xADD3A0
@@ -232,13 +542,13 @@ namespace XeApp.Game.Menu
 
 			m_rotCamZ = Mathf.Lerp(m_rotCamZLast, 0, t);
 			m_eye.z = Mathf.Lerp(m_eye.z, m_defaultDist, dt * 10);
-			if(m_eye.z - m_defaultDist < 0.01f)
+			if(Mathf.Abs(m_eye.z - m_defaultDist) < 0.01f)
 			{
 				m_eye.z = m_defaultDist;
 				a++;
 			}
 			m_camera.fieldOfView = Mathf.Lerp(m_camera.fieldOfView, 45, dt * 10);
-			if(m_camera.fieldOfView - 45 < 0.01f)
+			if(Mathf.Abs(m_camera.fieldOfView - 45) < 0.01f)
 			{
 				m_camera.fieldOfView = 45;
 				a++;
@@ -319,8 +629,8 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xADE9DC Offset: 0xADE9DC VA: 0xADE9DC
 		public void SetUserOperation(bool ok)
 		{
-			m_operationFlag = ok;
 			m_operationEndFlag = m_operationFlag & !ok;
+			m_operationFlag = ok;
 		}
 
 		// // RVA: 0xADEA1C Offset: 0xADEA1C VA: 0xADEA1C

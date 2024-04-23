@@ -80,7 +80,7 @@ public class IHJEDAFEJHH_StepUpLotPurchase : CACGCMBKHDI_Request
 {
 	public string MMEBLOIJBKE_Key; // 0x7C
 	public string NNEGBDKOAHN_Hash; // 0x80
-	public int APHNELOFGAK; // 0x84
+	public int APHNELOFGAK_CurrencyId; // 0x84
 	public int LGEKLPJFJEI; // 0x88
 
 	public JAMDHMMODCG NFEAMMJIMPG { get; set; } // 0x8C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA

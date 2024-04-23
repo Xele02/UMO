@@ -63,7 +63,7 @@ public class ABBOEIPOBLJ_EventTicket : DIHHCBACKGG_DbSection
 	// RVA: 0x15B04A4 Offset: 0x15B04A4 VA: 0x15B04A4 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(TodoLogger.Database, "ABBOEIPOBLJ_EventTicket.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbJson, "ABBOEIPOBLJ_EventTicket.IIEMACPEEBJ");
 		return true;
 	}
 

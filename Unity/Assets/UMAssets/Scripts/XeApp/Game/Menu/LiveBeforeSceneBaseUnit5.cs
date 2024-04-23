@@ -150,18 +150,18 @@ namespace XeApp.Game.Menu
 			h.CEPCBJHNMJA_IsNotUpdateProfile = isNotUpdateProfile;
 			if(mi.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
-				IKDICBBFBMI_EventBase evt = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB(mi.EventUniqueId);
+				IKDICBBFBMI_EventBase evt = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(mi.EventUniqueId);
 				if(evt != null)
 				{
-					TodoLogger.LogError(0, "Event");
+					TodoLogger.LogError(TodoLogger.EventBattle_3, "Event");
 				}
 			}
 			if(mi.openEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 			{
-				IKDICBBFBMI_EventBase evt = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.KPMNPGKKFJG, false);
+				IKDICBBFBMI_EventBase evt = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.KPMNPGKKFJG, false);
 				if(evt != null)
 				{
-					TodoLogger.LogError(0, "Event");
+					TodoLogger.LogError(TodoLogger.EventCollection_1, "Event");
 				}
 				mi.ClearEventType();
 				h.MNNHHJBBICA_GameEventType = (int)mi.gameEventType;
@@ -175,7 +175,7 @@ namespace XeApp.Game.Menu
 				{
 					if(mi.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 					{
-						TodoLogger.LogError(0, "Event");
+						TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
 					}
 					else
 					{
@@ -188,23 +188,90 @@ namespace XeApp.Game.Menu
 			}, () =>
 			{
 				//0x154A934
-				TodoLogger.LogError(0, "AdvanceGame Fail");
+				string str = "popup_stamina_title_00";
+				string str2 = "popup_stamina_text_00";
+				if(mi.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
+				{
+					str = "popup_ap_title_00";
+					str2 = "popup_ap_text_00";
+				}
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("str")
+					, SizeType.Small, bk.GetMessageByLabel(str2), new ButtonInfo[1] 
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+					}, false, true
+				), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0x154A034
+					MenuScene.Instance.InputEnable();
+				}, null, null, null);
 			}, () =>
 			{
 				//0x154A0D0
-				TodoLogger.LogError(0, "AdvanceGame Fail");
+				MenuScene.Instance.InputEnable();
+				PopupWindowManager.Show(PopupWindowManager.CreateMessageBankTextContent("menu", "popup_event_end_title", "game_play_event_end_attain", SizeType.Small, new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				}), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0x154A3C4
+					MenuScene.Instance.Mount(TransitionUniqueId.HOME, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+				}, null, null, null);
 			}, () =>
 			{
 				//0x154A47C
-				TodoLogger.LogError(0, "AdvanceGame Fail");
+				MenuScene.Instance.GotoTitle();
 			}, () =>
 			{
 				//0x154A518
-				TodoLogger.LogError(0, "AdvanceGame Fail");
+				MenuScene.Instance.Mount(TransitionUniqueId.HOME, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+				MenuScene.Instance.InputEnable();
 			}, (NHCDBBBMFFG status) =>
 			{
 				//0x154ACB4
-				TodoLogger.LogError(0, "AdvanceGame Fail");
+				TextPopupSetting s = new TextPopupSetting();
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				UnityEngine.Debug.LogWarning("StringLiteral_18271" + status.ToString());
+				if(status == NHCDBBBMFFG.NFDONDKDHPK_3_RaidBossEscape)
+				{
+					s.SetParent(transform);
+					s.WindowSize = SizeType.Small;
+					s.Buttons = new ButtonInfo[1]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+					};
+					s.TitleText = bk.GetMessageByLabel("pop_raid_escaped01_title");
+					s.Text = bk.GetMessageByLabel("pop_raid_escaped01_text");
+					PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+					{
+						//0x154B468
+						MenuScene.Instance.Mount(mi.returnTransitionUniqueId, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+						MenuScene.Instance.InputEnable();
+					}, null, null, null);
+				}
+				else if(status != NHCDBBBMFFG.OPNEOJEGDJB_2)
+				{
+					MenuScene.Instance.Mount(mi.returnTransitionUniqueId, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+					MenuScene.Instance.InputEnable();
+				}
+				else
+				{
+					s.SetParent(transform);
+					s.WindowSize = SizeType.Small;
+					s.Buttons = new ButtonInfo[1]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+					};
+					s.TitleText = bk.GetMessageByLabel("pop_raid_defeated_title");
+					s.Text = bk.GetMessageByLabel("pop_raid_defeated_text");
+					PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+					{
+						//0x154B360
+						MenuScene.Instance.Mount(mi.returnTransitionUniqueId, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+						MenuScene.Instance.InputEnable();
+					}, null, null, null);
+				}
 			});
 		}
 

@@ -30,7 +30,7 @@ namespace ExternLib
 
         public static void CRIWARE044D0246_criManaUnityPlayer_SetCuePointCallback(int player_id, Player.CuePointCallbackFromNativeDelegate cbfunc)
         {
-            TodoLogger.LogError(0, "CRIWARE044D0246_criManaUnityPlayer_SetCuePointCallback");
+            TodoLogger.LogError(TodoLogger.CriManaPlugin, "CRIWARE044D0246_criManaUnityPlayer_SetCuePointCallback");
         }
 
         public static void CRIWARECB5086D8_criManaUnityPlayer_Prepare(int player_id)
@@ -137,7 +137,7 @@ namespace ExternLib
         }
         public static bool CRIWARE7FE26661_criManaUnityPlayer_EntryFile(int player_id, IntPtr binder, string path, bool repeat)
         {
-            TodoLogger.LogError(0, "CRIWARE7FE26661_criManaUnityPlayer_EntryFile");
+            TodoLogger.LogError(TodoLogger.CriManaPlugin, "CRIWARE7FE26661_criManaUnityPlayer_EntryFile");
             return true;
         }
 
@@ -157,13 +157,13 @@ namespace ExternLib
 
         public static bool CRIWARE6C94B6FB(int player_id)
         {
-            TodoLogger.LogError(0, "CRIWARE6C94B6FB");
+            TodoLogger.LogError(TodoLogger.CriManaPlugin, "CRIWARE6C94B6FB");
             return true;
         }
 
         public static void CRIWAREC9D98FAA(int player_id)
         {
-            TodoLogger.LogError(0, "CRIWAREC9D98FAA");
+            TodoLogger.LogError(TodoLogger.CriManaPlugin, "CRIWAREC9D98FAA");
         }
 
         public static int CRIWARE4B9FFA91_criManaUnityPlayer_Create()
@@ -182,7 +182,7 @@ namespace ExternLib
 
         public static IntPtr CRIWARE453735B6(int player_id)
         {
-            TodoLogger.LogError(0, "CRIWARE453735B6");
+            TodoLogger.LogError(TodoLogger.CriManaPlugin, "CRIWARE453735B6");
             return IntPtr.Zero;
         }
 

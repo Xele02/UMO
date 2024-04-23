@@ -97,7 +97,7 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 	// // RVA: 0x111F948 Offset: 0x111F948 VA: 0x111F948 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
     {
-        TodoLogger.LogError(0, "IIEMACPEEBJ");
+        TodoLogger.LogError(TodoLogger.DbJson, "IIEMACPEEBJ");
         return true;
     }
 
