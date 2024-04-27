@@ -1,6 +1,9 @@
 using System.Collections;
 using UnityEngine;
 using XeApp.Core;
+using XeApp.Game.Common;
+using XeApp.Game.Menu;
+using XeSys.uGUI;
 
 namespace XeApp.Game.MiniGame
 {
@@ -96,7 +99,22 @@ namespace XeApp.Game.MiniGame
 		//// RVA: 0x1CF0ECC Offset: 0x1CF0ECC VA: 0x1CF0ECC
 		private IEnumerator Co_GotoLoginBonus()
 		{
-			TodoLogger.LogError(0, "Co_GotoLoginBonus");
+			UGUIFader fade;
+
+			//0x1CF10DC
+			GameManager.Instance.ClearPushBackButtonHandler();
+			fade = GameManager.Instance.fullscreenFader;
+			if(fade.currentColor.a < 1)
+			{
+				fade.Fade(0.1f, Color.black);
+			}
+			while(fade.isFading)
+				yield return null;
+			PopupWindowManager.Close(null, null);
+			SoundManager.Instance.bgmPlayer.Stop();
+			NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.MBOIDKCMCDL = false;
+			MenuScene.ComebackByRestart = true;
+			NextScene("Menu");
 			yield return null;
 		}
 
@@ -104,7 +122,21 @@ namespace XeApp.Game.MiniGame
 		//// RVA: 0x1CF0E1C Offset: 0x1CF0E1C VA: 0x1CF0E1C
 		private IEnumerator Co_GotoTitle()
 		{
-			TodoLogger.LogError(0, "Co_GotoTitle");
+			UGUIFader fade;
+
+			//0x1CF14A8
+			GameManager.Instance.ClearPushBackButtonHandler();
+			fade = GameManager.Instance.fullscreenFader;
+			if(fade.currentColor.a < 1)
+			{
+				fade.Fade(0.1f, Color.black);
+			}
+			while(fade.isFading)
+				yield return null;
+			PopupWindowManager.Close(null, null);
+			SoundManager.Instance.bgmPlayer.Stop();
+			NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.MBOIDKCMCDL = false;
+			NextScene("Title");
 			yield return null;
 		}
 	}

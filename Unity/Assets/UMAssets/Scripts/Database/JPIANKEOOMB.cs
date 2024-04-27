@@ -98,7 +98,7 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 	// RVA: 0x1BA7168 Offset: 0x1BA7168 VA: 0x1BA7168 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(100, "Valkyrie Json Load");
+		TodoLogger.LogError(TodoLogger.DbJson, "Valkyrie Json Load");
 		return false;
 	}
 
@@ -166,5 +166,18 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x1BA7444 Offset: 0x1BA7444 VA: 0x1BA7444
-	//public int MGKNLBJCJCK(int LLOBHDMHJIG) { }
+	public int MGKNLBJCJCK(int LLOBHDMHJIG)
+	{
+		if(LLOBHDMHJIG > 0)
+		{
+			if(LLOBHDMHJIG <= CDENCMNHNGA_ValkyrieList.Count)
+			{
+				if(CDENCMNHNGA_ValkyrieList[LLOBHDMHJIG - 1].PPEGAKEIEGM_Enabled == 2)
+				{
+					return CDENCMNHNGA_ValkyrieList[LLOBHDMHJIG - 1].MIHAHCEANII;
+				}
+			}
+		}
+		return 0;
+	}
 }

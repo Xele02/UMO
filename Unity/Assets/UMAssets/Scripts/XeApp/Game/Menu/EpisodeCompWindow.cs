@@ -183,7 +183,7 @@ namespace XeApp.Game.Menu
 			SetItemImage(m_reward_list[GetAcquiredRewardLastIndex(m_reward_list, m_currentPoint)].GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId);
 			WaitComp();
 			WaitFrameAnim();
-			m_gauge_max_point = m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_TotalPoint - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_Idx;
+			m_gauge_max_point = m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_TotalPoint - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_StartPoint;
 			m_is_comp = false;
 			m_after_point = data.ABLHIAEDJAI_CurrentPoint + add_point;
 			if (!data.CCBKMCLDGAD_HasReward && data.DMHDNKILKGI_MaxPoint <= m_after_point)
@@ -290,7 +290,7 @@ namespace XeApp.Game.Menu
 				do
 				{
 					time += dt;
-					int a = Mathf.Max(currentReward.CCDPNBJMKDI_Idx, m_currentPoint);
+					int a = Mathf.Max(currentReward.CCDPNBJMKDI_StartPoint, m_currentPoint);
 					int b = Mathf.Min(currentReward.DNBFMLBNAEE_TotalPoint, m_addPoint + m_currentPoint);
 					float f = Mathf.Lerp(a, b, time);
 					currentPoint = (int)(f);
@@ -341,8 +341,8 @@ namespace XeApp.Game.Menu
 						if (loopRewardIndex == m_reward_index)
 						{
 							yield return this.StartCoroutineWatched(PlayAddtiveGaugeMaxEffect());
-							UpdateAddtiveRewardGauge(m_reward_list[m_reward_index].CCDPNBJMKDI_Idx);
-							UpdateText(m_reward_list[m_reward_index].CCDPNBJMKDI_Idx, m_reward_index);
+							UpdateAddtiveRewardGauge(m_reward_list[m_reward_index].CCDPNBJMKDI_StartPoint);
+							UpdateText(m_reward_list[m_reward_index].CCDPNBJMKDI_StartPoint, m_reward_index);
 							//>LAB_01284694
 						}
 						else
@@ -369,7 +369,7 @@ namespace XeApp.Game.Menu
 							m_reward_index = m_reward_list.Count - 1;
 						}
 						currentReward = m_reward_list[m_reward_index];
-						m_currentPoint = currentReward.CCDPNBJMKDI_Idx;
+						m_currentPoint = currentReward.CCDPNBJMKDI_StartPoint;
 						//LAB_01284750
 						while (m_is_wait_open_window)
 							yield return null;
@@ -410,7 +410,22 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1281798 Offset: 0x1281798 VA: 0x1281798
 		private void ShowOfferPlatoonReleasePopup()
 		{
-			TodoLogger.LogNotImplemented("ShowOfferPlatoonReleasePopup");
+			if(KDHGBOOECKC.HHCJCDFCLOB.OOOMMBCDOBO())
+			{
+				PopupOfferUnclokPlattonSetting s = new PopupOfferUnclokPlattonSetting();
+				s.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+				};
+				s.WindowSize = SizeType.Small;
+				s.nextPlatoonNum = KDHGBOOECKC.HHCJCDFCLOB.JGFHJPGJJHP();
+				PopupWindowManager.Show(s, (PopupWindowControl cont, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0x12831D8
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.MKFNKOLCBOP_UpdateVFpUnlock(s.nextPlatoonNum);
+					GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+				}, null, null, null);
+			}
 		}
 
 		// RVA: 0x1281AA4 Offset: 0x1281AA4 VA: 0x1281AA4
@@ -499,7 +514,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x12810D8 Offset: 0x12810D8 VA: 0x12810D8
 		private void UpdateAddtiveRewardGauge(int currentPoint)
 		{
-			SetGauge((int)(Mathf.Clamp01((currentPoint - m_reward_list[m_reward_index].CCDPNBJMKDI_Idx) * 1.0f / m_reward_list[m_reward_index].CCDPNBJMKDI_Idx) * 100));
+			SetGauge((int)(Mathf.Clamp01((currentPoint - m_reward_list[m_reward_index].CCDPNBJMKDI_StartPoint) * 1.0f / m_reward_list[m_reward_index].CCDPNBJMKDI_StartPoint) * 100));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DA8CC Offset: 0x6DA8CC VA: 0x6DA8CC
@@ -548,6 +563,7 @@ namespace XeApp.Game.Menu
 			}
 			Vector2 v1 = RectTransformUtility.WorldToScreenPoint(rootCanvas.worldCamera, m_lineEndTarget.transform.position);
 			Vector2 v2 = RectTransformUtility.WorldToScreenPoint(rootCanvas.worldCamera, m_lineStartTarget.transform.position);
+			GetRoot();
 			float f = Mathf.Atan2(v2.y * m_root.sizeDelta.y / Screen.height - v1.y * m_root.sizeDelta.y / Screen.height,
 								v2.x * m_root.sizeDelta.x / Screen.width - v1.x * m_root.sizeDelta.x / Screen.width);
 			m_line.pivot = new Vector2(0, 1);
@@ -614,7 +630,22 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1282730 Offset: 0x1282730 VA: 0x1282730
-		//private void GetRoot() { }
+		private void GetRoot()
+		{
+			if(m_root == null)
+			{
+				Transform t = transform;
+				while(true)
+				{
+					if(t.parent.GetComponent<Canvas>() != null)
+					{
+						m_root = t.GetComponent<RectTransform>();
+						return;
+					}
+					t = t.parent;
+				}
+			}
+		}
 
 		//// RVA: 0x1282AB8 Offset: 0x1282AB8 VA: 0x1282AB8
 		//public void AddEndCallback(EpisodeCompWindow.EndCallback EndEvent) { }

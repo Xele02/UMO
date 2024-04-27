@@ -1,4 +1,6 @@
 
+using UnityEngine;
+
 [System.Obsolete("Use EIJJIAPKICH_RequestToken", true)]
 public class EIJJIAPKICH { } 
 public class EIJJIAPKICH_RequestToken : CACGCMBKHDI_Request
@@ -8,14 +10,17 @@ public class EIJJIAPKICH_RequestToken : CACGCMBKHDI_Request
 	// // RVA: 0x12EB990 Offset: 0x12EB990 VA: 0x12EB990 Slot: 12
 	public override void DHLDNIEELHO()
     {
-        TodoLogger.LogError(0, "TODO");
+        EBGACDGNCAA_CallContext = SakashoSupportSite.GetToken((string IDLHJIOMJBK) =>
+		{
+			//0x12EBA6C
+			DCKLDDCAJAP(IDLHJIOMJBK);
+			NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.EAJMLOKKOOK_SetServerTime(HOHOBEOJPBK_ServerInfo.LCAINKFINEI_ServerCurrentDateTime);
+			Debug.Log("ServerTime Updated ok");
+		}, (SakashoError FMEMECBIDIB) =>
+		{
+			//0x12EBBDC
+			MEOCKCJBDAD(FMEMECBIDIB);
+			Debug.Log("ServerTime Updated error");
+		});
     }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6C4260 Offset: 0x6C4260 VA: 0x6C4260
-	// // RVA: 0x12EBA6C Offset: 0x12EBA6C VA: 0x12EBA6C
-	// private void <OnAPICall>b__2_0(string IDLHJIOMJBK) { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6C4270 Offset: 0x6C4270 VA: 0x6C4270
-	// // RVA: 0x12EBBDC Offset: 0x12EBBDC VA: 0x12EBBDC
-	// private void <OnAPICall>b__2_1(SakashoError FMEMECBIDIB) { }
 }

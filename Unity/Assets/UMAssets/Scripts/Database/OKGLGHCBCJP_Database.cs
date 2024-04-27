@@ -403,7 +403,7 @@ public class OKGLGHCBCJP_Database
 		{(int)BEOKNKGHFFE_Section.JPNKKKOHHLG_EventScoreD,() => { return new HIHJGPDLNDN_EventScore(); } }, //0x149F288				"event_score_d",
 		{(int)BEOKNKGHFFE_Section.ECHHEGJOHGI_EventScoreE,() => { return new HIHJGPDLNDN_EventScore(); } }, //0x149F2F4				"event_score_e",
 		{(int)BEOKNKGHFFE_Section.NLDGAHCIPAE_EventScoreF,() => { return new HIHJGPDLNDN_EventScore(); } }, //0x149F360				"event_score_f",
-		{(int)BEOKNKGHFFE_Section.MHGPKDOPEDJ_EventSpA,() => { return new OEIJEFBBJBD_Sp(); } }, //0x149F3CC				"event_sp_a",
+		{(int)BEOKNKGHFFE_Section.MHGPKDOPEDJ_EventSpA,() => { return new OEIJEFBBJBD_EventSp(); } }, //0x149F3CC				"event_sp_a",
 		{(int)BEOKNKGHFFE_Section.AMGKNGLDHMG_EventTicket,() => { return new ABBOEIPOBLJ_EventTicket(); } }, //0x149F438				"event_ticket",
 		{(int)BEOKNKGHFFE_Section.BKEKCFONNBG_EventWeekDay,() => { return new DKCJADHKGAN_EventWeekDay(); } }, //0x149F4A4				"event_weekday",
 		{(int)BEOKNKGHFFE_Section.JLNNFLCLGBM_EventStory,() => { return new FBIOJHECAHB_EventStory(); } }, //0x149F510				"event_story",
@@ -878,7 +878,7 @@ public class OKGLGHCBCJP_Database
 	// // RVA: 0x149494C Offset: 0x149494C VA: 0x149494C
 	public bool IIEMACPEEBJ(List<string> ANFNAHPIJDH, EDOHBJAPLPF_JsonData AAEDAEHIONI)
 	{
-		TodoLogger.LogError(0, "TODO");
+		TodoLogger.LogError(TodoLogger.DbJson, "TODO");
 		return false;
 	}
 

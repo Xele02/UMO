@@ -37,7 +37,7 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 	public enum NMIGMCJHAIE
 	{
 		JFEDIMKFDNH = 1,
-		GBECNPANBEA = 2,
+		GBECNPANBEA_2 = 2,
 		OEDCONLFLHD = 3,
 		DCDEBCIMEMM = 4,
 		MOPAEGFEGCB_5 = 5,
@@ -123,5 +123,28 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0xFC7070 Offset: 0xFC7070 VA: 0xFC7070
-	//public FBIOJHECAHB.ENDMMNNOAIL GIBIMCOLLNN(int AIPLIEMLHGC) { }
+	public ENDMMNNOAIL GIBIMCOLLNN(int AIPLIEMLHGC)
+	{
+		ENDMMNNOAIL e = JPIGOBGOMON.Find((ENDMMNNOAIL GHPLINIACBB) =>
+		{
+			//0xFC7200
+			if(GHPLINIACBB.PPEGAKEIEGM == 2 && GHPLINIACBB.JDJNNJEJDAJ == NMIGMCJHAIE.GBECNPANBEA_2)
+				return GHPLINIACBB.LOHMKCPKBON == AIPLIEMLHGC;
+			return false;
+		});
+		if(e != null)
+		{
+			if(ILEJEJKNOBN.Find((GIEHECAKIFC GHPLINIACBB) =>
+			{
+				//0xFC7254
+				if(GHPLINIACBB.PPEGAKEIEGM != 2)
+					return false;
+				return GHPLINIACBB.OAFJONPIFGM_EventId == e.OAFJONPIFGM;
+			}) != null)
+			{
+				return e;
+			}
+		}
+		return null;
+	}
 }

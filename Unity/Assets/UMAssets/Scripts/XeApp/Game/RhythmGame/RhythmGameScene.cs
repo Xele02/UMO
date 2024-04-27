@@ -84,7 +84,16 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xBFDD74 Offset: 0xBFDD74 VA: 0xBFDD74
-		// public void GotoTitleScene() { }
+		public void GotoTitleScene()
+		{
+			if(CNGFKOJANNP.HHCJCDFCLOB != null)
+				CNGFKOJANNP.HHCJCDFCLOB.KANPNADDJBK_EnableAutoCheck();
+			if(onChangeScene != null)
+				onChangeScene();
+			PopupWindowManager.Close(null, null);
+			GameManager.Instance.ClearPushBackButtonHandler();
+			NextScene("Title");
+		}
 
 		// // RVA: 0xBFDE98 Offset: 0xBFDE98 VA: 0xBFDE98
 		public bool IsDebugFlow()

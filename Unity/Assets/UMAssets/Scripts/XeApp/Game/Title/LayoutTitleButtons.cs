@@ -50,7 +50,9 @@ namespace XeApp.Game.Title
 				{
 					m_Inheriting.AddOnClickCallback(() => {
 						//0xE3612C
-						TodoLogger.LogNotImplemented("MenuBarPrefab Inheriting");
+						if(ButtonCallbackInheriting != null)
+							ButtonCallbackInheriting();
+						SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 					});
 				}
 			}

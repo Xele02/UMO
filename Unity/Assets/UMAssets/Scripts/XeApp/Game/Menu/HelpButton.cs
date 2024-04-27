@@ -42,7 +42,7 @@ namespace XeApp.Game.Menu
 		private const int VerticalMusicSelectSearchId = 102;
 		public const int LuckyLeafPopupHelpSearchId = 113;
 		public const int MusicRateHelpSearchId = 119;
-		private readonly HelpInfo MissionEventhelpPattern = new HelpInfo() { pattern = 5, searchId = 0, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.MKKOHBGHADL }; // 0x44
+		private readonly HelpInfo MissionEventhelpPattern = new HelpInfo() { pattern = 5, searchId = 0, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.MKKOHBGHADL_2 }; // 0x44
 		private Dictionary<OHCAABOMEOF.KGOGMKMBCPP_EventType, int> m_eventHelpIdDict = new Dictionary<OHCAABOMEOF.KGOGMKMBCPP_EventType, int>(); // 0x50
 		private Dictionary<int, HelpInfo> ButtonDispPlaceDict = new Dictionary<int, HelpInfo>()
 		{
@@ -222,7 +222,14 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xE30CB4 Offset: 0xE30CB4 VA: 0xE30CB4
 		public void ShowRaidResultHelpButton()
 		{
-			TodoLogger.LogError(0, "ShowRaidResultHelpButton HelpButton");
+			int id = FindHelpUniqueId(128);
+			if (id < 0)
+				return;
+			m_searchId = 128;
+			m_callHelpId = id;
+			m_eventType = 0;
+			m_pattern = 3;
+			Show(3);
 		}
 
 		// // RVA: 0xE30CFC Offset: 0xE30CFC VA: 0xE30CFC
@@ -243,7 +250,15 @@ namespace XeApp.Game.Menu
 		// public void HideMissionEventHelpButton() { }
 
 		// // RVA: 0xE30DC8 Offset: 0xE30DC8 VA: 0xE30DC8
-		// public void HideEventHelpButton() { }
+		public void HideEventHelpButton()
+		{
+			if(m_isShow)
+			{
+				m_buttonAnimLayout.StartChildrenAnimGoStop("go_out", "st_out");
+				m_isShow = false;
+			}
+			m_state = State.Hide;
+		}
 
 		// // RVA: 0xE30DCC Offset: 0xE30DCC VA: 0xE30DCC
 		public void HideOfferHelpButton()

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using XeApp.Game.Common;
+using XeApp.Game.Tutorial;
 using XeSys;
 using XeSys.uGUI;
 
@@ -39,7 +40,7 @@ namespace XeApp.Game.Menu
 			//// RVA: 0x1A94E90 Offset: 0x1A94E90 VA: 0x1A94E90
 			private bool IsEffect()
 			{
-				if(!viewStageData.NDLKPJDHHCN)
+				if(!viewStageData.NDLKPJDHHCN_NotShown)
 				{
 					if(!viewStageData.DHPNLACAGPG)
 					{
@@ -52,13 +53,13 @@ namespace XeApp.Game.Menu
 			//// RVA: 0x1A908EC Offset: 0x1A908EC VA: 0x1A908EC
 			public void SetNewMark(LayoutStorySelectController ssController)
 			{
-				if(!viewStageData.BCGLDMKODLC)
+				if(!viewStageData.BCGLDMKODLC_StatusCompleted)
 				{
-					if(!viewStageData.HHBJAEOIGIH)
+					if(!viewStageData.HHBJAEOIGIH_IsLocked)
 					{
 						if(!viewStageData.MMEGDFPNONJ_HasDivaId)
 						{
-							if (viewStageData.EOBACDCDGOF)
+							if (viewStageData.EOBACDCDGOF_IsTerminate)
 								return;
 							ssController.AttachNewIcon(layoutIcon.GetNewPos(), true);
 						}
@@ -70,13 +71,13 @@ namespace XeApp.Game.Menu
 			public void SetStatus(LayoutStorySelectController ssController, bool isComplete)
 			{
 				int a = 0;
-				if (viewStageData.EOBACDCDGOF)
+				if (viewStageData.EOBACDCDGOF_IsTerminate)
 					a = (viewStageData.ENEKMHMKNFK ? 1 : 0) + 15;
 				bool b = true;
-				if (!viewStageData.EOBACDCDGOF)
+				if (!viewStageData.EOBACDCDGOF_IsTerminate)
 					b = viewStageData.ENEKMHMKNFK;
 				float f = pos.x + size.x * 0.5f;
-				if(viewStageData.ELIHAGFNOBN)
+				if(viewStageData.ELIHAGFNOBN_IsStoryEndAndCompleted)
 				{
 					if (layoutCompleteIcon == null)
 						return;
@@ -85,7 +86,7 @@ namespace XeApp.Game.Menu
 					layoutCompleteIcon.SetCallback(buttonCallback);
 					layoutCompleteIcon.SetPosition(new Vector3(f, pos.y, pos.z));
 				}
-				if(!viewStageData.ELIHAGFNOBN)
+				if(!viewStageData.ELIHAGFNOBN_IsStoryEndAndCompleted)
 				{
 					if (b)
 					{
@@ -106,7 +107,7 @@ namespace XeApp.Game.Menu
 							layoutIcon.SetPosition(new Vector3(f, pos.y, pos.z));
 							if (!IsEffect())
 							{
-								if(!viewStageData.BCGLDMKODLC)
+								if(!viewStageData.BCGLDMKODLC_StatusCompleted)
 								{
 									if (isEmphasis)
 									{
@@ -291,6 +292,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1A81ABC Offset: 0x1A81ABC VA: 0x1A81ABC
 		public IEnumerator Check()
 		{
+			//0x1A8B370
 			if((m_viewDataList[m_stageEffectIndex].AHHJLDLAPAN_DivaId & 0xfffffffeU) == 8)
 			{
 				int i = m_stageEffectIndex + 1;
@@ -320,21 +322,157 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1A81FA0 Offset: 0x1A81FA0 VA: 0x1A81FA0
 		private IEnumerator UpdateAddDivaEffect(int index, Action callback)
 		{
-			TodoLogger.LogError(0, "UpdateAddDivaEffect");
-			yield return null;
+			int prevIndex;
+
+			//0x1A93D24
+			prevIndex = index - 1;
+			bool isCutinWait = true;
+			List<int> l = new List<int>();
+			l.Add(m_scrollViewList[index].viewStageData.AHHJLDLAPAN_DivaId);
+			this.StartCoroutineWatched(CutinJoinDiva.Show(l, transform.parent.parent, () =>
+			{
+				//0x1A8A988
+				isCutinWait = false;
+			}));
+			while(isCutinWait)
+				yield return null;
+			if(m_scrollViewList[prevIndex].layoutIcon != null)
+			{
+				m_scrollViewList[prevIndex].layoutIcon.ShrinkingIn();
+				while(m_scrollViewList[prevIndex].layoutIcon.IsPlaying())
+					yield return null;
+				SwapStageIcon(index, prevIndex);
+				m_scrollViewList[index].layoutIcon.LockAppearIn();
+				while(m_scrollViewList[index].layoutIcon.IsPlaying())
+					yield return null;
+				m_scrollViewList[index].layoutIcon.SetButtonEnable(true);
+				m_scrollViewList[prevIndex].layoutIcon.AppearIn();
+				while(m_scrollViewList[prevIndex].layoutIcon.IsPlaying())
+					yield return null;
+			}
+			else
+			{
+				if(m_scrollViewList[prevIndex].layoutTerminationIcon != null)
+				{
+					m_scrollViewList[prevIndex].layoutTerminationIcon.ShrinkingIn();
+					while(m_scrollViewList[prevIndex].layoutTerminationIcon.IsPlaying())
+						yield return null;
+					SwapStageIcon(index, prevIndex);
+					m_scrollViewList[prevIndex].layoutIcon.NoneIcon();
+					m_scrollViewList[index].layoutTerminationIcon.LockAppearIn();
+					while(m_scrollViewList[index].layoutTerminationIcon.IsPlaying())
+						yield return null;
+					m_scrollViewList[index].layoutTerminationIcon.SetButtonEnable(true);
+					m_scrollViewList[prevIndex].layoutIcon.AppearIn();
+					while(m_scrollViewList[prevIndex].layoutIcon.IsPlaying())
+						yield return null;
+				}
+			}
+			bool isWait = true;
+			MenuScene.Instance.InputEnable();
+			this.StartCoroutineWatched(ShowInfo(m_viewDataList[prevIndex], () =>
+			{
+				//0x1A8A994
+				isWait = false;
+			}));
+			while(isWait)
+				yield return null;
+			MenuScene.Instance.InputDisable();
+			if(callback != null)
+				callback();
 		}
 
 		//// RVA: 0x1A82080 Offset: 0x1A82080 VA: 0x1A82080
-		//private void SetStageIcon(int index) { }
+		private void SetStageIcon(int index)
+		{
+			int no = index;
+			m_scrollViewList[index].buttonCallback = () =>
+			{
+				//0x1A8A9A0
+				OnClickIcon(no);
+			};
+			if(m_scrollViewList[index].layoutIcon != null)
+			{
+				m_scrollViewList[index].layoutIcon.viewStageData = m_scrollViewList[index].viewStageData;
+				m_scrollViewList[index].layoutIcon.SetStatus();
+				m_scrollViewList[index].layoutIcon.SetCallback(m_scrollViewList[index].buttonCallback);
+			}
+			else
+			{
+				if(m_scrollViewList[index].layoutTerminationIcon != null)
+				{
+					m_scrollViewList[index].layoutTerminationIcon.viewStageData = m_scrollViewList[index].viewStageData;
+					m_scrollViewList[index].layoutTerminationIcon.SetStatus();
+					m_scrollViewList[index].layoutTerminationIcon.SetCallback(m_scrollViewList[index].buttonCallback);
+				}
+			}
+		}
 
 		//// RVA: 0x1A8294C Offset: 0x1A8294C VA: 0x1A8294C
-		//private void SetPosStageIcon(int index) { }
+		private void SetPosStageIcon(int index)
+		{
+			m_scrollViewList[index].pos.x = index * 450 + 370;
+			m_scrollViewList[index].pos.x += m_scrollViewList[index].size.x * -0.5f;
+			m_scrollViewList[index].pos.y = (index & 1) == 0 ? -300 : -450;
+			Vector3 pos = m_scrollViewList[index].pos;
+			pos.x += m_scrollViewList[index].size.x * 0.5f;
+			if(m_scrollViewList[index].layoutIcon != null)
+			{
+				m_scrollViewList[index].layoutIcon.SetPosition(pos);
+			}
+			if(m_scrollViewList[index].layoutTerminationIcon != null)
+			{
+				m_scrollViewList[index].layoutTerminationIcon.SetPosition(pos);
+			}
+		}
 
 		//// RVA: 0x1A82F74 Offset: 0x1A82F74 VA: 0x1A82F74
-		//private void SwapStageList(List<StorySelectStageCreater.ItemObject> list) { }
+		private void SwapStageList(List<ItemObject> list)
+		{
+			ItemObject tmp = list[list.Count - 1];
+			list[list.Count - 1] = list[list.Count - 2];
+			list[list.Count - 2] = tmp;
+		}
 
 		//// RVA: 0x1A8312C Offset: 0x1A8312C VA: 0x1A8312C
-		//private void SwapStageIcon(int index, int prevIndex) { }
+		private void SwapStageIcon(int index, int prevIndex)
+		{
+			LIEJFHMGNIA.PMBEMMPPNMN(m_viewDataList);
+			SwapStageList(m_scrollViewList);
+			if(m_scrollViewList[m_scrollViewList.Count - 1].layoutIcon != null)
+			{
+				m_scrollViewList[m_scrollViewList.Count - 1].layoutIcon.Hide(true);
+				ReleaseObject(m_scrollViewList[m_scrollViewList.Count - 1]);
+				m_scrollViewList[m_scrollViewList.Count - 1].layoutIcon = FreeIconObject(false);
+			}
+			else
+			{
+				if(m_scrollViewList[m_scrollViewList.Count - 1].layoutTerminationIcon != null)
+				{
+					m_scrollViewList[m_scrollViewList.Count - 1].layoutTerminationIcon.Hide(true);
+					ReleaseObject(m_scrollViewList[m_scrollViewList.Count - 1]);
+					m_scrollViewList[m_scrollViewList.Count - 1].layoutTerminationIcon = FreeTerminationObject();
+				}	
+			}
+			m_scrollViewList[m_scrollViewList.Count - 1].isSizeL = false;
+			m_scrollViewList[m_scrollViewList.Count - 1].size = LAYOUT_SIZE;
+			m_scrollViewList[m_scrollViewList.Count - 2].isSizeL = true;
+			m_scrollViewList[m_scrollViewList.Count - 2].size = LAYOUT_SIZE_L;
+			for(int i = 0; i < m_viewDataList.Count; i++)
+			{
+				m_scrollViewList[i].viewStageData = m_viewDataList[i];
+			}
+			SetStageIcon(index);
+			SetStageIcon(prevIndex);
+			SetPosStageIcon(index);
+			SetPosStageIcon(prevIndex);
+			if(m_scrollViewList[index].layoutIcon != null)
+			{
+				m_scrollViewList[index].layoutIcon.LockIcon();
+				m_scrollViewList[prevIndex].layoutIcon.NoneIcon();
+			}
+			m_stageEffectIndex = m_stageEffectIndex - 2;
+		}
 
 		//// RVA: 0x1A83FE0 Offset: 0x1A83FE0 VA: 0x1A83FE0
 		private float CalcFocusPositionX(int index)
@@ -357,7 +495,7 @@ namespace XeApp.Game.Menu
 			if (effectType == EffectType.ADD_DIVA)
 				tempIndex = index - 1;
 			yield return new WaitForSeconds(1);
-			x = -CalcFocusPositionX(tempIndex);
+			x = -Mathf.Max(CalcFocusPositionX(tempIndex), 0);
 			stageScroll = storySelectController.layoutIconScroll;
 			isMove = true;
 			pos = Vector3.zero;
@@ -365,7 +503,7 @@ namespace XeApp.Game.Menu
 			{
 				pos.x = (x - stageScroll.content.localPosition.x) / 10.0f + stageScroll.content.localPosition.x;
 				stageScroll.content.localPosition = pos;
-				if(x - stageScroll.content.localPosition.x < 3)
+				if(Mathf.Abs(x - stageScroll.content.localPosition.x) < 3)
 				{
 					pos.x = x;
 					stageScroll.content.localPosition = pos;
@@ -394,12 +532,12 @@ namespace XeApp.Game.Menu
 				LIEJFHMGNIA viewStageData = m_viewDataList[index];
 				StorySelectStageIcon layout = m_scrollViewList[index].layoutIcon;
 				StorySelectStageTerminationIcon layoutTermination = m_scrollViewList[index].layoutTerminationIcon;
-				if (!viewStageData.BCGLDMKODLC)
+				if (!viewStageData.BCGLDMKODLC_StatusCompleted)
 				{
 					CallbackEffectPhaseEnd = () =>
 					{
-					//0x1A8AAB8
-					if (viewStageData.EOBACDCDGOF)
+						//0x1A8AAB8
+						if (viewStageData.EOBACDCDGOF_IsTerminate)
 						{
 							layoutTermination.SetButtonEnable(true);
 							return;
@@ -408,7 +546,7 @@ namespace XeApp.Game.Menu
 						{
 							if (!viewStageData.MMEGDFPNONJ_HasDivaId)
 								return;
-							if (!viewStageData.HHBJAEOIGIH)
+							if (!viewStageData.HHBJAEOIGIH_IsLocked)
 								return;
 						}
 						layout.SetButtonEnable(true);
@@ -492,7 +630,7 @@ namespace XeApp.Game.Menu
 				a = i;
 				if (IsEffectIcon(m_viewDataList[i], out eff))
 				{
-					if(m_viewDataList[i].NDLKPJDHHCN)
+					if(m_viewDataList[i].NDLKPJDHHCN_NotShown)
 					{
 						a = i - 1;
 						if (a < 1)
@@ -508,7 +646,7 @@ namespace XeApp.Game.Menu
 				if((m_viewDataList[a - 1].AHHJLDLAPAN_DivaId & 0xfffffffeU) == 8)
 				{
 					c = a - 1;
-					if (m_viewDataList[a - 1].BCGLDMKODLC)
+					if (m_viewDataList[a - 1].BCGLDMKODLC_StatusCompleted)
 						c = a;
 				}
 			}
@@ -547,9 +685,9 @@ namespace XeApp.Game.Menu
 				}
 				if(!m_viewDataList[i].MMEGDFPNONJ_HasDivaId)
 				{
-					if(m_viewDataList[i].HHBJAEOIGIH)
+					if(!m_viewDataList[i].HHBJAEOIGIH_IsLocked)
 					{
-						if(!m_viewDataList[i].BCGLDMKODLC)
+						if(!m_viewDataList[i].BCGLDMKODLC_StatusCompleted)
 						{
 							m_scrollViewList[i].size = LAYOUT_SIZE_L;
 							m_scrollViewList[i].isSizeL = true;
@@ -559,7 +697,7 @@ namespace XeApp.Game.Menu
 				b = false;
 				if((m_viewDataList[i].AHHJLDLAPAN_DivaId & 0xfffffffeU) == 8)
 				{
-					b = !m_viewDataList[i].BCGLDMKODLC;
+					b = !m_viewDataList[i].BCGLDMKODLC_StatusCompleted;
 				}
 				m_scrollViewList[i].pos = v;
 				m_scrollViewList[i].pos.x += m_scrollViewList[i].size.x * -0.5f;
@@ -569,9 +707,9 @@ namespace XeApp.Game.Menu
 			UpdateScrollInner();
 			for(int i = 0; i < m_scrollViewList.Count; i++)
 			{
-				if(!m_scrollViewList[i].viewStageData.BCGLDMKODLC)
+				if(!m_scrollViewList[i].viewStageData.BCGLDMKODLC_StatusCompleted)
 				{
-					if (!m_scrollViewList[i].viewStageData.EOBACDCDGOF)
+					if (!m_scrollViewList[i].viewStageData.EOBACDCDGOF_IsTerminate)
 					{
 						m_scrollViewList[i].isEmphasis = true;
 						if (eff == EffectType.NONE)
@@ -581,7 +719,7 @@ namespace XeApp.Game.Menu
 						}
 						if (m_viewDataList[i].MMEGDFPNONJ_HasDivaId)
 							return;
-						if (m_viewDataList[i].HHBJAEOIGIH)
+						if (m_viewDataList[i].HHBJAEOIGIH_IsLocked)
 							return;
 						m_scrollViewList[i].isNewMark = true;
 						if (eff != EffectType.NONE)
@@ -614,9 +752,9 @@ namespace XeApp.Game.Menu
 			}
 			if (!m_viewDataList[index].MMEGDFPNONJ_HasDivaId)
 			{
-				if(!m_viewDataList[index].HHBJAEOIGIH)
+				if(!m_viewDataList[index].HHBJAEOIGIH_IsLocked)
 				{
-					if(!m_viewDataList[index].BCGLDMKODLC)
+					if(!m_viewDataList[index].BCGLDMKODLC_StatusCompleted)
 					{
 						m_scrollViewList[index].isSizeL = true;
 						m_scrollViewList[index].size = LAYOUT_SIZE_L;
@@ -629,9 +767,9 @@ namespace XeApp.Game.Menu
 			EffectType eff;
 			IsEffectIcon(m_viewDataList[index], out eff);
 			UpdateScrollInner();
-			if(!m_scrollViewList[index].viewStageData.BCGLDMKODLC)
+			if(!m_scrollViewList[index].viewStageData.BCGLDMKODLC_StatusCompleted)
 			{
-				if (!m_scrollViewList[index].viewStageData.EOBACDCDGOF)
+				if (!m_scrollViewList[index].viewStageData.EOBACDCDGOF_IsTerminate)
 				{
 					m_scrollViewList[index].isEmphasis = true;
 					if(eff == EffectType.NONE)
@@ -641,7 +779,7 @@ namespace XeApp.Game.Menu
 					}
 					if(!m_viewDataList[index].MMEGDFPNONJ_HasDivaId)
 					{
-						if(!m_viewDataList[index].HHBJAEOIGIH)
+						if(!m_viewDataList[index].HHBJAEOIGIH_IsLocked)
 						{
 							m_scrollViewList[index].isNewMark = true;
 							if(eff == EffectType.NONE)
@@ -679,7 +817,7 @@ namespace XeApp.Game.Menu
 				item.viewStageData = m_viewDataList[i];
 				v.y = ((i & 1) == 0) ? -300 : -450;
 				item.isSizeL = false;
-				Vector3 s = LAYOUT_SIZE_L;
+				Vector3 s = LAYOUT_SIZE;
 				if(m_viewDataList[i].MMEGDFPNONJ_HasDivaId)
 				{
 					item.isSizeL = true;
@@ -693,9 +831,9 @@ namespace XeApp.Game.Menu
 				}
 				if(!m_viewDataList[i].MMEGDFPNONJ_HasDivaId)
 				{
-					if(!m_viewDataList[i].HHBJAEOIGIH)
+					if(!m_viewDataList[i].HHBJAEOIGIH_IsLocked)
 					{
-						if(!m_viewDataList[i].BCGLDMKODLC)
+						if(!m_viewDataList[i].BCGLDMKODLC_StatusCompleted)
 						{
 							item.isSizeL = true;
 							s = LAYOUT_SIZE_L;
@@ -705,7 +843,7 @@ namespace XeApp.Game.Menu
 				b2 = false;
 				if((m_viewDataList[i].AHHJLDLAPAN_DivaId & 0xfffffffeU) == 8)
 				{
-					b2 = !m_viewDataList[i].BCGLDMKODLC;
+					b2 = !m_viewDataList[i].BCGLDMKODLC_StatusCompleted;
 				}
 				item.size = s;
 				item.pos = v;
@@ -715,9 +853,9 @@ namespace XeApp.Game.Menu
 			}
 			for(int i = start; i < m_scrollViewList.Count; i++)
 			{
-				if(!m_scrollViewList[i].viewStageData.BCGLDMKODLC)
+				if(!m_scrollViewList[i].viewStageData.BCGLDMKODLC_StatusCompleted)
 				{
-					if(!m_scrollViewList[i].viewStageData.EOBACDCDGOF)
+					if(!m_scrollViewList[i].viewStageData.EOBACDCDGOF_IsTerminate)
 					{
 						m_scrollViewList[i].isEmphasis = true;
 						if (effect == EffectType.NONE)
@@ -729,7 +867,7 @@ namespace XeApp.Game.Menu
 						}
 						if (m_viewDataList[i].MMEGDFPNONJ_HasDivaId)
 							return;
-						if (m_viewDataList[i].HHBJAEOIGIH)
+						if (m_viewDataList[i].HHBJAEOIGIH_IsLocked)
 							return;
 						m_scrollViewList[i].isNewMark = true;
 						if (effect != EffectType.NONE)
@@ -751,7 +889,7 @@ namespace XeApp.Game.Menu
 			effectType = EffectType.NONE;
 			if (!data.CGDIFBMIJJH_AddDiva)
 			{
-				if (!data.NDLKPJDHHCN)
+				if (!data.NDLKPJDHHCN_NotShown)
 				{
 					if (!data.DHPNLACAGPG)
 					{
@@ -762,11 +900,11 @@ namespace XeApp.Game.Menu
 							if (effectType != EffectType.NONE)
 								return true;
 							effectType = EffectType.RELEASE;
-							data.NDLKPJDHHCN = true;
+							data.NDLKPJDHHCN_NotShown = true;
 							data.DHPNLACAGPG = true;
 							return true;
 						}
-						if (data.PCFICCCLBNP)
+						if (data.PCFICCCLBNP_IsLastStoryAndCompleted)
 						{
 							return !IsComplete();
 						}
@@ -798,7 +936,7 @@ namespace XeApp.Game.Menu
 			if (data.CGDIFBMIJJH_AddDiva)
 				return;
 			bool b = data.DHPNLACAGPG;
-			if (data.NDLKPJDHHCN)
+			if (data.NDLKPJDHHCN_NotShown)
 				data.CPIPDGGOLFO();
 			if (b)
 				data.JLHOLHCDELP();
@@ -912,7 +1050,7 @@ namespace XeApp.Game.Menu
 			{
 				if (m_freeNewMarkIcon == null)
 					yield break;
-				if(!m_scrollViewList[i].viewStageData.BCGLDMKODLC)
+				if(!m_scrollViewList[i].viewStageData.BCGLDMKODLC_StatusCompleted)
 				{
 					if(m_scrollViewList[i].layoutIcon != null)
 					{
@@ -950,13 +1088,59 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1A87738 Offset: 0x1A87738 VA: 0x1A87738
 		private IEnumerator UnlockDivaPhase()
 		{
-			TodoLogger.LogError(0, "UnlockDivaPhase");
-			yield return null;
+			//0x1A93BA0
+			IsEffectStart = false;
+			yield return Co.R(ShowTutorial());
+			yield return Co.R(ShowHomeBgPopup());
+			yield return Co.R(ProcStage());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72BCAC Offset: 0x72BCAC VA: 0x72BCAC
 		//// RVA: 0x1A881A0 Offset: 0x1A881A0 VA: 0x1A881A0
-		//private IEnumerator ShowHomeBgPopup() { }
+		private IEnumerator ShowHomeBgPopup()
+		{
+			//0x1A91500
+			int f = 0;
+			for(int i = m_viewDataList.Count - 1; i >= 0; i--)
+			{
+				if(!m_viewDataList[i].HHBJAEOIGIH_IsLocked)
+				{
+					if(m_viewDataList[i].MMEGDFPNONJ_HasDivaId)
+					{
+						f = i;
+						break;
+					}
+				}
+			}
+			LIEJFHMGNIA l = m_viewDataList[f];
+			BJPLLEBHAGO_DivaInfo diva = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas[l.AHHJLDLAPAN_DivaId - 1];
+			CGFNKMNBNBN.HHGLKFFKFAB(diva.AHHJLDLAPAN_DivaId);
+			if(CGFNKMNBNBN.JBNMNPMCIBM_HaveBg(diva.CMBCBNEODPD_HomeBgId))
+				yield break;
+			PopupPlusHomeBG.Setting s = new PopupPlusHomeBG.Setting();
+			MenuScene.Instance.InputDisable();
+			s.m_bundle_id = 1;
+			s.m_titleName = CGFNKMNBNBN.ELKDCEEPLKB(diva.CMBCBNEODPD_HomeBgId).OPFGFINHFCE_Name;
+			s.WindowSize = SizeType.Small;
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			s.m_bg_id = CGFNKMNBNBN.ELKDCEEPLKB(diva.CMBCBNEODPD_HomeBgId).KEFGPJBKAOD_BgId;
+			MenuScene.Instance.InputEnable();
+			bool t_end_popup = false;
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1A8A4C4
+				return;
+			}, null, null, null, endCallBaack:() =>
+			{
+				//0x1A8A4E4
+				t_end_popup = true;
+			});
+			while(!t_end_popup)
+				yield return null;
+		}
 
 		//// RVA: 0x1A843E0 Offset: 0x1A843E0 VA: 0x1A843E0
 		private Coroutine StartEffectPhase(EffectType effectType, int index)
@@ -980,9 +1164,9 @@ namespace XeApp.Game.Menu
 				}
 			}
 			//LAB_01a846e8
-			if(!m_viewDataList[index].ELIHAGFNOBN || IsComplete())
+			if(!m_viewDataList[index].ELIHAGFNOBN_IsStoryEndAndCompleted || IsComplete())
 			{
-				if(!m_viewDataList[index].NDLKPJDHHCN)
+				if(!m_viewDataList[index].NDLKPJDHHCN_NotShown)
 				{
 					if (m_viewDataList[index].MMEGDFPNONJ_HasDivaId)
 						return this.StartCoroutineWatched(ProcFromShowToDivaJoin(index));
@@ -993,14 +1177,14 @@ namespace XeApp.Game.Menu
 				{
 					if(m_viewDataList[index].MMEGDFPNONJ_HasDivaId)
 					{
-						if (m_viewDataList[index].HHBJAEOIGIH)
+						if (m_viewDataList[index].HHBJAEOIGIH_IsLocked)
 							return this.StartCoroutineWatched(ProcFromNoneToDiva(index));
 						else
 							return this.StartCoroutineWatched(ProcFromNoneToDivaJoin(index));
 					}
-					else if(!m_viewDataList[index].EOBACDCDGOF)
+					else if(!m_viewDataList[index].EOBACDCDGOF_IsTerminate)
 					{
-						if (m_viewDataList[index].HHBJAEOIGIH)
+						if (m_viewDataList[index].HHBJAEOIGIH_IsLocked)
 							return this.StartCoroutineWatched(ProcFromNoneToStageLock(index));
 						else
 							return this.StartCoroutineWatched(ProcFromNoneToStageUnlock(index));
@@ -1021,91 +1205,241 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72BD24 Offset: 0x72BD24 VA: 0x72BD24
 		//// RVA: 0x1A8885C Offset: 0x1A8885C VA: 0x1A8885C
-		//private IEnumerator AnimWaitDefault(int index) { }
+		private IEnumerator AnimWaitDefault(int index)
+		{
+			StorySelectStageIcon layout;
+
+			//0x1A8ACC8
+			layout = m_scrollViewList[index].layoutIcon;
+			while(layout.IsPlaying())
+				yield return null;
+			if(CallbackEffectPhaseEnd != null)
+				CallbackEffectPhaseEnd();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72BD9C Offset: 0x72BD9C VA: 0x72BD9C
 		//// RVA: 0x1A88924 Offset: 0x1A88924 VA: 0x1A88924
-		//private IEnumerator PopupShowAppearDiva(int index) { }
+		private IEnumerator PopupShowAppearDiva(int index)
+		{
+			//0x1A8CA94
+			MenuScene.Instance.InputEnable();
+			yield return ShowInfo(m_viewDataList[index], null);
+			MenuScene.Instance.InputDisable();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72BE14 Offset: 0x72BE14 VA: 0x72BE14
 		//// RVA: 0x1A889EC Offset: 0x1A889EC VA: 0x1A889EC
-		//private IEnumerator SeriesFader(int index) { }
+		private IEnumerator SeriesFader(int index)
+		{
+			int logo_id;
+
+			//0x1A90A6C
+			LIEJFHMGNIA viewStageData = m_viewDataList[index];
+			FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Find((FFHPBEPOMAK_DivaInfo _) =>
+			{
+				//0x1A8A4F8
+				return _.AHHJLDLAPAN_DivaId == viewStageData.AHHJLDLAPAN_DivaId;
+			});
+			logo_id = diva != null ? diva.AIHCEGFANAM_Serie : 1;
+			if(UnlockFadeManager.Instance != null)
+			{
+				UnlockFadeManager.Release();
+				yield return null;
+			}
+			UnlockFadeManager.Create();
+			this.StartCoroutineWatched(UnlockFadeManager.Instance.Co_LoadFadeEffect(logo_id));
+			while(!UnlockFadeManager.Instance.IsLoaded())
+				yield return null;
+			UnlockFadeManager.Instance.GetEffect().Enter();
+			while(!UnlockFadeManager.Instance.GetEffect().IsEntered())
+				yield return null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72BE8C Offset: 0x72BE8C VA: 0x72BE8C
 		//// RVA: 0x1A88AB4 Offset: 0x1A88AB4 VA: 0x1A88AB4
-		//private IEnumerator ShowJoinDiva(int index) { }
+		private IEnumerator ShowJoinDiva(int index)
+		{
+			LIEJFHMGNIA viewStageData;
+
+			//0x1A933BC
+			viewStageData = m_viewDataList[index];
+			yield return Co.R(m_scrollViewList[index].layoutIcon.StampPressAnim());
+			KDLPEDBKMID.HHCJCDFCLOB.NMFCNFFFMAC(viewStageData.AHHJLDLAPAN_DivaId, 1, false);
+			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+				yield return null;
+			yield return Co.R(SeriesFader(index));
+			viewStageData.PGCCOCKGCKO = false;
+			MenuScene.Instance.BgControl.StoryBgHide();
+			if(MenuScene.Instance != null)
+			{
+				MenuScene.Instance.InputEnable();
+				MenuScene.Instance.Call(TransitionList.Type.UNLOCK_DIVA, new UnlockDivaArgs() { diva_id = viewStageData.AHHJLDLAPAN_DivaId }, true);
+			}
+			while(true)
+				yield return null;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72BF04 Offset: 0x72BF04 VA: 0x72BF04
 		//// RVA: 0x1A883C4 Offset: 0x1A883C4 VA: 0x1A883C4
 		private IEnumerator ProcFromNoneToDiva(int index)
 		{
-			TodoLogger.LogError(0, "ProcFromNoneToDiva");
-			yield return null;
+			StorySelectStageIcon layout;
+
+			//0x1A8E5B8
+			layout = m_scrollViewList[index].layoutIcon;
+			while(layout.IsPlaying())
+				yield return null;
+			yield return Co.R(TutorialManager.TryShowTutorialCoroutine(CheckTutorialCodition));
+			int index_ = index;
+			if(index + 1 < m_viewDataList.Count)
+				index_++;
+			if((m_viewDataList[index_].AHHJLDLAPAN_DivaId & 0xfffffffeU) != 8)
+			{
+				yield return Co.R(PopupShowAppearDiva(index));
+				if(CallbackEffectPhaseEnd != null)
+					CallbackEffectPhaseEnd();
+			}
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72BF7C Offset: 0x72BF7C VA: 0x72BF7C
 		//// RVA: 0x1A8846C Offset: 0x1A8846C VA: 0x1A8846C
 		private IEnumerator ProcFromNoneToDivaJoin(int index)
 		{
-			TodoLogger.LogError(0, "ProcFromNoneToDivaJoin");
-			yield return null;
+			StorySelectStageIcon layout;
+
+			//0x1A8E910
+			layout = m_scrollViewList[index].layoutIcon;
+			while(layout.IsPlaying())
+				yield return null;
+			int index_ = index;
+			if(index + 1 < m_viewDataList.Count)
+				index_++;
+			if((m_viewDataList[index_].AHHJLDLAPAN_DivaId & 0xfffffffeU) != 8)
+			{
+				yield return Co.R(PopupShowAppearDiva(index));
+				yield return Co.R(ShowJoinDiva(index));
+				if(CallbackEffectPhaseEnd != null)
+					CallbackEffectPhaseEnd();
+			}
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72BFF4 Offset: 0x72BFF4 VA: 0x72BFF4
 		//// RVA: 0x1A885BC Offset: 0x1A885BC VA: 0x1A885BC
 		private IEnumerator ProcFromNoneToStageLock(int index)
 		{
-			TodoLogger.LogError(0, "ProcFromNoneToStageLock");
-			yield return null;
+			//0x1A8EC0C
+			yield return Co.R(AnimWaitDefault(index));
+			int index_ = index;
+			if(index + 1 < m_viewDataList.Count)
+				index_++;
+			if((m_viewDataList[index_].AHHJLDLAPAN_DivaId & 0xfffffffeU) != 8)
+			{
+				MenuScene.Instance.InputEnable();
+				yield return ShowInfo(m_viewDataList[index], null);
+				MenuScene.Instance.InputDisable();
+			}
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72C06C Offset: 0x72C06C VA: 0x72C06C
 		//// RVA: 0x1A88664 Offset: 0x1A88664 VA: 0x1A88664
 		private IEnumerator ProcFromNoneToStageUnlock(int index)
 		{
-			TodoLogger.LogError(0, "ProcFromNoneToStageUnlock");
-			yield return null;
+			//0x1A8F434
+			yield return Co.R(AnimWaitDefault(index));
+			int index_ = index;
+			if(index + 1 < m_viewDataList.Count)
+				index_++;
+			if((m_viewDataList[index_].AHHJLDLAPAN_DivaId & 0xfffffffeU) != 8)
+			{
+				MenuScene.Instance.InputEnable();
+				yield return ShowInfo(m_viewDataList[index], null);
+				MenuScene.Instance.InputDisable();
+			}
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72C0E4 Offset: 0x72C0E4 VA: 0x72C0E4
 		//// RVA: 0x1A88514 Offset: 0x1A88514 VA: 0x1A88514
 		private IEnumerator ProcFromNoneToStageTerminate(int index)
 		{
-			TodoLogger.LogError(0, "ProcFromNoneToStageTerminate");
-			yield return null;
+			StorySelectStageTerminationIcon layout;
+
+			//0x1A8EF10
+			layout = m_scrollViewList[index].layoutTerminationIcon;
+			while(layout.IsPlaying())
+				yield return null;
+			yield return this.StartCoroutineWatched(PopupShowTermination());
+			if(CallbackEffectPhaseEnd != null)
+				CallbackEffectPhaseEnd();
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72C15C Offset: 0x72C15C VA: 0x72C15C
 		//// RVA: 0x1A88304 Offset: 0x1A88304 VA: 0x1A88304
 		private IEnumerator ProcFromNoneToStageTerminateUnlock(EffectType effectType, int index)
 		{
-			TodoLogger.LogError(0, "ProcFromNoneToStageTerminateUnlock");
-			yield return null;
+			StorySelectStageTerminationIcon layout;
+
+			//0x1A8F170
+			layout = m_scrollViewList[index].layoutTerminationIcon;
+			while(layout.IsPlaying())
+				yield return null;
+			m_viewDataList[index].ENEKMHMKNFK = false;
+			layout.Hide(true);
+			m_freeTerminationIcon = layout;
+			m_scrollViewList[index].layoutTerminationIcon = null;
+			yield return StartEffectPhase(effectType, index);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72C1D4 Offset: 0x72C1D4 VA: 0x72C1D4
 		//// RVA: 0x1A8870C Offset: 0x1A8870C VA: 0x1A8870C
 		private IEnumerator ProcFromShowToDivaJoin(int index)
 		{
-			TodoLogger.LogError(0, "ProcFromShowToDivaJoin");
-			yield return null;
+			StorySelectStageIcon layout;
+
+			//0x1A8FBB8
+			layout = m_scrollViewList[index].layoutIcon;
+			while(layout.IsPlaying())
+				yield return null;
+			layout.SetNoiseEnable(false);
+			yield return Co.R(ShowJoinDiva(index));
+			if(CallbackEffectPhaseEnd != null)
+				CallbackEffectPhaseEnd();
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72C24C Offset: 0x72C24C VA: 0x72C24C
 		//// RVA: 0x1A887B4 Offset: 0x1A887B4 VA: 0x1A887B4
 		private IEnumerator ProcFromShowToStageUnlock(int index)
 		{
-			TodoLogger.LogError(0, "ProcFromShowToStageUnlock");
-			yield return null;
+			//0x1A8FE3C
+			yield return Co.R(AnimWaitDefault(index));
+			m_scrollViewList[index].layoutIcon.SetNoiseEnable(false);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72C2C4 Offset: 0x72C2C4 VA: 0x72C2C4
 		//// RVA: 0x1A8825C Offset: 0x1A8825C VA: 0x1A8825C
 		private IEnumerator ProcFromShowToComplete(int index)
 		{
-			TodoLogger.LogError(0, "ProcFromShowToComplete");
-			yield return null;
-		}
+			//0x1A8F738
+			storySelectController.layoutIconScroll.content.localPosition = new Vector3(-m_scrollPosRightX, 0, 0);
+            StorySelectStageCompleteIcon complete = m_scrollViewList[index].layoutCompleteIcon;
+			bool isLoading = true;
+			yield return Co.R(storySelectController.Co_CompleteProduction(() =>
+			{
+				//0x1A8A54C
+				isLoading = false;
+			}, () =>
+			{
+				//0x1A8A558
+				complete.viewStageData = m_viewDataList[index];
+				complete.In(EffectType.APPEAR);
+			}));
+			while(isLoading)
+				yield return null;
+			while(complete.IsPlaying())
+				yield return null;
+			StoryComplete();
+			yield return Co.R(PopupShowComplete());
+			yield return Co.R(PopupShowMissionGuidance());
+        }
 
 		//// RVA: 0x1A88C9C Offset: 0x1A88C9C VA: 0x1A88C9C
 		private bool IsInterruptLock(int no)
@@ -1117,7 +1451,7 @@ namespace XeApp.Game.Menu
 				{
 					if((m_viewDataList[index].AHHJLDLAPAN_DivaId & 0xfffffffeU) == 8)
 					{
-						return !m_viewDataList[index].BCGLDMKODLC;
+						return !m_viewDataList[index].BCGLDMKODLC_StatusCompleted;
 					}
 				}
 			}
@@ -1127,9 +1461,9 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1A88E34 Offset: 0x1A88E34 VA: 0x1A88E34
 		private void OnClickIcon(int no)
 		{
-			if(!m_viewDataList[no].ELIHAGFNOBN)
+			if(!m_viewDataList[no].ELIHAGFNOBN_IsStoryEndAndCompleted)
 			{
-				if(!m_viewDataList[no].EOBACDCDGOF)
+				if(!m_viewDataList[no].EOBACDCDGOF_IsTerminate)
 				{
 					if(IsInterruptLock(no))
 					{
@@ -1320,6 +1654,10 @@ namespace XeApp.Game.Menu
 							}
 						}
 					}
+					else
+					{
+						MenuScene.Instance.Mount(TransitionUniqueId.MUSICSELECT, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+					}
 				}
 			}
 			if (finish != null)
@@ -1364,12 +1702,43 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1A8915C Offset: 0x1A8915C VA: 0x1A8915C
 		private IEnumerator PopupShowLock(int no, string title, string message, bool isInterruptLock = false)
 		{
-			TodoLogger.LogNotImplemented("PopupShowLock");
-			yield return null;
+			//0x1A8D24C
+			if (MenuScene.Instance != null)
+				MenuScene.Instance.RaycastDisable();
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			TextPopupSetting s = PopupWindowManager.CrateTextContent(title, SizeType.Small, string.IsNullOrEmpty(message) ? m_viewDataList[no].FHPHCFEEBMP : message, isInterruptLock ? new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			} : new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Live, Type = PopupButton.ButtonType.Live }
+			}, false, false);
+			bool isWait = true;
+			bool isLive = false;
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1A8A8D4
+				isWait = false;
+				if(label == PopupButton.ButtonLabel.Live)
+					isLive = true;
+			}, null, null, null);
+			while(isWait)
+				yield return null;
+			if (MenuScene.Instance != null)
+				MenuScene.Instance.RaycastEnable();
+			if(isLive)
+			{
+				if(MenuScene.Instance != null)
+					MenuScene.Instance.Mount(TransitionUniqueId.MUSICSELECT, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+			}
 		}
 
 		//// RVA: 0x1A894DC Offset: 0x1A894DC VA: 0x1A894DC
-		//private void StoryComplete() { }
+		private void StoryComplete()
+		{
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LNOOKHJBENO_StoryRecord.EOHHFADHHBL_Complete = true;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72C4A4 Offset: 0x72C4A4 VA: 0x72C4A4
 		//// RVA: 0x1A89074 Offset: 0x1A89074 VA: 0x1A89074
@@ -1381,9 +1750,9 @@ namespace XeApp.Game.Menu
 				MenuScene.Instance.RaycastDisable();
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			TextPopupSetting s = PopupWindowManager.CrateTextContent("", SizeType.Small, bk.GetMessageByLabel("popup_story_complete_stage"), new ButtonInfo[1]
-				{
-					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
-				}, false, false);
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			}, false, false);
 			bool isWait = true;
 			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{
@@ -1398,14 +1767,65 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72C51C Offset: 0x72C51C VA: 0x72C51C
 		//// RVA: 0x1A895CC Offset: 0x1A895CC VA: 0x1A895CC
-		//private IEnumerator PopupShowMissionGuidance() { }
+		private IEnumerator PopupShowMissionGuidance()
+		{
+			//0x1A8D988
+			GameManager.Instance.CloseSnsNotice();
+			if(MenuScene.Instance != null)
+			{
+				MenuScene.Instance.RaycastDisable();
+			}
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			TextPopupSetting s = PopupWindowManager.CrateTextContent("", SizeType.Small, bk.GetMessageByLabel("popup_story_mission_guidance"), new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Mission, Type = PopupButton.ButtonType.Other }
+			}, false, false);
+			bool changeMission = false;
+			bool isWait = true;
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1A8A908
+				isWait = false;
+				if(type == PopupButton.ButtonType.Other)
+					changeMission = true;
+			}, null, null, null);
+			while(isWait)
+				yield return null;
+			if(MenuScene.Instance != null)
+			{
+				MenuScene.Instance.RaycastEnable();
+			}
+			if(changeMission)
+			{
+				QuestTopArgs args = new QuestTopArgs(2);
+				MenuScene.Instance.Mount(TransitionUniqueId.QUEST, args, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72C594 Offset: 0x72C594 VA: 0x72C594
 		//// RVA: 0x1A890E8 Offset: 0x1A890E8 VA: 0x1A890E8
 		private IEnumerator PopupShowTermination()
 		{
-			TodoLogger.LogNotImplemented("PopupShowTermination");
-			yield return null;
+			//0x1A8E038
+			GameManager.Instance.CloseSnsNotice();
+			if(MenuScene.Instance != null)
+				MenuScene.Instance.RaycastDisable();
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			TextPopupSetting s = PopupWindowManager.CrateTextContent("", SizeType.Small, bk.GetMessageByLabel("popup_story_termination"), new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative },
+			}, false, false);
+			bool isWait = true;
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1A8A928
+				isWait = false;
+			}, null, null, null);
+			while(isWait)
+				yield return null;
+			if(MenuScene.Instance != null)
+				MenuScene.Instance.RaycastEnable();
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72C60C Offset: 0x72C60C VA: 0x72C60C
@@ -1421,7 +1841,51 @@ namespace XeApp.Game.Menu
 			//0x1A8BA48
 			if (stageData.IFNPBIJEPBO_IsDlded)
 				yield break;
-			TodoLogger.LogError(0, "DownLoadMusic");
+			fader = GameManager.Instance.fullscreenFader;
+			tipsCtrl = TipsControl.Instance;
+			MenuScene.Instance.InputDisable();
+			fader.Fade(0.5f, new Color(0, 0, 0, 0.5f));
+			tipsCtrl.Show(3);
+			while(fader.isFading)
+				yield return null;
+			yield return TipsControl.Instance.WaitLoadingYield;
+			while(tipsCtrl.isPlayingAnime())
+				yield return null;
+			musicId = stageData.KKPAHLMJKIH_WavId;
+			int a1 = stageData.KEFGPJBKAOD_WavId;
+			int videoQuality = 0;
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PMGMMMGCEEI_Video == 0)
+			{
+				videoQuality = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CBLEFELBNDN_GetVideoQuality();
+			}
+			KDLPEDBKMID.HHCJCDFCLOB.HANBBBBLLGP = 0;
+			lw = ILCCJNDFFOB.HHCJCDFCLOB;
+			lw.OJOLFJGNEMO(0, musicId);
+			pre = 0;
+			KDLPEDBKMID.HHCJCDFCLOB.OKJCGCOGDIA(musicId, a1, videoQuality, 1);
+			while(!KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			{
+				if(pre < 50)
+				{
+					if(KDLPEDBKMID.HHCJCDFCLOB.HANBBBBLLGP >= 50)
+					{
+						lw.OJOLFJGNEMO(1, musicId);
+					}
+				}
+				pre = KDLPEDBKMID.HHCJCDFCLOB.HANBBBBLLGP;
+				yield return null;
+			}
+			lw.OJOLFJGNEMO(2, musicId);
+			stageData.OBGKIMDIAJF_CheckIsDlded();
+			fader.Fade(0.5f, 0);
+			tipsCtrl.Close();
+			while(fader.isFading)
+				yield return null;
+			while(tipsCtrl.isPlayingAnime())
+				yield return null;
+			MenuScene.Instance.InputEnable();
+			if(finish != null)
+				finish();
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72C684 Offset: 0x72C684 VA: 0x72C684
@@ -1431,7 +1895,7 @@ namespace XeApp.Game.Menu
 			//0x1A8AEC8
 			if(!stageData.MMEGDFPNONJ_HasDivaId)
 			{
-				if(!stageData.HHBJAEOIGIH)
+				if(!stageData.HHBJAEOIGIH_IsLocked)
 				{
 					if(!isStoryMenuBgm)
 					{
@@ -1470,17 +1934,30 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72C6FC Offset: 0x72C6FC VA: 0x72C6FC
 		//// RVA: 0x1A89860 Offset: 0x1A89860 VA: 0x1A89860
-		//private IEnumerator ShowTutorial() { }
+		private IEnumerator ShowTutorial()
+		{
+			//0x1A9393C
+			yield return Co.R(TutorialManager.TryShowTutorialCoroutine((TutorialConditionId conditionId) =>
+			{
+				//0x1A8A4CC
+				return conditionId == TutorialConditionId.Condition14;
+			}));
+			if(CallbackEffectPhaseEnd != null)
+				CallbackEffectPhaseEnd();
+		}
 
 		//// RVA: 0x1A8990C Offset: 0x1A8990C VA: 0x1A8990C
-		//private bool CheckTutorialCodition(TutorialConditionId conditionId) { }
+		private bool CheckTutorialCodition(TutorialConditionId conditionId)
+		{
+			return conditionId == TutorialConditionId.Condition32;
+		}
 
 		//// RVA: 0x1A8991C Offset: 0x1A8991C VA: 0x1A8991C
 		private StorySelectStageIcon GetFreeObject(ItemObject obj)
 		{
 			if(obj != null)
 			{
-				if (!obj.viewStageData.EOBACDCDGOF)
+				if (!obj.viewStageData.EOBACDCDGOF_IsTerminate)
 					return FreeIconObject(obj.isSizeL);
 			}
 			return null;
@@ -1491,7 +1968,7 @@ namespace XeApp.Game.Menu
 		{
 			if (obj == null)
 				return null;
-			if(!obj.viewStageData.EOBACDCDGOF)
+			if(!obj.viewStageData.EOBACDCDGOF_IsTerminate)
 			{
 				if (!obj.viewStageData.ENEKMHMKNFK)
 					return null;
@@ -1504,7 +1981,7 @@ namespace XeApp.Game.Menu
 		{
 			if(obj != null)
 			{
-				if (obj.viewStageData.ELIHAGFNOBN)
+				if (obj.viewStageData.ELIHAGFNOBN_IsStoryEndAndCompleted)
 					return FreeCompleteObject();
 			}
 			return null;

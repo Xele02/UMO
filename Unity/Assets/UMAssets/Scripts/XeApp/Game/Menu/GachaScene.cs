@@ -254,7 +254,10 @@ namespace XeApp.Game.Menu
 					LOBDIAABMKG l = GachaProductList[SelectIndex];
 					if(GameManager.Instance.IsTutorial)
 					{
-						TodoLogger.LogError(0, "Tuto");
+						if(BasicTutorialManager.Instance.GetRecoveryPoint() > ILDKBCLAFPB.CDIPJNPICCO.FBFBGLONIME_4)
+						{
+							Database.Instance.tutorialPaidVC = 50;
+						}
 					}
 					bool isEndChangeGacha = false;
 					this.StartCoroutineWatched(Co_ChangeGacha(l, false, () =>
@@ -623,7 +626,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEE7FE4 Offset: 0xEE7FE4 VA: 0xEE7FE4
 		private void OnClickEpisodeAppeal()
 		{
-			TodoLogger.LogNotImplemented("OnClickEpisodeAppeal");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+			List<HGBOODNMNFM> l = m_view.BMJOENJMFEL(m_view.BADFIKBADNH_PickupId);
+			if(l.Count > 0)
+			{
+				MenuScene.Instance.Call(TransitionList.Type.EPISODE_APPEAL, new EpisodeAppealScene.EpisodeAppealArgs(l), true);
+			}
 		}
 
 		//// RVA: 0xEE8188 Offset: 0xEE8188 VA: 0xEE8188
@@ -808,7 +816,19 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEE8E48 Offset: 0xEE8E48 VA: 0xEE8E48
 		private void OnClickBonusTicketPurchaseButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickBonusTicketPurchaseButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(MenuScene.CheckDatelineAndAssetUpdate())
+				return;
+			this.StartCoroutineWatched(Co_PurchaseButton((LGDNAJACFHI paidVCProductData) =>
+			{
+				//0xEED42C
+				int a1 = GachaUtility.netGachaProductData.OMNAPCHLBHF(GCAHJLOGMCI.NFCAJPIJFAM_SummonType.GOAHICNDICO_5);
+				if(a1 == 0)
+				{
+					a1 = GachaUtility.netGachaProductData.OMNAPCHLBHF(GCAHJLOGMCI.NFCAJPIJFAM_SummonType.LMHDFEKIDKG_6);
+				}
+				return paidVCProductData.LHENLPLKGLP_StuffId == GachaUtility.netGachaProductData.LPPJMOMKPKA(a1);
+			}));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DD064 Offset: 0x6DD064 VA: 0x6DD064
@@ -841,7 +861,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEE9038 Offset: 0xEE9038 VA: 0xEE9038
 		private void OnClickPassPurchaseButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickPassPurchaseButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			this.StartCoroutineWatched(GachaUtility.OpenPurchasePassWindow(null));
 		}
 
 		//// RVA: 0xEE9118 Offset: 0xEE9118 VA: 0xEE9118
@@ -1021,7 +1042,15 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.GotoGachaDirection();
 			if(!GameManager.Instance.IsTutorial)
 				return;
-			TodoLogger.LogError(0, "Tuto");
+			GachaUtility.Register(items);
+			MenuScene.Instance.GotoGachaDirection();
+			if(GameManager.Instance.IsTutorial)
+			{
+				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.ECLDDCCEJJG_21);
+				BasicTutorialManager.Instance.UpdateLocalPlayerData();
+				BasicTutorialManager.Instance.UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO.FBFBGLONIME_4);
+				Database.Instance.tutorialPaidVC = 0;
+			}
 		}
 
 		//// RVA: 0xEE9C74 Offset: 0xEE9C74 VA: 0xEE9C74
@@ -1321,7 +1350,24 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEEBCE4 Offset: 0xEEBCE4 VA: 0xEEBCE4
 		private void OnClickTutorialAppearRate()
 		{
-			TodoLogger.LogNotImplemented("OnClickTutorialAppearRate");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(!MenuScene.CheckDatelineAndAssetUpdate())
+			{
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				TextPopupSetting s = new TextPopupSetting();
+				s.TitleText = bk.GetMessageByLabel("popup_gacha_rate_title");
+				s.Text = bk.GetMessageByLabel("pop_tutorial_gacha_details");
+				s.WindowSize = SizeType.Small;
+				s.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+				};
+				PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0xEED764
+					return;
+				}, null, null, null);
+			}
 		}
 
 		//// RVA: 0xEEC0EC Offset: 0xEEC0EC VA: 0xEEC0EC

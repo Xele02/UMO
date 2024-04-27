@@ -325,7 +325,147 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xD1B514 Offset: 0xD1B514 VA: 0xD1B514
 		public void AddBbsListItem(ANPBHCNJIDI.NNPGLGHDBKN _cm, ANPBHCNJIDI.NOJONDLAMOC m_bbsType, int _playerId, int _index, bool _isMember)
 		{
-			TodoLogger.LogError(0, "AddBbsListItem");
+			if(m_bbsType <= ANPBHCNJIDI.NOJONDLAMOC.HJNNKCMLGFL_0 || m_bbsType > ANPBHCNJIDI.NOJONDLAMOC.JPOGBMJKPIJ_5_FullCombo)
+			{
+				Debug.LogError("StringLiteral_18442");
+				return;
+			}
+			switch(m_bbsType)
+			{
+				case ANPBHCNJIDI.NOJONDLAMOC.CCAPCGPIIPF_1_Chat:
+				{
+					Debug.Log("StringLiteral_18437");
+					ANPBHCNJIDI.AIFBLOAGFOP data = _cm as ANPBHCNJIDI.AIFBLOAGFOP;
+					MessgeListItem it = new MessgeListItem();
+					it.ChatType = CommentType.Chat;
+					it.IsMember = _isMember;
+					it.IsPickUp = false;
+					it.DiveId = data.AHHJLDLAPAN_DivaId;
+					it.DivaCosId = data.NNOHKLNKGAD_CostumeId;
+					it.DivaCosColorId = data.DJHMGDKKKFO_ColorId;
+					it.UserName = data.OPFGFINHFCE_PlayerName;
+					it.PlayerId = data.MLPEHNBNOGD_WritterId;
+					it.Index = _index;
+					it.EnmblemId = data.MDPKLNFFDBO_EmblemId;
+					it.EnmblemCount = data.KDHCKDHIHIP_EmblemCount;
+					it.utarate_rank = data.AILEOFKIELL_UtaRateRank;
+					it.utarate = data.KIFEGLJLEDC_TotalUtaRate;
+					it.Messge = data.EBBJPBGHJOL_Content;
+					it.Time = data.EKEGHNPNCEH_UpdateAt;
+					it.ResourceType = _playerId == _cm.MLPEHNBNOGD_WritterId ? 1 : 2;
+					m_list.Add(it);
+				}
+				break;
+				case ANPBHCNJIDI.NOJONDLAMOC.DDPLFFAOAEB_2_Stamp:
+				{
+					Debug.Log("StringLiteral_18438");
+					ANPBHCNJIDI.BNEIDPGIAFM data = _cm as ANPBHCNJIDI.BNEIDPGIAFM;
+					StampListItem it = new StampListItem();
+					it.DivaStampId = data.LIBPMIHHEJD_StampDiva;
+					it.MiniId = data.HEKIEDEBAEO_StampId;
+					it.CommentId = data.EKAMPLIAENM_SerifId;
+					it.IsPickUp = false;
+					it.ChatType = CommentType.Stamp;
+					it.DiveId = data.AHHJLDLAPAN_DivaId;
+					it.DivaCosId = data.NNOHKLNKGAD_CostumeId;
+					it.DivaCosColorId = data.DJHMGDKKKFO_ColorId;
+					it.UserName = data.OPFGFINHFCE_PlayerName;
+					it.Time = data.EKEGHNPNCEH_UpdateAt;
+					it.PlayerId = data.MLPEHNBNOGD_WritterId;
+					it.Index = _index;
+					it.EnmblemId = data.MDPKLNFFDBO_EmblemId;
+					it.EnmblemCount = data.KDHCKDHIHIP_EmblemCount;
+					it.utarate_rank = data.AILEOFKIELL_UtaRateRank;
+					it.IsMember = _isMember;
+					it.ResourceType = _playerId == _cm.MLPEHNBNOGD_WritterId ? 1 : 2;
+					it.utarate = data.KIFEGLJLEDC_TotalUtaRate;
+					m_list.Add(it);
+				}
+				break;
+				case ANPBHCNJIDI.NOJONDLAMOC.CGEPNIOPFHF_3_DefeatBoss:
+				{
+					Debug.Log("StringLiteral_18439");
+					ANPBHCNJIDI.KNGOGLLMKDL data = _cm as ANPBHCNJIDI.KNGOGLLMKDL;
+					DefeatBossListItem it = new DefeatBossListItem();
+					it.Messge = data.EBBJPBGHJOL_Content;
+					it.Damage = data.HALIDDHLNEG_Damage;
+					it.BossType = data.MFMPCHIJINJ_BossType;
+					it.ChatType = CommentType.BattleLog;
+					it.DiveId = data.AHHJLDLAPAN_DivaId;
+					it.DivaCosId = data.NNOHKLNKGAD_CostumeId;
+					it.DivaCosColorId = data.DJHMGDKKKFO_ColorId;
+					it.UserName = data.OPFGFINHFCE_PlayerName;
+					it.Time = data.EKEGHNPNCEH_UpdateAt;
+					it.PlayerId = data.MLPEHNBNOGD_WritterId;
+					it.Index = _index;
+					it.EnmblemId = data.MDPKLNFFDBO_EmblemId;
+					it.EnmblemCount = data.KDHCKDHIHIP_EmblemCount;
+					it.utarate_rank = data.AILEOFKIELL_UtaRateRank;
+					it.IsMember = _isMember;
+					it.ResourceType = _playerId == _cm.MLPEHNBNOGD_WritterId ? 1 : 2;
+					it.IsPickUp = m_raidSelect == 0;
+					it.utarate = data.KIFEGLJLEDC_TotalUtaRate;
+					m_list.Add(it);
+				}
+				break;
+				case ANPBHCNJIDI.NOJONDLAMOC.JDGLJOFPHLK_4_MaccrossCannon:
+				{
+					Debug.Log("StringLiteral_18440");
+					ANPBHCNJIDI.NBHIMCACDHM data = _cm as ANPBHCNJIDI.NBHIMCACDHM;
+					MacrossCannonListItem it = new MacrossCannonListItem();
+					it.Messge = data.EBBJPBGHJOL_Content;
+					it.Damage = data.HALIDDHLNEG_Damage;
+					it.Defeat = data.IGNJCGMLBDA_Defeat;
+					it.Time = data.EKEGHNPNCEH_UpdateAt;
+					it.ChatType = CommentType.MoveThum;
+					it.DiveId = data.AHHJLDLAPAN_DivaId;
+					it.DivaCosId = data.NNOHKLNKGAD_CostumeId;
+					it.DivaCosColorId = data.DJHMGDKKKFO_ColorId;
+					it.UserName = data.OPFGFINHFCE_PlayerName;
+					it.PlayerId = data.MLPEHNBNOGD_WritterId;
+					it.Index = _index;
+					it.EnmblemId = data.MDPKLNFFDBO_EmblemId;
+					it.EnmblemCount = data.KDHCKDHIHIP_EmblemCount;
+					it.IsMember = _isMember;
+					it.BossName = data.GJAOLNLFEBD_BossName;
+					it.BossSeries = (SeriesAttr.Type)data.PCPODOMOFDH_BossSeriesAttr;
+					it.ResourceType = _playerId == _cm.MLPEHNBNOGD_WritterId ? 1 : 2;
+					it.IsPickUp = m_raidSelect == 0;
+					it.BossImageNum = data.JNBDLNBKDCO_BossImage;
+					it.BossRank = data.EJGDHAENIDC_BossRank;
+					it.LogId = data.CNOHJPEHHCH;
+					it.utarate_rank = data.AILEOFKIELL_UtaRateRank;
+					it.WavId = data.KKPAHLMJKIH;
+					it.utarate = data.KIFEGLJLEDC_TotalUtaRate;
+					m_list.Add(it);
+				}
+				break;
+				case ANPBHCNJIDI.NOJONDLAMOC.JPOGBMJKPIJ_5_FullCombo:
+				{
+					Debug.Log("StringLiteral_18440");
+					ANPBHCNJIDI.JLHGKKIEALB data = _cm as ANPBHCNJIDI.JLHGKKIEALB;
+					FullComboListItem it = new FullComboListItem();
+					it.Messge = data.EBBJPBGHJOL_Content;
+					it.FreeId = data.ADHMMMEOJMK_FreeSongId;
+					it.ChatType = CommentType.BattleLog;
+					it.DiveId = data.AHHJLDLAPAN_DivaId;
+					it.DivaCosId = data.NNOHKLNKGAD_CostumeId;
+					it.DivaCosColorId = data.DJHMGDKKKFO_ColorId;
+					it.UserName = data.OPFGFINHFCE_PlayerName;
+					it.Time = data.EKEGHNPNCEH_UpdateAt;
+					it.PlayerId = data.MLPEHNBNOGD_WritterId;
+					it.Index = _index;
+					it.EnmblemId = data.MDPKLNFFDBO_EmblemId;
+					it.EnmblemCount = data.KDHCKDHIHIP_EmblemCount;
+					it.utarate_rank = data.AILEOFKIELL_UtaRateRank;
+					it.IsMember = _isMember;
+					it.ResourceType = _playerId == _cm.MLPEHNBNOGD_WritterId ? 1 : 2;
+					it.IsPickUp = m_raidSelect == 0;
+					it.utarate = data.KIFEGLJLEDC_TotalUtaRate;
+					m_list.Add(it);
+				}
+				break;
+			}
 		}
 
 		//// RVA: 0xD1C818 Offset: 0xD1C818 VA: 0xD1C818
@@ -338,8 +478,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xD1C96C Offset: 0xD1C96C VA: 0xD1C96C
 		private void OnUpdateScrollItem(IFlexibleListItem obj)
 		{
-			TodoLogger.LogError(0, "OnUpdateScrollItem");
-			/*LobbyLayoutItemR l = obj.Layout.GetComponent<LobbyLayoutItemR>();
+			LobbyLayoutItemR l = obj.Layout.GetComponent<LobbyLayoutItemR>();
 			if(l != null)
 			{
 				l.DispMusicRateRank(m_window_type != EnWindowType.Lobby);
@@ -353,7 +492,7 @@ namespace XeApp.Game.Menu
 					{
 						l.SetPostItemAnimation(m.ChatType);
 						l.SetDivaIcon(m.DivaCosId, m.DivaCosColorId, m.EnmblemId, m.EnmblemCount, m_isIconChange);
-						l.SetChatPostInfo(m.Index, m.UserName, m.Messge, m.Time);
+						l.SetChatPostInfo(m.Index, m.UserName, ANPBHCNJIDI.NOJONDLAMOC.CCAPCGPIIPF_1_Chat, m.Messge, m.Time);
 						l.SetPickUpIconAnimation(m.IsPickUp);
 						l.SetPostButtonDisable(IsChatButtonGrayOut);
 						l.SetEnablePostButton(m_raidSelect == 1 && m.IsMember);
@@ -362,10 +501,95 @@ namespace XeApp.Game.Menu
 						l.OnClickChatButton = ReprintButtonAction;
 						l.SetPlayerId(m.PlayerId);
 						l.SetMusicRateRank(m.utarate_rank, m.utarate);
-
+						l.ResetStateThumButton();
+						l.OnClickPlayerIcon = OnClickPlayerIcon;
 					}
 				}
-			}*/
+				else if(obj is StampListItem)
+				{
+					StampListItem m = obj as StampListItem;
+					if(l != null)
+					{
+						l.SetPostItemAnimation(m.ChatType);
+						l.SetDivaIcon(m.DivaCosId, m.DivaCosColorId, m.EnmblemId, m.EnmblemCount, m_isIconChange);
+						l.SetStampPostInfo(m.Index, m.UserName, ANPBHCNJIDI.NOJONDLAMOC.DDPLFFAOAEB_2_Stamp, m.DivaStampId, m.MiniId, m.CommentId, m.Time);
+						l.SetPickUpIconAnimation(m.IsPickUp);
+						l.SetPostButtonDisable(IsChatButtonGrayOut);
+						l.SetEnablePostButton(m_raidSelect == 1 && m.IsMember);
+						l.SetMember(m.IsMember);
+						l.EnableEmblemCount();
+						l.OnClickChatButton = ReprintButtonAction;
+						l.SetPlayerId(m.PlayerId);
+						l.SetMusicRateRank(m.utarate_rank, m.utarate);
+						l.ResetStateThumButton();
+						l.OnClickPlayerIcon = OnClickPlayerIcon;
+					}
+				}
+				else if(obj is DefeatBossListItem)
+				{
+					DefeatBossListItem m = obj as DefeatBossListItem;
+					if(l != null)
+					{
+						l.SetPostItemAnimation(m.ChatType);
+						l.SetDivaIcon(m.DivaCosId, m.DivaCosColorId, m.EnmblemId, m.EnmblemCount, m_isIconChange);
+						l.SetDefeatBossInfo(m.Index, m.UserName, ANPBHCNJIDI.NOJONDLAMOC.CGEPNIOPFHF_3_DefeatBoss, m.Time, m.Messge);
+						l.SetPickUpIconAnimation(m.IsPickUp);
+						l.SetPostButtonDisable(IsChatButtonGrayOut);
+						l.SetEnablePostButton(m_raidSelect == 1 && m.IsMember);
+						l.SetMember(m.IsMember);
+						l.EnableEmblemCount();
+						l.OnClickChatButton = ReprintButtonAction;
+						l.SetPlayerId(m.PlayerId);
+						l.SetMusicRateRank(m.utarate_rank, m.utarate);
+						l.ResetStateThumButton();
+						l.OnClickPlayerIcon = OnClickPlayerIcon;
+					}
+				}
+				else if(obj is MacrossCannonListItem)
+				{
+					MacrossCannonListItem m = obj as MacrossCannonListItem;
+					if(l != null)
+					{
+						l.SetPostItemAnimation(m.ChatType);
+						l.SetDivaIcon(m.DivaCosId, m.DivaCosColorId, m.EnmblemId, m.EnmblemCount, m_isIconChange);
+						l.SetMacrossCannonPostInfo(m.Index, m.UserName, ANPBHCNJIDI.NOJONDLAMOC.JDGLJOFPHLK_4_MaccrossCannon, m.Time, m.Messge);
+						l.SetPickUpIconAnimation(m.IsPickUp);
+						l.SetPostButtonDisable(IsChatButtonGrayOut);
+						l.SetEnablePostButton(m_raidSelect == 1 && m.IsMember);
+						l.SetMember(m.IsMember);
+						l.EnableEmblemCount();
+						l.SetMovieThumUV(m.BossSeries);
+						l.SetMovieBossInfo(m.BossName, m.Damage, m.BossRank, m.BossImageNum, m.BossSeries, m.LogId, m.WavId);
+						l.OnClickChatButton = ReprintButtonAction;
+						l.SetPlayerId(m.PlayerId);
+						l.SetMusicRateRank(m.utarate_rank, m.utarate);
+						l.ResetStateThumButton();
+						l.OnClickPlayerIcon = OnClickPlayerIcon;
+						l.OnClickMovieIcon = OnClickMovieIcon;
+					}
+				}
+				else if(obj is FullComboListItem)
+				{
+					FullComboListItem m = obj as FullComboListItem;
+					if(l != null)
+					{
+						l.SetPostItemAnimation(m.ChatType);
+						l.SetDivaIcon(m.DivaCosId, m.DivaCosColorId, m.EnmblemId, m.EnmblemCount, m_isIconChange);
+						l.SetFullComboPostInfo(m.Index, m.UserName, ANPBHCNJIDI.NOJONDLAMOC.JPOGBMJKPIJ_5_FullCombo, m.Time, m.Messge);
+						l.SetPickUpIconAnimation(m.IsPickUp);
+						l.SetPostButtonDisable(IsChatButtonGrayOut);
+						l.SetEnablePostButton(m_raidSelect == 1 && m.IsMember);
+						l.SetMember(m.IsMember);
+						l.EnableEmblemCount();
+						l.OnClickChatButton = ReprintButtonAction;
+						l.SetPlayerId(m.PlayerId);
+						l.SetMusicRateRank(m.utarate_rank, m.utarate);
+						l.ResetStateThumButton();
+						l.OnClickPlayerIcon = OnClickPlayerIcon;
+					}
+				}
+			}
+			l.UpdateAbsLayout();
 		}
 
 		//// RVA: 0xD0E280 Offset: 0xD0E280 VA: 0xD0E280
@@ -424,7 +648,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xD1DE50 Offset: 0xD1DE50 VA: 0xD1DE50
-		//public void NextCommentAddScrollLsit(int index) { }
+		public void NextCommentAddScrollLsit(int index)
+		{
+			m_fxScrollView.SetupListItem(m_list);
+			m_fxScrollView.SetlistTop(index);
+		}
 
 		//// RVA: 0xD1DEA0 Offset: 0xD1DEA0 VA: 0xD1DEA0
 		public void UpdateDisplayOnly()

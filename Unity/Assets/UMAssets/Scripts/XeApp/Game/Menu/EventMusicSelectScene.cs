@@ -21,84 +21,84 @@ namespace XeApp.Game.Menu
 		// RVA: 0x13B12C8 Offset: 0x13B12C8 VA: 0x13B12C8 Slot: 16
 		protected override void OnPreSetCanvas()
 		{
-			TodoLogger.LogError(0, "EventMusicSelectScene OnPreSetCanvas");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventMusicSelectScene OnPreSetCanvas");
 		}
 
 		// RVA: 0x13B1378 Offset: 0x13B1378 VA: 0x13B1378 Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			TodoLogger.LogError(0, "EventMusicSelectScene IsEndPreSetCanvas");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventMusicSelectScene IsEndPreSetCanvas");
 			return true;
 		}
 
 		// RVA: 0x13B14B8 Offset: 0x13B14B8 VA: 0x13B14B8 Slot: 9
 		protected override void OnStartEnterAnimation()
 		{
-			TodoLogger.LogError(0, "EventMusicSelectScene OnStartEnterAnimation");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventMusicSelectScene OnStartEnterAnimation");
 		}
 
 		// RVA: 0x13B16B4 Offset: 0x13B16B4 VA: 0x13B16B4 Slot: 10
 		protected override bool IsEndEnterAnimation()
 		{
-			TodoLogger.LogError(0, "EventMusicSelectScene IsEndEnterAnimation");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventMusicSelectScene IsEndEnterAnimation");
 			return true;
 		}
 
 		// RVA: 0x13B1808 Offset: 0x13B1808 VA: 0x13B1808 Slot: 12
 		protected override void OnStartExitAnimation()
 		{
-			TodoLogger.LogError(0, "EventMusicSelectScene OnStartExitAnimation");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventMusicSelectScene OnStartExitAnimation");
 		}
 
 		// RVA: 0x13B193C Offset: 0x13B193C VA: 0x13B193C Slot: 13
 		protected override bool IsEndExitAnimation()
 		{
-			TodoLogger.LogError(0, "EventMusicSelectScene IsEndExitAnimation");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventMusicSelectScene IsEndExitAnimation");
 			return true;
 		}
 
 		// RVA: 0x13B1A90 Offset: 0x13B1A90 VA: 0x13B1A90 Slot: 35
 		protected override void CheckTryInstall()
 		{
-			TodoLogger.LogError(0, "EventMusicSelectScene CheckTryInstall");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventMusicSelectScene CheckTryInstall");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EEDAC Offset: 0x6EEDAC VA: 0x6EEDAC
 		// // RVA: 0x13B1B80 Offset: 0x13B1B80 VA: 0x13B1B80 Slot: 36
 		protected override IEnumerator Co_Initialize()
 		{
-			TodoLogger.LogError(0, "EventMusicSelectScene Co_Initialize");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventMusicSelectScene Co_Initialize");
 			yield break;
 		}
 
 		// RVA: 0x13B1C2C Offset: 0x13B1C2C VA: 0x13B1C2C Slot: 39
 		protected override void Release()
 		{
-			TodoLogger.LogError(0, "EventMusicSelectScene Release");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventMusicSelectScene Release");
 		}
 
 		// RVA: 0x13B1C7C Offset: 0x13B1C7C VA: 0x13B1C7C Slot: 40
 		protected override void SetupViewMusicData()
 		{
-			TodoLogger.LogError(0, "EventMusicSelectScene SetupViewMusicData");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventMusicSelectScene SetupViewMusicData");
 		}
 
 		// RVA: 0x13B1EBC Offset: 0x13B1EBC VA: 0x13B1EBC Slot: 41
 		protected override void ApplyBasicInfo()
 		{
-			TodoLogger.LogError(0, "MusicSelectScene* ApplyBasicInfo");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "MusicSelectScene* ApplyBasicInfo");
 		}
 
 		// RVA: 0x13B1EC4 Offset: 0x13B1EC4 VA: 0x13B1EC4 Slot: 42
 		protected override void ApplyMusicListInfo()
 		{
-			TodoLogger.LogError(0, "MusicSelectScene* ApplyMusicListInfo");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "MusicSelectScene* ApplyMusicListInfo");
 		}
 
 		// RVA: 0x13B1F2C Offset: 0x13B1F2C VA: 0x13B1F2C Slot: 44
 		protected override void DelayedApplyMusicInfo()
 		{
-			TodoLogger.LogError(0, "EventMusicSelectScene DelayedApplyMusicInfo");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventMusicSelectScene DelayedApplyMusicInfo");
 		}
 
 		// RVA: 0x13B20C0 Offset: 0x13B20C0 VA: 0x13B20C0 Slot: 45
@@ -147,7 +147,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x13B3878 Offset: 0x13B3878 VA: 0x13B3878 Slot: 55
 		protected override IEnumerator Co_LoadLayout()
 		{
-			TodoLogger.LogError(0, "EventMusicSelectScene Co_LoadLayout");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventMusicSelectScene Co_LoadLayout");
 			yield break;
 		}
 
@@ -155,7 +155,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x13B3924 Offset: 0x13B3924 VA: 0x13B3924 Slot: 56
 		protected override IEnumerator Co_WaitForLoaded()
 		{
-			TodoLogger.LogError(0, "EventMusicSelectScene Co_WaitForLoaded");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventMusicSelectScene Co_WaitForLoaded");
 			yield break;
 		}
 
@@ -167,7 +167,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x13B3A98 Offset: 0x13B3A98 VA: 0x13B3A98 Slot: 37
 		protected override IEnumerator Co_OnActivateScene()
 		{
-			TodoLogger.LogError(0, "EventMusicSelectScene Co_OnActivateScene");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventMusicSelectScene Co_OnActivateScene");
 			yield break;
 		}
 

@@ -689,12 +689,19 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xC04548 Offset: 0xC04548 VA: 0xC04548
 		private void GameStartErrorToTitleAction()
 		{
-			TodoLogger.LogError(0, "GameStartErrorToTitleAction");
+			GameManager.FadeOut(0.4f);
+			this.StartCoroutineWatched(Co_FadeOutAndExit());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x745D94 Offset: 0x745D94 VA: 0x745D94
 		//// RVA: 0xC045E8 Offset: 0xC045E8 VA: 0xC045E8
-		//private IEnumerator Co_FadeOutAndExit() { }
+		private IEnumerator Co_FadeOutAndExit()
+		{
+			//0xC08078
+			while(GameManager.IsFading())
+				yield return null;
+			GotoTitleSceneInError();
+		}
 
 		//// RVA: 0xC04694 Offset: 0xC04694 VA: 0xC04694
 		//private void TutorialClearEndRhythmGame() { }
@@ -844,7 +851,10 @@ namespace XeApp.Game.RhythmGame
 		//// RVA: 0xC04158 Offset: 0xC04158 VA: 0xC04158
 		private void GotoTitleSceneInError()
 		{
-			TodoLogger.LogError(0, "GotoTitleSceneInError");
+			GameManager.Instance.SetTouchEffectVisible(false);
+			GameManager.Instance.SetTouchEffectMode(false);
+			Database.Instance.gameResult.Reset();
+			scene.GotoTitleScene();
 		}
 
 		//// RVA: 0xC06190 Offset: 0xC06190 VA: 0xC06190

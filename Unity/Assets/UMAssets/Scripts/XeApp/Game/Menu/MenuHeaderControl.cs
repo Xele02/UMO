@@ -523,7 +523,7 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			if(!MenuScene.CheckDatelineAndAssetUpdate())
 			{
-				if(CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCBENCMNOGO_GainStamina <= CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC())
+				if(CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCBENCMNOGO_MaxStamina <= CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC_GetCurrent())
 				{
 					PopupWindowManager.OpenStaminaMaxWindow(null);
 				}
@@ -572,6 +572,7 @@ namespace XeApp.Game.Menu
 					{
 						//0xB2B0D8
 						MenuScene.Instance.InputEnable();
+						UnityEngine.Debug.LogError("Buy ok Event");
 						m_onChargeMoneyEvent.Invoke();
 					}, () =>
 					{

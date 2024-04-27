@@ -222,7 +222,7 @@ namespace XeApp.Game.Menu
 				c = 6;
 			for(int i = 0; i < m_itemIconList.Count; i++)
 			{
-				m_scrollSupport.AddView(m_itemIconList[i].gameObject, c + (i % a) * 120, (i / a) * 140 * 23);
+				m_scrollSupport.AddView(m_itemIconList[i].gameObject, c + (i % a) * 120, (i / a) * 140 + 23);
 			}
 			m_scrollSupport.EndAddView(new Vector2(120 * a, ((needCount - 1) / a) * 140 + 163));
 		}

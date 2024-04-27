@@ -64,10 +64,13 @@ namespace XeApp.Game.Menu
 		private LayoutSymbolData m_symbolLabelBg; // 0x38
 
 		//// RVA: 0x1B4A394 Offset: 0x1B4A394 VA: 0x1B4A394
-		public void SetLabel(CommonMenuStackLabel.LabelType type)
+		public void SetLabel(LabelType type)
 		{
-			m_labelImage.uvRect = m_labelUvRects[(int)type];
-			m_labelImageRect.sizeDelta = m_labelImageSizes[(int)type];
+			if(type != LabelType._Undefined)
+			{
+				m_labelImage.uvRect = m_labelUvRects[(int)type];
+				m_labelImageRect.sizeDelta = m_labelImageSizes[(int)type];
+			}
 		}
 
 		//// RVA: 0x1B4A4B4 Offset: 0x1B4A4B4 VA: 0x1B4A4B4

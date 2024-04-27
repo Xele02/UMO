@@ -331,9 +331,13 @@ namespace XeApp.Game.RhythmGame
 			if (Database.Instance.gameSetup.musicInfo.isFreeMode)
 			{
 				v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId).KDIKCKEEPDA_GetNormalRateId(Database.Instance.gameSetup.musicInfo.IsLine6Mode);
-				if (JEPBIIJDGEF_EventInfo.HHCJCDFCLOB != null && JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI, false) != null)
+				if (JEPBIIJDGEF_EventInfo.HHCJCDFCLOB != null)
 				{
-					TodoLogger.LogError(0, "GetDropItemSet event");
+                    IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI_6, false);
+                    if (ev != null)
+					{
+						v = ev.NCHKBINKKBH_UpdateDropRateSet(v, Database.Instance.gameSetup.musicInfo.gameEventType);
+					} 
 				}
 				v += (int)Database.Instance.gameSetup.musicInfo.difficultyType;
 			}
@@ -351,9 +355,13 @@ namespace XeApp.Game.RhythmGame
 			if(Database.Instance.gameSetup.musicInfo.isFreeMode)
 			{
 				v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId).MGLDIOILOFF_NormalSetId;
-				if (JEPBIIJDGEF_EventInfo.HHCJCDFCLOB != null && JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI, false) != null)
+				if (JEPBIIJDGEF_EventInfo.HHCJCDFCLOB != null)
 				{
-					TodoLogger.LogError(0, "GetDropItemSet event");
+                    IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI_6, false);
+                    if (ev != null)
+					{
+						v = ev.JDFHIHPPAHN_UpdateDropItemSet(v, Database.Instance.gameSetup.musicInfo.gameEventType);
+					}
 				}
 			}
 			else

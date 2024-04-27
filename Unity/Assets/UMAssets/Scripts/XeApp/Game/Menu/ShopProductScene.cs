@@ -79,7 +79,7 @@ namespace XeApp.Game.Menu
 			myArgs = Args as ShopProductArgs;
 			Select = 0;
 			m_listProduct.List.RemoveScrollObject();
-			if(myArgs.view.INDDJNMPONH >= AODFBGCCBPE.NJMPLEENNPO.MGEGNNJLJII_7)
+			if(myArgs.view.INDDJNMPONH_Type >= AODFBGCCBPE.NJMPLEENNPO.MGEGNNJLJII_7_EpisodePlate1_4)
 			{
 				for(int i = 0; i < m_listContent[0].Count; i++)
 				{
@@ -105,12 +105,12 @@ namespace XeApp.Game.Menu
 			m_listProduct.List.SetContentEscapeMode(true);
 			m_listProduct.Hide();
 			int num = 0;
-			if(myArgs.view.INDDJNMPONH <= AODFBGCCBPE.NJMPLEENNPO.ACFEDNPIJKM_8)
+			if(myArgs.view.INDDJNMPONH_Type <= AODFBGCCBPE.NJMPLEENNPO.ACFEDNPIJKM_8_EpisodePlate5_6)
 			{
 				num = 1;
-				if(((1 << (int)myArgs.view.INDDJNMPONH) & 0x1deU) == 0)
+				if(((1 << (int)myArgs.view.INDDJNMPONH_Type) & 0x1deU) == 0)
 				{
-					if(myArgs.view.INDDJNMPONH != AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5)
+					if(myArgs.view.INDDJNMPONH_Type != AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5)
 						Debug.Log("shop data shoptype erorr...");
 					else
 					{
@@ -128,11 +128,11 @@ namespace XeApp.Game.Menu
 				m_productData[i] = new List<FJGOKILCBJA>();
 			}
 			m_productDatas = new List<FJGOKILCBJA>(myArgs.view.MHKCPJDNJKI);
-			if(myArgs.view.INDDJNMPONH <= AODFBGCCBPE.NJMPLEENNPO.ACFEDNPIJKM_8)
+			if(myArgs.view.INDDJNMPONH_Type <= AODFBGCCBPE.NJMPLEENNPO.ACFEDNPIJKM_8_EpisodePlate5_6)
 			{
-				if(((1 << (int)myArgs.view.INDDJNMPONH) & 0x1deU) == 0)
+				if(((1 << (int)myArgs.view.INDDJNMPONH_Type) & 0x1deU) == 0)
 				{
-					if(myArgs.view.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5)
+					if(myArgs.view.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5)
 					{
 						for(int i = 0; i < m_productDatas.Count; i++)
 						{
@@ -145,7 +145,7 @@ namespace XeApp.Game.Menu
 					m_productData[0] = m_productDatas;
 				}
 			}
-			if(myArgs.view.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5)
+			if(myArgs.view.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5)
 			{
 				for(int i = 0; i < m_productData.Length; i++)
 				{
@@ -257,7 +257,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xC41A54 Offset: 0xC41A54 VA: 0xC41A54 Slot: 9
 		protected override void OnStartEnterAnimation()
 		{
-			if(myArgs.view.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5)
+			if(myArgs.view.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5)
 			{
 				MenuScene.Instance.FooterLeave();
 				m_listDecoProduct.Enter();
@@ -271,7 +271,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xC41B50 Offset: 0xC41B50 VA: 0xC41B50 Slot: 10
 		protected override bool IsEndEnterAnimation()
 		{
-			if(myArgs.view.INDDJNMPONH != AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5)
+			if(myArgs.view.INDDJNMPONH_Type != AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5)
 				return !m_listProduct.IsPlaying();
 			return !m_listDecoProduct.IsPlaying();
 		}
@@ -279,7 +279,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xC41BE0 Offset: 0xC41BE0 VA: 0xC41BE0 Slot: 12
 		protected override void OnStartExitAnimation()
 		{
-			if(myArgs.view.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5)
+			if(myArgs.view.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5)
 			{
 				m_listDecoProduct.Leave();
 			}
@@ -292,7 +292,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xC41C44 Offset: 0xC41C44 VA: 0xC41C44 Slot: 13
 		protected override bool IsEndExitAnimation()
 		{
-			if(myArgs.view.INDDJNMPONH != AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5)
+			if(myArgs.view.INDDJNMPONH_Type != AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5)
 				return !m_listProduct.IsPlaying();
 			return !m_listDecoProduct.IsPlaying() && m_listDecoProduct.IsLoadedProductImage();
 		}
@@ -306,7 +306,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xC4111C Offset: 0xC4111C VA: 0xC4111C
 		private void Initialize()
 		{
-			if(myArgs.view.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5)
+			if(myArgs.view.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5)
 			{
 				int deco_tab_num = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IFLGCDGOLOP_Shop.LPJLEHAJADA("deco_tab_num", 4);
 				m_listDecoProduct.SetTabNum(deco_tab_num == 4);
@@ -334,13 +334,13 @@ namespace XeApp.Game.Menu
 			else 
 			{
 				int sortType = 0;
-				if(myArgs.view.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.MGEGNNJLJII_7)
+				if(myArgs.view.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.MGEGNNJLJII_7_EpisodePlate1_4)
 				{
 					m_rarityMin = 1;
 					m_rarityMax = 4;
 					sortType = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CCJMAIPBELA_ShopProduct1_4.LHPDCGNKPHD_SortItem;
 				}
-				else if(myArgs.view.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.ACFEDNPIJKM_8)
+				else if(myArgs.view.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.ACFEDNPIJKM_8_EpisodePlate5_6)
 				{
 					m_rarityMin = 5;
 					m_rarityMax = 6;
@@ -352,8 +352,8 @@ namespace XeApp.Game.Menu
 					m_rarityMax = -1;
 					sortType = -1;
 				}
-				if(myArgs.view.INDDJNMPONH != AODFBGCCBPE.NJMPLEENNPO.MGEGNNJLJII_7 && 
-					myArgs.view.INDDJNMPONH != AODFBGCCBPE.NJMPLEENNPO.ACFEDNPIJKM_8)
+				if(myArgs.view.INDDJNMPONH_Type != AODFBGCCBPE.NJMPLEENNPO.MGEGNNJLJII_7_EpisodePlate1_4 && 
+					myArgs.view.INDDJNMPONH_Type != AODFBGCCBPE.NJMPLEENNPO.ACFEDNPIJKM_8_EpisodePlate5_6)
 				{
 					m_listProduct.SetStatus(myArgs.view, myArgs.view.MHKCPJDNJKI);
 					m_listProduct.SetSortButtonEnable(false);
@@ -438,6 +438,7 @@ namespace XeApp.Game.Menu
 				if(isCancel)
 					yield break;
 			}
+			//UnityEngine.Debug.LogError(view.OPKDAIMPJBH_ShopId+" "+view.AFKAGFOFAHM_ProductId+" "+view.GJGNOFAPFJD+" "+view.KIJAPOFAGPN_ItemFullId+" "+view.KAPMOPMDHJE);
 			//LAB_00c48f00
 			this.StartCoroutineWatched(Co_OnBuyItem(value, view));
 		}
@@ -477,12 +478,12 @@ namespace XeApp.Game.Menu
 				MenuScene.Instance.InputEnable();
 				yield break;
 			}
-			if(myArgs.view.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5)
+			if(myArgs.view.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5)
 			{
 				m_listDecoProduct.SetStatus(myArgs.view, false);
 			}
-			else if(myArgs.view.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.MGEGNNJLJII_7
-				|| myArgs.view.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.ACFEDNPIJKM_8)
+			else if(myArgs.view.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.MGEGNNJLJII_7_EpisodePlate1_4
+				|| myArgs.view.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.ACFEDNPIJKM_8_EpisodePlate5_6)
 			{
 				//LAB_00c47f18
 				m_listProduct.SetStatus(myArgs.view, m_productSortList, false);
@@ -528,7 +529,7 @@ namespace XeApp.Game.Menu
 					return !done;
 				});
 			}
-			if(myArgs.view.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5)
+			if(myArgs.view.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5)
 			{
 				m_listDecoProduct.KyrrAnimation();
 			}
@@ -546,7 +547,7 @@ namespace XeApp.Game.Menu
 				EKLNMHFCAOI.INCKKODFJAP_GetItemName(view.OCGCPJHDJEN),
 				date.Year, date.Month, date.Day, date.Hour, date.Minute
 			};
-			string str = string.Format(bk.GetMessageByLabel(view.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.AOMIBCNBBOD_1 ? "item_popup_shop_text_07" : "item_popup_shop_text_06"), obj);
+			string str = string.Format(bk.GetMessageByLabel(view.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.AOMIBCNBBOD_1_Vc ? "item_popup_shop_text_07" : "item_popup_shop_text_06"), obj);
 			TextPopupSetting s = PopupWindowManager.CrateTextContent("", SizeType.Small, str, new ButtonInfo[1]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
@@ -855,11 +856,11 @@ namespace XeApp.Game.Menu
 				//0xC454C4
 				CreateFilterList(myArgs.view.MHKCPJDNJKI);
 				ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.POCEANNLGLP_ShopProduct sp = null;
-				if(myArgs.view.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.MGEGNNJLJII_7)
+				if(myArgs.view.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.MGEGNNJLJII_7_EpisodePlate1_4)
 				{
 					sp = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CCJMAIPBELA_ShopProduct1_4;
 				}
-				else if(myArgs.view.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.ACFEDNPIJKM_8)
+				else if(myArgs.view.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.ACFEDNPIJKM_8_EpisodePlate5_6)
 				{
 					sp = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.HDKDFCCJEEP_ShopProduct5_6;
 				}
@@ -883,11 +884,11 @@ namespace XeApp.Game.Menu
 			m_order = order;
 			m_productSortList.Sort(SortCallback);
             ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.POCEANNLGLP_ShopProduct sp = null;
-			if(myArgs.view.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.MGEGNNJLJII_7)
+			if(myArgs.view.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.MGEGNNJLJII_7_EpisodePlate1_4)
 			{
 				sp = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CCJMAIPBELA_ShopProduct1_4;
 			}
-			else if(myArgs.view.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.ACFEDNPIJKM_8)
+			else if(myArgs.view.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.ACFEDNPIJKM_8_EpisodePlate5_6)
 			{
 				sp = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.HDKDFCCJEEP_ShopProduct5_6;
 			}
@@ -900,11 +901,11 @@ namespace XeApp.Game.Menu
 			m_sortType = sortType;
 			m_productSortList.Sort(SortCallback);
             ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.POCEANNLGLP_ShopProduct sp = null;
-			if(myArgs.view.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.MGEGNNJLJII_7)
+			if(myArgs.view.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.MGEGNNJLJII_7_EpisodePlate1_4)
 			{
 				sp = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CCJMAIPBELA_ShopProduct1_4;
 			}
-			else if(myArgs.view.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.ACFEDNPIJKM_8)
+			else if(myArgs.view.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.ACFEDNPIJKM_8_EpisodePlate5_6)
 			{
 				sp = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.HDKDFCCJEEP_ShopProduct5_6;
 			}
@@ -915,11 +916,11 @@ namespace XeApp.Game.Menu
 		private void CreateFilterList(List<FJGOKILCBJA> products)
 		{
             ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.POCEANNLGLP_ShopProduct sp = null;
-			if(myArgs.view.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.MGEGNNJLJII_7)
+			if(myArgs.view.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.MGEGNNJLJII_7_EpisodePlate1_4)
 			{
 				sp = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CCJMAIPBELA_ShopProduct1_4;
 			}
-			else if(myArgs.view.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.ACFEDNPIJKM_8)
+			else if(myArgs.view.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.ACFEDNPIJKM_8_EpisodePlate5_6)
 			{
 				sp = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.HDKDFCCJEEP_ShopProduct5_6;
 			}

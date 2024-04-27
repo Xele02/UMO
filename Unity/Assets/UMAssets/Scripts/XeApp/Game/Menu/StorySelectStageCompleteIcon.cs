@@ -2,6 +2,7 @@ using XeSys.Gfx;
 using XeApp.Game.Common;
 using UnityEngine;
 using System;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -25,14 +26,17 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12E8388 Offset: 0x12E8388 VA: 0x12E8388
-		//public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_stageIcon != null && m_stageIcon.IsPlayingChildren();
+		}
 
 		//// RVA: 0x12E83A0 Offset: 0x12E83A0 VA: 0x12E83A0
 		public void SetStatus(bool isComplete)
 		{
 			gameObject.SetActive(true);
 			SetButtonEnable(false);
-			if (!viewStageData.NDLKPJDHHCN)
+			if (!viewStageData.NDLKPJDHHCN_NotShown)
 				SetButtonEnable(true);
 			SetWaitAnim(viewStageData, isComplete);
 		}
@@ -68,7 +72,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12E87B0 Offset: 0x12E87B0 VA: 0x12E87B0
-		//public void In(StorySelectStageCreater.EffectType effectType) { }
+		public void In(StorySelectStageCreater.EffectType effectType)
+		{
+			PlayAnimInner(effectType, viewStageData);
+		}
 
 		//// RVA: 0x12E888C Offset: 0x12E888C VA: 0x12E888C
 		//public void Out() { }
@@ -99,7 +106,15 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12E87B8 Offset: 0x12E87B8 VA: 0x12E87B8
-		//private void PlayAnimInner(StorySelectStageCreater.EffectType effectType, LIEJFHMGNIA viewData) { }
+		private void PlayAnimInner(StorySelectStageCreater.EffectType effectType, LIEJFHMGNIA viewData)
+		{
+			if(effectType != StorySelectStageCreater.EffectType.APPEAR)
+				return;
+			if(m_stageIcon == null || viewData == null)
+				return;
+			m_stageIcon.StartChildrenAnimGoStop("st_wait");
+			SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_STORY_000);
+		}
 
 		//// RVA: 0x12E8318 Offset: 0x12E8318 VA: 0x12E8318
 		public void NoneIcon()

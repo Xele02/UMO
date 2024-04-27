@@ -9,18 +9,18 @@ public class MEBJLFMDGEH_ReceiveVirtualCurrencyFromInventory : CACGCMBKHDI_Reque
 {
 	public class NPBEINILKFE
 	{
-		public List<MCKCJMLOAFP_CurrencyInfo> BBEPLKNMICJ; // 0x8
+		public List<MCKCJMLOAFP_CurrencyInfo> BBEPLKNMICJ_Balances; // 0x8
 
 		// RVA: 0x1310B4C Offset: 0x1310B4C VA: 0x1310B4C
 		public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
 		{
 			EDOHBJAPLPF_JsonData b = IDLHJIOMJBK[AFEHLCGHAEE_Strings.BBEPLKNMICJ_balances];
-			BBEPLKNMICJ = new List<MCKCJMLOAFP_CurrencyInfo>(b.HNBFOAJIIAL_Count);
-			for(int i = 0; i < BBEPLKNMICJ.Count; i++)
+			BBEPLKNMICJ_Balances = new List<MCKCJMLOAFP_CurrencyInfo>(b.HNBFOAJIIAL_Count);
+			for(int i = 0; i < b.HNBFOAJIIAL_Count; i++)
 			{
 				MCKCJMLOAFP_CurrencyInfo data = new MCKCJMLOAFP_CurrencyInfo();
 				data.DPKCOKLMFMK(b[i]);
-				BBEPLKNMICJ.Add(data);
+				BBEPLKNMICJ_Balances.Add(data);
 			}
 		}
 	}

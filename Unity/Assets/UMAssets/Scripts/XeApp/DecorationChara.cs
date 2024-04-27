@@ -592,7 +592,7 @@ namespace XeApp
 				{
 					if(!decorationCanvas.ItemManager.ReactingPlushToys)
 					{
-						if(!charaControl.OnBeginIntimacyCheck())
+						if(charaControl.OnBeginIntimacyCheck())
 						{
 							decorationCanvas.m_intimacyController.TouchDecoCharactor(viewIntimacyData, this, touchPosition, () =>
 							{

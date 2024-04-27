@@ -3,11 +3,11 @@ public class FENCAJJBLBH
 {
     public enum EIAPDOGALDK
     {
-        HJNNKCMLGFL = 0,
+        HJNNKCMLGFL_0 = 0,
         CPMDJEDFJLA = 1,
         IAOMGLELLBC = 2,
         AIEOCNLGLEE = 3,
-        PNLBHBFOECC = 4
+        PNLBHBFOECC_4 = 4
     }
 	
 	public FENCAJJBLBH.EIAPDOGALDK KGICDMIJGDF; // 0x8

@@ -14,7 +14,12 @@ public class SakashoPlayerBlacklist : SakashoAPIBase
 	}
 
 	//// RVA: 0x2E5922C Offset: 0x2E5922C VA: 0x2E5922C
-	//public static SakashoAPICallContext IsBlacklisted(int playerId, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext IsBlacklisted(int playerId, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		h["playerId"] = playerId;
+		return new SakashoAPICallContext(Call(SakashoPlayerBlacklistIsBlacklisted, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	//// RVA: 0x2E593BC Offset: 0x2E593BC VA: 0x2E593BC
 	public static SakashoAPICallContext IsOnBlacklistOf(int playerId, OnSuccess onSuccess, OnError onError)
@@ -25,7 +30,21 @@ public class SakashoPlayerBlacklist : SakashoAPIBase
 	}
 
 	//// RVA: 0x2E5954C Offset: 0x2E5954C VA: 0x2E5954C
-	//public static SakashoAPICallContext AddToBlacklist(int[] playerIds, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext AddToBlacklist(int[] playerIds, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		ArrayList l = new ArrayList();
+		if(playerIds != null)
+		{
+			l = new ArrayList();
+			for(int i = 0; i < playerIds.Length; i++)
+			{
+				l.Add(playerIds[i]);
+			}
+		}
+		h["playerIds"] = l;
+		return new SakashoAPICallContext(Call(SakashoPlayerBlacklistAddToBlacklist, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	//// RVA: 0x2E59788 Offset: 0x2E59788 VA: 0x2E59788
 	public static SakashoAPICallContext RemoveFromBlacklist(int[] playerIds, OnSuccess onSuccess, OnError onError)
@@ -51,7 +70,10 @@ public class SakashoPlayerBlacklist : SakashoAPIBase
 	}
 
 	//// RVA: 0x2E59AD8 Offset: 0x2E59AD8 VA: 0x2E59AD8
-	//private static extern int SakashoPlayerBlacklistIsBlacklisted(int callbackId, string json) { }
+	private static int SakashoPlayerBlacklistIsBlacklisted(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoPlayerBlacklistIsBlacklisted(callbackId, json);
+	}
 
 	//// RVA: 0x2E59BE8 Offset: 0x2E59BE8 VA: 0x2E59BE8
 	private static int SakashoPlayerBlacklistIsOnBlacklistOf(int callbackId, string json)
@@ -60,7 +82,10 @@ public class SakashoPlayerBlacklist : SakashoAPIBase
 	}
 
 	//// RVA: 0x2E59D00 Offset: 0x2E59D00 VA: 0x2E59D00
-	//private static extern int SakashoPlayerBlacklistAddToBlacklist(int callbackId, string json) { }
+	private static int SakashoPlayerBlacklistAddToBlacklist(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoPlayerBlacklistAddToBlacklist(callbackId, json);
+	}
 
 	//// RVA: 0x2E59E18 Offset: 0x2E59E18 VA: 0x2E59E18
 	private static int SakashoPlayerBlacklistRemoveFromBlacklist(int callbackId, string json)

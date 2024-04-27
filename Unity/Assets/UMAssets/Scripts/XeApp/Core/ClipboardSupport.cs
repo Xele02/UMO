@@ -14,7 +14,7 @@ namespace XeApp.Core
 		private static void CopyTextInternal(string text)
 		{
 #if UNITY_ANDROID
-			TodoLogger.LogError(0, "CopyText");
+			TodoLogger.LogError(TodoLogger.Android, "CopyText");
 #else
 			GUIUtility.systemCopyBuffer = text;
 #endif

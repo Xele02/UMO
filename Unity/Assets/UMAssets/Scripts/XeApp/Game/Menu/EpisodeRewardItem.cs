@@ -37,7 +37,7 @@ namespace XeApp.Game.Menu
 			m_item_num.text = data.GOOIIPFHOIG.MBJIFDBEDAC_Cnt.ToString() + EKLNMHFCAOI.NDBLEADIDLA(data.GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory, data.GOOIIPFHOIG.NNFNGLJOKKF_ItemId);
 			if(is_roop_reward)
 			{
-				m_work_sb.SetFormat(bk.GetMessageByLabel("episode_reward_text002"), data.DNBFMLBNAEE_TotalPoint - data.CCDPNBJMKDI_Idx, RichTextUtility.MakeSizeTagString(bk.GetMessageByLabel("episode_reward_text003"), 22));
+				m_work_sb.SetFormat(bk.GetMessageByLabel("episode_reward_text002"), data.DNBFMLBNAEE_TotalPoint - data.CCDPNBJMKDI_StartPoint, RichTextUtility.MakeSizeTagString(bk.GetMessageByLabel("episode_reward_text003"), 22));
 				m_item_achieve.text = m_work_sb.ToString();
 			}
 			else

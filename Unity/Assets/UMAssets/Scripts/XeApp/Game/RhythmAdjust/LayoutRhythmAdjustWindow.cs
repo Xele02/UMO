@@ -209,10 +209,20 @@ namespace XeApp.Game.RhythmAdjust
 		}
 
 		// // RVA: 0xF5B0FC Offset: 0xF5B0FC VA: 0xF5B0FC
-		// public void CloseWindow() { }
+		public void CloseWindow()
+		{
+			if(m_isWindowOpen)
+			{
+				m_windowAnime.StartChildrenAnimGoStop("go_out", "st_out");
+			}
+			m_isWindowOpen = false;
+		}
 
 		// // RVA: 0xF5B0A8 Offset: 0xF5B0A8 VA: 0xF5B0A8
-		// public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_windowAnime.IsPlayingChildren();
+		}
 
 		// // RVA: 0xF5E248 Offset: 0xF5E248 VA: 0xF5E248
 		public void Update()

@@ -59,7 +59,7 @@ public class ToJShadow : BaseMeshEffect
 			{
 				if(txt.material.shader == Shader.Find("Text Effects/Fancy Text"))
 				{
-					TodoLogger.LogError(0, "ModifyMesh");
+					TodoLogger.LogError(TodoLogger.Shader, "ModifyMesh");
 				}
 			}
 			vh.Clear();

@@ -25,7 +25,7 @@ public class AIBFEFOFMFK_LineLinkage : AILHMHMOKKA_BaseLinkage
 		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
 		{
 			//0xCCB418
-			TodoLogger.LogError(0, "MOBEEPPKFLG_OnFail");
+			TodoLogger.LogError(TodoLogger.RequestFail, "MOBEEPPKFLG_OnFail");
 		};
 	}
 

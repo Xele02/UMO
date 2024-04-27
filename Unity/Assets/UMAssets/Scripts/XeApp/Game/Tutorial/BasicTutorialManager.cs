@@ -11,9 +11,18 @@ using XeApp.Core;
 using XeApp.Game.Menu;
 using UnityEngine.SceneManagement;
 using XeSys.Gfx;
+using XeApp.Game.Gacha;
+using UnityEngine.UI;
 
 namespace XeApp.Game.Tutorial
 {
+	public enum CursorPosition
+	{
+		None = -1,
+		RhythmAdjust = 0,
+		ActiveSkill = 1,
+		MissionMenuButton = 2,
+	}
 	public enum BasicTutorialMessageId
 	{
 		Id_BeginAdjust = 1,
@@ -86,7 +95,10 @@ namespace XeApp.Game.Tutorial
 		}; // 0x28
 
 		// // RVA: 0xE3D1B0 Offset: 0xE3D1B0 VA: 0xE3D1B0
-		// public bool IsLoadedLayout() { }
+		public bool IsLoadedLayout()
+		{
+			return m_messageWindow != null;
+		}
 
 		// // RVA: 0xE3D23C Offset: 0xE3D23C VA: 0xE3D23C
 		public static void Initialize()
@@ -111,7 +123,7 @@ namespace XeApp.Game.Tutorial
 			//0xE43BCC
 			ILLPGHGGKLL_TutorialMiniAdv.AFBMNDPOALE t = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LINHIDCNAMG_TutorialMiniAdv.LBDOLHGDIEB((int)id);
 			if(t == null)
-				yield return null;
+				yield break;
 			for(int i = 0; i < t.KGJHFFNFPOK_CharacterId.Length; i++)
 			{
 				KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(DivaIconTextureCache.MakeTutorialIconPath(t.KGJHFFNFPOK_CharacterId[i]));
@@ -142,12 +154,19 @@ namespace XeApp.Game.Tutorial
 		}
 
 		// // RVA: 0xE3D7CC Offset: 0xE3D7CC VA: 0xE3D7CC
-		// public static void SetupFirstTutorialLog() { }
+		public static void SetupFirstTutorialLog()
+		{
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.KINJOEIAHFK_StartTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.OLDAGCNLJOI_Progress != 0)
+				return;
+			Log(OAGBCBBHMPF.OGBCFNIKAFI.FKPEAGGKNLC_0);
+		}
 
 		// // RVA: 0xE3D9B0 Offset: 0xE3D9B0 VA: 0xE3D9B0
 		public static void Log(OAGBCBBHMPF.OGBCFNIKAFI step)
 		{
-			TodoLogger.LogError(0, "Log");
+			ILCCJNDFFOB.HHCJCDFCLOB.ALABPEPENHH(step, GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.KINJOEIAHFK_StartTime);
 		}
 
 		// // RVA: 0xE3DB08 Offset: 0xE3DB08 VA: 0xE3DB08
@@ -157,7 +176,9 @@ namespace XeApp.Game.Tutorial
 			{
 				if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level != 1)
 					return;
-				TodoLogger.LogError(0, "TutorialAfterFirstLoginBonus");
+				Log(OAGBCBBHMPF.OGBCFNIKAFI.CFHINEFGHPC_47);
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.NJFNCNCJMOO_FirstLogin |= 1;
+				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
 			}
 		}
 
@@ -170,7 +191,9 @@ namespace XeApp.Game.Tutorial
 				{
 					return;
 				}
-				TodoLogger.LogError(0, "TutorialAfterFirstHome");
+				Log(OAGBCBBHMPF.OGBCFNIKAFI.LGFGBNKFPGH_48);
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.NJFNCNCJMOO_FirstLogin |= 2;
+				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
 			}
 		}
 
@@ -219,10 +242,9 @@ namespace XeApp.Game.Tutorial
 			MenuFooterControl.Button footerButton = 0;
 			bool b2 = false;
 			ButtonBase buttonBase = null;
-			TransitionRoot tr = MenuScene.Instance.GetCurrentTransitionRoot();
 			RectTransform rt = null;
 			TutorialPointer.Direction d = dir;
-			Vector2 v1 = Vector2.zero;
+			Vector2 v1 = Vector2.one;
 			Vector2 v2 = Vector2.zero;
 			if (button == InputLimitButton.PopupPositiveButton)
 			{
@@ -236,7 +258,9 @@ namespace XeApp.Game.Tutorial
 				{
 					if(MenuScene.Instance != null)
 					{
+						TransitionRoot tr = MenuScene.Instance.GetCurrentTransitionRoot();
 						tr.InputDisable(null);
+						//UnityEngine.Debug.LogError(button);
 						switch (button)
 						{
 							case InputLimitButton.CmnBack:
@@ -294,19 +318,19 @@ namespace XeApp.Game.Tutorial
 							case InputLimitButton.MainScene:
 								headerButton = MenuHeaderControl.Button.All;
 								footerButton = MenuFooterControl.Button.All;
-								CharaSet[] cs = rt.GetComponentsInChildren<CharaSet>(true);
+								CharaSet[] cs = tr.GetComponentsInChildren<CharaSet>(true);
 								cs[2].MainSceneBusttons[1].IsInputOff = false;
 								buttonBase = cs[2].MainSceneBusttons[1];
 								break;
 							case InputLimitButton.Scene:
 								headerButton = MenuHeaderControl.Button.All;
 								footerButton = MenuFooterControl.Button.All;
-								SwapScrollList s = rt.GetComponentInChildren<SwapScrollList>(true);
+								SwapScrollList s = tr.GetComponentInChildren<SwapScrollList>(true);
 								buttonBase = s.ScrollObjects[5].GetComponentInChildren<StayButton>(true);
-								buttonBase.ClearOnClickCallback();
+								(buttonBase as StayButton).ClearOnStayCallback();
 								buttonBase.IsInputOff = false;
 								v1 = new Vector2(1.2f, 1.25f);
-								v2 = new Vector2(-0.1f, -0.15f);
+								v2 = new Vector2(-0.1f, 0.15f);
 								break;
 							case InputLimitButton.LobbyTab:
 								buttonBase = MenuScene.Instance.LobbyButtonControl.m_lobbyTabBtn.tabBtn;
@@ -340,11 +364,44 @@ namespace XeApp.Game.Tutorial
 				}
 				else if(SceneManager.GetActiveScene().name == "GachaDirection")
 				{
-					TodoLogger.LogError(0, "GachaDirection");
+					GachaDirectionScene scene = FindObjectOfType<GachaDirectionScene>();
+					if(scene != null)
+					{
+						scene.GetComponentsInChildren(m_buttonList);
+						for(int i = 0; i < m_buttonList.Count; i++)
+						{
+							m_buttonList[i].IsInputOff = true;
+						}
+						if(button == InputLimitButton.GachaReturn)
+						{
+							buttonBase = m_buttonList.Find((ButtonBase x) =>
+							{
+								//0xE42864
+								return ObjectFindFunc(x.transform, "gatsha_drop_btn03_anim (AbsoluteLayout)", "");
+							});
+							buttonBase.IsInputOff = false;
+							d = TutorialPointer.Direction.Down;
+							//>LAB_00e3f120
+						}
+						else
+						{
+							//>switchD_00e3e504_caseD_1
+						}
+					}
 				}
 				else if(SceneManager.GetActiveScene().name == "Adv" && button == InputLimitButton.SnsRoomButton)
 				{
-					TodoLogger.LogError(0, "Adv");
+					LayoutSNSScrollList sns = FindObjectOfType<LayoutSNSScrollList>();
+					if(sns != null)
+					{
+						buttonBase = sns.GetComponentInChildren<ScrollRect>(true).content.GetChild(0).GetComponentInChildren<ButtonBase>(true);
+						sns.GetComponentsInChildren(m_buttonList);
+						for(int i = 0; i < m_buttonList.Count; i++)
+						{
+							m_buttonList[i].IsInputOff = true;
+						}
+						buttonBase.IsInputOff = false;
+					}
 				}
 				//LAB_00e3f120
 			}
@@ -393,20 +450,115 @@ namespace XeApp.Game.Tutorial
 						m_blackImageInstance.SetActive(true);
 					}
 				}
-				ButtonBase.OnClickCallback onClickEvent = () =>
+				ButtonBase.OnClickCallback onClickEvent = null;
+				onClickEvent = () =>
 				{
 					//0xE42918
-					TodoLogger.LogNotImplemented("TutoClick");
+					if(m_cursorInstance != null)
+					{
+						m_cursorInstance.SetActive(false);
+					}
+					if(m_blackImageInstance != null)
+					{
+						m_blackImageInstance.SetActive(false);
+					}
+					if(onPush != null)
+					{
+						onPush();
+					}
+					if(headerButton != MenuHeaderControl.Button.None)
+					{
+						MenuScene.Instance.HeaderMenu.SetButtonEnable(headerButton);
+					}
+					if(footerButton != MenuFooterControl.Button.None)
+					{
+						MenuScene.Instance.FooterMenu.SetButtonEnable(footerButton);
+						if(button != InputLimitButton.LobbyTab)
+						{
+							if(button != InputLimitButton.LobbyScene)
+							{
+								MenuScene.Instance.LobbyButtonControl.EnableButton(true);
+							}
+						}
+					}
+					if(MenuScene.Instance != null)
+					{
+						if(MenuScene.Instance.HelpButton != null)
+						{
+							MenuScene.Instance.HelpButton.SetEnable();
+						}
+					}
+					if(button == InputLimitButton.PopupPositiveButton)
+					{
+						buttonBase.IsInputOff = true;
+					}
+					buttonBase.RemoveOnClickCallback(onClickEvent);
 				};
 				buttonBase.AddOnClickCallback(onClickEvent);
 			}
 		}
 
 		// // RVA: 0xE409E4 Offset: 0xE409E4 VA: 0xE409E4
-		// private bool ObjectFindFunc(Transform ts, string name, string parentName) { }
+		private bool ObjectFindFunc(Transform ts, string name, string parentName)
+		{
+			if(ts.name == name)
+			{
+				if(!string.IsNullOrEmpty(parentName))
+				{
+					if(ts.parent.name == parentName)
+						return true;
+				}
+				else
+				{
+					return true;
+				}
+			}
+			return false;
+		}
 
 		// // RVA: 0xE40AD4 Offset: 0xE40AD4 VA: 0xE40AD4
-		// public void ShowCursor(CursorPosition positionType) { }
+		public void ShowCursor(CursorPosition positionType)
+		{
+			if (m_cursorInstance == null)
+				return;
+			Transform t = GameManager.Instance.PopupCanvas.transform.Find("Root");
+			m_pointer.RectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+			m_pointer.RectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+			LayoutUGUIHitOnly l = null;
+			TutorialPointer.Direction dir = TutorialPointer.Direction.Normal;
+			Vector2 anchor = new Vector2(0.5f, 0.5f);
+			Vector2 pos = new Vector2(0, 0);
+			if (positionType == CursorPosition.MissionMenuButton)
+			{
+				l = MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.Mission).GetComponentInChildren<LayoutUGUIHitOnly>(true);
+				dir = TutorialPointer.Direction.Down;
+			}
+			else if(positionType == CursorPosition.ActiveSkill)
+			{
+				pos = new Vector2(t.localScale.x * 0, (t.localPosition.y * 2 + 56) * t.localScale.y);
+				anchor = new Vector2(0.5f, 0);
+			}
+			else if(positionType == CursorPosition.RhythmAdjust)
+			{
+				pos = new Vector2(t.localScale.x * 300, (t.localPosition.y * 2 - 200) * t.localScale.y);
+				if(SystemManager.isLongScreenDevice)
+				{
+					pos.y -= t.localPosition.y;
+				}
+			}
+			m_cursorInstance.SetActive(true);
+			m_cursorInstance.transform.SetAsFirstSibling();
+			if(l != null)
+			{
+				SetCursorPosition(l.transform as RectTransform, dir);
+			}
+			else
+			{
+				m_pointer.RectTransform.anchorMax = anchor;
+				m_pointer.RectTransform.anchorMin = anchor;
+				m_pointer.ShowAnchorPosition(pos, dir);
+			}
+		}
 
 		// // RVA: 0xE413B4 Offset: 0xE413B4 VA: 0xE413B4
 		public void HideCursor()
@@ -449,7 +601,6 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE40498 Offset: 0xE40498 VA: 0xE40498
 		private void SetRect(LayoutUGUIHitOnly hitOnly, Vector2 offset, Vector2 scale)
 		{
-			Vector2 v1 = offset;
 			if(m_blackImageInstance != null)
 			{
 				Canvas c1 = hitOnly.GetComponentInParent<Canvas>();
@@ -461,19 +612,33 @@ namespace XeApp.Game.Tutorial
 				float f = 1;
 				if(SystemManager.isLongScreenDevice)
 				{
-					f = SystemManager.rawAppScreenRect.height / SystemManager.rawScreenAreaRect.height;
+					f = SystemManager.rawSafeAreaRect.height / SystemManager.rawScreenAreaRect.height;
 				}
-				v1 = new Vector2(t1.sizeDelta.x * v1.x, t1.sizeDelta.y * v1.y);
+				Vector2 v1 = new Vector2(t1.sizeDelta.x * offset.x, t1.sizeDelta.y * offset.y);
 				Vector2 v3 = v2 + v1;
 				Vector2 v4 = new Vector2(f * t1.sizeDelta.x * scale.x, f * t1.sizeDelta.y * scale.y);
-				m_highLight.HighLightRect = new Rect(v3.x, v3.y, v4.x, v4.y);
+				m_highLight.HighLightRect = new Rect(v3, v4);
 			}
 		}
 
 		// // RVA: 0xE3FF5C Offset: 0xE3FF5C VA: 0xE3FF5C
 		private void SetRect(RectTransform rt, Vector2 offset, Vector2 scale)
 		{
-			TodoLogger.LogError(0, "SetRect2");
+			if(m_blackImageInstance != null)
+			{
+				Canvas c = rt.GetComponentInParent<Canvas>();
+				Canvas c2 = m_blackImageInstance.GetComponentInParent<Canvas>();
+				Vector2 v3;
+				Vector2 v4 = RectTransformUtility.WorldToScreenPoint(c.rootCanvas.worldCamera, rt.transform.position);
+				RectTransformUtility.ScreenPointToLocalPointInRectangle(c2.transform as RectTransform, v4, c2.worldCamera, out v3);
+				float f1 = 1;
+				if(SystemManager.isLongScreenDevice)
+					f1 = SystemManager.rawSafeAreaRect.height / SystemManager.rawScreenAreaRect.height;
+				Vector2 v1 = v3 + rt.sizeDelta * offset;
+				Vector2 v2 = new Vector2(f1 * rt.sizeDelta.x * rt.localScale.x * scale.x, f1 * rt.sizeDelta.y * rt.localScale.y * scale.y);
+				//UnityEngine.Debug.LogError(rt.gameObject.name+" "+new Rect(v1, v2)+" "+rt.localScale+" "+rt.sizeDelta+" "+f1+" "+scale);
+				m_highLight.HighLightRect = new Rect(v1, v2);
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6AE450 Offset: 0x6AE450 VA: 0x6AE450
@@ -550,26 +715,70 @@ namespace XeApp.Game.Tutorial
 		}
 
 		// // RVA: 0xE41884 Offset: 0xE41884 VA: 0xE41884
-		// public void UpdateLocalPlayerData() { }
+		public void UpdateLocalPlayerData()
+		{
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.LFNEPDFBINM(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave);
+		}
 
 		// // RVA: 0xE419D0 Offset: 0xE419D0 VA: 0xE419D0
 		public void UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO rPoint)
 		{
-			TodoLogger.LogError(0, "UpdateRecoveryPoint");
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.DGMFOHADMHN(rPoint);
+			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
 		}
 
 		// // RVA: 0xE41B10 Offset: 0xE41B10 VA: 0xE41B10
-		// public void SaveMusicResult() { }
+		public void SaveMusicResult()
+		{
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.AHEFHIMGIBI_PlayerData.EJFNMIFOFME(JGEOBNENMAH.HHCJCDFCLOB, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, Database.Instance.gameSetup, Database.Instance.gameResult);
+			UpdateLocalPlayerData();
+			UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO.KIDJFNEGAHO_7);
+		}
 
 		// // RVA: 0xE41D24 Offset: 0xE41D24 VA: 0xE41D24
 		public ILDKBCLAFPB.CDIPJNPICCO GetRecoveryPoint()
 		{
-			TodoLogger.LogError(0, "GetRecoveryPoint");
-			return 0;
+			return GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.KMKIGHHCAGE();
 		}
 
 		// // RVA: 0xE41E18 Offset: 0xE41E18 VA: 0xE41E18
-		// public JGEOBNENMAH.EDHCNKBMLGI SetupTutorialGame(TutorialGameMode.Type type) { }
+		public JGEOBNENMAH.EDHCNKBMLGI SetupTutorialGame(TutorialGameMode.Type type)
+		{
+			StatusData status1 = new StatusData();
+			StatusData status2 = new StatusData();
+			Database.Instance.gameSetup.musicInfo.SetupInfoByTutorial(type);
+			AEGLGBOGDHH a = new AEGLGBOGDHH();
+			a.OBKGEDCKHHE();
+			IBJAKJJICBC ib = new IBJAKJJICBC();
+			ib.KHEKNNFCAOI(Database.Instance.gameSetup.musicInfo.freeMusicId, false, 0, 0, 0, false, false, false);
+			CMMKCEPBIHI.DIDENKKDJKI(ref a, GameManager.Instance.ViewPlayerData.NPFCMHCCDDH, GameManager.Instance.ViewPlayerData, ib, null, ib.MGJKEJHEBPO_DiffInfos[0].HPBPDHPIBGN_EnemyData);
+			a.GEEDEOHGMOM(ref status1);
+			status2.Clear();
+			status2.Copy(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.CMCKNKKCNDK_GoDivaStatus);
+			status2.Add(status1);
+			Database.Instance.gameSetup.teamInfo.SetupInfo(status2, GameManager.Instance.ViewPlayerData, 0, ib, null, null, null, false);
+			JGEOBNENMAH.EDHCNKBMLGI res = new JGEOBNENMAH.EDHCNKBMLGI();
+			res.GHBPLHBNMBK_FreeMusicId = Database.Instance.gameSetup.musicInfo.freeMusicId;
+			res.KLCIIHKFPPO_StoryMusicId = Database.Instance.gameSetup.musicInfo.storyMusicId;
+			res.AKNELONELJK_Difficulty = (int)Database.Instance.gameSetup.musicInfo.difficultyType;
+			res.OALJNDABDHK = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH;
+			res.NHPGGBCKLHC_FriendData = null;
+			res.KAIPAEILJHO_TicketCount = 0;
+			res.PMCGHPOGLGM_IsSkip = false;
+			res.MNNHHJBBICA_GameEventType = 0;
+			res.MFJKNCACBDG_OpenEventType = 0;
+			res.OEILJHENAHN_PlayEventType = 0;
+			res.JPJMALBLKDI_Tutorial = 1;
+			int luck = 0;
+			for(int i = 0; i < GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas.Count; i++)
+			{
+				luck += DivaIconDecoration.GetEquipmentLuck(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[i], GameManager.Instance.ViewPlayerData);
+			}
+			StatusData status = new StatusData();
+			status.Clear();
+			a.DIJOPLHIMBO(res.ENMGODCHGAC_Log, GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.JLJGCBOHJID_Status, status, luck, 0);
+			return res;
+		}
 
 		// // RVA: 0xE42544 Offset: 0xE42544 VA: 0xE42544
 		public static bool IsBeginnerMission()

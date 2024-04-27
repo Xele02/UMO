@@ -66,7 +66,7 @@ public class NKBOMKGFGIO_EventRaidItem : DIHHCBACKGG_DbSection
 	// RVA: 0x18AE6A8 Offset: 0x18AE6A8 VA: 0x18AE6A8 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(TodoLogger.Database, "NKBOMKGFGIO_EventRaidItem.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbJson, "NKBOMKGFGIO_EventRaidItem.IIEMACPEEBJ");
 		return true;
 	}
 

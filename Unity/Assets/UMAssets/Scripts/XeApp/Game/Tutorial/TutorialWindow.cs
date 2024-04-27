@@ -341,7 +341,11 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0x19193D4 Offset: 0x19193D4 VA: 0x19193D4
 		private void OnPrevButton()
 		{
-			TodoLogger.LogNotImplemented("OnPrevButton");
+			m_showDataIndex--;
+			if(m_showDataIndex > -1)
+				SetCurrentData();
+			OnPlayButtonSe();
+			this.StartCoroutineWatched(Co_ButtonWait());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6B00A0 Offset: 0x6B00A0 VA: 0x6B00A0

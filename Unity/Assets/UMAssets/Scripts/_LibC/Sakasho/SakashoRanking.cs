@@ -325,7 +325,7 @@ namespace ExternLib
 			}
 			else
 			{
-				TodoLogger.LogError(0, "SakashoRankingGetRankingRecordsByKeys unknown ranking " + k);
+				TodoLogger.LogError(TodoLogger.SakashoServer, "SakashoRankingGetRankingRecordsByKeys unknown ranking " + k);
 				return null;
 			}
 		}

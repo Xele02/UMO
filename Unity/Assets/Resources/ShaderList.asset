@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: ShaderList
   m_EditorClassIdentifier: 
   shaderList:
+  - fileName: costume_change
+    internalName: MCRS/Costume/ChangeBlend
+    shader: {fileID: 4800000, guid: a740fd12abfcaf740bcc86cdb064196e, type: 3}
   - fileName: crimanaeditorthora
     internalName: CriMana/EditorTheora
     shader: {fileID: 4800000, guid: 599fc2139eabe177cb2947accd873a22, type: 3}

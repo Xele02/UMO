@@ -388,17 +388,32 @@ public class MFDJIFIIPJD
 
 public class PNFCNPCGKDM
 {
-	public string LJNAKDMILMC; // 0x8
-	public string LJGOOOMOMMA; // 0xC
-	public bool OOIJCMLEAJP; // 0x10
+	public string LJNAKDMILMC_Key; // 0x8
+	public string LJGOOOMOMMA_Message; // 0xC
+	public bool OOIJCMLEAJP_IsReceived; // 0x10
 	public List<MFDJIFIIPJD> HBHMAKNGKFK; // 0x14
-	public long KBFOIECIADN; // 0x18
-	public long EGBOHDFBAPB; // 0x20
+	public long KBFOIECIADN_OpenAt; // 0x18
+	public long EGBOHDFBAPB_ClosedAt; // 0x20
 
 	// RVA: 0xFF1614 Offset: 0xFF1614 VA: 0xFF1614
 	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
 	{
-		TodoLogger.LogError(0, "PNFCNPCGKDM KHEKNNFCAOI");
+		LJNAKDMILMC_Key = (string)IDLHJIOMJBK[AFEHLCGHAEE_Strings.LJNAKDMILMC_key];
+		LJGOOOMOMMA_Message = (string)IDLHJIOMJBK[AFEHLCGHAEE_Strings.LJGOOOMOMMA_message];
+		OOIJCMLEAJP_IsReceived = (bool)IDLHJIOMJBK[AFEHLCGHAEE_Strings.OOIJCMLEAJP_is_received];
+		if(IDLHJIOMJBK.BBAJPINMOEP_Contains("current_period"))
+		{
+			KBFOIECIADN_OpenAt = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(IDLHJIOMJBK["current_period"], AFEHLCGHAEE_Strings.KBFOIECIADN_opened_at);
+			EGBOHDFBAPB_ClosedAt = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(IDLHJIOMJBK["current_period"], AFEHLCGHAEE_Strings.EGBOHDFBAPB_closed_at);
+		}
+		EDOHBJAPLPF_JsonData items = IDLHJIOMJBK[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items];
+		HBHMAKNGKFK = new List<MFDJIFIIPJD>(items.HNBFOAJIIAL_Count);
+		for(int i = 0; i < items.HNBFOAJIIAL_Count; i++)
+		{
+			MFDJIFIIPJD data = new MFDJIFIIPJD();
+			data.KHEKNNFCAOI(items[i]);
+			HBHMAKNGKFK.Add(data);
+		}
 	}
 }
 

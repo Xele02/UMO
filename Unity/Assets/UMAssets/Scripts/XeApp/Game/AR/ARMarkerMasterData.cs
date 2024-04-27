@@ -65,7 +65,7 @@ namespace XeApp.Game.AR
 		// // RVA: 0xBB8F28 Offset: 0xBB8F28 VA: 0xBB8F28 Slot: 4
 		protected override void Initialize(byte[] bytes)
 		{
-			TodoLogger.LogError(0, "TODO");
+			TodoLogger.LogError(TodoLogger.AR, "TODO AR");
 		}
 
 		// // RVA: 0xBB9C50 Offset: 0xBB9C50 VA: 0xBB9C50

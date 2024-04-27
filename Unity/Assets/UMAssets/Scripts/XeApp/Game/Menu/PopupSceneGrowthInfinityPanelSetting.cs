@@ -9,7 +9,7 @@ namespace XeApp.Game.Menu
 		public short UnlockCount { get; set; } // 0x34
 		public short StockCount { get; set; } // 0x36
 		public short EpisodeUnit { get; set; } // 0x38
-		//public MNDAMOGGJBJ.MNDGNJLBANB Reason { get; set; } // 0x3C
+		public MNDAMOGGJBJ.MNDGNJLBANB Reason { get; set; } // 0x3C
 		public override string PrefabPath { get { return ""; } } //0x11475A4
 		public override string BundleName { get { return "ly/019.xab"; } } //0x1147600
 		public override string AssetName { get { return "root_pop_end_release_layout_root"; } } //0x114765C

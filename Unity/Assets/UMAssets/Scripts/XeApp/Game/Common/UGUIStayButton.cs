@@ -98,6 +98,9 @@ namespace XeApp.Game.Common
 		// public void RemoveOnStayCallback(UGUIStayButton.OnStayCallback callback) { }
 
 		// // RVA: 0x1CDBFE4 Offset: 0x1CDBFE4 VA: 0x1CDBFE4
-		// public void ClearOnStayCallback() { }
+		public void ClearOnStayCallback()
+		{
+			m_stayEvent = null;
+		}
 	}
 }

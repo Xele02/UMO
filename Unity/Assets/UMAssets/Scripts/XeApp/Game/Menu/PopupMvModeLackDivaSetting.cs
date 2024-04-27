@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XeApp.Core;
 using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
@@ -24,7 +25,27 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1698834 Offset: 0x1698834 VA: 0x1698834 Slot: 4
 		public override IEnumerator LoadAssetBundlePrefab(Transform parent)
 		{
-			TodoLogger.LogError(0, "LoadAssetBundlePrefab");
+			AssetBundleLoadUGUIOperationBase uguiOp; // 0x1C
+
+			//0x16989F4
+			m_parent = parent;
+			yield return Co.R(base.LoadAssetBundlePrefab(parent));
+			Layout = m_content.GetComponent<PopupMvModeLackDivaLayout>();
+			GameObject obj = null;
+			uguiOp = AssetBundleManager.LoadUGUIAsync(BundleName, "UGUI_LackDivaIconContent");
+			yield return uguiOp;
+			yield return Co.R(uguiOp.InitializeUGUICoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+			{
+				//0x1698914
+				obj = instance;
+				Layout.ScrollList.AddScrollObject(obj.GetComponent<SwapScrollListContent>());
+			}));
+			for(int i = 1; i < Layout.ScrollList.ScrollObjectCount; i++)
+			{
+				GameObject g = UnityEngine.Object.Instantiate(obj);
+				Layout.ScrollList.AddScrollObject(g.GetComponent<SwapScrollListContent>());
+			}
+			Layout.ScrollList.Apply();
 			yield return null;
 		}
 

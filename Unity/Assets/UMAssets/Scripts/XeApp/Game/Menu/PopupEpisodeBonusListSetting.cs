@@ -17,10 +17,15 @@ namespace XeApp.Game.Menu
 		public override bool IsAssetBundle { get { return true; } } //0xF864AC
 		public override bool IsPreload { get { return true; } } //0xF864B4
 		//public List<IKDICBBFBMI_EventBase.GNPOABJANKO> EpisodeList { get; } 0xF85C50
-		//public CIKHPBBNEIM ViewEpisodeBonus { get; set; } // 0x38
+		public CIKHPBBNEIM ViewEpisodeBonus { get; set; } // 0x38
 
 		//// RVA: 0xF864C4 Offset: 0xF864C4 VA: 0xF864C4
-		//public void Setup(List<IKDICBBFBMI.GNPOABJANKO> episodeList, CIKHPBBNEIM viewEpisodeBonus) { }
+		public void Setup(List<IKDICBBFBMI_EventBase.GNPOABJANKO> episodeList, CIKHPBBNEIM viewEpisodeBonus)
+		{
+			this.episodeList.Clear();
+			this.episodeList.AddRange(episodeList);
+			ViewEpisodeBonus = viewEpisodeBonus;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72E59C Offset: 0x72E59C VA: 0x72E59C
 		//								// RVA: 0xF86578 Offset: 0xF86578 VA: 0xF86578 Slot: 4

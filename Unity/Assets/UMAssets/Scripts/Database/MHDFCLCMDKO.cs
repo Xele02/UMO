@@ -69,7 +69,7 @@ public class MHDFCLCMDKO_Enemy : DIHHCBACKGG_DbSection
 	// // RVA: 0x132B18C Offset: 0x132B18C VA: 0x132B18C Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(100, "Energy IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbJson, "Energy IIEMACPEEBJ");
 		return true;
 	}
 

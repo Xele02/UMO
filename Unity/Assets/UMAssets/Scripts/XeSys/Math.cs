@@ -29,8 +29,7 @@ namespace XeSys
 			//// RVA: 0x23913B8 Offset: 0x23913B8 VA: 0x23913B8 Slot: 4
 			public Vector3 Evaluate(float t)
 			{
-				TodoLogger.LogError(0, "CurveBezier3 Evaluate");
-				return Vector3.zero;
+				return Evaluate(t, p0, p1, p2, p3);
 			}
 
 			//// RVA: 0x23915E0 Offset: 0x23915E0 VA: 0x23915E0
@@ -185,7 +184,7 @@ namespace XeSys
 			//// RVA: 0x2395AEC Offset: 0x2395AEC VA: 0x2395AEC
 			public static float EasingInOutSine(float start, float end, float t)
 			{
-				return (end - start) * 0.5f * (Mathf.Cos(t * 3.141593f) - 1) + start;
+				return (end - start) * -0.5f * (Mathf.Cos(t * 3.141593f) - 1) + start;
 			}
 
 			//// RVA: 0x23957C8 Offset: 0x23957C8 VA: 0x23957C8

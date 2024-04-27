@@ -1,6 +1,8 @@
 
 class JpStringLiterals
 {
+	public const string StringLiteral_367 = " "; //0x03ba9074
+	public const string StringLiteral_1374 = "年"; //0x03baa030
 	public const string StringLiteral_1376 = "月"; // 0x03baa038
 	public const string StringLiteral_1378 = "日"; // 0x03baa040
 	public const string StringLiteral_5812 = "\n"; // 0x03bae588
@@ -14,6 +16,7 @@ class JpStringLiterals
 	public const string StringLiteral_9366 = "デコチャット"; //0x03bb1d10
 	public const string StringLiteral_9368 = "協力ミッション"; //0x03bb1d18
 	public const string StringLiteral_9370 = "未知のタイプ"; //0x03bb1d20
+	public const string StringLiteral_9477 = "ボス名"; //0x03bb1ecc
 	public const string StringLiteral_9528 = "想定していない人数が入っています　id:"; //0x03bb1f98
 	public const string StringLiteral_9555 = "event_quest"; // 0x03bb2004
 	public const string StringLiteral_9630 = "から新しいメッセージがあります。"; // 0x03bb2130
@@ -99,6 +102,8 @@ class JpStringLiterals
 	public const string StringLiteral_10178 = "ガチャ天井アイテム"; // 0x03bb29c0
 	public const string StringLiteral_10282 = "AP全回復"; //0x03bb2b60
 	public const string StringLiteral_10294 = "超時空SNS"; // 0x03bb2b90
+	public const string StringLiteral_10298 = "ログボを受け取ろう！"; //0x03bb2ba0
+	public const string StringLiteral_10299 = "歌晶石100個を2日目ログボでプレゼント！今すぐログインしよう！"; // 0x03bb2ba4
 	public const string StringLiteral_10303 = "歌晶石セール開催中！"; // 0x03bb2bb4
 	public const string StringLiteral_10304 = "今だけのごりっごりお得な歌晶石セット。もうすぐ買えなくなっちゃうんよ！"; // 0x03bb2bb8
 	public const string StringLiteral_10309 = "エナジー回復"; // 0x03bb2bcc
@@ -141,6 +146,9 @@ class JpStringLiterals
 	public const string StringLiteral_11115 = "★５1枚確定"; //0x03bb3864
 	public const string StringLiteral_11117 = "デカルガチャ"; //0x03bb386c
 	public const string StringLiteral_11118 = "★４以上1枚確定"; //0x03bb3870
+	public const string StringLiteral_11128 = "初心者"; //0x03bb3898
+	public const string StringLiteral_11129 = "割引"; //0x03bb389c
+	public const string StringLiteral_11130 = "通常"; // 0x03bb38a0
 	public const string StringLiteral_11136 = "3D標準"; // 0x03bb38b8
 	public const string StringLiteral_11137 = "3D軽量"; // 0x03bb38bc
 	public const string StringLiteral_11139 = "カスタム"; // 0x03bb38c4
@@ -159,6 +167,7 @@ class JpStringLiterals
 	public const string StringLiteral_11431 = "通常攻撃"; // 0x03bb3d54
 	public const string StringLiteral_11476 = "登録"; //0x03bb3e08
 	public const string StringLiteral_11477 = "解除"; //0x03babc2c
+	public const string StringLiteral_11776 = "情報"; //0x03bb42b8
 	public const string StringLiteral_11781 = "新しいバージョン検知 mver= "; // 0x03bb42cc
 	public const string StringLiteral_11855 = "Install : Start reception. / バッチインストーラ　開始受付  status = {0}"; //0x03bb43f4
 	public const string StringLiteral_11856 = "Install : Accept debut reception / バッチインストーラ　開始受付受理"; //0x03bb43f8
@@ -175,6 +184,14 @@ class JpStringLiterals
 	public const string StringLiteral_11847 = "木"; // 03bb43d4
 	public const string StringLiteral_11848 = "金"; // 03bb43d8
 	public const string StringLiteral_11849 = "土"; // 03bb43dc
+	public const string StringLiteral_11911 = "クライアントエラー"; // 03bb44d4
+	public const string StringLiteral_11912 = "フレンド申請済み"; // 03bb44d8
+	public const string StringLiteral_11913 = "フレンド上限"; // 03bb44dc
+	public const string StringLiteral_11914 = "フレンド確認"; // 03bb44e0
+	public const string StringLiteral_11915 = "検索失敗"; // 03bb44e4
+	public const string StringLiteral_11916 = "連携失敗"; // 0x03bb44e8
+	public const string StringLiteral_11917 = "申請失敗"; // 03bb44ec
+	public const string StringLiteral_11918 = "通信エラー"; // 03bb44f0
 	public const string StringLiteral_11920 = "\n\nエラーコード : "; // 0x03bb44f8
 	public const string StringLiteral_11921 = "データ更新"; // 0x03bb44fc
 	public const string StringLiteral_11922 = "日付変更"; // 0x03bb4500
@@ -183,9 +200,13 @@ class JpStringLiterals
 	public const string StringLiteral_11928 = "ファイルのダウンロードに失敗しました。\nストレージに十分な空き容量がない場合に\nこのメッセージが表示される可能性があります。\nリトライしますか？"; // 0x03bb4518
 	public const string StringLiteral_11929 = "ダウンロードエラー"; // 0x03bb451c
 	public const string StringLiteral_11930 = "ファイルのダウンロードに失敗しました。\nインターネットへの接続や電波の状況を確認して、\nもう一度お試しください。"; // 0x03bb4520
+	public const string StringLiteral_11955 = "通信がタイムアウトしました。リトライしますか？\nキャンセルした場合はタイトル画面に戻ります。"; //0x03bb4584
+	public const string StringLiteral_11956 = "通信がタイムアウトしました。\nタイトル画面に戻ります。"; //0x03bb4588
+	public const string StringLiteral_11962 = "エラー"; //0x03bb45a0
 	public const string StringLiteral_11972 = "内部エラー"; //0x03bb45c8
 	public const string StringLiteral_11973 = "エラーが発生しました。\nタイトル画面に戻ります。"; //0x03bb45cc
 	public const string StringLiteral_11992 = "バッチインストーラ　インストールモジュール作成失敗"; // 0x03bb4618
+	public const string StringLiteral_12004 = "プレゼント"; //0x03bb4648
 	public const string StringLiteral_12005 = "タッチ"; //0x03bb464c
 	public const string StringLiteral_12010 = "コスチューム名"; //0x03bb4660
 	public const string StringLiteral_12037 = "　"; // 0x03bb46cc
@@ -213,6 +234,8 @@ class JpStringLiterals
 	public const string StringLiteral_12333 = "歌晶石セットE"; // 0x03bb4b6c
 	public const string StringLiteral_12334 = "歌晶石セットF"; // 0x03bb4b70
 	public const string StringLiteral_12335 = "歌晶石セットG"; // 0x03bb4b74
+	public const string StringLiteral_12459 = "通信がタイムアウトしました。"; //0x03bb4d64
+	public const string StringLiteral_12462 = "エラーが発生しました。\n\n(エラーコード : {0})"; // 03bb4d70
 	public const string StringLiteral_12526 = "汎用"; //0x03bb4e70
 	public const string StringLiteral_12528 = "専用"; //0x03bb4e78
 	public const string StringLiteral_12532 = "GPGSログインボタンを表示"; // 0x03bb4e88
@@ -222,6 +245,7 @@ class JpStringLiterals
 	public const string StringLiteral_12541 = "ログアウトされた"; // 0x03bb4eac
 	public const string StringLiteral_12573 = "GPGSログイン成功"; // 0x03bb4f2c
 	public const string StringLiteral_12574 = "GPGSログイン失敗"; // 0x03bb4f30
+	public const string StringLiteral_12619 = "no data"; //0x03bb4fe4
 	public const string StringLiteral_12640 = "<color=cyan>ローカルセーブデータ再作成</color>"; // 0x03bb5038
 	public const string StringLiteral_12692 = "エナジー全回復"; // 0x03bb5108
 	public const string StringLiteral_12693 = "お知らせ"; // 0x03bb510c
@@ -295,6 +319,7 @@ class JpStringLiterals
 	public const string StringLiteral_11225 = "削除"; //0x03bb3a1c
 	public const string StringLiteral_11226 = "申請拒否"; //0x03bb3a20
 	public const string StringLiteral_11227 = "申請取り消し"; //0x03bb3a24
+	public const string StringLiteral_11245 = "歌唱石"; // 0x03bb3a6c
 	public const string StringLiteral_11248 = "既に回答済み"; //0x03bb3a78
 	public const string StringLiteral_12894 = "イベント達成pt"; // 0x03bb5430
 	public const string StringLiteral_12895 = "ログボ"; // 0x03bb5434
@@ -359,7 +384,10 @@ class JpStringLiterals
 	public const string StringLiteral_14007 = "×{0}"; // 0x03bb6594
 	public const string StringLiteral_14024 = "\r"; //0x03bb65d8
 	public const string StringLiteral_14032 = "アニメーションテーブル数以上のキーフレーム番号が指定されました。"; // 0x03bb65f8
+	public const string StringLiteral_14355 = "今日は表示しない"; //0x03bb6b04
+	public const string StringLiteral_14401 = "+ボタン"; // 0x03bb6bbc
 	public const string StringLiteral_14529 = "ーーー"; // 0x03bb6dbc
+	public const string StringLiteral_14769 = "{0}さん"; // 0x03bb717c
 	public const string StringLiteral_14832 = "ふた"; // 0x03bb7278
 	public const string StringLiteral_14844 = "★[０-９]"; //0x03bb72a8
 	public const string StringLiteral_14845 = "[０-９]"; //0x03bb72ac
@@ -414,6 +442,7 @@ class JpStringLiterals
 	public const string StringLiteral_18023 = "{0}秒"; //0x03bba454
 	public const string StringLiteral_18024 = "：{0}"; //0x03bba458
 	public const string StringLiteral_18054 = "～{0}秒"; //0x03bba4d0
+	public const string StringLiteral_18067 = "エナジーが{0}に回復しました"; //0x03bba504
 	public const string StringLiteral_18280 = "プリズム"; //0x03bba858
 	public const string StringLiteral_18787 = "獲得ユニオンクレジット"; // 03bbb044
 	public const string StringLiteral_18797 = "小隊選択"; //0x03bbb06c
@@ -423,8 +452,15 @@ class JpStringLiterals
 	public const string StringLiteral_18949 = "ヴァルキリー選択"; //0x03bbb2cc
 	public const string StringLiteral_19017 = "誕生日"; // 0x03bbb3dc
 	public const string StringLiteral_19018 = "{0}/{1}/{2}　{3}"; // 0x03bbb3e0
+	public const string StringLiteral_19422 = "ランキング"; //0x03bbba30
+	public const string StringLiteral_19427 = "～"; // 0x03bbba44
+	public const string StringLiteral_19428 = "位:"; //0x03bbba48
+	public const string StringLiteral_19432 = "【{0}】"; //0x03bbba58
+	public const string StringLiteral_19433 = "イベント楽曲でのレアドロップ"; //0x03bbba5c
+	public const string StringLiteral_19538 = "インパクト"; //0x03bbbc00
 	public const string StringLiteral_19639 = "無期限"; //0x03bbbd94
 	public const string StringLiteral_19612 = "ユニットセット"; // 0x03bbbd28
+	public const string StringLiteral_19704 = "他人のデコルーム:プロフィール経由"; //0x03bbbe98
 	public const string StringLiteral_20178 = " ★"; // 0x03bbc600
 	public const string StringLiteral_20179 = "の最大マス数="; // 0x03bbc604
 	public const string StringLiteral_20180 = "なのに "; // 0x03bbc608
@@ -443,4 +479,149 @@ class JpStringLiterals
 	public const string StringLiteral_20864 = "自動編成"; // 0x03bbd0b8
 	public const string StringLiteral_20882 = "(<color={1}>↑{0}</color>)"; // 0x03bbd100
 	public const string StringLiteral_21607 = "???12"; //0x03bbdc54
+
+
+	public const string UMO_login_38788_name = "衣装解放応援ログインボーナス③";
+	public const string UMO_login_38788_desc = "衣装解放応援ログインボーナス③";
+	public const string UMO_login_38788_prize1_msg = "特別ログインボーナスのプレゼントです。";
+	public const string UMO_login_10665_name = "カムバックログインボーナス 28日間非ログイン";
+	public const string UMO_login_10665_desc = "カムバックログインボーナス 28日間非ログイン\r\n";
+	public const string UMO_login_10666_name = "カムバックログインボーナス 28日間非ログイン　歌晶石";
+	public const string UMO_login_10666_desc = "カムバックログインボーナス 28日間非ログイン　歌晶石";
+	public const string UMO_login_7740_name = "ログインボーナス";
+	public const string UMO_login_7740_desc = "毎日1回ログイン時に一度プレゼントを受け取れるよ！";
+	public const string UMO_login_7740_prize1_msg = "ログインボーナスのプレゼントです。\t";
+	public const string UMO_login_7740_prize2_msg = "ログインボーナスのプレゼントです。";
+	public const string UMO_login_6541_name = "スタートダッシュログインボーナス";
+	public const string UMO_login_6541_desc = "ゲーム開始から7日目までもらえるログインボーナスです。";
+	public const string UMO_login_6541_prize1_msg = "スタートダッシュログインボーナスのプレゼントです。";
+
+	public const string UMO_achievements_normal_quest = "ノーマルミッションの達成報酬です。";
+	public const string UMO_achievements_daily_quest = "Daily quest reward";
+	public const string UMO_achievements_episode = "エピソードの解放報酬です。";
+	public const string UMO_achievements_debut_quest = "デビューミッションの達成報酬です。";
+	public const string UMO_achievements_new_offer = "バルキリーオペレーションの初回達成報酬です。";
+	public const string UMO_achievements_costume = "衣装強化のきゃわわランクアップ報酬です。";
+	public const string UMO_achievements_freemusic = "Reward from free music";
+
+	public const string UMO_currency_1001_desc = "ゲーム内で購入できる仮想通貨";
+	public const string UMO_currency_2002_name = "★5確定ガチャチケットA";
+	public const string UMO_currency_2002_desc = "★5確定ガチャを引くためのチケット";
+	public const string UMO_currency_2003_name = "★5確定ガチャチケットB";
+	public const string UMO_currency_2003_desc = "★5確定ガチャを引くためのチケット";
+	public const string UMO_currency_2004_name = "★5確定ガチャチケットC";
+	public const string UMO_currency_2004_desc = "★5確定ガチャを引くためのチケット";
+	public const string UMO_currency_2008_name = "★5確定ログボガチャチケット　5月";
+	public const string UMO_currency_2008_desc = "ログボ用の★5確定ガチャを引くためのチケット";
+	public const string UMO_currency_2009_name = "★5確定ログボガチャチケット　6月";
+	public const string UMO_currency_2009_desc = "ログボ用の★5確定ガチャを引くためのチケット";
+	public const string UMO_currency_2010_name = "★5確定ログボガチャチケット　7月";
+	public const string UMO_currency_2010_desc = "ログボ用の★5確定ガチャを引くためのチケット";
+	public const string UMO_currency_2101_name = "デカルガチャチケット";
+	public const string UMO_currency_2101_desc = "デカルガチャを引くためのチケット";
+	public const string UMO_currency_2201_name = "イベントガチャチケット(収集A)";
+	public const string UMO_currency_2201_desc = "収集イベント報酬用、デカルガチャを引くためのチケット";
+	public const string UMO_currency_2202_name = "イベントガチャチケット(収集B)";
+	public const string UMO_currency_2202_desc = "収集イベント報酬用、デカルガチャを引くためのチケット";
+	public const string UMO_currency_2203_name = "イベントガチャチケット(収集C)";
+	public const string UMO_currency_2203_desc = "収集イベント報酬用、デカルガチャを引くためのチケット";
+	public const string UMO_currency_2204_name = "イベントガチャチケット(ミッションA)";
+	public const string UMO_currency_2204_desc = "ミッションイベント報酬用、デカルガチャを引くためのチケット";
+	public const string UMO_currency_2205_name = "イベントガチャチケット(ミッションB)";
+	public const string UMO_currency_2205_desc = "ミッションイベント報酬用、デカルガチャを引くためのチケット";
+	public const string UMO_currency_2206_name = "イベントガチャチケット(ミッションC)";
+	public const string UMO_currency_2206_desc = "ミッションイベント報酬用、デカルガチャを引くためのチケット";
+	public const string UMO_currency_2207_name = "イベントガチャチケット(歌姫-バトルA)";
+	public const string UMO_currency_2207_desc = "バトルイベント報酬用、デカルガチャを引くためのチケット";
+	public const string UMO_currency_2208_name = "イベントガチャチケット(歌姫-バトルB)";
+	public const string UMO_currency_2208_desc = "バトルイベント報酬用、デカルガチャを引くためのチケット";
+	public const string UMO_currency_2209_name = "イベントガチャチケット(歌姫-バトルC)";
+	public const string UMO_currency_2209_desc = "バトルイベント報酬用、デカルガチャを引くためのチケット";
+	public const string UMO_currency_3001_name = "スプリングスフィア";
+	public const string UMO_currency_3001_desc = "歌晶石購入のおまけ (3/1～5/31)";
+	public const string UMO_currency_3002_name = "サマースフィア";
+	public const string UMO_currency_3002_desc = "歌晶石購入のおまけ (6/1～8/31)";
+	public const string UMO_currency_3003_name = "オータムスフィア";
+	public const string UMO_currency_3003_desc = "歌晶石購入のおまけ (9/1～11/30)";
+	public const string UMO_currency_3004_name = "ウィンタースフィア";
+	public const string UMO_currency_3004_desc = "歌晶石購入のおまけ (12/1～2/28)";
+	public const string UMO_currency_3005_name = "衣装解放プレート交換券";
+	public const string UMO_currency_3005_desc = "衣装解放プレート交換券";
+	public const string UMO_currency_4001_name = "娘くじ☆抽選券";
+	public const string UMO_currency_4001_desc = "娘くじ☆抽選用";
+	public const string UMO_currency_4002_name = "娘くじ☆抽選券B";
+	public const string UMO_currency_4002_desc = "娘くじ☆抽選用";
+	public const string UMO_currency_4003_name = "娘くじ☆抽選券C";
+	public const string UMO_currency_4003_desc = "娘くじ☆抽選用";
+	public const string UMO_currency_4004_name = "娘くじ☆抽選券D";
+	public const string UMO_currency_4004_desc = "娘クジ☆抽選用";
+	public const string UMO_currency_5001_name = "お年玉";
+	public const string UMO_currency_5001_desc = "お年玉用通貨";
+	public const string UMO_currency_5002_name = "サマーチケット";
+	public const string UMO_currency_5002_desc = "サマーチケット";
+
+	public const string UMO_product_178088_name = "★5確定デビューガチャ22 10連";
+	public const string UMO_product_178088_desc_name = "デビューガチャ";
+	public const string UMO_product_429267_name = "★5確定サービスガチャ8";
+	public const string UMO_product_429267_desc_name = "★5確定サービスガチャ";
+	public const string UMO_product_429267_desc_desc = "★5確定サービスチケットを消費し\n★5のプレートを入手できます。\n※2022/3/31ラインナップ更新";
+	public const string UMO_product_429712_name = "サービスガチャ317";
+	public const string UMO_product_429712_desc_name = "サービスガチャ";
+	public const string UMO_product_429712_desc_desc = "\n朝・昼・夜\n1日に3回歌晶石なしでも引けるガチャです。\n\n「こんなサービス1日3回しかしないんだからね！」\n　　　　　　　　　　　　　－シェリル・ノーム－";
+	public const string UMO_product_429927_name = "超時空ガチャ45";
+	public const string UMO_product_429927_desc_name = "超時空ガチャ";
+	public const string UMO_product_429927_desc_desc = "超時空ガチャチケットを消費して\n★1～★6のプレートを入手できます。\n※2022/5/1ラインナップ更新";
+	public const string UMO_product_429928_name = "ピックアップガチャ159";
+	public const string UMO_product_429928_desc_free_msg = "1回無料！";
+	public const string UMO_product_429928_desc_name = "★5以上確定ガチャ";
+	public const string UMO_product_429929_name = "ピックアップガチャ159 10連";
+	public const string UMO_product_429929_desc_free_msg = "1回無料！";
+	public const string UMO_product_429929_desc_kakutei = "★5以上10枚確定";
+	public const string UMO_product_429929_desc_name = "★5以上確定ガチャ";
+	public const string UMO_product_429930_name = "ピックアップガチャ159 10連 初回";
+	public const string UMO_product_429930_desc_free_msg = "1回無料！";
+	public const string UMO_product_429930_desc_kakutei = "★5以上10枚確定";
+	public const string UMO_product_429930_desc_name = "★5以上確定ガチャ";
+	public const string UMO_product_430020_name = "お得ガチャ31096 10連";
+	public const string UMO_product_430020_desc_free_msg = "10連無料";
+	public const string UMO_product_430020_desc_free_multi_msg = "1日1回\\n無料！";
+	public const string UMO_product_430020_desc_name = "無料10連ガチャ";
+	public const string UMO_product_67554_name = "コンテニュー";
+	public const string UMO_product_67554_desc = "ゲーム中にコンテニューできます。";
+	public const string UMO_product_67572_name = "スタミナ回復";
+	public const string UMO_product_153192_name = "VOP高速完了";
+	public const string UMO_product_153192_desc = "VOP高速完了の実行に使用します。";
+	public const string UMO_product_167079_name = "AP回復";
+	public const string UMO_product_222423_name = "AP回復2";
+	public const string UMO_product_222423_desc = "AP回復(小)";
+	public const string UMO_product_222424_name = "AP回復3";
+	public const string UMO_product_222424_desc = "AP回復（大）";
+	public const string UMO_product_428662_name = "2022年春 5月 : 春スフィア：幸運の煌石×1（購入制限有＆5月）";
+	public const string UMO_product_428665_name = "2022年春 5月 : 春スフィア：幸運の輝石×1（購入制限有＆5月）";
+	public const string UMO_product_428666_name = "2022年春 2月 : 春スフィア：星の結晶（小）×5";
+	public const string UMO_product_428667_name = "2022年春 2月 : 春スフィア：星の結晶（中）×5";
+	public const string UMO_product_428668_name = "2022年春 2月 : 春スフィア：星の結晶（大）×5";
+	public const string UMO_product_428669_name = "2022年春 2月 : 春スフィア：愛の結晶（小）×5";
+	public const string UMO_product_428670_name = "2022年春 2月 : 春スフィア：愛の結晶（中）×5";
+	public const string UMO_product_428671_name = "2022年春 2月 : 春スフィア：愛の結晶（大）×5";
+	public const string UMO_product_428672_name = "2022年春 2月 : 春スフィア：命の結晶（小）×5";
+	public const string UMO_product_428673_name = "2022年春 2月 : 春スフィア：命の結晶（中）×5";
+	public const string UMO_product_428674_name = "2022年春 2月 : 春スフィア：命の結晶（大）×5";
+	public const string UMO_product_428675_name = "2022年春 2月 : 春スフィア：メロディストーン（小）×20";
+	public const string UMO_product_428676_name = "2022年春 2月 : 春スフィア：メロディストーン（中）×20";
+	public const string UMO_product_428677_name = "2022年春 2月 : 春スフィア：メロディストーン（大）×20";
+	public const string UMO_product_428678_name = "2022年春 2月 : 春スフィア：ソウルストーン（小）×20";
+	public const string UMO_product_428679_name = "2022年春 2月 : 春スフィア：ソウルストーン（中）×20";
+	public const string UMO_product_428680_name = "2022年春 2月 : 春スフィア：ソウルストーン（大）×20";
+	public const string UMO_product_428681_name = "2022年春 2月 : 春スフィア：ボイスストーン（小）×20";
+	public const string UMO_product_428682_name = "2022年春 2月 : 春スフィア：ボイスストーン（中）×20";
+	public const string UMO_product_428683_name = "2022年春 2月 : 春スフィア：ボイスストーン（大）×20";
+	public const string UMO_product_428684_name = "2022年春 2月 : 春スフィア：チャームストーン（小）×20";
+	public const string UMO_product_428685_name = "2022年春 2月 : 春スフィア：チャームストーン（中）×20";
+	public const string UMO_product_428686_name = "2022年春 2月 : 春スフィア：チャームストーン（大）×20";
+	public const string UMO_product_428687_name = "2022年春 2月 : 春スフィア：UC×2000";
+	public const string UMO_product_428690_name = "2022年春 5月 : 春スフィア：★5確定ガチャチケ×1（購入制限有＆5月）";
+	public const string UMO_product_428693_name = "2022年春 5月 : 春スフィア：超時空ガチャチケ×1（購入制限有＆5月）";
+	public const string UMO_product_428696_name = "2022年春 5月 : 春スフィア：シークレットストーン×1（購入制限有＆5月）";
+	public const string UMO_product_428699_name = "2022年春 5月 : 春スフィア： エピソードオーブ（大）×1（購入制限有＆5月）";
 }

@@ -231,7 +231,7 @@ public class LFPJCEMANCK_Asset : DIHHCBACKGG_DbSection
 	// // RVA: 0xD6EB28 Offset: 0xD6EB28 VA: 0xD6EB28 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
     {
-        TodoLogger.LogError(100, "TODO");
+        TodoLogger.LogError(TodoLogger.DbJson, "TODO");
         return true;
     }
 

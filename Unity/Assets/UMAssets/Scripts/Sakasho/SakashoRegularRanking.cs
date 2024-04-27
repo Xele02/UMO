@@ -31,7 +31,19 @@ public class SakashoRegularRanking : SakashoAPIBase
 	}
 
 	//// RVA: 0x2E61578 Offset: 0x2E61578 VA: 0x2E61578
-	//public static SakashoAPICallContext GetRegularRankingRanksAroundTarget(string categoryId, string targetId, int from, int to, Nullable<int> playerId, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext GetRegularRankingRanksAroundTarget(string categoryId, string targetId, int from, int to, int? playerId, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		if (categoryId != null)
+			h["categoryId"] = categoryId;
+		if (targetId != null)
+			h["targetId"] = targetId;
+		h["from"] = from;
+		h["to"] = to;
+		if(playerId.HasValue)
+			h["playerId"] = playerId;
+		return new SakashoAPICallContext(Call(SakashoRegularRankingGetRegularRankingRanksAroundTarget, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	//// RVA: 0x2E6186C Offset: 0x2E6186C VA: 0x2E6186C
 	//public static SakashoAPICallContext GetRegularRankings(string categoryId, int page, int ipp, OnSuccess onSuccess, OnError onError) { }
@@ -49,5 +61,8 @@ public class SakashoRegularRanking : SakashoAPIBase
 	}
 
 	//// RVA: 0x2E61BF8 Offset: 0x2E61BF8 VA: 0x2E61BF8
-	//private static extern int SakashoRegularRankingGetRegularRankingRanksAroundTarget(int callbackId, string json) { }
+	private static int SakashoRegularRankingGetRegularRankingRanksAroundTarget(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoRegularRankingGetRegularRankingRanksAroundTarget(callbackId, json);
+	}
 }

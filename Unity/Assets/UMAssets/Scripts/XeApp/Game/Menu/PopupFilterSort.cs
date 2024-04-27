@@ -341,7 +341,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF8FD14 Offset: 0xF8FD14 VA: 0xF8FD14
 		private void InitializeEpisode()
 		{
-			TodoLogger.LogError(0, "InitializeEpisode");
+			TodoLogger.LogError(TodoLogger.OldEpisodeFilter, "InitializeEpisode");
 		}
 
 		// // RVA: 0xF909F0 Offset: 0xF909F0 VA: 0xF909F0
@@ -393,7 +393,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF92874 Offset: 0xF92874 VA: 0xF92874
 		private void FainalizeEpisode()
 		{
-			TodoLogger.LogError(0, "FainalizeEpisode");
+			TodoLogger.LogError(TodoLogger.OldEpisodeFilter, "FainalizeEpisode");
 		}
 
 		// // RVA: 0xF92C84 Offset: 0xF92C84 VA: 0xF92C84
@@ -442,13 +442,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF922A0 Offset: 0xF922A0 VA: 0xF922A0
 		private void InitializeGoDivaMusicSelect()
 		{
-			TodoLogger.LogError(0, "InitializeGoDivaMusicSelect");
+			TodoLogger.LogError(TodoLogger.EventGoDiva_14, "InitializeGoDivaMusicSelect");
 		}
 
 		// // RVA: 0xF93430 Offset: 0xF93430 VA: 0xF93430
 		private void FainalizeGoDivaMusicSelect()
 		{
-			TodoLogger.LogError(0, "FainalizeGoDivaMusicSelect");
+			TodoLogger.LogError(TodoLogger.EventGoDiva_14, "FainalizeGoDivaMusicSelect");
 		}
 
 		// // RVA: 0xF947D8 Offset: 0xF947D8 VA: 0xF947D8

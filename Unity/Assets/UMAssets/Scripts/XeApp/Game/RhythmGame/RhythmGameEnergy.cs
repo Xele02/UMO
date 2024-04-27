@@ -158,7 +158,14 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDC6288 Offset: 0xDC6288 VA: 0xDC6288
-		// public void ForceChangePercentage100() { }
+		public void ForceChangePercentage100()
+		{
+			usedForceSubgoal = true;
+			if(subgoalValue <= currentValue)
+				return;
+			currentValue = subgoalValue;
+			PlayPilotVoice();
+		}
 
 		// // RVA: 0xDC5F6C Offset: 0xDC5F6C VA: 0xDC5F6C
 		private void PlayPilotVoice()

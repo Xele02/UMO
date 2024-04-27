@@ -307,7 +307,12 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 	// public void HAEOIGABDDM(int LJACHJCFMJH) { }
 
 	// // RVA: 0xD85B00 Offset: 0xD85B00 VA: 0xD85B00
-	// public void DGIBOADNFOI(int ADPPAIPFHML) { }
+	public void DGIBOADNFOI(int ADPPAIPFHML)
+	{
+		JAMCDEDFHHK_HotenCnt += ADPPAIPFHML;
+		if(JAMCDEDFHHK_HotenCnt > 98)
+			JAMCDEDFHHK_HotenCnt = 99;
+	}
 
 	// // RVA: 0xD85B2C Offset: 0xD85B2C VA: 0xD85B2C
 	public LGIDLHLBFFJ_MonthlyPass()
@@ -656,10 +661,7 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xD897EC Offset: 0xD897EC VA: 0xD897EC Slot: 10
-	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
-	{
-		TodoLogger.LogError(0, "AGHKODFKOJI");
-	}
+	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
 
 	// // RVA: 0xD8A954 Offset: 0xD8A954 VA: 0xD8A954 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()
@@ -675,5 +677,8 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xD8AC40 Offset: 0xD8AC40 VA: 0xD8AC40
-	// public string KIHJLOGLAGI() { }
+	public string KIHJLOGLAGI()
+	{
+		return BPMLNLPDCAJ_Lauk.DNJEJEANJGL_Value;
+	}
 }

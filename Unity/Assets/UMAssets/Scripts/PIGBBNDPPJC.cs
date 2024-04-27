@@ -7,7 +7,7 @@ public class LGMEPLIJLNB
 {
 	public MFDJIFIIPJD GOOIIPFHOIG; // 0x8
 	public int LGADCGFMLLD; // 0xC
-	public int CCDPNBJMKDI_Idx; // 0x10
+	public int CCDPNBJMKDI_StartPoint; // 0x10
 	public int DNBFMLBNAEE_TotalPoint; // 0x14
 	public int OJELCGDDAOM_MissingPoint; // 0x18
 	public bool HMEOAKCLKJE_IsReceived; // 0x1C
@@ -27,7 +27,7 @@ public class LGMEPLIJLNB
 			//0x17F58C0
 			return GHPLINIACBB.IOFHEGJPHKG_SId == NDFIEMPPMLF.IOFHEGJPHKG_StepId;
 		});
-		int b = 0;
+		int startPoint = 0;
 		for(int i = 0; i < NDFIEMPPMLF.FGOGPCMHPIN_Count; i++)
 		{
             short FCEJJEPFIPH = NDFIEMPPMLF.HHJGBJCIFON_Rewards[i];
@@ -38,10 +38,11 @@ public class LGMEPLIJLNB
 			LGMEPLIJLNB data = new LGMEPLIJLNB();
 			data.GOOIIPFHOIG = new MFDJIFIIPJD();
 			data.GOOIIPFHOIG.KHEKNNFCAOI(r.KIJAPOFAGPN_Item, r.JDLJPNMLFID_Count);
-			data.CCDPNBJMKDI_Idx = b;
+			data.CCDPNBJMKDI_StartPoint = startPoint;
 			data.DNBFMLBNAEE_TotalPoint = f.JENFHJDFFAD_Pt[i];
+			startPoint = data.DNBFMLBNAEE_TotalPoint;
 			int c = data.DNBFMLBNAEE_TotalPoint - saveEp.OGDBKJKIGAJ_CurrentPoint;
-			if(c == 1)
+			if(c < 1)
 				c = 0;
 			data.OJELCGDDAOM_MissingPoint = c;
 			data.HMEOAKCLKJE_IsReceived = saveEp.MCIHDIBHHBI_IsRewardReceived(i);
@@ -80,7 +81,7 @@ public class LGMEPLIJLNB
 					LGMEPLIJLNB l = new LGMEPLIJLNB();
 					l.GOOIIPFHOIG = new MFDJIFIIPJD();
 					l.GOOIIPFHOIG.KHEKNNFCAOI(reward.KIJAPOFAGPN_Item, reward.JDLJPNMLFID_Count);
-					l.CCDPNBJMKDI_Idx = pt;
+					l.CCDPNBJMKDI_StartPoint = pt;
 					l.DNBFMLBNAEE_TotalPoint = step.JENFHJDFFAD_Pt[a];
 					l.OJELCGDDAOM_MissingPoint = 0;
 					if (pt - saveInfo.OGDBKJKIGAJ_CurrentPoint > 0)

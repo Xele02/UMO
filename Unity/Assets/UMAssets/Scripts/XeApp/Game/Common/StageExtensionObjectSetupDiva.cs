@@ -14,7 +14,20 @@ namespace XeApp.Game.Common
 			Renderer[] rs = root.GetComponentsInChildren<Renderer>();
 			if(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PKEMELMMEKM_IsDivaHighQuality())
 			{
-				TodoLogger.LogError(0, "SetupDivaObject switch to low shader");
+				for(int i = 0; i < rs.Length; i++)
+				{
+					for(int j = 0; j < rs[i].materials.Length; j++)
+					{
+						if(rs[i].materials[j].shader.name == "MCRS/Diva/Opaque_High")
+						{
+							rs[i].materials[j].shader = Shader.Find("MCRS/Diva/Opaque_Low");
+						}
+						else if(rs[i].materials[j].shader.name == "MCRS/Diva/Opaque_Outline_High")
+						{
+							rs[i].materials[j].shader = Shader.Find("MCRS/Diva/Opaque_Outline_Low");
+						}
+					}
+				}
 			}
 			BoneSpringController controller = gameObject.GetComponentInChildren<BoneSpringController>();
 			if(controller != null)

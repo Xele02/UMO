@@ -1,4 +1,5 @@
 using System;
+using XeApp.Game;
 
 namespace XeApp.Core
 {
@@ -14,19 +15,24 @@ namespace XeApp.Core
 		// // RVA: 0x1D7679C Offset: 0x1D7679C VA: 0x1D7679C
 		private SubSceneBase()
 		{
-			TodoLogger.LogError(0, "TODO");
+			nextScene = null;
+			mainScene = null;
 		}
 
 		// // RVA: 0x1D767C0 Offset: 0x1D767C0 VA: 0x1D767C0
 		public SubSceneBase(MainSceneBase mainScene)
 		{
-			TodoLogger.LogError(0, "TODO");
+			nextScene = null;
+			this.mainScene = mainScene;
 		}
 
 		// // RVA: 0x1D73B30 Offset: 0x1D73B30 VA: 0x1D73B30
 		public void Enter(SubSceneBase prevScene)
 		{
-			TodoLogger.LogError(0, "TODO");
+			if(prevScene != null)
+				prevScene.nextScene = null;
+			isEnd = false;
+			update = UpdateEnter;
 		}
 
 		// // RVA: 0x1D73F18 Offset: 0x1D73F18 VA: 0x1D73F18
@@ -35,20 +41,43 @@ namespace XeApp.Core
 		// // RVA: 0x1D73AF4 Offset: 0x1D73AF4 VA: 0x1D73AF4
 		public void Update()
 		{
-			TodoLogger.LogError(0, "TODO");
+			if(update != null)
+				update();
 		}
 
 		// // RVA: 0x1D74088 Offset: 0x1D74088 VA: 0x1D74088
 		// public void NextSubScene(SubSceneBase next) { }
 
 		// // RVA: 0x1D767E8 Offset: 0x1D767E8 VA: 0x1D767E8 Slot: 4
-		// public void UpdateEnter() { }
+		public void UpdateEnter()
+		{
+			if(!DoUpdateEnter())
+				return;
+			if(useFadeIn)
+			{
+				GameManager.FadeIn(0.4f);
+				update = UpdateEnterFadeIn;
+			}
+			else
+			{
+				GameManager.FadeReset();
+				update = UpdateMain;
+			}
+		}
 
 		// // RVA: 0x1D76928 Offset: 0x1D76928 VA: 0x1D76928 Slot: 5
-		// public void UpdateEnterFadeIn() { }
+		public void UpdateEnterFadeIn()
+		{
+			if(GameManager.IsFading())
+				return;
+			update = UpdateMain;
+		}
 
 		// // RVA: 0x1D769F4 Offset: 0x1D769F4 VA: 0x1D769F4 Slot: 6
-		// public void UpdateMain() { }
+		public void UpdateMain()
+		{
+			DoUpdateMain();
+		}
 
 		// // RVA: 0x1D76A04 Offset: 0x1D76A04 VA: 0x1D76A04 Slot: 7
 		// public void UpdateLeaveFadeOut() { }
@@ -57,10 +86,10 @@ namespace XeApp.Core
 		// public void UpdateLeave() { }
 
 		// // RVA: -1 Offset: -1 Slot: 11
-		// protected abstract bool DoUpdateEnter();
+		protected abstract bool DoUpdateEnter();
 
 		// // RVA: -1 Offset: -1 Slot: 12
-		// protected abstract void DoUpdateMain();
+		protected abstract void DoUpdateMain();
 
 		// // RVA: -1 Offset: -1 Slot: 13
 		// protected abstract bool DoUpdateLeave();

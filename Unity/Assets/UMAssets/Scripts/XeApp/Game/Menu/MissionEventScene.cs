@@ -35,33 +35,33 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB42A10 Offset: 0xB42A10 VA: 0xB42A10 Slot: 35
 		protected override void CheckTryInstall()
 		{
-			TodoLogger.LogError(0, "MissionEventScene CheckTryInstall");
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MissionEventScene CheckTryInstall");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F2144 Offset: 0x6F2144 VA: 0x6F2144
 		// // RVA: 0xB42A14 Offset: 0xB42A14 VA: 0xB42A14 Slot: 36
 		protected override IEnumerator Co_Initialize()
 		{
-			TodoLogger.LogError(0, "MissionEventScene Co_Initialize");
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MissionEventScene Co_Initialize");
 			yield break;
 		}
 
 		// RVA: 0xB42A9C Offset: 0xB42A9C VA: 0xB42A9C Slot: 39
 		protected override void Release()
 		{
-			TodoLogger.LogError(0, "MissionEventScene Release");
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MissionEventScene Release");
 		}
 
 		// RVA: 0xB42DD8 Offset: 0xB42DD8 VA: 0xB42DD8 Slot: 40
 		protected override void SetupViewMusicData()
 		{
-			TodoLogger.LogError(0, "MissionEventScene SetupViewMusicData");
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MissionEventScene SetupViewMusicData");
 		}
 
 		// RVA: 0xB42F28 Offset: 0xB42F28 VA: 0xB42F28 Slot: 38
 		protected override PlayButtonWrapper CreatePlayButtonWrapper()
 		{
-			TodoLogger.LogError(0, "MissionEventScene CreatePlayButtonWrapper");
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MissionEventScene CreatePlayButtonWrapper");
 			return null;
 		}
 
@@ -74,7 +74,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xB434C0 Offset: 0xB434C0 VA: 0xB434C0 Slot: 41
 		protected override void ApplyBasicInfo() 
 		{
-			TodoLogger.LogError(0, "MusicSelectScene* ApplyBasicInfo");
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MusicSelectScene* ApplyBasicInfo");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F21BC Offset: 0x6F21BC VA: 0x6F21BC
@@ -84,7 +84,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4364C Offset: 0xB4364C VA: 0xB4364C Slot: 42
 		protected override void ApplyMusicListInfo()
 		{
-			TodoLogger.LogError(0, "MusicSelectScene* ApplyMusicListInfo");
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MusicSelectScene* ApplyMusicListInfo");
 		}
 
 		// RVA: 0xB43798 Offset: 0xB43798 VA: 0xB43798 Slot: 52
@@ -96,14 +96,14 @@ namespace XeApp.Game.Menu
 		// RVA: 0xB43808 Offset: 0xB43808 VA: 0xB43808 Slot: 44
 		protected override void DelayedApplyMusicInfo()
 		{
-			TodoLogger.LogError(0, "MissionEventScene DelayedApplyMusicInfo");
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MissionEventScene DelayedApplyMusicInfo");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F2234 Offset: 0x6F2234 VA: 0x6F2234
 		// // RVA: 0xB43A10 Offset: 0xB43A10 VA: 0xB43A10 Slot: 55
 		protected override IEnumerator Co_LoadLayout()
 		{
-			TodoLogger.LogError(0, "MissionEventScene Co_LoadLayout");
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MissionEventScene Co_LoadLayout");
 			yield break;
 		}
 
@@ -202,7 +202,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4701C Offset: 0xB4701C VA: 0xB4701C Slot: 16
 		protected override void OnPreSetCanvas()
 		{
-			TodoLogger.LogError(0, "MissionEventScene OnPreSetCanvas");
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MissionEventScene OnPreSetCanvas");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F239C Offset: 0x6F239C VA: 0x6F239C
@@ -212,39 +212,39 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4718C Offset: 0xB4718C VA: 0xB4718C Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			TodoLogger.LogError(0, "MissionEventScene IsEndPreSetCanvas");
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MissionEventScene IsEndPreSetCanvas");
 			return true;
 		}
 
 		// RVA: 0xB471CC Offset: 0xB471CC VA: 0xB471CC Slot: 9
 		protected override void OnStartEnterAnimation()
 		{
-			TodoLogger.LogError(0, "MissionEventScene OnStartEnterAnimation");
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MissionEventScene OnStartEnterAnimation");
 		}
 
 		// RVA: 0xB47214 Offset: 0xB47214 VA: 0xB47214 Slot: 12
 		protected override void OnStartExitAnimation()
 		{
-			TodoLogger.LogError(0, "MissionEventScene OnStartExitAnimation");
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MissionEventScene OnStartExitAnimation");
 		}
 
 		// RVA: 0xB4754C Offset: 0xB4754C VA: 0xB4754C Slot: 13
 		protected override bool IsEndExitAnimation()
 		{
-			TodoLogger.LogError(0, "MissionEventScene IsEndExitAnimation");
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MissionEventScene IsEndExitAnimation");
 			return true;
 		}
 
 		// RVA: 0xB47A70 Offset: 0xB47A70 VA: 0xB47A70 Slot: 15
 		protected override void OnDeleteCache()
 		{
-			TodoLogger.LogError(0, "MissionEventScene OnDeleteCache");
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MissionEventScene OnDeleteCache");
 		}
 
 		// RVA: 0xB47B34 Offset: 0xB47B34 VA: 0xB47B34 Slot: 20
 		protected override bool OnBgmStart()
 		{
-			TodoLogger.LogError(0, "MissionEventScene OnBgmStart");
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MissionEventScene OnBgmStart");
 			return true;
 		}
 
@@ -255,7 +255,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB47C1C Offset: 0xB47C1C VA: 0xB47C1C Slot: 37
 		protected override IEnumerator Co_OnActivateScene()
 		{
-			TodoLogger.LogError(0, "MissionEventScene Co_OnActivateScene");
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MissionEventScene Co_OnActivateScene");
 			yield break;
 		}
 

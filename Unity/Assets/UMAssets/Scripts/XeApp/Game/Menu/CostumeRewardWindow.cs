@@ -48,7 +48,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x163ACC0 Offset: 0x163ACC0 VA: 0x163ACC0
 		public void Enter(LFAFJCNKLML data)
 		{
-			m_list = data.OCOOHBINGBG;
+			m_list = data.OCOOHBINGBG_LevelInfo;
 			int lvl = data.GKIKAABHAAD_Level;
 			for (int i = 0; i < m_scrollItemList.Count; i++)
 			{

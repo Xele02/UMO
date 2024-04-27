@@ -35,52 +35,52 @@ namespace XeApp.Game.Menu
 		// RVA: 0xF0F140 Offset: 0xF0F140 VA: 0xF0F140 Slot: 5
 		protected override void Start()
 		{
-			TodoLogger.LogError(0, "EventBattleScene Start");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene Start");
 		}
 
 		// RVA: 0xF0F14C Offset: 0xF0F14C VA: 0xF0F14C Slot: 16
 		protected override void OnPreSetCanvas()
 		{
-			TodoLogger.LogError(0, "EventBattleScene OnPreSetCanvas");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene OnPreSetCanvas");
 		}
 
 		// RVA: 0xF0F2A0 Offset: 0xF0F2A0 VA: 0xF0F2A0 Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			TodoLogger.LogError(0, "EventBattleScene IsEndPreSetCanvas");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene IsEndPreSetCanvas");
 			return true;
 		}
 
 		// RVA: 0xF0F480 Offset: 0xF0F480 VA: 0xF0F480 Slot: 20
 		protected override bool OnBgmStart()
 		{
-			TodoLogger.LogError(0, "EventBattleScene OnBgmStart");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene OnBgmStart");
 			return true;
 		}
 
 		// RVA: 0xF0F4FC Offset: 0xF0F4FC VA: 0xF0F4FC Slot: 9
 		protected override void OnStartEnterAnimation()
 		{
-			TodoLogger.LogError(0, "EventBattleScene OnStartEnterAnimation");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene OnStartEnterAnimation");
 		}
 
 		// RVA: 0xF0F770 Offset: 0xF0F770 VA: 0xF0F770 Slot: 10
 		protected override bool IsEndEnterAnimation()
 		{
-			TodoLogger.LogError(0, "EventBattleScene IsEndEnterAnimation");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene IsEndEnterAnimation");
 			return true;
 		}
 
 		// RVA: 0xF0F964 Offset: 0xF0F964 VA: 0xF0F964 Slot: 12
 		protected override void OnStartExitAnimation()
 		{
-			TodoLogger.LogError(0, "EventBattleScene OnStartExitAnimation");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene OnStartExitAnimation");
 		}
 
 		// RVA: 0xF0FB20 Offset: 0xF0FB20 VA: 0xF0FB20 Slot: 13
 		protected override bool IsEndExitAnimation()
 		{
-			TodoLogger.LogError(0, "EventBattleScene IsEndExitAnimation");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene IsEndExitAnimation");
 			return true;
 		}
 
@@ -90,19 +90,19 @@ namespace XeApp.Game.Menu
 		// RVA: 0xF0FEA4 Offset: 0xF0FEA4 VA: 0xF0FEA4 Slot: 15
 		protected override void OnDeleteCache()
 		{
-			TodoLogger.LogError(0, "EventBattleScene OnDeleteCache");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene OnDeleteCache");
 		}
 
 		// RVA: 0xF0FF9C Offset: 0xF0FF9C VA: 0xF0FF9C Slot: 14
 		protected override void OnDestoryScene()
 		{
-			TodoLogger.LogError(0, "EventBattleScene OnDestoryScene");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene OnDestoryScene");
 		}
 
 		// RVA: 0xF0FFD4 Offset: 0xF0FFD4 VA: 0xF0FFD4 Slot: 35
 		protected override void CheckTryInstall()
 		{
-			TodoLogger.LogError(0, "EventBattleScene CheckTryInstall");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene CheckTryInstall");
 		}
 
 		// // RVA: 0xF0FFD8 Offset: 0xF0FFD8 VA: 0xF0FFD8
@@ -116,45 +116,45 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF10124 Offset: 0xF10124 VA: 0xF10124 Slot: 36
 		protected override IEnumerator Co_Initialize()
 		{
-			TodoLogger.LogError(0, "EventBattleScene CheckTryInstall");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene CheckTryInstall");
 			yield break;
 		}
 
 		// RVA: 0xF101AC Offset: 0xF101AC VA: 0xF101AC Slot: 38
 		protected override PlayButtonWrapper CreatePlayButtonWrapper()
 		{
-			TodoLogger.LogError(0, "EventBattleScene CreatePlayButtonWrapper");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene CreatePlayButtonWrapper");
 			return null;
 		}
 
 		// RVA: 0xF1022C Offset: 0xF1022C VA: 0xF1022C Slot: 39
 		protected override void Release()
 		{
-			TodoLogger.LogError(0, "EventBattleScene Release");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene Release");
 		}
 
 		// RVA: 0xF10300 Offset: 0xF10300 VA: 0xF10300 Slot: 40
 		protected override void SetupViewMusicData()
 		{
-			TodoLogger.LogError(0, "EventBattleScene SetupViewMusicData");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene SetupViewMusicData");
 		}
 
 		// RVA: 0xF10450 Offset: 0xF10450 VA: 0xF10450 Slot: 41
 		protected override void ApplyBasicInfo()
 		{
-			TodoLogger.LogError(0, "MusicSelectScene* ApplyBasicInfo");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "MusicSelectScene* ApplyBasicInfo");
 		}
 
 		// RVA: 0xF1048C Offset: 0xF1048C VA: 0xF1048C Slot: 42
 		protected override void ApplyMusicListInfo()
 		{
-			TodoLogger.LogError(0, "MusicSelectScene* ApplyMusicListInfo");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "MusicSelectScene* ApplyMusicListInfo");
 		}
 
 		// RVA: 0xF104F4 Offset: 0xF104F4 VA: 0xF104F4 Slot: 44
 		protected override void DelayedApplyMusicInfo()
 		{
-			TodoLogger.LogError(0, "EventBattleScene DelayedApplyMusicInfo");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene DelayedApplyMusicInfo");
 		}
 
 		// RVA: 0xF10658 Offset: 0xF10658 VA: 0xF10658 Slot: 46
@@ -189,7 +189,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF125B0 Offset: 0xF125B0 VA: 0xF125B0 Slot: 55
 		protected override IEnumerator Co_LoadLayout()
 		{
-			TodoLogger.LogError(0, "EventBattleScene Co_LoadLayout");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene Co_LoadLayout");
 			yield break;
 		}
 
@@ -197,7 +197,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF12638 Offset: 0xF12638 VA: 0xF12638 Slot: 56
 		protected override IEnumerator Co_WaitForLoaded()
 		{
-			TodoLogger.LogError(0, "EventBattleScene Co_WaitForLoaded");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene Co_WaitForLoaded");
 			yield break;
 		}
 
@@ -209,7 +209,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF12764 Offset: 0xF12764 VA: 0xF12764 Slot: 37
 		protected override IEnumerator Co_OnActivateScene()
 		{
-			TodoLogger.LogError(0, "EventBattleScene Co_OnActivateScene");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene Co_OnActivateScene");
 			yield break;
 		}
 

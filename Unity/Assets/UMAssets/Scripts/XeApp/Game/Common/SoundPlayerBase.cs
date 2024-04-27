@@ -158,7 +158,15 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x13987A4 Offset: 0x13987A4 VA: 0x13987A4
-		// protected bool PlayCue(int cueId) { }
+		protected bool PlayCue(int cueId)
+		{
+			if(source != null)
+			{
+				playBack = source.Play(cueId);
+				return true;
+			}
+			return false;
+		}
 
 		// // RVA: 0x1390060 Offset: 0x1390060 VA: 0x1390060
 		protected bool StopCue()

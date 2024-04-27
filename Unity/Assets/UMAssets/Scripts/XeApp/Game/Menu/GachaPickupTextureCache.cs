@@ -2,6 +2,11 @@ using System.Text;
 
 namespace XeApp.Game.Menu
 {
+	public class GachaPickupTexture : IconTexture
+	{
+		//
+	}
+
 	public class GachaPickupTextureCache : IconTextureCache
 	{
 		public const string BundleFormat = "ct/gc/pr/{0:D5}.xab";
@@ -22,8 +27,9 @@ namespace XeApp.Game.Menu
 		// RVA: 0xEE4138 Offset: 0xEE4138 VA: 0xEE4138 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
 		{
-			TodoLogger.LogError(0, "CreateIconTexture");
-			return null;
+			GachaPickupTexture tex = new GachaPickupTexture();
+			SetupForSplitTexture(info, tex);
+			return tex;
 		}
 
 		// RVA: 0xEE41C0 Offset: 0xEE41C0 VA: 0xEE41C0

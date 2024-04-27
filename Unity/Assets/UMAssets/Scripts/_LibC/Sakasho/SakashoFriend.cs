@@ -76,6 +76,14 @@ namespace ExternLib
 			return 0;
 		}
 
+		public static int SakashoFriendDeleteFriend(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			SendMessage(callbackId, res);
+
+			return 0;
+		}
+
 		public static int SakashoFriendRefuseFriendRequest(int callbackId, string json)
 		{
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
@@ -111,5 +119,14 @@ namespace ExternLib
 
 			return 0;
 		}
+
+		public static int SakashoFriendSendFriendRequest(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			SendMessage(callbackId, res);
+
+			return 0;
+		}
+		
 	}
 }

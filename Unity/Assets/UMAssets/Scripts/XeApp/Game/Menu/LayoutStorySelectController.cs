@@ -500,7 +500,25 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x728954 Offset: 0x728954 VA: 0x728954
 		//// RVA: 0x194F29C Offset: 0x194F29C VA: 0x194F29C
-		//public IEnumerator Co_CompleteProduction(Action callback, Action completeStageIn) { }
+		public IEnumerator Co_CompleteProduction(Action callback, Action completeStageIn)
+		{
+			//0x195010C
+			yield return Co.R(LoadLayoutInner("ly/011.xab", "root_story_comp_bg_layout_root", (GameObject instance) =>
+			{
+				//0x194FC80
+				layoutCompleteProduction = instance.GetComponent<StorySelectCompleteProduction>();
+			}));
+			while(layoutCompleteProduction == null)
+				yield return null;
+			while(!layoutCompleteProduction.IsLoaded())
+				yield return null;
+			layoutCompleteProduction.transform.SetParent(MenuScene.Instance.GetCurrentTransitionRoot().transform.parent, false);
+			layoutCompleteProduction.transform.SetAsLastSibling();
+			layoutCompleteProduction.gameObject.SetActive(true);
+			yield return Co.R(layoutCompleteProduction.CompleteProduction(completeStageIn));
+			if(callback != null)
+				callback();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7289CC Offset: 0x7289CC VA: 0x7289CC
 		//// RVA: 0x194F37C Offset: 0x194F37C VA: 0x194F37C
@@ -634,9 +652,5 @@ namespace XeApp.Game.Menu
 				}
 			}
 		}
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x728D1C Offset: 0x728D1C VA: 0x728D1C
-		//// RVA: 0x194FC80 Offset: 0x194FC80 VA: 0x194FC80
-		//private void <Co_CompleteProduction>b__93_0(GameObject instance) { }
 	}
 }

@@ -101,7 +101,7 @@ public class DKKPBBBDKMJ
 				}
 				if(!b3)
 				{
-					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB(storyEvent.OAFJONPIFGM_EventId);
+					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(storyEvent.OAFJONPIFGM_EventId);
 					if(ev != null)
 					{
 						ev.HCDGELDHFHB_UpdateStatus(t);

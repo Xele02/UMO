@@ -67,7 +67,7 @@ public class SakashoPlayerData : SakashoAPIBase
 			l = new ArrayList();
 			for(int i = 0; i < inventoryIds.Length; i++)
 			{
-				l.Add(inventoryIds[i].ToString());
+				l.Add(inventoryIds[i]);
 			}
 		}
 		h["inventoryIds"] = l;

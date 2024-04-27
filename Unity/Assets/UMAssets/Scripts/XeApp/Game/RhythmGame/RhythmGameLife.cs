@@ -114,7 +114,15 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9A8FE8 Offset: 0x9A8FE8 VA: 0x9A8FE8
-		//public void Full() { }
+		public void Full()
+		{
+			current = max;
+			changeBeganValue = view;
+			changeTargetValue = max;
+			changeRequiredTime = 0.5f;
+			changeBeganTime = TimeWrapper.time;
+			isChanging = true;
+		}
 
 		//// RVA: 0x9A9028 Offset: 0x9A9028 VA: 0x9A9028
 		//public void Zero() { }

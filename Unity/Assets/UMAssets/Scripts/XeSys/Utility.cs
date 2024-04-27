@@ -91,7 +91,11 @@ namespace XeSys
 		// public static string GetDayStringFromUNIXTime(long unix_time) { }
 
 		// // RVA: 0x23A9754 Offset: 0x23A9754 VA: 0x23A9754
-		// public static string GetTimeStringFromUNIXTime(long unix_time) { }
+		public static string GetTimeStringFromUNIXTime(long unix_time)
+		{
+			DateTime date = GetLocalDateTime(unix_time);
+			return string.Format("{0:D2}", date.Hour) + ":" + string.Format("{0:D2}", date.Minute);
+		}
 
 		// // RVA: 0x23A98A4 Offset: 0x23A98A4 VA: 0x23A98A4
 		// public static bool IsAcrossHour(long prevUnixTime, long nextUnixTime) { }

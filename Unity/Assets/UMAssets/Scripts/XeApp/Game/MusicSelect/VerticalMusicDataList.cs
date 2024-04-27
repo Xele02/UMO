@@ -228,7 +228,7 @@ namespace XeApp.Game.MusicSelect
 						if (eventData == 14)
 							eventType = MusicSelectConsts.EventType.Special;
 					}
-					if (musicData.LEBDMNIGOJB)
+					if (musicData.LEBDMNIGOJB_IsScoreEvent)
 						eventType = MusicSelectConsts.EventType.ScoreRanking;
 					MusicSelectConsts.PlayBoostType boostType = MusicSelectConsts.PlayBoostType.Max;
 					if(musicData.LHONOILACFL_IsWeeklyEvent)
@@ -302,10 +302,10 @@ namespace XeApp.Game.MusicSelect
 					bool isOpen = true;
 					if (musicData.DEPGBBJMFED_CategoryId != 5)
 					{
+						isOpen = IBJAKJJICBC.LBHPMGDNPHK_IsMusicOpen(musicData.GHBPLHBNMBK_FreeMusicId, musicData.DEPGBBJMFED_CategoryId);
 						if (musicData.HAMPEDFMIAD_HasOnlyMultiDivaMode())
 						{
-							isOpen = IBJAKJJICBC.LBHPMGDNPHK(musicData.GHBPLHBNMBK_FreeMusicId, musicData.DEPGBBJMFED_CategoryId) &&
-								(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("multi_dance_player_level", 3) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level);
+							isOpen &= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("multi_dance_player_level", 3) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 						}
 					}
 					MusicSelectConsts.MusicType musicType = (MusicSelectConsts.MusicType)(musicData.EEFLOOBOAGF % 10);
@@ -552,13 +552,49 @@ namespace XeApp.Game.MusicSelect
 		}
 
 		//// RVA: 0xCA35DC Offset: 0xCA35DC VA: 0xCA35DC
-		//public VerticalMusicDataList.MusicListData Find(int freeMusicId, bool line6Mode, bool simulation) { }
+		public MusicListData Find(int freeMusicId, bool line6Mode, bool simulation)
+		{
+			return Find((MusicListData _) =>
+			{
+				//0xCA3CD4
+				return _.ViewMusic.GHBPLHBNMBK_FreeMusicId == freeMusicId;
+			}, line6Mode, simulation);
+		}
 
 		//// RVA: 0xCA3778 Offset: 0xCA3778 VA: 0xCA3778
 		//public VerticalMusicDataList.MusicListData Find(int freeMusicId, OHCAABOMEOF.KGOGMKMBCPP gameEventType, bool line6Mode, bool simulation) { }
 
 		//// RVA: 0xCA36D0 Offset: 0xCA36D0 VA: 0xCA36D0
-		//public VerticalMusicDataList.MusicListData Find(Predicate<VerticalMusicDataList.MusicListData> match, bool line6Mode, bool simulation) { }
+		public MusicListData Find(Predicate<MusicListData> match, bool line6Mode, bool simulation)
+		{
+			if(simulation)
+			{
+				if(line6Mode)
+				{
+					if(m_viewSimulationList != null)
+						return m_viewSimulationList.Find(match);
+				}
+				else
+				{
+					if(m_viewSimulation6LineList != null)
+						return m_viewSimulation6LineList.Find(match);
+				}
+			}
+			else
+			{
+				if(line6Mode)
+				{
+					if(m_viewList != null)
+						return m_viewList.Find(match);
+				}
+				else
+				{
+					if(m_view6LineList != null)
+						return m_view6LineList.Find(match);
+				}
+			}
+			return null;
+		}
 
 		//// RVA: 0xCA3888 Offset: 0xCA3888 VA: 0xCA3888
 		public void AddList(List<MusicListData> addList, bool line6Mode, bool simulation)

@@ -68,7 +68,7 @@ namespace CriWare
 		// // RVA: 0x2947F98 Offset: 0x2947F98 VA: 0x2947F98 Slot: 6
 		public override void Stop()
 		{
-			TodoLogger.LogError(0, "TODO");
+			TodoLogger.LogError(TodoLogger.CriFsPlugin, "TODO");
 		}
 
 		// // RVA: 0x2948024 Offset: 0x2948024 VA: 0x2948024 Slot: 8

@@ -2231,7 +2231,7 @@ namespace XeApp.Game.Menu
 				AODFBGCCBPE a = AODFBGCCBPE.FKDIMODKKJD(false).Find((AODFBGCCBPE _) =>
 				{
 					//0xC6E290
-					return _.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5;
+					return _.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5;
 				});
 				if(a == null)
 				{
@@ -4589,8 +4589,27 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC6B818 Offset: 0xC6B818 VA: 0xC6B818
 		private IEnumerator PermissionCallBack(Action<ScreenShot.PermissionFuncResultCode> result)
 		{
-			TodoLogger.LogError(0, "PermissionCallBack");
-			yield return null;
+			//0x1585C64
+			TextPopupSetting s = new TextPopupSetting();
+			s.IsCaption = false;
+			s.WindowSize = SizeType.Middle;
+			s.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			s.Text = MessageManager.Instance.GetMessage("menu", "deco_sel_popup_storage_message_android") + MessageManager.Instance.GetMessage("menu", "deco_screenshot_storage_text_android");
+			bool isWait = true;
+			ScreenShot.PermissionFuncResultCode tempResult = ScreenShot.PermissionFuncResultCode.Ok;
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0xC6F5F0
+				isWait = false;
+				tempResult = type == PopupButton.ButtonType.Positive ? ScreenShot.PermissionFuncResultCode.Ok : ScreenShot.PermissionFuncResultCode.Cancell;
+			}, null, null, null);
+			while(isWait)
+				yield return null;
+			result(tempResult);
 		}
 
 		//// RVA: 0xC6B108 Offset: 0xC6B108 VA: 0xC6B108

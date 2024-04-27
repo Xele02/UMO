@@ -143,7 +143,7 @@ public class BOPPPCKONML
 		KAKFEGGEKLB = FAEBIDLDKPJ;
 		if(false)//if(!FLPHABPKNGM && a1 < 5 && !LCKPHJINHPH) UMO : save all always, system don't work for partial update
 		{
-			BLOCFLFHCFJ = true;
+			/*BLOCFLFHCFJ = true;
 			BHBONAHFKHD d = new BHBONAHFKHD();
 			for(int i = 0; i < PJJFEAHIPGL.Count; i++)
 			{
@@ -157,7 +157,7 @@ public class BOPPPCKONML
 			{
 				d.OJLJAHAGBLK(PLHNDPDKNLB, AFEHLCGHAEE_Strings.FAIOPNOJIBF_Slash + AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev, 1);
 			}
-			return d.MGPEIGDOMPH.EJCOJCGIBNG_ToJson();
+			return d.MGPEIGDOMPH.EJCOJCGIBNG_ToJson();*/
 		}
 		else
 		{
@@ -213,7 +213,7 @@ public class BOPPPCKONML
 				res = PJJFEAHIPGL[i].EILKGEADKGH_Order;
 			}
 		}
-		return res;
+		return res + 1;
 	}
 
 	//// RVA: 0x19D2D50 Offset: 0x19D2D50 VA: 0x19D2D50

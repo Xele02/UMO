@@ -46,7 +46,7 @@ public class ICLNENNIMOP_FreeScoreMax : KLFDBFMNLBL_ServerSaveBlock
 		{
 			double f = BOAGCEOHJEO.CFLDNJANAPI_Truncate(v);
 			if (KNIFCANOHOC != (int)f)
-				TodoLogger.LogError(0, "Error, debug double / int values : " + v + " " + GHBPLHBNMBK + " " + KNIFCANOHOC + " " + EOLFJGMAJAB + " " + f);
+				UnityEngine.Debug.LogError("Error, debug double / int values : " + v + " " + GHBPLHBNMBK + " " + KNIFCANOHOC + " " + EOLFJGMAJAB + " " + f);
 		}
 		// End debug
 		ECKFCIHPHGJ_SetScoreForMusic(GHBPLHBNMBK, KNIFCANOHOC);
@@ -195,8 +195,5 @@ public class ICLNENNIMOP_FreeScoreMax : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x11EB038 Offset: 0x11EB038 VA: 0x11EB038 Slot: 10
-	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
-	{
-		TodoLogger.LogError(0, "AGHKODFKOJI");
-	}
+	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH);
 }

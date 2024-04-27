@@ -572,7 +572,7 @@ public class KEPNMGHABPI
             OMEFFONNMBC(KPNKPGLPDHI, (LNCLNAOPNKF EOHFABJDJOH) =>
             {
                 //0x19F9028
-                TodoLogger.LogError(0, "IFFGEIMIKHH");
+                HLEABLHJPOI(KPNKPGLPDHI, EOHFABJDJOH, KOGBMDOONFA, BHFHGFKBOHH, MOBEEPPKFLG, NKGHADCBGJO);
             }, MOBEEPPKFLG, null);
         }
     }

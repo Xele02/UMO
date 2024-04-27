@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using mcrs;
 using UnityEngine;
 using UnityEngine.UI;
 using XeApp.Game.Menu;
+using XeSys;
 
 namespace XeApp.Game.Common
 {
@@ -50,12 +52,14 @@ namespace XeApp.Game.Common
 			m_buttonLeft.ClearOnClickCallback();
 			m_buttonLeft.AddOnClickCallback(() => {
 				//0xEABAC4
-				TodoLogger.LogNotImplemented("HomeEventBanner.ButtonLeft");
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+				ChangeBanner(-1, 0.1f);
 			});
 			m_buttonRight.ClearLoadedCallback();
 			m_buttonRight.AddOnClickCallback(() => {
 				//0xEABB34
-				TodoLogger.LogNotImplemented("HomeEventBanner.ButtonRight");
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+				ChangeBanner(1, 0.1f);
 			});
 			m_scrollView.OnChangeItem = (int idx) => {
 				//0xEABBA4
@@ -90,26 +94,135 @@ namespace XeApp.Game.Common
 		{
 			ClearBanner();
 			int cnt = 0;
-			MenuScene.Instance.LobbyButtonControl.CheckLobbyAnnounce();
+			bool b = MenuScene.Instance.LobbyButtonControl.CheckLobbyAnnounce();
 			for(int i = 0; i < list.Count; i++)
 			{
-				TodoLogger.LogError(0, "Event");
+				if(!b && OHCAABOMEOF.BPJMGICFPBJ(list[i].PGIIDPEGGPI_EventId) != OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
+				{
+					MessageBank bk = MessageManager.Instance.GetBank("menu");
+					long l1, l2;
+					string str;
+					if(list[i].NGOFCFJHOMI_Status <= KGCNCBOKCBA.GNENJEHKMHD.DOAENCHBAEO_11)
+					{
+						if(((1 << (int)list[i].NGOFCFJHOMI_Status) & 0xf03U) != 0)
+							// 1111 0000 0011
+						{
+							continue;
+						}
+						else if(((1 << (int)list[i].NGOFCFJHOMI_Status) & 0x3cU) != 0)
+							// 11 1100
+						{
+							l1 = list[i].GLIMIGNNGGB_Start;
+							l2 = list[i].DPJCPDKALGI_End1;
+							str = "home_event_counting";
+						}
+						else
+						{
+							l1 = list[i].GLIMIGNNGGB_Start;
+							l2 = list[i].DPJCPDKALGI_End1;
+							str = "home_event_started";
+						}
+						str = bk.GetMessageByLabel(str);
+					}
+					else
+					{
+						l1 = 0;
+						l2 = 0;
+						str = "";
+					}
+					PKNOKJNLPOE_EventRaid evRaid = list[i] as PKNOKJNLPOE_EventRaid;
+					if(evRaid != null)
+					{
+						TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Raid");
+					}
+					MANPIONIGNO_EventGoDiva evGoDiva = list[i] as MANPIONIGNO_EventGoDiva;
+					if(evGoDiva != null)
+					{
+						TodoLogger.LogError(TodoLogger.EventGoDiva_14, "GoDiva");
+					}
+					//LAB_00ea9d4c
+					string s = list[i].DBEMCLMPCFA();
+					if(!string.IsNullOrEmpty(s))
+						str = s;
+					AddBanner(list[i].PGIIDPEGGPI_EventId, l1, l2, str);
+				}
 			}
 			m_scrollView.horizontal = cnt > 1;
 		}
 
 		// // RVA: 0xEAA048 Offset: 0xEAA048 VA: 0xEAA048
-		// public void AddBanner(int id, long start, long end, string text = "") { }
+		public void AddBanner(int id, long start, long end, string text = "")
+		{
+			SelectScrollViewContent s = m_scrollView.scrollObjects.Find((SelectScrollViewContent x) =>
+			{
+				//0xEABDB8
+				return id == (x as BannerScrollViewContent).pictId;
+			});
+			if(s == null)
+			{
+				string str = "";
+				if(start != 0 && end != 0)
+				{
+					DateTime dStart = Utility.GetLocalDateTime(start);
+					DateTime dEnd = Utility.GetLocalDateTime(end);
+					str = string.Format(MessageManager.Instance.GetMessage("menu", "home_event_banner_period"), new object[8]
+					{
+						dStart.Month, dStart.Day, dStart.Hour, dStart.Minute,
+						dEnd.Month, dEnd.Day, dEnd.Hour, dEnd.Minute
+					});
+				}
+				HomeEventBannerContent content = Instantiate(m_objBanner);
+				content.SetFont(m_font);
+				content.SetPeriod(str);
+				content.SetCampaignInfo(text);
+				content.SetTexture(id, (int pictId, Action<IiconTexture> onLoaded) =>
+				{
+					//0xEABCEC
+					GameManager.Instance.QuestEventTextureCache.LoadFont(pictId, onLoaded);
+				});
+				content.onClickButton = (int pictId) =>
+				{
+					//0xEABEC0
+					if(onClickBannerButton != null)
+					{
+						onClickBannerButton(pictId);
+					}
+				};
+				AddPageIcon(content);
+				m_scrollView.AddScrollObject(content);
+				m_scrollView.SetItemCount(m_scrollView.scrollObjects.Count);
+				m_buttonLeft.gameObject.SetActive(m_scrollView.scrollObjects.Count > 1);
+				m_buttonRight.gameObject.SetActive(m_scrollView.scrollObjects.Count > 1);
+				InitScrollType();
+			}
+		}
 
 		// // RVA: 0xEAADE4 Offset: 0xEAADE4 VA: 0xEAADE4
-		// public void RemoveBanner(int id) { }
+		public void RemoveBanner(int id)
+		{
+			SelectScrollViewContent s = m_scrollView.scrollObjects.Find((SelectScrollViewContent x) =>
+			{
+				//0xEABF74
+				BannerScrollViewContent c = x as BannerScrollViewContent;
+				return c.pictId == id;
+			});
+			if(s != null)
+			{
+				RemovePageIcon(s);
+				m_scrollView.RemoveScrollObject(s);
+				m_scrollView.SetItemCount(m_scrollView.scrollObjects.Count);
+				DestroyImmediate(s.gameObject);
+				InitScrollType();
+			}
+		}
 
 		// // RVA: 0xEA9EE0 Offset: 0xEA9EE0 VA: 0xEA9EE0
 		public void ClearBanner()
 		{
 			for(int i = 0; i < m_scrollView.scrollObjects.Count; i++)
 			{
-				TodoLogger.LogError(0, "ClearBanner");
+				BannerScrollViewContent c = m_scrollView.scrollObjects[i] as BannerScrollViewContent;
+				RemoveBanner(c.pictId);
 			}
 		}
 
@@ -130,10 +243,35 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xEAABE0 Offset: 0xEAABE0 VA: 0xEAABE0
-		// private void AddPageIcon(SelectScrollViewContent content) { }
+		private void AddPageIcon(SelectScrollViewContent content)
+		{
+			Toggle t = Instantiate(m_basePageIcon);
+			t.transform.SetParent(m_rootPageIcon, false);
+			m_listPageIcon.Add(t);
+			for(int i = 0; i < m_listPageIcon.Count; i++)
+			{
+				m_listPageIcon[i].gameObject.SetActive(m_listPageIcon.Count > 1);
+			}
+		}
 
 		// // RVA: 0xEAB054 Offset: 0xEAB054 VA: 0xEAB054
-		// public void RemovePageIcon(SelectScrollViewContent content) { }
+		public void RemovePageIcon(SelectScrollViewContent content)
+		{
+			int idx = m_scrollView.scrollObjects.FindIndex((SelectScrollViewContent x) =>
+			{
+				//0xEAC07C
+				return x == content;
+			});
+			if(idx > -1)
+			{
+				Destroy(m_listPageIcon[idx].gameObject);
+				m_listPageIcon.RemoveAt(idx);
+			}
+			for(int i = 0; i < m_listPageIcon.Count; i++)
+			{
+				m_listPageIcon[i].gameObject.SetActive(m_listPageIcon.Count > 1);
+			}
+		}
 
 		// // RVA: 0xEAB510 Offset: 0xEAB510 VA: 0xEAB510
 		private void UpdatePageIcon(int index)
@@ -160,7 +298,17 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xEAB5FC Offset: 0xEAB5FC VA: 0xEAB5FC
-		// private void ChangeBanner(int dir, float animTime) { }
+		private void ChangeBanner(int dir, float animTime)
+		{
+			int cur = m_scrollView.index;
+			int max = m_scrollView.scrollObjects.Count;
+			cur += dir;
+			if(cur > max)
+				cur = 0;
+			else if(cur < 0)
+				cur = max - 1;
+			m_scrollView.SetPosition(cur, animTime);
+		}
 
 		// // RVA: 0xEAB708 Offset: 0xEAB708 VA: 0xEAB708
 		public void SetActive(bool active)

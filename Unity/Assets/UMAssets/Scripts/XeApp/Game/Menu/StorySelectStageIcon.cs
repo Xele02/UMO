@@ -84,7 +84,10 @@ namespace XeApp.Game.Menu
 		//private bool IsEffect(LIEJFHMGNIA viewData) { }
 
 		//// RVA: 0x1A8AE14 Offset: 0x1A8AE14 VA: 0x1A8AE14
-		//public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_stage_icon != null && m_stage_icon.IsPlayingChildren();
+		}
 
 		//// RVA: 0x1A8250C Offset: 0x1A8250C VA: 0x1A8250C
 		public void SetStatus()
@@ -93,9 +96,9 @@ namespace XeApp.Game.Menu
 			gameObject.SetActive(true);
 			SetButtonEnable(false);
 			bool enable = false;
-			if (!viewStageData.BCGLDMKODLC)
+			if (!viewStageData.BCGLDMKODLC_StatusCompleted)
 			{
-				if (!viewStageData.NDLKPJDHHCN && !viewStageData.DHPNLACAGPG)
+				if (!viewStageData.NDLKPJDHHCN_NotShown && !viewStageData.DHPNLACAGPG)
 					enable = !viewStageData.PGCCOCKGCKO;
 			}
 			else
@@ -108,7 +111,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1A8FD84 Offset: 0x1A8FD84 VA: 0x1A8FD84
-		//public void SetNoiseEnable(bool enable) { }
+		public void SetNoiseEnable(bool enable)
+		{
+			if(m_noiseAnim != null)
+				m_noiseAnim.enabled = enable;
+		}
 
 		//// RVA: 0x1A82DA4 Offset: 0x1A82DA4 VA: 0x1A82DA4
 		public void SetPosition(Vector3 pos)
@@ -229,7 +236,7 @@ namespace XeApp.Game.Menu
 				return;
 			if(m_effect_abs != null && viewStageData != null)
 			{
-				if(!viewStageData.PGCCOCKGCKO && !viewStageData.BCGLDMKODLC)
+				if(!viewStageData.PGCCOCKGCKO && !viewStageData.BCGLDMKODLC_StatusCompleted)
 				{
 					m_isPlayEmphasis = true;
 					m_syncEmphasisAnimParam.Initialize(1, 74);
@@ -242,7 +249,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_is_large && viewStageData != null)
 			{
-				if (viewStageData.BCGLDMKODLC)
+				if (viewStageData.BCGLDMKODLC_StatusCompleted)
 					return;
 				if(m_effect_abs != null)
 				{
@@ -301,16 +308,16 @@ namespace XeApp.Game.Menu
 					m_stampAnim.enabled = false;
 				if (m_effect_abs != null)
 					m_effect_abs.enabled = true;
-				if(!viewData.NDLKPJDHHCN)
+				if(!viewData.NDLKPJDHHCN_NotShown)
 				{
 					if (!viewData.DHPNLACAGPG)
 					{
-						if (!viewData.BCGLDMKODLC)
+						if (!viewData.BCGLDMKODLC_StatusCompleted)
 						{
 							if(!viewData.PGCCOCKGCKO)
 							{
 								m_stage_icon.StartChildrenAnimGoStop("st_wait");
-								if(viewData.HHBJAEOIGIH)
+								if(viewData.HHBJAEOIGIH_IsLocked)
 								{
 									if (m_iconStatusTbl != null)
 										m_iconStatusTbl.StartChildrenAnimGoStop("02");
@@ -392,12 +399,12 @@ namespace XeApp.Game.Menu
 						m_iconStatusTbl.StartChildrenAnimGoStop("02");
 					if(m_noiseAnim != null)
 					{
-						m_noiseAnim.enabled = true;
+						m_noiseAnim.enabled = viewData.HHBJAEOIGIH_IsLocked;
 						m_noiseAnim.StartChildrenAnimGoStop("st_non");
 					}
 					if(m_stampAnim != null && viewData.MMEGDFPNONJ_HasDivaId)
 					{
-						m_stampAnim.enabled = true;
+						m_stampAnim.enabled = !viewData.HHBJAEOIGIH_IsLocked;
 						m_stampAnim.StartChildrenAnimGoStop("st_non");
 					}
 				}
@@ -460,25 +467,91 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1A83F24 Offset: 0x1A83F24 VA: 0x1A83F24
-		//public void NoneIcon() { }
+		public void NoneIcon()
+		{
+			m_stage_icon.StartChildrenAnimGoStop("st_non");
+			if(m_noiseAnim != null)
+				m_noiseAnim.StartChildrenAnimGoStop("st_non");
+			if(m_stampAnim != null)
+				m_stampAnim.StartChildrenAnimGoStop("st_non");
+		}
 
 		//// RVA: 0x1A83E60 Offset: 0x1A83E60 VA: 0x1A83E60
-		//public void LockIcon() { }
+		public void LockIcon()
+		{
+			m_stage_icon.StartChildrenAnimGoStop("st_lock");
+			if(m_noiseAnim != null)
+				m_noiseAnim.StartChildrenAnimGoStop("st_lock");
+			if(m_stampAnim != null)
+				m_stampAnim.StartChildrenAnimGoStop("st_lock");
+			SetButtonEnable(false);
+		}
 
 		//// RVA: 0x1A94AEC Offset: 0x1A94AEC VA: 0x1A94AEC
-		//public void LockAppearIn() { }
+		public void LockAppearIn()
+		{
+			if(m_stage_icon != null)
+			{
+				m_stage_icon.StartChildrenAnimGoStop("go_bot_act", "st_bot_act");
+				m_stage_icon.UpdateAllAnimation(TimeWrapper.deltaTime * 2, false);
+				m_stage_icon.UpdateAll(new Matrix23(), Color.white);
+			}
+		}
 
 		//// RVA: 0x1A94C18 Offset: 0x1A94C18 VA: 0x1A94C18
-		//public void AppearIn() { }
+		public void AppearIn()
+		{
+			if(m_stage_icon != null)
+			{
+				m_stage_icon.StartChildrenAnimGoStop("go_bot_act_02", "st_bot_act_02");
+				if(m_noiseAnim != null)
+					m_noiseAnim.StartChildrenAnimGoStop("go_bot_act_02", "st_bot_act_02");
+				if(m_stampAnim != null)
+					m_stampAnim.StartChildrenAnimGoStop("go_bot_act_02", "go_bot_act_02");
+			}
+		}
 
 		//// RVA: 0x1A94A00 Offset: 0x1A94A00 VA: 0x1A94A00
-		//public void ShrinkingIn() { }
+		public void ShrinkingIn()
+		{
+			m_stage_icon.StartChildrenAnimGoStop("go_bot_act_03", "st_bot_act_03");
+			if(m_noiseAnim != null)
+				m_noiseAnim.StartChildrenAnimGoStop("go_bot_act_03", "st_bot_act_03");
+			if(m_stampAnim != null)
+				m_stampAnim.StartChildrenAnimGoStop("go_bot_act_03", "st_bot_act_03");
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72D16C Offset: 0x72D16C VA: 0x72D16C
 		//// RVA: 0x1A93814 Offset: 0x1A93814 VA: 0x1A93814
-		//public IEnumerator StampPressAnim() { }
+		public IEnumerator StampPressAnim()
+		{
+			//0x1A96C18
+			SetStamp(viewStageData.AHHJLDLAPAN_DivaId);
+			m_stage_icon.StartChildrenAnimGoStop("go_bot_act_04", "st_bot_act_04");
+			if(m_noiseAnim != null)
+				m_noiseAnim.StartChildrenAnimGoStop("go_bot_act_04", "st_bot_act_04");
+			if(m_stampAnim != null)
+				m_stampAnim.StartChildrenAnimGoStop("go_bot_act_04", "st_bot_act_04");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_LOGIN_000);
+			while(m_stage_icon.IsPlayingChildren())
+				yield return null;
+			SetStampDiva();
+		}
 
 		//// RVA: 0x1A966F8 Offset: 0x1A966F8 VA: 0x1A966F8
-		//private void SetStampDiva() { }
+		private void SetStampDiva()
+		{
+			if(viewStageData != null)
+			{
+				if(!viewStageData.MMEGDFPNONJ_HasDivaId)
+					return;
+				SetStamp(viewStageData.AHHJLDLAPAN_DivaId);
+				m_stage_icon.StartChildrenAnimGoStop("st_get_wait");
+				if(m_noiseAnim != null)
+					m_noiseAnim.StartChildrenAnimGoStop("st_get_wait");
+				if(m_stampAnim != null)
+					m_stampAnim.StartChildrenAnimGoStop("st_get_wait");
+			}
+		}
 	}
 }

@@ -18,7 +18,21 @@ public class SakashoInventory : SakashoAPIBase
 	}
 
 	//// RVA: 0x2BC8BAC Offset: 0x2BC8BAC VA: 0x2BC8BAC
-	//public static SakashoAPICallContext GetInventoryRecords(long[] ids, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext GetInventoryRecords(long[] ids, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		ArrayList l = null;
+		if(ids != null)
+		{
+			l = new ArrayList();
+			for(int i = 0; i < ids.Length; i++)
+			{
+				l.Add(ids[i]);
+			}
+		}
+		h["ids"] = l;
+		return new SakashoAPICallContext(Call(SakashoInventoryGetInventoryRecords, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	//// RVA: 0x2BC8DF0 Offset: 0x2BC8DF0 VA: 0x2BC8DF0
 	public static SakashoAPICallContext ReceiveVirtualCurrencyFromInventory(long[] ids, OnSuccess onSuccess, OnError onError)
@@ -62,7 +76,10 @@ public class SakashoInventory : SakashoAPIBase
 	}
 
 	//// RVA: 0x2BC93E8 Offset: 0x2BC93E8 VA: 0x2BC93E8
-	//private static extern int SakashoInventoryGetInventoryRecords(int callbackId, string json) { }
+	private static int SakashoInventoryGetInventoryRecords(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoInventoryGetInventoryRecords(callbackId, json);
+	}
 
 	//// RVA: 0x2BC94F8 Offset: 0x2BC94F8 VA: 0x2BC94F8
 	private static int SakashoInventoryReceiveVirtualCurrencyFromInventory(int callbackId, string json)

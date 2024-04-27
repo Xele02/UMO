@@ -9,6 +9,7 @@ using XeSys;
 using System.Collections;
 using mcrs;
 using XeSys.uGUI;
+using XeApp.Game.Tutorial;
 
 namespace XeApp.Game.Gacha
 {
@@ -717,7 +718,7 @@ namespace XeApp.Game.Gacha
 			}
 			else
 			{
-				if(CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC() < CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCBENCMNOGO_GainStamina)
+				if(CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC_GetCurrent() < CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCBENCMNOGO_MaxStamina)
 				{
 					inputEnable = false;
 					PopupWindowManager.OpenStaminaWindow(m_denomControl, () =>
@@ -814,7 +815,12 @@ namespace XeApp.Game.Gacha
 			yield return Co.R(PopupRecordPlate.Show(RecordPlateUtility.eSceneType.Gacha, null, false));
 			if(GameManager.Instance.IsTutorial)
 			{
-				TodoLogger.LogError(0, "Tuto");
+				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.KIBFDMGJFMO_22);
+				BasicTutorialManager.Instance.ShowMessageWindow(BasicTutorialMessageId.Id_GachaResult, () =>
+				{
+					//0x98A924
+					BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.GachaReturn, null, null);
+				}, null);
 			}
 			inputEnable = true;
 		}

@@ -15,14 +15,14 @@ public class HLMJIADBPIJ
 					LAEGMENIEDB_Story.ALGOILKGAAH st = NKEBMCIMJND.OHCIFMDPAPD_Story.CDENCMNHNGA.Find((LAEGMENIEDB_Story.ALGOILKGAAH GHPLINIACBB) =>
 					{
 						//0x15F3338
-						return GHPLINIACBB.KLCIIHKFPPO == DPIBHFNDJII;
+						return GHPLINIACBB.KLCIIHKFPPO_StoryMusicId == DPIBHFNDJII;
 					});
 					if (st == null)
 						return false;
 					if (AHEFHIMGIBI.LNOOKHJBENO_StoryRecord == null)
 						return false;
-					NEKDCJKANAH_StoryRecord.HKDNILFKCFC saveSt = AHEFHIMGIBI.LNOOKHJBENO_StoryRecord.MMKAJBFBKNH[st.LFLLLOPAKCO - 1];
-					return saveSt.HALOKFOJMLA;
+					NEKDCJKANAH_StoryRecord.HKDNILFKCFC saveSt = AHEFHIMGIBI.LNOOKHJBENO_StoryRecord.MMKAJBFBKNH[st.LFLLLOPAKCO_Id - 1];
+					return saveSt.HALOKFOJMLA_IsCompleted;
 				}
 			case NJLGICBHIOC.EOFJDIACFEC.NDGMFGMHCJM/*2*/:
 				{

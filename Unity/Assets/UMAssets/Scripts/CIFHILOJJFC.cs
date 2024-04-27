@@ -64,7 +64,20 @@ public class CIFHILOJJFC
 	}
 
 	// // RVA: 0xFF5D50 Offset: 0xFF5D50 VA: 0xFF5D50
-	// public void LHPDDGIJKNB_Reset() { }
+	public void LHPDDGIJKNB_Reset()
+	{
+		OPFGFINHFCE_Name = CBELJGBFLGA;
+		for(int i = 0; i < 3; i++)
+		{
+			FDBOPFEOENF_MainDivas[i].LHPDDGIJKNB_Reset();
+		}
+		for(int i = 0; i < 2; i++)
+		{
+			KAKGHFFOAEJ_AddDivas[i].LHPDDGIJKNB_Reset();
+		}
+		GIDKKHFHALL = 0;
+		FODKKJIDDKN_VfId = 0;
+	}
 
 	// // RVA: 0xFF5EB0 Offset: 0xFF5EB0 VA: 0xFF5EB0
 	public void ODDIHGPONFL_Copy(CIFHILOJJFC GPBJHKLFCEP, bool OIBBFBLBLMH = false)

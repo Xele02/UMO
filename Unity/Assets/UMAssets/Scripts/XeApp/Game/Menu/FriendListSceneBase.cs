@@ -765,7 +765,16 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xBAEDB4 Offset: 0xBAEDB4 VA: 0xBAEDB4
 		protected void DoFriendRelease(FriendListInfo info)
 		{
-			TodoLogger.LogError(0, "DoFriendRelease");
+			MessageBank msgBank = MessageManager.Instance.GetBank("menu");
+			string messageFormat = msgBank.GetMessageByLabel("popup_friend_released_msg");
+			int lastNetType = 4;
+			MenuScene.Instance.RaycastDisable();
+			friendManager.PBEDDFMFDKB(info.playerId, info.name, info.playerRank, () =>
+			{
+				//0xED3668
+				ShowNetRequestSuccessPopup(msgBank.GetMessageByLabel("popup_friend_released_title"), string.Format(messageFormat, info.name));
+				MenuScene.Instance.RaycastEnable();
+			}, OnNetRequestError, OnNetRequestErrorToTitle);
 		}
 
 		//// RVA: 0xBAF05C Offset: 0xBAF05C VA: 0xBAF05C Slot: 44

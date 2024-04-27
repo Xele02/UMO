@@ -76,7 +76,7 @@ namespace XeApp.Game.Menu
 				{
 					m_statusTitleText.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_diva_status_titla_music_exp");
 					SetMusicExpEnable(true);
-					if(isStory ||isGoDivaSub)
+					if(isStory || isGoDivaSub)
 					{
 						SetInvalidMusicExp();
 						return;
@@ -138,9 +138,10 @@ namespace XeApp.Game.Menu
 				SetInvalidMusicExp();
 			else
 			{
-				/*FFHPBEPOMAK f = playerData.NBIGLBMHEDC.Find(() =>
+				FFHPBEPOMAK_DivaInfo f = playerData.NBIGLBMHEDC_Divas.Find((FFHPBEPOMAK_DivaInfo x) =>
 				{
-					Method$XeApp.Game.Menu.SetDeckDivaStatusControl.<>c__DisplayClass18_0.<SetMusicExp>b__0()
+					//0xA6CB60
+					return x.AHHJLDLAPAN_DivaId == divaData.AHHJLDLAPAN_DivaId;
 				});
 				KDOMGMCGHDC.HJNMIKNAMFH h = KDOMGMCGHDC.ODIAFJCPIFO(musicId, f.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, f.PKLPGBKKFOL[musicId - 1]);
 				if(h == null)
@@ -149,9 +150,34 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-				!
-				}*/
-				TodoLogger.LogError(0, "SetMusicExp");
+					m_musicExpLevelText.text = (h.EHBAJPHFDOK_NextLevel + (h.NBHEBLNHOJO_IsMax ? 1 : 0) - 1).ToString();
+					float f1 = 0;
+					if(h.PBGFIOONCMB_NextLevelMusicExp - h.PMBFNFOCNAJ_CurLevelMusicExp >= 1)
+					{
+						f1 = (f.HMBECPGHPOE[musicId - 1] - h.PMBFNFOCNAJ_CurLevelMusicExp) * 1.0f / (h.PBGFIOONCMB_NextLevelMusicExp - h.PMBFNFOCNAJ_CurLevelMusicExp);
+					}
+					m_musicExpGauge.CurrentValue = f1 * m_musicExpGauge.MaxValue;
+					m_musicExpGaugeBandObject.gameObject.SetActive(true);
+					if(m_musicExpGaugeBandHeadImage != null)
+					{
+						if(!h.NBHEBLNHOJO_IsMax)
+						{
+							if(m_musicExpGauge.CurrentValue > 0)
+							{
+								m_musicExpGaugeBandHeadImage.gameObject.SetActive(true);
+							}
+							else
+							{
+								m_musicExpGaugeBandHeadImage.gameObject.SetActive(false);
+							}
+						}
+						else
+						{
+							m_musicExpGaugeBandHeadImage.gameObject.SetActive(false);
+						}
+					}
+					m_musicExpGaugeMaxImage.gameObject.SetActive(h.NBHEBLNHOJO_IsMax);
+				}
 			}
 		}
 

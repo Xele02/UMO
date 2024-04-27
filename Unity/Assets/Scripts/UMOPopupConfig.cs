@@ -75,6 +75,20 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         {
             RuntimeSettings.CurrentSettings.MinigameAutoPlay = b;
         });
+        AddToggleButton(ref y, "Shop : Unloc max buy limit", () =>
+        {
+            return RuntimeSettings.CurrentSettings.RemoveShopLimit;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.RemoveShopLimit = b;
+        });
+        AddToggleButton(ref y, "Shop : Remove crystal limit", () =>
+        {
+            return RuntimeSettings.CurrentSettings.RemoveCrystalLimit;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.RemoveCrystalLimit = b;
+        });
         
         AddToggleButton(ref y, "Data : Force integrity check on next launch", () =>
         {
@@ -107,7 +121,7 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         {
             RuntimeSettings.CurrentSettings.EnableErrorLog = b;
         });
-        
+        #if UNITY_ANDROID
         AddToggleButton(ref y, "Debug : Disable Cryware low latency", () =>
         {
             return RuntimeSettings.CurrentSettings.DisableCrywareLowLatency;
@@ -115,6 +129,16 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         {
             RuntimeSettings.CurrentSettings.DisableCrywareLowLatency = b;
         });
+        #endif
+        #if UNITY_EDITOR
+        AddToggleButton(ref y, "Use touch screen", () =>
+        {
+            return RuntimeSettings.CurrentSettings.UseTouchScreen;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.UseTouchScreen = b;
+        });
+        #endif
         GetComponent<RectTransform>().sizeDelta = new Vector2(GetComponent<RectTransform>().sizeDelta.x, -y);
         gameObject.SetActive(true);
     }

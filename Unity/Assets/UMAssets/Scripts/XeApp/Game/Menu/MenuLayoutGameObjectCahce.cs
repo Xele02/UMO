@@ -23,7 +23,24 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C6100 Offset: 0x6C6100 VA: 0x6C6100
 		//// RVA: 0xB2C348 Offset: 0xB2C348 VA: 0xB2C348
-		//public IEnumerator Create(string bundleName, string assetName, string depBundleName, int count, UnityAction action) { }
+		public IEnumerator Create(string bundleName, string assetName, string depBundleName, int count, UnityAction action)
+		{
+			LayoutObjectPool pool;
+
+			//0xB2CF88
+			if(!string.IsNullOrEmpty(depBundleName))
+			{
+				yield return AssetBundleManager.LoadUnionAssetBundle(depBundleName);
+				m_dependencyBundleMap.Add(assetName, depBundleName);
+			}
+			pool = new LayoutObjectPool(m_rootObject, count);
+			pool.Entry(bundleName, assetName, GameManager.Instance.GetSystemFont(), this);
+			m_layoutInstancePool.Add(assetName, pool);
+			while(!pool.IsReady)
+				yield return null;
+			if(action != null)
+				action();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C6178 Offset: 0x6C6178 VA: 0x6C6178
 		//// RVA: 0xB2C474 Offset: 0xB2C474 VA: 0xB2C474

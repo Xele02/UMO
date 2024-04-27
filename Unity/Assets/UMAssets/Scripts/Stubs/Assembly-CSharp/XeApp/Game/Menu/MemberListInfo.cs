@@ -6,6 +6,7 @@ namespace XeApp.Game.Menu
 	{
 		public MemberListInfo(short titleIndex, bool isAvailable, EAJCBFGKKFA_FriendInfo fri)
 		{
+			TodoLogger.LogError(0, "MemberListInfo()");
 		}
 
 		public int playerId;

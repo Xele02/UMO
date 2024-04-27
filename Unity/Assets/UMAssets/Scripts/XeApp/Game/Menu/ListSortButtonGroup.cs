@@ -202,12 +202,17 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x15426CC Offset: 0x15426CC VA: 0x15426CC
-		// private void OnBonusFilter(bool isToggle) { }
+		private void OnBonusFilter(bool isToggle)
+		{
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			m_isBonus = isToggle;
+			m_onListSortEvent.Invoke(m_currentSortItem, m_sortOrder, isToggle);
+		}
 
 		// // RVA: 0x15427B8 Offset: 0x15427B8 VA: 0x15427B8
 		private void OnSelectedToggleButton(int index)
 		{
-			TodoLogger.LogNotImplemented("OnSelectedToggleButton");
+			OnBonusFilter(index != 0);
 		}
 
 		// // RVA: 0x15427F0 Offset: 0x15427F0 VA: 0x15427F0

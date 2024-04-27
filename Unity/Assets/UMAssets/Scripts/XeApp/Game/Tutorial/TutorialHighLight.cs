@@ -26,35 +26,40 @@ namespace XeApp.Game.Tutorial
 			Canvas c = GetComponentInParent<Canvas>();
 			RectTransform canvasT = c.transform as RectTransform;
 			Vector2 canvasSize_ = canvasT.sizeDelta;
-			Vector4 v7 = new Vector4(canvasSize_.x, 0, 0, 0);
 			Vector2 canvasPivot_ = canvasT.pivot;
+
+			Vector2 v8_CanvasBL = new Vector2(-canvasSize_.x * canvasPivot_.x, -(canvasSize_.y * canvasPivot_.y));
+			Vector2 v9_CanvasTR = new Vector2(canvasSize_.x * canvasPivot_.x, canvasSize_.y * canvasPivot_.y);
+			Vector2 topLeft = new Vector2(_highLightRect.x, _highLightRect.y);
+			Vector2 bottomRight = new Vector2(_highLightRect.xMax, _highLightRect.y - _highLightRect.height);
+			/*Vector4 v7 = new Vector4(canvasSize_.x, 0, 0, 0);
 			Vector4 v6 = new Vector4(v7.x, v7.y, canvasPivot_.x, 0);
-			Vector2 v8 = new Vector2(v6.x * -v6.z, -(canvasSize_.y * canvasPivot_.y));
+			Vector2 v8_CanvasBL = new Vector2(v6.x * -v6.z, -(canvasSize_.y * canvasPivot_.y));
 			Vector3 v11 = new Vector3(v6.y, v6.z, v6.w);
 			Vector4 v5 = new Vector4(canvasSize_.x, v11.x, v11.y, v11.z);
 			Vector4 v4 = new Vector4(v5.x, v5.y, canvasPivot_.x, v5.w);
-			Vector2 v9 = new Vector2(v4.x * v4.z, canvasSize_.y * canvasPivot_.y);
+			Vector2 v9_CanvasTR = new Vector2(v4.x * v4.z, canvasSize_.y * canvasPivot_.y);
 			Vector3 v12 = new Vector3(v4.y, v4.z, v4.w);
-			Vector2 topLeft = new Vector2(_highLightRect.x, _highLightRect.y);
-			Vector2 bottomRight = new Vector2(_highLightRect.xMax, v4.x - _highLightRect.height);
 			Vector4 v3 = new Vector4(canvasSize_.x, v12.x, v12.y, v12.z);
 			Vector4 v2 = new Vector4(v3.x, v3.y, canvasPivot_.x, v3.w);
-			Vector2 v10 = new Vector2(v2.x * v2.z, canvasSize_.y * canvasPivot_.y);
-			Vector3 v1 = new Vector3(v10.y, v2.w, 0);
-			Rect r2 = new Rect(-v1.x, -v1.y, canvasSize_.x, canvasSize_.y);
-			if (v1.x < r2.x)
+			Vector2 v10 = new Vector2(canvasSize_.x * canvasPivot_.x, canvasSize_.y * canvasPivot_.y);*/
+			Rect r2 = new Rect(-canvasSize_.x * canvasPivot_.x, -canvasSize_.y * canvasPivot_.y, canvasSize_.x, canvasSize_.y);
+			//Debug.LogError(v8_CanvasBL+" "+v9_CanvasTR+" "+topLeft+" "+bottomRight+" "+_highLightRect+" "+r2);
+
+			if (topLeft.x < r2.x)
 				topLeft.x = r2.x;
-			if (r2.yMax <= v1.x)
+			if (r2.yMax <= topLeft.y)
 				topLeft.y = r2.yMax;
-			if (r2.xMax <= v1.x)
+			if (r2.xMax <= bottomRight.x)
 				bottomRight.x = r2.xMax;
-			if (v1.x < r2.y)
+			if (bottomRight.y < r2.y)
 				bottomRight.y = r2.y;
+			//Debug.LogError(v8_CanvasBL+" "+v9_CanvasTR+" "+topLeft+" "+bottomRight);
 			_vertex.Clear();
-			_vertex.Add(new UIVertex() { position = v8 });
-			_vertex.Add(new UIVertex() { position = new Vector3(v9.x, v8.y, 0) });
-			_vertex.Add(new UIVertex() { position = new Vector3(v8.x, v9.y, 0) });
-			_vertex.Add(new UIVertex() { position = v9 });
+			_vertex.Add(new UIVertex() { position = v8_CanvasBL });
+			_vertex.Add(new UIVertex() { position = new Vector3(v9_CanvasTR.x, v8_CanvasBL.y, 0) });
+			_vertex.Add(new UIVertex() { position = new Vector3(v8_CanvasBL.x, v9_CanvasTR.y, 0) });
+			_vertex.Add(new UIVertex() { position = v9_CanvasTR });
 			_vertex.Add(new UIVertex() { position = new Vector3(topLeft.x, bottomRight.y, 0) });
 			_vertex.Add(new UIVertex() { position = new Vector3(bottomRight.x, bottomRight.y, 0) });
 			_vertex.Add(new UIVertex() { position = new Vector3(topLeft.x, topLeft.y, 0) });

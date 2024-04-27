@@ -773,7 +773,10 @@ namespace XeSys.Gfx
 		// public void StartAllAnimDefault() { }
 
 		// // RVA: 0x2043BC0 Offset: 0x2043BC0 VA: 0x2043BC0
-		// public void StartAllAnimDecoLoop() { }
+		public void StartAllAnimDecoLoop()
+		{
+			StartAllAnimLoop(m_List, ANIMLABEL_LOOP);
+		}
 
 		// // RVA: 0x2043C5C Offset: 0x2043C5C VA: 0x2043C5C
 		// public void StartAllAnimIn() { }

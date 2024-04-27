@@ -4,6 +4,11 @@ using XeApp.Game.Tutorial;
 
 namespace XeApp.Game.Menu
 {
+	public class StorySelectArgs : TransitionArgs
+	{
+		//
+	}
+
 	public class StorySelectScene : TransitionRoot
 	{
 		private LayoutStorySelectController m_storySelectController = new LayoutStorySelectController(); // 0x48
@@ -180,7 +185,7 @@ namespace XeApp.Game.Menu
 				yield return Co.R(m_storySelectController.SetupBg(m_stageCreater.page + 1));
 				SetCallbackButton();
 			}
-			else
+			else if(PrevTransition == TransitionList.Type.UNLOCK_DIVA)
 			{
 				yield return Co.R(m_stageCreater.Check());
 			}

@@ -317,10 +317,45 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xD2C064 Offset: 0xD2C064 VA: 0xD2C064
-		// public void LoadResourcesForAppeal(int valkyrieId) { }
+		public void LoadResourcesForAppeal(int valkyrieId)
+		{
+			isLoadedPrefab = false;
+			this.StartCoroutineWatched(Co_LoadResourcesForAppeal(valkyrieId));
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73C5C0 Offset: 0x73C5C0 VA: 0x73C5C0
 		// // RVA: 0xD2C094 Offset: 0xD2C094 VA: 0xD2C094
-		// private IEnumerator Co_LoadResourcesForAppeal(int valkyrieId) { }
+		private IEnumerator Co_LoadResourcesForAppeal(int valkyrieId)
+		{
+			StringBuilder bundleName; // 0x1C
+			StringBuilder assetName; // 0x20
+			short modelId; // 0x24
+
+			//0xD2D9F4
+			bundleName = new StringBuilder();
+			assetName = new StringBuilder();
+			JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo dbValk = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[valkyrieId - 1];
+			modelId = dbValk.DAJGPBLEEOB_ModelId;
+			bundleName.SetFormat("vl/{0:D4}.xab", modelId);
+			assetName.SetFormat("val_{0:D4}_prefab", modelId);
+            AssetBundleLoadAllAssetOperationBase operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+			yield return operation;
+			prefab = operation.GetAsset<GameObject>(assetName.ToString());
+			assetName.SetFormat("val_{0:D4}_appeal", modelId);
+			appealOverrideResource.appeal = operation.GetAsset<AnimationClip>(assetName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+			bundleName.Set("vl/cmn.xab");
+			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+			yield return operation;
+			prefab.GetComponent<EffectFactoryCollector>().RedirectionAll((string name) =>
+			{
+				//0xD2C520
+				return operation.GetAsset<GameObject>(name);
+			});
+			assetName.Set("val_cmn_animator");
+			animatorController = operation.GetAsset<RuntimeAnimatorController>(assetName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+			isLoadedPrefab = true;
+        }
 	}
 }

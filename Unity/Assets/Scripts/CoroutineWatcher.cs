@@ -10,34 +10,69 @@ public static class MonoBehaviourExtensions
 {
     public static Coroutine StartCoroutineWatched(this MonoBehaviour owner, IEnumerator coroutine)
     {
-		Coroutine c_ = owner.StartCoroutine(coroutine);
-		if(c_ == null)
+		if(false)
 		{
-			// Coroutine immediately endend, return;
-			return null;
+			return owner.StartCoroutine(coroutine);
 		}
-		IEnumerator s = CoroutineWatcher.Instance.Run(coroutine, c_);
-		Coroutine c = CoroutineWatcher.Instance.StartCoroutine(s);
-		CoroutineWatcher.Instance.SetWatcherInfo(coroutine, s, c, owner);
-		return c;
+		else
+		{
+			Coroutine c_ = owner.StartCoroutine(coroutine);
+			if(c_ == null)
+			{
+				// Coroutine immediately endend, return;
+				return null;
+			}
+			IEnumerator s = CoroutineWatcher.Instance.Run(coroutine, c_);
+			Coroutine c = CoroutineWatcher.Instance.StartCoroutine(s);
+			CoroutineWatcher.Instance.SetWatcherInfo(coroutine, s, c, owner);
+			return c;
+		}
 	}
 	public static void StopCoroutineWatched(this MonoBehaviour owner, IEnumerator watcherEnumerator)
 	{
-		CoroutineWatcher.Instance.Stop(watcherEnumerator);
+		if(false)
+		{
+			owner.StopCoroutine(watcherEnumerator);
+		}
+		else
+		{
+			CoroutineWatcher.Instance.Stop(watcherEnumerator);
+		}
 	}
 	public static void StopCoroutineWatched(this MonoBehaviour owner, Coroutine watcherCoroutine)
 	{
-		CoroutineWatcher.Instance.Stop(watcherCoroutine);
+		if(false)
+		{
+			owner.StopCoroutine(watcherCoroutine);
+		}
+		else
+		{
+			CoroutineWatcher.Instance.Stop(watcherCoroutine);
+		}
 	}
 	public static void StopAllCoroutinesWatched(this MonoBehaviour owner)
 	{
-		CoroutineWatcher.Instance.StopAll(owner);
-		owner.StopAllCoroutines();
+		if(false)
+		{
+			owner.StopAllCoroutines();
+		}
+		else
+		{
+			CoroutineWatcher.Instance.StopAll(owner);
+			owner.StopAllCoroutines();
+		}
 	}
 	public static Coroutine StartCoroutineWatched(this MonoBehaviour owner, string FuncName)
 	{
-		Coroutine c = owner.StartCoroutine(FuncName);
-		return c;
+		if(false)
+		{
+			return owner.StartCoroutine(FuncName);
+		}
+		else
+		{
+			Coroutine c = owner.StartCoroutine(FuncName);
+			return c;
+		}
 	}
 }
 

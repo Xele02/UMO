@@ -90,7 +90,17 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x15AE1FC Offset: 0x15AE1FC VA: 0x15AE1FC Slot: 10
-		//public void PlayUnLockAnime() { }
+		public void PlayUnLockAnime()
+		{
+			if(m_stock == 0)
+			{
+				m_buttonAnime.StartAllAnimGoStop("go_get", "st_get");
+			}
+			else
+			{
+				m_buttonAnime.StartAllAnimGoStop("go_get2", "st_get2");
+			}
+		}
 
 		//// RVA: 0x15AE2B0 Offset: 0x15AE2B0 VA: 0x15AE2B0 Slot: 11
 		public void PlayExpandAnime()

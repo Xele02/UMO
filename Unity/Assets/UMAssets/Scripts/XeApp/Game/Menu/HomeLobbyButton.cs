@@ -51,7 +51,18 @@ namespace XeApp.Game.Menu
 		//public void SetType(HomeLobbyButtonController.Type a_type) { }
 
 		//// RVA: 0x9661B8 Offset: 0x9661B8 VA: 0x9661B8
-		//public void SetNewIcon(bool a_enable, bool a_enable_efft) { }
+		public void SetNewIcon(bool a_enable, bool a_enable_efft)
+		{
+			if(a_enable)
+			{
+				IconEnable();
+			}
+			else
+			{
+				IconDisable();
+			}
+			TabEffectEnable(a_enable_efft);
+		}
 
 		//// RVA: 0x966260 Offset: 0x966260 VA: 0x966260
 		public void IconDisable()
@@ -61,7 +72,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x9661EC Offset: 0x9661EC VA: 0x9661EC
-		//public void IconEnable() { }
+		public void IconEnable()
+		{
+			if(m_iconAnim != null)
+				m_iconAnim.StartChildrenAnimGoStop("02", "02");
+		}
 
 		//// RVA: 0x9662D4 Offset: 0x9662D4 VA: 0x9662D4
 		public void TabEffectEnable(bool a_enable)

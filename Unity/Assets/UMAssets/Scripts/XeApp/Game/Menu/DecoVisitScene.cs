@@ -37,7 +37,7 @@ namespace XeApp.Game.Menu
 		}; // 0x74
 		private List<int> m_addFavList = new List<int>(); // 0x78
 		private List<int> m_removeFavList = new List<int>(); // 0x7C
-		public static DecoVisitScene.TransitionType transitionType; // 0x0
+		public static TransitionType transitionType; // 0x0
 		private bool m_isTranstion; // 0x80
 		private int[] m_bgmIds; // 0x84
 
@@ -298,37 +298,37 @@ namespace XeApp.Game.Menu
 		{
 			/*ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK(JpStringLiterals.StringLiteral_15554, 0);
 			m_isHideDecorationCanvas = true;*/
-			TodoLogger.LogError(0, "OnPushLobbyButton");
+			TodoLogger.LogError(TodoLogger.DecoVisit, "OnPushLobbyButton");
 		}
 
 		// // RVA: 0x11D7034 Offset: 0x11D7034 VA: 0x11D7034
 		private void OnPushVisitButton()
 		{
-			TodoLogger.LogError(0, "OnPushVisitButton");
+			TodoLogger.LogError(TodoLogger.DecoVisit, "OnPushVisitButton");
 		}
 
 		// // RVA: 0x11D7218 Offset: 0x11D7218 VA: 0x11D7218
 		private void OnPushChatButton()
 		{
-			TodoLogger.LogError(0, "OnPushChatButton");
+			TodoLogger.LogError(TodoLogger.DecoVisit, "OnPushChatButton");
 		}
 
 		// // RVA: 0x11D764C Offset: 0x11D764C VA: 0x11D764C
 		private void OnPushGiftButton()
 		{
-			TodoLogger.LogError(0, "OnPushGiftButton");
+			TodoLogger.LogError(TodoLogger.DecoVisit, "OnPushGiftButton");
 		}
 
 		// // RVA: 0x11D7780 Offset: 0x11D7780 VA: 0x11D7780
 		private void OnPushFriendButton()
 		{
-			TodoLogger.LogError(0, "OnPushFriendButton");
+			TodoLogger.LogError(TodoLogger.DecoVisit, "OnPushFriendButton");
 		}
 
 		// // RVA: 0x11D7880 Offset: 0x11D7880 VA: 0x11D7880
 		private void OnPushFanButton()
 		{
-			TodoLogger.LogError(0, "OnPushFanButton");
+			TodoLogger.LogError(TodoLogger.DecoVisit, "OnPushFanButton");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6D58DC Offset: 0x6D58DC VA: 0x6D58DC

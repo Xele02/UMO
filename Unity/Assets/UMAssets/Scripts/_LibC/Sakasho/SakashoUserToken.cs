@@ -45,7 +45,7 @@ namespace ExternLib
 
 			path += "/" + fileName;
 			File.WriteAllText(path, saveData);
-			TodoLogger.Log(TodoLogger.SakashoSystem, "saved server data " + path);
+			TodoLogger.Log(TodoLogger.SakashoServer, "saved server data " + path);
 		}
 
 		public static void SaveAccountServerData()
@@ -64,7 +64,7 @@ namespace ExternLib
 
 			if (File.Exists(path))
 			{
-				TodoLogger.Log(TodoLogger.SakashoSystem, "load server data " + path + "for" + playerId);
+				TodoLogger.Log(TodoLogger.SakashoServer, "load server data " + path + "for" + playerId);
 				string saveData = File.ReadAllText(path);
 				playerAccount.players[playerId].serverData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(saveData);
 			}
@@ -99,7 +99,7 @@ namespace ExternLib
 
 			if(p.serverData == null)
 			{
-				TodoLogger.Log(TodoLogger.SakashoSystem, "Create new server data for " + accountId);
+				TodoLogger.Log(TodoLogger.SakashoServer, "Create new server data for " + accountId);
 				EDOHBJAPLPF_JsonData jsonRes = new EDOHBJAPLPF_JsonData();
 
 				BBHNACPENDM_ServerSaveData newData = new BBHNACPENDM_ServerSaveData();
@@ -195,14 +195,13 @@ namespace ExternLib
 		{
 			EDOHBJAPLPF_JsonData inData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
 			int accountType = (int)inData["accountType"];
-
 			CreateAccount(accountType == 1);
 
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res["is_created"] = 1;
 			res["player_account_status"] = 0;
 			res["player_id"] = playerAccount.userId;
-			TodoLogger.Log(TodoLogger.SakashoSystem, "Created player " + playerAccount.userId);
+			TodoLogger.Log(TodoLogger.SakashoServer, "Created player " + playerAccount.userId);
 
 			SendMessage(callbackId, res);
 
@@ -227,8 +226,6 @@ namespace ExternLib
 			//ExternLib.Java_Sakasho.jp.dena.sakasho.api.SakashoAPICallContext context = ExternLib.Java_Sakasho.jp.dena.sakasho.api.SakashoUserToken.getPlayerStatus(null, null);
 
 			int playerId = UMO_PlayerPrefs.GetInt("cpid", 0);
-			if(playerId != 999999999)
-				playerId = 0; // for now user is locked to the cheat account
 			if(playerId == 0)
 			{
 				playerAccount = null;
@@ -249,14 +246,14 @@ namespace ExternLib
 				res["is_created"] = 0;
 				res["player_account_status"] = 0;
 				res["player_id"] = 0;
-				TodoLogger.Log(TodoLogger.SakashoSystem, "No user");
+				TodoLogger.Log(TodoLogger.SakashoServer, "No user");
 			}
 			else
 			{
 				res["is_created"] = 1;
 				res["player_account_status"] = 0;
 				res["player_id"] = playerAccount.userId;
-				TodoLogger.Log(TodoLogger.SakashoSystem, "Using user " + playerAccount.userId);
+				TodoLogger.Log(TodoLogger.SakashoServer, "Using user " + playerAccount.userId);
 			}
 			// Hack directly send response
 
@@ -265,5 +262,12 @@ namespace ExternLib
 
 			return 0;
         }
+
+		public static int SakashoUserTokenClearDeviceLoginDataWithLog(int callbackId, string json)
+        {
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			SendMessage(callbackId, res);
+			return 0;
+		}
     }
 }

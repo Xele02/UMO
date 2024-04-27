@@ -87,7 +87,7 @@ public class JEPMHCPBIGD_DecoItemInit : DIHHCBACKGG_DbSection
 	// RVA: 0x1C42DB0 Offset: 0x1C42DB0 VA: 0x1C42DB0 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(TodoLogger.Database, "JEPMHCPBIGD_DecoItemInit.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbJson, "JEPMHCPBIGD_DecoItemInit.IIEMACPEEBJ");
 		return true;
 	}
 

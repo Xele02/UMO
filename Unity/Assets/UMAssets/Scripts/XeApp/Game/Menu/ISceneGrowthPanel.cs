@@ -20,7 +20,7 @@ namespace XeApp.Game.Menu
 		void Expand();
 
 		//// RVA: -1 Offset: -1 Slot: 4
-		//void PlayUnLockAnime();
+		void PlayUnLockAnime();
 
 		//// RVA: -1 Offset: -1 Slot: 5
 		void PlayExpandAnime();

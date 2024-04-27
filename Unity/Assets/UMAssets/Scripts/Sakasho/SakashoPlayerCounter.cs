@@ -45,7 +45,32 @@ public class SakashoPlayerCounter : SakashoAPIBase
 	//public static SakashoAPICallContext GetPlayersCounters(SakashoPlayerCounterCriteria[] criteria, OnSuccess onSuccess, OnError onError) { }
 
 	//// RVA: 0x2E5ABBC Offset: 0x2E5ABBC VA: 0x2E5ABBC
-	//public static SakashoAPICallContext UpdatePlayerCounters(SakashoPlayerCounterInfo[] playerCounterInfo, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext UpdatePlayerCounters(SakashoPlayerCounterInfo[] playerCounterInfo, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		ArrayList l = null;
+		if(playerCounterInfo != null)
+		{
+			l = new ArrayList();
+			for(int i = 0; i < playerCounterInfo.Length; i++)
+			{
+				Hashtable h2 = null;
+				if(playerCounterInfo[i] != null)
+				{
+					h2 = new Hashtable();
+					h2["playerId"] = playerCounterInfo[i].PlayerId;
+					if(playerCounterInfo[i].PlayerCounterMasterName != null)
+					{
+						h2["playerCounterMasterName"] = playerCounterInfo[i].PlayerCounterMasterName;
+					}
+					h2["countDelta"] = playerCounterInfo[i].CountDelta;
+					l.Add(h2);
+				}
+			}
+		}
+		h["playerCounterInfo"] = l;
+		return new SakashoAPICallContext(Call(SakashoPlayerCounterUpdatePlayerCounters, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	//// RVA: 0x2E5B010 Offset: 0x2E5B010 VA: 0x2E5B010
 	//private static extern int SakashoPlayerCounterGetPlayerCounterMasters(int callbackId, string json) { }
@@ -66,5 +91,8 @@ public class SakashoPlayerCounter : SakashoAPIBase
 	//private static extern int SakashoPlayerCounterGetPlayersCounters(int callbackId, string json) { }
 
 	//// RVA: 0x2E5B470 Offset: 0x2E5B470 VA: 0x2E5B470
-	//private static extern int SakashoPlayerCounterUpdatePlayerCounters(int callbackId, string json) { }
+	private static int SakashoPlayerCounterUpdatePlayerCounters(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoPlayerCounterUpdatePlayerCounters(callbackId, json);
+	}
 }

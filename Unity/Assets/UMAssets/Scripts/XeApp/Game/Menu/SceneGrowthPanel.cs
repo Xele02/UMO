@@ -167,7 +167,19 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x10DB6B8 Offset: 0x10DB6B8 VA: 0x10DB6B8 Slot: 10
-		//public void PlayUnLockAnime() { }
+		public void PlayUnLockAnime()
+		{
+			m_abs.StartAllAnimGoStop("st_open");
+			m_getAbs.StartAllAnimGoStop("go_in", "st_in");
+			if((m_flags & 1) != 0)
+				m_getAbs.StartAllAnimGoStop("ep");
+			else
+				m_getAbs.StartAllAnimGoStop("normal");
+			m_buttonAnimeLayout.StartAllAnimGoStop("st_wait", "st_get");
+			if((m_flags & 1) != 0)
+				m_rewardAnimeLayout.StartAnimGoStop("go_get_i", "st_get_i");
+			m_button.Dark = true;
+		}
 
 		//// RVA: 0x10DB86C Offset: 0x10DB86C VA: 0x10DB86C Slot: 11
 		public void PlayExpandAnime()

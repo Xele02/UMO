@@ -421,9 +421,9 @@ public class OEGIPPCADNA
 				JGMEFHJCNHP_GetAchievementRecords r = NHECPMNKEFK as JGMEFHJCNHP_GetAchievementRecords;
 				for(int i = 0; i < r.NFEAMMJIMPG.CEDLLCCONJP.Count; i++)
 				{
-					if(!r.NFEAMMJIMPG.CEDLLCCONJP[i].OOIJCMLEAJP)
+					if(!r.NFEAMMJIMPG.CEDLLCCONJP[i].OOIJCMLEAJP_IsReceived)
 					{
-						CLPMDJFKJBO.Add(r.NFEAMMJIMPG.CEDLLCCONJP[i].LJNAKDMILMC);
+						CLPMDJFKJBO.Add(r.NFEAMMJIMPG.CEDLLCCONJP[i].LJNAKDMILMC_Key);
 					}
 				}
 				PLOOEECNHFB = true;

@@ -899,8 +899,8 @@ namespace XeApp.Game.Menu
 						MNDAMOGGJBJ m = new MNDAMOGGJBJ();
 						m.KHEKNNFCAOI(null);
 						m.MDHKGJJBLNL();
-						m.INLBMFMOHCI.Add(new MNDAMOGGJBJ.JFJJNPJNBPI() { PPFNGGCBJKC_Id = m_limitOverData.MJNOAMAFNHA, HMFFHLPNMPH = m_limitOverData.IJEOIMGILCK });
-						m.CMBGGPOFBOO = m_limitOverData.GNKGDDMMJPF;
+						m.INLBMFMOHCI_CostItems.Add(new MNDAMOGGJBJ.JFJJNPJNBPI() { PPFNGGCBJKC_Id = m_limitOverData.MJNOAMAFNHA, HMFFHLPNMPH_Cnt = m_limitOverData.IJEOIMGILCK });
+						m.CMBGGPOFBOO_UcCost = m_limitOverData.GNKGDDMMJPF;
 						this.StartCoroutineWatched(LimitOverMainCoroutine(m));
 					}
 				}, null, null, null);
@@ -920,8 +920,62 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA6099C Offset: 0xA6099C VA: 0xA6099C
 		private IEnumerator LimitOverMainCoroutine(MNDAMOGGJBJ itemData)
 		{
-			TodoLogger.LogError(0, "LimitOverMainCoroutine");
-			yield return null;
+			//0xA61C74
+			yield return Co.R(MenuScene.Instance.PopupUseItemWindow.Show(itemData, UseItemList.Unlock.Default));
+			if(MenuScene.Instance.PopupUseItemWindow.Result != PopupUseItemWindow.UseItemResult.OK)
+				yield break;
+			m_windowControl.InputDisable();
+			if(itemData.KMIFDLLCBEL() != 1)
+				yield break;
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsShowKiraPlatePopUp2))
+			{
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsShowKiraPlatePopUp2, true);
+			}
+			bool done = false;
+			bool err = false;
+			AEKDNMPPOJN.AHKFPJJKHFL(m_sceneData.BCCHOBPJJKE_SceneId, () =>
+			{
+				//0xA61C4C
+				done = true;
+			}, () =>
+			{
+				//0xA61C58
+				done = true;
+				err = true;
+			});
+			while(!done)
+				yield return null;
+			if(err)
+			{
+				MenuScene.Instance.GotoTitle();
+			}
+			else
+			{
+				MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA[m_sceneData.BCCHOBPJJKE_SceneId - 1];
+				m_sceneData.MKHFCGPJPFI_LimitOverCount = scene.DMNIMMGGJJJ_Leaf;
+				m_limitOverData.KHEKNNFCAOI(m_sceneData.JKGFBFPIMGA_Rarity, scene.DMNIMMGGJJJ_Leaf, m_sceneData.MJBODMOLOBC_Luck);
+				done = false;
+				MenuScene.Instance.LimitOverControl.ShowRelease(m_sceneData, m_limitOverData, () =>
+				{
+					//0xA61414
+					UpdateLimitBreak();
+					m_sceneIconDeccoration.Change(m_sceneData, DisplayType.Level);
+					GameManager.Instance.SceneIconCache.Load(m_sceneData.BCCHOBPJJKE_SceneId, m_sceneData.CGIELKDLHGE_GetEvolveId(), (IiconTexture texture) =>
+					{
+						//0xA6162C
+						texture.Set(m_sceneIconImage);
+						SceneIconTextureCache.ChangeKiraMaterial(m_sceneIconImage, texture as IconTexture, m_sceneData.MBMFJILMOBP_IsKira());
+					});
+					m_windowControl.m_titleText.text = GameMessageManager.GetSceneCardName(m_sceneData);
+				}, () =>
+				{
+					//0xA61C64
+					done = true;
+				});
+				while(!done)
+					yield return null;
+				m_windowControl.InputEnable();
+			}
 		}
 
 		// // RVA: 0xA60A64 Offset: 0xA60A64 VA: 0xA60A64
@@ -944,13 +998,5 @@ namespace XeApp.Game.Menu
 				return;
 			}, null, null, null);
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x70FB84 Offset: 0x70FB84 VA: 0x70FB84
-		// // RVA: 0xA61414 Offset: 0xA61414 VA: 0xA61414
-		// private void <LimitOverMainCoroutine>b__82_2() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x70FB94 Offset: 0x70FB94 VA: 0x70FB94
-		// // RVA: 0xA6162C Offset: 0xA6162C VA: 0xA6162C
-		// private void <LimitOverMainCoroutine>b__82_4(IiconTexture texture) { }
 	}
 }

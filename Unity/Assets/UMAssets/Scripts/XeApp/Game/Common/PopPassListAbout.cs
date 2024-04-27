@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Collections;
+using mcrs;
+using XeApp.Game.Menu;
 
 namespace XeApp.Game.Common
 {
@@ -38,19 +40,44 @@ namespace XeApp.Game.Common
 			m_buttonDetail.AddOnClickCallback(() =>
 			{
 				//0xAF7CB8
-				TodoLogger.LogNotImplemented("m_buttonDetail");
+				InputDisable();
+				NKGJPJPHLIF.HHCJCDFCLOB.NBLAOIPJFGL_OpenURL(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE["utapass_site"], () =>
+				{
+					//0xAF7E74
+					InputEnable();
+				});
 			});
 			m_buttonPrivacy.ClearOnClickCallback();
 			m_buttonPrivacy.AddOnClickCallback(() =>
 			{
 				//0xAF7E78
-				TodoLogger.LogNotImplemented("m_buttonPrivacy");
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+				InputDisable();
+				MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.EMAOPPMGKBD_Policy, () =>
+				{
+					//0xAF808C
+					InputEnable();
+				}, () =>
+				{
+					//0xAF8324
+					PopupLoginBonusMonthlyPass.Close(MenuScene.Instance.GotoTitle);
+				});
 			});
 			m_buttonContract.ClearOnClickCallback();
 			m_buttonContract.AddOnClickCallback(() =>
 			{
 				//0xAF8090
-				TodoLogger.LogNotImplemented("m_buttonContract");
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+				InputDisable();
+				MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.GHDACOGLNLJ_Contract, () =>
+				{
+					//0xAF82A4
+					InputEnable();
+				}, () =>
+				{
+					//0xAF8414
+					PopupLoginBonusMonthlyPass.Close(MenuScene.Instance.GotoTitle);
+				});
 			});
 			GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
 		}
@@ -77,21 +104,19 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xAF7BB8 Offset: 0xAF7BB8 VA: 0xAF7BB8
-		//private void InputDisable() { }
+		private void InputDisable()
+		{
+			m_buttonDetail.IsInputOff = true;
+			m_buttonPrivacy.IsInputOff = true;
+			m_buttonContract.IsInputOff = true;
+		}
 
 		//// RVA: 0xAF7C34 Offset: 0xAF7C34 VA: 0xAF7C34
-		//private void InputEnable() { }
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x73DA8C Offset: 0x73DA8C VA: 0x73DA8C
-		//// RVA: 0xAF7E74 Offset: 0xAF7E74 VA: 0xAF7E74
-		//private void <Initialize>b__11_3() { }
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x73DAAC Offset: 0x73DAAC VA: 0x73DAAC
-		//// RVA: 0xAF808C Offset: 0xAF808C VA: 0xAF808C
-		//private void <Initialize>b__11_4() { }
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x73DACC Offset: 0x73DACC VA: 0x73DACC
-		//// RVA: 0xAF82A4 Offset: 0xAF82A4 VA: 0xAF82A4
-		//private void <Initialize>b__11_6() { }
+		private void InputEnable()
+		{
+			m_buttonDetail.IsInputOff = false;
+			m_buttonPrivacy.IsInputOff = false;
+			m_buttonContract.IsInputOff = false;
+		}
 	}
 }

@@ -47,7 +47,7 @@ namespace XeApp.Game.Menu
 		private const int SCROLLBAR_VISIBLE_OFFSET = 65;
 
 		public bool IsOpen { get; private set; } // 0x54
-		//public LayoutUGUIScrollSupport ScrollSupport { get; } 0x19345E8
+		public LayoutUGUIScrollSupport ScrollSupport { get { return m_scrollSupport; } } //0x19345E8
 
 		//[IteratorStateMachineAttribute] // RVA: 0x727E9C Offset: 0x727E9C VA: 0x727E9C
 		//// RVA: 0x19345F0 Offset: 0x19345F0 VA: 0x19345F0

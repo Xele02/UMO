@@ -157,8 +157,14 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xCF4A18 Offset: 0xCF4A18 VA: 0xCF4A18
 		protected int GetListEdgeRank(bool isUpper)
 		{
-			TodoLogger.LogError(0, "GetListEdgeRank");
-			return 0;
+			if(isUpper)
+			{
+				return currentInfoList[0].rankingOrder;
+			}
+			else
+			{
+				return currentInfoList[currentInfoList.Count - 1].rankingOrder;
+			}
 		}
 
 		//// RVA: 0xCF4B24 Offset: 0xCF4B24 VA: 0xCF4B24
@@ -333,13 +339,40 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xCF6284 Offset: 0xCF6284 VA: 0xCF6284
 		protected void OnReceivedRankingListAdditive(int dir, List<IBIGBMDANNM> list)
 		{
-			TodoLogger.LogError(0, "OnReceivedRankingListAdditive");
+			if(list != null && list.Count > 0)
+			{
+				for(int i = 0; i < list.Count; i++)
+				{
+					EAJCBFGKKFA_FriendInfo data = new EAJCBFGKKFA_FriendInfo();
+					data.KHEKNNFCAOI(list[i]);
+					RankingListInfo info = new RankingListInfo(i, true, data);
+					if(dir < 0)
+						currentInfoList.Insert(i, info);
+					else
+						currentInfoList.Add(info);
+					info.TryInstall();
+				}
+				OnChangedRankingList(list.Count * (dir < 0 ? -1 : 1));
+			}
+			this.StartCoroutineWatched(Co_WaitDownLoadAsset());
 		}
 
 		//// RVA: 0xCF64C4 Offset: 0xCF64C4 VA: 0xCF64C4
 		protected void OnReceivedRankingListAdditive(int dir, List<RankingListInfo> a_list)
 		{
-			TodoLogger.LogError(0, "OnReceivedRankingListAdditive2");
+			if(a_list != null && a_list.Count > 0)
+			{
+				for(int i = 0; i < a_list.Count; i++)
+				{
+					if(dir < 0)
+						currentInfoList.Insert(i, a_list[i]);
+					else
+						currentInfoList.Add(a_list[i]);
+					a_list[i].TryInstall();
+				}
+				OnChangedRankingList(a_list.Count * (dir < 0 ? -1 : 1));
+			}
+			this.StartCoroutineWatched(Co_WaitDownLoadAsset());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E15E4 Offset: 0x6E15E4 VA: 0x6E15E4
@@ -365,7 +398,11 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xCF67B4 Offset: 0xCF67B4 VA: 0xCF67B4
 		protected void OnNetError()
 		{
-			TodoLogger.LogError(0, "OnNetError");
+			UnityEngine.Debug.LogWarning("Net Error");
+			if(MenuScene.Instance.IsTransition())
+				GotoTitle();
+			else
+				MenuScene.Instance.GotoTitle();
 		}
 
 		//// RVA: 0xCF6904 Offset: 0xCF6904 VA: 0xCF6904

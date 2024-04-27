@@ -37,7 +37,7 @@ namespace XeApp.Game.Menu
 		private readonly FontSize[] m_fontSizeTbl = new FontSize[2]
 			{
 				new FontSize() { shortFontSize = 30, longFontSize = 20, shortTextLength = 15, longTextLength = 34 },
-				new FontSize() { shortFontSize = 18, longFontSize = 20, shortTextLength = 21, longTextLength = 34 }
+				new FontSize() { shortFontSize = 20, longFontSize = 18, shortTextLength = 21, longTextLength = 34 }
 			}; // 0x3C
 
 		//// RVA: 0x178FB50 Offset: 0x178FB50 VA: 0x178FB50
@@ -55,7 +55,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17906A0 Offset: 0x17906A0 VA: 0x17906A0
 		public bool IsLoading()
 		{
-			return !KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning && !m_isLoadingMusicJacket && !m_isLoadingLogo;
+			return KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning || m_isLoadingMusicJacket || m_isLoadingLogo;
 		}
 
 		//// RVA: 0x1790268 Offset: 0x1790268 VA: 0x1790268

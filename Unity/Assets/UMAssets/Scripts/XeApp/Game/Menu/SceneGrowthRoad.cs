@@ -106,7 +106,18 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x10DD44C Offset: 0x10DD44C VA: 0x10DD44C
-		//public void PlayUnLockAnime() { }
+		public void PlayUnLockAnime()
+		{
+			int idx = (int)m_type;
+			if(m_isSub)
+				idx += 4;
+			if(m_type == Type.Normal && !m_isCenter)
+				idx += 3;
+			m_replaceUvImages[0].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvManager.GetUVData(m_uvNameTable[idx, 1]));
+			m_replaceUvImages[1].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvManager.GetUVData(m_uvNameTable[idx, 1]));
+			m_abs.StartChildrenAnimGoStop("go_in", "st_in");
+			m_addEffectAbs.StartChildrenAnimGoStop("go_in", "st_in");
+		}
 
 		//// RVA: 0x10DD7B4 Offset: 0x10DD7B4 VA: 0x10DD7B4
 		public void PlayExpandAnime()
@@ -127,7 +138,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x10DD428 Offset: 0x10DD428 VA: 0x10DD428
-		//public void SetOpen() { }
+		public void SetOpen()
+		{
+			SetOpen(m_isSub, m_isCenter);
+		}
 
 		//// RVA: 0x10DDC50 Offset: 0x10DDC50 VA: 0x10DDC50
 		public void SetOpen(bool isSub, bool isCenter)

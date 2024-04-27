@@ -37,7 +37,10 @@ public class SakashoPlatformPayment : SakashoAPIBase
 	}
 
 	//// RVA: 0x2E587AC Offset: 0x2E587AC VA: 0x2E587AC
-	//public static SakashoAPICallContext ClaimSubscriptionContinuationBonus(OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext ClaimSubscriptionContinuationBonus(OnSuccess onSuccess, OnError onError)
+	{
+		return new SakashoAPICallContext(Call(SakashoPlatformPaymentClaimSubscriptionContinuationBonus, "", onSuccess, onError));
+	}
 
 	//// RVA: 0x2E58890 Offset: 0x2E58890 VA: 0x2E58890
 	//private static extern int SakashoPlatformPaymentGetProducts(int callbackId, string json) { }
@@ -69,5 +72,8 @@ public class SakashoPlatformPayment : SakashoAPIBase
 	}
 
 	//// RVA: 0x2E58F10 Offset: 0x2E58F10 VA: 0x2E58F10
-	//private static extern int SakashoPlatformPaymentClaimSubscriptionContinuationBonus(int callbackId, string json) { }
+	private static int SakashoPlatformPaymentClaimSubscriptionContinuationBonus(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoPlatformPaymentClaimSubscriptionContinuationBonus(callbackId, json);
+	}
 }

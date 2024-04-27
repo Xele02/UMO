@@ -107,7 +107,14 @@ namespace XeSys.Gfx
 		// */
 
 		// // RVA: 0x1F07248 Offset: 0x1F07248 VA: 0x1F07248
-		// public static void SetImageRaycastTarget(GameObject obj, bool enable) { }
+		public static void SetImageRaycastTarget(GameObject obj, bool enable)
+		{
+			IAlphaTexture[] imgs = obj.GetComponentsInChildren<IAlphaTexture>(true);
+			for(int i = 0; i < imgs.Length; i++)
+			{
+				imgs[i].raycastTarget = enable;
+			}
+		}
 
 		// // RVA: 0x1F073A0 Offset: 0x1F073A0 VA: 0x1F073A0
 		// public static void SetTextRaycastTarget(GameObject obj, bool enable) { }

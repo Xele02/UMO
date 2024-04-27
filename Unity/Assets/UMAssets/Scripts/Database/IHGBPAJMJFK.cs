@@ -61,7 +61,7 @@ public class IHGBPAJMJFK_Emblem : DIHHCBACKGG_DbSection
 	// RVA: 0x11FABC0 Offset: 0x11FABC0 VA: 0x11FABC0 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(100, "Emblem IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbJson, "Emblem IIEMACPEEBJ");
 		return false;
 	}
 

@@ -24,7 +24,17 @@ namespace XeApp.Game.Menu
 		public bool IsOpen { get; private set; } // 0x2C
 
 		//// RVA: 0x187ED60 Offset: 0x187ED60 VA: 0x187ED60
-		//public ActionButton GetChallengeButton(int index) { }
+		public ActionButton GetChallengeButton(int index)
+		{
+			FKMOKDCJFEN data = m_viewList[index];
+			for(int i = 0; i < m_scrollList.ScrollObjects.Count; i++)
+			{
+				LayoutQuestVerticalItem item = m_scrollList.ScrollObjects[i] as LayoutQuestVerticalItem;
+				if(item.Compare(data))
+					return item.ChallengeButton;
+			}
+			return null;
+		}
 
 		//// RVA: 0x187EEF8 Offset: 0x187EEF8 VA: 0x187EEF8
 		private void SetupScrollList(int count, bool resetScroll)

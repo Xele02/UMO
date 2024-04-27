@@ -63,7 +63,7 @@ public class HGLPLKKBBOL_EventItem : DIHHCBACKGG_DbSection
 	// RVA: 0x17519EC Offset: 0x17519EC VA: 0x17519EC Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(TodoLogger.Database, "HGLPLKKBBOL_EventItem.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbJson, "HGLPLKKBBOL_EventItem.IIEMACPEEBJ");
 		return true;
 	}
 

@@ -176,7 +176,8 @@ namespace XeApp.Game.Menu
 				m_dispType = DispType.CurrentUnit;
 			if(GameManager.Instance.IsTutorial)
 			{
-				TodoLogger.LogError(0, "Tuto");
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ECNAIALHHBO_UnitMenu.BLABFAMKLIN_UnitInfoDispType = 0;
+				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
 			}
 			m_viewUnitData = PlayerData.DPLBHAIKPGL_GetTeam(false);
 			int divaSortItem = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.BICLOMKLAOF_unitWindowDivaDispItem;
@@ -349,7 +350,23 @@ namespace XeApp.Game.Menu
 			}
 			if(m_isFromBeginner)
 			{
-				TodoLogger.LogError(0, "ShowHelp m_isFromBeginner");
+				int missionId = m_beginnerMissionId;
+				if(PrevTransition == TransitionList.Type.QUEST)
+				{
+					if(TutorialProc.CanDivaSelect(missionId))
+					{
+						yield return this.StartCoroutineWatched(TutorialProc.Co_DivaSelect(m_unitInfo.SecondDivaButton));
+					}
+				}
+				else
+				{
+					if(TutorialProc.CanDivaSelectAfter(missionId))
+					{
+						yield return this.StartCoroutineWatched(TutorialProc.Co_DivaSlectAfter());
+					}
+					m_isFromBeginner = false;
+					m_beginnerMissionId = 0;
+				}
 			}
 			if(!GameManager.Instance.IsTutorial)
 			{

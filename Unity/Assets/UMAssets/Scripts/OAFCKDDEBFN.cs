@@ -85,7 +85,6 @@ public class OAFCKDDEBFN
 			}
 			index++;
 		}
-		TodoLogger.LogError(0, "TODO");
-		return null; // TODO
+		return null;
 	}
 }

@@ -30,7 +30,11 @@ namespace XeApp.Game.Title
 		}
 
 		//// RVA: 0xE3561C Offset: 0xE3561C VA: 0xE3561C
-		//public void Show() { }
+		public void Show()
+		{
+			m_Anim.StartChildrenAnimGoStop("go_in", "st_in");
+			isEnter = true;
+		}
 
 		//// RVA: 0xE356B0 Offset: 0xE356B0 VA: 0xE356B0
 		//public void Leave() { }

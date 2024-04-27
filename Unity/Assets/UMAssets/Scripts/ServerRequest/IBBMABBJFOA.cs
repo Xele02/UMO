@@ -8,13 +8,15 @@ public class IBBMABBJFOA_PaymentRecover : CACGCMBKHDI_Request
 {
 	public class EPJKBEHOMNJ
 	{
-		public int DJJGPACGEMM; // 0x8
-		//public BEAOCBFAHKF NFEAMMJIMPG; // 0xC
+		public int DJJGPACGEMM_ProductId; // 0x8
+		public BEAOCBFAHKF NFEAMMJIMPG; // 0xC
 
 		// RVA: 0x1210F60 Offset: 0x1210F60 VA: 0x1210F60
 		public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
 		{
-			TodoLogger.LogError(0, "IBBMABBJFOA_PaymentRecover.EPJKBEHOMNJ.KHEKNNFCAOI");
+			DJJGPACGEMM_ProductId = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.DJJGPACGEMM_product_id];
+			NFEAMMJIMPG = new BEAOCBFAHKF();
+			NFEAMMJIMPG.KHEKNNFCAOI(IDLHJIOMJBK);
 		}
 	}
 

@@ -195,7 +195,15 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x143CD40 Offset: 0x143CD40 VA: 0x143CD40
-		// public void Destroy() { }
+		public void Destroy()
+		{
+			DestroyCacheBg();
+			m_bgBehaviour = null;
+			m_bgTexture = null;
+			UnityEngine.Object.Destroy(m_bgInstance);
+			m_bgInstance = null;
+			DeleteLimitedBG();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C5968 Offset: 0x6C5968 VA: 0x6C5968
 		// // RVA: 0x143D2A4 Offset: 0x143D2A4 VA: 0x143D2A4
@@ -925,6 +933,7 @@ namespace XeApp.Game.Menu
 				AssetBundleManager.UnloadAssetBundle(m_strBuilder.ToString());
 			}
 			m_bgBehaviour.SetHomeBgTexture(tex, m_textureType == BgTextureType.Scene, isBlur);
+			UnloadBgTexture();
 			m_bgTexture = tex;
 		}
 
@@ -1157,7 +1166,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x143EA6C Offset: 0x143EA6C VA: 0x143EA6C
-		// public void SetStoryParam(StoryBgParam param) { }
+		public void SetStoryParam(StoryBgParam param)
+		{
+			storyBgParam = param;
+		}
 
 		// // RVA: 0x143EA78 Offset: 0x143EA78 VA: 0x143EA78
 		public StoryBgParam OutputStoryBgParam(bool isStory)
@@ -1172,9 +1184,16 @@ namespace XeApp.Game.Menu
 		{
 			if(storyBgParam.isCategoryStory)
 			{
-				TodoLogger.LogError(0, "StorytBgReturn");
+				SetStoryBgSetPositionX(storyBgParam.x);
+				storyBgParam.isCategoryStory = false;
+				m_bgBehaviour.StartCoroutineWatched(SetStoryBgTexture(storyBgParam.map, () =>
+				{
+					//0x143EF2C
+					StoryBgShow();
+				}));
 			}
-			storyBgLoading = false;
+			else
+				storyBgLoading = false;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C5CB0 Offset: 0x6C5CB0 VA: 0x6C5CB0
@@ -1209,10 +1228,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x143EC5C Offset: 0x143EC5C VA: 0x143EC5C
-		// public void SetStoryBgSetPositionX(float x) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6C5D28 Offset: 0x6C5D28 VA: 0x6C5D28
-		// // RVA: 0x143EF2C Offset: 0x143EF2C VA: 0x143EF2C
-		// private void <StorytBgReturn>b__88_0() { }
+		public void SetStoryBgSetPositionX(float x)
+		{
+			RectTransform rt = m_bgBehaviour.storyBgScrollRect.content.GetComponent<RectTransform>();
+			rt.anchoredPosition = new Vector2(x, rt.anchoredPosition.y);
+		}
 	}
 }

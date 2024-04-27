@@ -19,7 +19,10 @@ public class LHFOAFAOPLC
     }
 
 	// // RVA: 0x17F67FC Offset: 0x17F67FC VA: 0x17F67FC
-	// public static void AMNOLHCJDPN(double NPPGKNGIFGK, string JMEMGIPGGIK) { }
+	public static void AMNOLHCJDPN(double NPPGKNGIFGK, string JMEMGIPGGIK)
+	{
+		TodoLogger.LogError(TodoLogger.Adjust, "LHFOAFAOPLC.AMNOLHCJDPN trackEvent m3bsg4");
+	}
 
 	// // RVA: 0x17F68C0 Offset: 0x17F68C0 VA: 0x17F68C0
 	public static void JIABJFIJACN()
@@ -28,7 +31,10 @@ public class LHFOAFAOPLC
 	}
 
 	// // RVA: 0x17F6948 Offset: 0x17F6948 VA: 0x17F6948
-	// public static void FPCGNJMEHCI() { }
+	public static void FPCGNJMEHCI()
+	{
+		TodoLogger.LogError(TodoLogger.Adjust, "LHFOAFAOPLC.FPCGNJMEHCI trackEvent piyox8");
+	}
 
 	// // RVA: 0x17F69D0 Offset: 0x17F69D0 VA: 0x17F69D0
 	// private static void EDDHEIOLDDD(string BOPNLLIHCPA) { }
