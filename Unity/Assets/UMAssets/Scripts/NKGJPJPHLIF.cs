@@ -13,6 +13,7 @@ using CriWare;
 using XeApp.Game.Menu;
 using XeApp.Game;
 using XeApp.Core;
+using System.Runtime.InteropServices;
 
 public class NKGJPJPHLIF
 {
@@ -332,7 +333,10 @@ public class NKGJPJPHLIF
 		// private PKNOGNLPHAE CNEMMHHJKNG; // 0x28
 		//0xC1B698
 
-		if(MDAMJIGBOLD_PlayerId != 0 && !FBBNPFFEJBN)
+		//UMO
+		bool isCheat = MDAMJIGBOLD_PlayerId == 999999999;
+
+		if(MDAMJIGBOLD_PlayerId != 0 && !FBBNPFFEJBN && ExternLib.LibSakasho.GetCurrentAccountId() == MDAMJIGBOLD_PlayerId)
 		{
 			//goto LAB_00c1bbc4;
 			if(KLMFJJCNBIP_OnSuccess != null)
@@ -367,7 +371,7 @@ public class NKGJPJPHLIF
 			//L214
 			// UMO Display account type creation popup, check if full account is already created?
 			//int accountType = 1; // 0 = normal, 1 = full unlock
-			int accountType = 0;
+			int accountType = isCheat ? 1 : 0;
 
 			FFEEIONIBFF_Request = null;
 			PKNOGNLPHAE_CreatePlayer CNEMMHHJKNG = IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new PKNOGNLPHAE_CreatePlayer());

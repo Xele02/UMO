@@ -24,7 +24,7 @@ public class IOGKADECKOP
 
 	private MonoBehaviour DANMJLOBLIE; // 0x8
 	private bool BICOBOLNFLJ; // 0xC
-	private InheritingMenu MCJHELIEHMC; // 0x10
+	private UMOInheritingMenu MCJHELIEHMC; // 0x10
 	private LayoutTitleController NOFPJPHIPBD_LayoutTitleCtrl; // 0x14
 	private RawImage PDOILOAFKCF_BgImage; // 0x18
 	private GameObject HOFMODFAOEA; // 0x1C
@@ -73,7 +73,7 @@ public class IOGKADECKOP
 		if(!BICOBOLNFLJ)
 			return false;
 		
-        MCJHELIEHMC = InheritingMenu.Create(null);
+        MCJHELIEHMC = UMOInheritingMenu.Create(null);
 		DANMJLOBLIE.StartCoroutineWatched(LMDJGHMDDJA_LogoActCoroutine());
         return true;
     }

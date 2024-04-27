@@ -24,6 +24,13 @@ namespace ExternLib
 
 		static AccountData playerAccount;
 
+		public static int GetCurrentAccountId()
+		{
+			if(playerAccount != null)
+				return playerAccount.userId;
+			return 0;
+		}
+
 		public static void SerializeServerSave(BBHNACPENDM_ServerSaveData serverData, EDOHBJAPLPF_JsonData jsonRes)
 		{
 			for (int i = 0; i < serverData.MGJKEJHEBPO_Blocks.Count; i++)
@@ -56,18 +63,27 @@ namespace ExternLib
 			SaveAccountServerData(playerAccount.playerData.serverData, playerAccount.userId, "data.json");
 		}
 
-		public static void LoadAccountServerData(int playerId)
+		public static EDOHBJAPLPF_JsonData GetAccountServerData(int playerId)
 		{
-			if (playerAccount == null)
-				return;
+			EDOHBJAPLPF_JsonData data = null;
 			string path = Application.persistentDataPath + "/Profiles/" + playerId.ToString() + "/data.json";
 
 			if (File.Exists(path))
 			{
 				TodoLogger.Log(TodoLogger.SakashoServer, "load server data " + path + "for" + playerId);
 				string saveData = File.ReadAllText(path);
-				playerAccount.players[playerId].serverData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(saveData);
+				data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(saveData);
 			}
+			return data;
+		}
+
+		public static void LoadAccountServerData(int playerId)
+		{
+			if (playerAccount == null)
+				return;
+			EDOHBJAPLPF_JsonData data = GetAccountServerData(playerId);
+			if(data != null)
+				playerAccount.players[playerId].serverData = data;
 		}
 
 		public static void InitPlayerAccount(int playerId)
@@ -232,7 +248,6 @@ namespace ExternLib
 			}
 			else if(playerAccount != null && playerAccount.userId != playerId)
 			{
-				playerId = 0;
 				playerAccount = null;
 			}
 			if(playerId != 0 && playerAccount == null)
