@@ -18,6 +18,7 @@ public class MIDMMFMJFPJ
 	public void LHPDDGIJKNB(int KNEFBLHBDBG)
     {
         FBGGEFFJJHB = KNEFBLHBDBG;
+		OCGFKMHNEOF_Key = "";
         NANNGLGOFKH_Val = 0;
         EGBOHDFBAPB_End = 0;
         CKFKFHKHOHA_RRcv = false;

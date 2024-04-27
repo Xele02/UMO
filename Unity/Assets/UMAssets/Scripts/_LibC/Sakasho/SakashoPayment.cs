@@ -655,12 +655,7 @@ namespace ExternLib
 					res["disable_carousel"] = description.disable_carousel;
 					if(description.feature != null)
 					{
-						res["feature"] = new EDOHBJAPLPF_JsonData();
-						res["feature"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
-						for(int i = 0; i < description.feature.Count; i++)
-						{
-							res["feature"].Add(description.feature[i]);
-						}
+						res["feature"] = string.Join(",", description.feature);
 					}
 					res["group_id"] = description.group_id;
 					if(description.kakutei_num != 0)

@@ -68,7 +68,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E588C Offset: 0x6E588C VA: 0x6E588C
 		// // RVA: 0x13DE4EC Offset: 0x13DE4EC VA: 0x13DE4EC
-		private IEnumerator Co_MainFlow(bool isPreparation, Action inheritingSuccess, Action closeCallback, LayoutMonthlyPassTakeover monthlylayout)
+		protected virtual IEnumerator Co_MainFlow(bool isPreparation, Action inheritingSuccess, Action closeCallback, LayoutMonthlyPassTakeover monthlylayout)
 		{
 			//0x13E1ECC
 			bool done = false;
