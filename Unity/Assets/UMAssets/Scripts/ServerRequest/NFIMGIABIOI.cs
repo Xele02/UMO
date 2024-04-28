@@ -73,6 +73,7 @@ public class NFIMGIABIOI_GetBbsThreadComments : CACGCMBKHDI_Request
 			{
 				BNAAJMBJFPG comment = new BNAAJMBJFPG();
 				comment.KHEKNNFCAOI(comments[i]);
+				GLNIHJIDABD_Comments.Add(comment);
 			}
 			CJNNMLLEKEF_PreviousPage = (int)IDLHJIOMJBK["previous_page"];
 			GPPOJHNNINK_CurrentPage = (int)IDLHJIOMJBK["current_page"];
