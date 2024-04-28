@@ -13,6 +13,7 @@ namespace ExternLib
 			public int userId;
 			public bool needUpdateAfter = false;
 			public EDOHBJAPLPF_JsonData serverData;
+			public UserThreads bbsThreadCache = null;
 		}
 
 		public partial class AccountData
@@ -60,6 +61,8 @@ namespace ExternLib
 			if (playerAccount == null)
 				return;
 
+			playerAccount.playerData.bbsThreadCache.Save(playerAccount.playerData.serverData);
+
 			SaveAccountServerData(playerAccount.playerData.serverData, playerAccount.userId, "data.json");
 		}
 
@@ -83,7 +86,11 @@ namespace ExternLib
 				return;
 			EDOHBJAPLPF_JsonData data = GetAccountServerData(playerId);
 			if(data != null)
+			{
 				playerAccount.players[playerId].serverData = data;
+				playerAccount.players[playerId].bbsThreadCache = new UserThreads();
+				playerAccount.players[playerId].bbsThreadCache.Load(playerAccount.players[playerId].serverData);
+			}
 		}
 
 		public static void InitPlayerAccount(int playerId)

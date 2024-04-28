@@ -440,7 +440,7 @@ namespace XeApp.Game.Menu
 				MenuScene.Instance.GotoTitle();
 				IsRequestGotoTitle = true;
 			});
-			if(!isDone)
+			while(!isDone)
 				yield return null;
 			if(!IsError)
 			{
@@ -621,7 +621,7 @@ namespace XeApp.Game.Menu
 		{
 			m_commentCount = m_chatContller.NJMOALFKKIK();
 			m_windowUi.ResetItem();
-			for (int i = m_commentCount - 1; i >= 0; i++)
+			for (int i = m_commentCount - 1; i >= 0; i--)
 			{
 				ANPBHCNJIDI.NNPGLGHDBKN data = m_chatContller.NOEMAKFEICB(i);
 				m_windowUi.AddBbsListItem(data, data.INDDJNMPONH, m_myPlayerId, i, true);
@@ -635,7 +635,7 @@ namespace XeApp.Game.Menu
 		{
 			m_commentCount = m_chatContller.NJMOALFKKIK();
 			m_windowUi.ResetItem();
-			for(int i = m_commentCount - 1; i >= 0; i++)
+			for(int i = m_commentCount - 1; i >= 0; i--)
 			{
 				ANPBHCNJIDI.NNPGLGHDBKN data = m_chatContller.NOEMAKFEICB(i);
 				m_windowUi.AddBbsListItem(data, data.INDDJNMPONH, m_myPlayerId, i, true);

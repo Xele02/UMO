@@ -54,7 +54,19 @@ namespace XeApp.Game.Common
 			m_input.onEndEdit.AddListener((string value) =>
 			{
 				//0x1101ABC
+				ModifyCharacterLimit(m_input, _characterLimit);
 				Text = m_input.text;
+				if(!disableRegex)
+				{
+					m_strBuilder.Set(Text);
+					#if !UNITY_ANDROID
+					GameMessageManager.ReplaceInvalidFont(ref m_strBuilder, m_strBuilder.ToString());
+					#endif
+					Text = m_strBuilder.ToString();
+					m_input.onValueChanged.RemoveListener(OnChangeContent);
+					m_input.text = Text;
+					m_input.onValueChanged.AddListener(OnChangeContent);
+				}
 				m_input.textComponent.text = Text;
 				ValidateText(control);
 			});
@@ -74,11 +86,14 @@ namespace XeApp.Game.Common
 			m_strBuilder.Replace(JpStringLiterals.StringLiteral_5812, "");
 			if(!disableRegex)
 			{
+				#if UNITY_ANDROID
 				GameMessageManager.ReplaceInvalidFont(ref m_strBuilder, m_strBuilder.ToString());
+				#endif
 			}
 			m_input.onValueChanged.RemoveListener(OnChangeContent);
 			m_input.text = m_strBuilder.ToString();
 			m_input.onValueChanged.AddListener(OnChangeContent);
+			ModifyCharacterLimit(m_input, _characterLimit);
 		}
 
 		//// RVA: 0x1101204 Offset: 0x1101204 VA: 0x1101204
