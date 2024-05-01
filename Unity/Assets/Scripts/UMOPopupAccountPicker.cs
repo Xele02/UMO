@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using XeApp.Game.Common;
 using XeApp.Game.Menu;
+using XeApp.Game.NameEntry;
 using XeSys;
 using XeSys.Gfx;
 
@@ -66,7 +67,7 @@ public class UMOPopupAccountPicker : UIBehaviour, IPopupContent
         scrollList.OnUpdateItem.RemoveAllListeners();
         scrollList.OnUpdateItem.AddListener((int idx, SwapScrollListContent content) =>
         {
-            (content as UMOPopupAccountPickerItem).Setup(accountIdsList[idx], accountNamesList[idx], OnSelect);
+            (content as UMOPopupAccountPickerItem).Setup(accountIdsList[idx], accountNamesList[idx], OnSelect, OnCopy, OnDelete);
         });
         scrollList.SetItemCount(accountIdsList.Count);
         scrollList.Apply();
@@ -80,6 +81,82 @@ public class UMOPopupAccountPicker : UIBehaviour, IPopupContent
     {
         AccountSelected = Id;
         m_control.Close(() => { return; }, null);
+    }
+
+    public void OnCopy(int Id)
+    {
+        TextPopupSetting s = PopupWindowManager.CrateTextContent("Confirmation", SizeType.Small, "Copy account ?", new ButtonInfo[2]
+        {
+            new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+            new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+        }, false, true);
+        PopupWindowManager.Show(s, (c, b, l) =>
+        {
+            int idx = accountIdsList.FindIndex((int a) =>
+            {
+                return a == Id;
+            });
+            if(l == PopupButton.ButtonLabel.Ok)
+            {
+                NameEntry.ShowPlayerNameEntry(accountNamesList[idx], (string n) =>
+                {
+                    string path = Application.persistentDataPath + "/Profiles/" + Id;
+                    int newId = ExternLib.LibSakasho.CreateAccountId(false);
+                    string path2 = Application.persistentDataPath + "/Profiles/" + newId;
+                    Directory.CreateDirectory(path2);
+                    File.Copy(Application.persistentDataPath + "/SaveData/" + Id + "_save.bin", Application.persistentDataPath + "/SaveData/" + newId + "_save.bin");
+                    EDOHBJAPLPF_JsonData d = ExternLib.LibSakasho.GetAccountServerData(Id);
+                    if(d != null)
+                    {
+                        d["base"]["name"] = n;
+                        ExternLib.LibSakasho.SaveAccountServerData(d, newId, "data.json");
+                        accountIdsList.Add(newId);
+                        accountNamesList.Add(n);
+                        scrollList.SetItemCount(accountIdsList.Count);
+                        scrollList.VisibleRegionUpdate();
+                    }
+                }, () => {});
+            }
+        }, null, null, null);
+    }
+
+    public void OnDelete(int Id)
+    {
+        TextPopupSetting s = PopupWindowManager.CrateTextContent("Confirmation", SizeType.Small, "Delete account ?", new ButtonInfo[2]
+        {
+            new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+            new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+        }, false, true);
+        PopupWindowManager.Show(s, (c, b, l) =>
+        {
+            if(l == PopupButton.ButtonLabel.Ok)
+            {
+                int idx = accountIdsList.FindIndex((int a) =>
+                {
+                    return a == Id;
+                });
+                if(idx != -1)
+                {
+                    int IdPath = Id;
+                    if(Id == -2)
+                        IdPath = 999999999;
+                    string path = Application.persistentDataPath + "/Profiles/" + IdPath;
+                    Directory.Delete(path, true);
+                    File.Delete(Application.persistentDataPath + "/SaveData/" + IdPath + "_save.bin");
+                    if(Id > 0)
+                    {
+                        accountIdsList.RemoveAt(idx);
+                        accountNamesList.RemoveAt(idx);
+                    }
+                    else
+                    {
+                        accountNamesList[idx] = "";
+                    }
+                    scrollList.SetItemCount(accountIdsList.Count);
+                    scrollList.VisibleRegionUpdate();
+                }
+            }
+        }, null, null, null);
     }
 
     protected override void OnDestroy()
