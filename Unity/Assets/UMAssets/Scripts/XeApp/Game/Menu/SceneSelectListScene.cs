@@ -950,7 +950,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1385A84 Offset: 0x1385A84 VA: 0x1385A84 Slot: 25
 		protected override void OnTutorial()
 		{
-			if(BasicTutorialManager.Instance.GetRecoveryPoint() != ILDKBCLAFPB.CDIPJNPICCO.BNLDNJNMFMC_6)
+			if(BasicTutorialManager.Instance.GetRecoveryPoint() != ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.BNLDNJNMFMC_6)
 			{
 				BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.Scene, null, null);
 			}

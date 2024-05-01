@@ -901,7 +901,7 @@ namespace XeApp.Game.Adv
 					case AdvScriptCommand.Label.TutoReturnPoint:
 						{
 							int param0 = scriptData.GetCommandParam(messageIndex, commandIndex, 0);
-							BasicTutorialManager.Instance.UpdateRecoveryPoint((ILDKBCLAFPB.CDIPJNPICCO)param0);
+							BasicTutorialManager.Instance.UpdateRecoveryPoint((ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint)param0);
 						}
 						break;
 					case AdvScriptCommand.Label.Wait:

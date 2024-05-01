@@ -336,21 +336,21 @@ namespace XeApp.Game.Menu
 				}
 				if(GameManager.Instance.IsTutorial)
 				{
-					ILDKBCLAFPB.CDIPJNPICCO recovery = BasicTutorialManager.Instance.GetRecoveryPoint();
+					ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint recovery = BasicTutorialManager.Instance.GetRecoveryPoint();
 					switch(recovery)
 					{
-						case ILDKBCLAFPB.CDIPJNPICCO.DOEHLCLBCNN_3:
-						case ILDKBCLAFPB.CDIPJNPICCO.FBFBGLONIME_4:
+						case ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.DOEHLCLBCNN_3_Gacha:
+						case ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.FBFBGLONIME_4_AfterGacha:
 							info.category = SceneGroupCategory.GACHA;
 							info.nextName = TransitionList.Type.GACHA_2;
 							info.uniqueId = TransitionUniqueId.GACHA2;
 							return;
-						case ILDKBCLAFPB.CDIPJNPICCO.DJPFJGKGOOF_5:
+						case ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.DJPFJGKGOOF_5_Setting:
 							info.category = SceneGroupCategory.FORMATION;
 							info.nextName = TransitionList.Type.SETTING_MENU;
 							info.uniqueId = TransitionUniqueId.SETTINGMENU;
 							return;
-						case ILDKBCLAFPB.CDIPJNPICCO.BNLDNJNMFMC_6:
+						case ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.BNLDNJNMFMC_6:
 							{
 								TeamSelectSceneListArgs arg = new TeamSelectSceneListArgs();
 								arg.defaultSelectScene = 0;
@@ -363,7 +363,7 @@ namespace XeApp.Game.Menu
 								info.args = arg;
 								return;
 							}
-						case ILDKBCLAFPB.CDIPJNPICCO.KIDJFNEGAHO_7:
+						case ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.KIDJFNEGAHO_7_ToMusicResult:
 							info.isDivaActive = true;
 							info.category = SceneGroupCategory.RESULT;
 							info.nextName = TransitionList.Type.RESULT;

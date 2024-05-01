@@ -721,7 +721,7 @@ namespace XeApp.Game.Tutorial
 		}
 
 		// // RVA: 0xE419D0 Offset: 0xE419D0 VA: 0xE419D0
-		public void UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO rPoint)
+		public void UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint rPoint)
 		{
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.DGMFOHADMHN(rPoint);
 			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
@@ -732,11 +732,11 @@ namespace XeApp.Game.Tutorial
 		{
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.AHEFHIMGIBI_PlayerData.EJFNMIFOFME(JGEOBNENMAH.HHCJCDFCLOB, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, Database.Instance.gameSetup, Database.Instance.gameResult);
 			UpdateLocalPlayerData();
-			UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO.KIDJFNEGAHO_7);
+			UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.KIDJFNEGAHO_7_ToMusicResult);
 		}
 
 		// // RVA: 0xE41D24 Offset: 0xE41D24 VA: 0xE41D24
-		public ILDKBCLAFPB.CDIPJNPICCO GetRecoveryPoint()
+		public ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint GetRecoveryPoint()
 		{
 			return GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.KMKIGHHCAGE();
 		}

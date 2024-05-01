@@ -245,7 +245,7 @@ namespace XeApp.Game.Menu
 		protected override void OnTutorial()
 		{
 			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.JKGGACIFBOM_23);
-			BasicTutorialManager.Instance.UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO.DJPFJGKGOOF_5);
+			BasicTutorialManager.Instance.UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.DJPFJGKGOOF_5_Setting);
 			BasicTutorialManager.Instance.ShowMessageWindow(BasicTutorialMessageId.Id_Setting, () =>
 			{
 				//0xC3CBEC
