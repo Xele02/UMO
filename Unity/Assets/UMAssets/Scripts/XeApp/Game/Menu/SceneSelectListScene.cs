@@ -677,21 +677,21 @@ namespace XeApp.Game.Menu
 					m_selectedSceneId = 0;
 					m_isCallEpisodeList = 0 < m_episodeId;
 				}
-			}
-			else
-			{
-				isPlateMission = false;
-				m_missionId = 0;
-				m_isBeginner = false;
-				m_episodeId = 0;
-				m_assistViewData = null;
-				m_assistPageIndex = 0;
-				m_assistSlotIndex = 0;
-				m_isEnableBonus = false;
-				m_isGoDivaEvent = false;
-				m_isBonus = false;
-				m_selectedSceneId = 0;
-				m_isCallEpisodeList = 0 < m_episodeId;
+				else
+				{
+					isPlateMission = false;
+					m_missionId = 0;
+					m_isBeginner = false;
+					m_episodeId = 0;
+					m_assistViewData = null;
+					m_assistPageIndex = 0;
+					m_assistSlotIndex = 0;
+					m_isEnableBonus = false;
+					m_isGoDivaEvent = false;
+					m_isBonus = false;
+					m_selectedSceneId = 0;
+					m_isCallEpisodeList = 0 < m_episodeId;
+				}
 			}
 			m_sortButtonGroup.OnSortButton(m_popupFilterSortScene);
 			m_sortButtonGroup.OnListSortEvent.RemoveAllListeners();
