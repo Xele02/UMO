@@ -5046,9 +5046,10 @@ public class ILDKBCLAFPB
 	// // RVA: 0x201A538 Offset: 0x201A538 VA: 0x201A538
 	private string DMCLJKABBCJ_GetSavePath()
     {
-        return Application.persistentDataPath + "/SaveData/save.bin";
+		int playerId = UMO_PlayerPrefs.GetInt("cpid", 0);
+        return Application.persistentDataPath + "/SaveData/"+playerId+"_save.bin";
     }
-
+	
 	// // RVA: 0x201AE10 Offset: 0x201AE10 VA: 0x201AE10
 	private string DNHFPLJMIPI_ReadFromPath(string HDMOIHHPJEA)
     {

@@ -417,6 +417,8 @@ public class NKGJPJPHLIF
 		if (MLPEHNBNOGD == 0)
 			return;
 		GameManager.Instance.localSave.LHPDDGIJKNB_Reset();
+		UMO_PlayerPrefs.SetInt("cpid", MLPEHNBNOGD);
+		UMO_PlayerPrefs.Save();
 		GameManager.Instance.localSave.PCODDPDFLHK_Load();
 		BIFNGFAIEIL.BLICHJOLKAO_DeleteCache();
 		EFLBHNFNFHA.KEIPMGOEKFL_DeleteCache();
@@ -441,8 +443,6 @@ public class NKGJPJPHLIF
 		GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.GEPLOFLHAOL_NeedInitRenderQuality = 1;
 		GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
 		Debug.Log(JpStringLiterals.StringLiteral_12640);
-		UMO_PlayerPrefs.SetInt("cpid", MLPEHNBNOGD);
-		UMO_PlayerPrefs.Save();
 		PKECIDPBEFL.GDELLNOBNDM_DeleteCache();
 	}
 

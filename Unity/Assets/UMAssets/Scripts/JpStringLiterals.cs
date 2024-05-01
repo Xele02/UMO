@@ -624,4 +624,6 @@ class JpStringLiterals
 	public const string UMO_product_428693_name = "2022年春 5月 : 春スフィア：超時空ガチャチケ×1（購入制限有＆5月）";
 	public const string UMO_product_428696_name = "2022年春 5月 : 春スフィア：シークレットストーン×1（購入制限有＆5月）";
 	public const string UMO_product_428699_name = "2022年春 5月 : 春スフィア： エピソードオーブ（大）×1（購入制限有＆5月）";
+	public const string UMO_start_present_1 = "歌マクロス特別プレゼントです。";
+	public const string UMO_start_present_2 = "歌マクロスプレイ開始記念プレゼントです。";
 }

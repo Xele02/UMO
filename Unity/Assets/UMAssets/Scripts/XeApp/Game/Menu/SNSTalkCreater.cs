@@ -332,20 +332,18 @@ namespace XeApp.Game.Menu
 			while (true)
 			{
 				if (!m_isPause)
-					yield return null;
-				rnt = ReceptionNewTalk();
-				if(rnt != null)
 				{
-					while(rnt.MoveNext())
+					rnt = ReceptionNewTalk();
+					if(rnt != null)
 					{
-						UpdateTapSkip();
-						yield return null;
+						while(rnt.MoveNext())
+						{
+							UpdateTapSkip();
+							yield return null;
+						}
 					}
 				}
-				else
-				{
-					yield return null;
-				}
+				yield return null;
 			}
 		}
 

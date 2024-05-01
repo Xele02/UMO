@@ -1535,9 +1535,9 @@ namespace XeApp.Game.Menu
 			{
 				if (HNDLICBDEMI.AFGKIJMPNNN_IsDecoEnabled())
 					yield break;
-				if (pd.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsDecolture))
+				if (pd.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsShowKiraPlatePopUp1))
 					yield break;
-				pd.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsDecolture, true);
+				pd.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsShowKiraPlatePopUp1, true);
 				if (isHaveAnyKiraPlate)
 				{
 					yield return Co.R(ShowKiraSceneReleaseWindowCoroutine(false));

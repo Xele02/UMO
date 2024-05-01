@@ -30,8 +30,8 @@ namespace XeApp.Game.Tutorial
 		Id_EndAdjust = 2,
 		Id_StartGame = 3,
 		Id_ManualEnd = 24,
-		Id_FailedGame = 4,
-		Id_GachaList = 5,
+		Id_FailedGame = 4, // ShowEndTutorialWindow
+		Id_GachaList = 5, // ??
 		Id_GachaMain = 6,
 		Id_GachaResult = 7,
 		Id_GachaEnd = 8,
@@ -71,11 +71,11 @@ namespace XeApp.Game.Tutorial
 		Id_BingoMission = 98,
 		Id_ValkyrieUpgradeHome = 99,
 		Id_ValkyrieUpgradeMenu = 100,
-		Id_McrsLobby = 101,
-		Id_Decolture = 102,
-		Id_RaidFromMcrsLobby = 103,
-		Id_RaidUseFoldRadar1 = 104,
-		Id_RaidUseFoldRadar2 = 105,
+		Id_McrsLobby = 101,	//?
+		Id_Decolture = 102, // lvl 5+
+		Id_RaidFromMcrsLobby = 103, //?
+		Id_RaidUseFoldRadar1 = 104, //?
+		Id_RaidUseFoldRadar2 = 105, //?
 		Id_Unit5Help1 = 106,
 		Id_Unit5Help2 = 107,
 	}
