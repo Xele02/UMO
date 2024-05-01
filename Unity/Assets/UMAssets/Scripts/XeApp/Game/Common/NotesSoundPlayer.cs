@@ -51,8 +51,8 @@ namespace XeApp.Game.Common
 		private int preLoopSeState; // 0x10
 		private CriAtomExPlayback loopSEPlayback; // 0x14
 		private CriAtomSource sePlayerLongNotes; // 0x18
-		public static bool isNewNoteSoundEnable; // 0x0
-		private static int[] noteTouchSEIndex = new int[18] { 4, 5, 3, 2, 1, 0, 7, 8, 0xe, 0xf, 0xd, 0x11, 0x12, 0x13, 0x15, 0x16, 0x14, 0x10 }; // 0x4
+		public static bool isNewNoteSoundEnable = true; // 0x0
+		public static int[] noteTouchSEIndex = new int[18] { 4, 5, 3, 2, 1, 0, 7, 6, 14, 15, 13, 17, 18, 19, 21, 22, 20, 16 }; // 0x4
 		private static NoteSEType[] mixTable = new NoteSEType[25] { 
 			NoteSEType.None,
 			NoteSEType.Great,
@@ -94,13 +94,13 @@ namespace XeApp.Game.Common
 		{
 			int val = 0;
 			if (isLongContinue)
-				val |= 0x10;
+				val |= 16;
 			if (isMiss)
 				val |= 8;
 			if (isFlick)
 				val |= 4;
-			val |= result << 0x10;
-			val |= trackId << 0x18;
+			val |= result << 16;
+			val |= trackId << 24;
 			val |= isLongBegin ? 1 : 0;
 			val |= isLongEnd ? 2 : 0;
 			requestBuffer.Add(val);
@@ -111,42 +111,42 @@ namespace XeApp.Game.Common
 		{
 			int off = 0;
 			int on = 0;
-			int a1 = 0;
-			int a3 = 0;
+			int good = 0;
+			int bad = 0;
 			int flickGreat = 0;
 			int flickPerfect = 0;
 			int great = 0;
 			int perfect = 0;
 			for(int i = 0; i < requestBuffer.Count; i++)
 			{
-				int a5 = requestBuffer[i] >> 24;
-				if((requestBuffer[i] & 8) == 0 && (requestBuffer[i] & 17) != 0)
+				int trackId = requestBuffer[i] >> 24;
+				if((requestBuffer[i] & 8) == 0 && (requestBuffer[i] & 17) != 0) // not miss & long begin | continue
 				{
-					int idx = a5 & 1;
-					if(a5 < 4)
-						idx = a5 / 2;
+					int idx = trackId & 1;
+					if(trackId < 4)
+						idx = trackId / 2;
 					on |= 1 << idx;
 				}
-				bool b1 = (requestBuffer[i] & 2) == 0;
-				if(b1)
-					b1 = (requestBuffer[i] >> 4) == 0 && ((requestBuffer[i] & 8) >> 3) == 0;
-				if(!b1)
+				bool notLongEnd = (requestBuffer[i] & 2) == 0;
+				if(notLongEnd)
+					notLongEnd = (requestBuffer[i] & 16) == 0 && ((requestBuffer[i] & 8) >> 3) == 0; // not miss & !long continue
+				if(!notLongEnd)
 				{
-					int idx = a5 & 1;
-					if(a5 < 4)
-						idx = a5 / 2;
+					int idx = trackId & 1;
+					if(trackId < 4)
+						idx = trackId / 2;
 					off |= 1 << idx;
 				}
-				int a6 = ((requestBuffer[i] >> 16) & 0xff) - 1;
-				if((requestBuffer[i] & 4) == 0)
+				int result = ((requestBuffer[i] >> 16) & 0xff) - 1;
+				if((requestBuffer[i] & 4) == 0) // not flick
 				{
-					switch(a6)
+					switch(result)
 					{
 						case 0:
-							a3++;
+							bad++;
 							break;
 						case 1:
-							a1++;
+							good++;
 							break;
 						case 2:
 							great++;
@@ -158,13 +158,13 @@ namespace XeApp.Game.Common
 				}
 				else
 				{
-					switch(a6)
+					switch(result)
 					{
 						case 0:
-							a3++;
+							bad++;
 							break;
 						case 1:
-							a1++;
+							good++;
 							break;
 						case 2:
 							flickGreat++;
@@ -178,13 +178,13 @@ namespace XeApp.Game.Common
 			ControlLongLoopSE(bgmPlayer, isVolumeZero, on, off);
 			if(!isVolumeZero)
 			{
-				int a2 = TryPlayPerfectGreat(great, perfect, flickGreat, flickPerfect);
-				if(a1 > 0 && a2 < 2)
+				int numPlayed = TryPlayPerfectGreat(great, perfect, flickGreat, flickPerfect);
+				if(good > 0 && numPlayed < 2)
 				{
 					PlaySE(NoteSEType.Good, perfect);
-					a2++;
+					numPlayed++;
 				}
-				if(a3 > 0 && a2 < 2)
+				if(bad > 0 && numPlayed < 2)
 				{
 					PlaySE(NoteSEType.Bad, perfect);
 				}
@@ -227,33 +227,35 @@ namespace XeApp.Game.Common
 			int p = preLoopSeState;
 			preLoopSeState = loopSeState;
 			loopSeState = (loopSeState | on) & ~off;
-			int a1 = 0;
+			int numBefore = 0;
 			for(int i = 6; i != 0;)
 			{
 				i--;
-				a1 += (p & 1);
+				numBefore += (p & 1);
 				p = p >> 1;
 			}
-			int n = 0;
+			int numAfter = 0;
 			p = preLoopSeState;
 			for(int i = 6; i != 0;)
 			{
 				i--;
-				n += (p & 1);
+				numAfter += (p & 1);
 				p = p >> 1;
 			}
-			if(a1 != 0 || n == 0)
+			if(numBefore != 0 || numAfter == 0)
 			{
-				if(a1 != n && n != 0)
+				if(numBefore != numAfter && numAfter != 0)
 				{
-					SoundManager.Instance.sePlayerLongNotes.volume = GetLoopSEVolume(n);
+					SoundManager.Instance.sePlayerLongNotes.volume = GetLoopSEVolume(numAfter);
 				}
-				if(a1 != 0 && n == 0)
+				if(numBefore != 0 && numAfter == 0)
+				{
 					loopSEPlayback.Stop();
+				}
 				return;
 			}
 			loopSEPlayback.Stop();
-			sePlayerLongNotes.volume = GetLoopSEVolume(n);
+			sePlayerLongNotes.volume = GetLoopSEVolume(numAfter);
 			if(!isVolumeZero)
 			{
 				loopSEPlayback = sePlayerLongNotes.Play(5);
@@ -353,7 +355,13 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAEE070 Offset: 0xAEE070 VA: 0xAEE070
-		// public void StopSound() { }
+		public void StopSound()
+		{
+			loopSeState = 0;
+			preLoopSeState = 0;
+			SoundManager.Instance.sePlayerLongNotes.Stop();
+			SoundManager.Instance.sePlayerLongNotes.Pause(false);
+		}
 
 		// // RVA: 0xAEDB38 Offset: 0xAEDB38 VA: 0xAEDB38
 		public static int LineIDToLineGroup(int trackLineID)
