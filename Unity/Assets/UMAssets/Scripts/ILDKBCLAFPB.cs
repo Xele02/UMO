@@ -10,17 +10,17 @@ using XeApp.Game;
 
 public class ILDKBCLAFPB
 {
-	public enum CDIPJNPICCO
+	public enum CDIPJNPICCO_RecoveryPoint
 	{
 		HJNNKCMLGFL = 0,
 		ENKHFKLKCPO = 1,
 		ICPCONCBPLH = 2,
-		DOEHLCLBCNN_3 = 3,
-		FBFBGLONIME_4 = 4,
-		DJPFJGKGOOF_5 = 5,
+		DOEHLCLBCNN_3_Gacha = 3,
+		FBFBGLONIME_4_AfterGacha = 4,
+		DJPFJGKGOOF_5_Setting = 5,
 		BNLDNJNMFMC_6 = 6,
-		KIDJFNEGAHO_7 = 7,
-		GBECNPANBEA_8 = 8,
+		KIDJFNEGAHO_7_ToMusicResult = 7,
+		GBECNPANBEA_8_TutoMusicResult = 8,
 		AKPFBBEGGEF = 9,
 		CIJOMBLJANG = 10,
 		AEFCOHJBLPO = 11,
@@ -2489,15 +2489,15 @@ public class ILDKBCLAFPB
 		}
 
         // // RVA: 0x2028F6C Offset: 0x2028F6C VA: 0x2028F6C
-        public void DGMFOHADMHN(CDIPJNPICCO FOFFPCGACMF)
+        public void DGMFOHADMHN(CDIPJNPICCO_RecoveryPoint FOFFPCGACMF)
 		{
 			OLDAGCNLJOI_Progress = (int)FOFFPCGACMF;
 		}
 
         // // RVA: 0x2028F74 Offset: 0x2028F74 VA: 0x2028F74
-        public CDIPJNPICCO KMKIGHHCAGE()
+        public CDIPJNPICCO_RecoveryPoint KMKIGHHCAGE()
 		{
-			return (CDIPJNPICCO)OLDAGCNLJOI_Progress;
+			return (CDIPJNPICCO_RecoveryPoint)OLDAGCNLJOI_Progress;
 		}
 
         // // RVA: 0x201B2EC Offset: 0x201B2EC VA: 0x201B2EC
@@ -5046,9 +5046,10 @@ public class ILDKBCLAFPB
 	// // RVA: 0x201A538 Offset: 0x201A538 VA: 0x201A538
 	private string DMCLJKABBCJ_GetSavePath()
     {
-        return Application.persistentDataPath + "/SaveData/save.bin";
+		int playerId = UMO_PlayerPrefs.GetInt("cpid", 0);
+        return Application.persistentDataPath + "/SaveData/"+playerId+"_save.bin";
     }
-
+	
 	// // RVA: 0x201AE10 Offset: 0x201AE10 VA: 0x201AE10
 	private string DNHFPLJMIPI_ReadFromPath(string HDMOIHHPJEA)
     {

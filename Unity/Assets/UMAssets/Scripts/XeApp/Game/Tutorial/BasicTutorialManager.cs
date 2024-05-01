@@ -30,8 +30,8 @@ namespace XeApp.Game.Tutorial
 		Id_EndAdjust = 2,
 		Id_StartGame = 3,
 		Id_ManualEnd = 24,
-		Id_FailedGame = 4,
-		Id_GachaList = 5,
+		Id_FailedGame = 4, // ShowEndTutorialWindow
+		Id_GachaList = 5, // ??
 		Id_GachaMain = 6,
 		Id_GachaResult = 7,
 		Id_GachaEnd = 8,
@@ -71,11 +71,11 @@ namespace XeApp.Game.Tutorial
 		Id_BingoMission = 98,
 		Id_ValkyrieUpgradeHome = 99,
 		Id_ValkyrieUpgradeMenu = 100,
-		Id_McrsLobby = 101,
-		Id_Decolture = 102,
-		Id_RaidFromMcrsLobby = 103,
-		Id_RaidUseFoldRadar1 = 104,
-		Id_RaidUseFoldRadar2 = 105,
+		Id_McrsLobby = 101,	//?
+		Id_Decolture = 102, // lvl 5+
+		Id_RaidFromMcrsLobby = 103, //?
+		Id_RaidUseFoldRadar1 = 104, //?
+		Id_RaidUseFoldRadar2 = 105, //?
 		Id_Unit5Help1 = 106,
 		Id_Unit5Help2 = 107,
 	}
@@ -721,7 +721,7 @@ namespace XeApp.Game.Tutorial
 		}
 
 		// // RVA: 0xE419D0 Offset: 0xE419D0 VA: 0xE419D0
-		public void UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO rPoint)
+		public void UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint rPoint)
 		{
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.DGMFOHADMHN(rPoint);
 			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
@@ -732,11 +732,11 @@ namespace XeApp.Game.Tutorial
 		{
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.AHEFHIMGIBI_PlayerData.EJFNMIFOFME(JGEOBNENMAH.HHCJCDFCLOB, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, Database.Instance.gameSetup, Database.Instance.gameResult);
 			UpdateLocalPlayerData();
-			UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO.KIDJFNEGAHO_7);
+			UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.KIDJFNEGAHO_7_ToMusicResult);
 		}
 
 		// // RVA: 0xE41D24 Offset: 0xE41D24 VA: 0xE41D24
-		public ILDKBCLAFPB.CDIPJNPICCO GetRecoveryPoint()
+		public ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint GetRecoveryPoint()
 		{
 			return GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.KMKIGHHCAGE();
 		}

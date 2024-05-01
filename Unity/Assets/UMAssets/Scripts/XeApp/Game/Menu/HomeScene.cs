@@ -2686,7 +2686,7 @@ namespace XeApp.Game.Menu
 				}
 				MenuScene.Instance.InputEnable();
 				GameManager.Instance.ResetViewPlayerData();
-				this.StartCoroutineWatched(PopupRecordPlate.Show(RecordPlateUtility.eSceneType.PresentBox, () =>
+				yield return this.StartCoroutineWatched(PopupRecordPlate.Show(RecordPlateUtility.eSceneType.PresentBox, () =>
 				{
 					//0x13C6B18
 					ILLPDLODANB.ILOGJDALEOO();

@@ -7,6 +7,7 @@ using UnityEngine;
 using XeApp.Game.Common;
 using XeApp.Game.Common.uGUI;
 using XeApp.Game.Menu;
+using XeApp.Game.Tutorial;
 using XeSys;
 
 namespace XeApp.Game.Gacha
@@ -523,8 +524,11 @@ namespace XeApp.Game.Gacha
 			Action tutoAction = null;
 			if(GameManager.Instance.IsTutorial)
 			{
-				TodoLogger.Log(0, "Tuto");
-				//tutoAction = ;
+				tutoAction = () =>
+				{
+					//0x996E34
+					BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.PopupPositiveButton, null, null);
+				};
 			}
 			toPurchaseVC = false;
 			int v3_price = GetMenuPrice(selectCategory, selectedCountType, selectedLotType);

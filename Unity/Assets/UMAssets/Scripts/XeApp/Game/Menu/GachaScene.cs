@@ -254,7 +254,7 @@ namespace XeApp.Game.Menu
 					LOBDIAABMKG l = GachaProductList[SelectIndex];
 					if(GameManager.Instance.IsTutorial)
 					{
-						if(BasicTutorialManager.Instance.GetRecoveryPoint() > ILDKBCLAFPB.CDIPJNPICCO.FBFBGLONIME_4)
+						if(BasicTutorialManager.Instance.GetRecoveryPoint() < ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.FBFBGLONIME_4_AfterGacha)
 						{
 							Database.Instance.tutorialPaidVC = 50;
 						}
@@ -426,10 +426,10 @@ namespace XeApp.Game.Menu
 		{
 			//0xB6ACBC
 			bool done = false;
-			if(BasicTutorialManager.Instance.GetRecoveryPoint() != ILDKBCLAFPB.CDIPJNPICCO.FBFBGLONIME_4)
+			if(BasicTutorialManager.Instance.GetRecoveryPoint() != ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.FBFBGLONIME_4_AfterGacha)
 			{
 				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.PHOGGPBMGAE_20);
-				BasicTutorialManager.Instance.UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO.DOEHLCLBCNN_3);
+				BasicTutorialManager.Instance.UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.DOEHLCLBCNN_3_Gacha);
 				done = false;
 				BasicTutorialManager.Instance.ShowMessageWindow(BasicTutorialMessageId.Id_GachaMain, () =>
 				{
@@ -458,7 +458,7 @@ namespace XeApp.Game.Menu
 				}, null, TutorialPointer.Direction.Normal);
 				while (!done)
 					yield return null;
-				BasicTutorialManager.Instance.UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO.DJPFJGKGOOF_5);
+				BasicTutorialManager.Instance.UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.DJPFJGKGOOF_5_Setting);
 			}
 		}
 
@@ -1048,7 +1048,7 @@ namespace XeApp.Game.Menu
 			{
 				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.ECLDDCCEJJG_21);
 				BasicTutorialManager.Instance.UpdateLocalPlayerData();
-				BasicTutorialManager.Instance.UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO.FBFBGLONIME_4);
+				BasicTutorialManager.Instance.UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.FBFBGLONIME_4_AfterGacha);
 				Database.Instance.tutorialPaidVC = 0;
 			}
 		}

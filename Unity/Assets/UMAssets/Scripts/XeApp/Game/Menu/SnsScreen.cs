@@ -521,7 +521,7 @@ namespace XeApp.Game.Menu
 			timeWait = 0;
 			while(timeWait < tiemr)
 			{
-				tiemr += TimeWrapper.deltaTime;
+				timeWait += TimeWrapper.deltaTime;
 				yield return null;
 			}
 			isWait = true;
@@ -544,7 +544,7 @@ namespace XeApp.Game.Menu
 			timeWait = 0;
 			while(timeWait < tiemr)
 			{
-				tiemr += TimeWrapper.deltaTime;
+				timeWait += TimeWrapper.deltaTime;
 				yield return null;
 			}
 			if(GameManager.Instance.IsTutorial)

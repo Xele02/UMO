@@ -1055,7 +1055,7 @@ namespace XeApp.Game.Menu
 			{
 				if(GameManager.Instance.IsTutorial)
 				{
-					BasicTutorialManager.Instance.UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO.GBECNPANBEA_8);
+					BasicTutorialManager.Instance.UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.GBECNPANBEA_8_TutoMusicResult);
 					if(Database.Instance.advSetup.IsCallResultAfterAdv)
 					{
 						MenuScene.Instance.GotoAdventure(false);

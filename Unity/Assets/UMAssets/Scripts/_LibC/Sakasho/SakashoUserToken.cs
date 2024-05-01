@@ -13,7 +13,7 @@ namespace ExternLib
 			public int userId;
 			public bool needUpdateAfter = false;
 			public EDOHBJAPLPF_JsonData serverData;
-			public UserThreads bbsThreadCache = null;
+			public UserThreads bbsThreadCache = new UserThreads();
 		}
 
 		public partial class AccountData
@@ -130,6 +130,95 @@ namespace ExternLib
 
 				SerializeServerSave(newData, jsonRes);
 				p.serverData = jsonRes;
+
+				if(p.userId < 900000000)
+				{
+					// Add new player gifts in Present Box
+					AddInventoryItem(new UserInventoryItem() 
+					{
+
+						item_count = 1,
+						item_name = "scene",
+						item_type = 0,
+						item_value = 325,
+						message = JpStringLiterals.UMO_start_present_1,
+						received_at = 0,
+						closed_at = 32509868340,
+						type = 1,
+					});
+					AddInventoryItem(new UserInventoryItem() 
+					{
+
+						item_count = 1,
+						item_name = "scene",
+						item_type = 0,
+						item_value = 157,
+						message = JpStringLiterals.UMO_start_present_1,
+						received_at = 0,
+						closed_at = 32509868340,
+						type = 1,
+					});
+					AddInventoryItem(new UserInventoryItem() 
+					{
+
+						item_count = 1,
+						item_name = "scene",
+						item_type = 0,
+						item_value = 853,
+						message = JpStringLiterals.UMO_start_present_1,
+						received_at = 0,
+						closed_at = 32509868340,
+						type = 1,
+					});
+					AddInventoryItem(new UserInventoryItem() 
+					{
+
+						item_count = 1,
+						item_name = "scene",
+						item_type = 0,
+						item_value = 4,
+						message = JpStringLiterals.UMO_start_present_2,
+						received_at = 0,
+						closed_at = 32509868340,
+						type = 0,
+					});
+					AddInventoryItem(new UserInventoryItem() 
+					{
+
+						item_count = 1,
+						item_name = "scene",
+						item_type = 0,
+						item_value = 2,
+						message = JpStringLiterals.UMO_start_present_2,
+						received_at = 0,
+						closed_at = 32509868340,
+						type = 0,
+					});
+					AddInventoryItem(new UserInventoryItem() 
+					{
+
+						item_count = 100,
+						item_name = JpStringLiterals.StringLiteral_10137,
+						item_type = 1,
+						item_value = 1001,
+						message = JpStringLiterals.UMO_start_present_2,
+						received_at = 0,
+						closed_at = 32509868340,
+						type = 0,
+					});
+					AddInventoryItem(new UserInventoryItem() 
+					{
+
+						item_count = 1,
+						item_name = "scene",
+						item_type = 0,
+						item_value = 5,
+						message = JpStringLiterals.UMO_start_present_2,
+						received_at = 0,
+						closed_at = 32509868340,
+						type = 0,
+					});
+				}
 			}
 
 			// Check cheat accounts is full unlocked
@@ -211,6 +300,7 @@ namespace ExternLib
 			}
 
 			InitPlayerAccount(id);
+
 			return id;
 		}
 
