@@ -68,6 +68,11 @@ namespace ExternLib
 
 				commonBlock.BBFIGEOBOMB_SpItem[7].BFINGCJHOHI_Cnt = 9999999; // deco coin
 
+				for(int i = 0; i < (int)GPFlagConstant.ID._max; i++)
+				{
+					commonBlock.BCLKCMDGDLD((GPFlagConstant.ID)i, true);
+				}
+
 			}
 			{
 				FNBIIGJJGKA_Counter counterBlock = newData.LBDOLHGDIEB_GetBlock("counter") as FNBIIGJJGKA_Counter;
