@@ -280,7 +280,7 @@ namespace ExternLib
 			}
 		}
 
-		public static int CreateAccount(bool cheatAccount)
+		public static int CreateAccountId(bool cheatAccount)
 		{
 			// cheat account : 999999999
 			// cheat other account : 999999998 (or 9xxxxxxxx)
@@ -299,6 +299,11 @@ namespace ExternLib
 				} while (Directory.Exists(Application.persistentDataPath + "/Profiles/" + id.ToString()));
 			}
 
+			return id;
+		}
+		public static int CreateAccount(bool cheatAccount)
+		{
+			int id = CreateAccountId(cheatAccount);
 			InitPlayerAccount(id);
 
 			return id;
