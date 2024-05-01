@@ -500,9 +500,19 @@ namespace XeApp.Game.RhythmGame
 #if UNITY_STANDALONE
 			//UMO
 			// Preload note sounds
-			for (int i = 0; i < noteTouchSEIndex.Length; i++)
+			if(!NotesSoundPlayer.isNewNoteSoundEnable)
 			{
-				SoundManager.Instance.sePlayerNotes.Preload(noteTouchSEIndex[i]);
+				for (int i = 0; i < noteTouchSEIndex.Length; i++)
+				{
+					SoundManager.Instance.sePlayerNotes.Preload(noteTouchSEIndex[i]);
+				}
+			}
+			else
+			{
+				for (int i = 0; i < NotesSoundPlayer.noteTouchSEIndex.Length; i++)
+				{
+					SoundManager.Instance.sePlayerNotes.Preload(NotesSoundPlayer.noteTouchSEIndex[i]);
+				}
 			}
 			// From valkyrie event, not sure if dynamic by valkyrie / ground
 			SoundManager.Instance.sePlayerGame.Preload("se_game_006");

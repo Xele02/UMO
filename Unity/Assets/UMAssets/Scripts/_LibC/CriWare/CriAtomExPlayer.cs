@@ -343,11 +343,18 @@ namespace ExternLib
 		{
 			if (playersList.ContainsKey(player))
 			{
+                if(sw)
+                {
 #if !UNITY_ANDROID
-				playersList[player].config.source.unityAudioSource.Pause();
+				    playersList[player].config.source.unityAudioSource.Pause();
 #endif
-				playersList[player].isPaused = true;
-				playersList[player].status = CriAtomExPlayer.Status.Prep;
+				    playersList[player].isPaused = true;
+				    playersList[player].status = CriAtomExPlayer.Status.Prep;
+                }
+                else
+                {
+                    criAtomExPlayer_Resume(player, CriAtomEx.ResumeMode.AllPlayback);
+                }
 			}
 		}
         public static void criAtomExPlayer_Resume(IntPtr player, CriAtomEx.ResumeMode mode)
