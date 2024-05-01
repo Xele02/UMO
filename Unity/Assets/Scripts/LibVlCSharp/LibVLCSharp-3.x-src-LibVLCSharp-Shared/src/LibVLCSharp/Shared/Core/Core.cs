@@ -25,7 +25,7 @@ namespace LibVLCSharp.Shared
             [DllImport(Constants.Kernel32, SetLastError = true, CharSet = CharSet.Unicode)]
             internal static extern IntPtr LoadLibraryW(string dllToLoad);
 
-#if UNITY_EDITOR_LINUX
+#if UNITY_EDITOR_LINUX || UNITY_EDITOR_OSX
             [DllImport(Constants.LibDl, EntryPoint = "dlopen")]
 #else
             [DllImport(Constants.LibSystem, EntryPoint = "dlopen")]
