@@ -246,26 +246,20 @@ namespace XeApp.Game.Menu
 
 			//0x19EA678
 			result = m_viewData.HBODCMLFDOB;
-			int a = m_viewData.JCFAPAOLDOI(result.KBHJOBKOOGC_NextLevel + 1);
+			int a1 = m_viewData.JCFAPAOLDOI(result.CPDEMMFGKED_Level + 1);
 			crntMaxExp = m_viewData.JCFAPAOLDOI(result.KBHJOBKOOGC_NextLevel + 1);
 			float f = 1;
 			if(!result.EDPNAEOKGNM)
-			{
-				f = result.BJHAMEJPGAJ_Exp * 1.0f / a;
-			}
-			float f2 = 1;
+				f = result.BJHAMEJPGAJ_Exp * 1.0f / a1;
+			endNormExp = 1;
 			if(!result.PFIILLOIDIL)
-			{
-				f2 = result.EOIJEGJDLAN_AfterExp * 1.0f / crntMaxExp;
-			}
-			endNormExp = f2;
-			startValue = result.CPDEMMFGKED_Level;
-			if(result.EDPNAEOKGNM)
-				startValue += f;
-			f = result.KBHJOBKOOGC_NextLevel;
+				endNormExp = result.EOIJEGJDLAN_AfterExp * 1.0f / crntMaxExp;
+			startValue = f + result.CPDEMMFGKED_Level;
+			if (result.EDPNAEOKGNM)
+				startValue = result.CPDEMMFGKED_Level;
+			endValue = result.KBHJOBKOOGC_NextLevel;
 			if(!result.PFIILLOIDIL)
-				f += endNormExp;
-			endValue = f;
+				endValue += endNormExp;
 			currentFrameLevel = result.CPDEMMFGKED_Level;
 			currentTime = 0;
 			levelDiff = result.KBHJOBKOOGC_NextLevel - result.CPDEMMFGKED_Level;
@@ -273,35 +267,24 @@ namespace XeApp.Game.Menu
 			PlayCountUpLoopSE();
 			while(true)
 			{
+				int prevLevel = currentFrameLevel;
 				currentTime += TimeWrapper.deltaTime;
-				f = XeSys.Math.Tween.EasingInOutSine(startValue, endValue, currentTime / timeLength);
-				int prevFrameLevel = currentFrameLevel;
-				currentFrameLevel = (int)(f - (f % 1));
-				bool b1 = false;
-				if(result.KBHJOBKOOGC_NextLevel == currentFrameLevel)
+				float f2 = XeSys.Math.Tween.EasingInOutSine(startValue, endValue, currentTime / timeLength);
+				currentFrameLevel = (int)(f2 - (f2 % 1));
+				if (result.KBHJOBKOOGC_NextLevel == currentFrameLevel)
+					UpdateGaugePosition(result.PFIILLOIDIL ? 1 : (f2 % 1));
+				else
+					UpdateGaugePosition(f2 % 1);
+				int exp = m_viewData.JCFAPAOLDOI(currentFrameLevel + 1);
+				SetExp((int)((f2 % 1) * exp), exp);
+				if(prevLevel < currentFrameLevel)
 				{
-					b1 = result.PFIILLOIDIL;
-				}
-				f = currentTime;
-				if(b1)
-					f = 1;
-				UpdateGaugePosition(f);
-				int a2 = m_viewData.JCFAPAOLDOI(currentFrameLevel + 1);
-				SetExp((int)(currentTime * a2), a2);
-				if(currentFrameLevel > prevFrameLevel)
-				{
-					if(!b1)
-					{
+					if (!result.PFIILLOIDIL)
 						LevelupProcess(currentFrameLevel);
-					}
 					else
-					{
 						LevelMaxProcess(currentFrameLevel);
-					}
 				}
-				if(timeLength <= currentTime)
-					b1 = true;
-				if(!b1)
+				if(!result.PFIILLOIDIL && timeLength > currentTime)
 				{
 					yield return null;
 				}
@@ -311,7 +294,7 @@ namespace XeApp.Game.Menu
 				}
 			}
 			UpdateGaugePosition(endNormExp);
-			m_numLevel.SetNumber(result.KBHJOBKOOGC_NextLevel);
+			m_numLevel.SetNumber(result.KBHJOBKOOGC_NextLevel, 0);
 			SetExp(result.EOIJEGJDLAN_AfterExp, crntMaxExp);
 			m_countUpSEPlayback.Stop();
 			if(callback != null)

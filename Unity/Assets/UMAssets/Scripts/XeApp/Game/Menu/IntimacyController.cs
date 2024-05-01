@@ -1131,7 +1131,7 @@ namespace XeApp.Game.Menu
 											//0x14B47C0
 											done = true;
 										});
-										while(!done && m_layoutInfoDeco == null)
+										while(!done && m_layoutInfoDeco != null)
 											yield return null;
 									}
 									//LAB_014bb038
