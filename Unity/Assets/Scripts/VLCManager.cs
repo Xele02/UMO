@@ -45,7 +45,7 @@ public class VLCManager : SingletonMonoBehaviour<VLCManager>
     }
 
 	public bool IsInitialized { get { return isInitialized && !RuntimeSettings.CurrentSettings.DisableMovies
-    #if UNITY_EDITOR_LINUX
+    #if UNITY_EDITOR_LINUX || UNITY_EDITOR_OSX
         && false
     #endif
     ; } }

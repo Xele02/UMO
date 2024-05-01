@@ -34,7 +34,7 @@ public class StreamedMoviePlayback : MoviePlayback
     }
     private string tmpPath = "";
 
-#if UNITY_EDITOR_LINUX
+#if UNITY_EDITOR_LINUX || UNITY_EDITOR_OSX
     [MenuItem("UMO/Convert all movies")]
     public static void ConvertAll()
     {
