@@ -163,7 +163,7 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 								}
 								else
 								{
-									if(!db.MFPNGNMFEAL_Costume.OEMKAFGPOCE_IsCostumeAvaiable(a.DIPKCALNIII_Id, a.BEEAIAAJOHD_CId))
+									if(!db.MFPNGNMFEAL_Costume.OEMKAFGPOCE_IsCostumeAvaiable(a.BEEAIAAJOHD_CId, a.DIPKCALNIII_Id))
 									{
 										a.BEEAIAAJOHD_CId = 0;
 										a.AFNIOJHODAG_ColId = 0;
