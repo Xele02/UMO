@@ -439,18 +439,18 @@ public class IGPDIKDNFKD
 public class JGMEFHJCNHP { }
 public class JGMEFHJCNHP_GetAchievementRecords : CACGCMBKHDI_Request
 {
-	public bool KMOBDLBKAAA; // 0x7C
-	public List<string> MIDAMHNABAJ; // 0x80
+	public bool KMOBDLBKAAA_Repeatable; // 0x7C
+	public List<string> MIDAMHNABAJ_Keys; // 0x80
 
 	public IGPDIKDNFKD NFEAMMJIMPG { get; private set; } // 0x84 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
 
 	// RVA: 0xB1B3EC Offset: 0xB1B3EC VA: 0xB1B3EC Slot: 12
 	public override void DHLDNIEELHO()
 	{
-		if (!KMOBDLBKAAA)
-			EBGACDGNCAA_CallContext = SakashoAchievement.GetAchievementRecords(MIDAMHNABAJ.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
+		if (!KMOBDLBKAAA_Repeatable)
+			EBGACDGNCAA_CallContext = SakashoAchievement.GetAchievementRecords(MIDAMHNABAJ_Keys.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
 		else
-			EBGACDGNCAA_CallContext = SakashoRepeatedAchievement.GetAchievementRecords(MIDAMHNABAJ.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
+			EBGACDGNCAA_CallContext = SakashoRepeatedAchievement.GetAchievementRecords(MIDAMHNABAJ_Keys.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
 	}
 
 	// RVA: 0xB1B510 Offset: 0xB1B510 VA: 0xB1B510 Slot: 13

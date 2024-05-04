@@ -34,7 +34,7 @@ public class SakashoAchievement : SakashoAPIBase
 			l = new ArrayList();
 			for(int i = 0; i < keys.Length; i++)
 			{
-				l.Add(l[i]);
+				l.Add(keys[i]);
 			}
 		}
 		h["keys"] = l;

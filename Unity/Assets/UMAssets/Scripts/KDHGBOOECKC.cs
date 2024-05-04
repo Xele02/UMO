@@ -3671,8 +3671,8 @@ public class KDHGBOOECKC
 							PLOOEECNHFB = false;
 							NPNNPNAIONN = false;
 							JGMEFHJCNHP_GetAchievementRecords req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new JGMEFHJCNHP_GetAchievementRecords());
-							req.KMOBDLBKAAA = false;
-							req.MIDAMHNABAJ = strs;
+							req.KMOBDLBKAAA_Repeatable = false;
+							req.MIDAMHNABAJ_Keys = strs;
 							CACGCMBKHDI_Request.HDHIKGLMOGF KDFFGLHBDLO = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 							{
 								//0xE6F5F8
@@ -3714,8 +3714,8 @@ public class KDHGBOOECKC
 									PLOOEECNHFB = false;
 									NPNNPNAIONN = false;
 									FLONELKGABJ_ClaimAchievementPrizes req2 = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new FLONELKGABJ_ClaimAchievementPrizes());
-									req2.KMOBDLBKAAA = false;
-									req2.MIDAMHNABAJ = CLPMDJFKJBO;
+									req2.KMOBDLBKAAA_Repeatable = false;
+									req2.MIDAMHNABAJ_Keys = CLPMDJFKJBO;
 									CACGCMBKHDI_Request.HDHIKGLMOGF CMJMGEFNBDK = (CACGCMBKHDI_Request NHECPMNKEFK) =>
 									{
 										//0xE6FA04

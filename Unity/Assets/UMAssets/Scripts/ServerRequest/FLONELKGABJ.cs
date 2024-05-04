@@ -45,9 +45,9 @@ public class BGKCFBHGNDI
 public class FLONELKGABJ { }
 public class FLONELKGABJ_ClaimAchievementPrizes : CACGCMBKHDI_Request
 {
-	public bool KMOBDLBKAAA; // 0x7C
-	public List<int> MEGNAIJPBFF; // 0x80
-	public List<string> MIDAMHNABAJ; // 0x84
+	public bool KMOBDLBKAAA_Repeatable; // 0x7C
+	public List<int> MEGNAIJPBFF_InventoryClosedAt; // 0x80
+	public List<string> MIDAMHNABAJ_Keys; // 0x84
 
 	public override bool OIDCBBGLPHL { get { return true; } } //0x1197F0C GINMIBJOABO
 	public BGKCFBHGNDI NFEAMMJIMPG { get; private set; } // 0x88 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
@@ -55,30 +55,30 @@ public class FLONELKGABJ_ClaimAchievementPrizes : CACGCMBKHDI_Request
 	// RVA: 0x1197F24 Offset: 0x1197F24 VA: 0x1197F24
 	private bool DEJPNPMHPJD()
 	{
-		return MEGNAIJPBFF != null && MEGNAIJPBFF.Count > 0;
+		return MEGNAIJPBFF_InventoryClosedAt != null && MEGNAIJPBFF_InventoryClosedAt.Count > 0;
 	}
 
 	// RVA: 0x1197FA8 Offset: 0x1197FA8 VA: 0x1197FA8 Slot: 12
 	public override void DHLDNIEELHO()
 	{
-		if(!KMOBDLBKAAA)
+		if(!KMOBDLBKAAA_Repeatable)
 		{
 			if(!DEJPNPMHPJD())
 			{
-				EBGACDGNCAA_CallContext = SakashoAchievement.ClaimAchievementPrizes(MIDAMHNABAJ.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
+				EBGACDGNCAA_CallContext = SakashoAchievement.ClaimAchievementPrizes(MIDAMHNABAJ_Keys.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
 			}
 			else
 			{
-				EBGACDGNCAA_CallContext = SakashoAchievement.ClaimAchievementPrizesSetInventoryClosedAt(MIDAMHNABAJ.ToArray(), MEGNAIJPBFF.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
+				EBGACDGNCAA_CallContext = SakashoAchievement.ClaimAchievementPrizesSetInventoryClosedAt(MIDAMHNABAJ_Keys.ToArray(), MEGNAIJPBFF_InventoryClosedAt.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
 			}
 		}
 		else if(!DEJPNPMHPJD())
 		{
-			EBGACDGNCAA_CallContext = SakashoRepeatedAchievement.ClaimAchievementPrizes(MIDAMHNABAJ.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
+			EBGACDGNCAA_CallContext = SakashoRepeatedAchievement.ClaimAchievementPrizes(MIDAMHNABAJ_Keys.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
 		}
 		else
 		{
-			EBGACDGNCAA_CallContext = SakashoRepeatedAchievement.ClaimAchievementPrizesSetInventoryClosedAt(MIDAMHNABAJ.ToArray(), MEGNAIJPBFF.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
+			EBGACDGNCAA_CallContext = SakashoRepeatedAchievement.ClaimAchievementPrizesSetInventoryClosedAt(MIDAMHNABAJ_Keys.ToArray(), MEGNAIJPBFF_InventoryClosedAt.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
 		}
 	}
 
