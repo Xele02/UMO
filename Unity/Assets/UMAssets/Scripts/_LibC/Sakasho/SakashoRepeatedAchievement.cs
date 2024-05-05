@@ -7,16 +7,8 @@ namespace ExternLib
 		public static int SakashoRepeatedAchievementGetAchievementRecords(int callbackId, string json)
 		{
 			// Hack directly send response
-
-			EDOHBJAPLPF_JsonData res = GetBaseMessage();
-			res[AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes] = new EDOHBJAPLPF_JsonData();
-			res[AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
 			TodoLogger.LogError(TodoLogger.SakashoServer, "SakashoRepeatedAchievementGetAchievementRecords");
-
-			SendMessage(callbackId, res);
-			// end hack
-
-			return 0;
+			return SakashoAchievementGetAchievementRecords(callbackId, json);
 		}
 
 		public static int SakashoRepeatedAchievementClaimAchievementPrizes(int callbackId, string json)

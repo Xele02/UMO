@@ -320,8 +320,8 @@ namespace XeApp.Game.Menu
 			if(achievementsKeys.Count == 0)
 				yield break;
 			req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new JGMEFHJCNHP_GetAchievementRecords());
-			req.MIDAMHNABAJ = achievementsKeys;
-			req.KMOBDLBKAAA = isRepeated;
+			req.MIDAMHNABAJ_Keys = achievementsKeys;
+			req.KMOBDLBKAAA_Repeatable = isRepeated;
 			while(!req.PLOOEECNHFB_IsDone)
 				yield return null;
 			if(req.NPNNPNAIONN_IsError)

@@ -278,6 +278,7 @@ namespace XeApp.Game.DownLoad
 			if(m_IsChangeDiva)
 				return;
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			OnChangeDiva(dir);
 		}
 
 		// // RVA: 0x11C3C40 Offset: 0x11C3C40 VA: 0x11C3C40

@@ -126,7 +126,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x14C9E9C Offset: 0x14C9E9C VA: 0x14C9E9C
 		private void UpdateAutoScroll()
 		{
-			scrolled += scrollPerSec * TimeWrapper.deltaTime;
+			float delta = scrollPerSec * TimeWrapper.deltaTime;
+			scrolled += delta;
 			scrollTimer += TimeWrapper.deltaTime;
 			if(Mathf.Abs(scrollEndLength) <= Mathf.Abs(scrolled) ||
 				scrollEndSec <= scrollTimer)
@@ -140,7 +141,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				UpdateScroll(scrolled);
+				UpdateScroll(delta);
 				if (onScrollUpdated != null)
 					onScrollUpdated(true);
 			}

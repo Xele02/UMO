@@ -297,7 +297,10 @@ namespace XeApp.Game.Menu
 			}
 			while(m_pilotCutIn.IsPlaying())
 				yield return null;
-			SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_VFOPS_004);
+			yield return null;
+			#if !UNITY_ANDROID
+			SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_VFOPS_004); // This will cancel the SE_VFOPS_002 whichis more important?
+			#endif
 			if(cameraAnim != null)
 			{
 				while(cameraAnim.IsPlayingAnim())

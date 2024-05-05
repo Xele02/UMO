@@ -154,7 +154,7 @@ namespace XeApp.Game.Menu
 			{
 				if(!m_ValkyrieObject.gerwalk.activeSelf)
 				{
-					if (!m_ValkyrieObject.gerwalk.activeSelf)
+					if (!m_ValkyrieObject.battroid.activeSelf)
 						return FKGMGBHBNOC.HPJOCKGKNCC_Form.AEFCOHJBLPO_Num;
 					return FKGMGBHBNOC.HPJOCKGKNCC_Form.GBLPNIGCPAP_Battroid;
 				}

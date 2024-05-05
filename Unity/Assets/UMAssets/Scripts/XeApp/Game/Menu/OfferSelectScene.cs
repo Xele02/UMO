@@ -642,7 +642,7 @@ namespace XeApp.Game.Menu
 				layoutBoot.In();
 				SoundManager.Instance.bgmPlayer.Stop();
 			}
-			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_ADV_TOUCH);
+			SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_SNS_001);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FC0C4 Offset: 0x6FC0C4 VA: 0x6FC0C4

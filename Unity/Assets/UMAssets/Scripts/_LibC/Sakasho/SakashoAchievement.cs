@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using XeSys;
 
 namespace ExternLib
@@ -8,10 +9,96 @@ namespace ExternLib
 		{
 			// Hack directly send response
 
+			EDOHBJAPLPF_JsonData msgData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
+			EDOHBJAPLPF_JsonData keysJson = msgData["keys"];
+			List<string> keys = new List<string>();
+			if(keys != null)
+			{
+				for(int i = 0; i < keysJson.HNBFOAJIIAL_Count; i++)
+				{
+					keys.Add((string)keysJson[i]);
+				}
+			}
+
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res[AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes] = new EDOHBJAPLPF_JsonData();
 			res[AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
-			TodoLogger.LogError(TodoLogger.SakashoServer, "SakashoAchievementGetAchievementRecords");
+
+			int playerStartRateNotGot = (int)playerAccount.playerData.serverData["common"]["ret_rew_rec_gra"];
+
+			for(int i = 0; i < keys.Count; i++)
+			{
+				if(keys[i].StartsWith("rating_reward_receive_key_"))
+				{
+					string id = keys[i].Replace("rating_reward_receive_key_", "");
+					HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE dbrating = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.Find((HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE _) =>
+					{
+						return _.ICGAKKCCFOG == id;
+					});
+					if(dbrating != null)
+					{
+						EDOHBJAPLPF_JsonData dataRes = new EDOHBJAPLPF_JsonData();
+						dataRes[AFEHLCGHAEE_Strings.LJNAKDMILMC_key] = keys[i];
+						dataRes[AFEHLCGHAEE_Strings.LJGOOOMOMMA_message] = "Rating reward";
+						dataRes[AFEHLCGHAEE_Strings.OOIJCMLEAJP_is_received] = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.IndexOf(dbrating) < playerStartRateNotGot;
+						dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items] = new EDOHBJAPLPF_JsonData();
+						dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+						EDOHBJAPLPF_JsonData item = new EDOHBJAPLPF_JsonData();
+						dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items].Add(item);
+						item[AFEHLCGHAEE_Strings.HAAJGNCFNJM_item_name] = JpStringLiterals.StringLiteral_10137;
+						item[AFEHLCGHAEE_Strings.OCNINMIMHGC_item_value] = 1001;
+						item[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = dbrating.GCKPDEDJFIC_ItemCount;
+						item[AFEHLCGHAEE_Strings.MJBKGOJBPAD_item_type] = 1;
+						res[AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes].Add(dataRes);
+					}
+					else
+					{
+						dbrating = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.Find((HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE _) =>
+						{
+							return _.BGFPPGPJONG.ToString() == id;
+						});
+						if(dbrating != null)
+						{
+							EDOHBJAPLPF_JsonData dataRes = new EDOHBJAPLPF_JsonData();
+							dataRes[AFEHLCGHAEE_Strings.LJNAKDMILMC_key] = keys[i];
+							dataRes[AFEHLCGHAEE_Strings.LJGOOOMOMMA_message] = "Rating reward";
+							dataRes[AFEHLCGHAEE_Strings.OOIJCMLEAJP_is_received] = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.IndexOf(dbrating) < playerStartRateNotGot;
+							dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items] = new EDOHBJAPLPF_JsonData();
+							dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+							for(int j = 0; j < dbrating.AJMDFJFCIML_GetCount(); j++)
+							{
+								EDOHBJAPLPF_JsonData item = new EDOHBJAPLPF_JsonData();
+								dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items].Add(item);
+								item[AFEHLCGHAEE_Strings.HAAJGNCFNJM_item_name] = EKLNMHFCAOI.INCKKODFJAP_GetItemName(dbrating.FKNBLDPIPMC_GetItemId(j));
+								item[AFEHLCGHAEE_Strings.OCNINMIMHGC_item_value] = dbrating.FKNBLDPIPMC_GetItemId(j);
+								item[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = dbrating.NKOHMLHLJGL_GetItemCount(j);
+								item[AFEHLCGHAEE_Strings.MJBKGOJBPAD_item_type] = 0;
+							}
+							res[AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes].Add(dataRes);
+						}
+						else
+						{
+							UnityEngine.Debug.LogError("Reward not found : "+keys[i]);
+						}
+					}
+				}
+			}
+
+			// AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes
+			//	>
+			// 		AFEHLCGHAEE_Strings.LJNAKDMILMC_key
+			//		AFEHLCGHAEE_Strings.LJGOOOMOMMA_message
+			//		AFEHLCGHAEE_Strings.OOIJCMLEAJP_is_received
+			//		"current_period" (optional)
+			//		>	
+			//			AFEHLCGHAEE_Strings.KBFOIECIADN_opened_at
+			//			AFEHLCGHAEE_Strings.EGBOHDFBAPB_closed_at
+			//		AFEHLCGHAEE_Strings.HBHMAKNGKFK_items
+			//		>	
+			//			AFEHLCGHAEE_Strings.HAAJGNCFNJM_item_name
+			//			AFEHLCGHAEE_Strings.OCNINMIMHGC_item_value
+			//			AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count
+			//			AFEHLCGHAEE_Strings.MJBKGOJBPAD_item_type ( optional )
 
 			SendMessage(callbackId, res);
 			// end hack
@@ -22,11 +109,9 @@ namespace ExternLib
 		public static int SakashoAchievementClaimAchievementPrizes(int callbackId, string json)
 		{
 			// Hack directly send response
-
+			EDOHBJAPLPF_JsonData msgData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
-			res[AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes] = new EDOHBJAPLPF_JsonData();
-			res[AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
-			TodoLogger.LogError(TodoLogger.SakashoServer, "SakashoAchievementClaimAchievementPrizes");
+			ClaimAchievements(msgData, res);
 
 			SendMessage(callbackId, res);
 			// end hack
@@ -37,30 +122,19 @@ namespace ExternLib
 		public static int SakashoAchievementClaimAchievementPrizesSetInventoryClosedAt(int callbackId, string json)
 		{
 			// Hack directly send response
-
-			EDOHBJAPLPF_JsonData res = GetBaseMessage();
-			res[AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes] = new EDOHBJAPLPF_JsonData();
-			res[AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
 			TodoLogger.LogError(TodoLogger.SakashoServer, "SakashoAchievementClaimAchievementPrizesSetInventoryClosedAt");
-
-			SendMessage(callbackId, res);
-			// end hack
-
-			return 0;
+			return SakashoAchievementClaimAchievementPrizes(callbackId, json);
 		}
 
 		public static int SakashoAchievementClaimAchievementPrizesAndSaveSetInventoryClosedAt(int callbackId, string json)
 		{
 			// Hack directly send response
 			TodoLogger.LogError(TodoLogger.SakashoServer, "SakashoAchievementClaimAchievementPrizesAndSaveSetInventoryClosedAt");
-			return SakashoPlayerDataSavePlayerData(callbackId, json);
+			return SakashoAchievementClaimAchievementPrizesAndSave(callbackId, json);
 		}
 
-		public static int SakashoAchievementClaimAchievementPrizesAndSave(int callbackId, string json)
+		private static void ClaimAchievements(EDOHBJAPLPF_JsonData msgData, EDOHBJAPLPF_JsonData res)
 		{
-			// Hack directly send response
-			EDOHBJAPLPF_JsonData msgData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
-			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res["achievement_prizes"] = new EDOHBJAPLPF_JsonData();
 			res["achievement_prizes"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
 			for(int i = 0; i < msgData["keys"].HNBFOAJIIAL_Count; i++)
@@ -250,11 +324,67 @@ namespace ExternLib
 					});
 					addedItem.AddInInventoryResult(d);
 				}
+				else if(key.StartsWith("rating_reward_receive_key_"))
+				{
+					string id = key.Replace("rating_reward_receive_key_", "");
+					HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE dbrating = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.Find((HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE _) =>
+					{
+						return _.ICGAKKCCFOG == id;
+					});
+					if(dbrating != null)
+					{
+						UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
+						{
+							item_count = dbrating.GCKPDEDJFIC_ItemCount,
+							item_name = JpStringLiterals.StringLiteral_10137,
+							item_type = 1,
+							item_value = 1001,
+							message = "Rating reward",
+							closed_at = 32535097200
+						});
+						addedItem.AddInInventoryResult(d);
+					}
+					else
+					{
+						dbrating = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.Find((HGPEFPFODHO_HighScoreRanking.LGNDICJEDNE _) =>
+						{
+							return _.BGFPPGPJONG.ToString() == id;
+						});
+						if(dbrating != null)
+						{
+							for(int j = 0; j < dbrating.AJMDFJFCIML_GetCount(); j++)
+							{
+								UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
+								{
+									item_count = dbrating.NKOHMLHLJGL_GetItemCount(j),
+									item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(dbrating.FKNBLDPIPMC_GetItemId(j)),
+									item_type = 0,
+									item_value = dbrating.FKNBLDPIPMC_GetItemId(j),
+									message = "Rating reward",
+									closed_at = 32535097200
+								});
+								addedItem.AddInInventoryResult(d);
+							}
+						}
+						else
+						{
+							UnityEngine.Debug.LogError("Reward not found : "+key);
+						}
+					}
+				}
 				else
 				{
 					UnityEngine.Debug.LogError("Missing reward for "+(string)msgData["keys"][i]);
 				}
 			}
+		}
+
+		public static int SakashoAchievementClaimAchievementPrizesAndSave(int callbackId, string json)
+		{
+			// Hack directly send response
+			EDOHBJAPLPF_JsonData msgData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			ClaimAchievements(msgData, res);
 			bool as_received = (bool)msgData["asReceived"];
 			if(as_received)
 				UnityEngine.Debug.LogError("asReceived true");
