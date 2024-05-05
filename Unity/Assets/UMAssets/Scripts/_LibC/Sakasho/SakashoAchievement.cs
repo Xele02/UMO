@@ -40,7 +40,6 @@ namespace ExternLib
 						EDOHBJAPLPF_JsonData dataRes = new EDOHBJAPLPF_JsonData();
 						dataRes[AFEHLCGHAEE_Strings.LJNAKDMILMC_key] = keys[i];
 						dataRes[AFEHLCGHAEE_Strings.LJGOOOMOMMA_message] = "Rating reward";
-						UnityEngine.Debug.LogError(playerStartRateNotGot+" "+ IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.IndexOf(dbrating));
 						dataRes[AFEHLCGHAEE_Strings.OOIJCMLEAJP_is_received] = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.IndexOf(dbrating) < playerStartRateNotGot;
 						dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items] = new EDOHBJAPLPF_JsonData();
 						dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
