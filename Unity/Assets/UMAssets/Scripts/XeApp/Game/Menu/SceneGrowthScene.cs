@@ -1824,7 +1824,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10E3968 Offset: 0x10E3968 VA: 0x10E3968
 		private void UnLockPanel(SceneGrowthBoard board, int x, int y)
 		{
-			SoundManager.Instance.sePlayerMenu.Play((int)cs_se_boot.SE_BTN_003);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			if (MenuScene.CheckDatelineAndAssetUpdate())
 				return;
 			m_unLockTargetPanelIndex.Clear();
