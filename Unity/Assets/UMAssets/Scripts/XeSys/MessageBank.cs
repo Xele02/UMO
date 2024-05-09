@@ -9,7 +9,7 @@ namespace XeSys
 	{
 		private Dictionary<string, string> msgDic { get; set; } // 0x8
 		private List<string> labelList { get; set; } // 0xC
-		// public int count { get; } // 0x2396E00
+		public int count { get { return labelList.Count; } } // 0x2396E00
 
 		// // RVA: 0x2396E80 Offset: 0x2396E80 VA: 0x2396E80
 		public void Setup(byte[] bytes)
@@ -98,9 +98,15 @@ namespace XeSys
 		}
 
 		// // RVA: 0x23977C4 Offset: 0x23977C4 VA: 0x23977C4
-		// public string GetMessageByIndex(int index) { }
+		public string GetMessageByIndex(int index)
+		{
+			return GetMessageByLabel(labelList[index]);
+		}
 
 		// // RVA: 0x2397850 Offset: 0x2397850 VA: 0x2397850
-		// public string GetLabel(int index) { }
+		public string GetLabel(int index)
+		{
+			return labelList[index];
+		}
 	}
 }
