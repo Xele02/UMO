@@ -124,7 +124,7 @@ namespace XeApp.Game.Common
 				{
 					int strOff = BitConverter.ToInt32(dataBytes, off);
 					int strSize = BitConverter.ToInt32(dataBytes, off + 4);
-					messageList.Add(Encoding.UTF8.GetString(dataBytes, strBaseOff + strOff, strSize));
+					messageList.Add(DatabaseTextConverter.TranslateRoomText(i, Encoding.UTF8.GetString(dataBytes, strBaseOff + strOff, strSize)));
 					off += 8;
 				}
 				return true;

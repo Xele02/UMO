@@ -30,7 +30,7 @@ namespace XeSys
 			if(!msgBankDic.ContainsKey(bankName))
 			{
 				MessageBank bank = new MessageBank();
-				bank.Setup(bytes);
+				bank.Setup(bytes, bankName);
 				msgBankDic.Add(bankName, bank);
 				return bank;
 			}

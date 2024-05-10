@@ -40,8 +40,8 @@ public class FDDIIKBJNNA
 				FHFEHOBCIIP data = new FHFEHOBCIIP();
 				data.IDELKEKDIFD_CharaId = snsDb.KHCACDIKJLG_Characters[i].IDELKEKDIFD;
 				data.EAHPLCJMPHD = snsDb.KHCACDIKJLG_Characters[i].EAHPLCJMPHD;
-				data.OPFGFINHFCE = snsDb.KHCACDIKJLG_Characters[i].OPFGFINHFCE_Name;
-				data.HAPAFECPFEK = snsDb.KHCACDIKJLG_Characters[i].HAPAFECPFEK;
+				data.OPFGFINHFCE_Name = snsDb.KHCACDIKJLG_Characters[i].OPFGFINHFCE_Name;
+				data.HAPAFECPFEK_AtName = snsDb.KHCACDIKJLG_Characters[i].HAPAFECPFEK_AtName;
 				KHCACDIKJLG.Add(data);
 			}
 		}

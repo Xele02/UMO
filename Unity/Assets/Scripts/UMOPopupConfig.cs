@@ -121,6 +121,21 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         {
             RuntimeSettings.CurrentSettings.EnableErrorLog = b;
         });
+        AddToggleButton(ref y, "Debug : Dump string used info in log (for translation)", () =>
+        {
+            return RuntimeSettings.CurrentSettings.DumpStringUsed;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.DumpStringUsed = b;
+        });
+        AddToggleButton(ref y, "Debug : Show string key instead of real text (for translation)", () =>
+        {
+            return RuntimeSettings.CurrentSettings.ShowStringUsed;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.ShowStringUsed = b;
+        });
+        
         #if UNITY_ANDROID
         AddToggleButton(ref y, "Debug : Disable Cryware low latency", () =>
         {

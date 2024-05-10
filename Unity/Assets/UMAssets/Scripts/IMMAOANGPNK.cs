@@ -105,6 +105,8 @@ public class IMMAOANGPNK
 			yield break;
 		}
 
+		yield return DatabaseTextConverter.LoadAdditionalLanguageBank();
+
 		string str = BBGDKLLEPIB.OGCDNCDMLCA_MxDir; // mx install dir
 		if(!string.IsNullOrEmpty(str))
 		{
@@ -172,11 +174,15 @@ public class IMMAOANGPNK
 				if(MessageLoader.Instance != null)
 				{
 					MessageLoader.Instance.Request(GBEGLNMFLIE, MessageLoader.eSheet.common, 0);
+					yield return MessageLoader.Instance.WaitForDone(N.a);
 					MessageLoader.Instance.Request(GBEGLNMFLIE, MessageLoader.eSheet.menu, 0);
+					yield return MessageLoader.Instance.WaitForDone(N.a);
 					MessageLoader.Instance.Request(GBEGLNMFLIE, MessageLoader.eSheet.master, 0);
+					yield return MessageLoader.Instance.WaitForDone(N.a);
 					for(int i = 4; i < 14; i++)
 					{
 						MessageLoader.Instance.Request(GBEGLNMFLIE, (MessageLoader.eSheet)i, 0);
+						yield return MessageLoader.Instance.WaitForDone(N.a);
 					}
 					Database.Instance.musicText.LoadFromTAR(GBEGLNMFLIE);
 					Database.Instance.roomText.LoadFromBinaryTAR(GBEGLNMFLIE);
