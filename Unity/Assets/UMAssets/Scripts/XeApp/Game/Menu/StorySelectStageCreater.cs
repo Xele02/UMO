@@ -1863,7 +1863,7 @@ namespace XeApp.Game.Menu
 			lw.OJOLFJGNEMO(0, musicId);
 			pre = 0;
 			KDLPEDBKMID.HHCJCDFCLOB.OKJCGCOGDIA(musicId, a1, videoQuality, 1);
-			while(!KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
 			{
 				if(pre < 50)
 				{

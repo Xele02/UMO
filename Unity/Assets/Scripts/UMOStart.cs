@@ -117,7 +117,7 @@ public class UMOStart : MonoBehaviour
         int playerId = UMO_PlayerPrefs.GetInt("cpid", 0);
         string saveOriginal = Application.persistentDataPath + "/SaveData/save.bin";
         string saveNew = Application.persistentDataPath + "/SaveData/"+playerId+"_save.bin";
-        if(playerId != 0 && File.Exists(saveOriginal))
+        if(playerId != 0 && File.Exists(saveOriginal) && !File.Exists(saveNew))
         {
             File.Move(saveOriginal, saveNew);
         }
