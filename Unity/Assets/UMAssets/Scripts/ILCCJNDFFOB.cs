@@ -1182,7 +1182,7 @@ public class ILCCJNDFFOB
 			FLBFCCIEPNC_InitBaseJson(data, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
 			data["enquete_ver"] = PEPCJDIECJP.CEMEIPNMAAD_Version;
 			data["enquete_id"] = PEPCJDIECJP.PPFNGGCBJKC_Id;
-			data["enquete_detail"] = PEPCJDIECJP.ADCMNODJBGJ_Detail;
+			data["enquete_detail"] = PEPCJDIECJP.ADCMNODJBGJ_Question;
 			JBBHNIACMFJ.Length = 0;
 			bool next = false;
 			for(int i = 0; i < PEPCJDIECJP.LPKAJMLOAMF_ChoiceText.Length; i++)

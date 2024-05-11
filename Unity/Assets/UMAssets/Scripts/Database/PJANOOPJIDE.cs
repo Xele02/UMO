@@ -12,9 +12,9 @@ public class PJANOOPJIDE_TutorialPict : DIHHCBACKGG_DbSection
 		public int[] AKBHPFBDDOL_TutoCondId; // 0x10
 		public int PPEGAKEIEGM_Enabled; // 0x14
 		public int KNHABOOAAIP; // 0x18
-		public string[] JONNCMDGMKA; // 0x1C
-		public string[] ADCMNODJBGJ; // 0x20
-		public int[] MAPDMCPCLFA; // 0x24
+		public string[] JONNCMDGMKA_Messages; // 0x1C
+		public string[] ADCMNODJBGJ_Titles; // 0x20
+		public int[] MAPDMCPCLFA_PicIds; // 0x24
 		public int[] KMDGMOMCDAD; // 0x28
 		public int IODLCIBCONC; // 0x2C
 	}
@@ -71,9 +71,16 @@ public class PJANOOPJIDE_TutorialPict : DIHHCBACKGG_DbSection
 			data.AKBHPFBDDOL_TutoCondId = array[i].JIMJHIDEHNM;
 			data.PPEGAKEIEGM_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, array[i].DBHPPMPNCKF);
 			data.KNHABOOAAIP = array[i].KNHABOOAAIP;
-			data.JONNCMDGMKA = array[i].IPBHCLIHAPG;
-			data.ADCMNODJBGJ = array[i].ADCMNODJBGJ;
-			data.MAPDMCPCLFA = array[i].HANMDEBPBHG;
+			
+			data.JONNCMDGMKA_Messages = new string[array[i].IPBHCLIHAPG.Length];
+			for(int j = 0; j < data.JONNCMDGMKA_Messages.Length; j++)
+				data.JONNCMDGMKA_Messages[j] = DatabaseTextConverter.TranslateTutoPictMessage(i, j, array[i].IPBHCLIHAPG[j]);
+
+			data.ADCMNODJBGJ_Titles = new string[array[i].ADCMNODJBGJ.Length];
+			for(int j = 0; j < data.ADCMNODJBGJ_Titles.Length; j++)
+				data.ADCMNODJBGJ_Titles[j] = DatabaseTextConverter.TranslateTutoPictTitle(i, j, array[i].ADCMNODJBGJ[j]);
+
+			data.MAPDMCPCLFA_PicIds = array[i].HANMDEBPBHG;
 			data.FJOLNJLLJEJ = array[i].INANEEGAEEG;
 			data.KMDGMOMCDAD = array[i].JOFAJDPOEOB;
 			data.IODLCIBCONC = array[i].BFCILBEICEN;

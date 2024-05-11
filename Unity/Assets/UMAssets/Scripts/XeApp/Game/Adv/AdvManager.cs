@@ -1369,7 +1369,7 @@ namespace XeApp.Game.Adv
 						m_skipButton.interactable = true;
 						ChangeSpeakCharacterName(speakerId);
 						yield return Co.R(Co_ChangeSpeakCharacter(speakerId, false, m_isExecuteSkip));
-						string str = adv_data.GetMessage(message_index);
+						string str = DatabaseTextConverter.TranslateAdventureMessage(advId, message_index, adv_data.GetMessage(message_index));
 						m_currentMessageWindow.m_message.StartMessage(str, m_currentMessageSpeed, null);
 						isSpkMessage = str.Length > 0;
 						if(isSpkMessage)

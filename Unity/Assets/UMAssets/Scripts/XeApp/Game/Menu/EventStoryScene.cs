@@ -285,7 +285,7 @@ namespace XeApp.Game.Menu
 					OAGBCBBHMPF.DKAMMIHBINF.EKJGOMKEJLK/*10*/
 				}[m_eventStoryData.IPCPFJJPIII - 1];
 			ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(data.PBPOLELIPJI_AdventureId, a);
-			Database.Instance.advSetup.Setup(dbAdv.KKPPFAHFOJI);
+			Database.Instance.advSetup.Setup(dbAdv.KKPPFAHFOJI_FileId);
 			MenuScene.Instance.GotoAdventure(true);
 		}
 

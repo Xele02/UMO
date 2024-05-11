@@ -1572,7 +1572,7 @@ namespace XeApp.Game.Menu
 					{
 						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA(ev.GFIBLLLHMPD_AdventureId);
 						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(ev.GFIBLLLHMPD_AdventureId,  OAGBCBBHMPF.DKAMMIHBINF.IDINJDEBPKP_6);
-						Database.Instance.advSetup.Setup(dbAdv.KKPPFAHFOJI);
+						Database.Instance.advSetup.Setup(dbAdv.KKPPFAHFOJI_FileId);
 						Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTMUSICSELECT, new AdvSetupParam());
 						MenuScene.Instance.GotoAdventure();
 						return;

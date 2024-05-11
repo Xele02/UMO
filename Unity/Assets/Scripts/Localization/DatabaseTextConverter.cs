@@ -11,6 +11,7 @@ using UnityEngine;
 using XeApp.Game;
 using XeApp.Game.Common;
 using XeSys;
+using XeApp.Game.Adv;
 
 public static class DatabaseTextConverter
 {
@@ -165,6 +166,178 @@ public static class DatabaseTextConverter
             poFile.SaveFile(p + "messages.pot", isTemplate:true, stripEmpty:true);
             poFile.SaveFile(p + "jp.po", stripEmpty:true);
         }
+        {
+            //Export Tips texts
+            PoFile poFile = new PoFile();
+            BCKMELFCKKN_Tips tipsDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KNMFNBEOGON_Tips;
+            for(int i = 0; i < tipsDb.CDENCMNHNGA.Count; i++)
+            {
+                string prfx = string.Format("tips_{0:D4}_title", i);
+                poFile.translationData.Add(prfx, tipsDb.CDENCMNHNGA[i].ADCMNODJBGJ_Title);
+                prfx = string.Format("tips_{0:D4}_msg", i);
+                poFile.translationData.Add(prfx, tipsDb.CDENCMNHNGA[i].JONNCMDGMKA_Message);
+            }
+            string p = PoPath.Replace("{name}", "tipsDb_text");
+            Directory.CreateDirectory(p);
+            poFile.SaveFile(p + "messages_full.pot", isTemplate:true);
+            poFile.SaveFile(p + "messages.pot", isTemplate:true, stripEmpty:true);
+            poFile.SaveFile(p + "jp.po", stripEmpty:true);
+        }
+        {
+            //Export VcItem texts
+            PoFile poFile = new PoFile();
+            DKJMDIFAKKD_VcItem vcDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem;
+            for(int i = 0; i < vcDb.CDENCMNHNGA.Count; i++)
+            {
+                string prfx = string.Format("vcitem_{0:D4}_title", i);
+                poFile.translationData.Add(prfx, vcDb.CDENCMNHNGA[i].OPFGFINHFCE_Name);
+                prfx = string.Format("vcitem_{0:D4}_desc", i);
+                poFile.translationData.Add(prfx, vcDb.CDENCMNHNGA[i].KLMPFGOCBHC_Desc);
+            }
+            string p = PoPath.Replace("{name}", "tipsDb_text");
+            Directory.CreateDirectory(p);
+            poFile.SaveFile(p + "messages_full.pot", isTemplate:true);
+            poFile.SaveFile(p + "messages.pot", isTemplate:true, stripEmpty:true);
+            poFile.SaveFile(p + "jp.po", stripEmpty:true);
+        }
+        {
+            //Export TutoPict texts
+            PoFile poFile = new PoFile();
+            PJANOOPJIDE_TutorialPict tutoDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict;
+            for(int i = 0; i < tutoDb.CDENCMNHNGA.Count; i++)
+            {
+                for(int j = 0; j < tutoDb.CDENCMNHNGA[i].ADCMNODJBGJ_Titles.Length; j++)
+                {
+                    string prfx = string.Format("tutopict_{0:D4}_{1:D4}_title", i, j);
+                    poFile.translationData.Add(prfx, tutoDb.CDENCMNHNGA[i].ADCMNODJBGJ_Titles[j]);
+                }
+                for(int j = 0; j < tutoDb.CDENCMNHNGA[i].JONNCMDGMKA_Messages.Length; j++)
+                {
+                    string prfx = string.Format("tutopict_{0:D4}_{1:D4}_msg", i, j);
+                    poFile.translationData.Add(prfx, tutoDb.CDENCMNHNGA[i].JONNCMDGMKA_Messages[j]);
+                }
+            }
+            string p = PoPath.Replace("{name}", "tutoPictDb_text");
+            Directory.CreateDirectory(p);
+            poFile.SaveFile(p + "messages_full.pot", isTemplate:true);
+            poFile.SaveFile(p + "messages.pot", isTemplate:true, stripEmpty:true);
+            poFile.SaveFile(p + "jp.po", stripEmpty:true);
+        }
+        {
+            // Export Adv strings
+            PoFile poFile = new PoFile();
+            GPMHOAKFALE_Adventure advDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure;
+            for(int i = 0; i < advDb.CDENCMNHNGA.Count; i++)
+            {
+                if(advDb.CDENCMNHNGA[i].PPEGAKEIEGM_Enabled == 2)
+                {
+                    AdvScriptData adv_data = new AdvScriptData();
+                    bool done = false;
+                    adv_data.Load(advDb.CDENCMNHNGA[i].KKPPFAHFOJI_FileId, () =>
+                    {
+                        done = true;
+                    });
+                    while(!done)
+                        yield return null;
+                    for(int j = 0; j < adv_data.GetMessageCount(); j++)
+                    {
+                        string prfx = string.Format("adv_{0:D4}_{1:D4}_msg", advDb.CDENCMNHNGA[i].KKPPFAHFOJI_FileId, j);
+                        poFile.translationData.Add(prfx, adv_data.GetMessage(j));
+                    }
+                }
+            }
+            string p = PoPath.Replace("{name}", "adv_text");
+            Directory.CreateDirectory(p);
+            poFile.SaveFile(p + "messages_full.pot", isTemplate:true);
+            poFile.SaveFile(p + "messages.pot", isTemplate:true, stripEmpty:true);
+            poFile.SaveFile(p + "jp.po", stripEmpty:true);
+        }
+        {
+            // Export TutoMiniAdv strings
+            PoFile poFile = new PoFile();
+            ILLPGHGGKLL_TutorialMiniAdv blockDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LINHIDCNAMG_TutorialMiniAdv;
+            for(int i = 0; i < blockDb.CDENCMNHNGA.Count; i++)
+            {
+                for(int j = 0; j < blockDb.CDENCMNHNGA[i].JONNCMDGMKA_Messages.Length; j++)
+                {
+                    string prfx = string.Format("tuto_miniadv_{0:D4}_{1:D4}_msg", i, j);
+                    poFile.translationData.Add(prfx, blockDb.CDENCMNHNGA[i].JONNCMDGMKA_Messages[j]);
+                }
+            }
+            string p = PoPath.Replace("{name}", "tutoMiniAdvDb_text");
+            Directory.CreateDirectory(p);
+            poFile.SaveFile(p + "messages_full.pot", isTemplate:true);
+            poFile.SaveFile(p + "messages.pot", isTemplate:true, stripEmpty:true);
+            poFile.SaveFile(p + "jp.po", stripEmpty:true);
+        }
+        {
+            // Export Anketo strings
+            PoFile poFile = new PoFile();
+            IPJBAPLFECP_Anketo blockDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OILKBADFBOK_Anketo;
+            for(int i = 0; i < blockDb.CDENCMNHNGA.Count; i++)
+            {
+                {
+                    string prfx = string.Format("anketo_{0:D4}_question", i);
+                    poFile.translationData.Add(prfx, blockDb.CDENCMNHNGA[i].ADCMNODJBGJ_Question);
+                }
+                for(int j = 0; j < blockDb.CDENCMNHNGA[i].BNMCMNPPPCI_ChoiceText.Length; j++)
+                {
+                    string prfx = string.Format("anketo_{0:D4}_{1:D4}_choice", i, j);
+                    poFile.translationData.Add(prfx, blockDb.CDENCMNHNGA[i].BNMCMNPPPCI_ChoiceText[j]);
+                }
+            }
+            string p = PoPath.Replace("{name}", "anketoDb_text");
+            Directory.CreateDirectory(p);
+            poFile.SaveFile(p + "messages_full.pot", isTemplate:true);
+            poFile.SaveFile(p + "messages.pot", isTemplate:true, stripEmpty:true);
+            poFile.SaveFile(p + "jp.po", stripEmpty:true);
+        }
+        {
+            // Export helpBrowser strings
+            PoFile poFile = new PoFile();
+            KCDJCKCKKFM_HelpBrowser blockDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser;
+            for(int i = 0; i < blockDb.LOMHJBIJMOD.Length; i++)
+            {
+                if(blockDb.LOMHJBIJMOD[i].PLALNIIBLOF == 2)
+                {
+                    string prfx = string.Format("category_{0:D4}_name", i);
+                    poFile.translationData.Add(prfx, blockDb.LOMHJBIJMOD[i].OPFGFINHFCE);
+                }
+            }
+            for(int i = 0; i < blockDb.FBJCBCOEBBB.Length; i++)
+            {
+                for(int j = 0; j < blockDb.FBJCBCOEBBB[i].EBEMOEPADJB.Length; j++)
+                {
+                    string prfx = string.Format("help_{0:D4}_{1:D4}_name", i, j);
+                    poFile.translationData.Add(prfx, blockDb.FBJCBCOEBBB[i].EBEMOEPADJB[j].OPFGFINHFCE);
+                }
+                for(int j = 0; j < blockDb.FBJCBCOEBBB[i].OJMEIBNMLNP.Length; j++)
+                {
+                    string prfx = string.Format("wiki_{0:D4}_{1:D4}_name", i, j);
+                    poFile.translationData.Add(prfx, blockDb.FBJCBCOEBBB[i].OJMEIBNMLNP[j].OPFGFINHFCE);
+                }
+            }
+            string p = PoPath.Replace("{name}", "helpBrowserDb_text");
+            Directory.CreateDirectory(p);
+            poFile.SaveFile(p + "messages_full.pot", isTemplate:true);
+            poFile.SaveFile(p + "messages.pot", isTemplate:true, stripEmpty:true);
+            poFile.SaveFile(p + "jp.po", stripEmpty:true);
+        }
+        {
+            // Export homeBg strings
+            PoFile poFile = new PoFile();
+            ALJHJDHNFFB_HomeBg blockDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PFEKKPABPKL_HomeBg;
+            for(int i = 0; i < blockDb.CDENCMNHNGA.Count; i++)
+            {
+                string prfx = string.Format("homebg_{0:D4}_name", i);
+                poFile.translationData.Add(prfx, blockDb.CDENCMNHNGA[i].OPFGFINHFCE_Name);
+            }
+            string p = PoPath.Replace("{name}", "homeBgDb_text");
+            Directory.CreateDirectory(p);
+            poFile.SaveFile(p + "messages_full.pot", isTemplate:true);
+            poFile.SaveFile(p + "messages.pot", isTemplate:true, stripEmpty:true);
+            poFile.SaveFile(p + "jp.po", stripEmpty:true);
+        }
     }
 
     [MenuItem("UMO/Localization/Import Database strings")]
@@ -208,41 +381,19 @@ public static class DatabaseTextConverter
                 poFile.WriteToArchiveAsBankData(archive, string.Format("{0}_{1:D8}.bytes", MessageLoader.s_path[(int)sheet], 0));
             }
 
+            for(int i = 0; i < (int)eBank.End; i++)
             {
-                //Import SNSDb texts
+                //Import texts
                 PoFile poFile = new PoFile();
                 
-                string p = PoPath.Replace("{name}", "snsDb_text");
+                string p = PoPath.Replace("{name}", ((eBank)i).ToString());
                 poFile.LoadFile(p + "messages_full.pot", clear:true);
                 poFile.LoadFile(p + "jp.po");
                 poFile.LoadFile(p + lang + ".po");
 
-                poFile.WriteToArchiveAsBankData(archive, "snsDb_text.bytes");
+                poFile.WriteToArchiveAsBankData(archive, ((eBank)i).ToString() + ".bytes");
             }
 
-            {
-                //Import room_text
-                PoFile poFile = new PoFile();
-                
-                string p = PoPath.Replace("{name}", "room_text");
-                poFile.LoadFile(p + "messages_full.pot", clear:true);
-                poFile.LoadFile(p + "jp.po");
-                poFile.LoadFile(p + lang + ".po");
-
-                poFile.WriteToArchiveAsBankData(archive, "room_text.bytes");
-            }
-
-            {
-                //Import music_text
-                PoFile poFile = new PoFile();
-                
-                string p = PoPath.Replace("{name}", "music_text");
-                poFile.LoadFile(p + "messages_full.pot", clear:true);
-                poFile.LoadFile(p + "jp.po");
-                poFile.LoadFile(p + lang + ".po");
-
-                poFile.WriteToArchiveAsBankData(archive, "music_text.bytes");
-            }
 
             // Save the archive
             // Format from CBBJHPBGBAJ_Archive: (tar format)
@@ -304,8 +455,17 @@ public static class DatabaseTextConverter
     enum eBank
     {
         snsDb_text,
+        tipsDb_text,
+        vcItemDb_text,
+        tutoPictDb_text,
+        tutoMiniAdvDb_text,
+        anketoDb_text,
+        helpBrowserDb_text,
+        homeBgDb_text,
         room_text,
         music_text,
+        adv_text,
+        string_literals,
         End,
     }
     static MessageBank[] banks = new MessageBank[(int)eBank.End];
@@ -347,53 +507,36 @@ public static class DatabaseTextConverter
         }
     }
 
-    public static string TranslateSnsRoomName(int roomId, string def)
+    private static string Translate(eBank bank, string key, string def)
     {
-        string prfx = string.Format("room_name_{0:D4}_txt", roomId);
         if(RuntimeSettings.CurrentSettings.ShowStringUsed)
-            return "snsDb_text/" + prfx;
-        if(banks[(int)eBank.snsDb_text] != null)
+            return bank.ToString() + "/" + key;
+        if(banks[(int)bank] != null)
         {
-            return banks[(int)eBank.snsDb_text].GetMessageByLabel(prfx);
+            return banks[(int)bank].GetMessageByLabel(key);
         }
         else
         {
             if(RuntimeSettings.CurrentSettings.DumpStringUsed)
-				UnityEngine.Debug.Log("Using string snsDb_text "+prfx+" => "+def);
+				UnityEngine.Debug.Log("Using string "+bank.ToString()+" "+key+" => "+def);
             return def;
         }
+    }
+
+    public static string TranslateSnsRoomName(int roomId, string def)
+    {
+        string prfx = string.Format("room_name_{0:D4}_txt", roomId);
+        return Translate(eBank.snsDb_text, prfx, def);
     }
     public static string TranslateSnsCharaName(int roomId, string def)
     {
         string prfx = string.Format("chara_name_{0:D4}_txt", roomId);
-        if(RuntimeSettings.CurrentSettings.ShowStringUsed)
-            return "snsDb_text/" + prfx;
-        if(banks[(int)eBank.snsDb_text] != null)
-        {
-            return banks[(int)eBank.snsDb_text].GetMessageByLabel(prfx);
-        }
-        else
-        {
-            if(RuntimeSettings.CurrentSettings.DumpStringUsed)
-				UnityEngine.Debug.Log("Using string snsDb_text "+prfx+" => "+def);
-            return def;
-        }
+        return Translate(eBank.snsDb_text, prfx, def);
     }
     public static string TranslateRoomText(int textId, string def)
     {
         string prfx = string.Format("message_{0:D4}_txt", textId);
-        if(RuntimeSettings.CurrentSettings.ShowStringUsed)
-            return "room_text/" + prfx;
-        if(banks[(int)eBank.room_text] != null)
-        {
-            return banks[(int)eBank.room_text].GetMessageByLabel(prfx);
-        }
-        else
-        {
-            if(RuntimeSettings.CurrentSettings.DumpStringUsed)
-				UnityEngine.Debug.Log("Using string room_text "+prfx+" => "+def);
-            return def;
-        }
+        return Translate(eBank.room_text, prfx, def);
     }
     public enum MusicTextType
     {
@@ -434,23 +577,95 @@ public static class DatabaseTextConverter
             default:
                 return def;
         }
-        if(RuntimeSettings.CurrentSettings.ShowStringUsed)
-            return "music_text/" + prfx;
-        if(banks[(int)eBank.music_text] != null)
-        {
-            for(int i = 0; ; i++)
-            {
-                MusicTextDatabase.TextInfo data = Database.Instance.musicText.Get(i);
-                if(data == null)
-                    break;
-            }
-            return banks[(int)eBank.music_text].GetMessageByLabel(prfx);
-        }
-        else
-        {
-            if(RuntimeSettings.CurrentSettings.DumpStringUsed)
-				UnityEngine.Debug.Log("Using string music_text "+prfx+" => "+def);
-            return def;
-        }
+        return Translate(eBank.music_text, prfx, def);
+    }
+
+    public static string TranslateStringLiterals(string k, string def)
+    {
+        return Translate(eBank.string_literals, k, def);
+    }
+
+    public static string TranslateTipsTitle(int tipsId, string def)
+    {
+        string prfx = string.Format("tips_{0:D4}_title", tipsId);
+        return Translate(eBank.tipsDb_text, prfx, def);
+    }
+
+    public static string TranslateTipsMessage(int tipsId, string def)
+    {
+        string prfx = string.Format("tips_{0:D4}_msg", tipsId);
+        return Translate(eBank.tipsDb_text, prfx, def);
+    }
+
+    public static string TranslateVcItemName(int vcItemId, string def)
+    {
+        string prfx = string.Format("vcitem_{0:D4}_title", vcItemId);
+        return Translate(eBank.vcItemDb_text, prfx, def);
+    }
+
+    public static string TranslateVcItemDesc(int vcItemId, string def)
+    {
+        string prfx = string.Format("vcitem_{0:D4}_desc", vcItemId);
+        return Translate(eBank.vcItemDb_text, prfx, def);
+    }
+
+    public static string TranslateTutoPictTitle(int tutoId, int strId, string def)
+    {
+        string prfx = string.Format("tutopict_{0:D4}_{1:D4}_title", tutoId, strId);
+        return Translate(eBank.tutoPictDb_text, prfx, def);
+    }
+
+    public static string TranslateTutoPictMessage(int tutoId, int strId, string def)
+    {
+        string prfx = string.Format("tutopict_{0:D4}_{1:D4}_msg", tutoId, strId);
+        return Translate(eBank.tutoPictDb_text, prfx, def);
+    }
+
+    public static string TranslateAdventureMessage(int advId, int strId, string def)
+    {
+        string prfx = string.Format("adv_{0:D4}_{1:D4}_msg", advId, strId);
+        return Translate(eBank.adv_text, prfx, def);
+    }
+
+    public static string TranslateTutoMiniAdventureMessage(int advId, int strId, string def)
+    {
+        string prfx = string.Format("tuto_miniadv_{0:D4}_{1:D4}_msg", advId, strId);
+        return Translate(eBank.tutoMiniAdvDb_text, prfx, def);
+    }
+
+    public static string TranslateAnketoQuestion(int anketoId, string def)
+    {
+        string prfx = string.Format("anketo_{0:D4}_question", anketoId);
+        return Translate(eBank.anketoDb_text, prfx, def);
+    }
+
+    public static string TranslateAnketoChoice(int anketoId, int strId, string def)
+    {
+        string prfx = string.Format("anketo_{0:D4}_{1:D4}_choice", anketoId, strId);
+        return Translate(eBank.anketoDb_text, prfx, def);
+    }
+
+    public static string TranslateHelpCategory(int catId, string def)
+    {
+        string prfx = string.Format("category_{0:D4}_name", catId);
+        return Translate(eBank.helpBrowserDb_text, prfx, def);
+    }
+
+    public static string TranslateHelpName(int helpId, int strId, string def)
+    {
+        string prfx = string.Format("help_{0:D4}_{1:D4}_name", helpId, strId);
+        return Translate(eBank.helpBrowserDb_text, prfx, def);
+    }
+
+    public static string TranslateHelpWikiName(int helpId, int strId, string def)
+    {
+        string prfx = string.Format("wiki_{0:D4}_{1:D4}_name", helpId, strId);
+        return Translate(eBank.helpBrowserDb_text, prfx, def);
+    }
+
+    public static string TranslateHomeBgName(int homeBgId, string def)
+    {
+        string prfx = string.Format("homebg_{0:D4}_name", homeBgId);
+        return Translate(eBank.homeBgDb_text, prfx, def);
     }
 }

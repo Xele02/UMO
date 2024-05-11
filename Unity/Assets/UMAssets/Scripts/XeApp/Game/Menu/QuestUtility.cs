@@ -899,9 +899,9 @@ namespace XeApp.Game.Menu
 			if (ev.FBLGGLDPFDF())
 			{
 				GPMHOAKFALE_Adventure.NGDBKCKMDHE dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(ev.GFIBLLLHMPD_AdventureId);
-				if(dbAdv != null && dbAdv.KKPPFAHFOJI > 0)
+				if(dbAdv != null && dbAdv.KKPPFAHFOJI_FileId > 0)
 				{
-					int advId = dbAdv.KKPPFAHFOJI;
+					int advId = dbAdv.KKPPFAHFOJI_FileId;
 					AdvSetupParam param = new AdvSetupParam();
 					param.eventUniqueId = ev.PGIIDPEGGPI_EventId;
 					if(ev.HIDHLFCBIDE_EventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)

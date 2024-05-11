@@ -86,7 +86,7 @@ public class IFBCGCCJBHI
 
 		if (t != KLDBCKIJACO_StaminaTimeLeft || FPLEADMHLKN_StaminaStr == null)
         {
-			FPLEADMHLKN_StaminaStr = "MAX";
+			FPLEADMHLKN_StaminaStr = JpStringLiterals.StringLiteral_11085;
 			if (t != 0)
 			{
 				KOHNLDKIKPC.Clear();
@@ -106,7 +106,7 @@ public class IFBCGCCJBHI
 		long t = IOCLFHJLHLE_IntimacyUpdater.CKEJFCLAOHP_GetRemainingTime();
 		if(t != NFKMOHGLPAO_IntamacyTimeLeft || KOENBEGADHP_IntimacyStr == null)
 		{
-			KOENBEGADHP_IntimacyStr = "MAX";
+			KOENBEGADHP_IntimacyStr = JpStringLiterals.StringLiteral_11085;
 			if(t != 0)
 			{
 				KOHNLDKIKPC.Clear();

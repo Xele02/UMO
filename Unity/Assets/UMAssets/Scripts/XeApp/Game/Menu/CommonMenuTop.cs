@@ -207,7 +207,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				m_textEnergyTime.text = "MAX";
+				m_textEnergyTime.text = JpStringLiterals.StringLiteral_11085;
 			}
 		}
 

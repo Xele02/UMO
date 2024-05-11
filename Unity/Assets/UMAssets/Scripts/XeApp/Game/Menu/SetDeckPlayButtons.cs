@@ -91,6 +91,7 @@ namespace XeApp.Game.Menu
 						OnClickPlayButton();
 				});
 			}
+			m_skipRestCountText.transform.parent.Find("Text_Label").GetComponent<Text>().text = JpStringLiterals.UMO_NumLeft;
 		}
 
 		// // RVA: 0xA7325C Offset: 0xA7325C VA: 0xA7325C
