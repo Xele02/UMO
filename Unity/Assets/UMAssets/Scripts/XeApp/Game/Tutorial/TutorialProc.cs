@@ -94,6 +94,7 @@ namespace XeApp.Game.Tutorial
 			else
 			{
 				MenuScene.Instance.InputDisable();
+				BasicTutorialManager.Initialize();
 				mrg = BasicTutorialManager.Instance;
 				isWait = true;
 				mrg.PreLoadResource(() =>
@@ -282,6 +283,7 @@ namespace XeApp.Game.Tutorial
 
 			//0xE4CD74
 			MenuScene.Instance.InputDisable();
+			BasicTutorialManager.Initialize();
 			mrg = BasicTutorialManager.Instance;
 			bool isWait = true;
 			mrg.PreLoadResource(() =>
