@@ -43,8 +43,8 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_textClose.text = bk.GetMessageByLabel("item_shop_closed");
 			m_button.Disable = view.MHKCPJDNJKI.Count < 1;
-			m_textName.text = view.NEMKDKDIIDK;
-			if(view.NEMKDKDIIDK.Length < 11)
+			m_textName.text = view.NEMKDKDIIDK_ShopName;
+			if(view.NEMKDKDIIDK_ShopName.Length < 11)
 			{
 				m_textName.horizontalOverflow = HorizontalWrapMode.Overflow;
 				m_textName.resizeTextForBestFit = false;

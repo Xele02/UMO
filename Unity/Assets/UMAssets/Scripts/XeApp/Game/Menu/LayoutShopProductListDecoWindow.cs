@@ -102,7 +102,7 @@ namespace XeApp.Game.Menu
 			SetupList(view.MHKCPJDNJKI.Count, resetScroll);
 			m_noProductText.enabled = view.MHKCPJDNJKI.Count < 1;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			m_textTitle.text = view.NEMKDKDIIDK;
+			m_textTitle.text = view.NEMKDKDIIDK_ShopName;
 			m_layoutWarning.enabled = false;
 			m_layoutKyrr.StartChildrenAnimGoStop("01", "01");
 			for(int i = 0; i < m_imageMedal.Length; i++)

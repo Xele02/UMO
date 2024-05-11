@@ -41,7 +41,7 @@ class RuntimeSettings : ScriptableObject
 				m_currentSettings.RemoveCrystalLimit = UMO_PlayerPrefs.GetInt("RemoveCrystalLimit", 0) == 1;
 				m_currentSettings.DumpStringUsed = UMO_PlayerPrefs.GetInt("DumpStringUsed", 0) == 1;
 				m_currentSettings.ShowStringUsed = UMO_PlayerPrefs.GetInt("ShowStringUsed", 0) == 1;
-				m_currentSettings.Language = "fr";
+				m_currentSettings.Language = "";
 
 #if (UNITY_ANDROID && !UNITY_EDITOR) || DEBUG_ANDROID_FILESYSTEM
 				m_currentSettings.DataDirectory = Application.persistentDataPath + "/data/";

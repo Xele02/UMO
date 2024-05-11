@@ -194,7 +194,7 @@ public static class DatabaseTextConverter
                 prfx = string.Format("vcitem_{0:D4}_desc", i);
                 poFile.translationData.Add(prfx, vcDb.CDENCMNHNGA[i].KLMPFGOCBHC_Desc);
             }
-            string p = PoPath.Replace("{name}", "tipsDb_text");
+            string p = PoPath.Replace("{name}", "vcItemDb_text");
             Directory.CreateDirectory(p);
             poFile.SaveFile(p + "messages_full.pot", isTemplate:true);
             poFile.SaveFile(p + "messages.pot", isTemplate:true, stripEmpty:true);
@@ -227,23 +227,29 @@ public static class DatabaseTextConverter
             // Export Adv strings
             PoFile poFile = new PoFile();
             GPMHOAKFALE_Adventure advDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure;
+            List<int> advIds = new List<int>() { 1, 2, 3, 4, 5, 6 };
             for(int i = 0; i < advDb.CDENCMNHNGA.Count; i++)
             {
                 if(advDb.CDENCMNHNGA[i].PPEGAKEIEGM_Enabled == 2)
                 {
-                    AdvScriptData adv_data = new AdvScriptData();
-                    bool done = false;
-                    adv_data.Load(advDb.CDENCMNHNGA[i].KKPPFAHFOJI_FileId, () =>
-                    {
-                        done = true;
-                    });
-                    while(!done)
-                        yield return null;
-                    for(int j = 0; j < adv_data.GetMessageCount(); j++)
-                    {
-                        string prfx = string.Format("adv_{0:D4}_{1:D4}_msg", advDb.CDENCMNHNGA[i].KKPPFAHFOJI_FileId, j);
-                        poFile.translationData.Add(prfx, adv_data.GetMessage(j));
-                    }
+                    if(!advIds.Contains(advDb.CDENCMNHNGA[i].KKPPFAHFOJI_FileId))
+                        advIds.Add(advDb.CDENCMNHNGA[i].KKPPFAHFOJI_FileId);
+                }
+            }
+            for(int i = 0; i < advIds.Count; i++)
+            {
+                AdvScriptData adv_data = new AdvScriptData();
+                bool done = false;
+                adv_data.Load(advIds[i], () =>
+                {
+                    done = true;
+                });
+                while(!done)
+                    yield return null;
+                for(int j = 0; j < adv_data.GetMessageCount(); j++)
+                {
+                    string prfx = string.Format("adv_{0:D6}_{1:D4}_msg", advIds[i], j);
+                    poFile.translationData.Add(prfx, adv_data.GetMessage(j));
                 }
             }
             string p = PoPath.Replace("{name}", "adv_text");
@@ -338,6 +344,21 @@ public static class DatabaseTextConverter
             poFile.SaveFile(p + "messages.pot", isTemplate:true, stripEmpty:true);
             poFile.SaveFile(p + "jp.po", stripEmpty:true);
         }
+        {
+            // Export shopDb strings
+            PoFile poFile = new PoFile();
+            BKPAPCMJKHE_Shop blockDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IFLGCDGOLOP_Shop;
+            for(int i = 0; i < blockDb.CDENCMNHNGA.Count; i++)
+            {
+                string prfx = string.Format("shop_{0:D4}_name", i);
+                poFile.translationData.Add(prfx, blockDb.CDENCMNHNGA[i].NEMKDKDIIDK_ShopName);
+            }
+            string p = PoPath.Replace("{name}", "shopDb_text");
+            Directory.CreateDirectory(p);
+            poFile.SaveFile(p + "messages_full.pot", isTemplate:true);
+            poFile.SaveFile(p + "messages.pot", isTemplate:true, stripEmpty:true);
+            poFile.SaveFile(p + "jp.po", stripEmpty:true);
+        }
     }
 
     [MenuItem("UMO/Localization/Import Database strings")]
@@ -385,12 +406,20 @@ public static class DatabaseTextConverter
             {
                 //Import texts
                 PoFile poFile = new PoFile();
-                
-                string p = PoPath.Replace("{name}", ((eBank)i).ToString());
-                poFile.LoadFile(p + "messages_full.pot", clear:true);
-                poFile.LoadFile(p + "jp.po");
-                poFile.LoadFile(p + lang + ".po");
-
+                if((eBank)i == eBank.string_literals)
+                {
+                    string p = StringLiteralsConverter.PoPath;
+                    poFile.LoadFile(p + "messages.pot", clear:true);
+                    poFile.LoadFile(p + "jp.po");
+                    poFile.LoadFile(p + lang + ".po");
+                }
+                else
+                {
+                    string p = PoPath.Replace("{name}", ((eBank)i).ToString());
+                    poFile.LoadFile(p + "messages_full.pot", clear:true);
+                    poFile.LoadFile(p + "jp.po");
+                    poFile.LoadFile(p + lang + ".po");
+                }
                 poFile.WriteToArchiveAsBankData(archive, ((eBank)i).ToString() + ".bytes");
             }
 
@@ -462,6 +491,7 @@ public static class DatabaseTextConverter
         anketoDb_text,
         helpBrowserDb_text,
         homeBgDb_text,
+        shopDb_text,
         room_text,
         music_text,
         adv_text,
@@ -667,5 +697,11 @@ public static class DatabaseTextConverter
     {
         string prfx = string.Format("homebg_{0:D4}_name", homeBgId);
         return Translate(eBank.homeBgDb_text, prfx, def);
+    }
+
+    public static string TranslateShopName(int shopId, string def)
+    {
+        string prfx = string.Format("shop_{0:D4}_name", shopId);
+        return Translate(eBank.shopDb_text, prfx, def);
     }
 }

@@ -266,7 +266,7 @@ public class BKPAPCMJKHE_Shop : DIHHCBACKGG_DbSection
 			data.EILKGEADKGH = array[i].EILKGEADKGH;
 			data.EAHPLCJMPHD_PayItemId = array[i].KNHOMNONOEB;
 			data.OPKDAIMPJBH_ShopId = array[i].CIOKHGPEEKE;
-			data.NEMKDKDIIDK_ShopName = array[i].IIPIPIABGDG;
+			data.NEMKDKDIIDK_ShopName = DatabaseTextConverter.TranslateShopName(i, array[i].IIPIPIABGDG);
 			data.HCCEFDMGPEA = array[i].GBJFNGCDKPM;
 			data.OPKDAIMPJBH_ShopId = array[i].CIOKHGPEEKE;
 			data.JPGALGPNJAI_VcId = array[i].JPGALGPNJAI;

@@ -657,4 +657,22 @@ class JpStringLiterals
 	public static string UMO_PlayStyleLife { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_PlayStyleLife", "ライフ優先"); } }
 	public static string UMO_PlayStyleCombo { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_PlayStyleCombo", "コンボ優先"); } }
 	public static string UMO_PlayStatus { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_PlayStatus", "優先するステータス"); } }
+	public static string UMO_DivaLevel { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_DivaLevel", "歌姫Lv"); } }
+	public static string UMO_IntimacyLevel { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_IntimacyLevel", "親密度Lv"); } }
+	public static string UMO_CostumeCount { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_CostumeCount", "衣装所持数"); } }
+	public static string UMO_DivaStatus { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_DivaStatus", "歌姫ステータス"); } }
+	public static string UMO_CostumeStatus { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_CostumeStatus", "衣装強化ステータス"); } }
+	public static string UMO_SoulTotal { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_SoulTotal", "ソウルアピール"); } }
+	public static string UMO_VoiceTotal { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_VoiceTotal", "ボイスアピール"); } }
+	public static string UMO_CharmTotal { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_CharmTotal", "チャームアピール"); } }
+	public static string UMO_DivaRanking { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_DivaRanking", "歌姫ランキング"); } }
+	public static string UMO_DivaRankingBtn { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_DivaRankingBtn", "歌姫ランキング確認"); } }
+	public static string UMO_Age { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_Age", "年齢"); } }
+	public static string UMO_Birthplace { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_Birthplace", "出身地"); } }
+	public static string UMO_Favorite { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_Favorite", "好きなもの"); } }
+	public static string UMO_DivaDesc { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_DivaDesc", "歌姫紹介"); } }
+	public static string UMO_Back { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_Back", "戻る"); } }
+	public static string UMO_Costume { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_Costume", "衣装変更"); } }
+	public static string UMO_Gift { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_Gift", "ギフト"); } }
+	public static string UMO_Profil { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_Profil", "プロフィール"); } }
 }

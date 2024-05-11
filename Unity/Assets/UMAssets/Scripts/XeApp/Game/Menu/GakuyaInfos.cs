@@ -146,6 +146,10 @@ namespace XeApp.Game.Menu
 				//0xB738F4
 				OnClickSelectButton(SelectType.Profile);
 			});
+			m_buttonHandleStatus.m_text.text = JpStringLiterals.UMO_Status;
+			m_buttonHandleDress.m_text.text = JpStringLiterals.UMO_Costume;
+			m_buttonHandleGift.m_text.text = JpStringLiterals.UMO_Gift;
+			m_buttonHandleProfile.m_text.text = JpStringLiterals.UMO_Profil;
 		}
 
 		// RVA: 0xB721C4 Offset: 0xB721C4 VA: 0xB721C4

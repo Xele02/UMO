@@ -23,7 +23,7 @@ public class PoFile
                         continue;
                     writer.WriteLine("msgid \""+k.Key+"\"");
                     string str = k.Value;
-                    str = str.Replace("\n", "\\n").Replace("\"", "\\\"");
+                    str = str.Replace("\n", "\\n").Replace("\"", "\\\"").Replace("\r","\\r");
                     writer.WriteLine("msgstr \""+(isTemplate ? "" : str)+"\"");
                     writer.WriteLine("");
                 }
@@ -52,7 +52,7 @@ public class PoFile
                     if(msgStr != null && msgId != null && msgId != "")
                     {
                         //UnityEngine.Debug.LogError("A Msg "+msgId+":"+msgStr);
-                        msgStr = msgStr.Replace("\\\"", "\"").Replace("\\n", "\n");
+                        msgStr = msgStr.Replace("\\\"", "\"").Replace("\\n", "\n").Replace("\\r", "\r");
                         if(translationData.ContainsKey(msgId))
                         {
                             if(!string.IsNullOrEmpty(msgStr))
