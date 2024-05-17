@@ -155,9 +155,9 @@ public class MCGNOFMAPBJ
 	}
 
 	// // RVA: 0x130D2AC Offset: 0x130D2AC VA: 0x130D2AC
-	public bool IGFMNMADJPP(int CHIHFGDIBJM, bool DDGFCOPPBBN = true)
+	public bool IGFMNMADJPP_Consume(int CHIHFGDIBJM, bool _DDGFCOPPBBN_CheckOnly = true)
 	{
-		if(CHIHFGDIBJM <= DCLKMNGMIKC_GetCurrent() && DDGFCOPPBBN == false)
+		if(CHIHFGDIBJM <= DCLKMNGMIKC_GetCurrent() && _DDGFCOPPBBN_CheckOnly == false)
 		{
 			NEPIPMPAFIE_Stamina = DCLKMNGMIKC_GetCurrent() - CHIHFGDIBJM;
 			if (NEPIPMPAFIE_Stamina < 0)
