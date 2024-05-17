@@ -378,11 +378,12 @@ namespace XeApp.Game.RhythmGame
 			res.WindowSize = SizeType.Small;
 			res.BackButtonLabel = PopupButton.ButtonLabel.ReStart;
 			res.TitleText = MessageManager.Instance.GetBank("common").GetMessageByLabel("game_popup_pause_title");
-			int ma = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.prismMusicId).FKDCCLPGKDK_Ma;
+			EONOEHOKBEB_Music m = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(Database.Instance.gameSetup.musicInfo.prismMusicId);
+			int ma = m.FKDCCLPGKDK_Ma;
 			string diff = Difficulty.Name[(int)Database.Instance.gameSetup.musicInfo.difficultyType];
 			if (Database.Instance.gameSetup.musicInfo.IsLine6Mode)
 				diff += "+";
-			object[] o = new object[2] { RichTextUtility.MakeColorTagString(Database.Instance.musicText.Get(ma).musicName, GameAttributeTextColor.Colors[ma - 1]),
+			object[] o = new object[2] { RichTextUtility.MakeColorTagString(Database.Instance.musicText.Get(m.KNMGEEFGDNI_Nam).musicName, GameAttributeTextColor.Colors[ma - 1]),
 				diff };
 			res.Text = PopupWindowManager.FormatTextBank(MessageManager.Instance.GetBank("common"), "game_popup_pause_text", o);
 			res.Buttons = new ButtonInfo[2]
