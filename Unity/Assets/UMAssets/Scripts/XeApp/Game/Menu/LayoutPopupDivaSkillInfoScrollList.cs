@@ -81,7 +81,7 @@ namespace XeApp.Game.Menu
 			Vector2 p = new Vector2(318, 103);
 			for(int i = 0; i < divaList.Count; i++)
 			{
-				if(divaList[i].IPJMPBANBPP && divaList[i].FJODMPGPDDD)
+				if(divaList[i].IPJMPBANBPP_Enabled && divaList[i].FJODMPGPDDD)
 				{
 					ItemParam item = new ItemParam(divaList[i], new Vector2(0, 0), p);
 					m_paramList.Add(item);

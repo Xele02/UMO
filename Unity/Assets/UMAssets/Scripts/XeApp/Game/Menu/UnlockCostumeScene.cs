@@ -568,7 +568,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1259CE0 Offset: 0x1259CE0 VA: 0x1259CE0
 		private bool IsHaveDiva()
 		{
-			if(currentViewDivaData.IPJMPBANBPP)
+			if(currentViewDivaData.IPJMPBANBPP_Enabled)
 			{
 				return currentViewDivaData.FJODMPGPDDD;
 			}

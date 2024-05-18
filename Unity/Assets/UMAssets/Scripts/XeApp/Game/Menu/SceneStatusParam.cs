@@ -555,7 +555,7 @@ namespace XeApp.Game.Menu
 			int j = 0;
 			for (int i = 0; i < playerData.NBIGLBMHEDC_Divas.Count; i++)
 			{
-				if(playerData.NBIGLBMHEDC_Divas[i].IPJMPBANBPP)
+				if(playerData.NBIGLBMHEDC_Divas[i].IPJMPBANBPP_Enabled)
 				{
 					m_strBuilder.Clear();
 					m_strBuilder.AppendFormat("cmn_chk_icon_{0:D2}", playerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId);
