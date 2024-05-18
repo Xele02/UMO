@@ -436,7 +436,7 @@ public class JBCAHMMCOKK
 					{
 						if(l[i].LHONOILACFL_IsWeeklyEvent)
 						{
-							if(l[i].BELHFPMBAPJ_WeekPlay < l[i].JOJNGDPHOKG)
+							if(l[i].BELHFPMBAPJ_WeekPlay < l[i].JOJNGDPHOKG_WeeklyMax)
 							{
 								JBCAHMMCOKK data = new JBCAHMMCOKK();
 								data.KHEKNNFCAOI(KOGBMDOONFA.PPFNGGCBJKC);

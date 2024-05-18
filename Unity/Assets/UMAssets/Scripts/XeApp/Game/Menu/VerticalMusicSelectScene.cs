@@ -1157,7 +1157,7 @@ namespace XeApp.Game.Menu
 						{
 							if(info.LHONOILACFL_IsWeeklyEvent)
 							{
-								if(info.BELHFPMBAPJ_WeekPlay < info.JOJNGDPHOKG)
+								if(info.BELHFPMBAPJ_WeekPlay < info.JOJNGDPHOKG_WeeklyMax)
 								{
 									list_no = i;
 									break;

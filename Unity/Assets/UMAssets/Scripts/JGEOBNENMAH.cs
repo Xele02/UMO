@@ -1791,7 +1791,7 @@ public class JGEOBNENMAH
 						if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.CLLPBOPLICM_EventWeekDay.FLPDCNBLOKL(record.CAPAIICHDMH_WDat, GHBPLHBNMBK))
 						{
                             DKCJADHKGAN_EventWeekDay.JFFPEKOEINE data = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.CLLPBOPLICM_EventWeekDay.PPIBJECKCEF(record.CAPAIICHDMH_WDat);
-                            return data.ELEPHBOKIGK + data.AEHCKNNGAKF;
+                            return data.ELEPHBOKIGK_MaxCount + data.AEHCKNNGAKF_BonusMaxCount;
 						}
 					}
 				}
