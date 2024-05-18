@@ -900,7 +900,7 @@ namespace XeApp.Game.Menu
 			{
 				FFHPBEPOMAK_DivaInfo data = new FFHPBEPOMAK_DivaInfo();
 				data.KHEKNNFCAOI(viewIntimacyData.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, false);
-				if(data.FJODMPGPDDD && data.IPJMPBANBPP)
+				if(data.FJODMPGPDDD && data.IPJMPBANBPP_Enabled)
 				{
 					if(viewIntimacyData.GMIEFBELJJH() > 0)
 					{

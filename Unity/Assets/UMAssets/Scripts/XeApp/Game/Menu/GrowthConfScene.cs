@@ -232,7 +232,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < viewPlayerData.NBIGLBMHEDC_Divas.Count; i++)
 			{
-				if(viewPlayerData.NBIGLBMHEDC_Divas[i].IPJMPBANBPP)
+				if(viewPlayerData.NBIGLBMHEDC_Divas[i].IPJMPBANBPP_Enabled)
 				{
 					KDOMGMCGHDC.ODIAFJCPIFO(musicId, viewPlayerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, viewPlayerData.NBIGLBMHEDC_Divas[i].PKLPGBKKFOL[musicId - 1]);
 					if (viewPlayerData.NBIGLBMHEDC_Divas[i].HMBECPGHPOE[musicId - 1] > 0)

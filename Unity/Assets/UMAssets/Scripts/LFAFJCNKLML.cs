@@ -138,7 +138,7 @@ public class LFAFJCNKLML : CKFGMNAIBNG
 		List<LFAFJCNKLML> res = new List<LFAFJCNKLML>(500);
 		for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Count; i++)
 		{
-			if(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[i].FJODMPGPDDD && GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[i].IPJMPBANBPP)
+			if(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[i].FJODMPGPDDD && GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[i].IPJMPBANBPP_Enabled)
 			{
 				res.AddRange(HEGEKFMJNCC(GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId));
 				if(NBIGLBMHEDC != null)
