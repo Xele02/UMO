@@ -1648,7 +1648,7 @@ namespace XeApp.Game.RhythmGame
 						int voice = 0;
 						if(resource.enterdAwakenDivaModeVoiceId < 0)
 						{
-							cat = DivaVoicePlayer.VoiceCategory.GameClear;
+							cat = DivaVoicePlayer.VoiceCategory.GameDivaMode;
 							voice = 1;
 						}
 						else
@@ -1672,7 +1672,7 @@ namespace XeApp.Game.RhythmGame
 						int voice = 0;
 						if (resource.enterdDivaModeVoiceId < 0)
 						{
-							cat = DivaVoicePlayer.VoiceCategory.GameClear;
+							cat = DivaVoicePlayer.VoiceCategory.GameDivaMode;
 							voice = 0;
 						}
 						else
