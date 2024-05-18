@@ -153,7 +153,7 @@ namespace ExternLib
 					int id = int.Parse(key.Replace("normal_quest_key_", ""));
 					LCKMNLOLDPD reward = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.LFAAEPAAEMB.Find((LCKMNLOLDPD _) =>
 					{
-						return _.BGFPPGPJONG_QuestKeyId == id;
+						return _.BGFPPGPJONG_QuestKeyId == id && _.APNMKLJMPMD_Type == 1;
 					});
                     CNLPPCFJEID_QuestInfo quest = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests.Find((CNLPPCFJEID_QuestInfo _) =>
 					{
@@ -180,7 +180,7 @@ namespace ExternLib
 					int id = int.Parse(key.Replace("daily_quest_", ""));
 					LCKMNLOLDPD reward = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.LFAAEPAAEMB.Find((LCKMNLOLDPD _) =>
 					{
-						return _.BGFPPGPJONG_QuestKeyId == id;
+						return _.BGFPPGPJONG_QuestKeyId == id && _.APNMKLJMPMD_Type == 2;
 					});
                     CNLPPCFJEID_QuestInfo quest = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.BEGCHDHHEKC_DailyQuests.Find((CNLPPCFJEID_QuestInfo _) =>
 					{
