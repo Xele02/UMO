@@ -129,9 +129,9 @@ namespace XeApp.Game.Menu
 					row += 4;
 				if (m_type == Type.Normal && !m_isCenter)
 					row += 3;
-				m_replaceUvImages[0].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvManager.GetUVData(m_uvNameTable[row, m_isPossible ? 0 : 1]));
-				m_replaceUvImages[1].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvManager.GetUVData(m_uvNameTable[row, m_isPossible ? 0 : 1]));
-				m_replaceUvImages[2].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvManager.GetUVData(m_uvNameTable[row, m_isPossible ? 0 : 1]));
+				m_replaceUvImages[0].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvManager.GetUVData(m_uvNameTable[row, m_isPossible ? 1 : 0]));
+				m_replaceUvImages[1].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvManager.GetUVData(m_uvNameTable[row, m_isPossible ? 1 : 0]));
+				m_replaceUvImages[2].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvManager.GetUVData(m_uvNameTable[row, m_isPossible ? 1 : 0]));
 				m_abs.StartAllAnimGoStop("go_in", "st_in");
 				m_addEffectAbs.StartChildrenAnimGoStop("go_in", "st_in");
 			}
@@ -174,7 +174,7 @@ namespace XeApp.Game.Menu
 				row += 4;
 			if (m_type == Type.Normal && !m_isCenter)
 				row += 3;
-			m_replaceUvImages[2].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvManager.GetUVData(m_uvNameTable[row, m_isPossible ? 0 : 1]));
+			m_replaceUvImages[2].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvManager.GetUVData(m_uvNameTable[row, m_isPossible ? 1 : 0]));
 		}
 
 		//// RVA: 0x10DE02C Offset: 0x10DE02C VA: 0x10DE02C
