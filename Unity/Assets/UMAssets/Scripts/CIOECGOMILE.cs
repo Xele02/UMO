@@ -1035,7 +1035,7 @@ public class CIOECGOMILE
 											EBEGGFECPOE.OBCINIPHGGH = 0;
 											EBEGGFECPOE.PJBJCBEMEEC = 0;
 											EBEGGFECPOE.CPIICACGNBH(AHEFHIMGIBI_ServerSave, ldata.GLCLFMGPMAN_ItemFullId, ldata.HMFFHLPNMPH_Cnt, data, 0);
-											if(ldata.APNMKLJMPMD == 2)
+											if(ldata.APNMKLJMPMD_Type == 2)
 											{
 												DGMPLJFDOHF.Clear();
 												DGMPLJFDOHF.AppendFormat("daily_quest_" + ldata.BGFPPGPJONG_QuestKeyId.ToString("D4"), Array.Empty<object>());
@@ -1091,7 +1091,7 @@ public class CIOECGOMILE
 											EBEGGFECPOE.OBCINIPHGGH = 0;
 											EBEGGFECPOE.PJBJCBEMEEC = 0;
 											EBEGGFECPOE.CPIICACGNBH(AHEFHIMGIBI_ServerSave, ldata.GLCLFMGPMAN_ItemFullId, ldata.HMFFHLPNMPH_Cnt, data, 0);
-											if(ldata.APNMKLJMPMD == 1)
+											if(ldata.APNMKLJMPMD_Type == 1)
 											{
 												DGMPLJFDOHF.Clear();
 												DGMPLJFDOHF.AppendFormat("normal_quest_key_" + ldata.BGFPPGPJONG_QuestKeyId.ToString("D4"), Array.Empty<object>());

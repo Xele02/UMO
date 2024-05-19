@@ -95,7 +95,7 @@ namespace XeApp.Game.Menu
 			{
 				if(PlayerData.NBIGLBMHEDC_Divas[i].FJODMPGPDDD)
 				{
-					if (PlayerData.NBIGLBMHEDC_Divas[i].IPJMPBANBPP)
+					if (PlayerData.NBIGLBMHEDC_Divas[i].IPJMPBANBPP_Enabled)
 					{
 						if(PlayerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId != selectedDivaId)
 						{

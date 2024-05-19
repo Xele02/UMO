@@ -26,7 +26,7 @@ namespace XeApp.Game.Menu
 			m_scrollLayout.UpdateScroll();
 			for(int i = 0; i < p.NBIGLBMHEDC_Divas.Count; i++)
 			{
-				if(p.NBIGLBMHEDC_Divas[i].IPJMPBANBPP)
+				if(p.NBIGLBMHEDC_Divas[i].IPJMPBANBPP_Enabled)
 				{
 					if(p.NBIGLBMHEDC_Divas[i].FJODMPGPDDD)
 					{

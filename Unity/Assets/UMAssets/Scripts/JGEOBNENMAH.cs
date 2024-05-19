@@ -245,7 +245,7 @@ public class JGEOBNENMAH
 		GNAMCOJKEFE = false;
 		IBJNOOLMBEH = 0;
 		LIIMMJHEADN = 0;
-		FCLGIPFPIPH = -1;
+		FCLGIPFPIPH = 1;
 		ACMMDAHKCIF = 0;
 		JKEPHFPCKMD = 0;
 		NMLNPELGLPN = 0;
@@ -476,7 +476,7 @@ public class JGEOBNENMAH
 						}
 						if(num > 0)
 						{
-							if(!LGAALOEKCAC.BPLOEAHOPFI_StaminaUpdater.IGFMNMADJPP(num, true))
+							if(!LGAALOEKCAC.BPLOEAHOPFI_StaminaUpdater.IGFMNMADJPP_Consume(num, true))
 							{
 								DBCEPOAHNBH();
 								AGDEBBENNCK = null;
@@ -596,7 +596,7 @@ public class JGEOBNENMAH
 		}
 		if(FPPNIKFLAFM > 0)
 		{
-			CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.IGFMNMADJPP(FPPNIKFLAFM, false);
+			CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.IGFMNMADJPP_Consume(FPPNIKFLAFM, false);
 			CIOECGOMILE.HHCJCDFCLOB.FMIPEACLBKL();
 		}
 		ECHONOJEPHP = CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC_GetCurrent();
@@ -1791,7 +1791,7 @@ public class JGEOBNENMAH
 						if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.CLLPBOPLICM_EventWeekDay.FLPDCNBLOKL(record.CAPAIICHDMH_WDat, GHBPLHBNMBK))
 						{
                             DKCJADHKGAN_EventWeekDay.JFFPEKOEINE data = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.CLLPBOPLICM_EventWeekDay.PPIBJECKCEF(record.CAPAIICHDMH_WDat);
-                            return data.ELEPHBOKIGK + data.AEHCKNNGAKF;
+                            return data.ELEPHBOKIGK_MaxCount + data.AEHCKNNGAKF_BonusMaxCount;
 						}
 					}
 				}

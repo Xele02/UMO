@@ -8,32 +8,32 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 {
 	public class JFFPEKOEINE
 	{
-		public long KINJOEIAHFK; // 0x8
-		public long PCCFAKEOBIC; // 0x10
+		public long KINJOEIAHFK_StartDate; // 0x8
+		public long PCCFAKEOBIC_EndDate; // 0x10
 		public int JCADAMLIOKK_Id; // 0x18
 		public sbyte PPEGAKEIEGM_Enabled; // 0x1C
-		public int AIDNHPGEHPM; // 0x20
-		public int DJCHKGLCLPD; // 0x24
+		public int AIDNHPGEHPM_Crypted; // 0x20
+		public int DJCHKGLCLPD_Crypted; // 0x24
 		public string CIOJJBOHEEJ; // 0x28
-		public List<List<int>> BEPAMEEBPGI = new List<List<int>>(); // 0x2C
+		public List<List<int>> BEPAMEEBPGI_SongIdByWeekday = new List<List<int>>(); // 0x2C
 
-		public int ELEPHBOKIGK { get { return AIDNHPGEHPM ^ 0x5717f14f; } set { AIDNHPGEHPM = value ^ 0x5717f14f; } } //0x198E5A0 IIJFLONJAFL 0x198E160 LHNFGPIGCNE
-		public int AEHCKNNGAKF { get { return DJCHKGLCLPD ^ 0x5717f14f; } set { DJCHKGLCLPD = value ^ 0x5717f14f; } } //0x198E5B4 KKNJPEMGEBF 0x198E174 NPDLLBHCIJP
+		public int ELEPHBOKIGK_MaxCount { get { return AIDNHPGEHPM_Crypted ^ 0x5717f14f; } set { AIDNHPGEHPM_Crypted = value ^ 0x5717f14f; } } //0x198E5A0 IIJFLONJAFL 0x198E160 LHNFGPIGCNE
+		public int AEHCKNNGAKF_BonusMaxCount { get { return DJCHKGLCLPD_Crypted ^ 0x5717f14f; } set { DJCHKGLCLPD_Crypted = value ^ 0x5717f14f; } } //0x198E5B4 KKNJPEMGEBF 0x198E174 NPDLLBHCIJP
 
 		//// RVA: 0x198E5C8 Offset: 0x198E5C8 VA: 0x198E5C8
-		public List<int> OPCBHOLFCHO(int IAPNPKAGEGH)
+		public List<int> OPCBHOLFCHO_GetSongsForWeekDay(int IAPNPKAGEGH)
 		{
-			return BEPAMEEBPGI[IAPNPKAGEGH];
+			return BEPAMEEBPGI_SongIdByWeekday[IAPNPKAGEGH];
 		}
 
 		//// RVA: 0x198DA90 Offset: 0x198DA90 VA: 0x198DA90
-		public bool FLPDCNBLOKL(int IAPNPKAGEGH, int GHBPLHBNMBK)
+		public bool FLPDCNBLOKL_IsSongForWeekDay(int IAPNPKAGEGH, int GHBPLHBNMBK)
 		{
-			if(BEPAMEEBPGI[IAPNPKAGEGH] != null)
+			if(BEPAMEEBPGI_SongIdByWeekday[IAPNPKAGEGH] != null)
 			{
-				for(int i = 0; i < BEPAMEEBPGI[IAPNPKAGEGH].Count; i++)
+				for(int i = 0; i < BEPAMEEBPGI_SongIdByWeekday[IAPNPKAGEGH].Count; i++)
 				{
-					if (BEPAMEEBPGI[IAPNPKAGEGH][i] == GHBPLHBNMBK)
+					if (BEPAMEEBPGI_SongIdByWeekday[IAPNPKAGEGH][i] == GHBPLHBNMBK)
 						return true;
 				}
 			}
@@ -51,7 +51,7 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 	{
 		for(int i = 0; i < MPCJGPEBCCD.Count; i++)
 		{
-			if (MPCJGPEBCCD[i].PPEGAKEIEGM_Enabled == 2 && FJLBOKEKFKA >= MPCJGPEBCCD[i].KINJOEIAHFK && MPCJGPEBCCD[i].PCCFAKEOBIC >= FJLBOKEKFKA)
+			if (MPCJGPEBCCD[i].PPEGAKEIEGM_Enabled == 2 && FJLBOKEKFKA >= MPCJGPEBCCD[i].KINJOEIAHFK_StartDate && MPCJGPEBCCD[i].PCCFAKEOBIC_EndDate >= FJLBOKEKFKA)
 				return MPCJGPEBCCD[i];
 		}
 		return null;
@@ -63,7 +63,7 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 		JFFPEKOEINE data = PPIBJECKCEF(JHNMKKNEENE);
 		if(data != null)
 		{
-			return data.FLPDCNBLOKL((int)Utility.GetLocalDateTime(JHNMKKNEENE).DayOfWeek, GHBPLHBNMBK);
+			return data.FLPDCNBLOKL_IsSongForWeekDay((int)Utility.GetLocalDateTime(JHNMKKNEENE).DayOfWeek, GHBPLHBNMBK);
 		}
 		return false;
 	}
@@ -92,21 +92,50 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 			JFFPEKOEINE data = new JFFPEKOEINE();
 			data.JCADAMLIOKK_Id = (int)array[i].PPFNGGCBJKC;
 			data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(1, (int)array[i].PLALNIIBLOF, 0);
-			data.KINJOEIAHFK = array[i].FNEIADJMHHO;
-			data.PCCFAKEOBIC = array[i].KOMKKBDABJP;
+			data.KINJOEIAHFK_StartDate = array[i].FNEIADJMHHO;
+			data.PCCFAKEOBIC_EndDate = array[i].KOMKKBDABJP;
 			data.CIOJJBOHEEJ = array[i].GENIJOLKBNH;
-			data.ELEPHBOKIGK = array[i].BFINGCJHOHI;
-			data.AEHCKNNGAKF = array[i].OEOIHIIIMCK;
-			//UnityEngine.Debug.LogError(Utility.GetLocalDateTime(data.KINJOEIAHFK).ToShortDateString() + " " + Utility.GetLocalDateTime(data.KINJOEIAHFK).ToShortTimeString()+" "+ Utility.GetLocalDateTime(data.PCCFAKEOBIC).ToShortDateString() + " " + Utility.GetLocalDateTime(data.PCCFAKEOBIC).ToShortTimeString() + " " + data.CIOJJBOHEEJ+" "+data.ELEPHBOKIGK+" "+data.AEHCKNNGAKF);
+			data.ELEPHBOKIGK_MaxCount = array[i].BFINGCJHOHI;
+			data.AEHCKNNGAKF_BonusMaxCount = array[i].OEOIHIIIMCK;
+			//UnityEngine.Debug.LogError(Utility.GetLocalDateTime(data.KINJOEIAHFK_StartDate).ToShortDateString() + " " + Utility.GetLocalDateTime(data.KINJOEIAHFK_StartDate).ToShortTimeString()+" "+ Utility.GetLocalDateTime(data.PCCFAKEOBIC_EndDate).ToShortDateString() + " " + Utility.GetLocalDateTime(data.PCCFAKEOBIC_EndDate).ToShortTimeString() + " " + data.CIOJJBOHEEJ+" "+data.ELEPHBOKIGK_MaxCount+" "+data.AEHCKNNGAKF_BonusMaxCount);
 			for(int j = 0; j < array[i].EHDDADDKMFI.Length; j++)
 			{
-				data.BEPAMEEBPGI.Add(JCAGLPANMFC(array[i].EHDDADDKMFI[j]));
+				data.BEPAMEEBPGI_SongIdByWeekday.Add(JCAGLPANMFC(array[i].EHDDADDKMFI[j]));
+				/*for(int k = 0; k < data.BEPAMEEBPGI_SongIdByWeekday[data.BEPAMEEBPGI_SongIdByWeekday.Count - 1].Count; k++)
+				{
+					UnityEngine.Debug.LogError(j+" "+data.BEPAMEEBPGI_SongIdByWeekday[data.BEPAMEEBPGI_SongIdByWeekday.Count - 1][k]);
+				}*/
 			}
 			MPCJGPEBCCD.Add(data);
 		}
-		// UMO, enable last one
-		if (MPCJGPEBCCD.Count > 0)
-			MPCJGPEBCCD[MPCJGPEBCCD.Count - 1].PCCFAKEOBIC = Utility.GetTargetUnixTime(2100, 1, 1, 0, 0, 0);
+		// UMO, loop the event. Use only those without bonus and set bonus on fixed days
+		{
+			List<JFFPEKOEINE> usableList = MPCJGPEBCCD.FindAll((JFFPEKOEINE _) =>
+			{
+				return _.AEHCKNNGAKF_BonusMaxCount == 0;
+			});
+			// Special days : 27/12 => 01/03
+			// Start from 1 week before today up to 2 weeks after
+			DateTime t = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
+			DateTime start = t.Date.AddDays(-(int)t.DayOfWeek + 1).AddDays(-7);
+			// Find the index to use. Count the number of weeks since 1/1/24
+			DateTime loopStart = new DateTime(2024, 1, 1);
+			int weekDiff = (start - loopStart).Days / 7;
+			int idx = weekDiff % usableList.Count;
+			//UnityEngine.Debug.LogError(start.ToLongDateString()+" "+usableList.Count+" "+weekDiff+" "+idx);
+			DateTime s1 = start;
+			for(int i = 0; i < 4; i++)
+			{
+                JFFPEKOEINE data = usableList[(idx + i) % usableList.Count];
+				data.KINJOEIAHFK_StartDate = Utility.GetTargetUnixTime(s1.Year, s1.Month, s1.Day, 0, 0, 0);
+				DateTime s1b = s1.AddDays(6);
+				s1 = s1.AddDays(7);
+				data.PCCFAKEOBIC_EndDate = Utility.GetTargetUnixTime(s1b.Year, s1b.Month, s1b.Day, 23, 59, 59);
+				if(i == 1 && ((t.Month == 12 && t.Day >= 27) || (t.Month == 1 && t.Day <= 3)))
+					data.AEHCKNNGAKF_BonusMaxCount = 2;
+                //UnityEngine.Debug.LogError(((idx + i) % usableList.Count)+" "+Utility.GetLocalDateTime(data.KINJOEIAHFK_StartDate).ToShortDateString() + " " + Utility.GetLocalDateTime(data.KINJOEIAHFK_StartDate).ToShortTimeString()+" "+ Utility.GetLocalDateTime(data.PCCFAKEOBIC_EndDate).ToShortDateString() + " " + Utility.GetLocalDateTime(data.PCCFAKEOBIC_EndDate).ToShortTimeString());
+			}
+		}
 		return true;
 	}
 
