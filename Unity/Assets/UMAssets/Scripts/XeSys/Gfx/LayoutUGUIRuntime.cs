@@ -687,6 +687,19 @@ namespace XeSys.Gfx
 				{
 					m_uguiList.Add(new UguiInfo(view, rt as RectTransform, true));
 				}
+				// UMO Translation
+				if(view is ImageView)
+				{
+					TexUVData uvData = (view as ImageView).UVData;
+					if(uvData != null)
+					{
+						RawImageEx imgEx = rt.GetComponent<RawImageEx>();
+						if(imgEx != null)
+						{
+							imgEx.uvRect = LayoutUGUIUtility.MakeUnityUVRect(uvData);
+						}
+					}
+				}
 				bool found = false;
 				for(int j = 0; j < m_ActiveObjLsit.Length; j++)
 				{

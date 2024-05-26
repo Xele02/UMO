@@ -12,6 +12,10 @@ using XeApp.Game;
 using XeApp.Game.Common;
 using XeSys;
 using XeApp.Game.Adv;
+using UnityEngine.UI;
+using XeApp.Core;
+using XeSys.Gfx;
+using System.Configuration;
 
 public static class DatabaseTextConverter
 {
@@ -703,5 +707,188 @@ public static class DatabaseTextConverter
     {
         string prfx = string.Format("shop_{0:D4}_name", shopId);
         return Translate(eBank.shopDb_text, prfx, def);
+    }
+
+    private static int CntTranslating = 0;
+
+    public static bool IsTranslating()
+    {
+        return CntTranslating != 0;
+    }
+
+    public static void TranslateImage(GameObject root, Action callBack = null)
+    {
+        N.a.StartCoroutineWatched(TranslateImages(root, callBack));
+    }
+
+    public static IEnumerator TranslateImages(GameObject root, Action cb = null)
+    {
+        if(string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
+            yield break;
+
+        CntTranslating++;
+
+        Graphic[] imgs = root.GetComponentsInChildren<Graphic>(true);
+
+        // List all materials & textures
+        HashSet<Material> mats = new HashSet<Material>();
+        Dictionary<string, HashSet<Graphic> > imgsByTexName = new Dictionary<string, HashSet<Graphic> >();
+        List<Material> tmpMats = new List<Material>();
+        for(int i = 0; i < imgs.Length; i++)
+        {
+            tmpMats.Clear();
+            tmpMats.Add(imgs[i].material);
+            if(imgs[i] is RawImageEx)
+            {
+                RawImageEx imgsEx = imgs[i] as RawImageEx;
+                tmpMats.Add(imgsEx.MaterialMul);
+                tmpMats.Add(imgsEx.MaterialAdd);
+            }
+            for(int j = 0; j < tmpMats.Count; j++)
+            {
+                if(tmpMats[j] == null || tmpMats[j].mainTexture == null)
+                    continue;
+                mats.Add(tmpMats[j]);
+                if(!imgsByTexName.ContainsKey(tmpMats[j].mainTexture.name))
+                {
+                    imgsByTexName.Add(tmpMats[j].mainTexture.name, new HashSet<Graphic>());
+                }
+                imgsByTexName[tmpMats[j].mainTexture.name].Add(imgs[i]);
+            }
+        }
+
+        // Get all translated infos for each texture
+        Dictionary<string, TexUVList> uvsListByTexName = new Dictionary<string, TexUVList>();
+        Dictionary<string, Texture2D> baseTexByTexname = new Dictionary<string, Texture2D>();
+        Dictionary<string, Texture2D> maskTexByTexname = new Dictionary<string, Texture2D>();
+        HashSet<Texture2D> loadedTex = new HashSet<Texture2D>();
+        foreach(var it in imgsByTexName)
+        {
+            byte[] res = null;
+            string bundleName = "";
+            if(it.Key.EndsWith("cmn_menu_pack_base"))
+            {
+                bundleName = "cmn_menu_pack";
+            }
+            else if(it.Key.EndsWith("ui_home_pack_base"))
+            {
+                bundleName = "ui_home_pack";
+            }
+            if(bundleName != "")
+            {
+                string path = "localizations/"+RuntimeSettings.CurrentSettings.Language+"/"+bundleName+".xab";
+                AssetBundleLoadAllAssetOperationBase op = AssetBundleManager.LoadAllAssetAsync(path);
+                yield return op;
+                if(!op.IsError())
+                {
+                    TextAsset uvData = op.GetAsset<TextAsset>(bundleName + "_uvlist");
+                    if(uvData != null)
+                    {
+                        TexUVList t = new TexUVList();
+                        t.Initialize(uvData.bytes, null);
+                        uvsListByTexName.Add(it.Key, t);
+                    }
+                    Texture2D texBase = op.GetAsset<Texture2D>(bundleName + "_base");
+                    if(texBase != null)
+                    {
+                        baseTexByTexname.Add(it.Key, texBase);
+                    }
+                    Texture2D texMask = op.GetAsset<Texture2D>(bundleName + "_mask");
+                    if(texMask != null)
+                    {
+                        maskTexByTexname.Add(it.Key, texMask);
+                    }
+                    AssetBundleManager.UnloadAssetBundle(path, false);
+                }
+            }
+        }
+
+        // Update all unique mats
+        foreach(var m in mats)
+        {
+            string texName = m.mainTexture.name;
+            if(baseTexByTexname.ContainsKey(texName))
+            {
+                m.mainTexture = baseTexByTexname[texName];
+                if(m.HasProperty("_MaskTex") && m.GetTexture("_MaskTex") != null && maskTexByTexname.ContainsKey(texName))
+                {
+                    m.SetTexture("_MaskTex", maskTexByTexname[texName]);
+                }
+            }
+        }
+
+        // Update sprite
+        foreach(var it in uvsListByTexName)
+        {
+            if(imgsByTexName.ContainsKey(it.Key))
+            {
+                foreach(var g in imgsByTexName[it.Key])
+                {
+                    if(g is Image)
+                    {
+                        Image srcImage = g as Image;
+                        Sprite sp = srcImage.sprite;
+                        if(sp != null)
+                        {
+                            string spriteName = sp.name;
+                            if(uvsListByTexName.ContainsKey(it.Key))
+                            {
+                                Material m = srcImage.material;
+                                Rect r = LayoutUGUIUtility.MakeUnitySpriteTextureRect(m.mainTexture, uvsListByTexName[it.Key].GetUVData(spriteName));
+                                //UnityEngine.Debug.LogError(r);
+                                Sprite newSprite = Sprite.Create(m.mainTexture as Texture2D, r, sp.pivot);
+                                srcImage.sprite = newSprite;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Update rawimage ex texture
+        foreach(var g in imgs)
+        {
+            if(g is RawImageEx)
+            {
+                RawImageEx imgsEx = g as RawImageEx;
+                if(imgsEx.texture != null && baseTexByTexname.ContainsKey(imgsEx.texture.name))
+                    imgsEx.texture = baseTexByTexname[imgsEx.texture.name];
+                if(imgsEx.alphaTexture != null && maskTexByTexname.ContainsKey(imgsEx.texture.name.Replace("_mask", "_base")))
+                    imgsEx.alphaTexture = maskTexByTexname[imgsEx.texture.name.Replace("_mask", "_base")];
+            }
+        }
+
+        if(cb != null)
+            cb();
+            
+        CntTranslating--;
+    }
+
+    public static IEnumerator TranslateUvList(string uvListName, Action<byte[]> cb)
+    {
+        if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
+        {
+            byte[] res = null;
+            string bundleName = "";
+            if(uvListName.EndsWith("cmn_menu_pack_uvlist"))
+            {
+                bundleName = "cmn_menu_pack";
+            }
+            else if(uvListName.EndsWith("ui_home_pack_uvlist"))
+            {
+                bundleName = "ui_home_pack";
+            }
+            if(bundleName != "")
+            {
+                string path = "localizations/"+RuntimeSettings.CurrentSettings.Language+"/"+bundleName+".xab";
+                AssetBundleLoadAllAssetOperationBase op = AssetBundleManager.LoadAllAssetAsync(path);
+                yield return op;
+                TextAsset uvData = op.GetAsset<TextAsset>(bundleName + "_uvlist");
+                res = uvData.bytes;
+                AssetBundleManager.UnloadAssetBundle(path, false);
+            }
+            cb(res);
+        }
+        yield break;
     }
 }

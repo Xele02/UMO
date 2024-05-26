@@ -357,6 +357,8 @@ namespace XeApp.Game.Menu
 				if(m_divaTalk.IsDownLoading())
 					return false;
 			}
+			if(m_subMenu.IsLoading())
+				return false;
 			if(GameManager.Instance.EventBannerTextureCache.IsLoading())
 				return false;
 			return m_isInitIntimacy;

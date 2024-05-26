@@ -81,7 +81,15 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x1EFF4B0 Offset: 0x1EFF4B0 VA: 0x1EFF4B0
-		// public static Rect MakeUnitySpriteTextureRect(Texture tex, TexUVData uvData) { }
+		public static Rect MakeUnitySpriteTextureRect(Texture tex, TexUVData uvData)
+		{
+			Rect r = MakeUnityUVRect(uvData);
+			r.x *= tex.width;
+			r.width *= tex.width;
+			r.y *= tex.height;
+			r.height *= tex.height;
+			return r;
+		}
 
 		// // RVA: 0x1F07000 Offset: 0x1F07000 VA: 0x1F07000
 		// public static bool ApplyTextUGUI(LayoutUGUIRuntime runtime, string viewEXID) { }
