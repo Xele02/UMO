@@ -62,7 +62,7 @@ namespace XeApp.Game.Menu
 			m_productList.AddRange(products);
 			SetupList(m_productList.Count, resetScroll);
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			m_textTitle.text = view.NEMKDKDIIDK;
+			m_textTitle.text = view.NEMKDKDIIDK_ShopName;
 			m_button.Disable = view.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.HJNNKCMLGFL_0 || view.INDDJNMPONH_Type > AODFBGCCBPE.NJMPLEENNPO.BDMFENCIPEB_2_Medal;
 			m_layoutWarning.StartChildrenAnimGoStop("cau_off");
 			if(products.Count < 1)

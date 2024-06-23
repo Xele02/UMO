@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Text;
 using System;
+using System.Linq;
 
 namespace XeSys.Gfx
 {
@@ -121,6 +122,11 @@ namespace XeSys.Gfx
 		{
 			m_serializeDatas.Clear();
 			m_serializeDatas.AddRange(m_UVDataDictionary.Values);
+		}
+
+		public List<string> GetKeys()
+		{
+			return m_UVDataDictionary.Keys.ToList();
 		}
 	}
 }

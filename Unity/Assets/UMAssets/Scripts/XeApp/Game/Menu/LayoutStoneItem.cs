@@ -123,7 +123,7 @@ namespace XeApp.Game.Menu
 				//0x194BA0C
 				return _.name == "txt (TextView)";
 			}).First();
-			t.text = data.KLMPFGOCBHC;
+			t.text = data.KLMPFGOCBHC_Desc;
 			t.horizontalOverflow = HorizontalWrapMode.Wrap;
 			txts.Where((Text _) =>
 			{

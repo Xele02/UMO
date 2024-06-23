@@ -66,25 +66,25 @@ namespace XeApp.Game.Common
 				TextInfo textInfo = new TextInfo();
 				EDOHBJAPLPF_JsonData info = infos[i];
 				textInfo.id = (int)info[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id/*id*/];
-				textInfo.musicName = (string)text[(int)info[AFEHLCGHAEE_Strings.OPFGFINHFCE_name/*name*/]];
+				textInfo.musicName = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.MusicName, i, (string)text[(int)info[AFEHLCGHAEE_Strings.OPFGFINHFCE_name/*name*/]]);
 				if(info.BBAJPINMOEP_Contains("o_n"))
 				{
-					textInfo.officialName = (string)text[(int)info["o_n"]];
+					textInfo.officialName = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.OfficialName, i, (string)text[(int)info["o_n"]]);
 				}
 				else
 				{
 					textInfo.officialName = textInfo.musicName;
 				}
-				textInfo.vocalName = (string)text[(int)info[vn]];
+				textInfo.vocalName = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.VocalName, i, (string)text[(int)info[vn]]);
 				if(info.BBAJPINMOEP_Contains(vnlf))
 				{
-					textInfo.vocalNameLF = (string)text[(int)info[vnlf]];
+					textInfo.vocalNameLF = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.VocalNameLF, i, (string)text[(int)info[vnlf]]);
 				}
 				else
 				{
 					textInfo.vocalNameLF = textInfo.vocalName;
 				}
-				textInfo.description = (string)text[(int)info[AFEHLCGHAEE_Strings.GJDKHDLKONI_dsc/*dsc*/]];
+				textInfo.description = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.Description, i, (string)text[(int)info[AFEHLCGHAEE_Strings.GJDKHDLKONI_dsc/*dsc*/]]);
 				textInfo.buyURL = (string)text[(int)info[buy2]];
 				string str = (string)text[(int)info[ds_a]].ToString();
 				textInfo.dAnmStoreURL = "";
@@ -92,8 +92,8 @@ namespace XeApp.Game.Common
 				{
 					textInfo.dAnmStoreURL = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE[str];
 				}
-				textInfo.storyDesc = (string)text[(int)info[story]];
-				textInfo.storyTitle = (string)text[(int)info[s_title]];
+				textInfo.storyDesc = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.StoryDesc, i, (string)text[(int)info[story]]);
+				textInfo.storyTitle = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.StoryTitle, i, (string)text[(int)info[s_title]]);
 				textInfo.bannerId = (string)text[(int)info[b_id]].ToString();
 				table.Add(textInfo);
 			}

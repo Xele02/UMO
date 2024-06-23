@@ -6,7 +6,7 @@ public class LGDNAJACFHI
 	public int PPFNGGCBJKC_Id; // 0x8
 	public int LHENLPLKGLP_StuffId; // 0xC
 	public string OPFGFINHFCE_Name; // 0x10
-	public string KLMPFGOCBHC; // 0x14
+	public string KLMPFGOCBHC_Desc; // 0x14
 	public long EBEOPONDEKB_OpenedAt; // 0x18
 	public long EMEKFFHCHMH_CloseAt; // 0x20
 	public string PGODOPKCHBD_PlatformProductId; // 0x28
@@ -68,7 +68,7 @@ public class LGDNAJACFHI
 		EAHPLCJMPHD = vcItem.HEOLEHDFLJO;
 		JLGHMCBLENL_IsBeginner = vcItem.HPGNBPIBAOM_IsBeginner;
 		NIIIKPNBLNP = vcItem.AFHPLBPHEGA;
-		KLMPFGOCBHC = vcItem.KLMPFGOCBHC_Desc;
+		KLMPFGOCBHC_Desc = vcItem.KLMPFGOCBHC_Desc;
 		BIOHCFLJDCH_BonusItemId = vcItem.KGOFMDMDFCJ_BonusId;
 		HBHLKLGBKIJ_BonusCount = vcItem.NNIIINKFDBG_BonusCount;
 		EEFLOOBOAGF = vcItem.EILKGEADKGH;

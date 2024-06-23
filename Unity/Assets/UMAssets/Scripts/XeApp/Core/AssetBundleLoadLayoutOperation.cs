@@ -56,6 +56,7 @@ namespace XeApp.Core
             {
                 canvas[i].enabled = false;
             }
+            yield return DatabaseTextConverter.TranslateImages(instance);
             for(int i = 0; i < runtimes.Length; i++)
             {
                 yield return Co.R(CreateLayoutCoroutine(runtimes[i], font, (Layout layout, TexUVListManager uvMan) => {
@@ -108,10 +109,21 @@ namespace XeApp.Core
                     if(uvList == null)
                     {
 						TodoLogger.Log(TodoLogger.AssetBundle, "CreateLayoutCoroutine from bundle " + m_loadedAssetBundle.m_DebugBundleName); // UMO
-                        m_request = m_loadedAssetBundle.m_AssetBundle.LoadAssetAsync<TexUVList>(Path.GetFileName(runtime.UvListPathList[j]));
-                        while(!m_request.isDone)
-                            yield return null;
-                        uvList = m_request.asset as TexUVList;
+                        yield return Co.R(DatabaseTextConverter.TranslateUvList(runtime.UvListPathList[j], (byte[] res) =>
+                        {
+                            if(res != null)
+                            {
+                                uvList = TexUVList.NewInstance();
+                                uvList.Initialize(res, null);
+                            }
+                        }));
+                        if(uvList == null)
+                        {
+                            m_request = m_loadedAssetBundle.m_AssetBundle.LoadAssetAsync<TexUVList>(Path.GetFileName(runtime.UvListPathList[j]));
+                            while(!m_request.isDone)
+                                yield return null;
+                            uvList = m_request.asset as TexUVList;
+                        }
                     }
                     if(uvList == null)
                         TodoLogger.LogError(TodoLogger.AssetBundle, "Failed to load " + Path.GetFileName(runtime.UvListPathList[j]));
@@ -152,10 +164,19 @@ namespace XeApp.Core
                 }
                 for(int j = 0; j < runtime.TexturePathList.Length; j++)
                 {
-                    m_request = m_loadedAssetBundle.m_AssetBundle.LoadAssetAsync<TextAsset>(runtime.UvListPathList[j]);
-                    while(!m_request.isDone)
-                        yield return null;
-                    uvMan.Add((m_request.asset as TextAsset).bytes, null);
+                    byte[] data = null;
+                    yield return Co.R(DatabaseTextConverter.TranslateUvList(runtime.UvListPathList[j], (byte[] res) =>
+                    {
+                        data = res;
+                    }));
+                    if(data == null)
+                    {
+                        m_request = m_loadedAssetBundle.m_AssetBundle.LoadAssetAsync<TextAsset>(runtime.UvListPathList[j]);
+                        while(!m_request.isDone)
+                            yield return null;
+                        data = (m_request.asset as TextAsset).bytes;
+                    }
+                    uvMan.Add(data, null);
                 }
                 layout.SettingTexture(uvMan);
                 if(finish != null)

@@ -9,16 +9,16 @@ public class IPJBAPLFECP_Anketo : DIHHCBACKGG_DbSection
 	{
 		public int PPFNGGCBJKC_Id; // 0x8
 		public int PLALNIIBLOF_Enabled; // 0xC
-		public int EILKGEADKGH; // 0x10
-		public int INDDJNMPONH; // 0x14
+		public int EILKGEADKGH_Idx; // 0x10
+		public int INDDJNMPONH_NotifId; // 0x14
 		public int GJLFANGDGCL_Category; // 0x18
-		public string ADCMNODJBGJ; // 0x1C
-		public string[] BNMCMNPPPCI; // 0x20
+		public string ADCMNODJBGJ_Question; // 0x1C
+		public string[] BNMCMNPPPCI_ChoiceText; // 0x20
 		public int EMNLOGDDOBC; // 0x24
 		public int IICECOLFEEL; // 0x28
-		public int NNDBJGDFEEM; // 0x2C
-		public int DOOGFEGEKLG; // 0x30
-		public int LLNDMKBBNIJ; // 0x34
+		public int NNDBJGDFEEM_MinAnswer; // 0x2C
+		public int DOOGFEGEKLG_MaxAnswer; // 0x30
+		public int LLNDMKBBNIJ_Version; // 0x34
 	}
 
 	public List<MDOMAACPHCN> CDENCMNHNGA { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
@@ -64,16 +64,20 @@ public class IPJBAPLFECP_Anketo : DIHHCBACKGG_DbSection
 			MDOMAACPHCN data = new MDOMAACPHCN();
 			data.PPFNGGCBJKC_Id = array[i].PPFNGGCBJKC;
 			data.PLALNIIBLOF_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
-			data.EILKGEADKGH = array[i].EILKGEADKGH;
-			data.INDDJNMPONH = array[i].GBJFNGCDKPM;
-			data.ADCMNODJBGJ = array[i].ADCMNODJBGJ;
-			data.BNMCMNPPPCI = array[i].BNMCMNPPPCI;
+			data.EILKGEADKGH_Idx = array[i].EILKGEADKGH;
+			data.INDDJNMPONH_NotifId = array[i].GBJFNGCDKPM;
+			data.ADCMNODJBGJ_Question = DatabaseTextConverter.TranslateAnketoQuestion(i, array[i].ADCMNODJBGJ);
+			data.BNMCMNPPPCI_ChoiceText = new string[array[i].BNMCMNPPPCI.Length];
+			for(int j = 0; j < data.BNMCMNPPPCI_ChoiceText.Length; j++)
+			{
+				data.BNMCMNPPPCI_ChoiceText[j] = DatabaseTextConverter.TranslateAnketoChoice(i, j, array[i].BNMCMNPPPCI[j]);
+			}
 			data.GJLFANGDGCL_Category = array[i].AGNHPHEJKMK;
 			data.EMNLOGDDOBC = array[i].EMNLOGDDOBC;
 			data.IICECOLFEEL = array[i].IICECOLFEEL;
-			data.NNDBJGDFEEM = array[i].NNDBJGDFEEM;
-			data.DOOGFEGEKLG = array[i].DOOGFEGEKLG;
-			data.LLNDMKBBNIJ = array[i].LLNDMKBBNIJ;
+			data.NNDBJGDFEEM_MinAnswer = array[i].NNDBJGDFEEM;
+			data.DOOGFEGEKLG_MaxAnswer = array[i].DOOGFEGEKLG;
+			data.LLNDMKBBNIJ_Version = array[i].LLNDMKBBNIJ;
 			CDENCMNHNGA.Add(data);
 		}
 		return true;

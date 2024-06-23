@@ -221,9 +221,9 @@ namespace XeApp.Game.Tutorial
 			position = messData.NDFOAINJPIN_WindowPositionTop != 1 ? TutorialMessageWindow.Position.Bottom : TutorialMessageWindow.Position.Top;
 			m_messageWindow.gameObject.SetActive(true);
 			m_messageWindow.ResetWindow();
-			for(i = 0; i < messData.JONNCMDGMKA.Length; i++)
+			for(i = 0; i < messData.JONNCMDGMKA_Messages.Length; i++)
 			{
-				yield return Co.R(m_messageWindow.ProcMessageCoroutine(messData.KGJHFFNFPOK_CharacterId[i], position, messData.JONNCMDGMKA[i], func));
+				yield return Co.R(m_messageWindow.ProcMessageCoroutine(messData.KGJHFFNFPOK_CharacterId[i], position, messData.JONNCMDGMKA_Messages[i], func));
 			}
 			m_messageWindow.gameObject.SetActive(false);
 			if (MenuScene.Instance != null)

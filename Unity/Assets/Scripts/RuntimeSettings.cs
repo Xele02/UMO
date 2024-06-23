@@ -39,6 +39,9 @@ class RuntimeSettings : ScriptableObject
 				m_currentSettings.UseTouchScreen = UMO_PlayerPrefs.GetInt("UseTouchScreen", 0) == 1;
 				m_currentSettings.RemoveShopLimit = UMO_PlayerPrefs.GetInt("RemoveShopLimit", 0) == 1;
 				m_currentSettings.RemoveCrystalLimit = UMO_PlayerPrefs.GetInt("RemoveCrystalLimit", 0) == 1;
+				m_currentSettings.DumpStringUsed = UMO_PlayerPrefs.GetInt("DumpStringUsed", 0) == 1;
+				m_currentSettings.ShowStringUsed = UMO_PlayerPrefs.GetInt("ShowStringUsed", 0) == 1;
+				m_currentSettings.Language = "";
 
 #if (UNITY_ANDROID && !UNITY_EDITOR) || DEBUG_ANDROID_FILESYSTEM
 				m_currentSettings.DataDirectory = Application.persistentDataPath + "/data/";
@@ -63,6 +66,8 @@ class RuntimeSettings : ScriptableObject
 		UMO_PlayerPrefs.SetInt("UseTouchScreen", m_currentSettings.UseTouchScreen ? 1 : 0);
 		UMO_PlayerPrefs.SetInt("RemoveShopLimit", m_currentSettings.RemoveShopLimit ? 1 : 0);
 		UMO_PlayerPrefs.SetInt("RemoveCrystalLimit", m_currentSettings.RemoveCrystalLimit ? 1 : 0);
+		UMO_PlayerPrefs.SetInt("DumpStringUsed", m_currentSettings.DumpStringUsed ? 1 : 0);
+		UMO_PlayerPrefs.SetInt("ShowStringUsed", m_currentSettings.ShowStringUsed ? 1 : 0);
 		UMO_PlayerPrefs.Save();
 	}
 
@@ -175,6 +180,9 @@ class RuntimeSettings : ScriptableObject
 	public bool UseTouchScreen { get; set; }
 	public bool RemoveShopLimit { get; set; }
 	public bool RemoveCrystalLimit { get; set; }
+	public bool DumpStringUsed { get; set; }
+	public bool ShowStringUsed { get; set; }
+	public string Language { get; set; }
 }
 
 #if UNITY_EDITOR

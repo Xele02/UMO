@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using UnityEngine.Events;
 using XeApp.Game.Common;
+using UnityEngine.UI;
 
 namespace XeApp.Game.Menu
 {
@@ -48,6 +49,17 @@ namespace XeApp.Game.Menu
 				//0xC4943C
 				m_onSelectStyleEvent.Invoke(index);
 			});
+
+			m_AttrTypeGroup.transform.Find("Title/Text").GetComponent<Text>().text = JpStringLiterals.UMO_PlayAttr;
+			m_AttrTypeGroup.transform.Find("AttrAllToggle/Label").GetComponent<Text>().text = JpStringLiterals.UMO_All;
+			m_AttrTypeGroup.transform.Find("Attr1Toggle/Label").GetComponent<Text>().text = JpStringLiterals.UMO_Attr1;
+			m_AttrTypeGroup.transform.Find("Attr2Toggle/Label").GetComponent<Text>().text = JpStringLiterals.UMO_Attr2;
+			m_AttrTypeGroup.transform.Find("Attr3Toggle/Label").GetComponent<Text>().text = JpStringLiterals.UMO_Attr3;
+
+			m_PlayStyleGroup.transform.Find("Title/Text").GetComponent<Text>().text = JpStringLiterals.UMO_PlayStyle;
+			m_PlayStyleGroup.transform.Find("ScoreToggle/Label").GetComponent<Text>().text = JpStringLiterals.UMO_PlayStyleScore;
+			m_PlayStyleGroup.transform.Find("LifeToggle/Label").GetComponent<Text>().text = JpStringLiterals.UMO_PlayStyleLife;
+			m_PlayStyleGroup.transform.Find("ComboToggle/Label").GetComponent<Text>().text = JpStringLiterals.UMO_PlayStyleCombo;
 		}
 	}
 }

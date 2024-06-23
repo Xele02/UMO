@@ -28,7 +28,7 @@ namespace XeSys.Gfx
 		// public onTouchEnd onTouchEndDelegete { get; set; } 0x204940C 0x2049414
 		public string ImageName { get { return m_ImageName; } set { m_ImageName = value; } } //0x203F420 0x204941C
 		public TexUVList Tex { get { return m_Tex; } set { m_Tex = value; } } //0x2048BBC 0x2049424
-		// public TexUVData UVData { get; set; } 0x204942C 0x2049434
+		public TexUVData UVData { get { return m_UVData; } set { m_UVData = value; } } //0x204942C 0x2049434
 		public bool IsRender { get { return m_IsRender; } set { m_IsRender = value; } } //0x204943C 0x2049444
 		// public override bool IsVisible { get; } 0x204944C 
 		public bool IsFlipX { get { return m_IsFlipX; } set { m_IsFlipX = value; } } //0x2049474 0x204947C

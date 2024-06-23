@@ -44,7 +44,7 @@ public class BOKMNHAFJHF_Sns : DIHHCBACKGG_DbSection
 		public int HEHKNMCDBJJ_ColorId; // 0x10
 		public int CPKMLLNADLJ_Serie; // 0x14
 		public string OPFGFINHFCE_Name; // 0x18
-		public string HAPAFECPFEK; // 0x1C
+		public string HAPAFECPFEK_AtName; // 0x1C
 		public sbyte PPEGAKEIEGM_Enabled; // 0x20
 
 		//// RVA: 0x19CF01C Offset: 0x19CF01C VA: 0x19CF01C
@@ -96,7 +96,7 @@ public class BOKMNHAFJHF_Sns : DIHHCBACKGG_DbSection
 		{
 			JFMDDEBLCAA data = new JFMDDEBLCAA();
 			data.OPFGFINHFCE_Name = "";
-			data.HAPAFECPFEK = "";
+			data.HAPAFECPFEK_AtName = "";
 			data.IDELKEKDIFD = i + 1;
 			data.EAHPLCJMPHD = 1;
 			data.HEHKNMCDBJJ_ColorId = 1;
@@ -163,7 +163,7 @@ public class BOKMNHAFJHF_Sns : DIHHCBACKGG_DbSection
 			LEBAGJNJJNG_Room data = new LEBAGJNJJNG_Room();
 			data.MALFHCHNEFN_Room = (short)array[i].OKECOPNBAGP;
 			data.EKANGPODCEP = array[i].JMMEGKGCIIL;
-			data.OPFGFINHFCE_Name = array[i].OPFGFINHFCE;
+			data.OPFGFINHFCE_Name = DatabaseTextConverter.TranslateSnsRoomName(i, array[i].OPFGFINHFCE);
 			data.PPEGAKEIEGM_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 			data.EEECOMPDNEJ = array[i].GBJFNGCDKPM;
 			data.PKOKDPHHLCG = (int)array[i].PFJJFCPPNIN;
@@ -184,8 +184,8 @@ public class BOKMNHAFJHF_Sns : DIHHCBACKGG_DbSection
 			for (int i = 0; i < array.Length; i++)
 			{
 				JFMDDEBLCAA data = KHCACDIKJLG_Characters[i];
-				data.OPFGFINHFCE_Name = array[i].OPFGFINHFCE;
-				data.HAPAFECPFEK = array[i].ONOPACPKFPK;
+				data.OPFGFINHFCE_Name = DatabaseTextConverter.TranslateSnsCharaName(i, array[i].OPFGFINHFCE);
+				data.HAPAFECPFEK_AtName = array[i].ONOPACPKFPK;
 				data.EAHPLCJMPHD = (int)array[i].HANMDEBPBHG;
 				data.HEHKNMCDBJJ_ColorId = array[i].DJJNOCDIIAE;
 				data.CPKMLLNADLJ_Serie = array[i].CPKMLLNADLJ;

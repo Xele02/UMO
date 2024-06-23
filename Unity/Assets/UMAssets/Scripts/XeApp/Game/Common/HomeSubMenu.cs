@@ -29,6 +29,7 @@ namespace XeApp.Game.Common
 			{
 				m_buttons[i].Init();
 			}
+			DatabaseTextConverter.TranslateImage(gameObject);
 		}
 
 		//// RVA: 0xEB1B5C Offset: 0xEB1B5C VA: 0xEB1B5C
@@ -115,6 +116,11 @@ namespace XeApp.Game.Common
 		public bool IsPlaying()
 		{
 			return m_inOutAnime.IsPlaying();
+		}
+
+		public bool IsLoading()
+		{
+			return DatabaseTextConverter.IsTranslating();
 		}
 	}
 }

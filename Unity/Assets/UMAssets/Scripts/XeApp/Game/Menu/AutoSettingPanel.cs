@@ -75,6 +75,22 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_texts[0].text = bk.GetMessageByLabel("unit_auto_popup_text_00");
 			m_texts[1].text = bk.GetMessageByLabel("unit_auto_popup_text_01");
+
+			m_attributeButtonGroup.transform.Find("Title/Text").GetComponent<Text>().text = JpStringLiterals.UMO_PlayAttr2;
+			m_attributeButtonGroup.transform.Find("AttrAllToggle/Label").GetComponent<Text>().text = JpStringLiterals.UMO_All;
+			m_attributeButtonGroup.transform.Find("Attr1Toggle/Label").GetComponent<Text>().text = JpStringLiterals.UMO_Attr1;
+			m_attributeButtonGroup.transform.Find("Attr2Toggle/Label").GetComponent<Text>().text = JpStringLiterals.UMO_Attr2;
+			m_attributeButtonGroup.transform.Find("Attr3Toggle/Label").GetComponent<Text>().text = JpStringLiterals.UMO_Attr3;
+
+			m_statusButtonGroup.transform.Find("Title/Text").GetComponent<Text>().text = JpStringLiterals.UMO_PlayStatus;
+			m_statusButtonGroup.transform.Find("TotalToggle/Label").GetComponent<Text>().text = JpStringLiterals.UMO_Total;
+			m_statusButtonGroup.transform.Find("SoulToggle/Label").GetComponent<Text>().text = JpStringLiterals.StringLiteral_11063;
+			m_statusButtonGroup.transform.Find("VoiceToggle/Label").GetComponent<Text>().text = JpStringLiterals.StringLiteral_11064;
+			m_statusButtonGroup.transform.Find("CharmToggle/Label").GetComponent<Text>().text = JpStringLiterals.StringLiteral_11065;
+			m_statusButtonGroup.transform.Find("LifeToggle/Label").GetComponent<Text>().text = JpStringLiterals.StringLiteral_11062;
+			m_statusButtonGroup.transform.Find("SupportToggle/Label").GetComponent<Text>().text = JpStringLiterals.StringLiteral_11069;
+			m_statusButtonGroup.transform.Find("FoldToggle/Label").GetComponent<Text>().text = JpStringLiterals.UMO_Fold;
+			m_statusButtonGroup.transform.Find("LuckToggle/Label").GetComponent<Text>().text = JpStringLiterals.UMO_Luck;
 		}
 	}
 }

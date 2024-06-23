@@ -9,7 +9,7 @@ namespace XeApp.Game
 		private static StringBuilder strBuilder = new StringBuilder(256); // 0x0
 
 		// RVA: 0x1570028 Offset: 0x1570028 VA: 0x1570028
-		public static bool SetTextRectangleMessage(Text textComponent, string message, int lineCount = 1, string Censoringtext = JpStringLiterals.StringLiteral_12038)
+		public static bool SetTextRectangleMessage(Text textComponent, string message, int lineCount/* = 1*/, string Censoringtext/* = JpStringLiterals.StringLiteral_12038*/)
 		{
 			strBuilder.Clear();
 			string str = message;

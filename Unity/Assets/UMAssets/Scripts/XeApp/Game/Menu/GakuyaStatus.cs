@@ -48,6 +48,18 @@ namespace XeApp.Game.Menu
 				if (OnClickDivaRankingButtonCallback != null)
 					OnClickDivaRankingButtonCallback();
 			});
+
+			m_textDivaLevel.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_DivaLevel;
+			m_textIntimacyLevel.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_IntimacyLevel;
+			m_textCostumeCount.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_CostumeCount;
+			m_textTotal.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_Total;
+			m_textDivaStatus.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_DivaStatus;
+			m_textCostumeStatus.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_CostumeStatus;
+			m_textSoulTotalStatus.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_SoulTotal;
+			m_textVoiceTotalStatus.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_VoiceTotal;
+			m_textCharmTotalStatus.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_CharmTotal;
+			m_textDivaRanking.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_DivaRanking;
+			m_buttonDivaRanking.transform.Find("Top/Text (TMP)").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_DivaRankingBtn;
 		}
 
 		// RVA: 0xB7D0CC Offset: 0xB7D0CC VA: 0xB7D0CC

@@ -54,6 +54,7 @@ namespace XeApp.Game.Menu
 				//0x1B4F514
 				Leave();
 			});
+			m_textNext.text = JpStringLiterals.UMO_Next;
 		}
 
 		// RVA: 0x1B4DEC0 Offset: 0x1B4DEC0 VA: 0x1B4DEC0

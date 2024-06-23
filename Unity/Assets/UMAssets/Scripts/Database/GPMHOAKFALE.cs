@@ -14,7 +14,7 @@ public class GPMHOAKFALE_Adventure : DIHHCBACKGG_DbSection
 		public int INAKHLKLFOK; // 0x14
 
 		public int BPNKGDGBBFG { get { return AOGEMIIMFLD  ^ FBGGEFFJJHB; } set { AOGEMIIMFLD = value ^ FBGGEFFJJHB; } } //0x1E5F810 OPOKKOIDCLG 0x1E5F6B8 CKNHCODBIAG
-		public int KKPPFAHFOJI { get { return INAKHLKLFOK ^ FBGGEFFJJHB; } set { INAKHLKLFOK = value ^ FBGGEFFJJHB; } } //0x1E5F820 JHDAICCKIOG 0x1E5F6D8 MCCPIGOELKB
+		public int KKPPFAHFOJI_FileId { get { return INAKHLKLFOK ^ FBGGEFFJJHB; } set { INAKHLKLFOK = value ^ FBGGEFFJJHB; } } //0x1E5F820 JHDAICCKIOG 0x1E5F6D8 MCCPIGOELKB
 		public int PPEGAKEIEGM_Enabled { get { return OIFAFKDMEEJ_EnabledCrypted ^ FBGGEFFJJHB; } set { OIFAFKDMEEJ_EnabledCrypted = value ^ FBGGEFFJJHB; } } //0x1E5F830 KPOEEPIMMJP 0x1E5F6C8 NCIEAFEDPBH
 
 		// RVA: 0x1E5F7EC Offset: 0x1E5F7EC VA: 0x1E5F7EC
@@ -73,7 +73,7 @@ public class GPMHOAKFALE_Adventure : DIHHCBACKGG_DbSection
 			data.FBGGEFFJJHB = k;
 			data.BPNKGDGBBFG = array[i].PPFNGGCBJKC;
 			data.PPEGAKEIEGM_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
-			data.KKPPFAHFOJI = array[i].CEHGGKDLAFA;
+			data.KKPPFAHFOJI_FileId = array[i].CEHGGKDLAFA;
 			CDENCMNHNGA.Add(data);
 			k *= 0x8d;
 		}

@@ -357,6 +357,8 @@ namespace XeApp.Game.Menu
 				if(m_divaTalk.IsDownLoading())
 					return false;
 			}
+			if(m_subMenu.IsLoading())
+				return false;
 			if(GameManager.Instance.EventBannerTextureCache.IsLoading())
 				return false;
 			return m_isInitIntimacy;
@@ -1125,7 +1127,7 @@ namespace XeApp.Game.Menu
 			//LAB_009789d0
 			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA(a1);
 			ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(a1, OAGBCBBHMPF.DKAMMIHBINF.IFEDIOFCOBC_7);
-			Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI);
+			Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
 			MenuScene.Instance.GotoAdventure();
 			MenuScene.Instance.InputDisable();
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
@@ -1180,7 +1182,7 @@ namespace XeApp.Game.Menu
 						}
 						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA(id);
 						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(id, OAGBCBBHMPF.DKAMMIHBINF.IDINJDEBPKP_6);
-						Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI);
+						Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
 						MenuScene.Instance.GotoAdventure();
 						MenuScene.Instance.InputDisable();
 						return;
@@ -1382,7 +1384,7 @@ namespace XeApp.Game.Menu
 				Database.Instance.advResult.Setup("Menu", TransitionUniqueId.HOME);
 				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA(GetRareBreakAdvId());
 				ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(GetRareBreakAdvId(), OAGBCBBHMPF.DKAMMIHBINF.PGNFDEIHHMD/*9*/);
-				Database.Instance.advSetup.Setup(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(GetRareBreakAdvId()).KKPPFAHFOJI);
+				Database.Instance.advSetup.Setup(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(GetRareBreakAdvId()).KKPPFAHFOJI_FileId);
 				MenuScene.Instance.GotoAdventure(true);
 				m_isAbortIntro = true;
 				yield break;
@@ -1396,7 +1398,7 @@ namespace XeApp.Game.Menu
 				Database.Instance.advResult.Setup("Menu", TransitionUniqueId.HOME);
 				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA(m_eventAdvId);
 				ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(m_eventAdvId, OAGBCBBHMPF.DKAMMIHBINF.PGNFDEIHHMD/*9*/);
-				Database.Instance.advSetup.Setup(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(m_eventAdvId).KKPPFAHFOJI);
+				Database.Instance.advSetup.Setup(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(m_eventAdvId).KKPPFAHFOJI_FileId);
 				MenuScene.Instance.GotoAdventure(true);
 				m_isAbortIntro = true;
 				yield break;
@@ -1848,7 +1850,7 @@ namespace XeApp.Game.Menu
 				{
 					Database.Instance.advResult.Setup("Menu", TransitionUniqueId.DECO, new AdvSetupParam());
 					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA(d);
-					Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI);
+					Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
 					MenuScene.Instance.GotoAdventure(true);
 					ILCCJNDFFOB.HHCJCDFCLOB.CLGHLKLHEAK(JpStringLiterals.StringLiteral_16417, 0);
 					return;

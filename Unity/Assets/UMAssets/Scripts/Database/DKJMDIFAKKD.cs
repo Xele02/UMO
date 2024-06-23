@@ -124,7 +124,7 @@ public class DKJMDIFAKKD_VcItem : DIHHCBACKGG_DbSection
 			{
 				EBGPAPPHBAH data = new EBGPAPPHBAH();
 				data.PPFNGGCBJKC_Id = array[i].PPFNGGCBJKC;
-				data.OPFGFINHFCE_Name = array[i].OPFGFINHFCE;
+				data.OPFGFINHFCE_Name = DatabaseTextConverter.TranslateVcItemName(i, array[i].OPFGFINHFCE);
 				data.CPGFOBNKKBF_Currency = array[i].CPGFOBNKKBF;
 				data.GLHKICCPGKJ_PlatformProductIds = array[i].PDHGIGPAEBG.Split(new char[1] { ',' });
 				data.HMFFHLPNMPH_Count = array[i].BFINGCJHOHI;
@@ -134,7 +134,7 @@ public class DKJMDIFAKKD_VcItem : DIHHCBACKGG_DbSection
 				data.HPGNBPIBAOM_IsBeginner = array[i].HPGNBPIBAOM != 0;
 				data.AFHPLBPHEGA = array[i].AFHPLBPHEGA != 0;
 				data.HEOLEHDFLJO = array[i].HEOLEHDFLJO;
-				data.KLMPFGOCBHC_Desc = array[i].KLMPFGOCBHC;
+				data.KLMPFGOCBHC_Desc = DatabaseTextConverter.TranslateVcItemDesc(i, array[i].KLMPFGOCBHC);
 				data.KGOFMDMDFCJ_BonusId = array[i].KGOFMDMDFCJ;
 				data.NNIIINKFDBG_BonusCount = array[i].NNIIINKFDBG;
 				data.IHCLFMKAJND = array[i].IHCLFMKAJND;
