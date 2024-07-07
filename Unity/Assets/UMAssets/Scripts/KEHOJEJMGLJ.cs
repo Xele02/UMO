@@ -487,7 +487,7 @@ public class KEHOJEJMGLJ
 							//To 7
 							//7
 							PMDNNKAPIKJ.FBANBDCOEJL();
-							if(PMDNNKAPIKJ.CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.FEJIMBDPMKI_2/*2*/)
+							if(PMDNNKAPIKJ.CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.FEJIMBDPMKI_2_Success/*2*/)
 							{
 								OEPPEGHGNNO(3, 100);
 								PMDNNKAPIKJ.Dispose();
@@ -520,7 +520,7 @@ public class KEHOJEJMGLJ
 								break;
 							}
 							//L731
-							if(PMDNNKAPIKJ.CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LPLEIJIFOKN_Error/*4*/)
+							if(PMDNNKAPIKJ.CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LPLEIJIFOKN_4_AllError/*4*/)
 							{
 								// private KEHOJEJMGLJ.<>c__DisplayClass75_2 PHPPCOBECCA; // 0x24
 									// public int APGOAMNGFFF; // 0x8
@@ -535,51 +535,64 @@ public class KEHOJEJMGLJ
 								int avaiable = StorageSupport.GetAvailableStorageSizeMB();
 								if(avaiable > -1 && avaiable < 50)
 									errorStr = "storage";
-								MAIHLKPEHJN(errorStr, () => {
-									//0xE8D91C
-									APGOAMNGFFF = 1;
-								}, () => {
-									//0xE8D928
-									APGOAMNGFFF = -1;
-								});
-								//goto LAB_00e8dffc;
-								// 8
-								while(APGOAMNGFFF == 0)
-									yield return null;
-								if(APGOAMNGFFF == 1)
+#if UNITY_ANDROID || DEBUG_ANDROID_FILESYSTEM
+								if(errorStr == "storage")
 								{
-									PMDNNKAPIKJ.PBIMGBKLDPP();
-									//goto LAB_00e8e088;
-									//9
-									while(PMDNNKAPIKJ.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_None)
-									{
-										PMDNNKAPIKJ.FBANBDCOEJL();
+#endif
+									MAIHLKPEHJN(errorStr, () => {
+										//0xE8D91C
+										APGOAMNGFFF = 1;
+									}, () => {
+										//0xE8D928
+										APGOAMNGFFF = -1;
+									});
+									//goto LAB_00e8dffc;
+									// 8
+									while(APGOAMNGFFF == 0)
 										yield return null;
+									if(APGOAMNGFFF != 1)
+									{
+										// LAB_00e8f30c;
+										PMDNNKAPIKJ.Dispose();
+										PMDNNKAPIKJ = null;
+										if(FGGJNGCAFGK != null)
+											FGGJNGCAFGK();
+										//LAB_00e8f334
+										FBGNDKKDOIE = null;
+										TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error EOFJPNPFGDM_Coroutine_Install");
+										yield break;
 									}
-									//goto LAB_00e8f360;
-									PMDNNKAPIKJ.LAOEGNLOJHC();
-									continue;
+#if UNITY_ANDROID || DEBUG_ANDROID_FILESYSTEM
 								}
-								// LAB_00e8f30c;
-								PMDNNKAPIKJ.Dispose();
-								PMDNNKAPIKJ = null;
-								if(FGGJNGCAFGK != null)
-									FGGJNGCAFGK();
-								//LAB_00e8f334
-								FBGNDKKDOIE = null;
-								TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error EOFJPNPFGDM_Coroutine_Install");
-								yield break;
+								else
+								{
+									yield return Co.R(FileSystemProxy.WaitServerInfo("Missing files.", false, true, (PopupButton.ButtonLabel btn) =>
+									{
+									}));
+								}
+#endif
+								PMDNNKAPIKJ.PBIMGBKLDPP();
+								//goto LAB_00e8e088;
+								//9
+								while(PMDNNKAPIKJ.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_0_None)
+								{
+									PMDNNKAPIKJ.FBANBDCOEJL();
+									yield return null;
+								}
+								//goto LAB_00e8f360;
+								PMDNNKAPIKJ.LAOEGNLOJHC();
+								continue;
 							}
 							// L.780
 							OEPPEGHGNNO(3, PMDNNKAPIKJ.HCAJCKCOCHC());
 							BDGGNOAIIFK(PMDNNKAPIKJ.HCAJCKCOCHC());
-							if(PMDNNKAPIKJ.MNFGKBAEFFL() || PMDNNKAPIKJ.KAMPHNKAHAB_IsDiskFull)
+							if(PMDNNKAPIKJ.MNFGKBAEFFL_IsTimeout() || PMDNNKAPIKJ.KAMPHNKAHAB_IsDiskFull)
 							{
 								//LAB_00e8f064:
 								PMDNNKAPIKJ.PBIMGBKLDPP();
 								//goto LAB_00e8f0a4;
 								//LAB_00e8f0a4:
-								while(PMDNNKAPIKJ.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_None/*0*/)
+								while(PMDNNKAPIKJ.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_0_None/*0*/)
 								{
 									PMDNNKAPIKJ.FBANBDCOEJL();
 									yield return null;
@@ -593,32 +606,45 @@ public class KEHOJEJMGLJ
 								int avaiable = StorageSupport.GetAvailableStorageSizeMB();
 								if(avaiable > -1 && avaiable < 50)
 									errorStr = "storage";
-								MAIHLKPEHJN(errorStr, () => {
-									//0xE8D93C
-									APGOAMNGFFF = 1;
-								}, () => {
-									//0xE8D948
-									APGOAMNGFFF = -1;
-								});
-								//goto LAB_00e8f260;
-								//0xb
-								while(APGOAMNGFFF == 0)
-									yield return null;
-								if(APGOAMNGFFF != 1)
+#if UNITY_ANDROID || DEBUG_ANDROID_FILESYSTEM
+								if(errorStr == "storage")
 								{
-									//LAB_00e8f30c:
-									PMDNNKAPIKJ.Dispose();
-									PMDNNKAPIKJ = null;
-									if(FGGJNGCAFGK != null)
-										FGGJNGCAFGK();
-									//LAB_00e8f334
-									FBGNDKKDOIE = null;
-									TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error EOFJPNPFGDM_Coroutine_Install");
-									yield break;
+#endif
+									MAIHLKPEHJN(errorStr, () => {
+										//0xE8D93C
+										APGOAMNGFFF = 1;
+									}, () => {
+										//0xE8D948
+										APGOAMNGFFF = -1;
+									});
+									//goto LAB_00e8f260;
+									//0xb
+									while(APGOAMNGFFF == 0)
+										yield return null;
+									if(APGOAMNGFFF != 1)
+									{
+										//LAB_00e8f30c:
+										PMDNNKAPIKJ.Dispose();
+										PMDNNKAPIKJ = null;
+										if(FGGJNGCAFGK != null)
+											FGGJNGCAFGK();
+										//LAB_00e8f334
+										FBGNDKKDOIE = null;
+										TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error EOFJPNPFGDM_Coroutine_Install");
+										yield break;
+									}
+#if UNITY_ANDROID || DEBUG_ANDROID_FILESYSTEM
 								}
+								else
+								{
+									yield return Co.R(FileSystemProxy.WaitServerInfo("Missing files.", false, true, (PopupButton.ButtonLabel btn) =>
+									{
+									}));
+								}
+#endif
 								PMDNNKAPIKJ.PBIMGBKLDPP();
 								//LAB_00e8f2d0:
-								while(PMDNNKAPIKJ.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_None/*0*/)
+								while(PMDNNKAPIKJ.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_0_None/*0*/)
 								{
 									PMDNNKAPIKJ.FBANBDCOEJL();
 									//LAB_00e8f2fc:

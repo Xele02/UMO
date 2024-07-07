@@ -99,9 +99,17 @@ namespace CriWare
 #else
 			url = FileSystemProxy.ConvertURL(url);
             UnityEngine.Debug.Log("Copy "+url+" "+dstPath);
-            www = new UnityEngine.WWW(url);
             fileSavePath = dstPath;
-            status.status = Status.Busy;
+            try
+            {
+                www = new UnityEngine.WWW(url);
+                status.status = Status.Busy;
+            }
+            catch(Exception e)
+            {
+                UnityEngine.Debug.LogError(e);
+                status.status = Status.Error;
+            }
 #endif
         }
 

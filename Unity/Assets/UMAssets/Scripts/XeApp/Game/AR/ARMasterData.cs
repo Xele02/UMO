@@ -209,6 +209,7 @@ namespace XeApp.Game.AR
 			{
 				Directory.CreateDirectory(dir);
 			}
+			byte[] dataBytes = null;
 			while(true)
 			{
 				if(File.Exists(dest))
@@ -228,71 +229,70 @@ namespace XeApp.Game.AR
 				}));
 				if(retry)
 					continue;
-				else
+#endif
+				string src = FileSystemProxy.ConvertURL(req.NFEAMMJIMPG.GLMGHMCOMEC_BaseUrl + found.MFBMBPJAADA_FileName);
+				TodoLogger.Log(TodoLogger.Filesystem, "Dld from " + src+" to "+dest);
+
+				int retryCount = 0;
+				bool loop = true;
+				while(loop)
+				{
+					WWW www = new WWW(src);
+					float endTime = Time.realtimeSinceStartup + timeoutTime;
+					//LAB_00bbba10:
+					while(!www.isDone)
+					{
+						if(Time.realtimeSinceStartup < endTime)
+						{
+							yield return null;
+						}
+						else
+						{
+							break;
+						}
+					}
+					if(www.isDone)
+					{
+						if(www.error == null)
+						{
+							dataBytes = www.bytes;
+							break;
+						}
+					}
+					retryCount = retryCount + 1;
+#if UNITY_ANDROID || DEBUG_ANDROID_FILESYSTEM
 					break;
+#else
+					if(retryCount > 1)
+					{
+						if(onError != null)
+						{
+							onError();
+						}
+						www = null;
+						TodoLogger.LogError(TodoLogger.Coroutine, "Exit  Error Coroutine_Download");
+						yield break;
+					}
+#endif
+				}
+				if(dataBytes != null)
+				{
+					bool fin = false;
+					am.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
+						//0xBBB3A4
+						TodoLogger.Log(TodoLogger.Filesystem, "Write file " + dest);
+						File.WriteAllBytes(dest, dataBytes);
+						fin = true;
+					});
+					while(!fin)
+						yield return null;
+				}
+				src = null;
+#if UNITY_ANDROID || DEBUG_ANDROID_FILESYSTEM
 #else
 				break;
 #endif
 			}
-			string src = FileSystemProxy.ConvertURL(req.NFEAMMJIMPG.GLMGHMCOMEC_BaseUrl + found.MFBMBPJAADA_FileName);
-			TodoLogger.Log(TodoLogger.Filesystem, "Dld from " + src+" to "+dest);
-
-			byte[] dataBytes = null;
-			int retryCount = 0;
-			bool loop = true;
-			while(loop)
-			{
-				WWW www = new WWW(src);
-				float endTime = Time.realtimeSinceStartup + timeoutTime;
-				//LAB_00bbba10:
-				while(!www.isDone)
-				{
-					if(Time.realtimeSinceStartup < endTime)
-					{
-						yield return null;
-					}
-					else
-					{
-						break;
-					}
-				}
-				if(www.isDone)
-				{
-					if(www.error != null)
-					{
-						if(onError != null)
-							onError();
-    					TodoLogger.LogError(TodoLogger.Coroutine, "Exit  Error Coroutine_Download");
-						yield break;
-					}
-					dataBytes = www.bytes;
-					break;
-				}
-				retryCount = retryCount + 1;
-				if(retryCount > 1)
-				{
-					if(onError != null)
-					{
-						onError();
-					}
-					www = null;
-    				TodoLogger.LogError(TodoLogger.Coroutine, "Exit  Error Coroutine_Download");
-					yield break;
-				}
-			}
-			if(dataBytes != null)
-			{
-				bool fin = false;
-				am.BNJPAKLNOPA_WorkerThreadQueue.Add(() => {
-					//0xBBB3A4
-					TodoLogger.Log(TodoLogger.Filesystem, "Write file " + dest);
-					File.WriteAllBytes(dest, dataBytes);
-					fin = true;
-				});
-				while(!fin)
-					yield return null;
-			}
-			src = null;
 		}
 
 		// // RVA: 0xBBAA6C Offset: 0xBBAA6C VA: 0xBBAA6C

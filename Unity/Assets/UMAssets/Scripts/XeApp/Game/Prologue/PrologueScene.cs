@@ -86,7 +86,14 @@ namespace XeApp.Game.Prologue
 				yield return null;
 			BasicTutorialManager.Initialize();
 			GameManager.Instance.IsTutorial = true;
-			if (KDLPEDBKMID.HHCJCDFCLOB.HFMOAJDHDHJ(38))
+			/*if (KDLPEDBKMID.HHCJCDFCLOB.HFMOAJDHDHJ(38))
+			{
+				while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+					yield return null;
+			}*/
+			bool needDld = false;
+			yield return Co.R(KDLPEDBKMID.HHCJCDFCLOB.HFMOAJDHDHJ_Coroutine(38, (bool r) => { needDld = r; }));
+			if(needDld)
 			{
 				while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
 					yield return null;
