@@ -567,6 +567,7 @@ public class KDLPEDBKMID
 #else
 		bool res = HFMOAJDHDHJ(GHBPLHBNMBK);
 		cb(res);
+		yield break;
 #endif
 	}
 
