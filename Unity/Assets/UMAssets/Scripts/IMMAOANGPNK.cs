@@ -105,7 +105,7 @@ public class IMMAOANGPNK
 			yield break;
 		}
 
-		yield return DatabaseTextConverter.LoadAdditionalLanguageBank();
+		yield return Co.R(DatabaseTextConverter.LoadAdditionalLanguageBank());
 
 		string str = BBGDKLLEPIB.OGCDNCDMLCA_MxDir; // mx install dir
 		if(!string.IsNullOrEmpty(str))

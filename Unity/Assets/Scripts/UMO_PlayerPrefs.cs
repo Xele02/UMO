@@ -5,6 +5,7 @@ using UnityEngine;
 public static class UMO_PlayerPrefs
 {
     static Dictionary<string, int> intValues = new Dictionary<string, int>();
+    static Dictionary<string, string> stringValues = new Dictionary<string, string>();
     static string path = Application.persistentDataPath + "/pref.json";
     static bool isLoaded = false;
     static int version = 1;
@@ -15,6 +16,13 @@ public static class UMO_PlayerPrefs
             intValues[key] = value;
         else
             intValues.Add(key, value);
+    }
+    public static void SetString(string key, string value)
+    {
+        if(stringValues.ContainsKey(key))
+            stringValues[key] = value;
+        else
+            stringValues.Add(key, value);
     }
 
     public static void CheckLoad()
@@ -34,6 +42,14 @@ public static class UMO_PlayerPrefs
                 intValues.Add((string)b[i]["k"], (int)b[i]["v"]);
             }
         }
+        if(data.BBAJPINMOEP_Contains("strings"))
+        {
+            EDOHBJAPLPF_JsonData b = data["strings"];
+            for(int i = 0; i < b.HNBFOAJIIAL_Count; i++)
+            {
+                stringValues.Add((string)b[i]["k"], (string)b[i]["v"]);
+            }
+        }
         if(GetInt("version", 0) < 1)
         {
             SetInt("forceWideScreen", 1);
@@ -45,6 +61,13 @@ public static class UMO_PlayerPrefs
         CheckLoad();
         if(intValues.ContainsKey(key))
             return intValues[key];
+        return defaultValue;
+    }
+    public static string GetString(string key, string defaultValue)
+    {
+        CheckLoad();
+        if(stringValues.ContainsKey(key))
+            return stringValues[key];
         return defaultValue;
     }
     public static void Save()
@@ -59,6 +82,15 @@ public static class UMO_PlayerPrefs
             d["k"] = k.Key;
             d["v"] = k.Value;
             data["ints"].Add(d);
+        }
+        data["strings"] = new EDOHBJAPLPF_JsonData();
+        data["strings"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+        foreach(var k in stringValues)
+        {
+            EDOHBJAPLPF_JsonData d = new EDOHBJAPLPF_JsonData();
+            d["k"] = k.Key;
+            d["v"] = k.Value;
+            data["strings"].Add(d);
         }
 
         KIJECNFNNDB_JsonWriter writer = new KIJECNFNNDB_JsonWriter();

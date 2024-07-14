@@ -135,6 +135,13 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         {
             RuntimeSettings.CurrentSettings.ShowStringUsed = b;
         });
+        AddToggleButton(ref y, "Debug : Use local translation file", () =>
+        {
+            return RuntimeSettings.CurrentSettings.UseTmpLocalizationFiles;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.UseTmpLocalizationFiles = b;
+        });
         
         #if UNITY_ANDROID
         AddToggleButton(ref y, "Debug : Disable Cryware low latency", () =>

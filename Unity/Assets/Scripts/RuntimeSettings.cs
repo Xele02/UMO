@@ -41,7 +41,8 @@ class RuntimeSettings : ScriptableObject
 				m_currentSettings.RemoveCrystalLimit = UMO_PlayerPrefs.GetInt("RemoveCrystalLimit", 0) == 1;
 				m_currentSettings.DumpStringUsed = UMO_PlayerPrefs.GetInt("DumpStringUsed", 0) == 1;
 				m_currentSettings.ShowStringUsed = UMO_PlayerPrefs.GetInt("ShowStringUsed", 0) == 1;
-				m_currentSettings.Language = "";
+				m_currentSettings.UseTmpLocalizationFiles = UMO_PlayerPrefs.GetInt("UseTmpLocalizationFiles", 0) == 1;
+				m_currentSettings.Language = UMO_PlayerPrefs.GetString("Language", "");
 
 #if (UNITY_ANDROID && !UNITY_EDITOR) || DEBUG_ANDROID_FILESYSTEM
 				m_currentSettings.DataDirectory = Application.persistentDataPath + "/data/";
@@ -68,6 +69,8 @@ class RuntimeSettings : ScriptableObject
 		UMO_PlayerPrefs.SetInt("RemoveCrystalLimit", m_currentSettings.RemoveCrystalLimit ? 1 : 0);
 		UMO_PlayerPrefs.SetInt("DumpStringUsed", m_currentSettings.DumpStringUsed ? 1 : 0);
 		UMO_PlayerPrefs.SetInt("ShowStringUsed", m_currentSettings.ShowStringUsed ? 1 : 0);
+		UMO_PlayerPrefs.SetInt("UseTmpLocalizationFiles", m_currentSettings.UseTmpLocalizationFiles ? 1 : 0);
+		UMO_PlayerPrefs.SetString("Language", m_currentSettings.Language);
 		UMO_PlayerPrefs.Save();
 	}
 
@@ -182,6 +185,8 @@ class RuntimeSettings : ScriptableObject
 	public bool RemoveCrystalLimit { get; set; }
 	public bool DumpStringUsed { get; set; }
 	public bool ShowStringUsed { get; set; }
+
+	public bool UseTmpLocalizationFiles { get; set; }
 	public string Language { get; set; }
 }
 

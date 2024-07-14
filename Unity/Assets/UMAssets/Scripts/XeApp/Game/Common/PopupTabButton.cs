@@ -41,6 +41,7 @@ namespace XeApp.Game.Common
 			Released = 30,
 			SimpleAutoSet = 31,
 			NormalAutoSet = 32,
+			UMO_Language = 31,
 			Max = 33,
 			None = 34,
 		}
