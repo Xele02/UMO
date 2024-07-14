@@ -54,6 +54,8 @@ public class UMOPopupLanguage : UIBehaviour, IPopupContent
     public void Save()
     {
         RuntimeSettings.CurrentSettings.Language = currentLanguageSelected;
+        if(RuntimeSettings.CurrentSettings.Language == "jp")
+            RuntimeSettings.CurrentSettings.Language = "";
         RuntimeSettings.CurrentSettings.Save();
     }
 
