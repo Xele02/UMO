@@ -15,13 +15,12 @@ using XeApp.Game.Adv;
 using UnityEngine.UI;
 using XeApp.Core;
 using XeSys.Gfx;
-using System.Configuration;
 
 public static class DatabaseTextConverter
 {
     public static string PoPath = Application.dataPath + "/../../Localization/Database/{name}/po/";
     public static string LocalDatabasePath = Application.dataPath + "/Resources/Localizations/{name}/";
-    public static List<string> supportedLanguage = new List<string>() { "fr" };
+    public static List<string> supportedLanguage = new List<string>() { "fr", "en" };
 
 #if UNITY_EDITOR
 	[MenuItem("UMO/Localization/Export Database strings", validate = true)]
@@ -368,6 +367,17 @@ public static class DatabaseTextConverter
     [MenuItem("UMO/Localization/Import Database strings")]
     public static void GenerateGameFiles()
     {
+        GenerateGameFiles2(LocalDatabasePath, PoPath, StringLiteralsConverter.PoPath);
+    }
+
+#endif
+    public static void GenerateTmpGameFiles()
+    {
+        GenerateGameFiles2(Application.persistentDataPath + "/Localizations/{name}/", Application.persistentDataPath + "/Localization/Database/{name}/po/", Application.persistentDataPath + "/Localization/JpLiteralStrings/po/");
+    }
+
+    public static void GenerateGameFiles2(string outDir, string poPath, string poPath2)
+    {
         foreach(var lang in supportedLanguage)
         {
             CBBJHPBGBAJ_Archive archive = new CBBJHPBGBAJ_Archive();
@@ -377,19 +387,19 @@ public static class DatabaseTextConverter
                 if((MessageLoader.eSheet)sheet == MessageLoader.eSheet.master)
                 {
                     {
-                        string p = PoPath.Replace("{name}", sheet.ToString());
+                        string p = poPath.Replace("{name}", sheet.ToString());
                         poFile.LoadFile(p + "messages_full.pot", clear:true); // Read the full template for filling all key
                         poFile.LoadFile(p + "jp.po"); // Read the jp one for filling non translated files
                         poFile.LoadFile(p + lang + ".po");
                     }
                     {
-                        string p = PoPath.Replace("{name}", sheet.ToString()+"_sns");
+                        string p = poPath.Replace("{name}", sheet.ToString()+"_sns");
                         poFile.LoadFile(p + "messages_full.pot");
                         poFile.LoadFile(p + "jp.po");
                         poFile.LoadFile(p + lang + ".po");
                     }
                     {
-                        string p = PoPath.Replace("{name}", sheet.ToString()+"_scene");
+                        string p = poPath.Replace("{name}", sheet.ToString()+"_scene");
                         poFile.LoadFile(p + "messages_full.pot");
                         poFile.LoadFile(p + "jp.po");
                         poFile.LoadFile(p + lang + ".po");
@@ -397,7 +407,7 @@ public static class DatabaseTextConverter
                 }
                 else
                 {
-                    string p = PoPath.Replace("{name}", sheet.ToString());
+                    string p = poPath.Replace("{name}", sheet.ToString());
                     poFile.LoadFile(p + "messages_full.pot", clear:true);
                     poFile.LoadFile(p + "jp.po");
                     poFile.LoadFile(p + lang + ".po");
@@ -412,14 +422,14 @@ public static class DatabaseTextConverter
                 PoFile poFile = new PoFile();
                 if((eBank)i == eBank.string_literals)
                 {
-                    string p = StringLiteralsConverter.PoPath;
+                    string p = poPath2;
                     poFile.LoadFile(p + "messages.pot", clear:true);
                     poFile.LoadFile(p + "jp.po");
                     poFile.LoadFile(p + lang + ".po");
                 }
                 else
                 {
-                    string p = PoPath.Replace("{name}", ((eBank)i).ToString());
+                    string p = poPath.Replace("{name}", ((eBank)i).ToString());
                     poFile.LoadFile(p + "messages_full.pot", clear:true);
                     poFile.LoadFile(p + "jp.po");
                     poFile.LoadFile(p + lang + ".po");
@@ -437,7 +447,7 @@ public static class DatabaseTextConverter
             // Jump next 512
             if(archive.KGHAJGGMPKL_Files.Count > 0)
             {
-                string p = LocalDatabasePath.Replace("{name}", "Database") + lang + ".bytes";
+                string p = outDir.Replace("{name}", "Database") + lang + ".bytes";
                 Directory.CreateDirectory(new FileInfo(p).DirectoryName);
                 using(FileStream stream = new FileStream(p, FileMode.Create, FileAccess.Write))
                 {
@@ -484,7 +494,6 @@ public static class DatabaseTextConverter
             }
         }
     }
-#endif
     enum eBank
     {
         snsDb_text,
@@ -508,14 +517,18 @@ public static class DatabaseTextConverter
     {
         if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
         {
+            if(RuntimeSettings.CurrentSettings.UseTmpLocalizationFiles)
+            {
+                GenerateTmpGameFiles();
+            }
+
             StringBuilder str = new StringBuilder(64);
-            str.AppendFormat("Localizations/Database/{0}", RuntimeSettings.CurrentSettings.Language);
             Dictionary<string,string> dic = new Dictionary<string, string>(1);
             bool isDone = false;
-            ResourcesManager.Instance.Request(str.ToString(), (FileResultObject fro) =>
+            Action<byte[]> OnDone = (byte[] bytes) =>
             {
                 CBBJHPBGBAJ_Archive tar = new CBBJHPBGBAJ_Archive();
-                tar.KHEKNNFCAOI_Load((fro.unityObject as TextAsset).bytes);
+                tar.KHEKNNFCAOI_Load(bytes);
                 for(int i = 0; i < (int)eBank.End; i++)
                 {
                     StringBuilder fileName = new StringBuilder(64);
@@ -533,9 +546,22 @@ public static class DatabaseTextConverter
                     }
                 }
                 isDone = true;
-                return true;
-            }, dic, 0);
-            ResourcesManager.Instance.Load();
+            };
+            if(RuntimeSettings.CurrentSettings.UseTmpLocalizationFiles)
+            {
+                str.AppendFormat("{0}/Localizations/Database/{1}.bytes", Application.persistentDataPath, RuntimeSettings.CurrentSettings.Language);
+                OnDone(File.ReadAllBytes(str.ToString()));
+            }
+            else
+            {
+                str.AppendFormat("Localizations/Database/{0}", RuntimeSettings.CurrentSettings.Language);
+                ResourcesManager.Instance.Request(str.ToString(), (FileResultObject fro) =>
+                {
+                    OnDone((fro.unityObject as TextAsset).bytes);
+                    return true;
+                }, dic, 0);
+                ResourcesManager.Instance.Load();
+            }
             while(!isDone)
                 yield return null;
         }
@@ -657,7 +683,7 @@ public static class DatabaseTextConverter
 
     public static string TranslateAdventureMessage(int advId, int strId, string def)
     {
-        string prfx = string.Format("adv_{0:D4}_{1:D4}_msg", advId, strId);
+        string prfx = string.Format("adv_{0:D6}_{1:D4}_msg", advId, strId);
         return Translate(eBank.adv_text, prfx, def);
     }
 
@@ -777,28 +803,31 @@ public static class DatabaseTextConverter
             if(bundleName != "")
             {
                 string path = "localizations/"+RuntimeSettings.CurrentSettings.Language+"/"+bundleName+".xab";
-                AssetBundleLoadAllAssetOperationBase op = AssetBundleManager.LoadAllAssetAsync(path);
-                yield return op;
-                if(!op.IsError())
+                if(File.Exists(Application.persistentDataPath+"/data/android/"+path))
                 {
-                    TextAsset uvData = op.GetAsset<TextAsset>(bundleName + "_uvlist");
-                    if(uvData != null)
+                    AssetBundleLoadAllAssetOperationBase op = AssetBundleManager.LoadAllAssetAsync(path);
+                    yield return op;
+                    if(!op.IsError())
                     {
-                        TexUVList t = new TexUVList();
-                        t.Initialize(uvData.bytes, null);
-                        uvsListByTexName.Add(it.Key, t);
+                        TextAsset uvData = op.GetAsset<TextAsset>(bundleName + "_uvlist");
+                        if(uvData != null)
+                        {
+                            TexUVList t = new TexUVList();
+                            t.Initialize(uvData.bytes, null);
+                            uvsListByTexName.Add(it.Key, t);
+                        }
+                        Texture2D texBase = op.GetAsset<Texture2D>(bundleName + "_base");
+                        if(texBase != null)
+                        {
+                            baseTexByTexname.Add(it.Key, texBase);
+                        }
+                        Texture2D texMask = op.GetAsset<Texture2D>(bundleName + "_mask");
+                        if(texMask != null)
+                        {
+                            maskTexByTexname.Add(it.Key, texMask);
+                        }
+                        AssetBundleManager.UnloadAssetBundle(path, false);
                     }
-                    Texture2D texBase = op.GetAsset<Texture2D>(bundleName + "_base");
-                    if(texBase != null)
-                    {
-                        baseTexByTexname.Add(it.Key, texBase);
-                    }
-                    Texture2D texMask = op.GetAsset<Texture2D>(bundleName + "_mask");
-                    if(texMask != null)
-                    {
-                        maskTexByTexname.Add(it.Key, texMask);
-                    }
-                    AssetBundleManager.UnloadAssetBundle(path, false);
                 }
             }
         }
@@ -881,14 +910,16 @@ public static class DatabaseTextConverter
             if(bundleName != "")
             {
                 string path = "localizations/"+RuntimeSettings.CurrentSettings.Language+"/"+bundleName+".xab";
-                AssetBundleLoadAllAssetOperationBase op = AssetBundleManager.LoadAllAssetAsync(path);
-                yield return op;
-                TextAsset uvData = op.GetAsset<TextAsset>(bundleName + "_uvlist");
-                res = uvData.bytes;
-                AssetBundleManager.UnloadAssetBundle(path, false);
+                if(File.Exists(Application.persistentDataPath+"/data/android/"+path))
+                {
+                    AssetBundleLoadAllAssetOperationBase op = AssetBundleManager.LoadAllAssetAsync(path);
+                    yield return op;
+                    TextAsset uvData = op.GetAsset<TextAsset>(bundleName + "_uvlist");
+                    res = uvData.bytes;
+                    AssetBundleManager.UnloadAssetBundle(path, false);
+                }
             }
             cb(res);
         }
-        yield break;
     }
 }

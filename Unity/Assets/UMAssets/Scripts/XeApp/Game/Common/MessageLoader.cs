@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Collections;
 using System.Text;
 using System.Collections.Generic;
+using System.IO;
 
 namespace XeApp.Game.Common
 {
@@ -50,15 +51,26 @@ namespace XeApp.Game.Common
 			Release(sheet);
 			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
 			{
-				StringBuilder str = new StringBuilder(64);
-				str.AppendFormat("Localizations/Database/{0}", RuntimeSettings.CurrentSettings.Language);
 				Dictionary<string,string> dic = new Dictionary<string, string>(1);
 				dic.Add("sheet", ((int)sheet).ToString());
 				dic.Add("bankName", sheet.ToString());
 				dic.Add("ver", version.ToString());
 				m_isLoading = true;
-				ResourcesManager.Instance.Request(str.ToString(), this.LoadCallbackStorage2, dic, 0);
-				ResourcesManager.Instance.Load();
+				if(RuntimeSettings.CurrentSettings.UseTmpLocalizationFiles)
+				{
+					StringBuilder str = new StringBuilder(64);
+					str.AppendFormat("{0}/Localizations/Database/{1}.bytes", Application.persistentDataPath, RuntimeSettings.CurrentSettings.Language);
+					FileResultObject fro = new FileResultObject(str.ToString(), dic, 0);
+					fro.bytes = File.ReadAllBytes(str.ToString());
+					LoadCallbackStorage2(fro);
+				}
+				else
+				{
+					StringBuilder str = new StringBuilder(64);
+					str.AppendFormat("Localizations/Database/{0}", RuntimeSettings.CurrentSettings.Language);
+					ResourcesManager.Instance.Request(str.ToString(), this.LoadCallbackStorage2, dic, 0);
+					ResourcesManager.Instance.Load();
+				}
 			}
 			else
 			{
@@ -122,15 +134,26 @@ namespace XeApp.Game.Common
 		{
 			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
 			{
-				StringBuilder str = new StringBuilder(64);
-				str.AppendFormat("Localizations/Database/{0}", RuntimeSettings.CurrentSettings.Language);
 				Dictionary<string,string> dic = new Dictionary<string, string>(1);
 				dic.Add("sheet", ((int)sheet).ToString());
 				dic.Add("bankName", sheet.ToString());
 				dic.Add("ver", version.ToString());
 				m_isLoading = true;
-				ResourcesManager.Instance.Request(str.ToString(), this.LoadCallbackStorage2, dic, 0);
-				ResourcesManager.Instance.Load();
+				if(RuntimeSettings.CurrentSettings.UseTmpLocalizationFiles)
+				{
+					StringBuilder str = new StringBuilder(64);
+					str.AppendFormat("{0}/Localizations/Database/{1}.bytes", Application.persistentDataPath, RuntimeSettings.CurrentSettings.Language);
+					FileResultObject fro = new FileResultObject(str.ToString(), dic, 0);
+					fro.bytes = File.ReadAllBytes(str.ToString());
+					LoadCallbackStorage2(fro);
+				}
+				else
+				{
+					StringBuilder str = new StringBuilder(64);
+					str.AppendFormat("Localizations/Database/{0}", RuntimeSettings.CurrentSettings.Language);
+					ResourcesManager.Instance.Request(str.ToString(), this.LoadCallbackStorage2, dic, 0);
+					ResourcesManager.Instance.Load();
+				}
 				return true;
 			}
 			else
@@ -171,7 +194,10 @@ namespace XeApp.Game.Common
 			str.AppendFormat("{0}_{1:D8}.bytes", s_path[(int)sheet], version);
 			string name = str.ToString();
 			CBBJHPBGBAJ_Archive tar = new CBBJHPBGBAJ_Archive();
-			tar.KHEKNNFCAOI_Load((fro.unityObject as TextAsset).bytes);
+			if(fro.unityObject != null)
+				tar.KHEKNNFCAOI_Load((fro.unityObject as TextAsset).bytes);
+			else if(fro.bytes != null)
+				tar.KHEKNNFCAOI_Load(fro.bytes);
 			CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tar.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) => {
 				//Method$XeApp.Game.Common.MessageLoader.<>c__DisplayClass13_0.<LoadCallbackStorage2>b__0()
 				return x.OPFGFINHFCE_Name.Contains(name);
