@@ -166,7 +166,7 @@ namespace XeApp.Game.Menu
 				int col = sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels[sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels.Count - 2].GHPLINIACBB_Col;
 				for (int j = 0; j < cnt2; j++)
 				{
-					int idx = j % col;
+					int idx = j % (sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels.Count - 1);
 					NLNDLEEJOFD n = sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels[idx];
 					AFIFDLOAKGI a_ = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.PJADHDHKOEJ[n.JBGEEPFKIGG - 1];
 					int x = (j / col) * col + n.GHPLINIACBB_Col;
