@@ -2,6 +2,7 @@
 using System.IO;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Localization.SmartFormat;
 
 [CreateAssetMenu(fileName = "RuntimeSettings", menuName = "ScriptableObjects/RuntimeSettings", order = 1)]
 class RuntimeSettings : ScriptableObject
@@ -188,6 +189,13 @@ class RuntimeSettings : ScriptableObject
 
 	public bool UseTmpLocalizationFiles { get; set; }
 	public string Language { get; set; }
+
+	public SmartFormatter SmartFormatter
+	{
+		get => m_SmartFormat;
+		set => m_SmartFormat = value;
+	}
+	SmartFormatter m_SmartFormat = Smart.CreateDefaultSmartFormat();
 }
 
 #if UNITY_EDITOR
