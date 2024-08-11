@@ -124,6 +124,8 @@ namespace XeApp.Game.Menu
 			if(!gameObject.activeSelf)
 				Enter();
 			m_textMessage.text = text;
+			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
+				m_textMessage.horizontalOverflow = HorizontalWrapMode.Wrap;
 		}
 
 		// // RVA: 0x1265B00 Offset: 0x1265B00 VA: 0x1265B00
