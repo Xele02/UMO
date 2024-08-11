@@ -8,6 +8,8 @@ public class PoFile
 {
     public Dictionary<string, string> translationData = new Dictionary<string, string>();
 
+    public string KeyPrefix = "";
+
     public void SaveFile(string filePath, bool isTemplate = false, bool stripEmpty = false)
     {
         using(StreamWriter writer = new StreamWriter(filePath, false))
@@ -31,7 +33,7 @@ public class PoFile
         }
     }
 
-    public void LoadFile(string filePath, bool clear = false)
+    public void LoadFile(string filePath, bool clear = false, bool useKeyInsteadOfString = false)
     {
         if(clear)
             translationData.Clear();
@@ -58,13 +60,13 @@ public class PoFile
                             if(!string.IsNullOrEmpty(msgStr))
                             {
                                 //UnityEngine.Debug.LogError("Replace "+msgId+":"+msgStr);
-                                translationData[msgId] = msgStr;
+                                translationData[msgId] = useKeyInsteadOfString ? KeyPrefix + msgId : msgStr;
                             }
                         }
                         else
                         {
                             //UnityEngine.Debug.LogError("Add "+msgId+":"+msgStr);
-                            translationData.Add(msgId, msgStr);
+                            translationData.Add(msgId, useKeyInsteadOfString ? KeyPrefix + msgId : msgStr);
                         }
                     }
                     msgId = null;

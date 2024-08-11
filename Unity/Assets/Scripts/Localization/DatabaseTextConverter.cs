@@ -396,10 +396,10 @@ public static class DatabaseTextConverter
 #endif
     public static void GenerateTmpGameFiles()
     {
-        GenerateGameFiles2(Application.persistentDataPath + "/Localizations/{name}/", Application.persistentDataPath + "/Localization/Database/{name}/po/", Application.persistentDataPath + "/Localization/JpLiteralStrings/po/");
+        GenerateGameFiles2(Application.persistentDataPath + "/Localizations/{name}/", Application.persistentDataPath + "/Localization/Database/{name}/po/", Application.persistentDataPath + "/Localization/JpLiteralStrings/po/", keepUntransladedAsKey:RuntimeSettings.CurrentSettings.ShowStringUsed);
     }
 
-    public static void GenerateGameFiles2(string outDir, string poPath, string poPath2)
+    public static void GenerateGameFiles2(string outDir, string poPath, string poPath2, bool keepUntransladedAsKey = false)
     {
         foreach(var lang in supportedLanguage)
         {
@@ -411,20 +411,23 @@ public static class DatabaseTextConverter
                 {
                     {
                         string p = poPath.Replace("{name}", sheet.ToString());
+                        poFile.KeyPrefix = sheet.ToString() + "/";
                         poFile.LoadFile(p + "messages_full.pot", clear:true); // Read the full template for filling all key
-                        poFile.LoadFile(p + "jp.po"); // Read the jp one for filling non translated files
+                        poFile.LoadFile(p + "jp.po", useKeyInsteadOfString:keepUntransladedAsKey); // Read the jp one for filling non translated files
                         poFile.LoadFile(p + lang + ".po");
                     }
                     {
                         string p = poPath.Replace("{name}", sheet.ToString()+"_sns");
+                        poFile.KeyPrefix = sheet.ToString() + "_sns/";
                         poFile.LoadFile(p + "messages_full.pot");
-                        poFile.LoadFile(p + "jp.po");
+                        poFile.LoadFile(p + "jp.po", useKeyInsteadOfString:keepUntransladedAsKey);
                         poFile.LoadFile(p + lang + ".po");
                     }
                     {
                         string p = poPath.Replace("{name}", sheet.ToString()+"_scene");
+                        poFile.KeyPrefix = sheet.ToString() + "_scene/";
                         poFile.LoadFile(p + "messages_full.pot");
-                        poFile.LoadFile(p + "jp.po");
+                        poFile.LoadFile(p + "jp.po", useKeyInsteadOfString:keepUntransladedAsKey);
                         poFile.LoadFile(p + lang + ".po");
                     }
                 }
@@ -432,7 +435,7 @@ public static class DatabaseTextConverter
                 {
                     string p = poPath.Replace("{name}", sheet.ToString());
                     poFile.LoadFile(p + "messages_full.pot", clear:true);
-                    poFile.LoadFile(p + "jp.po");
+                    poFile.LoadFile(p + "jp.po", useKeyInsteadOfString:keepUntransladedAsKey);
                     poFile.LoadFile(p + lang + ".po");
                 }
 
@@ -446,15 +449,17 @@ public static class DatabaseTextConverter
                 if((eBank)i == eBank.string_literals)
                 {
                     string p = poPath2;
+                    poFile.KeyPrefix = ((eBank)i).ToString() + "/";
                     poFile.LoadFile(p + "messages.pot", clear:true);
-                    poFile.LoadFile(p + "jp.po");
+                    poFile.LoadFile(p + "jp.po", useKeyInsteadOfString:keepUntransladedAsKey);
                     poFile.LoadFile(p + lang + ".po");
                 }
                 else
                 {
                     string p = poPath.Replace("{name}", ((eBank)i).ToString());
+                    poFile.KeyPrefix = ((eBank)i).ToString() + "/";
                     poFile.LoadFile(p + "messages_full.pot", clear:true);
-                    poFile.LoadFile(p + "jp.po");
+                    poFile.LoadFile(p + "jp.po", useKeyInsteadOfString:keepUntransladedAsKey);
                     poFile.LoadFile(p + lang + ".po");
                 }
                 poFile.WriteToArchiveAsBankData(archive, ((eBank)i).ToString() + ".bytes");
@@ -593,7 +598,7 @@ public static class DatabaseTextConverter
 
     private static string Translate(eBank bank, string key, string def)
     {
-        if(RuntimeSettings.CurrentSettings.ShowStringUsed)
+        if(RuntimeSettings.CurrentSettings.ShowStringUsed && (banks[(int)bank] == null || !RuntimeSettings.CurrentSettings.UseTmpLocalizationFiles))
             return bank.ToString() + "/" + key;
         if(banks[(int)bank] != null)
         {
