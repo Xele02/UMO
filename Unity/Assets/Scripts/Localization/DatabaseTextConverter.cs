@@ -362,6 +362,29 @@ public static class DatabaseTextConverter
             poFile.SaveFile(p + "messages.pot", isTemplate:true, stripEmpty:true);
             poFile.SaveFile(p + "jp.po", stripEmpty:true);
         }
+        {
+            // Export bingoDb strings
+            PoFile poFile = new PoFile();
+            JKICPBIIHNE_Bingo blockDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FPOIPGFFAPE_Bingo;
+            for (int i = 0; i < blockDb.JJAICEAEGKF.Count; i++)
+            {
+                for(int j = 0; j < blockDb.JJAICEAEGKF[i].DPGMFEGFCJN.Count; j++)
+                {
+                    for(int k = 0; k < blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].MFMGDFACBON.Count; k++)
+                    {
+                        string prfx = string.Format("bingo_{0:D4}_{1:D4}_{2:D4}_desc", blockDb.JJAICEAEGKF[i].PPFNGGCBJKC, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].PPFNGGCBJKC, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].MFMGDFACBON[k].PPFNGGCBJKC);
+                        poFile.translationData.Add(prfx, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].MFMGDFACBON[k].FEMMDNIELFC);
+                        prfx = string.Format("bingo_{0:D4}_{1:D4}_{2:D4}_cond", blockDb.JJAICEAEGKF[i].PPFNGGCBJKC, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].PPFNGGCBJKC, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].MFMGDFACBON[k].PPFNGGCBJKC);
+                        poFile.translationData.Add(prfx, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].MFMGDFACBON[k].JEPGJJJBFLN);
+                    }
+                }
+            }
+            string p = PoPath.Replace("{name}", "bingo_text");
+            Directory.CreateDirectory(p);
+            poFile.SaveFile(p + "messages_full.pot", isTemplate:true);
+            poFile.SaveFile(p + "messages.pot", isTemplate:true, stripEmpty:true);
+            poFile.SaveFile(p + "jp.po", stripEmpty:true);
+        }
     }
 
     [MenuItem("UMO/Localization/Import Database strings")]
@@ -508,6 +531,7 @@ public static class DatabaseTextConverter
         room_text,
         music_text,
         adv_text,
+        bingo_text,
         string_literals,
         End,
     }
@@ -733,6 +757,12 @@ public static class DatabaseTextConverter
     {
         string prfx = string.Format("shop_{0:D4}_name", shopId);
         return Translate(eBank.shopDb_text, prfx, def);
+    }
+
+    public static string TranslateBingo(int bingoId, int id2, int blockId, string def, int type)
+    {
+        string prfx = string.Format("bingo_{0:D4}_{1:D4}_{2:D4}_{3}", bingoId, id2, blockId, type == 0 ? "desc" : "cond");
+        return Translate(eBank.bingo_text, prfx, def);
     }
 
     private static int CntTranslating = 0;
