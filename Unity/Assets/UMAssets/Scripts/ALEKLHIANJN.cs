@@ -65,7 +65,7 @@ public class ALEKLHIANJN
 			GKFMJAHKEMA_ValSkill.GBDONNIHJHG skillInfo2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill.OOEFAGKHOCE(skillInfo.KFLIHDFDBOA);
 			PNJICDLDCAE = skillInfo2.NBMPBLECFJD(MAFJLEEPFAA_AbilityLevel);
 			OPFGFINHFCE_SkillName = MessageManager.Instance.GetBank("master").GetMessageByLabel("val_skill_nm_" + skillInfo2.CBDFEJIBAMO.ToString("D4"));
-			FEMMDNIELFC_SkillDesc = MessageManager.Instance.GetBank("master").GetMessageByLabel("val_skill_dsc_" + skillInfo2.CBDFEJIBAMO.ToString("D4"));
+			FEMMDNIELFC_SkillDesc = MessageManager.Instance.GetBank("master").GetMessageByLabel("val_skill_dsc_" + skillInfo.KFLIHDFDBOA.ToString("D4"));
 			COCEIPAKJKF = new List<HJBLCFPOFPO>(2);
 			for(int i = 0; i < 2; i++)
 			{
