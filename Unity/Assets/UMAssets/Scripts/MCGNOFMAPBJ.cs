@@ -128,7 +128,7 @@ public class MCGNOFMAPBJ
 			int healTime = (int)(staminaDiff * FLJGHBLEDDB_HealSec);
 			if ((FJDBNGEPKHL_Time - DLPEEDCCNMJ_StaminaSaveTime) < healTime)
 			{
-				long delta = (FJDBNGEPKHL_Time - DLPEEDCCNMJ_StaminaSaveTime) / FLJGHBLEDDB_HealSec;
+				long delta = (healTime - (FJDBNGEPKHL_Time - DLPEEDCCNMJ_StaminaSaveTime)) / FLJGHBLEDDB_HealSec;
 				if(delta != 0)
 				{
 					return delta;
