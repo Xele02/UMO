@@ -430,7 +430,7 @@ namespace UnityEngine.Localization.SmartFormat
         {
             var handled = InvokeFormatterExtensions(formattingInfo);
             if (!handled)
-                throw formattingInfo.FormattingException("No suitable Formatter could be found", formattingInfo.Format);
+                Debug.LogError(formattingInfo.FormattingException("No suitable Formatter could be found", formattingInfo.Format));
         }
 
         /// <summary>

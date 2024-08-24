@@ -188,6 +188,10 @@ namespace XeApp.Game.Menu
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
 			m_ucText.text = JpStringLiterals.StringLiteral_18787;
+			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
+			{
+				m_ucText.alignment = TextAnchor.MiddleLeft;
+			}
 			Loaded();
 			return base.InitializeFromLayout(layout, uvMan);
 		}

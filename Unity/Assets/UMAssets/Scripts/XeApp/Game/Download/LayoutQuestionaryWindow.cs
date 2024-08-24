@@ -6,6 +6,7 @@ using UnityEngine.Events;
 using mcrs;
 using System.Collections;
 using XeSys;
+using UnityEngine.Localization.SmartFormat;
 
 namespace XeApp.Game.DownLoad
 {
@@ -247,9 +248,9 @@ namespace XeApp.Game.DownLoad
 			if(data.INDDJNMPONH_NotifId == 2)
 			{
 				if (data.DOOGFEGEKLG_MaxAnswer > 2)
-					str = string.Format(str, data.DOOGFEGEKLG_MaxAnswer);
+					str = Smart.Format(str, data.DOOGFEGEKLG_MaxAnswer);
 				else
-					str = string.Format(str, JpStringLiterals.StringLiteral_14832);
+					str = Smart.Format(str, JpStringLiterals.StringLiteral_14832);
 			}
 			return str;
 		}

@@ -4,6 +4,7 @@ using System;
 using XeApp.Game.Menu;
 using XeSys;
 using System.Collections;
+using UnityEngine.Localization.SmartFormat;
 
 namespace XeApp.Game.Common
 {
@@ -443,7 +444,7 @@ namespace XeApp.Game.Common
 			{
 				v = CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCBENCMNOGO_MaxStamina;
 			}
-			string s = string.Format(bk.GetMessageByLabel("popup_text_stamina_05"), new object[5]
+			string s = Smart.Format(bk.GetMessageByLabel("popup_text_stamina_05"), new object[5]
 			{
 				item.name, "1", v, item.haveCount, item.haveCount - 1
 			});
@@ -500,7 +501,7 @@ namespace XeApp.Game.Common
 			PopupUseStoneSetting s = new PopupUseStoneSetting();
 			s.TitleText = bk.GetMessageByLabel("popup_title_stamina_01");
 			s.WindowSize = SizeType.Small;
-			s.Text = string.Format(bk.GetMessageByLabel("popup_text_stamina_01"), new object[4]
+			s.Text = Smart.Format(bk.GetMessageByLabel("popup_text_stamina_01"), new object[4]
 			{
 				CIOECGOMILE.HHCJCDFCLOB.CIPHAHDGGPH(),
 				CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCBENCMNOGO_MaxStamina,

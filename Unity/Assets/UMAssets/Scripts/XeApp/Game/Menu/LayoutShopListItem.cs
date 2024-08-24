@@ -54,6 +54,13 @@ namespace XeApp.Game.Menu
 				m_textName.horizontalOverflow = HorizontalWrapMode.Wrap;
 				m_textName.resizeTextForBestFit = true;
 			}
+			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
+			{
+				m_textName.verticalOverflow = VerticalWrapMode.Truncate;
+				m_textName.horizontalOverflow = HorizontalWrapMode.Wrap;
+				m_textName.resizeTextForBestFit = true;
+				m_textName.resizeTextMaxSize = m_textName.fontSize;
+			}
 			if(!view.FPJBMCDMAMO)
 			{
 				m_layoutLimit.StartChildrenAnimGoStop("limit_off");

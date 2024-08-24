@@ -101,7 +101,7 @@ namespace XeApp.Game.Menu
 			{
 				StringBuilder str = new StringBuilder(64);
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
-				str.SetFormat(bk.GetMessageByLabel("costume_upgrade_lock_text"), MOEALEGLGCH.IGDOBKHKNJM_GetCostumeUpgradeOfferNum());
+				str.SetFormatSmart(bk.GetMessageByLabel("costume_upgrade_lock_text"), MOEALEGLGCH.IGDOBKHKNJM_GetCostumeUpgradeOfferNum());
 				TextPopupSetting s = new TextPopupSetting();
 				s.Text = str.ToString();
 				s.WindowSize = SizeType.Small;

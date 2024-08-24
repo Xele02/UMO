@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Localization.SmartFormat;
 using XeApp.Core;
 using XeApp.Game.Common;
 using XeSys;
@@ -60,7 +61,7 @@ namespace XeApp.Game.Menu
 					}
 					else
 					{
-						str.SetFormat(bk.GetMessageByLabel("popup_rank_range_place"), m_rankRangeList[i]);
+						str.SetFormatSmart(bk.GetMessageByLabel("popup_rank_range_place"), m_rankRangeList[i]);
 						m_rankRangeLabelList.Add(str.ToString());
 					}
 				}

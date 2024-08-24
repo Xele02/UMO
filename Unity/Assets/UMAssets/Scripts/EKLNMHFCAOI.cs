@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization.SmartFormat;
 using XeSys;
 
 public class EKLNMHFCAOI
@@ -280,15 +281,22 @@ public class EKLNMHFCAOI
 	// public static string ANIEBBILFKN(int KIJAPOFAGPN) { }
 
 	// // RVA: 0x12F5CE8 Offset: 0x12F5CE8 VA: 0x12F5CE8
-	public static string FKMCHHDOAAB(int KIJAPOFAGPN)
+	public static string FKMCHHDOAAB(int KIJAPOFAGPN, bool useJp = false)
 	{
-		return FKMCHHDOAAB((FKGCBLHOOCL_Category)(KIJAPOFAGPN / 10000), KIJAPOFAGPN % 10000);
+		return FKMCHHDOAAB((FKGCBLHOOCL_Category)(KIJAPOFAGPN / 10000), KIJAPOFAGPN % 10000, useJp:useJp);
 	}
 
 	// // RVA: 0x12F5D84 Offset: 0x12F5D84 VA: 0x12F5D84
-	public static string FKMCHHDOAAB(FKGCBLHOOCL_Category INDDJNMPONH, int JBGEEPFKIGG)
+	public static string FKMCHHDOAAB(FKGCBLHOOCL_Category INDDJNMPONH, int JBGEEPFKIGG, bool useJp = false)
 	{
-		return string.Format(BJIECJAOMDJ[(int)INDDJNMPONH], JBGEEPFKIGG);
+		if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
+		{
+			return string.Format(BJIECJAOMDJ[(int)INDDJNMPONH], JBGEEPFKIGG) + (useJp ? "_jp" : "");
+		}
+		else
+		{
+			return string.Format(BJIECJAOMDJ[(int)INDDJNMPONH], JBGEEPFKIGG);
+		}
 	}
 
 	// // RVA: 0x12F5E80 Offset: 0x12F5E80 VA: 0x12F5E80
@@ -304,13 +312,13 @@ public class EKLNMHFCAOI
 	}
 
 	// // RVA: 0x12F6078 Offset: 0x12F6078 VA: 0x12F6078
-	public static string INCKKODFJAP_GetItemName(int KIJAPOFAGPN)
+	public static string INCKKODFJAP_GetItemName(int KIJAPOFAGPN, bool useJp = false)
 	{
-		return INCKKODFJAP_GetItemName((FKGCBLHOOCL_Category)(KIJAPOFAGPN / 10000), KIJAPOFAGPN % 10000);
+		return INCKKODFJAP_GetItemName((FKGCBLHOOCL_Category)(KIJAPOFAGPN / 10000), KIJAPOFAGPN % 10000, useJp:useJp);
 	}
 
 	// // RVA: 0x12F6114 Offset: 0x12F6114 VA: 0x12F6114
-	public static string INCKKODFJAP_GetItemName(FKGCBLHOOCL_Category INDDJNMPONH, int JBGEEPFKIGG)
+	public static string INCKKODFJAP_GetItemName(FKGCBLHOOCL_Category INDDJNMPONH, int JBGEEPFKIGG, bool useJp = false)
 	{
 		int id = JBGEEPFKIGG;
 		if (INDDJNMPONH == FKGCBLHOOCL_Category.OCMIGPEOFEG_GachaLimit)
@@ -323,7 +331,7 @@ public class EKLNMHFCAOI
 			if (g != null)
 				id = g.PPFNGGCBJKC_Id;
 		}
-		string str = MessageManager.Instance.GetBank(AFEHLCGHAEE_Strings.NDFIEMPPMLF_master).GetMessageByLabel(FKMCHHDOAAB(INDDJNMPONH, id));
+		string str = MessageManager.Instance.GetBank(AFEHLCGHAEE_Strings.NDFIEMPPMLF_master).GetMessageByLabel(FKMCHHDOAAB(INDDJNMPONH, id, useJp:useJp));
 		if(RuntimeSettings.CurrentSettings.DisplayIdInName)
 			str = "["+JBGEEPFKIGG+"] "+str;
 		if (INDDJNMPONH != FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif)
@@ -491,19 +499,19 @@ public class EKLNMHFCAOI
 	}
 
 	// // RVA: 0x12F75BC Offset: 0x12F75BC VA: 0x12F75BC
-	public static string NDBLEADIDLA(FKGCBLHOOCL_Category INDDJNMPONH, int JBGEEPFKIGG = 0)
+	public static string NDBLEADIDLA(FKGCBLHOOCL_Category INDDJNMPONH, int JBGEEPFKIGG = 0, int cnt = 0)
 	{
 		if(JBGEEPFKIGG > 0)
 		{
 			string str = GFFEIIALFBD(INDDJNMPONH, JBGEEPFKIGG);
 			if(str != "")
 			{
-				str = MessageManager.Instance.GetBank(AFEHLCGHAEE_Strings.NDFIEMPPMLF_master).GetMessageByLabel(str);
+				str = Smart.Format(MessageManager.Instance.GetBank(AFEHLCGHAEE_Strings.NDFIEMPPMLF_master).GetMessageByLabel(str), cnt);
 				if(str != "")
 					return str;
 			}
 		}
-		return KBHKKMMINOD[(int)INDDJNMPONH];
+		return Smart.Format(KBHKKMMINOD[(int)INDDJNMPONH], cnt);
 	}
 
 	// // RVA: 0x12F77D0 Offset: 0x12F77D0 VA: 0x12F77D0

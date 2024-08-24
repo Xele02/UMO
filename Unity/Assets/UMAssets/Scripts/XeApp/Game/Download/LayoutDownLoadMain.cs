@@ -403,8 +403,14 @@ namespace XeApp.Game.DownLoad
 					layout.birthplace.text = p.birthplace;
 					layout.favorite.text = p.favorite;
 					layout.description.text = p.description;
+					layout.birthplace.resizeTextMaxSize = layout.birthplace.fontSize;
+					layout.birthplace.verticalOverflow = VerticalWrapMode.Overflow;
 					layout.birthplace.resizeTextForBestFit = IsHorizontalOverflow(layout.birthplace);
+					layout.birthplace.verticalOverflow = VerticalWrapMode.Truncate;
+					layout.favorite.resizeTextMaxSize = layout.favorite.fontSize;
+					layout.favorite.verticalOverflow = VerticalWrapMode.Overflow;
 					layout.favorite.resizeTextForBestFit = IsHorizontalOverflow(layout.favorite);
+					layout.favorite.verticalOverflow = VerticalWrapMode.Truncate;
                 }
 			}
 			m_DispDivaProfile = data;

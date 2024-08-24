@@ -9,6 +9,7 @@ using System.Linq;
 using System.Collections;
 using XeSys;
 using mcrs;
+using UnityEngine.Localization.SmartFormat;
 
 namespace XeApp.Game.Menu
 {
@@ -345,7 +346,7 @@ namespace XeApp.Game.Menu
 			{
 				m_use_item_max = (m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_TotalPoint - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_StartPoint) / item_data.IILKAJBHLMJ_Value;
 			}
-			m_caution.text = JpStringLiterals.StringLiteral_15830 + m_use_item_max.ToString() + JpStringLiterals.StringLiteral_15831;
+			m_caution.text = JpStringLiterals.StringLiteral_15830 + m_use_item_max.ToString() + Smart.Format(JpStringLiterals.StringLiteral_15831, m_use_item_max);
 			m_episode_item.text = item_data.OPFGFINHFCE_Name;
 			m_item_use_num = 0;
 			UpdateItemValue();

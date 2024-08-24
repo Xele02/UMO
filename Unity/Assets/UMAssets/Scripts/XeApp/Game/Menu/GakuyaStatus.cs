@@ -148,7 +148,7 @@ namespace XeApp.Game.Menu
 		private void SetRankingText(StringBuilder sb, string rank)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			sb.SetFormat(bk.GetMessageByLabel("gakuya_status_diva_ranking_value"), rank);
+			sb.SetFormatSmart(bk.GetMessageByLabel("gakuya_status_diva_ranking_value"), rank);
 			m_textDivaRanking.text = sb.ToString();
 		}
 

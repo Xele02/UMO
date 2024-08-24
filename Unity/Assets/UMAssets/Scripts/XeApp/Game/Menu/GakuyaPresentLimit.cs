@@ -16,6 +16,10 @@ namespace XeApp.Game.Menu
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_prefixText.text = bk.GetMessageByLabel("pop_gakuya_present_num_prefix");
+			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
+			{
+				m_prefixText.horizontalOverflow = HorizontalWrapMode.Overflow;
+			}
 		}
 
 		// RVA: 0xB73E6C Offset: 0xB73E6C VA: 0xB73E6C

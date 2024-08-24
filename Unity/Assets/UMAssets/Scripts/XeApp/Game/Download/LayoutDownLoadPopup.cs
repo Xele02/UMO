@@ -64,7 +64,10 @@ namespace XeApp.Game.DownLoad
 				return _.name == "caution_detail_01 (TextView)";
 			}).First();
 			txt.text = MessageManager.Instance.GetMessage("menu", "tuto_divaselect_popup_003");
-			txt.horizontalOverflow = UnityEngine.HorizontalWrapMode.Overflow;
+			if(string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
+				txt.horizontalOverflow = UnityEngine.HorizontalWrapMode.Overflow;
+			else
+				txt.horizontalOverflow = UnityEngine.HorizontalWrapMode.Wrap;
 			Loaded();
 			return true;
 		}

@@ -6,6 +6,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Experimental.UIElements;
+using UnityEngine.Localization.SmartFormat;
 using XeApp.Game.Common;
 using XeApp.Game.MusicSelect;
 using XeApp.Game.Tutorial;
@@ -507,7 +508,7 @@ namespace XeApp.Game.Menu
 				yield break;
 			}
 			bool done = false;
-			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("mvmode_check_popup_title"), SizeType.Small, string.Format(bk.GetMessageByLabel("mvmode_check_popup_text"), 1), new ButtonInfo[1]
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("mvmode_check_popup_title"), SizeType.Small, Smart.Format(bk.GetMessageByLabel("mvmode_check_popup_text"), 1), new ButtonInfo[1]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 			}, false, true), (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>

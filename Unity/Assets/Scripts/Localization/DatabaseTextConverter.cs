@@ -362,6 +362,29 @@ public static class DatabaseTextConverter
             poFile.SaveFile(p + "messages.pot", isTemplate:true, stripEmpty:true);
             poFile.SaveFile(p + "jp.po", stripEmpty:true);
         }
+        {
+            // Export bingoDb strings
+            PoFile poFile = new PoFile();
+            JKICPBIIHNE_Bingo blockDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FPOIPGFFAPE_Bingo;
+            for (int i = 0; i < blockDb.JJAICEAEGKF.Count; i++)
+            {
+                for(int j = 0; j < blockDb.JJAICEAEGKF[i].DPGMFEGFCJN.Count; j++)
+                {
+                    for(int k = 0; k < blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].MFMGDFACBON.Count; k++)
+                    {
+                        string prfx = string.Format("bingo_{0:D4}_{1:D4}_{2:D4}_desc", blockDb.JJAICEAEGKF[i].PPFNGGCBJKC, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].PPFNGGCBJKC, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].MFMGDFACBON[k].PPFNGGCBJKC);
+                        poFile.translationData.Add(prfx, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].MFMGDFACBON[k].FEMMDNIELFC);
+                        prfx = string.Format("bingo_{0:D4}_{1:D4}_{2:D4}_cond", blockDb.JJAICEAEGKF[i].PPFNGGCBJKC, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].PPFNGGCBJKC, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].MFMGDFACBON[k].PPFNGGCBJKC);
+                        poFile.translationData.Add(prfx, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].MFMGDFACBON[k].JEPGJJJBFLN);
+                    }
+                }
+            }
+            string p = PoPath.Replace("{name}", "bingo_text");
+            Directory.CreateDirectory(p);
+            poFile.SaveFile(p + "messages_full.pot", isTemplate:true);
+            poFile.SaveFile(p + "messages.pot", isTemplate:true, stripEmpty:true);
+            poFile.SaveFile(p + "jp.po", stripEmpty:true);
+        }
     }
 
     [MenuItem("UMO/Localization/Import Database strings")]
@@ -373,10 +396,10 @@ public static class DatabaseTextConverter
 #endif
     public static void GenerateTmpGameFiles()
     {
-        GenerateGameFiles2(Application.persistentDataPath + "/Localizations/{name}/", Application.persistentDataPath + "/Localization/Database/{name}/po/", Application.persistentDataPath + "/Localization/JpLiteralStrings/po/");
+        GenerateGameFiles2(Application.persistentDataPath + "/Localizations/{name}/", Application.persistentDataPath + "/Localization/Database/{name}/po/", Application.persistentDataPath + "/Localization/JpLiteralStrings/po/", keepUntransladedAsKey:RuntimeSettings.CurrentSettings.ShowStringUsed);
     }
 
-    public static void GenerateGameFiles2(string outDir, string poPath, string poPath2)
+    public static void GenerateGameFiles2(string outDir, string poPath, string poPath2, bool keepUntransladedAsKey = false)
     {
         foreach(var lang in supportedLanguage)
         {
@@ -388,20 +411,52 @@ public static class DatabaseTextConverter
                 {
                     {
                         string p = poPath.Replace("{name}", sheet.ToString());
+                        poFile.KeyPrefix = sheet.ToString() + "/";
                         poFile.LoadFile(p + "messages_full.pot", clear:true); // Read the full template for filling all key
-                        poFile.LoadFile(p + "jp.po"); // Read the jp one for filling non translated files
+                        poFile.LoadFile(p + "jp.po", useKeyInsteadOfString:keepUntransladedAsKey); // Read the jp one for filling non translated files
                         poFile.LoadFile(p + lang + ".po");
+                        // We need to add original jp item name as <key>_jp since they are used as product id and te code check the name
+                        {
+                            PoFile tmpFile = new PoFile();
+                            tmpFile.LoadFile(p + "messages_full.pot", clear:true);
+                            tmpFile.LoadFile(p + "jp.po");
+                            // Copied from EKLNMHFCAOI, don't use EKLNMHFCAOI or it will initialize the static before the string are all loaded
+                            string[] BJIECJAOMDJ = new string[45] {
+                                "vc_0000", "vc_0001", "vc_gt_{0:D4}", "vc_0003", "sn_{0:D4}", "cos_{0:D4}", "vn_{0:D4}", "gn_{0:D4}", 
+                                "ep_i_nm_{0:D4}", "em_nm_{0:D4}", "evn_{0:D4}", "et_nm_{0:D4}", "diva_{0:D2}", "cmp_nm_{0:D4}", "sns_nm_{0:D4}", 
+                                "eng_nm_{0:D4}", "mvtk_nm_{0:D4}", "mdl_nm_{0:D4}", "bvc_nm_{0:D4}", "egt_nm_{0:D4}", "itp_nm_{0:D4}", 
+                                "spitm_nm_{0:D4}", "cs_i_nm_{0:D4}", "rup_nm_{0:D4}", "lmitm_nm_{0:D4}", "vc_0004", "dc_itm_nm_{0:D4}_bg", 
+                                "dc_itm_nm_{0:D4}_obj", "dc_itm_nm_{0:D4}_chr", "dc_itm_nm_{0:D4}_srf", "dc_itm_nm_{0:D4}_sp", "val_itm_nm_{0:D4}", 
+                                "dcpt_nm_{0:D4}", "dc_itm_nm_{0:D4}_pst", "sn_{0:D4}", "sn_{0:D4}", "rd_i_nm_{0:D4}", "rd_mdl_nm_{0:D4}", 
+                                "dc_stmp_nm_{0:D4}", "dc_set_nm_{0:D4}", "vff_nm_{0:D4}", "trs_nm_{0:D4}", "sk_nm_{0:D4}", "hm_bg_nm_{0:D4}", 
+                                "gc_lm_nm_{0:D4}"
+                            }; // 0xC
+                            for(int i = 0; i < BJIECJAOMDJ.Length; i++)
+                            {
+                                string k = BJIECJAOMDJ[i].Replace("{0:D4}", "");
+                                foreach(var it in tmpFile.translationData)
+                                {
+                                    if(it.Key.StartsWith(k))
+                                    {
+                                        poFile.translationData.Add(it.Key+"_jp", it.Value);
+                                    }
+                                }
+                            }
+                        }
+
                     }
                     {
                         string p = poPath.Replace("{name}", sheet.ToString()+"_sns");
+                        poFile.KeyPrefix = sheet.ToString() + "_sns/";
                         poFile.LoadFile(p + "messages_full.pot");
-                        poFile.LoadFile(p + "jp.po");
+                        poFile.LoadFile(p + "jp.po", useKeyInsteadOfString:keepUntransladedAsKey);
                         poFile.LoadFile(p + lang + ".po");
                     }
                     {
                         string p = poPath.Replace("{name}", sheet.ToString()+"_scene");
+                        poFile.KeyPrefix = sheet.ToString() + "_scene/";
                         poFile.LoadFile(p + "messages_full.pot");
-                        poFile.LoadFile(p + "jp.po");
+                        poFile.LoadFile(p + "jp.po", useKeyInsteadOfString:keepUntransladedAsKey);
                         poFile.LoadFile(p + lang + ".po");
                     }
                 }
@@ -409,7 +464,7 @@ public static class DatabaseTextConverter
                 {
                     string p = poPath.Replace("{name}", sheet.ToString());
                     poFile.LoadFile(p + "messages_full.pot", clear:true);
-                    poFile.LoadFile(p + "jp.po");
+                    poFile.LoadFile(p + "jp.po", useKeyInsteadOfString:keepUntransladedAsKey);
                     poFile.LoadFile(p + lang + ".po");
                 }
 
@@ -423,15 +478,17 @@ public static class DatabaseTextConverter
                 if((eBank)i == eBank.string_literals)
                 {
                     string p = poPath2;
+                    poFile.KeyPrefix = ((eBank)i).ToString() + "/";
                     poFile.LoadFile(p + "messages.pot", clear:true);
-                    poFile.LoadFile(p + "jp.po");
+                    poFile.LoadFile(p + "jp.po", useKeyInsteadOfString:keepUntransladedAsKey);
                     poFile.LoadFile(p + lang + ".po");
                 }
                 else
                 {
                     string p = poPath.Replace("{name}", ((eBank)i).ToString());
+                    poFile.KeyPrefix = ((eBank)i).ToString() + "/";
                     poFile.LoadFile(p + "messages_full.pot", clear:true);
-                    poFile.LoadFile(p + "jp.po");
+                    poFile.LoadFile(p + "jp.po", useKeyInsteadOfString:keepUntransladedAsKey);
                     poFile.LoadFile(p + lang + ".po");
                 }
                 poFile.WriteToArchiveAsBankData(archive, ((eBank)i).ToString() + ".bytes");
@@ -508,6 +565,7 @@ public static class DatabaseTextConverter
         room_text,
         music_text,
         adv_text,
+        bingo_text,
         string_literals,
         End,
     }
@@ -569,7 +627,7 @@ public static class DatabaseTextConverter
 
     private static string Translate(eBank bank, string key, string def)
     {
-        if(RuntimeSettings.CurrentSettings.ShowStringUsed)
+        if(RuntimeSettings.CurrentSettings.ShowStringUsed && (banks[(int)bank] == null || !RuntimeSettings.CurrentSettings.UseTmpLocalizationFiles))
             return bank.ToString() + "/" + key;
         if(banks[(int)bank] != null)
         {
@@ -733,6 +791,12 @@ public static class DatabaseTextConverter
     {
         string prfx = string.Format("shop_{0:D4}_name", shopId);
         return Translate(eBank.shopDb_text, prfx, def);
+    }
+
+    public static string TranslateBingo(int bingoId, int id2, int blockId, string def, int type)
+    {
+        string prfx = string.Format("bingo_{0:D4}_{1:D4}_{2:D4}_{3}", bingoId, id2, blockId, type == 0 ? "desc" : "cond");
+        return Translate(eBank.bingo_text, prfx, def);
     }
 
     private static int CntTranslating = 0;

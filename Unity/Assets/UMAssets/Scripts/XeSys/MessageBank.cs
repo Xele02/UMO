@@ -94,7 +94,7 @@ namespace XeSys
 		// // RVA: 0x23976DC Offset: 0x23976DC VA: 0x23976DC
 		public string GetMessageByLabel(string label)
 		{
-			if(RuntimeSettings.CurrentSettings.ShowStringUsed)
+			if(RuntimeSettings.CurrentSettings.ShowStringUsed && (!RuntimeSettings.CurrentSettings.UseTmpLocalizationFiles || string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language)))
 				return bankName + "/" + label;
 			if(!msgDic.ContainsKey(label))
 				return "!not exist ["+label+"]!";

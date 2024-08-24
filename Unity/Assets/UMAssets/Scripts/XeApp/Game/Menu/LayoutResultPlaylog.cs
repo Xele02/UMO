@@ -210,6 +210,12 @@ namespace XeApp.Game.Menu
 				}).First();
 				txt.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel(string.Format("result_playlog_hint_{0:000}", showHintId + 1));
 				txt.horizontalOverflow = HorizontalWrapMode.Wrap;
+				if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
+				{
+					txt.verticalOverflow = VerticalWrapMode.Truncate;
+					txt.resizeTextForBestFit = true;
+					txt.resizeTextMaxSize = txt.fontSize;
+				}
 				Button b = GetComponentsInChildren<Button>(true).Where((Button _) =>
 				{
 					//0x18ED4C0

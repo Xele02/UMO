@@ -12,6 +12,7 @@ public class DKJMDIFAKKD_VcItem : DIHHCBACKGG_DbSection
 	{
 		public string[] GLHKICCPGKJ_PlatformProductIds; // 0x8
 		public string OPFGFINHFCE_Name; // 0xC
+		public string OriginalName;
 		public int INDDJNMPONH_Category; // 0x10
 		public int HEOLEHDFLJO; // 0x14
 		public int EILKGEADKGH; // 0x18
@@ -125,6 +126,7 @@ public class DKJMDIFAKKD_VcItem : DIHHCBACKGG_DbSection
 				EBGPAPPHBAH data = new EBGPAPPHBAH();
 				data.PPFNGGCBJKC_Id = array[i].PPFNGGCBJKC;
 				data.OPFGFINHFCE_Name = DatabaseTextConverter.TranslateVcItemName(i, array[i].OPFGFINHFCE);
+				data.OriginalName = array[i].OPFGFINHFCE;
 				data.CPGFOBNKKBF_Currency = array[i].CPGFOBNKKBF;
 				data.GLHKICCPGKJ_PlatformProductIds = array[i].PDHGIGPAEBG.Split(new char[1] { ',' });
 				data.HMFFHLPNMPH_Count = array[i].BFINGCJHOHI;

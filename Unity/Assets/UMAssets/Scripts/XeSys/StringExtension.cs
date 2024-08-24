@@ -1,4 +1,5 @@
 using System.Text;
+using UnityEngine.Localization.SmartFormat;
 
 namespace XeSys
 {
@@ -37,6 +38,15 @@ namespace XeSys
 			{
 				str.Length = 0;
 				str.AppendFormat(format, arg0);
+			}
+		}
+
+		public static void SetFormatSmart(this StringBuilder str, string format, object arg0)
+		{
+			if(str != null)
+			{
+				str.Length = 0;
+				str.AppendSmart(format, arg0);
 			}
 		}
 

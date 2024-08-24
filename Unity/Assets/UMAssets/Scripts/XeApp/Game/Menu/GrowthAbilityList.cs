@@ -6,6 +6,7 @@ using System.Collections;
 using XeApp.Core;
 using XeSys;
 using XeApp.Game.Common;
+using UnityEngine.Localization.SmartFormat;
 
 namespace XeApp.Game.Menu
 {
@@ -37,11 +38,11 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			if(isOverEpisodePoint)
 			{
-				m_headerText.text = string.Format(bk.GetMessageByLabel("growth_popup_text19"), releaseCount, SystemTextColor.LackColor);
+				m_headerText.text = Smart.Format(bk.GetMessageByLabel("growth_popup_text19"), releaseCount, SystemTextColor.LackColor);
 			}
 			else
 			{
-				m_headerText.text = string.Format(bk.GetMessageByLabel("growth_popup_text06"), releaseCount);
+				m_headerText.text = Smart.Format(bk.GetMessageByLabel("growth_popup_text06"), releaseCount);
 			}
 		}
 

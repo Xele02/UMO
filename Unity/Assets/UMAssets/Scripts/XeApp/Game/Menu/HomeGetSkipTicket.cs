@@ -6,6 +6,7 @@ using System;
 using XeSys;
 using System.Collections;
 using mcrs;
+using UnityEngine.Localization.SmartFormat;
 
 namespace XeApp.Game.Menu
 {
@@ -113,10 +114,12 @@ namespace XeApp.Game.Menu
 				texture.Set(m_imageIcon);
 			});
 			m_textNumLabel.text = bk.GetMessageByLabel("popup_get_liveskip_ticket_count");
+			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
+				m_textNumLabel.alignment = TextAnchor.MiddleRight;
 			m_textReject.text = bk.GetMessageByLabel("popup_get_liveskip_ticket_checkbox");
-			m_textTitle.text = bk.GetMessageByLabel("popup_get_liveskip_ticket_title");
+			m_textTitle.text = string.Format(bk.GetMessageByLabel("popup_get_liveskip_ticket_title"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(typeItemId));
 			m_textDesc1.text = string.Format("{0} {1}{2}", EKLNMHFCAOI.INCKKODFJAP_GetItemName(typeItemId), getCount, EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(typeItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId)));
-			m_textDesc2.text = string.Format(bk.GetMessageByLabel("popup_get_liveskip_ticket_desc"), getCount);
+			m_textDesc2.text = Smart.Format(bk.GetMessageByLabel("popup_get_liveskip_ticket_desc"), getCount);
 			m_textNumCount.text = string.Format("{0}/{1}", CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GJCOJBDOOJG_LimitedCompoItem.HPPKOGKNKMH(1, time), CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GJCOJBDOOJG_LimitedCompoItem.OPCIHPEIFFE(1));
 		}
 

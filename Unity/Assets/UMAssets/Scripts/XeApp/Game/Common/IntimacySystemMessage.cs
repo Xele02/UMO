@@ -86,6 +86,10 @@ namespace XeApp.Game.Common
 					break;
 			}
 			m_systemWindow.Setup(string.Format(str, name, param), null);
+			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
+			{
+				m_systemWindow.SetTextWidth(200);
+			}
 		}
 
 		// // RVA: 0x11027FC Offset: 0x11027FC VA: 0x11027FC
@@ -93,6 +97,10 @@ namespace XeApp.Game.Common
 		{
 			m_systemWindow.SetTelopColor(m_colorTable[divaId - 1]);
 			m_systemWindow.Setup(text, null);
+			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
+			{
+				m_systemWindow.SetTextWidth(200);
+			}
 		}
 
 		// // RVA: 0x11028C0 Offset: 0x11028C0 VA: 0x11028C0

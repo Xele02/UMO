@@ -84,6 +84,17 @@ namespace XeApp.Game.Menu
 			m_birthday.text = bk.GetMessageByLabel(b + "_birthday");
 			m_birthplace.text = bk.GetMessageByLabel(b + "_birthplace");
 			m_favorite.text = bk.GetMessageByLabel(b + "_favorite");
+			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
+			{
+				m_favorite.verticalOverflow = VerticalWrapMode.Truncate;
+				m_favorite.horizontalOverflow = HorizontalWrapMode.Wrap;
+				m_favorite.resizeTextForBestFit = true;
+				m_favorite.resizeTextMaxSize = m_favorite.fontSize;
+				m_birthplace.verticalOverflow = VerticalWrapMode.Truncate;
+				m_birthplace.horizontalOverflow = HorizontalWrapMode.Wrap;
+				m_birthplace.resizeTextForBestFit = true;
+				m_birthplace.resizeTextMaxSize = m_birthplace.fontSize;
+			}
 			m_abs.StartChildrenAnimGoStop("st_wait", "st_wait");
 			m_chara_name.uvRect = m_name_list[diva_id - 1];
 			DownLoadDivaTextureCache.Create();

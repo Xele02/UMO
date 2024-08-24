@@ -54,12 +54,12 @@ namespace XeApp.Game.Adv
 								if(!string.IsNullOrEmpty(s))
 								{
 									m_tmp.Append(s);
-									i += j;
+									i = j;
 									break;
 								}
 							}
 							m_tmp.Append(strBuilder.ToString(), i, j + 1 - i);
-							i += j;
+							i = j;
 							break;
 						}
 						m_str.Append(c);
