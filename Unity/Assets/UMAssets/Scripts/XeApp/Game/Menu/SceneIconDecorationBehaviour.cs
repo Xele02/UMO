@@ -136,7 +136,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x136DEC8
 					return x.KELFCMEOPPM_EpisodeId == episodeId;
-				}) >> 0x1f) ^ 1;
+				})) >= 0 ? 1 : 0;
 				str = PIGBBNDPPJC.EJOJNFDHDHN_GetEpName(episodeId);
 			}
 			for(int i = 0; i < m_texts.Length; i++)
