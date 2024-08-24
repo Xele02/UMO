@@ -277,7 +277,7 @@ namespace XeApp.Game.Menu
 			m_use_item_max = Mathf.CeilToInt((m_data.JHLKLPEHHCD_GetCurrentLevelInfo().DNBFMLBNAEE_NeedPoint - m_data.ABLHIAEDJAI_Point) * 1.0f / item_data.IILKAJBHLMJ_ItemPointValue);
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			StringBuilder str = new StringBuilder();
-			str.SetFormat(bk.GetMessageByLabel("costume_upgrade_use_item_limit_text"), m_use_item_max);
+			str.SetFormatSmart(bk.GetMessageByLabel("costume_upgrade_use_item_limit_text"), m_use_item_max);
 			m_caution.text = str.ToString();
 			m_item_name.text = item_data.OPFGFINHFCE_Name;
 			m_item_use_num = 0;

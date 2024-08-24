@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization.SmartFormat;
 using XeApp.Core;
 using XeApp.Game.Common;
 using XeApp.Game.Tutorial;
@@ -147,7 +148,7 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			string str = "";
 			if(_bingoCount > 0)
-				str = string.Format(bk.GetMessageByLabel("bingo_ribbon_bingo_count_text"), _bingoCount) + "\r\n";
+				str = Smart.Format(bk.GetMessageByLabel("bingo_ribbon_bingo_count_text"), _bingoCount) + "\r\n";
 			if (m_bingoInfo.DAKIMDGPHNE_IsReleaseEpisode)
 				str += string.Format(bk.GetMessageByLabel("bingo_ribbon_costume_text"), a1);
 			else
@@ -290,7 +291,7 @@ namespace XeApp.Game.Menu
 			string str;
 			if(IsNextBingo)
 			{
-				str = string.Format(bk.GetMessageByLabel("bingo_mission_change__bingo_text"), m_view.MEAPAEMIOBB.MALACFEDHDE_CurrentCount);
+				str = Smart.Format(bk.GetMessageByLabel("bingo_mission_change__bingo_text"), m_view.MEAPAEMIOBB.MALACFEDHDE_CurrentCount);
 			}
 			else
 			{
@@ -320,7 +321,7 @@ namespace XeApp.Game.Menu
 				TextPopupSetting s = new TextPopupSetting();
 				s.IsCaption = false;
 				s.WindowSize = SizeType.Small;
-				s.Text = string.Format(bk.GetMessageByLabel("bingo_normal_bingo_start_text"), m_bingoInfo.MALACFEDHDE_CurrentCount);
+				s.Text = Smart.Format(bk.GetMessageByLabel("bingo_normal_bingo_start_text"), m_bingoInfo.MALACFEDHDE_CurrentCount);
 				s.Buttons = new ButtonInfo[1]
 				{
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }

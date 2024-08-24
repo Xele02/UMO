@@ -551,7 +551,7 @@ namespace XeApp.Game.Menu
 			//0x16E3FCC
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			StringBuilder str = new StringBuilder();
-			str.SetFormat(bk.GetMessageByLabel("costume_upgrade_lock_text"), MOEALEGLGCH.IGDOBKHKNJM_GetCostumeUpgradeOfferNum());
+			str.SetFormatSmart(bk.GetMessageByLabel("costume_upgrade_lock_text"), MOEALEGLGCH.IGDOBKHKNJM_GetCostumeUpgradeOfferNum());
 			TextPopupSetting s = new TextPopupSetting();
 			s.IsCaption = false;
 			s.Text = str.ToString();

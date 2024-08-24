@@ -68,6 +68,15 @@ namespace XeApp.Game.Common
 				m_imageIcon.gameObject.SetActive(false);
 			}
 			m_textMessage.text = text;
+			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
+			{
+				m_textMessage.horizontalOverflow = HorizontalWrapMode.Wrap;
+			}
+		}
+
+		public void SetTextWidth(float width)
+		{
+			m_textMessage.rectTransform.sizeDelta = new Vector2(width, m_textMessage.rectTransform.sizeDelta.y);
 		}
 
 		//// RVA: 0x1CD1824 Offset: 0x1CD1824 VA: 0x1CD1824

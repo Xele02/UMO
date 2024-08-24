@@ -4,6 +4,7 @@ using UnityEngine;
 using XeSys.Gfx;
 using System;
 using XeSys;
+using UnityEngine.Localization.SmartFormat;
 
 namespace XeApp.Game.Menu
 {
@@ -60,7 +61,7 @@ namespace XeApp.Game.Menu
 			{
 				str = _itemInfo.HAAJGNCFNJM_ItemName;
 			}
-			SetText(string.Format(bk.GetMessageByLabel("bingo_reward_count_text"), Index + 1), str, _itemInfo.LJKMKCOAICL_ItemCount.ToString() + EKLNMHFCAOI.NDBLEADIDLA(_itemInfo.MJBKGOJBPAD_ItemCat, 0));
+			SetText(Smart.Format(bk.GetMessageByLabel("bingo_reward_count_text"), Index + 1), str, _itemInfo.LJKMKCOAICL_ItemCount.ToString() + EKLNMHFCAOI.NDBLEADIDLA(_itemInfo.MJBKGOJBPAD_ItemCat, 0));
 			SetSpItem(_itemInfo.MPKBLMCNHOM);
 			SetActtionButton(() =>
 			{

@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Localization.SmartFormat;
 using UnityEngine.UI;
 using XeApp.Core;
 using XeApp.Game.Common;
@@ -575,7 +576,7 @@ namespace XeApp.Game.Menu
 				haveCount = KDHGBOOECKC.HHCJCDFCLOB.CKINCELGOEE_GetNumFastProgramAvaiable();
 			}
 			string text = s1 + "\n\n" + s2;
-			popText = string.Format(text, a1, haveCount, haveCount - useCount);
+			popText = Smart.Format(text, useCount, haveCount, haveCount - useCount);
 			KDHGBOOECKC.LKBMNFAOOII fastCompleteItemData = new KDHGBOOECKC.LKBMNFAOOII();
 			PopupUseStoneSetting s = new PopupUseStoneSetting();
 			s.TitleText = title;
@@ -589,7 +590,7 @@ namespace XeApp.Game.Menu
 				fastCompleteItemData = KDHGBOOECKC.HHCJCDFCLOB.NNMPMKGBJFB(viewList[index].PCCFAKEOBIC_EndDate - t, IsStones ? BOPFPIHGJMD.AGGLEGJDLGF.NLGNJNJBLEJ_2_Stone : BOPFPIHGJMD.AGGLEGJDLGF.JPAODAPCJGG_1_Program);
 				if(useCount != fastCompleteItemData.ADPPAIPFHML_UseCount)
 				{
-					popText = string.Format(text, fastCompleteItemData.ADPPAIPFHML_UseCount, haveCount, haveCount - fastCompleteItemData.ADPPAIPFHML_UseCount);
+					popText = Smart.Format(text, fastCompleteItemData.ADPPAIPFHML_UseCount, haveCount, haveCount - fastCompleteItemData.ADPPAIPFHML_UseCount);
 					content.SetMainText(popText);
 				}
 			};

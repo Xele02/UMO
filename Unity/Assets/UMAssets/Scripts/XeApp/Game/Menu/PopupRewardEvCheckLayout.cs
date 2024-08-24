@@ -3,6 +3,7 @@ using System.Linq;
 using mcrs;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Localization.SmartFormat;
 using UnityEngine.UI;
 using XeApp.Game.Common;
 using XeApp.Game.Common.uGUI;
@@ -331,7 +332,7 @@ namespace XeApp.Game.Menu
 					if(!m_isCounting)
 					{
 						m_textEventRankingValue.text = m_EventMusicRank < 1 ? TextConstant.InvalidText : m_EventMusicRank.ToString();
-						m_textEventRankingValue2.text = MessageManager.Instance.GetMessage("menu", "event_music_ranking_unit");
+						m_textEventRankingValue2.text = Smart.Format(MessageManager.Instance.GetMessage("menu", "event_music_ranking_unit"), m_EventMusicRank);
 					}
 					else
 					{

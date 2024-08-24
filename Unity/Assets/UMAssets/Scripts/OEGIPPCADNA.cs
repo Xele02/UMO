@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Localization.SmartFormat;
 using XeApp.Game.Common;
 using XeApp.Game.Menu;
 using XeSys;
@@ -303,7 +304,7 @@ public class OEGIPPCADNA
 		}
 		else if(DECFKDIGIJL)
 		{
-			str = BDGDHOAJDFM.ToString() + MessageManager.Instance.GetBank("menu").GetMessageByLabel("event_music_ranking_unit");
+			str = BDGDHOAJDFM.ToString() + Smart.Format(MessageManager.Instance.GetBank("menu").GetMessageByLabel("event_music_ranking_unit"), BDGDHOAJDFM);
 		}
 		return str;
 	}

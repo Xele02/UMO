@@ -45,6 +45,10 @@ namespace XeApp.Game.Common
 				{
 					m_infoWindow.Setup(string.Format(MessageManager.Instance.GetMessage("menu", "home_story_release_diva"), MessageManager.Instance.GetMessage("master", string.Format("diva_s_{0:D2}", m_view.AHHJLDLAPAN_DivaId))), null);
 				}
+				if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
+				{
+					m_infoWindow.SetTextWidth(160);
+				}
 			}
 		}
 

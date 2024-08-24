@@ -27,6 +27,21 @@ namespace XeApp.Game.Menu
 			m_textBirthplace.transform.parent.Find("Title").GetComponent<Text>().text = JpStringLiterals.UMO_Birthplace;
 			m_textFavorite.transform.parent.Find("Title").GetComponent<Text>().text = JpStringLiterals.UMO_Favorite;
 			m_textDescription.transform.parent.Find("Title").GetComponent<Text>().text = JpStringLiterals.UMO_DivaDesc;
+			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
+			{
+				m_textFavorite.resizeTextForBestFit = true;
+				m_textFavorite.resizeTextMaxSize = m_textFavorite.fontSize;
+				RectTransform rt = m_textAge.transform.parent.Find("TitleBack").GetComponent<RectTransform>();
+				rt.sizeDelta = new Vector2(200, rt.sizeDelta.y);
+				rt = m_textBirthday.transform.parent.Find("TitleBack").GetComponent<RectTransform>();
+				rt.sizeDelta = new Vector2(200, rt.sizeDelta.y);
+				rt = m_textBirthplace.transform.parent.Find("TitleBack").GetComponent<RectTransform>();
+				rt.sizeDelta = new Vector2(200, rt.sizeDelta.y);
+				rt = m_textFavorite.transform.parent.Find("TitleBack").GetComponent<RectTransform>();
+				rt.sizeDelta = new Vector2(200, rt.sizeDelta.y);
+				rt = m_textDescription.transform.parent.Find("TitleBack").GetComponent<RectTransform>();
+				rt.sizeDelta = new Vector2(200, rt.sizeDelta.y);
+			}
 			return;
 		}
 

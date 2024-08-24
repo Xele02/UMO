@@ -29,8 +29,8 @@ namespace XeApp.Game.Menu
 			Text txt2 = t1.Find("txt_01 (TextView)").GetComponent<Text>();
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			StringBuilder str = new StringBuilder();
-			str.SetFormat(bk.GetMessageByLabel("costume_upgrade_cmn_rankup_attention_text"), MOEALEGLGCH.FLGEJDKMNMI());
-			string[] strs = str.ToString().Split(new string[] { JpStringLiterals.StringLiteral_10137 }, StringSplitOptions.RemoveEmptyEntries);
+			str.SetFormatSmart(bk.GetMessageByLabel("costume_upgrade_cmn_rankup_attention_text"), MOEALEGLGCH.FLGEJDKMNMI());
+			string[] strs = str.ToString().Split(new string[] { JpStringLiterals.StringLiteral_10137, "<ORB_PIC>" }, StringSplitOptions.RemoveEmptyEntries);
 			if(strs.Length > 1)
 			{
 				txt.text = strs[0];

@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization.SmartFormat;
 using XeApp.Game.Common;
 using XeApp.Game.Common.uGUI;
 using XeApp.Game.Menu;
@@ -892,7 +893,7 @@ namespace XeApp.Game.Gacha
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 			};
-			s.MessageText = MakePopupMessage(bk.GetMessageByLabel("popup_gacha_lot_paid_msg"), price, lotCount);
+			s.MessageText = MakePopupMessageSmart(bk.GetMessageByLabel("popup_gacha_lot_paid_msg"), price, lotCount);
 			s.HoldCurrency = string.Format(bk.GetMessageByLabel("popup_gacha_lot_paid_count"), havePaidVC);
 			s.CurrencyIsTicket = false;
 			s.OnClickLegalDescButton = OnClickLegalDesc;
@@ -932,7 +933,7 @@ namespace XeApp.Game.Gacha
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 			};
-			s.Text = MakePopupMessage(bk.GetMessageByLabel("popup_gacha_lot_free_msg"), GetMenuLotCount(selectCategory, selectedCountType, selectedLotType));
+			s.Text = MakePopupMessageSmart(bk.GetMessageByLabel("popup_gacha_lot_free_msg"), GetMenuLotCount(selectCategory, selectedCountType, selectedLotType));
 			return s;
 		}
 
@@ -1047,11 +1048,19 @@ namespace XeApp.Game.Gacha
 		{
 			return string.Format(format, RichTextUtility.MakeColorTagString(n0.ToString(), SystemTextColor.ImportantColor), RichTextUtility.MakeColorTagString(n1.ToString(), SystemTextColor.ImportantColor));
 		}
+		private static string MakePopupMessageSmart(string format, int n0, int n1)
+		{
+			return Smart.Format(format, RichTextUtility.MakeColorTagString(n0.ToString(), SystemTextColor.ImportantColor), RichTextUtility.MakeColorTagString(n1.ToString(), SystemTextColor.ImportantColor));
+		}
 
 		// // RVA: 0x99470C Offset: 0x99470C VA: 0x99470C
 		private static string MakePopupMessage(string format, int n0)
 		{
 			return string.Format(format, RichTextUtility.MakeColorTagString(n0.ToString(), SystemTextColor.ImportantColor));
+		}
+		private static string MakePopupMessageSmart(string format, int n0)
+		{
+			return Smart.Format(format, RichTextUtility.MakeColorTagString(n0.ToString(), SystemTextColor.ImportantColor));
 		}
 
 		// // RVA: 0x98AC48 Offset: 0x98AC48 VA: 0x98AC48

@@ -638,6 +638,7 @@ namespace ExternLib
 			public List<string> item_set_name_for_api;
 			public int label;
 			public string name = "";
+			public string original_name = "";
 			public long opened_at;
 			public string platform_product_id;
 			public Dictionary<int, int> price_by_currency = new Dictionary<int, int>();
@@ -705,6 +706,7 @@ namespace ExternLib
 				id = 178088,
 				productType = 2,
 				name = JpStringLiterals.UMO_product_178088_name,
+				original_name = JpStringLiterals.UMO_product_178088_name_jp,
 				buy_limit = 1,
 				opened_at = 1556636400,
 				closed_at = 32503647600,
@@ -746,6 +748,7 @@ namespace ExternLib
 				item_set_name_for_api = new List<string>() { "normal_lot_10_1008_0_rare4only" },
 				label = 10100801,
 				name = JpStringLiterals.UMO_product_429267_name,
+				original_name = JpStringLiterals.UMO_product_429267_name_jp,
 				opened_at = 1648695600,
 				price_by_currency = new Dictionary<int, int>() { { 1001, 1 } },
 				description = new ProductInfo.Description()
@@ -777,6 +780,7 @@ namespace ExternLib
 				item_set_name_for_api = new List<string>() { "normal_lot_1_0318_0" },
 				label = 1031801,
 				name = JpStringLiterals.UMO_product_429712_name,
+				original_name = JpStringLiterals.UMO_product_429712_name_jp,
 				opened_at = 1650596400,
 				price_by_currency = new Dictionary<int, int>() { { 1001, 2 } },
 				description = new ProductInfo.Description()
@@ -804,6 +808,7 @@ namespace ExternLib
 				item_set_name_for_api = new List<string>() { "normal_lot_10_0045_0" },
 				label = 10004501,
 				name = JpStringLiterals.UMO_product_429927_name,
+				original_name = JpStringLiterals.UMO_product_429927_name_jp,
 				opened_at = 1651330800,
 				price_by_currency = new Dictionary<int, int>() { { 1001, 1 } },
 				description = new ProductInfo.Description()
@@ -835,6 +840,7 @@ namespace ExternLib
 				item_set_name_for_api = new List<string>() { "normal_lot_4_1252_0_rare4only" },
 				label = 4125201,
 				name = JpStringLiterals.UMO_product_429928_name,
+				original_name = JpStringLiterals.UMO_product_429928_name_jp,
 				normal_lot_free_setting = new ProductInfo.NormalLotFreeSetting(),
 				opened_at = 1651330800,
 				price_by_currency = new Dictionary<int, int>() { { 1001, 50 }, { 2101, 1 } },
@@ -876,6 +882,7 @@ namespace ExternLib
 				},
 				label = 4125202,
 				name = JpStringLiterals.UMO_product_429929_name,
+				original_name = JpStringLiterals.UMO_product_429929_name_jp,
 				opened_at = 1651330800,
 				price_by_currency = new Dictionary<int, int>() { { 1001, 500 }, { 2101, 10 } },
 				description = new ProductInfo.Description()
@@ -916,6 +923,7 @@ namespace ExternLib
 				},
 				label = 4125204,
 				name = JpStringLiterals.UMO_product_429930_name,
+				original_name = JpStringLiterals.UMO_product_429930_name_jp,
 				opened_at = 1651330800,
 				price_by_currency = new Dictionary<int, int>() { { 1001, 300 } },
 				description = new ProductInfo.Description()
@@ -957,6 +965,7 @@ namespace ExternLib
 				},
 				label = 3109604,
 				name = JpStringLiterals.UMO_product_430020_name,
+				original_name = JpStringLiterals.UMO_product_430020_name_jp,
 				normal_lot_free_setting = new ProductInfo.NormalLotFreeSetting()
 				{
 					duration_days = 1
@@ -992,6 +1001,7 @@ namespace ExternLib
 				description_txt = JpStringLiterals.UMO_product_67554_desc,
 				label = 10,
 				name = JpStringLiterals.UMO_product_67554_name,
+				original_name = JpStringLiterals.UMO_product_67554_name_jp,
 				opened_at = 1497856800,
 				price_by_currency = new Dictionary<int, int>() { { 1001, 10 } },
 			},
@@ -1003,6 +1013,7 @@ namespace ExternLib
 				description_txt = JpStringLiterals.UMO_product_67572_name,
 				label = 10,
 				name = JpStringLiterals.UMO_product_67572_name,
+				original_name = JpStringLiterals.UMO_product_67572_name_jp,
 				opened_at = 1497870000,
 				price_by_currency = new Dictionary<int, int>() { { 1001, 10 } },
 			},
@@ -1014,6 +1025,7 @@ namespace ExternLib
 				description_txt = JpStringLiterals.UMO_product_153192_desc,
 				label = 10,
 				name = JpStringLiterals.UMO_product_153192_name,
+				original_name = JpStringLiterals.UMO_product_153192_name_jp,
 				opened_at = 1535342400,
 				price_by_currency = new Dictionary<int, int>() { { 1001, 5 } },
 			},
@@ -1025,6 +1037,7 @@ namespace ExternLib
 				description_txt = JpStringLiterals.UMO_product_167079_name,
 				label = 10,
 				name = JpStringLiterals.UMO_product_167079_name,
+				original_name = JpStringLiterals.UMO_product_167079_name_jp,
 				normal_lot_free_setting = new ProductInfo.NormalLotFreeSetting(),
 				opened_at = 1552575600,
 				price_by_currency = new Dictionary<int, int>() { { 1001, 10 } },
@@ -1037,6 +1050,7 @@ namespace ExternLib
 				description_txt = JpStringLiterals.UMO_product_222423_desc,
 				label = 10,
 				name = JpStringLiterals.UMO_product_222423_name,
+				original_name = JpStringLiterals.UMO_product_222423_name_jp,
 				opened_at = 1570086000,
 				price_by_currency = new Dictionary<int, int>() { { 1001, 5 } },
 			},
@@ -1048,6 +1062,7 @@ namespace ExternLib
 				description_txt = JpStringLiterals.UMO_product_222424_desc,
 				label = 10,
 				name = JpStringLiterals.UMO_product_222424_name,
+				original_name = JpStringLiterals.UMO_product_222424_name_jp,
 				opened_at = 1570086000,
 				price_by_currency = new Dictionary<int, int>() { { 1001, 20 } },
 			},
@@ -1371,6 +1386,7 @@ namespace ExternLib
 						id = 10000000 + item.PPFNGGCBJKC_Id,
 						platform_product_id = item.GLHKICCPGKJ_PlatformProductIds.Length > 0 ? item.GLHKICCPGKJ_PlatformProductIds[0] : "UMO."+item.DLCGAMHADEN_Label+"."+item.PPFNGGCBJKC_Id,
 						name = item.OPFGFINHFCE_Name,
+						original_name = item.OriginalName,
 						label = item.DLCGAMHADEN_Label,
 						price_by_currency = new Dictionary<int, int>() { { 2, item.HMFFHLPNMPH_Count } }
 					});
@@ -1396,6 +1412,7 @@ namespace ExternLib
 								Products.Add(new ProductInfo() {
 									id = (10000000 + item.PPFNGGCBJKC_Id) * 100 + j,
 									name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(item.KGOFMDMDFCJ_BonusId[j]),
+									original_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(item.KGOFMDMDFCJ_BonusId[j], useJp:true),
 									platform_product_id = "UMO_BonusVC."+giftId+"."+item.NNIIINKFDBG_BonusCount[j],
 									closed_at = 32503647600,
 									price_by_currency = new Dictionary<int, int>() { { bonusItem.CPGFOBNKKBF_CurrencyId, item.NNIIINKFDBG_BonusCount[j] } }
@@ -1431,6 +1448,7 @@ namespace ExternLib
 								closed_at = 32512611600,
 								label = items[i].KAPMOPMDHJE_Label,
 								name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(items[i].KIJAPOFAGPN_ItemFullId),
+								original_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(items[i].KIJAPOFAGPN_ItemFullId, useJp:true),
 								opened_at = 1651330800,
 							};
 							Products.Add(p);
@@ -1498,6 +1516,7 @@ namespace ExternLib
 				}
 				p["label"] = plist[i].label;
 				p["name"] = plist[i].name;
+				p["original_name"] = plist[i].original_name;
 				p["opened_at"] = plist[i].opened_at;
 				if(plist[i].platform_product_id != "")
 					p["platform_product_id"] = plist[i].platform_product_id;
