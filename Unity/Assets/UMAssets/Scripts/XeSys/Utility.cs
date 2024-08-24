@@ -80,7 +80,9 @@ namespace XeSys
 		{
 			if(start == 0)
 			{
-				return !(end < current);
+				if(end != 0 && !(end < current))
+					return false;
+				return true;
 			}
 			if ((end == 0 || end > current) && current >= start)
 				return true;
