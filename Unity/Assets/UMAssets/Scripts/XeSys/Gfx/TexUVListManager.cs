@@ -119,8 +119,8 @@ namespace XeSys.Gfx
 		// // RVA: 0x1EE1B24 Offset: 0x1EE1B24 VA: 0x1EE1B24
 		private IEnumerator LoadAssetAsync(int index, ResourceRequest req, string path, Texture2D texture)
 		{
-			if(RuntimeSettings.CurrentSettings.ShowStringUsed)
-				UnityEngine.Debug.LogError(path);
+			//if(RuntimeSettings.CurrentSettings.ShowStringUsed)
+			//	UnityEngine.Debug.LogError(path);
 			//0x1EE2300
 			while(!req.isDone)
 			{
