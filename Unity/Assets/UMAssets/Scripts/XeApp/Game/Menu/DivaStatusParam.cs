@@ -802,10 +802,8 @@ namespace XeApp.Game.Menu
 				}
 			}
 			int musicId = m_musicData != null ? m_musicData.DLAEJOBELBH_MusicId : 0;
-			if(dispIndex != 1)
+			if(dispIndex == 0)
 			{
-				if(dispIndex != 0)
-					return;
 				string lbl = "05";
 				string lbl2 = "05";
 				if(m_sceneList[0] == null)
@@ -849,7 +847,7 @@ namespace XeApp.Game.Menu
 				m_centerSkillMisMatch.StartChildrenAnimGoStop(lbl);
 				m_activeSkillMisMatch.StartChildrenAnimGoStop(lbl2);
 			}
-			else
+			else if(dispIndex == 1)
 			{
 				string lbl = "05";
 				if(m_sceneList[0] == null)
@@ -871,7 +869,7 @@ namespace XeApp.Game.Menu
 					}
 					if(skillId > 0)
 					{
-						if(m_isCenterDiva)
+						if(!m_isCenterDiva)
 						{
 							if(m_sceneList[0].DCLLIDMKNGO_IsDivaCompatible(m_divaData.AHHJLDLAPAN_DivaId))
 							{
@@ -892,40 +890,43 @@ namespace XeApp.Game.Menu
 					}
 				}
 				m_liveSkillMisMatch[0].StartChildrenAnimGoStop(lbl);
-			}
-			for(int i = 1; i < m_sceneList.Count; i++)
-			{
-				string lbl = "05";
-				if(m_sceneList[i] == null)
+				for(int i = 1; i < m_sceneList.Count; i++)
 				{
-					m_regulationButtons[i].Setup(0, RegulationButton.Type.Live, null);
-				}
-				else
-				{
-					m_regulationButtons[i].Setup(musicId, RegulationButton.Type.Live, m_sceneList[i]);
-
-					int skillId;
-					if(m_musicData == null)
+					lbl = "05";
+					if(m_sceneList[i] == null)
 					{
-						skillId = m_sceneList[i].FILPDDHMKEJ_GetLiveSkillId(false, 0, 0);
+						m_regulationButtons[i].Setup(0, RegulationButton.Type.Live, null);
 					}
 					else
 					{
-						skillId = m_sceneList[i].FILPDDHMKEJ_GetLiveSkillId(false, m_musicData.FKDCCLPGKDK_JacketAttr, m_musicData.AIHCEGFANAM_Serie);
-					}
-					if(skillId > 0)
-					{
-						lbl = "01";
-						if(m_sceneList[i].DCLLIDMKNGO_IsDivaCompatible(m_divaData.AHHJLDLAPAN_DivaId))
+						m_regulationButtons[i].Setup(musicId, RegulationButton.Type.Live, m_sceneList[i]);
+
+						int skillId;
+						if(m_musicData == null)
 						{
-							if(m_regulationButtons[i].IsMisMatchAttr)
-								lbl = "08";
-							if(m_regulationButtons[i].IsMisMatchMusic)
-								lbl = "06";
+							skillId = m_sceneList[i].FILPDDHMKEJ_GetLiveSkillId(false, 0, 0);
+						}
+						else
+						{
+							skillId = m_sceneList[i].FILPDDHMKEJ_GetLiveSkillId(false, m_musicData.FKDCCLPGKDK_JacketAttr, m_musicData.AIHCEGFANAM_Serie);
+						}
+						if(skillId > 0)
+						{
+							if(m_sceneList[i].DCLLIDMKNGO_IsDivaCompatible(m_divaData.AHHJLDLAPAN_DivaId))
+							{
+								if(m_regulationButtons[i].IsMisMatchAttr)
+									lbl = "08";
+								if(m_regulationButtons[i].IsMisMatchMusic)
+									lbl = "06";
+							}
+							else
+							{
+								lbl = "01";
+							}
 						}
 					}
+					m_liveSkillMisMatch[i].StartChildrenAnimGoStop(lbl);
 				}
-				m_liveSkillMisMatch[i].StartChildrenAnimGoStop(lbl);
 			}
 		}
 
