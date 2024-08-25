@@ -1467,7 +1467,7 @@ public class FOCPLKMMCAL
 					g = false;
 				else
 				{
-					KEODKEGFDLD_FreeMusicInfo fData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(OMNOFMEBLAD.GHBPLHBNMBK_FreeMusicId);
+					KEODKEGFDLD_FreeMusicInfo fData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(ds.ICKPLIABPKC_FreeMusicId);
 					bool b = true;
 					if (OMNOFMEBLAD.GHBPLHBNMBK_FreeMusicId == ds.ICKPLIABPKC_FreeMusicId)
 					{
