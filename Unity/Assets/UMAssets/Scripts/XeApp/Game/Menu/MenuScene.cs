@@ -1580,25 +1580,25 @@ namespace XeApp.Game.Menu
 				{
 					InputDisable();
 					RaycastDisable();
-					string msg = MessageManager.Instance.GetBank("menu").GetMessageByLabel("pop_deco_release_desc") + "";
+					string msg = MessageManager.Instance.GetBank("menu").GetMessageByLabel("pop_deco_release_desc") + JpStringLiterals.StringLiteral_5812;
 					if (a2 < a)
 					{
-						msg += MessageManager.Instance.GetBank("menu").GetMessageByLabel("deco_name_poster") + "";
+						msg += MessageManager.Instance.GetBank("menu").GetMessageByLabel("deco_name_poster") + JpStringLiterals.StringLiteral_5812;
 						pd.KCCLEHLLOFG_Common.HHCMHDKKFNF_SetPstVer(a);
 					}
 					if (b2 < b)
 					{
-						msg += MessageManager.Instance.GetBank("menu").GetMessageByLabel("deco_name_figure") + "";
+						msg += MessageManager.Instance.GetBank("menu").GetMessageByLabel("deco_name_figure") + JpStringLiterals.StringLiteral_5812;
 						pd.KCCLEHLLOFG_Common.HKAMGHBKNBH_SetDvfVer(b);
 					}
 					if (c2 < c)
 					{
-						msg += MessageManager.Instance.GetBank("menu").GetMessageByLabel("deco_name_torso") + "";
+						msg += MessageManager.Instance.GetBank("menu").GetMessageByLabel("deco_name_torso") + JpStringLiterals.StringLiteral_5812;
 						pd.KCCLEHLLOFG_Common.GCCOOJJHIAM_SetTrsVer(c);
 					}
 					if (d2 < d)
 					{
-						msg += MessageManager.Instance.GetBank("menu").GetMessageByLabel("deco_name_decomascot") + "";
+						msg += MessageManager.Instance.GetBank("menu").GetMessageByLabel("deco_name_decomascot") + JpStringLiterals.StringLiteral_5812;
 						pd.KCCLEHLLOFG_Common.JAHBNIMDNHJ_DMasVer(d);
 					}
 					ButtonInfo[] buttons = new ButtonInfo[1]
