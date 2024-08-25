@@ -69,9 +69,9 @@ namespace XeApp.Game.Menu
 				if(b && NHPDPKHMFEP.HHCJCDFCLOB.MENKMJPCELJ() != -2)
 				{
 					int idx = 0;
-					for(int i = 0; i < m_boardSquareList.Count; i++)
+					for(int i = m_boardSquareList.Count - 1; i >= 0; i--)
 					{
-						if (m_boardSquareList[i][2].type != SquareType.Panel)
+						if (m_boardSquareList[i][2].type == SquareType.Panel)
 						{
 							idx = i;
 							break;
