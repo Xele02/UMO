@@ -47,6 +47,16 @@ MonoBehaviour:
     v: 0.1943359
     width: 0.1855469
     height: 0.02929688
+  - name: cmn_pop01_fnt_02_b33
+    u: 0.1865234
+    v: 0.9169922
+    width: 0.1054688
+    height: 0.02539063
+  - name: cmn_pop01_fnt_02_p33
+    u: 0.2929688
+    v: 0.9169922
+    width: 0.1054688
+    height: 0.02539063
   - name: cmn_pop01_fnt_02_b32
     u: 0.1865234
     v: 0.890625
