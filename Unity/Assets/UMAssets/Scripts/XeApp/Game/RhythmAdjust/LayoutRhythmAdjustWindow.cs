@@ -48,6 +48,10 @@ namespace XeApp.Game.RhythmAdjust
 			m_TexUvListManager = uvMan;
 			m_bgAnime = layout.FindViewByExId("sw_sel_note_adjust_sw_sel_note_adjust_transition_bg_anim") as AbsoluteLayout;
 			m_windowAnime = layout.FindViewByExId("sw_sel_note_adjust_sw_sel_note_adjust_transition_anim") as AbsoluteLayout;
+			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
+			{
+				Utility.SearchGameObjectRecursively("set (TextView)", transform).GetComponent<Text>().alignment = TextAnchor.UpperRight;
+			}
 			m_bgAnime.StartChildrenAnimGoStop("st_out");
 			m_windowAnime.StartChildrenAnimGoStop("st_out");
 			ActionButton[] avts = GetComponentsInChildren<ActionButton>(true);
