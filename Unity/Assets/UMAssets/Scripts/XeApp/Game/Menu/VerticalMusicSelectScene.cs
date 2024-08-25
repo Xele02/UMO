@@ -1189,7 +1189,7 @@ namespace XeApp.Game.Menu
 					save.GJDEHJBAMNH_SetSeries(series);
 					list_no = 0;
 				}
-				else if(args.selection.miniGameId >= 0)
+				else if(args.selection.miniGameId > 0)
 				{
 					m_musicTab = VerticalMusicSelecChoiceMusicListTab.MusicTab.Event;
 					SetMusicTab(VerticalMusicSelecChoiceMusicListTab.MusicTab.Event);
