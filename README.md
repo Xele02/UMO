@@ -1,6 +1,6 @@
 Rewrite project of UtaMacross mobile game. 
 
-**Current version : 1.0.5**
+**Current version : 1.0.6**
 
 Fonctionality : 
 * Almost everything of the game.
@@ -9,6 +9,12 @@ Fonctionality :
 * A few event can be activated (Apil fools, ...). Can be acceded from UMO Setting popup on the title screen (pad icon)
 * Account picker : Use the top right button on the start screen. You can create new accounts, copy and delete. You can also create and use a cheat account (which was the one used before 1.0.0).
 * Translation : You can switch to other languages (en / fr) in the UMO Setting. This is still a work in progress and only a small part is translated.
+
+# Translation
+
+The original game is in japanese only. The translation in others languages is currently working on :
+* English : 1%
+* French : 10%. Most of the important parts to understand the game is available.
 
 # Requirement / Installation
 
