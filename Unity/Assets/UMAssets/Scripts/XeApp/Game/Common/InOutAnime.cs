@@ -112,8 +112,8 @@ namespace XeApp.Game.Common
 					target = Vector2.one;
 					break;
 				case InType.Height:
-					start.x = rect.sizeDelta.x;
-					target = rect.sizeDelta;
+					start = rect.sizeDelta;
+					target = rect.sizeDelta + new Vector2(0, moveAmount);
 					break;
 			}
 			m_animCoroutine = this.StartCoroutineWatched(Co_Animation(start, target, animTime, (Vector2 vec) => {

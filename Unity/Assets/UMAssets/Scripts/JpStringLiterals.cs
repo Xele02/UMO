@@ -665,7 +665,7 @@ class JpStringLiterals
 	public static string UMO_SupportImp2 { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_SupportImp2", "解放条件：衣装強化で支援プレート解放を獲得する。"); } }
 	public static string UMO_NumLeft { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_NumLeft", "残り回数"); } }
 	public static string UMO_PlayAttr { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_PlayAttr", "プレイする楽曲属性"); } }
-	public static string UMO_PlayAttr2 { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_PlayAttr", "優先する属性"); } }
+	public static string UMO_PlayAttr2 { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_PlayAttr2", "優先する属性"); } }
 	public static string UMO_All { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_All", "ALL"); } }
 	public static string UMO_Attr1 { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_Attr1", "星"); } }
 	public static string UMO_Attr2 { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_Attr2", "愛"); } }
@@ -693,4 +693,13 @@ class JpStringLiterals
 	public static string UMO_Costume { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_Costume", "衣装変更"); } }
 	public static string UMO_Gift { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_Gift", "ギフト"); } }
 	public static string UMO_Profil { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_Profil", "プロフィール"); } }
+	public static string UMO_DivaCompatibility { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_DivaCompatibility", "歌姫相性"); } }
+	public static string UMO_SkillFilterActive { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_SkillFilterActive", "設定中"); } }
+	public static string UMO_SkillFilterDisableAll { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_SkillFilterDisableAll", "選択解除"); } }
+	public static string UMO_SkillFilterLongNote { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_SkillFilterLongNote", "ロング・ショート"); } }
+	public static string UMO_SkillFilterRank { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_SkillFilterRank", "スキルランク"); } }
+	public static string UMO_SkillFilterBRank { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_SkillFilterBRank", "B級"); } }
+	public static string UMO_SkillFilterARank { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_SkillFilterARank", "A級"); } }
+	public static string UMO_SkillFilterSRank { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_SkillFilterSRank", "S級"); } }
+	public static string UMO_SkillFilterSSRank { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_SkillFilterSSRank", "SS級"); } }
 }
