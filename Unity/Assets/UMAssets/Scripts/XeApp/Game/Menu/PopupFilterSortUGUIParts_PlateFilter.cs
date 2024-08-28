@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -49,6 +50,11 @@ namespace XeApp.Game.Menu
 			filterNotesExpectation.Initialize();
 			titleH1[0].Initialize();
 			titleH1[1].Initialize();
+			transform.Find("PopupFilterSortUGUIParts_Title02/Title/Text_Title").GetComponent<Text>().text = MessageManager.Instance.GetMessage("menu", "popup_filter_rarity_title_h2");
+			transform.Find("PopupFilterSortUGUIParts_Title02 (4)/Title/Text_Title").GetComponent<Text>().text = MessageManager.Instance.GetMessage("menu", "popup_filter_music_attribute_title_h2");
+			transform.Find("PopupFilterSortUGUIParts_Title02 (5)/Title/Text_Title").GetComponent<Text>().text = MessageManager.Instance.GetMessage("menu", "popup_filter_series_title_h2");
+			transform.Find("PopupFilterSortUGUIParts_Title02 (7)/Title/Text_Title").GetComponent<Text>().text = MessageManager.Instance.GetMessage("menu", "popup_sort_item_notes_expectation");
+			transform.Find("PopupFilterSortUGUIParts_Title02 (6)/Title/Text_Title").GetComponent<Text>().text = JpStringLiterals.UMO_DivaCompatibility;
 			yield break;
 		}
 	}

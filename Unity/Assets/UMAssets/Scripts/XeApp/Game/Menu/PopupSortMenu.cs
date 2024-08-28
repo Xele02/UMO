@@ -717,8 +717,8 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.OEELDELPIIP.Count; i++)
 				{
 					HCDIOPEOGEE h = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.OEELDELPIIP[i];
-					TodoLogger.LogError(TodoLogger.ToCheck, "check bit test");
-					if((h.MKDDOJOADMF & (int)flags) != 0)
+					ulong bit = (ulong)1 << h.MKDDOJOADMF;
+					if((bit & flags) != 0)
 					{
 						for (int j = 0; j < h.NNDGIAEFMOG.Count; j++)
 						{
@@ -761,8 +761,8 @@ namespace XeApp.Game.Menu
 				for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.GAGNFDHGJGC.Count; i++)
 				{
 					DNIDPGDJCOG d = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.GAGNFDHGJGC[i];
-					TodoLogger.LogError(TodoLogger.ToCheck, "check bit test");
-					if ((d.MKDDOJOADMF & (int)flags) != 0)
+					ulong bit = (ulong)1 << d.MKDDOJOADMF;
+					if ((bit & flags) != 0)
 					{
 						for(int j = 0; j < d.NNDGIAEFMOG.Count; j++)
 						{
