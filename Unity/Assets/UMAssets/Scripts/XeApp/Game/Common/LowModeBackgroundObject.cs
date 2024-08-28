@@ -65,7 +65,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x110A728 Offset: 0x110A728 VA: 0x110A728
 		private void ApplyDimmer(RawImage image, int value, DimmerTblIndex index)
 		{
-			int v = DimmerTbl[(int)index, value];
+			float v = DimmerTbl[(int)index, value] / 255.0f;
 			image.color = new Color(v, v, v);
 		}
 
