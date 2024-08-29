@@ -33,6 +33,7 @@ namespace XeApp
 					thread.Name = "XeAppWorkerThread";
 					thread.Priority = ThreadPriority.BelowNormal;
 					thread.Start();	
+					TodoLogger.Log(TodoLogger.Job, "Created Thread");
 				}
 
 				// // RVA: 0x1D7A1A4 Offset: 0x1D7A1A4 VA: 0x1D7A1A4
@@ -66,6 +67,7 @@ namespace XeApp
 				// // RVA: 0x1D7A3C4 Offset: 0x1D7A3C4 VA: 0x1D7A3C4
 				private void ThreadUpdate()
 				{
+					TodoLogger.Log(TodoLogger.Job, "ThreadUpdate Start");
 					Action job = GetJob();
 					while(job != null)
 					{
@@ -81,6 +83,7 @@ namespace XeApp
 
 						job = GetJob();
 					}
+					TodoLogger.Log(TodoLogger.Job, "ThreadUpdate End");
 				}
 
 				// // RVA: 0x1D7A604 Offset: 0x1D7A604 VA: 0x1D7A604
@@ -101,8 +104,11 @@ namespace XeApp
 						if(job != null)
 							return job;
 						isRunning = false;
+						TodoLogger.Log(TodoLogger.Job, "GetJob wait event");
 						resetEvent.WaitOne();
+						TodoLogger.Log(TodoLogger.Job, "GetJob check next job");
 					}
+					TodoLogger.Log(TodoLogger.Job, "GetJob return null");
 					return null;
 				}
 			}
