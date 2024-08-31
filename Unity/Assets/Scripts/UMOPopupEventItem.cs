@@ -25,14 +25,17 @@ public class UMOPopupEventItem : SwapScrollListContent
         Icon.enabled = false;
         if(data.GlobalBannerImageId != -1)
         {
-            bannerTexCache.LoadForGenaral(data.GlobalBannerImageId, (IiconTexture tex) =>
+            if(FileSystemProxy.FileExists(Application.persistentDataPath + "/data/android/"+string.Format(HomeBannerTextureCache.BundleFormatForGeneral, data.GlobalBannerImageId)))
             {
-                if(tex != null)
+                bannerTexCache.LoadForGenaral(data.GlobalBannerImageId, (IiconTexture tex) =>
                 {
-                    (tex as HomeBannerTexture).Set(Icon);
-                    Icon.enabled = true;
-                }
-            });
+                    if(tex != null)
+                    {
+                        (tex as HomeBannerTexture).Set(Icon);
+                        Icon.enabled = true;
+                    }
+                });
+            }
         }
         else
         {
