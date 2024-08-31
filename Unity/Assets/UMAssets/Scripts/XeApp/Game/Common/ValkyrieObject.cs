@@ -107,6 +107,9 @@ namespace XeApp.Game.Common
 		{
 			Destroy(m_valkyrie);
 			m_valkyrie = Instantiate(resource.prefab);
+#if UNITY_EDITOR || UNITY_STANDALONE
+			BundleShaderInfo.Instance.FixMaterialShader(m_valkyrie);
+#endif
 			m_valkyrie.transform.SetParent(transform, false);
 			ILDKBCLAFPB.MPHNGGECENI_Option saveOption = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options;
 			string ShaderName = "";
