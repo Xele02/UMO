@@ -158,9 +158,8 @@ Shader "Unlit/RBreakSmallPlateShader" {
 				// Keywords { "_BACK1TEX_POLAR" "_BACK2TEX_POLAR" "_FRONT1TEX_POLAR" "_FRONT2TEX_ROTATE" "_DISTOTIONTEX_ROTATE" }
 				u_xlat0.xy = TRANSFORM_TEX(v.texcoord0, _MainTex);
 				#if _DISTOTIONTEX_SCROLL
-					u_xlat0.xy = TRANSFORM_TEX(v.texcoord0, _DistotionTex);
 					u_xlat8.x = frac(_Time.x);
-					u_xlat0.zw = float2(_DistotionTexAnimeSpeed, _DistotionTexAnimeSpeed2) * u_xlat8.xx + u_xlat0.xy;
+					u_xlat0.zw = float2(_DistotionTexAnimeSpeed, _DistotionTexAnimeSpeed2) * u_xlat8.xx + TRANSFORM_TEX(v.texcoord0, _DistotionTex);
 				#elif _DISTOTIONTEX_POLAR
 					u_xlat0.zw = TRANSFORM_TEX(v.texcoord0, _DistotionTex);
 				#elif _DISTOTIONTEX_ROTATE
