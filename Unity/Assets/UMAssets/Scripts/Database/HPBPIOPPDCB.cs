@@ -58,6 +58,11 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 		}
     }
 
+	private static int[] oldDivaLevels = new int[10]
+	{
+		60, 55, 50, 50, 50, 60, 50, 50, 50, 60
+	};
+
 	// // RVA: 0x16088BC Offset: 0x16088BC VA: 0x16088BC Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
     {
@@ -81,7 +86,8 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 				data.CMBCBNEODPD_HomeBgId = (ushort)array[i].CMBCBNEODPD;
 
 				EPPOHFLMDBC_DivaStats data2 = new EPPOHFLMDBC_DivaStats();
-				data2.DOMFHDPMCCO_Init(0, (int)val2, (short)array[i].DFEDIAPLFHN.BCCOMAODPJI, (short)array[i].DFEDIAPLFHN.LJELGFAFGAB, (short)array[i].DFEDIAPLFHN.KNEDJFLCCLN,
+				// UMO, Restore old diva life stat (not end game 9999)
+				data2.DOMFHDPMCCO_Init(0, (int)val2, (short)/*array[i].DFEDIAPLFHN.BCCOMAODPJI*/oldDivaLevels[i], (short)array[i].DFEDIAPLFHN.LJELGFAFGAB, (short)array[i].DFEDIAPLFHN.KNEDJFLCCLN,
 						(short)array[i].DFEDIAPLFHN.MBAMIOJNGBD, (short)array[i].DFEDIAPLFHN.ADLGKMBIPCA, (short)array[i].DFEDIAPLFHN.PIPCIMIALOO);
 				data.CMCKNKKCNDK_StatsByLevel[0].ODDIHGPONFL_CopyValues(data2);
 				val2 = val2 * 0xb + 3;
