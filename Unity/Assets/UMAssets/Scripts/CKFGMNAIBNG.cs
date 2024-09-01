@@ -141,12 +141,21 @@ public class CKFGMNAIBNG
 	// // RVA: 0x107EFCC Offset: 0x107EFCC VA: 0x107EFCC
 	public string HCPCHEPCFEA_GetCostumeName(int LEHGKNOCLBG)
 	{
+		string res = "";
 		if (LEHGKNOCLBG == 0)
-			return OPFGFINHFCE_Name;
-		MessageBank bank = MessageManager.Instance.GetBank("master");
-		StringBuilder str = new StringBuilder(16);
-		str.SetFormat("cos_{0:D4}_{1:D2}", JPIDIENBGKH_CostumeId, LEHGKNOCLBG);
-		return bank.GetMessageByLabel(str.ToString());
+		{
+			res = OPFGFINHFCE_Name;
+		}
+		else
+		{
+			MessageBank bank = MessageManager.Instance.GetBank("master");
+			StringBuilder str = new StringBuilder(16);
+			str.SetFormat("cos_{0:D4}_{1:D2}", JPIDIENBGKH_CostumeId, LEHGKNOCLBG);
+			res = bank.GetMessageByLabel(str.ToString());
+		}
+		if(RuntimeSettings.CurrentSettings.DisplayIdInName)
+			res = "[" + JPIDIENBGKH_CostumeId + "/"+ DAJGPBLEEOB_PrismCostumeId +"] "+res;
+		return res;
 	}
 
 	// // RVA: 0x107ECCC Offset: 0x107ECCC VA: 0x107ECCC
