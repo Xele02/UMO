@@ -34,13 +34,13 @@ namespace XeApp.Game.Common
 			{
 				divaObject.UpdateColorByStageLighting(TransformToColor(colorControlTransforms[0]),
 													TransformToColor(colorControlTransforms[1]),
-													TransformToColor(colorControlTransforms[2]).r,
+													TransformToColor(colorControlTransforms[2]).a,
 													TransformToColor(colorControlTransforms[3]));
 				for(int i = 0; i < divaExtensionObjectList.Count; i++)
 				{
 					divaExtensionObjectList[i].UpdateColorByStageLighting(TransformToColor(colorControlTransforms[0]),
 													TransformToColor(colorControlTransforms[1]),
-													TransformToColor(colorControlTransforms[2]).r);
+													TransformToColor(colorControlTransforms[2]).a);
 				}
 			}
 		}

@@ -166,7 +166,7 @@ namespace XeApp.Game.Common
 				main.a = defaultMainColor.a;
 				Color rim = Color.Lerp(defaultRimColor, rimColor, rimColor.a);
 				rim.a = defaultRimColor.a;
-				ChangeColor(main, rim, Mathf.Lerp(defaultRimPower, rimPower, rimColor.a));
+				ChangeColor(main, rim, Mathf.Lerp(defaultRimPower, rimColor.r, rimPower));
 			}
 		}
 
