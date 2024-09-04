@@ -346,7 +346,11 @@ namespace XeApp.Game.Menu
 			yield return new WaitUntil(() =>
 			{
 				//0xC4C37C
+#if UNITY_EDITOR
+				return m_voicePlayer.source.status == CriWare.CriAtomSource.Status.Stop;
+#else
 				return m_voicePlayer.source.status == CriWare.CriAtomSource.Status.PlayEnd;
+#endif
 			});
 			StopSimpleLipSync();
 			m_coCommonLoopTalk = null;
