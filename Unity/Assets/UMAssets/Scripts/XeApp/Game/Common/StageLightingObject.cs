@@ -48,7 +48,7 @@ namespace XeApp.Game.Common
 				Color light_a = TransformToColor(colorControlTransforms[5]);
 				Color light_b = TransformToColor(colorControlTransforms[6]);
 				Color light_c = TransformToColor(colorControlTransforms[7]);
-				divaObject.UpdateColorByStageLighting(diva_color, diva_rim_color, diva_rim_power.r, shadow_color);
+				divaObject.UpdateColorByStageLighting(diva_color, diva_rim_color, diva_rim_power.a, shadow_color);
 				for(int i = 0; i < divaExtensionObjectList.Count; i++)
 				{
 					divaExtensionObjectList[i].UpdateColorByStageLighting(diva_color, diva_rim_color, diva_rim_power.a);
@@ -57,7 +57,7 @@ namespace XeApp.Game.Common
 				{
 					if(subDivaObject[i] != null)
 					{
-						subDivaObject[i].UpdateColorByStageLighting(diva_color, diva_rim_color, diva_rim_power.r, shadow_color);
+						subDivaObject[i].UpdateColorByStageLighting(diva_color, diva_rim_color, diva_rim_power.a, shadow_color);
 					}
 				}
 				if(stageObject.colorChanger != null)
