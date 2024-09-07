@@ -7,14 +7,14 @@ public class JKNGJFOBADP
 	{
 		public int BCCHOBPJJKE_SceneId; // 0x8
 		public int INDDJNMPONH; // 0xC
-		public int JKGFBFPIMGA; // 0x10
-		public int MPGNHFDGOBO; // 0x14
-		public int HNNAODKJGPD; // 0x18
-		public int JPIPENJGGDD; // 0x1C
+		public int JKGFBFPIMGA_BaseRarity; // 0x10
+		public int MPGNHFDGOBO_PrevRarity; // 0x14
+		public int HNNAODKJGPD_NextRarity; // 0x18
+		public int JPIPENJGGDD_NumBoard; // 0x1C
 		public int FELBNCPBGMJ; // 0x20
 		public int OCMIGHELJDP; // 0x24
 		public bool OGPKHGEMLMP; // 0x28
-		public bool OLGCDLJFMDH; // 0x29
+		public bool OLGCDLJFMDH_Sngl; // 0x29
 	}
 
 	public class OILCOECKMOO
@@ -366,11 +366,11 @@ public class JKNGJFOBADP
 						PJBJCBEMEEC = 0;
 						GPPAIFNBHDP data = new GPPAIFNBHDP();
 						data.BCCHOBPJJKE_SceneId = MHFBCINOJEE;
-						data.OLGCDLJFMDH = dbScene.FBJDHLGODPP_Sngl;
+						data.OLGCDLJFMDH_Sngl = dbScene.FBJDHLGODPP_Sngl;
 						data.INDDJNMPONH = 1;
-						data.JKGFBFPIMGA = EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, MHFBCINOJEE);
-						data.MPGNHFDGOBO = data.JKGFBFPIMGA;
-						data.HNNAODKJGPD = data.JKGFBFPIMGA;
+						data.JKGFBFPIMGA_BaseRarity = EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, MHFBCINOJEE);
+						data.MPGNHFDGOBO_PrevRarity = data.JKGFBFPIMGA_BaseRarity;
+						data.HNNAODKJGPD_NextRarity = data.JKGFBFPIMGA_BaseRarity;
 						data.OGPKHGEMLMP = b3;
 						FIGHNFKAMGI.Add(data);
 						//joined_r0x0146b3fc;
@@ -386,14 +386,14 @@ public class JKNGJFOBADP
 						IKBLCEFCGDE = 0;
 						GPPAIFNBHDP data = new GPPAIFNBHDP();
 						data.BCCHOBPJJKE_SceneId = MHFBCINOJEE;
-						data.OLGCDLJFMDH = dbScene.FBJDHLGODPP_Sngl;
+						data.OLGCDLJFMDH_Sngl = dbScene.FBJDHLGODPP_Sngl;
 						data.INDDJNMPONH = 1;
-						data.JKGFBFPIMGA = EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, MHFBCINOJEE);
-						data.MPGNHFDGOBO = data.JKGFBFPIMGA + 1;
-						data.HNNAODKJGPD = data.JKGFBFPIMGA + 1;
+						data.JKGFBFPIMGA_BaseRarity = EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, MHFBCINOJEE);
+						data.MPGNHFDGOBO_PrevRarity = data.JKGFBFPIMGA_BaseRarity + 1;
+						data.HNNAODKJGPD_NextRarity = data.JKGFBFPIMGA_BaseRarity + 1;
 						data.OGPKHGEMLMP = b3;
 						PJBJCBEMEEC = saveScene.JPIPENJGGDD_Mlt;
-						data.JPIPENJGGDD = PJBJCBEMEEC;
+						data.JPIPENJGGDD_NumBoard = PJBJCBEMEEC;
 						FIGHNFKAMGI.Add(data);
 						if(b3)
 						{
@@ -406,22 +406,22 @@ public class JKNGJFOBADP
 				{
 					GPPAIFNBHDP data = new GPPAIFNBHDP();
 					data.BCCHOBPJJKE_SceneId = MHFBCINOJEE;
-					data.OLGCDLJFMDH = dbScene.FBJDHLGODPP_Sngl;
+					data.OLGCDLJFMDH_Sngl = dbScene.FBJDHLGODPP_Sngl;
 					if(saveScene.JPIPENJGGDD_Mlt == 0)
 					{
 						data.INDDJNMPONH = 3;
-						data.JPIPENJGGDD = saveScene.JPIPENJGGDD_Mlt;
-						data.JKGFBFPIMGA = EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, MHFBCINOJEE);
-						data.MPGNHFDGOBO = data.JKGFBFPIMGA;
+						data.JPIPENJGGDD_NumBoard = saveScene.JPIPENJGGDD_Mlt;
+						data.JKGFBFPIMGA_BaseRarity = EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, MHFBCINOJEE);
+						data.MPGNHFDGOBO_PrevRarity = data.JKGFBFPIMGA_BaseRarity;
 					}
 					else
 					{
 						data.INDDJNMPONH = 4;
-						data.JPIPENJGGDD = saveScene.JPIPENJGGDD_Mlt;
-						data.JKGFBFPIMGA = EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, MHFBCINOJEE);
-						data.MPGNHFDGOBO = data.JKGFBFPIMGA + 1;
+						data.JPIPENJGGDD_NumBoard = saveScene.JPIPENJGGDD_Mlt;
+						data.JKGFBFPIMGA_BaseRarity = EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, MHFBCINOJEE);
+						data.MPGNHFDGOBO_PrevRarity = data.JKGFBFPIMGA_BaseRarity + 1;
 					}
-					data.HNNAODKJGPD = data.JKGFBFPIMGA + 1;
+					data.HNNAODKJGPD_NextRarity = data.JKGFBFPIMGA_BaseRarity + 1;
 					b3 = b3 && saveScene.JPIPENJGGDD_Mlt < maxPoster;
 					data.OGPKHGEMLMP = b3;
 					FIGHNFKAMGI.Add(data);

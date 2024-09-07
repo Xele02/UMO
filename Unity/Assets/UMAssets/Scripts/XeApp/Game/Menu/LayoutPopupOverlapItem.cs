@@ -32,17 +32,17 @@ namespace XeApp.Game.Menu
 			if(type == GONMPHKGKHI_RewardView.CECMLGBLHHG.JCGKGFLCKCP_8)
 			{
 				GONMPHKGKHI_RewardView.GCHFDJMNCAF d = info as GONMPHKGKHI_RewardView.GCHFDJMNCAF;
-				SetDecoNum(d.GBALGEMKJKD, d.HMGDINKEPHJ);
+				SetDecoNum(d.GBALGEMKJKD_PrevBoard, d.HMGDINKEPHJ_NextBoard);
 				SetDecoImage(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(d.DMJCACIDEBM ? EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft : EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef, d.BCCHOBPJJKE_SceneId));
 				return;
 			}
 			if(info.IPMJIODJGBC == GONMPHKGKHI_RewardView.CECMLGBLHHG.INJNLJHGGKB_4)
 			{
-				SetSubboardNum(info.LBGGNGCKOJE, info.FICKICOHCAD);
+				SetSubboardNum(info.LBGGNGCKOJE_PrevNumBoard, info.FICKICOHCAD_NextNumBoard);
 			}
 			else if(info.IPMJIODJGBC == GONMPHKGKHI_RewardView.CECMLGBLHHG.NNEOHGFGLKM_3)
 			{
-				SetRarity(info.MPGNHFDGOBO, info.HNNAODKJGPD);
+				SetRarity(info.MPGNHFDGOBO_PrevRarity, info.HNNAODKJGPD_NextRarity);
 			}
 			SetPlateImage(info.BCCHOBPJJKE_SceneId, 2, _isKira);
 		}

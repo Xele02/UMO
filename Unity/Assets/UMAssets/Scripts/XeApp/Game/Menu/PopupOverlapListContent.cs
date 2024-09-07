@@ -182,7 +182,7 @@ namespace XeApp.Game.Menu
 				m_root.StartChildrenAnimGoStop("02");
                 GONMPHKGKHI_RewardView.GCHFDJMNCAF a = setup.List[0] as GONMPHKGKHI_RewardView.GCHFDJMNCAF;
                 EKLNMHFCAOI.FKGCBLHOOCL_Category cat = a.DMJCACIDEBM ? EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft : EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef;
-                SetStatusDeco(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(cat, setup.List[0].BCCHOBPJJKE_SceneId), a.GBALGEMKJKD, a.HMGDINKEPHJ, control.m_titleText);
+                SetStatusDeco(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(cat, setup.List[0].BCCHOBPJJKE_SceneId), a.GBALGEMKJKD_PrevBoard, a.HMGDINKEPHJ_NextBoard, control.m_titleText);
 				for(int i = 0; i < setup.List.Count; i++)
 				{
 					GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(cat, setup.List[0].BCCHOBPJJKE_SceneId), 0, (IiconTexture texture) =>
@@ -212,7 +212,7 @@ namespace XeApp.Game.Menu
 					if(_ != null)
 					{
 						if(_ is GONMPHKGKHI_RewardView.GCHFDJMNCAF)
-							return (_ as GONMPHKGKHI_RewardView.GCHFDJMNCAF).GBALGEMKJKD < (_ as GONMPHKGKHI_RewardView.GCHFDJMNCAF).HMGDINKEPHJ;
+							return (_ as GONMPHKGKHI_RewardView.GCHFDJMNCAF).GBALGEMKJKD_PrevBoard < (_ as GONMPHKGKHI_RewardView.GCHFDJMNCAF).HMGDINKEPHJ_NextBoard;
 					}
 					return false;
 				}));
