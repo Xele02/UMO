@@ -172,8 +172,8 @@ namespace XeApp.Game.Common
 			LockBoneSpring(0);
 			float normalizedTime = (float)(time / musicBodyClipLength);
 			animator.Play("music", 0, normalizedTime);
-			facialBlendAnimMediator.selfAnimator.Play("music", 0, normalizedTime);
-			facialBlendAnimMediator.selfAnimator.Play("music", 1, normalizedTime);
+			facialBlendAnimMediator.selfAnimator.Play("music", 0, (float)(time / facialBlendAnimMediator.musicFaceClipLength));
+			facialBlendAnimMediator.selfAnimator.Play("music", 1, (float)(time / facialBlendAnimMediator.musicMouthClipLength));
 			if(m_boneSpringAnim != null && m_boneSpringAnim.animator != null)
 			{
 				m_boneSpringAnim.animator.Play("music", 0, normalizedTime);
