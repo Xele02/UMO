@@ -3419,17 +3419,18 @@ public class KDHGBOOECKC
 		ViewOfferCompensation v = ViewOfferCompensation.CreateList(FGHGMHPNEMG, MLDPDLPHJPM);
 		for(int i = 0; i < v.ItemList.Count; i++)
 		{
-			if (CEHIEFPLPFM_IsOverflow(tmpData, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, v.ItemList[i].itemId, v.ItemList[i].itemNum))
+			GHEHKJFGOIE = CEHIEFPLPFM_IsOverflow(tmpData, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, v.ItemList[i].itemId, v.ItemList[i].itemNum);
+			if(GHEHKJFGOIE)
 			{
-				NGHMGNMNNEP.BOAOOEIIAHG(JANMJPOKLFL, FGHGMHPNEMG, MLDPDLPHJPM, a2);
-				if(of.BFINGCJHOHI_Cnt == 1)
-				{
-					if(of.JIOMCDGKIAF == 0)
-					{
-						of.JIOMCDGKIAF = 1;
-					}
-				}
-				return;
+				break;
+			}
+		}
+		NGHMGNMNNEP.BOAOOEIIAHG(JANMJPOKLFL, FGHGMHPNEMG, MLDPDLPHJPM, a2);
+		if(of.BFINGCJHOHI_Cnt == 1)
+		{
+			if(of.JIOMCDGKIAF == 0)
+			{
+				of.JIOMCDGKIAF = 1;
 			}
 		}
 	}
