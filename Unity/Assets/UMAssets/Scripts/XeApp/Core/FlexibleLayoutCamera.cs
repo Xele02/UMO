@@ -102,57 +102,57 @@ namespace XeApp.Core
 						flexibleViewportCameraList[i].rect = new Rect(0, 0, 1, 1);
 					}
 				}
-			}
-			else
-			{
-				float w, h, sw, sh, r, sr;
-				if(SystemManager.isLongScreenDevice)
-				{
-					if(SystemManager.Instance.CheckOverPermissionAspectRatio() == SystemManager.OverPermissionAspectResult.HdivV)
-					{
-						w = baseWidth;
-						h = baseHeight;
-						sw = Screen.width;
-						sh = Screen.height;
-						r = w / h;
-					}
-					else
-					{
-						w = baseWidth;
-						h = baseHeight;
-						sw = Screen.height;
-						sh = Screen.width;
-						r = w / h;
-					}
-					sr = sw / sh;
-				}
 				else
 				{
-					w = 1;
-					h = 1;
-					sw = Screen.width;
-					sh = Screen.height;
-					r = 1.777778f;
-					sr = sw / sh;
-				}
-				float safeRatio = 1;
-				if(SystemManager.rawSafeAreaRect.height >= 0)
-				{
-					safeRatio = SystemManager.rawSafeAreaRect.height / SystemManager.rawScreenAreaRect.height;
-				}
-				r = r / sr;
-				float f = (1 - r) * 0.5f;
-				for (int i = 0; i < flexibleViewportCameraList.Count; i++)
-				{
-					if (SystemManager.isLongScreenDevice)
+					float w, h, sw, sh, r, sr;
+					if(!SystemManager.isLongScreenDevice)
 					{
-						if (SystemManager.Instance.CheckOverPermissionAspectRatio() == SystemManager.OverPermissionAspectResult.VdivH)
-							flexibleViewportCameraList[i].rect = new Rect(0, f, 1, r);
+						if(SystemManager.Instance.CheckOverPermissionAspectRatio() == SystemManager.OverPermissionAspectResult.HdivV)
+						{
+							w = baseWidth;
+							h = baseHeight;
+							sw = Screen.width;
+							sh = Screen.height;
+							r = w / h;
+						}
 						else
-							flexibleViewportCameraList[i].rect = new Rect(f, 0, r, 1);
+						{
+							w = baseWidth;
+							h = baseHeight;
+							sw = Screen.height;
+							sh = Screen.width;
+							r = w / h;
+						}
+						sr = sw / sh;
 					}
 					else
-						flexibleViewportCameraList[i].rect = new Rect(f, 1 - safeRatio, r, safeRatio);
+					{
+						w = 1;
+						h = 1;
+						sw = Screen.width;
+						sh = Screen.height;
+						r = 1.777778f;
+						sr = sw / sh;
+					}
+					float safeRatio = 1;
+					if(SystemManager.rawSafeAreaRect.height >= 0)
+					{
+						safeRatio = SystemManager.rawSafeAreaRect.height / SystemManager.rawScreenAreaRect.height;
+					}
+					r = r / sr;
+					float f = (1 - r) * 0.5f;
+					for (int i = 0; i < flexibleViewportCameraList.Count; i++)
+					{
+						if (!SystemManager.isLongScreenDevice)
+						{
+							if (SystemManager.Instance.CheckOverPermissionAspectRatio() == SystemManager.OverPermissionAspectResult.VdivH)
+								flexibleViewportCameraList[i].rect = new Rect(0, f, 1, r);
+							else
+								flexibleViewportCameraList[i].rect = new Rect(f, 0, r, 1);
+						}
+						else
+							flexibleViewportCameraList[i].rect = new Rect(f, 1 - safeRatio, r, safeRatio);
+					}
 				}
 			}
 		}
