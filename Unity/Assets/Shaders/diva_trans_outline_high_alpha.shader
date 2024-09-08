@@ -382,21 +382,18 @@ Shader "MCRS/Diva/Trans_Outline_High_Alpha" {
 				v2f o;
 
 				o.texcoord0 = v.texcoord0;
-				float4 screenvertex = v.position0;
-				float4 projSpacePos;
-				projSpacePos.zw = screenvertex.zw;
-				float4 normaldir;
-				normaldir.w = 0.0;
-				normaldir.xyz = v.normal0;
-				float zbias = float(clamp ((screenvertex.z * 0.1), 0.5, 1.0));
-				float4 scaledNormal = (((
+				float4 pos = UnityObjectToClipPos(v.position0);
+				float3 nor = UnityObjectToClipPos(v.position0.xyz + float4(v.normal0.xyz, 0)).xyz;
+				nor -= pos;
+				nor.xy = normalize(nor.xy);
+				float scaledNormal = (
 					(v.color0.x * _EdgeThickness)
-					* 0.00285) * normalize(
-					(float4(normaldir))
-				)) * zbias);
-				projSpacePos.xy = (screenvertex.xy + scaledNormal.xy);
-				projSpacePos = UnityObjectToClipPos(projSpacePos);
-				o.position0 = projSpacePos;
+					* 0.00285);
+				nor.xy *= float2(scaledNormal, scaledNormal);
+				float zbias = float(clamp ((pos.z * 0.1), 0.5, 1.0));
+				o.position0.xy = pos.xy + zbias * nor.xy;
+				o.position0.zw = pos.zw;
+
 				return o; 
 			}
 /*			GpuProgramID 99687
