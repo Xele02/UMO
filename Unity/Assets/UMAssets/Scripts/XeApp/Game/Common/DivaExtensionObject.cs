@@ -137,7 +137,7 @@ namespace XeApp.Game.Common
 			{
 				if(renderers[i] != null)
 				{
-					if(renderers[i].material.HasProperty("_Color") && renderers[i].material.HasProperty("_RimColor") &&
+					if(renderers[i].material.HasProperty("_Color") || renderers[i].material.HasProperty("_RimColor") ||
 						renderers[i].material.HasProperty("_RimLightPower"))
 					{
 						materials.Add(renderers[i].material);
