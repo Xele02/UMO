@@ -417,7 +417,7 @@ public class JJOELIOGMKK_DivaIntimacyInfo
 		HBODCMLFDOB.EEIBCALKFFF.Clear();
 		HBODCMLFDOB.IELPCAEACLL.Clear();
 		HBODCMLFDOB.HBCBADBPNCJ.Clear();
-		for(int i = HBODCMLFDOB.CPDEMMFGKED_Level; i <= HBODCMLFDOB.KBHJOBKOOGC_NextLevel; i++)
+		for(int i = HBODCMLFDOB.CPDEMMFGKED_Level; i < HBODCMLFDOB.KBHJOBKOOGC_NextLevel; i++)
 		{
 			GJALOMELEHD_Intimacy.MFMLEAMJJCH_LevelInfo levelInfo = intimacyDb.OOCKOCAACMD_DataByLevel[i];
 			if (levelInfo.DMEDKJPOLCH >= 1)
