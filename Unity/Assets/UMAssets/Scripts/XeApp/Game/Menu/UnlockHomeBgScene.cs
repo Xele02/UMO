@@ -36,7 +36,7 @@ namespace XeApp.Game.Menu
 			int i; // 0x28
 
 			//0x1649F30
-			fadeImg.color = Color.black;
+			fadeImg.color = new Color(Color.black.r, Color.black.g, Color.black.b, 0);
 			if (homeBgId == 0)
 				homeBgId = 11;
 			ALJHJDHNFFB_HomeBg.ADLLAFIDFAM dbHomeBg = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PFEKKPABPKL_HomeBg.CDENCMNHNGA[homeBgId - 1];
