@@ -1386,6 +1386,7 @@ namespace XeApp.Game.Menu
 				}
 			}
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.ADHMDONLHLJ_NewLive.ACGKEJKPFIA_SetSelectedSong(musicTab != VerticalMusicSelecChoiceMusicListTab.MusicTab.Normal, songId, eventType);
+			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
 			this.StartCoroutineWatched(Co_ChangeBg(BgType.VerticalMusic, GetChangeBgId(selectMusicListData), null, true));
 		}
 
