@@ -170,6 +170,7 @@ namespace XeApp.Game.Menu
 					{
 						int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(eps[i].KIJAPOFAGPN_UnlockItemId);
 						homeBgList.Add(CGFNKMNBNBN.ELKDCEEPLKB(itemId));
+						unlockBgIdList.Add(itemId);
 						m_homeBgEpisodeList.Add(itemId, eps[i]);
 					}
 				}
