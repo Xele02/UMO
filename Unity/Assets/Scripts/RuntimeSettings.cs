@@ -44,6 +44,8 @@ class RuntimeSettings : ScriptableObject
 				m_currentSettings.ShowStringUsed = UMO_PlayerPrefs.GetInt("ShowStringUsed", 0) == 1;
 				m_currentSettings.UseTmpLocalizationFiles = UMO_PlayerPrefs.GetInt("UseTmpLocalizationFiles", 0) == 1;
 				m_currentSettings.Language = UMO_PlayerPrefs.GetString("Language", "");
+				m_currentSettings.WorkerThreadPriorityNormal = UMO_PlayerPrefs.GetInt("WorkerThreadPriorityNormal", 0) == 1;
+				m_currentSettings.WorkerThreadUseCoroutine = UMO_PlayerPrefs.GetInt("WorkerThreadUseCoroutine", 0) == 1;
 
 #if (UNITY_ANDROID && !UNITY_EDITOR) || DEBUG_ANDROID_FILESYSTEM
 				m_currentSettings.DataDirectory = Application.persistentDataPath + "/data/";
@@ -72,6 +74,8 @@ class RuntimeSettings : ScriptableObject
 		UMO_PlayerPrefs.SetInt("ShowStringUsed", m_currentSettings.ShowStringUsed ? 1 : 0);
 		UMO_PlayerPrefs.SetInt("UseTmpLocalizationFiles", m_currentSettings.UseTmpLocalizationFiles ? 1 : 0);
 		UMO_PlayerPrefs.SetString("Language", m_currentSettings.Language);
+		UMO_PlayerPrefs.SetInt("WorkerThreadPriorityNormal", m_currentSettings.WorkerThreadPriorityNormal ? 1 : 0);
+		UMO_PlayerPrefs.SetInt("WorkerThreadUseCoroutine", m_currentSettings.WorkerThreadUseCoroutine ? 1 : 0);
 		UMO_PlayerPrefs.Save();
 	}
 
@@ -189,6 +193,8 @@ class RuntimeSettings : ScriptableObject
 
 	public bool UseTmpLocalizationFiles { get; set; }
 	public string Language { get; set; }
+	public bool WorkerThreadPriorityNormal { get; set; }
+	public bool WorkerThreadUseCoroutine { get; set; }
 
 	public SmartFormatter SmartFormatter
 	{

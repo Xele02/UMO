@@ -142,6 +142,20 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         {
             RuntimeSettings.CurrentSettings.UseTmpLocalizationFiles = b;
         });
+        AddToggleButton(ref y, "Debug : Normal Priority for Worker Thread\n(Require game restart)", () =>
+        {
+            return RuntimeSettings.CurrentSettings.WorkerThreadPriorityNormal;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.WorkerThreadPriorityNormal = b;
+        });
+        AddToggleButton(ref y, "Debug : Use Coroutine for Worker Thread\n(Require game restart)", () =>
+        {
+            return RuntimeSettings.CurrentSettings.WorkerThreadUseCoroutine;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.WorkerThreadUseCoroutine = b;
+        });
         
         #if UNITY_ANDROID
         AddToggleButton(ref y, "Debug : Disable Cryware low latency", () =>
