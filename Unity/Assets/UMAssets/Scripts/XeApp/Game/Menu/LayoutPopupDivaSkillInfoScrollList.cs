@@ -81,7 +81,7 @@ namespace XeApp.Game.Menu
 			Vector2 p = new Vector2(318, 103);
 			for(int i = 0; i < divaList.Count; i++)
 			{
-				if(divaList[i].IPJMPBANBPP_Enabled && divaList[i].FJODMPGPDDD)
+				if(divaList[i].IPJMPBANBPP_Enabled && divaList[i].FJODMPGPDDD_DivaHave)
 				{
 					ItemParam item = new ItemParam(divaList[i], new Vector2(0, 0), p);
 					m_paramList.Add(item);
@@ -186,10 +186,10 @@ namespace XeApp.Game.Menu
 				if (ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[2].AHHJLDLAPAN_DivaId == p2.divaData.AHHJLDLAPAN_DivaId)
 					return 1;
 			}
-			int r = p2.divaData.PKLPGBKKFOL[selectMusicId - 1] - p1.divaData.PKLPGBKKFOL[selectMusicId - 1];
+			int r = p2.divaData.PKLPGBKKFOL_DivaLevels[selectMusicId - 1] - p1.divaData.PKLPGBKKFOL_DivaLevels[selectMusicId - 1];
 			if(r == 0)
 			{
-				r = p2.divaData.HMBECPGHPOE[selectMusicId - 1] - p1.divaData.HMBECPGHPOE[selectMusicId - 1];
+				r = p2.divaData.HMBECPGHPOE_DivaExps[selectMusicId - 1] - p1.divaData.HMBECPGHPOE_DivaExps[selectMusicId - 1];
 				if(r == 0)
 				{
 					r = p1.divaData.AHHJLDLAPAN_DivaId - p2.divaData.AHHJLDLAPAN_DivaId;

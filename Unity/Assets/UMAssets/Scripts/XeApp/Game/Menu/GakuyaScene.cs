@@ -1230,7 +1230,7 @@ namespace XeApp.Game.Menu
 		{
 			foreach(var d in GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas)
 			{
-				if(d.FJODMPGPDDD)
+				if(d.FJODMPGPDDD_DivaHave)
 				{
 					DivaCostumeInfo info = GetDivaCostumeInfo(d.AHHJLDLAPAN_DivaId);
 					GameManager.Instance.ViewPlayerData.OPDBFHFKKJN_SetHomeCostume(d.AHHJLDLAPAN_DivaId, GetCostumeId(d.AHHJLDLAPAN_DivaId, info.modelId), info.colorId);
@@ -1257,7 +1257,7 @@ namespace XeApp.Game.Menu
 			List<int> l = new List<int>();
 			foreach(var diva in GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas)
 			{
-				if(m_divaId != diva.AHHJLDLAPAN_DivaId && diva.FJODMPGPDDD)
+				if(m_divaId != diva.AHHJLDLAPAN_DivaId && diva.FJODMPGPDDD_DivaHave)
 				{
 					int oldCos = diva.KIIMFCFMMDN_HomeCostumeId;
 					int oldCol = diva.JFFLFIMIMOI_HomeColorId;

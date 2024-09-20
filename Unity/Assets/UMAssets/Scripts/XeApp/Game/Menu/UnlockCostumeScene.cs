@@ -570,7 +570,7 @@ namespace XeApp.Game.Menu
 		{
 			if(currentViewDivaData.IPJMPBANBPP_Enabled)
 			{
-				return currentViewDivaData.FJODMPGPDDD;
+				return currentViewDivaData.FJODMPGPDDD_DivaHave;
 			}
 			return false;
 		}

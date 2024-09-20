@@ -355,7 +355,7 @@ namespace XeApp.Game.Menu
 					return x.AHHJLDLAPAN_DivaId == originalPrism.AHHJLDLAPAN[i];
 				});
 				int id = 0;
-				if(f == null || !f.FJODMPGPDDD)
+				if(f == null || !f.FJODMPGPDDD_DivaHave)
 				{
 					m_lackDivaIds.Add(originalPrism.AHHJLDLAPAN[i]);
 					res = true;

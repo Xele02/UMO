@@ -205,7 +205,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < playerData.NBIGLBMHEDC_Divas.Count; i++)
 			{
-				if(playerData.NBIGLBMHEDC_Divas[i].FJODMPGPDDD)
+				if(playerData.NBIGLBMHEDC_Divas[i].FJODMPGPDDD_DivaHave)
 				{
 					TryInstall(playerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId, playerData.NBIGLBMHEDC_Divas[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, 0);
 					TryStateDivaIconInstall(playerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId, playerData.NBIGLBMHEDC_Divas[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, 0);

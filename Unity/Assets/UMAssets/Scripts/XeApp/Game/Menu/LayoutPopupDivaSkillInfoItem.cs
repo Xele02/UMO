@@ -49,14 +49,14 @@ namespace XeApp.Game.Menu
 		{
 			if (musicId == 0)
 				return;
-			KDOMGMCGHDC.HJNMIKNAMFH a = KDOMGMCGHDC.ODIAFJCPIFO(musicId, divaData.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, divaData.PKLPGBKKFOL[musicId - 1]);
+			KDOMGMCGHDC.HJNMIKNAMFH a = KDOMGMCGHDC.ODIAFJCPIFO(musicId, divaData.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, divaData.PKLPGBKKFOL_DivaLevels[musicId - 1]);
 			if (a == null)
 				Reset();
 			else
 			{
 				SetDivaName(divaData.OPFGFINHFCE_DivaName);
-				SetDivaSkillLevel(divaData.PKLPGBKKFOL[musicId - 1]);
-				int now = divaData.HMBECPGHPOE[musicId - 1] - a.PMBFNFOCNAJ_CurLevelMusicExp;
+				SetDivaSkillLevel(divaData.PKLPGBKKFOL_DivaLevels[musicId - 1]);
+				int now = divaData.HMBECPGHPOE_DivaExps[musicId - 1] - a.PMBFNFOCNAJ_CurLevelMusicExp;
 				int max = a.PBGFIOONCMB_NextLevelMusicExp - a.PMBFNFOCNAJ_CurLevelMusicExp;
 				SetDivaExp(now, max);
 				m_boostExpIcon.enabled = isBoostExp;
