@@ -262,14 +262,14 @@ namespace ExternLib
 						return res;
 					});
 
-					publicBlock.AFBMEMCHJCL_MScene.DOMFHDPMCCO(scenes[0].BCCHOBPJJKE_SceneId, scenes[0].KBOLNIBLIND, scenes[0].ODKMKEHJOCK, scenes[0].MJBODMOLOBC_Luck, scenes[0].JPIPENJGGDD_NumBoard, scenes[0].MKHFCGPJPFI_LimitOverCount);
+					publicBlock.AFBMEMCHJCL_MScene.DOMFHDPMCCO(scenes[0].BCCHOBPJJKE_SceneId, scenes[0].KBOLNIBLIND_Mb, scenes[0].ODKMKEHJOCK_Sb, scenes[0].MJBODMOLOBC_Luck, scenes[0].JPIPENJGGDD_NumBoard, scenes[0].MKHFCGPJPFI_LimitOverCount);
 					for (int i = 0; i < 4; i++)
 					{
 						for (int j = 0; j < scenes.Count; j++)
 						{
 							if (scenes[j].JGJFIJOCPAG_SceneAttr == i || i == 0)
 							{
-								publicBlock.MGMFOJPNDGA_AssistData.JOHLGBDOLNO_DataList[i].DOMFHDPMCCO(scenes[j].BCCHOBPJJKE_SceneId, scenes[j].KBOLNIBLIND, scenes[j].ODKMKEHJOCK, scenes[j].MJBODMOLOBC_Luck, scenes[j].JPIPENJGGDD_NumBoard, scenes[j].MKHFCGPJPFI_LimitOverCount);
+								publicBlock.MGMFOJPNDGA_AssistData.JOHLGBDOLNO_DataList[i].DOMFHDPMCCO(scenes[j].BCCHOBPJJKE_SceneId, scenes[j].KBOLNIBLIND_Mb, scenes[j].ODKMKEHJOCK_Sb, scenes[j].MJBODMOLOBC_Luck, scenes[j].JPIPENJGGDD_NumBoard, scenes[j].MKHFCGPJPFI_LimitOverCount);
 								break;
 							}
 						}

@@ -1215,7 +1215,7 @@ namespace XeApp.Game.Menu
 				p.KHEKNNFCAOI_Init(null, false);
 				FFHPBEPOMAK_DivaInfo f = p.NBIGLBMHEDC_Divas[d.AHHJLDLAPAN_DivaId - 1];
 				f.KHEKNNFCAOI(d.AHHJLDLAPAN_DivaId, d.JPGEAFPDHDE_DivaLevel, 0, 0, null, null, false);
-				List<int> l = f.PKLPGBKKFOL;
+				List<int> l = f.PKLPGBKKFOL_DivaLevels;
 				KDOMGMCGHDC.HJNMIKNAMFH k = KDOMGMCGHDC.ODIAFJCPIFO(viewResultDivaData.DLAEJOBELBH_MusicId, f.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, l[viewResultDivaData.DLAEJOBELBH_MusicId - 1]);
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
 				PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("growth_popup_title_01"), SizeType.Small, k.ONIAMNAJLKI_LockMessage, new ButtonInfo[1]

@@ -2045,7 +2045,7 @@ namespace XeApp.Game.Menu
 							int res = 0;
 							for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Count; i++)
 							{
-								res += GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[i].FJODMPGPDDD ? 1 : 0;
+								res += GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[i].FJODMPGPDDD_DivaHave ? 1 : 0;
 							}
 							return res > 1;
 						}

@@ -28,7 +28,7 @@ namespace XeApp.Game.Menu
 			{
 				if(p.NBIGLBMHEDC_Divas[i].IPJMPBANBPP_Enabled)
 				{
-					if(p.NBIGLBMHEDC_Divas[i].FJODMPGPDDD)
+					if(p.NBIGLBMHEDC_Divas[i].FJODMPGPDDD_DivaHave)
 					{
 						GameManager.Instance.DivaIconCache.Load(p.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId, 1, 0, (IiconTexture textrue) =>
 						{
