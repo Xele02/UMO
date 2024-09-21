@@ -355,7 +355,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < m_sceneIconCursor.Length; i++)
 			{
-				m_sceneIconCursor[i].StartChildrenAnimGoStop(slotIndex == i ? "logo_on" : "st_wait");
+				m_sceneIconCursor[i].StartChildrenAnimLoop(slotIndex == i ? "logo_on" : "st_wait");
 			}
 		}
 
