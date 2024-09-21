@@ -242,7 +242,7 @@ namespace XeApp.Game.Menu
 				{
 					restAcquiredMusicLevelExp[i] = (float)viewResultDivaData.NAIHIJAJPNK_Divas[i].BKJJLJKGDJB_MusicExpDiff;
 					currentDivaExp[i] = (int)viewResultDivaData.NAIHIJAJPNK_Divas[i].MECHKMMEIPP_PrevExp;
-					divaLayouts[i].layoutDivaEmblem.StartChildrenAnimGoStop(viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId + 1, viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId + 1);
+					divaLayouts[i].layoutDivaEmblem.StartChildrenAnimGoStop(viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId - 1, viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId - 1);
 					SetMusicLevel(i, viewResultDivaData.NAIHIJAJPNK_Divas[i].IIHHAFPPFCP_PrevMusicLevel);
 					ChangeCurrentMusicLevelExp(i, viewResultDivaData.NAIHIJAJPNK_Divas[i].IIHHAFPPFCP_PrevMusicLevel, CalcMusicLevelExpSectionPercentage(viewResultDivaData.NAIHIJAJPNK_Divas[i].IIHHAFPPFCP_PrevMusicLevel, ToSectionMusicLevelExp(viewResultDivaData.NAIHIJAJPNK_Divas[i].IIHHAFPPFCP_PrevMusicLevel, (float)viewResultDivaData.NAIHIJAJPNK_Divas[i].NMHNDLHJENB_PrevMusicExp)));
 					SetDivaLevelNumber(i, viewResultDivaData.NAIHIJAJPNK_Divas[i].AJCEIPJDMEC_PrevDivaLevel);
