@@ -908,7 +908,7 @@ namespace XeApp.Game.Menu
 			//0xB3B65C
 			yield return Co.R(RhythmGamePreLoad(wait));
 			enableFade = false;
-			while(SoundManager.Instance.voDiva.isPlaying && SoundManager.Instance.voDivaCos.isPlaying && 
+			while(SoundManager.Instance.voDiva.isPlaying || SoundManager.Instance.voDivaCos.isPlaying || 
 				SoundManager.Instance.voPilot.isPlaying)
 				yield return null;
 			if(isSkip)

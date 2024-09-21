@@ -578,14 +578,14 @@ namespace XeApp.Game.Common
 			if(m_musicInfo.freeMusicId > 0)
 			{
 				KEODKEGFDLD_FreeMusicInfo masterFreeMusic = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(m_musicInfo.freeMusicId);
-				AIPEHINPIHC_ForcedSettingInfo a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.HBJDIFMCGAL_ForcedSettings.Find((AIPEHINPIHC_ForcedSettingInfo x) =>
+				forcePrism = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.HBJDIFMCGAL_ForcedSettings.Find((AIPEHINPIHC_ForcedSettingInfo x) =>
 				{
 					//0xE9D51C
 					return masterFreeMusic.BLDDNEJDFON_ForcePrismId == x.NMNDNFFJHPJ_Id;
 				});
-				if(a != null)
+				if(forcePrism != null)
 				{
-					m_teamInfo.SetForcePrismData(a);
+					m_teamInfo.SetForcePrismData(forcePrism);
 				}
 			}
 		}
