@@ -79,7 +79,9 @@ class CriFileTest : MonoBehaviour
             }
 
             string str = file.GetTableAsString(0, true);
-            UnityEngine.Debug.Log(str);
+            //UnityEngine.Debug.Log(str);
+            File.WriteAllText(audioPath+".txt", str);
+            return;
             //inputStream = file.GetCueFileStream("bgm_002", out isStreamed);
             //string path = Application.streamingAssetsPath+"/snd/bgm/_vgmt_acb_ext_cs_bgm_002/awb/00000_bgm_002.hca";
             //using (var inputFileStream = File.Open(path, FileMode.Open, FileAccess.Read)) {

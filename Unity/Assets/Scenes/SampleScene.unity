@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44658792, g: 0.49642283, b: 0.5748252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -128,7 +128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &170076734
 Light:
   m_ObjectHideFlags: 0
@@ -320,10 +320,10 @@ MonoBehaviour:
   mat: {fileID: 2100000, guid: 802c0ef15d7b0556aa74b3a71129ec00, type: 2}
   pb: {fileID: 0}
   criManaCtrl: {fileID: 0}
-  testAudio: 0
+  testAudio: 1
   testDirectVLC: 0
   testCriMovie: 0
-  audioPath: /home/xele/.config/unity3d/UtaMacross/UtaMacross/data/android/snd/bgm/cs_w_0001.acb
+  audioPath: /home/xele/Projects/UtaMacrossOffline/Data/android/snd/cs_diva_004_solo.acb
   moviePath: /home/xele/Projects/UtaMacrossOffline/Data/android/mov/gm/dv/game_dv_0119_mv_q2!s64ede4a6z!.usm
 --- !u!82 &534669910
 AudioSource:
@@ -440,7 +440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &729165523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,7 +558,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1144381161
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -673,7 +673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1326787262
 MonoBehaviour:
   m_ObjectHideFlags: 0
