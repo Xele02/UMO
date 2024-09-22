@@ -4,6 +4,9 @@ using UnityEngine;
 using System.IO;
 using System;
 using System.Collections;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace XeApp.Core
 {
@@ -277,5 +280,27 @@ namespace XeApp.Core
 
 		// // RVA: 0xE137F0 Offset: 0xE137F0 VA: 0xE137F0
 		// public static void LoadTutorialAssetsList() { }
+
+#if UNITY_EDITOR
+		[MenuItem("UMO/Debug/Dump bundle status")]
+		public static void DumpBundleStatus()
+		{
+			UnityEngine.Debug.LogError("Loaded bundles : ");
+			foreach(var it in m_LoadedAssetBundles)
+			{
+				UnityEngine.Debug.LogError(it.Key+" "+it.Value.m_ReferencedCount);
+			}
+			UnityEngine.Debug.LogError("Loading bundles : ");
+			foreach(var it in m_lodingAssetBundle)
+			{
+				UnityEngine.Debug.LogError(it.Key+" "+it.Value);
+			}
+			UnityEngine.Debug.LogError("Loading Errors : ");
+			foreach(var it in m_lodingErrors)
+			{
+				UnityEngine.Debug.LogError(it.Key+" "+it.Value);
+			}
+		}
+#endif
 	}
 }
