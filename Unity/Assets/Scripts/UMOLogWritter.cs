@@ -31,12 +31,14 @@ public class UMOLogWritter : MonoBehaviour
         if(filecreated)
         {
             Application.logMessageReceived += HandleLog;
+            Application.logMessageReceivedThreaded += HandleLog;
         }
     }
 
     void OnDisable()
     {
         Application.logMessageReceived -= HandleLog;
+        Application.logMessageReceivedThreaded -= HandleLog;
     }
 
     public void CheckEnabled()
@@ -47,17 +49,20 @@ public class UMOLogWritter : MonoBehaviour
 
     void HandleLog(string logString, string stackTrace, LogType type)
     {
-        if(!starting)
+        lock(logFile)
         {
-            if(!RuntimeSettings.CurrentSettings.EnableInfoLog && (type == LogType.Log || type == LogType.Warning))
-                return;
-            if(!RuntimeSettings.CurrentSettings.EnableErrorLog && type != LogType.Log && type != LogType.Warning)
-                return;
+            if(!starting)
+            {
+                if(!RuntimeSettings.CurrentSettings.EnableInfoLog && (type == LogType.Log || type == LogType.Warning))
+                    return;
+                if(!RuntimeSettings.CurrentSettings.EnableErrorLog && type != LogType.Log && type != LogType.Warning)
+                    return;
+            }
+            sw.Write("["+type+"] "+logString);
+            sw.Write(stackTrace);
+            sw.Write("\n\n");
+            sw.Flush();
+            logFile.Flush();
         }
-        sw.Write("["+type+"] "+logString);
-        sw.Write(stackTrace);
-        sw.Write("\n\n");
-        sw.Flush();
-        logFile.Flush();
     }
 }
