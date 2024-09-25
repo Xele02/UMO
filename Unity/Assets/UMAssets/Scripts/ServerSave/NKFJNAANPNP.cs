@@ -149,7 +149,7 @@ public class NKFJNAANPNP : KLFDBFMNLBL_ServerSaveBlock
 		int a = -1;
 		int b = int.MaxValue;
 		int c = 0;
-		for(int index = FIBFMLMHOGN; index > -1; index--)
+		for(int index = FIBFMLMHOGN - 1; index > -1; index--)
 		{
 			if(!IDJIDAPJCBE[index].NIENPFFLMCH(JHNMKKNEENE))
 			{
