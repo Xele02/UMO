@@ -426,7 +426,7 @@ public class BBGDKLLEPIB
 			if(item.Value == 1)
 			{
 				string path = OGCDNCDMLCA_MxDir + item.Key;
-				File.SetAttributes(path, FileAttributes.Normal);
+				//File.SetAttributes(path, FileAttributes.Normal);
 				TodoLogger.Log(TodoLogger.Filesystem, "Delete File " + path);
 				//File.Delete(path);
 			}
