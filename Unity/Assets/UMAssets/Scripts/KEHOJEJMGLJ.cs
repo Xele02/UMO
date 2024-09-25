@@ -771,7 +771,7 @@ public class KEHOJEJMGLJ
 			else if (FAOOOLDDBBB[strs[i]] == 1)
 			{
 				string path = JCMJBMBMJAK_PersistentDataPath + strs[i];
-				File.SetAttributes(path, FileAttributes.Normal);
+				//File.SetAttributes(path, FileAttributes.Normal);
 				TodoLogger.Log(TodoLogger.Filesystem, "Would delete " + path);
 				//INLICKMJHHK_DeleteFile(path);
 			}
@@ -806,7 +806,7 @@ public class KEHOJEJMGLJ
 				for(int j = 0; j < l[i].IBGNDNLAHOE.Count; j++)
 				{
 					string path = JCMJBMBMJAK_PersistentDataPath + l[i].IBGNDNLAHOE[j];
-					File.SetAttributes(path, FileAttributes.Normal);
+					//File.SetAttributes(path, FileAttributes.Normal);
 					TodoLogger.Log(TodoLogger.Filesystem, "Would delete " + path);
 					//INLICKMJHHK_DeleteFile(path);
 					KLIJFOBEKBE.OJCJPCHFPGO_DeleteFileInfo(l[i].IBGNDNLAHOE[j]);
