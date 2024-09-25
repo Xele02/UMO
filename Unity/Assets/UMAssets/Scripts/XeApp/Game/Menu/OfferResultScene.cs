@@ -527,8 +527,11 @@ namespace XeApp.Game.Menu
 						//0x185930C
 						PopupClose();
 					}, null, null, null);
+					return;
 				}
 			}
+			if(PopupClose != null)
+				PopupClose();
 		}
 
 		//// RVA: 0x1857AE4 Offset: 0x1857AE4 VA: 0x1857AE4
