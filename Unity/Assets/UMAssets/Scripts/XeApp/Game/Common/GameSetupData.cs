@@ -447,7 +447,7 @@ namespace XeApp.Game.Common
 				LimitTime = limitTime;
 				IsDisableBattleEventIntermediateResult = initParam.isDisableBattleEventIntermediateResult;
 				KEODKEGFDLD_FreeMusicInfo musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(freeMusicId);
-				enemyInfo.ODDIHGPONFL_Copy(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.CKADCLJDCJK_EnemyList[(isLine6Mode ? musicInfo.PJNFOCDANCE : musicInfo.LHICAKGHIGF)[(int)difficultyType]]);
+				enemyInfo.ODDIHGPONFL_Copy(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.CKADCLJDCJK_EnemyList[(isLine6Mode ? musicInfo.PJNFOCDANCE : musicInfo.LHICAKGHIGF)[(int)difficultyType] - 1]);
 				if(overrideEnemyCenterSkillId != 0 || overrideEnemyLiveSkillId != 0)
 				{
 					enemyInfo.EDLACELKJIK_LiveSkill = overrideEnemyLiveSkillId;
