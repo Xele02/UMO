@@ -2470,8 +2470,8 @@ namespace XeApp.Game.Menu
 									return 4;
 							}
 						}
-						//if(tab == DecorationDecorator.TabType.PlushToy)
-						//??
+						if(tab == DecorationDecorator.TabType.PlushToy)
+							return 98;
 						break;
 					case DecorationDecorator.DecoratorType.Extra:
 						return -1;
