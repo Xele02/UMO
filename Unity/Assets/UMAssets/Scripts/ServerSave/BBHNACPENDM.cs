@@ -515,6 +515,14 @@ public class BBHNACPENDM_ServerSaveData
 			});
 			if(data != null && AAEDAEHIONI != null)
 			{
+				if(!AAEDAEHIONI.BBAJPINMOEP_Contains(OPFGFINHFCE_Name))
+				{
+					TodoLogger.LogError(TodoLogger.SaveLoad, "Failed to find "+OPFGFINHFCE_Name);
+					data.LHPDDGIJKNB_Reset();
+					data.LLBJFFFJEPJ_Deseralized = true;
+					data.KFKDMBPNLJK_BlockInvalid = false;
+					continue;
+				}
 				EDOHBJAPLPF_JsonData jsonData = AAEDAEHIONI[OPFGFINHFCE_Name];
 				long save_id = 0;
 				if(jsonData.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id/*save_id*/))
