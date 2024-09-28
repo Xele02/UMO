@@ -723,7 +723,9 @@ namespace XeApp.Game.Menu
 					yield break;
 				}
 			}
-			if(JFOBOMOMENL.KIAFJHJMBFN() || NCPPAHHCCAO.MGHDHIJIGLD().Count >= 5)
+			bool b = JFOBOMOMENL.KIAFJHJMBFN();
+			int c = NCPPAHHCCAO.MGHDHIJIGLD().Count;
+			if(b || c > 0)
 			{
 				isConnected = false;
 				CIOECGOMILE.HHCJCDFCLOB.OEAMJGPAIGP(CIOECGOMILE.HHCJCDFCLOB.LGBMDHOLOIF_decoPlayerData, () =>
