@@ -139,7 +139,7 @@ namespace XeApp.Game.MusicSelect
 					initparam.rewardStat = rewardList; // 0x4						public List<MusicRewardStat> rewardStat; // 0x4
 					initparam.aprilFoolEndTime = 0; // 0x8							public long aprilFoolEndTime; // 0x8
 					initparam.isOpen = true; // 0x10									public bool isOpen; // 0x10
-					initparam.isNew = musicData.LDGOHPAPBMM; // 0x11										public bool isNew; // 0x11
+					initparam.isNew = musicData.LDGOHPAPBMM_IsNew; // 0x11										public bool isNew; // 0x11
 					initparam.isUnlockable = isUnlockable; // 0x12								public bool isUnlockable; // 0x12
 					initparam.isSimulation = musicData.EHNGOGBJMGL; // 0x13								public bool isSimulation; // 0x13
 					initparam.isHighLevel = false; // 0x14								public bool isHighLevel; // 0x14
@@ -171,7 +171,7 @@ namespace XeApp.Game.MusicSelect
 					initparam.rewardStat = rewardList; // 0x4						public List<MusicRewardStat> rewardStat; // 0x4
 					initparam.aprilFoolEndTime = 0; // 0x8							public long aprilFoolEndTime; // 0x8
 					initparam.isOpen = true; // 0x10									public bool isOpen; // 0x10
-					initparam.isNew = musicData.LDGOHPAPBMM; // 0x11										public bool isNew; // 0x11
+					initparam.isNew = musicData.LDGOHPAPBMM_IsNew; // 0x11										public bool isNew; // 0x11
 					initparam.isUnlockable = isUnlockable; // 0x12								public bool isUnlockable; // 0x12
 					initparam.isSimulation = musicData.EHNGOGBJMGL; // 0x13								public bool isSimulation; // 0x13
 					initparam.isHighLevel = false; // 0x14								public bool isHighLevel; // 0x14
@@ -325,7 +325,7 @@ namespace XeApp.Game.MusicSelect
 					initparam.rewardStat = rewardList; // 0x4						public List<MusicRewardStat> rewardStat; // 0x4
 					initparam.aprilFoolEndTime = aprilFoolEndTime; // 0x8							public long aprilFoolEndTime; // 0x8
 					initparam.isOpen = isOpen/* || RuntimeSettings.CurrentSettings.ForceSongUnlock*/; // 0x10	public bool isOpen; // 0x10		var13
-					initparam.isNew = musicData.LDGOHPAPBMM; // 0x11										public bool isNew; // 0x11	local88
+					initparam.isNew = musicData.LDGOHPAPBMM_IsNew; // 0x11										public bool isNew; // 0x11	local88
 					initparam.isUnlockable = isUnlockable; // 0x12								public bool isUnlockable; // 0x12
 					initparam.isSimulation = musicData.EHNGOGBJMGL; // 0x13								public bool isSimulation; // 0x13		musicData.EHNGOGBJMGL - uVar13 - musicData.LDGOHPAPBMM - local_88
 					initparam.isHighLevel = isHighLevel; // 0x14								public bool isHighLevel; // 0x14
