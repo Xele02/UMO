@@ -931,7 +931,7 @@ namespace XeApp.Game.Menu
 						Database.Instance.advResult.Setup("Menu", goScene, param);
 						goScene = TransitionUniqueId.EVENTQUEST;
 					}
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA(ev.GFIBLLLHMPD_AdventureId);
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetViewed(ev.GFIBLLLHMPD_AdventureId);
 					Database.Instance.advSetup.Setup(advId);
 					MenuScene.Instance.GotoAdventure(true);
 					return;

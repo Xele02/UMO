@@ -327,7 +327,7 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 		}
 
 		// // RVA: 0x1963110 Offset: 0x1963110 VA: 0x1963110
-		public int JGKOJEOLMIL(KOGHKIODHPA_Board JEMMMJEJLNL, byte[] KBOLNIBLIND)
+		public int JGKOJEOLMIL_GetNumUnlockedStory(KOGHKIODHPA_Board JEMMMJEJLNL, byte[] KBOLNIBLIND)
 		{
 			if (KBOLNIBLIND == null)
 				return 0;
