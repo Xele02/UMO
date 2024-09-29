@@ -354,6 +354,7 @@ namespace XeApp.Game.Menu
 			{
 				str2 = EKLNMHFCAOI.INCKKODFJAP_GetItemName(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 1));
 				a1 = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.JJKEDPHDEDO_GetSpItemCount(1);
+				a2 = d.GAGNJGMKPME_UnlockCost;
 				str = EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 1);
 			}
 			if(d.NHKNPHLNHHD_UnlockError != 0)
@@ -365,7 +366,7 @@ namespace XeApp.Game.Menu
 				if(d.NHKNPHLNHHD_UnlockError == CCAAJNJGNDO.JLFOIPMADEP.EPIBHNAAJGL_1_UnlockNotEnoughItems)
 				{
 					textPopup.TitleText = bank.GetMessageByLabel("event_story_text_014");
-					textPopup.Text = string.Format(bank.GetMessageByLabel("event_story_text_013"), str2, a2);
+					textPopup.Text = string.Format(bank.GetMessageByLabel("event_story_text_013"), str2, a2, str);
 				}
 				else if(d.NHKNPHLNHHD_UnlockError == CCAAJNJGNDO.JLFOIPMADEP.IAHDGAGKBGJ_2_PreviousNotViewed)
 				{
@@ -394,7 +395,7 @@ namespace XeApp.Game.Menu
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.UsedItem, Type = PopupButton.ButtonType.Positive }
 				};
 				isWait = true;
-				bool isPositive = true;
+				bool isPositive = false;
 				PopupWindowManager.Show(textPopup, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 				{
 					//0xB975AC
