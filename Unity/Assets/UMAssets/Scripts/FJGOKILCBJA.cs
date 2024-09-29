@@ -11,7 +11,7 @@ public class FJGOKILCBJA
 	public int AFKAGFOFAHM_ProductId; // 0xC
 	public int FPJBMCDMAMO; // 0x10
 	public DateTime JIHKOPIENAC; // 0x18
-	public long EAPILIMHDNP_BuyLimitDate; // 0x20 // check AODFBGCCBPE.BGDCMGOPCGE when assigned
+	public long EAPILIMHDNP_BuyLimitDate; // 0x20
 	public int EILKGEADKGH; // 0x28
 	public int KAPMOPMDHJE_Label; // 0x2C
 	public IGCPCHNCJCF GLHFDCKOJDN; // 0x30

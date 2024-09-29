@@ -298,7 +298,7 @@ public class BKPAPCMJKHE_Shop : DIHHCBACKGG_DbSection
 			data.KJBGCLPMLCG = array[i].PDBPFJJCADD;
 			data.GJFPFFBAKGK = array[i].FDBNFFNFOND;
 			if(data.GJFPFFBAKGK != 0)
-				data.GJFPFFBAKGK = Utility.GetCurrentUnixTime() + 24 * 3600;// UMO unlimited end date
+				data.GJFPFFBAKGK = Utility.GetTargetUnixTime(2100, 1, 1, 0, 0, 0);// UMO unlimited end date
 			data.ICKAMKNDAEB = array[i].DLCGAMHADEN;
 			data.PPEGAKEIEGM_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 			data.FPJBMCDMAMO = array[i].AHEFJKEICLM;

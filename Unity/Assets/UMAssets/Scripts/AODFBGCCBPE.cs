@@ -188,8 +188,7 @@ public class AODFBGCCBPE
 		long res = 0;
 		for(int i = 0; i < MHKCPJDNJKI.Count; i++)
 		{
-			TodoLogger.LogError(TodoLogger.ToCheck, "what is ^ ");
-			res += MHKCPJDNJKI[i].EAPILIMHDNP_BuyLimitDate;
+			res += MHKCPJDNJKI[i].EAPILIMHDNP_BuyLimitDate ^ MHKCPJDNJKI.Count;
 		}
 		return res;
 	}
