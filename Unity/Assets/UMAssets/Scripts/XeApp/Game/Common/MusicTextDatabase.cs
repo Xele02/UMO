@@ -18,6 +18,8 @@ namespace XeApp.Game.Common
 			public string storyTitle; // 0x28
 			public string bannerId; // 0x2C
 			public string dAnmStoreURL; // 0x30
+			public string musicName_jp;
+			public string musicName_rm;
 
 			public bool isEnableBuyURL { get { return !string.IsNullOrEmpty(buyURL); } } //0xAECF24
 		}
@@ -67,6 +69,11 @@ namespace XeApp.Game.Common
 				EDOHBJAPLPF_JsonData info = infos[i];
 				textInfo.id = (int)info[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id/*id*/];
 				textInfo.musicName = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.MusicName, i, (string)text[(int)info[AFEHLCGHAEE_Strings.OPFGFINHFCE_name/*name*/]]);
+				textInfo.musicName_jp = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.MusicName_jp, i, "");
+				textInfo.musicName_rm = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.MusicName_rm, i, "");
+				if(textInfo.musicName_jp.StartsWith("!not exist")) textInfo.musicName_jp = "";
+				if(textInfo.musicName_jp == textInfo.musicName) textInfo.musicName_jp = "";
+				if(textInfo.musicName_rm.StartsWith("!not exist")) textInfo.musicName_rm = "";
 				if(info.BBAJPINMOEP_Contains("o_n"))
 				{
 					textInfo.officialName = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.OfficialName, i, (string)text[(int)info["o_n"]]);
