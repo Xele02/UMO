@@ -810,7 +810,7 @@ public class ILLPDLODANB
 					{
 						if (dbQuests[i].FCDKJAKLGMB <= a)
 						{
-							CMEJFJFOIIJ = i;
+							CMEJFJFOIIJ = i + 1;
 							return true;
 						}
 						CMEJFJFOIIJ = 0;
