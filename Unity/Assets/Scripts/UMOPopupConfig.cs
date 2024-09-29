@@ -89,6 +89,15 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         {
             RuntimeSettings.CurrentSettings.RemoveCrystalLimit = b;
         });
+
+        AddToggleButton(ref y, "VOP : Remove max fast completion limit", () =>
+        {
+            return RuntimeSettings.CurrentSettings.DisableMaxVopFastCompletionLimit;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.DisableMaxVopFastCompletionLimit = b;
+        });
+        
         
         AddToggleButton(ref y, "Data : Force integrity check on next launch", () =>
         {
