@@ -274,7 +274,7 @@ namespace XeApp.Game.Menu
 			{
 				Database.Instance.advResult.Setup("Menu", uniqueId, new AdvSetupParam() { eventUniqueId = eventUniqueId, restorBgmId = restorBgmId, restorListPosition = pos, bgParam = new AdvReturnBgParam() { bgId = bgId, textureType = bgTexType, bgType = bgType, attr = bgAttr }, eventStoryData = m_eventStoryData });
 			}
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA(data.PBPOLELIPJI_AdventureId);
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetViewed(data.PBPOLELIPJI_AdventureId);
 			GPMHOAKFALE_Adventure.NGDBKCKMDHE dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(data.PBPOLELIPJI_AdventureId);
 			OAGBCBBHMPF.DKAMMIHBINF a = 0;
 			if (m_eventStoryData.IPCPFJJPIII - 1 < 4)
@@ -354,23 +354,24 @@ namespace XeApp.Game.Menu
 			{
 				str2 = EKLNMHFCAOI.INCKKODFJAP_GetItemName(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 1));
 				a1 = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.JJKEDPHDEDO_GetSpItemCount(1);
+				a2 = d.GAGNJGMKPME_UnlockCost;
 				str = EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 1);
 			}
-			if(d.NHKNPHLNHHD != 0)
+			if(d.NHKNPHLNHHD_UnlockError != 0)
 			{
 				textPopup.Buttons = new ButtonInfo[1]
 				{
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 				};
-				if(d.NHKNPHLNHHD == CCAAJNJGNDO.JLFOIPMADEP.EPIBHNAAJGL_1)
+				if(d.NHKNPHLNHHD_UnlockError == CCAAJNJGNDO.JLFOIPMADEP.EPIBHNAAJGL_1_UnlockNotEnoughItems)
 				{
 					textPopup.TitleText = bank.GetMessageByLabel("event_story_text_014");
-					textPopup.Text = string.Format(bank.GetMessageByLabel("event_story_text_013"), str2, a2);
+					textPopup.Text = string.Format(bank.GetMessageByLabel("event_story_text_013"), str2, a2, str);
 				}
-				else if(d.NHKNPHLNHHD == CCAAJNJGNDO.JLFOIPMADEP.IAHDGAGKBGJ_2)
+				else if(d.NHKNPHLNHHD_UnlockError == CCAAJNJGNDO.JLFOIPMADEP.IAHDGAGKBGJ_2_PreviousNotViewed)
 				{
 					textPopup.TitleText = bank.GetMessageByLabel("event_story_text_008");
-					textPopup.Text = bank.GetMessageByLabel(d.FICACPOCAPG ? "event_story_text_012" : "event_story_text_011");
+					textPopup.Text = bank.GetMessageByLabel(d.FICACPOCAPG_IsViewed ? "event_story_text_012" : "event_story_text_011");
 				}
 				isWait = true;
 				PopupWindowManager.Show(textPopup, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
@@ -394,7 +395,7 @@ namespace XeApp.Game.Menu
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.UsedItem, Type = PopupButton.ButtonType.Positive }
 				};
 				isWait = true;
-				bool isPositive = true;
+				bool isPositive = false;
 				PopupWindowManager.Show(textPopup, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 				{
 					//0xB975AC
@@ -493,10 +494,10 @@ namespace XeApp.Game.Menu
 				c.EnableArrow(true);
 				bool b = false;
 				if (!d.CDOCOLOKCJK_Unlocked)
-					b = !d.GELLHOIEABC;
+					b = !d.GELLHOIEABC_PreviousViewed;
 				c.EnableNoise(b);
 				c.SetThumbnail(d.HIGLGJBBPAP_ThumbId, d.DEAKHOJCBDM_Index);
-				c.EnableNewIcon(d.IFNIEPPAMBE);
+				c.EnableNewIcon(d.IFNIEPPAMBE_IsNew);
 			}
 			else if(d.DHJFHNFFDMG)
 			{
@@ -507,7 +508,7 @@ namespace XeApp.Game.Menu
 				c.EnableArrow(true);
 				c.EnableNoise(false);
 				c.SetThumbnail(d.HIGLGJBBPAP_ThumbId, d.DEAKHOJCBDM_Index);
-				c.EnableNewIcon(d.IFNIEPPAMBE);
+				c.EnableNewIcon(d.IFNIEPPAMBE_IsNew);
 				if(!d.CDOCOLOKCJK_Unlocked)
 				{
 					c.SetButtonLabel(EventStoryListContent.ButtonLabel.Release);
@@ -529,11 +530,11 @@ namespace XeApp.Game.Menu
 				c.EnableThumbnail(true);
 				c.EnableArrow(true);
 				c.EnableNoise(!d.CDOCOLOKCJK_Unlocked);
-				c.SetThumbnail(d.HIGLGJBBPAP_ThumbId, d.BMCJDCOEJFH == CCAAJNJGNDO.NIPDOAIGCIB.OEDCONLFLHD_2/*2*/);
+				c.SetThumbnail(d.HIGLGJBBPAP_ThumbId, d.BMCJDCOEJFH == CCAAJNJGNDO.NIPDOAIGCIB.OEDCONLFLHD_2_Epilogue/*2*/);
 				c.EnableNewIcon(false);
 			}
-			c.SetButtonLabel(d.FICACPOCAPG ? EventStoryListContent.ButtonLabel.Release : EventStoryListContent.ButtonLabel.Look);
-			c.SetButtonFunc(d.FICACPOCAPG ? EventStoryListContent.ButtonFunc.Release : EventStoryListContent.ButtonFunc.Look);
+			c.SetButtonLabel(d.FICACPOCAPG_IsViewed ? EventStoryListContent.ButtonLabel.Release : EventStoryListContent.ButtonLabel.Look);
+			c.SetButtonFunc(d.FICACPOCAPG_IsViewed ? EventStoryListContent.ButtonFunc.Release : EventStoryListContent.ButtonFunc.Look);
 			c.ChangeReleaseFont(EventStoryListContent.ReleaseFont.DoRelease);
 		}
 

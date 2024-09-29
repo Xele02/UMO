@@ -216,7 +216,7 @@ namespace XeApp.Game.Menu
 					if(m_eventStoryData.FFPCLEONGHE[i].CDOCOLOKCJK_Unlocked)
 					{
 						disabled = false;
-						if (!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN(m_eventStoryData.FFPCLEONGHE[i].PBPOLELIPJI_AdventureId))
+						if (!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsViewed(m_eventStoryData.FFPCLEONGHE[i].PBPOLELIPJI_AdventureId))
 						{
 							m_storyNewLayout.StartChildrenAnimGoStop("01");
 						}
