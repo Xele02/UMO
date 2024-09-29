@@ -169,7 +169,10 @@ namespace XeApp.Game.Menu
 		public void InputOn()
 		{
 			m_cameraMan.InputOn();
-			m_gazeControl.On();
+			if(RuntimeSettings.CurrentSettings.DisableHeadRotation)
+				m_gazeControl.Off();
+			else
+				m_gazeControl.On();
 		}
 
 		//// RVA: 0x1CE70B4 Offset: 0x1CE70B4 VA: 0x1CE70B4
