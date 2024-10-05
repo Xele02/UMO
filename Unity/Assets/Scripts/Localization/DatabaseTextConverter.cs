@@ -500,7 +500,7 @@ public static class DatabaseTextConverter
 
                         foreach(var data in poFile_.translationData)
                         {
-                            if(data.Key.EndsWith("_musicname"))
+                            if(data.Key.EndsWith("_musicname") || data.Key.EndsWith("_officialName"))
                             {
                                 poFile.translationData.Add(data.Key + "_jp", data.Value);
                                 if(poFile2_.translationData.ContainsKey(data.Key))
@@ -684,7 +684,9 @@ public static class DatabaseTextConverter
         StoryDesc,
         StoryTitle,
         MusicName_jp,
-        MusicName_rm
+        MusicName_rm,
+        OfficialName_jp,
+        OfficialName_rm
     }
     public static string TranslateMusicText(MusicTextType type, int musicId, string def)
     {
@@ -717,6 +719,12 @@ public static class DatabaseTextConverter
                 break;
             case MusicTextType.MusicName_rm:
                 prfx = string.Format("musicName_{0:D4}_musicname_jprm", musicId);
+                break;
+            case MusicTextType.OfficialName_jp:
+                prfx = string.Format("musicName_{0:D4}_officialName_jp", musicId);
+                break;
+            case MusicTextType.OfficialName_rm:
+                prfx = string.Format("musicName_{0:D4}_officialName_jprm", musicId);
                 break;
             default:
                 return def;

@@ -22,10 +22,19 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
     
     [SerializeField]
 	private GameObject ToggleButtonPrefab;
+    [SerializeField]
+	private GameObject _3ChoicesPrefab;
 
     public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
     {
         Parent = setting.m_parent;
+
+        while(transform.childCount > 0)
+        {
+            Transform t = transform.GetChild(0);
+            t.SetParent(null);
+            Destroy(t.gameObject);
+        }
 
         float y = -10;
         AddToggleButton(ref y, "Can skip unplayed song", () =>
@@ -106,6 +115,45 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
             RuntimeSettings.CurrentSettings.DisableHeadRotation = b;
         });
         
+        Add3ChoicePrefab(ref y, "Music name display type", new string[] { "Kanji", "Romaji", "Translated" }, () =>
+        {
+            return RuntimeSettings.CurrentSettings.MusicFirstDisplayType;
+        }, (int b) =>
+        {
+            RuntimeSettings.CurrentSettings.MusicFirstDisplayType = b;
+        });
+        
+        AddToggleButton(ref y, "Enable second music name display", () =>
+        {
+            return RuntimeSettings.CurrentSettings.EnableMusicSecondDisplay;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.EnableMusicSecondDisplay = b;
+        });
+        
+        Add3ChoicePrefab(ref y, "Second music name display type", new string[] { "Kanji", "Romaji", "Translated" }, () =>
+        {
+            return RuntimeSettings.CurrentSettings.MusicSecondDisplayType;
+        }, (int b) =>
+        {
+            RuntimeSettings.CurrentSettings.MusicSecondDisplayType = b;
+        });
+        
+        AddToggleButton(ref y, "Enable third music name display", () =>
+        {
+            return RuntimeSettings.CurrentSettings.EnableMusicThirdDisplay;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.EnableMusicThirdDisplay = b;
+        });
+        
+        Add3ChoicePrefab(ref y, "Third music name display type", new string[] { "Kanji", "Romaji", "Translated" }, () =>
+        {
+            return RuntimeSettings.CurrentSettings.MusicThirdDisplayType;
+        }, (int b) =>
+        {
+            RuntimeSettings.CurrentSettings.MusicThirdDisplayType = b;
+        });
         
         AddToggleButton(ref y, "Data : Force integrity check on next launch", () =>
         {
@@ -198,10 +246,19 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
 
     public void Save()
     {
-        UMO_ToggleButtonGroup[] btns = GetComponentsInChildren<UMO_ToggleButtonGroup>();
-        for(int i = 0; i < btns.Length; i++)
         {
-            btns[i].Save();
+            UMO_ToggleButtonGroup[] btns = GetComponentsInChildren<UMO_ToggleButtonGroup>();
+            for(int i = 0; i < btns.Length; i++)
+            {
+                btns[i].Save();
+            }
+        }
+        {
+            UMO_ToggleSelectGroup[] btns = GetComponentsInChildren<UMO_ToggleSelectGroup>();
+            for(int i = 0; i < btns.Length; i++)
+            {
+                btns[i].Save();
+            }
         }
         RuntimeSettings.CurrentSettings.Save();
     }
@@ -220,6 +277,27 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         text.text = txt;
         toggle.Init();
     }
+
+    void Add3ChoicePrefab(ref float y, string txt, string[] choicesTxt, Func<int> getSelectedCallback, Action<int> setSelectedCallback)
+    {
+        GameObject g = Instantiate(_3ChoicesPrefab);
+        UMO_ToggleSelectGroup toggle = g.GetComponentInChildren<UMO_ToggleSelectGroup>();
+        g.transform.SetParent(transform, false);
+        y -= 42;
+        (g.transform as RectTransform).anchoredPosition = new Vector2(71, y);
+        y -= 90;
+        toggle.GetSelectedCallback = getSelectedCallback;
+        toggle.SetSelectedCallback = setSelectedCallback;
+        Text text = g.transform.Find("Title").GetComponent<Text>();
+        text.text = txt;
+        for(int i = 0; i < 3; i++)
+        {
+            Text textButton = g.transform.Find("ToggleButton(Clone)/Title" + new string[]{ "A", "B", "C" }[i]).GetComponent<Text>();
+            textButton.text = choicesTxt[i];
+        }
+        toggle.Init();
+    }
+
     public bool IsScrollable()
     {
         return true;

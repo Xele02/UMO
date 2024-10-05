@@ -146,7 +146,7 @@ namespace XeApp.Game.MusicSelect
 					OnEnemyInfoButtonClickListener();
 			});
 
-			if(true)
+			if(RuntimeSettings.CurrentSettings.Language != "" && (RuntimeSettings.CurrentSettings.EnableMusicSecondDisplay || RuntimeSettings.CurrentSettings.EnableMusicThirdDisplay))
 			{
 				m_singerNameText.fontSize = 14;
 				m_singerNameText.transform.parent.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -10);
@@ -225,12 +225,12 @@ namespace XeApp.Game.MusicSelect
 		}
 
 		//// RVA: 0xC9CC78 Offset: 0xC9CC78 VA: 0xC9CC78
-		public void SetTitle(string title, string title_jp, string title_rm)
+		public void SetTitle(string title, string title_2, string title_3)
 		{
 			m_musicName.text = title;
 			if(m_musicNameAlt != null)
 			{
-				List<string> txt = new List<string>() { title_rm, title_jp };
+				List<string> txt = new List<string>() { title_2, title_3 };
 				txt.RemoveAll((x) => string.IsNullOrEmpty(x));
 				m_musicNameAlt.text = string.Join(" / ", txt);
 			}

@@ -83,7 +83,7 @@ namespace XeApp.Game.MusicSelect
 					OnClickList(this);
 			});
 
-			if(true)
+			if(RuntimeSettings.CurrentSettings.Language != "" && (RuntimeSettings.CurrentSettings.EnableMusicSecondDisplay || RuntimeSettings.CurrentSettings.EnableMusicThirdDisplay))
 			{
 				m_attrIcon.GetComponent<RectTransform>().anchoredPosition = new Vector3(-206, -8);
 				m_rewardObj.GetComponent<RectTransform>().anchoredPosition = new Vector3(178, -8);
@@ -191,13 +191,13 @@ namespace XeApp.Game.MusicSelect
 		}
 
 		// // RVA: 0xC9E59C Offset: 0xC9E59C VA: 0xC9E59C
-		public void SetTitle(string title, string title_jp, string title_rm)
+		public void SetTitle(string title, string title_2, string title_3)
 		{
 			_title.text = title;
 			if(_titleAlt != null)
-				_titleAlt.text = title_rm;
+				_titleAlt.text = title_2;
 			if(_titleAlt2 != null)
-				_titleAlt2.text = title_jp;
+				_titleAlt2.text = title_3;
 		}
 
 		// // RVA: 0xC9E5D8 Offset: 0xC9E5D8 VA: 0xC9E5D8
