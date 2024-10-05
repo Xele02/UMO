@@ -693,6 +693,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x18689C0 Offset: 0x18689C0 VA: 0x18689C0
 		private bool FastDoneLimitOverCheck()
 		{
+			if(RuntimeSettings.CurrentSettings.DisableMaxVopFastCompletionLimit)
+				return false;
 			if(KDHGBOOECKC.HHCJCDFCLOB.PEBJPOPJAJJ_GetFastCompleteSlotAvaiable() < 1)
 			{
 				MessageBank bk = MessageManager.Instance.GetBank("menu");

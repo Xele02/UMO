@@ -19,11 +19,11 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 	{
 		public int PPFNGGCBJKC; // 0x8
 		public int PPEGAKEIEGM; // 0xC
-		public int OAFJONPIFGM; // 0x10
+		public int OAFJONPIFGM_EventId; // 0x10
 		public NMIGMCJHAIE JDJNNJEJDAJ; // 0x14
-		public int LOHMKCPKBON; // 0x18
+		public int LOHMKCPKBON_AdvId; // 0x18
 		public int CHOFDPDFPDC; // 0x1C
-		public int PFGAKEDKOPD; // 0x20
+		public int PFGAKEDKOPD_UnlockSpCost; // 0x20
 	}
 
 	public class CHCCGPMJFEL
@@ -36,11 +36,11 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 
 	public enum NMIGMCJHAIE
 	{
-		JFEDIMKFDNH = 1,
-		GBECNPANBEA_2 = 2,
-		OEDCONLFLHD = 3,
-		DCDEBCIMEMM = 4,
-		MOPAEGFEGCB_5 = 5,
+		JFEDIMKFDNH_Prologue = 1,
+		GBECNPANBEA_2_Sns = 2,
+		OEDCONLFLHD_Epilogue = 3,
+		DCDEBCIMEMM_Opening = 4,
+		MOPAEGFEGCB_5_EpisodeStory = 5,
 	}
 
 	public enum CHMHPDHPDCD
@@ -98,11 +98,11 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 				ENDMMNNOAIL data = new ENDMMNNOAIL();
 				data.PPFNGGCBJKC = array[i].PPFNGGCBJKC;
 				data.PPEGAKEIEGM = array[i].PLALNIIBLOF;
-				data.OAFJONPIFGM = array[i].BCKCEEMNKCH;
+				data.OAFJONPIFGM_EventId = array[i].BCKCEEMNKCH;
 				data.JDJNNJEJDAJ = (NMIGMCJHAIE)array[i].PIDAAPMCAML;
-				data.LOHMKCPKBON = array[i].OIAAFFHGBBD;
+				data.LOHMKCPKBON_AdvId = array[i].OIAAFFHGBBD;
 				data.CHOFDPDFPDC = array[i].ODNOJKHHEOP;
-				data.PFGAKEDKOPD = array[i].DFMOIKJOCGH;
+				data.PFGAKEDKOPD_UnlockSpCost = array[i].DFMOIKJOCGH;
 				JPIGOBGOMON.Add(data);
 			}
 		}
@@ -128,8 +128,8 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 		ENDMMNNOAIL e = JPIGOBGOMON.Find((ENDMMNNOAIL GHPLINIACBB) =>
 		{
 			//0xFC7200
-			if(GHPLINIACBB.PPEGAKEIEGM == 2 && GHPLINIACBB.JDJNNJEJDAJ == NMIGMCJHAIE.GBECNPANBEA_2)
-				return GHPLINIACBB.LOHMKCPKBON == AIPLIEMLHGC;
+			if(GHPLINIACBB.PPEGAKEIEGM == 2 && GHPLINIACBB.JDJNNJEJDAJ == NMIGMCJHAIE.GBECNPANBEA_2_Sns)
+				return GHPLINIACBB.LOHMKCPKBON_AdvId == AIPLIEMLHGC;
 			return false;
 		});
 		if(e != null)
@@ -139,7 +139,7 @@ public class FBIOJHECAHB_EventStory : DIHHCBACKGG_DbSection
 				//0xFC7254
 				if(GHPLINIACBB.PPEGAKEIEGM != 2)
 					return false;
-				return GHPLINIACBB.OAFJONPIFGM_EventId == e.OAFJONPIFGM;
+				return GHPLINIACBB.OAFJONPIFGM_EventId == e.OAFJONPIFGM_EventId;
 			}) != null)
 			{
 				return e;

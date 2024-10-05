@@ -134,7 +134,7 @@ namespace XeApp.Game.Menu
 							return;
 					}
 					Database.Instance.advResult.Setup("Menu", TransitionUniqueId.SETTINGMENU_VALKYRIETUNEUP, new AdvSetupParam());
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA(valkyrietuneup_first_adv_id);
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetViewed(valkyrietuneup_first_adv_id);
 					Database.Instance.advSetup.Setup(dbAdv.KKPPFAHFOJI_FileId);
 					MenuScene.Instance.GotoAdventure(true);
 					MenuScene.Instance.InputDisable();

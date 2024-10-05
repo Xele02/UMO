@@ -59,6 +59,8 @@ public class FKMOKDCJFEN
 		NFPHOINMHKN_QuestInfo saveQuest = serverSave.GOACJBOCLHH_Quest.BEGCHDHHEKC_DailyQuests[CMEJFJFOIIJ - 1];
 		MessageBank bk = MessageManager.Instance.GetBank("master");
 		KLMPFGOCBHC_Description = bk.GetMessageByLabel("qd_dsc_" + CMEJFJFOIIJ.ToString("D4"));
+		if(RuntimeSettings.CurrentSettings.DisplayIdInName)
+			KLMPFGOCBHC_Description = "[" + CMEJFJFOIIJ.ToString() + "] " + KLMPFGOCBHC_Description;
 		CJCGFKDMDMN_DescriptionB = bk.GetMessageByLabel("qd_dscb_" + CMEJFJFOIIJ.ToString("D4"));
 		ABLHIAEDJAI_CurrentValue = (int)ILLPDLODANB.DCLKMNGMIKC_GetQuestCurrentValue(NDFIEMPPMLF_dbQuest, db, serverSave);
 		HLDGMMDFNHB_TargetValue = NDFIEMPPMLF_dbQuest.FCDKJAKLGMB;
@@ -96,6 +98,8 @@ public class FKMOKDCJFEN
 		NFPHOINMHKN_QuestInfo saveQuest = serverSave.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[CMEJFJFOIIJ - 1];
 		MessageBank bk = MessageManager.Instance.GetBank("master");
 		KLMPFGOCBHC_Description = bk.GetMessageByLabel("qn_dsc_" + CMEJFJFOIIJ.ToString("D4"));
+		if(RuntimeSettings.CurrentSettings.DisplayIdInName)
+			KLMPFGOCBHC_Description = "[" + CMEJFJFOIIJ.ToString() + "] " + KLMPFGOCBHC_Description;
 		CJCGFKDMDMN_DescriptionB = bk.GetMessageByLabel("qn_dscb_" + CMEJFJFOIIJ.ToString("D4"));
 		ABLHIAEDJAI_CurrentValue = (int)ILLPDLODANB.DCLKMNGMIKC_GetQuestCurrentValue(NDFIEMPPMLF_dbQuest, db, serverSave);
 		HLDGMMDFNHB_TargetValue = NDFIEMPPMLF_dbQuest.FCDKJAKLGMB;

@@ -703,9 +703,9 @@ namespace XeApp.Game.Gacha
 					{
 						yield return Co.R(OpenPurchaseVCWindow(denomControl, onNetError, onChangeDate, null));
 					}
-					if (onCancel != null)
-						onCancel(CancelCause.ToPurchase);
 				}
+				if (onCancel != null)
+					onCancel(CancelCause.ToPurchase);
 			}
 		}
 

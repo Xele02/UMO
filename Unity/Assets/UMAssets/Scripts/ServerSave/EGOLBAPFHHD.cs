@@ -662,7 +662,7 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	// public bool POOOHJIJLNN(int PPFNGGCBJKC, int HMFFHLPNMPH) { }
 
 	// // RVA: 0x1C528D0 Offset: 0x1C528D0 VA: 0x1C528D0
-	public bool NLOGLGKPMNI(int PPFNGGCBJKC, int HMFFHLPNMPH)
+	public bool NLOGLGKPMNI_ConsumeItem(int PPFNGGCBJKC, int HMFFHLPNMPH)
 	{
 		if(PPFNGGCBJKC > 0 && PPFNGGCBJKC <= 16)
 		{

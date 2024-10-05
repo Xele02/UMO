@@ -28,6 +28,8 @@ class RuntimeSettings : ScriptableObject
 				
 				UMO_PlayerPrefs.CheckLoad();
 				m_currentSettings.CanSkipUnplayedSongs = UMO_PlayerPrefs.GetInt("CanSkipSongs", 1) == 1;
+				m_currentSettings.DisableMaxVopFastCompletionLimit = UMO_PlayerPrefs.GetInt("DisableMaxVopFastCompletionLimit", 0) == 1;
+				m_currentSettings.DisableHeadRotation = UMO_PlayerPrefs.GetInt("DisableHeadRotation", 0) == 1;
 				m_currentSettings.IsInvincibleCheat = UMO_PlayerPrefs.GetInt("InvincibleMode", 0) == 1;
 				m_currentSettings.ForcePerfectNote = UMO_PlayerPrefs.GetInt("ForcePerfect", 0) == 1;
 				m_currentSettings.DisableNoteSound = UMO_PlayerPrefs.GetInt("DisableNoteSound", 1) == 1;
@@ -76,6 +78,8 @@ class RuntimeSettings : ScriptableObject
 		UMO_PlayerPrefs.SetString("Language", m_currentSettings.Language);
 		UMO_PlayerPrefs.SetInt("WorkerThreadPriorityNormal", m_currentSettings.WorkerThreadPriorityNormal ? 1 : 0);
 		UMO_PlayerPrefs.SetInt("WorkerThreadUseCoroutine", m_currentSettings.WorkerThreadUseCoroutine ? 1 : 0);
+		UMO_PlayerPrefs.SetInt("DisableMaxVopFastCompletionLimit", m_currentSettings.DisableMaxVopFastCompletionLimit ? 1 : 0);
+		UMO_PlayerPrefs.SetInt("DisableHeadRotation", m_currentSettings.DisableHeadRotation ? 1 : 0);
 		UMO_PlayerPrefs.Save();
 	}
 
@@ -137,6 +141,8 @@ class RuntimeSettings : ScriptableObject
 	public bool CanSkipUnplayedSongs { get; set; }
 	public bool DisableCrywareLowLatency { get; set; }
 	public bool RemoveHomeBgDateLimit = false;
+	public bool DisableMaxVopFastCompletionLimit{ get; set; }
+	public bool DisableHeadRotation{ get; set; }
 
 	public bool IsInvincibleCheat { get; set; }
 	public bool ForcePerfectNote { get; set; }
