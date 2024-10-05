@@ -276,9 +276,9 @@ public class KDHGBOOECKC
 		// // RVA: 0xE72DC8 Offset: 0xE72DC8 VA: 0xE72DC8
 		public int JLHACGNEFPJ_GetNumUc(List<IBAOKNMIBCL> NNDGIAEFMOG)
 		{
+			int res = 0;
 			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
 			{
-				int res = 0;
 				for(int i = 0; i < NNDGIAEFMOG.Count; i++)
 				{
 					if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(NNDGIAEFMOG[i].PPFNGGCBJKC_Id) == EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit)
@@ -292,7 +292,7 @@ public class KDHGBOOECKC
 					}
 				}
 			}
-			return 0;
+			return res;
 		}
 
 		// // RVA: 0xE7304C Offset: 0xE7304C VA: 0xE7304C
