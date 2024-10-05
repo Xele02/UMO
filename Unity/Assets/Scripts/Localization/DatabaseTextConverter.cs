@@ -490,6 +490,24 @@ public static class DatabaseTextConverter
                     poFile.LoadFile(p + "messages_full.pot", clear:true);
                     poFile.LoadFile(p + "jp.po", useKeyInsteadOfString:keepUntransladedAsKey);
                     poFile.LoadFile(p + lang + ".po");
+                    if( i == (int)eBank.music_text )
+                    {
+                        // Load original & romanized music names
+                        PoFile poFile_ = new PoFile();
+                        poFile_.LoadFile(p + "jp.po");
+                        PoFile poFile2_ = new PoFile();
+                        poFile2_.LoadFile(p + "ja_rm.po");
+
+                        foreach(var data in poFile_.translationData)
+                        {
+                            if(data.Key.EndsWith("_musicname") || data.Key.EndsWith("_officialName"))
+                            {
+                                poFile.translationData.Add(data.Key + "_jp", data.Value);
+                                if(poFile2_.translationData.ContainsKey(data.Key))
+                                    poFile.translationData.Add(data.Key + "_jprm", poFile2_.translationData[data.Key]);
+                            }
+                        }
+                    }
                 }
                 poFile.WriteToArchiveAsBankData(archive, ((eBank)i).ToString() + ".bytes");
             }
@@ -664,7 +682,11 @@ public static class DatabaseTextConverter
         VocalNameLF,
         Description,
         StoryDesc,
-        StoryTitle
+        StoryTitle,
+        MusicName_jp,
+        MusicName_rm,
+        OfficialName_jp,
+        OfficialName_rm
     }
     public static string TranslateMusicText(MusicTextType type, int musicId, string def)
     {
@@ -691,6 +713,18 @@ public static class DatabaseTextConverter
                 break;
             case MusicTextType.StoryTitle:
                 prfx = string.Format("musicName_{0:D4}_storyTitle", musicId);
+                break;
+            case MusicTextType.MusicName_jp:
+                prfx = string.Format("musicName_{0:D4}_musicname_jp", musicId);
+                break;
+            case MusicTextType.MusicName_rm:
+                prfx = string.Format("musicName_{0:D4}_musicname_jprm", musicId);
+                break;
+            case MusicTextType.OfficialName_jp:
+                prfx = string.Format("musicName_{0:D4}_officialName_jp", musicId);
+                break;
+            case MusicTextType.OfficialName_rm:
+                prfx = string.Format("musicName_{0:D4}_officialName_jprm", musicId);
                 break;
             default:
                 return def;

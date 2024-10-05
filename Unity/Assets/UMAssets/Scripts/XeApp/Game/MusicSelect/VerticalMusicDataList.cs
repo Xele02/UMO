@@ -30,6 +30,8 @@ namespace XeApp.Game.MusicSelect
 				public string musicName; // 0x30
 				public string vocalName; // 0x34
 				public int musicTime; // 0x38
+				public string musicName_2;
+				public string musicName_3;
 			}
 			private List<MusicRewardStat> m_rewardStat = new List<MusicRewardStat>(); // 0xC
 
@@ -44,6 +46,8 @@ namespace XeApp.Game.MusicSelect
 			public string EventPeriod { get; } // 0x20
 			public string MusicTimeStr { get; } // 0x24
 			public string MusicName { get; } // 0x28
+			public string MusicName2 { get; }
+			public string MusicName3 { get; }
 			public string VocalName { get; } // 0x2C
 			public int MusicTime { get; } // 0x30
 			public MusicSelectConsts.MusicTimeType TimeType { get; } = MusicSelectConsts.MusicTimeType.Max; // 0x34
@@ -55,6 +59,8 @@ namespace XeApp.Game.MusicSelect
 			public MusicListData(InitParam initParam)
 			{
 				MusicName = initParam.musicName;
+				MusicName2 = initParam.musicName_2;
+				MusicName3 = initParam.musicName_3;
 				ViewMusic = initParam.viewMusic;
 				IsHighLevel = initParam.isHighLevel;
 				IsSimulation = initParam.isSimulation;
@@ -150,6 +156,8 @@ namespace XeApp.Game.MusicSelect
 					initparam.eventPeriod = GetEventPeriodString(musicData.AFCMIOIGAJN_EventInfo.KINJOEIAHFK_OpenTime, musicData.AFCMIOIGAJN_EventInfo.PCCFAKEOBIC_CloseTime); // 0x28								public string eventPeriod; // 0x28
 					initparam.musicTimeStr = null; // 0x2C								public string musicTimeStr; // 0x2C
 					initparam.musicName = null; // 0x30									public string musicName; // 0x30
+					initparam.musicName_2 = null;
+					initparam.musicName_3 = null;
 					initparam.vocalName = null; // 0x34									public string vocalName; // 0x34
 					initparam.musicTime = musicTime; // 0x38									public int musicTime; // 0x38
 					MusicListData data = new MusicListData(initparam);
@@ -182,6 +190,8 @@ namespace XeApp.Game.MusicSelect
 					initparam.eventPeriod = GetEventPeriodString(musicData.NOKBLCDMLPP_MinigameEventInfo.KINJOEIAHFK_OpenTime, musicData.NOKBLCDMLPP_MinigameEventInfo.PCCFAKEOBIC_CloseTime); // 0x28								public string eventPeriod; // 0x28
 					initparam.musicTimeStr = null; // 0x2C								public string musicTimeStr; // 0x2C
 					initparam.musicName = null; // 0x30									public string musicName; // 0x30
+					initparam.musicName_2 = null;
+					initparam.musicName_3 = null;
 					initparam.vocalName = null; // 0x34									public string vocalName; // 0x34
 					initparam.musicTime = musicTime; // 0x38									public int musicTime; // 0x38
 					MusicListData data = new MusicListData(initparam);
@@ -193,6 +203,8 @@ namespace XeApp.Game.MusicSelect
 					EONOEHOKBEB_Music musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(musicData.GHBPLHBNMBK_FreeMusicId, freeMusicInfo.DLAEJOBELBH_MusicId);
 					string musicName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).musicName;
 					string vocalName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).vocalName;
+					string musicName_2 = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).musicName_2;
+					string musicName_3 = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).musicName_3;
 					int seconds = 0;
 					int days, hours, minutes;
 					MusicSelectSceneBase.ExtractRemainTime(musicTime / 1000, out days, out hours, out minutes, out seconds);
@@ -338,6 +350,8 @@ namespace XeApp.Game.MusicSelect
 					initparam.musicName = musicName; // 0x30									public string musicName; // 0x30
 					initparam.vocalName = vocalName; // 0x34									public string vocalName; // 0x34
 					initparam.musicTime = musicTime; // 0x38									public int musicTime; // 0x38
+					initparam.musicName_2 = musicName_2;
+					initparam.musicName_3 = musicName_3;
 					MusicListData data = new MusicListData(initparam);
 					res.Add(data);
 				}

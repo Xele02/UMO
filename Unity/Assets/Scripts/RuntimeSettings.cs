@@ -48,6 +48,11 @@ class RuntimeSettings : ScriptableObject
 				m_currentSettings.Language = UMO_PlayerPrefs.GetString("Language", "");
 				m_currentSettings.WorkerThreadPriorityNormal = UMO_PlayerPrefs.GetInt("WorkerThreadPriorityNormal", 0) == 1;
 				m_currentSettings.WorkerThreadUseCoroutine = UMO_PlayerPrefs.GetInt("WorkerThreadUseCoroutine", 0) == 1;
+				m_currentSettings.EnableMusicSecondDisplay = UMO_PlayerPrefs.GetInt("EnableMusicSecondDisplay", 1) == 1;
+				m_currentSettings.EnableMusicThirdDisplay = UMO_PlayerPrefs.GetInt("EnableMusicThirdDisplay", 1) == 1;
+				m_currentSettings.MusicFirstDisplayType = UMO_PlayerPrefs.GetInt("MusicFirstDisplayType", 2);
+				m_currentSettings.MusicSecondDisplayType = UMO_PlayerPrefs.GetInt("MusicSecondDisplayType", 1);
+				m_currentSettings.MusicThirdDisplayType = UMO_PlayerPrefs.GetInt("MusicThirdDisplayType", 0);
 
 #if (UNITY_ANDROID && !UNITY_EDITOR) || DEBUG_ANDROID_FILESYSTEM
 				m_currentSettings.DataDirectory = Application.persistentDataPath + "/data/";
@@ -80,6 +85,11 @@ class RuntimeSettings : ScriptableObject
 		UMO_PlayerPrefs.SetInt("WorkerThreadUseCoroutine", m_currentSettings.WorkerThreadUseCoroutine ? 1 : 0);
 		UMO_PlayerPrefs.SetInt("DisableMaxVopFastCompletionLimit", m_currentSettings.DisableMaxVopFastCompletionLimit ? 1 : 0);
 		UMO_PlayerPrefs.SetInt("DisableHeadRotation", m_currentSettings.DisableHeadRotation ? 1 : 0);
+		UMO_PlayerPrefs.SetInt("EnableMusicSecondDisplay", m_currentSettings.EnableMusicSecondDisplay ? 1 : 0);
+		UMO_PlayerPrefs.SetInt("EnableMusicThirdDisplay", m_currentSettings.EnableMusicThirdDisplay ? 1 : 0);
+		UMO_PlayerPrefs.SetInt("MusicFirstDisplayType", m_currentSettings.MusicFirstDisplayType);
+		UMO_PlayerPrefs.SetInt("MusicSecondDisplayType", m_currentSettings.MusicSecondDisplayType);
+		UMO_PlayerPrefs.SetInt("MusicThirdDisplayType", m_currentSettings.MusicThirdDisplayType);
 		UMO_PlayerPrefs.Save();
 	}
 
@@ -146,6 +156,13 @@ class RuntimeSettings : ScriptableObject
 
 	public bool IsInvincibleCheat { get; set; }
 	public bool ForcePerfectNote { get; set; }
+
+	public bool EnableMusicSecondDisplay { get; set; }
+	public bool EnableMusicThirdDisplay { get; set; }
+	public int MusicFirstDisplayType { get; set; }
+	public int MusicSecondDisplayType { get; set; }
+	public int MusicThirdDisplayType { get; set; }
+
 	[Header("Live")]
 	public bool ForceLiveValkyrieMode = false;
 	public bool ForceLiveDivaMode = false;
@@ -208,6 +225,19 @@ class RuntimeSettings : ScriptableObject
 		set => m_SmartFormat = value;
 	}
 	SmartFormatter m_SmartFormat = Smart.CreateDefaultSmartFormat();
+
+	public string GetMusicName(int idx, string str_translated, string str_kanji, string str_rom)
+	{
+		string[] strs = {str_kanji, str_rom, str_translated};
+		switch(idx)
+		{
+			case 1:
+				return EnableMusicSecondDisplay ? strs[MusicSecondDisplayType] : "";
+			case 2:
+				return EnableMusicThirdDisplay ? strs[MusicThirdDisplayType] : "";
+		}
+		return strs[MusicFirstDisplayType];
+	}
 }
 
 #if UNITY_EDITOR

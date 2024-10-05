@@ -199,7 +199,7 @@ namespace XeApp.Game.Menu
 				else
 				{
 					obj.SetListType(MusicScrollCenterItem.ListType.Normal);
-					obj.SetTitle(m_musicList[listIndex].MusicName);
+					obj.SetTitle(m_musicList[listIndex].MusicName, m_musicList[listIndex].MusicName2, m_musicList[listIndex].MusicName3);
 					obj.SetSingerName(m_musicList[listIndex].VocalName);
 				}
 				obj.SetAttribute(m_musicList[listIndex].ViewMusic.FKDCCLPGKDK_JacketAttr);
@@ -301,7 +301,7 @@ namespace XeApp.Game.Menu
 				else
 				{
 					obj.SetListType(MusicScrollItem.ListType.Normal);
-					obj.SetTitle(m_musicList[listIndex].MusicName);
+					obj.SetTitle(m_musicList[listIndex].MusicName, m_musicList[listIndex].MusicName2, m_musicList[listIndex].MusicName3);
 				}
 				obj.SetAttribute(m_musicList[listIndex].ViewMusic.FKDCCLPGKDK_JacketAttr);
 				obj.SetLockIcon(m_musicList[listIndex].IsOpen, m_musicList[listIndex].IsUnlockable);

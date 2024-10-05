@@ -59,3 +59,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ToggleButtonPrefab: {fileID: 6423378771119095739, guid: e5f24747f46a3bc4eae5aa0c05c21643,
     type: 3}
+  _3ChoicesPrefab: {fileID: 6423378771119095739, guid: dc241b2c7c94817ae841e0f044669e37,
+    type: 3}

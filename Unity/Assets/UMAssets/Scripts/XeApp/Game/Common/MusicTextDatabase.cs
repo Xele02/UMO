@@ -18,6 +18,8 @@ namespace XeApp.Game.Common
 			public string storyTitle; // 0x28
 			public string bannerId; // 0x2C
 			public string dAnmStoreURL; // 0x30
+			public string musicName_2;
+			public string musicName_3;
 
 			public bool isEnableBuyURL { get { return !string.IsNullOrEmpty(buyURL); } } //0xAECF24
 		}
@@ -66,10 +68,21 @@ namespace XeApp.Game.Common
 				TextInfo textInfo = new TextInfo();
 				EDOHBJAPLPF_JsonData info = infos[i];
 				textInfo.id = (int)info[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id/*id*/];
-				textInfo.musicName = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.MusicName, i, (string)text[(int)info[AFEHLCGHAEE_Strings.OPFGFINHFCE_name/*name*/]]);
+				string str1 = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.MusicName, i, (string)text[(int)info[AFEHLCGHAEE_Strings.OPFGFINHFCE_name/*name*/]]);
+				string str2 = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.MusicName_jp, i, "");
+				string str3 = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.MusicName_rm, i, "");
+				textInfo.musicName = RuntimeSettings.CurrentSettings.GetMusicName(0, str1, str2, str3);
+				textInfo.musicName_2 = RuntimeSettings.CurrentSettings.GetMusicName(1, str1, str2, str3);
+				textInfo.musicName_3 = RuntimeSettings.CurrentSettings.GetMusicName(2, str1, str2, str3);
+				if(textInfo.musicName_2.StartsWith("!not exist")) textInfo.musicName_2 = "";
+				if(textInfo.musicName_2 == textInfo.musicName) textInfo.musicName_2 = "";
+				if(textInfo.musicName_3.StartsWith("!not exist")) textInfo.musicName_3 = "";
 				if(info.BBAJPINMOEP_Contains("o_n"))
 				{
-					textInfo.officialName = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.OfficialName, i, (string)text[(int)info["o_n"]]);
+					string offStr1 = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.OfficialName, i, (string)text[(int)info["o_n"]]);
+					string offStr2 = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.OfficialName_jp, i, "");
+					string offStr3 = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.OfficialName_rm, i, "");
+					textInfo.officialName = RuntimeSettings.CurrentSettings.GetMusicName(0, offStr1, offStr2, offStr3);
 				}
 				else
 				{
