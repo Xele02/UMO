@@ -18,8 +18,8 @@ The original game is in japanese only. The translation in others languages is cu
 
 # Requirement / Installation
 
-* [Install on PC using Unity Editor](https://github.com/Xele02/UMO/wiki/Install-on-PC-with-Unity-Editor)
-* [Install on Android](https://github.com/Xele02/UMO/wiki/Install-on-android)
+* [Install on PC using Unity Editor](https://umo.xele.org/getting-started/installation/install-android)
+* [Install on Android]([https://github.com/Xele02/UMO/wiki/Install-on-android)](https://umo.xele.org/getting-started/installation/install-android)
 
 # Support
 
