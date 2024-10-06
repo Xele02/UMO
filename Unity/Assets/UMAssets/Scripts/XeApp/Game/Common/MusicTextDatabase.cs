@@ -77,6 +77,8 @@ namespace XeApp.Game.Common
 				if(textInfo.musicName_2.StartsWith("!not exist")) textInfo.musicName_2 = "";
 				if(textInfo.musicName_2 == textInfo.musicName) textInfo.musicName_2 = "";
 				if(textInfo.musicName_3.StartsWith("!not exist")) textInfo.musicName_3 = "";
+				if(textInfo.musicName_3 == textInfo.musicName) textInfo.musicName_3 = "";
+				if(textInfo.musicName_3 == textInfo.musicName_2) textInfo.musicName_3 = "";
 				if(info.BBAJPINMOEP_Contains("o_n"))
 				{
 					string offStr1 = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.OfficialName, i, (string)text[(int)info["o_n"]]);
