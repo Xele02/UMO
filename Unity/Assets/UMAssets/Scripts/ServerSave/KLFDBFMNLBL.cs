@@ -234,7 +234,8 @@ public abstract class KLFDBFMNLBL_ServerSaveBlock
 		{
 			if((int)block[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] != FHKFHKLDJIE_Rev)
 			{
-				NGJDHLGMHMH_NotValid = true;
+				if(!TryUpdateVersion(block[JIKKNHIAEKG_BlockName], (int)block[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev]))
+					NGJDHLGMHMH_NotValid = true;
 			}
 		}
 		else
@@ -248,5 +249,10 @@ public abstract class KLFDBFMNLBL_ServerSaveBlock
 			return null;
 		}
 		return block[JIKKNHIAEKG_BlockName];
+	}
+
+	protected virtual bool TryUpdateVersion(EDOHBJAPLPF_JsonData block, int readVersion)
+	{
+		return false;
 	}
 }
