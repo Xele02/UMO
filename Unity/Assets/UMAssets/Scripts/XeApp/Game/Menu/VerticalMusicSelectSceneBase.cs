@@ -656,7 +656,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				if (!CurrentMusicDecisionCheck(true, null, null, 0))
+				if (!CurrentMusicDecisionCheck(isSimulation, cancelCallback, null, 0))
 					yield break;
 				if(endCallback != null)
 					endCallback(isSimulation);
