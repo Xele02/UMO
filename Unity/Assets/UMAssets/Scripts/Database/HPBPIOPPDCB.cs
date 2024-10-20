@@ -10,6 +10,7 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 	public const int AGBLDFIFLBJ = 10;
 	public const int DNLFNEFLNED = 200;
 	public int AGNCAAFGLBE_MaxLevels; // 0x20
+	[UMOMember(ReaderMember = "INPCGKFIMIG")]
 	public List<BJPLLEBHAGO_DivaInfo> CDENCMNHNGA_Divas = new List<BJPLLEBHAGO_DivaInfo>(10); // 0x24
 
 	// // RVA: 0x160846C Offset: 0x160846C VA: 0x160846C
@@ -118,5 +119,43 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 	{
 		TodoLogger.LogError(TodoLogger.DbIntegrityCheck, "HPBPIOPPDCB_Diva.CAOGDCBPBAN");
 		return 0;
+	}
+
+	public EDOHBJAPLPF_JsonData Serialize()
+	{
+		EDOHBJAPLPF_JsonData res = new EDOHBJAPLPF_JsonData();
+		res.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+		for(int i = 0; i < CDENCMNHNGA_Divas.Count; i++)
+		{
+			BJPLLEBHAGO_DivaInfo data = CDENCMNHNGA_Divas[i];
+			EDOHBJAPLPF_JsonData jsonData = new EDOHBJAPLPF_JsonData();
+			jsonData["divaId"] = data.AHHJLDLAPAN_DivaId;
+			jsonData["attr"] = data.AIHCEGFANAM_Attr;
+			jsonData["bodyId"] = data.IDDHKOEFJFB_BodyId;
+			jsonData["personalityId"] = data.FPMGHDKACOF_PersonalityId;
+			jsonData["enabled"] = data.PPEGAKEIEGM_Enabled;
+			jsonData["month"] = data.DOAJJALOKLI_Month;
+			jsonData["day"] = data.PKNONBBKCCP_Day;
+			jsonData["freeMusicId"] = data.LIOGKHIGJKN_FreeMusicId;
+			jsonData["HomeBgId"] = data.CMBCBNEODPD_HomeBgId;
+
+			jsonData["statsByLevels"] = new EDOHBJAPLPF_JsonData();
+			jsonData["statsByLevels"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+			for(int j = 0; j < AGNCAAFGLBE_MaxLevels; j++)
+			{
+				EDOHBJAPLPF_JsonData jsonData2 = new EDOHBJAPLPF_JsonData();
+				jsonData2["level"] = data.CMCKNKKCNDK_StatsByLevel[j].ANAJIAENLNB_Level;
+				jsonData2["life"] = data.CMCKNKKCNDK_StatsByLevel[j].HFIDCMNFBJG_Life;
+				jsonData2["soul"] = data.CMCKNKKCNDK_StatsByLevel[j].PFJCOCPKABN_Soul;
+				jsonData2["vocal"] = data.CMCKNKKCNDK_StatsByLevel[j].JFJDLEMNKFE_Vocal;
+				jsonData2["charm"] = data.CMCKNKKCNDK_StatsByLevel[j].GDOLPGBLMEA_Charm;
+				jsonData2["fold"] = data.CMCKNKKCNDK_StatsByLevel[j].ONDFNOOICLE_Fold;
+				jsonData2["support"] = data.CMCKNKKCNDK_StatsByLevel[j].HCFOMFDPGEC_Support;
+				jsonData["statsByLevels"].Add(jsonData2);
+			}
+			res.Add(jsonData);
+		}
+
+		return res;
 	}
 }

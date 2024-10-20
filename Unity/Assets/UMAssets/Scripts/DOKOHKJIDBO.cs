@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public delegate void IMCBBOAFION();
 public delegate void DJBHIFLHJLK();
@@ -107,5 +108,18 @@ public class DOKOHKJIDBO
 				KCOIDGJOJHC_EncryptionMap.Add(i, encryptor);
 			}
 		}
+	}
+
+	public void LoadEditor()
+	{
+		KCOIDGJOJHC_EncryptionMap.Clear();
+		LNAHEIEIBOI = false;
+
+		IKCAJDOKNOM = new ANCJLICGOLP();
+		IKCAJDOKNOM.KHEKNNFCAOI_Init();
+		string str = System.IO.File.ReadAllText(Application.dataPath + "/../../Data/RequestMaster.json");
+		EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(str);
+		IKCAJDOKNOM.IIEMACPEEBJ(IKCAJDOKNOM.ELJGLMPOINC_GetTypesStr(), data["master"]);
+		ANDDAABHGIP();
 	}
 }

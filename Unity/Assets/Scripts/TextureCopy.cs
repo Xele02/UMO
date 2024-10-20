@@ -3,7 +3,7 @@ using UnityEngine;
 
 static class TextureHelper
 {
-	static public Texture2D Copy(Texture2D texture, int newWidth = -1, int newHeight = -1, Material mat = null)
+	static public Texture2D Copy(Texture2D texture, int newWidth = -1, int newHeight = -1, Material mat = null, Rect copyRect = new Rect())
 	{
 		// Create a temporary RenderTexture of the same size as the texture
 		RenderTexture tmp = RenderTexture.GetTemporary(
@@ -49,11 +49,15 @@ static class TextureHelper
 
 
 		// Create a new readable Texture2D to copy the pixels to it
-		Texture2D myTexture2D = new Texture2D(tmp.width, tmp.height, TextureFormat.ARGB32, false);
+		if(copyRect.width == 0)
+		{
+			copyRect = new Rect(0, 0, tmp.width, tmp.height);
+		}
+		Texture2D myTexture2D = new Texture2D((int)copyRect.width, (int)copyRect.height, TextureFormat.ARGB32, false);
 
 
 		// Copy the pixels from the RenderTexture to the new Texture
-		myTexture2D.ReadPixels(new Rect(0, 0, tmp.width, tmp.height), 0, 0);
+		myTexture2D.ReadPixels(copyRect, 0, 0);
 		myTexture2D.Apply();
 
 

@@ -2,6 +2,8 @@ using System.Collections.Generic;
 
 [System.Obsolete("Use EPPOHFLMDBC_DivaStats", true)]
 public class EPPOHFLMDBC { }
+
+[UMOClass(ReaderClass = "DCHENGJKOKI")]
 public class EPPOHFLMDBC_DivaStats
 {
 	public int FBGGEFFJJHB_Key = 0x1a915b; // 0x8
@@ -13,12 +15,19 @@ public class EPPOHFLMDBC_DivaStats
 	public int EAJBBFLFDHI_FoldCrypted; // 0x20
 	public int EHDLPKCCJIA_SupportCrypted; // 0x24
 
+	[UMOMember(ReaderMember = "")]
 	public int ANAJIAENLNB_Level { get { return FBGGEFFJJHB_Key ^ MBCPMFPKNBA_LevelCrypted; } set { MBCPMFPKNBA_LevelCrypted = FBGGEFFJJHB_Key ^ value; } } //0xFC14D4 MMOMNMBKHJF 0xFC14E4 FEHNFGPFINK
+	[UMOMember(ReaderMember = "BCCOMAODPJI")]
 	public int HFIDCMNFBJG_Life { get { return FBGGEFFJJHB_Key ^ DBJFLJIMONP_LifeCrypted; } set { DBJFLJIMONP_LifeCrypted = FBGGEFFJJHB_Key ^ value; } } //0xFC14F4 CMDOHPBAFCO 0xFC1504 BJBDGCMJNEO
+	[UMOMember(ReaderMember = "LJELGFAFGAB")]
 	public int PFJCOCPKABN_Soul { get { return FBGGEFFJJHB_Key ^ NDKJOJLCJBI_SoulCrypted; } set { NDKJOJLCJBI_SoulCrypted = FBGGEFFJJHB_Key ^ value; } } //0xFC1514 EJPPLFNLAAO 0xFC1524 NEMMJEJENFD
+	[UMOMember(ReaderMember = "KNEDJFLCCLN")]
 	public int JFJDLEMNKFE_Vocal { get { return FBGGEFFJJHB_Key ^ GLMAGOANCLM_VocalCrypted; } set { GLMAGOANCLM_VocalCrypted = FBGGEFFJJHB_Key ^ value; } }// 0xFC1534 GCMPLDKECFM 0xFC1544 CEHKELOHIBD
+	[UMOMember(ReaderMember = "MBAMIOJNGBD")]
 	public int GDOLPGBLMEA_Charm { get { return FBGGEFFJJHB_Key ^ CHINMGJCEDH_CharmCrypted; } set { CHINMGJCEDH_CharmCrypted = FBGGEFFJJHB_Key ^ value; } } //0xFC1554 LEHDODJMICA 0xFC1564 IKPOCJDOOGA
+	[UMOMember(ReaderMember = "ADLGKMBIPCA")]
 	public int ONDFNOOICLE_Fold { get { return FBGGEFFJJHB_Key ^ EAJBBFLFDHI_FoldCrypted; } set { EAJBBFLFDHI_FoldCrypted = FBGGEFFJJHB_Key ^ value; } } //0xFC1574 OGGOHKCANFG 0xFC1584 BKMHMPEBNPE
+	[UMOMember(ReaderMember = "PIPCIMIALOO")]
 	public int HCFOMFDPGEC_Support { get { return FBGGEFFJJHB_Key ^ EHDLPKCCJIA_SupportCrypted; } set { EHDLPKCCJIA_SupportCrypted = FBGGEFFJJHB_Key ^ value; } } //0xFC1594 GGIDKCOMCJL 0xFC15A4 LAIHOHGICJD
 
 	// // RVA: 0xFC15B4 Offset: 0xFC15B4 VA: 0xFC15B4
@@ -80,18 +89,30 @@ public class EPPOHFLMDBC_DivaStats
 
 [System.Obsolete("Use BJPLLEBHAGO_DivaInfo", true)]
 public class BJPLLEBHAGO { }
+
+[UMOClass(ReaderClass = "MALFJMBMCLG")]
 public class BJPLLEBHAGO_DivaInfo
 {
+	[UMOMember(ReaderMember = "KLCMKLPIDDJ", Name = "Birthday month")]
 	public sbyte DOAJJALOKLI_Month; // 0xD
+	[UMOMember(ReaderMember = "BAOFEFFADPD", Name = "Birthday day")]
 	public sbyte PKNONBBKCCP_Day; // 0xE
+	[UMOMember(ReaderMember = "DFEDIAPLFHN/OEOIHIIIMCK", ReaderDisplay = "CustomDivaStats", Name = "Stats by level", Desc = "Level 0 has the base value, then for each level, add a stat. Additional values are stored in alternative type/value. Types are 1:Life, 2:Sould, 3:Vocal, 4:Charm, 5:Fold, 6:Support")]
 	public List<EPPOHFLMDBC_DivaStats> CMCKNKKCNDK_StatsByLevel = new List<EPPOHFLMDBC_DivaStats>(); // 0x14
 
+	[UMOMember(ReaderMember = "JPFMJHLCMJL", Name = "Attribute", Desc = "Refer to the series where the diva belongs.")]
 	public sbyte AIHCEGFANAM_Attr { get; set; } // 0x8 FJOGAAMLJMA ANEJPLENMAL HEHDOGFEIOL
+	[UMOMember(ReaderMember = "PPFNGGCBJKC", Name = "Diva Id", Desc = "Id of the diva, used to reference it from other data.")]
 	public sbyte AHHJLDLAPAN_DivaId { get; set; } // 0x9 AMALMGIALDF IPKDLMIDMHH IENNENMKEFO
+	[UMOMember(ReaderMember = "JIBNPJCIALH", Name = "Body Id")]
 	public sbyte IDDHKOEFJFB_BodyId { get; set; }  // 0xA KEOMNKLLNFJ // ADCMNNJMGKO KOFCMDMLAHC 
+	[UMOMember(ReaderMember = "OKADDOIJGNB", Name = "Personality Id")]
 	public sbyte FPMGHDKACOF_PersonalityId { get; set; } // 0xB AJHJBOKOPAJ // ALJDJOFDKDJ FPFJHHIANFD
+	[UMOMember(ReaderMember = "IJEKNCDIIAE|PLALNIIBLOF", Desc = "Availabe in game if value = 2")]
 	public sbyte PPEGAKEIEGM_Enabled { get; set; } // 0xC NEKLJCCBECB KPOEEPIMMJP NCIEAFEDPBH
+	[UMOMember(ReaderMember = "LIOGKHIGJKN", Name = "Free Music Id")]
 	public ushort LIOGKHIGJKN_FreeMusicId { get; set; } // 0x10 DGLBKOGGKHO JNBPCHKDNMD MLPEHHGEEIB
+	[UMOMember(ReaderMember = "CMBCBNEODPD", Name = "Home Bg Id", Desc = "Default home background for the diva")]
 	public ushort CMBCBNEODPD_HomeBgId { get; set; } // 0x12 CLHDIBCIJBB EIMFDHBOECI OJMIHHIIBPI
 
 	// // RVA: 0xC85E00 Offset: 0xC85E00 VA: 0xC85E00
