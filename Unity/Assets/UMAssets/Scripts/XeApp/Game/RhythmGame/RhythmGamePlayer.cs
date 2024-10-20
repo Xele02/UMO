@@ -474,6 +474,7 @@ namespace XeApp.Game.RhythmGame
 					return;
 				rNoteOwner.Resume();
 				Resume();
+				return;
 			}
 			if(uiController != null)
 			{
