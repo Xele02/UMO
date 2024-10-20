@@ -1181,7 +1181,8 @@ namespace XeApp.Game.Common
 			typeBundleName = new StringBuilder();
 			assetName = new StringBuilder();
 			personalityId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(divaId).FPMGHDKACOF_PersonalityId;
-			divaBundleName.SetFormat("dv/ty/{0:D3}.xab", divaParam.ChangePersonalityId(modelId, personalityId));
+			personalityId = divaParam.ChangePersonalityId(modelId, personalityId);
+			divaBundleName.SetFormat("dv/ty/{0:D3}.xab", personalityId);
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(divaBundleName.ToString());
 			yield return Co.R(operationDiva);
 
