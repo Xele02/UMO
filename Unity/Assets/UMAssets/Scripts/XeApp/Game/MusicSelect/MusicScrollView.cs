@@ -149,7 +149,7 @@ namespace XeApp.Game.MusicSelect
 				_prevRate = rate;
 				return;
 			}
-			int step = (int)Math.Truncate(_scrollValue.y/ 90.0);
+			int step = (int)Math.Truncate(_scrollValue.y / 90.0);
 			int index = _currentIndex;
 			index = index + step;
 			if(!isClip && !isForce)
@@ -238,7 +238,7 @@ namespace XeApp.Game.MusicSelect
 			}
 		}
 
-		// RVA: g0xCA01E8g Offset: 0xCA01E8 VA: 0xCA01E8 Slot: 21
+		// RVA: 0xCA01E8 Offset: 0xCA01E8 VA: 0xCA01E8 Slot: 21
 		public void OnDrag(PointerEventData eventData)
 		{
 			if(_isScrollCancel) // ?? _isScrollCancel + 3U & 3) != 3)
@@ -248,8 +248,8 @@ namespace XeApp.Game.MusicSelect
 			{
 				_scrollValue += eventData.delta;
 				_velocity = Vector2.Lerp(_velocity, (_prevPosition - eventData.position) / (1.0f/60), 1.0f/60);
-				UpdateItemPosition(_scrollValue.y / 90.0f);
-				UpdateCenterItem(_scrollValue.y / 90.0f, false, false);
+				UpdateItemPosition((_scrollValue.y % 90) / 90.0f);
+				UpdateCenterItem((_scrollValue.y % 90) / 90.0f, false, false);
 				UpdateListPosition(false);
 				for(int i = 0; i < 2; i++)
 				{
@@ -271,30 +271,33 @@ namespace XeApp.Game.MusicSelect
 				target = 0;
 				prev = 0;
 				int i = 0;
-				int j = 0;
+				int j2 = 0;
 				do
 				{
 					do
 					{
-						i = j;
-						j = 1;
+						i = j2;
+						j2 = 1;
 					} while(i == 0);
 					int val = (int)(_scrollValue.y % 90.0f);
+					float val2 = val / 90.0f;
+					int j;
 					if(Math.Abs(eventData.delta.y) / Screen.height <= scrollVelocity * Time.deltaTime)
 					{
 						if(Math.Abs(eventData.delta.y) / Screen.height <= singleScrollVelocity * Time.deltaTime)
 						{
-							if(Math.Abs(val/90.0f) <= centerUpdateRate)
+							if(Math.Abs(val2) <= centerUpdateRate)
 							{
 								j = 0;
 								_isSingleScroll = true;
-								_isReturn = true;
+								//_isScrollCancel = true;
+								_isReturn = true; // Should be _isScrollCancel? 0x101, but don't work well
 							}
 							else
 							{
 								_isSingleScroll = true;
 								j = -1;
-								if(val/90.0f > 0)
+								if(val2 > 0)
 									j = 1;
 							}
 						}
@@ -310,11 +313,12 @@ namespace XeApp.Game.MusicSelect
 					{
 						_isSingleScroll = false;
 						j = longScrollCount;
-						if(eventData.delta.y < 0)
+						if(eventData.delta.y <= 0)
 							j = -j;
 					}
 					_velocity[i] = 0.0f;
 					target = j * 90.0f - val;
+					j2 = i + 1;
 				} while(i + 1 != 2);
 			}
 		}
@@ -368,7 +372,7 @@ namespace XeApp.Game.MusicSelect
 		{
 			if (!_isDraging && !_isTouch)
 			{
-				if (target != 0)
+				if (target != 0 || _isReturn) // UMO : Added _isReturn or it will bug when target is 0 (drag end on the exact center position)
 				{
 					float val = scrollSpling;
 					if (_isSingleScroll)
@@ -398,8 +402,8 @@ namespace XeApp.Game.MusicSelect
 							OnScrollEndEvent.Invoke();
 					}
 				}
-				UpdateItemPosition((_scrollValue.y % 90) / 90);
-				UpdateCenterItem((_scrollValue.y % 90) / 90, _isClip, false);
+				UpdateItemPosition((_scrollValue.y % 90) / 90.0f);
+				UpdateCenterItem((_scrollValue.y % 90) / 90.0f, _isClip, false);
 				UpdateListPosition(false);
 				if(_isClip)
 				{
