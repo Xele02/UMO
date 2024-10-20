@@ -1032,6 +1032,7 @@ public class FOCPLKMMCAL
 									data.ABIFFLDIAMM = a;
 									DCELMKFJHPG.Add(data);
 									BGGHEILFEIN(EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, itemId, data.HMFFHLPNMPH);
+									break;
 								}
 								else
 								{
