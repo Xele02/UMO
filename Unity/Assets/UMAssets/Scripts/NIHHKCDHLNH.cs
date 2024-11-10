@@ -35,7 +35,7 @@ public class NIHHKCDHLNH
 	// // RVA: 0x18A0774 Offset: 0x18A0774 VA: 0x18A0774
 	public void KHEKNNFCAOI(int MHFBCINOJEE)
     {
-        PLPBJOFICEJ_CosItem.IBEMFIAFIKH item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.EEOADCECNOM(MHFBCINOJEE);
+        PLPBJOFICEJ_CosItem.IBEMFIAFIKH_ItemInfo item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.EEOADCECNOM_GetItemById(MHFBCINOJEE);
         EGOLBAPFHHD_Common.PGENIOHDCDI saveItem = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.EFBKCNNFIPJ(MHFBCINOJEE);
         MessageBank bk = MessageManager.Instance.GetBank("master");
         StringBuilder str = new StringBuilder(32);
@@ -47,7 +47,7 @@ public class NIHHKCDHLNH
         KHLMJCJAOCC_DescShort = bk.GetMessageByLabel(str.ToString());
         HMFFHLPNMPH_Cnt = saveItem.BFINGCJHOHI_Cnt;
         GLBEAENLHKC = 9999;
-        IILKAJBHLMJ_ItemPointValue = item.JBGEEPFKIGG;
+        IILKAJBHLMJ_ItemPointValue = item.JBGEEPFKIGG_PointValue;
         PBPOLELIPJI_Id = MHFBCINOJEE;
         INFIBMLIHLO_ItemFullId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.NEIIGCODGBA_CostumeItem, MHFBCINOJEE);
     }
@@ -55,17 +55,17 @@ public class NIHHKCDHLNH
 	// RVA: 0x18A0B94 Offset: 0x18A0B94 VA: 0x18A0B94
 	public static List<NIHHKCDHLNH> FKDIMODKKJD(int AHHJLDLAPAN)
     {
-        int cnt = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.MIGONIENGBF();;
+        int cnt = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.MIGONIENGBF_GetItemsCount();;
         List<NIHHKCDHLNH> res = new List<NIHHKCDHLNH>(cnt);
         for(int i = 0; i < cnt; i++)
         {
-            PLPBJOFICEJ_CosItem.IBEMFIAFIKH item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.LOOANCFLPMP(i);
+            PLPBJOFICEJ_CosItem.IBEMFIAFIKH_ItemInfo item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.LOOANCFLPMP_GetItemByIdx(i);
             if(item.FDBOPFEOENF == 0)
             {
-                if(item.INDDJNMPONH == 1)
+                if(item.INDDJNMPONH_Category == 1)
                 {
                     NIHHKCDHLNH data = new NIHHKCDHLNH();
-                    data.KHEKNNFCAOI(item.PPFNGGCBJKC);
+                    data.KHEKNNFCAOI(item.PPFNGGCBJKC_Id);
                     res.Add(data);
                 }
             }

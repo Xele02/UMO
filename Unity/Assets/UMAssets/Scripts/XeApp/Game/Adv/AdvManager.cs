@@ -524,7 +524,7 @@ namespace XeApp.Game.Adv
 			else
 			{
 				m_snsScreen.Initialize(snsId, false);
-				m_snsScreen.InRoom(sceneType, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA[snsId - 1].MALFHCHNEFN_RoomId, SNSController.eObjectOrderType.Last, snsId, false, false);
+				m_snsScreen.InRoom(sceneType, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA_Talks[snsId - 1].MALFHCHNEFN_RoomId, SNSController.eObjectOrderType.Last, snsId, false, false);
 			}
 			m_snsScreen.OutStartCallback = () =>
 			{

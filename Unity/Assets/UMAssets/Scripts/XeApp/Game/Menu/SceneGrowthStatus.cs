@@ -208,7 +208,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				m_storyButton.Hidden = false;
-				m_eventStoryData.KHEKNNFCAOI(CCAAJNJGNDO.NNDBMLNMDJM(sceneData.BCCHOBPJJKE_SceneId));
+				m_eventStoryData.KHEKNNFCAOI_InitFromEventId(CCAAJNJGNDO.NNDBMLNMDJM(sceneData.BCCHOBPJJKE_SceneId));
 				m_storyNewLayout.StartChildrenAnimGoStop("02");
 				bool disabled = true;
 				for(int i = 0; i < m_eventStoryData.FFPCLEONGHE.Count; i++)

@@ -61,21 +61,21 @@ namespace XeApp.Game.Menu
 			m_sns_cnt = 0;
 			m_sns = new List<SNS>();
 			BJPLLEBHAGO_DivaInfo dbDiva = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(a_diva_id);
-			for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA.Count; i++)
+			for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA_Talks.Count; i++)
 			{
-				BOKMNHAFJHF_Sns.KEIGMAOCJHK dbSns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA[i];
+				BOKMNHAFJHF_Sns.KEIGMAOCJHK_Talk dbSns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA_Talks[i];
 				if(dbSns.PPEGAKEIEGM_Enabled == 2)
 				{
-					if(dbSns.MALFHCHNEFN_RoomId == 3 && dbSns.JKNGNIMLDDJ == 10)
+					if(dbSns.MALFHCHNEFN_RoomId == 3 && dbSns.JKNGNIMLDDJ_UnlockType == 10)
 					{
-						DateTime date = Utility.GetLocalDateTime(dbSns.DPIBHFNDJII);
+						DateTime date = Utility.GetLocalDateTime(dbSns.DPIBHFNDJII_UnlockCond1);
 						if(date.Month == dbDiva.DOAJJALOKLI_Month && date.Day == dbDiva.PKNONBBKCCP_Day)
 						{
-							if(bk.GetMessageByLabel("sns_dsc_"+dbSns.AIPLIEMLHGC.ToString("D4")).Contains(JpStringLiterals.StringLiteral_19017))
+							if(bk.GetMessageByLabel("sns_dsc_"+dbSns.AIPLIEMLHGC_SnsId.ToString("D4")).Contains(JpStringLiterals.StringLiteral_19017))
 							{
 								DDEMMEPBOIA_Sns.EFIFBJGKPJF saveSns = a_player_data.FLHMJHBOBEA_Sns.HAJEJPFGILG[i];
 								SNS data = new SNS();
-								object[] o = new object[4] { date.Year, date.Month, date.Day, bk.GetMessageByLabel("sns_nm_" + dbSns.AIPLIEMLHGC.ToString("D4")) };
+								object[] o = new object[4] { date.Year, date.Month, date.Day, bk.GetMessageByLabel("sns_nm_" + dbSns.AIPLIEMLHGC_SnsId.ToString("D4")) };
 								data.m_enable = false;
 								data.m_title = string.Format(JpStringLiterals.StringLiteral_19018, o);
 								data.m_time = date;

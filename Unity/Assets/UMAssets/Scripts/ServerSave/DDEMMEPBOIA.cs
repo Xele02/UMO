@@ -112,15 +112,15 @@ public class DDEMMEPBOIA_Sns : KLFDBFMNLBL_ServerSaveBlock
 			else
 			{
 				BOKMNHAFJHF_Sns snsDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns;
-				for(int i = 0; i < snsDb.CDENCMNHNGA.Count; i++)
+				for(int i = 0; i < snsDb.CDENCMNHNGA_Talks.Count; i++)
 				{
-					BOKMNHAFJHF_Sns.KEIGMAOCJHK item = snsDb.CDENCMNHNGA[i];
+					BOKMNHAFJHF_Sns.KEIGMAOCJHK_Talk item = snsDb.CDENCMNHNGA_Talks[i];
 					EFIFBJGKPJF data = HAJEJPFGILG[i];
 					string str = POFDDFCGEGP + (i + 1).ToString();
 					if(block.BBAJPINMOEP_Contains(str))
 					{
 						EDOHBJAPLPF_JsonData b = block[str];
-						data.HBNIMMAEKHJ_Id = item.AIPLIEMLHGC;
+						data.HBNIMMAEKHJ_Id = item.AIPLIEMLHGC_SnsId;
 						data.LDJIMGPHFPA_Cnt = (short)CJAENOMGPDA_ReadInt(b, AFEHLCGHAEE_Strings.BFINGCJHOHI_cnt, 0, ref isInvalid);
 						data.BEBJKJKBOGH_Date = CJAENOMGPDA_ReadInt(b, AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date, 0, ref isInvalid);
 						data.PMKJFKJFDOC_Itm = (sbyte)CJAENOMGPDA_ReadInt(b, AFEHLCGHAEE_Strings.AIHOJKFNEEN_itm, 0, ref isInvalid);

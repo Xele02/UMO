@@ -315,7 +315,7 @@ namespace XeApp.Game.Menu
 					m_statusWindow.PushStoryButtonListener += () =>
 					{
 						//0x10E76B8
-						m_viewEventStoryData.MFMBGODNFGG(m_viewSceneData.BCCHOBPJJKE_SceneId);
+						m_viewEventStoryData.MFMBGODNFGG_InitFromScene(m_viewSceneData.BCCHOBPJJKE_SceneId);
 						EventStoryArgs arg = new EventStoryArgs(m_viewEventStoryData);
 						MenuScene.Instance.Call(TransitionList.Type.EVENT_STORY, arg, true);
 					};
@@ -2375,7 +2375,7 @@ namespace XeApp.Game.Menu
 			if(cnt > 0)
 			{
 				bool isWait = true;
-				m_viewEventStoryData.MFMBGODNFGG(m_viewSceneData.BCCHOBPJJKE_SceneId);
+				m_viewEventStoryData.MFMBGODNFGG_InitFromScene(m_viewSceneData.BCCHOBPJJKE_SceneId);
 				m_popupEventStoryOpenListPopupSetting.Set(m_viewEventStoryData, cnt, m_transitionUniqueId == TransitionUniqueId.SETTINGMENU_SCENEABILITYRELEASELIST_SCENEGROWTH);
 				PopupWindowManager.Show(m_popupEventStoryOpenListPopupSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 				{

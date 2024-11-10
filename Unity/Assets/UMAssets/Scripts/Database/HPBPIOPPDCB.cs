@@ -3,12 +3,14 @@ using XeSys;
 
 [System.Obsolete("Use HPBPIOPPDCB_Diva", true)]
 public class HPBPIOPPDCB { }
+[UMOClass(ReaderClass = "MHKHMCAPDKK")]
 public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 {
 	public static bool DINNDBNPNFK; // 0x0
 	public const int NLPCOAKLBAN = 0;
 	public const int AGBLDFIFLBJ = 10;
 	public const int DNLFNEFLNED = 200;
+	[UMOMember(Desc = "Maximum levels for the divas", Name = "Maximum levels")]
 	public int AGNCAAFGLBE_MaxLevels; // 0x20
 	[UMOMember(ReaderMember = "INPCGKFIMIG")]
 	public List<BJPLLEBHAGO_DivaInfo> CDENCMNHNGA_Divas = new List<BJPLLEBHAGO_DivaInfo>(10); // 0x24

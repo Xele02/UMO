@@ -131,7 +131,7 @@ namespace XeApp.Game.Menu
 			m_rank++;
 			m_currentPoint = 0;
 			m_addPoint = m_addPoint + prevPoint - m_next_rank_point;
-			ItemType = LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.HJNNKCMLGFL_0;
+			ItemType = LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.HJNNKCMLGFL_0_None;
 			SettingRankMaxLayout(-1);
 			SetGauge(m_currentPoint);
 			m_costume.SetCostumeIcon(new CostumeUpgradeUtility.CostumeData.Setting() {
@@ -151,7 +151,7 @@ namespace XeApp.Game.Menu
 			m_data = data;
 			m_currentPoint = data.ABLHIAEDJAI_Point;
 			m_get_point.SetNumber(addPoint, 0);
-			ItemType = LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.HJNNKCMLGFL_0;
+			ItemType = LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.HJNNKCMLGFL_0_None;
 			SettingRankMaxLayout(-1);
 			SetGauge(m_currentPoint);
 			m_costume.SetCostumeIcon(new CostumeUpgradeUtility.CostumeData.Setting() {
@@ -207,7 +207,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1B67CF4 Offset: 0x1B67CF4 VA: 0x1B67CF4
 		public void ShowStatusUpWindow()
 		{
-			if(m_achieve_window.data.JHLKLPEHHCD_GetCurrentLevelInfo().PEEAGFNOFFO_UnlockType == LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.NKKIKONDGPF_1)
+			if(m_achieve_window.data.JHLKLPEHHCD_GetCurrentLevelInfo().PEEAGFNOFFO_UnlockType == LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.NKKIKONDGPF_1_CostumeEffect)
 			{
 				m_costume_stup_window.IsCaption = false;
 				m_costume_stup_window.TitleText = "";
@@ -217,7 +217,7 @@ namespace XeApp.Game.Menu
 				m_costume_stup_window.Buttons = new ButtonInfo[1] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive } };
 				PopupWindowManager.Show(m_costume_stup_window, OnAchieveOKButton, null, null, null);
 			}
-			else if(m_achieve_window.data.JHLKLPEHHCD_GetCurrentLevelInfo().PEEAGFNOFFO_UnlockType == LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.PJJJGFBLIAP_5)
+			else if(m_achieve_window.data.JHLKLPEHHCD_GetCurrentLevelInfo().PEEAGFNOFFO_UnlockType == LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.PJJJGFBLIAP_5_Stat)
 			{
 				m_diva_stup_window.IsCaption = false;
 				m_diva_stup_window.TitleText = "";
@@ -391,7 +391,7 @@ namespace XeApp.Game.Menu
 						}
 						else
 						{
-							ItemType = LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_Costume;
+							ItemType = LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_CostumeColor;
 							CostumeId = m_data.JPIDIENBGKH_CostumeId;
 							CostumeColorId = 1;
 							isStop = true;
@@ -411,7 +411,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1B68598 Offset: 0x1B68598 VA: 0x1B68598
 		private bool IsUnlockSceneItem(LFAFJCNKLML.FHLDDEKAJKI upgrade)
 		{
-			return upgrade.PEEAGFNOFFO_UnlockType == LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_Costume;
+			return upgrade.PEEAGFNOFFO_UnlockType == LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_CostumeColor;
 		}
 
 		// // RVA: 0x1B685C8 Offset: 0x1B685C8 VA: 0x1B685C8

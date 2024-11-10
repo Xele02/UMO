@@ -129,8 +129,8 @@ namespace XeApp.Game.Menu
 				m_item_text.text = strs[0];
 				m_item_text2.text = strs[1];
 				m_item_need_num.SetNumber(m_itemCount, 0);
-				PLPBJOFICEJ_CosItem.IBEMFIAFIKH cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.LBDOLHGDIEB(data.AHHJLDLAPAN_DivaId, PLPBJOFICEJ_CosItem.DPNGHIDJCHA.GLHANCMGNDM_2);
-                EGOLBAPFHHD_Common.PGENIOHDCDI saveCos = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.EFBKCNNFIPJ(cos.PPFNGGCBJKC);
+				PLPBJOFICEJ_CosItem.IBEMFIAFIKH_ItemInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.LBDOLHGDIEB_FindItem(data.AHHJLDLAPAN_DivaId, PLPBJOFICEJ_CosItem.DPNGHIDJCHA_Category.GLHANCMGNDM_2);
+                EGOLBAPFHHD_Common.PGENIOHDCDI saveCos = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.EFBKCNNFIPJ(cos.PPFNGGCBJKC_Id);
 				m_item_have_num.text = saveCos.BFINGCJHOHI_Cnt.ToString();
 				SetItemIcon(m_itemId);
             }

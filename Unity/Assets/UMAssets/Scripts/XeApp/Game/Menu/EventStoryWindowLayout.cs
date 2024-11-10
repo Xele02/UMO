@@ -402,7 +402,7 @@ namespace XeApp.Game.Menu
 			if(isTrans)
 			{
 				CCAAJNJGNDO data = new CCAAJNJGNDO();
-				data.KHEKNNFCAOI(eventId);
+				data.KHEKNNFCAOI_InitFromEventId(eventId);
 				EventStoryArgs args = new EventStoryArgs(data);
 				MenuScene.Instance.Call(TransitionList.Type.EVENT_STORY, args, true);
 			}

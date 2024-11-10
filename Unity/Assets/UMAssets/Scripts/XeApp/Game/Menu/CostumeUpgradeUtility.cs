@@ -186,7 +186,7 @@ namespace XeApp.Game.Menu
 			layout_setting.item_image.enabled = false;
 			switch(d.PEEAGFNOFFO_UnlockType)
 			{
-				case LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.NKKIKONDGPF_1/*1*/:
+				case LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.NKKIKONDGPF_1_CostumeEffect/*1*/:
 					MenuScene.Instance.ItemTextureCache.Load(data.JPIDIENBGKH_CostumeId + item_id, (IiconTexture texture) =>
 					{
 						//0x16FB624
@@ -210,7 +210,7 @@ namespace XeApp.Game.Menu
 						}
 					});
 					break;
-				case LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_Costume/*4*/:
+				case LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_CostumeColor/*4*/:
 					MenuScene.Instance.ItemTextureCache.Load(data.JPIDIENBGKH_CostumeId + item_id, CKFGMNAIBNG.LLJPMOIPBAG(data.AHHJLDLAPAN_DivaId, data.JPIDIENBGKH_CostumeId, rank), (IiconTexture texture) =>
 					{
 						//0x16FB718
@@ -220,7 +220,7 @@ namespace XeApp.Game.Menu
 						}
 					});
 					break;
-				case LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.PJJJGFBLIAP_5/*5*/:
+				case LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.PJJJGFBLIAP_5_Stat/*5*/:
 					MenuScene.Instance.DivaIconCache.Load(data.AHHJLDLAPAN_DivaId, 1, 0, (IiconTexture texture) =>
 					{
 						//0x16FB530
@@ -230,7 +230,7 @@ namespace XeApp.Game.Menu
 						}
 					});
 					break;
-				case LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.JDPFMDOMMJE/*6*/:
+				case LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.JDPFMDOMMJE_6_Support/*6*/:
 					MenuScene.Instance.SubPlateIconTextureCahe.Load(d.KJNAHLOODKD_Value[0], d.KJNAHLOODKD_Value[1], (IiconTexture texture) =>
 					{
 						//0x16FB80C
@@ -260,7 +260,7 @@ namespace XeApp.Game.Menu
 			}
 			if(is_status_up)
 			{
-				if(rank < 3 || rewardType != LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.PJJJGFBLIAP_5/*5*/)
+				if(rank < 3 || rewardType != LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.PJJJGFBLIAP_5_Stat/*5*/)
 				{
 					layout_setting.item_type.StartChildrenAnimGoStop(1, 1);
 				}

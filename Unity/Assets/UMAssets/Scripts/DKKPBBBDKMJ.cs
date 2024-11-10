@@ -40,24 +40,24 @@ public class DKKPBBBDKMJ
 		MessageBank bk = MessageManager.Instance.GetBank("menu");
 		long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 		MHCPOIEDLJF = false;
-		for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBEMLGADAGK_EventStory.ILEJEJKNOBN.Count; i++)
+		for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBEMLGADAGK_EventStory.ILEJEJKNOBN_StoryList.Count; i++)
 		{
-			FBIOJHECAHB_EventStory.GIEHECAKIFC storyEvent = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBEMLGADAGK_EventStory.ILEJEJKNOBN[i];
-			if(storyEvent.PPEGAKEIEGM == 2)
+			FBIOJHECAHB_EventStory.GIEHECAKIFC_StoryInfo storyEvent = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBEMLGADAGK_EventStory.ILEJEJKNOBN_StoryList[i];
+			if(storyEvent.PPEGAKEIEGM_Enabled == 2)
 			{
 				bool hasNewAdv = false;
 				bool b2 = false;
 				bool b3 = false;
-				for(int j = 0; j < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBEMLGADAGK_EventStory.JPIGOBGOMON.Count; j++)
+				for(int j = 0; j < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBEMLGADAGK_EventStory.JPIGOBGOMON_StoryPartsList.Count; j++)
 				{
-					FBIOJHECAHB_EventStory.ENDMMNNOAIL storyEvent2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBEMLGADAGK_EventStory.JPIGOBGOMON[j];
+					FBIOJHECAHB_EventStory.ENDMMNNOAIL_StoryPartInfo storyEvent2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBEMLGADAGK_EventStory.JPIGOBGOMON_StoryPartsList[j];
 					if(storyEvent.OAFJONPIFGM_EventId == storyEvent2.OAFJONPIFGM_EventId)
 					{
-						if(storyEvent2.JDJNNJEJDAJ == FBIOJHECAHB_EventStory.NMIGMCJHAIE.MOPAEGFEGCB_5_EpisodeStory)
+						if(storyEvent2.JDJNNJEJDAJ_Type == FBIOJHECAHB_EventStory.NMIGMCJHAIE.MOPAEGFEGCB_5_EpisodeStory)
 						{
 							if(storyEvent2.CHOFDPDFPDC == 4)
 							{
-								if(storyEvent.MGBDCFIKBPM == 5)
+								if(storyEvent.MGBDCFIKBPM_Serie == 5)
 								{
 									MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA[CCAAJNJGNDO.FCMFPPALLOM(storyEvent.OAFJONPIFGM_EventId) - 1];
 									MLIBEPGADJH_Scene.KKLDOOJBJMN scene2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[CCAAJNJGNDO.FCMFPPALLOM(storyEvent.OAFJONPIFGM_EventId) - 1];
@@ -89,7 +89,7 @@ public class DKKPBBBDKMJ
 								}
 								else
 								{
-									if(storyEvent.MGBDCFIKBPM == 5)
+									if(storyEvent.MGBDCFIKBPM_Serie == 5)
 									{
 										b2 = true;
 										MHCPOIEDLJF = true;
@@ -111,9 +111,9 @@ public class DKKPBBBDKMJ
 					AGAAGMGKNCO data = new AGAAGMGKNCO();
 					data.PGIIDPEGGPI_EventId = storyEvent.OAFJONPIFGM_EventId;
 					data.CADENLBDAEB_IsNew = hasNewAdv;
-					data.CPKMLLNADLJ = storyEvent.MGBDCFIKBPM;
-					DateTime dt = Utility.GetLocalDateTime(storyEvent.PDBPFJJCADD);
-					DateTime dt2 = Utility.GetLocalDateTime(storyEvent.FDBNFFNFOND);
+					data.CPKMLLNADLJ = storyEvent.MGBDCFIKBPM_Serie;
+					DateTime dt = Utility.GetLocalDateTime(storyEvent.PDBPFJJCADD_PeriodStart);
+					DateTime dt2 = Utility.GetLocalDateTime(storyEvent.FDBNFFNFOND_PeriodEnd);
 					FAEDHJHCEFJ.Clear();
 					FAEDHJHCEFJ.AppendFormat(bk.GetMessageByLabel("event_story_list_period"), new object[6]
 					{
@@ -151,7 +151,7 @@ public class DKKPBBBDKMJ
 			{
 				int a1 = 0;
 				bool hasViewed = false;
-				foreach (var k2 in IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBEMLGADAGK_EventStory.JPIGOBGOMON)
+				foreach (var k2 in IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBEMLGADAGK_EventStory.JPIGOBGOMON_StoryPartsList)
 				{
 					if(k2.OAFJONPIFGM_EventId == k.PGIIDPEGGPI_EventId && k2.CHOFDPDFPDC == 4)
 					{

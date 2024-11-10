@@ -43,7 +43,7 @@ namespace XeApp.Game.Menu
 			};
 			m_data = data;
 			int start = array[(int)m_data.JHLKLPEHHCD_GetCurrentLevelInfo().PEEAGFNOFFO_UnlockType];
-			if(m_data.JHLKLPEHHCD_GetCurrentLevelInfo().PEEAGFNOFFO_UnlockType == LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.NKKIKONDGPF_1)
+			if(m_data.JHLKLPEHHCD_GetCurrentLevelInfo().PEEAGFNOFFO_UnlockType == LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.NKKIKONDGPF_1_CostumeEffect)
 			{
 				string s = "";
 				string s2 = "";

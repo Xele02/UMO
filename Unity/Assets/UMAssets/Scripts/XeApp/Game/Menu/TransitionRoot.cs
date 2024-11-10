@@ -2095,7 +2095,7 @@ namespace XeApp.Game.Menu
 				case TutorialConditionId.Condition65:
 					if(m_transitionName == TransitionList.Type.TEAM_EDIT || m_transitionName == TransitionList.Type.TEAM_SELECT)
 					{
-						return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.GODGHFDMAHF() != null;
+						return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.GODGHFDMAHF_GetRateBySupportPlate() != null;
 					}
 					break;
 				}

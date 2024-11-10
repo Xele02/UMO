@@ -239,8 +239,8 @@ namespace XeApp.Game.Menu
 				m_minus.Disable = false;
 				m_minus_ten.Disable = false;
 			}
-			m_necessary_uc.text = m_data.KPJJLJLJDIA(a1).ToString();
-			m_isLack = MOEALEGLGCH.LLCBDMCPBOD_GetHaveUc() < m_data.KPJJLJLJDIA(a1);
+			m_necessary_uc.text = m_data.KPJJLJLJDIA_GetUcCost(a1).ToString();
+			m_isLack = MOEALEGLGCH.LLCBDMCPBOD_GetHaveUc() < m_data.KPJJLJLJDIA_GetUcCost(a1);
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_lack_text.text = "";
 			if(m_isLack)
@@ -287,7 +287,7 @@ namespace XeApp.Game.Menu
 			CostumeUpgradeUtility.SettingRewardIcon(m_data, g.GLCLFMGPMAN_ItemId, m_data.GKIKAABHAAD_Level, g.NANNGLGOFKH_Value, m_reward_icon, null);
 			SetUseItemImage(item_type + 220001);
 			m_have_uc.text = MOEALEGLGCH.LLCBDMCPBOD_GetHaveUc().ToString();
-			m_necessary_uc.text = m_data.KPJJLJLJDIA(0).ToString();
+			m_necessary_uc.text = m_data.KPJJLJLJDIA_GetUcCost(0).ToString();
 			m_get_icon.StartChildrenAnimGoStop(1, 1);
 		}
 

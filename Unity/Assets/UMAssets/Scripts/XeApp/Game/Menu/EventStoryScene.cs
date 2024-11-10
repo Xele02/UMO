@@ -67,7 +67,7 @@ namespace XeApp.Game.Menu
 				m_eventStoryData = Database.Instance.advResult.EventStoryData;
 				pos = Database.Instance.advResult.RestorListPosition;
 				m_isRestor = true;
-				if(m_eventStoryData.IMAGLAKEMIE == CCAAJNJGNDO.HGIFGFEJLAB.EKJGOMKEJLK/*2*/)
+				if(m_eventStoryData.IMAGLAKEMIE == CCAAJNJGNDO.HGIFGFEJLAB.EKJGOMKEJLK_Scene/*2*/)
 				{
 					m_eventStoryData.HFLNCEOIBJI();
 				}
@@ -158,7 +158,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				if (m_eventStoryData.IMAGLAKEMIE == CCAAJNJGNDO.HGIFGFEJLAB.EKJGOMKEJLK/*2*/)
+				if (m_eventStoryData.IMAGLAKEMIE == CCAAJNJGNDO.HGIFGFEJLAB.EKJGOMKEJLK_Scene/*2*/)
 				{
 					return new SceneGrowthSceneArgs(GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes.Find((GCIJNCFDNON_SceneInfo x) =>
 					{
@@ -261,7 +261,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				if(m_eventStoryData.IMAGLAKEMIE == CCAAJNJGNDO.HGIFGFEJLAB.EKJGOMKEJLK/*2*/)
+				if(m_eventStoryData.IMAGLAKEMIE == CCAAJNJGNDO.HGIFGFEJLAB.EKJGOMKEJLK_Scene/*2*/)
 				{
 					uniqueId = (TransitionUniqueId)MenuScene.Instance.GetCurrentScene().uniqueId;
 				}
@@ -275,7 +275,7 @@ namespace XeApp.Game.Menu
 				Database.Instance.advResult.Setup("Menu", uniqueId, new AdvSetupParam() { eventUniqueId = eventUniqueId, restorBgmId = restorBgmId, restorListPosition = pos, bgParam = new AdvReturnBgParam() { bgId = bgId, textureType = bgTexType, bgType = bgType, attr = bgAttr }, eventStoryData = m_eventStoryData });
 			}
 			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetViewed(data.PBPOLELIPJI_AdventureId);
-			GPMHOAKFALE_Adventure.NGDBKCKMDHE dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(data.PBPOLELIPJI_AdventureId);
+			GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(data.PBPOLELIPJI_AdventureId);
 			OAGBCBBHMPF.DKAMMIHBINF a = 0;
 			if (m_eventStoryData.IPCPFJJPIII - 1 < 4)
 				a = new OAGBCBBHMPF.DKAMMIHBINF[4] {
@@ -420,8 +420,8 @@ namespace XeApp.Game.Menu
 					yield return null;
 				MenuScene.Instance.InputEnable();
 				d = m_eventStoryData.FFPCLEONGHE[index];
-				BOKMNHAFJHF_Sns.KEIGMAOCJHK sns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA[d.PBPOLELIPJI_AdventureId];
-				ILCCJNDFFOB.HHCJCDFCLOB.JOLBIMMKGIP(sns.MALFHCHNEFN_RoomId, sns.AIPLIEMLHGC, sns.AJIDLAGFPGM_TalkId, EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 1));
+				BOKMNHAFJHF_Sns.KEIGMAOCJHK_Talk sns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA_Talks[d.PBPOLELIPJI_AdventureId];
+				ILCCJNDFFOB.HHCJCDFCLOB.JOLBIMMKGIP(sns.MALFHCHNEFN_RoomId, sns.AIPLIEMLHGC_SnsId, sns.AJIDLAGFPGM_TalkId, EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 1));
 				textPopup.TitleText = bank.GetMessageByLabel("event_story_text_008");
 				textPopup.Text = bank.GetMessageByLabel("event_story_text_010");
 				textPopup.Buttons = new ButtonInfo[1]
@@ -556,11 +556,11 @@ namespace XeApp.Game.Menu
 				//0xB97410
 				if(m_eventStoryData.IMAGLAKEMIE == 0)
 				{
-					m_eventStoryData.KHEKNNFCAOI(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(m_eventStoryData.PPMNNKKFJNM));
+					m_eventStoryData.KHEKNNFCAOI_InitFromCurrentEvent(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(m_eventStoryData.PPMNNKKFJNM));
 				}
 				else
 				{
-					m_eventStoryData.KHEKNNFCAOI(m_eventStoryData.PPMNNKKFJNM);
+					m_eventStoryData.KHEKNNFCAOI_InitFromEventId(m_eventStoryData.PPMNNKKFJNM);
 				}
 				m_eventStoryList.ListUpdate();
 			};
@@ -568,7 +568,7 @@ namespace XeApp.Game.Menu
 			if (MenuScene.CheckDatelineAndAssetUpdate())
 				yield break;
 			MenuScene.Instance.InputDisable();
-			m_snsScreen.InRoom(SnsScreen.eSceneType.Menu, roomId, SNSController.eObjectOrderType.Last, snsId, true, m_eventStoryData.IMAGLAKEMIE == CCAAJNJGNDO.HGIFGFEJLAB.BJOHLHKGNHM/*1*/);
+			m_snsScreen.InRoom(SnsScreen.eSceneType.Menu, roomId, SNSController.eObjectOrderType.Last, snsId, true, m_eventStoryData.IMAGLAKEMIE == CCAAJNJGNDO.HGIFGFEJLAB.BJOHLHKGNHM_Event/*1*/);
 			while (m_snsScreen != null && m_snsScreen.IsPlaying)
 				yield return null;
 			MenuScene.Instance.InputEnable();

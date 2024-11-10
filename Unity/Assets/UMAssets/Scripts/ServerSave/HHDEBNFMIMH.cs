@@ -123,7 +123,7 @@ public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_ServerSaveBlock
 			else
 			{
 				GPMHOAKFALE_Adventure advDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure;
-				for(int i = 0; i < advDb.CDENCMNHNGA.Count; i++)
+				for(int i = 0; i < advDb.CDENCMNHNGA_List.Count; i++)
 				{
 					string str = POFDDFCGEGP + (i + 1).ToString();
 					if(block.BBAJPINMOEP_Contains(str))

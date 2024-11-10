@@ -902,11 +902,11 @@ namespace XeApp.Game.Menu
 				MenuScene.Instance.DivaIconCache.TryStateDivaIconInstall(m_costumeUpgradeData.MGJKEJHEBPO[i].AHHJLDLAPAN_DivaId, 1, 0);
 				for(int j = 0; j < m_costumeUpgradeData.MGJKEJHEBPO[i].OCOOHBINGBG_LevelInfo.Count; j++)
 				{
-					if(m_costumeUpgradeData.MGJKEJHEBPO[i].OCOOHBINGBG_LevelInfo[j].PEEAGFNOFFO_UnlockType == LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_Costume/*4*/)
+					if(m_costumeUpgradeData.MGJKEJHEBPO[i].OCOOHBINGBG_LevelInfo[j].PEEAGFNOFFO_UnlockType == LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_CostumeColor/*4*/)
 					{
 						MenuScene.Instance.ItemTextureCache.TryInstall(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume, m_costumeUpgradeData.MGJKEJHEBPO[i].JPIDIENBGKH_CostumeId), m_costumeUpgradeData.MGJKEJHEBPO[i].OCOOHBINGBG_LevelInfo[j].KJNAHLOODKD_Value[0]);
 					}
-					else if(m_costumeUpgradeData.MGJKEJHEBPO[i].OCOOHBINGBG_LevelInfo[j].PEEAGFNOFFO_UnlockType == LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.NKKIKONDGPF_1/*1*/)
+					else if(m_costumeUpgradeData.MGJKEJHEBPO[i].OCOOHBINGBG_LevelInfo[j].PEEAGFNOFFO_UnlockType == LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.NKKIKONDGPF_1_CostumeEffect/*1*/)
 					{
 						MenuScene.Instance.ItemTextureCache.TryInstall(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume, m_costumeUpgradeData.MGJKEJHEBPO[i].JPIDIENBGKH_CostumeId), 0);
 					}

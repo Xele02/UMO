@@ -1107,7 +1107,7 @@ namespace XeApp.Game.Menu
 				a1 = ev.GFIBLLLHMPD_AdventureId;
 			AdvSetupParam param = new AdvSetupParam();
 			param.eventUniqueId = ev.PGIIDPEGGPI_EventId;
-			GPMHOAKFALE_Adventure.NGDBKCKMDHE adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(a1);
+			GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(a1);
 			if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 			{
 				TodoLogger.LogError(TodoLogger.EventCollection_1, "Collection");
@@ -1154,7 +1154,7 @@ namespace XeApp.Game.Menu
 					{
 						id = ev.GFIBLLLHMPD_AdventureId;
 					}
-                    GPMHOAKFALE_Adventure.NGDBKCKMDHE adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(id);
+                    GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(id);
 					if(adv != null)
 					{
 						switch(currentEventType)
@@ -1841,7 +1841,7 @@ namespace XeApp.Game.Menu
 				int d = 0;
 				if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
 					d = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("decolturemode_first_adv_id", 0);
-				GPMHOAKFALE_Adventure.NGDBKCKMDHE adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(d);
+				GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(d);
 				if(adv == null)
 				{
 					adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(1);
@@ -2882,7 +2882,7 @@ namespace XeApp.Game.Menu
 		private int GetRareBreakAdvId()
 		{
 			CEBFFLDKAEC_SecureInt val = new CEBFFLDKAEC_SecureInt();
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.OHJFBLFELNK.TryGetValue("rare_break_adv_id", out val))
+			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.OHJFBLFELNK_CryptedIntValues.TryGetValue("rare_break_adv_id", out val))
 			{
 				return val.DNJEJEANJGL_Value;
 			}

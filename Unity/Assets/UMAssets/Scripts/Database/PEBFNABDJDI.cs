@@ -5,6 +5,7 @@ using System.Text;
 
 [System.Obsolete("Use PEBFNABDJDI_System", true)]
 public class PEBFNABDJDI { }
+[UMOClass(ReaderClass = "IAIDGBJGDBH")]
 public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 {
     public class JFIGGEAFMCN
@@ -43,25 +44,26 @@ public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 	public List<EJABAIAPFLK> BHDJIIHLMDM_Query { get; set; } // BFKDBLJIGLO 0x28 // JIAMJJLMMLF // HBDIDBHLJCO
 	public Dictionary<string, string> JLJEEMEOPLE { get; set; } // CJGBLCGHHEI 0x2C // DCHGJLCADKP // ICHNENECFGN
 	public Dictionary<string, BIJMLAPNMAB_SceneSwitch> LMBIOEDHNHB_SceneSwitch { get; set; } // OOCFKPKLBJH 0x30 // BGCEPJDLFFA // JPLHJCLOPKE
-	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI { get; set; } // IHKPIFIBECO 0x34 // GAMGELHIHHI // DDDEJIJGGBJ
-	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK { get; set; } // KLDCHOIPJGB 0x38 // AEMNOGNEBOJ // DGKDBOAMNBB
+	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI_CryptedStringValues { get; set; } // IHKPIFIBECO 0x34 // GAMGELHIHHI // DDDEJIJGGBJ
+	[UMOMember(ReaderMember = "BHGDNGHDDAC/[IDX]/LJNAKDMILMC|BHGDNGHDDAC/[IDX]/JBGEEPFKIGG", Desc = "List of integer settings of the game", CryptedInMemory = true)]
+	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK_CryptedIntValues { get; set; } // KLDCHOIPJGB 0x38 // AEMNOGNEBOJ // DGKDBOAMNBB
 	public Dictionary<string, int> KBAPDOLLLAN_AcbSettings { get; set; } // BKGIMGCBBOC 0x3C // OOEBAHFJPAB // MCMHANFFFNF
 
 	// // RVA: 0xCC4458 Offset: 0xCC4458 VA: 0xCC4458
 	public string EFEGBHACJAL(string LJNAKDMILMC, string KKMJBMKHGNH)
 	{
-		if (!FJOEBCMGDMI.ContainsKey(LJNAKDMILMC))
+		if (!FJOEBCMGDMI_CryptedStringValues.ContainsKey(LJNAKDMILMC))
 			return KKMJBMKHGNH;
-		return FJOEBCMGDMI[LJNAKDMILMC].DNJEJEANJGL_Value;
+		return FJOEBCMGDMI_CryptedStringValues[LJNAKDMILMC].DNJEJEANJGL_Value;
 	}
 
 	// // RVA: 0xCC453C Offset: 0xCC453C VA: 0xCC453C
 	public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH)
 	{
-		if(!OHJFBLFELNK.ContainsKey(LJNAKDMILMC))
+		if(!OHJFBLFELNK_CryptedIntValues.ContainsKey(LJNAKDMILMC))
 			return KKMJBMKHGNH;
 		
-		return OHJFBLFELNK[LJNAKDMILMC].DNJEJEANJGL_Value;
+		return OHJFBLFELNK_CryptedIntValues[LJNAKDMILMC].DNJEJEANJGL_Value;
 	}
 
 	// // RVA: 0xCC4620 Offset: 0xCC4620 VA: 0xCC4620
@@ -134,10 +136,10 @@ public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
         JLJEEMEOPLE = new Dictionary<string, string>();
         LMHMIIKCGPE = 79;
         LMBIOEDHNHB_SceneSwitch = new Dictionary<string, BIJMLAPNMAB_SceneSwitch>();
-        OHJFBLFELNK = new Dictionary<string, CEBFFLDKAEC_SecureInt>();
+        OHJFBLFELNK_CryptedIntValues = new Dictionary<string, CEBFFLDKAEC_SecureInt>();
         KBAPDOLLLAN_AcbSettings = new Dictionary<string, int>();
         JNJAOACIGOC = new List<CEBFFLDKAEC_SecureInt>();
-        FJOEBCMGDMI = new Dictionary<string, NNJFKLBPBNK_SecureString>();
+        FJOEBCMGDMI_CryptedStringValues = new Dictionary<string, NNJFKLBPBNK_SecureString>();
         IFBBNEGGCIH = new List<NNJFKLBPBNK_SecureString>();
         NLNNEOLDOGE_PushTimeSlotIndex = new sbyte[24];
         POEHINEHAEG_UneiPushTimeSlotPermit = new sbyte[24];
@@ -149,10 +151,10 @@ public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 		JDBLDOPHHNL_Enc.Clear();
 		NGHKJOEDLIP.FPBEBCIPEPI_GachaHour.Clear();
 		NGHKJOEDLIP.FPBEBCIPEPI_GachaHour.Add(0);
-		OHJFBLFELNK.Clear();
+		OHJFBLFELNK_CryptedIntValues.Clear();
 		JNJAOACIGOC.Clear();
 		KBAPDOLLLAN_AcbSettings.Clear();
-		FJOEBCMGDMI.Clear();
+		FJOEBCMGDMI_CryptedStringValues.Clear();
 		IFBBNEGGCIH.Clear();
 		CAAMBBJBODI_StoryBgMax = 12;
 		BMAHEAMPCED_BeginnerGachaInfo.Clear();
@@ -221,7 +223,7 @@ public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 			{
 				CEBFFLDKAEC_SecureInt data = new CEBFFLDKAEC_SecureInt();
 				data.DNJEJEANJGL_Value = array[i].JBGEEPFKIGG;
-				OHJFBLFELNK.Add(array[i].LJNAKDMILMC, data);
+				OHJFBLFELNK_CryptedIntValues.Add(array[i].LJNAKDMILMC, data);
 				JNJAOACIGOC.Add(data);
 			}
 		}
@@ -229,7 +231,7 @@ public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 		{
 			NNJFKLBPBNK_SecureString data = new NNJFKLBPBNK_SecureString();
 			data.DNJEJEANJGL_Value = reader.MHGMDJNOLMI[i].JBGEEPFKIGG;
-			FJOEBCMGDMI[reader.MHGMDJNOLMI[i].LJNAKDMILMC] = data;
+			FJOEBCMGDMI_CryptedStringValues[reader.MHGMDJNOLMI[i].LJNAKDMILMC] = data;
 			IFBBNEGGCIH.Add(data);
 		}
 		CAAMBBJBODI_StoryBgMax = HEDDDBDAMGO("story_bg_maximum", "1,12");

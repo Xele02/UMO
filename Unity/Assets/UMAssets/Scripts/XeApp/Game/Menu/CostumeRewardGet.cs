@@ -134,9 +134,9 @@ namespace XeApp.Game.Menu
 			while(isWait)
 				yield return null;
 			CostumeCompWindow w = m_comp_window.Content.GetComponentInChildren<CostumeCompWindow>();
-			if(w.ItemType == LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_Costume)
+			if(w.ItemType == LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_CostumeColor)
 			{
-				yield return this.StartCoroutineWatched(CallUnlockScene(LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_Costume, w.CostumeId, w.CostumeColorId));
+				yield return this.StartCoroutineWatched(CallUnlockScene(LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_CostumeColor, w.CostumeId, w.CostumeColorId));
 			}
 			else
 			{
@@ -216,7 +216,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1636954 Offset: 0x1636954 VA: 0x1636954
 		private bool InstallItem(LFAFJCNKLML.FHLDDEKAJKI type)
 		{
-			if(type.PEEAGFNOFFO_UnlockType != LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_Costume)
+			if(type.PEEAGFNOFFO_UnlockType != LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_CostumeColor)
 				return false;
 			KDLPEDBKMID.HHCJCDFCLOB.FKIJBFJBIOC(m_data.JPIDIENBGKH_CostumeId, false);
 			return true;
@@ -252,7 +252,7 @@ namespace XeApp.Game.Menu
 			});
 			GameManager.Instance.RemovePushBackButtonHandler(DummyBackButton);
 			MenuScene.Instance.InputEnable();
-			if(type == LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_Costume)
+			if(type == LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_CostumeColor)
 			{
 				int cosId = 1;
 				int divaId = 1;
@@ -274,7 +274,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1637260 Offset: 0x1637260 VA: 0x1637260
 		private int GetLogoId(LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType type, int id)
 		{
-			if(type != LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_Costume)
+			if(type != LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_CostumeColor)
 				return 1;
 			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[id - 1];
 			int idx = 0;

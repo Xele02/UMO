@@ -150,12 +150,12 @@ public static class DatabaseTextConverter
             //Export SNSDb texts
             PoFile poFile = new PoFile();
             BOKMNHAFJHF_Sns snsDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns;
-            for(int i = 0; i < snsDb.NPKPBDIDBBG_Room.Count; i++)
+            for(int i = 0; i < snsDb.NPKPBDIDBBG_Rooms.Count; i++)
             {
-                if(snsDb.NPKPBDIDBBG_Room[i].PPEGAKEIEGM_Enabled == 2 && snsDb.NPKPBDIDBBG_Room[i].MALFHCHNEFN_Room > 0)
+                if(snsDb.NPKPBDIDBBG_Rooms[i].PPEGAKEIEGM_Enabled == 2 && snsDb.NPKPBDIDBBG_Rooms[i].MALFHCHNEFN_Room > 0)
                 {
                     string prfx = string.Format("room_name_{0:D4}_txt", i);
-                    poFile.translationData.Add(prfx, snsDb.NPKPBDIDBBG_Room[i].OPFGFINHFCE_Name);
+                    poFile.translationData.Add(prfx, snsDb.NPKPBDIDBBG_Rooms[i].OPFGFINHFCE_Name);
                 }
             }
             for(int i = 0; i < snsDb.KHCACDIKJLG_Characters.Count; i++)
@@ -231,12 +231,12 @@ public static class DatabaseTextConverter
             PoFile poFile = new PoFile();
             GPMHOAKFALE_Adventure advDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure;
             List<int> advIds = new List<int>() { 1, 2, 3, 4, 5, 6 };
-            for(int i = 0; i < advDb.CDENCMNHNGA.Count; i++)
+            for(int i = 0; i < advDb.CDENCMNHNGA_List.Count; i++)
             {
-                if(advDb.CDENCMNHNGA[i].PPEGAKEIEGM_Enabled == 2)
+                if(advDb.CDENCMNHNGA_List[i].PPEGAKEIEGM_Enabled == 2)
                 {
-                    if(!advIds.Contains(advDb.CDENCMNHNGA[i].KKPPFAHFOJI_FileId))
-                        advIds.Add(advDb.CDENCMNHNGA[i].KKPPFAHFOJI_FileId);
+                    if(!advIds.Contains(advDb.CDENCMNHNGA_List[i].KKPPFAHFOJI_FileId))
+                        advIds.Add(advDb.CDENCMNHNGA_List[i].KKPPFAHFOJI_FileId);
                 }
             }
             for(int i = 0; i < advIds.Count; i++)
@@ -569,7 +569,7 @@ public static class DatabaseTextConverter
             }
         }
     }
-    enum eBank
+    public enum eBank
     {
         snsDb_text,
         tipsDb_text,
