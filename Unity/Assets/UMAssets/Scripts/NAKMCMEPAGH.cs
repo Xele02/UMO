@@ -113,7 +113,11 @@ public class NAKMCMEPAGH
 	}
 
 	// // RVA: 0x17C0868 Offset: 0x17C0868 VA: 0x17C0868
-	// public void MAFAKCMFHEE() { }
+	public void MAFAKCMFHEE_AddSdv()
+	{
+		if(GACBDCLPOCD_Sdv < 99999999)
+			GACBDCLPOCD_Sdv++;
+	}
 
 	// // RVA: 0x17C0884 Offset: 0x17C0884 VA: 0x17C0884
 	public void MOOJGMJFOKK_AddVk()

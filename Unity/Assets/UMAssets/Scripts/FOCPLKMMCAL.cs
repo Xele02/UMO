@@ -1370,6 +1370,10 @@ public class FOCPLKMMCAL
 				NAKMCMEPAGH n = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.OEKEIGFAIGN_Counter.BDLNMOIOMHK_Total;
 				if(OMNOFMEBLAD.HGEKDNNJAAC_HadAwakenDivaMode)
 				{
+					n.MAFAKCMFHEE_AddSdv();
+				}
+				if(OMNOFMEBLAD.KNCBNGCDMII_HadValkyrieMode)
+				{
 					n.MOOJGMJFOKK_AddVk();
 				}
 				n.FBKAPLHEACL_AddMusicClear();
