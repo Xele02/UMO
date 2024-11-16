@@ -85,7 +85,7 @@ namespace XeApp.Game.UI
 							break;
 						if(!useSpecialCaracter)
 						{
-							row = 10 / lineCount;
+							row = (10 / lineCount) * type;
 							col = 0;
 						}
 						else
