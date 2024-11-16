@@ -118,10 +118,10 @@ namespace XeApp.Game.UI
 				{
 					indices.Add(baseTriangle[j] + i * 4);
 				}
-				cnt = i;
+				cnt = fi;
 			}
 			f = f - fi;
-			if (f >= 0)
+			if (f > 0)
 			{
 				vertices_.Add(new Vector3(0, cnt * range, 0));
 				vertices_.Add(new Vector3(width, cnt * range, 0));
@@ -158,10 +158,10 @@ namespace XeApp.Game.UI
 				{
 					indices.Add(baseTriangle[j] + i * 4);
 				}
-				cnt = i;
+				cnt = fi;
 			}
 			f = f - fi;
-			if (f >= 0)
+			if (f > 0)
 			{
 				vertices_.Add(new Vector3(0, (height - cnt * range) - f * range, 0));
 				vertices_.Add(new Vector3(width, (height - cnt * range) - f * range, 0));
@@ -198,10 +198,10 @@ namespace XeApp.Game.UI
 				{
 					indices.Add(baseTriangle[j] + i * 4);
 				}
-				cnt = i;
+				cnt = fi;
 			}
 			f = f - fi;
-			if(f >= 0)
+			if(f > 0)
 			{
 				vertices_.Add(new Vector3(cnt * range, 0, 0));
 				vertices_.Add(new Vector3(cnt * range + f * range, 0, 0));
@@ -238,10 +238,10 @@ namespace XeApp.Game.UI
 				{
 					indices.Add(baseTriangle[j] + i * 4);
 				}
-				cnt = i;
+				cnt = fi;
 			}
 			f = f - fi;
-			if (f >= 0)
+			if (f > 0)
 			{
 				vertices_.Add(new Vector3(width - cnt * range - f * range, 0, 0));
 				vertices_.Add(new Vector3(width - cnt * range, 0, 0));
