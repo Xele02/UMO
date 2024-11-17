@@ -274,7 +274,10 @@ namespace XeApp.Game.Menu
 				ConfigUtility.VolumeDefaultPopup((bool isDefault) =>
 				{
 					//0x1EC5C74
-
+					float f = ConfigManager.Instance.ParamDefault(ConfigManager.eParamDefaultType.MenuVolume);
+					SetValueSlider(2, f);
+					SetValueSlider(1, f);
+					SetValueSlider(0, f);
 				});
 				ConfigUtility.PlaySeButton();
 			});
