@@ -55,9 +55,10 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_LoginVoiceWait()
 		{
 			//0xD2392C
+			IsVoicePlaying = true;
+			yield return null;
 			while (SoundManager.Instance.voDiva.isPlaying)
 			{
-				IsVoicePlaying = true;
 				yield return null;
 			}
 			if(DivaObject != null)
