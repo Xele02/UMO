@@ -32,7 +32,15 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xD2F5E8 Offset: 0xD2F5E8 VA: 0xD2F5E8 Slot: 8
-		//public override void PlaySoundByName(string name) { }
+		public override void PlaySoundByName(string name)
+		{
+			string s;
+			if(m_list_change_sound.TryGetValue(name, out s))
+			{
+				name = s;
+			}
+			base.PlaySoundByName(name);
+		}
 
 		//// RVA: 0xD2F694 Offset: 0xD2F694 VA: 0xD2F694
 		public void SwitchToFighter()

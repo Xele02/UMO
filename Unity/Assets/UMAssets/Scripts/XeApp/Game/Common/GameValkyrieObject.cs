@@ -24,7 +24,7 @@ namespace XeApp.Game.Common
 		private bool m_isShooted; // 0x5D
 
 		protected override bool usingEffectFactory { get { return true; } } //0xEA07B8
-		// protected override bool usingQualitySetting { get; } 0xEA07C0
+		protected override bool usingQualitySetting { get { return true; } } //0xEA07C0
 		private bool isDamage { get; set; } // 0x50
 		public bool isShootLock { get; private set; } // 0x51
 		private bool isShootTiming { get; set; } // 0x52

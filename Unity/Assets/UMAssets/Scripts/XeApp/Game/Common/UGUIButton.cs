@@ -102,7 +102,32 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1CD0F14 Offset: 0x1CD0F14 VA: 0x1CD0F14 Slot: 27
-		// public override bool IsPlaying() { }
+		public override bool IsPlaying()
+		{
+			if(m_animator != null)
+			{
+				if(gameObject.activeInHierarchy)
+				{
+					if(enabled)
+					{
+						if(m_animator.gameObject.activeSelf)
+						{
+							if(m_animator.enabled)
+							{
+								if(!m_animator.IsInTransition(0))
+								{
+									if(m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
+										return true;
+									return false;
+								}
+								return true;
+							}
+						}
+					}
+				}
+			}
+			return false;
+		}
 
 		// // RVA: 0x1CD112C Offset: 0x1CD112C VA: 0x1CD112C Slot: 20
 		public override void SetOn()

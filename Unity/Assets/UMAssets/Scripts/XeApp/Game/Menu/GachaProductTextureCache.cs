@@ -1,3 +1,5 @@
+using System;
+
 namespace XeApp.Game.Menu
 {
 	public class GachaProductTexture : IconTexture
@@ -28,6 +30,9 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xEE433C Offset: 0xEE433C VA: 0xEE433C Slot: 6
-		// public override void Load(string id, Action<IiconTexture> callback) { }
+		public override void Load(string id, Action<IiconTexture> callback)
+		{
+			base.Load(string.Format("ct/gc/pd/{0}.xab", id), callback);
+		}
 	}
 }
