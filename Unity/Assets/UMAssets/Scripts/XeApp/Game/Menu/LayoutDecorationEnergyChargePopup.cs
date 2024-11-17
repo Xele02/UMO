@@ -110,7 +110,7 @@ namespace XeApp.Game.Menu
 				}
 			}
 			m_chargePlusBarAnim.StartChildrenAnimGoStop(0, 0);
-			SetNumber(a * 100 + nextGauge - start);
+			SetNumber(a * -100 + (nextGauge - start));
 			UpdateText(isMax);
 			m_loopEffectAnim.StartChildrenAnimLoop("logo_on", "loen_on");
 		}
@@ -183,9 +183,12 @@ namespace XeApp.Game.Menu
 					if(diff <= 0)
 					{
 						diff = 0;
+					}
+					else
+					{
 						nextValue = 100;
 					}
-					m_chargeBarAnim.StartChildrenAnimGoStop(nextValue, nextValue);
+					m_chargeBarAnim.StartChildrenAnimGoStop(0, 0);
 				}
 				yield return null;
 			}
