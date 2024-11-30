@@ -1312,7 +1312,10 @@ namespace XeApp.Game
 		// // RVA: 0x99B14C Offset: 0x99B14C VA: 0x99B14C
 		public Font GetSystemFont()
 		{
-			return font.GetFontInfo(3).font;
+			if(RuntimeSettings.CurrentSettings.Language == "zh_Hans" && RuntimeSettings.CurrentSettings.UseChineseFont)
+				return font.GetFontInfo(4).font;
+			else
+				return font.GetFontInfo(3).font;
 		}
 
 		// // RVA: 0x9A0D4C Offset: 0x9A0D4C VA: 0x9A0D4C

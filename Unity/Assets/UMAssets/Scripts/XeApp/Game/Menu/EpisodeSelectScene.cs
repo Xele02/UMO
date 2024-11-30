@@ -276,7 +276,7 @@ namespace XeApp.Game.Menu
 							valk1 = valk2;
 							valk2 = tmp;
 						}
-						return valk2.IFGMKBKBFJI - valk1.IFGMKBKBFJI;
+						return valk2.IFGMKBKBFJI_IdCrypted - valk1.IFGMKBKBFJI_IdCrypted;
 					}
 					else if(cat1 == EKLNMHFCAOI.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg && cat2 == EKLNMHFCAOI.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg)
 					{

@@ -1736,9 +1736,9 @@ public class KDHGBOOECKC
 											}
 											int a6 = 0;
 											if (DGGBOFDCOLG == BOPFPIHGJMD.HBJMIJIOCAM.JIOPJDJBLFK_1)
-												res += a5 + ((i == 0 ? a1 : a2) * valk.NONBCCLGBAO) / 100;
+												res += a5 + ((i == 0 ? a1 : a2) * valk.NONBCCLGBAO_Hit) / 100;
 											else if(DGGBOFDCOLG == BOPFPIHGJMD.HBJMIJIOCAM.FMHLGHDKJBC_0)
-												res += a4 + ((i == 0 ? a1 : a2) * valk.KINFGHHNFCF) / 100;
+												res += a4 + ((i == 0 ? a1 : a2) * valk.KINFGHHNFCF_Atk) / 100;
 										}
 									}
 								}

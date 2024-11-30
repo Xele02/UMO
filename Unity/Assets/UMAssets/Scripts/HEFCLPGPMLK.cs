@@ -459,8 +459,8 @@ public class HEFCLPGPMLK
 									ANKPCIEKPAH data = new ANKPCIEKPAH();
 									data.LLOBHDMHJIG_Id = vList[i].FODKKJIDDKN_Id;
 									data.LABKKJAGDFN_FormationId = LHFJMGDOBEK(data.LLOBHDMHJIG_Id);
-									data.KINFGHHNFCF_Atk = dbValk.KINFGHHNFCF;
-									data.NONBCCLGBAO_Hit = dbValk.NONBCCLGBAO;
+									data.KINFGHHNFCF_Atk = dbValk.KINFGHHNFCF_Atk;
+									data.NONBCCLGBAO_Hit = dbValk.NONBCCLGBAO_Hit;
 									data.JMHKMDFNAIN = NAEMOCCOGAA(data.LABKKJAGDFN_FormationId, data.LLOBHDMHJIG_Id);
 									data.CPKMLLNADLJ_Attr = (SeriesAttr.Type)dbValk.AIHCEGFANAM_Sa;
 									data.PFGJJLGLPAC_PilotId = dbValk.PFGJJLGLPAC_PilotId;
