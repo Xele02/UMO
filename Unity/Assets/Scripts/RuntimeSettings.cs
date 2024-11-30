@@ -53,6 +53,7 @@ class RuntimeSettings : ScriptableObject
 				m_currentSettings.MusicFirstDisplayType = UMO_PlayerPrefs.GetInt("MusicFirstDisplayType", 2);
 				m_currentSettings.MusicSecondDisplayType = UMO_PlayerPrefs.GetInt("MusicSecondDisplayType", 1);
 				m_currentSettings.MusicThirdDisplayType = UMO_PlayerPrefs.GetInt("MusicThirdDisplayType", 0);
+				m_currentSettings.UseChineseFont = UMO_PlayerPrefs.GetInt("UseChineseFont", 1) == 1;
 
 #if (UNITY_ANDROID && !UNITY_EDITOR) || DEBUG_ANDROID_FILESYSTEM
 				m_currentSettings.DataDirectory = Application.persistentDataPath + "/data/";
@@ -90,6 +91,7 @@ class RuntimeSettings : ScriptableObject
 		UMO_PlayerPrefs.SetInt("MusicFirstDisplayType", m_currentSettings.MusicFirstDisplayType);
 		UMO_PlayerPrefs.SetInt("MusicSecondDisplayType", m_currentSettings.MusicSecondDisplayType);
 		UMO_PlayerPrefs.SetInt("MusicThirdDisplayType", m_currentSettings.MusicThirdDisplayType);
+		UMO_PlayerPrefs.SetInt("UseChineseFont", m_currentSettings.UseChineseFont ? 1 : 0);
 		UMO_PlayerPrefs.Save();
 	}
 
@@ -216,6 +218,7 @@ class RuntimeSettings : ScriptableObject
 
 	public bool UseTmpLocalizationFiles { get; set; }
 	public string Language { get; set; }
+	public bool UseChineseFont { get; set; }
 	public bool WorkerThreadPriorityNormal { get; set; }
 	public bool WorkerThreadUseCoroutine { get; set; }
 

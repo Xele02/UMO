@@ -221,6 +221,13 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         {
             RuntimeSettings.CurrentSettings.WorkerThreadUseCoroutine = b;
         });
+        AddToggleButton(ref y, "Debug : Use chinese font", () =>
+        {
+            return RuntimeSettings.CurrentSettings.UseChineseFont;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.UseChineseFont = b;
+        });
         
         #if UNITY_ANDROID
         AddToggleButton(ref y, "Debug : Disable Cryware low latency", () =>
