@@ -31,14 +31,14 @@ namespace XeApp.Game.Menu
 			m_StrList = str_list;
 			m_Select = default_index;
 			Text[] txts = GetComponentsInChildren<Text>(true);
-			Font f = GameManager.Instance.GetSystemFont();
+			XeSys.FontInfo f = GameManager.Instance.GetSystemFont();
 			for(int i = 0; i < txts.Length; i++)
 			{
-				if(txts[i].font != f)
+				if(txts[i].font != f.font)
 				{
-					txts[i].font = f;
 					txts[i].horizontalOverflow = HorizontalWrapMode.Overflow;
 				}
+				f.Apply(txts[i]);
 			}
 			Transform t = transform.Find("Value");
 			t.GetComponent<RectTransform>().sizeDelta = item_size;

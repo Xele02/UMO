@@ -12,11 +12,11 @@ namespace XeApp.Game.Common
 		protected Text m_textCampaignCopy; // 0x34
 
 		// RVA: 0xEAC10C Offset: 0xEAC10C VA: 0xEAC10C Slot: 10
-		public override void SetFont(Font font)
+		public override void SetFont(XeSys.FontInfo font)
 		{
 			base.SetFont(font);
-			m_textCampaignInfo.font = font;
-			m_textCampaignCopy.font = font;
+			font.Apply(m_textCampaignInfo);
+			font.Apply(m_textCampaignCopy);
 		}
 
 		// RVA: 0xEAAB0C Offset: 0xEAAB0C VA: 0xEAAB0C

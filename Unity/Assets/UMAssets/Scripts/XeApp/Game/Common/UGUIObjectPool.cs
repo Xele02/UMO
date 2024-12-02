@@ -33,14 +33,14 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CD9528 Offset: 0x1CD9528 VA: 0x1CD9528
-		public void Entry(string bundleName, string prefabName, Font font, MonoBehaviour mb)
+		public void Entry(string bundleName, string prefabName, XeSys.FontInfo font, MonoBehaviour mb)
 		{
 			mb.StartCoroutineWatched(LoadUGUI(bundleName, prefabName, font));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7400F4 Offset: 0x7400F4 VA: 0x7400F4
 		//// RVA: 0x1CD9568 Offset: 0x1CD9568 VA: 0x1CD9568
-		private IEnumerator LoadUGUI(string bundleName, string prefabname, Font font)
+		private IEnumerator LoadUGUI(string bundleName, string prefabname, XeSys.FontInfo font)
 		{
 			AssetBundleLoadUGUIOperationBase operation;
 			//0x1CD9868

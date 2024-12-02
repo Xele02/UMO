@@ -30,7 +30,7 @@ namespace XeApp.Game.Common
         private LayoutObjectPool[] m_pools = new LayoutObjectPool[9]; // 0xC
         private GameObject m_rootObject; // 0x10
         private MonoBehaviour m_monoBehaviour; // 0x14
-        private Font m_useFont; // 0x18
+        private XeSys.FontInfo m_useFont; // 0x18
 
         // // RVA: 0x11068B4 Offset: 0x11068B4 VA: 0x11068B4
         public LayoutPoolManager(GameObject parent)
@@ -53,7 +53,7 @@ namespace XeApp.Game.Common
 		}
 
         // // RVA: 0x1106B6C Offset: 0x1106B6C VA: 0x1106B6C
-        public void Initialize(MonoBehaviour mb, Font font)
+        public void Initialize(MonoBehaviour mb, XeSys.FontInfo font)
         {
 			m_monoBehaviour = mb;
 			m_useFont = font;

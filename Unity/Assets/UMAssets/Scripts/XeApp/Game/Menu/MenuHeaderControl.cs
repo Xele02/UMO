@@ -391,7 +391,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C76AC Offset: 0x6C76AC VA: 0x6C76AC
 		// // RVA: 0xB298F8 Offset: 0xB298F8 VA: 0xB298F8
-		public IEnumerator Load(MonoBehaviour mb, Font font, UnityAction action)
+		public IEnumerator Load(MonoBehaviour mb, XeSys.FontInfo font, UnityAction action)
 		{
 			LayoutUGUIRuntime runtime;
 			int i;

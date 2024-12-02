@@ -682,7 +682,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_LoadLayout()
 		{
 			StringBuilder bundleName; // 0x18
-			Font systemFont; // 0x1C
+			XeSys.FontInfo systemFont; // 0x1C
 			int bundleLoadCount; // 0x20
 			AssetBundleLoadLayoutOperationBase operation; // 0x24
 			AssetBundleLoadUGUIOperationBase uguiOperation; // 0x28

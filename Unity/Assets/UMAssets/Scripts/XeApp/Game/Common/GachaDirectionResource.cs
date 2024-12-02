@@ -157,7 +157,7 @@ namespace XeApp.Game.Common
 		private IEnumerator Co_LoadResources(DirectionInfo directionInfo)
 		{
 			int bundleLoadCount; // 0x1C
-			Font font; // 0x20
+			XeSys.FontInfo font; // 0x20
 			AssetBundleLoadLayoutOperationBase lytOperation; // 0x24
 
 			//0x1C210D8
@@ -280,7 +280,7 @@ namespace XeApp.Game.Common
 		private IEnumerator Co_LoadRetryResources(DirectionInfo directionInfo)
 		{
 			int bundleLoadCount; // 0x18
-			Font font; // 0x1C
+			XeSys.FontInfo font; // 0x1C
 			AssetBundleLoadLayoutOperationBase lytOperation; // 0x20
 
 			//0x1C2292C

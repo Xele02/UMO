@@ -535,7 +535,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17A4DD0 Offset: 0x17A4DD0 VA: 0x17A4DD0
 		private IEnumerator Co_LoadLayouts()
 		{
-			Font font; // 0x14
+			XeSys.FontInfo font; // 0x14
 			string bundleName; // 0x18
 			int bundleLoadCount; // 0x1C
 
@@ -606,7 +606,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70341C Offset: 0x70341C VA: 0x70341C
 		//// RVA: 0x17A4E7C Offset: 0x17A4E7C VA: 0x17A4E7C
-		protected static IEnumerator Co_LoadListElem(string bundleName, string assetName, Font font, int elemCount, string elemNameFormat, Action<LayoutUGUIRuntime> onLoadedElem)
+		protected static IEnumerator Co_LoadListElem(string bundleName, string assetName, XeSys.FontInfo font, int elemCount, string elemNameFormat, Action<LayoutUGUIRuntime> onLoadedElem)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 

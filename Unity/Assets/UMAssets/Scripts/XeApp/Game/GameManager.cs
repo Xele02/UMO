@@ -424,7 +424,7 @@ namespace XeApp.Game
 		// // RVA: 0x99B0D4 Offset: 0x99B0D4 VA: 0x99B0D4
 		private void OnFontTextureRebuilt(Font font)
 		{
-			if(font.name == GetSystemFont().name)
+			if(font.name == GetSystemFont().font.name)
 				isDirtyFontUpdate = true;
 		}
 
@@ -1310,12 +1310,30 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x99B14C Offset: 0x99B14C VA: 0x99B14C
-		public Font GetSystemFont()
+		public FontInfo GetSystemFont(bool def = false)
 		{
-			if(RuntimeSettings.CurrentSettings.Language == "zh_Hans" && RuntimeSettings.CurrentSettings.UseChineseFont)
-				return font.GetFontInfo(4).font;
+			if(!def && RuntimeSettings.CurrentSettings.Language == "zh_Hans" && RuntimeSettings.CurrentSettings.UseChineseFont)
+				return font.GetFontInfo(4);
 			else
-				return font.GetFontInfo(3).font;
+				return font.GetFontInfo(3);
+		}
+
+		public float GetFontLineSpace(float lineSpace)
+		{
+			return GetSystemFont().GetLineSpace(lineSpace);
+		}
+
+		public FontInfo GetFontInfo(Font font)
+		{
+			FontInfo def = GetSystemFont(true);
+			if(def.font == font)
+			{
+				return GetSystemFont();
+			}
+			def = new FontInfo();
+			def.font = font;
+			def.size = 1;
+			return def;
 		}
 
 		// // RVA: 0x9A0D4C Offset: 0x9A0D4C VA: 0x9A0D4C

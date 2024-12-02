@@ -107,7 +107,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB75868 Offset: 0xB75868 VA: 0xB75868
 		private IEnumerator CO_LoadResource()
 		{
-			Font systemFont; // 0x18
+			XeSys.FontInfo systemFont; // 0x18
 			StringBuilder bundleName; // 0x1C
 			int bundleLoadCount; // 0x20
 			AssetBundleLoadUGUIOperationBase uguiOp; // 0x24

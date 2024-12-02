@@ -649,7 +649,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator AssetLoad()
 		{
 			string bundleName; // 0x14
-			Font systemFont; // 0x18
+			XeSys.FontInfo systemFont; // 0x18
 			AssetBundleLoadLayoutOperationBase operation; // 0x1C
 
 			//0x109D10C

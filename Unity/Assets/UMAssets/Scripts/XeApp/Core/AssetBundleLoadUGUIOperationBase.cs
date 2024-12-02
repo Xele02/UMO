@@ -13,6 +13,6 @@ namespace XeApp.Core
 		}
 
 		// RVA: -1 Offset: -1 Slot: 11
-		public abstract IEnumerator InitializeUGUICoroutine(Font font, Action<GameObject> finish);
+		public abstract IEnumerator InitializeUGUICoroutine(XeSys.FontInfo font, Action<GameObject> finish);
 	}
 }

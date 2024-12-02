@@ -111,7 +111,7 @@ namespace XeApp.Game.Menu
 		protected override IEnumerator Co_LoadLayout()
 		{
 			StringBuilder bundleName; // 0x14
-			Font systemFont; // 0x18
+			XeSys.FontInfo systemFont; // 0x18
 			int bundleLoadCount; // 0x1C
 			AssetBundleLoadLayoutOperationBase operation; // 0x20
 			int i; // 0x24

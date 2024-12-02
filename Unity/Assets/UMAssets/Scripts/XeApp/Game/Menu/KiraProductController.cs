@@ -142,7 +142,7 @@ namespace XeApp.Game.Menu
 		public IEnumerator Co_LoadLayout(Transform transform)
 		{
 			StringBuilder bundleName; // 0x1C
-			Font systemFont; // 0x20
+			XeSys.FontInfo systemFont; // 0x20
 			AssetBundleLoadLayoutOperationBase operation; // 0x24
 
 			//0x14BF05C

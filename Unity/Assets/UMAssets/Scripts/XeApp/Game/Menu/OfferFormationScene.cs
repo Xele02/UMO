@@ -275,7 +275,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_LoadAssetsOrderListLayout()
 		{
 			string bundleName; // 0x14
-			Font font; // 0x18
+			XeSys.FontInfo font; // 0x18
 			AssetBundleLoadLayoutOperationBase operation; // 0x1C
 
 			//0x1529FC0

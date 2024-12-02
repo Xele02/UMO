@@ -83,7 +83,7 @@ namespace XeApp.Game.Menu
 			Text[] txts = GetComponentsInChildren<Text>(true);
 			for(int i = 0; i < txts.Length; i++)
 			{
-				txts[i].font = GameManager.Instance.GetSystemFont();
+				GameManager.Instance.GetSystemFont().Apply(txts[i]);
 				if(txts[i].transform.parent.name == "MessageWindow")
 				{
 					txts[i].text = MessageManager.Instance.GetMessage("menu", "deco_screenshot_success");

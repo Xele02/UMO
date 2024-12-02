@@ -71,6 +71,9 @@ MonoBehaviour:
   - name: fr
     flag: {fileID: 0}
     languageName: "Fran\xE7ais"
+  - name: zh_Hans
+    flag: {fileID: 0}
+    languageName: "\u4E2D\u6587\uFF08\u7B80\u4F53\uFF09"
 --- !u!1001 &2798117473220822463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81,7 +84,7 @@ PrefabInstance:
     - target: {fileID: 421056798261614579, guid: 30bbb65de0958069ea212bdce12d273d,
         type: 3}
       propertyPath: m_Value
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 421056798261614579, guid: 30bbb65de0958069ea212bdce12d273d,
         type: 3}
@@ -226,7 +229,7 @@ PrefabInstance:
     - target: {fileID: 8855621485321332986, guid: 30bbb65de0958069ea212bdce12d273d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000042626874
+      value: -0.000014253657
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30bbb65de0958069ea212bdce12d273d, type: 3}

@@ -38,7 +38,7 @@ namespace XeApp.Core
 
         // [IteratorStateMachineAttribute] // RVA: 0x747EE0 Offset: 0x747EE0 VA: 0x747EE0
         // RVA: 0xE0FE3C Offset: 0xE0FE3C VA: 0xE0FE3C Slot: 11
-        public override IEnumerator InitializeLayoutCoroutine(Font font, Action<GameObject> finish)
+        public override IEnumerator InitializeLayoutCoroutine(FontInfo fontInfo, Action<GameObject> finish)
         {
 			//0xE110FC
 #if UNITY_EDITOR || UNITY_STANDALONE
@@ -59,7 +59,7 @@ namespace XeApp.Core
             yield return DatabaseTextConverter.TranslateImages(instance);
             for(int i = 0; i < runtimes.Length; i++)
             {
-                yield return Co.R(CreateLayoutCoroutine(runtimes[i], font, (Layout layout, TexUVListManager uvMan) => {
+                yield return Co.R(CreateLayoutCoroutine(runtimes[i], fontInfo, (Layout layout, TexUVListManager uvMan) => {
                     //0xE10128
                     runtimes[i].UvMan = uvMan;
                     runtimes[i].Layout = layout;
@@ -71,9 +71,10 @@ namespace XeApp.Core
                 //0xE1001C
                 if(text.font == null)
                 {
-                    text.font = font;
+                    //text.font = font;
                     text.horizontalOverflow = HorizontalWrapMode.Overflow;
                 }
+                fontInfo.Apply(text);
             });
             if(finish != null)
             {
@@ -84,7 +85,7 @@ namespace XeApp.Core
         // [IteratorStateMachineAttribute] // RVA: 0x747F58 Offset: 0x747F58 VA: 0x747F58
         // // RVA: 0xE0FF1C Offset: 0xE0FF1C VA: 0xE0FF1C Slot: 12
         static bool isCreating = false;
-        public override IEnumerator CreateLayoutCoroutine(LayoutUGUIRuntime runtime, Font font, Action<Layout, TexUVListManager> finish)
+        public override IEnumerator CreateLayoutCoroutine(LayoutUGUIRuntime runtime, XeSys.FontInfo fontInfo, Action<Layout, TexUVListManager> finish)
         {
             // Adding a protection to not run multiple CreateLayoutCoroutine in // because it can crash
             while(isCreating)
@@ -98,7 +99,7 @@ namespace XeApp.Core
             // 0xE1018C
             Layout layout = new Layout();
             layout.fontInfo = new FontInfo();
-            layout.fontInfo.font = font;
+            layout.fontInfo = fontInfo;
             TexUVListManager uvMan = new TexUVListManager();
             LayoutAnimation layoutAnime = new LayoutAnimation();
             m_request = m_loadedAssetBundle.m_AssetBundle.LoadAssetAsync<ScriptableLayout>(Path.GetFileName(runtime.LayoutPath));

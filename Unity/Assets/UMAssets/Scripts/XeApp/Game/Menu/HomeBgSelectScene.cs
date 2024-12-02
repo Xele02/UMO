@@ -62,7 +62,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x95CB5C Offset: 0x95CB5C VA: 0x95CB5C
 		private IEnumerator InitializeCoroutine()
 		{
-			Font systemFont; // 0x14
+			XeSys.FontInfo systemFont; // 0x14
 			StringBuilder bundleName; // 0x18
 			int bundleLoadCount; // 0x1C
 			AssetBundleLoadUGUIOperationBase uguiOp; // 0x20

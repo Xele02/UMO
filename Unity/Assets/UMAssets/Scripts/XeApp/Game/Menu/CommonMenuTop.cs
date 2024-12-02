@@ -242,7 +242,7 @@ namespace XeApp.Game.Menu
 #endif
 				m_miniWindow.transform.SetParent(transform.parent, false);
 				m_miniWindow.transform.SetAsLastSibling();
-				m_miniWindow.SetFont(m_layout.fontInfo.font);
+				m_miniWindow.SetFont(m_layout.fontInfo);
 			}
 			IFBCGCCJBHI d = new IFBCGCCJBHI();
 			d.KHEKNNFCAOI();
@@ -266,7 +266,7 @@ namespace XeApp.Game.Menu
 #endif
 				m_miniWindow.transform.SetParent(transform.parent, false);
 				m_miniWindow.transform.SetAsLastSibling();
-				m_miniWindow.SetFont(m_layout.fontInfo.font);
+				m_miniWindow.SetFont(m_layout.fontInfo);
 			}
 			IFBCGCCJBHI d = new IFBCGCCJBHI();
 			d.KHEKNNFCAOI();

@@ -1231,7 +1231,7 @@ namespace XeApp.Game.Menu
 			yield return operation;
 			if(!operation.IsError())
 			{
-				yield return Co.R(operation.InitializeLayoutCoroutine(MenuScene.Instance.m_font, (GameObject instance) =>
+				yield return Co.R(operation.InitializeLayoutCoroutine(MenuScene.Instance.GetFont(), (GameObject instance) =>
 				{
 					//0x117B2B4
 					m_degree_setting.SetContent(instance);

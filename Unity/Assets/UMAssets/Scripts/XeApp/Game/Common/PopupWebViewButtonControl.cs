@@ -48,7 +48,7 @@ namespace XeApp.Game.Common
 			m_closeButton.AddOnClickCallback(OnClose);
 			m_rejectCheckbox.AddOnClickCallback(OnClickCheck);
 			m_rootLayout = layout.FindViewByExId("root_btn_webview_btn_webview_arrange") as AbsoluteLayout;
-			m_rejectText.font = GameManager.Instance.GetSystemFont();
+			GameManager.Instance.GetSystemFont().Apply(m_rejectText);
 			m_rejectText.text = JpStringLiterals.StringLiteral_14355;
 			ClearLoadedCallback();
 			Loaded();

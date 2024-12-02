@@ -514,7 +514,7 @@ namespace XeApp.Game.Menu
 		protected override IEnumerator Co_LoadResourceOnAwake()
 		{
 			//0xAC3C08
-			Font systemFont = GameManager.Instance.GetSystemFont();
+			XeSys.FontInfo systemFont = GameManager.Instance.GetSystemFont();
 			StringBuilder bundleName = new StringBuilder();
 			bundleName.Set("ly/038.xab");
 			int bundleCount = 0;

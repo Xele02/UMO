@@ -563,7 +563,7 @@ namespace XeApp.Game.Menu
 			AssetBundleLoadUGUIOperationBase operation; // 0x24
 
 			//0x13D038C
-			Font font = GameManager.Instance.GetSystemFont();
+			XeSys.FontInfo font = GameManager.Instance.GetSystemFont();
 			bundleName = "ly/006.xab";
 			bundleLoadCount = 0;
 			lyOp = AssetBundleManager.LoadLayoutAsync("ly/006.xab", "UI_HomePickup");
@@ -648,7 +648,7 @@ namespace XeApp.Game.Menu
 		{
 			string bundleName; // 0x14
 			int bundleLoadCount; // 0x18
-			Font font; // 0x1C
+			XeSys.FontInfo font; // 0x1C
 			AssetBundleLoadUGUIOperationBase operation; // 0x20
 
 			//0x13D0074

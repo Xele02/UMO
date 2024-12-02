@@ -217,7 +217,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E99BC Offset: 0x6E99BC VA: 0x6E99BC
 		//// RVA: 0xD0E404 Offset: 0xD0E404 VA: 0xD0E404
-		public IEnumerator Co_LoadAssetsLayoutListItemR(string bundleName, Font font)
+		public IEnumerator Co_LoadAssetsLayoutListItemR(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -238,7 +238,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E9A34 Offset: 0x6E9A34 VA: 0x6E9A34
 		//// RVA: 0xD0E4C4 Offset: 0xD0E4C4 VA: 0xD0E4C4
-		public IEnumerator Co_LoadAssetsLayoutListItemL(string bundleName, Font font)
+		public IEnumerator Co_LoadAssetsLayoutListItemL(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 

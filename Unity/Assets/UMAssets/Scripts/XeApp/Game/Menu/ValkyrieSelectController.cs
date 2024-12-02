@@ -332,7 +332,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_LayoutAssetLoad()
 		{
 			string bundleName; // 0x14
-			Font systemFont; // 0x18
+			XeSys.FontInfo systemFont; // 0x18
 
 			//0x1658978
 			if (IsAssetLoad)
@@ -355,7 +355,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6F92AC Offset: 0x6F92AC VA: 0x6F92AC
 		//// RVA: 0x1658138 Offset: 0x1658138 VA: 0x1658138
-		private IEnumerator Co_LoadAssetsLayoutValkyrieSelect(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsLayoutValkyrieSelect(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -381,7 +381,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6F9324 Offset: 0x6F9324 VA: 0x6F9324
 		//// RVA: 0x1658218 Offset: 0x1658218 VA: 0x1658218
-		private IEnumerator Co_LoadAssetsLayoutSeriesButton(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsLayoutSeriesButton(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -407,7 +407,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6F939C Offset: 0x6F939C VA: 0x6F939C
 		//// RVA: 0x16582F8 Offset: 0x16582F8 VA: 0x16582F8
-		private IEnumerator Co_LoadAssetsLayoutSortieIcon(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsLayoutSortieIcon(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 

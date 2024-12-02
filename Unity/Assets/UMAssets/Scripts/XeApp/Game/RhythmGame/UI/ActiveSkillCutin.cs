@@ -37,7 +37,7 @@ namespace XeApp.Game.RhythmGame.UI
 				descriptMaterial = new Material(m_skillDescriptionRenderer.sharedMaterial);
 				m_skillDescriptionRenderer.sharedMaterial = descriptMaterial;
 			}
-			m_skillNameText.font = GameManager.Instance.GetSystemFont();
+			GameManager.Instance.GetSystemFont().Apply(m_skillNameText);
 			m_skillNameText.GetComponent<MeshRenderer>().materials = new Material[1]
 			{
 				m_skillNameText.font.material

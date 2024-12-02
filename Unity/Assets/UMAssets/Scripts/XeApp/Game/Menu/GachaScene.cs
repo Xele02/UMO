@@ -947,7 +947,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_LoadLayout()
 		{
 			StringBuilder bundleName; // 0x14
-			Font font; // 0x18
+			XeSys.FontInfo font; // 0x18
 			int bundleLoadCount; // 0x1C
 			AssetBundleLoadLayoutOperationBase layoutOp; // 0x20
 

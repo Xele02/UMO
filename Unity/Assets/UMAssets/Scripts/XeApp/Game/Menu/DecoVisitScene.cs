@@ -377,7 +377,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_InitializeLayout()
 		{
 			AssetBundleLoadLayoutOperationBase op;
-			Font font;
+			XeSys.FontInfo font;
 
 			//0x11DB764
 			m_sentGiftPopupSetting.WindowSize = 0;

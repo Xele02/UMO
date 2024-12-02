@@ -52,7 +52,7 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < m_contentTexts.Length; i++)
 			{
 				m_contentTexts[i].text = tips;
-				m_contentTexts[i].lineSpacing = lineSpace;
+				m_contentTexts[i].lineSpacing = GameManager.Instance.GetFontLineSpace(lineSpace);
 			}
 		}
 
