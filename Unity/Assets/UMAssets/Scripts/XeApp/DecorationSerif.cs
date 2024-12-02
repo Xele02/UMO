@@ -72,7 +72,7 @@ namespace XeApp
 			m_textMesh.anchor = TextAnchor.MiddleCenter;
 			m_textMesh.offsetZ = -0.1f;
 			m_textMesh.text = m_serifText;
-			m_textMesh.font = GameManager.Instance.GetSystemFont();
+			GameManager.Instance.GetSystemFont().Apply(m_textMesh);
 			m_textRenderer.sharedMaterial = m_textMesh.font.material;
 			SortingOrder = m_chara.SortingOrder;
 		}

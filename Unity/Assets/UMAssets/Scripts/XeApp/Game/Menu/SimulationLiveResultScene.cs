@@ -176,7 +176,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator CO_LoadResultInfo()
 		{
 			string bundleName;
-			Font font;
+			XeSys.FontInfo font;
 			AssetBundleLoadLayoutOperationBase op;
 
 			//0x12C9A2C
@@ -197,7 +197,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator CO_LoadSerifWindow()
 		{
 			string bundleName;
-			Font font;
+			XeSys.FontInfo font;
 			AssetBundleLoadLayoutOperationBase op;
 
 			//0x12C9D0C

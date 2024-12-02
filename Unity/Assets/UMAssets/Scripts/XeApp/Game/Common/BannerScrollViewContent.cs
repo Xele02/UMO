@@ -42,9 +42,9 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xE600F4 Offset: 0xE600F4 VA: 0xE600F4 Slot: 10
-		public virtual void SetFont(Font font)
+		public virtual void SetFont(XeSys.FontInfo font)
 		{
-			m_textPeriod.font = font;
+			font.Apply(m_textPeriod);
 		}
 
 		// // RVA: 0xE60128 Offset: 0xE60128 VA: 0xE60128 Slot: 11

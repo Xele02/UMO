@@ -285,7 +285,7 @@ namespace XeApp.Game.Menu
 			private MenuFooterControl m_menuBarControl; // 0x18
 			private MenuHeaderControl m_titleBarControl; // 0x1C
 			private GameObject m_uiRootObject; // 0x20
-			private Font m_font; // 0x24
+			private XeSys.FontInfo m_font; // 0x24
 			private HelpButton m_helpButton; // 0x28
 			private SceneStack m_transitionStack = new SceneStack(); // 0x2C
 			private TransitionRoot m_currentRoot; // 0x30
@@ -431,7 +431,7 @@ namespace XeApp.Game.Menu
 			// public void remove_ChangeGroupCategoryListener(UnityAction<SceneGroupCategory, SceneGroupCategory> value) { }
 
 			// // RVA: 0xA316E4 Offset: 0xA316E4 VA: 0xA316E4
-			public MenuTransitionControl(GameObject bgRoot, GameObject uiRoot, Font font, TransitionTreeObject tto)
+			public MenuTransitionControl(GameObject bgRoot, GameObject uiRoot, XeSys.FontInfo font, TransitionTreeObject tto)
 			{
 				m_bgControl = new BgControl(bgRoot);
 				m_titleBarControl = new MenuHeaderControl(uiRoot);

@@ -308,7 +308,7 @@ namespace XeApp.Game.Menu
 		protected override IEnumerator Co_LoadBothLayout(string bundleName)
 		{
 			int bundleLoadCount;
-			Font font;
+			XeSys.FontInfo font;
 			AssetBundleLoadLayoutOperationBase operation;
 
 			//0xEDAB98

@@ -112,7 +112,7 @@ namespace XeApp.Game.Common
 		// [HeaderAttribute] // RVA: 0x68A904 Offset: 0x68A904 VA: 0x68A904
 		[SerializeField]
 		private CanvasGroup m_canvasGroup; // 0x58
-		private Font m_font; // 0x5C
+		private XeSys.FontInfo m_font; // 0x5C
 		private bool m_vertical; // 0x60
 		private bool m_toggleOpenClose; // 0x61
 		private int m_inputDisableCount; // 0x64
@@ -199,7 +199,7 @@ namespace XeApp.Game.Common
 		}
 
 		// RVA: 0xEAD3F8 Offset: 0xEAD3F8 VA: 0xEAD3F8
-		public void SetFont(Font font)
+		public void SetFont(XeSys.FontInfo font)
 		{
 			m_font = font;
 		}

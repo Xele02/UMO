@@ -57,10 +57,10 @@ namespace XeApp.Game.Common
 		}
 
 		// RVA: 0x1C16974 Offset: 0x1C16974 VA: 0x1C16974
-		public void SetFont(Font font)
+		public void SetFont(XeSys.FontInfo font)
 		{
-			m_textMesh.font = font;
-			m_renderer.sharedMaterial = font.material;
+			font.Apply(m_textMesh);
+			m_renderer.sharedMaterial = font.font.material;
 		}
 
 		// RVA: 0x1C169F0 Offset: 0x1C169F0 VA: 0x1C169F0

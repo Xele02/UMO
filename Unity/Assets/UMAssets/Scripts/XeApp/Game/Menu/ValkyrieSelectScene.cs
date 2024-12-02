@@ -95,7 +95,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_LayoutAssetLoad()
 		{
 			string bundleName; // 0x14
-			Font systemFont; // 0x18
+			XeSys.FontInfo systemFont; // 0x18
 
 			//0x166095C
 			m_IsLoadLayout = false;
@@ -125,7 +125,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x733B2C Offset: 0x733B2C VA: 0x733B2C
 		// // RVA: 0x1659B2C Offset: 0x1659B2C VA: 0x1659B2C
-		private IEnumerator Co_LoadAssetsLayoutValkyrieSelect(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsLayoutValkyrieSelect(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation; // 0x1C
 
@@ -151,7 +151,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x733BA4 Offset: 0x733BA4 VA: 0x733BA4
 		// // RVA: 0x1659C0C Offset: 0x1659C0C VA: 0x1659C0C
-		private IEnumerator Co_LoadAssetsLayoutSeriesButton(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsLayoutSeriesButton(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -176,7 +176,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x733C1C Offset: 0x733C1C VA: 0x733C1C
 		// // RVA: 0x1659CEC Offset: 0x1659CEC VA: 0x1659CEC
-		private IEnumerator Co_LoadAssetsLayoutCircle(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsLayoutCircle(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -196,7 +196,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x733C94 Offset: 0x733C94 VA: 0x733C94
 		// // RVA: 0x1659DCC Offset: 0x1659DCC VA: 0x1659DCC
-		private IEnumerator Co_LoadAssetsViewButton(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsViewButton(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -224,7 +224,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x733D0C Offset: 0x733D0C VA: 0x733D0C
 		// // RVA: 0x1659EAC Offset: 0x1659EAC VA: 0x1659EAC
-		private IEnumerator Co_LoadAssetsPopUp(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsPopUp(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 

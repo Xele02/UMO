@@ -58,10 +58,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x1B4DEC0 Offset: 0x1B4DEC0 VA: 0x1B4DEC0
-		public void SetFont(Font font)
+		public void SetFont(XeSys.FontInfo fontInfo)
 		{
-			m_textNext.font = font;
-			m_textPoint.font = font;
+			//m_textNext.font = font;
+			fontInfo.Apply(m_textNext);
+			//m_textPoint.font = font;
+			fontInfo.Apply(m_textPoint);
 		}
 
 		// RVA: 0x1B4DF1C Offset: 0x1B4DF1C VA: 0x1B4DF1C

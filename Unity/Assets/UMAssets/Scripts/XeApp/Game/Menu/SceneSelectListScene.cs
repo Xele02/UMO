@@ -70,7 +70,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x72E0C4 Offset: 0x72E0C4 VA: 0x72E0C4
 		// // RVA: 0x1380398 Offset: 0x1380398 VA: 0x1380398
-		private IEnumerator Co_SceneSortButtonLayout(string bundleName, Font font)
+		private IEnumerator Co_SceneSortButtonLayout(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -93,7 +93,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x72E13C Offset: 0x72E13C VA: 0x72E13C
 		// // RVA: 0x1380454 Offset: 0x1380454 VA: 0x1380454
-		private IEnumerator Co_SelectWindowLayout(string bundleName, Font font)
+		private IEnumerator Co_SelectWindowLayout(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 			//0xA58980
@@ -124,7 +124,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator InitializeCoroutine()
 		{
 			string bundleName; // 0x14
-			Font systemFont; // 0x18
+			XeSys.FontInfo systemFont; // 0x18
 
 			//0xA58CBC
 			bundleName = "ly/014.xab";

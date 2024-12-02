@@ -14,9 +14,9 @@ namespace XeApp.Core
         }
 
         // RVA: -1 Offset: -1 Slot: 11
-        public abstract IEnumerator InitializeLayoutCoroutine(Font font, Action<GameObject> finish);
+        public abstract IEnumerator InitializeLayoutCoroutine(XeSys.FontInfo fontInfo, Action<GameObject> finish);
 
         // RVA: -1 Offset: -1 Slot: 12
-        public abstract IEnumerator CreateLayoutCoroutine(LayoutUGUIRuntime runtime, Font font, Action<Layout, TexUVListManager> finish);
+        public abstract IEnumerator CreateLayoutCoroutine(LayoutUGUIRuntime runtime, XeSys.FontInfo fontInfo, Action<Layout, TexUVListManager> finish);
     }
 }

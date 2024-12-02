@@ -650,7 +650,7 @@ namespace XeApp.Game.Menu
 		public IEnumerator LoadLayoutBoot(Action callback)
 		{
 			string bundleName; // 0x18
-			Font systemFont; // 0x1C
+			XeSys.FontInfo systemFont; // 0x1C
 			AssetBundleLoadLayoutOperationBase operation; // 0x20
 
 			//0x170EFFC

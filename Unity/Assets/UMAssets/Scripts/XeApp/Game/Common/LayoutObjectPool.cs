@@ -35,14 +35,14 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1105C4C Offset: 0x1105C4C VA: 0x1105C4C
-		public void Entry(string bundleName, string prefabName, Font font, MonoBehaviour mb)
+		public void Entry(string bundleName, string prefabName, XeSys.FontInfo font, MonoBehaviour mb)
 		{
 			mb.StartCoroutineWatched(LoadLayout(bundleName, prefabName, font));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x73CCF0 Offset: 0x73CCF0 VA: 0x73CCF0
 		//// RVA: 0x1105C8C Offset: 0x1105C8C VA: 0x1105C8C
-		private IEnumerator LoadLayout(string bundleName, string prefabname, Font font)
+		private IEnumerator LoadLayout(string bundleName, string prefabname, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation; // 0x24
 			GameObject prefab; // 0x28
@@ -70,7 +70,7 @@ namespace XeApp.Game.Common
 				Text[] ts = go.GetComponentsInChildren<Text>(true);
 				for(int i = 0; i < ts.Length; i++)
 				{
-					ts[i].font = font;
+					font.Apply(ts[i]);
 				}
 			}
 			for(int i = 0; i < m_poolSize; i++)

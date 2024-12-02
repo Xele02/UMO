@@ -69,9 +69,9 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xEAD804 Offset: 0xEAD804 VA: 0xEAD804
-		public void SetFont(Font font)
+		public void SetFont(XeSys.FontInfo font)
 		{
-			m_textPeriod.font = font;
+			font.Apply(m_textPeriod);
 		}
 
 		// // RVA: 0xEB073C Offset: 0xEB073C VA: 0xEB073C

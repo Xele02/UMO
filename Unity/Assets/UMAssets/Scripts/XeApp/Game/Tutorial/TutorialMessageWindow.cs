@@ -57,8 +57,9 @@ namespace XeApp.Game.Tutorial
 		// RVA: 0xE4855C Offset: 0xE4855C VA: 0xE4855C
 		private void Start()
 		{
-			m_nameText.font = GameManager.Instance.GetSystemFont();
-			m_messageText.Text.font = GameManager.Instance.GetSystemFont();
+			XeSys.FontInfo font = GameManager.Instance.GetSystemFont();
+			font.Apply(m_nameText);
+			font.Apply(m_messageText.Text);
 		}
 
 		//// RVA: 0xE48694 Offset: 0xE48694 VA: 0xE48694

@@ -46,11 +46,16 @@ MonoBehaviour:
   fontTable:
   - font: {fileID: 12800000, guid: 113fdfcb047c9eb4ba85d48d3caa77c6, type: 3}
     size: 16
+    lineSpacing: -1
   - font: {fileID: 12800000, guid: 113fdfcb047c9eb4ba85d48d3caa77c6, type: 3}
     size: 32
+    lineSpacing: -1
   - font: {fileID: 12800000, guid: 113fdfcb047c9eb4ba85d48d3caa77c6, type: 3}
     size: 18
+    lineSpacing: -1
   - font: {fileID: 12800000, guid: 9316b933636648843b8cc4cc4e94e8ff, type: 3}
     size: 20
+    lineSpacing: -1
   - font: {fileID: 12800000, guid: 7b130e83b847e20f3bad73e8f4b8f305, type: 3}
     size: 20
+    lineSpacing: 1

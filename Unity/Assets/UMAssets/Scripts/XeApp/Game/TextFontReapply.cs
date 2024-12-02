@@ -24,11 +24,11 @@ namespace XeApp.Game
 		//public void Detect() { }
 
 		//// RVA: 0x156FF34 Offset: 0x156FF34 VA: 0x156FF34
-		public void SetFont(Font font)
+		public void SetFont(XeSys.FontInfo font)
 		{
 			for(int i = 0; i < m_textComponents.Count; i++)
 			{
-				m_textComponents[i].font = font;
+				font.Apply(m_textComponents[i]);
 			}
 		}
 

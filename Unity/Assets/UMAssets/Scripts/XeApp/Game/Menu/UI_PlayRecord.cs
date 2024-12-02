@@ -164,7 +164,7 @@ namespace XeApp.Game.Menu
 			Text[] ts = gameObject.GetComponentsInChildren<Text>(true);
 			for (int i = 0; i < ts.Length; i++)
 			{
-				ts[i].font = GameManager.Instance.GetSystemFont();
+				GameManager.Instance.GetSystemFont().Apply(ts[i]);
 			}
 			yield return Co.R(CO_LoadTexture_Total());
 		}
@@ -315,7 +315,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA42AB0 Offset: 0xA42AB0 VA: 0xA42AB0
 		public static IEnumerator CO_LoadLayout(Transform a_pearent, Action<UI_PlayRecord> a_cb_loadend)
 		{
-			Font t_font; // 0x1C
+			XeSys.FontInfo t_font; // 0x1C
 			StringBuilder t_bundle_name; // 0x20
 			int t_bundle_cnt; // 0x24
 			AssetBundleLoadUGUIOperationBase t_bundle_op; // 0x28

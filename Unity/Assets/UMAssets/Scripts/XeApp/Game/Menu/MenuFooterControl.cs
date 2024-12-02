@@ -216,7 +216,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C75D4 Offset: 0x6C75D4 VA: 0x6C75D4
 		// RVA: 0xED2500 Offset: 0xED2500 VA: 0xED2500
-		public IEnumerator Load(Font font, UnityAction action)
+		public IEnumerator Load(XeSys.FontInfo font, UnityAction action)
 		{
 			//0xB269E8
 			yield return Co.R(MenuBarPrefab.Load(m_root.transform, font, (MenuBarPrefab instance) => {

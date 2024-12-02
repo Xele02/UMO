@@ -61,7 +61,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x169F244 Offset: 0x169F244 VA: 0x169F244
 		public IEnumerator LoadAssetBundlePrefab()
 		{
-			Font systemFont; // 0x20
+			XeSys.FontInfo systemFont; // 0x20
 			bool isGetPoster; // 0x24
 			AssetBundleLoadLayoutOperationBase operation; // 0x28
 			FlexibleItemScrollView scrollView; // 0x2C

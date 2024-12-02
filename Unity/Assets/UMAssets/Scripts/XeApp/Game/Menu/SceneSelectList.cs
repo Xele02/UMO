@@ -165,7 +165,7 @@ namespace XeApp.Game.Menu
 					Text[] ts = g.GetComponentsInChildren<Text>(true);
 					for(int j = 0; j < ts.Length; j++)
 					{
-						ts[j].font = GameManager.Instance.GetSystemFont();
+						GameManager.Instance.GetSystemFont().Apply(ts[j]);
 					}
 					m_scrollList.AddScrollObject(g.GetComponent<SceneIconScrollContent>());
 				}

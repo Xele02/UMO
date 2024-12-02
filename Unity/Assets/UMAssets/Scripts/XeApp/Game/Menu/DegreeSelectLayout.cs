@@ -374,7 +374,7 @@ namespace XeApp.Game.Menu
 			//0x17CDE5C
 			operation = AssetBundleManager.LoadLayoutAsync(m_degree_setting.BundleName, m_degree_setting.AssetName);
 			yield return operation;
-			yield return Co.R(operation.InitializeLayoutCoroutine(MenuScene.Instance.m_font, (GameObject instance) =>
+			yield return Co.R(operation.InitializeLayoutCoroutine(MenuScene.Instance.GetFont(), (GameObject instance) =>
 			{
 				//0x11E6D64
 				m_degree_setting.SetContent(instance);
@@ -391,7 +391,7 @@ namespace XeApp.Game.Menu
 			//0x17CDB90
 			operation = AssetBundleManager.LoadLayoutAsync("ly/076.xab", "UI_DegreeButton");
 			yield return operation;
-			yield return Co.R(operation.InitializeLayoutCoroutine(MenuScene.Instance.m_font, (GameObject instance) =>
+			yield return Co.R(operation.InitializeLayoutCoroutine(MenuScene.Instance.GetFont(), (GameObject instance) =>
 			{
 				//0x11E6D98
 				m_button_list.Add(instance.GetComponent<DegreeSelectDegreeButton>());
@@ -408,7 +408,7 @@ namespace XeApp.Game.Menu
 			//0x17CE208
 			operation = AssetBundleManager.LoadLayoutAsync("ly/076.xab", "UI_DegreeButton_None");
 			yield return operation;
-			yield return Co.R(operation.InitializeLayoutCoroutine(MenuScene.Instance.m_font, (GameObject instance) =>
+			yield return Co.R(operation.InitializeLayoutCoroutine(MenuScene.Instance.GetFont(), (GameObject instance) =>
 			{
 				//0x11E6E8C
 				m_none_btn = instance.GetComponent<DegreeSelectNoneBtn>();

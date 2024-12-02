@@ -195,7 +195,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FDDAC Offset: 0x6FDDAC VA: 0x6FDDAC
 		//// RVA: 0xDD6DAC Offset: 0xDD6DAC VA: 0xDD6DAC
-		private IEnumerator Co_LoadAssetsLayoutEventStoryWindow(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsLayoutEventStoryWindow(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -221,7 +221,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FDE24 Offset: 0x6FDE24 VA: 0x6FDE24
 		//// RVA: 0xDD6E8C Offset: 0xDD6E8C VA: 0xDD6E8C
-		private IEnumerator Co_LoadAssetsLayoutPresentListItem(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsLayoutPresentListItem(string bundleName, XeSys.FontInfo font)
 		{
 			int loadCount; // 0x20
 			AssetBundleLoadLayoutOperationBase operation; // 0x24
@@ -270,7 +270,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FDE9C Offset: 0x6FDE9C VA: 0x6FDE9C
 		//// RVA: 0xDD6F6C Offset: 0xDD6F6C VA: 0xDD6F6C
-		private IEnumerator Co_LoadAssetsLayoutDownloadCancelButton(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsLayoutDownloadCancelButton(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -655,7 +655,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_LoadAccountRemoveLayout()
 		{
 			int loadCount; // 0x14
-			Font systemFont; // 0x18
+			XeSys.FontInfo systemFont; // 0x18
 			AssetBundleLoadUGUIOperationBase op; // 0x1C
 
 			//0xDDD5B8

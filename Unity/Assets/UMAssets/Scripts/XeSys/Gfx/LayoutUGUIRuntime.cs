@@ -586,9 +586,7 @@ namespace XeSys.Gfx
 				m_layout = new Layout();
 				if(m_layout.fontInfo == null)	
 				{
-					m_layout.fontInfo = new FontInfo();
-					m_layout.fontInfo.font = m_font;
-					m_layout.fontInfo.size = 1;
+					m_layout.fontInfo = XeApp.Game.GameManager.Instance.GetFontInfo(m_font);
 				}
 				scriptableLayout.Deserialize(m_layout);
 				yield return null;

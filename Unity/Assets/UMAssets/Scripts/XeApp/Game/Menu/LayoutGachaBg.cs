@@ -375,7 +375,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator LoadContents(Action callback)
 		{
 			string assetBundleName; // 0x18
-			Font font; // 0x1C
+			XeSys.FontInfo font; // 0x1C
 			AssetBundleLoadLayoutOperationBase layoutOp; // 0x20
 
 			//0x199D314

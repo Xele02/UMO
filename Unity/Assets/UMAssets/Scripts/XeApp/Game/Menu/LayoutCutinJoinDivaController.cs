@@ -152,7 +152,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x19DA67C Offset: 0x19DA67C VA: 0x19DA67C
 		private IEnumerator LoadLayout(string bundleName, string assetName, Action<GameObject> callback)
 		{
-			Font font; // 0x20
+			XeSys.FontInfo font; // 0x20
 			AssetBundleLoadLayoutOperationBase operation; // 0x24
 
 			//0x19DAB74

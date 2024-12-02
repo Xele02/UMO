@@ -606,7 +606,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_LoadLayout()
 		{
 			StringBuilder bundleName;
-			Font systemFont;
+			XeSys.FontInfo systemFont;
 			AssetBundleLoadLayoutOperationBase operation;
 			int poolSize;
 			AssetBundleLoadLayoutOperationBase operationDeco;

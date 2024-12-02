@@ -276,7 +276,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEFF540 Offset: 0xEFF540 VA: 0xEFF540
 		private IEnumerator CallUnlockHomeBgScene(int homeBgId)
 		{
-			Font systemFont; // 0x18
+			XeSys.FontInfo systemFont; // 0x18
 			AssetBundleLoadUGUIOperationBase uguiOp; // 0x1C
 
 			//0xEFFE20

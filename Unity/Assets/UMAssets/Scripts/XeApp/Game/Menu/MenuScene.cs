@@ -169,7 +169,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB2E990 Offset: 0xB2E990 VA: 0xB2E990 Slot: 10
 		protected override void DoStart()
 		{
-			m_menuTransitionControl = new TransitionRoot.MenuTransitionControl(m_bgRootObject, m_uiRootObject, m_font, treeObject);
+			m_menuTransitionControl = new TransitionRoot.MenuTransitionControl(m_bgRootObject, m_uiRootObject, GetFont(), treeObject);
 			m_statusWindowControl = new StatusWindowControl();
 			m_sortWindowControl = new SortWindowControl();
 			m_popupFilterSortWindowContrl = new PopupFilterSortWindowControl();
@@ -2456,5 +2456,10 @@ namespace XeApp.Game.Menu
 		// [CompilerGeneratedAttribute] // RVA: 0x6C831C Offset: 0x6C831C VA: 0x6C831C
 		// // RVA: 0xB37CCC Offset: 0xB37CCC VA: 0xB37CCC
 		// private IEnumerator <GotoRhythmGame>b__148_0() { }
+
+		public XeSys.FontInfo GetFont()
+		{
+			return GameManager.Instance.GetSystemFont(m_font);
+		}
 	}
 }

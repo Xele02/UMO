@@ -29,7 +29,7 @@ namespace XeApp.Game.Menu
 		public override IEnumerator LoadAssetBundlePrefab(Transform parent)
 		{
 			LayoutPopupLoginBonusPackList layout; // 0x1C
-			Font systemFont; // 0x20
+			XeSys.FontInfo systemFont; // 0x20
 			int poolSize; // 0x24
 			AssetBundleLoadLayoutOperationBase operation; // 0x28
 			int i; // 0x2C

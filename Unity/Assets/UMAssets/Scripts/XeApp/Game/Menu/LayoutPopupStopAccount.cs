@@ -44,7 +44,7 @@ namespace XeApp.Game.Menu
 				{
 					m_text00.text = bk.GetMessageByLabel("saka_error0059");
 				}
-				m_text00.lineSpacing = 0.7f;
+				m_text00.lineSpacing = GameManager.Instance.GetFontLineSpace(0.7f);
 			}
 		}
 

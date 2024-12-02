@@ -90,7 +90,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17AFAC0 Offset: 0x17AFAC0 VA: 0x17AFAC0
 		private IEnumerator SetupContent(DFKGGBMFFGB_PlayerInfo playerData, uint order, List<GCIJNCFDNON_SceneInfo> sceneList, List<int> sceneIndexList, bool isBeginner)
 		{
-			Font font; // 0x2C
+			XeSys.FontInfo font; // 0x2C
 			AssetBundleLoadLayoutOperationBase operation; // 0x30
 
 			//0x1687D0C

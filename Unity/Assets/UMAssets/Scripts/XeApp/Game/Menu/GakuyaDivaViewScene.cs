@@ -28,7 +28,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_LoadResource()
 		{
 			string bundleName; // 0x14
-			Font systemFont; // 0x18
+			XeSys.FontInfo systemFont; // 0x18
 			int bundleLoadCount; // 0x1C
 			AssetBundleLoadUGUIOperationBase uguiOp; // 0x20
 

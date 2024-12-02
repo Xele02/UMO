@@ -30,7 +30,7 @@ namespace XeApp.Core
 
 		//[IteratorStateMachineAttribute] // RVA: 0x748138 Offset: 0x748138 VA: 0x748138
 		// RVA: 0xE11AE4 Offset: 0xE11AE4 VA: 0xE11AE4 Slot: 11
-		public override IEnumerator InitializeUGUICoroutine(Font font, Action<GameObject> finish)
+		public override IEnumerator InitializeUGUICoroutine(XeSys.FontInfo font, Action<GameObject> finish)
 		{
 			//0xE11CA8
 #if UNITY_EDITOR || UNITY_STANDALONE
@@ -40,9 +40,10 @@ namespace XeApp.Core
 			Text[] texts  = obj.GetComponentsInChildren<Text>(true);
 			Array.ForEach(texts, (Text text) => {
 				//0xE11BCC
-				if(text.font  != null)
+				font.Apply(text);
+				/*if(text.font  != null)
 					return;
-				text.font = font;
+				text.font = font;*/
 			});
 			if(finish != null)
 				finish(obj);

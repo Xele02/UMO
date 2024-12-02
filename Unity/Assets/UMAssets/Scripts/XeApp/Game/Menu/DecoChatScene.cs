@@ -784,7 +784,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator AllAssetsLoad()
 		{
 			string bundleName; // 0x14
-			Font systemFont; // 0x18
+			XeSys.FontInfo systemFont; // 0x18
 
 			//0xC56338
 			bundleName = "ly/203.xab";
@@ -806,7 +806,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D042C Offset: 0x6D042C VA: 0x6D042C
 		//// RVA: 0xC54CC8 Offset: 0xC54CC8 VA: 0xC54CC8
-		private IEnumerator Co_LoadAssetsLayoutScrollWindow(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsLayoutScrollWindow(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -832,7 +832,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D04A4 Offset: 0x6D04A4 VA: 0x6D04A4
 		//// RVA: 0xC54DA8 Offset: 0xC54DA8 VA: 0xC54DA8
-		private IEnumerator Co_LoadAssetsLayoutFooter(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsLayoutFooter(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -853,7 +853,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D051C Offset: 0x6D051C VA: 0x6D051C
 		//// RVA: 0xC54E88 Offset: 0xC54E88 VA: 0xC54E88
-		private IEnumerator Co_LoadAssetsLayoutStampWindow(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsLayoutStampWindow(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -875,7 +875,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D0594 Offset: 0x6D0594 VA: 0x6D0594
 		//// RVA: 0xC54F68 Offset: 0xC54F68 VA: 0xC54F68
-		private IEnumerator Co_LoadAssetsLayoutStampMakerButton(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsLayoutStampMakerButton(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 

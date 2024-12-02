@@ -154,7 +154,7 @@ namespace XeApp.Game.Menu
 		public IEnumerator InitHomeCoroutine(TransitionRoot root, CommonDivaBalloon divaBalloon, MenuDivaTalk divaTalk, Action callback)
 		{
 			string bundleName; // 0x24
-			Font systemFont; // 0x28
+			XeSys.FontInfo systemFont; // 0x28
 
 			//0x14BC668
 			m_root = root;
@@ -619,7 +619,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E66B4 Offset: 0x6E66B4 VA: 0x6E66B4
 		//// RVA: 0x14B12E0 Offset: 0x14B12E0 VA: 0x14B12E0
-		private IEnumerator Co_LoadAssetsLayoutInfo(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsLayoutInfo(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -644,7 +644,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E672C Offset: 0x6E672C VA: 0x6E672C
 		//// RVA: 0x14B13C0 Offset: 0x14B13C0 VA: 0x14B13C0
-		private IEnumerator Co_LoadAssetsSystemMessage(string bundleName, Font font, Transform parent)
+		private IEnumerator Co_LoadAssetsSystemMessage(string bundleName, XeSys.FontInfo font, Transform parent)
 		{
 			AssetBundleLoadUGUIOperationBase operation;
 
@@ -673,7 +673,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E67A4 Offset: 0x6E67A4 VA: 0x6E67A4
 		//// RVA: 0x14B14B8 Offset: 0x14B14B8 VA: 0x14B14B8
-		private IEnumerator Co_LoadAssetsLayoutCounter(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsLayoutCounter(string bundleName, XeSys.FontInfo font)
 		{
 			int bundleLoadCount; // 0x1C
 			AssetBundleLoadUGUIOperationBase operation; // 0x20
@@ -786,7 +786,7 @@ namespace XeApp.Game.Menu
 		public IEnumerator InitDecoCoroutine(TransitionRoot root, Action callback)
 		{
 			string bundleName; // 0x1C
-			Font systemFont; // 0x20
+			XeSys.FontInfo systemFont; // 0x20
 
 			//0x14BBE08
 			m_isLoading = true;
@@ -817,7 +817,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E692C Offset: 0x6E692C VA: 0x6E692C
 		//// RVA: 0x14B1C98 Offset: 0x14B1C98 VA: 0x14B1C98
-		private IEnumerator Co_LoadAssetsLayoutCounterDeco(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsLayoutCounterDeco(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -843,7 +843,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E69A4 Offset: 0x6E69A4 VA: 0x6E69A4
 		//// RVA: 0x14B1D78 Offset: 0x14B1D78 VA: 0x14B1D78
-		private IEnumerator Co_LoadAssetsLayoutInfoDeco(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsLayoutInfoDeco(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -869,7 +869,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E6A1C Offset: 0x6E6A1C VA: 0x6E6A1C
 		//// RVA: 0x14B1E58 Offset: 0x14B1E58 VA: 0x14B1E58
-		private IEnumerator Co_LoadAssetsLayoutMessageDeco(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsLayoutMessageDeco(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -1272,7 +1272,7 @@ namespace XeApp.Game.Menu
 		public IEnumerator InitGakuyaCoroutine(TransitionRoot root, Action callback)
 		{
 			string bundleName; // 0x1C
-			Font systemFont; // 0x20
+			XeSys.FontInfo systemFont; // 0x20
 
 			//0x14BC284
 			m_isLoading = true;

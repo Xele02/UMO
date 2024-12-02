@@ -530,7 +530,7 @@ namespace XeApp.Game.Menu
 			// private AssetBundleLoadUGUIOperationBase <uguiOp>5__6; // 0x24
 			//0xF368D0
 			StringBuilder bundleName = new StringBuilder();
-			Font systemFont = GameManager.Instance.GetSystemFont();
+			XeSys.FontInfo systemFont = GameManager.Instance.GetSystemFont();
 			int bundleLoadCount = 0;
 			bundleName.Set("ly/038.xab");
 			AssetBundleLoadLayoutOperationBase lytOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_MusicInfo");

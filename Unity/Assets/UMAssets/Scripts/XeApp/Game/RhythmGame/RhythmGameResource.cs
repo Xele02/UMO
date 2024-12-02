@@ -770,7 +770,7 @@ namespace XeApp.Game.RhythmGame
 			StringBuilder bundleName; // 0x18
 			StringBuilder assetName; // 0x1C
 			ILDKBCLAFPB.MPHNGGECENI_Option option; // 0x20
-			Font font; // 0x24
+			XeSys.FontInfo font; // 0x24
 			AssetBundleLoadLayoutOperationBase lytAssetOp; // 0x28
 			AssetBundleLoadAssetOperation operation; // 0x2C
 

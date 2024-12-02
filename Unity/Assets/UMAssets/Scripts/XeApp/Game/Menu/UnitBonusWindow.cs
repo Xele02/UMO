@@ -55,7 +55,7 @@ namespace XeApp.Game.Menu
 				Text[] ts = go.GetComponentsInChildren<Text>(true);
 				for(int i = 0; i < ts.Length; i++)
 				{
-					ts[i].font = GameManager.Instance.GetSystemFont();
+					GameManager.Instance.GetSystemFont().Apply(ts[i]);
 				}
 				m_contentLayout = go.GetComponent<UnitBonusContent>();
 				m_scrollSupport.BeginAddView();

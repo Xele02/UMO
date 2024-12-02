@@ -523,7 +523,7 @@ namespace XeApp.Game.Menu
 		{
 			int loadCount; // 0x28
 			StringBuilder bundleName; // 0x2C
-			Font systemFont; // 0x30
+			XeSys.FontInfo systemFont; // 0x30
 			AssetBundleLoadLayoutOperationBase operation; // 0x34
 
 			//0x10528AC
