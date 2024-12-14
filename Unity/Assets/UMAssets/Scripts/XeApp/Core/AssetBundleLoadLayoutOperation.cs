@@ -109,6 +109,7 @@ namespace XeApp.Core
             if(scriptable != null)
             {
                 layout.Import(scriptable);
+                //runtime.debugLayout = scriptable;
                 for(int j = 0; j < runtime.TexturePathList.Length; j++)
                 {
                     TexUVList uvList = GameManager.Instance.UnionTextureManager.GetTexUvList(runtime.UvListPathList[j]);
