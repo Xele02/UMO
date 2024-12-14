@@ -211,7 +211,7 @@ namespace XeSys.Gfx
 					vt.m.Rot = m_FrameDataList[Base].TransFormData.m.Rot;
 					isUpdateSRT = true;
 				}
-				if((m_AnimFlag & 0x180) == 0x180)
+				if((m_AnimFlag & 0x180) == 0x180) // 128 & 256
 				{
 					vt.m.Color = m_FrameDataList[Base].TransFormData.m.Color;
 					isUpdateSRT = true;
@@ -233,7 +233,7 @@ namespace XeSys.Gfx
 												m_FrameDataList[Base].TransFormData.m.Color.b,
 												vt.m.Color.a);
 				}
-				if((m_AnimFlag & 8) != 0)
+				if((m_AnimFlag & 512) != 0)
 					vt.m.Center = m_FrameDataList[Base].TransFormData.m.Center;
 				return true;
 			}
@@ -302,7 +302,7 @@ namespace XeSys.Gfx
 				Color col = Color.Lerp(m_FrameDataList[Base].TransFormData.m.Color, m_FrameDataList[Target].TransFormData.m.Color, rate);
 				vt.m.Color = new Color(col.r, col.g, col.b, vt.m.Color.a);
 			}
-			if((m_AnimFlag & 8) != 0)
+			if((m_AnimFlag & 512) != 0)
 				vt.m.Center = Vector2.Lerp(m_FrameDataList[Base].TransFormData.m.Center, m_FrameDataList[Target].TransFormData.m.Center, rate);
 			return true;
 		}
