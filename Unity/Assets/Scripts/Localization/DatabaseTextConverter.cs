@@ -20,7 +20,7 @@ public static class DatabaseTextConverter
 {
     public static string PoPath = Application.dataPath + "/../../Localization/Database/{name}/po/";
     public static string LocalDatabasePath = Application.dataPath + "/Resources/Localizations/{name}/";
-    public static List<string> supportedLanguage = new List<string>() { "fr", "en", "zh_Hans" };
+    public static List<string> supportedLanguage = new List<string>() { "fr", "en", "zh_Hans", "ko" };
 
 #if UNITY_EDITOR
 	[MenuItem("UMO/Localization/Export Database strings", validate = true)]
