@@ -890,6 +890,7 @@ namespace XeApp.Game.Menu
 			InputPopupSetting s = new InputPopupSetting();
 			s.TitleText = bk.GetMessageByLabel("popup_title_profil_01");
 			s.InputText = playerName;
+			s.CharacterLimit = 10;
 			s.WindowSize = SizeType.Middle;
 			s.Description = bk.GetMessageByLabel("popup_title_profil_02");
 			s.Notes = bk.GetMessageByLabel("popup_title_profil_03");
