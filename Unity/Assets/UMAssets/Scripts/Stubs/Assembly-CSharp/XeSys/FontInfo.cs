@@ -11,6 +11,7 @@ namespace XeSys
 		public Font font;
 		public int size = 1;
 		public float lineSpacing = -1;
+		public float widgetHeightRatio = 1;
 
 		public void Apply(Text Text)
 		{
@@ -22,6 +23,13 @@ namespace XeSys
 				{
 					Text.lineSpacing = GetLineSpace(Text.lineSpacing);
 				}
+				if(widgetHeightRatio != 1)
+				{
+					RectTransform rt = Text.rectTransform;
+					if(NeedFixHeight(rt, Text.fontSize))
+						Text.verticalOverflow = VerticalWrapMode.Overflow;
+				}
+				Text.FontTextureChanged();
 			}
 		}
 		public void Apply(TextMesh Text)
@@ -35,7 +43,26 @@ namespace XeSys
 				{
 					Text.lineSpacing = GetLineSpace(Text.lineSpacing);
 				}
+				if(widgetHeightRatio != 1)
+				{
+					RectTransform rt = Text.GetComponent<RectTransform>();
+				}
 			}
+		}
+
+		private bool NeedFixHeight(RectTransform rt, float fontSize)
+		{
+			if(rt != null)
+			{
+				float minSize = Mathf.CeilToInt(widgetHeightRatio * fontSize);
+				Vector3[] corners = new Vector3[4];
+				rt.GetLocalCorners(corners);
+				if(Mathf.Abs(corners[0].y - corners[1].y) < minSize)
+				{
+					return true;
+				}
+			}
+			return false;
 		}
 
 		public float GetLineSpace(float lineSpace)
