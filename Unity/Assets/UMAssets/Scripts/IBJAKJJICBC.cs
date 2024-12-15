@@ -85,7 +85,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 	private int KAEIHNCACOD = FBGGEFFJJHB_Key; // 0x68
 	private sbyte MPDBHMLFLLA = JFOFMKBJBBE_False; // 0x6C
 	private sbyte JMFIOFIBLFH = JFOFMKBJBBE_False; // 0x6D
-	public WeekdayEventAttr.Type IHKFMJDOBAH; // 0x70
+	public WeekdayEventAttr.Type IHKFMJDOBAH_WeekDayAttr; // 0x70
 	private sbyte CHOLAKGHAEN_IsWeelkyEventCrypted = JFOFMKBJBBE_False; // 0x74
 	private long PMEGFLFDDKH_WeeklyEndTimeCrypted = FBGGEFFJJHB_Key; // 0x78
 	private sbyte NKKAIPDPEEI_HasBoostCrypted = JFOFMKBJBBE_False; // 0x80
@@ -94,7 +94,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 	private int KOOODCKJNJO = FBGGEFFJJHB_Key; // 0x88
 	private int NEBJMHHHDMO = FBGGEFFJJHB_Key; // 0x8C
 	private int PDLMMOJDBKM = FBGGEFFJJHB_Key; // 0x90
-	private int[] LHENMNBDFNM; // 0x94
+	private int[] LHENMNBDFNM_WeeklyItem; // 0x94
 	private string MJEPJCDOAML; // 0x98
 	public IBJAKJJICBC.GFKEJIHPAOM AFCMIOIGAJN_EventInfo; // 0x9C
 	public int LOFKFOCAJGB = FBGGEFFJJHB_Key; // 0xA0
@@ -168,11 +168,11 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 	}
 
 	// // RVA: 0x1213814 Offset: 0x1213814 VA: 0x1213814
-	public int ICHJBDPJNMA(WeekdayEventAttr.Type INDDJNMPONH, int IKPIDCFOFEA)
+	public int ICHJBDPJNMA_GetWeeklyItem(WeekdayEventAttr.Type INDDJNMPONH, int IKPIDCFOFEA)
 	{
-		if(INDDJNMPONH != 0 && LHENMNBDFNM != null)
+		if(INDDJNMPONH != 0 && LHENMNBDFNM_WeeklyItem != null)
 		{
-			return LHENMNBDFNM[IKPIDCFOFEA];
+			return LHENMNBDFNM_WeeklyItem[IKPIDCFOFEA];
 		}
 		return 0;
 	}
@@ -180,9 +180,9 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 	// // RVA: 0x1213860 Offset: 0x1213860 VA: 0x1213860
 	public int LMPNAPIGAEA(WeekdayEventAttr.Type INDDJNMPONH)
 	{
-		if (INDDJNMPONH == WeekdayEventAttr.Type.None || ICHJBDPJNMA(INDDJNMPONH, 2) == 0)
+		if (INDDJNMPONH == WeekdayEventAttr.Type.None || ICHJBDPJNMA_GetWeeklyItem(INDDJNMPONH, 2) == 0)
 			return 0;
-		EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(ICHJBDPJNMA(INDDJNMPONH, 2));
+		EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(ICHJBDPJNMA_GetWeeklyItem(INDDJNMPONH, 2));
 		if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit)
 		{
 			return OHCAABOMEOF.LDGFHMMAFOC(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENMHPBGOOII_Week, 6);
@@ -190,7 +190,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 		else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.HLCHKCJLEGK_GrowItem)
 		{
 			int a = 1;
-			int a2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NKDGLGCAPEI_GrowItem.CDENCMNHNGA_GrowItemList[EKLNMHFCAOI.DEACAHNLMNI_getItemId(ICHJBDPJNMA(INDDJNMPONH, 2)) - 1].INDDJNMPONH;
+			int a2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NKDGLGCAPEI_GrowItem.CDENCMNHNGA_GrowItemList[EKLNMHFCAOI.DEACAHNLMNI_getItemId(ICHJBDPJNMA_GetWeeklyItem(INDDJNMPONH, 2)) - 1].INDDJNMPONH;
 			if (a2 >= 2 && a2 < 6)
 				a = new int[4] { 4, 3, 5, 2 }[a2 - 2];
 			return OHCAABOMEOF.LDGFHMMAFOC(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENMHPBGOOII_Week, a);
@@ -212,7 +212,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 	// // RVA: 0x1213B4C Offset: 0x1213B4C VA: 0x1213B4C
 	private void KDPFCMAALPO(int GHBPLHBNMBK, bool GIKLNODJKFK)
 	{
-		LHENMNBDFNM = new int[3];
+		LHENMNBDFNM_WeeklyItem = new int[3];
 		KEODKEGFDLD_FreeMusicInfo fminfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(GHBPLHBNMBK);
 		int a1 = fminfo.ONLFLGPMAAN_GetRareRateId(GIKLNODJKFK);
 		OPGDJANLKBM_RateInfo rarerate = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HGLIIPFLMFB_Drop.ABNFGCEDJIM_RareRate.Find((OPGDJANLKBM_RateInfo GHPLINIACBB) =>
@@ -225,7 +225,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 			//0x1220274
 			return GHPLINIACBB.LIHEBNPAIFI_SId == fminfo.JCDKMICANJO_RareSetId;
 		});
-		HNJKJCDDIMG_SetInfo set = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HGLIIPFLMFB_Drop.LMILCGIFPGC_RareSet.Find((HNJKJCDDIMG_SetInfo GHPLINIACBB) =>
+		HNJKJCDDIMG_SetInfo set = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HGLIIPFLMFB_Drop.KPEOJPKLJBH_Set.Find((HNJKJCDDIMG_SetInfo GHPLINIACBB) =>
 		{
 			//0x12202D8
 			return GHPLINIACBB.LIHEBNPAIFI_SId == fminfo.MGLDIOILOFF_NormalSetId;
@@ -238,7 +238,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 		});
 		if(set == null || rate == null)
 		{
-			LHENMNBDFNM[0] = 0;
+			LHENMNBDFNM_WeeklyItem[0] = 0;
 		}
 		else
 		{
@@ -252,9 +252,10 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 						int setId = set.FKNBLDPIPMC_GetItemId(i);
 						if(((int)EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(setId) | 4) == 7)
 						{
-							if(a3 < LHENMNBDFNM.Length)
+							if(a3 < LHENMNBDFNM_WeeklyItem.Length)
 							{
-								LHENMNBDFNM[a3] = setId;
+								LHENMNBDFNM_WeeklyItem[a3] = setId;
+								UnityEngine.Debug.LogError("Added item "+setId);
 								a3++;
 							}
 						}
@@ -362,7 +363,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 		if(!HCIKDFECJGE)
 		{
 			NKEIFPPGNLH_WeeklyendTime = 0;
-			IHKFMJDOBAH = WeekdayEventAttr.Type.None;
+			IHKFMJDOBAH_WeekDayAttr = WeekdayEventAttr.Type.None;
 			LHONOILACFL_IsWeeklyEvent = false;
 			BELHFPMBAPJ_WeekPlay = 0;
 			JOJNGDPHOKG_WeeklyMax = 0;
@@ -371,7 +372,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 		else
 		{
 			KDPFCMAALPO(GHBPLHBNMBK, GIKLNODJKFK);
-			IHKFMJDOBAH = (WeekdayEventAttr.Type)(NLKONOBBDJK + 1);
+			IHKFMJDOBAH_WeekDayAttr = (WeekdayEventAttr.Type)(NLKONOBBDJK + 1);
 			LHONOILACFL_IsWeeklyEvent = true;
 			MJEPJCDOAML = "";
 			DKCJADHKGAN_EventWeekDay.JFFPEKOEINE weekData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.CLLPBOPLICM_EventWeekDay.PPIBJECKCEF(JHNMKKNEENE);
@@ -383,7 +384,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 			NKEIFPPGNLH_WeeklyendTime = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0) + 86400;
 			BELHFPMBAPJ_WeekPlay = saveInfo.FECIGAOOFBE_Wply;
 			JOJNGDPHOKG_WeeklyMax = IOFOHHOJCBE;
-			EKANGPODCEP_EventId = LMPNAPIGAEA(IHKFMJDOBAH);
+			EKANGPODCEP_EventId = LMPNAPIGAEA(IHKFMJDOBAH_WeekDayAttr);
 		}
 		EEFLOOBOAGF = musicInfo.EEFLOOBOAGF;
 		LDGOHPAPBMM_IsNew = true;

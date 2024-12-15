@@ -1149,7 +1149,7 @@ namespace XeApp.Game.Menu
 				if(selectMusicData.LHONOILACFL_IsWeeklyEvent)
 				{
 					MenuScene.Instance.InputDisable();
-					MBCPNPNMFHB.HHCJCDFCLOB.FLLLPBIECCP(selectMusicData.CIOCOOMCMKO(selectMusicData.IHKFMJDOBAH), OnWebViewClose, OnNetErrorToTitle);
+					MBCPNPNMFHB.HHCJCDFCLOB.FLLLPBIECCP(selectMusicData.CIOCOOMCMKO(selectMusicData.IHKFMJDOBAH_WeekDayAttr), OnWebViewClose, OnNetErrorToTitle);
 				}
 				else
 				{
