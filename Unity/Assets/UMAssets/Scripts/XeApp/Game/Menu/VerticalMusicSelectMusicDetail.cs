@@ -481,7 +481,7 @@ namespace XeApp.Game.Menu
 			List<int> list = new List<int>(3);
 			for (int i = 0; i < 3; i++)
 			{
-				int val = musicData.ICHJBDPJNMA(musicData.IHKFMJDOBAH, i);
+				int val = musicData.ICHJBDPJNMA_GetWeeklyItem(musicData.IHKFMJDOBAH_WeekDayAttr, i);
 				if(val > 0)
 					list.Add(val);
 			}

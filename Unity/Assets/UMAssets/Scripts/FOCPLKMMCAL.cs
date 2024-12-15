@@ -717,6 +717,7 @@ public class FOCPLKMMCAL
 									{
 										itemId = 40000 + data.NEHHNEPPIBK();
 									}
+									UnityEngine.Debug.LogError("Add item "+itemId);
 									if(JCCBGECHIEI)
 									{
 										//LAB_013ee8e4
