@@ -13,10 +13,10 @@ namespace XeSys
 		public float lineSpacing = -1;
 		public float widgetHeightRatio = 1;
 
-		public void Apply(Text Text)
+		public void Apply(Text Text, bool Force = true)
 		{
 			FontInfo defInfo = GameManager.Instance.GetSystemFont(true);
-			if(Text.font == null || Text.font == defInfo.font)
+			if(Text.font == null || Text.font == defInfo.font || Force)
 			{
 				Text.font = font;
 				if(lineSpacing != -1)
@@ -32,12 +32,11 @@ namespace XeSys
 				Text.FontTextureChanged();
 			}
 		}
-		public void Apply(TextMesh Text)
+		public void Apply(TextMesh Text, bool Force = true)
 		{
 			FontInfo defInfo = GameManager.Instance.GetSystemFont(true);
-			if(Text.font == null || Text.font == defInfo.font)
+			if(Text.font == null || Text.font == defInfo.font || Force)
 			{
-				FontInfo info = GameManager.Instance.GetSystemFont();
 				Text.font = font;
 				if(lineSpacing != -1)
 				{

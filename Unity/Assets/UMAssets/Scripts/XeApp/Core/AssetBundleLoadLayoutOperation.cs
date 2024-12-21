@@ -74,7 +74,7 @@ namespace XeApp.Core
                     //text.font = font;
                     text.horizontalOverflow = HorizontalWrapMode.Overflow;
                 }
-                fontInfo.Apply(text);
+                fontInfo.Apply(text, false);
             });
             if(finish != null)
             {
