@@ -38,7 +38,7 @@ namespace XeApp.Game.Menu
 				float h = Height / BaseTexture.height;
 				int idx = ((int)rank - 1) % Unit;
 				image.uvRect = new Rect(w * (idx % Column), 
-				1 - h * (idx / Row) - h, 
+				1 - h * (idx / Column) - h, 
 				w, h);
 			}
 		}
