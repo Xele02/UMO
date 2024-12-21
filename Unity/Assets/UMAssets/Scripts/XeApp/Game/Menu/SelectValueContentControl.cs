@@ -38,7 +38,7 @@ namespace XeApp.Game.Menu
 				{
 					txts[i].horizontalOverflow = HorizontalWrapMode.Overflow;
 				}
-				f.Apply(txts[i]);
+				f.Apply(txts[i], txts[i].font != f.font);
 			}
 			Transform t = transform.Find("Value");
 			t.GetComponent<RectTransform>().sizeDelta = item_size;

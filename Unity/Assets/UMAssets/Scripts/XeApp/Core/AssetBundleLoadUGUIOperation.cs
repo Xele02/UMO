@@ -40,7 +40,7 @@ namespace XeApp.Core
 			Text[] texts  = obj.GetComponentsInChildren<Text>(true);
 			Array.ForEach(texts, (Text text) => {
 				//0xE11BCC
-				font.Apply(text);
+				font.Apply(text, false);
 				/*if(text.font  != null)
 					return;
 				text.font = font;*/
