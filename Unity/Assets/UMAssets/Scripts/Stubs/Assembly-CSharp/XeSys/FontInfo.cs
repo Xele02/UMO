@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using XeApp.Game;
@@ -69,6 +70,66 @@ namespace XeSys
 			if(lineSpacing != -1)
 				return lineSpace * lineSpacing / 0.6f;
 			return lineSpace;
+		}
+
+		public Text ReplaceTmpText(TextMeshProUGUI Text)
+		{
+			if(RuntimeSettings.CurrentSettings.Language == "zh_Hans")
+			{
+				GameObject go = new GameObject(Text.name);
+				Text t = go.AddComponent<Text>();
+				GameManager.Instance.GetSystemFont().Apply(t);
+				t.color = Text.color;
+				t.fontSize = (int)Text.fontSize;
+				switch(Text.alignment)
+				{
+					case TextAlignmentOptions.TopLeft:
+						t.alignment = TextAnchor.UpperLeft;
+						break;
+					case TextAlignmentOptions.Top:
+					case TextAlignmentOptions.TopJustified:
+						t.alignment = TextAnchor.UpperCenter;
+						break;
+					case TextAlignmentOptions.TopRight:
+						t.alignment = TextAnchor.UpperRight;
+						break;
+					case TextAlignmentOptions.Left:
+						t.alignment = TextAnchor.MiddleLeft;
+						break;
+					case TextAlignmentOptions.Center:
+						t.alignment = TextAnchor.MiddleCenter;
+						break;
+					case TextAlignmentOptions.Right:
+						t.alignment = TextAnchor.MiddleRight;
+						break;
+					case TextAlignmentOptions.BottomLeft:
+						t.alignment = TextAnchor.LowerLeft;
+						break;
+					case TextAlignmentOptions.Bottom:
+					case TextAlignmentOptions.BottomJustified:
+						t.alignment = TextAnchor.LowerCenter;
+						break;
+					case TextAlignmentOptions.BottomRight:
+						t.alignment = TextAnchor.LowerRight;
+						break;
+					default:
+						UnityEngine.Debug.LogError("Unkown alignment : "+Text.alignment);
+						break;
+				}
+				t.horizontalOverflow = Text.enableWordWrapping ? HorizontalWrapMode.Wrap : HorizontalWrapMode.Overflow;
+				t.verticalOverflow = Text.isTextOverflowing ? VerticalWrapMode.Overflow : VerticalWrapMode.Truncate;
+				t.text = Text.text;
+				t.transform.SetParent(Text.transform.parent);
+				t.transform.SetSiblingIndex(Text.transform.GetSiblingIndex());
+				t.rectTransform.sizeDelta = Text.rectTransform.sizeDelta;
+				t.rectTransform.anchoredPosition = Text.rectTransform.anchoredPosition;
+				t.rectTransform.anchorMax = Text.rectTransform.anchorMax;
+				t.rectTransform.anchorMin = Text.rectTransform.anchorMin;
+				t.rectTransform.pivot = Text.rectTransform.pivot;
+				GameObject.Destroy(Text.gameObject);
+				return t;
+			}
+			return null;
 		}
 
 	}
