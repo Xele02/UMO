@@ -93,8 +93,10 @@ namespace XeApp.Game.Menu
 		private RawImageEx[] m_weeklyItemImage = new RawImageEx[3]; // 0x98
 		[SerializeField]
 		private TextMeshProUGUI m_weeklyRemainTime; // 0x9C
+		private Text m_weeklyRemainTimeText;
 		[SerializeField]
 		private TextMeshProUGUI m_weeklyRemainCount; // 0xA0
+		private Text m_weeklyRemainCountText;
 		[SerializeField]
 		private UGUIButton m_weeklyDescButton; // 0xA4
 		// [HeaderAttribute] // RVA: 0x674F00 Offset: 0x674F00 VA: 0x674F00
@@ -126,6 +128,7 @@ namespace XeApp.Game.Menu
 		private CanvasGroup m_eventCountingObj; // 0xD4
 		[SerializeField]
 		private TextMeshProUGUI m_eventRemainTime; // 0xD8
+		private Text m_eventRemainTimeText;
 		private int m_isOnUnitIndex; // 0xDC
 		private List<int> m_itemIdList = new List<int>(3); // 0xE0
 
@@ -186,6 +189,9 @@ namespace XeApp.Game.Menu
 					}
 				}
 			});
+			m_weeklyRemainCountText = GameManager.Instance.GetSystemFont().ReplaceTmpText(m_weeklyRemainCount);
+			m_weeklyRemainTimeText = GameManager.Instance.GetSystemFont().ReplaceTmpText(m_weeklyRemainTime);
+			m_eventRemainTimeText = GameManager.Instance.GetSystemFont().ReplaceTmpText(m_eventRemainTime);
 		}
 
 		// // RVA: 0xBDEB04 Offset: 0xBDEB04 VA: 0xBDEB04
@@ -223,7 +229,10 @@ namespace XeApp.Game.Menu
 			m_ScoreRankingDescButton.gameObject.SetActive(false);
 			m_ScoreRankingEventRewardButton.gameObject.SetActive(false);
 			m_ScoreRankingObj.SetActive(false);
-			m_eventRemainTime.enabled = showRemainTime;
+			if(m_eventRemainTime != null)
+				m_eventRemainTime.enabled = showRemainTime;
+			if(m_eventRemainTimeText != null)
+				m_eventRemainTimeText.enabled = showRemainTime;
 			if (!isVisible)
 				return;
 			switch(remainTimeType)
@@ -457,7 +466,10 @@ namespace XeApp.Game.Menu
 		{
 			if(remainTimeType >= MusicRemainTimeType.ScoreRanking)
 			{
-				m_eventRemainTime.text = string.Format(m_eventRemainTimeFormat, time);
+				if(m_eventRemainTime != null)
+					m_eventRemainTime.text = string.Format(m_eventRemainTimeFormat, time);
+				if(m_eventRemainTimeText != null)
+					m_eventRemainTimeText.text = string.Format(m_eventRemainTimeFormat, time);
 			}
 			else if(remainTimeType == MusicRemainTimeType.HighLevel)
 			{
@@ -465,14 +477,20 @@ namespace XeApp.Game.Menu
 			}
 			else if(remainTimeType == MusicRemainTimeType.Weekly)
 			{
-				m_weeklyRemainTime.text = string.Format(m_eventRemainTimeFormat, time);
+				if(m_weeklyRemainTime != null)
+					m_weeklyRemainTime.text = string.Format(m_eventRemainTimeFormat, time);
+				if(m_weeklyRemainTimeText != null)
+					m_weeklyRemainTimeText.text = string.Format(m_eventRemainTimeFormat, time);
 			}
 		}
 
 		// // RVA: 0xBDFD40 Offset: 0xBDFD40 VA: 0xBDFD40
 		public void SetWeeklyEventCount(int count)
 		{
-			m_weeklyRemainCount.text = string.Format(m_eventRemainCountFormat, count);
+			if(m_weeklyRemainCount != null)
+				m_weeklyRemainCount.text = string.Format(m_eventRemainCountFormat, count);
+			if(m_weeklyRemainCountText != null)
+				m_weeklyRemainCountText.text = string.Format(m_eventRemainCountFormat, count);
 		}
 
 		// // RVA: 0xBDFDF0 Offset: 0xBDFDF0 VA: 0xBDFDF0
