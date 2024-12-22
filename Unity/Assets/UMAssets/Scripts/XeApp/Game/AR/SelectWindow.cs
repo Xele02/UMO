@@ -36,7 +36,7 @@ namespace XeApp.Game.AR
             rt.offsetMax = Vector3.zero;
             for(int i = 0; i < m_text.Length; i++)
             {
-                m_text[i].font = GameManager.Instance.GetSystemFont();
+                GameManager.Instance.GetSystemFont().Apply(m_text[i]);
                 m_text[i].text = m_message[i];
             }
             if(m_button != null)

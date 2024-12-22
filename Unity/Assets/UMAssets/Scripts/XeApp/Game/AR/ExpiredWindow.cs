@@ -29,7 +29,7 @@ namespace XeApp.Game.AR
             r.localScale = Vector3.one;
             r.offsetMin = Vector3.zero;
             r.offsetMax = Vector3.zero;
-            m_messageText.font = GameManager.Instance.GetSystemFont();
+            GameManager.Instance.GetSystemFont().Apply(m_messageText);
             SetMessage(MessageManager.Instance.GetMessage("menu", "ar_popup_expired_message"));
             yield return null;
             setBodyTextSize();

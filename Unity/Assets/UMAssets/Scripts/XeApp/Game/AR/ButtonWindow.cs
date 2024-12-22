@@ -52,9 +52,9 @@ namespace XeApp.Game.AR
             rt.localScale = Vector3.one;
             rt.offsetMin = Vector3.zero;
             rt.offsetMax = Vector3.zero;
-            m_messageText.font = GameManager.Instance.GetSystemFont();
+            GameManager.Instance.GetSystemFont().Apply(m_messageText);
             m_messageText.text = m_message;
-            m_buttonText.font = GameManager.Instance.GetSystemFont();
+            GameManager.Instance.GetSystemFont().Apply(m_buttonText);
             m_buttonText.text = m_buttonName;
             if(m_button != null)
                 m_button.onClick.AddListener(CallbackSelect);

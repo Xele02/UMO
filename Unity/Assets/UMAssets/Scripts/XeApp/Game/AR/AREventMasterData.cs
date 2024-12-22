@@ -118,6 +118,14 @@ namespace XeApp.Game.AR
 				data.enable = fileData.GCKNBNMLCEF[i].PLALNIIBLOF;
 				m_eventTime.Add(data);
 			}
+			// Add Ar time for UMO
+			{
+				EventTime data = new EventTime();
+				data.startTime = 0;
+				data.endTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime() + 3600;
+				data.enable = 2;
+				m_eventTime.Add(data);
+			}
 		}
 
 		// // RVA: 0xBB7C6C Offset: 0xBB7C6C VA: 0xBB7C6C
@@ -191,7 +199,20 @@ namespace XeApp.Game.AR
 		}
 
 		// // RVA: 0xBB7E4C Offset: 0xBB7E4C VA: 0xBB7E4C
-		// public AREventMasterData.EventTime FindEventTime() { }
+		// RVA: 0x11D4334 Offset: 0x11D4334 VA: 0x11D4334
+		public EventTime FindEventTime()
+		{
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			for(int i = 0; i < m_eventTime.Count; i++)
+			{
+				if(m_eventTime[i].enable == 2)
+				{
+					if(m_eventTime[i].startTime <= time && m_eventTime[i].endTime >= time)
+						return m_eventTime[i];
+				}
+			}
+			return null;
+		}
 
 	}
 }

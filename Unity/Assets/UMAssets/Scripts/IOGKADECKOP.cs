@@ -1751,10 +1751,15 @@ public class IOGKADECKOP
 	private void GCGFGMICEGF()
 	{
 		EHKDIJELHAO = false;
-		//EHKDIJELHAO = true; // enable AR
 		OOIBKCCMCAG_HasCustomBg = false;
 		if (AREventMasterData.Instance.IsReady())
 		{
+			AREventMasterData.EventTime ev = AREventMasterData.Instance.FindEventTime();
+			if(ev != null)
+			{
+				EHKDIJELHAO = true;
+				EHKDIJELHAO = UdonLib.AndroidUtils.CheckCameraHardware();
+			}
 			AREventMasterData.Chenge_bg bg = AREventMasterData.Instance.FindChangeBG();
 			if(bg == null)
 				return;

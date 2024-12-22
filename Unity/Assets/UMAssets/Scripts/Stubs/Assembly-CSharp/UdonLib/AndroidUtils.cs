@@ -128,6 +128,13 @@ namespace UdonLib
 		}
 
 		// // RVA: 0xE0B31C Offset: 0xE0B31C VA: 0xE0B31C
-		// public static bool CheckCameraHardware() { }
+		// RVA: 0x1306D94 Offset: 0x1306D94 VA: 0x1306D94
+		public static bool CheckCameraHardware()
+		{
+#if UNITY_EDITOR
+			return true;
+#endif
+			return new AndroidJavaClass("jp.co.xeen.xeapp.UdonUtils").CallStatic<bool>("checkCameraHardware");
+		}
 	}
 }
