@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Localization.SmartFormat;
 using XeApp.Core;
 using XeApp.Game.Common;
 using XeSys;
@@ -60,7 +61,7 @@ namespace XeApp.Game.Menu
 					}
 					else
 					{
-						str.SetFormat(bk.GetMessageByLabel("popup_rank_range_place"), m_rankRangeList[i]);
+						str.SetFormatSmart(bk.GetMessageByLabel("popup_rank_range_place"), m_rankRangeList[i]);
 						m_rankRangeLabelList.Add(str.ToString());
 					}
 				}
@@ -133,7 +134,7 @@ namespace XeApp.Game.Menu
 		protected override IEnumerator Co_LoadLayout()
 		{
 			StringBuilder bundleName; // 0x18
-			Font systemFont; // 0x1C
+			XeSys.FontInfo systemFont; // 0x1C
 			int bundleLoadCount; // 0x20
 			AssetBundleLoadLayoutOperationBase operation; // 0x24
 			int i; // 0x28

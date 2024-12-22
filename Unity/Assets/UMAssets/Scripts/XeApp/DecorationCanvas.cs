@@ -252,9 +252,24 @@ namespace XeApp
 		//// RVA: 0x1AB96C8 Offset: 0x1AB96C8 VA: 0x1AB96C8
 		private void PopupFirstBgEffectSetting(ViewDecoBgEffect view, Action<PopupButton.ButtonLabel> callback)
 		{
-			TodoLogger.LogError(0, "PopupFirstBgEffectSetting");
-			if (callback != null)
-				callback(PopupButton.ButtonLabel.Ok);
+			string msg = MessageManager.Instance.GetMessage("menu", "pop_deco_bg_eff_span");
+			string msg2 = MessageManager.Instance.GetMessage("menu", "pop_deco_bg_eff_initial_setting_desc");
+			DateTime t = Utility.GetLocalDateTime(view.OpenAt);
+			DateTime t2 = Utility.GetLocalDateTime(view.CloseAt);
+			TextPopupSetting s = new TextPopupSetting();
+			s.TitleText = MessageManager.Instance.GetMessage("menu", "pop_deco_bg_eff_initial_setting_title");
+			s.WindowSize = SizeType.Middle;
+			s.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Change, Type = PopupButton.ButtonType.Positive }
+			};
+			s.Text = string.Format(msg2, view.Name, t.ToString(msg), t2.ToString(msg));
+			PopupWindowManager.Show(s, (PopupWindowControl _cont, PopupButton.ButtonType _type, PopupButton.ButtonLabel _label) =>
+			{
+				//0x1AC01A0
+				callback(_label);
+			}, null, null, null);
 		}
 
 		//// RVA: 0x1AB9BF4 Offset: 0x1AB9BF4 VA: 0x1AB9BF4

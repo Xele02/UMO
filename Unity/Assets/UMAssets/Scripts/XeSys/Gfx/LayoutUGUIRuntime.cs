@@ -429,6 +429,8 @@ namespace XeSys.Gfx
 		public bool IsReady { get; private set; } // 0x64
 		// public bool IsUpdate { get; set; } 0x1EFFE4C 0x1EFFEE4
 
+		//public ScriptableLayout debugLayout;
+
 		// RVA: 0x1F0005C Offset: 0x1F0005C VA: 0x1F0005C
 		private void Awake()
 		{
@@ -586,9 +588,7 @@ namespace XeSys.Gfx
 				m_layout = new Layout();
 				if(m_layout.fontInfo == null)	
 				{
-					m_layout.fontInfo = new FontInfo();
-					m_layout.fontInfo.font = m_font;
-					m_layout.fontInfo.size = 1;
+					m_layout.fontInfo = XeApp.Game.GameManager.Instance.GetFontInfo(m_font);
 				}
 				scriptableLayout.Deserialize(m_layout);
 				yield return null;
@@ -686,6 +686,19 @@ namespace XeSys.Gfx
 				else
 				{
 					m_uguiList.Add(new UguiInfo(view, rt as RectTransform, true));
+				}
+				// UMO Translation
+				if(view is ImageView)
+				{
+					TexUVData uvData = (view as ImageView).UVData;
+					if(uvData != null)
+					{
+						RawImageEx imgEx = rt.GetComponent<RawImageEx>();
+						if(imgEx != null)
+						{
+							imgEx.uvRect = LayoutUGUIUtility.MakeUnityUVRect(uvData);
+						}
+					}
 				}
 				bool found = false;
 				for(int j = 0; j < m_ActiveObjLsit.Length; j++)

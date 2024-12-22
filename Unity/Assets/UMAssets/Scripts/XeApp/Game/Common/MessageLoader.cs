@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Collections;
 using System.Text;
 using System.Collections.Generic;
+using System.IO;
 
 namespace XeApp.Game.Common
 {
@@ -33,7 +34,7 @@ namespace XeApp.Game.Common
 			diva010 = 13,
 		}
 
-		private string[] s_path = new string[14] {
+		public static string[] s_path = new string[14] {
 			"message_common_jp", "message_data_jp", "message_menu_jp", "message_master_jp", "message_diva001_jp", 
 			"message_diva002_jp", "message_diva003_jp", "message_diva004_jp", "message_diva005_jp", "message_diva006_jp",
 			"message_diva007_jp", "message_diva008_jp", "message_diva009_jp", "message_diva010_jp"
@@ -45,34 +46,60 @@ namespace XeApp.Game.Common
 		// public bool IsLoading { get; } 0x1115A74
 
 		// // RVA: 0x1115A7C Offset: 0x1115A7C VA: 0x1115A7C
-		public void Request(MessageLoader.eSheet sheet, int version)
+		public void Request(eSheet sheet, int version)
 		{
 			Release(sheet);
-			if(defaultInstallSource == InstallSource.LocalStorage)
+			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
 			{
-				string str = BBGDKLLEPIB.OGCDNCDMLCA_MxDir + BBGDKLLEPIB.HHCJCDFCLOB.OCOGBOHOGGE_DbFileName;
 				Dictionary<string,string> dic = new Dictionary<string, string>(1);
 				dic.Add("sheet", ((int)sheet).ToString());
 				dic.Add("bankName", sheet.ToString());
 				dic.Add("ver", version.ToString());
 				m_isLoading = true;
-				IIEDOGCMCIE data = new IIEDOGCMCIE();
-				data.MCDJJPAKBLH(str);
-				N.a.StartCoroutineWatched(Coroutine_SecureFileLoad(data, sheet, version));
+				if(RuntimeSettings.CurrentSettings.UseTmpLocalizationFiles)
+				{
+					StringBuilder str = new StringBuilder(64);
+					str.AppendFormat("{0}/Localizations/Database/{1}.bytes", Application.persistentDataPath, RuntimeSettings.CurrentSettings.Language);
+					FileResultObject fro = new FileResultObject(str.ToString(), dic, 0);
+					fro.bytes = File.ReadAllBytes(str.ToString());
+					LoadCallbackStorage2(fro);
+				}
+				else
+				{
+					StringBuilder str = new StringBuilder(64);
+					str.AppendFormat("Localizations/Database/{0}", RuntimeSettings.CurrentSettings.Language);
+					ResourcesManager.Instance.Request(str.ToString(), this.LoadCallbackStorage2, dic, 0);
+					ResourcesManager.Instance.Load();
+				}
 			}
 			else
 			{
-				if(sheet != MessageLoader.eSheet.common && sheet != MessageLoader.eSheet.menu)
+				if(defaultInstallSource == InstallSource.LocalStorage)
 				{
-					TodoLogger.LogError(TodoLogger.Filesystem, "cant load from resource = "+sheet);
+					string str = BBGDKLLEPIB.OGCDNCDMLCA_MxDir + BBGDKLLEPIB.HHCJCDFCLOB.OCOGBOHOGGE_DbFileName;
+					Dictionary<string,string> dic = new Dictionary<string, string>(1);
+					dic.Add("sheet", ((int)sheet).ToString());
+					dic.Add("bankName", sheet.ToString());
+					dic.Add("ver", version.ToString());
+					m_isLoading = true;
+					IIEDOGCMCIE data = new IIEDOGCMCIE();
+					data.MCDJJPAKBLH(str);
+					N.a.StartCoroutineWatched(Coroutine_SecureFileLoad(data, sheet, version));
 				}
-				StringBuilder str = new StringBuilder(64);
-				str.AppendFormat("Message/{0}_{1:D8}", s_path[(int)sheet], version);
-				m_isLoading = true;
-				Dictionary<string, string> dict = new Dictionary<string, string>(1);
-				dict.Add("bankName", sheet.ToString());
-				ResourcesManager.Instance.Request(str.ToString(), this.LoadCallback, dict, 0);
-				ResourcesManager.Instance.Load();
+				else
+				{
+					if(sheet != MessageLoader.eSheet.common && sheet != MessageLoader.eSheet.menu)
+					{
+						TodoLogger.LogError(TodoLogger.Filesystem, "cant load from resource = "+sheet);
+					}
+					StringBuilder str = new StringBuilder(64);
+					str.AppendFormat("Message/{0}_{1:D8}", s_path[(int)sheet], version);
+					m_isLoading = true;
+					Dictionary<string, string> dict = new Dictionary<string, string>(1);
+					dict.Add("bankName", sheet.ToString());
+					ResourcesManager.Instance.Request(str.ToString(), this.LoadCallback, dict, 0);
+					ResourcesManager.Instance.Load();
+				}
 			}
 		}
 
@@ -103,20 +130,47 @@ namespace XeApp.Game.Common
 		// public void Request(string bankName, string fileName) { }
 
 		// // RVA: 0x11166C4 Offset: 0x11166C4 VA: 0x11166C4
-		public bool Request(CBBJHPBGBAJ_Archive tar, MessageLoader.eSheet sheet, int version)
+		public bool Request(CBBJHPBGBAJ_Archive tar, eSheet sheet, int version)
 		{
-			StringBuilder str = new StringBuilder(64);
-			str.AppendFormat("{0}_{1:D8}.bytes", s_path[(int)sheet], version);
-			string name = str.ToString();
-			CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tar.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) => {
-				//0x11177C0
-				return x.OPFGFINHFCE_Name.Contains(name);
-			});
-			if(file == null)
-				return false;
-			Release(sheet);
-			MessageManager.Instance.RegisterBank(sheet.ToString(), file.DBBGALAPFGC_Data);
-			return true;
+			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
+			{
+				Dictionary<string,string> dic = new Dictionary<string, string>(1);
+				dic.Add("sheet", ((int)sheet).ToString());
+				dic.Add("bankName", sheet.ToString());
+				dic.Add("ver", version.ToString());
+				m_isLoading = true;
+				if(RuntimeSettings.CurrentSettings.UseTmpLocalizationFiles)
+				{
+					StringBuilder str = new StringBuilder(64);
+					str.AppendFormat("{0}/Localizations/Database/{1}.bytes", Application.persistentDataPath, RuntimeSettings.CurrentSettings.Language);
+					FileResultObject fro = new FileResultObject(str.ToString(), dic, 0);
+					fro.bytes = File.ReadAllBytes(str.ToString());
+					LoadCallbackStorage2(fro);
+				}
+				else
+				{
+					StringBuilder str = new StringBuilder(64);
+					str.AppendFormat("Localizations/Database/{0}", RuntimeSettings.CurrentSettings.Language);
+					ResourcesManager.Instance.Request(str.ToString(), this.LoadCallbackStorage2, dic, 0);
+					ResourcesManager.Instance.Load();
+				}
+				return true;
+			}
+			else
+			{
+				StringBuilder str = new StringBuilder(64);
+				str.AppendFormat("{0}_{1:D8}.bytes", s_path[(int)sheet], version);
+				string name = str.ToString();
+				CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tar.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) => {
+					//0x11177C0
+					return x.OPFGFINHFCE_Name.Contains(name);
+				});
+				if(file == null)
+					return false;
+				Release(sheet);
+				MessageManager.Instance.RegisterBank(sheet.ToString(), file.DBBGALAPFGC_Data);
+				return true;
+			}
 		}
 
 		// // RVA: 0x11169AC Offset: 0x11169AC VA: 0x11169AC
@@ -132,12 +186,35 @@ namespace XeApp.Game.Common
 		// private bool LoadCallbackStorage(FileResultObject fro) { }
 
 		// // RVA: 0x1116C38 Offset: 0x1116C38 VA: 0x1116C38
-		// private bool LoadCallbackStorage2(FileResultObject fro) { }
+		private bool LoadCallbackStorage2(FileResultObject fro)
+		{
+			int sheet = int.Parse(fro.args["sheet"]);
+			int version = int.Parse(fro.args["ver"]);
+			StringBuilder str = new StringBuilder(64);
+			str.AppendFormat("{0}_{1:D8}.bytes", s_path[(int)sheet], version);
+			string name = str.ToString();
+			CBBJHPBGBAJ_Archive tar = new CBBJHPBGBAJ_Archive();
+			if(fro.unityObject != null)
+				tar.KHEKNNFCAOI_Load((fro.unityObject as TextAsset).bytes);
+			else if(fro.bytes != null)
+				tar.KHEKNNFCAOI_Load(fro.bytes);
+			CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File file = tar.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File x) => {
+				//Method$XeApp.Game.Common.MessageLoader.<>c__DisplayClass13_0.<LoadCallbackStorage2>b__0()
+				return x.OPFGFINHFCE_Name.Contains(name);
+			});
+			if(file != null)
+			{
+				Release((eSheet)sheet);
+				MessageManager.Instance.RegisterBank(((eSheet)sheet).ToString(), file.DBBGALAPFGC_Data);
+			}
+			m_isLoading = false;
+			return true;
+		}
 
 		// // RVA: 0x1117054 Offset: 0x1117054 VA: 0x1117054 Slot: 4
 		public void Dispose()
 		{
-			TodoLogger.LogError(0, "TODO");
+			return;
 		}
 
 		// // RVA: 0x1116088 Offset: 0x1116088 VA: 0x1116088

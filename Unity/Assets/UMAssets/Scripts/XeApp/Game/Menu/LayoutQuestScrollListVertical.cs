@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System;
 using XeSys;
+using UnityEngine.Localization.SmartFormat;
 
 namespace XeApp.Game.Menu
 {
@@ -24,7 +25,17 @@ namespace XeApp.Game.Menu
 		public bool IsOpen { get; private set; } // 0x2C
 
 		//// RVA: 0x187ED60 Offset: 0x187ED60 VA: 0x187ED60
-		//public ActionButton GetChallengeButton(int index) { }
+		public ActionButton GetChallengeButton(int index)
+		{
+			FKMOKDCJFEN data = m_viewList[index];
+			for(int i = 0; i < m_scrollList.ScrollObjects.Count; i++)
+			{
+				LayoutQuestVerticalItem item = m_scrollList.ScrollObjects[i] as LayoutQuestVerticalItem;
+				if(item.Compare(data))
+					return item.ChallengeButton;
+			}
+			return null;
+		}
 
 		//// RVA: 0x187EEF8 Offset: 0x187EEF8 VA: 0x187EEF8
 		private void SetupScrollList(int count, bool resetScroll)
@@ -85,7 +96,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				m_textReceiveDesc.text = string.Format(MessageManager.Instance.GetMessage("menu", "quest_receive_all_desc"), IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("quest_lump_receive_max_num", 30));
+				m_textReceiveDesc.text = Smart.Format(MessageManager.Instance.GetMessage("menu", "quest_receive_all_desc"), IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("quest_lump_receive_max_num", 30));
 			}
 			m_buttonReceiveAll.Disable = b;
 			m_buttonReceiveAll.Hidden = isBegin;

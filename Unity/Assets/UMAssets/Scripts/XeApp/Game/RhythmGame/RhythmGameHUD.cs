@@ -387,7 +387,8 @@ namespace XeApp.Game.RhythmGame
 			m_laneController.SetVisibility(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.NFMEIILKACN_NotesRoute == 0);
 			if(GameManager.Instance.IsTutorial)
 			{
-				TodoLogger.LogError(0, "Tutorial");
+				if(music.isTutorialOne)
+					m_foldWaveGauge.HideGauge();
 			}
 		}
 
@@ -591,7 +592,12 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDCEC80 Offset: 0xDCEC80 VA: 0xDCEC80 Slot: 26
-		// public void SetContinue() { }
+		public void SetContinue()
+		{
+			m_isContinue = true;
+			m_prevLife = 100;
+			m_lifeWarningEffect.Play(damage_OUT_Hash, 0, 1);
+		}
 
 		// // RVA: 0xDCECD8 Offset: 0xDCECD8 VA: 0xDCECD8 Slot: 27
 		public void ChangeRankGaugeFrame(ResultScoreRank.Type rankType, float ratio)

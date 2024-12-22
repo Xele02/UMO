@@ -391,7 +391,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C76AC Offset: 0x6C76AC VA: 0x6C76AC
 		// // RVA: 0xB298F8 Offset: 0xB298F8 VA: 0xB298F8
-		public IEnumerator Load(MonoBehaviour mb, Font font, UnityAction action)
+		public IEnumerator Load(MonoBehaviour mb, XeSys.FontInfo font, UnityAction action)
 		{
 			LayoutUGUIRuntime runtime;
 			int i;
@@ -523,7 +523,7 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			if(!MenuScene.CheckDatelineAndAssetUpdate())
 			{
-				if(CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCBENCMNOGO_GainStamina <= CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC())
+				if(CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCBENCMNOGO_MaxStamina <= CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC_GetCurrent())
 				{
 					PopupWindowManager.OpenStaminaMaxWindow(null);
 				}
@@ -572,6 +572,7 @@ namespace XeApp.Game.Menu
 					{
 						//0xB2B0D8
 						MenuScene.Instance.InputEnable();
+						UnityEngine.Debug.LogError("Buy ok Event");
 						m_onChargeMoneyEvent.Invoke();
 					}, () =>
 					{

@@ -297,7 +297,10 @@ namespace XeApp.Game.Menu
 			}
 			while(m_pilotCutIn.IsPlaying())
 				yield return null;
-			SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_VFOPS_004);
+			yield return null;
+			#if !UNITY_ANDROID
+			SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_VFOPS_004); // This will cancel the SE_VFOPS_002 whichis more important?
+			#endif
 			if(cameraAnim != null)
 			{
 				while(cameraAnim.IsPlayingAnim())
@@ -329,7 +332,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator AllAssetLoad()
 		{
 			string bundleName; // 0x18
-			Font systemFont; // 0x1C
+			XeSys.FontInfo systemFont; // 0x1C
 			KDLPEDBKMID install; // 0x20
 			bool InstallCheck; // 0x24
 
@@ -405,7 +408,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FC9E4 Offset: 0x6FC9E4 VA: 0x6FC9E4
 		//// RVA: 0x1715A64 Offset: 0x1715A64 VA: 0x1715A64
-		private IEnumerator Co_LoadAssetsSortieLayout(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsSortieLayout(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -430,7 +433,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FCA5C Offset: 0x6FCA5C VA: 0x6FCA5C
 		//// RVA: 0x1715B44 Offset: 0x1715B44 VA: 0x1715B44
-		private IEnumerator Co_LoadAssetsPilotCutinLayout(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsPilotCutinLayout(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -455,7 +458,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FCAD4 Offset: 0x6FCAD4 VA: 0x6FCAD4
 		//// RVA: 0x1715C24 Offset: 0x1715C24 VA: 0x1715C24
-		private IEnumerator Co_LoadAssetsTransformationLayout(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsTransformationLayout(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -480,7 +483,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FCB4C Offset: 0x6FCB4C VA: 0x6FCB4C
 		//// RVA: 0x1715D04 Offset: 0x1715D04 VA: 0x1715D04
-		private IEnumerator Co_LoadAssetsTouchLeadLayout(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsTouchLeadLayout(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 

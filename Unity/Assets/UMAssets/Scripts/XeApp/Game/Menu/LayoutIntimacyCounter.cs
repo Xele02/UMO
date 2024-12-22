@@ -93,7 +93,7 @@ namespace XeApp.Game.Menu
 		{
 			if(time < 0)
 			{
-				m_textTime.text = "MAX";
+				m_textTime.text = JpStringLiterals.StringLiteral_11085;
 			}
 			else
 			{

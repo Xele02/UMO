@@ -12,7 +12,10 @@ namespace XeApp.Game.Menu
 		private AbsoluteLayout m_root; // 0x1C
 
 		//// RVA: 0x1932768 Offset: 0x1932768 VA: 0x1932768 Slot: 13
-		//public override void SetStatus(SNSTalkCreater.ViewTalk viewTalk) { }
+		public override void SetStatus(SNSTalkCreater.ViewTalk viewTalk)
+		{
+			SetText(viewTalk.talk.OPFGFINHFCE_Name);
+		}
 
 		//// RVA: 0x1932870 Offset: 0x1932870 VA: 0x1932870 Slot: 7
 		public override void SetPosition(float pos_x, float pos_y)

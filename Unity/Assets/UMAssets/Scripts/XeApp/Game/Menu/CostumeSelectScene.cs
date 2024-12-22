@@ -305,7 +305,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x16E0398 Offset: 0x16E0398 VA: 0x16E0398
 		private IEnumerator Co_LoadLayout()
 		{
-			Font font; // 0x14
+			XeSys.FontInfo font; // 0x14
 			string bundleName; // 0x18
 			int bundleLoadCount; // 0x1C
 			AssetBundleLoadLayoutOperationBase lytOp; // 0x20
@@ -454,7 +454,95 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CD0C4 Offset: 0x6CD0C4 VA: 0x6CD0C4
 		//// RVA: 0x16E0650 Offset: 0x16E0650 VA: 0x16E0650
-		//private IEnumerator Co_PopupGetInfo(int a_index) { }
+		private IEnumerator Co_PopupGetInfo(int a_index)
+		{
+			CostumeSelectListWin.ItemInfo t_item; // 0x1C
+			PIGBBNDPPJC t_episode_data; // 0x20
+
+			//0x16E44E0
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			t_item = m_cos_list_win.GetItem(a_index);
+			t_episode_data = null;
+			for(int i = 0; i < m_episode_list.Count; i++)
+			{
+				if(m_episode_list[i].KELFCMEOPPM_EpId == t_item.m_view_diva.KELFCMEOPPM_EpisodeId)
+				{
+					t_episode_data = m_episode_list[i];
+				}
+			}
+			CostumeSelectListTermsPopup.Setting s = new CostumeSelectListTermsPopup.Setting();
+			s.m_type = t_item.m_cos_color != 0 ? CostumeSelectListTermsPopup.Type.CostumeColorChange : CostumeSelectListTermsPopup.Type.CostumeBase;
+			s.TitleText = bk.GetMessageByLabel("popup_sel_cos_terms_title");
+			s.m_diva_id = m_diva_id;
+			s.m_costume_color = t_item.m_cos_color;
+			s.m_costume_model_id = t_item.m_view_diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
+			s.WindowSize = SizeType.Middle;
+			if(s.m_type == 0)
+			{
+				s.Buttons = new ButtonInfo[2]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative },
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Episode, Type = PopupButton.ButtonType.Episode }
+				};
+				m_builder.SetFormat(bk.GetMessageByLabel("popup_sel_cos_terms_text_base"), t_episode_data.OPFGFINHFCE_Name);
+				s.m_text = m_builder.ToString();
+			}
+			else 
+			{
+				if(MOEALEGLGCH.CDOCOLOKCJK() && !IsParentCostumeUpgrade() && t_item.m_src_item.m_is_have)
+				{
+					s.Buttons = new ButtonInfo[2]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative },
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.CostumeUpgrade, Type = PopupButton.ButtonType.Costume }
+					};
+				}
+				else
+				{
+					s.Buttons = new ButtonInfo[1]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+					};
+				}
+				s.m_text = "";
+				if(!MOEALEGLGCH.CDOCOLOKCJK())
+				{
+					s.m_text += bk.GetMessageByLabel("popup_sel_cos_terms_text_color02");
+					s.m_text += "\n";
+				}
+				m_builder.SetFormat(bk.GetMessageByLabel("popup_sel_cos_terms_text_color01"), t_item.m_name_base, CKFGMNAIBNG.MHIKGGMOPOJ(m_diva_id, t_item.m_cos_id, t_item.m_cos_color));
+				s.m_text += m_builder.ToString();
+			}
+			bool t_next_episode = false;
+			bool t_next_upgrade = false;
+			bool t_end_popup = false;
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x16E1E38
+				t_next_upgrade = label == PopupButton.ButtonLabel.CostumeUpgrade;
+				t_next_episode = label == PopupButton.ButtonLabel.Episode;
+			}, null, null, null, endCallBaack:() =>
+			{
+				//0x16E1E5C
+				t_end_popup = true;
+			});
+			while(!t_end_popup)
+				yield return null;
+			if(!t_next_episode)
+			{
+				if(t_next_upgrade)
+				{
+					CostumeUpgradeArgs arg = new CostumeUpgradeArgs();
+					arg.divaId = m_diva_id;
+					arg.costumemModelId = t_item.m_view_diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
+					MenuScene.Instance.Call(TransitionList.Type.COSTUME_UPGRADE, arg, true);
+				}
+			}
+			else
+			{
+				MenuScene.Instance.Mount(TransitionUniqueId.SETTINGMENU_EPISODESELECT_EPISODEDETAIL, new EpisodeDetailArgs() { data = t_episode_data }, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CD13C Offset: 0x6CD13C VA: 0x6CD13C
 		//// RVA: 0x16E0718 Offset: 0x16E0718 VA: 0x16E0718
@@ -463,7 +551,7 @@ namespace XeApp.Game.Menu
 			//0x16E3FCC
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			StringBuilder str = new StringBuilder();
-			str.SetFormat(bk.GetMessageByLabel("costume_upgrade_lock_text"), MOEALEGLGCH.IGDOBKHKNJM_GetCostumeUpgradeOfferNum());
+			str.SetFormatSmart(bk.GetMessageByLabel("costume_upgrade_lock_text"), MOEALEGLGCH.IGDOBKHKNJM_GetCostumeUpgradeOfferNum());
 			TextPopupSetting s = new TextPopupSetting();
 			s.IsCaption = false;
 			s.Text = str.ToString();
@@ -639,7 +727,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x16E0AC4 Offset: 0x16E0AC4 VA: 0x16E0AC4
 		private void CB_GetInfo(int a_index)
 		{
-			TodoLogger.LogNotImplemented("CB_GetInfo");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			this.StartCoroutineWatched(Co_PopupGetInfo(a_index));
 		}
 
 		//// RVA: 0x16E0B40 Offset: 0x16E0B40 VA: 0x16E0B40
@@ -660,7 +749,7 @@ namespace XeApp.Game.Menu
 				else
 				{
 					divaInfo = null;
-					TodoLogger.LogError(0, "CB_CostumeChange divaGo");
+					TodoLogger.LogError(TodoLogger.EventGoDiva_14, "CB_CostumeChange divaGo");
 				}
 				if(m_transitionName == TransitionList.Type.COSTUME_SELECT)
 				{

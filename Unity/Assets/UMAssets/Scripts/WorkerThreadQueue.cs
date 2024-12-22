@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using XeApp.Game;
 
 namespace XeApp
 {
@@ -28,11 +30,42 @@ namespace XeApp
 
 				// // RVA: 0x1D7A088 Offset: 0x1D7A088 VA: 0x1D7A088
 				public void Start() 
-				{ 
-					thread = new Thread(this.ThreadUpdate);
-					thread.Name = "XeAppWorkerThread";
-					thread.Priority = ThreadPriority.BelowNormal;
-					thread.Start();	
+				{
+					if(RuntimeSettings.CurrentSettings.WorkerThreadUseCoroutine)
+					{
+						GameManager.Instance.StartCoroutineWatched(WorkerCoroutine());
+						TodoLogger.Log(TodoLogger.Job, "Created WorkerThread Coroutine");
+					}
+					else
+					{
+						thread = new Thread(this.ThreadUpdate);
+						thread.Name = "XeAppWorkerThread";
+						if(!RuntimeSettings.CurrentSettings.WorkerThreadPriorityNormal)
+							thread.Priority = ThreadPriority.BelowNormal;
+						thread.Start();	
+						TodoLogger.Log(TodoLogger.Job, "Created WorkerThread Thread. Normal Priority : "+RuntimeSettings.CurrentSettings.WorkerThreadPriorityNormal);
+					}
+				}
+
+				public IEnumerator WorkerCoroutine()
+				{
+					while(!isAbort)
+					{
+						while(jobs.Count == 0)
+						{
+							if(isAbort)
+								yield break;
+							yield return null;
+						}
+						isRunning = true;
+						Action job = jobs[0];
+						TodoLogger.Log(TodoLogger.Job, "Executing job " +job.Method+" "+job.Target);
+						job();
+						TodoLogger.Log(TodoLogger.Job, "Executed job " +job.Method+" "+job.Target);
+						jobs.RemoveAt(0);
+						isRunning = false;
+						yield return null;
+					}
 				}
 
 				// // RVA: 0x1D7A1A4 Offset: 0x1D7A1A4 VA: 0x1D7A1A4
@@ -66,6 +99,7 @@ namespace XeApp
 				// // RVA: 0x1D7A3C4 Offset: 0x1D7A3C4 VA: 0x1D7A3C4
 				private void ThreadUpdate()
 				{
+					TodoLogger.Log(TodoLogger.Job, "ThreadUpdate Start");
 					Action job = GetJob();
 					while(job != null)
 					{
@@ -81,6 +115,7 @@ namespace XeApp
 
 						job = GetJob();
 					}
+					TodoLogger.Log(TodoLogger.Job, "ThreadUpdate End");
 				}
 
 				// // RVA: 0x1D7A604 Offset: 0x1D7A604 VA: 0x1D7A604
@@ -101,8 +136,11 @@ namespace XeApp
 						if(job != null)
 							return job;
 						isRunning = false;
+						TodoLogger.Log(TodoLogger.Job, "GetJob wait event");
 						resetEvent.WaitOne();
+						TodoLogger.Log(TodoLogger.Job, "GetJob check next job");
 					}
+					TodoLogger.Log(TodoLogger.Job, "GetJob return null");
 					return null;
 				}
 			}

@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 using XeApp.Game.Common;
+using XeApp.Game.Menu;
 using XeSys.Gfx;
 
 namespace XeApp.Game.DownLoad
@@ -218,7 +219,23 @@ namespace XeApp.Game.DownLoad
 		// public void SetupDownLoad(List<int> diva_list) { }
 
 		// // RVA: 0x11C2994 Offset: 0x11C2994 VA: 0x11C2994
-		// public void SetupDivaSelect(List<int> diva_list, int select_diva) { }
+		public void SetupDivaSelect(List<int> diva_list, int select_diva)
+		{
+			for(int i = 0; i < m_DivaIcons.Length; i++)
+			{
+				int index = i;
+				if (diva_list.Count <= i)
+					break;
+				m_LoadingDivaIconCount++;
+				GameManager.Instance.DivaIconCache.Load(diva_list[index], 1, 0, (IiconTexture texture) =>
+				{
+					//0x97DC14
+					texture.Set(m_DivaIcons[index]);
+					m_LoadingDivaIconCount--;
+				});
+			}
+			SelectIcon(select_diva);
+		}
 
 		// // RVA: 0x11C2EA4 Offset: 0x11C2EA4 VA: 0x11C2EA4
 		public void EnterDownLoad()
@@ -247,7 +264,11 @@ namespace XeApp.Game.DownLoad
 		// public void HideDownLoad() { }
 
 		// // RVA: 0x11C3230 Offset: 0x11C3230 VA: 0x11C3230
-		// public void EnterDivaSelect() { }
+		public void EnterDivaSelect()
+		{
+			m_ChangeAnim.StartChildrenAnimGoStop("02");
+			m_DivaSelectAnim.StartChildrenAnimGoStop("go_in", "st_in");
+		}
 
 		// // RVA: 0x11C3314 Offset: 0x11C3314 VA: 0x11C3314
 		// public void LeaveDivaSelect() { }
@@ -382,8 +403,14 @@ namespace XeApp.Game.DownLoad
 					layout.birthplace.text = p.birthplace;
 					layout.favorite.text = p.favorite;
 					layout.description.text = p.description;
+					layout.birthplace.resizeTextMaxSize = layout.birthplace.fontSize;
+					layout.birthplace.verticalOverflow = VerticalWrapMode.Overflow;
 					layout.birthplace.resizeTextForBestFit = IsHorizontalOverflow(layout.birthplace);
+					layout.birthplace.verticalOverflow = VerticalWrapMode.Truncate;
+					layout.favorite.resizeTextMaxSize = layout.favorite.fontSize;
+					layout.favorite.verticalOverflow = VerticalWrapMode.Overflow;
 					layout.favorite.resizeTextForBestFit = IsHorizontalOverflow(layout.favorite);
+					layout.favorite.verticalOverflow = VerticalWrapMode.Truncate;
                 }
 			}
 			m_DispDivaProfile = data;
@@ -431,9 +458,25 @@ namespace XeApp.Game.DownLoad
 		}
 
 		// // RVA: 0x11C413C Offset: 0x11C413C VA: 0x11C413C
-		// public void SetButtonEnable() { }
+		public void SetButtonEnable()
+		{
+			m_DivaSelectOkBtn.IsInputOff = false;
+			m_DivaSelectVoiceBtn.IsInputOff = false;
+			for(int i = 0; i < m_DivaIconBtnList.Count; i++)
+			{
+				m_DivaIconBtnList[i].IsInputOff = false;
+			}
+		}
 
 		// // RVA: 0x11C42F8 Offset: 0x11C42F8 VA: 0x11C42F8
-		// public void SetButtonDisable() { }
+		public void SetButtonDisable()
+		{
+			m_DivaSelectOkBtn.IsInputOff = true;
+			m_DivaSelectVoiceBtn.IsInputOff = true;
+			for(int i = 0; i < m_DivaIconBtnList.Count; i++)
+			{
+				m_DivaIconBtnList[i].IsInputOff = false;
+			}
+		}
 	}
 }

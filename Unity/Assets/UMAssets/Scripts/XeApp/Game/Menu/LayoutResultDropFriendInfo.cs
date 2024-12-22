@@ -168,7 +168,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1D8F424 Offset: 0x1D8F424 VA: 0x1D8F424
-		// public void DisableFriendRequestButton() { }
+		public void DisableFriendRequestButton()
+		{
+			sendFriendRequest.Disable = true;
+		}
 
 		// // RVA: 0x1D8F454 Offset: 0x1D8F454 VA: 0x1D8F454
 		private void OnClickSendFriendRequest()

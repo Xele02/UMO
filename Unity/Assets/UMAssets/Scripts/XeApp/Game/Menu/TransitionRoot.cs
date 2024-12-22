@@ -151,12 +151,12 @@ namespace XeApp.Game.Menu
 					BundleName.Create("ly/011.xab", "UI_StorySelect"),
 					BundleName.Create("ly/038.xab", "UI_MusicSelect"),
 					BundleName.Create("ly/039.xab", "UI_GuestList"),
-					BundleName.Create("ly/013.xab", "UI_CheckDeck"),
+					BundleName.Create("ly/013.xab", "UI_CheckDeck", "ly/tx/013.xab"),
 					BundleName.Create("ly/020.xab", "UI_Result"),
 					BundleName.Create("", ""),
 					BundleName.Create("ly/012.xab", "UI_SettingMenu"),
 					BundleName.Create("", ""),
-					BundleName.Create("ly/013.xab", "UI_SetDeck"),
+					BundleName.Create("ly/013.xab", "UI_SetDeck", "ly/tx/013.xab"),
 					BundleName.Create("", ""),
 					BundleName.Create("ly/001.xab", "UI_LoginBonus"),
 					BundleName.Create("ly/009.xab", "UI_OptionMenu"),
@@ -285,7 +285,7 @@ namespace XeApp.Game.Menu
 			private MenuFooterControl m_menuBarControl; // 0x18
 			private MenuHeaderControl m_titleBarControl; // 0x1C
 			private GameObject m_uiRootObject; // 0x20
-			private Font m_font; // 0x24
+			private XeSys.FontInfo m_font; // 0x24
 			private HelpButton m_helpButton; // 0x28
 			private SceneStack m_transitionStack = new SceneStack(); // 0x2C
 			private TransitionRoot m_currentRoot; // 0x30
@@ -431,7 +431,7 @@ namespace XeApp.Game.Menu
 			// public void remove_ChangeGroupCategoryListener(UnityAction<SceneGroupCategory, SceneGroupCategory> value) { }
 
 			// // RVA: 0xA316E4 Offset: 0xA316E4 VA: 0xA316E4
-			public MenuTransitionControl(GameObject bgRoot, GameObject uiRoot, Font font, TransitionTreeObject tto)
+			public MenuTransitionControl(GameObject bgRoot, GameObject uiRoot, XeSys.FontInfo font, TransitionTreeObject tto)
 			{
 				m_bgControl = new BgControl(bgRoot);
 				m_titleBarControl = new MenuHeaderControl(uiRoot);
@@ -1609,7 +1609,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA9D810 Offset: 0xA9D810 VA: 0xA9D810
 		protected void GotoTitle()
 		{
-			TodoLogger.LogError(0, "Goto Title");
+			IsRequestGotoTitle = true;
 		}
 
 		// // RVA: 0xA9D81C Offset: 0xA9D81C VA: 0xA9D81C Slot: 29
@@ -2045,7 +2045,7 @@ namespace XeApp.Game.Menu
 							int res = 0;
 							for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Count; i++)
 							{
-								res += GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[i].FJODMPGPDDD ? 1 : 0;
+								res += GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[i].FJODMPGPDDD_DivaHave ? 1 : 0;
 							}
 							return res > 1;
 						}
@@ -2095,7 +2095,7 @@ namespace XeApp.Game.Menu
 				case TutorialConditionId.Condition65:
 					if(m_transitionName == TransitionList.Type.TEAM_EDIT || m_transitionName == TransitionList.Type.TEAM_SELECT)
 					{
-						return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.GODGHFDMAHF() != null;
+						return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.GODGHFDMAHF_GetRateBySupportPlate() != null;
 					}
 					break;
 				}

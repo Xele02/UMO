@@ -52,7 +52,7 @@ namespace XeApp.Game.Menu
 			m_episodeNameImage = m_episodeNameParts.GetComponent<Image>();
 			m_episodeNameText = m_episodeNameParts.GetComponentInChildren<Text>();
 			m_episodeNameRectTransform = m_episodeNameParts.GetComponent<RectTransform>();
-			m_episodeNameText.font = GameManager.Instance.GetSystemFont();
+			GameManager.Instance.GetSystemFont().Apply(m_episodeNameText);
 			m_episodeNameParts.transform.SetParent(transform);
 			m_uvManager = uvMan;
 			return true;
@@ -136,7 +136,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x136DEC8
 					return x.KELFCMEOPPM_EpisodeId == episodeId;
-				}) >> 0x1f) ^ 1;
+				})) >= 0 ? 1 : 0;
 				str = PIGBBNDPPJC.EJOJNFDHDHN_GetEpName(episodeId);
 			}
 			for(int i = 0; i < m_texts.Length; i++)

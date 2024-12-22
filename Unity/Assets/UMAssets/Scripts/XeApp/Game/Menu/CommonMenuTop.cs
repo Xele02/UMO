@@ -57,7 +57,7 @@ namespace XeApp.Game.Menu
 		private Rect[] m_monthly_coin_rect; // 0x84
 
 		public Action OnRecovEne { set { m_on_recov_ene = value; } } //0x1B4CCC4
-		 public Action OnChargeMoney { set { m_on_charge_mny = value; } } //0x1B4CCCC
+		public Action OnChargeMoney { set { m_on_charge_mny = value; } } //0x1B4CCCC
 
 		// RVA: 0x1B4CCD4 Offset: 0x1B4CCD4 VA: 0x1B4CCD4
 		private void Update()
@@ -207,7 +207,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				m_textEnergyTime.text = "MAX";
+				m_textEnergyTime.text = JpStringLiterals.StringLiteral_11085;
 			}
 		}
 
@@ -234,7 +234,25 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1B4DB68 Offset: 0x1B4DB68 VA: 0x1B4DB68
 		private void OnClickRankInfo()
 		{
-			TodoLogger.LogNotImplemented("CommonMenuTop.OnClickRankInfo");
+			if(m_miniWindow == null)
+			{
+				m_miniWindow = Instantiate(m_miniWindowPrefab);
+#if UNITY_EDITOR || UNITY_STANDALONE
+				BundleShaderInfo.Instance.FixMaterialShader(m_miniWindow.gameObject);
+#endif
+				m_miniWindow.transform.SetParent(transform.parent, false);
+				m_miniWindow.transform.SetAsLastSibling();
+				m_miniWindow.SetFont(m_layout.fontInfo);
+			}
+			IFBCGCCJBHI d = new IFBCGCCJBHI();
+			d.KHEKNNFCAOI();
+			string s = string.Format("{0:#,0}", "----");
+			if(!d.NMCICIHMOCM_PlayerLevelLimit)
+			{
+				s = string.Format("{0:#,0}", d.PBGFIOONCMB_MaxExp - d.OPBHNBECFII_CurExp);
+			}
+			m_miniWindow.Setup(0, s, 0);
+			m_miniWindow.Enter();
 		}
 
 		// // RVA: 0x1B4E59C Offset: 0x1B4E59C VA: 0x1B4E59C
@@ -248,7 +266,7 @@ namespace XeApp.Game.Menu
 #endif
 				m_miniWindow.transform.SetParent(transform.parent, false);
 				m_miniWindow.transform.SetAsLastSibling();
-				m_miniWindow.SetFont(m_layout.fontInfo.font);
+				m_miniWindow.SetFont(m_layout.fontInfo);
 			}
 			IFBCGCCJBHI d = new IFBCGCCJBHI();
 			d.KHEKNNFCAOI();

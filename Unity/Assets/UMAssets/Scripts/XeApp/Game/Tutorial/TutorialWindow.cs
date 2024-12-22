@@ -117,16 +117,16 @@ namespace XeApp.Game.Tutorial
 			});
 			m_messageList.Clear();
 			string str = "";
-			for (int i = 0; i < m_messageData.JONNCMDGMKA.Length; i++)
+			for (int i = 0; i < m_messageData.JONNCMDGMKA_Messages.Length; i++)
 			{
-				if(!string.IsNullOrEmpty(m_messageData.ADCMNODJBGJ[i]))
+				if(!string.IsNullOrEmpty(m_messageData.ADCMNODJBGJ_Titles[i]))
 				{
-					str = m_messageData.ADCMNODJBGJ[i];
+					str = m_messageData.ADCMNODJBGJ_Titles[i];
 				}
 				if(m_messageData.KMDGMOMCDAD[i] < 1 || !GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.INEAGJMJLFG_TutorialAlreadyFlags.ODKIHPBEOEC_IsTrue(m_messageData.KMDGMOMCDAD[i]))
 				{
 					//LAB_01917df8
-					m_messageList.Add(new MessageData() { messages = m_messageData.JONNCMDGMKA[i], title = str, pictId = m_messageData.MAPDMCPCLFA[i] });
+					m_messageList.Add(new MessageData() { messages = m_messageData.JONNCMDGMKA_Messages[i], title = str, pictId = m_messageData.MAPDMCPCLFA_PicIds[i] });
 				}
 			}
 			SetMaxPage(m_messageList.Count);
@@ -341,7 +341,11 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0x19193D4 Offset: 0x19193D4 VA: 0x19193D4
 		private void OnPrevButton()
 		{
-			TodoLogger.LogNotImplemented("OnPrevButton");
+			m_showDataIndex--;
+			if(m_showDataIndex > -1)
+				SetCurrentData();
+			OnPlayButtonSe();
+			this.StartCoroutineWatched(Co_ButtonWait());
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6B00A0 Offset: 0x6B00A0 VA: 0x6B00A0

@@ -357,8 +357,15 @@ namespace XeApp.Game.Menu
 			//0xB6424C
 			if(GameManager.Instance.IsTutorial)
 			{
-				TodoLogger.LogError(0, "TryTutorialCoroutine");
-				yield return null;
+				bool isWait = true;
+				BasicTutorialManager.Instance.ShowMessageWindow(BasicTutorialMessageId.Id_GameResult, () =>
+				{
+					//0xB61908
+					isWait = false;
+				}, null);
+				while(isWait)
+					yield return null;
+				yield return Co.R(TutorialManager.ShowTutorial(68, null));
 			}
 			//LAB_00b6441c
 			yield return TutorialManager.TryShowTutorialCoroutine(checker);

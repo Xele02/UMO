@@ -87,6 +87,7 @@ public class KBPDNHOKEKD_ProductId
 	public int PPFNGGCBJKC_Id; // 0x8
 	public string GLHKICCPGKJ_PlatformProductId; // 0xC
 	public string OPFGFINHFCE_Name; // 0x10
+	public string OriginalName;
 	public string KLMPFGOCBHC_Description; // 0x14
 	public string EFIMCLPAEEN_ImageUrl; // 0x18
 	public int NPPGKNGIFGK_Price; // 0x1C
@@ -127,6 +128,7 @@ public class KBPDNHOKEKD_ProductId
 		PPFNGGCBJKC_Id = CEDHHAGBIBA.GNJBKANDLEE_ReadInt(IDLHJIOMJBK, AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id);
 		GLHKICCPGKJ_PlatformProductId = CEDHHAGBIBA.BNCLNFJHEND_ReadString(IDLHJIOMJBK, AFEHLCGHAEE_Strings.GLHKICCPGKJ_platform_product_id);
 		OPFGFINHFCE_Name = CEDHHAGBIBA.BNCLNFJHEND_ReadString(IDLHJIOMJBK, AFEHLCGHAEE_Strings.OPFGFINHFCE_name);
+		OriginalName = CEDHHAGBIBA.BNCLNFJHEND_ReadString(IDLHJIOMJBK, "original_name");
 		KLMPFGOCBHC_Description = CEDHHAGBIBA.BNCLNFJHEND_ReadString(IDLHJIOMJBK, AFEHLCGHAEE_Strings.KLMPFGOCBHC_description);
 		EFIMCLPAEEN_ImageUrl = CEDHHAGBIBA.BNCLNFJHEND_ReadString(IDLHJIOMJBK, AFEHLCGHAEE_Strings.EFIMCLPAEEN_imageUrl);
 		NPPGKNGIFGK_Price = CEDHHAGBIBA.GNJBKANDLEE_ReadInt(IDLHJIOMJBK, AFEHLCGHAEE_Strings.NPPGKNGIFGK_price);
@@ -189,6 +191,7 @@ public class KBPDNHOKEKD_ProductId
 	public void OCBHANFFLOO_SetTutoGachaProduct(int HMFFHLPNMPH)
 	{
 		OPFGFINHFCE_Name = MessageManager.Instance.GetMessage("menu", "tuto_gacha_title");
+		OriginalName = "デカルガチャ";
 		KLMPFGOCBHC_Description = MessageManager.Instance.GetMessage("menu", "tuto_gacha_desc");
 		CANACBAPKFK_ForcedCount = HMFFHLPNMPH;
 		HMFDJHEEGNN_BuyLimit = 0;

@@ -38,7 +38,7 @@ namespace XeApp.Core
 
         // [IteratorStateMachineAttribute] // RVA: 0x747EE0 Offset: 0x747EE0 VA: 0x747EE0
         // RVA: 0xE0FE3C Offset: 0xE0FE3C VA: 0xE0FE3C Slot: 11
-        public override IEnumerator InitializeLayoutCoroutine(Font font, Action<GameObject> finish)
+        public override IEnumerator InitializeLayoutCoroutine(FontInfo fontInfo, Action<GameObject> finish)
         {
 			//0xE110FC
 #if UNITY_EDITOR || UNITY_STANDALONE
@@ -56,9 +56,10 @@ namespace XeApp.Core
             {
                 canvas[i].enabled = false;
             }
+            yield return DatabaseTextConverter.TranslateImages(instance);
             for(int i = 0; i < runtimes.Length; i++)
             {
-                yield return Co.R(CreateLayoutCoroutine(runtimes[i], font, (Layout layout, TexUVListManager uvMan) => {
+                yield return Co.R(CreateLayoutCoroutine(runtimes[i], fontInfo, (Layout layout, TexUVListManager uvMan) => {
                     //0xE10128
                     runtimes[i].UvMan = uvMan;
                     runtimes[i].Layout = layout;
@@ -70,9 +71,10 @@ namespace XeApp.Core
                 //0xE1001C
                 if(text.font == null)
                 {
-                    text.font = font;
+                    //text.font = font;
                     text.horizontalOverflow = HorizontalWrapMode.Overflow;
                 }
+                fontInfo.Apply(text, false);
             });
             if(finish != null)
             {
@@ -82,8 +84,13 @@ namespace XeApp.Core
 
         // [IteratorStateMachineAttribute] // RVA: 0x747F58 Offset: 0x747F58 VA: 0x747F58
         // // RVA: 0xE0FF1C Offset: 0xE0FF1C VA: 0xE0FF1C Slot: 12
-        public override IEnumerator CreateLayoutCoroutine(LayoutUGUIRuntime runtime, Font font, Action<Layout, TexUVListManager> finish)
+        static bool isCreating = false;
+        public override IEnumerator CreateLayoutCoroutine(LayoutUGUIRuntime runtime, XeSys.FontInfo fontInfo, Action<Layout, TexUVListManager> finish)
         {
+            // Adding a protection to not run multiple CreateLayoutCoroutine in // because it can crash
+            while(isCreating)
+                yield return null;
+            isCreating = true;
             // private Layout <layout>5__2; // 0x20
             // private TexUVListManager <uvMan>5__3; // 0x24
             // private LayoutAnimation <layoutAnime>5__4; // 0x28
@@ -92,7 +99,7 @@ namespace XeApp.Core
             // 0xE1018C
             Layout layout = new Layout();
             layout.fontInfo = new FontInfo();
-            layout.fontInfo.font = font;
+            layout.fontInfo = fontInfo;
             TexUVListManager uvMan = new TexUVListManager();
             LayoutAnimation layoutAnime = new LayoutAnimation();
             m_request = m_loadedAssetBundle.m_AssetBundle.LoadAssetAsync<ScriptableLayout>(Path.GetFileName(runtime.LayoutPath));
@@ -102,16 +109,28 @@ namespace XeApp.Core
             if(scriptable != null)
             {
                 layout.Import(scriptable);
+                //runtime.debugLayout = scriptable;
                 for(int j = 0; j < runtime.TexturePathList.Length; j++)
                 {
                     TexUVList uvList = GameManager.Instance.UnionTextureManager.GetTexUvList(runtime.UvListPathList[j]);
                     if(uvList == null)
                     {
 						TodoLogger.Log(TodoLogger.AssetBundle, "CreateLayoutCoroutine from bundle " + m_loadedAssetBundle.m_DebugBundleName); // UMO
-                        m_request = m_loadedAssetBundle.m_AssetBundle.LoadAssetAsync<TexUVList>(Path.GetFileName(runtime.UvListPathList[j]));
-                        while(!m_request.isDone)
-                            yield return null;
-                        uvList = m_request.asset as TexUVList;
+                        yield return Co.R(DatabaseTextConverter.TranslateUvList(runtime.UvListPathList[j], (byte[] res) =>
+                        {
+                            if(res != null)
+                            {
+                                uvList = TexUVList.NewInstance();
+                                uvList.Initialize(res, null);
+                            }
+                        }));
+                        if(uvList == null)
+                        {
+                            m_request = m_loadedAssetBundle.m_AssetBundle.LoadAssetAsync<TexUVList>(Path.GetFileName(runtime.UvListPathList[j]));
+                            while(!m_request.isDone)
+                                yield return null;
+                            uvList = m_request.asset as TexUVList;
+                        }
                     }
                     if(uvList == null)
                         TodoLogger.LogError(TodoLogger.AssetBundle, "Failed to load " + Path.GetFileName(runtime.UvListPathList[j]));
@@ -122,47 +141,59 @@ namespace XeApp.Core
                 {
                     finish(layout, uvMan);
                 }
-                yield break;
             }
-            m_request = m_loadedAssetBundle.m_AssetBundle.LoadAssetAsync<TextAsset>(Path.GetFileName(runtime.LayoutPath));
-            while(!m_request.isDone)
-                yield return null;
-            if(m_request.asset != null)
+            else
             {
-                layout.LoadFromString((m_request.asset as TextAsset).text);
-                if(!string.IsNullOrEmpty(runtime.AnimListPath))
+                m_request = m_loadedAssetBundle.m_AssetBundle.LoadAssetAsync<TextAsset>(Path.GetFileName(runtime.LayoutPath));
+                while(!m_request.isDone)
+                    yield return null;
+                if(m_request.asset != null)
                 {
-                    m_request = m_loadedAssetBundle.m_AssetBundle.LoadAssetAsync<TextAsset>(Path.GetFileName(runtime.AnimListPath));
-                    while(!m_request.isDone)
-                        yield return null;
-                    TextAsset animText = m_request.asset as TextAsset;
-                    StringReader sr = new StringReader(animText.text);
-                    while(true)
+                    layout.LoadFromString((m_request.asset as TextAsset).text);
+                    if(!string.IsNullOrEmpty(runtime.AnimListPath))
                     {
-                        string animName = sr.ReadLine();
-                        if(animName == null)
-                            break;
-                        m_request = m_loadedAssetBundle.m_AssetBundle.LoadAssetAsync<TextAsset>(Path.GetFileName(animName));
+                        m_request = m_loadedAssetBundle.m_AssetBundle.LoadAssetAsync<TextAsset>(Path.GetFileName(runtime.AnimListPath));
                         while(!m_request.isDone)
                             yield return null;
-                        layoutAnime.LoadFromBytes((m_request.asset as TextAsset).bytes);
+                        TextAsset animText = m_request.asset as TextAsset;
+                        StringReader sr = new StringReader(animText.text);
+                        while(true)
+                        {
+                            string animName = sr.ReadLine();
+                            if(animName == null)
+                                break;
+                            m_request = m_loadedAssetBundle.m_AssetBundle.LoadAssetAsync<TextAsset>(Path.GetFileName(animName));
+                            while(!m_request.isDone)
+                                yield return null;
+                            layoutAnime.LoadFromBytes((m_request.asset as TextAsset).bytes);
+                        }
+                        layout.SettingAnimation(layoutAnime);
+                        sr = null;
                     }
-                    layout.SettingAnimation(layoutAnime);
-                    sr = null;
-                }
-                for(int j = 0; j < runtime.TexturePathList.Length; j++)
-                {
-                    m_request = m_loadedAssetBundle.m_AssetBundle.LoadAssetAsync<TextAsset>(runtime.UvListPathList[j]);
-                    while(!m_request.isDone)
-                        yield return null;
-                    uvMan.Add((m_request.asset as TextAsset).bytes, null);
-                }
-                layout.SettingTexture(uvMan);
-                if(finish != null)
-                {
-                    finish(layout, uvMan);
+                    for(int j = 0; j < runtime.TexturePathList.Length; j++)
+                    {
+                        byte[] data = null;
+                        yield return Co.R(DatabaseTextConverter.TranslateUvList(runtime.UvListPathList[j], (byte[] res) =>
+                        {
+                            data = res;
+                        }));
+                        if(data == null)
+                        {
+                            m_request = m_loadedAssetBundle.m_AssetBundle.LoadAssetAsync<TextAsset>(runtime.UvListPathList[j]);
+                            while(!m_request.isDone)
+                                yield return null;
+                            data = (m_request.asset as TextAsset).bytes;
+                        }
+                        uvMan.Add(data, null);
+                    }
+                    layout.SettingTexture(uvMan);
+                    if(finish != null)
+                    {
+                        finish(layout, uvMan);
+                    }
                 }
             }
+            isCreating = false;
         }
     }
 }

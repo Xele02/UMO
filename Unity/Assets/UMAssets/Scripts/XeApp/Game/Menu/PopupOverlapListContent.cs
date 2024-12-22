@@ -61,7 +61,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x169F244 Offset: 0x169F244 VA: 0x169F244
 		public IEnumerator LoadAssetBundlePrefab()
 		{
-			Font systemFont; // 0x20
+			XeSys.FontInfo systemFont; // 0x20
 			bool isGetPoster; // 0x24
 			AssetBundleLoadLayoutOperationBase operation; // 0x28
 			FlexibleItemScrollView scrollView; // 0x2C
@@ -182,7 +182,7 @@ namespace XeApp.Game.Menu
 				m_root.StartChildrenAnimGoStop("02");
                 GONMPHKGKHI_RewardView.GCHFDJMNCAF a = setup.List[0] as GONMPHKGKHI_RewardView.GCHFDJMNCAF;
                 EKLNMHFCAOI.FKGCBLHOOCL_Category cat = a.DMJCACIDEBM ? EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft : EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef;
-                SetStatusDeco(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(cat, setup.List[0].BCCHOBPJJKE_SceneId), a.GBALGEMKJKD, a.HMGDINKEPHJ, control.m_titleText);
+                SetStatusDeco(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(cat, setup.List[0].BCCHOBPJJKE_SceneId), a.GBALGEMKJKD_PrevBoard, a.HMGDINKEPHJ_NextBoard, control.m_titleText);
 				for(int i = 0; i < setup.List.Count; i++)
 				{
 					GameManager.Instance.ItemTextureCache.Load(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(cat, setup.List[0].BCCHOBPJJKE_SceneId), 0, (IiconTexture texture) =>
@@ -212,7 +212,7 @@ namespace XeApp.Game.Menu
 					if(_ != null)
 					{
 						if(_ is GONMPHKGKHI_RewardView.GCHFDJMNCAF)
-							return (_ as GONMPHKGKHI_RewardView.GCHFDJMNCAF).GBALGEMKJKD < (_ as GONMPHKGKHI_RewardView.GCHFDJMNCAF).HMGDINKEPHJ;
+							return (_ as GONMPHKGKHI_RewardView.GCHFDJMNCAF).GBALGEMKJKD_PrevBoard < (_ as GONMPHKGKHI_RewardView.GCHFDJMNCAF).HMGDINKEPHJ_NextBoard;
 					}
 					return false;
 				}));
@@ -275,7 +275,7 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(typeAndId);
 			string str = "";
-            if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef && cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft)
+            if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef || cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft)
 			{
 				str = "deco_name_poster";
 			}
@@ -289,7 +289,7 @@ namespace XeApp.Game.Menu
 			}
 			titleText.text = string.Format(bk.GetMessageByLabel("pop_deco_get_title"), bk.GetMessageByLabel(str));
 			m_textDesc.text = string.Format(bk.GetMessageByLabel("pop_deco_get_desc"), bk.GetMessageByLabel(str));
-			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef && cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft)
+			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef || cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft)
 			{
 				m_textLimit.text = string.Format(bk.GetMessageByLabel("pop_deco_get_limit"), bk.GetMessageByLabel(str), EKLNMHFCAOI.AFEONHCADEL_GetMaxAllowed(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, cat, 1, null));
 			}

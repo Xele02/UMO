@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System;
 using XeApp.Game.Common;
 using XeApp.Game.Common.uGUI;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -142,7 +143,14 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1A9EC84 Offset: 0x1A9EC84 VA: 0x1A9EC84
 		public void OnInfoButton(int page)
 		{
-			TodoLogger.LogNotImplemented("OnInfoButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			m_infoState++;
+			if(m_infoState > 1)
+				m_infoState = 0;
+			for(int i = 0; i < m_plateControl.Length; i++)
+			{
+				m_plateControl[i].SwitchDisplay((SubPlatePlateControl.eDisplay)m_infoState);
+			}
 		}
 
 		//// RVA: 0x1A9EFC8 Offset: 0x1A9EFC8 VA: 0x1A9EFC8

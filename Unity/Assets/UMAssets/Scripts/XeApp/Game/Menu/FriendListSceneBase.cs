@@ -534,7 +534,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_LoadLayout()
 		{
 			StringBuilder bundleName;
-			Font systemFont;
+			XeSys.FontInfo systemFont;
 			int bundleLoadCount;
 			AssetBundleLoadLayoutOperationBase operation;
 			int i;
@@ -597,7 +597,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E024C Offset: 0x6E024C VA: 0x6E024C
 		//// RVA: 0xBAD7E8 Offset: 0xBAD7E8 VA: 0xBAD7E8
-		protected static IEnumerator Co_LoadListElem(string bundleName, string assetName, Font font, int elemCount, string elemNameFormat, Action<LayoutUGUIRuntime> onLoadedElem)
+		protected static IEnumerator Co_LoadListElem(string bundleName, string assetName, XeSys.FontInfo font, int elemCount, string elemNameFormat, Action<LayoutUGUIRuntime> onLoadedElem)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -765,7 +765,16 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xBAEDB4 Offset: 0xBAEDB4 VA: 0xBAEDB4
 		protected void DoFriendRelease(FriendListInfo info)
 		{
-			TodoLogger.LogError(0, "DoFriendRelease");
+			MessageBank msgBank = MessageManager.Instance.GetBank("menu");
+			string messageFormat = msgBank.GetMessageByLabel("popup_friend_released_msg");
+			int lastNetType = 4;
+			MenuScene.Instance.RaycastDisable();
+			friendManager.PBEDDFMFDKB(info.playerId, info.name, info.playerRank, () =>
+			{
+				//0xED3668
+				ShowNetRequestSuccessPopup(msgBank.GetMessageByLabel("popup_friend_released_title"), string.Format(messageFormat, info.name));
+				MenuScene.Instance.RaycastEnable();
+			}, OnNetRequestError, OnNetRequestErrorToTitle);
 		}
 
 		//// RVA: 0xBAF05C Offset: 0xBAF05C VA: 0xBAF05C Slot: 44

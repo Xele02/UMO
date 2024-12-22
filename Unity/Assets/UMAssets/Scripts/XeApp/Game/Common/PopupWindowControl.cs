@@ -621,7 +621,7 @@ namespace XeApp.Game.Common
 			else
 			{
 				if(m_setting.IsPreload)
-					TodoLogger.LogError(0, "Popup "+m_content+" is preload but no parent, this will bug");
+					Debug.LogError("Popup "+m_content+" is preload but no parent, this will bug");
 			}
 			m_isOpenWindow = false;
 			yield return this.StartCoroutineWatched(PlayPopupWindowAnim());

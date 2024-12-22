@@ -14,6 +14,7 @@ using XeApp.Game.Menu;
 using XeApp.Game;
 using XeApp.Core;
 using XeApp.Game.AR;
+using System.Runtime.InteropServices;
 
 public class NKGJPJPHLIF
 {
@@ -203,11 +204,11 @@ public class NKGJPJPHLIF
 		LEJDPOCMFPL.IJBGPAENLJA_Init();
 
 		HECNGABHNDJ = new LAPFLEEAACL[5];
-		HECNGABHNDJ[0] = new LAPFLEEAACL(/*2*/HHJHIFJIKAC_BonusVc.IJFKAIHFJLF.JEPMLKCJCPK);
-		HECNGABHNDJ[1] = new LAPFLEEAACL(/*6*/HHJHIFJIKAC_BonusVc.IJFKAIHFJLF.ONIIJLCOCAC);
-		HECNGABHNDJ[2] = new LAPFLEEAACL(/*7*/HHJHIFJIKAC_BonusVc.IJFKAIHFJLF.MCPDGFMLJNG);
-		HECNGABHNDJ[3] = new LAPFLEEAACL(/*8*/HHJHIFJIKAC_BonusVc.IJFKAIHFJLF.PPPGDKCDACF);
-		HECNGABHNDJ[4] = new LAPFLEEAACL(/*5*/HHJHIFJIKAC_BonusVc.IJFKAIHFJLF.MDIJEKDNLFC);
+		HECNGABHNDJ[0] = new LAPFLEEAACL(/*2*/HHJHIFJIKAC_BonusVc.IJFKAIHFJLF.JEPMLKCJCPK_2_Bonus_4001_4002);
+		HECNGABHNDJ[1] = new LAPFLEEAACL(/*6*/HHJHIFJIKAC_BonusVc.IJFKAIHFJLF.ONIIJLCOCAC_6);
+		HECNGABHNDJ[2] = new LAPFLEEAACL(/*7*/HHJHIFJIKAC_BonusVc.IJFKAIHFJLF.MCPDGFMLJNG_7_Bonus4003);
+		HECNGABHNDJ[3] = new LAPFLEEAACL(/*8*/HHJHIFJIKAC_BonusVc.IJFKAIHFJLF.PPPGDKCDACF_8_Omikuji);
+		HECNGABHNDJ[4] = new LAPFLEEAACL(/*5*/HHJHIFJIKAC_BonusVc.IJFKAIHFJLF.MDIJEKDNLFC_5_SpecialTickets);
 
 		JAECPEDLEMN = new NHPDPKHMFEP();
 		JAECPEDLEMN.IJBGPAENLJA();
@@ -336,7 +337,10 @@ public class NKGJPJPHLIF
 		// private PKNOGNLPHAE CNEMMHHJKNG; // 0x28
 		//0xC1B698
 
-		if(MDAMJIGBOLD_PlayerId != 0 && !FBBNPFFEJBN)
+		//UMO
+		bool isCheat = MDAMJIGBOLD_PlayerId == 999999999;
+
+		if(MDAMJIGBOLD_PlayerId != 0 && !FBBNPFFEJBN && ExternLib.LibSakasho.GetCurrentAccountId() == MDAMJIGBOLD_PlayerId)
 		{
 			//goto LAB_00c1bbc4;
 			if(KLMFJJCNBIP_OnSuccess != null)
@@ -370,7 +374,8 @@ public class NKGJPJPHLIF
 		{
 			//L214
 			// UMO Display account type creation popup, check if full account is already created?
-			int accountType = 1; // 0 = normal, 1 = full unlock
+			//int accountType = 1; // 0 = normal, 1 = full unlock
+			int accountType = isCheat ? 1 : 0;
 
 			FFEEIONIBFF_Request = null;
 			PKNOGNLPHAE_CreatePlayer CNEMMHHJKNG = IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new PKNOGNLPHAE_CreatePlayer());
@@ -416,6 +421,8 @@ public class NKGJPJPHLIF
 		if (MLPEHNBNOGD == 0)
 			return;
 		GameManager.Instance.localSave.LHPDDGIJKNB_Reset();
+		UMO_PlayerPrefs.SetInt("cpid", MLPEHNBNOGD);
+		UMO_PlayerPrefs.Save();
 		GameManager.Instance.localSave.PCODDPDFLHK_Load();
 		BIFNGFAIEIL.BLICHJOLKAO_DeleteCache();
 		EFLBHNFNFHA.KEIPMGOEKFL_DeleteCache();
@@ -440,8 +447,6 @@ public class NKGJPJPHLIF
 		GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.GEPLOFLHAOL_NeedInitRenderQuality = 1;
 		GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
 		Debug.Log(JpStringLiterals.StringLiteral_12640);
-		UMO_PlayerPrefs.SetInt("cpid", MLPEHNBNOGD);
-		UMO_PlayerPrefs.Save();
 		PKECIDPBEFL.GDELLNOBNDM_DeleteCache();
 	}
 

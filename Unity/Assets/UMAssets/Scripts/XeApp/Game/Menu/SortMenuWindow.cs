@@ -341,7 +341,7 @@ namespace XeApp.Game.Menu
 			m_divaIdList.Clear();
 			for(int i = 0; i < divaList.Count; i++)
 			{
-				if(divaList[i].IPJMPBANBPP)
+				if(divaList[i].IPJMPBANBPP_Enabled)
 				{
 					m_divaIdList.Add(divaList[i].AHHJLDLAPAN_DivaId);
 				}

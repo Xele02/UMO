@@ -338,9 +338,11 @@ namespace XeApp.Game.Menu
 			int b = GetAchievedCount(LayoutQuestTab.eTabType.Normal);
 			int c = GetAchievedCount(LayoutQuestTab.eTabType.Event);
 			int d = GetAchievedCount(LayoutQuestTab.eTabType.Diva);
-			int e = 5;
+			int e = 0;
 			if (IsBeginnerQuest())
-				e = 4;
+				e = GetAchievedCount(LayoutQuestTab.eTabType.Beginner);
+			else
+				e = GetAchievedCount(LayoutQuestTab.eTabType.Bingo);
 			return b + a + c + d + e;
 		}
 
@@ -426,7 +428,7 @@ namespace XeApp.Game.Menu
 						{
 							if(l[i].LHONOILACFL_IsWeeklyEvent)
 							{
-								if(l[i].BELHFPMBAPJ_WeekPlay < l[i].JOJNGDPHOKG)
+								if(l[i].BELHFPMBAPJ_WeekPlay < l[i].JOJNGDPHOKG_WeeklyMax)
 								{
 									if(l[i].GHBPLHBNMBK_FreeMusicId > 0)
 									{
@@ -845,13 +847,34 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x9E721C Offset: 0x9E721C VA: 0x9E721C
 		public static void OpenURL(FKMOKDCJFEN view, Action onSuccess)
 		{
-			TodoLogger.LogError(0, "OpenURL");
-			onSuccess();
+			GameManager.Instance.StartCoroutineWatched(Co_OpenURL(view, onSuccess));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x710EA4 Offset: 0x710EA4 VA: 0x710EA4
 		//// RVA: 0x9E7300 Offset: 0x9E7300 VA: 0x9E7300
-		//private static IEnumerator Co_OpenURL(FKMOKDCJFEN view, Action onSuccess) { }
+		private static IEnumerator Co_OpenURL(FKMOKDCJFEN view, Action onSuccess)
+		{
+			//0x9E88BC
+			bool isWait = true;
+			bool isSuccess = false;
+			view.KKFFEJEKFEG(() =>
+			{
+				//0x9E7E6C
+				isWait = false;
+				isSuccess = true;
+			}, () =>
+			{
+				//0x9E7E78
+				isWait = false;
+			});
+			while(isWait)
+				yield return null;
+			if(isSuccess)
+			{
+				if(onSuccess != null)
+					onSuccess();
+			}
+		}
 
 		//// RVA: 0x9E6D18 Offset: 0x9E6D18 VA: 0x9E6D18
 		private static void GoToFreeMusic(int freeMusicId)
@@ -868,17 +891,17 @@ namespace XeApp.Game.Menu
 		private static void GotoCurrentEventScene(FKMOKDCJFEN view)
 		{
 			IKDICBBFBMI_EventBase ev = view.COAMJFMEIBF;
-			if(ev.HIDHLFCBIDE_EventType >= OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp && ev.HIDHLFCBIDE_EventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_9)
+			if(ev.HIDHLFCBIDE_EventType >= OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp && ev.HIDHLFCBIDE_EventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign)
 			{
-				ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB(KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9, false);
+				ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9, false);
 			}
 			TransitionUniqueId goScene = TransitionUniqueId.MUSICSELECT_RAID;
 			if (ev.FBLGGLDPFDF())
 			{
-				GPMHOAKFALE_Adventure.NGDBKCKMDHE dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(ev.GFIBLLLHMPD_AdventureId);
-				if(dbAdv != null && dbAdv.KKPPFAHFOJI > 0)
+				GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(ev.GFIBLLLHMPD_AdventureId);
+				if(dbAdv != null && dbAdv.KKPPFAHFOJI_FileId > 0)
 				{
-					int advId = dbAdv.KKPPFAHFOJI;
+					int advId = dbAdv.KKPPFAHFOJI_FileId;
 					AdvSetupParam param = new AdvSetupParam();
 					param.eventUniqueId = ev.PGIIDPEGGPI_EventId;
 					if(ev.HIDHLFCBIDE_EventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
@@ -901,14 +924,14 @@ namespace XeApp.Game.Menu
 					}
 					else if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 					{
-						TodoLogger.LogError(0, "Event raid");
+						TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event raid");
 					}
 					else if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
 					{
 						Database.Instance.advResult.Setup("Menu", goScene, param);
 						goScene = TransitionUniqueId.EVENTQUEST;
 					}
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA(ev.GFIBLLLHMPD_AdventureId);
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetViewed(ev.GFIBLLLHMPD_AdventureId);
 					Database.Instance.advSetup.Setup(advId);
 					MenuScene.Instance.GotoAdventure(true);
 					return;
@@ -931,7 +954,7 @@ namespace XeApp.Game.Menu
 			}
 			else if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 			{
-				TodoLogger.LogError(0, "Event raid");
+				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event raid");
 			}
 			else if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
 			{

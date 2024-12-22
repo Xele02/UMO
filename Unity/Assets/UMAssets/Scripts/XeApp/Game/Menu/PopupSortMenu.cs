@@ -186,7 +186,7 @@ namespace XeApp.Game.Menu
 		public static List<SortItem> UnitDivaSortItem { get { return UnitDivaSortItemList; } }  //0x1149BB0
 		public static List<SortItem> SceneSortItem { get { return SceneSortItemList; } } //0x1149C3C
 		public static List<SortItem> MusicSelectSortItem { get { return MusicSelectSortList; } }//0x1149CC8
-		//public static List<SortItem> ShopSortItem { get; } 0x1149D54
+		public static List<SortItem> ShopSortItem { get { return ShopSortItemList; } } //0x1149D54
 		
 		//// RVA: 0x1149DE0 Offset: 0x1149DE0 VA: 0x1149DE0
 		public static string GetMsg_SortItem(SortItem a_item)
@@ -651,8 +651,59 @@ namespace XeApp.Game.Menu
 		{
 			if(flags == 0)
 				return true;
-			TodoLogger.LogError(0, "IsCenterSkillFilterOn");
-			return true;
+			int skillId = scene.MEOOLHNNMHL_GetCenterSkillId(true, 0, 0);
+			if(skillId != 0)
+			{
+				int cnt = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.NHGMDOIBNDE.Count;
+				HBDCPGLAPHH skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.COLCPGFABLP_CenterSkills[skillId - 1];
+				int[] a1 = new int[2]
+				{
+					skill.HEKHODDJHAO_P1,
+					skill.AKGNPLBDKLN_P2
+				};
+				if(cnt > 0)
+				{
+					for(int i = 0; i < cnt; i++)
+					{
+						BNHOEENHMDF t = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.NHGMDOIBNDE[i];
+						ulong bit = (ulong)1 << t.MKDDOJOADMF;
+						if((bit & flags) != 0)
+						{
+							//LAB_0114c658
+							for(int j = 0; j < t.NNDGIAEFMOG.Count; j++)
+							{
+								bool b = false;
+								AFLHKMDNHID a = t.NNDGIAEFMOG[j];
+								for(int k = 0; k < a1.Length; k++)
+								{
+									if(a1[k] < 1)
+									{
+										if(a.INDDJNMPONH[k] != 0)
+											b = true;
+										if(a.GJLFANGDGCL[k] != 0)
+											b = true;
+										if(a.OAFPGJLCNFM[k] != 0)
+											b = true;
+									}
+									else
+									{
+										KFCIIMBBNCD dataK = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PEPLECGHBFA_SceneEffectInfo[a1[k] - 1];
+										if(dataK.INDDJNMPONH_ModifierType != a.INDDJNMPONH[k])
+											b = true;
+										if(dataK.GJLFANGDGCL_CenterSkillTarget != a.GJLFANGDGCL[k])
+											b = true;
+										if(dataK.OAFPGJLCNFM_CenterSkillCondition != a.OAFPGJLCNFM[k])
+											b = true;
+									}
+								}
+								if(!b)
+									return true;
+							}
+						}
+					}
+				}
+			}
+			return false;
 		}
 
 		//// RVA: 0x114C748 Offset: 0x114C748 VA: 0x114C748
@@ -666,8 +717,8 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.OEELDELPIIP.Count; i++)
 				{
 					HCDIOPEOGEE h = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.OEELDELPIIP[i];
-					TodoLogger.LogError(TodoLogger.ToCheck, "check bit test");
-					if((h.MKDDOJOADMF & (int)flags) != 0)
+					ulong bit = (ulong)1 << h.MKDDOJOADMF;
+					if((bit & flags) != 0)
 					{
 						for (int j = 0; j < h.NNDGIAEFMOG.Count; j++)
 						{
@@ -710,8 +761,8 @@ namespace XeApp.Game.Menu
 				for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.GAGNFDHGJGC.Count; i++)
 				{
 					DNIDPGDJCOG d = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.GAGNFDHGJGC[i];
-					TodoLogger.LogError(TodoLogger.ToCheck, "check bit test");
-					if ((d.MKDDOJOADMF & (int)flags) != 0)
+					ulong bit = (ulong)1 << d.MKDDOJOADMF;
+					if ((bit & flags) != 0)
 					{
 						for(int j = 0; j < d.NNDGIAEFMOG.Count; j++)
 						{

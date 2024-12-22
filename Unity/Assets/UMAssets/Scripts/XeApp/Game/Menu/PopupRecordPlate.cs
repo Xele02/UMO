@@ -146,9 +146,9 @@ namespace XeApp.Game.Menu
 						yield return Co.R(m_prpController.ListPhase(highList, infoList, null));
 					}
 				}
-				if (viewData.JDKOAKDLHMG(/*7*/GONMPHKGKHI_RewardView.CECMLGBLHHG.BKHAAGAAIHJ, ref highList, ref infoList, ref episodeList))
+				if (viewData.JDKOAKDLHMG(/*7*/GONMPHKGKHI_RewardView.CECMLGBLHHG.BKHAAGAAIHJ_7, ref highList, ref infoList, ref episodeList))
 				{
-					yield return Co.R(m_prpController.EpisodePhase(/*7*/GONMPHKGKHI_RewardView.CECMLGBLHHG.BKHAAGAAIHJ, episodeList, null));
+					yield return Co.R(m_prpController.EpisodePhase(/*7*/GONMPHKGKHI_RewardView.CECMLGBLHHG.BKHAAGAAIHJ_7, episodeList, null));
 				}
 				if(HNDLICBDEMI.AFGKIJMPNNN_IsDecoEnabled())
 				{

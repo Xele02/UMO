@@ -72,9 +72,11 @@ namespace XeApp.Game.Menu
 			}*/
 			textGen.Populate(text.text, settings);
 			textGen.GetLines(m_uiLineInfo);
-			if(lineCount < m_uiLineInfo.Count)
+			int charaRemoveCount = 2;
+			while(lineCount < m_uiLineInfo.Count)
 			{
-				startIndex = Mathf.Max(0, m_uiLineInfo[lineCount].startCharIdx - 3);
+				charaRemoveCount++;
+				startIndex = Mathf.Max(0, m_uiLineInfo[lineCount].startCharIdx - charaRemoveCount);
 				char[] c = descript.Substring(startIndex).ToCharArray();
 				int j = 0;
 				for(int i = 0; i < c.Length; i++)
@@ -112,6 +114,8 @@ namespace XeApp.Game.Menu
 						break;
 					}
 				}
+				textGen.Populate(descript.Substring(0, Mathf.Min(descript.Length, startIndex)) + JpStringLiterals.StringLiteral_12038, settings);
+				textGen.GetLines(m_uiLineInfo);
 			}
 			text.text = descript.Substring(0, Mathf.Min(descript.Length, startIndex));
 			if(text.text.Length < descript.Length)

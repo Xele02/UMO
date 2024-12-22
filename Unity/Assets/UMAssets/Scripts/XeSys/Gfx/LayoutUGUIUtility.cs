@@ -81,7 +81,15 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x1EFF4B0 Offset: 0x1EFF4B0 VA: 0x1EFF4B0
-		// public static Rect MakeUnitySpriteTextureRect(Texture tex, TexUVData uvData) { }
+		public static Rect MakeUnitySpriteTextureRect(Texture tex, TexUVData uvData)
+		{
+			Rect r = MakeUnityUVRect(uvData);
+			r.x *= tex.width;
+			r.width *= tex.width;
+			r.y *= tex.height;
+			r.height *= tex.height;
+			return r;
+		}
 
 		// // RVA: 0x1F07000 Offset: 0x1F07000 VA: 0x1F07000
 		// public static bool ApplyTextUGUI(LayoutUGUIRuntime runtime, string viewEXID) { }
@@ -107,7 +115,14 @@ namespace XeSys.Gfx
 		// */
 
 		// // RVA: 0x1F07248 Offset: 0x1F07248 VA: 0x1F07248
-		// public static void SetImageRaycastTarget(GameObject obj, bool enable) { }
+		public static void SetImageRaycastTarget(GameObject obj, bool enable)
+		{
+			IAlphaTexture[] imgs = obj.GetComponentsInChildren<IAlphaTexture>(true);
+			for(int i = 0; i < imgs.Length; i++)
+			{
+				imgs[i].raycastTarget = enable;
+			}
+		}
 
 		// // RVA: 0x1F073A0 Offset: 0x1F073A0 VA: 0x1F073A0
 		// public static void SetTextRaycastTarget(GameObject obj, bool enable) { }

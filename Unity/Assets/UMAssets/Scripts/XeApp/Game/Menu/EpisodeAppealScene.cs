@@ -126,7 +126,10 @@ namespace XeApp.Game.Menu
 		// RVA: 0x127D934 Offset: 0x127D934 VA: 0x127D934
 		private void StartBGM()
 		{
-			TodoLogger.LogError(0, "StartBGM");
+			if(IsStartedBgm)
+				return;
+			SoundManager.Instance.bgmPlayer.ContinuousPlay(BgmPlayer.MENU_BGM_ID_BASE + 24, 1);
+			IsStartedBgm = true;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6DA534 Offset: 0x6DA534 VA: 0x6DA534

@@ -64,10 +64,7 @@ public abstract class KLFDBFMNLBL_ServerSaveBlock
 	public abstract bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP);
 	
 	// // RVA: 0x1A0BD2C Offset: 0x1A0BD2C VA: 0x1A0BD2C Slot: 10
-	public virtual void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
-	{
-		TodoLogger.LogError(0, "AGHKODFKOJI");
-	}
+	//public virtual void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH);
 
 	// // RVA: 0x1A0BD30 Offset: 0x1A0BD30 VA: 0x1A0BD30
 	protected int CJAENOMGPDA_ReadInt(EDOHBJAPLPF_JsonData LFFNOHMOKJA, string LJNAKDMILMC, int HDDJJLKAFIF_DefaultValue, ref bool NGJDHLGMHMH_NotValid)
@@ -237,7 +234,8 @@ public abstract class KLFDBFMNLBL_ServerSaveBlock
 		{
 			if((int)block[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] != FHKFHKLDJIE_Rev)
 			{
-				NGJDHLGMHMH_NotValid = true;
+				if(!TryUpdateVersion(block[JIKKNHIAEKG_BlockName], (int)block[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev]))
+					NGJDHLGMHMH_NotValid = true;
 			}
 		}
 		else
@@ -251,5 +249,10 @@ public abstract class KLFDBFMNLBL_ServerSaveBlock
 			return null;
 		}
 		return block[JIKKNHIAEKG_BlockName];
+	}
+
+	protected virtual bool TryUpdateVersion(EDOHBJAPLPF_JsonData block, int readVersion)
+	{
+		return false;
 	}
 }

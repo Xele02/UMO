@@ -164,5 +164,14 @@ namespace XeApp.Game.Common
 
 		//// RVA: 0x138F0E0 Offset: 0x138F0E0 VA: 0x138F0E0
 		//public void CopyText(Text from, Text to) { }
+
+		public void Setup(Text copyText, int startDelay, int speed, int distance)
+		{
+			m_copyText = copyText;
+			m_startDelay = startDelay;
+			m_speed = speed;
+			m_distance = distance;
+			m_text = GetComponent<Text>();
+		}
 	}
 }

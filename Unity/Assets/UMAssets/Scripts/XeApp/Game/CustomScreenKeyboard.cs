@@ -28,6 +28,7 @@ namespace XeApp.Game
 		// RVA: 0xD39E9C Offset: 0xD39E9C VA: 0xD39E9C
 		public void LateUpdate()
 		{
+			#if UNITY_ANDROID
 			if(m_keyboard != null)
 			{
 				SettingKeyBoardText();
@@ -49,6 +50,15 @@ namespace XeApp.Game
 				return;
 			m_closeEnd = true;
 			TapGuardOFF();
+			#else
+			if(m_closeEnd)
+			{
+				m_closeEnd = false;
+				IsOpenKeyboard = false;
+				m_keyboard = null;
+				TapGuardOFF();
+			}
+			#endif
 		}
 
 		//// RVA: 0xD3A1E8 Offset: 0xD3A1E8 VA: 0xD3A1E8
@@ -86,7 +96,39 @@ namespace XeApp.Game
 		//// RVA: 0xD3A35C Offset: 0xD3A35C VA: 0xD3A35C
 		public void OpenKeyboard(string _text, int charaLimit, TouchScreenKeyboardType _type = 0, bool autocorrection = false, bool mulitline = false, bool secure = false, bool alert = false, string textPlaceholder = "")
 		{
+			#if UNITY_ANDROID
 			m_keyboard = TouchScreenKeyboard.Open(_text, _type, autocorrection, mulitline, secure, alert, textPlaceholder);
+			#else
+			m_closeEnd = false;
+			InputPopupSetting s = new InputPopupSetting();
+			s.InputLineCount = 1;
+			s.Description = "Enter Text";
+			s.InputText = _text;
+			s.Notes = "";
+			s.CharacterLimit = charaLimit;
+			s.ContentType = UnityEngine.UI.InputField.ContentType.Standard;
+			if(_type != 0 || autocorrection || secure || alert || mulitline)
+			{
+				TodoLogger.LogError(0, "Add more input option");
+			}
+			s.TitleText = "";
+			s.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			s.WindowSize = SizeType.Middle;
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1524AF8
+				if(type == PopupButton.ButtonType.Positive)
+				{
+					InputContent c = control.Content as InputContent;
+					m_Text = c.Text;
+				}
+				m_closeEnd = true;
+			}, null, null, null);
+			#endif
 			IsOpenKeyboard = true;
 			IsTouchInputField = true;
 			m_characterLimit = charaLimit;

@@ -272,7 +272,7 @@ public class LPPGENBEECK_MusicMaster : DIHHCBACKGG_DbSection
 	// // RVA: 0x10D52EC Offset: 0x10D52EC VA: 0x10D52EC Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(0, "TODO");
+		TodoLogger.LogError(TodoLogger.DbJson, "TODO");
 		return true;
 	}
 

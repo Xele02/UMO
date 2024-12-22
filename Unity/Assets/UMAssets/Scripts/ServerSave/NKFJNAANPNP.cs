@@ -149,7 +149,7 @@ public class NKFJNAANPNP : KLFDBFMNLBL_ServerSaveBlock
 		int a = -1;
 		int b = int.MaxValue;
 		int c = 0;
-		for(int index = FIBFMLMHOGN; index > -1; index--)
+		for(int index = FIBFMLMHOGN - 1; index > -1; index--)
 		{
 			if(!IDJIDAPJCBE[index].NIENPFFLMCH(JHNMKKNEENE))
 			{
@@ -381,10 +381,7 @@ public class NKFJNAANPNP : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xC14F18 Offset: 0xC14F18 VA: 0xC14F18 Slot: 10
-	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
-	{
-		TodoLogger.LogError(0, "AGHKODFKOJI");
-	}
+	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH);
 
 	// // RVA: 0xC15D60 Offset: 0xC15D60 VA: 0xC15D60
 	public void JKGBOCBNIIG(ulong PPFNGGCBJKC, string EBBJPBGHJOL)

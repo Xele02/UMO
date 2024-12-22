@@ -16,7 +16,12 @@ namespace XeSys
 		// RVA: 0x239797C Offset: 0x239797C VA: 0x239797C Slot: 4
 		public void Dispose()
 		{
-			TodoLogger.LogError(0, "TODO");
+			foreach(var v in msgBankDic.Values)
+			{
+				v.Dispose();
+			}
+			msgBankDic.Clear();
+			msgBankDic = null;
 		}
 
 		// // RVA: 0x2397B34 Offset: 0x2397B34 VA: 0x2397B34
@@ -25,7 +30,7 @@ namespace XeSys
 			if(!msgBankDic.ContainsKey(bankName))
 			{
 				MessageBank bank = new MessageBank();
-				bank.Setup(bytes);
+				bank.Setup(bytes, bankName);
 				msgBankDic.Add(bankName, bank);
 				return bank;
 			}

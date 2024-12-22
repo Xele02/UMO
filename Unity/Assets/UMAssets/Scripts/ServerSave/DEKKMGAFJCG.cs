@@ -467,10 +467,7 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x19761D8 Offset: 0x19761D8 VA: 0x19761D8 Slot: 10
-	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
-	{
-		TodoLogger.LogError(0, "AGHKODFKOJI");
-	}
+	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH);
 
 	// // RVA: 0x197A9D0 Offset: 0x197A9D0 VA: 0x197A9D0
 	// public void OBDIJIHNKLE(List<int> HNHCIGMKPDC, ref List<int> ONOICEHIHPJ) { }
@@ -485,21 +482,28 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 			int maxLevel = NDFIEMPPMLF.GLHEHGGKILG_GetMaxLevel();
 			int level = diva.KCCONFODCPN_IntimacyLevel;
 			int baseLevel = level;
-			int lvlExp = exp;
+			int level2 = baseLevel;
+			int exp2 = exp;
 			while (DNBFMLBNAEE > 0)
 			{
-				if (maxLevel <= level)
+				level = maxLevel;
+				exp2 = exp;
+				if (maxLevel <= level2)
 					break;
-				lvlExp = NDFIEMPPMLF.JBKMPBPGFHA(level);
+				int lvlExp = NDFIEMPPMLF.JBKMPBPGFHA(level2);
+				level = level2;
+				exp2 = exp + DNBFMLBNAEE;
 				if (exp + DNBFMLBNAEE < lvlExp)
 					break;
+				level = level2 + 1;
 				if (0 < lvlExp - exp)
 					DNBFMLBNAEE -= lvlExp - exp;
 				exp = lvlExp;
-				level++;
+				level2 = level;
+				exp2 = lvlExp;
 			}
 			diva.KCCONFODCPN_IntimacyLevel = level;
-			diva.BNDNNCHJGBB_IntimacyExp = lvlExp;
+			diva.BNDNNCHJGBB_IntimacyExp = exp2;
 			return level - baseLevel;
 		}
 		return 0;
@@ -540,7 +544,15 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x197B59C Offset: 0x197B59C VA: 0x197B59C
-	// public bool IGFOFCEKIAM(int AHHJLDLAPAN, int HMFFHLPNMPH) { }
+	public bool IGFOFCEKIAM(int AHHJLDLAPAN, int HMFFHLPNMPH)
+	{
+		if(AHHJLDLAPAN > 0)
+		{
+			NBIGLBMHEDC_DivaList[AHHJLDLAPAN - 1].DDODJCCIENF_IntimacyPresentTotal += HMFFHLPNMPH;
+			return true;
+		}
+		return false;
+	}
 
 	// // RVA: 0x197B67C Offset: 0x197B67C VA: 0x197B67C
 	public int KPJIMHGMAGN(int AHHJLDLAPAN)

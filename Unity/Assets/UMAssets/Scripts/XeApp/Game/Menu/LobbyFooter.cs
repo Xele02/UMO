@@ -250,7 +250,7 @@ namespace XeApp.Game.Menu
 			m_textTextField.text = str;
 			m_textTextField.onValueChanged.AddListener(OnChangeContent);
 			if (onMessgeSend != null)
-				onMessgeSend(str, string.IsNullOrEmpty(str) || IsWhiteSpace(str));
+				onMessgeSend(str, !(string.IsNullOrEmpty(str) || IsWhiteSpace(str)));
 			IsEnableSendButton = string.IsNullOrEmpty(str) || IsWhiteSpace(str);
 			m_sendButton.Disable = IsEnableSendButton;
 			TextGeneratorUtility.SetTextRectangleMessage(m_DisplayInputText, str, 1, "...");

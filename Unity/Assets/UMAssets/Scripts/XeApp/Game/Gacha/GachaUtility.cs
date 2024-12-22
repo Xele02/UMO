@@ -4,9 +4,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization.SmartFormat;
 using XeApp.Game.Common;
 using XeApp.Game.Common.uGUI;
 using XeApp.Game.Menu;
+using XeApp.Game.Tutorial;
 using XeSys;
 
 namespace XeApp.Game.Gacha
@@ -523,8 +525,11 @@ namespace XeApp.Game.Gacha
 			Action tutoAction = null;
 			if(GameManager.Instance.IsTutorial)
 			{
-				TodoLogger.Log(0, "Tuto");
-				//tutoAction = ;
+				tutoAction = () =>
+				{
+					//0x996E34
+					BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.PopupPositiveButton, null, null);
+				};
 			}
 			toPurchaseVC = false;
 			int v3_price = GetMenuPrice(selectCategory, selectedCountType, selectedLotType);
@@ -550,7 +555,7 @@ namespace XeApp.Game.Gacha
 					s = MakePopupSettingForTicket(ticketName, v1_have, v3_price, v2_lotCount);
 					//LAB_00998190;
 				}
-				if (EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem, 1) != netGachaProductData.MJNOAMAFNHA_CostItemId)
+				else if (EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem, 1) != netGachaProductData.MJNOAMAFNHA_CostItemId)
 				{
 					//LAB_009980f0
 					s = MakePopupSettingForFewLimitedItem(ticketName, v1_have, v3_price);
@@ -691,16 +696,16 @@ namespace XeApp.Game.Gacha
 							int a = netGachaProductData.OMNAPCHLBHF(GCAHJLOGMCI.NFCAJPIJFAM_SummonType.GOAHICNDICO_5);
 							if (a == 0)
 								a = netGachaProductData.OMNAPCHLBHF(GCAHJLOGMCI.NFCAJPIJFAM_SummonType.LMHDFEKIDKG_6);
-							return paidVCProductData.LHENLPLKGLP == netGachaProductData.LPPJMOMKPKA(a);
+							return paidVCProductData.LHENLPLKGLP_StuffId == netGachaProductData.LPPJMOMKPKA(a);
 						}));
 					}
 					else
 					{
 						yield return Co.R(OpenPurchaseVCWindow(denomControl, onNetError, onChangeDate, null));
 					}
-					if (onCancel != null)
-						onCancel(CancelCause.ToPurchase);
 				}
+				if (onCancel != null)
+					onCancel(CancelCause.ToPurchase);
 			}
 		}
 
@@ -813,13 +818,47 @@ namespace XeApp.Game.Gacha
 		// // RVA: 0x993298 Offset: 0x993298 VA: 0x993298
 		public static void OpenFewVCPopup(Action onClose)
 		{
-			TodoLogger.LogNotImplemented("OpenFewVCPopup");
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			TextPopupSetting s = new TextPopupSetting();
+			s.TitleText = netGachaProductData.OPFGFINHFCE_Name;
+			s.WindowSize = SizeType.Middle;
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			s.Text = bk.GetMessageByLabel("popup_gacha_lot_paid_few_msg");
+			PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x997410
+				if(onClose != null)
+					onClose();
+			}, null, null, null);
 		}
 
 		// // RVA: 0x9935E4 Offset: 0x9935E4 VA: 0x9935E4
 		public static void OpenTimeLimitPopup(Action onClose)
 		{
-			TodoLogger.LogNotImplemented("OpenTimeLimitPopup");
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			string msg = "";
+			if(selectCategory == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1)
+			{
+				msg = bk.GetMessageByLabel("popup_gacha_reject_free_timeout_msg");
+			}
+			else if(selectCategory >= GCAHJLOGMCI.KNMMOMEHDON_GachaType.GKDFKDLFNAJ_5 && selectCategory <= GCAHJLOGMCI.KNMMOMEHDON_GachaType.BKNHBNINDOC_6)
+			{
+				msg = bk.GetMessageByLabel("popup_gacha_reject_ticket_timeout_msg");
+			}
+            TextPopupSetting s = PopupWindowManager.CrateTextContent("", SizeType.Small, msg, new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			}, false, true);
+			s.IsCaption = !string.IsNullOrEmpty(s.TitleText);
+            PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x997424
+				if(onClose != null)
+					onClose();
+			}, null, null, null);
 		}
 
 		// // RVA: 0x993928 Offset: 0x993928 VA: 0x993928
@@ -854,7 +893,7 @@ namespace XeApp.Game.Gacha
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 			};
-			s.MessageText = MakePopupMessage(bk.GetMessageByLabel("popup_gacha_lot_paid_msg"), price, lotCount);
+			s.MessageText = MakePopupMessageSmart(bk.GetMessageByLabel("popup_gacha_lot_paid_msg"), price, lotCount);
 			s.HoldCurrency = string.Format(bk.GetMessageByLabel("popup_gacha_lot_paid_count"), havePaidVC);
 			s.CurrencyIsTicket = false;
 			s.OnClickLegalDescButton = OnClickLegalDesc;
@@ -894,7 +933,7 @@ namespace XeApp.Game.Gacha
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 			};
-			s.Text = MakePopupMessage(bk.GetMessageByLabel("popup_gacha_lot_free_msg"), GetMenuLotCount(selectCategory, selectedCountType, selectedLotType));
+			s.Text = MakePopupMessageSmart(bk.GetMessageByLabel("popup_gacha_lot_free_msg"), GetMenuLotCount(selectCategory, selectedCountType, selectedLotType));
 			return s;
 		}
 
@@ -1009,11 +1048,19 @@ namespace XeApp.Game.Gacha
 		{
 			return string.Format(format, RichTextUtility.MakeColorTagString(n0.ToString(), SystemTextColor.ImportantColor), RichTextUtility.MakeColorTagString(n1.ToString(), SystemTextColor.ImportantColor));
 		}
+		private static string MakePopupMessageSmart(string format, int n0, int n1)
+		{
+			return Smart.Format(format, RichTextUtility.MakeColorTagString(n0.ToString(), SystemTextColor.ImportantColor), RichTextUtility.MakeColorTagString(n1.ToString(), SystemTextColor.ImportantColor));
+		}
 
 		// // RVA: 0x99470C Offset: 0x99470C VA: 0x99470C
 		private static string MakePopupMessage(string format, int n0)
 		{
 			return string.Format(format, RichTextUtility.MakeColorTagString(n0.ToString(), SystemTextColor.ImportantColor));
+		}
+		private static string MakePopupMessageSmart(string format, int n0)
+		{
+			return Smart.Format(format, RichTextUtility.MakeColorTagString(n0.ToString(), SystemTextColor.ImportantColor));
 		}
 
 		// // RVA: 0x98AC48 Offset: 0x98AC48 VA: 0x98AC48

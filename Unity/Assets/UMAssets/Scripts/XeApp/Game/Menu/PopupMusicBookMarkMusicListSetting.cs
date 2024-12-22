@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XeApp.Core;
 using XeApp.Game.Common;
 using XeApp.Game.MusicSelect;
 
@@ -26,7 +27,26 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1692F50 Offset: 0x1692F50 VA: 0x1692F50 Slot: 4
 		public override IEnumerator LoadAssetBundlePrefab(Transform parent)
 		{
-			TodoLogger.LogError(0, "LoadAssetBundlePrefab");
+			AssetBundleLoadUGUIOperationBase uguiOp; // 0x1C
+
+			//0x16930FC
+			m_parent = parent;
+			yield return Co.R(base.LoadAssetBundlePrefab(parent));
+			Layout = m_content.GetComponent<PopupMusicBookMarkMusicListContentLayout>();
+			GameObject obj = null;
+			uguiOp = AssetBundleManager.LoadUGUIAsync(BundleName, "PopupMusicBookMarkMusicListContent_ScrollItem");
+			yield return uguiOp;
+			yield return Co.R(uguiOp.InitializeUGUICoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+			{
+				//0x1693028
+				obj = instance;
+				Layout.ScrollList.AddScrollObject(UnityEngine.Object.Instantiate(obj).GetComponent<SwapScrollListContent>());
+			}));
+			for(int i = Layout.ScrollList.ScrollObjectCount - 1; i > 0; i--)
+			{
+				Layout.ScrollList.AddScrollObject(UnityEngine.Object.Instantiate(obj).GetComponent<SwapScrollListContent>());
+			}
+			Layout.ScrollList.Apply();
 			yield return null;
 		}
 

@@ -584,10 +584,7 @@ public class JDDGGJCGOPA_RecordMusic : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1C284E0 Offset: 0x1C284E0 VA: 0x1C284E0 Slot: 10
-	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
-	{
-		TodoLogger.LogError(0, "AGHKODFKOJI");
-	}
+	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH);
 
 	// // RVA: 0x1C2F14C Offset: 0x1C2F14C VA: 0x1C2F14C
 	public static int IEFAHENNHAH(bool GIKLNODJKFK, int AKNELONELJK, int OIPCCBHIKIA)
@@ -607,6 +604,6 @@ public class JDDGGJCGOPA_RecordMusic : KLFDBFMNLBL_ServerSaveBlock
 
 		// Debug
 		if (IEFAHENNHAH(GIKLNODJKFK, AKNELONELJK, OIPCCBHIKIA) != FAENAMBEGMD)
-			TodoLogger.LogError(0, "Error converting music id");
+			UnityEngine.Debug.LogError("Error converting music id");
 	}
 }

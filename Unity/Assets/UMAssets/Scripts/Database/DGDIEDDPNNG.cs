@@ -57,7 +57,7 @@ public class DGDIEDDPNNG_UcItem : DIHHCBACKGG_DbSection
 	// RVA: 0x1984900 Offset: 0x1984900 VA: 0x1984900 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(TodoLogger.Database, "DGDIEDDPNNG_UcItem.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbJson, "DGDIEDDPNNG_UcItem.IIEMACPEEBJ");
 		return true;
 	}
 

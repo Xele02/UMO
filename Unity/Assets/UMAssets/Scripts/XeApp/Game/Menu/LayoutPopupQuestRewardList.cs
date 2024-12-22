@@ -91,7 +91,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator LoadContents(Action callback)
 		{
 			string assetBundleName; // 0x1C
-			Font font; // 0x20
+			XeSys.FontInfo font; // 0x20
 			int rowCount; // 0x24
 			int colCount; // 0x28
 			Vector2 contentSize; // 0x2C

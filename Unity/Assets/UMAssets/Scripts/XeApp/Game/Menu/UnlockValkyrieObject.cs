@@ -154,7 +154,7 @@ namespace XeApp.Game.Menu
 			{
 				if(!m_ValkyrieObject.gerwalk.activeSelf)
 				{
-					if (!m_ValkyrieObject.gerwalk.activeSelf)
+					if (!m_ValkyrieObject.battroid.activeSelf)
 						return FKGMGBHBNOC.HPJOCKGKNCC_Form.AEFCOHJBLPO_Num;
 					return FKGMGBHBNOC.HPJOCKGKNCC_Form.GBLPNIGCPAP_Battroid;
 				}
@@ -206,17 +206,46 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x16500F4 Offset: 0x16500F4 VA: 0x16500F4
-		//public void Finish() { }
+		public void Finish()
+		{
+			this.StartCoroutineWatched(Co_Finish());
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x732F74 Offset: 0x732F74 VA: 0x732F74
 		//// RVA: 0x1651010 Offset: 0x1651010 VA: 0x1651010
-		//private IEnumerator Co_Finish() { }
+		private IEnumerator Co_Finish()
+		{
+			//0x1651C5C
+			float elapsed = 0;
+			yield return new WaitWhile(() =>
+			{
+				//0x1651408
+				elapsed += Time.deltaTime;
+				float r = Mathf.Clamp(elapsed / CameraLerpTime, 0, 1);
+				if(r >= 1)
+				{
+					m_Camera.transform.localPosition = m_FinishCameraInfo.CameraPos;
+					m_Camera.transform.LookAt(m_FinishCameraInfo.GetTargetPos());
+					return false;
+				}
+				else
+				{
+					m_Camera.transform.localPosition = Vector3.Lerp(DefaultCameraInfo.CameraPos, m_FinishCameraInfo.CameraPos, r);
+					m_Camera.transform.LookAt(Vector3.Lerp(DefaultCameraInfo.GetTargetPos(), m_FinishCameraInfo.GetTargetPos(), r));
+					return true;
+				}
+			});
+			m_IsFinished = true;
+		}
 
 		//// RVA: 0x16510BC Offset: 0x16510BC VA: 0x16510BC
 		//public void watchValkyrie() { }
 
 		//// RVA: 0x164F3DC Offset: 0x164F3DC VA: 0x164F3DC
-		//public bool IsFinished() { }
+		public bool IsFinished()
+		{
+			return m_IsFinished;
+		}
 
 		// RVA: 0x1651254 Offset: 0x1651254 VA: 0x1651254
 		public void Update()

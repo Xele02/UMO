@@ -9,7 +9,7 @@ namespace XeApp.Core
 		// RVA: 0x1D77A18 Offset: 0x1D77A18 VA: 0x1D77A18
 		public static void Post(string str)
 		{
-			TodoLogger.LogError(0, "Post");
+			TodoLogger.LogError(TodoLogger.Toast, "Post");
 		}
 	}
 }

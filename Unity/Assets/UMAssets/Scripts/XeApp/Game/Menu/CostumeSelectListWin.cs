@@ -86,7 +86,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1646F70 Offset: 0x1646F70 VA: 0x1646F70
 		public IEnumerator Co_LoadListContent()
 		{
-			Font font; // 0x18
+			XeSys.FontInfo font; // 0x18
 			string bundleName; // 0x1C
 			AssetBundleLoadLayoutOperationBase lytOp; // 0x20
 
@@ -150,7 +150,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1647298 Offset: 0x1647298 VA: 0x1647298
 		private void CB_GetInfo(int a_index)
 		{
-			TodoLogger.LogNotImplemented("CB_GetInfo");
+			if(m_cb_getinfo != null)
+				m_cb_getinfo(a_index);
 		}
 
 		//// RVA: 0x164730C Offset: 0x164730C VA: 0x164730C

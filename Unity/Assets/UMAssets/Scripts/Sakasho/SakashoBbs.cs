@@ -80,12 +80,12 @@ public class SakashoBbs : SakashoAPIBase
 			h["expireDays"] = info.ExpireDays;
 			h["threadScore"] = info.ThreadScore;
 			ArrayList l = null;
-			if (info.ReadPlayerIds != null)
+			if (info.WritePlayerIds != null)
 			{
 				l = new ArrayList();
-				for(int i = 0; i < info.ReadPlayerIds.Length; i++)
+				for(int i = 0; i < info.WritePlayerIds.Length; i++)
 				{
-					l.Add(info.ReadPlayerIds[i]);
+					l.Add(info.WritePlayerIds[i]);
 				}
 			}
 			h["writePlayerIds"] = l;

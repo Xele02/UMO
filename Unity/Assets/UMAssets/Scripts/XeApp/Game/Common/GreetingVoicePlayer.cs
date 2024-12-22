@@ -22,7 +22,10 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xEA28C4 Offset: 0xEA28C4 VA: 0xEA28C4
-		//public void Stop() { }
+		public void Stop()
+		{
+			StopCue();
+		}
 
 		//// RVA: 0xEA28CC Offset: 0xEA28CC VA: 0xEA28CC
 		public void RequestRemoveCueSheet()

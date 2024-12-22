@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Localization.SmartFormat;
 using UnityEngine.UI;
 using XeApp.Core;
 using XeApp.Game.Common;
@@ -575,7 +576,7 @@ namespace XeApp.Game.Menu
 				haveCount = KDHGBOOECKC.HHCJCDFCLOB.CKINCELGOEE_GetNumFastProgramAvaiable();
 			}
 			string text = s1 + "\n\n" + s2;
-			popText = string.Format(text, a1, haveCount, haveCount - useCount);
+			popText = Smart.Format(text, useCount, haveCount, haveCount - useCount);
 			KDHGBOOECKC.LKBMNFAOOII fastCompleteItemData = new KDHGBOOECKC.LKBMNFAOOII();
 			PopupUseStoneSetting s = new PopupUseStoneSetting();
 			s.TitleText = title;
@@ -589,7 +590,7 @@ namespace XeApp.Game.Menu
 				fastCompleteItemData = KDHGBOOECKC.HHCJCDFCLOB.NNMPMKGBJFB(viewList[index].PCCFAKEOBIC_EndDate - t, IsStones ? BOPFPIHGJMD.AGGLEGJDLGF.NLGNJNJBLEJ_2_Stone : BOPFPIHGJMD.AGGLEGJDLGF.JPAODAPCJGG_1_Program);
 				if(useCount != fastCompleteItemData.ADPPAIPFHML_UseCount)
 				{
-					popText = string.Format(text, fastCompleteItemData.ADPPAIPFHML_UseCount, haveCount, haveCount - fastCompleteItemData.ADPPAIPFHML_UseCount);
+					popText = Smart.Format(text, fastCompleteItemData.ADPPAIPFHML_UseCount, haveCount, haveCount - fastCompleteItemData.ADPPAIPFHML_UseCount);
 					content.SetMainText(popText);
 				}
 			};
@@ -692,6 +693,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x18689C0 Offset: 0x18689C0 VA: 0x18689C0
 		private bool FastDoneLimitOverCheck()
 		{
+			if(RuntimeSettings.CurrentSettings.DisableMaxVopFastCompletionLimit)
+				return false;
 			if(KDHGBOOECKC.HHCJCDFCLOB.PEBJPOPJAJJ_GetFastCompleteSlotAvaiable() < 1)
 			{
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
@@ -773,7 +776,7 @@ namespace XeApp.Game.Menu
 			int compOfferNum; // 0x2C
 			bool isLimit; // 0x30
 			string bundleName; // 0x34
-			Font systemFont; // 0x38
+			XeSys.FontInfo systemFont; // 0x38
 			float scrollTime; // 0x3C
 			int i; // 0x40
 
@@ -889,7 +892,7 @@ namespace XeApp.Game.Menu
 			while (!isSave)
 			{
 				if(GameManager.Instance.transmissionIcon.activeSelf)
-					TodoLogger.LogError(0, "Fix transmissoin icon");
+					Debug.LogError("Sould not pass here, fix transmissoin icon");
 				yield return null;
 			}
 			bool done = false;
@@ -1342,7 +1345,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator AllAssetLoad()
 		{
 			string bundleName; // 0x14
-			Font systemFont; // 0x18
+			XeSys.FontInfo systemFont; // 0x18
 
 			//0x186EB08
 			IsLayoutAssetLoad = false;
@@ -1368,7 +1371,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FAE04 Offset: 0x6FAE04 VA: 0x6FAE04
 		//// RVA: 0x186A5A0 Offset: 0x186A5A0 VA: 0x186A5A0
-		private IEnumerator Co_LoadAssetsItemButtonLayout(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsItemButtonLayout(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -1389,7 +1392,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FAE7C Offset: 0x6FAE7C VA: 0x6FAE7C
 		//// RVA: 0x186A65C Offset: 0x186A65C VA: 0x186A65C
-		private IEnumerator Co_LoadAssetsOrderNumLayout(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsOrderNumLayout(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -1414,7 +1417,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FAEF4 Offset: 0x6FAEF4 VA: 0x6FAEF4
 		//// RVA: 0x186A718 Offset: 0x186A718 VA: 0x186A718
-		private IEnumerator Co_LoadAssetsMessageLayout(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsMessageLayout(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 			//0x16FECFC
@@ -1439,7 +1442,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FAF6C Offset: 0x6FAF6C VA: 0x6FAF6C
 		//// RVA: 0x186A7D4 Offset: 0x186A7D4 VA: 0x186A7D4
-		private IEnumerator Co_LoadAssetsOrderListLayout(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsOrderListLayout(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -1465,7 +1468,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FAFE4 Offset: 0x6FAFE4 VA: 0x6FAFE4
 		//// RVA: 0x186A890 Offset: 0x186A890 VA: 0x186A890
-		private IEnumerator Co_LoadAssetsLayoutOrderListItem(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsLayoutOrderListItem(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation; // 0x20
 			int poolSize; // 0x24
@@ -1510,7 +1513,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FB05C Offset: 0x6FB05C VA: 0x6FB05C
 		//// RVA: 0x186A94C Offset: 0x186A94C VA: 0x186A94C
-		private IEnumerator Co_LoadAssetsAllDoneLayout(string bundleName, Font font, List<HEFCLPGPMLK.AAOPGOGGMID> compOfferInfo, Action<OfferAllRecvBgLayout, OfferAllRecvBgButton, OfferAllRecvConnectLayout, List<OfferAllRecvContentLayout>> loadSuccess)
+		private IEnumerator Co_LoadAssetsAllDoneLayout(string bundleName, XeSys.FontInfo font, List<HEFCLPGPMLK.AAOPGOGGMID> compOfferInfo, Action<OfferAllRecvBgLayout, OfferAllRecvBgButton, OfferAllRecvConnectLayout, List<OfferAllRecvContentLayout>> loadSuccess)
 		{
 			AssetBundleLoadLayoutOperationBase operation; // 0x28
 			int poolSize; // 0x2C

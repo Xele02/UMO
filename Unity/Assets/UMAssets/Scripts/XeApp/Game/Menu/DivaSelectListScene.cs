@@ -93,9 +93,9 @@ namespace XeApp.Game.Menu
 			m_divaSortIdList.Clear();
 			for(int i = 0; i < PlayerData.NBIGLBMHEDC_Divas.Count; i++)
 			{
-				if(PlayerData.NBIGLBMHEDC_Divas[i].FJODMPGPDDD)
+				if(PlayerData.NBIGLBMHEDC_Divas[i].FJODMPGPDDD_DivaHave)
 				{
-					if (PlayerData.NBIGLBMHEDC_Divas[i].IPJMPBANBPP)
+					if (PlayerData.NBIGLBMHEDC_Divas[i].IPJMPBANBPP_Enabled)
 					{
 						if(PlayerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId != selectedDivaId)
 						{
@@ -417,8 +417,19 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17F0C8C Offset: 0x17F0C8C VA: 0x17F0C8C
 		private void OnShowSelectedDivaSceneStatus(int slot)
 		{
-			TodoLogger.LogNotImplemented("OnShowSelectedDivaSceneStatus");
-		}
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			int id;
+			if(slot == 0)
+			{
+				id = m_selectedDiva.FGFIBOBAPIA_SceneId;
+			}
+			else
+			{
+				id = m_selectedDiva.DJICAKGOGFO_SubSceneIds[slot - 1];
+			}
+            GCIJNCFDNON_SceneInfo scene = PlayerData.OPIBAPEGCLA_Scenes[id - 1];
+			MenuScene.Instance.ShowSceneStatusPopupWindow(scene, PlayerData, false, TransitionList.Type.UNDEFINED, UpdateContent, false, false, SceneStatusParam.PageSave.Player, false);
+        }
 
 		//// RVA: 0x17F0E9C Offset: 0x17F0E9C VA: 0x17F0E9C
 		private void UpdateContent()

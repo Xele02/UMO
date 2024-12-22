@@ -103,7 +103,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xCFA0F8 Offset: 0xCFA0F8 VA: 0xCFA0F8
 		private void OnClickCornerButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickCornerButton");
+			return;
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E184C Offset: 0x6E184C VA: 0x6E184C
@@ -111,7 +111,7 @@ namespace XeApp.Game.Menu
 		protected override IEnumerator Co_LoadLayout()
 		{
 			StringBuilder bundleName; // 0x14
-			Font systemFont; // 0x18
+			XeSys.FontInfo systemFont; // 0x18
 			int bundleLoadCount; // 0x1C
 			AssetBundleLoadLayoutOperationBase operation; // 0x20
 			int i; // 0x24

@@ -102,20 +102,20 @@ public class HIADOIECMFP_EventPresentCampaign : DIHHCBACKGG_DbSection
 	// RVA: 0x1833CCC Offset: 0x1833CCC VA: 0x1833CCC Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.LogError(TodoLogger.Database, "HIADOIECMFP_EventPresentCampaign.KMBPACJNEOF");
+		TodoLogger.LogError(TodoLogger.EventPresentCampaign_9, "HIADOIECMFP_EventPresentCampaign.KMBPACJNEOF");
 	}
 
 	// RVA: 0x1833E94 Offset: 0x1833E94 VA: 0x1833E94 Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
 	{
-		TodoLogger.LogError(TodoLogger.Database, "HIADOIECMFP_EventPresentCampaign.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.EventPresentCampaign_9, "HIADOIECMFP_EventPresentCampaign.IIEMACPEEBJ");
 		return true;
 	}
 
 	// RVA: 0x1834880 Offset: 0x1834880 VA: 0x1834880 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(TodoLogger.Database, "HIADOIECMFP_EventPresentCampaign.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbJson, "HIADOIECMFP_EventPresentCampaign.IIEMACPEEBJ");
 		return true;
 	}
 

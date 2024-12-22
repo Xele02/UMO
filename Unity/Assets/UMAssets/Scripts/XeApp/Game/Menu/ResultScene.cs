@@ -5,6 +5,7 @@ using System.Text;
 using UnityEngine;
 using XeApp.Core;
 using XeApp.Game.Common;
+using XeApp.Game.Tutorial;
 using XeSys;
 using XeSys.Gfx;
 
@@ -123,23 +124,23 @@ namespace XeApp.Game.Menu
 			eventType = JGEOBNENMAH.HHCJCDFCLOB.NNABDGKFEMK_EventType;
 			if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 			{
-				TodoLogger.LogError(0, "InitParam Event");
+				TodoLogger.LogError(TodoLogger.EventCollection_1, "InitParam Event");
 			}
 			if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
 			{
-				TodoLogger.LogError(0, "InitParam Event");
+				TodoLogger.LogError(TodoLogger.EventQuest_6, "InitParam Event");
 			}
 			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
-				TodoLogger.LogError(0, "InitParam Event");
+				TodoLogger.LogError(TodoLogger.EventBattle_3, "InitParam Event");
 			}
 			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 			{
-				TodoLogger.LogError(0, "InitParam Event");
+				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "InitParam Event");
 			}
 			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
 			{
-				TodoLogger.LogError(0, "InitParam Event");
+				TodoLogger.LogError(TodoLogger.EventGoDiva_14, "InitParam Event");
 			}
 		}
 
@@ -282,7 +283,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4FCB0 Offset: 0xB4FCB0 VA: 0xB4FCB0
 		private IEnumerator Co_LoadEvent01Layout()
 		{
-			TodoLogger.LogError(0, "Co_LoadEvent01Layout");
+			TodoLogger.LogError(TodoLogger.EventCollection_1, "Co_LoadEvent01Layout");
 			yield return null;
 		}
 
@@ -296,7 +297,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4FDFC Offset: 0xB4FDFC VA: 0xB4FDFC
 		private IEnumerator Co_LoadEvent02Layout()
 		{
-			TodoLogger.LogError(0, "Co_LoadEvent02Layout");
+			TodoLogger.LogError(TodoLogger.EventQuest_6, "Co_LoadEvent02Layout");
 			yield return null;
 		}
 
@@ -304,7 +305,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4FEA8 Offset: 0xB4FEA8 VA: 0xB4FEA8
 		private IEnumerator Co_LoadEvent03Layout()
 		{
-			TodoLogger.LogError(0, "Co_LoadEvent03Layout");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "Co_LoadEvent03Layout");
 			yield return null;
 		}
 
@@ -312,7 +313,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4FF54 Offset: 0xB4FF54 VA: 0xB4FF54
 		private IEnumerator Co_LoadRaidLayout()
 		{
-			TodoLogger.LogError(0, "Co_LoadRaidLayout");
+			TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Co_LoadRaidLayout");
 			yield return null;
 		}
 
@@ -320,7 +321,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB50000 Offset: 0xB50000 VA: 0xB50000
 		private IEnumerator Co_LoadGoDivaLayout()
 		{
-			TodoLogger.LogError(0, "Co_LoadGoDivaLayout");
+			TodoLogger.LogError(TodoLogger.EventGoDiva_14, "Co_LoadGoDivaLayout");
 			yield return null;
 		}
 
@@ -391,7 +392,7 @@ namespace XeApp.Game.Menu
 			{
 				if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 				{
-					TodoLogger.LogError(0, "Todo Event");
+					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Todo Event");
 				}
 				else
 				{
@@ -502,7 +503,7 @@ namespace XeApp.Game.Menu
 			{
 				yield return new WaitWhile(() => {
 					//0xB556B0
-					TodoLogger.LogError(0, "Event");
+					TodoLogger.LogError(TodoLogger.EventCollection_1, "Event");
 					return false;
 				});
 			}
@@ -510,7 +511,7 @@ namespace XeApp.Game.Menu
 			{
 				yield return new WaitWhile(() => {
 					//0xB55770
-					TodoLogger.LogError(0, "Event");
+					TodoLogger.LogError(TodoLogger.EventMission_6, "Event");
 					return false;
 				});
 			}
@@ -518,12 +519,12 @@ namespace XeApp.Game.Menu
 			{
 				yield return new WaitWhile(() => {
 					//0xB55830
-					TodoLogger.LogError(0, "Event");
+					TodoLogger.LogError(TodoLogger.EventBattle_3, "Event");
 					return false;
 				});
 				yield return new WaitWhile(() => {
 					//0xB558F0
-					TodoLogger.LogError(0, "Event");
+					TodoLogger.LogError(TodoLogger.EventBattle_3, "Event");
 					return false;
 				});
 			}
@@ -531,22 +532,22 @@ namespace XeApp.Game.Menu
 			{
 				yield return new WaitWhile(() => {
 					//0xB559B0
-					TodoLogger.LogError(0, "Event");
+					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
 					return false;
 				});
 				yield return new WaitWhile(() => {
 					//0xB55A70
-					TodoLogger.LogError(0, "Event");
+					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
 					return false;
 				});
 				yield return new WaitWhile(() => {
 					//0xB55B30
-					TodoLogger.LogError(0, "Event");
+					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
 					return false;
 				});
 				yield return new WaitWhile(() => {
 					//0xB55BF0
-					TodoLogger.LogError(0, "Event");
+					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
 					return false;
 				});
 			}
@@ -554,7 +555,7 @@ namespace XeApp.Game.Menu
 			{
 				yield return new WaitWhile(() => {
 					//0xB55CB0
-					TodoLogger.LogError(0, "Event");
+					TodoLogger.LogError(TodoLogger.EventGoDiva_14, "Event");
 					return false;
 				});
 			}
@@ -573,7 +574,7 @@ namespace XeApp.Game.Menu
 			}
 			if(isEventBattle)
 			{
-				TodoLogger.LogError(0, "Event");
+				TodoLogger.LogError(TodoLogger.EventBattle_3, "Event");
 				//event03ScoreLayoutController.SetActive(false);
 				//event03PointLayoutController.SetActive(false);
 			}
@@ -791,7 +792,7 @@ namespace XeApp.Game.Menu
 			}
 			else if(isRaidEventOpen)
 			{
-				TodoLogger.LogError(0, "Event Raid");
+				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event Raid");
 			}
 			else
 			{
@@ -805,48 +806,94 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB51A48 Offset: 0xB51A48 VA: 0xB51A48
 		private void OnClickSendFriendRequest()
 		{
-			TodoLogger.LogNotImplemented("OnClickSendFriendRequest");
+			ShowFriendRequestPopup();
 		}
 
 		// // RVA: 0xB51DB4 Offset: 0xB51DB4 VA: 0xB51DB4
-		// private void OnSuccessFriendRequest() { }
+		private void OnSuccessFriendRequest()
+		{
+			dropLayoutController.DisableFriendRequestButton();
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_friend_requested_title"), SizeType.Small, string.Format(bk.GetMessageByLabel("popup_friend_requested_msg"), dropLayoutInitParam.viewFriendPlayerData.LBODHBDOMGK_Name), new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0xB55D70
+				MenuScene.Instance.InputEnable();
+				this.StartCoroutineWatched(ShowDropTutorialPopup());
+			}, null, null, null);
+		}
 
 		// // RVA: 0xB51A4C Offset: 0xB51A4C VA: 0xB51A4C
-		// private void ShowFriendRequestPopup() { }
+		private void ShowFriendRequestPopup()
+		{
+			//CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_friend_request_title"), SizeType.Small, string.Format(bk.GetMessageByLabel("popup_friend_request_msg"), dropLayoutInitParam.viewFriendPlayerData.LBODHBDOMGK_Name), new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Request, Type = PopupButton.ButtonType.Positive }
+			}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0xB55E28
+				if(type == PopupButton.ButtonType.Positive)
+					DoFriendRequest();
+			}, null, null, null);
+		}
 
 		// // RVA: 0xB5208C Offset: 0xB5208C VA: 0xB5208C
-		// private void DoFriendRequest() { }
+		private void DoFriendRequest()
+		{
+			MenuScene.Instance.InputDisable();
+			CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.AOHLMBKILED(dropLayoutInitParam.viewFriendPlayerData.MLPEHNBNOGD_Id, dropLayoutInitParam.viewFriendPlayerData.LBODHBDOMGK_Name, dropLayoutInitParam.viewFriendPlayerData.ILOJAJNCPEC_Rank, OnSuccessFriendRequest, OnErrorFriendRequest, OnErrorToTitleFriendRequest);
+		}
 
 		// // RVA: 0xB522E8 Offset: 0xB522E8 VA: 0xB522E8
-		// private void OnErrorFriendRequest(CACGCMBKHDI action) { }
+		private void OnErrorFriendRequest(CACGCMBKHDI_Request action)
+		{
+			MenuScene.Instance.InputEnable();
+		}
 
 		// // RVA: 0xB52384 Offset: 0xB52384 VA: 0xB52384
-		// private void OnErrorToTitleFriendRequest(CACGCMBKHDI action) { }
+		private void OnErrorToTitleFriendRequest(CACGCMBKHDI_Request action)
+		{
+			this.StartCoroutineWatched(Co_MountMenuScene(true));
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x722E4C Offset: 0x722E4C VA: 0x722E4C
 		// // RVA: 0xB52454 Offset: 0xB52454 VA: 0xB52454
-		// private IEnumerator ShowDropTutorialPopup() { }
+		private IEnumerator ShowDropTutorialPopup()
+		{
+			//0xB5F4D0
+			MenuScene.Instance.InputDisable();
+			yield return Co.R(TutorialManager.TryShowTutorialCoroutine(CheckTutorialCodition));
+			MenuScene.Instance.InputEnable();
+		}
 
 		// // RVA: 0xB52500 Offset: 0xB52500 VA: 0xB52500
-		// private bool CheckTutorialCodition(TutorialConditionId conditionId) { }
+		private bool CheckTutorialCodition(TutorialConditionId conditionId)
+		{
+			return conditionId == TutorialConditionId.Condition8;
+		}
 
 		// // RVA: 0xB52510 Offset: 0xB52510 VA: 0xB52510
 		private void InitEvent01Result()
 		{
-			TodoLogger.LogError(0, "InitEvent01Result");
+			TodoLogger.LogError(TodoLogger.EventCollection_1, "InitEvent01Result");
 		}
 
 		// // RVA: 0xB526B8 Offset: 0xB526B8 VA: 0xB526B8
 		private bool IsEvent01ResultLoading()
 		{
-			TodoLogger.LogError(0, "IsEvent01ResultLoading");
+			TodoLogger.LogError(TodoLogger.EventCollection_1, "IsEvent01ResultLoading");
 			return false;
 		}
 
 		// // RVA: 0xB526E4 Offset: 0xB526E4 VA: 0xB526E4
 		private void StartEvent01ResultAnim()
 		{
-			TodoLogger.LogError(0, "StartEvent01ResultAnim");
+			TodoLogger.LogError(TodoLogger.EventCollection_1, "StartEvent01ResultAnim");
 		}
 
 		// // RVA: 0xB52710 Offset: 0xB52710 VA: 0xB52710
@@ -861,20 +908,20 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB52764 Offset: 0xB52764 VA: 0xB52764
 		private void InitEvent02Result()
 		{
-			TodoLogger.LogError(0, "InitEvent02Result");
+			TodoLogger.LogError(TodoLogger.EventQuest_6, "InitEvent02Result");
 		}
 
 		// // RVA: 0xB52904 Offset: 0xB52904 VA: 0xB52904
 		private bool IsEvent02ResultLoading()
 		{
-			TodoLogger.LogError(0, "IsEvent02ResultLoading");
+			TodoLogger.LogError(TodoLogger.EventQuest_6, "IsEvent02ResultLoading");
 			return false;
 		}
 
 		// // RVA: 0xB52930 Offset: 0xB52930 VA: 0xB52930
 		private void StartEvent02ResultAnim()
 		{
-			TodoLogger.LogError(0, "StartEvent02ResultAnim");
+			TodoLogger.LogError(TodoLogger.EventQuest_6, "StartEvent02ResultAnim");
 		}
 
 		// // RVA: 0xB5295C Offset: 0xB5295C VA: 0xB5295C
@@ -893,7 +940,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB529D4 Offset: 0xB529D4 VA: 0xB529D4
 		private IEnumerator Co_InitGoDivaResult()
 		{
-			TodoLogger.LogError(0, "Co_InitGoDivaResult");
+			TodoLogger.LogError(TodoLogger.EventGoDiva_14, "Co_InitGoDivaResult");
 			yield return null;
 		}
 
@@ -912,7 +959,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB52B04 Offset: 0xB52B04 VA: 0xB52B04
 		private void InitEvent03WinLose()
 		{
-			TodoLogger.LogError(0, "InitEvent03WinLose");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "InitEvent03WinLose");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x722F3C Offset: 0x722F3C VA: 0x722F3C
@@ -1008,7 +1055,11 @@ namespace XeApp.Game.Menu
 			{
 				if(GameManager.Instance.IsTutorial)
 				{
-					TodoLogger.LogError(0, "Tuto");
+					BasicTutorialManager.Instance.UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.GBECNPANBEA_8_TutoMusicResult);
+					if(Database.Instance.advSetup.IsCallResultAfterAdv)
+					{
+						MenuScene.Instance.GotoAdventure(false);
+					}
 				}
 				else
 				{
@@ -1023,7 +1074,7 @@ namespace XeApp.Game.Menu
 					switch(Database.Instance.gameSetup.musicInfo.gameEventType)
 					{
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection:
-							TodoLogger.LogError(0, "Event");
+							TodoLogger.LogError(TodoLogger.EventCollection_1, "Event");
 							break;
 						default:
 							MusicSelectArgs args = new MusicSelectArgs();
@@ -1031,19 +1082,19 @@ namespace XeApp.Game.Menu
 							MenuScene.Instance.Mount(TransitionUniqueId.MUSICSELECT, args, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle:
-							TodoLogger.LogError(0, "Event");
+							TodoLogger.LogError(TodoLogger.EventBattle_3, "Event");
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore:
-							TodoLogger.LogError(0, "Event");
+							TodoLogger.LogError(TodoLogger.EventScore_4, "Event");
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest:
-							TodoLogger.LogError(0, "Event");
+							TodoLogger.LogError(TodoLogger.EventQuest_6, "Event");
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid:
-							TodoLogger.LogError(0, "Event");
+							TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva:
-							TodoLogger.LogError(0, "Event");
+							TodoLogger.LogError(TodoLogger.EventGoDiva_14, "Event");
 							break;
 					}
 				}
@@ -1123,14 +1174,6 @@ namespace XeApp.Game.Menu
 		// [CompilerGeneratedAttribute] // RVA: 0x723264 Offset: 0x723264 VA: 0x723264
 		// // RVA: 0xB55348 Offset: 0xB55348 VA: 0xB55348
 		// private void <Co_LoadGoDivaLayout>b__45_1(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x723334 Offset: 0x723334 VA: 0x723334
-		// // RVA: 0xB55D70 Offset: 0xB55D70 VA: 0xB55D70
-		// private void <OnSuccessFriendRequest>b__69_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x723344 Offset: 0x723344 VA: 0x723344
-		// // RVA: 0xB55E28 Offset: 0xB55E28 VA: 0xB55E28
-		// private void <ShowFriendRequestPopup>b__70_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
 
 		// [CompilerGeneratedAttribute] // RVA: 0x723354 Offset: 0x723354 VA: 0x723354
 		// // RVA: 0xB55E34 Offset: 0xB55E34 VA: 0xB55E34

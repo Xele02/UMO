@@ -2,6 +2,11 @@ using System.Text;
 
 namespace XeApp.Game.Menu
 {
+	public class HomePickupTexture : IconTexture
+	{
+		//
+	}
+
 	public class HomePickupTextureCahce : IconTextureCache
 	{
 		public const string BundleFormatForGeneral = "ct/ba/pc/{0:D3}.xab";
@@ -25,8 +30,9 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x96D154 Offset: 0x96D154 VA: 0x96D154 Slot: 7
 		protected override IiconTexture CreateIconTexture(IconTextureLodingInfo info)
 		{
-			TodoLogger.LogError(0, "CreateIconTexture");
-			return null;
+			HomePickupTexture tex = new HomePickupTexture();
+			SetupForSplitTexture(info, tex);
+			return tex;
 		}
 
 		// // RVA: 0x96D1DC Offset: 0x96D1DC VA: 0x96D1DC

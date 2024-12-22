@@ -56,19 +56,19 @@ namespace XeSys
 		// // RVA: 0x203683C Offset: 0x203683C VA: 0x203683C
 		private void Awake()
 		{
-			TodoLogger.LogError(0, "Debug Text Renderer Awake");
+			TodoLogger.LogError(TodoLogger.DebugTextRenderer, "Debug Text Renderer Awake");
 		}
 
 		// // RVA: 0x2036AF0 Offset: 0x2036AF0 VA: 0x2036AF0
 		private void Start()
 		{
-			TodoLogger.LogError(0, "Debug Text Renderer Start");
+			TodoLogger.LogError(TodoLogger.DebugTextRenderer, "Debug Text Renderer Start");
 		}
 
 		// // RVA: 0x2036AF4 Offset: 0x2036AF4 VA: 0x2036AF4
 		private void Update()
 		{
-			TodoLogger.LogError(0, "Debug Text Renderer Update");
+			TodoLogger.LogError(TodoLogger.DebugTextRenderer, "Debug Text Renderer Update");
 		}
 
 		// // RVA: 0x20369B4 Offset: 0x20369B4 VA: 0x20369B4

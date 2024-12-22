@@ -6,6 +6,7 @@ using XeSys.Gfx;
 using System;
 using System.Text;
 using XeApp.Game.Menu;
+using System.Collections.Generic;
 
 namespace XeApp.Game.MusicSelect
 {
@@ -22,6 +23,8 @@ namespace XeApp.Game.MusicSelect
 		//[HeaderAttribute] // RVA: 0x665A54 Offset: 0x665A54 VA: 0x665A54
 		[SerializeField]
 		private Text m_musicName; // 0xC
+		[SerializeField]
+		private Text m_musicNameAlt; // 0xC
 		//[HeaderAttribute] // RVA: 0x665A9C Offset: 0x665A9C VA: 0x665A9C
 		[SerializeField]
 		private Text m_singerNameText; // 0x10
@@ -39,6 +42,8 @@ namespace XeApp.Game.MusicSelect
 		private UGUIButton m_enemyInfoButton; // 0x20
 		[SerializeField]
 		private XeApp.Game.Common.ScrollText m_musicNameScroll; // 0x24
+		[SerializeField]
+		private XeApp.Game.Common.ScrollText m_musicNameAltScroll; // 0x24
 		[SerializeField]
 		private XeApp.Game.Common.ScrollText m_singerNameScroll; // 0x28
 		[SerializeField]
@@ -140,12 +145,66 @@ namespace XeApp.Game.MusicSelect
 				if (OnEnemyInfoButtonClickListener != null)
 					OnEnemyInfoButtonClickListener();
 			});
+
+			if(RuntimeSettings.CurrentSettings.Language != "" && (RuntimeSettings.CurrentSettings.EnableMusicSecondDisplay || RuntimeSettings.CurrentSettings.EnableMusicThirdDisplay))
+			{
+				m_singerNameText.fontSize = 14;
+				m_singerNameText.transform.parent.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -10);
+				m_singerNameText.transform.GetChild(0).GetComponent<Text>().fontSize = 14;
+				m_musicName.transform.parent.GetComponent<RectTransform>().anchoredPosition = new Vector3(244, 10);
+				m_rewardObj.transform.GetComponent<RectTransform>().anchoredPosition = new Vector3(222, 13);
+				m_attrIcon.transform.GetComponent<RectTransform>().anchoredPosition = new Vector3(-246, 17);
+				
+				GameObject musicAltMask = new GameObject("TitleMaskAlt");
+				RectTransform rt = musicAltMask.AddComponent<RectTransform>();
+				musicAltMask.transform.SetParent(m_musicName.transform.parent.parent, false);
+				musicAltMask.transform.SetSiblingIndex(m_musicName.transform.parent.GetSiblingIndex());
+				rt.pivot = new Vector3(0.5f, 0.5f);
+				rt.anchorMin = new Vector3(0, 0.5f);
+				rt.anchorMax = new Vector3(0, 0.5f);
+				rt.anchoredPosition = new Vector3(244, 32);
+				rt.sizeDelta = new Vector3(390, 45);
+				musicAltMask.AddComponent<RectMask2D>();
+
+				m_musicNameAlt = new GameObject("Title").AddComponent<Text>();
+				m_musicNameAlt.rectTransform.SetParent(rt, false);
+				m_musicNameAlt.rectTransform.anchoredPosition = new Vector3(0, 0);
+				m_musicNameAlt.rectTransform.sizeDelta = new Vector3(450, 45);
+				m_musicNameAlt.rectTransform.pivot = new Vector3(0, 1);
+				m_musicNameAlt.rectTransform.anchorMin = new Vector3(0, 1);
+				m_musicNameAlt.rectTransform.anchorMax = new Vector3(0, 1);
+				m_musicNameAlt.font = m_musicName.font;
+				m_musicNameAlt.supportRichText = m_musicName.supportRichText;
+				m_musicNameAlt.alignment = m_musicName.alignment;
+				m_musicNameAlt.horizontalOverflow = m_musicName.horizontalOverflow;
+				m_musicNameAlt.verticalOverflow = m_musicName.verticalOverflow;
+				m_musicNameAlt.color = m_musicName.color;
+				m_musicNameAlt.fontSize = 16;
+
+				Text m_musicNameAltCopy = new GameObject("copyText").AddComponent<Text>();
+				m_musicNameAltCopy.rectTransform.SetParent(m_musicNameAlt.rectTransform, false);
+				m_musicNameAltCopy.rectTransform.anchoredPosition = new Vector3(510, 0);
+				m_musicNameAltCopy.rectTransform.sizeDelta = new Vector3(450, 45);
+				m_musicNameAltCopy.rectTransform.pivot = new Vector3(0, 1);
+				m_musicNameAltCopy.font = m_musicName.font;
+				m_musicNameAltCopy.supportRichText = m_musicName.supportRichText;
+				m_musicNameAltCopy.alignment = m_musicName.alignment;
+				m_musicNameAltCopy.horizontalOverflow = m_musicName.horizontalOverflow;
+				m_musicNameAltCopy.verticalOverflow = m_musicName.verticalOverflow;
+				m_musicNameAltCopy.color = m_musicName.color;
+				m_musicNameAltCopy.fontSize = 16;
+
+				m_musicNameAltScroll = m_musicNameAlt.gameObject.AddComponent<Common.ScrollText>();
+				m_musicNameAltScroll.Setup(m_musicNameAltCopy, 3, 30, 60);
+			}
 		}
 
 		//// RVA: 0xC9CA90 Offset: 0xC9CA90 VA: 0xC9CA90
 		public void ResetScroll()
 		{
 			m_musicNameScroll.ResetScroll();
+			if(m_musicNameAltScroll != null)
+				m_musicNameAltScroll.ResetScroll();
 			m_singerNameScroll.ResetScroll();
 			m_eventNameScroll.ResetScroll();
 			m_eventDescScroll.ResetScroll();
@@ -166,9 +225,15 @@ namespace XeApp.Game.MusicSelect
 		}
 
 		//// RVA: 0xC9CC78 Offset: 0xC9CC78 VA: 0xC9CC78
-		public void SetTitle(string title)
+		public void SetTitle(string title, string title_2, string title_3)
 		{
 			m_musicName.text = title;
+			if(m_musicNameAlt != null)
+			{
+				List<string> txt = new List<string>() { title_2, title_3 };
+				txt.RemoveAll((x) => string.IsNullOrEmpty(x));
+				m_musicNameAlt.text = string.Join(" / ", txt);
+			}
 		}
 
 		//// RVA: 0xC9CCB4 Offset: 0xC9CCB4 VA: 0xC9CCB4
@@ -269,6 +334,8 @@ namespace XeApp.Game.MusicSelect
 		{
 			m_attrIcon.enabled = false;
 			m_musicName.enabled = false;
+			if(m_musicNameAlt != null)
+				m_musicNameAlt.enabled = false;
 			m_singerNameText.enabled = false;
 			m_seriesLogo.enabled = false;
 			m_eventDesc.enabled = false;
@@ -284,6 +351,8 @@ namespace XeApp.Game.MusicSelect
 			m_eventNameScroll.StopScroll();
 			m_eventDescScroll.StopScroll();
 			m_musicNameScroll.StopScroll();
+			if(m_musicNameScroll != null)
+				m_musicNameScroll.StopScroll();
 			m_singerNameScroll.StopScroll();
 			m_highLevelMusicNameScroll.StopScroll();
 			m_highLevelSingerNameScroll.StopScroll();
@@ -292,6 +361,8 @@ namespace XeApp.Game.MusicSelect
 				case ListType.Normal:
 					m_attrIcon.enabled = true;
 					m_musicName.enabled = true;
+					if(m_musicNameAlt != null)
+						m_musicNameAlt.enabled = true;
 					m_singerNameText.enabled = true;
 					m_seriesLogo.enabled = true;
 					m_enemyInfoButton.gameObject.SetActive(true);
@@ -299,6 +370,8 @@ namespace XeApp.Game.MusicSelect
 					m_rankingButton.gameObject.SetActive(true);
 					m_rewardButton.gameObject.SetActive(true);
 					m_musicNameScroll.StartScroll();
+					if(m_musicNameScroll != null)
+						m_musicNameScroll.StartScroll();
 					m_singerNameScroll.StartScroll();
 					break;
 				case ListType.EventEntrance:

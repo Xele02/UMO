@@ -50,13 +50,13 @@ public class FPGEMAIAMBF_RewardData
 		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo musicInfo;
 		if (MNNHHJBBICA_EventType == 4)
 		{
-			if(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI) == null)
+			if(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI_6) == null)
 			{
 				musicInfo = new JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo();
 			}
 			else
 			{
-				HLEBAINCOME_EventScore eventData = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI) as HLEBAINCOME_EventScore;
+				HLEBAINCOME_EventScore eventData = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI_6) as HLEBAINCOME_EventScore;
 				musicInfo = eventData.JIPPHOKGLIH(false).KJAFPNIFPGP();
 			}
 		}
@@ -109,7 +109,7 @@ public class FPGEMAIAMBF_RewardData
 		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo prevMusicInfo = null;
 		if (MNNHHJBBICA_GameEventType == 4)
 		{
-			TodoLogger.LogError(0, "Event");
+			TodoLogger.LogError(TodoLogger.EventScore_4, "Event");
 		}
 		else
 		{

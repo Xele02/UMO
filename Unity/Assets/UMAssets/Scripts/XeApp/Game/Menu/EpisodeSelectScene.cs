@@ -165,8 +165,37 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xF06D34 Offset: 0xF06D34 VA: 0xF06D34
 		private IEnumerator SetupTutorial(ButtonBase button)
 		{
-			TodoLogger.LogError(0, "SetupTutorial");
-			yield return null;
+			//0xF07B54
+			MenuScene.Instance.InputDisable();
+			bool isWait = true;
+			BasicTutorialManager.Instance.PreLoadResource(() =>
+			{
+				//0xF07270
+				isWait = false;
+			}, true);
+			while(isWait)
+				yield return null;
+			yield return Co.R(BasicTutorialManager.Instance.PreDownLoadTextureResource(BasicTutorialMessageId.Id_EpisodeMission1));
+			MenuScene.Instance.InputEnable();
+			GameManager.PushBackButtonHandler dymmyHandler = () =>
+			{
+				//0xF07264
+				return;
+			};
+			GameManager.Instance.AddPushBackButtonHandler(dymmyHandler);
+			BasicTutorialManager.Instance.ShowMessageWindow(BasicTutorialMessageId.Id_EpisodeMission1, () =>
+			{
+				//0xF0727C
+				BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.Delegate, () =>
+				{
+					//0xF073B8
+					GameManager.Instance.RemovePushBackButtonHandler(dymmyHandler);
+				}, () =>
+				{
+					//0xF07460
+					return button;
+				}, TutorialPointer.Direction.Normal);
+			}, null);
 		}
 
 		//// RVA: 0xF06DE0 Offset: 0xF06DE0 VA: 0xF06DE0
@@ -247,7 +276,7 @@ namespace XeApp.Game.Menu
 							valk1 = valk2;
 							valk2 = tmp;
 						}
-						return valk2.IFGMKBKBFJI - valk1.IFGMKBKBFJI;
+						return valk2.IFGMKBKBFJI_IdCrypted - valk1.IFGMKBKBFJI_IdCrypted;
 					}
 					else if(cat1 == EKLNMHFCAOI.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg && cat2 == EKLNMHFCAOI.FKGCBLHOOCL_Category.HGDPIAFBCGA_HomeBg)
 					{

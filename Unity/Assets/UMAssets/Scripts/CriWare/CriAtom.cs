@@ -156,24 +156,14 @@ namespace CriWare
 		// // RVA: 0x287C5DC Offset: 0x287C5DC VA: 0x287C5DC
 		public static void SetBusAnalyzer(bool sw)
 		{
-			/*if(!sw)
+			if(!sw)
 			{
-				for(int i = 0; i < 8; i++)
-				{
-					CriAtomExAsr.criAtomExAsr_DetachBusAnalyzer(i);
-				}
+				CriAtomExAsr.DetachBusAnalyzer();
 			}
 			else
 			{
-				CriAtomExAsr.BusAnalyzerConfig config = new CriAtomExAsr.BusAnalyzerConfig();
-				config.interval = 50;
-				config.peakHoldTime = 1000;
-				for(int i = 0; i < 8; i++)
-				{
-					CriAtomExAsr.criAtomExAsr_DetachBusAnalyzer(i, config);
-				}
-			}*/
-			TodoLogger.LogError(TodoLogger.CriAtom, "SetBusAnalyzer");
+				CriAtomExAsr.AttachBusAnalyzer(50, 1000);
+			}
 		}
 
 		// // RVA: 0x287C69C Offset: 0x287C69C VA: 0x287C69C
@@ -650,6 +640,205 @@ namespace CriWare
 
 		// // RVA: 0x289B1A0 Offset: 0x289B1A0 VA: 0x289B1A0
 		// private static extern bool criAtomExCategory_GetCurrentAisacControlValueByName(string category_name, string aisac_control_name, out float control_value) { }
+	}
+
+	public class CriAtomExAsr
+	{
+		[StructLayout(LayoutKind.Sequential)]
+		private struct BusAnalyzerConfig
+		{
+			public int interval; // 0x0
+			public int peakHoldTime; // 0x4
+		}
+
+		[StructLayout(LayoutKind.Sequential)]
+		public struct BusAnalyzerInfo
+		{
+			public int numChannels; // 0x0
+			[MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+			public float[] rmsLevels; // 0x4
+			[MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+			public float[] peakLevels; // 0x8
+			[MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
+			public float[] peakHoldLevels; // 0xC
+
+			// RVA: 0x81E0A4 Offset: 0x81E0A4 VA: 0x81E0A4
+			public BusAnalyzerInfo(byte[] data)
+			{
+				if(data == null)
+				{
+					numChannels = 0;
+					rmsLevels = new float[8];
+					peakLevels = new float[8];
+					peakHoldLevels = new float[8];
+				}
+				else
+				{
+					numChannels = BitConverter.ToInt32(data, 0);
+					rmsLevels = new float[8];
+					for(int i = 0; i < 8; i++)
+					{
+						rmsLevels[i] = BitConverter.ToSingle(data, 4 + i * 4);
+					}
+					peakLevels = new float[8];
+					for(int i = 0; i < 8; i++)
+					{
+						peakLevels[i] = BitConverter.ToSingle(data, 36 + i * 4);
+					}
+					peakHoldLevels = new float[8];
+					for(int i = 0; i < 8; i++)
+					{
+						peakHoldLevels[i] = BitConverter.ToSingle(data, 68 + i * 4);
+					}
+				}
+			}
+		}
+
+		// // RVA: 0x287C5BC Offset: 0x287C5BC VA: 0x287C5BC
+		// public static void AttachBusAnalyzer(string busName, int interval, int peakHoldTime) { }
+
+		// // RVA: 0x287C644 Offset: 0x287C644 VA: 0x287C644
+		public static void AttachBusAnalyzer(int interval, int peakHoldTime)
+		{
+			BusAnalyzerConfig config;
+			config.interval = interval;
+			config.peakHoldTime = peakHoldTime;
+			for(int i = 0; i < 8; i++)
+			{
+				criAtomExAsr_AttachBusAnalyzer(i, ref config);
+			}
+		}
+
+		// // RVA: 0x287C5D8 Offset: 0x287C5D8 VA: 0x287C5D8
+		// public static void DetachBusAnalyzer(string busName) { }
+
+		// // RVA: 0x287C678 Offset: 0x287C678 VA: 0x287C678
+		public static void DetachBusAnalyzer()
+		{
+			for(int i = 0; i < 8; i++)
+			{
+				criAtomExAsr_DetachBusAnalyzer(i);
+			}
+		}
+
+		// // RVA: 0x287C6D4 Offset: 0x287C6D4 VA: 0x287C6D4
+		// public static void GetBusAnalyzerInfo(string busName, out CriAtomExAsr.BusAnalyzerInfo info) { }
+
+		// [ObsoleteAttribute] // RVA: 0x635C8C Offset: 0x635C8C VA: 0x635C8C
+		// // RVA: 0x287C8F8 Offset: 0x287C8F8 VA: 0x287C8F8
+		// public static void GetBusAnalyzerInfo(int busId, out CriAtomExAsr.BusAnalyzerInfo info) { }
+
+		// // RVA: 0x2895FD8 Offset: 0x2895FD8 VA: 0x2895FD8
+		// public static void SetBusVolume(string busName, float volume) { }
+
+		// [ObsoleteAttribute] // RVA: 0x635CC0 Offset: 0x635CC0 VA: 0x635CC0
+		// // RVA: 0x28960E4 Offset: 0x28960E4 VA: 0x28960E4
+		// public static void SetBusVolume(int busId, float volume) { }
+
+		// // RVA: 0x2896208 Offset: 0x2896208 VA: 0x2896208
+		// public static void SetBusSendLevel(string busName, string sendTo, float level) { }
+
+		// [ObsoleteAttribute] // RVA: 0x635D28 Offset: 0x635D28 VA: 0x635D28
+		// // RVA: 0x2896338 Offset: 0x2896338 VA: 0x2896338
+		// public static void SetBusSendLevel(int busId, int sendTo, float level) { }
+
+		// // RVA: 0x2896430 Offset: 0x2896430 VA: 0x2896430
+		// public static void SetBusMatrix(string busName, int inputChannels, int outputChannels, float[] matrix) { }
+
+		// [ObsoleteAttribute] // RVA: 0x635D5C Offset: 0x635D5C VA: 0x635D5C
+		// // RVA: 0x2896564 Offset: 0x2896564 VA: 0x2896564
+		// public static void SetBusMatrix(int busId, int inputChannels, int outputChannels, float[] matrix) { }
+
+		// // RVA: 0x28966B8 Offset: 0x28966B8 VA: 0x28966B8
+		// public static void SetEffectBypass(string busName, string effectName, bool bypass) { }
+
+		// // RVA: 0x28967E4 Offset: 0x28967E4 VA: 0x28967E4
+		// public static void SetEffectParameter(string busName, string effectName, uint parameterIndex, float parameterValue) { }
+
+		// // RVA: 0x2896A60 Offset: 0x2896A60 VA: 0x2896A60
+		// public static float GetEffectParameter(string busName, string effectName, uint parameterIndex) { }
+
+		// // RVA: 0x2896B94 Offset: 0x2896B94 VA: 0x2896B94
+		// public static bool RegisterEffectInterface(IntPtr afx_interface) { }
+
+		// // RVA: 0x2896C88 Offset: 0x2896C88 VA: 0x2896C88
+		// public static void UnregisterEffectInterface(IntPtr afx_interface) { }
+
+		// // RVA: 0x2896D78 Offset: 0x2896D78 VA: 0x2896D78
+		// public static void GetBusVolume(string busName, out float volume) { }
+
+		// // RVA: 0x28956E8 Offset: 0x28956E8 VA: 0x28956E8
+		// private static extern void criAtomExAsr_AttachBusAnalyzerByName(string busName, ref CriAtomExAsr.BusAnalyzerConfig config) { }
+
+		// // RVA: 0x28957F8 Offset: 0x28957F8 VA: 0x28957F8
+		#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		private static extern void criAtomExAsr_AttachBusAnalyzer(int busNo, ref BusAnalyzerConfig config);
+		#else
+		private static void criAtomExAsr_AttachBusAnalyzer(int busNo, ref BusAnalyzerConfig config)
+		{
+
+		}
+		#endif
+
+		// // RVA: 0x28958E0 Offset: 0x28958E0 VA: 0x28958E0
+		// private static extern void criAtomExAsr_DetachBusAnalyzerByName(string busName) { }
+
+		// // RVA: 0x28959E8 Offset: 0x28959E8 VA: 0x28959E8
+		#if UNITY_ANDROID
+		[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+		private static extern void criAtomExAsr_DetachBusAnalyzer(int busNo);
+		#else
+		private static void criAtomExAsr_DetachBusAnalyzer(int busNo)
+		{
+
+		}
+		#endif
+
+		// // RVA: 0x2895AC8 Offset: 0x2895AC8 VA: 0x2895AC8
+		// private static extern void criAtomExAsr_GetBusAnalyzerInfoByName(string busName, IntPtr info) { }
+
+		// // RVA: 0x2895EF0 Offset: 0x2895EF0 VA: 0x2895EF0
+		// private static extern void criAtomExAsr_GetBusAnalyzerInfo(int busNo, IntPtr info) { }
+
+		// // RVA: 0x2895FE0 Offset: 0x2895FE0 VA: 0x2895FE0
+		// private static extern void criAtomExAsr_SetBusVolumeByName(string busName, float volume) { }
+
+		// // RVA: 0x28960E8 Offset: 0x28960E8 VA: 0x28960E8
+		// private static extern void criAtomExAsr_SetBusVolume(int busNo, float volume) { }
+
+		// // RVA: 0x2896210 Offset: 0x2896210 VA: 0x2896210
+		// private static extern void criAtomExAsr_SetBusSendLevelByName(string busName, string sendtoName, float level) { }
+
+		// // RVA: 0x2896340 Offset: 0x2896340 VA: 0x2896340
+		// private static extern void criAtomExAsr_SetBusSendLevel(int busNo, int sendtoNo, float level) { }
+
+		// // RVA: 0x2896448 Offset: 0x2896448 VA: 0x2896448
+		// private static extern void criAtomExAsr_SetBusMatrixByName(string busName, int inputChannels, int outputChannels, float[] matrix) { }
+
+		// // RVA: 0x2896580 Offset: 0x2896580 VA: 0x2896580
+		// private static extern void criAtomExAsr_SetBusMatrix(int busNo, int inputChannels, int outputChannels, float[] matrix) { }
+
+		// // RVA: 0x28966C0 Offset: 0x28966C0 VA: 0x28966C0
+		// private static extern void criAtomExAsr_SetEffectBypass(string busName, string effectName, bool bypass) { }
+
+		// // RVA: 0x2896940 Offset: 0x2896940 VA: 0x2896940
+		// private static extern void criAtomExAsr_UpdateEffectParameters(string busName, string effectName) { }
+
+		// // RVA: 0x2896810 Offset: 0x2896810 VA: 0x2896810
+		// private static extern void criAtomExAsr_SetEffectParameter(string busName, string effectName, uint parameterIndex, float parameterValue) { }
+
+		// // RVA: 0x2896A68 Offset: 0x2896A68 VA: 0x2896A68
+		// private static extern float criAtomExAsr_GetEffectParameter(string busName, string effectName, uint parameterIndex) { }
+
+		// // RVA: 0x2896B98 Offset: 0x2896B98 VA: 0x2896B98
+		// private static extern bool criAtomExAsr_RegisterEffectInterface(IntPtr afx_interface) { }
+
+		// // RVA: 0x2896C90 Offset: 0x2896C90 VA: 0x2896C90
+		// private static extern void criAtomExAsr_UnregisterEffectInterface(IntPtr afx_interface) { }
+
+		// // RVA: 0x2896D80 Offset: 0x2896D80 VA: 0x2896D80
+		// private static extern void criAtomExAsr_GetBusVolumeByName(string busName, out float volume) { }
 	}
 
 }

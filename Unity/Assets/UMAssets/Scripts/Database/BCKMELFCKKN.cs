@@ -77,8 +77,8 @@ public class BCKMELFCKKN_Tips : DIHHCBACKGG_DbSection
 			data.NCGNCEOOBGP_EventType = (sbyte)array[i].CBDOEDKIOJK;
 			data.KJBGCLPMLCG_Start = array[i].MGPEOHKLOEP;
 			data.GJFPFFBAKGK_End = array[i].LFAFFICDFMJ;
-			data.ADCMNODJBGJ_Title = array[i].ADCMNODJBGJ;
-			data.JONNCMDGMKA_Message = array[i].IPBHCLIHAPG;
+			data.ADCMNODJBGJ_Title = DatabaseTextConverter.TranslateTipsTitle(i, array[i].ADCMNODJBGJ);
+			data.JONNCMDGMKA_Message = DatabaseTextConverter.TranslateTipsMessage(i, array[i].IPBHCLIHAPG);
 			data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 			data.EAHPLCJMPHD_ImageId = array[i].HANMDEBPBHG;
 			data.LKDJHPLBKAI_GraffitiId = array[i].HBDKKPIOFND;

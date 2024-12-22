@@ -86,7 +86,11 @@ namespace XeApp.Game.Adv
 		//// RVA: 0xE56CEC Offset: 0xE56CEC VA: 0xE56CEC
 		private void GotoTitle()
 		{
-			TodoLogger.LogError(0, "GotoTitle");
+			PopupWindowManager.Close(null, null);
+			SoundManager.Instance.bgmPlayer.Stop();
+			NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.MBOIDKCMCDL = false;
+			GameManager.Instance.ClearPushBackButtonHandler();
+			NextScene("Title");
 		}
 
 		//// RVA: 0xE56EAC Offset: 0xE56EAC VA: 0xE56EAC
@@ -98,7 +102,7 @@ namespace XeApp.Game.Adv
 			if(musicId < 0)
 			{
 				Database.Instance.gameSetup.musicInfo.SetupInfoByTutorial(TutorialGameMode.Type.TutorialTwo);
-				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.NBFHAMJNMMG/*25*/);
+				BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.NBFHAMJNMMG_25/*25*/);
 			}
 			else
 			{

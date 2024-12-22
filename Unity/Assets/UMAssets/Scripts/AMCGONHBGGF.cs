@@ -7,7 +7,16 @@ public class AMCGONHBGGF
 	public int[] EBDNICPAFLB_SSlot = new int[3]; // 0x14
 
 	// // RVA: 0xCE0D98 Offset: 0xCE0D98 VA: 0xCE0D98
-	// public void LHPDDGIJKNB_Reset() { }
+	public void LHPDDGIJKNB_Reset()
+	{
+		DIPKCALNIII_Id = 0;
+		BEEAIAAJOHD_CId = 0;
+		AFNIOJHODAG_ColId = 0;
+		for(int i = 0; i < EBDNICPAFLB_SSlot.Length; i++)
+		{
+			EBDNICPAFLB_SSlot[i] = 0;
+		}
+	}
 
 	// // RVA: 0xCE0E1C Offset: 0xCE0E1C VA: 0xCE0E1C
 	public void ODDIHGPONFL_Copy(AMCGONHBGGF GPBJHKLFCEP)

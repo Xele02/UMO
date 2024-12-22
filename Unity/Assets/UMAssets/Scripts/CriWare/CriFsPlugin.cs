@@ -64,7 +64,7 @@ public static class CriFsPlugin
 	// // RVA: 0x294A2E8 Offset: 0x294A2E8 VA: 0x294A2E8
 	public static void FinalizeLibrary()
 	{
-		TodoLogger.LogError(0, "TODO");
+		TodoLogger.LogError(TodoLogger.CriFsPlugin, "TODO");
 	}
 
 	// // RVA: 0x29499A8 Offset: 0x29499A8 VA: 0x29499A8

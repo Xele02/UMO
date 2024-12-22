@@ -19,19 +19,19 @@ namespace CriWare
 		// // RVA: 0x2897BF0 Offset: 0x2897BF0 VA: 0x2897BF0
 		public CriAtomExAuxIn(Nullable<CriAtomExAuxIn.Config> config)
 		{
-			TodoLogger.LogError(0, "TODO");
+			TodoLogger.LogError(TodoLogger.CriAtomExLib, "TODO");
 		}
 
 		// // RVA: 0x2898174 Offset: 0x2898174 VA: 0x2898174 Slot: 5
 		public override void Dispose()
 		{
-			TodoLogger.LogError(0, "TODO");
+			TodoLogger.LogError(TodoLogger.CriAtomExLib, "TODO");
 		}
 
 		// // RVA: 0x28985A8 Offset: 0x28985A8 VA: 0x28985A8
 		public void Start()
 		{
-			TodoLogger.LogError(0, "TODO");
+			TodoLogger.LogError(TodoLogger.CriAtomExLib, "TODO");
 		}
 
 		// // RVA: 0x28986BC Offset: 0x28986BC VA: 0x28986BC

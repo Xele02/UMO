@@ -268,12 +268,12 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < viewData.PDONJHCHBAE_ScoreReward.Count; i++)
 			{
 				SetRewardStatus(i + 4, viewData.PDONJHCHBAE_ScoreReward[i], false);
-				SwitchRank(i + 4, (ResultScoreRank.Type) viewData.PDONJHCHBAE_ScoreReward[i].FCDKJAKLGMB_TargetValue);
+				SwitchRank(i + 4, (ResultScoreRank.Type) viewMusic.MGJKEJHEBPO_DiffInfos[cnt].BAKLKJLPLOJ.DLPBHJALHCK_GetScoreRank(viewData.PDONJHCHBAE_ScoreReward[i].FCDKJAKLGMB_TargetValue));
 			}
 			for (int i = 0; i < viewData.HFPMKBAANFO_ComboReward.Count; i++)
 			{
 				SetRewardStatus(i + 8, viewData.HFPMKBAANFO_ComboReward[i], false);
-				SwitchComboRank(i + 8, (ResultScoreRank.Type)viewData.HFPMKBAANFO_ComboReward[i].FCDKJAKLGMB_TargetValue);
+				SwitchComboRank(i + 8, (ResultScoreRank.Type)viewMusic.MGJKEJHEBPO_DiffInfos[cnt].BAKLKJLPLOJ.CCFAAPPKILD_GetRankCombo(viewData.HFPMKBAANFO_ComboReward[i].FCDKJAKLGMB_TargetValue));
 			}
 			for (int i = 0; i < viewData.IOCLNNCJFKA_ClearReward.Count; i++)
 			{

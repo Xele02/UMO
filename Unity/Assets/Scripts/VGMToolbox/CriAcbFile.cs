@@ -16,9 +16,13 @@ namespace VGMToolbox.format
         public ushort ReferenceIndex { set; get; }
 
         public bool IsWaveformIdentified { set; get; }
-        public ushort WaveformIndex { set; get; }
-        public ushort WaveformId { set; get; }
-        public byte EncodeType { set; get; }
+        public struct WaveFormInfo
+        {
+            public ushort WaveformIndex { set; get; }
+            public ushort WaveformId { set; get; }
+            public byte EncodeType { set; get; }
+        }
+        public WaveFormInfo[] WaveForms { get; set; }
         public bool IsStreaming { set; get; }
 
         public string OriginalCueName { set; get; }
@@ -153,6 +157,13 @@ namespace VGMToolbox.format
                 return CriUtfTable.GetOffsetForUtfFieldForRow(this, 0, "WaveformTable");
             }
         }
+        public ulong SequenceTableOffset
+        {
+            get
+            {
+                return CriUtfTable.GetOffsetForUtfFieldForRow(this, 0, "SequenceTable");
+            }
+        }
         public ulong SynthTableOffset
         {
             get
@@ -162,7 +173,7 @@ namespace VGMToolbox.format
         }
 
         public CriAcbCueRecord[] CueList { set; get; }
-        public Dictionary<string, ushort> CueNamesToWaveforms { set; get; }
+        public Dictionary<string, ushort[]> CueNamesToWaveforms { set; get; }
 
         public byte[] AcfMd5Hash
         {
@@ -234,7 +245,7 @@ namespace VGMToolbox.format
 
                     this.CueList[cueIndex].OriginalCueName = cueName;
                     this.CueList[cueIndex].CueName = cueName;
-                    this.CueList[cueIndex].CueName += CriAcbFile.GetFileExtensionForEncodeType(this.CueList[cueIndex].EncodeType);
+                    this.CueList[cueIndex].CueName += CriAcbFile.GetFileExtensionForEncodeType(this.CueList[cueIndex].WaveForms[0].EncodeType);
 
                     if (includeCueIdInFileName)
                     {
@@ -242,14 +253,14 @@ namespace VGMToolbox.format
                             this.CueList[cueIndex].CueId.ToString("D5"), this.CueList[cueIndex].CueName);
                     }
 
-                    this.CueNamesToWaveforms.Add(this.CueList[cueIndex].CueName, this.CueList[cueIndex].WaveformId);
+                    this.CueNamesToWaveforms.Add(this.CueList[cueIndex].CueName, this.CueList[cueIndex].WaveForms.Select((x) => x.WaveformId).ToArray());
                 }
             }              
         }
 
         protected void InitializeCueList(FileStream fs)
         {
-            this.CueNamesToWaveforms = new Dictionary<string, ushort>();
+            this.CueNamesToWaveforms = new Dictionary<string, ushort[]>();
 
             ulong referenceItemsOffset = 0;
             ulong referenceItemsSize = 0;
@@ -264,8 +275,14 @@ namespace VGMToolbox.format
             CriUtfTable waveformTableUtf = new CriUtfTable();
             waveformTableUtf.Initialize(fs, (long)this.WaveformTableOffset);
 
+            CriUtfTable sequenceTableUtf = new CriUtfTable();
+            sequenceTableUtf.Initialize(fs, (long)this.SequenceTableOffset);
+
             CriUtfTable synthTableUtf = new CriUtfTable();
             synthTableUtf.Initialize(fs, (long)this.SynthTableOffset);
+            referenceItemsOffset = (ulong)CriUtfTable.GetOffsetForUtfFieldForRow(synthTableUtf, 0, "ReferenceItems");
+            referenceItemsSize = CriUtfTable.GetSizeForUtfFieldForRow(synthTableUtf, 0, "ReferenceItems");
+            referenceCorrection = referenceItemsSize - 2; // samples found have only had a '01 00' record => Always Waveform[0]?.     
 
             this.CueList = new CriAcbCueRecord[cueTableUtf.NumberOfRows];
 
@@ -279,15 +296,22 @@ namespace VGMToolbox.format
                 this.CueList[i].ReferenceIndex = (ushort)CriUtfTable.GetUtfFieldForRow(cueTableUtf, i, "ReferenceIndex");
                 this.CueList[i].LengthMilli = (uint)CriUtfTable.GetUtfFieldForRow(cueTableUtf, i, "Length");
 
+                int sequenceIdx = -1;
                 switch (this.CueList[i].ReferenceType)
                 {
                     case 2:
+                        UnityEngine.Debug.LogError("Reference Type 2 to check");
                         referenceItemsOffset = (ulong)CriUtfTable.GetOffsetForUtfFieldForRow(synthTableUtf, this.CueList[i].ReferenceIndex, "ReferenceItems");
                         referenceItemsSize = CriUtfTable.GetSizeForUtfFieldForRow(synthTableUtf, this.CueList[i].ReferenceIndex, "ReferenceItems");
                         referenceCorrection = referenceItemsSize + 2;
+                        if(referenceItemsSize != 0)
+                            sequenceIdx = ParseFile.ReadUshortBE(fs, (long)(referenceItemsOffset + referenceCorrection));
                         break;
                     case 3:
+                        sequenceIdx = this.CueList[i].ReferenceIndex;
+                        break;
                     case 8:
+                        UnityEngine.Debug.LogError("Reference Type 8 to check");
                         if (i == 0) 
                         {
                             referenceItemsOffset = (ulong)CriUtfTable.GetOffsetForUtfFieldForRow(synthTableUtf, 0, "ReferenceItems");
@@ -303,51 +327,63 @@ namespace VGMToolbox.format
                             //referenceItemsSize = CriUtfTable.GetSizeForUtfFieldForRow(synthTableUtf, this.CueList[i].ReferenceIndex, "ReferenceItems");
                             //referenceCorrection = referenceItemsSize - 2;
                         }
+                        if(referenceItemsSize != 0)
+                            sequenceIdx = ParseFile.ReadUshortBE(fs, (long)(referenceItemsOffset + referenceCorrection));
                         break;
                     default:
                         throw new FormatException(String.Format("  Unexpected ReferenceType: '{0}' for CueIndex: '{1}.'  Please report to VGMToolbox thread at hcs64.com forums, see link in 'Other' menu item.", this.CueList[i].ReferenceType.ToString("D"), i.ToString("D")));
                 }
 
-                if (referenceItemsSize != 0)
+                if (sequenceIdx != -1)
                 {
-                    // get wave form info
-                    this.CueList[i].WaveformIndex = ParseFile.ReadUshortBE(fs, (long)(referenceItemsOffset + referenceCorrection));
-
-                    // get Streaming flag, 0 = in ACB files, 1 = in AWB file
-                    dummy = CriUtfTable.GetUtfFieldForRow(waveformTableUtf, this.CueList[i].WaveformIndex, "Streaming");
-
-                    if (dummy != null) // check to see if this Id actually exists in the WaveformIndex
+                    int numTracks = (ushort)CriUtfTable.GetUtfFieldForRow(sequenceTableUtf, sequenceIdx, "NumTracks");
+                    if(numTracks != 0)
                     {
-                        isStreaming = (byte)dummy;
-                        this.CueList[i].IsStreaming = isStreaming == 0 ? false : true;
-
-                        // get waveform id and encode type from corresponding waveform
-                        var waveformId = CriUtfTable.GetUtfFieldForRow(waveformTableUtf, this.CueList[i].WaveformIndex, "Id");
-
-                        if (waveformId != null)
+                        byte[] waveformIndexes = (byte[])CriUtfTable.GetUtfFieldForRow(sequenceTableUtf, sequenceIdx, "TrackIndex");
+                        this.CueList[i].WaveForms = new CriAcbCueRecord.WaveFormInfo[numTracks];
+                        for(int track = 0; track < numTracks; track++)
                         {
-                            // early revisions of ACB spec used "Id"
-                            this.CueList[i].WaveformId = (ushort)waveformId;
-                        }
-                        else
-                        {
-                            // later versions using "MemoryAwbId" and  "StreamingAwbId"
-                            if (this.CueList[i].IsStreaming)
+
+                            // get wave form info
+                            int synthIndx = (ushort)((waveformIndexes[track * 2] << 8) + waveformIndexes[track * 2 + 1]);
+                            this.CueList[i].WaveForms[track].WaveformIndex = ParseFile.ReadUshortBE(fs, (long)(referenceItemsOffset + referenceCorrection + (ulong)(4 * synthIndx)));
+
+                            // get Streaming flag, 0 = in ACB files, 1 = in AWB file
+                            dummy = CriUtfTable.GetUtfFieldForRow(waveformTableUtf, this.CueList[i].WaveForms[track].WaveformIndex, "Streaming");
+
+                            if (dummy != null) // check to see if this Id actually exists in the WaveformIndex
                             {
-                                this.CueList[i].WaveformId = (ushort)CriUtfTable.GetUtfFieldForRow(waveformTableUtf, this.CueList[i].WaveformIndex, "StreamAwbId");
-                            }
-                            else
-                            {
-                                this.CueList[i].WaveformId = (ushort)CriUtfTable.GetUtfFieldForRow(waveformTableUtf, this.CueList[i].WaveformIndex, "MemoryAwbId");
-                            }
+                                isStreaming = (byte)dummy;
+                                this.CueList[i].IsStreaming = isStreaming == 0 ? false : true;
+
+                                // get waveform id and encode type from corresponding waveform
+                                var waveformId = CriUtfTable.GetUtfFieldForRow(waveformTableUtf, this.CueList[i].WaveForms[track].WaveformIndex, "Id");
+
+                                if (waveformId != null)
+                                {
+                                    // early revisions of ACB spec used "Id"
+                                    this.CueList[i].WaveForms[track].WaveformId = (ushort)waveformId;
+                                }
+                                else
+                                {
+                                    // later versions using "MemoryAwbId" and  "StreamingAwbId"
+                                    if (this.CueList[i].IsStreaming)
+                                    {
+                                        this.CueList[i].WaveForms[track].WaveformId = (ushort)CriUtfTable.GetUtfFieldForRow(waveformTableUtf, this.CueList[i].WaveForms[track].WaveformIndex, "StreamAwbId");
+                                    }
+                                    else
+                                    {
+                                        this.CueList[i].WaveForms[track].WaveformId = (ushort)CriUtfTable.GetUtfFieldForRow(waveformTableUtf, this.CueList[i].WaveForms[track].WaveformIndex, "MemoryAwbId");
+                                    }
+                                }
+
+                                this.CueList[i].WaveForms[track].EncodeType = (byte)CriUtfTable.GetUtfFieldForRow(waveformTableUtf, this.CueList[i].WaveForms[track].WaveformIndex, "EncodeType");
+                            } // if (dummy != null)
+
+                            // update flag
+                            this.CueList[i].IsWaveformIdentified = true;
                         }
-
-                        this.CueList[i].EncodeType = (byte)CriUtfTable.GetUtfFieldForRow(waveformTableUtf, this.CueList[i].WaveformIndex, "EncodeType");
-
-
-                        // update flag
-                        this.CueList[i].IsWaveformIdentified = true;
-                    } // if (dummy != null)
+                    }
                 }                
             }
         }
@@ -378,10 +414,13 @@ namespace VGMToolbox.format
                 foreach (string key in this.CueNamesToWaveforms.Keys)
                 {
                     // extract file
-                    ParseFile.ExtractChunkToFile64(fs,
-                        (ulong)awb.Files[this.CueNamesToWaveforms[key]].FileOffsetByteAligned,
-                        (ulong)awb.Files[this.CueNamesToWaveforms[key]].FileLength,
-                        Path.Combine(destinationFolder, FileUtil.CleanFileName(key)), false, false);
+                    foreach(ushort wavId in this.CueNamesToWaveforms[key])
+                    {
+                        ParseFile.ExtractChunkToFile64(fs,
+                            (ulong)awb.Files[wavId].FileOffsetByteAligned,
+                            (ulong)awb.Files[wavId].FileLength,
+                            Path.Combine(destinationFolder, FileUtil.CleanFileName(key+"_"+wavId)), false, false);
+                    }
                 }
 
                 //-------------------------------------
@@ -394,7 +433,7 @@ namespace VGMToolbox.format
                 }
 
                 // get list of unextracted files
-                var unextractedFiles = awb.Files.Keys.Where(x => !this.CueNamesToWaveforms.ContainsValue(x));
+                var unextractedFiles = awb.Files.Keys.Where(x => !this.CueNamesToWaveforms.Any((KeyValuePair<string, ushort[]> z) => z.Value.Contains(x)));
                 foreach (ushort key in unextractedFiles)
                 {
                     encodeType = (byte)CriUtfTable.GetUtfFieldForRow(waveformTableUtf, key, "EncodeType");
@@ -459,43 +498,46 @@ namespace VGMToolbox.format
 
                     if (cue.IsWaveformIdentified)
                     {
-                        if (cue.IsStreaming) // external AWB file
+                        foreach(var wavInfo in cue.WaveForms)
                         {
-                            if (this.ExternalAwb != null)
+                            if (cue.IsStreaming) // external AWB file
                             {
-                                ParseFile.ExtractChunkToFile64(externalFs,
-                                    (ulong)this.ExternalAwb.Files[cue.WaveformId].FileOffsetByteAligned,
-                                    (ulong)this.ExternalAwb.Files[cue.WaveformId].FileLength,
-                                    Path.Combine(extAwbDestinationFolder, FileUtil.CleanFileName(cue.CueName)), false, false);
-                            }
-                            else if (this.ExternalCpk != null)
-                            {
-                                ParseFile.ExtractChunkToFile64(externalFs,
-                                    (ulong)this.ExternalCpk.ItocFiles[cue.WaveformId].FileOffsetByteAligned,
-                                    (ulong)this.ExternalCpk.ItocFiles[cue.WaveformId].FileLength,
-                                    Path.Combine(extCpkDestinationFolder, FileUtil.CleanFileName(cue.CueName)), false, false);
-                            }
+                                if (this.ExternalAwb != null)
+                                {
+                                    ParseFile.ExtractChunkToFile64(externalFs,
+                                        (ulong)this.ExternalAwb.Files[wavInfo.WaveformId].FileOffsetByteAligned,
+                                        (ulong)this.ExternalAwb.Files[wavInfo.WaveformId].FileLength,
+                                        Path.Combine(extAwbDestinationFolder, FileUtil.CleanFileName(cue.CueName)), false, false);
+                                }
+                                else if (this.ExternalCpk != null)
+                                {
+                                    ParseFile.ExtractChunkToFile64(externalFs,
+                                        (ulong)this.ExternalCpk.ItocFiles[wavInfo.WaveformId].FileOffsetByteAligned,
+                                        (ulong)this.ExternalCpk.ItocFiles[wavInfo.WaveformId].FileLength,
+                                        Path.Combine(extCpkDestinationFolder, FileUtil.CleanFileName(cue.CueName)), false, false);
+                                }
 
-                            externalIdsExtracted.Add(cue.WaveformId);
-                        }
-                        else // internal AWB file (inside ACB)
-                        {
-                            if (this.InternalAwb != null)
-                            {
-                                ParseFile.ExtractChunkToFile64(internalFs,
-                                    (ulong)this.InternalAwb.Files[cue.WaveformId].FileOffsetByteAligned,
-                                    (ulong)this.InternalAwb.Files[cue.WaveformId].FileLength,
-                                    Path.Combine(acbAwbDestinationFolder, FileUtil.CleanFileName(cue.CueName)), false, false);
+                                externalIdsExtracted.Add(wavInfo.WaveformId);
                             }
-                            else if (this.InternalCpk != null)
+                            else // internal AWB file (inside ACB)
                             {
-                                ParseFile.ExtractChunkToFile64(internalFs,
-                                    (ulong)this.InternalCpk.ItocFiles[cue.WaveformId].FileOffsetByteAligned,
-                                    (ulong)this.InternalCpk.ItocFiles[cue.WaveformId].FileLength,
-                                    Path.Combine(acbCpkDestinationFolder, FileUtil.CleanFileName(cue.CueName)), false, false);
-                            }
+                                if (this.InternalAwb != null)
+                                {
+                                    ParseFile.ExtractChunkToFile64(internalFs,
+                                        (ulong)this.InternalAwb.Files[wavInfo.WaveformId].FileOffsetByteAligned,
+                                        (ulong)this.InternalAwb.Files[wavInfo.WaveformId].FileLength,
+                                        Path.Combine(acbAwbDestinationFolder, FileUtil.CleanFileName(cue.CueName)), false, false);
+                                }
+                                else if (this.InternalCpk != null)
+                                {
+                                    ParseFile.ExtractChunkToFile64(internalFs,
+                                        (ulong)this.InternalCpk.ItocFiles[wavInfo.WaveformId].FileOffsetByteAligned,
+                                        (ulong)this.InternalCpk.ItocFiles[wavInfo.WaveformId].FileLength,
+                                        Path.Combine(acbCpkDestinationFolder, FileUtil.CleanFileName(cue.CueName)), false, false);
+                                }
 
-                            internalIdsExtracted.Add(cue.WaveformId);
+                                internalIdsExtracted.Add(wavInfo.WaveformId);
+                            }
                         }
                     } // if (cue.IsWaveformIdentified)                    
                 }
@@ -746,9 +788,9 @@ namespace VGMToolbox.format
             return afs2;
         }
 
-        public Stream GetCueFileStream(int cueId, out bool isStreamed)
+        public Stream[] GetCueFileStreams(int cueId, out bool isStreamed)
         {
-            return GetCueFileStream(GetCueRecord(cueId), out isStreamed);
+            return GetCueFileStreams(GetCueRecord(cueId), out isStreamed);
         }
 
         public CriAcbCueRecord GetCueRecord(int id)
@@ -767,9 +809,9 @@ namespace VGMToolbox.format
             return null;
         }
 
-        public Stream GetCueFileStream(string cueName, out bool isStreamed)
+        public Stream[] GetCueFileStreams(string cueName, out bool isStreamed)
         {
-            return GetCueFileStream(GetCueRecord(cueName), out isStreamed);
+            return GetCueFileStreams(GetCueRecord(cueName), out isStreamed);
         }
 
         public CriAcbCueRecord GetCueRecord(string cueName)
@@ -788,46 +830,54 @@ namespace VGMToolbox.format
             return null;
         }
 
-        private Stream GetCueFileStream(CriAcbCueRecord cue, out bool isStreamed)
+        private Stream[] GetCueFileStreams(CriAcbCueRecord cue, out bool isStreamed)
         {
-            Stream stream = null;
+            Stream[] streams = null;
             isStreamed = false;
 
             if (cue.IsWaveformIdentified)
             {
-                if (cue.IsStreaming) // external AWB file
+                streams = new Stream[cue.WaveForms.Length];
+                for(int wavIdx = 0; wavIdx < cue.WaveForms.Length; wavIdx++)
                 {
-                    isStreamed = true;
-                    if (this.ExternalAwb != null)
+                    if (cue.IsStreaming) // external AWB file
                     {
-                        stream = File.Open(this.ExternalAwb.SourceFile, FileMode.Open, FileAccess.Read, FileShare.Read);
-                        stream.Seek(this.ExternalAwb.Files[cue.WaveformId].FileOffsetByteAligned, SeekOrigin.Begin);
-                        long size = this.ExternalAwb.Files[cue.WaveformId].FileLength;
+                        isStreamed = true;
+                        if (this.ExternalAwb != null)
+                        {
+                            Stream stream = File.Open(this.ExternalAwb.SourceFile, FileMode.Open, FileAccess.Read, FileShare.Read);
+                            stream.Seek(this.ExternalAwb.Files[cue.WaveForms[wavIdx].WaveformId].FileOffsetByteAligned, SeekOrigin.Begin);
+                            long size = this.ExternalAwb.Files[cue.WaveForms[wavIdx].WaveformId].FileLength;
+                            streams[wavIdx] = stream;
+                        }
+                        else if (this.ExternalCpk != null)
+                        {
+                            Stream stream = File.Open(this.ExternalCpk.SourceFileName, FileMode.Open, FileAccess.Read, FileShare.Read);
+                            stream.Seek(ExternalCpk.ItocFiles[cue.WaveForms[wavIdx].WaveformId].FileOffsetByteAligned, SeekOrigin.Begin);
+                            long size = this.ExternalCpk.ItocFiles[cue.WaveForms[wavIdx].WaveformId].FileLength;
+                            streams[wavIdx] = stream;
+                        }
                     }
-                    else if (this.ExternalCpk != null)
+                    else // internal AWB file (inside ACB)
                     {
-                        stream = File.Open(this.ExternalCpk.SourceFileName, FileMode.Open, FileAccess.Read, FileShare.Read);
-                        stream.Seek(ExternalCpk.ItocFiles[cue.WaveformId].FileOffsetByteAligned, SeekOrigin.Begin);
-                        long size = this.ExternalCpk.ItocFiles[cue.WaveformId].FileLength;
-                    }
-                }
-                else // internal AWB file (inside ACB)
-                {
-                    if (this.InternalAwb != null)
-                    {
-                        stream = File.Open(this.InternalAwb.SourceFile, FileMode.Open, FileAccess.Read, FileShare.Read);
-                        stream.Seek(this.InternalAwb.Files[cue.WaveformId].FileOffsetByteAligned, SeekOrigin.Begin);
-                        long size = this.InternalAwb.Files[cue.WaveformId].FileLength;
-                    }
-                    else if (this.InternalCpk != null)
-                    {
-                        stream = File.Open(this.InternalCpk.SourceFileName, FileMode.Open, FileAccess.Read, FileShare.Read);
-                        stream.Seek(this.InternalCpk.ItocFiles[cue.WaveformId].FileOffsetByteAligned, SeekOrigin.Begin);
-                        long size = this.InternalCpk.ItocFiles[cue.WaveformId].FileLength;
+                        if (this.InternalAwb != null)
+                        {
+                            Stream stream = File.Open(this.InternalAwb.SourceFile, FileMode.Open, FileAccess.Read, FileShare.Read);
+                            stream.Seek(this.InternalAwb.Files[cue.WaveForms[wavIdx].WaveformId].FileOffsetByteAligned, SeekOrigin.Begin);
+                            long size = this.InternalAwb.Files[cue.WaveForms[wavIdx].WaveformId].FileLength;
+                            streams[wavIdx] = stream;
+                        }
+                        else if (this.InternalCpk != null)
+                        {
+                            Stream stream = File.Open(this.InternalCpk.SourceFileName, FileMode.Open, FileAccess.Read, FileShare.Read);
+                            stream.Seek(this.InternalCpk.ItocFiles[cue.WaveForms[wavIdx].WaveformId].FileOffsetByteAligned, SeekOrigin.Begin);
+                            long size = this.InternalCpk.ItocFiles[cue.WaveForms[wavIdx].WaveformId].FileLength;
+                            streams[wavIdx] = stream;
+                        }
                     }
                 }
             } // if (cue.IsWaveformIdentified)
-            return stream;
+            return streams;
         }
 
         public static ushort GetWaveformRowIndexForWaveformId(CriUtfTable utfTable, ushort waveformId, bool isStreamed)

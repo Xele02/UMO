@@ -2,6 +2,7 @@
 using System.IO;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Localization.SmartFormat;
 
 [CreateAssetMenu(fileName = "RuntimeSettings", menuName = "ScriptableObjects/RuntimeSettings", order = 1)]
 class RuntimeSettings : ScriptableObject
@@ -27,6 +28,8 @@ class RuntimeSettings : ScriptableObject
 				
 				UMO_PlayerPrefs.CheckLoad();
 				m_currentSettings.CanSkipUnplayedSongs = UMO_PlayerPrefs.GetInt("CanSkipSongs", 1) == 1;
+				m_currentSettings.DisableMaxVopFastCompletionLimit = UMO_PlayerPrefs.GetInt("DisableMaxVopFastCompletionLimit", 0) == 1;
+				m_currentSettings.DisableHeadRotation = UMO_PlayerPrefs.GetInt("DisableHeadRotation", 0) == 1;
 				m_currentSettings.IsInvincibleCheat = UMO_PlayerPrefs.GetInt("InvincibleMode", 0) == 1;
 				m_currentSettings.ForcePerfectNote = UMO_PlayerPrefs.GetInt("ForcePerfect", 0) == 1;
 				m_currentSettings.DisableNoteSound = UMO_PlayerPrefs.GetInt("DisableNoteSound", 1) == 1;
@@ -36,6 +39,21 @@ class RuntimeSettings : ScriptableObject
 				m_currentSettings.EnableInfoLog = UMO_PlayerPrefs.GetInt("EnableInfoLog", 0) == 1;
 				m_currentSettings.EnableErrorLog = UMO_PlayerPrefs.GetInt("EnableErrorLog", 0) == 1;
 				m_currentSettings.DisableCrywareLowLatency = UMO_PlayerPrefs.GetInt("DisableCrywareLowLatency", 0) == 1;
+				m_currentSettings.UseTouchScreen = UMO_PlayerPrefs.GetInt("UseTouchScreen", 0) == 1;
+				m_currentSettings.RemoveShopLimit = UMO_PlayerPrefs.GetInt("RemoveShopLimit", 0) == 1;
+				m_currentSettings.RemoveCrystalLimit = UMO_PlayerPrefs.GetInt("RemoveCrystalLimit", 0) == 1;
+				m_currentSettings.DumpStringUsed = UMO_PlayerPrefs.GetInt("DumpStringUsed", 0) == 1;
+				m_currentSettings.ShowStringUsed = UMO_PlayerPrefs.GetInt("ShowStringUsed", 0) == 1;
+				m_currentSettings.UseTmpLocalizationFiles = UMO_PlayerPrefs.GetInt("UseTmpLocalizationFiles", 0) == 1;
+				m_currentSettings.Language = UMO_PlayerPrefs.GetString("Language", "");
+				m_currentSettings.WorkerThreadPriorityNormal = UMO_PlayerPrefs.GetInt("WorkerThreadPriorityNormal", 0) == 1;
+				m_currentSettings.WorkerThreadUseCoroutine = UMO_PlayerPrefs.GetInt("WorkerThreadUseCoroutine", 0) == 1;
+				m_currentSettings.EnableMusicSecondDisplay = UMO_PlayerPrefs.GetInt("EnableMusicSecondDisplay", 1) == 1;
+				m_currentSettings.EnableMusicThirdDisplay = UMO_PlayerPrefs.GetInt("EnableMusicThirdDisplay", 1) == 1;
+				m_currentSettings.MusicFirstDisplayType = UMO_PlayerPrefs.GetInt("MusicFirstDisplayType", 2);
+				m_currentSettings.MusicSecondDisplayType = UMO_PlayerPrefs.GetInt("MusicSecondDisplayType", 1);
+				m_currentSettings.MusicThirdDisplayType = UMO_PlayerPrefs.GetInt("MusicThirdDisplayType", 0);
+				m_currentSettings.UseChineseFont = UMO_PlayerPrefs.GetInt("UseChineseFont", 1) == 1;
 
 #if (UNITY_ANDROID && !UNITY_EDITOR) || DEBUG_ANDROID_FILESYSTEM
 				m_currentSettings.DataDirectory = Application.persistentDataPath + "/data/";
@@ -57,6 +75,23 @@ class RuntimeSettings : ScriptableObject
         UMO_PlayerPrefs.SetInt("EnableInfoLog", m_currentSettings.EnableInfoLog ? 1 : 0);
         UMO_PlayerPrefs.SetInt("EnableErrorLog", m_currentSettings.EnableErrorLog ? 1 : 0);
         UMO_PlayerPrefs.SetInt("DisableCrywareLowLatency", m_currentSettings.DisableCrywareLowLatency ? 1 : 0);
+		UMO_PlayerPrefs.SetInt("UseTouchScreen", m_currentSettings.UseTouchScreen ? 1 : 0);
+		UMO_PlayerPrefs.SetInt("RemoveShopLimit", m_currentSettings.RemoveShopLimit ? 1 : 0);
+		UMO_PlayerPrefs.SetInt("RemoveCrystalLimit", m_currentSettings.RemoveCrystalLimit ? 1 : 0);
+		UMO_PlayerPrefs.SetInt("DumpStringUsed", m_currentSettings.DumpStringUsed ? 1 : 0);
+		UMO_PlayerPrefs.SetInt("ShowStringUsed", m_currentSettings.ShowStringUsed ? 1 : 0);
+		UMO_PlayerPrefs.SetInt("UseTmpLocalizationFiles", m_currentSettings.UseTmpLocalizationFiles ? 1 : 0);
+		UMO_PlayerPrefs.SetString("Language", m_currentSettings.Language);
+		UMO_PlayerPrefs.SetInt("WorkerThreadPriorityNormal", m_currentSettings.WorkerThreadPriorityNormal ? 1 : 0);
+		UMO_PlayerPrefs.SetInt("WorkerThreadUseCoroutine", m_currentSettings.WorkerThreadUseCoroutine ? 1 : 0);
+		UMO_PlayerPrefs.SetInt("DisableMaxVopFastCompletionLimit", m_currentSettings.DisableMaxVopFastCompletionLimit ? 1 : 0);
+		UMO_PlayerPrefs.SetInt("DisableHeadRotation", m_currentSettings.DisableHeadRotation ? 1 : 0);
+		UMO_PlayerPrefs.SetInt("EnableMusicSecondDisplay", m_currentSettings.EnableMusicSecondDisplay ? 1 : 0);
+		UMO_PlayerPrefs.SetInt("EnableMusicThirdDisplay", m_currentSettings.EnableMusicThirdDisplay ? 1 : 0);
+		UMO_PlayerPrefs.SetInt("MusicFirstDisplayType", m_currentSettings.MusicFirstDisplayType);
+		UMO_PlayerPrefs.SetInt("MusicSecondDisplayType", m_currentSettings.MusicSecondDisplayType);
+		UMO_PlayerPrefs.SetInt("MusicThirdDisplayType", m_currentSettings.MusicThirdDisplayType);
+		UMO_PlayerPrefs.SetInt("UseChineseFont", m_currentSettings.UseChineseFont ? 1 : 0);
 		UMO_PlayerPrefs.Save();
 	}
 
@@ -118,9 +153,18 @@ class RuntimeSettings : ScriptableObject
 	public bool CanSkipUnplayedSongs { get; set; }
 	public bool DisableCrywareLowLatency { get; set; }
 	public bool RemoveHomeBgDateLimit = false;
+	public bool DisableMaxVopFastCompletionLimit{ get; set; }
+	public bool DisableHeadRotation{ get; set; }
 
 	public bool IsInvincibleCheat { get; set; }
 	public bool ForcePerfectNote { get; set; }
+
+	public bool EnableMusicSecondDisplay { get; set; }
+	public bool EnableMusicThirdDisplay { get; set; }
+	public int MusicFirstDisplayType { get; set; }
+	public int MusicSecondDisplayType { get; set; }
+	public int MusicThirdDisplayType { get; set; }
+
 	[Header("Live")]
 	public bool ForceLiveValkyrieMode = false;
 	public bool ForceLiveDivaMode = false;
@@ -166,6 +210,37 @@ class RuntimeSettings : ScriptableObject
 	public bool DisplayIdInName { get; set; }
 	public bool EnableInfoLog { get; set; }
 	public bool EnableErrorLog { get; set; }
+	public bool UseTouchScreen { get; set; }
+	public bool RemoveShopLimit { get; set; }
+	public bool RemoveCrystalLimit { get; set; }
+	public bool DumpStringUsed { get; set; }
+	public bool ShowStringUsed { get; set; }
+
+	public bool UseTmpLocalizationFiles { get; set; }
+	public string Language { get; set; }
+	public bool UseChineseFont { get; set; }
+	public bool WorkerThreadPriorityNormal { get; set; }
+	public bool WorkerThreadUseCoroutine { get; set; }
+
+	public SmartFormatter SmartFormatter
+	{
+		get => m_SmartFormat;
+		set => m_SmartFormat = value;
+	}
+	SmartFormatter m_SmartFormat = Smart.CreateDefaultSmartFormat();
+
+	public string GetMusicName(int idx, string str_translated, string str_kanji, string str_rom)
+	{
+		string[] strs = {str_kanji, str_rom, str_translated};
+		switch(idx)
+		{
+			case 1:
+				return EnableMusicSecondDisplay ? strs[MusicSecondDisplayType] : "";
+			case 2:
+				return EnableMusicThirdDisplay ? strs[MusicThirdDisplayType] : "";
+		}
+		return strs[MusicFirstDisplayType];
+	}
 }
 
 #if UNITY_EDITOR

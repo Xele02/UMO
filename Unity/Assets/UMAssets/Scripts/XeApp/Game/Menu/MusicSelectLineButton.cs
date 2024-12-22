@@ -32,13 +32,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1678154 Offset: 0x1678154 VA: 0x1678154
 		public void TryLeave()
 		{
-			TodoLogger.LogError(0, "MusicSelectLineButton TryLeave");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectLineButton TryLeave");
 		}
 
 		// // RVA: 0x16780B0 Offset: 0x16780B0 VA: 0x16780B0
 		public void Enter(bool line6Mode)
 		{
-			TodoLogger.LogError(0, "MusicSelectLineButton Enter");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectLineButton Enter");
 		}
 
 		// // RVA: 0x1678164 Offset: 0x1678164 VA: 0x1678164
@@ -50,26 +50,26 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x167833C Offset: 0x167833C VA: 0x167833C
 		public void Hide()
 		{
-			TodoLogger.LogError(0, "MusicSelectLineButton Hide");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectLineButton Hide");
 		}
 
 		// // RVA: 0x16783C0 Offset: 0x16783C0 VA: 0x16783C0
 		public bool IsPlaying()
 		{
-			TodoLogger.LogError(0, "MusicSelectLineButton IsPlaying");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectLineButton IsPlaying");
 			return false;
 		}
 
 		// // RVA: 0x167841C Offset: 0x167841C VA: 0x167841C
 		public void SetUnlockNumber(int number)
 		{
-			TodoLogger.LogError(0, "MusicSelectLineButton SetUnlockNumber");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectLineButton SetUnlockNumber");
 		}
 
 		// // RVA: 0x167845C Offset: 0x167845C VA: 0x167845C
 		public void SetUnlock(bool isUnlock)
 		{
-			TodoLogger.LogError(0, "MusicSelectLineButton SetUnlock");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectLineButton SetUnlock");
 		}
 
 		// // RVA: 0x1678504 Offset: 0x1678504 VA: 0x1678504
@@ -84,7 +84,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x16789F4 Offset: 0x16789F4 VA: 0x16789F4 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			TodoLogger.LogError(0, "InitializeFromLayout MusicSelectLineButton");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "InitializeFromLayout MusicSelectLineButton");
 			return true;
 		}
 	}

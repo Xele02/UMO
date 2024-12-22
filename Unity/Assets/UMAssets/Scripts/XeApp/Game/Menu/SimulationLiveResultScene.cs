@@ -62,13 +62,15 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC4FD64 Offset: 0xC4FD64 VA: 0xC4FD64
 		private void OnClickMusicButton()
 		{
-			TodoLogger.LogNotImplemented("SimulationLiveResultScene.OnClickMusicButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			this.StartCoroutineWatched(OnBuyMusicCoroutine(Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH_MusicId, GetMusicTextInfo(Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH_MusicId)));
 		}
 
 		//// RVA: 0xC4FF58 Offset: 0xC4FF58 VA: 0xC4FF58
 		private void OnClickAnimeStoreButton()
 		{
-			TodoLogger.LogNotImplemented("SimulationLiveResultScene.OnClickAnimeStoreButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			this.StartCoroutineWatched(OnBuyAnimCoroutine(Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH_MusicId, GetMusicTextInfo(Database.Instance.selectedMusic.GetSelectedMusicData().DLAEJOBELBH_MusicId)));
 		}
 
 		//// RVA: 0xC5014C Offset: 0xC5014C VA: 0xC5014C
@@ -174,7 +176,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator CO_LoadResultInfo()
 		{
 			string bundleName;
-			Font font;
+			XeSys.FontInfo font;
 			AssetBundleLoadLayoutOperationBase op;
 
 			//0x12C9A2C
@@ -195,7 +197,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator CO_LoadSerifWindow()
 		{
 			string bundleName;
-			Font font;
+			XeSys.FontInfo font;
 			AssetBundleLoadLayoutOperationBase op;
 
 			//0x12C9D0C
@@ -238,10 +240,75 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x727004 Offset: 0x727004 VA: 0x727004
 		//// RVA: 0xC4FEB4 Offset: 0xC4FEB4 VA: 0xC4FEB4
-		//private IEnumerator OnBuyMusicCoroutine(int musicId, MusicTextDatabase.TextInfo musicInfo) { }
+		private IEnumerator OnBuyMusicCoroutine(int musicId, MusicTextDatabase.TextInfo musicInfo)
+		{
+			//0x12CB020
+			bool isClosed = false;
+			bool openUrl = false;
+            TextPopupSetting s = PopupWindowManager.CrateTextContent("", SizeType.Small, MessageManager.Instance.GetMessage("menu", "popup_buy_music_msg_android"), new ButtonInfo[2]
+                        {
+                new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+                new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+                        }, false, true);
+            s.IsCaption = false;
+			PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x12C99C8
+				if(type == PopupButton.ButtonType.Positive)
+					openUrl = true;
+			}, null, null, null, endCallBaack:() =>
+			{
+				//0x12C99D8
+				isClosed = true;
+			}, buttonSeEvent:OtherUtility.PopupWindowOpenUrlButtonSe);
+			while(!isClosed)
+				yield return null;
+			if(openUrl)
+			{
+				ILCCJNDFFOB.HHCJCDFCLOB.EAEHILOBHDA(musicId, musicInfo.musicName);
+				OtherUtility.OpenURL(musicInfo.buyURL, () =>
+				{
+					//0x12C99B8
+					return;
+				}, 0.5f);
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72707C Offset: 0x72707C VA: 0x72707C
 		//// RVA: 0xC500A8 Offset: 0xC500A8 VA: 0xC500A8
-		//private IEnumerator OnBuyAnimCoroutine(int musicId, MusicTextDatabase.TextInfo musicInfo) { }
+		private IEnumerator OnBuyAnimCoroutine(int musicId, MusicTextDatabase.TextInfo musicInfo)
+		{
+			//0x12CA8FC
+			bool isClosed = false;
+			bool openUrl = false;
+            TextPopupSetting s = PopupWindowManager.CrateTextContent("", SizeType.Small, MessageManager.Instance.GetMessage("menu", "popup_buy_music_msg_android"), new ButtonInfo[2]
+            {
+                new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+                new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+            }, false, true);
+            s.IsCaption = false;
+			PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x12C99EC
+				if(type == PopupButton.ButtonType.Positive)
+					openUrl = true;
+			}, null, null, null, endCallBaack:() =>
+			{
+				//0x12C99FC
+				isClosed = true;
+			}, buttonSeEvent:OtherUtility.PopupWindowOpenUrlButtonSe);
+			while(!isClosed)
+				yield return null;
+			if(openUrl)
+			{
+				EONOEHOKBEB_Music music = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId);
+				ILCCJNDFFOB.HHCJCDFCLOB.GADJDBJLIGC(musicId, SimulationLiveResultInfo.GetAnimName(music.AIHCEGFANAM_SerieAttr - 1), musicInfo.dAnmStoreURL);
+				OtherUtility.OpenURL(musicInfo.dAnmStoreURL, () =>
+				{
+					//0x12C99BC
+					return;
+				}, 0.5f);
+			}
+		}
 	}
 }

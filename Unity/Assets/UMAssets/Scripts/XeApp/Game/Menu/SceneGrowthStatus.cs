@@ -5,6 +5,10 @@ using XeApp.Game.Common;
 using System.Text;
 using UnityEngine.Events;
 using mcrs;
+using System.Collections.Generic;
+using XeSys;
+using System.Collections;
+using XeApp.Game.Common.uGUI;
 
 namespace XeApp.Game.Menu
 {
@@ -133,7 +137,7 @@ namespace XeApp.Game.Menu
 				"sw_ab_fr_set_p2_sw_cmn_status_icon_up_l"
 			}; // 0x84
 
-		//public int PageNum { get; } 0x10E57CC
+		public int PageNum { get { return m_pageNum; } } //0x10E57CC
 
 		// RVA: 0x10F9774 Offset: 0x10F9774 VA: 0x10F9774 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
@@ -204,7 +208,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				m_storyButton.Hidden = false;
-				m_eventStoryData.KHEKNNFCAOI(CCAAJNJGNDO.NNDBMLNMDJM(sceneData.BCCHOBPJJKE_SceneId));
+				m_eventStoryData.KHEKNNFCAOI_InitFromEventId(CCAAJNJGNDO.NNDBMLNMDJM(sceneData.BCCHOBPJJKE_SceneId));
 				m_storyNewLayout.StartChildrenAnimGoStop("02");
 				bool disabled = true;
 				for(int i = 0; i < m_eventStoryData.FFPCLEONGHE.Count; i++)
@@ -212,7 +216,7 @@ namespace XeApp.Game.Menu
 					if(m_eventStoryData.FFPCLEONGHE[i].CDOCOLOKCJK_Unlocked)
 					{
 						disabled = false;
-						if (!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN(m_eventStoryData.FFPCLEONGHE[i].PBPOLELIPJI_AdventureId))
+						if (!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsViewed(m_eventStoryData.FFPCLEONGHE[i].PBPOLELIPJI_AdventureId))
 						{
 							m_storyNewLayout.StartChildrenAnimGoStop("01");
 						}
@@ -302,26 +306,202 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x10F2308 Offset: 0x10F2308 VA: 0x10F2308
-		//public void BeginUpdateStatusAnime(SceneGrowthStatus.TextLabel type, int before, int after, float waitTime) { }
+		public void BeginUpdateStatusAnime(TextLabel type, int before, int after, float waitTime)
+		{
+			if(before != after)
+			{
+				this.StartCoroutineWatched(Co_BeginUpdateStatusAnime(m_statusText[(int)type], before, after, waitTime, type == TextLabel.Luck ? "{0:+#;-#;0}" : "{0}", null));
+			}
+		}
 
 		//// RVA: 0x10F240C Offset: 0x10F240C VA: 0x10F240C
-		//public void BeginUpdateCenterSkillAnime(GCIJNCFDNON sceneData, int before, int after, float waitTime) { }
+		public void BeginUpdateCenterSkillAnime(GCIJNCFDNON_SceneInfo sceneData, int before, int after, float waitTime)
+		{
+			if(before != after)
+			{
+				int skillId = sceneData.MEOOLHNNMHL_GetCenterSkillId(false, 0, 0);
+				if(skillId != 0)
+				{
+					string skillComment = "";
+					HBDCPGLAPHH skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.COLCPGFABLP_CenterSkills[skillId - 1];
+					DisableSkillCrossFade();
+					List<string> l = new List<string>();
+					if(skill.HEKHODDJHAO_P1 != 0)
+					{
+                        KFCIIMBBNCD effect = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PEPLECGHBFA_SceneEffectInfo[skill.HEKHODDJHAO_P1 - 1];
+						if(effect.KCOHMHFBDKF_ValueByLevel[before - 1] != effect.KCOHMHFBDKF_ValueByLevel[after - 1])
+						{
+							l.Add("[v1]");
+						}
+                    }
+					if(skill.AKGNPLBDKLN_P2 != 0)
+					{
+                        KFCIIMBBNCD effect = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PEPLECGHBFA_SceneEffectInfo[skill.AKGNPLBDKLN_P2 - 1];
+						if(effect.KCOHMHFBDKF_ValueByLevel[before - 1] != effect.KCOHMHFBDKF_ValueByLevel[after - 1])
+						{
+							l.Add("[v2]");
+						}
+                    }
+					m_modifyTagCenterSkillComment.Set(sceneData.MCKOOLDJEPG_CenterSkillDesc1);
+					ReplaceSkillText(m_modifyTagCenterSkillComment, l);
+					skillComment = m_modifyTagCenterSkillComment.ToString();
+					m_skillLevel[4].alignment = TextAnchor.LowerLeft;
+					this.StartCoroutineWatched(Co_BeginUpdateStatusAnime(m_skillLevel[4], before, after, waitTime, "Lv{0}", (int level) =>
+					{
+						//0x1363A18
+						UnitWindowConstant.SetSkillDetails(m_skillDescript[4], sceneData.IHLINMFMCDN_GetCenterSkillDesc(level, skillComment, false), 2);
+					}));
+				}
+			}
+		}
 
 		//// RVA: 0x10F2A1C Offset: 0x10F2A1C VA: 0x10F2A1C
-		//public void BeginUpdateActiveSkillAnime(GCIJNCFDNON sceneData, int before, int after, float waitTime) { }
+		public void BeginUpdateActiveSkillAnime(GCIJNCFDNON_SceneInfo sceneData, int before, int after, float waitTime)
+		{
+			if(before != after)
+			{
+				if(sceneData.HGONFBDIBPM_ActiveSkillId != 0)
+				{
+					string skillComment = "";
+					CDNKOFIELMK skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[sceneData.HGONFBDIBPM_ActiveSkillId - 1];
+					List<string> l = new List<string>();
+					DisableSkillCrossFade();
+					for(int i = 0; i < 2; i++)
+					{
+						if(skill.NKGHBKFMFCI_BuffValueByIndexAndLevel[before - 1, i] != 
+							skill.NKGHBKFMFCI_BuffValueByIndexAndLevel[after - 1, i])
+						{
+							l.Add(i == 0 ? "[v1]" : "[v2]");
+						}
+						if(skill.PHAGNOHBMCM_DurationByIndexAndLevel[before - 1, i] != 
+							skill.PHAGNOHBMCM_DurationByIndexAndLevel[after - 1, i])
+						{
+							l.Add(i == 0 ? "[dv]" : "[dv2]");
+						}
+					}
+					m_modifyTagActiveSkillComment.Set(sceneData.FKFEJGKILJO_ActiveSkillDesc);
+					ReplaceSkillText(m_modifyTagActiveSkillComment, l);
+					skillComment = m_modifyTagActiveSkillComment.ToString();
+					m_skillLevel[0].alignment = TextAnchor.LowerLeft;
+					this.StartCoroutineWatched(Co_BeginUpdateStatusAnime(m_skillLevel[0], before, after, waitTime, "Lv{0}", (int level) =>
+					{
+						//0x1363B38
+						UnitWindowConstant.SetSkillDetails(m_skillDescript[0], sceneData.PCMEMHPDABG_GetActiveSkillDesc(level, skillComment), 2);
+					}));
+				}
+			}
+		}
 
 		//// RVA: 0x10F3074 Offset: 0x10F3074 VA: 0x10F3074
-		//public void BeginUpdateLiveSkillAnime(GCIJNCFDNON sceneData, int before, int after, float waitTime) { }
+		public void BeginUpdateLiveSkillAnime(GCIJNCFDNON_SceneInfo sceneData, int before, int after, float waitTime)
+		{
+			if(before != after)
+			{
+				int skillId = sceneData.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0);
+				if(skillId != 0)
+				{
+					string skillComment = "";
+					PPGHMBNIAEC skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills[skillId - 1];
+					List<string> l = new List<string>();
+					DisableSkillCrossFade();
+					for(int i = 0; i < 2; i++)
+					{
+						if(skill.NKGHBKFMFCI_BuffValueByIndexAndLevel[before - 1, i] != skill.NKGHBKFMFCI_BuffValueByIndexAndLevel[after - 1, i])
+						{
+							if(skill.EGLDFPILJLG_SkillBuffEffect[i] >= 19 && skill.EGLDFPILJLG_SkillBuffEffect[i] < 21)
+							{
+								l.Add(i != 0 ? "[v2_1]" : "[v1_1]");
+								l.Add(i != 0 ? "[v2_2]" : "[v1_2]");
+								l.Add(i != 0 ? "[v2_max]" : "[v1_max]");
+							}
+							else
+							{
+								l.Add(i == 0 ? "[v1]" : "[v2]");
+							}
+						}
+						if(skill.PHAGNOHBMCM_DurationByIndexAndLevel[before - 1, i] != skill.NKGHBKFMFCI_BuffValueByIndexAndLevel[after - 1, i])
+						{
+							l.Add(i == 0 ? "[dv]" : "[dv2]");
+						}
+					}
+					if(skill.LFGFBMJNBKN_ConfigValue[before - 1] != skill.LFGFBMJNBKN_ConfigValue[after - 1])
+					{
+						l.Add("[tv]");
+					}
+					m_modifyTagLiveSkillComment.Set(sceneData.AGJBLOKLMED_LiveSkillDesc1);
+					ReplaceSkillText(m_modifyTagLiveSkillComment, l);
+					skillComment = m_modifyTagLiveSkillComment.ToString();
+					m_skillLevel[2].alignment = TextAnchor.LowerLeft;
+					this.StartCoroutineWatched(Co_BeginUpdateStatusAnime(m_skillLevel[2], before, after, waitTime, "Lv{0}", (int level) =>
+					{
+						//0x1363C48
+						UnitWindowConstant.SetSkillDetails(m_skillDescript[2], sceneData.KDGACEJPGFG_GetLiveSkillDesc(level, skillComment, false), 2);
+					}));
+				}
+			}
+		}
 
 		//// RVA: 0x10FA96C Offset: 0x10FA96C VA: 0x10FA96C
-		//private void ReplaceSkillText(StringBuilder str, List<string> replaceWords) { }
+		private void ReplaceSkillText(StringBuilder str, List<string> replaceWords)
+		{
+			string fmt = "<color=" + StatusTextColor.UpColor + ">{0}</color>";
+			for(int i = 0; i < replaceWords.Count; i++)
+			{
+				str.Replace(replaceWords[i], string.Format(fmt, replaceWords[i]));
+			}
+		}
 
 		//// RVA: 0x10FA424 Offset: 0x10FA424 VA: 0x10FA424
 		//private void InsertColorTag(StringBuilder strBuilder) { }
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7262BC Offset: 0x7262BC VA: 0x7262BC
 		//// RVA: 0x10FA7CC Offset: 0x10FA7CC VA: 0x10FA7CC
-		//private IEnumerator Co_BeginUpdateStatusAnime(Text text, int before, int after, float waitTime, string format, UnityAction<int> updateAction) { }
+		private IEnumerator Co_BeginUpdateStatusAnime(Text text, int before, int after, float waitTime, string format, UnityAction<int> updateAction)
+		{
+			float time;
+			float defaultFs;
+			float fs;
+			int maxFontSize;
+
+			//0x1363E5C
+			time = 0;
+			defaultFs = text.fontSize;
+			fs = defaultFs;
+			maxFontSize = text.fontSize + 4;
+			time = 0;
+			waitTime -= 0.2f;
+			//break;
+			do
+			{
+				text.text = RichTextUtility.MakeColorTagString(string.Format(format, before), StatusTextColor.UpColor);
+				text.text = RichTextUtility.MakeSizeTagString(text.text, (int)fs);
+				fs = defaultFs + time * (maxFontSize - defaultFs);
+				time += TimeWrapper.deltaTime;
+				yield return null;
+			} while(time < 0.1f);
+			time -= 0.1f;
+			while(time < waitTime)
+			{
+				time += TimeWrapper.deltaTime;
+				int fs2 = Mathf.RoundToInt(Math.Tween.EasingInOutSine(before, after, time / waitTime));
+				text.text = RichTextUtility.MakeColorTagString(string.Format(format, fs2), StatusTextColor.UpColor);
+				text.text = RichTextUtility.MakeSizeTagString(text.text, maxFontSize);
+				if(updateAction != null)
+					updateAction(fs2);
+				yield return null;
+			}
+			time -= waitTime;
+			fs = maxFontSize;
+			while(time < 0.1f)
+			{
+				text.text = RichTextUtility.MakeColorTagString(string.Format(format, after), StatusTextColor.UpColor);
+				text.text = RichTextUtility.MakeSizeTagString(text.text, (int)fs);
+				fs = maxFontSize - (maxFontSize - defaultFs) * time;
+				time += TimeWrapper.deltaTime;
+				yield return null;
+			}
+			text.text = RichTextUtility.MakeColorTagString(string.Format(format, after), StatusTextColor.NormalColor);
+		}
 
 		//// RVA: 0x10FAB30 Offset: 0x10FAB30 VA: 0x10FAB30
 		public void UpdateCenterSkill(GCIJNCFDNON_SceneInfo sceneData, int level)
@@ -400,10 +580,21 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x10FA8D8 Offset: 0x10FA8D8 VA: 0x10FA8D8
-		//private void DisableSkillCrossFade() { }
+		private void DisableSkillCrossFade()
+		{
+			if(m_centerSkillCrossFade != null)
+				m_centerSkillCrossFade.StartAllAnimLoop("st_wait");
+			if(m_liveSkillCrossFade != null)
+				m_liveSkillCrossFade.StartAllAnimLoop("st_wait");
+		}
 
 		//// RVA: 0x10F21C4 Offset: 0x10F21C4 VA: 0x10F21C4
-		//public void PlayUpArrowAnimation(IDMPGHMNLHD.NPIEEGNKDEG kind) { }
+		public void PlayUpArrowAnimation(IDMPGHMNLHD.NPIEEGNKDEG kind)
+		{
+			if(m_growStatusTbl[(int)kind] == GrowthStatus.None)
+				return;
+			m_statusUpAnimationlayout[(int)m_growStatusTbl[(int)kind]].StartChildrenAnimGoStop("st_wait", "st_in");
+		}
 
 		//// RVA: 0x10F421C Offset: 0x10F421C VA: 0x10F421C
 		public void Show()

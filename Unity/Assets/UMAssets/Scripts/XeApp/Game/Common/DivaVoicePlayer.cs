@@ -95,7 +95,13 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1C0A298 Offset: 0x1C0A298 VA: 0x1C0A298
-		// public void Play(int cueId) { }
+		public void Play(int cueId)
+		{
+			StopCue();
+			if(!m_enable)
+				return;
+			PlayCue(cueId);
+		}
 
 		// // RVA: 0x1C0A290 Offset: 0x1C0A290 VA: 0x1C0A290
 		public void Stop()

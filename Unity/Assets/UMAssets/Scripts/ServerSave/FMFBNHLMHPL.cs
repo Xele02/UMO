@@ -245,7 +245,7 @@ public class FMFBNHLMHPL_EventAprilFool : KLFDBFMNLBL_ServerSaveBlock
 						{
 							EDOHBJAPLPF_JsonData quest2 = quests[j];
 							IKCGAJKCPFN data2 = CCBEKGNDDBE.NNMPGOAGEOL[j];
-							data2.PPFNGGCBJKC_Id = CJAENOMGPDA_ReadInt(quest2, AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id, 0, ref isInvalid);
+							data2.PPFNGGCBJKC_Id = CJAENOMGPDA_ReadInt(quest2, AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id, j + 1, ref isInvalid);
 							data2.EALOBDHOCHP_Stat = CJAENOMGPDA_ReadInt(quest2, AFEHLCGHAEE_Strings.EALOBDHOCHP_stat, 0, ref isInvalid);
 							data2.HMFFHLPNMPH_Count = CJAENOMGPDA_ReadInt(quest2, AFEHLCGHAEE_Strings.HMFFHLPNMPH_count, 0, ref isInvalid);
 							data2.BEBJKJKBOGH_Date = DKMPHAPBDLH_ReadLong(quest2, AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date, 0, ref isInvalid);
@@ -295,10 +295,7 @@ public class FMFBNHLMHPL_EventAprilFool : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x119B128 Offset: 0x119B128 VA: 0x119B128 Slot: 10
-	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
-	{
-		TodoLogger.LogError(0, "AGHKODFKOJI");
-	}
+	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH);
 
 	// // RVA: 0x119DD38 Offset: 0x119DD38 VA: 0x119DD38 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()

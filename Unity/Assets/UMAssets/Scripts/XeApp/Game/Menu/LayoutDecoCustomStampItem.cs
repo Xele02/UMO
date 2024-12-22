@@ -182,7 +182,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x19DEDD8 Offset: 0x19DEDD8 VA: 0x19DEDD8
 		public void SelectEffectOn()
 		{
-			m_selectLayout.StartChildrenAnimGoStop("logo_on", "loen_on");
+			m_selectLayout.StartChildrenAnimLoop("logo_on", "loen_on");
 		}
 
 		//// RVA: 0x19DEE64 Offset: 0x19DEE64 VA: 0x19DEE64

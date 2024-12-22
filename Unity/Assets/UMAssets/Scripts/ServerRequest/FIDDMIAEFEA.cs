@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class ONKPGLLOJDK
 {
-	public int JPHDGGNAKMO; // 0x8
-	public int FGCAJEAIABA; // 0xC
-	public string IPFEKNMBEBI; // 0x10
-	public List<MFDJIFIIPJD> HBHMAKNGKFK; // 0x14
+	public int JPHDGGNAKMO_HighRank; // 0x8
+	public int FGCAJEAIABA_LowRank; // 0xC
+	public string IPFEKNMBEBI_InventoryMessage; // 0x10
+	public List<MFDJIFIIPJD> HBHMAKNGKFK_Items; // 0x14
 
 	// RVA: 0xCAF520 Offset: 0xCAF520 VA: 0xCAF520
 	public void DPKCOKLMFMK(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
 	{
-		TodoLogger.LogError(0, "ONKPGLLOJDK.DPKCOKLMFMK");
+		JPHDGGNAKMO_HighRank = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.JPHDGGNAKMO_high_rank];
+		FGCAJEAIABA_LowRank = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.FGCAJEAIABA_low_rank];
+		IPFEKNMBEBI_InventoryMessage = (string)IDLHJIOMJBK[AFEHLCGHAEE_Strings.IPFEKNMBEBI_inventory_message];
+        EDOHBJAPLPF_JsonData items = IDLHJIOMJBK[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items];
+        HBHMAKNGKFK_Items = new List<MFDJIFIIPJD>(items.HNBFOAJIIAL_Count);
+		for(int i = 0; i < items.HNBFOAJIIAL_Count; i++)
+		{
+			MFDJIFIIPJD m = new MFDJIFIIPJD();
+			m.KHEKNNFCAOI(items[i]);
+			HBHMAKNGKFK_Items.Add(m);
+		}
 	}
 }
 

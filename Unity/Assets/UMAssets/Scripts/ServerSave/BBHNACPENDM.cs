@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using XeSys;
 using XeApp;
+using XeApp.Game;
 
 [System.Obsolete("Use BBHNACPENDM_ServerSaveData", true)]
 public class BBHNACPENDM { }
@@ -393,7 +394,10 @@ public class BBHNACPENDM_ServerSaveData
 	// public void PNHOEMIMCGC() { }
 
 	// // RVA: 0xF1F330 Offset: 0xF1F330 VA: 0xF1F330
-	// public void CAKOEJHBIHF() { }
+	public void CAKOEJHBIHF()
+	{
+		KHEKNNFCAOI_Init(1);
+	}
 
 	// // RVA: 0xF1F350 Offset: 0xF1F350 VA: 0xF1F350
 	// public void GGBOGLKKKDM() { }
@@ -511,6 +515,14 @@ public class BBHNACPENDM_ServerSaveData
 			});
 			if(data != null && AAEDAEHIONI != null)
 			{
+				if(!AAEDAEHIONI.BBAJPINMOEP_Contains(OPFGFINHFCE_Name))
+				{
+					TodoLogger.LogError(TodoLogger.SaveLoad, "Failed to find "+OPFGFINHFCE_Name);
+					data.LHPDDGIJKNB_Reset();
+					data.LLBJFFFJEPJ_Deseralized = true;
+					data.KFKDMBPNLJK_BlockInvalid = false;
+					continue;
+				}
 				EDOHBJAPLPF_JsonData jsonData = AAEDAEHIONI[OPFGFINHFCE_Name];
 				long save_id = 0;
 				if(jsonData.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id/*save_id*/))
@@ -540,7 +552,28 @@ public class BBHNACPENDM_ServerSaveData
 	}
 
 	// // RVA: 0xF202A4 Offset: 0xF202A4 VA: 0xF202A4
-	// public BBHNACPENDM.EMHDCKMFCGE IMMANCAIDLP() { }
+	public EMHDCKMFCGE IMMANCAIDLP()
+	{
+		if(MGJKEJHEBPO_Blocks == null)
+			return null;
+		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
+		List<string> ls = new List<string>();
+		long saveId = MCKEOKFMLAH_SaveId + 1;
+		for(int i = 0; i < MGJKEJHEBPO_Blocks.Count; i++)
+		{
+			if(MGJKEJHEBPO_Blocks[i] != null)
+			{
+				MGJKEJHEBPO_Blocks[i].OKJPIBHMKMJ(json, saveId);
+				ls.Add(MGJKEJHEBPO_Blocks[i].JIKKNHIAEKG_BlockName);
+			}
+		}
+		EMHDCKMFCGE res = new EMHDCKMFCGE(json, ls, false, saveId);
+		res.KFGDPMNCCFO = ls;
+		res.MCKEOKFMLAH = saveId;
+		res.OBHAFLMHAKG = json;
+		res.BLOCFLFHCFJ = false;
+		return res;
+	}
 
 	// // RVA: 0xF20570 Offset: 0xF20570 VA: 0xF20570
 	public EMHDCKMFCGE LEMFJICBALP(BBHNACPENDM_ServerSaveData GJLFANGDGCL, bool NNPGPAPDDMC = true)
@@ -574,9 +607,6 @@ public class BBHNACPENDM_ServerSaveData
 			{
 				TodoLogger.LogError(TodoLogger.OptimizedSave, "OptimizedSave not neededd for now as we are only local");
 				continue;
-				KLFDBFMNLBL_ServerSaveBlock b = MGJKEJHEBPO_Blocks[l1[i]];
-				KLFDBFMNLBL_ServerSaveBlock b2 = GJLFANGDGCL.MGJKEJHEBPO_Blocks[l1[i]];
-				b.AGHKODFKOJI(data, b2, v);
 			}
 			/*if (data.MGPEIGDOMPH.HNBFOAJIIAL_Count < 101)
 			{
@@ -679,8 +709,8 @@ public class BBHNACPENDM_ServerSaveData
 		{
 			int uptime = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("lobby_uptime_duration", 300);
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
-			if (uptime < time - LLBECHBNIJG_EventRaidPlayer.NFIOKIBPJCJ)
-				LLBECHBNIJG_EventRaidPlayer.NFIOKIBPJCJ = time;
+			if (uptime < time - LLBECHBNIJG_EventRaidPlayer.NFIOKIBPJCJ_Uptime)
+				LLBECHBNIJG_EventRaidPlayer.NFIOKIBPJCJ_Uptime = time;
 		}
 		return true;
 	}
@@ -739,7 +769,7 @@ public class BBHNACPENDM_ServerSaveData
 	// // RVA: 0xF220F8 Offset: 0xF220F8 VA: 0xF220F8
 	public void JCFDDJIBKPA()
 	{
-		TodoLogger.LogError(0, "TODO");
+		TodoLogger.LogError(TodoLogger.CBT, "TODO");
 	}
 
 	// // RVA: 0xF23B4C Offset: 0xF23B4C VA: 0xF23B4C
@@ -766,7 +796,7 @@ public class BBHNACPENDM_ServerSaveData
 		{
 			if(DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i].BEEAIAAJOHD_CostumeId != 0)
 			{
-				if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.OEMKAFGPOCE_IsCostumeAvaiable(DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i].BEEAIAAJOHD_CostumeId, i))
+				if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.OEMKAFGPOCE_IsCostumeAvaiable(DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i].BEEAIAAJOHD_CostumeId, DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i].DIPKCALNIII_DivaId))
 				{
 					if(!BEKHNNCGIEL_Costume.FABAGMLEKIB_List[DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i].BEEAIAAJOHD_CostumeId - 1].CGKAEMGLHNK_Possessed())
 					{
@@ -954,17 +984,39 @@ public class BBHNACPENDM_ServerSaveData
 	// // RVA: 0xF257B4 Offset: 0xF257B4 VA: 0xF257B4
 	public void JAIGHAGMLCJ()
 	{
-		TodoLogger.LogError(0, "TODO");
+		if(JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd != 0)
+			return;
+		KHEKNNFCAOI_Init(BCJKHLAOLAP_GetLoadFlags(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database));
+		GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.INBCGKAFHDO(this);
+		NELPFCBCJAO();
 	}
 
 	// // RVA: 0xF23C3C Offset: 0xF23C3C VA: 0xF23C3C
 	// private void CEFEHMFEDBK(int IMJIADPJJMM, int AHHJLDLAPAN, int JPIDIENBGKH, int EKFONBFDAAP, int AFBMEMCHJCL, int JBLIIHOAIJB, int HAPFNHPFBGD, long BEBJKJKBOGH) { }
 
 	// // RVA: 0xF25BE0 Offset: 0xF25BE0 VA: 0xF25BE0
-	// public void NGJEPEPIHIL(int OLNBNMKAGJG) { }
+	public void NGJEPEPIHIL(int OLNBNMKAGJG)
+	{
+		long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().LHPDDGIJKNB_Reset();
+        DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo diva = DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[OLNBNMKAGJG - 1];
+		KCCLEHLLOFG_Common.NIKCFOALFJC_DivaFirst = OLNBNMKAGJG;
+		diva.CPGFPEDMDEH_Have = 1;
+		diva.BEEAIAAJOHD_CostumeId = 0;
+		MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_MainDivas[0].DIPKCALNIII_Id = OLNBNMKAGJG;
+		OFAJDLJBMEM_Emblem.MDKOHOCONKE[0].BEBJKJKBOGH_Date = t;
+		MHEAEGMIKIE_PublicStatus.ABLOIBMGLFD_EmId = 1;
+		MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FODKKJIDDKN_VfId = 1;
+    }
 
 	// // RVA: 0xF25954 Offset: 0xF25954 VA: 0xF25954
-	// public void NELPFCBCJAO() { }
+	public void NELPFCBCJAO()
+	{
+		OIGEIIGKMNH_Valkyrie.HLNPGNNPCGO_ValkyrieInfo valk = JJFFBDLIOCF_Valkyrie.CNGNBKNBKGI_ValkList[FBFCCLFFIAF - 1];
+		valk.BEBJKJKBOGH_Date = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		valk.CADENLBDAEB_New = true;
+		MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FODKKJIDDKN_VfId = FBFCCLFFIAF;
+	}
 
 	// // RVA: 0xF25F74 Offset: 0xF25F74 VA: 0xF25F74
 	static BBHNACPENDM_ServerSaveData()

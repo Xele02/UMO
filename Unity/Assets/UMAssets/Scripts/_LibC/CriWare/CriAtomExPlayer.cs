@@ -27,8 +27,8 @@ namespace ExternLib
             public int cueId = -1;
             public IntPtr acbPtr;
             public CriAtomExPlayer.Status status = CriAtomExPlayer.Status.Stop;
-            public Stream acbStream;
-            public HcaAudioStream audioStream;
+            public Stream[] acbStreams;
+            public HcaAudioStream[] audioStream;
             public uint currentPlayingId = 0;
 			public bool isPaused = false;
 
@@ -41,7 +41,7 @@ namespace ExternLib
         {
             if(playersList.ContainsKey(player))
             {
-                if(playersList[player].acbStream != null)
+                if(playersList[player].acbStreams != null)
                 {
                     TodoLogger.Log(TodoLogger.CriAtomExPlayer, "Stop sound "+playersList[player].cueName+" "+playersList[player].cueId);
 #if !UNITY_ANDROID
@@ -49,7 +49,7 @@ namespace ExternLib
                     playersList[player].config.source.unityAudioSource.clip = null;
 #endif
                     playersList[player].audioStream = null;
-                    playersList[player].acbStream = null;
+                    playersList[player].acbStreams = null;
                     playersList[player].status = CriAtomExPlayer.Status.Stop;
                     if(playersList[player].currentPlayingId != 0)
                         playbacksList.Remove(playersList[player].currentPlayingId);
@@ -68,7 +68,7 @@ namespace ExternLib
         {
             if(pool.ToInt32() != 0)
             {
-                TodoLogger.LogError(0, "CRIWARE0C3ECA83_criAtomUnityEntryPool_Clear");
+                TodoLogger.LogError(TodoLogger.CriAtomExLib, "CRIWARE0C3ECA83_criAtomUnityEntryPool_Clear");
             }
         }
         public static void criAtomExPlayer_SetVolume(IntPtr player, float volume)
@@ -82,7 +82,7 @@ namespace ExternLib
         }
         public static void CRIWARE693E0CA2_criAtomUnityEntryPool_Destroy(IntPtr pool)
         {
-            TodoLogger.LogError(0, "CRIWARE693E0CA2_criAtomUnityEntryPool_Destroy");
+            TodoLogger.LogError(TodoLogger.CriAtomExLib, "CRIWARE693E0CA2_criAtomUnityEntryPool_Destroy");
         }
         public static IntPtr criAtomExPlayer_Create(ref CriAtomExPlayer.Config config, IntPtr work, int work_size)
         {
@@ -133,7 +133,7 @@ namespace ExternLib
         }
         public static void criAtomExPlayer_Set3dListenerHn(IntPtr player, IntPtr listener)
         {
-            TodoLogger.LogError(0, "criAtomExPlayer_Set3dListenerHn");
+            TodoLogger.LogError(TodoLogger.CriAtomExLib, "criAtomExPlayer_Set3dListenerHn");
         }
         public static void criAtomExPlayer_SetPitch(IntPtr player, float pitch)
         {
@@ -173,18 +173,18 @@ namespace ExternLib
 			player.status = CriAtomExPlayer.Status.Prep;
 
 			bool isStreaming;
-			Stream acbStream;
-			player.audioStream = GetAudioStream(acbFiles[player.acbPtr].file, player.cueName, player.cueId, out isStreaming, out acbStream);
+			Stream[] acbStreams;
+			player.audioStream = GetAudioStreams(acbFiles[player.acbPtr].file, player.cueName, player.cueId, out isStreaming, out acbStreams);
 			if (player.audioStream == null)
 			{
 				player.status = CriAtomExPlayer.Status.Error;
 				return;
 			}
-			player.acbStream = acbStream;
+			player.acbStreams = acbStreams;
 
 #if !UNITY_ANDROID
 			AudioSource source = player.config.source.unityAudioSource;
-			source.loop = player.audioStream.HcaInfo.LoopFlag;
+			source.loop = player.audioStream[0].HcaInfo.LoopFlag;
 			string clipName = player.cueName == "" ? "cue_" + player.cueId : player.cueName;
 			AudioClip clip = null;
 			if (!acbFiles[player.acbPtr].cachedAudioClips.TryGetValue(clipName, out clip))
@@ -199,7 +199,7 @@ namespace ExternLib
 #endif
 		}
 
-		private static HcaAudioStream GetAudioStream(CriAcbFile acbFile, string cueName, int cueId, out bool isStreaming, out Stream acbStream)
+		private static HcaAudioStream[] GetAudioStreams(CriAcbFile acbFile, string cueName, int cueId, out bool isStreaming, out Stream[] acbStreams)
 		{
 			var decodeParams = DecodeParams.CreateDefault(0x44C5F5F5, 0x0581B687);
 			var audioParams = AudioParams.CreateDefault();
@@ -208,33 +208,44 @@ namespace ExternLib
 			audioParams.OutputWaveHeader = false;
 
 			if (cueName != "")
-				acbStream = acbFile.GetCueFileStream(cueName, out isStreaming);
+				acbStreams = acbFile.GetCueFileStreams(cueName, out isStreaming);
 			else
-				acbStream = acbFile.GetCueFileStream(cueId, out isStreaming);
-			if (acbStream == null)
+				acbStreams = acbFile.GetCueFileStreams(cueId, out isStreaming);
+			if (acbStreams == null)
 				return null;
 
-			HcaAudioStream audioStream = new HcaAudioStream(acbStream, decodeParams, audioParams);
-			return audioStream;
+            HcaAudioStream[] audioStreams = new HcaAudioStream[acbStreams.Length];
+            for(int i = 0; i < acbStreams.Length; i++)
+            {
+			    audioStreams[i] = new HcaAudioStream(acbStreams[i], decodeParams, audioParams);
+            }
+			return audioStreams;
 		}
 
 		private static AudioClip GetClip(CriAcbFile acbFile, string cueName, int cueId)
 		{
 			bool isStreaming;
-			Stream acbStream;
-			HcaAudioStream audioStream = GetAudioStream(acbFile, cueName, cueId, out isStreaming, out acbStream);
-			return GetClip(audioStream, cueName, cueId, isStreaming);
+			Stream[] acbStreams;
+			HcaAudioStream[] audioStreams = GetAudioStreams(acbFile, cueName, cueId, out isStreaming, out acbStreams);
+			return GetClip(audioStreams, cueName, cueId, isStreaming);
 		}
-		private static AudioClip GetClip(HcaAudioStream audioStream, string cueName, int cueId, bool isStreaming)
+		private static AudioClip GetClip(HcaAudioStream[] audioStreams, string cueName, int cueId, bool isStreaming)
 		{
 			int length = System.Int32.MaxValue;
-			long reallength = (audioStream.Length / (2 * audioStream.HcaInfo.ChannelCount));
+            long reallength = 0;
+            for(int i = 0; i < audioStreams.Length; i++)
+            {
+			    reallength += (audioStreams[i].Length / (2 * audioStreams[i].HcaInfo.ChannelCount));
+            }
 			if (reallength < System.Int32.MaxValue)
 			{
 				length = (int)reallength;
 			}
-			if (audioStream.HcaInfo.LoopFlag)
-				isStreaming = true; // Length will be unlimited if loop is checked, so force as if streamed
+            for(int i = 0; i < audioStreams.Length; i++)
+            {
+			    if (audioStreams[i].HcaInfo.LoopFlag)
+				    isStreaming = true; // Length will be unlimited if loop is checked, so force as if streamed
+            }
 									//bool debug = player.cueName == "se_valkyrie_001";
 			bool debug = false;
 			if (debug)
@@ -243,8 +254,11 @@ namespace ExternLib
 				TodoLogger.Log(TodoLogger.CriAtomExPlayer, "A " + cueName);
 				TodoLogger.Log(TodoLogger.CriAtomExPlayer, "A " + cueId);
 				TodoLogger.Log(TodoLogger.CriAtomExPlayer, "A " + length);
-				TodoLogger.Log(TodoLogger.CriAtomExPlayer, "A " + audioStream.HcaInfo.ChannelCount);
-				TodoLogger.Log(TodoLogger.CriAtomExPlayer, "A " + audioStream.HcaInfo.SamplingRate);
+                for(int i = 0; i < audioStreams.Length; i++)
+                {
+                    TodoLogger.Log(TodoLogger.CriAtomExPlayer, "A " + audioStreams[i].HcaInfo.ChannelCount);
+                    TodoLogger.Log(TodoLogger.CriAtomExPlayer, "A " + audioStreams[i].HcaInfo.SamplingRate);
+                }
 				TodoLogger.Log(TodoLogger.CriAtomExPlayer, "A " + isStreaming);
 			}
 
@@ -252,9 +266,11 @@ namespace ExternLib
 			AudioClip clip = null;
 			//if(isStreaming)
 			{
-				clip = AudioClip.Create(cueName, length, (int)audioStream.HcaInfo.ChannelCount, (int)audioStream.HcaInfo.SamplingRate, isStreaming, (float[] data) => {
+                int currentStream = 0;
+				clip = AudioClip.Create(cueName, length, (int)audioStreams[0].HcaInfo.ChannelCount, (int)audioStreams[0].HcaInfo.SamplingRate, isStreaming, (float[] data) => 
+                {
 					if (debug)
-						TodoLogger.Log(TodoLogger.CriAtomExPlayer, "Asked new data (" + data.Length + "), cur pos = " +/*curPos+*/" stream pos = " + audioStream.Position);
+						TodoLogger.Log(TodoLogger.CriAtomExPlayer, "Asked new data (" + data.Length + "), cur pos = " +/*curPos+*/" stream pos = " + audioStreams[currentStream].Position);
 					int numLeft = data.Length * 2;
 					if (readData == null || readData.Length < data.Length * 2)
 					{
@@ -264,7 +280,14 @@ namespace ExternLib
 					int offset = 0;
 					while (read > 0 && numLeft > 0)
 					{
-						read = audioStream.Read(readData, 0, numLeft);
+                        int toRead = numLeft;
+                        bool switchToNext = false;
+                        if(audioStreams.Length > 1 && audioStreams[currentStream].Position + numLeft >= audioStreams[currentStream].Length)
+                        {
+                            toRead = (int)(audioStreams[currentStream].Length - audioStreams[currentStream].Position);
+                            switchToNext = true;
+                        }
+						read = audioStreams[currentStream].Read(readData, 0, toRead);
 						if (debug)
 							TodoLogger.Log(TodoLogger.CriAtomExPlayer, "Read " + read);
 						for (int i = 0; i < read; i += 2)
@@ -273,11 +296,22 @@ namespace ExternLib
 							offset++;
 						}
 						numLeft -= read;
+                        if(switchToNext)
+                        {
+                            currentStream = currentStream + 1 % audioStreams.Length;
+                        }
 					}
 					//curPos += data.Length;
 				}, (int newPos) =>
 				{
-					audioStream.Seek(newPos * 2, SeekOrigin.Begin);
+                    currentStream = 0;
+                    for(int i = 0; i < audioStreams.Length; i++)
+                    {
+                        if(newPos * 2 < audioStreams[i].Length)
+                            break;
+                        currentStream++;
+                    }
+					audioStreams[currentStream].Seek(newPos * 2, SeekOrigin.Begin);
 				});
 			}
 			/*else
@@ -297,7 +331,7 @@ namespace ExternLib
 
 		public static void criAtomExPlayer_LimitLoopCount(IntPtr player, int count)
         {
-            TodoLogger.LogError(0, "criAtomExPlayer_LimitLoopCount");
+            TodoLogger.LogError(TodoLogger.CriAtomExLib, "criAtomExPlayer_LimitLoopCount");
         }
         public static IntPtr criAtomExPlayer_GetPlayerParameter(IntPtr player)
         {
@@ -343,11 +377,18 @@ namespace ExternLib
 		{
 			if (playersList.ContainsKey(player))
 			{
+                if(sw)
+                {
 #if !UNITY_ANDROID
-				playersList[player].config.source.unityAudioSource.Pause();
+				    playersList[player].config.source.unityAudioSource.Pause();
 #endif
-				playersList[player].isPaused = true;
-				playersList[player].status = CriAtomExPlayer.Status.Prep;
+				    playersList[player].isPaused = true;
+				    playersList[player].status = CriAtomExPlayer.Status.Prep;
+                }
+                else
+                {
+                    criAtomExPlayer_Resume(player, CriAtomEx.ResumeMode.AllPlayback);
+                }
 			}
 		}
         public static void criAtomExPlayer_Resume(IntPtr player, CriAtomEx.ResumeMode mode)
@@ -407,7 +448,7 @@ namespace ExternLib
 
         public static void criAtomExPlayer_SetPanType(IntPtr player, CriAtomEx.PanType panType)
 		{
-			TodoLogger.LogError(0, "criAtomExPlayer_SetPanType");
+			TodoLogger.LogError(TodoLogger.CriAtomExLib, "criAtomExPlayer_SetPanType");
 		}
     }
 #endif

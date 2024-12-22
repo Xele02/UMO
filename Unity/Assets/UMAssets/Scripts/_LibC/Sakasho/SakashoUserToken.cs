@@ -13,6 +13,7 @@ namespace ExternLib
 			public int userId;
 			public bool needUpdateAfter = false;
 			public EDOHBJAPLPF_JsonData serverData;
+			public UserThreads bbsThreadCache = new UserThreads();
 		}
 
 		public partial class AccountData
@@ -23,6 +24,13 @@ namespace ExternLib
 		}
 
 		static AccountData playerAccount;
+
+		public static int GetCurrentAccountId()
+		{
+			if(playerAccount != null)
+				return playerAccount.userId;
+			return 0;
+		}
 
 		public static void SerializeServerSave(BBHNACPENDM_ServerSaveData serverData, EDOHBJAPLPF_JsonData jsonRes)
 		{
@@ -45,7 +53,7 @@ namespace ExternLib
 
 			path += "/" + fileName;
 			File.WriteAllText(path, saveData);
-			TodoLogger.Log(TodoLogger.SakashoSystem, "saved server data " + path);
+			TodoLogger.Log(TodoLogger.SakashoServer, "saved server data " + path);
 		}
 
 		public static void SaveAccountServerData()
@@ -53,20 +61,35 @@ namespace ExternLib
 			if (playerAccount == null)
 				return;
 
+			playerAccount.playerData.bbsThreadCache.Save(playerAccount.playerData.serverData);
+
 			SaveAccountServerData(playerAccount.playerData.serverData, playerAccount.userId, "data.json");
+		}
+
+		public static EDOHBJAPLPF_JsonData GetAccountServerData(int playerId)
+		{
+			EDOHBJAPLPF_JsonData data = null;
+			string path = Application.persistentDataPath + "/Profiles/" + playerId.ToString() + "/data.json";
+
+			if (File.Exists(path))
+			{
+				TodoLogger.Log(TodoLogger.SakashoServer, "load server data " + path + "for" + playerId);
+				string saveData = File.ReadAllText(path);
+				data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(saveData);
+			}
+			return data;
 		}
 
 		public static void LoadAccountServerData(int playerId)
 		{
 			if (playerAccount == null)
 				return;
-			string path = Application.persistentDataPath + "/Profiles/" + playerId.ToString() + "/data.json";
-
-			if (File.Exists(path))
+			EDOHBJAPLPF_JsonData data = GetAccountServerData(playerId);
+			if(data != null)
 			{
-				TodoLogger.Log(TodoLogger.SakashoSystem, "load server data " + path + "for" + playerId);
-				string saveData = File.ReadAllText(path);
-				playerAccount.players[playerId].serverData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(saveData);
+				playerAccount.players[playerId].serverData = data;
+				playerAccount.players[playerId].bbsThreadCache = new UserThreads();
+				playerAccount.players[playerId].bbsThreadCache.Load(playerAccount.players[playerId].serverData);
 			}
 		}
 
@@ -99,7 +122,7 @@ namespace ExternLib
 
 			if(p.serverData == null)
 			{
-				TodoLogger.Log(TodoLogger.SakashoSystem, "Create new server data for " + accountId);
+				TodoLogger.Log(TodoLogger.SakashoServer, "Create new server data for " + accountId);
 				EDOHBJAPLPF_JsonData jsonRes = new EDOHBJAPLPF_JsonData();
 
 				BBHNACPENDM_ServerSaveData newData = new BBHNACPENDM_ServerSaveData();
@@ -107,6 +130,95 @@ namespace ExternLib
 
 				SerializeServerSave(newData, jsonRes);
 				p.serverData = jsonRes;
+
+				if(p.userId < 900000000)
+				{
+					// Add new player gifts in Present Box
+					AddInventoryItem(new UserInventoryItem() 
+					{
+
+						item_count = 1,
+						item_name = "scene",
+						item_type = 0,
+						item_value = 325,
+						message = JpStringLiterals.UMO_start_present_1,
+						received_at = 0,
+						closed_at = 32509868340,
+						type = 1,
+					});
+					AddInventoryItem(new UserInventoryItem() 
+					{
+
+						item_count = 1,
+						item_name = "scene",
+						item_type = 0,
+						item_value = 157,
+						message = JpStringLiterals.UMO_start_present_1,
+						received_at = 0,
+						closed_at = 32509868340,
+						type = 1,
+					});
+					AddInventoryItem(new UserInventoryItem() 
+					{
+
+						item_count = 1,
+						item_name = "scene",
+						item_type = 0,
+						item_value = 853,
+						message = JpStringLiterals.UMO_start_present_1,
+						received_at = 0,
+						closed_at = 32509868340,
+						type = 1,
+					});
+					AddInventoryItem(new UserInventoryItem() 
+					{
+
+						item_count = 1,
+						item_name = "scene",
+						item_type = 0,
+						item_value = 4,
+						message = JpStringLiterals.UMO_start_present_2,
+						received_at = 0,
+						closed_at = 32509868340,
+						type = 0,
+					});
+					AddInventoryItem(new UserInventoryItem() 
+					{
+
+						item_count = 1,
+						item_name = "scene",
+						item_type = 0,
+						item_value = 2,
+						message = JpStringLiterals.UMO_start_present_2,
+						received_at = 0,
+						closed_at = 32509868340,
+						type = 0,
+					});
+					AddInventoryItem(new UserInventoryItem() 
+					{
+
+						item_count = 100,
+						item_name = JpStringLiterals.StringLiteral_10137,
+						item_type = 1,
+						item_value = 1001,
+						message = JpStringLiterals.UMO_start_present_2,
+						received_at = 0,
+						closed_at = 32509868340,
+						type = 0,
+					});
+					AddInventoryItem(new UserInventoryItem() 
+					{
+
+						item_count = 1,
+						item_name = "scene",
+						item_type = 0,
+						item_value = 5,
+						message = JpStringLiterals.UMO_start_present_2,
+						received_at = 0,
+						closed_at = 32509868340,
+						type = 0,
+					});
+				}
 			}
 
 			// Check cheat accounts is full unlocked
@@ -150,14 +262,14 @@ namespace ExternLib
 						return res;
 					});
 
-					publicBlock.AFBMEMCHJCL_MScene.DOMFHDPMCCO(scenes[0].BCCHOBPJJKE_SceneId, scenes[0].KBOLNIBLIND, scenes[0].ODKMKEHJOCK, scenes[0].MJBODMOLOBC_Luck, scenes[0].JPIPENJGGDD_NumBoard, scenes[0].MKHFCGPJPFI_LimitOverCount);
+					publicBlock.AFBMEMCHJCL_MScene.DOMFHDPMCCO(scenes[0].BCCHOBPJJKE_SceneId, scenes[0].KBOLNIBLIND_Mb, scenes[0].ODKMKEHJOCK_Sb, scenes[0].MJBODMOLOBC_Luck, scenes[0].JPIPENJGGDD_NumBoard, scenes[0].MKHFCGPJPFI_LimitOverCount);
 					for (int i = 0; i < 4; i++)
 					{
 						for (int j = 0; j < scenes.Count; j++)
 						{
 							if (scenes[j].JGJFIJOCPAG_SceneAttr == i || i == 0)
 							{
-								publicBlock.MGMFOJPNDGA_AssistData.JOHLGBDOLNO_DataList[i].DOMFHDPMCCO(scenes[j].BCCHOBPJJKE_SceneId, scenes[j].KBOLNIBLIND, scenes[j].ODKMKEHJOCK, scenes[j].MJBODMOLOBC_Luck, scenes[j].JPIPENJGGDD_NumBoard, scenes[j].MKHFCGPJPFI_LimitOverCount);
+								publicBlock.MGMFOJPNDGA_AssistData.JOHLGBDOLNO_DataList[i].DOMFHDPMCCO(scenes[j].BCCHOBPJJKE_SceneId, scenes[j].KBOLNIBLIND_Mb, scenes[j].ODKMKEHJOCK_Sb, scenes[j].MJBODMOLOBC_Luck, scenes[j].JPIPENJGGDD_NumBoard, scenes[j].MKHFCGPJPFI_LimitOverCount);
 								break;
 							}
 						}
@@ -168,7 +280,7 @@ namespace ExternLib
 			}
 		}
 
-		public static int CreateAccount(bool cheatAccount)
+		public static int CreateAccountId(bool cheatAccount)
 		{
 			// cheat account : 999999999
 			// cheat other account : 999999998 (or 9xxxxxxxx)
@@ -187,7 +299,13 @@ namespace ExternLib
 				} while (Directory.Exists(Application.persistentDataPath + "/Profiles/" + id.ToString()));
 			}
 
+			return id;
+		}
+		public static int CreateAccount(bool cheatAccount)
+		{
+			int id = CreateAccountId(cheatAccount);
 			InitPlayerAccount(id);
+
 			return id;
 		}
 
@@ -195,14 +313,13 @@ namespace ExternLib
 		{
 			EDOHBJAPLPF_JsonData inData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
 			int accountType = (int)inData["accountType"];
-
 			CreateAccount(accountType == 1);
 
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res["is_created"] = 1;
 			res["player_account_status"] = 0;
 			res["player_id"] = playerAccount.userId;
-			TodoLogger.Log(TodoLogger.SakashoSystem, "Created player " + playerAccount.userId);
+			TodoLogger.Log(TodoLogger.SakashoServer, "Created player " + playerAccount.userId);
 
 			SendMessage(callbackId, res);
 
@@ -227,15 +344,12 @@ namespace ExternLib
 			//ExternLib.Java_Sakasho.jp.dena.sakasho.api.SakashoAPICallContext context = ExternLib.Java_Sakasho.jp.dena.sakasho.api.SakashoUserToken.getPlayerStatus(null, null);
 
 			int playerId = UMO_PlayerPrefs.GetInt("cpid", 0);
-			if(playerId != 999999999)
-				playerId = 0; // for now user is locked to the cheat account
 			if(playerId == 0)
 			{
 				playerAccount = null;
 			}
 			else if(playerAccount != null && playerAccount.userId != playerId)
 			{
-				playerId = 0;
 				playerAccount = null;
 			}
 			if(playerId != 0 && playerAccount == null)
@@ -249,14 +363,14 @@ namespace ExternLib
 				res["is_created"] = 0;
 				res["player_account_status"] = 0;
 				res["player_id"] = 0;
-				TodoLogger.Log(TodoLogger.SakashoSystem, "No user");
+				TodoLogger.Log(TodoLogger.SakashoServer, "No user");
 			}
 			else
 			{
 				res["is_created"] = 1;
 				res["player_account_status"] = 0;
 				res["player_id"] = playerAccount.userId;
-				TodoLogger.Log(TodoLogger.SakashoSystem, "Using user " + playerAccount.userId);
+				TodoLogger.Log(TodoLogger.SakashoServer, "Using user " + playerAccount.userId);
 			}
 			// Hack directly send response
 
@@ -265,5 +379,12 @@ namespace ExternLib
 
 			return 0;
         }
+
+		public static int SakashoUserTokenClearDeviceLoginDataWithLog(int callbackId, string json)
+        {
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			SendMessage(callbackId, res);
+			return 0;
+		}
     }
 }

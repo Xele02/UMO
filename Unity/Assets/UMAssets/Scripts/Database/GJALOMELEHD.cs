@@ -172,7 +172,7 @@ public class GJALOMELEHD_Intimacy : DIHHCBACKGG_DbSection
 			data.EIIDPKCBKEK_SkillLevel = (int)array[i].EIIDPKCBKEK;
 			for(int j = 0; j < data.DGBAEDJPAMA.Length; j++)
 			{
-				data.KNAMKOLCIAC(i, (int)array[i].DKHIHHMOIKM[j]);
+				data.KNAMKOLCIAC(j, (int)array[i].DKHIHHMOIKM[j]);
 			}
 			OOCKOCAACMD_DataByLevel.Add(data);
 		}

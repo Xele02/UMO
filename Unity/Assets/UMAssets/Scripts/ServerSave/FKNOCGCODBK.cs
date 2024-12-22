@@ -163,7 +163,7 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 								}
 								else
 								{
-									if(!db.MFPNGNMFEAL_Costume.OEMKAFGPOCE_IsCostumeAvaiable(a.DIPKCALNIII_Id, a.BEEAIAAJOHD_CId))
+									if(!db.MFPNGNMFEAL_Costume.OEMKAFGPOCE_IsCostumeAvaiable(a.BEEAIAAJOHD_CId, a.DIPKCALNIII_Id))
 									{
 										a.BEEAIAAJOHD_CId = 0;
 										a.AFNIOJHODAG_ColId = 0;
@@ -254,8 +254,5 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1191B20 Offset: 0x1191B20 VA: 0x1191B20 Slot: 10
-	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
-	{
-		TodoLogger.LogError(0, "AGHKODFKOJI");
-	}
+	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH);
 }

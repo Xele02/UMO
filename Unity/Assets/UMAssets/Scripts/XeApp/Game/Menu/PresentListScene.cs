@@ -198,7 +198,7 @@ namespace XeApp.Game.Menu
 			if(value == 0 && !MenuScene.CheckDatelineAndAssetUpdate())
 			{
 				m_selectListIndex = content.Index;
-				SetPrePopWindow(0);
+				SetPrePopWindow(PresentPopWindowType.RECEIPT_CONF);
 			}
 		}
 
@@ -424,33 +424,35 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1168994 Offset: 0x1168994 VA: 0x1168994
 		private void OnClickPopupButton(PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label)
 		{
+			PresentPopWindowType wt = windowType;
 			windowType = PresentPopWindowType.NONE;
-			if(windowType < PresentPopWindowType.LUMP_FAILURE)
+			if(wt < PresentPopWindowType.LUMP_FAILURE)
 			{
 				AIFIANALLPB inv = CIOECGOMILE.HHCJCDFCLOB.KPFKKDDOHCN;
-				if(((1 << (int)windowType) & 0xc4U) != 0) // 1100 0100  2(RECEIPT) 6(LUMP_POSS_LIMIT) 7(LUMP_RECEIPT)
+				if(((1 << (int)wt) & 0xc4U) != 0) // 1100 0100  2(RECEIPT) 6(LUMP_POSS_LIMIT) 7(LUMP_RECEIPT)
 				{
 					GameManager.Instance.ResetViewPlayerData();
 					this.StartCoroutineWatched(PopupRecordPlate.Show(RecordPlateUtility.eSceneType.PresentBox, () =>
 					{
 						//0x1169684
-					}, windowType != PresentPopWindowType.RECEIPT));
+						GetPresentList();
+					}, wt != PresentPopWindowType.RECEIPT));
 					return;
 				}
-				if(((1 << (int)windowType) & 0x21U) != 0) // 0010 0001 0(RECEIPT_CONF) 5(LUMP_RECEIPT_CONF)
+				if(((1 << (int)wt) & 0x21U) != 0) // 0010 0001 0(RECEIPT_CONF) 5(LUMP_RECEIPT_CONF)
 				{
 					if (label != PopupButton.ButtonLabel.Receive && label != PopupButton.ButtonLabel.Ok)
 						return;
 					if (MenuScene.CheckDatelineAndAssetUpdate())
 						return;
-					if(windowType == PresentPopWindowType.LUMP_RECEIPT_CONF)
+					if(wt == PresentPopWindowType.LUMP_RECEIPT_CONF)
 					{
 						Step = PresentUpdateStep.Step_Lump_Check;
 						MenuScene.Instance.RaycastDisable();
-						CIOECGOMILE.HHCJCDFCLOB.PKKCKFCLACK(inv.GIPGAICOGGL, UpdateLumpCheck, UpdateItemReceptLimit2, UpdateError);
+						CIOECGOMILE.HHCJCDFCLOB.PKKCKFCLACK(inv.GIPGAICOGGL, UpdateLumpCheck, UpdateItemReceptLimit2, UpdateError, false);
 						return;
 					}
-					if(windowType == PresentPopWindowType.RECEIPT_CONF)
+					if(wt == PresentPopWindowType.RECEIPT_CONF)
 					{
 						Step = PresentUpdateStep.Step_Item_check;
 						MenuScene.Instance.RaycastDisable();
@@ -531,7 +533,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_LoadLayout()
 		{
 			StringBuilder bundleName; // 0x18
-			Font systemFont; // 0x1C
+			XeSys.FontInfo systemFont; // 0x1C
 			int bundleLoadCount; // 0x20
 			AssetBundleLoadLayoutOperationBase operation; // 0x24
 			int poolSize; // 0x28

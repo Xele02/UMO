@@ -21,8 +21,8 @@ namespace XeApp.Game.RhythmGame
 		private static readonly int square_vertex_count = 4; // 0x14
 		private List<Vector2> uvListU = new List<Vector2>() { new Vector2(0, 0.5f), new Vector2(0, 0.5f), new Vector2(0, 0.5f), 
 			new Vector2(0, 0.5f), new Vector2(0, 0.5f), new Vector2(0, 0.5f) }; // 0x14
-		private List<Vector2> uvListV = new List<Vector2>() { new Vector2(0, 0.005859375f), new Vector2(0, 0.005859375f), new Vector2(0, 0.005859375f), 
-			new Vector2(0, 0.005859375f), new Vector2(0, 0.005859375f), new Vector2(0, 0.005859375f)}; // 0x18
+		private List<Vector2> uvListV = new List<Vector2>() { new Vector2(0.5f, 0.005859375f), new Vector2(0.5f, 0.005859375f), new Vector2(0.5f, 0.005859375f), 
+			new Vector2(0.5f, 0.005859375f), new Vector2(0.5f, 0.005859375f), new Vector2(0.5f, 0.005859375f)}; // 0x18
 		[SerializeField]
 		protected int divid = 12; // 0x1C
 		protected float uv_u_start; // 0x20

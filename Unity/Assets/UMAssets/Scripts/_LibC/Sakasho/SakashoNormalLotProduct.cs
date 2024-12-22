@@ -14,7 +14,6 @@ namespace ExternLib
 			{
 				return _.PPEGAKEIEGM_En == 2/* && _.EKLIPGELKCL_Rarity == 5*/;
 			});
-			int id = scenesList[UnityEngine.Random.Range(0, scenesList.Count - 1)].BCCHOBPJJKE_Id;
 
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res[AFEHLCGHAEE_Strings.DJJGPACGEMM_product_id] = (int)jsonData["productId"];
@@ -22,9 +21,15 @@ namespace ExternLib
 			res[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items] = new EDOHBJAPLPF_JsonData();
 			res[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
 			res[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items].Add(new EDOHBJAPLPF_JsonData());
-			res[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items][0]["item_count"] = 1;
-			res[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items][0]["item_name"] = "scene";
-			res[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items][0]["item_value"] = id;
+			for(int i = 0; i < (int)jsonData["quantity"]; i++)
+			{
+				EDOHBJAPLPF_JsonData d = new EDOHBJAPLPF_JsonData();
+				d["item_count"] = 1;
+				d["item_name"] = "scene";
+				int id = scenesList[UnityEngine.Random.Range(0, scenesList.Count - 1)].BCCHOBPJJKE_Id;
+				d["item_value"] = id;
+				res[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items].Add(d);
+			}
 			
 			SendMessage(callbackId, res);
 			// end hack

@@ -339,20 +339,20 @@ public class LNELCMNJPIC_EventGoDiva : DIHHCBACKGG_DbSection
 	// RVA: 0x10BD848 Offset: 0x10BD848 VA: 0x10BD848 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		TodoLogger.LogError(TodoLogger.Database, "LNELCMNJPIC_EventGoDiva.KMBPACJNEOF");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "LNELCMNJPIC_EventGoDiva.KMBPACJNEOF");
 	}
 
 	// RVA: 0x10BDD3C Offset: 0x10BDD3C VA: 0x10BDD3C Slot: 9
 	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
 	{
-		TodoLogger.LogError(TodoLogger.Database, "LNELCMNJPIC_EventGoDiva.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "LNELCMNJPIC_EventGoDiva.IIEMACPEEBJ");
 		return true;
 	}
 
 	// RVA: 0x10C0094 Offset: 0x10C0094 VA: 0x10C0094 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(TodoLogger.Database, "LNELCMNJPIC_EventGoDiva.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbJson, "LNELCMNJPIC_EventGoDiva.IIEMACPEEBJ");
 		return true;
 	}
 

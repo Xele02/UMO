@@ -18,6 +18,8 @@ namespace XeApp.Game.Common
 			public string storyTitle; // 0x28
 			public string bannerId; // 0x2C
 			public string dAnmStoreURL; // 0x30
+			public string musicName_2;
+			public string musicName_3;
 
 			public bool isEnableBuyURL { get { return !string.IsNullOrEmpty(buyURL); } } //0xAECF24
 		}
@@ -66,25 +68,38 @@ namespace XeApp.Game.Common
 				TextInfo textInfo = new TextInfo();
 				EDOHBJAPLPF_JsonData info = infos[i];
 				textInfo.id = (int)info[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id/*id*/];
-				textInfo.musicName = (string)text[(int)info[AFEHLCGHAEE_Strings.OPFGFINHFCE_name/*name*/]];
+				string str1 = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.MusicName, i, (string)text[(int)info[AFEHLCGHAEE_Strings.OPFGFINHFCE_name/*name*/]]);
+				string str2 = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.MusicName_jp, i, "");
+				string str3 = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.MusicName_rm, i, "");
+				textInfo.musicName = RuntimeSettings.CurrentSettings.GetMusicName(0, str1, str2, str3);
+				textInfo.musicName_2 = RuntimeSettings.CurrentSettings.GetMusicName(1, str1, str2, str3);
+				textInfo.musicName_3 = RuntimeSettings.CurrentSettings.GetMusicName(2, str1, str2, str3);
+				if(textInfo.musicName_2.StartsWith("!not exist")) textInfo.musicName_2 = "";
+				if(textInfo.musicName_2 == textInfo.musicName) textInfo.musicName_2 = "";
+				if(textInfo.musicName_3.StartsWith("!not exist")) textInfo.musicName_3 = "";
+				if(textInfo.musicName_3 == textInfo.musicName) textInfo.musicName_3 = "";
+				if(textInfo.musicName_3 == textInfo.musicName_2) textInfo.musicName_3 = "";
 				if(info.BBAJPINMOEP_Contains("o_n"))
 				{
-					textInfo.officialName = (string)text[(int)info["o_n"]];
+					string offStr1 = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.OfficialName, i, (string)text[(int)info["o_n"]]);
+					string offStr2 = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.OfficialName_jp, i, "");
+					string offStr3 = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.OfficialName_rm, i, "");
+					textInfo.officialName = RuntimeSettings.CurrentSettings.GetMusicName(0, offStr1, offStr2, offStr3);
 				}
 				else
 				{
 					textInfo.officialName = textInfo.musicName;
 				}
-				textInfo.vocalName = (string)text[(int)info[vn]];
+				textInfo.vocalName = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.VocalName, i, (string)text[(int)info[vn]]);
 				if(info.BBAJPINMOEP_Contains(vnlf))
 				{
-					textInfo.vocalNameLF = (string)text[(int)info[vnlf]];
+					textInfo.vocalNameLF = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.VocalNameLF, i, (string)text[(int)info[vnlf]]);
 				}
 				else
 				{
 					textInfo.vocalNameLF = textInfo.vocalName;
 				}
-				textInfo.description = (string)text[(int)info[AFEHLCGHAEE_Strings.GJDKHDLKONI_dsc/*dsc*/]];
+				textInfo.description = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.Description, i, (string)text[(int)info[AFEHLCGHAEE_Strings.GJDKHDLKONI_dsc/*dsc*/]]);
 				textInfo.buyURL = (string)text[(int)info[buy2]];
 				string str = (string)text[(int)info[ds_a]].ToString();
 				textInfo.dAnmStoreURL = "";
@@ -92,8 +107,8 @@ namespace XeApp.Game.Common
 				{
 					textInfo.dAnmStoreURL = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.JLJEEMEOPLE[str];
 				}
-				textInfo.storyDesc = (string)text[(int)info[story]];
-				textInfo.storyTitle = (string)text[(int)info[s_title]];
+				textInfo.storyDesc = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.StoryDesc, i, (string)text[(int)info[story]]);
+				textInfo.storyTitle = DatabaseTextConverter.TranslateMusicText(DatabaseTextConverter.MusicTextType.StoryTitle, i, (string)text[(int)info[s_title]]);
 				textInfo.bannerId = (string)text[(int)info[b_id]].ToString();
 				table.Add(textInfo);
 			}

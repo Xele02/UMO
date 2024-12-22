@@ -84,7 +84,7 @@ public class ALJHJDHNFFB_HomeBg : DIHHCBACKGG_DbSection
 			data.IJEKNCDIIAE_MVer = array[i].IJEKNCDIIAE;
 			data.LEJOJFHKHIJ_Have = array[i].LEJOJFHKHIJ;
 			data.AIHCEGFANAM_Sa = (SeriesAttr.Type)array[i].JPFMJHLCMJL;
-			data.OPFGFINHFCE_Name = array[i].OPFGFINHFCE;
+			data.OPFGFINHFCE_Name = DatabaseTextConverter.TranslateHomeBgName(i, array[i].OPFGFINHFCE);
 
 			if(RuntimeSettings.CurrentSettings.RemoveHomeBgDateLimit)
 			{
@@ -100,7 +100,7 @@ public class ALJHJDHNFFB_HomeBg : DIHHCBACKGG_DbSection
 	// RVA: 0xCDE9DC Offset: 0xCDE9DC VA: 0xCDE9DC Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(TodoLogger.Database, "ALJHJDHNFFB_HomeBg.KMBPACJNEOF");
+		TodoLogger.LogError(TodoLogger.DbJson, "ALJHJDHNFFB_HomeBg.KMBPACJNEOF");
 		return true;
 	}
 

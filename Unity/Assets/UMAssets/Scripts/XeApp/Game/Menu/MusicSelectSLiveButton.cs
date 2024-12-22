@@ -35,13 +35,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x167DE08 Offset: 0x167DE08 VA: 0x167DE08
 		public void TryLeave()
 		{
-			TodoLogger.LogError(0, "MusicSelectSLiveButton TryLeave");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectSLiveButton TryLeave");
 		}
 
 		// // RVA: 0x167DD74 Offset: 0x167DD74 VA: 0x167DD74
 		public void Enter()
 		{
-			TodoLogger.LogError(0, "MusicSelectSLiveButton Enter");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectSLiveButton Enter");
 		}
 
 		// // RVA: 0x167DE18 Offset: 0x167DE18 VA: 0x167DE18
@@ -53,26 +53,26 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x167DF30 Offset: 0x167DF30 VA: 0x167DF30
 		public void Hide()
 		{
-			TodoLogger.LogError(0, "MusicSelectSLiveButton Hide");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectSLiveButton Hide");
 		}
 
 		// // RVA: 0x167DFB4 Offset: 0x167DFB4 VA: 0x167DFB4
 		public bool IsPlaying()
 		{
-			TodoLogger.LogError(0, "MusicSelectSLiveButton IsPlaying");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectSLiveButton IsPlaying");
 			return false;
 		}
 
 		// // RVA: 0x167DFE0 Offset: 0x167DFE0 VA: 0x167DFE0
 		public void SetOptionStyle(MusicSelectSLiveButton.Style style)
 		{
-			TodoLogger.LogError(0, "MusicSelectSLiveButton SetOptionStyle");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectSLiveButton SetOptionStyle");
 		}
 
 		// // RVA: 0x167E0EC Offset: 0x167E0EC VA: 0x167E0EC
 		public void SetUnlockRank(int nowRank, int unlockRank)
 		{
-			TodoLogger.LogError(0, "MusicSelectSLiveButton SetUnlockRank");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectSLiveButton SetUnlockRank");
 		}
 
 		// // RVA: 0x167E168 Offset: 0x167E168 VA: 0x167E168
@@ -85,7 +85,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x167E2A8 Offset: 0x167E2A8 VA: 0x167E2A8 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			TodoLogger.LogError(0, "InitializeFromLayout MusicSelectSLiveButton");
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "InitializeFromLayout MusicSelectSLiveButton");
 			return true;
 		}
 	}

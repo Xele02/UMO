@@ -659,7 +659,7 @@ namespace XeApp.Game.Common
 			OKGLGHCBCJP_Database o = im.NKEBMCIMJND_Database;
 			LCLCCHLDNHJ_Costume l = o.MFPNGNMFEAL_Costume;
 			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo a = l.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(divaId, modelId);
-			int e = a.EGLDFPILJLG;
+			int e = a.EGLDFPILJLG_HasSpecialEffects;
 			if(e == 0)
 			{
 				yield break;
@@ -1233,7 +1233,8 @@ namespace XeApp.Game.Common
 			typeBundleName = new StringBuilder();
 			assetName = new StringBuilder();
 			personalityId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(divaId).FPMGHDKACOF_PersonalityId;
-			divaBundleName.SetFormat("dv/ty/{0:D3}.xab", divaParam.ChangePersonalityId(modelId, personalityId));
+			personalityId = divaParam.ChangePersonalityId(modelId, personalityId);
+			divaBundleName.SetFormat("dv/ty/{0:D3}.xab", personalityId);
 			operationDiva = AssetBundleManager.LoadAllAssetAsync(divaBundleName.ToString());
 			yield return Co.R(operationDiva);
 
@@ -1622,11 +1623,78 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BF9FAC Offset: 0x1BF9FAC VA: 0x1BF9FAC
-		// public void LoadSubResource(int modelId, int colorId, int divaId = 0) { }
+		public void LoadSubResource(int modelId, int colorId, int divaId = 0)
+		{
+			if(!isLoadedSubCostumeResource)
+			{
+				if(divaId == 0)
+					divaId = m_loadedDivaId;
+				this.StartCoroutineWatched(Co_LoadSubResource(divaId, modelId, colorId));
+			}
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x736E68 Offset: 0x736E68 VA: 0x736E68
 		// // RVA: 0x1BFA004 Offset: 0x1BFA004 VA: 0x1BFA004
-		// private IEnumerator Co_LoadSubResource(int divaId, int modelId, int colorId) { }
+		private IEnumerator Co_LoadSubResource(int divaId, int modelId, int colorId)
+		{
+			StringBuilder bundleName; // 0x28
+			StringBuilder assetName; // 0x2C
+			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cosMaster; // 0x30
+			AssetBundleLoadAllAssetOperationBase operation; // 0x34
+
+			//0x1C073AC
+			bundleName = new StringBuilder();
+			assetName = new StringBuilder();
+			cosMaster = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(divaId, modelId);
+			bundleName.SetFormat("dv/cs/{0:D3}_{1:D3}.xab", divaId, modelId);
+			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+			yield return operation;
+			assetName.SetFormat("diva_{0:D3}_cos_{1:D3}_prefab", divaId, modelId);
+			subDivaPrefab = operation.GetAsset<GameObject>(assetName.ToString());
+			List<Material> matList = null;
+			if(cosMaster.GLEEPAFMPLO_HasTextureBundle)
+			{
+				matList = new List<Material>();
+				operation.ForEach((UnityEngine.Object obj) =>
+				{
+					//0x1BFAED0
+					if(obj != null && obj is Material)
+					{
+						matList.Add(obj as Material);
+					}
+				});
+			}
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+			if(cosMaster.GLEEPAFMPLO_HasTextureBundle)
+			{
+				bundleName.SetFormat("dv/cs/{0:D3}_{1:D3}_{2:D2}.xab", divaId, modelId, colorId);
+				operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+				yield return operation;
+				List<Texture> texList = new List<Texture>();
+				operation.ForEach((UnityEngine.Object obj) =>
+				{
+					//0x1BFB048
+					if(obj != null && obj is Texture)
+					{
+						texList.Add(obj as Texture);
+					}
+				});
+				SetCostumeColorTexture(matList, texList);
+				AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+			}
+			yield return Co.R(Co_LoadComponent(divaId, modelId, (List<GameObject> a, GameObject b) =>
+			{
+				//0x1BFAFD0
+				subPrefabEffect = a;
+				subPrefabWind = b;
+			}));
+			yield return Co.R(Co_LoadBoneSpringSuppress(divaId, modelId, (Dictionary<BoneSpringSuppressor.Preset, BoneSpringSuppressParam> a) =>
+			{
+				//0x1BFB018
+				subBoneSpringResource.suppress.presets = a;
+			}));
+			isLoadedSubCostumeResource = true;
+		}
 
 		// // RVA: 0x1BFA104 Offset: 0x1BFA104 VA: 0x1BFA104
 		// public void LoadRivalResultResource(int divaId, int modelId) { }

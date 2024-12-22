@@ -37,9 +37,9 @@ namespace ExternLib
 				// set max level
 				commonBlock.KIECDDFNCAN_Level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP.PIAMMJNADJH_PlayerMaxLevel;
 				// set max uta grade
-				commonBlock.EAHPKPADCPL_TotalUtaRate = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.Last().ADKDHKMPMHP_Rate;
+				//commonBlock.EAHPKPADCPL_TotalUtaRate = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DCNNPEDOGOG_HighScoreRanking.PGHCCAMKCIO.Last().ADKDHKMPMHP_Rate;
 				// set uta reward all get
-				commonBlock.EAFLCGCIOND_RetRewRecGra = (int)HighScoreRating.GetUtaGrade(commonBlock.EAHPKPADCPL_TotalUtaRate);
+				//commonBlock.EAFLCGCIOND_RetRewRecGra = (int)HighScoreRating.GetUtaGrade(commonBlock.EAHPKPADCPL_TotalUtaRate);
 				// set master version for shown new song popup
 				commonBlock.MMPPEHPKGLI_AddRegularMusicMVer = DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion;
 				// give a lot of stamina
@@ -67,6 +67,11 @@ namespace ExternLib
 				commonBlock.ENIPGFLGJHH_LastStory = 999;
 
 				commonBlock.BBFIGEOBOMB_SpItem[7].BFINGCJHOHI_Cnt = 9999999; // deco coin
+
+				for(int i = 0; i < (int)GPFlagConstant.ID._max; i++)
+				{
+					commonBlock.BCLKCMDGDLD((GPFlagConstant.ID)i, true);
+				}
 
 			}
 			{
@@ -108,7 +113,7 @@ namespace ExternLib
 				int numSns = 0;
 				for (int i = 0; i < 2000; i++)
 				{
-					BOKMNHAFJHF_Sns.KEIGMAOCJHK dbSns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA[i];
+					BOKMNHAFJHF_Sns.KEIGMAOCJHK_Talk dbSns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA_Talks[i];
 					if (dbSns.PPEGAKEIEGM_Enabled == 2)
 					{
 						DDEMMEPBOIA_Sns.EFIFBJGKPJF saveSns = snsBlock.HAJEJPFGILG[i];
@@ -137,7 +142,7 @@ namespace ExternLib
 							{
 								saveScene.BEBJKJKBOGH_Date = time;
 							}
-							saveScene.JPIPENJGGDD_Mlt = 50;
+							saveScene.JPIPENJGGDD_Mlt = Mathf.Max(saveScene.JPIPENJGGDD_Mlt, 50);
 							saveScene.IELENGDJPHF_Ulk = 1;
 							saveScene.ANAJIAENLNB_Level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(dbScene.EKLIPGELKCL_Rarity, true, dbScene.MCCIFLKCNKO_Feed) + 1;
 							for (int j = 0; j < 15; j++)
@@ -299,15 +304,15 @@ namespace ExternLib
 			}
 			// Unlock event story
 			{
-				for(int j = 0; j < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBEMLGADAGK_EventStory.JPIGOBGOMON.Count; j++)
+				for(int j = 0; j < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBEMLGADAGK_EventStory.JPIGOBGOMON_StoryPartsList.Count; j++)
 				{
-					FBIOJHECAHB_EventStory.ENDMMNNOAIL storyEvent2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBEMLGADAGK_EventStory.JPIGOBGOMON[j];
-					if(storyEvent2.JDJNNJEJDAJ == FBIOJHECAHB_EventStory.NMIGMCJHAIE.MOPAEGFEGCB_5)
+					FBIOJHECAHB_EventStory.ENDMMNNOAIL_StoryPartInfo storyEvent2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBEMLGADAGK_EventStory.JPIGOBGOMON_StoryPartsList[j];
+					if(storyEvent2.JDJNNJEJDAJ_Type == FBIOJHECAHB_EventStory.NMIGMCJHAIE.MOPAEGFEGCB_5_EpisodeStory)
 					{
-						if(storyEvent2.LOHMKCPKBON > 0)
+						if(storyEvent2.LOHMKCPKBON_AdvId > 0)
 						{
-							if(!newData.HBPPNFHOMNB_Adventure.FABEJIHKFGN(storyEvent2.LOHMKCPKBON))
-								newData.HBPPNFHOMNB_Adventure.GFANLIOMMNA(storyEvent2.LOHMKCPKBON);
+							if(!newData.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsViewed(storyEvent2.LOHMKCPKBON_AdvId))
+								newData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetViewed(storyEvent2.LOHMKCPKBON_AdvId);
 						}
 					}
 				}
@@ -330,7 +335,7 @@ namespace ExternLib
 					string str = (string)names[i];
 					if (!jsonRes.BBAJPINMOEP_Contains(str))
 					{
-						TodoLogger.LogError(0, "Server data missing block "+str);
+						TodoLogger.LogError(TodoLogger.SakashoServer, "Server data missing block "+str);
 						missingBlock.Add(str);
 					}
 				}
@@ -413,7 +418,7 @@ namespace ExternLib
 			}
 			else
 			{
-				TodoLogger.LogError(0, "Error in save file check "+ fileName);
+				TodoLogger.LogError(TodoLogger.SakashoServer, "Error in save file check "+ fileName);
 				if (replaceIfDiff != null)
 				{
 					List<string> block = blocks.Keys.ToList();
@@ -676,13 +681,20 @@ namespace ExternLib
 			return 0;
 		}
 		static int saveCnt = 0;
-		public static int SakashoPlayerDataSavePlayerData(int callbackId, string json)
+
+		static void SavePlayerData(EDOHBJAPLPF_JsonData msgData, EDOHBJAPLPF_JsonData res)
 		{
-			EDOHBJAPLPF_JsonData msgData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
 			List<string> blockNames = new List<string>();
 			for (int i = 0; i < msgData["names"].HNBFOAJIIAL_Count; i++)
 			{
 				blockNames.Add((string)msgData["names"][i]);
+			}
+			if(msgData.BBAJPINMOEP_Contains("inventoryIds") && msgData["inventoryIds"] != null)
+			{
+				for(int i = 0; i < msgData["inventoryIds"].HNBFOAJIIAL_Count; i++)
+				{
+					ConsumeInventoryItem(JsonUtil.GetLong(msgData["inventoryIds"][i]));
+				}
 			}
 
 			if (msgData.BBAJPINMOEP_Contains("playerData"))
@@ -710,11 +722,16 @@ namespace ExternLib
 
 				saveCnt++;
 			}
-
-			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res["created_at"] = 1501751856;
 			res["data_status"] = 1;
 			res["updated_at"] = 1656166393;
+		}
+
+		public static int SakashoPlayerDataSavePlayerData(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData msgData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			SavePlayerData(msgData, res);
 			SendMessage(callbackId, res);
 			return 0;
 		}

@@ -172,8 +172,8 @@ namespace XeApp.Game.Common
 			LockBoneSpring(0);
 			float normalizedTime = (float)(time / musicBodyClipLength);
 			animator.Play("music", 0, normalizedTime);
-			facialBlendAnimMediator.selfAnimator.Play("music", 0, normalizedTime);
-			facialBlendAnimMediator.selfAnimator.Play("music", 1, normalizedTime);
+			facialBlendAnimMediator.selfAnimator.Play("music", 0, (float)(time / facialBlendAnimMediator.musicFaceClipLength));
+			facialBlendAnimMediator.selfAnimator.Play("music", 1, (float)(time / facialBlendAnimMediator.musicMouthClipLength));
 			if(m_boneSpringAnim != null && m_boneSpringAnim.animator != null)
 			{
 				m_boneSpringAnim.animator.Play("music", 0, normalizedTime);
@@ -305,7 +305,7 @@ namespace XeApp.Game.Common
 			{
 				mainColor = Color.Lerp(defaultMainColor, mainColor, mainColor.a);
 				mainColor.a = defaultMainColor.a;
-				rimPower = Mathf.Lerp(defaultRimPower, rimPower, rimColor.a);
+				rimPower = Mathf.Lerp(defaultRimPower, rimColor.a, rimPower);
 				rimColor = Color.Lerp(defaultRimColor, rimColor, rimColor.a);
 				rimColor.a = defaultRimColor.a;
 				shadowColor = Color.Lerp(defaultShadowColor, shadowColor, shadowColor.a);

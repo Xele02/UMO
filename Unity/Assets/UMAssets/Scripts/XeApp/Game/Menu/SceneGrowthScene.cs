@@ -315,7 +315,7 @@ namespace XeApp.Game.Menu
 					m_statusWindow.PushStoryButtonListener += () =>
 					{
 						//0x10E76B8
-						m_viewEventStoryData.MFMBGODNFGG(m_viewSceneData.BCCHOBPJJKE_SceneId);
+						m_viewEventStoryData.MFMBGODNFGG_InitFromScene(m_viewSceneData.BCCHOBPJJKE_SceneId);
 						EventStoryArgs arg = new EventStoryArgs(m_viewEventStoryData);
 						MenuScene.Instance.Call(TransitionList.Type.EVENT_STORY, arg, true);
 					};
@@ -614,7 +614,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10DFB00 Offset: 0x10DFB00 VA: 0x10DFB00
 		private void OnPushPassPurchaseButton()
 		{
-			TodoLogger.LogNotImplemented("OnPushPassPurchaseButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			this.StartCoroutineWatched(ShowPassPurchasePopupCoroutine());
 		}
 
 		//// RVA: 0x10DFC00 Offset: 0x10DFC00 VA: 0x10DFC00
@@ -655,7 +656,7 @@ namespace XeApp.Game.Menu
 				{
 					PCKLFFNPPLF p = new PCKLFFNPPLF();
 					p.NCMOCCDGKBP(aa, exclusionItemData);
-					if(exclusionItemData.EFFBJDMGIGO() < 1)
+					if(exclusionItemData.EFFBJDMGIGO_GetBuyPossible() < 1)
 					{
 						reason = exclusionItemData.HDHNAIIAJCP();
 						break;
@@ -1095,13 +1096,27 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10DFB74 Offset: 0x10DFB74 VA: 0x10DFB74
 		private IEnumerator ShowPassPurchasePopupCoroutine()
 		{
-			TodoLogger.LogError(0, "ShowPassPurchasePopupCoroutine");
+			TodoLogger.LogError(TodoLogger.MonthlyPass, "ShowPassPurchasePopupCoroutine");
 			yield return null;
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x725484 Offset: 0x725484 VA: 0x725484
 		//// RVA: 0x10E04F4 Offset: 0x10E04F4 VA: 0x10E04F4
-		//private IEnumerator ShowEpisodeCompPopup(PIGBBNDPPJC episodeData, int addPoint, EpisodeRewardGet.CloseEpisodeCompWindowHandler onClose) { }
+		private IEnumerator ShowEpisodeCompPopup(PIGBBNDPPJC episodeData, int addPoint, EpisodeRewardGet.CloseEpisodeCompWindowHandler onClose)
+		{
+			//0x10F4344
+			bool isWait = true;
+			PopupButton.ButtonLabel selectedLabel = PopupButton.ButtonLabel.None;
+			m_episodeRewardWindow.Show(ref episodeData, addPoint, CIOECGOMILE.HHCJCDFCLOB.EBEGGFECPOE, (PopupButton.ButtonLabel label) =>
+			{
+				//0x10E6C20
+				selectedLabel = label;
+				isWait = false;
+			}, true);
+			while(isWait)
+				yield return null;
+			onClose(selectedLabel);
+		}
 
 		//// RVA: 0x10E05EC Offset: 0x10E05EC VA: 0x10E05EC
 		private void ShowAddtiveBoardPopup(string titleLabel, string messageLabel, Action okCallBack)
@@ -1295,7 +1310,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10E2A48 Offset: 0x10E2A48 VA: 0x10E2A48
 		private void OnCallEpisodeDetails(PopupButton.ButtonLabel label)
 		{
-			TodoLogger.LogNotImplemented("OnCallEpisodeDetails");
+			if(label == PopupButton.ButtonLabel.Episode)
+			{
+				PIGBBNDPPJC data = new PIGBBNDPPJC();
+				data.KHEKNNFCAOI(m_viewSceneData.KELFCMEOPPM_EpisodeId);
+				MenuScene.Instance.Mount(TransitionUniqueId.SETTINGMENU_EPISODESELECT_EPISODEDETAIL, new EpisodeDetailArgs() { data = data }, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+			}
 		}
 
 		// RVA: 0x10E2BA0 Offset: 0x10E2BA0 VA: 0x10E2BA0 Slot: 14
@@ -1400,6 +1420,11 @@ namespace XeApp.Game.Menu
 						if(type == PopupButton.ButtonType.Positive)
 						{
 							m_viewGrowItemData.MDHKGJJBLNL();
+							MNDAMOGGJBJ.JFJJNPJNBPI d = new MNDAMOGGJBJ.JFJJNPJNBPI();
+							d.MBFFGGFGPEN(m_limitOverData.MJNOAMAFNHA, m_limitOverData.IJEOIMGILCK);
+							m_viewGrowItemData.INLBMFMOHCI_CostItems.Add(d);
+							m_viewGrowItemData.CMBGGPOFBOO_UcCost = m_limitOverData.GNKGDDMMJPF;
+							this.StartCoroutineWatched(LimitOverMainCoroutine(m_viewGrowItemData));
 						}
 					}, null, null, null);
 				}
@@ -1417,7 +1442,59 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x725574 Offset: 0x725574 VA: 0x725574
 		//// RVA: 0x10E3334 Offset: 0x10E3334 VA: 0x10E3334
-		//private IEnumerator LimitOverMainCoroutine(MNDAMOGGJBJ itemData) { }
+		private IEnumerator LimitOverMainCoroutine(MNDAMOGGJBJ itemData)
+		{
+			//0x10EABD0
+			yield return Co.R(MenuScene.Instance.PopupUseItemWindow.Show(itemData, UseItemList.Unlock.Default));
+            PopupUseItemWindow.UseItemResult res = MenuScene.Instance.PopupUseItemWindow.Result;
+			if(res != PopupUseItemWindow.UseItemResult.OK)
+				yield break;
+			if(itemData.KMIFDLLCBEL() != 1)
+				yield break;
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsShowKiraPlatePopUp2))
+			{
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsShowKiraPlatePopUp2, true);
+			}
+			bool done = false;
+			bool err = false;
+			MenuScene.Instance.InputDisable();
+			AEKDNMPPOJN.AHKFPJJKHFL(m_viewSceneData.BCCHOBPJJKE_SceneId, () =>
+			{
+				//0x10E6D0C
+				done = true;
+			}, () => {
+				//0x10E6D18
+				done = true;
+				err = true;
+			});
+			while(!done)
+				yield return null;
+			MenuScene.Instance.InputEnable();
+			if(err)
+			{
+				MenuScene.Instance.GotoTitle();
+				yield break;
+			}
+			MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA[m_viewSceneData.BCCHOBPJJKE_SceneId - 1];
+			m_viewSceneData.MKHFCGPJPFI_LimitOverCount = scene.DMNIMMGGJJJ_Leaf;
+			m_limitOverData.KHEKNNFCAOI(m_viewSceneData.JKGFBFPIMGA_Rarity, scene.DMNIMMGGJJJ_Leaf, m_viewSceneData.MJBODMOLOBC_Luck);
+			done = false;
+			MenuScene.Instance.InputDisable();
+			MenuScene.Instance.LimitOverControl.ShowRelease(m_viewSceneData, m_limitOverData, () =>
+			{
+				//0x10E6514
+				m_mainBoard.SetLimitOverLayout(m_limitOverData);
+				m_subBoard.SetLimitOverLayout(m_limitOverData);
+				m_statusWindow.UpdateContent(m_viewSceneData, m_transitionUniqueId);
+			}, () =>
+			{
+				//0x10E6D24
+				done = true;
+			});
+			while(!done)
+				yield return null;
+			MenuScene.Instance.InputEnable();
+        }
 
 		//// RVA: 0x10E33FC Offset: 0x10E33FC VA: 0x10E33FC
 		private void ChangeMainBoard()
@@ -1747,7 +1824,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10E3968 Offset: 0x10E3968 VA: 0x10E3968
 		private void UnLockPanel(SceneGrowthBoard board, int x, int y)
 		{
-			SoundManager.Instance.sePlayerMenu.Play((int)cs_se_boot.SE_BTN_003);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			if (MenuScene.CheckDatelineAndAssetUpdate())
 				return;
 			m_unLockTargetPanelIndex.Clear();
@@ -1766,19 +1843,37 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10E3C18 Offset: 0x10E3C18 VA: 0x10E3C18
 		private void UnLockAllPanel(SceneGrowthBoard board)
 		{
-			TodoLogger.LogNotImplemented("UnLockAllPanel");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(MenuScene.CheckDatelineAndAssetUpdate())
+				return;
+			m_unLockTargetPanelIndex.Clear();
+			m_unlockTargetRoadIndex.Clear();
+			board.UnlockAllPanelListup(m_unLockTargetPanelIndex, m_unlockTargetRoadIndex);
+			this.StartCoroutineWatched(UnlockPanelCoroutine(board, UseItemList.Unlock.All));
 		}
 
 		//// RVA: 0x10E3D94 Offset: 0x10E3D94 VA: 0x10E3D94
 		private void UnLockEpisodePanel(SceneGrowthBoard board)
 		{
-			TodoLogger.LogNotImplemented("UnLockEpisodePanel");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(MenuScene.CheckDatelineAndAssetUpdate())
+				return;
+			m_unLockTargetPanelIndex.Clear();
+			m_unlockTargetRoadIndex.Clear();
+			board.UnlockEpisodePanelListup(m_unLockTargetPanelIndex, m_unlockTargetRoadIndex);
+			this.StartCoroutineWatched(UnlockPanelCoroutine(board, UseItemList.Unlock.Episode));
 		}
 
 		//// RVA: 0x10E3F10 Offset: 0x10E3F10 VA: 0x10E3F10
 		private void UnLockStatusPanel(SceneGrowthBoard board)
 		{
-			TodoLogger.LogNotImplemented("UnLockStatusPanel");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(MenuScene.CheckDatelineAndAssetUpdate())
+				return;
+			m_unLockTargetPanelIndex.Clear();
+			m_unlockTargetRoadIndex.Clear();
+			board.UnlockStatusPanelListup(m_unLockTargetPanelIndex, m_unlockTargetRoadIndex);
+			this.StartCoroutineWatched(UnlockPanelCoroutine(board, UseItemList.Unlock.Status));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x725934 Offset: 0x725934 VA: 0x725934
@@ -1867,7 +1962,7 @@ namespace XeApp.Game.Menu
 					count = infLoopCount;
 				}
 				//a.PKLGGJPPBAN();
-				for (int j = 1; j != 0; j--)
+				for (int j = count; j != 0; j--)
 				{
 					PCKLFFNPPLF p = new PCKLFFNPPLF();
 					p.NCMOCCDGKBP(a, itemData);
@@ -1901,8 +1996,29 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10E44E4 Offset: 0x10E44E4 VA: 0x10E44E4
 		private IEnumerator ShowInfinityItemuPopupCoroutine(short unlockCount, short stockCount, short episodeUnit, MNDAMOGGJBJ.MNDGNJLBANB reason, UnityAction<PopupButton.ButtonType, int> callBack)
 		{
-			TodoLogger.LogNotImplemented("ShowInfinityItemuPopupCoroutine");
-			yield return null;
+			//0x10F4B8C
+			bool isWait = true;
+			int count = 0;
+			PopupButton.ButtonType button = PopupButton.ButtonType.Other;
+			m_popupInfinityPanelSetting.UnlockCount = unlockCount;
+			m_popupInfinityPanelSetting.EpisodeUnit = episodeUnit;
+			m_popupInfinityPanelSetting.StockCount = stockCount;
+			m_popupInfinityPanelSetting.Reason = reason;
+			m_popupInfinityPanelSetting.Buttons = new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			PopupWindowManager.Show(m_popupInfinityPanelSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x10E6D80
+				button = type;
+				count = (control.Content as PopupGrowthInfinityPanel).Value;
+				isWait = false;
+			}, null, null, null);
+			while(isWait)
+				yield return null;
+			callBack(button, count);
 		}
 
 		//// RVA: 0x10E4610 Offset: 0x10E4610 VA: 0x10E4610
@@ -1934,12 +2050,12 @@ namespace XeApp.Game.Menu
 						{
 							l[af.INDDJNMPONH_StatType]++;
 						}
-						b |= scene.IEPGLOIICLJ(m_unLockTargetPanelIndex[i]);
+						b |= !scene.IEPGLOIICLJ(m_unLockTargetPanelIndex[i]);
 					}
 					if(b)
 					{
 						//LAB_010e4f38
-						JHHBAFKMBDL.HHCJCDFCLOB.OODNEKINHLO(() =>
+						JHHBAFKMBDL.HHCJCDFCLOB.OODNEKINHLO_ShowError(() =>
 						{
 							//0x10E6714
 							MenuScene.Instance.GotoTitle();
@@ -1971,13 +2087,13 @@ namespace XeApp.Game.Menu
 							else
 							{
 								l[af.INDDJNMPONH_StatType]++;
-								b |= scene.PJLNENPKEDD(m_unLockTargetPanelIndex[i]) ? false : true;
+								b |= !scene.PJLNENPKEDD(m_unLockTargetPanelIndex[i]);
 							}
 						}
 					}
 					if(b)
 					{
-						JHHBAFKMBDL.HHCJCDFCLOB.OODNEKINHLO(() =>
+						JHHBAFKMBDL.HHCJCDFCLOB.OODNEKINHLO_ShowError(() =>
 						{
 							//0x10E6678
 							MenuScene.Instance.GotoTitle();
@@ -2013,18 +2129,320 @@ namespace XeApp.Game.Menu
 			AssetBundleLoadLayoutOperationBase layoutOperation; // 0x30
 
 			//0x10EE8BC
-			TodoLogger.LogError(0, "PlayUnlockPanelAnimationCoroutine");
+			loadCount = 0;
+			MenuScene.Instance.InputDisable();
+			bool isWaitSave = false;
+			MenuScene.SaveWithAchievement(2, () =>
+			{
+				//0x10E6E6C
+				isWaitSave = false;
+			}, null);
+			m_currentBoard.GetUnlockParts(m_prodactPanelList, m_prodactRoadList, m_unLockTargetPanelIndex, m_unlockTargetRoadIndex);
+			inifityPanel = m_prodactPanelList.Find((ISceneGrowthPanel x) =>
+			{
+				//0x10E67B0
+				return x.PanelType == GrowthPanelType.Infinity;
+			});
+			if(inifityPanel != null)
+			{
+				if(m_infinityPanelOpenEffect == null)
+				{
+					loadCount++;
+					layoutOperation = AssetBundleManager.LoadLayoutAsync("ly/019.xab", "root_sw_endicon_get_ef_layout_root");
+					yield return layoutOperation;
+					yield return Co.R(layoutOperation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject obj) =>
+					{
+						//0x10E6E78
+						m_infinityPanelOpenEffect = obj.GetComponent<LayoutUGUIRuntime>();
+						m_infinityPanelOpenEffect.transform.SetParent(transform, false);
+						m_infinityPanelOpenEffect.gameObject.SetActive(false);
+					}));
+					layoutOperation = null;
+				}
+				//LAB_010ef798
+				if(m_infinityOpen3dEffect == null)
+				{
+					m_infinityOpen3dEffect = Instantiate(m_3dEffectPrefab[1]);
+#if UNITY_EDITOR || UNITY_STANDALONE
+					BundleShaderInfo.Instance.FixMaterialShader(m_infinityOpen3dEffect.gameObject);
+#endif
+					m_infinityOpen3dEffect.transform.SetParent(transform, false);
+					m_infinityOpen3dEffect.gameObject.SetActive(false);
+				}
+				m_prodactPanelList.Remove(inifityPanel);
+			}
+			//LAB_010ef91c
+			if(m_panelOpenEffectCache.Count == 0)
+			{
+				loadCount++;
+				GameObject instance = null;
+				layoutOperation = AssetBundleManager.LoadLayoutAsync("ly/019.xab", "root_sw_abicon_get_ef_layout_root");
+				yield return layoutOperation;
+				yield return Co.R(layoutOperation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject obj) =>
+				{
+					//0x10E70B4
+					instance = obj;
+				}));
+				LayoutUGUIRuntime runtime = instance.GetComponent<LayoutUGUIRuntime>();
+				for(int i = 0; i < m_prodactPanelList.Count - 1; i++)
+				{
+					LayoutUGUIRuntime r = Instantiate(runtime);
+					r.IsLayoutAutoLoad = false;
+					r.Layout = runtime.Layout.DeepClone();
+					r.UvMan = runtime.UvMan;
+					r.LoadLayout();
+					m_panelOpenEffectCache.Add(r);
+				}
+				m_panelOpenEffectCache.Add(runtime);
+				yield return null;
+				SceneGrowth3dEffect eff = Instantiate(m_3dEffectPrefab[0]);
+#if UNITY_EDITOR || UNITY_STANDALONE
+				BundleShaderInfo.Instance.FixMaterialShader(eff.gameObject);
+#endif
+				for(int i = 0; i < m_panelOpenEffectCache.Count; i++)
+				{
+					m_panelOpenEffectCache[i].transform.SetParent(transform, false);
+					m_panelOpenEffectCache[i].gameObject.SetActive(false);
+					SceneGrowth3dEffect eff2 = Instantiate(eff);
+					eff2.transform.SetParent(transform, false);
+					eff2.gameObject.SetActive(false);
+					m_panelOpen3dEffectCache.Add(eff2);
+				}
+				Destroy(eff.gameObject);
+				layoutOperation = null;
+			}
+			else if(m_panelOpenEffectCache.Count < m_prodactPanelList.Count)
+			{
+				int diff = m_prodactPanelList.Count - m_panelOpenEffectCache.Count;
+				for(int i = 0; i < diff; i++)
+				{
+					LayoutUGUIRuntime r = Instantiate(m_panelOpenEffectCache[0]);
+					r.IsLayoutAutoLoad = false;
+					r.Layout = m_panelOpenEffectCache[0].Layout.DeepClone();
+					r.UvMan = m_panelOpenEffectCache[0].UvMan;
+					r.gameObject.SetActive(true);
+					r.LoadLayout();
+					m_panelOpenEffectCache.Add(r);
+				}
+				m_panelOpenEffectCache.Add(m_panelOpenEffectCache[0]);
+				yield return null;
+				for(int i = 0; i < m_panelOpenEffectCache.Count; i++)
+				{
+					m_panelOpenEffectCache[1].transform.SetParent(transform, false);
+					m_panelOpenEffectCache[i].gameObject.SetActive(false);
+					SceneGrowth3dEffect eff = Instantiate(m_panelOpen3dEffectCache[0]);
+					eff.gameObject.SetActive(false);
+					m_panelOpen3dEffectCache.Add(eff);
+				}
+			}
+			//LAB_010efc5c
+			for(int i = 0; i < loadCount; i++)
+			{
+				AssetBundleManager.UnloadAssetBundle("ly/019.xab", false);
+			}
+			Canvas c = GetComponentInParent<Canvas>();
+			for(int i = 0; i < m_prodactPanelList.Count; i++)
+			{
+				m_panelOpenEffectCache[i].transform.SetParent(m_prodactPanelList[i].transform, false);
+				m_prodactPanelList[i].PlayUnLockAnime();
+				m_panelOpenEffectCache[i].gameObject.SetActive(true);
+				m_panelOpenEffectCache[i].Layout.StartAllAnimGoStop("go_in", "st_in");
+				m_panelOpen3dEffectCache[i].gameObject.SetActive(true);
+				m_panelOpen3dEffectCache[i].transform.SetParent(m_prodactPanelList[i].transform, false);
+				m_panelOpen3dEffectCache[i].transform.localPosition = new Vector3(50, -50, -90);
+			}
+			for(int i = 0; i < m_prodactRoadList.Count; i++)
+			{
+				m_prodactRoadList[i].SetOpen();
+			}
+			if(inifityPanel != null)
+			{
+				(inifityPanel as SceneGrowthInfinityPanel).SetStock(m_viewSceneData.KPCLNEADGEM(m_infinityPanelUnlockInfo.index));
+				m_infinityPanelOpenEffect.transform.SetParent(inifityPanel.transform, false);
+				inifityPanel.PlayUnLockAnime();
+				m_infinityPanelOpenEffect.gameObject.SetActive(true);
+				m_infinityPanelOpenEffect.Layout.StartAllAnimGoStop("go_in", "st_in");
+				m_infinityOpen3dEffect.transform.SetParent(inifityPanel.transform, false);
+				m_infinityOpen3dEffect.gameObject.SetActive(true);
+				m_infinityOpen3dEffect.transform.localPosition = new Vector3(90, -50, -90);
+			}
 			yield return null;
+			int p = GetUpdatePageNumber(m_addStatuList);
+			m_statusWindow.SetPage(p);
+			for(int i = 0; i < m_pageStatusTbl[p].Count; i++)
+			{
+				if(m_addStatuList[(int)m_pageStatusTbl[p][i]] > 0)
+				{
+					m_statusWindow.PlayUpArrowAnimation(m_pageStatusTbl[p][i]);
+				}
+			}
+			m_animeTime = 0;
+			if(playSeEvent == null)
+			{
+				SoundManager.Instance.sePlayerMenu.Play((int)cs_se_menu.SE_SETTING_003);
+			}
+			else
+			{
+				playSeEvent();
+			}
+			if(p == 1)
+			{
+				m_statusWindow.BeginUpdateCenterSkillAnime(m_viewSceneData, m_prevCenterSkillLevel, m_addStatuList[5] + m_prevCenterSkillLevel, 0.9f);
+				m_statusWindow.BeginUpdateActiveSkillAnime(m_viewSceneData, m_prevActiveSkillLevel, m_addStatuList[6] + m_prevActiveSkillLevel, 0.9f);
+				m_statusWindow.BeginUpdateLiveSkillAnime(m_viewSceneData, m_prevLiveSkillLevel, m_addStatuList[7] + m_prevLiveSkillLevel, 0.9f);
+				//LAB_010f12e4
+				while(m_animeTime <= 1)
+				{
+					m_animeTime += TimeWrapper.deltaTime;
+					yield return null;
+				}
+			}
+			else if(p != 0)
+			{
+				//LAB_010f115c;
+				while(m_animeTime <= 1)
+				{
+					m_animeTime += TimeWrapper.deltaTime;
+					yield return null;
+				}
+			}
+			else
+			{
+				m_statusWindow.BeginUpdateStatusAnime(SceneGrowthStatus.TextLabel.Total, m_prevStatus.Total, m_addStatuList[3] + m_addStatuList[2] + m_addStatuList[4] + m_prevStatus.Total, 0.9f);
+				m_statusWindow.BeginUpdateStatusAnime(SceneGrowthStatus.TextLabel.Life, m_prevStatus.life, m_addStatuList[1] + m_prevStatus.life, 0.9f);
+				m_statusWindow.BeginUpdateStatusAnime(SceneGrowthStatus.TextLabel.Soul, m_prevStatus.soul, m_addStatuList[2] + m_prevStatus.soul, 0.9f);
+				m_statusWindow.BeginUpdateStatusAnime(SceneGrowthStatus.TextLabel.Vocal, m_prevStatus.vocal, m_addStatuList[3] + m_prevStatus.vocal, 0.9f);
+				m_statusWindow.BeginUpdateStatusAnime(SceneGrowthStatus.TextLabel.Charm, m_prevStatus.charm, m_addStatuList[4] + m_prevStatus.charm, 0.9f);
+				m_statusWindow.BeginUpdateStatusAnime(SceneGrowthStatus.TextLabel.Support, m_prevStatus.support, m_addStatuList[8] + m_prevStatus.support, 0.9f);
+				m_statusWindow.BeginUpdateStatusAnime(SceneGrowthStatus.TextLabel.Fold, m_prevStatus.fold, m_addStatuList[9] + m_prevStatus.fold, 0.9f);
+				m_statusWindow.BeginUpdateStatusAnime(SceneGrowthStatus.TextLabel.Luck, m_prevLuck, m_addStatuList[19] + m_prevLuck, 0.9f);
+				//LAB_010f112c
+				while(m_animeTime <= 1)
+				{
+					m_animeTime += TimeWrapper.deltaTime;
+					yield return null;
+				}
+			}
+			while(m_panelOpenEffectCache[0].Layout.IsPlayingAll())
+				yield return null;
+			if(m_infinityPanelOpenEffect != null)
+			{
+				while(m_infinityPanelOpenEffect.Layout.IsPlayingAll())
+					yield return null;
+			}
+			for(int i = 0; i < m_panelOpenEffectCache.Count; i++)
+			{
+				m_panelOpenEffectCache[i].transform.SetParent(transform, false);
+				m_panelOpenEffectCache[i].gameObject.SetActive(false);
+				m_panelOpen3dEffectCache[i].transform.SetParent(transform, false);
+				m_panelOpen3dEffectCache[i].gameObject.SetActive(false);
+			}
+			if(m_infinityPanelOpenEffect != null)
+			{
+				m_infinityPanelOpenEffect.transform.SetParent(transform, false);
+				m_infinityPanelOpenEffect.gameObject.SetActive(false);
+			}
+			if(m_infinityOpen3dEffect != null)
+			{
+				m_infinityOpen3dEffect.transform.SetParent(transform, false);
+				m_infinityOpen3dEffect.gameObject.SetActive(false);
+			}
+			m_statusWindow.UpdateContent(m_viewSceneData, m_transitionUniqueId);
+			m_currentBoard.UpdateBoardLayout();
+			m_currentBoard.UpdateBoard();
+			//LAB_010f18f4
+			while(isWaitSave)
+				yield return null;
+			int prev = m_limitOverData.LJHOOPJACPI_LeafMax;
+			m_limitOverData.KHEKNNFCAOI(m_viewSceneData.JKGFBFPIMGA_Rarity, m_viewSceneData.MKHFCGPJPFI_LimitOverCount, m_viewSceneData.MJBODMOLOBC_Luck);
+			if(prev < m_limitOverData.LJHOOPJACPI_LeafMax)
+			{
+				bool done = false;
+				MenuScene.Instance.LimitOverControl.ShowAddSlot(m_limitOverData, prev, () =>
+				{
+					//0x10E6FE4
+					m_mainBoard.SetLimitOverLayout(m_limitOverData);
+					m_subBoard.SetLimitOverLayout(m_limitOverData);
+				}, () =>
+				{
+					//0x10E70C4
+					done = true;
+				});
+				while(!done)
+					yield return null;
+			}
+			int cnt = GetUnlockStoryCount(m_addStatuList);
+			if(cnt > 0)
+			{
+				bool isWait = true;
+				m_viewEventStoryData.MFMBGODNFGG_InitFromScene(m_viewSceneData.BCCHOBPJJKE_SceneId);
+				m_popupEventStoryOpenListPopupSetting.Set(m_viewEventStoryData, cnt, m_transitionUniqueId == TransitionUniqueId.SETTINGMENU_SCENEABILITYRELEASELIST_SCENEGROWTH);
+				PopupWindowManager.Show(m_popupEventStoryOpenListPopupSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0x10E70D8
+					isWait = false;
+				}, null, null, null);
+				while(isWait)
+					yield return null;
+			}
+			bool isCallEpisode = false;
+			int cnt2 = GetEpisodePoint(m_addStatuList);
+			if(cnt2 > 0)
+			{
+				MenuScene.Instance.InputEnable();
+				yield return this.StartCoroutineWatched(ShowEpisodeCompPopup(m_episodeData, cnt2, (PopupButton.ButtonLabel label) =>
+				{
+					//0x10E7098
+					isCallEpisode = label == PopupButton.ButtonLabel.Episode;
+				}));
+			}
+			else
+			{
+				MenuScene.Instance.InputEnable();
+			}
+			//LAB_010f1f14
+			m_episodeData.KHEKNNFCAOI(m_viewSceneData.KELFCMEOPPM_EpisodeId);
+			if(isCallEpisode)
+			{
+				m_episodeData = new PIGBBNDPPJC();
+				m_episodeData.KHEKNNFCAOI(m_viewSceneData.KELFCMEOPPM_EpisodeId);
+				MenuScene.Instance.Mount(TransitionUniqueId.SETTINGMENU_EPISODESELECT_EPISODEDETAIL, new EpisodeDetailArgs() { data = m_episodeData }, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+			}
+			m_statusWindow.UpdateEpisode(m_episodeData);
+			Array.Clear(m_addStatuList, 0, m_addStatuList.Length);
 		}
 
 		//// RVA: 0x10E54D0 Offset: 0x10E54D0 VA: 0x10E54D0
-		//private int GetEpisodePoint(int[] addStatus) { }
+		private int GetEpisodePoint(int[] addStatus)
+		{
+			return addStatus[20] + addStatus[18];
+		}
 
 		//// RVA: 0x10E5534 Offset: 0x10E5534 VA: 0x10E5534
-		//private int GetUnlockStoryCount(int[] addStatus) { }
+		private int GetUnlockStoryCount(int[] addStatus)
+		{
+			return addStatus[21];
+		}
 
 		//// RVA: 0x10E5574 Offset: 0x10E5574 VA: 0x10E5574
-		//private int GetUpdatePageNumber(int[] addStatus) { }
+		private int GetUpdatePageNumber(int[] addStatus)
+		{
+			int a1 = addStatus[2] + addStatus[1] + addStatus[3] + addStatus[4] + addStatus[8] + addStatus[19] + addStatus[9] > 0 ? 1 : 0;
+			if(addStatus[5] + addStatus[6] + addStatus[7] > 0)
+				a1 |= 2;
+			if(addStatus[20] + addStatus[18] > 0)
+				a1 |= 4;
+			if((a1 & (1 << 0x1f)) == 0)
+			{
+				for(int i = 0; i < 3; i++)
+				{
+					if((a1 & (1 << i)) != 0)
+						return i;
+				}
+				return 0;
+			}
+			return m_statusWindow.PageNum;
+		}
 
 		//// RVA: 0x10E57D4 Offset: 0x10E57D4 VA: 0x10E57D4
 		private bool CheckTutorialCondition_25(TutorialConditionId conditionId)
@@ -2047,9 +2465,5 @@ namespace XeApp.Game.Menu
 		//[CompilerGeneratedAttribute] // RVA: 0x725A9C Offset: 0x725A9C VA: 0x725A9C
 		//// RVA: 0x10E61F4 Offset: 0x10E61F4 VA: 0x10E61F4
 		//private void <ShowConfirmPopupCoroutine>b__94_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x725B1C Offset: 0x725B1C VA: 0x725B1C
-		//// RVA: 0x10E6514 Offset: 0x10E6514 VA: 0x10E6514
-		//private void <LimitOverMainCoroutine>b__119_2() { }
 	}
 }

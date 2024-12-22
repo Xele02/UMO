@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Localization.SmartFormat;
 using XeApp.Core;
 using XeApp.Game.Common;
 using XeSys;
@@ -210,7 +211,7 @@ namespace XeApp.Game.Menu
 				if (m_rankRangeList[i] == 0)
 					m_rankRangeLabelList.Add(MessageManager.Instance.GetMessage("menu", "popup_rank_range_myself"));
 				else
-					m_rankRangeLabelList.Add(string.Format(MessageManager.Instance.GetMessage("menu", "popup_rank_range_place"), m_rankRangeList[i]));
+					m_rankRangeLabelList.Add(Smart.Format(MessageManager.Instance.GetMessage("menu", "popup_rank_range_place"), m_rankRangeList[i]));
 			}
 			InitializeDecos();
 			m_viewData = new GHLGEECLCMH();
@@ -498,7 +499,13 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1050CE0 Offset: 0x1050CE0 VA: 0x1050CE0
 		private void NetErrorToTitle()
 		{
-			TodoLogger.LogError(0, "NetErrorToTitle");
+			if(MenuScene.Instance.IsTransition())
+				GotoTitle();
+			else
+			{
+				MenuScene.Instance.GotoTitle();
+			}
+			m_isErrorToTitle = true;
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6ED8FC Offset: 0x6ED8FC VA: 0x6ED8FC
@@ -516,7 +523,7 @@ namespace XeApp.Game.Menu
 		{
 			int loadCount; // 0x28
 			StringBuilder bundleName; // 0x2C
-			Font systemFont; // 0x30
+			XeSys.FontInfo systemFont; // 0x30
 			AssetBundleLoadLayoutOperationBase operation; // 0x34
 
 			//0x10528AC

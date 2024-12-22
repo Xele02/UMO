@@ -19,6 +19,7 @@ namespace XeApp.Game.Menu
 		private TextMeshProUGUI m_textCostumeCount; // 0x14
 		[SerializeField]
 		private TextMeshProUGUI m_textDivaRanking; // 0x18
+		private Text m_textDivaRankingText;
 		[SerializeField]
 		private TextMeshProUGUI m_textTotal; // 0x1C
 		[SerializeField]
@@ -48,6 +49,31 @@ namespace XeApp.Game.Menu
 				if (OnClickDivaRankingButtonCallback != null)
 					OnClickDivaRankingButtonCallback();
 			});
+
+			m_textDivaLevel.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_DivaLevel;
+			m_textIntimacyLevel.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_IntimacyLevel;
+			m_textCostumeCount.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_CostumeCount;
+			m_textTotal.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_Total;
+			m_textDivaStatus.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_DivaStatus;
+			m_textCostumeStatus.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_CostumeStatus;
+			m_textSoulTotalStatus.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_SoulTotal;
+			m_textVoiceTotalStatus.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_VoiceTotal;
+			m_textCharmTotalStatus.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_CharmTotal;
+			m_textDivaRanking.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_DivaRanking;
+			m_buttonDivaRanking.transform.Find("Top/Text (TMP)").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_DivaRankingBtn;
+			FontInfo f = GameManager.Instance.GetSystemFont();
+			f.ReplaceTmpText(m_textDivaLevel.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>());
+			f.ReplaceTmpText(m_textIntimacyLevel.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>());
+			f.ReplaceTmpText(m_textCostumeCount.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>());
+			f.ReplaceTmpText(m_textTotal.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>());
+			f.ReplaceTmpText(m_textDivaStatus.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>());
+			f.ReplaceTmpText(m_textCostumeStatus.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>());
+			f.ReplaceTmpText(m_textSoulTotalStatus.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>());
+			f.ReplaceTmpText(m_textVoiceTotalStatus.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>());
+			f.ReplaceTmpText(m_textCharmTotalStatus.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>());
+			f.ReplaceTmpText(m_textDivaRanking.transform.parent.Find("Title (TMP)").GetComponent<TextMeshProUGUI>());
+			f.ReplaceTmpText(m_buttonDivaRanking.transform.Find("Top/Text (TMP)").GetComponent<TextMeshProUGUI>());
+			m_textDivaRankingText = f.ReplaceTmpText(m_textDivaRanking);
 		}
 
 		// RVA: 0xB7D0CC Offset: 0xB7D0CC VA: 0xB7D0CC
@@ -136,8 +162,11 @@ namespace XeApp.Game.Menu
 		private void SetRankingText(StringBuilder sb, string rank)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			sb.SetFormat(bk.GetMessageByLabel("gakuya_status_diva_ranking_value"), rank);
-			m_textDivaRanking.text = sb.ToString();
+			sb.SetFormatSmart(bk.GetMessageByLabel("gakuya_status_diva_ranking_value"), rank);
+			if(m_textDivaRanking)
+				m_textDivaRanking.text = sb.ToString();
+			if(m_textDivaRankingText)
+				m_textDivaRankingText.text = sb.ToString();
 		}
 
 		//// RVA: 0xB83510 Offset: 0xB83510 VA: 0xB83510

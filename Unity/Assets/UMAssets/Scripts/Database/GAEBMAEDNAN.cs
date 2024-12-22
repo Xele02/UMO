@@ -77,7 +77,7 @@ public class GAEBMAEDNAN_DecoPoint : DIHHCBACKGG_DbSection
 	// RVA: 0x13FDBAC Offset: 0x13FDBAC VA: 0x13FDBAC Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(TodoLogger.Database, "GAEBMAEDNAN_DecoPoint.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbJson, "GAEBMAEDNAN_DecoPoint.IIEMACPEEBJ");
 		return true;
 	}
 

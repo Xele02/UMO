@@ -54,18 +54,16 @@ Shader "MCRS/Diva/Opaque_Outline_High" {
 			v2f vert(appdata v)
 			{
 				v2f o;
-
+				o.position0 = UnityObjectToClipPos(v.position0);
 				o.texcoord0 = TRANSFORM_TEX(v.texcoord0, _MainTex);
 
 				float4 worldpos = mul(unity_ObjectToWorld,v.position0);
-				o.texcoord1 = normalize((_WorldSpaceCameraPos - worldpos.xyz));
+				worldpos.xyz = _WorldSpaceCameraPos - worldpos.xyz;
+				o.texcoord1.xyz = normalize(worldpos.xyz);
 
-				float4 normal;
-				normal.xyz = v.normal0;
-				normal.w = 0;
-				o.texcoord2 = normalize((mul(unity_ObjectToWorld,normal)).xyz);
-
-				o.position0 = UnityObjectToClipPos(v.position0);
+				float3 normal = mul(unity_ObjectToWorld,v.normal0.xyz);
+				o.texcoord2.xyz = normalize(normal.xyz);
+				
 				return o; 
 			}
 /*
@@ -112,7 +110,9 @@ Shader "MCRS/Diva/Opaque_Outline_High" {
 					    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[2] * hlslcc_mtx4x4unity_ObjectToWorld[3].zzzz + u_xlat1;
 					    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[3] * hlslcc_mtx4x4unity_ObjectToWorld[3].wwww + u_xlat1;
 					    gl_Position = u_xlat1 * in_POSITION0.wwww + u_xlat0;
+
 					    vs_TEXCOORD0.xy = in_TEXCOORD0.xy * _MainTex_ST.xy + _MainTex_ST.zw;
+
 					    u_xlat0.xyz = in_POSITION0.yyy * hlslcc_mtx4x4unity_ObjectToWorld[1].xyz;
 					    u_xlat0.xyz = hlslcc_mtx4x4unity_ObjectToWorld[0].xyz * in_POSITION0.xxx + u_xlat0.xyz;
 					    u_xlat0.xyz = hlslcc_mtx4x4unity_ObjectToWorld[2].xyz * in_POSITION0.zzz + u_xlat0.xyz;
@@ -121,6 +121,7 @@ Shader "MCRS/Diva/Opaque_Outline_High" {
 					    u_xlat6 = dot(u_xlat0.xyz, u_xlat0.xyz);
 					    u_xlat6 = inversesqrt(u_xlat6);
 					    vs_TEXCOORD1.xyz = vec3(u_xlat6) * u_xlat0.xyz;
+
 					    u_xlat0.xyz = in_NORMAL0.yyy * hlslcc_mtx4x4unity_ObjectToWorld[1].xyz;
 					    u_xlat0.xyz = hlslcc_mtx4x4unity_ObjectToWorld[0].xyz * in_NORMAL0.xxx + u_xlat0.xyz;
 					    u_xlat0.xyz = hlslcc_mtx4x4unity_ObjectToWorld[2].xyz * in_NORMAL0.zzz + u_xlat0.xyz;
@@ -296,21 +297,18 @@ Shader "MCRS/Diva/Opaque_Outline_High" {
 				v2f o;
 
 				o.texcoord0 = v.texcoord0;
-				float4 screenvertex = v.position0;
-				float4 projSpacePos;
-				projSpacePos.zw = screenvertex.zw;
-				float4 normaldir;
-				normaldir.w = 0.0;
-				normaldir.xyz = v.normal0;
-				float zbias = float(clamp ((screenvertex.z * 0.1), 0.5, 1.0));
-				float4 scaledNormal = (((
+				float4 pos = UnityObjectToClipPos(v.position0);
+				float3 nor = UnityObjectToClipPos(v.position0.xyz + float4(v.normal0.xyz, 0)).xyz;
+				nor -= pos;
+				nor.xy = normalize(nor.xy);
+				float scaledNormal = (
 					(v.color0.x * _EdgeThickness)
-					* 0.00285) * normalize(
-					(float4(normaldir))
-				)) * zbias);
-				projSpacePos.xy = (screenvertex.xy + scaledNormal.xy);
-				projSpacePos = UnityObjectToClipPos(projSpacePos); // while the original is correct on android gpu's this is typically the compilers job to fix
-				o.position0 = projSpacePos;
+					* 0.00285);
+				nor.xy *= float2(scaledNormal, scaledNormal);
+				float zbias = float(clamp ((pos.z * 0.1), 0.5, 1.0));
+				o.position0.xy = pos.xy + zbias * nor.xy;
+				o.position0.zw = pos.zw;
+
 				return o; 
 			}
 /*

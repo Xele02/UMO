@@ -36,6 +36,12 @@ namespace XeApp.Game.Menu
 			{
 				m_uvRectList.Add(LayoutUGUIUtility.MakeUnityUVRect(uvMan.GetUVData(uvNameTbl[i])));
 			}
+			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
+			{
+				m_text.verticalOverflow = VerticalWrapMode.Truncate;
+				m_text.resizeTextForBestFit = true;
+				m_text.resizeTextMaxSize = m_text.fontSize;
+			}
 			return true;
 		}
 

@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization.SmartFormat;
 using XeApp.Core;
 using XeApp.Game.Common;
 using XeApp.Game.Tutorial;
@@ -147,7 +148,7 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			string str = "";
 			if(_bingoCount > 0)
-				str = string.Format(bk.GetMessageByLabel("bingo_ribbon_bingo_count_text"), _bingoCount) + "\r\n";
+				str = Smart.Format(bk.GetMessageByLabel("bingo_ribbon_bingo_count_text"), _bingoCount) + "\r\n";
 			if (m_bingoInfo.DAKIMDGPHNE_IsReleaseEpisode)
 				str += string.Format(bk.GetMessageByLabel("bingo_ribbon_costume_text"), a1);
 			else
@@ -290,7 +291,7 @@ namespace XeApp.Game.Menu
 			string str;
 			if(IsNextBingo)
 			{
-				str = string.Format(bk.GetMessageByLabel("bingo_mission_change__bingo_text"), m_view.MEAPAEMIOBB.MALACFEDHDE_CurrentCount);
+				str = Smart.Format(bk.GetMessageByLabel("bingo_mission_change__bingo_text"), m_view.MEAPAEMIOBB.MALACFEDHDE_CurrentCount);
 			}
 			else
 			{
@@ -320,7 +321,7 @@ namespace XeApp.Game.Menu
 				TextPopupSetting s = new TextPopupSetting();
 				s.IsCaption = false;
 				s.WindowSize = SizeType.Small;
-				s.Text = string.Format(bk.GetMessageByLabel("bingo_normal_bingo_start_text"), m_bingoInfo.MALACFEDHDE_CurrentCount);
+				s.Text = Smart.Format(bk.GetMessageByLabel("bingo_normal_bingo_start_text"), m_bingoInfo.MALACFEDHDE_CurrentCount);
 				s.Buttons = new ButtonInfo[1]
 				{
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
@@ -380,7 +381,7 @@ namespace XeApp.Game.Menu
 						{
 							if(l[i].LHONOILACFL_IsWeeklyEvent)
 							{
-								if(l[i].BELHFPMBAPJ_WeekPlay < l[i].JOJNGDPHOKG)
+								if(l[i].BELHFPMBAPJ_WeekPlay < l[i].JOJNGDPHOKG_WeeklyMax)
 								{
 									if(l[i].GHBPLHBNMBK_FreeMusicId > 0)
 									{
@@ -648,7 +649,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator AssetLoad()
 		{
 			string bundleName; // 0x14
-			Font systemFont; // 0x18
+			XeSys.FontInfo systemFont; // 0x18
 			AssetBundleLoadLayoutOperationBase operation; // 0x1C
 
 			//0x109D10C

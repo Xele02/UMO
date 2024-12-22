@@ -50,7 +50,6 @@ public static class TodoLogger
 	public static int DbIntegrityCheck = _Todo;
 	public static int Xedec = _Todo;
 	public static int SaveLoad = _Todo;
-	public static int Event2 = _Todo;
 
 	public static int _Debug = 1;
 	public static int UI = _Debug;
@@ -67,13 +66,37 @@ public static class TodoLogger
 	public static int Base = _Debug;
 	public static int Coroutine = _Debug;
 	public static int Layout = _Debug;
-	public static int Event = _Debug;
+	public static int Event_Unknwown_2 = _Debug;
+	public static int EventPresentCampaign_9 = _Debug;
+	public static int EventSp_7 = _Debug;
+	public static int EventRaid_11_13 = _Debug;
+	public static int EventBoxGacha_8 = _Debug;
+	public static int EventGoDiva_14 = _Debug;
+	public static int EventTicket_14 = _Debug; // GoDiva?
+	public static int EventBattle_3 = _Debug;
+	public static int EventScore_4 = _Debug;
+	public static int EventQuest_6 = _Debug; // == EventMission?
+	public static int EventCollection_1 = _Debug;
+	public static int EventMission_6 = _Debug;
+	public static int RequestFail = _Debug;
+	public static int CBT = _Debug;
+	public static int MonthlyPass = _Debug;
+	public static int DbJson = _Debug;
+	public static int Android = _Debug;
+	public static int Toast = _Debug;
+	public static int AR = _Debug;
+	public static int CampaignRoulette = _Debug;
+	public static int DecoVisit = _Debug;
+	public static int SakashoServer = _Debug;
+	public static int OldMusicSelect = _Debug;
+	public static int OldEpisodeFilter = _Debug;
+	public static int DebugTextRenderer = _Debug;
 
 	public static void LogError(int priority, string str)
 	{
 		if(priority < RuntimeSettings.CurrentSettings.MinLogError || (RuntimeSettings.CurrentSettings.EnableErrorLog && priority < 999))
 		{
-			UnityEngine.Debug.LogError(str);
+			UnityEngine.Debug.LogError("TODO "+str);
 		}
 	}
 
@@ -81,7 +104,7 @@ public static class TodoLogger
 	{
 		if (priority < RuntimeSettings.CurrentSettings.MinLogWarning || (RuntimeSettings.CurrentSettings.EnableErrorLog && priority < 999))
 		{
-			UnityEngine.Debug.LogWarning(str);
+			UnityEngine.Debug.LogWarning("TODO "+str);
 		}
 	}
 
@@ -89,7 +112,7 @@ public static class TodoLogger
 	{
 		if (priority < RuntimeSettings.CurrentSettings.MinLogInfo || (RuntimeSettings.CurrentSettings.EnableErrorLog && priority < 999))
 		{
-			UnityEngine.Debug.Log(str);
+			UnityEngine.Debug.Log("TODO "+str);
 		}
 	}
 

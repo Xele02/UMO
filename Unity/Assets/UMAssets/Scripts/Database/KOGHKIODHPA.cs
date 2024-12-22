@@ -320,7 +320,7 @@ public class KOGHKIODHPA_Board : DIHHCBACKGG_DbSection
 	// // RVA: 0x1131120 Offset: 0x1131120 VA: 0x1131120 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(100, "TODO");
+		TodoLogger.LogError(TodoLogger.DbJson, "TODO");
 		return true;
 	}
 

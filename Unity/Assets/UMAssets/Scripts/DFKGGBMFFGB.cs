@@ -61,18 +61,16 @@ public class DFKGGBMFFGB_PlayerInfo
 				{
 					for (int j = 0; j < LKMHPJKIFDN_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas.Count; j++)
 					{
-						if(LDEGEHAEALK_ServerSave.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(i + 1).PIGLAEFPNEK_MSlot == 0)
+						if(LDEGEHAEALK_ServerSave.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(j + 1).PIGLAEFPNEK_MSlot == 0)
 						{
-							LDEGEHAEALK_ServerSave.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(i + 1).PIGLAEFPNEK_MSlot = sId;
+							LDEGEHAEALK_ServerSave.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(j + 1).PIGLAEFPNEK_MSlot = sId;
 							if(!LDEGEHAEALK_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA[sId - 1].IHIAFIHAAPO_Unlocked)
 							{
 								LDEGEHAEALK_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA[sId - 1].BEBJKJKBOGH_Date = Utility.GetCurrentUnixTime();
-								sId++;
 							}
+							sId++;
 						}
-						// ?? L428
-						TodoLogger.LogError(0, "TODO ?? test");
-						if(i < 2 && j < 2)
+						if(i <= 2 && j <= 2)
 						{
 							if(LDEGEHAEALK_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA.Count > sId)
 							{
@@ -121,7 +119,7 @@ public class DFKGGBMFFGB_PlayerInfo
 			IKDICBBFBMI_EventBase evt = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9);
 			if (evt != null)
 			{
-				TodoLogger.LogError(0, "Finish for event");
+				TodoLogger.LogError(TodoLogger.EventGoDiva_14, "Finish for event");
 				//??
 				//if(MANPIONIGNO_EventGoDiva evt.PMHLJAIGBGK)
 			}

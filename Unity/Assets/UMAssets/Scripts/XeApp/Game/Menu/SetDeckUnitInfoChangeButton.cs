@@ -15,7 +15,7 @@ namespace XeApp.Game.Menu
 		public Action OnClickChangeButton; // 0x14
 
 		public InOutAnime InOut { get { return m_inOut; } } //0xC359C4
-		//public UGUIButton ChangeButton { get; } 0xC359CC
+		public UGUIButton ChangeButton { get { return m_changeButton; } } //0xC359CC
 
 		// RVA: 0xC359D4 Offset: 0xC359D4 VA: 0xC359D4
 		private void Awake()

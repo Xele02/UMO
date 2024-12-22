@@ -29,8 +29,8 @@ namespace XeApp.Game.Common
 		private bool m_useEffects; // 0x5C
 		private List<string> m_effectNameList = new List<string>(); // 0x60
 
-		//protected override bool usingEffectFactory { get; } 0x11144EC
-		//protected override bool usingQualitySetting { get; } 0x11144F4
+		protected override bool usingEffectFactory { get { return m_useEffects; } } //0x11144EC
+		protected override bool usingQualitySetting { get { return false; } } //0x11144F4
 
 		//// RVA: 0x11144FC Offset: 0x11144FC VA: 0x11144FC
 		public void AddUseEffectName(string effectName)
@@ -40,7 +40,11 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1114584 Offset: 0x1114584 VA: 0x1114584
-		//public void DisableEffect(string effectName) { }
+		public void DisableEffect(string effectName)
+		{
+			m_useEffects = false;
+			effectFactories.Disable(effectName);
+		}
 
 		// RVA: 0x11145C8 Offset: 0x11145C8 VA: 0x11145C8 Slot: 7
 		protected override void OnInitialize(ValkyrieResource resource)

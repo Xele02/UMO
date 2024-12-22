@@ -23,7 +23,7 @@ namespace XeApp.Game.Menu
 			if(a > -1 && sceneData.DKFCPBEOBHB_Layout.PDKGMFHIFML_Panels.Count > a)
 			{
 				NLNDLEEJOFD n = sceneData.DKFCPBEOBHB_Layout.PDKGMFHIFML_Panels[a];
-				for(int j = 0; j < n.GHPLINIACBB_Col; j++)
+				for(int j = 0; j < n.GHPLINIACBB_Col + 1; j++)
 				{
 					BoardSquare[] squares = new BoardSquare[5];
 					for (int i = 0; i < 5; i++)
@@ -69,9 +69,9 @@ namespace XeApp.Game.Menu
 				if(b && NHPDPKHMFEP.HHCJCDFCLOB.MENKMJPCELJ() != -2)
 				{
 					int idx = 0;
-					for(int i = 0; i < m_boardSquareList.Count; i++)
+					for(int i = m_boardSquareList.Count - 1; i >= 0; i--)
 					{
-						if (m_boardSquareList[i][2].type != SquareType.Panel)
+						if (m_boardSquareList[i][2].type == SquareType.Panel)
 						{
 							idx = i;
 							break;
@@ -164,7 +164,7 @@ namespace XeApp.Game.Menu
 					m_boardSquareList[i][j].isPossible = IsPossiblePanel(i + 1, j);
 				}
 			}
-			for (int i = 0; i < m_boardSquareList.Count - 1; i++)
+			for (int i = 0; i < m_boardSquareList.Count; i++)
 			{
 				for (int j = 0; j < m_boardSquareList[i].Length; j++)
 				{

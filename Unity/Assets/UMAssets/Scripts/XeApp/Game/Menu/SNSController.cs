@@ -145,6 +145,7 @@ namespace XeApp.Game.Menu
 		public IEnumerator SetupEntrance(Action exitCallback, Action<int> roomInCallback, bool isBackButtonEmpty, SNSTitleBar.eButtonType buttonType)
 		{
 			//0x1595F5C
+			UnityEngine.Debug.LogError(LayoutType);
 			if(LayoutType == eType.Entrance)
 			{
 				int divaId = GameManager.Instance.GetHomeDiva().AHHJLDLAPAN_DivaId;
@@ -157,6 +158,7 @@ namespace XeApp.Game.Menu
 				if(layoutScrollList != null)
 				{
 					yield return Co.R(layoutScrollList.SetStatusEntrance(m_viewDataSNS, roomInCallback));
+					UnityEngine.Debug.LogError("SetStatusEntrance ok");
 				}
 				if(layoutTitleBar != null)
 				{
@@ -1047,7 +1049,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB6A4E0 Offset: 0xB6A4E0 VA: 0xB6A4E0
 		private IEnumerator LoadLayoutInner(string bundleName, string assetName, Action<GameObject> callback)
 		{
-			Font font; // 0x24
+			XeSys.FontInfo font; // 0x24
 			AssetBundleLoadLayoutOperationBase operation; // 0x28
 
 			//0x1592A7C

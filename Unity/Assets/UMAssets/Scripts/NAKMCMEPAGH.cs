@@ -113,7 +113,11 @@ public class NAKMCMEPAGH
 	}
 
 	// // RVA: 0x17C0868 Offset: 0x17C0868 VA: 0x17C0868
-	// public void MAFAKCMFHEE() { }
+	public void MAFAKCMFHEE_AddSdv()
+	{
+		if(GACBDCLPOCD_Sdv < 99999999)
+			GACBDCLPOCD_Sdv++;
+	}
 
 	// // RVA: 0x17C0884 Offset: 0x17C0884 VA: 0x17C0884
 	public void MOOJGMJFOKK_AddVk()
@@ -158,7 +162,12 @@ public class NAKMCMEPAGH
 	// public void CIKKGHDIDPJ(int HMFFHLPNMPH) { }
 
 	// // RVA: 0x17C0940 Offset: 0x17C0940 VA: 0x17C0940
-	// public void FFMDFKBLECC(int HMFFHLPNMPH) { }
+	public void FFMDFKBLECC(int HMFFHLPNMPH)
+	{
+		MJBCBJDMODC_Valu += HMFFHLPNMPH;
+		if(MJBCBJDMODC_Valu > 99999999)
+			MJBCBJDMODC_Valu = 99999999;
+	}
 
 	// // RVA: 0x17C0960 Offset: 0x17C0960 VA: 0x17C0960
 	public void KNGCKBNFEGM_AddVOp(int FGHGMHPNEMG, int HMFFHLPNMPH)

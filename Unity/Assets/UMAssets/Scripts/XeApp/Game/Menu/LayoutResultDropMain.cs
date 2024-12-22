@@ -265,7 +265,27 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1D959BC Offset: 0x1D959BC VA: 0x1D959BC
 		private void StartNextEventRareItemAnim()
 		{
-			TodoLogger.LogError(0, "StartNextEventRareItemAnim");
+            LayoutResultDropItem item = itemList[currentItemIndex];
+            if (item.itemInfo != null && item.itemInfo.HHACNFODNEF_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			{
+				RecordPlateUtility.CheckPlateId(viewDrop.HBHMAKNGKFK[currentItemIndex]);
+			}
+			if(!AddItem() && viewDrop.HBHMAKNGKFK[currentItemIndex].BAKFIPIFDLE_IsEventRareItem)
+			{
+				item.onFinished = StartNextEventRareItemAnim;
+			}
+			else
+			{
+				item.onFinished = StartNextRareItemAnim;
+			}
+			if(currentItemIndex < 7)
+			{
+				item.StartBeginAnim();
+			}
+			else
+			{
+				this.StartCoroutineWatched(Co_AutoScrolling(1, nextItemMoveSec, item.StartBeginAnim));
+			}
 		}
 
 		// // RVA: 0x1D95D34 Offset: 0x1D95D34 VA: 0x1D95D34

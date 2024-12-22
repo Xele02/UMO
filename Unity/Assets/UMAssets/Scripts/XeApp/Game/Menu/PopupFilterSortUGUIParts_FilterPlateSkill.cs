@@ -151,6 +151,7 @@ namespace XeApp.Game.Menu
 				{
 					m_RangeBtn[i].Hidden = true;
 				}
+				transform.Find("Caption/PopupFilterSortUGUIParts_Title02/Title/Text_Title").GetComponent<Text>().text = MessageManager.Instance.GetMessage("menu", "pop_score_detail_item_name_04");
 			}
 			else if(skillType == 1)
 			{
@@ -180,6 +181,7 @@ namespace XeApp.Game.Menu
 				{
 					m_RangeBtn[i].Hidden = true;
 				}
+				transform.Find("Caption/PopupFilterSortUGUIParts_Title02/Title/Text_Title").GetComponent<Text>().text = MessageManager.Instance.GetMessage("menu", "popup_sort_item_active_skill");
 			}
 			else if(skillType == 0)
 			{
@@ -201,15 +203,28 @@ namespace XeApp.Game.Menu
 				{
 					m_SkillBtn[i].Hidden = true;
 				}
-				for(i = 0; i < m_RangeBtn.Length; i++)
+				for(i = 2; i < m_RangeBtn.Length; i++)
 				{
 					m_RangeBtn[i].Hidden = true;
 				}
+				m_RangeBtn[0].transform.Find("All/Top/Text_Name").GetComponent<Text>().text = MessageManager.Instance.GetMessage("menu", "popup_sort_filter_range_long");
+				m_RangeBtn[1].transform.Find("All/Top/Text_Name").GetComponent<Text>().text = MessageManager.Instance.GetMessage("menu", "popup_sort_filter_range_short");
+				transform.Find("Caption/PopupFilterSortUGUIParts_Title02/Title/Text_Title").GetComponent<Text>().text = MessageManager.Instance.GetMessage("menu", "popup_sort_item_live_skill");
+				transform.Find("PopupFilterSortUGUIParts_Title02/Title/Text_Title").GetComponent<Text>().text = JpStringLiterals.UMO_SkillFilterLongNote;
 			}
+			transform.Find("Caption/PopupFilterSortUGUIParts_Title02/Title/SetupIcon/Text_Setup").GetComponent<Text>().text = JpStringLiterals.UMO_SkillFilterActive;
+			transform.Find("PopupFilterSortUGUIParts_Title02 (1)/Title/Text_Title").GetComponent<Text>().text = JpStringLiterals.UMO_SkillFilterRank;
+			m_releaseBtn.transform.Find("All/Top/Text_Name").GetComponent<Text>().text = JpStringLiterals.UMO_SkillFilterDisableAll;
+			m_RankBtn[0].transform.Find("All/Top/Text_Name").GetComponent<Text>().text = JpStringLiterals.UMO_SkillFilterBRank;
+			m_RankBtn[1].transform.Find("All/Top/Text_Name").GetComponent<Text>().text = JpStringLiterals.UMO_SkillFilterARank;
+			m_RankBtn[2].transform.Find("All/Top/Text_Name").GetComponent<Text>().text = JpStringLiterals.UMO_SkillFilterSRank;
+			m_RankBtn[3].transform.Find("All/Top/Text_Name").GetComponent<Text>().text = JpStringLiterals.UMO_SkillFilterSSRank;
+			transform.Find("PopupFilterSortUGUIParts_Title02 (2)/Title/Text_Title").GetComponent<Text>().text = MessageManager.Instance.GetMessage("menu", "popup_sort_item_skill");
 			yield return null;
 			m_rect = gameObject.GetComponent<RectTransform>();
-			m_inOutAnime.SetMoveAmount((int)(m_rect.transform.GetChild(m_rect.transform.childCount - 1).GetComponent<RectTransform>().sizeDelta.y + Mathf.Abs(m_rect.transform.GetComponent<RectTransform>().anchoredPosition.y) - m_rect.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.y));
+			m_inOutAnime.SetMoveAmount((int)(m_rect.transform.GetChild(m_rect.transform.childCount - 1).GetComponent<RectTransform>().sizeDelta.y + Mathf.Abs(m_rect.transform.GetChild(m_rect.transform.childCount - 1).GetComponent<RectTransform>().anchoredPosition.y) - m_rect.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.y));
 			m_rect.sizeDelta = new Vector2(m_rect.sizeDelta.x, m_rect.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.y);
+			SetupStateFilter();
 		}
 
 		// // RVA: 0x1C9BB6C Offset: 0x1C9BB6C VA: 0x1C9BB6C
@@ -429,6 +444,7 @@ namespace XeApp.Game.Menu
 			{
 				m_SkillBtn[i].SetOff();
 			}
+			SetupIcon();
 		}
 
 		// // RVA: 0x1CA6034 Offset: 0x1CA6034 VA: 0x1CA6034

@@ -44,7 +44,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_LayoutAssetLoad()
 		{
 			string bundleName; // 0x14
-			Font systemFont; // 0x18
+			XeSys.FontInfo systemFont; // 0x18
 
 			//0x158E4A8
 			m_decorator = GetComponent<DecoCustomDecorator>();
@@ -74,7 +74,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D3DF4 Offset: 0x6D3DF4 VA: 0x6D3DF4
 		//// RVA: 0x1588210 Offset: 0x1588210 VA: 0x1588210
-		private IEnumerator Co_LoadAssetCustomStampWindow(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetCustomStampWindow(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -100,7 +100,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D3E6C Offset: 0x6D3E6C VA: 0x6D3E6C
 		//// RVA: 0x15882F0 Offset: 0x15882F0 VA: 0x15882F0
-		private IEnumerator Co_LoadAssetCustomViewStamp(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetCustomViewStamp(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -756,7 +756,7 @@ namespace XeApp.Game.Menu
 			AODFBGCCBPE a = l.Find((AODFBGCCBPE item) =>
 			{
 				//0x158C3E0
-				return item.INDDJNMPONH == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5;
+				return item.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5;
 			});
 			if(a == null)
 			{

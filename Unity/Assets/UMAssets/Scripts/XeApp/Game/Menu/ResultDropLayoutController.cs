@@ -126,7 +126,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xD01A58 Offset: 0xD01A58 VA: 0xD01A58
-		// public void DisableFriendRequestButton() { }
+		public void DisableFriendRequestButton()
+		{
+			if(!isEnableFriendInfo)
+				return;
+			layoutFriendInfo.DisableFriendRequestButton();
+		}
 
 		// // RVA: 0xD01A90 Offset: 0xD01A90 VA: 0xD01A90
 		private void OnFinishedDropAnim()
@@ -228,7 +233,7 @@ namespace XeApp.Game.Menu
 			lobbyController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/) as NKOBMDPHNGP_EventRaidLobby;
 			if(lobbyController == null)
 				yield break;
-			TodoLogger.LogError(0, "ShowFoldRadarAnim Event");
+			TodoLogger.LogError(TodoLogger.EventRaid_11_13, "ShowFoldRadarAnim Event");
 		}
 
 		// // RVA: 0xD01EA4 Offset: 0xD01EA4 VA: 0xD01EA4
@@ -242,7 +247,9 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xD01F14 Offset: 0xD01F14 VA: 0xD01F14
 		private void OnClickSendFriendRequest()
 		{
-			TodoLogger.LogNotImplemented("OnClickSendFriendRequest");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
+			if(onClickSendFriendRequest != null)
+				onClickSendFriendRequest();
 		}
 
 		// // RVA: 0xD01F84 Offset: 0xD01F84 VA: 0xD01F84

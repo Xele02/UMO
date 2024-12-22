@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Security.Policy;
 using Sakasho.JSON;
 using SakashoSystemCallback;
 
@@ -86,7 +87,15 @@ public class SakashoSupportSite : SakashoAPIBase
 	// public static SakashoAPICallContext GetLocaleAndTimeZone(OnSuccess onSuccess, OnError onError) { }
 
 	// // RVA: 0x2E69D88 Offset: 0x2E69D88 VA: 0x2E69D88
-	// public static SakashoAPICallContext GetInformationDetailURL(string keyName, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext GetInformationDetailURL(string keyName, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		if(keyName != null)
+		{
+			h["keyName"] = keyName;
+		}
+		return new SakashoAPICallContext(Call(SakashoSupportSiteGetInformationDetailURL, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	// // RVA: 0x2E69F00 Offset: 0x2E69F00 VA: 0x2E69F00
 	// public static SakashoAPICallContext GetInformationTopURL(OnSuccess onSuccess, OnError onError) { }
@@ -168,7 +177,10 @@ public class SakashoSupportSite : SakashoAPIBase
 	// private static extern int SakashoSupportSiteGetLocaleAndTimeZone(int callbackId, string json) { }
 
 	// // RVA: 0x2E6AFC8 Offset: 0x2E6AFC8 VA: 0x2E6AFC8
-	// private static extern int SakashoSupportSiteGetInformationDetailURL(int callbackId, string json) { }
+	private static int SakashoSupportSiteGetInformationDetailURL(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoSupportSiteGetInformationDetailURL(callbackId, json);
+	}
 
 	// // RVA: 0x2E6B0E0 Offset: 0x2E6B0E0 VA: 0x2E6B0E0
 	// private static extern int SakashoSupportSiteGetInformationTopURL(int callbackId, string json) { }

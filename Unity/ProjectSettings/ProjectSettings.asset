@@ -119,7 +119,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.11
+  bundleVersion: 1.0.17
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -654,7 +654,7 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   scriptingDefineSymbols:
-    1: DESKTOP;DEBUG_ANDROID_FILE_SYSTEM
+    1: DESKTOP;DEBUG_AN_DROID_FILESYSTEM
   platformArchitecture: {}
   scriptingBackend:
     Android: 1
@@ -665,6 +665,7 @@ PlayerSettings:
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1
   apiCompatibilityLevelPerPlatform:
+    Android: 3
     Standalone: 3
   m_RenderingPath: 1
   m_MobileRenderingPath: 1

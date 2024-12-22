@@ -41,8 +41,9 @@ namespace XeApp.Game.Common
 			Released = 30,
 			SimpleAutoSet = 31,
 			NormalAutoSet = 32,
-			Max = 33,
-			None = 34,
+			UMO_Language = 33,
+			Max = 34,
+			None = 35,
 		}
 
 		private const string uvBaseBlueUvName = "cmn_pop01_fnt_02_b";

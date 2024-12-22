@@ -47,13 +47,13 @@ public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_ServerSaveBlock
 	public override bool DMICHEJIAJL { get { return true; } } // 0x175742C NFKFOODCJJB
 
 	// // RVA: 0x17550EC Offset: 0x17550EC VA: 0x17550EC
-	public void GFANLIOMMNA(int BPNKGDGBBFG)
+	public void GFANLIOMMNA_SetViewed(int BPNKGDGBBFG)
 	{
 		JBBHBNAJMJB[BPNKGDGBBFG - 1].BEBJKJKBOGH_Date = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 	}
 
 	// // RVA: 0x175523C Offset: 0x175523C VA: 0x175523C
-	public bool FABEJIHKFGN(int MDLFDNOJAJN)
+	public bool FABEJIHKFGN_IsViewed(int MDLFDNOJAJN)
 	{
 		return JBBHBNAJMJB[MDLFDNOJAJN - 1].BEBJKJKBOGH_Date != 0;
 	}
@@ -123,7 +123,7 @@ public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_ServerSaveBlock
 			else
 			{
 				GPMHOAKFALE_Adventure advDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure;
-				for(int i = 0; i < advDb.CDENCMNHNGA.Count; i++)
+				for(int i = 0; i < advDb.CDENCMNHNGA_List.Count; i++)
 				{
 					string str = POFDDFCGEGP + (i + 1).ToString();
 					if(block.BBAJPINMOEP_Contains(str))
@@ -167,8 +167,5 @@ public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x17563E8 Offset: 0x17563E8 VA: 0x17563E8 Slot: 10
-	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
-	{
-		TodoLogger.LogError(0, "AGHKODFKOJI");
-	}
+	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH);
 }

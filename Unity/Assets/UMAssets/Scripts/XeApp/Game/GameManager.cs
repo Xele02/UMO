@@ -424,7 +424,7 @@ namespace XeApp.Game
 		// // RVA: 0x99B0D4 Offset: 0x99B0D4 VA: 0x99B0D4
 		private void OnFontTextureRebuilt(Font font)
 		{
-			if(font.name == GetSystemFont().name)
+			if(font.name == GetSystemFont().font.name)
 				isDirtyFontUpdate = true;
 		}
 
@@ -1206,7 +1206,10 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x9A0808 Offset: 0x9A0808 VA: 0x9A0808
-		// public static void FadeReset() { }
+		public static void FadeReset()
+		{
+			GameManager.Instance.fullscreenFader.Fade(0, Color.clear);
+		}
 
 		// // RVA: 0x9A08E0 Offset: 0x9A08E0 VA: 0x9A08E0
 		public void ShowSnsNotice(int snsId, UnityAction pushAction, bool isButtonEnable = true)
@@ -1307,9 +1310,30 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x99B14C Offset: 0x99B14C VA: 0x99B14C
-		public Font GetSystemFont()
+		public FontInfo GetSystemFont(bool def = false)
 		{
-			return font.GetFontInfo(3).font;
+			if(!def && RuntimeSettings.CurrentSettings.Language == "zh_Hans" && RuntimeSettings.CurrentSettings.UseChineseFont)
+				return font.GetFontInfo(4);
+			else
+				return font.GetFontInfo(3);
+		}
+
+		public float GetFontLineSpace(float lineSpace)
+		{
+			return GetSystemFont().GetLineSpace(lineSpace);
+		}
+
+		public FontInfo GetFontInfo(Font font)
+		{
+			FontInfo def = GetSystemFont(true);
+			if(def.font == font)
+			{
+				return GetSystemFont();
+			}
+			def = new FontInfo();
+			def.font = font;
+			def.size = 1;
+			return def;
 		}
 
 		// // RVA: 0x9A0D4C Offset: 0x9A0D4C VA: 0x9A0D4C
@@ -1543,7 +1567,90 @@ namespace XeApp.Game
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ADEA0 Offset: 0x6ADEA0 VA: 0x6ADEA0
 		// // RVA: 0x9A1500 Offset: 0x9A1500 VA: 0x9A1500
-		// public IEnumerator ListupRhythmGameResourceFileList(int divaId, int divaModelId, int valkyrieId, int valkyrieFormType, int freeMusicId, int storyMusicId, Difficulty.Type difficulty, List<string> list, int stageDivaNum) { }
+		public IEnumerator ListupRhythmGameResourceFileList(int divaId, int divaModelId, int valkyrieId, int valkyrieFormType, int freeMusicId, int storyMusicId, Difficulty.Type difficulty, List<string> list, int stageDivaNum)
+		{
+			OKGLGHCBCJP_Database master; // 0x34
+			bool isFreeMode; // 0x38
+			MHDFCLCMDKO_Enemy.CJLENGHPIDH_EnemyInfo enemyInfo; // 0x3C
+			EONOEHOKBEB_Music musicBase; // 0x40
+			int wavId; // 0x44
+			StringBuilder bundleName; // 0x48
+			StringBuilder assetName; // 0x4C
+			AssetBundleLoadAssetOperation operation; // 0x50
+			MusicDirectionParamBase directionParam; // 0x54
+
+			//0x1425060
+			master = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
+			enemyInfo = null;
+			isFreeMode = freeMusicId > 0;
+			if(freeMusicId < 1)
+			{
+				if(storyMusicId > 0)
+				{
+					DJNPIGEFPMF_StoryMusicInfo mData = master.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(storyMusicId);
+					enemyInfo = master.OPFBEAJJMJB_Enemy.INONDJKKOKG(mData.LHICAKGHIGF[(int)difficulty]);
+					musicBase = master.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(mData.DLAEJOBELBH_Id);
+				}
+				musicBase = master.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(0);
+			}
+			else
+			{
+				KEODKEGFDLD_FreeMusicInfo fData = master.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(freeMusicId);
+				enemyInfo = master.OPFBEAJJMJB_Enemy.INONDJKKOKG(fData.LHICAKGHIGF[(int)difficulty]);
+				musicBase = master.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(fData.DLAEJOBELBH_MusicId);
+			}
+			wavId = musicBase.KKPAHLMJKIH_WavId;
+			bundleName = new StringBuilder();
+			assetName = new StringBuilder();
+			bundleName.SetFormat("mc/{0}/sc.xab", Instance.GetWavDirectoryName(wavId, "mc/{0}/sc.xab", stageDivaNum, 1, -1, true));
+			assetName.SetFormat("p_{0:D4}", wavId);
+			operation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(MusicDirectionParamBase));
+			yield return operation;
+			directionParam = operation.GetAsset<MusicDirectionParamBase>();
+			assetName.SetFormat("bp_{0:D4}", wavId);
+			operation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(MusicDirectionBoolParam));
+			yield return operation;
+			directionParam.BoolParam = operation.GetAsset<MusicDirectionBoolParam>();
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+			int bodyDiva = master.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(divaId).IDDHKOEFJFB_BodyId;
+			int a;
+			if (!isFreeMode)
+			{
+				a = master.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(storyMusicId).KEFGPJBKAOD_WavId;
+			}
+			else
+			{
+				a = master.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(freeMusicId).KEFGPJBKAOD_WavId;
+			}
+			PNGOLKLFFLH p = new PNGOLKLFFLH();
+			p.KHEKNNFCAOI_Init(valkyrieId, valkyrieFormType, 0);
+			int pilotId = p.OPBPKNHIPPE_Pilot.PFGJJLGLPAC_PilotId;
+			int videoQuality = 0;
+			if (Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.PMGMMMGCEEI_Video == 0)
+			{
+				videoQuality = Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.CBLEFELBNDN_GetVideoQuality();
+			}
+			List<MusicDirectionParamBase.ConditionSetting> setting = new List<MusicDirectionParamBase.ConditionSetting>();
+			for(int i = 0; i < stageDivaNum; i++)
+			{
+				MusicDirectionParamBase.ConditionSetting cond = new MusicDirectionParamBase.ConditionSetting(0, 0, 0, 0, 0);
+				cond.divaId = divaId;
+				cond.pilotId = pilotId;
+				cond.costumeModelId = divaModelId;
+				cond.valkyrieId = valkyrieId;
+				cond.positionId = i + 1;
+				setting.Add(cond);
+			}
+			List<int>[] l = directionParam.GetSpecialDirectionResourceId(setting);
+			list.Add(string.Format("ct/pl/{0:D3}.xab", pilotId));
+			list.Add(string.Format("vl/{0:D4}.xab", valkyrieId));
+			list.Add(string.Format("ct/em/pl/{0:D3}.xab", enemyInfo.EELBHDJJJHH_Plt));
+			list.Add(string.Format("ct/em/mh/{0:D3}.xab", enemyInfo.EAHPLCJMPHD_Pic));
+			list.Add(string.Format("dv/cs/{0:D3}_{1:D3}.xab", divaId, divaModelId));
+			list.Add(string.Format("dv/bs/{0:D3}_{1:D3}.xab", divaId, divaModelId));
+			list.Add(string.Format("ct/dv/ps/{0:D2}_{1:D2}.xab", divaId, divaModelId));
+			KDLPEDBKMID.HHCJCDFCLOB.IDCJNAFJLAA(wavId, bodyDiva, a, l[1], l[2], l[4], l[0], l[3], l[8], videoQuality, l[9], list, stageDivaNum);
+		}
 
 		// // RVA: 0x9A165C Offset: 0x9A165C VA: 0x9A165C
 		public string GetWavDirectoryName(int wavId, string format, int stageDivaNum, int primeId = 1, int assetId = -1, bool isNoFindSoloChange = true)

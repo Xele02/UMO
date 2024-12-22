@@ -89,6 +89,12 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAF46F8 Offset: 0xAF46F8 VA: 0xAF46F8 Slot: 8
-		// public virtual void SetDigitLength(int length, bool isForce = False) { }
+		public virtual void SetDigitLength(int length, bool isForce = false)
+		{
+			if(!isForce && m_digitMax < length)
+				return;
+			if(m_digit_layout != null)
+				m_digit_layout.StartSiblingAnimGoStop(length, length);
+		}
 	}
 }

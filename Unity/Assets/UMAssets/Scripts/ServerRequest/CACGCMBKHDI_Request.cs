@@ -1,6 +1,7 @@
 using XeApp.Core.WorkerThread;
 using UnityEngine;
 using System.Collections;
+using XeApp.Game;
 
 public delegate bool MMACCEADALH(SakashoErrorId PPFNGGCBJKC_Id);
 
@@ -35,7 +36,7 @@ public abstract class CACGCMBKHDI_Request
     public HDHIKGLMOGF BHFHGFKBOHH_OnSuccess { get; set; } // 0x1C FJNKDKOKOMD MEOFOFHFBFD FAKPBHKKNOK
     public HDHIKGLMOGF MOBEEPPKFLG_OnFail { get; set; } // 0x20 HELECPOBDIL LLHGEKKIFIJ AHNDFJKKLDJ
     public WorkerThreadQueue BNJPAKLNOPA_WorkerThreadQueue { get; set; } // 0x24 EGCCKJEDANG IMDNDFIKMHN ODBGIMFJOHN
-    public SakashoError ANMFDAGDMDE { get; set; } // 0x2C GHCMEMELCJF ILGAFKNEAJI DPCCCKAKHDB
+    public SakashoError ANMFDAGDMDE_Error { get; set; } // 0x2C GHCMEMELCJF ILGAFKNEAJI DPCCCKAKHDB
     public SakashoErrorId CJMFJOMECKI_ErrorId { get; set; } // 0x30 BCCAMPBOJHK LBJPGPOJOKP GPEILELFPCD
     public bool NPNNPNAIONN_IsError { get; set; } // 0x34 GMEODAHJILH IAGEPLEBOKJ DDHAFEDMPEH
     public bool JONHGMCILHM { get; set; } // 0x35 CEMOPAGHPJM JPIBKPPPIDG BMAPGPMEFKC
@@ -66,20 +67,24 @@ public abstract class CACGCMBKHDI_Request
     // // RVA: 0x18F240C Offset: 0x18F240C VA: 0x18F240C
     public void BOPHNJFGJBN()
     {
-        TodoLogger.LogError(0, "TODO");
+        if(!ALJHFFCKBDP)
+            return;
+        GameManager.Instance.InputEnabled = true;
     }
 
     // // RVA: 0x18F24BC Offset: 0x18F24BC VA: 0x18F24BC
     public void EHLFONGENNK()
     {
-        TodoLogger.LogError(0, "TODO");
+        if(!ALJHFFCKBDP)
+            return;
+        GameManager.Instance.InputEnabled = false;
     }
 
     // // RVA: 0x18F25A4 Offset: 0x18F25A4 VA: 0x18F25A4
     public void OGPFKGAKOFD()
     {
         EFGFPCBGDDK = false;
-        ANMFDAGDMDE = null;
+        ANMFDAGDMDE_Error = null;
         NGCAIEGPLKD_result = null;
         HOHOBEOJPBK_ServerInfo = null;
         HIBMKLEJEDP = null;
@@ -100,27 +105,40 @@ public abstract class CACGCMBKHDI_Request
     // // RVA: 0x18F2738 Offset: 0x18F2738 VA: 0x18F2738 Slot: 12
     public virtual void DHLDNIEELHO()
     {
-        TodoLogger.LogError(0, "TODO");
+        return;
     }
 
     // // RVA: 0x18F273C Offset: 0x18F273C VA: 0x18F273C
     public void MEOCKCJBDAD(SakashoError DOGDHKIEBJA)
     {
 		EFGFPCBGDDK = true;
-		ANMFDAGDMDE = DOGDHKIEBJA;
+		ANMFDAGDMDE_Error = DOGDHKIEBJA;
 		if(DOGDHKIEBJA.ErrorDetailJSON != null)
 		{
 			if(DOGDHKIEBJA.getErrorId() == SakashoErrorId.OLDER_REQUIREMENT_CLIENT_VERSION)
 			{
-				TodoLogger.LogError(0, "Error OLDER_REQUIREMENT_CLIENT_VERSION");
+				EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(DOGDHKIEBJA.ErrorDetailJSON);
+                if(!data.BBAJPINMOEP_Contains("extra"))
+                {
+                    GEKKKPIIOAF = null;
+                    return;
+                }
+                GEKKKPIIOAF = (string)data["extra"];
 			}
 			else if(DOGDHKIEBJA.getErrorId() == SakashoErrorId.SIGN_IN_WITH_APPLE_UNAVAILABLE)
 			{
-				TodoLogger.LogError(0, "Error SIGN_IN_WITH_APPLE_UNAVAILABLE");
+				EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(DOGDHKIEBJA.ErrorDetailJSON);
+                if(!data.BBAJPINMOEP_Contains("message"))
+                {
+                    return;
+                }
+                JNDJDDBAIAJ = (string)data["message"];
 			}
 			else if (DOGDHKIEBJA.getErrorId() == SakashoErrorId.APPLICATION_UNDER_MAINTENANCE)
 			{
-				TodoLogger.LogError(0, "Error APPLICATION_UNDER_MAINTENANCE");
+				EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(DOGDHKIEBJA.ErrorDetailJSON);
+                HIBMKLEJEDP = new IDNNDIHDLGA();
+                HIBMKLEJEDP.KLMPFGOCBHC = CEDHHAGBIBA.KJFAGPBALNO((string)data["description"]);
 			}
 		}
 	}

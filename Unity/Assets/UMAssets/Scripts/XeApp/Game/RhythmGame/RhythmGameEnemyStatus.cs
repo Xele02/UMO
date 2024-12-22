@@ -186,7 +186,11 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDC4E28 Offset: 0xDC4E28 VA: 0xDC4E28
-		//public void ForceDefeat() { }
+		public void ForceDefeat()
+		{
+			if(currentValue < subgoalValue)
+				currentValue = subgoalValue;
+		}
 
 		//// RVA: 0xDC4E3C Offset: 0xDC4E3C VA: 0xDC4E3C
 		public bool CalcPossiblityNextMode()

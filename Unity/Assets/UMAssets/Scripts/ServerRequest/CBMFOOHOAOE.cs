@@ -10,7 +10,7 @@ public class CBMFOOHOAOE_Purchase : CACGCMBKHDI_Request
 	public int APHNELOFGAK_CurrencyId = 2; // 0x84
 	public int LGEKLPJFJEI_TotalCurrency; // 0x88
 	public int ICKAMKNDAEB_Label; // 0x8C
-	public int LHMIIJEALCA; // 0x90
+	public int LHMIIJEALCA_Type; // 0x90
 	public bool JJHCNJKPAOK; // 0x94
 
 	public BEAOCBFAHKF NFEAMMJIMPG { get; set; } // 0x98 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA

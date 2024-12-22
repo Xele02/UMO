@@ -71,7 +71,7 @@ namespace XeApp.Game.Common
 			}
 			moviePlayer = movieController;
 			movieController.target = m_movieRenderer;
-			#if UNITY_EDITOR_LINUX
+			#if UNITY_EDITOR_LINUX || UNITY_EDITOR_OSX
 			moviePlayer.material.mainTextureScale = new Vector2(1, -1);
 			moviePlayer.material.mainTextureOffset = new Vector2(0, 1);
 			#else

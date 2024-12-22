@@ -146,7 +146,7 @@ namespace XeApp.Game.Menu
 
 			//0x1999930
 			assetBundleName = "ly/155.xab";
-			Font font = GameManager.Instance.GetSystemFont();
+			XeSys.FontInfo font = GameManager.Instance.GetSystemFont();
 			op = AssetBundleManager.LoadAssetAsync(assetBundleName, "SelectScrollView", typeof(GameObject));
 			yield return op;
 			GameObject g = Instantiate(op.GetAsset<GameObject>());
@@ -199,7 +199,7 @@ namespace XeApp.Game.Menu
 					Text[] txts = g1.GetComponentsInChildren<Text>(true);
 					for(int k = 0; k < txts.Length; k++)
 					{
-						txts[k].font = font;
+						font.Apply(txts[k]);
 					}
 					m_scrollList.AddScrollObject(g1.GetComponent<LayoutGachaBannerItem>());
 				}

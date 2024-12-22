@@ -76,9 +76,9 @@ namespace XeApp.Game.Menu
 		private int GetUseItemCount(MNDAMOGGJBJ itemData)
 		{
 			int res = 0;
-			for(int i = 0; i < itemData.INLBMFMOHCI.Count; i++)
+			for(int i = 0; i < itemData.INLBMFMOHCI_CostItems.Count; i++)
 			{
-				if (itemData.INLBMFMOHCI[i].HMFFHLPNMPH > 0)
+				if (itemData.INLBMFMOHCI_CostItems[i].HMFFHLPNMPH_Cnt > 0)
 					res++;
 			}
 			return res;

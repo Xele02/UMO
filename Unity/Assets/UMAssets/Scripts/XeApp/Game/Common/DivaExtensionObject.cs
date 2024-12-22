@@ -137,7 +137,7 @@ namespace XeApp.Game.Common
 			{
 				if(renderers[i] != null)
 				{
-					if(renderers[i].material.HasProperty("_Color") && renderers[i].material.HasProperty("_RimColor") &&
+					if(renderers[i].material.HasProperty("_Color") || renderers[i].material.HasProperty("_RimColor") ||
 						renderers[i].material.HasProperty("_RimLightPower"))
 					{
 						materials.Add(renderers[i].material);
@@ -166,7 +166,7 @@ namespace XeApp.Game.Common
 				main.a = defaultMainColor.a;
 				Color rim = Color.Lerp(defaultRimColor, rimColor, rimColor.a);
 				rim.a = defaultRimColor.a;
-				ChangeColor(main, rim, Mathf.Lerp(defaultRimPower, rimPower, rimColor.a));
+				ChangeColor(main, rim, Mathf.Lerp(defaultRimPower, rimColor.r, rimPower));
 			}
 		}
 

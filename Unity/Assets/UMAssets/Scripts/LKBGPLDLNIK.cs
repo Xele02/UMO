@@ -15,20 +15,20 @@ public class LKBGPLDLNIK
 		DateTime date = Utility.GetLocalDateTime(EMJFLGOJKHE);
 		long t = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0);
 		List<sbyte> gachaHour = GDEKCOOBLMA.NGHKJOEDLIP.FPBEBCIPEPI_GachaHour;
-		bool hadBefore = false;
-		for(int i = -1; i < 1; i++)
+		bool wasAfter = false;
+		for(int i = -1; i <= 1; i++)
 		{
 			for (int j = 0; j < gachaHour.Count; j++)
 			{
 				int delta = (i * 24 + gachaHour[j]) * 3600;
-				bool isBefore = EMJFLGOJKHE >= (t + delta);
-				bool b2 = isBefore;
-				if (!isBefore)
+				bool isAfter = EMJFLGOJKHE >= (t + delta);
+				bool b2 = isAfter;
+				if (!isAfter)
 				{
-					b2 = !hadBefore;
+					b2 = !wasAfter;
 				}
-				hadBefore |= isBefore;
-				if (!isBefore && !b2)
+				wasAfter |= isAfter;
+				if (!isAfter && !b2)
 					return t + delta;
 			}
 		}

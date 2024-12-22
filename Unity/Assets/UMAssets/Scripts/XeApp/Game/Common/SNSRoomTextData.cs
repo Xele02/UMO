@@ -34,6 +34,8 @@ namespace XeApp.Game.Common
 		private List<TalkData> talkDataList; // 0x10
 		private List<string> messageList; // 0x14
 
+		public int MessageCount { get { return messageList.Count; } }
+
 		//// RVA: 0x138B510 Offset: 0x138B510 VA: 0x138B510
 		public Header FindHeader(int talkId)
 		{
@@ -122,7 +124,7 @@ namespace XeApp.Game.Common
 				{
 					int strOff = BitConverter.ToInt32(dataBytes, off);
 					int strSize = BitConverter.ToInt32(dataBytes, off + 4);
-					messageList.Add(Encoding.UTF8.GetString(dataBytes, strBaseOff + strOff, strSize));
+					messageList.Add(DatabaseTextConverter.TranslateRoomText(i, Encoding.UTF8.GetString(dataBytes, strBaseOff + strOff, strSize)));
 					off += 8;
 				}
 				return true;

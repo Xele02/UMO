@@ -20,7 +20,24 @@ public class MBMENEIFOJC_TwitterLinkage : AILHMHMOKKA_BaseLinkage
 		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
 		{
 			//0x130B210
-			TodoLogger.LogError(0, "MOBEEPPKFLG_OnFail");
+			if(!JIPCHHHLOMM.PDAPLCPOCMA)
+			{
+				if(DGLAMLJFEDB_CheckError(JIPCHHHLOMM.CJMFJOMECKI_ErrorId))
+				{
+					FFGPDGJNCOO = true;
+				}
+				else
+				{
+					if(!HGOKJBPIDJB(JIPCHHHLOMM))
+					{
+						AOCANKOMKFG();
+						return;
+					}
+				}
+				NIMPEHIECJH();
+				return;
+			}
+			AOCANKOMKFG();
 		};
 	}
 

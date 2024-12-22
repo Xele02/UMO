@@ -6,6 +6,7 @@ using XeApp.Game.Common;
 using SecureLib;
 using System;
 using XeSys;
+using System.Text;
 
 public class IMMAOANGPNK
 {
@@ -104,6 +105,8 @@ public class IMMAOANGPNK
 			yield break;
 		}
 
+		yield return Co.R(DatabaseTextConverter.LoadAdditionalLanguageBank());
+
 		string str = BBGDKLLEPIB.OGCDNCDMLCA_MxDir; // mx install dir
 		if(!string.IsNullOrEmpty(str))
 		{
@@ -171,11 +174,15 @@ public class IMMAOANGPNK
 				if(MessageLoader.Instance != null)
 				{
 					MessageLoader.Instance.Request(GBEGLNMFLIE, MessageLoader.eSheet.common, 0);
+					yield return MessageLoader.Instance.WaitForDone(N.a);
 					MessageLoader.Instance.Request(GBEGLNMFLIE, MessageLoader.eSheet.menu, 0);
+					yield return MessageLoader.Instance.WaitForDone(N.a);
 					MessageLoader.Instance.Request(GBEGLNMFLIE, MessageLoader.eSheet.master, 0);
+					yield return MessageLoader.Instance.WaitForDone(N.a);
 					for(int i = 4; i < 14; i++)
 					{
 						MessageLoader.Instance.Request(GBEGLNMFLIE, (MessageLoader.eSheet)i, 0);
+						yield return MessageLoader.Instance.WaitForDone(N.a);
 					}
 					Database.Instance.musicText.LoadFromTAR(GBEGLNMFLIE);
 					Database.Instance.roomText.LoadFromBinaryTAR(GBEGLNMFLIE);
@@ -375,11 +382,11 @@ public class IMMAOANGPNK
 		NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.CEEAFKHANJB(NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP.KHGJIGNHAGD, NKEBMCIMJND_Database.GDEKCOOBLMA_System.NGHKJOEDLIP.JOIEHMBKJHI_RetryWaitMs);
 		//L54
 		NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.BLFILNOBHMM = 0 < NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("action_revert_show_error", 0);
-		if(!NKEBMCIMJND_Database.GDEKCOOBLMA_System.OHJFBLFELNK.ContainsKey(AFEHLCGHAEE_Strings.JJHDDBLNOHA_delay_install_autowait/*delay_install_autowait*/))
+		if(!NKEBMCIMJND_Database.GDEKCOOBLMA_System.OHJFBLFELNK_CryptedIntValues.ContainsKey(AFEHLCGHAEE_Strings.JJHDDBLNOHA_delay_install_autowait/*delay_install_autowait*/))
 		{
 			return;
 		}
-		KDLPEDBKMID.HHCJCDFCLOB.OIKLOJMPBGA_SetInstallAutoWait(NKEBMCIMJND_Database.GDEKCOOBLMA_System.OHJFBLFELNK[AFEHLCGHAEE_Strings.JJHDDBLNOHA_delay_install_autowait/*delay_install_autowait*/].DNJEJEANJGL_Value);
+		KDLPEDBKMID.HHCJCDFCLOB.OIKLOJMPBGA_SetInstallAutoWait(NKEBMCIMJND_Database.GDEKCOOBLMA_System.OHJFBLFELNK_CryptedIntValues[AFEHLCGHAEE_Strings.JJHDDBLNOHA_delay_install_autowait/*delay_install_autowait*/].DNJEJEANJGL_Value);
 	}
 
 	// // RVA: 0x9FC460 Offset: 0x9FC460 VA: 0x9FC460
@@ -406,11 +413,11 @@ public class IMMAOANGPNK
 		});
 		if(item != null)
 		{
+			UMOEventList.EventData currentEvent = UMOEventList.GetCurrentEvent();
 			if(item.OPFGFINHFCE_Name.Contains(".bytes"))
 			{
 				IOBIKMEGCAL data = IOBIKMEGCAL.HEGEKFMJNCC(item.DBBGALAPFGC_Data);
 				DMABOGLGILJ[] schedule_item = data.IHMCKPOIBDA;
-				UMOEventList.EventData currentEvent = UMOEventList.GetCurrentEvent();
 				for (int i = 0; i < schedule_item.Length; i++)
 				{
 					GDIPLANPCEI info = new GDIPLANPCEI();
@@ -433,11 +440,28 @@ public class IMMAOANGPNK
 			}
 			else if(item.OPFGFINHFCE_Name.Contains(".json"))
 			{
-				TodoLogger.LogError(0, "TODO");
-				//schedules
-				//name
-				//opened_at
-				//closed_at
+				string str = Encoding.UTF8.GetString(item.DBBGALAPFGC_Data);
+				EDOHBJAPLPF_JsonData json = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(str);
+				EDOHBJAPLPF_JsonData data = json[AFEHLCGHAEE_Strings.JOBKIDDLCPL_schedules];
+				for(int i = 0; i < data.HNBFOAJIIAL_Count; i++)
+				{
+					GDIPLANPCEI info = new GDIPLANPCEI();
+					info.OPFGFINHFCE_Name = (string)data[i][AFEHLCGHAEE_Strings.OPFGFINHFCE_name];
+					info.KBFOIECIADN_OpenedAt = JsonUtil.GetLong(data[i], AFEHLCGHAEE_Strings.KBFOIECIADN_opened_at);
+					info.EGBOHDFBAPB_ClosedAt = JsonUtil.GetLong(data[i], AFEHLCGHAEE_Strings.EGBOHDFBAPB_closed_at);
+					// UMO Event
+					if(currentEvent != null && currentEvent.BlockName == info.OPFGFINHFCE_Name)
+					//if(info.OPFGFINHFCE_Name.Contains("april"))
+					{
+						DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
+						date = date.Subtract(new TimeSpan(1, 0, 0, 0));
+						info.KBFOIECIADN_OpenedAt = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0);
+						date = date.AddDays(11);
+						info.EGBOHDFBAPB_ClosedAt = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0);
+					}
+					// UMO Event End
+					JOBKIDDLCPL_ScheduleEvent.Add(info);
+				}
 			}
 		}
 	}

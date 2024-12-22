@@ -112,6 +112,16 @@ public class UMOStart : MonoBehaviour
         {
             RuntimeSettings.CurrentSettings.SLiveViewer = false;
         }
+
+        // Fix save.bin name after 1.0. If cpid != 0 and save.bin exist, rename to cpid_save.bin
+        int playerId = UMO_PlayerPrefs.GetInt("cpid", 0);
+        string saveOriginal = Application.persistentDataPath + "/SaveData/save.bin";
+        string saveNew = Application.persistentDataPath + "/SaveData/"+playerId+"_save.bin";
+        if(playerId != 0 && File.Exists(saveOriginal) && !File.Exists(saveNew))
+        {
+            File.Move(saveOriginal, saveNew);
+        }
+
 		this.StartCoroutineWatched(FileSystemProxy.InitServerFileList());
     }
     

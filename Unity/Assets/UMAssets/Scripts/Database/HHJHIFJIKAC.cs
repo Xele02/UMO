@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using XeSys;
 
 [System.Obsolete("Use HHJHIFJIKAC_BonusVc", true)]
 public class HHJHIFJIKAC { }
@@ -7,25 +8,25 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
     public enum IJFKAIHFJLF
     {
         HJNNKCMLGFL = 0,
-        JGDEHOGIENP = 1,
-        JEPMLKCJCPK = 2,
-        HCHFCCEMJED = 3,
-        KJBGPOMJFBE_MonthlyPass = 4,
-        MDIJEKDNLFC = 5,
-        ONIIJLCOCAC = 6,
-        MCPDGFMLJNG = 7,
-        PPPGDKCDACF = 8,
+        JGDEHOGIENP_1_Sphere_CostumeTicket = 1,
+        JEPMLKCJCPK_2_Bonus_4001_4002 = 2,
+        HCHFCCEMJED_3_Bonus_20XX = 3,
+        KJBGPOMJFBE_4_MonthlyPass = 4,
+        MDIJEKDNLFC_5_SpecialTickets = 5,
+        ONIIJLCOCAC_6 = 6,
+        MCPDGFMLJNG_7_Bonus4003 = 7,
+        PPPGDKCDACF_8_Omikuji = 8,
     }
 
     public class MNGJPJBCMBH
     {
         public int PPFNGGCBJKC_Id; // 0x8
         public int PLALNIIBLOF_Enabled; // 0xC
-        public int PDBPFJJCADD; // 0x10
+        public int PDBPFJJCADD_OpenAt; // 0x10
         public int EGBOHDFBAPB_ClosedAt; // 0x14
         public int KMENGHEAIOC; // 0x18
         public int JDANEOJCLBB; // 0x1C
-        public int CPGFOBNKKBF; // 0x20
+        public int CPGFOBNKKBF_CurrencyId; // 0x20
         public int INDDJNMPONH; // 0x24
         public int JBGEEPFKIGG; // 0x28
 
@@ -37,7 +38,7 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
 		{
 			if(PLALNIIBLOF_Enabled == 2 && INDDJNMPONH == 3)
 			{
-				return PDBPFJJCADD <= JHNMKKNEENE && JHNMKKNEENE <= EGBOHDFBAPB_ClosedAt;
+				return PDBPFJJCADD_OpenAt <= JHNMKKNEENE && JHNMKKNEENE <= EGBOHDFBAPB_ClosedAt;
 			}
 			return false;
 		}
@@ -47,7 +48,19 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
 	public List<MNGJPJBCMBH> CDENCMNHNGA = new List<MNGJPJBCMBH>(); // 0x20
 
 	// // RVA: 0x1830F38 Offset: 0x1830F38 VA: 0x1830F38
-	// public bool IIEKKOHBNLA(int INFIBMLIHLO) { }
+	public bool IIEKKOHBNLA_HasMonthlyPassBonus(int INFIBMLIHLO)
+	{
+        EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(INFIBMLIHLO);
+        int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(INFIBMLIHLO);
+		if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.IBBDMIFICCN_BonusVC)
+		{
+			if(id <= CDENCMNHNGA.Count)
+			{
+				return CDENCMNHNGA[id - 1].INDDJNMPONH == 4;
+			}
+		}
+		return false;
+	}
 
 	// // RVA: 0x183106C Offset: 0x183106C VA: 0x183106C
 	public MNGJPJBCMBH NPOALOFHFPN(int PPFNGGCBJKC_Id)
@@ -64,13 +77,13 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
 	// public HHJHIFJIKAC.MNGJPJBCMBH GOLBDLHCBCA(long EOLFJGMAJAB) { }
 
 	// // RVA: 0x1831284 Offset: 0x1831284 VA: 0x1831284
-	public MNGJPJBCMBH EKENMIDOHPL_GetActiveBonus(long EOLFJGMAJAB, IJFKAIHFJLF CHOIMHCMAHG = IJFKAIHFJLF.JEPMLKCJCPK/*2*/)
+	public MNGJPJBCMBH EKENMIDOHPL_GetActiveBonus(long EOLFJGMAJAB, IJFKAIHFJLF CHOIMHCMAHG = IJFKAIHFJLF.JEPMLKCJCPK_2_Bonus_4001_4002/*2*/)
 	{
 		for(int i = 0; i < CDENCMNHNGA.Count; i++)
 		{
 			if(CDENCMNHNGA[i].PLALNIIBLOF_Enabled == 2 && CDENCMNHNGA[i].INDDJNMPONH == (int)CHOIMHCMAHG)
 			{
-				if (CDENCMNHNGA[i].PDBPFJJCADD <= EOLFJGMAJAB && CDENCMNHNGA[i].EGBOHDFBAPB_ClosedAt >= EOLFJGMAJAB)
+				if (CDENCMNHNGA[i].PDBPFJJCADD_OpenAt <= EOLFJGMAJAB && CDENCMNHNGA[i].EGBOHDFBAPB_ClosedAt >= EOLFJGMAJAB)
 				{
 					return CDENCMNHNGA[i];
 				}
@@ -103,11 +116,14 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
 			MNGJPJBCMBH data = new MNGJPJBCMBH();
 			data.PPFNGGCBJKC_Id = array[i].PPFNGGCBJKC;
 			data.PLALNIIBLOF_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
-			data.PDBPFJJCADD = array[i].PDBPFJJCADD;
+			data.PDBPFJJCADD_OpenAt = array[i].PDBPFJJCADD;
 			data.EGBOHDFBAPB_ClosedAt = array[i].EGBOHDFBAPB;
+			//UnityEngine.Debug.LogError(data.PPFNGGCBJKC_Id+" "+Utility.GetLocalDateTime(data.PDBPFJJCADD_OpenAt).ToLongDateString()+" "+Utility.GetLocalDateTime(data.EGBOHDFBAPB_ClosedAt).ToLongDateString());
+			// UMO unlock
+			data.EGBOHDFBAPB_ClosedAt = (int)Utility.GetCurrentUnixTime() + 24 * 3600;
 			data.KMENGHEAIOC = array[i].KMENGHEAIOC;
 			data.JDANEOJCLBB = array[i].JDANEOJCLBB;
-			data.CPGFOBNKKBF = array[i].CPGFOBNKKBF;
+			data.CPGFOBNKKBF_CurrencyId = array[i].CPGFOBNKKBF;
 			data.INDDJNMPONH = array[i].GBJFNGCDKPM;
 			data.JBGEEPFKIGG = array[i].JBGEEPFKIGG;
 			CDENCMNHNGA.Add(data);

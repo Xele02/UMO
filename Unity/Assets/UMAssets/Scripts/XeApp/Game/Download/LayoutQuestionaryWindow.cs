@@ -6,6 +6,7 @@ using UnityEngine.Events;
 using mcrs;
 using System.Collections;
 using XeSys;
+using UnityEngine.Localization.SmartFormat;
 
 namespace XeApp.Game.DownLoad
 {
@@ -82,7 +83,7 @@ namespace XeApp.Game.DownLoad
 			m_notification1Text[1].text = str;
 			m_notification1Text[0].text = str;
 			m_notification2Text.text = MessageManager.Instance.GetMessage("menu", "questionary_notification_002");
-			m_questionText.text = string.Format("Q{0}.{1}", data.EILKGEADKGH_Idx, data.ADCMNODJBGJ_Detail);
+			m_questionText.text = string.Format("Q{0}.{1}", data.EILKGEADKGH_Idx, data.ADCMNODJBGJ_Question);
 			m_minAnswerCount = data.NNDBJGDFEEM_MinAnswer;
 			m_maxAnswerCount = data.DOOGFEGEKLG_MaxAnswer;
 			CloseAllButton();
@@ -247,9 +248,9 @@ namespace XeApp.Game.DownLoad
 			if(data.INDDJNMPONH_NotifId == 2)
 			{
 				if (data.DOOGFEGEKLG_MaxAnswer > 2)
-					str = string.Format(str, data.DOOGFEGEKLG_MaxAnswer);
+					str = Smart.Format(str, data.DOOGFEGEKLG_MaxAnswer);
 				else
-					str = string.Format(str, JpStringLiterals.StringLiteral_14832);
+					str = Smart.Format(str, JpStringLiterals.StringLiteral_14832);
 			}
 			return str;
 		}

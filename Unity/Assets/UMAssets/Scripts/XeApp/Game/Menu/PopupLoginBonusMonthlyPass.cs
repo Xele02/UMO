@@ -51,7 +51,7 @@ namespace XeApp.Game.Menu
 			view.KHEKNNFCAOI(m_instance.m_isSuccess, forceAvailableTopplan);
 			if(m_instance.m_isSuccess || popupType != Type.RequestLoginBonus)
 			{
-				TodoLogger.LogError(0, "PopupLoginBonusMonthlyPass.Show");
+				TodoLogger.LogError(TodoLogger.MonthlyPass, "PopupLoginBonusMonthlyPass.Show");
 			}
 			//LAB_0168db54
 			if(!view.KLMNKBCDGPI)
@@ -59,7 +59,7 @@ namespace XeApp.Game.Menu
 				//LAB_0168dc58
 				if(view.ENHGKPMEICN)
 				{
-					TodoLogger.LogError(0, "PopupLoginBonusMonthlyPass.Show");
+					TodoLogger.LogError(TodoLogger.MonthlyPass, "PopupLoginBonusMonthlyPass.Show");
 				}
 				if(closeCallback != null)
 				{
@@ -78,12 +78,16 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				TodoLogger.LogError(0, "PopupLoginBonusMonthlyPass.Show");
+				TodoLogger.LogError(TodoLogger.MonthlyPass, "PopupLoginBonusMonthlyPass.Show");
 			}
 		}
 
 		//// RVA: 0x168AF48 Offset: 0x168AF48 VA: 0x168AF48
-		//public static void Close(Action closeCallback) { }
+		public static void Close(Action closeCallback)
+		{
+			m_instance.ForceClose();
+			m_forceCloseCallback = closeCallback;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70626C Offset: 0x70626C VA: 0x70626C
 		//// RVA: 0x168B0D0 Offset: 0x168B0D0 VA: 0x168B0D0
@@ -98,7 +102,7 @@ namespace XeApp.Game.Menu
 				bool done = false;
 				bool err = false;
 				//MenuScene.Instance.RaycastDisable();
-				TodoLogger.LogError(0, "Co_RequestLoginBonusMonthlyPass");
+				TodoLogger.LogError(TodoLogger.MonthlyPass, "Co_RequestLoginBonusMonthlyPass");
 			}
 			//LAB_0168cc50
 			int numItem = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.FKGCBLHOOCL_Category.PJCJEOECLBK_MonthlyPassItem, 1, null);
@@ -107,11 +111,11 @@ namespace XeApp.Game.Menu
 				//LAB_0168d4e4
 				if (!NHPDPKHMFEP.HHCJCDFCLOB.GBCPDBJEDHL(false))
 					yield break;
-				TodoLogger.LogError(0, "Co_RequestLoginBonusMonthlyPass 2");
+				TodoLogger.LogError(TodoLogger.MonthlyPass, "Co_RequestLoginBonusMonthlyPass 2");
 			}
 			else
 			{
-				TodoLogger.LogError(0, "Co_RequestLoginBonusMonthlyPass 3");
+				TodoLogger.LogError(TodoLogger.MonthlyPass, "Co_RequestLoginBonusMonthlyPass 3");
 			}
 		}
 
@@ -124,7 +128,16 @@ namespace XeApp.Game.Menu
 		//private IEnumerator Co_LoadingLayoutMonthlyPass() { }
 
 		//// RVA: 0x168B008 Offset: 0x168B008 VA: 0x168B008
-		//public void ForceClose() { }
+		public void ForceClose()
+		{
+			m_layoutLoginbonusMonthlyPass.SetSkip();
+			m_layoutLoginbonusMonthlyPass.Leave(() =>
+			{
+				//0x168B4E4
+				if(m_layoutLoginbonusMonthlyPass.OnClickCloseButton != null)
+					m_layoutLoginbonusMonthlyPass.OnClickCloseButton();
+			});
+		}
 
 		// RVA: 0x168B35C Offset: 0x168B35C VA: 0x168B35C Slot: 4
 		public void Dispose()
@@ -140,9 +153,5 @@ namespace XeApp.Game.Menu
 		//[CompilerGeneratedAttribute] // RVA: 0x7063D4 Offset: 0x7063D4 VA: 0x7063D4
 		//// RVA: 0x168B468 Offset: 0x168B468 VA: 0x168B468
 		//private void <Co_LoadingLayoutMonthlyPass>b__10_0(GameObject instance) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x7063E4 Offset: 0x7063E4 VA: 0x7063E4
-		//// RVA: 0x168B4E4 Offset: 0x168B4E4 VA: 0x168B4E4
-		//private void <ForceClose>b__11_0() { }
 	}
 }

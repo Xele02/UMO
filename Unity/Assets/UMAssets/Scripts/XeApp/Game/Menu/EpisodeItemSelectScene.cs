@@ -115,7 +115,7 @@ namespace XeApp.Game.Menu
 			//0xEF8924
 			operation = AssetBundleManager.LoadLayoutAsync(m_release_window.BundleName, m_release_window.AssetName);
 			yield return operation;
-			yield return Co.R(operation.InitializeLayoutCoroutine(MenuScene.Instance.m_font, (GameObject instance) =>
+			yield return Co.R(operation.InitializeLayoutCoroutine(MenuScene.Instance.GetFont(), (GameObject instance) =>
 			{
 				//0xEF83B4
 				m_release_window.SetContent(instance);

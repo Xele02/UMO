@@ -158,7 +158,15 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x13987A4 Offset: 0x13987A4 VA: 0x13987A4
-		// protected bool PlayCue(int cueId) { }
+		protected bool PlayCue(int cueId)
+		{
+			if(source != null)
+			{
+				playBack = source.Play(cueId);
+				return true;
+			}
+			return false;
+		}
 
 		// // RVA: 0x1390060 Offset: 0x1390060 VA: 0x1390060
 		protected bool StopCue()
@@ -187,7 +195,8 @@ namespace XeApp.Game.Common
 			//0x1398ED0
 			remain = sec;
 			baseVolume = source.volume - targetVol;
-			rate = 1;
+			yield return null;
+			rate = sec;
 			while (rate > 0)
 			{
 				remain = Mathf.Max(remain - TimeWrapper.deltaTime, 0);
@@ -204,11 +213,11 @@ namespace XeApp.Game.Common
 			if(fadeCoroutine != null)
 			{
 				this.StopCoroutineWatched(fadeCoroutine);
-				if(changeVolume != null)
-				{
-					this.StopCoroutineWatched(changeVolume);
-				}
 				source.volume = 1.0f;
+			}
+			if(changeVolume != null)
+			{
+				this.StopCoroutineWatched(changeVolume);
 			}
 			fadeCoroutine = this.StartCoroutineWatched(Co_FadeOut(sec, onStop));
 		}
@@ -232,9 +241,13 @@ namespace XeApp.Game.Common
 		protected void ChangeVolume(float sec, float targetVol, Action onEnd)
 		{
 			if (fadeCoroutine != null)
+			{
 				this.StopCoroutineWatched(fadeCoroutine);
+			}
 			if (changeVolume != null)
+			{
 				this.StopCoroutineWatched(changeVolume);
+			}
 			fadeCoroutine = this.StartCoroutineWatched(Co_ChangeVolume(sec, targetVol, onEnd));
 		}
 

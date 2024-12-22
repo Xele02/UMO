@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
@@ -23,6 +24,7 @@ namespace XeApp.Game.Menu
 				if (OnClickReturnButtonCallback != null)
 					OnClickReturnButtonCallback();
 			});
+			m_buttonReturn.transform.Find("Top/Text").GetComponent<Text>().text = JpStringLiterals.UMO_Back;
 		}
 
 		//// RVA: 0xB842E4 Offset: 0xB842E4 VA: 0xB842E4

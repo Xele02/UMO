@@ -15,7 +15,7 @@ public class BNAAJMBJFPG
 	public bool GJCINKIGNPI_Sage; // 0x30
 	public string KACECFNECON_Extra; // 0x34
 
-	//public bool ILGKMOJFEDK { get; } 0x19CA8F0 ELBMCFAOJNB
+	public bool ILGKMOJFEDK { get { return NLBNJIFGPJL_Content == null; } } //0x19CA8F0 ELBMCFAOJNB
 
 	//// RVA: 0x19CA3E0 Offset: 0x19CA3E0 VA: 0x19CA3E0
 	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
@@ -73,6 +73,7 @@ public class NFIMGIABIOI_GetBbsThreadComments : CACGCMBKHDI_Request
 			{
 				BNAAJMBJFPG comment = new BNAAJMBJFPG();
 				comment.KHEKNNFCAOI(comments[i]);
+				GLNIHJIDABD_Comments.Add(comment);
 			}
 			CJNNMLLEKEF_PreviousPage = (int)IDLHJIOMJBK["previous_page"];
 			GPPOJHNNINK_CurrentPage = (int)IDLHJIOMJBK["current_page"];

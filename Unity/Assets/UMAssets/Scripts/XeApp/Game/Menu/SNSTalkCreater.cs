@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XeApp.Game.Common;
 using XeSys;
 
 namespace XeApp.Game.Menu
@@ -180,10 +181,25 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x15979B0 Offset: 0x15979B0 VA: 0x15979B0
-		//public void PauseTalk() { }
+		public void PauseTalk()
+		{
+			if(m_initialized)
+			{
+				if(!m_isPause)
+					m_isPause = true;
+			}
+		}
 
 		//// RVA: 0x15979D0 Offset: 0x15979D0 VA: 0x15979D0
-		//public void RestartTalk() { }
+		public void RestartTalk()
+		{
+			if(!m_initialized || !m_isPause)
+				return;
+			m_isPause = false;
+			if(GetUnreadIndex() < 0)
+				return;
+			snsController.layoutFooter.WritingIn();
+		}
 
 		//// RVA: 0x1597A70 Offset: 0x1597A70 VA: 0x1597A70
 		public void Close()
@@ -316,20 +332,18 @@ namespace XeApp.Game.Menu
 			while (true)
 			{
 				if (!m_isPause)
-					yield return null;
-				rnt = ReceptionNewTalk();
-				if(rnt != null)
 				{
-					while(rnt.MoveNext())
+					rnt = ReceptionNewTalk();
+					if(rnt != null)
 					{
-						UpdateTapSkip();
-						yield return null;
+						while(rnt.MoveNext())
+						{
+							UpdateTapSkip();
+							yield return null;
+						}
 					}
 				}
-				else
-				{
-					yield return null;
-				}
+				yield return null;
 			}
 		}
 
@@ -849,9 +863,76 @@ namespace XeApp.Game.Menu
 			//0x159BAE4
 			if(m_achieveQuestId > 0)
 			{
-				TodoLogger.LogError(0, "ShowPopupAchieve");
-				yield return null;
+				snsController.SNSInputDisable();
+				dummyCallback = () =>
+				{
+					//0x159A3D8
+					return;
+				};
+				GameManager.Instance.AddPushBackButtonHandler(dummyCallback);
+				wait = 0;
+				waitTime = 2;
+				while(true)
+				{
+					wait += TimeWrapper.deltaTime;
+					yield return null;
+					if(wait >= waitTime)
+						break;
+				}
+				while(m_isSaved)
+					yield return null;
+				string str = MessageManager.Instance.GetMessage("master", "qn_dsc_" + m_achieveQuestId.ToString("D4"));
+				m_achieveQuestId = 0;
+				snsController.SNSInputEnable();
+				prevScrollEnable = snsController.layoutScrollList.ScrollSupport.scrollRect.enabled;
+				snsController.layoutScrollList.ScrollSupport.scrollRect.enabled = false;
+				snsController.SNSInputDisable();
+				bool isWait = true;
+				PopupButton.ButtonLabel butLabel = PopupButton.ButtonLabel.None;
+				PopupWindowManager.Show(PopupWindowManager.CrateTextContent("", SizeType.Small, string.Format(MessageManager.Instance.GetMessage("menu", "popup_sns_desc_001"), str), new ButtonInfo[2]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative },
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Mission, Type = PopupButton.ButtonType.Other }
+				}, false, false), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0x159A6C4
+					butLabel = label;
+					isWait = false;
+				}, null, null, null);
+				while(isWait)
+					yield return null;
+				snsController.layoutScrollList.ScrollSupport.scrollRect.enabled = prevScrollEnable;
+				GameManager.Instance.RemovePushBackButtonHandler(dummyCallback);
+				snsController.SNSInputEnable();
+				if(butLabel == PopupButton.ButtonLabel.Mission)
+				{
+					if(MenuScene.Instance != null)
+					{
+						if(MenuScene.Instance.GetCurrentScene().name != TransitionList.Type.QUEST)
+						{
+							MenuScene.Instance.Mount(TransitionUniqueId.QUEST, new QuestTopArgs(PLADCDJLOBE.ENNOBKHBNCG.OMNJOCHOGDG_3), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+							yield return null;
+							if(MenuScene.Instance.DirtyChangeScene)
+							{
+								//LAB_0159be0c
+								snsController.layoutTitleBar.CallbackClose();
+							}
+							else
+							{
+								snsController.SNSInputEnable();
+								MenuScene.Instance.InputEnable();
+								//LAB_0159c544
+							}
+						}
+						else
+						{
+							//LAB_0159be0c
+							snsController.layoutTitleBar.CallbackClose();
+						}
+					}
+				}
 			}
+			//LAB_0159c544
 			if (finish != null)
 				finish();
 		}

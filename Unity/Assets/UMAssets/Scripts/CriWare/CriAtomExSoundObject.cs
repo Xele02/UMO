@@ -14,13 +14,13 @@ namespace CriWare
 		// // RVA: 0x28AC4AC Offset: 0x28AC4AC VA: 0x28AC4AC
 		public CriAtomExSoundObject(bool enableVoiceLimitScope, bool enableCategoryCueLimitScope)
 		{
-			TodoLogger.LogError(0, "TODO");
+			TodoLogger.LogError(TodoLogger.CriAtomExLib, "TODO");
 		}
 
 		// // RVA: 0x28AC71C Offset: 0x28AC71C VA: 0x28AC71C Slot: 5
 		public override void Dispose()
 		{
-			TodoLogger.LogError(0, "TODO");
+			TodoLogger.LogError(TodoLogger.CriAtomExLib, "TODO");
 		}
 
 		// // RVA: 0x28AC8E0 Offset: 0x28AC8E0 VA: 0x28AC8E0

@@ -233,7 +233,10 @@ namespace XeApp.Game.Common
 			{
 				string acb = GetAcbPath(cueSheetName);
 				string awb = GetAwbPath(cueSheetName);
-				return FileSystemProxy.FileExists(acb) && FileSystemProxy.FileExists(awb);
+				bool hasAcb = FileSystemProxy.FileExists(acb);
+				bool hasAwb = FileSystemProxy.FileExists(awb);
+				TodoLogger.Log(0, "Check Cuesheet "+cueSheetName+" "+acb+"/"+awb+" - "+FileSystemProxy.ConvertPath(acb)+"/"+FileSystemProxy.ConvertPath(awb)+" "+hasAcb+"/"+hasAwb);
+				return hasAcb && hasAwb;
 			}
 			return true;
 		}

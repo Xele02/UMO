@@ -58,7 +58,7 @@ namespace XeApp.Game.Menu
 			//0x168A0BC
 			operation = AssetBundleManager.LoadLayoutAsync("ly/014.xab", "SceneIconButton");
 			yield return operation;
-			Font font = GameManager.Instance.GetSystemFont();
+			XeSys.FontInfo font = GameManager.Instance.GetSystemFont();
 			GameObject prefab = operation.GetAsset<GameObject>();
 			int poolSize = m_scrollList.ScrollObjectCount;
 			LayoutUGUIRuntime runtime = prefab.GetComponent<LayoutUGUIRuntime>();
@@ -76,7 +76,7 @@ namespace XeApp.Game.Menu
 					Text[] ts = g.GetComponentsInChildren<Text>(true);
 					for (int k = 0; k < ts.Length; k++)
 					{
-						ts[k].font = font;
+						font.Apply(ts[k]);
 					}
 					m_scrollList.AddScrollObject(g.GetComponent<SceneIconScrollContent>());
 				}

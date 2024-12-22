@@ -32,11 +32,11 @@ namespace XeApp.Game.Menu
 				m_usetItemList.SetConsumeHeader(s.Unlock);
 			}
 			int cnt = 0;
-			for(int i = 0; i < s.ViewGrowItemData.INLBMFMOHCI.Count; i++)
+			for(int i = 0; i < s.ViewGrowItemData.INLBMFMOHCI_CostItems.Count; i++)
 			{
-				if(s.ViewGrowItemData.INLBMFMOHCI[i].HMFFHLPNMPH > 0)
+				if(s.ViewGrowItemData.INLBMFMOHCI_CostItems[i].HMFFHLPNMPH_Cnt > 0)
 				{
-					m_usetItemList.SetItem(cnt, s.ViewGrowItemData.INLBMFMOHCI[i].PPFNGGCBJKC_Id, s.ViewGrowItemData.INLBMFMOHCI[i].HMFFHLPNMPH, s.ViewGrowItemData.JPLMJPGDPAN(i + 1));
+					m_usetItemList.SetItem(cnt, s.ViewGrowItemData.INLBMFMOHCI_CostItems[i].PPFNGGCBJKC_Id, s.ViewGrowItemData.INLBMFMOHCI_CostItems[i].HMFFHLPNMPH_Cnt, s.ViewGrowItemData.JPLMJPGDPAN(i + 1));
 					cnt++;
 				}
 			}
@@ -47,8 +47,8 @@ namespace XeApp.Game.Menu
 			m_usetItemList.ResetScrollItem(cnt);
 			m_usetItemList.GetComponent<RectTransform>().sizeDelta = PopupWindowControl.GetContentSize2(s.WindowSize, s.IsCaption);
 			m_usetItemList.SetScrollTopPosition();
-			m_usetItemList.SetNeedCredit(s.ViewGrowItemData.CMBGGPOFBOO);
-			m_usetItemList.SetHaveCredit(s.ViewGrowItemData.ANFHCKKFIEA(), s.ViewGrowItemData.CMBGGPOFBOO);
+			m_usetItemList.SetNeedCredit(s.ViewGrowItemData.CMBGGPOFBOO_UcCost);
+			m_usetItemList.SetHaveCredit(s.ViewGrowItemData.ANFHCKKFIEA(), s.ViewGrowItemData.CMBGGPOFBOO_UcCost);
 			gameObject.SetActive(true);
 		}
 

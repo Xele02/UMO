@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public delegate void IMCBBOAFION();
 public delegate void DJBHIFLHJLK();
@@ -85,7 +86,7 @@ public class DOKOHKJIDBO
 	// RVA: 0x1232C34 Offset: 0x1232C34 VA: 0x1232C34
 	private void GNCHKCLDCBP(DJBHIFLHJLK MOBEEPPKFLG)
 	{
-		TodoLogger.LogError(0, "TODO");
+		JHHBAFKMBDL.HHCJCDFCLOB.MDKADDJMLHA(MOBEEPPKFLG);
 	}
 
 	// RVA: 0x1232CE4 Offset: 0x1232CE4 VA: 0x1232CE4
@@ -107,5 +108,18 @@ public class DOKOHKJIDBO
 				KCOIDGJOJHC_EncryptionMap.Add(i, encryptor);
 			}
 		}
+	}
+
+	public void LoadEditor()
+	{
+		KCOIDGJOJHC_EncryptionMap.Clear();
+		LNAHEIEIBOI = false;
+
+		IKCAJDOKNOM = new ANCJLICGOLP();
+		IKCAJDOKNOM.KHEKNNFCAOI_Init();
+		string str = System.IO.File.ReadAllText(Application.dataPath + "/../../Data/RequestMaster.json");
+		EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(str);
+		IKCAJDOKNOM.IIEMACPEEBJ(IKCAJDOKNOM.ELJGLMPOINC_GetTypesStr(), data["master"]);
+		ANDDAABHGIP();
 	}
 }

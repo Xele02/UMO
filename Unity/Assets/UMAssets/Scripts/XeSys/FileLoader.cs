@@ -39,7 +39,12 @@ namespace XeSys
 		// // RVA: 0x203AC38 Offset: 0x203AC38 VA: 0x203AC38 Slot: 4
 		public void Dispose()
 		{
-			TodoLogger.LogError(0, "TODO");
+			fileLoadedDic.Clear();
+			fileLoadedDic = null;
+			fileLoadingDic.Clear();
+			fileLoadingDic = null;
+			binder.Dispose();
+			binder = null;
 		}
 
 		// // RVA: 0x203AD10 Offset: 0x203AD10 VA: 0x203AD10
@@ -129,14 +134,12 @@ namespace XeSys
 		// // RVA: 0x203BA0C Offset: 0x203BA0C VA: 0x203BA0C Slot: 5
 		public int Load(string path, FileLoadedPostProcess callback)
 		{
-			TodoLogger.LogError(0, "TODO");
 			return -1;
 		}
 
 		// // RVA: 0x203BA14 Offset: 0x203BA14 VA: 0x203BA14 Slot: 6
 		public int Load(string path, FileLoadedPostProcess callback, Dictionary<string, string> args, int argValue)
 		{
-			TodoLogger.LogError(0, "TODO");
 			return -1;
 		}
 
@@ -146,8 +149,11 @@ namespace XeSys
 		// // RVA: 0x203BB00 Offset: 0x203BB00 VA: 0x203BB00
 		private bool FailedCallback(FileResultObject fro)
 		{
-			TodoLogger.LogError(0, "Failed to load "+fro.path);
-			return false;
+			FileLoadInfo f = fileLoadingDic[fro.pathHashCode];
+			if(!f.Failed(fro))
+				return false;
+			fileLoadingDic.Remove(f.pathHashCode);
+			return true;
 		}
 
 		// // RVA: 0x203BC10 Offset: 0x203BC10 VA: 0x203BC10

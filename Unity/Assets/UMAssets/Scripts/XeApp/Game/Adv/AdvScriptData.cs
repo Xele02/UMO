@@ -14,7 +14,10 @@ namespace XeApp.Game.Adv
 		public GPCOJNLJJLE[] listEntry; // 0x14
 
 		//// RVA: 0xE52244 Offset: 0xE52244 VA: 0xE52244
-		//public int GetMessageCount() { }
+		public int GetMessageCount()
+		{
+			return listEntry.Length;
+		}
 
 		//// RVA: 0xE58220 Offset: 0xE58220 VA: 0xE58220
 		//public int GetMessageId(int index) { }

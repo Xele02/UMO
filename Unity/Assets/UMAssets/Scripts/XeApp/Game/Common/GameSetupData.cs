@@ -241,7 +241,7 @@ namespace XeApp.Game.Common
 				}
 				else
 				{
-					TodoLogger.LogError(0, "GoDiva");
+					TodoLogger.LogError(TodoLogger.EventGoDiva_14, "GoDiva");
 				}
 				for(int i = 0; i < divaList_.Length; i++)
 				{
@@ -447,7 +447,7 @@ namespace XeApp.Game.Common
 				LimitTime = limitTime;
 				IsDisableBattleEventIntermediateResult = initParam.isDisableBattleEventIntermediateResult;
 				KEODKEGFDLD_FreeMusicInfo musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(freeMusicId);
-				enemyInfo.ODDIHGPONFL_Copy(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.CKADCLJDCJK_EnemyList[(isLine6Mode ? musicInfo.PJNFOCDANCE : musicInfo.LHICAKGHIGF)[(int)difficultyType]]);
+				enemyInfo.ODDIHGPONFL_Copy(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.CKADCLJDCJK_EnemyList[(isLine6Mode ? musicInfo.PJNFOCDANCE : musicInfo.LHICAKGHIGF)[(int)difficultyType] - 1]);
 				if(overrideEnemyCenterSkillId != 0 || overrideEnemyLiveSkillId != 0)
 				{
 					enemyInfo.EDLACELKJIK_LiveSkill = overrideEnemyLiveSkillId;
@@ -458,7 +458,27 @@ namespace XeApp.Game.Common
 			// // RVA: 0xE9DF78 Offset: 0xE9DF78 VA: 0xE9DF78
 			public void SetupInfoByTutorial(TutorialGameMode.Type tutorialMode)
 			{
-				TodoLogger.LogError(0, "SetupInfoByTutorial");
+				mode = GameMode.Type.FreeBattle;
+				freeMusicId = tutorialMode == TutorialGameMode.Type.TutorialOne ? 37 : 38;
+				storyMusicId = 0;
+				playEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0;
+				openEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0;
+				gameEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0;
+				musicId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[freeMusicId - 1].DLAEJOBELBH_MusicId;
+				m_prismMusicId = 0;
+				tutorial = tutorialMode;
+				difficultyType = 0;
+				EventUniqueId = 0;
+				IsMvMode = false;
+				IsLine6Mode = false;
+				setupTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				mvLimitTime = -1;
+				LimitTime = 0;
+				onStageDivaNum = 1;
+				musicLoadText = "";
+				IsDisableBattleEventIntermediateResult = false;
+				returnTransitionUniqueId = TransitionUniqueId.HOME;
+				enemyInfo.ODDIHGPONFL_Copy(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.CKADCLJDCJK_EnemyList[IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(freeMusicId).LHICAKGHIGF[(int)difficultyType] - 1]);
 			}
 
 			// // RVA: 0xE9E308 Offset: 0xE9E308 VA: 0xE9E308
@@ -547,7 +567,10 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xE9CF18 Offset: 0xE9CF18 VA: 0xE9CF18
-		// public void SetSelectedDashIndex(int index) { }
+		public void SetSelectedDashIndex(int index)
+		{
+			SelectedDashIndex = index;
+		}
 
 		// // RVA: 0xE9CF20 Offset: 0xE9CF20 VA: 0xE9CF20
 		public void ForcePrismSetting()
@@ -555,14 +578,14 @@ namespace XeApp.Game.Common
 			if(m_musicInfo.freeMusicId > 0)
 			{
 				KEODKEGFDLD_FreeMusicInfo masterFreeMusic = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(m_musicInfo.freeMusicId);
-				AIPEHINPIHC_ForcedSettingInfo a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.HBJDIFMCGAL_ForcedSettings.Find((AIPEHINPIHC_ForcedSettingInfo x) =>
+				forcePrism = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.HBJDIFMCGAL_ForcedSettings.Find((AIPEHINPIHC_ForcedSettingInfo x) =>
 				{
 					//0xE9D51C
 					return masterFreeMusic.BLDDNEJDFON_ForcePrismId == x.NMNDNFFJHPJ_Id;
 				});
-				if(a != null)
+				if(forcePrism != null)
 				{
-					m_teamInfo.SetForcePrismData(a);
+					m_teamInfo.SetForcePrismData(forcePrism);
 				}
 			}
 		}

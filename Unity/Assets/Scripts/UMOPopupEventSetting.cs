@@ -1,7 +1,5 @@
 
-using System;
 using UnityEngine;
-using UnityEngine.UI;
 using XeApp.Game.Common;
 
 public class UMOPopupEventSetting : PopupSetting

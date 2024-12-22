@@ -25,7 +25,21 @@ public class SakashoAchievement : SakashoAPIBase
 	}
 
 	//// RVA: 0x2BB05A8 Offset: 0x2BB05A8 VA: 0x2BB05A8
-	//public static SakashoAPICallContext ClaimAchievementPrizes(string[] keys, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext ClaimAchievementPrizes(string[] keys, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		ArrayList l = null;
+		if(keys != null)
+		{
+			l = new ArrayList();
+			for(int i = 0; i < keys.Length; i++)
+			{
+				l.Add(keys[i]);
+			}
+		}
+		h["keys"] = l;
+		return new SakashoAPICallContext(Call(SakashoAchievementClaimAchievementPrizes, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	//// RVA: 0x2BB07EC Offset: 0x2BB07EC VA: 0x2BB07EC
 	//public static SakashoAPICallContext ClaimAchievementPrizesAndSave(string[] keys, string[] names, string playerData, OnSuccess onSuccess, OnError onError) { }
@@ -73,7 +87,31 @@ public class SakashoAchievement : SakashoAPIBase
 	}
 
 	//// RVA: 0x2BB0C3C Offset: 0x2BB0C3C VA: 0x2BB0C3C
-	//public static SakashoAPICallContext ClaimAchievementPrizesSetInventoryClosedAt(string[] keys, int[] inventoryClosedAt, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext ClaimAchievementPrizesSetInventoryClosedAt(string[] keys, int[] inventoryClosedAt, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		ArrayList l = null;
+		if(keys != null)
+		{
+			l = new ArrayList();
+			for(int i = 0; i < keys.Length; i++)
+			{
+				l.Add(keys[i]);
+			}
+		}
+		h["keys"] = l;
+		l = null;
+		if(inventoryClosedAt != null)
+		{
+			l = new ArrayList();
+			for(int i = 0; i < inventoryClosedAt.Length; i++)
+			{
+				l.Add(inventoryClosedAt[i]);
+			}
+		}
+		h["inventoryClosedAt"] = l;
+		return new SakashoAPICallContext(Call(SakashoAchievementClaimAchievementPrizesSetInventoryClosedAt, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	//// RVA: 0x2BB0FB4 Offset: 0x2BB0FB4 VA: 0x2BB0FB4
 	public static SakashoAPICallContext ClaimAchievementPrizesAndSaveSetInventoryClosedAt(string[] keys, string[] names, string playerData, bool asReceived, bool replace, int[] inventoryClosedAt, OnSuccess onSuccess, OnError onError)
@@ -131,7 +169,10 @@ public class SakashoAchievement : SakashoAPIBase
 	}
 
 	//// RVA: 0x2BB15D8 Offset: 0x2BB15D8 VA: 0x2BB15D8
-	//private static extern int SakashoAchievementClaimAchievementPrizes(int callbackId, string json) { }
+	private static int SakashoAchievementClaimAchievementPrizes(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoAchievementClaimAchievementPrizes(callbackId, json);
+	}
 
 	//// RVA: 0x2BB16F0 Offset: 0x2BB16F0 VA: 0x2BB16F0
 	private static /*extern */int SakashoAchievementClaimAchievementPrizesAndSave(int callbackId, string json)
@@ -140,7 +181,10 @@ public class SakashoAchievement : SakashoAPIBase
 	}
 
 	//// RVA: 0x2BB1810 Offset: 0x2BB1810 VA: 0x2BB1810
-	//private static extern int SakashoAchievementClaimAchievementPrizesSetInventoryClosedAt(int callbackId, string json) { }
+	private static int SakashoAchievementClaimAchievementPrizesSetInventoryClosedAt(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoAchievementClaimAchievementPrizesSetInventoryClosedAt(callbackId, json);
+	}
 
 	//// RVA: 0x2BB1940 Offset: 0x2BB1940 VA: 0x2BB1940
 	private static /*extern */int SakashoAchievementClaimAchievementPrizesAndSaveSetInventoryClosedAt(int callbackId, string json)

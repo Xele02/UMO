@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/UMAssets/Scene/Project/Scenes/Menu.unity
     guid: 30e74f4b759d7874f9cc53b4dc35cddc
-  - enabled: 0
+  - enabled: 1
     path: Assets/UMAssets/Scene/Project/Scenes/Prologue.unity
     guid: 934fef27f001e944ea549a9656c251cb
   - enabled: 1
@@ -38,7 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/UMAssets/Scene/Project/Scenes/Adv.unity
     guid: 31aefc2ab9fa8c94983ff3dd235bceb4
-  - enabled: 0
+  - enabled: 1
     path: Assets/UMAssets/Scene/Project/Scenes/DivaSelect.unity
     guid: 308f0aed73bdebe4ebafb7b6380310bc
   - enabled: 1

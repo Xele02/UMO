@@ -32,7 +32,7 @@ namespace CriWare
 		// // RVA: 0x288D3DC Offset: 0x288D3DC VA: 0x288D3DC Slot: 5
 		public override void Dispose()
 		{
-			TodoLogger.LogError(0, "TODO");
+			TodoLogger.LogError(TodoLogger.CriAtomExLib, "TODO");
 		}
 
 		// // RVA: 0x288D46C Offset: 0x288D46C VA: 0x288D46C
@@ -41,7 +41,7 @@ namespace CriWare
 		// // RVA: 0x288CFC8 Offset: 0x288CFC8 VA: 0x288CFC8
 		private CriAtomExAcbLoader(IntPtr handle, Nullable<GCHandle> dataHandle)
 		{
-			TodoLogger.LogError(0, "TODO");
+			TodoLogger.LogError(TodoLogger.CriAtomExLib, "TODO");
 		}
 
 		// // RVA: 0x288D68C Offset: 0x288D68C VA: 0x288D68C Slot: 1

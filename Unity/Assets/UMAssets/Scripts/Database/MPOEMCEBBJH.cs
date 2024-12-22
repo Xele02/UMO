@@ -3,18 +3,24 @@ using System.Collections.Generic;
 
 [System.Obsolete("Use MPOEMCEBBJH_Pilot", true)]
 public class MPOEMCEBBJH { }
+[UMOClass(ReaderClass = "LBMIEHAHNFD")]
 public class MPOEMCEBBJH_Pilot : DIHHCBACKGG_DbSection
 {
+	[UMOClass(ReaderClass = "BPIFDOECJPH")]
 	public class KOAKMNKEHDE_PilotInfo
 	{
+		[UMOMember(ReaderMember = "PPFNGGCBJKC", Desc = "Id in the list")]
 		public short PFGJJLGLPAC_Id; // 0x8
+		[UMOMember(ReaderMember = "JPFMJHLCMJL", Desc = "Serie")]
 		public sbyte AIHCEGFANAM_Sa; // 0xA
+		[UMOMember(ReaderMember = "MJMPANIBFED", Desc = "")]
 		public short CHIMPKJDCPP_Pid; // 0xC
 
 		//// RVA: 0x17BD028 Offset: 0x17BD028 VA: 0x17BD028
 		//public uint CAOGDCBPBAN() { }
 	}
 
+	[UMOMember(ReaderMember = "NNCNIHFAPBO", Desc = "List of pilots")]
 	public List<KOAKMNKEHDE_PilotInfo> CDENCMNHNGA_PilotList { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
 
 	//// RVA: 0x17BC85C Offset: 0x17BC85C VA: 0x17BC85C
@@ -53,7 +59,7 @@ public class MPOEMCEBBJH_Pilot : DIHHCBACKGG_DbSection
 	// RVA: 0x17BCC98 Offset: 0x17BCC98 VA: 0x17BCC98 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(100, "Pilot IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbJson, "Pilot IIEMACPEEBJ");
 		return true;
 	}
 

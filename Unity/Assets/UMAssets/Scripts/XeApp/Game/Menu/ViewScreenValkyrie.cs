@@ -11,7 +11,7 @@ namespace XeApp.Game.Menu
 	{
 		private static readonly float VALKYRIE_TRANSFORM_CANCEL = 0.7f; // 0x0
 		private static readonly float VALKYRIE_TRANSFORM_TIME = 0.6f; // 0x4
-		private static readonly float VALKYRIE_TRANSFORM_WAIT_TIME = VALKYRIE_TRANSFORM_CANCEL + VALKYRIE_TRANSFORM_TIME; // 0x8
+		private static readonly float VALKYRIE_TRANSFORM_WAIT_TIME = VALKYRIE_TRANSFORM_CANCEL * VALKYRIE_TRANSFORM_TIME; // 0x8
 		private ValkyrieResource m_valkyrieRes; // 0xC
 		private MenuValkyrieObject m_valkyrieObj; // 0x10
 		private GameObject m_cameraObj; // 0x14
@@ -111,7 +111,7 @@ namespace XeApp.Game.Menu
 				{
 					ViewModeCameraMan camMan = m_cameraObj.AddComponent<ViewModeCameraMan>();
 					yield return Co.R(camMan.Co_loadAssets());
-					if(!SystemManager.isLongScreenDevice)
+					if(SystemManager.isLongScreenDevice)
 					{
 						FlexibleCameraChanger f = FlexibleCameraChanger.AddComponent(m_cameraObj, true, false, 0, 0);
 						f.Initialize();

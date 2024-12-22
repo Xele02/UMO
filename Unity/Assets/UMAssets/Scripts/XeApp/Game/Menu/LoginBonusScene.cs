@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using XeApp.Core;
 using XeApp.Game.Common;
 using XeApp.Game.Tutorial;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -93,16 +96,129 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEB3658 Offset: 0xEB3658 VA: 0xEB3658
 		private IEnumerator DefaultLoginBonus()
 		{
-			TodoLogger.LogError(0, "DefaultLoginBonus");
-			yield return null;
+			IEnumerator fadeIn; // 0x18
+			bool isEnd; // 0x1C
+			IEnumerator fade; // 0x20
+
+			//0xEB70FC
+			if(m_loginBonusMasters.Count < 1)
+				yield break;
+			while(!m_isOpenScene)
+				yield return null;
+			fadeIn = FadeIn();
+			while(fadeIn.MoveNext())
+				yield return null;
+			isEnd = false;
+			while(!isEnd)
+			{
+				if(m_loginBonusMasters.Count < 1)
+					break;
+				EPLAAEHPCDM data = m_loginBonusMasters[0];
+				if(data.CKHOBDIKJFN_Type < ANPGILOLNFK.CDOGFBNLIPG.PHABJLGFJNI_1 || data.CKHOBDIKJFN_Type > ANPGILOLNFK.CDOGFBNLIPG.CEIJKIOOIPE_4)
+				{
+					isEnd = true;
+					break;
+				}
+				m_loginBonusMasters.RemoveAt(0);
+				//LAB_00eb7424
+				while(m_divaControl.IsBreakReactionPlaying)
+					yield return null;
+				m_layoutLoginbonusStanding.SetButtonCallbackOk(() =>
+				{
+					//0xEB583C
+					if(m_loginBonusMasters.Count > 0)
+					{
+						if(data.CKHOBDIKJFN_Type >= ANPGILOLNFK.CDOGFBNLIPG.PHABJLGFJNI_1 || data.CKHOBDIKJFN_Type <= ANPGILOLNFK.CDOGFBNLIPG.CEIJKIOOIPE_4)
+						{
+							m_divaControl.RequestLoginAnimLoopBreak();
+						}
+					}
+					m_layoutLoginbonusStanding.Hide();
+				});
+				m_layoutLoginbonusStanding.SetPreStampPlayCallback(() =>
+				{
+					//0xEB5CA8
+					DivaPlay(data.CKHOBDIKJFN_Type);
+				});
+				m_layoutLoginbonusStanding.SetStatus(data, loginBonusManager, m_itemPackTextureCache);
+				m_layoutLoginbonusStanding.OnWaitDivaVoice = () =>
+				{
+					//0xEB5950
+					return m_divaControl.IsVoicePlaying;
+				};
+				//LAB_00eb75b8
+				while(m_layoutLoginbonusStanding.IsLoading())
+					yield return null;
+				m_layoutLoginbonusStanding.Show();
+				//LAB_00eb760c
+				while(!m_layoutLoginbonusStanding.IsClosed())
+					yield return null;
+				m_layoutLoginbonusStanding.Reset();
+			}
+			//LAB_00eb76d8
+			fade = FadeOut();
+			while(fade.MoveNext())
+				yield return null;
+			DivaHide();
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EC65C Offset: 0x6EC65C VA: 0x6EC65C
 		// // RVA: 0xEB3704 Offset: 0xEB3704 VA: 0xEB3704
 		private IEnumerator ConditionsLoginBonus()
 		{
-			TodoLogger.LogError(0, "ConditionsLoginBonus");
-			yield return null;
+			IEnumerator fade; // 0x18
+			bool isEnd; // 0x1C
+			EPLAAEHPCDM data; // 0x20
+
+			//0xEB6230
+			if(m_loginBonusMasters.Count < 1)
+				yield break;
+			while(!m_isOpenScene)
+				yield return null;
+			isEnd = false;
+			while(!isEnd)
+			{
+				if(m_loginBonusMasters.Count < 1)
+					break;
+				data = m_loginBonusMasters[0];
+				if(data.CKHOBDIKJFN_Type < ANPGILOLNFK.CDOGFBNLIPG.LAOEGNLOJHC_5 || data.CKHOBDIKJFN_Type >= ANPGILOLNFK.CDOGFBNLIPG.MKADAMIGMPO_7)
+				{
+					isEnd = true;
+					break;
+				}
+				m_loginBonusMasters.RemoveAt(0);
+				if(data.OENPCNBFPDA_BgId > 0)
+				{
+					bool isWait = true;
+					this.StartCoroutineWatched(Co_LoadBg(data.OENPCNBFPDA_BgId, () =>
+					{
+						//0xEB5CF4
+						isWait = false;
+					}));
+					//LAB_00eb633c
+					while(isWait)
+						yield return null;
+				}
+				m_layoutLoginbonusConditions.SetButtonCallbackOk(() =>
+				{
+					//0xEB597C
+					m_layoutLoginbonusConditions.Hide();
+				});
+				m_layoutLoginbonusConditions.SetStatus(data, loginBonusManager, m_itemPackTextureCache);
+				//LAB_00eb65d0
+				while(m_layoutLoginbonusConditions.IsLoading())
+					yield return null;
+				m_layoutLoginbonusConditions.Show();
+				fade = FadeIn();
+				while(fade.MoveNext())
+					yield return null;
+				while(!m_layoutLoginbonusConditions.IsClosed())
+					yield return null;
+				fade = FadeOut();
+				while(fade.MoveNext())
+					yield return null;
+				m_layoutLoginbonusConditions.Reset();
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EC6D4 Offset: 0x6EC6D4 VA: 0x6EC6D4
@@ -144,10 +260,10 @@ namespace XeApp.Game.Menu
 					}
 				}
 			}
-			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_9/*9*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/);
+			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign/*9*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/);
 			if(ev != null)
 			{
-				TodoLogger.LogError(0, "LoginBonusScene.NextScene event");
+				TodoLogger.LogError(TodoLogger.EventPresentCampaign_9, "LoginBonusScene.NextScene event");
 			}
 			//LAB_00eb9458
 			MenuScene.Instance.Mount(TransitionUniqueId.EPISODEAPPEAL, null, true, 0);
@@ -167,37 +283,130 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EC74C Offset: 0x6EC74C VA: 0x6EC74C
 		// // RVA: 0xEB38F0 Offset: 0xEB38F0 VA: 0xEB38F0
-		// private IEnumerator FadeIn() { }
+		private IEnumerator FadeIn()
+		{
+			//0xEB787C
+			while(TipsControl.Instance.isPlayingAnime())
+				yield return null;
+			TipsControl.Instance.Close();
+			GameManager.Instance.NowLoading.Hide();
+			GameManager.Instance.fullscreenFader.Fade(0.1f, 0);
+			while(GameManager.Instance.fullscreenFader.isFading)
+				yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EC7C4 Offset: 0x6EC7C4 VA: 0x6EC7C4
 		// // RVA: 0xEB3984 Offset: 0xEB3984 VA: 0xEB3984
-		// private IEnumerator FadeOut() { }
+		private IEnumerator FadeOut()
+		{
+			//0xEB7BC8
+			GameManager.Instance.fullscreenFader.Fade(0.1f, Color.black);
+			while(GameManager.Instance.fullscreenFader.isFading)
+				yield return null;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EC83C Offset: 0x6EC83C VA: 0x6EC83C
 		// // RVA: 0xEB3A18 Offset: 0xEB3A18 VA: 0xEB3A18
-		// private IEnumerator Co_LoadBg(int bgId, UnityAction endCallBack) { }
+		private IEnumerator Co_LoadBg(int bgId, UnityAction endCallBack)
+		{
+			//0xEB606C
+			yield return this.StartCoroutineWatched(MenuScene.Instance.ChangeBgTexture(BgTextureType.LoginBonus, bgId));
+			if (endCallBack != null)
+				endCallBack();
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EC8B4 Offset: 0x6EC8B4 VA: 0x6EC8B4
 		// // RVA: 0xEB3AF8 Offset: 0xEB3AF8 VA: 0xEB3AF8
-		// private IEnumerator SetupDiva(Action finish) { }
+		private IEnumerator SetupDiva(Action finish)
+		{
+			//0xEB9820
+			MenuScene.Instance.divaManager.Release(true);
+			MenuScene.Instance.divaManager.Load(GameManager.Instance.ViewPlayerData, DivaResource.MenuFacialType.Home, true);
+			while(MenuScene.Instance.divaManager.IsLoading)
+				yield return null;
+			yield return null;
+			MenuScene.Instance.divaManager.OnIdle("");
+			DivaShow();
+			yield return null;
+			DivaIdle();
+			yield return new WaitForSeconds(0.1f);
+			if(finish != null)
+				finish();
+		}
 
 		// // RVA: 0xEB3BC0 Offset: 0xEB3BC0 VA: 0xEB3BC0
-		// private void DivaShow() { }
+		private void DivaShow()
+		{
+			GameManager.Instance.SetFPS(60);
+			MenuScene.Instance.divaManager.SetActive(true, true);
+		}
 
 		// // RVA: 0xEB3DC0 Offset: 0xEB3DC0 VA: 0xEB3DC0
-		// private void DivaHide() { }
+		private void DivaHide()
+		{
+			GameManager.Instance.SetFPS(30);
+			MenuScene.Instance.divaManager.SetActive(false, true);
+			m_layoutDivaSerifWindow.Leave();
+			m_divaControl.CallbackChangeDivaSerif = null;
+			m_divaControl.Stop();
+		}
 
 		// // RVA: 0xEB3F40 Offset: 0xEB3F40 VA: 0xEB3F40
-		// private void DivaIdle() { }
+		private void DivaIdle()
+		{
+			m_divaControl.OnLoginIdle();
+		}
 
 		// // RVA: 0xEB3F6C Offset: 0xEB3F6C VA: 0xEB3F6C
-		// private void DivaPlay(ANPGILOLNFK.CDOGFBNLIPG type) { }
+		private void DivaPlay(ANPGILOLNFK.CDOGFBNLIPG type)
+		{
+			m_layoutDivaSerifWindow.SetTitle(MenuScene.Instance.divaManager.GetFullName());
+			m_layoutDivaSerifWindow.Enter();
+			if(type >= ANPGILOLNFK.CDOGFBNLIPG.DHGCJEOPEIE_3 && type < ANPGILOLNFK.CDOGFBNLIPG.LAOEGNLOJHC_5)
+			{
+				if (CheckComebackTalk(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime(), CIOECGOMILE.HHCJCDFCLOB.PKBOFLOJNIJ_LastLoginTime))
+				{
+					m_layoutDivaSerifWindow.SetText(MenuScene.Instance.divaManager.GetMessageByLabel("talk_comeback_01"));
+					m_divaControl.RequestLoginBonus(LoginBonusDivaControl.Type.Comeback_001);
+				}
+				else
+				{
+					m_layoutDivaSerifWindow.SetText(MenuScene.Instance.divaManager.GetMessageByLabel("talk_comeback_02"));
+					m_divaControl.RequestLoginBonus(LoginBonusDivaControl.Type.Comeback_002);
+				}
+				m_divaControl.CallbackChangeDivaSerif = null;
+			}
+			else
+			{
+				m_layoutDivaSerifWindow.SetText(MenuScene.Instance.divaManager.GetMessageByLabel("login_reaction_01"));
+				m_divaControl.RequestLoginBonus(LoginBonusDivaControl.Type.Regular);
+				m_divaControl.CallbackChangeDivaSerif = () =>
+				{
+					//0xEB59A8
+					ChangeDivaSerif("login_reaction_02");
+				};
+			}
+		}
 
 		// // RVA: 0xEB4740 Offset: 0xEB4740 VA: 0xEB4740
-		// private void ChangeDivaSerif(string label) { }
+		private void ChangeDivaSerif(string label)
+		{
+			if(m_layoutDivaSerifWindow != null)
+			{
+				m_layoutDivaSerifWindow.SetText(MenuScene.Instance.divaManager.GetMessageByLabel(label));
+			}
+		}
 
 		// // RVA: 0xEB445C Offset: 0xEB445C VA: 0xEB445C
-		// private bool CheckComebackTalk(long loginTime, long lastLoginTime) { }
+		private bool CheckComebackTalk(long loginTime, long lastLoginTime)
+		{
+			long prev = GameManager.Instance.localSave.EPJOACOONAC_GetSave().NDOKECOAPML_Login.CCIMAHFKOGO_LastLoginDate;
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().NDOKECOAPML_Login.CCIMAHFKOGO_LastLoginDate = loginTime;
+			if (lastLoginTime < prev)
+				lastLoginTime = prev;
+			TimeSpan s = Utility.GetLocalDateTime(loginTime) - Utility.GetLocalDateTime(lastLoginTime);
+			return s.Days >= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("comeback_login_bonus_talk", 7);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EC92C Offset: 0x6EC92C VA: 0x6EC92C
 		// // RVA: 0xEB4874 Offset: 0xEB4874 VA: 0xEB4874
@@ -313,17 +522,18 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEB4AC0 Offset: 0xEB4AC0 VA: 0xEB4AC0
 		private IEnumerator LoadingLayoutConditions()
 		{
-			TodoLogger.LogError(0, "LoadingLayoutConditions");
-			yield return null;
+			//0xEB8C6C
+			m_isLoading = false;
+			this.StartCoroutineWatched(LayoutLoadConditionsLoginBonus());
+			while(!m_isLoading)
+				yield return null;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ECB0C Offset: 0x6ECB0C VA: 0x6ECB0C
 		// // RVA: 0xEB4B6C Offset: 0xEB4B6C VA: 0xEB4B6C
 		private IEnumerator LayoutLoadDefaultLoginBonus()
 		{
-			TodoLogger.LogError(0, "LayoutLoadDefaultLoginBonus");
-			yield return null;
-			/*AssetBundleLoadLayoutOperationBase operation;
+			AssetBundleLoadLayoutOperationBase operation;
 
 			//0xEB8240
 			if(m_layoutLoginbonusStanding == null)
@@ -342,15 +552,34 @@ namespace XeApp.Game.Menu
 				}
 				m_layoutLoginbonusStanding.transform.SetParent(transform, false);
 				m_layoutLoginbonusStanding.gameObject.SetActive(false);
-			}*/
+			}
+			m_isLoading = true;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ECB84 Offset: 0x6ECB84 VA: 0x6ECB84
 		// // RVA: 0xEB4C18 Offset: 0xEB4C18 VA: 0xEB4C18
 		private IEnumerator LayoutLoadConditionsLoginBonus()
 		{
-			TodoLogger.LogError(0, "LayoutLoadConditionsLoginBonus");
-			yield return null;
+			AssetBundleLoadLayoutOperationBase operation;
+
+			//0xEB7E14
+			if(m_layoutLoginbonusConditions == null)
+			{
+				operation = AssetBundleManager.LoadLayoutAsync("ly/001.xab", "root_login_02_layout_root");
+				yield return operation;
+				yield return Co.R(operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+				{
+					//0xEB5A88
+					m_layoutLoginbonusConditions = instance.GetComponent<LayoutLoginBonusConditions>();
+				}));
+				AssetBundleManager.UnloadAssetBundle("ly/001.xab", false);
+				while(!m_layoutLoginbonusConditions.IsReady())
+					yield return null;
+				m_layoutLoginbonusConditions.transform.SetParent(transform, false);
+				m_layoutLoginbonusConditions.gameObject.SetActive(false);
+			}
+			//LAB_00eb814c
+			m_isLoading = true;
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6ECBFC Offset: 0x6ECBFC VA: 0x6ECBFC
@@ -383,7 +612,12 @@ namespace XeApp.Game.Menu
 		{ 
 			if(m_loginBonusMasters != null)
 			{
-				TodoLogger.LogError(0, "IsDefaultLoginBonus");
+				EPLAAEHPCDM data = m_loginBonusMasters.Find((EPLAAEHPCDM _) =>
+				{
+					//0xEB5C38
+					return _.CKHOBDIKJFN_Type >= ANPGILOLNFK.CDOGFBNLIPG.PHABJLGFJNI_1 && _.CKHOBDIKJFN_Type < ANPGILOLNFK.CDOGFBNLIPG.LAOEGNLOJHC_5;
+				});
+				return data != null;
 			}
 			return false;
 		}
@@ -391,7 +625,15 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEB4ED0 Offset: 0xEB4ED0 VA: 0xEB4ED0
 		private bool IsExistConditionsLoginBonus()
 		{
-			TodoLogger.LogError(0, "IsExistConditionsLoginBonus");
+			if(m_loginBonusMasters != null)
+			{
+				EPLAAEHPCDM data = m_loginBonusMasters.Find((EPLAAEHPCDM _) =>
+				{
+					//0xEB5C6C
+					return _.CKHOBDIKJFN_Type >= ANPGILOLNFK.CDOGFBNLIPG.LAOEGNLOJHC_5 && _.CKHOBDIKJFN_Type < ANPGILOLNFK.CDOGFBNLIPG.MKADAMIGMPO_7;
+				});
+				return data != null;
+			}
 			return false;
 		}
 
@@ -430,7 +672,11 @@ namespace XeApp.Game.Menu
 				return;
 			if(IsDefaultLoginBonus())
 			{
-				TodoLogger.LogError(0, "IsDefaultLoginBonus");
+				this.StartCoroutineWatched(SetupDiva(() =>
+				{
+					//0xEB5B80
+					m_isOpenScene = true;
+				}));
 				return;
 			}
 			m_isOpenScene = true;
@@ -457,29 +703,5 @@ namespace XeApp.Game.Menu
 			m_itemPackTextureCache.Terminated();
 			m_itemPackTextureCache = null;
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6ECC74 Offset: 0x6ECC74 VA: 0x6ECC74
-		// // RVA: 0xEB583C Offset: 0xEB583C VA: 0xEB583C
-		// private void <DefaultLoginBonus>b__19_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6ECC84 Offset: 0x6ECC84 VA: 0x6ECC84
-		// // RVA: 0xEB5950 Offset: 0xEB5950 VA: 0xEB5950
-		// private bool <DefaultLoginBonus>b__19_2() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6ECC94 Offset: 0x6ECC94 VA: 0x6ECC94
-		// // RVA: 0xEB597C Offset: 0xEB597C VA: 0xEB597C
-		// private void <ConditionsLoginBonus>b__20_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6ECCA4 Offset: 0x6ECCA4 VA: 0x6ECCA4
-		// // RVA: 0xEB59A8 Offset: 0xEB59A8 VA: 0xEB59A8
-		// private void <DivaPlay>b__30_0() { }
-		
-		// [CompilerGeneratedAttribute] // RVA: 0x6ECCC4 Offset: 0x6ECCC4 VA: 0x6ECCC4
-		// // RVA: 0xEB5A88 Offset: 0xEB5A88 VA: 0xEB5A88
-		// private void <LayoutLoadConditionsLoginBonus>b__42_0(GameObject instance) { }
-		
-		// [CompilerGeneratedAttribute] // RVA: 0x6ECCE4 Offset: 0x6ECCE4 VA: 0x6ECCE4
-		// // RVA: 0xEB5B80 Offset: 0xEB5B80 VA: 0xEB5B80
-		// private void <OnPostSetCanvas>b__50_0() { }
 	}
 }

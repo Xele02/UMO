@@ -357,7 +357,7 @@ public class AOJGDNFAIJL_PrismData
 								{
 									if (val3 == DLPIKHDNIIE_PrismCostumeIds[IOPHIHFOOEP_SlotIndex])
 									{
-										info2.CBLHLEKLLDE_IsSet = PBHPPCPKHDL_PrismCostumeColorIds[IOPHIHFOOEP_SlotIndex] == colorList[j];
+										info3.CBLHLEKLLDE_IsSet = PBHPPCPKHDL_PrismCostumeColorIds[IOPHIHFOOEP_SlotIndex] == colorList[j];
 									}
 								}
 								HJDEMKCNHJF_CostumeListBySlot[IOPHIHFOOEP_SlotIndex].Add(info3);

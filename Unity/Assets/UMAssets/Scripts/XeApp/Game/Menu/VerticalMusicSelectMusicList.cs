@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System;
 using XeSys;
 using System.Collections;
+using UnityEngine.UI;
 
 namespace XeApp.Game.Menu
 {
@@ -22,6 +23,7 @@ namespace XeApp.Game.Menu
 		private GameObject m_emptyTextObj; // 0x14
 		[SerializeField]
 		private TextMeshProUGUI m_emptyText; // 0x18
+		private Text m_emptyTextText;
 		[SerializeField]
 		private Animator m_listUpdateAnim; // 0x1C
 		private static readonly int hashStateIn = Animator.StringToHash("Base Layer.In"); // 0x0
@@ -46,6 +48,7 @@ namespace XeApp.Game.Menu
 				if (OnUpdateClip != null)
 					OnUpdateClip();
 			});
+			m_emptyTextText = GameManager.Instance.GetSystemFont().ReplaceTmpText(m_emptyText);
 		}
 
 		// // RVA: 0xBE1CB0 Offset: 0xBE1CB0 VA: 0xBE1CB0
@@ -57,7 +60,11 @@ namespace XeApp.Game.Menu
 				{
 					m_musicScroll.SetListEnable(false);
 					m_emptyTextObj.SetActive(true);
-					m_emptyText.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("music_not_exist_text_01");
+					if(m_emptyText != null)
+						m_emptyText.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("music_not_exist_text_01");
+					if(m_emptyTextText != null)
+						m_emptyTextText.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("music_not_exist_text_01");
+					
 				}
 				else if(style != VerticalMusicSelectUISapporter.MusicInfoStyle.None6Line)
 				{
@@ -68,7 +75,10 @@ namespace XeApp.Game.Menu
 				{
 					m_musicScroll.SetListEnable(false);
 					m_emptyTextObj.SetActive(true);
-					m_emptyText.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("music_not_exist_line6_text_01");
+					if(m_emptyText != null)
+						m_emptyText.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("music_not_exist_line6_text_01");
+					if(m_emptyTextText != null)
+						m_emptyTextText.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("music_not_exist_line6_text_01");
 				}
 			}
 			else
@@ -82,7 +92,10 @@ namespace XeApp.Game.Menu
 				{
 					m_musicScroll.SetListEnable(false);
 					m_emptyTextObj.SetActive(true);
-					m_emptyText.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("music_not_exist_text_02");
+					if(m_emptyText != null)
+						m_emptyText.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("music_not_exist_text_02");
+					if(m_emptyTextText != null)
+						m_emptyTextText.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("music_not_exist_text_02");
 				}
 			}
 		}
@@ -199,14 +212,14 @@ namespace XeApp.Game.Menu
 				else
 				{
 					obj.SetListType(MusicScrollCenterItem.ListType.Normal);
-					obj.SetTitle(m_musicList[listIndex].MusicName);
+					obj.SetTitle(m_musicList[listIndex].MusicName, m_musicList[listIndex].MusicName2, m_musicList[listIndex].MusicName3);
 					obj.SetSingerName(m_musicList[listIndex].VocalName);
 				}
 				obj.SetAttribute(m_musicList[listIndex].ViewMusic.FKDCCLPGKDK_JacketAttr);
 				obj.SetLockIcon(m_musicList[listIndex].IsOpen, m_musicList[listIndex].IsUnlockable);
 				if(!m_musicList[listIndex].ViewMusic.BJANNALFGGA)
 				{
-					obj.SetRankingButton(m_musicList[listIndex].ViewMusic.LEBDMNIGOJB);
+					obj.SetRankingButton(m_musicList[listIndex].ViewMusic.LEBDMNIGOJB_IsScoreEvent);
 				}
 				else
 				{
@@ -301,7 +314,7 @@ namespace XeApp.Game.Menu
 				else
 				{
 					obj.SetListType(MusicScrollItem.ListType.Normal);
-					obj.SetTitle(m_musicList[listIndex].MusicName);
+					obj.SetTitle(m_musicList[listIndex].MusicName, m_musicList[listIndex].MusicName2, m_musicList[listIndex].MusicName3);
 				}
 				obj.SetAttribute(m_musicList[listIndex].ViewMusic.FKDCCLPGKDK_JacketAttr);
 				obj.SetLockIcon(m_musicList[listIndex].IsOpen, m_musicList[listIndex].IsUnlockable);

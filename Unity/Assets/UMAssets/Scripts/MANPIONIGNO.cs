@@ -16,7 +16,7 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	// // RVA: 0xA168C8 Offset: 0xA168C8 VA: 0xA168C8 Slot: 32
 	public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO)
 	{
-		TodoLogger.LogError(0, "DAKMIKNKHMF");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "DAKMIKNKHMF");
 		return null;
 	}
 
@@ -29,7 +29,7 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	// // RVA: 0xA16B34 Offset: 0xA16B34 VA: 0xA16B34 Slot: 5
 	public override string IFKKBHPMALH()
 	{
-		TodoLogger.LogError(0, "IFKKBHPMALH");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "IFKKBHPMALH");
 		return null;
 	}
 
@@ -45,21 +45,21 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	// // RVA: 0xA17174 Offset: 0xA17174 VA: 0xA17174 Slot: 7
 	public override List<int> HEACCHAKMFG()
 	{
-		TodoLogger.LogError(0, "HEACCHAKMFG");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "HEACCHAKMFG");
 		return base.HEACCHAKMFG();
 	}
 
 	// // RVA: 0xA172F4 Offset: 0xA172F4 VA: 0xA172F4 Slot: 9
 	public override long HOOBCIIOCJD_GetEndTime(int GHBPLHBNMBK)
 	{
-		TodoLogger.LogError(0, "HOOBCIIOCJD");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "HOOBCIIOCJD");
 		return 0;
 	}
 
 	// // RVA: 0xA17624 Offset: 0xA17624 VA: 0xA17624 Slot: 10
 	public override bool GIDDKGMPIOK(int GHBPLHBNMBK)
 	{
-		TodoLogger.LogError(0, "GIDDKGMPIOK");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "GIDDKGMPIOK");
 		return false;
 	}
 
@@ -69,7 +69,7 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	// // RVA: 0xA17C88 Offset: 0xA17C88 VA: 0xA17C88 Slot: 27
 	public override int HLOGNJNGDJO_GetHelpId(int OIPCCBHIKIA = 0)
 	{
-		TodoLogger.LogError(0, "HLOGNJNGDJO");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "HLOGNJNGDJO");
 		return 0;
 	}
 
@@ -79,7 +79,7 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	// // RVA: 0xA17FC8 Offset: 0xA17FC8 VA: 0xA17FC8 Slot: 28
 	public override long FBGDBGKNKOD()
 	{
-		TodoLogger.LogError(0, "FBGDBGKNKOD");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "FBGDBGKNKOD");
 		return 0;
 	}
 
@@ -89,7 +89,7 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	// // RVA: 0xA184E8 Offset: 0xA184E8 VA: 0xA184E8 Slot: 29
 	public override void MJFKJHJJLMN(int LHJCOPMMIGO = 0, bool FBBNPFFEJBN = false)
 	{
-		TodoLogger.LogError(0, "MJFKJHJJLMN");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "MJFKJHJJLMN");
 	}
 
 	// // RVA: 0xA18A44 Offset: 0xA18A44 VA: 0xA18A44 Slot: 30
@@ -98,7 +98,7 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI);
 		if(db != null)
 		{
-			TodoLogger.LogError(0, "MANPIONIGNO_EventGoDiva.JIHMLILFOPG");
+			TodoLogger.LogError(TodoLogger.EventGoDiva_14, "MANPIONIGNO_EventGoDiva.JIHMLILFOPG");
 		}
 		return false;
 	}
@@ -106,7 +106,7 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	// // RVA: 0xA18F10 Offset: 0xA18F10 VA: 0xA18F10 Slot: 31
 	protected override bool IMCMNOPNGHO(long JHNMKKNEENE)
 	{
-		TodoLogger.LogError(0, "MANPIONIGNO_EventGoDiva.IMCMNOPNGHO");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "MANPIONIGNO_EventGoDiva.IMCMNOPNGHO");
 		return false;
 	}
 
@@ -116,7 +116,7 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	// // RVA: 0xA19950 Offset: 0xA19950 VA: 0xA19950 Slot: 40
 	protected override void KKFLDCBHFJA(long JHNMKKNEENE)
 	{
-		TodoLogger.LogError(0, "KKFLDCBHFJA");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "KKFLDCBHFJA");
 	}
 
 	// // RVA: 0xA1AB8C Offset: 0xA1AB8C VA: 0xA1AB8C Slot: 41
@@ -125,14 +125,14 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	// // RVA: 0xA1AC00 Offset: 0xA1AC00 VA: 0xA1AC00 Slot: 42
 	public override int DEECKJADNMJ(int LAJNCHHNLBI)
 	{
-		TodoLogger.LogError(0, "DEECKJADNMJ");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "DEECKJADNMJ");
 		return 0;
 	}
 
 	// // RVA: 0xA1AC98 Offset: 0xA1AC98 VA: 0xA1AC98 Slot: 43
 	protected override void FCHGHAAPIBH()
 	{
-		TodoLogger.LogError(0, "FCHGHAAPIBH");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "FCHGHAAPIBH");
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6BC734 Offset: 0x6BC734 VA: 0x6BC734
@@ -146,7 +146,7 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	// // RVA: 0xA1B4E4 Offset: 0xA1B4E4 VA: 0xA1B4E4 Slot: 46
 	protected override void PJDGDNJNCNM_UpdateStatusImpl(long JHNMKKNEENE)
 	{
-		TodoLogger.LogError(0, "PJDGDNJNCNM");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "PJDGDNJNCNM");
 	}
 
 	// // RVA: 0xA1BB4C Offset: 0xA1BB4C VA: 0xA1BB4C Slot: 48
@@ -195,22 +195,29 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	// public int CACFIGAPLDH() { }
 
 	// // RVA: 0xA1FDCC Offset: 0xA1FDCC VA: 0xA1FDCC Slot: 14
-	// public override void HPENJEOAMBK(int JKIADEKHGLC, int HMFFHLPNMPH, BBHNACPENDM AHEFHIMGIBI) { }
+	public override void HPENJEOAMBK(int JKIADEKHGLC, int HMFFHLPNMPH, BBHNACPENDM_ServerSaveData AHEFHIMGIBI)
+	{
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "HPENJEOAMBK");
+	}
 
 	// // RVA: 0xA201D8 Offset: 0xA201D8 VA: 0xA201D8 Slot: 11
-	// public override int AELBIEDNPGB(BBHNACPENDM AHEFHIMGIBI) { }
+	public override int AELBIEDNPGB(BBHNACPENDM_ServerSaveData AHEFHIMGIBI)
+	{
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "AELBIEDNPGB");
+		return 0;
+	}
 
 	// // RVA: 0xA20584 Offset: 0xA20584 VA: 0xA20584 Slot: 54
 	public override int NGIHFKHOJOK(bool DJHLDMOPCOL = true)
 	{
-		TodoLogger.LogError(0, "NGIHFKHOJOK");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "NGIHFKHOJOK");
 		return 0;
 	}
 
 	// // RVA: 0xA20640 Offset: 0xA20640 VA: 0xA20640 Slot: 55
 	public override bool PIDEAJOJKKC(int LHJCOPMMIGO = 0)
 	{
-		TodoLogger.LogError(0, "PIDEAJOJKKC");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "PIDEAJOJKKC");
 		return false;
 	}
 
@@ -220,29 +227,33 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	// // RVA: 0xA20A78 Offset: 0xA20A78 VA: 0xA20A78 Slot: 57
 	public override void LHAEPPFACOB(int LHJCOPMMIGO, bool OAFPGJLCNFM)
 	{
-		TodoLogger.LogError(0, "LHAEPPFACOB");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "LHAEPPFACOB");
 	}
 
 	// // RVA: 0xA20CE0 Offset: 0xA20CE0 VA: 0xA20CE0 Slot: 58
 	protected override void LMGMELPOGMH(int LHJCOPMMIGO)
 	{
-		TodoLogger.LogError(0, "LMGMELPOGMH");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "LMGMELPOGMH");
 	}
 
 	// // RVA: 0xA210C4 Offset: 0xA210C4 VA: 0xA210C4 Slot: 59
-	// public override List<int> AEGDKBNNDBC() { }
+	public override List<int> AEGDKBNNDBC()
+	{
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "AEGDKBNNDBC");
+		return null;
+	}
 
 	// // RVA: 0xA21248 Offset: 0xA21248 VA: 0xA21248 Slot: 33
 	public override bool MPMKJNJGFEF()
 	{
-		TodoLogger.LogError(0, "MPMKJNJGFEF");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "MPMKJNJGFEF");
 		return false;
 	}
 
 	// // RVA: 0xA214A8 Offset: 0xA214A8 VA: 0xA214A8 Slot: 65
 	protected override bool JLPDECMHLIM()
 	{
-		TodoLogger.LogError(0, "JLPDECMHLIM");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "JLPDECMHLIM");
 		return false;
 	}
 
@@ -252,7 +263,7 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	// // RVA: 0xA21A64 Offset: 0xA21A64 VA: 0xA21A64 Slot: 70
 	public override void ADACMHAHHKC(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG)
 	{
-		TodoLogger.LogError(0, "ADACMHAHHKC");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "ADACMHAHHKC");
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6BC824 Offset: 0x6BC824 VA: 0x6BC824
@@ -269,14 +280,14 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	// // RVA: 0xA2205C Offset: 0xA2205C VA: 0xA2205C Slot: 71
 	public override int BAEPGOAMBDK(string LJNAKDMILMC, int MNCOAGOKNAO)
 	{
-		TodoLogger.LogError(0, "BAEPGOAMBDK");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "BAEPGOAMBDK");
 		return 0;
 	}
 
 	// // RVA: 0xA221DC Offset: 0xA221DC VA: 0xA221DC Slot: 72
 	public override string MAICAKMIBEM(string LJNAKDMILMC, string MNCOAGOKNAO)
 	{
-		TodoLogger.LogError(0, "MAICAKMIBEM");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "MAICAKMIBEM");
 		return MNCOAGOKNAO;
 	}
 
@@ -306,30 +317,37 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	{
 		if(!MNNNLDFNNCD(JHNMKKNEENE))
 			return null;
-		TodoLogger.LogError(0, "MANPIONIGNO_EventGoDiva.IJCPBPFEGDM");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "MANPIONIGNO_EventGoDiva.IJCPBPFEGDM");
 		return null;
 	}
 
 	// // RVA: 0xA2802C Offset: 0xA2802C VA: 0xA2802C Slot: 74
 	public override int EDNMFMBLCGF_GetWavId()
 	{
-		TodoLogger.LogError(0, "EDNMFMBLCGF");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "EDNMFMBLCGF");
 		return 0;
 	}
 
 	// // RVA: 0xA281F4 Offset: 0xA281F4 VA: 0xA281F4 Slot: 38
-	// public override void EMEPJNLHJHJ(int GJEADBKFAPA, int AKNELONELJK, bool GIKLNODJKFK, ref int APMGOLOPLFP, ref int FBBDNLAMPMH) { }
+	public override void EMEPJNLHJHJ(int GJEADBKFAPA, int AKNELONELJK, bool GIKLNODJKFK, ref int APMGOLOPLFP, ref int FBBDNLAMPMH)
+	{
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "EMEPJNLHJHJ");
+	}
 
 	// // RVA: 0xA283F4 Offset: 0xA283F4 VA: 0xA283F4 Slot: 76
 	// public override void MMIMJPNLKBK() { }
 
 	// // RVA: 0xA28670 Offset: 0xA28670 VA: 0xA28670 Slot: 77
-	// public override string DBEMCLMPCFA() { }
+	public override string DBEMCLMPCFA()
+	{
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "DBEMCLMPCFA");
+		return "";
+	}
 
 	// // RVA: 0xA28A60 Offset: 0xA28A60 VA: 0xA28A60 Slot: 78
 	public override long OEGAJJANHGL()
 	{
-		TodoLogger.LogError(0, "OEGAJJANHGL");
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "OEGAJJANHGL");
 		return 0;
 	}
 

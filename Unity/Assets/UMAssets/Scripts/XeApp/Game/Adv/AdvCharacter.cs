@@ -154,7 +154,7 @@ namespace XeApp.Game.Adv
 						_body.sprite.uv[0].y - _body.sprite.uv[1].y
 					);
 					_auraMaterialInstance.SetTexture("_MainTex", _maskTexture);
-					_auraMaterialInstance.SetColor("_MainColor", IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.LOCEHOMKJEI[colorId - 1].DOKKMMFKLJI_Color);
+					_auraMaterialInstance.SetColor("_MainColor", IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.LOCEHOMKJEI_ColorConfigs[colorId - 1].DOKKMMFKLJI_Color);
 					_auraMaterialInstance.SetFloat("_Power", 1.5f);
 					_prismMaterialInstance.SetTexture("_MainTex", _maskTexture);
 				}

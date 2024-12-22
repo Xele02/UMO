@@ -282,7 +282,7 @@ namespace XeApp.Game.Menu
 			if(unitData != null)
 			{
 				unitData.HCDGELDHFHB();
-				ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.AFLMHBMBNBO/*48*/, 2, false);
+				ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.AFLMHBMBNBO_48/*48*/, 2, false);
 			}
 		}
 
@@ -349,7 +349,7 @@ namespace XeApp.Game.Menu
 			{
 				if(!IsKeepCenterSkill || IsSimpleAutoSet)
 				{
-					playerData.OPIBAPEGCLA_Scenes[m_sortSceneList[0].sceneListIndex].CADENLBDAEB = false;
+					playerData.OPIBAPEGCLA_Scenes[m_sortSceneList[0].sceneListIndex].CADENLBDAEB_New = false;
 					playerData.OPIBAPEGCLA_Scenes[m_sortSceneList[0].sceneListIndex].LEHDLBJJBNC_SetNotNew();
 					if(isGoDiva)
 					{
@@ -387,7 +387,7 @@ namespace XeApp.Game.Menu
 					{
 						if(!IsKeepCenterSkill || IsSimpleAutoSet)
 						{
-							playerData.OPIBAPEGCLA_Scenes[m_intimacyList[0].sceneListIndex].CADENLBDAEB = false;
+							playerData.OPIBAPEGCLA_Scenes[m_intimacyList[0].sceneListIndex].CADENLBDAEB_New = false;
 							playerData.OPIBAPEGCLA_Scenes[m_intimacyList[0].sceneListIndex].LEHDLBJJBNC_SetNotNew();
 							if(isGoDiva)
 							{
@@ -489,7 +489,7 @@ namespace XeApp.Game.Menu
 		{
 			if (slotType == SlotType.Main)
 			{
-				playerData.OPIBAPEGCLA_Scenes[sceneListIndex].CADENLBDAEB = false;
+				playerData.OPIBAPEGCLA_Scenes[sceneListIndex].CADENLBDAEB_New = false;
 				playerData.OPIBAPEGCLA_Scenes[sceneListIndex].LEHDLBJJBNC_SetNotNew();
 				if (isGoDiva)
 				{
@@ -505,7 +505,7 @@ namespace XeApp.Game.Menu
 				int slotIndex = (int)slotType - 1;
 				if(slotIndex < 2)
 				{
-					playerData.OPIBAPEGCLA_Scenes[sceneListIndex].CADENLBDAEB = false;
+					playerData.OPIBAPEGCLA_Scenes[sceneListIndex].CADENLBDAEB_New = false;
 					playerData.OPIBAPEGCLA_Scenes[sceneListIndex].LEHDLBJJBNC_SetNotNew();
 					if (isGoDiva)
 					{

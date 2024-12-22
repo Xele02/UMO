@@ -157,10 +157,20 @@ namespace XeApp.Game.Menu
 			}
 
 			//// RVA: 0x16FC054 Offset: 0x16FC054 VA: 0x16FC054
-			//public void StartRankUpAnimation(int lv) { }
+			public void StartRankUpAnimation(int lv)
+			{
+				if(rank.rank_up_anim == null)
+					return;
+				rank.rank_up_anim[lv].StartChildrenAnimGoStop("go_in", "st_in");
+			}
 
 			//// RVA: 0x16FC108 Offset: 0x16FC108 VA: 0x16FC108
-			//public void StartRankUnlockAnimation(int lv) { }
+			public void StartRankUnlockAnimation(int lv)
+			{
+				if(rank.rank_unlock_anim == null)
+					return;
+				rank.rank_unlock_anim[lv].StartChildrenAnimGoStop("go_in", "st_in");
+			}
 		}
 
 		public const int RANK_MAX = 6;
@@ -170,13 +180,13 @@ namespace XeApp.Game.Menu
 		public static void SettingRewardIcon(LFAFJCNKLML data, int item_id, int rank, int value, RewardIconLayoutSetting layout_setting, Func<LFAFJCNKLML, bool> validater)
 		{
 			NumberBase num = layout_setting.get_num;
-			LFAFJCNKLML.FHLDDEKAJKI d = data.OCOOHBINGBG[rank];
+			LFAFJCNKLML.FHLDDEKAJKI d = data.OCOOHBINGBG_LevelInfo[rank];
 			bool isTargetReward = data.HGBJODBCJDA - 1 <= rank;
 			layout_setting.diva_image.enabled = false;
 			layout_setting.item_image.enabled = false;
 			switch(d.PEEAGFNOFFO_UnlockType)
 			{
-				case LCLCCHLDNHJ_Costume.FPDJGDGEBNG.NKKIKONDGPF/*1*/:
+				case LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.NKKIKONDGPF_1_CostumeEffect/*1*/:
 					MenuScene.Instance.ItemTextureCache.Load(data.JPIDIENBGKH_CostumeId + item_id, (IiconTexture texture) =>
 					{
 						//0x16FB624
@@ -200,7 +210,7 @@ namespace XeApp.Game.Menu
 						}
 					});
 					break;
-				case LCLCCHLDNHJ_Costume.FPDJGDGEBNG.CFOEMAAKOMC/*4*/:
+				case LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_CostumeColor/*4*/:
 					MenuScene.Instance.ItemTextureCache.Load(data.JPIDIENBGKH_CostumeId + item_id, CKFGMNAIBNG.LLJPMOIPBAG(data.AHHJLDLAPAN_DivaId, data.JPIDIENBGKH_CostumeId, rank), (IiconTexture texture) =>
 					{
 						//0x16FB718
@@ -210,7 +220,7 @@ namespace XeApp.Game.Menu
 						}
 					});
 					break;
-				case LCLCCHLDNHJ_Costume.FPDJGDGEBNG.PJJJGFBLIAP/*5*/:
+				case LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.PJJJGFBLIAP_5_Stat/*5*/:
 					MenuScene.Instance.DivaIconCache.Load(data.AHHJLDLAPAN_DivaId, 1, 0, (IiconTexture texture) =>
 					{
 						//0x16FB530
@@ -220,7 +230,7 @@ namespace XeApp.Game.Menu
 						}
 					});
 					break;
-				case LCLCCHLDNHJ_Costume.FPDJGDGEBNG.JDPFMDOMMJE/*6*/:
+				case LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.JDPFMDOMMJE_6_Support/*6*/:
 					MenuScene.Instance.SubPlateIconTextureCahe.Load(d.KJNAHLOODKD_Value[0], d.KJNAHLOODKD_Value[1], (IiconTexture texture) =>
 					{
 						//0x16FB80C
@@ -234,7 +244,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x16FA950 Offset: 0x16FA950 VA: 0x16FA950
-		private static void SettingRewardIcon(RewardIconLayoutSetting layout_setting, IiconTexture texture, int rank, bool is_item, bool is_status_up, bool is_show_num, LCLCCHLDNHJ_Costume.FPDJGDGEBNG rewardType, bool isTargetReward = false)
+		private static void SettingRewardIcon(RewardIconLayoutSetting layout_setting, IiconTexture texture, int rank, bool is_item, bool is_status_up, bool is_show_num, LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType rewardType, bool isTargetReward = false)
 		{
 			if(is_item)
 			{
@@ -250,7 +260,7 @@ namespace XeApp.Game.Menu
 			}
 			if(is_status_up)
 			{
-				if(rank < 3 || rewardType != LCLCCHLDNHJ_Costume.FPDJGDGEBNG.PJJJGFBLIAP/*5*/)
+				if(rank < 3 || rewardType != LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.PJJJGFBLIAP_5_Stat/*5*/)
 				{
 					layout_setting.item_type.StartChildrenAnimGoStop(1, 1);
 				}
@@ -272,13 +282,70 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x16FAC5C Offset: 0x16FAC5C VA: 0x16FAC5C
-		//public static List<LFAFJCNKLML.FHLDDEKAJKI> GetRewardList(LFAFJCNKLML data, int add_point) { }
+		public static List<LFAFJCNKLML.FHLDDEKAJKI> GetRewardList(LFAFJCNKLML data, int add_point)
+		{
+			List<LFAFJCNKLML.FHLDDEKAJKI> res = new List<LFAFJCNKLML.FHLDDEKAJKI>();
+			int a1 = add_point;
+			int a2 = data.ABLHIAEDJAI_Point;
+			for(int i = data.GKIKAABHAAD_Level; i < data.OCOOHBINGBG_LevelInfo.Count; i++)
+			{
+				if(data.OCOOHBINGBG_LevelInfo[i].DNBFMLBNAEE_NeedPoint >= a2 + a1)
+				{
+					res.Add(data.OCOOHBINGBG_LevelInfo[i]);
+					a1 = data.OCOOHBINGBG_LevelInfo[i].DNBFMLBNAEE_NeedPoint - a2;
+					a2 = 0;
+				}
+			}
+			return res;
+		}
 
 		//// RVA: 0x16FAE3C Offset: 0x16FAE3C VA: 0x16FAE3C
-		//public static void ShowCommonAchieveWindow(Action buttonCallBack) { }
+		public static void ShowCommonAchieveWindow(Action buttonCallBack)
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			MFDJIFIIPJD m = new MFDJIFIIPJD();
+			m.KHEKNNFCAOI(10001, MOEALEGLGCH.FLGEJDKMNMI());
+			PopupQuestRewardSetting s = new PopupQuestRewardSetting();
+			s.TitleText = bk.GetMessageByLabel("costume_upgrade_achievement_title_text");
+			s.IsCaption = true;
+			s.WindowSize = SizeType.Small;
+			s.Buttons = new ButtonInfo[1] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive } };
+			s.ItemInfo = m;
+			PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType typ, PopupButton.ButtonLabel lbl) =>
+			{
+				//0x16FBABC
+				buttonCallBack();
+			}, null, null, null);
+		}
 
 		//// RVA: 0x16FB1C4 Offset: 0x16FB1C4 VA: 0x16FB1C4
-		//public static void ShowReleaseDailyOperationWindow(int prev, Action buttonCallBack) { }
+		public static void ShowReleaseDailyOperationWindow(int prev, Action buttonCallBack)
+		{
+			int nowDifficult = KDHGBOOECKC.HHCJCDFCLOB.BCACCAGCPCO();
+			if(prev < nowDifficult)
+			{
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				PopupOfferUnclokDiffSetting s = new PopupOfferUnclokDiffSetting();
+				s.TitleText = "";
+				s.IsCaption = false;
+				s.preDiff = prev;
+				s.popupMsg = bk.GetMessageByLabel("offer_daily_offer_levelup_text");
+				s.nextDiff = nowDifficult;
+				s.WindowSize = SizeType.Small;
+				s.Buttons = new ButtonInfo[1] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative } };
+				PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType typ, PopupButton.ButtonLabel lbl) =>
+				{
+					//0x16FBAE8
+					buttonCallBack();
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.AHAECLAKMIB_UpdateDailyLv(nowDifficult);
+					GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+				}, null, null, null);
+			}
+			else
+			{
+				buttonCallBack();
+			}
+		}
 
 		//// RVA: 0x16EFD58 Offset: 0x16EFD58 VA: 0x16EFD58
 		public static void ShowItemDetailWindow(LFAFJCNKLML upgradeData, int level, Transform parent)

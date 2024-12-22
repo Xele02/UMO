@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XeApp.Core;
 using XeApp.Game.Common;
+using XeApp.Game.Tutorial;
 using XeSys;
 
 namespace XeApp.Game.Menu
@@ -110,7 +111,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_LayoutAssetLoad()
 		{
 			string bundleName; // 0x14
-			Font systemFont; // 0x18
+			XeSys.FontInfo systemFont; // 0x18
 
 			//0xBD81C8
 			m_IsLoadLayout = false;
@@ -142,7 +143,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7346FC Offset: 0x7346FC VA: 0x7346FC
 		//// RVA: 0xBD07D8 Offset: 0xBD07D8 VA: 0xBD07D8
-		private IEnumerator Co_LoadAssetsLayoutValkyrieSelect(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsLayoutValkyrieSelect(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -170,7 +171,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x734774 Offset: 0x734774 VA: 0x734774
 		//// RVA: 0xBD08B8 Offset: 0xBD08B8 VA: 0xBD08B8
-		private IEnumerator Co_LoadAssetsLayoutSeriesButton(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsLayoutSeriesButton(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -196,7 +197,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7347EC Offset: 0x7347EC VA: 0x7347EC
 		//// RVA: 0xBD0998 Offset: 0xBD0998 VA: 0xBD0998
-		private IEnumerator Co_LoadAssetsLayoutCircle(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsLayoutCircle(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -217,7 +218,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x734864 Offset: 0x734864 VA: 0x734864
 		//// RVA: 0xBD0A78 Offset: 0xBD0A78 VA: 0xBD0A78
-		private IEnumerator Co_LoadAssetsPopUp(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsPopUp(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -239,7 +240,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7348DC Offset: 0x7348DC VA: 0x7348DC
 		//// RVA: 0xBD0B58 Offset: 0xBD0B58 VA: 0xBD0B58
-		private IEnumerator Co_LoadAssetsDecolureAnimation(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsDecolureAnimation(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -265,7 +266,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x734954 Offset: 0x734954 VA: 0x734954
 		//// RVA: 0xBD0C38 Offset: 0xBD0C38 VA: 0xBD0C38
-		private IEnumerator Co_LoadAssetsHaveItem(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsHaveItem(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -287,7 +288,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7349CC Offset: 0x7349CC VA: 0x7349CC
 		//// RVA: 0xBD0D18 Offset: 0xBD0D18 VA: 0xBD0D18
-		private IEnumerator Co_LoadAssetsAbilityUpAnim(string bundleName, Font font)
+		private IEnumerator Co_LoadAssetsAbilityUpAnim(string bundleName, XeSys.FontInfo font)
 		{
 			AssetBundleLoadLayoutOperationBase operation;
 
@@ -695,8 +696,26 @@ namespace XeApp.Game.Menu
 			//0xBD9F88
 			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgradeHelp))
 			{
-				TodoLogger.LogError(0, "Tuto");
-				yield return null;
+				MenuScene.Instance.InputDisable();
+				backButtonDummy = () =>
+				{
+					//0xBD6D4C
+					return;
+				};
+				yield return Co.R(TutorialManager.ShowTutorial(117, null));
+				bool done = false;
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsValkyrieUpgrade, true);
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsValkyrieUpgradeHelp, true);
+				MenuScene.Save(() =>
+				{
+					//0xBD6E54
+					done = true;
+				}, null);
+				while(!done)
+					yield return null;
+				GameManager.Instance.RemovePushBackButtonHandler(backButtonDummy);
+				MenuScene.Instance.InputEnable();
+				backButtonDummy = null;
 			}
 			//LAB_00bda480
 			m_IsSceneActivate = true;
@@ -875,7 +894,7 @@ namespace XeApp.Game.Menu
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 				};
 				m_PopupSetting.before_data = new ALEKLHIANJN(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId, m_SeriesValkyrieList[SelectSeries][Select].CNLIAMIIJID_AbilityLevel);
-				m_PopupSetting.after_data = new ALEKLHIANJN(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId, m_SeriesValkyrieList[SelectSeries][Select].CNLIAMIIJID_AbilityLevel);
+				m_PopupSetting.after_data = new ALEKLHIANJN(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId, m_SeriesValkyrieList[SelectSeries][Select].CNLIAMIIJID_AbilityLevel + 1);
 				PopupWindowManager.Show(m_PopupSetting, OnClickPopupButton, null, null, null);
 			}
 		}

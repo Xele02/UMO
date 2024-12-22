@@ -55,7 +55,7 @@ namespace XeApp.Game.Common
 		// [HeaderAttribute] // RVA: 0x68A2EC Offset: 0x68A2EC VA: 0x68A2EC
 		[SerializeField]
 		private CanvasGroup m_canvasGroup; // 0x34
-		private Font m_font; // 0x38
+		private XeSys.FontInfo m_font; // 0x38
 		private IKDICBBFBMI_EventBase m_controller; // 0x3C
 
 		public string period { get; private set; } // 0x40
@@ -63,7 +63,7 @@ namespace XeApp.Game.Common
 		public Action onClickButton { private get; set; } // 0x48
 
 		// RVA: 0xEAC1A8 Offset: 0xEAC1A8 VA: 0xEAC1A8
-		public void SetFont(Font font)
+		public void SetFont(XeSys.FontInfo font)
 		{
 			m_font = font;
 		}
@@ -90,17 +90,16 @@ namespace XeApp.Game.Common
 				return;
 			if(m_controller is KNKDBNFMAKF_EventSp)
 			{
-				TodoLogger.LogError(0, "Event SP");
+				TodoLogger.LogError(TodoLogger.EventSp_7, "Event SP");
 			}
 			else if(m_controller is CHHECNJBMLA_EventBoxGacha)
 			{
-				TodoLogger.LogError(0, "Event Box Gacha");
+				TodoLogger.LogError(TodoLogger.EventBoxGacha_8, "Event Box Gacha");
 			}
 			else
 			{
 				return;
 			}
-			TodoLogger.LogError(0, "Event");
 		}
 
 		// // RVA: 0xEACBD0 Offset: 0xEACBD0 VA: 0xEACBD0

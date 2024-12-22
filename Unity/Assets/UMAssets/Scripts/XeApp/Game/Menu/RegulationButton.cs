@@ -4,6 +4,7 @@ using UnityEngine;
 using XeSys.Gfx;
 using mcrs;
 using XeSys;
+using XeApp.Game.Common.uGUI;
 
 namespace XeApp.Game.Menu
 {
@@ -164,13 +165,52 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xCFB41C Offset: 0xCFB41C VA: 0xCFB41C
 		private void OpenPopupCompatibleMusic()
 		{
-			TodoLogger.LogNotImplemented("OpenPopupCompatibleMusic");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(m_sceneData != null)
+			{
+				PPGHMBNIAEC skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills.Find((PPGHMBNIAEC _) =>
+				{
+					//0xCFC72C
+					return m_sceneData.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) == _.BEKFHEBCPEE;
+				});
+				if(skill != null)
+				{
+					EONOEHOKBEB_Music music = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[skill.CEFHDLLAPDH_MusicIdCond - 1];
+					MessageBank bk = MessageManager.Instance.GetBank("menu");
+					PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("pop_compatible_music_title"), SizeType.Small, string.Format(bk.GetMessageByLabel("pop_compatible_music_desc"), RichTextUtility.MakeColorTagString(Database.Instance.musicText.Get(music.KNMGEEFGDNI_Nam).musicName, GameAttributeTextColor.Colors[music.FKDCCLPGKDK_Ma - 1])), new ButtonInfo[1]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+					}, false, true), (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+					{
+						//0xCFC814
+						return;
+					}, null, null, null);
+				}
+			}
 		}
 
 		// // RVA: 0xCFBB20 Offset: 0xCFBB20 VA: 0xCFBB20
 		private void OpenPopupCompatibleSeries()
 		{
-			TodoLogger.LogNotImplemented("OpenPopupCompatibleSeries");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(m_sceneData != null)
+			{
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				PopupSeriesRegulationSetting s = new PopupSeriesRegulationSetting();
+				s.SeriesId = (int)m_sceneData.COONMFMEDFJ_GetSerieAttr(null, false);
+				s.IsCaption = false;
+				s.TitleText = bk.GetMessageByLabel("pop_compatible_series_title");
+				s.WindowSize = SizeType.Small;
+				s.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+				};
+				PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0xCFC818
+					return;
+				}, null, null, null);
+			}
 		}
 
 		// // RVA: 0xCFBEEC Offset: 0xCFBEEC VA: 0xCFBEEC
@@ -222,9 +262,5 @@ namespace XeApp.Game.Menu
 				}, null, null, null);
 			}
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x72DADC Offset: 0x72DADC VA: 0x72DADC
-		// // RVA: 0xCFC72C Offset: 0xCFC72C VA: 0xCFC72C
-		// private bool <OpenPopupCompatibleMusic>b__22_0(PPGHMBNIAEC _) { }
 	}
 }

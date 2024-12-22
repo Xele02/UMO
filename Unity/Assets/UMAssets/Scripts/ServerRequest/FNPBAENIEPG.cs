@@ -35,7 +35,7 @@ public class FNPBAENIEPG_PurchaseAndSave : CACGCMBKHDI_Request
 	public int AFKAGFOFAHM; // 0x8C
 	public int BPNPBJALGHM; // 0x90
 	public int APHNELOFGAK; // 0x94
-	public int LGEKLPJFJEI; // 0x98
+	public int LGEKLPJFJEI_TotalCurrency; // 0x98
 	public List<string> HHIHCJKLJFF; // 0x9C
 	public string AHEFHIMGIBI; // 0xA0
 	public bool CHDDDCCHJJH = true; // 0xA4
@@ -78,5 +78,9 @@ public class FNPBAENIEPG_PurchaseAndSave : CACGCMBKHDI_Request
 	//public override void CBEPCFJOJOI() { }
 
 	// RVA: 0x13E873C Offset: 0x13E873C VA: 0x13E873C
-	//public void MJMAHKAKPCG(List<MCKCJMLOAFP_CurrencyInfo> EABDEAANPOE) { }
+	public void MJMAHKAKPCG(List<MCKCJMLOAFP_CurrencyInfo> EABDEAANPOE)
+	{
+		NFEAMMJIMPG = new PKNFMLJNKHA();
+		NFEAMMJIMPG.BBEPLKNMICJ_Balances = EABDEAANPOE;
+	}
 }

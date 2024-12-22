@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace XeSys
 {
-	public class SingletonMonoBehaviour<T> : MonoBehaviour where T : UnityEngine.Object
+	public class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
 	{
 		private static T mInstance; // 0x0
 		private static bool mApplicationIsQuitting; // 0x0
@@ -39,7 +39,7 @@ namespace XeSys
 		// RVA: -1 Offset: -1
 		public static void Release()
 		{
-			TodoLogger.LogError(0, "TODO");
+			Destroy(mInstance.gameObject);
 		}
 		/* GenericInstMethod :
 		|

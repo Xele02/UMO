@@ -55,7 +55,18 @@ namespace XeSys
 		public static long GetTargetUnixTime(int year, int month, int day, int hour, int minute, int second)
 		{
 			DateTime date = new DateTime(year, month, day, hour, minute, second, DateTimeKind.Local);
-			return (long)(TimeZoneInfo.ConvertTimeToUtc(date) - UNIX_EPOCH).TotalSeconds;
+			long t = 0;
+			try
+			{
+				t = (long)(TimeZoneInfo.ConvertTimeToUtc(date) - UNIX_EPOCH).TotalSeconds;
+			} catch(Exception e)
+			{
+				Debug.LogError(e.ToString()+" / "+date.ToLongDateString() + " " + date.ToLongTimeString() + " is not valid, backup");
+				date = new DateTime(year, month, day, hour, minute, second, DateTimeKind.Utc);
+				double diff = (DateTime.Now - DateTime.UtcNow).TotalSeconds;
+				t = (long)(date - UNIX_EPOCH).TotalSeconds + (long)diff; // UMO, ConvertTimeToUtc with no throw not avaiable ? doing it manually. Use date as UTC and add diff
+			}
+			return t;
 		}
 
 		// // RVA: 0x23A9268 Offset: 0x23A9268 VA: 0x23A9268
@@ -69,7 +80,9 @@ namespace XeSys
 		{
 			if(start == 0)
 			{
-				return !(end < current);
+				if(end != 0 && !(end < current))
+					return false;
+				return true;
 			}
 			if ((end == 0 || end > current) && current >= start)
 				return true;
@@ -80,7 +93,11 @@ namespace XeSys
 		// public static string GetDayStringFromUNIXTime(long unix_time) { }
 
 		// // RVA: 0x23A9754 Offset: 0x23A9754 VA: 0x23A9754
-		// public static string GetTimeStringFromUNIXTime(long unix_time) { }
+		public static string GetTimeStringFromUNIXTime(long unix_time)
+		{
+			DateTime date = GetLocalDateTime(unix_time);
+			return string.Format("{0:D2}", date.Hour) + ":" + string.Format("{0:D2}", date.Minute);
+		}
 
 		// // RVA: 0x23A98A4 Offset: 0x23A98A4 VA: 0x23A98A4
 		// public static bool IsAcrossHour(long prevUnixTime, long nextUnixTime) { }

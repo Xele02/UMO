@@ -12,7 +12,23 @@ public class MOMPDFMMICK_ClaimAchievementPrizesAndSave : CACGCMBKHDI_Request
 		public List<GJDFHLBONOL> PJJFEAHIPGL; // 0xC
 
 		//// RVA: 0x17B9FA4 Offset: 0x17B9FA4 VA: 0x17B9FA4
-		//public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK) { }
+		public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
+		{
+			EDOHBJAPLPF_JsonData ids = IDLHJIOMJBK[AFEHLCGHAEE_Strings.EGPADBNAOKP_inventory_ids];
+			COGMPENEPBD = new List<long>(ids.HNBFOAJIIAL_Count);
+			for(int i = 0; i < ids.HNBFOAJIIAL_Count; i++)
+			{
+				COGMPENEPBD.Add((long)ids[i]);
+			}
+			EDOHBJAPLPF_JsonData invs = IDLHJIOMJBK[AFEHLCGHAEE_Strings.PJJFEAHIPGL_inventories];
+			PJJFEAHIPGL = new List<GJDFHLBONOL>(invs.HNBFOAJIIAL_Count);
+			for(int i = 0; i < invs.HNBFOAJIIAL_Count; i++)
+			{
+				GJDFHLBONOL data = new GJDFHLBONOL();
+				data.DPKCOKLMFMK(invs[i]);
+				PJJFEAHIPGL.Add(data);
+			}
+		}
 	}
 
 	public class JGCHFAKGAGA
@@ -28,7 +44,14 @@ public class MOMPDFMMICK_ClaimAchievementPrizesAndSave : CACGCMBKHDI_Request
 		{
 			if(IDLHJIOMJBK.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.BBEPLKNMICJ_balances))
 			{
-				TodoLogger.LogError(0, "KHEKNNFCAOI");
+				EDOHBJAPLPF_JsonData l = IDLHJIOMJBK[AFEHLCGHAEE_Strings.BBEPLKNMICJ_balances];
+				BBEPLKNMICJ = new List<MCKCJMLOAFP_CurrencyInfo>(l.HNBFOAJIIAL_Count);
+				for(int i = 0; i < l.HNBFOAJIIAL_Count; i++)
+				{
+					MCKCJMLOAFP_CurrencyInfo data = new MCKCJMLOAFP_CurrencyInfo();
+					data.DPKCOKLMFMK(l[i]);
+					BBEPLKNMICJ.Add(data);
+				}
 			}
 			else
 			{
@@ -36,7 +59,14 @@ public class MOMPDFMMICK_ClaimAchievementPrizesAndSave : CACGCMBKHDI_Request
 			}
 			if(IDLHJIOMJBK.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes))
 			{
-				TodoLogger.LogError(0, "KHEKNNFCAOI 2");
+				EDOHBJAPLPF_JsonData l = IDLHJIOMJBK[AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes];
+				CEDLLCCONJP = new List<KMHBJPCCDJJ>(l.HNBFOAJIIAL_Count);
+				for(int i = 0; i < l.HNBFOAJIIAL_Count; i++)
+				{
+					KMHBJPCCDJJ data = new KMHBJPCCDJJ();
+					data.KHEKNNFCAOI(l[i]);
+					CEDLLCCONJP.Add(data);
+				}
 			}
 			BIOGKIEECGN_CreatedAt = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.BIOGKIEECGN_created_at];
 			IFNLEKOILPM_UpdatedAt = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.IFNLEKOILPM_updated_at];

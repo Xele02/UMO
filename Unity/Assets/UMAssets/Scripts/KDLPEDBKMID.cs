@@ -7,6 +7,7 @@ using System.Collections;
 using XeSys.File;
 using XeApp.Game;
 using XeSys;
+using XeApp.Game.Common;
 
 public delegate bool OMIFMMJPMDJ(int INDDJNMPONH, float LNAHJANMJNM);
 public delegate void OBHIGCFPKJN(string DOGDHKIEBJA, IMCBBOAFION KLMFJJCNBIP, JFDNPFFOACP NEFKBBNKNPP);
@@ -353,7 +354,7 @@ public class KDLPEDBKMID
 				yield return null;
 				//2
 				PMDNNKAPIKJ_FileDownloader.FBANBDCOEJL();
-				if(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_Status == /*2*/JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.FEJIMBDPMKI_2)
+				if(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_Status == /*2*/JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.FEJIMBDPMKI_2_Success)
 				{
 					HANBBBBLLGP = 100.0f;
 					OEPPEGHGNNO(3, 100);
@@ -364,58 +365,75 @@ public class KDLPEDBKMID
 				}
 				else
 				{
-					if(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_Status == /*4*/JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LPLEIJIFOKN_Error)
+					if(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_Status == /*4*/JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LPLEIJIFOKN_4_AllError)
 					{
 						string errorStr = "network";
 						if(PMDNNKAPIKJ_FileDownloader.BHICPONFJKM_SpaceError)
 							errorStr = "storage";
 						if(StorageSupport.GetAvailableStorageSizeMB() > -1 && StorageSupport.GetAvailableStorageSizeMB() < 50)
 							errorStr = "storage";
-						APGOAMNGFFF = 0;
-						MAIHLKPEHJN(errorStr, () => {
-							//0xE849D8
-							APGOAMNGFFF = 1;
-						}, () => {
-							//0xE849E4
-							APGOAMNGFFF = -1;
-						});
-						//goto LAB_00e84f0c; // To 3
-						//3
-						//LAB_00e84f0c
-						while(APGOAMNGFFF == 0)
+#if UNITY_ANDROID || DEBUG_ANDROID_FILESYSTEM
+						if(errorStr == "storage")
 						{
-							yield return null;
+#endif
+							APGOAMNGFFF = 0;
+							MAIHLKPEHJN(errorStr, () => {
+								//0xE849D8
+								APGOAMNGFFF = 1;
+							}, () => {
+								//0xE849E4
+								APGOAMNGFFF = -1;
+							});
+							//goto LAB_00e84f0c; // To 3
+							//3
+							//LAB_00e84f0c
+							while(APGOAMNGFFF == 0)
+							{
+								yield return null;
+							}
+							// L 267
+							PMDNNKAPIKJ_FileDownloader.PBIMGBKLDPP();
+							if(APGOAMNGFFF != 1)
+							{
+								//goto LAB_00e85514;
+								KOIGPANFBKP = false;
+								TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error EOFJPNPFGDM_Coroutine_Install");
+								yield break;
+							}
+#if UNITY_ANDROID || DEBUG_ANDROID_FILESYSTEM
 						}
-						// L 267
-						PMDNNKAPIKJ_FileDownloader.PBIMGBKLDPP();
-						if(APGOAMNGFFF != 1)
+						else
 						{
-							//goto LAB_00e85514;
-							KOIGPANFBKP = false;
-							TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error EOFJPNPFGDM_Coroutine_Install");
-							yield break;
+							yield return Co.R(FileSystemProxy.WaitServerInfo("Missing files.", false, true, (PopupButton.ButtonLabel btn) =>
+							{
+							}));
+							PMDNNKAPIKJ_FileDownloader.PBIMGBKLDPP();
 						}
+#endif
 						//goto LAB_00e84f9c;
 						//4
 						//LAB_00e84f9c;
-						while(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_Status != 0)
+						while(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_0_None)
 						{
+							PMDNNKAPIKJ_FileDownloader.FBANBDCOEJL();
 							yield return null;
 						}
 						//goto LAB_00e85548;
+						PMDNNKAPIKJ_FileDownloader.LAOEGNLOJHC();
 						continue;
 					}
 					HANBBBBLLGP = PMDNNKAPIKJ_FileDownloader.HCAJCKCOCHC();
 					OEPPEGHGNNO(3, PMDNNKAPIKJ_FileDownloader.HCAJCKCOCHC());
-					if(PMDNNKAPIKJ_FileDownloader.MNFGKBAEFFL() || PMDNNKAPIKJ_FileDownloader.KAMPHNKAHAB_IsDiskFull)
+					if(PMDNNKAPIKJ_FileDownloader.MNFGKBAEFFL_IsTimeout() || PMDNNKAPIKJ_FileDownloader.KAMPHNKAHAB_IsDiskFull)
 					{
 						//LAB_00e85288:
 						PMDNNKAPIKJ_FileDownloader.PBIMGBKLDPP();
 						//goto LAB_00e852c8;
 						// To 5
 						//5
-						while(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_Status != 0)
+						while(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_0_None)
 						{
+							PMDNNKAPIKJ_FileDownloader.FBANBDCOEJL();
 							yield return null;
 						}
 						APGOAMNGFFF = 0;
@@ -425,27 +443,40 @@ public class KDLPEDBKMID
 						int avaiableSpace = StorageSupport.GetAvailableStorageSizeMB();
 						if(avaiableSpace >= 0 && avaiableSpace < 50)
 							errorStr = "storage";
-						
-						MAIHLKPEHJN(errorStr, () => {
-							//0xE849F8
-							APGOAMNGFFF = 1;
-						}, () => {
-							//0xE84A04
-							APGOAMNGFFF = -1;
-						});
-						//goto LAB_00e85468;
-						//6
-						while(APGOAMNGFFF == 0)
-							yield return null;
-						PMDNNKAPIKJ_FileDownloader.PBIMGBKLDPP();
-						if(APGOAMNGFFF != 1)
+#if UNITY_ANDROID || DEBUG_ANDROID_FILESYSTEM
+						if(errorStr == "storage")
 						{
-							//LAB_00e85514:
-							KOIGPANFBKP = false;
-							TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error EOFJPNPFGDM_Coroutine_Install");
-							yield break;
+#endif
+							MAIHLKPEHJN(errorStr, () => {
+								//0xE849F8
+								APGOAMNGFFF = 1;
+							}, () => {
+								//0xE84A04
+								APGOAMNGFFF = -1;
+							});
+							//goto LAB_00e85468;
+							//6
+							while(APGOAMNGFFF == 0)
+								yield return null;
+							PMDNNKAPIKJ_FileDownloader.PBIMGBKLDPP();
+							if(APGOAMNGFFF != 1)
+							{
+								//LAB_00e85514:
+								KOIGPANFBKP = false;
+								TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error EOFJPNPFGDM_Coroutine_Install");
+								yield break;
+							}
+#if UNITY_ANDROID || DEBUG_ANDROID_FILESYSTEM
 						}
-						while(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_Status != 0)
+						else
+						{
+							yield return Co.R(FileSystemProxy.WaitServerInfo("Missing files.", false, true, (PopupButton.ButtonLabel btn) =>
+							{
+							}));
+							PMDNNKAPIKJ_FileDownloader.PBIMGBKLDPP();
+						}
+#endif
+						while(PMDNNKAPIKJ_FileDownloader.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_0_None)
 						{
 							PMDNNKAPIKJ_FileDownloader.FBANBDCOEJL();
 							yield return null;
@@ -488,11 +519,72 @@ public class KDLPEDBKMID
 	// // RVA: 0xE7EF18 Offset: 0xE7EF18 VA: 0xE7EF18
 	private void EEHMGCMAOAB(string DOGDHKIEBJA, IMCBBOAFION KLMFJJCNBIP, JFDNPFFOACP NEFKBBNKNPP)
 	{
-		TodoLogger.LogError(0, "TODO");
+		NEFKBBNKNPP();
+	}
+
+	public IEnumerator HFMOAJDHDHJ_Coroutine(int GHBPLHBNMBK, Action<bool> cb)
+	{
+#if UNITY_ANDROID || DEBUG_ANDROID_FILESYSTEM
+		while(true)
+		{
+			List<string> files = new List<string>();
+			StringBuilder str = new StringBuilder(128);
+			for(int i = 0; i < NFKOAFFBHOL.Length; i++)
+			{
+				if(!FileSystemProxy.FileExists(Application.persistentDataPath + "/data" + KPIAEBMBBPE_GetPathRelativeToDataDir(NFKOAFFBHOL[i])))
+				{
+					files.Add(NFKOAFFBHOL[i]);
+				}
+			}
+			KEODKEGFDLD_FreeMusicInfo fInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[GHBPLHBNMBK - 1];
+			str.SetFormat("mc/{0:D4}/sc.xab", IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(fInfo.DLAEJOBELBH_MusicId).KKPAHLMJKIH_WavId);
+			if(!FileSystemProxy.FileExists(Application.persistentDataPath + "/data" + KPIAEBMBBPE_GetPathRelativeToDataDir(str.ToString())))
+				files.Add(str.ToString());
+
+			if(files.Count == 0)
+				break;
+
+			bool retry = false;
+			yield return Co.R(FileSystemProxy.WaitServerInfo("Missing \n"+files[0] + (files.Count > 1 ? "\n + " + (files.Count - 1)+" files" : "") + ".", true, true, (PopupButton.ButtonLabel btn) =>
+			{
+				if(btn == PopupButton.ButtonLabel.Retry)
+					retry = true;
+			}));
+			if(retry)
+				continue;
+			BBGDKLLEPIB.FLHOFIEOKDH_BaseUrl = "http://"+FileSystemProxy.foundServer+":8000";
+
+			bool res = HFMOAJDHDHJ(GHBPLHBNMBK);
+			if(res)
+			{
+				while(LNHFLJBGGJB_IsRunning)
+					yield return null;
+			}
+			else
+				break;
+		}
+		cb(false);
+#else
+		bool res = HFMOAJDHDHJ(GHBPLHBNMBK);
+		cb(res);
+		yield break;
+#endif
 	}
 
 	// // RVA: 0xE7EF44 Offset: 0xE7EF44 VA: 0xE7EF44
-	// public bool HFMOAJDHDHJ(int GHBPLHBNMBK) { }
+	public bool HFMOAJDHDHJ(int GHBPLHBNMBK)
+	{
+		StringBuilder str = new StringBuilder(128);
+		bool b = false;
+		for(int i = 0; i < NFKOAFFBHOL.Length; i++)
+		{
+			b |= BDOFDNICMLC_StartInstallIfNeeded(NFKOAFFBHOL[i]);
+		}
+		KEODKEGFDLD_FreeMusicInfo fInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[GHBPLHBNMBK - 1];
+		str.SetFormat("mc/{0:D4}/sc.xab", IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(fInfo.DLAEJOBELBH_MusicId).KKPAHLMJKIH_WavId);
+		b |= BDOFDNICMLC_StartInstallIfNeeded(str.ToString());
+		return b;
+	}
 
 	// // RVA: 0xE7F26C Offset: 0xE7F26C VA: 0xE7F26C
 	private static string[] JAAOIKIALFJ(int ECOIBKOIPFP)
@@ -536,7 +628,30 @@ public class KDLPEDBKMID
 	}
 
 	// // RVA: 0xE7F898 Offset: 0xE7F898 VA: 0xE7F898
-	// public void LIDGJKCOGFA(int ECOIBKOIPFP, int DNHLEPCFPFC, int MOBOJNCPCGD, List<string> NNDGIAEFMOG, int HADONLEBKLD) { }
+	public void LIDGJKCOGFA(int ECOIBKOIPFP, int DNHLEPCFPFC, int MOBOJNCPCGD, List<string> NNDGIAEFMOG, int HADONLEBKLD)
+	{
+		StringBuilder str = new StringBuilder(124);
+		string[] sounds = JAAOIKIALFJ(ECOIBKOIPFP);
+		for(int i = 0; i < sounds.Length; i++)
+		{
+			if(sounds[i].IndexOf("mc", 0) == 0)
+			{
+				str.SetFormat(sounds[i], GameManager.Instance.GetWavDirectoryName(ECOIBKOIPFP, sounds[i], HADONLEBKLD, 1, 1, false));
+			}
+			else
+			{
+				str.SetFormat(sounds[i], ECOIBKOIPFP);
+			}
+			NNDGIAEFMOG.Add(str.ToString());
+		}
+		str.SetFormat(MFDEFIILPGM_StageFileFormat, DNHLEPCFPFC);
+		NNDGIAEFMOG.Add(str.ToString());
+		if(MOBOJNCPCGD > 0)
+		{
+			str.SetFormat(JOLFLDNELHO_VideoFileFormat, ECOIBKOIPFP, "", MOBOJNCPCGD);
+			NNDGIAEFMOG.Add(str.ToString());
+		}
+	}
 
 	// // RVA: 0xE7FD38 Offset: 0xE7FD38 VA: 0xE7FD38
 	public bool KEILLGAJEPF_AddRhythmResources(int ECOIBKOIPFP_WavId, int IMPALJEMHJJ_OverridePrimeId, int DNHLEPCFPFC_SongId, List<int> KJAIAJIIOMA_MusicCameraCutinList, List<int> DJPOMCAOKKD_DivaCutinList, List<int> KBGIODFCIGN_DivaExtensionCutinList, List<int> LMIFMHACFID_StageLightingList, List<int> DDFCBCNPGHD_StageExtensionList, List<int> MEJEDAJBJKN_SpecialMovieResource, int MCFPOJBDIHP_VidQuality, List<int> HPDJEIFEADB_StageChangerList, int HADONLEBKLD_OnStageDivaNum)
@@ -570,14 +685,51 @@ public class KDLPEDBKMID
 		if(MCFPOJBDIHP_VidQuality > 0 && MEJEDAJBJKN_SpecialMovieResource[0] > 0)
 		{
 			str.SetFormat("dr_{0:D3}_", MEJEDAJBJKN_SpecialMovieResource[0]);
-			str.SetFormat(EMLADNPGDOG_VideoFileFormat, ECOIBKOIPFP_WavId, str, MCFPOJBDIHP_VidQuality);
+			str.SetFormat(EMLADNPGDOG_VideoFileFormat, ECOIBKOIPFP_WavId, str.ToString(), MCFPOJBDIHP_VidQuality);
 			res |= BDOFDNICMLC_StartInstallIfNeeded(str.ToString());
 		}
 		return res;
 	}
 
 	// // RVA: 0xE806E8 Offset: 0xE806E8 VA: 0xE806E8
-	// public void IDCJNAFJLAA(int ECOIBKOIPFP, int IMPALJEMHJJ, int DNHLEPCFPFC, List<int> KJAIAJIIOMA, List<int> DJPOMCAOKKD, List<int> KBGIODFCIGN, List<int> LMIFMHACFID, List<int> DDFCBCNPGHD, List<int> MEJEDAJBJKN, int MCFPOJBDIHP, List<int> HPDJEIFEADB, List<string> NNDGIAEFMOG, int HADONLEBKLD) { }
+	public void IDCJNAFJLAA(int ECOIBKOIPFP, int IMPALJEMHJJ, int DNHLEPCFPFC, List<int> KJAIAJIIOMA, List<int> DJPOMCAOKKD, List<int> KBGIODFCIGN, List<int> LMIFMHACFID, List<int> DDFCBCNPGHD, List<int> MEJEDAJBJKN, int MCFPOJBDIHP, List<int> HPDJEIFEADB, List<string> NNDGIAEFMOG, int HADONLEBKLD)
+	{
+		StringBuilder str = new StringBuilder(128);
+		LIDGJKCOGFA(ECOIBKOIPFP, DNHLEPCFPFC, MCFPOJBDIHP, NNDGIAEFMOG, HADONLEBKLD);
+		if(IMPALJEMHJJ == 2)
+		{
+			str.SetFormat(NMFLPJMFPFN_MoveTrackFileFormat, GameManager.Instance.GetWavDirectoryName(ECOIBKOIPFP, NMFLPJMFPFN_MoveTrackFileFormat, HADONLEBKLD, 2, 1, true));
+			NNDGIAEFMOG.Add(str.ToString());
+		}
+		List<int>[] l = new List<int>[6];
+		l[0] = KJAIAJIIOMA;
+		l[1] = DJPOMCAOKKD;
+		l[2] = KBGIODFCIGN;
+		l[3] = LMIFMHACFID;
+		l[4] = DDFCBCNPGHD;
+		l[5] = HPDJEIFEADB;
+		for(int i = 0; i < ABNBIJGFNBA_3dExtensionsFilesFormat.Length; i++)
+		{
+			foreach(var l2 in l[i])
+			{
+				if(l2 > 0)
+				{
+					str.SetFormat(ABNBIJGFNBA_3dExtensionsFilesFormat[i], GameManager.Instance.GetWavDirectoryName(ECOIBKOIPFP, ABNBIJGFNBA_3dExtensionsFilesFormat[i], HADONLEBKLD, 1, l2, false), l2);
+					NNDGIAEFMOG.Add(str.ToString());
+				}
+			}
+		}
+		if(MEJEDAJBJKN.Count > 0)
+		{
+			if(MCFPOJBDIHP > 0 && MEJEDAJBJKN[0] > 0)
+			{
+				StringBuilder str2 = new StringBuilder();
+				str2.SetFormat("dr_{0:D3}_", MEJEDAJBJKN[0]);
+				str.SetFormat(EMLADNPGDOG_VideoFileFormat, ECOIBKOIPFP, str2, MCFPOJBDIHP);
+				NNDGIAEFMOG.Add(str.ToString());
+			}
+		}
+	}
 
 	// // RVA: 0xE81148 Offset: 0xE81148 VA: 0xE81148
 	public bool NMFCNFFFMAC(int AHHJLDLAPAN, int EGNLGHDHDDH, bool MMNIIDPMDNP)

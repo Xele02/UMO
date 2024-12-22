@@ -214,7 +214,7 @@ namespace XeApp.Game.Menu
 				int advId = 88;
 				if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
 					advId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer.LPJLEHAJADA("first_adv_id", 88);
-				GPMHOAKFALE_Adventure.NGDBKCKMDHE adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(advId);
+				GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(advId);
 				if(adv == null)
 				{
 					IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(1);
@@ -222,8 +222,8 @@ namespace XeApp.Game.Menu
 				else
 				{
 					Database.Instance.advResult.Setup("Menu", TransitionUniqueId.OFFERSELECT, new AdvSetupParam());
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA(advId);
-					Database.Instance.advSetup.Setup(advId);
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetViewed(advId);
+					Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
 					MenuScene.Instance.GotoAdventure(true);
 					ILCCJNDFFOB.HHCJCDFCLOB.BKLNHBHDDEJ(JpStringLiterals.StringLiteral_16417);
 					return true;
@@ -332,7 +332,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6CC6E4 Offset: 0x6CC6E4 VA: 0x6CC6E4
 		// // RVA: 0xEC5E10 Offset: 0xEC5E10 VA: 0xEC5E10
-		public static IEnumerator Load(Transform parent, Font font, Action<MenuBarPrefab> callback)
+		public static IEnumerator Load(Transform parent, XeSys.FontInfo font, Action<MenuBarPrefab> callback)
 		{
 			//0xEC6788
 			MenuBarPrefab menuPrefab = null;

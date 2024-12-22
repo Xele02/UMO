@@ -11,7 +11,7 @@ namespace XeSys.Gfx
         Material MaterialMul { get; set; } // Slot: 6 Slot: 7
         Material MaterialAdd { get; set; } // Slot: 8 Slot: 9
         // public abstract string TextureName { get; set; } // Slot: 10 Slot: 11
-        // public abstract bool raycastTarget { get; set; } // Slot: 12 Slot: 13
+        bool raycastTarget { get; set; } // Slot: 12 Slot: 13
 
         // // RVA: -1 Offset: -1 Slot: 14
         // public abstract bool IsUseAlphaTexture();

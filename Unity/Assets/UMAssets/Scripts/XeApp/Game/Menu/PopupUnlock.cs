@@ -142,25 +142,25 @@ namespace XeApp.Game.Menu
 				UnlockParam param = new UnlockParam();
 				switch(viewData[i].DEPGBBJMFED)
 				{
-					case FAGCLBOACEE.BEFPBAIONFK.KDGLIKDMGCN/*1*/:
+					case FAGCLBOACEE.BEFPBAIONFK.KDGLIKDMGCN_Stage/*1*/:
 						param.unlockType = eUnlockType.Stage;
 						param.sceneType = sceneType;
 						param.id = viewData[i].PPFNGGCBJKC;
 						AddParam(param);
 						break;
-					case FAGCLBOACEE.BEFPBAIONFK.CELONIBHMBA/*2*/:
+					case FAGCLBOACEE.BEFPBAIONFK.CELONIBHMBA_Music/*2*/:
 						param.unlockType = eUnlockType.Music;
 						param.sceneType = sceneType;
 						param.id = viewData[i].PPFNGGCBJKC;
 						AddParam(param);
 						break;
-					case FAGCLBOACEE.BEFPBAIONFK.EOBDILOCCHO/*3*/:
+					case FAGCLBOACEE.BEFPBAIONFK.EOBDILOCCHO_Diva/*3*/:
 						param.unlockType = eUnlockType.DivaNotify;
 						param.sceneType = sceneType;
 						param.id = viewData[i].PPFNGGCBJKC;
 						AddParam(param);
 						break;
-					case FAGCLBOACEE.BEFPBAIONFK.FCHMGAHKMLG/*4*/:
+					case FAGCLBOACEE.BEFPBAIONFK.FCHMGAHKMLG_Difficulty/*4*/:
 						param.unlockType = eUnlockType.DifficultyUnlock;
 						param.sceneType = sceneType;
 						param.id = viewData[i].PPFNGGCBJKC;
@@ -178,13 +178,13 @@ namespace XeApp.Game.Menu
 						param.isLine6 = viewData[i].GIKLNODJKFK_6Line;
 						AddParam(param);
 						break;
-					case FAGCLBOACEE.BEFPBAIONFK.OPPDJDDHHFM/*5*/:
+					case FAGCLBOACEE.BEFPBAIONFK.OPPDJDDHHFM_MultDivaMusic/*5*/:
 						param.unlockType = eUnlockType.MultiDivaMusic;
 						param.sceneType = sceneType;
 						param.id = viewData[i].PPFNGGCBJKC;
 						AddParam(param);
 						break;
-					case FAGCLBOACEE.BEFPBAIONFK.AJPJOJNIHKH/*6*/:
+					case FAGCLBOACEE.BEFPBAIONFK.AJPJOJNIHKH_Live6Music/*6*/:
 						param.unlockType = eUnlockType.Line6Music;
 						param.sceneType = sceneType;
 						param.id = viewData[i].PPFNGGCBJKC;
@@ -198,7 +198,7 @@ namespace XeApp.Game.Menu
 						//LAB_01159728;
 						AddParam(param);
 						break;
-					case FAGCLBOACEE.BEFPBAIONFK.KHBEKPMMALI/*7*/:
+					case FAGCLBOACEE.BEFPBAIONFK.KHBEKPMMALI_LiveSkip/*7*/:
 						param.unlockType = eUnlockType.LiveSkip;
 						param.sceneType = sceneType;
 						param.id = viewData[i].PPFNGGCBJKC;
@@ -239,7 +239,7 @@ namespace XeApp.Game.Menu
 					SetViewData(eSceneType.DropResult, FAGCLBOACEE.KJDIPIAFNEN());
 					return;
 				case eSceneType.MusicSelect:
-					TodoLogger.LogError(0, "ViewInitialize 4");
+					SetViewData(eSceneType.MusicSelect, FAGCLBOACEE.OGGDOPACJOB());
 					return;
 				case eSceneType.FreeMusicSelect1:
 					{
@@ -420,8 +420,22 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x115A6EC Offset: 0x115A6EC VA: 0x115A6EC
 		private IEnumerator ShowPopupDiva(eUnlockType unlockType, List<UnlockParam> param)
 		{
-			TodoLogger.LogError(0, "ShowPopupDiva");
-			yield break;
+			//0x115CDB0
+			SoundManager.Instance.voGreeting.EntrySheet();
+			bool popupWait = true;
+			PopupShowCommon(unlockType, param, () =>
+			{
+				//0x115C1D8
+				SoundManager.Instance.voGreeting.Stop();
+			}, null, () =>
+			{
+				//0x115C58C
+				popupWait = false;
+				return true;
+			});
+			while(popupWait)
+				yield return null;
+			SoundManager.Instance.voGreeting.RequestRemoveCueSheet();
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x70AE84 Offset: 0x70AE84 VA: 0x70AE84
@@ -429,8 +443,8 @@ namespace XeApp.Game.Menu
 		private IEnumerator ShowPopupMusic(eUnlockType unlockType, List<UnlockParam> param)
 		{
 			//0x115D138
-			List<UnlockParam> paramList = param;
-			bool isSingle = paramList.Count == 1;
+			m_unlockInfo.paramList = param;
+			bool isSingle = m_unlockInfo.paramList.Count == 1;
 			if(isSingle)
 			{
 				bool isLoading = true;
@@ -514,6 +528,60 @@ namespace XeApp.Game.Menu
 						psetting.UnlockInfo = m_unlockInfo;
 					}
 					break;
+				case eUnlockType.Stage:
+					{
+						PopupUnlockStageContentSetting s = new PopupUnlockStageContentSetting();
+						s.TitleText = "";
+						s.WindowSize = SizeType.Small;
+						s.Buttons = GetButtons(param[0].sceneType);
+						s.UnlockInfo = m_unlockInfo;
+						res = s;
+					}
+					break;
+				case eUnlockType.Diva:
+					{
+						PopupUnlockDivaContentSetting s = new PopupUnlockDivaContentSetting();
+						s.TitleText = "";
+						s.WindowSize = SizeType.Middle;
+						s.Buttons = new ButtonInfo[1]
+						{
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+						};
+						s.UnlockInfo = m_unlockInfo;
+						res = s;
+					}	
+					break;
+				case eUnlockType.DivaNotify:
+					{
+						PopupUnlockNotifyDivaSetting s = new PopupUnlockNotifyDivaSetting();
+						s.TitleText = "";
+						s.WindowSize = SizeType.Small;
+						s.Buttons = new ButtonInfo[2]
+						{
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative },
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Story, Type = PopupButton.ButtonType.Story }
+						};
+						s.UnlockInfo = m_unlockInfo;
+						res = s;
+					}
+					break;
+				case eUnlockType.DifficultyUnlock:
+					{
+						PopupUnlockDifficultySetting s = new PopupUnlockDifficultySetting();
+						s.TitleText = "";
+						s.WindowSize = SizeType.Small;
+						s.Buttons = new ButtonInfo[1]
+						{
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+						};
+						s.UnlockInfo = m_unlockInfo;
+						s.closeAction = () =>
+						{
+							//0x115C30C
+							CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.LOBOPFFFPGP();
+						};
+						return s;
+					}
 				case eUnlockType.MultiDivaMusic:
 					if (param.Count > 1)
 					{
@@ -541,6 +609,32 @@ namespace XeApp.Game.Menu
 						mdmsetting.UnlockInfo = m_unlockInfo;
 					}
 					break;
+				case eUnlockType.Line6Music:
+					if(param.Count > 1)
+					{
+						PopupAdd6LineMusicMultiSetting s = new PopupAdd6LineMusicMultiSetting();
+						s.TitleText = "";
+						s.WindowSize = SizeType.Large;
+						s.Buttons = new ButtonInfo[1]
+						{
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+						};
+						s.UnlockInfo = m_unlockInfo;
+						res = s;
+					}
+					else
+					{
+						PopupAdd6LineMusicSetting s = new PopupAdd6LineMusicSetting();
+						s.TitleText = "";
+						s.WindowSize = SizeType.Small;
+						s.Buttons = new ButtonInfo[1]
+						{
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+						};
+						s.UnlockInfo = m_unlockInfo;
+						res = s;
+					}
+					break;
 				case eUnlockType.LiveSkip:
 					{
 						PopupUnlockDifficultySetting dsseting = new PopupUnlockDifficultySetting();
@@ -558,18 +652,35 @@ namespace XeApp.Game.Menu
 							//0x115C3E8
 							CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.EMHMCOBNMLI();
 						};
+						return res;
 					}
 					break;
 				default:
-					TodoLogger.LogError(0, "CreatePopupSetting " + unlockTYpe);
-					break;
+					return null;
 			}
 			res.IsCaption = false;
 			return res;
 		}
 
 		// // RVA: 0x115BE00 Offset: 0x115BE00 VA: 0x115BE00
-		// private ButtonInfo[] GetButtons(PopupUnlock.eSceneType sceneType) { }
+		private ButtonInfo[] GetButtons(eSceneType sceneType)
+		{
+			if(sceneType == eSceneType.StorySelect)
+			{
+				return new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+				};
+			}
+			else
+			{
+				return new ButtonInfo[2]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative },
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Story, Type = PopupButton.ButtonType.Story }
+				};
+			}
+		}
 
 		// // RVA: 0x115BFDC Offset: 0x115BFDC VA: 0x115BFDC
 		private void PopupShowCommon(eUnlockType unlockType, List<UnlockParam> param, Action callback, Action openStartCallback, Func<bool> closeWaitCallback)

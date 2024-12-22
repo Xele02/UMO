@@ -5,6 +5,7 @@ using XeApp.Game.Common;
 using System.Collections.Generic;
 using XeSys;
 using System.Text;
+using mcrs;
 
 namespace XeApp.Game.Menu
 {
@@ -233,7 +234,20 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1738214 Offset: 0x1738214 VA: 0x1738214
 		private void OnHelpButton()
 		{
-			TodoLogger.LogNotImplemented("OnHelpButton");
+			int id = HelpButton.FindHelpUniqueId(119);
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			if(id > -1)
+			{
+				GameManager.Instance.CloseSnsNotice();
+				MenuScene.Instance.InputDisable();
+				m_control.InputDisable();
+				MenuScene.Instance.HelpPopupWindowControl.Show(MenuScene.Instance, id, () =>
+				{
+					//0x1738C74
+					MenuScene.Instance.InputEnable();
+					m_control.InputEnable();
+				});
+			}
 		}
 
 		// RVA: 0x1738430 Offset: 0x1738430 VA: 0x1738430 Slot: 5
@@ -266,9 +280,5 @@ namespace XeApp.Game.Menu
 			Loaded();
 			return true;
 		}
-
-		//[CompilerGeneratedAttribute] // RVA: 0x706544 Offset: 0x706544 VA: 0x706544
-		//// RVA: 0x1738C74 Offset: 0x1738C74 VA: 0x1738C74
-		//private void <OnHelpButton>b__37_0() { }
 	}
 }

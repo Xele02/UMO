@@ -230,19 +230,42 @@ namespace XeApp.Game.Common
 		//public void ResetBattleResultTransform() { }
 
 		//// RVA: 0x1111314 Offset: 0x1111314 VA: 0x1111314
-		//public void LoginIdle() { }
+		public void LoginIdle()
+		{
+			Anim_SetInteger("login_reactionId", 0);
+			Anim_Play("login_idle", 0);
+			isStopFrame = true;
+			this.StartCoroutineWatched(WaitUnlockBoneSpring(0));
+		}
 
 		//// RVA: 0x11113D8 Offset: 0x11113D8 VA: 0x11113D8
-		//public void LoginAnimStart(int reactionId = 1) { }
+		public void LoginAnimStart(int reactionId = 1)
+		{
+			Anim_SetTrigger("login_toReaction");
+			Anim_SetInteger("login_reactionId", reactionId);
+			Anim_SetBool("login_breakTalkLoop", false);
+			Anim_SetTrigger("login_toTalk");
+			isStopFrame = true;
+			UnlockBoneSpring(false, 0);
+		}
 
 		//// RVA: 0x11114BC Offset: 0x11114BC VA: 0x11114BC
-		//public void LoginReactionLoopBreak() { }
+		public void LoginReactionLoopBreak()
+		{
+			Anim_SetTrigger("login_toBreakReaction");
+		}
 
 		//// RVA: 0x1111524 Offset: 0x1111524 VA: 0x1111524
-		//public void LoginTalkLoopBreak() { }
+		public void LoginTalkLoopBreak()
+		{
+			Anim_SetBool("login_breakTalkLoop", true);
+		}
 
 		//// RVA: 0x1111590 Offset: 0x1111590 VA: 0x1111590
-		//public bool IsLoginIdle() { }
+		public bool IsLoginIdle()
+		{
+			return animator.GetCurrentAnimatorStateInfo(0).fullPathHash == LoginIdleHash;
+		}
 
 		//// RVA: 0x11116A4 Offset: 0x11116A4 VA: 0x11116A4
 		public void Reaction(int type)
@@ -255,25 +278,55 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x111176C Offset: 0x111176C VA: 0x111176C
-		//public void PlayDivaUnlockAnim() { }
+		public void PlayDivaUnlockAnim()
+		{
+			facialBlendAnimMediator.selfAnimator.Play("start", 1);
+			Anim_Play("join_start", 0);
+			isStopFrame = true;
+			this.StartCoroutineWatched(WaitUnlockBoneSpring(0));
+		}
 
 		//// RVA: 0x1111868 Offset: 0x1111868 VA: 0x1111868
-		//public bool IsMatchUnlockDivaAnimStep(MenuDivaObject.eUnlockDivaAnimStep step) { }
+		public bool IsMatchUnlockDivaAnimStep(eUnlockDivaAnimStep step)
+		{
+			int hash = Animator.StringToHash(step == 0 ? "body.sub_join.join_start" : "body.sub_join.join_loop");
+			return animator.GetCurrentAnimatorStateInfo(0).fullPathHash == hash;
+		}
 
 		//// RVA: 0x1111974 Offset: 0x1111974 VA: 0x1111974
-		//public void PlayUnlockCostumeAnim() { }
+		public void PlayUnlockCostumeAnim()
+		{
+			facialBlendAnimMediator.selfAnimator.Play("start", 1);
+			Anim_Play("costume_start", 0);
+			isStopFrame = true;
+			this.StartCoroutineWatched(WaitUnlockBoneSpring(0));
+		}
 
 		//// RVA: 0x1111A70 Offset: 0x1111A70 VA: 0x1111A70
 		//public void PlayUnlockPoseCostumeAnim() { }
 
 		//// RVA: 0x1111B6C Offset: 0x1111B6C VA: 0x1111B6C
-		//public void SetAnimationSpeed(float speed) { }
+		public void SetAnimationSpeed(float speed)
+		{
+			Anim_speed = speed;
+		}
 
 		//// RVA: 0x1111B74 Offset: 0x1111B74 VA: 0x1111B74
-		//public bool IsMatchUnlockCostumeAnimStep(MenuDivaObject.eUnlockCostumeAnimStep step) { }
+		public bool IsMatchUnlockCostumeAnimStep(eUnlockCostumeAnimStep step)
+		{
+			if(step <= eUnlockCostumeAnimStep.Loop)
+			{
+				if(animator.GetCurrentAnimatorStateInfo(0).fullPathHash == Animator.StringToHash(new string[] { "body.sub_costume.costume_start", "body.sub_costume.costume_pose", "body.sub_costume.costume_loop" } [(int)step]))
+					return true;
+			}
+			return false;
+		}
 
 		//// RVA: 0x1111C6C Offset: 0x1111C6C VA: 0x1111C6C
-		//public float GetNormalizedTime() { }
+		public float GetNormalizedTime()
+		{
+			return animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+		}
 
 		//// RVA: 0x1111CE8 Offset: 0x1111CE8 VA: 0x1111CE8
 		public void Talk(int type)

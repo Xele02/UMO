@@ -148,6 +148,40 @@ namespace XeApp.Game.Menu
 			m_centerSkillRegulationButton.ClearOnClickCallback();
 			m_centerSkillRegulationButton.AddOnClickCallback(OnShowCenterSkillDetails);
 			m_scrollTexts = GetComponentsInChildren<Common.ScrollText>();
+
+			m_status[0].transform.parent.Find("Text_Label").GetComponent<Text>().text = JpStringLiterals.UMO_Total;
+			m_status[1].transform.parent.Find("Text_Label").GetComponent<Text>().text = JpStringLiterals.StringLiteral_11063;
+			m_status[2].transform.parent.Find("Text_Label").GetComponent<Text>().text = JpStringLiterals.StringLiteral_11064;
+			m_status[3].transform.parent.Find("Text_Label").GetComponent<Text>().text = JpStringLiterals.StringLiteral_11065;
+			m_status[4].transform.parent.Find("Text_Label").GetComponent<Text>().text = JpStringLiterals.StringLiteral_11062;
+			m_status[5].transform.parent.Find("Text_Label").GetComponent<Text>().text = JpStringLiterals.StringLiteral_11069;
+			m_status[6].transform.parent.Find("Text_Label").GetComponent<Text>().text = JpStringLiterals.UMO_Fold;
+			m_status[7].transform.parent.Find("Text_Label").GetComponent<Text>().text = JpStringLiterals.UMO_Luck;
+
+			m_subStatus[0].transform.parent.Find("Text_Label").GetComponent<Text>().text = JpStringLiterals.UMO_Total;
+			m_subStatus[1].transform.parent.Find("Text_Label").GetComponent<Text>().text = JpStringLiterals.StringLiteral_11063;
+			m_subStatus[2].transform.parent.Find("Text_Label").GetComponent<Text>().text = JpStringLiterals.StringLiteral_11064;
+			m_subStatus[3].transform.parent.Find("Text_Label").GetComponent<Text>().text = JpStringLiterals.StringLiteral_11065;
+
+			m_status[0].transform.parent.parent.Find("Image_Bg/Text_StatusLabel").GetComponent<Text>().text = JpStringLiterals.UMO_Status;
+			m_subStatus[0].transform.parent.parent.Find("Image_Bg/Text_SupportLabel").GetComponent<Text>().text = JpStringLiterals.UMO_SubStatus;
+
+			m_centerSkillRegulation[0].transform.parent.parent.Find("Image_Bg/Text_CSKillLabel").GetComponent<Text>().text = JpStringLiterals.UMO_CenterSkill;
+			m_activeSkill.transform.parent.Find("Image_Bg/Text_ASKillLabel").GetComponent<Text>().text = JpStringLiterals.UMO_ActiveSkill;
+
+			m_limitBreakText[0].transform.parent.parent.Find("Image_Bg/Text_LeafLabel").GetComponent<Text>().text = JpStringLiterals.UMO_LeafLabel;
+			m_limitBreakText[0].transform.parent.Find("Text_Label").GetComponent<Text>().text = JpStringLiterals.UMO_Excellent;
+			m_limitBreakText[1].transform.parent.Find("Text_Label").GetComponent<Text>().text = JpStringLiterals.UMO_CenterLiveSkillNote;
+
+			m_notesTexts[0].transform.parent.parent.Find("Image_Bg/Text_NotesLabel").GetComponent<Text>().text = JpStringLiterals.UMO_Notes;
+			m_notesTexts[0].transform.parent.Find("Text_Label").GetComponent<Text>().text = JpStringLiterals.UMO_Heal;
+			m_notesTexts[1].transform.parent.Find("Text_Label").GetComponent<Text>().text = JpStringLiterals.UMO_Score;
+			m_notesTexts[2].transform.parent.Find("Text_Label").GetComponent<Text>().text = JpStringLiterals.StringLiteral_13085;
+			m_notesTexts[3].transform.parent.Find("Text_Label").GetComponent<Text>().text = JpStringLiterals.UMO_Fold;
+			m_notesTexts[4].transform.parent.Find("Text_Label").GetComponent<Text>().text = JpStringLiterals.UMO_Atk;
+
+			m_supportLock.transform.Find("Message/HGroup/Text_ImpMessage").GetComponent<Text>().text = JpStringLiterals.UMO_SupportImp;
+			m_supportLock.transform.Find("Message/Text_ImpMessage").GetComponent<Text>().text = JpStringLiterals.UMO_SupportImp2;
 		}
 
 		//// RVA: 0xA778EC Offset: 0xA778EC VA: 0xA778EC

@@ -2,6 +2,7 @@ using XeSys.Gfx;
 using UnityEngine.UI;
 using UnityEngine;
 using XeSys;
+using UnityEngine.Localization.SmartFormat;
 
 namespace XeApp.Game.Menu
 {
@@ -142,7 +143,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				m_lvUpRestItemNumText.text = string.Format(MessageManager.Instance.GetMessage("menu", isMax ? "pop_deco_sp_item_003" : "pop_deco_sp_item_001"), num);
+				m_lvUpRestItemNumText.text = Smart.Format(MessageManager.Instance.GetMessage("menu", isMax ? "pop_deco_sp_item_003" : "pop_deco_sp_item_001"), num);
 			}
 		}
 	}

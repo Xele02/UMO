@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using CriWare;
+using mcrs;
 using UnityEngine;
 using XeApp.Game.Common;
 using XeSys;
@@ -241,7 +242,7 @@ namespace XeApp.Game.Menu
 				{
 					restAcquiredMusicLevelExp[i] = (float)viewResultDivaData.NAIHIJAJPNK_Divas[i].BKJJLJKGDJB_MusicExpDiff;
 					currentDivaExp[i] = (int)viewResultDivaData.NAIHIJAJPNK_Divas[i].MECHKMMEIPP_PrevExp;
-					divaLayouts[i].layoutDivaEmblem.StartChildrenAnimGoStop(viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId + 1, viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId + 1);
+					divaLayouts[i].layoutDivaEmblem.StartChildrenAnimGoStop(viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId - 1, viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId - 1);
 					SetMusicLevel(i, viewResultDivaData.NAIHIJAJPNK_Divas[i].IIHHAFPPFCP_PrevMusicLevel);
 					ChangeCurrentMusicLevelExp(i, viewResultDivaData.NAIHIJAJPNK_Divas[i].IIHHAFPPFCP_PrevMusicLevel, CalcMusicLevelExpSectionPercentage(viewResultDivaData.NAIHIJAJPNK_Divas[i].IIHHAFPPFCP_PrevMusicLevel, ToSectionMusicLevelExp(viewResultDivaData.NAIHIJAJPNK_Divas[i].IIHHAFPPFCP_PrevMusicLevel, (float)viewResultDivaData.NAIHIJAJPNK_Divas[i].NMHNDLHJENB_PrevMusicExp)));
 					SetDivaLevelNumber(i, viewResultDivaData.NAIHIJAJPNK_Divas[i].AJCEIPJDMEC_PrevDivaLevel);
@@ -696,19 +697,18 @@ namespace XeApp.Game.Menu
 				currentTime += TimeWrapper.deltaTime;
 				float r = XeSys.Math.Tween.EasingInOutCubic(startExp, endExp, currentTime / timeLength);
 				int lvl = currentFrameLevel;
-				float f = expMaster.BOLBEBNHJHG_GetMusicLevelAndExp(r, out lvl);
-				if (lvl < currentFrameLevel)
-				{
-					lvl = currentFrameLevel;
-				}
-				ChangeCurrentMusicLevelExp(divaIndex, currentFrameLevel, CalcMusicLevelExpSectionPercentage(lvl, f));
+				float f = expMaster.BOLBEBNHJHG_GetMusicLevelAndExp(r, out currentFrameLevel);
 				if (currentFrameLevel < lvl)
+				{
+					currentFrameLevel = lvl;
+				}
+				ChangeCurrentMusicLevelExp(divaIndex, currentFrameLevel, CalcMusicLevelExpSectionPercentage(currentFrameLevel, f));
+				if (lvl < currentFrameLevel)
 				{
 					dl.isMusicLevelup = true;
 					StartMusicLevelup(divaIndex, currentFrameLevel, !BonusExp);
-					lvl = currentFrameLevel;
 				}
-				KDOMGMCGHDC.HJNMIKNAMFH h = viewResultDivaData.LNHIFELKOJF_GetPrevInfo(divaIndex, lvl);
+				KDOMGMCGHDC.HJNMIKNAMFH h = viewResultDivaData.LNHIFELKOJF_GetPrevInfo(divaIndex, currentFrameLevel);
 				bool end = true;
 				if (!h.HHBJAEOIGIH_IsLocked)
 					end = h.NBHEBLNHOJO_IsMax;
@@ -720,7 +720,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					dl.numberMusicLevelNextExp.SetNumber(expMaster.IECLHMBPEIJ_GetMusicExp(lvl + 1) - (int)(endExp), 0);
+					dl.numberMusicLevelNextExp.SetNumber(expMaster.IECLHMBPEIJ_GetMusicExp(currentFrameLevel + 1) - (int)(endExp), 0);
 					yield break;
 				}
 			}
@@ -867,7 +867,6 @@ namespace XeApp.Game.Menu
 
 			while(true)
 			{
-				float prevTime = currentTime;
 				currentTime += TimeWrapper.deltaTime;
 				int level = currentFrameLevel;
 				float r = XeSys.Math.Tween.EasingInOutCubic(startExp, endExp, currentTime / timeLength);
@@ -1128,7 +1127,7 @@ namespace XeApp.Game.Menu
 		{
 			float f = Mathf.Clamp(gaugePercentage, 0, 100);
 			int frame = divaLayouts[divaIndex].layoutDivaExpGauge.GetView(0).FrameAnimation.FrameNum;
-			int idx = (int)(f * (frame + 1) / 100);
+			int idx = (int)(f * (frame + 1) / 100.0f);
 			divaLayouts[divaIndex].layoutDivaExpGauge.StartChildrenAnimGoStop(idx, idx);
 			if(!divaLayouts[divaIndex].isDivaLevelup)
 			{
@@ -1208,7 +1207,26 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x188AA80 Offset: 0x188AA80 VA: 0x188AA80
 		private void OnClickLockButton(int divaIndex)
 		{
-			TodoLogger.LogNotImplemented("OnClickLockButton");
+			if(isFinished)
+			{
+				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+				GNIFOHMFDMO_DivaResultData.IKODHMDOMMP d = viewResultDivaData.NAIHIJAJPNK_Divas[divaIndex];
+				DFKGGBMFFGB_PlayerInfo p = new DFKGGBMFFGB_PlayerInfo();
+				p.KHEKNNFCAOI_Init(null, false);
+				FFHPBEPOMAK_DivaInfo f = p.NBIGLBMHEDC_Divas[d.AHHJLDLAPAN_DivaId - 1];
+				f.KHEKNNFCAOI(d.AHHJLDLAPAN_DivaId, d.JPGEAFPDHDE_DivaLevel, 0, 0, null, null, false);
+				List<int> l = f.PKLPGBKKFOL_DivaLevels;
+				KDOMGMCGHDC.HJNMIKNAMFH k = KDOMGMCGHDC.ODIAFJCPIFO(viewResultDivaData.DLAEJOBELBH_MusicId, f.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, l[viewResultDivaData.DLAEJOBELBH_MusicId - 1]);
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("growth_popup_title_01"), SizeType.Small, k.ONIAMNAJLKI_LockMessage, new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+				}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0x188B3AC
+					return;
+				}, null, null, null);
+			}
 		}
 	}
 }

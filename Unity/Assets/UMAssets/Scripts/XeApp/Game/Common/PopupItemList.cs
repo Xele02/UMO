@@ -349,7 +349,7 @@ namespace XeApp.Game.Common
 			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/);
 			if(ev != null)
 			{
-				TodoLogger.LogError(0, "Event");
+				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
 			}
 			List<ViewEnergyItemData> l1 = ViewEnergyItemData.CreateList();
 			for(int i = 0; i < l1.Count; i++)
@@ -407,10 +407,10 @@ namespace XeApp.Game.Common
 					}
 				}
 			}
-			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.MIGONIENGBF(); i++)
+			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.MIGONIENGBF_GetItemsCount(); i++)
 			{
-				PLPBJOFICEJ_CosItem.IBEMFIAFIKH cosItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.LOOANCFLPMP(i);
-				m_itemList.Add(new ItemInfo(cosItem.PPFNGGCBJKC, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.EFBKCNNFIPJ(cosItem.PPFNGGCBJKC).BFINGCJHOHI_Cnt, EKLNMHFCAOI.FKGCBLHOOCL_Category.NEIIGCODGBA_CostumeItem));
+				PLPBJOFICEJ_CosItem.IBEMFIAFIKH_ItemInfo cosItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.LOOANCFLPMP_GetItemByIdx(i);
+				m_itemList.Add(new ItemInfo(cosItem.PPFNGGCBJKC_Id, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.EFBKCNNFIPJ(cosItem.PPFNGGCBJKC_Id).BFINGCJHOHI_Cnt, EKLNMHFCAOI.FKGCBLHOOCL_Category.NEIIGCODGBA_CostumeItem));
 			}
 			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FBGKBGNIHGC_ValItem.CDENCMNHNGA.Count; i++)
 			{

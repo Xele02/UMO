@@ -48,6 +48,10 @@ namespace XeApp.Game.RhythmAdjust
 			m_TexUvListManager = uvMan;
 			m_bgAnime = layout.FindViewByExId("sw_sel_note_adjust_sw_sel_note_adjust_transition_bg_anim") as AbsoluteLayout;
 			m_windowAnime = layout.FindViewByExId("sw_sel_note_adjust_sw_sel_note_adjust_transition_anim") as AbsoluteLayout;
+			if(!string.IsNullOrEmpty(RuntimeSettings.CurrentSettings.Language))
+			{
+				Utility.SearchGameObjectRecursively("set (TextView)", transform).GetComponent<Text>().alignment = TextAnchor.UpperRight;
+			}
 			m_bgAnime.StartChildrenAnimGoStop("st_out");
 			m_windowAnime.StartChildrenAnimGoStop("st_out");
 			ActionButton[] avts = GetComponentsInChildren<ActionButton>(true);
@@ -209,10 +213,20 @@ namespace XeApp.Game.RhythmAdjust
 		}
 
 		// // RVA: 0xF5B0FC Offset: 0xF5B0FC VA: 0xF5B0FC
-		// public void CloseWindow() { }
+		public void CloseWindow()
+		{
+			if(m_isWindowOpen)
+			{
+				m_windowAnime.StartChildrenAnimGoStop("go_out", "st_out");
+			}
+			m_isWindowOpen = false;
+		}
 
 		// // RVA: 0xF5B0A8 Offset: 0xF5B0A8 VA: 0xF5B0A8
-		// public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_windowAnime.IsPlayingChildren();
+		}
 
 		// // RVA: 0xF5E248 Offset: 0xF5E248 VA: 0xF5E248
 		public void Update()

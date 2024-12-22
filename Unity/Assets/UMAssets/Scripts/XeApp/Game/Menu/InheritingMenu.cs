@@ -33,7 +33,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x13DE2A4 Offset: 0x13DE2A4 VA: 0x13DE2A4
-		// public PopupWindowControl GetSnsCoopWindowControl() { }
+		public PopupWindowControl GetSnsCoopWindowControl()
+		{
+			return m_snsCoopControl;
+		}
 
 		// // RVA: 0x13DE2BC Offset: 0x13DE2BC VA: 0x13DE2BC
 		public void Awake()
@@ -65,7 +68,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E588C Offset: 0x6E588C VA: 0x6E588C
 		// // RVA: 0x13DE4EC Offset: 0x13DE4EC VA: 0x13DE4EC
-		private IEnumerator Co_MainFlow(bool isPreparation, Action inheritingSuccess, Action closeCallback, LayoutMonthlyPassTakeover monthlylayout)
+		protected virtual IEnumerator Co_MainFlow(bool isPreparation, Action inheritingSuccess, Action closeCallback, LayoutMonthlyPassTakeover monthlylayout)
 		{
 			//0x13E1ECC
 			bool done = false;
@@ -255,17 +258,17 @@ namespace XeApp.Game.Menu
 			setting.ButtonCallbackTwitter = () =>
 			{
 				//0x13E162C
-				TodoLogger.LogNotImplemented("InheritingMenu.PopupShowPreparationNotice.ButtonCallbackTwitter");
+				this.StartCoroutineWatched(WaitSNSCallback(this, eSnsType.Twitter, errorToTitle));
 			};
 			setting.ButtonCallbackFacebook = () =>
 			{
 				//0x13E16A4
-				TodoLogger.LogNotImplemented("InheritingMenu.PopupShowPreparationNotice.ButtonCallbackFacebook");
+				this.StartCoroutineWatched(WaitSNSCallback(this, eSnsType.Facebook, errorToTitle));
 			};
 			setting.ButtonCallbackLine = () =>
 			{
 				//0x13E171C
-				TodoLogger.LogNotImplemented("InheritingMenu.PopupShowPreparationNotice.ButtonCallbackLine");
+				this.StartCoroutineWatched(WaitSNSCallback(this, eSnsType.Line, errorToTitle));
 			};
 			setting.ButtonCallbackShow = (bool status) =>
 			{
@@ -575,7 +578,52 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E5AE4 Offset: 0x6E5AE4 VA: 0x6E5AE4
 		// // RVA: 0x13E034C Offset: 0x13E034C VA: 0x13E034C
-		// private IEnumerator WaitSNSCallback(InheritingMenu menu, InheritingMenu.eSnsType snsType, Action errorToTitle) { }
+		private IEnumerator WaitSNSCallback(InheritingMenu menu, eSnsType snsType, Action errorToTitle)
+		{
+			//0x14AF638
+			menu.GetSnsCoopWindowControl().InputDisable();
+			HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink[] l = new HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink[3];
+			l[0] = HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook;
+			l[1] = HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter;
+			l[2] = HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line;
+			bool done = false;
+			bool cancel = false;
+			bool error = false;
+			HDEEBKIFLNI.HHCJCDFCLOB.IEIDONOJCOB(l[(int)snsType], () =>
+			{
+				//0x13E1BA4
+				done = true;
+			}, () =>
+			{
+				//0x13E1BB0
+				done = false;
+				cancel = false;
+			}, () =>
+			{
+				//0x13E1BBC
+				done = true;
+				error = true;
+			});
+			while(!done)
+				yield return null;
+			menu.GetSnsCoopWindowControl().InputEnable();
+			if(!error && !cancel)
+			{
+				if(m_snsContent != null)
+					m_snsContent.SetButtonSnsStatus((LayoutPopupSnsSetting.eButtonType)snsType, LayoutPopupSnsSetting.eButtonStatus.Coop);
+				if(m_snsInheritingContent != null)
+				{
+					m_snsInheritingContent.SetButtonSnsStatus((LayoutPopupSnsSetting.eButtonType)snsType, LayoutPopupSnsSetting.eButtonStatus.Coop);
+				}
+				PopupShowSnsSuccess(snsType, false);
+			}
+			else
+			{
+				menu.GetSnsCoopWindowControl().Close(null, null);
+				if(errorToTitle != null)
+					errorToTitle();
+			}
+		}
 
 		// // RVA: 0x13E0420 Offset: 0x13E0420 VA: 0x13E0420
 		private bool linkCheck(eSnsType snsType)

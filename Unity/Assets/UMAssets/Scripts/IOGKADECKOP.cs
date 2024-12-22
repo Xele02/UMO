@@ -24,7 +24,7 @@ public class IOGKADECKOP
 
 	private MonoBehaviour DANMJLOBLIE; // 0x8
 	private bool BICOBOLNFLJ; // 0xC
-	private InheritingMenu MCJHELIEHMC; // 0x10
+	private UMOInheritingMenu MCJHELIEHMC; // 0x10
 	private LayoutTitleController NOFPJPHIPBD_LayoutTitleCtrl; // 0x14
 	private RawImage PDOILOAFKCF_BgImage; // 0x18
 	private GameObject HOFMODFAOEA; // 0x1C
@@ -73,7 +73,7 @@ public class IOGKADECKOP
 		if(!BICOBOLNFLJ)
 			return false;
 		
-        MCJHELIEHMC = InheritingMenu.Create(null);
+        MCJHELIEHMC = UMOInheritingMenu.Create(null);
 		DANMJLOBLIE.StartCoroutineWatched(LMDJGHMDDJA_LogoActCoroutine());
         return true;
     }
@@ -197,7 +197,7 @@ public class IOGKADECKOP
 		DANMJLOBLIE.StartCoroutineWatched(IMDAHCEDGFK_Coroutine_TitleLogo());
 		if(AppEnv.IsCBT())
 		{
-			TodoLogger.LogError(0, "TODO");
+			TodoLogger.LogError(TodoLogger.CBT, "TODO");
 		}
 		else
 		{
@@ -1750,8 +1750,8 @@ public class IOGKADECKOP
 	// // RVA: 0xA0809C Offset: 0xA0809C VA: 0xA0809C
 	private void GCGFGMICEGF()
 	{
-		//EHKDIJELHAO = false;
-		EHKDIJELHAO = true; // enable AR
+		EHKDIJELHAO = false;
+		//EHKDIJELHAO = true; // enable AR
 		OOIBKCCMCAG_HasCustomBg = false;
 		if (AREventMasterData.Instance.IsReady())
 		{

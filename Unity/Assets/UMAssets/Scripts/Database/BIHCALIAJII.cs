@@ -136,7 +136,7 @@ public class BIHCALIAJII_GachaLimit : DIHHCBACKGG_DbSection
 	// RVA: 0xC84414 Offset: 0xC84414 VA: 0xC84414 Slot: 10
 	public override bool IIEMACPEEBJ(EDOHBJAPLPF_JsonData OILEIIEIBHP, int KAPMOPMDHJE)
 	{
-		TodoLogger.LogError(TodoLogger.Database, "BIHCALIAJII_GachaLimit.IIEMACPEEBJ");
+		TodoLogger.LogError(TodoLogger.DbJson, "BIHCALIAJII_GachaLimit.IIEMACPEEBJ");
 		return true;
 	}
 

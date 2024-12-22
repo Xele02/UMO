@@ -247,7 +247,19 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEDA14C Offset: 0xEDA14C VA: 0xEDA14C
 		private void OnFailedSearchFriend()
 		{
-			TodoLogger.LogError(0, "OnFailedSearchFriend");
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(
+				bk.GetMessageByLabel("popup_friend_search_not_found_title"), SizeType.Small, 
+				bk.GetMessageByLabel("popup_friend_search_not_found_msg"), new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+				}, false, true
+			), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0xEDAA74
+				m_friendInfoAllList.Clear();
+				SortFriendList();
+			}, null, null, null);
 		}
 
 		//// RVA: 0xED9A58 Offset: 0xED9A58 VA: 0xED9A58
@@ -296,7 +308,7 @@ namespace XeApp.Game.Menu
 		protected override IEnumerator Co_LoadBothLayout(string bundleName)
 		{
 			int bundleLoadCount;
-			Font font;
+			XeSys.FontInfo font;
 			AssetBundleLoadLayoutOperationBase operation;
 
 			//0xEDAB98
@@ -322,9 +334,5 @@ namespace XeApp.Game.Menu
 		{
 			//lastNetType
 		}
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6E0744 Offset: 0x6E0744 VA: 0x6E0744
-		//// RVA: 0xEDAA74 Offset: 0xEDAA74 VA: 0xEDAA74
-		//private void <OnFailedSearchFriend>b__29_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
 	}
 }

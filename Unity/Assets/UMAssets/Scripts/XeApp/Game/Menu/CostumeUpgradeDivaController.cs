@@ -240,7 +240,12 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x16F2B90 Offset: 0x16F2B90 VA: 0x16F2B90
-		//public void StartIdleMotion() { }
+		public void StartIdleMotion()
+		{
+			if(!isLoadedModel)
+				return;
+			m_simpleDivaAnimation.StartIdleMotion();
+		}
 
 		//// RVA: 0x16F2814 Offset: 0x16F2814 VA: 0x16F2814
 		public int PlayVoice(CostumeUpgradeVoiceDataTable.VoiceType type, int exclusionId = -1)
@@ -261,7 +266,7 @@ namespace XeApp.Game.Menu
 		{
 			m_intervalTimer = 0;
 			if (isLoadedModel)
-				m_divaObject.SetEnableEffect(isEnable);
+				m_divaObject.SetEnableRenderer(isEnable);
 			EnableCamera(isEnable);
 		}
 

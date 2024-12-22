@@ -126,16 +126,28 @@ namespace XeApp.Game.RhythmAdjust
 		}
 
 		// // RVA: 0xF5AFB8 Offset: 0xF5AFB8 VA: 0xF5AFB8
-		// public void OpenWindow() { }
+		public void OpenWindow()
+		{
+			m_LayoutWindow.OpenWindow();
+		}
 
 		// // RVA: 0xF5B080 Offset: 0xF5B080 VA: 0xF5B080
-		// public bool IsPlayingWindow() { }
+		public bool IsPlayingWindow()
+		{
+			return m_LayoutWindow.IsPlaying();
+		}
 
 		// // RVA: 0xF5B0D4 Offset: 0xF5B0D4 VA: 0xF5B0D4
-		// public void CloseWindow() { }
+		public void CloseWindow()
+		{
+			m_LayoutWindow.CloseWindow();
+		}
 
 		// // RVA: 0xF5B19C Offset: 0xF5B19C VA: 0xF5B19C
-		// public void CloseBalloon() { }
+		public void CloseBalloon()
+		{
+			m_LayoutBalloon.Leave();
+		}
 
 		// // RVA: 0xF5B264 Offset: 0xF5B264 VA: 0xF5B264
 		public void ChangeMode(ModeType mode)
@@ -158,10 +170,16 @@ namespace XeApp.Game.RhythmAdjust
 		}
 
 		// // RVA: 0xF5B46C Offset: 0xF5B46C VA: 0xF5B46C
-		// public void OpenConfirmWindow(UnityAction endCb) { }
+		public void OpenConfirmWindow(UnityAction endCb)
+		{
+			m_LayoutConfirmWindow.Open(endCb);
+		}
 
 		// // RVA: 0xF5B4D0 Offset: 0xF5B4D0 VA: 0xF5B4D0
-		// public void CloseConfirmWindow(UnityAction endCb) { }
+		public void CloseConfirmWindow(UnityAction endCb)
+		{
+			m_LayoutConfirmWindow.Close(endCb);
+		}
 
 		// // RVA: 0xF5B534 Offset: 0xF5B534 VA: 0xF5B534
 		private void LayoutConfirmWindow_ButtonHandler(LayoutRhythmAdjustTutorialConfirmWindow.ButtonType arg0)
@@ -174,6 +192,9 @@ namespace XeApp.Game.RhythmAdjust
 		// private void OnConfirmButton(LayoutRhythmAdjustTutorialConfirmWindow.ButtonType type) { }
 
 		// // RVA: 0xF5B5AC Offset: 0xF5B5AC VA: 0xF5B5AC
-		// public void PerformClickCancel() { }
+		public void PerformClickCancel()
+		{
+			m_LayoutConfirmWindow.PerformClickCancel();
+		}
 	}
 }

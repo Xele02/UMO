@@ -102,13 +102,13 @@ namespace XeApp.Game.Menu
 			SetupList(view.MHKCPJDNJKI.Count, resetScroll);
 			m_noProductText.enabled = view.MHKCPJDNJKI.Count < 1;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			m_textTitle.text = view.NEMKDKDIIDK;
+			m_textTitle.text = view.NEMKDKDIIDK_ShopName;
 			m_layoutWarning.enabled = false;
 			m_layoutKyrr.StartChildrenAnimGoStop("01", "01");
 			for(int i = 0; i < m_imageMedal.Length; i++)
 			{
-                EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.EAHPLCJMPHD);
-				int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.EAHPLCJMPHD);
+                EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.EAHPLCJMPHD_PayItemId);
+				int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.EAHPLCJMPHD_PayItemId);
 				if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem)
 				{
 					if(id == 7)
@@ -297,7 +297,7 @@ namespace XeApp.Game.Menu
 			LayoutShopProductListItem c = content as LayoutShopProductListItem;
 			if(c != null)
 			{
-				c.SetStatus(m_view.INDDJNMPONH, m_view.MHKCPJDNJKI[index]);
+				c.SetStatus(m_view.INDDJNMPONH_Type, m_view.MHKCPJDNJKI[index]);
 			}
 		}
 

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System;
 using XeSys;
+using UnityEngine.Localization.SmartFormat;
 
 namespace XeApp.Game.Menu
 {
@@ -100,7 +101,7 @@ namespace XeApp.Game.Menu
 		public void SetStatus()
 		{
 			int quest_lump_receive_max_num = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("quest_lump_receive_max_num", 30);
-			m_textReceiveDesc.text = string.Format(MessageManager.Instance.GetMessage("menu", "quest_receive_all_desc"), quest_lump_receive_max_num);
+			m_textReceiveDesc.text = Smart.Format(MessageManager.Instance.GetMessage("menu", "quest_receive_all_desc"), quest_lump_receive_max_num);
 			m_buttonReceiveAll.Disable = !QuestUtility.FindAchievedQuestList(m_viewList);
 			SetTextTimerInner();
 			SetImageFont(m_entranceViewData.LFCOJABLOEN);

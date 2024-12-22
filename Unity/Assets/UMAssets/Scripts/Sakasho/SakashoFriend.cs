@@ -14,7 +14,13 @@ public class SakashoFriend : SakashoAPIBase
 	}
 
 	//// RVA: 0x2BBD594 Offset: 0x2BBD594 VA: 0x2BBD594
-	//public static SakashoAPICallContext SendFriendRequest(int id, bool autoAcception, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext SendFriendRequest(int id, bool autoAcception, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		h["id"] = id;
+		h["autoAcception"] = autoAcception;
+		return new SakashoAPICallContext(Call(SakashoFriendSendFriendRequest, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	//// RVA: 0x2BBD780 Offset: 0x2BBD780 VA: 0x2BBD780
 	public static SakashoAPICallContext GetReceivedRequests(int page, int ipp, OnSuccess onSuccess, OnError onError)
@@ -54,7 +60,12 @@ public class SakashoFriend : SakashoAPIBase
 	//public static SakashoAPICallContext DeleteFriendRequest(int id, OnSuccess onSuccess, OnError onError) { }
 
 	//// RVA: 0x2BBE008 Offset: 0x2BBE008 VA: 0x2BBE008
-	//public static SakashoAPICallContext DeleteFriend(int id, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext DeleteFriend(int id, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		h["id"] = id;
+		return new SakashoAPICallContext(Call(SakashoFriendDeleteFriend, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	//// RVA: 0x2BBE198 Offset: 0x2BBE198 VA: 0x2BBE198
 	public static SakashoAPICallContext SetFriendsLimit(int friendLimit, OnSuccess onSuccess, OnError onError)
@@ -102,7 +113,10 @@ public class SakashoFriend : SakashoAPIBase
 	}
 
 	//// RVA: 0x2BBED40 Offset: 0x2BBED40 VA: 0x2BBED40
-	//private static extern int SakashoFriendSendFriendRequest(int callbackId, string json) { }
+	private static int SakashoFriendSendFriendRequest(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoFriendSendFriendRequest(callbackId, json);
+	}
 
 	//// RVA: 0x2BBEE50 Offset: 0x2BBEE50 VA: 0x2BBEE50
 	//private static extern int SakashoFriendGetReceivedRequests(int callbackId, string json) { }
@@ -134,7 +148,10 @@ public class SakashoFriend : SakashoAPIBase
 	//private static extern int SakashoFriendDeleteFriendRequest(int callbackId, string json) { }
 
 	//// RVA: 0x2BBF3A0 Offset: 0x2BBF3A0 VA: 0x2BBF3A0
-	//private static extern int SakashoFriendDeleteFriend(int callbackId, string json) { }
+	private static int SakashoFriendDeleteFriend(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoFriendDeleteFriend(callbackId, json);
+	}
 
 	//// RVA: 0x2BBF4E8 Offset: 0x2BBF4E8 VA: 0x2BBF4E8
 	//private static extern int SakashoFriendSetFriendsLimit(int callbackId, string json) { }

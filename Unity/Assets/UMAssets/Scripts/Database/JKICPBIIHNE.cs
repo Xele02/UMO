@@ -487,8 +487,8 @@ public class JKICPBIIHNE_Bingo : DIHHCBACKGG_DbSection
 				data2.GLCLFMGPMAN = array2[i].GLCLFMGPMAN;
 				data2.LJKMKCOAICL = array2[i].LJKMKCOAICL;
 				data2.JJHPDDPKBHF = array2[i].JJHPDDPKBHF;
-				data2.FEMMDNIELFC = array2[i].FEMMDNIELFC;
-				data2.JEPGJJJBFLN = array2[i].JEPGJJJBFLN;
+				data2.FEMMDNIELFC = DatabaseTextConverter.TranslateBingo(BFPPAPMNEHA.PPFNGGCBJKC, data.PPFNGGCBJKC, data2.PPFNGGCBJKC, array2[i].FEMMDNIELFC, 0);
+				data2.JEPGJJJBFLN = DatabaseTextConverter.TranslateBingo(BFPPAPMNEHA.PPFNGGCBJKC, data.PPFNGGCBJKC, data2.PPFNGGCBJKC, array2[i].JEPGJJJBFLN, 1);
 				data.MFMGDFACBON.Add(data2);
 			}
 		}

@@ -256,7 +256,7 @@ public class BBGDKLLEPIB
 				yield return null;
 				MHHFMCPJONH.FBANBDCOEJL();
 				//L.312
-				if(MHHFMCPJONH.CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.FEJIMBDPMKI_2/*2*/)
+				if(MHHFMCPJONH.CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.FEJIMBDPMKI_2_Success/*2*/)
 				{
 					OEPPEGHGNNO(3, 100);
 					if(MHHFMCPJONH != null)
@@ -285,7 +285,7 @@ public class BBGDKLLEPIB
 					yield break;
 				}
 				//L361
-				if(MHHFMCPJONH.CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LPLEIJIFOKN_Error/*4*/)
+				if(MHHFMCPJONH.CMCKNKKCNDK_Status == JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.LPLEIJIFOKN_4_AllError/*4*/)
 				{
 					int APGOAMNGFFF = 0;
 					string errorType = "network";
@@ -328,7 +328,7 @@ public class BBGDKLLEPIB
 					MHHFMCPJONH.PBIMGBKLDPP();
 					//goto LAB_00f1abe8;
 					//6
-					while(MHHFMCPJONH.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_None/*0*/)
+					while(MHHFMCPJONH.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_0_None/*0*/)
 					{
 						MHHFMCPJONH.FBANBDCOEJL();
 						yield return null;
@@ -341,13 +341,13 @@ public class BBGDKLLEPIB
 				
 				//L410
 				OEPPEGHGNNO(3, MHHFMCPJONH.HCAJCKCOCHC());
-				if(MHHFMCPJONH.MNFGKBAEFFL() || MHHFMCPJONH.KAMPHNKAHAB_IsDiskFull)
+				if(MHHFMCPJONH.MNFGKBAEFFL_IsTimeout() || MHHFMCPJONH.KAMPHNKAHAB_IsDiskFull)
 				{
 					//LAB_00f1b614:
 					MHHFMCPJONH.PBIMGBKLDPP();
 					//goto LAB_00f1ac10;
 					//7
-					while(MHHFMCPJONH.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_None/*0*/)
+					while(MHHFMCPJONH.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_0_None/*0*/)
 					{
 						MHHFMCPJONH.FBANBDCOEJL();
 						yield return null;
@@ -380,7 +380,7 @@ public class BBGDKLLEPIB
 					}
 					MHHFMCPJONH.PBIMGBKLDPP();
 					//LAB_00f1b7a8:
-					while(MHHFMCPJONH.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_None/*0*/)
+					while(MHHFMCPJONH.CMCKNKKCNDK_Status != JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_0_None/*0*/)
 					{
 						MHHFMCPJONH.FBANBDCOEJL();
 						yield return null;
@@ -426,7 +426,7 @@ public class BBGDKLLEPIB
 			if(item.Value == 1)
 			{
 				string path = OGCDNCDMLCA_MxDir + item.Key;
-				File.SetAttributes(path, FileAttributes.Normal);
+				//File.SetAttributes(path, FileAttributes.Normal);
 				TodoLogger.Log(TodoLogger.Filesystem, "Delete File " + path);
 				//File.Delete(path);
 			}

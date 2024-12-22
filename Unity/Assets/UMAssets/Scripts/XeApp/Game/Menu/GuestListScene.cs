@@ -160,7 +160,28 @@ namespace XeApp.Game.Menu
 			{
 				if(Database.Instance.gameSetup.musicInfo.gameEventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0/*0*/)
 				{
-					TodoLogger.LogError(0, "CheckEventLimit");
+					IKDICBBFBMI_EventBase ev = null;
+					if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool)
+					{
+                        ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool, KGCNCBOKCBA.GNENJEHKMHD.MEAJLPAHINL_5);
+                    }
+					else if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
+					{
+						ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD.MEAJLPAHINL_5);
+					}
+					else
+					{
+						ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.MEAJLPAHINL_5, false);
+					}
+					if(ev != null)
+					{
+						JHHBAFKMBDL.HHCJCDFCLOB.DNABPEOICIJ(() =>
+						{
+							//0xE2DE54
+							MenuScene.Instance.MountWithFade(TransitionUniqueId.HOME, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+						}, false);
+						return true;
+					}
 				}
 				return false;
 			}
@@ -304,7 +325,15 @@ namespace XeApp.Game.Menu
 			}, (CACGCMBKHDI_Request error) =>
 			{
 				//0xE2E250
-				TodoLogger.LogError(0, "Error friend request");
+				Debug.Log("StringLiteral_16340");
+				if(MenuScene.Instance.IsTransition())
+				{
+					GotoTitle();
+				}
+				else
+				{
+					MenuScene.Instance.GotoTitle();
+				}
 			});
 
 		}
@@ -384,7 +413,10 @@ namespace XeApp.Game.Menu
 		// RVA: 0xE2C378 Offset: 0xE2C378 VA: 0xE2C378
 		private void OnClickReloadButton()
 		{
-			TodoLogger.LogNotImplemented("OnClickReloadButton");
+			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
+			m_scrollList.SetItemCount(0);
+			m_scrollList.VisibleRegionUpdate();
+			SearchFriend();
 		}
 
 		// RVA: 0xE2BCA8 Offset: 0xE2BCA8 VA: 0xE2BCA8
@@ -609,7 +641,10 @@ namespace XeApp.Game.Menu
 			if(eventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp)
 			{
 				if(eventType > OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest || 
-				((1 << (int)eventType) & 78) == 0)
+				((1 << (int)eventType) & 78) == 0) // 100 1110
+					// HJNNKCMLGFL_0
+					// KEILBOLBDHN_EventScore
+					// ENMHPBGOOII_Week
 				{
 					return base.GetCallArgsReturn();
 				}
@@ -618,14 +653,18 @@ namespace XeApp.Game.Menu
 			{
 				if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 				{
-					TodoLogger.LogError(0, "GetCallArgsReturn Event");
+					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "GetCallArgsReturn Event");
 				}
 				if(eventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
 				{
 					return base.GetCallArgsReturn();
 				}
 			}
-			TodoLogger.LogError(0, "GetCallArgsReturn Event");
+			TodoLogger.LogError(TodoLogger.EventGoDiva_14, "GetCallArgsReturn Event");
+			TodoLogger.LogError(TodoLogger.EventCollection_1, "GetCallArgsReturn Event");
+			TodoLogger.LogError(TodoLogger.Event_Unknwown_2, "GetCallArgsReturn Event");
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "GetCallArgsReturn Event");
+			TodoLogger.LogError(TodoLogger.EventQuest_6, "GetCallArgsReturn Event");
 			return null;
 		}
 
@@ -643,7 +682,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_LoadLayout()
 		{
 			StringBuilder bundleName; // 0x18
-			Font systemFont; // 0x1C
+			XeSys.FontInfo systemFont; // 0x1C
 			int bundleLoadCount; // 0x20
 			AssetBundleLoadLayoutOperationBase operation; // 0x24
 			AssetBundleLoadUGUIOperationBase uguiOperation; // 0x28

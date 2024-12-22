@@ -156,7 +156,7 @@ namespace ExternLib
 			}
             else
             {
-                TodoLogger.LogError(0, "SakashoAssetGetAssetList "+json);
+                TodoLogger.LogError(TodoLogger.SakashoServer, "SakashoAssetGetAssetList "+json);
             }
 			SendMessage(callbackId, message);
             // end hack

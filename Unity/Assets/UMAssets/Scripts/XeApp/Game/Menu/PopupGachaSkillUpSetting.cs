@@ -7,7 +7,7 @@ namespace XeApp.Game.Menu
 	public class PopupGachaSkillUpSetting : PopupSetting
 	{
 		public int SceneId { get; set; } // 0x34
-		//public GCIJNCFDNON_SceneInfo.DLAMEBMGKDO SkillType { get; set; } // 0x38
+		public GCIJNCFDNON_SceneInfo.DLAMEBMGKDO SkillType { get; set; } // 0x38
 		public override string PrefabPath { get { return ""; } } //0x17A6A44
 		public override string BundleName { get { return "ly/222.xab"; } } //0x17A6AA0
 		public override string AssetName { get { return "root_pop_skill_ul_layout_root"; } } //0x17A6AFC

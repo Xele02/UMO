@@ -131,7 +131,7 @@ namespace XeApp.Game.Common
 			sePlayerNotes.androidUseLowLatencyVoicePool = true;
 			sePlayerLongNotes = gameObject.AddComponent<CriAtomSource>();
 			sePlayerLongNotes.cueSheet = "cs_se_notes";
-			sePlayerLongNotes.androidUseLowLatencyVoicePool = true;
+			sePlayerLongNotes.androidUseLowLatencyVoicePool = false;
 			sePlayerResult = gameObject.AddComponent<CriAtomSource>();
 			sePlayerResult.cueSheet = "cs_se_result";
 			sePlayerResult.androidUseLowLatencyVoicePool = true;

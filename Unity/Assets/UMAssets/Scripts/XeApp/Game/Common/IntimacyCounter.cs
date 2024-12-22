@@ -43,7 +43,7 @@ namespace XeApp.Game.Common
 		{
 			if(time < 0)
 			{
-				m_textTime.text = "MAX";
+				m_textTime.text = JpStringLiterals.StringLiteral_11085;
 			}
 			else
 			{

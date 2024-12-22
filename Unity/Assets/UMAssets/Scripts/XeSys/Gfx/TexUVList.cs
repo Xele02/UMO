@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Text;
 using System;
+using System.Linq;
 
 namespace XeSys.Gfx
 {
@@ -69,6 +70,8 @@ namespace XeSys.Gfx
 						data.width = Single.Parse(strs2[3]) * m_uScale / m_width;
 						data.height = Single.Parse(strs2[4]) * m_vScale / m_height;
 						m_UVDataDictionary.Add(data.name, data);
+						//if(RuntimeSettings.CurrentSettings.ShowStringUsed)
+						//	UnityEngine.Debug.LogError(data.name+" "+data.u+" "+data.v+" "+data.width+" "+data.height);
 					}
 				}
 			}
@@ -121,6 +124,20 @@ namespace XeSys.Gfx
 		{
 			m_serializeDatas.Clear();
 			m_serializeDatas.AddRange(m_UVDataDictionary.Values);
+		}
+
+		public List<string> GetKeys()
+		{
+			return m_UVDataDictionary.Keys.ToList();
+		}
+
+		public void OnEnable()
+		{
+			/*foreach(var it in m_UVDataDictionary)
+			{
+				if(RuntimeSettings.CurrentSettings.ShowStringUsed)
+					UnityEngine.Debug.LogError(name+" "+it.Value.name+" "+it.Value.u+" "+it.Value.v+" "+it.Value.width+" "+it.Value.height);
+			}*/
 		}
 	}
 }

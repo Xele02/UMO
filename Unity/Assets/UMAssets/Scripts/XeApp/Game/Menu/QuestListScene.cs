@@ -235,7 +235,7 @@ namespace XeApp.Game.Menu
 			{
 				if(m_args.viewData != null && m_args.viewData.COAMJFMEIBF != null && m_args.viewData.COAMJFMEIBF is KNKDBNFMAKF_EventSp)
 				{
-					TodoLogger.LogError(0, "Event Sp");
+					TodoLogger.LogError(TodoLogger.EventSp_7, "Event Sp");
 					//(m_args.viewData.COAMJFMEIBF as KNKDBNFMAKF_EventSp).ALIBGNACAEA(true, m_args.viewData.BCOKKAALGHC);
 					isWait = true;
 					MenuScene.Save(() =>
@@ -278,8 +278,118 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x9D6BC0 Offset: 0x9D6BC0 VA: 0x9D6BC0
 		private IEnumerator Co_SyncAchievement(IKDICBBFBMI_EventBase controller, bool isRepeated)
 		{
-			TodoLogger.LogError(0, "event");
-			yield return null;
+			List<AKIIJBEJOEP> quest; // 0x1C
+			JGMEFHJCNHP_GetAchievementRecords req; // 0x20
+
+			//0x9D8884
+			achievementsKeys.Clear();
+			clearQuestIds.Clear();
+			quest = controller.AGLILDLEFDK;
+			for(int i = 0; i < quest.Count; i++)
+			{
+				if(controller.GBADILEHLGC_GetStatus(quest[i].PPFNGGCBJKC_Id) == 2)
+				{
+					if(!isRepeated)
+					{
+						if(quest[i].HPAOAKMKCMA_Slt2 > 0)
+						{
+							string str = controller.DCODGEOEDPG();
+							if(str == null)
+								str = "";
+							sBuilder.Clear();
+							sBuilder.Append(str);
+							sBuilder.Append(quest[i].HPAOAKMKCMA_Slt2.ToString("D4"));
+							achievementsKeys.Add(sBuilder.ToString());
+						}
+					}
+					else
+					{
+						if(quest[i].IKJAAKEINHC_Slt > 0)
+						{
+							string str = controller.IFKKBHPMALH();
+							if(str == null)
+								str = "";
+							sBuilder.Clear();
+							sBuilder.Append(str);
+							sBuilder.Append(quest[i].IKJAAKEINHC_Slt.ToString());
+							achievementsKeys.Add(sBuilder.ToString());
+						}
+					}
+				}
+			}
+			if(achievementsKeys.Count == 0)
+				yield break;
+			req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new JGMEFHJCNHP_GetAchievementRecords());
+			req.MIDAMHNABAJ_Keys = achievementsKeys;
+			req.KMOBDLBKAAA_Repeatable = isRepeated;
+			while(!req.PLOOEECNHFB_IsDone)
+				yield return null;
+			if(req.NPNNPNAIONN_IsError)
+			{
+				GotoTitle();
+			}
+			else
+			{
+				int cnt = req.NFEAMMJIMPG.CEDLLCCONJP.Count;
+				for(int i = 0; i < quest.Count; i++)
+				{
+					if(controller.GBADILEHLGC_GetStatus(quest[i].PPFNGGCBJKC_Id) == 2)
+					{
+						if(!isRepeated)
+						{
+							if(quest[i].HPAOAKMKCMA_Slt2 > 0)
+							{
+								for(int j = 0; j < cnt; j++)
+								{
+									if(req.NFEAMMJIMPG.CEDLLCCONJP[j].OOIJCMLEAJP_IsReceived)
+									{
+										string str = controller.DCODGEOEDPG();
+										if(str == null)
+											str = "";
+										sBuilder.Clear();
+										sBuilder.Append(str);
+										sBuilder.Append(quest[i].HPAOAKMKCMA_Slt2.ToString("D4"));
+										if(req.NFEAMMJIMPG.CEDLLCCONJP[j].LJNAKDMILMC_Key == sBuilder.ToString())
+										{
+											clearQuestIds.Add(quest[i].PPFNGGCBJKC_Id);
+										}
+									}
+								}
+							}
+						}
+						else
+						{
+							if(quest[i].IKJAAKEINHC_Slt > 0)
+							{
+								for(int j = 0; j < cnt; j++)
+								{
+									if(req.NFEAMMJIMPG.CEDLLCCONJP[j].OOIJCMLEAJP_IsReceived)
+									{
+										string str = controller.IFKKBHPMALH();
+										if(str == null)
+											str = "";
+										sBuilder.Clear();
+										sBuilder.Append(str);
+										sBuilder.Append(quest[i].IKJAAKEINHC_Slt.ToString());
+										if(req.NFEAMMJIMPG.CEDLLCCONJP[j].LJNAKDMILMC_Key == sBuilder.ToString())
+										{
+											clearQuestIds.Add(quest[i].PPFNGGCBJKC_Id);
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				if(clearQuestIds.Count > 0)
+				{
+					controller.FHGEJBKNBLP(clearQuestIds);
+					for(int i = 0; i < clearQuestIds.Count; i++)
+					{
+						controller.OLDFFDMPEBM[clearQuestIds[i] - 1].EALOBDHOCHP_Stat = 3;
+					}
+				}
+			}
 		}
 
 		// RVA: 0x9D6CA0 Offset: 0x9D6CA0 VA: 0x9D6CA0 Slot: 15

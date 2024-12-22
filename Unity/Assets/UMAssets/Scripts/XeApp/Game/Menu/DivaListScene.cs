@@ -34,9 +34,9 @@ namespace XeApp.Game.Menu
 			m_divaIndexList.Clear();
 			for(int i = 0; i < PlayerData.NBIGLBMHEDC_Divas.Count; i++)
 			{
-				if(PlayerData.NBIGLBMHEDC_Divas[i].FJODMPGPDDD)
+				if(PlayerData.NBIGLBMHEDC_Divas[i].FJODMPGPDDD_DivaHave)
 				{
-					if(PlayerData.NBIGLBMHEDC_Divas[i].IPJMPBANBPP)
+					if(PlayerData.NBIGLBMHEDC_Divas[i].IPJMPBANBPP_Enabled)
 					{
 						m_divaIndexList.Add(i);
 					}

@@ -21,13 +21,13 @@ public class NEKDCJKANAH_StoryRecord : KLFDBFMNLBL_ServerSaveBlock
 		public int NDFOAINJPIN_Pos; // 0x10
 		public int OKJMIFELDMD_Opn; // 0x14
 		public int EJKHAFIALGK_MClr; // 0x18
-		public int PDNJGJNGPNJ; // 0x1C
-		public int ODEHJGPDFCL; // 0x20
-		public int ABFNAEKEGOB; // 0x24
+		public int PDNJGJNGPNJ_MaxCombo; // 0x1C
+		public int ODEHJGPDFCL_Score; // 0x20
+		public int ABFNAEKEGOB_ComboRank; // 0x24
 		public bool ICCJMCCJCBG; // 0x28
 		public bool HCENOJKNCMK; // 0x29
 
-		public bool HALOKFOJMLA { get { return EALOBDHOCHP_Stat > 3; } } //0x1AE98B8 LKOICFDJNDD
+		public bool HALOKFOJMLA_IsCompleted { get { return EALOBDHOCHP_Stat > 3; } } //0x1AE98B8 LKOICFDJNDD
 
 		// RVA: 0x1AE6C08 Offset: 0x1AE6C08 VA: 0x1AE6C08
 		public HKDNILFKCFC()
@@ -227,10 +227,7 @@ public class NEKDCJKANAH_StoryRecord : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1AE7F14 Offset: 0x1AE7F14 VA: 0x1AE7F14 Slot: 10
-	public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH)
-	{
-		TodoLogger.LogError(0, "AGHKODFKOJI");
-	}
+	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH);
 
 	// // RVA: g Offset: 0x1AE6928 VA: 0x1AE6928
 	public void LOAOLBNFNNP_InitDefault()

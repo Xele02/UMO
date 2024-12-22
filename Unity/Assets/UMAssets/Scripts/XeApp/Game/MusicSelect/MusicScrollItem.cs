@@ -19,6 +19,10 @@ namespace XeApp.Game.MusicSelect
 		[SerializeField]
 		private Text _title; // 0x10
 		[SerializeField]
+		private Text _titleAlt;
+		[SerializeField]
+		private Text _titleAlt2;
+		[SerializeField]
 		private UGUIButton m_button; // 0x14
 		[SerializeField]
 		private MusicScrollItemLabelGroup m_labelGroup; // 0x18
@@ -78,6 +82,68 @@ namespace XeApp.Game.MusicSelect
 				if (OnClickList != null)
 					OnClickList(this);
 			});
+
+			if(RuntimeSettings.CurrentSettings.Language != "" && (RuntimeSettings.CurrentSettings.EnableMusicSecondDisplay || RuntimeSettings.CurrentSettings.EnableMusicThirdDisplay))
+			{
+				m_attrIcon.GetComponent<RectTransform>().anchoredPosition = new Vector3(-206, -8);
+				m_rewardObj.GetComponent<RectTransform>().anchoredPosition = new Vector3(178, -8);
+				_title.transform.parent.GetComponent<RectTransform>().anchoredPosition = new Vector3(-25, -9);
+				
+				{
+					GameObject musicAltMask = new GameObject("TitleMaskAlt");
+					RectTransform rt = musicAltMask.AddComponent<RectTransform>();
+					musicAltMask.transform.SetParent(_title.transform.parent.parent, false);
+					musicAltMask.transform.SetSiblingIndex(_title.transform.parent.GetSiblingIndex());
+					rt.pivot = new Vector3(0.5f, 0.5f);
+					rt.anchorMin = new Vector3(0.5f, 0.5f);
+					rt.anchorMax = new Vector3(0.5f, 0.5f);
+					rt.anchoredPosition = new Vector3(15, 8.5f);
+					rt.sizeDelta = new Vector3(400, 30);
+					musicAltMask.AddComponent<RectMask2D>();
+
+					_titleAlt = new GameObject("Title").AddComponent<Text>();
+					_titleAlt.rectTransform.SetParent(rt, false);
+					_titleAlt.rectTransform.anchoredPosition = new Vector3(0, 15);
+					_titleAlt.rectTransform.sizeDelta = new Vector3(400, 30);
+					_titleAlt.rectTransform.pivot = new Vector3(0, 1);
+					_titleAlt.rectTransform.anchorMin = new Vector3(0, 0.5f);
+					_titleAlt.rectTransform.anchorMax = new Vector3(0, 0.5f);
+					_titleAlt.font = _title.font;
+					_titleAlt.supportRichText = _title.supportRichText;
+					_titleAlt.alignment = _title.alignment;
+					_titleAlt.horizontalOverflow = _title.horizontalOverflow;
+					_titleAlt.verticalOverflow = _title.verticalOverflow;
+					_titleAlt.color = _title.color;
+					_titleAlt.fontSize = 12;
+				}
+				{
+					GameObject musicAltMask = new GameObject("TitleMaskAlt2");
+					RectTransform rt = musicAltMask.AddComponent<RectTransform>();
+					musicAltMask.transform.SetParent(_title.transform.parent.parent, false);
+					musicAltMask.transform.SetSiblingIndex(_title.transform.parent.GetSiblingIndex() + 1);
+					rt.pivot = new Vector3(0.5f, 0.5f);
+					rt.anchorMin = new Vector3(0.5f, 0.5f);
+					rt.anchorMax = new Vector3(0.5f, 0.5f);
+					rt.anchoredPosition = new Vector3(15, -26);
+					rt.sizeDelta = new Vector3(400, 30);
+					musicAltMask.AddComponent<RectMask2D>();
+
+					_titleAlt2 = new GameObject("Title").AddComponent<Text>();
+					_titleAlt2.rectTransform.SetParent(rt, false);
+					_titleAlt2.rectTransform.anchoredPosition = new Vector3(0, 15);
+					_titleAlt2.rectTransform.sizeDelta = new Vector3(400, 30);
+					_titleAlt2.rectTransform.pivot = new Vector3(0, 1);
+					_titleAlt2.rectTransform.anchorMin = new Vector3(0, 0.5f);
+					_titleAlt2.rectTransform.anchorMax = new Vector3(0, 0.5f);
+					_titleAlt2.font = _title.font;
+					_titleAlt2.supportRichText = _title.supportRichText;
+					_titleAlt2.alignment = _title.alignment;
+					_titleAlt2.horizontalOverflow = _title.horizontalOverflow;
+					_titleAlt2.verticalOverflow = _title.verticalOverflow;
+					_titleAlt2.color = _title.color;
+					_titleAlt2.fontSize = 12;
+				}
+			}
 		}
 
 		// RVA: 0xC9E00C Offset: 0xC9E00C VA: 0xC9E00C
@@ -125,9 +191,13 @@ namespace XeApp.Game.MusicSelect
 		}
 
 		// // RVA: 0xC9E59C Offset: 0xC9E59C VA: 0xC9E59C
-		public void SetTitle(string title)
+		public void SetTitle(string title, string title_2, string title_3)
 		{
 			_title.text = title;
+			if(_titleAlt != null)
+				_titleAlt.text = title_2;
+			if(_titleAlt2 != null)
+				_titleAlt2.text = title_3;
 		}
 
 		// // RVA: 0xC9E5D8 Offset: 0xC9E5D8 VA: 0xC9E5D8
@@ -174,6 +244,10 @@ namespace XeApp.Game.MusicSelect
 		public void SetListType(MusicScrollItem.ListType listType)
 		{
 			_title.enabled = false;
+			if(_titleAlt != null)
+				_titleAlt.enabled = false;
+			if(_titleAlt2 != null)
+				_titleAlt2.enabled = false;
 			m_eventName.enabled = false;
 			m_attrIcon.enabled = false;
 			m_highLevelMusicName.enabled = false;
@@ -194,6 +268,10 @@ namespace XeApp.Game.MusicSelect
 			{
 				m_attrIcon.enabled = true;
 				_title.enabled = true;
+				if(_titleAlt != null)
+					_titleAlt.enabled = true;
+				if(_titleAlt2 != null)
+					_titleAlt2.enabled = true;
 			}
 		}
 	}

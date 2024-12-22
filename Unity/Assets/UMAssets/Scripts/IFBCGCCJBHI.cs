@@ -11,8 +11,8 @@ public class IFBCGCCJBHI
 	private long NFKMOHGLPAO_IntamacyTimeLeft = -1; // 0x20
 	public int EGJCFJLAKMO_TotalUtaRate = -1; // 0x34
 
-	public int EPNALMONMHB_CurEnergy { get { return BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC(); } } //0x11ED670 NCLHIDDMLCO
-	public int POKDILOKODG_MaxEnergy { get { return BPLOEAHOPFI_StaminaUpdater.DCBENCMNOGO_GainStamina; } } //0x11ED6A4 EDFHEIAMNLE
+	public int EPNALMONMHB_CurEnergy { get { return BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC_GetCurrent(); } } //0x11ED670 NCLHIDDMLCO
+	public int POKDILOKODG_MaxEnergy { get { return BPLOEAHOPFI_StaminaUpdater.DCBENCMNOGO_MaxStamina; } } //0x11ED6A4 EDFHEIAMNLE
 	public int CMCHABFEOHH_RemainTime { get { return (int)KLDBCKIJACO_StaminaTimeLeft; } } //0x11ED6D0 NFIBFCPHEPN
 	public string FPLEADMHLKN_StaminaStr { get; private set; } // 0x28 LAOBMPGBJBI KFJLNKOMGJB ENMDNIKAKEI
 	// public int MMFBIBDIAFB { get; } 0x11ED6E8 ADHCNLCKOFG
@@ -86,7 +86,7 @@ public class IFBCGCCJBHI
 
 		if (t != KLDBCKIJACO_StaminaTimeLeft || FPLEADMHLKN_StaminaStr == null)
         {
-			FPLEADMHLKN_StaminaStr = "MAX";
+			FPLEADMHLKN_StaminaStr = JpStringLiterals.StringLiteral_11085;
 			if (t != 0)
 			{
 				KOHNLDKIKPC.Clear();
@@ -106,7 +106,7 @@ public class IFBCGCCJBHI
 		long t = IOCLFHJLHLE_IntimacyUpdater.CKEJFCLAOHP_GetRemainingTime();
 		if(t != NFKMOHGLPAO_IntamacyTimeLeft || KOENBEGADHP_IntimacyStr == null)
 		{
-			KOENBEGADHP_IntimacyStr = "MAX";
+			KOENBEGADHP_IntimacyStr = JpStringLiterals.StringLiteral_11085;
 			if(t != 0)
 			{
 				KOHNLDKIKPC.Clear();

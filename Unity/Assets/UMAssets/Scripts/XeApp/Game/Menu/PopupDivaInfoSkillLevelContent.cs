@@ -26,9 +26,9 @@ namespace XeApp.Game.Menu
 			m_scrollLayout.UpdateScroll();
 			for(int i = 0; i < p.NBIGLBMHEDC_Divas.Count; i++)
 			{
-				if(p.NBIGLBMHEDC_Divas[i].IPJMPBANBPP)
+				if(p.NBIGLBMHEDC_Divas[i].IPJMPBANBPP_Enabled)
 				{
-					if(p.NBIGLBMHEDC_Divas[i].FJODMPGPDDD)
+					if(p.NBIGLBMHEDC_Divas[i].FJODMPGPDDD_DivaHave)
 					{
 						GameManager.Instance.DivaIconCache.Load(p.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId, 1, 0, (IiconTexture textrue) =>
 						{

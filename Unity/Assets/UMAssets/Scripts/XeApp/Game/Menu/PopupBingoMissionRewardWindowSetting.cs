@@ -29,7 +29,7 @@ namespace XeApp.Game.Menu
         // // RVA: 0x133A3D0 Offset: 0x133A3D0 VA: 0x133A3D0 Slot: 4
         public override IEnumerator LoadAssetBundlePrefab(Transform parent)
         {
-            Font systemFont; // 0x1C
+            XeSys.FontInfo systemFont; // 0x1C
             int poolSize; // 0x20
             AssetBundleLoadLayoutOperationBase operation; // 0x24
             int i; // 0x28
