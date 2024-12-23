@@ -39,14 +39,27 @@ namespace smartar
         }
 
         // // RVA: 0x20C0740 Offset: 0x20C0740 VA: 0x20C0740
+#if UNITY_EDITOR
+        private static IntPtr sarSmartar_SarFileStreamIn_SarFileStreamIn(IntPtr smart, string filePath)
+        {
+            return IntPtr.Zero;
+        }
+#else
         [DllImport("smartar")]
         private static extern IntPtr sarSmartar_SarFileStreamIn_SarFileStreamIn(IntPtr smart, string filePath);
+#endif
 
         // // RVA: 0x20C0A20 Offset: 0x20C0A20 VA: 0x20C0A20
         // private static extern uint sarSmartar_SarFileStreamIn_sarRead(IntPtr self, byte[] buf, uint size) { }
 
         // // RVA: 0x20C0930 Offset: 0x20C0930 VA: 0x20C0930
+#if UNITY_EDITOR
+        private static void sarSmartar_SarFileStreamIn_sarDelete(IntPtr self)
+        {
+        }
+#else
         [DllImport("smartar")]
         private static extern void sarSmartar_SarFileStreamIn_sarDelete(IntPtr self);
+#endif
     }
 }

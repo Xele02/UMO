@@ -29,6 +29,13 @@ namespace XeApp.Game.AR
         public UnityAction<PauseType> OnPauseCallback { set { m_onPauseCallback = value; } } //0x11CD398
         public UnityAction<PauseType> OnResumeCallback { set { m_onResumeCallback = value; } } //0x11CD3A0
 
+        public void Reconstruct()
+        {
+            m_button = GetComponent<Button>();
+            m_pauseImage = transform.Find("PuaseImage").gameObject.GetComponent<Image>();
+            m_playImage = transform.Find("PlayImage").gameObject.GetComponent<Image>();
+        }
+
         // RVA: 0x11E6214 Offset: 0x11E6214 VA: 0x11E6214
         public void Start()
         {

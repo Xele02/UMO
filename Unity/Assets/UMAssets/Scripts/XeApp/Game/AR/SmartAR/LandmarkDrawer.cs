@@ -39,7 +39,9 @@ namespace smartar
         // // RVA: 0x20C14E0 Offset: 0x20C14E0 VA: 0x20C14E0
         public int Start()
         {
+#if !UNITY_EDITOR
             GL.IssuePluginEvent(GetRenderEventFunc(), 2001);
+#endif
             GL.InvalidateState();
             return 0;
         }
@@ -51,19 +53,39 @@ namespace smartar
         }
 
         // // RVA: 0x20C1230 Offset: 0x20C1230 VA: 0x20C1230
+#if UNITY_EDITOR
+        private IntPtr sarSmartar_SarLandmarkDrawer_SarLandmarkDrawer(IntPtr smart)
+        {
+            return IntPtr.Zero;
+        }
+#else
         [DllImport("smartar")]
         private static extern IntPtr sarSmartar_SarLandmarkDrawer_SarLandmarkDrawer(IntPtr smart);
+#endif
 
         // // RVA: 0x20C13F8 Offset: 0x20C13F8 VA: 0x20C13F8
+#if UNITY_EDITOR
+        private void sarSmartar_SarLandmarkDrawer_sarDelete(IntPtr self)
+        {
+        }
+#else
         [DllImport("smartar")]
         private static extern void sarSmartar_SarLandmarkDrawer_sarDelete(IntPtr self);
+#endif
 
         // // RVA: 0x20C16B8 Offset: 0x20C16B8 VA: 0x20C16B8
         // private static extern int sarSmartar_SarLandmarkDrawer_sarStart(IntPtr self) { }
 
         // // RVA: 0x20C15D0 Offset: 0x20C15D0 VA: 0x20C15D0
+#if UNITY_EDITOR
+        private int sarSmartar_SarLandmarkDrawer_sarStop(IntPtr self)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarLandmarkDrawer_sarStop(IntPtr self);
+#endif
 
         // // RVA: 0x20C17A0 Offset: 0x20C17A0 VA: 0x20C17A0
         // private static extern int sarSmartar_SarLandmarkDrawer_sarDrawLandmarks(IntPtr self, ref Matrix44 pmvMatrix, IntPtr landmarks, int numLandmarks) { }
@@ -75,7 +97,14 @@ namespace smartar
         // private static extern int sarSmartar_SarLandmarkDrawer_sarDrawInitPoints(IntPtr self, ref Matrix44 imageMatrix, IntPtr initPoints, int numInitPoints) { }
 
         // // RVA: 0x20C1508 Offset: 0x20C1508 VA: 0x20C1508
+#if UNITY_EDITOR
+        private IntPtr GetRenderEventFunc()
+        {
+            return IntPtr.Zero;
+        }
+#else
         [DllImport("smartar")]
         private static extern IntPtr GetRenderEventFunc();
+#endif
     }
 }

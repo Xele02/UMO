@@ -29,18 +29,40 @@ namespace smartar
         }
 
         // // RVA: 0x2B49E48 Offset: 0x2B49E48 VA: 0x2B49E48
+#if UNITY_EDITOR
+        private static int sarSmartar_sarConvertPose2Matrix(ref Vector3 position, ref Quaternion rotation, out Matrix44 matrix)
+        {
+            matrix = new Matrix44();
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_sarConvertPose2Matrix(ref Vector3 position, ref Quaternion rotation, out Matrix44 matrix);
+#endif
 
         // // RVA: 0x2B49F60 Offset: 0x2B49F60 VA: 0x2B49F60
+#if UNITY_EDITOR
+        private static Matrix44 sarSmartar_sarSetPerspectiveM(float fovy, float aspect, float near, float far)
+        {
+            return new Matrix44();
+        }
+#else
         [DllImport("smartar")]
         private static extern Matrix44 sarSmartar_sarSetPerspectiveM(float fovy, float aspect, float near, float far);
+#endif
 
         // // RVA: 0x2B4A068 Offset: 0x2B4A068 VA: 0x2B4A068
         // private static extern void sarSmartar_sarMemcpy(IntPtr dst, IntPtr src, int length) { }
 
         // // RVA: 0x2B4A190 Offset: 0x2B4A190 VA: 0x2B4A190
+#if UNITY_EDITOR
+        private static bool sarSmartar_sarIsMultiCore()
+        {
+            return false;
+        }
+#else
         [DllImport("smartar")]
         private static extern bool sarSmartar_sarIsMultiCore();
+#endif
     }
 }

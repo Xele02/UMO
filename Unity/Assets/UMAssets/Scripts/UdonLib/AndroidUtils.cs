@@ -74,6 +74,9 @@ namespace UdonLib
 		// RVA: 0xE0A1A8 Offset: 0xE0A1A8 VA: 0xE0A1A8
 		public static bool CheckSelfPermission(string permission)
 		{
+#if UNITY_EDITOR
+			return true;
+#endif
 			bool result = false;
 			if(ApiLevel < 23)
 			{

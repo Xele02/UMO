@@ -79,12 +79,25 @@ namespace smartar
         }
 
         // // RVA: 0x2B48150 Offset: 0x2B48150 VA: 0x2B48150
+#if UNITY_EDITOR
+        private static void sarSmartar_SarSensorDeviceProxyListeners_sarCreate(ref SensorDevice.ProxyListenerDelegates delegates, out SensorDevice.ProxyListeners listeners)
+        {
+            listeners = new ProxyListeners();
+        }
+#else
         [DllImport("smartar")]
         private static extern void sarSmartar_SarSensorDeviceProxyListeners_sarCreate(ref SensorDevice.ProxyListenerDelegates delegates, out SensorDevice.ProxyListeners listeners);
+#endif
 
         // // RVA: 0x2B48460 Offset: 0x2B48460 VA: 0x2B48460
+#if UNITY_EDITOR
+        private static void sarSmartar_SarSensorDeviceProxyListeners_sarDelete(ref SensorDevice.ProxyListeners listeners)
+        {
+        }
+#else
         [DllImport("smartar")]
         private static extern void sarSmartar_SarSensorDeviceProxyListeners_sarDelete(ref SensorDevice.ProxyListeners listeners);
+#endif
 
         // // RVA: 0x2B48554 Offset: 0x2B48554 VA: 0x2B48554
         // public int SetSensorListener(SensorListener listener) { }
@@ -113,13 +126,26 @@ namespace smartar
             return sarSmartar_SarSensorDevice_sarStop(self_);
         }
 
+#if UNITY_EDITOR
+        private static IntPtr sarSmartar_SarSensorDevice_SarSensorDevice(IntPtr smart, IntPtr nativeDevice)
+        {
+            return IntPtr.Zero;
+        }
+#else
         // // RVA: 0x2B48048 Offset: 0x2B48048 VA: 0x2B48048
         [DllImport("smartar")]
         private static extern IntPtr sarSmartar_SarSensorDevice_SarSensorDevice(IntPtr smart, IntPtr nativeDevice);
+#endif
 
         // // RVA: 0x2B48378 Offset: 0x2B48378 VA: 0x2B48378
+#if UNITY_EDITOR
+        private static void sarSmartar_SarSensorDevice_sarDelete(IntPtr self)
+        {
+        }
+#else
         [DllImport("smartar")]
         private static extern void sarSmartar_SarSensorDevice_sarDelete(IntPtr self);
+#endif
 
         // // RVA: 0x2B485F0 Offset: 0x2B485F0 VA: 0x2B485F0
         // private static extern int sarSmartar_SarSensorDevice_sarSetSensorListener(IntPtr self, IntPtr listener) { }
@@ -128,18 +154,39 @@ namespace smartar
         // private static extern int sarSmartar_SarSensorDevice_sarSetOwningNativeDevice(IntPtr self, bool isOwning) { }
 
         // // RVA: 0x2B48918 Offset: 0x2B48918 VA: 0x2B48918
+#if UNITY_EDITOR
+        private static int sarSmartar_SarSensorDevice_sarGetDeviceInfo(IntPtr self, IntPtr info)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarSensorDevice_sarGetDeviceInfo(IntPtr self, IntPtr info);
+#endif
 
         // // RVA: 0x2B48A98 Offset: 0x2B48A98 VA: 0x2B48A98
         // private static extern int sarSmartar_SarSensorDevice_sarGetNativeDevice(IntPtr self, out IntPtr nativeDevice) { }
 
         // // RVA: 0x2B48C18 Offset: 0x2B48C18 VA: 0x2B48C18
+#if UNITY_EDITOR
+        private static int sarSmartar_SarSensorDevice_sarStart(IntPtr self)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarSensorDevice_sarStart(IntPtr self);
+#endif
 
         // // RVA: 0x2B48D80 Offset: 0x2B48D80 VA: 0x2B48D80
+#if UNITY_EDITOR
+        private static int sarSmartar_SarSensorDevice_sarStop(IntPtr self)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarSensorDevice_sarStop(IntPtr self);
+#endif
     }
 }

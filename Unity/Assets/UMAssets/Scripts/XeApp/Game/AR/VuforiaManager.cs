@@ -220,6 +220,7 @@ namespace XeApp.Game.AR
             m_initialized = true;
             this.StartCoroutineWatched(CoObserveAR());
             this.StartCoroutineWatched(CoObserveError());
+            Debug.LogError("C");
         }
 
         // // RVA: 0x13B5900 Offset: 0x13B5900 VA: 0x13B5900

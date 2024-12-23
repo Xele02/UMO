@@ -59,7 +59,9 @@ namespace smartar
         // // RVA: 0x20BFA74 Offset: 0x20BFA74 VA: 0x20BFA74
         public int Start()
         {
+#if !UNITY_EDITOR
             GL.IssuePluginEvent(GetRenderEventFunc(), 1001);
+#endif
             GL.InvalidateState();
             return 0;
         }
@@ -77,12 +79,25 @@ namespace smartar
         // public int Draw(Image image, Rect rect) { }
 
         // // RVA: 0x20BF388 Offset: 0x20BF388 VA: 0x20BF388
+#if UNITY_EDITOR
+        private static IntPtr sarSmartar_SarCameraImageDrawer_SarCameraImageDrawer(IntPtr smart)
+        {
+            return IntPtr.Zero;
+        }
+#else
         [DllImport("smartar")]
         private static extern IntPtr sarSmartar_SarCameraImageDrawer_SarCameraImageDrawer(IntPtr smart);
+#endif
 
         // // RVA: 0x20BF558 Offset: 0x20BF558 VA: 0x20BF558
+#if UNITY_EDITOR
+        private static void sarSmartar_SarCameraImageDrawer_sarDelete(IntPtr self)
+        {
+        }
+#else
         [DllImport("smartar")]
         private static extern void sarSmartar_SarCameraImageDrawer_sarDelete(IntPtr self);
+#endif
 
         // // RVA: 0x20BF668 Offset: 0x20BF668 VA: 0x20BF668
         // private static extern int sarSmartar_SarCameraImageDrawer_sarSetDrawRange(IntPtr self, float x1, float y1, float x2, float y2) { }
@@ -91,19 +106,40 @@ namespace smartar
         // private static extern int sarSmartar_SarCameraImageDrawer_sarSetRotation(IntPtr self, Rotation rotation) { }
 
         // // RVA: 0x20BF880 Offset: 0x20BF880 VA: 0x20BF880
+#if UNITY_EDITOR
+        private static int sarSmartar_SarCameraImageDrawer_sarSetFlipX(IntPtr self, bool flipX)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarCameraImageDrawer_sarSetFlipX(IntPtr self, bool flipX);
+#endif
 
         // // RVA: 0x20BF980 Offset: 0x20BF980 VA: 0x20BF980
+#if UNITY_EDITOR
+        private static int sarSmartar_SarCameraImageDrawer_sarSetFlipY(IntPtr self, bool flipY)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarCameraImageDrawer_sarSetFlipY(IntPtr self, bool flipY);
+#endif
 
         // // RVA: 0x20BFEF0 Offset: 0x20BFEF0 VA: 0x20BFEF0
         // private static extern int sarSmartar_SarCameraImageDrawer_sarStart(IntPtr self) { }
 
         // // RVA: 0x20BFB68 Offset: 0x20BFB68 VA: 0x20BFB68
+#if UNITY_EDITOR
+        private static int sarSmartar_SarCameraImageDrawer_sarStop(IntPtr self)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarCameraImageDrawer_sarStop(IntPtr self);
+#endif
 
         // // RVA: 0x20BFFE0 Offset: 0x20BFFE0 VA: 0x20BFFE0
         // private static extern int sarSmartar_SarCameraImageDrawer_sarDraw(IntPtr self, IntPtr image) { }
@@ -112,8 +148,15 @@ namespace smartar
         // private static extern int sarSmartar_SarCameraImageDrawer_sarDraw2(IntPtr self, IntPtr image, ref Rect rect) { }
 
         // // RVA: 0x20BFAA0 Offset: 0x20BFAA0 VA: 0x20BFAA0
+#if UNITY_EDITOR
+        private static IntPtr GetRenderEventFunc()
+        {
+            return IntPtr.Zero;
+        }
+#else
         [DllImport("smartar")]
         private static extern IntPtr GetRenderEventFunc();
+#endif
 
         // // RVA: 0x20BFCA0 Offset: 0x20BFCA0 VA: 0x20BFCA0
         // private static extern int sarSmartar_SarCameraImageDrawer_sarSetDrawData(ref Image image) { }

@@ -1,5 +1,6 @@
 
 using System;
+using System.Runtime.InteropServices;
 
 namespace smartar
 {
@@ -14,6 +15,7 @@ namespace smartar
         IMAGE_FORMAT_ABGR8888 = 6,
     }
 
+    [StructLayout(LayoutKind.Sequential)]
     public struct Image
     {
         public IntPtr pixels_; // 0x0

@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace smartar
 {
+    [StructLayout(LayoutKind.Sequential)]
     public struct Matrix44
     {
         public float v00_; // 0x0
@@ -29,7 +30,14 @@ namespace smartar
         }
 
         // RVA: 0x20C2148 Offset: 0x20C2148 VA: 0x20C2148
+#if UNITY_EDITOR
+        private static Matrix44 sarSmartar_SarMatrix44_sarMulM(ref Matrix44 lhs, ref Matrix44 rhs)
+        {
+            return new Matrix44();
+        }
+#else
         [DllImport("smartar")]
         private static extern Matrix44 sarSmartar_SarMatrix44_sarMulM(ref Matrix44 lhs, ref Matrix44 rhs);
+#endif
     }
 }

@@ -37,15 +37,36 @@ namespace smartar
         }
 
         // // RVA: 0x2B478A8 Offset: 0x2B478A8 VA: 0x2B478A8
+#if UNITY_EDITOR
+        private static IntPtr sarSmartar_SarScreenDevice_SarScreenDevice(IntPtr self)
+        {
+            return IntPtr.Zero;
+        }
+#else
         [DllImport("smartar")]
         private static extern IntPtr sarSmartar_SarScreenDevice_SarScreenDevice(IntPtr self);
+#endif
 
         // // RVA: 0x2B47A70 Offset: 0x2B47A70 VA: 0x2B47A70
+#if UNITY_EDITOR
+        private static void sarSmartar_SarScreenDevice_sarDelete(IntPtr self)
+        {
+        }
+#else
         [DllImport("smartar")]
         private static extern void sarSmartar_SarScreenDevice_sarDelete(IntPtr self);
+#endif
 
         // // RVA: 0x2B47B60 Offset: 0x2B47B60 VA: 0x2B47B60
+#if UNITY_EDITOR
+        private static int sarSmartar_SarScreenDevice_sarGetRotation(IntPtr self, out Rotation rotation)
+        {
+            rotation = Rotation.ROTATION_0;
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarScreenDevice_sarGetRotation(IntPtr self, out Rotation rotation);
+#endif
     }
 }

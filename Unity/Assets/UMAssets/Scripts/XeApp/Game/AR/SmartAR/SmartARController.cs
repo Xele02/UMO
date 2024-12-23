@@ -412,7 +412,9 @@ public class SmartARController : SmartARControllerBase
 	// RVA: 0x12F35FC Offset: 0x12F35FC VA: 0x12F35FC
 	private void Start()
     {
+#if !UNITY_EDITOR
         GL.IssuePluginEvent(GetRenderEventFunc(), 0);
+#endif
     }
 
 	// RVA: 0x12F36D4 Offset: 0x12F36D4 VA: 0x12F36D4 Slot: 16
@@ -435,7 +437,9 @@ public class SmartARController : SmartARControllerBase
             if(c != null)
             {
                 drawStartTimeSec_ = Time.realtimeSinceStartup;
+#if !UNITY_EDITOR
                 GL.IssuePluginEvent(GetRenderEventFunc(), 0);
+#endif
                 GL.InvalidateState();
                 if(!miscSettings.showLandmarks || PreviewOnly)
                 {
@@ -460,7 +464,9 @@ public class SmartARController : SmartARControllerBase
                 }
                 if(SystemInfo.graphicsDeviceType != UnityEngine.Rendering.GraphicsDeviceType.Metal)
                 {
+#if !UNITY_EDITOR
                     GL.IssuePluginEvent(GetRenderEventFunc(), 3001);
+#endif
                     GL.InvalidateState();
                 }
             }
@@ -586,63 +592,159 @@ public class SmartARController : SmartARControllerBase
 	// public void resumeWorkerThread() { }
 
 	// // RVA: 0x12F13D0 Offset: 0x12F13D0 VA: 0x12F13D0
+#if UNITY_EDITOR
+    private static IntPtr sarSmartar_SarSmartARController_sarDoCreate(ref SmartARControllerBase.CreateParam param, bool workerThreadEnabled, bool isPreviewOnly)
+    {
+        return IntPtr.Zero;
+    }
+#else
     [DllImport("smartar")]
 	private static extern IntPtr sarSmartar_SarSmartARController_sarDoCreate(ref SmartARControllerBase.CreateParam param, bool workerThreadEnabled, bool isPreviewOnly);
+#endif
 
 	// // RVA: 0x12F2428 Offset: 0x12F2428 VA: 0x12F2428
+#if UNITY_EDITOR
+    private static void sarSmartar_SarSmartARController_sarDoDestroy(IntPtr self)
+    {
+    }
+#else
     [DllImport("smartar")]
 	private static extern void sarSmartar_SarSmartARController_sarDoDestroy(IntPtr self);
+#endif
 
 	// // RVA: 0x12F1D40 Offset: 0x12F1D40 VA: 0x12F1D40
+#if UNITY_EDITOR
+    private static int sarSmartar_SarSmartARController_sarDoEnable(IntPtr self, IntPtr cameraDevice, IntPtr sensorDevice)
+    {
+        return 0;
+    }
+#else
     [DllImport("smartar")]
 	private static extern int sarSmartar_SarSmartARController_sarDoEnable(IntPtr self, IntPtr cameraDevice, IntPtr sensorDevice);
+#endif
 
 	// // RVA: 0x12F2008 Offset: 0x12F2008 VA: 0x12F2008
+#if UNITY_EDITOR
+    private static int sarSmartar_SarSmartARController_sarDoDisable(IntPtr self)
+    {
+        return 0;
+    }
+#else
     [DllImport("smartar")]
 	private static extern int sarSmartar_SarSmartARController_sarDoDisable(IntPtr self);
+#endif
 
 	// // RVA: 0x12F26B0 Offset: 0x12F26B0 VA: 0x12F26B0
+#if UNITY_EDITOR
+    private static int sarSmartar_SarSmartARController_sarSuspendWorkerThread(IntPtr self)
+    {
+        return 0;
+    }
+#else
     [DllImport("smartar")]
 	private static extern int sarSmartar_SarSmartARController_sarSuspendWorkerThread(IntPtr self);
+#endif
 
 	// // RVA: 0x12F27D8 Offset: 0x12F27D8 VA: 0x12F27D8
+#if UNITY_EDITOR
+    private static int sarSmartar_SarSmartARController_sarResumeWorkerThread(IntPtr self)
+    {
+        return 0;
+    }
+#else
     [DllImport("smartar")]
 	private static extern int sarSmartar_SarSmartARController_sarResumeWorkerThread(IntPtr self);
+#endif
 
 	// // RVA: 0x12F52B0 Offset: 0x12F52B0 VA: 0x12F52B0
 	// private static extern int sarSmartar_SarSmartARController_sarDoDraw(IntPtr self, int width, int height, bool showCameraImage) { }
 
 	// // RVA: 0x12F4800 Offset: 0x12F4800 VA: 0x12F4800
+#if UNITY_EDITOR
+    private static int sarSmartar_SarSmartARController_sarDoEndFrame(IntPtr self)
+    {
+        return 0;
+    }
+#else
     [DllImport("smartar")]
 	private static extern int sarSmartar_SarSmartARController_sarDoEndFrame(IntPtr self);
+#endif
 
 	// // RVA: 0x12F4978 Offset: 0x12F4978 VA: 0x12F4978
+#if UNITY_EDITOR
+    private static int sarSmartar_SarSmartARController_sarGetResult(IntPtr self, IntPtr target, ref RecognitionResult result)
+    {
+        return 0;
+    }
+#else
     [DllImport("smartar")]
 	private static extern int sarSmartar_SarSmartARController_sarGetResult(IntPtr self, IntPtr target, ref RecognitionResult result);
+#endif
 
 	// // RVA: 0x12F37A8 Offset: 0x12F37A8 VA: 0x12F37A8
+#if UNITY_EDITOR
+    private static float sarSmartar_SarSmartARController_sarGetFovy(IntPtr self)
+    {
+        return 30;
+    }
+#else
     [DllImport("smartar")]
 	private static extern float sarSmartar_SarSmartARController_sarGetFovy(IntPtr self);
+#endif
 
 	// // RVA: 0x12F4290 Offset: 0x12F4290 VA: 0x12F4290
+#if UNITY_EDITOR
+    private static Matrix44 sarSmartar_SarSmartARController_sarGetInitPointMatrix(IntPtr self)
+    {
+        return new Matrix44();
+    }
+#else
     [DllImport("smartar")]
 	public static extern Matrix44 sarSmartar_SarSmartARController_sarGetInitPointMatrix(IntPtr self);
+#endif
 
 	// // RVA: 0x12F40F0 Offset: 0x12F40F0 VA: 0x12F40F0
+#if UNITY_EDITOR
+    private static void sarSmartar_SarSmartARController_sarAdjustPose(IntPtr self, ref smartar.Vector3 fromPosition, ref smartar.Quaternion fromRotation, out smartar.Vector3 toPosition, out smartar.Quaternion toRotation)
+    {
+        toPosition = new smartar.Vector3();
+        toRotation = new smartar.Quaternion();
+    }
+#else
     [DllImport("smartar")]
 	public static extern void sarSmartar_SarSmartARController_sarAdjustPose(IntPtr self, ref smartar.Vector3 fromPosition, ref smartar.Quaternion fromRotation, out smartar.Vector3 toPosition, out smartar.Quaternion toRotation);
+#endif
 
 	// // RVA: 0x12F53B8 Offset: 0x12F53B8 VA: 0x12F53B8
+#if UNITY_EDITOR
+    private static void sarSmartar_SarSmartARController_sarRunWorkerThread(IntPtr self)
+    {
+    }
+#else
     [DllImport("smartar")]
 	private static extern void sarSmartar_SarSmartARController_sarRunWorkerThread(IntPtr self);
+#endif
 
 	// // RVA: 0x12F2330 Offset: 0x12F2330 VA: 0x12F2330
+#if UNITY_EDITOR
+    private static void sarSmartar_SarSmartARController_sarFinishWorkerThread(IntPtr self)
+    {
+    }
+#else
     [DllImport("smartar")]
 	private static extern void sarSmartar_SarSmartARController_sarFinishWorkerThread(IntPtr self);
+#endif
 
 	// // RVA: 0x12F0888 Offset: 0x12F0888 VA: 0x12F0888
+#if UNITY_EDITOR
+    private static ulong sarSmartar_SarSmartARController_sarGetCameraFrameCount(IntPtr self)
+    {
+        return 1;
+    }
+#else
     [DllImport("smartar")]
 	private static extern ulong sarSmartar_SarSmartARController_sarGetCameraFrameCount(IntPtr self);
+#endif
 
 	// // RVA: 0x12F0A68 Offset: 0x12F0A68 VA: 0x12F0A68
 	// private static extern ulong sarSmartar_SarSmartARController_sarGetRecogCount(IntPtr self, int index) { }
@@ -657,24 +759,56 @@ public class SmartARController : SmartARControllerBase
 	// private static extern void sarSmartar_SarSmartARController_sarGetImage(IntPtr self, IntPtr image, out ulong timestamp) { }
 
 	// // RVA: 0x12F3618 Offset: 0x12F3618 VA: 0x12F3618
+#if UNITY_EDITOR
+    private static IntPtr GetRenderEventFunc()
+    {
+        return IntPtr.Zero;
+    }
+#else
     [DllImport("smartar")]
 	private static extern IntPtr GetRenderEventFunc();
+#endif
 
 	// // RVA: 0x12F4390 Offset: 0x12F4390 VA: 0x12F4390
+#if UNITY_EDITOR
+    private static int sarSmartar_SarSmartARController_sarSetDrawData(int width, int height, bool showCameraImage)
+    {
+        return 0;
+    }
+#else
     [DllImport("smartar")]
 	private static extern int sarSmartar_SarSmartARController_sarSetDrawData(int width, int height, bool showCameraImage);
+#endif
 
 	// // RVA: 0x12F4490 Offset: 0x12F4490 VA: 0x12F4490
+#if UNITY_EDITOR
+    private static void sarSmartar_SarSmartARController_sarSetLandmarkDrawerDrawLandmarkData(IntPtr self, IntPtr landmark_self, ref Matrix44 pmvMatrix, IntPtr landmarks, int numLandmarks)
+    {
+    }
+#else
     [DllImport("smartar")]
 	private static extern void sarSmartar_SarSmartARController_sarSetLandmarkDrawerDrawLandmarkData(IntPtr self, IntPtr landmark_self, ref Matrix44 pmvMatrix, IntPtr landmarks, int numLandmarks);
+#endif
 
 	// // RVA: 0x12F4580 Offset: 0x12F4580 VA: 0x12F4580
+#if UNITY_EDITOR
+    private static void sarSmartar_SarSmartARController_sarSetLandmarkDrawerDrawNodePointData(IntPtr self, IntPtr landmark_self, ref Matrix44 pmvMatrix, IntPtr nodePoints, int numNodePoints)
+    {
+    }
+#else
     [DllImport("smartar")]
 	private static extern void sarSmartar_SarSmartARController_sarSetLandmarkDrawerDrawNodePointData(IntPtr self, IntPtr landmark_self, ref Matrix44 pmvMatrix, IntPtr nodePoints, int numNodePoints);
+#endif
 
 	// // RVA: 0x12F4670 Offset: 0x12F4670 VA: 0x12F4670
+#if UNITY_EDITOR
+    private static void sarSmartar_SarSmartARController_sarSetLandmarkDrawerDrawInitPointData(IntPtr self, IntPtr landmark_self, ref Matrix44 imageMatrix, IntPtr initPoints, int numInitPoints)
+    {
+    }
+#else
     [DllImport("smartar")]
 	private static extern void sarSmartar_SarSmartARController_sarSetLandmarkDrawerDrawInitPointData(IntPtr self, IntPtr landmark_self, ref Matrix44 imageMatrix, IntPtr initPoints, int numInitPoints);
+#endif
 
 	// // RVA: 0x12F3408 Offset: 0x12F3408 VA: 0x12F3408
 	// private static extern void sarSmartar_SarSmartARController_sarChangeRecognitionMode(IntPtr self, ref SmartARControllerBase.CreateParam param, bool workerThreadEnabled, bool isPreviewOnly) { }

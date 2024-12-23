@@ -138,6 +138,9 @@ namespace XeApp.Game.AR
         // RVA: 0x11CF3E4 Offset: 0x11CF3E4 VA: 0x11CF3E4
         protected bool CheckAvailableStorageKB(long kb)
         {
+#if UNITY_EDITOR
+            return true;
+#endif
             long l;
             if(Application.platform == RuntimePlatform.IPhonePlayer)
             {

@@ -72,12 +72,14 @@ namespace smartar
             }
         }
 
+        [StructLayout(LayoutKind.Sequential)]
         private struct ProxyListeners
         {
             public IntPtr workDispatchedListener_; // 0x0
             public IntPtr recognizedListener_; // 0x4
         }
 
+        [StructLayout(LayoutKind.Sequential)]
         private struct ProxyListenerDelegates
         {
             public IntPtr workDispatchedListenerDelegate_; // 0x0
@@ -141,12 +143,26 @@ namespace smartar
         }
 
         // // RVA: 0x20C2DB0 Offset: 0x20C2DB0 VA: 0x20C2DB0
+#if UNITY_EDITOR
+        Recognizer.ProxyListeners l = new ProxyListeners();
+        private void sarSmartar_SarRecognizerProxyListeners_sarCreate(ref Recognizer.ProxyListenerDelegates delegates, out Recognizer.ProxyListeners listeners)
+        {
+            listeners = l;
+        }
+#else
         [DllImport("smartar")]
         private static extern void sarSmartar_SarRecognizerProxyListeners_sarCreate(ref Recognizer.ProxyListenerDelegates delegates, out Recognizer.ProxyListeners listeners);
+#endif
 
         // // RVA: 0x20C30C0 Offset: 0x20C30C0 VA: 0x20C30C0
+#if UNITY_EDITOR
+        private void sarSmartar_SarRecognizerProxyListeners_sarDelete(ref Recognizer.ProxyListeners listeners)
+        {
+        }
+#else
         [DllImport("smartar")]
         private static extern void sarSmartar_SarRecognizerProxyListeners_sarDelete(ref Recognizer.ProxyListeners listeners);
+#endif
 
         // // RVA: 0x20C31B4 Offset: 0x20C31B4 VA: 0x20C31B4
         public int SetCameraDeviceInfo(CameraDeviceInfo info)
@@ -250,28 +266,69 @@ namespace smartar
         }
 
         // // RVA: 0x20C2CB8 Offset: 0x20C2CB8 VA: 0x20C2CB8
+#if UNITY_EDITOR
+        private IntPtr sarSmartar_SarRecognizer_SarRecognizer(IntPtr smart, RecognitionMode recogMode, SceneMappingInitMode initMode)
+        {
+            return IntPtr.Zero;
+        }
+#else
         [DllImport("smartar")]
         private static extern IntPtr sarSmartar_SarRecognizer_SarRecognizer(IntPtr smart, RecognitionMode recogMode, SceneMappingInitMode initMode);
+#endif
 
         // // RVA: 0x20C2FD8 Offset: 0x20C2FD8 VA: 0x20C2FD8
+#if UNITY_EDITOR
+        private void sarSmartar_SarRecognizer_sarDelete(IntPtr self)
+        {
+        }
+#else
         [DllImport("smartar")]
         private static extern void sarSmartar_SarRecognizer_sarDelete(IntPtr self);
+#endif
 
         // // RVA: 0x20C3258 Offset: 0x20C3258 VA: 0x20C3258
+#if UNITY_EDITOR
+        private int sarSmartar_SarRecognizer_sarSetCameraDeviceInfo(IntPtr self, IntPtr info)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarRecognizer_sarSetCameraDeviceInfo(IntPtr self, IntPtr info);
+#endif
 
         // // RVA: 0x20C33F0 Offset: 0x20C33F0 VA: 0x20C33F0
+#if UNITY_EDITOR
+        private int sarSmartar_SarRecognizer_sarSetSensorDeviceInfo(IntPtr self, IntPtr info)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarRecognizer_sarSetSensorDeviceInfo(IntPtr self, IntPtr info);
+#endif
 
         // // RVA: 0x20C3698 Offset: 0x20C3698 VA: 0x20C3698
+#if UNITY_EDITOR
+        private int sarSmartar_SarRecognizer_sarSetTargets(IntPtr self, IntPtr[] targets, int numTargets)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarRecognizer_sarSetTargets(IntPtr self, IntPtr[] targets, int numTargets);
+#endif
 
         // // RVA: 0x20C3820 Offset: 0x20C3820 VA: 0x20C3820
+#if UNITY_EDITOR
+        private int sarSmartar_SarRecognizer_sarReset(IntPtr self)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarRecognizer_sarReset(IntPtr self);
+#endif
 
         // // RVA: 0x20C39D0 Offset: 0x20C39D0 VA: 0x20C39D0
         // private static extern int sarSmartar_SarRecognizer_sarRun(IntPtr self, ref RecognitionRequest request) { }
@@ -298,19 +355,40 @@ namespace smartar
         // private static extern int sarSmartar_SarRecognizer_sarSetRecognizedListener(IntPtr self, IntPtr listener) { }
 
         // // RVA: 0x20C4750 Offset: 0x20C4750 VA: 0x20C4750
+#if UNITY_EDITOR
+        private int sarSmartar_SarRecognizer_sarSetMaxTargetsPerFrame(IntPtr self, int maxTargets)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarRecognizer_sarSetMaxTargetsPerFrame(IntPtr self, int maxTargets);
+#endif
 
         // // RVA: 0x20C48D8 Offset: 0x20C48D8 VA: 0x20C48D8
+#if UNITY_EDITOR
+        private int sarSmartar_SarRecognizer_sarSetSearchPolicy(IntPtr self, SearchPolicy policy)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarRecognizer_sarSetSearchPolicy(IntPtr self, SearchPolicy policy);
+#endif
 
         // // RVA: 0x20C4A90 Offset: 0x20C4A90 VA: 0x20C4A90
         // private static extern int sarSmartar_SarRecognizer_sarPropagateResult(IntPtr self, ref RecognitionResult fromResult, out RecognitionResult toResult, ulong timestamp, bool useVelocity) { }
 
         // // RVA: 0x20C4E28 Offset: 0x20C4E28 VA: 0x20C4E28
+#if UNITY_EDITOR
+        private int sarSmartar_SarRecognizer_sarSetMaxTriangulateMasks(IntPtr self, int maxMasks)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarRecognizer_sarSetMaxTriangulateMasks(IntPtr self, int maxMasks);
+#endif
 
         // // RVA: 0x20C4FC8 Offset: 0x20C4FC8 VA: 0x20C4FC8
         // private static extern int sarSmartar_SarRecognizer_sarSaveSceneMap(IntPtr self, IntPtr stream) { }
@@ -325,7 +403,14 @@ namespace smartar
         // private static extern int sarSmartar_SarRecognizer_sarRemoveLandmark(IntPtr self, ref Landmark landmark) { }
 
         // // RVA: 0x20C55D0 Offset: 0x20C55D0 VA: 0x20C55D0
+#if UNITY_EDITOR
+        private int sarSmartar_SarRecognizer_sarSetDenseMapMode(IntPtr self, DenseMapMode mode)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarRecognizer_sarSetDenseMapMode(IntPtr self, DenseMapMode mode);
+#endif
     }
 }

@@ -36,15 +36,38 @@ namespace smartar
         }
 
         // // RVA: 0x2B474B8 Offset: 0x2B474B8 VA: 0x2B474B8
+#if UNITY_EDITOR
+        private static IntPtr sarSmartar_SarSceneMapTarget_SarSceneMapTarget(IntPtr smart, IntPtr stream)
+        {
+            return IntPtr.Zero;
+        }
+#else
         [DllImport("smartar")]
         private static extern IntPtr sarSmartar_SarSceneMapTarget_SarSceneMapTarget(IntPtr smart, IntPtr stream);
+#endif
 
         // // RVA: 0x2B47688 Offset: 0x2B47688 VA: 0x2B47688
+#if UNITY_EDITOR
+        private static void sarSmartar_SarSceneMapTarget_sarDelete(IntPtr self)
+        {
+        }
+#else
         [DllImport("smartar")]
         private static extern void sarSmartar_SarSceneMapTarget_sarDelete(IntPtr self);
+#endif
 
         // // RVA: 0x2B47778 Offset: 0x2B47778 VA: 0x2B47778
+#if UNITY_EDITOR
+        private static int sarSmartar_SarSceneMapTarget_sarGetPhysicalSize(IntPtr self, out smartar.Vector2 size)
+        {
+            size = new Vector2();
+            size.x_ = 1;
+            size.y_ = 1;
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarSceneMapTarget_sarGetPhysicalSize(IntPtr self, out smartar.Vector2 size);
+#endif
     }
 }

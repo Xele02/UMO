@@ -17,6 +17,12 @@ namespace XeApp.Game.AR
         private bool m_isShow; // 0x14
         private ARObject m_arObj; // 0x18
 
+        public void Reconstruct()
+        {
+            m_iconImage = transform.Find("IconImage").gameObject.GetComponent<RawImage>();
+            m_textImage = transform.Find("TextImage").gameObject.GetComponent<Image>();
+        }
+
         // RVA: 0x1611384 Offset: 0x1611384 VA: 0x1611384
         public void Start()
         {

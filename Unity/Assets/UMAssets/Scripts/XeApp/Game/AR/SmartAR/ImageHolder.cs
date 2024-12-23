@@ -33,11 +33,25 @@ namespace smartar
         }
 
         // // RVA: 0x20C0FB8 Offset: 0x20C0FB8 VA: 0x20C0FB8
+#if UNITY_EDITOR
+        private static int sarSmartar_SarImageHolder_sarGetImageSizeInBytes(IntPtr self)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarImageHolder_sarGetImageSizeInBytes(IntPtr self);
+#endif
 
         // // RVA: 0x20C10F8 Offset: 0x20C10F8 VA: 0x20C10F8
+#if UNITY_EDITOR
+        private static int sarSmartar_SarImageHolder_sarGetImage(IntPtr self, ref Image image, int maxSizeInBytes, IntPtr smart)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarImageHolder_sarGetImage(IntPtr self, ref Image image, int maxSizeInBytes, IntPtr smart);
+#endif
     }
 }

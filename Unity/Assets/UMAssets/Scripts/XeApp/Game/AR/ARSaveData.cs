@@ -55,6 +55,7 @@ namespace XeApp.Game.AR
 		}
 
 		// // RVA: 0xBBC898 Offset: 0xBBC898 VA: 0xBBC898
+		// RVA: 0x11E8B20 Offset: 0x11E8B20 VA: 0x11E8B20
 		public void Init()
 		{
 			rijndale = new RijndaelManaged();
@@ -66,6 +67,7 @@ namespace XeApp.Game.AR
 		}
 
 		// // RVA: 0xBBCB70 Offset: 0xBBCB70 VA: 0xBBCB70
+		// RVA: 0x11E8DF8 Offset: 0x11E8DF8 VA: 0x11E8DF8
 		private static void GenerateKey(string password, string salt, int keySize, out byte[] key, int blockSize, out byte[] iv)
 		{
 			if(salt.Length < 8)
@@ -74,8 +76,8 @@ namespace XeApp.Game.AR
 			}
 			Rfc2898DeriveBytes s = new Rfc2898DeriveBytes(password, Encoding.UTF8.GetBytes(salt));
 			s.IterationCount = 52;
-			key = s.GetBytes(keySize);
-			iv = s.GetBytes(blockSize);
+			key = s.GetBytes(keySize / 8);
+			iv = s.GetBytes(blockSize / 8);
 		}
 
 		// // RVA: 0xBBCD40 Offset: 0xBBCD40 VA: 0xBBCD40

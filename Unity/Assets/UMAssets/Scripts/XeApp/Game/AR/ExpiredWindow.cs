@@ -14,6 +14,11 @@ namespace XeApp.Game.AR
         private RectTransform m_frame; // 0x10
         private bool m_isShow = true; // 0x14
 
+        public void Reconstruct()
+        {
+            m_messageText = transform.Find("Frame/P/Text").gameObject.GetComponent<Text>();
+        }
+
         // RVA: 0x13B2354 Offset: 0x13B2354 VA: 0x13B2354
         private void Start()
         {

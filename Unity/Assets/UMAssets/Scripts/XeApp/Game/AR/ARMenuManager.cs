@@ -99,8 +99,39 @@ namespace XeApp.Game.AR
             op = AssetBundleManager.LoadAllAssetAsync(bundleName);
             yield return op;
             GameObject g = Instantiate(op.GetAsset<GameObject>("ARMenuManager"), parent, false);
+            // Reconstruct data lost in current bundle
+            {
+                ARMenuManager menu = g.AddComponent<ARMenuManager>();
+                menu.m_header = g.transform.Find("Header").gameObject.AddComponent<ARHeaderMenu>();
+                menu.m_topMenu = g.transform.Find("TopMenu").gameObject.AddComponent<ARTopMenu>();
+                menu.m_topMenu.Reconstruct();
+                menu.m_photoMenu = g.transform.Find("PhotoMenu").gameObject.AddComponent<ARPhotoMenu>();
+                menu.m_photoMenu.Reconstruct();
+                menu.m_helpMenu = g.transform.Find("HelpMenu").gameObject.AddComponent<ARHelpMenu>();
+                menu.m_helpMenu.Reconstruct();
+                menu.m_collectionMenu = g.transform.Find("CollectionMenu").gameObject.AddComponent<ARCollectionMenu>();
+                menu.m_collectionMenu.Reconstruct();
+                menu.m_shutterButton = g.transform.Find("ShutterButton").gameObject.GetComponent<Button>();
+                menu.m_resetButton = g.transform.Find("ResetButton").gameObject.GetComponent<Button>();
+                menu.m_pauseButton = g.transform.Find("PauseButton").gameObject.AddComponent<ARPauseButton>();
+                menu.m_pauseButton.Reconstruct();
+                menu.m_recoIcon = g.transform.Find("RecognitionIcon").gameObject.AddComponent<ARRecognitionIcon>();
+                menu.m_recoIcon.Reconstruct();
+                menu.m_recoText = g.transform.Find("RecognitionText").gameObject.AddComponent<ARRecognitionText>();
+                menu.m_recoText.Reconstruct();
+                menu.m_awayText = g.transform.Find("AwayText").gameObject.AddComponent<ARAwayText>();
+                menu.m_awayText.Reconstruct();
+                menu.m_partitionImage = g.transform.Find("PartitionImage").gameObject.GetComponent<Image>();
+                menu.m_acquireMarker = g.transform.Find("AcquireMarker").gameObject.AddComponent<ARAcquireMarker>();
+                menu.m_acquireMarker.Reconstruct();
+                menu.m_expiredWindow = g.transform.Find("ExpiredWindow").gameObject.AddComponent<ExpiredWindow>();
+                menu.m_expiredWindow.Reconstruct();
+            }
             ARMenuManager menuMgr = g.GetComponent<ARMenuManager>();
             g = Instantiate(op.GetAsset<GameObject>("PhotoLogo"), photoCanvas.transform.Find("SafeAreaOffSet"), false);
+            {
+                ARPhotoLogo photologo = g.AddComponent<ARPhotoLogo>();
+            }
             SetupSafeScreen(menuMgr.gameObject, photoCanvas.transform.Find("SafeAreaOffSet").gameObject, menuMgr);
             menuMgr.m_helpMenu.imagePrefab = op.GetAsset<GameObject>("OverlayImage");
             menuMgr.m_collectionMenu.eventInfoPrefab = op.GetAsset<GameObject>("EventInfo");
@@ -224,6 +255,10 @@ namespace XeApp.Game.AR
                     Destroy(m_messageWindowObj);
                 }
                 m_messageWindowObj = Instantiate(m_messageWindowPref, transform.parent);
+                {
+                    MessageWindow m = m_messageWindowObj.AddComponent<MessageWindow>();
+                    m.Reconstruct();
+                }
                 m_messageWindowObj.GetComponent<MessageWindow>().SetMessage(message);
                 return m_messageWindowObj;
             }

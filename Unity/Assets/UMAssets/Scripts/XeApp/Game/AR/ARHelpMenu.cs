@@ -46,6 +46,18 @@ namespace XeApp.Game.AR
         public string HelpKey { get { return m_helpKey; } set { m_helpKey = value; } } //0x11D6050 0x11D6058
         public bool IsOpening { get { return m_isOpening; } } //0x11D6060
 
+        public void Reconstruct()
+        {
+            m_closeButton = transform.Find("Header/Close").gameObject.GetComponent<Button>();
+            m_imagesObj = transform.Find("Images").gameObject;
+            m_swaipTouch = transform.Find("SwaipHitCheck").gameObject.GetComponent<SwaipTouch>();
+            m_pageCountText = transform.Find("Header/PageCount").gameObject.GetComponent<Text>();
+            m_titleText = transform.Find("Header/Text").gameObject.GetComponent<Text>();
+            m_leftArrowButton = transform.Find("ArrowButton/LeftButton").gameObject.GetComponent<Button>();
+            m_rightArrowButton = transform.Find("ArrowButton/RightButton").gameObject.GetComponent<Button>();
+            m_header = transform.Find("Header").gameObject.GetComponent<Image>();
+        }
+
         // RVA: 0x11D6068 Offset: 0x11D6068 VA: 0x11D6068 Slot: 4
         public override void Start()
         {

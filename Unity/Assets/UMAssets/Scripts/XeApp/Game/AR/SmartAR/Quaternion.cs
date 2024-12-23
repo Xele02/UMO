@@ -1,6 +1,9 @@
 
+using System.Runtime.InteropServices;
+
 namespace smartar
 {
+    [StructLayout(LayoutKind.Sequential)]
     public struct Quaternion
     {
         public float w_; // 0x0

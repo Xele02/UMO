@@ -16,6 +16,12 @@ namespace XeApp.Game.AR
         private string m_message; // 0x18
         private float m_startTime; // 0x1C
 
+        public void Reconstruct()
+        {
+            m_text = transform.Find("ButtonFrame/Text").gameObject.GetComponent<Text>();
+            m_button = GetComponent<Button>();
+        }
+
         // RVA: 0x13B2F34 Offset: 0x13B2F34 VA: 0x13B2F34
         private void Start()
         {

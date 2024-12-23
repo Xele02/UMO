@@ -31,11 +31,24 @@ namespace smartar
         }
 
         // RVA: 0x20BF098 Offset: 0x20BF098 VA: 0x20BF098
+#if UNITY_EDITOR
+        private static IntPtr sarSmartar_SarCameraDeviceInfo_SarCameraDeviceInfo()
+        {
+            return IntPtr.Zero;
+        }
+#else
         [DllImport("smartar")]
         private static extern IntPtr sarSmartar_SarCameraDeviceInfo_SarCameraDeviceInfo();
+#endif
 
         // RVA: 0x20BF260 Offset: 0x20BF260 VA: 0x20BF260
+#if UNITY_EDITOR
+        private static void sarSmartar_SarCameraDeviceInfo_sarDelete(IntPtr self)
+        {
+        }
+#else
         [DllImport("smartar")]
         private static extern void sarSmartar_SarCameraDeviceInfo_sarDelete(IntPtr self);
+#endif
     }
 }

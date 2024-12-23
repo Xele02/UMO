@@ -39,8 +39,8 @@ namespace XeApp.Game.AR
             { ARHeaderButton.Share, ARHeaderButtonPos.Right }
         }; // 0xC
         private bool m_isInitialized; // 0x10
-        private List<Button> m_buttons; // 0x14
-        private ARHeaderMenu.ARHeaderButton[] m_currentShowButton; // 0x18
+        private List<Button> m_buttons = new List<Button>(); // 0x14
+        private ARHeaderMenu.ARHeaderButton[] m_currentShowButton = new ARHeaderButton[3]; // 0x18
 
         // RVA: 0x11D5050 Offset: 0x11D5050 VA: 0x11D5050
         public void Start()

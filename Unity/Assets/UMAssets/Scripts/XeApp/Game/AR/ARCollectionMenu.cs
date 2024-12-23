@@ -56,6 +56,19 @@ namespace XeApp.Game.AR
         public GameObject stampPrefab { set { m_stampPrefab = value; } } //0x1616144
         public GameObject stampGroupPrefab { set { m_stampGroupPrefab = value; } } //0x161614C
 
+        public void Reconstruct()
+        {
+            m_closeButton = transform.Find("Header/Close").gameObject.GetComponent<Button>();
+            m_backButton = transform.Find("Header/Back").gameObject.GetComponent<Button>();
+            m_menu = transform.Find("Menu").gameObject.GetComponent<RectTransform>();
+            m_eventSelect = transform.Find("Menu/EventSelect").gameObject.GetComponent<RectTransform>();
+            m_stampCollection = transform.Find("Menu/StampCollection").gameObject.GetComponent<RectTransform>();
+            m_titleText = transform.Find("Header/Text").gameObject.GetComponent<Text>();
+            m_eventNameText = transform.Find("Menu/StampCollection/EventInfo/EventName").gameObject.GetComponent<Text>();
+            m_stampCountText = transform.Find("Menu/StampCollection/EventInfo/StampCount").gameObject.GetComponent<Text>();
+            m_header = transform.Find("Header").gameObject.GetComponent<Image>();
+        }
+
         // RVA: 0x1616154 Offset: 0x1616154 VA: 0x1616154 Slot: 4
         public override void Start()
         {
@@ -136,25 +149,27 @@ namespace XeApp.Game.AR
                     int cnt = 0;
                     for(int j = 0; j < l2.Count; j++)
                     {
-                        if(l2[i].stampId != 0)
+                        if(l2[j].stampId != 0)
                         {
                             total++;
-                            if(ARSaveData.Instance.IsHaveStamp(l2[i].markerId))
+                            if(ARSaveData.Instance.IsHaveStamp(l2[j].markerId))
                                 cnt++;
                         }
                     }
                     if(total != 0)
                     {
+                        GameObject g;
                         if(i < m_eventObjList.Count)
                         {
-                            m_eventObjList[i].SetActive(true);
+                            g = m_eventObjList[i];
+                            g.SetActive(true);
                         }
                         else
                         {
-                            GameObject g = Instantiate(m_eventInfoPrefab, rt, false);
+                            g = Instantiate(m_eventInfoPrefab, rt, false);
                             m_eventObjList.Add(g);
                         }
-                        Image[] imgs = m_eventObjList[i].GetComponentsInChildren<Image>();
+                        Image[] imgs = g.GetComponentsInChildren<Image>();
                         Image im = Array.Find(imgs, (Image x) =>
                         {
                             //0x161A988
@@ -162,7 +177,7 @@ namespace XeApp.Game.AR
                         });
                         if(im != null)
                             im.enabled = true;
-                        List<Text> lText = new List<Text>(m_eventObjList[i].GetComponentsInChildren<Text>(true));
+                        List<Text> lText = new List<Text>(g.GetComponentsInChildren<Text>(true));
                         Text txt = lText.Find((Text _) =>
                         {
                             //0x161AA08
@@ -175,9 +190,9 @@ namespace XeApp.Game.AR
                             return _.name.Contains("StampCount");
                         });
                         txt.text = string.Format(MessageManager.Instance.GetMessage("menu", "ar_common_count_text"), cnt, total);
-                        RectTransform rt2 = m_eventObjList[i].GetComponent<RectTransform>();
+                        RectTransform rt2 = g.GetComponent<RectTransform>();
                         rt2.anchoredPosition = new Vector2(size.x, -y);
-                        Button btn = m_eventObjList[i].GetComponent<Button>();
+                        Button btn = g.GetComponent<Button>();
                         btn.onClick.RemoveAllListeners();
                         btn.onClick.AddListener(() =>
                         {
@@ -223,15 +238,18 @@ namespace XeApp.Game.AR
                 {
                     if(ARMenuManager.Instance.helpMenu.IsEnableMarkerHelp(eventData.eventId))
                     {
+                        GameObject g;
                         if(i < m_eventObjList.Count)
                         {
-                            m_eventObjList[i].SetActive(true);
+                            g = m_eventObjList[i];
+                            g.SetActive(true);
                         }
                         else
                         {
-                            m_eventObjList.Add(Instantiate(m_eventInfoPrefab, content, false));
+                            g = Instantiate(m_eventInfoPrefab, content, false);
+                            m_eventObjList.Add(g);
                         }
-                        Image[] ims = m_eventObjList[i].GetComponentsInChildren<Image>(true);
+                        Image[] ims = g.GetComponentsInChildren<Image>(true);
                         Image im = Array.Find(ims, (Image x) =>
                         {
                             //0x161AB38
@@ -241,7 +259,7 @@ namespace XeApp.Game.AR
                         {
                             im.enabled = false;
                         }
-                        List<Text> ltxts = new List<Text>(m_eventObjList[i].GetComponentsInChildren<Text>(true));
+                        List<Text> ltxts = new List<Text>(g.GetComponentsInChildren<Text>(true));
                         ApplyBestFitText(ltxts.Find((Text _) =>
                         {
                             //0x161ABB8
@@ -252,9 +270,9 @@ namespace XeApp.Game.AR
                             //0x161AC50
                             return _.name.Contains("StampCount");
                         }).text = "";
-                        RectTransform rt = m_eventObjList[i].GetComponent<RectTransform>();
+                        RectTransform rt = g.GetComponent<RectTransform>();
                         rt.anchoredPosition = new Vector2(rt.anchoredPosition.x, -y);
-                        Button btn = m_eventObjList[i].GetComponent<Button>();
+                        Button btn = g.GetComponent<Button>();
                         btn.onClick.RemoveAllListeners();
                         btn.onClick.AddListener(() =>
                         {

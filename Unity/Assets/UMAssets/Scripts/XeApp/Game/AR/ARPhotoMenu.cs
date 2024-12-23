@@ -29,6 +29,14 @@ namespace XeApp.Game.AR
         public UnityAction OnClickCloseButtonCallback { set { m_onClickCloseButton = value; } } //0x11E1F5C
         public bool IsOpen { get { return m_isOpen; } } //0x11E6F1C
 
+        public void Reconstruct()
+        {
+            m_photoImage = transform.Find("ShowArea/PhotoImage").gameObject.GetComponent<RawImage>();
+            m_shareIconImage = transform.Find("ShowArea/SNSButton/Icon").gameObject.GetComponent<Image>();
+            m_snsButton = transform.Find("ShowArea/SNSButton").gameObject.GetComponent<Button>();
+            m_shareImageAndroid = m_shareIconImage.sprite;
+        }
+
         // RVA: 0x11E6F24 Offset: 0x11E6F24 VA: 0x11E6F24
         public void Start()
         {

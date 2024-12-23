@@ -154,12 +154,25 @@ namespace smartar
         }
 
         // // RVA: 0x20B8B68 Offset: 0x20B8B68 VA: 0x20B8B68
+#if UNITY_EDITOR
+        private static void sarSmartar_SarCameraDeviceProxyListeners_sarCreate(ref ProxyListenerDelegates delegates, out ProxyListeners listeners)
+        {
+            listeners = new ProxyListeners();
+        }
+#else
         [DllImport("smartar")]
         private static extern void sarSmartar_SarCameraDeviceProxyListeners_sarCreate(ref ProxyListenerDelegates delegates, out ProxyListeners listeners);
+#endif
 
         // // RVA: 0x20B8E78 Offset: 0x20B8E78 VA: 0x20B8E78
+#if UNITY_EDITOR
+        private static void sarSmartar_SarCameraDeviceProxyListeners_sarDelete(ref ProxyListeners listeners)
+        {
+        }
+#else
         [DllImport("smartar")]
         private static extern void sarSmartar_SarCameraDeviceProxyListeners_sarDelete(ref ProxyListeners listeners);
+#endif
 
         // // RVA: 0x20B8F6C Offset: 0x20B8F6C VA: 0x20B8F6C
         // public int SetNativeVideoOutput(IntPtr nativeVideoOutput) { }
@@ -371,8 +384,14 @@ namespace smartar
         // private static extern IntPtr sarSmartar_SarCameraDevice_SarCameraDevice2(IntPtr smart, int cameraId, IntPtr nativeDevice, bool forceOldAndroidAPI = False) { }
 
         // // RVA: 0x20B8D90 Offset: 0x20B8D90 VA: 0x20B8D90
+#if UNITY_EDITOR
+        private void sarSmartar_SarCameraDevice_sarDelete(IntPtr self)
+        {
+        }
+#else
         [DllImport("smartar")]
         private static extern void sarSmartar_SarCameraDevice_sarDelete(IntPtr self);
+#endif
 
         // // RVA: 0x20B8FF8 Offset: 0x20B8FF8 VA: 0x20B8FF8
         // private static extern int sarSmartar_SarCameraDevice_sarSetNativeVideoOutput(IntPtr self, IntPtr nativeVideoOutput) { }
@@ -381,8 +400,15 @@ namespace smartar
         // private static extern int sarSmartar_SarCameraDevice_sarSetVideoImageListener(IntPtr self, IntPtr listener, IntPtr smart) { }
 
         // // RVA: 0x20B9348 Offset: 0x20B9348 VA: 0x20B9348
+#if UNITY_EDITOR
+        private int sarSmartar_SarCameraDevice_sarSetVideoImageSize(IntPtr self, int width, int height)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarCameraDevice_sarSetVideoImageSize(IntPtr self, int width, int height);
+#endif
 
         // // RVA: 0x20B94D8 Offset: 0x20B94D8 VA: 0x20B94D8
         // private static extern int sarSmartar_SarCameraDevice_sarSetVideoImageFormat(IntPtr self, ImageFormat format) { }
@@ -391,8 +417,15 @@ namespace smartar
         // private static extern int sarSmartar_SarCameraDevice_sarSetVideoImageFpsRange(IntPtr self, float min, float max) { }
 
         // // RVA: 0x20B9808 Offset: 0x20B9808 VA: 0x20B9808
+#if UNITY_EDITOR
+        private int sarSmartar_SarCameraDevice_sarSetStillImageListener(IntPtr self, IntPtr listener)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarCameraDevice_sarSetStillImageListener(IntPtr self, IntPtr listener);
+#endif
 
         // // RVA: 0x20B9998 Offset: 0x20B9998 VA: 0x20B9998
         // private static extern int sarSmartar_SarCameraDevice_sarSetStillImageSize(IntPtr self, int width, int height) { }
@@ -404,8 +437,15 @@ namespace smartar
         // private static extern int sarSmartar_SarCameraDevice_sarSetShutterListener(IntPtr self, IntPtr listener) { }
 
         // // RVA: 0x20B9E48 Offset: 0x20B9E48 VA: 0x20B9E48
+#if UNITY_EDITOR
+        private int sarSmartar_SarCameraDevice_sarSetFocusMode(IntPtr self, FocusMode mode)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarCameraDevice_sarSetFocusMode(IntPtr self, FocusMode mode);
+#endif
 
         // // RVA: 0x20B9FE0 Offset: 0x20B9FE0 VA: 0x20B9FE0
         // private static extern int sarSmartar_SarCameraDevice_sarSetFocusAreas(IntPtr self, CameraArea[] areas, int numAreas) { }
@@ -426,27 +466,63 @@ namespace smartar
         // private static extern int sarSmartar_SarCameraDevice_sarSetSceneMode(IntPtr self, SceneMode mode) { }
 
         // // RVA: 0x20BA938 Offset: 0x20BA938 VA: 0x20BA938
+#if UNITY_EDITOR
+        private int sarSmartar_SarCameraDevice_sarSetAutoFocusListener(IntPtr self, IntPtr listener)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarCameraDevice_sarSetAutoFocusListener(IntPtr self, IntPtr listener);
+#endif
 
         // // RVA: 0x20BAAD0 Offset: 0x20BAAD0 VA: 0x20BAAD0
+#if UNITY_EDITOR
+        private int sarSmartar_SarCameraDevice_sarSetAutoExposureListener(IntPtr self, IntPtr listener)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarCameraDevice_sarSetAutoExposureListener(IntPtr self, IntPtr listener);
+#endif
 
         // // RVA: 0x20BAC70 Offset: 0x20BAC70 VA: 0x20BAC70
+#if UNITY_EDITOR
+        private int sarSmartar_SarCameraDevice_sarSetAutoWhiteBalanceListener(IntPtr self, IntPtr listener)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarCameraDevice_sarSetAutoWhiteBalanceListener(IntPtr self, IntPtr listener);
+#endif
 
         // // RVA: 0x20BAE10 Offset: 0x20BAE10 VA: 0x20BAE10
+#if UNITY_EDITOR
+        private int sarSmartar_SarCameraDevice_sarSetCameraErrorListener(IntPtr self, IntPtr listener)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarCameraDevice_sarSetCameraErrorListener(IntPtr self, IntPtr listener);
+#endif
 
         // // RVA: 0x20BAFA0 Offset: 0x20BAFA0 VA: 0x20BAFA0
         // private static extern int sarSmartar_SarCameraDevice_sarSetOwningNativeDevice(IntPtr self, bool isOwning) { }
 
         // // RVA: 0x20BB150 Offset: 0x20BB150 VA: 0x20BB150
+#if UNITY_EDITOR
+        private static int sarSmartar_SarCameraDevice_sarGetDefaultCameraId(IntPtr smart, Facing facing, out int cameraId, bool forceOldAndroidAPI = false)
+        {
+            cameraId = 0;
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarCameraDevice_sarGetDefaultCameraId(IntPtr smart, Facing facing, out int cameraId, bool forceOldAndroidAPI = false);
+#endif
 
         // // RVA: 0x20BB300 Offset: 0x20BB300 VA: 0x20BB300
         // private static extern int sarSmartar_SarCameraDevice_sarGetSupportedVideoImageSize(IntPtr self, Size[] sizes, int maxSizes) { }
@@ -464,8 +540,15 @@ namespace smartar
         // private static extern int sarSmartar_SarCameraDevice_sarGetSupportedStillImageFormat(IntPtr self, ImageFormat[] formats, int maxFormats) { }
 
         // // RVA: 0x20BBB98 Offset: 0x20BBB98 VA: 0x20BBB98
+#if UNITY_EDITOR
+        private int sarSmartar_SarCameraDevice_sarGetSupportedFocusMode(IntPtr self, FocusMode[] modes, int maxModes)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarCameraDevice_sarGetSupportedFocusMode(IntPtr self, FocusMode[] modes, int maxModes);
+#endif
 
         // // RVA: 0x20BBD28 Offset: 0x20BBD28 VA: 0x20BBD28
         // private static extern int sarSmartar_SarCameraDevice_sarGetMaxNumFocusAreas(IntPtr self) { }
@@ -486,30 +569,67 @@ namespace smartar
         // private static extern int sarSmartar_SarCameraDevice_sarGetSupportedSceneMode(IntPtr self, SceneMode[] modes, int maxModes) { }
 
         // // RVA: 0x20BC708 Offset: 0x20BC708 VA: 0x20BC708
+#if UNITY_EDITOR
+        private int sarSmartar_SarCameraDevice_sarGetDeviceInfo(IntPtr self, IntPtr info)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarCameraDevice_sarGetDeviceInfo(IntPtr self, IntPtr info);
+#endif
 
         // // RVA: 0x20BC8A8 Offset: 0x20BC8A8 VA: 0x20BC8A8
         // private static extern int sarSmartar_SarCameraDevice_sarGetFovY(IntPtr self, out float fovy, float heightRatio, out bool calibrated) { }
 
         // // RVA: 0x20BCAF0 Offset: 0x20BCAF0 VA: 0x20BCAF0
+#if UNITY_EDITOR
+        private int sarSmartar_SarCameraDevice_sarGetFacing(IntPtr self, out Facing facing)
+        {
+            facing = Facing.FACING_BACK;
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarCameraDevice_sarGetFacing(IntPtr self, out Facing facing);
+#endif
 
         // // RVA: 0x20BCC70 Offset: 0x20BCC70 VA: 0x20BCC70
+#if UNITY_EDITOR
+        private int sarSmartar_SarCameraDevice_sarGetRotation(IntPtr self, out Rotation rotation)
+        {
+            rotation = Rotation.ROTATION_0;
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarCameraDevice_sarGetRotation(IntPtr self, out Rotation rotation);
+#endif
 
         // // RVA: 0x20BCDF0 Offset: 0x20BCDF0 VA: 0x20BCDF0
         // private static extern int sarSmartar_SarCameraDevice_sarGetNativeDevice(IntPtr self, out IntPtr nativeDevice) { }
 
         // // RVA: 0x20BCF70 Offset: 0x20BCF70 VA: 0x20BCF70
+#if UNITY_EDITOR
+        private int sarSmartar_SarCameraDevice_sarStart(IntPtr self)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarCameraDevice_sarStart(IntPtr self);
+#endif
 
         // // RVA: 0x20BD0D8 Offset: 0x20BD0D8 VA: 0x20BD0D8
+#if UNITY_EDITOR
+        private int sarSmartar_SarCameraDevice_sarStop(IntPtr self)
+        {
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarCameraDevice_sarStop(IntPtr self);
+#endif
 
         // // RVA: 0x20BD240 Offset: 0x20BD240 VA: 0x20BD240
         // private static extern int sarSmartar_SarCameraDevice_sarCaptureStillImage(IntPtr self) { }
@@ -524,15 +644,41 @@ namespace smartar
         // private static extern int sarSmartar_SarCameraDevice_sarRunAutoWhiteBalance(IntPtr self) { }
 
         // // RVA: 0x20BD820 Offset: 0x20BD820 VA: 0x20BD820
+#if UNITY_EDITOR
+        private int sarSmartar_SarCameraDevice_sarGetImageSensorRotation(IntPtr self, out Rotation rotation)
+        {
+            rotation = Rotation.ROTATION_0;
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarCameraDevice_sarGetImageSensorRotation(IntPtr self, out Rotation rotation);
+#endif
 
         // // RVA: 0x20BD9B8 Offset: 0x20BD9B8 VA: 0x20BD9B8
+#if UNITY_EDITOR
+        private int sarSmartar_SarCameraDevice_sarGetAndroidCameraAPIFeature(IntPtr self, out int apiLevel, out int hwFeature)
+        {
+            apiLevel = 0;
+            hwFeature = 0;
+            return 0;
+        }
+#else
         [DllImport("smartar")]
         private static extern int sarSmartar_SarCameraDevice_sarGetAndroidCameraAPIFeature(IntPtr self, out int apiLevel, out int hwFeature);
+#endif
 
         // // RVA: 0x20BDB78 Offset: 0x20BDB78 VA: 0x20BDB78
+#if UNITY_EDITOR
+        private bool sarSmartar_SarCameraDevice_sarIsAndroidCamera2Available(IntPtr smart, bool isFront, out int apiLevel, out int hwFeature)
+        {
+            apiLevel = 0;
+            hwFeature = 0;
+            return false;
+        }
+#else
         [DllImport("smartar")]
         private static extern bool sarSmartar_SarCameraDevice_sarIsAndroidCamera2Available(IntPtr smart, bool isFront, out int apiLevel, out int hwFeature);
+#endif
     }
 }

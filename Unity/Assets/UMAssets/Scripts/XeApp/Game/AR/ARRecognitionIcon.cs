@@ -19,6 +19,13 @@ namespace XeApp.Game.AR
         private string m_currentId = ""; // 0x24
         private ARDivaManager m_divaMan; // 0x28
 
+        public void Reconstruct()
+        {
+            m_iconImage = transform.Find("Image").gameObject.GetComponent<RawImage>();
+            m_recogTextImage = transform.Find("RecogText").gameObject.GetComponent<Image>();
+            m_pauseTextImage = transform.Find("PauseText").gameObject.GetComponent<Image>();
+        }
+
         // RVA: 0x11E7BD8 Offset: 0x11E7BD8 VA: 0x11E7BD8
         public void Start()
         {

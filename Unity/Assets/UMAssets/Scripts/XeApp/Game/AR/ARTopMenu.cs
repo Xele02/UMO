@@ -26,6 +26,14 @@ namespace XeApp.Game.AR
 
         public UnityAction OnClickCloseButtonCallback { set { m_onClickCloseButton = value; } } //0x13AEB0C
 
+        public void Reconstruct()
+        {
+            m_collectionButton = transform.Find("MenuItem/Collection").gameObject.GetComponent<Button>();
+            m_helpButton = transform.Find("MenuItem/Help").gameObject.GetComponent<Button>();
+            m_eventInfoButton = transform.Find("MenuItem/Event").gameObject.GetComponent<Button>();
+            m_endButton = transform.Find("MenuItem/End").gameObject.GetComponent<Button>();
+        }
+
         // RVA: 0x13AEB14 Offset: 0x13AEB14 VA: 0x13AEB14
         public void Start()
         {

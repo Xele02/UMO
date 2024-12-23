@@ -1,8 +1,10 @@
 using System;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 namespace smartar
 {
+    [StructLayout(LayoutKind.Sequential)]
     public struct RecognitionResult
     {
         public IntPtr target_; // 0x0

@@ -13,6 +13,11 @@ namespace XeApp.Game.AR
         private bool m_isShow; // 0x14
         private float m_elapsedTime; // 0x18
 
+        public void Reconstruct()
+        {
+            m_textImage = GetComponent<Image>();
+        }
+
         // RVA: 0x11E84E8 Offset: 0x11E84E8 VA: 0x11E84E8
         public void Start()
         {

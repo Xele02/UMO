@@ -1,8 +1,10 @@
 
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 namespace smartar
 {
+    [StructLayout(LayoutKind.Sequential)]
     public struct Triangle2
     {
         public Vector2 p0_; // 0x0
