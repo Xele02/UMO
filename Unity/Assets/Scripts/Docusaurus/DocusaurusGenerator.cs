@@ -278,7 +278,7 @@ public class DocusaurusGenerator
             data["readerClass"] = type.GetCustomAttribute<UMOClass>()?.ReaderClass;
             data["members"] = new EDOHBJAPLPF_JsonData();
             data["members"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
-            var members = type.GetMembers().Where(
+            var members = type.GetMembers(BindingFlags.Public|BindingFlags.Instance).Concat(type.GetMembers(BindingFlags.NonPublic|BindingFlags.Instance)).Where(
                     prop => Attribute.IsDefined(prop, typeof(UMOMember)));
             foreach(var m in members)
             {
@@ -371,19 +371,19 @@ public class DocusaurusGenerator
         }
         else if(type.IsClass && !typeof(string).IsAssignableFrom(type))
         {
-            var members = type.GetMembers().Where(
+            var members = type.GetMembers(BindingFlags.Public|BindingFlags.Instance).Concat(type.GetMembers(BindingFlags.NonPublic|BindingFlags.Instance)).Where(
                     prop => Attribute.IsDefined(prop, typeof(UMOMember)));
             foreach(var m in members)
             {
                 System.Object memberObj = null;
                 if(m.MemberType == MemberTypes.Field)
                 {
-                    FieldInfo field = type.GetField(m.Name);
+                    FieldInfo field = type.GetField(m.Name, BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance);
                     memberObj = field.GetValue(obj);
                 }
                 else if(m.MemberType == MemberTypes.Property)
                 {
-                    PropertyInfo prop = type.GetProperty(m.Name);
+                    PropertyInfo prop = type.GetProperty(m.Name, BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance);
                     memberObj = prop.GetValue(obj);
                 }
 
