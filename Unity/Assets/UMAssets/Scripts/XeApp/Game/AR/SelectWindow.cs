@@ -21,6 +21,12 @@ namespace XeApp.Game.AR
 
         public static SelWinRslt Result { get { return m_result; } } // 0x13B555C
 
+        public void Reconstruct()
+        {
+            m_text = GetComponentsInChildren<Text>(true);
+            m_button = transform.GetChild(0).GetComponentsInChildren<Button>(true);
+        }
+
         // RVA: 0x13B4474 Offset: 0x13B4474 VA: 0x13B4474
         private void Awake()
         {

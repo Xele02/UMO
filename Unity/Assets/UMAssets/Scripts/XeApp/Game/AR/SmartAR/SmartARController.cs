@@ -54,6 +54,7 @@ public class SmartARController : SmartARControllerBase
                 Image im = new Image();
                 im.pixels_ = Marshal.AllocHGlobal(size);
                 imageHolder.getImage(ref im, size, m_Smart);
+#if UNITY_ANDROID && !UNITY_EDITOR
                 AndroidJavaObject o1 = new AndroidJavaObject("android.os.StatFs", new object[] { Application.temporaryCachePath });
                 long l1 = o1.Call<long>("getAvailableBlocksLong", Array.Empty<object>());
                 long l2 = o1.Call<long>("getBlockSizeLong");
@@ -70,6 +71,12 @@ public class SmartARController : SmartARControllerBase
                     }
                     o2.Dispose();
                 }
+#else
+                m_CaptureImageName = string.Format("{0}/capture_image_{1}.bmp", m_CaptureImagePath, DateTime.Now.ToString("d-MM-yyyy-HH-mm-ss-f"));
+                byte[] bitmapData = new byte[size];
+                Marshal.Copy(im.pixels_, bitmapData, 0, size);
+                File.WriteAllBytes(m_CaptureImageName, bitmapData);
+#endif
                 Marshal.FreeHGlobal(im.pixels_);
             }
         }
@@ -141,6 +148,28 @@ public class SmartARController : SmartARControllerBase
 	protected SmartARController.AutoWhiteBalanceListener mAutoWhiteBalanceListener; // 0xAC
 	protected SmartARController.CameraErrorListener mCameraErrorListener; // 0xB0
 
+    public enum ARList
+    {
+        None,
+        AR010002, AR010003, AR010004, AR010005, AR010006, AR010007, AR010008, AR010009, AR010010, AR010011, // OK
+        AR010017, AR010018, // OK
+        AR020022, // OK
+        AR010023, // OK
+        AR030024, AR030025, AR030026, AR030027, // OK
+        AR050028,   
+        AR060029,
+        AR070030, // OK
+        AR080031,
+        AR090032, AR090033, AR090034, AR090035, AR090036, AR090037,
+        AR100038, AR100039,
+        AR110040,
+        AR120041, AR120042, AR120043, AR120044, AR120045, AR120046, AR120047,
+        AR130048, AR130049, AR130050, AR130051, AR130052, AR130053, AR130054, AR130055, AR130056, AR130057, // OK
+        AR140058,
+        AR150059
+    }
+    public ARList ARName = ARList.None;
+
 	public SmartARController.CameraDeviceSettings cameraDeviceSettings_ { get { return cameraDeviceSettings; } set { ConfigCameraDevice(value, false); } } //0x12F0370 0x12F0378
 	// public SmartARController.MiscSettings miscSettings_ { get; set; } 0x12F0688 0x12F0690
 	// public override Triangle2[] triangulateMasks_ { get; set; } 0x12F06A0 0x12F0800
@@ -210,6 +239,9 @@ public class SmartARController : SmartARControllerBase
 	protected override void DoCreate()
     {
         base.DoCreate();
+        //UMO
+        miscSettings.showLandmarks = true;
+        //UMO
         cameraImageDrawer_ = new CameraImageDrawer(smart_);
         screenDevice_ = new ScreenDevice(smart_);
         CreateParam p = new CreateParam();
@@ -254,12 +286,14 @@ public class SmartARController : SmartARControllerBase
             isFront_ = false;
             if(camId != -1 && cameraDeviceSettings.cameraId == camId)
                 isFront_ = true;
+#if UNITY_ANDROID && !UNITY_EDITOR
             int apiLevel = 0;
             int hwFeature = -1;
             androidCameraFeature.androidCanUseNewAPI_ = cameraDevice_.IsAndroidCamera2Available(smart_, isFront_, out apiLevel, out hwFeature);
             cameraDevice_.GetAndroidCameraAPIFeature(out apiLevel, out hwFeature);
             androidCameraFeature.androidCameraApiLevel_ = apiLevel;
             androidCameraFeature.androidCameraHwFeature_ = hwFeature;
+#endif
             if(cameraDeviceSettings.videoImageSize.x != 0 && cameraDeviceSettings.videoImageSize.y != 0)
             {
                 cameraDevice_.SetVideoImageSize((int)cameraDeviceSettings.videoImageSize.x, (int)cameraDeviceSettings.videoImageSize.y);
@@ -269,10 +303,12 @@ public class SmartARController : SmartARControllerBase
             isFlipY_ = false;
             if(isFront_)
             {
+#if UNITY_ANDROID && !UNITY_EDITOR
                 if(cameraRotation_ == Rotation.ROTATION_90 || cameraRotation_ == Rotation.ROTATION_0)
                     isFlipX_ = true;
                 else
                     isFlipY_ = true;
+#endif
                 Rotation rot;
                 cameraDevice_.GetImageSensorRotation(out rot);
                 if(rot == Rotation.ROTATION_90 && isFront_)
@@ -416,7 +452,9 @@ public class SmartARController : SmartARControllerBase
         GL.IssuePluginEvent(GetRenderEventFunc(), 0);
 #endif
     }
-
+#if UNITY_EDITOR
+    UnityEngine.Vector3 mousePrevPos = new UnityEngine.Vector3(0, 0, 0);
+#endif
 	// RVA: 0x12F36D4 Offset: 0x12F36D4 VA: 0x12F36D4 Slot: 16
 	protected virtual void Update()
     {
@@ -426,6 +464,29 @@ public class SmartARController : SmartARControllerBase
         if(self_ == IntPtr.Zero)
             return;
         GetComponent<Camera>().fieldOfView = sarSmartar_SarSmartARController_sarGetFovy(self_);
+#if UNITY_EDITOR
+        if(UnityEngine.Input.mouseScrollDelta.x != 0)
+        {
+            camDist += UnityEngine.Input.mouseScrollDelta.x;
+        }
+        if(Input.GetMouseButtonDown(0))
+        {
+            mousePrevPos = Input.mousePosition;
+        }
+        else if(Input.GetMouseButton(0))
+        {
+            UnityEngine.Vector2 diff = mousePrevPos - Input.mousePosition;
+            camRot.x += diff.x * 0.1f;
+            camRot.x = camRot.x % 360;
+            camRot.y += diff.y * 0.1f;
+            camRot.y = Mathf.Clamp(camRot.y, -90, 90);
+            mousePrevPos = Input.mousePosition;
+        }
+        if(Input.GetMouseButtonUp(0))
+        {
+            mousePrevPos = UnityEngine.Vector3.zero;
+        }
+#endif
     }
 
 	// RVA: 0x12F3894 Offset: 0x12F3894 VA: 0x12F3894
@@ -460,7 +521,7 @@ public class SmartARController : SmartARControllerBase
                     sarSmartar_SarSmartARController_sarSetDrawData(Screen.width, Screen.height, miscSettings.showCameraPreview);
                     sarSmartar_SarSmartARController_sarSetLandmarkDrawerDrawLandmarkData(self_, landmarkDrawer_.self_, ref m, r.landmarks_, r.numLandmarks_);
                     sarSmartar_SarSmartARController_sarSetLandmarkDrawerDrawNodePointData(self_, landmarkDrawer_.self_, ref m, r.nodePoints_, r.numNodePoints_);
-                    sarSmartar_SarSmartARController_sarSetLandmarkDrawerDrawInitPointData(self_, landmarkDrawer_.self_, ref m, r.initPoints_, r.numInitPoints_);
+                    sarSmartar_SarSmartARController_sarSetLandmarkDrawerDrawInitPointData(self_, landmarkDrawer_.self_, ref m2, r.initPoints_, r.numInitPoints_);
                 }
                 if(SystemInfo.graphicsDeviceType != UnityEngine.Rendering.GraphicsDeviceType.Metal)
                 {
@@ -483,11 +544,53 @@ public class SmartARController : SmartARControllerBase
         }
     }
 
+#if UNITY_EDITOR
+    public UnityEngine.Vector3 camRot = new UnityEngine.Vector3(0, 45, 0);
+    public float camDist = 0.4f;
+    public UnityEngine.Vector3 camTargetOffset = new UnityEngine.Vector3(0, 0.1f, 0);
+#endif
+
 	// // RVA: 0x12F48F0 Offset: 0x12F48F0 VA: 0x12F48F0 Slot: 15
 	protected override int CallNativeGetResult(IntPtr self, IntPtr target, ref RecognitionResult result)
     {
         if(self_ != IntPtr.Zero)
         {
+#if UNITY_EDITOR
+            if(target.ToInt64() == ARName.ToString().GetHashCode())
+            {
+                result.isRecognized_ = true;
+                result.position_ = new smartar.Vector3();
+                
+                /*result.position_.x_ = -0.001869183f;
+                result.position_.y_ = -0.2094777f;
+                result.position_.z_ = 0.294562f;
+                result.rotation_.x_ = 0.6534966f;
+                result.rotation_.y_ = -0.6714854f;
+                result.rotation_.z_ = -0.2386414f;
+                result.rotation_.w_ = 0.2551467f;*/
+                //UnityEngine.Quaternion camRot_ = UnityEngine.Quaternion.Euler(180, camRot.x, 90 - camRot.y);
+                UnityEngine.Vector3 camPos = UnityEngine.Quaternion.Euler(0, camRot.x, camRot.y) * new UnityEngine.Vector3(1, 0, 0) * camDist;
+                //UnityEngine.Vector3 camPos2 = camRot_ * new UnityEngine.Vector3(1, 0, 0) * camDist;
+                UnityEngine.Vector3 v1 = UnityEngine.Quaternion.LookRotation(camTargetOffset - camPos, UnityEngine.Vector3.up).eulerAngles;
+                UnityEngine.Quaternion q = UnityEngine.Quaternion.Euler(180, v1.y - 270, 90 - v1.x);
+                //UnityEngine.Debug.LogError(camPos+" "+camTargetOffset+" "+camRot_+" "+camPos2+" "+camRot_.eulerAngles+" "+v1+" "+q+" "+q.eulerAngles);
+                result.position_.x_ = camPos.x;
+                result.position_.y_ = camPos.z;
+                result.position_.z_ = camPos.y;
+                result.rotation_.x_ = q.x;
+                result.rotation_.y_ = q.z;
+                result.rotation_.z_ = q.y;
+                result.rotation_.w_ = q.w;
+
+                result.targetTrackingState_ = TargetTrackingState.TARGET_TRACKING_STATE_TRACKING;
+                result.sceneMappingState_ = SceneMappingState.SCENE_MAPPING_STATE_IDLE;
+            }
+            else
+            {
+                result.isRecognized_ = false;
+            }
+            return 0;
+#endif
             return sarSmartar_SarSmartARController_sarGetResult(self_, target, ref result);
         }
         return Error.ERROR_INVALID_POINTER;
@@ -532,10 +635,10 @@ public class SmartARController : SmartARControllerBase
         {
             throw new InvalidOperationException("unexpected value: " + r);
         }
-        UnityEngine.Quaternion q = new UnityEngine.Quaternion(rotRotation.x_ , rotRotation.y_, rotRotation.z_, rotRotation.w_) * new UnityEngine.Quaternion(0, Mathf.Sin(f1), 0, Mathf.Cos(f1));
+        UnityEngine.Quaternion q = new UnityEngine.Quaternion(rotRotation.x_ , rotRotation.z_, rotRotation.y_, rotRotation.w_) * new UnityEngine.Quaternion(0, Mathf.Sin(f1), 0, Mathf.Cos(f1));
         rotRotation.x_ = q.x;
-        rotRotation.y_ = q.y;
-        rotRotation.z_ = q.z;
+        rotRotation.y_ = q.z;
+        rotRotation.z_ = q.y;
         rotRotation.w_ = q.w;
     }
 
@@ -595,7 +698,7 @@ public class SmartARController : SmartARControllerBase
 #if UNITY_EDITOR
     private static IntPtr sarSmartar_SarSmartARController_sarDoCreate(ref SmartARControllerBase.CreateParam param, bool workerThreadEnabled, bool isPreviewOnly)
     {
-        return IntPtr.Zero;
+        return new IntPtr(1);
     }
 #else
     [DllImport("smartar")]
@@ -737,9 +840,10 @@ public class SmartARController : SmartARControllerBase
 
 	// // RVA: 0x12F0888 Offset: 0x12F0888 VA: 0x12F0888
 #if UNITY_EDITOR
+    static ulong camFrameCount = 0;
     private static ulong sarSmartar_SarSmartARController_sarGetCameraFrameCount(IntPtr self)
     {
-        return 1;
+        return camFrameCount++;
     }
 #else
     [DllImport("smartar")]

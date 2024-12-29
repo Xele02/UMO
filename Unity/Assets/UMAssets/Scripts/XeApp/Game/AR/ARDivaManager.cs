@@ -148,8 +148,8 @@ namespace XeApp.Game.AR
             }
             if(markerData.stampId > 0)
             {
-                assetList.Add(string.Format("ct/ar/st/01/{0}{1:D2}.xab", markerData.eventId, markerData.eventId));
-                assetList.Add(string.Format("ct/ar/st/02/{0}{1:D2}.xab", markerData.eventId, markerData.eventId));
+                assetList.Add(string.Format("ct/ar/st/01/{0}{1:D2}.xab", markerData.eventId, markerData.stampId));
+                assetList.Add(string.Format("ct/ar/st/02/{0}{1:D2}.xab", markerData.eventId, markerData.stampId));
             }
         }
 
@@ -319,7 +319,7 @@ namespace XeApp.Game.AR
             if(motionId == ARDivaMotionId.Dance)
             {
                 m_divaResource.LoadFacialResource(divaId, wavId, 1);
-                m_divaResource.LoadMusicAnimationResource(wavId, primeId, 1, 1, 0);
+                m_divaResource.LoadMusicAnimationResource(wavId, primeId, 1, 1, divaId);
                 while(!m_divaResource.isMusicAllLoaded)
                     yield return null;
                 m_divaResource.LoadARMusicAnimationResource(wavId, primeId);

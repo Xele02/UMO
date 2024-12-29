@@ -110,6 +110,10 @@ namespace XeApp.Game.AR
 					d.cueSheetId = array[i].BLOIKEAGFED;
 					d.soundStart = array[i].IOCAJMALMLJ;
 					d.soundEnd = array[i].BEBCANGAMAK;
+					// UMO
+					d.soundStart = 0;
+					d.soundEnd = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime() + 360000;
+					// UMO
 					l.Add(d);
 				}
 			}
@@ -138,6 +142,10 @@ namespace XeApp.Game.AR
 					float.TryParse(array[i].LNMKDNMJLOE, out nd.angleLimit);
 					long.TryParse(array[i].MPCKINJNGJH, out nd.markerStart);
 					long.TryParse(array[i].JIDKMIHGOHI, out nd.markerEnd);
+					// UMO
+					nd.markerStart = 0;
+					nd.markerEnd = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime() + 360000;
+					// UMO
 					nd.emblemId = array[i].APGKOJKNNGP;
 					nd.trackingType = array[i].DCNFOHHNAEF;
 					nd.motionId = (ARDivaMotionId)array[i].BEHGCAMHJIE;

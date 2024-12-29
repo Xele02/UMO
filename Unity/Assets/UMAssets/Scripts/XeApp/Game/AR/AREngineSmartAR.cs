@@ -355,6 +355,7 @@ namespace XeApp.Game.AR
                         {
                             smartar.Vector2 v;
                             m_arCont.targets_[i].GetPhysicalSize(out v);
+                            ARDebugScreen.Instance.AddText(ARDebugScreen.TextType.PhysicalScale, "Physical size : "+v.x_+" "+v.y_);
                             Camera c = m_arCameraObj.GetComponent<Camera>();
                             if(c == null)
                                 f = 1;
@@ -370,6 +371,7 @@ namespace XeApp.Game.AR
                 f = f / data.imageWidth * 0.09999999f;
             }
             f = data.divaHeight * ((f / (data.imageWidth * 0.09999999f)) / VuforiaManager.GetCharaModelHeight(data.divaId));
+            ARDebugScreen.Instance.AddText(ARDebugScreen.TextType.Scale, "Set Image Scale : "+f);
             ARDivaCamera.SetARImageScale(f);
         }
 

@@ -391,6 +391,7 @@ class JpStringLiterals
 	public static string StringLiteral_14032 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_14032", "アニメーションテーブル数以上のキーフレーム番号が指定されました。"); } } // 0x03bb65f8
 	public static string StringLiteral_14355 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_14355", "今日は表示しない"); } } //0x03bb6b04
 	public static string StringLiteral_14401 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_14401", "+ボタン"); } } // 0x03bb6bbc
+	public static string StringLiteral_14411 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_14411", "画像をシェアするアプリを選択してください。"); } } // 0x03BB6BE4
 	public static string StringLiteral_14529 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_14529", "ーーー"); } } // 0x03bb6dbc
 	public static string StringLiteral_14769 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_14769", "{0}さん"); } } // 0x03bb717c
 	public static string StringLiteral_14832 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_14832", "ふた"); } } // 0x03bb7278

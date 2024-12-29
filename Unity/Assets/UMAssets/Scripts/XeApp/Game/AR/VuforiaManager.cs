@@ -163,7 +163,7 @@ namespace XeApp.Game.AR
                     yield return null;
                 if(requestResult == 2)
                 {
-                    ARMenuManager.Instance.SetSelectWindow(Messages.GetSel(0, false, AndroidUtils.CheckSelfPermission(AndroidPermission.WRITE_EXTERNAL_STORAGE)), true);
+                    ARMenuManager.Instance.SetSelectWindow(Messages.GetSel(SelMsgID.AT_CAMERA, false, AndroidUtils.CheckSelfPermission(AndroidPermission.WRITE_EXTERNAL_STORAGE)), true);
                     yield return null;
                     while(ARMenuManager.Instance.GetSelectWindowResult() == SelWinRslt.WAITING)
                         yield return null;
@@ -220,7 +220,6 @@ namespace XeApp.Game.AR
             m_initialized = true;
             this.StartCoroutineWatched(CoObserveAR());
             this.StartCoroutineWatched(CoObserveError());
-            Debug.LogError("C");
         }
 
         // // RVA: 0x13B5900 Offset: 0x13B5900 VA: 0x13B5900
@@ -298,11 +297,8 @@ namespace XeApp.Game.AR
                                         yield return new WaitForSeconds(0.1f);
                                         //LAB_013b80f0
                                     }
-                                    else
-                                    {
-                                        //LAB_013b7ab8
-                                        m_hipsOk = true;
-                                    }
+                                    //LAB_013b7ab8
+                                    m_hipsOk = true;
                                     //LAB_013b80f8
                                     ChangeDivaVisible(true);
                                     ARMenuManager.Instance.awayText.SetShowText(isHitDiva);
@@ -421,7 +417,7 @@ namespace XeApp.Game.AR
                                         m_hipsTr = UdonLib.Utils.SearchNodeByName(m_arObject.transform, "hips");
                                         m_hipsOk = true;
                                         m_hipsLimitNgCos = Mathf.Cos((m_lastFoundMasterData.angleLimit * 3.141593f) / 180f);
-                                        m_hipsLimitOkCos = Mathf.Cos((m_lastFoundMasterData.angleLimit + 15 * 3.141593f) / 180f);
+                                        m_hipsLimitOkCos = Mathf.Cos(((m_lastFoundMasterData.angleLimit + 15) * 3.141593f) / 180f);
                                         m_arEngine.SetupTrackingMode(m_currTrackingObj, m_lastFoundMasterData.trackingType);
                                         count = 0;
                                         //LAB_013b8ef8
@@ -693,13 +689,15 @@ namespace XeApp.Game.AR
         // // RVA: 0x13AD4CC Offset: 0x13AD4CC VA: 0x13AD4CC
         public void StopCamera()
         {
-            m_arEngine.StopCamera();
+            if(m_arEngine != null)
+                m_arEngine.StopCamera();
         }
 
         // // RVA: 0x13AD92C Offset: 0x13AD92C VA: 0x13AD92C
         public void StartCamera()
         {
-            m_arEngine.StartCamera();
+            if(m_arEngine != null)
+                m_arEngine.StartCamera();
         }
 
         // // RVA: 0x13B677C Offset: 0x13B677C VA: 0x13B677C

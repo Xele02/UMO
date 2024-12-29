@@ -91,8 +91,10 @@ public class InitPointEffector : InitPointEffectorBase
 	// RVA: 0x151F0FC Offset: 0x151F0FC VA: 0x151F0FC Slot: 9
 	protected override Rotation GetImageSensorRotation()
     {
-        Rotation r;
+        Rotation r = Rotation.ROTATION_0;
+#if UNITY_ANDROID && !UNITY_EDITOR
         smartARController_.cameraDevice_.GetImageSensorRotation(out r);
+#endif
         return r;
     }
 }

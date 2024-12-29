@@ -33,6 +33,10 @@ public abstract class TargetEffectorBase : MonoBehaviour
                 return;
             m_LostCount++;
         }
+        else
+        {
+            m_LostCount = 0;
+        }
         showOrHideChildrens(m_LostPermissionCount >= m_LostCount);
         if(m_isShown != (m_LostCount <= m_LostPermissionCount))
         {

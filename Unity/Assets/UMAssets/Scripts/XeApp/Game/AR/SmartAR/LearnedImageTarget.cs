@@ -67,8 +67,8 @@ namespace smartar
         private static int sarSmartar_SarLearnedImageTarget_sarGetPhysicalSize(IntPtr self, out smartar.Vector2 size)
         {
             size = new smartar.Vector2();
-            size.x_ = 1;
-            size.y_ = 1;
+            size.x_ = 0.065f;
+            size.y_ = 0.060125f;
             return 0;
         }
 #else

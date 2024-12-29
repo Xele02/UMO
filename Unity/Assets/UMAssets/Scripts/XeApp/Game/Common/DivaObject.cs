@@ -614,7 +614,20 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF5ED0 Offset: 0x1BF5ED0 VA: 0x1BF5ED0
-		//protected void Anim_CrossFadeInFixedTime(string stateName, float fixedTime = 0) { }
+		protected void Anim_CrossFadeInFixedTime(string stateName, float fixedTime = 0)
+		{
+			animator.CrossFadeInFixedTime(stateName, fixedTime, 0);
+			facialBlendAnimMediator.selfAnimator.CrossFadeInFixedTime(stateName, fixedTime, 0);
+			facialBlendAnimMediator.selfAnimator.CrossFadeInFixedTime(stateName, fixedTime, 0);
+			if(m_boneSpringAnim != null && m_boneSpringAnim.animator != null)
+			{
+				m_boneSpringAnim.animator.CrossFadeInFixedTime(stateName, fixedTime, 0);
+			}
+			if(mikeStandObject != null)
+			{
+				mikeStandObject.animator.CrossFadeInFixedTime(stateName, fixedTime, 0);
+			}
+		}
 
 		//// RVA: 0x1BF6188 Offset: 0x1BF6188 VA: 0x1BF6188
 		protected void Anim_SetBool(string name, bool value)

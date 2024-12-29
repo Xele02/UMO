@@ -173,8 +173,8 @@ namespace XeApp.Game.AR
                         max = MOTION_TABLE.Length;
                     }
                     int a = UnityEngine.Random.Range(0, max);
-                    m_divaObject.Talk(MOTION_TABLE[max]);
-                    voARDiva.Play(m_cueNameList[max]);
+                    m_divaObject.Talk(MOTION_TABLE[a]);
+                    voARDiva.Play(m_cueNameList[a]);
                 }
                 else
                 {

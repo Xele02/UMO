@@ -85,14 +85,14 @@ namespace XeApp.Game.AR
         private void Show()
         {
             RectTransform r = GetComponentInParent<Canvas>().GetComponent<RectTransform>();
-            r.anchoredPosition = new Vector2(r.anchoredPosition.x, 0);
+            GetComponent<RectTransform>().anchoredPosition = new Vector2(GetComponent<RectTransform>().anchoredPosition.x, 0);
         }
 
         // // RVA: 0x11E713C Offset: 0x11E713C VA: 0x11E713C
         private void Hide()
         {
             RectTransform r = GetComponentInParent<Canvas>().GetComponent<RectTransform>();
-            r.anchoredPosition = new Vector2(r.anchoredPosition.x, -r.sizeDelta.y);
+            GetComponent<RectTransform>().anchoredPosition = new Vector2(GetComponent<RectTransform>().anchoredPosition.x, -r.sizeDelta.y);
         }
 
         // RVA: 0x11E7284 Offset: 0x11E7284 VA: 0x11E7284

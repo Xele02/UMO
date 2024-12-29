@@ -69,8 +69,8 @@ public class SmartAREffector : SmartAREffectorBase
 									lastRecognizedTransform_ = smartARController_.transform;
 									lastRecognizedObject_ = targetEffectors_[i].gameObject;
 								}
-								targetEffectors_[i].UpdateContents();
 							}
+							targetEffectors_[i].UpdateContents();
 						}
 					}
 				}
@@ -91,6 +91,7 @@ public class SmartAREffector : SmartAREffectorBase
 		if(smartARController_ != null)
 		{
 			smartARController_.cameraDevice_.GetRotation(out r);
+#if UNITY_ANDROID && !UNITY_EDITOR
 			Facing f;
 			smartARController_.cameraDevice_.GetFacing(out f);
 			if(f == Facing.FACING_FRONT)
@@ -99,10 +100,15 @@ public class SmartAREffector : SmartAREffectorBase
 				smartARController_.cameraDevice_.GetImageSensorRotation(out r2);
 				if(r2 == Rotation.ROTATION_90)
 				{
-					r = (Rotation)(((int)r + 180) % 360);
+					r = (Rotation)((360 + (int)r - 180) % 360);
 				}
 			}
+#endif
 		}
+#if UNITY_EDITOR
+		r = Rotation.ROTATION_90;
+#endif
+		ARDebugScreen.Instance.AddText(ARDebugScreen.TextType.CameraRotation, "Camera Rot : "+r);
 		return r;
 	}
 
@@ -111,18 +117,25 @@ public class SmartAREffector : SmartAREffectorBase
 	{
 		Rotation r = Rotation.ROTATION_0;
 		smartARController_.screenDevice_.GetRotation(out r);
+#if UNITY_EDITOR
+		r = Rotation.ROTATION_0;
+#endif
+		ARDebugScreen.Instance.AddText(ARDebugScreen.TextType.ScreenRotation, "Screen Rot : "+r);
 		return r;
 	}
 
 	// // RVA: 0x12FA908 Offset: 0x12FA908 VA: 0x12FA908 Slot: 9
 	public override Rotation GetImageSensorRotation()
 	{
+#if UNITY_ANDROID && !UNITY_EDITOR
 		if(smartARController_ != null)
 		{
 			Rotation r;
 			smartARController_.cameraDevice_.GetImageSensorRotation(out r);
+			ARDebugScreen.Instance.AddText(ARDebugScreen.TextType.SensorRotation, "Sensor Rot : "+r);
 			return r;
 		}
+#endif
 		return Rotation.ROTATION_0;
 	}
 

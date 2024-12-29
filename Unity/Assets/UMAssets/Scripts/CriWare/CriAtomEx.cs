@@ -325,8 +325,12 @@ namespace CriWare
 		{
 			public int id; // 0x0
 			public CriAtomEx.CueType type; // 0x4
+#if UNITY_EDITOR
+			public string name; // 0x8
+#else
 			[MarshalAs(UnmanagedType.LPStr)]
 			public readonly string name; // 0x8
+#endif
 			[MarshalAs(UnmanagedType.LPStr)]
 			public readonly string userData; // 0xC
 			public long length; // 0x10

@@ -61,13 +61,24 @@ namespace smartar
         private ImageHolder imageHolder_ = new ImageHolder(IntPtr.Zero); // 0x60
 
         // RVA: 0x20B8428 Offset: 0x20B8428 VA: 0x20B8428
-        public CameraDevice(Smart smart, bool forceOldAndroidAPI = false) { }
+        public CameraDevice(Smart smart, bool forceOldAndroidAPI = false) : this() 
+        { 
+                self_ = sarSmartar_SarCameraDevice_SarCameraDevice(smart.self_, forceOldAndroidAPI);
+        }
 
         // RVA: 0x20B88B4 Offset: 0x20B88B4 VA: 0x20B88B4
-        public CameraDevice(Smart smart, int cameraId, bool forceOldAndroidAPI = false) { }
+        public CameraDevice(Smart smart, int cameraId, bool forceOldAndroidAPI = false) 
+                : this(smart, cameraId, IntPtr.Zero, forceOldAndroidAPI)
+        {
+
+        }
 
         // RVA: 0x20B892C Offset: 0x20B892C VA: 0x20B892C
-        public CameraDevice(Smart smart, int cameraId, IntPtr nativeDevice, bool forceOldAndroidAPI = false) { }
+        public CameraDevice(Smart smart, int cameraId, IntPtr nativeDevice, bool forceOldAndroidAPI = false) 
+                : this()
+        {
+                self_ = sarSmartar_SarCameraDevice_SarCameraDevice2(smart.self_, cameraId, nativeDevice, forceOldAndroidAPI);
+        }
 
         // RVA: 0x20B84D4 Offset: 0x20B84D4 VA: 0x20B84D4
         private CameraDevice()
@@ -378,10 +389,26 @@ namespace smartar
         }
 
         // // RVA: 0x20B87C0 Offset: 0x20B87C0 VA: 0x20B87C0
-        // private static extern IntPtr sarSmartar_SarCameraDevice_SarCameraDevice(IntPtr smart, bool forceOldAndroidAPI = False) { }
+#if UNITY_EDITOR
+        private IntPtr sarSmartar_SarCameraDevice_SarCameraDevice(IntPtr smart, bool forceOldAndroidAPI = false)
+        {
+                return IntPtr.Zero;
+        }
+#else
+        [DllImport("smartar")]
+        private static extern IntPtr sarSmartar_SarCameraDevice_SarCameraDevice(IntPtr smart, bool forceOldAndroidAPI = false);
+#endif
 
         // // RVA: 0x20B89F0 Offset: 0x20B89F0 VA: 0x20B89F0
-        // private static extern IntPtr sarSmartar_SarCameraDevice_SarCameraDevice2(IntPtr smart, int cameraId, IntPtr nativeDevice, bool forceOldAndroidAPI = False) { }
+#if UNITY_EDITOR
+        private IntPtr sarSmartar_SarCameraDevice_SarCameraDevice2(IntPtr smart, int cameraId, IntPtr nativeDevice, bool forceOldAndroidAPI = false)
+        {
+                return IntPtr.Zero;
+        }
+#else
+        [DllImport("smartar")]
+        private static extern IntPtr sarSmartar_SarCameraDevice_SarCameraDevice2(IntPtr smart, int cameraId, IntPtr nativeDevice, bool forceOldAndroidAPI = false);
+#endif
 
         // // RVA: 0x20B8D90 Offset: 0x20B8D90 VA: 0x20B8D90
 #if UNITY_EDITOR

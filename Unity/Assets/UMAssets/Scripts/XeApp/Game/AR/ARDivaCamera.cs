@@ -66,7 +66,7 @@ namespace XeApp.Game.AR
         // // RVA: 0x161C1FC Offset: 0x161C1FC VA: 0x161C1FC
         private void setCameraPositionWithScale(float scale)
         {
-            transform.localPosition = UnityEngine.Vector3.Lerp(transform.localPosition, transform.localPosition / scale, 0.3f);
+            transform.localPosition = UnityEngine.Vector3.Lerp(transform.localPosition, m_arCameraTr.transform.localPosition / scale, 0.3f);
             m_lastRot = UnityEngine.Quaternion.Lerp(m_lastRot, m_arCameraTr.localRotation, 0.3f);
             transform.localRotation = m_lastRot * m_offsetRot;
             transform.localScale = m_arCameraTr.localScale;

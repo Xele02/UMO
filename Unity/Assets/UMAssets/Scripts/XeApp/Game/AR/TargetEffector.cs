@@ -9,6 +9,15 @@ public class TargetEffector : TargetEffectorBase
 	protected override void Awake()
     {
         smartARController_ = FindObjectsOfType<SmartARController>()[0];
+        //UMO
+        GameObject g = new GameObject("LandmarkObjects");
+        LandmarkEffector l = g.AddComponent<LandmarkEffector>();
+        g.transform.SetParent(transform, false);
+        l.showLandmarks = true;
+        GameObject s = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        s.transform.SetParent(g.transform, false);
+        l.sphere_ = s;
+        //UMO
         base.Awake();
     }
 

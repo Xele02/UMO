@@ -23,9 +23,13 @@ public class LandmarkEffector : LandmarkEffectorBase
                     smartAREffector_ = sar2[0];
                 if(targetEffector_ == null)
                 {
-                    TargetEffector[] sar3 = (TargetEffector[])FindObjectsOfType(typeof(TargetEffector));
-                    if(sar3 != null && sar3.Length != 0)
-                        targetEffector_ = sar3[0];
+                    targetEffector_ = transform.GetComponentInParent<TargetEffector>();
+                    if(targetEffector_ == null)
+                    {
+                        TargetEffector[] sar3 = (TargetEffector[])FindObjectsOfType(typeof(TargetEffector));
+                        if(sar3 != null && sar3.Length != 0)
+                            targetEffector_ = sar3[0];
+                    }
                 }
             }
         }

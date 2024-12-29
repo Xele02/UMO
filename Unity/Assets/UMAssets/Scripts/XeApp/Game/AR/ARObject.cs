@@ -170,8 +170,8 @@ namespace XeApp.Game.AR
             {
                 m_divaMan.Pause(0);
                 SetDiaplayMask(ARObjDispMask.DIVA_REASON, false);
-                m_isLoading--;
             }
+            m_isLoading--;
             if(m_displayMaskFlag != 0)
                 HideDiva();
             GameManager.Instance.fullscreenFader.Fade(0.3f, 0);

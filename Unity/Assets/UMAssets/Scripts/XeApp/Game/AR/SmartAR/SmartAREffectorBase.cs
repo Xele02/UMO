@@ -1,6 +1,7 @@
 
 using smartar;
 using UnityEngine;
+using XeApp.Game.RhythmGame;
 
 public abstract class SmartAREffectorBase : MonoBehaviour
 {
@@ -66,7 +67,14 @@ public abstract class SmartAREffectorBase : MonoBehaviour
         UnityEngine.Vector3 a2;
         q.ToAngleAxis(out a, out a2);
         transformObject.RotateAround(UnityEngine.Vector3.zero, a2, a);
-        transformObject.position = new UnityEngine.Vector3(rotP.x_ + landmarkPos.x_, rotP.y_ + landmarkPos.y_, rotP.z_ + landmarkPos.z_) * nearClipPlane_;
+        transformObject.position = new UnityEngine.Vector3(rotP.x_ + landmarkPos.x_, rotP.z_ + landmarkPos.z_, rotP.y_ + landmarkPos.y_) * nearClipPlane_;
+        ARDebugScreen.Instance.AddText(ARDebugScreen.TextType.EffectorTranform, 
+            "setPose : rotP : "+rotP.x_+" "+rotP.y_+" "+rotP.z_+"\n"+
+            "rotQ : "+rotQ.x_+" "+rotQ.y_+" "+rotQ.z_+" "+rotQ.w_+"\n"+
+            "a2 : "+a2+"\n"+"a : "+a+"\n"+
+            "pos : "+transformObject.position+"\n"+
+            "rot : "+transformObject.rotation
+        );
     }
 
 	// // RVA: -1 Offset: -1 Slot: 5

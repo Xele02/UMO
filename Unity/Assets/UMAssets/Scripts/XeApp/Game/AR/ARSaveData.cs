@@ -256,6 +256,35 @@ namespace XeApp.Game.AR
 		}
 
 		// // RVA: 0xBBE5B8 Offset: 0xBBE5B8 VA: 0xBBE5B8
-		// public bool SyncToPlayerData(BBHNACPENDM_ServerSaveData playerData) { }
+		// RVA: 0x11DC87C Offset: 0x11DC87C VA: 0x11DC87C
+		public bool SyncToPlayerData(BBHNACPENDM_ServerSaveData playerData)
+		{
+			List<ARMarkerMasterData.Data> d = ARMarkerMasterData.Instance.m_markerList;
+			List<KDLBHAKPLPH_ArMarker.KGFJLMLOFED> l = playerData.LCLPLFCBDBB_ArMarker.DNKNFFPLGNM;
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			bool res = false;
+			for(int i = 0; i < d.Count; i++)
+			{
+				if(d[i].markerId != "")
+				{
+					if(IsHaveStamp(d[i].markerId))
+					{
+						if(l[i].BEBJKJKBOGH_Date == 0)
+						{
+							l[i].BEBJKJKBOGH_Date = time;
+							res = true;
+						}
+					}
+					else if(l[i].BEBJKJKBOGH_Date != 0)
+					{
+						res = true;
+						SetHaveStamp(d[i].markerId, true);
+					}
+				}
+			}
+			if(res)
+				Save();
+			return res;
+		}
 	}
 }

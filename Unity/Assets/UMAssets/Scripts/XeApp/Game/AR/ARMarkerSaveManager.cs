@@ -1,6 +1,7 @@
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 using XeApp.Game.Common;
@@ -29,11 +30,63 @@ namespace XeApp.Game.AR
         public int lastErrorId; // 0x24
 
         // // RVA: 0x11DAFC4 Offset: 0x11DAFC4 VA: 0x11DAFC4
-        // public void Load(IMCBBOAFION onSuccess, DJBHIFLHJLK onErrorToTitle) { }
+        public void Load(IMCBBOAFION onSuccess, DJBHIFLHJLK onErrorToTitle)
+        {
+            isExistPlayerData = false;
+            ARSaveData.Instance.Load();
+            arPlayerData = new BBHNACPENDM_ServerSaveData();
+            arPlayerData.GGBOGLKKKDM();
+            timeoutTime = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("ar_net_timeout", 10);
+            N.a.StartCoroutineWatched(Co_Load(onSuccess, onErrorToTitle));
+        }
 
         // [IteratorStateMachineAttribute] // RVA: 0x67ACC4 Offset: 0x67ACC4 VA: 0x67ACC4
         // // RVA: 0x11DB8A8 Offset: 0x11DB8A8 VA: 0x11DB8A8
-        // private IEnumerator Co_Load(IMCBBOAFION onSuccess, DJBHIFLHJLK onErrorToTitle) { }
+        private IEnumerator Co_Load(IMCBBOAFION onSuccess, DJBHIFLHJLK onErrorToTitle)
+        {
+            //0x11DC22C
+            NAIJIFAJGGK_RequestLoadPlayerData req;
+
+            req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new NAIJIFAJGGK_RequestLoadPlayerData());
+            req.HHIHCJKLJFF_BlockToRequest = arPlayerData.KPIDBPEKMFD_GetBlockList();
+            req.IJMPLDBGMHC_OnDataReceived = arPlayerData.IIEMACPEEBJ_Load;
+            while(!req.PLOOEECNHFB_IsDone)
+                yield return null;
+            if(req.NPNNPNAIONN_IsError)
+            {
+                onErrorToTitle();
+                yield break;
+            }
+            if(arPlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd != 2)
+            {
+                isExistPlayerData = false;
+                onSuccess();
+                yield break;
+            }
+            isExistPlayerData = true;
+            if(!ARSaveData.Instance.SyncToPlayerData(arPlayerData))
+            {
+                onSuccess();
+                yield break;
+            }
+            EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
+            arPlayerData.LCLPLFCBDBB_ArMarker.OKJPIBHMKMJ(json, arPlayerData.MCKEOKFMLAH_SaveId + 1);
+            KIJECNFNNDB_JsonWriter w = new KIJECNFNNDB_JsonWriter();
+            json.EJCOJCGIBNG_ToJson(w);
+            string str = w.ToString();
+            GGKHIHFPKDH_SavePlayerData r = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new GGKHIHFPKDH_SavePlayerData());
+            List<string> l = new List<string>();
+            l.Add("ar_marker");
+            r.HHIHCJKLJFF_Names = l;
+            r.AHEFHIMGIBI_PlayerData = str;
+            r.CHDDDCCHJJH_Replace = true;
+            while(!r.PLOOEECNHFB_IsDone)
+                yield return null;
+            if(r.NPNNPNAIONN_IsError)
+                onErrorToTitle();
+            else
+                onSuccess();
+        }
 
         // RVA: 0x11DB988 Offset: 0x11DB988 VA: 0x11DB988
         public void Save(int marker_no, IMCBBOAFION onSuccess, DJBHIFLHJLK onErrorToTitle)

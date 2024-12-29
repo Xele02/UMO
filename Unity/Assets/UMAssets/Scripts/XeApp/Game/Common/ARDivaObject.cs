@@ -13,7 +13,7 @@ namespace XeApp.Game.Common
         private MenuDivaGazeControl.Data gazeControlData = new MenuDivaGazeControl.Data(); // 0xD0
 
         // public MenuDivaGazeControl.Data GazeControlData { get; } 0xB0778C
-        // protected override bool useQualitySetting { get; } 0xB07794
+        protected override bool useQualitySetting { get { return false; } } //0xB07794
         public ARDivaMotionId motionId { get; set; } // 0xD4
 
         // RVA: 0xB077AC Offset: 0xB077AC VA: 0xB077AC Slot: 6
@@ -83,7 +83,7 @@ namespace XeApp.Game.Common
         {
             if(animator != null)
             {
-                animator.CrossFadeInFixedTime("idle", time);
+                Anim_CrossFadeInFixedTime("idle", time);
             }
         }
 
@@ -95,9 +95,9 @@ namespace XeApp.Game.Common
         {
             if(animator != null)
             {
-                animator.SetTrigger("menu_toTalk");
-                animator.SetInteger("menu_talkType", type);
-                animator.SetBool("menu_breakTalkLoop", false);
+                Anim_SetTrigger("menu_toTalk");
+                Anim_SetInteger("menu_talkType", type);
+                Anim_SetBool("menu_breakTalkLoop", false);
             }
         }
 
@@ -105,7 +105,7 @@ namespace XeApp.Game.Common
         public void TalkEnd()
         {
             if(animator != null)
-                animator.SetBool("menu_breakTalkLoop", true);
+                Anim_SetBool("menu_breakTalkLoop", true);
         }
 
         // // RVA: 0xB08428 Offset: 0xB08428 VA: 0xB08428

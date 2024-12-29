@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.IO;
+using UdonLib;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -68,22 +69,19 @@ namespace XeApp.Game.Common
 		{
 			if(string.IsNullOrEmpty(shareImageFile))
 				return;
-			TodoLogger.LogError(TodoLogger.Android, "Share");
-			//AndroidUtils.OnShare2(shareImageFile, teamplate, StringLiteral_14411);
+			AndroidUtils.OnShare2(shareImageFile, teamplate, JpStringLiterals.StringLiteral_14411);
 		}
 
 		// // RVA: 0x138C99C Offset: 0x138C99C VA: 0x138C99C
 		private static bool IsAvailableStoreage(long fileSize)
 		{
-			TodoLogger.LogError(TodoLogger.Android, "IsAvailableStoreage");
-			return true;
+			return fileSize < AndroidUtils.GetAvailableStorageKB;
 		}
 
 		// // RVA: 0x138CA34 Offset: 0x138CA34 VA: 0x138CA34
 		private static bool IsAvailableStoreageAccess()
 		{
-			TodoLogger.LogError(TodoLogger.Android, "IsAvailableStoreageAccess");
-			return true;
+			return AndroidUtils.CheckSelfPermission(AndroidPermission.WRITE_EXTERNAL_STORAGE);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73A884 Offset: 0x73A884 VA: 0x73A884
@@ -112,8 +110,38 @@ namespace XeApp.Game.Common
 			int i;
 
 			//0x138D828
-			TodoLogger.LogError(TodoLogger.Android, "Co_RequestPermission");
-			yield return null;
+			int requestResult = 0;
+			AndroidPermissionReceiver.Create();
+			AndroidPermissionReceiver.Instance.RequestPremission(AndroidPermission.WRITE_EXTERNAL_STORAGE, () =>
+			{
+				//0x138D804
+				requestResult = 1;
+			}, () =>
+			{
+				//0x138D810
+				requestResult = 2;
+			});
+			while(requestResult == 0)
+				yield return null;
+			if(requestResult == 1)
+				yield break;
+			PermissionFuncResultCode resultCode = PermissionFuncResultCode.Ok;
+			if(requestParmissionFunc != null)
+			{
+				yield return requestParmissionFunc.Invoke((PermissionFuncResultCode result) =>
+				{
+					//0x138D81C
+					resultCode = result;
+				});
+			}
+			//LAB_0138da84
+			if(resultCode == PermissionFuncResultCode.Cancell)
+				yield break;
+			AndroidUtils.RedirectSystemSettings();
+			for(i = 0; i < 10; i++)
+			{
+				yield return null;
+			}
 		}
 
 		// // RVA: 0x138D434 Offset: 0x138D434 VA: 0x138D434
@@ -122,7 +150,12 @@ namespace XeApp.Game.Common
 			string str = "";
 			if(Application.platform == RuntimePlatform.Android)
 			{
-				TodoLogger.LogError(TodoLogger.Android, "GetImageSavePath");
+				AndroidJavaClass c = new AndroidJavaClass("android.os.Environment");
+                AndroidJavaObject s = c.CallStatic<AndroidJavaObject>("getExternalStoragePublicDirectory", c.GetStatic<string>("DIRECTORY_PICTURES"));
+                str = s.Call<string>("getAbsolutePath", Array.Empty<object>());
+                str += "/UtaMacross/";
+                s.Dispose();
+                c.Dispose();
 			}
 			else
 			{

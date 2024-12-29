@@ -17,6 +17,24 @@ public abstract class SmartARControllerBase : MonoBehaviour
         public string id; // 0xC
     }
 
+	// Id :
+	// AR010002 > AR010011
+	// AR010017 > AR010018
+	// AR020022
+	// AR010023
+	// AR030024 > AR030027
+	// AR050028
+	// AR060029
+	// AR070030
+	// AR080031
+	// AR090032 > AR092237
+	// AR100038 > AR100039
+	// AR110040
+	// AR120041 > AR120047
+	// AR130048 > AR130057
+	// AR140058
+	// AR150059
+
     [Serializable]
     public class RecognizerSettings
     {
@@ -170,7 +188,7 @@ public abstract class SmartARControllerBase : MonoBehaviour
 			recognizer_.SetDenseMapMode(newSettings.denseMapMode);
 		}
 		//LAB_012f6080
-		if(creating || Enumerable.SequenceEqual<SmartARControllerBase.TargetEntry>(newSettings.targets, recognizerSettings.targets))
+		if(creating || !Enumerable.SequenceEqual<SmartARControllerBase.TargetEntry>(newSettings.targets, recognizerSettings.targets))
 		{
 			Target[] oldTargets = targets_;
 			targets_ = new Target[newSettings.targets.Length];
@@ -205,6 +223,9 @@ public abstract class SmartARControllerBase : MonoBehaviour
 					else
 					{
 						targets_[i] = new LearnedImageTarget(smart_, fs, null, null);
+#if UNITY_EDITOR
+						targets_[i].self_ = new IntPtr(newSettings.targets[i].id.GetHashCode());
+#endif
 					}
 					defaultTargets_[i] = new TargetManager(defaultTargets_[i].targetEntry_, targets_[i], defaultTargets_[i].isUse_, defaultTargets_[i].willChangeUsingStatus_);
 					if(!b)
@@ -518,6 +539,64 @@ public abstract class SmartARControllerBase : MonoBehaviour
 							{
 								int res = CallNativeGetResult(self_, currentTargets_[i].target_.self_, ref result);
 								isRecognized_ = result.isRecognized_;
+								if(isRecognized_)
+								{
+									//UnityEngine.Debug.LogError(result.position_.x_+" "+result.position_.y_+" "+result.position_.z_+" "+result.rotation_.x_+" "+result.rotation_.y_+" "+result.rotation_.z_+" "+result.rotation_.w_);
+									string nodeTxt = "";
+									if(result.nodePoints_ != IntPtr.Zero && result.numNodePoints_ > 0)
+									{
+										IntPtr p = result.nodePoints_;
+										for(int j = 0; j < result.numNodePoints_; j++)
+										{
+											NodePoint np = (NodePoint)Marshal.PtrToStructure(p, typeof(NodePoint));
+
+											nodeTxt += "  "+np.id_+" "+np.position_.x_+" "+np.position_.y_+" "+np.position_.z_+"\n";
+
+											int s = Marshal.SizeOf<NodePoint>(np);
+											p += s;
+										}
+									}
+									string landTxt = "";
+									if(result.landmarks_ != IntPtr.Zero && result.numLandmarks_ > 0)
+									{
+										IntPtr p = result.landmarks_;
+										for(int j = 0; j < result.numLandmarks_; j++)
+										{
+											Landmark np = (Landmark)Marshal.PtrToStructure(p, typeof(Landmark));
+
+											landTxt += "  "+np.id_+" "+np.state_+" "+np.position_.x_+" "+np.position_.y_+" "+np.position_.z_+"\n";
+
+											int s = Marshal.SizeOf<Landmark>(np);
+											p += s;
+										}
+									}
+									string initTxt = "";
+									if(result.initPoints_ != IntPtr.Zero && result.numInitPoints_ > 0)
+									{
+										IntPtr p = result.initPoints_;
+										for(int j = 0; j < result.numInitPoints_; j++)
+										{
+											InitPoint np = (InitPoint)Marshal.PtrToStructure(p, typeof(InitPoint));
+
+											initTxt += "  "+np.id_+" "+np.position_.x_+" "+np.position_.y_+"\n";
+
+											int s = Marshal.SizeOf<InitPoint>(np);
+											p += s;
+										}
+									}
+									ARDebugScreen.Instance.AddText(ARDebugScreen.TextType.Result, currentTargets_[i].targetEntry_.id+"\n"+
+											result.position_.x_+" "+result.position_.y_+" "+result.position_.z_+"\n"+
+											result.rotation_.x_+" "+result.rotation_.y_+" "+result.rotation_.z_+" "+result.rotation_.w_+"\n"+
+											result.targetTrackingState_+"\n"+
+											result.sceneMappingState_+"\n"+
+											result.numLandmarks_+"\n"+landTxt+
+											result.maxLandmarks_+"\n"+
+											result.numNodePoints_+"\n"+nodeTxt+
+											result.maxNodePoints_+"\n"+
+											result.numInitPoints_+"\n"+initTxt+
+											result.maxInitPoints_+"\n"
+										);
+								}
 								return res;
 							}
 							break;
@@ -578,10 +657,10 @@ public abstract class SmartARControllerBase : MonoBehaviour
         {
             throw new InvalidOperationException("unexpected value: " + r);
         }
-        UnityEngine.Quaternion q = new UnityEngine.Quaternion(rotRotation.x_ , rotRotation.y_, rotRotation.z_, rotRotation.w_) * new UnityEngine.Quaternion(0, Mathf.Sin(f1), 0, Mathf.Cos(f1));
+        UnityEngine.Quaternion q = new UnityEngine.Quaternion(rotRotation.x_ , rotRotation.z_, rotRotation.y_, rotRotation.w_) * new UnityEngine.Quaternion(0, Mathf.Sin(f1), 0, Mathf.Cos(f1));
         rotRotation.x_ = q.x;
-        rotRotation.y_ = q.y;
-        rotRotation.z_ = q.z;
+        rotRotation.y_ = q.z;
+        rotRotation.z_ = q.y;
         rotRotation.w_ = q.w;
 	}
 

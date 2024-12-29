@@ -23,6 +23,9 @@ namespace UdonLib
 		// public static long GetAvailableStorageMB { get; }
 		public static long GetAvailableStorageKB { get
 		{
+#if UNITY_EDITOR
+			return 999999999;
+#endif
 			AndroidJavaObject c = new AndroidJavaObject("android.os.StatFs", new object[1] { Application.temporaryCachePath });
 			long l = c.Call<long>("getAvailableBlocksLong", Array.Empty<object>());
 			long l2 = c.Call<long>("getBlockSizeLong", Array.Empty<object>());
@@ -55,12 +58,50 @@ namespace UdonLib
 		// RVA: 0xE094B8 Offset: 0xE094B8 VA: 0xE094B8
 		public static bool OnShare(string path, string message, string shareTitle)
 		{
-			AndroidJavaClass c = new AndroidJavaClass("jp.co.xeen.xeapp.PostSNS");
-			return c.CallStatic<bool>("share", new object[3] { path, message, shareTitle });
+			//AndroidJavaClass c = new AndroidJavaClass("jp.co.xeen.xeapp.PostSNS");
+			//return c.CallStatic<bool>("share", new object[3] { path, message, shareTitle });
+			return OnShare2(path, message, shareTitle);
 		}
 
 		// // RVA: 0xE09798 Offset: 0xE09798 VA: 0xE09798
-		// public static bool OnShare2(string path, string message, string shareTitle) { }
+		public static bool OnShare2(string path, string message, string shareTitle) 
+		{ 
+#if UNITY_ANDROID
+			string className = "android.content.Intent";
+			using(AndroidJavaClass IntentClass = new AndroidJavaClass(className))
+			using(AndroidJavaObject sendIntent = new AndroidJavaObject(className))
+			{
+				sendIntent.Call<AndroidJavaObject>("setAction", IntentClass.GetStatic<string>("ACTION_SEND"));
+				sendIntent.Call<AndroidJavaObject>("setType", "image/jpg");
+				using (AndroidJavaClass versionClazz = new AndroidJavaClass("android.os.Build$VERSION"))
+				{
+					int apiLevel = versionClazz.GetStatic<int>("SDK_INT");
+					using (AndroidJavaClass unity = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+					using (AndroidJavaObject currentActivity = unity.GetStatic<AndroidJavaObject>("currentActivity"))
+					{
+						AndroidJavaObject uriObject;
+						if(24 <= apiLevel) {
+							using(AndroidJavaObject context = currentActivity.Call<AndroidJavaObject> ("getApplicationContext"))
+							using(AndroidJavaClass fileProvider = new AndroidJavaClass("androidx.core.content.FileProvider"))
+							using(AndroidJavaObject file = new AndroidJavaObject ("java.io.File", path))
+							uriObject = fileProvider.CallStatic<AndroidJavaObject>("getUriForFile", context, Application.identifier + ".fileprovider", file);
+						}
+						else
+						{
+							using (AndroidJavaClass uriClass = new AndroidJavaClass("android.net.Uri"))
+							uriObject = uriClass.CallStatic<AndroidJavaObject>("parse", "file://" + path);
+						}
+						using (sendIntent.Call<AndroidJavaObject>("putExtra", IntentClass.GetStatic<string>("EXTRA_STREAM"), uriObject))
+						{ }
+						AndroidJavaObject jChooser = IntentClass.CallStatic<AndroidJavaObject>("createChooser", sendIntent, shareTitle);
+						currentActivity.Call("startActivity", jChooser);
+						uriObject.Dispose();
+					}
+				}
+			}
+#endif
+			return true;
+		}
 
 		// // RVA: 0xE09A78 Offset: 0xE09A78 VA: 0xE09A78
 		// public static long get_GetAvailableStorageMB() { }
@@ -113,6 +154,7 @@ namespace UdonLib
 		// RVA: 0xE0A600 Offset: 0xE0A600 VA: 0xE0A600
 		public static bool RedirectSystemSettings()
 		{
+#if !UNITY_EDITOR			
 			AndroidJavaClass c = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
 			AndroidJavaObject o = c.GetStatic<AndroidJavaObject>("currentActivity");
 			string packageName = o.Call<string>("getPackageName", Array.Empty<object>());
@@ -127,6 +169,7 @@ namespace UdonLib
 			c2.Dispose();
 			o.Dispose();
 			c.Dispose();
+#endif
 			return true;
 		}
 

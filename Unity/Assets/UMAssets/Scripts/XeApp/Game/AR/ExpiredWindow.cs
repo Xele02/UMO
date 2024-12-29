@@ -17,6 +17,7 @@ namespace XeApp.Game.AR
         public void Reconstruct()
         {
             m_messageText = transform.Find("Frame/P/Text").gameObject.GetComponent<Text>();
+            m_frame = transform.Find("Frame").gameObject.GetComponent<RectTransform>();
         }
 
         // RVA: 0x13B2354 Offset: 0x13B2354 VA: 0x13B2354

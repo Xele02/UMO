@@ -29,7 +29,7 @@ public class DocusaurusGenerator
         DocusaurusGenerator generator = new DocusaurusGenerator();
         generator.LoadDatabase();
         generator.Init();
-        generator.DumpDatabaseData();
+        //generator.DumpDatabaseData();
         //generator.DumpTexts();
         //generator.DumpDivaImages();
         //generator.DumpDivaCostumes();
@@ -37,6 +37,7 @@ public class DocusaurusGenerator
         //generator.DumpEventStory();
         //generator.DumpSNS();
         //generator.DumpValkyrieImages();
+        generator.DumpARStamp();
 
         MNNCBFONAOL.PDENBOEFJGE();
     }
@@ -1021,6 +1022,62 @@ public class DocusaurusGenerator
                     if(File.Exists(imgs_path + outName + ".png"))
                         continue;
                     string bundleName = string.Format(file[1], valkyrie.DAJGPBLEEOB_ModelId, i);
+                    //BDFPCPHIJCN request = new BDFPCPHIJCN(path, withoutPlarformPath, this.FileLoadedCallback, this.FailedCallback, args, argValue, fi, loadedDispose);
+                    if(!File.Exists(Application.persistentDataPath + "/data/android/" + bundleName))
+                        continue;
+                    byte[] assetBytes = File.ReadAllBytes(Application.persistentDataPath + "/data/android/" + bundleName);
+
+                    BEEINMBNKNM_Encryption encryption = decryptor.MFHAOMELJKJ_FindDecryptor(bundleName);
+                    encryption.CLNHGLGOKPF_Decrypt(assetBytes);
+                    AssetBundle bundle = AssetBundle.LoadFromMemory(assetBytes);
+                    string name = Path.GetFileNameWithoutExtension(bundleName);
+                    Texture BaseTexture = bundle.LoadAsset(name+"_base") as Texture;
+                    Texture MaskTexture = bundle.LoadAsset(name+"_mask") as Texture;
+                    Material mat = null;
+                    if(MaskTexture != null)
+                    {
+                        mat = new Material(Shader.Find("XeSys/Unlit/SplitTexture"));
+                        mat.SetTexture("_MainTex", BaseTexture);
+                        mat.SetTexture("_MaskTex", MaskTexture);
+                    }
+                    Texture2D t = TextureHelper.Copy(BaseTexture as Texture2D, -1, -1, mat);
+                    if(MaskTexture != null)
+                        File.WriteAllBytes(imgs_path + outName + ".png", t.EncodeToPNG());
+                    else
+                        File.WriteAllBytes(imgs_path + outName + ".jpg", t.EncodeToJPG());
+
+                    bundle.Unload(true);
+                }
+            }
+        }
+    }
+
+    public void DumpARStamp()
+    {
+        string[][] FilesList = {
+            new string[] {"{0:D2}_{1:D4}_stamp", "/ct/ar/st/{0:D2}/ar{1:D4}.xab"}, // 
+        };
+
+        string imgs_path = DataPath + "images/ar/";
+        CheckPath(imgs_path);
+
+        DOKOHKJIDBO a = new DOKOHKJIDBO();
+        a.KIDFJDNOGDG();
+        a.LoadEditor();
+
+        OAFCKDDEBFN decryptor = new OAFCKDDEBFN();
+        decryptor.PGLANLKJBLI_Init();
+
+        for(int id = 0; id < 400; id++)
+        {
+            foreach(var file in FilesList)
+            {
+                for(int i = 1; i <= 2; i++)
+                {
+                    string outName = string.Format(file[0], i, id);
+                    if(File.Exists(imgs_path + outName + ".png"))
+                        continue;
+                    string bundleName = string.Format(file[1], i, id);
                     //BDFPCPHIJCN request = new BDFPCPHIJCN(path, withoutPlarformPath, this.FileLoadedCallback, this.FailedCallback, args, argValue, fi, loadedDispose);
                     if(!File.Exists(Application.persistentDataPath + "/data/android/" + bundleName))
                         continue;

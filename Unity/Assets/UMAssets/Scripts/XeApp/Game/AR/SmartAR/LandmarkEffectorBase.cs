@@ -111,7 +111,7 @@ public abstract class LandmarkEffectorBase : MonoBehaviour
                             g.SetActive(true);
                             nodePointObjects_.Add(g);
                         }
-                        SetPose(nodePointObjects_[i].transform, result_, rotP);
+                        SetPose(nodePointObjects_[i].transform, result_, rotP2);
                         int s = Marshal.SizeOf<NodePoint>(np);
                         p += s;
                     }
@@ -140,7 +140,7 @@ public abstract class LandmarkEffectorBase : MonoBehaviour
                             g.transform.parent = transform;
                             landmarkObjects_.Add(g);
                         }
-                        SetPose(landmarkObjects_[i].transform, result_, rotP);
+                        SetPose(landmarkObjects_[i].transform, result_, rotP2);
                         Color col;
                         switch(lm.state_)
                         {

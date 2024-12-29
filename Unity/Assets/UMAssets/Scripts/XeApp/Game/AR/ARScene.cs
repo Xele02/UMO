@@ -373,7 +373,7 @@ namespace XeApp.Game.AR
                             break;
                         l2.Add(str);
                     }
-                    m_helpDict.Add(eventList[i].eventId, l);
+                    m_helpDict.Add(eventList[i].eventId, l2);
                 }
             }
             List<string> assetList = new List<string>();

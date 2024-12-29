@@ -56,10 +56,11 @@ namespace ExternLib
 			if (!acbFiles.ContainsKey(acb_hn))
 				return false;
 			CriAcbFile file = acbFiles[acb_hn].file;
-			CriAcbCueRecord cueRecord = file.GetCueRecord(index);
+			CriAcbCueRecord cueRecord = file.GetCueRecordByIdx(index);
 			if (cueRecord == null)
 				return false;
 			info.length = cueRecord.LengthMilli;
+			info.name = cueRecord.OriginalCueName;
 			TodoLogger.LogError(TodoLogger.CriAtomExLib, "finish criAtomExAcb_GetCueInfoByIndex");
 			return true;
 		}

@@ -288,6 +288,10 @@ namespace XeApp.Game.AR
                     }
                 }
                 m_messageWindowObj = Instantiate(m_selectWindowPref, t, false);
+                {
+                    SelectWindow s = m_messageWindowObj.AddComponent<SelectWindow>();
+                    s.Reconstruct();
+                }
                 m_messageWindowObj.GetComponent<SelectWindow>().SetMessage(messages);
                 return m_messageWindowObj;
             }

@@ -400,7 +400,11 @@ public class BBHNACPENDM_ServerSaveData
 	}
 
 	// // RVA: 0xF1F350 Offset: 0xF1F350 VA: 0xF1F350
-	// public void GGBOGLKKKDM() { }
+	// RVA: 0x882F1C Offset: 0x882F1C VA: 0x882F1C
+	public void GGBOGLKKKDM()
+	{
+		KHEKNNFCAOI_Init(0x20000001);
+	}
 
 	// // RVA: 0xF1F370 Offset: 0xF1F370 VA: 0xF1F370
 	public void HIJAFAIOLIL()

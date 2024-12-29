@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-
+using DereTore.Common;
 using VGMToolbox.util;
 
 namespace VGMToolbox.format
@@ -791,6 +791,11 @@ namespace VGMToolbox.format
         public Stream[] GetCueFileStreams(int cueId, out bool isStreamed)
         {
             return GetCueFileStreams(GetCueRecord(cueId), out isStreamed);
+        }
+
+        public CriAcbCueRecord GetCueRecordByIdx(int idx)
+        {
+            return CueList[idx];
         }
 
         public CriAcbCueRecord GetCueRecord(int id)

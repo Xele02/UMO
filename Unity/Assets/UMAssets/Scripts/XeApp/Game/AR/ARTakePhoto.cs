@@ -123,7 +123,7 @@ namespace XeApp.Game.AR
             yield return null;
             yield return null;
             tex3 = FlipTexture2D(tex);
-            bytes = ImageConversion.EncodeToJPG(tex, 100);
+            bytes = ImageConversion.EncodeToJPG(tex3, 100);
             photoSizeKb = bytes.Length / 1024 + 1;
             yield return null;
             fname = "Photo" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".jpg";
@@ -174,6 +174,7 @@ namespace XeApp.Game.AR
                                 for(i = 0; i < 10; i++)
                                 {
                                     Debug.LogError("[MCRS]loop." + i);
+                                    yield return null;
                                 }
                             }
                             //LAB_013ac56c;
@@ -408,8 +409,8 @@ namespace XeApp.Game.AR
             if(Application.platform == RuntimePlatform.Android)
             {
                 AndroidJavaClass c = new AndroidJavaClass("android.os.Environment");
-                AndroidJavaObject s = c.CallStatic<AndroidJavaObject>("getExternalStorageDirectory", Array.Empty<object>());
-                path = s.CallStatic<string>("toString", Array.Empty<object>());
+                AndroidJavaObject s = c.CallStatic<AndroidJavaObject>("getExternalStoragePublicDirectory", c.GetStatic<string>("DIRECTORY_PICTURES"));
+                path = s.Call<string>("getAbsolutePath", Array.Empty<object>());
                 path += "/UtaMacross/";
                 s.Dispose();
                 c.Dispose();
@@ -462,11 +463,12 @@ namespace XeApp.Game.AR
                         newCols[i * w + j] = cols[i * w + w - 1 - j];
                     }
                 }
+                Texture2D res = new Texture2D(w, h, tex.format, false);
+                res.SetPixels32(newCols);
+                res.Apply();
+                return res;
             }
-            Texture2D res = new Texture2D(w, h, tex.format, false);
-            res.SetPixels32(newCols);
-            res.Apply();
-            return res;
+            return tex;
         }
 
         // // RVA: 0x13AB948 Offset: 0x13AB948 VA: 0x13AB948
