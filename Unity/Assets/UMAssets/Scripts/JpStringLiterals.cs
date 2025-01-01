@@ -391,6 +391,7 @@ class JpStringLiterals
 	public static string StringLiteral_14032 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_14032", "アニメーションテーブル数以上のキーフレーム番号が指定されました。"); } } // 0x03bb65f8
 	public static string StringLiteral_14355 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_14355", "今日は表示しない"); } } //0x03bb6b04
 	public static string StringLiteral_14401 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_14401", "+ボタン"); } } // 0x03bb6bbc
+	public static string StringLiteral_14411 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_14411", "画像をシェアするアプリを選択してください。"); } } // 0x03BB6BE4
 	public static string StringLiteral_14529 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_14529", "ーーー"); } } // 0x03bb6dbc
 	public static string StringLiteral_14769 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_14769", "{0}さん"); } } // 0x03bb717c
 	public static string StringLiteral_14832 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_14832", "ふた"); } } // 0x03bb7278
@@ -702,4 +703,9 @@ class JpStringLiterals
 	public static string UMO_SkillFilterARank { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_SkillFilterARank", "A級"); } }
 	public static string UMO_SkillFilterSRank { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_SkillFilterSRank", "S級"); } }
 	public static string UMO_SkillFilterSSRank { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_SkillFilterSSRank", "SS級"); } }
+}
+
+class JpStringLiterals2 // old 3.1.0
+{
+	public const string StringLiteral_13083 = "\u753B\u50CF\u3092\u30B7\u30A7\u30A2\u3059\u308B\u30A2\u30D7\u30EA\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044\u3002"; //0x03515218
 }

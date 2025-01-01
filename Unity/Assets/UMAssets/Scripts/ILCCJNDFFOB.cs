@@ -1528,16 +1528,52 @@ public class ILCCJNDFFOB
 	}
 
 	// // RVA: 0x913330 Offset: 0x913330 VA: 0x913330
-	// public void BGJDJBOCLEA(string KMDDJIEPNMF, int HBODCMLFDOB, string OHLHAIIBLBI) { }
+	public void BGJDJBOCLEA(string KMDDJIEPNMF, int HBODCMLFDOB, string OHLHAIIBLBI)
+	{
+		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
+		FLBFCCIEPNC_InitBaseJson(json, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
+		json["ar_session_id"] = KMDDJIEPNMF;
+		json["result"] = HBODCMLFDOB;
+		json["failure_reason"] = OHLHAIIBLBI;
+		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.BGJDJBOCLEA_53, json, false);
+	}
 
 	// // RVA: 0x913664 Offset: 0x913664 VA: 0x913664
-	// public void ILLBGAFIBDE(string KMDDJIEPNMF, int FJABGCFCPMH, string INAMDCCEBOH, string FNOBKBIFBJG, bool NDODFAPMMEB) { }
+	public void ILLBGAFIBDE(string KMDDJIEPNMF, int FJABGCFCPMH, string INAMDCCEBOH, string FNOBKBIFBJG, bool NDODFAPMMEB)
+	{
+		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
+		FLBFCCIEPNC_InitBaseJson(json, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
+		json["ar_marker_no"] = FJABGCFCPMH;
+		json["ar_session_id"] = KMDDJIEPNMF;
+		json["ar_event_id"] = INAMDCCEBOH;
+		json["ar_marker_id"] = FNOBKBIFBJG;
+		json["is_new_marker"] = NDODFAPMMEB;
+		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.ILLBGAFIBDE_54, json, false);
+	}
 
 	// // RVA: 0x913A60 Offset: 0x913A60 VA: 0x913A60
-	// public void KIFPDEFNEPB(string KMDDJIEPNMF, int FJABGCFCPMH, string INAMDCCEBOH, string FNOBKBIFBJG) { }
+	public void KIFPDEFNEPB(string KMDDJIEPNMF, int FJABGCFCPMH, string INAMDCCEBOH, string FNOBKBIFBJG)
+	{
+		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
+		FLBFCCIEPNC_InitBaseJson(json, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
+		json["ar_marker_no"] = FJABGCFCPMH;
+		json["ar_session_id"] = KMDDJIEPNMF;
+		json["ar_event_id"] = INAMDCCEBOH;
+		json["ar_marker_id"] = FNOBKBIFBJG;
+		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.KIFPDEFNEPB_55, json, false);
+	}
 
 	// // RVA: 0x913DE0 Offset: 0x913DE0 VA: 0x913DE0
-	// public void PHLHLIDCNNN(string KMDDJIEPNMF, int FJABGCFCPMH, string INAMDCCEBOH, string FNOBKBIFBJG) { }
+	public void PHLHLIDCNNN(string KMDDJIEPNMF, int FJABGCFCPMH, string INAMDCCEBOH, string FNOBKBIFBJG)
+	{
+		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
+		FLBFCCIEPNC_InitBaseJson(json, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
+		json["ar_marker_no"] = FJABGCFCPMH;
+		json["ar_session_id"] = KMDDJIEPNMF;
+		json["ar_event_id"] = INAMDCCEBOH;
+		json["ar_marker_id"] = FNOBKBIFBJG;
+		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.PHLHLIDCNNN_56, json, false);
+	}
 
 	// // RVA: 0x914160 Offset: 0x914160 VA: 0x914160
 	public void DNNLEIKNHKL(int DIPKCALNIII, int NHCCINMHEAB, int GOKMANFHFPC, int HHAMIAPINGE, int MJKGDEOKFNK, int NCMCPNPOLEB, string JKJDGDLAIME, int CMJHOGBIOKM, int ADIFCNPMKJH, int DMMKFOLEGKO, int PMJKECBJBGP)

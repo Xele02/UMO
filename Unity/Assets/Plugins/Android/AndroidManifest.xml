@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.UtaMacrossOffline.UtaMacrossOffline" xmlns:tools="http://schemas.android.com/tools" android:installLocation="preferExternal">
   <supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:xlargeScreens="true" android:anyDensity="true" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.CAMERA_OPEN_CLOSE_LISTENER" />
+  <uses-permission android:name="android.permission.SYSTEM_CAMERA" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-feature android:name="android.hardware.camera" android:required="false" />
+  <uses-feature android:name="android.hardware.camera.any" android:required="false" />
+  <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
   <application android:theme="@style/UnityThemeSelector" android:icon="@mipmap/app_icon" android:label="@string/app_name" android:usesCleartextTraffic="true" android:resizeableActivity="false">
-    <activity android:name="com.unity3d.player.UnityPlayerActivity" android:label="@string/app_name">
+    <activity android:name="jp.co.xeen.xeapp.OverrideUnityPlayerNativeActivity" android:label="@string/app_name">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
       <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
     </activity>
+    <provider
+        android:name="androidx.core.content.FileProvider"
+        android:authorities="com.UtaMacrossOffline.UtaMacrossOffline.fileprovider"
+        android:exported="false"
+        android:grantUriPermissions="true">
+        <meta-data
+            android:name="android.support.FILE_PROVIDER_PATHS"
+            android:resource="@xml/filepaths"></meta-data>
+    </provider>
     <receiver
           android:name='jp.co.xeen.xeapp.LocalNotification$Receiver'
           android:process=':remote'>

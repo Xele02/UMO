@@ -118,10 +118,23 @@ namespace XeApp.Game.AR
 				data.enable = fileData.GCKNBNMLCEF[i].PLALNIIBLOF;
 				m_eventTime.Add(data);
 			}
+			// Add Ar time for UMO
+			{
+				EventTime data = new EventTime();
+				data.startTime = 0;
+				data.endTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime() + 3600;
+				data.enable = 2;
+				m_eventTime.Add(data);
+			}
 		}
 
 		// // RVA: 0xBB7C6C Offset: 0xBB7C6C VA: 0xBB7C6C
-		// public string GetStringParam(string key, string noval) { }
+		public string GetStringParam(string key, string noval)
+		{
+			if(!m_stringParam.ContainsKey(key))
+				return noval;
+			return m_stringParam[key].DNJEJEANJGL_Value;
+		}
 
 		// // RVA: 0xBB7D50 Offset: 0xBB7D50 VA: 0xBB7D50
 		public int GetIntParam(string key, int noval)
@@ -135,7 +148,18 @@ namespace XeApp.Game.AR
 		// public bool IsEnableARMode() { }
 
 		// // RVA: 0xBB80BC Offset: 0xBB80BC VA: 0xBB80BC
-		// public List<AREventMasterData.Data> GetEventList(bool isAll = False) { }
+		public List<Data> GetEventList(bool isAll = false)
+		{
+			List<Data> l = new List<Data>();
+			for(int i = 0; i < m_eventList.Count; i++)
+			{
+				if(isAll || m_eventList[i].enable > 1)
+				{
+					l.Add(m_eventList[i]);
+				}
+			}
+			return l;
+		}
 
 		// // RVA: 0xBB820C Offset: 0xBB820C VA: 0xBB820C
 		// public List<AREventMasterData.Campaign> GetEnableCampaigns() { }
@@ -175,7 +199,20 @@ namespace XeApp.Game.AR
 		}
 
 		// // RVA: 0xBB7E4C Offset: 0xBB7E4C VA: 0xBB7E4C
-		// public AREventMasterData.EventTime FindEventTime() { }
+		// RVA: 0x11D4334 Offset: 0x11D4334 VA: 0x11D4334
+		public EventTime FindEventTime()
+		{
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			for(int i = 0; i < m_eventTime.Count; i++)
+			{
+				if(m_eventTime[i].enable == 2)
+				{
+					if(m_eventTime[i].startTime <= time && m_eventTime[i].endTime >= time)
+						return m_eventTime[i];
+				}
+			}
+			return null;
+		}
 
 	}
 }

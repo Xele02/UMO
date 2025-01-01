@@ -1289,6 +1289,8 @@ public class KEHOJEJMGLJ
 	private IEnumerator POMGAIOAGNC_Coroutine_RemoveOldFiles(IMCBBOAFION BHFHGFKBOHH)
 	{
 		//0xE8F728
+		// UMO disable
+		/*
 		bool BEKAMBBOLBO = false;
 		int EPEDIIFEIGB = 0;
 		NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.BNJPAKLNOPA_WorkerThreadQueue.Add(() =>
@@ -1300,6 +1302,8 @@ public class KEHOJEJMGLJ
 		while (!BEKAMBBOLBO)
 			yield return null;
 		Debug.Log("StringLiteral_12227" + EPEDIIFEIGB + "StringLiteral_10089");
+		*/
+		yield return null;
 		BHFHGFKBOHH();
 	}
 

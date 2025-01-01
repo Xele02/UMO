@@ -856,11 +856,63 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BF9508 Offset: 0x1BF9508 VA: 0x1BF9508
-		// public void LoadARMusicAnimationResource(int wavId, int primeId) { }
+		public void LoadARMusicAnimationResource(int wavId, int primeId)
+		{
+			this.StartCoroutineWatched(Co_LoadARMusicAnimationResource(wavId, primeId));
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7368E0 Offset: 0x7368E0 VA: 0x7368E0
 		// // RVA: 0x1BF952C Offset: 0x1BF952C VA: 0x1BF952C
-		// private IEnumerator Co_LoadARMusicAnimationResource(int wavId, int primeId) { }
+		private IEnumerator Co_LoadARMusicAnimationResource(int wavId, int primeId)
+		{
+			StringBuilder bundleName; // 0x1C
+			StringBuilder assetName; // 0x20
+			AssetBundleLoadAllAssetOperationBase operation; // 0x24
+
+			//0x1BFCBF4
+			isLoadedARMusicAnimationResource = false;
+			bundleName = new StringBuilder();
+			assetName = new StringBuilder();
+			bundleName.SetFormat("mc/{0:D4}/ar{1:D3}.xab", wavId, primeId);
+			if(KDLPEDBKMID.HHCJCDFCLOB.EGIFDIFALKK(bundleName.ToString()))
+			{
+				operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+				yield return operation;
+				if(!operation.IsError())
+				{
+					assetName.SetFormat("music_{0:D4}_prime_{1:D3}_body", wavId, primeId);
+					AnimationClip c = operation.GetAsset<AnimationClip>(assetName.ToString());
+					if(c != null)
+					{
+						musicMotionOverrideResource.bodyClip = c;
+					}
+					assetName.SetFormat("music_{0:D4}_prime_{1:D3}_face", wavId, primeId);
+					c = operation.GetAsset<AnimationClip>(assetName.ToString());
+					if(c != null)
+					{
+						musicMotionOverrideResource.faceBlendClip = c;
+					}
+					assetName.SetFormat("music_{0:D4}_prime_{1:D3}_mouth", wavId, primeId);
+					c = operation.GetAsset<AnimationClip>(assetName.ToString());
+					if(c != null)
+					{
+						musicMotionOverrideResource.mouthBlendClip = c;
+					}
+					assetName.SetFormat("music_{0:D4}_prime_{1:D3}_mike", wavId, primeId);
+					c = operation.GetAsset<AnimationClip>(assetName.ToString());
+					if(c != null)
+					{
+						mikeStandAnimationOverrideClip = c;
+					}
+					AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+				}
+			}
+			else
+			{
+				Debug.Log("not found asset : " + bundleName.ToString());
+			}
+			isLoadedARMusicAnimationResource = true;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x736958 Offset: 0x736958 VA: 0x736958
 		// // RVA: 0x1BF960C Offset: 0x1BF960C VA: 0x1BF960C
@@ -1652,23 +1704,139 @@ namespace XeApp.Game.Common
 		// private IEnumerator Co_LoadRivalResultResource(int divaId, int modelId) { }
 
 		// // RVA: 0x1BFA244 Offset: 0x1BFA244 VA: 0x1BFA244
-		// public void LoadARResource(int divaId, int modelId) { }
+		public void LoadARResource(int divaId, int modelId)
+		{
+			if(isLoadedARAnimationResource)
+				return;
+			this.StartCoroutineWatched(Co_LoadARResource(divaId, modelId));
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x736F98 Offset: 0x736F98 VA: 0x736F98
 		// // RVA: 0x1BFA278 Offset: 0x1BFA278 VA: 0x1BFA278
-		// private IEnumerator Co_LoadARResource(int divaId, int modelId) { }
+		private IEnumerator Co_LoadARResource(int divaId, int modelId)
+		{
+			//0x1BFD4C4
+			yield return this.StartCoroutineWatched(Co_LoadARCharacter(divaId));
+			yield return this.StartCoroutineWatched(Co_LoadARFacialClip(divaId));
+			yield return this.StartCoroutineWatched(Co_LoadARUnlockDivaAction(divaId));
+			isLoadedARAnimationResource = true;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x737010 Offset: 0x737010 VA: 0x737010
 		// // RVA: 0x1BFA340 Offset: 0x1BFA340 VA: 0x1BFA340
-		// private IEnumerator Co_LoadARCharacter(int divaId) { }
+		private IEnumerator Co_LoadARCharacter(int divaId)
+		{
+			StringBuilder bundleName; // 0x18
+			StringBuilder assetName; // 0x1C
+			int personalityId; // 0x20
+			AssetBundleLoadAllAssetOperationBase operation; // 0x24
+
+			//0x1BFB57C
+			bundleName = new StringBuilder();
+			assetName = new StringBuilder();
+			menuMotionOverride.talk = new List<MenuMotionOverrideResource.Talk>(2);
+			personalityId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(divaId).FPMGHDKACOF_PersonalityId;
+			bundleName.SetFormat("dv/ty/{0:D3}.xab", personalityId);
+			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+			yield return operation;
+			for(int i = 0; i < 2; i++)
+			{
+				MenuMotionOverrideResource.Talk data = new MenuMotionOverrideResource.Talk();
+				assetName.SetFormat("type_{0:D3}_menu_talk{1:D2}_start_body", personalityId, i + 1);
+				data.begin.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
+				assetName.SetFormat("type_{0:D3}_menu_talk{1:D2}_body", personalityId, i + 1);
+				data.main.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
+				assetName.SetFormat("type_{0:D3}_menu_talk{1:D2}_face", personalityId, i + 1);
+				data.main.faceBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
+				assetName.SetFormat("type_{0:D3}_menu_talk{1:D2}_end_body", personalityId, i + 1);
+				data.end.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
+				menuMotionOverride.talk.Add(data);
+			}
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+			bundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
+			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+			yield return operation;
+			assetName.SetFormat("diva_{0:D3}_menu_idle_body", divaId);
+			menuMotionOverride.idle.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
+			assetName.SetFormat("diva_{0:D3}_menu_idle_face", divaId);
+			menuMotionOverride.idle.faceBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
+			assetName.SetFormat("diva_{0:D3}_menu_idle_mouth", divaId);
+			menuMotionOverride.idle.mouthBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
+			assetName.SetFormat("diva_{0:D3}_menu_voicetable", divaId);
+			menuVoiceTable = operation.GetAsset<MenuDivaVoiceTable>(assetName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x737088 Offset: 0x737088 VA: 0x737088
 		// // RVA: 0x1BFA408 Offset: 0x1BFA408 VA: 0x1BFA408
-		// private IEnumerator Co_LoadARUnlockDivaAction(int divaId) { }
+		private IEnumerator Co_LoadARUnlockDivaAction(int divaId)
+		{
+			StringBuilder divaBundleName; // 0x18
+			StringBuilder assetName; // 0x1C
+			AssetBundleLoadAllAssetOperationBase operationDiva; // 0x20
+
+			//0x1BFD6F8
+			divaBundleName = new StringBuilder();
+			assetName = new StringBuilder();
+			divaBundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
+			operationDiva = AssetBundleManager.LoadAllAssetAsync(divaBundleName.ToString());
+			yield return operationDiva;
+			assetName.SetFormat("diva_{0:D3}_join_start_body", divaId);
+			unlockMotionOverride.start.bodyClip = operationDiva.GetAsset<AnimationClip>(assetName.ToString());
+			assetName.SetFormat("diva_{0:D3}_join_start_face", divaId);
+			unlockMotionOverride.start.faceBlendClip = operationDiva.GetAsset<AnimationClip>(assetName.ToString());
+			assetName.SetFormat("diva_{0:D3}_join_start_mouth", divaId);
+			unlockMotionOverride.start.mouthBlendClip = operationDiva.GetAsset<AnimationClip>(assetName.ToString());
+			assetName.SetFormat("diva_{0:D3}_join_end_loop_body", divaId);
+			unlockMotionOverride.end.bodyClip = operationDiva.GetAsset<AnimationClip>(assetName.ToString());
+			assetName.SetFormat("diva_{0:D3}_join_end_loop_face", divaId);
+			unlockMotionOverride.end.faceBlendClip = operationDiva.GetAsset<AnimationClip>(assetName.ToString());
+			assetName.SetFormat("diva_{0:D3}_join_end_loop_mouth", divaId);
+			unlockMotionOverride.end.mouthBlendClip = operationDiva.GetAsset<AnimationClip>(assetName.ToString());
+			AssetBundleManager.UnloadAssetBundle(divaBundleName.ToString());
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x737100 Offset: 0x737100 VA: 0x737100
 		// // RVA: 0x1BFA4D0 Offset: 0x1BFA4D0 VA: 0x1BFA4D0
-		// private IEnumerator Co_LoadARFacialClip(int divaId) { }
+		private IEnumerator Co_LoadARFacialClip(int divaId)
+		{
+			StringBuilder bundleName; // 0x18
+			StringBuilder assetName; // 0x1C
+			AssetBundleLoadAllAssetOperationBase operation; // 0x20
+			List<string> originalFacesName; // 0x24
+			List<int> overrideFacesId; // 0x28
+
+			//0x1BFC194
+			bundleName = new StringBuilder();
+			assetName = new StringBuilder();
+			bundleName.SetFormat("mn/ft.xab", Array.Empty<object>());
+			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+			yield return operation;
+			assetName.SetFormat("facial_table", Array.Empty<object>());
+			originalFacesName = new List<string>();
+			overrideFacesId = new List<int>();
+			FacialNameDatabase.CreateFacialOverrideList(operation.GetAsset<TextAsset>(assetName.ToString()), divaId, ref originalFacesName, ref overrideFacesId);
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+			bundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
+			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+			yield return operation;
+			commonFacialResource = new List<FacialOverrideResouece>();
+			for(int i = 0; i < divaCommonFacialAnimName.Length; i++)
+			{
+				assetName.SetFormat("diva_{0:D3}_{1}", divaId, divaCommonFacialAnimName[i]);
+				commonFacialResource.Add(new FacialOverrideResouece() { originalName = divaCommonFacialAnimName[i], overrideClip = operation.GetAsset<AnimationClip>(assetName.ToString()) });
+			}
+			specialFacialResource = new List<FacialOverrideResouece>();
+			for(int i = 0; i < originalFacesName.Count; i++)
+			{
+				if(overrideFacesId[i] > 0)
+				{
+					assetName.SetFormat("diva_{0:D3}_{1}", divaId, FacialNameDatabase.ToString(overrideFacesId[i]));
+					specialFacialResource.Add(new FacialOverrideResouece() { originalName = originalFacesName[i], overrideClip = operation.GetAsset<AnimationClip>(assetName.ToString()) });
+				}
+			}
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+		}
 
 		// // RVA: 0x1BFA5BC Offset: 0x1BFA5BC VA: 0x1BFA5BC Slot: 4
 		// public virtual void ChangeCostumeTexture() { }

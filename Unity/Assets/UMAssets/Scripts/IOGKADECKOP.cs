@@ -1369,11 +1369,13 @@ public class IOGKADECKOP
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B42D0 Offset: 0x6B42D0 VA: 0x6B42D0
 	// // RVA: 0xA06AEC Offset: 0xA06AEC VA: 0xA06AEC
+	// RVA: 0x9C67E4 Offset: 0x9C67E4 VA: 0x9C67E4
 	private IEnumerator KOEILOLECCF_Coroutine_StartARMode()
 	{
 		IMMAOANGPNK NOECBNCKIJD;
 
 		//0x140620C
+		//0x9D1F4C
 		string ABJDBPINCIC = "AR";
 		PGIGNJDPCAH.NNOBACMJHDM(PGIGNJDPCAH.FELLIEJEPIJ.JBAIEADLAGH_0);
 		PGIGNJDPCAH.IPJMPBANBPP = true;
@@ -1385,11 +1387,13 @@ public class IOGKADECKOP
 		KEHOJEJMGLJ.HHCJCDFCLOB.OFLDICKPNFD(true, () =>
 		{
 			//0xA08DDC
+			//0x9C8BA8
 			MenuScene.Instance.GotoTitle();
 		});
 		KDLPEDBKMID.HHCJCDFCLOB.OFLDICKPNFD(true, () =>
 		{
 			//0xA08E78
+			//0x9C8C44
 			MenuScene.Instance.GotoTitle();
 		});
 		yield return GameManager.Instance.WaitFadeYielder;
@@ -1425,13 +1429,14 @@ public class IOGKADECKOP
 			yield return null;
 		if(CNAIDEAFAAM)
 		{
-			//LAB_014072d0
+			//LAB_009d347c
 			NOECBNCKIJD = null;
 			//LAB_014072d8
 			DANMJLOBLIE.StartCoroutineWatched(NNPDJBJGBFA_Coroutine_ReturnToTitle());
 			yield break;
 		}
 		FHBJNLFHGPB_SetPercent(20);
+		//Crittersism.SetLogUnhandledExceptionAsCrash(false);
 		int a = SecureLibAPI.isRooted() ? 1 : 0;
 		a |= SecureLibAPI.isEmulator() ? 2 : 0;
 		a |= SecureLibAPI.isDebuggerAttachedJava() ? 4 : 0;
@@ -1439,6 +1444,20 @@ public class IOGKADECKOP
 		if(a != 0)
 		{
 			throw new BOS3LLS6G79("bits=" + a);
+		}
+		//Crittersism.SetLogUnhandledExceptionAsCrash(true);
+		if(SecureLibAPI.isRooted())
+		{
+			/*bool CKHEDJODNIP = false;
+			JHHBAFKMBDL.HHCJCDFCLOB.EOKNIAMKJFB(() =>
+			{
+				Method$IOGKADECKOP.<>c__DisplayClass38_1.AKIAEEPHANC()
+			});
+			while(!CKHEDJODNIP)
+				yield return null;
+			*/
+			//LAB_009d34b0
+			DANMJLOBLIE.StartCoroutineWatched(NNPDJBJGBFA_Coroutine_ReturnToTitle());
 		}
 		BEKAMBBOLBO = false;
 		CNAIDEAFAAM = false;
@@ -1491,6 +1510,44 @@ public class IOGKADECKOP
 		NKGJPJPHLIF.HHCJCDFCLOB.DHMLDAGGKCD = date.Month * 100 + date.Year * 100000 + date.Day;
 		int server_time_auto_update = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("server_time_auto_update", 0);
 		NKGJPJPHLIF.DPCCNOCAHGC = server_time_auto_update == 1;
+		BEKAMBBOLBO = false;
+		CNAIDEAFAAM = false;
+		ARMarkerMasterData.Instance.StartInstall(() =>
+		{
+			//0x9C9C9C
+			BEKAMBBOLBO = true;
+		}, () =>
+		{
+			//0x9C9CA8
+			BEKAMBBOLBO = true;
+			CNAIDEAFAAM = true;
+		});
+		while(!BEKAMBBOLBO)
+			yield return null;
+		if(CNAIDEAFAAM)
+		{
+			//LAB_009d3484
+			DANMJLOBLIE.StartCoroutineWatched(NNPDJBJGBFA_Coroutine_ReturnToTitle());
+		}
+		BEKAMBBOLBO = false;
+		CNAIDEAFAAM = false;
+		NKGJPJPHLIF.HHCJCDFCLOB.NJMOAHNLDBO.Load(() =>
+		{
+			//0x9C9CB4
+			BEKAMBBOLBO = true;
+		}, () =>
+		{
+			//0x9C9CC0
+			BEKAMBBOLBO = true;
+			CNAIDEAFAAM = true;
+		});
+		while(!BEKAMBBOLBO)
+			yield return null;
+		if(CNAIDEAFAAM)
+		{
+			//LAB_009d3484
+			DANMJLOBLIE.StartCoroutineWatched(NNPDJBJGBFA_Coroutine_ReturnToTitle());
+		}
 		bool FBBAOFKBGBA = true;
 		yield return Co.R(IMJGOIOLGIO_Coroutine_Contract(() =>
 		{
@@ -1751,10 +1808,15 @@ public class IOGKADECKOP
 	private void GCGFGMICEGF()
 	{
 		EHKDIJELHAO = false;
-		//EHKDIJELHAO = true; // enable AR
 		OOIBKCCMCAG_HasCustomBg = false;
 		if (AREventMasterData.Instance.IsReady())
 		{
+			AREventMasterData.EventTime ev = AREventMasterData.Instance.FindEventTime();
+			if(ev != null)
+			{
+				EHKDIJELHAO = true;
+				EHKDIJELHAO = UdonLib.AndroidUtils.CheckCameraHardware();
+			}
 			AREventMasterData.Chenge_bg bg = AREventMasterData.Instance.FindChangeBG();
 			if(bg == null)
 				return;

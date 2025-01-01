@@ -3,10 +3,13 @@ namespace UdonLib
 	public class IOSBridge
 	{
         // public static long GetAvailableStorageMB { get; }
-        // public static long GetAvailableStorageKB { get; }
+        public static long GetAvailableStorageKB { get { return 100000000; } } //0xE0B8F0
 
         // // RVA: 0xE0B8C0 Offset: 0xE0B8C0 VA: 0xE0B8C0
-        // public static void PlayShutterSound() { }
+        public static void PlayShutterSound()
+        {
+            return;
+        }
 
         // // RVA: 0xE0B8C4 Offset: 0xE0B8C4 VA: 0xE0B8C4
         // public static void SavePictureIOS(string fname, byte[] bytes) { }
@@ -22,9 +25,6 @@ namespace UdonLib
 
         // // RVA: 0xE0B8E0 Offset: 0xE0B8E0 VA: 0xE0B8E0
         // public static long get_GetAvailableStorageMB() { }
-
-        // // RVA: 0xE0B8F0 Offset: 0xE0B8F0 VA: 0xE0B8F0
-        // public static long get_GetAvailableStorageKB() { }
 
         // // RVA: 0xE0B900 Offset: 0xE0B900 VA: 0xE0B900
         // public static void RedirectSystemSettings() { }
