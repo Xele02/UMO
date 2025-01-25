@@ -703,9 +703,26 @@ class JpStringLiterals
 	public static string UMO_SkillFilterARank { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_SkillFilterARank", "A級"); } }
 	public static string UMO_SkillFilterSRank { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_SkillFilterSRank", "S級"); } }
 	public static string UMO_SkillFilterSSRank { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_SkillFilterSSRank", "SS級"); } }
-}
-
-class JpStringLiterals2 // old 3.1.0
-{
-	public const string StringLiteral_13083 = "\u753B\u50CF\u3092\u30B7\u30A7\u30A2\u3059\u308B\u30A2\u30D7\u30EA\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044\u3002"; //0x03515218
+	public static string UMO_SortDisplayOrder { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_SortDisplayOrder", "表示順"); } }
+	public static string UMO_FilterFavorite { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_FilterFavorite", "お気に入り"); } }
+	public static string UMO_Attribute { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_Attribute", "属性"); } }
+	public static string UMO_Combo { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_Combo", "コンボ"); } }
+	public static string UMO_AchievedReward { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_AchievedReward", "達成報酬"); } }
+	public static string UMO_UnlockStatus { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_UnlockStatus", "楽曲解放状況"); } }
+	public static string UMO_SongTime { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_SongTime", "楽曲時間"); } }
+	public static string UMO_UnitNumber { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_UnitNumber", "ユニットライブ"); } }
+	public static string UMO_Display { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_Display", "表示する"); } }
+	public static string UMO_NoDisplay { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_NoDisplay", "表示しない"); } }
+	public static string UMO_ModelDisplay { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_ModelDisplay", "モデルの表示設定"); } }
+	public static string UMO_BgIllust { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_BgIllust", "イラスト"); } }
+	public static string UMO_BgPlate { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_BgPlate", "プレート"); } }
+	public static string UMO_BgDisplay { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_BgDisplay", "背景の表示設定"); } }
+	public static string UMO_BgLight { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_BgLight", "明るい"); } }
+	public static string UMO_BgDark { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_BgDark", "暗い"); } }
+	public static string UMO_BgBrightness { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_BgBrightness", "背景の明度"); } }
+	public static string UMO_Filter { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_Filter", "フィルター"); } }
+	public static string UMO_Preview { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_Preview", "プレビュー"); } }
+	public static string UMO_Ok { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_Ok", "OK"); } }
+	public static string UMO_Cancel { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_Cancel", "キャンセル"); } }
+	public const string StringLiteral_13083_3_1_0 = "\u753B\u50CF\u3092\u30B7\u30A7\u30A2\u3059\u308B\u30A2\u30D7\u30EA\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044\u3002"; //0x03515218
 }

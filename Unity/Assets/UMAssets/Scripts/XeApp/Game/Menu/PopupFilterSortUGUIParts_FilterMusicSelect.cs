@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEngine.UI;
 
 namespace XeApp.Game.Menu
 {
@@ -22,6 +23,15 @@ namespace XeApp.Game.Menu
 		protected override IEnumerator OnInitialize()
 		{
 			//0x1CA23D8
+			transform.Find("PopupFilterSortUGUIParts_Title02/Title/Text_Title").GetComponent<Text>().text = JpStringLiterals.UMO_SortDisplayOrder;
+			transform.Find("PopupFilterSortUGUIParts_Title02 (1)/Title/Text_Title").GetComponent<Text>().text = JpStringLiterals.UMO_FilterFavorite;
+			transform.Find("PopupFilterSortUGUIParts_Title02 (3)/Title/Text_Title").GetComponent<Text>().text = JpStringLiterals.UMO_Attribute;
+			transform.Find("PopupFilterSortUGUIParts_Title02 (4)/Title/Text_Title").GetComponent<Text>().text = JpStringLiterals.UMO_Combo;
+			transform.Find("PopupFilterSortUGUIParts_Title02 (5)/Title/Text_Title").GetComponent<Text>().text = JpStringLiterals.UMO_AchievedReward;
+			transform.Find("PopupFilterSortUGUIParts_Title02 (6)/Title/Text_Title").GetComponent<Text>().text = JpStringLiterals.UMO_UnlockStatus;
+			transform.Find("PopupFilterSortUGUIParts_Title02 (7)/Title/Text_Title").GetComponent<Text>().text = JpStringLiterals.UMO_SongTime;
+			transform.Find("PopupFilterSortUGUIParts_Title02 (8)/Title/Text_Title").GetComponent<Text>().text = JpStringLiterals.UMO_UnitNumber;
+
 			filterSort.Initialize();
 			filterMusicBookMark.Initialize();
 			filterMusicAttr.Initialize();

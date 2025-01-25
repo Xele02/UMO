@@ -79,6 +79,17 @@ namespace XeApp.Game.Menu
 					MenuScene.Instance.BgControl.HideBgDark();
 				}
 			});
+
+			m_divaToggleGroup.transform.Find("ModelOn/Label").GetComponent<Text>().text = JpStringLiterals.UMO_Display;
+			m_divaToggleGroup.transform.Find("ModelOff/Label").GetComponent<Text>().text = JpStringLiterals.UMO_NoDisplay;
+			m_divaToggleGroup.transform.Find("Title").GetComponent<Text>().text = JpStringLiterals.UMO_ModelDisplay;
+			m_sceneToggleGroup.transform.Find("Illust/Label").GetComponent<Text>().text = JpStringLiterals.UMO_BgIllust;
+			m_sceneToggleGroup.transform.Find("Plate/Label").GetComponent<Text>().text = JpStringLiterals.UMO_BgPlate;
+			m_sceneToggleGroup.transform.Find("Title").GetComponent<Text>().text = JpStringLiterals.UMO_BgDisplay;
+			m_bgDarkToggleGroup.transform.Find("Bright/Label").GetComponent<Text>().text = JpStringLiterals.UMO_BgLight;
+			m_bgDarkToggleGroup.transform.Find("Dark/Label").GetComponent<Text>().text = JpStringLiterals.UMO_BgDark;
+			m_bgDarkToggleGroup.transform.Find("Title").GetComponent<Text>().text = JpStringLiterals.UMO_BgBrightness;
+			m_filterButton.transform.Find("Top/Text").GetComponent<Text>().text = JpStringLiterals.UMO_Filter;
 		}
 
 		//// RVA: 0x9586F0 Offset: 0x9586F0 VA: 0x9586F0

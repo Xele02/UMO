@@ -363,7 +363,7 @@ namespace XeApp.Game.AR
                     {
                         ILCCJNDFFOB.HHCJCDFCLOB.PHLHLIDCNNN(GameManager.Instance.ar_session_id, m_currData.no, m_currData.eventId, m_currData.markerId);
                     }
-                    AndroidUtils.OnShare(m_imageSavedPath, GetSnsMessageOnEvent(0), JpStringLiterals2.StringLiteral_13083);
+                    AndroidUtils.OnShare(m_imageSavedPath, GetSnsMessageOnEvent(0), JpStringLiterals.StringLiteral_13083_3_1_0);
                 }
             }
         }
