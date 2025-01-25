@@ -10,12 +10,15 @@ using System.Text;
 using UnityEditor;
 using UnityEngine;
 using XeApp.Game.Adv;
+using XeApp.Game.AR;
 using XeApp.Game.Common;
 using XeSys;
 
 public class DocusaurusGenerator
 {
     OKGLGHCBCJP_Database Database;
+    ARMarkerMasterData ARMarkerData;
+    AREventMasterData AREventData;
     IIEDOGCMCIE DbArchive;
     string DataPath;
     private MusicTextDatabase musicText;
@@ -24,12 +27,13 @@ public class DocusaurusGenerator
     [MenuItem("Docusaurus/Generate Data")]
     public static void GenerateData()
     {
+        System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
         MNNCBFONAOL.KHEKNNFCAOI_Init();
 
         DocusaurusGenerator generator = new DocusaurusGenerator();
         generator.LoadDatabase();
         generator.Init();
-        //generator.DumpDatabaseData();
+        generator.DumpDatabaseData();
         //generator.DumpTexts();
         //generator.DumpDivaImages();
         //generator.DumpDivaCostumes();
@@ -37,7 +41,7 @@ public class DocusaurusGenerator
         //generator.DumpEventStory();
         //generator.DumpSNS();
         //generator.DumpValkyrieImages();
-        generator.DumpARStamp();
+        //generator.DumpARStamp();
 
         MNNCBFONAOL.PDENBOEFJGE();
     }
@@ -190,6 +194,104 @@ public class DocusaurusGenerator
                     }
                 }
             }
+        } catch(Exception e)
+        {
+            UnityEngine.Debug.LogError(e);
+        }
+
+        try
+        {
+            str = BBGDKLLEPIB.OGCDNCDMLCA_MxDir + "/db/ar_marker.dat";
+            IIEDOGCMCIE tar = new IIEDOGCMCIE();
+
+            Cryptor.DsfdLoader.ILoadRequest request = Cryptor.DsfdLoader.LoadFile(str);
+            if(!request.IsDone)
+            {
+                UnityEngine.Debug.LogError("Not decrypted done");
+                return;
+            }
+
+            byte[] result = request.Result;
+            bool r = BOBCNJIPPJN.AGJJGJCIMKI(result);
+            if(!r)
+            {
+                //ANCJLICGOLP a = DOKOHKJIDBO.HHCJCDFCLOB.IKCAJDOKNOM;
+                int val1 = 17;//a.LPJLEHAJADA("m_0", 0);
+                int val2 = 1;//a.LPJLEHAJADA("m_1", 0);
+                int val3 = 1;//a.LPJLEHAJADA("m_2", 0);
+                int val4 = 683274560;//a.LPJLEHAJADA("m_3", 0);
+                BEEINMBNKNM_Encryption encryption = new BEEINMBNKNM_Encryption();
+                encryption.KHEKNNFCAOI_Init((uint)(val4 + 7));
+                encryption.DGBPHDMEDNP(val1, val2, val3);
+                encryption.FAEFDAJAMCE(result);
+                encryption.AAGCKDHEMFD_GenerateKey();
+            }
+            bool res = tar.KHEKNNFCAOI_Load(request.Result);
+            if(!res)
+            {
+                throw new Exception("Failed to decrypt database");
+            }
+
+            CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File db_file = tar.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File _) => {
+                //0xBBB100
+                return _.OPFGFINHFCE_Name.Contains(string.Format("{0}.bytes", "ar_marker"));
+            });
+            if(db_file != null)
+            {
+                ARMarkerData = new ARMarkerMasterData();
+                //File.WriteAllBytes(Application.dataPath + "/../../Data/db/ar_marker.bytes", db_file.DBBGALAPFGC_Data);
+                ARMarkerData.Initialize(db_file.DBBGALAPFGC_Data);
+            }
+
+        } catch(Exception e)
+        {
+            UnityEngine.Debug.LogError(e);
+        }
+
+        try
+        {
+            str = BBGDKLLEPIB.OGCDNCDMLCA_MxDir + "/db/ar_event.dat";
+            IIEDOGCMCIE tar = new IIEDOGCMCIE();
+
+            Cryptor.DsfdLoader.ILoadRequest request = Cryptor.DsfdLoader.LoadFile(str);
+            if(!request.IsDone)
+            {
+                UnityEngine.Debug.LogError("Not decrypted done");
+                return;
+            }
+
+            byte[] result = request.Result;
+            bool r = BOBCNJIPPJN.AGJJGJCIMKI(result);
+            if(!r)
+            {
+                //ANCJLICGOLP a = DOKOHKJIDBO.HHCJCDFCLOB.IKCAJDOKNOM;
+                int val1 = 17;//a.LPJLEHAJADA("m_0", 0);
+                int val2 = 1;//a.LPJLEHAJADA("m_1", 0);
+                int val3 = 1;//a.LPJLEHAJADA("m_2", 0);
+                int val4 = 683274560;//a.LPJLEHAJADA("m_3", 0);
+                BEEINMBNKNM_Encryption encryption = new BEEINMBNKNM_Encryption();
+                encryption.KHEKNNFCAOI_Init((uint)(val4 + 7));
+                encryption.DGBPHDMEDNP(val1, val2, val3);
+                encryption.FAEFDAJAMCE(result);
+                encryption.AAGCKDHEMFD_GenerateKey();
+            }
+            bool res = tar.KHEKNNFCAOI_Load(request.Result);
+            if(!res)
+            {
+                throw new Exception("Failed to decrypt database");
+            }
+
+            CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File db_file = tar.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File _) => {
+                //0xBBB100
+                return _.OPFGFINHFCE_Name.Contains(string.Format("{0}.bytes", "ar_event"));
+            });
+            if(db_file != null)
+            {
+                AREventData = new AREventMasterData();
+                //File.WriteAllBytes(Application.dataPath + "/../../Data/db/ar_event.bytes", db_file.DBBGALAPFGC_Data);
+                AREventData.Initialize(db_file.DBBGALAPFGC_Data);
+            }
+
         } catch(Exception e)
         {
             UnityEngine.Debug.LogError(e);
@@ -433,6 +535,64 @@ public class DocusaurusGenerator
 
             {
                 EDOHBJAPLPF_JsonData datas = GenerateDataInfo(section);
+                KIJECNFNNDB_JsonWriter writer = new KIJECNFNNDB_JsonWriter();
+                writer.GALFODHMEOL_PrettyPrint = true;
+                datas.EJCOJCGIBNG_ToJson(writer);
+                string fileStr = writer.ToString();
+                if(fileStr == "")
+                    fileStr = "{}";
+                File.WriteAllText(database_path + block + ".data.json", fileStr);
+            }
+        }
+
+        // Dump AR Marker data
+        {
+            string block = "ar_marker";
+            string database_path = DataPath + "database/"+block+"/";
+            CheckPath(database_path);
+
+            db_struct.Add(block);
+
+            {
+                EDOHBJAPLPF_JsonData schema = GenerateStructInfo(ARMarkerData.GetType());
+                KIJECNFNNDB_JsonWriter writer = new KIJECNFNNDB_JsonWriter();
+                writer.GALFODHMEOL_PrettyPrint = true;
+                schema.EJCOJCGIBNG_ToJson(writer);
+                string fileStr = writer.ToString();
+                File.WriteAllText(database_path + block + ".struct.json", fileStr);
+            }
+
+            {
+                EDOHBJAPLPF_JsonData datas = GenerateDataInfo(ARMarkerData);
+                KIJECNFNNDB_JsonWriter writer = new KIJECNFNNDB_JsonWriter();
+                writer.GALFODHMEOL_PrettyPrint = true;
+                datas.EJCOJCGIBNG_ToJson(writer);
+                string fileStr = writer.ToString();
+                if(fileStr == "")
+                    fileStr = "{}";
+                File.WriteAllText(database_path + block + ".data.json", fileStr);
+            }
+        }
+
+        // Dump AR Event data
+        {
+            string block = "ar_event";
+            string database_path = DataPath + "database/"+block+"/";
+            CheckPath(database_path);
+
+            db_struct.Add(block);
+
+            {
+                EDOHBJAPLPF_JsonData schema = GenerateStructInfo(AREventData.GetType());
+                KIJECNFNNDB_JsonWriter writer = new KIJECNFNNDB_JsonWriter();
+                writer.GALFODHMEOL_PrettyPrint = true;
+                schema.EJCOJCGIBNG_ToJson(writer);
+                string fileStr = writer.ToString();
+                File.WriteAllText(database_path + block + ".struct.json", fileStr);
+            }
+
+            {
+                EDOHBJAPLPF_JsonData datas = GenerateDataInfo(AREventData);
                 KIJECNFNNDB_JsonWriter writer = new KIJECNFNNDB_JsonWriter();
                 writer.GALFODHMEOL_PrettyPrint = true;
                 datas.EJCOJCGIBNG_ToJson(writer);

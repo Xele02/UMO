@@ -299,7 +299,7 @@ namespace XeApp.Game.AR
                     if(m_helpPathList.Count - 1 == m_currentImageNo)
                     {
                         HideArrowButton(Direction.Right);
-                        HideArrowButton(Direction.Left);
+                        ShowArrowButton(Direction.Left);
                         return;
                     }
                     ShowArrowButton(Direction.Left);
@@ -321,7 +321,7 @@ namespace XeApp.Game.AR
             }
             else if(dir == Direction.Left)
             {
-                Graphic[] gs = m_rightArrowButton.GetComponentsInChildren<Graphic>(true);
+                Graphic[] gs = m_leftArrowButton.GetComponentsInChildren<Graphic>(true);
                 for(int i = 0; i < gs.Length; i++)
                 {
                     gs[i].enabled = true;
@@ -342,7 +342,7 @@ namespace XeApp.Game.AR
             }
             else if(dir == Direction.Left)
             {
-                Graphic[] gs = m_rightArrowButton.GetComponentsInChildren<Graphic>(true);
+                Graphic[] gs = m_leftArrowButton.GetComponentsInChildren<Graphic>(true);
                 for(int i = 0; i < gs.Length; i++)
                 {
                     gs[i].enabled = false;

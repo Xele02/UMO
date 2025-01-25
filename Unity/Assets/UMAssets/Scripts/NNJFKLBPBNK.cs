@@ -1,6 +1,7 @@
 
 [System.Obsolete("Use NNJFKLBPBNK_SecureString", true)]
 public class NNJFKLBPBNK { }
+[UMOClass()]
 public class NNJFKLBPBNK_SecureString
 {
 	private byte[] DLHDPLPLCAC; // 0x8
@@ -8,6 +9,7 @@ public class NNJFKLBPBNK_SecureString
 	public FENCAJJBLBH.EIAPDOGALDK KGICDMIJGDF = FENCAJJBLBH.EIAPDOGALDK.PNLBHBFOECC_4/*4*/; // 0x10
 	public FENCAJJBLBH NMNHBJIAPGG; // 0x14
 
+    [UMOMember()]
 	public string DNJEJEANJGL_Value { get {
         //JADLONAJDAK 0x1CAED94
         if(DLHDPLPLCAC != null)

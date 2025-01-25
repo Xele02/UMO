@@ -27,7 +27,7 @@ public class ARDebugScreen : MonoBehaviour
     public void Awake()
     {
         m_Instance = this;
-        gameObject.SetActive(false);
+        gameObject.SetActive(RuntimeSettings.CurrentSettings.EnableARDebugInfo);
     }
 
     public void AddText(TextType t, string text)

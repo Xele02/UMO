@@ -20,7 +20,7 @@ namespace XeApp.Game.AR
 		public string name { get { return m_name; } set { m_name = value; } } //0xBBA77C 0xBB6E94
 
 		// // RVA: -1 Offset: -1 Slot: 4
-		protected abstract void Initialize(byte[] bytes);
+		public abstract void Initialize(byte[] bytes);
 
 		// RVA: 0xBBA784 Offset: 0xBBA784 VA: 0xBBA784
 		public bool IsReady()

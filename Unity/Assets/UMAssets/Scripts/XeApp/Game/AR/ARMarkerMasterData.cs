@@ -12,6 +12,7 @@ namespace XeApp.Game.AR
 		Num = 3,
 	}
 
+	[UMOClass(ReaderClass = "LPKFACLGIMO")]
 	public class ARMarkerMasterData : ARMasterData
 	{
 		public class Stamp
@@ -20,36 +21,63 @@ namespace XeApp.Game.AR
 			public bool isHave; // 0xC
 		}
 
+		[UMOClass(ReaderClass = "BBJJIIOLGCE")]
 		public class CueSheetData
 		{
+			[UMOMember]
 			public int no; // 0x8
+			[UMOMember]
 			public int enable; // 0xC
+			[UMOMember]
 			public int markerNo; // 0x10
+			[UMOMember]
 			public string cueSheetId = ""; // 0x14
+			[UMOMember(Display = "Date")]
 			public long soundStart; // 0x18
+			[UMOMember(Display = "Date")]
 			public long soundEnd; // 0x20
 		}
 
+		[UMOClass(ReaderClass = "BMPAGNNCFEC")]
 		public class Data
 		{
+			[UMOMember(ReaderMember = "IKPIDCFOFEA")]
 			public int no; // 0x8
+			[UMOMember(ReaderMember = "PLALNIIBLOF")]
 			public int enable; // 0xC
+			[UMOMember(ReaderMember = "FILGCAEHBAC")]
 			public string markerId = ""; // 0x10
+			[UMOMember(ReaderMember = "DNJLJMKKDNA")]
 			public string eventId = ""; // 0x14
+			[UMOMember(ReaderMember = "BFGNMDGOEID")]
 			public ARDivaPatternId pattern = ARDivaPatternId.None; // 0x18
+			[UMOMember(ReaderMember = "DIPKCALNIII")]
 			public int divaId; // 0x1C
+			[UMOMember(ReaderMember = "BEEAIAAJOHD")]
 			public int costumeId; // 0x20
+			[UMOMember(ReaderMember = "FPLEBCKDCBE|MDLMHEDHPHA|CDKLKKKGAMB")]
 			public Vector3 position = Vector3.zero; // 0x24
+			[UMOMember(ReaderMember = "OAPEIEHMIJD|IMGHEKMHHPC|GJEEMHGGDKD")]
 			public Vector3 rotation = Vector3.zero; // 0x30
+			[UMOMember(ReaderMember = "AELANGEHIPP")]
 			public float imageWidth; // 0x3C
+			[UMOMember(ReaderMember = "EHDNFJOMMJJ")]
 			public float divaHeight; // 0x40
+			[UMOMember(ReaderMember = "LNKDMOBAHDA")]
 			public int stampId; // 0x44
+			[UMOMember(ReaderMember = "LNMKDNMJLOE")]
 			public float angleLimit; // 0x48
+			[UMOMember(ReaderMember = "MPCKINJNGJH", Display = "Date")]
 			public long markerStart; // 0x50
+			[UMOMember(ReaderMember = "JIDKMIHGOHI", Display = "Date")]
 			public long markerEnd; // 0x58
+			[UMOMember(ReaderMember = "APGKOJKNNGP")]
 			public int emblemId; // 0x60
+			[UMOMember(ReaderMember = "DCNFOHHNAEF")]
 			public int trackingType; // 0x64
+			[UMOMember(ReaderMember = "BEHGCAMHJIE")]
 			public ARDivaMotionId motionId; // 0x68
+			[UMOMember()]
 			public List<CueSheetData> cueSheetList; // 0x6C
 			public bool haveFlag; // 0x70
 
@@ -80,6 +108,7 @@ namespace XeApp.Game.AR
 		}
 
 		private static ARMarkerMasterData sm_instance; // 0x0
+		[UMOMember(ReaderMember = "BFKBNEAMHEB")]
 		public List<Data> m_markerList = new List<ARMarkerMasterData.Data>(); // 0x18
 
 		public static ARMarkerMasterData Instance { get {
@@ -95,7 +124,7 @@ namespace XeApp.Game.AR
 		// public static void Release() { }
 
 		// RVA: 0x11D9B14 Offset: 0x11D9B14 VA: 0x11D9B14 Slot: 4
-		protected override void Initialize(byte[] bytes)
+		public override void Initialize(byte[] bytes)
 		{
 			LPKFACLGIMO data = LPKFACLGIMO.HEGEKFMJNCC(bytes);
 			List<CueSheetData> l = new List<CueSheetData>();
@@ -111,8 +140,11 @@ namespace XeApp.Game.AR
 					d.soundStart = array[i].IOCAJMALMLJ;
 					d.soundEnd = array[i].BEBCANGAMAK;
 					// UMO
-					d.soundStart = 0;
-					d.soundEnd = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime() + 360000;
+					if(NKGJPJPHLIF.HHCJCDFCLOB != null)
+					{
+						d.soundStart = 0;
+						d.soundEnd = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime() + 360000;
+					}
 					// UMO
 					l.Add(d);
 				}
@@ -143,8 +175,11 @@ namespace XeApp.Game.AR
 					long.TryParse(array[i].MPCKINJNGJH, out nd.markerStart);
 					long.TryParse(array[i].JIDKMIHGOHI, out nd.markerEnd);
 					// UMO
-					nd.markerStart = 0;
-					nd.markerEnd = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime() + 360000;
+					if(NKGJPJPHLIF.HHCJCDFCLOB != null)
+					{
+						nd.markerStart = 0;
+						nd.markerEnd = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime() + 360000;
+					}
 					// UMO
 					nd.emblemId = array[i].APGKOJKNNGP;
 					nd.trackingType = array[i].DCNFOHHNAEF;

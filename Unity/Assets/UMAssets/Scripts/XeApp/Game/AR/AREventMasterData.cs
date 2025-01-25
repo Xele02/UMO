@@ -2,48 +2,74 @@ using System.Collections.Generic;
 
 namespace XeApp.Game.AR
 {
+	[UMOClass(ReaderClass = "IINMAJAFDIF")]
 	public class AREventMasterData : ARMasterData
 	{
+		[UMOClass()]
 		public class Campaign
 		{
+			[UMOMember(ReaderMember = "DNJLJMKKDNA")]
 			public string eventId = ""; // 0x8
+			[UMOMember(ReaderMember = "KIGNIOGKEGD", Display = "Date")]
 			public long startTime; // 0x10
+			[UMOMember(ReaderMember = "AKCAHAKHIPI", Display = "Date")]
 			public long endTime; // 0x18
+			[UMOMember(ReaderMember = "LCCDKCPBJAK")]
 			public int bannerId; // 0x20
+			[UMOMember(ReaderMember = "LLAGMIDPGFP")]
 			public int imageCount; // 0x24
 		}
 
+		[UMOClass(ReaderClass = "FBPGKNMGGKF")]
 		public class EventTime
 		{
+			[UMOMember(ReaderMember = "JLIPMPMDEHI", Display = "Date")]
 			public long startTime; // 0x8
+			[UMOMember(ReaderMember = "LOPHEKJBJKD", Display = "Date")]
 			public long endTime; // 0x10
+			[UMOMember(ReaderMember = "PLALNIIBLOF")]
 			public int enable; // 0x18
 		}
 
+		[UMOClass(ReaderClass = "LFHPPKNLGLJ")]
 		public class Data
 		{
+			[UMOMember(ReaderMember = "IKPIDCFOFEA")]
 			public int no; // 0x8
+			[UMOMember(ReaderMember = "PLALNIIBLOF")]
 			public int enable; // 0xC
+			[UMOMember(ReaderMember = "DNJLJMKKDNA")]
 			public string eventId = ""; // 0x10
+			[UMOMember(ReaderMember = "OFJIBKAOMKO")]
 			public string eventName = ""; // 0x14
+			[UMOMember()] // ReaderMember = "AMLNJJHJEHE|DJJAKCKDGMA"
 			public string[] snsTemplateTable = new string[2]; // 0x18
+			[UMOMember(ReaderDisplay = "PropagateReader")]
 			public Campaign campaign = new Campaign(); // 0x1C
 
 			// RVA: 0xBB8728 Offset: 0xBB8728 VA: 0xBB8728
 			// public bool CanShowHelp() { }
 		}
 
+		[UMOClass(ReaderClass = "ABNJFHAAANG")]
 		public class Chenge_bg
 		{
+			[UMOMember(ReaderMember = "KBPENAAJPHN", Display = "Date")]
 			public long startTime; // 0x8
+			[UMOMember(ReaderMember = "AKKDBALDNAN", Display = "Date")]
 			public long endTime; // 0x10
+			[UMOMember(ReaderMember = "PLALNIIBLOF")]
 			public int enable; // 0x18
+			[UMOMember(ReaderMember = "OENPCNBFPDA")]
 			public int bgId; // 0x1C
 		}
 
 		private static AREventMasterData sm_instance; // 0x0
+		[UMOMember(ReaderMember = "GHGFEFIAIFC")]
 		private List<Data> m_eventList = new List<Data>(); // 0x18
+		[UMOMember(ReaderMember = "DEJCELHJKHN")]
 		private List<Chenge_bg> m_chengeBg = new List<Chenge_bg>(); // 0x1C
+		[UMOMember(ReaderMember = "GCKNBNMLCEF")]
 		private List<EventTime> m_eventTime = new List<EventTime>(); // 0x20
 		private long m_arStartTime; // 0x28
 		private long m_arEndTime; // 0x30
@@ -57,14 +83,16 @@ namespace XeApp.Game.AR
 			}
 			return sm_instance;
 		} } 
+		[UMOMember()] //ReaderMember = "MHGMDJNOLMI"
 		public Dictionary<string, NNJFKLBPBNK_SecureString> m_stringParam { get; private set; } // 0x38
+		[UMOMember()] // ReaderMember = "BHGDNGHDDAC"
 		public Dictionary<string, CEBFFLDKAEC_SecureInt> m_intParam { get; private set; } // 0x3C
 
 		// // RVA: 0xBB6F34 Offset: 0xBB6F34 VA: 0xBB6F34
 		// public static void Release() { }
 
 		// // RVA: 0xBB6FC4 Offset: 0xBB6FC4 VA: 0xBB6FC4 Slot: 4
-		protected override void Initialize(byte[] bytes)
+		public override void Initialize(byte[] bytes)
 		{
 			IINMAJAFDIF fileData = IINMAJAFDIF.HEGEKFMJNCC(bytes);
 			m_eventList.Clear();
@@ -119,6 +147,7 @@ namespace XeApp.Game.AR
 				m_eventTime.Add(data);
 			}
 			// Add Ar time for UMO
+			if(NKGJPJPHLIF.HHCJCDFCLOB != null)
 			{
 				EventTime data = new EventTime();
 				data.startTime = 0;

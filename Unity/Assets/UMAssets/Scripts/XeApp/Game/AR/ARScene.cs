@@ -292,6 +292,7 @@ namespace XeApp.Game.AR
                 }
             }
             ILCCJNDFFOB.HHCJCDFCLOB.BGJDJBOCLEA(GameManager.Instance.ar_session_id, 1, "");
+            m_isSetup = true;
             this.StartCoroutineWatched(Co_CheckError());
             GameManager.Instance.AddPushBackButtonHandler(OnShutdown);
         }

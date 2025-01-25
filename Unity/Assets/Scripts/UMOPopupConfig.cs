@@ -229,6 +229,14 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
             RuntimeSettings.CurrentSettings.UseChineseFont = b;
         });
         
+        AddToggleButton(ref y, "Debug : Enable AR Debug info", () =>
+        {
+            return RuntimeSettings.CurrentSettings.EnableARDebugInfo;
+        }, (bool b) =>
+        {
+            RuntimeSettings.CurrentSettings.EnableARDebugInfo = b;
+        });
+        
         #if UNITY_ANDROID
         AddToggleButton(ref y, "Debug : Disable Cryware low latency", () =>
         {

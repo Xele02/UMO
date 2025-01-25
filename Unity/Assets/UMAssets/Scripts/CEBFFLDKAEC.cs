@@ -1,6 +1,7 @@
 
 [System.Obsolete("Use CEBFFLDKAEC_SecureInt", true)]
 public class CEBFFLDKAEC { }
+[UMOClass()]
 public class CEBFFLDKAEC_SecureInt
 {
 	private int IPKONDLIDHC; // 0x8
@@ -10,6 +11,7 @@ public class CEBFFLDKAEC_SecureInt
 	public FENCAJJBLBH.EIAPDOGALDK KGICDMIJGDF = FENCAJJBLBH.EIAPDOGALDK.PNLBHBFOECC_4/*4*/; // 0x18
 	public FENCAJJBLBH NMNHBJIAPGG; // 0x1C
 
+	[UMOMember()]
 	public int DNJEJEANJGL_Value { get{
 		// JADLONAJDAK 0x12B124C
         return ENOBDCFHELD ^ DLHDPLPLCAC;
