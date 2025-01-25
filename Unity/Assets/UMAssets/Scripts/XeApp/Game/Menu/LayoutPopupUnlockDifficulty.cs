@@ -162,7 +162,7 @@ namespace XeApp.Game.Menu
 					{
 						int idx = i;
 						if (difficulty6LineBit > 0)
-							idx += 4;
+							idx += 3;
 						m_layoutDifficulty.StartChildrenAnimGoStop((idx + 1).ToString("D2"));
 						break;
 					}
