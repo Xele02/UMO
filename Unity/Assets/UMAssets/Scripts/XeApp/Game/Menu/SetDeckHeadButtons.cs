@@ -82,6 +82,7 @@ namespace XeApp.Game.Menu
 					if (OnClickAutoSettingButton != null)
 						OnClickAutoSettingButton();
 				});
+				m_autoSettingButton.transform.Find("All/Top/Text_Name").GetComponent<Text>().text = JpStringLiterals.StringLiteral_20864;
 			}
 			if(m_unitSetButton != null)
 			{
@@ -91,6 +92,7 @@ namespace XeApp.Game.Menu
 					if (OnClickUnitSetButton != null)
 						OnClickUnitSetButton();
 				});
+				m_unitSetButton.transform.Find("All/Top/Text_Name").GetComponent<Text>().text = JpStringLiterals.StringLiteral_19612;
 			}
 			if(m_prismButton != null)
 			{
@@ -100,6 +102,7 @@ namespace XeApp.Game.Menu
 					if (OnClickPrismButton != null)
 						OnClickPrismButton();
 				});
+				m_prismButtonColor.transform.Find("Text_Name").GetComponent<Text>().text = JpStringLiterals.UMO_Prism;
 			}
 			if(m_unitButton != null)
 			{
@@ -109,6 +112,7 @@ namespace XeApp.Game.Menu
 					if (OnClickUnitButton != null)
 						OnClickUnitButton();
 				});
+				m_unitButton.transform.Find("All/Top/Text_Name").GetComponent<Text>().text = JpStringLiterals.UMO_Group;
 			}
 			if(m_settingButton != null)
 			{

@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 using XeApp.Game.Common;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -27,6 +29,7 @@ namespace XeApp.Game.Menu
 					if (OnClickCloseButton != null)
 						OnClickCloseButton();
 				});
+				m_closeButton.transform.Find("All/Top/Text_Name").GetComponent<Text>().text = MessageManager.Instance.GetMessage("common", "popup_account_management_text010");
 			}
 		}
 	}

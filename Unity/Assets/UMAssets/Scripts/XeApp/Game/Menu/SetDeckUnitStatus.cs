@@ -99,6 +99,8 @@ namespace XeApp.Game.Menu
 					if (OnClickCheckStatusButton != null)
 						OnClickCheckStatusButton();
 				});
+				m_checkStatusButton.transform.Find("All/Top/Text_Name_Normal").GetComponent<Text>().text = JpStringLiterals.UMO_Detail;
+				m_checkStatusButton.transform.Find("All/Top/Text_Name_Display").GetComponent<Text>().text = JpStringLiterals.UMO_Detail;
 			}
 			if(m_dispTypeButton != null)
 			{
@@ -108,6 +110,7 @@ namespace XeApp.Game.Menu
 					if (OnClickDispTypeButton != null)
 						OnClickDispTypeButton();
 				});
+				m_dispTypeButton.transform.Find("All/Top/Text_Name").GetComponent<Text>().text = JpStringLiterals.UMO_DisplaySwitch;
 			}
 		}
 
