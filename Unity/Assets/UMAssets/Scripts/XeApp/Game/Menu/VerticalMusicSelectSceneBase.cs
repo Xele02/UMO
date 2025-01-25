@@ -1659,7 +1659,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xAC37D8 Offset: 0xAC37D8 VA: 0xAC37D8
 		protected bool CanDoUnitDanceFocus(bool line6Mode = false)
 		{
-			if (!RuntimeSettings.CurrentSettings.ForceTutoSkip && !GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.INEAGJMJLFG_TutorialAlreadyFlags.ODKIHPBEOEC_IsTrue(48))
+			if (RuntimeSettings.CurrentSettings.ForceTutoSkip || GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.INEAGJMJLFG_TutorialAlreadyFlags.ODKIHPBEOEC_IsTrue(48))
 				return false;
 			return IsEnableUnitDance(line6Mode);
 		}
