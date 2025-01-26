@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -87,7 +88,53 @@ namespace XeApp.Game.Common
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7361F4 Offset: 0x7361F4 VA: 0x7361F4
 		//								// RVA: 0xE68ACC Offset: 0xE68ACC VA: 0xE68ACC
-		//public IEnumerator Co_LoadFacialClip(DivaResource.MenuFacialType type) { }
+		public IEnumerator Co_LoadFacialClip(DivaResource.MenuFacialType type)
+		{
+			AssetBundleLoadAllAssetOperationBase operation;
+			List<string> originalFacesName;
+			List<int> overrideFacesId;
+
+			//0xE6ADAC
+			ReleaseFacial();
+			if(commonFacialResource == null)
+				commonFacialResource = new List<FacialOverrideResouece>();
+			if(specialFacialResource == null)
+				specialFacialResource = new List<FacialOverrideResouece>();
+			if(type < MenuFacialType.Result)
+			{
+				bundleName.SetFormat("mn/ft.xab", Array.Empty<object>());
+			}
+			else
+			{
+				bundleName.SetFormat("re/ft.xab", Array.Empty<object>());
+			}
+			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+			yield return operation;
+			assetName.SetFormat("facial_table", Array.Empty<object>());
+			TextAsset facialTableAsset = operation.GetAsset<TextAsset>(assetName.ToString());
+			originalFacesName = new List<string>();
+			overrideFacesId = new List<int>();
+			FacialNameDatabase.CreateFacialOverrideList(facialTableAsset, m_loadedDivaId, ref originalFacesName, ref overrideFacesId);
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+			bundleName.SetFormat("dv/ca/{0:D3}.xab", m_loadedDivaId);
+			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
+			yield return operation;
+			for(int i = 0; i < DivaCommonFacialAnimNames.Length; i++)
+			{
+				assetName.SetFormat("diva_{0:D3}_{1}", m_loadedDivaId, DivaCommonFacialAnimNames[i]);
+				commonFacialResource.Add(new FacialOverrideResouece() { originalName = DivaCommonFacialAnimNames[i], overrideClip = operation.GetAsset<AnimationClip>(assetName.ToString()) });
+			}
+			specialFacialResource = new List<FacialOverrideResouece>();
+			for(int i = 0; i < originalFacesName.Count; i++)
+			{
+				if(overrideFacesId[i] > 0)
+				{
+					assetName.SetFormat("diva_{0:D3}_{1}", m_loadedDivaId, FacialNameDatabase.ToString(overrideFacesId[i]));
+					specialFacialResource.Add(new FacialOverrideResouece() { originalName = originalFacesName[i], overrideClip = operation.GetAsset<AnimationClip>(assetName.ToString()) });
+				}
+			}
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+		}
 
 		//// RVA: 0xE68B94 Offset: 0xE68B94 VA: 0xE68B94
 		private void ReleaseFacial()
@@ -191,7 +238,7 @@ namespace XeApp.Game.Common
 			if (cosMaster.GLEEPAFMPLO_HasTextureBundle)
 			{
 				mtlList.Clear();
-				operation.ForEach((Object obj) =>
+				operation.ForEach((UnityEngine.Object obj) =>
 				{
 					//0xE69244
 					if(obj is Material)
@@ -211,7 +258,7 @@ namespace XeApp.Game.Common
 					yield return Co.R(operation);
 
 					List<Texture> list = new List<Texture>();
-					operation.ForEach((Object obj) =>
+					operation.ForEach((UnityEngine.Object obj) =>
 					{
 						//0xE693BC
 						if(obj is Texture)

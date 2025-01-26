@@ -397,6 +397,7 @@ namespace XeApp.Game.Menu
 			voicePlayIndex = 0;
 			divaResource.Initialize(divaId);
 			yield return Co.R(divaResource.Co_LoadBasicResource());
+			yield return Co.R(divaResource.Co_LoadFacialClip(DivaResource.MenuFacialType.Costume));
 			yield return Co.R(divaResource.Co_LoadMotion());
 			while (isWaitLoadCueSheet)
 				yield return null;
