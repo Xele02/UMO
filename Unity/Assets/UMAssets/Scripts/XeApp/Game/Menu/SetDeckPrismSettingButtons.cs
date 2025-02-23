@@ -2,6 +2,7 @@ using UnityEngine;
 using XeApp.Game.Common;
 using System;
 using mcrs;
+using UnityEngine.UI;
 
 namespace XeApp.Game.Menu
 {
@@ -59,6 +60,14 @@ namespace XeApp.Game.Menu
 					//0xA7405C
 					OnClickPrismButtonFunc();
 				});
+				Text t = m_prismButtonObject.transform.Find("Text_Name").GetComponent<Text>();
+				t.text = JpStringLiterals.UMO_PrismOn;
+				if(RuntimeSettings.CurrentSettings.Language != "jp")
+				{
+					t.lineSpacing = 0.6f;
+					t.resizeTextForBestFit = true;
+					t.resizeTextMaxSize = t.fontSize;
+				}
 			}
 			if(m_valkyrieModeButton != null)
 			{
@@ -67,6 +76,14 @@ namespace XeApp.Game.Menu
 					//0xA74060
 					OnClickValkyrieModeButtonFunc();
 				});
+				Text t = m_valkyrieModeButtonObject.transform.Find("Text_Name").GetComponent<Text>();
+				t.text = JpStringLiterals.UMO_ValkOn;
+				if(RuntimeSettings.CurrentSettings.Language != "jp")
+				{
+					t.lineSpacing = 0.6f;
+					t.resizeTextForBestFit = true;
+					t.resizeTextMaxSize = t.fontSize;
+				}
 			}
 			if(m_notesButton != null)
 			{
@@ -75,6 +92,15 @@ namespace XeApp.Game.Menu
 					//0xA74064
 					OnClickNotesButtonFunc();
 				});
+				Text t = m_notesButtonObject.transform.Find("Text_Name").GetComponent<Text>();
+				t.text = JpStringLiterals.UMO_NotesOn;
+				if(RuntimeSettings.CurrentSettings.Language != "jp")
+				{
+					t.lineSpacing = 0.6f;
+					t.resizeTextForBestFit = true;
+					t.resizeTextMaxSize = t.fontSize;
+					t.rectTransform.sizeDelta = new Vector2(140, t.rectTransform.sizeDelta.y);
+				}
 			}
 			if(m_divaSpModeButton != null)
 			{
@@ -83,6 +109,14 @@ namespace XeApp.Game.Menu
 					//0xA74068
 					OnClickDivaSpModeButtonFunc();
 				});
+				Text t = m_divaSpModeButtonObject.transform.Find("Text_Name").GetComponent<Text>();
+				t.text = JpStringLiterals.UMO_DivaSpOn;
+				if(RuntimeSettings.CurrentSettings.Language != "jp")
+				{
+					t.lineSpacing = 0.6f;
+					t.resizeTextForBestFit = true;
+					t.resizeTextMaxSize = t.fontSize;
+				}
 			}
 			if(m_originalSettingButton != null)
 			{
@@ -92,6 +126,12 @@ namespace XeApp.Game.Menu
 					if (OnClickOriginalSettingButton != null)
 						OnClickOriginalSettingButton();
 				});
+				Text t = m_originalSettingButton.transform.Find("All/Top/Text_Name").GetComponent<Text>();
+				t.text = JpStringLiterals.UMO_OriginSetting;
+				if(RuntimeSettings.CurrentSettings.Language != "jp")
+				{
+					t.lineSpacing = 0.6f;
+				}
 			}
 		}
 
