@@ -728,5 +728,10 @@ class JpStringLiterals
 	public static string UMO_DisplaySwitch { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_DisplaySwitch", "表示切替"); } }
 	public static string UMO_Prism { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_Prism", "超時空プリズム"); } }
 	public static string UMO_Group { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_Group", "ユニット編成"); } }
+	public static string UMO_PrismOn { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_PrismOn", "超時空プリズム ON"); } }
+	public static string UMO_ValkOn { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_ValkOn", "バルキリーモード ON"); } }
+	public static string UMO_NotesOn { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_NotesOn", "ノーツ表示 ON"); } }
+	public static string UMO_DivaSpOn { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_DivaSpOn", "超歌姫モード ON"); } }
+	public static string UMO_OriginSetting { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_OriginSetting", "スタンダード編成"); } }
 	public const string StringLiteral_13083_3_1_0 = "\u753B\u50CF\u3092\u30B7\u30A7\u30A2\u3059\u308B\u30A2\u30D7\u30EA\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044\u3002"; //0x03515218
 }
