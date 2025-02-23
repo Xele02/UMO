@@ -955,7 +955,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 		for(int i = 0; i < evts.Count; i++)
 		{
 			evts[i].HCDGELDHFHB_UpdateStatus(JHNMKKNEENE);
-			if (evts[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD.FFLKPBPBPEP && evts[i].NGOFCFJHOMI_Status <= BELFNAHNMDL)
+			if (evts[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD.FFLKPBPBPEP_1 && evts[i].NGOFCFJHOMI_Status <= BELFNAHNMDL)
 				res.Add(evts[i]);
 		}
 		return res;
@@ -978,15 +978,15 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 		IKDICBBFBMI_EventBase data = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI_6, false);
 		if(data != null)
 		{
-			for(int i = 0; i < data.HEACCHAKMFG().Count; i++)
+			for(int i = 0; i < data.HEACCHAKMFG_GetMusicsList().Count; i++)
 			{
-				int a1 = data.HEACCHAKMFG()[i];
+				int a1 = data.HEACCHAKMFG_GetMusicsList()[i];
 				IBJAKJJICBC ib = new IBJAKJJICBC();
 				ib.JBOHCKEIHKI(a1, data.HOOBCIIOCJD_GetEndTime(a1), data.PJLNJJIBFBN, data.PGIIDPEGGPI_EventId);
 				ib.LGIGMPBHJCI = true;
 				ib.OGHOPBAKEFE = true;
 				ib.NJDCMCDEAPK_End = data.HOOBCIIOCJD_GetEndTime(a1);
-				ib.NNJNNCGGKMC = data.GIDDKGMPIOK(a1);
+				ib.NNJNNCGGKMC = data.GIDDKGMPIOK_HasPlayableSong(a1);
 				res.Add(ib);
 			}
 		}
@@ -1003,7 +1003,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 				AMLGMLNGMFB_EventAprilFool af = ldata[i] as AMLGMLNGMFB_EventAprilFool;
 				if(af.NDIILFIFCDL_GetMinigameId() < 1)
 				{
-					List<int> l = af.HEACCHAKMFG();
+					List<int> l = af.HEACCHAKMFG_GetMusicsList();
 					if(l != null)
 					{
 						for(int j = 0; j < l.Count; j++)
@@ -1014,7 +1014,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 							data2.NJDCMCDEAPK_End = af.HOOBCIIOCJD_GetEndTime(l[i]);
 							data2.LEBDMNIGOJB_IsScoreEvent = false;
 							data2.FGKMJHKLGLD = true;
-							data2.NNJNNCGGKMC = af.GIDDKGMPIOK(l[i]);
+							data2.NNJNNCGGKMC = af.GIDDKGMPIOK_HasPlayableSong(l[i]);
 							data2.OGHOPBAKEFE = true;
 							KEODKEGFDLD_FreeMusicInfo m = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(l[i]);
 							EONOEHOKBEB_Music m2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(l[i], m.DLAEJOBELBH_MusicId);

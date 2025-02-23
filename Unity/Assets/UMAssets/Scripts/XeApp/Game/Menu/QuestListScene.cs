@@ -284,7 +284,7 @@ namespace XeApp.Game.Menu
 			//0x9D8884
 			achievementsKeys.Clear();
 			clearQuestIds.Clear();
-			quest = controller.AGLILDLEFDK;
+			quest = controller.AGLILDLEFDK_Missions;
 			for(int i = 0; i < quest.Count; i++)
 			{
 				if(controller.GBADILEHLGC_GetStatus(quest[i].PPFNGGCBJKC_Id) == 2)
@@ -386,7 +386,7 @@ namespace XeApp.Game.Menu
 					controller.FHGEJBKNBLP(clearQuestIds);
 					for(int i = 0; i < clearQuestIds.Count; i++)
 					{
-						controller.OLDFFDMPEBM[clearQuestIds[i] - 1].EALOBDHOCHP_Stat = 3;
+						controller.OLDFFDMPEBM_Quests[clearQuestIds[i] - 1].EALOBDHOCHP_Stat = 3;
 					}
 				}
 			}

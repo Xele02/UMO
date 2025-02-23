@@ -6,8 +6,8 @@ public abstract class DIHHCBACKGG_DbSection
 	public static int IEFOPDOOLOK_MasterVersion = 1; // 0x0
 	public int LMHMIIKCGPE; // 0xC
 
-	public virtual string JIKKNHIAEKG_BlockName { get; set; } // 0x8 HIPHMHKCJOI  // KLGJBKFAOGN // FEENLLLIMHM
-	// public virtual int GLOLECOPKDM { get; set; } // 0x10 FKLFBFJJHPF // FPNGGOKOJHF // PMJJHGPMLBN
+	public virtual string JIKKNHIAEKG_BlockName { get; set; } // 0x8 HIPHMHKCJOI  // KLGJBKFAOGN // FEENLLLIMHM  Slot: 4 / 5
+	// public virtual int GLOLECOPKDM { get; set; } // 0x10 FKLFBFJJHPF // FPNGGOKOJHF // PMJJHGPMLBN  Slot: 6 / 7
 	public bool LNIMEIMBCMF { get; set; } // 0x14 FELOLNHPBOI  // // JCGFCHCLKAH // HNHIPLGADIF
 	public string HDIDJNCGICK_LoadError { get; set; } // 0x18 AEDHAENECGN // BILFANLLKPJ // CELPMALCAHG
 	public uint HHPOFCILDGN { get; set; } // 0x1C LGLBKNBFCIO // ACELOLOGDLM // MNDHNBBFJIB

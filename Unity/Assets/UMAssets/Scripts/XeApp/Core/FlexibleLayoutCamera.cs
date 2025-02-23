@@ -164,7 +164,11 @@ namespace XeApp.Core
 		}
 
 		//// RVA: 0x1D711C4 Offset: 0x1D711C4 VA: 0x1D711C4
-		//public void SetEnable() { }
+		public void SetEnable()
+		{
+			FlexibleAspectProcess();
+			FlexibleFovProcess();
+		}
 
 		//// RVA: 0x1D711E0 Offset: 0x1D711E0 VA: 0x1D711E0
 		public float GetDefaultFov(int cameraListIndex)

@@ -54,7 +54,12 @@ namespace XeApp.Game.Menu
 		private bool isInTutorial { get { return Database.Instance.gameSetup.musicInfo.isTutorialOne || Database.Instance.gameSetup.musicInfo.isTutorialTwo; } } //0xB5F71C
 
 		// // RVA: 0xB5D06C Offset: 0xB5D06C VA: 0xB5D06C
-		// public ResultDivaControl TransferDivaControl() { }
+		public ResultDivaControl TransferDivaControl()
+		{
+			ResultDivaControl ctrl = divaControl;
+			divaControl = null;
+			return ctrl;
+		}
 
 		// RVA: 0xB5F7F4 Offset: 0xB5F7F4 VA: 0xB5F7F4
 		private void Awake()
@@ -337,7 +342,7 @@ namespace XeApp.Game.Menu
 				//0xB617D0
 				done = true;
 			};
-			layoutOkayButton.StartBeginAnim();
+			layoutOkayButton.StartBeginAnim(true);
 			while(!done)
 				yield return null;
 			isShowingGuide = true;

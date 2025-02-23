@@ -371,7 +371,7 @@ namespace XeApp.Game.MusicSelect
 			for(int i = 0; i < list.Count; i++)
 			{
 				list[i].HCDGELDHFHB_UpdateStatus(currentTime);
-				if(list[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD.FFLKPBPBPEP && list[i].NGOFCFJHOMI_Status <= term)
+				if(list[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD.FFLKPBPBPEP_1 && list[i].NGOFCFJHOMI_Status <= term)
 				{
 					res.Add(list[i]);
 				}

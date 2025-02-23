@@ -1102,9 +1102,9 @@ namespace XeApp.Game.Menu
             IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(m_balloonLeadData.EKANGPODCEP);
 			if(ev == null)
 				return;
-			int a1 = ev.CAKEOPLJDAF;
+			int a1 = ev.CAKEOPLJDAF_EndAdventureId;
 			if(m_balloonLeadData.CICPBBKEBNJ == PLADCDJLOBE.OCMHGKIFNHP.JFEDIMKFDNH_1)
-				a1 = ev.GFIBLLLHMPD_AdventureId;
+				a1 = ev.GFIBLLLHMPD_StartAdventureId;
 			AdvSetupParam param = new AdvSetupParam();
 			param.eventUniqueId = ev.PGIIDPEGGPI_EventId;
 			GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(a1);
@@ -1152,7 +1152,7 @@ namespace XeApp.Game.Menu
 					}
 					else
 					{
-						id = ev.GFIBLLLHMPD_AdventureId;
+						id = ev.GFIBLLLHMPD_StartAdventureId;
 					}
                     GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(id);
 					if(adv != null)
@@ -2731,7 +2731,7 @@ namespace XeApp.Game.Menu
 
 			//0x13D9054
 			m_isCheckEventReward = true;
-            IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.DDEODFNANDO/*8*/, false);
+            IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.DDEODFNANDO_8/*8*/, false);
 			if(ev != null && ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.MKKOHBGHADL_2/*2*/)
 			{
 				TodoLogger.LogError(TodoLogger.Event_Unknwown_2, "Coroutine_EventReward");
@@ -2746,7 +2746,7 @@ namespace XeApp.Game.Menu
 				long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 				eventController = eventControlers[i];
 				eventController.HCDGELDHFHB_UpdateStatus(time);
-				if(eventController.NGOFCFJHOMI_Status == KGCNCBOKCBA.GNENJEHKMHD.DDEODFNANDO/*8*/)
+				if(eventController.NGOFCFJHOMI_Status == KGCNCBOKCBA.GNENJEHKMHD.DDEODFNANDO_8/*8*/)
 				{
 					rankingNum = eventController.NGIHFKHOJOK(false);
 					for(n = 0; n < rankingNum; n++)

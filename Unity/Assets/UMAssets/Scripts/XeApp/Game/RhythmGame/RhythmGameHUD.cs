@@ -1242,10 +1242,16 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDD267C Offset: 0xDD267C VA: 0xDD267C Slot: 90
-		// public void SetRivalDivaId(int divaId) { }
+		public void SetRivalDivaId(int divaId)
+		{
+			m_battleResult.SetRivalDivaId(divaId);
+		}
 
 		// // RVA: 0xDD26B0 Offset: 0xDD26B0 VA: 0xDD26B0 Slot: 91
-		// public void ShowBattleResult(bool isPlayerWin) { }
+		public void ShowBattleResult(bool isPlayerWin)
+		{
+			m_battleResult.SetResult(isPlayerWin);
+		}
 
 		// // RVA: 0xDD26E4 Offset: 0xDD26E4 VA: 0xDD26E4 Slot: 92
 		public bool IsWarmupEnd()

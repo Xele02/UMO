@@ -1568,11 +1568,11 @@ namespace XeApp.Game.Menu
                 IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(eventId);
 				if(ev != null && ev.FBLGGLDPFDF())
 				{
-					GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(ev.GFIBLLLHMPD_AdventureId);
+					GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(ev.GFIBLLLHMPD_StartAdventureId);
 					if(dbAdv != null)
 					{
-						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetViewed(ev.GFIBLLLHMPD_AdventureId);
-						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(ev.GFIBLLLHMPD_AdventureId,  OAGBCBBHMPF.DKAMMIHBINF.IDINJDEBPKP_6);
+						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetViewed(ev.GFIBLLLHMPD_StartAdventureId);
+						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(ev.GFIBLLLHMPD_StartAdventureId,  OAGBCBBHMPF.DKAMMIHBINF.IDINJDEBPKP_6);
 						Database.Instance.advSetup.Setup(dbAdv.KKPPFAHFOJI_FileId);
 						Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTMUSICSELECT, new AdvSetupParam());
 						MenuScene.Instance.GotoAdventure();
@@ -1592,7 +1592,24 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xACC274 Offset: 0xACC274 VA: 0xACC274
 		protected void GotoEventBattle(int eventId)
 		{
-			TodoLogger.LogError(TodoLogger.EventBattle_3, "GotoEventBattle");
+			if(eventId > 0)
+			{
+				IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(eventId);
+				if(ev != null && ev.FBLGGLDPFDF())
+				{
+					GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(ev.GFIBLLLHMPD_StartAdventureId);
+					if(adv != null)
+					{
+						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetViewed(ev.GFIBLLLHMPD_StartAdventureId);
+						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(ev.GFIBLLLHMPD_StartAdventureId, OAGBCBBHMPF.DKAMMIHBINF.IDINJDEBPKP_6);
+						Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
+						Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTBATTLE, new AdvSetupParam() { eventUniqueId = eventId });
+						MenuScene.Instance.GotoAdventure(false);
+						return;
+					}
+				}
+			}
+			MenuScene.Instance.Mount(TransitionUniqueId.EVENTBATTLE, new EventMusicSelectSceneArgs(eventId, isLine6Mode, false), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 		}
 
 		// // RVA: 0xACC6D8 Offset: 0xACC6D8 VA: 0xACC6D8

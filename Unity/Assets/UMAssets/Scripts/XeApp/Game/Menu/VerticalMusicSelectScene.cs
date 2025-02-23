@@ -493,11 +493,11 @@ namespace XeApp.Game.Menu
 			if (!m_showScoreRankingPopup)
 				yield break;
 			m_showScoreRankingPopup = false;
-			if(m_scoreEventCtrl.CDINKAANIAA[0] < 1)
+			if(m_scoreEventCtrl.CDINKAANIAA_Rank[0] < 1)
 				yield break;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			bool isClosed = false;
-			PopupWindowManager.Show(PopupWindowManager.CrateTextContent("", SizeType.SSmall, string.Format(bk.GetMessageByLabel("popup_event_score_my_rank_msg"), m_scoreEventCtrl.CDINKAANIAA[0]), new ButtonInfo[1]
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent("", SizeType.SSmall, string.Format(bk.GetMessageByLabel("popup_event_score_my_rank_msg"), m_scoreEventCtrl.CDINKAANIAA_Rank[0]), new ButtonInfo[1]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 			}, false, false), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
@@ -1054,7 +1054,7 @@ namespace XeApp.Game.Menu
 						if(ev.PIBDBIKJKLD_CanPickup())
 						{
 							m_musicSelectUISapporter.isLine6Mode = false;
-							List<int> l = ev.HEACCHAKMFG();
+							List<int> l = ev.HEACCHAKMFG_GetMusicsList();
 							if(l.Count > 0)
 							{
 								for(int i = 0; i < musicListCount; i++)

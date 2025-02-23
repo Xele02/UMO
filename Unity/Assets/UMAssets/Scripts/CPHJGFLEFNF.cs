@@ -43,5 +43,5 @@ public class CPHJGFLEFNF
 	public int FCFICFMIHLI_TouchedCenterLiveSkill; // 0xA4
 	public int DHMCFAMCPFK; // 0xA8
 	public int GFCBHIAOCMC_UtaRate; // 0xAC
-	public int CAOHBKEIGDM; // 0xB0
+	public int CAOHBKEIGDM_UseLiveSkip; // 0xB0
 }

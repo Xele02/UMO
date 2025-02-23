@@ -30,7 +30,10 @@ namespace XeApp.Game.Common
 		}
 
 		// RVA: 0x1391CA4 Offset: 0x1391CA4 VA: 0x1391CA4
-		//public BKKMNPEEILG GetGhostData() { }
+		public BKKMNPEEILG GetGhostData()
+		{
+			return ghostData;
+		}
 
 		// RVA: 0x1391CAC Offset: 0x1391CAC VA: 0x1391CAC
 		public EJKBKMBJMGL_EnemyData GetEnemyData(Difficulty.Type difficulty)

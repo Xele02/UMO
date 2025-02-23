@@ -23,7 +23,7 @@ namespace XeApp.Game.Common
 				IKDICBBFBMI_EventBase.GNPOABJANKO d = new IKDICBBFBMI_EventBase.GNPOABJANKO();
 				d.JKDJCFEBDHC = bonusEpisodeList[i].JKDJCFEBDHC;
 				d.KELFCMEOPPM_EpisodeId = bonusEpisodeList[i].KELFCMEOPPM_EpisodeId;
-				d.HEDODOBGPPM = bonusEpisodeList[i].HEDODOBGPPM;
+				d.HEDODOBGPPM_BonusValue = bonusEpisodeList[i].HEDODOBGPPM_BonusValue;
 				effectiveEpisodeBonus.Add(d);
 			}
 		}

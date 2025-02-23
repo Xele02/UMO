@@ -449,7 +449,7 @@ namespace XeApp.Game.Menu
 						int a = 0;
 						if (view.COAMJFMEIBF != null)
 						{
-							List<int> l = view.COAMJFMEIBF.HEACCHAKMFG();
+							List<int> l = view.COAMJFMEIBF.HEACCHAKMFG_GetMusicsList();
 							if (l.Count > 0)
 								a = l[0];
 						}
@@ -461,10 +461,10 @@ namespace XeApp.Game.Menu
 						int a = 0;
 						if(view.COAMJFMEIBF != null)
 						{
-							List<int> l = view.COAMJFMEIBF.HEACCHAKMFG();
-							if (view.COAMJFMEIBF.AGLILDLEFDK[view.CMEJFJFOIIJ_QuestId - 1].HMOJCCPIPBP_TargetMusicType == 1)
+							List<int> l = view.COAMJFMEIBF.HEACCHAKMFG_GetMusicsList();
+							if (view.COAMJFMEIBF.AGLILDLEFDK_Missions[view.CMEJFJFOIIJ_QuestId - 1].HMOJCCPIPBP_TargetMusicType == 1)
 							{
-								int cond = view.COAMJFMEIBF.AGLILDLEFDK[view.CMEJFJFOIIJ_QuestId - 1].HBJJCDIMOPO_TargetMusicConditionId;
+								int cond = view.COAMJFMEIBF.AGLILDLEFDK_Missions[view.CMEJFJFOIIJ_QuestId - 1].HBJJCDIMOPO_TargetMusicConditionId;
 								int idx = l.Find((int x) =>
 								{
 									//0x9E7DAC
@@ -502,8 +502,8 @@ namespace XeApp.Game.Menu
 						if(view.COAMJFMEIBF != null && view.COAMJFMEIBF.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool)
 						{
 							AMLGMLNGMFB_EventAprilFool ev = view.COAMJFMEIBF as AMLGMLNGMFB_EventAprilFool;
-							AKIIJBEJOEP ak = ev.AGLILDLEFDK[view.CMEJFJFOIIJ_QuestId - 1];
-							List<int> l = view.COAMJFMEIBF.HEACCHAKMFG();
+							AKIIJBEJOEP ak = ev.AGLILDLEFDK_Missions[view.CMEJFJFOIIJ_QuestId - 1];
+							List<int> l = view.COAMJFMEIBF.HEACCHAKMFG_GetMusicsList();
 							if(ak.HMOJCCPIPBP_TargetMusicType == 6)
 							{
 								int cond = ev.BMBELGEDKEG(ak.HBJJCDIMOPO_TargetMusicConditionId);
@@ -525,9 +525,9 @@ namespace XeApp.Game.Menu
 						if(view.COAMJFMEIBF != null)
 						{
 							int a = 0;
-							if(view.COAMJFMEIBF.AGLILDLEFDK[view.CMEJFJFOIIJ_QuestId - 1] != null)
+							if(view.COAMJFMEIBF.AGLILDLEFDK_Missions[view.CMEJFJFOIIJ_QuestId - 1] != null)
 							{
-								a = view.COAMJFMEIBF.AGLILDLEFDK[view.CMEJFJFOIIJ_QuestId - 1].HBJJCDIMOPO_TargetMusicConditionId;
+								a = view.COAMJFMEIBF.AGLILDLEFDK_Missions[view.CMEJFJFOIIJ_QuestId - 1].HBJJCDIMOPO_TargetMusicConditionId;
 							}
 							if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
 							{
@@ -898,7 +898,7 @@ namespace XeApp.Game.Menu
 			TransitionUniqueId goScene = TransitionUniqueId.MUSICSELECT_RAID;
 			if (ev.FBLGGLDPFDF())
 			{
-				GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(ev.GFIBLLLHMPD_AdventureId);
+				GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(ev.GFIBLLLHMPD_StartAdventureId);
 				if(dbAdv != null && dbAdv.KKPPFAHFOJI_FileId > 0)
 				{
 					int advId = dbAdv.KKPPFAHFOJI_FileId;
@@ -931,7 +931,7 @@ namespace XeApp.Game.Menu
 						Database.Instance.advResult.Setup("Menu", goScene, param);
 						goScene = TransitionUniqueId.EVENTQUEST;
 					}
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetViewed(ev.GFIBLLLHMPD_AdventureId);
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetViewed(ev.GFIBLLLHMPD_StartAdventureId);
 					Database.Instance.advSetup.Setup(advId);
 					MenuScene.Instance.GotoAdventure(true);
 					return;

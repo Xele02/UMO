@@ -62,7 +62,7 @@ public class FFHPBEPOMAK_DivaInfo
 	public int AHHJLDLAPAN_DivaId; // 0xC
 	public int CIEOBFIIPLD_Level; // 0x10
 	public int AIHCEGFANAM_Serie; // 0x14
-	public string OPFGFINHFCE_DivaName; // 0x18
+	public string OPFGFINHFCE_Name; // 0x18
 	public bool FJODMPGPDDD_DivaHave; // 0x28
 	public bool IPJMPBANBPP_Enabled; // 0x29
 	public byte[] FFKMEFKOBHO_Mb; // 0x2C
@@ -132,9 +132,9 @@ public class FFHPBEPOMAK_DivaInfo
 		IPJMPBANBPP_Enabled = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas[AHHJLDLAPAN_DivaId - 1].PPEGAKEIEGM_Enabled == 2;
 		CIEOBFIIPLD_Level = LDEGEHAEALK.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[AHHJLDLAPAN_DivaId - 1].OKMELNIIMMO_GetDivaLevel();
 		AIHCEGFANAM_Serie = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas[AHHJLDLAPAN_DivaId - 1].AIHCEGFANAM_Attr;
-		OPFGFINHFCE_DivaName = EJOJNFDHDHN_GetName(AHHJLDLAPAN_DivaId);
+		OPFGFINHFCE_Name = EJOJNFDHDHN_GetName(AHHJLDLAPAN_DivaId);
 		if(RuntimeSettings.CurrentSettings.DisplayIdInName)
-			OPFGFINHFCE_DivaName = "[" + AHHJLDLAPAN_DivaId + "] "+ OPFGFINHFCE_DivaName;
+			OPFGFINHFCE_Name = "[" + AHHJLDLAPAN_DivaId + "] "+ OPFGFINHFCE_Name;
 		DJICAKGOGFO_SubSceneIds = new List<int>();
 		for(int i = 0; i < LDEGEHAEALK.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[AHHJLDLAPAN_DivaId - 1].JCHHIPOPNIN; i++)
 		{
@@ -212,9 +212,9 @@ public class FFHPBEPOMAK_DivaInfo
 		}
 		FJODMPGPDDD_DivaHave = false;
 		IPJMPBANBPP_Enabled = d.PPEGAKEIEGM_Enabled == 2;
-		OPFGFINHFCE_DivaName = EJOJNFDHDHN_GetName(AHHJLDLAPAN_DivaId);
+		OPFGFINHFCE_Name = EJOJNFDHDHN_GetName(AHHJLDLAPAN_DivaId);
 		if(RuntimeSettings.CurrentSettings.DisplayIdInName)
-			OPFGFINHFCE_DivaName = "[" + AHHJLDLAPAN_DivaId + "] "+ OPFGFINHFCE_DivaName;
+			OPFGFINHFCE_Name = "[" + AHHJLDLAPAN_DivaId + "] "+ OPFGFINHFCE_Name;
 		if(HDJOHAJPGBA_SubScene != null)
 		{
 			DJICAKGOGFO_SubSceneIds = new List<int>();

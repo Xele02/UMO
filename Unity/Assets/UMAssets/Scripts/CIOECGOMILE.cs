@@ -1113,20 +1113,20 @@ public class CIOECGOMILE
 								if((((ulong)1 << i) & FIBPIDELFBB) != 0)
 								{
 									IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.HADLGKFCGLK((ulong)1 << i);
-									if(ev != null && ev.AGLILDLEFDK != null && ev.OLDFFDMPEBM != null)
+									if(ev != null && ev.AGLILDLEFDK_Missions != null && ev.OLDFFDMPEBM_Quests != null)
 									{
-										int cnt = ev.AGLILDLEFDK.Count;
-										if(ev.OLDFFDMPEBM.Count < cnt)
-											cnt = ev.OLDFFDMPEBM.Count;
+										int cnt = ev.AGLILDLEFDK_Missions.Count;
+										if(ev.OLDFFDMPEBM_Quests.Count < cnt)
+											cnt = ev.OLDFFDMPEBM_Quests.Count;
 										for(int j = 0; j < cnt; j++)
 										{
-											if(ev.OLDFFDMPEBM[j].JIOMCDGKIAF == 1)
+											if(ev.OLDFFDMPEBM_Quests[j].JIOMCDGKIAF == 1)
 											{
-												AKIIJBEJOEP d = ev.AGLILDLEFDK[ev.OLDFFDMPEBM[j].PPFNGGCBJKC_Id - 1];
-												ev.OLDFFDMPEBM[j].EALOBDHOCHP_Stat = 3;
+												AKIIJBEJOEP d = ev.AGLILDLEFDK_Missions[ev.OLDFFDMPEBM_Quests[j].PPFNGGCBJKC_Id - 1];
+												ev.OLDFFDMPEBM_Quests[j].EALOBDHOCHP_Stat = 3;
 												OOOOCFAFGCP data = new OOOOCFAFGCP();
 												data.ADCMNODJBGJ = JpStringLiterals.StringLiteral_9777;
-												EBEGGFECPOE.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.PCDOEIFMLHG_10, (ev.PGIIDPEGGPI_EventId * 1000 + ev.OLDFFDMPEBM[j].PPFNGGCBJKC_Id).ToString());
+												EBEGGFECPOE.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.PCDOEIFMLHG_10, (ev.PGIIDPEGGPI_EventId * 1000 + ev.OLDFFDMPEBM_Quests[j].PPFNGGCBJKC_Id).ToString());
 												EBEGGFECPOE.OBCINIPHGGH = 0;
 												EBEGGFECPOE.PJBJCBEMEEC = 0;
 												EBEGGFECPOE.CPIICACGNBH(AHEFHIMGIBI_ServerSave, d.KIJAPOFAGPN_ItemId, d.JDLJPNMLFID_ItemCount, data, 0);
@@ -1173,7 +1173,7 @@ public class CIOECGOMILE
 													GNGMCIAIKMA.HHCJCDFCLOB.HEFIKPAHCIA_IsBingoValid(null, -1);
 												}
 											}
-											ev.OLDFFDMPEBM[j].JIOMCDGKIAF = 0;
+											ev.OLDFFDMPEBM_Quests[j].JIOMCDGKIAF = 0;
 										}
 									}
 								}

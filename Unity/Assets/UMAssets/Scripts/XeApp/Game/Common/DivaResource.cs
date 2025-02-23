@@ -478,7 +478,26 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BF85B4 Offset: 0x1BF85B4 VA: 0x1BF85B4
-		// public void ReleaseRivalResultResource() { }
+		public void ReleaseRivalResultResource()
+		{
+			menuMotionOverride.Release();
+			menuVoiceTable = null;
+			menuVoiceTableCos = null;
+			for(int i = 0; i < commonFacialResource.Count; i++)
+			{
+				commonFacialResource[i].Release();
+			}
+			for(int i = 0; i < specialFacialResource.Count; i++)
+			{
+				specialFacialResource[i].Release();
+			}
+			commonFacialResource.Clear();
+			specialFacialResource.Clear();
+			loginMotionOverride.Release();
+			unlockMotionOverride.Release();
+			resultMotionOverride.Release();
+			isLoadedRivalResultAnimationResource = false;
+		}
 
 		// // RVA: 0x1BF8568 Offset: 0x1BF8568 VA: 0x1BF8568
 		// public void RelaseARResource() { }
@@ -1697,11 +1716,24 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BFA104 Offset: 0x1BFA104 VA: 0x1BFA104
-		// public void LoadRivalResultResource(int divaId, int modelId) { }
+		public void LoadRivalResultResource(int divaId, int modelId)
+		{
+			if(isLoadedRivalResultAnimationResource)
+				return;
+			this.StartCoroutineWatched(Co_LoadRivalResultResource(divaId, modelId));
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x736F00 Offset: 0x736F00 VA: 0x736F00
 		// // RVA: 0x1BFA138 Offset: 0x1BFA138 VA: 0x1BFA138
-		// private IEnumerator Co_LoadRivalResultResource(int divaId, int modelId) { }
+		private IEnumerator Co_LoadRivalResultResource(int divaId, int modelId)
+		{
+			//0x1C06F1C
+			yield return this.StartCoroutineWatched(Co_LoadCharacter(divaId));
+			yield return this.StartCoroutineWatched(Co_LoadFacialClip(divaId, MenuFacialType.Result));
+			loginMotionOverride.reactions = new List<LoginMotionOverrideResource.Reaction>();
+			yield return this.StartCoroutineWatched(Co_LoadResultAction(divaId, modelId, ResultScoreRank.Type.SS));
+			isLoadedRivalResultAnimationResource = true;
+		}
 
 		// // RVA: 0x1BFA244 Offset: 0x1BFA244 VA: 0x1BFA244
 		public void LoadARResource(int divaId, int modelId)

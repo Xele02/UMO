@@ -31,21 +31,21 @@ public class HLEBAINCOME_EventScore : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x15EAD10 Offset: 0x15EAD10 VA: 0x15EAD10 Slot: 7
-	public override List<int> HEACCHAKMFG()
+	public override List<int> HEACCHAKMFG_GetMusicsList()
 	{
 		TodoLogger.LogError(TodoLogger.EventScore_4, "HEACCHAKMFG");
-		return base.HEACCHAKMFG();
+		return base.HEACCHAKMFG_GetMusicsList();
 	}
 
 	// // RVA: 0x15EAE94 Offset: 0x15EAE94 VA: 0x15EAE94 Slot: 28
-	public override long FBGDBGKNKOD()
+	public override long FBGDBGKNKOD_GetCurrentPoint()
 	{
 		TodoLogger.LogError(TodoLogger.EventScore_4, "FBGDBGKNKOD");
 		return 0;
 	}
 
 	// // RVA: 0x15EB0F4 Offset: 0x15EB0F4 VA: 0x15EB0F4 Slot: 29
-	public override void MJFKJHJJLMN(int LHJCOPMMIGO = 0, bool FBBNPFFEJBN = false)
+	public override void MJFKJHJJLMN_GetRanks(int LHJCOPMMIGO = 0, bool FBBNPFFEJBN = false)
 	{
 		TodoLogger.LogError(TodoLogger.EventScore_4, "MJFKJHJJLMN");
 	}
@@ -87,10 +87,16 @@ public class HLEBAINCOME_EventScore : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x15EC454 Offset: 0x15EC454 VA: 0x15EC454 Slot: 47
-	// public override void NBMDAOFPKGK(int DNBFMLBNAEE) { }
+	public override void NBMDAOFPKGK(int DNBFMLBNAEE)
+	{
+		TodoLogger.LogError(TodoLogger.EventScore_4, "NBMDAOFPKGK");
+	}
 
 	// // RVA: 0x15EC6E0 Offset: 0x15EC6E0 VA: 0x15EC6E0 Slot: 48
-	// public override void AMKJFGLEJGE(int KPIILHGOGJD) { }
+	public override void AMKJFGLEJGE(int KPIILHGOGJD)
+	{
+		TodoLogger.LogError(TodoLogger.EventScore_4, "AMKJFGLEJGE");
+	}
 
 	// // RVA: 0x15ECC48 Offset: 0x15ECC48 VA: 0x15ECC48 Slot: 49
 	// protected override void ODPJGHOJIOH(int LHJCOPMMIGO) { }

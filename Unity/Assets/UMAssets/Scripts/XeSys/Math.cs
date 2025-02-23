@@ -117,6 +117,8 @@ namespace XeSys
 						return EasingInOutCubic(start, end, t);
 					case EasingFunc.InOutExpo:
 						return EasingInOutExpo(start, end, t);
+					case EasingFunc.InOutSine:
+						return EasingInOutSine(start,end,t);
 					default:
 						TodoLogger.LogError(0, "Todo Evaluate "+type);
 						break;

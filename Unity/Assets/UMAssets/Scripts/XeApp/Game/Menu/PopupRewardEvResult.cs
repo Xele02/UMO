@@ -233,7 +233,7 @@ namespace XeApp.Game.Menu
 			public void InitializeCumulativePoint(IKDICBBFBMI_EventBase eventController)
 			{
 				data_type = Type.CumulativePoint;
-				CurrentPoint = eventController.FBGDBGKNKOD();
+				CurrentPoint = eventController.FBGDBGKNKOD_GetCurrentPoint();
 				for(int i = 0; i < eventController.JOFBHHHLBBN.Count; i++)
 				{
 					total_data_list.Add(eventController.PFPJHJJAGAG[eventController.JOFBHHHLBBN[i]]);
@@ -552,7 +552,22 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70E87C Offset: 0x70E87C VA: 0x70E87C
 		//// RVA: 0x1A7E4C0 Offset: 0x1A7E4C0 VA: 0x1A7E4C0
-		//public static IEnumerator Co_ShowPopup_CumulativePoint(Transform parent, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> buttonCallBack) { }
+		public static IEnumerator Co_ShowPopup_CumulativePoint(Transform parent, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> buttonCallBack)
+		{
+			//0x1A7F6DC
+			ApplySetting(Type.CumulativePoint, parent, 0);
+			sm_Setting.Init(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9, false), OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0);
+			GameManager.Instance.ResetViewPlayerData();
+			PopupWindowManager.Show(sm_Setting, buttonCallBack, null, null, null, playSeEvent:(PopupWindowControl.SeType type) =>
+			{
+				//0x1A7F12C
+				if(type != PopupWindowControl.SeType.WindowOpen)
+					return false;
+				SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_WND_004);
+				return true;
+			});
+			yield break;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x70E8F4 Offset: 0x70E8F4 VA: 0x70E8F4
 		//// RVA: 0x1A7E588 Offset: 0x1A7E588 VA: 0x1A7E588

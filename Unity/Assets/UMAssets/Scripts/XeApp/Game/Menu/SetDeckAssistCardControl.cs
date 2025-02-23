@@ -72,7 +72,21 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA6861C Offset: 0xA6861C VA: 0xA6861C
-		//public void UpdateContent(BKKMNPEEILG ghostData) { }
+		public void UpdateContent(BKKMNPEEILG ghostData)
+		{
+			m_viewFriendData = null;
+			SetDiva(ghostData.FDBOPFEOENF_RivalData);
+			SetScene(ghostData.FDBOPFEOENF_RivalData, ghostData.AFBMEMCHJCL_Scene, null);
+			m_assistIconObject.SetActive(false);
+			m_rivalIconObject.SetActive(true);
+			m_rivalRankImage.gameObject.SetActive(true);
+			int idx = ghostData.BHCIFFILAKJ_Str > 2 ? 3 : ghostData.BHCIFFILAKJ_Str;
+			m_rivalRankImage.sprite = m_rivalRankSprite[idx];
+			m_scoreObject.gameObject.SetActive(true);
+			HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9) as HAEDCCLHEMN_EventBattle;
+			m_scoreText.text = ev.HOJNMALLCME(idx, 0).ToString();
+			m_tapGuardObject.SetActive(true);
+		}
 
 		//// RVA: 0xA68978 Offset: 0xA68978 VA: 0xA68978
 		//public void SetImp(SetDeckDivaCardControl.ImpType type) { }

@@ -721,7 +721,35 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB249DC Offset: 0xB249DC VA: 0xB249DC
-	// public void PEIONAKEPCN(DJBHIFLHJLK HIDFAIBOHCC) { }
+	public void PEIONAKEPCN_ShowRankingBanPopup(DJBHIFLHJLK HIDFAIBOHCC)
+	{
+		PopupStopAccountSetting s = new PopupStopAccountSetting();
+		s.TitleText = MessageManager.Instance.GetMessage("common", "popup_ranking_ban_tilte");
+		s.Buttons = new ButtonInfo[2]
+		{
+			new ButtonInfo() { Type = PopupButton.ButtonType.Negative, Label = PopupButton.ButtonLabel.Close },
+			new ButtonInfo() { Type = PopupButton.ButtonType.Positive, Label = PopupButton.ButtonLabel.Contact }
+		};
+		s.WindowSize = SizeType.Middle;
+		s.type = LayoutPopupStopAccount.Type.EVENT;
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		{
+			//0x1348440
+			if(LHFGEOAJAAL == PopupButton.ButtonLabel.Contact)
+			{
+				MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.CCFMGBNHMNN_Inquiry, () =>
+				{
+					//0x13470E8
+					return;
+				}, () =>
+				{
+					//0x13470EC
+					return;
+				});
+			}
+			HIDFAIBOHCC.Invoke();
+		}, null, null, null);
+	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B89E0 Offset: 0x6B89E0 VA: 0x6B89E0
 	// // RVA: 0xB24D14 Offset: 0xB24D14 VA: 0xB24D14

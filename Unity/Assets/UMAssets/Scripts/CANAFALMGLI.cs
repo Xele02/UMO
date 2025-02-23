@@ -19,7 +19,7 @@ public class CANAFALMGLI_EventPresentCampaign : IKDICBBFBMI_EventBase
     }
 
 	// RVA: 0x18F414C Offset: 0x18F414C VA: 0x18F414C Slot: 28
-	public override long FBGDBGKNKOD()
+	public override long FBGDBGKNKOD_GetCurrentPoint()
 	{
 		return 0;
 	}

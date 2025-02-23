@@ -278,7 +278,7 @@ namespace XeApp.Game.Menu
 			{
 				if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 				{
-					TodoLogger.LogError(TodoLogger.EventBattle_3, "Event");
+					m_unitInfo.AssistControl.UpdateContent(Database.Instance.selectedMusic.GetGhostData());
 				}
 				else
 				{
@@ -742,7 +742,7 @@ namespace XeApp.Game.Menu
 				return;
 			if (m_eventCtrl == null)
 				return;
-			Database.Instance.bonusData.SetEpisodeBonus(m_eventCtrl.LMDENICBIIB(0, 0));
+			Database.Instance.bonusData.SetEpisodeBonus(m_eventCtrl.LMDENICBIIB_GetEpisodesBonusList(0, 0));
 		}
 
 		//// RVA: 0xA86E48 Offset: 0xA86E48 VA: 0xA86E48
@@ -795,7 +795,8 @@ namespace XeApp.Game.Menu
 			{
 				if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 				{
-					TodoLogger.LogError(TodoLogger.EventBattle_3, "Event");
+					if(Database.Instance.selectedMusic.GetGhostData().GAOGOMKKJON())
+						return SkipStatusType.Rival;
 				}
 				if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid && m_eventCtrl != null)
 				{
@@ -1388,11 +1389,21 @@ namespace XeApp.Game.Menu
 					m_skipTicketPopupSetting.ConsumeItem = PopupSkipTicketUseConfirm.ConsumeItem.Energy;
 					m_skipTicketPopupSetting.ConsumeItemMax = MenuScene.Instance.GetCurrentStamina();
 					m_skipTicketPopupSetting.IsWeekdayEvent = false;
-					cnt = Mathf.Min(MenuScene.Instance.GetCurrentStamina() / Database.Instance.selectedMusic.GetNeedEnergy(Database.Instance.gameSetup.musicInfo.difficultyType, Database.Instance.gameSetup.musicInfo.IsLine6Mode), cnt);
+					int energy = Database.Instance.selectedMusic.GetNeedEnergy(Database.Instance.gameSetup.musicInfo.difficultyType, Database.Instance.gameSetup.musicInfo.IsLine6Mode);
+					cnt = Mathf.Min(MenuScene.Instance.GetCurrentStamina() / energy, cnt);
+					bool b1 = false;
 					if(m_eventCtrl is HAEDCCLHEMN_EventBattle)
 					{
 						// L464
-						TodoLogger.LogError(TodoLogger.EventBattle_3, "Event battle");
+						HAEDCCLHEMN_EventBattle ev = m_eventCtrl as HAEDCCLHEMN_EventBattle;
+						b1 = false;
+                        BKKMNPEEILG ghost = Database.Instance.selectedMusic.GetGhostData();
+                        if (ghost != null)
+						{
+							if(ghost.GAOGOMKKJON())
+								cnt = 1;
+							b1 = ghost.GAOGOMKKJON();
+						}
 					}
 					else if(m_eventCtrl is MANPIONIGNO_EventGoDiva && m_isGoDivaBonus)
 					{
@@ -1411,6 +1422,10 @@ namespace XeApp.Game.Menu
 							m_skipTicketPopupSetting.IsWeekdayEvent = true;
 						}
 					}
+					m_skipTicketPopupSetting.ItemCurrentValue = 1;
+					m_skipTicketPopupSetting.ItemUseMaxValue = cnt;
+					m_skipTicketPopupSetting.ConsumeItemValue = energy;
+					m_skipTicketPopupSetting.IsOneUseForced = b1;
 				}
 			}
 			//LAB_00a8b0e8
@@ -2236,8 +2251,7 @@ namespace XeApp.Game.Menu
 			if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva ||
 				Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
-				TodoLogger.LogError(TodoLogger.EventBattle_3, "Event");
-				TodoLogger.LogError(TodoLogger.EventGoDiva_14, "Event");
+				return new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, false);
 			}
 			return null;
 		}

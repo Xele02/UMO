@@ -11,7 +11,7 @@ public class KJGBJBLMBJN
 	// RVA: 0x1A02F28 Offset: 0x1A02F28 VA: 0x1A02F28
 	public void LHPDDGIJKNB()
     {
-        HBODCMLFDOB.LHPDDGIJKNB();
+        HBODCMLFDOB.LHPDDGIJKNB_Reset();
         OPFGFINHFCE_Name = "";
         BHCIFFILAKJ_Strg = 0;
         PBJLLAOJMAK_PId = 0;

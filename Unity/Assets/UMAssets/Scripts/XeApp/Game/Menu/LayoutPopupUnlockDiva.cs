@@ -37,7 +37,7 @@ namespace XeApp.Game.Menu
 				return;
 			FFHPBEPOMAK_DivaInfo f = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[info.param.id];
 			SetDivaIcon(f.AHHJLDLAPAN_DivaId);
-			SetDivaName(f.OPFGFINHFCE_DivaName);
+			SetDivaName(f.OPFGFINHFCE_Name);
 			SetDivaStatus(f.AHHJLDLAPAN_DivaId);
 		}
 

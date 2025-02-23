@@ -1264,7 +1264,7 @@ namespace XeApp.Game.Menu
 			//0x1A933BC
 			viewStageData = m_viewDataList[index];
 			yield return Co.R(m_scrollViewList[index].layoutIcon.StampPressAnim());
-			KDLPEDBKMID.HHCJCDFCLOB.NMFCNFFFMAC(viewStageData.AHHJLDLAPAN_DivaId, 1, false);
+			KDLPEDBKMID.HHCJCDFCLOB.NMFCNFFFMAC_InstallDivaCostume(viewStageData.AHHJLDLAPAN_DivaId, 1, false);
 			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			yield return Co.R(SeriesFader(index));

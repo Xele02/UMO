@@ -89,7 +89,7 @@ public class CGJKNOCAPII
 		{
 			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN[i];
 			ev.HCDGELDHFHB_UpdateStatus(time);
-			if(ev.KKFEDJNIAAG(time) && ev.AGLILDLEFDK != null)
+			if(ev.KKFEDJNIAAG(time) && ev.AGLILDLEFDK_Missions != null)
 			{
 				if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp)
 				{
@@ -99,9 +99,9 @@ public class CGJKNOCAPII
 				{
 					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event Raid");
 				}
-				for(int j = 0; j < ev.AGLILDLEFDK.Count; j++)
+				for(int j = 0; j < ev.AGLILDLEFDK_Missions.Count; j++)
 				{
-					if(ev.AGLILDLEFDK[j].PPEGAKEIEGM_Enabled == 2)
+					if(ev.AGLILDLEFDK_Missions[j].PPEGAKEIEGM_Enabled == 2)
 					{
 						CGJKNOCAPII data = new CGJKNOCAPII();
 						data = data.BJKJLDPDEFA(ev, PNGKOHDEPFE);

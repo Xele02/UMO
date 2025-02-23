@@ -39,7 +39,10 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		// // RVA: 0x1559C98 Offset: 0x1559C98 VA: 0x1559C98
-		// public void SetRivalDivaId(int divaId) { }
+		public void SetRivalDivaId(int divaId)
+		{
+			_rivalDivaId = divaId;
+		}
 
 		// // RVA: 0x1559CA0 Offset: 0x1559CA0 VA: 0x1559CA0
 		public void SetResult(bool isPlayerWin)

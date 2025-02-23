@@ -203,7 +203,7 @@ namespace XeApp.Game.MiniGame
 			controller = m_viewShootingData.OEGDCBLNNFF(time, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/);
 			if(controller != null)
 			{
-				controller.ADACMHAHHKC(() =>
+				controller.ADACMHAHHKC_PreSetupEventHome(() =>
 				{
 					//0x1CED040
 					done = true;

@@ -35,7 +35,7 @@ namespace XeApp.Game.Menu
 			int divaId = 0;
 			if(diva != null)
 			{
-				SetDivaName(diva.OPFGFINHFCE_DivaName);
+				SetDivaName(diva.OPFGFINHFCE_Name);
 				SetDivaImage(diva.AHHJLDLAPAN_DivaId);
 				divaId = diva.AHHJLDLAPAN_DivaId;
 				if(divaId == 9)

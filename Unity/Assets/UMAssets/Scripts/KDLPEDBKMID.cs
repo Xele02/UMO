@@ -732,7 +732,7 @@ public class KDLPEDBKMID
 	}
 
 	// // RVA: 0xE81148 Offset: 0xE81148 VA: 0xE81148
-	public bool NMFCNFFFMAC(int AHHJLDLAPAN, int EGNLGHDHDDH, bool MMNIIDPMDNP)
+	public bool NMFCNFFFMAC_InstallDivaCostume(int AHHJLDLAPAN, int EGNLGHDHDDH, bool MMNIIDPMDNP)
 	{
 		StringBuilder str = new StringBuilder();
 		bool res = false;
@@ -765,9 +765,9 @@ public class KDLPEDBKMID
 	{
 		LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[EKLNMHFCAOI.DEACAHNLMNI_getItemId(JBGIHPHNDKH) - 1];
 		if (cos == null)
-			return NMFCNFFFMAC(1, 1, MMNIIDPMDNP);
+			return NMFCNFFFMAC_InstallDivaCostume(1, 1, MMNIIDPMDNP);
 		else
-			return NMFCNFFFMAC(cos.AHHJLDLAPAN_PrismDivaId, cos.DAJGPBLEEOB_PrismCostumeModelId, MMNIIDPMDNP);
+			return NMFCNFFFMAC_InstallDivaCostume(cos.AHHJLDLAPAN_PrismDivaId, cos.DAJGPBLEEOB_PrismCostumeModelId, MMNIIDPMDNP);
 	}
 
 	// // RVA: 0xE81D54 Offset: 0xE81D54 VA: 0xE81D54

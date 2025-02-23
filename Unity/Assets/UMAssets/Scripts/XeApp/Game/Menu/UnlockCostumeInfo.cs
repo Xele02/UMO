@@ -79,7 +79,7 @@ namespace XeApp.Game.Menu
 			m_isCosutimeIconLoaded = false;
 			m_isDivaIconLoaded = false;
 			m_name.text = diva.FFKMJNHFFFL_Costume.HCPCHEPCFEA_GetCostumeName(color_id);
-			m_info.text = diva.OPFGFINHFCE_DivaName + JpStringLiterals.StringLiteral_15055;
+			m_info.text = diva.OPFGFINHFCE_Name + JpStringLiterals.StringLiteral_15055;
 			m_skill.text = diva.FFKMJNHFFFL_Costume.FCEGELPJAMH_SkillDesc;
 			SetCostumeTexture(diva_id, cos_id, color_id);
 			SetDivaIcon(diva_id, cos_id, color_id);

@@ -141,7 +141,7 @@ namespace XeApp.Game.Common
 						TodoLogger.LogError(TodoLogger.EventGoDiva_14, "GoDiva");
 					}
 					//LAB_00ea9d4c
-					string s = list[i].DBEMCLMPCFA();
+					string s = list[i].DBEMCLMPCFA_GetBannerText();
 					if(!string.IsNullOrEmpty(s))
 						str = s;
 					AddBanner(list[i].PGIIDPEGGPI_EventId, l1, l2, str);

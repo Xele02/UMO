@@ -77,7 +77,7 @@ namespace XeApp.Game.Menu
 		private void EnterSerifWindow()
 		{
 			FFHPBEPOMAK_DivaInfo divaInfo = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[MenuScene.Instance.divaManager.DivaId - 1];
-			m_serifWindow.SetTitle(divaInfo.OPFGFINHFCE_DivaName);
+			m_serifWindow.SetTitle(divaInfo.OPFGFINHFCE_Name);
 			StringBuilder str = new StringBuilder();
 			str.Clear();
 			str.AppendFormat("diva{0:D3}", divaInfo.AHHJLDLAPAN_DivaId);

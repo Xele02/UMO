@@ -291,8 +291,8 @@ namespace XeApp.Game.Menu
 				is_point_reward = cont.LEPALMDKEOK_IsPointReward;
 				is_rank_reward = cont.IBNKPMPFLGI_IsRankReward;
 				is_counting = cont.NGOFCFJHOMI_Status == KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI_6;
-				curr_point = (int)cont.FBGDBGKNKOD();
-				curr_rank = cont.CDINKAANIAA[0];
+				curr_point = (int)cont.FBGDBGKNKOD_GetCurrentPoint();
+				curr_rank = cont.CDINKAANIAA_Rank[0];
 				total_data_list = cont.PFPJHJJAGAG;
 				total_feature_list = cont.MGEIBMIGILL();
 				rank_data_list = cont.EGIPGHCDMII[0];
@@ -325,7 +325,7 @@ namespace XeApp.Game.Menu
 					curr_score_rank = 0;
 					pickup_free_music_id = 0;
 				}
-				dropList = cont.AEGDKBNNDBC();
+				dropList = cont.AEGDKBNNDBC_GetDrops();
 				eventType = cont.HIDHLFCBIDE_EventType;
 			}
 		}

@@ -20,6 +20,8 @@ class JpStringLiterals
 	public static string StringLiteral_9528 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9528", "想定していない人数が入っています　id:"); } } //0x03bb1f98
 	public static string StringLiteral_9555 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9555", "event_quest"); } } // 0x03bb2004
 	public static string StringLiteral_9630 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9630", "から新しいメッセージがあります。"); } } // 0x03bb2130
+	public static string StringLiteral_9635 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9635", "ダミー"); } } // 03bb2144
+
 	public static string StringLiteral_9714 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9714", "第"); } } //0x03bb2280
 	public static string StringLiteral_9715 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9715", "話"); } } //0x03bb2284
 	public static string StringLiteral_9767 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9767", "超時空ユニット"); } } // 0x03bb2354
@@ -121,6 +123,15 @@ class JpStringLiterals
 	public static string StringLiteral_10416 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10416", "<color=pink>最高スコア更新 "); } } // 0x03bb2d78
 	public static string StringLiteral_10431 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10431", "デビューガチャ"); } } //0x03bb2db4
 	public static string StringLiteral_10443 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10443", "プレート"); } } //0x03bb2de4
+	public static string StringLiteral_10912 { get { return "<color=cyan>勝利</color>"; } } // 03bb3538
+	public static string StringLiteral_10913 { get { return "<color=cyan>敗北</color>"; } } // 03bb353c
+	public static string StringLiteral_10915 { get { return "<color=cyan>スコア = "; } } // 03bb3544
+	public static string StringLiteral_10916 { get { return " ボーナス "; } } // 03bb3548
+	public static string StringLiteral_10918 { get { return "<color=cyan>エピソード数 = "; } } // 03bb3550
+	public static string StringLiteral_10920 { get { return "<color=cyan>連勝 = "; } } //03bb3558
+	public static string StringLiteral_10921 { get { return "<color=cyan>ポイント = "; } } //03bb355c
+	public static string StringLiteral_10923 { get { return "<color=cyan>EXゲージポイント = "; } } //03bb3564
+	public static string StringLiteral_10924 { get { return "<color=magenta>EXライバル出現中！</color>"; } } //03bb3568
 	public static string StringLiteral_11015 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_11015", "master_gacha_ticket.xlsxにデカルガチャチケットの設定がありません"); } } //0x03bb36d4
 	public static string StringLiteral_11062 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_11062", "ライフ"); } } // 0x03bb3790
 	public static string StringLiteral_11063 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_11063", "ソウル"); } } // 0x03bb3794

@@ -492,7 +492,7 @@ public class JBCAHMMCOKK
 									data.GJFPFFBAKGK_CloseAt = ev2.DPJCPDKALGI_End1;
 									data.HDBPGEMDLDN = MessageManager.Instance.GetMessage("menu", "home_event_epilogue");
 									data.IPHOLOBDEIK = true;
-									data.PIBLLGLCJEO = ev2.CAKEOPLJDAF.ToString();
+									data.PIBLLGLCJEO = ev2.CAKEOPLJDAF_EndAdventureId.ToString();
 									NNDGIAEFMOG.Add(data);
 								}
 							}

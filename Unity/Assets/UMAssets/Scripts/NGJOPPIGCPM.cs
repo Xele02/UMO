@@ -98,14 +98,52 @@ public class NGJOPPIGCPM_ResultData
 		OEELDFNNLKK_SaveRecordMusic2 = CIOECGOMILE.HHCJCDFCLOB.MNJHBCIIHED_PrevServerData.LCKMBHDMPIP_RecordMusic;
 		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo mInfo1 = LCKMBHDMPIP_SaveRecordMusic.FAMANJGJANN_FreeMusicInfo[GHBPLHBNMBK_FreeMusicId - 1];
 		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo mInfo2 = OEELDFNNLKK_SaveRecordMusic2.FAMANJGJANN_FreeMusicInfo[GHBPLHBNMBK_FreeMusicId - 1];
+		int savedCombo = mInfo1.PDNJGJNGPNJ_MaxCombo;
+		int savedScore = mInfo1.ODEHJGPDFCL_Score;
+		int savedComboRank = mInfo1.ABFNAEKEGOB_ComboRank;
 		if(MNNHHJBBICA_GameEventType == 2)
 		{
 			TodoLogger.LogError(TodoLogger.Event_Unknwown_2, "Event");
 		}
 		else if(MNNHHJBBICA_GameEventType == 3)
 		{
-			TodoLogger.LogError(TodoLogger.EventBattle_3, "Event");
-		}
+			HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9, false) as HAEDCCLHEMN_EventBattle;
+            CCPKHBECNLH_EventBattle.AIFGBKMMJGL music = ev.JIPPHOKGLIH_GetMusicSaveData(GHBPLHBNMBK_FreeMusicId, true);
+			if(music != null)
+			{
+				mInfo2 = new JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo();
+				if(!GIKLNODJKFK_IsLine6)
+				{
+					mInfo2.ECKFCIHPHGJ_SetScore_ForDiff((int)NOAKHKMLPFK_diff, music.BDCAICINCKK_GetScoreForDiff((int)NOAKHKMLPFK_diff));
+					mInfo2.NLKEBAOBJCM_Combo[(int)NOAKHKMLPFK_diff] = music.NLKEBAOBJCM_ComboByDiff[(int)NOAKHKMLPFK_diff];
+				}
+				else
+				{
+					mInfo2.AAELOPLDBPF_SetScoreL6_ForDiff((int)NOAKHKMLPFK_diff, music.AHDKMPFDKPE_GetScoreForDiffL6((int)NOAKHKMLPFK_diff));
+					mInfo2.DNIGPFPHJAK_ComboL6[(int)NOAKHKMLPFK_diff] = music.DNIGPFPHJAK_ComboByDiffL6[(int)NOAKHKMLPFK_diff];
+				}
+				mInfo2.ECLDABOLHLM_ExcellentScore = music.OFJHABJNGOD_ExcellentScore;
+			}
+			music = ev.JIPPHOKGLIH_GetMusicSaveData(GHBPLHBNMBK_FreeMusicId, false);
+			if(music != null)
+			{
+				mInfo1 = new JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo();
+				if(!GIKLNODJKFK_IsLine6)
+				{
+					mInfo1.ECKFCIHPHGJ_SetScore_ForDiff((int)NOAKHKMLPFK_diff, music.BDCAICINCKK_GetScoreForDiff((int)NOAKHKMLPFK_diff));
+					mInfo1.NLKEBAOBJCM_Combo[(int)NOAKHKMLPFK_diff] = music.NLKEBAOBJCM_ComboByDiff[(int)NOAKHKMLPFK_diff];
+				}
+				else
+				{
+					mInfo1.AAELOPLDBPF_SetScoreL6_ForDiff((int)NOAKHKMLPFK_diff, music.AHDKMPFDKPE_GetScoreForDiffL6((int)NOAKHKMLPFK_diff));
+					mInfo1.DNIGPFPHJAK_ComboL6[(int)NOAKHKMLPFK_diff] = music.DNIGPFPHJAK_ComboByDiffL6[(int)NOAKHKMLPFK_diff];
+				}
+				mInfo1.ECLDABOLHLM_ExcellentScore = music.OFJHABJNGOD_ExcellentScore;
+			}
+			mInfo1.PDNJGJNGPNJ_MaxCombo = savedCombo;
+			mInfo1.ODEHJGPDFCL_Score = savedScore;
+			mInfo1.ABFNAEKEGOB_ComboRank = savedComboRank;
+        }
 		else if(MNNHHJBBICA_GameEventType == 4)
 		{
 			TodoLogger.LogError(TodoLogger.EventScore_4, "Event");

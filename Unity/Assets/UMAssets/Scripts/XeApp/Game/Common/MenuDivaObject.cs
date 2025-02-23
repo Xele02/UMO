@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Text;
 using XeSys;
+using System.Collections;
 
 namespace XeApp.Game.Common
 {
@@ -217,17 +218,57 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1111054 Offset: 0x1111054 VA: 0x1111054
-		//public void BattleResult() { }
+		public void BattleResult()
+		{
+			Anim_SetBool("res_breakTalkLoop", false);
+			Anim_SetBool("res_goStart", false);
+			Anim_Play("wait_loop", 0);
+			isStopFrame = true;
+			this.StartCoroutineWatched(WaitUnlockBoneSpring(0));
+		}
 
 		//// RVA: 0x1111058 Offset: 0x1111058 VA: 0x1111058
-		//public void BattleResultAnimStart(bool isWin, bool isLeftSide) { }
+		public void BattleResultAnimStart(bool isWin, bool isLeftSide)
+		{
+			Anim_SetBool("res_goWin", isWin);
+			Anim_SetBool("res_goLose", !isWin);
+			if(isWin)
+			{
+				Anim_Play("bt_win_start", 0);
+			}			
+			else
+			{
+				Anim_CrossFadeInFixedTime("bt_lose_start", 0.3f);
+				this.StartCoroutineWatched(Co_BattleResultLoseRotation(0, isLeftSide ? -15 : 15));
+			}
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x737848 Offset: 0x737848 VA: 0x737848
 		//// RVA: 0x1111180 Offset: 0x1111180 VA: 0x1111180
-		//private IEnumerator Co_BattleResultLoseRotation(float sec, float targetDeg) { }
+		private IEnumerator Co_BattleResultLoseRotation(float sec, float targetDeg)
+		{
+			Vector3 euler; // 0x18
+			float t; // 0x24
+
+			//0x111309C
+			euler = Vector3.zero;
+			t = 0;
+			do
+			{
+				euler.y = XeSys.Math.Tween.Evaluate(Math.Tween.EasingFunc.InOutSine, 0, targetDeg, t);
+				transform.localEulerAngles = euler;
+				t += Time.deltaTime;
+				yield return null;
+			} while(t < 1);
+			euler.y = targetDeg;
+			transform.localEulerAngles = euler;
+		}
 
 		//// RVA: 0x1111254 Offset: 0x1111254 VA: 0x1111254
-		//public void ResetBattleResultTransform() { }
+		public void ResetBattleResultTransform()
+		{
+			transform.localEulerAngles = Vector3.zero;
+		}
 
 		//// RVA: 0x1111314 Offset: 0x1111314 VA: 0x1111314
 		public void LoginIdle()
