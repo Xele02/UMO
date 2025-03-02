@@ -433,23 +433,23 @@ namespace XeApp.Game.Common
 			{
 				if(list[i].NNHHNFFLCFO >= JBCAHMMCOKK.ALEKHDPDOEA.KCOEIKAMLBD_27)
 				{
-					str.SetFormat("ct/ba/hm/{0:D3}.xab", list[i].EAHPLCJMPHD);
+					str.SetFormat("ct/ba/hm/{0:D3}.xab", list[i].EAHPLCJMPHD_EventId);
 				}
 				else if(((1 << ((int)list[i].NNHHNFFLCFO & 0xff)) & 0x4030e10U) != 0)
 				{
-					str.SetFormat("ct/ev/hm/{0:D4}.xab", list[i].EAHPLCJMPHD);
+					str.SetFormat("ct/ev/hm/{0:D4}.xab", list[i].EAHPLCJMPHD_EventId);
 				}
 				else if (((1 << ((int)list[i].NNHHNFFLCFO & 0xff)) & 0x81c0060U) != 0)
 				{
-					str.SetFormat("ct/gc/hm/{0:D5}.xab", list[i].EAHPLCJMPHD);
+					str.SetFormat("ct/gc/hm/{0:D5}.xab", list[i].EAHPLCJMPHD_EventId);
 				}
 				else if (((1 << ((int)list[i].NNHHNFFLCFO & 0xff)) & 0xc00000U) != 0)
 				{
-					str.SetFormat("ct/ba/hm/{0:D3}.xab", list[i].EAHPLCJMPHD);
+					str.SetFormat("ct/ba/hm/{0:D3}.xab", list[i].EAHPLCJMPHD_EventId);
 				}
 				else
 				{
-					str.SetFormat("ct/bn/hm/{0:D5}.xab", list[i].EAHPLCJMPHD);
+					str.SetFormat("ct/bn/hm/{0:D5}.xab", list[i].EAHPLCJMPHD_EventId);
 				}
 				if(!KDLPEDBKMID.HHCJCDFCLOB.EGIFDIFALKK(str.ToString()))
 				{
@@ -478,27 +478,27 @@ namespace XeApp.Game.Common
 			JBCAHMMCOKK v = m_list.Find((JBCAHMMCOKK x) =>
 			{
 				//0xEAF490
-				return x.EAHPLCJMPHD == pictId;
+				return x.EAHPLCJMPHD_EventId == pictId;
 			});
 			if(v.NNHHNFFLCFO <= JBCAHMMCOKK.ALEKHDPDOEA.KCOEIKAMLBD_27)
 			{
 				if(((1 << (int)v.NNHHNFFLCFO) & 0x4030e10U) != 0)
 				{
-					m_bannerTexCache.LoadForEvent(v.EAHPLCJMPHD, onLoaded);
+					m_bannerTexCache.LoadForEvent(v.EAHPLCJMPHD_EventId, onLoaded);
 					return;
 				}
 				if(((1 << (int)v.NNHHNFFLCFO) & 0x81c0060U) != 0)
 				{
-					m_bannerTexCache.LoadForGacha(v.EAHPLCJMPHD, onLoaded);
+					m_bannerTexCache.LoadForGacha(v.EAHPLCJMPHD_EventId, onLoaded);
 					return;
 				}
 				if(((1 << (int)v.NNHHNFFLCFO) & 0xc00000U) != 0)
 				{
-					m_bannerTexCache.LoadForBingo(v.EAHPLCJMPHD, onLoaded);
+					m_bannerTexCache.LoadForBingo(v.EAHPLCJMPHD_EventId, onLoaded);
 					return;
 				}
 			}
-			m_bannerTexCache.LoadForGenaral(v.EAHPLCJMPHD, onLoaded);
+			m_bannerTexCache.LoadForGenaral(v.EAHPLCJMPHD_EventId, onLoaded);
 		}
 
 		// // RVA: 0xEAE83C Offset: 0xEAE83C VA: 0xEAE83C

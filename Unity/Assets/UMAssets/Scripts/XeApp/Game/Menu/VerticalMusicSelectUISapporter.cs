@@ -20,7 +20,7 @@ namespace XeApp.Game.Menu
 		}
 
 		public bool isLine6Mode; // 0xC
-		public KGCNCBOKCBA.GNENJEHKMHD eventStatus; // 0x10
+		public KGCNCBOKCBA.GNENJEHKMHD_EventStatus eventStatus; // 0x10
 		private Difficulty.Type m_difficulty; // 0x14
 		private MusicSelectConsts.SeriesType m_series; // 0x18
 		private VerticalMusicSelectSortOrder.SortOrder m_sortOrder; // 0x1C

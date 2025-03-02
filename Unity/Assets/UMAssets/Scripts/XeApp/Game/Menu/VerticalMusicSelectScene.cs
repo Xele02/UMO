@@ -123,7 +123,7 @@ namespace XeApp.Game.Menu
 				}
 			}
 			long currentTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
-			m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI_6, false);
+			m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6, false);
 			m_musicSelectUISapporter.SetUp(m_musicList, m_musicDetail, m_utaRate, m_eventBanner, m_difficultyButtonGroup, m_seriesButtonGroup, m_playButton, m_simulationButton, m_orderButton, m_eventCtrl, m_unitLiveLocalSaveData, m_line6Button, m_choiceMusicTab);
 			SetCreateMusicList();
 			CrateFilterDataList(m_filterMusicDataList, m_originalMusicDataList, 0, currentTime, (VerticalMusicDataList.MusicListData s, int c, long f) => {
@@ -1043,7 +1043,7 @@ namespace XeApp.Game.Menu
 		{
 			m_pickupFreeMusicId = 0;
 			m_pickupFreeCategoryId = 0;
-			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/);
+			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9/*9*/);
 			if(ev != null)
 			{
 				if(ev is AMLGMLNGMFB_EventAprilFool)
@@ -1246,7 +1246,7 @@ namespace XeApp.Game.Menu
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			m_eventBanner.SetType(VerticalMusicSelectEventBanner.ButtonType.Disable);
 			m_eventItem.SetEnable(false);
-			IKDICBBFBMI_EventBase eventInfo = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9);
+			IKDICBBFBMI_EventBase eventInfo = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9);
 			if(eventInfo != null)
 			{
 				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "ApplyEventInfo");
@@ -1259,7 +1259,7 @@ namespace XeApp.Game.Menu
 			{
 				m_feverLimit.SetOnOff(false);
 			}
-			m_scoreEventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI_6);
+			m_scoreEventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6);
 			if(m_scoreEventCtrl != null)
 			{
 				TodoLogger.LogError(TodoLogger.EventScore_4, "ApplyEventInfo");

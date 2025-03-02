@@ -893,7 +893,7 @@ namespace XeApp.Game.Menu
 			IKDICBBFBMI_EventBase ev = view.COAMJFMEIBF;
 			if(ev.HIDHLFCBIDE_EventType >= OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp && ev.HIDHLFCBIDE_EventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign)
 			{
-				ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9, false);
+				ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9, false);
 			}
 			TransitionUniqueId goScene = TransitionUniqueId.MUSICSELECT_RAID;
 			if (ev.FBLGGLDPFDF())

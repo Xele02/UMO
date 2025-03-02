@@ -1596,7 +1596,7 @@ namespace XeApp.Game
 			else
 			{
 				KEODKEGFDLD_FreeMusicInfo fData = master.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(freeMusicId);
-				enemyInfo = master.OPFBEAJJMJB_Enemy.INONDJKKOKG(fData.LHICAKGHIGF[(int)difficulty]);
+				enemyInfo = master.OPFBEAJJMJB_Enemy.INONDJKKOKG(fData.LHICAKGHIGF_EnemyIdByDiff[(int)difficulty]);
 				musicBase = master.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(fData.DLAEJOBELBH_MusicId);
 			}
 			wavId = musicBase.KKPAHLMJKIH_WavId;

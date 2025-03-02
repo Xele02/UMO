@@ -116,7 +116,7 @@ public class DFKGGBMFFGB_PlayerInfo
 			int centerDivaId = NPFCMHCCDDH.PDJEMLMOEPF_CenterDivaId;
 			if (centerDivaId == 0)
 				centerDivaId = 1;
-			IKDICBBFBMI_EventBase evt = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9);
+			IKDICBBFBMI_EventBase evt = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9);
 			if (evt != null)
 			{
 				TodoLogger.LogError(TodoLogger.EventGoDiva_14, "Finish for event");

@@ -67,7 +67,7 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 		int b = GEAANLPDJBP_MusicInfo.CCLIOBOGFHC;
 		if (MFJKNCACBDG_OpenEventType != 0)
 		{
-            IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI_6, false);
+            IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6, false);
 			if(ev != null)
 			{
             	b = ev.EEMGDCPJNEG(b, (OHCAABOMEOF.KGOGMKMBCPP_EventType)MNNHHJBBICA_GameEventType);

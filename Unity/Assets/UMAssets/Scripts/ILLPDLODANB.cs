@@ -704,7 +704,7 @@ public class ILLPDLODANB
 					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(dbQuest.EKANGPODCEP);
 					if (ev == null)
 						return 0;
-					if (ev.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD.MEAJLPAHINL_5/*5*/)
+					if (ev.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5/*5*/)
 						return 0;
 				}
 				return (dbQuest.HHIBBHFHENH_LinkQuestId == 0 || a > 1) ? 1 : 0;

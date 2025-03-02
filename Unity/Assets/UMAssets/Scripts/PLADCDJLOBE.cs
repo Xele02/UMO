@@ -59,7 +59,7 @@ public class PLADCDJLOBE
 					if(ev2 != null)
 					{
 						ev2.HCDGELDHFHB_UpdateStatus(time);
-						if(ev2.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI_6/*6*/ && ev2.AGLILDLEFDK_Missions != null)
+						if(ev2.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6/*6*/ && ev2.AGLILDLEFDK_Missions != null)
 						{
 							long time2 = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 							int group = 0;

@@ -11,19 +11,86 @@ namespace XeApp.Game.Menu
 		private List<IBJAKJJICBC> m_view6LineSimulationList; // 0x14
 
 		// // RVA: 0x10494DC Offset: 0x10494DC VA: 0x10494DC
-		// public int GetCount(bool line6Mode, bool simulation = False) { }
+		public int GetCount(bool line6Mode, bool simulation/* = False*/)
+		{
+			List<IBJAKJJICBC> l;
+			if(simulation)
+			{
+				if(!line6Mode)
+					l = m_viewSimulationList;
+				else
+					l = m_view6LineSimulationList;
+			}
+			else
+			{
+				if(!line6Mode)
+					l = m_viewList;
+				else
+					l = m_view6LineList;
+			}
+			if(l != null)
+			{
+				return l.Count;
+			}
+			return 0;
+		}
 
 		// // RVA: 0x10495A8 Offset: 0x10495A8 VA: 0x10495A8
-		// public IBJAKJJICBC Get(int index, bool line6Mode, bool simulation = False) { }
+		public IBJAKJJICBC Get(int index, bool line6Mode, bool simulation/* = False*/)
+		{
+			List<IBJAKJJICBC> l;
+			if(simulation)
+			{
+				if(!line6Mode)
+					l = m_viewSimulationList;
+				else
+					l = m_view6LineSimulationList;
+			}
+			else
+			{
+				if(!line6Mode)
+					l = m_viewList;
+				else
+					l = m_view6LineList;
+			}
+			if(l != null)
+			{
+				return l[index];
+			}
+			return null;
+		}
 
 		// // RVA: 0x104957C Offset: 0x104957C VA: 0x104957C
-		// public List<IBJAKJJICBC> GetList(bool line6Mode, bool simulation = False) { }
+		public List<IBJAKJJICBC> GetList(bool line6Mode, bool simulation/* = False*/)
+		{
+			if(simulation)
+			{
+				if(!line6Mode)
+					return m_viewSimulationList;
+				else
+					return m_view6LineSimulationList;
+			}
+			else
+			{
+				if(!line6Mode)
+					return m_viewList;
+				else
+					return m_view6LineList;
+			}
+		}
 
 		// // RVA: 0x1049650 Offset: 0x1049650 VA: 0x1049650
 		// public bool ContainsNew(bool simulation = False) { }
 
 		// // RVA: 0x1049750 Offset: 0x1049750 VA: 0x1049750
-		// public int FindIndex(int freeMusicId, bool line6Mode = False, bool simulation = False) { }
+		public int FindIndex(int freeMusicId, bool line6Mode/* = False*/, bool simulation/* = False*/)
+		{
+			return FindIndex((IBJAKJJICBC _) =>
+			{
+				//0x104A274
+				return freeMusicId == _.GHBPLHBNMBK_FreeMusicId;
+			}, line6Mode, simulation);
+		}
 
 		// // RVA: 0x10498EC Offset: 0x10498EC VA: 0x10498EC
 		public int FindIndex(int freeMusicId, OHCAABOMEOF.KGOGMKMBCPP_EventType gameEventType, bool line6Mode = false, bool simulation = false)
@@ -81,7 +148,13 @@ namespace XeApp.Game.Menu
 		// public void .ctor(List<IBJAKJJICBC> viewList) { }
 
 		// // RVA: 0x1040144 Offset: 0x1040144 VA: 0x1040144
-		// public void .ctor(List<IBJAKJJICBC> viewList, List<IBJAKJJICBC> view6LineList) { }
+		public MusicDataList(List<IBJAKJJICBC> viewList, List<IBJAKJJICBC> view6LineList)
+		{
+			m_viewList = viewList;
+			m_view6LineList = view6LineList;
+			m_viewSimulationList = new List<IBJAKJJICBC>();
+			m_view6LineSimulationList = new List<IBJAKJJICBC>();
+		}
 
 		// // RVA: 0x104A0B4 Offset: 0x104A0B4 VA: 0x104A0B4
 		public MusicDataList(List<IBJAKJJICBC> viewList, List<IBJAKJJICBC> view6LineList, List<IBJAKJJICBC> viewSimulationList, List<IBJAKJJICBC> view6LineSimulationList)

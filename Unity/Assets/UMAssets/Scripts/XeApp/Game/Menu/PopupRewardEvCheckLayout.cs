@@ -192,7 +192,9 @@ namespace XeApp.Game.Menu
 			}
 			else if(m_eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
-				TodoLogger.LogError(TodoLogger.EventBattle_3, "Battle");
+				m_EventMusicRank = data.curr_score_rank;
+				m_EventHiScore = data.curr_score;
+				m_RankingType = RankingType.BattleScore;
 			}
 			else if(m_eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
 			{

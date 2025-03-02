@@ -102,7 +102,7 @@ namespace XeApp.Game.Common
 					MessageBank bk = MessageManager.Instance.GetBank("menu");
 					long l1, l2;
 					string str;
-					if(list[i].NGOFCFJHOMI_Status <= KGCNCBOKCBA.GNENJEHKMHD.DOAENCHBAEO_11)
+					if(list[i].NGOFCFJHOMI_Status <= KGCNCBOKCBA.GNENJEHKMHD_EventStatus.DOAENCHBAEO_11)
 					{
 						if(((1 << (int)list[i].NGOFCFJHOMI_Status) & 0xf03U) != 0)
 							// 1111 0000 0011

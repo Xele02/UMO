@@ -436,7 +436,12 @@ namespace XeApp.Game.Menu
 						}
 						if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 						{
-							TodoLogger.LogError(TodoLogger.EventBattle_3, "init from event 3");
+							PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.JBAIEADLAGH_0);
+							info.category = SceneGroupCategory.EVENT_BATTLE;
+							info.nextName = TransitionList.Type.EVENT_BATTLE;
+							info.uniqueId = TransitionUniqueId.EVENTBATTLE;
+							info.args = new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, true);
+							return;
 						}
 					}
 					else
@@ -2112,7 +2117,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB35920 Offset: 0xB35920 VA: 0xB35920
-		public bool CheckEventLimit(IBJAKJJICBC musicData, bool isCheckDateLine = true, bool isDoTransition = true, KGCNCBOKCBA.GNENJEHKMHD status = KGCNCBOKCBA.GNENJEHKMHD.MEAJLPAHINL_5/*5*/, int eventUniqueId = 0)
+		public bool CheckEventLimit(IBJAKJJICBC musicData, bool isCheckDateLine = true, bool isDoTransition = true, KGCNCBOKCBA.GNENJEHKMHD_EventStatus status = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5/*5*/, int eventUniqueId = 0)
 		{
 			if(isCheckDateLine)
 			{

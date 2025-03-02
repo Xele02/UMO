@@ -275,9 +275,9 @@ public class FDDIIKBJNNA
 										{
 											a = 1;
 											b = false;
-											if(ev.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI_6 || ev.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD.HINPDNKNAHO_10)
+											if(ev.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6 || ev.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.HINPDNKNAHO_10)
 											{
-												b = ev.NGOFCFJHOMI_Status == KGCNCBOKCBA.GNENJEHKMHD.DOAENCHBAEO_11;
+												b = ev.NGOFCFJHOMI_Status == KGCNCBOKCBA.GNENJEHKMHD_EventStatus.DOAENCHBAEO_11;
 												a = (sns_event_room_pre_open != 1 || b) ? 1 : 0;
 												i_ = ev;
 											}

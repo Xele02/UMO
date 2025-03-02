@@ -105,7 +105,7 @@ namespace ExternLib
 
 			return 0;
 		}
-
+		
 		public static int SakashoAchievementClaimAchievementPrizes(int callbackId, string json)
 		{
 			// Hack directly send response

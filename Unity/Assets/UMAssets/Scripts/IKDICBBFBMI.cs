@@ -49,7 +49,7 @@ public abstract class IKDICBBFBMI_EventBase
 	public const int NLHCFCAPBFH = 10;
 	public const int NFGBMPKFEGC = 999;
 	public string JOPOPMLFINI; // 0x8
-	public KGCNCBOKCBA.GNENJEHKMHD NGOFCFJHOMI_Status; // 0xC
+	public KGCNCBOKCBA.GNENJEHKMHD_EventStatus NGOFCFJHOMI_Status; // 0xC
 	public string DGCOMDILAKM_EventName; // 0x10
 	public bool IBNKPMPFLGI_IsRankReward; // 0x14
 	public bool LEPALMDKEOK_IsPointReward; // 0x15
@@ -109,7 +109,7 @@ public abstract class IKDICBBFBMI_EventBase
 	public bool LPFJADHHLHG; // 0xCD
 	public bool CBPOMDFDKPD; // 0xCE
 	public MFDJIFIIPJD BHABCGJCGNO; // 0xD0
-	public List<MFDJIFIIPJD> KGBCKPKLKHM = new List<MFDJIFIIPJD>(); // 0xD4
+	public List<MFDJIFIIPJD> KGBCKPKLKHM_RewardItems = new List<MFDJIFIIPJD>(); // 0xD4
 	public List<AIGOEAPJGEB> MBHDIJJEOFL; // 0xD8
 	public int HADLPHIMBHH_BoostRatio = 1; // 0xDC
 	public bool IBLPKJJNNIG; // 0xE0
@@ -313,7 +313,7 @@ public abstract class IKDICBBFBMI_EventBase
 	// // RVA: 0x8DE4E0 Offset: 0x8DE4E0 VA: 0x8DE4E0 Slot: 19
 	public virtual void HEFIKPAHCIA(GBNDFCEDNMG.CJDGJFINBFH HDAMBOOCIAA)
     {
-        if(AGLILDLEFDK_Missions != null && OLDFFDMPEBM_Quests != null && NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI_6/*6*/)
+        if(AGLILDLEFDK_Missions != null && OLDFFDMPEBM_Quests != null && NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6/*6*/)
 		{
 			int c = AGLILDLEFDK_Missions.Count;
 			if (OLDFFDMPEBM_Quests.Count < c)
@@ -626,7 +626,7 @@ public abstract class IKDICBBFBMI_EventBase
 	protected virtual IEnumerator JEIJKLPOAHP_ReceivePrologueRepeatedAchievement(DJBHIFLHJLK AOCANKOMKFG)
 	{
 		//0x8E4088
-		KGBCKPKLKHM.Clear();
+		KGBCKPKLKHM_RewardItems.Clear();
 		yield break;
 	}
 
@@ -635,7 +635,7 @@ public abstract class IKDICBBFBMI_EventBase
 	protected virtual IEnumerator KPBNMAEHHDF_ReceiveEpilogueRepeatedAchivement(DJBHIFLHJLK AOCANKOMKFG)
 	{
 		//0x8E38F4
-		KGBCKPKLKHM.Clear();
+		KGBCKPKLKHM_RewardItems.Clear();
 		yield break;
 	}
 
@@ -693,7 +693,7 @@ public abstract class IKDICBBFBMI_EventBase
 				FLONELKGABJ_ClaimAchievementPrizes r = NHECPMNKEFK as FLONELKGABJ_ClaimAchievementPrizes;
 				for(int i = 0; i < r.NFEAMMJIMPG.CEDLLCCONJP.Count; i++)
 				{
-					KGBCKPKLKHM.AddRange(JKGAGLAIEHH[r.NFEAMMJIMPG.CEDLLCCONJP[i].LJNAKDMILMC_Key]);
+					KGBCKPKLKHM_RewardItems.AddRange(JKGAGLAIEHH[r.NFEAMMJIMPG.CEDLLCCONJP[i].LJNAKDMILMC_Key]);
 				}
 			};
 			req2.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request NHECPMNKEFK) =>
@@ -1157,9 +1157,9 @@ public abstract class IKDICBBFBMI_EventBase
 	// public virtual bool GJMGKBDGMOP(long LPEKHFOMCAH) { }
 
 	// // RVA: 0x8E22B4 Offset: 0x8E22B4 VA: 0x8E22B4
-	public bool JBPPMMMFGCA()
+	public bool JBPPMMMFGCA_HasRewardItems()
 	{
-		return KGBCKPKLKHM.Count > 0;
+		return KGBCKPKLKHM_RewardItems.Count > 0;
 	}
 
 	// // RVA: 0x8E233C Offset: 0x8E233C VA: 0x8E233C Slot: 69
@@ -1280,9 +1280,9 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8E2644 Offset: 0x8E2644 VA: 0x8E2644
-	public bool HJPNJBCJPNJ(KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL)
+	public bool HJPNJBCJPNJ(KGCNCBOKCBA.GNENJEHKMHD_EventStatus BELFNAHNMDL)
 	{
-		return NGOFCFJHOMI_Status <= BELFNAHNMDL && BELFNAHNMDL > KGCNCBOKCBA.GNENJEHKMHD.FFLKPBPBPEP_1/*1*/;
+		return NGOFCFJHOMI_Status <= BELFNAHNMDL && BELFNAHNMDL > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.FFLKPBPBPEP_1/*1*/;
 	}
 
 	// // RVA: 0x8E2668 Offset: 0x8E2668 VA: 0x8E2668 Slot: 80

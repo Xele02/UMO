@@ -149,7 +149,7 @@ namespace XeApp.Game.Menu
 				param2.viewEventExRivalResultData = data3;
 				param2.layoutOkayButton = null;
 				event03PointLayoutInitParam = param2;
-				HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.MEAJLPAHINL_5, false) as HAEDCCLHEMN_EventBattle;
+				HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5, false) as HAEDCCLHEMN_EventBattle;
 				if(ev != null)
 				{
 					if(eventType == ev.HIDHLFCBIDE_EventType)
@@ -1188,12 +1188,17 @@ namespace XeApp.Game.Menu
 							TodoLogger.LogError(TodoLogger.EventCollection_1, "Event");
 							break;
 						default:
+						{
 							MusicSelectArgs args = new MusicSelectArgs();
 							args.isLine6Mode = Database.Instance.gameSetup.musicInfo.IsLine6Mode;
 							MenuScene.Instance.Mount(TransitionUniqueId.MUSICSELECT, args, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+						}
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle:
-							TodoLogger.LogError(TodoLogger.EventBattle_3, "Event");
+						{
+							EventMusicSelectSceneArgs args = new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, true);
+							MenuScene.Instance.Mount(TransitionUniqueId.EVENTBATTLE, args, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+						}
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore:
 							TodoLogger.LogError(TodoLogger.EventScore_4, "Event");

@@ -310,7 +310,7 @@ namespace XeApp.Game.Menu
 			}
 			if(data.eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
-				TodoLogger.LogError(TodoLogger.EventBattle_3, "Event Battle");
+				str = MessageManager.Instance.GetMessage("menu", "popup_event_reward_ranking_type002");
 			}
 			else if(data.eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
 			{

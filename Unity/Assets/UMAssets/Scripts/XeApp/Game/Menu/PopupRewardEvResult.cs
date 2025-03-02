@@ -556,7 +556,7 @@ namespace XeApp.Game.Menu
 		{
 			//0x1A7F6DC
 			ApplySetting(Type.CumulativePoint, parent, 0);
-			sm_Setting.Init(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9, false), OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0);
+			sm_Setting.Init(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9, false), OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0);
 			GameManager.Instance.ResetViewPlayerData();
 			PopupWindowManager.Show(sm_Setting, buttonCallBack, null, null, null, playSeEvent:(PopupWindowControl.SeType type) =>
 			{

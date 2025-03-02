@@ -300,7 +300,7 @@ public class GBNDFCEDNMG
 		{
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			LIKDEHHKFEH.HCDGELDHFHB_UpdateStatus(time);
-			if(LIKDEHHKFEH.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD.EIFKDKFAHPH_7/*7*/)
+			if(LIKDEHHKFEH.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EIFKDKFAHPH_7/*7*/)
 			{
 				if(NDFIEMPPMLF.KJBGCLPMLCG_Start != 0 || NDFIEMPPMLF.GJFPFFBAKGK_End != 0)
 				{
@@ -351,7 +351,7 @@ public class GBNDFCEDNMG
 					return false;
 				if(LLNJFONIECK(LIKDEHHKFEH.HIDHLFCBIDE_EventType))
 				{
-					LIKDEHHKFEH = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/, false);
+					LIKDEHHKFEH = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9/*9*/, false);
 					if (LIKDEHHKFEH == null)
 						return false;
 				}
@@ -837,7 +837,7 @@ public class GBNDFCEDNMG
 					return false;
 				{
 					HAEDCCLHEMN_EventBattle ev = LIKDEHHKFEH as HAEDCCLHEMN_EventBattle;
-					if(ev.KKMFHMGIIKN() < aa4)
+					if(ev.KKMFHMGIIKN_GetCls() < aa4)
 					{
 						return false;
 					}

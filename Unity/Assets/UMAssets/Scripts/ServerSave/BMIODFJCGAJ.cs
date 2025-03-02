@@ -11,7 +11,7 @@ public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 	public const int ECFEMKGFDCE = 2;
 	private const int OIEOCBIJLDC = 10;
 	public int FBGGEFFJJHB = 0x2ca3b889; // 0x24
-	public int EHGBICNIBKE; // 0x28
+	public int EHGBICNIBKE_PlyerId; // 0x28
 	public string LJNAKDMILMC_Key = ""; // 0x2C
 	public string OPFGFINHFCE_Name = ""; // 0x30
 	public int EOPEEENMHEN_Crypted; // 0x34
@@ -31,7 +31,7 @@ public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 	public int IPPNCOHEEOD_ScoreAverage { get { return EOPEEENMHEN_Crypted ^ FBGGEFFJJHB; } set { EOPEEENMHEN_Crypted = value ^ FBGGEFFJJHB; } } // BNFNPCNAGAF 0x19C80E0 GEMDEGDPJPK 0x19C80F0
 	public int OBGBAOLONDD { get { return JAFHGKBENFP_Crypted ^ FBGGEFFJJHB; } set { JAFHGKBENFP_Crypted = value ^ FBGGEFFJJHB; } } // OLHPPFCEIIK 0x19C8100 EIHCOIFCELN 0x19C8110
 	public int NCAEFIHINAP_Cnt { get { return LDEOJKDPFFI_Crypted ^ FBGGEFFJJHB; } set { LDEOJKDPFFI_Crypted = value ^ FBGGEFFJJHB; } } // NBKJHKBBPHP 0x19C8120 KLNDBOMAJHF 0x19C8130
-	public int EEAPIKNJNDB_CWin { get { return DPOOAOPAAGC_Crypted ^ FBGGEFFJJHB; } set { DPOOAOPAAGC_Crypted = value ^ FBGGEFFJJHB; } } //  KNLJPLHJMHI 0x19C8140  IMHAJFDFGJL 0x19C8150
+	public int EEAPIKNJNDB_ConsecutiveWin { get { return DPOOAOPAAGC_Crypted ^ FBGGEFFJJHB; } set { DPOOAOPAAGC_Crypted = value ^ FBGGEFFJJHB; } } //  KNLJPLHJMHI 0x19C8140  IMHAJFDFGJL 0x19C8150
 	public int KEFMAJJPAKM_CWinMax { get { return BAHBNDPEMJP_Crypted ^ FBGGEFFJJHB; } set { BAHBNDPEMJP_Crypted = value ^ FBGGEFFJJHB; } } // JPBMCILHBLO 0x19C8160 PNCBJOMBOEJ 0x19C8170
 	public int FGEIOMGBGLI_Twin { get { return PGPDMJICNLO_Crypted ^ FBGGEFFJJHB; } set { PGPDMJICNLO_Crypted = value ^ FBGGEFFJJHB; } } // HOPMOAGHMHO 0x19C8180 IOCOHNGCFKJ 0x19C8190
 	public int DIPKCALNIII_Dv { get { return AOFGNAJLLPD_Crypted ^ FBGGEFFJJHB; } set { AOFGNAJLLPD_Crypted = value ^ FBGGEFFJJHB; } } // EOGPBFIDAPF 0x19C81A0 JDNCGPBAFMB 0x19C81B0
@@ -45,7 +45,7 @@ public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 		LJNAKDMILMC_Key = LJNAKDMILMC;
 		IPPNCOHEEOD_ScoreAverage = 0;
 		NCAEFIHINAP_Cnt = 0;
-		EEAPIKNJNDB_CWin = 0;
+		EEAPIKNJNDB_ConsecutiveWin = 0;
 		KEFMAJJPAKM_CWinMax = 0;
 		FGEIOMGBGLI_Twin = 0;
 		OPFGFINHFCE_Name = string.Copy(OPFGFINHFCE);
@@ -104,7 +104,7 @@ public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 		data[AFEHLCGHAEE_Strings.OPFGFINHFCE_name] = OPFGFINHFCE_Name;
 		data[string.Format("avg_" + OBGBAOLONDD.ToString("D4"), Array.Empty<object>())] = IPPNCOHEEOD_ScoreAverage;
 		data["cnt"] = NCAEFIHINAP_Cnt;
-		data["cwin"] = EEAPIKNJNDB_CWin;
+		data["cwin"] = EEAPIKNJNDB_ConsecutiveWin;
 		data["cwin_max"] = KEFMAJJPAKM_CWinMax;
 		data["twin"] = FGEIOMGBGLI_Twin;
 		data["f"] = GOIKCKHMBDL_F;
@@ -168,7 +168,7 @@ public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 		}
 		IPPNCOHEEOD_ScoreAverage = CJAENOMGPDA_ReadInt(block, s, 0, ref isInvalid);
 		NCAEFIHINAP_Cnt = Mathf.Clamp(CJAENOMGPDA_ReadInt(block, "cnt", 0, ref isInvalid), 0, 9999);
-		EEAPIKNJNDB_CWin = Mathf.Clamp(CJAENOMGPDA_ReadInt(block, "cwin", 0, ref isInvalid), 0, 999);
+		EEAPIKNJNDB_ConsecutiveWin = Mathf.Clamp(CJAENOMGPDA_ReadInt(block, "cwin", 0, ref isInvalid), 0, 999);
 		KEFMAJJPAKM_CWinMax = Mathf.Clamp(CJAENOMGPDA_ReadInt(block, "cwin_max", 0, ref isInvalid), 0, 999);
 		FGEIOMGBGLI_Twin = Mathf.Clamp(CJAENOMGPDA_ReadInt(block, "twin", 0, ref isInvalid), 0, 999);
 		IPPNCOHEEOD_ScoreAverage = Mathf.Clamp(IPPNCOHEEOD_ScoreAverage, 0, 999999999);
@@ -219,7 +219,7 @@ public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 		BMIODFJCGAJ_EventBattlePlayer other = GPBJHKLFCEP as BMIODFJCGAJ_EventBattlePlayer;
 		IPPNCOHEEOD_ScoreAverage = other.IPPNCOHEEOD_ScoreAverage;
 		NCAEFIHINAP_Cnt = other.NCAEFIHINAP_Cnt;
-		EEAPIKNJNDB_CWin = other.EEAPIKNJNDB_CWin;
+		EEAPIKNJNDB_ConsecutiveWin = other.EEAPIKNJNDB_ConsecutiveWin;
 		KEFMAJJPAKM_CWinMax = other.KEFMAJJPAKM_CWinMax;
 		FGEIOMGBGLI_Twin = other.FGEIOMGBGLI_Twin;
 		LJNAKDMILMC_Key = other.LJNAKDMILMC_Key;
@@ -252,7 +252,7 @@ public class BMIODFJCGAJ_EventBattlePlayer : KLFDBFMNLBL_ServerSaveBlock
 			return false;
 		if(NCAEFIHINAP_Cnt != other.NCAEFIHINAP_Cnt)
 			return false;
-		if(EEAPIKNJNDB_CWin != other.EEAPIKNJNDB_CWin)
+		if(EEAPIKNJNDB_ConsecutiveWin != other.EEAPIKNJNDB_ConsecutiveWin)
 			return false;
 		if(KEFMAJJPAKM_CWinMax != other.KEFMAJJPAKM_CWinMax)
 			return false;

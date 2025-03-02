@@ -1967,13 +1967,13 @@ public static class CMMKCEPBIHI
 			{
 				subGoal = m.LJPKLMJPLAC[(int)AKNELONELJK];
 				goal = m.MALHPBKPIDE[(int)AKNELONELJK];
-				enemyId = m.LHICAKGHIGF[(int)AKNELONELJK];
+				enemyId = m.LHICAKGHIGF_EnemyIdByDiff[(int)AKNELONELJK];
 			}
 			else
 			{
 				subGoal = m.ILCJOOPIILK[(int)AKNELONELJK];
 				goal = m.BGILEHEJHHA[(int)AKNELONELJK];
-				enemyId = m.PJNFOCDANCE[(int)AKNELONELJK];
+				enemyId = m.PJNFOCDANCE_EnemyIdByDiffL6[(int)AKNELONELJK];
 			}
 		}
 		AONMBIEIBCD.Clear();

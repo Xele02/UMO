@@ -142,11 +142,11 @@ namespace XeApp.Game.Menu
 			m_buttonGroup.onClickBingoButton = OnClickBingoView;
 			m_buttonGroup.Setup(time);
 			m_eventBanner.onClickBannerButton = OnClickEventBannerButton;
-			m_eventBanner.Setup(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/, false), time);
+			m_eventBanner.Setup(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9/*9*/, false), time);
 			SetupPickup();
 			m_campaignBanner.onClickBannerButton = OnClickHomeBanner;
 			m_campaignBanner.Setup(m_pickupBannerList, m_bannerTexCache);
-			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp/*7*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/);
+			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp/*7*/, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9/*9*/);
 			if(ev == null)
 			{
 				m_spEventCtrl = null;
@@ -934,7 +934,7 @@ namespace XeApp.Game.Menu
 			JBCAHMMCOKK b = m_pickupBannerList.Find((JBCAHMMCOKK x) =>
 			{
 				//0x13C86D0
-				return x.EAHPLCJMPHD == bannerId;
+				return x.EAHPLCJMPHD_EventId == bannerId;
 			});
 			ILCCJNDFFOB.HHCJCDFCLOB.EAGAKGNNINL(b.JLPLLECHHLG, b.FEMMDNIELFC, b.IAMFPLLOHFO);
 			switch(b.NNHHNFFLCFO)
@@ -962,7 +962,7 @@ namespace XeApp.Game.Menu
 					break;
 				case JBCAHMMCOKK.ALEKHDPDOEA.BPCPDNGLNGO_4:
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
-					GotoCurrentEventScene(b.EAHPLCJMPHD, 0, true);
+					GotoCurrentEventScene(b.EAHPLCJMPHD_EventId, 0, true);
 					break;
 				case JBCAHMMCOKK.ALEKHDPDOEA.IDAIIJEMNMP_5:
 				case JBCAHMMCOKK.ALEKHDPDOEA.NCBMILKEFCF_6:
@@ -971,7 +971,7 @@ namespace XeApp.Game.Menu
 				case JBCAHMMCOKK.ALEKHDPDOEA.JNFDONGNAGP_20:
 				case JBCAHMMCOKK.ALEKHDPDOEA.KCOEIKAMLBD_27:
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
-					GotoGachaMainScene(b.NNHHNFFLCFO, b.EAHPLCJMPHD);
+					GotoGachaMainScene(b.NNHHNFFLCFO, b.EAHPLCJMPHD_EventId);
 					break;
 				case JBCAHMMCOKK.ALEKHDPDOEA.OLJOBADEFGB_7:
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
@@ -991,24 +991,81 @@ namespace XeApp.Game.Menu
 				case JBCAHMMCOKK.ALEKHDPDOEA.AHJNOIGCCFC_11:
 					{
 						SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
-						OHCAABOMEOF.KGOGMKMBCPP_EventType eventType = OHCAABOMEOF.BPJMGICFPBJ(b.EAHPLCJMPHD);
-						if(b.EAHPLCJMPHD > -1)
+						OHCAABOMEOF.KGOGMKMBCPP_EventType eventType = OHCAABOMEOF.BPJMGICFPBJ(b.EAHPLCJMPHD_EventId);
+						if(b.EAHPLCJMPHD_EventId > -1)
 						{
-							KNKDBNFMAKF_EventSp k = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(b.EAHPLCJMPHD) as KNKDBNFMAKF_EventSp;
+							IKDICBBFBMI_EventBase k = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(b.EAHPLCJMPHD_EventId);
 							if(k != null)
 							{
-								TodoLogger.LogError(TodoLogger.EventSp_7, "Event SP");
+								k.HCDGELDHFHB_UpdateStatus(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime());
+								if(((int)k.NGOFCFJHOMI_Status & 0xfffffffe) == 8)
+								{
+									int v1 = 0;
+									if(k.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp)
+									{
+										//346
+										TodoLogger.LogError(TodoLogger.EventSp_7, "Event SP");
+									}
+									else
+									{
+										v1 = k.CAKEOPLJDAF_EndAdventureId;
+									}
+									GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(v1);
+									if(adv != null)
+									{
+										if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsViewed(v1))
+										{
+											switch(eventType)
+											{
+												case OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection:
+													TodoLogger.LogError(TodoLogger.EventCollection_1, "Event Collection");
+													break;
+												case OHCAABOMEOF.KGOGMKMBCPP_EventType.MKKOHBGHADL_2:
+												case OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore:
+												case OHCAABOMEOF.KGOGMKMBCPP_EventType.ENMHPBGOOII_Week:
+													//switchD_00976c24_caseD_2
+													break;
+												case OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle:
+													Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTBATTLE, new AdvSetupParam() { eventUniqueId=b.EAHPLCJMPHD_EventId });
+													//switchD_00976c24_caseD_2
+													break;
+												case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest:
+													TodoLogger.LogError(TodoLogger.EventQuest_6, "Event Quest");
+													break;
+												case OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp:
+													TodoLogger.LogError(TodoLogger.EventSp_7, "Event Sp");
+													break;
+												case OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva:
+													TodoLogger.LogError(TodoLogger.EventGoDiva_14, "Event GoDiva");
+													break;
+												default:
+													break;
+											}
+											//switchD_00976c24_caseD_2
+											CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetViewed(v1);
+											ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(v1, OAGBCBBHMPF.DKAMMIHBINF.DODPGHDOFIO_2);
+											Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
+											MenuScene.Instance.GotoAdventure(true);
+											MenuScene.Instance.InputDisable();
+											return;
+										}
+									}
+									//LAB_0097685c
+								}
+								//LAB_0097685c
 							}
 						}
+						//LAB_0097685c
 						switch(eventType)
 						{
 							case OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection:
 								TodoLogger.LogError(TodoLogger.EventCollection_1, "Event Collection");
 								break;
 							default:
+								MenuScene.Instance.Mount(TransitionUniqueId.HOME_NEWYEAREVENT, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 								break;
 							case OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle:
-								TodoLogger.LogError(TodoLogger.EventBattle_3, "Event Battle");
+								MenuScene.Instance.Mount(TransitionUniqueId.EVENTBATTLE, new EventMusicSelectSceneArgs(b.EAHPLCJMPHD_EventId, false, false), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 								break;
 							case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest:
 								TodoLogger.LogError(TodoLogger.EventQuest_6, "Event Quest");
@@ -1114,7 +1171,7 @@ namespace XeApp.Game.Menu
 			}
 			else if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
-				TodoLogger.LogError(TodoLogger.EventBattle_3, "Battle");
+				Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTBATTLE, new AdvSetupParam() { eventUniqueId=param.eventUniqueId });
 			}
 			else if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
 			{
@@ -1165,7 +1222,7 @@ namespace XeApp.Game.Menu
 							default:
 								break;
 							case OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle:
-								TodoLogger.LogError(TodoLogger.EventBattle_3, "Event Battle");
+								Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTBATTLE, new AdvSetupParam() { eventUniqueId=eventUniqueId });
 								break;
 							case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest:
 								TodoLogger.LogError(TodoLogger.EventQuest_6, "Event Quest");
@@ -1198,7 +1255,7 @@ namespace XeApp.Game.Menu
 				default:
 					break;
 				case OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle:
-					TodoLogger.LogError(TodoLogger.EventBattle_3, "Event Battle");
+					MenuScene.Instance.Mount(TransitionUniqueId.EVENTBATTLE, new EventMusicSelectSceneArgs(eventUniqueId, false, false), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					break;
 				case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest:
 					TodoLogger.LogError(TodoLogger.EventQuest_6, "Event Quest");
@@ -2731,7 +2788,7 @@ namespace XeApp.Game.Menu
 
 			//0x13D9054
 			m_isCheckEventReward = true;
-            IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.DDEODFNANDO_8/*8*/, false);
+            IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.DDEODFNANDO_8/*8*/, false);
 			if(ev != null && ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.MKKOHBGHADL_2/*2*/)
 			{
 				TodoLogger.LogError(TodoLogger.Event_Unknwown_2, "Coroutine_EventReward");
@@ -2746,7 +2803,7 @@ namespace XeApp.Game.Menu
 				long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 				eventController = eventControlers[i];
 				eventController.HCDGELDHFHB_UpdateStatus(time);
-				if(eventController.NGOFCFJHOMI_Status == KGCNCBOKCBA.GNENJEHKMHD.DDEODFNANDO_8/*8*/)
+				if(eventController.NGOFCFJHOMI_Status == KGCNCBOKCBA.GNENJEHKMHD_EventStatus.DDEODFNANDO_8/*8*/)
 				{
 					rankingNum = eventController.NGIHFKHOJOK(false);
 					for(n = 0; n < rankingNum; n++)

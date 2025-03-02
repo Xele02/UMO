@@ -288,7 +288,7 @@ namespace XeApp.Game.MusicSelect
 					else
 					{
 						isHighLevel = false;
-						List<IKDICBBFBMI_EventBase> list = GetEventControllerList(OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime(), KGCNCBOKCBA.GNENJEHKMHD.KPMNPGKKFJG);
+						List<IKDICBBFBMI_EventBase> list = GetEventControllerList(OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime(), KGCNCBOKCBA.GNENJEHKMHD_EventStatus.KPMNPGKKFJG);
 						for (int j = 0; j < list.Count; j++)
 						{
 							AMLGMLNGMFB_EventAprilFool eventApril = list[j] as AMLGMLNGMFB_EventAprilFool;
@@ -360,7 +360,7 @@ namespace XeApp.Game.MusicSelect
 		}
 
 		//// RVA: 0xCA24B0 Offset: 0xCA24B0 VA: 0xCA24B0
-		private static List<IKDICBBFBMI_EventBase> GetEventControllerList(OHCAABOMEOF.KGOGMKMBCPP_EventType type, long currentTime, KGCNCBOKCBA.GNENJEHKMHD term = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9)
+		private static List<IKDICBBFBMI_EventBase> GetEventControllerList(OHCAABOMEOF.KGOGMKMBCPP_EventType type, long currentTime, KGCNCBOKCBA.GNENJEHKMHD_EventStatus term = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9)
 		{
 			List<IKDICBBFBMI_EventBase> res = new List<IKDICBBFBMI_EventBase>();
 			List<IKDICBBFBMI_EventBase> list = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.FindAll((IKDICBBFBMI_EventBase _) =>
@@ -371,7 +371,7 @@ namespace XeApp.Game.MusicSelect
 			for(int i = 0; i < list.Count; i++)
 			{
 				list[i].HCDGELDHFHB_UpdateStatus(currentTime);
-				if(list[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD.FFLKPBPBPEP_1 && list[i].NGOFCFJHOMI_Status <= term)
+				if(list[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.FFLKPBPBPEP_1 && list[i].NGOFCFJHOMI_Status <= term)
 				{
 					res.Add(list[i]);
 				}

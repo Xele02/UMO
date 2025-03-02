@@ -23,41 +23,80 @@ namespace XeApp.Game.Menu
 			GoDivaEventEnd = 11,
 		}
 
-		// private static readonly MusicSelectOptionButton.OptionType[] s_emptyOptionButtons = null; // 0x0
-		// private static readonly MusicSelectOptionButton.OptionType[] s_basicOptionButtons = new MusicSelectOptionButton.OptionType[4] {
-		// 	0, 1, 2, 5
-		// }; // 0x4
-		// private static readonly MusicSelectOptionButton.OptionType[] s_questEventOptionButtons = new MusicSelectOptionButton.OptionType[4] {
-		// 	3, 4, 6, 7
-		// }; // 0x8
-		// private static readonly MusicSelectOptionButton.OptionType[] s_questEventInfoOptionButtons = new MusicSelectOptionButton.OptionType[6] {
-		// 	3, 4, 0, 1, 2, 5
-		// }; // 0xC
-		// private static readonly MusicSelectOptionButton.OptionType[] s_collectEventOptionButtons = new MusicSelectOptionButton.OptionType[7] {
-		// 	3, 4, 6, 7, 0, 2, 5
-		// }; // 0x10
-		// private static readonly MusicSelectOptionButton.OptionType[] s_scoreEventOptionButtons = new MusicSelectOptionButton.OptionType[5] {
-		// 	3, 4, 1, 2, 5
-		// }; // 0x14
-		// private static readonly MusicSelectOptionButton.OptionType[] s_battleEventOptionButtons = new MusicSelectOptionButton.OptionType[6] {
-		// 	3, 4, 6, 7, 2, 5
-		// }; // 0x18
-		// private static readonly MusicSelectOptionButton.OptionType[] s_simulationLiveOptionButtons = new MusicSelectOptionButton.OptionType[1] { 2 }; // 0x1C
-		// private static readonly MusicSelectOptionButton.OptionType[] s_endEventHomeOptionButtons = new MusicSelectOptionButton.OptionType[4] {
-		// 	3, 4, 6, 7
-		// }; // 0x20
-		// private static readonly MusicSelectOptionButton.OptionType[] s_goDivaEventOptionButtons = new MusicSelectOptionButton.OptionType[4] {
-		// 	3, 4, 6, 7
-		// }; // 0x24
-		// private static readonly MusicSelectOptionButton.OptionType[] s_goDivaEventEndOptionButtons = new MusicSelectOptionButton.OptionType[4] {
-		// 	3, 4, 6, 7
-		// }; // 0x28
+		private static readonly MusicSelectOptionButton.OptionType[] s_emptyOptionButtons = null; // 0x0
+		private static readonly MusicSelectOptionButton.OptionType[] s_basicOptionButtons = new MusicSelectOptionButton.OptionType[4] {
+			MusicSelectOptionButton.OptionType.Ranking, 
+			MusicSelectOptionButton.OptionType.Reward,
+			MusicSelectOptionButton.OptionType.MusicDetail, 
+			MusicSelectOptionButton.OptionType.EnemyInfo
+		}; // 0x4
+		private static readonly MusicSelectOptionButton.OptionType[] s_questEventOptionButtons = new MusicSelectOptionButton.OptionType[4] {
+			MusicSelectOptionButton.OptionType.EvRanking,
+			MusicSelectOptionButton.OptionType.EvReward,
+			MusicSelectOptionButton.OptionType.EvStory,
+			MusicSelectOptionButton.OptionType.EvMission
+		}; // 0x8
+		private static readonly MusicSelectOptionButton.OptionType[] s_questEventInfoOptionButtons = new MusicSelectOptionButton.OptionType[6] {
+			MusicSelectOptionButton.OptionType.EvRanking,
+			MusicSelectOptionButton.OptionType.EvReward,
+			MusicSelectOptionButton.OptionType.Ranking,
+			MusicSelectOptionButton.OptionType.Reward,
+			MusicSelectOptionButton.OptionType.MusicDetail,
+			MusicSelectOptionButton.OptionType.EnemyInfo
+		}; // 0xC
+		private static readonly MusicSelectOptionButton.OptionType[] s_collectEventOptionButtons = new MusicSelectOptionButton.OptionType[7] {
+			MusicSelectOptionButton.OptionType.EvRanking,
+			MusicSelectOptionButton.OptionType.EvReward,
+			MusicSelectOptionButton.OptionType.EvStory,
+			MusicSelectOptionButton.OptionType.EvMission,
+			MusicSelectOptionButton.OptionType.Ranking,
+			MusicSelectOptionButton.OptionType.MusicDetail,
+			MusicSelectOptionButton.OptionType.EnemyInfo
+		}; // 0x10
+		private static readonly MusicSelectOptionButton.OptionType[] s_scoreEventOptionButtons = new MusicSelectOptionButton.OptionType[5] {
+			MusicSelectOptionButton.OptionType.EvRanking,
+			MusicSelectOptionButton.OptionType.EvReward,
+			MusicSelectOptionButton.OptionType.Reward,
+			MusicSelectOptionButton.OptionType.MusicDetail,
+			MusicSelectOptionButton.OptionType.EnemyInfo
+		}; // 0x14
+		private static readonly MusicSelectOptionButton.OptionType[] s_battleEventOptionButtons = new MusicSelectOptionButton.OptionType[6] {
+			MusicSelectOptionButton.OptionType.EvRanking,
+			MusicSelectOptionButton.OptionType.EvReward,
+			MusicSelectOptionButton.OptionType.EvStory,
+			MusicSelectOptionButton.OptionType.EvMission, 
+			MusicSelectOptionButton.OptionType.MusicDetail,
+			MusicSelectOptionButton.OptionType.EnemyInfo
+		}; // 0x18
+		private static readonly MusicSelectOptionButton.OptionType[] s_simulationLiveOptionButtons = new MusicSelectOptionButton.OptionType[1]
+		{ 
+			MusicSelectOptionButton.OptionType.MusicDetail
+		}; // 0x1C
+		private static readonly MusicSelectOptionButton.OptionType[] s_endEventHomeOptionButtons = new MusicSelectOptionButton.OptionType[4] {
+			MusicSelectOptionButton.OptionType.EvRanking, 
+			MusicSelectOptionButton.OptionType.EvReward,
+			MusicSelectOptionButton.OptionType.EvStory,
+			MusicSelectOptionButton.OptionType.EvMission
+		}; // 0x20
+		private static readonly MusicSelectOptionButton.OptionType[] s_goDivaEventOptionButtons = new MusicSelectOptionButton.OptionType[4] {
+			MusicSelectOptionButton.OptionType.EvRanking,
+			MusicSelectOptionButton.OptionType.EvReward,
+			MusicSelectOptionButton.OptionType.EvStory,
+			MusicSelectOptionButton.OptionType.EvMission
+		}; // 0x24
+		private static readonly MusicSelectOptionButton.OptionType[] s_goDivaEventEndOptionButtons = new MusicSelectOptionButton.OptionType[4] {
+			
+			MusicSelectOptionButton.OptionType.EvRanking,
+			MusicSelectOptionButton.OptionType.EvReward,
+			MusicSelectOptionButton.OptionType.EvStory,
+			MusicSelectOptionButton.OptionType.EvMission
+		}; // 0x28
 		[SerializeField]
 		private List<MusicSelectOptionButton> m_optionButtons; // 0x18
-		// private LayoutSymbolData m_symbolMain; // 0x1C
-		// private List<LayoutSymbolData> m_symbolButtonStyles; // 0x20
-		// private List<MusicSelectOptionButton.OptionType> m_optionTypes = new List<MusicSelectOptionButton.OptionType>(5); // 0x24
-		// private bool m_isShow; // 0x48
+		private LayoutSymbolData m_symbolMain; // 0x1C
+		private List<LayoutSymbolData> m_symbolButtonStyles; // 0x20
+		private List<MusicSelectOptionButton.OptionType> m_optionTypes = new List<MusicSelectOptionButton.OptionType>(5); // 0x24
+		private bool m_isShow; // 0x48
 
 		public Action onClickRankingButton { private get; set; } // 0x28
 		public Action onClickRewardButton { private get; set; } // 0x2C
@@ -65,26 +104,36 @@ namespace XeApp.Game.Menu
 		public Action onClickEventRankingButton { private get; set; } // 0x34
 		public Action onClickEventRewardButton { private get; set; } // 0x38
 		public Action onClickEnemyInfoButton { private get; set; } // 0x3C
-		// public Action onClickStoryButton { private get; set; } // 0x40
-		// public Action onClickMissionButton { private get; set; } // 0x44
+		public Action onClickStoryButton { private get; set; } // 0x40
+		public Action onClickMissionButton { private get; set; } // 0x44
 
 		// // RVA: 0x166A09C Offset: 0x166A09C VA: 0x166A09C
-		// public void TryEnter() { }
+		public void TryEnter()
+		{
+			if(!m_isShow)
+				Enter();
+		}
 
 		// // RVA: 0x166A130 Offset: 0x166A130 VA: 0x166A130
 		public void TryLeave()
 		{
-			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectButtonSet TryLeave");
+			if(m_isShow)
+				Leave();
 		}
 
 		// // RVA: 0x166A0AC Offset: 0x166A0AC VA: 0x166A0AC
 		public void Enter()
 		{
-			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectButtonSet Enter");
+			m_isShow = true;
+			m_symbolMain.StartAnim("enter");
 		}
 
 		// // RVA: 0x166A140 Offset: 0x166A140 VA: 0x166A140
-		// public void Leave() { }
+		public void Leave()
+		{
+			m_isShow = false;
+			m_symbolMain.StartAnim("leave");
+		}
 
 		// // RVA: 0x166A1C4 Offset: 0x166A1C4 VA: 0x166A1C4
 		// public void Show() { }
@@ -92,14 +141,14 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x166A248 Offset: 0x166A248 VA: 0x166A248
 		public void Hide()
 		{
-			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectButtonSet Hide");
+			m_isShow = false;
+			m_symbolMain.StartAnim("wait");
 		}
 
 		// // RVA: 0x166A2CC Offset: 0x166A2CC VA: 0x166A2CC
 		public bool IsPlaying()
 		{
-			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectButtonSet IsPlaying");
-			return false;
+			return m_symbolMain.IsPlaying();
 		}
 
 		// // RVA: 0x166A2F8 Offset: 0x166A2F8 VA: 0x166A2F8
@@ -147,7 +196,14 @@ namespace XeApp.Game.Menu
 		// RVA: 0x166B858 Offset: 0x166B858 VA: 0x166B858 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			TodoLogger.LogError(TodoLogger.OldMusicSelect, "InitializeFromLayout MusicSelectButtonSet");
+			base.InitializeFromLayout(layout, uvMan);
+			m_symbolMain = CreateSymbol("main", layout);
+			m_symbolButtonStyles = new List<LayoutSymbolData>(m_optionButtons.Count);
+			for(int i = 0; i < m_optionButtons.Count; i++)
+			{
+				m_symbolButtonStyles.Add(CreateSymbol(string.Format("btn{0:D2}_style", i + 1), layout));
+			}
+			IsLoaded();
 			return true;
 		}
 	}

@@ -163,15 +163,15 @@ namespace XeApp.Game.Menu
 					IKDICBBFBMI_EventBase ev = null;
 					if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool)
 					{
-                        ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool, KGCNCBOKCBA.GNENJEHKMHD.MEAJLPAHINL_5);
+                        ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5);
                     }
 					else if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
 					{
-						ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD.MEAJLPAHINL_5);
+						ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5);
 					}
 					else
 					{
-						ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.MEAJLPAHINL_5, false);
+						ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5, false);
 					}
 					if(ev != null)
 					{
@@ -660,12 +660,7 @@ namespace XeApp.Game.Menu
 					return base.GetCallArgsReturn();
 				}
 			}
-			TodoLogger.LogError(TodoLogger.EventGoDiva_14, "GetCallArgsReturn Event");
-			TodoLogger.LogError(TodoLogger.EventCollection_1, "GetCallArgsReturn Event");
-			TodoLogger.LogError(TodoLogger.Event_Unknwown_2, "GetCallArgsReturn Event");
-			TodoLogger.LogError(TodoLogger.EventBattle_3, "GetCallArgsReturn Event");
-			TodoLogger.LogError(TodoLogger.EventQuest_6, "GetCallArgsReturn Event");
-			return null;
+			return new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, false);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E0DC4 Offset: 0x6E0DC4 VA: 0x6E0DC4

@@ -30,7 +30,7 @@ public class GKFPMAPFHIK_ViewEventAprilFoolMiniGameData
 	public bool KHEKNNFCAOI()
 	{
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
-		AMLGMLNGMFB_EventAprilFool ev = OEGDCBLNNFF(time, KGCNCBOKCBA.GNENJEHKMHD.MINDIGBAJFG_3/*3*/);
+		AMLGMLNGMFB_EventAprilFool ev = OEGDCBLNNFF(time, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MINDIGBAJFG_3/*3*/);
 		if(ev != null)
 		{
 			PNBAPMLNDLN_SetClear(ev.NDNDIAFEBFJ().KBAHNBKMFDL_IsMinigameClear);
@@ -41,7 +41,7 @@ public class GKFPMAPFHIK_ViewEventAprilFoolMiniGameData
 	}
 
 	//// RVA: 0xAB2A18 Offset: 0xAB2A18 VA: 0xAB2A18
-	public AMLGMLNGMFB_EventAprilFool OEGDCBLNNFF(long JHNMKKNEENE, KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/)
+	public AMLGMLNGMFB_EventAprilFool OEGDCBLNNFF(long JHNMKKNEENE, KGCNCBOKCBA.GNENJEHKMHD_EventStatus BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9/*9*/)
 	{
 		List<IKDICBBFBMI_EventBase>  l = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.FindAll((IKDICBBFBMI_EventBase JPAEDJJFFOI) =>
 		{
@@ -51,7 +51,7 @@ public class GKFPMAPFHIK_ViewEventAprilFoolMiniGameData
 		for (int i = 0; i < l.Count; i++)
 		{
 			l[i].HCDGELDHFHB_UpdateStatus(JHNMKKNEENE);
-			if(l[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD.FFLKPBPBPEP_1/*1*/ && l[i].NGOFCFJHOMI_Status <= BELFNAHNMDL)
+			if(l[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.FFLKPBPBPEP_1/*1*/ && l[i].NGOFCFJHOMI_Status <= BELFNAHNMDL)
 			{
 				if((l[i] as AMLGMLNGMFB_EventAprilFool).NDIILFIFCDL_GetMinigameId() == 1)
 					return l[i] as AMLGMLNGMFB_EventAprilFool;
@@ -64,7 +64,7 @@ public class GKFPMAPFHIK_ViewEventAprilFoolMiniGameData
 	private void PNBAPMLNDLN_SetClear(bool BCGLDMKODLC)
 	{
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
-		AMLGMLNGMFB_EventAprilFool ev = OEGDCBLNNFF(time, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/);
+		AMLGMLNGMFB_EventAprilFool ev = OEGDCBLNNFF(time, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9/*9*/);
 		if (ev == null)
 			return;
 		ALPDMEILILP_ClearCrypted = BCGLDMKODLC ? CNECJGKECHK_True : JFOFMKBJBBE_False;

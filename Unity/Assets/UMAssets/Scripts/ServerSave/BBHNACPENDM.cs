@@ -181,7 +181,7 @@ public class BBHNACPENDM_ServerSaveData
 	public const ulong COGCOLEJAKK = 16389;
 	public const ulong DBBGFKKHGOA = 16391;
 	public const ulong ICEMOLCMHGG = 1;
-	private int BFACFIBJBPA; // 0xDC
+	private int BFACFIBJBPA_Crypted; // 0xDC
 	public long MCKEOKFMLAH_SaveId; // 0xE0
 	// private KIJECNFNNDB LAFGAPBDKML = new KIJECNFNNDB(); // 0xE8
 	public List<KLFDBFMNLBL_ServerSaveBlock> MGJKEJHEBPO_Blocks; // 0xEC
@@ -242,7 +242,7 @@ public class BBHNACPENDM_ServerSaveData
 	 public CCBMJNPFPBB_EventGoDiva JMPNGBGNCFO_EventGoDiva { get; private set; } // 0xD0 LOLEIHDFOKP BDMCKFAEPIK NBGJMKCEIOI
 	 public BAHFBCEPFGP_AddMusic MMGKPCIOHHC_AddMusic { get; private set; } // 0xD4 NIGNJMGNLIK CPFOEMJFADP JDGDGLJPMHP
 	 public EAOHMJHHDKN_GachaLimit APFILEMHEPG_GachaLimit { get; private set; } // 0xD8 AHEKEIBBGEK MJKGKBMIEAF CFHDNDLAEMO
-	// public int ABPOMNOIKDA { get; set; } // NMDJOKGPIOA 0xF1C03C NPALOAPEPAC 0xF1C050
+	public int ABPOMNOIKDA_PlayerId { get { return BFACFIBJBPA_Crypted ^ 0x7654981c; } set { BFACFIBJBPA_Crypted = value ^ 0x7654981c; } } // NMDJOKGPIOA 0xF1C03C NPALOAPEPAC 0xF1C050
 
 	// // RVA: 0xF1BAEC Offset: 0xF1BAEC VA: 0xF1BAEC
 	private ulong BCJKHLAOLAP_GetLoadFlags(OKGLGHCBCJP_Database NDFIEMPPMLF)
@@ -391,7 +391,10 @@ public class BBHNACPENDM_ServerSaveData
 	}
 
 	// // RVA: 0xF1F30C Offset: 0xF1F30C VA: 0xF1F30C
-	// public void PNHOEMIMCGC() { }
+	public void PNHOEMIMCGC()
+	{
+		KHEKNNFCAOI_Init(0x400001);
+	}
 
 	// // RVA: 0xF1F330 Offset: 0xF1F330 VA: 0xF1F330
 	public void CAKOEJHBIHF()

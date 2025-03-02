@@ -123,6 +123,11 @@ class JpStringLiterals
 	public static string StringLiteral_10416 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10416", "<color=pink>最高スコア更新 "); } } // 0x03bb2d78
 	public static string StringLiteral_10431 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10431", "デビューガチャ"); } } //0x03bb2db4
 	public static string StringLiteral_10443 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10443", "プレート"); } } //0x03bb2de4
+	public static string StringLiteral_10882 { get { return "<color=red>EXライバル数のオーバーフロー："; } } // 03bb34c0
+	public static string StringLiteral_10890 { get { return "<color=cyan>ダミーマッチング イベント楽曲="; } } // 03bb34e0
+	public static string StringLiteral_10891 { get { return "～ "; } } // 03bb34e4
+	public static string StringLiteral_10892 { get { return "<color=cyan>ダミー検索範囲スコア "; } } // 03bb34e8
+	public static string StringLiteral_10893 { get { return "<color=red>！！！対象楽曲／クラスにマッチするライバルがいない！！！</color>"; } } // 03bb34ec
 	public static string StringLiteral_10912 { get { return "<color=cyan>勝利</color>"; } } // 03bb3538
 	public static string StringLiteral_10913 { get { return "<color=cyan>敗北</color>"; } } // 03bb353c
 	public static string StringLiteral_10915 { get { return "<color=cyan>スコア = "; } } // 03bb3544
@@ -132,6 +137,11 @@ class JpStringLiterals
 	public static string StringLiteral_10921 { get { return "<color=cyan>ポイント = "; } } //03bb355c
 	public static string StringLiteral_10923 { get { return "<color=cyan>EXゲージポイント = "; } } //03bb3564
 	public static string StringLiteral_10924 { get { return "<color=magenta>EXライバル出現中！</color>"; } } //03bb3568
+	public static string StringLiteral_10930 { get { return "<color=cyan>ゲーム数 : "; } } //03bb3580
+	public static string StringLiteral_10931 { get { return "<color=cyan>連勝数   : "; } } //03bb3584
+	public static string StringLiteral_10932 { get { return "ウォームアップ中"; } } //03bb3588
+	public static string StringLiteral_10933 { get { return "<color=cyan>対戦相手検索</color>"; } } //03bb358c
+	public static string StringLiteral_10935 { get { return "人見つかりました</color>"; } } //03bb3594
 	public static string StringLiteral_11015 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_11015", "master_gacha_ticket.xlsxにデカルガチャチケットの設定がありません"); } } //0x03bb36d4
 	public static string StringLiteral_11062 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_11062", "ライフ"); } } // 0x03bb3790
 	public static string StringLiteral_11063 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_11063", "ソウル"); } } // 0x03bb3794

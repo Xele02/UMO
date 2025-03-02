@@ -1,13 +1,13 @@
 public class KGCNCBOKCBA
 {
-	public enum GNENJEHKMHD
+	public enum GNENJEHKMHD_EventStatus
 	{
 		HJNNKCMLGFL = 0,
 		FFLKPBPBPEP_1 = 1,
 		NCJFJLPJMLI_2 = 2,
 		MINDIGBAJFG_3 = 3,
 		GDOPLACICFE_4 = 4,
-		MEAJLPAHINL_5 = 5,
+		MEAJLPAHINL_ChallengePeriod_5 = 5,
 		EMAMLLFAOJI_6 = 6,
 		EIFKDKFAHPH_7 = 7,
 		DDEODFNANDO_8 = 8,

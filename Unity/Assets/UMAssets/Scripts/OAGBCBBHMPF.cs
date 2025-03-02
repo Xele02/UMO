@@ -40,7 +40,7 @@ public class OAGBCBBHMPF
         NJKBAICBOIN = 34,
         GBABEMFLPBA = 35,
         NJEIHFPKOMG_ServerSaveLoadInfo = 36,
-        HHGEPDNBGAI = 37,
+        HHGEPDNBGAI_37 = 37,
         PMHLIBHEBBB_38 = 38,
         FEIOPIIEIKB_39 = 39,
         EAGAKGNNINL_40 = 40,
@@ -215,7 +215,7 @@ public class OAGBCBBHMPF
 	{
 		KJHABBHBFPD = 0,
 		DECFIFJACCL = 1,
-		DODPGHDOFIO = 2,
+		DODPGHDOFIO_2 = 2,
 		BPCPDNGLNGO = 3,
 		HEFPAOLDHCK = 4,
 		FCMMKJLCFAB = 5,

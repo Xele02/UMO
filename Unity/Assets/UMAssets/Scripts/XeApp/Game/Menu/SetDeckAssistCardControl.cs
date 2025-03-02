@@ -83,8 +83,8 @@ namespace XeApp.Game.Menu
 			int idx = ghostData.BHCIFFILAKJ_Str > 2 ? 3 : ghostData.BHCIFFILAKJ_Str;
 			m_rivalRankImage.sprite = m_rivalRankSprite[idx];
 			m_scoreObject.gameObject.SetActive(true);
-			HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9) as HAEDCCLHEMN_EventBattle;
-			m_scoreText.text = ev.HOJNMALLCME(idx, 0).ToString();
+			HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9) as HAEDCCLHEMN_EventBattle;
+			m_scoreText.text = ev.HOJNMALLCME_GetClassMaxScore(idx, 0).ToString();
 			m_tapGuardObject.SetActive(true);
 		}
 

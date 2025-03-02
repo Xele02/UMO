@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 
 namespace XeApp.Game.Menu
@@ -8,15 +9,18 @@ namespace XeApp.Game.Menu
 		// private MusicSelectEventInfo m_eventInfo; // 0xF8
 		// private EventTimeLimitMessage m_timeLimitMessage; // 0xFC
 		// private MusicSelectLineButton m_lineButton; // 0x100
-		// private MusicDataList m_musicList; // 0x104
+		private MusicDataList m_musicList; // 0x104
 		// private bool m_isEventChecked; // 0x108
 		// private bool m_isEventTimeLimit; // 0x109
 
-		// protected override int musicListCount { get; } 0x13B12B0
-		// protected override MusicDataList currentMusicList { get; } 0x13B12C0
+		protected override int musicListCount { get { return 1; } } //0x13B12B0
+		protected override MusicDataList currentMusicList { get { return m_musicList; } } //0x13B12C0
 
 		// // RVA: 0x13B12B8 Offset: 0x13B12B8 VA: 0x13B12B8 Slot: 32
-		// protected override MusicDataList GetMusicList(int i) { }
+		protected override MusicDataList GetMusicList(int i)
+		{
+			return m_musicList;
+		}
 
 		// RVA: 0x13B12C8 Offset: 0x13B12C8 VA: 0x13B12C8 Slot: 16
 		protected override void OnPreSetCanvas()
@@ -161,7 +165,11 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EF07C Offset: 0x6EF07C VA: 0x6EF07C
 		// // RVA: 0x13B39D0 Offset: 0x13B39D0 VA: 0x13B39D0 Slot: 57
-		// protected override IEnumerator Co_WaitForAnimEnd(Action onEnd) { }
+		protected override IEnumerator Co_WaitForAnimEnd(Action onEnd)
+		{
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventMusicSelectScene Co_WaitForAnimEnd");
+			yield break;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EF0F4 Offset: 0x6EF0F4 VA: 0x6EF0F4
 		// // RVA: 0x13B3A98 Offset: 0x13B3A98 VA: 0x13B3A98 Slot: 37

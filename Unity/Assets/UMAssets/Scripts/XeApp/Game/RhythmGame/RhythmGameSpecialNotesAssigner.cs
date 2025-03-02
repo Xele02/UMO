@@ -333,7 +333,7 @@ namespace XeApp.Game.RhythmGame
 				v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId).KDIKCKEEPDA_GetNormalRateId(Database.Instance.gameSetup.musicInfo.IsLine6Mode);
 				if (JEPBIIJDGEF_EventInfo.HHCJCDFCLOB != null)
 				{
-                    IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI_6, false);
+                    IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6, false);
                     if (ev != null)
 					{
 						v = ev.NCHKBINKKBH_UpdateDropRateSet(v, Database.Instance.gameSetup.musicInfo.gameEventType);
@@ -357,7 +357,7 @@ namespace XeApp.Game.RhythmGame
 				v = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(Database.Instance.gameSetup.musicInfo.freeMusicId).MGLDIOILOFF_NormalSetId;
 				if (JEPBIIJDGEF_EventInfo.HHCJCDFCLOB != null)
 				{
-                    IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI_6, false);
+                    IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6, false);
                     if (ev != null)
 					{
 						v = ev.JDFHIHPPAHN_UpdateDropItemSet(v, Database.Instance.gameSetup.musicInfo.gameEventType);

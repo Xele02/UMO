@@ -57,6 +57,8 @@ namespace ExternLib
 			//res["rankings"].Add(GetRankingInfo("collect_ranking2_1061", false));
 			//res["rankings"].Add(GetRankingInfo("collect_ranking_1061", false));
 			//res["rankings"].Add(GetRankingInfo("score_ranking_4021", false));
+			res["rankings"].Add(GetRankingInfo("battle_ranking_3046", false));
+			res["rankings"].Add(GetRankingInfo("battle_ranking2_3046", false));
 
 			SendMessage(callbackId, res);
 			return 0;
@@ -331,6 +333,64 @@ namespace ExternLib
 						break;
 				}
 
+				return data;
+			}
+			else if(k.StartsWith("battle_ranking_"))
+			{
+				EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+				data.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+				data["allow_lower_score"] = false;
+				data["allow_negative_score"] = false;
+				data["allow_tied_rank"] = true;
+				data["batch_interval_time"] = 0;
+				data["batch_started_at"] = 0;
+				data["closed_at"] = 1734274740;
+				data["competition_closed_at"] = 1732978800;
+				data["default_score"] = 0;
+				data["description"] = "Battle ranking";
+				data["id"] = 300000 + int.Parse(k.Replace("battle_ranking_", ""));
+				data["is_reverse"] = false;
+				data["name"] = "battle_ranking";
+				data["name_for_api"] = k;
+				data["opened_at"] = 1575126000;
+				data["ranking_type"] = 1;
+				data["reward_opened_at"] = 1732978860;
+				data["score_precision"] = 6;
+				data["update_type"] = 0;
+				if (withRewards)
+				{
+					data["rewards"] = new EDOHBJAPLPF_JsonData();
+					data["rewards"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+				}
+				return data;
+			}
+			else if(k.StartsWith("battle_ranking2_"))
+			{
+				EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+				data.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+				data["allow_lower_score"] = false;
+				data["allow_negative_score"] = false;
+				data["allow_tied_rank"] = true;
+				data["batch_interval_time"] = 0;
+				data["batch_started_at"] = 0;
+				data["closed_at"] = 1734274740;
+				data["competition_closed_at"] = 1732978800;
+				data["default_score"] = 0;
+				data["description"] = "Battle ranking";
+				data["id"] = 310000 + int.Parse(k.Replace("battle_ranking2_", ""));
+				data["is_reverse"] = false;
+				data["name"] = "battle_ranking2";
+				data["name_for_api"] = k;
+				data["opened_at"] = 1575126000;
+				data["ranking_type"] = 1;
+				data["reward_opened_at"] = 1732978860;
+				data["score_precision"] = 6;
+				data["update_type"] = 0;
+				if (withRewards)
+				{
+					data["rewards"] = new EDOHBJAPLPF_JsonData();
+					data["rewards"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+				}
 				return data;
 			}
 			else

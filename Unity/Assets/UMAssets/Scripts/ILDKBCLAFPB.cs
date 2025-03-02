@@ -1029,7 +1029,10 @@ public class ILDKBCLAFPB
 			//public bool FKEJBAHCMGC(int LHMJFCCBPPN) { }
 
 			//// RVA: 0x202416C Offset: 0x202416C VA: 0x202416C
-			//public Difficulty.Type FFACBDAJJJP() { }
+			public Difficulty.Type FFACBDAJJJP_GetDifficulty()
+			{
+				return (Difficulty.Type)HNKJDJFFACC_Difficulty;
+			}
 
 			//// RVA: 0x2024174 Offset: 0x2024174 VA: 0x2024174
 			//public void HJHBGHMNGKL(Difficulty.Type AKNELONELJK) { }

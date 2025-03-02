@@ -6,7 +6,7 @@ namespace XeApp.Game.Menu
 		public bool isLine6Mode;
 		public bool isEventTimeLimit;
 		public MusicSelectButtonSet.OptionStyle overrideButtonStyle;
-		public KGCNCBOKCBA.GNENJEHKMHD eventStatus;
+		public KGCNCBOKCBA.GNENJEHKMHD_EventStatus eventStatus;
 		public int eventId;
 		public int eventTicketId;
 		public bool listIsEmptyByFilter;

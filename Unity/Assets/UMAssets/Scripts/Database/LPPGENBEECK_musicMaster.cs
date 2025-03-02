@@ -468,8 +468,8 @@ public class LPPGENBEECK_MusicMaster : DIHHCBACKGG_DbSection
 			}
 			for (int j = 0; j < array[i].BKEIOLFMMDH.Length; j++)
 			{
-				data.LHICAKGHIGF[j] = (short)array[i].BKEIOLFMMDH[j];
-				data.PJNFOCDANCE[j] = (short)array[i].KJLLNPFHEEL[j];
+				data.LHICAKGHIGF_EnemyIdByDiff[j] = (short)array[i].BKEIOLFMMDH[j];
+				data.PJNFOCDANCE_EnemyIdByDiffL6[j] = (short)array[i].KJLLNPFHEEL[j];
 			}
 			for (int j = 0; j < array[i].JGEIIONMJMI.Length; j++)
 			{
@@ -768,7 +768,7 @@ public class KEODKEGFDLD_FreeMusicInfo
 	[UMOMember(ReaderMember = "CFJKNAIOEAN")]
 	public short[] OCOGIADDNDN_SpNoteByDiff = new short[5]; // 0x34
 	[UMOMember(ReaderMember = "BKEIOLFMMDH")]
-	public short[] LHICAKGHIGF = new short[5]; // 0x38
+	public short[] LHICAKGHIGF_EnemyIdByDiff = new short[5]; // 0x38
 	[UMOMember(ReaderMember = "JGEIIONMJMI")]
 	public int[] HLKHOFPAOMK_SubGoalFreeModeByDiff = new int[5]; // 0x3C
 	[UMOMember(ReaderMember = "CMENIBCJJNF")]
@@ -782,7 +782,7 @@ public class KEODKEGFDLD_FreeMusicInfo
 	[UMOMember(ReaderMember = "BODBNFFIOJN")]
 	public short[] DPJDHKIIJIJ_SpNotesByDiff6Line = new short[5]; // 0x50
 	[UMOMember(ReaderMember = "KJLLNPFHEEL")]
-	public short[] PJNFOCDANCE = new short[5]; // 0x54
+	public short[] PJNFOCDANCE_EnemyIdByDiffL6 = new short[5]; // 0x54
 	[UMOMember(ReaderMember = "DOAFFAGEHOM")]
 	public int[] MAGILDGLOKD_SubGoalFreeModeL6ByDiff = new int[5]; // 0x58
 	[UMOMember(ReaderMember = "BIHJCIGKMBA")]

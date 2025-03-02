@@ -33,12 +33,15 @@ namespace XeApp.Game.Menu
 
 		// private MusicSelectArgs myArgs { get; set; } // 0xF8
 		// private bool hasMyArgs { get; } 0x167F17C
-		// protected override int musicListCount { get; } 0x167F18C
-		// protected override MusicDataList currentMusicList { get; } 0x167F284
-		// public int categoryId { get; set; } // 0x130
+		protected override int musicListCount { get { return m_filteredMusicDataList.Count; } } //0x167F18C
+		protected override MusicDataList currentMusicList { get { return m_filteredMusicDataList[categoryId - 1]; } } //0x167F284
+		public int categoryId { get; set; } // 0x130
 
 		// // RVA: 0x167F204 Offset: 0x167F204 VA: 0x167F204 Slot: 32
-		// protected override MusicDataList GetMusicList(int i) { }
+		protected override MusicDataList GetMusicList(int i)
+		{
+			return m_filteredMusicDataList[i];
+		}
 
 		// RVA: 0x167F314 Offset: 0x167F314 VA: 0x167F314 Slot: 16
 		protected override void OnPreSetCanvas()
@@ -356,7 +359,7 @@ namespace XeApp.Game.Menu
 			m_eventId = 0;
 			m_eventIndex = 0;
 			m_eventTicketId = 0;
-			NKOBMDPHNGP_EventRaidLobby d = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby/*13*/, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9/*9*/) as NKOBMDPHNGP_EventRaidLobby;
+			NKOBMDPHNGP_EventRaidLobby d = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby/*13*/, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9/*9*/) as NKOBMDPHNGP_EventRaidLobby;
 			bool b = false;
 			if(d == null)
 			{
@@ -369,7 +372,7 @@ namespace XeApp.Game.Menu
 					m_eventTicketId = NKOBMDPHNGP_EventRaidLobby.ADPMLOEOAFD();
 				}
 			}
-			m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI_6/*6*/, false);
+			m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6/*6*/, false);
 			if(m_eventCtrl == null)
 			{
 				if(m_eventBanner != null)
@@ -385,7 +388,7 @@ namespace XeApp.Game.Menu
 			{
 				m_feverLimit.SetOnOff(false);
 			}
-			m_scoreEventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI_6/*6*/);
+			m_scoreEventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6/*6*/);
 			if(m_scoreEventCtrl != null)
 			{
 				TodoLogger.LogError(TodoLogger.OldMusicSelect, "init score event music");
@@ -666,7 +669,11 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F3AF4 Offset: 0x6F3AF4 VA: 0x6F3AF4
 		// // RVA: 0x1684B74 Offset: 0x1684B74 VA: 0x1684B74 Slot: 57
-		// protected override IEnumerator Co_WaitForAnimEnd(Action onEnd) { }
+		protected override IEnumerator Co_WaitForAnimEnd(Action onEnd)
+		{
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "TODO Co_WaitForAnimEnd");
+			yield break;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F3B6C Offset: 0x6F3B6C VA: 0x6F3B6C
 		// // RVA: 0x1684C18 Offset: 0x1684C18 VA: 0x1684C18 Slot: 37

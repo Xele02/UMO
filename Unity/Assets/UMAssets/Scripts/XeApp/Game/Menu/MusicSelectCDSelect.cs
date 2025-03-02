@@ -57,8 +57,8 @@ namespace XeApp.Game.Menu
 		public delegate void SelectionChangedCallback(int offset);
 		public delegate void ScrollRepeatedCallback(int repeatDelta, int beginIndex, int endIndex);
 
-		// private static readonly int[] s_orderdJacketIndex = new int[6] { 6, 4, 2, 1, 3, 5 }; // 0x0
-		// public static readonly int OrderdJacketNum = s_orderdJacketIndex.Length; // 0x4
+		private static readonly int[] s_orderdJacketIndex = new int[6] { 6, 4, 2, 1, 3, 5 }; // 0x0
+		public static readonly int OrderdJacketNum = s_orderdJacketIndex.Length; // 0x4
 		[SerializeField]
 		private ActionButton m_eventDetailButton; // 0x18
 		[SerializeField]
@@ -91,7 +91,7 @@ namespace XeApp.Game.Menu
 		private LayoutSymbolData m_symbolCurWeekRecovery; // 0x6C
 		private LayoutSymbolData m_symbolCurStep; // 0x70
 		private LayoutSymbolData m_symbolScroll; // 0x74
-		private MusicSelectCDSelect.StyleType m_styleType; // 0x78
+		private StyleType m_styleType; // 0x78
 		private LayoutSymbolData symbolCurMain; // 0x7C
 		private LayoutSymbolData symbolCurTag; // 0x80
 		private LayoutSymbolData symbolCurStyle; // 0x84
@@ -114,20 +114,25 @@ namespace XeApp.Game.Menu
 		public Action onClickEventDetailButton { private get; set; } // 0xC0
 		public Action<int> onClickFlowButton { private get; set; } // 0xC4
 		private Action<int> onClickUnitButton { get; set; } // 0xC8
-		public MusicSelectCDSelect.SelectionChangedCallback onSelectionChanged { private get; set; } // 0xCC
-		public MusicSelectCDSelect.ScrollRepeatedCallback onScrollRepeated { private get; set; } // 0xD0
+		public SelectionChangedCallback onSelectionChanged { private get; set; } // 0xCC
+		public ScrollRepeatedCallback onScrollRepeated { private get; set; } // 0xD0
 		public Action<bool> onScrollStarted { private get; set; } // 0xD4
 		public Action<bool> onScrollUpdated { private get; set; } // 0xD8
 		public Action<bool> onScrollEnded { private get; set; } // 0xDC
 		public Action onClickPlayButton { private get; set; } // 0xE0
 
 		// // RVA: 0x167015C Offset: 0x167015C VA: 0x167015C
-		// public void TryEnter() { }
+		public void TryEnter()
+		{
+			if(!m_isShow)
+				Enter();
+		}
 
 		// // RVA: 0x1670208 Offset: 0x1670208 VA: 0x1670208
 		public void TryLeave()
 		{
-			TodoLogger.LogError(TodoLogger.OldMusicSelect, "InitializeFromLayout TryLeave");
+			if(m_isShow)
+				Leave();
 		}
 
 		// // RVA: 0x167016C Offset: 0x167016C VA: 0x167016C
@@ -139,7 +144,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1670218 Offset: 0x1670218 VA: 0x1670218
-		// public void Leave() { }
+		public void Leave()
+		{
+			m_isShow = false;
+			m_scroller.InputDisable();
+			m_symbolMain.StartAnim("leave");
+		}
 
 		// // RVA: 0x1670314 Offset: 0x1670314 VA: 0x1670314
 		// public void Show() { }
@@ -147,7 +157,9 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x16703B0 Offset: 0x16703B0 VA: 0x16703B0
 		public void Hide()
 		{
-			TodoLogger.LogError(TodoLogger.OldMusicSelect, "InitializeFromLayout Hide");
+			m_isShow = false;
+			m_scroller.InputDisable();
+			m_symbolMain.StartAnim("wait");
 		}
 
 		// // RVA: 0x167044C Offset: 0x167044C VA: 0x167044C
@@ -159,7 +171,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1670478 Offset: 0x1670478 VA: 0x1670478
 		public void MakeCache()
 		{
-			TodoLogger.LogError(TodoLogger.OldMusicSelect, "InitializeFromLayout MakeCache");
+			m_cdCursor.MakeCache();
 		}
 
 		// // RVA: 0x16704A0 Offset: 0x16704A0 VA: 0x16704A0
@@ -184,10 +196,51 @@ namespace XeApp.Game.Menu
 		// public void RefreshJackets() { }
 
 		// // RVA: 0x1670A84 Offset: 0x1670A84 VA: 0x1670A84
-		public void SetStyleType(MusicSelectCDSelect.StyleType type)
+		public void SetStyleType(StyleType type)
 		{
-			TodoLogger.LogError(TodoLogger.OldMusicSelect, "cd select SetStyleType");
-			m_symbolStyle.StartAnim("single");
+			if(type == StyleType.None)
+			{
+				m_scroller.enabled = false;
+				m_symbolStyle.StartAnim("none");
+				symbolCurTimeLimited = null;
+				symbolUnitLiveStyle = null;
+				symbolCurWeekRecovery = null;
+				symbolCurStep = null;
+				symbolCurCountExt = null;
+				symbolCurCountExtAnim = null;
+				symbolCurItemDrop = null;
+				symbolCurTimeLimited = null;
+				symbolCurMain = null;
+				symbolCurTag = null;
+				symbolCurStyle = null;
+				symbolCurItemNum = null;
+			}
+			else
+			{
+				if(type == StyleType.Single)
+				{
+					m_scroller.enabled = false;
+					m_symbolStyle.StartAnim("single");
+				}
+				else if(type == StyleType.Multi)
+				{
+					m_scroller.enabled = true;
+					m_symbolStyle.StartAnim("multi");
+				}
+				symbolUnitLiveStyle = m_symbolUnitLiveStyle;
+				symbolCurWeekRecovery = m_symbolCurWeekRecovery;
+				symbolCurStep = m_symbolCurStep;
+				symbolCurCountExt = m_symbolCurCountExt;
+				symbolCurCountExtAnim = m_symbolCurCountExtAnim;
+				symbolCurItemDrop = m_symbolCurItemDrop;
+				symbolCurTimeLimited = m_symbolCurTimeLimited;
+				symbolCurMain = m_symbolCurMain;
+				symbolCurTag = m_symbolCurTag;
+				symbolCurStyle = m_symbolCurStyle;
+				symbolCurItemNum = m_symbolCurItemNum;
+			}
+			usingCursor = m_cdCursor;
+			m_styleType = type;
 		}
 
 		// // RVA: 0x1670C44 Offset: 0x1670C44 VA: 0x1670C44
@@ -314,7 +367,40 @@ namespace XeApp.Game.Menu
 		// public bool CheckRightLimitPage() { }
 
 		// // RVA: 0x1672BB4 Offset: 0x1672BB4 VA: 0x1672BB4
-		// public void SetPlayButtonType(MusicSelectCDSelect.PlayButtonType type) { }
+		public void SetPlayButtonType(PlayButtonType type)
+		{
+			switch(type)
+			{
+				case PlayButtonType.PlayEn:
+					m_symbolPlayButtonType.StartAnim("play_en");
+					m_playButton.SetDLMessage(false);
+					break;
+				case PlayButtonType.Play:
+					m_symbolPlayButtonType.StartAnim("play");
+					m_playButton.SetDLMessage(false);
+					break;
+				case PlayButtonType.Event:
+					m_symbolPlayButtonType.StartAnim("event");
+					m_playButton.SetDLMessage(false);
+					break;
+				case PlayButtonType.Download:
+					m_symbolPlayButtonType.StartAnim("dl");
+					m_playButton.SetDLMessage(true);
+					break;
+				case PlayButtonType.Live:
+					m_symbolPlayButtonType.StartAnim("live");
+					m_playButton.SetDLMessage(false);
+					break;
+				case PlayButtonType.Ok:
+					m_symbolPlayButtonType.StartAnim("ok");
+					m_playButton.SetDLMessage(false);
+					break;
+				default:
+					m_symbolPlayButtonType.StartAnim(string.Empty);
+					m_playButton.SetDLMessage(false);
+					break;
+			}
+		}
 
 		// // RVA: 0x1672CF8 Offset: 0x1672CF8 VA: 0x1672CF8
 		// public void SetPlayButtonDisable(bool isDisable) { }
@@ -331,31 +417,39 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1672E8C Offset: 0x1672E8C VA: 0x1672E8C
 		private void OnSelectionChanged(int offset)
 		{
-			TodoLogger.LogError(TodoLogger.OldMusicSelect, "OnSelectionChanged");
+			if(onSelectionChanged != null)
+				onSelectionChanged(offset);
 		}
 
 		// // RVA: 0x1673300 Offset: 0x1673300 VA: 0x1673300
 		public void OnScrollRepeated(int repeatDelta, bool isSelectionFlipped)
 		{
-			TodoLogger.LogError(TodoLogger.OldMusicSelect, "OnScrollRepeated");
+			if(onScrollRepeated != null)
+				onScrollRepeated(repeatDelta, isSelectionFlipped ? -2 : -3, isSelectionFlipped ? 3 : 2);
 		}
 
 		// // RVA: 0x167333C Offset: 0x167333C VA: 0x167333C
 		public void OnScrollStarted(bool isAuto)
 		{
-			TodoLogger.LogError(TodoLogger.OldMusicSelect, "OnScrollStarted");
+			if(symbolCurMain != null)
+				symbolCurMain.StartAnim("hide");
+			if(onScrollStarted != null)
+				onScrollStarted(isAuto);
 		}
 
 		// // RVA: 0x16733D4 Offset: 0x16733D4 VA: 0x16733D4
 		public void OnScrollUpdated(bool isAuto)
 		{
-			TodoLogger.LogError(TodoLogger.OldMusicSelect, "OnScrollUpdated");
+			if(onScrollUpdated != null)
+				onScrollUpdated(isAuto);
 		}
 
 		// // RVA: 0x1673448 Offset: 0x1673448 VA: 0x1673448
 		public void OnScrollEnded(bool isAuto)
 		{
-			TodoLogger.LogError(TodoLogger.OldMusicSelect, "OnScrollEnded");
+			symbolCurMain.StartAnim("show");
+			if(onScrollEnded != null)
+				onScrollEnded(isAuto);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F344C Offset: 0x6F344C VA: 0x6F344C
@@ -384,19 +478,24 @@ namespace XeApp.Game.Menu
 
 			m_eventDetailButton.AddOnClickCallback(() => {
 				//0x1673ECC
-				TodoLogger.LogNotImplemented("EventDetaliButton click");
+				if(onClickEventDetailButton != null)
+					onClickEventDetailButton();
 			});
 			for(int i = 0; i < m_cdSelectButtons.Count; i++)
 			{
 				m_cdSelectButtons[i].onSelectButton = (int offset) => {
 					//0x1673EE0
-					TodoLogger.LogNotImplemented("click m_cdSelectButtons");
+					if(onClickFlowButton != null)
+						onClickFlowButton(offset);
 				};
 
 			}
-
-			TodoLogger.LogError(TodoLogger.OldMusicSelect, "Co_Initialize MusicCDSelect");
-			yield break;
+			while(!m_scroller.IsLoaded())
+				yield return null;
+			while(!m_cdCursor.IsLoaded())
+				yield return null;
+			SetPlayButtonType(PlayButtonType.Play);
+			Loaded();
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F34C4 Offset: 0x6F34C4 VA: 0x6F34C4
@@ -437,7 +536,8 @@ namespace XeApp.Game.Menu
 
 			m_playButton.AddOnClickCallback(() => {
 				//0x1673F54
-				TodoLogger.LogNotImplemented("Play button click");
+				if(onClickPlayButton != null)
+					onClickPlayButton();
 			});
 			this.StartCoroutineWatched(Co_Initialize());
 			return true;

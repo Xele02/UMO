@@ -290,7 +290,7 @@ namespace XeApp.Game.Menu
 					return;
 				is_point_reward = cont.LEPALMDKEOK_IsPointReward;
 				is_rank_reward = cont.IBNKPMPFLGI_IsRankReward;
-				is_counting = cont.NGOFCFJHOMI_Status == KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI_6;
+				is_counting = cont.NGOFCFJHOMI_Status == KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6;
 				curr_point = (int)cont.FBGDBGKNKOD_GetCurrentPoint();
 				curr_rank = cont.CDINKAANIAA_Rank[0];
 				total_data_list = cont.PFPJHJJAGAG;
@@ -304,7 +304,11 @@ namespace XeApp.Game.Menu
 				}
 				else if(cont.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 				{
-					TodoLogger.LogError(TodoLogger.EventBattle_3, "Event Battle");
+					HAEDCCLHEMN_EventBattle battleEv = cont as HAEDCCLHEMN_EventBattle;
+					curr_score_rank = battleEv.CDINKAANIAA_Rank[1];
+					curr_score = battleEv.GFNODPDPNMJ_GetSumExHighScore();
+					pickup_free_music_id = 0;
+					is_enable_score_ranking = true;
 				}
 				else if(cont.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
 				{

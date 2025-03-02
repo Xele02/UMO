@@ -1344,7 +1344,7 @@ namespace XeApp.Game.Menu
 			IBJAKJJICBC d = m_viewMusicData as IBJAKJJICBC;
 			if (d == null)
 				return;
-			if (MenuScene.Instance.CheckEventLimit(d, true, true, KGCNCBOKCBA.GNENJEHKMHD.MEAJLPAHINL_5/*5*/, Database.Instance.gameSetup.musicInfo.EventUniqueId))
+			if (MenuScene.Instance.CheckEventLimit(d, true, true, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5/*5*/, Database.Instance.gameSetup.musicInfo.EventUniqueId))
 				return;
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			int cnt = Mathf.Min(CIOECGOMILE.HHCJCDFCLOB.KJBENABMBCA(time), CIOECGOMILE.HHCJCDFCLOB.GGJMFEGHGIA());
