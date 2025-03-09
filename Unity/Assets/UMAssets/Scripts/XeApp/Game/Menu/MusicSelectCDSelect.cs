@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 using System.Collections;
+using XeApp.Game.Menu.EventGoDiva;
 
 namespace XeApp.Game.Menu
 {
@@ -178,7 +179,13 @@ namespace XeApp.Game.Menu
 		// public void ReleaseCache() { }
 
 		// // RVA: 0x16702B4 Offset: 0x16702B4 VA: 0x16702B4
-		// public void ScrollEnable() { }
+		public void ScrollEnable()
+		{
+			if(m_isShow)
+			{
+				m_scroller.InputEnable();
+			}
+		}
 
 		// // RVA: 0x16702EC Offset: 0x16702EC VA: 0x16702EC
 		public void ScrollDisable()
@@ -187,13 +194,42 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x16704C8 Offset: 0x16704C8 VA: 0x16704C8
-		// public void SetupUnitLive(IBJAKJJICBC musicData, MMOLNAHHDOM saveData) { }
+		public void SetupUnitLive(IBJAKJJICBC musicData, MMOLNAHHDOM saveData)
+		{
+			m_unitButton.Setup(musicData, saveData, (MusicSelectUnitButton.Style style) =>
+			{
+				//0x1673DE0
+				if(m_unitButton.Hidden)
+				{
+					m_symbolUnitLiveStyle.StartAnim("none");
+				}
+				else
+				{
+					m_symbolUnitLiveStyle.StartAnim(style == MusicSelectUnitButton.Style.Unit ? "unit" : "solo");
+				}
+			});
+		}
 
 		// // RVA: 0x1670598 Offset: 0x1670598 VA: 0x1670598
-		// public int GetDanceDivaCount() { }
+		public int GetDanceDivaCount()
+		{
+			return m_unitButton.GetDivaCount();
+		}
 
 		// // RVA: 0x16705C4 Offset: 0x16705C4 VA: 0x16705C4
-		// public void RefreshJackets() { }
+		public void RefreshJackets()
+		{
+			if(m_styleType == StyleType.Multi)
+			{
+				if(onScrollRepeated != null)
+					onScrollRepeated(0, -3, 2);
+			}
+			else if(m_styleType == StyleType.Single)
+			{
+				if(onScrollRepeated != null)
+					onScrollRepeated(0, 0, 0);
+			}
+		}
 
 		// // RVA: 0x1670A84 Offset: 0x1670A84 VA: 0x1670A84
 		public void SetStyleType(StyleType type)
@@ -244,127 +280,403 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1670C44 Offset: 0x1670C44 VA: 0x1670C44
-		// public void ApplyCursorAttr(GameAttribute.Type attr) { }
+		public void ApplyCursorAttr(GameAttribute.Type attr)
+		{
+			if(usingCursor != null)
+				usingCursor.SetAttribute(attr);
+		}
 
 		// // RVA: 0x1670CFC Offset: 0x1670CFC VA: 0x1670CFC
-		// public void ApplyCursorSLiveFrame() { }
+		public void ApplyCursorSLiveFrame()
+		{
+			if(usingCursor != null)
+				usingCursor.SetSimulationLiveFrame();
+		}
 
 		// // RVA: 0x1670DAC Offset: 0x1670DAC VA: 0x1670DAC
-		// public void ShowCursorRewardMark(bool forScore, bool forCombo, bool forClearCount) { }
+		public void ShowCursorRewardMark(bool forScore, bool forCombo, bool forClearCount)
+		{
+			if(usingCursor != null)
+				usingCursor.ShowRewardMark(forScore, forCombo, forClearCount);
+		}
 
 		// // RVA: 0x1670E7C Offset: 0x1670E7C VA: 0x1670E7C
-		// public void HideCursorRewardMark() { }
+		public void HideCursorRewardMark()
+		{
+			if(usingCursor != null)
+			{
+				usingCursor.HideRewardMark();
+			}
+		}
 
 		// // RVA: 0x1670F2C Offset: 0x1670F2C VA: 0x1670F2C
-		// public void ApplyCursorEventType(MusicSelectCDSelect.EventType type, bool simulation = False) { }
+		public void ApplyCursorEventType(EventType type, bool simulation/* = False*/)
+		{
+			if(symbolCurTag != null)
+			{
+				switch(type)
+				{
+					case EventType.Weekly:
+						symbolCurTag.StartAnim("weekly");
+						break;
+					case EventType.Score:
+						symbolCurTag.StartAnim("score");
+						break;
+					case EventType.Special:
+						symbolCurTag.StartAnim("special");
+						break;
+					case EventType.Birthday:
+						symbolCurTag.StartAnim("birthday");
+						break;
+					case EventType.None:
+						symbolCurTag.StartAnim("none");
+						break;
+					case EventType.Raid:
+						symbolCurTag.StartAnim("raid");
+						break;
+					default:
+						break;
+				}
+				m_eventDetailButton.Hidden = simulation || type > EventType.Score;
+			}
+		}
 
 		// // RVA: 0x1671064 Offset: 0x1671064 VA: 0x1671064
-		// public void ApplyCursorEventStyle(MusicSelectCDSelect.EventStyle style, bool isEventEntrance = False) { }
+		public void ApplyCursorEventStyle(EventStyle style, bool isEventEntrance/* = False*/)
+		{
+			if(symbolCurStyle != null)
+			{
+				bool isDisable = false;
+				if(usingCursor != null)
+				{
+					switch(style)
+					{
+						case EventStyle.Weekly:
+							symbolCurStyle.StartAnim("weekly");
+							break;
+						case EventStyle.Disable:
+							isDisable = true;
+							symbolCurStyle.StartAnim("none");
+							break;
+						case EventStyle.None:
+							symbolCurStyle.StartAnim("none");
+							break;
+						case EventStyle.ExTicket:
+							symbolCurStyle.StartAnim("event_tc");
+							break;
+						case EventStyle.ExEvent:
+							symbolCurStyle.StartAnim("event");
+							break;
+						case EventStyle.ScoreEvent:
+							symbolCurStyle.StartAnim("event_rk");
+							break;
+						case EventStyle.SimulationLive:
+							symbolCurStyle.StartAnim("simulation");
+							break;
+						default:
+							symbolCurStyle.StartAnim("");
+							break;
+					}
+					usingCursor.SetDisable(isDisable, isEventEntrance);
+				}
+			}
+		}
 
 		// // RVA: 0x167121C Offset: 0x167121C VA: 0x167121C
-		// public void ApplyDropItemType(MusicSelectCDSelect.DropType type) { }
+		public void ApplyDropItemType(DropType type)
+		{
+			if(symbolCurStyle != null && usingCursor != null)
+			{
+				symbolCurItemDrop.StartAnim(type == DropType.Ticket ? "show" : (type == DropType.FoldRadar ? "raid" : "hide"));
+			}
+		}
 
 		// // RVA: 0x1671318 Offset: 0x1671318 VA: 0x1671318
-		// public void ApplyCursorEventRemainCount(int remainCount, bool isExtented = False) { }
+		public void ApplyCursorEventRemainCount(int remainCount, bool isExtented/* = False*/)
+		{
+			if(usingCursor != null)
+			{
+				if(remainCount < 0)
+				{
+					symbolCurCountExt.StartAnim("hide");
+				}
+				else
+				{
+					usingCursor.SetRemainPlayCount(remainCount);
+					if(remainCount < 1 || !isExtented)
+					{
+						symbolCurCountExt.StartAnim("hide");
+						symbolCurCountExtAnim.StartAnim("hide");
+					}
+					else
+					{
+						symbolCurCountExt.StartAnim("show");
+						symbolCurCountExtAnim.StartAnim("loop");
+					}
+				}
+			}
+		}
 
 		// // RVA: 0x16714E4 Offset: 0x16714E4 VA: 0x16714E4
-		// public void ApplyCursorNew(bool isNew) { }
+		public void ApplyCursorNew(bool isNew)
+		{
+			if(usingCursor != null)
+				usingCursor.SetNew(isNew);
+		}
 
 		// // RVA: 0x167159C Offset: 0x167159C VA: 0x167159C
-		// public void ApplyCursorWeekRecoveryIcon(bool isShow) { }
+		public void ApplyCursorWeekRecoveryIcon(bool isShow)
+		{
+			symbolCurWeekRecovery.StartAnim(isShow ? "show" : "hide");
+		}
 
 		// // RVA: 0x1671634 Offset: 0x1671634 VA: 0x1671634
-		// public void ApplyCursorStepCount(int count) { }
+		public void ApplyCursorStepCount(int count)
+		{
+			if(count < 1)
+			{
+				symbolCurStep.StartAnim("hide");
+			}
+			else
+			{
+				symbolCurStep.StartAnim("show");
+				usingCursor.SetStepCount(count);
+			}
+		}
 
 		// // RVA: 0x16716FC Offset: 0x16716FC VA: 0x16716FC
-		// public void ApplyEventItems(List<int> itemIdList) { }
+		public void ApplyEventItems(List<int> itemIdList)
+		{
+			if(usingCursor != null)
+			{
+				symbolCurItemNum.GoToFrame("num", itemIdList.Count - 1);
+				if(gameObject.activeInHierarchy)
+				{
+					this.StartCoroutineWatched(Co_LoadItemImages(itemIdList));
+				}
+			}
+		}
 
 		// // RVA: 0x16718F0 Offset: 0x16718F0 VA: 0x16718F0
-		// public void ApplyEventEndMessage(string message) { }
+		public void ApplyEventEndMessage(string message)
+		{
+			m_cdCursor.SetEndMessage(message);
+		}
 
 		// // RVA: 0x1671940 Offset: 0x1671940 VA: 0x1671940
-		// public void ApplyEventCounting(bool isCounting) { }
+		public void ApplyEventCounting(bool isCounting)
+		{
+			m_cdCursor.EnableCoutingMark(isCounting);
+		}
 
 		// // RVA: 0x1671970 Offset: 0x1671970 VA: 0x1671970
-		// public void ApplyEventRemainTimePrefix(string prefix) { }
+		public void ApplyEventRemainTimePrefix(string prefix)
+		{
+			m_cdCursor.SetRemainTimePrefix(prefix);
+		}
 
 		// // RVA: 0x16719C0 Offset: 0x16719C0 VA: 0x16719C0
-		// public void ApplyEventRemainTime(string time) { }
+		public void ApplyEventRemainTime(string time)
+		{
+			if(usingCursor != null)
+				usingCursor.SetRemainTimeValue(time);
+		}
 
 		// // RVA: 0x1671A98 Offset: 0x1671A98 VA: 0x1671A98
-		// public void ApplyEventBonus(int percent) { }
+		public void ApplyEventBonus(int percent)
+		{
+			if(usingCursor != null)
+			{
+				usingCursor.SetEventBonusValue(percent);
+			}
+		}
 
 		// // RVA: 0x1671B50 Offset: 0x1671B50 VA: 0x1671B50
-		// public void ApplyMusicRatio(int ratio, bool isVisible) { }
+		public void ApplyMusicRatio(int ratio, bool isVisible)
+		{
+			if(usingCursor != null)
+			{
+				usingCursor.SetMusicRatio(ratio);
+				usingCursor.SetMusicRatioVisibility(isVisible);
+			}
+		}
 
 		// // RVA: 0x1671C2C Offset: 0x1671C2C VA: 0x1671C2C
-		// public void SetEventTicketIcon(IiconTexture image) { }
+		public void SetEventTicketIcon(IiconTexture image)
+		{
+			if(usingCursor != null)
+				usingCursor.SetEventTicket(image);
+		}
 
 		// // RVA: 0x1671CE4 Offset: 0x1671CE4 VA: 0x1671CE4
-		// public void EventTicketEnable(bool _enable) { }
+		public void EventTicketEnable(bool _enable)
+		{
+			usingCursor.EventTicketEnable(_enable);
+		}
 
 		// // RVA: 0x1671D14 Offset: 0x1671D14 VA: 0x1671D14
-		// public void SetEventItemIcon(IiconTexture image) { }
+		public void SetEventItemIcon(IiconTexture image)
+		{
+			if(usingCursor != null)
+				usingCursor.SetEventItem(image);
+		}
 
 		// // RVA: 0x1671DCC Offset: 0x1671DCC VA: 0x1671DCC
-		// public void ApplyEventTicketCount(int count) { }
+		public void ApplyEventTicketCount(int count)
+		{
+			if(usingCursor != null)
+				usingCursor.SetTicketCount(count);
+		}
 
 		// // RVA: 0x1671EA8 Offset: 0x1671EA8 VA: 0x1671EA8
-		// public void ApplyEventRank(int rank) { }
+		public void ApplyEventRank(int rank)
+		{
+			if(usingCursor != null)
+				usingCursor.SetRankValue(rank);
+		}
 
 		// // RVA: 0x1671F60 Offset: 0x1671F60 VA: 0x1671F60
-		// public void ApplyCursorLimited(bool isLimited) { }
+		public void ApplyCursorLimited(bool isLimited)
+		{
+			if(usingCursor != null)
+			{
+				symbolCurTimeLimited.StartAnim(isLimited ? "limited" : "none");
+			}
+		}
 
 		// // RVA: 0x1672040 Offset: 0x1672040 VA: 0x1672040
-		// public void EnableEventMusicRank(bool isEnable) { }
+		public void EnableEventMusicRank(bool isEnable)
+		{
+			m_eventRankingLayout.StartChildrenAnimGoStop(isEnable ? "01" : "02");
+		}
 
 		// // RVA: 0x16720D4 Offset: 0x16720D4 VA: 0x16720D4
-		// public void ApplyEventMusicRank(int rank) { }
+		public void ApplyEventMusicRank(int rank)
+		{
+			if(usingCursor != null)
+				usingCursor.SetEventMusicRank(rank);
+		}
 
 		// // RVA: 0x167218C Offset: 0x167218C VA: 0x167218C
-		// public void EnableEventGoDivaExpBonus(bool isEnable) { }
+		public void EnableEventGoDivaExpBonus(bool isEnable)
+		{
+			m_eventGoDivaExpBonusLayout.StartChildrenAnimGoStop(isEnable ? "01" : "02");
+		}
 
 		// // RVA: 0x1672220 Offset: 0x1672220 VA: 0x1672220
 		// public void ApplyEventGoDivaExpBonus(float bonus) { }
 
 		// // RVA: 0x16722D8 Offset: 0x16722D8 VA: 0x16722D8
-		// public void EnableEventGoDivaRanking(bool isEnable) { }
+		public void EnableEventGoDivaRanking(bool isEnable)
+		{
+			m_eventGoDivaRankingLayout.StartChildrenAnimGoStop(isEnable ? "01" : "02");
+		}
 
 		// // RVA: 0x167236C Offset: 0x167236C VA: 0x167236C
 		// public void ApplyEventGoDivaRank(int rank) { }
 
 		// // RVA: 0x1672424 Offset: 0x1672424 VA: 0x1672424
-		// public void SetEventGoDivaExpType(ExpType expType) { }
+		public void SetEventGoDivaExpType(ExpType expType)
+		{
+			m_eventGoDivaExpLayout.StartChildrenAnimGoStop(expType < ExpType.Num ? new string[4]{"01", "02", "03", "04"}[(int)expType] : "05");
+		}
 
 		// // RVA: 0x16724C4 Offset: 0x16724C4 VA: 0x16724C4
-		// public void HideEventFoDivaExp() { }
+		public void HideEventFoDivaExp()
+		{
+			SetEventGoDivaExpType(ExpType.None);
+		}
 
 		// // RVA: 0x16724CC Offset: 0x16724CC VA: 0x16724CC
 		// public void ApplyEventGoDivaExp(int exp) { }
 
 		// // RVA: 0x1672584 Offset: 0x1672584 VA: 0x1672584
-		// public void ChangeJacket(int order, int jacketId, GameAttribute.Type attr, bool forEvent = False) { }
+		public void ChangeJacket(int order, int jacketId, GameAttribute.Type attr, bool forEvent/* = False*/)
+		{
+			if(m_styleType == StyleType.Multi)
+			{
+				for(int i = 0; i < m_jacketImages.Count; i++)
+				{
+					if(m_jacketImages[i].jacketIndex == s_orderdJacketIndex[order])
+					{
+						m_jacketImages[i].Show();
+						m_jacketImages[i].ChangeJacket(jacketId, attr, forEvent);
+					}
+				}
+			}
+			else
+			{
+				if(m_styleType == StyleType.Single)
+				{
+					for(int i = 0; i < m_singleJacketImages.Count; i++)
+					{
+						m_singleJacketImages[i].Show();
+						m_singleJacketImages[i].ChangeJacket(jacketId, attr, forEvent);
+					}
+				}
+			}
+		}
 
 		// // RVA: 0x16727D8 Offset: 0x16727D8 VA: 0x16727D8
-		// public void HideJacket(int order) { }
+		public void HideJacket(int order)
+		{
+			if(m_styleType == StyleType.Multi)
+			{
+				for(int i = 0; i < m_jacketImages.Count; i++)
+				{
+					if(m_jacketImages[i].jacketIndex == s_orderdJacketIndex[order])
+					{
+						m_jacketImages[i].Hide();	
+					}
+				}
+			}
+			else
+			{
+				if(m_styleType == StyleType.Single)
+				{
+					for(int i = 0; i < m_singleJacketImages.Count; i++)
+					{
+						m_singleJacketImages[i].Hide();
+					}
+				}
+			}
+		}
 
 		// // RVA: 0x16729DC Offset: 0x16729DC VA: 0x16729DC
-		// public void RequestLeftFlow(int pageOffset, float flowSec, Action onEnd) { }
+		public void RequestLeftFlow(int pageOffset, float flowSec, Action onEnd)
+		{
+			m_scroller.RequestFlow(-pageOffset, flowSec, onEnd);
+		}
 
 		// // RVA: 0x1672A24 Offset: 0x1672A24 VA: 0x1672A24
-		// public void RequestRightFlow(int pageOffset, float flowSec, Action onEnd) { }
+		public void RequestRightFlow(int pageOffset, float flowSec, Action onEnd)
+		{
+			m_scroller.RequestFlow(pageOffset, flowSec, onEnd);
+		}
 
 		// // RVA: 0x1672A6C Offset: 0x1672A6C VA: 0x1672A6C
-		// public void SetScrollLimit(int leftLimitPage, int rightLimitPage) { }
+		public void SetScrollLimit(int leftLimitPage, int rightLimitPage)
+		{
+			m_scroller.SetLimit(leftLimitPage, rightLimitPage);
+		}
 
 		// // RVA: 0x1672AD0 Offset: 0x1672AD0 VA: 0x1672AD0
-		// public void ClearScrollLimit() { }
+		public void ClearScrollLimit()
+		{
+			m_scroller.ClearLimit();
+		}
 
 		// // RVA: 0x1672B04 Offset: 0x1672B04 VA: 0x1672B04
-		// public bool CheckLeftLimitPage() { }
+		public bool CheckLeftLimitPage()
+		{
+			return m_scroller.CheckOnLeftLimitPage();
+		}
 
 		// // RVA: 0x1672B5C Offset: 0x1672B5C VA: 0x1672B5C
-		// public bool CheckRightLimitPage() { }
+		public bool CheckRightLimitPage()
+		{
+			return m_scroller.CheckOnRightLimitPage();
+		}
 
 		// // RVA: 0x1672BB4 Offset: 0x1672BB4 VA: 0x1672BB4
 		public void SetPlayButtonType(PlayButtonType type)
@@ -403,16 +715,28 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1672CF8 Offset: 0x1672CF8 VA: 0x1672CF8
-		// public void SetPlayButtonDisable(bool isDisable) { }
+		public void SetPlayButtonDisable(bool isDisable)
+		{
+			m_playButton.Disable = isDisable;
+		}
 
 		// // RVA: 0x1672D2C Offset: 0x1672D2C VA: 0x1672D2C
-		// public void EnterPlayButton(bool immediate = False) { }
+		public void EnterPlayButton(bool immediate/* = False*/)
+		{
+			m_symbolPlayButtonMain.StartAnim(immediate ? "active" : "enter");
+		}
 
 		// // RVA: 0x1672DC4 Offset: 0x1672DC4 VA: 0x1672DC4
-		// public void LeavePlayButton(bool immediate = False) { }
+		public void LeavePlayButton(bool immediate/* = False*/)
+		{
+			m_symbolPlayButtonMain.StartAnim(immediate ? "wait" : "leave");
+		}
 
 		// // RVA: 0x1672E5C Offset: 0x1672E5C VA: 0x1672E5C
-		// public void SetNeedEnergy(int energy) { }
+		public void SetNeedEnergy(int energy)
+		{
+			m_playButton.SetNeedEnergy(energy);
+		}
 
 		// // RVA: 0x1672E8C Offset: 0x1672E8C VA: 0x1672E8C
 		private void OnSelectionChanged(int offset)
@@ -500,7 +824,26 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F34C4 Offset: 0x6F34C4 VA: 0x6F34C4
 		// // RVA: 0x1671848 Offset: 0x1671848 VA: 0x1671848
-		// private IEnumerator Co_LoadItemImages(List<int> itemIdList) { }
+		private IEnumerator Co_LoadItemImages(List<int> itemIdList)
+		{
+			//0x16747E0
+			if(usingCursor != null)
+				usingCursor.ResetEventItem();
+			m_eventItemId.Clear();
+			m_eventItemId.AddRange(itemIdList);
+			for(int i = 0; i < itemIdList.Count; i++)
+			{
+				int idx = i;
+				GameManager.Instance.ItemTextureCache.Load(itemIdList[i], (IiconTexture image) =>
+				{
+					//0x1673F78
+					if(usingCursor != null && idx < m_eventItemId.Count && m_eventItemId[idx] == itemIdList[idx])
+						usingCursor.ApplyEventItem(i, image);
+				});
+				while(GameManager.Instance.ItemTextureCache.IsLoading())
+					yield return null;
+			}
+		}
 
 		// // RVA: 0x16735AC Offset: 0x16735AC VA: 0x16735AC Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
@@ -542,9 +885,5 @@ namespace XeApp.Game.Menu
 			this.StartCoroutineWatched(Co_Initialize());
 			return true;
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F353C Offset: 0x6F353C VA: 0x6F353C
-		// // RVA: 0x1673DE0 Offset: 0x1673DE0 VA: 0x1673DE0
-		// private void <SetupUnitLive>b__99_0(MusicSelectUnitButton.Style style) { }
 	}
 }

@@ -717,7 +717,10 @@ public class ILDKBCLAFPB
 			// public void HJHBGHMNGKL(Difficulty.Type AKNELONELJK) { }
 
 			// // RVA: 0x2023FA8 Offset: 0x2023FA8 VA: 0x2023FA8
-			// public void HPDBEKAGKOD(bool GIKLNODJKFK) { }
+			public void HPDBEKAGKOD_SetIsLine6(bool GIKLNODJKFK)
+			{
+				PMDNOPLFCNH_IsLine6 = GIKLNODJKFK;
+			}
 
 			// // RVA: 0x2023FB0 Offset: 0x2023FB0 VA: 0x2023FB0
 			// public void KJGPOAEGFHK(int EKANGPODCEP, int MCNEIJAOLNO) { }

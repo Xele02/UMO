@@ -290,7 +290,7 @@ namespace XeApp.Game.Menu
 					return;
 				is_point_reward = cont.LEPALMDKEOK_IsPointReward;
 				is_rank_reward = cont.IBNKPMPFLGI_IsRankReward;
-				is_counting = cont.NGOFCFJHOMI_Status == KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6;
+				is_counting = cont.NGOFCFJHOMI_Status == KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6;
 				curr_point = (int)cont.FBGDBGKNKOD_GetCurrentPoint();
 				curr_rank = cont.CDINKAANIAA_Rank[0];
 				total_data_list = cont.PFPJHJJAGAG;

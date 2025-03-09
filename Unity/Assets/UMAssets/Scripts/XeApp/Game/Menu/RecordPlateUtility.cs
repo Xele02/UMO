@@ -144,7 +144,7 @@ namespace XeApp.Game.Menu
 						util = CIOECGOMILE.HHCJCDFCLOB.EBEGGFECPOE;
 						break;
 					case eSceneType.EventResult:
-						IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6/*6*/, false);
+						IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6/*6*/, false);
 						if (ev == null)
 							return null;
 						util = ev.JANMJPOKLFL;

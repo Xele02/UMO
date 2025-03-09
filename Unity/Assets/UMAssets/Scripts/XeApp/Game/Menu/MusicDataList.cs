@@ -130,16 +130,82 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1038590 Offset: 0x1038590 VA: 0x1038590
-		// public IBJAKJJICBC Find(int freeMusicId, bool line6Mode = False, bool simulation = False) { }
+		public IBJAKJJICBC Find(int freeMusicId, bool line6Mode/* = False*/, bool simulation/* = False*/)
+		{
+			return Find((IBJAKJJICBC _) =>
+			{
+				//0x104A1C0
+				return _.GHBPLHBNMBK_FreeMusicId == freeMusicId;
+			}, line6Mode, simulation);
+		}
 
 		// // RVA: 0x1049AAC Offset: 0x1049AAC VA: 0x1049AAC
 		// public IBJAKJJICBC Find(int freeMusicId, OHCAABOMEOF.KGOGMKMBCPP gameEventType, bool line6Mode = False, bool simulation = False) { }
 
 		// // RVA: 0x1049A04 Offset: 0x1049A04 VA: 0x1049A04
-		// public IBJAKJJICBC Find(Predicate<IBJAKJJICBC> match, bool line6Mode = False, bool simulation = False) { }
+		public IBJAKJJICBC Find(Predicate<IBJAKJJICBC> match, bool line6Mode/* = False*/, bool simulation/* = False*/)
+		{
+			if(simulation)
+			{
+				if(!line6Mode)
+				{
+					if(m_viewSimulationList != null)
+						return m_viewSimulationList.Find(match);
+				}
+				else
+				{
+					if(m_view6LineSimulationList != null)
+						return m_view6LineSimulationList.Find(match);
+				}
+			}
+			else
+			{
+				if(!line6Mode)
+				{
+					if(m_viewList != null)
+						return m_viewList.Find(match);
+				}
+				else
+				{
+					if(m_view6LineList != null)
+						return m_view6LineList.Find(match);
+				}
+			}
+			return null;
+		}
 
 		// // RVA: 0x1049BBC Offset: 0x1049BBC VA: 0x1049BBC
-		// public void UpdateDownloadState(int musicId) { }
+		public void UpdateDownloadState(int musicId)
+		{
+			for(int i = 0; i < GetCount(false, false); i++)
+			{
+				if(Get(i, false, false).DLAEJOBELBH_MusicId == musicId)
+				{
+					Get(i, false, false).OBGKIMDIAJF_CheckIsDlded();
+				}
+			}
+			for(int i = 0; i < GetCount(true, false); i++)
+			{
+				if(Get(i, true, false).DLAEJOBELBH_MusicId == musicId)
+				{
+					Get(i, true, false).OBGKIMDIAJF_CheckIsDlded();
+				}
+			}
+			for(int i = 0; i < GetCount(false, true); i++)
+			{
+				if(Get(i, false, true).DLAEJOBELBH_MusicId == musicId)
+				{
+					Get(i, false, true).OBGKIMDIAJF_CheckIsDlded();
+				}
+			}
+			for(int i = 0; i < GetCount(true, true); i++)
+			{
+				if(Get(i, true, true).DLAEJOBELBH_MusicId == musicId)
+				{
+					Get(i, true, true).OBGKIMDIAJF_CheckIsDlded();
+				}
+			}
+		}
 
 		// // RVA: 0x1049E54 Offset: 0x1049E54 VA: 0x1049E54
 		// private bool IsPlayed(IBJAKJJICBC data) { }

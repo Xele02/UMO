@@ -66,7 +66,7 @@ public class CHHECNJBMLA_EventBoxGacha : IKDICBBFBMI_EventBase
 	// // RVA: 0x12BF544 Offset: 0x12BF544 VA: 0x12BF544 Slot: 30
 	protected override bool JIHMLILFOPG_IsEventActive(long JHNMKKNEENE)
 	{
-		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI);
+		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI_QuestId);
 		if(db != null)
 		{
 			TodoLogger.LogError(TodoLogger.EventBoxGacha_8, "CHHECNJBMLA_EventBoxGacha.JIHMLILFOPG");
@@ -184,7 +184,11 @@ public class CHHECNJBMLA_EventBoxGacha : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x12C2B20 Offset: 0x12C2B20 VA: 0x12C2B20 Slot: 68
-	// public override bool GJMGKBDGMOP(long LPEKHFOMCAH) { }
+	public override bool GJMGKBDGMOP(long LPEKHFOMCAH)
+	{
+		TodoLogger.LogError(TodoLogger.EventBoxGacha_8, "GJMGKBDGMOP");
+		return false;
+	}
 
 	// // RVA: 0x12C2B28 Offset: 0x12C2B28 VA: 0x12C2B28 Slot: 75
 	public override string FEKEBPKINIM_GetSessionId()

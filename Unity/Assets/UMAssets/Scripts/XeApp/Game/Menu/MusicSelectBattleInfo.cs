@@ -85,7 +85,11 @@ namespace XeApp.Game.Menu
 		// public void Show() { }
 
 		// // RVA: 0x1667FCC Offset: 0x1667FCC VA: 0x1667FCC
-		// public void Hide() { }
+		public void Hide()
+		{
+			m_isShow = false;
+			m_symbolMain.StartAnim("wait");
+		}
 
 		// RVA: 0x1668050 Offset: 0x1668050 VA: 0x1668050
 		public bool IsPlaying()
@@ -128,10 +132,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x16685D0 Offset: 0x16685D0 VA: 0x16685D0
-		// public GameObject GetSelfDivaIconObject() { }
+		public GameObject GetSelfDivaIconObject()
+		{
+			return m_selfDivaIcon.gameObject;
+		}
 
 		// // RVA: 0x16685FC Offset: 0x16685FC VA: 0x16685FC
-		// public GameObject GetSelfSceneIconObject() { }
+		public GameObject GetSelfSceneIconObject()
+		{
+			return m_selfSceneIcon.gameObject;
+		}
 
 		// // RVA: 0x1668628 Offset: 0x1668628 VA: 0x1668628
 		public void ApplyRivalRank(RivalRankType type)
@@ -171,10 +181,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1668AE4 Offset: 0x1668AE4 VA: 0x1668AE4
-		// public GameObject GetRivalDivaIconObject() { }
+		public GameObject GetRivalDivaIconObject()
+		{
+			return m_rivalDivaIcon.gameObject;
+		}
 
 		// // RVA: 0x1668B10 Offset: 0x1668B10 VA: 0x1668B10
-		// public GameObject GetRivalSceneIconObject() { }
+		public GameObject GetRivalSceneIconObject()
+		{
+			return m_rivalSceneIcon.gameObject;
+		}
 
 		// RVA: 0x1668B3C Offset: 0x1668B3C VA: 0x1668B3C Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

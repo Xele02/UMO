@@ -34,7 +34,10 @@ namespace XeSys.Gfx
 		}
 
         // // RVA: 0x1EFAB30 Offset: 0x1EFAB30 VA: 0x1EFAB30
-        // public void StartAllDecoLoop() { }
+        public void StartAllDecoLoop()
+        {
+            lyt.StartAllAnimDecoLoop();
+        }
 
         // // RVA: 0x1EFAB5C Offset: 0x1EFAB5C VA: 0x1EFAB5C
         public bool IsPlaying()

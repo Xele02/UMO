@@ -217,7 +217,7 @@ namespace XeApp.Game.Menu
 				}
 				obj.SetAttribute(m_musicList[listIndex].ViewMusic.FKDCCLPGKDK_JacketAttr);
 				obj.SetLockIcon(m_musicList[listIndex].IsOpen, m_musicList[listIndex].IsUnlockable);
-				if(!m_musicList[listIndex].ViewMusic.BJANNALFGGA)
+				if(!m_musicList[listIndex].ViewMusic.BJANNALFGGA_HasRanking)
 				{
 					obj.SetRankingButton(m_musicList[listIndex].ViewMusic.LEBDMNIGOJB_IsScoreEvent);
 				}

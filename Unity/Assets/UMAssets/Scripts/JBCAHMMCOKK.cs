@@ -266,19 +266,19 @@ public class JBCAHMMCOKK
 							if(ev.HIDHLFCBIDE_EventType > OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby || 
 								(((1 << (int)ev.HIDHLFCBIDE_EventType) & 0x2f90U) == 0))
 							{
-								if(ev.HJPNJBCJPNJ(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6/*6*/))
+								if(ev.HJPNJBCJPNJ(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6/*6*/))
 								{
 									JBCAHMMCOKK data = new JBCAHMMCOKK();
 									data.KHEKNNFCAOI(KOGBMDOONFA.PPFNGGCBJKC);
 									data.EAHPLCJMPHD_EventId = ev.PGIIDPEGGPI_EventId;
-									data.PEDBFNIOCEN = ev.JOPOPMLFINI;
+									data.PEDBFNIOCEN = ev.JOPOPMLFINI_QuestId;
 									data.KJBGCLPMLCG_OpenedAt = ev.GLIMIGNNGGB_Start;
 									data.GJFPFFBAKGK_CloseAt = ev.DPJCPDKALGI_End1;
 									data.KNNDNOKMAOI = data.INKBPPLCNFC(data.KJBGCLPMLCG_OpenedAt, data.GJFPFFBAKGK_CloseAt, false);
 									data.HDBPGEMDLDN = data.INKBPPLCNFC(data.KJBGCLPMLCG_OpenedAt, data.GJFPFFBAKGK_CloseAt, true);
 									if (!b)
 										data.BJIMIONBKDD = false;
-									if (ev.NGOFCFJHOMI_Status == KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6/*6*/)
+									if (ev.NGOFCFJHOMI_Status == KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6/*6*/)
 										data.BJIMIONBKDD = false;
 									NNDGIAEFMOG.Add(data);
 								}
@@ -420,7 +420,7 @@ public class JBCAHMMCOKK
 				break;
 			case 9:
 				{
-					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6/*6*/);
+					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6/*6*/);
 					if (ev == null)
 						return;
 					TodoLogger.LogError(TodoLogger.EventScore_4, "HEGEKFMJNCC 9 event");
@@ -487,7 +487,7 @@ public class JBCAHMMCOKK
 										data.BJIMIONBKDD = false;
 									}
 									data.EAHPLCJMPHD_EventId = ev2.PGIIDPEGGPI_EventId;
-									data.PEDBFNIOCEN = ev2.JOPOPMLFINI;
+									data.PEDBFNIOCEN = ev2.JOPOPMLFINI_QuestId;
 									data.KJBGCLPMLCG_OpenedAt = ev2.GLIMIGNNGGB_Start;
 									data.GJFPFFBAKGK_CloseAt = ev2.DPJCPDKALGI_End1;
 									data.HDBPGEMDLDN = MessageManager.Instance.GetMessage("menu", "home_event_epilogue");

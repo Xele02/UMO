@@ -77,73 +77,195 @@ namespace XeApp.Game.Menu
 		// public void ReleaseCache() { }
 
 		// // RVA: 0x166C450 Offset: 0x166C450 VA: 0x166C450
-		// public void SetNew(bool isNew) { }
+		public void SetNew(bool isNew)
+		{
+			m_newIcon.SetActive(isNew);
+		}
 
 		// // RVA: 0x166C484 Offset: 0x166C484 VA: 0x166C484
-		// public void SetAttribute(GameAttribute.Type attr) { }
+		public void SetAttribute(GameAttribute.Type attr)
+		{
+			m_attrFrame.SetAttribute(attr);
+		}
 
 		// // RVA: 0x166C4B8 Offset: 0x166C4B8 VA: 0x166C4B8
-		// public void SetSimulationLiveFrame() { }
+		public void SetSimulationLiveFrame()
+		{
+			m_attrFrame.SetSimulationLiveFrame();
+		}
 
 		// // RVA: 0x166C4E4 Offset: 0x166C4E4 VA: 0x166C4E4
-		// public void ShowRewardMark(bool forScore, bool forCombo, bool forClearCount) { }
+		public void ShowRewardMark(bool forScore, bool forCombo, bool forClearCount)
+		{
+			m_attrFrame.SetRewardVisible(true);
+			m_rewardMarkForScore.enabled = forScore;
+			m_rewardMarkForCombo.enabled = forCombo;
+			m_rewardMarkForClearCount.enabled = forClearCount;
+		}
 
 		// // RVA: 0x166C590 Offset: 0x166C590 VA: 0x166C590
-		// public void HideRewardMark() { }
+		public void HideRewardMark()
+		{
+			m_attrFrame.SetRewardVisible(false);
+			m_rewardMarkForScore.enabled = false;
+			m_rewardMarkForCombo.enabled = false;
+			m_rewardMarkForClearCount.enabled = false;
+		}
 
 		// // RVA: 0x166C630 Offset: 0x166C630 VA: 0x166C630
-		// public void SetRemainTimePrefix(string prefixLabel) { }
+		public void SetRemainTimePrefix(string prefixLabel)
+		{
+			m_remainPrefix.text = prefixLabel;
+		}
 
 		// // RVA: 0x166C66C Offset: 0x166C66C VA: 0x166C66C
-		// public void SetRemainTimeValue(string valueLabel) { }
+		public void SetRemainTimeValue(string valueLabel)
+		{
+			m_remainPostfix.text = valueLabel;
+		}
 
 		// // RVA: 0x166C6A8 Offset: 0x166C6A8 VA: 0x166C6A8
-		// public void SetDisable(bool isDisable, bool isEventEntrance = False) { }
+		public void SetDisable(bool isDisable, bool isEventEntrance/* = False*/)
+		{
+			m_endMessage.enabled = isDisable;
+			m_endPanelImage.enabled = isDisable && !isEventEntrance;
+		}
 
 		// // RVA: 0x166C70C Offset: 0x166C70C VA: 0x166C70C
-		// public void SetEndMessage(string message) { }
+		public void SetEndMessage(string message) 
+		{ 
+			m_endMessage.text = message;
+		}
 
 		// // RVA: 0x166C748 Offset: 0x166C748 VA: 0x166C748
-		// public void SetEventBonusValue(int percent) { }
+		public void SetEventBonusValue(int percent)
+		{
+			if(percent < 1)
+			{
+				m_bonusMessage.enabled = false;
+				m_bonusPanelImage.enabled = false;
+			}
+			else
+			{
+				m_bonusMessage.text = MessageManager.Instance.GetMessage("menu", "music_select_event_bonus");
+				m_bonusMessage.enabled = true;
+				m_bonusPanelImage.enabled = true;
+			}
+		}
 
 		// // RVA: 0x166C8F0 Offset: 0x166C8F0 VA: 0x166C8F0
-		// public void SetMusicRatio(int ratio) { }
+		public void SetMusicRatio(int ratio)
+		{
+			m_musicRatio.text = ratio.ToString();
+		}
 
 		// // RVA: 0x166C944 Offset: 0x166C944 VA: 0x166C944
-		// public void SetMusicRatioVisibility(bool isVisible) { }
+		public void SetMusicRatioVisibility(bool isVisible)
+		{
+			m_ratioImage.enabled = isVisible;
+			m_musicRatio.enabled = isVisible;
+		}
 
 		// // RVA: 0x166C9A0 Offset: 0x166C9A0 VA: 0x166C9A0
-		// public void SetRemainPlayCount(int count) { }
+		public void SetRemainPlayCount(int count)
+		{
+			m_playCount.SetNumber(count, 0);
+		}
 
 		// // RVA: 0x166C9E0 Offset: 0x166C9E0 VA: 0x166C9E0
-		// public void ResetEventItem() { }
+		public void ResetEventItem()
+		{
+			for(int i = 0; i < m_itemImages.Count; i++)
+			{
+				m_itemImages[i].enabled = false;
+			}
+		}
 
 		// // RVA: 0x166CAC0 Offset: 0x166CAC0 VA: 0x166CAC0
-		// public void ApplyEventItem(int index, IiconTexture image) { }
+		public void ApplyEventItem(int index, IiconTexture image)
+		{
+			m_itemImages[index].enabled = true;
+			image.Set(m_itemImages[index]);
+		}
 
 		// // RVA: 0x166CC28 Offset: 0x166CC28 VA: 0x166CC28
-		// public void SetEventTicket(IiconTexture image) { }
+		public void SetEventTicket(IiconTexture image)
+		{
+			for(int i = 0; i < m_eventTicketImage.Count; i++)
+			{
+				image.Set(m_eventTicketImage[i]);
+			}
+			m_frameImage.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData("s_m_cd_eve_tkt_bg"));
+		}
 
 		// // RVA: 0x166CE38 Offset: 0x166CE38 VA: 0x166CE38
-		// public void EventTicketEnable(bool _enable) { }
+		public void EventTicketEnable(bool _enable)
+		{
+			for(int i = 0; i < m_eventTicketImage.Count; i++)
+			{
+				m_eventTicketImage[i].enabled = _enable;
+			}
+		}
 
 		// // RVA: 0x166CF1C Offset: 0x166CF1C VA: 0x166CF1C
-		// public void SetEventItem(IiconTexture image) { }
+		public void SetEventItem(IiconTexture image)
+		{
+			if(image != null)
+			{
+				for(int i = 0; i < m_eventTicketImage.Count; i++)
+				{
+					image.Set(m_eventTicketImage[i]);
+				}
+			}
+			m_frameImage.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData("s_m_cd_simu_item_bg"));
+		}
 
 		// // RVA: 0x166D124 Offset: 0x166D124 VA: 0x166D124
-		// public void SetTicketCount(int count) { }
+		public void SetTicketCount(int count)
+		{
+			m_ticketCount.SetNumber(count, 0);
+		}
 
 		// // RVA: 0x166D164 Offset: 0x166D164 VA: 0x166D164
-		// public void SetRankValue(int rank) { }
+		public void SetRankValue(int rank)
+		{
+			if(rank > 0)
+				m_rankValue.SetNumber(rank, 0);
+			else
+				m_rankValue.SetDigitLength(10, true);
+		}
 
 		// // RVA: 0x166D1C8 Offset: 0x166D1C8 VA: 0x166D1C8
-		// public void SetEventMusicRank(int rank) { }
+		public void SetEventMusicRank(int rank)
+		{
+			if(rank > 0)
+			{
+				m_musicRankingText.text = rank.ToString();
+			}
+			else
+			{
+				m_musicRankingText.text = TextConstant.InvalidText;
+			}
+		}
 
 		// // RVA: 0x166D2DC Offset: 0x166D2DC VA: 0x166D2DC
-		// public void SetStepCount(int count) { }
+		public void SetStepCount(int count)
+		{
+			if(count > 0)
+			{
+				m_stepCountText.text = count.ToString();
+			}
+			else
+			{
+				m_stepCountText.text = TextConstant.InvalidText;
+			}
+		}
 
 		// // RVA: 0x166D3F0 Offset: 0x166D3F0 VA: 0x166D3F0
-		// public void EnableCoutingMark(bool isEnable) { }
+		public void EnableCoutingMark(bool isEnable)
+		{
+			m_coutingMarkImage.enabled = isEnable;
+		}
 
 		// // RVA: 0x166D424 Offset: 0x166D424 VA: 0x166D424
 		// public void SetEventGoDivaRank(int rank) { }

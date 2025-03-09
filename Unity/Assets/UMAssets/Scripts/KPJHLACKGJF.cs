@@ -92,7 +92,7 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 	// // RVA: 0x1135118 Offset: 0x1135118 VA: 0x1135118 Slot: 30
 	protected override bool JIHMLILFOPG_IsEventActive(long JHNMKKNEENE)
 	{
-		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI);
+		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI_QuestId);
 		if(db != null)
 		{
 			TodoLogger.LogError(TodoLogger.EventMission_6, "KPJHLACKGJF_EventMission.JIHMLILFOPG");
@@ -256,7 +256,11 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x113C230 Offset: 0x113C230 VA: 0x113C230 Slot: 68
-	// public override bool GJMGKBDGMOP(long LPEKHFOMCAH) { }
+	public override bool GJMGKBDGMOP(long LPEKHFOMCAH)
+	{
+		TodoLogger.LogError(TodoLogger.EventMission_6, "GJMGKBDGMOP");
+		return false;
+	}
 
 	// // RVA: 0x113CA18 Offset: 0x113CA18 VA: 0x113CA18 Slot: 75
 	public override string FEKEBPKINIM_GetSessionId()
@@ -268,7 +272,7 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 	// // RVA: 0x113CC84 Offset: 0x113CC84 VA: 0x113CC84 Slot: 73
 	public override List<string> IJCPBPFEGDM_GetBgmFilePathList(long JHNMKKNEENE)
 	{
-		DIHHCBACKGG_DbSection dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI);
+		DIHHCBACKGG_DbSection dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI_QuestId);
 		if(dbSection == null)
 			return null;
 		TodoLogger.LogError(TodoLogger.EventMission_6, "KPJHLACKGJF_EventMission.IJCPBPFEGDM");
@@ -355,7 +359,10 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 	// public int JKPDCKDMKBN() { }
 
 	// // RVA: 0x1140EAC Offset: 0x1140EAC VA: 0x1140EAC Slot: 76
-	// public override void MMIMJPNLKBK() { }
+	public override void MMIMJPNLKBK()
+	{
+		TodoLogger.LogError(TodoLogger.EventMission_6, "MMIMJPNLKBK");
+	}
 
 	// // RVA: 0x1141128 Offset: 0x1141128 VA: 0x1141128
 	// public int NCDLFEHONME() { }

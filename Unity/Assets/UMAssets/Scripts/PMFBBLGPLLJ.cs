@@ -53,7 +53,7 @@ public class PMFBBLGPLLJ
         HAEDCCLHEMN_EventBattle ev = OEGDCBLNNFF();
         if(ev != null)
         {
-            DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI);
+            DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestId);
             if(db != null)
             {
                 ICFLJACCIKF_EventBattle dbSection = db as ICFLJACCIKF_EventBattle;
@@ -208,15 +208,15 @@ public class PMFBBLGPLLJ
         if(ev != null)
         {
             string str = "";
-            if(ev.JOPOPMLFINI == "event_battle_a")
+            if(ev.JOPOPMLFINI_QuestId == "event_battle_a")
             {
                 str = "btla_cls_";
             }
-            else if(ev.JOPOPMLFINI == "event_battle_b")
+            else if(ev.JOPOPMLFINI_QuestId == "event_battle_b")
             {
                 str = "btlb_cls_";
             }
-            else if(ev.JOPOPMLFINI == "event_battle_c")
+            else if(ev.JOPOPMLFINI_QuestId == "event_battle_c")
             {
                 str = "btlc_cls_";
             }

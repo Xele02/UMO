@@ -189,7 +189,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x104C468 Offset: 0x104C468 VA: 0x104C468
 		private SizeType GetEnemyPopupWindowSize(EJKBKMBJMGL_EnemyData enemyData)
 		{
-			if(enemyData.CDEFLIHHNAB)
+			if(enemyData.CDEFLIHHNAB_HasSkills)
 			{
 				if(enemyData.LMJFFFOEPLE > 0)
 				{

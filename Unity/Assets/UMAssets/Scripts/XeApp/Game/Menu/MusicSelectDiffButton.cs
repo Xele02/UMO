@@ -60,10 +60,19 @@ namespace XeApp.Game.Menu
 		// public void ReleaseCache() { }
 
 		// // RVA: 0x1674F2C Offset: 0x1674F2C VA: 0x1674F2C
-		// public void SetNew(bool isNew) { }
+		public void SetNew(bool isNew)
+		{
+			m_newIcon.SetActive(isNew);
+		}
 
 		// // RVA: 0x1674F60 Offset: 0x1674F60 VA: 0x1674F60
-		// public void SetLock(bool isLock) { }
+		public void SetLock(bool isLock)
+		{
+			for(int i = 0; i < m_lockIcons.Count; i++)
+			{
+				m_lockIcons[i].enabled = isLock;
+			}
+		}
 
 		// RVA: 0x1675044 Offset: 0x1675044 VA: 0x1675044
 		public void SetIconType(IconType iconType, bool simulation)
@@ -92,7 +101,27 @@ namespace XeApp.Game.Menu
         }
 
 		// // RVA: 0x1675570 Offset: 0x1675570 VA: 0x1675570
-		// public Difficulty.Type GetDifficulty() { }
+		public Difficulty.Type GetDifficulty()
+		{
+			Difficulty.Type diff = Difficulty.Type.Illegal;
+			if(m_iconType == IconType.EASY)
+				diff = Difficulty.Type.Easy;
+			else if(m_iconType == IconType.NORMAL)
+				diff = Difficulty.Type.Normal;
+			else if(m_iconType == IconType.HARD)
+				diff = Difficulty.Type.Hard;
+			else if(m_iconType == IconType.VERY_HARD)
+				diff = Difficulty.Type.VeryHard;
+			else if(m_iconType == IconType.EXTREME)
+				diff = Difficulty.Type.Extreme;
+			else if(m_iconType == IconType.HARD_PLUS)
+				diff = Difficulty.Type.Hard;
+			else if(m_iconType == IconType.VERY_HARD_PLUS)
+				diff = Difficulty.Type.VeryHard;
+			else if(m_iconType == IconType.EXTREME_PLUS)
+				diff = Difficulty.Type.Extreme;
+			return diff;
+		}
 
 		// RVA: 0x16755DC Offset: 0x16755DC VA: 0x16755DC Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

@@ -106,7 +106,7 @@ public class FOCPLKMMCAL
 					else if (OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 3)
 					{
 						// L237
-						HAEDCCLHEMN_EventBattle evBattle = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6, false) as HAEDCCLHEMN_EventBattle;
+						HAEDCCLHEMN_EventBattle evBattle = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false) as HAEDCCLHEMN_EventBattle;
 						if(evBattle != null)
 						{
 							evBattle.FCLGOCBGPJF(OMNOFMEBLAD, FCLGIPFPIPH, LFGNFNDDLJH_TicketCount, sceneId, numBoard, true);
@@ -194,7 +194,7 @@ public class FOCPLKMMCAL
 				break;
 			case 3:
 				{
-					HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6, false) as HAEDCCLHEMN_EventBattle;
+					HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false) as HAEDCCLHEMN_EventBattle;
 					if(ev != null)
 					{
 						FFDBCEDKMGN_PrevPoint = (int)ev.FBGDBGKNKOD_GetCurrentPoint();
@@ -504,7 +504,7 @@ public class FOCPLKMMCAL
 						}
 						else if (OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 3)
 						{
-							HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6, false) as HAEDCCLHEMN_EventBattle;
+							HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false) as HAEDCCLHEMN_EventBattle;
 							if(ev != null)
 							{
 								CCPKHBECNLH_EventBattle.AIFGBKMMJGL d = ev.JIPPHOKGLIH_GetMusicSaveData(OMNOFMEBLAD.GHBPLHBNMBK_FreeMusicId, false);
@@ -619,13 +619,13 @@ public class FOCPLKMMCAL
 				JANMJPOKLFL.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.IMJOELNOOMB_0, string.Concat(strs));
 				bool d = false;
 				IKDICBBFBMI_EventBase event_ = null;
-				if(OMNOFMEBLAD.MFJKNCACBDG_OpenEventType == 0 || JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6, false) == null)
+				if(OMNOFMEBLAD.MFJKNCACBDG_OpenEventType == 0 || JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false) == null)
 				{
 					d = false;
 				}
 				else
 				{
-					event_ = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6, false);
+					event_ = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false);
 					FFDBCEDKMGN_PrevPoint = (int)event_.FBGDBGKNKOD_GetCurrentPoint();
 					d = true;
 				}

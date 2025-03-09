@@ -99,7 +99,7 @@ namespace XeApp.Game.MusicSelect
 				for(int j = 0; j < musicData.MGJKEJHEBPO_DiffInfos.Count; j++)
 				{
 					MusicRewardStat reward = new MusicRewardStat();
-					b.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, j, line6Mode, musicData.MNNHHJBBICA_EventType);
+					b.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, j, line6Mode, musicData.MNNHHJBBICA_GameEventType);
 					reward.Init(b);
 					rewardList.Add(reward);
 					if(musicTime < musicData.MGJKEJHEBPO_DiffInfos[j].HHMLMKAEJBJ_Score.MCMIPODICAN_length)
@@ -210,7 +210,7 @@ namespace XeApp.Game.MusicSelect
 					MusicSelectSceneBase.ExtractRemainTime(musicTime / 1000, out days, out hours, out minutes, out seconds);
 					string remainingTimeStr = string.Format(musicTimeFormat, minutes, seconds);
 					MusicSelectConsts.MusicTimeType timeType = musicTime < musicTypeThreshold ? MusicSelectConsts.MusicTimeType.Short : MusicSelectConsts.MusicTimeType.Long;
-					int eventData = musicData.MNNHHJBBICA_EventType;
+					int eventData = musicData.MNNHHJBBICA_GameEventType;
 					MusicSelectConsts.EventType eventType ;
 					if (eventData < 12)
 					{
@@ -262,9 +262,9 @@ namespace XeApp.Game.MusicSelect
 						}
 					}
 					//LAB_00ca1d50
-					if (musicData.KCKBOIDCPCK > 0)
+					if (musicData.KCKBOIDCPCK_CdSelectEvenType > 0)
 					{
-						eventData = musicData.KCKBOIDCPCK - 1; // ?not sure still event data
+						eventData = musicData.KCKBOIDCPCK_CdSelectEvenType - 1; // ?not sure still event data
 						if (eventData < 6 && ((0x2f >> (eventData & 0xff)) & 1) != 0)
 						{
 							MusicSelectConsts.EventType[] _ = 
@@ -530,7 +530,7 @@ namespace XeApp.Game.MusicSelect
 			return FindIndex((MusicListData _) =>
 			{
 				//0xCA3C4C
-				return _.ViewMusic.GHBPLHBNMBK_FreeMusicId == freeMusicId && _.ViewMusic.MNNHHJBBICA_EventType == (int)gameEventType;
+				return _.ViewMusic.GHBPLHBNMBK_FreeMusicId == freeMusicId && _.ViewMusic.MNNHHJBBICA_GameEventType == (int)gameEventType;
 			}, line6Mode, simulation);
 		}
 

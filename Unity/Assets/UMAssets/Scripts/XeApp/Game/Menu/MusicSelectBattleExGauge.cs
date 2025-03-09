@@ -80,7 +80,11 @@ namespace XeApp.Game.Menu
 		// public void Show() { }
 
 		// // RVA: 0x16679E4 Offset: 0x16679E4 VA: 0x16679E4
-		// public void Hide() { }
+		public void Hide()
+		{
+			m_isShow = false;
+			m_symbolMain.StartAnim("wait");
+		}
 
 		// RVA: 0x1667A68 Offset: 0x1667A68 VA: 0x1667A68
 		public bool IsPlaying()

@@ -89,7 +89,11 @@ namespace XeApp.Game.Menu
 		// public void Show() { }
 
 		// // RVA: 0x1676720 Offset: 0x1676720 VA: 0x1676720
-		// public void Hide() { }
+		public void Hide()
+		{
+			m_isShow = false;
+			m_symbolMain.StartAnim("wait");
+		}
 
 		// RVA: 0x16767A4 Offset: 0x16767A4 VA: 0x16767A4
 		public bool IsPlaying()
@@ -98,7 +102,27 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x16767D0 Offset: 0x16767D0 VA: 0x16767D0
-		// public void SetStyle(MusicSelectEventInfo.Style style) { }
+		public void SetStyle(Style style)
+		{
+			switch(style)
+			{
+				case Style.Ranking:
+					m_symbolStyle.StartAnim("rank");
+					break;
+				case Style.Basic:
+					m_symbolStyle.StartAnim("basic");
+					break;
+				case Style.Battle:
+					m_symbolStyle.StartAnim("battle");
+					break;
+				case Style.None:
+					m_symbolStyle.StartAnim("none");
+					break;
+				case Style.Mission:
+					m_symbolStyle.StartAnim("mission");
+					break;
+			}
+		}
 
 		// // RVA: 0x167690C Offset: 0x167690C VA: 0x167690C
 		// public void SetRewardValid(bool isValid) { }
@@ -113,43 +137,68 @@ namespace XeApp.Game.Menu
 		// public void SetTicketCount(int count) { }
 
 		// // RVA: 0x1676B00 Offset: 0x1676B00 VA: 0x1676B00
-		// public void SetValueUnitLabel(string label) { }
+		public void SetValueUnitLabel(string label)
+		{
+			m_curValueUnitText.text = label;
+			m_nextValueUnitText.text = label;
+		}
 
 		// // RVA: 0x1676B6C Offset: 0x1676B6C VA: 0x1676B6C
-		// public void SetBpValueUnitLabel(string label) { }
+		public void SetBpValueUnitLabel(string label)
+		{
+			m_bpValueUnitText.text = label;
+		}
 
 		// // RVA: 0x1676BA8 Offset: 0x1676BA8 VA: 0x1676BA8
-		// public void SetRankLabel(string label, int index = 0) { }
+		public void SetRankLabel(string label, int index/* = 0*/)
+		{
+			m_rankLabelText[index].text = label;
+		}
 
 		// // RVA: 0x1676C1C Offset: 0x1676C1C VA: 0x1676C1C
 		// public void SetRankOrder(string order, int index = 0) { }
 
 		// // RVA: 0x1676C90 Offset: 0x1676C90 VA: 0x1676C90
-		// public void SetRankUnitLabel(string label, int index = 0) { }
+		public void SetRankUnitLabel(string label, int index/* = 0*/)
+		{
+			m_rankOrderUnitText[index].text = label;
+		}
 
 		// // RVA: 0x1676D04 Offset: 0x1676D04 VA: 0x1676D04
 		// public void SetRankCouting(string text, int index = 0) { }
 
 		// // RVA: 0x1676E24 Offset: 0x1676E24 VA: 0x1676E24
-		// public void SetCurrentValueLabel(string label) { }
+		public void SetCurrentValueLabel(string label)
+		{
+			m_curValueLabelText.text = label;
+		}
 
 		// // RVA: 0x1676E60 Offset: 0x1676E60 VA: 0x1676E60
 		// public void SetCurrentValue(string value) { }
 
 		// // RVA: 0x1676E9C Offset: 0x1676E9C VA: 0x1676E9C
-		// public void SetBpValueLabel(string label) { }
+		public void SetBpValueLabel(string label)
+		{
+			m_bpValueLabelText.text = label;
+		}
 
 		// // RVA: 0x1676ED8 Offset: 0x1676ED8 VA: 0x1676ED8
 		// public void SetBpValue(string value) { }
 
 		// // RVA: 0x1676F14 Offset: 0x1676F14 VA: 0x1676F14
-		// public void SetNextValueLabel(string label) { }
+		public void SetNextValueLabel(string label)
+		{
+			m_nextLabelText.text = label;
+		}
 
 		// // RVA: 0x1676F50 Offset: 0x1676F50 VA: 0x1676F50
 		// public void SetNextValue(string value) { }
 
 		// // RVA: 0x1676F8C Offset: 0x1676F8C VA: 0x1676F8C
-		// public void SetRewardLabel(string label) { }
+		public void SetRewardLabel(string label)
+		{
+			m_rewardLabelText.text = label;
+		}
 
 		// // RVA: 0x1676FC8 Offset: 0x1676FC8 VA: 0x1676FC8
 		// public void SetRewardIcon(IiconTexture image) { }

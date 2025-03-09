@@ -134,10 +134,10 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xADAAF4 Offset: 0xADAAF4 VA: 0xADAAF4
 		public void SetupRewardStat(IBJAKJJICBC musicData)
 		{
-			m_rewardData.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, 0, isLine6Mode, musicData.MNNHHJBBICA_EventType);
+			m_rewardData.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, 0, isLine6Mode, musicData.MNNHHJBBICA_GameEventType);
 			for(int i = 0; i < musicData.MGJKEJHEBPO_DiffInfos.Count; i++)
 			{
-				m_rewardData.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, i, isLine6Mode, musicData.MNNHHJBBICA_EventType);
+				m_rewardData.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, i, isLine6Mode, musicData.MNNHHJBBICA_GameEventType);
 				m_rewardStats[i].Init(m_rewardData);
 			}
 		}

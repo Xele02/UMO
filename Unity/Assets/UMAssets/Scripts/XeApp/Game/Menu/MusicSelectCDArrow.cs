@@ -5,6 +5,12 @@ namespace XeApp.Game.Menu
 {
 	public class MusicSelectCDArrow : LayoutLabelScriptBase
 	{
+		public enum Style
+		{
+			Default = 0,
+			Battle = 1,
+		}
+
 		[SerializeField]
 		private RawImageEx m_leftArrowImage; // 0x18
 		[SerializeField]
@@ -14,7 +20,17 @@ namespace XeApp.Game.Menu
 		private bool m_isShow; // 0x28
 
 		// // RVA: 0x166BE40 Offset: 0x166BE40 VA: 0x166BE40
-		// public void SetStyle(MusicSelectCDArrow.Style style) { }
+		public void SetStyle(Style style)
+		{
+			if(style == Style.Battle)
+			{
+				m_symbolStyle.StartAnim("battle");
+			}
+			else if(style == Style.Default)
+			{
+				m_symbolStyle.StartAnim("default");
+			}
+		}
 
 		// // RVA: 0x166BEF4 Offset: 0x166BEF4 VA: 0x166BEF4
 		public void TryEnter()
@@ -61,10 +77,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x166C150 Offset: 0x166C150 VA: 0x166C150
-		// public void SetLeftArrowVisible(bool isVisible) { }
+		public void SetLeftArrowVisible(bool isVisible)
+		{
+			m_leftArrowImage.enabled = isVisible;
+		}
 
 		// // RVA: 0x166C184 Offset: 0x166C184 VA: 0x166C184
-		// public void SetRightArrowVisible(bool isVisible) { }
+		public void SetRightArrowVisible(bool isVisible)
+		{
+			m_rightArrowImage.enabled = isVisible;
+		}
 
 		// RVA: 0x166C1B8 Offset: 0x166C1B8 VA: 0x166C1B8 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

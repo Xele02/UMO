@@ -7,7 +7,10 @@ namespace XeApp.Game.Menu
 		private LayoutSymbolData m_symbolMain; // 0x18
 
 		// // RVA: 0x1669160 Offset: 0x1669160 VA: 0x1669160
-		// public void Hide() { }
+		public void Hide()
+		{
+			m_symbolMain.StartAnim("wait");
+		}
 
 		// RVA: 0x16691DC Offset: 0x16691DC VA: 0x16691DC
 		public void Enter()

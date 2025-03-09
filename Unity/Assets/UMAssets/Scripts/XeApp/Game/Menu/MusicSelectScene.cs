@@ -372,7 +372,7 @@ namespace XeApp.Game.Menu
 					m_eventTicketId = NKOBMDPHNGP_EventRaidLobby.ADPMLOEOAFD();
 				}
 			}
-			m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6/*6*/, false);
+			m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6/*6*/, false);
 			if(m_eventCtrl == null)
 			{
 				if(m_eventBanner != null)
@@ -388,7 +388,7 @@ namespace XeApp.Game.Menu
 			{
 				m_feverLimit.SetOnOff(false);
 			}
-			m_scoreEventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6/*6*/);
+			m_scoreEventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6/*6*/);
 			if(m_scoreEventCtrl != null)
 			{
 				TodoLogger.LogError(TodoLogger.OldMusicSelect, "init score event music");
@@ -421,7 +421,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1682EE0 Offset: 0x1682EE0 VA: 0x1682EE0 Slot: 52
-		// protected override void LeaveForScrollStart() { }
+		protected override void LeaveForScrollStart()
+		{
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectScene* LeaveForScrollStart");
+		}
 
 		// RVA: 0x1682F18 Offset: 0x1682F18 VA: 0x1682F18 Slot: 53
 		// protected override void EnterForScrollEnd() { }
@@ -473,7 +476,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1683FAC Offset: 0x1683FAC VA: 0x1683FAC Slot: 54
-		// protected override void OnChangedDifficulty() { }
+		protected override void OnChangedDifficulty()
+		{
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "OnChangedDifficulty");
+		}
 
 		// // RVA: 0x1683F30 Offset: 0x1683F30 VA: 0x1683F30
 		// private void OnChangedSeries(FreeCategoryId.Type seriesId, int initListNo) { }

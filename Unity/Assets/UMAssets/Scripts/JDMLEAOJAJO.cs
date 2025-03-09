@@ -17,7 +17,7 @@ public class JDMLEAOJAJO
 	// // RVA: 0x1C336AC Offset: 0x1C336AC VA: 0x1C336AC
 	public ICFLJACCIKF_EventBattle FFMBHIBHPBA(HAEDCCLHEMN_EventBattle MOHDLLIJELH)
     {
-		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(MOHDLLIJELH.JOPOPMLFINI);
+		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(MOHDLLIJELH.JOPOPMLFINI_QuestId);
 		if(db != null)
 		{
 			return db as ICFLJACCIKF_EventBattle;
@@ -85,7 +85,7 @@ public class CDDODEHEKGB : JDMLEAOJAJO
         HAEDCCLHEMN_EventBattle data = GGBDCHMDCFA();
         if(data != null)
         {
-            DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(data.JOPOPMLFINI);
+            DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(data.JOPOPMLFINI_QuestId);
             if(db != null)
             {
                 ICFLJACCIKF_EventBattle dbSection = db as ICFLJACCIKF_EventBattle;

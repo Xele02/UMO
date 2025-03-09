@@ -2133,11 +2133,11 @@ namespace XeApp.Game.Menu
 				if (!musicData.BNIAJAKIAJC_IsEventMinigame)
 				{
 					IKDICBBFBMI_EventBase ev = null;
-					if (musicData.OEILJHENAHN_EventType < 5)
+					if (musicData.OEILJHENAHN_PlayEventType < 5)
 					{
-						if (musicData.OEILJHENAHN_EventType == 0)
+						if (musicData.OEILJHENAHN_PlayEventType == 0)
 							return false;
-						if (musicData.OEILJHENAHN_EventType != 4)
+						if (musicData.OEILJHENAHN_PlayEventType != 4)
 						{
 							//LAB_00b35f18
 							ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(eventUniqueId);
@@ -2157,7 +2157,7 @@ namespace XeApp.Game.Menu
 							//LAB_00b35ad8
 						}
 					}
-					else if (musicData.OEILJHENAHN_EventType == 5)
+					else if (musicData.OEILJHENAHN_PlayEventType == 5)
 					{
 						date = musicData.NKEIFPPGNLH_WeeklyendTime;
 						//LAB_00b35acc
@@ -2165,7 +2165,7 @@ namespace XeApp.Game.Menu
 							return false;
 						//LAB_00b35ad8
 					}
-					else if (musicData.OEILJHENAHN_EventType == 10)
+					else if (musicData.OEILJHENAHN_PlayEventType == 10)
 					{
 						ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool, status);
 						if (ev != null)
@@ -2229,7 +2229,40 @@ namespace XeApp.Game.Menu
 		// public bool CheckEventLimit(OHCAABOMEOF.KGOGMKMBCPP eventType, bool isCheckDateLine = True, bool isDoTransition = True, KGCNCBOKCBA.GNENJEHKMHD status = 5, int eventUniqueId = 0) { }
 
 		// // RVA: 0xB36680 Offset: 0xB36680 VA: 0xB36680
-		// public bool CheckEventLimit(IKDICBBFBMI controller, bool isCheckDateLine = True, bool isDoTransition = True) { }
+		public bool CheckEventLimit(IKDICBBFBMI_EventBase controller, bool isCheckDateLine/* = True*/, bool isDoTransition/* = True*/)
+		{
+			if(isCheckDateLine)
+			{
+				if(MenuScene.CheckDatelineAndAssetUpdate())
+					return true;
+			}
+			if(controller != null)
+			{
+				long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				if(controller.LJOHLEGGGMC >= t)
+					return false;
+			}
+			if(isDoTransition)
+			{
+				JHHBAFKMBDL.HHCJCDFCLOB.DNABPEOICIJ(() =>
+				{
+					//0xB384CC
+					MenuScene.Instance.Mount(TransitionUniqueId.HOME, null, true, MenuSceneCamebackInfo.CamBackUnityScene.None);
+				}, false);
+			}
+			else
+			{
+				PopupWindowManager.Show(PopupWindowManager.CreateMessageBankTextContent("menu", "popup_event_end_title", "popup_event_end_text_3", SizeType.Small, new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+				}), (PopupWindowControl ctl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0xB3857C
+					return;
+				}, null, null, null, true, true, false);
+			}
+			return true;
+		}
 
 		// // RVA: 0xB36B6C Offset: 0xB36B6C VA: 0xB36B6C
 		public bool TryMusicPeriod(long musicCloseAt, int unitqueId, OHCAABOMEOF.KGOGMKMBCPP_EventType eventType, bool isMvMode, MenuScene.MusicPeriodMess mess)

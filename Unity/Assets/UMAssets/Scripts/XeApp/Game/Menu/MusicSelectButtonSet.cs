@@ -152,46 +152,240 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x166A2F8 Offset: 0x166A2F8 VA: 0x166A2F8
-		// public void SetOptionStyle(MusicSelectButtonSet.OptionStyle style, bool withoutRanking = False, bool withoutReward = False, bool withoutEvRanking = False, bool withoutMission = False) { }
+		public void SetOptionStyle(OptionStyle style, bool withoutRanking/* = False*/, bool withoutReward/* = False*/, bool withoutEvRanking/* = False*/, bool withoutMission/* = False*/)
+		{
+			switch(style)
+			{
+				case OptionStyle.Basic:
+				case OptionStyle.QuestEventSelect:
+					m_optionTypes.AddRange(s_basicOptionButtons);
+					break;
+				case OptionStyle.QuestEvent:
+					m_optionTypes.AddRange(s_questEventOptionButtons);
+					break;
+				case OptionStyle.QuestEventInfo:
+					m_optionTypes.AddRange(s_questEventInfoOptionButtons);
+					break;
+				case OptionStyle.CollectEvent:
+					m_optionTypes.AddRange(s_collectEventOptionButtons);
+					break;
+				case OptionStyle.ScoreEvent:
+					m_optionTypes.AddRange(s_scoreEventOptionButtons);
+					break;
+				case OptionStyle.BattleEvent:
+					m_optionTypes.AddRange(s_battleEventOptionButtons);
+					break;
+				case OptionStyle.SimulationLive:
+					m_optionTypes.AddRange(s_simulationLiveOptionButtons);
+					break;
+				case OptionStyle.EndEventHome:
+					m_optionTypes.AddRange(s_endEventHomeOptionButtons);
+					break;
+				case OptionStyle.GoDivaEvent:
+					m_optionTypes.AddRange(s_goDivaEventOptionButtons);
+					break;
+				case OptionStyle.GoDivaEventEnd:
+					m_optionTypes.AddRange(s_goDivaEventEndOptionButtons);
+					break;
+				default:
+					break;
+			}
+			if(withoutRanking)
+			{
+				m_optionTypes.Remove(MusicSelectOptionButton.OptionType.Ranking);
+			}
+			if(withoutReward)
+			{
+				m_optionTypes.Remove(MusicSelectOptionButton.OptionType.Reward);
+			}
+			if(withoutEvRanking)
+			{
+				m_optionTypes.Remove(MusicSelectOptionButton.OptionType.EvRanking);
+			}
+			if(withoutMission)
+			{
+				m_optionTypes.Remove(MusicSelectOptionButton.OptionType.EvMission);
+			}
+			ApplyOptionButtons(m_optionTypes, style);
+			m_optionTypes.Clear();
+		}
 
 		// // RVA: 0x166AE50 Offset: 0x166AE50 VA: 0x166AE50
-		// public void SetEnemyHasSkill(bool hasSkill) { }
+		public void SetEnemyHasSkill(bool hasSkill)
+		{
+			for(int i = 0; i < m_optionButtons.Count; i++)
+			{
+				m_optionButtons[i].ApplyEnemyDanger(hasSkill);
+			}
+		}
 
 		// // RVA: 0x166B028 Offset: 0x166B028 VA: 0x166B028
-		// public void SetBadge(MusicSelectOptionButton.OptionType optionType, bool isOn) { }
+		public void SetBadge(MusicSelectOptionButton.OptionType optionType, bool isOn)
+		{
+            MusicSelectOptionButton b = m_optionButtons.Find((MusicSelectOptionButton x) =>
+			{
+				//0x166BE08
+				return x.GetOptionType() == optionType;
+			});
+			if(b != null)
+			{
+				b.SetBadge(isOn);
+			}
+		}
 
 		// // RVA: 0x166B1C4 Offset: 0x166B1C4 VA: 0x166B1C4
-		// public void SetEventRankingCountin(bool isCounting) { }
+		public void SetEventRankingCountin(bool isCounting)
+		{
+            MusicSelectOptionButton b = m_optionButtons.Find((MusicSelectOptionButton x) =>
+			{
+				//0x166BDD0
+				return x.GetOptionType() == MusicSelectOptionButton.OptionType.EvRanking;
+			});
+			if(b != null)
+			{
+				b.Disable = isCounting;
+			}
+        }
 
 		// // RVA: 0x166A8F0 Offset: 0x166A8F0 VA: 0x166A8F0
-		// private void ApplyOptionButtons(List<MusicSelectOptionButton.OptionType> types, MusicSelectButtonSet.OptionStyle style) { }
+		private void ApplyOptionButtons(List<MusicSelectOptionButton.OptionType> types, OptionStyle style)
+		{
+			int cnt = 0;
+			if(types != null)
+				cnt = types.Count;
+			if(style == OptionStyle.QuestEvent)
+			{
+				int a = m_optionButtons.Count / cnt;
+				a--;
+				for(int i = 0; i < m_optionButtons.Count; i++)
+				{
+					m_optionButtons[i].ClearOnClickCallback();
+					m_optionButtons[i].Hidden = true;
+				}
+				if(a < 0)
+					a = 0;
+				for(int i = 0; i < types.Count; i++)
+				{
+					if(i < cnt)
+					{
+						m_optionButtons[a + i].Hidden = false;
+						m_optionButtons[a + i].Disable = false;
+						m_optionButtons[a + i].ApplyEnemyDanger(false);
+						m_optionButtons[a + i].SetBadge(false);
+						ApplyOptionButton(m_optionButtons[a + i], types[i], m_symbolButtonStyles[a + i]);
+					}
+				}
+			}
+			else
+			{
+				for(int i = 0; i < m_optionButtons.Count; i++)
+				{
+					m_optionButtons[i].ClearOnClickCallback();
+					if(i < cnt)
+					{
+						m_optionButtons[i].Hidden = false;
+						m_optionButtons[i].Disable = false;
+						m_optionButtons[i].ApplyEnemyDanger(false);
+						m_optionButtons[i].SetBadge(false);
+						ApplyOptionButton(m_optionButtons[i], types[i], m_symbolButtonStyles[i]);
+					}
+					else
+					{
+						m_optionButtons[i].Hidden = true;
+					}
+				}
+			}
+		}
 
 		// // RVA: 0x166B388 Offset: 0x166B388 VA: 0x166B388
-		// private void ApplyOptionButton(MusicSelectOptionButton button, MusicSelectOptionButton.OptionType optionType, LayoutSymbolData symbolStyle) { }
+		private void ApplyOptionButton(MusicSelectOptionButton button, MusicSelectOptionButton.OptionType optionType, LayoutSymbolData symbolStyle)
+		{
+			button.ApplyOptionType(optionType);
+			symbolStyle.StartAnim(button.IsEventType() ? "event" : "basic");
+			switch(optionType)
+			{
+				case MusicSelectOptionButton.OptionType.Ranking:
+					button.AddOnClickCallback(OnClickRanking);
+					break;
+				case MusicSelectOptionButton.OptionType.Reward:
+					button.AddOnClickCallback(OnClickReward);
+					break;
+				case MusicSelectOptionButton.OptionType.MusicDetail:
+					button.AddOnClickCallback(OnClickMusicDetail);
+					break;
+				case MusicSelectOptionButton.OptionType.EvRanking:
+					button.AddOnClickCallback(OnClickEventRanking);
+					break;
+				case MusicSelectOptionButton.OptionType.EvReward:
+					button.AddOnClickCallback(OnClickEventReward);
+					break;
+				case MusicSelectOptionButton.OptionType.EnemyInfo:
+					button.AddOnClickCallback(OnClickEnemyInfo);
+					break;
+				case MusicSelectOptionButton.OptionType.EvStory:
+					button.AddOnClickCallback(OnClickStory);
+					break;
+				case MusicSelectOptionButton.OptionType.EvMission:
+					button.AddOnClickCallback(OnClickMission);
+					break;
+			}
+		}
 
 		// // RVA: 0x166B7B8 Offset: 0x166B7B8 VA: 0x166B7B8
-		// private void OnClickRanking() { }
+		private void OnClickRanking()
+		{
+			if(onClickRankingButton != null)
+				onClickRankingButton();
+		}
 
 		// // RVA: 0x166B7CC Offset: 0x166B7CC VA: 0x166B7CC
-		// private void OnClickReward() { }
+		private void OnClickReward()
+		{
+			if(onClickRewardButton != null)
+				onClickRewardButton();
+		}
 
 		// // RVA: 0x166B7E0 Offset: 0x166B7E0 VA: 0x166B7E0
-		// private void OnClickMusicDetail() { }
+		private void OnClickMusicDetail()
+		{
+			if(onClickDetailButton != null)
+				onClickDetailButton();
+		}
 
 		// // RVA: 0x166B7F4 Offset: 0x166B7F4 VA: 0x166B7F4
-		// private void OnClickEventRanking() { }
+		private void OnClickEventRanking()
+		{
+			if(onClickEventRankingButton != null)
+				onClickEventRankingButton();
+		}
 
 		// // RVA: 0x166B808 Offset: 0x166B808 VA: 0x166B808
-		// private void OnClickEventReward() { }
+		private void OnClickEventReward()
+		{
+			if(onClickEventRewardButton != null)
+				onClickEventRewardButton();
+		}
 
 		// // RVA: 0x166B81C Offset: 0x166B81C VA: 0x166B81C
-		// private void OnClickEnemyInfo() { }
+		private void OnClickEnemyInfo()
+		{
+			if(onClickEnemyInfoButton != null)
+				onClickEnemyInfoButton();
+		}
 
 		// // RVA: 0x166B830 Offset: 0x166B830 VA: 0x166B830
-		// private void OnClickStory() { }
+		private void OnClickStory()
+		{
+			if(onClickStoryButton != null)
+				onClickStoryButton();
+		}
 
 		// // RVA: 0x166B844 Offset: 0x166B844 VA: 0x166B844
-		// private void OnClickMission() { }
+		private void OnClickMission()
+		{
+			if(onClickMissionButton != null)
+				onClickMissionButton();
+		}
 
 		// RVA: 0x166B858 Offset: 0x166B858 VA: 0x166B858 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

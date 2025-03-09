@@ -12,7 +12,11 @@ namespace XeApp.Game.Menu
 		private RawImageEx m_dlMessageImage; // 0x84
 
 		// // RVA: 0x1668210 Offset: 0x1668210 VA: 0x1668210
-		// public void SetNeedEnergy(int energy) { }
+		public void SetNeedEnergy(int energy)
+		{
+			if(m_useEnergy != null)
+				m_useEnergy.SetNumber(energy, 0);
+		}
 
 		// RVA: 0x1668178 Offset: 0x1668178 VA: 0x1668178
 		public void SetDLMessage(bool isVisible)

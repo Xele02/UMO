@@ -66,7 +66,7 @@ public class NKOBMDPHNGP_EventRaidLobby : IKDICBBFBMI_EventBase
 	// // RVA: 0xC1E560 Offset: 0xC1E560 VA: 0xC1E560
 	public LDEBIBGHCGD_EventRaidLobby FJLIDJJAGOM()
 	{
-		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI);
+		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI_QuestId);
 		if(db != null)
 		{
 			return db as LDEBIBGHCGD_EventRaidLobby;

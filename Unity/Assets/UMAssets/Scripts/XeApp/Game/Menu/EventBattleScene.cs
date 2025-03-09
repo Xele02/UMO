@@ -34,7 +34,7 @@ namespace XeApp.Game.Menu
 
 		protected override int musicListCount { get { return 1; } } //0xF0F120
 		protected override MusicDataList currentMusicList { get {  return m_musicList;} } //0xF0F130
-		// protected override bool scrollIsClamp { get; } 0xF0F138
+		protected override bool scrollIsClamp { get { return true; } } //0xF0F138
 
 		// // RVA: 0xF0F128 Offset: 0xF0F128 VA: 0xF0F128 Slot: 32
 		protected override MusicDataList GetMusicList(int i)
@@ -45,74 +45,153 @@ namespace XeApp.Game.Menu
 		// RVA: 0xF0F140 Offset: 0xF0F140 VA: 0xF0F140 Slot: 5
 		protected override void Start()
 		{
-			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene Start");
+			list_no = 0;
 		}
 
 		// RVA: 0xF0F14C Offset: 0xF0F14C VA: 0xF0F14C Slot: 16
 		protected override void OnPreSetCanvas()
 		{
-			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene OnPreSetCanvas");
+			GameManager.Instance.SelectedGuestData = null;
+			this.StartCoroutineWatched(Co_PreSetCanvas());
+			m_gameSettingMenu = ConfigMenu.Create(null);
 		}
 
 		// RVA: 0xF0F2A0 Offset: 0xF0F2A0 VA: 0xF0F2A0 Slot: 17
 		protected override bool IsEndPreSetCanvas()
 		{
-			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene IsEndPreSetCanvas");
-			return true;
+			if(isBgChanging || !m_isEventChecked)
+				return false;
+			m_musicInfo.Hide();
+			m_cdSelect.Hide();
+			m_cdArrow.Hide();
+			m_buttonSet.Hide();
+			m_eventBanner.Hide();
+			m_eventInfo.Hide();
+			m_battleInfo.Hide();
+			m_battleMatch.Hide();
+			m_battleLimit.Hide();
+			m_battleExButton.Hide();
+			m_battleExGauge.Hide();
+			m_timeLimitMessage.Hide();
+			m_lineButton.Hide();
+			return base.IsEndPreSetCanvas();
 		}
 
 		// RVA: 0xF0F480 Offset: 0xF0F480 VA: 0xF0F480 Slot: 20
 		protected override bool OnBgmStart()
 		{
-			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene OnBgmStart");
+			if(!m_isEventTimeLimit)
+			{
+				if(!m_isMatched || !m_isClassSelected)
+				{
+					ChangeTrialMusic(m_eventCtrl.EDNMFMBLCGF_GetWavId());
+				}
+				else
+				{
+					base.OnBgmStart();
+				}
+			}
 			return true;
 		}
 
 		// RVA: 0xF0F4FC Offset: 0xF0F4FC VA: 0xF0F4FC Slot: 9
 		protected override void OnStartEnterAnimation()
 		{
-			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene OnStartEnterAnimation");
+			if(!m_isEventTimeLimit)
+			{
+				m_eventBanner.Enter();
+				if(IsEventEndChallengePeriod)
+				{
+					m_buttonSet.Enter();
+					m_eventInfo.Enter();
+					m_timeLimitMessage.Enter(IsEventCounting);
+					return;
+				}
+				m_battleLimit.Enter();
+				if(m_isMatched && m_isClassSelected)
+				{
+					m_buttonSet.Enter();
+					m_musicInfo.Enter();
+					m_eventInfo.Enter();
+					m_cdSelect.Enter();
+					m_cdArrow.Enter();
+					m_battleInfo.Enter();
+					m_battleExButton.Enter();
+					m_battleExGauge.Enter();
+					if(currentMusicList.GetCount(true, false) > 0)
+					{
+						m_lineButton.Enter(m_isLine6Mode);
+					}
+				}
+			}
 		}
 
 		// RVA: 0xF0F770 Offset: 0xF0F770 VA: 0xF0F770 Slot: 10
 		protected override bool IsEndEnterAnimation()
 		{
-			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene IsEndEnterAnimation");
-			return true;
+			return !m_musicInfo.IsPlaying() && !m_cdSelect.IsPlaying() && !m_cdArrow.IsPlaying() && !m_buttonSet.IsPlaying() && !m_eventBanner.IsPlaying() && 
+				!m_eventInfo.IsPlaying() && !m_battleInfo.IsPlaying() && !m_battleLimit.IsPlaying() && !m_battleExButton.IsPlaying() && !m_battleExGauge.IsPlaying() && 
+				!m_timeLimitMessage.IsPlaying() && !m_lineButton.IsPlaying();
 		}
 
 		// RVA: 0xF0F964 Offset: 0xF0F964 VA: 0xF0F964 Slot: 12
 		protected override void OnStartExitAnimation()
 		{
-			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene OnStartExitAnimation");
+			if(!m_isEventTimeLimit)
+			{
+				m_buttonSet.TryLeave();
+				m_musicInfo.TryLeave();
+				m_eventInfo.TryLeave();
+				m_eventBanner.TryLeave();
+				m_timeLimitMessage.TryLeave();
+				m_cdSelect.TryLeave();
+				m_cdArrow.TryLeave();
+				m_battleInfo.TryLeave();
+				m_battleLimit.TryLeave();
+				m_battleExButton.TryLeave();
+				m_battleExGauge.TryLeave();
+				m_battleClassSelect.TryLeave();
+				m_lineButton.TryLeave();
+			}
 		}
 
 		// RVA: 0xF0FB20 Offset: 0xF0FB20 VA: 0xF0FB20 Slot: 13
 		protected override bool IsEndExitAnimation()
 		{
-			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene IsEndExitAnimation");
-			return true;
+			return !m_musicInfo.IsPlaying() && !m_cdSelect.IsPlaying() && !m_cdArrow.IsPlaying() && !m_buttonSet.IsPlaying() && !m_eventBanner.IsPlaying() && 
+				!m_eventInfo.IsPlaying() && !m_battleInfo.IsPlaying() && !m_battleLimit.IsPlaying() && !m_battleExButton.IsPlaying() && !m_battleExGauge.IsPlaying() && 
+				!m_timeLimitMessage.IsPlaying() && !m_lineButton.IsPlaying();
 		}
 
 		// RVA: 0xF0FD14 Offset: 0xF0FD14 VA: 0xF0FD14 Slot: 51
-		// protected override void OnDecideCurrentMusic() { }
+		protected override void OnDecideCurrentMusic()
+		{
+			m_overrideEnemyCenterSkill = selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].HPBPDHPIBGN_EnemyData.DCOALMMJDJK_CenterSkill;
+			m_overrideEnemyLiveSkill = selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].HPBPDHPIBGN_EnemyData.KKPLDFNDFDE_LiveSkill;
+			base.OnDecideCurrentMusic();
+		}
 
 		// RVA: 0xF0FEA4 Offset: 0xF0FEA4 VA: 0xF0FEA4 Slot: 15
 		protected override void OnDeleteCache()
 		{
-			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene OnDeleteCache");
+			if(m_battleClassSelect != null)
+			{
+				Destroy(m_battleClassSelect.gameObject);
+				m_battleClassSelect = null;
+			}
 		}
 
 		// RVA: 0xF0FF9C Offset: 0xF0FF9C VA: 0xF0FF9C Slot: 14
 		protected override void OnDestoryScene()
 		{
-			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene OnDestoryScene");
+			base.OnDestoryScene();
+			m_gameSettingMenu.Dispose();
 		}
 
 		// RVA: 0xF0FFD4 Offset: 0xF0FFD4 VA: 0xF0FFD4 Slot: 35
 		protected override void CheckTryInstall()
 		{
-			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene CheckTryInstall");
+			return;
 		}
 
 		// // RVA: 0xF0FFD8 Offset: 0xF0FFD8 VA: 0xF0FFD8
@@ -149,8 +228,183 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF10124 Offset: 0xF10124 VA: 0xF10124 Slot: 36
 		protected override IEnumerator Co_Initialize()
 		{
-			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene CheckTryInstall");
-			yield break;
+			//0x1059E80
+			if(m_isEventTimeLimit || IsRequestGotoTitle)
+			{
+				m_isInitialized = true;
+				yield break;
+			}
+			m_isInitialized = false;
+			bool done = false;
+			bool err = false;
+			m_eventCtrl.ADACMHAHHKC_PreSetupEventHome(() =>
+			{
+				//0x105605C
+				done = true;
+			}, () =>
+			{
+				//0x1056068
+				done = true;
+				err = true;
+			});
+			while(!done)
+				yield return null;
+			if(err)
+			{
+				m_isInitialized = true;
+				GotoTitle();
+				yield break;
+			}
+			done = false;
+			err = false;
+			JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.LFOBIPKFOEF(OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle, 0, () =>
+			{
+				//0x1056074
+				done = true;
+			}, () =>
+			{
+				//0x1056080
+				done = true;
+				err = true;
+			}, false);
+			while(!done)
+				yield return null;
+			if(err)
+			{
+				m_isInitialized = true;
+				GotoTitle();
+				yield break;
+			}
+			done = false;
+			err = false;
+			CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
+			{
+				//0x105608C
+				done = true;
+			}, () =>
+			{
+				//0x1056098
+				done = true;
+				err = true;
+			}, null);
+			while(!done)
+				yield return null;
+			if(err)
+			{
+				m_isInitialized = true;
+				GotoTitle();
+				yield break;
+			}
+			CrateQuestList();
+			CreateSnsList();
+			SetupHelp();
+			m_cdSelect.transform.SetAsLastSibling();
+			m_cdArrow.transform.SetAsLastSibling();
+			m_battleInfo.transform.SetAsLastSibling();
+			m_battleExButton.transform.SetAsLastSibling();
+			m_musicInfo.transform.SetAsLastSibling();
+			m_buttonSet.transform.SetAsLastSibling();
+			m_eventInfo.transform.SetAsLastSibling();
+			m_eventBanner.transform.SetAsLastSibling();
+			m_battleLimit.transform.SetAsLastSibling();
+			m_battleMatch.transform.SetAsLastSibling();
+			m_timeLimitMessage.transform.SetAsLastSibling();
+			m_lineButton.transform.SetAsLastSibling();
+			m_musicInfo.onChangedDifficulty = OnSelectedDifficulty;
+			m_cdSelect.onClickFlowButton = OnClickFlowButton;
+			m_cdSelect.onSelectionChanged = OnSelectionChanged;
+			m_cdSelect.onScrollRepeated = OnScrollRepeated;
+			m_cdSelect.onScrollStarted = OnScrollStarted;
+			m_cdSelect.onScrollUpdated = OnScrollUpdated;
+			m_cdSelect.onScrollEnded = OnScrollEnded;
+			m_cdSelect.onClickPlayButton = null;
+			m_buttonSet.onClickRankingButton = OnClickRankingButton;
+			m_buttonSet.onClickRewardButton = OnClickRewardButton;
+			m_buttonSet.onClickDetailButton = OnClickDetailButton;
+			m_buttonSet.onClickEventRankingButton = OnClickEventRankingButton;
+			m_buttonSet.onClickEventRewardButton = OnClickEventRewardButton;
+			m_buttonSet.onClickEnemyInfoButton = OnClickEnemyInfoButton;
+			m_buttonSet.onClickStoryButton = OnClickStoryButton;
+			m_buttonSet.onClickMissionButton = OnClickMissionButton;
+			m_battleInfo.onClickPlayButton = OnClickPlayButton;
+			m_battleExButton.onClickHiScore = OnClickExBattleScore;
+			m_battleExButton.onClickReSelect = OnClickSelectClassButton;
+			m_lineButton.onClickButton = OnChangeLineMode;
+			InitializeDecos();
+			m_musicInfo.MakeCache();
+			m_cdSelect.MakeCache();
+            MessageBank bk = MessageManager.Instance.GetBank("menu");
+        	m_musicInfo.SetNoInfoMessage(bk.GetMessageByLabel("music_not_exist_text_00"), bk.GetMessageByLabel("music_not_exist_line6_text_00"));
+			m_musicInfo.SetDiffTabStyle(MusicSelectMusicInfo.DiffTabStyle.N4, false, false);
+			m_musicInfo.ChangeSelectedDiff(Difficulty.Type.Normal);
+			m_eventInfo.SetStyle(MusicSelectEventInfo.Style.Battle);
+			m_eventInfo.SetCurrentValueLabel(bk.GetMessageByLabel("music_event_battle_current_point_label"));
+			m_eventInfo.SetNextValueLabel(bk.GetMessageByLabel("music_event_battle_next_point_label"));
+			m_eventInfo.SetValueUnitLabel(bk.GetMessageByLabel("music_event_battle_point_unit"));
+			m_eventInfo.SetRewardLabel(bk.GetMessageByLabel("music_event_battle_reward_label"));
+			m_eventInfo.SetRankUnitLabel(bk.GetMessageByLabel("music_event_battle_rank_unit"), 0);
+			m_eventInfo.SetRankUnitLabel(bk.GetMessageByLabel("music_event_battle_rank_unit"), 1);
+			if(IsEventEndChallengePeriod)
+			{
+				m_eventInfo.SetRankLabel(bk.GetMessageByLabel("music_event_battle_rank_total_counting_label"), 0);
+				m_eventInfo.SetRankLabel(bk.GetMessageByLabel("music_event_battle_rank_hiscore_counting_label"), 1);
+			}
+			else
+			{
+				m_eventInfo.SetRankLabel(bk.GetMessageByLabel("music_event_battle_rank_total_label"), 0);
+				m_eventInfo.SetRankLabel(bk.GetMessageByLabel("music_event_battle_rank_hiscore_label"), 1);
+			}
+			m_eventInfo.SetBpValueLabel(bk.GetMessageByLabel("music_event_battle_bp_counting_label"));
+			m_eventInfo.SetBpValueUnitLabel(bk.GetMessageByLabel("music_event_battle_bp_unit"));
+			HAEDCCLHEMN_EventBattle btlEv = m_eventCtrl as HAEDCCLHEMN_EventBattle;
+			if(btlEv.KCHPPLMMDGD_GetStep() == OKMHOFEJPCF.CBOHLHCMGJJ_Steps.OLCLJKOKJCD_7)
+			{
+				m_isMatched = true;
+				m_isClassSelected = true;
+			}
+			else
+			{
+				m_isMatched = btlEv.KCHPPLMMDGD_GetStep() == OKMHOFEJPCF.CBOHLHCMGJJ_Steps.CNLOFIHPBMP_4 && btlEv.KKMFHMGIIKN_GetCls() > 0;
+				m_isClassSelected = btlEv.KKMFHMGIIKN_GetCls() > 0;
+			}
+			if(IsEventEndChallengePeriod)
+			{
+				long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				m_overrideButtonStyle = MusicSelectButtonSet.OptionStyle.EndEventHome;
+				m_musicList = new MusicDataList(IBJAKJJICBC.GCCBCAKFJMF(5, t, m_eventCtrl.PGIIDPEGGPI_EventId, false), IBJAKJJICBC.GCCBCAKFJMF(5, t, m_eventCtrl.PGIIDPEGGPI_EventId, true));
+				list_no = 0;
+				m_isMatched = true;
+				m_isLine6Mode = false;
+			}
+			else
+			{
+				if(m_isMatched)
+				{
+					long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+                    List<IBJAKJJICBC> l = IBJAKJJICBC.EHNABCEGAHO(t, false, false);
+                    m_musicList = new MusicDataList(l, IBJAKJJICBC.EHNABCEGAHO(t, false, true));
+					OverrideEnemySkill();
+					m_initParam.isDisableBattleEventIntermediateResult = !GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.KPFAFLBICLA_IsNotBattleEventInfo;
+					diff = GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.MFFAIIDJPBL_BattleEvent.FFACBDAJJJP_GetDifficulty();
+					yield return this.StartCoroutineWatched(Co_BattleAssetDownLoad(l));
+				}
+				else
+				{
+					m_musicList = new MusicDataList();
+				}
+			}
+			//LAB_0105b8a0
+			m_lineButton.SetUnlock(IBJAKJJICBC.KGJJCAKCMLO());
+			m_lineButton.SetUnlockNumber(IBJAKJJICBC.POPLHDKHIIM());
+			ApplyBasicInfo();
+			if(m_isMatched)
+			{
+				ApplyMusicListInfo();
+				ApplyMusicInfo();
+			}
+			ApplyEventInfo();
+			Database.Instance.bonusData.SetEpisodeBonus(m_eventCtrl.LMDENICBIIB_GetEpisodesBonusList(0, 0));
+			m_isInitialized = true;
 		}
 
 		// RVA: 0xF101AC Offset: 0xF101AC VA: 0xF101AC Slot: 38
@@ -191,22 +445,40 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xF10658 Offset: 0xF10658 VA: 0xF10658 Slot: 46
-		// protected override void ApplyMusicInfoBasic(IBJAKJJICBC musicData) { }
+		protected override void ApplyMusicInfoBasic(IBJAKJJICBC musicData)
+		{
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene ApplyMusicInfoBasic");
+		}
 
 		// // RVA: 0xF117A8 Offset: 0xF117A8 VA: 0xF117A8
-		// private void ApplyEventInfo() { }
+		private void ApplyEventInfo()
+		{
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene ApplyEventInfo");
+		}
 
 		// RVA: 0xF121FC Offset: 0xF121FC VA: 0xF121FC Slot: 52
-		// protected override void LeaveForScrollStart() { }
+		protected override void LeaveForScrollStart()
+		{
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene LeaveForScrollStart");
+		}
 
 		// RVA: 0xF12254 Offset: 0xF12254 VA: 0xF12254 Slot: 53
 		// protected override void EnterForScrollEnd() { }
 
 		// RVA: 0xF122AC Offset: 0xF122AC VA: 0xF122AC Slot: 54
-		// protected override void OnChangedDifficulty() { }
+		protected override void OnChangedDifficulty()
+		{
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventBattleScene OnChangedDifficulty");
+		}
 
 		// // RVA: 0xF123E4 Offset: 0xF123E4 VA: 0xF123E4
-		// private void InitializeDecos() { }
+		private void InitializeDecos()
+		{
+			m_selfDivaDeco = new DivaIconDecoration(m_battleInfo.GetSelfDivaIconObject(), DivaIconDecoration.Size.S, true, false, null, null);
+			m_rivalDivaDeco = new DivaIconDecoration(m_battleInfo.GetRivalDivaIconObject(), DivaIconDecoration.Size.S, true, false, null, null);
+			m_selfSceneDeco = new SceneIconDecoration(m_battleInfo.GetSelfSceneIconObject(), SceneIconDecoration.Size.M, null, null);
+			m_rivalSceneDeco = new SceneIconDecoration(m_battleInfo.GetRivalSceneIconObject(), SceneIconDecoration.Size.M, null, null);
+		}
 
 		// // RVA: 0xF10280 Offset: 0xF10280 VA: 0xF10280
 		// private void ReleaseDecos() { }
@@ -285,7 +557,70 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EDC8C Offset: 0x6EDC8C VA: 0x6EDC8C
 		// // RVA: 0xF0F218 Offset: 0xF0F218 VA: 0xF0F218
-		// private IEnumerator Co_PreSetCanvas() { }
+		private IEnumerator Co_PreSetCanvas()
+		{
+			//0x105FCA4
+			EventMusicSelectSceneArgs EventArg = Args as EventMusicSelectSceneArgs;
+			EventMusicSelectSceneArgs EventArgsReturn = ArgsReturn as EventMusicSelectSceneArgs;
+			m_isEventTimeLimit = false;
+			m_isEventChecked = false;
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			m_eventCtrl = null;
+			if(EventArg == null)
+			{
+				if(EventArgsReturn != null)
+				{
+					m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(EventArgsReturn.EventUniqueId);
+					m_isLine6Mode = EventArgsReturn.isLine6Mode;
+				}
+				m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(m_eventId);
+			}
+			else
+			{
+				m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(EventArg.EventUniqueId);
+				m_isLine6Mode = EventArg.isFromRhythmGame && EventArg.isLine6Mode;
+			}
+			if(m_eventCtrl != null)
+			{
+				m_eventCtrl.HCDGELDHFHB_UpdateStatus(t);
+				m_eventStatus = m_eventCtrl.NGOFCFJHOMI_Status;
+			}
+			if(!MenuScene.Instance.CheckEventLimit(m_eventCtrl, false, true))
+			{
+				m_eventId = m_eventCtrl.PGIIDPEGGPI_EventId;
+				yield return Co.R(Co_Initialize_LoginBonusPopup(m_eventCtrl));
+				if(MenuScene.Instance.BgControl.GetCurrentType() != BgType.MusicEvent)
+				{
+					this.StartCoroutineWatched(Co_ChangeBg(BgType.MusicEvent, m_eventId));
+				}
+				HAEDCCLHEMN_EventBattle evBtl = m_eventCtrl as HAEDCCLHEMN_EventBattle;
+				if(evBtl != null)
+				{
+					for(int i = 0; i < evBtl.CJOBENJJCLD(); i++)
+					{
+						int embl = evBtl.IECGGHJHJGB_GetClassEmblemId(i);
+						if(embl > 0)
+						{
+							GameManager.Instance.ItemTextureCache.TryInstallEmblem(embl);
+						}
+					}
+					while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+						yield return null;
+				}
+				//LAB_01060444
+				m_isEventChecked = false;
+				base.OnPreSetCanvas();
+				yield break;
+			}
+			GameManager.Instance.fullscreenFader.Fade(0, Color.black);
+			while(!PopupWindowManager.IsActivePopupWindow())
+				yield return null;
+			while(PopupWindowManager.IsActivePopupWindow())
+				yield return null;
+			AutoFadeFlag = false;
+			m_isEventTimeLimit = true;
+			m_isEventChecked = true;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EDD04 Offset: 0x6EDD04 VA: 0x6EDD04
 		// // RVA: 0xF125B0 Offset: 0xF125B0 VA: 0xF125B0 Slot: 55
@@ -810,7 +1145,39 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xF12A60 Offset: 0xF12A60 VA: 0xF12A60
-		// private void OnClickExBattleScore() { }
+		private void OnClickExBattleScore()
+		{
+			GameManager.Instance.CloseSnsNotice();
+			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_003);
+			m_ExBattleScoreTotal.SetUp(null, false);
+			m_ExBattleScoreTotal.OpenWindow(() =>
+			{
+				//0xF1383C
+				m_ExBattleScoreTotal.ButtonDisable();
+				PopupExBattleScheduleSetting s = new PopupExBattleScheduleSetting();
+				s.View = new CDDODEHEKGB();
+				s.WindowSize = SizeType.Large;
+				s.IsCaption = false;
+				s.Buttons = new ButtonInfo[1]
+				{
+					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+				};
+				PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+				{
+					//0x1055F8C
+					return;
+				}, null, null, () =>
+				{
+					//0xF13B9C
+					m_ExBattleScoreTotal.ButtonEnable();
+				}, true, true, false);
+			}, (EMGOCNMMPHC view) =>
+			{
+				//0xF13BC8
+				m_ExBattleScore.Setup(view);
+				m_ExBattleScore.TryEnter(false);
+			}, -1);
+		}
 
 		// // RVA: 0xF12C28 Offset: 0xF12C28 VA: 0xF12C28
 		private void OverrideEnemySkill()
@@ -820,15 +1187,128 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xF12C98 Offset: 0xF12C98 VA: 0xF12C98
-		// private void OnClickSelectClassButton() { }
+		private void OnClickSelectClassButton()
+		{
+			GameManager.Instance.CloseSnsNotice();
+			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_003);
+			this.StartCoroutineWatched(Co_OpenBattleEventPopup());
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EE0C4 Offset: 0x6EE0C4 VA: 0x6EE0C4
 		// // RVA: 0xF12D9C Offset: 0xF12D9C VA: 0xF12D9C
-		// private IEnumerator Co_OpenBattleEventPopup() { }
+		private IEnumerator Co_OpenBattleEventPopup()
+		{
+			//0x105F424
+			bool isClosed = false;
+			bool isDirty = false;
+			bool isConfirm = false;
+			PopupConfigBattleEventSetting s = new PopupConfigBattleEventSetting();
+			s.IsCaption = false;
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+			};
+			s.WindowSize = SizeType.Middle;
+			s.OnClickClassSelect = () =>
+			{
+				//0x105758C
+				isConfirm = true;
+			};
+			s.OnClickBattleInfo = (bool isDisable) =>
+			{
+				//0x1057598
+				isDirty = true;
+				m_initParam.isDisableBattleEventIntermediateResult = isDisable;
+			};
+            PopupWindowControl popupControl = PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1055F90
+				return;
+			}, null, null, null, true, true, false, null, () =>
+			{
+				//0x10575C8
+				isClosed = true;
+			});
+			bool isSelectClass = false;
+			while(!isClosed)
+			{
+				if(isConfirm)
+				{
+					popupControl.InputDisable();
+					yield return Co.R(Co_ConfirmSelectClass((bool isReSelect) =>
+					{
+						//0x10575D4
+						if(!isReSelect)
+							return;
+						popupControl.Close(() =>
+						{
+							//0x1055F94
+							return;
+						}, null);
+						isSelectClass = true;
+					}));
+					popupControl.InputEnable();
+					isConfirm = false;
+				}
+				yield return null;
+			}
+			if(isDirty)
+			{
+				bool done = false;
+				ConfigManager.Instance.ApplyValue(true, () =>
+				{
+					//0x1057734
+					done = true;
+				});
+				while(!done)
+					yield return null;
+			}
+			if(isSelectClass)
+			{
+				PMFBBLGPLLJ p = new PMFBBLGPLLJ();
+				p.KHEKNNFCAOI();
+				yield return Co.R(Co_SelectClass(p));
+			}
+        }
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EE13C Offset: 0x6EE13C VA: 0x6EE13C
 		// // RVA: 0xF12E24 Offset: 0xF12E24 VA: 0xF12E24
-		// private IEnumerator Co_ConfirmSelectClass(Action<bool> onEnd) { }
+		private IEnumerator Co_ConfirmSelectClass(Action<bool> onEnd)
+		{
+			//0x105978C
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			bool isClosed = false;
+			bool isCancel = false;
+			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("music_event_battle_class_reselect_01"), SizeType.Small, bk.GetMessageByLabel("music_event_battle_class_reselect_02") + Environment.NewLine + bk.GetMessageByLabel("music_event_battle_class_reselect_03"), new ButtonInfo[2]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			}, false, true), (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1057748
+				if(label == PopupButton.ButtonLabel.Cancel)
+					isCancel = true;
+			}, null, null, null, true, true, false, null, () =>
+			{
+				//0x1057758
+				isClosed = true;
+			});
+			yield return new WaitWhile(() =>
+			{
+				//0x1057764
+				return !isClosed;
+			});
+			if(isCancel)
+			{
+				if(onEnd != null)
+					onEnd(false);
+				yield break;
+			}
+			(m_eventCtrl as HAEDCCLHEMN_EventBattle).PIKBPBCNIOD();
+			yield return Co.R(Co_Save());
+			if(onEnd != null)
+				onEnd(true);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EE1B4 Offset: 0x6EE1B4 VA: 0x6EE1B4
 		// // RVA: 0xF12EC8 Offset: 0xF12EC8 VA: 0xF12EC8
@@ -907,11 +1387,78 @@ namespace XeApp.Game.Menu
         }
 
 		// // RVA: 0xF13190 Offset: 0xF13190 VA: 0xF13190
-		// protected void OnChangeLineMode(int style) { }
+		protected void OnChangeLineMode(int style)
+		{
+			MenuScene.Instance.RaycastDisable();
+			m_isLine6Mode = style == 1;
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.HPDBEKAGKOD_SetIsLine6(m_isLine6Mode);
+			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
+			this.StartCoroutineWatched(Co_ChangeLineMode(selectMusicData.GHBPLHBNMBK_FreeMusicId, selectMusicData.DACLONHOFLA.BHCIFFILAKJ_Str, () =>
+			{
+				//0x1055F98
+				MenuScene.Instance.RaycastEnable();
+			}));
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EE2A4 Offset: 0x6EE2A4 VA: 0x6EE2A4
 		// // RVA: 0xF134C8 Offset: 0xF134C8 VA: 0xF134C8
-		// private IEnumerator Co_ChangeLineMode(int freeMusicId, int strength, Action callback) { }
+		private IEnumerator Co_ChangeLineMode(int freeMusicId, int strength, Action callback)
+		{
+			bool isPlaying;
+
+			//0x1058D48
+			m_cdSelect.TryLeave();
+			m_cdArrow.TryLeave();
+			m_musicInfo.TryLeave();
+			m_buttonSet.TryLeave();
+			m_eventInfo.TryLeave();
+			m_eventBanner.TryLeave();
+			m_battleLimit.TryLeave();
+			m_battleExGauge.TryLeave();
+			m_battleInfo.TryLeave();
+			m_battleExButton.TryLeave();
+			MenuScene.Instance.HelpButton.TryLeave();
+			isPlaying = true;
+			while(isPlaying)
+			{
+				isPlaying = m_cdSelect.IsPlaying() || m_cdArrow.IsPlaying() || m_musicInfo.IsPlaying() || m_buttonSet.IsPlaying() || m_eventInfo.IsPlaying() || 
+					m_eventBanner.IsPlaying() || m_battleLimit.IsPlaying() || m_battleExGauge.IsPlaying() || m_battleInfo.IsPlaying() || m_battleExButton.IsPlaying();
+				yield return null;
+			}
+			int idx = m_musicList.FindIndex((IBJAKJJICBC _) =>
+			{
+				//0x1057870
+				return _.GHBPLHBNMBK_FreeMusicId == freeMusicId && _.DACLONHOFLA.BHCIFFILAKJ_Str == strength;
+			}, m_isLine6Mode, false);
+			if(idx < 0)
+				idx = 0;
+			list_no = idx;
+			ApplyMusicListInfo();
+			ApplyMusicInfo();
+			DelayedApplyMusicInfo();
+			ApplyBasicInfo();
+			ApplyBattleInfo(selectMusicData);
+			m_cdSelect.Enter();
+			m_cdArrow.Enter();
+			m_musicInfo.Enter();
+			m_buttonSet.Enter();
+			m_eventInfo.Enter();
+			m_eventBanner.Enter();
+			m_battleLimit.Enter();
+			m_battleExGauge.Enter();
+			m_battleInfo.Enter();
+			m_battleExButton.Enter();
+			MenuScene.Instance.HelpButton.TryEnter();
+			isPlaying = true;
+			while(isPlaying)
+			{
+				isPlaying = m_cdSelect.IsPlaying() || m_cdArrow.IsPlaying() || m_musicInfo.IsPlaying() || m_buttonSet.IsPlaying() || m_eventInfo.IsPlaying() || 
+					m_eventBanner.IsPlaying() || m_battleLimit.IsPlaying() || m_battleExGauge.IsPlaying() || m_battleInfo.IsPlaying() || m_battleExButton.IsPlaying();
+				yield return null;
+			}
+			if(callback != null)
+				callback();
+		}
 
 		// [CompilerGeneratedAttribute] // RVA: 0x6EE31C Offset: 0x6EE31C VA: 0x6EE31C
 		// // RVA: 0xF135A4 Offset: 0xF135A4 VA: 0xF135A4
@@ -943,17 +1490,5 @@ namespace XeApp.Game.Menu
 		// [DebuggerHiddenAttribute] // RVA: 0x6EE3BC Offset: 0x6EE3BC VA: 0x6EE3BC
 		// // RVA: 0xF13824 Offset: 0xF13824 VA: 0xF13824
 		// private IEnumerator <>n__2(Action onEnd) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6EE40C Offset: 0x6EE40C VA: 0x6EE40C
-		// // RVA: 0xF1383C Offset: 0xF1383C VA: 0xF1383C
-		// private void <OnClickExBattleScore>b__65_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6EE41C Offset: 0x6EE41C VA: 0x6EE41C
-		// // RVA: 0xF13B9C Offset: 0xF13B9C VA: 0xF13B9C
-		// private void <OnClickExBattleScore>b__65_3() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6EE42C Offset: 0x6EE42C VA: 0x6EE42C
-		// // RVA: 0xF13BC8 Offset: 0xF13BC8 VA: 0xF13BC8
-		// private void <OnClickExBattleScore>b__65_1(EMGOCNMMPHC view) { }
 	}
 }

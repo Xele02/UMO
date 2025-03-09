@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -106,25 +107,41 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x13B20C0 Offset: 0x13B20C0 VA: 0x13B20C0 Slot: 45
-		// protected override string GetLiveEntranceMessage(IBJAKJJICBC musicData) { }
+		protected override string GetLiveEntranceMessage(IBJAKJJICBC musicData)
+		{
+			return MessageManager.Instance.GetMessage("menu", m_eventCtrl.MNDFBBMNJGN_IsUsingTicket ? "music_to_live_ticket_msg" : "music_to_live_stamina_msg");
+		}
 
 		// RVA: 0x13B21A8 Offset: 0x13B21A8 VA: 0x13B21A8 Slot: 46
-		// protected override void ApplyMusicInfoBasic(IBJAKJJICBC musicData) { }
+		protected override void ApplyMusicInfoBasic(IBJAKJJICBC musicData)
+		{
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventMusicSelectScene ApplyMusicInfoBasic");
+		}
 
 		// // RVA: 0x13B2524 Offset: 0x13B2524 VA: 0x13B2524
 		// private void ApplyEventInfo() { }
 
 		// // RVA: 0x13B2D18 Offset: 0x13B2D18 VA: 0x13B2D18 Slot: 50
-		// protected override bool CurrentMusicDecisionCheck(Action cancelCallback, MKIKFJKPEHK viewBoostData, int selectIndex = 0) { }
+		protected override bool CurrentMusicDecisionCheck(Action cancelCallback, MKIKFJKPEHK viewBoostData, int selectIndex/* = 0*/)
+		{
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventMusicSelectScene CurrentMusicDecisionCheck");
+			return base.CurrentMusicDecisionCheck(cancelCallback, viewBoostData, selectIndex);
+		}
 
 		// RVA: 0x13B325C Offset: 0x13B325C VA: 0x13B325C Slot: 52
-		// protected override void LeaveForScrollStart() { }
+		protected override void LeaveForScrollStart()
+		{
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventMusicSelectScene LeaveForScrollStart");
+		}
 
 		// RVA: 0x13B3294 Offset: 0x13B3294 VA: 0x13B3294 Slot: 53
 		// protected override void EnterForScrollEnd() { }
 
 		// RVA: 0x13B32CC Offset: 0x13B32CC VA: 0x13B32CC Slot: 54
-		// protected override void OnChangedDifficulty() { }
+		protected override void OnChangedDifficulty()
+		{
+			TodoLogger.LogError(TodoLogger.EventBattle_3, "EventMusicSelectScene OnChangedDifficulty");
+		}
 
 		// // RVA: 0x13B2CB8 Offset: 0x13B2CB8 VA: 0x13B2CB8
 		// private static string EP_ToString(long point) { }

@@ -53,7 +53,7 @@ public class HLEBAINCOME_EventScore : IKDICBBFBMI_EventBase
 	// // RVA: 0x15EB5D4 Offset: 0x15EB5D4 VA: 0x15EB5D4 Slot: 30
 	protected override bool JIHMLILFOPG_IsEventActive(long JHNMKKNEENE)
 	{
-		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI);
+		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI_QuestId);
 		if(db != null)
 		{
 			TodoLogger.LogError(TodoLogger.EventScore_4, "HLEBAINCOME_EventScore.JIHMLILFOPG");

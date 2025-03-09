@@ -163,7 +163,7 @@ public class JEPBIIJDGEF_EventInfo
 		return MPEOOINCGEN.Find((IKDICBBFBMI_EventBase PKLPKMLGFGK) =>
 		{
 			//0x1C40860
-			return PKLPKMLGFGK.JOPOPMLFINI == JOPOPMLFINI;
+			return PKLPKMLGFGK.JOPOPMLFINI_QuestId == JOPOPMLFINI;
 		});
 	}
 
@@ -292,7 +292,7 @@ public class JEPBIIJDGEF_EventInfo
 		return MPEOOINCGEN.Find((IKDICBBFBMI_EventBase PKLPKMLGFGK) =>
 		{
 			//0x1C40904
-			return PKLPKMLGFGK.JOPOPMLFINI == JOPOPMLFINI;
+			return PKLPKMLGFGK.JOPOPMLFINI_QuestId == JOPOPMLFINI;
 		});
 	}
 
@@ -589,7 +589,7 @@ public class JEPBIIJDGEF_EventInfo
 		{
 			if(MFJKNCACBDG != 1)
 				return 0;
-			IKDICBBFBMI_EventBase ev = MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6, false);
+			IKDICBBFBMI_EventBase ev = MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false);
 			if(ev == null)
 				return 0;
 			int a1 = 0;
@@ -601,7 +601,7 @@ public class JEPBIIJDGEF_EventInfo
 		{
 			if(MNNHHJBBICA == 1)
 			{
-				IKDICBBFBMI_EventBase ev = MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6, false);
+				IKDICBBFBMI_EventBase ev = MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false);
 				if(ev == null)
 					return 0;
 				int a1 = 0;
@@ -615,7 +615,7 @@ public class JEPBIIJDGEF_EventInfo
 			}
 			else if(MNNHHJBBICA == 4)
 			{
-				IKDICBBFBMI_EventBase ev = AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6);
+				IKDICBBFBMI_EventBase ev = AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6);
 				if(ev == null)
 					return 0;
 				int a1 = 0;
@@ -629,7 +629,7 @@ public class JEPBIIJDGEF_EventInfo
 			}
 			else
 			{
-				IKDICBBFBMI_EventBase ev = MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_6, false);
+				IKDICBBFBMI_EventBase ev = MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false);
 				if(ev == null)
 					return 0;
 				int a1 = 0;
