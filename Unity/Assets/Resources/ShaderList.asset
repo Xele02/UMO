@@ -275,7 +275,7 @@ MonoBehaviour:
     internalName: XeSys/Unlit/Transparent
     shader: {fileID: 4800000, guid: 1dc0ddf1d1b62754ca7dd9c2a4b84f94, type: 3}
   - fileName: ui-unlit-transparentadd
-    internalName: 
+    internalName: XeSys/Unlit/TransparentAdd
     shader: {fileID: 4800000, guid: 79d239a585d70ad45a426add30e0edbb, type: 3}
   - fileName: diva_opaque_low
     internalName: MCRS/Diva/Opaque_Low
