@@ -336,7 +336,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x166FBA0 Offset: 0x166FBA0 VA: 0x166FBA0
 		private bool CheckTouchId(PointerEventData eventData)
 		{
-			return eventData.pointerId == 0;
+			return eventData.pointerId == 0 || eventData.pointerId == -1;
 		}
 
 		// // RVA: 0x166FDA4 Offset: 0x166FDA4 VA: 0x166FDA4 Slot: 5

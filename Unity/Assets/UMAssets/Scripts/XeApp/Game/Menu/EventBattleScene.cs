@@ -636,7 +636,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xF12254 Offset: 0xF12254 VA: 0xF12254 Slot: 53
-		// protected override void EnterForScrollEnd() { }
+		protected override void EnterForScrollEnd()
+		{
+			base.EnterForScrollEnd();
+			m_eventInfo.Enter();
+			m_battleInfo.Enter();
+		}
 
 		// RVA: 0xF122AC Offset: 0xF122AC VA: 0xF122AC Slot: 54
 		protected override void OnChangedDifficulty()
