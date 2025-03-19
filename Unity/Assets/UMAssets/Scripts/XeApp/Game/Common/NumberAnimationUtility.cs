@@ -31,9 +31,9 @@ namespace XeApp.Game.Common
 					while (true)
 					{
 						lastDigitNumber.Add(targetNumber % 10);
-						targetNumber /= 10;
 						if (targetNumber < 10)
 							break;
+						targetNumber /= 10;
 					}
 				}
 				isSkip = false;

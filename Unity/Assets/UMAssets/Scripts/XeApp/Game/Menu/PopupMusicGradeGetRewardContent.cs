@@ -70,7 +70,7 @@ namespace XeApp.Game.Menu
 				if(m_scrollItemList[i] != null)
 				{
 					LayoutMusicRateList.FlexibleListItem_Reward item = m_scrollItemList[i] as LayoutMusicRateList.FlexibleListItem_Reward;
-					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(item.Item.JJBGOIMEIPF_ItemFullId, 0));
+					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(item.Item.JJBGOIMEIPF_ItemId, 0));
 				}
 			}
 		}

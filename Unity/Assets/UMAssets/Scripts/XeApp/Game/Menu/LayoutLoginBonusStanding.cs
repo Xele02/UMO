@@ -248,7 +248,7 @@ namespace XeApp.Game.Menu
 						}
 						if(d.HBHMAKNGKFK_Items.Count < 2)
 						{
-							SetItemIcon(arrayIdx, d.HBHMAKNGKFK_Items[0].JJBGOIMEIPF_ItemFullId);
+							SetItemIcon(arrayIdx, d.HBHMAKNGKFK_Items[0].JJBGOIMEIPF_ItemId);
 							SwitchUnitPrice(arrayIdx, d.HBHMAKNGKFK_Items[0].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit ? eUnitPrice.Uc : eUnitPrice.Num);
 							SetNumItem(arrayIdx, d.HBHMAKNGKFK_Items[0].MBJIFDBEDAC_Cnt);
 						}

@@ -132,6 +132,7 @@ namespace XeApp.Game.Menu
 			{
 				m_episodeBonusObject.SetActive(true);
 				m_episodeBonusText.text = paramCalculator.EpisodeBonusPoint.ToString() + "%";
+				m_episodeBonusText.transform.parent.Find("Text_Label").GetComponent<Text>().text = JpStringLiterals.UMO_EpisodeBonus;
 			}
 			else
 			{

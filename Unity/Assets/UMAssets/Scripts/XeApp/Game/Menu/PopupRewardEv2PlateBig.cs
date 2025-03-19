@@ -83,12 +83,12 @@ namespace XeApp.Game.Menu
 			m_textPlateName.text = scene.OPFGFINHFCE_SceneName;
 			m_textPointTitle.text = MessageManager.Instance.GetMessage("menu", "popup_event_reward_check_pt");
 			m_textRankingTitle.text = string.Format(JpStringLiterals.StringLiteral_19432, m_view.rankingTitle);
-			m_indexPointMax = (m_view.point.Count - 1) / m_textPointList.Length;
+			m_indexPointMax = ((m_view.point.Count - 1) / m_textPointList.Length) + 1;
 			m_buttonPoint[0].Hidden = m_indexPointMax < 2;
 			m_buttonPoint[1].Hidden = m_indexPointMax < 2;
 			m_textPointPage.enabled = m_indexPointMax > 1;
 			UpdatePointPage(0);
-			m_indexRankingMax = (m_view.ranking.Count - 1) / m_textRankingList.Length;
+			m_indexRankingMax = ((m_view.ranking.Count - 1) / m_textRankingList.Length) + 1;
 			m_buttonRanking[0].Hidden = m_indexRankingMax < 2;
 			m_buttonRanking[1].Hidden = m_indexRankingMax < 2;
 			m_textRankingPage.enabled = m_indexRankingMax > 1;
@@ -123,7 +123,7 @@ namespace XeApp.Game.Menu
 			page.text = string.Format("{0}/{1}", num + 1, max);
 			for(int i = 0; i < textList.Length; i++)
 			{
-				if(viewList.Count > textList.Length * num + i)
+				if(viewList.Count > (textList.Length * num + i))
 				{
 					textList[i].text = viewList[textList.Length * num + i];
 				}

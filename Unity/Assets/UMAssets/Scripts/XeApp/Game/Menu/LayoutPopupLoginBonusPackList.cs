@@ -75,14 +75,14 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17312EC Offset: 0x17312EC VA: 0x17312EC
 		private void OnShowItemDetails(MFDJIFIIPJD info)
 		{
-			if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(info.JJBGOIMEIPF_ItemFullId) != EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(info.JJBGOIMEIPF_ItemId) != EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
-				MenuScene.Instance.ShowItemDetail(info.JJBGOIMEIPF_ItemFullId, info.MBJIFDBEDAC_Cnt, null);
+				MenuScene.Instance.ShowItemDetail(info.JJBGOIMEIPF_ItemId, info.MBJIFDBEDAC_Cnt, null);
 			}
 			else
 			{
 				GCIJNCFDNON_SceneInfo data = new GCIJNCFDNON_SceneInfo();
-				data.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(info.JJBGOIMEIPF_ItemFullId), null, null, 0, 0, 0, false, 0, 0);
+				data.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(info.JJBGOIMEIPF_ItemId), null, null, 0, 0, 0, false, 0, 0);
 				MenuScene.Instance.ShowSceneStatusPopupWindow(data, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, true, true, 0, false);
 			}
 		}
@@ -171,7 +171,7 @@ namespace XeApp.Game.Menu
 			SetupList(setting.Data.HBHMAKNGKFK_Items.Count, true);
 			if(setting.Data.HBHMAKNGKFK_Items.Count == 1)
 			{
-				int itemId = setting.Data.HBHMAKNGKFK_Items[0].JJBGOIMEIPF_ItemFullId;
+				int itemId = setting.Data.HBHMAKNGKFK_Items[0].JJBGOIMEIPF_ItemId;
 				GameManager.Instance.ItemTextureCache.Load(itemId, (IiconTexture image) =>
 				{
 					//0x1732500
@@ -190,7 +190,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				int itemId = setting.SpItems[0].JJBGOIMEIPF_ItemFullId;
+				int itemId = setting.SpItems[0].JJBGOIMEIPF_ItemId;
 				GameManager.Instance.ItemTextureCache.Load(itemId, (IiconTexture image) =>
 				{
 					//0x1732604

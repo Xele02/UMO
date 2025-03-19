@@ -385,6 +385,35 @@ public static class DatabaseTextConverter
             poFile.SaveFile(p + "messages.pot", isTemplate:true, stripEmpty:true);
             poFile.SaveFile(p + "jp.po", stripEmpty:true);
         }
+        {
+            // Export event strings
+            PoFile poFile = new PoFile();
+            List<string> blocksName = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PKOJMBICNHH_GetBlockNames();
+            for(int sIdx = 0; sIdx < blocksName.Count; sIdx++)
+            {
+                ICFLJACCIKF_EventBattle blockDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(blocksName[sIdx]) as ICFLJACCIKF_EventBattle;
+                if(blockDb != null)
+                {
+                    for (int i = 0; i < blockDb.NNMPGOAGEOL_Missions.Count; i++)
+                    {
+                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDb.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDb.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
+                        poFile.translationData.Add(prfx, blockDb.NNMPGOAGEOL_Missions[i].FEMMDNIELFC_Desc);
+                        prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDb.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDb.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
+                        poFile.translationData.Add(prfx, blockDb.NNMPGOAGEOL_Missions[i].BGBJPGEIEDE_DescBalloon);
+                    }
+                    for(int i = 0; i < blockDb.LLCLJBEJOPM_BannerInfo.Count; i++)
+                    {
+                        string prfx = string.Format("event_banner_{0:D4}", blockDb.JIKKNHIAEKG_BlockName, blockDb.LLCLJBEJOPM_BannerInfo[i].PPFNGGCBJKC);
+                        poFile.translationData.Add(prfx, blockDb.LLCLJBEJOPM_BannerInfo[i].KLMPFGOCBHC_BannerText);
+                    }
+                }
+            }
+            string p = PoPath.Replace("{name}", "events_text");
+            Directory.CreateDirectory(p);
+            poFile.SaveFile(p + "messages_full.pot", isTemplate:true);
+            poFile.SaveFile(p + "messages.pot", isTemplate:true, stripEmpty:true);
+            poFile.SaveFile(p + "jp.po", stripEmpty:true);
+        }
     }
 
     [MenuItem("UMO/Localization/Import Database strings")]
@@ -584,6 +613,7 @@ public static class DatabaseTextConverter
         music_text,
         adv_text,
         bingo_text,
+        events_text,
         string_literals,
         End,
     }
@@ -831,6 +861,24 @@ public static class DatabaseTextConverter
     {
         string prfx = string.Format("bingo_{0:D4}_{1:D4}_{2:D4}_{3}", bingoId, id2, blockId, type == 0 ? "desc" : "cond");
         return Translate(eBank.bingo_text, prfx, def);
+    }
+
+    public static string TranslateEventMissionDesc(string event_db_name, int mission_id, string def)
+    {
+        string prfx = string.Format("mission_desc_{0}_{1:D4}", event_db_name, mission_id);
+        return Translate(eBank.events_text, prfx, def);
+    }
+
+    public static string TranslateEventMissionDesc2(string event_db_name, int mission_id, string def)
+    {
+        string prfx = string.Format("mission_desc2_{0}_{1:D4}", event_db_name, mission_id);
+        return Translate(eBank.events_text, prfx, def);
+    }
+
+    public static string TranslateBattleEventBannerText(string event_db_name, int banner_id, string def)
+    {
+        string prfx = string.Format("event_banner_{0:D4}", event_db_name, banner_id);
+        return Translate(eBank.events_text, prfx, def);
     }
 
     private static int CntTranslating = 0;

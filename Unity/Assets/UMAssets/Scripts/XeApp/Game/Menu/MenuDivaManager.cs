@@ -431,7 +431,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xECBB4C Offset: 0xECBB4C VA: 0xECBB4C
-		//public void SwitchCameraRender(DivaCameraRenderSwitch renderSwitch) { }
+		public void SwitchCameraRender(DivaCameraRenderSwitch renderSwitch)
+		{
+			renderSwitch.Apply(divaCamera);
+		}
 
 		//// RVA: 0xECBB88 Offset: 0xECBB88 VA: 0xECBB88
 		public void SetCameraFov(float fov)
@@ -443,7 +446,10 @@ namespace XeApp.Game.Menu
 		//public VectorI2 GetCameraPixelSize() { }
 
 		//// RVA: 0xECBC34 Offset: 0xECBC34 VA: 0xECBC34
-		//public void RevertCameraRender(DivaCameraRenderSwitch renderSwitch) { }
+		public void RevertCameraRender(DivaCameraRenderSwitch renderSwitch)
+		{
+			renderSwitch.Revert(divaCamera);
+		}
 
 		//// RVA: 0xECBC68 Offset: 0xECBC68 VA: 0xECBC68
 		public void LoadSub(int modelId, int colorId, int divaId = 0)

@@ -7,7 +7,6 @@ namespace ExternLib
 		public static int SakashoRepeatedAchievementGetAchievementRecords(int callbackId, string json)
 		{
 			// Hack directly send response
-			TodoLogger.LogError(TodoLogger.SakashoServer, "SakashoRepeatedAchievementGetAchievementRecords");
 			return SakashoAchievementGetAchievementRecords(callbackId, json);
 		}
 

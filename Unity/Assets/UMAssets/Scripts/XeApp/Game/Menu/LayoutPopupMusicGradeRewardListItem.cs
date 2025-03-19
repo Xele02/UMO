@@ -38,7 +38,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17347E0 Offset: 0x17347E0 VA: 0x17347E0
 		public void SetStatus(LayoutMusicRateList.FlexibleListItem_Reward data)
 		{
-			m_itemId = data.Item.JJBGOIMEIPF_ItemFullId;
+			m_itemId = data.Item.JJBGOIMEIPF_ItemId;
 			m_itemNum = data.Item.MBJIFDBEDAC_Cnt;
 			m_layoutGradeIcon.StartChildrenAnimGoStop(data.Index == 0 ? "01" : "02");
 			m_textGrade.text = data.MusicGradeName;

@@ -219,7 +219,7 @@ namespace XeSys.Gfx
 			if(time >= 0)
 			{
 				hitEnd = false;
-				if(m_startTime < time)
+				if(m_startTime <= time)
 				{
 					m_AnimCount = animCount + elapsed;
 					if(m_AnimCount >= time)

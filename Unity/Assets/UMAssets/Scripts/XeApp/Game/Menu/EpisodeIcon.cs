@@ -99,7 +99,7 @@ namespace XeApp.Game.Menu
 			m_next.text = str.ToString();
 			m_episodeFeedPlateAttention.StartChildrenAnimGoStop(data.JBCIDDKDJMM ? "01" : "02");
 			SetEpisodeImage(data.KELFCMEOPPM_EpId);
-			SetItemImage(data.JBFLCHFEIGL.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId);
+			SetItemImage(data.JBFLCHFEIGL.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
 		}
 
 		//// RVA: 0xEF6320 Offset: 0xEF6320 VA: 0xEF6320

@@ -90,7 +90,7 @@ namespace XeApp.Game.Menu
 				LGMEPLIJLNB l = LGMEPLIJLNB.BMFKMFNPGPC(scene.KELFCMEOPPM_EpisodeId, true);
 				if(l != null)
 				{
-					m_layoutEpisode.StartChildrenAnimGoStop(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume ? "01" : "02");
+					m_layoutEpisode.StartChildrenAnimGoStop(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume ? "01" : "02");
 					m_buttonEpisode.Hidden = false;
 				}
 				else

@@ -20,6 +20,8 @@ class JpStringLiterals
 	public static string StringLiteral_9528 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9528", "想定していない人数が入っています　id:"); } } //0x03bb1f98
 	public static string StringLiteral_9555 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9555", "event_quest"); } } // 0x03bb2004
 	public static string StringLiteral_9630 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9630", "から新しいメッセージがあります。"); } } // 0x03bb2130
+	public static string StringLiteral_9635 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9635", "ダミー"); } } // 03bb2144
+
 	public static string StringLiteral_9714 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9714", "第"); } } //0x03bb2280
 	public static string StringLiteral_9715 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9715", "話"); } } //0x03bb2284
 	public static string StringLiteral_9767 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9767", "超時空ユニット"); } } // 0x03bb2354
@@ -121,6 +123,25 @@ class JpStringLiterals
 	public static string StringLiteral_10416 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10416", "<color=pink>最高スコア更新 "); } } // 0x03bb2d78
 	public static string StringLiteral_10431 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10431", "デビューガチャ"); } } //0x03bb2db4
 	public static string StringLiteral_10443 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10443", "プレート"); } } //0x03bb2de4
+	public static string StringLiteral_10882 { get { return "<color=red>EXライバル数のオーバーフロー："; } } // 03bb34c0
+	public static string StringLiteral_10890 { get { return "<color=cyan>ダミーマッチング イベント楽曲="; } } // 03bb34e0
+	public static string StringLiteral_10891 { get { return "～ "; } } // 03bb34e4
+	public static string StringLiteral_10892 { get { return "<color=cyan>ダミー検索範囲スコア "; } } // 03bb34e8
+	public static string StringLiteral_10893 { get { return "<color=red>！！！対象楽曲／クラスにマッチするライバルがいない！！！</color>"; } } // 03bb34ec
+	public static string StringLiteral_10912 { get { return "<color=cyan>勝利</color>"; } } // 03bb3538
+	public static string StringLiteral_10913 { get { return "<color=cyan>敗北</color>"; } } // 03bb353c
+	public static string StringLiteral_10915 { get { return "<color=cyan>スコア = "; } } // 03bb3544
+	public static string StringLiteral_10916 { get { return " ボーナス "; } } // 03bb3548
+	public static string StringLiteral_10918 { get { return "<color=cyan>エピソード数 = "; } } // 03bb3550
+	public static string StringLiteral_10920 { get { return "<color=cyan>連勝 = "; } } //03bb3558
+	public static string StringLiteral_10921 { get { return "<color=cyan>ポイント = "; } } //03bb355c
+	public static string StringLiteral_10923 { get { return "<color=cyan>EXゲージポイント = "; } } //03bb3564
+	public static string StringLiteral_10924 { get { return "<color=magenta>EXライバル出現中！</color>"; } } //03bb3568
+	public static string StringLiteral_10930 { get { return "<color=cyan>ゲーム数 : "; } } //03bb3580
+	public static string StringLiteral_10931 { get { return "<color=cyan>連勝数   : "; } } //03bb3584
+	public static string StringLiteral_10932 { get { return "ウォームアップ中"; } } //03bb3588
+	public static string StringLiteral_10933 { get { return "<color=cyan>対戦相手検索</color>"; } } //03bb358c
+	public static string StringLiteral_10935 { get { return "人見つかりました</color>"; } } //03bb3594
 	public static string StringLiteral_11015 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_11015", "master_gacha_ticket.xlsxにデカルガチャチケットの設定がありません"); } } //0x03bb36d4
 	public static string StringLiteral_11062 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_11062", "ライフ"); } } // 0x03bb3790
 	public static string StringLiteral_11063 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_11063", "ソウル"); } } // 0x03bb3794
@@ -438,6 +459,7 @@ class JpStringLiterals
 	public static string StringLiteral_16419 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_16419", "【解放条件】\n\nプレイヤーランクを5にする。"); } } //0x03bb8b44
 	public static string StringLiteral_16496 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_16496", "解放していないキャラで\n親密度を上げることはできません。"); } } //0x03bb8c78
 	public static string StringLiteral_16775 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_16775", "配置数 {0:D2} / {1:D2}"); } } //0x03bb90d4
+	public static string StringLiteral_17240 { get { return "music_event_battle_ｔarｇeｔ_score"; } } // 0x03bb9818
 	public static string StringLiteral_17446 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_17446", "さしすせそ"); } } // 0x03bb9b50
 	public static string StringLiteral_17754 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_17754", "(＋{0})"); } } // 0x03bba020
 	public static string StringLiteral_17777 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_17777", "獲得したアイテムはありません。"); } } // 0x03bba07c
@@ -733,5 +755,6 @@ class JpStringLiterals
 	public static string UMO_NotesOn { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_NotesOn", "ノーツ表示 ON"); } }
 	public static string UMO_DivaSpOn { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_DivaSpOn", "超歌姫モード ON"); } }
 	public static string UMO_OriginSetting { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_OriginSetting", "スタンダード編成"); } }
+	public static string UMO_EpisodeBonus { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_EpisodeBonus", "エピソードボーナス"); } }
 	public const string StringLiteral_13083_3_1_0 = "\u753B\u50CF\u3092\u30B7\u30A7\u30A2\u3059\u308B\u30A2\u30D7\u30EA\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044\u3002"; //0x03515218
 }

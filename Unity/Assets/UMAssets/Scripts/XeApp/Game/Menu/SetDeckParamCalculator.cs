@@ -362,7 +362,7 @@ namespace XeApp.Game.Menu
 				{
 					if(list[i].JKDJCFEBDHC)
 					{
-						bonusPoint += list[i].HEDODOBGPPM;
+						bonusPoint += list[i].HEDODOBGPPM_BonusValue;
 					}
 				}
 				bonusPoint = Mathf.Min(bonusPoint, 999);

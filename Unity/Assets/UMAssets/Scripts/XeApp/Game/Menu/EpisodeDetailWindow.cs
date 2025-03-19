@@ -240,7 +240,7 @@ namespace XeApp.Game.Menu
 			m_item_name.text = JpStringLiterals.StringLiteral_15778;
 			m_episode_info.text = data.KLMPFGOCBHC_Description;
 			SetEpisodeImage(m_data.KELFCMEOPPM_EpId);
-			SetItemImage(m_data.JBFLCHFEIGL.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId);
+			SetItemImage(m_data.JBFLCHFEIGL.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
 			m_sceneListArgs.episodeId = data.KELFCMEOPPM_EpId;
 			m_episodeFeedPlateAttention.StartChildrenAnimGoStop(data.JBCIDDKDJMM ? "01" : "02");
 		}

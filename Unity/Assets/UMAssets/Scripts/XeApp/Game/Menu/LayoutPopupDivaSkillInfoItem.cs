@@ -54,7 +54,7 @@ namespace XeApp.Game.Menu
 				Reset();
 			else
 			{
-				SetDivaName(divaData.OPFGFINHFCE_DivaName);
+				SetDivaName(divaData.OPFGFINHFCE_Name);
 				SetDivaSkillLevel(divaData.PKLPGBKKFOL_DivaLevels[musicId - 1]);
 				int now = divaData.HMBECPGHPOE_DivaExps[musicId - 1] - a.PMBFNFOCNAJ_CurLevelMusicExp;
 				int max = a.PBGFIOONCMB_NextLevelMusicExp - a.PMBFNFOCNAJ_CurLevelMusicExp;

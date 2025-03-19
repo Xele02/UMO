@@ -27,7 +27,10 @@ public static class UMOEventList
         new EventData() { Id=10048, Name="Happy birthday ～ランカ～", Desc="ランキング", BlockName="event_april_fool_f", GlobalBannerImageId = 407 }, // 04/27/2022
         new EventData() { Id=10228, Name="復刻エイプリル", Desc="2018/2019/2020/2022 april fool songs", BlockName="event_april_fool_g", BgId=new List<int>() { 13, 36, 93 }, GlobalBannerImageId = 725 }, // 04/30/2022
         new EventData() { Id=10229, Name="復刻エイプリル2021", Desc="2021 april fool minigame", BlockName="event_april_fool_h", BgId=new List<int>() { 60 }, GlobalBannerImageId = 728 }, // 05/21/2022
-        new EventData() { Id=10230, Name="レアアップスタースペシャルミッション", BlockName="event_april_fool_i", GlobalBannerImageId = 714} // 05/16/2022
+        new EventData() { Id=10230, Name="レアアップスタースペシャルミッション", BlockName="event_april_fool_i", GlobalBannerImageId = 714}, // 05/16/2022
+        new EventData() { Id=3046, Name="超時空ファイナルLive ～Act.3～", BlockName="event_battle_a"},
+        new EventData() { Id=3044, Name="会えないときのValentine", BlockName="event_battle_b"},
+        new EventData() { Id=3045, Name="吹き抜ける風 ～NEVER SAY DIE～", BlockName="event_battle_c"}
     };
 
     public static EventData GetEventData(int Id)

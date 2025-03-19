@@ -55,7 +55,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x18DEA8C Offset: 0x18DEA8C VA: 0x18DEA8C
-		public void StartBeginAnim(bool showHelpButton = true)
+		public void StartBeginAnim(bool showHelpButton/* = true*/)
 		{
 			layoutRoot.StartChildrenAnimGoStop("go_in", "st_in");
 			this.StartCoroutineWatched(Co_PlayingAnim());

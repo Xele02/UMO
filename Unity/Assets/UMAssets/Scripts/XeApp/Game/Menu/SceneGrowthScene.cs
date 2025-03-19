@@ -1189,7 +1189,7 @@ namespace XeApp.Game.Menu
 			m_lastRewardItemId = 0;
 			if (l != null)
 			{
-				m_lastRewardItemId = l.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId;
+				m_lastRewardItemId = l.GOOIIPFHOIG.JJBGOIMEIPF_ItemId;
 			}
 			this.StartCoroutine(LoadAppendLayoutCoroutine(m_isAddtiveMainBoard || m_isAddtiveSubBoard));
 		}

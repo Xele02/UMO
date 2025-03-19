@@ -92,7 +92,7 @@ public class FDDIIKBJNNA
 			{
                 SNSRoomTextData.TalkData IDLHJIOMJBK = data.FindData(i);
 				IMKNEDJDNGC d = new IMKNEDJDNGC();
-				d.GAIEHFCHAOK = true;
+				d.GAIEHFCHAOK_New = true;
 				d.BEBJKJKBOGH_Date = JHNMKKNEENE + IDLHJIOMJBK.timeOffset;
 				d.FMDCAFCHBJH_Offset = IDLHJIOMJBK.timeOffset;
 				d.AIPLIEMLHGC = dbSns.AIPLIEMLHGC_SnsId;
@@ -184,7 +184,7 @@ public class FDDIIKBJNNA
 												data.OIPCCBHIKIA_Index = 0;
 												data.IDELKEKDIFD_CharaId = 1;
 												data.FMDCAFCHBJH_Offset = 0;
-												data.GAIEHFCHAOK = b;
+												data.GAIEHFCHAOK_New = b;
 												data.HDBOIICCEIA = KHCACDIKJLG.FindIndex((FHFEHOBCIIP GHPLINIACBB) =>
 												{
 													//0xFCB81C
@@ -192,13 +192,13 @@ public class FDDIIKBJNNA
 												});
 												data.OPFGFINHFCE_Name = bk.GetMessageByLabel("sns_nm_"+ NDFIEMPPMLF.AIPLIEMLHGC_SnsId.ToString("D4"));
 												data.LJGOOOMOMMA_Desc = bk.GetMessageByLabel("sns_dsc_" + NDFIEMPPMLF.AIPLIEMLHGC_SnsId.ToString("D4"));
-												data.EDCBHGECEBE = true;
+												data.EDCBHGECEBE_Read = true;
 												g.CNEOPOINCBA.Add(data);
 												for(int j = header.startIndex; j <= header.endIndex; j++)
 												{
 													SNSRoomTextData.TalkData IDLHJIOMJBK = Database.Instance.roomText.textData.FindData(j);
 													IMKNEDJDNGC data2 = new IMKNEDJDNGC();
-													data2.GAIEHFCHAOK = b;
+													data2.GAIEHFCHAOK_New = b;
 													data2.BEBJKJKBOGH_Date = saveSns.BEBJKJKBOGH_Date + IDLHJIOMJBK.timeOffset;
 													data2.FMDCAFCHBJH_Offset = IDLHJIOMJBK.timeOffset;
 													data2.AIPLIEMLHGC = NDFIEMPPMLF.AIPLIEMLHGC_SnsId;
@@ -235,10 +235,10 @@ public class FDDIIKBJNNA
 								res = HKICMNAACDA.AIPLIEMLHGC.CompareTo(BNKHBCBJBKI.AIPLIEMLHGC);
 								if(res == 0)
 								{
-									if(HKICMNAACDA.EDCBHGECEBE != BNKHBCBJBKI.EDCBHGECEBE)
+									if(HKICMNAACDA.EDCBHGECEBE_Read != BNKHBCBJBKI.EDCBHGECEBE_Read)
 									{
 										res = -1;
-										if (!HKICMNAACDA.EDCBHGECEBE)
+										if (!HKICMNAACDA.EDCBHGECEBE_Read)
 											res = 1;
 									}
 									if(res == 0)
@@ -275,9 +275,9 @@ public class FDDIIKBJNNA
 										{
 											a = 1;
 											b = false;
-											if(ev.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD.EMAMLLFAOJI_6 || ev.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD.HINPDNKNAHO_10)
+											if(ev.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6 || ev.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.HINPDNKNAHO_10)
 											{
-												b = ev.NGOFCFJHOMI_Status == KGCNCBOKCBA.GNENJEHKMHD.DOAENCHBAEO_11;
+												b = ev.NGOFCFJHOMI_Status == KGCNCBOKCBA.GNENJEHKMHD_EventStatus.DOAENCHBAEO_11;
 												a = (sns_event_room_pre_open != 1 || b) ? 1 : 0;
 												i_ = ev;
 											}
@@ -306,7 +306,7 @@ public class FDDIIKBJNNA
 												data.OIPCCBHIKIA_Index = 0;
 												data.IDELKEKDIFD_CharaId = 1;
 												data.FMDCAFCHBJH_Offset = 0;
-												data.GAIEHFCHAOK = true;
+												data.GAIEHFCHAOK_New = true;
 												data.HDBOIICCEIA = KHCACDIKJLG.FindIndex((FHFEHOBCIIP GHPLINIACBB) =>
 												{
 													//0xFCB848
@@ -338,7 +338,7 @@ public class FDDIIKBJNNA
 														}
 													}
 												}
-												data.EDCBHGECEBE = true;
+												data.EDCBHGECEBE_Read = true;
 												NPKPBDIDBBG_RoomData[i].CNEOPOINCBA.Add(data);
 											}
 											else

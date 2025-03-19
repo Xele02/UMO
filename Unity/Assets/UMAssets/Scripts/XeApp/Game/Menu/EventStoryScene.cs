@@ -67,7 +67,7 @@ namespace XeApp.Game.Menu
 				m_eventStoryData = Database.Instance.advResult.EventStoryData;
 				pos = Database.Instance.advResult.RestorListPosition;
 				m_isRestor = true;
-				if(m_eventStoryData.IMAGLAKEMIE == CCAAJNJGNDO.HGIFGFEJLAB.EKJGOMKEJLK_Scene/*2*/)
+				if(m_eventStoryData.IMAGLAKEMIE_StoryType == CCAAJNJGNDO.HGIFGFEJLAB.EKJGOMKEJLK_Scene/*2*/)
 				{
 					m_eventStoryData.HFLNCEOIBJI();
 				}
@@ -158,7 +158,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				if (m_eventStoryData.IMAGLAKEMIE == CCAAJNJGNDO.HGIFGFEJLAB.EKJGOMKEJLK_Scene/*2*/)
+				if (m_eventStoryData.IMAGLAKEMIE_StoryType == CCAAJNJGNDO.HGIFGFEJLAB.EKJGOMKEJLK_Scene/*2*/)
 				{
 					return new SceneGrowthSceneArgs(GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes.Find((GCIJNCFDNON_SceneInfo x) =>
 					{
@@ -212,7 +212,7 @@ namespace XeApp.Game.Menu
 		private void LookEvent(int index)
 		{
 			CCAAJNJGNDO.GALFFONBIJG data = m_eventStoryData.FFPCLEONGHE[index];
-			if(!data.GOBAMBLBCOM && !data.CMEKNACNMCE && !data.DHJFHNFFDMG)
+			if(!data.GOBAMBLBCOM_IsPrologueOrEpilogue && !data.CMEKNACNMCE_IsUnknown3 && !data.DHJFHNFFDMG_IsUnknown4)
 			{
 				this.StartCoroutineWatched(Co_OpenSnsTalk(data.CLIHPOEBELF_RoomId, data.PBPOLELIPJI_AdventureId));
 				return;
@@ -225,7 +225,7 @@ namespace XeApp.Game.Menu
 			GameAttribute.Type bgAttr = MenuScene.Instance.BgControl.GetCurrentAttr();
 			float pos = m_eventStoryList.GetListPosition();
 			TransitionUniqueId uniqueId = 0;
-			if (m_eventStoryData.IMAGLAKEMIE == 0)
+			if (m_eventStoryData.IMAGLAKEMIE_StoryType == CCAAJNJGNDO.HGIFGFEJLAB.CCDOBDNDPIL_0)
 			{
 				switch(OHCAABOMEOF.BPJMGICFPBJ(m_eventStoryData.PPMNNKKFJNM))
 				{
@@ -261,7 +261,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				if(m_eventStoryData.IMAGLAKEMIE == CCAAJNJGNDO.HGIFGFEJLAB.EKJGOMKEJLK_Scene/*2*/)
+				if(m_eventStoryData.IMAGLAKEMIE_StoryType == CCAAJNJGNDO.HGIFGFEJLAB.EKJGOMKEJLK_Scene/*2*/)
 				{
 					uniqueId = (TransitionUniqueId)MenuScene.Instance.GetCurrentScene().uniqueId;
 				}
@@ -274,7 +274,7 @@ namespace XeApp.Game.Menu
 			{
 				Database.Instance.advResult.Setup("Menu", uniqueId, new AdvSetupParam() { eventUniqueId = eventUniqueId, restorBgmId = restorBgmId, restorListPosition = pos, bgParam = new AdvReturnBgParam() { bgId = bgId, textureType = bgTexType, bgType = bgType, attr = bgAttr }, eventStoryData = m_eventStoryData });
 			}
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetViewed(data.PBPOLELIPJI_AdventureId);
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(data.PBPOLELIPJI_AdventureId);
 			GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(data.PBPOLELIPJI_AdventureId);
 			OAGBCBBHMPF.DKAMMIHBINF a = 0;
 			if (m_eventStoryData.IPCPFJJPIII - 1 < 4)
@@ -371,7 +371,7 @@ namespace XeApp.Game.Menu
 				else if(d.NHKNPHLNHHD_UnlockError == CCAAJNJGNDO.JLFOIPMADEP.IAHDGAGKBGJ_2_PreviousNotViewed)
 				{
 					textPopup.TitleText = bank.GetMessageByLabel("event_story_text_008");
-					textPopup.Text = bank.GetMessageByLabel(d.FICACPOCAPG_IsViewed ? "event_story_text_012" : "event_story_text_011");
+					textPopup.Text = bank.GetMessageByLabel(d.FICACPOCAPG_NeedRelease ? "event_story_text_012" : "event_story_text_011");
 				}
 				isWait = true;
 				PopupWindowManager.Show(textPopup, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
@@ -473,10 +473,11 @@ namespace XeApp.Game.Menu
 			c.SetUnlockText(d.OJAKFNNKADK_UnlockText);
 			if(d.KKLDIKMOACO_IsSNS)
 			{
+				c.SetLock(!d.CDOCOLOKCJK_Unlocked);
 				bool b = false;
 				if(!d.OKKNPGJAPAO_IsUnlockTextEmpty)
 				{
-					b = !d.OEDKEGEPFKE;
+					b = !d.OEDKEGEPFKE_NeedUnlock;
 				}
 				c.EnableLockMessage(b);
 				c.EnableSnsIcon(true);
@@ -485,7 +486,7 @@ namespace XeApp.Game.Menu
 				c.EnableNoise(false);
 				c.EnableNewIcon(false);
 			}
-			else if(d.CMEKNACNMCE)
+			else if(d.CMEKNACNMCE_IsUnknown3)
 			{
 				c.SetLock(!d.CDOCOLOKCJK_Unlocked);
 				c.EnableLockMessage(!d.OKKNPGJAPAO_IsUnlockTextEmpty);
@@ -499,7 +500,7 @@ namespace XeApp.Game.Menu
 				c.SetThumbnail(d.HIGLGJBBPAP_ThumbId, d.DEAKHOJCBDM_Index);
 				c.EnableNewIcon(d.IFNIEPPAMBE_IsNew);
 			}
-			else if(d.DHJFHNFFDMG)
+			else if(d.DHJFHNFFDMG_IsUnknown4)
 			{
 				c.SetLock(false);
 				c.EnableLockMessage(!d.OKKNPGJAPAO_IsUnlockTextEmpty);
@@ -533,8 +534,8 @@ namespace XeApp.Game.Menu
 				c.SetThumbnail(d.HIGLGJBBPAP_ThumbId, d.BMCJDCOEJFH == CCAAJNJGNDO.NIPDOAIGCIB.OEDCONLFLHD_2_Epilogue/*2*/);
 				c.EnableNewIcon(false);
 			}
-			c.SetButtonLabel(d.FICACPOCAPG_IsViewed ? EventStoryListContent.ButtonLabel.Release : EventStoryListContent.ButtonLabel.Look);
-			c.SetButtonFunc(d.FICACPOCAPG_IsViewed ? EventStoryListContent.ButtonFunc.Release : EventStoryListContent.ButtonFunc.Look);
+			c.SetButtonLabel(d.FICACPOCAPG_NeedRelease ? EventStoryListContent.ButtonLabel.Release : EventStoryListContent.ButtonLabel.Look);
+			c.SetButtonFunc(d.FICACPOCAPG_NeedRelease ? EventStoryListContent.ButtonFunc.Release : EventStoryListContent.ButtonFunc.Look);
 			c.ChangeReleaseFont(EventStoryListContent.ReleaseFont.DoRelease);
 		}
 
@@ -554,7 +555,7 @@ namespace XeApp.Game.Menu
 			m_snsScreen.OutStartCallback = () =>
 			{
 				//0xB97410
-				if(m_eventStoryData.IMAGLAKEMIE == 0)
+				if(m_eventStoryData.IMAGLAKEMIE_StoryType == 0)
 				{
 					m_eventStoryData.KHEKNNFCAOI_InitFromCurrentEvent(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(m_eventStoryData.PPMNNKKFJNM));
 				}
@@ -568,7 +569,7 @@ namespace XeApp.Game.Menu
 			if (MenuScene.CheckDatelineAndAssetUpdate())
 				yield break;
 			MenuScene.Instance.InputDisable();
-			m_snsScreen.InRoom(SnsScreen.eSceneType.Menu, roomId, SNSController.eObjectOrderType.Last, snsId, true, m_eventStoryData.IMAGLAKEMIE == CCAAJNJGNDO.HGIFGFEJLAB.BJOHLHKGNHM_Event/*1*/);
+			m_snsScreen.InRoom(SnsScreen.eSceneType.Menu, roomId, SNSController.eObjectOrderType.Last, snsId, true, m_eventStoryData.IMAGLAKEMIE_StoryType == CCAAJNJGNDO.HGIFGFEJLAB.BJOHLHKGNHM_Event/*1*/);
 			while (m_snsScreen != null && m_snsScreen.IsPlaying)
 				yield return null;
 			MenuScene.Instance.InputEnable();

@@ -66,13 +66,13 @@ namespace XeApp.Game.RhythmGame
 				{
 					subgoalValue = musicdb.LJPKLMJPLAC[(int)musicInfo.difficultyType];
 					goalValue = musicdb.MALHPBKPIDE[(int)musicInfo.difficultyType];
-					enemyId = musicdb.LHICAKGHIGF[(int)musicInfo.difficultyType];
+					enemyId = musicdb.LHICAKGHIGF_EnemyIdByDiff[(int)musicInfo.difficultyType];
 				}
 				else
 				{
 					subgoalValue = musicdb.ILCJOOPIILK[(int)musicInfo.difficultyType];
 					goalValue = musicdb.BGILEHEJHHA[(int)musicInfo.difficultyType];
-					enemyId = musicdb.PJNFOCDANCE[(int)musicInfo.difficultyType];
+					enemyId = musicdb.PJNFOCDANCE_EnemyIdByDiffL6[(int)musicInfo.difficultyType];
 				}
 			}
 			else

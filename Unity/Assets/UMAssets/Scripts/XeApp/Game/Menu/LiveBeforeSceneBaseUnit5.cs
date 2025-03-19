@@ -153,12 +153,12 @@ namespace XeApp.Game.Menu
 				IKDICBBFBMI_EventBase evt = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(mi.EventUniqueId);
 				if(evt != null)
 				{
-					TodoLogger.LogError(TodoLogger.EventBattle_3, "Event");
+					h.IEMFPDGIAHG = (evt as HAEDCCLHEMN_EventBattle).MDBIEKEFNJG();
 				}
 			}
 			if(mi.openEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 			{
-				IKDICBBFBMI_EventBase evt = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD.KPMNPGKKFJG, false);
+				IKDICBBFBMI_EventBase evt = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.KPMNPGKKFJG, false);
 				if(evt != null)
 				{
 					TodoLogger.LogError(TodoLogger.EventCollection_1, "Event");

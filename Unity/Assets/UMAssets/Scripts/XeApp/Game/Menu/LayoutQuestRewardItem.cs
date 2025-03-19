@@ -20,7 +20,7 @@ namespace XeApp.Game.Menu
 		{
 			m_itemInfo = info;
 			m_imageIcon.enabled = false;
-			MenuScene.Instance.ItemTextureCache.Load(m_itemInfo.JJBGOIMEIPF_ItemFullId, (IiconTexture texture) =>
+			MenuScene.Instance.ItemTextureCache.Load(m_itemInfo.JJBGOIMEIPF_ItemId, (IiconTexture texture) =>
 			{
 				//0x187CE5C
 				m_imageIcon.enabled = true;
@@ -40,20 +40,20 @@ namespace XeApp.Game.Menu
 				if(itemInfo.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
 				{
 					CKFGMNAIBNG data = new CKFGMNAIBNG();
-					int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemInfo.JJBGOIMEIPF_ItemFullId);
+					int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemInfo.JJBGOIMEIPF_ItemId);
 					data.KHEKNNFCAOI(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[itemId - 1].AHHJLDLAPAN_PrismDivaId, itemId, 0, false);
 					MenuScene.Instance.ShowCostumeDetailWindow(data, 0);
 				}
 				else if(itemInfo.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 				{
 					GCIJNCFDNON_SceneInfo scene = new GCIJNCFDNON_SceneInfo();
-					int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemInfo.JJBGOIMEIPF_ItemFullId);
+					int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemInfo.JJBGOIMEIPF_ItemId);
 					scene.KHEKNNFCAOI(itemId, null, null, 0, 0, 0, false, 0, 0);
 					MenuScene.Instance.ShowSceneStatusPopupWindow(scene, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, true, true, 0, false);
 				}
 				else
 				{
-					MenuScene.Instance.ShowItemDetail(itemInfo.JJBGOIMEIPF_ItemFullId, itemInfo.MBJIFDBEDAC_Cnt, null);
+					MenuScene.Instance.ShowItemDetail(itemInfo.JJBGOIMEIPF_ItemId, itemInfo.MBJIFDBEDAC_Cnt, null);
 				}
 			}
 		}

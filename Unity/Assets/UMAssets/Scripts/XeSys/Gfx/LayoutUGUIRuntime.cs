@@ -25,6 +25,7 @@ namespace XeSys.Gfx
 
 		public LabelData[] LabelList;
 		public int CurrentFrame;
+		public float CurrentTime;
 		public bool HasView;
 
 		public void Init(ViewBase view, LayoutUGUIRuntime runtime)
@@ -62,6 +63,7 @@ namespace XeSys.Gfx
 			if(View != null && View.FrameAnimation != null)
 			{
 				CurrentFrame = View.FrameAnimation.FrameCount;
+				CurrentTime = View.FrameAnimation.AnimCount;
 			}
 		}
 	}

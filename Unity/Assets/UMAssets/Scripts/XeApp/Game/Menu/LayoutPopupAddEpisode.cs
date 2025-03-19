@@ -59,7 +59,7 @@ namespace XeApp.Game.Menu
 			LGMEPLIJLNB l = LGMEPLIJLNB.BMFKMFNPGPC(episodeId, true);
 			if(l != null && l.GOOIIPFHOIG != null)
 			{
-				EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId);
+				EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
 				SetType(type, cat);
 				if(type >= Type.ViewEpisode || type == Type.AddEpisode)
 				{
@@ -72,17 +72,17 @@ namespace XeApp.Game.Menu
 					}
 					else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie)
 					{
-						SetRewardName(string.Format(MessageManager.Instance.GetMessage("menu", "valkyrie_name_text_format_001"), MessageManager.Instance.GetMessage("master", "vn_" + EKLNMHFCAOI.DEACAHNLMNI_getItemId(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId).ToString("D4")), MessageManager.Instance.GetMessage("master", "v_pn_" + EKLNMHFCAOI.DEACAHNLMNI_getItemId(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId).ToString("D4"))));
-						SetImageIcon(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId);
+						SetRewardName(string.Format(MessageManager.Instance.GetMessage("menu", "valkyrie_name_text_format_001"), MessageManager.Instance.GetMessage("master", "vn_" + EKLNMHFCAOI.DEACAHNLMNI_getItemId(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemId).ToString("D4")), MessageManager.Instance.GetMessage("master", "v_pn_" + EKLNMHFCAOI.DEACAHNLMNI_getItemId(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemId).ToString("D4"))));
+						SetImageIcon(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
 					}
 					else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
 					{
-						SetRewardName(EKLNMHFCAOI.INCKKODFJAP_GetItemName(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId));
-						SetImageIcon(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId);
+						SetRewardName(EKLNMHFCAOI.INCKKODFJAP_GetItemName(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemId));
+						SetImageIcon(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
 					}
 					else
 					{
-						SetImageIcon(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId);
+						SetImageIcon(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
 					}
 				}
 				else if(type == Type.AvailableEpisode)
@@ -97,13 +97,13 @@ namespace XeApp.Game.Menu
 					{
 						SetPilotName(GetPilotName(GetPilotIdForValkyrie(l.GOOIIPFHOIG.NNFNGLJOKKF_ItemId)));
 						SetImageValkyrie(l.GOOIIPFHOIG.NNFNGLJOKKF_ItemId);
-						SetRewardName(string.Format(MessageManager.Instance.GetMessage("menu", "valkyrie_name_text_format_001"), MessageManager.Instance.GetMessage("master", "vn_" + EKLNMHFCAOI.DEACAHNLMNI_getItemId(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId).ToString("D4")), MessageManager.Instance.GetMessage("master", "v_pn_" + EKLNMHFCAOI.DEACAHNLMNI_getItemId(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId).ToString("D4"))));
+						SetRewardName(string.Format(MessageManager.Instance.GetMessage("menu", "valkyrie_name_text_format_001"), MessageManager.Instance.GetMessage("master", "vn_" + EKLNMHFCAOI.DEACAHNLMNI_getItemId(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemId).ToString("D4")), MessageManager.Instance.GetMessage("master", "v_pn_" + EKLNMHFCAOI.DEACAHNLMNI_getItemId(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemId).ToString("D4"))));
 					}
 					else if (cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
 					{
 						SetDivaName(GetDivaShortName(GetDivaIdForCostume(l.GOOIIPFHOIG.NNFNGLJOKKF_ItemId)));
 						SetImageCostume(l.GOOIIPFHOIG.NNFNGLJOKKF_ItemId);
-						SetRewardName(EKLNMHFCAOI.INCKKODFJAP_GetItemName(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId));
+						SetRewardName(EKLNMHFCAOI.INCKKODFJAP_GetItemName(l.GOOIIPFHOIG.JJBGOIMEIPF_ItemId));
 					}
 				}
 				SetDesc(cat);

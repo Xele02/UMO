@@ -152,7 +152,7 @@ namespace XeApp.Game.Menu
 					SetLoaded();
 				});
 				m_divaIconDecoration.SetActive(true);
-				m_nameText.text = divaData.OPFGFINHFCE_DivaName;
+				m_nameText.text = divaData.OPFGFINHFCE_Name;
 				m_nameText.alignment = UnityEngine.TextAnchor.MiddleLeft;
 				for(int i = 0; i < m_paramTexts.Length; i++)
 				{

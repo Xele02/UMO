@@ -217,7 +217,7 @@ namespace XeApp.Game.DownLoad
 				return m_Layout.GetSelectDivaId() == _.AHHJLDLAPAN_DivaId;
 			}).First();
 			GameManager.Instance.AddPushBackButtonHandler(OnBackButton);
-			m_LayoutPopup.Show(diva.OPFGFINHFCE_DivaName);
+			m_LayoutPopup.Show(diva.OPFGFINHFCE_Name);
 		}
 
 		// // RVA: 0x11BA530 Offset: 0x11BA530 VA: 0x11BA530
@@ -243,7 +243,7 @@ namespace XeApp.Game.DownLoad
 		private IEnumerator Co_Install(int divaId, int valkyrieId, int pilotId)
 		{
 			//0x11BB370
-			KDLPEDBKMID.HHCJCDFCLOB.NMFCNFFFMAC(divaId, 1, true);
+			KDLPEDBKMID.HHCJCDFCLOB.NMFCNFFFMAC_InstallDivaCostume(divaId, 1, true);
 			KDLPEDBKMID.HHCJCDFCLOB.CKANBNPEIJD(valkyrieId, pilotId);
 			bool isWait = true;
 			SoundManager.Instance.RequestEntryMenuCueSheet(() =>

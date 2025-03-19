@@ -242,7 +242,7 @@ namespace XeApp.Game.Menu
 			{
 				txt = MessageManager.Instance.GetMessage("menu", "mvmode_setting_popup_text_000_001");
 			}
-			listLayout.SetName(string.Format(txt, listItem.DivaData.OPFGFINHFCE_DivaName));
+			listLayout.SetName(string.Format(txt, listItem.DivaData.OPFGFINHFCE_Name));
 			listLayout.SetListIndex(listItem.ListIndex);
 			listLayout.HideTexture();
 			GameManager.Instance.DivaIconCache.LoadDivaSmallBustupIcon(listItem.DivaData.AHHJLDLAPAN_DivaId, 1, (IiconTexture texture) => {

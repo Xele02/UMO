@@ -92,7 +92,7 @@ namespace XeApp.Game.Common
 				{
 					if(t >= h.PDBPFJJCADD)
 					{
-						if(h.FDBNFFNFOND >= t)
+						if(h.FDBNFFNFOND >= t || XeSys.Utility.GetLocalDateTime(h.PDBPFJJCADD).Year > 2024) // Umo update, help will stop in 2029, allow all that was runnin after game close to be always enabled
 						{
 							VeiwOptionHelpCategoryData data = new VeiwOptionHelpCategoryData();
 							data.Init(h.OBGBAOLONDD);

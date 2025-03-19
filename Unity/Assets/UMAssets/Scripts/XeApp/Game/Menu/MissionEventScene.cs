@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace XeApp.Game.Menu
 {
@@ -23,14 +25,17 @@ namespace XeApp.Game.Menu
 		// private bool m_isEventChecked; // 0x134
 		// private MissionEventScene.Step m_cambackRankingStep; // 0x138
 		// private List<MusicDataList> m_originalMusicDataList; // 0x13C
-		// private List<MusicDataList> m_filteredMusicDataList; // 0x140
+		private List<MusicDataList> m_filteredMusicDataList; // 0x140
 
-		// public int categoryId { get; set; } // 0x144
-		// protected override int musicListCount { get; } 0xB42898
-		// protected override MusicDataList currentMusicList { get; } 0xB42990
+		public int categoryId { get; set; } // 0x144
+		protected override int musicListCount { get { return m_filteredMusicDataList.Count; } } //0xB42898
+		protected override MusicDataList currentMusicList { get { return m_filteredMusicDataList[categoryId - 1]; } } //0xB42990
 
 		// // RVA: 0xB42910 Offset: 0xB42910 VA: 0xB42910 Slot: 32
-		// protected override MusicDataList GetMusicList(int i) { }
+		protected override MusicDataList GetMusicList(int i)
+		{
+			return m_filteredMusicDataList[i];
+		}
 
 		// // RVA: 0xB42A10 Offset: 0xB42A10 VA: 0xB42A10 Slot: 35
 		protected override void CheckTryInstall()
@@ -66,29 +71,42 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xB42FB4 Offset: 0xB42FB4 VA: 0xB42FB4 Slot: 51
-		// protected override void OnDecideCurrentMusic() { }
+		protected override void OnDecideCurrentMusic()
+		{
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MissionEventScene OnDecideCurrentMusic");
+		}
 
 		// RVA: 0xB4339C Offset: 0xB4339C VA: 0xB4339C Slot: 46
-		// protected override void ApplyMusicInfoBasic(IBJAKJJICBC musicData) { }
+		protected override void ApplyMusicInfoBasic(IBJAKJJICBC musicData)
+		{
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MissionEventScene ApplyMusicInfoBasic");
+		}
 
 		// RVA: 0xB434C0 Offset: 0xB434C0 VA: 0xB434C0 Slot: 41
 		protected override void ApplyBasicInfo() 
 		{
-			TodoLogger.LogError(TodoLogger.EventMission_6, "MusicSelectScene* ApplyBasicInfo");
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MissionEventScene ApplyBasicInfo");
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F21BC Offset: 0x6F21BC VA: 0x6F21BC
 		// // RVA: 0xB435A8 Offset: 0xB435A8 VA: 0xB435A8 Slot: 57
-		// protected override IEnumerator Co_WaitForAnimEnd(Action onEnd) { }
+		protected override IEnumerator Co_WaitForAnimEnd(Action onEnd)
+		{
+			TodoLogger.LogError(TodoLogger.EventMission_6, "Co_WaitForAnimEnd");
+			yield break;
+		}
 
 		// // RVA: 0xB4364C Offset: 0xB4364C VA: 0xB4364C Slot: 42
 		protected override void ApplyMusicListInfo()
 		{
-			TodoLogger.LogError(TodoLogger.EventMission_6, "MusicSelectScene* ApplyMusicListInfo");
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MissionEventScene ApplyMusicListInfo");
 		}
 
 		// RVA: 0xB43798 Offset: 0xB43798 VA: 0xB43798 Slot: 52
-		// protected override void LeaveForScrollStart() { }
+		protected override void LeaveForScrollStart()
+		{
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MissionEventScene LeaveForScrollStart");
+		}
 
 		// RVA: 0xB437D0 Offset: 0xB437D0 VA: 0xB437D0 Slot: 53
 		// protected override void EnterForScrollEnd() { }
@@ -108,10 +126,18 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xB43A98 Offset: 0xB43A98 VA: 0xB43A98 Slot: 49
-		// protected override int GetDanceDivaCount() { }
+		protected override int GetDanceDivaCount()
+		{
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MissionEventScene GetDanceDivaCount");
+			return base.GetDanceDivaCount();
+		}
 
 		// RVA: 0xB43AF4 Offset: 0xB43AF4 VA: 0xB43AF4 Slot: 48
-		// protected override void ApplyUnitLiveButtonSetting(bool isUnit) { }
+		protected override void ApplyUnitLiveButtonSetting(bool isUnit)
+		{
+			TodoLogger.LogError(TodoLogger.EventMission_6, "MissionEventScene ApplyUnitLiveButtonSetting");
+			base.ApplyUnitLiveButtonSetting(isUnit);
+		}
 
 		// // RVA: 0xB43B98 Offset: 0xB43B98 VA: 0xB43B98
 		// private bool IsFilter() { }

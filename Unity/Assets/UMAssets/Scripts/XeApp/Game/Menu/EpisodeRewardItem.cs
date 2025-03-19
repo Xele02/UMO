@@ -33,7 +33,7 @@ namespace XeApp.Game.Menu
 		public void SetItem(LGMEPLIJLNB data, bool is_roop_reward)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			m_item_name.text = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId);
+			m_item_name.text = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
 			m_item_num.text = data.GOOIIPFHOIG.MBJIFDBEDAC_Cnt.ToString() + EKLNMHFCAOI.NDBLEADIDLA(data.GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory, data.GOOIIPFHOIG.NNFNGLJOKKF_ItemId);
 			if(is_roop_reward)
 			{
@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 				m_work_sb.SetFormat(bk.GetMessageByLabel("episode_reward_text001"), data.DNBFMLBNAEE_TotalPoint);
 				m_item_achieve.text = m_work_sb.ToString();
 			}
-			SetItemImage(data.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId);
+			SetItemImage(data.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
 			SetClearIconActive(data.HMEOAKCLKJE_IsReceived && !is_roop_reward);
 		}
 

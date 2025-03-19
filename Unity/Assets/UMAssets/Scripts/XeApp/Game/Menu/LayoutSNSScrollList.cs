@@ -127,7 +127,7 @@ namespace XeApp.Game.Menu
 				data.isPlaySeItemIn = true;
 				m_viewList.Add(data);
 			}
-			if(talkList.Count == 1 && talkList[0].talk.EDCBHGECEBE)
+			if(talkList.Count == 1 && talkList[0].talk.EDCBHGECEBE_Read)
 			{
 				m_viewList[0].type = SnsItemObject.eLayoutType.Unopened;
 			}
@@ -179,7 +179,7 @@ namespace XeApp.Game.Menu
 			res.isPlaySe = true;
 			if(messageCount == 1)
 			{
-				if (talk.talk.EDCBHGECEBE)
+				if (talk.talk.EDCBHGECEBE_Read)
 					res.type = SnsItemObject.eLayoutType.Unopened;
 			}
 			Vector3 v = new Vector3(0, 40, 0);
@@ -225,7 +225,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1934CBC Offset: 0x1934CBC VA: 0x1934CBC
 		private SnsItemObject.eLayoutType GetLayoutType(SNSTalkCreater.ViewTalk talk, int homeDivaId)
 		{
-			if (talk.talk.EDCBHGECEBE)
+			if (talk.talk.EDCBHGECEBE_Read)
 				return SnsItemObject.eLayoutType.HeaderLine;
 			if (talk.talk.IDELKEKDIFD_CharaId != homeDivaId)
 				return SnsItemObject.eLayoutType.TalkL;
@@ -242,7 +242,7 @@ namespace XeApp.Game.Menu
 				if(obj.viewTalk != null && obj.viewTalk.talk != null)
 				{
 					res = 106;
-					if(!obj.viewTalk.talk.EDCBHGECEBE)
+					if(!obj.viewTalk.talk.EDCBHGECEBE_Read)
 					{
 						res = 128;
 						if (obj.viewTalk.talk.HMKFHLLAKCI_WindowSizeId != 1)

@@ -278,10 +278,10 @@ namespace XeApp.Game.RhythmGame
 		void SetPlayerDivaId(int divaId);
 
 		// // RVA: -1 Offset: -1 Slot: 86
-		// public abstract void SetRivalDivaId(int divaId);
+		void SetRivalDivaId(int divaId);
 
 		// // RVA: -1 Offset: -1 Slot: 87
-		// public abstract void ShowBattleResult(bool isPlayerWin);
+		void ShowBattleResult(bool isPlayerWin);
 
 		// // RVA: -1 Offset: -1 Slot: 88
 		bool IsWarmupEnd();

@@ -57,6 +57,12 @@ namespace ExternLib
 			//res["rankings"].Add(GetRankingInfo("collect_ranking2_1061", false));
 			//res["rankings"].Add(GetRankingInfo("collect_ranking_1061", false));
 			//res["rankings"].Add(GetRankingInfo("score_ranking_4021", false));
+			res["rankings"].Add(GetRankingInfo("battle_ranking_3044", false));
+			res["rankings"].Add(GetRankingInfo("battle_ranking2_3044", false));
+			res["rankings"].Add(GetRankingInfo("battle_ranking_3045", false));
+			res["rankings"].Add(GetRankingInfo("battle_ranking2_3045", false));
+			res["rankings"].Add(GetRankingInfo("battle_ranking_3046", false));
+			res["rankings"].Add(GetRankingInfo("battle_ranking2_3046", false));
 
 			SendMessage(callbackId, res);
 			return 0;
@@ -97,7 +103,19 @@ namespace ExternLib
 
 			EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
 			int id = (int)data["id"];
-			int score = (int)data["score"];
+			int score = 0;
+			if(data["score"].MDDJBLEDMBJ_IsInt)
+			{
+				score = (int)data["score"];
+			}
+			else if(data["score"].DCPEFFOMOOK_IsLong)
+			{
+				score = (int)((long)data["score"]);
+			}
+			else if(data["score"].NFPOKKABOHN_IsDouble)
+			{
+				score = (int)((double)data["score"]);
+			}
 			string extra = null;
 			if(data.BBAJPINMOEP_Contains("extra") && data["extra"] != null)
 				extra = (string)data["extra"];
@@ -156,6 +174,16 @@ namespace ExternLib
 			res[AFEHLCGHAEE_Strings.CJNNMLLEKEF_previous_page] = -1;
 			res[AFEHLCGHAEE_Strings.MDIBIIHAAPN_next_page] = -1;
 
+			SendMessage(callbackId, res);
+			return 0;
+		}
+
+		public static int SakashoRankingClaimRankingRewards(int callbackId, string json)
+		{
+			TodoLogger.LogError(TodoLogger._Debug, "Implement SakashoRankingClaimRankingRewards");
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			res["inventory_ids"] = new EDOHBJAPLPF_JsonData();
+			res["inventory_ids"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
 			SendMessage(callbackId, res);
 			return 0;
 		}
@@ -321,6 +349,64 @@ namespace ExternLib
 						break;
 				}
 
+				return data;
+			}
+			else if(k.StartsWith("battle_ranking_"))
+			{
+				EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+				data.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+				data["allow_lower_score"] = false;
+				data["allow_negative_score"] = false;
+				data["allow_tied_rank"] = true;
+				data["batch_interval_time"] = 0;
+				data["batch_started_at"] = 0;
+				data["closed_at"] = 1734274740;
+				data["competition_closed_at"] = 1732978800;
+				data["default_score"] = 0;
+				data["description"] = "Battle ranking";
+				data["id"] = 300000 + int.Parse(k.Replace("battle_ranking_", ""));
+				data["is_reverse"] = false;
+				data["name"] = "battle_ranking";
+				data["name_for_api"] = k;
+				data["opened_at"] = 1575126000;
+				data["ranking_type"] = 1;
+				data["reward_opened_at"] = 1732978860;
+				data["score_precision"] = 6;
+				data["update_type"] = 0;
+				if (withRewards)
+				{
+					data["rewards"] = new EDOHBJAPLPF_JsonData();
+					data["rewards"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+				}
+				return data;
+			}
+			else if(k.StartsWith("battle_ranking2_"))
+			{
+				EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+				data.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+				data["allow_lower_score"] = false;
+				data["allow_negative_score"] = false;
+				data["allow_tied_rank"] = true;
+				data["batch_interval_time"] = 0;
+				data["batch_started_at"] = 0;
+				data["closed_at"] = 1734274740;
+				data["competition_closed_at"] = 1732978800;
+				data["default_score"] = 0;
+				data["description"] = "Battle ranking";
+				data["id"] = 310000 + int.Parse(k.Replace("battle_ranking2_", ""));
+				data["is_reverse"] = false;
+				data["name"] = "battle_ranking2";
+				data["name_for_api"] = k;
+				data["opened_at"] = 1575126000;
+				data["ranking_type"] = 1;
+				data["reward_opened_at"] = 1732978860;
+				data["score_precision"] = 6;
+				data["update_type"] = 0;
+				if (withRewards)
+				{
+					data["rewards"] = new EDOHBJAPLPF_JsonData();
+					data["rewards"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+				}
 				return data;
 			}
 			else

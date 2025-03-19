@@ -509,14 +509,14 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < list.Count; i++)
 			{
-				if(!requested.Contains(list[i].GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId))
+				if(!requested.Contains(list[i].GOOIIPFHOIG.JJBGOIMEIPF_ItemId))
 				{
-					GameManager.Instance.ItemTextureCache.Load(list[i].GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId, (IiconTexture texture) =>
+					GameManager.Instance.ItemTextureCache.Load(list[i].GOOIIPFHOIG.JJBGOIMEIPF_ItemId, (IiconTexture texture) =>
 					{
 						//0x9DE300
 						return;
 					});
-					requested.Add(list[i].GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId);
+					requested.Add(list[i].GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
 				}
 			}
 		}
@@ -531,7 +531,7 @@ namespace XeApp.Game.Menu
 					//0x9DE304
 					return;
 				});
-				GameManager.Instance.QuestEventTextureCache.LoadFont(list[i].LFCOJABLOEN, (IiconTexture texture) =>
+				GameManager.Instance.QuestEventTextureCache.LoadFont(list[i].LFCOJABLOEN_EventId, (IiconTexture texture) =>
 				{
 					//0x9DE308
 					return;

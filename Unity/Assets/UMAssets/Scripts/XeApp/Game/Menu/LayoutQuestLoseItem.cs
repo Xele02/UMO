@@ -19,7 +19,7 @@ namespace XeApp.Game.Menu
 		public override void SetStatus(MFDJIFIIPJD info)
 		{
 			base.SetStatus(info);
-			m_textName.text = EKLNMHFCAOI.INCKKODFJAP_GetItemName(info.JJBGOIMEIPF_ItemFullId);
+			m_textName.text = EKLNMHFCAOI.INCKKODFJAP_GetItemName(info.JJBGOIMEIPF_ItemId);
 			int value = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, info.NPPNDDMPFJJ_ItemCategory, info.NNFNGLJOKKF_ItemId, null);
 			int max = EKLNMHFCAOI.AFEONHCADEL_GetMaxAllowed(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, info.NPPNDDMPFJJ_ItemCategory, info.NNFNGLJOKKF_ItemId, null);
 			int d = info.MBJIFDBEDAC_Cnt - max + Mathf.Clamp(value, 0, max);

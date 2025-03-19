@@ -104,7 +104,7 @@ namespace XeApp.Game.Menu
 			m_textReceiveDesc.text = Smart.Format(MessageManager.Instance.GetMessage("menu", "quest_receive_all_desc"), quest_lump_receive_max_num);
 			m_buttonReceiveAll.Disable = !QuestUtility.FindAchievedQuestList(m_viewList);
 			SetTextTimerInner();
-			SetImageFont(m_entranceViewData.LFCOJABLOEN);
+			SetImageFont(m_entranceViewData.LFCOJABLOEN_EventId);
 			UpdateList();
 		}
 

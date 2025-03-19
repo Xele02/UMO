@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x9D5F70 Offset: 0x9D5F70 VA: 0x9D5F70
 		private void ConnectEventQuest()
 		{
-			m_questViewList = FKMOKDCJFEN.KJHKBBBDBAL(m_args.viewData.JOPOPMLFINI_MasterName, false, m_args.viewData.BCOKKAALGHC);
+			m_questViewList = FKMOKDCJFEN.KJHKBBBDBAL(m_args.viewData.JOPOPMLFINI_QuastName, false, m_args.viewData.BCOKKAALGHC);
 			m_layoutScrollList.Setup(m_questViewList, m_args.viewData);
 			m_layoutScrollList.SetStatus();
 			QuestUtility.UpdateQuestData();
@@ -168,8 +168,8 @@ namespace XeApp.Game.Menu
 			m_args = Args as QuestTopFormQuestListArgs;
 			if(m_args != null)
 			{
-				KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(string.Format("ct/qu/qf/{0:d5}.xab", m_args.viewData.LFCOJABLOEN));
-				m_questViewList = FKMOKDCJFEN.KJHKBBBDBAL(m_args.viewData.JOPOPMLFINI_MasterName, false, m_args.viewData.BCOKKAALGHC);
+				KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(string.Format("ct/qu/qf/{0:d5}.xab", m_args.viewData.LFCOJABLOEN_EventId));
+				m_questViewList = FKMOKDCJFEN.KJHKBBBDBAL(m_args.viewData.JOPOPMLFINI_QuastName, false, m_args.viewData.BCOKKAALGHC);
 			}
 			SetupLayout();
 			isSyncMissionStatus = false;
@@ -284,7 +284,7 @@ namespace XeApp.Game.Menu
 			//0x9D8884
 			achievementsKeys.Clear();
 			clearQuestIds.Clear();
-			quest = controller.AGLILDLEFDK;
+			quest = controller.AGLILDLEFDK_Missions;
 			for(int i = 0; i < quest.Count; i++)
 			{
 				if(controller.GBADILEHLGC_GetStatus(quest[i].PPFNGGCBJKC_Id) == 2)
@@ -386,7 +386,7 @@ namespace XeApp.Game.Menu
 					controller.FHGEJBKNBLP(clearQuestIds);
 					for(int i = 0; i < clearQuestIds.Count; i++)
 					{
-						controller.OLDFFDMPEBM[clearQuestIds[i] - 1].EALOBDHOCHP_Stat = 3;
+						controller.OLDFFDMPEBM_Quests[clearQuestIds[i] - 1].EALOBDHOCHP_Stat = 3;
 					}
 				}
 			}

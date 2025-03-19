@@ -18,16 +18,16 @@ namespace XeApp.Game.Menu
 		// RVA: 0x177822C Offset: 0x177822C VA: 0x177822C
 		public void SetStatus(MFDJIFIIPJD itemInfo)
 		{
-			SetIcon(itemInfo.JJBGOIMEIPF_ItemFullId);
+			SetIcon(itemInfo.JJBGOIMEIPF_ItemId);
 			ChangeHeader(itemInfo.NPPNDDMPFJJ_ItemCategory);
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			if(itemInfo.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit)
 			{
-				SetItemText(itemInfo.MBJIFDBEDAC_Cnt.ToString() + EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemInfo.JJBGOIMEIPF_ItemFullId), 0));
+				SetItemText(itemInfo.MBJIFDBEDAC_Cnt.ToString() + EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemInfo.JJBGOIMEIPF_ItemId), 0));
 			}
 			else
 			{
-				SetItemText(EKLNMHFCAOI.INCKKODFJAP_GetItemName(itemInfo.JJBGOIMEIPF_ItemFullId) + JpStringLiterals.StringLiteral_12037 + itemInfo.MBJIFDBEDAC_Cnt.ToString() + EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemInfo.JJBGOIMEIPF_ItemFullId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemInfo.JJBGOIMEIPF_ItemFullId)));
+				SetItemText(EKLNMHFCAOI.INCKKODFJAP_GetItemName(itemInfo.JJBGOIMEIPF_ItemId) + JpStringLiterals.StringLiteral_12037 + itemInfo.MBJIFDBEDAC_Cnt.ToString() + EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemInfo.JJBGOIMEIPF_ItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemInfo.JJBGOIMEIPF_ItemId)));
 			}
 		}
 

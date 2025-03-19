@@ -52,7 +52,12 @@ public class SakashoRanking : SakashoAPIBase
 	}
 
 	// // RVA: 0x2E5FF14 Offset: 0x2E5FF14 VA: 0x2E5FF14
-	// public static SakashoAPICallContext ClaimRankingRewards(int id, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext ClaimRankingRewards(int id, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		h["id"] = id;
+		return new SakashoAPICallContext(Call(SakashoRankingClaimRankingRewards, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	// // RVA: 0x2E600A4 Offset: 0x2E600A4 VA: 0x2E600A4
 	public static SakashoAPICallContext UpdateRankingScore(int id, double score, OnSuccess onSuccess, OnError onError)
@@ -110,7 +115,10 @@ public class SakashoRanking : SakashoAPIBase
 	}
 
 	// // RVA: 0x2E60B18 Offset: 0x2E60B18 VA: 0x2E60B18
-	// private static extern int SakashoRankingClaimRankingRewards(int callbackId, string json) { }
+	private static /*extern*/ int SakashoRankingClaimRankingRewards(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoRankingClaimRankingRewards(callbackId, json);
+	}
 
 	// // RVA: 0x2E60C28 Offset: 0x2E60C28 VA: 0x2E60C28
 	private static /*extern */int SakashoRankingGetRankingRecordsByKeys(int callbackId, string json)

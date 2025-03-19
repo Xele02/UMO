@@ -148,7 +148,7 @@ namespace XeApp.Game.Menu
 			if(isExecSkip)
 				layoutOkayButton.SkipAnim();
 			else
-				layoutOkayButton.StartBeginAnim();
+				layoutOkayButton.StartBeginAnim(true);
 		}
 
 		// // RVA: 0xD0096C Offset: 0xD0096C VA: 0xD0096C

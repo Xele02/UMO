@@ -24,7 +24,16 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1054738 Offset: 0x1054738 VA: 0x1054738
-		//public void Clear() { }
+		public void Clear()
+		{
+			allRewardNum = 0;
+			isScoreComplete = false;
+			isComboComplete = false;
+			achievedScoreNum = 0;
+			achievedComboNum = 0;
+			achievedClearCountNum = 0;
+			allAchievedNum = 0;
+		}
 
 		//// RVA: 0x105477C Offset: 0x105477C VA: 0x105477C
 		public void Init(FPGEMAIAMBF_RewardData rewardData)

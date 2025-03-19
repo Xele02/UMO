@@ -20,7 +20,7 @@ namespace XeApp.Game.Menu
 		}
 
 		public bool isLine6Mode; // 0xC
-		public KGCNCBOKCBA.GNENJEHKMHD eventStatus; // 0x10
+		public KGCNCBOKCBA.GNENJEHKMHD_EventStatus eventStatus; // 0x10
 		private Difficulty.Type m_difficulty; // 0x14
 		private MusicSelectConsts.SeriesType m_series; // 0x18
 		private VerticalMusicSelectSortOrder.SortOrder m_sortOrder; // 0x1C
@@ -134,10 +134,10 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xADAAF4 Offset: 0xADAAF4 VA: 0xADAAF4
 		public void SetupRewardStat(IBJAKJJICBC musicData)
 		{
-			m_rewardData.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, 0, isLine6Mode, musicData.MNNHHJBBICA_EventType);
+			m_rewardData.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, 0, isLine6Mode, musicData.MNNHHJBBICA_GameEventType);
 			for(int i = 0; i < musicData.MGJKEJHEBPO_DiffInfos.Count; i++)
 			{
-				m_rewardData.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, i, isLine6Mode, musicData.MNNHHJBBICA_EventType);
+				m_rewardData.JMHCEMHPPCM(musicData.GHBPLHBNMBK_FreeMusicId, i, isLine6Mode, musicData.MNNHHJBBICA_GameEventType);
 				m_rewardStats[i].Init(m_rewardData);
 			}
 		}

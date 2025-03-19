@@ -916,9 +916,14 @@ namespace XeApp.Game.RhythmGame
 
 			if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
-				uiController.Hud.SetPlayerDivaId(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId);
-				TodoLogger.LogError(TodoLogger.EventBattle_3, "InitializeGameData BattleEvent");
 				//L1814
+				uiController.Hud.SetPlayerDivaId(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId);
+				uiController.Hud.SetRivalDivaId(UnityEngine.Random.Range(1, 11));
+				HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(Database.Instance.gameSetup.musicInfo.EventUniqueId) as HAEDCCLHEMN_EventBattle;
+				if(ev != null)
+				{
+					uiController.Hud.SetRivalDivaId(ev.LCAGAFPFHJP_GetCurrentRivalDivaId());
+				}
 			}
 
 			voicePlayer = new RhythmGameVoicePlayer();
@@ -1247,8 +1252,19 @@ namespace XeApp.Game.RhythmGame
 			}
 			if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
-				TodoLogger.LogError(TodoLogger.EventBattle_3, "InitializeMusicScoreEvent Event Type 3");
 				//L744
+				battleEventResult01 = new RhythmGameScoreEvent();
+				if(resource.musicData.valkyrieModeJudgeMillisec > -1)
+				{
+					battleEventResult01.onFireEvent = ShowBattleResult01;
+					battleEventResult01.millisec = resource.musicData.valkyrieModeJudgeMillisec + IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("battle_event_valkyrie_result_offset", 0);
+				}
+				battleEventResult02 = new RhythmGameScoreEvent();
+				if(resource.musicData.divaModeStartMillisec > -1)
+				{
+					battleEventResult02.onFireEvent = ShowBattleResult02;
+					battleEventResult02.millisec = resource.musicData.divaModeStartMillisec + IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("battle_event_diva_result_offset", 0);
+				}
 			}
 			if(setting.m_enable_cutin)
 			{
@@ -2077,16 +2093,48 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0x9C0A20 Offset: 0x9C0A20 VA: 0x9C0A20
-		// private bool MiddleScoreJudge(int idx, int score) { }
+		private bool MiddleScoreJudge(int idx, int score)
+		{
+			if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
+			{
+				HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(Database.Instance.gameSetup.musicInfo.EventUniqueId) as HAEDCCLHEMN_EventBattle;
+				if(ev != null)
+				{
+					return ev.OMHGENLJFLK_HasWinStepBattle(idx, currentRawMusicMillisec, musicMillisecLength);
+				}
+			}
+			return true;
+		}
 
 		// // RVA: 0x9C0C30 Offset: 0x9C0C30 VA: 0x9C0C30
-		// private void ShowBattleResult01() { }
+		private void ShowBattleResult01()
+		{
+			bool b = MiddleScoreJudge(0, status.score.currentScore);
+			if(Database.Instance.gameSetup.musicInfo.IsDisableBattleEventIntermediateResult)
+				return;
+			uiController.Hud.ShowBattleResult(b);
+			if(b != true)
+				return;
+			SoundManager.Instance.voDiva.Play(GetBattleResultVoiceCueId(BattleEventResultVoice.ResultVoiceIndex.Valkyeri));
+		}
 
 		// // RVA: 0x9C0E8C Offset: 0x9C0E8C VA: 0x9C0E8C
-		// private void ShowBattleResult02() { }
+		private void ShowBattleResult02()
+		{
+			bool b = MiddleScoreJudge(1, status.score.currentScore);
+			if(Database.Instance.gameSetup.musicInfo.IsDisableBattleEventIntermediateResult)
+				return;
+			uiController.Hud.ShowBattleResult(b);
+			if(b != true)
+				return;
+			SoundManager.Instance.voDiva.Play(GetBattleResultVoiceCueId(BattleEventResultVoice.ResultVoiceIndex.DivaMode));
+		}
 
 		// // RVA: 0x9C0E58 Offset: 0x9C0E58 VA: 0x9C0E58
-		// private int GetBattleResultVoiceCueId(BattleEventResultVoice.ResultVoiceIndex index) { }
+		private int GetBattleResultVoiceCueId(BattleEventResultVoice.ResultVoiceIndex index)
+		{
+			return battleEventResultVoice.GetCueRandomId(index);
+		}
 
 		// // RVA: 0x9BFB50 Offset: 0x9BFB50 VA: 0x9BFB50
 		private void ActivateInstantBuff(SkillBase skill)

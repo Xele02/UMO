@@ -16,7 +16,13 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xCFF358 Offset: 0xCFF358 VA: 0xCFF358
-		//public void OnBattleResultStart() { }
+		public void OnBattleResultStart()
+		{
+			DivaManager.DivaTransformReset();
+			DivaManager.ApplyCameraPos(DivaObject.divaId, DivaMenuParam.CameraPosType.BattleResult);
+			DivaObject.UnlockBoneSpring(false, 0);
+			DivaObject.BattleResult();
+		}
 
 		//// RVA: 0xCFF454 Offset: 0xCFF454 VA: 0xCFF454 Slot: 9
 		protected override void OnEndControl()
@@ -87,12 +93,33 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xCFFA54 Offset: 0xCFFA54 VA: 0xCFFA54
-		//public void OnBattleResultAnimStart(bool isWin) { }
+		public void OnBattleResultAnimStart(bool isWin)
+		{
+			DivaObject.BattleResultAnimStart(isWin, true);
+			if(isWin)
+			{
+				SoundManager.Instance.voDiva.RequestChangeCueSheet(DivaObject.divaId, () =>
+				{
+					//0xCFFDD0
+					SoundManager.Instance.voDiva.Play(DivaVoicePlayer.VoiceCategory.Result, DivaResultMotion.GetVoiceId(ResultScoreRank.Type.SS));
+				});
+			}
+		}
 
 		//// RVA: 0xCFFC30 Offset: 0xCFFC30 VA: 0xCFFC30
-		//public void RequestBattleResultAnimStart(bool isWin) { }
+		public void RequestBattleResultAnimStart(bool isWin)
+		{
+			OnBattleResultAnimStart(isWin);
+			if(isWin)
+			{
+				StartCoroutine(Coroutine_RequestResultAnimStart());
+			}
+		}
 
 		//// RVA: 0xCFFC68 Offset: 0xCFFC68 VA: 0xCFFC68
-		//public void ResetBattleResultTransform() { }
+		public void ResetBattleResultTransform()
+		{
+			DivaObject.ResetBattleResultTransform();
+		}
 	}
 }

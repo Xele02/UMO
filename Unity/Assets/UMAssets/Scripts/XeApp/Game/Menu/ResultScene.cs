@@ -19,8 +19,8 @@ namespace XeApp.Game.Menu
 		private ResultDropLayoutController.InitParam dropLayoutInitParam; // 0x54
 		// private ResultEvent01LayoutController.InitParam event01LayoutInitParam; // 0x58
 		// private MissonResultLayoutController.InitParam event02LayoutInitParam; // 0x5C
-		// private ResultEvent03ScoreLayoutController.InitParam event03ScoreLayoutInitParam; // 0x60
-		// private ResultEvent03PointLayoutController.InitParam event03PointLayoutInitParam; // 0x64
+		private ResultEvent03ScoreLayoutController.InitParam event03ScoreLayoutInitParam; // 0x60
+		private ResultEvent03PointLayoutController.InitParam event03PointLayoutInitParam; // 0x64
 		// private RaidResultPointLayoutController.InitParam raidResultPointLayoutInitParam; // 0x68
 		// private RaidResultDamageLayoutController.InitParam raidResultDamageLayoutInitParam; // 0x6C
 		// private RaidResultRewardLayoutController.InitParam raidResultRewardLayoutInitParam; // 0x70
@@ -132,7 +132,34 @@ namespace XeApp.Game.Menu
 			}
 			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
-				TodoLogger.LogError(TodoLogger.EventBattle_3, "InitParam Event");
+				GJOOGLGLFID data = new GJOOGLGLFID();
+				data.KHEKNNFCAOI();
+				FJIPMALKCBG data2 = new FJIPMALKCBG();
+				data2.KHEKNNFCAOI();
+				DCAKKIJODME data3 = new DCAKKIJODME();
+				data3.KHEKNNFCAOI(true);
+				ResultEvent03ScoreLayoutController.InitParam param = new ResultEvent03ScoreLayoutController.InitParam();
+				param.viewEventGameResultData = data;
+				param.viewEventMatchResultData = data2;
+				param.layoutOkayButton = null;
+				event03ScoreLayoutInitParam = param;
+				ResultEvent03PointLayoutController.InitParam param2 = new ResultEvent03PointLayoutController.InitParam();
+				param2.viewMyData = data2.HIHPPOFHMNF_Player;
+				param2.viewEventGameResultData = data;
+				param2.viewEventExRivalResultData = data3;
+				param2.layoutOkayButton = null;
+				event03PointLayoutInitParam = param2;
+				HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5, false) as HAEDCCLHEMN_EventBattle;
+				if(ev != null)
+				{
+					if(eventType == ev.HIDHLFCBIDE_EventType)
+					{
+						if(ev.CKEDJHEFJCJ != OLLEELKFCMM.NDBAPDFEPAF.HJNNKCMLGFL_0)
+						{
+							TipsControl.SetSituationValue((TipsControl.SituationId)(ev.CKEDJHEFJCJ + 2), 1);
+						}
+					}
+				}
 			}
 			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 			{
@@ -305,8 +332,23 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4FEA8 Offset: 0xB4FEA8 VA: 0xB4FEA8
 		private IEnumerator Co_LoadEvent03Layout()
 		{
-			TodoLogger.LogError(TodoLogger.EventBattle_3, "Co_LoadEvent03Layout");
-			yield return null;
+			StringBuilder bundleName; // 0x14
+			AssetBundleLoadLayoutOperationBase lytAssetOp; // 0x18
+
+			//0xB5CCE8
+			bundleName = new StringBuilder();
+			bundleName.Set("ly/095.xab");
+			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_ResultEvent03");
+			yield return lytAssetOp;
+			yield return lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+			{
+				//0xB54C98
+				instance.transform.SetParent(transform, false);
+				event03ScoreLayoutController = instance.GetComponent<ResultEvent03ScoreLayoutController>();
+				event03PointLayoutController = instance.GetComponent<ResultEvent03PointLayoutController>();
+			});
+			event03ScoreLayoutController.Initialize(MenuScene.Instance.divaManager, scoreLayoutController.TransferDivaControl());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x722B7C Offset: 0x722B7C VA: 0x722B7C
@@ -519,13 +561,11 @@ namespace XeApp.Game.Menu
 			{
 				yield return new WaitWhile(() => {
 					//0xB55830
-					TodoLogger.LogError(TodoLogger.EventBattle_3, "Event");
-					return false;
+					return event03ScoreLayoutController == null || !event03ScoreLayoutController.IsReady();
 				});
 				yield return new WaitWhile(() => {
 					//0xB558F0
-					TodoLogger.LogError(TodoLogger.EventBattle_3, "Event");
-					return false;
+					return event03PointLayoutController == null || !event03PointLayoutController.IsReady();
 				});
 			}
 			if(isEventRaid)
@@ -574,9 +614,8 @@ namespace XeApp.Game.Menu
 			}
 			if(isEventBattle)
 			{
-				TodoLogger.LogError(TodoLogger.EventBattle_3, "Event");
-				//event03ScoreLayoutController.SetActive(false);
-				//event03PointLayoutController.SetActive(false);
+				event03ScoreLayoutController.SetActive(false);
+				event03PointLayoutController.SetActive(false);
 			}
 			if(isEventRaid)
 			{
@@ -959,18 +998,54 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB52B04 Offset: 0xB52B04 VA: 0xB52B04
 		private void InitEvent03WinLose()
 		{
-			TodoLogger.LogError(TodoLogger.EventBattle_3, "InitEvent03WinLose");
+			commonLayoutController.ChangeViewForDropResult();
+			this.StartCoroutineWatched(Co_InitEvent03WinLose());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x722F3C Offset: 0x722F3C VA: 0x722F3C
 		// // RVA: 0xB52B4C Offset: 0xB52B4C VA: 0xB52B4C
-		// private IEnumerator Co_InitEvent03WinLose() { }
+		private IEnumerator Co_InitEvent03WinLose()
+		{
+			//0xB5AAF8
+			GameManager.Instance.fullscreenFader.Fade(0.2f, Color.white);
+			while(GameManager.Instance.fullscreenFader.isFading)
+				yield return null;
+			event03ScoreLayoutInitParam.layoutOkayButton = commonLayoutController.LayoutOkayButton;
+			event03ScoreLayoutController.SetActive(true);
+			event03ScoreLayoutController.onClickOkayButton = OnClickEvent03WinLoseOkayButton;
+			event03ScoreLayoutController.Setup(event03ScoreLayoutInitParam);
+			yield return new WaitUntil(() =>
+			{
+				//0xB55E64
+				return event03ScoreLayoutController.IsDivaReady();
+			});
+			GameManager.Instance.SetFPS(30);
+			commonLayoutController.LayoutHeaderTitle.StartBeginAnim();
+			yield return null;
+			commonLayoutController.LayoutHeaderTitle.gameObject.SetActive(false);
+			GameManager.Instance.fullscreenFader.Fade(0.2f, 0.0f);
+			while(GameManager.Instance.fullscreenFader.isFading)
+				yield return null;
+			event03ScoreLayoutController.StartAnim();
+			task = UpdateEvent03WinLose;
+		}
 
 		// // RVA: 0xB52BF8 Offset: 0xB52BF8 VA: 0xB52BF8
-		// private void UpdateEvent03WinLose() { }
+		private void UpdateEvent03WinLose()
+		{
+			return;
+		}
 
 		// // RVA: 0xB52BFC Offset: 0xB52BFC VA: 0xB52BFC
-		// private void OnClickEvent03WinLoseOkayButton() { }
+		private void OnClickEvent03WinLoseOkayButton()
+		{
+			MenuScene.Instance.InputDisable();
+			event03ScoreLayoutController.EndAnim(() =>
+			{
+				//0xB55E90
+				this.StartCoroutineWatched(Co_InitEvent03Result());
+			});
+		}
 
 		// // RVA: 0xB52C00 Offset: 0xB52C00 VA: 0xB52C00
 		// private void EndEvent03WinLose() { }
@@ -980,13 +1055,49 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x722FB4 Offset: 0x722FB4 VA: 0x722FB4
 		// // RVA: 0xB52D20 Offset: 0xB52D20 VA: 0xB52D20
-		// private IEnumerator Co_InitEvent03Result() { }
+		private IEnumerator Co_InitEvent03Result()
+		{
+			//0xB5A2FC
+			GameManager.Instance.fullscreenFader.Fade(0.2f, Color.white);
+			while(GameManager.Instance.fullscreenFader.isFading)
+				yield return null;
+			bool done = false;
+			event03ScoreLayoutController.Release(() =>
+			{
+				//0xB5618C
+				done = true;
+			});
+			while(!done)
+				yield return null;
+			yield return new WaitForSeconds(0.1f);
+			MenuScene.Instance.divaManager.SetActive(false, true);
+			MenuScene.Instance.divaManager.EndControl(event03ScoreLayoutController.divaControl);
+			event03ScoreLayoutController.SetActive(false);
+			GameManager.Instance.SetFPS(30);
+			commonLayoutController.ChangeViewForDropResult();
+			GameManager.Instance.fullscreenFader.Fade(0.2f, 0.0f);
+			while(GameManager.Instance.fullscreenFader.isFading)
+				yield return null;
+			MenuScene.Instance.InputEnable();
+			event03PointLayoutInitParam.layoutOkayButton = commonLayoutController.LayoutOkayButton;
+			event03PointLayoutController.SetActive(true);
+			event03PointLayoutController.onClickOkayButton = OnClickEvent03ResultOkayButton;
+			event03PointLayoutController.Setup(event03PointLayoutInitParam);
+			event03PointLayoutController.StartAnim();
+			task = UpdateEvent03Result;
+		}
 
 		// // RVA: 0xB52DCC Offset: 0xB52DCC VA: 0xB52DCC
-		// private void UpdateEvent03Result() { }
+		private void UpdateEvent03Result()
+		{
+			return;
+		}
 
 		// // RVA: 0xB52DD0 Offset: 0xB52DD0 VA: 0xB52DD0
-		// private void OnClickEvent03ResultOkayButton() { }
+		private void OnClickEvent03ResultOkayButton()
+		{
+			this.StartCoroutineWatched(Co_MountMenuScene(false));
+		}
 
 		// // RVA: 0xB52DF8 Offset: 0xB52DF8 VA: 0xB52DF8
 		// private void EndEvent03Result() { }
@@ -1077,12 +1188,17 @@ namespace XeApp.Game.Menu
 							TodoLogger.LogError(TodoLogger.EventCollection_1, "Event");
 							break;
 						default:
+						{
 							MusicSelectArgs args = new MusicSelectArgs();
 							args.isLine6Mode = Database.Instance.gameSetup.musicInfo.IsLine6Mode;
 							MenuScene.Instance.Mount(TransitionUniqueId.MUSICSELECT, args, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+						}
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle:
-							TodoLogger.LogError(TodoLogger.EventBattle_3, "Event");
+						{
+							EventMusicSelectSceneArgs args = new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, true);
+							MenuScene.Instance.Mount(TransitionUniqueId.EVENTBATTLE, args, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+						}
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore:
 							TodoLogger.LogError(TodoLogger.EventScore_4, "Event");
@@ -1147,10 +1263,6 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB54BC8 Offset: 0xB54BC8 VA: 0xB54BC8
 		// private void <Co_LoadEvent02Layout>b__42_0(GameObject instance) { }
 
-		// [CompilerGeneratedAttribute] // RVA: 0x723204 Offset: 0x723204 VA: 0x723204
-		// // RVA: 0xB54C98 Offset: 0xB54C98 VA: 0xB54C98
-		// private void <Co_LoadEvent03Layout>b__43_0(GameObject instance) { }
-
 		// [CompilerGeneratedAttribute] // RVA: 0x723214 Offset: 0x723214 VA: 0x723214
 		// // RVA: 0xB54DAC Offset: 0xB54DAC VA: 0xB54DAC
 		// private void <Co_LoadRaidLayout>b__44_0(GameObject instance) { }
@@ -1178,14 +1290,6 @@ namespace XeApp.Game.Menu
 		// [CompilerGeneratedAttribute] // RVA: 0x723354 Offset: 0x723354 VA: 0x723354
 		// // RVA: 0xB55E34 Offset: 0xB55E34 VA: 0xB55E34
 		// private bool <Co_InitGoDivaResult>b__89_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x723364 Offset: 0x723364 VA: 0x723364
-		// // RVA: 0xB55E64 Offset: 0xB55E64 VA: 0xB55E64
-		// private bool <Co_InitEvent03WinLose>b__95_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x723374 Offset: 0x723374 VA: 0x723374
-		// // RVA: 0xB55E90 Offset: 0xB55E90 VA: 0xB55E90
-		// private void <EndEvent03WinLose>b__98_0() { }
 
 		// [CompilerGeneratedAttribute] // RVA: 0x723384 Offset: 0x723384 VA: 0x723384
 		// // RVA: 0xB55EB4 Offset: 0xB55EB4 VA: 0xB55EB4

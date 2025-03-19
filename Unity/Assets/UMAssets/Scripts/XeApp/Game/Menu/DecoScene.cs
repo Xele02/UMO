@@ -4174,7 +4174,7 @@ namespace XeApp.Game.Menu
 							saveIt.FOONCJDLLIK_ChargeTime = currentTime;
 							m_decoSpItemListSetting.Add(new PopupDecoSpItemListSetting.ItemParam() { id = a, count = g });
 							CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.IOEGFJMNDBM_35, prevLevel.ToString() + ":" + saveIt.ANAJIAENLNB_Level.ToString());
-							CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.CPIICACGNBH(pd, a, g, null, 0);
+							CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.CPIICACGNBH_AddItem(pd, a, g, null, 0);
 							getItemIds.Add(a);
 							getItemCounts.Add(g);
 							SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_LOGIN_000);
@@ -4224,7 +4224,7 @@ namespace XeApp.Game.Menu
 						}
 						saveIt.FOONCJDLLIK_ChargeTime = currentTime;
 						CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.JJNIMNEJPOF_36, prevLevel.ToString() + ":" + saveIt.ANAJIAENLNB_Level.ToString());
-						CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.CPIICACGNBH(pd, dbIt.KIJAPOFAGPN_ItemId, g, null, 0);
+						CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.CPIICACGNBH_AddItem(pd, dbIt.KIJAPOFAGPN_ItemId, g, null, 0);
 						getItemIds.Add(dbIt.KIJAPOFAGPN_ItemId);
 						getItemCounts.Add(g);
 						m_decoSpItemListSetting.Add(new PopupDecoSpItemListSetting.ItemParam() { id = dbIt.KIJAPOFAGPN_ItemId, count = g });
@@ -4235,7 +4235,7 @@ namespace XeApp.Game.Menu
 								if(l3[j].HMFFHLPNMPH != 0)
 								{
 									m_decoSpItemListSetting.Add(new PopupDecoSpItemListSetting.ItemParam() { id = l3[j].JPMAHJJMMIA, count = l3[j].HMFFHLPNMPH });
-									CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.CPIICACGNBH(pd, l3[j].JPMAHJJMMIA, l3[j].HMFFHLPNMPH, null, 0);
+									CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.CPIICACGNBH_AddItem(pd, l3[j].JPMAHJJMMIA, l3[j].HMFFHLPNMPH, null, 0);
 									getItemIds.Add(l3[j].JPMAHJJMMIA);
 									getItemCounts.Add(l3[j].HMFFHLPNMPH);
 								}
@@ -4271,7 +4271,7 @@ namespace XeApp.Game.Menu
 						}
 						g = visitItemCount;
 						CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.JPPOGMHJKKJ_37, "");
-						CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.CPIICACGNBH(pd, visitItemId, visitItemCount, null, 0);
+						CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.CPIICACGNBH_AddItem(pd, visitItemId, visitItemCount, null, 0);
 						getItemIds.Add(visitItemId);
 						getItemCounts.Add(visitItemCount);
 						m_decoSpItemListSetting.Add(new PopupDecoSpItemListSetting.ItemParam() { id = visitItemId, count = visitItemCount });

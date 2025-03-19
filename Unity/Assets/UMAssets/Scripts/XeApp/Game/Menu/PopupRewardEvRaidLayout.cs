@@ -170,7 +170,7 @@ namespace XeApp.Game.Menu
 			g.KHEKNNFCAOI(null, null);
 			m_playerUtaGrade = g.LLNHMMBFPMA_ScoreRatingRanking;
 			m_utaGradeMoreText = "";
-			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD.BCKENOKGLIJ_9) as PKNOKJNLPOE_EventRaid;
+			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9) as PKNOKJNLPOE_EventRaid;
 			if(ev != null)
 			{
 				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event Raid");
@@ -219,8 +219,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1A7A0B0 Offset: 0x1A7A0B0 VA: 0x1A7A0B0
 		private void CreateRewardList(PopupRewardEvCheck.ViewRewardEvCheckData data)
 		{
-			TodoLogger.LogError(TodoLogger.EventRaid_11_13, "EventRaid");
-			/*m_defeatNormalRewardList.Clear();
+			m_defeatNormalRewardList.Clear();
 			m_1stNormalRewardList.Clear();
 			m_mvpNormalRewardList.Clear();
 			m_defeatExRewardList.Clear();
@@ -233,12 +232,39 @@ namespace XeApp.Game.Menu
 					IIMNHDGFDAG a1 = new IIMNHDGFDAG();
 					IIMNHDGFDAG a2 = new IIMNHDGFDAG();
 					IIMNHDGFDAG a3 = new IIMNHDGFDAG();
-					a3.ILELGGCCGMJ = data.normal_raidboss_info_list.ILELGGCCGMJ;
-					a2.ILELGGCCGMJ = data.normal_raidboss_info_list.ILELGGCCGMJ;
-					a1.ILELGGCCGMJ = data.normal_raidboss_info_list.ILELGGCCGMJ;
-
+					a3.ILELGGCCGMJ = data.normal_raidboss_info_list[i].ILELGGCCGMJ;
+					a2.ILELGGCCGMJ = data.normal_raidboss_info_list[i].ILELGGCCGMJ;
+					a1.ILELGGCCGMJ = data.normal_raidboss_info_list[i].ILELGGCCGMJ;
+					a3.DJEMBILEBFP = data.normal_raidboss_info_list[i].DJEMBILEBFP;
+					a2.DJEMBILEBFP = data.normal_raidboss_info_list[i].DJEMBILEBFP;
+					a1.DJEMBILEBFP = data.normal_raidboss_info_list[i].DJEMBILEBFP;
+					a3.IOBJDNEGEBB = data.normal_raidboss_info_list[i].IOBJDNEGEBB;
+					a2.IOBJDNEGEBB = data.normal_raidboss_info_list[i].IOBJDNEGEBB;
+					a1.IOBJDNEGEBB = data.normal_raidboss_info_list[i].IOBJDNEGEBB;
+					a3.PKLKOMIAKNL = data.normal_raidboss_info_list[i].PKLKOMIAKNL;
+					a2.PKLKOMIAKNL = data.normal_raidboss_info_list[i].PKLKOMIAKNL;
+					a1.PKLKOMIAKNL = data.normal_raidboss_info_list[i].PKLKOMIAKNL;
+					a1.CHOIMPLAOCO = data.normal_raidboss_info_list[i].ABHGIJFDLMM;
+					a1.EAOBPKJDDKC = data.normal_raidboss_info_list[i].EMPCHHKMKBG;
+					a2.CHOIMPLAOCO = data.normal_raidboss_info_list[i].DFMBENKEIHF;
+					a2.EAOBPKJDDKC = data.normal_raidboss_info_list[i].HDPONDIDHAN;
+					a3.CHOIMPLAOCO = data.normal_raidboss_info_list[i].HCPJEHKMFHB;
+					a3.EAOBPKJDDKC = data.normal_raidboss_info_list[i].IPJANNBLHMB;
+					m_defeatNormalRewardList.Add(a1);
+					m_1stNormalRewardList.Add(a2);
+					m_mvpNormalRewardList.Add(a3);
 				}
-			}*/
+			}
+			if(data.ex_raidboss_info_list != null)
+			{
+				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "CreateRewardList");
+			}
+			m_defeatNormalRewardList.Reverse();
+			m_1stNormalRewardList.Reverse();
+			m_mvpNormalRewardList.Reverse();
+			m_defeatExRewardList.Reverse();
+			m_1stExRewardList.Reverse();
+			m_mvpExRewardList.Reverse();
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x70E4F4 Offset: 0x70E4F4 VA: 0x70E4F4
