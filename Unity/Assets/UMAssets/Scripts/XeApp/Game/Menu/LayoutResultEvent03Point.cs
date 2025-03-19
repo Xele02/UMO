@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using CriWare;
 using UnityEngine;
+using UnityEngine.Localization.SmartFormat;
 using UnityEngine.UI;
 using XeApp.Game.Common;
 using XeSys;
@@ -90,7 +91,7 @@ namespace XeApp.Game.Menu
 			m_layoutRank[0] = layout.FindViewByExId("sw_game_res_event03_pt_count_anim_g_r_e3_rival_ex") as AbsoluteLayout;
 			m_layoutRank[1] = layout.FindViewById("swtbl_g_r_e3_rival") as AbsoluteLayout;
 			m_layoutDash[0] = layout.FindViewById("swtbl_dash") as AbsoluteLayout;
-			m_layoutDash[1] = layout.FindViewById("sw_get_medal") as AbsoluteLayout;
+			m_layoutDash[1] = (layout.FindViewById("sw_get_medal") as AbsoluteLayout).FindViewById("swtbl_dash") as AbsoluteLayout;
 			m_layoutUp[0] = layout.FindViewById("swtbl_up") as AbsoluteLayout;
 			m_layoutUp[1] = layout.FindViewById("swtbl_up_2") as AbsoluteLayout;
 			m_layoutGauge = GetComponentInChildren<LayoutBattleExGauge>(true);
@@ -274,12 +275,12 @@ namespace XeApp.Game.Menu
 			m_layoutRank[1].StartChildrenAnimGoStop((m_view.IDBJPDBLIIG_ScoreResultRank + 1).ToString("D2"));
 			if(!m_view.LFGNLKKFOCD_IsLine6)
 			{
-				m_imageDiff.uvRect = m_imageDiffRectList[m_view.AKNELONELJK_Difficulty - 1];
+				m_imageDiff.uvRect = m_imageDiffRectList[m_view.AKNELONELJK_Difficulty];
 				GameManager.Instance.UnionTextureManager.GetTexture("cmn_tex_pack").Set(m_imageDiff);
 			}
 			else
 			{
-				m_imageDiff.uvRect = m_imageDiffRectList_6Line[m_view.AKNELONELJK_Difficulty - 3];
+				m_imageDiff.uvRect = m_imageDiffRectList_6Line[m_view.AKNELONELJK_Difficulty - 2];
 				GameManager.Instance.UnionTextureManager.GetTexture("cmn_tex_02_pack").Set(m_imageDiff);
 			}
 			m_textWinLosePoint.text = m_view.IOOBNLAHLEJ_Point2.ToString();
@@ -288,7 +289,7 @@ namespace XeApp.Game.Menu
 			m_textClassRank.text = string.Format(menuBk.GetMessageByLabel("music_event_battle_class"), m_view.BGJDHCEOIDB_BattleClass);
 			m_textDiffBonus.text = (m_view.OHDIGACEJPM_DifficultyBonus - 100).ToString();
 			m_layoutUp[0].StartChildrenAnimGoStop(m_view.OHDIGACEJPM_DifficultyBonus < 101 ? "02" : "01");
-			m_textEpisodeCount.text = string.Format(menuBk.GetMessageByLabel("event_reward_result_episodebonus_unit"), m_view.FOFJCOHAFCG_EpisodeCnt);
+			m_textEpisodeCount.text = Smart.Format(menuBk.GetMessageByLabel("event_reward_result_episodebonus_unit"), m_view.FOFJCOHAFCG_EpisodeCnt);
 			m_textEpisodeRate.text = (m_view.CLEFJPKPOGB_EpBonusCnt - 100).ToString();
 			m_layoutUp[1].StartChildrenAnimGoStop(m_view.CLEFJPKPOGB_EpBonusCnt < 101 ? "02" : "01");
 			for(int i = 0; i < m_textPoint.Length; i++)

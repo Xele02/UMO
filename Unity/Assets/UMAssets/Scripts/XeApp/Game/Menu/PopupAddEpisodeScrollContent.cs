@@ -43,7 +43,7 @@ namespace XeApp.Game.Menu
 					data.m_viewEpisodeName = ep.OPFGFINHFCE_Name;
 					LGMEPLIJLNB rwd = LGMEPLIJLNB.BMFKMFNPGPC(id, true);
 					if(rwd != null && rwd.GOOIIPFHOIG != null)
-						data.m_rewardItemId = rwd.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId;
+						data.m_rewardItemId = rwd.GOOIIPFHOIG.JJBGOIMEIPF_ItemId;
 					m_paramList.Add(data);
 				}
 			}

@@ -166,9 +166,9 @@ namespace XeSys.Gfx
 				return -1;
 			for(int i = 0; i < m_FrameDataList.Length; i++)
 			{
-				if(oldTime <= m_FrameDataList[i].Time)
+				if(oldTime < m_FrameDataList[i].Time)
 				{
-					if(m_FrameDataList[i].Time <= time) // ??
+					if(m_FrameDataList[i].Time <= time)
 					{
 						return i;
 					}

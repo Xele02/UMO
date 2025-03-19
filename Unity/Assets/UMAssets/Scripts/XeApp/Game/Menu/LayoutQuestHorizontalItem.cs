@@ -69,10 +69,10 @@ namespace XeApp.Game.Menu
 								{
 									if (GNGMCIAIKMA.HHCJCDFCLOB == null)
 										return;
-									GNGMCIAIKMA.HHCJCDFCLOB.DJGFICMNGGP_SetBingoId(itemParam.questData.PGIIDPEGGPI);
-									GNGMCIAIKMA.HHCJCDFCLOB.BHFGBNNEMLI(itemParam.questData.PGIIDPEGGPI);
-									if (!GNGMCIAIKMA.HHCJCDFCLOB.IDKFAMEFCPD(itemParam.questData.PGIIDPEGGPI) &&
-										GNGMCIAIKMA.HHCJCDFCLOB.MLCGJAJCFDP(itemParam.questData.PGIIDPEGGPI, 0, 0) != 0)
+									GNGMCIAIKMA.HHCJCDFCLOB.DJGFICMNGGP_SetBingoId(itemParam.questData.PGIIDPEGGPI_EventId);
+									GNGMCIAIKMA.HHCJCDFCLOB.BHFGBNNEMLI(itemParam.questData.PGIIDPEGGPI_EventId);
+									if (!GNGMCIAIKMA.HHCJCDFCLOB.IDKFAMEFCPD(itemParam.questData.PGIIDPEGGPI_EventId) &&
+										GNGMCIAIKMA.HHCJCDFCLOB.MLCGJAJCFDP(itemParam.questData.PGIIDPEGGPI_EventId, 0, 0) != 0)
 									{
 										MenuScene.Instance.Call(TransitionList.Type.BINGO_SELECT, args, true);
 									}
@@ -93,10 +93,10 @@ namespace XeApp.Game.Menu
 					{
 						if (GNGMCIAIKMA.HHCJCDFCLOB == null)
 							return;
-						GNGMCIAIKMA.HHCJCDFCLOB.DJGFICMNGGP_SetBingoId(itemParam.questData.PGIIDPEGGPI);
-						GNGMCIAIKMA.HHCJCDFCLOB.BHFGBNNEMLI(itemParam.questData.PGIIDPEGGPI);
-						if (!GNGMCIAIKMA.HHCJCDFCLOB.IDKFAMEFCPD(itemParam.questData.PGIIDPEGGPI) &&
-							GNGMCIAIKMA.HHCJCDFCLOB.MLCGJAJCFDP(itemParam.questData.PGIIDPEGGPI, 0, 0) != 0)
+						GNGMCIAIKMA.HHCJCDFCLOB.DJGFICMNGGP_SetBingoId(itemParam.questData.PGIIDPEGGPI_EventId);
+						GNGMCIAIKMA.HHCJCDFCLOB.BHFGBNNEMLI(itemParam.questData.PGIIDPEGGPI_EventId);
+						if (!GNGMCIAIKMA.HHCJCDFCLOB.IDKFAMEFCPD(itemParam.questData.PGIIDPEGGPI_EventId) &&
+							GNGMCIAIKMA.HHCJCDFCLOB.MLCGJAJCFDP(itemParam.questData.PGIIDPEGGPI_EventId, 0, 0) != 0)
 						{
 							MenuScene.Instance.Call(TransitionList.Type.BINGO_SELECT, args, true);
 						}
@@ -136,7 +136,7 @@ namespace XeApp.Game.Menu
 		{
 			m_itemParam = param;
 			SetIcon(param.questData.JHAOHBNPMNA_EventId);
-			SetFont(param.questData.LFCOJABLOEN);
+			SetFont(param.questData.LFCOJABLOEN_EventId);
 			SwitchEmphasisIcon(param.questData.BEEIIJJKDBH, param.questData.BHANMJKCCBC_QuestAchievedCountText);
 			SwitchReceiptIcon(param.questData.PNFDMBHDPAJ);
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
@@ -148,7 +148,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					SetBingoCount(string.Format(bk.GetMessageByLabel("bingo_count_text"), GNGMCIAIKMA.HHCJCDFCLOB.EAIJHJPKBFA(param.questData.PGIIDPEGGPI).ToString() + "/" + GNGMCIAIKMA.HHCJCDFCLOB.EHFLAKIFPOO(param.questData.PGIIDPEGGPI).ToString()));
+					SetBingoCount(string.Format(bk.GetMessageByLabel("bingo_count_text"), GNGMCIAIKMA.HHCJCDFCLOB.EAIJHJPKBFA(param.questData.PGIIDPEGGPI_EventId).ToString() + "/" + GNGMCIAIKMA.HHCJCDFCLOB.EHFLAKIFPOO(param.questData.PGIIDPEGGPI_EventId).ToString()));
 				}
 			}
 			else

@@ -281,7 +281,7 @@ namespace XeApp.Game.Menu
 					//0x159A414
 					return x.AIPLIEMLHGC == snsId;
 				});
-				if(!m_viewDataRoom.CNEOPOINCBA[idx2].GAIEHFCHAOK)
+				if(!m_viewDataRoom.CNEOPOINCBA[idx2].GAIEHFCHAOK_New)
 				{
 					int p = GetPageCountByIndex(m_currentTalkIndex);
 					m_currentTalkIndex = idx2;
@@ -376,7 +376,7 @@ namespace XeApp.Game.Menu
 				wait += TimeWrapper.deltaTime;
 				yield return null;
 			}
-			m_viewDataRoom.CNEOPOINCBA[realCount].GAIEHFCHAOK = false;
+			m_viewDataRoom.CNEOPOINCBA[realCount].GAIEHFCHAOK_New = false;
 			m_currentTalkIndex = realCount;
 			realCount++;
 			m_isReception = false;
@@ -645,7 +645,7 @@ namespace XeApp.Game.Menu
 			GetPageIndex(m_pageIndex, out start, out end);
 			for(int i = start; i < end; i++)
 			{
-				m_viewDataRoom.CNEOPOINCBA[i].GAIEHFCHAOK = false;
+				m_viewDataRoom.CNEOPOINCBA[i].GAIEHFCHAOK_New = false;
 			}
 		}
 
@@ -655,9 +655,9 @@ namespace XeApp.Game.Menu
 			int res = 0;
 			for(int i = 0; i < m_talkList.Count; i++)
 			{
-				if (m_talkList[i].talk.EDCBHGECEBE)
+				if (m_talkList[i].talk.EDCBHGECEBE_Read)
 					res = i;
-				if (m_talkList[i].talk.GAIEHFCHAOK)
+				if (m_talkList[i].talk.GAIEHFCHAOK_New)
 					return res;
 			}
 			return -1;
@@ -745,17 +745,17 @@ namespace XeApp.Game.Menu
 			int end = m_viewDataRoom.CNEOPOINCBA.Count;
 			int start = 0;
 			int page = 0;
-			bool b = false;
+			bool previousRead = false;
 			for(int i = 0; i < end; i++)
 			{
-				if(m_viewDataRoom.CNEOPOINCBA[i].EDCBHGECEBE && !b)
+				if(m_viewDataRoom.CNEOPOINCBA[i].EDCBHGECEBE_Read && !previousRead)
 				{
-					b = true;
+					previousRead = true;
 					start = i;
 				}
 				else
 				{
-					if(b && m_viewDataRoom.CNEOPOINCBA[i].EDCBHGECEBE)
+					if(previousRead && m_viewDataRoom.CNEOPOINCBA[i].EDCBHGECEBE_Read)
 					{
 						SetPageIndex(page, start, i);
 						page++;
@@ -823,7 +823,7 @@ namespace XeApp.Game.Menu
 			GetPageIndex(m_pageIndex, out start, out end);
 			for(int i = start; i < end; i++)
 			{
-				if (m_viewDataRoom.CNEOPOINCBA[i].GAIEHFCHAOK)
+				if (m_viewDataRoom.CNEOPOINCBA[i].GAIEHFCHAOK_New)
 					return i;
 			}
 			return -1;
@@ -835,7 +835,7 @@ namespace XeApp.Game.Menu
 			return m_viewDataRoom.CNEOPOINCBA.FindAll((IMKNEDJDNGC _) =>
 			{
 				//0x159A3A8
-				return _.GAIEHFCHAOK == false;
+				return _.GAIEHFCHAOK_New == false;
 			}).Count;
 		}
 

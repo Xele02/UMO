@@ -176,7 +176,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x16704A0 Offset: 0x16704A0 VA: 0x16704A0
-		// public void ReleaseCache() { }
+		public void ReleaseCache()
+		{
+			m_cdCursor.ReleaseCache();
+		}
 
 		// // RVA: 0x16702B4 Offset: 0x16702B4 VA: 0x16702B4
 		public void ScrollEnable()

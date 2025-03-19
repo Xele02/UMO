@@ -31,7 +31,7 @@ namespace XeApp.Game.Menu
 			if(m_gauge != null)
 				m_gauge.StartAllAnimGoStop(v, v);
 			if(viewData.GOOIIPFHOIG != null)
-				SetIconImage(viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId);
+				SetIconImage(viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
 			SetNumber(viewData.ABLHIAEDJAI_CurrentValue, viewData.HLDGMMDFNHB_TargetValue);
 			SetRewardNum(viewData.GOOIIPFHOIG == null ? 0 : viewData.GOOIIPFHOIG.MBJIFDBEDAC_Cnt);
 		}

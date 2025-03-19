@@ -51,7 +51,7 @@ namespace XeApp.Game.Menu
 				{
 					m_compAnimeLayout.StartChildrenAnimGoStop("comp");
 				}
-				GameManager.Instance.ItemTextureCache.Load(episodeData.JBFLCHFEIGL.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId, (IiconTexture texture) =>
+				GameManager.Instance.ItemTextureCache.Load(episodeData.JBFLCHFEIGL.GOOIIPFHOIG.JJBGOIMEIPF_ItemId, (IiconTexture texture) =>
 				{
 					//0x15ADE04
 					texture.Set(m_rewordIcon);

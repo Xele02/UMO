@@ -146,7 +146,13 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1679614 Offset: 0x1679614 VA: 0x1679614
-		// public void ReleaseCache() { }
+		public void ReleaseCache()
+		{
+			for(int i = 0; i < m_diffButtons.Count; i++)
+			{
+				m_diffButtons[i].ReleaseCache();
+			}
+		}
 
 		// // RVA: 0x16796EC Offset: 0x16796EC VA: 0x16796EC
 		public void SetInfoStyle(InfoStyle style, bool line6Mode/* = False*/)

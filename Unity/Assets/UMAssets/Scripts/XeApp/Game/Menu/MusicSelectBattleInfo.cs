@@ -98,13 +98,41 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x166807C Offset: 0x166807C VA: 0x166807C
-		// public void SetPlayButtonType(MusicSelectBattleInfo.PlayButtonType type) { }
+		public void SetPlayButtonType(PlayButtonType type)
+		{
+			if(type == PlayButtonType.Download)
+			{
+				m_symbolPlayButtonType.StartAnim("dl");
+				m_playButton.SetDLMessage(true);
+			}
+			else if(type == PlayButtonType.Play)
+			{
+				m_symbolPlayButtonType.StartAnim("play");
+				m_playButton.SetDLMessage(false);
+			}
+			else if(type == PlayButtonType.PlayEn)
+			{
+				m_symbolPlayButtonType.StartAnim("play_en");
+				m_playButton.SetDLMessage(false);
+			}
+			else
+			{
+				m_symbolPlayButtonType.StartAnim("");
+				m_playButton.SetDLMessage(false);
+			}
+		}
 
 		// // RVA: 0x16681AC Offset: 0x16681AC VA: 0x16681AC
-		// public void SetPlayButtonDisable(bool isDisable) { }
+		public void SetPlayButtonDisable(bool isDisable)
+		{
+			m_playButton.Disable = isDisable;
+		}
 
 		// // RVA: 0x16681E0 Offset: 0x16681E0 VA: 0x16681E0
-		// public void SetNeedEnergy(int energy) { }
+		public void SetNeedEnergy(int energy)
+		{
+			m_playButton.SetNeedEnergy(energy);
+		}
 
 		// // RVA: 0x16682D8 Offset: 0x16682D8 VA: 0x16682D8
 		public void SetDropIconType(bool enable)

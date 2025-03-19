@@ -13,12 +13,18 @@ namespace XeApp.Game.Menu
 		public Action<int> onSelectButton { private get; set; } // 0x84
 
 		// // RVA: 0x166C290 Offset: 0x166C290 VA: 0x166C290
-		// private void OnClick() { }
+		private void OnClick()
+		{
+			if(onSelectButton != null)
+				onSelectButton(m_pageOffset);
+		}
 
 		// RVA: 0x166C300 Offset: 0x166C300 VA: 0x166C300 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
-			TodoLogger.LogError(TodoLogger.OldMusicSelect, "InitializeFromLayout MusicSelectCDButton");
+			base.InitializeFromLayout(layout, uvMan);
+			AddOnClickCallback(OnClick);
+			Loaded();
 			return true;
 		}
 	}

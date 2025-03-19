@@ -23,7 +23,7 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 	// public List<KPJHLACKGJF.HLMINENBCKO> AFOIGLCEBAE { get; } 0x1133180 FFPIOJEFCCL
 
 	// // RVA: 0x1133188 Offset: 0x1133188 VA: 0x1133188 Slot: 32
-	public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO = 0)
+	public override EECOJKDJIFG DAKMIKNKHMF_GetRankingInfoForIndex(int LHJCOPMMIGO = 0)
 	{
 		TodoLogger.LogError(TodoLogger.EventMission_6, "DAKMIKNKHMF");
 		return null;
@@ -184,7 +184,11 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 	// private void DENHAAGACPD() { }
 
 	// // RVA: 0x113A9F0 Offset: 0x113A9F0 VA: 0x113A9F0 Slot: 51
-	// public override IHAEIOAKEMG ILICNKILFKJ() { }
+	public override IHAEIOAKEMG ILICNKILFKJ_GetNextReward()
+	{
+		TodoLogger.LogError(TodoLogger.EventMission_6, "ILICNKILFKJ");
+		return null;
+	}
 
 	// // RVA: 0x113AB04 Offset: 0x113AB04 VA: 0x113AB04 Slot: 58
 	protected override void LMGMELPOGMH(int LHJCOPMMIGO)

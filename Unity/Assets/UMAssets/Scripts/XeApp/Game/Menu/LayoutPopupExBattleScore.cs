@@ -98,7 +98,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1724358 Offset: 0x1724358 VA: 0x1724358
 		public void Enter(bool isSeChange/* = False*/)
 		{
-			transform.SetParent(GameManager.Instance.PopupCanvas.transform.GetChild(0), false);
+			transform.SetParent(GameManager.Instance.PopupCanvas.transform.GetChild(0));
 			transform.SetAsLastSibling();
 			SoundManager.Instance.sePlayerBoot.Play(isSeChange ? (int)mcrs.cs_se_boot.SE_WND_004 : (int)mcrs.cs_se_boot.SE_WND_000);
 			m_isShow = true;

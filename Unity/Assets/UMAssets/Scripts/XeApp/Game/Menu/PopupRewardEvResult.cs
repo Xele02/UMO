@@ -42,16 +42,16 @@ namespace XeApp.Game.Menu
 			{
 				if(Item != null)
 				{
-					if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(Item.JJBGOIMEIPF_ItemFullId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+					if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(Item.JJBGOIMEIPF_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 					{
 						if(sceneData == null)
 							sceneData = new GCIJNCFDNON_SceneInfo();
-						sceneData.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(Item.JJBGOIMEIPF_ItemFullId), null, null, 0, 0, 0, false, 0, 0);
+						sceneData.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(Item.JJBGOIMEIPF_ItemId), null, null, 0, 0, 0, false, 0, 0);
 						MenuScene.Instance.ShowSceneStatusPopupWindow(sceneData, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, true, true, SceneStatusParam.PageSave.None, false);
 					}
 					else
 					{
-						MenuScene.Instance.ShowItemDetail(Item.JJBGOIMEIPF_ItemFullId, Item.MBJIFDBEDAC_Cnt, null);
+						MenuScene.Instance.ShowItemDetail(Item.JJBGOIMEIPF_ItemId, Item.MBJIFDBEDAC_Cnt, null);
 					}
 				}
 			}
@@ -236,7 +236,7 @@ namespace XeApp.Game.Menu
 				CurrentPoint = eventController.FBGDBGKNKOD_GetCurrentPoint();
 				for(int i = 0; i < eventController.JOFBHHHLBBN.Count; i++)
 				{
-					total_data_list.Add(eventController.PFPJHJJAGAG[eventController.JOFBHHHLBBN[i]]);
+					total_data_list.Add(eventController.PFPJHJJAGAG_Rewards[eventController.JOFBHHHLBBN[i]]);
 				}
 			}
 
@@ -383,14 +383,14 @@ namespace XeApp.Game.Menu
 			{
 				for(int i = 0; i < m_setting.GetViewData.total_data_list.Count; i++)
 				{
-					for(int j = 0; j < m_setting.GetViewData.total_data_list[i].HBHMAKNGKFK.Count; j++)
+					for(int j = 0; j < m_setting.GetViewData.total_data_list[i].HBHMAKNGKFK_Items.Count; j++)
 					{
 						ScrollListItem scrollItem = new ScrollListItem();
 						scrollItem.Top = new Vector2(0, -(f + m_scrollItemList.Count * 104 + 10));
 						scrollItem.Height = 104;
-						scrollItem.NeedPoint = m_setting.GetViewData.total_data_list[i].FIOIKMOIJGK;
-						scrollItem.Item = m_setting.GetViewData.total_data_list[i].HBHMAKNGKFK[j];
-						scrollItem.isGoldFrame = m_setting.GetViewData.total_data_list[i].HBHMAKNGKFK[j].JOPPFEHKNFO;
+						scrollItem.NeedPoint = m_setting.GetViewData.total_data_list[i].FIOIKMOIJGK_Point;
+						scrollItem.Item = m_setting.GetViewData.total_data_list[i].HBHMAKNGKFK_Items[j];
+						scrollItem.isGoldFrame = m_setting.GetViewData.total_data_list[i].HBHMAKNGKFK_Items[j].JOPPFEHKNFO_IsGold;
 						scrollItem.ResourceType = 4;
 						m_scrollItemList.Add(scrollItem);
 					}
@@ -404,7 +404,7 @@ namespace XeApp.Game.Menu
 					scrollItem.Top = new Vector2((i / 2) * 480 + 10, -(f + (i % 2) * 108 + 4));
 					scrollItem.Height = 108;
 					scrollItem.Item = m_setting.GetViewData.rankingRewardList[i];
-					scrollItem.isGoldFrame = m_setting.GetViewData.rankingRewardList[i].JOPPFEHKNFO;
+					scrollItem.isGoldFrame = m_setting.GetViewData.rankingRewardList[i].JOPPFEHKNFO_IsGold;
 					scrollItem.ResourceType = 3;
 					m_scrollItemList.Add(scrollItem);
 				}
@@ -415,7 +415,7 @@ namespace XeApp.Game.Menu
 				{
 					if(m_scrollItemList[i] is ScrollListItem)
 					{
-						KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath((m_scrollItemList[i] as ScrollListItem).Item.JJBGOIMEIPF_ItemFullId, 0));
+						KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath((m_scrollItemList[i] as ScrollListItem).Item.JJBGOIMEIPF_ItemId, 0));
 					}
 					else if(m_scrollItemList[i] is HeaderItem)
 					{

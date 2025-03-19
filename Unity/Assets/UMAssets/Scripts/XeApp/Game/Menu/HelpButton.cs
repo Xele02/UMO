@@ -177,20 +177,27 @@ namespace XeApp.Game.Menu
 		{
 			DPGPEALHJOB[] hp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser.LOMHJBIJMOD;
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			// UMO : adapted to return the newest help without date restriction, this could not match exactly registred event help, but it should be fine
+			long foundt = -1;
+			int res = -1;
 			for(int i = 0; i < hp.Length; i++)
 			{
 				if (hp[i].DIJHLDAIBCA == searchId)
 				{
-					if(time >= hp[i].PDBPFJJCADD)
+					//UnityEngine.Debug.LogError(hp[i].DIJHLDAIBCA+" "+hp[i].OPFGFINHFCE+" "+hp[i].PLALNIIBLOF+" "+XeSys.Utility.GetLocalDateTime(hp[i].PDBPFJJCADD).ToLongDateString()+" "+XeSys.Utility.GetLocalDateTime(hp[i].FDBNFFNFOND).ToLongDateString());
+					//if(time >= hp[i].PDBPFJJCADD)
+					if(hp[i].PDBPFJJCADD > foundt || foundt == -1)
 					{
-						if(hp[i].FDBNFFNFOND >= time)
+						//if(hp[i].FDBNFFNFOND >= time)
 						{
-							return hp[i].OBGBAOLONDD;
+							//return hp[i].OBGBAOLONDD;
+							res = hp[i].OBGBAOLONDD;
+							foundt = hp[i].PDBPFJJCADD;
 						}
 					}
 				}
 			}
-			return -1;
+			return res;
 		}
 
 		// // RVA: 0xE30C24 Offset: 0xE30C24 VA: 0xE30C24

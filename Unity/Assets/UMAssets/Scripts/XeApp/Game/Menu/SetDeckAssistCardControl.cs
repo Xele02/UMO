@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -83,6 +84,13 @@ namespace XeApp.Game.Menu
 			int idx = ghostData.BHCIFFILAKJ_Str > 2 ? 3 : ghostData.BHCIFFILAKJ_Str;
 			m_rivalRankImage.sprite = m_rivalRankSprite[idx];
 			m_scoreObject.gameObject.SetActive(true);
+			Text t = m_scoreObject.transform.Find("Image_TitleBack/Text_Title").GetComponent<Text>();
+			t.text = MessageManager.Instance.GetMessage("menu", JpStringLiterals.StringLiteral_17240);
+			if(RuntimeSettings.CurrentSettings.Language != "jp")
+			{
+				t.alignment = TextAnchor.UpperCenter;
+				t.horizontalOverflow = HorizontalWrapMode.Overflow;
+			}
 			HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9) as HAEDCCLHEMN_EventBattle;
 			m_scoreText.text = ev.HOJNMALLCME_GetClassMaxScore(idx, 0).ToString();
 			m_tapGuardObject.SetActive(true);

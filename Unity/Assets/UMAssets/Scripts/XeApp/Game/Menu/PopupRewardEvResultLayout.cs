@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Localization.SmartFormat;
 using UnityEngine.UI;
 using XeApp.Game.Common;
 using XeSys;
@@ -49,11 +50,17 @@ namespace XeApp.Game.Menu
 			m_popupTitle02 = layout.FindViewByExId("swtbl_pop_reward_ev_result_sw_pop_reward_ev_title_02_anim") as AbsoluteLayout;
 			Text[] txts = m_Runtime.GetComponentsInChildren<Text>(true);
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			txts.Where((Text _) =>
+			Text txt = txts.Where((Text _) =>
 			{
 				//0x1146678
 				return _.name == "desc (TextView)";
-			}).First().text = bk.GetMessageByLabel("event_reward_result_present_box");
+			}).First();
+			txt.text = bk.GetMessageByLabel("event_reward_result_present_box");
+			if(RuntimeSettings.CurrentSettings.Language != "jp")
+			{
+				txt.horizontalOverflow = HorizontalWrapMode.Wrap;
+				txt.alignment = TextAnchor.LowerLeft;
+			}
 			m_numTexts = txts.Where((Text _) =>
 			{
 				//0x11466F8
@@ -96,7 +103,7 @@ namespace XeApp.Game.Menu
 					break;
 				case PopupRewardEvResult.Type.Rankings:
 					m_numTexts[1].text = view.Rank.ToString();
-					m_unitTexts[1].text = MessageManager.Instance.GetMessage("menu", "popup_event_reward_currentrank_unit");
+					m_unitTexts[1].text = Smart.Format(MessageManager.Instance.GetMessage("menu", "popup_event_reward_currentrank_unit"), view.Rank);
 					if(view.EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
 					{
 						m_numTexts[3].text = view.CurrentPoint.ToString();
@@ -116,17 +123,17 @@ namespace XeApp.Game.Menu
 				case PopupRewardEvResult.Type.RankingsEventHiScore:
 					m_EventHiScore.SetNumber(view.evHighScore);
 					m_numTexts[1].text = view.evScoreRank.ToString();
-					m_unitTexts[1].text = MessageManager.Instance.GetMessage("menu", "popup_event_reward_currentrank_unit");
+					m_unitTexts[1].text = Smart.Format(MessageManager.Instance.GetMessage("menu", "popup_event_reward_currentrank_unit"), view.evScoreRank);
 					break;
 				case PopupRewardEvResult.Type.RankingsEventBattleHiScore:
 					m_EventHiScore.SetNumber((int)view.CurrentPoint);
 					m_numTexts[1].text = view.Rank.ToString();
-					m_unitTexts[1].text = MessageManager.Instance.GetMessage("menu", "popup_event_reward_currentrank_unit");
+					m_unitTexts[1].text = Smart.Format(MessageManager.Instance.GetMessage("menu", "popup_event_reward_currentrank_unit"), view.Rank);
 					break;
 				case PopupRewardEvResult.Type.RankingGoDivaEvent:
 					m_EventHiScore.SetNumber(view.evHighScore);
 					m_numTexts[1].text = view.Rank.ToString();
-					m_unitTexts[1].text = MessageManager.Instance.GetMessage("menu", "popup_event_reward_currentrank_unit");
+					m_unitTexts[1].text = Smart.Format(MessageManager.Instance.GetMessage("menu", "popup_event_reward_currentrank_unit"), view.Rank);
 					break;
 			}
 		}

@@ -602,7 +602,7 @@ namespace XeApp.Game.Menu
 			LGMEPLIJLNB data = LGMEPLIJLNB.BMFKMFNPGPC(id, true);
 			PIGBBNDPPJC p = new PIGBBNDPPJC();
 			p.KHEKNNFCAOI(id);
-			int fullItemId = data.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId;
+			int fullItemId = data.GOOIIPFHOIG.JJBGOIMEIPF_ItemId;
             EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(fullItemId);
             int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(fullItemId);
 			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie)

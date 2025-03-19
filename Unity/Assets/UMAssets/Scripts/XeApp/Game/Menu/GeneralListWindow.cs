@@ -6,6 +6,7 @@ using XeApp.Game.Common;
 using System;
 using mcrs;
 using XeApp.Game.Common.uGUI;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -483,7 +484,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB89584 Offset: 0xB89584 VA: 0xB89584
-		//public void SetEventBanner(IiconTexture iconTex) { }
+		public void SetEventBanner(IiconTexture iconTex)
+		{
+			iconTex.Set(m_eventBannerImage);
+		}
 
 		//// RVA: 0xB89664 Offset: 0xB89664 VA: 0xB89664
 		public void SetItemCount(int count)
@@ -528,7 +532,56 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB896E4 Offset: 0xB896E4 VA: 0xB896E4
-		//public void ChangeEventSubHeaderStyle(GeneralListWindow.EventSubHeaderStyle style, int a_diva_id = 0) { }
+		public void ChangeEventSubHeaderStyle(EventSubHeaderStyle style, int a_diva_id = 0)
+		{
+			switch(style)
+			{
+				case EventSubHeaderStyle.DefaultRanking:
+					m_AnimEventRankingMusicJacket[0].StartChildrenAnimGoStop("02");
+					m_AnimEventRankingMusicJacket[1].StartChildrenAnimGoStop("02");
+					m_AnimEventRankingMusicJacket[2].StartChildrenAnimGoStop("02");
+					break;
+				case EventSubHeaderStyle.TotalRanking:
+					m_AnimEventRankingMusicJacket[0].StartChildrenAnimGoStop("02");
+					m_AnimEventRankingMusicJacket[1].StartChildrenAnimGoStop("02");
+					m_AnimEventRankingMusicJacket[2].StartChildrenAnimGoStop("02");
+					m_eventRankingChangeButtonImage.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData("pop_reward_ev_toggle_btn_fnt_01"));
+					m_AnimEventRankingTitle.StartChildrenAnimGoStop("02");
+					break;
+				case EventSubHeaderStyle.MusicRanking:
+					m_AnimEventRankingMusicJacket[0].StartChildrenAnimGoStop("01");
+					m_AnimEventRankingMusicJacket[1].StartChildrenAnimGoStop("02");
+					m_AnimEventRankingMusicJacket[2].StartChildrenAnimGoStop("02");
+					m_eventRankingChangeButtonImage.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData("pop_reward_ev_toggle_btn_fnt_02"));
+					m_AnimEventRankingTitle.StartChildrenAnimGoStop("01");
+					break;
+				case EventSubHeaderStyle.ExBattleTotalRanking:
+					m_AnimEventRankingMusicJacket[0].StartChildrenAnimGoStop("02");
+					m_AnimEventRankingMusicJacket[1].StartChildrenAnimGoStop("02");
+					m_AnimEventRankingMusicJacket[2].StartChildrenAnimGoStop("02");
+					m_eventRankingChangeButtonImage.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData("pop_reward_ev_toggle_btn_fnt_03"));
+					m_AnimEventRankingTitle.StartChildrenAnimGoStop("02");
+					break;
+				case EventSubHeaderStyle.ExBattleScoreRanking:
+					m_AnimEventRankingMusicJacket[0].StartChildrenAnimGoStop("01");
+					m_AnimEventRankingMusicJacket[1].StartChildrenAnimGoStop("01");
+					m_AnimEventRankingMusicJacket[2].StartChildrenAnimGoStop("01");
+					m_eventRankingChangeButtonImage.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData("pop_reward_ev_toggle_btn_fnt_02"));
+					m_AnimEventRankingTitle.StartChildrenAnimGoStop("03");
+					break;
+				case EventSubHeaderStyle.DivaRanking:
+					{
+						MessageBank bk = MessageManager.Instance.GetBank("menu");
+						m_AnimEventRankingMusicJacket[0].StartChildrenAnimGoStop("01");
+						m_AnimEventRankingMusicJacket[1].StartChildrenAnimGoStop("01");
+						m_AnimEventRankingMusicJacket[2].StartChildrenAnimGoStop("01");
+						m_eventBannerImage.enabled = false;
+						m_txtDivaName.text = bk.GetMessageByLabel(string.Format("diva_name_{0:D2}", a_diva_id));
+						m_AnimEventRankingTitle.StartChildrenAnimGoStop("04");
+					}
+					break;
+			}
+		}
 
 		// RVA: 0xB8A270 Offset: 0xB8A270 VA: 0xB8A270 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

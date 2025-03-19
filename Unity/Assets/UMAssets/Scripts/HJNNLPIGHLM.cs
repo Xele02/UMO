@@ -15,7 +15,7 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase // TypeDefIndex
 	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection; } } //0x183A61C DKHCGLCNKCD  Slot: 4
 
 	// // RVA: 0x183A624 Offset: 0x183A624 VA: 0x183A624 Slot: 32
-	public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO)
+	public override EECOJKDJIFG DAKMIKNKHMF_GetRankingInfoForIndex(int LHJCOPMMIGO)
 	{
 		TodoLogger.LogError(TodoLogger.EventCollection_1, "DAKMIKNKHMF");
 		return null;
@@ -118,7 +118,11 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase // TypeDefIndex
 	}
 
 	// // RVA: 0x183E158 Offset: 0x183E158 VA: 0x183E158 Slot: 41
-	// public override int DBOLCELMBJG() { }
+	public override int DBOLCELMBJG_GetMainRankingIndex()
+	{
+		TodoLogger.LogError(TodoLogger.EventCollection_1, "DBOLCELMBJG");
+		return 0;
+	}
 
 	// // RVA: 0x183E1CC Offset: 0x183E1CC VA: 0x183E1CC Slot: 42
 	public override int DEECKJADNMJ(int LAJNCHHNLBI)
@@ -226,7 +230,11 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase // TypeDefIndex
 	// private void DENHAAGACPD(int LHJCOPMMIGO) { }
 
 	// // RVA: 0x1842978 Offset: 0x1842978 VA: 0x1842978 Slot: 51
-	// public override IHAEIOAKEMG ILICNKILFKJ() { }
+	public override IHAEIOAKEMG ILICNKILFKJ_GetNextReward()
+	{
+		TodoLogger.LogError(TodoLogger.EventCollection_1, "ILICNKILFKJ");
+		return null;
+	}
 
 	// // RVA: 0x1842A8C Offset: 0x1842A8C VA: 0x1842A8C Slot: 12
 	public override int EAMODCHMCEL(int AKNELONELJK, bool GIKLNODJKFK)
@@ -249,14 +257,14 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase // TypeDefIndex
 	}
 
 	// // RVA: 0x18434A8 Offset: 0x18434A8 VA: 0x18434A8 Slot: 11
-	public override int AELBIEDNPGB(BBHNACPENDM_ServerSaveData AHEFHIMGIBI)
+	public override int AELBIEDNPGB_GetTicketCount(BBHNACPENDM_ServerSaveData AHEFHIMGIBI)
 	{
 		TodoLogger.LogError(TodoLogger.EventCollection_1, "AELBIEDNPGB");
 		return 0;
 	}
 
 	// // RVA: 0x1843860 Offset: 0x1843860 VA: 0x1843860 Slot: 54
-	public override int NGIHFKHOJOK(bool DJHLDMOPCOL = true)
+	public override int NGIHFKHOJOK_GetRankingMax(bool DJHLDMOPCOL = true)
 	{
 		TodoLogger.LogError(TodoLogger.EventCollection_1, "NGIHFKHOJOK");
 		return 0;

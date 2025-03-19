@@ -48,10 +48,10 @@ namespace XeApp.Game.Menu
 					for(int i = 0; i < m_eventViewList.Count; i++)
 					{
 						EventQuestData data = new EventQuestData();
-						data.m_masterName = m_eventViewList[i].JOPOPMLFINI_MasterName;
+						data.m_masterName = m_eventViewList[i].JOPOPMLFINI_QuastName;
 						data.m_uniqueId = m_eventViewList[i].JHAOHBNPMNA_EventId;
 						data.m_eventType = m_eventViewList[i].COAMJFMEIBF.HIDHLFCBIDE_EventType;
-						data.m_viewList = FKMOKDCJFEN.KJHKBBBDBAL(m_eventViewList[i].JOPOPMLFINI_MasterName, false, m_eventViewList[i].BCOKKAALGHC);
+						data.m_viewList = FKMOKDCJFEN.KJHKBBBDBAL(m_eventViewList[i].JOPOPMLFINI_QuastName, false, m_eventViewList[i].BCOKKAALGHC);
 						data.m_achievedCount = GetQuestCountByStatus(data.m_viewList, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
 						m_eventQuestDataList.Add(data);
 						m_eventViewList[i].PKNLMLDKCLM_AchievedQuests = data.m_achievedCount;
@@ -89,10 +89,10 @@ namespace XeApp.Game.Menu
 					for (int i = 0; i < m_bingoViewList.Count; i++)
 					{
 						EventQuestData data = new EventQuestData();
-						data.m_masterName = m_bingoViewList[i].JOPOPMLFINI_MasterName;
+						data.m_masterName = m_bingoViewList[i].JOPOPMLFINI_QuastName;
 						data.m_uniqueId = m_bingoViewList[i].JHAOHBNPMNA_EventId;
 						data.m_eventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.DIDJLIPNCKO;
-						data.m_achievedCount = GNGMCIAIKMA.HHCJCDFCLOB.OBOGIOGEBPK(m_bingoViewList[i].PGIIDPEGGPI, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
+						data.m_achievedCount = GNGMCIAIKMA.HHCJCDFCLOB.OBOGIOGEBPK(m_bingoViewList[i].PGIIDPEGGPI_EventId, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
 						m_eventQuestDataList.Add(data);
 						m_bingoViewList[i].PKNLMLDKCLM_AchievedQuests = data.m_achievedCount;
 						if(data.m_achievedCount < 1)
@@ -821,7 +821,7 @@ namespace XeApp.Game.Menu
 						l3.Sort((MFDJIFIIPJD a, MFDJIFIIPJD b) =>
 						{
 							//0x9E7B24
-							return a.JJBGOIMEIPF_ItemFullId - b.JJBGOIMEIPF_ItemFullId;
+							return a.JJBGOIMEIPF_ItemId - b.JJBGOIMEIPF_ItemId;
 						});
 						yield return Co.R(PopupReceiveAll(l3, isLimit));
 					}
@@ -931,7 +931,7 @@ namespace XeApp.Game.Menu
 						Database.Instance.advResult.Setup("Menu", goScene, param);
 						goScene = TransitionUniqueId.EVENTQUEST;
 					}
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetViewed(ev.GFIBLLLHMPD_StartAdventureId);
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(ev.GFIBLLLHMPD_StartAdventureId);
 					Database.Instance.advSetup.Setup(advId);
 					MenuScene.Instance.GotoAdventure(true);
 					return;
@@ -983,10 +983,10 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				if(CheckItemPossessionLimit(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, info.JJBGOIMEIPF_ItemFullId, info.MBJIFDBEDAC_Cnt) > 0)
+				if(CheckItemPossessionLimit(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, info.JJBGOIMEIPF_ItemId, info.MBJIFDBEDAC_Cnt) > 0)
 				{
 					MFDJIFIIPJD data = new MFDJIFIIPJD();
-					data.KHEKNNFCAOI(info.JJBGOIMEIPF_ItemFullId, info.MBJIFDBEDAC_Cnt);
+					data.KHEKNNFCAOI(info.JJBGOIMEIPF_ItemId, info.MBJIFDBEDAC_Cnt);
 					l.Add(data);
 				}
 			}

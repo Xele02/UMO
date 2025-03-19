@@ -474,7 +474,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.JCHLONCMPAJ();
-				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.CPIICACGNBH(pd, _itemId, _itemCount, null, 0);
+				CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.CPIICACGNBH_AddItem(pd, _itemId, _itemCount, null, 0);
 				m_sentGiftPopupSetting.itemId = _itemId;
 				m_sentGiftPopupSetting.count = _itemCount;
 				m_sentGiftPopupSetting.sentCount = _sentCount;

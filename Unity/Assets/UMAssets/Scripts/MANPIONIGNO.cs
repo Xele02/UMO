@@ -15,7 +15,7 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva; } } //0xA168C0 DKHCGLCNKCD Slot: 4
 
 	// // RVA: 0xA168C8 Offset: 0xA168C8 VA: 0xA168C8 Slot: 32
-	public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO)
+	public override EECOJKDJIFG DAKMIKNKHMF_GetRankingInfoForIndex(int LHJCOPMMIGO)
 	{
 		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "DAKMIKNKHMF");
 		return null;
@@ -121,7 +121,11 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0xA1AB8C Offset: 0xA1AB8C VA: 0xA1AB8C Slot: 41
-	// public override int DBOLCELMBJG() { }
+	public override int DBOLCELMBJG_GetMainRankingIndex()
+	{
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "DBOLCELMBJG");
+		return 0;
+	}
 
 	// // RVA: 0xA1AC00 Offset: 0xA1AC00 VA: 0xA1AC00 Slot: 42
 	public override int DEECKJADNMJ(int LAJNCHHNLBI)
@@ -189,7 +193,11 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	// private void DENHAAGACPD(int LHJCOPMMIGO) { }
 
 	// // RVA: 0xA1E5FC Offset: 0xA1E5FC VA: 0xA1E5FC Slot: 51
-	// public override IHAEIOAKEMG ILICNKILFKJ() { }
+	public override IHAEIOAKEMG ILICNKILFKJ_GetNextReward()
+	{
+		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "ILICNKILFKJ");
+		return null;
+	}
 
 	// // RVA: 0xA1E710 Offset: 0xA1E710 VA: 0xA1E710
 	// public int ALNBFHJBGIG() { }
@@ -213,14 +221,14 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0xA201D8 Offset: 0xA201D8 VA: 0xA201D8 Slot: 11
-	public override int AELBIEDNPGB(BBHNACPENDM_ServerSaveData AHEFHIMGIBI)
+	public override int AELBIEDNPGB_GetTicketCount(BBHNACPENDM_ServerSaveData AHEFHIMGIBI)
 	{
 		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "AELBIEDNPGB");
 		return 0;
 	}
 
 	// // RVA: 0xA20584 Offset: 0xA20584 VA: 0xA20584 Slot: 54
-	public override int NGIHFKHOJOK(bool DJHLDMOPCOL = true)
+	public override int NGIHFKHOJOK_GetRankingMax(bool DJHLDMOPCOL = true)
 	{
 		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "NGIHFKHOJOK");
 		return 0;

@@ -800,7 +800,7 @@ public class GBNDFCEDNMG
 				{
 					HAEDCCLHEMN_EventBattle ev = LIKDEHHKFEH as HAEDCCLHEMN_EventBattle;
 					//LAB_016a6ab8
-					return ev.CKCPAMDDNPF.DPCFADCFMOA;
+					return ev.CKCPAMDDNPF.DPCFADCFMOA_IsWin;
 				}
 			case 15:
 				if(LIKDEHHKFEH.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
@@ -820,7 +820,7 @@ public class GBNDFCEDNMG
 					if(ev.CKCPAMDDNPF.JIMGIIBCABI_ScoreResultRank != aa3 - 1)
 						return false;
 					//LAB_016a6ab8
-					return ev.CKCPAMDDNPF.DPCFADCFMOA;
+					return ev.CKCPAMDDNPF.DPCFADCFMOA_IsWin;
 				}
 			case 17:
 				if(LIKDEHHKFEH.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
@@ -847,7 +847,7 @@ public class GBNDFCEDNMG
 							return false;
 					}
 					//LAB_016a6ab8
-					return ev.CKCPAMDDNPF.DPCFADCFMOA;
+					return ev.CKCPAMDDNPF.DPCFADCFMOA_IsWin;
 				}
 				break;
 			case 24:

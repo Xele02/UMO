@@ -89,26 +89,27 @@ namespace XeApp.Game.Menu
 			m_texUv_02 = uvMan.GetTexUVList("pop_reward_ev2_02_pack");
 			m_titleLayout = layout.FindViewByExId("sw_pop_reward_ev_check_swtbl_pop_reward_ev_fnt") as AbsoluteLayout;
 			m_rewardLayout = layout.FindViewByExId("swtbl_pop_reward_ev_fnt_swtbl_pop_reward_ev_item") as AbsoluteLayout;
+			LayoutUGUIRuntime lt = GetComponent<LayoutUGUIRuntime>();
 			for(int i = 0; i < 3; i++)
 			{
-				RectTransform rt = GetComponent<LayoutUGUIRuntime>().FindRectTransform(layout.FindViewById(string.Format("sw_pop_reward_ev_item_{0:00}", i + 1)));
+				RectTransform rt = lt.FindRectTransform(layout.FindViewById(string.Format("sw_pop_reward_ev_item_{0:00}", i + 1)));
 				RewardIcon icon = new RewardIcon();
 				icon.m_icon = rt.Find("swtexf_pop_reward_ev_item (ImageView)").GetComponent<RawImageEx>();
 				icon.m_remain = rt.Find("item_num (TextView)").GetComponent<Text>();
 				m_rewardIcon.Add(icon);
 			}
-			Text[] txts = GetComponentsInChildren<Text>(true);
+			Text[] txts = lt.GetComponentsInChildren<Text>(true);
 			IEnumerable<Text> txts2 = txts.Reverse();
 			m_unitText = txts2.Where((Text _) =>
 			{
 				//0x1A72E70
 				return _.name == "unit (TextView)";
-			}).First();
+			}).Last();
 			m_numText = txts2.Where((Text _) =>
 			{
 				//0x1A72EF0
 				return _.name == "num (TextView)";
-			}).First();
+			}).Last();
 			m_textEventHiScoreTitle = txts2.Where((Text _) =>
 			{
 				//0x1A72F70
@@ -139,7 +140,7 @@ namespace XeApp.Game.Menu
 				//0x1A731F0
 				return _.transform.parent.name == "fnt_desc_2 (AbsoluteLayout)" && _.name == "desk2 (TextView)";
 			}).First();
-			ActionButton[] btns = GetComponentsInChildren<ActionButton>(true);
+			ActionButton[] btns = lt.GetComponentsInChildren<ActionButton>(true);
 			IEnumerable<ActionButton> btns2 = btns.Reverse();
 			m_btnChangeRanking = btns2.Where((ActionButton _) =>
 			{
@@ -147,7 +148,7 @@ namespace XeApp.Game.Menu
 				return _.name == "sw_p_r_e_toggle_btn (AbsoluteLayout)";
 			}).First();
 			m_btnChangeRanking.AddOnClickCallback(OnClick_ChangeRanking);
-			RawImageEx[] imgs = GetComponentsInChildren<RawImageEx>(true);
+			RawImageEx[] imgs = lt.GetComponentsInChildren<RawImageEx>(true);
 			IEnumerable<RawImageEx> imgs2 = imgs.Reverse();
 			m_imageChangeRanking = imgs2.Where((RawImageEx _) =>
 			{
@@ -161,16 +162,15 @@ namespace XeApp.Game.Menu
 			}).First();
 			m_ScrollRect = GetComponentInChildren<ScrollRect>(true);
 			m_ScrollContent = m_ScrollRect.transform.Find("Content");
-			ScrollRect rect = m_ScrollContent.GetComponentInChildren<ScrollRect>(true);
-			rect.horizontal = false;
-			rect.vertical = true;
-			rect.horizontalScrollbarVisibility = ScrollRect.ScrollbarVisibility.AutoHide;
-			rect.verticalScrollbarVisibility = ScrollRect.ScrollbarVisibility.AutoHide;
-			VerticalLayoutGroup v = rect.gameObject.GetComponentInChildren<VerticalLayoutGroup>(true);
+			m_ScrollRect.horizontal = false;
+			m_ScrollRect.vertical = true;
+			m_ScrollRect.horizontalScrollbarVisibility = ScrollRect.ScrollbarVisibility.AutoHide;
+			m_ScrollRect.verticalScrollbarVisibility = ScrollRect.ScrollbarVisibility.AutoHide;
+			VerticalLayoutGroup v = m_ScrollRect.gameObject.GetComponentInChildren<VerticalLayoutGroup>(true);
 			v.enabled = false;
-			ContentSizeFitter c = rect.gameObject.GetComponentInChildren<ContentSizeFitter>(true);
+			ContentSizeFitter c = m_ScrollRect.gameObject.GetComponentInChildren<ContentSizeFitter>(true);
 			c.enabled = false;
-			LayoutElement l = rect.gameObject.GetComponentInChildren<LayoutElement>(true);
+			LayoutElement l = m_ScrollRect.gameObject.GetComponentInChildren<LayoutElement>(true);
 			l.enabled = false;
 			m_fxScrollView = new FlexibleItemScrollView();
 			m_fxScrollView.Initialize(m_ScrollRect);
@@ -226,8 +226,8 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < data.total_feature_list.Count;i++)
 			{
-				m_rewardIcon[i].m_icon.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_texUv_02.GetUVData(string.Format("pop_reward_ev_item_{0:00}", data.total_feature_list[i].PEEAGFNOFFO)));
-				m_rewardIcon[i].m_remain.text = string.Format("{0}/{1}", data.total_feature_list[i].LIOEOPGDBJK, data.total_feature_list[i].PEEAGFNOFFO);
+				m_rewardIcon[i].m_icon.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_texUv_02.GetUVData(string.Format("pop_reward_ev_item_{0:00}", (int)data.total_feature_list[i].PEEAGFNOFFO_ItemId)));
+				m_rewardIcon[i].m_remain.text = string.Format("{0}/{1}", data.total_feature_list[i].LIOEOPGDBJK_Received, (int)data.total_feature_list[i].MCJBEJBMJMF_Total);
 			}
 			m_rewardLayout.StartChildrenAnimGoStop(data.total_feature_list.Count > 3 ? "03" : data.total_feature_list.Count.ToString("D2"));
 		}
@@ -263,7 +263,7 @@ namespace XeApp.Game.Menu
 				else
 				{
 					m_numText.text = m_CurrentRank < 1 ? TextConstant.InvalidText : m_CurrentRank.ToString();
-					m_unitText.text = MessageManager.Instance.GetMessage("menu", "popup_event_reward_currentrank_unit");
+					m_unitText.text = Smart.Format(MessageManager.Instance.GetMessage("menu", "popup_event_reward_currentrank_unit"), Mathf.Max(0, m_CurrentRank));
 				}
 			}
 			else if(m_CurrentLabel == PopupTabButton.ButtonLabel.CumulativePoint)
@@ -309,7 +309,7 @@ namespace XeApp.Game.Menu
 					if(!m_isCounting)
 					{
 						m_numText.text = m_CurrentRank < 1 ? TextConstant.InvalidText : m_CurrentRank.ToString();
-						m_unitText.text = MessageManager.Instance.GetMessage("menu", "popup_event_reward_currentrank_unit");
+						m_unitText.text = Smart.Format(MessageManager.Instance.GetMessage("menu", "popup_event_reward_currentrank_unit"), Mathf.Max(0, m_CurrentRank));
 					}
 					else
 					{

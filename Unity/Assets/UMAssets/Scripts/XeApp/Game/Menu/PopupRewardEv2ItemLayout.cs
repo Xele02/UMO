@@ -300,11 +300,11 @@ namespace XeApp.Game.Menu
 			}
 			for(int i = 0; i < data.total_data_list.Count; i++)
 			{
-				for(int j = 0; j < data.total_data_list[i].HBHMAKNGKFK.Count; j++)
+				for(int j = 0; j < data.total_data_list[i].HBHMAKNGKFK_Items.Count; j++)
 				{
-					if(data.total_data_list[i].HBHMAKNGKFK[j].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+					if(data.total_data_list[i].HBHMAKNGKFK_Items[j].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 					{
-						AddViewPlateList(data.total_data_list[i].HBHMAKNGKFK[j].JJBGOIMEIPF_ItemFullId - 40000, string.Concat(data.total_data_list[i].FIOIKMOIJGK, "pt:", data.total_data_list[i].HBHMAKNGKFK[j].MBJIFDBEDAC_Cnt, JpStringLiterals.StringLiteral_10090), ListType.Point, str);
+						AddViewPlateList(data.total_data_list[i].HBHMAKNGKFK_Items[j].JJBGOIMEIPF_ItemId - 40000, string.Concat(data.total_data_list[i].FIOIKMOIJGK_Point, "pt:", data.total_data_list[i].HBHMAKNGKFK_Items[j].MBJIFDBEDAC_Cnt, JpStringLiterals.StringLiteral_10090), ListType.Point, str);
 					}
 				}
 			}
@@ -324,7 +324,7 @@ namespace XeApp.Game.Menu
 					{
 						if(data.rank_data_list[i].HBHMAKNGKFK[j].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 						{
-							AddViewPlateList(data.rank_data_list[i].HBHMAKNGKFK[j].JJBGOIMEIPF_ItemFullId - 40000, string.Concat(new string[6]
+							AddViewPlateList(data.rank_data_list[i].HBHMAKNGKFK[j].JJBGOIMEIPF_ItemId - 40000, string.Concat(new string[6]
 							{
 								data.rank_data_list[i].JBDGBPAAAEF_HighRank.ToString(),
 								JpStringLiterals.StringLiteral_19427,
@@ -378,7 +378,7 @@ namespace XeApp.Game.Menu
 					if(m_plateBigList[i].plateNo == plateId)
 					{
 						AddViewPlateConditions(i, str, type);
-						break;
+						return;
 					}
 				}
 			}

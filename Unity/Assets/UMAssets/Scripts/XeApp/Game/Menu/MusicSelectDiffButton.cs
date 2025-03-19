@@ -57,7 +57,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1674F00 Offset: 0x1674F00 VA: 0x1674F00
-		// public void ReleaseCache() { }
+		public void ReleaseCache()
+		{
+			m_newIcon.Release();
+		}
 
 		// // RVA: 0x1674F2C Offset: 0x1674F2C VA: 0x1674F2C
 		public void SetNew(bool isNew)

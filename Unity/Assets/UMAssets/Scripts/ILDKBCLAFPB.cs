@@ -1038,7 +1038,10 @@ public class ILDKBCLAFPB
 			}
 
 			//// RVA: 0x2024174 Offset: 0x2024174 VA: 0x2024174
-			//public void HJHBGHMNGKL(Difficulty.Type AKNELONELJK) { }
+			public void HJHBGHMNGKL_SetDifficulty(Difficulty.Type AKNELONELJK)
+			{
+				HNKJDJFFACC_Difficulty = (int)AKNELONELJK;
+			}
 		}
 		
 		public class PLHMBFFLEPB_MissionEvent
@@ -2832,11 +2835,11 @@ public class ILDKBCLAFPB
 			public int JGOJDHFAHHE_FilterScoreRank = 0; // 0x14
 			public int PGMJCBIHNHK_FilterReward = 0; // 0x18
 			public int DPDBMECAIIO_FilterUnit = 0; // 0x1C
-			private int OOJKCGDIPIH_FilterMusicLevelMin = 0x2511a53e; // 0x20
-			private int CPBHIHNOIHB_FilterMusicLevelMax = 0x2511a53e; // 0x24
+			private int OOJKCGDIPIH_FilterMusicLevelMin_Crypted = 0x2511a53e; // 0x20
+			private int CPBHIHNOIHB_FilterMusicLevelMax_Crypted = 0x2511a53e; // 0x24
 
-			//public int KHAJGNDEPMG { get; set; } 0x2031E08 MLGBACGCCEA 0x2031E18 OHHKCBNKFHD
-			//public int IKFKKJLBBBN { get; set; } 0x2031E28 FCGLOBJNLLH 0x2031E38 CPIMGEMMJJE
+			public int KHAJGNDEPMG_FilterMusicLevelMin { get { return OOJKCGDIPIH_FilterMusicLevelMin_Crypted ^ FBGGEFFJJHB; } set { OOJKCGDIPIH_FilterMusicLevelMin_Crypted = value ^ FBGGEFFJJHB; } } //0x2031E08 MLGBACGCCEA 0x2031E18 OHHKCBNKFHD
+			public int IKFKKJLBBBN_FilterMusicLevelMax { get { return CPBHIHNOIHB_FilterMusicLevelMax_Crypted ^ FBGGEFFJJHB; } set { CPBHIHNOIHB_FilterMusicLevelMax_Crypted = value ^ FBGGEFFJJHB; } } //0x2031E28 FCGLOBJNLLH 0x2031E38 CPIMGEMMJJE
 
 			// RVA: 0x2031778 Offset: 0x2031778 VA: 0x2031778
 			public LPNOICEBNEL_MusicSelect()
@@ -2858,8 +2861,8 @@ public class ILDKBCLAFPB
 				DNNHDJPNIAK.JGOJDHFAHHE_FilterScoreRank = JGOJDHFAHHE_FilterScoreRank;
 				DNNHDJPNIAK.PGMJCBIHNHK_FilterReward = PGMJCBIHNHK_FilterReward;
 				DNNHDJPNIAK.DPDBMECAIIO_FilterUnit = DPDBMECAIIO_FilterUnit;
-				DNNHDJPNIAK.OOJKCGDIPIH_FilterMusicLevelMin = OOJKCGDIPIH_FilterMusicLevelMin ^ FBGGEFFJJHB ^ DNNHDJPNIAK.FBGGEFFJJHB;
-				DNNHDJPNIAK.CPBHIHNOIHB_FilterMusicLevelMax = CPBHIHNOIHB_FilterMusicLevelMax ^ FBGGEFFJJHB ^ DNNHDJPNIAK.FBGGEFFJJHB;
+				DNNHDJPNIAK.KHAJGNDEPMG_FilterMusicLevelMin = KHAJGNDEPMG_FilterMusicLevelMin;
+				DNNHDJPNIAK.IKFKKJLBBBN_FilterMusicLevelMax = IKFKKJLBBBN_FilterMusicLevelMax;
 			}
 
 			// RVA: 0x2030AB4 Offset: 0x2030AB4 VA: 0x2030AB4
@@ -2870,8 +2873,8 @@ public class ILDKBCLAFPB
 				JGOJDHFAHHE_FilterScoreRank = JsonUtil.GetInt(OBHAFLMHAKG, "filterScoreRank", CIDINFCADGB);
 				PGMJCBIHNHK_FilterReward = JsonUtil.GetInt(OBHAFLMHAKG, "filterReward", CIDINFCADGB);
 				DPDBMECAIIO_FilterUnit = JsonUtil.GetInt(OBHAFLMHAKG, "filterUnit", CIDINFCADGB);
-				OOJKCGDIPIH_FilterMusicLevelMin = JsonUtil.GetInt(OBHAFLMHAKG, "filterMusicLevelMin", CIDINFCADGB) ^ FBGGEFFJJHB;
-				CPBHIHNOIHB_FilterMusicLevelMax = JsonUtil.GetInt(OBHAFLMHAKG, "filterMusicLevelMax", CIDINFCADGB) ^ FBGGEFFJJHB;
+				KHAJGNDEPMG_FilterMusicLevelMin = JsonUtil.GetInt(OBHAFLMHAKG, "filterMusicLevelMin", CIDINFCADGB);
+				IKFKKJLBBBN_FilterMusicLevelMax = JsonUtil.GetInt(OBHAFLMHAKG, "filterMusicLevelMax", CIDINFCADGB);
 			}
 
 			//// RVA: 0x202EA64 Offset: 0x202EA64 VA: 0x202EA64
@@ -2883,8 +2886,8 @@ public class ILDKBCLAFPB
 				res["filterScoreRank"] = JGOJDHFAHHE_FilterScoreRank;
 				res["filterReward"] = PGMJCBIHNHK_FilterReward;
 				res["filterUnit"] = DPDBMECAIIO_FilterUnit;
-				res["filterMusicLevelMin"] = OOJKCGDIPIH_FilterMusicLevelMin ^ FBGGEFFJJHB;
-				res["filterMusicLevelMax"] = CPBHIHNOIHB_FilterMusicLevelMax ^ FBGGEFFJJHB;
+				res["filterMusicLevelMin"] = KHAJGNDEPMG_FilterMusicLevelMin;
+				res["filterMusicLevelMax"] = IKFKKJLBBBN_FilterMusicLevelMax;
 				return res;
 			}
 
@@ -2896,8 +2899,8 @@ public class ILDKBCLAFPB
 					ILEKEPJBFDP.JGOJDHFAHHE_FilterScoreRank == GEPALDIIDPC.JGOJDHFAHHE_FilterScoreRank &&
 					ILEKEPJBFDP.PGMJCBIHNHK_FilterReward == GEPALDIIDPC.PGMJCBIHNHK_FilterReward &&
 					ILEKEPJBFDP.DPDBMECAIIO_FilterUnit == GEPALDIIDPC.DPDBMECAIIO_FilterUnit &&
-					(ILEKEPJBFDP.OOJKCGDIPIH_FilterMusicLevelMin ^ ILEKEPJBFDP.FBGGEFFJJHB) == (GEPALDIIDPC.OOJKCGDIPIH_FilterMusicLevelMin ^ GEPALDIIDPC.FBGGEFFJJHB) &&
-					(ILEKEPJBFDP.CPBHIHNOIHB_FilterMusicLevelMax ^ ILEKEPJBFDP.FBGGEFFJJHB) == (GEPALDIIDPC.CPBHIHNOIHB_FilterMusicLevelMax ^ GEPALDIIDPC.FBGGEFFJJHB))
+					ILEKEPJBFDP.KHAJGNDEPMG_FilterMusicLevelMin == GEPALDIIDPC.KHAJGNDEPMG_FilterMusicLevelMin &&
+					ILEKEPJBFDP.IKFKKJLBBBN_FilterMusicLevelMax == GEPALDIIDPC.IKFKKJLBBBN_FilterMusicLevelMax)
 					return true;
 				return false;
 			}

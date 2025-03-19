@@ -360,7 +360,7 @@ namespace XeApp.Game.Menu
 				m_item_icon_list[i].get_icon.enabled = m_reward_list[i].HMEOAKCLKJE_IsReceived;
 				m_item_icon_list[i].image.enabled = false;
 				m_item_icon_list[i].image2.enabled = false;
-				MenuScene.Instance.ItemTextureCache.Load(m_reward_list[i].GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId, (IiconTexture icon) =>
+				MenuScene.Instance.ItemTextureCache.Load(m_reward_list[i].GOOIIPFHOIG.JJBGOIMEIPF_ItemId, (IiconTexture icon) =>
 				{
 					//0xEFD298
 					icon.Set(m_item_icon_list[index].image);
@@ -370,7 +370,7 @@ namespace XeApp.Game.Menu
 				});
 			}
 			m_item_name.text = JpStringLiterals.StringLiteral_15778;
-			SetItemImage(m_reward_list[m_reward_list.Count - 1].GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId);
+			SetItemImage(m_reward_list[m_reward_list.Count - 1].GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
 			m_point_item_num.SetNumber(m_reward_list[m_reward_list.Count - 1].GOOIIPFHOIG.MBJIFDBEDAC_Cnt, 0);
 			m_next_point = data.JBFLCHFEIGL.OJELCGDDAOM_MissingPoint;
 			SetEpiItemImage(item_type + 80001);

@@ -31,16 +31,16 @@ namespace XeApp.Game.Menu
 			{
 				if(Item != null)
 				{
-					if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(Item.JJBGOIMEIPF_ItemFullId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+					if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(Item.JJBGOIMEIPF_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 					{
 						if(sceneData == null)
 							sceneData = new GCIJNCFDNON_SceneInfo();
-						sceneData.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(Item.JJBGOIMEIPF_ItemFullId), null, null, 0, 0, 0, false, 0, 0);
+						sceneData.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(Item.JJBGOIMEIPF_ItemId), null, null, 0, 0, 0, false, 0, 0);
 						MenuScene.Instance.ShowSceneStatusPopupWindow(sceneData, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, closeCallback, true, true, SceneStatusParam.PageSave.None, false);
 					}
 					else
 					{
-						MenuScene.Instance.ShowItemDetail(Item.JJBGOIMEIPF_ItemFullId, Item.MBJIFDBEDAC_Cnt, closeCallback);
+						MenuScene.Instance.ShowItemDetail(Item.JJBGOIMEIPF_ItemId, Item.MBJIFDBEDAC_Cnt, closeCallback);
 					}
 				}
 			}
@@ -72,16 +72,16 @@ namespace XeApp.Game.Menu
 			{
 				if(Data != null)
 				{
-					if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(Data.JJBGOIMEIPF_ItemFullId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+					if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(Data.JJBGOIMEIPF_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 					{
 						if(sceneData == null)
 							sceneData = new GCIJNCFDNON_SceneInfo();
-						sceneData.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(Data.JJBGOIMEIPF_ItemFullId), null, null, 0, 0, 0, false, 0, 0);
+						sceneData.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(Data.JJBGOIMEIPF_ItemId), null, null, 0, 0, 0, false, 0, 0);
 						MenuScene.Instance.ShowSceneStatusPopupWindow(sceneData, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, closeCallback, true, true, SceneStatusParam.PageSave.None, false);
 					}
 					else
 					{
-						MenuScene.Instance.ShowItemDetail(Data.JJBGOIMEIPF_ItemFullId, Data.MBJIFDBEDAC_Cnt, closeCallback);
+						MenuScene.Instance.ShowItemDetail(Data.JJBGOIMEIPF_ItemId, Data.MBJIFDBEDAC_Cnt, closeCallback);
 					}
 				}
 			}
@@ -293,7 +293,7 @@ namespace XeApp.Game.Menu
 				is_counting = cont.NGOFCFJHOMI_Status == KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6;
 				curr_point = (int)cont.FBGDBGKNKOD_GetCurrentPoint();
 				curr_rank = cont.CDINKAANIAA_Rank[0];
-				total_data_list = cont.PFPJHJJAGAG;
+				total_data_list = cont.PFPJHJJAGAG_Rewards;
 				total_feature_list = cont.MGEIBMIGILL();
 				rank_data_list = cont.EGIPGHCDMII[0];
 				this.isRaidBossSelect = isRaidBossSelect;
@@ -401,18 +401,18 @@ namespace XeApp.Game.Menu
 			int a1 = 0;
 			for(int i = 0; i < viewData.total_data_list.Count; i++)
 			{
-				for(int j = 0; j < viewData.total_data_list[i].HBHMAKNGKFK.Count; j++)
+				for(int j = 0; j < viewData.total_data_list[i].HBHMAKNGKFK_Items.Count; j++)
 				{
 					PointListItem it = new PointListItem();
-					it.Top = new Vector2(0, -((a1 + i) * 104 + 10));
+					it.Top = new Vector2(0, -(a1 * 104 + 10));
 					it.Height = 104;
 					it.ResourceType = 3;
-					it.Item = viewData.total_data_list[i].HBHMAKNGKFK[j];
-					it.NeedPoint = viewData.total_data_list[i].FIOIKMOIJGK;
-					it.IsGet = viewData.total_data_list[i].HMEOAKCLKJE;
-					it.isGoldFrame = it.Item.JOPPFEHKNFO;
+					it.Item = viewData.total_data_list[i].HBHMAKNGKFK_Items[j];
+					it.NeedPoint = viewData.total_data_list[i].FIOIKMOIJGK_Point;
+					it.IsGet = viewData.total_data_list[i].HMEOAKCLKJE_IsReceived;
+					it.isGoldFrame = it.Item.JOPPFEHKNFO_IsGold;
 					m_pointList.Add(it);
-					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(it.Item.JJBGOIMEIPF_ItemFullId));
+					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(it.Item.JJBGOIMEIPF_ItemId));
 					a1++;
 				}
 			}
@@ -434,9 +434,9 @@ namespace XeApp.Game.Menu
 					it.ResourceType = 2;
 					it.Data = viewData.rank_data_list[i].HBHMAKNGKFK[j];
 					it.IsGet = false;
-					it.isGoldFrame = it.Data.JOPPFEHKNFO;
+					it.isGoldFrame = it.Data.JOPPFEHKNFO_IsGold;
 					m_rankingList.Add(it);
-					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(it.Data.JJBGOIMEIPF_ItemFullId, 0));
+					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(it.Data.JJBGOIMEIPF_ItemId, 0));
 				}
 				if(viewData.rank_data_list[i].HBHMAKNGKFK.Count > 0)
 					f1 += (viewData.rank_data_list[i].HBHMAKNGKFK.Count >> 1) * 104 + 104;
@@ -461,9 +461,9 @@ namespace XeApp.Game.Menu
 						it.ResourceType = 2;
 						it.Data = viewData.rank_data_list2[i].HBHMAKNGKFK[j];
 						it.IsGet = false;
-						it.isGoldFrame = it.Data.JOPPFEHKNFO;
+						it.isGoldFrame = it.Data.JOPPFEHKNFO_IsGold;
 						m_rankingList.Add(it);
-						KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(it.Data.JJBGOIMEIPF_ItemFullId, 0));
+						KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(it.Data.JJBGOIMEIPF_ItemId, 0));
 					}
 					if(viewData.rank_data_list2[i].HBHMAKNGKFK.Count > 0)
 						f1 += (viewData.rank_data_list2[i].HBHMAKNGKFK.Count >> 1) * 104 + 104;
@@ -896,12 +896,12 @@ namespace XeApp.Game.Menu
 					}
 				}
 				sm_Setting.DefaultTab = DEFAULT_TAB;
-				PopupWindowManager.Show(sm_Setting, buttonCallback, (IPopupContent content, PopupTabButton.ButtonLabel label) =>
-				{
-					//0x1A6A9B8
-					(content as PopupRewardEvCheck).ChangeTab(label);
-				}, null, null);
 			}
+			PopupWindowManager.Show(sm_Setting, buttonCallback, (IPopupContent content, PopupTabButton.ButtonLabel label) =>
+			{
+				//0x1A6A9B8
+				(content as PopupRewardEvCheck).ChangeTab(label);
+			}, null, null);
 			yield break;
 		}
 

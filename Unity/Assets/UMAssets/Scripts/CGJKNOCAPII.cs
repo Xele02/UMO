@@ -5,11 +5,11 @@ using XeApp.Game.Menu;
 
 public class CGJKNOCAPII
 {
-	public string JOPOPMLFINI_MasterName; // 0x8
-	public string DGCOMDILAKM; // 0xC
-	public int PGIIDPEGGPI; // 0x10
+	public string JOPOPMLFINI_QuastName; // 0x8
+	public string DGCOMDILAKM_EventName; // 0xC
+	public int PGIIDPEGGPI_EventId; // 0x10
 	public int JHAOHBNPMNA_EventId; // 0x14
-	public int LFCOJABLOEN; // 0x18
+	public int LFCOJABLOEN_EventId; // 0x18
 	public long KINJOEIAHFK_Start; // 0x20
 	public long PCCFAKEOBIC_End; // 0x28
 	public int BCOKKAALGHC; // 0x30
@@ -36,10 +36,10 @@ public class CGJKNOCAPII
 		long l4 = 0;
 		bool b1 = false;
 		CGJKNOCAPII res = new CGJKNOCAPII();
-		res.JOPOPMLFINI_MasterName = FBFNJMKPBBA.JOPOPMLFINI_QuestId;
-		res.LFCOJABLOEN = FBFNJMKPBBA.PGIIDPEGGPI_EventId;
-		res.DGCOMDILAKM = FBFNJMKPBBA.DGCOMDILAKM_EventName;
-		res.PGIIDPEGGPI = FBFNJMKPBBA.PGIIDPEGGPI_EventId;
+		res.JOPOPMLFINI_QuastName = FBFNJMKPBBA.JOPOPMLFINI_QuestId;
+		res.LFCOJABLOEN_EventId = FBFNJMKPBBA.PGIIDPEGGPI_EventId;
+		res.DGCOMDILAKM_EventName = FBFNJMKPBBA.DGCOMDILAKM_EventName;
+		res.PGIIDPEGGPI_EventId = FBFNJMKPBBA.PGIIDPEGGPI_EventId;
 		res.JHAOHBNPMNA_EventId = FBFNJMKPBBA.PGIIDPEGGPI_EventId;
 		res.COAMJFMEIBF = FBFNJMKPBBA;
 		if(FBFNJMKPBBA.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6/*6*/)
@@ -63,10 +63,10 @@ public class CGJKNOCAPII
 		res.BHANMJKCCBC_QuestAchievedCountText = "";
 		if(PNGKOHDEPFE)
 		{
-			List<FKMOKDCJFEN> l = QuestUtility.GetEventQuestList(res.JOPOPMLFINI_MasterName);
+			List<FKMOKDCJFEN> l = QuestUtility.GetEventQuestList(res.JOPOPMLFINI_QuastName);
 			if(l == null)
 			{
-				l = FKMOKDCJFEN.KJHKBBBDBAL(res.JOPOPMLFINI_MasterName, false, res.BCOKKAALGHC);
+				l = FKMOKDCJFEN.KJHKBBBDBAL(res.JOPOPMLFINI_QuastName, false, res.BCOKKAALGHC);
 			}
 			PKNLMLDKCLM_AchievedQuests = QuestUtility.GetQuestCountByStatus(l, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
 			if(PKNLMLDKCLM_AchievedQuests > 0)
@@ -140,11 +140,11 @@ public class CGJKNOCAPII
 	public CGJKNOCAPII NLCNDMLOCBC(int APFDNBGMMMM, bool PNGKOHDEPFE = true)
 	{
 		CGJKNOCAPII res = new CGJKNOCAPII();
-		res.JOPOPMLFINI_MasterName = "";
-		res.DGCOMDILAKM = "";
-		res.PGIIDPEGGPI = APFDNBGMMMM;
+		res.JOPOPMLFINI_QuastName = "";
+		res.DGCOMDILAKM_EventName = "";
+		res.PGIIDPEGGPI_EventId = APFDNBGMMMM;
 		res.JHAOHBNPMNA_EventId = GNGMCIAIKMA.HHCJCDFCLOB.CBMJAPJKBNL(APFDNBGMMMM);
-		res.LFCOJABLOEN = GNGMCIAIKMA.HHCJCDFCLOB.CBMJAPJKBNL(APFDNBGMMMM);
+		res.LFCOJABLOEN_EventId = GNGMCIAIKMA.HHCJCDFCLOB.CBMJAPJKBNL(APFDNBGMMMM);
 		res.COAMJFMEIBF = null;
 		JKICPBIIHNE_Bingo.HNOGDJFJGPM bingo = GNGMCIAIKMA.HHCJCDFCLOB.EBEDAPJFHCE_GetBingo(APFDNBGMMMM);
 		res.KINJOEIAHFK_Start = bingo.PDBPFJJCADD_StartTime;

@@ -83,7 +83,7 @@ public class MKIKFJKPEHK
 				}
 				else
 				{
-					return ev.AELBIEDNPGB(null) < KLOOIJIDKGO_Cost[OIACNLKAIFO] ? IMIDFBNGHCG.FKLMPGJPDLL_2 : IMIDFBNGHCG.DCFJEBLEELJ_0;
+					return ev.AELBIEDNPGB_GetTicketCount(null) < KLOOIJIDKGO_Cost[OIACNLKAIFO] ? IMIDFBNGHCG.FKLMPGJPDLL_2 : IMIDFBNGHCG.DCFJEBLEELJ_0;
 				}
 			}
 		}
@@ -107,7 +107,7 @@ public class MKIKFJKPEHK
             IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false);
 			if(ev != null)
 			{
-				return ev.AELBIEDNPGB(null);
+				return ev.AELBIEDNPGB_GetTicketCount(null);
 			}
 			return 0;
         }

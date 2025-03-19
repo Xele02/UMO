@@ -98,10 +98,12 @@ namespace XeApp.Game.Menu
 			{
 				if(elem == m_elems[i])
 				{
+					m_elems[i].SetButtonLock(true);
 					m_elems[i].SetButtonOn();
 				}
 				else
 				{
+					m_elems[i].SetButtonLock(false);
 					m_elems[i].SetButtonOff();
 				}
 			}

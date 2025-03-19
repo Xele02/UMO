@@ -16,7 +16,7 @@ namespace XeApp.Game.Menu
 		public override string BundleName { get { return "ly/015.xab"; } } //0xF86450
 		public override bool IsAssetBundle { get { return true; } } //0xF864AC
 		public override bool IsPreload { get { return true; } } //0xF864B4
-		//public List<IKDICBBFBMI_EventBase.GNPOABJANKO> EpisodeList { get; } 0xF85C50
+		public List<IKDICBBFBMI_EventBase.GNPOABJANKO> EpisodeList { get { return episodeList; } } //0xF85C50
 		public CIKHPBBNEIM ViewEpisodeBonus { get; set; } // 0x38
 
 		//// RVA: 0xF864C4 Offset: 0xF864C4 VA: 0xF864C4

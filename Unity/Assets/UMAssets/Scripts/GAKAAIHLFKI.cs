@@ -16,13 +16,13 @@ public class IMKNEDJDNGC
 	public sbyte HMKFHLLAKCI_WindowSizeId; // 0x27
 	public string OPFGFINHFCE_Name; // 0x28
 	public string LJGOOOMOMMA_Desc; // 0x2C
-	public bool GAIEHFCHAOK; // 0x30
-	public bool EDCBHGECEBE; // 0x31
+	public bool GAIEHFCHAOK_New; // 0x30
+	public bool EDCBHGECEBE_Read; // 0x31
 
 	//// RVA: 0x9FB16C Offset: 0x9FB16C VA: 0x9FB16C
 	public void FCFDHFAJKPB()
 	{
-		if (EDCBHGECEBE)
+		if (EDCBHGECEBE_Read)
 			return;
 		DDEMMEPBOIA_Sns.EFIFBJGKPJF saveSns = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.FLHMJHBOBEA_Sns.HAJEJPFGILG[AIPLIEMLHGC - 1];
 		SNSRoomTextData.Header header = Database.Instance.roomText.textData.FindHeader(AJIDLAGFPGM);
@@ -52,7 +52,7 @@ public class GAKAAIHLFKI
 		{
 			if (JHNMKKNEENE < CNEOPOINCBA[i].BEBJKJKBOGH_Date)
 				return i;
-			if(CNEOPOINCBA[i].GAIEHFCHAOK)
+			if(CNEOPOINCBA[i].GAIEHFCHAOK_New)
 			{
 				int a = i;
 				if(BAOMADKMHKP)
@@ -62,7 +62,7 @@ public class GAKAAIHLFKI
 					long now = Utility.GetCurrentUnixTime();
 					if (now - LKGLMCFEDBF >= CNEOPOINCBA[i].FMDCAFCHBJH_Offset)
 					{
-						CNEOPOINCBA[i].GAIEHFCHAOK = false;
+						CNEOPOINCBA[i].GAIEHFCHAOK_New = false;
 						CNEOPOINCBA[i].FCFDHFAJKPB();
 						a = i + 1;
 						LKGLMCFEDBF = now;
@@ -70,7 +70,7 @@ public class GAKAAIHLFKI
 				}
 				if (!DGLDFDLGGBB)
 					return a;
-				CNEOPOINCBA[i].GAIEHFCHAOK = false;
+				CNEOPOINCBA[i].GAIEHFCHAOK_New = false;
 				CNEOPOINCBA[i].FCFDHFAJKPB();
 				LKGLMCFEDBF = JHNMKKNEENE;
 				return a + 1;
@@ -99,7 +99,7 @@ public class GAKAAIHLFKI
 		int res = 0;
 		for(int i = 0; i < CNEOPOINCBA.Count; i++)
 		{
-			if(!MIENHPPDMNG || !CNEOPOINCBA[i].EDCBHGECEBE)
+			if(!MIENHPPDMNG || !CNEOPOINCBA[i].EDCBHGECEBE_Read)
 			{
 				if (JHNMKKNEENE < CNEOPOINCBA[i].BEBJKJKBOGH_Date)
 					return res;
@@ -118,7 +118,7 @@ public class GAKAAIHLFKI
 	{
 		for(int i = CNEOPOINCBA.Count - 1; i >= 0; i--)
 		{
-			if(!CNEOPOINCBA[i].EDCBHGECEBE)
+			if(!CNEOPOINCBA[i].EDCBHGECEBE_Read)
 			{
 				if (JHNMKKNEENE < CNEOPOINCBA[i].BEBJKJKBOGH_Date)
 					return false;

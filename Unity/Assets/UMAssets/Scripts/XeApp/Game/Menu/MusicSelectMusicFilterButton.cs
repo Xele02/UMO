@@ -23,7 +23,7 @@ namespace XeApp.Game.Menu
 		private Sprite m_spriteFilterOff; // 0x18
 		[SerializeField]
 		private Sprite m_spriteFilterOn; // 0x1C
-		// private bool m_isEntered; // 0x20
+		private bool m_isEntered; // 0x20
 
 		public Action OnClickButtonListener { private get; set; } // 0x24
 
@@ -32,7 +32,8 @@ namespace XeApp.Game.Menu
 		{
 			m_button.AddOnClickCallback(() => {
 				//0x16792BC
-				TodoLogger.LogNotImplemented("MusicSelectMusicFilterButton Click");
+				if(OnClickButtonListener != null)
+					OnClickButtonListener();
 			});
 		}
 
@@ -42,17 +43,23 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x16791A8 Offset: 0x16791A8 VA: 0x16791A8
 		public void TryLeave()
 		{
-			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectMusicFilterButton TryLeave");
+			if(m_isEntered)
+				Leave();
 		}
 
 		// // RVA: 0x167916C Offset: 0x167916C VA: 0x167916C
 		public void Enter()
 		{
-			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectMusicFilterButton Enter");
+			m_isEntered = true;
+			m_inOut.Enter(false, null);
 		}
 
 		// // RVA: 0x16791B8 Offset: 0x16791B8 VA: 0x16791B8
-		// public void Leave() { }
+		public void Leave()
+		{
+			m_isEntered = false;
+			m_inOut.Leave(false, null);
+		}
 
 		// // RVA: 0x16791F4 Offset: 0x16791F4 VA: 0x16791F4
 		// public void Show() { }
@@ -60,20 +67,27 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1679240 Offset: 0x1679240 VA: 0x1679240
 		public void Hide()
 		{
-			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectMusicFilterButton Hide");
+			m_isEntered = false;
+			m_inOut.Leave(0, false);
 		}
 
 		// // RVA: 0x1679288 Offset: 0x1679288 VA: 0x1679288
 		public bool IsPlaying()
 		{
-			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectMusicFilterButton IsPlaying");
-			return false;
+			return m_inOut.IsPlaying();
 		}
 
 		// // RVA: 0x1679084 Offset: 0x1679084 VA: 0x1679084
-		public void SetButtonStatus(MusicSelectMusicFilterButton.ButtonStatusType status)
+		public void SetButtonStatus(ButtonStatusType status)
 		{
-			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectMusicFilterButton SetButtonStatus");
+			if(status == ButtonStatusType.FilterOn)
+			{
+				m_buttonImage.sprite = m_spriteFilterOn;
+			}
+			else if(status == ButtonStatusType.FilterOff)
+			{
+				m_buttonImage.sprite = m_spriteFilterOff;
+			}
 		}
 	}
 }

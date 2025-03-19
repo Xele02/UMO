@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Events;
+using XeApp.Core;
 using XeApp.Game.Common;
 using XeApp.Game.Common.uGUI;
 using XeApp.Game.Tutorial;
@@ -158,21 +159,21 @@ namespace XeApp.Game.Menu
 		{
 			if(m_eventCtrl != null)
 			{
-				for(int i = 0; i < m_eventCtrl.PFPJHJJAGAG.Count; i++)
+				for(int i = 0; i < m_eventCtrl.PFPJHJJAGAG_Rewards.Count; i++)
 				{
-					for(int j = 0; j < m_eventCtrl.PFPJHJJAGAG[i].HBHMAKNGKFK.Count; j++)
+					for(int j = 0; j < m_eventCtrl.PFPJHJJAGAG_Rewards[i].HBHMAKNGKFK_Items.Count; j++)
 					{
-						if(m_eventCtrl.PFPJHJJAGAG[i].HBHMAKNGKFK[j].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.KNHFAHFCCBK_SnsItem)
+						if(m_eventCtrl.PFPJHJJAGAG_Rewards[i].HBHMAKNGKFK_Items[j].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.KNHFAHFCCBK_SnsItem)
 						{
 							for(int k = 0; k < m_snsData.NPKPBDIDBBG_RoomData.Count; k++)
 							{
 								for(int l = 0; l < m_snsData.NPKPBDIDBBG_RoomData[k].CNEOPOINCBA.Count; l++)
 								{
-									if(m_snsData.NPKPBDIDBBG_RoomData[k].CNEOPOINCBA[l].AIPLIEMLHGC == m_eventCtrl.PFPJHJJAGAG[i].HBHMAKNGKFK[j].NNFNGLJOKKF_ItemId)
+									if(m_snsData.NPKPBDIDBBG_RoomData[k].CNEOPOINCBA[l].AIPLIEMLHGC == m_eventCtrl.PFPJHJJAGAG_Rewards[i].HBHMAKNGKFK_Items[j].NNFNGLJOKKF_ItemId)
 									{
-										if(!m_snsData.NPKPBDIDBBG_RoomData[k].CNEOPOINCBA[l].EDCBHGECEBE)
+										if(!m_snsData.NPKPBDIDBBG_RoomData[k].CNEOPOINCBA[l].EDCBHGECEBE_Read)
 										{
-											if(m_snsData.NPKPBDIDBBG_RoomData[k].CNEOPOINCBA[l].GAIEHFCHAOK)
+											if(m_snsData.NPKPBDIDBBG_RoomData[k].CNEOPOINCBA[l].GAIEHFCHAOK_New)
 												return true;
 										}
 									}
@@ -1125,7 +1126,7 @@ namespace XeApp.Game.Menu
                     GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(ev.GFIBLLLHMPD_StartAdventureId);
 					if(adv != null)
 					{
-						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetViewed(ev.GFIBLLLHMPD_StartAdventureId);
+						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(ev.GFIBLLLHMPD_StartAdventureId);
 						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(ev.GFIBLLLHMPD_StartAdventureId, OAGBCBBHMPF.DKAMMIHBINF.IDINJDEBPKP_6);
 						Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
 						Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTMUSICSELECT, new AdvSetupParam() { eventUniqueId = eventId });
@@ -1157,7 +1158,7 @@ namespace XeApp.Game.Menu
                     GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(ev.GFIBLLLHMPD_StartAdventureId);
 					if(adv != null)
 					{
-						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetViewed(ev.GFIBLLLHMPD_StartAdventureId);
+						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(ev.GFIBLLLHMPD_StartAdventureId);
 						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(ev.GFIBLLLHMPD_StartAdventureId, OAGBCBBHMPF.DKAMMIHBINF.IDINJDEBPKP_6);
 						Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
 						Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTBATTLE, new AdvSetupParam() { eventUniqueId = eventId });
@@ -1982,7 +1983,7 @@ namespace XeApp.Game.Menu
 			if(!CheckEventLimit())
 			{
 				CGJKNOCAPII d = new CGJKNOCAPII();
-				d.BJKJLDPDEFA(m_eventCtrl, true);
+				d = d.BJKJLDPDEFA(m_eventCtrl, true);
 				MenuScene.Instance.Call(TransitionList.Type.QUEST_SELECT, new QuestTopFormQuestListArgs(d), true);
 			}
 		}
@@ -2534,7 +2535,26 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F47FC Offset: 0x6F47FC VA: 0x6F47FC
 		// // RVA: 0xF488FC Offset: 0xF488FC VA: 0xF488FC
-		// protected IEnumerator Co_LoadAssetBundle_LoginBonusPopup() { }
+		protected IEnumerator Co_LoadAssetBundle_LoginBonusPopup()
+		{
+			FontInfo systemFont; // 0x14
+			AssetBundleLoadLayoutOperationBase lytOp; // 0x18
+
+			//0xF4FC1C
+			m_loadingTicketGainedPopup = true;
+			m_ticketGainedPopupSetting = new TicketGainedPopupSetting();
+			systemFont = GameManager.Instance.GetSystemFont();
+			lytOp = AssetBundleManager.LoadLayoutAsync(m_ticketGainedPopupSetting.BundleName, m_ticketGainedPopupSetting.AssetName);
+			yield return lytOp;
+			yield return Co.R(lytOp.InitializeLayoutCoroutine(systemFont, (GameObject instance) =>
+			{
+				//0xF4A1AC
+				m_ticketGainedPopupSetting.SetContent(instance);
+			}));
+			m_ticketGainedPopupSetting.SetParent(transform);
+			AssetBundleManager.UnloadAssetBundle(m_ticketGainedPopupSetting.BundleName, false);
+			m_loadingTicketGainedPopup = false;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6F4874 Offset: 0x6F4874 VA: 0x6F4874
 		// // RVA: 0xF489A8 Offset: 0xF489A8 VA: 0xF489A8
@@ -2553,7 +2573,7 @@ namespace XeApp.Game.Menu
 			if(a_controller.GJMGKBDGMOP(t))
 			{
 				m_showTicketGainedPopup = true;
-				itemId = a_controller.BHABCGJCGNO.JJBGOIMEIPF_ItemFullId;
+				itemId = a_controller.BHABCGJCGNO.JJBGOIMEIPF_ItemId;
 				itemCount = a_controller.BHABCGJCGNO.MBJIFDBEDAC_Cnt;
 				bool done = false;
 				CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
@@ -2622,7 +2642,7 @@ namespace XeApp.Game.Menu
 				for(i = 0; i < m_eventCtrl.KGBCKPKLKHM_RewardItems.Count; i++)
 				{
 					m_itemReceivePopupSetting.TitleText = MessageManager.Instance.GetMessage("menu", m_eventCtrl.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6 ? "popup_event_login_prologue_title" : "popup_event_login_epilogue_title");
-					m_itemReceivePopupSetting.ItemId = m_eventCtrl.KGBCKPKLKHM_RewardItems[i].JJBGOIMEIPF_ItemFullId;
+					m_itemReceivePopupSetting.ItemId = m_eventCtrl.KGBCKPKLKHM_RewardItems[i].JJBGOIMEIPF_ItemId;
 					m_itemReceivePopupSetting.Count = m_eventCtrl.KGBCKPKLKHM_RewardItems[i].MBJIFDBEDAC_Cnt;
 					m_itemReceivePopupSetting.IsPresentBox = true;
 					m_itemReceivePopupSetting.Buttons = new ButtonInfo[1]
@@ -2722,7 +2742,7 @@ namespace XeApp.Game.Menu
 			category = 0;
 			if(!CanDoUnitDanceFocus(line6Mode))
 			{
-				if(CanDoUnitDanceFocus(!line6Mode))
+				if(!CanDoUnitDanceFocus(!line6Mode))
 					return false;
 				line6Mode = !line6Mode;
 			}

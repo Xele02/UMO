@@ -169,7 +169,7 @@ public class GJFMKMJOFMB
 					MFDJIFIIPJD data2 = data.HBHMAKNGKFK.Find((MFDJIFIIPJD GHPLINIACBB) =>
 					{
 						//0xAAD358
-						return GHPLINIACBB.JJBGOIMEIPF_ItemFullId == a;
+						return GHPLINIACBB.JJBGOIMEIPF_ItemId == a;
 					});
 					if(data2 == null)
 					{

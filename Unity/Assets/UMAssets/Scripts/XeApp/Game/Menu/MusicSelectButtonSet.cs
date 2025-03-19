@@ -397,7 +397,7 @@ namespace XeApp.Game.Menu
 			{
 				m_symbolButtonStyles.Add(CreateSymbol(string.Format("btn{0:D2}_style", i + 1), layout));
 			}
-			IsLoaded();
+			Loaded();
 			return true;
 		}
 	}

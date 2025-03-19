@@ -572,7 +572,7 @@ public class FKMOKDCJFEN
 								continue;
 							FKMOKDCJFEN data = new FKMOKDCJFEN();
 							data.KAFDDLPNOCF(i + 1, time, ev, GEDMCDAPPNH);
-							if(d >= 2 || time >= data.KJBGCLPMLCG_Start && data.GJFPFFBAKGK_End >= time)
+							if(d >= 2 || (time >= data.KJBGCLPMLCG_Start && data.GJFPFFBAKGK_End >= time) || (data.KJBGCLPMLCG_Start == 0 && data.GJFPFFBAKGK_End == 0))
 							{
 								res.Add(data);
 							}

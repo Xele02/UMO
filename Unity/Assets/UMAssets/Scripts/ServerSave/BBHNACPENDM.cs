@@ -898,16 +898,17 @@ public class BBHNACPENDM_ServerSaveData
 				KCCLEHLLOFG_Common.KFKDMBPNLJK_BlockInvalid = true;
 				return;
 			}
-			for(int i = 164; i > 1; i--)
+			for(int i = 164; (i - 139) > 0; i--)
 			{
 				embl2 = OFAJDLJBMEM_Emblem.MDKOHOCONKE[i];
 				if (embl2.FJODMPGPDDD_Unlocked)
 				{
-					if (KCCLEHLLOFG_Common.CPAGIICKKNN_EvBtlClsu <= i - 139)
+					if (KCCLEHLLOFG_Common.CPAGIICKKNN_EvBtlClsu <= (i - 139))
+					{
+						KCCLEHLLOFG_Common.CPAGIICKKNN_EvBtlClsu = i - 138;
+						KCCLEHLLOFG_Common.KFKDMBPNLJK_BlockInvalid = true;
 						return;
-					KCCLEHLLOFG_Common.CPAGIICKKNN_EvBtlClsu = i - 138;
-					KCCLEHLLOFG_Common.KFKDMBPNLJK_BlockInvalid = true;
-					return;
+					}
 				}
 			}
 		}

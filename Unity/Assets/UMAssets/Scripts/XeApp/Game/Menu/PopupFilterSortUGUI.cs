@@ -452,17 +452,55 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1C8F4E4 Offset: 0x1C8F4E4 VA: 0x1C8F4E4
 		private void InitializeMusicSelect()
 		{
-			TodoLogger.LogError(TodoLogger.OldMusicSelect, "InitializeMusicSelect");
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			int music_level_limitmin = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("music_level_limitmin", 1);
+			int music_level_limitmax = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("music_level_limitmax", 25);
+			(m_setting.m_list_parts[0].m_base as PopupFilterSortUGUIParts_Title_H1).SetTitle(bk.GetMessageByLabel("popup_filter_title_h1"));
+			(m_setting.m_list_parts[0].m_base as PopupFilterSortUGUIParts_Title_H1).SetButton(bk.GetMessageByLabel("popup_sort_filter_reset"), ResetMusicSelectFilter);
+			(m_setting.m_list_parts[1].m_base as PopupFilterSortUGUIParts_Title_H2).SetTitle(bk.GetMessageByLabel("popup_filter_difficulty_title_h2"));
+			(m_setting.m_list_parts[2].m_base as PopupFilterSortUGUIParts_FilterDifficulty).SetItem(m_setting.m_param.MusicSelectParam.IsLine6Mode);
+			(m_setting.m_list_parts[2].m_base as PopupFilterSortUGUIParts_FilterDifficulty).SetDifficulty(m_setting.m_param.MusicSelectParam.Difficulty);
+			(m_setting.m_list_parts[4].m_base as PopupFilterSortUGUIParts_Title_H2).SetTitle(bk.GetMessageByLabel("popup_filter_music_level_title_h2"));
+			(m_setting.m_list_parts[5].m_base as PopupFilterSortUGUIParts_RangeSlider).SetRangeLimit(music_level_limitmin, music_level_limitmax);
+			(m_setting.m_list_parts[5].m_base as PopupFilterSortUGUIParts_RangeSlider).SetMin(m_setting.m_param.EnableSave && GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.KGDILGLNKFM_MusicSelect.KHAJGNDEPMG_FilterMusicLevelMin != 0 ? GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.KGDILGLNKFM_MusicSelect.KHAJGNDEPMG_FilterMusicLevelMin : music_level_limitmin);
+			(m_setting.m_list_parts[5].m_base as PopupFilterSortUGUIParts_RangeSlider).SetMax(m_setting.m_param.EnableSave && GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.KGDILGLNKFM_MusicSelect.IKFKKJLBBBN_FilterMusicLevelMax != 0 ? GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.KGDILGLNKFM_MusicSelect.IKFKKJLBBBN_FilterMusicLevelMax : music_level_limitmax);
+			(m_setting.m_list_parts[7].m_base as PopupFilterSortUGUIParts_Title_H2).SetTitle(bk.GetMessageByLabel("popup_filter_music_attribute_title_h2"));
+			(m_setting.m_list_parts[8].m_base as PopupFilterSortUGUIParts_FilterMusicAttr).SetBit(m_setting.m_param.EnableSave ? (uint)GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.KGDILGLNKFM_MusicSelect.EOCPIGDIFNB_FilterMusicAttr : 0);
+			(m_setting.m_list_parts[10].m_base as PopupFilterSortUGUIParts_Title_H2).SetTitle(bk.GetMessageByLabel("popup_filter_combo_title_h2"));
+			(m_setting.m_list_parts[11].m_base as PopupFilterSortUGUIParts_FilterCombo).SetBit(m_setting.m_param.EnableSave ? (uint)GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.KGDILGLNKFM_MusicSelect.JJNLEPEKNDO_FilterCombo : 0);
+			(m_setting.m_list_parts[13].m_base as PopupFilterSortUGUIParts_Title_H2).SetTitle(bk.GetMessageByLabel("popup_music_select_02"));
+			(m_setting.m_list_parts[14].m_base as PopupFilterSortUGUIParts_FilterReward).SetBit(m_setting.m_param.EnableSave ? (uint)GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.KGDILGLNKFM_MusicSelect.PGMJCBIHNHK_FilterReward : 0);
+			(m_setting.m_list_parts[16].m_base as PopupFilterSortUGUIParts_Title_H2).SetTitle(bk.GetMessageByLabel("popup_filter_unit_title_h2"));
+			(m_setting.m_list_parts[17].m_base as PopupFilterSortUGUIParts_UnitLive).SetBit(m_setting.m_param.EnableSave ? (uint)GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.KGDILGLNKFM_MusicSelect.DPDBMECAIIO_FilterUnit : 0);
 		}
 
 		//// RVA: 0x1C96350 Offset: 0x1C96350 VA: 0x1C96350
 		private void FinalizeMusicSelect()
 		{
-			TodoLogger.LogError(TodoLogger.OldMusicSelect, "FinalizeMusicSelect");
+			if(!m_setting.m_param.EnableSave)
+				return;
+			m_setting.m_param.MusicSelectParam.Difficulty = (Difficulty.Type)(m_setting.m_list_parts[2].m_base as PopupFilterSortUGUIParts_FilterDifficulty).GetDifficulty();
+			float f = (m_setting.m_list_parts[5].m_base as PopupFilterSortUGUIParts_RangeSlider).GetMin();
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.KGDILGLNKFM_MusicSelect.KHAJGNDEPMG_FilterMusicLevelMin = f >= (m_setting.m_list_parts[5].m_base as PopupFilterSortUGUIParts_RangeSlider).GetLimitMin() ? (int)f : 0;
+			f = (m_setting.m_list_parts[5].m_base as PopupFilterSortUGUIParts_RangeSlider).GetMax();
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.KGDILGLNKFM_MusicSelect.IKFKKJLBBBN_FilterMusicLevelMax = f <= (m_setting.m_list_parts[5].m_base as PopupFilterSortUGUIParts_RangeSlider).GetLimitMax() ? (int)f : 0;
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.KGDILGLNKFM_MusicSelect.EOCPIGDIFNB_FilterMusicAttr = (int)(m_setting.m_list_parts[8].m_base as PopupFilterSortUGUIParts_FilterMusicAttr).GetBit();
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.KGDILGLNKFM_MusicSelect.JJNLEPEKNDO_FilterCombo = (int)(m_setting.m_list_parts[11].m_base as PopupFilterSortUGUIParts_FilterMusicAttr).GetBit();
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.KGDILGLNKFM_MusicSelect.PGMJCBIHNHK_FilterReward = (int)(m_setting.m_list_parts[14].m_base as PopupFilterSortUGUIParts_FilterMusicAttr).GetBit();
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.KGDILGLNKFM_MusicSelect.DPDBMECAIIO_FilterUnit = (int)(m_setting.m_list_parts[17].m_base as PopupFilterSortUGUIParts_FilterMusicAttr).GetBit();
 		}
 
 		//// RVA: 0x1C9A3F8 Offset: 0x1C9A3F8 VA: 0x1C9A3F8
-		//public void ResetMusicSelectFilter() { }
+		public void ResetMusicSelectFilter()
+		{
+			(m_setting.m_list_parts[2].m_base as PopupFilterSortUGUIParts_FilterDifficulty).SetDifficulty(m_setting.m_param.MusicSelectParam.Difficulty);
+			(m_setting.m_list_parts[5].m_base as PopupFilterSortUGUIParts_RangeSlider).SetMin((m_setting.m_list_parts[5].m_base as PopupFilterSortUGUIParts_RangeSlider).GetLimitMin());
+			(m_setting.m_list_parts[5].m_base as PopupFilterSortUGUIParts_RangeSlider).SetMax((m_setting.m_list_parts[5].m_base as PopupFilterSortUGUIParts_RangeSlider).GetLimitMax());
+			(m_setting.m_list_parts[8].m_base as PopupFilterSortUGUIParts_FilterMusicAttr).SetBit(0);
+			(m_setting.m_list_parts[11].m_base as PopupFilterSortUGUIParts_FilterCombo).SetBit(0);
+			(m_setting.m_list_parts[14].m_base as PopupFilterSortUGUIParts_FilterReward).SetBit(0);
+			(m_setting.m_list_parts[17].m_base as PopupFilterSortUGUIParts_UnitLive).SetBit(0);
+		}
 
 		//// RVA: 0x1C9AA7C Offset: 0x1C9AA7C VA: 0x1C9AA7C
 		private void PlateFilterSkillButtonShowHideAnim()

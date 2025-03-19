@@ -50,13 +50,13 @@ namespace XeApp.Game.Gacha
         // RVA: 0x983880 Offset: 0x983880 VA: 0x983880
         public CardInfo(MFDJIFIIPJD item)
         {
-            m_cardId = GetCardId(item.JJBGOIMEIPF_ItemFullId);
-            m_starNum = GetCardStarNum(item.JJBGOIMEIPF_ItemFullId);
-            m_name = GetCardName(item.JJBGOIMEIPF_ItemFullId);
-            m_attrId = GetCardAttribute(item.JJBGOIMEIPF_ItemFullId);
-            m_seriesId = GetCardSeries(item.JJBGOIMEIPF_ItemFullId);
+            m_cardId = GetCardId(item.JJBGOIMEIPF_ItemId);
+            m_starNum = GetCardStarNum(item.JJBGOIMEIPF_ItemId);
+            m_name = GetCardName(item.JJBGOIMEIPF_ItemId);
+            m_attrId = GetCardAttribute(item.JJBGOIMEIPF_ItemId);
+            m_seriesId = GetCardSeries(item.JJBGOIMEIPF_ItemId);
             m_isNew = item.JPIPENJGGDD_SceneMlt == 0;
-            m_isFeed = IsFeed(item.JJBGOIMEIPF_ItemFullId);
+            m_isFeed = IsFeed(item.JJBGOIMEIPF_ItemId);
             m_spAnimId = -1;
             m_hasSpAnim = m_starNum > 3;
             if(m_hasSpAnim)

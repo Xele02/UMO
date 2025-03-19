@@ -71,7 +71,7 @@ public class DKKPBBBDKMJ
 												if(HOMGKHBHDME.FGMPFHOEPEL_GetNumUnlockedStory() != 0)
 												{
 													MHCPOIEDLJF = true;
-													hasNewAdv |= !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsViewed(storyEvent2.LOHMKCPKBON_AdvId);
+													hasNewAdv |= !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(storyEvent2.LOHMKCPKBON_AdvId);
 													b2 = true;
 													continue;
 												}
@@ -83,7 +83,7 @@ public class DKKPBBBDKMJ
 							}
 							else if(storyEvent2.CHOFDPDFPDC == 3)
 							{
-								if (!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsViewed(storyEvent2.LOHMKCPKBON_AdvId))
+								if (!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(storyEvent2.LOHMKCPKBON_AdvId))
 								{
 									b3 = true;
 								}
@@ -167,7 +167,7 @@ public class DKKPBBBDKMJ
 								{
 									if(HOMGKHBHDME.FGMPFHOEPEL_GetNumUnlockedStory() >= a1)
 									{
-										hasViewed |= !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsViewed(k2.LOHMKCPKBON_AdvId);
+										hasViewed |= !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(k2.LOHMKCPKBON_AdvId);
 									}
 								}
 							}

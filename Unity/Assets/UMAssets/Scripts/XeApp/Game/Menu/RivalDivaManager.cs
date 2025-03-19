@@ -36,13 +36,15 @@ namespace XeApp.Game.Menu
 		// RVA: 0xB649D4 Offset: 0xB649D4 VA: 0xB649D4
 		private void Update()
 		{
-			divaControl.OnUpdate();
+			if(divaControl != null)
+				divaControl.OnUpdate();
 		}
 
 		// RVA: 0xB649F0 Offset: 0xB649F0 VA: 0xB649F0
 		private void LateUpdate()
 		{
-			divaControl.OnLateUpdate();
+			if(divaControl != null)
+				divaControl.OnLateUpdate();
 		}
 
 		//// RVA: 0xB64A0C Offset: 0xB64A0C VA: 0xB64A0C

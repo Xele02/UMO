@@ -19,7 +19,7 @@ public class KNKDBNFMAKF_EventSp : IKDICBBFBMI_EventBase
 	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp; } } //0x1123014 DKHCGLCNKCD  Slot: 4
 
 	// // RVA: 0x112301C Offset: 0x112301C VA: 0x112301C Slot: 32
-	public override EECOJKDJIFG DAKMIKNKHMF(int LHJCOPMMIGO = 0)
+	public override EECOJKDJIFG DAKMIKNKHMF_GetRankingInfoForIndex(int LHJCOPMMIGO = 0)
 	{
 		TodoLogger.LogError(TodoLogger.EventSp_7, "DAKMIKNKHMF");
 		return null;
@@ -124,7 +124,11 @@ public class KNKDBNFMAKF_EventSp : IKDICBBFBMI_EventBase
 	// private int APJDIPINLLK(List<int> HNLFPKNBOHE, int PPFNGGCBJKC) { }
 
 	// // RVA: 0x1126968 Offset: 0x1126968 VA: 0x1126968 Slot: 51
-	// public override IHAEIOAKEMG ILICNKILFKJ() { }
+	public override IHAEIOAKEMG ILICNKILFKJ_GetNextReward()
+	{
+		TodoLogger.LogError(TodoLogger.EventSp_7, "ILICNKILFKJ");
+		return null;
+	}
 
 	// // RVA: 0x1126A7C Offset: 0x1126A7C VA: 0x1126A7C Slot: 58
 	protected override void LMGMELPOGMH(int LHJCOPMMIGO)

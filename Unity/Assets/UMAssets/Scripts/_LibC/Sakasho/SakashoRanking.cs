@@ -57,6 +57,10 @@ namespace ExternLib
 			//res["rankings"].Add(GetRankingInfo("collect_ranking2_1061", false));
 			//res["rankings"].Add(GetRankingInfo("collect_ranking_1061", false));
 			//res["rankings"].Add(GetRankingInfo("score_ranking_4021", false));
+			res["rankings"].Add(GetRankingInfo("battle_ranking_3044", false));
+			res["rankings"].Add(GetRankingInfo("battle_ranking2_3044", false));
+			res["rankings"].Add(GetRankingInfo("battle_ranking_3045", false));
+			res["rankings"].Add(GetRankingInfo("battle_ranking2_3045", false));
 			res["rankings"].Add(GetRankingInfo("battle_ranking_3046", false));
 			res["rankings"].Add(GetRankingInfo("battle_ranking2_3046", false));
 
@@ -99,7 +103,19 @@ namespace ExternLib
 
 			EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
 			int id = (int)data["id"];
-			int score = (int)data["score"];
+			int score = 0;
+			if(data["score"].MDDJBLEDMBJ_IsInt)
+			{
+				score = (int)data["score"];
+			}
+			else if(data["score"].DCPEFFOMOOK_IsLong)
+			{
+				score = (int)((long)data["score"]);
+			}
+			else if(data["score"].NFPOKKABOHN_IsDouble)
+			{
+				score = (int)((double)data["score"]);
+			}
 			string extra = null;
 			if(data.BBAJPINMOEP_Contains("extra") && data["extra"] != null)
 				extra = (string)data["extra"];

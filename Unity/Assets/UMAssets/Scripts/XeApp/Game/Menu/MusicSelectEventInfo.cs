@@ -2,6 +2,7 @@ using XeSys.Gfx;
 using XeApp.Game.Common;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 namespace XeApp.Game.Menu
 {
@@ -125,16 +126,25 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x167690C Offset: 0x167690C VA: 0x167690C
-		// public void SetRewardValid(bool isValid) { }
+		public void SetRewardValid(bool isValid)
+		{
+			m_symbolReward.StartAnim(isValid ? "on" : "off");
+		}
 
 		// // RVA: 0x16769A4 Offset: 0x16769A4 VA: 0x16769A4
-		// public void SetTicketImage(IiconTexture image) { }
+		public void SetTicketImage(IiconTexture image)
+		{
+			image.Set(m_eventTicketImage);
+		}
 
 		// // RVA: 0x1676A84 Offset: 0x1676A84 VA: 0x1676A84
 		// public void SetTicketCountLabel(string label) { }
 
 		// // RVA: 0x1676AC0 Offset: 0x1676AC0 VA: 0x1676AC0
-		// public void SetTicketCount(int count) { }
+		public void SetTicketCount(int count)
+		{
+			m_curTicketCount.SetNumber(count, 0);
+		}
 
 		// // RVA: 0x1676B00 Offset: 0x1676B00 VA: 0x1676B00
 		public void SetValueUnitLabel(string label)
@@ -156,7 +166,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1676C1C Offset: 0x1676C1C VA: 0x1676C1C
-		// public void SetRankOrder(string order, int index = 0) { }
+		public void SetRankOrder(string order, int index/* = 0*/)
+		{
+			m_rankOrderText[index].text = order;
+		}
 
 		// // RVA: 0x1676C90 Offset: 0x1676C90 VA: 0x1676C90
 		public void SetRankUnitLabel(string label, int index/* = 0*/)
@@ -165,7 +178,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1676D04 Offset: 0x1676D04 VA: 0x1676D04
-		// public void SetRankCouting(string text, int index = 0) { }
+		public void SetRankCouting(string text, int index/* = 0*/)
+		{
+			m_rankOrderText[index].text = "";
+			m_rankOrderUnitText[index].text = text;
+		}
 
 		// // RVA: 0x1676E24 Offset: 0x1676E24 VA: 0x1676E24
 		public void SetCurrentValueLabel(string label)
@@ -174,7 +191,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1676E60 Offset: 0x1676E60 VA: 0x1676E60
-		// public void SetCurrentValue(string value) { }
+		public void SetCurrentValue(string value)
+		{
+			m_curValueText.text = value;
+		}
 
 		// // RVA: 0x1676E9C Offset: 0x1676E9C VA: 0x1676E9C
 		public void SetBpValueLabel(string label)
@@ -183,7 +203,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1676ED8 Offset: 0x1676ED8 VA: 0x1676ED8
-		// public void SetBpValue(string value) { }
+		public void SetBpValue(string value)
+		{
+			m_bpValueText.text = value;
+		}
 
 		// // RVA: 0x1676F14 Offset: 0x1676F14 VA: 0x1676F14
 		public void SetNextValueLabel(string label)
@@ -192,7 +215,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1676F50 Offset: 0x1676F50 VA: 0x1676F50
-		// public void SetNextValue(string value) { }
+		public void SetNextValue(string value)
+		{
+			m_nextValueText.text = value;
+		}
 
 		// // RVA: 0x1676F8C Offset: 0x1676F8C VA: 0x1676F8C
 		public void SetRewardLabel(string label)
@@ -201,10 +227,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1676FC8 Offset: 0x1676FC8 VA: 0x1676FC8
-		// public void SetRewardIcon(IiconTexture image) { }
+		public void SetRewardIcon(IiconTexture image)
+		{
+			image.Set(m_rewardIconImage);
+		}
 
 		// // RVA: 0x16770A8 Offset: 0x16770A8 VA: 0x16770A8
-		// public void SetRewardEndLabel(string label) { }
+		public void SetRewardEndLabel(string label)
+		{
+			m_rewardEndText.text = label;
+		}
 
 		// RVA: 0x16770E4 Offset: 0x16770E4 VA: 0x16770E4 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

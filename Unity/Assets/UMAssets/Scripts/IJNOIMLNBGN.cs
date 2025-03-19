@@ -20,7 +20,7 @@ public class IJNOIMLNBGN
 	// public static void KHEKNNFCAOI(List<IJNOIMLNBGN> NNDGIAEFMOG, EDHLNJNFNDN JMHECKKKMLK) { }
 
 	// // RVA: 0x8DAFA4 Offset: 0x8DAFA4 VA: 0x8DAFA4
-	public static void KHEKNNFCAOI(List<IJNOIMLNBGN> NNDGIAEFMOG, OPHFFGFJIBJ JMHECKKKMLK)
+	public static void KHEKNNFCAOI(string BlockName, List<IJNOIMLNBGN> NNDGIAEFMOG, OPHFFGFJIBJ JMHECKKKMLK)
 	{
 		NNDGIAEFMOG.Clear();
 		for(int i = 0; i < JMHECKKKMLK.IHNBOEPLJKE.Length; i++)
@@ -30,7 +30,7 @@ public class IJNOIMLNBGN
 			data.PPFNGGCBJKC = (int)array.PPFNGGCBJKC;
 			data.PDBPFJJCADD_OpenAt = array.PDBPFJJCADD;
 			data.FDBNFFNFOND_CloseAt = array.FDBNFFNFOND;
-			data.KLMPFGOCBHC_BannerText = array.FEMMDNIELFC;
+			data.KLMPFGOCBHC_BannerText = DatabaseTextConverter.TranslateBattleEventBannerText(BlockName, data.PPFNGGCBJKC, array.FEMMDNIELFC);
 			NNDGIAEFMOG.Add(data);
 		}
 	}

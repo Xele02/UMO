@@ -989,7 +989,7 @@ public class JGEOBNENMAH
 								{
 									ev.AMKJFGLEJGE(1);
 								}
-								ev.MEHIAJMOLEJ(true);
+								ev.MEHIAJMOLEJ_ReceieveTotalReward(true);
 								//LAB_00b0c97c
 								while(!ev.PLOOEECNHFB)
 									yield return null;
@@ -1154,7 +1154,7 @@ public class JGEOBNENMAH
 						//L1621
 						bool BEKAMBBOLBO = false;
 						bool CNAIDEAFAAM = false;
-						NLJKCDHIPEG_serverData.JHOKIPPIHII = true;
+						NLJKCDHIPEG_serverData.JHOKIPPIHII_IsSavingToServer = true;
 						FFMIPGABHHA_SaveHash saveHash = serverData.FHLMCCPCEAI_SaveHash;
 						saveHash.IOIMHJAOKOO_Hash = FFMIPGABHHA_SaveHash.CAOGDCBPBAN(NKGFGDGFGFM_SessionId, OMNOFMEBLAD.GHBPLHBNMBK_FreeMusicId, (OMNOFMEBLAD.LFGNLKKFOCD_IsLine6 ? 0 : 10) + OMNOFMEBLAD.AKNELONELJK_Difficulty);
 						saveHash.BEBJKJKBOGH_Time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
@@ -1206,7 +1206,7 @@ public class JGEOBNENMAH
 						//LAB_00b0c804
 						while (!BEKAMBBOLBO)
 							yield return null;
-						NLJKCDHIPEG_serverData.JHOKIPPIHII = false;
+						NLJKCDHIPEG_serverData.JHOKIPPIHII_IsSavingToServer = false;
 						if(!CNAIDEAFAAM)
 						{
 							BEKAMBBOLBO = false;
@@ -1241,7 +1241,7 @@ public class JGEOBNENMAH
 							}
 							if(CNAIDEAFAAM)
 							{
-								NLJKCDHIPEG_serverData.JHOKIPPIHII = false;
+								NLJKCDHIPEG_serverData.JHOKIPPIHII_IsSavingToServer = false;
 								JDDGPJDKHNE.HHCJCDFCLOB.FECGDGCNGGN();
 								JDDGPJDKHNE.HHCJCDFCLOB.FOKEGEOKGDG();
 								JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
@@ -1354,7 +1354,7 @@ public class JGEOBNENMAH
 		}
 		else
 		{
-			CIOECGOMILE.HHCJCDFCLOB.JHOKIPPIHII = false;
+			CIOECGOMILE.HHCJCDFCLOB.JHOKIPPIHII_IsSavingToServer = false;
 			JDDGPJDKHNE.HHCJCDFCLOB.FOKEGEOKGDG();
 			JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
 			TodoLogger.LogError(TodoLogger.Coroutine, "Exit Error PJEBPAKPANP_Coroutine_SimulationEnd");
@@ -2231,7 +2231,7 @@ public class JGEOBNENMAH
 		{
 			b |= !BFOJHDNLJJD.MGJKEJHEBPO_Blocks[i].LLBJFFFJEPJ_Deseralized;
 		}
-		if(b && !JKLLNACCKDI.NPNNPNAIONN_IsError)
+		if(!b && !JKLLNACCKDI.NPNNPNAIONN_IsError)
 		{
 			if(LFDFPBEAAFA.IKHKMFNIHKH_PlayAt >= BFOJHDNLJJD.FHLMCCPCEAI_SaveHash.BEBJKJKBOGH_Time)
 			{

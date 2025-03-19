@@ -44,7 +44,6 @@ namespace XeApp.Game.RhythmGame
 				tmpCueList.Clear();
 				for(int j = 0; j < array.Length; j++)
 				{
-					TodoLogger.LogError(TodoLogger.EventBattle_3, "Check cue found : "+array[j].name+" or "+array[j].userData+" against "+cuePrefixList[i]);
 					if(array[j].name.Contains(cuePrefixList[i])) // or userData ?
 					{
 						tmpCueList.Add(array[j].name);

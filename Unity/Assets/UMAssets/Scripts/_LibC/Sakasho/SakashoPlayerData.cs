@@ -46,6 +46,7 @@ namespace ExternLib
 				commonBlock.BCFPEJODJPP_Stamina = 9999;
 				// give a lot of mv ticket
 				commonBlock.GKKDNOFMJJN_NumTicket = 999;
+				commonBlock.CPAGIICKKNN_EvBtlClsu = 50;
 				// set all 6line & multi diva song shown
 				for (int i = 1; i < EGOLBAPFHHD_Common.HKJKONOKBLN_ShowLine6AddLength * 8; i++)
 				{
@@ -311,8 +312,8 @@ namespace ExternLib
 					{
 						if(storyEvent2.LOHMKCPKBON_AdvId > 0)
 						{
-							if(!newData.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsViewed(storyEvent2.LOHMKCPKBON_AdvId))
-								newData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetViewed(storyEvent2.LOHMKCPKBON_AdvId);
+							if(!newData.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(storyEvent2.LOHMKCPKBON_AdvId))
+								newData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(storyEvent2.LOHMKCPKBON_AdvId);
 						}
 					}
 				}

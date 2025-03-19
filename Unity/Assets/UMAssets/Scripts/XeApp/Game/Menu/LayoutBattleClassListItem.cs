@@ -50,7 +50,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				m_layoutRoot.StartChildrenAnimGoStop("02");
-				m_textLock.text = string.Format(MessageManager.Instance.GetMessage("menu", "music_event_battle_class_next_01"), m_view.JFLOBDBGIKL.GIDPPGJPOJA) + Environment.NewLine + MessageManager.Instance.GetMessage("menu", "music_event_battle_class_next_02") + m_view.JFLOBDBGIKL.PMNGBEJMECI_Score;
+				m_textLock.text = string.Format(MessageManager.Instance.GetMessage("menu", "music_event_battle_class_next_01"), m_view.JFLOBDBGIKL.GIDPPGJPOJA_Id) + Environment.NewLine + string.Format(MessageManager.Instance.GetMessage("menu", "music_event_battle_class_next_02"), m_view.JFLOBDBGIKL.PMNGBEJMECI_Score);
 				m_button.IsInputOff = true;
 			}
 		}

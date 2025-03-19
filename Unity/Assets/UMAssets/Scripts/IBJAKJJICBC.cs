@@ -543,7 +543,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 		bool b2 = m.GBNOALJPOBM;
 		MGJKEJHEBPO_DiffInfos = new List<ANJLFFPBAEF_DifficultyInfo>();
 		DACLONHOFLA = new BKKMNPEEILG();
-		int cnt = PJLNJJIBFBN ? 4 : 5; 
+		int cnt = PJLNJJIBFBN ? 5 : 4; 
 		DACLONHOFLA.KHEKNNFCAOI(LIKDEHHKFEH, EPLEIPFGGHP);
 		bool b = true;
 		for(int diffIdx = 0; diffIdx < cnt; diffIdx++)

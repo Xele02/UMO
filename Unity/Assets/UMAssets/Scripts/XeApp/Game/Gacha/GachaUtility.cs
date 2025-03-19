@@ -81,7 +81,7 @@ namespace XeApp.Game.Gacha
 		private static int netGachaProductIndex { get; set; } // 0x48
 		private static HPBDNNACBAK gpm { get { return NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI; } } //0x990CC8
 		private static CIOECGOMILE pdm { get { return CIOECGOMILE.HHCJCDFCLOB; } } //0x995E58
-		// public static List<LOBDIAABMKG> netGachaProducts { get; } 0x995ED4
+		public static List<LOBDIAABMKG> netGachaProducts { get { return gpm.MHKCPJDNJKI_GatchaProducts; } } //0x995ED4
 		public static LOBDIAABMKG netGachaProductData { get
 			{
 				if (netGachaProductIndex > -1)

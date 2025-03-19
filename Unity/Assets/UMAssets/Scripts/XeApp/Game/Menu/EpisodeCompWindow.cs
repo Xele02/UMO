@@ -180,7 +180,7 @@ namespace XeApp.Game.Menu
 				icon.Set(m_episode_image);
 				icon.Set(m_episode_image2);
 			});
-			SetItemImage(m_reward_list[GetAcquiredRewardLastIndex(m_reward_list, m_currentPoint)].GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId);
+			SetItemImage(m_reward_list[GetAcquiredRewardLastIndex(m_reward_list, m_currentPoint)].GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
 			WaitComp();
 			WaitFrameAnim();
 			m_gauge_max_point = m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_TotalPoint - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_StartPoint;
@@ -222,7 +222,7 @@ namespace XeApp.Game.Menu
 			is_restart = true;
 			ItemId = 0;
 			m_reward_index = EpisodeUtility.GetAcquiredRewardLastIndex(m_reward_list, m_currentPoint);
-			SetItemImage(m_reward_list[m_reward_index].GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId);
+			SetItemImage(m_reward_list[m_reward_index].GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
 			m_point_item_num.SetNumber(m_reward_list[m_reward_index].GOOIIPFHOIG.MBJIFDBEDAC_Cnt, 0);
 			UpdateText(m_currentPoint, m_reward_index);
 		}
@@ -333,7 +333,7 @@ namespace XeApp.Game.Menu
 						else
 						{
 							ItemType = currentReward.GOOIIPFHOIG.NPPNDDMPFJJ_ItemCategory;
-							ItemId = currentReward.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId;
+							ItemId = currentReward.GOOIIPFHOIG.JJBGOIMEIPF_ItemId;
 							m_showReciveItemIndex++;
 							isStop = true;
 						}
@@ -358,7 +358,7 @@ namespace XeApp.Game.Menu
 								isComp = true;
 							}
 							UpdateNext(m_reward_list[aa], m_episodeData.DMHDNKILKGI_MaxPoint, isComp);
-							SetItemImage(m_reward_list[aa].GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId);
+							SetItemImage(m_reward_list[aa].GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
 							m_point_item_num.SetNumber(m_reward_list[aa].GOOIIPFHOIG.MBJIFDBEDAC_Cnt, 0);
 							UpdateText(currentPoint, aa);
 						}

@@ -54,7 +54,7 @@ namespace XeApp.Game.Menu
 			{
 				for (int i = 0; i < m_receiveCount; i++)
 				{
-					InstallItem(items[i].NPPNDDMPFJJ_ItemCategory, items[i].JJBGOIMEIPF_ItemFullId);
+					InstallItem(items[i].NPPNDDMPFJJ_ItemCategory, items[i].JJBGOIMEIPF_ItemId);
 				}
 			}
 			MessageBank bk = MessageManager.Instance.GetBank("menu");

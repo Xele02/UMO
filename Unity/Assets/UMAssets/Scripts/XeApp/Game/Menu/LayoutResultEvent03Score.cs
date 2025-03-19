@@ -118,13 +118,15 @@ namespace XeApp.Game.Menu
 			layoutMyExcellentAnim[1] = layout.FindViewById("sw_g_r_e3_num_notes_anim_you") as AbsoluteLayout;
 			layoutMyExcellentAnim[2] = layout.FindViewById("num_scr_you") as AbsoluteLayout;
 			layoutRivalExcellentAnim[0] = layout.FindViewById("swtbl_g_r_e3_ex_rival") as AbsoluteLayout;
-			layoutMyExcellentAnim[1] = layout.FindViewById("sw_g_r_e3_num_notes_anim") as AbsoluteLayout;
-			layoutMyExcellentAnim[2] = layout.FindViewById("num_scr_rival") as AbsoluteLayout;
+			layoutRivalExcellentAnim[1] = layout.FindViewById("sw_g_r_e3_num_notes_anim") as AbsoluteLayout;
+			layoutRivalExcellentAnim[2] = layout.FindViewById("num_scr_rival") as AbsoluteLayout;
 			layoutMyComboAnim[0] = layout.FindViewById("swtbl_g_r_e3_cmb_you") as AbsoluteLayout;
 			layoutMyComboAnim[1] = layout.FindViewById("swtbl_g_r_e3_cmb_you_ef") as AbsoluteLayout;
 			layoutRivalComboAnim[0] = layout.FindViewById("swtbl_g_r_e3_cmb") as AbsoluteLayout;
 			layoutRivalComboAnim[1] = layout.FindViewById("swtbl_g_r_e3_cmb_ef") as AbsoluteLayout;
-			layoutRivalLeafNum = layoutMyExcellentAnim[2].FindViewById("swtbl_btn_luc") as AbsoluteLayout;
+			layoutMyLeafNum = layoutMyExcellentAnim[2].FindViewById("swtbl_btn_luc") as AbsoluteLayout;
+			layoutMyLeafNum.StartChildrenAnimGoStop("05");
+			layoutRivalLeafNum = layoutRivalExcellentAnim[2].FindViewById("swtbl_btn_luc") as AbsoluteLayout;
 			layoutRivalLeafNum.StartChildrenAnimGoStop("05");
 			Text[] txts = GetComponentsInChildren<Text>(true);
 			myNameText = txts.Where((Text _) =>
@@ -210,32 +212,32 @@ namespace XeApp.Game.Menu
 				//0x18D66F0
 				return _.transform.parent.name == "sw_g_r_e3_num_notes_anim_you (AbsoluteLayout)" && _.name == "swnum_g_r_e3_num_notes_exe (AbsoluteLayout)";
 			}).First();
-			myNumberNoteResultCountList[0] = numbers.Where((NumberBase _) =>
+			rivalNumberNoteResultCountList[0] = numbers.Where((NumberBase _) =>
 			{
 				//0x18D67F0
 				return _.name == "swnum_notes_miss (AbsoluteLayout)";
 			}).First();
-			myNumberNoteResultCountList[1] = numbers.Where((NumberBase _) =>
+			rivalNumberNoteResultCountList[1] = numbers.Where((NumberBase _) =>
 			{
 				//0x18D6870
 				return _.name == "swnum_notes_bad (AbsoluteLayout)";
 			}).First();
-			myNumberNoteResultCountList[2] = numbers.Where((NumberBase _) =>
+			rivalNumberNoteResultCountList[2] = numbers.Where((NumberBase _) =>
 			{
 				//0x18D68F0
 				return _.name == "swnum_notes_good (AbsoluteLayout)";
 			}).First();
-			myNumberNoteResultCountList[3] = numbers.Where((NumberBase _) =>
+			rivalNumberNoteResultCountList[3] = numbers.Where((NumberBase _) =>
 			{
 				//0x18D6970
 				return _.name == "swnum_notes_great (AbsoluteLayout)";
 			}).First();
-			myNumberNoteResultCountList[4] = numbers.Where((NumberBase _) =>
+			rivalNumberNoteResultCountList[4] = numbers.Where((NumberBase _) =>
 			{
 				//0x18D69F0
 				return _.transform.parent.name == "sw_g_r_e3_num_notes_anim (AbsoluteLayout)" && _.name == "swnum_g_r_e3_num_notes_pfct (AbsoluteLayout)";
 			}).First();
-			myNumberNoteResultCountList[5] = numbers.Where((NumberBase _) =>
+			rivalNumberNoteResultCountList[5] = numbers.Where((NumberBase _) =>
 			{
 				//0x18D6AF0
 				return _.transform.parent.name == "sw_g_r_e3_num_notes_anim (AbsoluteLayout)" && _.name == "swnum_g_r_e3_num_notes_exe (AbsoluteLayout)";
@@ -447,8 +449,8 @@ namespace XeApp.Game.Menu
 			coutupCoroutines = new List<CoroutineEx>();
 			timerList = new List<float>();
 			NumberAnimationUtility.MakeAccelerationTimeList(4, 0.3f, 0.02f, ref timerList);
-			layoutRootAnim.StartChildrenAnimGoStop("start_per", "start_combo");
-			co = MoveNext(Co_WaitFrame(layoutRootAnim, countStartFrameList[0], true));
+			layoutScoreAnim.StartChildrenAnimGoStop("start_per", "start_combo");
+			co = MoveNext(Co_WaitFrame(layoutScoreAnim, countStartFrameList[0], true));
 			while(!co.IsEnd)
 				yield return null;
 			PlayCountUpLoopSE();
@@ -561,7 +563,7 @@ namespace XeApp.Game.Menu
 					yield return null;
 				}
 			}
-			co = MoveNext(Co_WaitAnim(layoutRootAnim, true));
+			co = MoveNext(Co_WaitAnim(layoutScoreAnim, true));
 			while(!co.IsEnd)
 				yield return null;
 			countUpSEPlayback.Stop(false);
@@ -783,117 +785,5 @@ namespace XeApp.Game.Menu
 		{
 			return new CoroutineEx(this, routine, isSkiped);
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B5CC Offset: 0x71B5CC VA: 0x71B5CC
-		// // RVA: 0x18D5B8C Offset: 0x18D5B8C VA: 0x18D5B8C
-		// private void <Co_CountUpNotes>b__41_0(int value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B5DC Offset: 0x71B5DC VA: 0x71B5DC
-		// // RVA: 0x18D5B98 Offset: 0x18D5B98 VA: 0x18D5B98
-		// private bool <Co_CountUpNotes>b__41_1() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B5EC Offset: 0x71B5EC VA: 0x71B5EC
-		// // RVA: 0x18D5BA0 Offset: 0x18D5BA0 VA: 0x18D5BA0
-		// private void <Co_CountUpNotes>b__41_2(int value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B5FC Offset: 0x71B5FC VA: 0x71B5FC
-		// // RVA: 0x18D5BAC Offset: 0x18D5BAC VA: 0x18D5BAC
-		// private bool <Co_CountUpNotes>b__41_3() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B60C Offset: 0x71B60C VA: 0x71B60C
-		// // RVA: 0x18D5BB4 Offset: 0x18D5BB4 VA: 0x18D5BB4
-		// private void <Co_CountUpNotes>b__41_4(int value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B61C Offset: 0x71B61C VA: 0x71B61C
-		// // RVA: 0x18D5BC0 Offset: 0x18D5BC0 VA: 0x18D5BC0
-		// private bool <Co_CountUpNotes>b__41_5() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B62C Offset: 0x71B62C VA: 0x71B62C
-		// // RVA: 0x18D5BC8 Offset: 0x18D5BC8 VA: 0x18D5BC8
-		// private void <Co_CountUpNotes>b__41_6(int value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B63C Offset: 0x71B63C VA: 0x71B63C
-		// // RVA: 0x18D5BD4 Offset: 0x18D5BD4 VA: 0x18D5BD4
-		// private bool <Co_CountUpNotes>b__41_7() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B64C Offset: 0x71B64C VA: 0x71B64C
-		// // RVA: 0x18D5BDC Offset: 0x18D5BDC VA: 0x18D5BDC
-		// private void <Co_CountUpNotes>b__41_8(int value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B65C Offset: 0x71B65C VA: 0x71B65C
-		// // RVA: 0x18D5BE8 Offset: 0x18D5BE8 VA: 0x18D5BE8
-		// private bool <Co_CountUpNotes>b__41_9() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B66C Offset: 0x71B66C VA: 0x71B66C
-		// // RVA: 0x18D5BF0 Offset: 0x18D5BF0 VA: 0x18D5BF0
-		// private void <Co_CountUpNotes>b__41_10(int value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B67C Offset: 0x71B67C VA: 0x71B67C
-		// // RVA: 0x18D5BFC Offset: 0x18D5BFC VA: 0x18D5BFC
-		// private bool <Co_CountUpNotes>b__41_11() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B68C Offset: 0x71B68C VA: 0x71B68C
-		// // RVA: 0x18D5C04 Offset: 0x18D5C04 VA: 0x18D5C04
-		// private void <Co_CountUpNotes>b__41_12(int value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B69C Offset: 0x71B69C VA: 0x71B69C
-		// // RVA: 0x18D5C10 Offset: 0x18D5C10 VA: 0x18D5C10
-		// private bool <Co_CountUpNotes>b__41_13() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B6AC Offset: 0x71B6AC VA: 0x71B6AC
-		// // RVA: 0x18D5C18 Offset: 0x18D5C18 VA: 0x18D5C18
-		// private void <Co_CountUpNotes>b__41_14(int value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B6BC Offset: 0x71B6BC VA: 0x71B6BC
-		// // RVA: 0x18D5C24 Offset: 0x18D5C24 VA: 0x18D5C24
-		// private bool <Co_CountUpNotes>b__41_15() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B6CC Offset: 0x71B6CC VA: 0x71B6CC
-		// // RVA: 0x18D5C2C Offset: 0x18D5C2C VA: 0x18D5C2C
-		// private void <Co_CountUpNotes>b__41_16(int value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B6DC Offset: 0x71B6DC VA: 0x71B6DC
-		// // RVA: 0x18D5C38 Offset: 0x18D5C38 VA: 0x18D5C38
-		// private bool <Co_CountUpNotes>b__41_17() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B6EC Offset: 0x71B6EC VA: 0x71B6EC
-		// // RVA: 0x18D5C40 Offset: 0x18D5C40 VA: 0x18D5C40
-		// private void <Co_CountUpNotes>b__41_18(int value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B6FC Offset: 0x71B6FC VA: 0x71B6FC
-		// // RVA: 0x18D5C4C Offset: 0x18D5C4C VA: 0x18D5C4C
-		// private bool <Co_CountUpNotes>b__41_19() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B70C Offset: 0x71B70C VA: 0x71B70C
-		// // RVA: 0x18D5C54 Offset: 0x18D5C54 VA: 0x18D5C54
-		// private void <Co_CountUpCombo>b__42_0(int value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B71C Offset: 0x71B71C VA: 0x71B71C
-		// // RVA: 0x18D5C94 Offset: 0x18D5C94 VA: 0x18D5C94
-		// private bool <Co_CountUpCombo>b__42_1() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B72C Offset: 0x71B72C VA: 0x71B72C
-		// // RVA: 0x18D5C9C Offset: 0x18D5C9C VA: 0x18D5C9C
-		// private void <Co_CountUpCombo>b__42_2(int value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B73C Offset: 0x71B73C VA: 0x71B73C
-		// // RVA: 0x18D5CDC Offset: 0x18D5CDC VA: 0x18D5CDC
-		// private bool <Co_CountUpCombo>b__42_3() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B74C Offset: 0x71B74C VA: 0x71B74C
-		// // RVA: 0x18D5CE4 Offset: 0x18D5CE4 VA: 0x18D5CE4
-		// private void <Co_CountUpScore>b__43_0(int value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B75C Offset: 0x71B75C VA: 0x71B75C
-		// // RVA: 0x18D5D24 Offset: 0x18D5D24 VA: 0x18D5D24
-		// private bool <Co_CountUpScore>b__43_1() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B76C Offset: 0x71B76C VA: 0x71B76C
-		// // RVA: 0x18D5D2C Offset: 0x18D5D2C VA: 0x18D5D2C
-		// private void <Co_CountUpScore>b__43_2(int value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71B77C Offset: 0x71B77C VA: 0x71B77C
-		// // RVA: 0x18D5D6C Offset: 0x18D5D6C VA: 0x18D5D6C
-		// private bool <Co_CountUpScore>b__43_3() { }
 	}
 }

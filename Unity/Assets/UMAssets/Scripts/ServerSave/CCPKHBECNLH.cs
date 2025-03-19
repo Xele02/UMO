@@ -304,12 +304,12 @@ public class CCPKHBECNLH_EventBattle : KLFDBFMNLBL_ServerSaveBlock
 		public long NFIOKIBPJCJ_Uptime { get { return DLEEMCAPOBP_Crypted ^ ENOBDCFHELD; } set { DLEEMCAPOBP_Crypted = value ^ ENOBDCFHELD; JPNMMOEPAEM_Crypted = value ^ FCEJCHGLFGN; } } //0x12A84EC NGIDBCKCAMO 0x12A8504 AEHIIPBDNGE
 		public int LGADCGFMLLD_Step { get { return AFGHJEJKDHN_Crypted ^ ENOBDCFHELD; } set { AFGHJEJKDHN_Crypted = value ^ ENOBDCFHELD; FBDJBMDEENG_Crypted = value ^ FCEJCHGLFGN; } } //0x12A852C MAFBDLKFHGJ 0x12A853C EPEFBOIALDI
 		public int OMCAOJJGOGG_Lb { get { return HFIHMDILNFD_Crypted ^ ENOBDCFHELD; } set { HFIHMDILNFD_Crypted = value ^ ENOBDCFHELD; IGMFFIKLEHP_Crypted = value ^ FCEJCHGLFGN; } } //0x12A8550 PBEMPHPDDDB 0x12A8560 MCADMIEOCCF
-		public int BINKCNFPHIP_Cls { get { return INDNOJCKAOD_Crypted ^ ENOBDCFHELD; } set { value = value < 1 ? value = 0 : value; INDNOJCKAOD_Crypted = value ^ ENOBDCFHELD; MIMCCOCDMJK_Crypted = value ^ FCEJCHGLFGN; } } //0x12A8578 MBNKNJFEDJH 0x12A8588 EBNGKIMILNB
-		public int LCPFENLEALH_Clsu0 { get { return HIPJJHBLLNA_Crypted ^ ENOBDCFHELD; } set { value = value < 1 ? value = 0 : value; HIPJJHBLLNA_Crypted = value ^ ENOBDCFHELD; JIPEIJLHPCC_Crypted = value ^ FCEJCHGLFGN; } } //0x12A85A8 IILMAGDPGBO 0x12A85B8 DILPDKDJBFA
-		public int JMGCEEAJNFE_ExPoint { get { return PCFNAIECMHM_Crypted ^ ENOBDCFHELD; } set { value = value < 1 ? value = 0 : value; PCFNAIECMHM_Crypted = value ^ ENOBDCFHELD; FGKIIKDGDNF_Crypted = value ^ FCEJCHGLFGN; } } //0x12A85D8 EIHDMDDLPNE 0x12A85E8 FENLFALHKPI
+		public int BINKCNFPHIP_Cls { get { return INDNOJCKAOD_Crypted ^ ENOBDCFHELD; } set { value = value < 1 ? 0 : value; INDNOJCKAOD_Crypted = value ^ ENOBDCFHELD; MIMCCOCDMJK_Crypted = value ^ FCEJCHGLFGN; } } //0x12A8578 MBNKNJFEDJH 0x12A8588 EBNGKIMILNB
+		public int LCPFENLEALH_Clsu0 { get { return HIPJJHBLLNA_Crypted ^ ENOBDCFHELD; } set { value = value < 1 ? 0 : value; HIPJJHBLLNA_Crypted = value ^ ENOBDCFHELD; JIPEIJLHPCC_Crypted = value ^ FCEJCHGLFGN; } } //0x12A85A8 IILMAGDPGBO 0x12A85B8 DILPDKDJBFA
+		public int JMGCEEAJNFE_ExPoint { get { return PCFNAIECMHM_Crypted ^ ENOBDCFHELD; } set { value = value < 1 ? 0 : value; PCFNAIECMHM_Crypted = value ^ ENOBDCFHELD; FGKIIKDGDNF_Crypted = value ^ FCEJCHGLFGN; } } //0x12A85D8 EIHDMDDLPNE 0x12A85E8 FENLFALHKPI
 		public bool NMPBIBEPLDO_ExRival { get { return GGGEOJAOLKN_Crypted != 56; } set { GGGEOJAOLKN_Crypted = (sbyte)(value ? 19 : 56); } } //0x12A8608 GGKHHJOMIPD 0x12A861C BNNJDABPBIC
-		public int GBFAOCFOIIM_RvMc { get { return EIGHJEHEOCH_Crypted ^ ENOBDCFHELD; } set { value = value < 1 ? value = 0 : value; EIGHJEHEOCH_Crypted = value ^ ENOBDCFHELD; OICKANODJBO_Crypted = value ^ FCEJCHGLFGN; } } //0x12A864C LMNPOPPNLKL 0x12A865C IBFECOHDEDM
-		public int MNLJJDJHJPM_RvSt { get { return MEAHAGDHJEK_Crypted ^ ENOBDCFHELD; } set { value = value < 1 ? value = 0 : value; MEAHAGDHJEK_Crypted = value ^ ENOBDCFHELD; MAAOPMFJCLP_Crypted = value ^ FCEJCHGLFGN; } } //0x12A867C OPHIPEIMEOC 0x12A868C MCNAEENHMHO
+		public int GBFAOCFOIIM_RvMc { get { return EIGHJEHEOCH_Crypted ^ ENOBDCFHELD; } set { value = value < 1 ? 0 : value; EIGHJEHEOCH_Crypted = value ^ ENOBDCFHELD; OICKANODJBO_Crypted = value ^ FCEJCHGLFGN; } } //0x12A864C LMNPOPPNLKL 0x12A865C IBFECOHDEDM
+		public int MNLJJDJHJPM_RvSt { get { return MEAHAGDHJEK_Crypted ^ ENOBDCFHELD; } set { value = value < 1 ? 0 : value; MEAHAGDHJEK_Crypted = value ^ ENOBDCFHELD; MAAOPMFJCLP_Crypted = value ^ FCEJCHGLFGN; } } //0x12A867C OPHIPEIMEOC 0x12A868C MCNAEENHMHO
 
 		// // RVA: 0x12A83B0 Offset: 0x12A83B0 VA: 0x12A83B0
 		// public bool AAIKMLIKIEB(int LHJCOPMMIGO) { }
@@ -328,7 +328,7 @@ public class CCPKHBECNLH_EventBattle : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		// // RVA: 0x12A86AC Offset: 0x12A86AC VA: 0x12A86AC
-		public bool BHIAKGKHKGD(int BMBBDIAEOMP)
+		public bool BHIAKGKHKGD_GetReceived(int BMBBDIAEOMP)
 		{
 			return LCDIGDMGPGO_TRcv[BMBBDIAEOMP] != 20;
 		}
@@ -567,7 +567,7 @@ public class CCPKHBECNLH_EventBattle : KLFDBFMNLBL_ServerSaveBlock
 			data2.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
 			for(int j = 0; j < FBCJICEPLED[i].LCDIGDMGPGO_TRcv.Count; j++)
 			{
-				data2.Add(FBCJICEPLED[i].BHIAKGKHKGD(j) ? 1 : 0);
+				data2.Add(FBCJICEPLED[i].BHIAKGKHKGD_GetReceived(j) ? 1 : 0);
 			}
 			EDOHBJAPLPF_JsonData data3 = new EDOHBJAPLPF_JsonData();
 			data3.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);

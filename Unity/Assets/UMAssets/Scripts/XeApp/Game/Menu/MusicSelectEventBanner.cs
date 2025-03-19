@@ -86,10 +86,33 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1675D40 Offset: 0x1675D40 VA: 0x1675D40
-		// public void ChangeEventBanner(int eventId) { }
+		public void ChangeEventBanner(int eventId)
+		{
+			m_bannerButton.Hidden = true;
+			m_eventBannerImage.enabled = false;
+			if(eventId != 0)
+			{
+				GameManager.Instance.EventBannerTextureCache.LoadBanner(eventId, (IiconTexture image) =>
+				{
+					//0x1676428
+					image.Set(m_eventBannerImage);
+					m_bannerButton.Hidden = false;
+					m_eventBannerImage.enabled = true;
+				});
+			}
+		}
 
 		// // RVA: 0x1675EA0 Offset: 0x1675EA0 VA: 0x1675EA0
-		// public void SetEventTicket(IiconTexture image) { }
+		public void SetEventTicket(IiconTexture image)
+		{
+			if(image == null)
+				m_eventTicketImage.enabled = false;
+			else
+			{
+				m_eventTicketImage.enabled = true;
+				image.Set(m_eventTicketImage);
+			}
+		}
 
 		// // RVA: 0x1675FB0 Offset: 0x1675FB0 VA: 0x1675FB0
 		// public void SetDisableLabel(string label) { }
@@ -167,9 +190,5 @@ namespace XeApp.Game.Menu
 			Loaded();
 			return true;
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F363C Offset: 0x6F363C VA: 0x6F363C
-		// // RVA: 0x1676428 Offset: 0x1676428 VA: 0x1676428
-		// private void <ChangeEventBanner>b__25_0(IiconTexture image) { }
 	}
 }

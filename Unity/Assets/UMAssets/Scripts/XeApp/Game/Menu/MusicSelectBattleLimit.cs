@@ -12,7 +12,10 @@ namespace XeApp.Game.Menu
 		private bool m_isShow; // 0x20
 
 		// // RVA: 0x1668E24 Offset: 0x1668E24 VA: 0x1668E24
-		// public void SetLimitText(string text) { }
+		public void SetLimitText(string text)
+		{
+			m_limitText.text = text;
+		}
 
 		// // RVA: 0x1668E60 Offset: 0x1668E60 VA: 0x1668E60
 		// public void TryEnter() { }

@@ -1,4 +1,5 @@
 
+using UnityEngine;
 using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
@@ -17,6 +18,9 @@ namespace XeApp.Game.Menu
         public override bool IsPreload { get { return true; } } //0xA96DAC
 
         // // RVA: 0xA96DB4 Offset: 0xA96DB4 VA: 0xA96DB4
-        // public void SetContent(GameObject obj) { }
+        public void SetContent(GameObject obj)
+        {
+            m_content = obj;
+        }
     }
 }

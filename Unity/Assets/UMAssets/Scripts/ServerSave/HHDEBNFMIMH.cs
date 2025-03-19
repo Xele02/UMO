@@ -47,13 +47,13 @@ public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_ServerSaveBlock
 	public override bool DMICHEJIAJL { get { return true; } } // 0x175742C NFKFOODCJJB
 
 	// // RVA: 0x17550EC Offset: 0x17550EC VA: 0x17550EC
-	public void GFANLIOMMNA_SetViewed(int BPNKGDGBBFG)
+	public void GFANLIOMMNA_SetReleased(int BPNKGDGBBFG)
 	{
 		JBBHBNAJMJB[BPNKGDGBBFG - 1].BEBJKJKBOGH_Date = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 	}
 
 	// // RVA: 0x175523C Offset: 0x175523C VA: 0x175523C
-	public bool FABEJIHKFGN_IsViewed(int MDLFDNOJAJN)
+	public bool FABEJIHKFGN_IsReleased(int MDLFDNOJAJN)
 	{
 		return JBBHBNAJMJB[MDLFDNOJAJN - 1].BEBJKJKBOGH_Date != 0;
 	}

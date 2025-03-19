@@ -106,7 +106,7 @@ namespace XeApp.Game.Menu
 			SetDesc(viewData.KLMPFGOCBHC_Description);
 			SetGauge((int)(viewData.ABLHIAEDJAI_CurrentValue * 100.0f / viewData.HLDGMMDFNHB_TargetValue));
 			if (viewData.GOOIIPFHOIG != null)
-				SetIcon(viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId);
+				SetIcon(viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
 			SetNumber(viewData.ABLHIAEDJAI_CurrentValue, viewData.HLDGMMDFNHB_TargetValue);
 			SetRewardNum(viewData.GOOIIPFHOIG == null ? 0 : viewData.GOOIIPFHOIG.MBJIFDBEDAC_Cnt);
 			m_layoutRoot.UpdateAllAnimation(TimeWrapper.deltaTime * 2, false);
@@ -309,22 +309,22 @@ namespace XeApp.Game.Menu
 			if(m_viewData != null && m_viewData.GOOIIPFHOIG != null)
 			{
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-				EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(m_viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId);
+				EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(m_viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
 				if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
 				{
-					InitCostumeData(costumeData, m_viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId);
+					InitCostumeData(costumeData, m_viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemId);
 					MenuScene.Instance.ShowCostumeDetailWindow(costumeData, 0);
 				}
 				else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 				{
 					if (sceneData == null)
 						sceneData = new GCIJNCFDNON_SceneInfo();
-					sceneData.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(m_viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId), null, null, 0, 0, 0, false, 0, 0);
+					sceneData.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(m_viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemId), null, null, 0, 0, 0, false, 0, 0);
 					MenuScene.Instance.ShowSceneStatusPopupWindow(sceneData, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, null, true, true, SceneStatusParam.PageSave.None, false);
 				}
 				else
 				{
-					MenuScene.Instance.ShowItemDetail(m_viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemFullId, m_viewData.GOOIIPFHOIG.MBJIFDBEDAC_Cnt, null);
+					MenuScene.Instance.ShowItemDetail(m_viewData.GOOIIPFHOIG.JJBGOIMEIPF_ItemId, m_viewData.GOOIIPFHOIG.MBJIFDBEDAC_Cnt, null);
 				}
 			}
 		}

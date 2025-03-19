@@ -128,7 +128,7 @@ namespace XeApp.Game.Menu
 					yield return null;
 			}
 			UpdateGaugePosition(layoutMain, endValue);
-			UpdateGaugePosition(layoutIn, f);
+			UpdateGaugePosition(layoutIn, endValue);
 			if(OnCountUpEvent != null)
 				OnCountUpEvent.Invoke(m_diff + m_base);
 			m_countUpSEPlayback.Stop(false);

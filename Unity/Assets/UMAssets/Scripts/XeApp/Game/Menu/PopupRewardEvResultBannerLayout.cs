@@ -51,22 +51,22 @@ namespace XeApp.Game.Menu
 			{
 				//0x11440D0
 				return _.name == "music (TextView)";
-			}).First();
+			}).FirstOrDefault();
 			m_musicText_EventHiScore = txts.Where((Text _) =>
 			{
 				//0x1144150
 				return _.name == "music_2 (TextView)";
-			}).First();
+			}).FirstOrDefault();
 			m_rankingText = txts.Where((Text _) =>
 			{
 				//0x11441D0
 				return _.name == "rankingeve (TextView)";
-			}).First();
+			}).FirstOrDefault();
 			m_descText = txts.Where((Text _) =>
 			{
 				//0x1144250
 				return _.name == "desc (TextView)";
-			}).First();
+			}).FirstOrDefault();
 			m_changeLayout = layout.FindViewByExId("root_pop_reward_ev_bnr_sw_pop_reward_ev_bnr") as AbsoluteLayout;
 			Loaded();
 			return true;

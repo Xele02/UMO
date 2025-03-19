@@ -459,6 +459,7 @@ class JpStringLiterals
 	public static string StringLiteral_16419 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_16419", "【解放条件】\n\nプレイヤーランクを5にする。"); } } //0x03bb8b44
 	public static string StringLiteral_16496 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_16496", "解放していないキャラで\n親密度を上げることはできません。"); } } //0x03bb8c78
 	public static string StringLiteral_16775 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_16775", "配置数 {0:D2} / {1:D2}"); } } //0x03bb90d4
+	public static string StringLiteral_17240 { get { return "music_event_battle_ｔarｇeｔ_score"; } } // 0x03bb9818
 	public static string StringLiteral_17446 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_17446", "さしすせそ"); } } // 0x03bb9b50
 	public static string StringLiteral_17754 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_17754", "(＋{0})"); } } // 0x03bba020
 	public static string StringLiteral_17777 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_17777", "獲得したアイテムはありません。"); } } // 0x03bba07c
@@ -754,5 +755,6 @@ class JpStringLiterals
 	public static string UMO_NotesOn { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_NotesOn", "ノーツ表示 ON"); } }
 	public static string UMO_DivaSpOn { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_DivaSpOn", "超歌姫モード ON"); } }
 	public static string UMO_OriginSetting { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_OriginSetting", "スタンダード編成"); } }
+	public static string UMO_EpisodeBonus { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_EpisodeBonus", "エピソードボーナス"); } }
 	public const string StringLiteral_13083_3_1_0 = "\u753B\u50CF\u3092\u30B7\u30A7\u30A2\u3059\u308B\u30A2\u30D7\u30EA\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044\u3002"; //0x03515218
 }

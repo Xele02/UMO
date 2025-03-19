@@ -35,7 +35,7 @@ namespace XeSys.Gfx
 			float f1 = (time - start) / (end - start);
 			if(0 <= f1)
 			{
-				if (1 <= f1)
+				if (1 < f1)
 					f1 = 1;
 			}
 			else
@@ -43,7 +43,7 @@ namespace XeSys.Gfx
 			float f2 = strength / 100.0f;
 			if(f2 >= 0)
 			{
-				if(f2 >= 0)
+				if(f2 > 0)
 				{
 					f1 = (1 - f2) * f1 + f2 * (1 - (1 - f1) * (1 - f1));
 				}
@@ -66,7 +66,7 @@ namespace XeSys.Gfx
 				if (startTime <= time)
 				{
 					endTime = m_DataList[i].EndFrame * frameSec;
-					if (endTime >= time)
+					if (endTime > time)
 					{
 						if (m_DataList[i].TmType == TimeMapData.TimeMapType.CustomElm)
 						{

@@ -415,7 +415,7 @@ namespace XeApp.Game.Menu
 			int res = 0;
 			for(int i = 0; i < list.Count; i++)
 			{
-				res += (list[i] >> 0x1f) ^ 1;
+				res += list[i] >= 0 ? 1 : 0;
 			}
 			return res;
 		}
