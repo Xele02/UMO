@@ -67,6 +67,7 @@ namespace XeApp.Game.RhythmGame.UI
 		private IEnumerator WaitWarmup()
 		{
 			//0x155A150
+			yield return null;
 			while(_animator.GetCurrentAnimatorStateInfo(0).shortNameHash != _idleStateHash)
 				yield return null;
 			_isWaitWarmup = false;
