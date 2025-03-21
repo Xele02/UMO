@@ -107,10 +107,11 @@ namespace XeApp.Game.Menu
 			g = new GameObject("LineEndTarget");
 			m_lineEndTarget = g.AddComponent<RectTransform>();
 			m_lineEndTarget.SetParent(m_end_point, false);
-			m_lineEndTarget.anchorMax = new Vector2(1, 1);
-			m_lineEndTarget.anchorMin = new Vector2(1, 1);
+			m_lineEndTarget.anchorMax = new Vector2(1, 0);
+			m_lineEndTarget.anchorMin = new Vector2(1, 0);
 			m_lineEndTarget.pivot = new Vector2(1, 1);
 			m_lineEndTarget.sizeDelta = new Vector2(10, 10);
+			m_lineEndTarget.anchoredPosition = new Vector2(0, 10);
 			m_line_image = t1.Find("sw_cnm_ep_icon_01_anim (AbsoluteLayout)/sel_ep_next_line (AbsoluteLayout)/sel_ep_next_line (ImageView)").GetComponent<RawImageEx>();
 			m_next_image = t1.Find("sel_ep_next_fnt (AbsoluteLayout)/sel_ep_next_fnt (ImageView)").GetComponent<RawImageEx>();
 			m_use_item_btn.AddOnClickCallback(() =>

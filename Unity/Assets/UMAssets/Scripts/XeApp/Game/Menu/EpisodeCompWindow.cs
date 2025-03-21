@@ -134,12 +134,12 @@ namespace XeApp.Game.Menu
 			g = new GameObject("LineEndTarget");
 			m_lineEndTarget = g.AddComponent<RectTransform>();
 			m_lineEndTarget.transform.SetParent(m_end_point, false);
-			m_lineEndTarget.anchorMax = new Vector2(1, 1);
-			m_lineEndTarget.anchorMin = new Vector2(1, 1);
+			m_lineEndTarget.anchorMax = new Vector2(1, 0);
+			m_lineEndTarget.anchorMin = new Vector2(1, 0);
 			m_lineEndTarget.pivot = new Vector2(1, 1);
 			m_lineEndTarget.sizeDelta = new Vector2(10, 10);
 			m_lineEndTarget.anchoredPosition = new Vector2(0, 10);
-			RectTransform rt = GetComponentInChildren<Mask>().transform.GetChild(0) as RectTransform;
+			RectTransform rt = GetComponentInChildren<Mask>(true).transform.GetChild(0) as RectTransform;
 			rt.pivot = new Vector2(0, 1);
 			rt.anchorMin = new Vector2(0, 1);
 			rt.anchorMax = new Vector2(0, 1);
