@@ -22,7 +22,7 @@ namespace XeApp.Game.Common
 			{
 				charaId = Database.Instance.roomText.textData.FindData(header.startIndex).charaId;
 				charaPictId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[charaId - 1].EAHPLCJMPHD_PicId;
-				roomName = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.NPKPBDIDBBG_Rooms[dbSns.MALFHCHNEFN_RoomId - 1].OPFGFINHFCE_Name;
+				roomName = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.NPKPBDIDBBG_Rooms[dbSns.MALFHCHNEFN_RoomId].OPFGFINHFCE_Name;
 				bodyText = string.Format(MessageManager.Instance.GetMessage("menu", "sns_notify_fmt"), IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[charaId - 1].OPFGFINHFCE_Name);
 				return true;
 			}
