@@ -773,7 +773,7 @@ namespace XeApp.Game.Menu
 				m_bgBehaviour.ChangeColor(BgBehaviour.ColorType.CostumeSelect);
 				return;
 			}
-			if((int)category - 3 < 7)
+			if((int)category - 3 < 8)
 			{
 				switch(category)
 				{
