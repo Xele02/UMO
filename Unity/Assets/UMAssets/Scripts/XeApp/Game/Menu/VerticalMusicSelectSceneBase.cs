@@ -1676,7 +1676,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xAC37D8 Offset: 0xAC37D8 VA: 0xAC37D8
 		protected bool CanDoUnitDanceFocus(bool line6Mode = false)
 		{
-			if (RuntimeSettings.CurrentSettings.ForceTutoSkip || GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.INEAGJMJLFG_TutorialAlreadyFlags.ODKIHPBEOEC_IsTrue(48))
+			if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.INEAGJMJLFG_TutorialAlreadyFlags.ODKIHPBEOEC_IsTrue(48))
 				return false;
 			return IsEnableUnitDance(line6Mode);
 		}
@@ -1760,8 +1760,6 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xAD2AA0 Offset: 0xAD2AA0 VA: 0xAD2AA0
 		protected IEnumerator TryShow6LineModeTutorial()
 		{
-			if (RuntimeSettings.CurrentSettings.ForceTutoSkip)
-				yield break;
 			//0xAD88EC
 			MenuScene.Instance.InputDisable();
 			MenuScene.Instance.RaycastDisable();
@@ -1780,8 +1778,6 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xAC3A1C Offset: 0xAC3A1C VA: 0xAC3A1C
 		protected IEnumerator TryShowUtaRateTutorial()
 		{
-			if (RuntimeSettings.CurrentSettings.ForceTutoSkip)
-				yield break;
 			//0xAD8E2C
 			MenuScene.Instance.InputDisable();
 			MenuScene.Instance.RaycastDisable();
