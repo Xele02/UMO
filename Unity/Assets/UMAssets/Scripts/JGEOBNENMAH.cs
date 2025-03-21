@@ -416,7 +416,7 @@ public class JGEOBNENMAH
 								{
 									if(AGDEBBENNCK.KAIPAEILJHO_TicketCount > 1)
 									{
-										tick = AGDEBBENNCK.KAIPAEILJHO_TicketCount;
+										tick *= AGDEBBENNCK.KAIPAEILJHO_TicketCount;
 									}
 								}
 								if(tick > 0)
