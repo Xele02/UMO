@@ -388,7 +388,7 @@ namespace XeApp.Game.Menu
 					return;
 				}
 			}
-
+			GameManager.Instance.ResetViewPlayerData();
 			if(GameManager.Instance.IsTutorial)
 			{
 				if(Database.Instance.gameResult.tutorialOneResult == GameResultData.TutorialOneResult.RETRY)
