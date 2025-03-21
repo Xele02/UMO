@@ -34,9 +34,6 @@ public class JBMPOAAMGNB_Base : KLFDBFMNLBL_ServerSaveBlock
 		IJHBIMNKOMC_TutorialEnd = 0;
 		FNLNIKFNHAM_ForceRename = false;
 		PBEKKMOPENN_AgreeTosVer = 0;
-
-		if (RuntimeSettings.CurrentSettings.ForceTutoSkip)
-			IJHBIMNKOMC_TutorialEnd = 2;
 	}
 
 	// // RVA: 0x1421728 Offset: 0x1421728 VA: 0x1421728 Slot: 5
@@ -78,9 +75,6 @@ public class JBMPOAAMGNB_Base : KLFDBFMNLBL_ServerSaveBlock
 		if (CMKKFCGBILD_Prof.Length > 25)
 			CMKKFCGBILD_Prof = CMKKFCGBILD_Prof.Substring(0, 25);
 		KFKDMBPNLJK_BlockInvalid = isInvalid;
-
-		if(RuntimeSettings.CurrentSettings.ForceTutoSkip)
-			IJHBIMNKOMC_TutorialEnd = 2;
 		return true;
 	}
 

@@ -153,11 +153,8 @@ namespace XeApp.Game.Menu
 				songId = m_pickupFreeMusicId;
 			if(IsCanDoUnitHelp())
 			{
-				if (!RuntimeSettings.CurrentSettings.ForceTutoSkip)
-				{
-					GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.LHPDDGIJKNB();
-					GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
-				}
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.LHPDDGIJKNB();
+				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
 			}
 			if(!SelectUnitDanceFocus(out m_pickupFreeMusicId, out m_pickupFreeCategoryId, ref m_musicSelectUISapporter.isLine6Mode, false, 0))
 			{
@@ -436,8 +433,7 @@ namespace XeApp.Game.Menu
 				}
 				if (!MenuScene.Instance.DirtyChangeScene)
 				{
-					if(SettingMenuPanel.IsValkyrieTuneUpUnlock() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade) 
-						&& !RuntimeSettings.CurrentSettings.ForceTutoSkip)
+					if(SettingMenuPanel.IsValkyrieTuneUpUnlock() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade))
 					{
 						yield return Co.R(TutorialProc.Co_ValkyrieUpgrade(MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.Setting), BasicTutorialMessageId.Id_ValkyrieUpgradeHome, InputLimitButton.Setting, TutorialPointer.Direction.Down, null, m_musicList.MusicScrollView));
 						//LAB_00ac36b4

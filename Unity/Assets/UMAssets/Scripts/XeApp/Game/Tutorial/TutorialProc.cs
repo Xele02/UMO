@@ -38,8 +38,6 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE49B54 Offset: 0xE49B54 VA: 0xE49B54
 		public static bool CanAutoSettingHelp()
 		{
-			if (RuntimeSettings.CurrentSettings.ForceTutoSkip)
-				return false;
 			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsAutoSetting))
 			{
 				if(QuestUtility.m_beginnerViewList.Count != 0)
@@ -175,8 +173,6 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE4A008 Offset: 0xE4A008 VA: 0xE4A008
 		public static bool CanUnit5Help(GameSetupData.MusicInfo musicInfo)
 		{
-			if (RuntimeSettings.CurrentSettings.ForceTutoSkip)
-				return false;
 			if (musicInfo == null || CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsUnit5Help) || musicInfo.onStageDivaNum < 4)
 				return false;
 			return !GameManager.Instance.IsTutorial;
@@ -391,8 +387,6 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE4A6AC Offset: 0xE4A6AC VA: 0xE4A6AC
 		public static IEnumerator Co_CostumeUpgrade(EBFLJMOCLNA_Costume.NDOPBOCEPJO type, ButtonBase button, BasicTutorialMessageId messageId, InputLimitButton limitButton = InputLimitButton.None, TutorialPointer.Direction direction = TutorialPointer.Direction.Normal)
 		{
-			if (RuntimeSettings.CurrentSettings.ForceTutoSkip)
-				yield break;
 			EBFLJMOCLNA_Costume pd; // 0x28
 			BasicTutorialManager mrg; // 0x2C
 			GameManager.PushBackButtonHandler dymmyBackHandler; // 0x30
@@ -456,8 +450,6 @@ namespace XeApp.Game.Tutorial
 
 			//0x1915D2C
 			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade))
-				yield break;
-			if(RuntimeSettings.CurrentSettings.ForceTutoSkip)
 				yield break;
 			MenuScene.Instance.InputDisable();
 			BasicTutorialManager.Initialize();
@@ -851,8 +843,6 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE4B430 Offset: 0xE4B430 VA: 0xE4B430
 		public static IEnumerator Co_DivaSelectList(StayButton button, Func<bool> waitFunc)
 		{
-			if (RuntimeSettings.CurrentSettings.ForceTutoSkip)
-				yield break;
 			GameManager.PushBackButtonHandler dymmyBackHandler;
 			//0xE4EE00
 			button.ClearOnStayCallback();
@@ -973,8 +963,6 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE4B79C Offset: 0xE4B79C VA: 0xE4B79C
 		public static bool CanBeginnerAssistSelect()
 		{
-			if (RuntimeSettings.CurrentSettings.ForceTutoSkip)
-				return false;
 			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsSelectAssist))
 			{
 				if (!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsAutoSetting))
