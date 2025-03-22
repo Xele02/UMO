@@ -75,7 +75,7 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerResult.Play((int)mcrs.cs_se_result.SE_RESULT_030);
 			layoutRoot.StartChildrenAnimGoStop("go_in", "st_in");
 			layoutBack.StartChildrenAnimGoStop("go_in", "st_in");
-			yield return Co.R(Co_WaitLabel(layoutRoot, "go_act", true));
+			yield return Co.R(Co_WaitLabel(layoutRoot, "go_act", false));
 			yield return Co.R(Co_WaitFrame(layoutBack, layoutRoot.GetView(0).FrameAnimation.FrameCount, false));
 			if(onEndCallback != null)
 				onEndCallback(0);
