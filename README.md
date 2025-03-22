@@ -1,6 +1,6 @@
 Rewrite project of UtaMacross mobile game. 
 
-**Current version : 1.1.3**
+**Current version : 1.1.4**
 
 Fonctionality : 
 * Almost everything of the game.
