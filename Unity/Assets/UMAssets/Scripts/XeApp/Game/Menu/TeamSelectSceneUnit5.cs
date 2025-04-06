@@ -226,7 +226,20 @@ namespace XeApp.Game.Menu
 			m_isGoDivaEvent = m_transitionName == TransitionList.Type.GODIVA_TEAM_SELECT;
 			if(m_isGoDivaEvent)
 			{
-				TodoLogger.LogError(TodoLogger.EventGoDiva_14, "TODO Event");
+				BBOPDOIIOGM b = new BBOPDOIIOGM();
+				b.KHEKNNFCAOI();
+				int id_ = b.EPCHEDJFAON_SelDiva;
+				if(id_ < 2)
+					id_ = 1;
+				m_playerData.HMCMKKNLBII_LoadGoDivaUnit(id_);
+				GameManager.Instance.DivaIconCache.TryLoadEventGoDivaIcon(id_);
+				m_isGoDivaBonus = false;
+				IBJAKJJICBC ib = Database.Instance.selectedMusic.GetSelectedMusicData() as IBJAKJJICBC;
+				if(ib != null && b.GEGAEDDGNMA_Bonuses.Count != 0 && ib.OGHOPBAKEFE_IsEventSpecial)
+				{
+					m_isGoDivaBonus = true;
+				}
+				m_unitInfo.OnClickDiva = OnShowDivaStatus;
 			}
 			m_viewMusicData = Database.Instance.selectedMusic.GetSelectedMusicData();
 			m_viewEnemyData = Database.Instance.selectedMusic.GetEnemyData(Database.Instance.gameSetup.musicInfo.difficultyType);
@@ -889,7 +902,7 @@ namespace XeApp.Game.Menu
 			UpdateUnitBonus(unitSetIndex);
 			m_unitSetParamCalculator.Calc(Database.Instance.gameSetup.musicInfo, m_playerData, m_playerData.JKIJFGGMNAN_GetUnit(unitSetIndex, m_isGoDivaEvent), m_viewMusicData, m_viewFriendPlayerData, m_viewEnemyData, Database.Instance.bonusData.EffectiveEpisodeBonus, m_isRaidEvent);
 			m_unitStatus.UpdateContent(m_unitSetParamCalculator);
-			JLKEOGLJNOD_TeamInfo viewUnitData = m_playerData.JKIJFGGMNAN_GetUnit(unitSetIndex);
+			JLKEOGLJNOD_TeamInfo viewUnitData = m_playerData.JKIJFGGMNAN_GetUnit(unitSetIndex, m_isGoDivaEvent);
 			m_unitStatus.SetUnitName(viewUnitData.BHKALCOAHHO_Name);
 			m_valkyrieButton.UpdateContent(viewUnitData, m_viewMusicData);
 			m_valkyrieButton.SetTapGuard(true);
@@ -1407,8 +1420,11 @@ namespace XeApp.Game.Menu
 					}
 					else if(m_eventCtrl is MANPIONIGNO_EventGoDiva && m_isGoDivaBonus)
 					{
-						// L394
-						TodoLogger.LogError(TodoLogger.EventGoDiva_14, "Event godiva");
+						m_skipTicketPopupSetting.IsWeekdayEvent = false;
+						b1 = false;
+						MANPIONIGNO_EventGoDiva evGoDiva = m_eventCtrl as MANPIONIGNO_EventGoDiva;
+						cnt = Mathf.Min(cnt, Mathf.Min(Mathf.Min(CIOECGOMILE.HHCJCDFCLOB.GGJMFEGHGIA(), CIOECGOMILE.HHCJCDFCLOB.KJBENABMBCA(time)), evGoDiva.CLELOGKMNCE_GetEventSaveData().PFPGHILKGIG_BnsCnt + 1));
+						m_skipTicketPopupSetting.IsGoDivaEventDailyBonus = evGoDiva.CLELOGKMNCE_GetEventSaveData().JHKKAKJCJOF_Bns2 > 0;
 					}
 					else
 					{

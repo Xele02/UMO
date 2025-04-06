@@ -136,9 +136,9 @@ namespace XeApp.Game.Common
 						TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Raid");
 					}
 					MANPIONIGNO_EventGoDiva evGoDiva = list[i] as MANPIONIGNO_EventGoDiva;
-					if(evGoDiva != null)
+					if(evGoDiva != null && evGoDiva.KBKGHDFBHAP_GetBonusEndTime(currentTime) != 0)
 					{
-						TodoLogger.LogError(TodoLogger.EventGoDiva_14, "GoDiva");
+						str = bk.GetMessageByLabel("banner_godiva_fevertime");
 					}
 					//LAB_00ea9d4c
 					string s = list[i].DBEMCLMPCFA_GetBannerText();

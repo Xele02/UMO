@@ -754,7 +754,121 @@ public class FFHPBEPOMAK_DivaInfo
 	// // RVA: 0x14E2F68 Offset: 0x14E2F68 VA: 0x14E2F68
 	public static List<FFHPBEPOMAK_DivaInfo> OOJFGDKBOHK(int AHHJLDLAPAN, bool OJEBNBLHPNP = false)
 	{
-		TodoLogger.LogError(TodoLogger.EventGoDiva_14, "OOJFGDKBOHK");
-		return new List<FFHPBEPOMAK_DivaInfo>();
+		List<FFHPBEPOMAK_DivaInfo> res = new List<FFHPBEPOMAK_DivaInfo>();
+		for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes.Count; i++)
+		{
+            LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[i];
+            if (cos.AHHJLDLAPAN_PrismDivaId == AHHJLDLAPAN)
+			{
+				if(cos.PPEGAKEIEGM_Enabled == 2)
+				{
+					if(cos.DAJGPBLEEOB_PrismCostumeModelId == 1 || OJEBNBLHPNP)
+					{
+						//LAB_014e36c4
+                    }
+					else
+					{
+						int ep = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MOLEPBNJAGE_Episode.NNFJBBFBIEN(cos.JPIDIENBGKH_CostumeId);
+						if(ep == 0)
+						{
+							if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.FABAGMLEKIB_List[cos.JPIDIENBGKH_CostumeId - 1].CGKAEMGLHNK_Possessed())
+							{
+								//LAB_014e36c4
+							}
+							else
+								continue;
+						}
+						else
+						{
+							if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.NGHJPEIKLJL_Episode.BBAJKJPKOHD_EpisodeList[ep - 1].BEBJKJKBOGH_Date != 0)
+							{
+								//LAB_014e36c4
+							}
+							else
+								continue;
+						}
+					}
+					//LAB_014e36c4
+					AMCGONHBGGF PFEPMCNHEMJ = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KMBJGAHCBDI_UnitGoDiva.ALDOJAEAMCJ(AHHJLDLAPAN, 0).FDBOPFEOENF_MainDivas[0];
+					List<GCIJNCFDNON_SceneInfo> ls = new List<GCIJNCFDNON_SceneInfo>();
+					ls.Add(null);
+					ls.Add(null);
+					GCIJNCFDNON_SceneInfo s = null;
+					if(PFEPMCNHEMJ.EBDNICPAFLB_SSlot[0] != 0)
+					{
+						if(GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes == null)
+						{
+							MMPBPOIFDAF_Scene.PMKOFEIONEG ss = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA.Find((MMPBPOIFDAF_Scene.PMKOFEIONEG IBDJFHFIIHN) =>
+							{
+								//0x14E475C
+								return IBDJFHFIIHN.PPFNGGCBJKC_Id == PFEPMCNHEMJ.EBDNICPAFLB_SSlot[0];
+							});
+							s = new GCIJNCFDNON_SceneInfo();
+							s.KHEKNNFCAOI(PFEPMCNHEMJ.EBDNICPAFLB_SSlot[0], ss.PDNIFBEGMHC_Mb, ss.EMOJHJGHJLN_Sb, ss.JPIPENJGGDD_Mlt, ss.IELENGDJPHF_Ulk, ss.MJBODMOLOBC_Luck, ss.LHMOAJAIJCO_New, ss.BEBJKJKBOGH_Date, ss.DMNIMMGGJJJ_Leaf);
+						}
+						else
+						{
+							s = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes.Find((GCIJNCFDNON_SceneInfo AOIKKLBKEBC) =>
+							{
+								//0x14E47E4
+								return AOIKKLBKEBC.BCCHOBPJJKE_SceneId == PFEPMCNHEMJ.EBDNICPAFLB_SSlot[0];
+							});
+						}
+					}
+					if(PFEPMCNHEMJ.EBDNICPAFLB_SSlot[1] != 0)
+					{
+						if(GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes == null)
+						{
+							MMPBPOIFDAF_Scene.PMKOFEIONEG ss = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA.Find((MMPBPOIFDAF_Scene.PMKOFEIONEG IBDJFHFIIHN) =>
+							{
+								//0x14E4860
+								return IBDJFHFIIHN.PPFNGGCBJKC_Id == PFEPMCNHEMJ.EBDNICPAFLB_SSlot[1];
+							});
+							ls[0] = new GCIJNCFDNON_SceneInfo();
+							ls[0].KHEKNNFCAOI(PFEPMCNHEMJ.EBDNICPAFLB_SSlot[0], ss.PDNIFBEGMHC_Mb, ss.EMOJHJGHJLN_Sb, ss.JPIPENJGGDD_Mlt, ss.IELENGDJPHF_Ulk, ss.MJBODMOLOBC_Luck, ss.LHMOAJAIJCO_New, ss.BEBJKJKBOGH_Date, ss.DMNIMMGGJJJ_Leaf);
+						}
+						else
+						{
+							ls[0] = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes.Find((GCIJNCFDNON_SceneInfo AOIKKLBKEBC) =>
+							{
+								//0x14E48E8
+								return AOIKKLBKEBC.BCCHOBPJJKE_SceneId == PFEPMCNHEMJ.EBDNICPAFLB_SSlot[1];
+							});
+						}
+					}
+					if(PFEPMCNHEMJ.EBDNICPAFLB_SSlot[2] != 0)
+					{
+						if(GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes == null)
+						{
+							MMPBPOIFDAF_Scene.PMKOFEIONEG ss = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA.Find((MMPBPOIFDAF_Scene.PMKOFEIONEG IBDJFHFIIHN) =>
+							{
+								//0x14E4964
+								return IBDJFHFIIHN.PPFNGGCBJKC_Id == PFEPMCNHEMJ.EBDNICPAFLB_SSlot[2];
+							});
+							ls[1] = new GCIJNCFDNON_SceneInfo();
+							ls[1].KHEKNNFCAOI(PFEPMCNHEMJ.EBDNICPAFLB_SSlot[0], ss.PDNIFBEGMHC_Mb, ss.EMOJHJGHJLN_Sb, ss.JPIPENJGGDD_Mlt, ss.IELENGDJPHF_Ulk, ss.MJBODMOLOBC_Luck, ss.LHMOAJAIJCO_New, ss.BEBJKJKBOGH_Date, ss.DMNIMMGGJJJ_Leaf);
+						}
+						else
+						{
+							ls[1] = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes.Find((GCIJNCFDNON_SceneInfo AOIKKLBKEBC) =>
+							{
+								//0x14E49EC
+								return AOIKKLBKEBC.BCCHOBPJJKE_SceneId == PFEPMCNHEMJ.EBDNICPAFLB_SSlot[2];
+							});
+						}
+					}
+					FFHPBEPOMAK_DivaInfo d = new FFHPBEPOMAK_DivaInfo();
+					d.KHEKNNFCAOI(AHHJLDLAPAN, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, false);
+					d.ODFBCANBLIJ(s);
+					d.GOEDGNGDMCN(ls[0], 0);
+					d.GOEDGNGDMCN(ls[1], 1);
+					d.HOOJOFACOEK_SetCostume(cos.JPIDIENBGKH_CostumeId, 0, true, OJEBNBLHPNP);
+					d.JFIPEKCDKLG(cos.JPIDIENBGKH_CostumeId, 0, OJEBNBLHPNP);
+					d.HCDGELDHFHB();
+					res.Add(d);
+				}
+			}
+		}
+		return res;
 	}
 }

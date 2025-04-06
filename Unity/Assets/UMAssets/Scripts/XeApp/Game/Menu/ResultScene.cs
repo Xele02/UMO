@@ -24,7 +24,7 @@ namespace XeApp.Game.Menu
 		// private RaidResultPointLayoutController.InitParam raidResultPointLayoutInitParam; // 0x68
 		// private RaidResultDamageLayoutController.InitParam raidResultDamageLayoutInitParam; // 0x6C
 		// private RaidResultRewardLayoutController.InitParam raidResultRewardLayoutInitParam; // 0x70
-		// private LayoutResultGoDivaMain.InitParam goDivaLayoutInitParam; // 0x74
+		private LayoutResultGoDivaMain.InitParam goDivaLayoutInitParam; // 0x74
 		private ResultCommonLayoutController commonLayoutController; // 0x78
 		private ResultScoreLayoutController scoreLayoutController; // 0x7C
 		private ResultDivaLayoutController divaLayoutController; // 0x80
@@ -167,7 +167,10 @@ namespace XeApp.Game.Menu
 			}
 			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
 			{
-				TodoLogger.LogError(TodoLogger.EventGoDiva_14, "InitParam Event");
+				JLCHNKIHGHK data = new JLCHNKIHGHK();
+				data.KHEKNNFCAOI();
+				goDivaLayoutInitParam = new LayoutResultGoDivaMain.InitParam();
+				goDivaLayoutInitParam.viewEventResultData = data;
 			}
 		}
 
@@ -315,10 +318,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB4FD5C Offset: 0xB4FD5C VA: 0xB4FD5C
-		// private void CallbackEventHiScoreWindowLayoutOpen() { }
+		private void CallbackEventHiScoreWindowLayoutOpen()
+		{
+			commonLayoutController.LayoutOkayButton.SetEnable(false);
+		}
 
 		// // RVA: 0xB4FDAC Offset: 0xB4FDAC VA: 0xB4FDAC
-		// private void CallbackEventHiScoreWindowLayoutClose() { }
+		private void CallbackEventHiScoreWindowLayoutClose()
+		{
+			commonLayoutController.LayoutOkayButton.SetEnable(true);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x722A8C Offset: 0x722A8C VA: 0x722A8C
 		// // RVA: 0xB4FDFC Offset: 0xB4FDFC VA: 0xB4FDFC
@@ -363,8 +372,38 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB50000 Offset: 0xB50000 VA: 0xB50000
 		private IEnumerator Co_LoadGoDivaLayout()
 		{
-			TodoLogger.LogError(TodoLogger.EventGoDiva_14, "Co_LoadGoDivaLayout");
-			yield return null;
+			FontInfo fontInfo; // 0x14
+			StringBuilder bundleName; // 0x18
+			AssetBundleLoadLayoutOperationBase lytAssetOp; // 0x1C
+
+			//0xB5D11C
+			fontInfo = GameManager.Instance.GetSystemFont();
+			bundleName = new StringBuilder();
+			bundleName.Set("ly/225.xab");
+			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_ResultEvent04HiScoreWindow");
+			yield return lytAssetOp;
+			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(fontInfo, (GameObject instance) =>
+			{
+				//0xB550EC
+				instance.transform.SetParent(transform, false);
+				event01_EventHiScoreWindowLayout = instance.GetComponent<LayoutResultEventHiScoreWindow>();
+				event01_EventHiScoreWindowLayout.m_OnOpen = CallbackEventHiScoreWindowLayoutOpen;
+				event01_EventHiScoreWindowLayout.m_OnClose = CallbackEventHiScoreWindowLayoutClose;
+				event01_EventHiScoreWindowLayout.transform.SetParent(GameManager.Instance.PopupCanvas.transform.Find("Root"));
+			}));
+			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_ResultEvent04");
+			yield return lytAssetOp;
+			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(fontInfo, (GameObject instance) =>
+			{
+				//0xB55348
+				instance.transform.SetParent(transform, false);
+				layoutResultGoDivaMain = instance.GetComponent<LayoutResultGoDivaMain>();
+				layoutResultGoDivaMain.m_pointResultLayoutController = instance.GetComponentInChildren<GoDivaPointResultLayoutController>();
+				layoutResultGoDivaMain.m_growResultLayoutController = instance.GetComponentInChildren<GoDivaGrowResultLayoutController>();
+				layoutResultGoDivaMain.m_balloonLayoutController = instance.GetComponentInChildren<GoDivaResultBalloonLayoutController>(true);
+				goDivaLayoutInitParam.layoutEventHiScoreWindow = event01_EventHiScoreWindowLayout;
+			}));
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 		}
 
 		// // RVA: 0xB500AC Offset: 0xB500AC VA: 0xB500AC Slot: 18
@@ -595,8 +634,7 @@ namespace XeApp.Game.Menu
 			{
 				yield return new WaitWhile(() => {
 					//0xB55CB0
-					TodoLogger.LogError(TodoLogger.EventGoDiva_14, "Event");
-					return false;
+					return layoutResultGoDivaMain == null || !layoutResultGoDivaMain.IsReady();
 				});
 			}
 			if(!isInTutorial)
@@ -979,21 +1017,41 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB529D4 Offset: 0xB529D4 VA: 0xB529D4
 		private IEnumerator Co_InitGoDivaResult()
 		{
-			TodoLogger.LogError(TodoLogger.EventGoDiva_14, "Co_InitGoDivaResult");
-			yield return null;
+			//0xB5B1C4
+			commonLayoutController.ChangeViewForDropResult();
+			goDivaLayoutInitParam.layoutOkayButton = commonLayoutController.LayoutOkayButton;
+			layoutResultGoDivaMain.gameObject.SetActive(true);
+			layoutResultGoDivaMain.onClickOkayLastButton = EndGoDivaResult;
+			layoutResultGoDivaMain.Setup(goDivaLayoutInitParam);
+			task = UpdateGoDivaResult;
+			yield return new WaitUntil(() =>
+			{
+				//0xB55E34
+				return !layoutResultGoDivaMain.IsLoading();
+			});
+			StartGoDivaResultAnim();
 		}
 
 		// // RVA: 0xB52A80 Offset: 0xB52A80 VA: 0xB52A80
 		// private bool IsGoDivaResultLoading() { }
 
 		// // RVA: 0xB52AAC Offset: 0xB52AAC VA: 0xB52AAC
-		// private void StartGoDivaResultAnim() { }
+		private void StartGoDivaResultAnim()
+		{
+			layoutResultGoDivaMain.StartAnim();
+		}
 
 		// // RVA: 0xB52AD8 Offset: 0xB52AD8 VA: 0xB52AD8
-		// private void UpdateGoDivaResult() { }
+		private void UpdateGoDivaResult()
+		{
+			return;
+		}
 
 		// // RVA: 0xB52ADC Offset: 0xB52ADC VA: 0xB52ADC
-		// private void EndGoDivaResult() { }
+		private void EndGoDivaResult()
+		{
+			this.StartCoroutineWatched(Co_MountMenuScene(false));
+		}
 
 		// // RVA: 0xB52B04 Offset: 0xB52B04 VA: 0xB52B04
 		private void InitEvent03WinLose()
@@ -1210,7 +1268,7 @@ namespace XeApp.Game.Menu
 							TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva:
-							TodoLogger.LogError(TodoLogger.EventGoDiva_14, "Event");
+							MenuScene.Instance.Mount(TransitionUniqueId.EVENTGODIVA, new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, true), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 							break;
 					}
 				}
@@ -1278,18 +1336,6 @@ namespace XeApp.Game.Menu
 		// [CompilerGeneratedAttribute] // RVA: 0x723244 Offset: 0x723244 VA: 0x723244
 		// // RVA: 0xB5501C Offset: 0xB5501C VA: 0xB5501C
 		// private void <Co_LoadRaidLayout>b__44_3(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x723254 Offset: 0x723254 VA: 0x723254
-		// // RVA: 0xB550EC Offset: 0xB550EC VA: 0xB550EC
-		// private void <Co_LoadGoDivaLayout>b__45_0(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x723264 Offset: 0x723264 VA: 0x723264
-		// // RVA: 0xB55348 Offset: 0xB55348 VA: 0xB55348
-		// private void <Co_LoadGoDivaLayout>b__45_1(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x723354 Offset: 0x723354 VA: 0x723354
-		// // RVA: 0xB55E34 Offset: 0xB55E34 VA: 0xB55E34
-		// private bool <Co_InitGoDivaResult>b__89_0() { }
 
 		// [CompilerGeneratedAttribute] // RVA: 0x723384 Offset: 0x723384 VA: 0x723384
 		// // RVA: 0xB55EB4 Offset: 0xB55EB4 VA: 0xB55EB4

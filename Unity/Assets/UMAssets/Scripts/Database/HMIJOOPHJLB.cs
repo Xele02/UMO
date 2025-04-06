@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using UnityEngine;
 using XeSys;
 
 [System.Obsolete("Use HMIJOOPHJLB_Diva2", true)]
@@ -21,10 +22,23 @@ public class HMIJOOPHJLB_Diva2 : DIHHCBACKGG_DbSection
 	// public int DHIOLJDHECJ(int MEKJFFHMKOB) { }
 
 	// // RVA: 0x15F5F4C Offset: 0x15F5F4C VA: 0x15F5F4C
-	// public int NAPBJDGJADP(int CIEOBFIIPLD) { }
+	public int NAPBJDGJADP(int CIEOBFIIPLD)
+	{
+		int idx = CIEOBFIIPLD - 1;
+		if(idx < 0)
+			return 0;
+		if(KNOMABFHFEB.Count <= idx)
+		{
+			idx = KNOMABFHFEB.Count - 1;
+		}
+		return KNOMABFHFEB[idx] ^ BEKCOEABLJJ[idx];
+	}
 
 	// // RVA: 0x15F607C Offset: 0x15F607C VA: 0x15F607C
-	// public int OAJOMHOOCJJ(int CIEOBFIIPLD) { }
+	public int OAJOMHOOCJJ(int CIEOBFIIPLD)
+	{
+		return Mathf.Max(NAPBJDGJADP(Mathf.Clamp(CIEOBFIIPLD, 0, NBJKHMLGNPA())) - NAPBJDGJADP(Mathf.Clamp(CIEOBFIIPLD - 1, 0, NBJKHMLGNPA())), 0);
+	}
 
 	// // RVA: 0x15F6168 Offset: 0x15F6168 VA: 0x15F6168
 	public int NBJKHMLGNPA()

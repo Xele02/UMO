@@ -56,14 +56,244 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC497C8 Offset: 0xC497C8 VA: 0xC497C8
-		//public void LoadGoDivaResource(int divaId, int costumeModelId, int colorId, GoDivaResultAnimSetting animSetting) { }
+		public void LoadGoDivaResource(int divaId, int costumeModelId, int colorId, GoDivaResultAnimSetting animSetting)
+		{
+			m_IsLoading = true;
+			this.StartCoroutineWatched(Co_LoadGoDivaResource(divaId, costumeModelId, colorId, animSetting));
+		}
 
 		//// RVA: 0xC49900 Offset: 0xC49900 VA: 0xC49900
-		//public GoDivaResultAnimSetting CreateGoDivaAnimSetting(int divaId, bool isBonusPop) { }
+		public GoDivaResultAnimSetting CreateGoDivaAnimSetting(int divaId, bool isBonusPop)
+		{
+			GoDivaResultAnimSetting res = new GoDivaResultAnimSetting();
+			res.delayTimeList = new List<float>();
+			List<string> ls = new List<string>();
+			switch(divaId)
+			{
+				case 1:
+					if(isBonusPop)
+					{
+						res.delayTimeList.Add(1);
+						ls.Add("diva_001_appeal_start");
+						ls.Add("diva_001_appeal_loop");
+					}
+					else
+					{
+						res.delayTimeList.Add(0);
+						ls.Add("type_002_menu_talk01_start");
+						ls.Add("type_002_menu_talk01");
+						ls.Add("type_002_menu_talk01_end");
+					}
+					break;
+				case 2:
+					res.delayTimeList.Add(0);
+					if(isBonusPop)
+					{
+						ls.Add("diva_002_menu_reaction04");
+					}
+					else
+					{
+						ls.Add("type_001_menu_talk01_start");
+						ls.Add("type_001_menu_talk01");
+						ls.Add("type_001_menu_talk01_end");
+					}
+					break;
+				case 3:
+					res.delayTimeList.Add(0);
+					if(isBonusPop)
+					{
+						ls.Add("diva_003_join_start");
+						ls.Add("diva_003_join_end_loop");
+					}
+					else
+					{
+						ls.Add("type_001_menu_talk01_start");
+						ls.Add("type_001_menu_talk01");
+						ls.Add("type_001_menu_talk01_end");
+					}
+					break;
+				case 4:
+					if(isBonusPop)
+					{
+						res.delayTimeList.Add(0.5f);
+						ls.Add("diva_004_menu_simple_talk01");
+					}
+					else
+					{
+						res.delayTimeList.Add(0);
+						ls.Add("type_002_menu_talk01_start");
+						ls.Add("type_002_menu_talk01");
+						ls.Add("type_002_menu_talk01_end");
+					}
+					break;
+				case 5:
+					res.delayTimeList.Add(0);
+					if(isBonusPop)
+					{
+						ls.Add("type_004_menu_talk02_start");
+						ls.Add("type_004_menu_talk02");
+						ls.Add("type_004_menu_talk02_end");
+					}
+					else
+					{
+						ls.Add("type_004_menu_talk01_start");
+						ls.Add("type_004_menu_talk01");
+						ls.Add("type_004_menu_talk01_end");
+					}
+					break;
+				case 6:
+					res.delayTimeList.Add(0);
+					if(isBonusPop)
+					{
+						ls.Add("diva_006_menu_timezone01");
+					}
+					else
+					{
+						ls.Add("type_003_menu_talk02_start");
+						ls.Add("type_003_menu_talk02");
+						ls.Add("type_003_menu_talk02_end");
+					}
+					break;
+				case 7:
+					res.delayTimeList.Add(0);
+					if(isBonusPop)
+					{
+						ls.Add("type_001_menu_present01");
+					}
+					else
+					{
+						ls.Add("type_001_menu_talk01_start");
+						ls.Add("type_001_menu_talk01");
+						ls.Add("type_001_menu_talk01_end");
+					}
+					break;
+				case 8:
+					res.delayTimeList.Add(0);
+					if(isBonusPop)
+					{
+						ls.Add("diva_008_menu_reaction01");
+					}
+					else
+					{
+						ls.Add("type_003_menu_talk02_start");
+						ls.Add("type_003_menu_talk02");
+						ls.Add("type_003_menu_talk02_end");
+					}
+					break;
+				case 9:
+					res.delayTimeList.Add(0);
+					if(isBonusPop)
+					{
+						ls.Add("diva_009_menu_reaction01");
+					}
+					else
+					{
+						ls.Add("type_005_menu_talk01_start");
+						ls.Add("type_005_menu_talk01");
+						ls.Add("type_005_menu_talk01_end");
+					}
+					break;
+				case 10:
+					if(isBonusPop)
+					{
+						res.delayTimeList.Add(1);
+						ls.Add("diva_010_join_start");
+						ls.Add("diva_010_join_end_loop");
+					}
+					else
+					{
+						res.delayTimeList.Add(0);
+						ls.Add("type_003_menu_talk02_start");
+						ls.Add("type_003_menu_talk02");
+						ls.Add("type_003_menu_talk02_end");
+					}
+					break;
+			}
+			res.animNameList = new List<string>(ls);
+			StringBuilder str = new StringBuilder();
+			str.SetFormat("cs_diva_event_{0:D3}", divaId);
+			res.queSheetName = str.ToString();
+			return res;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C55F8 Offset: 0x6C55F8 VA: 0x6C55F8
 		//// RVA: 0xC49808 Offset: 0xC49808 VA: 0xC49808
-		//private IEnumerator Co_LoadGoDivaResource(int divaId, int costumeModelId, int colorId, GoDivaResultAnimSetting animSetting) { }
+		private IEnumerator Co_LoadGoDivaResource(int divaId, int costumeModelId, int colorId, GoDivaResultAnimSetting animSetting)
+		{
+			AssetBundleLoadAllAssetOperationBase operationDiva; // 0x28
+			List<string> motionNameList; // 0x2C
+
+			//0xC4C5F4
+			if(divaId == 0)
+			{
+				Debug.LogError(JpStringLiterals.StringLiteral_20457);
+				yield break;
+			}
+			if(costumeModelId == 0)
+			{
+				Debug.LogError(JpStringLiterals.StringLiteral_20458);
+				yield break;
+			}
+			if(m_divaResource != null)
+			{
+				Release();
+				yield return null;
+				yield return Resources.UnloadUnusedAssets();
+			}
+			if(animSetting.queSheetName != "")
+			{
+				bool isEndedChangeCueSheet = false;
+				m_voicePlayer.RequestChangeCueSheet(animSetting.queSheetName, () =>
+				{
+					//0xC4C3E8
+					isEndedChangeCueSheet = true;
+				});
+				while(!isEndedChangeCueSheet)
+					yield return null;
+			}
+			m_divaResource.LoadBasicResource(divaId, costumeModelId, colorId);
+			m_divaResource.LoadMenuResource(divaId, costumeModelId, MenuFacialType.Home, ResultScoreRank.Type.Illegal);
+			while(!m_divaResource.isMenuAllLoaded)
+				yield return null;
+			m_divaObject.Initialize(m_divaResource, divaId, false);
+			m_divaObject.gameObject.SetActive(false);
+			m_bundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
+			operationDiva = AssetBundleManager.LoadAllAssetAsync(m_bundleName.ToString());
+			yield return operationDiva;
+			m_overrideClipList.Add(MotionOverrideClipKeyResource.Set("diva_{0:D3}_menu_entry_{1}", "diva_cmn_simple_entry", divaId, operationDiva, m_assetName));
+			m_overrideClipList.Add(MotionOverrideClipKeyResource.Set("diva_{0:D3}_menu_idle_{1}", "diva_cmn_simple_idle", divaId, operationDiva, m_assetName));
+			m_overrideClipList.Add(MotionOverrideClipKeyResource.Set("diva_{0:D3}_menu_idle_{1}", "diva_cmn_menu_idle", divaId, operationDiva, m_assetName));
+			AssetBundleManager.UnloadAssetBundle(m_bundleName.ToString(), false);
+			motionNameList = animSetting.animNameList;
+			if(motionNameList[0].StartsWith("type"))
+			{
+				m_bundleName.SetFormat("dv/ty/{0:D3}.xab", IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(divaId).FPMGHDKACOF_PersonalityId);
+				operationDiva = AssetBundleManager.LoadAllAssetAsync(m_bundleName.ToString());
+				yield return operationDiva;
+			}
+			for(int i = 0; i < motionNameList.Count; i++)
+			{
+				motionNameList[i] = motionNameList[i] + "_{1}";
+			}
+			if(motionNameList.Count == 1)
+			{
+				m_overrideClipList.Add(MotionOverrideClipKeyResource.Set(motionNameList[0], "diva_cmn_simple_anime01", divaId, operationDiva, m_assetName));
+			}
+			else if(motionNameList.Count == 2)
+			{
+				m_overrideClipList.Add(MotionOverrideClipKeyResource.Set(motionNameList[0], "diva_cmn_simple_loop_start", divaId, operationDiva, m_assetName));
+				m_overrideClipList.Add(MotionOverrideClipKeyResource.Set(motionNameList[1], "diva_cmn_simple_loop_loop", divaId, operationDiva, m_assetName));
+			}
+			else if(motionNameList.Count == 3)
+			{
+				m_overrideClipList.Add(MotionOverrideClipKeyResource.Set(motionNameList[0], "diva_cmn_menu_talk01_start", divaId, operationDiva, m_assetName));
+				m_overrideClipList.Add(MotionOverrideClipKeyResource.Set(motionNameList[1], "diva_cmn_menu_talk01", divaId, operationDiva, m_assetName));
+				m_overrideClipList.Add(MotionOverrideClipKeyResource.Set(motionNameList[2], "diva_cmn_menu_talk01_end", divaId, operationDiva, m_assetName));
+			}
+			m_divaObject.OverrideAnimations(m_overrideClipList);
+			AssetBundleManager.UnloadAssetBundle(m_bundleName.ToString(), false);
+			m_IsLoading = false;
+		}
 
 		//// RVA: 0xC4A7B0 Offset: 0xC4A7B0 VA: 0xC4A7B0
 		public void LoadResource(int divaId, int costumeModelId, int colorId, List<string> motionNameList, List<string> loopMotionNameList, string voiceQueSheetName)
@@ -298,7 +528,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC4BE10 Offset: 0xC4BE10 VA: 0xC4BE10
-		//public void PlayVoice(SimpleDivaVoiceSetting setting, int id) { }
+		public void PlayVoice(SimpleDivaVoiceSetting setting, int id)
+		{
+			m_voicePlayer.PlayVoice(setting.m_voiceSetting, id);
+			this.StartCoroutineWatched(Co_SimpleLipSync(setting));
+		}
 
 		//// RVA: 0xC4BE80 Offset: 0xC4BE80 VA: 0xC4BE80
 		public void PlayVoiceOnly(SimpleDivaVoiceSetting setting)

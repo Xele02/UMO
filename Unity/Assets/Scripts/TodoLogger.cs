@@ -72,7 +72,6 @@ public static class TodoLogger
 	public static int EventRaid_11_13 = _Debug;
 	public static int EventBoxGacha_8 = _Debug;
 	public static int EventGoDiva_14 = _Debug;
-	public static int EventTicket_14 = _Debug; // GoDiva?
 	public static int EventBattle_3 = _Debug;
 	public static int EventScore_4 = _Debug;
 	public static int EventQuest_6 = _Debug; // == EventMission?

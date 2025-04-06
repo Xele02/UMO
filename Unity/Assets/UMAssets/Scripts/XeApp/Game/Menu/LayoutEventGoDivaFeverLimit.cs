@@ -65,7 +65,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1990C88 Offset: 0x1990C88 VA: 0x1990C88
-		// public void SetLimitText(string text) { }
+		public void SetLimitText(string text)
+		{
+			m_textRemainTime.text = text;
+		}
 
 		// // RVA: 0x1990CC4 Offset: 0x1990CC4 VA: 0x1990CC4 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

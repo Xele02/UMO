@@ -83,7 +83,7 @@ namespace XeApp.Game.Menu
 			base.InitializeFromLayout(layout, uvMan);
 			if(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB != null)
 			{
-				m_evnetLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9/*9*/) as NKOBMDPHNGP_EventRaidLobby;
+				m_evnetLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as NKOBMDPHNGP_EventRaidLobby;
 			}
 			m_baseButtonAnim = layout.FindViewById("sw_btn_all_anim") as AbsoluteLayout;
 			m_sceneButtonsAnim = layout.FindViewById("sw_cmn_lobby_btn_anim") as AbsoluteLayout;

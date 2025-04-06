@@ -893,12 +893,12 @@ namespace XeApp.Game.Menu
 			IKDICBBFBMI_EventBase ev = view.COAMJFMEIBF;
 			if(ev.HIDHLFCBIDE_EventType >= OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp && ev.HIDHLFCBIDE_EventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign)
 			{
-				ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9, false);
+				ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, false);
 			}
 			TransitionUniqueId goScene = TransitionUniqueId.MUSICSELECT_RAID;
-			if (ev.FBLGGLDPFDF())
+			if (ev.FBLGGLDPFDF_CanShowStartAdventure())
 			{
-				GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(ev.GFIBLLLHMPD_StartAdventureId);
+				GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(ev.GFIBLLLHMPD_StartAdventureId);
 				if(dbAdv != null && dbAdv.KKPPFAHFOJI_FileId > 0)
 				{
 					int advId = dbAdv.KKPPFAHFOJI_FileId;

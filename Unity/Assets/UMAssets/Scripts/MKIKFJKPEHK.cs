@@ -11,7 +11,7 @@ public class MKIKFJKPEHK
 		JCOBDONNJIP_3 = 3,
 	}
 
-	public bool NMKDLINPAFM; // 0x8
+	public bool NMKDLINPAFM_UseTicket; // 0x8
 	public List<int> BGIKOPLLDJB_Rate; // 0xC
 	public List<int> KLOOIJIDKGO_Cost; // 0x10
 
@@ -32,7 +32,7 @@ public class MKIKFJKPEHK
 						if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 						{
 							a1 = 2;
-							NMKDLINPAFM = true;
+							NMKDLINPAFM_UseTicket = true;
 						}
 						BGIKOPLLDJB_Rate = new List<int>();
 						KLOOIJIDKGO_Cost = new List<int>();
@@ -77,7 +77,7 @@ public class MKIKFJKPEHK
 			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			if(t < ev.DPJCPDKALGI_End1)
 			{
-				if(!NMKDLINPAFM)
+				if(!NMKDLINPAFM_UseTicket)
 				{
 					return CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC_GetCurrent() < KLOOIJIDKGO_Cost[OIACNLKAIFO] ? IMIDFBNGHCG.CNAMHABEOPF_1 : IMIDFBNGHCG.DCFJEBLEELJ_0;
 				}
@@ -102,7 +102,7 @@ public class MKIKFJKPEHK
 	// // RVA: 0x195A338 Offset: 0x195A338 VA: 0x195A338
 	public int DCLKMNGMIKC()
 	{
-		if(NMKDLINPAFM)
+		if(NMKDLINPAFM_UseTicket)
 		{
             IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false);
 			if(ev != null)

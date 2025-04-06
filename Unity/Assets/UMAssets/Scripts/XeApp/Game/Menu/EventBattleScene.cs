@@ -491,7 +491,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xF10300 Offset: 0xF10300 VA: 0xF10300 Slot: 40
 		protected override void SetupViewMusicData()
 		{
-			NKOBMDPHNGP_EventRaidLobby ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9) as NKOBMDPHNGP_EventRaidLobby;
+			NKOBMDPHNGP_EventRaidLobby ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
 			if(ev != null)
 			{
 				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "SetupViewMusicData");
@@ -609,7 +609,7 @@ namespace XeApp.Game.Menu
 				else
 				{
 					m_eventInfo.SetRewardValid(true);
-					m_eventInfo.SetNextValue(m_eventCtrl.ILICNKILFKJ_GetNextReward().OJELCGDDAOM.ToString());
+					m_eventInfo.SetNextValue(m_eventCtrl.ILICNKILFKJ_GetNextReward().OJELCGDDAOM_MissingPoint.ToString());
 					GameManager.Instance.ItemTextureCache.Load(m_eventCtrl.ILICNKILFKJ_GetNextReward().HBHMAKNGKFK_Items[0].JJBGOIMEIPF_ItemId, (IiconTexture image) =>
 					{
 						//0xF1362C

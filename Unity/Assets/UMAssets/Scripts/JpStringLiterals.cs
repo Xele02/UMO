@@ -6,6 +6,8 @@ class JpStringLiterals
 	public static string StringLiteral_1376 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_1376", "月"); } } // 0x03baa038
 	public static string StringLiteral_1378 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_1378", "日"); } } // 0x03baa040
 	public static string StringLiteral_5812 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_5812", "\n"); } } // 0x03bae588
+	public static string StringLiteral_6527 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_6527", "---"); } } // 03baf0b4
+
 	public static string StringLiteral_8278 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_8278", "既に初期化済みです。再初期化を行う場合は、Terminateを呼ぶ必要があります。"); } } // 0x03bb0c10
 	public static string StringLiteral_8280 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_8280", "初期化されていません。"); } } // 0x03bb0c18
 	public static string StringLiteral_8676 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_8676", "ベース★3以下のカードでリーフ枚数が0でない"); } } //0x3bb1248

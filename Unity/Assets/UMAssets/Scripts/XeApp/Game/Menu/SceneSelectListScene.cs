@@ -439,10 +439,23 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x138236C Offset: 0x138236C VA: 0x138236C
-		// private void AttachSceneGodiva(int slot, FFHPBEPOMAK divaData, JLKEOGLJNOD unitData, GCIJNCFDNON sceneData) { }
+		private void AttachSceneGodiva(int slot, FFHPBEPOMAK_DivaInfo divaData, JLKEOGLJNOD_TeamInfo unitData, GCIJNCFDNON_SceneInfo sceneData)
+		{
+			unitData.FLFBBPLPNMO(sceneData, slot, m_selectedDivaSlotIndex);
+		}
 
 		// // RVA: 0x13823BC Offset: 0x13823BC VA: 0x13823BC
-		// private void DetachSceneGoDiva(int slot, FFHPBEPOMAK divaData) { }
+		private void DetachSceneGoDiva(int slot, FFHPBEPOMAK_DivaInfo divaData)
+		{
+			if(slot != 0)
+			{
+				divaData.GIGDKIHBDHB(null, slot - 1, true);
+			}
+			else
+			{
+				divaData.CJBBDBGDFKJ(null, true);
+			}
+		}
 
 		// // RVA: 0x1382428 Offset: 0x1382428 VA: 0x1382428
 		private void AttachAssist(int page, int slot, EEMGHIINEHN assistData, GCIJNCFDNON_SceneInfo sceneData)
@@ -528,7 +541,29 @@ namespace XeApp.Game.Menu
 						}
 						else
 						{
-							TodoLogger.LogError(TodoLogger.EventGoDiva_14, "GoDiva");
+							if(afterScene == null)
+							{
+								DetachSceneGoDiva(m_selectedEquipmentSlotIndex, diva);
+							}
+							else
+							{
+								AttachSceneGodiva(m_selectedEquipmentSlotIndex, diva, PlayerData.DPLBHAIKPGL_GetTeam(true), afterScene);
+							}
+							m_equipmentScene.UpdateContent(PlayerData, diva, IsCenterDiva(), musicId, true);
+							m_equipmentScene.SelectSlot(m_selectedEquipmentSlotIndex);
+							m_equipmentScene.ChangeIcon(PlayerData, diva, displayType, IsCenterDiva(), true);
+							PlayerData.DPLBHAIKPGL_GetTeam(true).HCDGELDHFHB();
+							m_sceneSelectList.UpdateRemoveButton(m_divaData, m_selectedEquipmentSlotIndex);
+							if(m_musicBaseData != null)
+							{
+								CMMKCEPBIHI.EFCNOOFFMIL(PlayerData, m_friendPlayerData, m_musicBaseData, m_enemyData, m_difficulty, Database.Instance.gameSetup.musicInfo.IsLine6Mode, m_isGoDivaEvent);
+							}
+							m_sceneSelectList.UpdateScore(m_musicBaseData);
+							if(!GameManager.Instance.IsTutorial)
+							{
+								ILLPDLODANB.MOFIPNGNNPA(ILLPDLODANB.LOEGALDKHPL.AFLMHBMBNBO_48, 2, false);
+							}
+							ILCCJNDFFOB.HHCJCDFCLOB.KHMDGNKEFOD(JpStringLiterals.StringLiteral_15651, 0, false, true, diva.AHHJLDLAPAN_DivaId);
 						}
 					}
 					else

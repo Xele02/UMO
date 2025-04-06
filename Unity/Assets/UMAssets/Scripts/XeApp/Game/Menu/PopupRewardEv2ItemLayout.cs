@@ -320,17 +320,17 @@ namespace XeApp.Game.Menu
 			{
 				for(int i = 0; i < data.rank_data_list.Count; i++)
 				{
-					for(int j = 0; j < data.rank_data_list[i].HBHMAKNGKFK.Count; j++)
+					for(int j = 0; j < data.rank_data_list[i].HBHMAKNGKFK_Items.Count; j++)
 					{
-						if(data.rank_data_list[i].HBHMAKNGKFK[j].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+						if(data.rank_data_list[i].HBHMAKNGKFK_Items[j].NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 						{
-							AddViewPlateList(data.rank_data_list[i].HBHMAKNGKFK[j].JJBGOIMEIPF_ItemId - 40000, string.Concat(new string[6]
+							AddViewPlateList(data.rank_data_list[i].HBHMAKNGKFK_Items[j].JJBGOIMEIPF_ItemId - 40000, string.Concat(new string[6]
 							{
 								data.rank_data_list[i].JBDGBPAAAEF_HighRank.ToString(),
 								JpStringLiterals.StringLiteral_19427,
 								data.rank_data_list[i].GHANKNIBALB_LowRank.ToString(),
 								JpStringLiterals.StringLiteral_19428,
-								data.rank_data_list[i].HBHMAKNGKFK[j].MBJIFDBEDAC_Cnt.ToString(),
+								data.rank_data_list[i].HBHMAKNGKFK_Items[j].MBJIFDBEDAC_Cnt.ToString(),
 								JpStringLiterals.StringLiteral_10090
 							}), ListType.Ranking, str);
 						}

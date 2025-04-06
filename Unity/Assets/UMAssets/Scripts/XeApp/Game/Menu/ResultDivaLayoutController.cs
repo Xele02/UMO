@@ -72,7 +72,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xD0064C Offset: 0xD0064C VA: 0xD0064C
 		public void SetGoDivaLayout()
 		{
-			TodoLogger.LogError(TodoLogger.EventGoDiva_14, "SetGoDivaLayout");
+			layoutDiva.SetGoDivaLayout();
 		}
 
 		// // RVA: 0xD00678 Offset: 0xD00678 VA: 0xD00678

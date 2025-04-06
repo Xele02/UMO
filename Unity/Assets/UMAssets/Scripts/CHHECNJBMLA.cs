@@ -112,10 +112,16 @@ public class CHHECNJBMLA_EventBoxGacha : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x12C16DC Offset: 0x12C16DC VA: 0x12C16DC Slot: 52
-	// public override void FAMFKPBPIAA(bool PFFJNEFNAMI, int CJHEHIMLGGL, int LHJCOPMMIGO, LIOLBKLMMIK KLMFJJCNBIP, DJBHIFLHJLK IDAEHNGOKAE, DJBHIFLHJLK JGKOLBLPMPG) { }
+	public override void FAMFKPBPIAA_GetRankingPlayerList(bool PFFJNEFNAMI, int CJHEHIMLGGL, int LHJCOPMMIGO, LIOLBKLMMIK KLMFJJCNBIP, DJBHIFLHJLK IDAEHNGOKAE, DJBHIFLHJLK JGKOLBLPMPG)
+	{
+		TodoLogger.LogError(TodoLogger.EventBoxGacha_8, "FAMFKPBPIAA");
+	}
 
 	// // RVA: 0x12C1A14 Offset: 0x12C1A14 VA: 0x12C1A14 Slot: 53
-	// public override void JPNACOLKHLB(int CJHEHIMLGGL, int NEFEFHBHFFF, LIOLBKLMMIK KLMFJJCNBIP, DJBHIFLHJLK IDAEHNGOKAE, DJBHIFLHJLK JGKOLBLPMPG) { }
+	public override void JPNACOLKHLB_AddRankingPlayerListSecond(int CJHEHIMLGGL, int NEFEFHBHFFF, LIOLBKLMMIK KLMFJJCNBIP, DJBHIFLHJLK IDAEHNGOKAE, DJBHIFLHJLK JGKOLBLPMPG)
+	{
+		TodoLogger.LogError(TodoLogger.EventBoxGacha_8, "JPNACOLKHLB");
+	}
 
 	// // RVA: 0x12C1C18 Offset: 0x12C1C18 VA: 0x12C1C18
 	// private int APJDIPINLLK(List<int> HNLFPKNBOHE, int PPFNGGCBJKC_Id) { }
@@ -141,14 +147,14 @@ public class CHHECNJBMLA_EventBoxGacha : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x12C1E30 Offset: 0x12C1E30 VA: 0x12C1E30 Slot: 65
-	protected override bool JLPDECMHLIM()
+	protected override bool JLPDECMHLIM_CanShowStartAdventureInternal()
 	{
 		TodoLogger.LogError(TodoLogger.EventBoxGacha_8, "JLPDECMHLIM");
 		return false;
 	}
 
 	// // RVA: 0x12C211C Offset: 0x12C211C VA: 0x12C211C Slot: 66
-	public override void FGDDBFHGCGP(bool JKDJCFEBDHC, long JHNMKKNEENE = 0)
+	public override void FGDDBFHGCGP_SetStartAdventureShown(bool JKDJCFEBDHC, long JHNMKKNEENE = 0)
 	{
 		TodoLogger.LogError(TodoLogger.EventBoxGacha_8, "FGDDBFHGCGP");
 	}
@@ -164,7 +170,7 @@ public class CHHECNJBMLA_EventBoxGacha : IKDICBBFBMI_EventBase
 	// private IEnumerator NJIEIJJMAHK(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG) { }
 
 	// // RVA: 0x12C2498 Offset: 0x12C2498 VA: 0x12C2498 Slot: 33
-	public override bool MPMKJNJGFEF()
+	public override bool MPMKJNJGFEF_IsEntry()
 	{
 		TodoLogger.LogError(TodoLogger.EventBoxGacha_8, "MPMKJNJGFEF");
 		return false;

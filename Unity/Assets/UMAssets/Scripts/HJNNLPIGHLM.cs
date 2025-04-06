@@ -51,21 +51,25 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase // TypeDefIndex
 	}
 
 	// // RVA: 0x183AF30 Offset: 0x183AF30 VA: 0x183AF30 Slot: 9
-	public override long HOOBCIIOCJD_GetEndTime(int GHBPLHBNMBK)
+	public override long HOOBCIIOCJD_GetSongEndTime(int GHBPLHBNMBK)
 	{
 		TodoLogger.LogError(TodoLogger.EventCollection_1, "HOOBCIIOCJD");
 		return 0;
 	}
 
 	// // RVA: 0x183B230 Offset: 0x183B230 VA: 0x183B230 Slot: 10
-	public override bool GIDDKGMPIOK_HasPlayableSong(int GHBPLHBNMBK)
+	public override bool GIDDKGMPIOK_IsLimited(int GHBPLHBNMBK)
 	{
 		TodoLogger.LogError(TodoLogger.EventCollection_1, "GIDDKGMPIOK");
 		return false;
 	}
 
 	// // RVA: 0x183B550 Offset: 0x183B550 VA: 0x183B550
-	// public int OMJHBJPCFFC(int EHDDADDKMFI) { }
+	public int OMJHBJPCFFC(int EHDDADDKMFI)
+	{
+		TodoLogger.LogError(TodoLogger.EventCollection_1, "EHDDADDKMFI");
+		return 0;
+	}
 
 	// // RVA: 0x183B864 Offset: 0x183B864 VA: 0x183B864 Slot: 27
 	public override int HLOGNJNGDJO_GetHelpId(int OIPCCBHIKIA = 0)
@@ -184,10 +188,16 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase // TypeDefIndex
 	}
 
 	// // RVA: 0x1841490 Offset: 0x1841490 VA: 0x1841490 Slot: 52
-	// public override void FAMFKPBPIAA(bool PFFJNEFNAMI, int CJHEHIMLGGL, int LHJCOPMMIGO, LIOLBKLMMIK KLMFJJCNBIP, DJBHIFLHJLK IDAEHNGOKAE, DJBHIFLHJLK JGKOLBLPMPG) { }
+	public override void FAMFKPBPIAA_GetRankingPlayerList(bool PFFJNEFNAMI, int CJHEHIMLGGL, int LHJCOPMMIGO, LIOLBKLMMIK KLMFJJCNBIP, DJBHIFLHJLK IDAEHNGOKAE, DJBHIFLHJLK JGKOLBLPMPG)
+	{
+		TodoLogger.LogError(TodoLogger.EventCollection_1, "FAMFKPBPIAA");
+	}
 
 	// // RVA: 0x18417C8 Offset: 0x18417C8 VA: 0x18417C8 Slot: 53
-	// public override void JPNACOLKHLB(int CJHEHIMLGGL, int NEFEFHBHFFF, LIOLBKLMMIK KLMFJJCNBIP, DJBHIFLHJLK IDAEHNGOKAE, DJBHIFLHJLK JGKOLBLPMPG) { }
+	public override void JPNACOLKHLB_AddRankingPlayerListSecond(int CJHEHIMLGGL, int NEFEFHBHFFF, LIOLBKLMMIK KLMFJJCNBIP, DJBHIFLHJLK IDAEHNGOKAE, DJBHIFLHJLK JGKOLBLPMPG)
+	{
+		TodoLogger.LogError(TodoLogger.EventCollection_1, "JPNACOLKHLB");
+	}
 
 	// // RVA: 0x1841984 Offset: 0x1841984 VA: 0x1841984
 	// private int APJDIPINLLK(List<int> HNLFPKNBOHE, int PPFNGGCBJKC) { }
@@ -251,7 +261,7 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase // TypeDefIndex
 	}
 
 	// // RVA: 0x184309C Offset: 0x184309C VA: 0x184309C Slot: 14
-	public override void HPENJEOAMBK(int JKIADEKHGLC, int HMFFHLPNMPH, BBHNACPENDM_ServerSaveData AHEFHIMGIBI)
+	public override void HPENJEOAMBK_SetTicket(int JKIADEKHGLC, int HMFFHLPNMPH, BBHNACPENDM_ServerSaveData AHEFHIMGIBI)
 	{
 		TodoLogger.LogError(TodoLogger.EventCollection_1, "HPENJEOAMBK");
 	}
@@ -284,21 +294,21 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase // TypeDefIndex
 	}
 
 	// // RVA: 0x1843ECC Offset: 0x1843ECC VA: 0x1843ECC Slot: 33
-	public override bool MPMKJNJGFEF()
+	public override bool MPMKJNJGFEF_IsEntry()
 	{
 		TodoLogger.LogError(TodoLogger.EventCollection_1, "MPMKJNJGFEF");
 		return false;
 	}
 
 	// // RVA: 0x184412C Offset: 0x184412C VA: 0x184412C Slot: 65
-	protected override bool JLPDECMHLIM()
+	protected override bool JLPDECMHLIM_CanShowStartAdventureInternal()
 	{
 		TodoLogger.LogError(TodoLogger.EventCollection_1, "JLPDECMHLIM");
 		return false;
 	}
 
 	// // RVA: 0x1844468 Offset: 0x1844468 VA: 0x1844468 Slot: 66
-	public override void FGDDBFHGCGP(bool JKDJCFEBDHC, long JHNMKKNEENE = 0)
+	public override void FGDDBFHGCGP_SetStartAdventureShown(bool JKDJCFEBDHC, long JHNMKKNEENE = 0)
 	{
 		TodoLogger.LogError(TodoLogger.EventCollection_1, "FGDDBFHGCGP");
 	}
@@ -348,7 +358,7 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase // TypeDefIndex
 	// public void NGIPMNLALAA(int EJDJIBPKKNO, int FCLGIPFPIPH, int BMMPAHHEOJC, int MHADLGMJKGK, int AKNELONELJK) { }
 
 	// // RVA: 0x18460BC Offset: 0x18460BC VA: 0x18460BC Slot: 73
-	public override List<string> IJCPBPFEGDM_GetBgmFilePathList(long JHNMKKNEENE)
+	public override List<string> IJCPBPFEGDM_GetResourcesFilePathList(long JHNMKKNEENE)
 	{
 		if(!MNNNLDFNNCD(JHNMKKNEENE))
 			return null;

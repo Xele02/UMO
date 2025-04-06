@@ -259,7 +259,7 @@ namespace XeApp.Game.Menu
 			{
 				if(musicData.MGJKEJHEBPO_DiffInfos[i].HHMLMKAEJBJ_Score != null)
 				{
-					m_difficultyButtonGroup.SetMusicLevel(i, musicData.MGJKEJHEBPO_DiffInfos[i].HHMLMKAEJBJ_Score.ANAJIAENLNB_F_pt, isLine6Mode ? VerticalMusicSelectDifficultyButtonGroup.ButtonStyle.Line6 : VerticalMusicSelectDifficultyButtonGroup.ButtonStyle.NormalLine);
+					m_difficultyButtonGroup.SetMusicLevel(i, musicData.MGJKEJHEBPO_DiffInfos[i].HHMLMKAEJBJ_Score.ANAJIAENLNB_MusicLevel, isLine6Mode ? VerticalMusicSelectDifficultyButtonGroup.ButtonStyle.Line6 : VerticalMusicSelectDifficultyButtonGroup.ButtonStyle.NormalLine);
 				}
 			}
 		}

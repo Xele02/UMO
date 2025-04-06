@@ -132,7 +132,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x18E5170 Offset: 0x18E5170 VA: 0x18E5170
-		//public void SetEnable(bool isEnable) { }
+		public void SetEnable(bool isEnable)
+		{
+			if(actionButton != null)
+				actionButton.IsInputOff = !isEnable;
+		}
 
 		//// RVA: 0x18E522C Offset: 0x18E522C VA: 0x18E522C
 		//public void SetDisable(bool isDisable) { }
