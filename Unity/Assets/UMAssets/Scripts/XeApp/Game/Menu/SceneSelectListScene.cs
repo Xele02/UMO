@@ -1357,7 +1357,7 @@ namespace XeApp.Game.Menu
 						else
 						{
 							isFriend = false;
-							scene = PlayerData.OPIBAPEGCLA_Scenes[m_divaData.DJICAKGOGFO_SubSceneIds[equipmentSlotIndex] - 1];
+							scene = PlayerData.OPIBAPEGCLA_Scenes[m_divaData.DJICAKGOGFO_SubSceneIds[equipmentSlotIndex - 1] - 1];
 						}
 					}
 					else
@@ -1370,7 +1370,7 @@ namespace XeApp.Game.Menu
 						else
 						{
 							isFriend = false;
-							scene = PlayerData.OPIBAPEGCLA_Scenes[m_divaData.DJICAKGOGFO_SubSceneIds[equipmentSlotIndex] - 1];
+							scene = PlayerData.OPIBAPEGCLA_Scenes[m_divaData.DJICAKGOGFO_SubSceneIds[equipmentSlotIndex - 1] - 1];
 						}
 					}
 				}
