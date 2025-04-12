@@ -334,7 +334,7 @@ namespace XeApp.Game.Menu
 						SetDivaLevelNecessaryExp(i, info.JPGEAFPDHDE_DivaLevel);
 						ChangeCurrentDivaLevelExp(i, info.JPGEAFPDHDE_DivaLevel, f);
 						int nextXp = expMaster.IECLHMBPEIJ_GetMusicExp(info.AIMAJDEJDLM_MusicLevel + 1);
-						dl.numberMusicLevelNextExp.SetNumber(nextXp, 0);
+						dl.numberMusicLevelNextExp.SetNumber(nextXp - (int)info.CFDGFLNIMCL_MusicExp, 0);
 						dl.layoutMuisicLevelEffectRoot.StartChildrenAnimGoStop("st_out");
 						dl.layoutDivaLevelEffect1.StartChildrenAnimGoStop("st_in");
 						dl.layoutDivaLevelEffectRoot2.StartChildrenAnimGoStop("st_out");
