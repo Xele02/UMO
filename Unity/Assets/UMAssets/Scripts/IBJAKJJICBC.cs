@@ -1227,7 +1227,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
             KEODKEGFDLD_FreeMusicInfo song = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[i];
             if (song.PPEGAKEIEGM_Enabled == 2)
 			{
-				if(DEPGBBJMFED != -1 && DEPGBBJMFED == song.DEPGBBJMFED_CategoryId)
+				if(DEPGBBJMFED != -1 && DEPGBBJMFED != song.DEPGBBJMFED_CategoryId)
 				{
 					//LAB_0121ddc0
 					;

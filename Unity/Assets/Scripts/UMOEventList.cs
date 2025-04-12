@@ -32,9 +32,9 @@ public static class UMOEventList
         new EventData() { Id=3044, Name="会えないときのValentine", BlockName="event_battle_b"},
         new EventData() { Id=3045, Name="吹き抜ける風 ～NEVER SAY DIE～", BlockName="event_battle_c"},
         new EventData() { Id=14010, Name="シルバームーン・ホーリームーン", BlockName="event_godiva_a"},
-        new EventData() { Id=2, Name="Godiva2", BlockName="event_godiva_b"},
-        new EventData() { Id=3, Name="Godiva3", BlockName="event_godiva_c"},
-        new EventData() { Id=4, Name="GodivaRanking", BlockName="event_godiva_ranking"},
+        new EventData() { Id=14011, Name="無垢になれ！ ～つらみ現在進行形～", BlockName="event_godiva_b"},
+        new EventData() { Id=14012, Name="復刻　FLASH IN THE SOUL", BlockName="event_godiva_c"},
+        //new EventData() { Id=4, Name="GodivaRanking", BlockName="event_godiva_ranking"},
     };
 
     public static EventData GetEventData(int Id)

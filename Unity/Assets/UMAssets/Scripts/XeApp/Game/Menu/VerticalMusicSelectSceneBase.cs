@@ -889,7 +889,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xACE2F0 Offset: 0xACE2F0 VA: 0xACE2F0
-		// protected void ApplyEventBannerRemainTime(VerticalMusicSelectEventBanner eventBunner, long remainSec) { }
+		protected void ApplyEventBannerRemainTime(VerticalMusicSelectEventBanner eventBunner, long remainSec)
+		{
+			int days, hours, minutes, seconds;
+			MusicSelectSceneBase.ExtractRemainTime((int)remainSec, out days, out hours, out minutes, out seconds);
+			eventBunner.SetLimitTimeLabel(MusicSelectSceneBase.MakeRemainTime(days, hours, minutes, seconds));
+		}
 
 		// // RVA: 0xAC72BC Offset: 0xAC72BC VA: 0xAC72BC
 		public static void CrateFilterDataList(VerticalMusicDataList filterMusicList, List<VerticalMusicDataList> originalMusicList, int series, long currentTime, VerticalMusicSelectSceneBase.CheckMatchMusicFilterFunc checkFunc)

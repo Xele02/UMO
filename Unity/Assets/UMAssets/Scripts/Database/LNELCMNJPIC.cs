@@ -585,7 +585,7 @@ public class LNELCMNJPIC_EventGoDiva : DIHHCBACKGG_DbSection
 			for(int i = 0; i < EAPOKGEIFKA.Count; i++)
 			{
 				if (EAPOKGEIFKA[i].PDBPFJJCADD_StartDate != 0) EAPOKGEIFKA[i].PDBPFJJCADD_StartDate = (int)NGHKJOEDLIP.BONDDBOFBND_Start;
-				if (EAPOKGEIFKA[i].FDBNFFNFOND_EndDate != 0) EAPOKGEIFKA[i].FDBNFFNFOND_EndDate = (int)NGHKJOEDLIP.BONDDBOFBND_Start;
+				if (EAPOKGEIFKA[i].FDBNFFNFOND_EndDate != 0) EAPOKGEIFKA[i].FDBNFFNFOND_EndDate = (int)NGHKJOEDLIP.HPNOGLIFJOP_End1;
 			}
 			for(int i = 0; i < BGHBALGJNFF.Count; i++)
 			{

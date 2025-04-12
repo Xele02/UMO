@@ -48,6 +48,8 @@ namespace ExternLib
 			{
 				res["rankings"].Add(GetRankingInfo(string.Format("diva_ranking_14999_{0:D2}", i), false));
 				res["rankings"].Add(GetRankingInfo(string.Format("diva_ranking_14010_{0:D2}", i), false));
+				res["rankings"].Add(GetRankingInfo(string.Format("diva_ranking_14011_{0:D2}", i), false));
+				res["rankings"].Add(GetRankingInfo(string.Format("diva_ranking_14012_{0:D2}", i), false));
 			}
 			//res["rankings"].Add(GetRankingInfo("collect_ranking2_1061", false));
 			//res["rankings"].Add(GetRankingInfo("collect_ranking_1061", false));

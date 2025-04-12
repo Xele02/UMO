@@ -442,6 +442,7 @@ namespace XeApp.Game.Menu
 							if(addLevel + totalLevel == viewEventResultData.OMOLFAKIDIC_LevelCap)
 							{
 								m_layoutParamMaxIcon[(int)divaParamType].StartAllAnimGoStop("02");
+								break;
 							}
 							else if(currentTime != timeLength && !m_isSkiped)
 								yield return null;

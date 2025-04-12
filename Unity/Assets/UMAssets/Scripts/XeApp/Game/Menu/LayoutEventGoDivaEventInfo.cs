@@ -316,7 +316,7 @@ namespace XeApp.Game.Menu
 			float f = 1;
 			if(m_statusExpLimitTbl[(int)type] > 0)
 			{
-				f = Mathf.Min(1, Mathf.Max(m_statusExpTbl[(int)type] - 1, 0) / Mathf.Max(1, m_statusExpLimitTbl[(int)type] - 1));
+				f = Mathf.Min(1, Mathf.Max(m_statusExpTbl[(int)type] - 1, 0) * 1.0f / Mathf.Max(1, m_statusExpLimitTbl[(int)type] - 1));
 			}
 			m_moverGaugeRateTbl[(int)type].Start(f, f, 0, FloatMover.MoveType.Sin);
 			m_layoutStatusGaugeFrameTbl[(int)type].StartChildrenAnimGoStop((int)f, (int)f);
@@ -346,9 +346,9 @@ namespace XeApp.Game.Menu
 				f = mover.Value;
 			}
 			float f2 = 1;
-			if(expLimit < 1)
+			if(expLimit >= 1)
 			{
-				f2 = Mathf.Min(1, Mathf.Max(0, exp - 1) / Mathf.Max(1, expLimit - 1));
+				f2 = Mathf.Min(1, Mathf.Max(0, exp - 1) * 1.0f / Mathf.Max(1, expLimit - 1));
 			}
 			mover.Start(f, f2, GaugeMoveTime, FloatMover.MoveType.Sin);
 			do
