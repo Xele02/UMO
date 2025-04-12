@@ -292,7 +292,7 @@ public class JGEOBNENMAH
 				{
 					if(AGDEBBENNCK.FMBLKADNICN_MvTimeLimit != 0)
 					{
-						if (NFFDIGEJHGL_ServerTime < AGDEBBENNCK.FMBLKADNICN_MvTimeLimit)
+						if (NFFDIGEJHGL_ServerTime >= AGDEBBENNCK.FMBLKADNICN_MvTimeLimit)
 						{
 							//LAB_00b112b8
 							JHHBAFKMBDL.HHCJCDFCLOB.DNABPEOICIJ(IGBGKGAIJPL, false);

@@ -1220,7 +1220,7 @@ public abstract class IKDICBBFBMI_EventBase
 	{
 		if(JHNMKKNEENE < GLIMIGNNGGB_Start)
 			return false;
-		return LJOHLEGGGMC < JHNMKKNEENE;
+		return LJOHLEGGGMC > JHNMKKNEENE;
 	}
 
 	// // RVA: 0x8E23DC Offset: 0x8E23DC VA: 0x8E23DC Slot: 74

@@ -47,7 +47,7 @@ namespace XeApp.Game.Menu
 			m_Number01.SetNumber(0, 0);
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			StringBuilder str = new StringBuilder();
-			str.SetFormat(bk.GetMessageByLabel("event_result_episode"), data.LIPIAPOGHIP_EpisodeBonus);
+			str.SetFormatSmart(bk.GetMessageByLabel("event_result_episode"), data.LIPIAPOGHIP_EpisodeBonus);
 			m_text_episode.text = str.ToString();
 			m_text_episode_rate.text = (data.PFJMBKBEFMA_EpisodeRate - 100).ToString();
 			m_is_anim_episode_up = data.PFJMBKBEFMA_EpisodeRate - 100 > 0;

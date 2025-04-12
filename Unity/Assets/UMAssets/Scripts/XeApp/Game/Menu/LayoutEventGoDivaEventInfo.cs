@@ -6,6 +6,7 @@ using System;
 using XeSys;
 using XeApp.Game.UI;
 using System.Collections;
+using UnityEngine.Localization.SmartFormat;
 
 namespace XeApp.Game.Menu
 {
@@ -389,7 +390,7 @@ namespace XeApp.Game.Menu
 			m_textInfoTbl[2].text = bk.GetMessageByLabel("godiva_even_tinfo_total_point");
 			m_textInfoTbl[3].text = bk.GetMessageByLabel("godiva_even_tinfo_next_point");
 			m_textInfoTbl[4].text = bk.GetMessageByLabel("godiva_even_tinfo_nest_reward");
-			m_textInfoTbl[9].text = bk.GetMessageByLabel("godiva_even_tinfo_rank_unit");
+			m_textInfoTbl[9].text = Smart.Format(bk.GetMessageByLabel("godiva_even_tinfo_rank_unit"), 0);
 			m_textInfoTbl[10].text = bk.GetMessageByLabel("godiva_even_tinfo_point_unit");
 			m_textInfoTbl[11].text = bk.GetMessageByLabel("godiva_even_tinfo_point_unit");
 			m_textInfoTbl[12].text = TextConstant.InvalidText;

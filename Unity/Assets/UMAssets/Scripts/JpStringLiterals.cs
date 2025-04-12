@@ -758,5 +758,6 @@ class JpStringLiterals
 	public static string UMO_DivaSpOn { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_DivaSpOn", "超歌姫モード ON"); } }
 	public static string UMO_OriginSetting { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_OriginSetting", "スタンダード編成"); } }
 	public static string UMO_EpisodeBonus { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_EpisodeBonus", "エピソードボーナス"); } }
+	public static string UMO_EventRunning { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_EventRunning", "EVENT開催中"); } }
 	public const string StringLiteral_13083_3_1_0 = "\u753B\u50CF\u3092\u30B7\u30A7\u30A2\u3059\u308B\u30A2\u30D7\u30EA\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044\u3002"; //0x03515218
 }
