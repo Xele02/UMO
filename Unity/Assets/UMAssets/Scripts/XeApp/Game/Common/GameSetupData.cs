@@ -1,3 +1,4 @@
+using System;
 using XeApp.Game.Menu;
 
 namespace XeApp.Game.Common
@@ -97,7 +98,32 @@ namespace XeApp.Game.Common
 				}
 
 				// // RVA: 0xE9FBE0 Offset: 0xE9FBE0 VA: 0xE9FBE0
-				// public void SetupGoDivaInfo(FFHPBEPOMAK viewDivaData, DFKGGBMFFGB playerData, EEDKAACNBBG musicData, AOJGDNFAIJL.AMIECPBIALP prismData, int index, int positionId = 1) { }
+				public void SetupGoDivaInfo(FFHPBEPOMAK_DivaInfo viewDivaData, DFKGGBMFFGB_PlayerInfo playerData, EEDKAACNBBG_MusicData musicData, AOJGDNFAIJL_PrismData.AMIECPBIALP prismData, int index, int positionId/* = 1*/)
+				{
+					if(viewDivaData != null)
+					{
+						int[] vals = new int[3]
+						{
+							viewDivaData.FGFIBOBAPIA_SceneId,
+							viewDivaData.DJICAKGOGFO_SubSceneIds[0],
+							viewDivaData.DJICAKGOGFO_SubSceneIds[1]
+						};
+						for(int i = 0; i < 3; i++)
+						{
+							sceneIdList[index * 3 + i] = vals[i];
+							if(vals[i] > 0)
+							{
+								int skillId = playerData.OPIBAPEGCLA_Scenes[vals[i] - 1].FILPDDHMKEJ_GetLiveSkillId(false, musicData == null ? 0 : musicData.FKDCCLPGKDK_JacketAttr, musicData == null ? 0 : musicData.AIHCEGFANAM_Serie);
+								if(CheckLiveSkill(musicData, skillId) && 
+									playerData.OPIBAPEGCLA_Scenes[vals[i] - 1].DCLLIDMKNGO_IsDivaCompatible(divaId))
+								{
+									liveSkillIdList[index * 3 + i] = skillId;
+									liveSkillLevelList[index * 3 + i] = playerData.OPIBAPEGCLA_Scenes[vals[i] - 1].AADFFCIDJCB_LiveSkillLevel;
+								}
+							}
+						}
+					}
+				}
 
 				// // RVA: 0xEA051C Offset: 0xEA051C VA: 0xEA051C
 				private bool CheckLiveSkill(EEDKAACNBBG_MusicData musicData, int a_l_skill_id)
@@ -241,7 +267,30 @@ namespace XeApp.Game.Common
 				}
 				else
 				{
-					TodoLogger.LogError(TodoLogger.EventGoDiva_14, "GoDiva");
+					for(int i = 0; i < unit.BCJEAJPLGMB_MainDivas.Count; i++)
+					{
+						if(i == 0)
+						{
+							divaList_[0].SetupInfo(unit.BCJEAJPLGMB_MainDivas[i], playerData, musicData, prismData, 0, i + 1);
+							if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System != null)
+							{
+								int godiva_fold_correction_value = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("godiva_fold_correction_value", 300);
+								int godiva_support_correction_value = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("godiva_support_correction_value", 300);
+								int i4 = Math.Max(unit.BCJEAJPLGMB_MainDivas[i].JLJGCBOHJID_Status.fold - playerData.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.NNIKNCGNDHK_GetStatForDiva(unit.BCJEAJPLGMB_MainDivas[i].AHHJLDLAPAN_DivaId).fold, 0);
+								int i5 = Math.Max(unit.BCJEAJPLGMB_MainDivas[i].JLJGCBOHJID_Status.support - playerData.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.NNIKNCGNDHK_GetStatForDiva(unit.BCJEAJPLGMB_MainDivas[i].AHHJLDLAPAN_DivaId).support, 0);
+								status.fold = (int)(godiva_fold_correction_value / 100.0f * i4) - i4;
+								status.support = (int)(godiva_support_correction_value / 100.0f * i5) - i5;
+							}
+						}
+						else
+						{
+							divaList_[0].SetupGoDivaInfo(unit.BCJEAJPLGMB_MainDivas[i], playerData, musicData, prismData, i, i + 1);
+						}
+						if(unit.BCJEAJPLGMB_MainDivas[i] != null)
+						{
+							luck += DivaIconDecoration.GetEquipmentLuck(playerData.DPLBHAIKPGL_GetTeam(isGoDiva).BCJEAJPLGMB_MainDivas[i], playerData);
+						}
+					}
 				}
 				for(int i = 0; i < divaList_.Length; i++)
 				{

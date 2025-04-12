@@ -457,7 +457,7 @@ namespace XeApp.Game.Menu
 			KDLPEDBKMID.HHCJCDFCLOB.HANBBBBLLGP = 0;
 			lw = ILCCJNDFFOB.HHCJCDFCLOB;
 			pre = 0;
-			KDLPEDBKMID.HHCJCDFCLOB.OKJCGCOGDIA(musicData.KKPAHLMJKIH_WavId, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicData.GHBPLHBNMBK_FreeMusicId).KEFGPJBKAOD_WavId, val, GetDanceDivaCount());
+			KDLPEDBKMID.HHCJCDFCLOB.OKJCGCOGDIA_DownloadSongDatas(musicData.KKPAHLMJKIH_WavId, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicData.GHBPLHBNMBK_FreeMusicId).KEFGPJBKAOD_WavId, val, GetDanceDivaCount());
 			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
 			{
 				if(pre < 50)
@@ -602,11 +602,11 @@ namespace XeApp.Game.Menu
 				}
 				PopupDashContentSetting s = new PopupDashContentSetting();
 				s.EventId = m_eventId;
-				s.CostType = viewBoostData.NMKDLINPAFM ? LayoutPopupDash.CostType.Ticket : LayoutPopupDash.CostType.Energy;
+				s.CostType = viewBoostData.NMKDLINPAFM_UseTicket ? LayoutPopupDash.CostType.Ticket : LayoutPopupDash.CostType.Energy;
 				s.OwnValue = viewBoostData.DCLKMNGMIKC();
 				s.Param = p;
 				s.WindowSize = SizeType.Middle;
-				s.TitleText = bk.GetMessageByLabel(viewBoostData.NMKDLINPAFM ? "popup_dash_ticket_title" : "popup_dash_energy_title");
+				s.TitleText = bk.GetMessageByLabel(viewBoostData.NMKDLINPAFM_UseTicket ? "popup_dash_ticket_title" : "popup_dash_energy_title");
 				s.Buttons = new ButtonInfo[2]
 				{
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
@@ -865,7 +865,7 @@ namespace XeApp.Game.Menu
 				}
 			}
 			//LAB_00acb654
-			return MenuScene.Instance.CheckEventLimit(data, true, true, m_eventStatus < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6/*6*/ ? KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5/*5*/ : KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9/*9*/, m_eventId);
+			return MenuScene.Instance.CheckEventLimit(data, true, true, m_eventStatus < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6/*6*/ ? KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5/*5*/ : KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/, m_eventId);
 		}
 
 		// // RVA: 0xACE0E0 Offset: 0xACE0E0 VA: 0xACE0E0
@@ -889,7 +889,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xACE2F0 Offset: 0xACE2F0 VA: 0xACE2F0
-		// protected void ApplyEventBannerRemainTime(VerticalMusicSelectEventBanner eventBunner, long remainSec) { }
+		protected void ApplyEventBannerRemainTime(VerticalMusicSelectEventBanner eventBunner, long remainSec)
+		{
+			int days, hours, minutes, seconds;
+			MusicSelectSceneBase.ExtractRemainTime((int)remainSec, out days, out hours, out minutes, out seconds);
+			eventBunner.SetLimitTimeLabel(MusicSelectSceneBase.MakeRemainTime(days, hours, minutes, seconds));
+		}
 
 		// // RVA: 0xAC72BC Offset: 0xAC72BC VA: 0xAC72BC
 		public static void CrateFilterDataList(VerticalMusicDataList filterMusicList, List<VerticalMusicDataList> originalMusicList, int series, long currentTime, VerticalMusicSelectSceneBase.CheckMatchMusicFilterFunc checkFunc)
@@ -1566,9 +1571,9 @@ namespace XeApp.Game.Menu
 			if(eventId > 0)
 			{
                 IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(eventId);
-				if(ev != null && ev.FBLGGLDPFDF())
+				if(ev != null && ev.FBLGGLDPFDF_CanShowStartAdventure())
 				{
-					GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(ev.GFIBLLLHMPD_StartAdventureId);
+					GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(ev.GFIBLLLHMPD_StartAdventureId);
 					if(dbAdv != null)
 					{
 						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(ev.GFIBLLLHMPD_StartAdventureId);
@@ -1595,9 +1600,9 @@ namespace XeApp.Game.Menu
 			if(eventId > 0)
 			{
 				IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(eventId);
-				if(ev != null && ev.FBLGGLDPFDF())
+				if(ev != null && ev.FBLGGLDPFDF_CanShowStartAdventure())
 				{
-					GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(ev.GFIBLLLHMPD_StartAdventureId);
+					GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(ev.GFIBLLLHMPD_StartAdventureId);
 					if(adv != null)
 					{
 						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(ev.GFIBLLLHMPD_StartAdventureId);
@@ -1621,7 +1626,24 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xACCE4C Offset: 0xACCE4C VA: 0xACCE4C
 		protected void GotoEventGoDiva(int eventId)
 		{
-			TodoLogger.LogError(TodoLogger.EventGoDiva_14, "GotoEventGoDiva");
+			if(eventId > 0)
+			{
+				IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(eventId);
+				if(ev != null && ev.FBLGGLDPFDF_CanShowStartAdventure())
+				{
+					GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(ev.GFIBLLLHMPD_StartAdventureId);
+					if(adv != null)
+					{
+						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(ev.GFIBLLLHMPD_StartAdventureId);
+						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(ev.GFIBLLLHMPD_StartAdventureId, OAGBCBBHMPF.DKAMMIHBINF.IDINJDEBPKP_6);
+						Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
+						Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTGODIVA, new AdvSetupParam() { eventUniqueId = eventId });
+						MenuScene.Instance.GotoAdventure(false);
+						return;
+					}
+				}
+			}
+			MenuScene.Instance.Mount(TransitionUniqueId.EVENTGODIVA, new EventMusicSelectSceneArgs(eventId, isLine6Mode, false), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 		}
 
 		// // RVA: 0xAD1E40 Offset: 0xAD1E40 VA: 0xAD1E40

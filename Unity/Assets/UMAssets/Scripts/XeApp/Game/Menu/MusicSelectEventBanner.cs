@@ -125,7 +125,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1676040 Offset: 0x1676040 VA: 0x1676040
-		// public void SetLimitTimeLabel(string label) { }
+		public void SetLimitTimeLabel(string label)
+		{
+			m_music_event_remain_time = label;
+			m_limitTimeText.text = m_music_event_remain_prefix + label;
+		}
 
 		// // RVA: 0x1676090 Offset: 0x1676090 VA: 0x1676090
 		// public void SetAttendEnable(bool enable) { }

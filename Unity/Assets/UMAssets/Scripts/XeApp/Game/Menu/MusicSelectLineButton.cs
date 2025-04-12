@@ -178,9 +178,9 @@ namespace XeApp.Game.Menu
 			}
 			for(int i = 0; i < 3; i++)
 			{
-				m_frameImages[i].uvRect = LayoutUGUIUtility.MakeUnityUVRect(uvMan.GetUVData(string.Format("s_m_btn_line_{0:D2}", i == 2 ? 1 : 2)));
-				m_textImages[i].uvRect = LayoutUGUIUtility.MakeUnityUVRect(uvMan.GetUVData(string.Format("s_m_btn_line_fnt_{0:D2}", i == 2 ? 1 : 2)));
-				m_bgImages[i].uvRect = LayoutUGUIUtility.MakeUnityUVRect(uvMan.GetUVData(string.Format("s_m_btn_line_{0:D2}_bg", i == 2 ? 1 : 2)));
+				m_frameImages[i].uvRect = LayoutUGUIUtility.MakeUnityUVRect(uvMan.GetUVData(string.Format("s_m_btn_line_{0:D2}", i != 1 ? 1 : 2)));
+				m_textImages[i].uvRect = LayoutUGUIUtility.MakeUnityUVRect(uvMan.GetUVData(string.Format("s_m_btn_line_fnt_{0:D2}", i != 1 ? 1 : 2)));
+				m_bgImages[i].uvRect = LayoutUGUIUtility.MakeUnityUVRect(uvMan.GetUVData(string.Format("s_m_btn_line_{0:D2}_bg", i != 1 ? 1 : 2)));
 			}
 			SetOptionStyle(Style.BasicLine);
 			Loaded();

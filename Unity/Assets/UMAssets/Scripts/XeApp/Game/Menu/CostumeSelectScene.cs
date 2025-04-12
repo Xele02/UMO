@@ -749,8 +749,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					divaInfo = null;
-					TodoLogger.LogError(TodoLogger.EventGoDiva_14, "CB_CostumeChange divaGo");
+					divaInfo = GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(true).BCJEAJPLGMB_MainDivas[m_diva_index];
 				}
 				if(m_transitionName == TransitionList.Type.COSTUME_SELECT)
 				{

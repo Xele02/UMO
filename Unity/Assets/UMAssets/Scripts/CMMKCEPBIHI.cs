@@ -1093,8 +1093,8 @@ public static class CMMKCEPBIHI
 		int musicId = GMFMMDAKENC_MusicData.DLAEJOBELBH_MusicId;
 		EONOEHOKBEB_Music musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(musicId);
 		KLBKPANJCPL_Score score = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.ALJFMLEJEHH_GetMusicScore(musicInfo.KKPAHLMJKIH_WavId, musicInfo.BKJGCEOEPFB_VariationId, (int)AKNELONELJK_Difficulty, PDLCNDBOMAN_IsLine6, true);
-		int progress = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.ADBELGIDIEN_GetProgress(score.ANAJIAENLNB_F_pt, PDLCNDBOMAN_IsLine6);
-		int baseScore = CBILJEAECKP_GetBaseScore(DJLNOAMJECI_Playerdata, ALOBLKOHIKD_FriendData, BGJGFPPDNEP_EnemyData, GMFMMDAKENC_MusicData, AKNELONELJK_Difficulty, PDLCNDBOMAN_IsLine6, score.ANAJIAENLNB_F_pt, progress, HJJNDDPGIML_Team);
+		int progress = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.ADBELGIDIEN_GetProgress(score.ANAJIAENLNB_MusicLevel, PDLCNDBOMAN_IsLine6);
+		int baseScore = CBILJEAECKP_GetBaseScore(DJLNOAMJECI_Playerdata, ALOBLKOHIKD_FriendData, BGJGFPPDNEP_EnemyData, GMFMMDAKENC_MusicData, AKNELONELJK_Difficulty, PDLCNDBOMAN_IsLine6, score.ANAJIAENLNB_MusicLevel, progress, HJJNDDPGIML_Team);
 		//gauge_01_base
 		OOPMCKOCEFM_Scores[(int)NOJENDEDECD_ScoreType.HNGJDMNPMNP_BaseScore] = baseScore;
 		//gauge_05_shien / plate

@@ -44,16 +44,13 @@ namespace ExternLib
 			res["rankings"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
 			res["rankings"].Add(GetRankingInfo("uta_rate_ranking", false));
 			res["rankings"].Add(GetRankingInfo("uta_rate_ranking2", false));
-			res["rankings"].Add(GetRankingInfo("diva_ranking_14999_01", false));
-			res["rankings"].Add(GetRankingInfo("diva_ranking_14999_02", false));
-			res["rankings"].Add(GetRankingInfo("diva_ranking_14999_03", false));
-			res["rankings"].Add(GetRankingInfo("diva_ranking_14999_04", false));
-			res["rankings"].Add(GetRankingInfo("diva_ranking_14999_05", false));
-			res["rankings"].Add(GetRankingInfo("diva_ranking_14999_06", false));
-			res["rankings"].Add(GetRankingInfo("diva_ranking_14999_07", false));
-			res["rankings"].Add(GetRankingInfo("diva_ranking_14999_08", false));
-			res["rankings"].Add(GetRankingInfo("diva_ranking_14999_09", false));
-			res["rankings"].Add(GetRankingInfo("diva_ranking_14999_10", false));
+			for(int i = 1; i <= 10; i++)
+			{
+				res["rankings"].Add(GetRankingInfo(string.Format("diva_ranking_14999_{0:D2}", i), false));
+				res["rankings"].Add(GetRankingInfo(string.Format("diva_ranking_14010_{0:D2}", i), false));
+				res["rankings"].Add(GetRankingInfo(string.Format("diva_ranking_14011_{0:D2}", i), false));
+				res["rankings"].Add(GetRankingInfo(string.Format("diva_ranking_14012_{0:D2}", i), false));
+			}
 			//res["rankings"].Add(GetRankingInfo("collect_ranking2_1061", false));
 			//res["rankings"].Add(GetRankingInfo("collect_ranking_1061", false));
 			//res["rankings"].Add(GetRankingInfo("score_ranking_4021", false));
@@ -270,9 +267,9 @@ namespace ExternLib
 				}
 				return data;
 			}
-			else if (k.StartsWith("diva_ranking_14999_"))
+			else if (k.StartsWith("diva_ranking_"))
 			{
-				int divaId = int.Parse(k.Replace("diva_ranking_14999_", ""));
+				int divaId = int.Parse(k.Replace("diva_ranking_", "").Split(new char[] { '_' })[1]);
 				EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
 				data.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
 				data["allow_lower_score"] = false;

@@ -567,7 +567,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1672220 Offset: 0x1672220 VA: 0x1672220
-		// public void ApplyEventGoDivaExpBonus(float bonus) { }
+		public void ApplyEventGoDivaExpBonus(float bonus)
+		{
+			if(usingCursor != null)
+				usingCursor.SetEventGoDivaExpBonus(bonus);
+		}
 
 		// // RVA: 0x16722D8 Offset: 0x16722D8 VA: 0x16722D8
 		public void EnableEventGoDivaRanking(bool isEnable)
@@ -576,7 +580,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x167236C Offset: 0x167236C VA: 0x167236C
-		// public void ApplyEventGoDivaRank(int rank) { }
+		public void ApplyEventGoDivaRank(int rank)
+		{
+			if(usingCursor != null)
+				usingCursor.SetEventGoDivaRank(rank);
+		}
 
 		// // RVA: 0x1672424 Offset: 0x1672424 VA: 0x1672424
 		public void SetEventGoDivaExpType(ExpType expType)
@@ -591,7 +599,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x16724CC Offset: 0x16724CC VA: 0x16724CC
-		// public void ApplyEventGoDivaExp(int exp) { }
+		public void ApplyEventGoDivaExp(int exp)
+		{
+			if(usingCursor != null)
+				usingCursor.SetEventGoDivaExp(exp);
+		}
 
 		// // RVA: 0x1672584 Offset: 0x1672584 VA: 0x1672584
 		public void ChangeJacket(int order, int jacketId, GameAttribute.Type attr, bool forEvent/* = False*/)

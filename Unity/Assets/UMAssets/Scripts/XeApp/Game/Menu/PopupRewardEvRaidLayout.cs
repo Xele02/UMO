@@ -170,7 +170,7 @@ namespace XeApp.Game.Menu
 			g.KHEKNNFCAOI(null, null);
 			m_playerUtaGrade = g.LLNHMMBFPMA_ScoreRatingRanking;
 			m_utaGradeMoreText = "";
-			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9) as PKNOKJNLPOE_EventRaid;
+			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			if(ev != null)
 			{
 				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event Raid");

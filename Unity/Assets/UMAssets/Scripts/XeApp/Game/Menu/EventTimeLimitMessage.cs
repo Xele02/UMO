@@ -22,7 +22,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB9D30C Offset: 0xB9D30C VA: 0xB9D30C
-		// public void TryEnter(bool isCounting) { }
+		public void TryEnter(bool isCounting)
+		{
+			if(!m_isShow)
+				Enter(isCounting);
+		}
 
 		// // RVA: 0xB9D450 Offset: 0xB9D450 VA: 0xB9D450
 		public void TryLeave()

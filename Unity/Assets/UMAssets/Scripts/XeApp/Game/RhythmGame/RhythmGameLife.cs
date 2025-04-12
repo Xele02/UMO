@@ -32,9 +32,9 @@ namespace XeApp.Game.RhythmGame
 			Difficulty.Type diff = Database.Instance.gameSetup.musicInfo.difficultyType;
 			bool isLine6 = Database.Instance.gameSetup.musicInfo.IsLine6Mode;
 			KLBKPANJCPL_Score score = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.ALJFMLEJEHH_GetMusicScore(wavId, variationId, (int)diff, isLine6, true);
-			badDamage = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.GOLHPPFLJNF(score.ANAJIAENLNB_F_pt, isLine6);
-			missDamage = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.AOGJFPLIOGB(score.ANAJIAENLNB_F_pt, isLine6);
-			healNotesValue = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.AFDONIMNHEJ(score.ANAJIAENLNB_F_pt, isLine6);
+			badDamage = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.GOLHPPFLJNF(score.ANAJIAENLNB_MusicLevel, isLine6);
+			missDamage = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.AOGJFPLIOGB(score.ANAJIAENLNB_MusicLevel, isLine6);
+			healNotesValue = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.AFDONIMNHEJ(score.ANAJIAENLNB_MusicLevel, isLine6);
 			isInvincibleModeMV = false;
 			this.max = max;
 			isLiveSkip = a_is_liveskip;

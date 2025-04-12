@@ -230,7 +230,7 @@ namespace XeApp.Game.Menu
 			FontInfo fontInfo; // 0x20
 
 			//0xD02B88
-			lobbyController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9/*9*/) as NKOBMDPHNGP_EventRaidLobby;
+			lobbyController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as NKOBMDPHNGP_EventRaidLobby;
 			if(lobbyController == null)
 				yield break;
 			TodoLogger.LogError(TodoLogger.EventRaid_11_13, "ShowFoldRadarAnim Event");

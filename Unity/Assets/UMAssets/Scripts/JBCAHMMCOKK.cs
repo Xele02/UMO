@@ -455,7 +455,7 @@ public class JBCAHMMCOKK
 				{
 					List<int> l3 = new List<int>();
 					l3.Clear();
-					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp/*7*/, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9/*9*/);
+					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp/*7*/, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/);
 					if (ev != null)
 					{
 						TodoLogger.LogError(TodoLogger.EventSp_7, "HEGEKFMJNCC 11 event");
@@ -557,7 +557,7 @@ public class JBCAHMMCOKK
 				}
 			case 17: // 0x11
 				{
-					CANAFALMGLI_EventPresentCampaign ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9) as CANAFALMGLI_EventPresentCampaign;
+					CANAFALMGLI_EventPresentCampaign ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as CANAFALMGLI_EventPresentCampaign;
 					if(ev == null)
 						return;
 					TodoLogger.LogError(TodoLogger.EventPresentCampaign_9, "Event Present Campaign");

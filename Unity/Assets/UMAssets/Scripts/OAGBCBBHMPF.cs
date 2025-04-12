@@ -99,9 +99,9 @@ public class OAGBCBBHMPF
         HNOKBPNGOEF_93 = 93,
         LHCHBHPHLCP = 94,
         CJCJNKOPIKB = 95,
-        DNJGGCJPIMC = 96,
-        HPNIJDCPCNC = 97,
-        HJGEAHELBPE = 98,
+        DNJGGCJPIMC_96 = 96,
+        HPNIJDCPCNC_97 = 97,
+        HJGEAHELBPE_98 = 98,
         NBCACPPAAMC = 99,
         BBIBBNHCPPJ = 100,
     }

@@ -91,7 +91,7 @@ namespace XeApp.Game.Menu
 				t.alignment = TextAnchor.UpperCenter;
 				t.horizontalOverflow = HorizontalWrapMode.Overflow;
 			}
-			HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9) as HAEDCCLHEMN_EventBattle;
+			HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as HAEDCCLHEMN_EventBattle;
 			m_scoreText.text = ev.HOJNMALLCME_GetClassMaxScore(idx, 0).ToString();
 			m_tapGuardObject.SetActive(true);
 		}

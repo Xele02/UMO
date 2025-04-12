@@ -600,7 +600,7 @@ public class KDLPEDBKMID
 	}
 
 	// // RVA: 0xE7F44C Offset: 0xE7F44C VA: 0xE7F44C
-	public bool OKJCGCOGDIA(int ECOIBKOIPFP_WavId, int DNHLEPCFPFC_SongId, int MOBOJNCPCGD_VidQuality, int HADONLEBKLD_OnStageDivaNum)
+	public bool OKJCGCOGDIA_DownloadSongDatas(int ECOIBKOIPFP_WavId, int DNHLEPCFPFC_SongId, int MOBOJNCPCGD_VidQuality, int HADONLEBKLD_OnStageDivaNum)
 	{
 		StringBuilder str = new StringBuilder(128);
 		str.SetFormat(MFDEFIILPGM_StageFileFormat, DNHLEPCFPFC_SongId);
@@ -656,7 +656,7 @@ public class KDLPEDBKMID
 	// // RVA: 0xE7FD38 Offset: 0xE7FD38 VA: 0xE7FD38
 	public bool KEILLGAJEPF_AddRhythmResources(int ECOIBKOIPFP_WavId, int IMPALJEMHJJ_OverridePrimeId, int DNHLEPCFPFC_SongId, List<int> KJAIAJIIOMA_MusicCameraCutinList, List<int> DJPOMCAOKKD_DivaCutinList, List<int> KBGIODFCIGN_DivaExtensionCutinList, List<int> LMIFMHACFID_StageLightingList, List<int> DDFCBCNPGHD_StageExtensionList, List<int> MEJEDAJBJKN_SpecialMovieResource, int MCFPOJBDIHP_VidQuality, List<int> HPDJEIFEADB_StageChangerList, int HADONLEBKLD_OnStageDivaNum)
 	{
-		bool res = OKJCGCOGDIA(ECOIBKOIPFP_WavId, DNHLEPCFPFC_SongId, MCFPOJBDIHP_VidQuality, HADONLEBKLD_OnStageDivaNum);
+		bool res = OKJCGCOGDIA_DownloadSongDatas(ECOIBKOIPFP_WavId, DNHLEPCFPFC_SongId, MCFPOJBDIHP_VidQuality, HADONLEBKLD_OnStageDivaNum);
 		if(IMPALJEMHJJ_OverridePrimeId == 2)
 		{
 			string waveName = GameManager.Instance.GetWavDirectoryName(ECOIBKOIPFP_WavId, NMFLPJMFPFN_MoveTrackFileFormat, HADONLEBKLD_OnStageDivaNum, 2, 1, true);

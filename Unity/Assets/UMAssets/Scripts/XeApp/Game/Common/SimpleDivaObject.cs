@@ -146,7 +146,10 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x13934EC Offset: 0x13934EC VA: 0x13934EC
-		//public void FacialAnim_SetInteger(string name, int value) { }
+		public void FacialAnim_SetInteger(string name, int value)
+		{
+			facialBlendAnimMediator.selfAnimator.SetInteger(name, value);
+		}
 
 		//// RVA: 0x1393548 Offset: 0x1393548 VA: 0x1393548
 		public new void Anim_SetBool(string name, bool value)

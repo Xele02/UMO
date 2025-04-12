@@ -143,7 +143,9 @@ namespace XeApp.Game.Menu
 				});
 				if(m_eventCtrl.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
 				{
-					TodoLogger.LogError(TodoLogger.EventGoDiva_14, "Init");
+					IBJAKJJICBC ib = new IBJAKJJICBC();
+					ib.KHEKNNFCAOI(m_eventCtrl.HEACCHAKMFG_GetMusicsList()[0], false, 0, 0, 0, false, false, false);
+					SetEventMusicRankingJacket(ib.JNCPEGJGHOG_JacketId, 0);
 				}
 				else
 				{
@@ -251,7 +253,8 @@ namespace XeApp.Game.Menu
 				MANPIONIGNO_EventGoDiva ev = m_eventCtrl as MANPIONIGNO_EventGoDiva;
 				if(ev != null)
 				{
-					TodoLogger.LogError(TodoLogger.EventGoDiva_14, "GetRankingList");
+					m_windowUi.SetMessageVisible(false);
+					m_eventCtrl.FAMFKPBPIAA_GetRankingPlayerList(isFriendList, baseRank, (int)m_current_ranking_type - 6, OnReceivedRankingList, OnRankingError, OnNetError);
 				}
 			}
 			else
@@ -270,7 +273,7 @@ namespace XeApp.Game.Menu
 				MANPIONIGNO_EventGoDiva ev = m_eventCtrl as MANPIONIGNO_EventGoDiva;
 				if(ev != null)
 				{
-					TodoLogger.LogError(TodoLogger.EventGoDiva_14, "GetRankingListAdditive");
+					ev.JPNACOLKHLB_AddRankingPlayerListSecond(GetListEdgeRank(isUpper), isUpper ? -1 : 1, OnReceivedRankingListAdditive, OnRankingError, OnNetError);
 				}
 			}
 			else

@@ -442,17 +442,28 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF922A0 Offset: 0xF922A0 VA: 0xF922A0
 		private void InitializeGoDivaMusicSelect()
 		{
-			TodoLogger.LogError(TodoLogger.EventGoDiva_14, "InitializeGoDivaMusicSelect");
+            ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.FPMABHADHBB_EventGoDiva saveGoDiva = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.IMEBBACHPAN_EventGoDiva;
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			(m_setting.m_list_parts[0].m_base as PopupFilterSortParts_Title_H1).SetTitle(bk.GetMessageByLabel("popup_filter_title_h1"));
+			(m_setting.m_list_parts[0].m_base as PopupFilterSortParts_Title_H1).SetButton(bk.GetMessageByLabel("popup_sort_filter_reset"), ResetGoDivaMusicSelectFilter);
+			(m_setting.m_list_parts[1].m_base as PopupFilterSortParts_Title_H2).SetTitle(bk.GetMessageByLabel("popup_filter_godiva_music_exp_title_h2"));
+			(m_setting.m_list_parts[2].m_base as PopupFilterSortParts_FilterGoDivaMusicExp).SetBit(m_setting.m_param.EnableSave ? (uint)saveGoDiva.MENIBLFBNLC_FilterMusicExp : 0);
 		}
 
 		// // RVA: 0xF93430 Offset: 0xF93430 VA: 0xF93430
 		private void FainalizeGoDivaMusicSelect()
 		{
-			TodoLogger.LogError(TodoLogger.EventGoDiva_14, "FainalizeGoDivaMusicSelect");
+			if(!m_setting.m_param.EnableSave)
+				return;
+            ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.FPMABHADHBB_EventGoDiva saveGoDiva = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.IMEBBACHPAN_EventGoDiva;
+			saveGoDiva.MENIBLFBNLC_FilterMusicExp = (int)(m_setting.m_list_parts[2].m_base as PopupFilterSortParts_FilterGoDivaMusicExp).GetBit();
 		}
 
 		// // RVA: 0xF947D8 Offset: 0xF947D8 VA: 0xF947D8
-		// public void ResetGoDivaMusicSelectFilter() { }
+		public void ResetGoDivaMusicSelectFilter()
+		{
+			(m_setting.m_list_parts[2].m_base as PopupFilterSortParts_FilterGoDivaMusicExp).SetBit(0);
+		}
 
 		// // RVA: 0xF916D8 Offset: 0xF916D8 VA: 0xF916D8
 		private void InitializeSelectHomeBg()

@@ -107,7 +107,7 @@ public class NGJOPPIGCPM_ResultData
 		}
 		else if(MNNHHJBBICA_GameEventType == 3)
 		{
-			HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9, false) as HAEDCCLHEMN_EventBattle;
+			HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, false) as HAEDCCLHEMN_EventBattle;
             CCPKHBECNLH_EventBattle.AIFGBKMMJGL music = ev.JIPPHOKGLIH_GetMusicSaveData(GHBPLHBNMBK_FreeMusicId, true);
 			if(music != null)
 			{

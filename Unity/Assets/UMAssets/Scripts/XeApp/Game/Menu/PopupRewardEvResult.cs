@@ -264,12 +264,12 @@ namespace XeApp.Game.Menu
 					rankingRewardList.Add(eventController.HLFHJIDHJMP.HBHMAKNGKFK[i]);
 				}
 				int r = Rank;
-				for(int i = 0; i < eventController.EGIPGHCDMII[rankingIndex].Count; i++)
+				for(int i = 0; i < eventController.EGIPGHCDMII_RankData[rankingIndex].Count; i++)
 				{
-					if(eventController.EGIPGHCDMII[rankingIndex][i].JBDGBPAAAEF_HighRank <= r && r <= eventController.EGIPGHCDMII[rankingIndex][i].GHANKNIBALB_LowRank)
+					if(eventController.EGIPGHCDMII_RankData[rankingIndex][i].JBDGBPAAAEF_HighRank <= r && r <= eventController.EGIPGHCDMII_RankData[rankingIndex][i].GHANKNIBALB_LowRank)
 					{
-						RewardHighRank = eventController.EGIPGHCDMII[rankingIndex][i].JBDGBPAAAEF_HighRank;
-						RewardLowRank = eventController.EGIPGHCDMII[rankingIndex][i].GHANKNIBALB_LowRank;
+						RewardHighRank = eventController.EGIPGHCDMII_RankData[rankingIndex][i].JBDGBPAAAEF_HighRank;
+						RewardLowRank = eventController.EGIPGHCDMII_RankData[rankingIndex][i].GHANKNIBALB_LowRank;
 					}
 				}
 			}
@@ -288,11 +288,17 @@ namespace XeApp.Game.Menu
 				EventType = eventController.HIDHLFCBIDE_EventType;
 				if(EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
 				{
-					TodoLogger.LogError(TodoLogger.EventGoDiva_14, "GoDiva");
+					IBJAKJJICBC ib = new IBJAKJJICBC();
+					ib.KHEKNNFCAOI(eventController.HEACCHAKMFG_GetMusicsList()[0], false, 0, 0, 0, false, false, false);
+					MusicName = ib.NEDBBJDAFBH_MusicName;
+					CoverId = ib.JNCPEGJGHOG_JacketId;
 				}
 				else if(EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 				{
-					TodoLogger.LogError(TodoLogger.EventCollection_1, "Event Collection");
+					IBJAKJJICBC ib = new IBJAKJJICBC();
+					ib.KHEKNNFCAOI(eventController.HEACCHAKMFG_GetMusicsList()[0], false, 0, 0, 0, false, false, false);
+					MusicName = ib.NEDBBJDAFBH_MusicName;
+					CoverId = ib.JNCPEGJGHOG_JacketId;
 				}
 				//LAB_011427dc
 				for(int i = 0; i < eventController.HLFHJIDHJMP.HBHMAKNGKFK.Count; i++)
@@ -300,12 +306,12 @@ namespace XeApp.Game.Menu
 					rankingRewardList.Add(eventController.HLFHJIDHJMP.HBHMAKNGKFK[i]);
 				}
 				int r = Rank;
-				for(int i = 0; i < eventController.EGIPGHCDMII[1].Count; i++)
+				for(int i = 0; i < eventController.EGIPGHCDMII_RankData[1].Count; i++)
 				{
-					if(eventController.EGIPGHCDMII[1][i].JBDGBPAAAEF_HighRank <= r && r <= eventController.EGIPGHCDMII[1][i].GHANKNIBALB_LowRank)
+					if(eventController.EGIPGHCDMII_RankData[1][i].JBDGBPAAAEF_HighRank <= r && r <= eventController.EGIPGHCDMII_RankData[1][i].GHANKNIBALB_LowRank)
 					{
-						RewardHighRank = eventController.EGIPGHCDMII[1][i].JBDGBPAAAEF_HighRank;
-						RewardLowRank = eventController.EGIPGHCDMII[1][i].GHANKNIBALB_LowRank;
+						RewardHighRank = eventController.EGIPGHCDMII_RankData[1][i].JBDGBPAAAEF_HighRank;
+						RewardLowRank = eventController.EGIPGHCDMII_RankData[1][i].GHANKNIBALB_LowRank;
 					}
 				}
 			}
@@ -556,7 +562,7 @@ namespace XeApp.Game.Menu
 		{
 			//0x1A7F6DC
 			ApplySetting(Type.CumulativePoint, parent, 0);
-			sm_Setting.Init(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9, false), OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0);
+			sm_Setting.Init(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, false), OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0);
 			GameManager.Instance.ResetViewPlayerData();
 			PopupWindowManager.Show(sm_Setting, buttonCallBack, null, null, null, playSeEvent:(PopupWindowControl.SeType type) =>
 			{

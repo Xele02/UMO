@@ -275,7 +275,7 @@ namespace XeApp.Game.Menu
 				Database.Instance.advResult.Setup("Menu", uniqueId, new AdvSetupParam() { eventUniqueId = eventUniqueId, restorBgmId = restorBgmId, restorListPosition = pos, bgParam = new AdvReturnBgParam() { bgId = bgId, textureType = bgTexType, bgType = bgType, attr = bgAttr }, eventStoryData = m_eventStoryData });
 			}
 			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(data.PBPOLELIPJI_AdventureId);
-			GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK(data.PBPOLELIPJI_AdventureId);
+			GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData dbAdv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(data.PBPOLELIPJI_AdventureId);
 			OAGBCBBHMPF.DKAMMIHBINF a = 0;
 			if (m_eventStoryData.IPCPFJJPIII - 1 < 4)
 				a = new OAGBCBBHMPF.DKAMMIHBINF[4] {

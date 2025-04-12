@@ -20,7 +20,11 @@ namespace XeApp.Game.Menu
 		public Action onClickButton { private get; set; } // 0x2C
 
 		// // RVA: 0x167C3DC Offset: 0x167C3DC VA: 0x167C3DC
-		// public void TryEnter() { }
+		public void TryEnter()
+		{
+			if(!m_isShow)
+				Enter();
+		}
 
 		// // RVA: 0x167C470 Offset: 0x167C470 VA: 0x167C470
 		public void TryLeave()

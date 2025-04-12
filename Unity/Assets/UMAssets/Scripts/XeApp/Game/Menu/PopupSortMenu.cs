@@ -811,7 +811,11 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x114D304 Offset: 0x114D304 VA: 0x114D304
-		//public static bool IsMusicLevelFilter(int levelMin, int levelMax, IBJAKJJICBC musicData, Difficulty.Type difficulty) { }
+		public static bool IsMusicLevelFilter(int levelMin, int levelMax, IBJAKJJICBC musicData, Difficulty.Type difficulty)
+		{
+			int pt = musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].CIEOBFIIPLD;
+			return pt >= levelMin && pt <= levelMax;
+		}
 
 		//// RVA: 0x114D450 Offset: 0x114D450 VA: 0x114D450
 		public static bool IsAllRewardAchievedFilter(List<FPGEMAIAMBF_RewardData.LOIJICNJMKA> rewards)

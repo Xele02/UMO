@@ -271,13 +271,33 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x166D424 Offset: 0x166D424 VA: 0x166D424
-		// public void SetEventGoDivaRank(int rank) { }
+		public void SetEventGoDivaRank(int rank)
+		{
+			if(rank > 0)
+			{
+				m_eventGoDivaRankingText.text = rank.ToString();
+			}
+			else
+			{
+				m_eventGoDivaRankingText.text = TextConstant.InvalidText;
+			}
+		}
 
 		// // RVA: 0x166D538 Offset: 0x166D538 VA: 0x166D538
-		// public void SetEventGoDivaExpBonus(float bonus) { }
+		public void SetEventGoDivaExpBonus(float bonus)
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			m_eventGoDivaExpBonudText.text = string.Format(bk.GetMessageByLabel("godiva_music_select_exp_bonus"), bonus);
+		}
 
 		// // RVA: 0x166D670 Offset: 0x166D670 VA: 0x166D670
-		// public void SetEventGoDivaExp(int expValue) { }
+		public void SetEventGoDivaExp(int expValue)
+		{
+			for(int i = 0; i < m_eventGoDivaExpValueText.Length; i++)
+			{
+				m_eventGoDivaExpValueText[i].text = expValue.ToString();
+			}
+		}
 
 		// RVA: 0x166D710 Offset: 0x166D710 VA: 0x166D710 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

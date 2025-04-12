@@ -27,7 +27,11 @@ namespace XeApp.Game.Menu
 		public Action<FreeCategoryId.Type> onChangedSeries { private get; set; } // 0x2C
 
 		// // RVA: 0xF52C24 Offset: 0xF52C24 VA: 0xF52C24
-		// public void TryEnter() { }
+		public void TryEnter()
+		{
+			if(!m_isShow)
+				Enter();
+		}
 
 		// // RVA: 0xF52CB8 Offset: 0xF52CB8 VA: 0xF52CB8
 		public void TryLeave()
@@ -54,7 +58,11 @@ namespace XeApp.Game.Menu
 		// public void Show() { }
 
 		// // RVA: 0xF52DD0 Offset: 0xF52DD0 VA: 0xF52DD0
-		// public void Hide() { }
+		public void Hide()
+		{
+			m_isShow = false;
+			m_symbolMain.StartAnim("wait");
+		}
 
 		// // RVA: 0xF390A4 Offset: 0xF390A4 VA: 0xF390A4
 		public bool IsPlaying()
@@ -68,10 +76,55 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xF52E54 Offset: 0xF52E54 VA: 0xF52E54
-		// public void ChangeSelectedTab(FreeCategoryId.Type categoryId, bool immediate = False) { }
+		public void ChangeSelectedTab(FreeCategoryId.Type categoryId, bool immediate/* = False*/)
+		{
+			for(int i = 0; i < s_buttonIndexToSeries.Length; i++)
+			{
+				if(s_buttonIndexToSeries[i] == categoryId)
+				{
+					int frame = i;
+					if(categoryId == FreeCategoryId.Type.Other)
+						frame = 4;
+					if(categoryId == FreeCategoryId.Type.Event)
+						frame = 5;
+					m_symbolSeriesTab.GoToFrame("index", frame);
+					if(immediate)
+					{
+						m_seriesButtons[i].enabled = false;
+						m_seriesButtons[i].SetOn();
+					}
+					else
+					{
+						m_seriesButtons[i].IsInputOff = true;
+					}
+				}
+				else
+				{
+					m_seriesButtons[i].enabled = true;
+					m_seriesButtons[i].IsInputOff = false;
+					m_seriesButtons[i].SetOff();
+				}
+			}
+			m_selectedCategoryId = categoryId;
+		}
 
 		// // RVA: 0xF53124 Offset: 0xF53124 VA: 0xF53124
-		// public void ResetLockTabs() { }
+		public void ResetLockTabs()
+		{
+			for(int i = 0; i < s_buttonIndexToSeries.Length; i++)
+			{
+				if(m_selectedCategoryId == s_buttonIndexToSeries[i])
+				{
+					m_seriesButtons[i].enabled = false;
+					m_seriesButtons[i].SetOn();
+				}
+				else
+				{
+					m_seriesButtons[i].enabled = true;
+					m_seriesButtons[i].SetOff();
+				}
+			}
+		}
 
 		// // RVA: 0xF5332C Offset: 0xF5332C VA: 0xF5332C
 		// public void SetTabNew(FreeCategoryId.Type categoryId, bool isNew) { }

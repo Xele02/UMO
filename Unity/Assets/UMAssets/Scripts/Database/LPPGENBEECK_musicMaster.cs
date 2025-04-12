@@ -296,7 +296,7 @@ public class LPPGENBEECK_MusicMaster : DIHHCBACKGG_DbSection
 		{
 			KLBKPANJCPL_Score data = new KLBKPANJCPL_Score();
 			data.GKNBCINLIJJ_Scid = (int)array[i].GKHGCPODNEG;
-			data.ANAJIAENLNB_F_pt = (int)array[i].ANAJIAENLNB;
+			data.ANAJIAENLNB_MusicLevel = (int)array[i].ANAJIAENLNB;
 			data.NLKEBAOBJCM_Cb = (int)array[i].OLKHBHLOKJI;
 			data.KNIFCANOHOC_Ss = (int)array[i].EJOECKJNGPD;
 			data.CKDPPJAHAIP_Dn = (int)array[i].HDBEJBBPPBK;
@@ -688,7 +688,7 @@ public class KLBKPANJCPL_Score
 	[UMOMember(ReaderMember = "GKHGCPODNEG")]
 	public int GKNBCINLIJJ_Scid { get; set; } // 0xC  // PIEBLLLAAEF ECBOBCJLLOD LFMJPMIHHBF
 	[UMOMember(ReaderMember = "ANAJIAENLNB")]
-	public int ANAJIAENLNB_F_pt { get; set; } // 0x10 // IKMILCFHBGA MMOMNMBKHJF FEHNFGPFINK
+	public int ANAJIAENLNB_MusicLevel { get; set; } // 0x10 // IKMILCFHBGA MMOMNMBKHJF FEHNFGPFINK
 	[UMOMember(ReaderMember = "OLKHBHLOKJI")]
 	public int NLKEBAOBJCM_Cb { get; set; }   // 0x14 // ABLBDMPGEHA AECNKGBNKHH ECHLKFHOJFP
 	[UMOMember(ReaderMember = "EJOECKJNGPD")]

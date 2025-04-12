@@ -16,6 +16,12 @@ namespace XeApp.Game.Menu
 			PS = 3,
 			Num = 4,
 		}
+		public enum GoDivaIconType
+		{
+			Framed = 0,
+			Naked = 1,
+		}
+
 
 		private DivaIconTexture m_loadingDivaIcon; // 0x20
 		private DivaIconTexture m_loadingStatusDivaIcon; // 0x24
@@ -186,7 +192,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x17E40EC Offset: 0x17E40EC VA: 0x17E40EC
-		// public void LoadEventGoDivaIcon(int id, DivaIconTextureCache.GoDivaIconType type, Action<IiconTexture> callBack) { }
+		public void LoadEventGoDivaIcon(int id, GoDivaIconType type, Action<IiconTexture> callBack)
+		{
+			Load(string.Format(DivaEventGoDivaIconTypedPath, id, (int)type + 1), callBack);
+		}
 
 		// // RVA: 0x17E41B4 Offset: 0x17E41B4 VA: 0x17E41B4
 		public static string GetDivaStandingCostumeIconPath(int id, int modelId)
@@ -248,6 +257,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x17E4B28 Offset: 0x17E4B28 VA: 0x17E4B28
-		// public void TryLoadEventGoDivaIcon(int divaId) { }
+		public void TryLoadEventGoDivaIcon(int divaId)
+		{
+			m_strBuilder.SetFormat(DivaEventGoDivaIconPath, divaId);
+			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(m_strBuilder.ToString());
+		}
 	}
 }

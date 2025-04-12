@@ -121,7 +121,7 @@ namespace XeApp.Game.Menu
 			m_musicId = musicId;
 			m_isStory = isStory;
 			m_isGoDivaSub = isGoDiva & !isCenter;
-			SetDivaImageAndColor(divaData, divaData != null ? isGoDiva : false);
+			SetDivaImageAndColor(divaData, divaData != null ? m_isGoDivaSub : false);
 			if (m_divaStatus != null)
 			{
 				if (m_divaData != null)
@@ -251,7 +251,12 @@ namespace XeApp.Game.Menu
 				m_divaImage.gameObject.SetActive(false);
 				m_divaIconImage.gameObject.SetActive(true);
 				m_divaTextureLoadingCount++;
-				TodoLogger.LogError(TodoLogger.EventGoDiva_14, "finish SetDivaImageAndColor");
+				GameManager.Instance.DivaIconCache.LoadEventGoDivaIcon(divaData.AHHJLDLAPAN_DivaId, DivaIconTextureCache.GoDivaIconType.Naked, (IiconTexture texture) =>
+				{
+					//0xA6BBF8
+					texture.Set(m_divaIconImage);
+					m_divaTextureLoadingCount--;
+				});
 			}
 			else
 			{
@@ -287,9 +292,5 @@ namespace XeApp.Game.Menu
 
 		//// RVA: 0xA6BB74 Offset: 0xA6BB74 VA: 0xA6BB74
 		//private Color ColorAlphaMarge(Color targetColor, float a) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x730BFC Offset: 0x730BFC VA: 0x730BFC
-		//// RVA: 0xA6BBF8 Offset: 0xA6BBF8 VA: 0xA6BBF8
-		//private void <SetDivaImageAndColor>b__43_0(IiconTexture texture) { }
 	}
 }

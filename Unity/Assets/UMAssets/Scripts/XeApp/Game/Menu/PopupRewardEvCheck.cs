@@ -295,9 +295,9 @@ namespace XeApp.Game.Menu
 				curr_rank = cont.CDINKAANIAA_Rank[0];
 				total_data_list = cont.PFPJHJJAGAG_Rewards;
 				total_feature_list = cont.MGEIBMIGILL();
-				rank_data_list = cont.EGIPGHCDMII[0];
+				rank_data_list = cont.EGIPGHCDMII_RankData[0];
 				this.isRaidBossSelect = isRaidBossSelect;
-				rank_data_list2 = cont.EGIPGHCDMII[1];
+				rank_data_list2 = cont.EGIPGHCDMII_RankData[1];
 				if(cont.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 				{
 					TodoLogger.LogError(TodoLogger.EventCollection_1, "Event Collection");
@@ -320,7 +320,22 @@ namespace XeApp.Game.Menu
 				}
 				else if(cont.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
 				{
-					TodoLogger.LogError(TodoLogger.EventGoDiva_14, "Event GoRaid");
+					IBJAKJJICBC ib = new IBJAKJJICBC();
+					ib.KHEKNNFCAOI(cont.HEACCHAKMFG_GetMusicsList()[0], false, 0, 0, 0, false, false, false);
+					pickup_free_music_id = ib.GHBPLHBNMBK_FreeMusicId;
+					pickup_music_name = ib.NEDBBJDAFBH_MusicName;
+					pickup_cover_id = ib.JNCPEGJGHOG_JacketId;
+					select_diva_id = (cont as MANPIONIGNO_EventGoDiva).CLELOGKMNCE_GetEventSaveData().AFKMGCLEPGA_SelDiva;
+					if(select_diva_id < 1 || cont.EGIPGHCDMII_RankData.Length < select_diva_id)
+					{
+						//LAB_01a6e4b0
+						select_diva_id = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId;
+					}
+					rank_data_list = cont.EGIPGHCDMII_RankData[select_diva_id - 1];
+					is_enable_score_ranking = true;
+					rank_data_list2 = cont.EGIPGHCDMII_RankData[select_diva_id - 1];
+					curr_score_rank = cont.CDINKAANIAA_Rank[select_diva_id - 1];
+					curr_score = (int)(cont as MANPIONIGNO_EventGoDiva).AFCIIKDOMHN_GetCurrentScore(select_diva_id);
 				}
 				else
 				{
@@ -426,20 +441,20 @@ namespace XeApp.Game.Menu
 				s.Label = MakeRankingSeparatorLabel(viewData.rank_data_list[i]);
 				m_rankingList.Add(s);
 				f1 += 55;
-				for(int j = 0; j < viewData.rank_data_list[i].HBHMAKNGKFK.Count; j++)
+				for(int j = 0; j < viewData.rank_data_list[i].HBHMAKNGKFK_Items.Count; j++)
 				{
 					RankingListItem it = new RankingListItem();
 					it.Top = new Vector2((j & 1) * 480 + 10, -(f1 + (j >> 1) * 108 + 4));
 					it.Height = 108;
 					it.ResourceType = 2;
-					it.Data = viewData.rank_data_list[i].HBHMAKNGKFK[j];
+					it.Data = viewData.rank_data_list[i].HBHMAKNGKFK_Items[j];
 					it.IsGet = false;
 					it.isGoldFrame = it.Data.JOPPFEHKNFO_IsGold;
 					m_rankingList.Add(it);
 					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(it.Data.JJBGOIMEIPF_ItemId, 0));
 				}
-				if(viewData.rank_data_list[i].HBHMAKNGKFK.Count > 0)
-					f1 += (viewData.rank_data_list[i].HBHMAKNGKFK.Count >> 1) * 104 + 104;
+				if(viewData.rank_data_list[i].HBHMAKNGKFK_Items.Count > 0)
+					f1 += (viewData.rank_data_list[i].HBHMAKNGKFK_Items.Count >> 1) * 104 + 104;
 			}
 			if(viewData.is_enable_score_ranking)
 			{
@@ -453,20 +468,20 @@ namespace XeApp.Game.Menu
 					s.Label = MakeRankingSeparatorLabel(viewData.rank_data_list2[i]);
 					m_rankingList2.Add(s);
 					f1 += 55;
-					for(int j = 0; j < viewData.rank_data_list2[i].HBHMAKNGKFK.Count; j++)
+					for(int j = 0; j < viewData.rank_data_list2[i].HBHMAKNGKFK_Items.Count; j++)
 					{
 						RankingListItem it = new RankingListItem();
 						it.Top = new Vector2((j & 1) * 480 + 10, -(f1 + (j >> 1) * 108 + 4));
 						it.Height = 108;
 						it.ResourceType = 2;
-						it.Data = viewData.rank_data_list2[i].HBHMAKNGKFK[j];
+						it.Data = viewData.rank_data_list2[i].HBHMAKNGKFK_Items[j];
 						it.IsGet = false;
 						it.isGoldFrame = it.Data.JOPPFEHKNFO_IsGold;
 						m_rankingList.Add(it);
 						KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(it.Data.JJBGOIMEIPF_ItemId, 0));
 					}
-					if(viewData.rank_data_list2[i].HBHMAKNGKFK.Count > 0)
-						f1 += (viewData.rank_data_list2[i].HBHMAKNGKFK.Count >> 1) * 104 + 104;
+					if(viewData.rank_data_list2[i].HBHMAKNGKFK_Items.Count > 0)
+						f1 += (viewData.rank_data_list2[i].HBHMAKNGKFK_Items.Count >> 1) * 104 + 104;
 				}
 			}
 			if(viewData.eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
@@ -843,13 +858,16 @@ namespace XeApp.Game.Menu
 		{
 			if(sm_Setting == null)
 				return true;
-			if(sm_Setting.EventCtrl == null)
-				return true;
-			if(sm_Setting.EventCtrl.PGIIDPEGGPI_EventId != eventCtrl.PGIIDPEGGPI_EventId)
-				return true;
-			if(eventCtrl is MANPIONIGNO_EventGoDiva)
+			if(eventCtrl != null)
 			{
-				TodoLogger.LogError(TodoLogger.EventGoDiva_14, "Go Diva");
+				if(sm_Setting.EventCtrl == null)
+					return true;
+				if(sm_Setting.EventCtrl.PGIIDPEGGPI_EventId != eventCtrl.PGIIDPEGGPI_EventId)
+					return true;
+				if(eventCtrl is MANPIONIGNO_EventGoDiva)
+				{
+					return sm_Setting.GetViewData.select_diva_id != (eventCtrl as MANPIONIGNO_EventGoDiva).CLELOGKMNCE_GetEventSaveData().AFKMGCLEPGA_SelDiva;
+				}
 			}
 			return false;
 		}

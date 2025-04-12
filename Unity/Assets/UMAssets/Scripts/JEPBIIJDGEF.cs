@@ -66,7 +66,7 @@ public class JEPBIIJDGEF_EventInfo
 	}
 
 	// // RVA: 0x1C33488 Offset: 0x1C33488 VA: 0x1C33488
-	public IKDICBBFBMI_EventBase OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType INDDJNMPONH, KGCNCBOKCBA.GNENJEHKMHD_EventStatus BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9/*9*/)
+	public IKDICBBFBMI_EventBase OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType INDDJNMPONH, KGCNCBOKCBA.GNENJEHKMHD_EventStatus BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/)
     {
 		IKDICBBFBMI_EventBase res = null;
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
@@ -85,7 +85,7 @@ public class JEPBIIJDGEF_EventInfo
     }
 
 	// // RVA: 0x1C395FC Offset: 0x1C395FC VA: 0x1C395FC
-	public IKDICBBFBMI_EventBase MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9/*9*/, bool BJIOJJDLODJ = false)
+	public IKDICBBFBMI_EventBase MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/, bool BJIOJJDLODJ = false)
 	{
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 		IKDICBBFBMI_EventBase res = null;
@@ -126,7 +126,7 @@ public class JEPBIIJDGEF_EventInfo
 	// public List<IKDICBBFBMI> CMDEHIMPHBL(KGCNCBOKCBA.GNENJEHKMHD BELFNAHNMDL = 9, bool BJIOJJDLODJ = False) { }
 
 	// // RVA: 0x1C39BD4 Offset: 0x1C39BD4 VA: 0x1C39BD4
-	public IKDICBBFBMI_EventBase AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9/*9*/)
+	public IKDICBBFBMI_EventBase AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/)
 	{
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 		for(int i = 0; i < MPEOOINCGEN.Count; i++)
@@ -305,7 +305,7 @@ public class JEPBIIJDGEF_EventInfo
 			return PGIIDPEGGPI == PKLPKMLGFGK.PGIIDPEGGPI_EventId;
 		});
 		if(ev != null)
-			return ev.MPMKJNJGFEF();
+			return ev.MPMKJNJGFEF_IsEntry();
 		return false;
 	}
 
@@ -444,7 +444,7 @@ public class JEPBIIJDGEF_EventInfo
 				}
 				IMMEEJNOKKK_Event.HCDGELDHFHB_UpdateStatus(JHNMKKNEENE);
 			}
-			IKDICBBFBMI_EventBase evt = OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9);
+			IKDICBBFBMI_EventBase evt = OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived);
 			if(evt != null)
 			{
 				if(evt is PKNOKJNLPOE_EventRaid)
@@ -528,7 +528,7 @@ public class JEPBIIJDGEF_EventInfo
 		for(int i = 0; i < MPEOOINCGEN.Count; i++)
 		{
 			MPEOOINCGEN[i].HCDGELDHFHB_UpdateStatus(time);
-			if(MPEOOINCGEN[i].NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9/*9*/)
+			if(MPEOOINCGEN[i].NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/)
 			{
 				if(MPEOOINCGEN[i].HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore/*4*/)
 				{
@@ -572,7 +572,7 @@ public class JEPBIIJDGEF_EventInfo
 		{
 			if(MPEOOINCGEN[i].HIDHLFCBIDE_EventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
 			{
-				List<string> str = MPEOOINCGEN[i].IJCPBPFEGDM_GetBgmFilePathList(time);
+				List<string> str = MPEOOINCGEN[i].IJCPBPFEGDM_GetResourcesFilePathList(time);
 				if (str != null)
 				{
 					res.AddRange(str);
@@ -662,7 +662,7 @@ public class JEPBIIJDGEF_EventInfo
 	{
 		if (LIKDEHHKFEH.HIDHLFCBIDE_EventType >= OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp && LIKDEHHKFEH.HIDHLFCBIDE_EventType <= OHCAABOMEOF.KGOGMKMBCPP_EventType.OCCGDMDBCHK_EventGacha)
 		{
-			LIKDEHHKFEH = MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9/*9*/, false);
+			LIKDEHHKFEH = MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/, false);
 			if (LIKDEHHKFEH == null)
 				return new List<int>();
 		}

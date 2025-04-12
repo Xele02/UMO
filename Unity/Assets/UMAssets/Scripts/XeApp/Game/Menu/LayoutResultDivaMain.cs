@@ -263,7 +263,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1887F10 Offset: 0x1887F10 VA: 0x1887F10
-		// public void SetGoDivaLayout() { }
+		public void SetGoDivaLayout()
+		{
+			goDivaDisableLayoutRoot.StartSiblingAnimGoStop("02");
+		}
 
 		// // RVA: 0x1887F8C Offset: 0x1887F8C VA: 0x1887F8C
 		public void StartBeginAnim()

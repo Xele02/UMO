@@ -599,9 +599,10 @@ public class EKLNMHFCAOI
 				}
 				break;
 			case FKGCBLHOOCL_Category.CLMIJKACELE_EventTicket:
-				if(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9/*9*/) != null)
+				MANPIONIGNO_EventGoDiva evGoDiva = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as MANPIONIGNO_EventGoDiva;
+				if(evGoDiva != null)
 				{
-					TodoLogger.LogError(TodoLogger.EventTicket_14, "ALHCGDMEMID_GetNumItems Event");
+					return evGoDiva.AELBIEDNPGB_GetTicketCount(LDEGEHAEALK);
 				}
 				break;
 			case FKGCBLHOOCL_Category.JHGPNDLNPFA_DivaItem:
@@ -662,7 +663,7 @@ public class EKLNMHFCAOI
 			case FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft:
 				return LDEGEHAEALK.PNLOINMCCKH_Scene.HOLEDOLMJCB(NANNGLGOFKH, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene, 1);
 			case FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem:
-				if (JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9/*9*/) != null)
+				if (JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) != null)
 				{
 					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "ALHCGDMEMID_GetNumItems Event");
 				}
@@ -766,9 +767,10 @@ public class EKLNMHFCAOI
 				}
 				break;
 			case FKGCBLHOOCL_Category.CLMIJKACELE_EventTicket:
-				if (JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9/*9*/) != null)
+				MANPIONIGNO_EventGoDiva ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as MANPIONIGNO_EventGoDiva;
+				if (ev != null)
 				{
-					TodoLogger.LogError(TodoLogger.EventTicket_14, "ALHCGDMEMID_SetNumItems Event");
+					ev.HPENJEOAMBK_SetTicket((int)INDDJNMPONH * 10000 + NANNGLGOFKH, HMFFHLPNMPH, LDEGEHAEALK);
 				}
 				break;
 			case FKGCBLHOOCL_Category.JHGPNDLNPFA_DivaItem:
@@ -1030,10 +1032,10 @@ public class EKLNMHFCAOI
 				a = 0;
 				break;
 			case FKGCBLHOOCL_Category.CLMIJKACELE_EventTicket:
-				IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9/*9*/);
+				MANPIONIGNO_EventGoDiva ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as MANPIONIGNO_EventGoDiva;
 				if(ev != null)
 				{
-					TodoLogger.LogError(TodoLogger.EventTicket_14, "Event");
+					return 9999;
 				}
 				break;
 			case FKGCBLHOOCL_Category.DMMIIBCMCFG_EnergyItem:

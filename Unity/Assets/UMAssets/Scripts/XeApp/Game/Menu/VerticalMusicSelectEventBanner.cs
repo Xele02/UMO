@@ -60,6 +60,7 @@ namespace XeApp.Game.Menu
 				else
 					m_pullDownInOut.Enter(false);
 			});
+			m_limitTime.transform.parent.Find("Text (TMP)_Title").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_EventRunning;
 		}
 
 		// // RVA: 0xBDD36C Offset: 0xBDD36C VA: 0xBDD36C
@@ -90,7 +91,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBDD4F8 Offset: 0xBDD4F8 VA: 0xBDD4F8
-		// public void SetLimitTimeLabel(string label) { }
+		public void SetLimitTimeLabel(string label)
+		{
+			m_musicEventRemainTime = label;
+			ApplyRemainTime();
+		}
 
 		// // RVA: 0xBDD500 Offset: 0xBDD500 VA: 0xBDD500
 		public void SetType(ButtonType type)

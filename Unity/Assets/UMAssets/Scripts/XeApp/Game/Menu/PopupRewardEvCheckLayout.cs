@@ -198,7 +198,14 @@ namespace XeApp.Game.Menu
 			}
 			else if(m_eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
 			{
-				TodoLogger.LogError(TodoLogger.EventGoDiva_14, "GoDiva");
+				m_EventMusicRank = data.curr_score_rank;
+				m_EventHiScore = data.curr_score;
+				MenuScene.Instance.MusicJacketTextureCache.Load(data.pickup_cover_id, (IiconTexture texture) =>
+				{
+					//0x1A72D14
+					texture.Set(m_imageCDJacket);
+				});
+				m_RankingType = RankingType.GoDivaScore;
 			}
 			else if(m_eventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 			{
@@ -388,9 +395,5 @@ namespace XeApp.Game.Menu
 		// [CompilerGeneratedAttribute] // RVA: 0x70E34C Offset: 0x70E34C VA: 0x70E34C
 		// // RVA: 0x1A72C34 Offset: 0x1A72C34 VA: 0x1A72C34
 		// private void <SetUp>b__39_0(IiconTexture texture) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x70E35C Offset: 0x70E35C VA: 0x70E35C
-		// // RVA: 0x1A72D14 Offset: 0x1A72D14 VA: 0x1A72D14
-		// private void <SetUp>b__39_1(IiconTexture texture) { }
 	}
 }

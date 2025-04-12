@@ -34,8 +34,8 @@ public class CPHJGFLEFNF
 	public JBECFDNKPFD MFCGAKOAGFE; // 0x80
 	public int KBINAMHOODM_GameEventType; // 0x84
 	public int LMJNFABLJEO_OpenEventType; // 0x88
-	public int NMDHKLPAKHB; // 0x8C
-	public int BNJBFKAIICK; // 0x90
+	public int NMDHKLPAKHB_GetUserExp; // 0x8C
+	public int BNJBFKAIICK_GetCharExp; // 0x90
 	public string OEEOILKOKFM_SerializedNoteResultInfo; // 0x94
 	public int HPEHMCGPMJM_Level; // 0x98
 	public int MOJEOLJMNKP; // 0x9C

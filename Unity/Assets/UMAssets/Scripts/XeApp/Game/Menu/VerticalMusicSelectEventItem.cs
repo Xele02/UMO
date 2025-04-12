@@ -30,10 +30,20 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xBDDCAC Offset: 0xBDDCAC VA: 0xBDDCAC
-		// public void SetItemNum(int itemNum) { }
+		public void SetItemNum(int itemNum)
+		{
+			m_itemNumText.text = itemNum.ToString();
+		}
 
 		// // RVA: 0xBDDCF8 Offset: 0xBDDCF8 VA: 0xBDDCF8
-		// public void SetTicketIcon(int ticketId) { }
+		public void SetTicketIcon(int ticketId)
+		{
+			GameManager.Instance.ItemTextureCache.Load(ticketId, (IiconTexture image) =>
+			{
+				//0xBDDE9C
+				image.Set(m_itemIcon);
+			});
+		}
 
 		// // RVA: 0xBDDE08 Offset: 0xBDDE08 VA: 0xBDDE08
 		public void Enter()
@@ -52,9 +62,5 @@ namespace XeApp.Game.Menu
 		{
 			return m_inOut.IsPlaying();
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F59FC Offset: 0x6F59FC VA: 0x6F59FC
-		// // RVA: 0xBDDE9C Offset: 0xBDDE9C VA: 0xBDDE9C
-		// private void <SetTicketIcon>b__7_0(IiconTexture image) { }
 	}
 }

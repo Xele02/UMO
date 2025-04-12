@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using XeApp.Game;
 using XeApp.Game.Common;
 
 [System.Obsolete("Use JLKEOGLJNOD_TeamInfo", true)]
@@ -367,7 +368,7 @@ public class JLKEOGLJNOD_TeamInfo
 	}
 
 	// // RVA: 0x1479958 Offset: 0x1479958 VA: 0x1479958
-	public void MDMJCIAJBKG(int CGIGOFKGCII, int JBKOEGJGKMC, List<GCIJNCFDNON_SceneInfo> OPIBAPEGCLA, List<FFHPBEPOMAK_DivaInfo> NBIGLBMHEDC, BBHNACPENDM_ServerSaveData AHEFHIMGIBI)
+	public void MDMJCIAJBKG_LoadGoDivaMainUnit(int CGIGOFKGCII, int JBKOEGJGKMC, List<GCIJNCFDNON_SceneInfo> OPIBAPEGCLA, List<FFHPBEPOMAK_DivaInfo> NBIGLBMHEDC, BBHNACPENDM_ServerSaveData AHEFHIMGIBI)
 	{
 		NCCJGHMGJLL_IsUnitGoDiva = true;
 		if(AHEFHIMGIBI == null)
@@ -396,7 +397,7 @@ public class JLKEOGLJNOD_TeamInfo
 	}
 
 	// // RVA: 0x1479B98 Offset: 0x1479B98 VA: 0x1479B98
-	public void ALIMIMCBKFH(int CGIGOFKGCII, int JBKOEGJGKMC, List<GCIJNCFDNON_SceneInfo> OPIBAPEGCLA, BBHNACPENDM_ServerSaveData AHEFHIMGIBI)
+	public void ALIMIMCBKFH_LoadGoDivaUnit(int CGIGOFKGCII, int JBKOEGJGKMC, List<GCIJNCFDNON_SceneInfo> OPIBAPEGCLA, BBHNACPENDM_ServerSaveData AHEFHIMGIBI)
 	{
 		NCCJGHMGJLL_IsUnitGoDiva = true;
 		if(AHEFHIMGIBI == null)
@@ -440,7 +441,7 @@ public class JLKEOGLJNOD_TeamInfo
 		if (NGHKJOEDLIP_ScoreTeam.GIDKKHFHALL != 0)
 		{
 			NGHKJOEDLIP_ScoreTeam.ODDIHGPONFL_Copy(LDEGEHAEALK_ServerData.KMBJGAHCBDI_UnitGoDiva.IGKLKPIEEEH(AHHJLDLAPAN), false);
-			ALIMIMCBKFH(AHHJLDLAPAN, NGHKJOEDLIP_ScoreTeam.GIDKKHFHALL, OPIBAPEGCLA, LDEGEHAEALK_ServerData);
+			ALIMIMCBKFH_LoadGoDivaUnit(AHHJLDLAPAN, NGHKJOEDLIP_ScoreTeam.GIDKKHFHALL, OPIBAPEGCLA, LDEGEHAEALK_ServerData);
 		}
 	}
 
@@ -643,5 +644,72 @@ public class JLKEOGLJNOD_TeamInfo
 	}
 
 	// // RVA: 0x147B23C Offset: 0x147B23C VA: 0x147B23C
-	// public void FLFBBPLPNMO(GCIJNCFDNON PNLOINMCCKH, int FGLPICCAPEH, int NGEADPGADLI) { }
+	public void FLFBBPLPNMO(GCIJNCFDNON_SceneInfo PNLOINMCCKH, int FGLPICCAPEH, int NGEADPGADLI)
+	{
+		bool b6_isUsed = false;
+		int l40_divaIdx = 0;
+		int l38_sceneIdx = 0;
+		for(int i = 0; i < BCJEAJPLGMB_MainDivas.Count; i++)
+		{
+			if(BCJEAJPLGMB_MainDivas[i].FGFIBOBAPIA_SceneId == PNLOINMCCKH.BCCHOBPJJKE_SceneId)
+			{
+				l38_sceneIdx = 0;
+				b6_isUsed = true;
+				l40_divaIdx = i;
+			}
+			else
+			{
+				for(int j = 0; j < BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds.Count; j++)
+				{
+					if(BCJEAJPLGMB_MainDivas[i].DJICAKGOGFO_SubSceneIds[j] == PNLOINMCCKH.BCCHOBPJJKE_SceneId)
+					{
+						b6_isUsed = true;
+						l40_divaIdx = i;
+						l38_sceneIdx = j + 1;
+						break;
+					}
+				}
+			}
+		}
+		//LAB_0147b4a4
+		int i1;
+		if(FGLPICCAPEH == 0)
+		{
+			i1 = BCJEAJPLGMB_MainDivas[NGEADPGADLI].FGFIBOBAPIA_SceneId;
+			BCJEAJPLGMB_MainDivas[NGEADPGADLI].ODFBCANBLIJ(PNLOINMCCKH);
+		}
+		else
+		{
+			i1 = BCJEAJPLGMB_MainDivas[NGEADPGADLI].DJICAKGOGFO_SubSceneIds[FGLPICCAPEH - 1];
+			BCJEAJPLGMB_MainDivas[NGEADPGADLI].GOEDGNGDMCN(PNLOINMCCKH, FGLPICCAPEH - 1);
+		}
+		if(b6_isUsed)
+		{
+			if(i1 > 0)
+			{
+				if(BCJEAJPLGMB_MainDivas[l40_divaIdx] != null)
+				{
+					if(l38_sceneIdx == 0)
+					{
+						BCJEAJPLGMB_MainDivas[l40_divaIdx].ODFBCANBLIJ(GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[i1 - 1]);
+					}
+					else
+					{
+						BCJEAJPLGMB_MainDivas[l40_divaIdx].GOEDGNGDMCN(GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[i1 - 1], l38_sceneIdx - 1);
+					}
+				}
+			}
+			else
+			{
+				if(l38_sceneIdx == 0)
+				{
+					BCJEAJPLGMB_MainDivas[l40_divaIdx].CJBBDBGDFKJ(null, true);
+				}
+				else
+				{
+					BCJEAJPLGMB_MainDivas[l40_divaIdx].GIGDKIHBDHB(null, l38_sceneIdx - 1, true);
+				}
+			}
+		}
+	}
 }

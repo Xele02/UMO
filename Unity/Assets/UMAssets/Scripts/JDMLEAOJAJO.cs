@@ -9,7 +9,7 @@ public class JDMLEAOJAJO
     {
         if(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB != null)
         {
-            return JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9) as HAEDCCLHEMN_EventBattle;
+            return JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as HAEDCCLHEMN_EventBattle;
         }
         return null;
     }

@@ -6,6 +6,8 @@ class JpStringLiterals
 	public static string StringLiteral_1376 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_1376", "月"); } } // 0x03baa038
 	public static string StringLiteral_1378 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_1378", "日"); } } // 0x03baa040
 	public static string StringLiteral_5812 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_5812", "\n"); } } // 0x03bae588
+	public static string StringLiteral_6527 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_6527", "---"); } } // 03baf0b4
+
 	public static string StringLiteral_8278 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_8278", "既に初期化済みです。再初期化を行う場合は、Terminateを呼ぶ必要があります。"); } } // 0x03bb0c10
 	public static string StringLiteral_8280 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_8280", "初期化されていません。"); } } // 0x03bb0c18
 	public static string StringLiteral_8676 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_8676", "ベース★3以下のカードでリーフ枚数が0でない"); } } //0x3bb1248
@@ -756,5 +758,6 @@ class JpStringLiterals
 	public static string UMO_DivaSpOn { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_DivaSpOn", "超歌姫モード ON"); } }
 	public static string UMO_OriginSetting { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_OriginSetting", "スタンダード編成"); } }
 	public static string UMO_EpisodeBonus { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_EpisodeBonus", "エピソードボーナス"); } }
+	public static string UMO_EventRunning { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_EventRunning", "EVENT開催中"); } }
 	public const string StringLiteral_13083_3_1_0 = "\u753B\u50CF\u3092\u30B7\u30A7\u30A2\u3059\u308B\u30A2\u30D7\u30EA\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044\u3002"; //0x03515218
 }
