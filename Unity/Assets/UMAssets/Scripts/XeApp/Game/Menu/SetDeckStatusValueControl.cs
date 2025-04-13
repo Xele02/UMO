@@ -50,7 +50,7 @@ namespace XeApp.Game.Menu
 			if (isBuffTarget)
 				normalColorCode = StatusTextColor.UpColor;
 			else if(isDebuffTarget)
-				normalColorCode = StatusTextColor.DebuffColor;
+				normalColorCode = "#"+m_enemyTextColor.HexStringRGBA();
 			else if(adjustValue - baseValue < 0)
 				normalColorCode = StatusTextColor.DownColor;
 			m_baseTextColor = ColorConvert.Convert(normalColorCode);
@@ -161,7 +161,7 @@ namespace XeApp.Game.Menu
 				float f = m_animeCurve[0].Evaluate(m_crossFadeTime / m_animeLengthSec * m_animeCurve[0].keys[m_animeCurve[0].length - 1].time);
 				m_valueText.color = Color.Lerp(m_baseTextColor, m_enemyTextColor, f);
 				m_arrowImage.color = Color.Lerp(IconColorOn, IconColorOff, f);
-				m_enemyImage.color = Color.Lerp(IconColorOn, IconColorOff, f);
+				m_enemyImage.color = Color.Lerp(IconColorOff, IconColorOn, f);
 			}
 		}
 	}

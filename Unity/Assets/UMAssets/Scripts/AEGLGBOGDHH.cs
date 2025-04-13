@@ -9,7 +9,7 @@ public enum MKHCIKICBOI
 	ECHJOKLBHEJ_Life = 8,
 	AHJNCHAONGN_Support = 16,
 	ONBNGGDFAJK_Fold = 32,
-	OHOKFCJNFDO = 64,
+	OHOKFCJNFDO_Luck = 64,
 	MKADAMIGMPO_SoulVocalCharm = 7,
 }
 
