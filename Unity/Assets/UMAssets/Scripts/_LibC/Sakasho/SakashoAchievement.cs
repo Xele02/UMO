@@ -480,7 +480,7 @@ namespace ExternLib
 								UnityEngine.Debug.LogError("Missing reward for "+(string)msgData["keys"][i]+", key does no match event prefix "+dbSection.NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix);
 							}
 						}
-						if(dbSectionGoDiva != null)
+						else if(dbSectionGoDiva != null)
 						{
 							if(key.StartsWith(dbSectionGoDiva.NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix))
 							{

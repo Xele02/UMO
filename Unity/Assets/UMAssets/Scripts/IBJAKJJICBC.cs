@@ -784,7 +784,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 	{
 		for(int i = 0; i < MGJKEJHEBPO_DiffInfos.Count; i++)
 		{
-			MGJKEJHEBPO_DiffInfos[i].HPBPDHPIBGN_EnemyData.NPEKPHAFMGE(CPBFAMJEODF, MGHPJNNDCIG);
+			MGJKEJHEBPO_DiffInfos[i].HPBPDHPIBGN_EnemyData.NPEKPHAFMGE_OverrideSkill(CPBFAMJEODF, MGHPJNNDCIG);
 		}
 	}
 

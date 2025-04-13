@@ -243,7 +243,7 @@ namespace XeApp.Game.Menu
 			}
 			m_viewMusicData = Database.Instance.selectedMusic.GetSelectedMusicData();
 			m_viewEnemyData = Database.Instance.selectedMusic.GetEnemyData(Database.Instance.gameSetup.musicInfo.difficultyType);
-			m_viewEnemyData.NPEKPHAFMGE(Database.Instance.gameSetup.musicInfo.enemyInfo.NJOPIPNGANO_CS, Database.Instance.gameSetup.musicInfo.enemyInfo.EDLACELKJIK_LiveSkill);
+			m_viewEnemyData.NPEKPHAFMGE_OverrideSkill(Database.Instance.gameSetup.musicInfo.enemyInfo.NJOPIPNGANO_CS, Database.Instance.gameSetup.musicInfo.enemyInfo.EDLACELKJIK_LiveSkill);
 			UpdatePrismData(m_viewMusicData.DLAEJOBELBH_MusicId, Database.Instance.gameSetup.musicInfo);
 			m_isRaidEvent = Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid;
 			if(TutorialProc.CanUnit5Help(Database.Instance.gameSetup.musicInfo))
