@@ -54,12 +54,12 @@ namespace XeApp.Game.Menu
 		public void SetEnemy(EJKBKMBJMGL_EnemyData data)
 		{
 			int skillNum = 0;
-			if(data.PDHCABLLJPB_SkillId > 0)
+			if(data.PDHCABLLJPB_CenterSkillId > 0)
 			{
 				m_sp[0].text = data.PFHJFIHGCKP_CenterName;
 				skillNum = 1;
 			}
-			if(data.LMJFFFOEPLE > 0)
+			if(data.LMJFFFOEPLE_LiveSkillId > 0)
 			{
 				m_sp[1].text = data.NDPPEMCHKHA_SkillName;
 				skillNum++;

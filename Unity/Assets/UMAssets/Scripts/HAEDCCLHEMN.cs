@@ -299,7 +299,7 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 			PALEGNNHIKH_Leaf = IDLHJIOMJBK.PALEGNNHIKH_Leaf;
 			CPBFAMJEODF_CSkill = 0;
 			MGHPJNNDCIG_LSkill = 0;
-			if(BHCIFFILAKJ_Str > 2)
+			if(BHCIFFILAKJ_Str_ > 2)
 			{
 				DCAKKIJODME data = new DCAKKIJODME();
 				data.KHEKNNFCAOI(false);

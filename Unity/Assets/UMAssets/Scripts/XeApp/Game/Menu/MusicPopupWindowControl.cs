@@ -191,9 +191,9 @@ namespace XeApp.Game.Menu
 		{
 			if(enemyData.CDEFLIHHNAB_HasSkills)
 			{
-				if(enemyData.LMJFFFOEPLE > 0)
+				if(enemyData.LMJFFFOEPLE_LiveSkillId > 0)
 				{
-					if (enemyData.PDHCABLLJPB_SkillId > 0)
+					if (enemyData.PDHCABLLJPB_CenterSkillId > 0)
 						return SizeType.Large;
 				}
 			}
