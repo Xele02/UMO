@@ -223,6 +223,8 @@ class RuntimeSettings : ScriptableObject
 	public bool WorkerThreadUseCoroutine { get; set; }
 	public bool EnableARDebugInfo { get; set; }
 
+	public bool UnlimitedEvent { get; set; } = true;
+
 	public SmartFormatter SmartFormatter
 	{
 		get => m_SmartFormat;

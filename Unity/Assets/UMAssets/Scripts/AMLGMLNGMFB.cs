@@ -352,8 +352,8 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 			AGLILDLEFDK_Missions = dbAf.NNMPGOAGEOL_Missions;
 			OLDFFDMPEBM_Quests = save.NNMPGOAGEOL;
 			if (save.MPCAGEPEJJJ_Key != dbAf.NGHKJOEDLIP.OCGFKMHNEOF_Key
-				/* || save.EGBOHDFBAPB_End < dbAf.NGHKJOEDLIP.BONDDBOFBND_Start*/ // UMO : don't check date as event date are dynamically updated.
-				|| save.EGBOHDFBAPB_End == 0 || (save.NNMPGOAGEOL.Count == 0 || save.NNMPGOAGEOL[0].PPFNGGCBJKC_Id == 0) // UMO detect old save not initialized
+				|| (!RuntimeSettings.CurrentSettings.UnlimitedEvent && save.EGBOHDFBAPB_End < dbAf.NGHKJOEDLIP.BONDDBOFBND_Start) // UMO : don't check date as event date are dynamically updated.
+				|| (RuntimeSettings.CurrentSettings.UnlimitedEvent && (save.EGBOHDFBAPB_End == 0 || save.NNMPGOAGEOL.Count == 0 || save.NNMPGOAGEOL[0].PPFNGGCBJKC_Id == 0)) // UMO detect old save not initialized
 			)
 			{
 				save.LHPDDGIJKNB();
