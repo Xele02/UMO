@@ -42,8 +42,8 @@ namespace XeApp.Game.Menu
 					OnClickPreviewEvent();
 			});
 			m_buttonPreview.transform.Find("Top/Text").GetComponent<Text>().text = JpStringLiterals.UMO_Preview;
-			m_buttonCancel.transform.Find("Top/Text").GetComponent<Text>().text = JpStringLiterals.UMO_Ok;
-			m_buttonOk.transform.Find("Top/Text").GetComponent<Text>().text = JpStringLiterals.UMO_Cancel;
+			m_buttonCancel.transform.Find("Top/Text").GetComponent<Text>().text = JpStringLiterals.UMO_Cancel;
+			m_buttonOk.transform.Find("Top/Text").GetComponent<Text>().text = JpStringLiterals.UMO_Ok;
 		}
 
 		// RVA: 0x95F798 Offset: 0x95F798 VA: 0x95F798
