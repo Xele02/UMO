@@ -63,8 +63,9 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1CE0294 Offset: 0x1CE0294 VA: 0x1CE0294
 		private string ChangeEffectName(string a_name)
 		{
-			string res = a_name;
-			m_list_change_effect.TryGetValue(a_name, out res);
+			string res;
+			if(!m_list_change_effect.TryGetValue(a_name, out res))
+				return a_name;
 			return res;
 		}
 
