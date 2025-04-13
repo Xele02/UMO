@@ -464,23 +464,23 @@ namespace XeApp.Game.Menu
 			}
 			if (SubPlateResult.CDOCOLOKCJK())
 			{
-				m_status[0].Set(m_baseStatus.Total - SubPlateResult.CMCKNKKCNDK.Total, m_addStatus.Total - SubPlateResult.CMCKNKKCNDK.Total, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), "#"+ColorExtension.HexStringRGBA(m_normalColorCode), 26);
-				m_status[1].Set(m_baseStatus.soul - SubPlateResult.CMCKNKKCNDK.soul, m_addStatus.soul - SubPlateResult.CMCKNKKCNDK.soul, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
-				m_status[2].Set(m_baseStatus.vocal - SubPlateResult.CMCKNKKCNDK.vocal, m_addStatus.vocal - SubPlateResult.CMCKNKKCNDK.vocal, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
-				m_status[3].Set(m_baseStatus.charm - SubPlateResult.CMCKNKKCNDK.charm, m_addStatus.charm - SubPlateResult.CMCKNKKCNDK.charm, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+				m_status[0].Set(m_baseStatus.Total - SubPlateResult.CMCKNKKCNDK.Total, m_addStatus.Total - SubPlateResult.CMCKNKKCNDK.Total, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), "#"+ColorExtension.HexStringRGBA(m_normalColorCode), 9999999);
+				m_status[1].Set(m_baseStatus.soul - SubPlateResult.CMCKNKKCNDK.soul, m_addStatus.soul - SubPlateResult.CMCKNKKCNDK.soul, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.BICPBLMPBPH_Soul), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.BICPBLMPBPH_Soul), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+				m_status[2].Set(m_baseStatus.vocal - SubPlateResult.CMCKNKKCNDK.vocal, m_addStatus.vocal - SubPlateResult.CMCKNKKCNDK.vocal, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.GPCMMGOCPHC_Vocal), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.GPCMMGOCPHC_Vocal), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+				m_status[3].Set(m_baseStatus.charm - SubPlateResult.CMCKNKKCNDK.charm, m_addStatus.charm - SubPlateResult.CMCKNKKCNDK.charm, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.LGOHMPBLPKA_Charm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.LGOHMPBLPKA_Charm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
 			}
 			else
 			{
 				SetInvalidSubPlate();
-				m_status[0].Set(m_baseStatus.Total, m_addStatus.Total, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 26);
-				m_status[1].Set(m_baseStatus.soul, m_addStatus.soul, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
-				m_status[2].Set(m_baseStatus.vocal, m_addStatus.vocal, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
-				m_status[3].Set(m_baseStatus.charm, m_addStatus.charm, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+				m_status[0].Set(m_baseStatus.Total, m_addStatus.Total, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 9999999);
+				m_status[1].Set(m_baseStatus.soul, m_addStatus.soul, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.BICPBLMPBPH_Soul), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.BICPBLMPBPH_Soul), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+				m_status[2].Set(m_baseStatus.vocal, m_addStatus.vocal, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.GPCMMGOCPHC_Vocal), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.GPCMMGOCPHC_Vocal), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+				m_status[3].Set(m_baseStatus.charm, m_addStatus.charm, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.LGOHMPBLPKA_Charm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.LGOHMPBLPKA_Charm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
 			}
-			m_status[4].Set(m_baseStatus.life, m_addStatus.life, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
-			m_status[7].Set(luck, luck + luck2, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
-			m_status[5].Set(m_baseStatus.support, m_addStatus.support, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
-			m_status[6].Set(m_baseStatus.fold, m_addStatus.fold, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+			m_status[4].Set(m_baseStatus.life, m_addStatus.life, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.ECHJOKLBHEJ_Life), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.ECHJOKLBHEJ_Life), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+			m_status[7].Set(luck, luck + luck2, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.OHOKFCJNFDO_Luck), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.OHOKFCJNFDO_Luck), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+			m_status[5].Set(m_baseStatus.support, m_addStatus.support, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.AHJNCHAONGN_Support), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.AHJNCHAONGN_Support), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+			m_status[6].Set(m_baseStatus.fold, m_addStatus.fold, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.ONBNGGDFAJK_Fold), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.ONBNGGDFAJK_Fold), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
 			if(viewFriendData == null)
 			{
 				m_notesTexts[0].text = m_baseStatus.spNoteExpected[1].ToString();
