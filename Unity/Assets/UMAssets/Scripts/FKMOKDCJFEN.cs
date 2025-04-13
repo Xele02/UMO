@@ -707,15 +707,15 @@ public class FKMOKDCJFEN
 							ev.FHGEJBKNBLP(LFDJPGLMHFI);
 							if(JOPOPMLFINI == "event_quest_c")
 							{
-								checkTarget = 512;
+								checkTarget = 0x200;
 							}
 							else if(JOPOPMLFINI == "event_quest_b")
 							{
-								checkTarget = 256;
+								checkTarget = 0x100;
 							}
 							else if(JOPOPMLFINI == "event_quest_a")
 							{
-								checkTarget = 128;
+								checkTarget = 0x80;
 							}
 							else if(JOPOPMLFINI == "event_april_fool_h")
 							{
@@ -771,7 +771,7 @@ public class FKMOKDCJFEN
 							}
 							else if(JOPOPMLFINI == "event_raid_d")
 							{
-								checkTarget = 4;
+								checkTarget = 0x400000000;
 							}
 							else if(JOPOPMLFINI == "event_collection_a")
 							{
@@ -791,11 +791,11 @@ public class FKMOKDCJFEN
 							}
 							else if(JOPOPMLFINI == "event_raid_c")
 							{
-								checkTarget = 2;
+								checkTarget = 0x200000000;
 							}
 							else if(JOPOPMLFINI == "event_raid_b")
 							{
-								checkTarget = 1;
+								checkTarget = 0x100000000;
 							}
 							else if(JOPOPMLFINI == "event_battle_c")
 							{
@@ -811,15 +811,15 @@ public class FKMOKDCJFEN
 							}
 							else if(JOPOPMLFINI == "event_godiva_a")
 							{
-								checkTarget = 0x40;
+								checkTarget = 0x4000000000;
 							}
 							else if(JOPOPMLFINI == "event_godiva_c")
 							{
-								checkTarget = 0x100;
+								checkTarget = 0x10000000000;
 							}
 							else if(JOPOPMLFINI == "event_godiva_b")
 							{
-								checkTarget = 0x80;
+								checkTarget = 0x8000000000;
 							}
 
 						}
