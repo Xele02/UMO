@@ -459,7 +459,7 @@ namespace XeApp.Game.Menu
 				if(upLevel == 0)
 				{
 					//LAB_00e19114
-					if(currentLevel == viewEventResultData.OMOLFAKIDIC_LevelCap)
+					if(currentLevel != viewEventResultData.OMOLFAKIDIC_LevelCap)
 					{
 						//LAB_00e19194
 						SetAddExpGauge(divaParamType, (int)endExp, (int)GetNextExp(viewEventResultData.CLDDEGBGJGK[(int)divaParamType], divaParamType));
@@ -480,7 +480,7 @@ namespace XeApp.Game.Menu
 						if(upLevel == 0)
 						{
 							//LAB_00e19114
-							if(currentLevel == viewEventResultData.OMOLFAKIDIC_LevelCap)
+							if(currentLevel != viewEventResultData.OMOLFAKIDIC_LevelCap)
 							{
 								//LAB_00e19194
 								SetAddExpGauge(divaParamType, (int)endExp, (int)GetNextExp(viewEventResultData.CLDDEGBGJGK[(int)divaParamType], divaParamType));
