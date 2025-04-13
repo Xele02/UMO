@@ -1,6 +1,6 @@
 Rewrite project of UtaMacross mobile game. 
 
-**Current version : 1.1.4**
+**Current version : 1.1.5**
 
 Fonctionality : 
 * Almost everything of the game.
@@ -9,15 +9,15 @@ Fonctionality :
 * A few event can be activated (Apil fools, ...). Can be acceded from UMO Setting popup on the title screen (pad icon)
 * Account picker : Use the top right button on the start screen. You can create new accounts, copy and delete. You can also create and use a cheat account (which was the one used before 1.0.0).
 * Translation : You can switch to other languages (en / fr) in the UMO Setting. This is still a work in progress and only a small part is translated.
-* Event : April Fool, Anniversary, Battle event are enablable in UMO Setting. Date is fixed at the middle of the event for now, so the date don't advance and it will never end as long as active.
+* Event : April Fool, Anniversary, Battle and Diva event are enablable in UMO Setting. Date is fixed at the middle of the event for now, so the date don't advance and it will never end as long as active.
 
 # Translation
 
 The original game is in japanese only. The translation in others languages is currently working on :
-* English : 3%
-* French : 13%. Most of the important parts to understand the game is available.
-* Chinese : 23%
-* Korean : 18%
+* English : 4%
+* French : 14%. Most of the important parts to understand the game is available.
+* Chinese : 24%
+* Korean : 21%
 
 # Requirement / Installation
 
