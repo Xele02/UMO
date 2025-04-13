@@ -772,6 +772,8 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
             bool b2 = bp.LJNAKDMILMC_Key != dbSection.NGHKJOEDLIP.OCGFKMHNEOF;
 			bool b3 = d.EGBOHDFBAPB_End < dbSection.NGHKJOEDLIP.BONDDBOFBND_Start;
 			int idx = 0;
+			if(RuntimeSettings.CurrentSettings.UnlimitedEvent)
+				b2 = false;
 			AGLILDLEFDK_Missions = dbSection.NNMPGOAGEOL_Missions;
 			CKEDJHEFJCJ = 0;
 			OLDFFDMPEBM_Quests = d.NNMPGOAGEOL_Quests;
