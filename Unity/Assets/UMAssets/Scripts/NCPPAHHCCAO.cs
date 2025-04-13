@@ -105,7 +105,9 @@ public class NCPPAHHCCAO
 	//// RVA: 0x1ADAE28 Offset: 0x1ADAE28 VA: 0x1ADAE28
 	public static string EFNHFKLKNHJ(int PPFNGGCBJKC)
 	{
-		string str = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.EFEGBHACJAL("desc_string_hanyo", JpStringLiterals.StringLiteral_12526);
+		//string str = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.EFEGBHACJAL("desc_string_hanyo", JpStringLiterals.StringLiteral_12526);
+		// UMO : desc_string_hanyo is the same as StringLiteral_12526, so use that to have the translation string.
+		string str = JpStringLiterals.StringLiteral_12526;
 		if(PPFNGGCBJKC > 0)
 		{
 			if(PPFNGGCBJKC <= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Count)
@@ -116,7 +118,9 @@ public class NCPPAHHCCAO
 					if(serif.JBFLEDKDFCO <= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters.Count)
 					{
 						BOKMNHAFJHF_Sns.JFMDDEBLCAA_CharaInfo sns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters[serif.JBFLEDKDFCO - 1];
-						return sns.OPFGFINHFCE_Name + IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.EFEGBHACJAL("desc_string_senyo", JpStringLiterals.StringLiteral_12528);
+						//return sns.OPFGFINHFCE_Name + IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.EFEGBHACJAL("desc_string_senyo", JpStringLiterals.StringLiteral_12528);
+						// UMO : desc_string_senyo is the same as StringLiteral_12528, so use that to have the translation string.
+						return sns.OPFGFINHFCE_Name + JpStringLiterals.StringLiteral_12528;
 					}
 				}
 			}
