@@ -2333,14 +2333,14 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 			int limit = 0;
 			while(l.Count < 1)
 			{
-				int v = min - 10000;
+				min -= 10000;
 				for(int i = 0; i < dbSection.OCPGCHOGHPB_DefaultRivals.Count; i++)
 				{
 					if(dbSection.OCPGCHOGHPB_DefaultRivals[i].PLALNIIBLOF_Enabled == 2)
 					{
 						if(dbSection.OCPGCHOGHPB_DefaultRivals[i].GOIKCKHMBDL_FreeMusicId == _CEFHDLLAPDH_FreeMusicId)
 						{
-							if(v <= dbSection.OCPGCHOGHPB_DefaultRivals[i].IPPNCOHEEOD_ScoreAverage)
+							if(min <= dbSection.OCPGCHOGHPB_DefaultRivals[i].IPPNCOHEEOD_ScoreAverage)
 							{
 								if(dbSection.OCPGCHOGHPB_DefaultRivals[i].IPPNCOHEEOD_ScoreAverage <= max)
 								{
