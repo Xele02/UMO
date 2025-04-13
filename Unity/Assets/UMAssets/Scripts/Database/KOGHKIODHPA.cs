@@ -160,7 +160,81 @@ public class KOGHKIODHPA_Board : DIHHCBACKGG_DbSection
 		}
 
         // // RVA: 0x1131DB4 Offset: 0x1131DB4 VA: 0x1131DB4
-        // public void OMKKILODDIC(byte[] ODKMKEHJOCK, int MBLGJDKKLPO = 0) { }
+        public void OMKKILODDIC_ApplyBoardValues(byte[] ODKMKEHJOCK, int MBLGJDKKLPO = 0)
+		{
+			JFFEGBIODOJ = 0;
+			AEBEPGKIOFM = 0;
+			PFNNOEANAHE = 0;
+			PFGFNIHOOHE_Soul = 0;
+			HGNGPAFOFNG_Vocal = 0;
+			PLNJOOPGGIG_Charm = 0;
+			if(NDFIEMPPMLF != null)
+			{
+				int a = 0;
+				if(NDFIEMPPMLF.AKKIBDEENJH(ILABPFOMEAG))
+				{
+					a = NDFIEMPPMLF.GJLBMELKHEM[ILABPFOMEAG - 1].JBGEEPFKIGG;
+				}
+				List<AFIFDLOAKGI> l = HBHMAKNGKFK;
+				if(l == null)
+				{
+					NKBGIKPCLMI(ODKMKEHJOCK == null);
+					l = HBHMAKNGKFK;
+				}
+				for(int i = 0; i < l.Count; i++)
+				{
+					if(ODKMKEHJOCK == null || ((1 << (i & 7)) & (ODKMKEHJOCK[i >> 3])) != 0)
+					{
+						//LAB_01131f50
+						int a6;
+						if(a == 0)
+						{
+							//LAB_01131fac
+							a6 = HBHMAKNGKFK[i].MKNDAOHGOAK;
+						}
+						else
+						{
+							a6 = a;
+							if(HBHMAKNGKFK[i].MKNDAOHGOAK > 0)
+							{
+								a6 = HBHMAKNGKFK[i].MKNDAOHGOAK;
+							}
+						}
+						if(HBHMAKNGKFK[i].INDDJNMPONH_StatType < 18)
+						{
+							switch(HBHMAKNGKFK[i].INDDJNMPONH_StatType)
+							{
+								case 1:
+									PFNNOEANAHE += a6;
+									break;
+								case 2:
+									PFGFNIHOOHE_Soul += a6;
+									break;
+								case 3:
+									HGNGPAFOFNG_Vocal += a6;
+									break;
+								case 4:
+									PLNJOOPGGIG_Charm += a6;
+									break;
+							}
+						}
+						else if(HBHMAKNGKFK[i].INDDJNMPONH_StatType == 18)
+						{
+							//LAB_011320f8
+							JFFEGBIODOJ += HBHMAKNGKFK[i].MKNDAOHGOAK;
+						}
+						else if(HBHMAKNGKFK[i].INDDJNMPONH_StatType == 19)
+						{
+							AEBEPGKIOFM ++;
+						}
+						else if(HBHMAKNGKFK[i].INDDJNMPONH_StatType == 20 && MBLGJDKKLPO > 0)
+						{
+							JFFEGBIODOJ += a6 * MBLGJDKKLPO;
+						}
+					}
+				}
+			}
+		}
     }
 
 	public List<AFIFDLOAKGI> PJADHDHKOEJ { get; private set; } // 0x20 PPFNCNJKAPF APNMMPMNLML NDIACKACKOI
