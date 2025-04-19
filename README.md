@@ -1,6 +1,6 @@
 Rewrite project of UtaMacross mobile game. 
 
-**Current version : 1.1.5**
+**Current version : 1.1.6**
 
 Fonctionality : 
 * Almost everything of the game.
@@ -16,7 +16,7 @@ Fonctionality :
 The original game is in japanese only. The translation in others languages is currently working on :
 * English : 4%
 * French : 14%. Most of the important parts to understand the game is available.
-* Chinese : 24%
+* Chinese : 25%
 * Korean : 21%
 
 # Requirement / Installation
