@@ -57,7 +57,7 @@ public class JFOBOMOMENL
                 int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(l7[i].KIJAPOFAGPN_ItemId);
                 if (EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, cat, id, null) < 1)
                 {
-                    data.CPIICACGNBH(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, cat, id, 1, null, 0);
+                    data.CPIICACGNBH_AddItem(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, cat, id, 1, null, 0);
                 }
             }
             return true;

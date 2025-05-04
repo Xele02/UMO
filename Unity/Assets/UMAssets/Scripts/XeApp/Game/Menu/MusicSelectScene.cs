@@ -369,7 +369,7 @@ namespace XeApp.Game.Menu
 			{
 				if(d.AKNOOLKMEGJ())
 				{
-					m_eventTicketId = NKOBMDPHNGP_EventRaidLobby.ADPMLOEOAFD();
+					m_eventTicketId = NKOBMDPHNGP_EventRaidLobby.ADPMLOEOAFD_GetTicketId();
 				}
 			}
 			m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6/*6*/, false);

@@ -1620,7 +1620,41 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xACC6D8 Offset: 0xACC6D8 VA: 0xACC6D8
 		protected void GotoEventRaid(int eventId)
 		{
-			TodoLogger.LogError(TodoLogger.EventRaid_11_13, "GotoEventRaid");
+			NKOBMDPHNGP_EventRaidLobby evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
+			if(evRaid != null && !evRaid.EHLFBIEGDDF())
+			{
+				long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				HomeLobbyButtonController.Show_PopupNotAffiliationRaidEnd(() =>
+				{
+					//0xAD3638
+					MenuScene.Instance.Call(TransitionList.Type.LOBBY_GROUP_SELECT, null, true);
+				}, () =>
+				{
+					//0xAD36EC
+					return;
+				}, evRaid.KINIOEOOCAA_GetPhase(t));
+			}
+			else
+			{
+				if(eventId > 0)
+				{
+					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(eventId);
+					if(ev != null && ev.FBLGGLDPFDF_CanShowStartAdventure())
+					{
+						GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(ev.GFIBLLLHMPD_StartAdventureId);
+						if(adv != null)
+						{
+							CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(ev.GFIBLLLHMPD_StartAdventureId);
+							ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(ev.GFIBLLLHMPD_StartAdventureId, OAGBCBBHMPF.DKAMMIHBINF.IDINJDEBPKP_6);
+							Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
+							Database.Instance.advResult.Setup("Menu", TransitionUniqueId.MUSICSELECT_RAID, new AdvSetupParam() { eventUniqueId = eventId });
+							MenuScene.Instance.GotoAdventure(false);
+							return;
+						}
+					}
+				}
+				MenuScene.Instance.Call(TransitionList.Type.RAID, new EventMusicSelectSceneArgs(eventId, isLine6Mode, false), true);
+			}
 		}
 
 		// // RVA: 0xACCE4C Offset: 0xACCE4C VA: 0xACCE4C

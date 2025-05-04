@@ -9,12 +9,12 @@ public class LDEBIBGHCGD_EventRaidLobby : DIHHCBACKGG_DbSection
 	{
 		public int OBGBAOLONDD; // 0x8
 		public string OPFGFINHFCE; // 0xC
-		public long CJPMLAIFCDL; // 0x10
+		public long CJPMLAIFCDL_Start; // 0x10
 		public long COIHIAKHFNF; // 0x18
 		public long NIMLIMFPNJP; // 0x20
-		public long KCBGBFMGHPA; // 0x28
+		public long KCBGBFMGHPA_End; // 0x28
 		public int MJBKGOJBPAD; // 0x30
-		public sbyte MOEKELIIDEO; // 0x34
+		public sbyte MOEKELIIDEO_SaveIdx; // 0x34
 		public int[] EJBGHLOOLBC; // 0x38
 
 		//// RVA: 0xD65AB4 Offset: 0xD65AB4 VA: 0xD65AB4
@@ -70,7 +70,11 @@ public class LDEBIBGHCGD_EventRaidLobby : DIHHCBACKGG_DbSection
 	//public string EFEGBHACJAL(string LJNAKDMILMC, string KKMJBMKHGNH) { }
 
 	//// RVA: 0xD656F4 Offset: 0xD656F4 VA: 0xD656F4
-	//public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH) { }
+	public int LPJLEHAJADA(string LJNAKDMILMC, int KKMJBMKHGNH)
+	{
+		TodoLogger.LogError(TodoLogger.EventRaid_11_13, "LDEBIBGHCGD_EventRaidLobby.LPJLEHAJADA");
+		return 0;
+	}
 
 	// RVA: 0xD657D8 Offset: 0xD657D8 VA: 0xD657D8
 	public LDEBIBGHCGD_EventRaidLobby()

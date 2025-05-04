@@ -21,6 +21,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1A6975C Offset: 0x1A6975C VA: 0x1A6975C
-		// public void SetBossName(string text) { }
+		public void SetBossName(string text)
+		{
+			if(m_text != null)
+				m_text.text = text;
+		}
 	}
 }

@@ -313,7 +313,10 @@ public class ILDKBCLAFPB
         // public static float MOMJFKFNJIA(int DHMNFEPOLOK) { }
 
         // // RVA: 0x20360D4 Offset: 0x20360D4 VA: 0x20360D4
-        // public float MIFIAMNHKOF() { }
+        public float MIFIAMNHKOF()
+		{
+			return HOMPENLIHCK_VolBgm * 5 / 100.0f;
+		}
 
         // // RVA: 0x20360F8 Offset: 0x20360F8 VA: 0x20360F8
         // public float EBBAAPCHNKL() { }

@@ -856,7 +856,7 @@ namespace XeApp
 			{
 				if(k.DecorationItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
 				{
-					if (k.Setting.viewDecoItemData.GBJFNGCDKPM == 1)
+					if (k.Setting.viewDecoItemData.GBJFNGCDKPM_Attribute == 1)
 						res++;
 				}
 			}

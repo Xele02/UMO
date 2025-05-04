@@ -4,6 +4,7 @@ using UnityEngine;
 using XeApp.Game.Common;
 using XeApp.Game.Menu;
 using XeApp.Game.MusicSelect;
+using XeSys;
 
 namespace XeApp.Game.Tutorial
 {
@@ -506,11 +507,125 @@ namespace XeApp.Game.Tutorial
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF078 Offset: 0x6AF078 VA: 0x6AF078
 		//// RVA: 0xE4A8D0 Offset: 0xE4A8D0 VA: 0xE4A8D0
-		//public static IEnumerator Co_McrsLobby(HomeLobbyButtonController lobbyCtrl, Action proc) { }
+		public static IEnumerator Co_McrsLobby(HomeLobbyButtonController lobbyCtrl, Action proc)
+		{
+			BasicTutorialManager mrg; // 0x1C
+			BasicTutorialMessageId messageId; // 0x20
+			GameManager.PushBackButtonHandler dymmyBackHandler; // 0x24
+
+			//0x1910FAC
+			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsMcrsLobby))
+				yield break;
+			if(proc != null)
+				proc();
+			MenuScene.Instance.InputDisable();
+			BasicTutorialManager.Initialize();
+			mrg = BasicTutorialManager.Instance;
+			bool isWait = true;
+			mrg.PreLoadResource(() =>
+			{
+				//0xE4C1EC
+				isWait = false;
+			}, true);
+			while(isWait)
+				yield return null;
+			messageId = BasicTutorialMessageId.Id_McrsLobby;
+			yield return Co.R(mrg.PreDownLoadTextureResource(messageId));
+			dymmyBackHandler = () =>
+			{
+				//0xE4C06C
+				return;
+			};
+			GameManager.Instance.AddPushBackButtonHandler(dymmyBackHandler);
+			isWait = true;
+			mrg.ShowMessageWindow(messageId, () =>
+			{
+				//0xE4C1F8
+				isWait = false;
+			}, null);
+			while(isWait)
+				yield return null;
+			isWait = true;
+			BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.LobbyTab, () =>
+			{
+				//0xE4C204
+				isWait = false;
+			}, null, TutorialPointer.Direction.Normal);
+			while(isWait)
+				yield return null;
+			lobbyCtrl.m_lobbySceneBtn.hideBtn.enabled = false;
+			while(lobbyCtrl.m_lobbySceneBtn.IsPlaying())
+				yield return null;
+			isWait = true;
+			BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.LobbyScene, () =>
+			{
+				//0xE4C210
+				isWait = false;
+			}, null, TutorialPointer.Direction.Normal);
+			while(isWait)
+				yield return null;
+			lobbyCtrl.m_lobbySceneBtn.hideBtn.enabled = true;
+			GameManager.Instance.RemovePushBackButtonHandler(dymmyBackHandler);
+			MenuScene.Instance.InputEnable();
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF0F0 Offset: 0x6AF0F0 VA: 0x6AF0F0
 		//// RVA: 0xE4A974 Offset: 0xE4A974 VA: 0xE4A974
-		//public static IEnumerator Co_RaidFromMcrsLobby(ButtonBase button) { }
+		public static IEnumerator Co_RaidFromMcrsLobby(ButtonBase button)
+		{
+			BasicTutorialManager mrg; // 0x18
+			BasicTutorialMessageId messageId; // 0x1C
+			GameManager.PushBackButtonHandler dymmyBackHandler; // 0x20
+
+			//0x19130D0
+			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsRaidFromMcrsLobby))
+				yield break;
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsRaidFromMcrsLobby, true);
+			MenuScene.Instance.InputDisable();
+			BasicTutorialManager.Initialize();
+			mrg = BasicTutorialManager.Instance;
+			bool isWait = true;
+			mrg.PreLoadResource(() =>
+			{
+				//0xE4C224
+				isWait = false;
+			}, true);
+			while(isWait)
+				yield return null;
+			messageId = BasicTutorialMessageId.Id_RaidFromMcrsLobby;
+			yield return Co.R(mrg.PreDownLoadTextureResource(messageId));
+			MenuScene.Instance.InputEnable();
+			dymmyBackHandler = () =>
+			{
+				//0xE4C070
+				return;
+			};
+			GameManager.Instance.AddPushBackButtonHandler(dymmyBackHandler);
+			isWait = true;
+			mrg.ShowMessageWindow(messageId, () =>
+			{
+				//0xE4C230
+				isWait = false;
+			},null);
+			while(isWait)
+				yield return null;
+			if(button != null)
+			{
+				isWait = true;
+				BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.Delegate, () =>
+				{
+					//0xE4C23C
+					isWait = false;
+				}, () =>
+				{
+					//0xE4C248
+					return button;
+				}, TutorialPointer.Direction.Down);
+				while(isWait)
+					yield return null;
+			}
+			GameManager.Instance.RemovePushBackButtonHandler(dymmyBackHandler);
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF168 Offset: 0x6AF168 VA: 0x6AF168
 		//// RVA: 0xE4A9FC Offset: 0xE4A9FC VA: 0xE4A9FC
@@ -573,7 +688,107 @@ namespace XeApp.Game.Tutorial
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF1E0 Offset: 0x6AF1E0 VA: 0x6AF1E0
 		//// RVA: 0xE4AAC4 Offset: 0xE4AAC4 VA: 0xE4AAC4
-		//public static IEnumerator Co_RaidUseFoldRadar(ButtonBase button, Func<bool> waitPopupWindowFunc, IEnumerator popupItemGetColoutine, Func<int> waitRaidBossEncountFunc) { }
+		public static IEnumerator Co_RaidUseFoldRadar(ButtonBase button, Func<bool> waitPopupWindowFunc, IEnumerator popupItemGetColoutine, Func<int> waitRaidBossEncountFunc)
+		{
+			BasicTutorialManager mrg; // 0x24
+			GameManager.PushBackButtonHandler dymmyBackHandler; // 0x28
+			int retParam; // 0x2C
+			BasicTutorialMessageId messageId; // 0x30
+
+			//0x1913958
+			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsRaidUseFoldRadar))
+				yield break;
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsRaidUseFoldRadar, true);
+			mrg = BasicTutorialManager.Instance;
+			bool isWait = true;
+			MenuScene.Instance.InputDisable();
+			mrg.PreLoadResource(() =>
+			{
+				//0xE4C28C
+				isWait = false;
+			}, true);
+			while(isWait)
+				yield return null;
+			MenuScene.Instance.InputEnable();
+			dymmyBackHandler = () =>
+			{
+				//0xE4C078
+				return;
+			};
+			GameManager.Instance.AddPushBackButtonHandler(dymmyBackHandler);
+			MenuScene.Instance.InputDisable();
+			messageId = BasicTutorialMessageId.Id_RaidUseFoldRadar1;
+			yield return mrg.PreDownLoadTextureResource(messageId);
+			MenuScene.Instance.InputEnable();
+			isWait = true;
+			mrg.ShowMessageWindow(messageId, () =>
+			{
+				//0xE4C298
+				isWait = false;
+			}, null);
+			while(isWait)
+				yield return null;
+			yield return Co.R(popupItemGetColoutine);
+			if(button != null)
+			{
+				isWait = true;
+				mrg.SetInputLimit(InputLimitButton.Delegate, () =>
+				{
+					//0xE4C2A4
+					isWait = false;
+				}, () =>
+				{
+					//0xE4C2B0
+					return button;
+				}, TutorialPointer.Direction.Down);
+				//LAB_01913ee4
+				while(isWait)
+					yield return null;
+			}
+			//LAB_01913f0c
+			if(waitPopupWindowFunc != null)
+			{
+				while(!waitPopupWindowFunc())
+					yield return null;
+			}
+			//LAB_01913f58
+			isWait = true;
+			mrg.SetInputLimit(InputLimitButton.PopupPositiveButton, () =>
+			{
+				//0xE4C2B8
+				isWait = false;
+			}, null, TutorialPointer.Direction.Down);
+			//LAB_01914000
+			while(isWait)
+				yield return null;
+			if(waitRaidBossEncountFunc != null)
+			{
+				while(true)
+				{
+					retParam = waitRaidBossEncountFunc();
+					yield return null;
+					if(retParam != 0)
+						break;
+				}
+				if(retParam >= 1)
+				{
+					MenuScene.Instance.InputDisable();
+					messageId = BasicTutorialMessageId.Id_RaidUseFoldRadar2;
+					yield return mrg.PreDownLoadTextureResource(messageId);
+					MenuScene.Instance.InputEnable();
+					isWait = true;
+					mrg.ShowMessageWindow(messageId, () =>
+					{
+						//0xE4C2C4
+						isWait = false;
+					}, null);
+					while(isWait)
+						yield return null;
+				}
+			}
+			//LAB_0191422c
+			GameManager.Instance.RemovePushBackButtonHandler(dymmyBackHandler);
+		}
 
 		//// RVA: 0xE4AB98 Offset: 0xE4AB98 VA: 0xE4AB98
 		public static bool CanBeginnerMissionLiveClearMissionList(TransitionList.Type prevType)
@@ -1049,10 +1264,46 @@ namespace XeApp.Game.Tutorial
 		}
 
 		//// RVA: 0xE4BC54 Offset: 0xE4BC54 VA: 0xE4BC54
-		//public static bool IsUnlockTutorialInRank() { }
+		public static bool IsUnlockTutorialInRank()
+		{
+			if(HNDLICBDEMI.AFGKIJMPNNN_IsDecoEnabled())
+			{
+				if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsDecolture))
+					return true;
+			}
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DAEJHMCMFJD_Offer.MLBBKNLPBBD_HasShowTuto(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0))
+			{
+				if(KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk())
+					return true;
+			}
+			if(SettingMenuPanel.IsValkyrieTuneUpUnlock())
+			{
+				return !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade);
+			}
+			return false;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF708 Offset: 0x6AF708 VA: 0x6AF708
 		//// RVA: 0xE4BEEC Offset: 0xE4BEEC VA: 0xE4BEEC
-		//public static IEnumerator Co_GuideToHomePopup() { }
+		public static IEnumerator Co_GuideToHomePopup()
+		{
+			//0xE501F4
+			bool isWait = true;
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			TextPopupSetting s = new TextPopupSetting();
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			s.TitleText = bk.GetMessageByLabel("popup_tutorial_guidetohome_title");
+			s.Text = bk.GetMessageByLabel("popup_tutorial_guidetohome_text");
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel buttonLabel) =>
+			{
+				//0xE4C490
+				isWait = false;
+			}, null, null, null, true, true, false);
+			while(isWait)
+				yield return null;
+		}
 	}
 }

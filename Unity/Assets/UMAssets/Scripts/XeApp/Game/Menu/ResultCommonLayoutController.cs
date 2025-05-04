@@ -50,7 +50,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xCFEE9C Offset: 0xCFEE9C VA: 0xCFEE9C
-		//public void ChangeViewForSupportResult() { }
+		public void ChangeViewForSupportResult()
+		{
+			layoutTitle.gameObject.SetActive(true);
+			layoutTitle.ChangeTitle(LayoutResultHeaderTitle.TitleType.SUPPORT);
+			layoutTitle.SetSkipCount(0);
+			layoutOkay.gameObject.SetActive(true);
+			layoutOkay.InitAnim();
+		}
 
 		//// RVA: 0xCFEF9C Offset: 0xCFEF9C VA: 0xCFEF9C
 		public void ChangeViewForDivaResult()
@@ -77,7 +84,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xCFF178 Offset: 0xCFF178 VA: 0xCFF178
-		//public void ChangeViewForRaidResult() { }
+		public void ChangeViewForRaidResult()
+		{
+			layoutOkay.gameObject.SetActive(false);
+		}
 
 		//// RVA: 0xCFF1C8 Offset: 0xCFF1C8 VA: 0xCFF1C8
 		public void ChangeViewForSimulationResult()

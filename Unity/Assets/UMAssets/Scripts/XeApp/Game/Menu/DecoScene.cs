@@ -2177,7 +2177,7 @@ namespace XeApp.Game.Menu
 			DecorationItemArgsBase arg = null;
 			if(item.Type == LayoutDecorationWindow01.SelectItemType.Serif)
 			{
-				arg = new DecorationSerifArgs(item.Data.GBJFNGCDKPM, item.Data.DOIGLOBENMG, item.Data.DBGAJBIBODC, m_speakChara);
+				arg = new DecorationSerifArgs(item.Data.GBJFNGCDKPM_Attribute, item.Data.DOIGLOBENMG_StampName, item.Data.DBGAJBIBODC_FontType, m_speakChara);
 				m_postType = DecorationItemManager.PostType.Posted;
 			}
 			else
@@ -2342,7 +2342,7 @@ namespace XeApp.Game.Menu
 					l3 = KDKFHGHGFEK.FKDIMODKKJD(NDBFKHKMMCE_DecoItem.ANMODBDBNPK.DBAMIACJODJ.AAAOOKJAMGE_Sp);
 					foreach(var it in l3)
 					{
-						if(it.GBJFNGCDKPM == 12)
+						if(it.GBJFNGCDKPM_Attribute == 12)
 						{
 							if(t == -1 || t == it.GJMHALIIPME_Type)
 							{
@@ -2360,7 +2360,7 @@ namespace XeApp.Game.Menu
 					{
 						if(it.GJMHALIIPME_Type != 0)
 						{
-							if(it.GBJFNGCDKPM != 12)
+							if(it.GBJFNGCDKPM_Attribute != 12)
 							{
 								if(t != -1)
 								{

@@ -100,7 +100,7 @@ namespace XeApp.Game.Menu
 			}
 			KDKFHGHGFEK data = new KDKFHGHGFEK();
 			data.KHEKNNFCAOI(m_serifId, EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif);
-			m_stampTypeChange.StartChildrenAnimGoStop(data.DBGAJBIBODC.ToString("D2"));
+			m_stampTypeChange.StartChildrenAnimGoStop(data.DBGAJBIBODC_FontType.ToString("D2"));
 		}
 
 		//// RVA: 0xD2118C Offset: 0xD2118C VA: 0xD2118C

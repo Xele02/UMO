@@ -457,7 +457,12 @@ namespace XeApp.Game.Menu
 						}
 						if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 						{
-							TodoLogger.LogError(TodoLogger.EventRaid_11_13, "init from event 11");
+							PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.JBAIEADLAGH_0);
+							info.category = SceneGroupCategory.HOME;
+							info.nextName = TransitionList.Type.RAID;
+							info.uniqueId = Database.Instance.gameSetup.musicInfo.returnTransitionUniqueId;
+							info.args = new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, true);
+							return;
 						}
 						if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
 						{

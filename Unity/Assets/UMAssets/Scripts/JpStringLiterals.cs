@@ -487,10 +487,13 @@ class JpStringLiterals
 	public static string StringLiteral_19428 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_19428", "位:"); } } //0x03bbba48
 	public static string StringLiteral_19432 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_19432", "【{0}】"); } } //0x03bbba58
 	public static string StringLiteral_19433 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_19433", "イベント楽曲でのレアドロップ"); } } //0x03bbba5c
+	public static string StringLiteral_19505 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_19505", "{0}～{1}"); } } //03bbbb7c
 	public static string StringLiteral_19538 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_19538", "インパクト"); } } //0x03bbbc00
 	public static string StringLiteral_19639 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_19639", "無期限"); } } //0x03bbbd94
 	public static string StringLiteral_19612 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_19612", "ユニットセット"); } } // 0x03bbbd28
 	public static string StringLiteral_19704 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_19704", "他人のデコルーム:プロフィール経由"); } } //0x03bbbe98
+	public static string StringLiteral_19851 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_19851", "{0}人"); } } //03bbc0e4
+	public static string StringLiteral_19875 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_19875", "イベント集計中です。"); } } //03bbc144
 	public static string StringLiteral_20178 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_20178", " ★"); } } // 0x03bbc600
 	public static string StringLiteral_20179 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_20179", "の最大マス数="); } } // 0x03bbc604
 	public static string StringLiteral_20180 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_20180", "なのに "); } } // 0x03bbc608

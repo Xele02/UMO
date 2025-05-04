@@ -479,7 +479,10 @@ public abstract class IKDICBBFBMI_EventBase
 	// public virtual bool NCGDLDGCIFM(int AHGHKCGLFBG) { }
 
 	// // RVA: 0x8DF444 Offset: 0x8DF444 VA: 0x8DF444 Slot: 25
-	// public virtual void KMCAIFKIFHM(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG) { }
+	public virtual void KMCAIFKIFHM(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
+	{
+		TodoLogger.LogError(TodoLogger.EventRaid_11_13, "KMCAIFKIFHM");
+	}
 
 	// // RVA: 0x8DF69C Offset: 0x8DF69C VA: 0x8DF69C Slot: 26
 	public virtual bool KKFEDJNIAAG(long JHNMKKNEENE)

@@ -175,7 +175,11 @@ namespace XeApp.Game.Menu
 				{
 					if(mi.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 					{
-						TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
+						PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(mi.EventUniqueId) as PKNOKJNLPOE_EventRaid;
+						if(evRaid == null || !(evRaid.KAHCHHILDEM() == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1 || evRaid.KAHCHHILDEM() == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2))
+						{
+							CIOECGOMILE.HHCJCDFCLOB.GJACBNJHDHI(ticketCount, consumeTime);
+						}
 					}
 					else
 					{
@@ -250,7 +254,7 @@ namespace XeApp.Game.Menu
 						MenuScene.Instance.InputEnable();
 					}, null, null, null);
 				}
-				else if(status != NHCDBBBMFFG.OPNEOJEGDJB_2)
+				else if(status != NHCDBBBMFFG.OPNEOJEGDJB_2_Dead)
 				{
 					MenuScene.Instance.Mount(mi.returnTransitionUniqueId, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					MenuScene.Instance.InputEnable();

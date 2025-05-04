@@ -346,10 +346,33 @@ namespace XeApp.Game.Common
 		{
 			m_itemList.Clear();
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
-			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/);
-			if(ev != null)
+			NKOBMDPHNGP_EventRaidLobby ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as NKOBMDPHNGP_EventRaidLobby;
+			if(ev != null && ev.ILCPALOKKHC() < JKOHBJPCAJL.CNNCBDKIPGE.DBJIHJMNPAM_5)
 			{
-				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
+                NKBOMKGFGIO_EventRaidItem dbRaidItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ONOJBMDKBLE_EventRaidItem;
+                List<ItemOrder> l = new List<ItemOrder>();
+				l.Clear();
+				for(int i = 0; i < dbRaidItem.CDENCMNHNGA.Count; i++)
+				{
+					if(dbRaidItem.CDENCMNHNGA[i].EILKGEADKGH_Odr != 0)
+					{
+						l.Add(new ItemOrder() { type = EKLNMHFCAOI.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem, id = dbRaidItem.CDENCMNHNGA[i].PPFNGGCBJKC_Id, order = dbRaidItem.CDENCMNHNGA[i].EILKGEADKGH_Odr });
+					}
+				}
+				if(l.Count > 0)
+				{
+					l.Sort((ItemOrder a, ItemOrder b) =>
+					{
+						//0xB00748
+						if(a.order == b.order)
+							return a.id.CompareTo(b.id);
+						return a.order.CompareTo(b.order);
+					});
+					for(int i = 0; i < l.Count; i++)
+					{
+						m_itemList.Add(new ItemInfo(l[i].id, ev.EHGKMLPCDBM((RaidItemConstants.Type)l[i].id, null), EKLNMHFCAOI.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem));
+					}
+				}
 			}
 			List<ViewEnergyItemData> l1 = ViewEnergyItemData.CreateList();
 			for(int i = 0; i < l1.Count; i++)

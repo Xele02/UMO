@@ -93,11 +93,11 @@ namespace XeApp.Game.Menu
 					SetTimeEnable(false);
 					break;
 				case FKMOKDCJFEN.ADCPCCNCOMD_Status.HIDGJCIFFNJ_1:
-					SetTimeEnable(viewData.JONPKLHMOBL == FKMOKDCJFEN.MEDJADCKPKH.CCDOBDNDPIL_Event && viewData.PNFDMBHDPAJ_IsRewardOnly);
+					SetTimeEnable(viewData.JONPKLHMOBL == FKMOKDCJFEN.MEDJADCKPKH.CCDOBDNDPIL_2_Event && viewData.PNFDMBHDPAJ_IsRewardOnly);
 					SetTime(viewData.BLHJBMPONHC);
 					break;
 				case FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved:
-					SetTimeEnable(viewData.JONPKLHMOBL == FKMOKDCJFEN.MEDJADCKPKH.CCDOBDNDPIL_Event);
+					SetTimeEnable(viewData.JONPKLHMOBL == FKMOKDCJFEN.MEDJADCKPKH.CCDOBDNDPIL_2_Event);
 					SetTime(viewData.PNHMDOHCBGK);
 					break;
 				default:

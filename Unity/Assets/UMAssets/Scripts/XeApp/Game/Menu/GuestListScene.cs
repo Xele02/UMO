@@ -653,7 +653,7 @@ namespace XeApp.Game.Menu
 			{
 				if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 				{
-					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "GetCallArgsReturn Event");
+					return new RaidActSelectArgs(Database.Instance.gameSetup.musicInfo.returnTransitionUniqueId, new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, false));
 				}
 				if(eventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
 				{

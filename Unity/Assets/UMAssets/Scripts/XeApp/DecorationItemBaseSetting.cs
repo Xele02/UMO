@@ -49,10 +49,10 @@ namespace XeApp
 			IsOverlay = MakeOverlay(viewDecoItemData.NPADACLCNAN_Category, AttributeType, viewDecoItemData.FJFCNGNGIBN);
 			IsOnShelf = MakeOnShelf(viewDecoItemData);
 			IsShelf = false;
-			PriorityControl = MakePriortyControl(viewDecoItemData.NPADACLCNAN_Category, viewDecoItemData.GBJFNGCDKPM, AttributeType);
+			PriorityControl = MakePriortyControl(viewDecoItemData.NPADACLCNAN_Category, viewDecoItemData.GBJFNGCDKPM_Attribute, AttributeType);
 			AdjustOffset.x = viewDecoItemData.EDEEMPJPFCP;
 			AdjustOffset.y = viewDecoItemData.HDHNEILDILJ;
-			FontSizeType = viewDecoItemData.DBGAJBIBODC;
+			FontSizeType = viewDecoItemData.DBGAJBIBODC_FontType;
 			Thickness = MakeThickness(viewDecoItemData);
 			Order = viewDecoItemData.EILKGEADKGH;
 		}

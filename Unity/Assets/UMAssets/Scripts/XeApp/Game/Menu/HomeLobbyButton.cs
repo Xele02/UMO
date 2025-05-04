@@ -45,10 +45,16 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x966118 Offset: 0x966118 VA: 0x966118
-		//public bool IsShow() { }
+		public bool IsShow()
+		{
+			return m_is_show;
+		}
 
 		//// RVA: 0x966120 Offset: 0x966120 VA: 0x966120
-		//public void SetType(HomeLobbyButtonController.Type a_type) { }
+		public void SetType(HomeLobbyButtonController.Type a_type)
+		{
+			m_typeAnim.StartChildrenAnimGoStop(a_type == HomeLobbyButtonController.Type.UP ? "02" : "01");
+		}
 
 		//// RVA: 0x9661B8 Offset: 0x9661B8 VA: 0x9661B8
 		public void SetNewIcon(bool a_enable, bool a_enable_efft)

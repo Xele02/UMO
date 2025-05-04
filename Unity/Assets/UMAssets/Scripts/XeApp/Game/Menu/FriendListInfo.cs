@@ -109,7 +109,7 @@ namespace XeApp.Game.Menu
 			{
 				request = "";
 			}
-			comment = fri.FGMPKKOOGCM;
+			comment = fri.FGMPKKOOGCM_Comment;
 			isDivaLoad = false;
 			isSceneLoad = false;
 		}

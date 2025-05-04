@@ -151,7 +151,7 @@ public class ANPBHCNJIDI
 		public int LIBPMIHHEJD_StampDiva; // 0x3C
 		public int HEKIEDEBAEO_StampId; // 0x40
 		public int EKAMPLIAENM_SerifId; // 0x44
-		public int GKEKNMJMMPK; // 0x48
+		public int GKEKNMJMMPK_CannonLogId; // 0x48
 
 		// RVA: 0xD54848 Offset: 0xD54848 VA: 0xD54848
 		public BNEIDPGIAFM()
@@ -167,7 +167,7 @@ public class ANPBHCNJIDI
 				LIBPMIHHEJD_StampDiva = JsonUtil.GetInt(DLENPPIJNPA, "sdv", 1);
 				HEKIEDEBAEO_StampId = JsonUtil.GetInt(DLENPPIJNPA, "smn", 1);
 				EKAMPLIAENM_SerifId = JsonUtil.GetInt(DLENPPIJNPA, "scm", 1);
-				GKEKNMJMMPK = JsonUtil.GetInt(DLENPPIJNPA, "mcid", 0);
+				GKEKNMJMMPK_CannonLogId = JsonUtil.GetInt(DLENPPIJNPA, "mcid", 0);
 				if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.BEEGJHCDHJB_IsDivaAvaiable(LIBPMIHHEJD_StampDiva))
 				{
 					if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.FJPOELGFPBP_DecoStamp.DDKEJHIGBGK_IsStampEnabled(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp, HEKIEDEBAEO_StampId))
@@ -187,9 +187,9 @@ public class ANPBHCNJIDI
 			DLENPPIJNPA["sdv"] = LIBPMIHHEJD_StampDiva;
 			DLENPPIJNPA["smn"] = HEKIEDEBAEO_StampId;
 			DLENPPIJNPA["scm"] = EKAMPLIAENM_SerifId;
-			if (GKEKNMJMMPK == 0)
+			if (GKEKNMJMMPK_CannonLogId == 0)
 				return;
-			DLENPPIJNPA["mcid"] = GKEKNMJMMPK;
+			DLENPPIJNPA["mcid"] = GKEKNMJMMPK_CannonLogId;
 		}
 	}
 
@@ -280,10 +280,10 @@ public class ANPBHCNJIDI
 		public int PCPODOMOFDH_BossSeriesAttr; // 0x54
 		public int JNBDLNBKDCO_BossImage; // 0x58
 		public int HALIDDHLNEG_Damage; // 0x5C
-		public int KKPAHLMJKIH; // 0x60
+		public int KKPAHLMJKIH_WavId; // 0x60
 		public bool IGNJCGMLBDA_Defeat; // 0x64
 		public bool IKICLMGFFPB; // 0x65
-		public int CNOHJPEHHCH; // 0x68
+		public int CNOHJPEHHCH_LogId; // 0x68
 
 		// RVA: 0xD548E8 Offset: 0xD548E8 VA: 0xD548E8
 		public NBHIMCACDHM()
@@ -302,9 +302,9 @@ public class ANPBHCNJIDI
 				EJGDHAENIDC_BossRank = JsonUtil.GetInt(DLENPPIJNPA, "brk", 0);
 				PCPODOMOFDH_BossSeriesAttr = JsonUtil.GetInt(DLENPPIJNPA, "bsr", 1);
 				JNBDLNBKDCO_BossImage = JsonUtil.GetInt(DLENPPIJNPA, "bim", 1);
-				KKPAHLMJKIH = JsonUtil.GetInt(DLENPPIJNPA, "wav", 1);
+				KKPAHLMJKIH_WavId = JsonUtil.GetInt(DLENPPIJNPA, "wav", 1);
 				int bsp = JsonUtil.GetInt(DLENPPIJNPA, "bsp", 0);
-				CNOHJPEHHCH = JsonUtil.GetInt(DLENPPIJNPA, "sid", 0);
+				CNOHJPEHHCH_LogId = JsonUtil.GetInt(DLENPPIJNPA, "sid", 0);
 				if(SeriesAttr.ValidateSeriesAttr((SeriesAttr.Type)PCPODOMOFDH_BossSeriesAttr))
 				{
 					if(JNBDLNBKDCO_BossImage < 1)
@@ -312,7 +312,7 @@ public class ANPBHCNJIDI
 						if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("raid_boss_image_max", 16) < JNBDLNBKDCO_BossImage)
 							return false;
 					}
-					if(KKPAHLMJKIH > 0)
+					if(KKPAHLMJKIH_WavId > 0)
 					{
 						if((def | bsp) < 2)
 						{
@@ -335,10 +335,10 @@ public class ANPBHCNJIDI
 			DLENPPIJNPA["bsr"] = PCPODOMOFDH_BossSeriesAttr;
 			DLENPPIJNPA["bim"] = JNBDLNBKDCO_BossImage;
 			DLENPPIJNPA["dme"] = HALIDDHLNEG_Damage;
-			DLENPPIJNPA["wav"] = KKPAHLMJKIH;
+			DLENPPIJNPA["wav"] = KKPAHLMJKIH_WavId;
 			DLENPPIJNPA["def"] = IGNJCGMLBDA_Defeat ? 1 : 0;
 			DLENPPIJNPA["bsp"] = IKICLMGFFPB ? 1 : 0;
-			DLENPPIJNPA["sid"] = CNOHJPEHHCH;
+			DLENPPIJNPA["sid"] = CNOHJPEHHCH_LogId;
 		}
 	}
 

@@ -152,7 +152,7 @@ namespace XeApp.Game.Menu
 			PopupRewardEvRaidBossItemLayout l = content as PopupRewardEvRaidBossItemLayout;
 			if(l != null)
 			{
-				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event Raid");
+				l.SetRewardData(CurrentViewList()[index], m_playerUtaGrade, m_utaGradeMoreText);
 			}
 		}
 
@@ -173,7 +173,7 @@ namespace XeApp.Game.Menu
 			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			if(ev != null)
 			{
-				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event Raid");
+				m_utaGradeMoreText = ev.ICCEILFHKEL();
 			}
 			int itemId = SpItemConstants.MakeItemId(SpItemConstants.SpItemId.RaidMedal);
 			GameManager.Instance.ItemTextureCache.Load(itemId, (IiconTexture texture) =>
@@ -232,18 +232,18 @@ namespace XeApp.Game.Menu
 					IIMNHDGFDAG a1 = new IIMNHDGFDAG();
 					IIMNHDGFDAG a2 = new IIMNHDGFDAG();
 					IIMNHDGFDAG a3 = new IIMNHDGFDAG();
-					a3.ILELGGCCGMJ = data.normal_raidboss_info_list[i].ILELGGCCGMJ;
-					a2.ILELGGCCGMJ = data.normal_raidboss_info_list[i].ILELGGCCGMJ;
-					a1.ILELGGCCGMJ = data.normal_raidboss_info_list[i].ILELGGCCGMJ;
+					a3.ILELGGCCGMJ_HighscoreRank = data.normal_raidboss_info_list[i].ILELGGCCGMJ;
+					a2.ILELGGCCGMJ_HighscoreRank = data.normal_raidboss_info_list[i].ILELGGCCGMJ;
+					a1.ILELGGCCGMJ_HighscoreRank = data.normal_raidboss_info_list[i].ILELGGCCGMJ;
 					a3.DJEMBILEBFP = data.normal_raidboss_info_list[i].DJEMBILEBFP;
 					a2.DJEMBILEBFP = data.normal_raidboss_info_list[i].DJEMBILEBFP;
 					a1.DJEMBILEBFP = data.normal_raidboss_info_list[i].DJEMBILEBFP;
-					a3.IOBJDNEGEBB = data.normal_raidboss_info_list[i].IOBJDNEGEBB;
-					a2.IOBJDNEGEBB = data.normal_raidboss_info_list[i].IOBJDNEGEBB;
-					a1.IOBJDNEGEBB = data.normal_raidboss_info_list[i].IOBJDNEGEBB;
-					a3.PKLKOMIAKNL = data.normal_raidboss_info_list[i].PKLKOMIAKNL;
-					a2.PKLKOMIAKNL = data.normal_raidboss_info_list[i].PKLKOMIAKNL;
-					a1.PKLKOMIAKNL = data.normal_raidboss_info_list[i].PKLKOMIAKNL;
+					a3.IOBJDNEGEBB_BossRankLower = data.normal_raidboss_info_list[i].IOBJDNEGEBB;
+					a2.IOBJDNEGEBB_BossRankLower = data.normal_raidboss_info_list[i].IOBJDNEGEBB;
+					a1.IOBJDNEGEBB_BossRankLower = data.normal_raidboss_info_list[i].IOBJDNEGEBB;
+					a3.PKLKOMIAKNL_BossRankUpper = data.normal_raidboss_info_list[i].PKLKOMIAKNL;
+					a2.PKLKOMIAKNL_BossRankUpper = data.normal_raidboss_info_list[i].PKLKOMIAKNL;
+					a1.PKLKOMIAKNL_BossRankUpper = data.normal_raidboss_info_list[i].PKLKOMIAKNL;
 					a1.CHOIMPLAOCO = data.normal_raidboss_info_list[i].ABHGIJFDLMM;
 					a1.EAOBPKJDDKC = data.normal_raidboss_info_list[i].EMPCHHKMKBG;
 					a2.CHOIMPLAOCO = data.normal_raidboss_info_list[i].DFMBENKEIHF;
@@ -257,7 +257,33 @@ namespace XeApp.Game.Menu
 			}
 			if(data.ex_raidboss_info_list != null)
 			{
-				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "CreateRewardList");
+				for(int i = 0; i < data.ex_raidboss_info_list.Count; i++)
+				{
+					IIMNHDGFDAG d1 = new IIMNHDGFDAG();
+					IIMNHDGFDAG d2 = new IIMNHDGFDAG();
+					IIMNHDGFDAG d3 = new IIMNHDGFDAG();
+					d3.ILELGGCCGMJ_HighscoreRank = data.ex_raidboss_info_list[i].ILELGGCCGMJ;
+					d2.ILELGGCCGMJ_HighscoreRank = data.ex_raidboss_info_list[i].ILELGGCCGMJ;
+					d1.ILELGGCCGMJ_HighscoreRank = data.ex_raidboss_info_list[i].ILELGGCCGMJ;
+					d3.DJEMBILEBFP = data.ex_raidboss_info_list[i].DJEMBILEBFP;
+					d2.DJEMBILEBFP = data.ex_raidboss_info_list[i].DJEMBILEBFP;
+					d1.DJEMBILEBFP = data.ex_raidboss_info_list[i].DJEMBILEBFP;
+					d3.IOBJDNEGEBB_BossRankLower = data.ex_raidboss_info_list[i].IOBJDNEGEBB;
+					d2.IOBJDNEGEBB_BossRankLower = data.ex_raidboss_info_list[i].IOBJDNEGEBB;
+					d1.IOBJDNEGEBB_BossRankLower = data.ex_raidboss_info_list[i].IOBJDNEGEBB;
+					d3.PKLKOMIAKNL_BossRankUpper = data.ex_raidboss_info_list[i].PKLKOMIAKNL;
+					d2.PKLKOMIAKNL_BossRankUpper = data.ex_raidboss_info_list[i].PKLKOMIAKNL;
+					d1.PKLKOMIAKNL_BossRankUpper = data.ex_raidboss_info_list[i].PKLKOMIAKNL;
+					d1.CHOIMPLAOCO = data.ex_raidboss_info_list[i].ABHGIJFDLMM;
+					d1.EAOBPKJDDKC = data.ex_raidboss_info_list[i].EMPCHHKMKBG;
+					d2.CHOIMPLAOCO = data.ex_raidboss_info_list[i].DFMBENKEIHF;
+					d2.EAOBPKJDDKC = data.ex_raidboss_info_list[i].HDPONDIDHAN;
+					d3.CHOIMPLAOCO = data.ex_raidboss_info_list[i].HCPJEHKMFHB;
+					d3.EAOBPKJDDKC = data.ex_raidboss_info_list[i].IPJANNBLHMB;
+					m_defeatExRewardList.Add(d1);
+					m_1stExRewardList.Add(d2);
+					m_mvpExRewardList.Add(d3);
+				}
 			}
 			m_defeatNormalRewardList.Reverse();
 			m_1stNormalRewardList.Reverse();
@@ -322,10 +348,19 @@ namespace XeApp.Game.Menu
 		// private void OnClickChangeButton() { }
 
 		// // RVA: 0x1A67E30 Offset: 0x1A67E30 VA: 0x1A67E30
-		// public void WaitAnimation(Action callback) { }
+		public void WaitAnimation(Action callback)
+		{
+			this.StartCoroutineWatched(Co_WaitAnimation(callback));
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x70E5E4 Offset: 0x70E5E4 VA: 0x70E5E4
 		// // RVA: 0x1A7B1D0 Offset: 0x1A7B1D0 VA: 0x1A7B1D0
-		// private IEnumerator Co_WaitAnimation(Action callback) { }
+		private IEnumerator Co_WaitAnimation(Action callback)
+		{
+			//0x1A7C03C
+			while(m_rewardTypeAnim.IsPlaying() && m_windowInfoAnim.IsPlaying())
+				yield return null;
+			callback();
+		}
 	}
 }

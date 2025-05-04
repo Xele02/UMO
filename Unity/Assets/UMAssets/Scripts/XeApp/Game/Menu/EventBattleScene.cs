@@ -491,10 +491,12 @@ namespace XeApp.Game.Menu
 		// RVA: 0xF10300 Offset: 0xF10300 VA: 0xF10300 Slot: 40
 		protected override void SetupViewMusicData()
 		{
-			NKOBMDPHNGP_EventRaidLobby ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
-			if(ev != null)
+			NKOBMDPHNGP_EventRaidLobby raidEv = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
+			if(raidEv != null)
 			{
-				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "SetupViewMusicData");
+				if(!raidEv.AKNOOLKMEGJ())
+					return;
+				m_eventTicketId = NKOBMDPHNGP_EventRaidLobby.ADPMLOEOAFD_GetTicketId();
 			}
 		}
 

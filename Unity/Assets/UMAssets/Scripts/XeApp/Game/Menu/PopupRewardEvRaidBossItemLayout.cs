@@ -68,12 +68,51 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1A77804 Offset: 0x1A77804 VA: 0x1A77804
-		// public void SetRewardData(IIMNHDGFDAG info, HighScoreRatingRank.Type playerUtaGrade, string utaGradeMoreText) { }
+		public void SetRewardData(IIMNHDGFDAG info, HighScoreRatingRank.Type playerUtaGrade, string utaGradeMoreText)
+		{
+			SetHighScoreRatingRank((HighScoreRatingRank.Type)info.ILELGGCCGMJ_HighscoreRank);
+			m_utaGradeText.text = HighScoreRatingRank.GetRankName((HighScoreRatingRank.Type)info.ILELGGCCGMJ_HighscoreRank);
+			if(!info.DJEMBILEBFP)
+			{
+				SetFrameColor(info.ILELGGCCGMJ_HighscoreRank == (int)playerUtaGrade);
+			}
+			else
+			{
+				SetFrameColor(info.ILELGGCCGMJ_HighscoreRank <= (int)playerUtaGrade);
+				m_utaGradeText.text += utaGradeMoreText;
+			}
+			m_bossRankLower.StartChildrenAnimGoStop(string.Format("{0:D2}", info.IOBJDNEGEBB_BossRankLower.ToString()));
+			m_bossRankUppwer.StartChildrenAnimGoStop(string.Format("{0:D2}", info.PKLKOMIAKNL_BossRankUpper.ToString()));
+			m_lotCountText.text = string.Format(JpStringLiterals.StringLiteral_19505, info.CHOIMPLAOCO, info.EAOBPKJDDKC);
+		}
 
 		// // RVA: 0x1A77B08 Offset: 0x1A77B08 VA: 0x1A77B08
-		// private void SetHighScoreRatingRank(HighScoreRatingRank.Type rank) { }
+		private void SetHighScoreRatingRank(HighScoreRatingRank.Type rank)
+		{
+			GameManager.Instance.MusicRatioTextureCache.Load(rank, (IiconTexture texture) =>
+			{
+				//0x1A78158
+				if(texture != null)
+				{
+					MusicRatioTextureCache.MusicRatioTexture t = texture as MusicRatioTextureCache.MusicRatioTexture;
+					if(t != null)
+					{
+						t.Set(m_utaGradeImage, rank);
+					}
+				}
+			});
+		}
 
 		// // RVA: 0x1A77C68 Offset: 0x1A77C68 VA: 0x1A77C68
-		// private void SetFrameColor(bool isPink) { }
+		private void SetFrameColor(bool isPink)
+		{
+			for(int i = 0; i < m_frameImages.Length; i++)
+			{
+				if(m_frameImages[i].name.Contains(string.Format("frame_b_{0:D2}", i + 1)))
+				{
+					m_frameImages[i].uvRect = isPink ? m_uvDataP[i] : m_uvDataB[i];
+				}
+			}
+		}
 	}
 }

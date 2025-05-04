@@ -158,11 +158,14 @@ namespace XeApp.Game.Menu
 
 		public bool IsLoadedTexture { get; protected set; } // 0xB8
 		public EnWindowType WindowType { get { return m_window_type; } set { m_window_type = value; } } //0xD1A10C 0xD1A114
-		//public int RaidSelectType { get; set; } 0xD0BB10 0xD1A11C
+		public int RaidSelectType { get { return m_raidSelect; } set { m_raidSelect = value; } } //0xD0BB10 0xD1A11C
 		public bool IsIconChange { get { return m_isIconChange; } set { m_isIconChange = value; } } //0xD1A124 0xD1A12C
 
 		//// RVA: 0xD130A8 Offset: 0xD130A8 VA: 0xD130A8
-		//public ButtonBase GetGuidCharaBtn() { }
+		public ButtonBase GetGuidCharaBtn()
+		{
+			return m_guideCharaBtn;
+		}
 
 		// RVA: 0xD1A134 Offset: 0xD1A134 VA: 0xD1A134 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
@@ -259,10 +262,35 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E9AAC Offset: 0x6E9AAC VA: 0x6E9AAC
 		//// RVA: 0xD1301C Offset: 0xD1301C VA: 0xD1301C
-		//public IEnumerator SettingCharaVoice() { }
+		public IEnumerator SettingCharaVoice()
+		{
+			//0xD1FFC0
+			m_voicePlayer = GetComponent<SimpleVoicePlayer>();
+			if(!SoundResource.IsInstalledCueSheet("cs_loby"))
+			{
+				SoundResource.InstallCueSheet("cs_loby");
+			}
+			yield return null;
+			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
+				yield return null;
+			bool isEndChangeCueSheet = false;
+			m_voicePlayer.RequestChangeCueSheet("cs_loby", () =>
+			{
+				//0xD1F47C
+				isEndChangeCueSheet = true;
+			});
+			while(!isEndChangeCueSheet)
+				yield return null;
+		}
 
 		//// RVA: 0xD0C1CC Offset: 0xD0C1CC VA: 0xD0C1CC
-		//public void EffectAnimLoop(bool _IsAnimStart) { }
+		public void EffectAnimLoop(bool _IsAnimStart)
+		{
+			if(_IsAnimStart)
+				m_eff_anim.StartChildrenAnimLoop("logo_act_01");
+			else
+				m_eff_anim.StartChildrenAnimGoStop("st_wait");
+		}
 
 		//// RVA: 0xD1A95C Offset: 0xD1A95C VA: 0xD1A95C
 		public void HideGotoTopButton(bool _isListBottom)
@@ -433,9 +461,9 @@ namespace XeApp.Game.Menu
 					it.IsPickUp = m_raidSelect == 0;
 					it.BossImageNum = data.JNBDLNBKDCO_BossImage;
 					it.BossRank = data.EJGDHAENIDC_BossRank;
-					it.LogId = data.CNOHJPEHHCH;
+					it.LogId = data.CNOHJPEHHCH_LogId;
 					it.utarate_rank = data.AILEOFKIELL_UtaRateRank;
-					it.WavId = data.KKPAHLMJKIH;
+					it.WavId = data.KKPAHLMJKIH_WavId;
 					it.utarate = data.KIFEGLJLEDC_TotalUtaRate;
 					m_list.Add(it);
 				}
@@ -681,7 +709,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xD1E098 Offset: 0xD1E098 VA: 0xD1E098
-		//public void ScrollContentPostButtonGrayOut(bool isGrayOut) { }
+		public void ScrollContentPostButtonGrayOut(bool isGrayOut)
+		{
+			if(IsChatButtonGrayOut != isGrayOut)
+			{
+				IsChatButtonGrayOut = isGrayOut;
+				UpdateDisplayOnly();
+			}
+		}
 
 		//// RVA: 0xD1E0C4 Offset: 0xD1E0C4 VA: 0xD1E0C4
 		public void StopScrollMove()
@@ -729,25 +764,92 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xD1122C Offset: 0xD1122C VA: 0xD1122C
-		//public void Hide() { }
+		public void Hide()
+		{
+			m_rootLayout.StartChildrenAnimGoStop("st_wait");
+		}
 
 		//// RVA: 0xD0C274 Offset: 0xD0C274 VA: 0xD0C274
-		//public void Show() { }
+		public void Show()
+		{
+			m_rootLayout.StartChildrenAnimGoStop("go_in");
+		}
 
 		//// RVA: 0xD1E4F8 Offset: 0xD1E4F8 VA: 0xD1E4F8
-		//public bool IsPlayingChild() { }
+		public bool IsPlayingChild()
+		{
+			return m_rootLayout.IsPlayingChildren();
+		}
 
 		//// RVA: 0xD12F18 Offset: 0xD12F18 VA: 0xD12F18
-		//public void GuideCharaInitialize(NKOBMDPHNGP _cont) { }
+		public void GuideCharaInitialize(NKOBMDPHNGP_EventRaidLobby _cont)
+		{
+			m_GuideTextAnim.StartChildrenAnimGoStop("st_wait");
+			if(_cont == null)
+			{
+				HideMiniChara();
+			}
+			else
+			{
+				NKOBMDPHNGP_EventRaidLobby.GDNGPJINPDK d = _cont.IBDNMIFLEKK(NKOBMDPHNGP_EventRaidLobby.NGHEKBHLBAN.CFBJGAGBJEN_0);
+				SetGuideCharaData(d.FDBOPFEOENF_Id, d.IJLLIGENJCI_Pic, d.LJGOOOMOMMA_Message);
+			}
+		}
 
 		//// RVA: 0xD1E524 Offset: 0xD1E524 VA: 0xD1E524
-		//private void SetGuideCharaData(int _id, int _pic, string _messge) { }
+		private void SetGuideCharaData(int _id, int _pic, string _messge)
+		{
+			Debug.Log("StringLiteral_18444 "+_pic);
+			IsViewCharaSingle(true);
+			m_id = _id;
+			m_decoMessge.text = _messge;
+			LoadIconTexture(_id, _pic, true);
+		}
 
 		//// RVA: 0xD1E70C Offset: 0xD1E70C VA: 0xD1E70C
-		//private void IsViewCharaSingle(bool _isSingle) { }
+		private void IsViewCharaSingle(bool _isSingle)
+		{
+			m_divacharaAnim.StartAllAnimGoStop(_isSingle ? "01" : "02");
+		}
 
 		//// RVA: 0xD1E7A0 Offset: 0xD1E7A0 VA: 0xD1E7A0
-		//public void LoadIconTexture(int id, int emotion, bool isLeft = True) { }
+		public void LoadIconTexture(int id, int emotion, bool isLeft/* = True*/)
+		{
+			IsLoadedTexture = false;
+			if(!isLeft)
+			{
+				m_decoIconImage02.enabled = false;
+				miniCharaId02 = id;
+				miniCharamotionId02 = emotion;
+			}
+			else
+			{
+				m_decoIconImage01.enabled = false;
+				miniCharaId01 = id;
+				miniCharamotionId01 = emotion;
+			}
+			GameManager.Instance.LobbyTextureCache.LoadForLobbyMiniChara(id, emotion, (IiconTexture image) =>
+			{
+				//0xD1EF24
+				if(!isLeft)
+				{
+					if(miniCharaId02 == id && miniCharamotionId02 == emotion && m_decoIconImage02 != null)
+					{
+						image.Set(m_decoIconImage02);
+						m_decoIconImage02.enabled = true;
+					}
+				}
+				else
+				{
+					if(miniCharaId01 == id && miniCharamotionId01 == emotion && m_decoIconImage01 != null)
+					{
+						image.Set(m_decoIconImage01);
+						m_decoIconImage01.enabled = true;
+					}
+				}
+				IsLoadedTexture = true;
+			});
+		}
 
 		//// RVA: 0xD1E648 Offset: 0xD1E648 VA: 0xD1E648
 		public void HideMiniChara()
@@ -758,16 +860,43 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xD09DBC Offset: 0xD09DBC VA: 0xD09DBC
-		//public void OnClickGuideChara(NKOBMDPHNGP.FIPGKDJHKCH phase) { }
+		public void OnClickGuideChara(NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase phase)
+		{
+			if(m_isGuideTextAnim)
+				return;
+			if(m_voicePlayer.isPlaying)
+				return;
+			NaviCharaTextAnimStart();
+			NaviCharaVoicePlay(phase);
+		}
 
 		//// RVA: 0xD100D8 Offset: 0xD100D8 VA: 0xD100D8
-		//public void NaviCharaTextAnimStart() { }
+		public void NaviCharaTextAnimStart()
+		{
+			if(guideTextAnim != null)
+				this.StopCoroutineWatched(guideTextAnim);
+			guideTextAnim = this.StartCoroutineWatched(Co_NaviCharaTextAnimStart());
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E9B9C Offset: 0x6E9B9C VA: 0x6E9B9C
 		//// RVA: 0xD1EB48 Offset: 0xD1EB48 VA: 0xD1EB48
-		//private IEnumerator Co_NaviCharaTextAnimStart() { }
+		private IEnumerator Co_NaviCharaTextAnimStart()
+		{
+			//0xD1FD48
+			m_isGuideTextAnim = true;
+			m_GuideTextAnim.StartChildrenAnimGoStop("go_in", "st_in");
+			yield return new WaitForSecondsRealtime(7);
+			m_GuideTextAnim.StartChildrenAnimGoStop("go_out", "st_out");
+			while(m_GuideTextAnim.IsPlayingChildren())
+				yield return null;
+			m_isGuideTextAnim = false;
+		}
 
 		//// RVA: 0xD1011C Offset: 0xD1011C VA: 0xD1011C
-		//public void NaviCharaVoicePlay(NKOBMDPHNGP.FIPGKDJHKCH phase) { }
+		public void NaviCharaVoicePlay(NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase phase)
+		{
+			LobbyNavigationCharaVoiceDataTable.VoiceType[] v = new LobbyNavigationCharaVoiceDataTable.VoiceType[4] { LobbyNavigationCharaVoiceDataTable.VoiceType.Num, LobbyNavigationCharaVoiceDataTable.VoiceType.Start, LobbyNavigationCharaVoiceDataTable.VoiceType.Emergence, LobbyNavigationCharaVoiceDataTable.VoiceType.End };
+			m_voicePlayer.PlayVoice(LobbyNavigationCharaVoiceDataTable.VoiceSetting(v[(int)phase], m_id), m_id);
+		}
 	}
 }

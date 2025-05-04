@@ -230,7 +230,8 @@ namespace XeApp.Game.Menu
 				m_isInitRaidLobby = true;
 			}, () => {
 				//0x13C7934
-				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "InitRaidLobby");
+				m_isInitRaidLobby = true;
+				GotoTitle();
 			}));
 			m_isSuccessPrepare = false;
 			NKGJPJPHLIF.HHCJCDFCLOB.LBEHLMLKPDM(() => {
@@ -327,12 +328,21 @@ namespace XeApp.Game.Menu
 				MenuScene.Instance.LobbyButtonControl.OnStartAnnounce = () =>
 				{
 					//0x97CEF8
-					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "OnStartAnnounce ");
+					if(m_isHomeShowDiva)
+					{
+						m_divaTalk.TimerRestart();
+						m_divaTalk.TimerStop();
+					}
+					m_eventBanner.Setup(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, false), NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime());
+					m_eventBanner.Enter(0);
 				};
 				MenuScene.Instance.LobbyButtonControl.OnEndAnnounce = () =>
 				{
 					//0x97D0E8
-					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "OnEndAnnounce ");
+					if(m_isHomeShowDiva)
+					{
+						m_divaTalk.TimerStart();
+					}
 				};
 				MenuScene.Instance.divaManager.SetEnableDivaWind(true, false);
 			}
@@ -1193,6 +1203,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x973E84 Offset: 0x973E84 VA: 0x973E84
 		private void GotoCurrentEventScene(int eventUniqueId, OHCAABOMEOF.KGOGMKMBCPP_EventType currentEventType, bool isPickup)
 		{
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			if(currentEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0)
 			{
 				currentEventType = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(eventUniqueId).HIDHLFCBIDE_EventType;
@@ -1231,7 +1242,26 @@ namespace XeApp.Game.Menu
 								TodoLogger.LogError(TodoLogger.EventSp_7, "Event SP");
 								break;
 							case OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid:
-								TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event Raid");
+								{
+									NKOBMDPHNGP_EventRaidLobby evLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
+									if(evLobby != null)
+									{
+										if(!evLobby.EHLFBIEGDDF())
+										{
+											HomeLobbyButtonController.Show_PopupNotAffiliationRaidEnd(() =>
+											{
+												//0x13C6734
+												MenuScene.Instance.Call(TransitionList.Type.LOBBY_GROUP_SELECT, null, true);
+											}, () =>
+											{
+												//0x13C67E8
+												return;
+											}, evLobby.KINIOEOOCAA_GetPhase(t));
+											return;
+										}
+										Database.Instance.advResult.Setup("Menu", TransitionUniqueId.HOME_RAID, new AdvSetupParam() { eventUniqueId=eventUniqueId });
+									}
+								}
 								break;
 							case OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva:
 								Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTGODIVA, new AdvSetupParam() { eventUniqueId=eventUniqueId });
@@ -1266,8 +1296,26 @@ namespace XeApp.Game.Menu
 				case OHCAABOMEOF.KGOGMKMBCPP_EventType.OCCGDMDBCHK_EventGacha:
 					TodoLogger.LogError(TodoLogger.EventBoxGacha_8, "Event Gacha");
 					break;
-				case OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign:
-					TodoLogger.LogError(TodoLogger.EventPresentCampaign_9, "Event");
+				case OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid:
+					{
+						NKOBMDPHNGP_EventRaidLobby evLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
+						if(evLobby == null)
+							return;
+						if(!evLobby.EHLFBIEGDDF())
+						{
+							HomeLobbyButtonController.Show_PopupNotAffiliationRaidEnd(() =>
+							{
+								//0x13C67EC
+								MenuScene.Instance.Call(TransitionList.Type.LOBBY_GROUP_SELECT, null, true);
+							}, () =>
+							{
+								//0x13C68A0
+								return;
+							}, evLobby.KINIOEOOCAA_GetPhase(t));
+							return;
+						}
+						MenuScene.Instance.Mount(TransitionUniqueId.HOME_RAID, new EventMusicSelectSceneArgs(eventUniqueId, false, false), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+					}
 					break;
 				case OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva:
 					MenuScene.Instance.Mount(TransitionUniqueId.EVENTGODIVA, new EventMusicSelectSceneArgs(eventUniqueId, false, false), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);

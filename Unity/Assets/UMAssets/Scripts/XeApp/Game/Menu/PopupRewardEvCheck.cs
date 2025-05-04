@@ -109,7 +109,25 @@ namespace XeApp.Game.Menu
 			public float Rate { get; set; } // 0x24
 
 			// // RVA: 0x1A6B6D4 Offset: 0x1A6B6D4 VA: 0x1A6B6D4
-			// public void OnShowItemDetails(Action closeCallback) { }
+			public void OnShowItemDetails(Action closeCallback)
+			{
+				if(Item != null)
+				{
+					if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(Item.JJBGOIMEIPF_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+					{
+						if(sceneData == null)
+						{
+							sceneData = new GCIJNCFDNON_SceneInfo();
+						}
+						sceneData.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(Item.JJBGOIMEIPF_ItemId), null, null, 0, 0, 0, false, 0, 0);
+						MenuScene.Instance.ShowSceneStatusPopupWindow(sceneData, GameManager.Instance.ViewPlayerData, false, TransitionList.Type.UNDEFINED, closeCallback, true, true, 0, false);
+					}
+					else
+					{
+						MenuScene.Instance.ShowItemDetail(Item.JJBGOIMEIPF_ItemId, Item.MBJIFDBEDAC_Cnt, closeCallback);
+					}
+				}
+			}
 		}
 
 		public class ScrollObject
@@ -316,7 +334,95 @@ namespace XeApp.Game.Menu
 				}
 				else if(cont.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 				{
-					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event Raid");
+					PKNOKJNLPOE_EventRaid contExt = cont as PKNOKJNLPOE_EventRaid;
+					is_rank_reward = isRaidBossSelect;
+					curr_score = 0;
+					curr_score_rank = 0;
+					pickup_free_music_id = 0;
+					is_enable_score_ranking = false;
+					is_point_reward = cont.LEPALMDKEOK_IsPointReward;
+					mvp_reward_list = new List<HOOEJMGLGFO>();
+					attack1st_reward_list = new List<HOOEJMGLGFO>();
+					disempowerment_reward_list = new List<HOOEJMGLGFO>();
+					normal_raidboss_info_list = new List<FDPJBEAKPMA>();
+					ex_raidboss_info_list = new List<FDPJBEAKPMA>();
+					for(int i = 0; i < contExt.KNNHGJFJAEN_GetNumBosses(); i++)
+					{
+						List<PKNOKJNLPOE_EventRaid.KJJDLBFDGDM.DPAGNOHCPPH> l = contExt.CMDOFKLCFEB_GetBossRewards(i + 1, PKNOKJNLPOE_EventRaid.IEJAFPGDGNP.FGPLEPGICPO_2);
+						HOOEJMGLGFO h = new HOOEJMGLGFO();
+						h.GJAOLNLFEBD_BossName = contExt.AGEJGHGEGFF_GetBossName(i + 1);
+						for(int j = 0; j < l.Count; j++)
+						{
+							MFDJIFIIPJD m = new MFDJIFIIPJD();
+							m.KHEKNNFCAOI(l[j].PPFNGGCBJKC, l[j].HMFFHLPNMPH_Count);
+							h.HBHMAKNGKFK_Items.Add(m);
+							h.OFEGDGADHPK_IsPickupItem.Add(l[j].POACKFONCAH_IsPickup);
+							h.ADKDHKMPMHP_RateItem.Add(l[j].ADKDHKMPMHP_Rate);
+						}
+						mvp_reward_list.Add(h);
+						l = contExt.CMDOFKLCFEB_GetBossRewards(i + 1, PKNOKJNLPOE_EventRaid.IEJAFPGDGNP.DBPDLIPKFAL_1);
+						h = new HOOEJMGLGFO();
+						h.GJAOLNLFEBD_BossName = contExt.AGEJGHGEGFF_GetBossName(i + 1);
+						for(int j = 0; j < l.Count; j++)
+						{
+							MFDJIFIIPJD m = new MFDJIFIIPJD();
+							m.KHEKNNFCAOI(l[j].PPFNGGCBJKC, l[j].HMFFHLPNMPH_Count);
+							h.HBHMAKNGKFK_Items.Add(m);
+							h.OFEGDGADHPK_IsPickupItem.Add(l[j].POACKFONCAH_IsPickup);
+							h.ADKDHKMPMHP_RateItem.Add(l[j].ADKDHKMPMHP_Rate);
+						}
+						attack1st_reward_list.Add(h);
+						l = contExt.CMDOFKLCFEB_GetBossRewards(i + 1, PKNOKJNLPOE_EventRaid.IEJAFPGDGNP.NIHKBNNICFB_0);
+						h = new HOOEJMGLGFO();
+						h.GJAOLNLFEBD_BossName = contExt.AGEJGHGEGFF_GetBossName(i + 1);
+						for(int j = 0; j < l.Count; j++)
+						{
+							MFDJIFIIPJD m = new MFDJIFIIPJD();
+							m.KHEKNNFCAOI(l[j].PPFNGGCBJKC, l[j].HMFFHLPNMPH_Count);
+							h.HBHMAKNGKFK_Items.Add(m);
+							h.OFEGDGADHPK_IsPickupItem.Add(l[j].POACKFONCAH_IsPickup);
+							h.ADKDHKMPMHP_RateItem.Add(l[j].ADKDHKMPMHP_Rate);
+						}
+						disempowerment_reward_list.Add(h);
+					}
+					List<PKNOKJNLPOE_EventRaid.AAMIMFNBLKP> l2 = contExt.PNHPJDMNEPH();
+					int a3 = l2.Count;
+					int a1, a2;
+					contExt.CFKCMIBJOIA(out a1, out a2);
+					for(int i = 0; i < l2.Count; i++)
+					{
+						FDPJBEAKPMA f = new FDPJBEAKPMA();
+						f.ILELGGCCGMJ = l2[i].ILELGGCCGMJ;
+						f.DJEMBILEBFP = l2[i].ILELGGCCGMJ == a3;
+						int a4 = Mathf.Max(1, l2[i].ILELGGCCGMJ - a2);
+						int a5 = Mathf.Min(a3, a1 - l2[i].ILELGGCCGMJ);
+						f.IOBJDNEGEBB = l2[a4 - 1].EJGDHAENIDC;
+						f.PKLKOMIAKNL = l2[a5 - 1].EJGDHAENIDC;
+						f.ABHGIJFDLMM = l2[a4 - 1].LCJGEMENAFM;
+						f.EMPCHHKMKBG = l2[a5 - 1].LCJGEMENAFM;
+						f.DFMBENKEIHF = l2[a4 - 1].LBEGGOOHIFM;
+						f.HDPONDIDHAN = l2[a5 - 1].LBEGGOOHIFM;
+						f.HCPJEHKMFHB = l2[a4 - 1].NOLBNKAJANK;
+						f.IPJANNBLHMB = l2[a5 - 1].NOLBNKAJANK;
+						normal_raidboss_info_list.Add(f);
+					}
+					for(int i = 0; i < l2.Count; i++)
+					{
+						FDPJBEAKPMA f = new FDPJBEAKPMA();
+						f.ILELGGCCGMJ = l2[i].ILELGGCCGMJ;
+						f.DJEMBILEBFP = l2[i].ILELGGCCGMJ == a3;
+						int a4 = Mathf.Max(1, l2[i].ILELGGCCGMJ - a2);
+						int a5 = Mathf.Min(a3, a1 - l2[i].ILELGGCCGMJ);
+						f.IOBJDNEGEBB = l2[a4 - 1].EJGDHAENIDC;
+						f.PKLKOMIAKNL = l2[a5 - 1].EJGDHAENIDC;
+						f.ABHGIJFDLMM = l2[a4 - 1].DFCBKNLAFIM;
+						f.EMPCHHKMKBG = l2[a5 - 1].DFCBKNLAFIM;
+						f.DFMBENKEIHF = l2[a4 - 1].GEKJGFHKGEP;
+						f.HDPONDIDHAN = l2[a5 - 1].GEKJGFHKGEP;
+						f.HCPJEHKMFHB = l2[a4 - 1].PNHCJNAJPEM;
+						f.IPJANNBLHMB = l2[a5 - 1].PNHCJNAJPEM;
+						ex_raidboss_info_list.Add(f);
+					}
 				}
 				else if(cont.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
 				{
@@ -486,7 +592,30 @@ namespace XeApp.Game.Menu
 			}
 			if(viewData.eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 			{
-				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Raid");
+				f1 = 0;
+				for(int i = 0; i < viewData.disempowerment_reward_list.Count; i++)
+				{
+					RaidRewardListSeparator sep = new RaidRewardListSeparator();
+					sep.Top = new Vector2(0, -f1);
+					sep.Height = 55.0f;
+					sep.ResourceType = 5;
+					sep.BossName = viewData.disempowerment_reward_list[i].GJAOLNLFEBD_BossName;
+					m_rewardDisempowermentList.Add(sep);
+					f1 += 85;
+					for(int j = 0; j < viewData.disempowerment_reward_list[i].HBHMAKNGKFK_Items.Count; j++)
+					{
+						RaidRewardListItem it = new RaidRewardListItem();
+						it.Top = new Vector2(140, -f1);
+						it.Height = 104;
+						it.ResourceType = 4;
+						it.Item = viewData.disempowerment_reward_list[i].HBHMAKNGKFK_Items[j];
+						it.IsPickupItem = viewData.disempowerment_reward_list[i].OFEGDGADHPK_IsPickupItem[j];
+						it.Rate = viewData.disempowerment_reward_list[i].ADKDHKMPMHP_RateItem[j];
+						m_rewardDisempowermentList.Add(it);
+						KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(it.Item.JJBGOIMEIPF_ItemId, 0));
+						f1 += 104;
+					}
+				}
 			}
 		}
 
@@ -708,7 +837,18 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Raid");
+				if(m_RewardEvRaid.gameObject.transform.GetComponent<RectTransform>().localPosition.x > 5000.0f)
+				{
+					m_isChanging = true;
+					m_RaidLayout.WaitAnimation(() =>
+					{
+						//0x1A6ACC8
+						m_isChanging = false;
+						SwitchWindow(isPlate, isRaidReward, title);
+					});
+					return;
+				}
+				SwitchWindow(isPlate, isRaidReward, title);
 			}
 		}
 
@@ -796,11 +936,31 @@ namespace XeApp.Game.Menu
 				}
 				else if(item is RaidRewardListSeparator)
 				{
-					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Raid");
+					PopupRewardEvRaidSeparatorLayout it = item.Layout.GetComponent<PopupRewardEvRaidSeparatorLayout>();
+					if(it != null)
+					{
+						it.SetBossName((item as RaidRewardListSeparator).BossName);
+					}
 				}
 				else if(item is RaidRewardListItem)
 				{
-					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Raid");
+					RaidRewardListItem raidList = item as RaidRewardListItem;
+					PopupRewardEvRaidItemLayout it = raidList.Layout.GetComponent<PopupRewardEvRaidItemLayout>();
+					if(it != null)
+					{
+						it.SetItemData(raidList.Item, raidList.IsPickupItem, raidList.Rate);
+						it.SetButtonEvent(() =>
+						{
+							//0x1A6B598
+							SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_003);
+							m_MainLayout.FxScrollView.LockScroll();
+							raidList.OnShowItemDetails(() =>
+							{
+								//0x1A6A8FC
+								m_MainLayout.FxScrollView.UnLockScroll();
+							});
+						});
+					}
 				}
 			}
 		}
@@ -873,7 +1033,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1A6A390 Offset: 0x1A6A390 VA: 0x1A6A390
-		// private static bool IsCreateRiadSetting(IKDICBBFBMI eventCtrl, bool isRaidBossSelect) { }
+		private static bool IsCreateRiadSetting(IKDICBBFBMI_EventBase eventCtrl, bool isRaidBossSelect)
+		{
+			if(sm_Setting != null)
+				return isRaidBossSelect != sm_Setting.isRaidBossSelect;
+			return true;
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x70DBAC Offset: 0x70DBAC VA: 0x70DBAC
 		// // RVA: 0x1A6A488 Offset: 0x1A6A488 VA: 0x1A6A488
@@ -925,10 +1090,57 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x70DC24 Offset: 0x70DC24 VA: 0x70DC24
 		// // RVA: 0x1A6A568 Offset: 0x1A6A568 VA: 0x1A6A568
-		// public static IEnumerator Co_ShowPopupRaidEvent(IKDICBBFBMI eventCtrl, bool isRaidBossSelect, Transform parent, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> buttonCallback) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x70DCBC Offset: 0x70DCBC VA: 0x70DCBC
-		// // RVA: 0x1A6A8FC Offset: 0x1A6A8FC VA: 0x1A6A8FC
-		// private void <UpdateContent>b__46_5() { }
+		public static IEnumerator Co_ShowPopupRaidEvent(IKDICBBFBMI_EventBase eventCtrl, bool isRaidBossSelect, Transform parent, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> buttonCallback)
+		{
+			//0x1A6C324
+			PKNOKJNLPOE_EventRaid ev = eventCtrl as PKNOKJNLPOE_EventRaid;
+			if(ev != null)
+			{
+				if(IsCreateRiadSetting(ev, isRaidBossSelect))
+				{
+					PopupRewardEvCheckSetting s = new PopupRewardEvCheckSetting();
+					s.WindowSize = SizeType.Large;
+					s.TitleText = "";
+					s.Buttons = new ButtonInfo[1]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
+					};
+					sm_Setting = s;
+					s.EventCtrl = eventCtrl;
+					s.InitializeView();
+					s.SetParent(parent);
+					s.isRaidBossSelect = isRaidBossSelect;
+					if(!isRaidBossSelect)
+					{
+						s.Tabs = new PopupTabButton.ButtonLabel[4]
+						{
+							PopupTabButton.ButtonLabel.RewardMVP,
+							PopupTabButton.ButtonLabel.RewardAttack1st,
+							PopupTabButton.ButtonLabel.RewardDisempowerment,
+							PopupTabButton.ButtonLabel.RewardDisempowermentItems
+						};
+						s.DefaultTab = PopupTabButton.ButtonLabel.RewardMVP;
+					}
+					else
+					{
+						s.Tabs = new PopupTabButton.ButtonLabel[5]
+						{
+							PopupTabButton.ButtonLabel.Rankings,
+							PopupTabButton.ButtonLabel.RewardMVP,
+							PopupTabButton.ButtonLabel.RewardAttack1st,
+							PopupTabButton.ButtonLabel.RewardDisempowerment,
+							PopupTabButton.ButtonLabel.RewardDisempowermentItems
+						};
+						s.DefaultTab = PopupTabButton.ButtonLabel.Rankings;
+					}
+					PopupWindowManager.Show(s, buttonCallback, (IPopupContent content, PopupTabButton.ButtonLabel label) =>
+					{
+						//0x1A6AB40
+						(content as PopupRewardEvCheck).ChangeTab(label);
+					}, null, null, true, true, false);
+				}
+			}
+			yield break;
+		}
 	}
 }

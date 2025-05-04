@@ -146,7 +146,7 @@ namespace XeApp
 		//// RVA: 0x1AC3BFC Offset: 0x1AC3BFC VA: 0x1AC3BFC
 		private void InitViewIntimacy()
 		{
-			if(Setting.viewDecoItemData.GBJFNGCDKPM != 1)
+			if(Setting.viewDecoItemData.GBJFNGCDKPM_Attribute != 1)
 			{
 				viewIntimacyData = null;
 				return;
