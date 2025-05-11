@@ -65,8 +65,8 @@ public class GBNDFCEDNMG
         JIFAFBPHACI = 16,
         JEMNFEKLHOA = 17,
         KNPBBPNJNEM = 18,
-        ADCDEIPMKJI = 19,
-        DCFBLGLFJDO = 20,
+        ADCDEIPMKJI_19 = 19,
+        DCFBLGLFJDO_20 = 20,
         HKMENCLLHJB = 21,
         ABHINADBMOE = 22,
         KAMDLPNNGCG = 23,
@@ -74,14 +74,14 @@ public class GBNDFCEDNMG
         NJKNOEPAELH = 25,
         POHBAGJLOLI = 26,
         EBCMMPMCHIK = 27,
-        BEKIJHOCDFE = 28,
+        BEKIJHOCDFE_28 = 28,
         APIDIDMAKHL = 29,
         OOGEAGAJKAG = 30,
         PMMOLBAAHEM_31 = 31,
         JLFJCIOOABC_32 = 32,
         CHIIAHIJFCB = 33,
         DMNIOHMDJEI = 34,
-        KMHJDFJHMEP = 35,
+        KMHJDFJHMEP_35 = 35,
         EKKMNHIKGKF = 36,
         PCPDPJAMPBP = 37,
         FDIEEMDFMGO = 38,
@@ -276,7 +276,22 @@ public class GBNDFCEDNMG
 	}
 
 	// // RVA: 0x16A7E48 Offset: 0x16A7E48 VA: 0x16A7E48
-	// public static bool KMFPHOPBFEA(AKIIJBEJOEP NDFIEMPPMLF, IKCGAJKCPFN NHLBKJCPLBL, int HMFFHLPNMPH) { }
+	public static bool KMFPHOPBFEA(AKIIJBEJOEP NDFIEMPPMLF, IKCGAJKCPFN NHLBKJCPLBL, int HMFFHLPNMPH)
+	{
+		if(NHLBKJCPLBL.EALOBDHOCHP_Stat == 1)
+		{
+			if(NDFIEMPPMLF.HDAMBOOCIAA_ClearType != 13)
+			{
+				NHLBKJCPLBL.HMFFHLPNMPH_Count = HMFFHLPNMPH;
+				if(NDFIEMPPMLF.GLDIGCJNOBO_ClearCount <= NHLBKJCPLBL.HMFFHLPNMPH_Count)
+				{
+					NHLBKJCPLBL.EALOBDHOCHP_Stat = 2;
+				}
+				return true;
+			}
+		}
+		return false;
+	}
 
 	// // RVA: 0x16A7F3C Offset: 0x16A7F3C VA: 0x16A7F3C
 	// public static bool GLDHKNMLEIG(AKIIJBEJOEP NDFIEMPPMLF, OFNLIBDEIFA.AGFEALDEJOL NHLBKJCPLBL, JGEOBNENMAH.HAJIFNABIFF OMNOFMEBLAD) { }
@@ -694,8 +709,12 @@ public class GBNDFCEDNMG
 					return false;
 				if(LIKDEHHKFEH.HIDHLFCBIDE_EventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 					return false;
-				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event Raid");
-				break;
+				{
+					PKNOKJNLPOE_EventRaid ev = LIKDEHHKFEH as PKNOKJNLPOE_EventRaid;
+					if(NDFIEMPPMLF.JJECMJFDEEP_ClearConditionValue == 0)
+						return true;
+					return NDFIEMPPMLF.JJECMJFDEEP_ClearConditionValue == ev.MCEJJBANCDA.INDDJNMPONH_Type;
+				}
 			case 30:
 			case 31:
 			case 32:
@@ -892,7 +911,10 @@ public class GBNDFCEDNMG
 			case 29:
 				if(LIKDEHHKFEH.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 				{
-					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event raid");
+					PKNOKJNLPOE_EventRaid ev = LIKDEHHKFEH as PKNOKJNLPOE_EventRaid;
+					if(NDFIEMPPMLF.JJECMJFDEEP_ClearConditionValue == 0)
+						return true;
+					return NDFIEMPPMLF.JJECMJFDEEP_ClearConditionValue == (int)ev.CFLEMFADGLG;
 				}
 				break;
 			case 37:

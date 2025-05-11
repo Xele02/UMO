@@ -383,14 +383,14 @@ namespace XeApp.Game.Menu
 				yield return Co.R(SettingLobbyId());
 				if(IsRequestGotoTitle)
 					yield break;
-				m_RaidLobbyController.NIIEJKGNEBH(m_currentLobbyId);
+				m_RaidLobbyController.NIIEJKGNEBH_InitializeBbs(m_currentLobbyId);
 				yield return Co.R(LobbyViewingSystemText());
 				if(IsRequestGotoTitle)
 					yield break;
 				m_windowUi.GuideCharaInitialize(null);
 				yield return null;
 			}
-			m_RaidLobbyController.NIIEJKGNEBH();
+			m_RaidLobbyController.NIIEJKGNEBH_InitializeBbs();
 			m_RaidLobbyController.MKIBMJCPHKI(OnNewReport);
 			m_raidSelect = m_RaidLobbyController.JGICMFAKGFO_SelectedChatType;
 			m_windowUi.GuideCharaInitialize(m_RaidLobbyController);
@@ -927,7 +927,7 @@ namespace XeApp.Game.Menu
 			for(int i = m_commentCount - 1; i >= 0; i--)
 			{
 				ANPBHCNJIDI.NNPGLGHDBKN cm = m_RaidLobbyController.GDGCADFCDCL_GetComment( (NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE) m_raidSelect, i);
-				m_windowUi.AddBbsListItem(cm, cm.INDDJNMPONH, m_PlayerId, i, IsMemberLobby);
+				m_windowUi.AddBbsListItem(cm, cm.INDDJNMPONH_Type, m_PlayerId, i, IsMemberLobby);
 			}
 			m_windowUi.AddScrollItem();
 			m_windowUi.UpdateScroll();
@@ -941,7 +941,7 @@ namespace XeApp.Game.Menu
 			for(int i = m_commentCount - 1; i >= 0; i--)
 			{
 				ANPBHCNJIDI.NNPGLGHDBKN cm = m_RaidLobbyController.GDGCADFCDCL_GetComment( (NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE) m_raidSelect, i);
-				m_windowUi.AddBbsListItem(cm, cm.INDDJNMPONH, m_PlayerId, i, IsMemberLobby);
+				m_windowUi.AddBbsListItem(cm, cm.INDDJNMPONH_Type, m_PlayerId, i, IsMemberLobby);
 			}
 			m_windowUi.AddScrollItem();
 			m_windowUi.UpdateDisplayOnly();
@@ -957,7 +957,7 @@ namespace XeApp.Game.Menu
 			for(int i = m_commentCount - 1; i >= 0; i--)
 			{
                 ANPBHCNJIDI.NNPGLGHDBKN cm = m_RaidLobbyController.GDGCADFCDCL_GetComment((NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE)m_raidSelect, i);
-				m_windowUi.AddBbsListItem(cm, cm.INDDJNMPONH, m_PlayerId, i,IsMemberLobby);
+				m_windowUi.AddBbsListItem(cm, cm.INDDJNMPONH_Type, m_PlayerId, i,IsMemberLobby);
             }
 			m_windowUi.AddScrollItem();
 			m_windowUi.NextCommentAddScrollLsit(index);
@@ -1080,7 +1080,7 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_001);
 			m_newsReport.Leave();
 			LobbyLayoutItemR.CannonMovieInfo d = new LobbyLayoutItemR.CannonMovieInfo();
-			ANPBHCNJIDI.NBHIMCACDHM m = m_RaidLobbyController.CPJAANJHBFC().HCAHCFGPJIF;
+			ANPBHCNJIDI.NBHIMCACDHM m = m_RaidLobbyController.KPPHGAAOMDN.HCAHCFGPJIF;
 			d.userName = m.PHGNPFJIBLF_Name;
 			d.bossName = m.GJAOLNLFEBD_BossName;
 			d.damage = m.HALIDDHLNEG_Damage;
@@ -1247,11 +1247,11 @@ namespace XeApp.Game.Menu
 				m_windowUi.LockScroll();
 				if(!IsMemberLobby)
 				{
-					m_RaidLobbyController.NIIEJKGNEBH(m_currentLobbyId);
+					m_RaidLobbyController.NIIEJKGNEBH_InitializeBbs(m_currentLobbyId);
 				}
 				else
 				{
-					m_RaidLobbyController.NIIEJKGNEBH();
+					m_RaidLobbyController.NIIEJKGNEBH_InitializeBbs();
 				}
 				yield return Co.R(Co_NetBbsUpdate());
 				if(m_IsUpdateError)
@@ -1293,7 +1293,7 @@ namespace XeApp.Game.Menu
 			bool success = false;
 			bool wait = false;
 			bool error = false;
-			m_RaidLobbyController.CBOFAFKMIBE(m_RaidLobbyController.GDGCADFCDCL_GetComment(NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE.JAFEBKBFPBB_1_Battle, index) as ANPBHCNJIDI.PHICILDLHJP, () =>
+			m_RaidLobbyController.CBOFAFKMIBE_CopyBbsBattleLogCommentToMain(m_RaidLobbyController.GDGCADFCDCL_GetComment(NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE.JAFEBKBFPBB_1_Battle, index) as ANPBHCNJIDI.PHICILDLHJP, () =>
 			{
 				//0xD08BD0
 				success = true;
@@ -1571,7 +1571,7 @@ namespace XeApp.Game.Menu
 			//0xD0A5DC
 			MenuScene.Instance.InputDisable();
 			m_windowUi.LockScroll();
-			m_RaidLobbyController.NIIEJKGNEBH();
+			m_RaidLobbyController.NIIEJKGNEBH_InitializeBbs();
 			yield return Co.R(Co_NetBbsUpdate());
 			if(m_IsUpdateError)
 			{
@@ -1765,7 +1765,7 @@ namespace XeApp.Game.Menu
 		{
 			//0xD0C3E8
 			bool isDone = false;
-			m_RaidLobbyController.JCCAPHGLOJF(m_mcannonLogId, (List<ANPBHCNJIDI.BNEIDPGIAFM> stamps) =>
+			m_RaidLobbyController.JCCAPHGLOJF_GetBbsBattleLogMacrossCannonStamp(m_mcannonLogId, (List<ANPBHCNJIDI.BNEIDPGIAFM> stamps) =>
 			{
 				//0xD093F4
 				List<int> l = new List<int>();

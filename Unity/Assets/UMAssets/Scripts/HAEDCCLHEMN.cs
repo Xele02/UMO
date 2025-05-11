@@ -773,7 +773,7 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 			bool b3 = d.EGBOHDFBAPB_End < dbSection.NGHKJOEDLIP.BONDDBOFBND_Start;
 			int idx = 0;
 			if(RuntimeSettings.CurrentSettings.UnlimitedEvent)
-				b2 = false;
+				b3 = false;
 			AGLILDLEFDK_Missions = dbSection.NNMPGOAGEOL_Missions;
 			CKEDJHEFJCJ = 0;
 			OLDFFDMPEBM_Quests = d.NNMPGOAGEOL_Quests;

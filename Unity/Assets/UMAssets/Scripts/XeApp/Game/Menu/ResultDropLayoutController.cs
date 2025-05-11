@@ -234,7 +234,7 @@ namespace XeApp.Game.Menu
 			lobbyController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as NKOBMDPHNGP_EventRaidLobby;
 			if(lobbyController == null)
 				yield break;
-			if(lobbyController.JNCAEPBEEAH() != 0)
+			if(lobbyController.FDGMLPLCALF != 0)
 			{
 				ResultDropFoldRadarController dropFoldRadarLayoutController = null;
 				lytAssetOp = AssetBundleManager.LoadLayoutAsync("ly/207.xab", "UI_ResultDropFoldRadar");
@@ -249,7 +249,7 @@ namespace XeApp.Game.Menu
 				}));
 				AssetBundleManager.UnloadAssetBundle("ly/207.xab", false);
 				bool done = false;
-				dropFoldRadarLayoutController.Setup(lobbyController.JNCAEPBEEAH());
+				dropFoldRadarLayoutController.Setup(lobbyController.FDGMLPLCALF);
 				dropFoldRadarLayoutController.onClickOkayButton = () =>
 				{
 					//0xD02494

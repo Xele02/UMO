@@ -97,7 +97,14 @@ public class CGJKNOCAPII
 				}
 				if(ev is PKNOKJNLPOE_EventRaid)
 				{
-					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event Raid");
+					NKOBMDPHNGP_EventRaidLobby evLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Find((IKDICBBFBMI_EventBase JPAEDJJFFOI) =>
+					{
+						//0x12BD8F4
+						return JPAEDJJFFOI.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby;
+					}) as NKOBMDPHNGP_EventRaidLobby;
+					if(evLobby != null && evLobby.ILCPALOKKHC_GetStep() < JKOHBJPCAJL.CNNCBDKIPGE.EGIOFFACHCP_4 && 
+						evLobby.ILCPALOKKHC_GetStep() != JKOHBJPCAJL.CNNCBDKIPGE.ECKNIOGBKJO_2)
+						continue;
 				}
 				for(int j = 0; j < ev.AGLILDLEFDK_Missions.Count; j++)
 				{

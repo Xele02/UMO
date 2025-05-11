@@ -59,7 +59,7 @@ namespace XeApp.Game.Menu
 		{
 			m_index = index;
 			SetPlayerName(playerData.LBODHBDOMGK_Name);
-			SetPlayerDamage(playerData.HALIDDHLNEG);
+			SetPlayerDamage(playerData.HALIDDHLNEG_Damage);
 			SetPlayerRank(playerData.ADFIHAPELAN_PLevel);
 			SetPlayerBe(playerData.OFHFGHJEKKL);
 			SetPlayerRankImage(playerData.HIMMCGKKOOL_Rate);

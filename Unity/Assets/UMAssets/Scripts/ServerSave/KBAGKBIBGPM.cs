@@ -40,13 +40,13 @@ public class KBAGKBIBGPM_EventRaidLobby : KLFDBFMNLBL_ServerSaveBlock
 		// public bool LHBMFPPPFBM() { }
 
 		// // RVA: 0x1014878 Offset: 0x1014878 VA: 0x1014878
-		public int KAINPNMMAEK(RaidItemConstants.Type INDDJNMPONH)
+		public int KAINPNMMAEK_GetItemCount(RaidItemConstants.Type INDDJNMPONH)
 		{
 			return LJKMKCOAICL_ItemCnt[(int)INDDJNMPONH - 1].DNJEJEANJGL_Value;
 		}
 
 		// // RVA: 0x101830C Offset: 0x101830C VA: 0x101830C
-		public void PPJAGFPBFHJ(RaidItemConstants.Type INDDJNMPONH, int HMFFHLPNMPH)
+		public void PPJAGFPBFHJ_SetItemCount(RaidItemConstants.Type INDDJNMPONH, int HMFFHLPNMPH)
 		{
 			LJKMKCOAICL_ItemCnt[(int)INDDJNMPONH - 1].DNJEJEANJGL_Value = HMFFHLPNMPH;
 		}
@@ -188,7 +188,7 @@ public class KBAGKBIBGPM_EventRaidLobby : KLFDBFMNLBL_ServerSaveBlock
 			data3.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
 			for(int j = 0; j < 3; j++)
 			{
-				data3.Add(FBCJICEPLED[i].KAINPNMMAEK((RaidItemConstants.Type)j + 1));
+				data3.Add(FBCJICEPLED[i].KAINPNMMAEK_GetItemCount((RaidItemConstants.Type)j + 1));
 			}
 			EDOHBJAPLPF_JsonData data4 = new EDOHBJAPLPF_JsonData();
 			data4[AFEHLCGHAEE_Strings.LJNAKDMILMC_key] = FBCJICEPLED[i].MPCAGEPEJJJ_Key;
@@ -253,7 +253,7 @@ public class KBAGKBIBGPM_EventRaidLobby : KLFDBFMNLBL_ServerSaveBlock
 						IBCGPBOGOGP_ReadIntArray(block[i], "item_cnt", 0, 3, (int OIPCCBHIKIA, int JBGEEPFKIGG) =>
 						{
 							//0x10182D4
-							FBCJICEPLED[i].PPJAGFPBFHJ((RaidItemConstants.Type)OIPCCBHIKIA + 1, JBGEEPFKIGG);
+							FBCJICEPLED[i].PPJAGFPBFHJ_SetItemCount((RaidItemConstants.Type)OIPCCBHIKIA + 1, JBGEEPFKIGG);
 						}, ref isInvalid);
 						if(block[i].BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.NNMPGOAGEOL_quests))
 						{

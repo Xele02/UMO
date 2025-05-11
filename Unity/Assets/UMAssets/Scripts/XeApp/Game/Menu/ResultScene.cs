@@ -932,7 +932,7 @@ namespace XeApp.Game.Menu
 				PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 				if(evRaid.HJPNJBCJPNJ(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6))
 				{
-					if(evRaid.NAMEFMANAKG().FIMNHOIJBLO)
+					if(evRaid.PLFBKEPLAAA.FIMNHOIJBLO)
 					{
 						MessageBank bk = MessageManager.Instance.GetBank("menu");
 						TextPopupSetting s = new TextPopupSetting();
@@ -1256,7 +1256,7 @@ namespace XeApp.Game.Menu
 		private void InitRaidPointResult()
 		{
 			PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
-			if(evRaid.KACFOENGHIK().CMCKNKKCNDK == NHCDBBBMFFG.NFDONDKDHPK_3_RaidBossEscape)
+			if(evRaid.JIBMOEHKMGB.CMCKNKKCNDK_Status == NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
 			{
 				ShowRaidBossEscapedPop();
 			}
@@ -1292,7 +1292,7 @@ namespace XeApp.Game.Menu
 		{
 			//0xB5F214
 			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
-			yield return Co.R(MenuScene.Instance.BgControl.ChangeBgCoroutine(BgType.Raid, ev.KACFOENGHIK().HPPDFBKEJCG_BgId, SceneGroupCategory.UNDEFINED, TransitionList.Type.UNDEFINED, -1));
+			yield return Co.R(MenuScene.Instance.BgControl.ChangeBgCoroutine(BgType.Raid, ev.JIBMOEHKMGB.HPPDFBKEJCG_BgId, SceneGroupCategory.UNDEFINED, TransitionList.Type.UNDEFINED, -1));
 			callback();
 		}
 
@@ -1331,11 +1331,11 @@ namespace XeApp.Game.Menu
 			MessageBank msgBank = MessageManager.Instance.GetBank("menu");
 			PKNOKJNLPOE_EventRaid raidController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			raidResultDamageLayoutController.gameObject.SetActive(false);
-			if(raidController.KLDMMPJKHEO() == null)
+			if(raidController.KONJMFICNJJ == null)
 			{
 				if(raidController.LMIFOCDCNAI())
 				{
-					if(raidController.KACFOENGHIK().PPFNGGCBJKC == raidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC)
+					if(raidController.JIBMOEHKMGB.PPFNGGCBJKC_Id == raidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id)
 					{
 						PopupRaidBossHelpContentSetting s = new PopupRaidBossHelpContentSetting();
 						s.TitleText = msgBank.GetMessageByLabel("pop_raid_helprequest_title");
@@ -1382,7 +1382,7 @@ namespace XeApp.Game.Menu
 										IsFriend = true;
 									}
 								}
-								raidController.MCKDAPPELKJ(IsLobby, IsFriend, (List<PKNOKJNLPOE_EventRaid.ECICDAPCMJG> helper) =>
+								raidController.MCKDAPPELKJ_RequestBossHelp(IsLobby, IsFriend, (List<PKNOKJNLPOE_EventRaid.ECICDAPCMJG> helper) =>
 								{
 									//0xB571D8
 									if(helper.Count < 0)

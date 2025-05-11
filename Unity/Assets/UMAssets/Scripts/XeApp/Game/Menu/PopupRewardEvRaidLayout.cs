@@ -173,7 +173,7 @@ namespace XeApp.Game.Menu
 			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			if(ev != null)
 			{
-				m_utaGradeMoreText = ev.ICCEILFHKEL();
+				m_utaGradeMoreText = ev.ICCEILFHKEL_GetUtaGradeMoreText();
 			}
 			int itemId = SpItemConstants.MakeItemId(SpItemConstants.SpItemId.RaidMedal);
 			GameManager.Instance.ItemTextureCache.Load(itemId, (IiconTexture texture) =>

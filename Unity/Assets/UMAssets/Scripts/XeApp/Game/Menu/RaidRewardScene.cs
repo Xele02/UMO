@@ -145,9 +145,9 @@ namespace XeApp.Game.Menu
 				yield return this.StartCoroutineWatched(Co_SetBossBg(g.HPPDFBKEJCG_BgId));
 				PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 				bool done = false;
-				McrsCannonViewer.Initiarize(transform, ev.KFBDBBCCPBB(ev.KACFOENGHIK().INDDJNMPONH_Type), ev.NNDFMCHDJOH_GetBossSerie(ev.KACFOENGHIK().INDDJNMPONH_Type), 
-					ev.KACFOENGHIK().HPPDFBKEJCG_BgId, ev.KACFOENGHIK().FJOLNJLLJEJ_Rank, ev.AGEJGHGEGFF_GetBossName(ev.KACFOENGHIK().INDDJNMPONH_Type), 
-					ev.MBNLPELOLBJ().HALIDDHLNEG_MCannonDamage, () =>
+				McrsCannonViewer.Initiarize(transform, ev.KFBDBBCCPBB(ev.JIBMOEHKMGB.INDDJNMPONH_Type), ev.NNDFMCHDJOH_GetBossSerie(ev.JIBMOEHKMGB.INDDJNMPONH_Type), 
+					ev.JIBMOEHKMGB.HPPDFBKEJCG_BgId, ev.JIBMOEHKMGB.FJOLNJLLJEJ_Rank, ev.AGEJGHGEGFF_GetBossName(ev.JIBMOEHKMGB.INDDJNMPONH_Type), 
+					ev.GGDBEANLCPC.HALIDDHLNEG_MCannonDamage, () =>
 					{
 						//0x1817314
 						done = true;
@@ -178,7 +178,7 @@ namespace XeApp.Game.Menu
 		private void OnClickRaidDamageResultEnd()
 		{
 			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
-			if(ev.KLDMMPJKHEO() == null)
+			if(ev.KONJMFICNJJ == null)
 			{
 				this.StartCoroutineWatched(Co_RaidBossHelp());
 			}
@@ -200,7 +200,7 @@ namespace XeApp.Game.Menu
 			cont = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			if(cont.LMIFOCDCNAI())
 			{
-				if(cont.KACFOENGHIK().PPFNGGCBJKC == cont.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC)
+				if(cont.JIBMOEHKMGB.PPFNGGCBJKC_Id == cont.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id)
 				{
 					PopupRaidBossHelpContentSetting s = new PopupRaidBossHelpContentSetting();
 					s.TitleText = bank.GetMessageByLabel("pop_raid_helprequest_title");
@@ -231,7 +231,7 @@ namespace XeApp.Game.Menu
 						MenuScene.Instance.InputDisable();
 						bool done = false;
 						bool err = false;
-						cont.MCKDAPPELKJ(selectType == RaidBossHelpWindow.SelectType.Loby || selectType == RaidBossHelpWindow.SelectType.LobyPrioFriend, selectType == RaidBossHelpWindow.SelectType.LobyPrioFriend, (List<PKNOKJNLPOE_EventRaid.ECICDAPCMJG> helper) =>
+						cont.MCKDAPPELKJ_RequestBossHelp(selectType == RaidBossHelpWindow.SelectType.Loby || selectType == RaidBossHelpWindow.SelectType.LobyPrioFriend, selectType == RaidBossHelpWindow.SelectType.LobyPrioFriend, (List<PKNOKJNLPOE_EventRaid.ECICDAPCMJG> helper) =>
 						{
 							//0x1817358
 							if(helper.Count < 1)

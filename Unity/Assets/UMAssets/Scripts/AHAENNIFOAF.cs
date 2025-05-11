@@ -6,9 +6,9 @@ public static class AHAENNIFOAF
 {
     public enum IAOPMEAIHLH
     {
-        IDGJGMNNJEF = 0,
-        JBMJEOBODHH = 1,
-        ANLJMCJAMFJ = 2,
+        IDGJGMNNJEF_0 = 0,
+        JBMJEOBODHH_1 = 1,
+        ANLJMCJAMFJ_2 = 2,
         BJNAMAANNMB_3 = 3,
         AEFCOHJBLPO = 4,
         HJNNKCMLGFL_M1 = -1,
@@ -23,7 +23,10 @@ public static class AHAENNIFOAF
     }; // 0x0
 
 	// // RVA: 0x15C510C Offset: 0x15C510C VA: 0x15C510C
-	// public static void PAMKDBAMMIE(StringBuilder KOHNLDKIKPC, int EKANGPODCEP, int AIBFGKBACCB, NKOBMDPHNGP.FLHJEJGJJGE KLMCILEDMEL) { }
+	public static void PAMKDBAMMIE(StringBuilder KOHNLDKIKPC, int EKANGPODCEP, int AIBFGKBACCB, NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE KLMCILEDMEL)
+	{
+		KOHNLDKIKPC.SetFormat(AMEJJEEKKLD[(int)KLMCILEDMEL], EKANGPODCEP, AIBFGKBACCB);
+	}
 
 	// // RVA: 0x15C5230 Offset: 0x15C5230 VA: 0x15C5230
 	public static void BCJOMHAIGGJ(StringBuilder KOHNLDKIKPC, int MLPEHNBNOGD)

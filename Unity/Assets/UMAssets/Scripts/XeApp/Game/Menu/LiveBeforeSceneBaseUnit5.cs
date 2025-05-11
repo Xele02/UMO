@@ -176,7 +176,7 @@ namespace XeApp.Game.Menu
 					if(mi.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 					{
 						PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(mi.EventUniqueId) as PKNOKJNLPOE_EventRaid;
-						if(evRaid == null || !(evRaid.KAHCHHILDEM() == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1 || evRaid.KAHCHHILDEM() == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2))
+						if(evRaid == null || !(evRaid.CFLEMFADGLG == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1 || evRaid.CFLEMFADGLG == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2))
 						{
 							CIOECGOMILE.HHCJCDFCLOB.GJACBNJHDHI(ticketCount, consumeTime);
 						}
@@ -237,7 +237,7 @@ namespace XeApp.Game.Menu
 				TextPopupSetting s = new TextPopupSetting();
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
 				UnityEngine.Debug.LogWarning("StringLiteral_18271" + status.ToString());
-				if(status == NHCDBBBMFFG.NFDONDKDHPK_3_RaidBossEscape)
+				if(status == NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
 				{
 					s.SetParent(transform);
 					s.WindowSize = SizeType.Small;

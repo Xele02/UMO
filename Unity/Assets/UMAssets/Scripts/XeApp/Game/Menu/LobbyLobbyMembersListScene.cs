@@ -342,7 +342,7 @@ namespace XeApp.Game.Menu
 		{
 			NKOBMDPHNGP_EventRaidLobby ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			return ev.OFAKIAJNPDF(ev.HJJBDFCMJJM()) + JpStringLiterals.StringLiteral_367 + string.Format(bk.GetMessageByLabel("lobby_room_num_format"), ev.GAHICKBDHFO());
+			return ev.OFAKIAJNPDF_GetGroupName(ev.HJJBDFCMJJM_GetGroupId()) + JpStringLiterals.StringLiteral_367 + string.Format(bk.GetMessageByLabel("lobby_room_num_format"), ev.GAHICKBDHFO_GetRoomId());
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6EA794 Offset: 0x6EA794 VA: 0x6EA794

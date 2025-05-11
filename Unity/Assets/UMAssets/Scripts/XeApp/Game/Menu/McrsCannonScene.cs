@@ -154,10 +154,10 @@ namespace XeApp.Game.Menu
 		private void MovieSetting()
 		{
 			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
-			series = ev.NNDFMCHDJOH_GetBossSerie(ev.KACFOENGHIK().INDDJNMPONH_Type);
+			series = ev.NNDFMCHDJOH_GetBossSerie(ev.JIBMOEHKMGB.INDDJNMPONH_Type);
 			m_pattern = 0;
 			m_quality = 2;
-			m_cannonDamangeLayout.Setup(ev.KACFOENGHIK().FJOLNJLLJEJ_Rank, ev.AGEJGHGEGFF_GetBossName(ev.KACFOENGHIK().INDDJNMPONH_Type), ev.MBNLPELOLBJ().HALIDDHLNEG_MCannonDamage);
+			m_cannonDamangeLayout.Setup(ev.JIBMOEHKMGB.FJOLNJLLJEJ_Rank, ev.AGEJGHGEGFF_GetBossName(ev.JIBMOEHKMGB.INDDJNMPONH_Type), ev.GGDBEANLCPC.HALIDDHLNEG_MCannonDamage);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7139DC Offset: 0x7139DC VA: 0x7139DC
@@ -166,7 +166,7 @@ namespace XeApp.Game.Menu
 		{
 			//0xEBBFE0
 			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
-			yield return Co.R(MenuScene.Instance.BgControl.ChangeBgCoroutine(BgType.Raid, ev.KACFOENGHIK().HPPDFBKEJCG_BgId, SceneGroupCategory.UNDEFINED, TransitionList.Type.UNDEFINED, -1));
+			yield return Co.R(MenuScene.Instance.BgControl.ChangeBgCoroutine(BgType.Raid, ev.JIBMOEHKMGB.HPPDFBKEJCG_BgId, SceneGroupCategory.UNDEFINED, TransitionList.Type.UNDEFINED, -1));
 		}
 
 		// // RVA: 0xEBB928 Offset: 0xEBB928 VA: 0xEBB928

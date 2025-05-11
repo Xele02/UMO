@@ -109,6 +109,7 @@ class JpStringLiterals
 	public static string StringLiteral_10177 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10177", "ホーム背景"); } } // 0x03bb29bc
 	public static string StringLiteral_10178 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10178", "ガチャ天井アイテム"); } } // 0x03bb29c0
 	public static string StringLiteral_10282 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10282", "AP全回復"); } } //0x03bb2b60
+	public static string StringLiteral_10284 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10284", "ミラージュ「APが全回復しました！」"); } } //03bb2b68
 	public static string StringLiteral_10294 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10294", "超時空SNS"); } } // 0x03bb2b90
 	public static string StringLiteral_10298 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10298", "ログボを受け取ろう！"); } } //0x03bb2ba0
 	public static string StringLiteral_10299 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10299", "歌晶石100個を2日目ログボでプレゼント！今すぐログインしよう！"); } } // 0x03bb2ba4
@@ -402,6 +403,8 @@ class JpStringLiterals
 	public static string StringLiteral_13104 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_13104", "日前"); } } // 0x03bb5778
 	public static string StringLiteral_13105 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_13105", "365日以上"); } } // 0x03bb577c
 	public static string StringLiteral_13106 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_13106", "1時間前"); } } // 0x03bb5780
+	public static string StringLiteral_13160 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_13160", "EX暴走エネミー出現"); } } // 03bb5858
+	public static string StringLiteral_13162 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_13162", "ミラージュ「EX暴走エネミーが出現しました！」"); } } // 03bb5860
 	public static string StringLiteral_13238 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_13238", "<color=red>矢印のレイアウトがNULLです。</color>"); } } // 0x03bb5990
 	public static string StringLiteral_13316 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_13316", "ディフォルト3Dモードの設定 : "); } } //0x03bb5ac8
 	public static string StringLiteral_13620 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_13620", " - 対応していない型が渡されました\n   {0}"); } } // 0x03bb5f88

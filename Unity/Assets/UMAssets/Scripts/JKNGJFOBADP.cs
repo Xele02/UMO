@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using UnityEngine;
 
 public class JKNGJFOBADP
 {
@@ -1002,7 +1003,10 @@ public class JKNGJFOBADP
 		NKOBMDPHNGP_EventRaidLobby ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6) as NKOBMDPHNGP_EventRaidLobby;
 		if(ev != null)
 		{
-			TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event Raid");
+			NKBOMKGFGIO_EventRaidItem.PDPBHLDICEJ it = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ONOJBMDKBLE_EventRaidItem.CDENCMNHNGA[MHFBCINOJEE - 1];
+			int num = Mathf.Clamp(ev.EHGKMLPCDBM_GetItemCount((XeApp.Game.Common.RaidItemConstants.Type) MHFBCINOJEE, AHEFHIMGIBI) + HMFFHLPNMPH, 0, it.DOOGFEGEKLG_Max);
+			ev.NCBELAFIPDN_SetItemCount((XeApp.Game.Common.RaidItemConstants.Type) MHFBCINOJEE, num, AHEFHIMGIBI);
+			NGEPPDAOIBN(EKLNMHFCAOI.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem, MHFBCINOJEE, HMFFHLPNMPH, num, it.EKLIPGELKCL_Rar);
 		}
 		AHEFHIMGIBI.FHLMCCPCEAI_SaveHash.AFNJCFEKFDD_Dirty++;
 		if(AHEFHIMGIBI.FHLMCCPCEAI_SaveHash.AFNJCFEKFDD_Dirty > 1000000000)
@@ -1017,7 +1021,8 @@ public class JKNGJFOBADP
 		NKOBMDPHNGP_EventRaidLobby ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6) as NKOBMDPHNGP_EventRaidLobby;
 		if(ev != null)
 		{
-			TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event Raid");
+			NKBOMKGFGIO_EventRaidItem.PDPBHLDICEJ it = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ONOJBMDKBLE_EventRaidItem.CDENCMNHNGA[MHFBCINOJEE - 1];
+			return it.DOOGFEGEKLG_Max < ev.EHGKMLPCDBM_GetItemCount((XeApp.Game.Common.RaidItemConstants.Type) MHFBCINOJEE, AHEFHIMGIBI);
 		}
 		return false;
 	}

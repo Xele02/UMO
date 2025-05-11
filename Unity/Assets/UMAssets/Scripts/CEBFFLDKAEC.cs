@@ -43,7 +43,17 @@ public class CEBFFLDKAEC_SecureInt
 	}
 
 	// // RVA: 0x12B13CC Offset: 0x12B13CC VA: 0x12B13CC
-	// public void DNBGDMBCLMI() { }
+	public void DNBGDMBCLMI()
+	{
+		KPOCKNCJBPN_CheckSecure();
+		if(NMNHBJIAPGG != null)
+			return;
+		int v = DNJEJEANJGL_Value;
+		ENOBDCFHELD = ENOBDCFHELD * 11 + 1;
+		FCEJCHGLFGN = FCEJCHGLFGN * 131 + 15;
+		KPOCKNCJBPN_CheckSecure();
+		DNJEJEANJGL_Value = v;
+	}
 
 	// // RVA: 0x12B128C Offset: 0x12B128C VA: 0x12B128C
 	public FENCAJJBLBH KPOCKNCJBPN_CheckSecure() 

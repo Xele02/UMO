@@ -440,5 +440,11 @@ namespace ExternLib
 			return 0;
 		}
 
+		public static int SakashoBbsUpdateThreadComment(int callbackId, string json)
+		{
+			TodoLogger.LogError(TodoLogger.EventRaid_11_13, "SakashoBbsUpdateThreadComment");
+			return 0;
+		}
+
 	}
 }

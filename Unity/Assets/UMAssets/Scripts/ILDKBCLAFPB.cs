@@ -1430,22 +1430,37 @@ public class ILDKBCLAFPB
 			}
 
 			//// RVA: 0x2024788 Offset: 0x2024788 VA: 0x2024788
-			//public void AGCAONIMNAL(long EKEGHNPNCEH) { }
+			public void AGCAONIMNAL_SetNewsletterUpdateAt(long EKEGHNPNCEH)
+			{
+				KNMEGCIAIAO_NewsletterUpdateAt = EKEGHNPNCEH;
+			}
 
 			//// RVA: 0x2024798 Offset: 0x2024798 VA: 0x2024798
-			//public long HJEMMCMEKED() { }
+			public long HJEMMCMEKED_GetNewsletterUpdateAt()
+			{
+				return KNMEGCIAIAO_NewsletterUpdateAt;
+			}
 
 			//// RVA: 0x20247A0 Offset: 0x20247A0 VA: 0x20247A0
-			//public void IDIHHKNAIJG(long EKEGHNPNCEH) { }
+			public void IDIHHKNAIJG_SetCoopQuestUpdateAt(long EKEGHNPNCEH)
+			{
+				JPNJGPKMGFA_CoopQuestUpdateAt = EKEGHNPNCEH;
+			}
 
 			//// RVA: 0x20247B0 Offset: 0x20247B0 VA: 0x20247B0
 			//public long IKGFALONFNL() { }
 
 			//// RVA: 0x20247B8 Offset: 0x20247B8 VA: 0x20247B8
-			//public void JJDBLFAGGGK(bool JKDJCFEBDHC) { }
+			public void JJDBLFAGGGK_SetIsDisplayViewingText(bool JKDJCFEBDHC)
+			{
+				CDEEHJDGMDC_IsDisplayViewingText = JKDJCFEBDHC;
+			}
 
 			//// RVA: 0x20247C0 Offset: 0x20247C0 VA: 0x20247C0
-			//public bool LALECMJIGPH() { }
+			public bool LALECMJIGPH_GetIsDisplayViewingText()
+			{
+				return CDEEHJDGMDC_IsDisplayViewingText;
+			}
 		}
 		 
 		public class DBALFEBAHDH_Bbs

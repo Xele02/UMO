@@ -295,7 +295,7 @@ namespace XeApp.Game.Menu
 			Debug.Log(m_guestInfoList[elemIndex].name);
 			NKOBMDPHNGP_EventRaidLobby ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
 			SelectLobbyInfo arg = new SelectLobbyInfo();
-			arg.selectIndex = ev.EEJNPNOADGC(m_guestInfoList[elemIndex].LobbyData);
+			arg.selectIndex = ev.EEJNPNOADGC_GetGroupId(m_guestInfoList[elemIndex].LobbyData);
 			arg.isSearchPlayer = true;
 			arg.data = m_guestInfoList[elemIndex].LobbyData;
 			m_returnArgs = arg;

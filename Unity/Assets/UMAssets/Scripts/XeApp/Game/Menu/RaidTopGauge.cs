@@ -64,7 +64,7 @@ namespace XeApp.Game.Menu
 			if(raidController == null)
 				return;
 			raidController.LHEPBBADNIH();
-			ChangeRemainTime(raidController.DMNDFBJODBA());
+			ChangeRemainTime(raidController.DMNDFBJODBA_GetApLoadTimeLeft());
 			SetAPNum(raidController.HGJAGDPPALF_GetApNum(), raidController.BFPIHPBKEGK_GetApMax());
 			m_viewPlayerStatus.FBANBDCOEJL();
 			m_paidStoneNum.SetNumber(m_viewPlayerStatus.FNCPAEFEECO_CurrencyPaid, 0);

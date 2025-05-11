@@ -41,46 +41,46 @@ namespace XeApp.Game.Menu
 		{
 			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			m_damegeText.text = string.Format(bk.GetMessageByLabel("pop_raid_cannon_plate_text01"), ev.MBNLPELOLBJ().HALIDDHLNEG_MCannonDamage);
+			m_damegeText.text = string.Format(bk.GetMessageByLabel("pop_raid_cannon_plate_text01"), ev.GGDBEANLCPC.HALIDDHLNEG_MCannonDamage);
 			m_text01.text = "";
 			m_text02.text = "";
-			if(ev.MBNLPELOLBJ().OPIBAPEGCLA_MCannonPlate.Count < 1)
+			if(ev.GGDBEANLCPC.OPIBAPEGCLA_MCannonPlate.Count < 1)
 			{
 				m_text03.text = bk.GetMessageByLabel("pop_raid_cannon_plate_text03");
 				m_text04.text = bk.GetMessageByLabel("pop_raid_cannon_plate_text04");
 			}
 			else
 			{
-				m_text03.text = string.Format(bk.GetMessageByLabel("pop_raid_cannon_plate_text02"), ev.MBNLPELOLBJ().OPIBAPEGCLA_MCannonPlate.Count);
+				m_text03.text = string.Format(bk.GetMessageByLabel("pop_raid_cannon_plate_text02"), ev.GGDBEANLCPC.OPIBAPEGCLA_MCannonPlate.Count);
 				m_text04.text = "";
 			}
 			m_animText.StartChildrenAnimGoStop("03");
-			if(ev.MBNLPELOLBJ().ACBHJKCJLON_SceneAttr == GameAttribute.Type.None)
+			if(ev.GGDBEANLCPC.ACBHJKCJLON_SceneAttr == GameAttribute.Type.None)
 			{
-				if(ev.MBNLPELOLBJ().KOGEKHMBHOI_SceneSerie == SeriesAttr.Type.None)
+				if(ev.GGDBEANLCPC.KOGEKHMBHOI_SceneSerie == SeriesAttr.Type.None)
 				{
 					m_animText.StartChildrenAnimGoStop("03");
 				}
 				else
 				{
-					SetText_BonusSeries(ev.MBNLPELOLBJ(), m_text01, bk);
+					SetText_BonusSeries(ev.GGDBEANLCPC, m_text01, bk);
 					m_animText.StartChildrenAnimGoStop("02");
 				}
 			}
 			else
 			{
-				SetText_BonusAttribute(ev.MBNLPELOLBJ(), m_text01, bk);
-				if(ev.MBNLPELOLBJ().KOGEKHMBHOI_SceneSerie == SeriesAttr.Type.None)
+				SetText_BonusAttribute(ev.GGDBEANLCPC, m_text01, bk);
+				if(ev.GGDBEANLCPC.KOGEKHMBHOI_SceneSerie == SeriesAttr.Type.None)
 				{
 					m_animText.StartChildrenAnimGoStop("02");
 				}
 				else
 				{
-					SetText_BonusSeries(ev.MBNLPELOLBJ(), m_text02, bk);
+					SetText_BonusSeries(ev.GGDBEANLCPC, m_text02, bk);
 					m_animText.StartChildrenAnimGoStop("01");
 				}
 			}
-			UpdateContent(ev.MBNLPELOLBJ().OPIBAPEGCLA_MCannonPlate);
+			UpdateContent(ev.GGDBEANLCPC.OPIBAPEGCLA_MCannonPlate);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x714E2C Offset: 0x714E2C VA: 0x714E2C

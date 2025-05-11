@@ -357,7 +357,11 @@ public class PEBFNABDJDI_System : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xCC7E98 Offset: 0xCC7E98 VA: 0xCC7E98
-	// public int AHJDJACMFMN(long EOLFJGMAJAB) { }
+	public int AHJDJACMFMN_GetPushTimeSlotIndex(long EOLFJGMAJAB)
+	{
+		DateTime t = Utility.GetLocalDateTime(EOLFJGMAJAB);
+		return NLNNEOLDOGE_PushTimeSlotIndex[t.Hour];
+	}
 
 	// // RVA: 0xCC7F98 Offset: 0xCC7F98 VA: 0xCC7F98 Slot: 11
 	public override uint CAOGDCBPBAN()

@@ -50,7 +50,7 @@ namespace XeApp.Game.Menu
 		public void Initialize(Action<SelectType> _onSelectType)
 		{
 			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
-			ev.NPICFLFAIJK();
+			ev.NPICFLFAIJK_GetNumTicket();
 			onSelectType = _onSelectType;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_text01.text = bk.GetMessageByLabel("pop_raid_helprequest_loby");

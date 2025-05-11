@@ -17,7 +17,7 @@ namespace XeApp.Game.Menu
 		public void StartAnim(PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ bossInfo, Action _callback)
 		{
 			endCallback = _callback;
-			this.StartCoroutineWatched(Co_StartAnim(bossInfo, bossInfo.IKICLMGFFPB_MissionIsSpecial ? m_spBossPopLayout : m_bossPopLayout));
+			this.StartCoroutineWatched(Co_StartAnim(bossInfo, bossInfo.IKICLMGFFPB_IsSpecial ? m_spBossPopLayout : m_bossPopLayout));
 		}
 
 		// // RVA: 0x145D720 Offset: 0x145D720 VA: 0x145D720

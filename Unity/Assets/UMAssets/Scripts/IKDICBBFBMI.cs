@@ -205,7 +205,11 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8DD5F8 Offset: 0x8DD5F8 VA: 0x8DD5F8
-	// protected void CNGIENBEHID() { }
+	protected void CNGIENBEHID()
+	{ 
+		OEHCGLGNNPD = true;
+		PBJPACKDIIB.Create();
+	}
 
 	// // RVA: 0x8DD660 Offset: 0x8DD660 VA: 0x8DD660 Slot: 15
 	protected virtual int KFNINHEJCLF()
@@ -481,7 +485,46 @@ public abstract class IKDICBBFBMI_EventBase
 	// // RVA: 0x8DF444 Offset: 0x8DF444 VA: 0x8DF444 Slot: 25
 	public virtual void KMCAIFKIFHM(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
 	{
-		TodoLogger.LogError(TodoLogger.EventRaid_11_13, "KMCAIFKIFHM");
+		if(!OEHCGLGNNPD || !FHKCEPMCGCK())
+		{
+			BHFHGFKBOHH();
+		}
+		else
+		{
+			long LKCCMBEOLLA = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			PBJPACKDIIB.Instance.HPFJOBPMNCP(PGIIDPEGGPI_EventId, KFNINHEJCLF(), true, LKCCMBEOLLA, (List<PBJPACKDIIB.JBJMNJMJFOJ> ONIOKEOLKNK) =>
+			{
+				//0x8E2A74
+				int cnt = AGLILDLEFDK_Missions.Count;
+				if(OLDFFDMPEBM_Quests.Count < cnt)
+					cnt = OLDFFDMPEBM_Quests.Count;
+				int v = 0;
+				if(HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp && this is KNKDBNFMAKF_EventSp)
+				{
+					v = (this as KNKDBNFMAKF_EventSp).MEDEJHKNAFG(LKCCMBEOLLA);
+				}
+				for(int i = 0; i < cnt; i++)
+				{
+                    IKCGAJKCPFN NHLBKJCPLBL = OLDFFDMPEBM_Quests[i];
+                    if (NHLBKJCPLBL.EALOBDHOCHP_Stat == 1)
+					{
+						PBJPACKDIIB.JBJMNJMJFOJ d = ONIOKEOLKNK.Find((PBJPACKDIIB.JBJMNJMJFOJ AOIKKLBKEBC) =>
+						{
+							//0x8E2EE8
+							return AOIKKLBKEBC.CMEJFJFOIIJ == NHLBKJCPLBL.PPFNGGCBJKC_Id;
+						});
+						int v2 = 0;
+						if(d != null)
+							v2 = d.HMFFHLPNMPH;
+						if(AGLILDLEFDK_Missions[i].KGICDMIJGDF_Group == v)
+						{
+							GBNDFCEDNMG.KMFPHOPBFEA(AGLILDLEFDK_Missions[i], NHLBKJCPLBL, v2);
+						}
+					}
+				}
+				BHFHGFKBOHH();
+			}, MOBEEPPKFLG);
+		}
 	}
 
 	// // RVA: 0x8DF69C Offset: 0x8DF69C VA: 0x8DF69C Slot: 26

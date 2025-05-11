@@ -100,7 +100,7 @@ namespace XeApp.Game.Menu
 				if(evRaid != null)
 				{
 					m_isEnableEpisodeBonus = true;
-					m_episodeBonusPoint = evRaid.PDPEPHAMKEB().HOJAKNJFIFJ_EpisodeBonusPoint;
+					m_episodeBonusPoint = evRaid.ANMBIEIFKFF.HOJAKNJFIFJ_EpisodeBonusPoint;
 				}
 			}
 			else

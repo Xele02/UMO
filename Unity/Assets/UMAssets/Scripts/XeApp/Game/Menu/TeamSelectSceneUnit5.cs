@@ -808,7 +808,7 @@ namespace XeApp.Game.Menu
 			if(musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid && m_eventCtrl != null)
 			{
 				PKNOKJNLPOE_EventRaid evRaid = m_eventCtrl as PKNOKJNLPOE_EventRaid;
-				if(evRaid.KAHCHHILDEM() == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1 || evRaid.KAHCHHILDEM() == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2)
+				if(evRaid.CFLEMFADGLG == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1 || evRaid.CFLEMFADGLG == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2)
 					return SetDeckPlayButtons.PlayButtonType.Support_AP;
 			}
 			if (!musicInfo.isEnergyRequired)
@@ -832,7 +832,7 @@ namespace XeApp.Game.Menu
 				if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid && m_eventCtrl != null)
 				{
 					PKNOKJNLPOE_EventRaid evRaid = m_eventCtrl as PKNOKJNLPOE_EventRaid;
-					if(evRaid.KAHCHHILDEM() == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1 || evRaid.KAHCHHILDEM() == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2)
+					if(evRaid.CFLEMFADGLG == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1 || evRaid.CFLEMFADGLG == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2)
 						return SkipStatusType.Support;
 				}
 				res = SkipStatusType.Boost;
@@ -1411,7 +1411,7 @@ namespace XeApp.Game.Menu
 				{
 					// L 619
 					PKNOKJNLPOE_EventRaid evRaid = m_eventCtrl as PKNOKJNLPOE_EventRaid;
-					if(evRaid.KAHCHHILDEM() == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1 || evRaid.KAHCHHILDEM() == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2)
+					if(evRaid.CFLEMFADGLG == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1 || evRaid.CFLEMFADGLG == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2)
 					{
 						UseLiveSkipTicketCount = 1;
 						if(onContinue != null)
@@ -1547,17 +1547,17 @@ namespace XeApp.Game.Menu
 				PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 				if(evRaid != null)
 				{
-					PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ d = evRaid.KACFOENGHIK();
+					PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ d = evRaid.JIBMOEHKMGB;
 					long t = d.OCFJGNPMJBA_GetTime();
 					NKOBMDPHNGP_EventRaidLobby evLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
                     LGGPBMPINDL_EventRaidPlayer evP = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LLBECHBNIJG_EventRaidPlayer;
 					if(evLobby != null && evP != null)
 					{
-						int a = evP.MEBHCFJCKFE_Id;
-						evP.MEBHCFJCKFE_Id = evLobby.PDNFHDLNENO(NKOBMDPHNGP_EventRaidLobby.FAKHCOJIOBD(a, 1));
+						int a = evP.MEBHCFJCKFE_LobbyId;
+						evP.MEBHCFJCKFE_LobbyId = evLobby.PDNFHDLNENO(NKOBMDPHNGP_EventRaidLobby.FAKHCOJIOBD(a, 1));
 						evP.KDMPHHFADMC_ClusterId = evLobby.DKNNNOIMMFN_GetClusterId();
 					}
-					isAssist = evRaid.KAHCHHILDEM() != JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2 || evRaid.KAHCHHILDEM() != JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1;
+					isAssist = evRaid.CFLEMFADGLG != JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2 || evRaid.CFLEMFADGLG != JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1;
 					if(t <= 300)
 					{
 						Debug.Log("StringLiteral_20616 "+t);
@@ -1694,9 +1694,9 @@ namespace XeApp.Game.Menu
 				if(m_viewMusicData is IBJAKJJICBC && Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid && m_eventCtrl != null)
 				{
 					PKNOKJNLPOE_EventRaid ev = m_eventCtrl as PKNOKJNLPOE_EventRaid;
-					if(ev.KAHCHHILDEM() == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1)
+					if(ev.CFLEMFADGLG == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1)
 						return true;
-					return ev.KAHCHHILDEM() == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2;
+					return ev.CFLEMFADGLG == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2;
 				}
 			}
 			return false;

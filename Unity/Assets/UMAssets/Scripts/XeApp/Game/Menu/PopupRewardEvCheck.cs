@@ -388,7 +388,7 @@ namespace XeApp.Game.Menu
 					List<PKNOKJNLPOE_EventRaid.AAMIMFNBLKP> l2 = contExt.PNHPJDMNEPH();
 					int a3 = l2.Count;
 					int a1, a2;
-					contExt.CFKCMIBJOIA(out a1, out a2);
+					contExt.CFKCMIBJOIA_GetBossLevelRandMinMax(out a1, out a2);
 					for(int i = 0; i < l2.Count; i++)
 					{
 						FDPJBEAKPMA f = new FDPJBEAKPMA();

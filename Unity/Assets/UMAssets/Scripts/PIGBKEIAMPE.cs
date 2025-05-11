@@ -23,7 +23,7 @@ public class PIGBKEIAMPE_FriendManager
 {
     public enum BEKLBBDMAIJ
     {
-        HJNNKCMLGFL = 0,
+        HJNNKCMLGFL_0 = 0,
         CCAPCGPIIPF_1 = 1,
         MDKMGHFJCNE_2 = 2,
         BJACNBJLCHJ_3 = 3,
@@ -186,7 +186,11 @@ public class PIGBKEIAMPE_FriendManager
 	}
 
 	// // RVA: 0x16D4768 Offset: 0x16D4768 VA: 0x16D4768
-	// public void OCGEPBECHGB() { }
+	public void OCGEPBECHGB()
+	{
+		BFDEHIANFOG.Clear();
+		EMJFHKHLHDB = BEKLBBDMAIJ.HJNNKCMLGFL_0;
+	}
 
 	// // RVA: 0x16D47E8 Offset: 0x16D47E8 VA: 0x16D47E8
 	// public int KKPENKOHLCO() { }
@@ -226,7 +230,7 @@ public class PIGBKEIAMPE_FriendManager
         PPCNLKHHMFK_NumSentRequest = 0;
         EMBDPGBMCBF_HasMoreSentRequest = false;
         NMOJPDCBGMK_NumFriendNoFav = 0;
-        EMJFHKHLHDB = BEKLBBDMAIJ.HJNNKCMLGFL/*0*/;
+        EMJFHKHLHDB = BEKLBBDMAIJ.HJNNKCMLGFL_0/*0*/;
         BFDEHIANFOG = new List<IBIGBMDANNM>(200);
         JFDPPPBMCBK_BlacklistedUsersId = new List<int>(50);
         KAMNNDELNHG = new List<CDDNFEDGCGG>(20);

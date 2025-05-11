@@ -32,11 +32,11 @@ namespace XeApp.Game.Menu
 			});
 			if(ev.KBFCALJDLPH())
 			{
-				m_text01.text = string.Format(bk.GetMessageByLabel("pop_raid_bosspop_text01"), NKOBMDPHNGP_EventRaidLobby.GPNELLFNPLA(), ev.NPICFLFAIJK(), ev.NPICFLFAIJK() - 1);
+				m_text01.text = string.Format(bk.GetMessageByLabel("pop_raid_bosspop_text01"), NKOBMDPHNGP_EventRaidLobby.GPNELLFNPLA(), ev.NPICFLFAIJK_GetNumTicket(), ev.NPICFLFAIJK_GetNumTicket() - 1);
 			}
 			else
 			{
-				m_text01.text = string.Format(bk.GetMessageByLabel("pop_raid_bosspop_not_text01"), NKOBMDPHNGP_EventRaidLobby.GPNELLFNPLA(), ev.NPICFLFAIJK());
+				m_text01.text = string.Format(bk.GetMessageByLabel("pop_raid_bosspop_not_text01"), NKOBMDPHNGP_EventRaidLobby.GPNELLFNPLA(), ev.NPICFLFAIJK_GetNumTicket());
 			}
 			m_IsInialize = true;
 		}

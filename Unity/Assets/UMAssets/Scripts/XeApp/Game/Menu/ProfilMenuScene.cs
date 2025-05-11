@@ -233,7 +233,7 @@ namespace XeApp.Game.Menu
 						{
 							if(otherLobbyId != 0)
 							{
-								if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LLBECHBNIJG_EventRaidPlayer.MEBHCFJCKFE_Id != otherLobbyId)
+								if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LLBECHBNIJG_EventRaidPlayer.MEBHCFJCKFE_LobbyId != otherLobbyId)
 								{
 									IsLobby = true;
 								}

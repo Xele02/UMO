@@ -178,7 +178,7 @@ namespace XeApp.Game.Menu
 				if(d != null)
 				{
 					m_lobbyEventSetting = d.NGHKJOEDLIP;
-					start = m_lobbyEventSetting.CJPMLAIFCDL_Start;
+					start = m_lobbyEventSetting.CJPMLAIFCDL_LobbyStart;
 					end = m_lobbyEventSetting.KCBGBFMGHPA_End;
 				}
 				m_lobbyMission.SetLimitTime(start, end);

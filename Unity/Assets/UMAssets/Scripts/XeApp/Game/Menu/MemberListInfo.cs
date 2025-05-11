@@ -176,8 +176,8 @@ namespace XeApp.Game.Menu
 			NKOBMDPHNGP_EventRaidLobby ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			int a, b;
-			ev.LHIIGAMEABL(m_lobbyData, out a, out b);
-			return string.Format(bk.GetMessageByLabel("lobby_room_name_format"), ev.OFAKIAJNPDF(a) + JpStringLiterals.StringLiteral_367 + string.Format(bk.GetMessageByLabel("lobby_room_num_format"), b ));
+			ev.LHIIGAMEABL_GetGroupAndRoomIds(m_lobbyData, out a, out b);
+			return string.Format(bk.GetMessageByLabel("lobby_room_name_format"), ev.OFAKIAJNPDF_GetGroupName(a) + JpStringLiterals.StringLiteral_367 + string.Format(bk.GetMessageByLabel("lobby_room_num_format"), b ));
 		}
 
 		// RVA: 0xEC21F0 Offset: 0xEC21F0 VA: 0xEC21F0 Slot: 4

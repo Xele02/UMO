@@ -103,7 +103,7 @@ namespace XeApp.Game.Menu
 			evntCtr = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
 			if(evntCtr != null)
 			{
-				m_lobbyGroupNum = evntCtr.EDILJHGLMNG();
+				m_lobbyGroupNum = evntCtr.EDILJHGLMNG_GetNumLobbies();
 				if(m_groupSelectWindow != null)
 				{
 					m_groupSelectWindow.BannerLayoutDataAnimation(m_lobbyGroupNum);
@@ -452,7 +452,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x12896AC
 					wait = true;
-					Debug.Log("StringLiteral_18328 "+savePl.MEBHCFJCKFE_Id);
+					Debug.Log("StringLiteral_18328 "+savePl.MEBHCFJCKFE_LobbyId);
 				}, () =>
 				{
 					//0x1289794
@@ -463,10 +463,10 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				cont.EJEIHOOOBLM(cont.DKNNNOIMMFN_GetClusterId(), data.data, () =>
+				cont.EJEIHOOOBLM_JoinLobbyByPlayer(cont.DKNNNOIMMFN_GetClusterId(), data.data, () =>
 				{
 					//0x1289830
-					Debug.Log("StringLiteral_18330 "+savePl.MEBHCFJCKFE_Id);
+					Debug.Log("StringLiteral_18330 "+savePl.MEBHCFJCKFE_LobbyId);
 					wait = true;
 				}, () =>
 				{

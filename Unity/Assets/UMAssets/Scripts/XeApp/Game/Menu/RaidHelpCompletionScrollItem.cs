@@ -19,7 +19,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1BD08B0 Offset: 0x1BD08B0 VA: 0x1BD08B0
 		public void UpdateContent(PKNOKJNLPOE_EventRaid.ECICDAPCMJG helper)
 		{
-			m_helperListText.text = helper.LBODHBDOMGK;
+			m_helperListText.text = helper.LBODHBDOMGK_PlayerName;
 		}
 	}
 }

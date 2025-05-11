@@ -433,7 +433,11 @@ public class JNMFKOHFAFB_PublicStatus : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1B981CC Offset: 0x1B981CC VA: 0x1B981CC
-	// public bool LJLLNLKBEJE(int ICDJHNPILBC) { }
+	public bool LJLLNLKBEJE(int ICDJHNPILBC)
+	{
+		return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.GNEGCHEGECN_RaidPushEnable && 
+			(IPJPAAFNAOF_Psh & 0x100) == 0 && ((IPJPAAFNAOF_Psh & (1 << (ICDJHNPILBC & 0x1f))) == 0);
+	}
 
 	// // RVA: 0x1B982E0 Offset: 0x1B982E0 VA: 0x1B982E0
 	public JNMFKOHFAFB_PublicStatus()

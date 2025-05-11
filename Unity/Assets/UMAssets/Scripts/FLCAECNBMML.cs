@@ -46,16 +46,16 @@ public class FLCAECNBMML
 		PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 		if(ev != null && ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 		{
-			CFLEMFADGLG = (int)ev.KAHCHHILDEM();
-			PKNOKJNLPOE_EventRaid.OCBPJEALCPO o = ev.NAMEFMANAKG();
-            PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ m = ev.KACFOENGHIK();
+			CFLEMFADGLG = (int)ev.CFLEMFADGLG;
+			PKNOKJNLPOE_EventRaid.OCBPJEALCPO o = ev.PLFBKEPLAAA;
+            PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ m = ev.JIBMOEHKMGB;
             JBJJFDIHKMB_ScorePoint = o.JKLNANHPJLO_ScorePoint;
 			PPAOKOFHIFB_ValkyriePoint = o.CBKFBBNPIGG_ValkyriePoint;
 			LMHDHAJOJDA_PointBonus = o.EAOCJMFLBJI_PointBonus;
 			NEMLFENEBPM_DivaBonus = o.FOOCMHPJJAP_DivaBonus;
 			JNPLLCCIPNC_SupportBonus = o.CLNPBIJBIIJ_SupportBonus;
 			AHOKAPCGJMA_TotalPoint = o.HACIJLMFDAE_TotalPoint;
-			HALIDDHLNEG_Point = o.HALIDDHLNEG_Point;
+			HALIDDHLNEG_Point = o.HALIDDHLNEG_GetPoint;
 			OIOPCIAGLEK_CannonBaseValue = o.OIOPCIAGLEK_CannonBaseValue;
 			IHIJGIHNOAL_CannonGaugeAdd = o.IHIJGIHNOAL_CannonGaugeAdd;
 			LFOPOHHEODG_ChargeBonus = o.LFOPOHHEODG_ChargeBonus;
@@ -65,7 +65,7 @@ public class FLCAECNBMML
 			NFOOOBMJINC_MissionBonusNum = m.NFOOOBMJINC_MissionBonusNum;
 			BLFHMNHMDHF_Mission = m.BLFHMNHMDHF_Mission;
 			KOOPHLLHEFM_IsSupBonusMax = ev.MCBGNPBECCI_SupportBonusMax() <= JNPLLCCIPNC_SupportBonus;
-			MPKBLMCNHOM_MissionIsSpecial = m.IKICLMGFFPB_MissionIsSpecial;
+			MPKBLMCNHOM_MissionIsSpecial = m.IKICLMGFFPB_IsSpecial;
 		}
 	}
 }
