@@ -165,9 +165,9 @@ public class LDEBIBGHCGD_EventRaidLobby : DIHHCBACKGG_DbSection
 		UMOEventList.EventData CurrenEvent = UMOEventList.GetCurrentEvent();
 		if (CurrenEvent != null && CurrenEvent.BlockName.Replace("raid", "raidlobby") == JIKKNHIAEKG_BlockName)
 		{
+			UnityEngine.Debug.LogError("Lobby : "+NGHKJOEDLIP.CJPMLAIFCDL_LobbyStart+" "+NGHKJOEDLIP.COIHIAKHFNF_End+" "+NGHKJOEDLIP.NIMLIMFPNJP_RaidStart+" "+NGHKJOEDLIP.KCBGBFMGHPA_End);
 			System.DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
 			System.DateTime date2 = Utility.GetLocalDateTime(NGHKJOEDLIP.NIMLIMFPNJP_RaidStart);
-			UnityEngine.Debug.LogError("Lobby : "+NGHKJOEDLIP.CJPMLAIFCDL_LobbyStart+" "+NGHKJOEDLIP.COIHIAKHFNF_End+" "+NGHKJOEDLIP.NIMLIMFPNJP_RaidStart+" "+NGHKJOEDLIP.KCBGBFMGHPA_End);
 			date = date.AddDays(-1);
 			long offset = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, date2.Hour, date2.Minute, date2.Second) - NGHKJOEDLIP.NIMLIMFPNJP_RaidStart;
 			if (NGHKJOEDLIP.CJPMLAIFCDL_LobbyStart != 0) NGHKJOEDLIP.CJPMLAIFCDL_LobbyStart += offset;
@@ -178,7 +178,7 @@ public class LDEBIBGHCGD_EventRaidLobby : DIHHCBACKGG_DbSection
 			for(int i = 0; i < NNMPGOAGEOL_Missions.Count; i++)
 			{
 				if (NNMPGOAGEOL_Missions[i].KJBGCLPMLCG_Start != 0) NNMPGOAGEOL_Missions[i].KJBGCLPMLCG_Start = NGHKJOEDLIP.CJPMLAIFCDL_LobbyStart;
-				if (NNMPGOAGEOL_Missions[i].GJFPFFBAKGK_End != 0) NNMPGOAGEOL_Missions[i].GJFPFFBAKGK_End = NGHKJOEDLIP.KCBGBFMGHPA_End;
+				if (NNMPGOAGEOL_Missions[i].GJFPFFBAKGK_End != 0) NNMPGOAGEOL_Missions[i].GJFPFFBAKGK_End = NGHKJOEDLIP.COIHIAKHFNF_End;
 			}
 		}
 
@@ -226,7 +226,7 @@ public class LDEBIBGHCGD_EventRaidLobby : DIHHCBACKGG_DbSection
 	private bool CFOFJPLEDEA(MAGFOKIIPPD KNOEHKKNIJA)
 	{
 		int xor = (int)Utility.GetCurrentUnixTime() * 11 + 1;
-		for(int i = 0; i < KNOEHKKNIJA.CEPBAOMAHNH.Length; i++)
+		for(int i = 0; i < KNOEHKKNIJA.MDDOGIAFDEI.Length; i++)
 		{
 			AKIIJBEJOEP data = new AKIIJBEJOEP();
 			data.KHEKNNFCAOI(JIKKNHIAEKG_BlockName, i + 1, xor, KNOEHKKNIJA);

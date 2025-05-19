@@ -362,6 +362,7 @@ public class BKOGPDBKFFJ_EventRaid : DIHHCBACKGG_DbSection
 			CMIGGBMMBKK = new NEGFCJPAPLC[IDLHJIOMJBK.AIHOJKFNEEN.Length];
 			for(int i = 0; i < IDLHJIOMJBK.AIHOJKFNEEN.Length; i++)
 			{
+				CMIGGBMMBKK[i] = new NEGFCJPAPLC();
 				CMIGGBMMBKK[i].AIHOJKFNEEN = (int)IDLHJIOMJBK.AIHOJKFNEEN[i];
 				CMIGGBMMBKK[i].BFINGCJHOHI = (int)IDLHJIOMJBK.BFINGCJHOHI[i];
 				CMIGGBMMBKK[i].EHKJFNAABMC = (int)IDLHJIOMJBK.EHKJFNAABMC[i];
@@ -519,7 +520,7 @@ public class BKOGPDBKFFJ_EventRaid : DIHHCBACKGG_DbSection
 		{
 			CEBFFLDKAEC_SecureInt d = new CEBFFLDKAEC_SecureInt();
 			d.DNJEJEANJGL_Value = data.BHGDNGHDDAC[i].JBGEEPFKIGG;
-			OHJFBLFELNK.Add(data.MHGMDJNOLMI[i].LJNAKDMILMC, d);
+			OHJFBLFELNK.Add(data.BHGDNGHDDAC[i].LJNAKDMILMC, d);
 		}
 		for(int i = 0; i < data.MHGMDJNOLMI.Length; i++)
 		{
@@ -534,9 +535,9 @@ public class BKOGPDBKFFJ_EventRaid : DIHHCBACKGG_DbSection
 		UMOEventList.EventData CurrenEvent = UMOEventList.GetCurrentEvent();
 		if (CurrenEvent != null && CurrenEvent.BlockName == JIKKNHIAEKG_BlockName)
 		{
+			UnityEngine.Debug.LogError("Raid : "+NGHKJOEDLIP.BONDDBOFBND_Start+" "+NGHKJOEDLIP.HPNOGLIFJOP_End1+" "+NGHKJOEDLIP.EHHFFKAFOMC+" "+NGHKJOEDLIP.LNFKGHNHJKE+" "+NGHKJOEDLIP.JGMDAOACOJF+" "+NGHKJOEDLIP.IDDBFFBPNGI+" "+NGHKJOEDLIP.KNLGKBBIBOH_End);
 			System.DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
 			System.DateTime date2 = Utility.GetLocalDateTime(NGHKJOEDLIP.BONDDBOFBND_Start);
-			UnityEngine.Debug.LogError("Raid : "+NGHKJOEDLIP.BONDDBOFBND_Start+" "+NGHKJOEDLIP.HPNOGLIFJOP_End1+" "+NGHKJOEDLIP.EHHFFKAFOMC+" "+NGHKJOEDLIP.LNFKGHNHJKE+" "+NGHKJOEDLIP.JGMDAOACOJF+" "+NGHKJOEDLIP.IDDBFFBPNGI+" "+NGHKJOEDLIP.KNLGKBBIBOH_End);
 			date = date.AddDays(-1);
 			long offset = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, date2.Hour, date2.Minute, date2.Second) - NGHKJOEDLIP.BONDDBOFBND_Start;
 			if (NGHKJOEDLIP.BONDDBOFBND_Start != 0) NGHKJOEDLIP.BONDDBOFBND_Start += offset;

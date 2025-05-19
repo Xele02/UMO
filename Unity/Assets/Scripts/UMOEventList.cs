@@ -34,15 +34,17 @@ public static class UMOEventList
         new EventData() { Id=14010, Name="シルバームーン・ホーリームーン", BlockName="event_godiva_a"},
         new EventData() { Id=14011, Name="無垢になれ！ ～つらみ現在進行形～", BlockName="event_godiva_b"},
         new EventData() { Id=14012, Name="復刻　FLASH IN THE SOUL", BlockName="event_godiva_c"},
-        new EventData() { Id=1, Name="Raid A", BlockName="event_raid_a"},
-        new EventData() { Id=2, Name="Raid B", BlockName="event_raid_b"},
-        new EventData() { Id=3, Name="Raid C", BlockName="event_raid_c"},
-        new EventData() { Id=4, Name="Raid D", BlockName="event_raid_d"},
+        new EventData() { Id=11037, Name="超銀河総力LIVE Final", BlockName="event_raid_a"},
+        new EventData() { Id=11038, Name="超銀河総力LIVE", BlockName="event_raid_b"},
+        new EventData() { Id=11039, Name="超銀河総力LIVE", BlockName="event_raid_c"},
+        new EventData() { Id=11040, Name="超銀河総力LIVE", BlockName="event_raid_d"},
         //new EventData() { Id=4, Name="GodivaRanking", BlockName="event_godiva_ranking"},
     };
 
     public static EventData GetEventData(int Id)
     {
+        if(Id == -1)
+            return null;
         return EventList.Find((EventData d) =>
         {
             return d.Id == Id;

@@ -468,6 +468,7 @@ public static class DatabaseTextConverter
                         poFile.translationData.Add(prfx, blockDbLobby.NNMPGOAGEOL_Missions[i].BGBJPGEIEDE_DescBalloon);
                     }
                 }
+                
             }
             string p = PoPath.Replace("{name}", "events_text");
             Directory.CreateDirectory(p);

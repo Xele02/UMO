@@ -612,68 +612,71 @@ public class OKGLGHCBCJP_Database
 			IIILDINMAKI_SectionNames[i] = IJBLEJOKEFH_SectionNames[i];
 			GJFPFFBAKGK_SectionCloseTime[i] = 0;
 			bool valid = true;
-			switch((BEOKNKGHFFE_Section)i)
+			if(true) // Enable when exporting localization
 			{
-				case /*0x18*/BEOKNKGHFFE_Section.OBEAIJOHOAJ_EventAprilFoolA:
-				case /*0x19*/BEOKNKGHFFE_Section.GCEPOPPDPOC_EventAprilFoolB:
-				case /*0x1a*/BEOKNKGHFFE_Section.EMOOIGBGHLG_EventAprilFoolC:
-				case /*0x1b*/BEOKNKGHFFE_Section.AEGNEIOAOKI_EventAprilFoolD:
-				case /*0x1c*/BEOKNKGHFFE_Section.KNNGKODFAGC_EventAprilFoolE:
-				case /*0x1d*/BEOKNKGHFFE_Section.AFGGHHOHILP_EventAprilFoolF:
-				case /*0x1e*/BEOKNKGHFFE_Section.EICBLKBKMKE_EventAprilFoolG:
-				case /*0x1f*/BEOKNKGHFFE_Section.FIKPHDFLIIM_EventAprilFoolH:
-				case /*0x20*/BEOKNKGHFFE_Section.FNLCLINDJAF_EventAprilFoolI:
-				case /*0x21*/BEOKNKGHFFE_Section.IEICONEHLFE_EventBattleA:
-				case /*0x22*/BEOKNKGHFFE_Section.CJLAEPKNNJE_EventBattleB:
-				case /*0x23*/BEOKNKGHFFE_Section.MPCNKNCKBAE_EventBattleC:
-				case /*0x24*/BEOKNKGHFFE_Section.COFHBPGDPML_EventBoxGachaA:
-				case /*0x25*/BEOKNKGHFFE_Section.BHJGBPLKMBK_EventBoxGachaB:
-				case /*0x26*/BEOKNKGHFFE_Section.AHDKIFOPEHM_EventBoxGachaC:
-				case /*0x27*/BEOKNKGHFFE_Section.LLEDCLGDDCD_EventBoxGachaD:
-				case /*0x28*/BEOKNKGHFFE_Section.ACNPHHGCHAF_EventBoxGachaE:
-				case /*0x29*/BEOKNKGHFFE_Section.FEICGBHOIPB_EventBoxGachaF:
-				case /*0x2a*/BEOKNKGHFFE_Section.OAOKLHCDPON_EventCollectionA:
-				case /*0x2b*/BEOKNKGHFFE_Section.GGKFEJFMNGP_EventCollectionB:
-				case /*0x2c*/BEOKNKGHFFE_Section.LLHBBEMKIGD_EventCollectionC:
-				case /*0x2e*/BEOKNKGHFFE_Section.MBMNNEODFFP_EventGoDivaA:
-				case /*0x2f*/BEOKNKGHFFE_Section.NLIBPDOHAPH_EventGoDivaB:
-				case /*0x30*/BEOKNKGHFFE_Section.JLGODHLEBMK_EventGoDivaC:
-				case /*0x33*/BEOKNKGHFFE_Section.DCBIDPBJHOC_EventMissionA:
-				case /*0x34*/BEOKNKGHFFE_Section.BNCLLKEHEFH_EventMissionB:
-				case /*0x35*/BEOKNKGHFFE_Section.BDGKKLAAJJB_EventMissionC:
-				case /*0x36*/BEOKNKGHFFE_Section.CLKOFJKPPEP_EventPresentCampaignA:
-				case /*0x37*/BEOKNKGHFFE_Section.DCEHHGDDBPP_EventRaidA:
-				case /*0x38*/BEOKNKGHFFE_Section.PLNOKLOLJEP_EventRaidB:
-				case /*0x39*/BEOKNKGHFFE_Section.IJEIEHHAJNM_EventRaidC:
-				case /*0x3a*/BEOKNKGHFFE_Section.DMKFEJGOELJ_EventRaidD:
-				case /*0x3b*/BEOKNKGHFFE_Section.IEBPINPALBD_EventRaidLobbyA:
-				case /*0x3c*/BEOKNKGHFFE_Section.CHNHFHCEKGN_EventRaidLobbyB:
-				case /*0x3d*/BEOKNKGHFFE_Section.FCAJCEOCDFF_EventRaidLobbyC:
-				case /*0x3e*/BEOKNKGHFFE_Section.IJOLIEAOOJC_EventRaidLobbyD:
-				case /*0x40*/BEOKNKGHFFE_Section.OJAHCPGNPDB_EventQuestA:
-				case /*0x41*/BEOKNKGHFFE_Section.KGJMEGLKJDM_EventQuestB:
-				case /*0x42*/BEOKNKGHFFE_Section.LNBMDELKFHI_EventQuestC:
-				case /*0x43*/BEOKNKGHFFE_Section.FMHLCBNFAOC_EventScoreA:
-				case /*0x44*/BEOKNKGHFFE_Section.LCJACACCKFC_EventScoreB:
-				case /*0x45*/BEOKNKGHFFE_Section.BPOFGIDPMBF_EventScoreC:
-				case /*0x46*/BEOKNKGHFFE_Section.JPNKKKOHHLG_EventScoreD:
-				case /*0x47*/BEOKNKGHFFE_Section.ECHHEGJOHGI_EventScoreE:
-				case /*0x48*/BEOKNKGHFFE_Section.NLDGAHCIPAE_EventScoreF:
-				case /*0x49*/BEOKNKGHFFE_Section.MHGPKDOPEDJ_EventSpA:
-					valid = false;
-					break;
-				default:
-				break;
-			}
-			for(int j = 0; j < JOBKIDDLCPL.Count; j++)
-			{
-				if(JHNMKKNEENE_Time >= JOBKIDDLCPL[j].KBFOIECIADN_OpenedAt && JHNMKKNEENE_Time < JOBKIDDLCPL[j].EGBOHDFBAPB_ClosedAt)
+				switch((BEOKNKGHFFE_Section)i)
 				{
-					if(IJBLEJOKEFH_SectionNames[i] != "" && JOBKIDDLCPL[j].OPFGFINHFCE_Name == IJBLEJOKEFH_SectionNames[i])
+					case /*0x18*/BEOKNKGHFFE_Section.OBEAIJOHOAJ_EventAprilFoolA:
+					case /*0x19*/BEOKNKGHFFE_Section.GCEPOPPDPOC_EventAprilFoolB:
+					case /*0x1a*/BEOKNKGHFFE_Section.EMOOIGBGHLG_EventAprilFoolC:
+					case /*0x1b*/BEOKNKGHFFE_Section.AEGNEIOAOKI_EventAprilFoolD:
+					case /*0x1c*/BEOKNKGHFFE_Section.KNNGKODFAGC_EventAprilFoolE:
+					case /*0x1d*/BEOKNKGHFFE_Section.AFGGHHOHILP_EventAprilFoolF:
+					case /*0x1e*/BEOKNKGHFFE_Section.EICBLKBKMKE_EventAprilFoolG:
+					case /*0x1f*/BEOKNKGHFFE_Section.FIKPHDFLIIM_EventAprilFoolH:
+					case /*0x20*/BEOKNKGHFFE_Section.FNLCLINDJAF_EventAprilFoolI:
+					case /*0x21*/BEOKNKGHFFE_Section.IEICONEHLFE_EventBattleA:
+					case /*0x22*/BEOKNKGHFFE_Section.CJLAEPKNNJE_EventBattleB:
+					case /*0x23*/BEOKNKGHFFE_Section.MPCNKNCKBAE_EventBattleC:
+					case /*0x24*/BEOKNKGHFFE_Section.COFHBPGDPML_EventBoxGachaA:
+					case /*0x25*/BEOKNKGHFFE_Section.BHJGBPLKMBK_EventBoxGachaB:
+					case /*0x26*/BEOKNKGHFFE_Section.AHDKIFOPEHM_EventBoxGachaC:
+					case /*0x27*/BEOKNKGHFFE_Section.LLEDCLGDDCD_EventBoxGachaD:
+					case /*0x28*/BEOKNKGHFFE_Section.ACNPHHGCHAF_EventBoxGachaE:
+					case /*0x29*/BEOKNKGHFFE_Section.FEICGBHOIPB_EventBoxGachaF:
+					case /*0x2a*/BEOKNKGHFFE_Section.OAOKLHCDPON_EventCollectionA:
+					case /*0x2b*/BEOKNKGHFFE_Section.GGKFEJFMNGP_EventCollectionB:
+					case /*0x2c*/BEOKNKGHFFE_Section.LLHBBEMKIGD_EventCollectionC:
+					case /*0x2e*/BEOKNKGHFFE_Section.MBMNNEODFFP_EventGoDivaA:
+					case /*0x2f*/BEOKNKGHFFE_Section.NLIBPDOHAPH_EventGoDivaB:
+					case /*0x30*/BEOKNKGHFFE_Section.JLGODHLEBMK_EventGoDivaC:
+					case /*0x33*/BEOKNKGHFFE_Section.DCBIDPBJHOC_EventMissionA:
+					case /*0x34*/BEOKNKGHFFE_Section.BNCLLKEHEFH_EventMissionB:
+					case /*0x35*/BEOKNKGHFFE_Section.BDGKKLAAJJB_EventMissionC:
+					case /*0x36*/BEOKNKGHFFE_Section.CLKOFJKPPEP_EventPresentCampaignA:
+					case /*0x37*/BEOKNKGHFFE_Section.DCEHHGDDBPP_EventRaidA:
+					case /*0x38*/BEOKNKGHFFE_Section.PLNOKLOLJEP_EventRaidB:
+					case /*0x39*/BEOKNKGHFFE_Section.IJEIEHHAJNM_EventRaidC:
+					case /*0x3a*/BEOKNKGHFFE_Section.DMKFEJGOELJ_EventRaidD:
+					case /*0x3b*/BEOKNKGHFFE_Section.IEBPINPALBD_EventRaidLobbyA:
+					case /*0x3c*/BEOKNKGHFFE_Section.CHNHFHCEKGN_EventRaidLobbyB:
+					case /*0x3d*/BEOKNKGHFFE_Section.FCAJCEOCDFF_EventRaidLobbyC:
+					case /*0x3e*/BEOKNKGHFFE_Section.IJOLIEAOOJC_EventRaidLobbyD:
+					case /*0x40*/BEOKNKGHFFE_Section.OJAHCPGNPDB_EventQuestA:
+					case /*0x41*/BEOKNKGHFFE_Section.KGJMEGLKJDM_EventQuestB:
+					case /*0x42*/BEOKNKGHFFE_Section.LNBMDELKFHI_EventQuestC:
+					case /*0x43*/BEOKNKGHFFE_Section.FMHLCBNFAOC_EventScoreA:
+					case /*0x44*/BEOKNKGHFFE_Section.LCJACACCKFC_EventScoreB:
+					case /*0x45*/BEOKNKGHFFE_Section.BPOFGIDPMBF_EventScoreC:
+					case /*0x46*/BEOKNKGHFFE_Section.JPNKKKOHHLG_EventScoreD:
+					case /*0x47*/BEOKNKGHFFE_Section.ECHHEGJOHGI_EventScoreE:
+					case /*0x48*/BEOKNKGHFFE_Section.NLDGAHCIPAE_EventScoreF:
+					case /*0x49*/BEOKNKGHFFE_Section.MHGPKDOPEDJ_EventSpA:
+						valid = false;
+						break;
+					default:
+					break;
+				}
+				for(int j = 0; j < JOBKIDDLCPL.Count; j++)
+				{
+					if(JHNMKKNEENE_Time >= JOBKIDDLCPL[j].KBFOIECIADN_OpenedAt && JHNMKKNEENE_Time < JOBKIDDLCPL[j].EGBOHDFBAPB_ClosedAt)
 					{
-						IIILDINMAKI_SectionNames[i] = JOBKIDDLCPL[j].OPFGFINHFCE_Name;
-						GJFPFFBAKGK_SectionCloseTime[i] = JOBKIDDLCPL[j].EGBOHDFBAPB_ClosedAt;
-						valid = true;
+						if(IJBLEJOKEFH_SectionNames[i] != "" && JOBKIDDLCPL[j].OPFGFINHFCE_Name == IJBLEJOKEFH_SectionNames[i])
+						{
+							IIILDINMAKI_SectionNames[i] = JOBKIDDLCPL[j].OPFGFINHFCE_Name;
+							GJFPFFBAKGK_SectionCloseTime[i] = JOBKIDDLCPL[j].EGBOHDFBAPB_ClosedAt;
+							valid = true;
+						}
 					}
 				}
 			}

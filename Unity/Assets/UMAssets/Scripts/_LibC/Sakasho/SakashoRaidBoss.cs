@@ -21,6 +21,21 @@ namespace ExternLib
                     Res["player_data"] = new EDOHBJAPLPF_JsonData();
 				    FillPlayerData(playerId, Res["player_data"], Names);
                 }
+                public EDOHBJAPLPF_JsonData Save()
+                {
+                    EDOHBJAPLPF_JsonData Res = new EDOHBJAPLPF_JsonData();
+                    Res["playerId"] = playerId;
+                    Res["damage"] = damage;
+                    Res["receivedReward"] = receivedReward;
+                    return Res;
+                }
+
+                public void Load(EDOHBJAPLPF_JsonData json)
+                {
+                    playerId = (int)json["playerId"];
+                    damage = (int)json["damage"];
+                    receivedReward = (bool)json["receivedReward"];
+                }
             }
 
             public class Effect
@@ -31,6 +46,28 @@ namespace ExternLib
                 public long updatedAt;
                 public long expiredAt;
                 public int last_updated_player_id = -1;
+
+                public EDOHBJAPLPF_JsonData Save()
+                {
+                    EDOHBJAPLPF_JsonData Res = new EDOHBJAPLPF_JsonData();
+                    Res["id"] = id;
+                    Res["numberOfTimes"] = numberOfTimes;
+                    Res["createdAt"] = createdAt;
+                    Res["updatedAt"] = updatedAt;
+                    Res["expiredAt"] = expiredAt;
+                    Res["last_updated_player_id"] = last_updated_player_id;
+                    return Res;
+                }
+
+                public void Load(EDOHBJAPLPF_JsonData json)
+                {
+                    id = (int)json["id"];
+                    numberOfTimes = (int)json["numberOfTimes"];
+                    createdAt = JsonUtil.GetLong(json["createdAt"]);
+                    updatedAt = JsonUtil.GetLong(json["updatedAt"]);
+                    expiredAt = JsonUtil.GetLong(json["expiredAt"]);
+                    last_updated_player_id = (int)json["last_updated_player_id"];
+                }
             }
 
             public int id;
@@ -45,6 +82,61 @@ namespace ExternLib
             public long escaped_at;
             public List<Attacker> attackersList;
             public List<Effect> effectsList;
+
+            public EDOHBJAPLPF_JsonData Save()
+            {
+                EDOHBJAPLPF_JsonData Res = new EDOHBJAPLPF_JsonData();
+                Res["id"] = id;
+                Res["unique_key"] = unique_key;
+                Res["hp"] = hp;
+                Res["max_hp"] = max_hp;
+                Res["combo_count"] = combo_count;
+                Res["status"] = status;
+                Res["firstAttackerId"] = firstAttackerId;
+                Res["encounterPlayerId"] = encounterPlayerId;
+                Res["created_at"] = created_at;
+                Res["escaped_at"] = escaped_at;
+                Res["attackersList"] = new EDOHBJAPLPF_JsonData();
+                Res["attackersList"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+                for(int i = 0; i < attackersList.Count; i++)
+                {
+                    Res["attackersList"].Add(attackersList[i].Save());
+                }
+                Res["effectsList"] = new EDOHBJAPLPF_JsonData();
+                Res["effectsList"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+                for(int i = 0; i < effectsList.Count; i++)
+                {
+                    Res["effectsList"].Add(effectsList[i].Save());
+                }
+                return Res;
+            }
+
+            public void Load(EDOHBJAPLPF_JsonData json)
+            {
+                id = (int)json["id"];
+                unique_key = (string)json["unique_key"];
+                hp = (int)json["hp"];
+                max_hp = (int)json["max_hp"];
+                combo_count = (int)json["combo_count"];
+                status = (int)json["status"];
+                firstAttackerId = (int)json["firstAttackerId"];
+                encounterPlayerId = (int)json["encounterPlayerId"];
+                created_at = JsonUtil.GetLong(json["created_at"]);
+                escaped_at = JsonUtil.GetLong(json["escaped_at"]);
+                attackersList.Clear();
+                for(int i = 0; i < json["attackersList"].HNBFOAJIIAL_Count; i++)
+                {
+                    Attacker atk = new Attacker();
+                    atk.Load(json["attackersList"][i]);
+                    attackersList.Add(atk);
+                }
+                for(int i = 0; i < json["effectsList"].HNBFOAJIIAL_Count; i++)
+                {
+                    Effect eff = new Effect();
+                    eff.Load(json["effectsList"][i]);
+                    effectsList.Add(eff);
+                }
+            }
 
             public void Attack(EDOHBJAPLPF_JsonData Req, EDOHBJAPLPF_JsonData Res, int userId)
             {
@@ -208,6 +300,15 @@ namespace ExternLib
 				if(!data["user_data"].BBAJPINMOEP_Contains("raid_info"))
 					return;
 				EDOHBJAPLPF_JsonData json = data["user_data"]["raid_info"];
+                if(json.BBAJPINMOEP_Contains("bosses"))
+                {
+                    for(int i = 0; i < json["bosses"].HNBFOAJIIAL_Count; i++)
+                    {
+                        RaidBossInfo boss = new RaidBossInfo();
+                        boss.Load(json["bosses"][i]);
+                        nextBossId = Mathf.Max(nextBossId, boss.id + 1);
+                    }
+                }
 			}
 
 			public void Save(EDOHBJAPLPF_JsonData data)
@@ -216,6 +317,12 @@ namespace ExternLib
 					data["user_data"] = new EDOHBJAPLPF_JsonData();
 
 				data["user_data"]["raid_info"] = new EDOHBJAPLPF_JsonData();
+                data["user_data"]["raid_info"]["bosses"] = new EDOHBJAPLPF_JsonData();
+                data["user_data"]["raid_info"]["bosses"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+                for(int i = 0; i < Bosses.Count; i++)
+                {
+                    data["user_data"]["raid_info"]["bosses"].Add(Bosses[i].Save());
+                }
 			}
 
             public void GetRaidboss(EDOHBJAPLPF_JsonData Request, EDOHBJAPLPF_JsonData Result, int userId)
