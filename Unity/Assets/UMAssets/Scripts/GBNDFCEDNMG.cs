@@ -73,16 +73,16 @@ public class GBNDFCEDNMG
         HFMIOBKCKHD = 24,
         NJKNOEPAELH = 25,
         POHBAGJLOLI = 26,
-        EBCMMPMCHIK = 27,
+        EBCMMPMCHIK_27 = 27,
         BEKIJHOCDFE_28 = 28,
         APIDIDMAKHL = 29,
-        OOGEAGAJKAG = 30,
+        OOGEAGAJKAG_30 = 30,
         PMMOLBAAHEM_31 = 31,
         JLFJCIOOABC_32 = 32,
         CHIIAHIJFCB = 33,
-        DMNIOHMDJEI = 34,
+        DMNIOHMDJEI_34 = 34,
         KMHJDFJHMEP_35 = 35,
-        EKKMNHIKGKF = 36,
+        EKKMNHIKGKF_36 = 36,
         PCPDPJAMPBP = 37,
         FDIEEMDFMGO = 38,
         ABFDKJGHHPG = 39,
@@ -914,7 +914,7 @@ public class GBNDFCEDNMG
 					PKNOKJNLPOE_EventRaid ev = LIKDEHHKFEH as PKNOKJNLPOE_EventRaid;
 					if(NDFIEMPPMLF.JJECMJFDEEP_ClearConditionValue == 0)
 						return true;
-					return NDFIEMPPMLF.JJECMJFDEEP_ClearConditionValue == (int)ev.CFLEMFADGLG;
+					return NDFIEMPPMLF.JJECMJFDEEP_ClearConditionValue == (int)ev.CFLEMFADGLG_AttackType;
 				}
 				break;
 			case 37:

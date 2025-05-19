@@ -14,7 +14,6 @@ using XeApp.Game.Menu;
 using XeApp.Game;
 using XeApp.Core;
 using XeApp.Game.AR;
-using System.Runtime.InteropServices;
 
 public class NKGJPJPHLIF
 {

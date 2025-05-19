@@ -245,5 +245,8 @@ public class JGJFFKPFMDB
 	}
 
 	//// RVA: 0xB1AD5C Offset: 0xB1AD5C VA: 0xB1AD5C
-	//public static bool PLMJFNPGOCD(SakashoErrorId PPFNGGCBJKC) { }
+	public static bool PLMJFNPGOCD(SakashoErrorId PPFNGGCBJKC)
+	{
+        return ((long)PPFNGGCBJKC & 0xfffffffeU) == 0xea;
+    }
 }

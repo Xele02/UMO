@@ -176,7 +176,7 @@ namespace XeApp.Game.Menu
 					if(mi.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 					{
 						PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(mi.EventUniqueId) as PKNOKJNLPOE_EventRaid;
-						if(evRaid == null || !(evRaid.CFLEMFADGLG == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1 || evRaid.CFLEMFADGLG == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2))
+						if(evRaid == null || !(evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1 || evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2))
 						{
 							CIOECGOMILE.HHCJCDFCLOB.GJACBNJHDHI(ticketCount, consumeTime);
 						}

@@ -28,8 +28,8 @@ public class JKIJLMMLNPL
 	public int HALIDDHLNEG_MCannonDamage; // 0x14
 	public GameAttribute.Type ACBHJKCJLON_SceneAttr; // 0x18
 	public SeriesAttr.Type KOGEKHMBHOI_SceneSerie; // 0x1C
-	public int GCMIDNBBMLA; // 0x20
-	public int IDDAGCGIAPA; // 0x24
+	public int GCMIDNBBMLA_SceneAttrBonus; // 0x20
+	public int IDDAGCGIAPA_SceneSerieBonus; // 0x24
 	public List<GCIJNCFDNON_SceneInfo> OPIBAPEGCLA_MCannonPlate; // 0x28
 
 	// RVA: 0x1468C38 Offset: 0x1468C38 VA: 0x1468C38
@@ -37,8 +37,8 @@ public class JKIJLMMLNPL
 	{
 		ACBHJKCJLON_SceneAttr = GameAttribute.Type.None;
 		KOGEKHMBHOI_SceneSerie = SeriesAttr.Type.None;
-		GCMIDNBBMLA = 0;
-		IDDAGCGIAPA = 0;
+		GCMIDNBBMLA_SceneAttrBonus = 0;
+		IDDAGCGIAPA_SceneSerieBonus = 0;
 		OPIBAPEGCLA_MCannonPlate = new List<GCIJNCFDNON_SceneInfo>(100);
 	}
 
@@ -59,11 +59,11 @@ public class JKIJLMMLNPL
 					data.COIODGJDJEJ_ViewScene = viewscene;
 					if((byte)ACBHJKCJLON_SceneAttr == viewscene.JGJFIJOCPAG_SceneAttr)
 					{
-						data.ODNDCOMBAOH = GCMIDNBBMLA;
+						data.ODNDCOMBAOH = GCMIDNBBMLA_SceneAttrBonus;
 					}
 					if(viewscene.AIHCEGFANAM_SceneSeries == KOGEKHMBHOI_SceneSerie)
 					{
-						data.CGIKGNJJCIG = IDDAGCGIAPA;
+						data.CGIKGNJJCIG = IDDAGCGIAPA_SceneSerieBonus;
 					}
 					data.NCLLHLHCOJE();
 					l.Add(data);

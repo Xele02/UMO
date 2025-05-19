@@ -33,5 +33,14 @@ namespace ExternLib
 
 			return 0;
 		}
+
+		public static int SakashoFCMPushNotificationSendPushNotification(int callbackId, string json)
+		{
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			SendMessage(callbackId, res);
+
+			return 0;
+		}
+		
 	}
 }

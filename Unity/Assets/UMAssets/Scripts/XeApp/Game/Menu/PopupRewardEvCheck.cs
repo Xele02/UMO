@@ -348,7 +348,7 @@ namespace XeApp.Game.Menu
 					ex_raidboss_info_list = new List<FDPJBEAKPMA>();
 					for(int i = 0; i < contExt.KNNHGJFJAEN_GetNumBosses(); i++)
 					{
-						List<PKNOKJNLPOE_EventRaid.KJJDLBFDGDM.DPAGNOHCPPH> l = contExt.CMDOFKLCFEB_GetBossRewards(i + 1, PKNOKJNLPOE_EventRaid.IEJAFPGDGNP.FGPLEPGICPO_2);
+						List<PKNOKJNLPOE_EventRaid.KJJDLBFDGDM.DPAGNOHCPPH> l = contExt.CMDOFKLCFEB_GetAllBossRewards(i + 1, PKNOKJNLPOE_EventRaid.IEJAFPGDGNP.FGPLEPGICPO_Mvp_2);
 						HOOEJMGLGFO h = new HOOEJMGLGFO();
 						h.GJAOLNLFEBD_BossName = contExt.AGEJGHGEGFF_GetBossName(i + 1);
 						for(int j = 0; j < l.Count; j++)
@@ -360,7 +360,7 @@ namespace XeApp.Game.Menu
 							h.ADKDHKMPMHP_RateItem.Add(l[j].ADKDHKMPMHP_Rate);
 						}
 						mvp_reward_list.Add(h);
-						l = contExt.CMDOFKLCFEB_GetBossRewards(i + 1, PKNOKJNLPOE_EventRaid.IEJAFPGDGNP.DBPDLIPKFAL_1);
+						l = contExt.CMDOFKLCFEB_GetAllBossRewards(i + 1, PKNOKJNLPOE_EventRaid.IEJAFPGDGNP.DBPDLIPKFAL_First_1);
 						h = new HOOEJMGLGFO();
 						h.GJAOLNLFEBD_BossName = contExt.AGEJGHGEGFF_GetBossName(i + 1);
 						for(int j = 0; j < l.Count; j++)
@@ -372,7 +372,7 @@ namespace XeApp.Game.Menu
 							h.ADKDHKMPMHP_RateItem.Add(l[j].ADKDHKMPMHP_Rate);
 						}
 						attack1st_reward_list.Add(h);
-						l = contExt.CMDOFKLCFEB_GetBossRewards(i + 1, PKNOKJNLPOE_EventRaid.IEJAFPGDGNP.NIHKBNNICFB_0);
+						l = contExt.CMDOFKLCFEB_GetAllBossRewards(i + 1, PKNOKJNLPOE_EventRaid.IEJAFPGDGNP.NIHKBNNICFB_Defeat_0);
 						h = new HOOEJMGLGFO();
 						h.GJAOLNLFEBD_BossName = contExt.AGEJGHGEGFF_GetBossName(i + 1);
 						for(int j = 0; j < l.Count; j++)
@@ -392,35 +392,35 @@ namespace XeApp.Game.Menu
 					for(int i = 0; i < l2.Count; i++)
 					{
 						FDPJBEAKPMA f = new FDPJBEAKPMA();
-						f.ILELGGCCGMJ = l2[i].ILELGGCCGMJ;
-						f.DJEMBILEBFP = l2[i].ILELGGCCGMJ == a3;
-						int a4 = Mathf.Max(1, l2[i].ILELGGCCGMJ - a2);
-						int a5 = Mathf.Min(a3, a1 - l2[i].ILELGGCCGMJ);
+						f.ILELGGCCGMJ = l2[i].ILELGGCCGMJ_UtaGrade;
+						f.DJEMBILEBFP = l2[i].ILELGGCCGMJ_UtaGrade == a3;
+						int a4 = Mathf.Max(1, l2[i].ILELGGCCGMJ_UtaGrade - a2);
+						int a5 = Mathf.Min(a3, a1 - l2[i].ILELGGCCGMJ_UtaGrade);
 						f.IOBJDNEGEBB = l2[a4 - 1].EJGDHAENIDC;
 						f.PKLKOMIAKNL = l2[a5 - 1].EJGDHAENIDC;
-						f.ABHGIJFDLMM = l2[a4 - 1].LCJGEMENAFM;
-						f.EMPCHHKMKBG = l2[a5 - 1].LCJGEMENAFM;
-						f.DFMBENKEIHF = l2[a4 - 1].LBEGGOOHIFM;
-						f.HDPONDIDHAN = l2[a5 - 1].LBEGGOOHIFM;
-						f.HCPJEHKMFHB = l2[a4 - 1].NOLBNKAJANK;
-						f.IPJANNBLHMB = l2[a5 - 1].NOLBNKAJANK;
+						f.ABHGIJFDLMM = l2[a4 - 1].LCJGEMENAFM_DefeatRewardCount;
+						f.EMPCHHKMKBG = l2[a5 - 1].LCJGEMENAFM_DefeatRewardCount;
+						f.DFMBENKEIHF = l2[a4 - 1].LBEGGOOHIFM_FirstRewardCount;
+						f.HDPONDIDHAN = l2[a5 - 1].LBEGGOOHIFM_FirstRewardCount;
+						f.HCPJEHKMFHB = l2[a4 - 1].NOLBNKAJANK_MvpRewardCount;
+						f.IPJANNBLHMB = l2[a5 - 1].NOLBNKAJANK_MvpRewardCount;
 						normal_raidboss_info_list.Add(f);
 					}
 					for(int i = 0; i < l2.Count; i++)
 					{
 						FDPJBEAKPMA f = new FDPJBEAKPMA();
-						f.ILELGGCCGMJ = l2[i].ILELGGCCGMJ;
-						f.DJEMBILEBFP = l2[i].ILELGGCCGMJ == a3;
-						int a4 = Mathf.Max(1, l2[i].ILELGGCCGMJ - a2);
-						int a5 = Mathf.Min(a3, a1 - l2[i].ILELGGCCGMJ);
+						f.ILELGGCCGMJ = l2[i].ILELGGCCGMJ_UtaGrade;
+						f.DJEMBILEBFP = l2[i].ILELGGCCGMJ_UtaGrade == a3;
+						int a4 = Mathf.Max(1, l2[i].ILELGGCCGMJ_UtaGrade - a2);
+						int a5 = Mathf.Min(a3, a1 - l2[i].ILELGGCCGMJ_UtaGrade);
 						f.IOBJDNEGEBB = l2[a4 - 1].EJGDHAENIDC;
 						f.PKLKOMIAKNL = l2[a5 - 1].EJGDHAENIDC;
-						f.ABHGIJFDLMM = l2[a4 - 1].DFCBKNLAFIM;
-						f.EMPCHHKMKBG = l2[a5 - 1].DFCBKNLAFIM;
-						f.DFMBENKEIHF = l2[a4 - 1].GEKJGFHKGEP;
-						f.HDPONDIDHAN = l2[a5 - 1].GEKJGFHKGEP;
-						f.HCPJEHKMFHB = l2[a4 - 1].PNHCJNAJPEM;
-						f.IPJANNBLHMB = l2[a5 - 1].PNHCJNAJPEM;
+						f.ABHGIJFDLMM = l2[a4 - 1].DFCBKNLAFIM_DefeatSpRewardCount;
+						f.EMPCHHKMKBG = l2[a5 - 1].DFCBKNLAFIM_DefeatSpRewardCount;
+						f.DFMBENKEIHF = l2[a4 - 1].GEKJGFHKGEP_FirstSpRewardCount;
+						f.HDPONDIDHAN = l2[a5 - 1].GEKJGFHKGEP_FirstSpRewardCount;
+						f.HCPJEHKMFHB = l2[a4 - 1].PNHCJNAJPEM_MvpRewardCount;
+						f.IPJANNBLHMB = l2[a5 - 1].PNHCJNAJPEM_MvpRewardCount;
 						ex_raidboss_info_list.Add(f);
 					}
 				}

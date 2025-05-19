@@ -348,7 +348,7 @@ public class ANPBHCNJIDI
 		public int AKNELONELJK_Difficulty; // 0x58
 		public bool GIKLNODJKFK_Line6; // 0x5C
 
-		//public bool IGNJCGMLBDA { get; } 0xD56184
+		public bool IGNJCGMLBDA_HasDamage { get { return HALIDDHLNEG_Damage > 0; } } //0xD56184 BFHLAKNJFDH
 
 		// RVA: 0xD54938 Offset: 0xD54938 VA: 0xD54938
 		public JLHGKKIEALB()

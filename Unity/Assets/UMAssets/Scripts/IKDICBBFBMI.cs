@@ -789,10 +789,18 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8DFC40 Offset: 0x8DFC40 VA: 0x8DFC40
-	// public void FGMOMBKGCNF(int LHJCOPMMIGO = 0) { }
+	public void FGMOMBKGCNF(int LHJCOPMMIGO/* = 0*/)
+	{
+        NPNNPNAIONN = false;
+        PLOOEECNHFB = false;
+        ODPJGHOJIOH(LHJCOPMMIGO);
+    }
 
 	// // RVA: 0x8DFC5C Offset: 0x8DFC5C VA: 0x8DFC5C Slot: 49
-	// protected virtual void ODPJGHOJIOH(int LHJCOPMMIGO) { }
+	protected virtual void ODPJGHOJIOH(int LHJCOPMMIGO)
+	{
+        PLOOEECNHFB = true;
+    }
 
 	// // RVA: 0x8DFC68 Offset: 0x8DFC68 VA: 0x8DFC68
 	public void MEHIAJMOLEJ_ReceieveTotalReward(bool GIPBIDFJFLL/* = True*/)

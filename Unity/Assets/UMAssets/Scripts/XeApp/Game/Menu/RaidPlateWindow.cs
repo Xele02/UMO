@@ -185,13 +185,13 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1BD747C Offset: 0x1BD747C VA: 0x1BD747C
 		private void SetText_BonusAttribute(JKIJLMMLNPL a_info, Text a_text, MessageBank a_msg_bank)
 		{
-			a_text.text = string.Format(a_msg_bank.GetMessageByLabel("pop_raid_cannon_plate_bonus_format"), a_msg_bank.GetMessageByLabel(string.Format("missionevent_bonus_music_attribute{0:000}", (int)a_info.ACBHJKCJLON_SceneAttr)), a_info.GCMIDNBBMLA);
+			a_text.text = string.Format(a_msg_bank.GetMessageByLabel("pop_raid_cannon_plate_bonus_format"), a_msg_bank.GetMessageByLabel(string.Format("missionevent_bonus_music_attribute{0:000}", (int)a_info.ACBHJKCJLON_SceneAttr)), a_info.GCMIDNBBMLA_SceneAttrBonus);
 		}
 
 		// // RVA: 0x1BD75EC Offset: 0x1BD75EC VA: 0x1BD75EC
 		private void SetText_BonusSeries(JKIJLMMLNPL a_info, Text a_text, MessageBank a_msg_bank)
 		{
-			a_text.text = string.Format(a_msg_bank.GetMessageByLabel("pop_raid_cannon_plate_bonus_format"), a_msg_bank.GetMessageByLabel(string.Format("missionevent_bonus_series_attribute{0:000}", (int)a_info.KOGEKHMBHOI_SceneSerie)), a_info.IDDAGCGIAPA);
+			a_text.text = string.Format(a_msg_bank.GetMessageByLabel("pop_raid_cannon_plate_bonus_format"), a_msg_bank.GetMessageByLabel(string.Format("missionevent_bonus_series_attribute{0:000}", (int)a_info.KOGEKHMBHOI_SceneSerie)), a_info.IDDAGCGIAPA_SceneSerieBonus);
 		}
 	}
 }

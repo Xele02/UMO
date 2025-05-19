@@ -157,6 +157,31 @@ public class LDEBIBGHCGD_EventRaidLobby : DIHHCBACKGG_DbSection
 			d.DNJEJEANJGL_Value = data.MHGMDJNOLMI[i].JBGEEPFKIGG;
 			FJOEBCMGDMI.Add(data.MHGMDJNOLMI[i].LJNAKDMILMC, d);
 		}
+
+
+		UnityEngine.Debug.LogError(NGHKJOEDLIP.OPFGFINHFCE_Name+" "+NGHKJOEDLIP.OBGBAOLONDD_EventId);
+
+		// Update dates
+		UMOEventList.EventData CurrenEvent = UMOEventList.GetCurrentEvent();
+		if (CurrenEvent != null && CurrenEvent.BlockName.Replace("raid", "raidlobby") == JIKKNHIAEKG_BlockName)
+		{
+			System.DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
+			System.DateTime date2 = Utility.GetLocalDateTime(NGHKJOEDLIP.NIMLIMFPNJP_RaidStart);
+			UnityEngine.Debug.LogError("Lobby : "+NGHKJOEDLIP.CJPMLAIFCDL_LobbyStart+" "+NGHKJOEDLIP.COIHIAKHFNF_End+" "+NGHKJOEDLIP.NIMLIMFPNJP_RaidStart+" "+NGHKJOEDLIP.KCBGBFMGHPA_End);
+			date = date.AddDays(-1);
+			long offset = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, date2.Hour, date2.Minute, date2.Second) - NGHKJOEDLIP.NIMLIMFPNJP_RaidStart;
+			if (NGHKJOEDLIP.CJPMLAIFCDL_LobbyStart != 0) NGHKJOEDLIP.CJPMLAIFCDL_LobbyStart += offset;
+			if (NGHKJOEDLIP.COIHIAKHFNF_End != 0) NGHKJOEDLIP.COIHIAKHFNF_End += offset;
+			if (NGHKJOEDLIP.NIMLIMFPNJP_RaidStart != 0) NGHKJOEDLIP.NIMLIMFPNJP_RaidStart += offset;
+			if (NGHKJOEDLIP.KCBGBFMGHPA_End != 0) NGHKJOEDLIP.KCBGBFMGHPA_End += offset;
+
+			for(int i = 0; i < NNMPGOAGEOL_Missions.Count; i++)
+			{
+				if (NNMPGOAGEOL_Missions[i].KJBGCLPMLCG_Start != 0) NNMPGOAGEOL_Missions[i].KJBGCLPMLCG_Start = NGHKJOEDLIP.CJPMLAIFCDL_LobbyStart;
+				if (NNMPGOAGEOL_Missions[i].GJFPFFBAKGK_End != 0) NNMPGOAGEOL_Missions[i].GJFPFFBAKGK_End = NGHKJOEDLIP.KCBGBFMGHPA_End;
+			}
+		}
+
 		return true;
 	}
 

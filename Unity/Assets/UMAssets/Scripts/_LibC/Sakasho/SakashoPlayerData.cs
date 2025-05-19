@@ -759,17 +759,12 @@ namespace ExternLib
 			res["players"].Add(new EDOHBJAPLPF_JsonData());
 			for (int i = 0; i < ids.HNBFOAJIIAL_Count; i++)
 			{
-				EDOHBJAPLPF_JsonData jsonRes = playerAccount.players[(int)ids[i]].serverData;
 				EDOHBJAPLPF_JsonData p = new EDOHBJAPLPF_JsonData();
 				res["players"].Add(p);
 				p.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
 				p["player_data"] = new EDOHBJAPLPF_JsonData();
 				p["player_data"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
-				for (int j = 0; j < names.HNBFOAJIIAL_Count; j++)
-				{
-					string str = (string)names[j];
-					p["player_data"][str] = jsonRes[str];
-				}
+				FillPlayerData((int)ids[i], p["player_data"], names);
 
 				p["player_id"] = (int)ids[i];
 				p["updated_at"] = 1654421023;
@@ -778,6 +773,16 @@ namespace ExternLib
 
 			SendMessage(callbackId, res);
 			return 0;
+		}
+
+		static public void FillPlayerData(int userId, EDOHBJAPLPF_JsonData Res, EDOHBJAPLPF_JsonData NamesList)
+		{
+			EDOHBJAPLPF_JsonData jsonRes = playerAccount.players[(int)userId].serverData;
+			for (int j = 0; j < NamesList.HNBFOAJIIAL_Count; j++)
+			{
+				string str = (string)NamesList[j];
+				Res[str] = jsonRes[str];
+			}
 		}
 
 	}

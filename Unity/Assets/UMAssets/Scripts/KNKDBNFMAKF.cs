@@ -106,7 +106,10 @@ public class KNKDBNFMAKF_EventSp : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x1125E08 Offset: 0x1125E08 VA: 0x1125E08 Slot: 49
-	// protected override void ODPJGHOJIOH(int LHJCOPMMIGO) { }
+	protected override void ODPJGHOJIOH(int LHJCOPMMIGO)
+	{
+		TodoLogger.LogError(TodoLogger.EventSp_7, "ODPJGHOJIOH");
+	}
 
 	// // RVA: 0x1126330 Offset: 0x1126330 VA: 0x1126330 Slot: 50
 	protected override void MFJFBNPLFBE_OnReceieveTotalReward(bool GIPBIDFJFLL)

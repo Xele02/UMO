@@ -99,7 +99,10 @@ public class HLEBAINCOME_EventScore : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x15ECC48 Offset: 0x15ECC48 VA: 0x15ECC48 Slot: 49
-	// protected override void ODPJGHOJIOH(int LHJCOPMMIGO) { }
+	protected override void ODPJGHOJIOH(int LHJCOPMMIGO)
+	{
+		TodoLogger.LogError(TodoLogger.EventScore_4, "ODPJGHOJIOH");
+	}
 
 	// // RVA: 0x15ED164 Offset: 0x15ED164 VA: 0x15ED164 Slot: 52
 	public override void FAMFKPBPIAA_GetRankingPlayerList(bool PFFJNEFNAMI, int CJHEHIMLGGL, int LHJCOPMMIGO, LIOLBKLMMIK KLMFJJCNBIP, DJBHIFLHJLK IDAEHNGOKAE, DJBHIFLHJLK JGKOLBLPMPG)

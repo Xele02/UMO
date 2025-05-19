@@ -680,7 +680,10 @@ public class CIOECGOMILE
 	}
 
 	// // RVA: 0xFFC7CC Offset: 0xFFC7CC VA: 0xFFC7CC
-	// public bool FAMAFKMHFAK(CIOECGOMILE.PIIFKPKIOOB JDEPBIPCMAL, IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG) { }
+	public bool FAMAFKMHFAK(PIIFKPKIOOB JDEPBIPCMAL, IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
+	{
+		return ACEDPNCIGDG(JDEPBIPCMAL, BHFHGFKBOHH, MOBEEPPKFLG);
+	}
 
 	// // RVA: 0xFFBFF8 Offset: 0xFFBFF8 VA: 0xFFBFF8
 	private bool ACEDPNCIGDG(PIIFKPKIOOB JDEPBIPCMAL, IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
@@ -710,9 +713,9 @@ public class CIOECGOMILE
 						{
 							if(!data.LHIACHALIFC_IsEmpty())
 							{
-								for(int i = 0; i < data.KFGDPMNCCFO.Count; i++)
+								for(int i = 0; i < data.KFGDPMNCCFO_NaespaceForSave.Count; i++)
 								{
-									KLFDBFMNLBL_ServerSaveBlock block = AHEFHIMGIBI_ServerSave.LBDOLHGDIEB_GetBlock(data.KFGDPMNCCFO[i]);
+									KLFDBFMNLBL_ServerSaveBlock block = AHEFHIMGIBI_ServerSave.LBDOLHGDIEB_GetBlock(data.KFGDPMNCCFO_NaespaceForSave[i]);
 									FENCAJJBLBH a = block.PFAKPFKJJKA();
 									if(a != null)
 									{
@@ -738,8 +741,8 @@ public class CIOECGOMILE
 								}
 								KDLBAGCENNC = data;
 								CCNKAKCBBDJ.ODDIHGPONFL_Copy(AHEFHIMGIBI_ServerSave);
-								AHEFHIMGIBI_ServerSave.PLCFEICAKBC(data.KFGDPMNCCFO);
-								CCNKAKCBBDJ.PLCFEICAKBC(data.KFGDPMNCCFO);
+								AHEFHIMGIBI_ServerSave.PLCFEICAKBC(data.KFGDPMNCCFO_NaespaceForSave);
+								CCNKAKCBBDJ.PLCFEICAKBC(data.KFGDPMNCCFO_NaespaceForSave);
 								FMFKHDPKLOC.ODDIHGPONFL_Copy(CCNKAKCBBDJ);
 								KONHMOLMOCI_IsSaving = false;
 								//LAB_00ffc3e0;
@@ -798,13 +801,13 @@ public class CIOECGOMILE
 			KONHMOLMOCI_IsSaving = false;
 			yield break;
 		}
-		List<string> l = (DLOIHKKKNBB as CJIKLGPIPBA).KPIDBPEKMFD();
+		List<string> l = (DLOIHKKKNBB as CJIKLGPIPBA).KPIDBPEKMFD_GetNamespaceForSave();
 		AHEFHIMGIBI_ServerSave.PLCFEICAKBC(l);
 		CCNKAKCBBDJ.PLCFEICAKBC(l);
 		FMFKHDPKLOC.ODDIHGPONFL_Copy(CCNKAKCBBDJ);
-		ECFNAOCFKKN = (DLOIHKKKNBB as CJIKLGPIPBA).DPKGNBIAFDO();
+		ECFNAOCFKKN = (DLOIHKKKNBB as CJIKLGPIPBA).DPKGNBIAFDO_GetUpdatedAt();
 		HLBJOJBALIG(l);
-		int a = (DLOIHKKKNBB as CJIKLGPIPBA).JNFCOPCBHAP();
+		int a = (DLOIHKKKNBB as CJIKLGPIPBA).JNFCOPCBHAP_GetDataStatus();
 		if(a == 2 || BDNBIEMJMCD)
 		{
 			yield return N.a.StartCoroutineWatched(DEHKLOLHKID_Coroutine_ReSave(BHFHGFKBOHH, MOBEEPPKFLG));
@@ -846,9 +849,9 @@ public class CIOECGOMILE
 						{
 							if(!d.LHIACHALIFC_IsEmpty())
 							{
-								for(int i = 0; i < d.KFGDPMNCCFO.Count; i++)
+								for(int i = 0; i < d.KFGDPMNCCFO_NaespaceForSave.Count; i++)
 								{
-									FENCAJJBLBH falsif = LGBMDHOLOIF_decoPlayerData.AHEFHIMGIBI.LBDOLHGDIEB_GetBlock(d.KFGDPMNCCFO[i]).PFAKPFKJJKA();
+									FENCAJJBLBH falsif = LGBMDHOLOIF_decoPlayerData.AHEFHIMGIBI.LBDOLHGDIEB_GetBlock(d.KFGDPMNCCFO_NaespaceForSave[i]).PFAKPFKJJKA();
 									if(falsif != null)
 									{
 										N.a.StartCoroutineWatched(EHNDCODOBBL_Falsification(falsif, MOBEEPPKFLG, 1004));
@@ -1269,9 +1272,9 @@ public class CIOECGOMILE
 						{
 							if(!e.LHIACHALIFC_IsEmpty())
 							{
-								for(int i = 0; i < e.KFGDPMNCCFO.Count; i++)
+								for(int i = 0; i < e.KFGDPMNCCFO_NaespaceForSave.Count; i++)
 								{
-									KLFDBFMNLBL_ServerSaveBlock block = AHEFHIMGIBI_ServerSave.LBDOLHGDIEB_GetBlock(e.KFGDPMNCCFO[i]);
+									KLFDBFMNLBL_ServerSaveBlock block = AHEFHIMGIBI_ServerSave.LBDOLHGDIEB_GetBlock(e.KFGDPMNCCFO_NaespaceForSave[i]);
 									if(block.PFAKPFKJJKA() != null)
 									{
 										N.a.StartCoroutineWatched(EHNDCODOBBL_Falsification(block.PFAKPFKJJKA(), MOBEEPPKFLG, 2010));
@@ -1291,8 +1294,8 @@ public class CIOECGOMILE
 										FMEDFGOMNBK = li;
 									}
 									CCNKAKCBBDJ.ODDIHGPONFL_Copy(AHEFHIMGIBI_ServerSave);
-									AHEFHIMGIBI_ServerSave.PLCFEICAKBC(e.KFGDPMNCCFO);
-									CCNKAKCBBDJ.PLCFEICAKBC(e.KFGDPMNCCFO);
+									AHEFHIMGIBI_ServerSave.PLCFEICAKBC(e.KFGDPMNCCFO_NaespaceForSave);
+									CCNKAKCBBDJ.PLCFEICAKBC(e.KFGDPMNCCFO_NaespaceForSave);
 									FMFKHDPKLOC.ODDIHGPONFL_Copy(CCNKAKCBBDJ);
 									KONHMOLMOCI_IsSaving = false;
 									//LAB_01000bc8;
@@ -1904,7 +1907,7 @@ public class CIOECGOMILE
 				KONHMOLMOCI_IsSaving = false;
 				yield break;
 			}
-			AIOGBKCJLHM.IBMOHKFJDDH(GCLOCOHFEEJ);
+			AIOGBKCJLHM.IBMOHKFJDDH_SaveApCounter(GCLOCOHFEEJ);
 			if(INDDJNMPONH == EKLNMHFCAOI.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem)
 			{
 				AIOGBKCJLHM.NLHLDMGDAFN(EIDOGCOPHII);
@@ -2052,7 +2055,7 @@ public class CIOECGOMILE
 					HGKJCJAMDGK_Max = FBFNJMKPBBA.COEIAHBIFBN(10000, AAIOPEICNNB);
 					if(GCLOCOHFEEJ.MAPPOEFALIP(HGKJCJAMDGK_Max, true, false))
 					{
-						FBFNJMKPBBA.IBMOHKFJDDH(GCLOCOHFEEJ);
+						FBFNJMKPBBA.IBMOHKFJDDH_SaveApCounter(GCLOCOHFEEJ);
 						FBFNJMKPBBA.GOPAABMHDOA();
 						//LAB_01079e14
 						needSave = true;
@@ -2083,9 +2086,9 @@ public class CIOECGOMILE
 				{
 					if(!d.LHIACHALIFC_IsEmpty())
 					{
-						for(int i = 0; i < d.KFGDPMNCCFO.Count; i++)
+						for(int i = 0; i < d.KFGDPMNCCFO_NaespaceForSave.Count; i++)
 						{
-							KLFDBFMNLBL_ServerSaveBlock block = CCNKAKCBBDJ.LBDOLHGDIEB_GetBlock(d.KFGDPMNCCFO[i]);
+							KLFDBFMNLBL_ServerSaveBlock block = CCNKAKCBBDJ.LBDOLHGDIEB_GetBlock(d.KFGDPMNCCFO_NaespaceForSave[i]);
 							FENCAJJBLBH f = block.PFAKPFKJJKA();
 							if(f != null)
 							{
@@ -2786,7 +2789,7 @@ public class CIOECGOMILE
 		else
 		{
 			JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
-			HLBJOJBALIG(diff.KFGDPMNCCFO);
+			HLBJOJBALIG(diff.KFGDPMNCCFO_NaespaceForSave);
 			BHFHGFKBOHH(BODJIDOHAHF);
 			KONHMOLMOCI_IsSaving = false;
 		}
@@ -2928,9 +2931,9 @@ public class CIOECGOMILE
 				{
 					if(!e.LHIACHALIFC_IsEmpty())
 					{
-						for(int i = 0; i < e.KFGDPMNCCFO.Count; i++)
+						for(int i = 0; i < e.KFGDPMNCCFO_NaespaceForSave.Count; i++)
 						{
-							FENCAJJBLBH f = AHEFHIMGIBI_ServerSave.LBDOLHGDIEB_GetBlock(e.KFGDPMNCCFO[i]).PFAKPFKJJKA();
+							FENCAJJBLBH f = AHEFHIMGIBI_ServerSave.LBDOLHGDIEB_GetBlock(e.KFGDPMNCCFO_NaespaceForSave[i]).PFAKPFKJJKA();
 							if (f != null)
 							{
 								N.a.StartCoroutineWatched(EHNDCODOBBL_Falsification(f, MOBEEPPKFLG, 8001));
@@ -3058,9 +3061,9 @@ public class CIOECGOMILE
 				{
 					if(!diff.LHIACHALIFC_IsEmpty())
 					{
-						for(int i = 0; i < diff.KFGDPMNCCFO.Count; i++)
+						for(int i = 0; i < diff.KFGDPMNCCFO_NaespaceForSave.Count; i++)
 						{
-							FENCAJJBLBH err = AHEFHIMGIBI_ServerSave.LBDOLHGDIEB_GetBlock(diff.KFGDPMNCCFO[i]).PFAKPFKJJKA();
+							FENCAJJBLBH err = AHEFHIMGIBI_ServerSave.LBDOLHGDIEB_GetBlock(diff.KFGDPMNCCFO_NaespaceForSave[i]).PFAKPFKJJKA();
 							if(err != null)
 							{
 								N.a.StartCoroutineWatched(EHNDCODOBBL_Falsification(err, MOBEEPPKFLG, 8001));

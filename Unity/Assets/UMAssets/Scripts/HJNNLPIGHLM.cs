@@ -179,7 +179,10 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase // TypeDefIndex
 	}
 
 	// // RVA: 0x183FE80 Offset: 0x183FE80 VA: 0x183FE80 Slot: 49
-	// protected override void ODPJGHOJIOH(int LHJCOPMMIGO) { }
+	protected override void ODPJGHOJIOH(int LHJCOPMMIGO)
+	{
+		TodoLogger.LogError(TodoLogger.EventCollection_1, "ODPJGHOJIOH");
+	}
 
 	// // RVA: 0x18404A0 Offset: 0x18404A0 VA: 0x18404A0 Slot: 50
 	protected override void MFJFBNPLFBE_OnReceieveTotalReward(bool GIPBIDFJFLL)

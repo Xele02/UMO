@@ -121,8 +121,7 @@ public class SakashoFCMPushNotification : SakashoAPIBase
 	//// RVA: 0x2BBB470 Offset: 0x2BBB470 VA: 0x2BBB470
 	private static int SakashoFCMPushNotificationSendPushNotification(int callbackId, string json)
 	{
-		TodoLogger.LogError(TodoLogger.EventRaid_11_13, "SakashoFCMPushNotificationSendPushNotification");
-		return 0;
+		return ExternLib.LibSakasho.SakashoFCMPushNotificationSendPushNotification(callbackId, json);
 	}
 
 	//// RVA: 0x2BBB590 Offset: 0x2BBB590 VA: 0x2BBB590

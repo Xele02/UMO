@@ -117,13 +117,13 @@ public class LBICPMOLOKD
 
 public class CMPLGKFJCIC<EffectInfoClass> : LBICPMOLOKD
 {
-	public List<EffectInfoClass> MGPCMCNFFIM = new List<EffectInfoClass>(); // 0x0
+	public List<EffectInfoClass> MGPCMCNFFIM_Effects = new List<EffectInfoClass>(); // 0x0
 
 	// RVA: -1 Offset: -1
 	public CMPLGKFJCIC(GIINMFDIIMD CDGMPGLAING, Func<GIINMFDIIMD, EffectInfoClass> KACGHAKGAGH)
         : base(CDGMPGLAING)
     {
-        MGPCMCNFFIM.Add(KACGHAKGAGH(CDGMPGLAING.DLENPPIJNPA.PFBEBCDEIND("effects")));
+        MGPCMCNFFIM_Effects.Add(KACGHAKGAGH(CDGMPGLAING.DLENPPIJNPA.PFBEBCDEIND("effects")));
     }
 	/* GenericInstMethod :
 	|

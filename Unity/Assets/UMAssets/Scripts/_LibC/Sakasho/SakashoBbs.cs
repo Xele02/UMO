@@ -88,6 +88,20 @@ namespace ExternLib
 					UpdatedAt = Utility.GetCurrentUnixTime();
 					Load(data, true);
 				}
+
+				public void Update(EDOHBJAPLPF_JsonData data, int userId)
+				{
+					if(data.BBAJPINMOEP_Contains("content"))
+						Content = (string)data["content"];
+					if(data.BBAJPINMOEP_Contains("nickname"))
+						Nickname = (string)data["nickname"];
+					if(data.BBAJPINMOEP_Contains("extra"))
+						Extra = (string)data["extra"];
+					if(data.BBAJPINMOEP_Contains("sage"))
+						Sage = (bool)data["sage"];
+					if(data.BBAJPINMOEP_Contains("replyTo"))
+						ReplyTo = (int)data["replyTo"];
+				}
 			};
 
 			public int Id = -1;
@@ -265,6 +279,15 @@ namespace ExternLib
 				LastCommentUpdatetAt = c.UpdatedAt;
 				return idx;
 			}
+
+			public void UpdateComment(EDOHBJAPLPF_JsonData updateData, int userId)
+			{
+				int commentIdx = (int)updateData["commentIndex"];
+				if(Comments.Count > commentIdx)
+				{
+					Comments[commentIdx].Update(updateData, userId);
+				}
+			}
 		};
 
 		public class UserThreads
@@ -324,6 +347,15 @@ namespace ExternLib
 					return Threads[threadId].AddComment(data, userId);
 				}
 				return -1;
+			}
+
+			public void UpdateComment(EDOHBJAPLPF_JsonData data, int userId)
+			{
+				int threadId = (int)data["threadId"];
+				if(Threads.ContainsKey(threadId))
+				{
+					Threads[threadId].UpdateComment(data, userId);
+				}
 			}
 		};
 
@@ -442,7 +474,15 @@ namespace ExternLib
 
 		public static int SakashoBbsUpdateThreadComment(int callbackId, string json)
 		{
-			TodoLogger.LogError(TodoLogger.EventRaid_11_13, "SakashoBbsUpdateThreadComment");
+			EDOHBJAPLPF_JsonData req = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
+
+			UserThreads threadData = playerAccount.playerData.bbsThreadCache;
+			EDOHBJAPLPF_JsonData res = GetBaseMessage();
+			threadData.UpdateComment(req, playerAccount.userId);
+
+			SaveAccountServerData();
+			SendMessage(callbackId, res);
+
 			return 0;
 		}
 

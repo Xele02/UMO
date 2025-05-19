@@ -928,7 +928,7 @@ namespace XeApp.Game.Menu
 			{
 				if(!MenuScene.CheckDatelineAndAssetUpdate())
 				{
-					if(RaidController.IOGPHNLODAF(true))
+					if(RaidController.IOGPHNLODAF_IsMcGaugeMax(true))
 					{
 						if(m_bossSelectListLayout.CurrentIndex < m_bossInfoViewList.Count)
 						{
@@ -1015,14 +1015,14 @@ namespace XeApp.Game.Menu
 						if(RaidController.LMIFOCDCNAI())
 						{
 							m_bottomButtonLayout.SetButtonType(RaidBottomButtonLayout.RaidBottomBtn.RequestHelp);
-							m_bottomButtonLayout.SetBossHelpCount(RaidController.HEMEDMMBIBH_GetBossHelpCount(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id));
+							m_bottomButtonLayout.SetBossHelpCount(RaidController.HEMEDMMBIBH_GetBossHelpCountLeft(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id));
 							return;
 						}
-						if(!RaidController.KIHAEAEEFJE(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id))
+						if(!RaidController.KIHAEAEEFJE_IsOverLimitHelp(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id))
 						{
 							m_bottomButtonLayout.SetButtonType(RaidBottomButtonLayout.RaidBottomBtn.RequestHelpDone);
-							m_bottomButtonLayout.SetBossHelpCount(RaidController.HEMEDMMBIBH_GetBossHelpCount(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id));
-							m_bottomButtonLayout.SetBossHelpWatcher(RaidController.GCDHLLHHIHA(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id), RaidController.HEMEDMMBIBH_GetBossHelpCount(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id) != 0, false);
+							m_bottomButtonLayout.SetBossHelpCount(RaidController.HEMEDMMBIBH_GetBossHelpCountLeft(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id));
+							m_bottomButtonLayout.SetBossHelpWatcher(RaidController.GCDHLLHHIHA_GetNextRequestTime(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id), RaidController.HEMEDMMBIBH_GetBossHelpCountLeft(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id) != 0, false);
 							return;
 						}
 					}
@@ -1064,7 +1064,7 @@ namespace XeApp.Game.Menu
 				m_bossInfoLayout.SetSongBonus(m_bossInfoList[idx].NFOOOBMJINC_MissionBonusNum);
 				m_bossInfoLayout.SetMissionInfoText(m_bossInfoList[idx].CJLHLKKNMEE_MissionText);
 				m_bossInfoLayout.SetSp(m_bossInfoList[idx].IKICLMGFFPB_IsSpecial);
-				m_bossInfoLayout.SetAssistPlay(!RaidController.LIAJFGCJJIM(m_bossInfoList[idx].PPFNGGCBJKC_Id));
+				m_bossInfoLayout.SetAssistPlay(!RaidController.LIAJFGCJJIM_HasAssist(m_bossInfoList[idx].PPFNGGCBJKC_Id));
 				while(!waitBossImage)
 					yield return null;
 				m_bossSelectListLayout.gameObject.SetActive(true);
@@ -1130,7 +1130,7 @@ namespace XeApp.Game.Menu
 			m_bossInfoLayout.SetSongBonus(m_bossInfoViewList[index].NFOOOBMJINC_MissionBonusNum);
 			m_bossInfoLayout.SetMissionInfoText(m_bossInfoViewList[index].CJLHLKKNMEE_MissionText);
 			m_bossInfoLayout.SetSp(m_bossInfoViewList[index].IKICLMGFFPB_IsSpecial);
-			m_bossInfoLayout.SetAssistPlay(!RaidController.LIAJFGCJJIM(m_bossInfoViewList[index].PPFNGGCBJKC_Id));
+			m_bossInfoLayout.SetAssistPlay(!RaidController.LIAJFGCJJIM_HasAssist(m_bossInfoViewList[index].PPFNGGCBJKC_Id));
 			m_macrossCannonButton.DisableMcrsCannonLine(false);
 			SetBossHelpButtonType(index);
 		}
@@ -1182,7 +1182,7 @@ namespace XeApp.Game.Menu
 			m_bossInfoLayout.SetSongBonus(m_bossInfoViewList[idx].NFOOOBMJINC_MissionBonusNum);
 			m_bossInfoLayout.SetMissionInfoText(m_bossInfoViewList[idx].CJLHLKKNMEE_MissionText);
 			m_bossInfoLayout.SetSp(m_bossInfoViewList[idx].IKICLMGFFPB_IsSpecial);
-			m_bossInfoLayout.SetAssistPlay(!RaidController.LIAJFGCJJIM(m_bossInfoViewList[idx].PPFNGGCBJKC_Id));
+			m_bossInfoLayout.SetAssistPlay(!RaidController.LIAJFGCJJIM_HasAssist(m_bossInfoViewList[idx].PPFNGGCBJKC_Id));
 			SetBossHelpButtonType(idx);
 		}
 
@@ -1254,9 +1254,9 @@ namespace XeApp.Game.Menu
 						//0x18267F4
 						done = true;
 						m_bottomButtonLayout.SetButtonType(RaidBottomButtonLayout.RaidBottomBtn.RequestHelpDone);
-						int helpCount = RaidController.HEMEDMMBIBH_GetBossHelpCount(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id);
+						int helpCount = RaidController.HEMEDMMBIBH_GetBossHelpCountLeft(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id);
 						m_bottomButtonLayout.SetBossHelpCount(helpCount);
-						m_bottomButtonLayout.SetBossHelpWatcher(RaidController.GCDHLLHHIHA(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id), helpCount != 0, RaidController.KIHAEAEEFJE(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id));
+						m_bottomButtonLayout.SetBossHelpWatcher(RaidController.GCDHLLHHIHA_GetNextRequestTime(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id), helpCount != 0, RaidController.KIHAEAEEFJE_IsOverLimitHelp(RaidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id));
 						m_popRaidHelpCompletionListSetting.helperList = helper;
 						if(helper.Count < 1)
 						{
@@ -2111,7 +2111,7 @@ namespace XeApp.Game.Menu
 				yield break;
 			}
 			MenuScene.Instance.InputDisable();
-			if(!RaidController.PPPEFGFIGMH(out itemId, out itemNum))
+			if(!RaidController.PPPEFGFIGMH_GetStartBonusItemIdAndCount(out itemId, out itemNum))
 			{
 				yield break;
 			}
