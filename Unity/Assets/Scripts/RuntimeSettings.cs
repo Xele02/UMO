@@ -179,6 +179,7 @@ class RuntimeSettings : ScriptableObject
 	public KeyCode Lane5Touch = KeyCode.J;
 	public KeyCode Lane6Touch = KeyCode.K;
 	public KeyCode ActiveSkillTouch = KeyCode.Space;
+	public KeyCode Fullscreen = KeyCode.F11;
 
 	//public bool ForceCutin = true;
 	public bool DisableNoteSound { get; set; }
@@ -196,6 +197,9 @@ class RuntimeSettings : ScriptableObject
 
 	public bool SLiveViewerRequest { get; set; }
 	public bool SLiveViewer { get; set; }
+
+	[Header("FullScreen")]
+	public Rect FullScreenPositionAndSizeOverride = new Rect(-1, -1, -1, -1);
 
 	[Header("Debug")]
 
