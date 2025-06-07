@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 1011717302}
   - component: {fileID: 1011717303}
   - component: {fileID: 1011717304}
+  - component: {fileID: 1011717305}
   m_Layer: 0
   m_Name: UMO
   m_TagString: Untagged
@@ -193,6 +194,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e43abe4249328fc988e332ad002b083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1011717305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011717299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf57bc56198fee342bfa97a0dd4761d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1272397342
