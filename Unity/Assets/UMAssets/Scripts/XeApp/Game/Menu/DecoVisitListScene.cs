@@ -565,7 +565,7 @@ namespace XeApp.Game.Menu
 			}
 			else if(m_type == LayoutDecorationVisitWindow.VisitTabType.Fan)
 			{
-				m_layoutDecorationVisitWindow.SettingMember(m_friendPlayerData.Count, PIGBKEIAMPE_FriendManager.DJHFILDBOFG());
+				m_layoutDecorationVisitWindow.SettingMember(m_friendPlayerData.Count, PIGBKEIAMPE_FriendManager.DJHFILDBOFG_GetMaxFanPossible());
 			}
 			else if(m_type == LayoutDecorationVisitWindow.VisitTabType.Friend)
 			{
@@ -637,7 +637,7 @@ namespace XeApp.Game.Menu
 				bool b = false;
 				if((a_filter & SearchPlayerFilter.Favorite) != 0)
 				{
-					b = p.BBNAEPGAMMA;
+					b = p.BBNAEPGAMMA_IsFavorite;
 				}
 				return b || (a_filter & SearchPlayerFilter.Frined) != 0;
 			};
@@ -708,7 +708,7 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < m_cashFriendPlayerData_Other.Count; i++)
 				{
 					IFICNCAHIGI it = m_cashFriendPlayerData_Other[i] as IFICNCAHIGI;
-					it.BBNAEPGAMMA = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(it.MLPEHNBNOGD_Id);
+					it.BBNAEPGAMMA_IsFavorite = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(it.MLPEHNBNOGD_Id);
 				}
 			}
 		}

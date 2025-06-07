@@ -406,7 +406,14 @@ public class JDDGGJCGOPA_RecordMusic : KLFDBFMNLBL_ServerSaveBlock
 	public override bool DMICHEJIAJL { get { return true; } } // 0x1C2F144 NFKFOODCJJB
 
 	// // RVA: 0x1C238B4 Offset: 0x1C238B4 VA: 0x1C238B4
-	// public JDDGGJCGOPA.EHFMCGGNPIJ GCINIJEMHFK(int ADHMMMEOJMK) { }
+	public EHFMCGGNPIJ_MusicInfo GCINIJEMHFK(int ADHMMMEOJMK)
+	{
+		if(ADHMMMEOJMK > 0 && ADHMMMEOJMK <= FAMANJGJANN_FreeMusicInfo.Count)
+		{
+			return FAMANJGJANN_FreeMusicInfo[ADHMMMEOJMK - 1];
+		}
+		return null;
+	}
 
 	// // RVA: 0x1C23978 Offset: 0x1C23978 VA: 0x1C23978
 	public JDDGGJCGOPA_RecordMusic()

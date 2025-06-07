@@ -1103,7 +1103,7 @@ public class IOGKADECKOP
 				{
 					if(l[i] != null)
 					{
-						l[i].HEFIKPAHCIA(/*20*/GBNDFCEDNMG.CJDGJFINBFH.DCFBLGLFJDO);
+						l[i].HEFIKPAHCIA(/*20*/GBNDFCEDNMG.CJDGJFINBFH.DCFBLGLFJDO_20);
 					}
 				}
 				if(GNGMCIAIKMA.HHCJCDFCLOB != null)

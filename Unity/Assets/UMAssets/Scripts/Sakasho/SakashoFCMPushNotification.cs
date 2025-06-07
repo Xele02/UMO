@@ -34,7 +34,68 @@ public class SakashoFCMPushNotification : SakashoAPIBase
 	}
 
 	//// RVA: 0x2BBA98C Offset: 0x2BBA98C VA: 0x2BBA98C
-	//public static SakashoAPICallContext SendPushNotification(int[] recipientIds, SakashoFCMPushNotificationPayload payload, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext SendPushNotification(int[] recipientIds, SakashoFCMPushNotificationPayload payload, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		ArrayList l = null;
+		if(recipientIds != null)
+		{
+			l = new ArrayList();
+			for(int i = 0; i < recipientIds.Length; i++)
+			{
+				l.Add(recipientIds[i]);
+			}
+		}
+		h["recipientIds"] = l;
+		if(payload != null)
+		{
+			if(payload.Message != null)
+			{
+				h["message"] = payload.Message;
+			}
+			if(payload.TimeToLive.HasValue)
+			{
+				h["timeToLive"] = payload.TimeToLive.Value;
+			}
+			if(payload.IOSCategory != null)
+			{
+				h["iOSCategory"] = payload.IOSCategory;
+			}
+			if(payload.IOSBadgeNumber.HasValue)
+			{
+				h["iOSBadgeNumber"] = payload.IOSBadgeNumber.Value;
+			}
+			if(payload.IOSSoundPath != null)
+			{
+				h["iOSSoundPath"] = payload.IOSSoundPath;
+			}
+			if(payload.IOSMediaAttachment != null)
+			{
+				h["iOSMediaAttachment"] = payload.IOSMediaAttachment;
+			}
+			if(payload.AndroidMessageTitle != null)
+			{
+				h["androidMessageTitle"] = payload.AndroidMessageTitle;
+			}
+			if(payload.AndroidCollapseKey != null)
+			{
+				h["androidCollapseKey"] = payload.AndroidCollapseKey;
+			}
+			if(payload.AndroidIconName != null)
+			{
+				h["androidIconName"] = payload.AndroidIconName;
+			}
+			if(payload.AndroidChannelId != null)
+			{
+				h["androidChannelId"] = payload.AndroidChannelId;
+			}
+			if(payload.Extras != null)
+			{
+				h["extras"] = payload.Extras;
+			}
+		}
+		return new SakashoAPICallContext(Call(SakashoFCMPushNotificationSendPushNotification, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	//// RVA: 0x2BBAF18 Offset: 0x2BBAF18 VA: 0x2BBAF18
 	//public static SakashoAPICallContext AcceptPushNotificationWithTimeZoneAndLocale(string fcm_token, string time_zone, string locale, OnSuccess onSuccess, OnError onError) { }
@@ -58,7 +119,10 @@ public class SakashoFCMPushNotification : SakashoAPIBase
 	}
 
 	//// RVA: 0x2BBB470 Offset: 0x2BBB470 VA: 0x2BBB470
-	//private static extern int SakashoFCMPushNotificationSendPushNotification(int callbackId, string json) { }
+	private static int SakashoFCMPushNotificationSendPushNotification(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoFCMPushNotificationSendPushNotification(callbackId, json);
+	}
 
 	//// RVA: 0x2BBB590 Offset: 0x2BBB590 VA: 0x2BBB590
 	//private static extern int SakashoFCMPushNotificationAcceptPushNotificationWithTimeZoneAndLocale(int callbackId, string json) { }

@@ -201,7 +201,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1D1260C Offset: 0x1D1260C VA: 0x1D1260C
-		// public void ChangeViewForSupportResult() { }
+		public void ChangeViewForSupportResult()
+		{
+			textLiveSkipCaution.text = MessageManager.Instance.GetMessage("menu", "result_assist_caution");
+		}
 
 		// // RVA: 0x1D126DC Offset: 0x1D126DC VA: 0x1D126DC
 		public void SkipAnim()

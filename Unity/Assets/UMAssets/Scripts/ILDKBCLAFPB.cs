@@ -313,7 +313,10 @@ public class ILDKBCLAFPB
         // public static float MOMJFKFNJIA(int DHMNFEPOLOK) { }
 
         // // RVA: 0x20360D4 Offset: 0x20360D4 VA: 0x20360D4
-        // public float MIFIAMNHKOF() { }
+        public float MIFIAMNHKOF()
+		{
+			return HOMPENLIHCK_VolBgm * 5 / 100.0f;
+		}
 
         // // RVA: 0x20360F8 Offset: 0x20360F8 VA: 0x20360F8
         // public float EBBAAPCHNKL() { }
@@ -1353,13 +1356,28 @@ public class ILDKBCLAFPB
 			}
 
 			//// RVA: 0x2024A5C Offset: 0x2024A5C VA: 0x2024A5C
-			//public bool FKEJBAHCMGC(int LHMJFCCBPPN) { }
+			public bool FKEJBAHCMGC(int LHMJFCCBPPN)
+			{
+				if(NFFKLFEOPMO_EventId != LHMJFCCBPPN)
+				{
+					NFFKLFEOPMO_EventId = LHMJFCCBPPN;
+					HNKJDJFFACC_Difficulty = 2;
+					return true;
+				}
+				return false;
+			}
 
 			//// RVA: 0x2024A80 Offset: 0x2024A80 VA: 0x2024A80
-			//public Difficulty.Type FFACBDAJJJP() { }
+			public Difficulty.Type FFACBDAJJJP_GetDifficulty()
+			{
+				return (Difficulty.Type)HNKJDJFFACC_Difficulty;
+			}
 
 			//// RVA: 0x2024A88 Offset: 0x2024A88 VA: 0x2024A88
-			//public void HJHBGHMNGKL(Difficulty.Type AKNELONELJK) { }
+			public void HJHBGHMNGKL_SetDifficulty(Difficulty.Type AKNELONELJK)
+			{
+				HNKJDJFFACC_Difficulty = (int)AKNELONELJK;
+			}
 
 			//// RVA: 0x2024A90 Offset: 0x2024A90 VA: 0x2024A90
 			//public void NGNECOFAMKP(FreeCategoryId.Type DEPGBBJMFED) { }
@@ -1427,22 +1445,37 @@ public class ILDKBCLAFPB
 			}
 
 			//// RVA: 0x2024788 Offset: 0x2024788 VA: 0x2024788
-			//public void AGCAONIMNAL(long EKEGHNPNCEH) { }
+			public void AGCAONIMNAL_SetNewsletterUpdateAt(long EKEGHNPNCEH)
+			{
+				KNMEGCIAIAO_NewsletterUpdateAt = EKEGHNPNCEH;
+			}
 
 			//// RVA: 0x2024798 Offset: 0x2024798 VA: 0x2024798
-			//public long HJEMMCMEKED() { }
+			public long HJEMMCMEKED_GetNewsletterUpdateAt()
+			{
+				return KNMEGCIAIAO_NewsletterUpdateAt;
+			}
 
 			//// RVA: 0x20247A0 Offset: 0x20247A0 VA: 0x20247A0
-			//public void IDIHHKNAIJG(long EKEGHNPNCEH) { }
+			public void IDIHHKNAIJG_SetCoopQuestUpdateAt(long EKEGHNPNCEH)
+			{
+				JPNJGPKMGFA_CoopQuestUpdateAt = EKEGHNPNCEH;
+			}
 
 			//// RVA: 0x20247B0 Offset: 0x20247B0 VA: 0x20247B0
 			//public long IKGFALONFNL() { }
 
 			//// RVA: 0x20247B8 Offset: 0x20247B8 VA: 0x20247B8
-			//public void JJDBLFAGGGK(bool JKDJCFEBDHC) { }
+			public void JJDBLFAGGGK_SetIsDisplayViewingText(bool JKDJCFEBDHC)
+			{
+				CDEEHJDGMDC_IsDisplayViewingText = JKDJCFEBDHC;
+			}
 
 			//// RVA: 0x20247C0 Offset: 0x20247C0 VA: 0x20247C0
-			//public bool LALECMJIGPH() { }
+			public bool LALECMJIGPH_GetIsDisplayViewingText()
+			{
+				return CDEEHJDGMDC_IsDisplayViewingText;
+			}
 		}
 		 
 		public class DBALFEBAHDH_Bbs

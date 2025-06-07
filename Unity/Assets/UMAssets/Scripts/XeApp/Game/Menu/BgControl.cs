@@ -965,9 +965,11 @@ namespace XeApp.Game.Menu
 			//0x143EFDC
 			BgTextureType texType = 0;
 			ConvertBgType(bgType, ref texType, ref id);
+			string assetId = id.ToString("D2");
 			if(texType == BgTextureType.Raid)
 			{
 				m_strBuilder.SetFormat("{0}{1:D3}_{2:D2}.xab", RaidBgTextureBundlePath, id, 1);
+				assetId = string.Format("{0:D3}_{1:D2}", id, 1);
 			}
 			else if(texType == BgTextureType.Music)
 			{
@@ -975,7 +977,7 @@ namespace XeApp.Game.Menu
 			}
 			if(!m_cachedTextures.ContainsKey(m_strBuilder.ToString()))
 			{
-				operation = AssetBundleManager.LoadAssetAsync(m_strBuilder.ToString(), id.ToString("D2"), typeof(Texture2D));
+				operation = AssetBundleManager.LoadAssetAsync(m_strBuilder.ToString(), assetId, typeof(Texture2D));
 				yield return Co.R(operation);
 				BgTexture tex = new BgTexture();
 				tex.SetFlags(BgTextureFlag.Permanently);

@@ -79,7 +79,6 @@ namespace XeApp.Game.Menu
 							int idx = 0;
 							for(int i = 1; i < m_iconTextureCache.Count; i++)
 							{
-								TodoLogger.LogError(TodoLogger.ToCheck, "Weird int64");
 								if(m_iconTextureCache[i].CreateCount < createCount)
 								{
 									idx = i;

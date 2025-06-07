@@ -201,7 +201,45 @@ namespace XeApp.Game.Menu
 				lobbyController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as NKOBMDPHNGP_EventRaidLobby;
 				if(lobbyController != null)
 				{
-					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
+					int otherUniqueId = 0;
+					int otherLobbyId = 0;
+					t_is_end = false;
+					t_is_error = false;
+					lobbyController.LLLKDLPJHCF(a_arg.data.MLPEHNBNOGD_Id, (int u_id, int l_id) =>
+					{
+						//0x9CFBF0
+						otherUniqueId = u_id;
+						otherLobbyId = l_id;
+						t_is_end = true;
+					}, () =>
+					{
+						//0x9CFB38
+						t_is_error = true;
+					});
+					while(!t_is_end)
+					{
+						if(!t_is_error)
+							yield return null;
+						else
+						{
+							//LAB_009d109c
+							m_isGotoTitle = true;
+							yield break;
+						}
+					}
+					if(otherUniqueId != 0)
+					{
+						if(lobbyController.PGIIDPEGGPI_EventId == otherUniqueId)
+						{
+							if(otherLobbyId != 0)
+							{
+								if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LLBECHBNIJG_EventRaidPlayer.MEBHCFJCKFE_LobbyId != otherLobbyId)
+								{
+									IsLobby = true;
+								}
+							}
+						}
+					}
 				}
 				t_is_end = false;
 				t_is_error = false;

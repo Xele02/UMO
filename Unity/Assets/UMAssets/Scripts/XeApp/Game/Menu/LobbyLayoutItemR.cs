@@ -267,8 +267,8 @@ namespace XeApp.Game.Menu
 			SetUpdateAtTime(_time);
 			KDKFHGHGFEK k = new KDKFHGHGFEK();
 			k.KHEKNNFCAOI(_commentId, EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif);
-			SetMessgeText(_type, k.DOIGLOBENMG);
-			m_textTypeChange.StartChildrenAnimGoStop(k.DBGAJBIBODC.ToString("D2"));
+			SetMessgeText(_type, k.DOIGLOBENMG_StampName);
+			m_textTypeChange.StartChildrenAnimGoStop(k.DBGAJBIBODC_FontType.ToString("D2"));
 			LoadIconTexture(_miniId);
 			LoadtBallonTexture(_commentId);
 		}
@@ -477,7 +477,7 @@ namespace XeApp.Game.Menu
 		{
 			if(series > SeriesAttr.Type.None && series < SeriesAttr.Type.Num)
 			{
-				m_moveThumAnim.StartChildrenAnimGoStop(series.ToString("D2"));
+				m_moveThumAnim.StartChildrenAnimGoStop(((int)series).ToString("D2"));
 			}
 		}
 

@@ -58,7 +58,10 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xD0C2F8 Offset: 0xD0C2F8 VA: 0xD0C2F8
-		//public void StampEditHidden(bool isHidden) { }
+		public void StampEditHidden(bool isHidden)
+		{
+			m_stampEditButton.Hidden = isHidden;
+		}
 
 		// RVA: 0xD21A18 Offset: 0xD21A18 VA: 0xD21A18 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
@@ -129,7 +132,17 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xD0999C Offset: 0xD0999C VA: 0xD0999C
-		//public void Hide() { }
+		public void Hide()
+		{
+			if(isRaidLobby)
+			{
+				transform.SetParent(prevParent, false);
+			}
+			MenuScene.Instance.HelpButton.SetEnable();
+			m_btnHide.targetGraphic.raycastTarget = false;
+			m_stampWindowAnim.StartChildrenAnimGoStop("st_wait");
+			IsShow = false;
+		}
 
 		// RVA: 0xD21F58 Offset: 0xD21F58 VA: 0xD21F58
 		public bool IsPlayingChild()

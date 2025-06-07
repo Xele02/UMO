@@ -23,7 +23,7 @@ namespace XeApp
 		private LevelupIconStatus m_levelupIconStatus; // 0xB8
 
 		public override bool IsLoaded { get { return base.IsLoaded && IsLoadedSpResource; } } //0xBB2E5C
-		public NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC SpType { get { return (NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC)ViewData.GBJFNGCDKPM; } } //0xBB2E90
+		public NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC SpType { get { return (NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC)ViewData.GBJFNGCDKPM_Attribute; } } //0xBB2E90
 
 		// RVA: 0xBB2EC4 Offset: 0xBB2EC4 VA: 0xBB2EC4 Slot: 6
 		protected override void PostLoadResource(GameObject spriteBase, EKLNMHFCAOI.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args)

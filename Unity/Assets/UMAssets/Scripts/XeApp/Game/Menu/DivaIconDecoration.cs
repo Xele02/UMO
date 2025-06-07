@@ -171,7 +171,7 @@ namespace XeApp.Game.Menu
 				bool isFriend = false;
 				bool isFav = false;
 				isFriend = friendPlayerData.PDIPANKOKOL_FriendType == IBIGBMDANNM.LJJOIIAEICI.HEEJBCDDOJJ_Friend;
-				if (friendPlayerData.PCEGKKLKFNO == null || !(friendPlayerData.PCEGKKLKFNO is IFICNCAHIGI) || !(friendPlayerData.PCEGKKLKFNO as IFICNCAHIGI).BBNAEPGAMMA)
+				if (friendPlayerData.PCEGKKLKFNO == null || !(friendPlayerData.PCEGKKLKFNO is IFICNCAHIGI) || !(friendPlayerData.PCEGKKLKFNO as IFICNCAHIGI).BBNAEPGAMMA_IsFavorite)
 				{
 					isFav = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(friendPlayerData.MLPEHNBNOGD_Id);
 				}

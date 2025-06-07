@@ -3,6 +3,9 @@ using XeApp.Game.Common;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.Text;
+using XeSys;
+using UnityEngine.Localization.SmartFormat;
 
 namespace XeApp.Game.Menu
 {
@@ -31,7 +34,7 @@ namespace XeApp.Game.Menu
 		private bool m_is_show; // 0x38
 
 		public ActionButton sceneBtn { get { return m_sceneBtn; } } //0x96C220
-		//public Button hideBtn { get; } 0x96C228
+		public Button hideBtn { get { return m_btnHide; } } //0x96C228
 		public Action onSceneClickButton { private get; set; } // 0x3C
 		public Action onHideClickButton { private get; set; } // 0x40
 
@@ -42,10 +45,18 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x96C244 Offset: 0x96C244 VA: 0x96C244
-		//public bool IsPlaying() { }
+		public bool IsPlaying()
+		{
+			return m_baseButtonAnim.IsPlayingChildren();
+		}
 
 		//// RVA: 0x968FC8 Offset: 0x968FC8 VA: 0x968FC8
-		//public void Show(bool isEnd = False) { }
+		public void Show(bool isEnd/* = False*/)
+		{
+			m_baseButtonAnim.StartChildrenAnimGoStop(isEnd ? "st_in" : "go_in", "st_in");
+			m_is_show = true;
+			m_btnHide.targetGraphic.raycastTarget = true;
+		}
 
 		//// RVA: 0x967130 Offset: 0x967130 VA: 0x967130
 		public void Hide(bool isEnd = false)
@@ -66,16 +77,65 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x9691F8 Offset: 0x9691F8 VA: 0x9691F8
-		//public bool IsShow() { }
+		public bool IsShow()
+		{
+			return m_is_show;
+		}
 
 		//// RVA: 0x966E98 Offset: 0x966E98 VA: 0x966E98
-		//public void SetType(HomeLobbyButtonController.Type a_type) { }
+		public void SetType(HomeLobbyButtonController.Type a_type)
+		{
+			m_typeButtonAnim.StartChildrenAnimGoStop(a_type == HomeLobbyButtonController.Type.UP ? "02" : "01");
+		}
 
 		//// RVA: 0x968AF0 Offset: 0x968AF0 VA: 0x968AF0
-		//public void SetRaidBattleHeld(HomeLobbySceneButton.eHeldType _type) { }
+		public void SetRaidBattleHeld(eHeldType _type)
+		{
+			if(_type == eHeldType.eAfter)
+			{
+				m_tblButtonAnim.StartAllAnimGoStop("03");
+			}
+			else if(_type == eHeldType.eNow)
+			{
+				m_tblButtonAnim.StartAllAnimGoStop("02");
+			}
+			else if(_type == eHeldType.eBefore)
+			{
+				m_tblButtonAnim.StartAllAnimGoStop("01");
+			}
+		}
 
 		//// RVA: 0x968BD0 Offset: 0x968BD0 VA: 0x968BD0
-		//public void SetRaidBattleText(HomeLobbySceneButton.eHeldType _type, int _day) { }
+		public void SetRaidBattleText(eHeldType _type, int _day)
+		{
+			m_dayNum = _day;
+			StringBuilder str = new StringBuilder();
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			if(_type == eHeldType.eAfter)
+			{
+				if(_day < 1)
+					str.AppendFormat(bk.GetMessageByLabel("home_lobby_button_after_today"), Array.Empty<object>());
+				else
+					str.AppendSmart(bk.GetMessageByLabel("home_lobby_button_after"), m_dayNum);
+			}
+			else if(_type == eHeldType.eNow)
+			{
+				if(_day < 1)
+					str.AppendFormat(bk.GetMessageByLabel("home_lobby_button_enter_today"), Array.Empty<object>());
+				else
+					str.AppendSmart(bk.GetMessageByLabel("home_lobby_button_enter"), m_dayNum);
+			}
+			else if(_type == eHeldType.eBefore)
+			{
+				if(_day < 1)
+					str.AppendFormat(bk.GetMessageByLabel("home_lobby_button_before_today"), Array.Empty<object>());
+				else
+					str.AppendSmart(bk.GetMessageByLabel("home_lobby_button_before"), m_dayNum);
+			}
+			else
+				return;
+			m_raidText.text = str.ToString();
+		}
 
 		// RVA: 0x96C270 Offset: 0x96C270 VA: 0x96C270 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

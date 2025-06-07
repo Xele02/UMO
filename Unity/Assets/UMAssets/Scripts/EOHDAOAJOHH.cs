@@ -124,7 +124,18 @@ public class EOHDAOAJOHH
 				PKNOKJNLPOE_EventRaid p = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 				if(p != null)
 				{
-					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event Raid");
+					if(p.DBNGGBFOAPG())
+					{
+						long a = p.EIEDIDECECD();
+						if(a != 0)
+						{
+							long t = Utility.GetCurrentUnixTime();
+							if(a >= t && (a - t) >= 5 && JPFDCIFKBML(a))
+							{
+								KGCCNEBMHMM.LKCPCCANJFB_SendNotif(EAPDJLPDHEJ.JIMJHIDEHNM, a, 6, p.MAICAKMIBEM("ap_notification_title", JpStringLiterals.StringLiteral_10282), p.MAICAKMIBEM("ap_notification_main", JpStringLiterals.StringLiteral_10284), 102, "png");
+							}
+						}
+					}
 				}
 			}
 		}

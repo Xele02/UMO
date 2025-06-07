@@ -1251,10 +1251,13 @@ namespace XeApp.Game.Menu
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			m_eventBanner.SetType(VerticalMusicSelectEventBanner.ButtonType.Disable);
 			m_eventItem.SetEnable(false);
-			IKDICBBFBMI_EventBase eventInfo = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived);
-			if(eventInfo != null)
+			NKOBMDPHNGP_EventRaidLobby eventInfo = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
+			if(eventInfo != null && eventInfo.AKNOOLKMEGJ())
 			{
-				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "ApplyEventInfo");
+				m_eventTicketId = NKOBMDPHNGP_EventRaidLobby.ADPMLOEOAFD_GetTicketId();
+				m_eventItem.SetItemNum(eventInfo.ONKKHPKHCIA_GetNumTicket());
+				m_eventItem.SetEnable(true);
+				SetTicketDropIcon(m_eventTicketId);
 			}
 			if(m_eventCtrl != null && 
 				(m_eventCtrl.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle || 

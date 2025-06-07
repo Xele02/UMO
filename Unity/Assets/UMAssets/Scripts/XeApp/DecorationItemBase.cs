@@ -129,7 +129,7 @@ namespace XeApp
 		public bool CanEdit { get {
 				if(ViewData.NPADACLCNAN_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp)
 				{
-					return ViewData.GBJFNGCDKPM != 11;
+					return ViewData.GBJFNGCDKPM_Attribute != 11;
 				}
 				return true;
 			} } //0x1AD07E4

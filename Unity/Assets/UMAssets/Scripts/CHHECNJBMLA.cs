@@ -103,7 +103,10 @@ public class CHHECNJBMLA_EventBoxGacha : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x12C13E8 Offset: 0x12C13E8 VA: 0x12C13E8 Slot: 49
-	// protected override void ODPJGHOJIOH(int LHJCOPMMIGO) { }
+	protected override void ODPJGHOJIOH(int LHJCOPMMIGO)
+	{
+		TodoLogger.LogError(TodoLogger.EventBoxGacha_8, "ODPJGHOJIOH");
+	}
 
 	// // RVA: 0x12C16D8 Offset: 0x12C16D8 VA: 0x12C16D8 Slot: 50
 	protected override void MFJFBNPLFBE_OnReceieveTotalReward(bool GIPBIDFJFLL)

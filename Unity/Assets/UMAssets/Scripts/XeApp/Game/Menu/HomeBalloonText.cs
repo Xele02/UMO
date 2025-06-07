@@ -101,7 +101,14 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x956E14 Offset: 0x956E14 VA: 0x956E14
 		public void SetMessage(string msg)
 		{
-			m_textScroll.text = msg.Replace("\n", "");
+			if(RuntimeSettings.CurrentSettings.Language != "en" || RuntimeSettings.CurrentSettings.Language != "fr" )
+			{
+				m_textScroll.text = msg.Replace("\n", " ").Replace("  ", " ");
+			}
+			else
+			{
+				m_textScroll.text = msg.Replace("\n", "");
+			}
 		}
 
 		// // RVA: 0x956ED0 Offset: 0x956ED0 VA: 0x956ED0

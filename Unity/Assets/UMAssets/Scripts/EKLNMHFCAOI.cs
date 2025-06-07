@@ -663,9 +663,12 @@ public class EKLNMHFCAOI
 			case FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft:
 				return LDEGEHAEALK.PNLOINMCCKH_Scene.HOLEDOLMJCB(NANNGLGOFKH, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene, 1);
 			case FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem:
-				if (JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) != null)
 				{
-					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "ALHCGDMEMID_GetNumItems Event");
+					NKOBMDPHNGP_EventRaidLobby ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as NKOBMDPHNGP_EventRaidLobby;
+					if (ev != null)
+					{
+						return ev.EHGKMLPCDBM_GetItemCount((XeApp.Game.Common.RaidItemConstants.Type) NANNGLGOFKH, null);
+					}
 				}
 				break;
 			case FKGCBLHOOCL_Category.GGEFMAAOMFH_StampItemChara:

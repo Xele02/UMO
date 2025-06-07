@@ -124,7 +124,7 @@ namespace XeApp.Game.Menu
 						}
 						possessed |= p.FLJNOOPOAGI[j].IADCHIFJHOJ_Unlocked;
 					}
-					if(m_setting.EpisodeList[i].JKDJCFEBDHC)
+					if(m_setting.EpisodeList[i].JKDJCFEBDHC_BonusEnabled)
 					{
 						bonusValueTotal += m_setting.EpisodeList[i].HEDODOBGPPM_BonusValue;
 					}

@@ -101,15 +101,17 @@ public class NAKMCMEPAGH
 	// // RVA: 0x17C07E0 Offset: 0x17C07E0 VA: 0x17C07E0
 	public void EJJAPFPJLHP_AddUc(int ACGLMKEBMDL)
 	{
-		TodoLogger.LogError(TodoLogger.ToCheck, "Find the max value (99999999?)");
 		HOHBKPPOLLA_Uc += ACGLMKEBMDL;
+		if(HOHBKPPOLLA_Uc > 999999999999)
+			HOHBKPPOLLA_Uc = 999999999999;
 	}
 
 	// // RVA: 0x17C0824 Offset: 0x17C0824 VA: 0x17C0824
 	public void FNLAFLEEAHC(int IDAEEHPLIIO)
 	{
-		TodoLogger.LogError(TodoLogger.ToCheck, "Find the max value (99999999?)");
 		NALPJPKDNGH_Dp += IDAEEHPLIIO;
+		if(NALPJPKDNGH_Dp > 999999999999)
+			NALPJPKDNGH_Dp = 999999999999;
 	}
 
 	// // RVA: 0x17C0868 Offset: 0x17C0868 VA: 0x17C0868

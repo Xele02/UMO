@@ -14,7 +14,6 @@ using XeApp.Game.Menu;
 using XeApp.Game;
 using XeApp.Core;
 using XeApp.Game.AR;
-using System.Runtime.InteropServices;
 
 public class NKGJPJPHLIF
 {
@@ -86,7 +85,10 @@ public class NKGJPJPHLIF
 	}
 
 	// // RVA: 0xC16610 Offset: 0xC16610 VA: 0xC16610
-	// public bool KKMCBNKDDPN(int MLPEHNBNOGD) { }
+	public bool KKMCBNKDDPN(int MLPEHNBNOGD)
+	{
+		return MDAMJIGBOLD_PlayerId == MLPEHNBNOGD;
+	}
 
 	// // RVA: 0xC16624 Offset: 0xC16624 VA: 0xC16624
 	public void IJMGMJHLGDG(int NJPGHGIICME)

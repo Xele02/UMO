@@ -239,8 +239,14 @@ public class JGJFFKPFMDB
 	//public static bool DHHKMLMJCIK(SakashoErrorId PPFNGGCBJKC) { }
 
 	//// RVA: 0xB1AD48 Offset: 0xB1AD48 VA: 0xB1AD48
-	//public static bool IOGGLELGHLO(SakashoErrorId PPFNGGCBJKC) { }
+	public static bool IOGGLELGHLO(SakashoErrorId PPFNGGCBJKC)
+	{
+		return PPFNGGCBJKC == SakashoErrorId.RAIDBOSS_OVER_COUNT_LIMIT;
+	}
 
 	//// RVA: 0xB1AD5C Offset: 0xB1AD5C VA: 0xB1AD5C
-	//public static bool PLMJFNPGOCD(SakashoErrorId PPFNGGCBJKC) { }
+	public static bool PLMJFNPGOCD(SakashoErrorId PPFNGGCBJKC)
+	{
+        return ((long)PPFNGGCBJKC & 0xfffffffeU) == 0xea;
+    }
 }

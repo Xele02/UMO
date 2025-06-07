@@ -186,6 +186,11 @@ namespace ExternLib
             return IntPtr.Zero;
         }
 
+        public static void CRIWARE0B62FCFA(int player_id, float vol)
+        {
+            // SetVolume
+        }
+
         public static sbyte CRIWARE9BAE0415(int player_id) // GetNumberOfFrameBeforeDestroy
         {
             return 0;

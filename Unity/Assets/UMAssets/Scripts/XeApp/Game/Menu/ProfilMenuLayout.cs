@@ -667,7 +667,7 @@ namespace XeApp.Game.Menu
 			m_player_name.text = data.LBODHBDOMGK_Name;
 			m_player_id.text = "";
 			m_player_name_time.text = "";
-			m_comment.text = data.FGMPKKOOGCM;
+			m_comment.text = data.FGMPKKOOGCM_Comment;
 			m_comment.horizontalOverflow = HorizontalWrapMode.Wrap;
 			SetDegreeInfo(data.NDOLELKAJNL_DegreeData);
 			m_degree_data = data.NDOLELKAJNL_DegreeData;
@@ -1807,7 +1807,31 @@ namespace XeApp.Game.Menu
 			m_btnType = a_type;
 			if(a_type >= ButtonType.Raid && a_type <= ButtonType.Raid_Result)
 			{
-				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
+				fanEntryHidden = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(m_friend_player_data.MLPEHNBNOGD_Id);
+				lobbyHidden = true;
+				visitHidden = true;
+				blockHidden = true;
+				fanReleaseHidden = !fanEntryHidden;
+				bool b1 = true;
+				if(a_type == ButtonType.Raid_Result)
+				{
+					//LAB_01176ab8
+				}
+				else
+				{
+					//LAB_01176938
+					visitHidden = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("deco_player_level", 0) < 1;
+					if(!lobbyHidden)
+					{
+						if(!m_enable_lobby_btn)
+							lobbyHidden = true;
+					}
+					if(!b1)
+					{
+						blockHidden = CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.DIGEHCDEAON_IsBlacklisted(m_friend_player_data.MLPEHNBNOGD_Id);
+						//LAB_01176ab8
+					}
+				}
 			}
 			else
 			{
@@ -1824,6 +1848,7 @@ namespace XeApp.Game.Menu
 						fanEntryHidden = true;
 						b = true;
 					}
+					//LAB_01176938
 					visitHidden = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("deco_player_level", 0) < 1;
 					if(!lobbyHidden)
 					{
@@ -1843,6 +1868,7 @@ namespace XeApp.Game.Menu
 					visitHidden = true;
 				}
 			}
+			//LAB_01176ab8
 			m_lobbyBrowsing_btn.Hidden = lobbyHidden;
 			m_fanEntry_btn.Hidden = fanEntryHidden;
 			m_fanRelease_btn.Hidden = fanReleaseHidden;
@@ -1878,7 +1904,7 @@ namespace XeApp.Game.Menu
 			if(m_friend_player_data != null)
 			{
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-				if(PIGBKEIAMPE_FriendManager.GKDGOGCOGBK() >= PIGBKEIAMPE_FriendManager.DJHFILDBOFG())
+				if(PIGBKEIAMPE_FriendManager.GKDGOGCOGBK() >= PIGBKEIAMPE_FriendManager.DJHFILDBOFG_GetMaxFanPossible())
 				{
 					PopupFanLimit();
 				}
@@ -2070,7 +2096,12 @@ namespace XeApp.Game.Menu
 		{
 			if(m_friend_player_data != null)
 			{
-				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Raid");
+				SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_003);
+				EventLobbyArgs arg = new EventLobbyArgs();
+				arg.IsMyLobby = false;
+				arg.playerId = m_friend_player_data.MLPEHNBNOGD_Id;
+				arg.friendData = m_friend_player_data;
+				MenuScene.Instance.Call(TransitionList.Type.LOBBY_MAIN, arg, true);
 			}
 		}
 

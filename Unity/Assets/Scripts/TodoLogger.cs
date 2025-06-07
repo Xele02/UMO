@@ -45,13 +45,13 @@ public static class TodoLogger
 	// Need to implement at some point
 	public static int _Todo = 99999999;
 	public static int CriAtomVolumes = _OnlyAndroid;
-	public static int ToCheck = _Todo;
 	public static int Errors = _Todo;
 	public static int DbIntegrityCheck = _Todo;
 	public static int Xedec = _Todo;
 	public static int SaveLoad = _Todo;
 
 	public static int _Debug = 1;
+	public static int ToCheck = _Debug;
 	public static int UI = _Debug;
 	public static int Popup = _Debug;
 	public static int Database = _Debug;

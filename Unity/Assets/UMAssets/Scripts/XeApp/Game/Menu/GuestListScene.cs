@@ -173,7 +173,7 @@ namespace XeApp.Game.Menu
 					{
 						ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5, false);
 					}
-					if(ev != null)
+					if(ev == null)
 					{
 						JHHBAFKMBDL.HHCJCDFCLOB.DNABPEOICIJ(() =>
 						{
@@ -653,7 +653,7 @@ namespace XeApp.Game.Menu
 			{
 				if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 				{
-					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "GetCallArgsReturn Event");
+					return new RaidActSelectArgs(Database.Instance.gameSetup.musicInfo.returnTransitionUniqueId, new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, false));
 				}
 				if(eventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
 				{

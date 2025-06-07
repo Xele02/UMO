@@ -124,7 +124,24 @@ public class SakashoBbs : SakashoAPIBase
 	//public static SakashoAPICallContext UpdateThread(int threadId, SakashoBbsThreadInfo info, OnSuccess onSuccess, OnError onError) { }
 
 	//// RVA: 0x2BB60D0 Offset: 0x2BB60D0 VA: 0x2BB60D0
-	//public static SakashoAPICallContext UpdateThreadComment(int threadId, int commentIndex, SakashoBbsCommentInfo info, OnSuccess onSuccess, OnError onError) { }
+	public static SakashoAPICallContext UpdateThreadComment(int threadId, int commentIndex, SakashoBbsCommentInfo info, OnSuccess onSuccess, OnError onError)
+	{
+		Hashtable h = new Hashtable();
+		h["threadId"] = threadId;
+		h["commentIndex"] = commentIndex;
+		if(info != null)
+		{
+			if(info.Content != null)
+				h["content"] = info.Content;
+			if(info.Nickname != null)
+				h["nickname"] = info.Nickname;
+			if(info.Extra != null)
+				h["extra"] = info.Extra;
+			h["replyTo"] = info.ReplyTo;
+			h["sage"] = info.Sage;
+		}
+		return new SakashoAPICallContext(Call(SakashoBbsUpdateThreadComment, MiniJSON.jsonEncode(h), onSuccess, onError));
+	}
 
 	//// RVA: 0x2BB6424 Offset: 0x2BB6424 VA: 0x2BB6424
 	//public static SakashoAPICallContext MarkThreadComment(int threadId, int commentIndex, int markType, OnSuccess onSuccess, OnError onError) { }
@@ -172,7 +189,10 @@ public class SakashoBbs : SakashoAPIBase
 	//private static extern int SakashoBbsUpdateThread(int callbackId, string json) { }
 
 	//// RVA: 0x2BB7428 Offset: 0x2BB7428 VA: 0x2BB7428
-	//private static extern int SakashoBbsUpdateThreadComment(int callbackId, string json) { }
+	private static int SakashoBbsUpdateThreadComment(int callbackId, string json)
+	{
+		return ExternLib.LibSakasho.SakashoBbsUpdateThreadComment(callbackId, json);
+	}
 
 	//// RVA: 0x2BB7538 Offset: 0x2BB7538 VA: 0x2BB7538
 	//private static extern int SakashoBbsMarkThreadComment(int callbackId, string json) { }

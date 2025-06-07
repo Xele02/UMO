@@ -375,7 +375,10 @@ namespace CriWare
 			// public void SetExtraAudioTrack(Player.AudioTrack track) { }
 
 			// // RVA: 0x295C178 Offset: 0x295C178 VA: 0x295C178
-			// public void SetVolume(float volume) { }
+			public void SetVolume(float volume)
+			{
+				CRIWARE0B62FCFA(playerId, volume);
+			}
 
 			// // RVA: 0x295C314 Offset: 0x295C314 VA: 0x295C314
 			// public float GetVolume() { }
@@ -1070,7 +1073,15 @@ namespace CriWare
 			// private static extern void CRIWARE671323A7(int player_id, int track) { }
 
 			// // RVA: 0x295C208 Offset: 0x295C208 VA: 0x295C208
-			// private static extern void CRIWARE0B62FCFA(int player_id, float vol) { }
+#if UNITY_ANDROID
+			[DllImport(CriWare.Common.pluginName, CallingConvention = CriWare.Common.pluginCallingConvention)]
+			private static extern void CRIWARE0B62FCFA(int player_id, float vol);
+			#else
+			private static void CRIWARE0B62FCFA(int player_id, float vol)
+			{
+				ExternLib.LibCriWare.CRIWARE0B62FCFA(player_id, vol);
+			}
+#endif
 
 			// // RVA: 0x295C398 Offset: 0x295C398 VA: 0x295C398
 			// private static extern float CRIWARE72BA8380(int player_id) { }

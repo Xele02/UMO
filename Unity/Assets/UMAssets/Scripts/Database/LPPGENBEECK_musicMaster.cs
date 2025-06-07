@@ -903,7 +903,11 @@ public class KEODKEGFDLD_FreeMusicInfo
 	public ADDHLABEFKH EMJCHPDJHEI(bool GIKLNODJKFK_Is6Line, int AKNELONELJK_Difficulty)
 	{
 		if (IPFHDCEFLDE_ByDiffLine6.Count < 1 || !GIKLNODJKFK_Is6Line)
+		{
+			if(AKNELONELJK_Difficulty >= COGKJBAFBKN_ByDiff.Count)
+				UnityEngine.Debug.LogError("diffculty error : "+AKNELONELJK_Difficulty+" "+COGKJBAFBKN_ByDiff.Count);
 			return COGKJBAFBKN_ByDiff[AKNELONELJK_Difficulty];
+		}
 		return IPFHDCEFLDE_ByDiffLine6[AKNELONELJK_Difficulty];
 	}
 

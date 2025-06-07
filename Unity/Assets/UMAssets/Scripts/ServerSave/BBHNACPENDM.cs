@@ -21,8 +21,8 @@ public class BBHNACPENDM_ServerSaveData
 		public long MCKEOKFMLAH; // 0x8
 		public EDOHBJAPLPF_JsonData OBHAFLMHAKG; // 0x10
 		public string BAKAGKBPOMJ; // 0x14
-		public bool BLOCFLFHCFJ; // 0x18
-		public List<string> KFGDPMNCCFO; // 0x1C
+		public bool BLOCFLFHCFJ_Keep; // 0x18
+		public List<string> KFGDPMNCCFO_NaespaceForSave; // 0x1C
 
 		public string DLENPPIJNPA { get; }
 		public bool CHBFPFLGELK { get; }
@@ -30,10 +30,10 @@ public class BBHNACPENDM_ServerSaveData
 		// RVA: 0xF20530 Offset: 0xF20530 VA: 0xF20530
 		public EMHDCKMFCGE(EDOHBJAPLPF_JsonData HIEGIHHJNAL, List<string> OHNJJIMGKGK, bool LDNHNDGCPJO, long MCKEOKFMLAH)
 		{
-			KFGDPMNCCFO = OHNJJIMGKGK;
+			KFGDPMNCCFO_NaespaceForSave = OHNJJIMGKGK;
 			this.MCKEOKFMLAH = MCKEOKFMLAH;
 			OBHAFLMHAKG = HIEGIHHJNAL;
-			BLOCFLFHCFJ = LDNHNDGCPJO;
+			BLOCFLFHCFJ_Keep = LDNHNDGCPJO;
 		}
 
 		//// RVA: 0xF2AC9C Offset: 0xF2AC9C VA: 0xF2AC9C
@@ -50,7 +50,7 @@ public class BBHNACPENDM_ServerSaveData
 		//// RVA: 0xF2AD7C Offset: 0xF2AD7C VA: 0xF2AD7C
 		public bool LHIACHALIFC_IsEmpty()
 		{
-			return KFGDPMNCCFO == null || KFGDPMNCCFO.Count == 0;
+			return KFGDPMNCCFO_NaespaceForSave == null || KFGDPMNCCFO_NaespaceForSave.Count == 0;
 		}
 	}
 
@@ -575,10 +575,10 @@ public class BBHNACPENDM_ServerSaveData
 			}
 		}
 		EMHDCKMFCGE res = new EMHDCKMFCGE(json, ls, false, saveId);
-		res.KFGDPMNCCFO = ls;
+		res.KFGDPMNCCFO_NaespaceForSave = ls;
 		res.MCKEOKFMLAH = saveId;
 		res.OBHAFLMHAKG = json;
-		res.BLOCFLFHCFJ = false;
+		res.BLOCFLFHCFJ_Keep = false;
 		return res;
 	}
 

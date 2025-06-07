@@ -197,7 +197,7 @@ public class KCGOMAFPGDD_EventAprilFool : DIHHCBACKGG_DbSection
 		//UnityEngine.Debug.LogError(NGHKJOEDLIP.OCGFKMHNEOF_Key);
 		//UnityEngine.Debug.LogError(NGHKJOEDLIP.HBACKHIOIBG);
 		UMOEventList.EventData CurrenEvent = UMOEventList.GetCurrentEvent();
-		if (CurrenEvent != null && CurrenEvent.BlockName == JIKKNHIAEKG_BlockName)
+		if (CurrenEvent != null && CurrenEvent.EnableBlock(JIKKNHIAEKG_BlockName))
 		{
 			/*TodoLogger.LogError(TodoLogger.Event, "Switch to the real event enable");
 			UnityEngine.Debug.LogError("Date : \n"

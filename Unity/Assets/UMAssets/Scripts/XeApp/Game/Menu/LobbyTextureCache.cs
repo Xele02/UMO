@@ -1,4 +1,6 @@
+using System;
 using System.Text;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -34,9 +36,17 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xD23120 Offset: 0xD23120 VA: 0xD23120
-		// public void LoadForLobbyGroupSelect(int id, Action<IiconTexture> callBack) { }
+		public void LoadForLobbyGroupSelect(int id, Action<IiconTexture> callBack)
+		{
+			m_bundleName.SetFormat("ct/lb/gr/{0:D3}.xab", id);
+			Load(m_bundleName.ToString(), callBack);
+		}
 
 		// // RVA: 0xD1EA50 Offset: 0xD1EA50 VA: 0xD1EA50
-		// public void LoadForLobbyMiniChara(int id, int sud_id, Action<IiconTexture> callBack) { }
+		public void LoadForLobbyMiniChara(int id, int sud_id, Action<IiconTexture> callBack)
+		{
+			m_bundleName.SetFormat("ct/lb/ch/{0:D2}_{1:D3}.xab", id, sud_id);
+			Load(m_bundleName.ToString(), callBack);
+		}
 	}
 }

@@ -210,3 +210,35 @@ public class MCGNOFMAPBJ
 		DCBENCMNOGO_MaxStamina = GDDFDGNEACK;
 	}
 }
+
+public class KAFHAKBBJEI : MCGNOFMAPBJ
+{
+	// RVA: 0x1BA9BE4 Offset: 0x1BA9BE4 VA: 0x1BA9BE4 Slot: 6
+	public override bool MAPPOEFALIP(int BBCCIJGFKHD, bool MDNODGAFHJN/* = True*/, bool DDGFCOPPBBN/* = True*/)
+	{
+		if(DCLKMNGMIKC_GetCurrent() < DCBENCMNOGO_MaxStamina)
+		{
+			long r = MLLGPBGFLFI_GetRemainingTime();
+			int v;
+			if(!MDNODGAFHJN)
+			{
+				v = DCBENCMNOGO_MaxStamina;
+			}
+			else
+			{
+				v = DCLKMNGMIKC_GetCurrent() + BBCCIJGFKHD;
+			}
+			if(!DDGFCOPPBBN)
+			{
+				NEPIPMPAFIE_Stamina = v;
+				DLPEEDCCNMJ_StaminaSaveTime = FJDBNGEPKHL_Time;
+				if(r != 0)
+				{
+					DLPEEDCCNMJ_StaminaSaveTime = DLPEEDCCNMJ_StaminaSaveTime + r - FLJGHBLEDDB_HealSec;
+				}
+			}
+			return true;
+		}
+		return false;
+	}
+}

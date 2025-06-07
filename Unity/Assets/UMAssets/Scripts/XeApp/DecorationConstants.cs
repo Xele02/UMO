@@ -146,7 +146,7 @@ namespace XeApp
 		{
 			if(item.DecorationItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj)
 			{
-				if (item.Setting.viewDecoItemData.GBJFNGCDKPM == 5)
+				if (item.Setting.viewDecoItemData.GBJFNGCDKPM_Attribute == 5)
 					return true;
 			}
 			return false;
@@ -239,7 +239,7 @@ namespace XeApp
 					case EKLNMHFCAOI.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso:
 						return viewData.PPFNGGCBJKC_Id;
 					case EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif:
-						return viewData.GBJFNGCDKPM;
+						return viewData.GBJFNGCDKPM_Attribute;
 					case EKLNMHFCAOI.FKGCBLHOOCL_Category.OOMMOOIIPJE_DecoItemPoster:
 						return EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(viewData.NPADACLCNAN_Category, viewData.PPFNGGCBJKC_Id);
 				}
@@ -275,7 +275,7 @@ namespace XeApp
 						return ItemTextureCache.MakeDecoItemIconTexturePath(itemId, 1);
 					break;
 				case EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp:
-					if(viewData.GBJFNGCDKPM == 11)
+					if(viewData.GBJFNGCDKPM_Attribute == 11)
 						return "";
 					return ItemTextureCache.MakeDecoItemIconTexturePath(itemId, 0);
 				case EKLNMHFCAOI.FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj:

@@ -2,6 +2,7 @@
 class JpStringLiterals
 {
 	public static string StringLiteral_367 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_367", " "); } } //0x03ba9074
+	public static string StringLiteral_381 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_381", "  "); } } //03ba90ac
 	public static string StringLiteral_1374 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_1374", "年"); } } //0x03baa030
 	public static string StringLiteral_1376 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_1376", "月"); } } // 0x03baa038
 	public static string StringLiteral_1378 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_1378", "日"); } } // 0x03baa040
@@ -45,6 +46,7 @@ class JpStringLiterals
 	public static string StringLiteral_9797 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9797", "VOP高速完了"); } } // 0x03bb23cc
 	public static string StringLiteral_9797_Jp = "VOP高速完了";
 	public static string StringLiteral_9798 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9798", "AP回復"); } } // 0x03bb23d0
+	public static string StringLiteral_9798_Jp = "AP回復";
 	public static string StringLiteral_9799 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9799", "コンテニュー:"); } } // 0x03bb23d4
 	public static string StringLiteral_9806 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9806", "プレイヤー"); } } // 0x03bb23f0
 	public static string StringLiteral_9807 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9807", "よろしくおねがいします"); } } // 0x03bb23f4
@@ -109,6 +111,7 @@ class JpStringLiterals
 	public static string StringLiteral_10177 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10177", "ホーム背景"); } } // 0x03bb29bc
 	public static string StringLiteral_10178 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10178", "ガチャ天井アイテム"); } } // 0x03bb29c0
 	public static string StringLiteral_10282 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10282", "AP全回復"); } } //0x03bb2b60
+	public static string StringLiteral_10284 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10284", "ミラージュ「APが全回復しました！」"); } } //03bb2b68
 	public static string StringLiteral_10294 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10294", "超時空SNS"); } } // 0x03bb2b90
 	public static string StringLiteral_10298 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10298", "ログボを受け取ろう！"); } } //0x03bb2ba0
 	public static string StringLiteral_10299 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10299", "歌晶石100個を2日目ログボでプレゼント！今すぐログインしよう！"); } } // 0x03bb2ba4
@@ -402,6 +405,8 @@ class JpStringLiterals
 	public static string StringLiteral_13104 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_13104", "日前"); } } // 0x03bb5778
 	public static string StringLiteral_13105 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_13105", "365日以上"); } } // 0x03bb577c
 	public static string StringLiteral_13106 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_13106", "1時間前"); } } // 0x03bb5780
+	public static string StringLiteral_13160 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_13160", "EX暴走エネミー出現"); } } // 03bb5858
+	public static string StringLiteral_13162 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_13162", "ミラージュ「EX暴走エネミーが出現しました！」"); } } // 03bb5860
 	public static string StringLiteral_13238 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_13238", "<color=red>矢印のレイアウトがNULLです。</color>"); } } // 0x03bb5990
 	public static string StringLiteral_13316 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_13316", "ディフォルト3Dモードの設定 : "); } } //0x03bb5ac8
 	public static string StringLiteral_13620 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_13620", " - 対応していない型が渡されました\n   {0}"); } } // 0x03bb5f88
@@ -487,10 +492,13 @@ class JpStringLiterals
 	public static string StringLiteral_19428 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_19428", "位:"); } } //0x03bbba48
 	public static string StringLiteral_19432 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_19432", "【{0}】"); } } //0x03bbba58
 	public static string StringLiteral_19433 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_19433", "イベント楽曲でのレアドロップ"); } } //0x03bbba5c
+	public static string StringLiteral_19505 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_19505", "{0}～{1}"); } } //03bbbb7c
 	public static string StringLiteral_19538 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_19538", "インパクト"); } } //0x03bbbc00
 	public static string StringLiteral_19639 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_19639", "無期限"); } } //0x03bbbd94
 	public static string StringLiteral_19612 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_19612", "ユニットセット"); } } // 0x03bbbd28
 	public static string StringLiteral_19704 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_19704", "他人のデコルーム:プロフィール経由"); } } //0x03bbbe98
+	public static string StringLiteral_19851 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_19851", "{0}人"); } } //03bbc0e4
+	public static string StringLiteral_19875 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_19875", "イベント集計中です。"); } } //03bbc144
 	public static string StringLiteral_20178 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_20178", " ★"); } } // 0x03bbc600
 	public static string StringLiteral_20179 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_20179", "の最大マス数="); } } // 0x03bbc604
 	public static string StringLiteral_20180 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_20180", "なのに "); } } // 0x03bbc608
@@ -506,6 +514,9 @@ class JpStringLiterals
 	public static string StringLiteral_20458 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_20458", "シンプルモデルに衣装モデルIDが設定されておりません。"); } } //0x03bbca60
 	public static string StringLiteral_20469 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_20469", "シンプルモデルで設定できるモーション数を超えております。[ "); } } //0x03bbca8c
 	public static string StringLiteral_20470 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_20470", "シンプルモデルで設定できるループモーション数を超えております。[ "); } } // 0x03bbca90
+	public static string StringLiteral_20803 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_20803", "+{0}％"); } } // 03bbcfc4
+
+	public static string StringLiteral_20810 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_20810", "+<color=#C6077CFF>{0}</color>％"); } } // 03bbcfe0
 	public static string StringLiteral_20864 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_20864", "自動編成"); } } // 0x03bbd0b8
 	public static string StringLiteral_20882 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_20882", "(<color={1}>↑{0}</color>)"); } } // 0x03bbd100
 	public static string StringLiteral_21607 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_21607", "???12"); } } //0x03bbdc54

@@ -561,10 +561,11 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_WaitLabel(AbsoluteLayout layout, string label, bool enableSkip/* = True*/)
 		{
 			//0x18D0610
-			if(!m_isSkiped || !enableSkip)
+			while(!m_isSkiped || !enableSkip)
 			{
-				while(layout.GetView(0).FrameAnimation.FrameCount < (int)layout.GetView(0).FrameAnimation.SearchLabelFrame(label))
-					yield return null;
+				if(layout.GetView(0).FrameAnimation.FrameCount >= (int)layout.GetView(0).FrameAnimation.SearchLabelFrame(label))
+					break;
+				yield return null;
 			}
 		}
 

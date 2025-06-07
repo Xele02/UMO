@@ -21,9 +21,9 @@ namespace XeApp.Game.Menu
 		// private MissonResultLayoutController.InitParam event02LayoutInitParam; // 0x5C
 		private ResultEvent03ScoreLayoutController.InitParam event03ScoreLayoutInitParam; // 0x60
 		private ResultEvent03PointLayoutController.InitParam event03PointLayoutInitParam; // 0x64
-		// private RaidResultPointLayoutController.InitParam raidResultPointLayoutInitParam; // 0x68
-		// private RaidResultDamageLayoutController.InitParam raidResultDamageLayoutInitParam; // 0x6C
-		// private RaidResultRewardLayoutController.InitParam raidResultRewardLayoutInitParam; // 0x70
+		private RaidResultPointLayoutController.InitParam raidResultPointLayoutInitParam; // 0x68
+		private RaidResultDamageLayoutController.InitParam raidResultDamageLayoutInitParam; // 0x6C
+		private RaidResultRewardLayoutController.InitParam raidResultRewardLayoutInitParam; // 0x70
 		private LayoutResultGoDivaMain.InitParam goDivaLayoutInitParam; // 0x74
 		private ResultCommonLayoutController commonLayoutController; // 0x78
 		private ResultScoreLayoutController scoreLayoutController; // 0x7C
@@ -163,7 +163,22 @@ namespace XeApp.Game.Menu
 			}
 			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 			{
-				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "InitParam Event");
+				FLCAECNBMML f = new FLCAECNBMML();
+				f.KHEKNNFCAOI();
+				GJMCHHCPFDL g = new GJMCHHCPFDL();
+				g.KHEKNNFCAOI(false);
+				PLFJMDBBAJD p = new PLFJMDBBAJD();
+				p.KHEKNNFCAOI();
+				DAFGPCEKAJB d = new DAFGPCEKAJB();
+				d.KHEKNNFCAOI();
+				raidResultPointLayoutInitParam = new RaidResultPointLayoutController.InitParam();
+				raidResultPointLayoutInitParam.viewEventRaidPointData = f;
+				raidResultPointLayoutInitParam.viewEventRaidRankingData = d;
+				raidResultDamageLayoutInitParam = new RaidResultDamageLayoutController.InitParam();
+				raidResultDamageLayoutInitParam.viewEventRaidPointData = f;
+				raidResultDamageLayoutInitParam.viewEventRaidDamageData = g;
+				raidResultRewardLayoutInitParam = new RaidResultRewardLayoutController.InitParam();
+				raidResultRewardLayoutInitParam.viewEventRaidRewardData = p;
 			}
 			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
 			{
@@ -364,8 +379,56 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4FF54 Offset: 0xB4FF54 VA: 0xB4FF54
 		private IEnumerator Co_LoadRaidLayout()
 		{
-			TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Co_LoadRaidLayout");
-			yield return null;
+			StringBuilder bundleName; // 0x14
+			int bundleLoadCount; // 0x18
+			AssetBundleLoadLayoutOperationBase lytAssetOp; // 0x1C
+			FontInfo fontInfo; // 0x20
+
+			//0xB5D7B0
+			bundleName = new StringBuilder();
+			bundleName.Set("ly/204.xab");
+			bundleLoadCount = 0;
+			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_RaidResultPoint");
+			fontInfo = GameManager.Instance.GetSystemFont();
+			yield return lytAssetOp;
+			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(fontInfo, (GameObject instance) =>
+			{
+				//0xB54DAC
+				instance.transform.SetParent(transform, false);
+				raidResultPointLayoutController = instance.GetComponent<RaidResultPointLayoutController>();
+			}));
+			bundleLoadCount++;
+			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_RaidResultDamage");
+			yield return lytAssetOp;
+			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(fontInfo, (GameObject instance) =>
+			{
+				//0xB54E7C
+				instance.transform.SetParent(transform, false);
+				raidResultDamageLayoutController = instance.GetComponent<RaidResultDamageLayoutController>();
+			}));
+			bundleLoadCount++;
+			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_RaidResultReward");
+			yield return lytAssetOp;
+			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(fontInfo, (GameObject instance) =>
+			{
+				//0xB54F4C
+				instance.transform.SetParent(transform, false);
+				raidResultRewardLayoutController = instance.GetComponent<RaidResultRewardLayoutController>();
+			}));
+			bundleLoadCount++;
+			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "root_g_r_d_filter_layout_root");
+			yield return lytAssetOp;
+			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(fontInfo, (GameObject instance) =>
+			{
+				//0xB5501C
+				instance.transform.SetParent(transform, false);
+				raidResultBossFilter = instance.GetComponent<RaidResultBossFilterLayout>();
+			}));
+			bundleLoadCount++;
+			for(int i = 0; i < bundleLoadCount; i++)
+			{
+				AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
+			}
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x722BF4 Offset: 0x722BF4 VA: 0x722BF4
@@ -471,9 +534,10 @@ namespace XeApp.Game.Menu
 			GameManager.Instance.SetFPS(60);
 			if(Database.Instance.gameSetup.EnableLiveSkip)
 			{
-				if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
+				if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid && raidResultPointLayoutInitParam.viewEventRaidPointData.CFLEMFADGLG > 0 && raidResultPointLayoutInitParam.viewEventRaidPointData.CFLEMFADGLG < 3)
 				{
-					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Todo Event");
+					commonLayoutController.ChangeViewForSupportResult();
+					scoreLayoutController.ChangeViewForSupportResult();
 				}
 				else
 				{
@@ -611,23 +675,19 @@ namespace XeApp.Game.Menu
 			{
 				yield return new WaitWhile(() => {
 					//0xB559B0
-					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
-					return false;
+					return raidResultPointLayoutController == null || !raidResultPointLayoutController.IsReady();
 				});
 				yield return new WaitWhile(() => {
 					//0xB55A70
-					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
-					return false;
+					return raidResultDamageLayoutController == null || !raidResultDamageLayoutController.IsReady();
 				});
 				yield return new WaitWhile(() => {
 					//0xB55B30
-					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
-					return false;
+					return raidResultRewardLayoutController == null || !raidResultRewardLayoutController.IsReady();
 				});
 				yield return new WaitWhile(() => {
 					//0xB55BF0
-					TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
-					return false;
+					return raidResultBossFilter == null || !raidResultBossFilter.IsReady();
 				});
 			}
 			if(isEventGoDiva)
@@ -869,7 +929,39 @@ namespace XeApp.Game.Menu
 			}
 			else if(isRaidEventOpen)
 			{
-				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event Raid");
+				PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+				if(evRaid.HJPNJBCJPNJ(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6))
+				{
+					if(evRaid.PLFBKEPLAAA.FIMNHOIJBLO)
+					{
+						MessageBank bk = MessageManager.Instance.GetBank("menu");
+						TextPopupSetting s = new TextPopupSetting();
+						s.IsCaption = false;
+						s.Buttons = new ButtonInfo[1]
+						{
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+						};
+						s.Text = bk.GetMessageByLabel("pop_raid_result_error_text");
+						PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel buttonLabel) =>
+						{
+							//0xB57B98
+							this.StartCoroutineWatched(Co_MountMenuScene(false));
+						}, null, null, null, true, true, false);
+					}
+					else
+					{
+						commonLayoutController.ChangeViewForRaidResult();
+						InitRaidPointResult();
+						//LAB_00b584f4
+						while(IsRaidPointResultLoading() || IsRaidDamageResultLoading() || IsRaidRewardResultLoading())
+							yield return null;
+						StartRaidPointResultAnim();
+					}
+				}
+				else
+				{
+					this.StartCoroutineWatched(Co_MountMenuScene(false));
+				}
 			}
 			else
 			{
@@ -1161,53 +1253,316 @@ namespace XeApp.Game.Menu
 		// private void EndEvent03Result() { }
 
 		// // RVA: 0xB52E20 Offset: 0xB52E20 VA: 0xB52E20
-		// private void InitRaidPointResult() { }
+		private void InitRaidPointResult()
+		{
+			PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			if(evRaid.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_Status == NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
+			{
+				ShowRaidBossEscapedPop();
+			}
+			raidResultBossFilter.gameObject.SetActive(true);
+			raidResultBossFilter.SetFilter(RaidResultBossFilterLayout.FilterType.Red);
+			raidResultPointLayoutController.gameObject.SetActive(true);
+			raidResultPointLayoutController.ChangeViewForResultPoint();
+			raidResultPointLayoutController.onClickOkayButton = OnClickRaidPointResultEnd;
+			raidResultPointLayoutController.Setup(raidResultPointLayoutInitParam);
+		}
 
 		// // RVA: 0xB53428 Offset: 0xB53428 VA: 0xB53428
-		// private bool IsRaidPointResultLoading() { }
+		private bool IsRaidPointResultLoading()
+		{
+			return !raidResultPointLayoutController.IsReady();
+		}
 
 		// // RVA: 0xB53458 Offset: 0xB53458 VA: 0xB53458
-		// private void StartRaidPointResultAnim() { }
+		private void StartRaidPointResultAnim()
+		{
+			this.StartCoroutineWatched(SetBossBg(() =>
+			{
+				//0xB55EB4
+				commonLayoutController.LayoutOkayButton.gameObject.SetActive(false);
+				commonLayoutController.LayoutHeaderTitle.gameObject.SetActive(false);
+				raidResultPointLayoutController.StartAnim();
+			}));
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x72302C Offset: 0x72302C VA: 0x72302C
 		// // RVA: 0xB534F4 Offset: 0xB534F4 VA: 0xB534F4
-		// private IEnumerator SetBossBg(Action callback) { }
+		private IEnumerator SetBossBg(Action callback)
+		{
+			//0xB5F214
+			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			yield return Co.R(MenuScene.Instance.BgControl.ChangeBgCoroutine(BgType.Raid, ev.JIBMOEHKMGB_SelectedBoss.HPPDFBKEJCG_BgId, SceneGroupCategory.UNDEFINED, TransitionList.Type.UNDEFINED, -1));
+			callback();
+		}
 
 		// // RVA: 0xB535A0 Offset: 0xB535A0 VA: 0xB535A0
-		// private void OnClickRaidPointResultEnd() { }
+		private void OnClickRaidPointResultEnd()
+		{
+			raidResultPointLayoutController.gameObject.SetActive(false);
+			InitRaidDamageResult();
+		}
 
 		// // RVA: 0xB535FC Offset: 0xB535FC VA: 0xB535FC
-		// private void InitRaidDamageResult() { }
+		private void InitRaidDamageResult()
+		{
+			raidResultDamageLayoutController.gameObject.SetActive(true);
+			raidResultDamageLayoutController.onClickOkayButton = OnClickRaidDamageResultEnd;
+			raidResultDamageLayoutController.Setup(raidResultDamageLayoutInitParam);
+			StartRaidDamageResultAnim();
+		}
 
 		// // RVA: 0xB5375C Offset: 0xB5375C VA: 0xB5375C
-		// private bool IsRaidDamageResultLoading() { }
+		private bool IsRaidDamageResultLoading()
+		{
+			return !raidResultDamageLayoutController.IsReady();
+		}
 
 		// // RVA: 0xB5370C Offset: 0xB5370C VA: 0xB5370C
-		// private void StartRaidDamageResultAnim() { }
+		private void StartRaidDamageResultAnim()
+		{
+			raidResultDamageLayoutController.ChangeViewForResultDamage();
+			raidResultDamageLayoutController.StartAnim();
+		}
 
 		// // RVA: 0xB5378C Offset: 0xB5378C VA: 0xB5378C
-		// private void OnClickRaidDamageResultEnd() { }
+		private void OnClickRaidDamageResultEnd()
+		{
+			MessageBank msgBank = MessageManager.Instance.GetBank("menu");
+			PKNOKJNLPOE_EventRaid raidController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			raidResultDamageLayoutController.gameObject.SetActive(false);
+			if(raidController.KONJMFICNJJ == null)
+			{
+				if(raidController.LMIFOCDCNAI())
+				{
+					if(raidController.JIBMOEHKMGB_SelectedBoss.PPFNGGCBJKC_Id == raidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id)
+					{
+						PopupRaidBossHelpContentSetting s = new PopupRaidBossHelpContentSetting();
+						s.TitleText = msgBank.GetMessageByLabel("pop_raid_helprequest_title");
+						s.WindowSize = SizeType.Middle;
+						s.Buttons = new ButtonInfo[2]
+						{
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+						};
+						PopupRaidHelpCompletionListContentSetting setting2 = new PopupRaidHelpCompletionListContentSetting();
+						setting2.TitleText = msgBank.GetMessageByLabel("pop_raid_helprequest_completion_title");
+						setting2.WindowSize = SizeType.Middle;
+						setting2.Buttons = new ButtonInfo[1]
+						{
+							new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+						};
+						RaidBossHelpWindow.SelectType selectType = RaidBossHelpWindow.SelectType.All;
+						s.OnSelectType = (RaidBossHelpWindow.SelectType type) =>
+						{
+							//0xB56CC8
+							selectType = type;
+						};
+						PopupWindowManager.Show(s, (PopupWindowControl content, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+						{
+							//0xB56CD0
+							if(type != PopupButton.ButtonType.Positive)
+							{
+								this.StartCoroutineWatched(Co_MountMenuScene(false));
+							}
+							else
+							{
+								UnityEngine.Debug.Log(selectType.ToString());
+								bool IsFriend = false;
+								bool IsLobby = true;
+								if(selectType != RaidBossHelpWindow.SelectType.Loby)
+								{
+									if(selectType != RaidBossHelpWindow.SelectType.LobyPrioFriend)
+									{
+										IsFriend = false;
+										IsLobby = false;
+									}
+									else
+									{
+										IsFriend = true;
+									}
+								}
+								raidController.MCKDAPPELKJ_RequestBossHelp(IsLobby, IsFriend, (List<PKNOKJNLPOE_EventRaid.ECICDAPCMJG> helper) =>
+								{
+									//0xB571D8
+									if(helper.Count < 0)
+									{
+										TextPopupSetting s_ = new TextPopupSetting();
+										s_.TitleText = msgBank.GetMessageByLabel("pop_raid_helprequest_confirmed_title");
+										s_.Buttons = new ButtonInfo[1]
+										{
+											new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+										};
+										s_.Text = msgBank.GetMessageByLabel("pop_raid_helprequest_failed_text02");
+										PopupWindowManager.Show(s_, (PopupWindowControl content2, PopupButton.ButtonType type2, PopupButton.ButtonLabel label2) =>
+										{
+											//0xB57654
+											if(type != PopupButton.ButtonType.Positive)
+												return;
+											this.StartCoroutineWatched(Co_MountMenuScene(false));
+										}, null, null, null, true, true, false);
+									}
+									else
+									{
+										setting2.helperList = helper;
+										PopupWindowManager.Show(setting2, (PopupWindowControl control2, PopupButton.ButtonType type2, PopupButton.ButtonLabel label2) =>
+										{
+											//0xB575E4
+											if(type != PopupButton.ButtonType.Positive)
+												return;
+											this.StartCoroutineWatched(Co_MountMenuScene(false));
+										}, null, null, null, true, true, false);
+									}
+								}, () =>
+								{
+									//0xB560E4
+									MenuScene.Instance.GotoTitle();
+								}, () =>
+								{
+									//0xB576C4
+									TextPopupSetting s_ = new TextPopupSetting();
+									s_.TitleText = msgBank.GetMessageByLabel("pop_raid_helprequest_confirmed_title");
+									s_.Buttons = new ButtonInfo[1]
+									{
+										new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+									};
+									s_.Text = msgBank.GetMessageByLabel("pop_raid_helprequest_failed_text01");
+									PopupWindowManager.Show(s_, (PopupWindowControl content2, PopupButton.ButtonType type2, PopupButton.ButtonLabel label2) =>
+									{
+										//0xB579A4
+										if(type != PopupButton.ButtonType.Positive)
+											return;
+										this.StartCoroutineWatched(Co_MountMenuScene(false));
+									}, null, null, null, true, true, false);
+								}, () =>
+								{
+									//0xB56198
+									TextPopupSetting s_ = new TextPopupSetting();
+									s_.TitleText = msgBank.GetMessageByLabel("pop_raid_enemy_escape_title");
+									s_.Buttons = new ButtonInfo[1]
+									{
+										new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+									};
+									s_.Text = msgBank.GetMessageByLabel("pop_raid_enemy_escape_result_text");
+									PopupWindowManager.Show(s_, (PopupWindowControl content2, PopupButton.ButtonType type2, PopupButton.ButtonLabel label2) =>
+									{
+										//0xB56428
+										this.StartCoroutineWatched(Co_MountMenuScene(false));
+									}, null, null, null, true, true, false);
+								}, () =>
+								{
+									//0xB56464
+									TextPopupSetting s_ = new TextPopupSetting();
+									s_.TitleText = msgBank.GetMessageByLabel("pop_raid_enemy_requested_title");
+									s_.Buttons = new ButtonInfo[1]
+									{
+										new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+									};
+									s_.Text = msgBank.GetMessageByLabel("pop_raid_enemy_requested_text");
+									PopupWindowManager.Show(s_, (PopupWindowControl content2, PopupButton.ButtonType type2, PopupButton.ButtonLabel label2) =>
+									{
+										//0xB566F4
+										this.StartCoroutineWatched(Co_MountMenuScene(false));
+									}, null, null, null, true, true, false);
+								}, () =>
+								{
+									//0xB56730
+									TextPopupSetting s_ = new TextPopupSetting();
+									s_.TitleText = msgBank.GetMessageByLabel("pop_raid_enemy_requested_title");
+									s_.Buttons = new ButtonInfo[1]
+									{
+										new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+									};
+									s_.Text = msgBank.GetMessageByLabel("pop_raid_help_result_defeated_text");
+									PopupWindowManager.Show(s_, (PopupWindowControl content2, PopupButton.ButtonType type2, PopupButton.ButtonLabel label2) =>
+									{
+										//0xB569C0
+										this.StartCoroutineWatched(Co_MountMenuScene(false));
+									}, null, null, null, true, true, false);
+								}, () =>
+								{
+									//0xB569FC
+									TextPopupSetting s_ = new TextPopupSetting();
+									s_.TitleText = msgBank.GetMessageByLabel("pop_raid_enemy_requested_title");
+									s_.Buttons = new ButtonInfo[1]
+									{
+										new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+									};
+									s_.Text = msgBank.GetMessageByLabel("pop_raid_help_player_count_limit_over_text");
+									PopupWindowManager.Show(s_, (PopupWindowControl content2, PopupButton.ButtonType type2, PopupButton.ButtonLabel label2) =>
+									{
+										//0xB56C8C
+										this.StartCoroutineWatched(Co_MountMenuScene(false));
+									}, null, null, null, true, true, false);
+								});
+							}
+						}, null, null, null, true, true, false);
+						return;
+					}
+				}
+				this.StartCoroutineWatched(Co_MountMenuScene(false));
+			}
+			else
+			{
+				InitRaidRewardResult();
+			}
+		}
 
 		// // RVA: 0xB53EC0 Offset: 0xB53EC0 VA: 0xB53EC0
-		// private void InitRaidRewardResult() { }
+		private void InitRaidRewardResult()
+		{
+			raidResultRewardLayoutController.gameObject.SetActive(true);
+			raidResultRewardLayoutController.onClickOkayButton = OnClickRaidRewardResultEnd;
+			raidResultRewardLayoutController.onClickMemberListButton = OnClickMemberListButton;
+			raidResultRewardLayoutController.SetupFromResult(raidResultRewardLayoutInitParam, raidResultBossFilter);
+			StartRaidRewardResultAnim();
+		}
 
 		// // RVA: 0xB540A8 Offset: 0xB540A8 VA: 0xB540A8
-		// private bool IsRaidRewardResultLoading() { }
+		private bool IsRaidRewardResultLoading()
+		{
+			return !raidResultDamageLayoutController.IsReady();
+		}
 
 		// // RVA: 0xB54058 Offset: 0xB54058 VA: 0xB54058
-		// private void StartRaidRewardResultAnim() { }
+		private void StartRaidRewardResultAnim()
+		{
+			raidResultRewardLayoutController.ChangeViewForReward();
+			raidResultRewardLayoutController.StartAnim();
+		}
 
 		// // RVA: 0xB540D8 Offset: 0xB540D8 VA: 0xB540D8
-		// private void OnClickRaidRewardResultEnd() { }
+		private void OnClickRaidRewardResultEnd()
+		{
+			this.StartCoroutineWatched(Co_MountMenuScene(false));
+		}
 
 		// // RVA: 0xB54030 Offset: 0xB54030 VA: 0xB54030
 		// private void EndRaidResult() { }
 
 		// // RVA: 0xB54100 Offset: 0xB54100 VA: 0xB54100
-		// private void OnClickMemberListButton() { }
+		private void OnClickMemberListButton()
+		{
+			MenuScene.Instance.Call(TransitionList.Type.RAID_MVP, null, true);
+		}
 
 		// // RVA: 0xB530D4 Offset: 0xB530D4 VA: 0xB530D4
-		// private void ShowRaidBossEscapedPop() { }
+		private void ShowRaidBossEscapedPop()
+		{
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			TextPopupSetting s = new TextPopupSetting();
+			s.TitleText = bk.GetMessageByLabel("pop_raid_escaped02_title");
+			s.Buttons = new ButtonInfo[1]
+			{
+				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
+			};
+			s.Text = bk.GetMessageByLabel("pop_raid_escaped02_text");
+			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel buttonLabel) =>
+			{
+				//0xB56180
+				return;
+			}, null, null, null, true, true, false);
+		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7230A4 Offset: 0x7230A4 VA: 0x7230A4
 		// // RVA: 0xB523AC Offset: 0xB523AC VA: 0xB523AC
@@ -1265,7 +1620,7 @@ namespace XeApp.Game.Menu
 							TodoLogger.LogError(TodoLogger.EventQuest_6, "Event");
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid:
-							TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Event");
+							MenuScene.Instance.Mount(Database.Instance.gameSetup.musicInfo.returnTransitionUniqueId, new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, true), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva:
 							MenuScene.Instance.Mount(TransitionUniqueId.EVENTGODIVA, new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, true), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
@@ -1320,25 +1675,5 @@ namespace XeApp.Game.Menu
 		// [CompilerGeneratedAttribute] // RVA: 0x7231F4 Offset: 0x7231F4 VA: 0x7231F4
 		// // RVA: 0xB54BC8 Offset: 0xB54BC8 VA: 0xB54BC8
 		// private void <Co_LoadEvent02Layout>b__42_0(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x723214 Offset: 0x723214 VA: 0x723214
-		// // RVA: 0xB54DAC Offset: 0xB54DAC VA: 0xB54DAC
-		// private void <Co_LoadRaidLayout>b__44_0(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x723224 Offset: 0x723224 VA: 0x723224
-		// // RVA: 0xB54E7C Offset: 0xB54E7C VA: 0xB54E7C
-		// private void <Co_LoadRaidLayout>b__44_1(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x723234 Offset: 0x723234 VA: 0x723234
-		// // RVA: 0xB54F4C Offset: 0xB54F4C VA: 0xB54F4C
-		// private void <Co_LoadRaidLayout>b__44_2(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x723244 Offset: 0x723244 VA: 0x723244
-		// // RVA: 0xB5501C Offset: 0xB5501C VA: 0xB5501C
-		// private void <Co_LoadRaidLayout>b__44_3(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x723384 Offset: 0x723384 VA: 0x723384
-		// // RVA: 0xB55EB4 Offset: 0xB55EB4 VA: 0xB55EB4
-		// private void <StartRaidPointResultAnim>b__106_0() { }
 	}
 }

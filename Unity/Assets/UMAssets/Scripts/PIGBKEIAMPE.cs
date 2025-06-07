@@ -23,7 +23,7 @@ public class PIGBKEIAMPE_FriendManager
 {
     public enum BEKLBBDMAIJ
     {
-        HJNNKCMLGFL = 0,
+        HJNNKCMLGFL_0 = 0,
         CCAPCGPIIPF_1 = 1,
         MDKMGHFJCNE_2 = 2,
         BJACNBJLCHJ_3 = 3,
@@ -186,7 +186,11 @@ public class PIGBKEIAMPE_FriendManager
 	}
 
 	// // RVA: 0x16D4768 Offset: 0x16D4768 VA: 0x16D4768
-	// public void OCGEPBECHGB() { }
+	public void OCGEPBECHGB()
+	{
+		BFDEHIANFOG.Clear();
+		EMJFHKHLHDB = BEKLBBDMAIJ.HJNNKCMLGFL_0;
+	}
 
 	// // RVA: 0x16D47E8 Offset: 0x16D47E8 VA: 0x16D47E8
 	// public int KKPENKOHLCO() { }
@@ -226,7 +230,7 @@ public class PIGBKEIAMPE_FriendManager
         PPCNLKHHMFK_NumSentRequest = 0;
         EMBDPGBMCBF_HasMoreSentRequest = false;
         NMOJPDCBGMK_NumFriendNoFav = 0;
-        EMJFHKHLHDB = BEKLBBDMAIJ.HJNNKCMLGFL/*0*/;
+        EMJFHKHLHDB = BEKLBBDMAIJ.HJNNKCMLGFL_0/*0*/;
         BFDEHIANFOG = new List<IBIGBMDANNM>(200);
         JFDPPPBMCBK_BlacklistedUsersId = new List<int>(50);
         KAMNNDELNHG = new List<CDDNFEDGCGG>(20);
@@ -601,10 +605,10 @@ public class PIGBKEIAMPE_FriendManager
 							IBIGBMDANNM data2 = new IBIGBMDANNM();
 							data2.AHEFHIMGIBI_ServerData = data;
 							data2.MLPEHNBNOGD_Id = -1;
-							data2.LBODHBDOMGK = JpStringLiterals.StringLiteral_9806;
+							data2.LBODHBDOMGK_Name = JpStringLiterals.StringLiteral_9806;
 							data2.LFKJNMFFCLH_LastLoginString = JpStringLiterals.StringLiteral_13106;
 							data2.PDJEMLMOEPF_DivaId = 1;
-							data2.FCKJJGIMPPI = 1;
+							data2.FCKJJGIMPPI_Level = 1;
 							throw new SerchGuestNotFoundException("from=" + PFDAJGNEBJM.IDLHJIOMJBK_SakashoCriteria.NumberFrom + ",to=" + PFDAJGNEBJM.IDLHJIOMJBK_SakashoCriteria.NumberTo);
 						}
 						EMJFHKHLHDB = /*4*/BEKLBBDMAIJ.INFDLLGDBAO;
@@ -1459,7 +1463,7 @@ public class PIGBKEIAMPE_FriendManager
 	// public static SakashoPlayerCriteria NKNOLNNPGAC(BBHNACPENDM AHEFHIMGIBI, int PPFNGGCBJKC) { }
 
 	// // RVA: 0x16D9D54 Offset: 0x16D9D54 VA: 0x16D9D54
-	public static int DJHFILDBOFG()
+	public static int DJHFILDBOFG_GetMaxFanPossible()
 	{
 		return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LPJLEHAJADA("favorite_player_max", 50);
 	}
@@ -1715,7 +1719,7 @@ public class PIGBKEIAMPE_FriendManager
 		else
 		{
 			int a1 = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GAAOPEGIPKA_FavoritePlayer.EFNAAHDHCEL();
-			if(a1 + FNLNHGBGHKF.Count - EDPCFGCDEFE.Count > DJHFILDBOFG())
+			if(a1 + FNLNHGBGHKF.Count - EDPCFGCDEFE.Count > DJHFILDBOFG_GetMaxFanPossible())
 			{
 				PLOOEECNHFB_IsDone = true;
 				if(DDMLOBICBHI != null)

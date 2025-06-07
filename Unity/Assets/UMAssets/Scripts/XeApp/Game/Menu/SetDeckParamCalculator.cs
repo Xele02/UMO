@@ -96,7 +96,12 @@ namespace XeApp.Game.Menu
 			m_isEnableEpisodeBonus = false;
 			if (isRaid)
 			{
-				TodoLogger.LogError(TodoLogger.EventRaid_11_13, "event");
+				PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+				if(evRaid != null)
+				{
+					m_isEnableEpisodeBonus = true;
+					m_episodeBonusPoint = evRaid.ANMBIEIFKFF_UnitBonusInfo.HOJAKNJFIFJ_EpisodeBonusPoint;
+				}
 			}
 			else
 			{
@@ -360,7 +365,7 @@ namespace XeApp.Game.Menu
 			{
 				for(int i = 0; i < list.Count; i++)
 				{
-					if(list[i].JKDJCFEBDHC)
+					if(list[i].JKDJCFEBDHC_BonusEnabled)
 					{
 						bonusPoint += list[i].HEDODOBGPPM_BonusValue;
 					}

@@ -619,12 +619,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC547B0 Offset: 0xC547B0 VA: 0xC547B0
 		private void UpdateChatComment()
 		{
-			m_commentCount = m_chatContller.NJMOALFKKIK();
+			m_commentCount = m_chatContller.NJMOALFKKIK_GetCommentCount();
 			m_windowUi.ResetItem();
 			for (int i = m_commentCount - 1; i >= 0; i--)
 			{
-				ANPBHCNJIDI.NNPGLGHDBKN data = m_chatContller.NOEMAKFEICB(i);
-				m_windowUi.AddBbsListItem(data, data.INDDJNMPONH, m_myPlayerId, i, true);
+				ANPBHCNJIDI.NNPGLGHDBKN data = m_chatContller.NOEMAKFEICB_GetComment(i);
+				m_windowUi.AddBbsListItem(data, data.INDDJNMPONH_Type, m_myPlayerId, i, true);
 			}
 			m_windowUi.AddScrollItem();
 			m_windowUi.UpdateScroll();
@@ -633,12 +633,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC53C88 Offset: 0xC53C88 VA: 0xC53C88
 		private void CommentDisplayUpdate()
 		{
-			m_commentCount = m_chatContller.NJMOALFKKIK();
+			m_commentCount = m_chatContller.NJMOALFKKIK_GetCommentCount();
 			m_windowUi.ResetItem();
 			for(int i = m_commentCount - 1; i >= 0; i--)
 			{
-				ANPBHCNJIDI.NNPGLGHDBKN data = m_chatContller.NOEMAKFEICB(i);
-				m_windowUi.AddBbsListItem(data, data.INDDJNMPONH, m_myPlayerId, i, true);
+				ANPBHCNJIDI.NNPGLGHDBKN data = m_chatContller.NOEMAKFEICB_GetComment(i);
+				m_windowUi.AddBbsListItem(data, data.INDDJNMPONH_Type, m_myPlayerId, i, true);
 			}
 			m_windowUi.AddScrollItem();
 			m_windowUi.UpdateDisplayOnly();
@@ -647,12 +647,12 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xC548E0 Offset: 0xC548E0 VA: 0xC548E0
 		private void NextAddComment(int index)
 		{
-			m_commentCount = m_chatContller.NJMOALFKKIK();
+			m_commentCount = m_chatContller.NJMOALFKKIK_GetCommentCount();
 			m_windowUi.ResetItem();
 			for(int i = m_commentCount - 1; i > -1; i--)
 			{
-                ANPBHCNJIDI.NNPGLGHDBKN cm = m_chatContller.NOEMAKFEICB(i);
-                m_windowUi.AddBbsListItem(cm, cm.INDDJNMPONH, m_myPlayerId, i, true);
+                ANPBHCNJIDI.NNPGLGHDBKN cm = m_chatContller.NOEMAKFEICB_GetComment(i);
+                m_windowUi.AddBbsListItem(cm, cm.INDDJNMPONH_Type, m_myPlayerId, i, true);
 			}
 			m_windowUi.AddScrollItem();
 			m_windowUi.NextCommentAddScrollLsit(index);
@@ -749,7 +749,7 @@ namespace XeApp.Game.Menu
 			yield return null;
 			while(m_chatContller.OKNCPELPJJO)
 				yield return null;
-			preCommentCount = m_chatContller.NJMOALFKKIK();
+			preCommentCount = m_chatContller.NJMOALFKKIK_GetCommentCount();
 			m_chatContller.HDHACKFJKGM(optionBits, () =>
 			{
 				//0xC5631C
@@ -766,7 +766,7 @@ namespace XeApp.Game.Menu
 			if(success)
 			{
 				yield return null;
-				NextAddComment(m_chatContller.NJMOALFKKIK() - preCommentCount);
+				NextAddComment(m_chatContller.NJMOALFKKIK_GetCommentCount() - preCommentCount);
 			}
 			//LAB_00c57864
 			if(IsError)

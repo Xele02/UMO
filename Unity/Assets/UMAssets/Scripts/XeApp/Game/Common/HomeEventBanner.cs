@@ -97,7 +97,7 @@ namespace XeApp.Game.Common
 			bool b = MenuScene.Instance.LobbyButtonControl.CheckLobbyAnnounce();
 			for(int i = 0; i < list.Count; i++)
 			{
-				if(!b && OHCAABOMEOF.BPJMGICFPBJ(list[i].PGIIDPEGGPI_EventId) != OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
+				if(!(b && OHCAABOMEOF.BPJMGICFPBJ(list[i].PGIIDPEGGPI_EventId) == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid))
 				{
 					MessageBank bk = MessageManager.Instance.GetBank("menu");
 					long l1, l2;
@@ -133,7 +133,23 @@ namespace XeApp.Game.Common
 					PKNOKJNLPOE_EventRaid evRaid = list[i] as PKNOKJNLPOE_EventRaid;
 					if(evRaid != null)
 					{
-						TodoLogger.LogError(TodoLogger.EventRaid_11_13, "Raid");
+						NKOBMDPHNGP_EventRaidLobby evLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Find((IKDICBBFBMI_EventBase x) =>
+						{
+							//0xEABC58
+							return x is NKOBMDPHNGP_EventRaidLobby;
+						}) as NKOBMDPHNGP_EventRaidLobby;
+						if(evLobby != null)
+						{
+							NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase phase = evLobby.KINIOEOOCAA_GetPhase(currentTime);
+							if(phase == NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.OLCLJKOKJCD_3_End)
+							{
+								str = bk.GetMessageByLabel("home_event_counting");
+							}
+							else if(phase == NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.KJNKFFJBPIH_1_Before)
+							{
+								str = bk.GetMessageByLabel("home_banner_raid_lobby_open");
+							}
+						}
 					}
 					MANPIONIGNO_EventGoDiva evGoDiva = list[i] as MANPIONIGNO_EventGoDiva;
 					if(evGoDiva != null && evGoDiva.KBKGHDFBHAP_GetBonusEndTime(currentTime) != 0)
@@ -336,7 +352,13 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xEAB8A8 Offset: 0xEAB8A8 VA: 0xEAB8A8
-		// public void Enter(float animTime) { }
+		public void Enter(float animTime)
+		{
+			if(m_scrollView.scrollObjects.Count > 0)
+			{
+				m_inOutAnime.Enter(animTime, false, null);
+			}
+		}
 
 		// // RVA: 0xEAB984 Offset: 0xEAB984 VA: 0xEAB984
 		public void Leave()

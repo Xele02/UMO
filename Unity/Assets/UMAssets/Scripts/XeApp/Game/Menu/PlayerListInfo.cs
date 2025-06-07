@@ -24,7 +24,7 @@ namespace XeApp.Game.Menu
 			IsAvailable = isAvailable;
 			ListIndex = Index;
 			friend = fr;
-			name = fr.PCEGKKLKFNO.LBODHBDOMGK;
+			name = fr.PCEGKKLKFNO.LBODHBDOMGK_Name;
 		}
 
 		// RVA: 0xDE6DD0 Offset: 0xDE6DD0 VA: 0xDE6DD0

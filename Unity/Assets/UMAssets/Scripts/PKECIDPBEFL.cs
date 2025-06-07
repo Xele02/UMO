@@ -236,12 +236,12 @@ public class PKECIDPBEFL
 				for (int i = 0; i < CFLLEDGILPK_CoopQuest.Count; i++)
 				{
 					EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
-					data2["eid"] = CFLLEDGILPK_CoopQuest[i].EKANGPODCEP_EId;
-					data2["qid"] = CFLLEDGILPK_CoopQuest[i].CMEJFJFOIIJ_QId;
-					data2["lid"] = CFLLEDGILPK_CoopQuest[i].AIBFGKBACCB_LId;
+					data2["eid"] = CFLLEDGILPK_CoopQuest[i].EKANGPODCEP_EventId;
+					data2["qid"] = CFLLEDGILPK_CoopQuest[i].CMEJFJFOIIJ_QuestId;
+					data2["lid"] = CFLLEDGILPK_CoopQuest[i].AIBFGKBACCB_LobbyId;
 					data2["sta"] = CFLLEDGILPK_CoopQuest[i].FKPEAGGKNLC_Start;
 					data2["end"] = CFLLEDGILPK_CoopQuest[i].KOMKKBDABJP_End;
-					data2["dai"] = CFLLEDGILPK_CoopQuest[i].CGHNCPEKOCK_Dai;
+					data2["dai"] = CFLLEDGILPK_CoopQuest[i].CGHNCPEKOCK_Daily;
 					data.Add(data2);
 				}
 			}
@@ -442,12 +442,12 @@ public class PKECIDPBEFL
 					for(int i = 0; i < coop_quests.HNBFOAJIIAL_Count; i++)
 					{
 						PBJPACKDIIB.IFCOFHAFMON d = new PBJPACKDIIB.IFCOFHAFMON();
-						d.EKANGPODCEP_EId = JsonUtil.GetInt(coop_quests[i], "eid");
-						d.CMEJFJFOIIJ_QId = JsonUtil.GetInt(coop_quests[i], "qid");
-						d.AIBFGKBACCB_LId = JsonUtil.GetInt(coop_quests[i], "lid");
+						d.EKANGPODCEP_EventId = JsonUtil.GetInt(coop_quests[i], "eid");
+						d.CMEJFJFOIIJ_QuestId = JsonUtil.GetInt(coop_quests[i], "qid");
+						d.AIBFGKBACCB_LobbyId = JsonUtil.GetInt(coop_quests[i], "lid");
 						d.FKPEAGGKNLC_Start = JsonUtil.GetLong(coop_quests[i], "sta");
 						d.KOMKKBDABJP_End = JsonUtil.GetLong(coop_quests[i], "end");
-						d.CGHNCPEKOCK_Dai = JsonUtil.GetInt(coop_quests[i], "dai") == 1;
+						d.CGHNCPEKOCK_Daily = JsonUtil.GetInt(coop_quests[i], "dai") == 1;
 						CFLLEDGILPK_CoopQuest.Add(d);
 					}
 				}

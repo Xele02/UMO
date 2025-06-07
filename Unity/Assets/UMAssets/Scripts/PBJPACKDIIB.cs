@@ -8,12 +8,12 @@ public class PBJPACKDIIB : Singleton<PBJPACKDIIB>, IDisposable
 {
     public class IFCOFHAFMON
     {
-        public int EKANGPODCEP_EId; // 0x8
-        public int CMEJFJFOIIJ_QId; // 0xC
-        public int AIBFGKBACCB_LId; // 0x10
+        public int EKANGPODCEP_EventId; // 0x8
+        public int CMEJFJFOIIJ_QuestId; // 0xC
+        public int AIBFGKBACCB_LobbyId; // 0x10
         public long FKPEAGGKNLC_Start; // 0x18
         public long KOMKKBDABJP_End; // 0x20
-        public bool CGHNCPEKOCK_Dai; // 0x28
+        public bool CGHNCPEKOCK_Daily; // 0x28
     }
 
     public class JBJMNJMJFOJ
@@ -65,19 +65,19 @@ public class PBJPACKDIIB : Singleton<PBJPACKDIIB>, IDisposable
 		{
 			IFCOFHAFMON d = EKFEHIHJHEN[GGJDKPHBCFC];
 			BNJJHPEGNAI.HCAJEKFFNBM data = new BNJJHPEGNAI.HCAJEKFFNBM();
-			if(!d.CGHNCPEKOCK_Dai)
+			if(!d.CGHNCPEKOCK_Daily || RuntimeSettings.CurrentSettings.UnlimitedEvent)
 			{
 				data.EMGJJFKONHK_ExpireDays = TimeSpan.FromSeconds(d.KOMKKBDABJP_End - d.FKPEAGGKNLC_Start).Days + 1;
-				AHAENNIFOAF.DNEIBFNPNIA(ABMADBCLLHH, d.EKANGPODCEP_EId, d.AIBFGKBACCB_LId);
+				AHAENNIFOAF.DNEIBFNPNIA(ABMADBCLLHH, d.EKANGPODCEP_EventId, d.AIBFGKBACCB_LobbyId);
 			}
 			else
 			{
 				data.EMGJJFKONHK_ExpireDays = 1;
 				DateTime date = Utility.GetLocalDateTime(d.FKPEAGGKNLC_Start);
-				AHAENNIFOAF.OIEHNLEPEBG(ABMADBCLLHH, d.EKANGPODCEP_EId, d.AIBFGKBACCB_LId, date.Month, date.Day);
+				AHAENNIFOAF.OIEHNLEPEBG(ABMADBCLLHH, d.EKANGPODCEP_EventId, d.AIBFGKBACCB_LobbyId, date.Month, date.Day);
 			}
 			data.KGICDMIJGDF = ABMADBCLLHH.ToString();
-			AHAENNIFOAF.JHJAMPNMCFA(ABMADBCLLHH, d.CMEJFJFOIIJ_QId);
+			AHAENNIFOAF.JHJAMPNMCFA(ABMADBCLLHH, d.CMEJFJFOIIJ_QuestId);
 			data.ADCMNODJBGJ_Title = ABMADBCLLHH.ToString();
 			KEPNMGHABPI k = KEPNMGHABPI.OGIFFNLIDIO.GOAMILGNJIE(data);
 			SakashoBbsCommentInfo info = new SakashoBbsCommentInfo();
@@ -99,7 +99,7 @@ public class PBJPACKDIIB : Singleton<PBJPACKDIIB>, IDisposable
 				NPNNPNAIONN = true;
 			});
 			//LAB_00cbd1fc
-			while(!NPNNPNAIONN || !PLOOEECNHFB)
+			while(!NPNNPNAIONN && !PLOOEECNHFB)
 			{
 				yield return null;
 			}
@@ -127,7 +127,50 @@ public class PBJPACKDIIB : Singleton<PBJPACKDIIB>, IDisposable
 	}
 
 	// // RVA: 0xCBC4C0 Offset: 0xCBC4C0 VA: 0xCBC4C0
-	// public void HPFJOBPMNCP(int EKANGPODCEP, int AIBFGKBACCB, bool CGHNCPEKOCK, long LKCCMBEOLLA, Action<List<PBJPACKDIIB.JBJMNJMJFOJ>> BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG) { }
+	public void HPFJOBPMNCP(int EKANGPODCEP, int AIBFGKBACCB, bool CGHNCPEKOCK, long LKCCMBEOLLA, Action<List<PBJPACKDIIB.JBJMNJMJFOJ>> BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
+	{
+		StringBuilder str = new StringBuilder();
+		BNJJHPEGNAI.HCAJEKFFNBM b = new BNJJHPEGNAI.HCAJEKFFNBM();
+		if(!CGHNCPEKOCK || RuntimeSettings.CurrentSettings.UnlimitedEvent)
+		{
+			AHAENNIFOAF.DNEIBFNPNIA(str, EKANGPODCEP, AIBFGKBACCB);
+		}
+		else
+		{
+            DateTime Date = Utility.GetLocalDateTime(LKCCMBEOLLA);
+            AHAENNIFOAF.OIEHNLEPEBG(str, EKANGPODCEP, AIBFGKBACCB, Date.Month, Date.Day);
+		}
+		b.KGICDMIJGDF = str.ToString();
+		List<JBJMNJMJFOJ> ONIOKEOLKNK = new List<JBJMNJMJFOJ>(16);
+		KEPNMGHABPI.OGIFFNLIDIO.GOAMILGNJIE(b).FNKJBKJIKPC(0, (List<KEPNMGHABPI.LNCLNAOPNKF> LGGCIHBGJJN) =>
+		{
+			//0xCBC8B8
+			for(int i = 0; i < LGGCIHBGJJN.Count; i++)
+			{
+				int NIIAFJMLOED = 0;
+				if(int.TryParse(LGGCIHBGJJN[i].ECAIHFNAAOM_Title, out NIIAFJMLOED))
+				{
+					JBJMNJMJFOJ m = ONIOKEOLKNK.Find((JBJMNJMJFOJ AOIKKLBKEBC) =>
+					{
+						//0xCBCBF8
+						return AOIKKLBKEBC.CMEJFJFOIIJ == NIIAFJMLOED;
+					});
+					if(m == null)
+					{
+						m = new JBJMNJMJFOJ();
+						m.CMEJFJFOIIJ = NIIAFJMLOED;
+						m.HMFFHLPNMPH = LGGCIHBGJJN[i].CCBEKGNDDBE.MEBNLFANDLC_CurrentCommentsCount;
+						ONIOKEOLKNK.Add(m);
+					}
+					else
+					{
+						m.HMFFHLPNMPH += LGGCIHBGJJN[i].CCBEKGNDDBE.MEBNLFANDLC_CurrentCommentsCount;
+					}
+				}
+			}
+			BHFHGFKBOHH(ONIOKEOLKNK);
+		}, MOBEEPPKFLG, true);
+	}
 
 	// // RVA: 0xCBC7EC Offset: 0xCBC7EC VA: 0xCBC7EC Slot: 4
 	public void Dispose()

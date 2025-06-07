@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using mcrs;
 using UnityEngine;
+using UnityEngine.Localization.SmartFormat.Utilities;
 using XeApp.Core;
 using XeApp.Game.Common;
 using XeApp.Game.Tutorial;
@@ -233,7 +234,40 @@ namespace XeApp.Game.Menu
 			lobbyController = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as NKOBMDPHNGP_EventRaidLobby;
 			if(lobbyController == null)
 				yield break;
-			TodoLogger.LogError(TodoLogger.EventRaid_11_13, "ShowFoldRadarAnim Event");
+			if(lobbyController.FDGMLPLCALF != 0)
+			{
+				ResultDropFoldRadarController dropFoldRadarLayoutController = null;
+				lytAssetOp = AssetBundleManager.LoadLayoutAsync("ly/207.xab", "UI_ResultDropFoldRadar");
+				fontInfo = GameManager.Instance.GetSystemFont();
+				yield return lytAssetOp;
+				yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(fontInfo, (GameObject instance) =>
+				{
+					//0xD02334
+					instance.transform.SetParent(transform.parent.parent, false);
+					instance.transform.SetAsLastSibling();
+					dropFoldRadarLayoutController = instance.GetComponent<ResultDropFoldRadarController>();
+				}));
+				AssetBundleManager.UnloadAssetBundle("ly/207.xab", false);
+				bool done = false;
+				dropFoldRadarLayoutController.Setup(lobbyController.FDGMLPLCALF);
+				dropFoldRadarLayoutController.onClickOkayButton = () =>
+				{
+					//0xD02494
+					SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_001);
+					done = true;
+				};
+				dropFoldRadarLayoutController.StartBeginAnim();
+				MenuScene.Instance.InputEnable();
+				MenuScene.Instance.RaycastEnable();
+				while(!done)
+					yield return null;
+				dropFoldRadarLayoutController.gameObject.SetActive(false);
+				layoutOkayButton.SetDisable(false);
+				MenuScene.Instance.InputDisable();
+				MenuScene.Instance.RaycastDisable();
+			}
+			//LAB_00d03054
+			yield return null;
 		}
 
 		// // RVA: 0xD01EA4 Offset: 0xD01EA4 VA: 0xD01EA4
