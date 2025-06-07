@@ -1256,7 +1256,7 @@ namespace XeApp.Game.Menu
 		private void InitRaidPointResult()
 		{
 			PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
-			if(evRaid.JIBMOEHKMGB.CMCKNKKCNDK_Status == NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
+			if(evRaid.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_Status == NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
 			{
 				ShowRaidBossEscapedPop();
 			}
@@ -1292,7 +1292,7 @@ namespace XeApp.Game.Menu
 		{
 			//0xB5F214
 			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
-			yield return Co.R(MenuScene.Instance.BgControl.ChangeBgCoroutine(BgType.Raid, ev.JIBMOEHKMGB.HPPDFBKEJCG_BgId, SceneGroupCategory.UNDEFINED, TransitionList.Type.UNDEFINED, -1));
+			yield return Co.R(MenuScene.Instance.BgControl.ChangeBgCoroutine(BgType.Raid, ev.JIBMOEHKMGB_SelectedBoss.HPPDFBKEJCG_BgId, SceneGroupCategory.UNDEFINED, TransitionList.Type.UNDEFINED, -1));
 			callback();
 		}
 
@@ -1335,7 +1335,7 @@ namespace XeApp.Game.Menu
 			{
 				if(raidController.LMIFOCDCNAI())
 				{
-					if(raidController.JIBMOEHKMGB.PPFNGGCBJKC_Id == raidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id)
+					if(raidController.JIBMOEHKMGB_SelectedBoss.PPFNGGCBJKC_Id == raidController.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id)
 					{
 						PopupRaidBossHelpContentSetting s = new PopupRaidBossHelpContentSetting();
 						s.TitleText = msgBank.GetMessageByLabel("pop_raid_helprequest_title");

@@ -19,6 +19,7 @@ public class LGGPBMPINDL_EventRaidPlayer : KLFDBFMNLBL_ServerSaveBlock
 	{
 		MEBHCFJCKFE_LobbyId = 0;
 		OBGBAOLONDD = GPLGIGCNNAD;
+		UnityEngine.Debug.LogError("Set OBGBAOLONDD "+OBGBAOLONDD);
 		NFIOKIBPJCJ_Uptime = 0;
 		KDMPHHFADMC_ClusterId = 0;
 	}
@@ -47,6 +48,7 @@ public class LGGPBMPINDL_EventRaidPlayer : KLFDBFMNLBL_ServerSaveBlock
 		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
 		StringBuilder str = new StringBuilder(32);
 		str.SetFormat("lobby_id_{0:D5}", OBGBAOLONDD);
+		UnityEngine.Debug.LogError("Save OBGBAOLONDD "+str.ToString()+" "+MEBHCFJCKFE_LobbyId);
 		data[str.ToString()] = MEBHCFJCKFE_LobbyId;
 		data[AFEHLCGHAEE_Strings.NFIOKIBPJCJ_uptime] = NFIOKIBPJCJ_Uptime;
 		data[AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id] = MCKEOKFMLAH;
@@ -90,6 +92,7 @@ public class LGGPBMPINDL_EventRaidPlayer : KLFDBFMNLBL_ServerSaveBlock
 			MEBHCFJCKFE_LobbyId = CJAENOMGPDA_ReadInt(block, "lobby_id_00000", 0, ref isInvalid);
 			KDMPHHFADMC_ClusterId = CJAENOMGPDA_ReadInt(block, "lobby_cluster_id_", 0, ref isInvalid);
 		}
+		UnityEngine.Debug.LogError("Read Lobby "+OBGBAOLONDD+" "+MEBHCFJCKFE_LobbyId);
 		NFIOKIBPJCJ_Uptime = DKMPHAPBDLH_ReadLong(block, AFEHLCGHAEE_Strings.NFIOKIBPJCJ_uptime, 0, ref isInvalid);
 		KFKDMBPNLJK_BlockInvalid = isInvalid;
 		return true;

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System;
 using System.Text;
 using XeSys;
+using UnityEngine.Localization.SmartFormat;
 
 namespace XeApp.Game.Menu
 {
@@ -115,21 +116,21 @@ namespace XeApp.Game.Menu
 				if(_day < 1)
 					str.AppendFormat(bk.GetMessageByLabel("home_lobby_button_after_today"), Array.Empty<object>());
 				else
-					str.AppendFormat(bk.GetMessageByLabel("home_lobby_button_after"), m_dayNum);
+					str.AppendSmart(bk.GetMessageByLabel("home_lobby_button_after"), m_dayNum);
 			}
 			else if(_type == eHeldType.eNow)
 			{
 				if(_day < 1)
 					str.AppendFormat(bk.GetMessageByLabel("home_lobby_button_enter_today"), Array.Empty<object>());
 				else
-					str.AppendFormat(bk.GetMessageByLabel("home_lobby_button_enter"), m_dayNum);
+					str.AppendSmart(bk.GetMessageByLabel("home_lobby_button_enter"), m_dayNum);
 			}
 			else if(_type == eHeldType.eBefore)
 			{
 				if(_day < 1)
 					str.AppendFormat(bk.GetMessageByLabel("home_lobby_button_before_today"), Array.Empty<object>());
 				else
-					str.AppendFormat(bk.GetMessageByLabel("home_lobby_button_before"), m_dayNum);
+					str.AppendSmart(bk.GetMessageByLabel("home_lobby_button_before"), m_dayNum);
 			}
 			else
 				return;

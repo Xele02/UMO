@@ -145,8 +145,8 @@ namespace XeApp.Game.Menu
 				yield return this.StartCoroutineWatched(Co_SetBossBg(g.HPPDFBKEJCG_BgId));
 				PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 				bool done = false;
-				McrsCannonViewer.Initiarize(transform, ev.KFBDBBCCPBB(ev.JIBMOEHKMGB.INDDJNMPONH_Type), ev.NNDFMCHDJOH_GetBossSerie(ev.JIBMOEHKMGB.INDDJNMPONH_Type), 
-					ev.JIBMOEHKMGB.HPPDFBKEJCG_BgId, ev.JIBMOEHKMGB.FJOLNJLLJEJ_Rank, ev.AGEJGHGEGFF_GetBossName(ev.JIBMOEHKMGB.INDDJNMPONH_Type), 
+				McrsCannonViewer.Initiarize(transform, ev.KFBDBBCCPBB(ev.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_Type), ev.NNDFMCHDJOH_GetBossSerie(ev.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_Type), 
+					ev.JIBMOEHKMGB_SelectedBoss.HPPDFBKEJCG_BgId, ev.JIBMOEHKMGB_SelectedBoss.FJOLNJLLJEJ_Rank, ev.AGEJGHGEGFF_GetBossName(ev.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_Type), 
 					ev.GGDBEANLCPC.HALIDDHLNEG_MCannonDamage, () =>
 					{
 						//0x1817314
@@ -154,6 +154,7 @@ namespace XeApp.Game.Menu
 					});
 				while(!done)
 					yield return null;
+				raidResultBossFilter = McrsCannonViewer.BossFilterLayout;
 				raidResultBossFilter.transform.SetParent(transform, false);
 				raidResultBossFilter.transform.SetAsFirstSibling();
 				McrsCannonViewer.Play(() =>
@@ -200,7 +201,7 @@ namespace XeApp.Game.Menu
 			cont = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			if(cont.LMIFOCDCNAI())
 			{
-				if(cont.JIBMOEHKMGB.PPFNGGCBJKC_Id == cont.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id)
+				if(cont.JIBMOEHKMGB_SelectedBoss.PPFNGGCBJKC_Id == cont.PMIIMELDPAJ_GetMyBoss().PPFNGGCBJKC_Id)
 				{
 					PopupRaidBossHelpContentSetting s = new PopupRaidBossHelpContentSetting();
 					s.TitleText = bank.GetMessageByLabel("pop_raid_helprequest_title");

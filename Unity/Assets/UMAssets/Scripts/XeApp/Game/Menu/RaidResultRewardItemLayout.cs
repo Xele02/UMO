@@ -102,7 +102,7 @@ namespace XeApp.Game.Menu
 			if(view.JAGJOLBDBDK_FirstRewards.Count != 0 && m_view.NEAPOLIIELG_MvpRewards.Count != 0)
 			{
 				m_rewardType = RewardType.All;
-				m_layoutMain.StartChildrenAnimGoStop("04");
+				m_layoutMain.StartSiblingAnimGoStop("04");
 			}
 			else
 			{
@@ -111,18 +111,18 @@ namespace XeApp.Game.Menu
 					if(m_view.NEAPOLIIELG_MvpRewards.Count == 0)
 					{
 						m_rewardType = RewardType.Defeat;
-						m_layoutMain.StartChildrenAnimGoStop("01");
+						m_layoutMain.StartSiblingAnimGoStop("01");
 					}
 					else
 					{
 						m_rewardType = RewardType.Mvp;
-						m_layoutMain.StartChildrenAnimGoStop("02");
+						m_layoutMain.StartSiblingAnimGoStop("02");
 					}
 				}
 				else
 				{
 					m_rewardType = RewardType.First;
-					m_layoutMain.StartChildrenAnimGoStop("03");
+					m_layoutMain.StartSiblingAnimGoStop("03");
 				}
 			}
 			string s = string.Format("{0:D2}", m_view.FJOLNJLLJEJ_BossRank);
@@ -135,7 +135,7 @@ namespace XeApp.Game.Menu
 				MenuScene.Instance.ItemTextureCache.Load(m_view.NEAPOLIIELG_MvpRewards[i].PPFNGGCBJKC, (IiconTexture texture) =>
 				{
 					//0x1BE4910
-					texture.Set(mvpItemCell.itemImage[i]);
+					texture.Set(mvpItemCell.itemImage[idx]);
 				});
 				mvpItemCell.itemIcon[i].AddOnClickCallback(() =>
 				{
@@ -150,7 +150,7 @@ namespace XeApp.Game.Menu
 				MenuScene.Instance.ItemTextureCache.Load(m_view.JAGJOLBDBDK_FirstRewards[i].PPFNGGCBJKC, (IiconTexture texture) =>
 				{
 					//0x1BE4B20
-					texture.Set(firstItemCell.itemImage[i]);
+					texture.Set(firstItemCell.itemImage[idx]);
 				});
 				firstItemCell.itemIcon[i].AddOnClickCallback(() =>
 				{
@@ -165,7 +165,7 @@ namespace XeApp.Game.Menu
 				MenuScene.Instance.ItemTextureCache.Load(m_view.FGNHJFLBMIE_DefeatRewards[i].PPFNGGCBJKC, (IiconTexture texture) =>
 				{
 					//0x1BE4D30
-					texture.Set(defeatItemCell.itemImage[i]);
+					texture.Set(defeatItemCell.itemImage[idx]);
 				});
 				defeatItemCell.itemIcon[i].AddOnClickCallback(() =>
 				{

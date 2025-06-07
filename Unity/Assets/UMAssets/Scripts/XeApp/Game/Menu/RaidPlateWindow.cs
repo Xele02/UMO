@@ -148,8 +148,8 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					content.RectTransform.localPosition = new Vector3(m_scrollList.ContentSize.x + index % m_scrollList.ColumnCount + m_scrollList.LeftTopPosition.x, 
-						m_scrollList.ContentSize.y, 0);
+					content.RectTransform.localPosition = new Vector3(m_scrollList.ContentSize.x * ( index % m_scrollList.ColumnCount ) + m_scrollList.LeftTopPosition.x, 
+						content.RectTransform.localPosition.y, 0);
 					r.UpdateContent(sceneList[index]);
 				}
 			});

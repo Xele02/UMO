@@ -2489,8 +2489,18 @@ namespace XeApp.Game.Menu
 			if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(leadData.DEKECNIBBIB_ItemFullId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
 				int idx = leadData.KLMPFGOCBHC_Desc.IndexOf('\n');
+				string res = leadData.KLMPFGOCBHC_Desc.Remove(idx);
 				if (idx > -1)
-					return leadData.KLMPFGOCBHC_Desc.Remove(idx);
+				{
+					if(RuntimeSettings.CurrentSettings.Language != "en" || RuntimeSettings.CurrentSettings.Language != "fr" )
+					{
+						if(idx > 0 && res[idx - 1] != ' ')
+						{
+							res = res.Insert(idx, " ");
+						}
+					}
+					return res;
+				}
 			}
 			return leadData.KLMPFGOCBHC_Desc;
 		}

@@ -390,7 +390,7 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 			FBHONHONKGD_MusicSelectDesc = MAICAKMIBEM("music_select_desc", "");
 			GFIBLLLHMPD_StartAdventureId = 0;
 			CAKEOPLJDAF_EndAdventureId = 0;
-			LHAKGDAGEMM.Clear();
+			LHAKGDAGEMM_EpBonusInfos.Clear();
 			MNDFBBMNJGN_IsUsingTicket = false;
 			LEPALMDKEOK_IsPointReward = false;
 			GPHEKCNDDIK = true;

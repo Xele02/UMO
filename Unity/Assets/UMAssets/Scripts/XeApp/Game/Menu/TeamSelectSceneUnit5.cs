@@ -305,13 +305,13 @@ namespace XeApp.Game.Menu
 			m_musicInfo.Set(m_viewMusicData, Database.Instance.gameSetup.musicInfo, false, SetDeckMusicInfo.BottomType.ExpectedScoreGauge);
 			m_musicInfo.SetPosType(SetDeckMusicInfo.PosType.Normal);
 			m_skipStatus = CehckSkipStatus(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime());
-			CheckExistOriginalSetting(m_prismData);
-			SetDeckPlayButtons.SkipButtoType skipButton = SetDeckPlayButtons.SkipButtoType.Enable;
+			bool b1 = CheckExistOriginalSetting(m_prismData);
+			//SetDeckPlayButtons.SkipButtoType skipButton = SetDeckPlayButtons.SkipButtoType.Enable;
 			/*
 			 
-			Enable = 0,
-			Story = 1,
-			Lock = 2,
+			Enable = 0, =>1
+			Story = 1,  
+			Lock = 2,	=>3
 			Limit = 3,
 			LackTicket = 4,
 			Boost = 5,
@@ -325,16 +325,27 @@ namespace XeApp.Game.Menu
 		   Disable = 2,
 		   Lock = 3, 
 			*/
-			if (m_skipStatus == SkipStatusType.Lock)
+			/*if (m_skipStatus == SkipStatusType.Lock)
 				skipButton = SetDeckPlayButtons.SkipButtoType.Lock;
 			else if (m_skipStatus != SkipStatusType.Enable)
-				skipButton = SetDeckPlayButtons.SkipButtoType.Hide;
-			TodoLogger.LogError(TodoLogger.ToCheck, "Check skipButton, read in a array somewhere");
+				skipButton = SetDeckPlayButtons.SkipButtoType.Hide;*/
+			SetDeckPlayButtons.SkipButtoType skipButton = new SetDeckPlayButtons.SkipButtoType[8]
+			{
+				SetDeckPlayButtons.SkipButtoType.Enable,
+				SetDeckPlayButtons.SkipButtoType.Disable,
+				SetDeckPlayButtons.SkipButtoType.Lock,
+				SetDeckPlayButtons.SkipButtoType.Disable,
+				SetDeckPlayButtons.SkipButtoType.Disable,
+				SetDeckPlayButtons.SkipButtoType.Disable,
+				SetDeckPlayButtons.SkipButtoType.Disable,
+				SetDeckPlayButtons.SkipButtoType.Disable
+			}[(int)m_skipStatus];
+			TodoLogger.LogError(TodoLogger.ToCheck, "Check skipButton, read in a array somewhere "+m_skipStatus);
 			// L 909
 			m_playButtons.Set(skipButton, GetSkipRestCount(), CheckPlayButtonType(Database.Instance.gameSetup.musicInfo), energy);
 			m_playButtons.SetPosType(SetDeckPlayButtons.PosType.Normal);
 			m_unitSetListButtons.UpdateContent(m_playerData, m_isGoDivaEvent, UnitSetIndex);
-			m_prismSettingButtons.UpdateContent(m_prismData, SetDeckPrismSettingButtons.ModeType.Prism, CheckExistOriginalSetting(m_prismData));
+			m_prismSettingButtons.UpdateContent(m_prismData, SetDeckPrismSettingButtons.ModeType.Prism, b1);
 			m_prismUnitInfo.UpdateContent(m_prismData, Database.Instance.gameSetup.musicInfo);
 			m_unitStatus.SetCheckStatusButtonState(0);
 			if(m_dispType == DispType.UnitSet)
@@ -808,12 +819,12 @@ namespace XeApp.Game.Menu
 			if(musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid && m_eventCtrl != null)
 			{
 				PKNOKJNLPOE_EventRaid evRaid = m_eventCtrl as PKNOKJNLPOE_EventRaid;
-				if(evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1 || evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2)
+				if(evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Support || evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2)
 					return SetDeckPlayButtons.PlayButtonType.Support_AP;
 			}
 			if (!musicInfo.isEnergyRequired)
 				return SetDeckPlayButtons.PlayButtonType.Play;
-			if (m_isRaidEvent)
+			if (!m_isRaidEvent)
 				return SetDeckPlayButtons.PlayButtonType.Play_EN;
 			return SetDeckPlayButtons.PlayButtonType.Play_AP;
 		}
@@ -832,7 +843,7 @@ namespace XeApp.Game.Menu
 				if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid && m_eventCtrl != null)
 				{
 					PKNOKJNLPOE_EventRaid evRaid = m_eventCtrl as PKNOKJNLPOE_EventRaid;
-					if(evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1 || evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2)
+					if(evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Support || evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2)
 						return SkipStatusType.Support;
 				}
 				res = SkipStatusType.Boost;
@@ -1411,7 +1422,7 @@ namespace XeApp.Game.Menu
 				{
 					// L 619
 					PKNOKJNLPOE_EventRaid evRaid = m_eventCtrl as PKNOKJNLPOE_EventRaid;
-					if(evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1 || evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2)
+					if(evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Support || evRaid.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2)
 					{
 						UseLiveSkipTicketCount = 1;
 						if(onContinue != null)
@@ -1547,7 +1558,7 @@ namespace XeApp.Game.Menu
 				PKNOKJNLPOE_EventRaid evRaid = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 				if(evRaid != null)
 				{
-					PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ d = evRaid.JIBMOEHKMGB;
+					PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ d = evRaid.JIBMOEHKMGB_SelectedBoss;
 					long t = d.OCFJGNPMJBA_GetTime();
 					NKOBMDPHNGP_EventRaidLobby evLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
                     LGGPBMPINDL_EventRaidPlayer evP = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LLBECHBNIJG_EventRaidPlayer;
@@ -1557,7 +1568,7 @@ namespace XeApp.Game.Menu
 						evP.MEBHCFJCKFE_LobbyId = evLobby.PDNFHDLNENO(NKOBMDPHNGP_EventRaidLobby.FAKHCOJIOBD(a, 1));
 						evP.KDMPHHFADMC_ClusterId = evLobby.DKNNNOIMMFN_GetClusterId();
 					}
-					isAssist = evRaid.CFLEMFADGLG_AttackType != JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2 || evRaid.CFLEMFADGLG_AttackType != JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1;
+					isAssist = evRaid.CFLEMFADGLG_AttackType != JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2 || evRaid.CFLEMFADGLG_AttackType != JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Support;
 					if(t <= 300)
 					{
 						Debug.Log("StringLiteral_20616 "+t);
@@ -1694,7 +1705,7 @@ namespace XeApp.Game.Menu
 				if(m_viewMusicData is IBJAKJJICBC && Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid && m_eventCtrl != null)
 				{
 					PKNOKJNLPOE_EventRaid ev = m_eventCtrl as PKNOKJNLPOE_EventRaid;
-					if(ev.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1)
+					if(ev.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Support)
 						return true;
 					return ev.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.LPNPLGJJCPC_2;
 				}

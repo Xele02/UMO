@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using XeSys;
+using UnityEngine.Localization.SmartFormat;
 
 namespace XeApp.Game.Menu
 {
@@ -102,7 +103,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				m_BossContText.text = string.Format(MessageManager.Instance.GetMessage("menu", "lobby_raidboss_enable_count"), _bossNum);
+				m_BossContText.text = Smart.Format(MessageManager.Instance.GetMessage("menu", "lobby_raidboss_enable_count"), _bossNum);
 				m_raidBassNumAnim.StartChildrenAnimGoStop("01");
 			}
 		}

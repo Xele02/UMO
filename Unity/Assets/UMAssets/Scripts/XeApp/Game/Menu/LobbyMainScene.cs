@@ -1207,7 +1207,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xD0A09C
 				m_windowUi.UnLockScroll();
-				if(label != PopupButton.ButtonLabel.Ok)
+				if(label == PopupButton.ButtonLabel.Ok)
 				{
 					this.StartCoroutineWatched(Co_BattleCommentRepost(index));
 				}

@@ -90,7 +90,15 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x144D390 Offset: 0x144D390 VA: 0x144D390
-		// public bool IsEventType() { }
+		public bool IsEventType()
+		{
+			return m_optionType == OptionType.EvRanking || 
+				m_optionType == OptionType.EvReward || 
+				m_optionType == OptionType.EvStory || 
+				m_optionType == OptionType.EvMission || 
+				m_optionType == OptionType.EvMvp || 
+				m_optionType == OptionType.EvRewardList;
+		}
 
 		// RVA: 0x144CD38 Offset: 0x144CD38 VA: 0x144CD38
 		public void SetBadge(bool isOn)
@@ -99,7 +107,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x144D9FC Offset: 0x144D9FC VA: 0x144D9FC
-		// public RaidActSelectOptionButton.OptionType GetOptionType() { }
+		public OptionType GetOptionType()
+		{
+			return m_optionType;
+		}
 
 		// // RVA: 0x1452FB0 Offset: 0x1452FB0 VA: 0x1452FB0
 		private string GetFontUvName(OptionType type)

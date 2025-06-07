@@ -437,10 +437,10 @@ public static class DatabaseTextConverter
                 BKOGPDBKFFJ_EventRaid blockDbRaid = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(blocksName[sIdx]) as BKOGPDBKFFJ_EventRaid;
                 if(blockDbRaid != null)
                 {
-                    for (int i = 0; i < blockDbRaid.HDMADAHNLDN.Count; i++)
+                    for (int i = 0; i < blockDbRaid.HDMADAHNLDN_BossMissions.Count; i++)
                     {
-                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbRaid.HDMADAHNLDN[i].JOPOPMLFINI, 10000 + blockDbRaid.HDMADAHNLDN[i].PPFNGGCBJKC_Id);
-                        poFile.translationData.Add(prfx, blockDbRaid.HDMADAHNLDN[i].FEMMDNIELFC_Desc);
+                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbRaid.HDMADAHNLDN_BossMissions[i].JOPOPMLFINI, 10000 + blockDbRaid.HDMADAHNLDN_BossMissions[i].PPFNGGCBJKC_Id);
+                        poFile.translationData.Add(prfx, blockDbRaid.HDMADAHNLDN_BossMissions[i].FEMMDNIELFC_Desc);
                         //prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbRaid.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbRaid.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
                         //poFile.translationData.Add(prfx, blockDbRaid.NNMPGOAGEOL_Missions[i].BGBJPGEIEDE_DescBalloon);
                     }
@@ -456,16 +456,36 @@ public static class DatabaseTextConverter
                         string prfx = string.Format("event_banner_{0}_{1:D4}", blockDbRaid.JIKKNHIAEKG_BlockName, blockDbRaid.LLCLJBEJOPM_BannerInfo[i].PPFNGGCBJKC);
                         poFile.translationData.Add(prfx, blockDbRaid.LLCLJBEJOPM_BannerInfo[i].KLMPFGOCBHC_BannerText);
                     }
+                    for(int i = 0; i < blockDbRaid.GJFJLEOGFLD_BossInfo.Count; i++)
+                    {
+                        string prfx = string.Format("event_bossname_{0}_{1:D4}", blockDbRaid.JIKKNHIAEKG_BlockName, blockDbRaid.GJFJLEOGFLD_BossInfo[i].PPFNGGCBJKC);
+                        poFile.translationData.Add(prfx, blockDbRaid.GJFJLEOGFLD_BossInfo[i].OPFGFINHFCE_Name);
+                    }
                 }
                 LDEBIBGHCGD_EventRaidLobby blockDbLobby = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(blocksName[sIdx]) as LDEBIBGHCGD_EventRaidLobby;
                 if(blockDbLobby != null)
                 {
+                    for (int i = 0; i < blockDbLobby.OJGPPOKENLG_Groups.Count; i++)
+                    {
+                        string prfx = string.Format("event_group_{0}_{1:D4}", blockDbLobby.JIKKNHIAEKG_BlockName, blockDbLobby.OJGPPOKENLG_Groups[i].PPFNGGCBJKC_GroupId);
+                        poFile.translationData.Add(prfx, blockDbLobby.OJGPPOKENLG_Groups[i].OPFGFINHFCE_Name);
+                    }
+                    for (int i = 0; i < blockDbLobby.OIIMJFCBFFG_LobbyGuide.Count; i++)
+                    {
+                        string prfx = string.Format("event_guide_{0}_{1:D4}", blockDbLobby.JIKKNHIAEKG_BlockName, blockDbLobby.OIIMJFCBFFG_LobbyGuide[i].PPFNGGCBJKC);
+                        poFile.translationData.Add(prfx, blockDbLobby.OIIMJFCBFFG_LobbyGuide[i].LICPCDCLOIO_Message);
+                    }
                     for (int i = 0; i < blockDbLobby.NNMPGOAGEOL_Missions.Count; i++)
                     {
                         string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbLobby.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbLobby.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
                         poFile.translationData.Add(prfx, blockDbLobby.NNMPGOAGEOL_Missions[i].FEMMDNIELFC_Desc);
                         prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbLobby.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbLobby.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
                         poFile.translationData.Add(prfx, blockDbLobby.NNMPGOAGEOL_Missions[i].BGBJPGEIEDE_DescBalloon);
+                    }
+                    for(int i = 1; i <= 4; i++)
+                    {
+                        string prfx = string.Format("event_msg_lobby_{0}_battlelog_text_{1:D2}", blockDbLobby.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, i);
+                        poFile.translationData.Add(prfx, blockDbLobby.EFEGBHACJAL(string.Format("battlelog_text_{0:D2}", i), ""));
                     }
                 }
                 
@@ -940,6 +960,30 @@ public static class DatabaseTextConverter
     public static string TranslateEventBannerText(string event_db_name, int banner_id, string def)
     {
         string prfx = string.Format("event_banner_{0}_{1:D4}", event_db_name, banner_id);
+        return Translate(eBank.events_text, prfx, def);
+    }
+
+    public static string TranslateLobbyGroupName(string event_db_name, int groupId, string def)
+    {
+        string prfx = string.Format("event_group_{0}_{1:D4}", event_db_name, groupId);
+        return Translate(eBank.events_text, prfx, def);
+    }
+
+    public static string TranslateLobbyGuideText(string event_db_name, int guideId, string def)
+    {
+        string prfx = string.Format("event_guide_{0}_{1:D4}", event_db_name, guideId);
+        return Translate(eBank.events_text, prfx, def);
+    }
+
+    public static string TranslateLobbyMessage(string event_db_name, string msgKey, string def)
+    {
+        string prfx = string.Format("event_msg_lobby_{0}_{1:D4}", event_db_name, msgKey);
+        return Translate(eBank.events_text, prfx, def);
+    }
+
+    public static string TranslateRaidBossName(string event_db_name, int bossId, string def)
+    {
+        string prfx = string.Format("event_bossname_{0}_{1:D4}", event_db_name, bossId);
         return Translate(eBank.events_text, prfx, def);
     }
 

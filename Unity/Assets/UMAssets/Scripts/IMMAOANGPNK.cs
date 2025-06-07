@@ -425,7 +425,7 @@ public class IMMAOANGPNK
 					info.KBFOIECIADN_OpenedAt = schedule_item[i].KBFOIECIADN;
 					info.EGBOHDFBAPB_ClosedAt = schedule_item[i].EGBOHDFBAPB;
 					// UMO Event
-					if(currentEvent != null && currentEvent.BlockName == info.OPFGFINHFCE_Name)
+					if(currentEvent != null && currentEvent.EnableBlock(info.OPFGFINHFCE_Name))
 					//if(info.OPFGFINHFCE_Name.Contains("april"))
 					{
 						DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
@@ -450,7 +450,7 @@ public class IMMAOANGPNK
 					info.KBFOIECIADN_OpenedAt = JsonUtil.GetLong(data[i], AFEHLCGHAEE_Strings.KBFOIECIADN_opened_at);
 					info.EGBOHDFBAPB_ClosedAt = JsonUtil.GetLong(data[i], AFEHLCGHAEE_Strings.EGBOHDFBAPB_closed_at);
 					// UMO Event
-					if(currentEvent != null && currentEvent.BlockName == info.OPFGFINHFCE_Name)
+					if(currentEvent != null && currentEvent.EnableBlock(info.OPFGFINHFCE_Name))
 					//if(info.OPFGFINHFCE_Name.Contains("april"))
 					{
 						DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());

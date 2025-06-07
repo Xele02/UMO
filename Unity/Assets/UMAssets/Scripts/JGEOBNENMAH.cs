@@ -444,7 +444,7 @@ public class JGEOBNENMAH
 						{
 							// L860
 							IIIMEMLABHA = PPPDHBBNEBO as PKNOKJNLPOE_EventRaid;
-							IIIMEMLABHA.GKCEHODEPMJ(false, () =>
+							IIIMEMLABHA.GKCEHODEPMJ_GetBosses_WithOptionalPlayersNames(false, () =>
 							{
 								//0xB0A8F4
 								return;
@@ -458,10 +458,10 @@ public class JGEOBNENMAH
 								yield return null;
 							if(!IIIMEMLABHA.NPNNPNAIONN)
 							{
-								if(IIIMEMLABHA.JIBMOEHKMGB.CMCKNKKCNDK_Status != NHCDBBBMFFG.MBFHILFLPJL_1_Alive)
+								if(IIIMEMLABHA.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_Status != NHCDBBBMFFG.MBFHILFLPJL_1_Alive)
 								{
 									if(INLLNIEEHAN != null)
-										INLLNIEEHAN(IIIMEMLABHA.JIBMOEHKMGB.CMCKNKKCNDK_Status);
+										INLLNIEEHAN(IIIMEMLABHA.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_Status);
 									//LAB_00b12264
 									yield break;
 								}
@@ -688,7 +688,7 @@ public class JGEOBNENMAH
 			ev.MGIKKAGFGCF(false, null);
 			ev.IBMOHKFJDDH_SaveApCounter();
 			ev.DFNENEFLKPO_IncBossPlayCount();
-			if(ev.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1)
+			if(ev.CFLEMFADGLG_AttackType == JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Support)
 			{
 				ev.BBLIJFBIACE_IncAssistCount();
 			}
@@ -1046,7 +1046,7 @@ public class JGEOBNENMAH
 					{
 						if(JGFEPLJIMEN.NMDNCFGEJGJ())
 						{
-							FNAFPJGPGAC = JGFEPLJIMEN.JIBMOEHKMGB.PPFNGGCBJKC_Id;
+							FNAFPJGPGAC = JGFEPLJIMEN.JIBMOEHKMGB_SelectedBoss.PPFNGGCBJKC_Id;
 						}
 						//LAB_00b0cc1c
 					}

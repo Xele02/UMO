@@ -86,6 +86,7 @@ public class JKCDLPOPCGC_GetRaidboss : CACGCMBKHDI_Request
 	// RVA: 0x135BC40 Offset: 0x135BC40 VA: 0x135BC40 Slot: 13
 	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
     {
+        Debug.LogError(NGCAIEGPLKD_result);
         NFEAMMJIMPG = new CEHKLJKGJPI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
     }
 }

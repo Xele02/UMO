@@ -104,7 +104,7 @@ namespace XeApp.Game.Menu
 					int _y = index / m_scrollList.ColumnCount;
 					int _x = index % m_scrollList.ColumnCount;
 					content.RectTransform.localPosition = new Vector3(m_scrollList.ContentSize.x * _x + m_scrollList.LeftTopPosition.x,
-						m_scrollList.ContentSize.y, 0);
+						content.RectTransform.localPosition.y, 0);
 					c.UpdateContent(helperList[index]);
 				}
 			});

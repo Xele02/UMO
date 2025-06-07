@@ -36,7 +36,7 @@ namespace XeApp.Game.Menu
 			m_switchSeriesAnim = layout.FindViewByExId("sw_sel_music_raid_boss_info_sw_raid_boss_logo") as AbsoluteLayout;
 			m_announceAnim = layout.FindViewByExId("sw_sel_music_raid_boss_select_tl_set_raid_announce_l_set") as AbsoluteLayout;
 			m_missionWindowAnim = layout.FindViewByExId("sw_sel_music_raid_boss_select_tl_set_s_m_r_frm_mi_01") as AbsoluteLayout;
-			m_freePlayAnim = layout.FindViewByExId("sw_ap_message2_onoff_anim") as AbsoluteLayout;
+			m_freePlayAnim = layout.FindViewById("sw_ap_message2_onoff_anim") as AbsoluteLayout;
 			m_freePlayAnim.StartChildrenAnimGoStop("02");
 			Hide();
 			return true;

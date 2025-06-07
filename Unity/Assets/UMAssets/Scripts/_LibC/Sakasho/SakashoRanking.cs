@@ -30,9 +30,51 @@ namespace ExternLib
 		private static void CheckDefaultRankingCreated()
 		{
 			if(!playerAccount.rankings.ContainsKey(16510))
-			{
 				playerAccount.rankings.Add(16510, new RankingData());
-			}
+			if(!playerAccount.rankings.ContainsKey(11113040))
+				playerAccount.rankings.Add(11113040, new RankingData());
+			if(!playerAccount.rankings.ContainsKey(11213040))
+				playerAccount.rankings.Add(11213040, new RankingData());
+			if(!playerAccount.rankings.ContainsKey(11113037))
+				playerAccount.rankings.Add(11113037, new RankingData());
+			if(!playerAccount.rankings.ContainsKey(11213037))
+				playerAccount.rankings.Add(11213037, new RankingData());
+			if(!playerAccount.rankings.ContainsKey(11113038))
+				playerAccount.rankings.Add(11113038, new RankingData());
+			if(!playerAccount.rankings.ContainsKey(11213038))
+				playerAccount.rankings.Add(11213038, new RankingData());
+			if(!playerAccount.rankings.ContainsKey(11113039))
+				playerAccount.rankings.Add(11113039, new RankingData());
+			if(!playerAccount.rankings.ContainsKey(11213039))
+				playerAccount.rankings.Add(11213039, new RankingData());
+			if(!playerAccount.rankings.ContainsKey(18404))
+				playerAccount.rankings.Add(18404, new RankingData());
+			if(!playerAccount.rankings.ContainsKey(18405))
+				playerAccount.rankings.Add(18405, new RankingData());
+			if(!playerAccount.rankings.ContainsKey(18406))
+				playerAccount.rankings.Add(18406, new RankingData());
+			if(!playerAccount.rankings.ContainsKey(18407))
+				playerAccount.rankings.Add(18407, new RankingData());
+			if(!playerAccount.rankings.ContainsKey(18408))
+				playerAccount.rankings.Add(18408, new RankingData());
+			if(!playerAccount.rankings.ContainsKey(18409))
+				playerAccount.rankings.Add(18409, new RankingData());
+			if(!playerAccount.rankings.ContainsKey(18410))
+				playerAccount.rankings.Add(18410, new RankingData());
+			if(!playerAccount.rankings.ContainsKey(18411))
+				playerAccount.rankings.Add(18411, new RankingData());
+			if(!playerAccount.rankings.ContainsKey(18412))
+				playerAccount.rankings.Add(18412, new RankingData());
+			if(!playerAccount.rankings.ContainsKey(18413))
+				playerAccount.rankings.Add(18413, new RankingData());
+			if(!playerAccount.rankings.ContainsKey(1311040))
+				playerAccount.rankings.Add(1311040, new RankingData());
+			if(!playerAccount.rankings.ContainsKey(1311037))
+				playerAccount.rankings.Add(1311037, new RankingData());
+			if(!playerAccount.rankings.ContainsKey(1311038))
+				playerAccount.rankings.Add(1311038, new RankingData());
+			if(!playerAccount.rankings.ContainsKey(1311039))
+				playerAccount.rankings.Add(1311039, new RankingData());
 		}
 
 		public static int SakashoRankingGetRankings(int callbackId, string json)
@@ -60,6 +102,18 @@ namespace ExternLib
 			res["rankings"].Add(GetRankingInfo("battle_ranking2_3045", false));
 			res["rankings"].Add(GetRankingInfo("battle_ranking_3046", false));
 			res["rankings"].Add(GetRankingInfo("battle_ranking2_3046", false));
+			res["rankings"].Add(GetRankingInfo("raid_ranking_11040", false));
+			res["rankings"].Add(GetRankingInfo("raidlobby_ranking_13040_01", false));
+			res["rankings"].Add(GetRankingInfo("raidlobby_ranking_13040_02", false));
+			res["rankings"].Add(GetRankingInfo("raid_ranking_11037", false));
+			res["rankings"].Add(GetRankingInfo("raidlobby_ranking_13037_01", false));
+			res["rankings"].Add(GetRankingInfo("raidlobby_ranking_13037_02", false));
+			res["rankings"].Add(GetRankingInfo("raid_ranking_11038", false));
+			res["rankings"].Add(GetRankingInfo("raidlobby_ranking_13038_01", false));
+			res["rankings"].Add(GetRankingInfo("raidlobby_ranking_13038_02", false));
+			res["rankings"].Add(GetRankingInfo("raid_ranking_11039", false));
+			res["rankings"].Add(GetRankingInfo("raidlobby_ranking_13039_01", false));
+			res["rankings"].Add(GetRankingInfo("raidlobby_ranking_13039_02", false));
 
 			SendMessage(callbackId, res);
 			return 0;
@@ -131,6 +185,10 @@ namespace ExternLib
 					rUser = playerAccount.playerData.rankingsData[id];
 				}
 				rUser.score = score;
+			}
+			else
+			{
+				UnityEngine.Debug.LogError("Can't update player ranking in "+id);
 			}
 
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
@@ -393,6 +451,65 @@ namespace ExternLib
 				data["id"] = 310000 + int.Parse(k.Replace("battle_ranking2_", ""));
 				data["is_reverse"] = false;
 				data["name"] = "battle_ranking2";
+				data["name_for_api"] = k;
+				data["opened_at"] = 1575126000;
+				data["ranking_type"] = 1;
+				data["reward_opened_at"] = 1732978860;
+				data["score_precision"] = 6;
+				data["update_type"] = 0;
+				if (withRewards)
+				{
+					data["rewards"] = new EDOHBJAPLPF_JsonData();
+					data["rewards"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+				}
+				return data;
+			}
+			else if(k.StartsWith("raid_ranking_"))
+			{
+				EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+				data.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+				data["allow_lower_score"] = false;
+				data["allow_negative_score"] = false;
+				data["allow_tied_rank"] = true;
+				data["batch_interval_time"] = 0;
+				data["batch_started_at"] = 0;
+				data["closed_at"] = 1734274740;
+				data["competition_closed_at"] = 1732978800;
+				data["default_score"] = 0;
+				data["description"] = "Raid ranking";
+				data["id"] = 1300000 + int.Parse(k.Replace("raid_ranking_", ""));
+				data["is_reverse"] = false;
+				data["name"] = "raid_ranking";
+				data["name_for_api"] = k;
+				data["opened_at"] = 1575126000;
+				data["ranking_type"] = 1;
+				data["reward_opened_at"] = 1732978860;
+				data["score_precision"] = 6;
+				data["update_type"] = 0;
+				if (withRewards)
+				{
+					data["rewards"] = new EDOHBJAPLPF_JsonData();
+					data["rewards"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+				}
+				return data;
+			}
+			else if(k.StartsWith("raidlobby_ranking_"))
+			{
+				EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+				data.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+				string[] strs = k.Split(new char[] {'_'});
+				data["allow_lower_score"] = false;
+				data["allow_negative_score"] = false;
+				data["allow_tied_rank"] = true;
+				data["batch_interval_time"] = 0;
+				data["batch_started_at"] = 0;
+				data["closed_at"] = 1734274740;
+				data["competition_closed_at"] = 1732978800;
+				data["default_score"] = 0;
+				data["description"] = "Raid Lobby ranking";
+				data["id"] = 11000000 + int.Parse(strs[2]) + int.Parse(strs[3]) * 100000;
+				data["is_reverse"] = false;
+				data["name"] = "raidlobby_ranking";
 				data["name_for_api"] = k;
 				data["opened_at"] = 1575126000;
 				data["ranking_type"] = 1;

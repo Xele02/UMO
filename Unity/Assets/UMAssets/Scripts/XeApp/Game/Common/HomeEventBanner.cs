@@ -97,7 +97,7 @@ namespace XeApp.Game.Common
 			bool b = MenuScene.Instance.LobbyButtonControl.CheckLobbyAnnounce();
 			for(int i = 0; i < list.Count; i++)
 			{
-				if(!b && OHCAABOMEOF.BPJMGICFPBJ(list[i].PGIIDPEGGPI_EventId) != OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
+				if(!(b && OHCAABOMEOF.BPJMGICFPBJ(list[i].PGIIDPEGGPI_EventId) == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid))
 				{
 					MessageBank bk = MessageManager.Instance.GetBank("menu");
 					long l1, l2;

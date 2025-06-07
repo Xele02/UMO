@@ -10,10 +10,10 @@ public class JLOGEHCIBEJ_EventRaid : KLFDBFMNLBL_ServerSaveBlock
 {
 	public enum JJAFLOEBLDH
 	{
-		CCAPCGPIIPF_1 = 1,
+		CCAPCGPIIPF_1_Support = 1,
 		LPNPLGJJCPC_2 = 2,
-		OOEHFFBHCIC_3 = 3,
-		EKIGHDLEBAH_4 = 4,
+		OOEHFFBHCIC_3_FullPower = 3,
+		EKIGHDLEBAH_4_MacrossCanon = 4,
 		CKPGGPDJCAL = 5
 	}
 
@@ -185,7 +185,7 @@ public class JLOGEHCIBEJ_EventRaid : KLFDBFMNLBL_ServerSaveBlock
 		// public bool DOBNKAKAGGP() { }
 
 		// // RVA: 0x147D8EC Offset: 0x147D8EC VA: 0x147D8EC
-		public int KAHKFBKIMBE_GetMyDamage(JJAFLOEBLDH INDDJNMPONH)
+		public int KAHKFBKIMBE_GetMyBossAttackCount(JJAFLOEBLDH INDDJNMPONH)
 		{
 			return JMPBGDLHAPE_MyBossAtkCount[(int)INDDJNMPONH - 1].DNJEJEANJGL_Value;
 		}
@@ -699,7 +699,7 @@ public class JLOGEHCIBEJ_EventRaid : KLFDBFMNLBL_ServerSaveBlock
 			data4.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
 			for(int j = 0; j < 4; j++)
 			{
-				data4.Add(FBCJICEPLED[i].KAHKFBKIMBE_GetMyDamage((JJAFLOEBLDH)(j + 1)));
+				data4.Add(FBCJICEPLED[i].KAHKFBKIMBE_GetMyBossAttackCount((JJAFLOEBLDH)(j + 1)));
 			}
 			EDOHBJAPLPF_JsonData data6 = new EDOHBJAPLPF_JsonData();
 			data6[AFEHLCGHAEE_Strings.LJNAKDMILMC_key] = FBCJICEPLED[i].MPCAGEPEJJJ_Key;
@@ -716,9 +716,9 @@ public class JLOGEHCIBEJ_EventRaid : KLFDBFMNLBL_ServerSaveBlock
 			data6["lb"] = FBCJICEPLED[i].OMCAOJJGOGG_Lb;
 			data6["f_id"] = FBCJICEPLED[i].LIEKIBHAPKC_FId;
 			data6["play_cnt"] = FBCJICEPLED[i].MHKICPIMFEI_PlayCnt;
-			data6["pla_rcv"] = FBCJICEPLED[i].OKEJGGCMAAI_PlaRcv;
-			data6["epa_rcv"] = FBCJICEPLED[i].CGMMMJCIDFE_EpaRcv;
-			data6["sbo_rcv"] = FBCJICEPLED[i].KILJKLIHMAE_SboRcv;
+			data6["pla_rcv"] = FBCJICEPLED[i].OKEJGGCMAAI_PlaRcv ? 1 : 0;
+			data6["epa_rcv"] = FBCJICEPLED[i].CGMMMJCIDFE_EpaRcv ? 1 : 0;
+			data6["sbo_rcv"] = FBCJICEPLED[i].KILJKLIHMAE_SboRcv ? 1 : 0;
 			data6["ap_val"] = FBCJICEPLED[i].NOKPCBEIJHJ_ApVal;
 			data6["ap_save_time"] = FBCJICEPLED[i].CKLPPIIKAKD_ApSaveTime;
 			data6["my_boss_id"] = FBCJICEPLED[i].HBHCCLGECOC_MyBossId;

@@ -79,10 +79,12 @@ namespace XeApp.Game.Menu
 			// // RVA: 0x146339C Offset: 0x146339C VA: 0x146339C
 			public void SetTime(long time)
 			{
-				int h = (int)time % 3600;
-				time /= 3600;
-				int m = (int)time % 60;
-				time /= 60;
+				if(time < 0)
+					time = 0;
+				int h = (int)time / 3600;
+				time %= 3600;
+				int m = (int)time / 60;
+				time %= 60;
 				int s = (int)time;
 				timeText1.text = string.Format("{0:D2}:{1:D2}:{2:D2}", h, m, s);
 				timeText2.text = string.Format("{0:D2}:{1:D2}:{2:D2}", h, m, s);
@@ -401,7 +403,7 @@ namespace XeApp.Game.Menu
 		private void SetAbsoluteLayouts(int panelIndex, BossPanel panel, string parentExId, Layout layout)
 		{
 			panel.panelIndex = panelIndex;
-			AbsoluteLayout l = layout.FindViewByExId("parentExId") as AbsoluteLayout;
+			AbsoluteLayout l = layout.FindViewByExId(parentExId) as AbsoluteLayout;
 			panel.winSwitchAnim1 = l.FindViewByExId("sw_raid_list_cont_list_win_set_b") as AbsoluteLayout;
 			panel.winSwitchAnim2 = l.FindViewByExId("sw_raid_list_cont_list_win_set_c") as AbsoluteLayout;
 			panel.winSwitchAnim3 = l.FindViewByExId("sw_raid_list_cont_list_win_set_t") as AbsoluteLayout;

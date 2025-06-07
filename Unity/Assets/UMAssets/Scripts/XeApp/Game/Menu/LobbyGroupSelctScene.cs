@@ -83,7 +83,7 @@ namespace XeApp.Game.Menu
 			if(m_groupInfo != null)
 			{
 				LeaveBackButton();
-				m_checkWindow.SetBannerImage(m_RaidLobbyController.EPPBAFDEDCD(m_groupInfo.selectIndex - 1));
+				m_checkWindow.SetBannerImage(m_RaidLobbyController.EPPBAFDEDCD_GetGroupImageId(m_groupInfo.selectIndex - 1));
 				while(!m_checkWindow.IsLoadedBanner())
 					yield return null;
 			}
@@ -110,7 +110,7 @@ namespace XeApp.Game.Menu
 				}
 				for(i = 0; i < m_lobbyGroupNum; i++)
 				{
-					m_groupSelectWindow.SetBannerImage(i, evntCtr.EPPBAFDEDCD(i));
+					m_groupSelectWindow.SetBannerImage(i, evntCtr.EPPBAFDEDCD_GetGroupImageId(i));
 					while(!m_groupSelectWindow.IsSetTexture(i))
 						yield return null;
 				}
@@ -391,7 +391,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.InputDisable();
 			m_groupSelectWindow.Leave();
 			yield return null;
-			m_checkWindow.SetBannerImage(m_RaidLobbyController.EPPBAFDEDCD(m_groupInfo.selectIndex));
+			m_checkWindow.SetBannerImage(m_RaidLobbyController.EPPBAFDEDCD_GetGroupImageId(m_groupInfo.selectIndex));
 			while(m_groupSelectWindow.IsPlaying())
 				yield return null;
 			while(!m_checkWindow.IsLoadedBanner())

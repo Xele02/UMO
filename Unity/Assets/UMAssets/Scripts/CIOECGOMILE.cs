@@ -2048,6 +2048,7 @@ public class CIOECGOMILE
 			{
 				// L. 531
 				GCLOCOHFEEJ = new KAFHAKBBJEI();
+				AFKAGFOFAHM = KKFJJAHFLOK_Ap_ProdIds[(int)AAIOPEICNNB];
 				if(ELJNINICAIF_Ap_Prices[(int)AAIOPEICNNB] <= currency)
 				{
 					FBFNJMKPBBA = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
@@ -2836,7 +2837,7 @@ public class CIOECGOMILE
 								{
 									if (prod.OriginalName.Contains(AJICGGJJNCA_Ap))
 									{
-										string s = prod.OriginalName.Replace(JpStringLiterals.StringLiteral_9798, "");
+										string s = prod.OriginalName.Replace(JpStringLiterals.StringLiteral_9798_Jp, "");
 										if (s != "2")
 										{
 											if (s != "3")

@@ -21,7 +21,7 @@ namespace XeApp.Game.Common
 			for(int i = 0; i < bonusEpisodeList.Count; i++)
 			{
 				IKDICBBFBMI_EventBase.GNPOABJANKO d = new IKDICBBFBMI_EventBase.GNPOABJANKO();
-				d.JKDJCFEBDHC = bonusEpisodeList[i].JKDJCFEBDHC;
+				d.JKDJCFEBDHC_BonusEnabled = bonusEpisodeList[i].JKDJCFEBDHC_BonusEnabled;
 				d.KELFCMEOPPM_EpisodeId = bonusEpisodeList[i].KELFCMEOPPM_EpisodeId;
 				d.HEDODOBGPPM_BonusValue = bonusEpisodeList[i].HEDODOBGPPM_BonusValue;
 				effectiveEpisodeBonus.Add(d);

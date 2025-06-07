@@ -72,7 +72,7 @@ namespace XeApp.Game.Menu
 		{
 			SetHighScoreRatingRank((HighScoreRatingRank.Type)info.ILELGGCCGMJ_HighscoreRank);
 			m_utaGradeText.text = HighScoreRatingRank.GetRankName((HighScoreRatingRank.Type)info.ILELGGCCGMJ_HighscoreRank);
-			if(!info.DJEMBILEBFP)
+			if(!info.DJEMBILEBFP_IsPlayerRank)
 			{
 				SetFrameColor(info.ILELGGCCGMJ_HighscoreRank == (int)playerUtaGrade);
 			}
@@ -81,9 +81,9 @@ namespace XeApp.Game.Menu
 				SetFrameColor(info.ILELGGCCGMJ_HighscoreRank <= (int)playerUtaGrade);
 				m_utaGradeText.text += utaGradeMoreText;
 			}
-			m_bossRankLower.StartChildrenAnimGoStop(string.Format("{0:D2}", info.IOBJDNEGEBB_BossRankLower.ToString()));
-			m_bossRankUppwer.StartChildrenAnimGoStop(string.Format("{0:D2}", info.PKLKOMIAKNL_BossRankUpper.ToString()));
-			m_lotCountText.text = string.Format(JpStringLiterals.StringLiteral_19505, info.CHOIMPLAOCO, info.EAOBPKJDDKC);
+			m_bossRankLower.StartChildrenAnimGoStop(string.Format("{0:D2}", info.IOBJDNEGEBB_BossRankLower));
+			m_bossRankUppwer.StartChildrenAnimGoStop(string.Format("{0:D2}", info.PKLKOMIAKNL_BossRankUpper));
+			m_lotCountText.text = string.Format(JpStringLiterals.StringLiteral_19505, info.CHOIMPLAOCO_RewardCountLower, info.EAOBPKJDDKC_RewardCountUpper);
 		}
 
 		// // RVA: 0x1A77B08 Offset: 0x1A77B08 VA: 0x1A77B08

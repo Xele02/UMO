@@ -612,7 +612,7 @@ public class OKGLGHCBCJP_Database
 			IIILDINMAKI_SectionNames[i] = IJBLEJOKEFH_SectionNames[i];
 			GJFPFFBAKGK_SectionCloseTime[i] = 0;
 			bool valid = true;
-			if(true) // Enable when exporting localization
+			if(true) // Disable when exporting localization
 			{
 				switch((BEOKNKGHFFE_Section)i)
 				{

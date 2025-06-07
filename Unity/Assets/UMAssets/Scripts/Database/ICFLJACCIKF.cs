@@ -602,7 +602,7 @@ public class ICFLJACCIKF_EventBattle : DIHHCBACKGG_DbSection
 
 		// Update dates
 		UMOEventList.EventData CurrenEvent = UMOEventList.GetCurrentEvent();
-		if (CurrenEvent != null && CurrenEvent.BlockName == JIKKNHIAEKG_BlockName)
+		if (CurrenEvent != null && CurrenEvent.EnableBlock(JIKKNHIAEKG_BlockName))
 		{
 			System.DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
 			System.DateTime date2 = Utility.GetLocalDateTime(NGHKJOEDLIP.BONDDBOFBND_Start);

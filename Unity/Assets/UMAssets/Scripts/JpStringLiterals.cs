@@ -2,6 +2,7 @@
 class JpStringLiterals
 {
 	public static string StringLiteral_367 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_367", " "); } } //0x03ba9074
+	public static string StringLiteral_381 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_381", "  "); } } //03ba90ac
 	public static string StringLiteral_1374 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_1374", "年"); } } //0x03baa030
 	public static string StringLiteral_1376 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_1376", "月"); } } // 0x03baa038
 	public static string StringLiteral_1378 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_1378", "日"); } } // 0x03baa040
@@ -45,6 +46,7 @@ class JpStringLiterals
 	public static string StringLiteral_9797 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9797", "VOP高速完了"); } } // 0x03bb23cc
 	public static string StringLiteral_9797_Jp = "VOP高速完了";
 	public static string StringLiteral_9798 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9798", "AP回復"); } } // 0x03bb23d0
+	public static string StringLiteral_9798_Jp = "AP回復";
 	public static string StringLiteral_9799 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9799", "コンテニュー:"); } } // 0x03bb23d4
 	public static string StringLiteral_9806 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9806", "プレイヤー"); } } // 0x03bb23f0
 	public static string StringLiteral_9807 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9807", "よろしくおねがいします"); } } // 0x03bb23f4
@@ -512,6 +514,9 @@ class JpStringLiterals
 	public static string StringLiteral_20458 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_20458", "シンプルモデルに衣装モデルIDが設定されておりません。"); } } //0x03bbca60
 	public static string StringLiteral_20469 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_20469", "シンプルモデルで設定できるモーション数を超えております。[ "); } } //0x03bbca8c
 	public static string StringLiteral_20470 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_20470", "シンプルモデルで設定できるループモーション数を超えております。[ "); } } // 0x03bbca90
+	public static string StringLiteral_20803 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_20803", "+{0}％"); } } // 03bbcfc4
+
+	public static string StringLiteral_20810 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_20810", "+<color=#C6077CFF>{0}</color>％"); } } // 03bbcfe0
 	public static string StringLiteral_20864 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_20864", "自動編成"); } } // 0x03bbd0b8
 	public static string StringLiteral_20882 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_20882", "(<color={1}>↑{0}</color>)"); } } // 0x03bbd100
 	public static string StringLiteral_21607 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_21607", "???12"); } } //0x03bbdc54

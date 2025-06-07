@@ -477,7 +477,7 @@ namespace XeApp.Game.Menu
 		{
 			if(series > SeriesAttr.Type.None && series < SeriesAttr.Type.Num)
 			{
-				m_moveThumAnim.StartChildrenAnimGoStop(series.ToString("D2"));
+				m_moveThumAnim.StartChildrenAnimGoStop(((int)series).ToString("D2"));
 			}
 		}
 

@@ -31,7 +31,7 @@ namespace XeApp.Game.Menu
 				if(m_groupSearchButton != null)
 					onGroupSearchButton();
 			});
-			bool[] m_isTexLoad = new bool[m_Button.Length];
+			m_isTexLoad = new bool[m_Button.Length];
 			for(int i = 0; i < m_bannerImage.Length; i++)
 			{
 				m_bannerImage[i].raycastTarget = false;

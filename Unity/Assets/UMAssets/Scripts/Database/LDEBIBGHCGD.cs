@@ -39,17 +39,17 @@ public class LDEBIBGHCGD_EventRaidLobby : DIHHCBACKGG_DbSection
 	public class HDFAGGBJGAA
 	{
 		public int PPFNGGCBJKC_GroupId; // 0x8
-		public int AACHOBAAALA; // 0xC
-		public string OPFGFINHFCE; // 0x10
+		public int AACHOBAAALA_ImageId; // 0xC
+		public string OPFGFINHFCE_Name; // 0x10
 		public string HEDAGCNPHGD_Key; // 0x14
 		public List<int> OCDBMHBNLEF; // 0x18
 
 		// RVA: 0xD664B0 Offset: 0xD664B0 VA: 0xD664B0
-		public HDFAGGBJGAA(int OIPCCBHIKIA, BFOKFIJNCJJ IDLHJIOMJBK)
+		public HDFAGGBJGAA(string BlockName, int OIPCCBHIKIA, BFOKFIJNCJJ IDLHJIOMJBK)
 		{
 			PPFNGGCBJKC_GroupId = OIPCCBHIKIA + 1;
-			AACHOBAAALA = (int)IDLHJIOMJBK.PPFNGGCBJKC;
-			OPFGFINHFCE = IDLHJIOMJBK.OPFGFINHFCE;
+			AACHOBAAALA_ImageId = (int)IDLHJIOMJBK.PPFNGGCBJKC;
+			OPFGFINHFCE_Name = DatabaseTextConverter.TranslateLobbyGroupName(BlockName, PPFNGGCBJKC_GroupId, IDLHJIOMJBK.OPFGFINHFCE);
 			HEDAGCNPHGD_Key = IDLHJIOMJBK.HEDAGCNPHGD;
 			OCDBMHBNLEF = new List<int>(IDLHJIOMJBK.OCDBMHBNLEF.Length);
 			for(int i = 0; i < IDLHJIOMJBK.OCDBMHBNLEF.Length; i++)
@@ -72,14 +72,14 @@ public class LDEBIBGHCGD_EventRaidLobby : DIHHCBACKGG_DbSection
 		public string LICPCDCLOIO_Message; // 0x1C
 
 		//// RVA: 0xD666C8 Offset: 0xD666C8 VA: 0xD666C8
-		public LNECBHIKKHK(PALCPDPGOPC IDLHJIOMJBK)
+		public LNECBHIKKHK(string BlockName, PALCPDPGOPC IDLHJIOMJBK)
 		{
 			PPFNGGCBJKC = (int)IDLHJIOMJBK.PPFNGGCBJKC;
 			GJNIPHMPMIC_Phase = (int)IDLHJIOMJBK.GJNIPHMPMIC;
 			INDDJNMPONH = (int)IDLHJIOMJBK.GBJFNGCDKPM;
 			FDBOPFEOENF_Id = (int)IDLHJIOMJBK.FDBOPFEOENF;
 			MJMPANIBFED_Pic = (int)IDLHJIOMJBK.MJMPANIBFED;
-			LICPCDCLOIO_Message = IDLHJIOMJBK.LICPCDCLOIO;
+			LICPCDCLOIO_Message = DatabaseTextConverter.TranslateLobbyGuideText( BlockName, PPFNGGCBJKC, IDLHJIOMJBK.LICPCDCLOIO );
 		}
 
 		//// RVA: 0xD66BB8 Offset: 0xD66BB8 VA: 0xD66BB8
@@ -87,18 +87,18 @@ public class LDEBIBGHCGD_EventRaidLobby : DIHHCBACKGG_DbSection
 	}
 
 	public NBGDKOACGLM NGHKJOEDLIP = new NBGDKOACGLM(); // 0x20
-	public List<HDFAGGBJGAA> OJGPPOKENLG_Lobbies = new List<HDFAGGBJGAA>(); // 0x24
-	public List<LNECBHIKKHK> OIIMJFCBFFG = new List<LNECBHIKKHK>(); // 0x28
+	public List<HDFAGGBJGAA> OJGPPOKENLG_Groups = new List<HDFAGGBJGAA>(); // 0x24
+	public List<LNECBHIKKHK> OIIMJFCBFFG_LobbyGuide = new List<LNECBHIKKHK>(); // 0x28
 	public List<AKIIJBEJOEP> NNMPGOAGEOL_Missions = new List<AKIIJBEJOEP>(); // 0x2C
 
 	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI { get; private set; } // 0x30 IHKPIFIBECO GAMGELHIHHI DDDEJIJGGBJ
 	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK { get; private set; } // 0x34 KLDCHOIPJGB AEMNOGNEBOJ DGKDBOAMNBB
 
 	//// RVA: 0xD65550 Offset: 0xD65550 VA: 0xD65550
-	public HDFAGGBJGAA HMHGPIEBKPO(int PPFNGGCBJKC)
+	public HDFAGGBJGAA HMHGPIEBKPO_GetGroup(int PPFNGGCBJKC)
 	{
-		if(PPFNGGCBJKC > 0 && PPFNGGCBJKC <= OJGPPOKENLG_Lobbies.Count)
-			return OJGPPOKENLG_Lobbies[PPFNGGCBJKC - 1];
+		if(PPFNGGCBJKC > 0 && PPFNGGCBJKC <= OJGPPOKENLG_Groups.Count)
+			return OJGPPOKENLG_Groups[PPFNGGCBJKC - 1];
 		return null;
 	}
 
@@ -163,7 +163,7 @@ public class LDEBIBGHCGD_EventRaidLobby : DIHHCBACKGG_DbSection
 
 		// Update dates
 		UMOEventList.EventData CurrenEvent = UMOEventList.GetCurrentEvent();
-		if (CurrenEvent != null && CurrenEvent.BlockName.Replace("raid", "raidlobby") == JIKKNHIAEKG_BlockName)
+		if (CurrenEvent != null && CurrenEvent.EnableBlock(JIKKNHIAEKG_BlockName))
 		{
 			UnityEngine.Debug.LogError("Lobby : "+NGHKJOEDLIP.CJPMLAIFCDL_LobbyStart+" "+NGHKJOEDLIP.COIHIAKHFNF_End+" "+NGHKJOEDLIP.NIMLIMFPNJP_RaidStart+" "+NGHKJOEDLIP.KCBGBFMGHPA_End);
 			System.DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
@@ -177,8 +177,11 @@ public class LDEBIBGHCGD_EventRaidLobby : DIHHCBACKGG_DbSection
 
 			for(int i = 0; i < NNMPGOAGEOL_Missions.Count; i++)
 			{
-				if (NNMPGOAGEOL_Missions[i].KJBGCLPMLCG_Start != 0) NNMPGOAGEOL_Missions[i].KJBGCLPMLCG_Start = NGHKJOEDLIP.CJPMLAIFCDL_LobbyStart;
-				if (NNMPGOAGEOL_Missions[i].GJFPFFBAKGK_End != 0) NNMPGOAGEOL_Missions[i].GJFPFFBAKGK_End = NGHKJOEDLIP.COIHIAKHFNF_End;
+				if( NNMPGOAGEOL_Missions[i].PPEGAKEIEGM_Enabled == 2)
+				{
+					if (NNMPGOAGEOL_Missions[i].KJBGCLPMLCG_Start != 0) NNMPGOAGEOL_Missions[i].KJBGCLPMLCG_Start = NGHKJOEDLIP.CJPMLAIFCDL_LobbyStart;
+					if (NNMPGOAGEOL_Missions[i].GJFPFFBAKGK_End != 0) NNMPGOAGEOL_Missions[i].GJFPFFBAKGK_End = NGHKJOEDLIP.COIHIAKHFNF_End;
+				}
 			}
 		}
 
@@ -205,8 +208,8 @@ public class LDEBIBGHCGD_EventRaidLobby : DIHHCBACKGG_DbSection
 	{
 		for(int i = 0; i < KNOEHKKNIJA.KBFEMKJBHBL.Length; i++)
 		{
-			HDFAGGBJGAA data = new HDFAGGBJGAA(i, KNOEHKKNIJA.KBFEMKJBHBL[i]);
-			OJGPPOKENLG_Lobbies.Add(data);
+			HDFAGGBJGAA data = new HDFAGGBJGAA(JIKKNHIAEKG_BlockName, i, KNOEHKKNIJA.KBFEMKJBHBL[i]);
+			OJGPPOKENLG_Groups.Add(data);
 		}
 		return true;
 	}
@@ -216,8 +219,8 @@ public class LDEBIBGHCGD_EventRaidLobby : DIHHCBACKGG_DbSection
 	{
 		for(int i = 0; i < KNOEHKKNIJA.CEPBAOMAHNH.Length; i++)
 		{
-			LNECBHIKKHK data = new LNECBHIKKHK(KNOEHKKNIJA.CEPBAOMAHNH[i]);
-			OIIMJFCBFFG.Add(data);
+			LNECBHIKKHK data = new LNECBHIKKHK(JIKKNHIAEKG_BlockName, KNOEHKKNIJA.CEPBAOMAHNH[i]);
+			OIIMJFCBFFG_LobbyGuide.Add(data);
 		}
 		return true;
 	}

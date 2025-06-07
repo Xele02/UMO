@@ -392,35 +392,35 @@ namespace XeApp.Game.Menu
 					for(int i = 0; i < l2.Count; i++)
 					{
 						FDPJBEAKPMA f = new FDPJBEAKPMA();
-						f.ILELGGCCGMJ = l2[i].ILELGGCCGMJ_UtaGrade;
-						f.DJEMBILEBFP = l2[i].ILELGGCCGMJ_UtaGrade == a3;
+						f.ILELGGCCGMJ_HighscoreRank = l2[i].ILELGGCCGMJ_UtaGrade;
+						f.DJEMBILEBFP_IsPlayerRank = l2[i].ILELGGCCGMJ_UtaGrade == a3;
 						int a4 = Mathf.Max(1, l2[i].ILELGGCCGMJ_UtaGrade - a2);
-						int a5 = Mathf.Min(a3, a1 - l2[i].ILELGGCCGMJ_UtaGrade);
-						f.IOBJDNEGEBB = l2[a4 - 1].EJGDHAENIDC;
-						f.PKLKOMIAKNL = l2[a5 - 1].EJGDHAENIDC;
-						f.ABHGIJFDLMM = l2[a4 - 1].LCJGEMENAFM_DefeatRewardCount;
-						f.EMPCHHKMKBG = l2[a5 - 1].LCJGEMENAFM_DefeatRewardCount;
-						f.DFMBENKEIHF = l2[a4 - 1].LBEGGOOHIFM_FirstRewardCount;
-						f.HDPONDIDHAN = l2[a5 - 1].LBEGGOOHIFM_FirstRewardCount;
-						f.HCPJEHKMFHB = l2[a4 - 1].NOLBNKAJANK_MvpRewardCount;
-						f.IPJANNBLHMB = l2[a5 - 1].NOLBNKAJANK_MvpRewardCount;
+						int a5 = Mathf.Min(a3, a1 + l2[i].ILELGGCCGMJ_UtaGrade);
+						f.IOBJDNEGEBB_RankLower = l2[a4 - 1].EJGDHAENIDC_Rank;
+						f.PKLKOMIAKNL_RankUpper = l2[a5 - 1].EJGDHAENIDC_Rank;
+						f.ABHGIJFDLMM_DefeatRewardCountLower = l2[a4 - 1].LCJGEMENAFM_DefeatRewardCount;
+						f.EMPCHHKMKBG_DefeatRewardCountUpper = l2[a5 - 1].LCJGEMENAFM_DefeatRewardCount;
+						f.DFMBENKEIHF_FirstRewardCountLower = l2[a4 - 1].LBEGGOOHIFM_FirstRewardCount;
+						f.HDPONDIDHAN_FirstRewardCountUpper = l2[a5 - 1].LBEGGOOHIFM_FirstRewardCount;
+						f.HCPJEHKMFHB_MvpRewardCountLower = l2[a4 - 1].NOLBNKAJANK_MvpRewardCount;
+						f.IPJANNBLHMB_MvpRewardCountUpper = l2[a5 - 1].NOLBNKAJANK_MvpRewardCount;
 						normal_raidboss_info_list.Add(f);
 					}
 					for(int i = 0; i < l2.Count; i++)
 					{
 						FDPJBEAKPMA f = new FDPJBEAKPMA();
-						f.ILELGGCCGMJ = l2[i].ILELGGCCGMJ_UtaGrade;
-						f.DJEMBILEBFP = l2[i].ILELGGCCGMJ_UtaGrade == a3;
+						f.ILELGGCCGMJ_HighscoreRank = l2[i].ILELGGCCGMJ_UtaGrade;
+						f.DJEMBILEBFP_IsPlayerRank = l2[i].ILELGGCCGMJ_UtaGrade == a3;
 						int a4 = Mathf.Max(1, l2[i].ILELGGCCGMJ_UtaGrade - a2);
-						int a5 = Mathf.Min(a3, a1 - l2[i].ILELGGCCGMJ_UtaGrade);
-						f.IOBJDNEGEBB = l2[a4 - 1].EJGDHAENIDC;
-						f.PKLKOMIAKNL = l2[a5 - 1].EJGDHAENIDC;
-						f.ABHGIJFDLMM = l2[a4 - 1].DFCBKNLAFIM_DefeatSpRewardCount;
-						f.EMPCHHKMKBG = l2[a5 - 1].DFCBKNLAFIM_DefeatSpRewardCount;
-						f.DFMBENKEIHF = l2[a4 - 1].GEKJGFHKGEP_FirstSpRewardCount;
-						f.HDPONDIDHAN = l2[a5 - 1].GEKJGFHKGEP_FirstSpRewardCount;
-						f.HCPJEHKMFHB = l2[a4 - 1].PNHCJNAJPEM_MvpRewardCount;
-						f.IPJANNBLHMB = l2[a5 - 1].PNHCJNAJPEM_MvpRewardCount;
+						int a5 = Mathf.Min(a3, a1 + l2[i].ILELGGCCGMJ_UtaGrade);
+						f.IOBJDNEGEBB_RankLower = l2[a4 - 1].EJGDHAENIDC_Rank;
+						f.PKLKOMIAKNL_RankUpper = l2[a5 - 1].EJGDHAENIDC_Rank;
+						f.ABHGIJFDLMM_DefeatRewardCountLower = l2[a4 - 1].DFCBKNLAFIM_DefeatSpRewardCount;
+						f.EMPCHHKMKBG_DefeatRewardCountUpper = l2[a5 - 1].DFCBKNLAFIM_DefeatSpRewardCount;
+						f.DFMBENKEIHF_FirstRewardCountLower = l2[a4 - 1].GEKJGFHKGEP_FirstSpRewardCount;
+						f.HDPONDIDHAN_FirstRewardCountUpper = l2[a5 - 1].GEKJGFHKGEP_FirstSpRewardCount;
+						f.HCPJEHKMFHB_MvpRewardCountLower = l2[a4 - 1].PNHCJNAJPEM_MvpRewardCount;
+						f.IPJANNBLHMB_MvpRewardCountUpper = l2[a5 - 1].PNHCJNAJPEM_MvpRewardCount;
 						ex_raidboss_info_list.Add(f);
 					}
 				}

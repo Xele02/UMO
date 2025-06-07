@@ -718,7 +718,7 @@ public class EDOHBJAPLPF_JsonData : IHIFCPDDDKN_IJsonWrapper, IEquatable<EDOHBJA
 
 		if (INDDJNMPONH_type != JFBMDLGBPEN_JsonType.HJNNKCMLGFL_None)
 			throw new InvalidOperationException (
-				"Instance of JsonData is not a dictionary");
+				"Instance of JsonData is not a dictionary "+INDDJNMPONH_type);
 
 		INDDJNMPONH_type = JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object;
 		JMGLNPKCBPG_inst_object = new Dictionary<string, EDOHBJAPLPF_JsonData> ();

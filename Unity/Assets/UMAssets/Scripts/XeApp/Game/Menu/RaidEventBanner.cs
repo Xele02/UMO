@@ -186,6 +186,7 @@ namespace XeApp.Game.Menu
 		{
 			base.InitializeFromLayout(layout, uvMan);
 			m_materialInstance = new Material(m_materialSource);
+			BundleShaderInfo.Instance.FixMaterialShader(m_materialInstance);
 			m_symbolMain = CreateSymbol("main", layout);
 			m_symbolStatus = CreateSymbol("status", layout);
 			m_bannerButton.ClearOnClickCallback();

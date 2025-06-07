@@ -237,6 +237,7 @@ public class KAFHAKBBJEI : MCGNOFMAPBJ
 					DLPEEDCCNMJ_StaminaSaveTime = DLPEEDCCNMJ_StaminaSaveTime + r - FLJGHBLEDDB_HealSec;
 				}
 			}
+			return true;
 		}
 		return false;
 	}

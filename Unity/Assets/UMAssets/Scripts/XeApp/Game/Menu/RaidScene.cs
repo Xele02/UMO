@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Localization.SmartFormat;
 using XeApp.Core;
 using XeApp.Game.Common;
 using XeApp.Game.Tutorial;
@@ -442,7 +443,7 @@ namespace XeApp.Game.Menu
 				MenuScene.Instance.InputDisable();
 				msgBank = MessageManager.Instance.GetBank("menu");
 				bool done = false;
-				RaidController.AIMIFGFHBCE(() =>
+				RaidController.AIMIFGFHBCE_GetMyBoss(() =>
 				{
 					//0x1826584
 					done = true;
@@ -547,12 +548,12 @@ namespace XeApp.Game.Menu
 						int i50 = 0;
 						for(int i = 0; i < l5.Count; i++)
 						{
-							i50 = l5[i].GBJFCGOBHDO_RawAddedDamage;
-							i4c = l5[i].IOMHJCBMADB_AddedDamage;
+							i50 = l5[i].GBJFCGOBHDO_NewAttackCount;
+							i4c = l5[i].IOMHJCBMADB_AddedCanonPercent;
 						}
 						for(int i = 0; i < l6.Count; i++)
 						{
-							helpCount = l6[i].GBJFCGOBHDO_RawAddedDamage;
+							helpCount = l6[i].GBJFCGOBHDO_NewAttackCount;
 						}
 						string s17 = "";
 						if(l5.Count != 0)
@@ -611,7 +612,7 @@ namespace XeApp.Game.Menu
 		{
 			//0x1828D7C
 			bool done = false;
-			RaidController.AIMIFGFHBCE(() =>
+			RaidController.AIMIFGFHBCE_GetMyBoss(() =>
 			{
 				//0x1826738
 				done = true;
@@ -722,7 +723,7 @@ namespace XeApp.Game.Menu
 		{
 			//0xCEAC40
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			m_announceLayout.SetText(string.Format(bk.GetMessageByLabel("raid_new_announce_text"), helpCount));
+			m_announceLayout.SetText(Smart.Format(bk.GetMessageByLabel("raid_new_announce_text"), helpCount));
 			bool endTextScroll = false;
 			m_announceLayout.TextShow();
 			m_announceLayout.TextScrollIn(() =>
@@ -946,7 +947,7 @@ namespace XeApp.Game.Menu
 								}
 								else
 								{
-									RaidController.FDNIODNLDAI(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.EKIGHDLEBAH_4);
+									RaidController.FDNIODNLDAI(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.EKIGHDLEBAH_4_MacrossCanon);
 									RaidController.JDGCABLBFLH(() =>
 									{
 										//0x1824C4C
@@ -960,7 +961,7 @@ namespace XeApp.Game.Menu
 									{
 										//0x1824D6C
 										MenuScene.Instance.RaycastEnable();
-										if(RaidController.JIBMOEHKMGB.CMCKNKKCNDK_Status == NHCDBBBMFFG.OPNEOJEGDJB_2_Dead)
+										if(RaidController.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_Status == NHCDBBBMFFG.OPNEOJEGDJB_2_Dead)
 										{
 											PopupWindowManager.Show(m_popRaidDefeatedSetting, (PopupWindowControl control2, PopupButton.ButtonType type2, PopupButton.ButtonLabel label2) =>
 											{
@@ -968,7 +969,7 @@ namespace XeApp.Game.Menu
 												this.StartCoroutineWatched(Co_UpdateBossInfoList(false, null));
 											}, null, null, null, true, true, false);
 										}
-										if(RaidController.JIBMOEHKMGB.CMCKNKKCNDK_Status == NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
+										if(RaidController.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_Status == NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
 										{
 											PopupWindowManager.Show(m_popRaidEscapedSetting, (PopupWindowControl control2, PopupButton.ButtonType type2, PopupButton.ButtonLabel label2) =>
 											{
@@ -1002,7 +1003,7 @@ namespace XeApp.Game.Menu
 		{
 			if(index < 0)
 				index = 0;
-			if(!RaidController.PMIIMELDPAJ_GetMyBoss().DNJGAJPIIPI)
+			if(!RaidController.PMIIMELDPAJ_GetMyBoss().DNJGAJPIIPI_IsLoaded)
 			{
 				m_bottomButtonLayout.SetButtonType(RaidBottomButtonLayout.RaidBottomBtn.EncounterBoss);
 			}
@@ -1401,12 +1402,12 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_001);
 			RaidController.KMDELKHBDNN(m_bossInfoViewList[index]);
 			MenuScene.Instance.InputDisable();
-			RaidController.GKCEHODEPMJ(false, () =>
+			RaidController.GKCEHODEPMJ_GetBosses_WithOptionalPlayersNames(false, () =>
 			{
 				//0x18252AC
 				if(!IsEndRaidEvent())
 				{
-					if(RaidController.JIBMOEHKMGB.CMCKNKKCNDK_Status == NHCDBBBMFFG.OPNEOJEGDJB_2_Dead)
+					if(RaidController.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_Status == NHCDBBBMFFG.OPNEOJEGDJB_2_Dead)
 					{
 						PopupWindowManager.Show(m_popRaidDefeatedSetting, (PopupWindowControl control2, PopupButton.ButtonType type2, PopupButton.ButtonLabel label2) =>
 						{
@@ -1414,7 +1415,7 @@ namespace XeApp.Game.Menu
 							this.StartCoroutineWatched(Co_UpdateBossInfoList(false, null));
 						}, null, null, null, true, true, false);
 					}
-					else if(RaidController.JIBMOEHKMGB.CMCKNKKCNDK_Status != NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
+					else if(RaidController.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_Status != NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
 					{
 						isCallActSelect = true;
 						TransitionUniqueId t = TransitionUniqueId.HOME_LOBBYMAIN_RAID;
@@ -1659,7 +1660,7 @@ namespace XeApp.Game.Menu
 			NKOBMDPHNGP_EventRaidLobby evLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
 			if(evLobby != null && CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LLBECHBNIJG_EventRaidPlayer != null)
 			{
-				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LLBECHBNIJG_EventRaidPlayer.MEBHCFJCKFE_LobbyId = NKOBMDPHNGP_EventRaidLobby.FAKHCOJIOBD(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LLBECHBNIJG_EventRaidPlayer.MEBHCFJCKFE_LobbyId, 1);
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LLBECHBNIJG_EventRaidPlayer.MEBHCFJCKFE_LobbyId = evLobby.PDNFHDLNENO(NKOBMDPHNGP_EventRaidLobby.FAKHCOJIOBD(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LLBECHBNIJG_EventRaidPlayer.MEBHCFJCKFE_LobbyId, 1));
 				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LLBECHBNIJG_EventRaidPlayer.KDMPHHFADMC_ClusterId = evLobby.DKNNNOIMMFN_GetClusterId();
 			}
 			this.StartCoroutineWatched(Co_OnPresetCanvas());
@@ -1906,7 +1907,7 @@ namespace XeApp.Game.Menu
 					m_macrossCannonButton.Leave();
 				}
 				//LAB_0182d084
-				m_topGauge.gameObject.SetActive(false);
+				m_topGauge.gameObject.SetActive(true);
 				m_bottomButtonLayout.gameObject.SetActive(true);
 				m_bossSortLayout.gameObject.SetActive(true);
 				m_topGauge.Enter();
@@ -1951,7 +1952,7 @@ namespace XeApp.Game.Menu
 				{
 					if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsRaidUseFoldRadar))
 					{
-						if(!RaidController.PMIIMELDPAJ_GetMyBoss().DNJGAJPIIPI)
+						if(!RaidController.PMIIMELDPAJ_GetMyBoss().DNJGAJPIIPI_IsLoaded)
 						{
 							List<ActionButton> btns = new List<ActionButton>(m_bottomButtonLayout.GetComponentsInChildren<ActionButton>(true));
 							ActionButton b = btns.Find((ActionButton _) =>

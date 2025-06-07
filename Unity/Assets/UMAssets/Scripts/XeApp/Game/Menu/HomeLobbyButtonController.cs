@@ -37,6 +37,7 @@ namespace XeApp.Game.Menu
 		public IEnumerator Co_LoadLayout(GameObject a_ui_root)
 		{
 			//0x96A520
+			m_IsInitialize = true;
 			yield return Co.R(Co_LoadTabButtonData(a_ui_root));
 			yield return Co.R(Co_LoadSceneButtonData(a_ui_root));
 			m_lobbyTabBtn.Wait();

@@ -34,7 +34,7 @@ namespace XeApp.Game.Menu
 		private float s_preEndTime = 0.16f; // 0x50
 		private bool m_isPlayingMovie; // 0x54
 
-		// public static RaidResultBossFilterLayout BossFilterLayout { get; } 0xEBDDDC
+		public static RaidResultBossFilterLayout BossFilterLayout { get { return m_instance.m_bossFilterLayout; } } //0xEBDDDC
 
 		// RVA: 0xEBDE50 Offset: 0xEBDE50 VA: 0xEBDE50
 		public static void Initiarize(Transform parent, int wavId, SeriesAttr.Type series, int bossType, int bossRank, string bossName, int bossDamage, Action endCallback)

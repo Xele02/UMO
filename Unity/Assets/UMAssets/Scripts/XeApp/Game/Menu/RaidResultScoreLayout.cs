@@ -94,6 +94,10 @@ namespace XeApp.Game.Menu
 			m_totalPointText.text = view.AHOKAPCGJMA_TotalPoint.ToString();
 			m_damageText.text = "";
 			m_missionText.text = view.BLFHMNHMDHF_Mission;
+			if(RuntimeSettings.CurrentSettings.Language != "jp")
+			{
+				m_missionText.horizontalOverflow = HorizontalWrapMode.Wrap;
+			}
 			m_layoutPointUpAnim.StartChildrenAnimGoStop(view.LMHDHAJOJDA_PointBonus > 0 ? "01" : "02");
 			m_layoutDivaUpAnim.StartChildrenAnimGoStop(view.NEMLFENEBPM_DivaBonus > 0 ? "01" : "02");
 			m_layoutSupportUpAnim.StartChildrenAnimGoStop(view.JNPLLCCIPNC_SupportBonus > 0 ? "01" : "02");

@@ -46,8 +46,9 @@ public class FNBIIGJJGKA_Counter : KLFDBFMNLBL_ServerSaveBlock
 			{
 				for(int i = 0; i < 5; i++)
 				{
-					TodoLogger.LogError(TodoLogger.ToCheck, "Find max");
 					NJIDHLPGBFO_TTap[i] += PGPBALKFBNK[i];
+					if(NJIDHLPGBFO_TTap[i] > 9999999999)
+						NJIDHLPGBFO_TTap[i] = 9999999999;
 				}
 			}
 		}

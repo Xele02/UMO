@@ -77,7 +77,8 @@ namespace ExternLib
 					Content = (string)data["content"];
 					Nickname = (string)data["nickname"];
 					Sage = (bool)data["sage"];
-					Extra = (string)data["extra"];
+					if(data["extra"] != null)
+						Extra = (string)data["extra"];
 				}
 
 				public void Create(int idx, EDOHBJAPLPF_JsonData data, int userId)

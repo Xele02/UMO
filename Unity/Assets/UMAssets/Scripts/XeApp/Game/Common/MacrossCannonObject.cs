@@ -48,14 +48,19 @@ namespace XeApp.Game.Common
 			if(!isRunning)
 				return;
             CriWare.CriMana.FrameInfo info = moviePlayer.player.frameInfo;
+			long time = 0;
+			if(info != null)
+			{
+				time = (long)((info.time * 1000000) / info.tunit);
+			}
 			if(onPreEndMovieCallback != null)
 			{
-				if(playedMicroSec < preEndCallbackMicroSec && preEndCallbackMicroSec <= (long)info.time)
+				if(playedMicroSec < preEndCallbackMicroSec && preEndCallbackMicroSec <= time)
 				{
 					onPreEndMovieCallback();
 				}
 			}
-			playedMicroSec = (long)info.time;
+			playedMicroSec = time;
         }
 
 		// // RVA: 0x110D8F0 Offset: 0x110D8F0 VA: 0x110D8F0

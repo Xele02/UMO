@@ -186,7 +186,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x154E7F0 Offset: 0x154E7F0 VA: 0x154E7F0
 		public void SetDesc(int index, string _text)
 		{
-			if(m_desc[index] != null)
+			if(m_desc[index] == null)
 				return;
 			m_desc[index].text = _text;
 		}
@@ -291,9 +291,9 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			DateTime t = Utility.GetLocalDateTime(startTime);
 			string s = string.Format(bk.GetMessageByLabel("quest_tiemr_e003"), new object[5]{ t.Year, t.Month, t.Day, t.Hour, t.Minute });
-			DateTime t2 = Utility.GetLocalDateTime(startTime);
+			DateTime t2 = Utility.GetLocalDateTime(endTime);
 			string s2 = string.Format(bk.GetMessageByLabel("quest_tiemr_e003"), new object[5]{ t2.Year, t2.Month, t2.Day, t2.Hour, t2.Minute });
-			return string.Format(label, s, s2);
+			return string.Format(bk.GetMessageByLabel(label), s, s2);
 		}
 
 		// // RVA: 0x154F674 Offset: 0x154F674 VA: 0x154F674

@@ -1794,7 +1794,7 @@ namespace ExternLib
 			}
 			else
 			{
-				TodoLogger.LogError(TodoLogger.SakashoServer, "Unknown product "+json);
+				TodoLogger.LogError(TodoLogger.SakashoServer, "Unknown product "+pId+" "+json);
 			}
 
 			//BOKJNFPGGIB EFHCKFKLJDK_purchased_virtual_currency 

@@ -48,7 +48,7 @@ public class FLCAECNBMML
 		{
 			CFLEMFADGLG = (int)ev.CFLEMFADGLG_AttackType;
 			PKNOKJNLPOE_EventRaid.OCBPJEALCPO o = ev.PLFBKEPLAAA;
-            PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ m = ev.JIBMOEHKMGB;
+            PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ m = ev.JIBMOEHKMGB_SelectedBoss;
             JBJJFDIHKMB_ScorePoint = o.JKLNANHPJLO_ScorePoint;
 			PPAOKOFHIFB_ValkyriePoint = o.CBKFBBNPIGG_ValkyriePoint;
 			LMHDHAJOJDA_PointBonus = o.EAOCJMFLBJI_PointBonus;
@@ -60,8 +60,8 @@ public class FLCAECNBMML
 			IHIJGIHNOAL_CannonGaugeAdd = o.IHIJGIHNOAL_CannonGaugeAdd;
 			LFOPOHHEODG_ChargeBonus = o.LFOPOHHEODG_ChargeBonus;
 			GGLJDBHDAJN_MissionCompleted = o.PAACIPCHDDE_MissionCompleted;
-			GGPIKGAAKFP_SingleBonusNum = ev.EMJEBMMMDBE(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3);
-			GKJNCAEIKHE_SupportBonusNum = ev.AFODCOIFHKO(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1);
+			GGPIKGAAKFP_SingleBonusNum = ev.EMJEBMMMDBE_GetPointBonus(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_FullPower);
+			GKJNCAEIKHE_SupportBonusNum = ev.AFODCOIFHKO_GetSupportBonus(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Support);
 			NFOOOBMJINC_MissionBonusNum = m.NFOOOBMJINC_MissionBonusNum;
 			BLFHMNHMDHF_Mission = m.BLFHMNHMDHF_Mission;
 			KOOPHLLHEFM_IsSupBonusMax = ev.MCBGNPBECCI_SupportBonusMax() <= JNPLLCCIPNC_SupportBonus;

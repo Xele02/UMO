@@ -19,6 +19,7 @@ namespace ExternLib
                     Res["player_id"] = playerId;
                     Res["damage"] = damage;
                     Res["player_data"] = new EDOHBJAPLPF_JsonData();
+                    Res["player_data"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
 				    FillPlayerData(playerId, Res["player_data"], Names);
                 }
                 public EDOHBJAPLPF_JsonData Save()
@@ -80,8 +81,8 @@ namespace ExternLib
             public int encounterPlayerId = -1;
             public long created_at;
             public long escaped_at;
-            public List<Attacker> attackersList;
-            public List<Effect> effectsList;
+            public List<Attacker> attackersList = new List<Attacker>();
+            public List<Effect> effectsList = new List<Effect>();
 
             public EDOHBJAPLPF_JsonData Save()
             {
@@ -152,6 +153,7 @@ namespace ExternLib
                         atk = attackersList.Last();
                         atk.playerId = userId;
                     }
+                    atk.receivedReward = false;
                     int d = (int)Req["damage"];
                     atk.damage += d;
                     hp -= d;
@@ -160,6 +162,8 @@ namespace ExternLib
                         hp = 0;
                         status = 2;
                     }
+                    if(firstAttackerId == -1)
+                        firstAttackerId = userId;
                     if(Req.BBAJPINMOEP_Contains("effectId"))
                     {
                         int effId = (int)Req["effectId"];
@@ -192,26 +196,32 @@ namespace ExternLib
                 Res["recent_attack_players"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
             }
 
+            public void Check()
+            {
+                if(status == 1 && escaped_at <= Utility.GetCurrentUnixTime())
+                    status = 3;
+            }
+
             public void ExportBossInfo(EDOHBJAPLPF_JsonData Res, int type, int userId)
             {
+                Res["id"] = id;
+                Res["unique_key"] = unique_key;
+                Res["hp"] = hp;
+                Res["max_hp"] = max_hp;
+                Res["combo_count"] = combo_count;
+                Res["attack_player_count"] = attackersList.Count;
+                Res["encounter_player_id"] = encounterPlayerId;
+                Res["created_at"] = created_at;
+                Res["escaped_at"] = escaped_at;
                 if(type == 1)
                 {
-                    Res["id"] = id;
-                    Res["unique_key"] = unique_key;
-                    Res["hp"] = hp;
-                    Res["max_hp"] = max_hp;
-                    Res["combo_count"] = combo_count;
-                    Res["attack_player_count"] = attackersList.Count;
-                    Res["encounter_player_id"] = encounterPlayerId;
-                    Res["created_at"] = created_at;
-                    Res["escaped_at"] = escaped_at;
                     Attacker selfAtk = attackersList.Find((Attacker _) =>
                     {
                         return userId == _.playerId;
                     });
                     Res["has_attacked"] = selfAtk != null;
-                    Res["can_receive_rewards"] = !selfAtk.receivedReward;
-                    Res["can_request_help"] = true;
+                    Res["can_receive_rewards"] = status == 2 && selfAtk != null && !selfAtk.receivedReward;
+                    Res["can_request_help"] = status == 1;
                 }
                 if(type == 1 || type == 3)
                 {
@@ -220,27 +230,28 @@ namespace ExternLib
                     {
                         Res["last_attack_player_id"] = attackersList.Last().playerId;
                     }
-                }
-                if(type == 1 || type == 2)
-                {
-                    Res["effects"] = new EDOHBJAPLPF_JsonData();
-                    Res["effects"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
-                    //request_player_id ?
-                    for(int i = 0; i < effectsList.Count; i++)
+                    else
                     {
-                        EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
-                        data["effect_id"] = effectsList[i].id;
-                        data["number_of_times"] = effectsList[i].numberOfTimes;
-                        data["created_at"] = effectsList[i].createdAt;
-                        data["updated_at"] = effectsList[i].updatedAt;
-                        data["expired_at"] = effectsList[i].expiredAt;
-                        if(effectsList[i].last_updated_player_id != -1)
-                        {
-                            data["last_updated_player_id"] = effectsList[i].last_updated_player_id;
-                            //last_updated_player_data todo
-                        }
-                        Res["effects"].Add(data);
+                        Res["last_attack_player_id"] = null;
                     }
+                }
+                Res["effects"] = new EDOHBJAPLPF_JsonData();
+                Res["effects"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+                //request_player_id ?
+                for(int i = 0; i < effectsList.Count; i++)
+                {
+                    EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+                    data["effect_id"] = effectsList[i].id;
+                    data["number_of_times"] = effectsList[i].numberOfTimes;
+                    data["created_at"] = effectsList[i].createdAt;
+                    data["updated_at"] = effectsList[i].updatedAt;
+                    data["expired_at"] = effectsList[i].expiredAt;
+                    if(effectsList[i].last_updated_player_id != -1)
+                    {
+                        data["last_updated_player_id"] = effectsList[i].last_updated_player_id;
+                        //last_updated_player_data todo
+                    }
+                    Res["effects"].Add(data);
                 }
             }
 
@@ -290,11 +301,11 @@ namespace ExternLib
 		public class UserRaidInfos
 		{
 			public List<RaidBossInfo> Bosses = new List<RaidBossInfo>();
-			public int nextBossId = 0;
+			public int nextBossId = 1;
 
 			public void Load(EDOHBJAPLPF_JsonData data)
 			{
-				nextBossId = 0;
+				nextBossId = 1;
 				if(!data.BBAJPINMOEP_Contains("user_data"))
 					return;
 				if(!data["user_data"].BBAJPINMOEP_Contains("raid_info"))
@@ -306,6 +317,7 @@ namespace ExternLib
                     {
                         RaidBossInfo boss = new RaidBossInfo();
                         boss.Load(json["bosses"][i]);
+                        Bosses.Add(boss);
                         nextBossId = Mathf.Max(nextBossId, boss.id + 1);
                     }
                 }
@@ -336,6 +348,7 @@ namespace ExternLib
                 {
                     EDOHBJAPLPF_JsonData raidBoss = new EDOHBJAPLPF_JsonData();
                     Result["raidboss"] = raidBoss;
+                    boss.Check();
                     boss.ExportBossInfo(raidBoss, 1, userId);
                     Result["attack_players"] = new EDOHBJAPLPF_JsonData();
                     Result["attack_players"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
@@ -353,12 +366,13 @@ namespace ExternLib
                 }
             }
 
-            public void EncounterRaidboss(EDOHBJAPLPF_JsonData Request, EDOHBJAPLPF_JsonData Result, int userId)
+            public int EncounterRaidboss(EDOHBJAPLPF_JsonData Request, EDOHBJAPLPF_JsonData Result, int userId)
             {
                 string uniqueKey = (string)Request["uniqueKey"];
                 Debug.LogError("Created boss with unique key "+uniqueKey);
                 string[] parts = uniqueKey.Split(new char[]{'_'});
-                int idx = int.Parse(parts[0]);
+                bool isSp = uniqueKey.Contains("_sp");
+                int levelIdx = int.Parse(parts[2]) - 1;
                 RaidBossInfo boss = new RaidBossInfo();
                 /*PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
                 BKOGPDBKFFJ_EventRaid db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestId) as BKOGPDBKFFJ_EventRaid;*/
@@ -367,25 +381,151 @@ namespace ExternLib
                 boss.status = 1;
                 boss.encounterPlayerId = userId;
                 boss.created_at = Utility.GetCurrentUnixTime();
-                boss.escaped_at = Utility.GetCurrentUnixTime() + 999999999999; // TODO
+                boss.escaped_at = Utility.GetCurrentUnixTime() + (isSp ? 3600 : 6 * 3600); // 1h for SP, 6h for normal
+                //boss.escaped_at = Utility.GetCurrentUnixTime() + 60;
                 boss.unique_key = uniqueKey;
-                boss.max_hp = 100; // TODO
+                if(!isSp)
+                {
+                    boss.max_hp = 220000;
+                    if(levelIdx < 55)
+                    {
+                        boss.max_hp = new int[55]
+                        {
+                            5000,
+                            6000,
+                            7000,
+                            7000,
+                            8000,
+                            8000,
+                            9000,
+                            10000,
+                            11000,
+                            12000,
+                            13000,
+                            14000,
+                            15000,
+                            16000,
+                            18000,
+                            19000,
+                            20000,
+                            21000,
+                            21000,
+                            22000,
+                            23000,
+                            24000,
+                            25000,
+                            26000,
+                            28000,
+                            29000,
+                            30000,
+                            31000,
+                            32000,
+                            33000,
+                            34000,
+                            35000,
+                            36000,
+                            38000,
+                            39000,
+                            41000,
+                            42000,
+                            43000,
+                            44000,
+                            45000,
+                            48000,
+                            50000,
+                            52000,
+                            55000,
+                            55000,
+                            55000,
+                            55000,
+                            55000,
+                            55000,
+                            55000,
+                            55000,
+                            55000,
+                            55000,
+                            55000,
+                            55000
+                        } [levelIdx];
+                    }
+                }
+                else
+                {
+                    boss.max_hp = 220000;
+                    if(levelIdx < 55)
+                    {
+                        boss.max_hp = new int[55]
+                        {
+                            20000,
+                            24000,
+                            28000,
+                            30000,
+                            32000,
+                            34000,
+                            36000,
+                            40000,
+                            44000,
+                            48000,
+                            52000,
+                            56000,
+                            60000,
+                            64000,
+                            72000,
+                            63000,
+                            70000,
+                            80000,
+                            81000,
+                            82000,
+                            95000,
+                            101000,
+                            110000,
+                            115000,
+                            130000,
+                            130000,
+                            140000,
+                            145000,
+                            150000,
+                            162000,
+                            163000,
+                            164000,
+                            166000,
+                            168000,
+                            170000,
+                            180000,
+                            180000,
+                            190000,
+                            190000,
+                            200000,
+                            200000,
+                            210000,
+                            210000,
+                            220000,
+                            220000,
+                            220000,
+                            220000,
+                            220000,
+                            220000,
+                            220000,
+                            220000,
+                            220000,
+                            220000,
+                            220000,
+                            220000
+                        } [levelIdx];
+                    }
+                }
                 boss.hp = boss.max_hp;
                 Bosses.Add(boss);
-                if(boss != null)
-                {
-                    boss.ExportBossInfo(Result, 2, userId);
-                }
+                boss.Check();
+                boss.ExportBossInfo(Result, 2, userId);
+                return boss.status == 3 ? 1 : 0;
             }
 
             public void GetMyRaidbosses(EDOHBJAPLPF_JsonData Request, EDOHBJAPLPF_JsonData Result, int userId)
             {
                 List<RaidBossInfo> bosses = Bosses.FindAll((RaidBossInfo _) =>
                 {
-                    return _.attackersList.Find((RaidBossInfo.Attacker __) =>
-                    {
-                        return __.playerId == userId;
-                    }) != null;
+                    return _.encounterPlayerId == userId;
                 });
                 Result["raidbosses"] = new EDOHBJAPLPF_JsonData();
                 Result["raidbosses"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
@@ -394,6 +534,7 @@ namespace ExternLib
                     EDOHBJAPLPF_JsonData raidBoss = new EDOHBJAPLPF_JsonData();
                     Result["raidbosses"].Add(raidBoss);
 
+                    boss.Check();
                     boss.ExportBossInfo(raidBoss, 1, userId);
                 }
             }
@@ -411,7 +552,7 @@ namespace ExternLib
                 }
             }
 
-            public void AttackBoss(EDOHBJAPLPF_JsonData Request, EDOHBJAPLPF_JsonData Result, int userId)
+            public int AttackBoss(EDOHBJAPLPF_JsonData Request, EDOHBJAPLPF_JsonData Result, int userId)
             {
                 int bossId = (int)Request["entityId"];
                 RaidBossInfo boss = Bosses.Find((RaidBossInfo _) =>
@@ -424,7 +565,9 @@ namespace ExternLib
                     EDOHBJAPLPF_JsonData raidBoss = new EDOHBJAPLPF_JsonData();
                     Result["raidboss"] = raidBoss;
                     boss.ExportBossInfo(raidBoss, 3, userId);
+                    return boss.status == 3 ? 1 : 0;
                 }
+                return 0;
             }
 		};
 
@@ -445,9 +588,25 @@ namespace ExternLib
 
             Out :
                 damage => int
-                raidboss => LMJHOAHBDKN
+                raidboss => LMJHOAHBDKN/CMPLGKFJCIC<EBHIMFFJBIJ>/LBICPMOLOKD
                     status => (int)NHCDBBBMFFG
                     last_attack_player_id => int
+                    id => int
+                    unique_key => string
+                    hp => int
+                    max_hp => int
+                    combo_count => int
+                    attack_player_count => int
+                    encounter_player_id => int
+                    created_at => long
+                    escaped_at => long
+                    effects => List<EBHIMFFJBIJ>
+                        effect_id => int
+                        number_of_times => int
+                        created_at => long
+                        updated_at => long
+                        expired_at => long
+                        [last_updated_player_id] => int
                 recent_attack_players => List<GKIJMGEBIDG>
                     player_id => int
                     player_data => Json
@@ -460,8 +619,17 @@ namespace ExternLib
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 
             UserRaidInfos raidInfo = playerAccount.playerData.raidInfos;
-            raidInfo.AttackBoss(res, req, playerAccount.userId);
+            
+            int errorId = raidInfo.AttackBoss(req, res, playerAccount.userId);
+            if(errorId != 0)
+            {
+                if(errorId == 1)
+                {
+                    res["error_code"] = "RAIDBOSS_ESCAPED";
+                }
+            }
 
+            req["names"] = req["namespacesForSave"];
             SavePlayerData(req, res);
 			SendMessage(callbackId, res);
             return 0;
@@ -496,7 +664,14 @@ namespace ExternLib
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 
             UserRaidInfos raidInfo = playerAccount.playerData.raidInfos;
-            raidInfo.EncounterRaidboss(res, req, playerAccount.userId);
+            int errorId = raidInfo.EncounterRaidboss(req, res, playerAccount.userId);
+            if(errorId != 0)
+            {
+                if(errorId == 1)
+                {
+                    res["error_code"] = "RAIDBOSS_ESCAPED";
+                }
+            }
 
 			SendMessage(callbackId, res);
             return 0;
@@ -535,7 +710,7 @@ namespace ExternLib
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 
             UserRaidInfos raidInfo = playerAccount.playerData.raidInfos;
-            raidInfo.GetMyRaidbosses(res, req, playerAccount.userId);
+            raidInfo.GetMyRaidbosses(req, res, playerAccount.userId);
 
 			SendMessage(callbackId, res);
             return 0;
@@ -608,7 +783,7 @@ namespace ExternLib
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 
             UserRaidInfos raidInfo = playerAccount.playerData.raidInfos;
-            raidInfo.GetRaidboss(res, req, playerAccount.userId);
+            raidInfo.GetRaidboss(req, res, playerAccount.userId);
 
 			SendMessage(callbackId, res);
             return 0;

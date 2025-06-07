@@ -43,7 +43,7 @@ public static class AHAENNIFOAF
 	// // RVA: 0x15C5378 Offset: 0x15C5378 VA: 0x15C5378
 	public static void OIEHNLEPEBG(StringBuilder KOHNLDKIKPC, int EKANGPODCEP, int AIBFGKBACCB, int IBAKPKKEDJM, int BAOFEFFADPD)
     {
-        object o = new object[4]
+        object[] o = new object[4]
         {
             EKANGPODCEP,
             AIBFGKBACCB,

@@ -204,7 +204,7 @@ namespace XeApp.Game.Menu
 				//0x16146A8
 				t_loop = false;
 				t_error = true;
-			}, JpStringLiterals.StringLiteral_9798, _apHealSubType);
+			}, JpStringLiterals.StringLiteral_9798_Jp, _apHealSubType);
 			control.InputDisable();
 			while(t_loop)
 				yield return null;

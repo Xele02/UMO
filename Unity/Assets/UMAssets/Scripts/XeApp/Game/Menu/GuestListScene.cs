@@ -173,7 +173,7 @@ namespace XeApp.Game.Menu
 					{
 						ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5, false);
 					}
-					if(ev != null)
+					if(ev == null)
 					{
 						JHHBAFKMBDL.HHCJCDFCLOB.DNABPEOICIJ(() =>
 						{

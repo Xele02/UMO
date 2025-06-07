@@ -31,16 +31,19 @@ public class PLFJMDBBAJD
 		PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 		if(ev != null && ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid)
 		{
-            PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ p = ev.JIBMOEHKMGB;
+            PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ p = ev.JIBMOEHKMGB_SelectedBoss;
             PKNOKJNLPOE_EventRaid.KJJDLBFDGDM p2 = ev.KONJMFICNJJ;
             CIEOBFIIPLD = p.ANAJIAENLNB_Level;
             FJOLNJLLJEJ_BossRank = p.FJOLNJLLJEJ_Rank;
             MPKBLMCNHOM_MissionIsSpecial = p.IKICLMGFFPB_IsSpecial;
             HPPDFBKEJCG_BgId = p.HPPDFBKEJCG_BgId;
             OPFGFINHFCE_Name = ev.AGEJGHGEGFF_GetBossName(p.INDDJNMPONH_Type);
-            NEAPOLIIELG_MvpRewards = p2.NEAPOLIIELG_MvpRewards;
-            JAGJOLBDBDK_FirstRewards = p2.JAGJOLBDBDK_FirstRewards;
-            FGNHJFLBMIE_DefeatRewards = p2.FGNHJFLBMIE_DefeatRewards;
+			if(p2 != null)
+			{
+				NEAPOLIIELG_MvpRewards = p2.NEAPOLIIELG_MvpRewards;
+				JAGJOLBDBDK_FirstRewards = p2.JAGJOLBDBDK_FirstRewards;
+				FGNHJFLBMIE_DefeatRewards = p2.FGNHJFLBMIE_DefeatRewards;
+			}
         }
     }
 

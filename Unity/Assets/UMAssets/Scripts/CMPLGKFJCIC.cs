@@ -39,8 +39,8 @@ public static class BDLAFAPDOJE
 	public static GIINMFDIIMD PFBEBCDEIND(this EDOHBJAPLPF_JsonData DLENPPIJNPA, string LJNAKDMILMC)
     {
         GIINMFDIIMD g = new GIINMFDIIMD(DLENPPIJNPA, LJNAKDMILMC);
-        if(g.DLENPPIJNPA != null)
-            return g;
+        if(g.DLENPPIJNPA == null)
+            return null;
         return g;
     }
 
@@ -49,8 +49,8 @@ public static class BDLAFAPDOJE
 	public static GIINMFDIIMD PFBEBCDEIND(EDOHBJAPLPF_JsonData DLENPPIJNPA, int BMBBDIAEOMP)
 	{
         GIINMFDIIMD g = new GIINMFDIIMD(DLENPPIJNPA, BMBBDIAEOMP);
-        if(g.DLENPPIJNPA != null)
-            return g;
+        if(g.DLENPPIJNPA == null)
+            return null;
         return g;
 	}
 }
@@ -68,13 +68,13 @@ public class GIINMFDIIMD
 	// // RVA: 0xAA7BE8 Offset: 0xAA7BE8 VA: 0xAA7BE8
 	public GIINMFDIIMD(EDOHBJAPLPF_JsonData DLENPPIJNPA, string LJNAKDMILMC)
     {
-        DLENPPIJNPA = DLENPPIJNPA[LJNAKDMILMC];
+        this.DLENPPIJNPA = DLENPPIJNPA[LJNAKDMILMC];
     }
 
 	// // RVA: 0xAA7C2C Offset: 0xAA7C2C VA: 0xAA7C2C
 	public GIINMFDIIMD(EDOHBJAPLPF_JsonData DLENPPIJNPA, int BMBBDIAEOMP)
 	{
-        DLENPPIJNPA = DLENPPIJNPA[BMBBDIAEOMP];
+        this.DLENPPIJNPA = DLENPPIJNPA[BMBBDIAEOMP];
 	}
 
 	// // RVA: 0xAA7C70 Offset: 0xAA7C70 VA: 0xAA7C70
@@ -123,7 +123,10 @@ public class CMPLGKFJCIC<EffectInfoClass> : LBICPMOLOKD
 	public CMPLGKFJCIC(GIINMFDIIMD CDGMPGLAING, Func<GIINMFDIIMD, EffectInfoClass> KACGHAKGAGH)
         : base(CDGMPGLAING)
     {
-        MGPCMCNFFIM_Effects.Add(KACGHAKGAGH(CDGMPGLAING.DLENPPIJNPA.PFBEBCDEIND("effects")));
+        MGPCMCNFFIM_Effects.MAECPJAJNBO(CDGMPGLAING.DLENPPIJNPA.PFBEBCDEIND("effects"), (GIINMFDIIMD IDLHJIOMJBK) =>
+		{
+			return KACGHAKGAGH(IDLHJIOMJBK);
+		});
     }
 	/* GenericInstMethod :
 	|

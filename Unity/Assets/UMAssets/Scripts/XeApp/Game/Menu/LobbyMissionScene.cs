@@ -232,6 +232,12 @@ namespace XeApp.Game.Menu
 				}
 				return a.EILKGEADKGH.CompareTo(b.EILKGEADKGH);
 			});
+			if(RuntimeSettings.CurrentSettings.UnlimitedEvent)
+			{
+				// in unlimited all mission are active, but we can only display 3. So display the first 3 not finished
+				if(m_missionDataList.Count > 3)
+					m_missionDataList = m_missionDataList.GetRange(0, 3);
+			}
         }
 
 		// // RVA: 0xD15088 Offset: 0xD15088 VA: 0xD15088

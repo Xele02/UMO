@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using System.Collections;
 using XeApp.Core;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -15,7 +16,7 @@ namespace XeApp.Game.Menu
 		[SerializeField]
 		private LayoutUGUIScrollSupport m_scrollSupport; // 0x1C
 		private UnitBonusContent m_contentLayout; // 0x20
-		//private PKNOKJNLPOE_EventRaid.MOAICCAOMCP m_unitBonusInfo; // 0x24
+		private PKNOKJNLPOE_EventRaid.MOAICCAOMCP m_unitBonusInfo; // 0x24
 		private PopupUnitBonusContent m_content; // 0x28
 
 		// RVA: 0xA4C3BC Offset: 0xA4C3BC VA: 0xA4C3BC Slot: 5
@@ -26,7 +27,32 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA4C3D4 Offset: 0xA4C3D4 VA: 0xA4C3D4
-		//public void Initialize(PopupUnitBonusContent content) { }
+		public void Initialize(PopupUnitBonusContent content)
+		{
+			m_content = content;
+			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
+			m_unitBonusInfo = ev.ANMBIEIFKFF_UnitBonusInfo;
+			m_descText.text = MessageManager.Instance.GetMessage("menu", "popup_episodebonus_note_01");
+			m_bonusPointText.text = string.Format(JpStringLiterals.StringLiteral_20810, m_unitBonusInfo.HOJAKNJFIFJ_EpisodeBonusPoint);
+			m_contentLayout.popupEpisodeBonusPlateSortList.popupEpisodeGachaList.InputEnable = () =>
+			{
+				//0xA4C8C8
+				m_scrollSupport.scrollRect.verticalScrollbar.enabled = true;
+				m_scrollSupport.scrollRect.enabled = true;
+			};
+			m_contentLayout.popupEpisodeBonusPlateSortList.popupEpisodeGachaList.InputDisable = () =>
+			{
+				//0xA4C980
+				m_scrollSupport.scrollRect.verticalScrollbar.enabled = false;
+				m_scrollSupport.scrollRect.enabled = false;
+			};
+			m_contentLayout.Initialize(m_content);
+			if(m_unitBonusInfo.BBAJKJPKOHD_EpisodeBonuses.Count < 4)
+			{
+				m_scrollSupport.ContentHeight = 380;
+			}
+			m_scrollSupport.scrollRect.verticalNormalizedPosition = 1;
+		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72FDFC Offset: 0x72FDFC VA: 0x72FDFC
 		//// RVA: 0xA4C7E0 Offset: 0xA4C7E0 VA: 0xA4C7E0
@@ -69,14 +95,9 @@ namespace XeApp.Game.Menu
 		}
 
 	//// RVA: 0xA4C88C Offset: 0xA4C88C VA: 0xA4C88C
-	//public bool IsLoadImage() { }
-
-	//[CompilerGeneratedAttribute] // RVA: 0x72FE74 Offset: 0x72FE74 VA: 0x72FE74
-	//// RVA: 0xA4C8C8 Offset: 0xA4C8C8 VA: 0xA4C8C8
-	//private void <Initialize>b__7_0() { }
-
-	//[CompilerGeneratedAttribute] // RVA: 0x72FE84 Offset: 0x72FE84 VA: 0x72FE84
-	//// RVA: 0xA4C980 Offset: 0xA4C980 VA: 0xA4C980
-	//private void <Initialize>b__7_1() { }
+	public bool IsLoadImage()
+	{
+		return m_contentLayout.IsLoadImage();
+	}
 }
 }
