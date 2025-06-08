@@ -59,9 +59,9 @@ namespace XeApp.Game.Common
 				if(!disableRegex)
 				{
 					m_strBuilder.Set(Text);
-					#if !UNITY_ANDROID
+					//#if UNITY_ANDROID
 					GameMessageManager.ReplaceInvalidFont(ref m_strBuilder, m_strBuilder.ToString());
-					#endif
+					//#endif
 					Text = m_strBuilder.ToString();
 					m_input.onValueChanged.RemoveListener(OnChangeContent);
 					m_input.text = Text;
@@ -86,9 +86,9 @@ namespace XeApp.Game.Common
 			m_strBuilder.Replace(JpStringLiterals.StringLiteral_5812, "");
 			if(!disableRegex)
 			{
-				#if UNITY_ANDROID
+				//#if UNITY_ANDROID
 				GameMessageManager.ReplaceInvalidFont(ref m_strBuilder, m_strBuilder.ToString());
-				#endif
+				//#endif
 			}
 			m_input.onValueChanged.RemoveListener(OnChangeContent);
 			m_input.text = m_strBuilder.ToString();
