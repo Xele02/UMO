@@ -3083,6 +3083,7 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 				else
 				{
 					KLNFKFKNBHC();
+					yield break;
 				}
 			}
 		}
