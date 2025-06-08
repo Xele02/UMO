@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using UdonLib;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -24,6 +26,8 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
 	private GameObject ToggleButtonPrefab;
     [SerializeField]
 	private GameObject _3ChoicesPrefab;
+    [SerializeField]
+    private GameObject ButtonPrefab;
 
     public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
     {
@@ -186,6 +190,14 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         {
             RuntimeSettings.CurrentSettings.EnableErrorLog = b;
         });
+        AddButton(ref y, "Debug : Save previous session log file", "Download", () =>
+        {
+            #if UNITY_ANDROID
+            AndroidUtils.OnShare2(Application.persistentDataPath + "/Log_prev.txt", "Download log", "");
+            #else
+            Application.OpenURL(Application.persistentDataPath);
+            #endif
+        });
         AddToggleButton(ref y, "Debug : Dump string used info in log (for translation)", () =>
         {
             return RuntimeSettings.CurrentSettings.DumpStringUsed;
@@ -291,6 +303,23 @@ public class UMOPopupConfig : UIBehaviour, IPopupContent
         Text text = g.GetComponentInChildren<Text>();
         text.text = txt;
         toggle.Init();
+    }
+
+    void AddButton(ref float y, string txt, string buttonTxt, Action onClick)
+    {
+        GameObject g = Instantiate(ButtonPrefab);
+        g.transform.SetParent(transform, false);
+        y -= 52;
+        (g.transform as RectTransform).anchoredPosition = new Vector2(71, y);
+        y -= 10;
+        Button btn = g.GetComponentInChildren<Button>();
+        btn.onClick.AddListener(() =>
+        {
+            onClick();
+        });
+        Text[] txts = g.GetComponentsInChildren<Text>(true);
+        txts.Where((Text _) => { return _.name == "txt"; }).First().text = txt;
+        txts.Where((Text _) => { return _.name == "font_01 (1)"; }).First().text = buttonTxt;
     }
 
     void Add3ChoicePrefab(ref float y, string txt, string[] choicesTxt, Func<int> getSelectedCallback, Action<int> setSelectedCallback)
