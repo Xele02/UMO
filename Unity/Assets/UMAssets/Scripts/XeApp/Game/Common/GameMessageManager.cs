@@ -80,10 +80,10 @@ namespace XeApp.Game.Common
 					{
 						if (Char.IsSurrogate(e.GetTextElement(), 0))
 							strBuilder.Append('Δ');
-						else if (m_regex.IsMatch(e.GetTextElement()))
-							strBuilder.Append('Δ');
-						else if (!m_validRegex.IsMatch(e.GetTextElement()))
-							strBuilder.Append('Δ');
+						//else if (m_regex.IsMatch(e.GetTextElement()))
+						//	strBuilder.Append('Δ');
+						//else if (!m_validRegex.IsMatch(e.GetTextElement()))
+						//	strBuilder.Append('Δ');
 						else
 							strBuilder.Append(e.GetTextElement());
 					}

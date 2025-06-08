@@ -6,7 +6,9 @@ using UnityEditor;
 #endif
 using UnityEngine;
 
+#if UNITY_EDITOR
 [InitializeOnLoad]
+#endif
 public class FullscreenPlayMode : MonoBehaviour
 {
 #if UNITY_EDITOR

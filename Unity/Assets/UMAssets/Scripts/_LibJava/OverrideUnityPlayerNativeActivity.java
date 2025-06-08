@@ -4,6 +4,17 @@ import android.content.Intent;
 import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URI;
+import java.util.Objects;
+
 //import com.adjust.sdk.Adjust;
 import com.unity3d.player.UnityPlayer;
 import com.unity3d.player.UnityPlayerActivity;
@@ -129,6 +140,74 @@ public class OverrideUnityPlayerNativeActivity extends UnityPlayerActivity {
             UnityPlayer.UnitySendMessage("UniAndroidPermission", "NotPermit", "");
             m_result = 4;
         }
+    }
+
+    FileLoadCallback loadCallbacks;
+
+    public void setLoadCallbacks(FileLoadCallback callback) {
+        loadCallbacks = callback;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, 
+                int resultCode, 
+                Intent data)
+    {
+        if(requestCode == 0 && loadCallbacks != null)
+        {
+            if(resultCode == RESULT_OK)
+            {
+                Uri uri = data.getData();
+                try
+                {
+                    byte[] myText = readDataFromUri( uri);
+                    loadCallbacks.onSuccess(new ReadData(myText));
+                }
+                catch(IOException e) {
+                    e.printStackTrace();
+                    loadCallbacks.onError(("Load error"));    
+                }
+            }
+            else
+            {
+                loadCallbacks.onError(("Load error"));
+            }
+        }
+    }
+    
+    public String readTextFromUri(Uri uri) throws IOException
+    {
+        StringBuilder stringBuilder = new StringBuilder();
+        try (InputStream inputStream =
+                    getContentResolver().openInputStream(uri);
+            BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(Objects.requireNonNull(inputStream)))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                stringBuilder.append(line);
+            }
+        }
+        return stringBuilder.toString();
+    }
+    
+    public byte[] readDataFromUri(Uri uri) throws IOException
+    {
+        byte[] res = null;
+        try (InputStream inputStream =
+                    getContentResolver().openInputStream(uri);)
+        {
+            ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+
+            int nRead;
+            byte[] data = new byte[16384];
+
+            while ((nRead = inputStream.read(data, 0, data.length)) != -1) {
+                buffer.write(data, 0, nRead);
+            }
+
+            res = buffer.toByteArray();
+        }
+        return res;
     }
 
     /*public static int GetResultNo() {

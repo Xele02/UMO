@@ -1,5 +1,26 @@
 using System;
 using UnityEngine;
+public class AndroidUtilsCallback : AndroidJavaProxy
+{
+	public AndroidUtilsCallback() : base("jp.co.xeen.xeapp.FileLoadCallback") { }
+	public Action<byte[]> onFileRead;
+	public Action<string> onFileError;
+
+	public void onSuccess(AndroidJavaObject bytesObj) {
+		Debug.Log("Unity callbacks: Receive Data ");
+		AndroidJavaObject bufferObject = bytesObj.Get<AndroidJavaObject>("Buffer");
+		byte[] data = AndroidJNIHelper.ConvertFromJNIArray<byte[]>(bufferObject.GetRawObject());
+		Debug.Log("ENTER callback onSuccess: " + data.Length);
+		if(onFileRead != null)
+			onFileRead(data);
+	}
+	public void onError(string errorMessage)
+	{
+		Debug.Log("ENTER callback onError: " + errorMessage);
+		if(onFileError != null)
+			onFileError(errorMessage);
+	}
+}
 
 namespace UdonLib
 {
@@ -63,8 +84,13 @@ namespace UdonLib
 			return OnShare2(path, message, shareTitle);
 		}
 
+		public static bool OnShareImage(string path, string message, string shareTitle)
+		{
+			return OnShare2(path, message, shareTitle, "image/jpg");
+		}
+
 		// // RVA: 0xE09798 Offset: 0xE09798 VA: 0xE09798
-		public static bool OnShare2(string path, string message, string shareTitle) 
+		public static bool OnShare2(string path, string message, string shareTitle, string mimeType = "application/octet-stream") 
 		{ 
 #if UNITY_ANDROID
 			string className = "android.content.Intent";
@@ -72,7 +98,7 @@ namespace UdonLib
 			using(AndroidJavaObject sendIntent = new AndroidJavaObject(className))
 			{
 				sendIntent.Call<AndroidJavaObject>("setAction", IntentClass.GetStatic<string>("ACTION_SEND"));
-				sendIntent.Call<AndroidJavaObject>("setType", "image/jpg");
+				sendIntent.Call<AndroidJavaObject>("setType", mimeType);
 				using (AndroidJavaClass versionClazz = new AndroidJavaClass("android.os.Build$VERSION"))
 				{
 					int apiLevel = versionClazz.GetStatic<int>("SDK_INT");
@@ -97,6 +123,34 @@ namespace UdonLib
 						currentActivity.Call("startActivity", jChooser);
 						uriObject.Dispose();
 					}
+				}
+			}
+#endif
+			return true;
+		}
+
+		public static AndroidUtilsCallback callbacks = new AndroidUtilsCallback();
+
+		public static bool OpenFile(string message, Action<byte[]> onFileRead, Action<string> onFileError, string mimeType = "application/octet-stream")
+		{
+#if UNITY_ANDROID
+			string className = "android.content.Intent";
+			using(AndroidJavaClass IntentClass = new AndroidJavaClass(className))
+			using(AndroidJavaObject sendIntent = new AndroidJavaObject(className))
+			{
+				sendIntent.Call<AndroidJavaObject>("setAction", IntentClass.GetStatic<string>("ACTION_GET_CONTENT"));
+				sendIntent.Call<AndroidJavaObject>("setType", mimeType);
+				sendIntent.Call<AndroidJavaObject>("putExtra", IntentClass.GetStatic<string>("EXTRA_ALLOW_MULTIPLE"), false);
+				sendIntent.Call<AndroidJavaObject>("putExtra", IntentClass.GetStatic<string>("EXTRA_LOCAL_ONLY"), true);
+				sendIntent.Call<AndroidJavaObject>("putExtra", IntentClass.GetStatic<string>("CATEGORY_OPENABLE"), true);
+				using (AndroidJavaClass unity = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+				using (AndroidJavaObject currentActivity = unity.GetStatic<AndroidJavaObject>("currentActivity"))
+				{
+					callbacks.onFileRead = onFileRead;
+					callbacks.onFileError = onFileError;
+					currentActivity.Call("setLoadCallbacks", callbacks);
+					AndroidJavaObject jChooser = IntentClass.CallStatic<AndroidJavaObject>("createChooser", sendIntent, "");
+					currentActivity.Call("startActivityForResult", jChooser, 0);
 				}
 			}
 #endif
