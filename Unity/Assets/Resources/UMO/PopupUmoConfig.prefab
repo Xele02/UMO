@@ -61,3 +61,5 @@ MonoBehaviour:
     type: 3}
   _3ChoicesPrefab: {fileID: 6423378771119095739, guid: dc241b2c7c94817ae841e0f044669e37,
     type: 3}
+  ButtonPrefab: {fileID: 6423378771119095739, guid: 4d075e598092189248d5836597d62e75,
+    type: 3}
