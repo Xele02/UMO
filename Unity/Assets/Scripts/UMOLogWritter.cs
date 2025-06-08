@@ -19,6 +19,8 @@ public class UMOLogWritter : MonoBehaviour
         {
             if(!filecreated)
             {
+                if(File.Exists(Application.persistentDataPath+"/Log_Prev.txt"))
+                    File.Delete(Application.persistentDataPath+"/Log_Prev.txt");
                 if(File.Exists(Application.persistentDataPath+"/Log.txt"))
                     File.Move(Application.persistentDataPath+"/Log.txt", Application.persistentDataPath+"/Log_Prev.txt");
                 logFile = new FileStream(Application.persistentDataPath+"/Log.txt", FileMode.Create);
