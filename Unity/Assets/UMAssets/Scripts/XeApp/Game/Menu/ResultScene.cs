@@ -17,7 +17,7 @@ namespace XeApp.Game.Menu
 		private ResultScoreLayoutController.InitParam scoreLayoutInitParam; // 0x4C
 		private ResultDivaLayoutController.InitParam divaLayoutInitParam; // 0x50
 		private ResultDropLayoutController.InitParam dropLayoutInitParam; // 0x54
-		// private ResultEvent01LayoutController.InitParam event01LayoutInitParam; // 0x58
+		private ResultEvent01LayoutController.InitParam event01LayoutInitParam; // 0x58
 		// private MissonResultLayoutController.InitParam event02LayoutInitParam; // 0x5C
 		private ResultEvent03ScoreLayoutController.InitParam event03ScoreLayoutInitParam; // 0x60
 		private ResultEvent03PointLayoutController.InitParam event03PointLayoutInitParam; // 0x64
@@ -124,7 +124,11 @@ namespace XeApp.Game.Menu
 			eventType = JGEOBNENMAH.HHCJCDFCLOB.NNABDGKFEMK_EventType;
 			if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 			{
-				TodoLogger.LogError(TodoLogger.EventCollection_1, "InitParam Event");
+				GCODMEIACDE data = new GCODMEIACDE();
+				data.KHEKNNFCAOI();
+				event01LayoutInitParam = new ResultEvent01LayoutController.InitParam();
+				event01LayoutInitParam.viewEventResultData = data;
+				event01LayoutInitParam.layoutOkayButton = null;
 			}
 			if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
 			{
@@ -328,8 +332,34 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4FCB0 Offset: 0xB4FCB0 VA: 0xB4FCB0
 		private IEnumerator Co_LoadEvent01Layout()
 		{
-			TodoLogger.LogError(TodoLogger.EventCollection_1, "Co_LoadEvent01Layout");
-			yield return null;
+			StringBuilder bundleName; // 0x14
+			FontInfo fontInfo; // 0x18
+			AssetBundleLoadLayoutOperationBase lytAssetOp; // 0x1C
+
+			//0xB5C4B4
+			bundleName = new StringBuilder();
+			bundleName.Set("ly/051.xab");
+			fontInfo = GameManager.Instance.GetSystemFont();
+			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_ResultEvent01");
+			yield return lytAssetOp;
+			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(fontInfo, (GameObject instance) =>
+			{
+				//0xB5489C
+				instance.transform.SetParent(transform, false);
+				event01LayoutController = instance.GetComponent<ResultEvent01LayoutController>();
+			}));
+			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_ResultEventHiScoreWindow");
+			yield return lytAssetOp;
+			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(fontInfo, (GameObject instance) =>
+			{
+				//0xB5496C
+				instance.transform.SetParent(transform, false);
+				event01_EventHiScoreWindowLayout = instance.GetComponent<LayoutResultEventHiScoreWindow>();
+				event01_EventHiScoreWindowLayout.m_OnOpen = CallbackEventHiScoreWindowLayoutOpen;
+				event01_EventHiScoreWindowLayout.m_OnClose = CallbackEventHiScoreWindowLayoutClose;
+				event01_EventHiScoreWindowLayout.transform.SetParent(GameManager.Instance.PopupCanvas.transform.Find("Root"));
+			}));
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 		}
 
 		// // RVA: 0xB4FD5C Offset: 0xB4FD5C VA: 0xB4FD5C
@@ -648,8 +678,7 @@ namespace XeApp.Game.Menu
 			{
 				yield return new WaitWhile(() => {
 					//0xB556B0
-					TodoLogger.LogError(TodoLogger.EventCollection_1, "Event");
-					return false;
+					return event01LayoutController == null || !event01LayoutController.IsReady();
 				});
 			}
 			if(isEventMission)
@@ -1049,27 +1078,37 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB52510 Offset: 0xB52510 VA: 0xB52510
 		private void InitEvent01Result()
 		{
-			TodoLogger.LogError(TodoLogger.EventCollection_1, "InitEvent01Result");
+			commonLayoutController.ChangeViewForDropResult();
+			event01LayoutInitParam.layoutOkayButton = commonLayoutController.LayoutOkayButton;
+			event01LayoutController.gameObject.SetActive(true);
+			event01LayoutController.onClickOkayButton = OnClickEvent01ResultOkayButton;
+			event01LayoutController.Setup(event01LayoutInitParam, event01_EventHiScoreWindowLayout);
+			task = UpdateEvent01Result;
 		}
 
 		// // RVA: 0xB526B8 Offset: 0xB526B8 VA: 0xB526B8
 		private bool IsEvent01ResultLoading()
 		{
-			TodoLogger.LogError(TodoLogger.EventCollection_1, "IsEvent01ResultLoading");
-			return false;
+			return event01LayoutController.IsLoading();
 		}
 
 		// // RVA: 0xB526E4 Offset: 0xB526E4 VA: 0xB526E4
 		private void StartEvent01ResultAnim()
 		{
-			TodoLogger.LogError(TodoLogger.EventCollection_1, "StartEvent01ResultAnim");
+			event01LayoutController.StartAnim();
 		}
 
 		// // RVA: 0xB52710 Offset: 0xB52710 VA: 0xB52710
-		// private void UpdateEvent01Result() { }
+		private void UpdateEvent01Result()
+		{
+			return;
+		}
 
 		// // RVA: 0xB52714 Offset: 0xB52714 VA: 0xB52714
-		// private void OnClickEvent01ResultOkayButton() { }
+		private void OnClickEvent01ResultOkayButton()
+		{
+			this.StartCoroutineWatched(Co_MountMenuScene(false));
+		}
 
 		// // RVA: 0xB5273C Offset: 0xB5273C VA: 0xB5273C
 		// private void EndEvent01Result() { }
@@ -1598,7 +1637,7 @@ namespace XeApp.Game.Menu
 					switch(Database.Instance.gameSetup.musicInfo.gameEventType)
 					{
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection:
-							TodoLogger.LogError(TodoLogger.EventCollection_1, "Event");
+							MenuScene.Instance.Mount(TransitionUniqueId.EVENTMUSICSELECT, new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, true), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 							break;
 						default:
 						{
@@ -1663,14 +1702,6 @@ namespace XeApp.Game.Menu
 		{
 			return InputManager.Instance.GetInScreenTouchCount();
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7231D4 Offset: 0x7231D4 VA: 0x7231D4
-		// // RVA: 0xB5489C Offset: 0xB5489C VA: 0xB5489C
-		// private void <Co_LoadEvent01Layout>b__39_0(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7231E4 Offset: 0x7231E4 VA: 0x7231E4
-		// // RVA: 0xB5496C Offset: 0xB5496C VA: 0xB5496C
-		// private void <Co_LoadEvent01Layout>b__39_1(GameObject instance) { }
 
 		// [CompilerGeneratedAttribute] // RVA: 0x7231F4 Offset: 0x7231F4 VA: 0x7231F4
 		// // RVA: 0xB54BC8 Offset: 0xB54BC8 VA: 0xB54BC8

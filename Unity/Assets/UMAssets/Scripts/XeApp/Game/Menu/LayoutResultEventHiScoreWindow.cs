@@ -6,6 +6,7 @@ using System;
 using XeSys;
 using System.Text;
 using System.Collections;
+using UnityEngine.Localization.SmartFormat;
 
 namespace XeApp.Game.Menu
 {
@@ -37,7 +38,7 @@ namespace XeApp.Game.Menu
 		private bool m_isOpen; // 0x44
 		public Action m_OnOpen; // 0x48
 		public Action m_OnClose; // 0x4C
-		// private GCODMEIACDE m_view_data; // 0x50
+		private GCODMEIACDE m_view_data; // 0x50
 
 		// RVA: 0x18DB904 Offset: 0x18DB904 VA: 0x18DB904
 		public void Setup(JLCHNKIHGHK data)
@@ -74,7 +75,30 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x18DBD1C Offset: 0x18DBD1C VA: 0x18DBD1C
-		// public void Setup(GCODMEIACDE data) { }
+		public void Setup(GCODMEIACDE data)
+		{
+			m_view_data = data;
+			m_isJacket = false;
+			m_isSetup = false;
+			m_Number01.SetNumber(data.KHHPEIBPDAB, 0);
+			m_text_episode.text = Smart.Format(MessageManager.Instance.GetMessage("menu", "event_result_episode"), data.ANOCILKJGOJ_EpBonus);
+			m_text_episode_rate.text = (data.ODCLHPGHDHA_EpBonusMulti - 100).ToString();
+			m_is_anim_episode_up = data.ODCLHPGHDHA_EpBonusMulti - 100 >= 0;
+			m_Number02.SetNumber(data.BFPBEAIBEDJ, 0);
+			m_Number03.SetNumber(data.IJPAKGFADJB_HiScore, 0);
+			m_is_anim_new_recode = data.GIIKOMPJOHA_IsHiScore;
+			m_text_rank.text = data.BKKPKIGLMCN_Ranks[1].ToString();
+            KEODKEGFDLD_FreeMusicInfo fm = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(data.OENBOLPDBAB_FreeMusicId);
+			EEDKAACNBBG_MusicData md = new EEDKAACNBBG_MusicData();
+			md.KHEKNNFCAOI(fm.DLAEJOBELBH_MusicId);
+			MenuScene.Instance.MusicJacketTextureCache.Load(md.JNCPEGJGHOG_JacketId, (IiconTexture texture) =>
+			{
+				//0x18DC870
+				texture.Set(m_image_jacket);
+				m_isJacket = true;
+			});
+			m_isSetup = true;
+        }
 
 		// // RVA: 0x18DC210 Offset: 0x18DC210 VA: 0x18DC210
 		public bool IsSetup()
@@ -156,9 +180,5 @@ namespace XeApp.Game.Menu
 				return;
 			m_btn_ok.PerformClick();
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71BF94 Offset: 0x71BF94 VA: 0x71BF94
-		// // RVA: 0x18DC870 Offset: 0x18DC870 VA: 0x18DC870
-		// private void <Setup>b__20_0(IiconTexture texture) { }
 	}
 }

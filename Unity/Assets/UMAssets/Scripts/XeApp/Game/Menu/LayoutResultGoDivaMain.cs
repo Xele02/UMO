@@ -51,7 +51,7 @@ namespace XeApp.Game.Menu
             IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, false);
 			if(ev != null)
 			{
-				if(ev.JOFBHHHLBBN.Count > 0)
+				if(ev.JOFBHHHLBBN_Rewards.Count > 0)
 				{
 					bool closed = false;
 					yield return Co.R(PopupRewardEvResult.Co_ShowPopup_CumulativePoint(transform, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>

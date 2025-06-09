@@ -83,7 +83,7 @@ public abstract class IKDICBBFBMI_EventBase
 		new List<MAOCCKFAOPC>(20),
 		new List<MAOCCKFAOPC>(20)
 	}; // 0x78
-	public List<int> JOFBHHHLBBN = new List<int>(); // 0x7C
+	public List<int> JOFBHHHLBBN_Rewards = new List<int>(); // 0x7C
 	public NHGEHCMPDAI HLFHJIDHJMP; // 0x80
 	public JKNGJFOBADP JANMJPOKLFL = new JKNGJFOBADP(); // 0x84
 	public List<AKIIJBEJOEP> AGLILDLEFDK_Missions; // 0x88

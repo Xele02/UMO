@@ -432,7 +432,12 @@ namespace XeApp.Game.Menu
 					{
 						if(Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 						{
-							TodoLogger.LogError(TodoLogger.EventCollection_1, "init from event 1");
+							PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.JBAIEADLAGH_0);
+							info.category = SceneGroupCategory.EVENT_MUISC;
+							info.nextName = TransitionList.Type.EVENT_MUSIC_SELECT;
+							info.uniqueId = TransitionUniqueId.EVENTMUSICSELECT;
+							info.args = new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, true);
+							return;
 						}
 						if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 						{

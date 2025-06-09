@@ -488,6 +488,22 @@ public static class DatabaseTextConverter
                         poFile.translationData.Add(prfx, blockDbLobby.EFEGBHACJAL(string.Format("battlelog_text_{0:D2}", i), ""));
                     }
                 }
+                PHBACNMCMHG_EventCollection blockDbCollection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(blocksName[sIdx]) as PHBACNMCMHG_EventCollection;
+                if(blockDbCollection != null)
+                {
+                    for (int i = 0; i < blockDbCollection.NNMPGOAGEOL_Missions.Count; i++)
+                    {
+                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbCollection.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbCollection.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
+                        poFile.translationData.Add(prfx, blockDbCollection.NNMPGOAGEOL_Missions[i].FEMMDNIELFC_Desc);
+                        prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbCollection.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbCollection.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
+                        poFile.translationData.Add(prfx, blockDbCollection.NNMPGOAGEOL_Missions[i].BGBJPGEIEDE_DescBalloon);
+                    }
+                    for(int i = 0; i < blockDbCollection.LLCLJBEJOPM_BannerInfo.Count; i++)
+                    {
+                        string prfx = string.Format("event_banner_{0}_{1:D4}", blockDbCollection.JIKKNHIAEKG_BlockName, blockDbCollection.LLCLJBEJOPM_BannerInfo[i].PPFNGGCBJKC);
+                        poFile.translationData.Add(prfx, blockDbCollection.LLCLJBEJOPM_BannerInfo[i].KLMPFGOCBHC_BannerText);
+                    }
+                }
                 
             }
             string p = PoPath.Replace("{name}", "events_text");

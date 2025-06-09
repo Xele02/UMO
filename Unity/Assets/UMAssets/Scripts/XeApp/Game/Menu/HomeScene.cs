@@ -1028,7 +1028,7 @@ namespace XeApp.Game.Menu
 											switch(eventType)
 											{
 												case OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection:
-													TodoLogger.LogError(TodoLogger.EventCollection_1, "Event Collection");
+													Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTMUSICSELECT, new AdvSetupParam() { eventUniqueId=b.EAHPLCJMPHD_EventId });
 													break;
 												case OHCAABOMEOF.KGOGMKMBCPP_EventType.MKKOHBGHADL_2:
 												case OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore:
@@ -1069,7 +1069,7 @@ namespace XeApp.Game.Menu
 						switch(eventType)
 						{
 							case OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection:
-								TodoLogger.LogError(TodoLogger.EventCollection_1, "Event Collection");
+								MenuScene.Instance.Mount(TransitionUniqueId.EVENTMUSICSELECT, new EventMusicSelectSceneArgs(b.EAHPLCJMPHD_EventId, false, false), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 								break;
 							default:
 								MenuScene.Instance.Mount(TransitionUniqueId.HOME_NEWYEAREVENT, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
@@ -1177,7 +1177,7 @@ namespace XeApp.Game.Menu
 			GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(a1);
 			if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 			{
-				TodoLogger.LogError(TodoLogger.EventCollection_1, "Collection");
+				Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTMUSICSELECT, new AdvSetupParam() { eventUniqueId=param.eventUniqueId });
 			}
 			else if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
@@ -1228,7 +1228,7 @@ namespace XeApp.Game.Menu
 						switch(currentEventType)
 						{
 							case OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection:
-								TodoLogger.LogError(TodoLogger.EventCollection_1, "Event Collection");
+								Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTMUSICSELECT, new AdvSetupParam() { eventUniqueId=eventUniqueId });
 								break;
 							default:
 								break;
@@ -1280,7 +1280,7 @@ namespace XeApp.Game.Menu
 			switch(currentEventType)
 			{
 				case OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection:
-					TodoLogger.LogError(TodoLogger.EventCollection_1, "Event Collection");
+					MenuScene.Instance.Mount(TransitionUniqueId.EVENTMUSICSELECT, new EventMusicSelectSceneArgs(eventUniqueId, false, false), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					break;
 				default:
 					break;

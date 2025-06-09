@@ -3,6 +3,7 @@ class JpStringLiterals
 {
 	public static string StringLiteral_367 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_367", " "); } } //0x03ba9074
 	public static string StringLiteral_381 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_381", "  "); } } //03ba90ac
+	public static string StringLiteral_1290 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_1290", "pt"); } } //03ba9ee0
 	public static string StringLiteral_1374 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_1374", "年"); } } //0x03baa030
 	public static string StringLiteral_1376 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_1376", "月"); } } // 0x03baa038
 	public static string StringLiteral_1378 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_1378", "日"); } } // 0x03baa040
@@ -472,6 +473,8 @@ class JpStringLiterals
 	public static string StringLiteral_17777 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_17777", "獲得したアイテムはありません。"); } } // 0x03bba07c
 	public static string StringLiteral_17787 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_17787", "％"); } } // 0x03bba0a4
 	public static string StringLiteral_17788 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_17788", "(UCアイテムは {0}UC に変換されました)"); } } // 0x03bba0a8
+	public static string StringLiteral_17823 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_17823", "消費ボーナス"); } } // 03bba134
+	public static string StringLiteral_17824 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_17824", "倍"); } } // 03bba138
 	public static string StringLiteral_17960 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_17960", "{0}回"); } } //0x03bba358
 	public static string StringLiteral_18022 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_18022", "使用スキル"); } } // 0x03bba450
 	public static string StringLiteral_18023 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_18023", "{0}秒"); } } //0x03bba454

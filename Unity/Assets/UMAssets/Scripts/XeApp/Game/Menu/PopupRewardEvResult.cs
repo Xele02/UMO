@@ -234,9 +234,9 @@ namespace XeApp.Game.Menu
 			{
 				data_type = Type.CumulativePoint;
 				CurrentPoint = eventController.FBGDBGKNKOD_GetCurrentPoint();
-				for(int i = 0; i < eventController.JOFBHHHLBBN.Count; i++)
+				for(int i = 0; i < eventController.JOFBHHHLBBN_Rewards.Count; i++)
 				{
-					total_data_list.Add(eventController.PFPJHJJAGAG_Rewards[eventController.JOFBHHHLBBN[i]]);
+					total_data_list.Add(eventController.PFPJHJJAGAG_Rewards[eventController.JOFBHHHLBBN_Rewards[i]]);
 				}
 			}
 

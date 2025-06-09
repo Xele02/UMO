@@ -582,7 +582,7 @@ public class JKNGJFOBADP
 			NGEPPDAOIBN(EKLNMHFCAOI.FKGCBLHOOCL_Category.CLMIJKACELE_EventTicket, MHFBCINOJEE, HMFFHLPNMPH, ev.AELBIEDNPGB_GetTicketCount(AHEFHIMGIBI), 1);
 			if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 			{
-				TodoLogger.LogError(TodoLogger.EventCollection_1, "Event");
+				;
 			}
 			else if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva)
 			{
