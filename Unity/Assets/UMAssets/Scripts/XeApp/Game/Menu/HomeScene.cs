@@ -2488,10 +2488,11 @@ namespace XeApp.Game.Menu
 		{
 			if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(leadData.DEKECNIBBIB_ItemFullId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
+				string res = leadData.KLMPFGOCBHC_Desc;
 				int idx = leadData.KLMPFGOCBHC_Desc.IndexOf('\n');
-				string res = leadData.KLMPFGOCBHC_Desc.Remove(idx);
-				if (idx > -1)
-				{
+
+				if (idx >= 0) {
+					res = res.Remove(idx);
 					if(RuntimeSettings.CurrentSettings.Language != "en" || RuntimeSettings.CurrentSettings.Language != "fr" )
 					{
 						if(idx > 0 && res[idx - 1] != ' ')
