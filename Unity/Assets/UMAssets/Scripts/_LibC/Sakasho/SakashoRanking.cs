@@ -114,6 +114,12 @@ namespace ExternLib
 			res["rankings"].Add(GetRankingInfo("raid_ranking_11039", false));
 			res["rankings"].Add(GetRankingInfo("raidlobby_ranking_13039_01", false));
 			res["rankings"].Add(GetRankingInfo("raidlobby_ranking_13039_02", false));
+			res["rankings"].Add(GetRankingInfo("collect_ranking_1059", false));
+			res["rankings"].Add(GetRankingInfo("collect_ranking_1060", false));
+			res["rankings"].Add(GetRankingInfo("collect_ranking_1061", false));
+			res["rankings"].Add(GetRankingInfo("collect_ranking2_1059", false));
+			res["rankings"].Add(GetRankingInfo("collect_ranking2_1060", false));
+			res["rankings"].Add(GetRankingInfo("collect_ranking2_1061", false));
 
 			SendMessage(callbackId, res);
 			return 0;
@@ -510,6 +516,66 @@ namespace ExternLib
 				data["id"] = 11000000 + int.Parse(strs[2]) + int.Parse(strs[3]) * 100000;
 				data["is_reverse"] = false;
 				data["name"] = "raidlobby_ranking";
+				data["name_for_api"] = k;
+				data["opened_at"] = 1575126000;
+				data["ranking_type"] = 1;
+				data["reward_opened_at"] = 1732978860;
+				data["score_precision"] = 6;
+				data["update_type"] = 0;
+				if (withRewards)
+				{
+					data["rewards"] = new EDOHBJAPLPF_JsonData();
+					data["rewards"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+				}
+				return data;
+			}
+			else if(k.StartsWith("collect_ranking_"))
+			{
+				EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+				data.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+				string[] strs = k.Split(new char[] {'_'});
+				data["allow_lower_score"] = false;
+				data["allow_negative_score"] = false;
+				data["allow_tied_rank"] = true;
+				data["batch_interval_time"] = 0;
+				data["batch_started_at"] = 0;
+				data["closed_at"] = 1734274740;
+				data["competition_closed_at"] = 1732978800;
+				data["default_score"] = 0;
+				data["description"] = "Collect ranking";
+				data["id"] = 100000 + int.Parse(k.Replace("collect_ranking_", ""));
+				data["is_reverse"] = false;
+				data["name"] = "collect_ranking";
+				data["name_for_api"] = k;
+				data["opened_at"] = 1575126000;
+				data["ranking_type"] = 1;
+				data["reward_opened_at"] = 1732978860;
+				data["score_precision"] = 6;
+				data["update_type"] = 0;
+				if (withRewards)
+				{
+					data["rewards"] = new EDOHBJAPLPF_JsonData();
+					data["rewards"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+				}
+				return data;
+			}
+			else if(k.StartsWith("collect_ranking2_"))
+			{
+				EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+				data.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+				string[] strs = k.Split(new char[] {'_'});
+				data["allow_lower_score"] = false;
+				data["allow_negative_score"] = false;
+				data["allow_tied_rank"] = true;
+				data["batch_interval_time"] = 0;
+				data["batch_started_at"] = 0;
+				data["closed_at"] = 1734274740;
+				data["competition_closed_at"] = 1732978800;
+				data["default_score"] = 0;
+				data["description"] = "Collect ranking 2";
+				data["id"] = 110000 + int.Parse(k.Replace("collect_ranking2_", ""));
+				data["is_reverse"] = false;
+				data["name"] = "collect_ranking2";
 				data["name_for_api"] = k;
 				data["opened_at"] = 1575126000;
 				data["ranking_type"] = 1;

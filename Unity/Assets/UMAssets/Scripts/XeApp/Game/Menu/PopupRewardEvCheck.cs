@@ -318,7 +318,15 @@ namespace XeApp.Game.Menu
 				rank_data_list2 = cont.EGIPGHCDMII_RankData[1];
 				if(cont.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 				{
-					TodoLogger.LogError(TodoLogger.EventCollection_1, "Event Collection");
+					HJNNLPIGHLM_EventCollection evColl = cont as HJNNLPIGHLM_EventCollection;
+					curr_score_rank = cont.CDINKAANIAA_Rank[1];
+					curr_score = (int)evColl.AFCIIKDOMHN_GetScore();
+					is_enable_score_ranking = true;
+					pickup_free_music_id = cont.HEACCHAKMFG_GetMusicsList()[0];
+					IBJAKJJICBC ib = new IBJAKJJICBC();
+					ib.KHEKNNFCAOI(pickup_free_music_id, false, 0, 0, 0, false, false, false);
+					pickup_music_name = ib.NEDBBJDAFBH_MusicName;
+					pickup_cover_id = ib.JNCPEGJGHOG_JacketId;
 				}
 				else if(cont.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 				{

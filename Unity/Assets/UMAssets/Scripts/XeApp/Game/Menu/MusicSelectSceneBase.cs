@@ -282,10 +282,35 @@ namespace XeApp.Game.Menu
 		protected abstract void CheckTryInstall();
 
 		// // RVA: 0xF3A1E8 Offset: 0xF3A1E8 VA: 0xF3A1E8
-		// protected void TryInstall(StringBuilder bundleName, MusicDataList musicList) { }
+		protected void TryInstall(StringBuilder bundleName, MusicDataList musicList)
+		{
+			for(int i = 0; i < musicList.GetCount(m_isLine6Mode, m_isSimulationLive); i++)
+			{
+				IBJAKJJICBC ib = musicList.Get(i, m_isLine6Mode, m_isSimulationLive);
+				if(!ib.AJGCPCMLGKO_IsEvent)
+				{
+					if(!ib.BNIAJAKIAJC_IsEventMinigame)
+					{
+						bundleName.SetFormat("ct/mc/{0:D3}.xab", ib.JNCPEGJGHOG_JacketId);
+					}
+					else
+					{
+						bundleName.SetFormat("ct/ev/mc/{0:D4}.xab", ib.NOKBLCDMLPP_MinigameEventInfo.GOAPADIHAHG_EventId);
+					}
+				}
+				else
+				{
+					bundleName.SetFormat("ct/ev/mc/{0:D4}.xab", ib.AFCMIOIGAJN_EventInfo.GOAPADIHAHG_EventId);
+				}
+				KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(bundleName.ToString());
+			}
+		}
 
 		// // RVA: 0xF3A504 Offset: 0xF3A504 VA: 0xF3A504
-		// protected void TryInstall(StringBuilder bundleName) { }
+		protected void TryInstall(StringBuilder bundleName)
+		{
+			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(bundleName.ToString());
+		}
 
 		// // RVA: -1 Offset: -1 Slot: 36
 		protected abstract IEnumerator Co_Initialize();
@@ -1083,7 +1108,21 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xF4066C Offset: 0xF4066C VA: 0xF4066C
-		// protected void ApplyEventBannerRemainTime(long remainSec, bool makeColor) { }
+		protected void ApplyEventBannerRemainTime(long remainSec, bool makeColor)
+		{
+			int d = (int)(remainSec / 86400);
+			remainSec -= d * 86400;
+			int h = (int)(remainSec / 3600);
+			remainSec -= h * 3600;
+			int m = (int)(remainSec / 60);
+			remainSec -= m * 60;
+			string str = MakeRemainTime(d, h, m, (int)remainSec);
+			if(makeColor)
+			{
+				str = RichTextUtility.MakeColorTagString(str, SystemTextColor.ImportantColor);
+			}
+			m_eventBanner.SetLimitTimeLabel(str);
+		}
 
 		// // RVA: 0xF3F448 Offset: 0xF3F448 VA: 0xF3F448
 		protected void ApplyTicletDropIcon()
@@ -1602,6 +1641,8 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
+				if(viewBoostData.EFFBJDMGIGO(selectIndex) != MKIKFJKPEHK.IMIDFBNGHCG.CNAMHABEOPF_1)
+					return true;
 				OpenStaminaWindow(() =>
 				{
 					//0xF49874
@@ -2651,14 +2692,14 @@ namespace XeApp.Game.Menu
 				{
 					m_ticketGainedPopupSetting.title = string.Format(bk.GetMessageByLabel("popup_event_login_item01_title_msg"), itemCount);
 					m_ticketGainedPopupSetting.label01 = bk.GetMessageByLabel("popup_event_login_item01_label00_msg");
-					m_ticketGainedPopupSetting.label01 = bk.GetMessageByLabel("popup_event_login_item01_label01_msg");
+					m_ticketGainedPopupSetting.label02 = bk.GetMessageByLabel("popup_event_login_item01_label01_msg");
 					m_ticketGainedPopupSetting.layoutType = 0;
 				}
 				else if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.CLMIJKACELE_EventTicket)
 				{
 					m_ticketGainedPopupSetting.title = string.Format(bk.GetMessageByLabel("popup_event_login_item00_title_msg"), itemCount);
 					m_ticketGainedPopupSetting.label01 = bk.GetMessageByLabel("popup_event_login_item00_label00_msg");
-					m_ticketGainedPopupSetting.label01 = bk.GetMessageByLabel("popup_event_login_item00_label01_msg");
+					m_ticketGainedPopupSetting.label02 = bk.GetMessageByLabel("popup_event_login_item00_label01_msg");
 					m_ticketGainedPopupSetting.layoutType = 1;
 				}
 				else

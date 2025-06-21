@@ -10,6 +10,7 @@ namespace ExternLib
 
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res[AFEHLCGHAEE_Strings.OPFGFINHFCE_name] = "Test";
+			res["original_name"] = "Test";
 			res[AFEHLCGHAEE_Strings.KLMPFGOCBHC_description] = "Desc";
 			res[AFEHLCGHAEE_Strings.PJJFEAHIPGL_inventories] = new EDOHBJAPLPF_JsonData();
 			res[AFEHLCGHAEE_Strings.PJJFEAHIPGL_inventories].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
@@ -43,6 +44,7 @@ namespace ExternLib
 		{
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res[AFEHLCGHAEE_Strings.OPFGFINHFCE_name] = "Test";
+			res["original_name"] = "Test";
 			res[AFEHLCGHAEE_Strings.BMFEGOMNECF_steps] = new EDOHBJAPLPF_JsonData();
 			res[AFEHLCGHAEE_Strings.BMFEGOMNECF_steps].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
 			SendMessage(callbackId, res);

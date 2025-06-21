@@ -1440,7 +1440,22 @@ namespace XeApp.Game.Menu
 				else if(m_eventCtrl is HJNNLPIGHLM_EventCollection)
 				{
 					// L 508
-					TodoLogger.LogError(TodoLogger.EventCollection_1, "PreGameSkipShow event collection");
+					MKIKFJKPEHK m = new MKIKFJKPEHK();
+					if(!m.DPICLLJJPAC(d, (int)Database.Instance.gameSetup.musicInfo.difficultyType, Database.Instance.gameSetup.musicInfo.IsLine6Mode))
+						return;
+					int v = m_eventCtrl.EAMODCHMCEL_GetTicketCost((int)Database.Instance.gameSetup.musicInfo.difficultyType, Database.Instance.gameSetup.musicInfo.IsLine6Mode);
+					if(Database.Instance.gameSetup.SelectedDashIndex > -1)
+					{
+						v = m.KLOOIJIDKGO_Cost[Database.Instance.gameSetup.SelectedDashIndex];
+					}
+					m_skipTicketPopupSetting.ConsumeItemId = m_eventCtrl.JKIADEKHGLC_TicketItemId;
+					m_skipTicketPopupSetting.ConsumeItem = PopupSkipTicketUseConfirm.ConsumeItem.LiveTicket;
+					m_skipTicketPopupSetting.ConsumeItemValue = v;
+					m_skipTicketPopupSetting.ConsumeItemMax = m_eventCtrl.AELBIEDNPGB_GetTicketCount(null);
+					m_skipTicketPopupSetting.ItemUseMaxValue = Mathf.Min(m_skipTicketPopupSetting.ConsumeItemMax / v, cnt);
+					m_skipTicketPopupSetting.ItemCurrentValue = 1;
+					m_skipTicketPopupSetting.IsOneUseForced = false;
+					m_skipTicketPopupSetting.IsWeekdayEvent = false;
 				}
 				else
 				{

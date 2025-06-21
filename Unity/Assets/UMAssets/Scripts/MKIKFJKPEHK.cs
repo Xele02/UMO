@@ -49,7 +49,7 @@ public class MKIKFJKPEHK
 									}
 									else
 									{
-										a2 = ev.EAMODCHMCEL(FCHBEILHFBC, GIKLNODJKFK);
+										a2 = ev.EAMODCHMCEL_GetTicketCost(FCHBEILHFBC, GIKLNODJKFK);
 									}
 									KLOOIJIDKGO_Cost.Add(ev.MBHDIJJEOFL[i].JBGEEPFKIGG * a2);
 									BGIKOPLLDJB_Rate.Add(ev.MBHDIJJEOFL[i].JBGEEPFKIGG);
@@ -94,7 +94,7 @@ public class MKIKFJKPEHK
 	public void PPCLCOPGBBK(int OIACNLKAIFO)
 	{
         IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false);
-    	if(ev != null)
+    	if(ev == null)
 			return;
 		ev.DOCHABECLFK(BGIKOPLLDJB_Rate[OIACNLKAIFO]);
 	}

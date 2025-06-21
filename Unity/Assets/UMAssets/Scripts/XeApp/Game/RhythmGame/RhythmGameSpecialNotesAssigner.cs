@@ -266,7 +266,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0xC0BFB8 Offset: 0xC0BFB8 VA: 0xC0BFB8
 		private int OnRareItemRandomLot()
 		{
-			return Random.Range(0, 152);
+			return Random.Range(0, 10000000);
 		}
 
 		// // RVA: 0xC0BFCC Offset: 0xC0BFCC VA: 0xC0BFCC

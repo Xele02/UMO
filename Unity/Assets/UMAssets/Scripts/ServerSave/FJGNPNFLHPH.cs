@@ -47,7 +47,17 @@ public class FJGNPNFLHPH_EventCollection : KLFDBFMNLBL_ServerSaveBlock
 		// public bool AAIKMLIKIEB(int LHJCOPMMIGO) { }
 
 		// // RVA: 0x14F023C Offset: 0x14F023C VA: 0x14F023C
-		// public void LHAEPPFACOB(bool OAFPGJLCNFM, int LHJCOPMMIGO) { }
+		public void LHAEPPFACOB(bool OAFPGJLCNFM, int LHJCOPMMIGO)
+		{
+			if(LHJCOPMMIGO == 1)
+			{
+				CIIBINABMPE_RRcv2 = OAFPGJLCNFM;
+			}
+			else if(LHJCOPMMIGO == 0)
+			{
+				HPLMECLKFID_RRcv = OAFPGJLCNFM;
+			}
+		}
 
 		// // RVA: 0x14F02A0 Offset: 0x14F02A0 VA: 0x14F02A0
 		public bool BHIAKGKHKGD(int BMBBDIAEOMP)

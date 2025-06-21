@@ -1295,7 +1295,7 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 				CCPKHBECNLH_EventBattle.BHIDLKBIJFK d = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DKJBALDICBG_EventBattle.FBCJICEPLED[dbSection.NGHKJOEDLIP.MOEKELIIDEO_SaveIdx];
 				long point = FBGDBGKNKOD_GetCurrentPoint();
 				JANMJPOKLFL.JCHLONCMPAJ();
-				JOFBHHHLBBN.Clear();
+				JOFBHHHLBBN_Rewards.Clear();
 				List<string> l1 = new List<string>(3);
 				List<int> l2 = new List<int>(3);
 				StringBuilder str = new StringBuilder();
@@ -1322,7 +1322,7 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 								JANMJPOKLFL.CPIICACGNBH_AddItem(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, dbSection.FCIPEDFHFEM_Rewards[i].AHJNPEAMCCH_Items[j].GLCLFMGPMAN_ItemId, dbSection.FCIPEDFHFEM_Rewards[i].AHJNPEAMCCH_Items[j].HMFFHLPNMPH_Cnt, null, 0);
 								d.IPNLHCLFIDB(i, true);
 							}
-							JOFBHHHLBBN.Add(i);
+							JOFBHHHLBBN_Rewards.Add(i);
 						}
 					}
 				}

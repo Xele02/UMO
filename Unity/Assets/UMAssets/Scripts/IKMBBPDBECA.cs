@@ -21,6 +21,7 @@ public abstract class IKMBBPDBECA
 	public List<CEBFFLDKAEC_SecureInt> IOKIFFAFPDI_Episode = new List<CEBFFLDKAEC_SecureInt>(); // 0x10
 	public string OKDLGFMLLFH_Templ = ""; // 0x14
 	public string OPFGFINHFCE_Name = ""; // 0x18
+	public string OriginalName;
 	public string EABMLBFHJBH_CloseAtString = ""; // 0x1C
 	public List<CEBFFLDKAEC_SecureInt> FLADABCFDFA_Pickup = new List<CEBFFLDKAEC_SecureInt>(); // 0x20
 	public List<CEBFFLDKAEC_SecureInt> ANFKCPGENCM_TicketVcId = new List<CEBFFLDKAEC_SecureInt>(); // 0x24
@@ -72,7 +73,7 @@ public abstract class IKMBBPDBECA
 			int disable_decul_gacha_kakutei_4 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("disable_decul_gacha_kakutei_4", 0);
 			if(disable_decul_gacha_kakutei_4 != 0)
 				return;
-			if(OPFGFINHFCE_Name.Contains(JpStringLiterals.StringLiteral_11117))
+			if(OriginalName.Contains(JpStringLiterals.StringLiteral_11117_Jp))
 				MDEIKCBEHHC = JpStringLiterals.StringLiteral_11118;
 		}
 	}

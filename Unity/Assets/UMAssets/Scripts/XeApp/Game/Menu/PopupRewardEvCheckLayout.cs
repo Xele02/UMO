@@ -188,7 +188,14 @@ namespace XeApp.Game.Menu
 			m_RankingType = RankingType.Default;
 			if(m_eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 			{
-				TodoLogger.LogError(TodoLogger.EventCollection_1, "Event Collcetion");
+				m_EventMusicRank = data.curr_score_rank;
+				m_EventHiScore = data.curr_score;
+				MenuScene.Instance.MusicJacketTextureCache.Load(data.pickup_cover_id, (IiconTexture texture) =>
+				{
+					//0x1A72C34
+					texture.Set(m_imageCDJacket);
+				});
+				m_RankingType = RankingType.Total;
 			}
 			else if(m_eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
@@ -391,9 +398,5 @@ namespace XeApp.Game.Menu
 			if(m_CallbackChangeRankingType != null)
 				m_CallbackChangeRankingType(m_RankingType);
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x70E34C Offset: 0x70E34C VA: 0x70E34C
-		// // RVA: 0x1A72C34 Offset: 0x1A72C34 VA: 0x1A72C34
-		// private void <SetUp>b__39_0(IiconTexture texture) { }
 	}
 }

@@ -100,8 +100,12 @@ public class FOCPLKMMCAL
 					}
 					else if(OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 1)
 					{
-						TodoLogger.LogError(TodoLogger.EventCollection_1, "EventCollection");
 						// L207
+						HJNNLPIGHLM_EventCollection evColl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false) as HJNNLPIGHLM_EventCollection;
+						if(evColl != null)
+						{
+							evColl.NGIPMNLALAA(ENCNIGKPEFB(), FCLGIPFPIPH, sceneId, numBoard, OMNOFMEBLAD.AKNELONELJK_Difficulty);
+						}
 					}
 					else if (OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 3)
 					{
@@ -190,7 +194,14 @@ public class FOCPLKMMCAL
 			case 5:
 				break;
 			case 1:
-				TodoLogger.LogError(TodoLogger.EventCollection_1, "HNNPBABEPBP event");
+				{
+					HJNNLPIGHLM_EventCollection evColl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false) as HJNNLPIGHLM_EventCollection;
+					if(evColl != null)
+					{
+						FFDBCEDKMGN_PrevPoint = (int)evColl.FBGDBGKNKOD_GetCurrentPoint();
+						evColl.FCLGOCBGPJF(OMNOFMEBLAD, JANMJPOKLFL, FCLGIPFPIPH, fsceneId, c);
+					}
+				}
 				break;
 			case 2:
 				TodoLogger.LogError(TodoLogger.Event_Unknwown_2, "HNNPBABEPBP event");
@@ -674,8 +685,9 @@ public class FOCPLKMMCAL
 				{
 					if(OMNOFMEBLAD.MFJKNCACBDG_OpenEventType == 1)
 					{
-						TodoLogger.LogError(TodoLogger.EventCollection_1, "Event");
-						// L389
+						v2 = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.NBIAKELCBLC(OMNOFMEBLAD.MNNHHJBBICA_GameEventType,
+							OMNOFMEBLAD.MFJKNCACBDG_OpenEventType, OMNOFMEBLAD.AKNELONELJK_Difficulty, OMNOFMEBLAD.LFGNLKKFOCD_IsLine6,
+							OMNOFMEBLAD.MJBODMOLOBC_TeamLuck, OMNOFMEBLAD.JEKDIEFPEON_RareItemRandomSeed);
 					}
 				}
 				else

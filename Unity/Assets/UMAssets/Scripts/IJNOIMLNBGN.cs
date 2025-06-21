@@ -14,7 +14,20 @@ public class IJNOIMLNBGN
 	public string KLMPFGOCBHC_BannerText { get { return PMKLGDOEFNM; } set { PMKLGDOEFNM = value; } } //0x8DAB9C BGJNIABLBDB 0x8DABA4 HFBJLALGKOM
 
 	// // RVA: 0x8DABAC Offset: 0x8DABAC VA: 0x8DABAC
-	// public static void KHEKNNFCAOI(List<IJNOIMLNBGN> NNDGIAEFMOG, HMNJADGBKFA JMHECKKKMLK) { }
+	public static void KHEKNNFCAOI(string BlockName, List<IJNOIMLNBGN> NNDGIAEFMOG, HMNJADGBKFA JMHECKKKMLK)
+	{
+		NNDGIAEFMOG.Clear();
+		for(int i = 0; i < JMHECKKKMLK.IHNBOEPLJKE.Length; i++)
+		{
+			CMLHFCEIABD array = JMHECKKKMLK.IHNBOEPLJKE[i];
+			IJNOIMLNBGN data = new IJNOIMLNBGN();
+			data.PPFNGGCBJKC = (int)array.PPFNGGCBJKC;
+			data.PDBPFJJCADD_OpenAt = array.PDBPFJJCADD;
+			data.FDBNFFNFOND_CloseAt = array.FDBNFFNFOND;
+			data.KLMPFGOCBHC_BannerText = DatabaseTextConverter.TranslateEventBannerText(BlockName, data.PPFNGGCBJKC, array.FEMMDNIELFC);
+			NNDGIAEFMOG.Add(data);
+		}
+	}
 
 	// // RVA: 0x8DADAC Offset: 0x8DADAC VA: 0x8DADAC
 	// public static void KHEKNNFCAOI(List<IJNOIMLNBGN> NNDGIAEFMOG, EDHLNJNFNDN JMHECKKKMLK) { }

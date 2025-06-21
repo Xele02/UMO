@@ -1486,7 +1486,7 @@ namespace ExternLib
 								type = 105,
 								message = p.inventory_message,
 								closed_at = 32535097200
-							});
+							}, playerAccount.playerData);
 							addedItem.AddInInventoryResult(d);
 							
 							/*res["inventories"] = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(@"[

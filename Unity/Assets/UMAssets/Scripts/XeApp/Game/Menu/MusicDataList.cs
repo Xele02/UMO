@@ -211,7 +211,13 @@ namespace XeApp.Game.Menu
 		// private bool IsPlayed(IBJAKJJICBC data) { }
 
 		// // RVA: 0x1049FF0 Offset: 0x1049FF0 VA: 0x1049FF0
-		// public void .ctor(List<IBJAKJJICBC> viewList) { }
+		public MusicDataList(List<IBJAKJJICBC> viewList)
+		{
+			m_viewList = viewList;
+			m_view6LineList = new List<IBJAKJJICBC>();
+			m_viewSimulationList = new List<IBJAKJJICBC>();
+			m_view6LineSimulationList = new List<IBJAKJJICBC>();
+		}
 
 		// // RVA: 0x1040144 Offset: 0x1040144 VA: 0x1040144
 		public MusicDataList(List<IBJAKJJICBC> viewList, List<IBJAKJJICBC> view6LineList)

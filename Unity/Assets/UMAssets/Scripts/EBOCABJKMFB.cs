@@ -12,6 +12,14 @@ public class EBOCABJKMFB : IKMBBPDBECA
 		{
 			OPFGFINHFCE_Name = (string)data["name"];
 		}
+		if(data.BBAJPINMOEP_Contains("original_name"))
+		{
+			OriginalName = (string)data["original_name"];
+		}
+		else
+		{
+			UnityEngine.Debug.LogError("Missing original_name "+data.EJCOJCGIBNG_ToJson());
+		}
 		if(data.BBAJPINMOEP_Contains("desc"))
 		{
 			KLMPFGOCBHC_Description = (string)data["desc"];

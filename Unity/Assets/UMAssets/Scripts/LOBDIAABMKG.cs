@@ -17,6 +17,7 @@ public class LOBDIAABMKG
 	private const int HNPLKNDMDIL = 10;
 	public static int[] BHIHFFLOAGI = new int[20]; // 0x0
 	public string OPFGFINHFCE_Name; // 0x8
+	public string OriginalName;
 	public string EFIMCLPAEEN_ImageUrl; // 0xC
 	public string KLMPFGOCBHC_Description; // 0x10
 	public IKMBBPDBECA KACECFNECON; // 0x14
@@ -283,13 +284,14 @@ public class LOBDIAABMKG
 					if(!DDNGPDGGJBN_LoadInfo_)
 						return true;
 					OPFGFINHFCE_Name = NNDGIAEFMOG[i].OPFGFINHFCE_Name;
+					OriginalName = NNDGIAEFMOG[i].OriginalName;
 					EFIMCLPAEEN_ImageUrl = NNDGIAEFMOG[i].EFIMCLPAEEN_ImageUrl;
 					KLMPFGOCBHC_Description = NNDGIAEFMOG[i].KLMPFGOCBHC_Description;
 					GJFPFFBAKGK_CloseAt = NNDGIAEFMOG[i].EGBOHDFBAPB_ClosedAt;
 					KJBGCLPMLCG_OpenedAt = NNDGIAEFMOG[i].KBFOIECIADN_OpenedAt;
 					EABMLBFHJBH_CloseAt = NNDGIAEFMOG[i].EGBOHDFBAPB_ClosedAt;
 					KNMLPAAHAOF_IsStartGacha = false;
-					if(OPFGFINHFCE_Name.Contains(JpStringLiterals.StringLiteral_10431))
+					if(OriginalName.Contains(JpStringLiterals.StringLiteral_10431_Jp))
 					{
 						KNMLPAAHAOF_IsStartGacha = true;
 					}
@@ -304,6 +306,7 @@ public class LOBDIAABMKG
 					if(!string.IsNullOrEmpty(KACECFNECON.OPFGFINHFCE_Name))
 					{
 						OPFGFINHFCE_Name = KACECFNECON.OPFGFINHFCE_Name;
+						OriginalName = KACECFNECON.OriginalName;
 					}
 					if(!string.IsNullOrEmpty(KACECFNECON.EABMLBFHJBH_CloseAtString))
 					{
@@ -379,6 +382,7 @@ public class LOBDIAABMKG
 		KACECFNECON = BKGFCEIFMNF.KACECFNECON_Desc;
 		LNPCOGEJGLL[(int)BJLONGBNPCI] = KACECFNECON;
 		OPFGFINHFCE_Name = BKGFCEIFMNF.OPFGFINHFCE_Name;
+		OriginalName = BKGFCEIFMNF.OriginalName;
 		KLMPFGOCBHC_Description = BKGFCEIFMNF.KACECFNECON_Desc.KLMPFGOCBHC_Description;
 		GJFPFFBAKGK_CloseAt = CCBEKGNDDBE.EGBOHDFBAPB_CloseAt;
 		EABMLBFHJBH_CloseAt = CCBEKGNDDBE.EGBOHDFBAPB_CloseAt;
@@ -387,6 +391,7 @@ public class LOBDIAABMKG
 		if(!string.IsNullOrEmpty(KACECFNECON.OPFGFINHFCE_Name))
 		{
 			OPFGFINHFCE_Name = KACECFNECON.OPFGFINHFCE_Name;
+			OriginalName = KACECFNECON.OriginalName;
 		}
 		if(!string.IsNullOrEmpty(KACECFNECON.FHHKLJCJNNC_FreeBadgeMess))
 		{
@@ -402,7 +407,7 @@ public class LOBDIAABMKG
 		long viewOrder = 0;
 		if(KACECFNECON != null)
 			viewOrder = KACECFNECON.EEFLOOBOAGF_ViewOrder;
-		EEFLOOBOAGF = GCAHJLOGMCI.PMBGPACNPIN(INDDJNMPONH_Category, OPFGFINHFCE_Name, KJBGCLPMLCG_OpenedAt, viewOrder);
+		EEFLOOBOAGF = GCAHJLOGMCI.PMBGPACNPIN(INDDJNMPONH_Category, OriginalName, KJBGCLPMLCG_OpenedAt, viewOrder);
 		NECDFDNBHFK = CCBEKGNDDBE;
 		NJLONELPNCD = BKGFCEIFMNF;
 		if(CCBEKGNDDBE.BMFEGOMNECF_Step[stepIdx - 1].FHBJOLPCAPN_MaxCount < 1)
@@ -498,18 +503,18 @@ public class LOBDIAABMKG
 			IJADMGDHEIE = FDEBLMKEMLF_TypeAndSeriesId.ToString("D5");
 			if(KACECFNECON == null)
 			{
-				EEFLOOBOAGF = GCAHJLOGMCI.PMBGPACNPIN(INDDJNMPONH, OPFGFINHFCE_Name, KJBGCLPMLCG_OpenedAt, 0);
+				EEFLOOBOAGF = GCAHJLOGMCI.PMBGPACNPIN(INDDJNMPONH, OriginalName, KJBGCLPMLCG_OpenedAt, 0);
 			}
 			else
 			{
 				if(KACECFNECON.OPKCNBFBBKP_BannerId == 0)
 				{
-					EEFLOOBOAGF = GCAHJLOGMCI.PMBGPACNPIN(INDDJNMPONH, OPFGFINHFCE_Name, KJBGCLPMLCG_OpenedAt, KACECFNECON.EEFLOOBOAGF_ViewOrder);
+					EEFLOOBOAGF = GCAHJLOGMCI.PMBGPACNPIN(INDDJNMPONH, OriginalName, KJBGCLPMLCG_OpenedAt, KACECFNECON.EEFLOOBOAGF_ViewOrder);
 				}
 				else
 				{
 					IJADMGDHEIE = KACECFNECON.OPKCNBFBBKP_BannerId.ToString("D5");
-					EEFLOOBOAGF = GCAHJLOGMCI.PMBGPACNPIN(INDDJNMPONH, OPFGFINHFCE_Name, KJBGCLPMLCG_OpenedAt, KACECFNECON.EEFLOOBOAGF_ViewOrder);
+					EEFLOOBOAGF = GCAHJLOGMCI.PMBGPACNPIN(INDDJNMPONH, OriginalName, KJBGCLPMLCG_OpenedAt, KACECFNECON.EEFLOOBOAGF_ViewOrder);
 				}
 			}
 			if(GHINEFPPDMH() < 0)
@@ -608,7 +613,7 @@ public class LOBDIAABMKG
 			this.INDDJNMPONH_Category = INDDJNMPONH;
 			MGBDCFIKBPM = PHIGDFMDJBO;
 			IJADMGDHEIE = ((int)INDDJNMPONH * 10000 + PHIGDFMDJBO).ToString("D5");
-			EEFLOOBOAGF = GCAHJLOGMCI.PMBGPACNPIN(INDDJNMPONH, JpStringLiterals.StringLiteral_11117, 0, 0);
+			EEFLOOBOAGF = GCAHJLOGMCI.PMBGPACNPIN(INDDJNMPONH, JpStringLiterals.StringLiteral_11117_Jp, 0, 0);
 		}
 		return b && b2;
 	}

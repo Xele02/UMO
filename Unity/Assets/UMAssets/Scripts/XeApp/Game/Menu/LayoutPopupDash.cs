@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using XeSys;
+using System.Linq;
 
 namespace XeApp.Game.Menu
 {
@@ -38,16 +39,51 @@ namespace XeApp.Game.Menu
 		public Action<int> OnSelectCallback { get; set; } // 0x40
 
 		// // RVA: 0x171B8CC Offset: 0x171B8CC VA: 0x171B8CC
-		// public void SetStatus(LayoutPopupDash.CostType type, PopupDashContentSetting.InitParam[] param, int own, int index) { }
+		public void SetStatus(CostType type, PopupDashContentSetting.InitParam[] param, int own, int index)
+		{
+			m_ownValue = own;
+			m_type = type;
+			m_param = param;
+			MessageBank bk = MessageManager.Instance.GetBank("menu");
+			string s = bk.GetMessageByLabel("popup_dash_button");
+			for(int i = 0; i < m_textButton.Length; i++)
+			{
+				if(i < m_param.Length)
+				{
+					m_textButton[i].text = string.Format(s, m_param[i].Rate);
+				}
+				else
+				{
+					m_textButton[i].text = "";
+				}
+			}
+			for(int i = 0; i < m_buttons.Length; i++)
+			{
+				m_buttons[i].Hidden = i >= m_param.Length;
+			}
+			UpdateCost(index);
+			m_textCaution[0].text = bk.GetMessageByLabel("popup_dash_caution");
+			m_textCaution[1].text = bk.GetMessageByLabel("popup_dash_caution_skip");
+			m_toggleButtonGroup.SelectGroupButton(index);
+		}
 
 		// // RVA: 0x171BFE0 Offset: 0x171BFE0 VA: 0x171BFE0
-		// public bool IsLoading() { }
+		public bool IsLoading()
+		{
+			return KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning || !IsLoaded();
+		}
 
 		// // RVA: 0x171C09C Offset: 0x171C09C VA: 0x171C09C
-		// public void Show() { }
+		public void Show()
+		{
+			return;
+		}
 
 		// // RVA: 0x171C0A0 Offset: 0x171C0A0 VA: 0x171C0A0
-		// public void Hide() { }
+		public void Hide()
+		{
+			return;
+		}
 
 		// RVA: 0x171C0A4 Offset: 0x171C0A4 VA: 0x171C0A4 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
@@ -92,6 +128,26 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x171C3E4 Offset: 0x171C3E4 VA: 0x171C3E4
-		// public void SetCostOver(bool isOver) { }
+		public void SetCostOver(bool isOver)
+		{
+			if(!isOver)
+			{
+				m_textCostOver.text = "";
+				m_imageCostOver.enabled = false;
+			}
+			else
+			{
+				MessageBank bk = MessageManager.Instance.GetBank("menu");
+				if(m_type == CostType.Ticket)
+				{
+					m_textCostOver.text = bk.GetMessageByLabel("popup_dash_cost_over_ticket");
+				}
+				else if(m_type == CostType.Energy)
+				{
+					m_textCostOver.text = bk.GetMessageByLabel("popup_dash_cost_over_energy");
+				}
+				m_imageCostOver.enabled = true;
+			}
+		}
 	}
 }

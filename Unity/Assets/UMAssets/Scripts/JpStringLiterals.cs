@@ -3,6 +3,7 @@ class JpStringLiterals
 {
 	public static string StringLiteral_367 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_367", " "); } } //0x03ba9074
 	public static string StringLiteral_381 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_381", "  "); } } //03ba90ac
+	public static string StringLiteral_1290 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_1290", "pt"); } } //03ba9ee0
 	public static string StringLiteral_1374 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_1374", "年"); } } //0x03baa030
 	public static string StringLiteral_1376 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_1376", "月"); } } // 0x03baa038
 	public static string StringLiteral_1378 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_1378", "日"); } } // 0x03baa040
@@ -127,6 +128,7 @@ class JpStringLiterals
 	public static string StringLiteral_10346 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10346", "LinkError : 自分自身のIDをリンクIDに指定している"); } } // 0x03bb2c60
 	public static string StringLiteral_10416 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10416", "<color=pink>最高スコア更新 "); } } // 0x03bb2d78
 	public static string StringLiteral_10431 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10431", "デビューガチャ"); } } //0x03bb2db4
+	public static string StringLiteral_10431_Jp = "デビューガチャ"; //0x03bb2db4
 	public static string StringLiteral_10443 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_10443", "プレート"); } } //0x03bb2de4
 	public static string StringLiteral_10882 { get { return "<color=red>EXライバル数のオーバーフロー："; } } // 03bb34c0
 	public static string StringLiteral_10890 { get { return "<color=cyan>ダミーマッチング イベント楽曲="; } } // 03bb34e0
@@ -176,6 +178,7 @@ class JpStringLiterals
 	public static string StringLiteral_11090 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_11090", "SHOP 通信エラー発生 label="); } } //0x03bb3800
 	public static string StringLiteral_11115 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_11115", "★５1枚確定"); } } //0x03bb3864
 	public static string StringLiteral_11117 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_11117", "デカルガチャ"); } } //0x03bb386c
+	public static string StringLiteral_11117_Jp = "デカルガチャ"; //0x03bb386c
 	public static string StringLiteral_11118 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_11118", "★４以上1枚確定"); } } //0x03bb3870
 	public static string StringLiteral_11128 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_11128", "初心者"); } } //0x03bb3898
 	public static string StringLiteral_11129 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_11129", "割引"); } } //0x03bb389c
@@ -243,6 +246,7 @@ class JpStringLiterals
 	public static string StringLiteral_12037 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_12037", "　"); } } // 0x03bb46cc
 	public static string StringLiteral_12038 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_12038", "…"); } } // 0x03bb46d0
 	public static string StringLiteral_12097 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_12097", " (歌マクロス"); } } // 0x03bb47bc
+	public static string StringLiteral_12097_Jp = " (歌マクロス"; // 0x03bb47bc
 	public static string StringLiteral_12139 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_12139", "オペレーション完了"); } } //0x03bb4864
 	public static string StringLiteral_12141 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_12141", "小隊"); } } //0x03bb486c
 	public static string StringLiteral_12148 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_12148", "Ⅰ"); } } // 0x03bb4888
@@ -472,6 +476,8 @@ class JpStringLiterals
 	public static string StringLiteral_17777 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_17777", "獲得したアイテムはありません。"); } } // 0x03bba07c
 	public static string StringLiteral_17787 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_17787", "％"); } } // 0x03bba0a4
 	public static string StringLiteral_17788 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_17788", "(UCアイテムは {0}UC に変換されました)"); } } // 0x03bba0a8
+	public static string StringLiteral_17823 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_17823", "消費ボーナス"); } } // 03bba134
+	public static string StringLiteral_17824 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_17824", "倍"); } } // 03bba138
 	public static string StringLiteral_17960 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_17960", "{0}回"); } } //0x03bba358
 	public static string StringLiteral_18022 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_18022", "使用スキル"); } } // 0x03bba450
 	public static string StringLiteral_18023 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_18023", "{0}秒"); } } //0x03bba454
@@ -604,37 +610,45 @@ class JpStringLiterals
 	public static string UMO_product_178088_name { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_178088_name", "★5確定デビューガチャ22 10連"); } }
 	public static string UMO_product_178088_name_jp = "★5確定デビューガチャ22 10連";
 	public static string UMO_product_178088_desc_name { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_178088_desc_name", "デビューガチャ"); } }
+	public static string UMO_product_178088_desc_name_jp ="デビューガチャ";
 	public static string UMO_product_429267_name { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_429267_name", "★5確定サービスガチャ8"); } }
 	public static string UMO_product_429267_name_jp = "★5確定サービスガチャ8";
 	public static string UMO_product_429267_desc_name { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_429267_desc_name", "★5確定サービスガチャ"); } }
+	public static string UMO_product_429267_desc_name_jp = "★5確定サービスガチャ";
 	public static string UMO_product_429267_desc_desc { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_429267_desc_desc", "★5確定サービスチケットを消費し\n★5のプレートを入手できます。\n※2022/3/31ラインナップ更新"); } }
 	public static string UMO_product_429712_name { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_429712_name", "サービスガチャ317"); } }
 	public static string UMO_product_429712_name_jp = "サービスガチャ317";
 	public static string UMO_product_429712_desc_name { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_429712_desc_name", "サービスガチャ"); } }
+	public static string UMO_product_429712_desc_name_jp = "サービスガチャ";
 	public static string UMO_product_429712_desc_desc { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_429712_desc_desc", "\n朝・昼・夜\n1日に3回歌晶石なしでも引けるガチャです。\n\n「こんなサービス1日3回しかしないんだからね！」\n　　　　　　　　　　　　　－シェリル・ノーム－"); } }
 	public static string UMO_product_429927_name { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_429927_name", "超時空ガチャ45"); } }
 	public static string UMO_product_429927_name_jp = "超時空ガチャ45";
 	public static string UMO_product_429927_desc_name { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_429927_desc_name", "超時空ガチャ"); } }
+	public static string UMO_product_429927_desc_name_jp = "超時空ガチャ";
 	public static string UMO_product_429927_desc_desc { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_429927_desc_desc", "超時空ガチャチケットを消費して\n★1～★6のプレートを入手できます。\n※2022/5/1ラインナップ更新"); } }
 	public static string UMO_product_429928_name { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_429928_name", "ピックアップガチャ159"); } }
 	public static string UMO_product_429928_name_jp = "ピックアップガチャ159";
 	public static string UMO_product_429928_desc_free_msg { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_429928_desc_free_msg", "1回無料！"); } }
 	public static string UMO_product_429928_desc_name { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_429928_desc_name", "★5以上確定ガチャ"); } }
+	public static string UMO_product_429928_desc_name_jp = "★5以上確定ガチャ";
 	public static string UMO_product_429929_name { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_429929_name", "ピックアップガチャ159 10連"); } }
 	public static string UMO_product_429929_name_jp = "ピックアップガチャ159 10連";
 	public static string UMO_product_429929_desc_free_msg { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_429929_desc_free_msg", "1回無料！"); } }
 	public static string UMO_product_429929_desc_kakutei { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_429929_desc_kakutei", "★5以上10枚確定"); } }
 	public static string UMO_product_429929_desc_name { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_429929_desc_name", "★5以上確定ガチャ"); } }
+	public static string UMO_product_429929_desc_name_jp = "★5以上確定ガチャ";
 	public static string UMO_product_429930_name { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_429930_name", "ピックアップガチャ159 10連 初回"); } }
 	public static string UMO_product_429930_name_jp = "ピックアップガチャ159 10連 初回";
 	public static string UMO_product_429930_desc_free_msg { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_429930_desc_free_msg", "1回無料！"); } }
 	public static string UMO_product_429930_desc_kakutei { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_429930_desc_kakutei", "★5以上10枚確定"); } }
 	public static string UMO_product_429930_desc_name { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_429930_desc_name", "★5以上確定ガチャ"); } }
+	public static string UMO_product_429930_desc_name_jp = "★5以上確定ガチャ";
 	public static string UMO_product_430020_name { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_430020_name", "お得ガチャ31096 10連"); } }
 	public static string UMO_product_430020_name_jp = "お得ガチャ31096 10連";
 	public static string UMO_product_430020_desc_free_msg { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_430020_desc_free_msg", "10連無料"); } }
 	public static string UMO_product_430020_desc_free_multi_msg { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_430020_desc_free_multi_msg", "1日1回\\n無料！"); } }
 	public static string UMO_product_430020_desc_name { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_430020_desc_name", "無料10連ガチャ"); } }
+	public static string UMO_product_430020_desc_name_jp = "無料10連ガチャ";
 	public static string UMO_product_67554_name { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_67554_name", "コンテニュー"); } }
 	public static string UMO_product_67554_name_jp = "コンテニュー";
 	public static string UMO_product_67554_desc { get { return DatabaseTextConverter.TranslateStringLiterals("UMO_product_67554_desc", "ゲーム中にコンテニューできます。"); } }
