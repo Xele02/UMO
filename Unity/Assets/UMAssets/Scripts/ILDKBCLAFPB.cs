@@ -698,10 +698,16 @@ public class ILDKBCLAFPB
 			}
 
 			// // RVA: 0x2023EC4 Offset: 0x2023EC4 VA: 0x2023EC4
-			// public int BKCOOGKFJJF() { }
+			public int BKCOOGKFJJF_GetPlayDashEventId()
+			{
+				return PFHPKAGBMOK_PlayDashEventId;
+			}
 
 			// // RVA: 0x2023ECC Offset: 0x2023ECC VA: 0x2023ECC
-			// public int GHEFLJANGIC() { }
+			public int GHEFLJANGIC_GetPlayDashSelect()
+			{
+				return LPPHJLBNAEO_PlayDashSelect;
+			}
 
 			// // RVA: 0x2023ED4 Offset: 0x2023ED4 VA: 0x2023ED4
 			public void FKJBADIPKHK_GetSelectionForCategory(FreeCategoryId.Type DEPGBBJMFED_CategoryId, out int GHBPLHBNMBK_MusicId, out OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType)
@@ -726,7 +732,11 @@ public class ILDKBCLAFPB
 			}
 
 			// // RVA: 0x2023FB0 Offset: 0x2023FB0 VA: 0x2023FB0
-			// public void KJGPOAEGFHK(int EKANGPODCEP, int MCNEIJAOLNO) { }
+			public void KJGPOAEGFHK_SetDashInfo(int EKANGPODCEP, int MCNEIJAOLNO)
+			{
+				PFHPKAGBMOK_PlayDashEventId = EKANGPODCEP;
+				LPPHJLBNAEO_PlayDashSelect = MCNEIJAOLNO;
+			}
 
 			// // RVA: 0x2023FBC Offset: 0x2023FBC VA: 0x2023FBC
 			public void ACGKEJKPFIA(FreeCategoryId.Type DEPGBBJMFED, int GHBPLHBNMBK, OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE)
@@ -973,19 +983,41 @@ public class ILDKBCLAFPB
 			}
 
 			//// RVA: 0x20246B0 Offset: 0x20246B0 VA: 0x20246B0
-			//public bool FKEJBAHCMGC(int LHMJFCCBPPN) { }
+			public bool FKEJBAHCMGC_CheckEvent(int LHMJFCCBPPN)
+			{
+				if(NFFKLFEOPMO_EventId != LHMJFCCBPPN)
+				{
+					NFFKLFEOPMO_EventId = LHMJFCCBPPN;
+					HNKJDJFFACC_Difficulty = 0;
+					MPKGEHBJOJM_FreeMusicId = 0;
+					return true;
+				}
+				return false;
+			}
 
 			//// RVA: 0x20246DC Offset: 0x20246DC VA: 0x20246DC
-			//public Difficulty.Type FFACBDAJJJP() { }
+			public Difficulty.Type FFACBDAJJJP_GetDifficulty()
+			{
+				return (Difficulty.Type)HNKJDJFFACC_Difficulty;
+			}
 
 			//// RVA: 0x20246E4 Offset: 0x20246E4 VA: 0x20246E4
-			//public int BMBELGEDKEG() { }
+			public int BMBELGEDKEG_GetFreeMusicId()
+			{
+				return MPKGEHBJOJM_FreeMusicId;
+			}
 
 			//// RVA: 0x20246EC Offset: 0x20246EC VA: 0x20246EC
-			//public void HJHBGHMNGKL(Difficulty.Type AKNELONELJK) { }
+			public void HJHBGHMNGKL_SetDifficulty(Difficulty.Type AKNELONELJK)
+			{
+				HNKJDJFFACC_Difficulty = (int)AKNELONELJK;
+			}
 
 			//// RVA: 0x20246F4 Offset: 0x20246F4 VA: 0x20246F4
-			//public void PDOLFONNGHB(int GHBPLHBNMBK) { }
+			public void PDOLFONNGHB_SetFreeMusicId(int GHBPLHBNMBK)
+			{
+				MPKGEHBJOJM_FreeMusicId = GHBPLHBNMBK;
+			}
 		}
 		
 		public class FLOIJPMBBIL_BattleEvent

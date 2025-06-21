@@ -43,6 +43,9 @@ public static class UMOEventList
         new EventData() { Id=13038, Name="超銀河総力LIVE", BlockName="event_raid_b"},
         new EventData() { Id=13039, Name="超銀河総力LIVE", BlockName="event_raid_c"},
         new EventData() { Id=13040, Name="超銀河総力LIVE", BlockName="event_raid_d"},
+        new EventData() { Id=1061, Name="超時空ファイナルLive ～Act.1～", BlockName="event_collection_a"},
+        new EventData() { Id=1059, Name="ふたりの恋のマホウ", BlockName="event_collection_b"},
+        new EventData() { Id=1060, Name="復刻　超時空ヴィーナス ワルキューレ", BlockName="event_collection_c"},
         //new EventData() { Id=4, Name="GodivaRanking", BlockName="event_godiva_ranking"},
     };
 

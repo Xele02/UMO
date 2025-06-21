@@ -604,6 +604,7 @@ namespace ExternLib
 				public string kakutei = "";
 				public int kakutei_num;
 				public string name = "";
+				public string original_name = "";
 				public string desc = "";
 				public long open_time;
 				public string templ = "";
@@ -668,6 +669,7 @@ namespace ExternLib
 						res["kakutei"] = description.kakutei;
 					}
 					res["name"] = description.name;
+					res["original_name"] = description.original_name;
 					if(description.desc != "")
 						res["desc"] = description.desc;
 					res["open_time"] = description.open_time;
@@ -734,6 +736,7 @@ namespace ExternLib
 					group_id = 30023,
 					kakutei_num = 5,
 					name = JpStringLiterals.UMO_product_178088_desc_name,
+					original_name = JpStringLiterals.UMO_product_178088_desc_name_jp,
 					open_time = 1556636400,
 					templ = "gacha_debut_detail_30021",
 					view_order = 48132221017718819
@@ -764,6 +767,7 @@ namespace ExternLib
 					group_id = 101008,
 					label = "popup_gacha_pass_rate_warning",
 					name = JpStringLiterals.UMO_product_429267_desc_name,
+					original_name = JpStringLiterals.UMO_product_429267_desc_name_jp,
 					open_time = 1648695600,
 					sale_button_visible = 0,
 					templ = "gacha_item_detail",
@@ -794,6 +798,7 @@ namespace ExternLib
 					free_texture_id = 0,
 					group_id = 10318,
 					name = JpStringLiterals.UMO_product_429712_desc_name,
+					original_name = JpStringLiterals.UMO_product_429712_desc_name_jp,
 					open_time = 1650596400,
 					sale_button_visible = 0,
 					ver = 2
@@ -824,6 +829,7 @@ namespace ExternLib
 					group_id = 100045,
 					label = "popup_gacha_pass_rate_warning",
 					name = JpStringLiterals.UMO_product_429927_desc_name,
+					original_name = JpStringLiterals.UMO_product_429927_desc_name,
 					open_time = 1651330800,
 					sale_button_visible = 0,
 					templ = "gacha_pass_detail",
@@ -854,6 +860,7 @@ namespace ExternLib
 					group_id = 41252,
 					label = "popup_gacha_once_rate_warning",
 					name = JpStringLiterals.UMO_product_429928_desc_name,
+					original_name = JpStringLiterals.UMO_product_429928_desc_name_jp,
 					open_time = 1651330800,
 					sale_button_visible = 0,
 					templ = "gacha_season_detail_41252",
@@ -895,6 +902,7 @@ namespace ExternLib
 					kakutei = JpStringLiterals.UMO_product_429929_desc_kakutei,
 					label = "popup_gacha_once_rate_warning",
 					name = JpStringLiterals.UMO_product_429929_desc_name,
+					original_name = JpStringLiterals.UMO_product_429929_desc_name_jp,
 					open_time = 1651330800,
 					sale_button_visible = 0,
 					templ = "gacha_season_detail_41252",
@@ -937,6 +945,7 @@ namespace ExternLib
 					kakutei = JpStringLiterals.UMO_product_429930_desc_kakutei,
 					label = "popup_gacha_once_rate_warning",
 					name = JpStringLiterals.UMO_product_429930_desc_name,
+					original_name = JpStringLiterals.UMO_product_429930_desc_name_jp,
 					open_time = 1651330800,
 					sale_button_visible = 0,
 					templ = "gacha_season_detail_41252",
@@ -984,6 +993,7 @@ namespace ExternLib
 					group_id = 31096,
 					label = "popup_gacha_pass_rate_warning",
 					name = JpStringLiterals.UMO_product_430020_desc_name,
+					original_name = JpStringLiterals.UMO_product_430020_desc_name_jp,
 					one_day = 1,
 					open_time = 1653577200,
 					sale_button_visible = 0,

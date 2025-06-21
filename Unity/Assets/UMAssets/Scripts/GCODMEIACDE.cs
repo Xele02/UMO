@@ -57,7 +57,7 @@ public class GCODMEIACDE
         BKKPKIGLMCN_Ranks[1] = JGEOBNENMAH.HHCJCDFCLOB.NEFFKLNAAJI_ScoreRankByDiva[1];
         PLKMAOGKFPP = 0;
         HBHMAKNGKFK.Clear();
-        for(int i = 0; i < 2; i++)
+        for(int i = 0; i < 3; i++)
         {
             if(JGEOBNENMAH.HHCJCDFCLOB.JCDPLILNKDG[i] != 0)
             {

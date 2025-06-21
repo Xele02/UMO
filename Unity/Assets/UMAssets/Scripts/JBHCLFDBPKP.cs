@@ -36,6 +36,7 @@ public class OEJEEHMMPBK
 public class JBHCLFDBPKP
 {
 	public string OPFGFINHFCE_Name; // 0x8
+	public string OriginalName;
 	public IKMBBPDBECA KACECFNECON_Desc; // 0xC
 	public List<OEJEEHMMPBK> BMFEGOMNECF_Steps; // 0x10
 
@@ -43,6 +44,7 @@ public class JBHCLFDBPKP
 	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK, bool ENDFGMBBBEE)
 	{
 		OPFGFINHFCE_Name = (string)IDLHJIOMJBK[AFEHLCGHAEE_Strings.OPFGFINHFCE_name];
+		OriginalName = (string)IDLHJIOMJBK["original_name"];
 		if(IDLHJIOMJBK[AFEHLCGHAEE_Strings.KLMPFGOCBHC_description] != null)
 		{
 			KACECFNECON_Desc = IKMBBPDBECA.HEGEKFMJNCC((string)IDLHJIOMJBK[AFEHLCGHAEE_Strings.KLMPFGOCBHC_description]);

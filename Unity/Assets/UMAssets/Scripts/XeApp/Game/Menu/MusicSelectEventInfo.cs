@@ -138,7 +138,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1676A84 Offset: 0x1676A84 VA: 0x1676A84
-		// public void SetTicketCountLabel(string label) { }
+		public void SetTicketCountLabel(string label)
+		{
+			m_curTicketLabelText.text = label;
+		}
 
 		// // RVA: 0x1676AC0 Offset: 0x1676AC0 VA: 0x1676AC0
 		public void SetTicketCount(int count)

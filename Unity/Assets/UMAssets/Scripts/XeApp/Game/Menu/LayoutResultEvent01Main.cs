@@ -199,6 +199,7 @@ namespace XeApp.Game.Menu
 				});
 				layout.count.SetNumber(data.HBHMAKNGKFK[i].HMFFHLPNMPH_Cnt, 0);
 				layout.point.text = string.Concat(RichTextUtility.MakeColorTagString(data.HBHMAKNGKFK[i].DNBFMLBNAEE_Point.ToString(), SystemTextColor.ImportantColor) + JpStringLiterals.StringLiteral_1290);
+				layout.total.text = data.HBHMAKNGKFK[i].AHOKAPCGJMA_TargetNum.ToString();
 				layout.target_num = data.HBHMAKNGKFK[i].AHOKAPCGJMA_TargetNum;
 			}
 			for(int i = 0; i < m_PointText.Length; i++)

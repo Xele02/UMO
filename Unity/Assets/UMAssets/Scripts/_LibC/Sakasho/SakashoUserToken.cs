@@ -149,7 +149,7 @@ namespace ExternLib
 						received_at = 0,
 						closed_at = 32509868340,
 						type = 1,
-					});
+					}, p);
 					AddInventoryItem(new UserInventoryItem() 
 					{
 
@@ -161,7 +161,7 @@ namespace ExternLib
 						received_at = 0,
 						closed_at = 32509868340,
 						type = 1,
-					});
+					}, p);
 					AddInventoryItem(new UserInventoryItem() 
 					{
 
@@ -173,7 +173,7 @@ namespace ExternLib
 						received_at = 0,
 						closed_at = 32509868340,
 						type = 1,
-					});
+					}, p);
 					AddInventoryItem(new UserInventoryItem() 
 					{
 
@@ -185,7 +185,7 @@ namespace ExternLib
 						received_at = 0,
 						closed_at = 32509868340,
 						type = 0,
-					});
+					}, p);
 					AddInventoryItem(new UserInventoryItem() 
 					{
 
@@ -197,7 +197,7 @@ namespace ExternLib
 						received_at = 0,
 						closed_at = 32509868340,
 						type = 0,
-					});
+					}, p);
 					AddInventoryItem(new UserInventoryItem() 
 					{
 
@@ -209,7 +209,7 @@ namespace ExternLib
 						received_at = 0,
 						closed_at = 32509868340,
 						type = 0,
-					});
+					}, p);
 					AddInventoryItem(new UserInventoryItem() 
 					{
 
@@ -221,7 +221,7 @@ namespace ExternLib
 						received_at = 0,
 						closed_at = 32509868340,
 						type = 0,
-					});
+					}, p);
 				}
 			}
 

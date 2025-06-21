@@ -1262,7 +1262,7 @@ public class ILCCJNDFFOB
 			if(MOHDLLIJELH.MNDFBBMNJGN_IsUsingTicket)
 			{
 				json["remaint_stamina"] = MOHDLLIJELH.AELBIEDNPGB_GetTicketCount(null);
-				json["use_stamina"] = MOHDLLIJELH.EAMODCHMCEL(OMNOFMEBLAD.AKNELONELJK_Difficulty, OMNOFMEBLAD.LFGNLKKFOCD_IsLine6);
+				json["use_stamina"] = MOHDLLIJELH.EAMODCHMCEL_GetTicketCost(OMNOFMEBLAD.AKNELONELJK_Difficulty, OMNOFMEBLAD.LFGNLKKFOCD_IsLine6);
 			}
 			json["event_id"] = MOHDLLIJELH.PGIIDPEGGPI_EventId;
 			json["event_name"] = MOHDLLIJELH.DGCOMDILAKM_EventName;

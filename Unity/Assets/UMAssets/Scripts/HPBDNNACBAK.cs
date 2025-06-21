@@ -475,7 +475,7 @@ public class HPBDNNACBAK
 				{
 					if(gachaType == GCAHJLOGMCI.KNMMOMEHDON_GachaType.GENEIBGNMPH_3)
 					{
-						if(saveBeginnerGachaVersion != currentBeginnerGachaVersion || !BBKDLIPKADG[i].OPFGFINHFCE_Name.Contains(JpStringLiterals.StringLiteral_10431))
+						if(saveBeginnerGachaVersion != currentBeginnerGachaVersion || !BBKDLIPKADG[i].OPFGFINHFCE_Name.Contains(JpStringLiterals.StringLiteral_10431_Jp))
 						{
 							if(gachaListByType[(int)gachaType].ContainsKey(gachaId))
 							{
@@ -489,7 +489,7 @@ public class HPBDNNACBAK
 					}
 					else if(gachaType < GCAHJLOGMCI.KNMMOMEHDON_GachaType.AEFCOHJBLPO_11)
 					{
-						if(saveBeginnerGachaVersion != currentBeginnerGachaVersion || !BBKDLIPKADG[i].OPFGFINHFCE_Name.Contains(JpStringLiterals.StringLiteral_10431))
+						if(saveBeginnerGachaVersion != currentBeginnerGachaVersion || !BBKDLIPKADG[i].OPFGFINHFCE_Name.Contains(JpStringLiterals.StringLiteral_10431_Jp))
 						{
 							if(gachaListByType[(int)gachaType].ContainsKey(gachaId))
 							{

@@ -149,7 +149,7 @@ public class KBPDNHOKEKD_ProductId
 		{
 			OPFGFINHFCE_Name = OPFGFINHFCE_Name.Substring(0, idx);
 		}
-		idx = OPFGFINHFCE_Name.IndexOf(JpStringLiterals.StringLiteral_12097);
+		idx = OPFGFINHFCE_Name.IndexOf(JpStringLiterals.StringLiteral_12097_Jp);
 		if(idx > -1)
 		{
 			OPFGFINHFCE_Name = OPFGFINHFCE_Name.Substring(0, idx);

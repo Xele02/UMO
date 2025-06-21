@@ -151,12 +151,12 @@ namespace ExternLib
 			}
 		}
 
-		public static UserInventoryItem AddInventoryItem(UserInventoryItem item)
+		public static UserInventoryItem AddInventoryItem(UserInventoryItem item, PlayerData p)
 		{
 			UserInventory inv = new UserInventory();
-			inv.Load(playerAccount.playerData.serverData);
+			inv.Load(p.serverData);
 			inv.AddItem(item);
-			inv.Save(playerAccount.playerData.serverData);
+			inv.Save(p.serverData);
 			return item;
 		}
 

@@ -82,6 +82,57 @@ namespace ExternLib
 						}
 					}
 				}
+				else
+				{
+					bool found = false;
+					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false);
+					if(ev != null)
+					{
+						PHBACNMCMHG_EventCollection NDFIEMPPMLF = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestId) as PHBACNMCMHG_EventCollection;
+						if(NDFIEMPPMLF != null)
+						{
+							if(keys[i].StartsWith(NDFIEMPPMLF.NGHKJOEDLIP.OCDMGOGMHGE_RewardPrefix))
+							{
+								long pt = ev.FBGDBGKNKOD_GetCurrentPoint();
+								string idStr = keys[i].Replace(NDFIEMPPMLF.NGHKJOEDLIP.OCDMGOGMHGE_RewardPrefix, "");
+								int id = int.Parse(idStr);
+								bool itemFound = false;
+								for(int j = 0; j < NDFIEMPPMLF.FCIPEDFHFEM_RewardStep.Count; j++)
+								{
+									PHBACNMCMHG_EventCollection.PFGFDNLGPKP item = NDFIEMPPMLF.FCIPEDFHFEM_RewardStep[j].AHJNPEAMCCH_Items.Find((PHBACNMCMHG_EventCollection.PFGFDNLGPKP _) =>
+									{
+										return id == _.NMKEOMCMIPP_RewardId;
+									});
+									if(item != null)
+									{
+										EDOHBJAPLPF_JsonData dataRes = new EDOHBJAPLPF_JsonData();
+										dataRes[AFEHLCGHAEE_Strings.LJNAKDMILMC_key] = keys[i];
+										dataRes[AFEHLCGHAEE_Strings.LJGOOOMOMMA_message] = "Event reward";
+										dataRes[AFEHLCGHAEE_Strings.OOIJCMLEAJP_is_received] = NDFIEMPPMLF.FCIPEDFHFEM_RewardStep[i].DNBFMLBNAEE_Point <= pt;
+										dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items] = new EDOHBJAPLPF_JsonData();
+										dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+										EDOHBJAPLPF_JsonData it = new EDOHBJAPLPF_JsonData();
+										dataRes[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items].Add(it);
+										MFDJIFIIPJD data = new MFDJIFIIPJD();
+										data.KHEKNNFCAOI(item.GLCLFMGPMAN_ItemId, item.HMFFHLPNMPH_Cnt);
+										it[AFEHLCGHAEE_Strings.HAAJGNCFNJM_item_name] = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId);
+										it[AFEHLCGHAEE_Strings.OCNINMIMHGC_item_value] = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId;
+										it[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = item.HMFFHLPNMPH_Cnt;
+										it[AFEHLCGHAEE_Strings.MJBKGOJBPAD_item_type] = data.MJBKGOJBPAD_Type;
+										res[AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes].Add(dataRes);
+										itemFound = true;
+										break;
+									}
+								}
+								found = true;
+							}
+						}
+					}
+					if(!found)
+					{
+						UnityEngine.Debug.LogError("Reward key not found : "+keys[i]);
+					}
+				}
 			}
 
 			// AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes
@@ -193,7 +244,7 @@ namespace ExternLib
 						type = 109,
 						message = ILLPDLODANB.HHMKDAIGMKC_IsDebutMission((ILLPDLODANB.LOEGALDKHPL)quest.INDDJNMPONH_Type) ? JpStringLiterals.UMO_achievements_debut_quest : JpStringLiterals.UMO_achievements_normal_quest,
 						closed_at = closeAt
-					});
+					}, playerAccount.playerData);
 					//UnityEngine.Debug.LogError(addedItem.item_name+" "+addedItem.item_value);
 					addedItem.AddInInventoryResult(d);
                 }
@@ -220,7 +271,7 @@ namespace ExternLib
 						type = 109,
 						message = JpStringLiterals.UMO_achievements_daily_quest,
 						closed_at = closeAt
-					});
+					}, playerAccount.playerData);
 					//UnityEngine.Debug.LogError(addedItem.item_name+" "+addedItem.item_value);
 					addedItem.AddInInventoryResult(d);
                 }
@@ -243,7 +294,7 @@ namespace ExternLib
 						type = 109,
 						message = JpStringLiterals.UMO_achievements_freemusic,
 						closed_at = closeAt
-					});
+					}, playerAccount.playerData);
 					if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(rinfo.FKNBLDPIPMC_GetGlobalId(reward)) != EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC)
 						TodoLogger.LogError(TodoLogger.SakashoServer, "Unknown item : " + rinfo.FKNBLDPIPMC_GetGlobalId(reward));
 					addedItem.AddInInventoryResult(d);
@@ -265,7 +316,7 @@ namespace ExternLib
 						type = 109,
 						message = JpStringLiterals.UMO_achievements_episode,
 						closed_at = closeAt
-					});
+					}, playerAccount.playerData);
 					if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(reward.KIJAPOFAGPN_Item) != EKLNMHFCAOI.FKGCBLHOOCL_Category.PJDEOPMBGKJ_PaidVC)
 						TodoLogger.LogError(TodoLogger.SakashoServer, "Unknown item : " + reward.KIJAPOFAGPN_Item);
 					addedItem.AddInInventoryResult(d);
@@ -323,7 +374,7 @@ namespace ExternLib
 							type = 109,
 							message = JpStringLiterals.UMO_achievements_new_offer,
 							closed_at = closeAt
-						});
+						}, playerAccount.playerData);
 						addedItem.AddInInventoryResult(d);
 					}
 				}
@@ -343,7 +394,7 @@ namespace ExternLib
 						type = 109,
 						message = JpStringLiterals.UMO_achievements_costume,
 						closed_at = closeAt
-					});
+					}, playerAccount.playerData);
 					addedItem.AddInInventoryResult(d);
 				}
 				else if(key.StartsWith("rating_reward_receive_key_"))
@@ -363,7 +414,7 @@ namespace ExternLib
 							item_value = 1001,
 							message = "Rating reward",
 							closed_at = closeAt
-						});
+						}, playerAccount.playerData);
 						addedItem.AddInInventoryResult(d);
 					}
 					else
@@ -384,7 +435,7 @@ namespace ExternLib
 									item_value = dbrating.FKNBLDPIPMC_GetItemId(j),
 									message = "Rating reward",
 									closed_at = closeAt
-								});
+								}, playerAccount.playerData);
 								addedItem.AddInInventoryResult(d);
 							}
 						}
@@ -426,7 +477,7 @@ namespace ExternLib
 														item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
 														message = "Event reward "+ev.DGCOMDILAKM_EventName,
 														closed_at = closeAt
-													});
+													}, playerAccount.playerData);
 													addedItem.AddInInventoryResult(d);
 													found = true;
 													break;
@@ -465,7 +516,7 @@ namespace ExternLib
 													item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
 													message = JpStringLiterals.StringLiteral_9777,
 													closed_at = closeAt
-												});
+												}, playerAccount.playerData);
 												addedItem.AddInInventoryResult(d);
 												found = true;
 												break;
@@ -509,7 +560,7 @@ namespace ExternLib
 														item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
 														message = "Event reward "+ev.DGCOMDILAKM_EventName,
 														closed_at = closeAt
-													});
+													}, playerAccount.playerData);
 													addedItem.AddInInventoryResult(d);
 													found = true;
 													break;
@@ -548,7 +599,7 @@ namespace ExternLib
 													item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
 													message = JpStringLiterals.StringLiteral_9777,
 													closed_at = closeAt
-												});
+												}, playerAccount.playerData);
 												addedItem.AddInInventoryResult(d);
 												found = true;
 												break;
@@ -605,7 +656,7 @@ namespace ExternLib
 													item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
 													message = JpStringLiterals.StringLiteral_9777,
 													closed_at = closeAt
-												});
+												}, playerAccount.playerData);
 												addedItem.AddInInventoryResult(d);
 												found = true;
 												break;
@@ -620,6 +671,92 @@ namespace ExternLib
 								else
 								{
 									UnityEngine.Debug.LogError("Missing reward for "+(string)msgData["keys"][i]+", key does no match event prefix "+dbSection.NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix);
+								}
+							}
+						}
+						{
+							PHBACNMCMHG_EventCollection dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestId) as PHBACNMCMHG_EventCollection;
+							if(dbSection != null)
+							{
+								blockFound = true;
+								if(key.StartsWith(dbSection.NGHKJOEDLIP.OCDMGOGMHGE_RewardPrefix))
+								{
+									bool found = false;
+									if(!found)
+									{
+										for(int j = 0; j < dbSection.NNMPGOAGEOL_Missions.Count; j++)
+										{
+											string itKey = "";
+											AKIIJBEJOEP mission = dbSection.NNMPGOAGEOL_Missions[j];
+											if(mission.IKJAAKEINHC_Slt < 1)
+											{
+												if(mission.HPAOAKMKCMA_Slt2 > 0)
+												{
+													itKey += dbSection.NGHKJOEDLIP.OCDMGOGMHGE_RewardPrefix;
+													itKey += mission.HPAOAKMKCMA_Slt2.ToString("D4");
+												}
+											}
+											else
+											{
+												itKey += dbSection.NGHKJOEDLIP.OCDMGOGMHGE_RewardPrefix;
+												itKey += mission.IKJAAKEINHC_Slt.ToString();
+											}
+											if (key == itKey)
+											{
+												MFDJIFIIPJD data = new MFDJIFIIPJD();
+												data.KHEKNNFCAOI(mission.KIJAPOFAGPN_ItemId, mission.JDLJPNMLFID_ItemCount);
+												UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
+												{
+													item_count = mission.JDLJPNMLFID_ItemCount,
+													item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
+													item_type = data.MJBKGOJBPAD_Type,
+													item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
+													message = JpStringLiterals.StringLiteral_9777,
+													closed_at = closeAt
+												}, playerAccount.playerData);
+												addedItem.AddInInventoryResult(d);
+												found = true;
+												break;
+											}
+										}
+									}
+									if(!found)
+									{
+										for(int k = 0; k < dbSection.FCIPEDFHFEM_RewardStep.Count && !found; k++)
+										{
+											for(int j = 0; j < dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Items.Count; j++)
+											{
+												if(dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Items[j].NMKEOMCMIPP_RewardId > 0)
+												{
+													if(key == string.Concat(dbSection.NGHKJOEDLIP.OCDMGOGMHGE_RewardPrefix, dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Items[j].NMKEOMCMIPP_RewardId.ToString()))
+													{
+														MFDJIFIIPJD data = new MFDJIFIIPJD();
+														data.KHEKNNFCAOI(dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Items[j].GLCLFMGPMAN_ItemId, dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Items[j].HMFFHLPNMPH_Cnt);
+														UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
+														{
+															item_count = dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Items[j].HMFFHLPNMPH_Cnt,
+															item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
+															item_type = data.MJBKGOJBPAD_Type,
+															item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
+															message = "Event reward "+ev.DGCOMDILAKM_EventName,
+															closed_at = closeAt
+														}, playerAccount.playerData);
+														addedItem.AddInInventoryResult(d);
+														found = true;
+														break;
+													}
+												}
+											}
+										}
+									}
+									if(!found)
+									{
+										UnityEngine.Debug.LogError("Missing reward for "+(string)msgData["keys"][i]+", reward item id not found");
+									}
+								}
+								else
+								{
+									UnityEngine.Debug.LogError("Missing reward for "+(string)msgData["keys"][i]+", key does no match event prefix "+dbSection.NGHKJOEDLIP.OCDMGOGMHGE_RewardPrefix);
 								}
 							}
 						}

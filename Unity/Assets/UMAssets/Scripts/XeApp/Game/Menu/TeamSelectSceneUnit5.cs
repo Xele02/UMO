@@ -1443,7 +1443,7 @@ namespace XeApp.Game.Menu
 					MKIKFJKPEHK m = new MKIKFJKPEHK();
 					if(!m.DPICLLJJPAC(d, (int)Database.Instance.gameSetup.musicInfo.difficultyType, Database.Instance.gameSetup.musicInfo.IsLine6Mode))
 						return;
-					int v = m_eventCtrl.EAMODCHMCEL((int)Database.Instance.gameSetup.musicInfo.difficultyType, Database.Instance.gameSetup.musicInfo.IsLine6Mode);
+					int v = m_eventCtrl.EAMODCHMCEL_GetTicketCost((int)Database.Instance.gameSetup.musicInfo.difficultyType, Database.Instance.gameSetup.musicInfo.IsLine6Mode);
 					if(Database.Instance.gameSetup.SelectedDashIndex > -1)
 					{
 						v = m.KLOOIJIDKGO_Cost[Database.Instance.gameSetup.SelectedDashIndex];
