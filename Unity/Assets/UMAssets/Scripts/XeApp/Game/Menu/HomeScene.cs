@@ -162,7 +162,12 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				TodoLogger.LogError(TodoLogger.EventBoxGacha_8, "Event");
+				m_boxGachaEventCtrl = evGacha;
+				if(m_boxGachaEventCtrl.BEDCLNJIEGF(time))
+				{
+					m_fesBanner.Setup(m_boxGachaEventCtrl, time);
+					m_fesBanner.onClickButton = OnClickKujiButton;
+				}
 			}
 			if(m_playRecordBanner.IsAvailabilityPeriod(DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion))
 			{
@@ -933,7 +938,25 @@ namespace XeApp.Game.Menu
 		// private void OnClickFesButton() { }
 
 		// // RVA: 0x975768 Offset: 0x975768 VA: 0x975768
-		// private void OnClickKujiButton() { }
+		private void OnClickKujiButton()
+		{
+			if(!TryLobbyAnnounce())
+			{
+				if(!MenuScene.CheckDatelineAndAssetUpdate())
+				{
+					long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+					if(m_boxGachaEventCtrl.BEDCLNJIEGF(time))
+					{
+						SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_001);
+						HGFPAFPGIKG h = new HGFPAFPGIKG(m_boxGachaEventCtrl.PGIIDPEGGPI_EventId);
+						GachaBoxScene.GachaBoxArgs arg = new GachaBoxScene.GachaBoxArgs(m_boxGachaEventCtrl.PGIIDPEGGPI_EventId);
+						arg.seasonType = h.ENJLGHMEKEL_Type;
+						arg.halfTimeId = 1;
+						MenuScene.Instance.Mount(TransitionUniqueId.HOME_GACHABOX, arg, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+					}
+				}
+			}
+		}
 
 		// // RVA: 0x975A54 Offset: 0x975A54 VA: 0x975A54
 		private void OnClickHomeBanner(int bannerId)
@@ -1084,7 +1107,7 @@ namespace XeApp.Game.Menu
 								TodoLogger.LogError(TodoLogger.EventSp_7, "Event SP");
 								break;
 							case OHCAABOMEOF.KGOGMKMBCPP_EventType.OCCGDMDBCHK_EventGacha:
-								TodoLogger.LogError(TodoLogger.EventBoxGacha_8, "Event Gacha");
+								MenuScene.Instance.Mount(TransitionUniqueId.HOME_NEWYEAREVENT_GACHABOX, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 								break;
 							case OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign:
 								TodoLogger.LogError(TodoLogger.EventPresentCampaign_9, "Event");
@@ -1294,7 +1317,7 @@ namespace XeApp.Game.Menu
 					TodoLogger.LogError(TodoLogger.EventSp_7, "Event SP");
 					break;
 				case OHCAABOMEOF.KGOGMKMBCPP_EventType.OCCGDMDBCHK_EventGacha:
-					TodoLogger.LogError(TodoLogger.EventBoxGacha_8, "Event Gacha");
+					MenuScene.Instance.Mount(TransitionUniqueId.HOME_NEWYEAREVENT_GACHABOX, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					break;
 				case OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid:
 					{

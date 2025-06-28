@@ -28,6 +28,7 @@ class JpStringLiterals
 
 	public static string StringLiteral_9714 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9714", "第"); } } //0x03bb2280
 	public static string StringLiteral_9715 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9715", "話"); } } //0x03bb2284
+	public static string StringLiteral_9765 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9765", "報酬リスト"); } } //03bb234c
 	public static string StringLiteral_9767 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9767", "超時空ユニット"); } } // 0x03bb2354
 	public static string StringLiteral_9768 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9768", "エピソード達成報酬"); } } //0x03bb2358
 	public static string StringLiteral_9769 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_9769", "くりかえしエピソード解放報酬達成！"); } } //0x03bb235c

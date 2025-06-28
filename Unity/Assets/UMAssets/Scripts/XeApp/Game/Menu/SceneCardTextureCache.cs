@@ -112,7 +112,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x159F87C Offset: 0x159F87C VA: 0x159F87C
-		// public void LoadSilhouette(int id, int rank, Action<IiconTexture> callback) { }
+		public void LoadSilhouette(int id, int rank, Action<IiconTexture> callback)
+		{
+			Load(string.Format("ct/sc/me/03/{0:D6}_{1:D2}.xab", id, rank), callback);
+		}
 
 		// // RVA: 0x159F824 Offset: 0x159F824 VA: 0x159F824
 		/*public StringBuilder MakeBundlePath(StringBuilder strBuilder, int sceneId, int evolvId, int baseRare, bool isFeed)

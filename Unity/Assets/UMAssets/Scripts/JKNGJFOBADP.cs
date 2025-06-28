@@ -778,8 +778,17 @@ public class JKNGJFOBADP
 		JNGINLMOJKH_EventGachaTicket.JDNAAGCHCOH dbEvGacha = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NKOKFIMNCJM_EventGachaTicket.CDENCMNHNGA[MHFBCINOJEE - 1];
 		if(AHEFHIMGIBI.MMAIJOCPJHP_EventBoxGacha != null)
 		{
-			TodoLogger.LogError(TodoLogger.EventBoxGacha_8, "Event gacha");
-		}
+            ALIPBIMCAPN_EventBoxGacha.GLNFOMDKJJH d = AHEFHIMGIBI.MMAIJOCPJHP_EventBoxGacha.FBCJICEPLED[dbEvGacha.EJPKFBHNDGI_EvNo - 1];
+			if(dbEvGacha.DOOGFEGEKLG_Max < d.BGCOKABBHNC_GachaTicketCnt + HMFFHLPNMPH)
+			{
+				d.BGCOKABBHNC_GachaTicketCnt = dbEvGacha.DOOGFEGEKLG_Max;
+			}
+			else
+			{
+				d.BGCOKABBHNC_GachaTicketCnt += HMFFHLPNMPH;
+			}
+			NGEPPDAOIBN(EKLNMHFCAOI.FKGCBLHOOCL_Category.LLFAAOHPMIC_EventGachaTicket, MHFBCINOJEE, HMFFHLPNMPH, d.BGCOKABBHNC_GachaTicketCnt, 0);
+        }
 	}
 
 	//// RVA: 0x1470D90 Offset: 0x1470D90 VA: 0x1470D90
@@ -788,7 +797,7 @@ public class JKNGJFOBADP
 		JNGINLMOJKH_EventGachaTicket.JDNAAGCHCOH dbEvGacha = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NKOKFIMNCJM_EventGachaTicket.CDENCMNHNGA[MHFBCINOJEE - 1];
 		if(AHEFHIMGIBI.MMAIJOCPJHP_EventBoxGacha != null)
 		{
-			TodoLogger.LogError(TodoLogger.EventBoxGacha_8, "Event gacha");
+			return dbEvGacha.DOOGFEGEKLG_Max < AHEFHIMGIBI.MMAIJOCPJHP_EventBoxGacha.FBCJICEPLED[dbEvGacha.EJPKFBHNDGI_EvNo - 1].BGCOKABBHNC_GachaTicketCnt + HMFFHLPNMPH;
 		}
 		return false;
 	}
