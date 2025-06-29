@@ -94,7 +94,7 @@ namespace XeApp.Game.Menu
 			m_buttonSingle.Setup(1, view.AAIKGPGDHIB_Cost);
 			int a = view.MFHLHIDLKGN_NumTicket / view.AAIKGPGDHIB_Cost;
 			m_buttonSingle.Disable = a < 1;
-			int b = Mathf.Clamp(Mathf.Min(new int[2]{view.MFHLHIDLKGN_NumTicket, a}), 0, 10);
+			int b = Mathf.Clamp(Mathf.Min(new int[2]{view.JALHJAPAFLK_BoxCurrent, a}), 1, 10);
 			m_buttonMulti.Setup(b, b * view.AAIKGPGDHIB_Cost);
 			m_buttonMulti.Disable = a < b;
 			DateTime d1 = Utility.GetLocalDateTime(view.JOFAGCFNKIO_Start);

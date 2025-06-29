@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using UnityEngine;
 using XeSys;
 
 [System.Obsolete("Use IMDBGDNPLJA_EventBoxGacha", true)]
@@ -217,9 +218,10 @@ public class IMDBGDNPLJA_EventBoxGacha : DIHHCBACKGG_DbSection
 		if (CurrenEvent != null && CurrenEvent.EnableBlock(JIKKNHIAEKG_BlockName))
 		{
 			System.DateTime date = Utility.GetLocalDateTime(Utility.GetCurrentUnixTime());
-			System.DateTime date2 = Utility.GetLocalDateTime(NGHKJOEDLIP.BONDDBOFBND_Start);
+			long rDate = /*NGHKJOEDLIP.OHGDNJLFDFF > NGHKJOEDLIP.BONDDBOFBND_Start ? NGHKJOEDLIP.OHGDNJLFDFF : */NGHKJOEDLIP.BONDDBOFBND_Start;
+			System.DateTime date2 = Utility.GetLocalDateTime(rDate);
 			date = date.AddDays(-1);
-			long offset = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, date2.Hour, date2.Minute, date2.Second) - NGHKJOEDLIP.BONDDBOFBND_Start;
+			long offset = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, date2.Hour, date2.Minute, date2.Second) - rDate;
 			if (NGHKJOEDLIP.BONDDBOFBND_Start != 0) NGHKJOEDLIP.BONDDBOFBND_Start += offset;
 			if (NGHKJOEDLIP.HPNOGLIFJOP_End1 != 0) NGHKJOEDLIP.HPNOGLIFJOP_End1 += offset;
 			if (NGHKJOEDLIP.FCNKIKOOFKE != 0) NGHKJOEDLIP.FCNKIKOOFKE += offset;
@@ -229,6 +231,13 @@ public class IMDBGDNPLJA_EventBoxGacha : DIHHCBACKGG_DbSection
 			if (NGHKJOEDLIP.KNLGKBBIBOH_End != 0) NGHKJOEDLIP.KNLGKBBIBOH_End += offset;
 			if (NGHKJOEDLIP.OHGDNJLFDFF != 0) NGHKJOEDLIP.OHGDNJLFDFF += offset;
 			if (NGHKJOEDLIP.PHKLJGNMFBL != 0) NGHKJOEDLIP.PHKLJGNMFBL += offset;
+			/*UnityEngine.Debug.LogError(Utility.GetLocalDateTime(NGHKJOEDLIP.BONDDBOFBND_Start).ToLongDateString()+" "+
+				Utility.GetLocalDateTime(NGHKJOEDLIP.HPNOGLIFJOP_End1).ToLongDateString()+" "+
+				Utility.GetLocalDateTime(NGHKJOEDLIP.OHGDNJLFDFF).ToLongDateString()+" "+
+				Utility.GetLocalDateTime(NGHKJOEDLIP.PHKLJGNMFBL).ToLongDateString());*/
+			// Tmp, move NGHKJOEDLIP.OHGDNJLFDFF & NGHKJOEDLIP.PHKLJGNMFBL to start & end
+			NGHKJOEDLIP.OHGDNJLFDFF = NGHKJOEDLIP.BONDDBOFBND_Start;
+			NGHKJOEDLIP.PHKLJGNMFBL = NGHKJOEDLIP.HPNOGLIFJOP_End1;
 
 			for(int i = 0; i < KGDBEMPMAIJ_Boxes.Count; i++)
 			{

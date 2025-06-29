@@ -264,7 +264,7 @@ public class JBCAHMMCOKK
 						{
 							ev.HCDGELDHFHB_UpdateStatus(JHNMKKNEENE);
 							if(ev.HIDHLFCBIDE_EventType > OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby || 
-								(((1 << (int)ev.HIDHLFCBIDE_EventType) & 0x2f90U) == 0))
+								(((1 << (int)ev.HIDHLFCBIDE_EventType) & 0x2f90U) == 0)) // 4 7 8 9 10 11 13
 							{
 								if(ev.HJPNJBCJPNJ(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6/*6*/))
 								{

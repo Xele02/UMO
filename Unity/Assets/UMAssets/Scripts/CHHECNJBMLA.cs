@@ -196,7 +196,7 @@ public class CHHECNJBMLA_EventBoxGacha : IKDICBBFBMI_EventBase
 			GFIBLLLHMPD_StartAdventureId = NENJCIMMEBC.NGHKJOEDLIP.HIOOGLEJBKM_StartAdventureId;
 			CAKEOPLJDAF_EndAdventureId = NENJCIMMEBC.NGHKJOEDLIP.FJCADCDNPMP_EndAdventureId;
 			LEPALMDKEOK_IsPointReward = true;
-			AAODGCEBJCG = NENJCIMMEBC.NGHKJOEDLIP.GMFNMNOIJHI > 0;
+			AAODGCEBJCG = NENJCIMMEBC.NGHKJOEDLIP.GMFNMNOIJHI > 0 || RuntimeSettings.CurrentSettings.UnlimitedEvent;
 			for(int i = 0; i < KPOMHFLKMKI_LastRankUpdateTime.Length; i++)
 			{
 				KPOMHFLKMKI_LastRankUpdateTime[i] = 0;

@@ -46,6 +46,12 @@ public static class UMOEventList
         new EventData() { Id=1061, Name="超時空ファイナルLive ～Act.1～", BlockName="event_collection_a"},
         new EventData() { Id=1059, Name="ふたりの恋のマホウ", BlockName="event_collection_b"},
         new EventData() { Id=1060, Name="復刻　超時空ヴィーナス ワルキューレ", BlockName="event_collection_c"},
+        //new EventData() { Id=8061, Name="アーネスト艦長からの報酬", BlockName="event_box_gacha_a"},
+        //new EventData() { Id=8062, Name="アーネスト艦長からの報酬", BlockName="event_box_gacha_b"},
+        //new EventData() { Id=8063, Name="アーネスト艦長からの報酬", BlockName="event_box_gacha_c"},
+        new EventData() { Id=8204, Name="年末年始娘々祭　娘くじ", BlockName="event_box_gacha_d"},
+        new EventData() { Id=8203, Name="4周年　娘々祭　娘くじ 後半", BlockName="event_box_gacha_e"},
+        new EventData() { Id=8039, Name="3周年　娘々祭　娘くじ 後半", BlockName="event_box_gacha_f"},
         //new EventData() { Id=4, Name="GodivaRanking", BlockName="event_godiva_ranking"},
     };
 

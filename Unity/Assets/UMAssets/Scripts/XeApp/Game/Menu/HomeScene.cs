@@ -155,6 +155,7 @@ namespace XeApp.Game.Menu
 			{
 				TodoLogger.LogError(TodoLogger.EventSp_7, "Event");
 			}
+			bool canDisplayRecordBanner = true; // UMO Add, don't display record banner an kuji at same time, they are overlapping
 			CHHECNJBMLA_EventBoxGacha evGacha = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.JNHHEMLIDGJ() as CHHECNJBMLA_EventBoxGacha;
 			if(evGacha == null)
 			{
@@ -167,9 +168,10 @@ namespace XeApp.Game.Menu
 				{
 					m_fesBanner.Setup(m_boxGachaEventCtrl, time);
 					m_fesBanner.onClickButton = OnClickKujiButton;
+					canDisplayRecordBanner = false;
 				}
 			}
-			if(m_playRecordBanner.IsAvailabilityPeriod(DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion))
+			if(canDisplayRecordBanner && m_playRecordBanner.IsAvailabilityPeriod(DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion))
 			{
 				m_playRecordBanner.onClickButton = OnClickPlayRecordBannerButton;
 				m_playRecordBanner.Setup();

@@ -50,6 +50,8 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x19A4D6C Offset: 0x19A4D6C VA: 0x19A4D6C Slot: 10
 		protected virtual void SetRemainCount(int num /*= -1*/, int max/* = -1*/)
 		{
+			if(num < 0)
+				num = m_view.JALHJAPAFLK_BoxCurrent;
 			if(max < 0)
 				max = m_view.DMPELKEMCCJ_BoxTotal;
 			m_textRemain.text = MessageManager.Instance.GetMessage("menu", "popup_event_gacha_box_text_02");
