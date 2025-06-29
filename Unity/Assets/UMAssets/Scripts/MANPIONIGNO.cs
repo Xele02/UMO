@@ -866,7 +866,7 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JMPNGBGNCFO_EventGoDiva.PFAKPFKJJKA() == null)
 			{
 				CCBMJNPFPBB_EventGoDiva.KIJJHJHLBAK saveEv = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JMPNGBGNCFO_EventGoDiva.FBCJICEPLED[ev.NGHKJOEDLIP.MOEKELIIDEO_SaveIdx];
-				JANMJPOKLFL.JCHLONCMPAJ();
+				JANMJPOKLFL_InventoryUtil.JCHLONCMPAJ();
 				JOFBHHHLBBN_Rewards.Clear();
 				List<string> ls = new List<string>(3);
 				List<int> li = new List<int>();
@@ -885,7 +885,7 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 							str.Append(i);
 							str.Append(':');
 							str.Append(ev.FCIPEDFHFEM_Rewards[i].DNBFMLBNAEE_Point);
-							JANMJPOKLFL.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.MGEFPKOJKBL_9, str.ToString());
+							JANMJPOKLFL_InventoryUtil.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.MGEFPKOJKBL_9, str.ToString());
 							for(int j = 0; j < ev.FCIPEDFHFEM_Rewards[i].AHJNPEAMCCH_Items.Count; j++)
 							{
 								if(ev.FCIPEDFHFEM_Rewards[i].AHJNPEAMCCH_Items[j].NMKEOMCMIPP_RewardId > 0)
@@ -893,7 +893,7 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 									ls.Add(ev.NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix + ev.FCIPEDFHFEM_Rewards[i].AHJNPEAMCCH_Items[j].NMKEOMCMIPP_RewardId.ToString());
 									li.Add(ev.FCIPEDFHFEM_Rewards[i].AHJNPEAMCCH_Items[j].PJPDOCNJNGJ_TimeLimited ? (int)date : -1);
 								}
-								JANMJPOKLFL.CPIICACGNBH_AddItem(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, ev.FCIPEDFHFEM_Rewards[i].AHJNPEAMCCH_Items[j].GLCLFMGPMAN_ItemId, ev.FCIPEDFHFEM_Rewards[i].AHJNPEAMCCH_Items[j].HMFFHLPNMPH_ItemCnt, null, 0);
+								JANMJPOKLFL_InventoryUtil.CPIICACGNBH_AddItem(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, ev.FCIPEDFHFEM_Rewards[i].AHJNPEAMCCH_Items[j].GLCLFMGPMAN_ItemId, ev.FCIPEDFHFEM_Rewards[i].AHJNPEAMCCH_Items[j].HMFFHLPNMPH_ItemCnt, null, 0);
 								saveEv.IPNLHCLFIDB_SetRewardReceived(i, true);
 							}
 							JOFBHHHLBBN_Rewards.Add(i);

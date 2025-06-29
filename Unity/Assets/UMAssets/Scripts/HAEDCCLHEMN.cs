@@ -1294,7 +1294,7 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 			{
 				CCPKHBECNLH_EventBattle.BHIDLKBIJFK d = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DKJBALDICBG_EventBattle.FBCJICEPLED[dbSection.NGHKJOEDLIP.MOEKELIIDEO_SaveIdx];
 				long point = FBGDBGKNKOD_GetCurrentPoint();
-				JANMJPOKLFL.JCHLONCMPAJ();
+				JANMJPOKLFL_InventoryUtil.JCHLONCMPAJ();
 				JOFBHHHLBBN_Rewards.Clear();
 				List<string> l1 = new List<string>(3);
 				List<int> l2 = new List<int>(3);
@@ -1311,7 +1311,7 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 							str.Append(i);
 							str.Append(':');
 							str.Append(dbSection.FCIPEDFHFEM_Rewards[i].DNBFMLBNAEE_Point);
-							JANMJPOKLFL.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.MGEFPKOJKBL_9, str.ToString());
+							JANMJPOKLFL_InventoryUtil.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.MGEFPKOJKBL_9, str.ToString());
 							for(int j = 0; j < dbSection.FCIPEDFHFEM_Rewards[i].AHJNPEAMCCH_Items.Count; j++)
 							{
 								if(dbSection.FCIPEDFHFEM_Rewards[i].AHJNPEAMCCH_Items[j].NMKEOMCMIPP_RewardId > 0)
@@ -1319,7 +1319,7 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 									l1.Add(string.Concat(dbSection.NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix, dbSection.FCIPEDFHFEM_Rewards[i].AHJNPEAMCCH_Items[j].NMKEOMCMIPP_RewardId.ToString()));
 									l2.Add(dbSection.FCIPEDFHFEM_Rewards[i].AHJNPEAMCCH_Items[j].PJPDOCNJNGJ_IsInventoryLimited ? (int)dbSection.NGHKJOEDLIP.JBFDHOIKAIK_InventoryEndDate : -1);
 								}
-								JANMJPOKLFL.CPIICACGNBH_AddItem(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, dbSection.FCIPEDFHFEM_Rewards[i].AHJNPEAMCCH_Items[j].GLCLFMGPMAN_ItemId, dbSection.FCIPEDFHFEM_Rewards[i].AHJNPEAMCCH_Items[j].HMFFHLPNMPH_Cnt, null, 0);
+								JANMJPOKLFL_InventoryUtil.CPIICACGNBH_AddItem(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, dbSection.FCIPEDFHFEM_Rewards[i].AHJNPEAMCCH_Items[j].GLCLFMGPMAN_ItemId, dbSection.FCIPEDFHFEM_Rewards[i].AHJNPEAMCCH_Items[j].HMFFHLPNMPH_Cnt, null, 0);
 								d.IPNLHCLFIDB(i, true);
 							}
 							JOFBHHHLBBN_Rewards.Add(i);

@@ -147,7 +147,7 @@ namespace XeApp.Game.Menu
 						IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6/*6*/, false);
 						if (ev == null)
 							return null;
-						util = ev.JANMJPOKLFL;
+						util = ev.JANMJPOKLFL_InventoryUtil;
 						break;
 					default:
 						return null;
