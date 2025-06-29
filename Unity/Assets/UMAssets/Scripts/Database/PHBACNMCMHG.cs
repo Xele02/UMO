@@ -405,7 +405,7 @@ public class PHBACNMCMHG_EventCollection : DIHHCBACKGG_DbSection
 				d.PPFNGGCBJKC = array[i].PPFNGGCBJKC;
 				d.KFCIJBLDHOK = array[i].KFCIJBLDHOK;
 				d.JLEIHOEGMOP = array[i].JLEIHOEGMOP;
-				if(i > array.Length / 2)
+				if(i < array.Length / 2)
 					ADPFKHEMNBL.Add(d);
 				else
 					GKCBPNPEJJF.Add(d);
