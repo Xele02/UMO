@@ -2,6 +2,8 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 using XeSys.Gfx;
+using XeApp.Game.Menu;
+using XeSys;
 
 namespace XeApp.Game.Common
 {
@@ -69,19 +71,99 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xEAC1B0 Offset: 0xEAC1B0 VA: 0xEAC1B0
-		// public void Setup(IKDICBBFBMI cont, long currentTime) { }
+		public void Setup(IKDICBBFBMI_EventBase cont, long currentTime)
+		{
+			if(cont != null)
+			{
+				long start = 0;
+				if(cont.NGOFCFJHOMI_Status <= KGCNCBOKCBA.GNENJEHKMHD_EventStatus.DOAENCHBAEO_11)
+				{
+					if(((int)cont.NGOFCFJHOMI_Status & 0xfe) == 0) // 1 to 7
+					{
+						if(((int)cont.NGOFCFJHOMI_Status & 0xc01) != 0) // 0/10/11
+							return;
+						start = cont.JDDFILGNGFH;
+					}
+					else
+					{
+						start = cont.GLIMIGNNGGB_Start;
+					}
+				}
+				m_controller = cont;
+				SetBanner(start, 0, currentTime, "");
+				SetTicket(currentTime);
+			}
+		}
 
 		// // RVA: 0xEAC288 Offset: 0xEAC288 VA: 0xEAC288
-		// public void SetBanner(long start, long end, long currentTime, string text = "") { }
+		public void SetBanner(long start, long end, long currentTime, string text = "")
+		{
+			SetIcon(m_controller, currentTime);
+			if(currentTime >= start || start - currentTime == 0)
+			{
+				m_buttonBanner.Disable = false;
+				SetPeriod("");
+				SetStatus("");
+			}
+			else
+			{
+				int d, h, m, s;
+				MusicSelectSceneBase.ExtractRemainTime((int)(start - currentTime), out d, out h, out m, out s);
+				m_buttonBanner.Disable = true;
+				SetPeriod("");
+				SetStatus(MessageManager.Instance.GetMessage("menu", "home_fes_remain_prefix") + MusicSelectSceneBase.MakeRemainTime(d, h, m, s));
+			}
+			m_buttonBanner.ClearOnClickCallback();
+			m_buttonBanner.AddOnClickCallback(() =>
+			{
+				//0xEACE58
+				if(onClickButton != null)
+					onClickButton();
+			});
+		}
 
 		// // RVA: 0xEACA00 Offset: 0xEACA00 VA: 0xEACA00
-		// public void SetPeriod(string period) { }
+		public void SetPeriod(string period)
+		{
+			this.period = period;
+			if(period != "")
+			{
+				m_textPeriod.text = period;
+				m_textPeriodSwitch.SetActive(true);
+			}
+			else
+			{
+				m_textPeriodSwitch.SetActive(false);
+			}
+		}
 
 		// // RVA: 0xEACAE8 Offset: 0xEACAE8 VA: 0xEACAE8
-		// public void SetStatus(string text) { }
+		public void SetStatus(string text)
+		{
+			status = text;
+			if(text != "")
+			{
+				m_textStatus.text = text;
+				m_textStatusSwitch.SetActive(true);
+			}
+			else
+			{
+				m_textStatusSwitch.SetActive(false);
+			}
+		}
 
 		// // RVA: 0xEAC7AC Offset: 0xEAC7AC VA: 0xEAC7AC
-		// public void SetIcon(IKDICBBFBMI cont, long currentTime) { }
+		public void SetIcon(IKDICBBFBMI_EventBase cont, long currentTime)
+		{
+			if(cont.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.OCCGDMDBCHK_EventGacha)
+			{
+				m_imageBannerIcon.sprite = m_tableReplace[2].sprite;
+			}
+			else if(cont.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp)
+			{
+				TodoLogger.LogError(TodoLogger.EventSp_7, "SetIcon");
+			}
+		}
 
 		// // RVA: 0xEAC4E8 Offset: 0xEAC4E8 VA: 0xEAC4E8
 		public void SetTicket(long currentTime)
@@ -94,12 +176,22 @@ namespace XeApp.Game.Common
 			}
 			else if(m_controller is CHHECNJBMLA_EventBoxGacha)
 			{
-				TodoLogger.LogError(TodoLogger.EventBoxGacha_8, "Event Box Gacha");
+				if(!(m_controller as CHHECNJBMLA_EventBoxGacha).BEDCLNJIEGF(currentTime))
+					return;
 			}
 			else
 			{
 				return;
 			}
+			HGFPAFPGIKG h = new HGFPAFPGIKG(m_controller.PGIIDPEGGPI_EventId);
+			m_imageTicketIcon.enabled = false;
+			GameManager.Instance.ItemTextureCache.Load(h.JHNEFBNEAAO, (IiconTexture texture) =>
+			{
+				//0xEACE6C
+				m_imageTicketIcon.enabled = true;
+				texture.Set(m_imageTicketIcon);
+			});
+			m_textTicketNum.text = string.Format(JpStringLiterals.StringLiteral_14007, h.MFHLHIDLKGN_NumTicket);
 		}
 
 		// // RVA: 0xEACBD0 Offset: 0xEACBD0 VA: 0xEACBD0
@@ -144,13 +236,5 @@ namespace XeApp.Game.Common
 		{
 			return m_inOutAnime.IsPlaying();
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73D614 Offset: 0x73D614 VA: 0x73D614
-		// // RVA: 0xEACE58 Offset: 0xEACE58 VA: 0xEACE58
-		// private void <SetBanner>b__29_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73D624 Offset: 0x73D624 VA: 0x73D624
-		// // RVA: 0xEACE6C Offset: 0xEACE6C VA: 0xEACE6C
-		// private void <SetTicket>b__33_0(IiconTexture texture) { }
 	}
 }

@@ -186,14 +186,50 @@ public class DKJMDIFAKKD_VcItem : DIHHCBACKGG_DbSection
 						data.EGBOHDFBAPB_CloseAt = Utility.GetTargetUnixTime(now.Year, 3, 7, 0, 0, 0);
 					}
 				}
-				else if(data.PPFNGGCBJKC_Id == 6 || 
-						data.PPFNGGCBJKC_Id == 7 || 
-						data.PPFNGGCBJKC_Id == 8 || 
-						data.PPFNGGCBJKC_Id == 9 || 
-						data.PPFNGGCBJKC_Id == 10 || 
-						data.PPFNGGCBJKC_Id == 14 /*New Year*/ ) // Don't enable
+				else if(data.PPFNGGCBJKC_Id == 6) //4004 / 4002
 				{
-
+					// 6 Kuji Ticket 	2 6 2 5 Tuesday, 13 July 2021 Monday, 30 August 2021
+					if(UMOEventList.GetCurrentEvent() != null)
+					{
+						string str = UMOEventList.GetCurrentEvent().BlockName;
+						if(str == "event_box_gacha_a" || str == "event_box_gacha_b" || str == "event_box_gacha_c")
+						{
+							data.EGBOHDFBAPB_CloseAt = Utility.GetCurrentUnixTime() + 3600 * 24 * 360;
+						}
+					}
+				}
+				else if(data.PPFNGGCBJKC_Id == 8) //4004 / 4002
+				{
+					// 8 :				2 8 2 5 Sunday, 26 December 2021 Saturday, 29 January 2022
+					if(UMOEventList.GetCurrentEvent() != null)
+					{
+						string str = UMOEventList.GetCurrentEvent().BlockName;
+						if(str == "event_box_gacha_d")
+						{
+							data.EGBOHDFBAPB_CloseAt = Utility.GetCurrentUnixTime() + 3600 * 24 * 360;
+						}
+					}
+				}
+				else if(data.PPFNGGCBJKC_Id == 9) //4003
+				{
+					// 9 : 				2 9 2 7 Friday, 30 July 2021 Monday, 30 August 2021 // 4eme anniversary
+					if(UMOEventList.GetCurrentEvent() != null)
+					{
+						string str = UMOEventList.GetCurrentEvent().BlockName;
+						if(str == "event_box_gacha_e" || str == "event_box_gacha_f")
+						{
+							data.EGBOHDFBAPB_CloseAt = Utility.GetCurrentUnixTime() + 3600 * 24 * 360;
+						}
+					}
+				}
+				else if(data.PPFNGGCBJKC_Id == 7 || //5002
+						data.PPFNGGCBJKC_Id == 10 || //2004
+						data.PPFNGGCBJKC_Id == 14 /*New Year*/ ) // 5001 // Don't enable
+				{
+					
+					// 7 : 				2 7 2 6 Wednesday, 10 November 2021 Saturday, 04 December 2021
+					//10 : 44/74 New year SP set 				2 10 2 10 Thursday, 31 December 2020 Sunday, 31 January 2021
+					//14 :	45 46 47 New Year Gift					2 14 2 11 Friday, 31 December 2021 Friday, 28 January 2022
 				}
 				else // 1 (all) & 15 (costume ticket)
 				{

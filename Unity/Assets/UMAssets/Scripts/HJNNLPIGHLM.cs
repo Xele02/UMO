@@ -839,7 +839,7 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase
 			{
 				FJGNPNFLHPH_EventCollection.JIALCLGJPKL save = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.MBAHCFLBDHN_EventCollection.FBCJICEPLED[ev.NGHKJOEDLIP.MOEKELIIDEO_SaveIdx];
 				long pt = FBGDBGKNKOD_GetCurrentPoint();
-				JANMJPOKLFL.JCHLONCMPAJ();
+				JANMJPOKLFL_InventoryUtil.JCHLONCMPAJ();
 				JOFBHHHLBBN_Rewards.Clear();
 				List<string> ls = new List<string>(3);
 				List<int> li = new List<int>(3);
@@ -856,7 +856,7 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase
 							str.Append(i);
 							str.Append(':');
 							str.Append(ev.FCIPEDFHFEM_RewardStep[i].DNBFMLBNAEE_Point);
-							JANMJPOKLFL.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.MGEFPKOJKBL_9, str.ToString());
+							JANMJPOKLFL_InventoryUtil.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.MGEFPKOJKBL_9, str.ToString());
 							for(int j = 0; j < ev.FCIPEDFHFEM_RewardStep[i].AHJNPEAMCCH_Items.Count; j++)
 							{
 								if(ev.FCIPEDFHFEM_RewardStep[i].AHJNPEAMCCH_Items[j].NMKEOMCMIPP_RewardId > 0)
@@ -864,7 +864,7 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase
 									ls.Add(ev.NGHKJOEDLIP.OCDMGOGMHGE_RewardPrefix + ev.FCIPEDFHFEM_RewardStep[i].AHJNPEAMCCH_Items[j].NMKEOMCMIPP_RewardId);
 									li.Add(!ev.FCIPEDFHFEM_RewardStep[i].AHJNPEAMCCH_Items[j].PJPDOCNJNGJ_IsLimited ? -1 : (int)ev.NGHKJOEDLIP.JBFDHOIKAIK_InventoryEndDate);
 								}
-								JANMJPOKLFL.CPIICACGNBH_AddItem(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, ev.FCIPEDFHFEM_RewardStep[i].AHJNPEAMCCH_Items[j].GLCLFMGPMAN_ItemId, ev.FCIPEDFHFEM_RewardStep[i].AHJNPEAMCCH_Items[j].HMFFHLPNMPH_Cnt, null, 0);
+								JANMJPOKLFL_InventoryUtil.CPIICACGNBH_AddItem(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, ev.FCIPEDFHFEM_RewardStep[i].AHJNPEAMCCH_Items[j].GLCLFMGPMAN_ItemId, ev.FCIPEDFHFEM_RewardStep[i].AHJNPEAMCCH_Items[j].HMFFHLPNMPH_Cnt, null, 0);
 								save.IPNLHCLFIDB(i, true);
 							}
 							JOFBHHHLBBN_Rewards.Add(i);

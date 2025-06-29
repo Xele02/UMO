@@ -618,7 +618,8 @@ public class EKLNMHFCAOI
 			case FKGCBLHOOCL_Category.LLFAAOHPMIC_EventGachaTicket:
 				if(LDEGEHAEALK.MMAIJOCPJHP_EventBoxGacha != null)
 				{
-					TodoLogger.LogError(TodoLogger.EventBoxGacha_8, "ALHCGDMEMID_GetNumItems Event");
+					JNGINLMOJKH_EventGachaTicket.JDNAAGCHCOH tkt = LKMHPJKIFDN.NKOKFIMNCJM_EventGachaTicket.CDENCMNHNGA[NANNGLGOFKH - 1];
+					return LDEGEHAEALK.MMAIJOCPJHP_EventBoxGacha.FBCJICEPLED[tkt.EJPKFBHNDGI_EvNo - 1].BGCOKABBHNC_GachaTicketCnt;
 				}
 				break;
 			case FKGCBLHOOCL_Category.DLBHNNOHLMM_PresentItem:
@@ -811,7 +812,8 @@ public class EKLNMHFCAOI
 			case FKGCBLHOOCL_Category.LLFAAOHPMIC_EventGachaTicket:
 				if (LDEGEHAEALK.MMAIJOCPJHP_EventBoxGacha != null)
 				{
-					TodoLogger.LogError(TodoLogger.EventBoxGacha_8, "ALHCGDMEMID_SetNumItems Event");
+					JNGINLMOJKH_EventGachaTicket.JDNAAGCHCOH tkt = LKMHPJKIFDN.NKOKFIMNCJM_EventGachaTicket.CDENCMNHNGA[NANNGLGOFKH - 1];
+					LDEGEHAEALK.MMAIJOCPJHP_EventBoxGacha.FBCJICEPLED[tkt.EJPKFBHNDGI_EvNo - 1].BGCOKABBHNC_GachaTicketCnt = HMFFHLPNMPH;
 				}
 				break;
 			case FKGCBLHOOCL_Category.DLBHNNOHLMM_PresentItem:

@@ -532,12 +532,15 @@ public class ILLPDLODANB
 	//// RVA: 0x9F4608 Offset: 0x9F4608 VA: 0x9F4608
 	public static BKANGIKIEML.NODKLJHEAJB ODEHLBNBPPE(IKDICBBFBMI_EventBase FBFNJMKPBBA)
 	{
-		if(FBFNJMKPBBA.HIDHLFCBIDE_EventType >= OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp && FBFNJMKPBBA.HIDHLFCBIDE_EventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign/*9*/)
+        OHCAABOMEOF.KGOGMKMBCPP_EventType type = FBFNJMKPBBA.HIDHLFCBIDE_EventType;
+        if (type >= OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp && type < OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign/*9*/)
 		{
-			TodoLogger.LogError(TodoLogger.EventSp_7, "Event");
-			TodoLogger.LogError(TodoLogger.EventBoxGacha_8, "Event");
-		}
-		if ((int)FBFNJMKPBBA.HIDHLFCBIDE_EventType - 1 > 13)
+            IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, false);
+			if(ev == null)
+				return BKANGIKIEML.NODKLJHEAJB.HJNNKCMLGFL;
+			type = ev.HIDHLFCBIDE_EventType;
+        }
+		if ((int)type - 1 > 13)
 			return 0;
 		return new BKANGIKIEML.NODKLJHEAJB[14]
 		{
@@ -555,7 +558,7 @@ public class ILLPDLODANB
 			BKANGIKIEML.NODKLJHEAJB.BPNDHDHHKGE_38/*38*/,
 			BKANGIKIEML.NODKLJHEAJB.HJNNKCMLGFL/*0*/,
 			BKANGIKIEML.NODKLJHEAJB.CJCABIKGFGG_28/*28*/
-		}[(int)FBFNJMKPBBA.HIDHLFCBIDE_EventType - 1];
+		}[(int)type - 1];
 	}
 
 	//// RVA: 0x9F474C Offset: 0x9F474C VA: 0x9F474C

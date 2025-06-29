@@ -23,7 +23,7 @@ namespace XeApp.Game.Common
 		private int m_numberMin; // 0x38
 		private int m_number; // 0x3C
 
-		// public int Number { get; } 0xAF3F14
+		public int Number { get { return m_number; } } //0xAF3F14
 		public int DigitMax { get { return m_digitMax; } } //0xAF3F1C
 
 		// RVA: 0xAF3F24 Offset: 0xAF3F24 VA: 0xAF3F24 Slot: 5
