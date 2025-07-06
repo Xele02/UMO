@@ -225,6 +225,39 @@ namespace ExternLib
 				res["inventories"].Add(data);
 			}
 
+			// Adding campaign result if needed
+			if(jsonData.BBAJPINMOEP_Contains("onlyUnreceived") && (bool)jsonData["onlyUnreceived"] && page == 1)
+			{
+				if(playerAccount.playerData.serverData.BBAJPINMOEP_Contains("ticket"))
+				{
+					if((int)playerAccount.playerData.serverData["ticket"]["received"] == 0 && 
+						(string)playerAccount.playerData.serverData["ticket"]["pending"] == "" && 
+						(string)playerAccount.playerData.serverData["ticket"]["entry_date"] != "")
+					{
+						HIADOIECMFP_EventPresentCampaign db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection("event_present_campaign_a") as HIADOIECMFP_EventPresentCampaign;
+						if(db != null)
+						{
+							for(int i = 0; i < 10; i++)
+							{
+								int id = UnityEngine.Random.Range(1, db.OBPOHDENMHH.Count);
+								EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+								data["id"] = 0;
+								data["item_count"] = 1;
+								data["item_name"] = "trigger_item";
+								data["item_type"] = 2;
+								data["item_value"] = id;
+								data["message"] = "";
+								data["received_at"] = 0;
+								data["closed_at"] = 0;
+								data["created_at"] = 0;
+								data["type"] = 1;
+								res["inventories"].Add(data);
+							}
+						}
+					}
+				}
+			}
+
 			/*EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
 			data["id"] = 1;
 			data["item_count"] = 200;

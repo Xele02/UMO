@@ -1906,10 +1906,28 @@ public class ILCCJNDFFOB
 	}
 
 	// // RVA: 0x914720 Offset: 0x914720 VA: 0x914720
-	// public void CDNFJBAJAMM(CANAFALMGLI MOHDLLIJELH, int JBEFLJENKAC) { }
+	public void CDNFJBAJAMM(CANAFALMGLI_EventPresentCampaign MOHDLLIJELH, int JBEFLJENKAC)
+	{
+		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
+		FLBFCCIEPNC_InitBaseJson(json, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
+		json["event_id"] = MOHDLLIJELH.PGIIDPEGGPI_EventId;
+		json["event_name"] = MOHDLLIJELH.DGCOMDILAKM_EventName;
+		json["day_id"] = JBEFLJENKAC;
+		json["entry_date"] = MOHDLLIJELH.JFHOMINJHJK();
+		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.CDNFJBAJAMM_58, json, false);
+	}
 
 	// // RVA: 0x914ABC Offset: 0x914ABC VA: 0x914ABC
-	// public void BLDDKDNOCFA(CANAFALMGLI MOHDLLIJELH, string EBAMGNMELPO, string HBODCMLFDOB) { }
+	public void BLDDKDNOCFA(CANAFALMGLI_EventPresentCampaign MOHDLLIJELH, string EBAMGNMELPO, string HBODCMLFDOB)
+	{
+		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
+		FLBFCCIEPNC_InitBaseJson(json, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
+		json["event_id"] = MOHDLLIJELH.PGIIDPEGGPI_EventId;
+		json["event_name"] = MOHDLLIJELH.DGCOMDILAKM_EventName;
+		json["entry_date"] = EBAMGNMELPO;
+		json["result"] = HBODCMLFDOB;
+		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.BLDDKDNOCFA_59, json, false);
+	}
 
 	// // RVA: 0x914E50 Offset: 0x914E50 VA: 0x914E50
 	public void DADNPOJNIBL(IKDICBBFBMI_EventBase MOHDLLIJELH)

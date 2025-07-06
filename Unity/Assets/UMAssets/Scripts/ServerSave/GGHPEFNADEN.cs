@@ -1,4 +1,6 @@
 
+using System.Collections.Generic;
+
 [System.Obsolete("Use GGHPEFNADEN_Ticket", true)]
 public class GGHPEFNADEN { }
 public class GGHPEFNADEN_Ticket : KLFDBFMNLBL_ServerSaveBlock
@@ -22,7 +24,16 @@ public class GGHPEFNADEN_Ticket : KLFDBFMNLBL_ServerSaveBlock
 	public override bool DMICHEJIAJL { get { return false; } } // 0xAA2A6C NFKFOODCJJB
 
 	// // RVA: 0xAA13D8 Offset: 0xAA13D8 VA: 0xAA13D8
-	// public List<string> HOFACDIBDLM() { }
+	public List<string> HOFACDIBDLM()
+	{
+		string[] strs = AJFDNKLNKDP_EntryDate_.Split(new char[]{','});
+		List<string> res = new List<string>();
+		for(int i = 0; i < strs.Length; i++)
+		{
+			res.Add(strs[i]);
+		}
+		return res;
+	}
 
 	// // RVA: 0xAA1544 Offset: 0xAA1544 VA: 0xAA1544
 	public GGHPEFNADEN_Ticket()

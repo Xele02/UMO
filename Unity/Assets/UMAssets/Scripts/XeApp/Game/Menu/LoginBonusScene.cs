@@ -260,10 +260,42 @@ namespace XeApp.Game.Menu
 					}
 				}
 			}
-			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign/*9*/, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/);
+			CANAFALMGLI_EventPresentCampaign ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign/*9*/, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as CANAFALMGLI_EventPresentCampaign;
 			if(ev != null)
 			{
-				TodoLogger.LogError(TodoLogger.EventPresentCampaign_9, "LoginBonusScene.NextScene event");
+				bool done = false;
+				bool skip = false;
+				bool err = false;
+				ev.EAFPHEGFODB(() =>
+				{
+					//0xEB5D28
+					done = true;
+				}, () =>
+				{
+					//0xEB5D34
+					done = true;
+					skip = true;
+				}, () =>
+				{
+					//0xEB5D40
+					done = true;
+					err = true;
+				});
+				while(!done)
+					yield return null;
+				if(!skip)
+				{
+					MenuScene.Instance.Mount(TransitionUniqueId.HOME_CAMPAIGNROULETTE, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+				}
+				else if(!err)
+				{
+					MenuScene.Instance.Mount(TransitionUniqueId.EPISODEAPPEAL, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+				}
+				else
+				{
+					MenuScene.Instance.GotoTitle();
+				}
+				yield break;
 			}
 			//LAB_00eb9458
 			MenuScene.Instance.Mount(TransitionUniqueId.EPISODEAPPEAL, null, true, 0);
