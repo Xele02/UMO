@@ -53,6 +53,7 @@ public static class UMOEventList
         new EventData() { Id=8203, Name="4周年　娘々祭　娘くじ 後半", BlockName="event_box_gacha_e"},
         new EventData() { Id=8039, Name="3周年　娘々祭　娘くじ 後半", BlockName="event_box_gacha_f"},
         //new EventData() { Id=4, Name="GodivaRanking", BlockName="event_godiva_ranking"},
+        new EventData() { Id=9007, Name="マクロスF ギャラクシーライブ 2021[リベンジ]", BlockName="event_present_campaign_a"},
     };
 
     public static EventData GetEventData(int Id)

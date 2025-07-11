@@ -1112,7 +1112,7 @@ namespace XeApp.Game.Menu
 								MenuScene.Instance.Mount(TransitionUniqueId.HOME_NEWYEAREVENT_GACHABOX, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 								break;
 							case OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign:
-								TodoLogger.LogError(TodoLogger.EventPresentCampaign_9, "Event");
+								MenuScene.Instance.Mount(TransitionUniqueId.HOME_CAMPAIGN, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 								break;
 							case OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva:
 								MenuScene.Instance.Mount(TransitionUniqueId.EVENTGODIVA, new EventMusicSelectSceneArgs(b.EAHPLCJMPHD_EventId, false, false), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);

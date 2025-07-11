@@ -222,16 +222,36 @@ public class JBCAHMMCOKK
 		bool c = true;
 		if (KOGBMDOONFA.AMKJDECHIOF > 0)
 			c = KOGBMDOONFA.AMKJDECHIOF < level;
-		if(KOGBMDOONFA.PDBPFJJCADD != 0)
+
+		// UMO conditional activation froml context
+		bool ignoreDate = false;
+		switch(KOGBMDOONFA.GMELAKNFKMG)
 		{
-			if(KOGBMDOONFA.FDBNFFNFOND != 0)
+			case 17:
+				CANAFALMGLI_EventPresentCampaign ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as CANAFALMGLI_EventPresentCampaign;
+				if(ev != null)
+					ignoreDate = true;
+				break;
+			default:
+				break;
+		}
+
+		// END UMO
+
+		if(!ignoreDate)
+		{
+			if(KOGBMDOONFA.PDBPFJJCADD != 0)
 			{
-				if (JHNMKKNEENE < KOGBMDOONFA.PDBPFJJCADD)
-					return;
-				if (JHNMKKNEENE >= KOGBMDOONFA.FDBNFFNFOND)
-					return;
+				if(KOGBMDOONFA.FDBNFFNFOND != 0)
+				{
+					if (JHNMKKNEENE < KOGBMDOONFA.PDBPFJJCADD)
+						return;
+					if (JHNMKKNEENE >= KOGBMDOONFA.FDBNFFNFOND)
+						return;
+				}
 			}
 		}
+
 		if (!c)
 			return;
 		bool doSp = false;
@@ -560,8 +580,18 @@ public class JBCAHMMCOKK
 					CANAFALMGLI_EventPresentCampaign ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as CANAFALMGLI_EventPresentCampaign;
 					if(ev == null)
 						return;
-					TodoLogger.LogError(TodoLogger.EventPresentCampaign_9, "Event Present Campaign");
-					break;
+					JBCAHMMCOKK j = new JBCAHMMCOKK();
+					j.KHEKNNFCAOI(KOGBMDOONFA.PPFNGGCBJKC);
+					if(!b)
+					{
+						j.BJIMIONBKDD = false;
+					}
+					j.EAHPLCJMPHD_EventId = ev.PGIIDPEGGPI_EventId;
+					j.PEDBFNIOCEN = ev.JOPOPMLFINI_QuestId;
+					j.KJBGCLPMLCG_OpenedAt = ev.GLIMIGNNGGB_Start;
+					j.GJFPFFBAKGK_CloseAt = ev.DPJCPDKALGI_End1;
+					NNDGIAEFMOG.Add(j);
+					return;
 				}
 			case 18: // 0x12
 				{

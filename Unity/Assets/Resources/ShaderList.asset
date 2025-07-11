@@ -79,6 +79,9 @@ MonoBehaviour:
   - fileName: effect_blendoverexposed
     internalName: MCRS/Effect/BlendOverexposed
     shader: {fileID: 4800000, guid: 0e9acfd5ca155068fbc2a429ff88d2a0, type: 3}
+  - fileName: effect_kamifubuki
+    internalName: macr\client\trunk\unity\Assets\Bundles\Scriptables\ly\120@bundle\Effect\fx_kuji\Textures
+    shader: {fileID: 4800000, guid: f74c4e64c415667498f1c045b8e5d3cf, type: 3}
   - fileName: effect_multipliedalphablend
     internalName: MCRS/Effect/MultipliedAlphaBlend
     shader: {fileID: 4800000, guid: e0d1823a732c485e3a655c988aefdf48, type: 3}

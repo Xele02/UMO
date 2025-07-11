@@ -770,6 +770,54 @@ namespace ExternLib
 						UnityEngine.Debug.LogError("Missing reward for "+(string)msgData["keys"][i]+", could not find open event");
 					}
 				}
+				else if(key.StartsWith("pc_vc_") || key.StartsWith("pc_item_"))
+				{
+					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Find((IKDICBBFBMI_EventBase _) =>
+					{
+						return _.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign;
+					});
+					if(ev != null)
+					{
+						HIADOIECMFP_EventPresentCampaign dbSection = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(ev.JOPOPMLFINI_QuestId) as HIADOIECMFP_EventPresentCampaign;
+						if(dbSection != null)
+						{
+							for(int j = 0; j < dbSection.OBPOHDENMHH.Count; j++)
+							{
+								if((dbSection.OBPOHDENMHH[j].MCNPILDHLEE != "" && key.StartsWith(dbSection.OBPOHDENMHH[j].MCNPILDHLEE)) || 
+									(dbSection.OBPOHDENMHH[j].OJHJLJLCKAC != "" && key.StartsWith(dbSection.OBPOHDENMHH[j].OJHJLJLCKAC)))
+								{
+									for(int k = 0; k < dbSection.OBPOHDENMHH[j].GLCLFMGPMAN_ItemId.Count; k++)
+									{
+										MFDJIFIIPJD data = new MFDJIFIIPJD();
+										data.KHEKNNFCAOI(dbSection.OBPOHDENMHH[j].GLCLFMGPMAN_ItemId[k], dbSection.OBPOHDENMHH[j].MBJIFDBEDAC_Cnt[k]);
+										if((key.Contains("vc") && data.MJBKGOJBPAD_Type == 1) || 
+											(key.Contains("item") && data.MJBKGOJBPAD_Type == 0))
+										{
+											UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
+											{
+												item_count = dbSection.OBPOHDENMHH[j].MBJIFDBEDAC_Cnt[k],
+												item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
+												item_type = data.MJBKGOJBPAD_Type,
+												item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
+												message = dbSection.OBPOHDENMHH[j].FEMMDNIELFC,
+												closed_at = closeAt
+											}, playerAccount.playerData);
+											addedItem.AddInInventoryResult(d);
+										}
+									}
+								}
+							}
+						}
+						else
+						{
+							UnityEngine.Debug.LogError("Missing reward for "+(string)msgData["keys"][i]+", could not find db section "+ev.JOPOPMLFINI_QuestId);
+						}
+					}
+					else
+					{
+						UnityEngine.Debug.LogError("Missing reward for "+(string)msgData["keys"][i]+", could not find open event");
+					}
+				}
 				else
 				{
 					UnityEngine.Debug.LogError("Missing reward for "+(string)msgData["keys"][i]);
