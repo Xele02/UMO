@@ -51,7 +51,7 @@ public class AGLHPOOPOCG
 	private void LCJJHEHDKFJ(List<KLNBIIPKNIB> NNDGIAEFMOG)
 	{
 		BFILINGKCFK = true;
-		if(NNDGIAEFMOG.Count > 0)
+		if(NNDGIAEFMOG != null && NNDGIAEFMOG.Count > 0)
 		{
 			OAKDPFFGCLJ_TopPlayerScore = (int)NNDGIAEFMOG[0].KNIFCANOHOC_Score;
 		}
