@@ -256,7 +256,7 @@ public class CANAFALMGLI_EventPresentCampaign : IKDICBBFBMI_EventBase
 			else
 			{
 				long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
-				if(RuntimeSettings.CurrentSettings.UnlimitedEvent || (t >= JDDFILGNGFH && LJOHLEGGGMC >= t))
+				if((RuntimeSettings.CurrentSettings.UnlimitedEvent && NHLBKJCPLBL.EBAMGNMELPO_EntryDate != "") || (t >= JDDFILGNGFH && LJOHLEGGGMC >= t))
 				{
 					if(string.IsNullOrEmpty(NHLBKJCPLBL.OEDIICBDNKG_Pending))
 					{
