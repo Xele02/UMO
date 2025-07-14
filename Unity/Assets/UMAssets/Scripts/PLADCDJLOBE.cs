@@ -65,7 +65,7 @@ public class PLADCDJLOBE
 							int group = 0;
 							if(ev2.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp)
 							{
-								TodoLogger.LogError(TodoLogger.EventSp_7, "Event SP");
+								group = (ev2 as KNKDBNFMAKF_EventSp).MEDEJHKNAFG_GetCurrentMissionGroup(time2);
 							}
 							for(int j = 0; j < ev2.AGLILDLEFDK_Missions.Count; j++)
 							{

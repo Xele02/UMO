@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x9D5F70 Offset: 0x9D5F70 VA: 0x9D5F70
 		private void ConnectEventQuest()
 		{
-			m_questViewList = FKMOKDCJFEN.KJHKBBBDBAL(m_args.viewData.JOPOPMLFINI_QuastName, false, m_args.viewData.BCOKKAALGHC);
+			m_questViewList = FKMOKDCJFEN.KJHKBBBDBAL(m_args.viewData.JOPOPMLFINI_QuastName, false, m_args.viewData.BCOKKAALGHC_Group);
 			m_layoutScrollList.Setup(m_questViewList, m_args.viewData);
 			m_layoutScrollList.SetStatus();
 			QuestUtility.UpdateQuestData();
@@ -169,7 +169,7 @@ namespace XeApp.Game.Menu
 			if(m_args != null)
 			{
 				KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(string.Format("ct/qu/qf/{0:d5}.xab", m_args.viewData.LFCOJABLOEN_EventId));
-				m_questViewList = FKMOKDCJFEN.KJHKBBBDBAL(m_args.viewData.JOPOPMLFINI_QuastName, false, m_args.viewData.BCOKKAALGHC);
+				m_questViewList = FKMOKDCJFEN.KJHKBBBDBAL(m_args.viewData.JOPOPMLFINI_QuastName, false, m_args.viewData.BCOKKAALGHC_Group);
 			}
 			SetupLayout();
 			isSyncMissionStatus = false;
@@ -233,18 +233,21 @@ namespace XeApp.Game.Menu
 				yield return null;
 			if(m_args != null)
 			{
-				if(m_args.viewData != null && m_args.viewData.COAMJFMEIBF != null && m_args.viewData.COAMJFMEIBF is KNKDBNFMAKF_EventSp)
+				if(m_args.viewData != null)
 				{
-					TodoLogger.LogError(TodoLogger.EventSp_7, "Event Sp");
-					//(m_args.viewData.COAMJFMEIBF as KNKDBNFMAKF_EventSp).ALIBGNACAEA(true, m_args.viewData.BCOKKAALGHC);
-					isWait = true;
-					MenuScene.Save(() =>
+					KNKDBNFMAKF_EventSp ev = m_args.viewData.COAMJFMEIBF as KNKDBNFMAKF_EventSp;
+					if(ev != null)
 					{
-						//0x9D713C
-						isWait = false;
-					}, null);
-					while(isWait)
-						yield return null;
+						ev.ALIBGNACAEA(true, m_args.viewData.BCOKKAALGHC_Group);
+						isWait = true;
+						MenuScene.Save(() =>
+						{
+							//0x9D713C
+							isWait = false;
+						}, null);
+						while(isWait)
+							yield return null;
+					}
 				}
 			}
 			//LAB_009d7440

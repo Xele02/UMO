@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public static class UMOEventList
 {
@@ -13,10 +14,32 @@ public static class UMOEventList
         public int EventBannerImageId = -1;
         public int GlobalBannerImageId = -1;
         public int MissionBannerImageId = -1;
+        public List<int> LinkedEvent = new List<int>();
 
         public bool EnableBlock(string Name)
         {
-            return BlockName == Name || BlockName.Replace("raid", "raidlobby") == Name;
+            if(BlockName == Name || BlockName.Replace("raid", "raidlobby") == Name)
+                return true;
+            for(int i = 0; i < LinkedEvent.Count; i++)
+            {
+                EventData SubEv = GetEventData(LinkedEvent[i]);
+                if(SubEv != null && SubEv.EnableBlock(Name))
+                    return true;
+            }
+            return false;
+        }
+
+        public bool IsEventEnabled(int _Id)
+        {
+            if(Id == _Id)
+                return true;
+            for(int i = 0; i < LinkedEvent.Count; i++)
+            {
+                EventData SubEv = GetEventData(LinkedEvent[i]);
+                if(SubEv != null && SubEv.IsEventEnabled(_Id))
+                    return true;
+            }
+            return false;
         }
     }
 
@@ -49,18 +72,24 @@ public static class UMOEventList
         //new EventData() { Id=8061, Name="アーネスト艦長からの報酬", BlockName="event_box_gacha_a"},
         //new EventData() { Id=8062, Name="アーネスト艦長からの報酬", BlockName="event_box_gacha_b"},
         //new EventData() { Id=8063, Name="アーネスト艦長からの報酬", BlockName="event_box_gacha_c"},
-        new EventData() { Id=8204, Name="年末年始娘々祭　娘くじ", BlockName="event_box_gacha_d"},
+        new EventData() { Id=8204, Name="年末年始娘々祭　娘くじ", BlockName="event_box_gacha_d", LinkedEvent={7009}},
         new EventData() { Id=8203, Name="4周年　娘々祭　娘くじ 後半", BlockName="event_box_gacha_e"},
         new EventData() { Id=8039, Name="3周年　娘々祭　娘くじ 後半", BlockName="event_box_gacha_f"},
         //new EventData() { Id=4, Name="GodivaRanking", BlockName="event_godiva_ranking"},
         new EventData() { Id=9007, Name="マクロスF ギャラクシーライブ 2021[リベンジ]", BlockName="event_present_campaign_a"},
+    };
+    public static List<EventData> EventListHidden = new List<EventData>()
+    {
+        new EventData() { Id=7009, Name="4周年 娘々祭", BlockName="event_sp_a" },
     };
 
     public static EventData GetEventData(int Id)
     {
         if(Id == -1)
             return null;
-        return EventList.Find((EventData d) =>
+        List<EventData> All = EventList;
+        All.AddRange(EventListHidden);
+        return All.Find((EventData d) =>
         {
             return d.Id == Id;
         });
@@ -69,7 +98,17 @@ public static class UMOEventList
     public static EventData GetCurrentEvent()
     {
         UMO_PlayerPrefs.CheckLoad();
-        return UMOEventList.GetEventData(UMO_PlayerPrefs.GetInt("CurrentEvent", -1));
+        return GetEventData(UMO_PlayerPrefs.GetInt("CurrentEvent", -1));
+    }
+
+    public static bool IsEventEnabled(int Id)
+    {
+        EventData ev = GetCurrentEvent();
+        if(ev != null)
+        {
+            return ev.IsEventEnabled(Id);
+        }
+        return false;
     }
 
     public static void SetCurrentEvent(int EventId)

@@ -51,7 +51,7 @@ namespace XeApp.Game.Menu
 						data.m_masterName = m_eventViewList[i].JOPOPMLFINI_QuastName;
 						data.m_uniqueId = m_eventViewList[i].JHAOHBNPMNA_EventId;
 						data.m_eventType = m_eventViewList[i].COAMJFMEIBF.HIDHLFCBIDE_EventType;
-						data.m_viewList = FKMOKDCJFEN.KJHKBBBDBAL(m_eventViewList[i].JOPOPMLFINI_QuastName, false, m_eventViewList[i].BCOKKAALGHC);
+						data.m_viewList = FKMOKDCJFEN.KJHKBBBDBAL(m_eventViewList[i].JOPOPMLFINI_QuastName, false, m_eventViewList[i].BCOKKAALGHC_Group);
 						data.m_achievedCount = GetQuestCountByStatus(data.m_viewList, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
 						m_eventQuestDataList.Add(data);
 						m_eventViewList[i].PKNLMLDKCLM_AchievedQuests = data.m_achievedCount;

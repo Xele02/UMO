@@ -12,7 +12,7 @@ public class CGJKNOCAPII
 	public int LFCOJABLOEN_EventId; // 0x18
 	public long KINJOEIAHFK_Start; // 0x20
 	public long PCCFAKEOBIC_End; // 0x28
-	public int BCOKKAALGHC; // 0x30
+	public int BCOKKAALGHC_Group; // 0x30
 	public bool PNFDMBHDPAJ; // 0x34
 	public BadgeConstant.ID BEEIIJJKDBH; // 0x38
 	public string BHANMJKCCBC_QuestAchievedCountText; // 0x3C
@@ -53,10 +53,16 @@ public class CGJKNOCAPII
 			res.PCCFAKEOBIC_End = FBFNJMKPBBA.LJOHLEGGGMC;
 		}
 		res.PNFDMBHDPAJ = FBFNJMKPBBA.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5/*5*/;
-		res.BCOKKAALGHC = 0;
+		res.BCOKKAALGHC_Group = 0;
 		if(FBFNJMKPBBA is KNKDBNFMAKF_EventSp)
 		{
-			TodoLogger.LogError(TodoLogger.EventSp_7, "Event SP");
+			KNKDBNFMAKF_EventSp ev = FBFNJMKPBBA as KNKDBNFMAKF_EventSp;
+			res.BCOKKAALGHC_Group = ev.MEDEJHKNAFG_GetCurrentMissionGroup(out l1, out l2, out l3, out l4, out b1);
+			res.JHAOHBNPMNA_EventId = ev.CBEACDJOIBO_GetIconTextureId(BCOKKAALGHC_Group);
+			res.LFCOJABLOEN_EventId = ev.JLLGJIIHFJO_GetTitleTextureId(BCOKKAALGHC_Group);
+			res.KINJOEIAHFK_Start = b1 ? l3 : l1;
+			res.PCCFAKEOBIC_End = b1 ? l4 : l2;
+			res.PNFDMBHDPAJ = b1;
 		}
 		res.NNHHNFFLCFO = ILLPDLODANB.ODEHLBNBPPE(FBFNJMKPBBA);
 		res.BEEIIJJKDBH = 0;
@@ -66,7 +72,7 @@ public class CGJKNOCAPII
 			List<FKMOKDCJFEN> l = QuestUtility.GetEventQuestList(res.JOPOPMLFINI_QuastName);
 			if(l == null)
 			{
-				l = FKMOKDCJFEN.KJHKBBBDBAL(res.JOPOPMLFINI_QuastName, false, res.BCOKKAALGHC);
+				l = FKMOKDCJFEN.KJHKBBBDBAL(res.JOPOPMLFINI_QuastName, false, res.BCOKKAALGHC_Group);
 			}
 			PKNLMLDKCLM_AchievedQuests = QuestUtility.GetQuestCountByStatus(l, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
 			if(PKNLMLDKCLM_AchievedQuests > 0)
@@ -93,7 +99,8 @@ public class CGJKNOCAPII
 			{
 				if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp)
 				{
-					TodoLogger.LogError(TodoLogger.EventSp_7, "Event SP");
+					if(time < ev.AGLILDLEFDK_Missions[0].KJBGCLPMLCG_Start)
+						continue;
 				}
 				if(ev is PKNOKJNLPOE_EventRaid)
 				{

@@ -64,7 +64,7 @@ public class GBNDFCEDNMG
         IELDCHLKEHG = 15,
         JIFAFBPHACI = 16,
         JEMNFEKLHOA = 17,
-        KNPBBPNJNEM = 18,
+        KNPBBPNJNEM_18 = 18,
         ADCDEIPMKJI_19 = 19,
         DCFBLGLFJDO_20 = 20,
         HKMENCLLHJB = 21,
@@ -72,7 +72,7 @@ public class GBNDFCEDNMG
         KAMDLPNNGCG = 23,
         HFMIOBKCKHD = 24,
         NJKNOEPAELH = 25,
-        POHBAGJLOLI = 26,
+        POHBAGJLOLI_26 = 26,
         EBCMMPMCHIK_27 = 27,
         BEKIJHOCDFE_28 = 28,
         APIDIDMAKHL = 29,
@@ -137,7 +137,7 @@ public class GBNDFCEDNMG
 									{
 										if (LIKDEHHKFEH is KNKDBNFMAKF_EventSp)
 										{
-											return NDFIEMPPMLF.KGICDMIJGDF_Group == (LIKDEHHKFEH as KNKDBNFMAKF_EventSp).MEDEJHKNAFG(OMNOFMEBLAD.NFFDIGEJHGL_ServerTime);
+											return NDFIEMPPMLF.KGICDMIJGDF_Group == (LIKDEHHKFEH as KNKDBNFMAKF_EventSp).MEDEJHKNAFG_GetCurrentMissionGroup(OMNOFMEBLAD.NFFDIGEJHGL_ServerTime);
 										}
 									}
 									return true;
@@ -165,7 +165,7 @@ public class GBNDFCEDNMG
 				{
 					if(LIKDEHHKFEH.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp/*7*/)
 					{
-						return NDFIEMPPMLF.KGICDMIJGDF_Group == (LIKDEHHKFEH as KNKDBNFMAKF_EventSp).MEDEJHKNAFG(time);
+						return NDFIEMPPMLF.KGICDMIJGDF_Group == (LIKDEHHKFEH as KNKDBNFMAKF_EventSp).MEDEJHKNAFG_GetCurrentMissionGroup(time);
 					}
 					return true;
 				}
@@ -201,7 +201,7 @@ public class GBNDFCEDNMG
 								{
 									if(LIKDEHHKFEH is KNKDBNFMAKF_EventSp)
 									{
-										return (LIKDEHHKFEH as KNKDBNFMAKF_EventSp).MEDEJHKNAFG(time) == NDFIEMPPMLF.KGICDMIJGDF_Group;
+										return (LIKDEHHKFEH as KNKDBNFMAKF_EventSp).MEDEJHKNAFG_GetCurrentMissionGroup(time) == NDFIEMPPMLF.KGICDMIJGDF_Group;
 									}
 								}
 								return true;
@@ -678,7 +678,10 @@ public class GBNDFCEDNMG
 			case 21:
 				if(LIKDEHHKFEH.HIDHLFCBIDE_EventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp)
 					return false;
-				TodoLogger.LogError(TodoLogger.EventSp_7, "Event SP");
+				{
+					KNKDBNFMAKF_EventSp ev = LIKDEHHKFEH as KNKDBNFMAKF_EventSp;
+					return aa3 <= ev.CAHDMMAHEJC_GetDivaTouchCount();
+				}
 				break;
 			default:
 				if(OMNOFMEBLAD == null)
@@ -699,8 +702,10 @@ public class GBNDFCEDNMG
 			case 26:
 				if(LIKDEHHKFEH.HIDHLFCBIDE_EventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp)
 					return false;
-				TodoLogger.LogError(TodoLogger.EventSp_7, "Event SP");
-				break;
+				{
+					KNKDBNFMAKF_EventSp ev = LIKDEHHKFEH as KNKDBNFMAKF_EventSp;
+					return aa3 <= ev.ACEEBCPOEBF_GetDivaCount((JJOELIOGMKK_DivaIntimacyInfo.OPOEENHEJOC)aa4);
+				}
 			case 27:
 			case 28:
 			case 34:
@@ -980,7 +985,9 @@ public class GBNDFCEDNMG
 		int a = 0;
 		if(LIKDEHHKFEH.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp)
 		{
-			TodoLogger.LogError(TodoLogger.EventSp_7, "Event SP");
+			KNKDBNFMAKF_EventSp ev = LIKDEHHKFEH as KNKDBNFMAKF_EventSp;
+			if(ev != null)
+				a = ev.MEDEJHKNAFG_GetCurrentMissionGroup(LPEKHFOMCAH);
 		}
 		int a1 = 0;
 		for(int i = 0; i < LIKDEHHKFEH.OLDFFDMPEBM_Quests.Count; i++)

@@ -1,4 +1,6 @@
+using System;
 using System.Text;
+using XeSys;
 
 namespace XeApp.Game.Menu
 {
@@ -36,7 +38,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x96D1DC Offset: 0x96D1DC VA: 0x96D1DC
-		// public void LoadForGeneral(int id, Action<IiconTexture> callBack) { }
+		public void LoadForGeneral(int id, Action<IiconTexture> callBack)
+		{
+			m_bundleName.SetFormat("ct/ba/pc/{0:D3}.xab", id);
+			Load(m_bundleName.ToString(), callBack);
+		}
 
 		// // RVA: 0x96D2B4 Offset: 0x96D2B4 VA: 0x96D2B4
 		// public void LoadForEvent(int eventId, Action<IiconTexture> callBack) { }

@@ -34,8 +34,8 @@ public class JJOELIOGMKK_DivaIntimacyInfo
 
 	public enum OPOEENHEJOC
 	{
-		FNGFADPFKOD = 0,
-		EMIFDDHCOFB = 1,
+		FNGFADPFKOD_0_DivaIntimacy = 0,
+		EMIFDDHCOFB_1_DivaPresent = 1,
 	}
 
 	public class POJEFNEMGNN
@@ -244,10 +244,10 @@ public class JJOELIOGMKK_DivaIntimacyInfo
 					if(MOACIBEKLEN(HBODCMLFDOB.NLFMNHGEADA))
 					{
 						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ANNIPKMMIAC_IntimacyPresentSaveDate = NKGJPJPHLIF.HHCJCDFCLOB.DHMLDAGGKCD;
-                        IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived);
+                        KNKDBNFMAKF_EventSp ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as KNKDBNFMAKF_EventSp;
 						if(ev != null)
 						{
-							TodoLogger.LogError(TodoLogger.EventSp_7, "Event");
+							ev.POHBAGJLOLI_IncDivaCount(OPOEENHEJOC.EMIFDDHCOFB_1_DivaPresent);
 						}
 						if(GNGMCIAIKMA.HHCJCDFCLOB != null)
 						{
@@ -292,7 +292,7 @@ public class JJOELIOGMKK_DivaIntimacyInfo
 									KNKDBNFMAKF_EventSp sp = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as KNKDBNFMAKF_EventSp;
 									if(sp != null)
 									{
-										TodoLogger.LogError(TodoLogger.EventSp_7, "Event SP");
+										sp.POHBAGJLOLI_IncDivaCount(OPOEENHEJOC.FNGFADPFKOD_0_DivaIntimacy);
 									}
 									ILCCJNDFFOB.HHCJCDFCLOB.DNNLEIKNHKL(AHHJLDLAPAN_DivaId, NHCCINMHEAB_Tension, HBODCMLFDOB.ODHAIDDEFJL_GetExp, HBODCMLFDOB.EOIJEGJDLAN_AfterExp, HBODCMLFDOB.CPDEMMFGKED_Level, HBODCMLFDOB.KBHJOBKOOGC_NextLevel, JpStringLiterals.StringLiteral_12005, 0, 0, 0, 0);
 									return res;

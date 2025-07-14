@@ -14,10 +14,10 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x9D79F8 Offset: 0x9D79F8 VA: 0x9D79F8
 		public bool CanShowHelp()
 		{
-			if(viewData.COAMJFMEIBF != null && viewData.COAMJFMEIBF is KNKDBNFMAKF_EventSp)
+			KNKDBNFMAKF_EventSp ev = viewData.COAMJFMEIBF as KNKDBNFMAKF_EventSp;
+			if(ev != null)
 			{
-				TodoLogger.LogError(TodoLogger.EventSp_7, "Event Sp");
-				//return (viewData.COAMJFMEIBF as KNKDBNFMAKF_EventSp).GEPPAGIEMOK(viewData.BCOKKAALGHC);
+				return ev.GEPPAGIEMOK_CanShowHelp(viewData.BCOKKAALGHC_Group);
 			}
 			return false;
 		}
@@ -25,10 +25,10 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x9D7AE0 Offset: 0x9D7AE0 VA: 0x9D7AE0
 		public int GetHelpId()
 		{
-			if(viewData.COAMJFMEIBF != null && viewData.COAMJFMEIBF is KNKDBNFMAKF_EventSp)
+			KNKDBNFMAKF_EventSp ev = viewData.COAMJFMEIBF as KNKDBNFMAKF_EventSp;
+			if(ev != null)
 			{
-				TodoLogger.LogError(TodoLogger.EventSp_7, "Event Sp");
-				//return (viewData.COAMJFMEIBF as KNKDBNFMAKF_EventSp).EDHFKGEIAHB(viewData.BCOKKAALGHC);
+				return ev.EDHFKGEIAHB_GetHelpId(viewData.BCOKKAALGHC_Group);
 			}
 			return 0;
 		}

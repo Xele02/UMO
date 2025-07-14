@@ -161,7 +161,24 @@ namespace XeApp.Game.Common
 			}
 			else if(cont.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp)
 			{
-				TodoLogger.LogError(TodoLogger.EventSp_7, "SetIcon");
+				KNKDBNFMAKF_EventSp ev = cont as KNKDBNFMAKF_EventSp;
+				if(ev.GEFCIHNPKIG())
+				{
+					long a, b;
+					int v = ev.NJIKJJNLAPL(currentTime, out a, out b);
+					if(v == 1)
+					{
+						m_imageBannerIcon.sprite = m_tableReplace[1].sprite;
+					}
+					else
+					{
+						m_imageBannerIcon.sprite = m_tableReplace[0].sprite;
+					}
+				}
+				else
+				{
+					m_imageBannerIcon.sprite = m_tableReplace[0].sprite;
+				}
 			}
 		}
 
@@ -170,9 +187,12 @@ namespace XeApp.Game.Common
 		{
 			if(m_controller == null)
 				return;
+			int v = m_controller.PGIIDPEGGPI_EventId;
 			if(m_controller is KNKDBNFMAKF_EventSp)
 			{
-				TodoLogger.LogError(TodoLogger.EventSp_7, "Event SP");
+				if(!(m_controller as KNKDBNFMAKF_EventSp).BEDCLNJIEGF(currentTime))
+					return;
+				v = (m_controller as KNKDBNFMAKF_EventSp).CKBANLLONPF(currentTime);
 			}
 			else if(m_controller is CHHECNJBMLA_EventBoxGacha)
 			{
@@ -183,7 +203,7 @@ namespace XeApp.Game.Common
 			{
 				return;
 			}
-			HGFPAFPGIKG h = new HGFPAFPGIKG(m_controller.PGIIDPEGGPI_EventId);
+			HGFPAFPGIKG h = new HGFPAFPGIKG(v);
 			m_imageTicketIcon.enabled = false;
 			GameManager.Instance.ItemTextureCache.Load(h.JHNEFBNEAAO, (IiconTexture texture) =>
 			{

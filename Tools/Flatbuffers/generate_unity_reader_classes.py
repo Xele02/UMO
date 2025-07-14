@@ -250,6 +250,7 @@ class_to_generate = {
     "HMNJADGBKFA" : {"FB_class":"KBPJMHKBEAJ"},
     "KBFIJHDHOGA" : {"FB_class":"LDCIDAKFJPH"},
     "CEGMAIDIKLC" : {"FB_class":"EDNGOONFHEO"},
+    "ANCFFLNKINL" : {"FB_class":"KCMFPGDPCIG"},
 }
 
 
