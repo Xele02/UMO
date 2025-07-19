@@ -439,7 +439,10 @@ namespace ExternLib
 					List<string> block = blocks.Keys.ToList();
 					for(int i = 0; i < block.Count; i++)
 					{
-						replaceIfDiff[block[i]] = newJson[block[i]];
+						if(newJson.BBAJPINMOEP_Contains(block[i]))
+							replaceIfDiff[block[i]] = newJson[block[i]];
+						else
+							TodoLogger.LogError(TodoLogger.SakashoServer, "missing block "+ block[i]);
 					}
 				}
 				return false;
