@@ -165,9 +165,9 @@ namespace XeApp.Game.Menu
 		// RVA: 0x9D673C Offset: 0x9D673C VA: 0x9D673C Slot: 16
 		protected override void OnPreSetCanvas()
 		{
-			m_args = Args as QuestTopFormQuestListArgs;
-			if(m_args != null)
+			if(Args != null && Args is QuestTopFormQuestListArgs)
 			{
+				m_args = Args as QuestTopFormQuestListArgs;
 				KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(string.Format("ct/qu/qf/{0:d5}.xab", m_args.viewData.LFCOJABLOEN_EventId));
 				m_questViewList = FKMOKDCJFEN.KJHKBBBDBAL(m_args.viewData.JOPOPMLFINI_QuastName, false, m_args.viewData.BCOKKAALGHC_Group);
 			}
