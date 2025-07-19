@@ -191,8 +191,7 @@ public class DKJMDIFAKKD_VcItem : DIHHCBACKGG_DbSection
 					// 6 Kuji Ticket 	2 6 2 5 Tuesday, 13 July 2021 Monday, 30 August 2021
 					if(UMOEventList.GetCurrentEvent() != null)
 					{
-						string str = UMOEventList.GetCurrentEvent().BlockName;
-						if(str == "event_box_gacha_a" || str == "event_box_gacha_b" || str == "event_box_gacha_c")
+						if(UMOEventList.GetCurrentEvent().EnableBlock("event_box_gacha_a") || UMOEventList.GetCurrentEvent().EnableBlock("event_box_gacha_b") || UMOEventList.GetCurrentEvent().EnableBlock("event_box_gacha_c"))
 						{
 							data.EGBOHDFBAPB_CloseAt = Utility.GetCurrentUnixTime() + 3600 * 24 * 360;
 						}
@@ -203,8 +202,7 @@ public class DKJMDIFAKKD_VcItem : DIHHCBACKGG_DbSection
 					// 8 :				2 8 2 5 Sunday, 26 December 2021 Saturday, 29 January 2022
 					if(UMOEventList.GetCurrentEvent() != null)
 					{
-						string str = UMOEventList.GetCurrentEvent().BlockName;
-						if(str == "event_box_gacha_d")
+						if(UMOEventList.GetCurrentEvent().EnableBlock("event_box_gacha_d"))
 						{
 							data.EGBOHDFBAPB_CloseAt = Utility.GetCurrentUnixTime() + 3600 * 24 * 360;
 						}
@@ -215,8 +213,7 @@ public class DKJMDIFAKKD_VcItem : DIHHCBACKGG_DbSection
 					// 9 : 				2 9 2 7 Friday, 30 July 2021 Monday, 30 August 2021 // 4eme anniversary
 					if(UMOEventList.GetCurrentEvent() != null)
 					{
-						string str = UMOEventList.GetCurrentEvent().BlockName;
-						if(str == "event_box_gacha_e" || str == "event_box_gacha_f")
+						if(UMOEventList.GetCurrentEvent().EnableBlock("event_box_gacha_e") || UMOEventList.GetCurrentEvent().EnableBlock("event_box_gacha_f"))
 						{
 							data.EGBOHDFBAPB_CloseAt = Utility.GetCurrentUnixTime() + 3600 * 24 * 360;
 						}

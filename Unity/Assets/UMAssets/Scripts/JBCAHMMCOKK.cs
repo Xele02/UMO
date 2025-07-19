@@ -475,10 +475,35 @@ public class JBCAHMMCOKK
 				{
 					List<int> l3 = new List<int>();
 					l3.Clear();
-					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp/*7*/, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/);
+					KNKDBNFMAKF_EventSp ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp/*7*/, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as KNKDBNFMAKF_EventSp;
 					if (ev != null)
 					{
-						TodoLogger.LogError(TodoLogger.EventSp_7, "HEGEKFMJNCC 11 event");
+						for(int i = 0; i < ev.BAEEGPJJHKD_GetNumSubSp(); i++)
+						{
+							int v = ev.NBLGLKGOKOD_GetSubSpId(i);
+							IKDICBBFBMI_EventBase ev3 = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(v);
+							if(ev3 != null)
+							{
+								if(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MLKAJEDCPLP(v))
+								{
+									JBCAHMMCOKK j = new JBCAHMMCOKK();
+									j.KHEKNNFCAOI(KOGBMDOONFA.PPFNGGCBJKC);
+									if(!b)
+									{
+										j.BJIMIONBKDD = false;
+									}
+									l3.Add(ev.PGIIDPEGGPI_EventId);
+									j.EAHPLCJMPHD_EventId = ev.PGIIDPEGGPI_EventId;
+									j.PEDBFNIOCEN = ev.JOPOPMLFINI_QuestId;
+									j.KJBGCLPMLCG_OpenedAt = ev.GLIMIGNNGGB_Start;
+									j.GJFPFFBAKGK_CloseAt = ev.DPJCPDKALGI_End1;
+									j.HDBPGEMDLDN = MessageManager.Instance.GetMessage("menu", "home_event_epilogue");
+									j.IPHOLOBDEIK = true;
+									j.PIBLLGLCJEO = ev3.CAKEOPLJDAF_EndAdventureId.ToString();
+									NNDGIAEFMOG.Add(j);
+								}
+							}
+						}
 					}
 					List<int> l2 = FNDEJKMGFFO("type", KOGBMDOONFA.PIBLLGLCJEO);
 					for(int i = 0; i < JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Count; i++)
@@ -568,7 +593,10 @@ public class JBCAHMMCOKK
 							if(l[i].HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp)
 							{
 								//LAB_0141ccb8
-								TodoLogger.LogError(TodoLogger.EventSp_7, "Event SP");
+								JBCAHMMCOKK j = new JBCAHMMCOKK();
+								j.KHEKNNFCAOI(KOGBMDOONFA.PPFNGGCBJKC);
+								j.ODGNHPFPBKA(l[i].GLIMIGNNGGB_Start, l[i].LJOHLEGGGMC, j.AOPMODMAANL, j.IPHOLOBDEIK);
+								NNDGIAEFMOG.Add(j);
 								return;
 							}
 						}

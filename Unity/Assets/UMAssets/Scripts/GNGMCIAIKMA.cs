@@ -1759,5 +1759,8 @@ public class GNGMCIAIKMA
 	}
 
 	// // RVA: 0xAC2828 Offset: 0xAC2828 VA: 0xAC2828
-	// public bool EAJLHMIMAPE(int APFDNBGMMMM) { }
+	public bool EAJLHMIMAPE(int APFDNBGMMMM)
+	{
+		return MENDFPNPAAO_GetSaveBingo(APFDNBGMMMM).JNLKJCDFFMM_Clear == 1;
+	}
 }

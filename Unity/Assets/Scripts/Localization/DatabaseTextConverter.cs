@@ -504,6 +504,17 @@ public static class DatabaseTextConverter
                         poFile.translationData.Add(prfx, blockDbCollection.LLCLJBEJOPM_BannerInfo[i].KLMPFGOCBHC_BannerText);
                     }
                 }
+                OEIJEFBBJBD_EventSp blockDbSp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(blocksName[sIdx]) as OEIJEFBBJBD_EventSp;
+                if(blockDbSp != null)
+                {
+                    for (int i = 0; i < blockDbSp.NNMPGOAGEOL_Missions.Count; i++)
+                    {
+                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbSp.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbSp.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
+                        poFile.translationData.Add(prfx, blockDbSp.NNMPGOAGEOL_Missions[i].FEMMDNIELFC_Desc);
+                        prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbSp.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbSp.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
+                        poFile.translationData.Add(prfx, blockDbSp.NNMPGOAGEOL_Missions[i].BGBJPGEIEDE_DescBalloon);
+                    }
+                }
                 
             }
             string p = PoPath.Replace("{name}", "events_text");

@@ -477,10 +477,19 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8DF400 Offset: 0x8DF400 VA: 0x8DF400 Slot: 23
-	// public virtual void CFIINCJGBJB(bool OAFPGJLCNFM, int AHGHKCGLFBG) { }
+	public virtual void CFIINCJGBJB(bool OAFPGJLCNFM, int AHGHKCGLFBG)
+	{
+		if(OAFPGJLCNFM)
+			HAJJBEFHPKG |= 1 << AHGHKCGLFBG;
+		else
+			HAJJBEFHPKG &= ~(1 << AHGHKCGLFBG);
+	}
 
 	// // RVA: 0x8DF428 Offset: 0x8DF428 VA: 0x8DF428 Slot: 24
-	// public virtual bool NCGDLDGCIFM(int AHGHKCGLFBG) { }
+	public virtual bool NCGDLDGCIFM(int AHGHKCGLFBG)
+	{
+		return (HAJJBEFHPKG & (1 << AHGHKCGLFBG)) != 0;
+	}
 
 	// // RVA: 0x8DF444 Offset: 0x8DF444 VA: 0x8DF444 Slot: 25
 	public virtual void KMCAIFKIFHM(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
@@ -501,7 +510,7 @@ public abstract class IKDICBBFBMI_EventBase
 				int v = 0;
 				if(HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp && this is KNKDBNFMAKF_EventSp)
 				{
-					v = (this as KNKDBNFMAKF_EventSp).MEDEJHKNAFG(LKCCMBEOLLA);
+					v = (this as KNKDBNFMAKF_EventSp).MEDEJHKNAFG_GetCurrentMissionGroup(LKCCMBEOLLA);
 				}
 				for(int i = 0; i < cnt; i++)
 				{

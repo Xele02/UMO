@@ -163,12 +163,12 @@ namespace XeApp.Game.Menu
 					return new SceneGrowthSceneArgs(GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes.Find((GCIJNCFDNON_SceneInfo x) =>
 					{
 						//0xB972B8
-						return CCAAJNJGNDO.FCMFPPALLOM(m_eventStoryData.PPMNNKKFJNM) == x.BCCHOBPJJKE_SceneId;
+						return CCAAJNJGNDO.FCMFPPALLOM(m_eventStoryData.PPMNNKKFJNM_EventId) == x.BCCHOBPJJKE_SceneId;
 					}), false);
 				}
 				else
 				{
-					return new EventMusicSelectSceneArgs(m_eventStoryData.PPMNNKKFJNM, false, false);
+					return new EventMusicSelectSceneArgs(m_eventStoryData.PPMNNKKFJNM_EventId, false, false);
 				}
 			}
 		}
@@ -217,7 +217,7 @@ namespace XeApp.Game.Menu
 				this.StartCoroutineWatched(Co_OpenSnsTalk(data.CLIHPOEBELF_RoomId, data.PBPOLELIPJI_AdventureId));
 				return;
 			}
-			int eventUniqueId = m_eventStoryData.PPMNNKKFJNM;
+			int eventUniqueId = m_eventStoryData.PPMNNKKFJNM_EventId;
 			int restorBgmId = SoundManager.Instance.bgmPlayer.currentBgmId;
 			int bgId = MenuScene.Instance.BgControl.GetCurrentId();
 			BgType bgType = MenuScene.Instance.BgControl.GetCurrentType();
@@ -227,7 +227,7 @@ namespace XeApp.Game.Menu
 			TransitionUniqueId uniqueId = 0;
 			if (m_eventStoryData.IMAGLAKEMIE_StoryType == CCAAJNJGNDO.HGIFGFEJLAB.CCDOBDNDPIL_0)
 			{
-				switch(OHCAABOMEOF.BPJMGICFPBJ(m_eventStoryData.PPMNNKKFJNM))
+				switch(OHCAABOMEOF.BPJMGICFPBJ(m_eventStoryData.PPMNNKKFJNM_EventId))
 				{
 					case OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection:
 						uniqueId = TransitionUniqueId.EVENTMUSICSELECT_EVENTSTORY;
@@ -244,13 +244,12 @@ namespace XeApp.Game.Menu
 						uniqueId = TransitionUniqueId.EVENTQUEST_EVENTSTORY;
 						break;
 					case OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp/*7*/:
-						IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(m_eventStoryData.PPMNNKKFJNM);
-						KNKDBNFMAKF_EventSp k = null;
+						KNKDBNFMAKF_EventSp ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(m_eventStoryData.PPMNNKKFJNM_EventId) as KNKDBNFMAKF_EventSp;
 						if (ev != null)
 						{
-							TodoLogger.LogError(TodoLogger.EventSp_7, "Event");
+							ev.KCFEGCHMHMI_SetAdvShown(data.DEAKHOJCBDM_Index, true);
 						}
-						m_eventStoryData.MFCPHGNMMFA(k);
+						m_eventStoryData.MFCPHGNMMFA(ev);
 						m_eventStoryList.ListUpdate();
 						uniqueId = TransitionUniqueId.HOME_NEWYEAREVENT_NEWYEAREVENTSTORY;
 						break;
@@ -557,11 +556,11 @@ namespace XeApp.Game.Menu
 				//0xB97410
 				if(m_eventStoryData.IMAGLAKEMIE_StoryType == 0)
 				{
-					m_eventStoryData.KHEKNNFCAOI_InitFromCurrentEvent(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(m_eventStoryData.PPMNNKKFJNM));
+					m_eventStoryData.KHEKNNFCAOI_InitFromCurrentEvent(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(m_eventStoryData.PPMNNKKFJNM_EventId));
 				}
 				else
 				{
-					m_eventStoryData.KHEKNNFCAOI_InitFromEventId(m_eventStoryData.PPMNNKKFJNM);
+					m_eventStoryData.KHEKNNFCAOI_InitFromEventId(m_eventStoryData.PPMNNKKFJNM_EventId);
 				}
 				m_eventStoryList.ListUpdate();
 			};
