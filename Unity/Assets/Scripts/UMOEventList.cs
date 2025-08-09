@@ -69,25 +69,29 @@ public static class UMOEventList
         new EventData() { Id=1061, Name="超時空ファイナルLive ～Act.1～", BlockName="event_collection_a"},
         new EventData() { Id=1059, Name="ふたりの恋のマホウ", BlockName="event_collection_b"},
         new EventData() { Id=1060, Name="復刻　超時空ヴィーナス ワルキューレ", BlockName="event_collection_c"},
-        //new EventData() { Id=8061, Name="アーネスト艦長からの報酬", BlockName="event_box_gacha_a"},
-        //new EventData() { Id=8062, Name="アーネスト艦長からの報酬", BlockName="event_box_gacha_b"},
-        //new EventData() { Id=8063, Name="アーネスト艦長からの報酬", BlockName="event_box_gacha_c"},
         new EventData() { Id=8204, Name="年末年始娘々祭　娘くじ", BlockName="event_box_gacha_d", LinkedEvent={7009}},
         new EventData() { Id=8203, Name="4周年　娘々祭　娘くじ 後半", BlockName="event_box_gacha_e"},
         new EventData() { Id=8039, Name="3周年　娘々祭　娘くじ 後半", BlockName="event_box_gacha_f"},
         //new EventData() { Id=4, Name="GodivaRanking", BlockName="event_godiva_ranking"},
         new EventData() { Id=9007, Name="マクロスF ギャラクシーライブ 2021[リベンジ]", BlockName="event_present_campaign_a"},
+        new EventData() { Id=2061, Name="復刻　夏だ！水着だ！ワル裏フェス！", BlockName="event_mission_a", LinkedEvent={8061}},
+        new EventData() { Id=2062, Name="復刻　0-G Love", BlockName="event_mission_b", LinkedEvent={8062}},
+        new EventData() { Id=2063, Name="超時空ファイナルLive ～Act.2～", BlockName="event_mission_c", LinkedEvent={8063}},
     };
     public static List<EventData> EventListHidden = new List<EventData>()
     {
         new EventData() { Id=7009, Name="4周年 娘々祭", BlockName="event_sp_a" },
+        new EventData() { Id=8061, Name="アーネスト艦長からの報酬", BlockName="event_box_gacha_a"},
+        new EventData() { Id=8062, Name="アーネスト艦長からの報酬", BlockName="event_box_gacha_b"},
+        new EventData() { Id=8063, Name="アーネスト艦長からの報酬", BlockName="event_box_gacha_c"},
     };
 
     public static EventData GetEventData(int Id)
     {
         if(Id == -1)
             return null;
-        List<EventData> All = EventList;
+        List<EventData> All = new List<EventData>();
+        All.AddRange(EventList);
         All.AddRange(EventListHidden);
         return All.Find((EventData d) =>
         {

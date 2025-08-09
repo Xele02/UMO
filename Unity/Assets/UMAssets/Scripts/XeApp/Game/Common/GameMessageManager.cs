@@ -8,6 +8,7 @@ namespace XeApp.Game.Common
 {
 	public class GameMessageManager : Singleton<GameMessageManager>, IDisposable
 	{
+		public delegate string MessageReplaceDelegate(string tag);
 		private const int SkillRankIconTopIndex = 6;
 		private const char InvalidChara = '\x394';
 		private const string InvalidCodeList = "\\u2002|\\u2003|\\u2005|\\u203C|\\u2049|\\u2122|\\u2139|[\\u2194-\\u2199]|\\u21A9|\\u21AA|\\u231A|\\u231B|\\u23E9|\\u23EA|\\u23EB|\\u23EC|\\u23F0|\\u23F3|\\u24C2|\\u25AA|\\u25AB|\\u25B6|\\u25C0|\\u25FB|\\u25FC|\\u25FD|\\u25FE|\\u2600|\\u2601|\\u260E|\\u2611|\\u2614|\\u2615|\\u261D|\\u263A|\\u2648|\\u2649|\\u264A|\\u264B|\\u264C|\\u264D|\\u264E|\\u264F|\\u2650|\\u2651|\\u2652|\\u2653|\\u2660|\\u2663|\\u2665|\\u2666|\\u2668|\\u267B|\\u267F|\\u2693|\\u26A0|\\u26A1|\\u26AA|\\u26AB|\\u26BD|\\u26BE|\\u26C4|\\u26C5|\\u26CE|\\u26D4|\\u26EA|\\u26F2|\\u26F3|\\u26F5|\\u26FA|\\u26FD|\\u2702|\\u2705|\\u2708|\\u2709|\\u270A|\\u270B|\\u270C|\\u270F|\\u2712|\\u2714|\\u2716|\\u2728|\\u2733|\\u2734|\\u2744|\\u2747|\\u274C|\\u274E|\\u2753|\\u2754|\\u2755|\\u2757|\\u2764|\\u2795|\\u2796|\\u2797|\\u27A1|\\u27B0|\\u2934|\\u2935|\\u2B05|\\u2B06|\\u2B07|\\u2B1B|\\u2B1C|\\u2B50|\\u2B55|\\u3030|\\u303D|\\u3297|\\u3299|\\uFE0E|\\uFE0F|\\u21D1|\\u272A|\\u27AA|\\u2741|\\u275E|(\\uD83C\\uDC04)|(\\uD83C\\uDCCF)|(\\uD83C\\uDD70)|(\\uD83C\\uDD71)|(\\uD83C\\uDD7E)|(\\uD83C\\uDD7F)|(\\uD83C\\uDD8E)|(\\uD83C[\\uDD91-\\uDD9A])|(\\uD83C\\uDE01)|(\\uD83C\\uDE02)|(\\uD83C\\uDE1A)|(\\uD83C\\uDE2F)|(\\uD83C[\\uDE32-\\uDE3A])|(\\uD83C\\uDE50)|(\\uD83C\\uDE51)|(\\uD83C[\\uDF00-\\uDF0C])|(\\uD83C\\uDF0F)|(\\uD83C\\uDF11)|(\\uD83C\\uDF13)|(\\uD83C\\uDF14)|(\\uD83C\\uDF15)|(\\uD83C\\uDF19)|(\\uD83C\\uDF1B)|(\\uD83C\\uDF1F)|(\\uD83C\\uDF20)|(\\uD83C\\uDF30)|(\\uD83C\\uDF31)|(\\uD83C\\uDF34)|(\\uD83C\\uDF35)|(\\uD83C[\\uDF37-\\uDF4F])|(\\uD83C[\\uDF51-\\uDF7C])|(\\uD83C[\\uDF80-\\uDF93])|(\\uD83C[\\uDFA0-\\uDFC4])|(\\uD83C\\uDFC6)|(\\uD83C\\uDFC8)|(\\uD83C\\uDFCA)|(\\uD83C[\\uDFE0-\\uDFE3])|(\\uD83C[\\uDFE5-\\uDFF0])|(\\uD83D[\\uDC0C-\\uDC0E])|(\\uD83D\\uDC11)|(\\uD83D\\uDC12)|(\\uD83D\\uDC14)|(\\uD83D[\\uDC17-\\uDC19])|(\\uD83D[\\uDC1A-\\uDC29])|(\\uD83D[\\uDC2B-\\uDC3E])|(\\uD83D\\uDC40)|(\\uD83D[\\uDC42-\\uDC64])|(\\uD83D[\\uDC66-\\uDC6B])|(\\uD83D[\\uDC6E-\\uDCAC])|(\\uD83D[\\uDCAE-\\uDCB5])|(\\uD83D[\\uDCB8-\\uDCEB])|(\\uD83D\\uDCEE)|(\\uD83D[\\uDCF0-\\uDCF7])|(\\uD83D[\\uDCF9-\\uDCFC])|(\\uD83D\\uDD03)|(\\uD83D[\\uDD0A-\\uDD14])|(\\uD83D[\\uDD16-\\uDD2B])|(\\uD83D[\\uDD2E-\\uDD3D])|(\\uD83D[\\uDD50-\\uDD5B])|(\\uD83D[\\uDDFB-\\uDDFF])|(\\uD83D[\\uDE01-\\uDE06])|(\\uD83D[\\uDE09-\\uDE0D])|(\\uD83D\\uDE0F)|(\\uD83D[\\uDE12-\\uDE14])|(\\uD83D\\uDE16)|(\\uD83D\\uDE18)|(\\uD83D\\uDE1A)|(\\uD83D[\\uDE1C-\\uDE1E])|(\\uD83D[\\uDE20-\\uDE25])|(\\uD83D[\\uDE28-\\uDE2B])|(\\uD83D\\uDE2D)|(\\uD83D[\\uDE30-\\uDE33])|(\\uD83D\\uDE35)|(\\uD83D[\\uDE37-\\uDE40])|(\\uD83D[\\uDE45-\\uDE80])|(\\uD83D[\\uDE83-\\uDE85])|(\\uD83D\\uDE87)|(\\uD83D\\uDE89)|(\\uD83D\\uDE8C)|(\\uD83D\\uDE8F)|(\\uD83D[\\uDE91-\\uDE93])|(\\uD83D\\uDE95)|(\\uD83D\\uDE97)|(\\uD83D\\uDE99)|(\\uD83D\\uDE9A)|(\\uD83D\\uDEA2)|(\\uD83D\\uDEA4)|(\\uD83D\\uDEA5)|(\\uD83D[\\uDEA7-\\uDEAD])|(\\uD83D\\uDEB2)|(\\uD83D\\uDEB6)|(\\uD83D\\uDEB9)|(\\uD83D[\\uDEBA-\\uDEBE])|(\\uD83D\\uDEC0)";
@@ -102,9 +103,65 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xE99DE8 Offset: 0xE99DE8 VA: 0xE99DE8
-		//public static string MissionMessageTagFunc(StringBuilder strBuilder, string tag, int freeMusicId, bool is6Line, Difficulty.Type diffculty) { }
+		public static string MissionMessageTagFunc(StringBuilder strBuilder, string tag, int freeMusicId, bool is6Line, Difficulty.Type diffculty)
+		{
+			KEODKEGFDLD_FreeMusicInfo fm = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(freeMusicId);
+			strBuilder.Clear();
+			if(diffculty != Difficulty.Type.Illegal)
+			{
+				ADDHLABEFKH a = fm.EMJCHPDJHEI(is6Line, (int)diffculty);
+				if(tag == "scombo")
+				{
+					strBuilder.AppendFormat(MessageManager.Instance.GetMessage("menu", "event_mission_comborank"), a.NLKEBAOBJCM_RankCombo[2]);
+				}
+				else if(tag == "acombo")
+				{
+					strBuilder.AppendFormat(MessageManager.Instance.GetMessage("menu", "event_mission_comborank"), a.NLKEBAOBJCM_RankCombo[1]);
+				}
+				else if(tag == "bcombo")
+				{
+					strBuilder.AppendFormat(MessageManager.Instance.GetMessage("menu", "event_mission_comborank"), a.NLKEBAOBJCM_RankCombo[0]);
+				}
+			}
+			return strBuilder.ToString();
+		}
 
 		//// RVA: 0xE9A20C Offset: 0xE9A20C VA: 0xE9A20C
-		//public static string ReplaceMessageTag(string str, GameMessageManager.MessageReplaceDelegate func) { }
+		public static string ReplaceMessageTag(string str, MessageReplaceDelegate func)
+		{
+			m_strBuilder.Clear();
+			bool b = false;
+			for(int i = 0; i < str.Length; i++)
+			{
+				if(str[i] == '[')
+				{
+					m_tagPaserBuilder.Clear();
+					b = true;
+				}
+				else if(str[i] == ']')
+				{
+					if(func == null)
+					{
+						b = false;
+					}
+					else
+					{
+						b = false;
+						m_strBuilder.Append(func(m_tagPaserBuilder.ToString()));
+					}
+				}
+				else if(b)
+				{
+					m_tagPaserBuilder.Append(str[i]);
+					b = true;
+				}
+				else
+				{
+					m_strBuilder.Append(str[i]);
+					b = false;
+				}
+			}
+			return m_strBuilder.ToString();
+		}
 	}
 }

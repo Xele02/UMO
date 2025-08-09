@@ -640,7 +640,7 @@ namespace XeApp.Game.Menu
 			OHCAABOMEOF.KGOGMKMBCPP_EventType eventType = Database.Instance.gameSetup.musicInfo.gameEventType;
 			if(eventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp)
 			{
-				if(eventType > OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest || 
+				if(eventType > OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission || 
 				((1 << (int)eventType) & 78) == 0) // 100 1110
 					// HJNNKCMLGFL_0
 					// KEILBOLBDHN_EventScore

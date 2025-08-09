@@ -60,7 +60,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1C9E908 Offset: 0x1C9E908 VA: 0x1C9E908
-		//public void SetMissionMusicSelectParam(Difficulty.Type difficulty, bool isLine6Mode, bool enableSave = True) { }
+		public void SetMissionMusicSelectParam(Difficulty.Type difficulty, bool isLine6Mode, bool enableSave/* = True*/)
+		{
+			EnableSave = enableSave;
+			Scene = PopupFilterSortUGUI.Scene.MissionMusicSelect;
+			MissionMusicSelectParam = new MissionMusicSelectParamClass();
+			MissionMusicSelectParam.Difficulty = difficulty;
+			MissionMusicSelectParam.IsLine6Mode = isLine6Mode;
+		}
 
 		//// RVA: 0x1C9E9CC Offset: 0x1C9E9CC VA: 0x1C9E9CC
 		public void SetGoDivaMusicSelectParam(Difficulty.Type difficulty, bool isLine6Mode, bool enableSave/* = True*/)

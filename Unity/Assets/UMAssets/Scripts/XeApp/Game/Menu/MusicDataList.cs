@@ -80,7 +80,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1049650 Offset: 0x1049650 VA: 0x1049650
-		// public bool ContainsNew(bool simulation = False) { }
+		public bool ContainsNew(bool simulation/* = False*/)
+		{
+			for(int i = 0; i < GetCount(false, simulation); i++)
+			{
+                IBJAKJJICBC m = Get(i, false, simulation);
+                if (!m.AJGCPCMLGKO_IsEvent && !m.BNIAJAKIAJC_IsEventMinigame && !m.POEGGBGOKGI_IsInfoLiveEntrance && m.CADENLBDAEB_IsNew)
+					return true;
+			}
+			return false;
+		}
 
 		// // RVA: 0x1049750 Offset: 0x1049750 VA: 0x1049750
 		public int FindIndex(int freeMusicId, bool line6Mode/* = False*/, bool simulation/* = False*/)

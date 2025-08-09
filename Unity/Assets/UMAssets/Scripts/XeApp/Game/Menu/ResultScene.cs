@@ -18,7 +18,7 @@ namespace XeApp.Game.Menu
 		private ResultDivaLayoutController.InitParam divaLayoutInitParam; // 0x50
 		private ResultDropLayoutController.InitParam dropLayoutInitParam; // 0x54
 		private ResultEvent01LayoutController.InitParam event01LayoutInitParam; // 0x58
-		// private MissonResultLayoutController.InitParam event02LayoutInitParam; // 0x5C
+		private MissonResultLayoutController.InitParam event02LayoutInitParam; // 0x5C
 		private ResultEvent03ScoreLayoutController.InitParam event03ScoreLayoutInitParam; // 0x60
 		private ResultEvent03PointLayoutController.InitParam event03PointLayoutInitParam; // 0x64
 		private RaidResultPointLayoutController.InitParam raidResultPointLayoutInitParam; // 0x68
@@ -130,9 +130,12 @@ namespace XeApp.Game.Menu
 				event01LayoutInitParam.viewEventResultData = data;
 				event01LayoutInitParam.layoutOkayButton = null;
 			}
-			if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
+			if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission)
 			{
-				TodoLogger.LogError(TodoLogger.EventQuest_6, "InitParam Event");
+				KPJHLACKGJF_EventMission ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(JGEOBNENMAH.HHCJCDFCLOB.JKEPHFPCKMD_EventId) as KPJHLACKGJF_EventMission;
+				event02LayoutInitParam = new MissonResultLayoutController.InitParam();
+				event02LayoutInitParam.viewEventResultData = ev != null ? ev.FHPEAPEANAI : new KPJHLACKGJF_EventMission.OPFEKMKHEIF();
+				event02LayoutInitParam.layoutOkayButton = null;
 			}
 			if (eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 			{
@@ -378,8 +381,21 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB4FDFC Offset: 0xB4FDFC VA: 0xB4FDFC
 		private IEnumerator Co_LoadEvent02Layout()
 		{
-			TodoLogger.LogError(TodoLogger.EventQuest_6, "Co_LoadEvent02Layout");
-			yield return null;
+			StringBuilder bundleName; // 0x14
+			AssetBundleLoadLayoutOperationBase lytAssetOp; // 0x18
+
+			//0xB5C978
+			bundleName = new StringBuilder();
+			bundleName.Set("ly/109.xab");
+			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_ResultEvent02");
+			yield return lytAssetOp;
+			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+			{
+				//0xB54BC8
+				instance.transform.SetParent(transform, false);
+				event02LayoutController = instance.GetComponent<MissonResultLayoutController>();
+			}));
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x722B04 Offset: 0x722B04 VA: 0x722B04
@@ -630,7 +646,7 @@ namespace XeApp.Game.Menu
 			isEventCollection = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection;
 			if(isEventCollection)
 				yield return this.StartCoroutineWatched(Co_LoadEvent01Layout());
-			isEventMission = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest;
+			isEventMission = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission;
 			if(isEventMission)
 			{
 				yield return this.StartCoroutineWatched(Co_LoadEvent02Layout());
@@ -685,8 +701,7 @@ namespace XeApp.Game.Menu
 			{
 				yield return new WaitWhile(() => {
 					//0xB55770
-					TodoLogger.LogError(TodoLogger.EventMission_6, "Event");
-					return false;
+					return event02LayoutController == null || !event02LayoutController.IsReady();
 				});
 			}
 			if(isEventBattle)
@@ -915,7 +930,7 @@ namespace XeApp.Game.Menu
 			//0xB582CC
 			isCollectionEventOpen = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection;
 			isBattleEventOpen = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle;
-			isMissionEventOpen = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest;
+			isMissionEventOpen = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission;
 			isRaidEventOpen = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid;
 			isGoDivaEventOpen = eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva;
 
@@ -1116,27 +1131,37 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB52764 Offset: 0xB52764 VA: 0xB52764
 		private void InitEvent02Result()
 		{
-			TodoLogger.LogError(TodoLogger.EventQuest_6, "InitEvent02Result");
+			commonLayoutController.ChangeViewForDropResult();
+			event02LayoutInitParam.layoutOkayButton = commonLayoutController.LayoutOkayButton;
+			event02LayoutController.gameObject.SetActive(true);
+			event02LayoutController.onClickOkayButton = OnClickEvent02ResultOkayButton;
+			event02LayoutController.Setup(event02LayoutInitParam);
+			task = UpdateEvent02Result;
 		}
 
 		// // RVA: 0xB52904 Offset: 0xB52904 VA: 0xB52904
 		private bool IsEvent02ResultLoading()
 		{
-			TodoLogger.LogError(TodoLogger.EventQuest_6, "IsEvent02ResultLoading");
-			return false;
+			return event02LayoutController.IsLoading();
 		}
 
 		// // RVA: 0xB52930 Offset: 0xB52930 VA: 0xB52930
 		private void StartEvent02ResultAnim()
 		{
-			TodoLogger.LogError(TodoLogger.EventQuest_6, "StartEvent02ResultAnim");
+			event02LayoutController.Enter();
 		}
 
 		// // RVA: 0xB5295C Offset: 0xB5295C VA: 0xB5295C
-		// private void UpdateEvent02Result() { }
+		private void UpdateEvent02Result()
+		{
+			return;
+		}
 
 		// // RVA: 0xB52960 Offset: 0xB52960 VA: 0xB52960
-		// private void OnClickEvent02ResultOkayButton() { }
+		private void OnClickEvent02ResultOkayButton()
+		{
+			this.StartCoroutineWatched(Co_MountMenuScene(false));
+		}
 
 		// // RVA: 0xB52988 Offset: 0xB52988 VA: 0xB52988
 		// private void EndEvent02Result() { }
@@ -1655,8 +1680,8 @@ namespace XeApp.Game.Menu
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore:
 							TodoLogger.LogError(TodoLogger.EventScore_4, "Event");
 							break;
-						case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest:
-							TodoLogger.LogError(TodoLogger.EventQuest_6, "Event");
+						case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission:
+							MenuScene.Instance.Mount(TransitionUniqueId.EVENTQUEST, new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, true), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid:
 							MenuScene.Instance.Mount(Database.Instance.gameSetup.musicInfo.returnTransitionUniqueId, new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, true), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
@@ -1702,9 +1727,5 @@ namespace XeApp.Game.Menu
 		{
 			return InputManager.Instance.GetInScreenTouchCount();
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7231F4 Offset: 0x7231F4 VA: 0x7231F4
-		// // RVA: 0xB54BC8 Offset: 0xB54BC8 VA: 0xB54BC8
-		// private void <Co_LoadEvent02Layout>b__42_0(GameObject instance) { }
 	}
 }

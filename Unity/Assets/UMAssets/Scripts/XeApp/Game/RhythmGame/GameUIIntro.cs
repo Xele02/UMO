@@ -33,7 +33,14 @@ namespace XeApp.Game.RhythmGame
 		public void Enter(int musicNameId, string a_sub_text = "")
 		{
 			m_musicName.SetMusicId(musicNameId);
-			m_sub_text.text = a_sub_text.Replace("\n", "").Replace("\r", "");
+			if(RuntimeSettings.CurrentSettings.Language != "en" && RuntimeSettings.CurrentSettings.Language != "fr" )
+			{
+				m_sub_text.text = a_sub_text.Replace("\n", "").Replace("\r", "");
+			}
+			else
+			{
+				m_sub_text.text = a_sub_text.Replace("\n", " ").Replace("\r", "").Replace("  ", " ");
+			}
 			gameObject.SetActive(true);
 			Play("enter_title", false);
 		}

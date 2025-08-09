@@ -1095,11 +1095,11 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xF402A4 Offset: 0xF402A4 VA: 0xF402A4
 		protected void ApplyEventRemainTime(long remainSec, bool makeColor)
 		{
-			int days = (int)(remainSec % 86400);
+			int days = (int)(remainSec / 86400);
 			remainSec -= days * 86400;
-			int hours = (int)(remainSec % 3600);
+			int hours = (int)(remainSec / 3600);
 			remainSec -= hours * 3600;
-			int min = (int)(remainSec % 60);
+			int min = (int)(remainSec / 60);
 			remainSec -= min * 60;
 			string str = MakeRemainTime(days, hours, min, (int)remainSec);
 			if(makeColor)
@@ -1184,7 +1184,27 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xF40DD0 Offset: 0xF40DD0 VA: 0xF40DD0
-		// protected void GotoEventQuest(int eventId) { }
+		protected void GotoEventQuest(int eventId)
+		{
+			if(eventId > 0)
+			{
+                IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(eventId);
+				if(ev != null && ev.FBLGGLDPFDF_CanShowStartAdventure())
+				{
+                    GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(ev.GFIBLLLHMPD_StartAdventureId);
+					if(adv != null)
+					{
+						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(ev.GFIBLLLHMPD_StartAdventureId);
+						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(ev.GFIBLLLHMPD_StartAdventureId, OAGBCBBHMPF.DKAMMIHBINF.IDINJDEBPKP_6);
+						Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
+						Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTQUEST, new AdvSetupParam() { eventUniqueId = eventId });
+						MenuScene.Instance.GotoAdventure(false);
+						return;
+					}
+                }
+            }
+			MenuScene.Instance.Mount(TransitionUniqueId.EVENTQUEST, new EventMusicSelectSceneArgs(eventId, m_isLine6Mode, false), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+		}
 
 		// // RVA: 0xF41220 Offset: 0xF41220 VA: 0xF41220
 		protected void GotoEventBattle(int eventId)
@@ -1555,7 +1575,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xF427D0 Offset: 0xF427D0 VA: 0xF427D0
-		// protected bool IsEventMissionSupport() { }
+		protected bool IsEventMissionSupport()
+		{
+			if(m_eventCtrl != null)
+				return m_eventCtrl.AGLILDLEFDK_Missions.Count > 0;
+			return false;
+		}
 
 		// // RVA: 0xF3EE10 Offset: 0xF3EE10 VA: 0xF3EE10
 		protected bool IsReceiveMission()
@@ -2111,9 +2136,9 @@ namespace XeApp.Game.Menu
 						GotoEventRaid(selectMusicData.EKANGPODCEP_EventId);
 						return;
 					}
-					else if(selectMusicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventCategory == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
+					else if(selectMusicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventCategory == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission)
 					{
-						TodoLogger.LogError(TodoLogger.EventQuest_6, "OnClickPlayButton");
+						GotoEventQuest(selectMusicData.EKANGPODCEP_EventId);
 						return;
 					}
 					GotoEventMusicSelect(selectMusicData.EKANGPODCEP_EventId);

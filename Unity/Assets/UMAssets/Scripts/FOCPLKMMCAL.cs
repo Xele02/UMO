@@ -95,8 +95,12 @@ public class FOCPLKMMCAL
 					}
 					if(OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 6)
 					{
-						TodoLogger.LogError(TodoLogger.EventQuest_6, "Event Quest");
 						// L268
+						KPJHLACKGJF_EventMission evM = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false) as KPJHLACKGJF_EventMission;
+						if(evM != null)
+						{
+							evM.FCLGOCBGPJF(OMNOFMEBLAD, ACMMDAHKCIF, FCLGIPFPIPH, LFGNFNDDLJH_TicketCount, sceneId, numBoard, true);
+						}
 					}
 					else if(OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 1)
 					{
@@ -204,7 +208,7 @@ public class FOCPLKMMCAL
 				}
 				break;
 			case 2:
-				TodoLogger.LogError(TodoLogger.Event_Unknwown_2, "HNNPBABEPBP event");
+				TodoLogger.LogError(TodoLogger.EventQuest_2, "HNNPBABEPBP event");
 				break;
 			case 3:
 				{
@@ -218,7 +222,15 @@ public class FOCPLKMMCAL
 				}
 				break;
 			case 6:
-				TodoLogger.LogError(TodoLogger.EventMission_6, "HNNPBABEPBP event");
+				{
+					KPJHLACKGJF_EventMission ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false) as KPJHLACKGJF_EventMission;
+					if(ev != null)
+					{
+						FFDBCEDKMGN_PrevPoint = (int)ev.FBGDBGKNKOD_GetCurrentPoint();
+						ev.FCLGOCBGPJF(OMNOFMEBLAD, ACMMDAHKCIF, FCLGIPFPIPH, LFGNFNDDLJH_TicketCount, fsceneId, c, false);
+						MMLPAMGJEOD_NewPoint = ev.FHPEAPEANAI.AHOKAPCGJMA_TotalPoint;
+					}
+				}
 				break;
 			case 14:
 				{
@@ -519,7 +531,7 @@ public class FOCPLKMMCAL
 						}
 						else if(OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 2)
 						{
-							TodoLogger.LogError(TodoLogger.Event_Unknwown_2, "HKEFOCFIKIL Event");
+							TodoLogger.LogError(TodoLogger.EventQuest_2, "HKEFOCFIKIL Event");
 						}
 						else if (OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 3)
 						{

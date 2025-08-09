@@ -298,7 +298,19 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 	}
 
 	// // RVA: 0x12147B8 Offset: 0x12147B8 VA: 0x12147B8
-	// public bool ICKDCAMABPD(int OGPKGGLJACK) { }
+	public bool ICKDCAMABPD(int OGPKGGLJACK)
+	{
+		if(HAMPEDFMIAD_HasOnlyMultiDivaMode())
+		{
+			if(DBIGDCOHOIC_IsMultiDanceUnlocked())
+			{
+				return IOMLIADJJLD(false) < OGPKGGLJACK;
+			}
+		}
+		else
+			return true;
+		return false;
+	}
 
 	// // RVA: 0x1214824 Offset: 0x1214824 VA: 0x1214824
 	public bool PNKKJEABNFF(IBJAKJJICBC.AAADDDFCKLF IKENKJKOGNN)
@@ -1212,7 +1224,40 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
     }
 
 	// // RVA: 0x121CBD4 Offset: 0x121CBD4 VA: 0x121CBD4
-	// public static void GNNIJFBOBAJ(List<IBJAKJJICBC> NNDGIAEFMOG) { }
+	public static void GNNIJFBOBAJ(List<IBJAKJJICBC> NNDGIAEFMOG)
+	{
+		int a = 0;
+		int b = 0;
+        IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false);
+		if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission)
+		{
+			KPJHLACKGJF_EventMission evM = ev as KPJHLACKGJF_EventMission;
+			ACBAHDMEFFL_EventMission.BIMNGKEMMJM d = evM.MLLAMHMJFLP();
+			if(d != null)
+			{
+				if(evM.BHNEJEDEHJA_SelectedCardIdx() == 2)
+				{
+					a = evM.LOLJPCKNLGI(d.CFMIPHDGCAG_Mid3).MLKFDMFDFCE_EnemyCSkill;
+					b = evM.LOLJPCKNLGI(d.CFMIPHDGCAG_Mid3).DKOPDNHDLIA_EnemyLSkill;
+				}
+				else if(evM.BHNEJEDEHJA_SelectedCardIdx() == 1)
+				{
+					a = evM.LOLJPCKNLGI(d.KEEHMNJCONJ_Mid2).MLKFDMFDFCE_EnemyCSkill;
+					b = evM.LOLJPCKNLGI(d.KEEHMNJCONJ_Mid2).DKOPDNHDLIA_EnemyLSkill;
+				}
+				else if(evM.BHNEJEDEHJA_SelectedCardIdx() == 0)
+				{
+					a = evM.LOLJPCKNLGI(d.BGFPMGPHGJJ_Mid1).MLKFDMFDFCE_EnemyCSkill;
+					b = evM.LOLJPCKNLGI(d.BGFPMGPHGJJ_Mid1).DKOPDNHDLIA_EnemyLSkill;
+				}
+			}
+		}
+		//LAB_0121cdd0
+		for(int i = 0; i < NNDGIAEFMOG.Count; i++)
+		{
+			NNDGIAEFMOG[i].NPEKPHAFMGE_SetupEnemies(a, b);
+		}
+    }
 
 	// // RVA: 0x121CE9C Offset: 0x121CE9C VA: 0x121CE9C
 	public static void BDNIEPMOHDI(List<IBJAKJJICBC> NNDGIAEFMOG)
@@ -1228,7 +1273,10 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
     }
 
 	// // RVA: 0x121D0DC Offset: 0x121D0DC VA: 0x121D0DC
-	// public static List<IBJAKJJICBC> FMHFMIMDOCM(int DEPGBBJMFED, long JHNMKKNEENE, bool JCOJKAHFADL = False) { }
+	public static List<IBJAKJJICBC> FMHFMIMDOCM(int DEPGBBJMFED, long JHNMKKNEENE, bool JCOJKAHFADL /*= False*/)
+	{
+		return MJAJPHIKGBF(DEPGBBJMFED, JHNMKKNEENE, JCOJKAHFADL, JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false), OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission);
+	}
 
 	// // RVA: 0x121DF50 Offset: 0x121DF50 VA: 0x121DF50
 	public static List<IBJAKJJICBC> DHFHJBMKEHN(int DEPGBBJMFED, long JHNMKKNEENE, bool JCOJKAHFADL/* = False*/)
@@ -1403,7 +1451,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 				}
 			}
 			else if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid || 
-				ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
+				ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission)
 			{
 				List<int> ls = ev.HEACCHAKMFG_GetMusicsList();
 				for(int i = 0; i < 1 && i < ls.Count; i++)

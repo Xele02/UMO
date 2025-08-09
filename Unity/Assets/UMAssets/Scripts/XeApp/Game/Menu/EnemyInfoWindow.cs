@@ -61,7 +61,7 @@ namespace XeApp.Game.Menu
 			}
 			if(data.LMJFFFOEPLE_LiveSkillId > 0)
 			{
-				m_sp[1].text = data.NDPPEMCHKHA_SkillName;
+				m_sp[skillNum].text = data.NDPPEMCHKHA_SkillName;
 				skillNum++;
 			}
 			m_name.text = data.OPFGFINHFCE_Name;

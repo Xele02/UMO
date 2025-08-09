@@ -150,13 +150,13 @@ namespace XeApp.Game.Menu
 				case HGFPAFPGIKG.GDEJHABHLFH.HPFFBANMJOD_1:
 					break;
 				case HGFPAFPGIKG.GDEJHABHLFH.CPLKGJJFJKA_2:
-					return (m_crntPickup.NNCCGILOOIE - m_crntPickup.BFGKGMOLAFL_MaxPlate) < 0;
+					return (m_crntPickup.NNCCGILOOIE_Remain - m_crntPickup.BFGKGMOLAFL_Max) < 0;
 				default:
 					if(m_prevBoxId != m_crntBoxId)
 						return false;
 					if(m_prevPickup == null)
 						return false;
-					if(m_prevPickup.NNCCGILOOIE <= m_crntPickup.NNCCGILOOIE)
+					if(m_prevPickup.NNCCGILOOIE_Remain <= m_crntPickup.NNCCGILOOIE_Remain)
 						return false;
 					if(reaction.FKDOMKHHOCD == HGFPAFPGIKG.GDEJHABHLFH.DAFJKGJDAND_3)
 					{

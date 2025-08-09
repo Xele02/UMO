@@ -1298,7 +1298,7 @@ namespace XeApp.Game.Menu
 					{
 						GotoEventRaid(selectMusicData.EKANGPODCEP_EventId, isLine6ModeFlag);
 					}
-					else if(selectMusicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventCategory == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
+					else if(selectMusicData.AFCMIOIGAJN_EventInfo.HIDHLFCBIDE_EventCategory == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission)
 					{
 						GotoEventQuest(selectMusicData.EKANGPODCEP_EventId, isLine6ModeFlag);
 					}

@@ -41,7 +41,7 @@ namespace XeApp.Game.Menu
 			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(data.GLCLFMGPMAN_ItemId);
             EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(data.GLCLFMGPMAN_ItemId);
             m_data = data;
-			m_textRemain.text = data.NNCCGILOOIE + "/" + data.BFGKGMOLAFL_MaxPlate;
+			m_textRemain.text = data.NNCCGILOOIE_Remain + "/" + data.BFGKGMOLAFL_Max;
 			SetItemImage(data.GLCLFMGPMAN_ItemId);
 			m_imageStamp.enabled = false;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
