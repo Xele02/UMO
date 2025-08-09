@@ -853,9 +853,19 @@ public class GBNDFCEDNMG
 					return ev.CKCPAMDDNPF.DPCFADCFMOA_IsWin;
 				}
 			case 17:
-				if(LIKDEHHKFEH.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
+				if(LIKDEHHKFEH.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission)
 				{
-					TodoLogger.LogError(TodoLogger.EventQuest_6, "Event Quest");
+					KPJHLACKGJF_EventMission ev = LIKDEHHKFEH as KPJHLACKGJF_EventMission;
+					KPJHLACKGJF_EventMission.OPFEKMKHEIF d = ev.FHPEAPEANAI;
+					if(d == null)
+						return false;
+					if(d.BCGLDMKODLC)
+					{
+						if(aa3 == 0)
+							return true;
+						if(aa3 == ev.JKCBFOAHNGL_Mid)
+							return true;
+					}
 				}
 				break;
 			case 22:

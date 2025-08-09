@@ -76,8 +76,8 @@ namespace XeApp.Game.Menu
 				image.Set(m_imageTitle);
 			});
 			m_numItem.SetNumber(view.MFHLHIDLKGN_NumTicket, 0);
-			m_numGetPlate.SetNumber(it.BFGKGMOLAFL_MaxPlate - it.NNCCGILOOIE, 0);
-			m_numMaxPlate.SetNumber(it.BFGKGMOLAFL_MaxPlate, 0);
+			m_numGetPlate.SetNumber(it.BFGKGMOLAFL_Max - it.NNCCGILOOIE_Remain, 0);
+			m_numMaxPlate.SetNumber(it.BFGKGMOLAFL_Max, 0);
 			m_textBoxNum.text = view.JALHJAPAFLK_BoxCurrent.ToString() + "/" + view.DMPELKEMCCJ_BoxTotal.ToString();
 			if(view.ENJLGHMEKEL_Type == HGFPAFPGIKG.KAFHMMOGLKO.FAFCPLEAFCP_0_Summer)
 			{

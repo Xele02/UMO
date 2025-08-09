@@ -91,7 +91,7 @@ namespace XeApp.Game.Menu
 						EventQuestData data = new EventQuestData();
 						data.m_masterName = m_bingoViewList[i].JOPOPMLFINI_QuastName;
 						data.m_uniqueId = m_bingoViewList[i].JHAOHBNPMNA_EventId;
-						data.m_eventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.DIDJLIPNCKO;
+						data.m_eventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.DIDJLIPNCKO_12;
 						data.m_achievedCount = GNGMCIAIKMA.HHCJCDFCLOB.OBOGIOGEBPK(m_bingoViewList[i].PGIIDPEGGPI_EventId, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
 						m_eventQuestDataList.Add(data);
 						m_bingoViewList[i].PKNLMLDKCLM_AchievedQuests = data.m_achievedCount;
@@ -940,7 +940,7 @@ namespace XeApp.Game.Menu
 						}
 						Database.Instance.advResult.Setup("Menu", goScene, param);
 					}
-					else if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
+					else if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission)
 					{
 						Database.Instance.advResult.Setup("Menu", goScene, param);
 						goScene = TransitionUniqueId.EVENTQUEST;
@@ -984,7 +984,7 @@ namespace XeApp.Game.Menu
 				}
 				MenuScene.Instance.Mount(TransitionUniqueId.MUSICSELECT_RAID, new EventMusicSelectSceneArgs(ev.PGIIDPEGGPI_EventId, false, false), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 			}
-			else if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
+			else if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission)
 			{
 				MenuScene.Instance.Mount(TransitionUniqueId.EVENTQUEST, new EventMusicSelectSceneArgs(ev.PGIIDPEGGPI_EventId, false, false), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 			}

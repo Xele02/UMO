@@ -164,8 +164,11 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
+				// UMO
+				bool canDisplay = m_spEventCtrl == null && JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) == null;
+				// UMO
 				m_boxGachaEventCtrl = evGacha;
-				if(m_spEventCtrl == null && m_boxGachaEventCtrl.BEDCLNJIEGF(time))
+				if(canDisplay && m_boxGachaEventCtrl.BEDCLNJIEGF(time))
 				{
 					m_fesBanner.Setup(m_boxGachaEventCtrl, time);
 					m_fesBanner.onClickButton = OnClickKujiButton;
@@ -1095,7 +1098,7 @@ namespace XeApp.Game.Menu
 												case OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection:
 													Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTMUSICSELECT, new AdvSetupParam() { eventUniqueId=b.EAHPLCJMPHD_EventId });
 													break;
-												case OHCAABOMEOF.KGOGMKMBCPP_EventType.MKKOHBGHADL_2:
+												case OHCAABOMEOF.KGOGMKMBCPP_EventType.MKKOHBGHADL_EventQuest_2:
 												case OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore:
 												case OHCAABOMEOF.KGOGMKMBCPP_EventType.ENMHPBGOOII_Week:
 													//switchD_00976c24_caseD_2
@@ -1104,8 +1107,8 @@ namespace XeApp.Game.Menu
 													Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTBATTLE, new AdvSetupParam() { eventUniqueId=b.EAHPLCJMPHD_EventId });
 													//switchD_00976c24_caseD_2
 													break;
-												case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest:
-													TodoLogger.LogError(TodoLogger.EventQuest_6, "Event Quest");
+												case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission:
+													Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTQUEST, new AdvSetupParam() { eventUniqueId=b.EAHPLCJMPHD_EventId });
 													break;
 												case OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp:
 													Database.Instance.advResult.Setup("Menu", TransitionUniqueId.HOME_NEWYEAREVENT, new AdvSetupParam() { eventUniqueId=b.EAHPLCJMPHD_EventId });
@@ -1143,8 +1146,8 @@ namespace XeApp.Game.Menu
 							case OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle:
 								MenuScene.Instance.Mount(TransitionUniqueId.EVENTBATTLE, new EventMusicSelectSceneArgs(b.EAHPLCJMPHD_EventId, false, false), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 								break;
-							case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest:
-								TodoLogger.LogError(TodoLogger.EventQuest_6, "Event Quest");
+							case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission:
+								MenuScene.Instance.Mount(TransitionUniqueId.EVENTQUEST, new EventMusicSelectSceneArgs(b.EAHPLCJMPHD_EventId, false, false), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 								break;
 							case OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp:
 								MenuScene.Instance.Mount(TransitionUniqueId.HOME_NEWYEAREVENT, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
@@ -1253,9 +1256,9 @@ namespace XeApp.Game.Menu
 			{
 				Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTGODIVA, new AdvSetupParam() { eventUniqueId=param.eventUniqueId });
 			}
-			else if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
+			else if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission)
 			{
-				TodoLogger.LogError(TodoLogger.EventQuest_6, "Quest");
+				Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTQUEST, new AdvSetupParam() { eventUniqueId=param.eventUniqueId });
 			}
 			//LAB_009789d0
 			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(a1);
@@ -1301,8 +1304,8 @@ namespace XeApp.Game.Menu
 							case OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle:
 								Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTBATTLE, new AdvSetupParam() { eventUniqueId=eventUniqueId });
 								break;
-							case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest:
-								TodoLogger.LogError(TodoLogger.EventQuest_6, "Event Quest");
+							case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission:
+								Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTQUEST, new AdvSetupParam() { eventUniqueId=eventUniqueId });
 								break;
 							case OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp:
 								Database.Instance.advResult.Setup("Menu", TransitionUniqueId.HOME_NEWYEAREVENT, new AdvSetupParam() { eventUniqueId=eventUniqueId });
@@ -1354,8 +1357,8 @@ namespace XeApp.Game.Menu
 				case OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle:
 					MenuScene.Instance.Mount(TransitionUniqueId.EVENTBATTLE, new EventMusicSelectSceneArgs(eventUniqueId, false, false), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					break;
-				case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest:
-					TodoLogger.LogError(TodoLogger.EventQuest_6, "Event Quest");
+				case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission:
+					MenuScene.Instance.Mount(TransitionUniqueId.EVENTQUEST, new EventMusicSelectSceneArgs(eventUniqueId, false, false), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 					break;
 				case OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp:
 					MenuScene.Instance.Mount(TransitionUniqueId.HOME_NEWYEAREVENT, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
@@ -2932,9 +2935,9 @@ namespace XeApp.Game.Menu
 			//0x13D9054
 			m_isCheckEventReward = true;
             IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.DDEODFNANDO_8_ResultRewardToReceive/*8*/, false);
-			if(ev != null && ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.MKKOHBGHADL_2/*2*/)
+			if(ev != null && ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.MKKOHBGHADL_EventQuest_2/*2*/)
 			{
-				TodoLogger.LogError(TodoLogger.Event_Unknwown_2, "Coroutine_EventReward");
+				TodoLogger.LogError(TodoLogger.EventQuest_2, "Coroutine_EventReward");
 			}
 			bool isShowReward = false;
 			bool isError = false;

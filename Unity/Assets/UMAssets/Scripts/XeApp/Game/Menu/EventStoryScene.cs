@@ -232,7 +232,7 @@ namespace XeApp.Game.Menu
 					case OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection:
 						uniqueId = TransitionUniqueId.EVENTMUSICSELECT_EVENTSTORY;
 						break;
-					case OHCAABOMEOF.KGOGMKMBCPP_EventType.MKKOHBGHADL_2/*2*/:
+					case OHCAABOMEOF.KGOGMKMBCPP_EventType.MKKOHBGHADL_EventQuest_2/*2*/:
 					case OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore/*4*/:
 					case OHCAABOMEOF.KGOGMKMBCPP_EventType.ENMHPBGOOII_Week/*5*/:
 					default:
@@ -240,7 +240,7 @@ namespace XeApp.Game.Menu
 					case OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle:
 						uniqueId = TransitionUniqueId.EVENTBATTLE_EVENTSTORY;
 						break;
-					case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest:
+					case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission:
 						uniqueId = TransitionUniqueId.EVENTQUEST_EVENTSTORY;
 						break;
 					case OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp/*7*/:

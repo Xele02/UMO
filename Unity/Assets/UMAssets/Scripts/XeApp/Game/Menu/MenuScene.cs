@@ -469,9 +469,14 @@ namespace XeApp.Game.Menu
 							info.args = new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, true);
 							return;
 						}
-						if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
+						if (Database.Instance.gameSetup.musicInfo.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission)
 						{
-							TodoLogger.LogError(TodoLogger.EventQuest_6, "init from event 6");
+							PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.JBAIEADLAGH_0);
+							info.category = SceneGroupCategory.EVENT_QUEST;
+							info.nextName = TransitionList.Type.EVENT_QUEST;
+							info.uniqueId = TransitionUniqueId.EVENTQUEST;
+							info.args = new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, true);
+							return;
 						}
 					}
 					PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.JBAIEADLAGH_0/*0*/);
@@ -737,7 +742,14 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB30F18 Offset: 0xB30F18 VA: 0xB30F18
-		// public int GetMedalMonthId() { }
+		public int GetMedalMonthId()
+		{
+			if(m_playerStatusData != null && m_playerStatusData.AHHGKGOPGDE_MedalMonth > 1)
+			{
+				return Mathf.Min(m_playerStatusData.AHHGKGOPGDE_MedalMonth, 12);
+			}
+			return 1;
+		}
 
 		// // RVA: 0xB30F58 Offset: 0xB30F58 VA: 0xB30F58
 		public int GetCurrentStamina()
@@ -2374,7 +2386,7 @@ namespace XeApp.Game.Menu
 			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{
 				//0xB38AB4
-				if(eventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.MKKOHBGHADL_2)
+				if(eventType < OHCAABOMEOF.KGOGMKMBCPP_EventType.MKKOHBGHADL_EventQuest_2)
 				{
 					if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0)
 					{
@@ -2396,7 +2408,7 @@ namespace XeApp.Game.Menu
 				{
 					Instance.MountWithFade(TransitionUniqueId.HOME, null, true, MenuSceneCamebackInfo.CamBackUnityScene.None);
 				}
-				else if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
+				else if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission)
 				{
 					Instance.HelpButton.HideEventHelpButton();
 					Instance.Mount(TransitionUniqueId.EVENTQUEST, new EventMusicSelectSceneArgs(unitqueId, false, false), true, MenuSceneCamebackInfo.CamBackUnityScene.None);

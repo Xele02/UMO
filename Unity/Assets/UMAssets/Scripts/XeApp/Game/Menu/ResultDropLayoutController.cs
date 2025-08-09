@@ -160,9 +160,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xD01B0C Offset: 0xD01B0C VA: 0xD01B0C
 		private void OnFinishedOkayButton()
 		{
-			if (coroutine != null)
-				return;
-			coroutine = this.StartCoroutineWatched(Co_PopupProcess());
+			StartPopupProcess();
 		}
 
 		// // RVA: 0xD01B10 Offset: 0xD01B10 VA: 0xD01B10

@@ -127,7 +127,16 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xF5332C Offset: 0xF5332C VA: 0xF5332C
-		// public void SetTabNew(FreeCategoryId.Type categoryId, bool isNew) { }
+		public void SetTabNew(FreeCategoryId.Type categoryId, bool isNew)
+		{
+			for(int i = 0; i < s_buttonIndexToSeries.Length; i++)
+			{
+				if(categoryId == (FreeCategoryId.Type)i)
+				{
+					m_seriesButtons[i].SetNew(isNew);
+				}
+			}
+		}
 
 		// // RVA: 0xF534D4 Offset: 0xF534D4 VA: 0xF534D4
 		private void OnClickSeriesButton(int index)

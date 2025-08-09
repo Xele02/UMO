@@ -294,9 +294,13 @@ namespace XeApp.Game.Menu
 			{
 				str = MessageManager.Instance.GetMessage("menu", "popup_event_reward_ranking_type003");
 			}
-			else if(data.eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest && data.contExt != null)
+			else if(data.eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission && data.contExt != null)
 			{
-				TodoLogger.LogError(TodoLogger.EventQuest_6, "Event Quest");
+				IMDBGDNPLJA_EventBoxGacha dbEv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(data.contExt.JOPOPMLFINI_QuestId) as IMDBGDNPLJA_EventBoxGacha;
+				if(dbEv != null)
+				{
+					str = dbEv.NGHKJOEDLIP.OPFGFINHFCE_EventName;
+				}
 			}
 			for(int i = 0; i < data.total_data_list.Count; i++)
 			{
@@ -312,9 +316,24 @@ namespace XeApp.Game.Menu
 			{
 				str = MessageManager.Instance.GetMessage("menu", "popup_event_reward_ranking_type002");
 			}
-			else if(data.eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest)
+			else if(data.eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission)
 			{
-				TodoLogger.LogError(TodoLogger.EventQuest_6, "Event Quest");
+				if(data.contExt != null)
+				{
+					CHHECNJBMLA_EventBoxGacha ev = data.contExt as CHHECNJBMLA_EventBoxGacha;
+					for(int i = 0; i < ev.HNDKCBHOJEH.Count; i++)
+					{
+						string[] strs = new string[5]
+						{
+							ev.HNDKCBHOJEH[i].MPEKFDKEKCG,
+							ev.HNDKCBHOJEH[i].IMMDGJAOPCD.ToString(),
+							":",
+							ev.HNDKCBHOJEH[i].CLLKANEGGBJ.ToString(),
+							JpStringLiterals.StringLiteral_10090
+						};
+						AddViewPlateList(ev.HNDKCBHOJEH[i].GLCLFMGPMAN, string.Concat(strs), ListType.Ranking, str);
+					}
+				}
 			}
 			else
 			{

@@ -42,7 +42,7 @@ namespace XeApp.Game.Menu
 		private const int VerticalMusicSelectSearchId = 102;
 		public const int LuckyLeafPopupHelpSearchId = 113;
 		public const int MusicRateHelpSearchId = 119;
-		private readonly HelpInfo MissionEventhelpPattern = new HelpInfo() { pattern = 5, searchId = 0, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.MKKOHBGHADL_2 }; // 0x44
+		private readonly HelpInfo MissionEventhelpPattern = new HelpInfo() { pattern = 5, searchId = 0, eveType = OHCAABOMEOF.KGOGMKMBCPP_EventType.MKKOHBGHADL_EventQuest_2 }; // 0x44
 		private Dictionary<OHCAABOMEOF.KGOGMKMBCPP_EventType, int> m_eventHelpIdDict = new Dictionary<OHCAABOMEOF.KGOGMKMBCPP_EventType, int>(); // 0x50
 		private Dictionary<int, HelpInfo> ButtonDispPlaceDict = new Dictionary<int, HelpInfo>()
 		{

@@ -103,7 +103,7 @@ public class NGJOPPIGCPM_ResultData
 		int savedComboRank = mInfo1.ABFNAEKEGOB_ComboRank;
 		if(MNNHHJBBICA_GameEventType == 2)
 		{
-			TodoLogger.LogError(TodoLogger.Event_Unknwown_2, "Event");
+			TodoLogger.LogError(TodoLogger.EventQuest_2, "Event");
 		}
 		else if(MNNHHJBBICA_GameEventType == 3)
 		{

@@ -14,7 +14,10 @@ namespace XeApp.Game.Menu
 		private RawImageEx m_newIcon; // 0x88
 
 		// // RVA: 0xF529B8 Offset: 0xF529B8 VA: 0xF529B8
-		// public void SetNew(bool isNew) { }
+		public void SetNew(bool isNew)
+		{
+			m_newIcon.enabled = isNew;
+		}
 
 		// RVA: 0xF529EC Offset: 0xF529EC VA: 0xF529EC Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

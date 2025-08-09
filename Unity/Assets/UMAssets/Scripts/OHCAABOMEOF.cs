@@ -5,17 +5,17 @@ public class OHCAABOMEOF
     {
         HJNNKCMLGFL_0 = 0,
         AOPKACCDKPA_EventCollection = 1,
-        MKKOHBGHADL_2 = 2,
+        MKKOHBGHADL_EventQuest_2 = 2,
         PFKOKHODEGL_EventBattle = 3,
         KEILBOLBDHN_EventScore = 4,
         ENMHPBGOOII_Week = 5,
-        NKDOEBONGNI_EventQuest = 6,
+        NKDOEBONGNI_EventMission = 6,
         ENPJADLIFAB_EventSp = 7,
         OCCGDMDBCHK_EventGacha = 8,
         DMPMKBCPHMA_PresentCampaign = 9,
         DAMDPLEBNCB_AprilFool = 10,
         CADKONMJEDA_EventRaid = 11,
-        DIDJLIPNCKO = 12,
+        DIDJLIPNCKO_12 = 12,
         MCGPGMGEPHG_EventRaidLobby = 13,
         BNECMLPHAGJ_EventGoDiva = 14,
     }
@@ -33,7 +33,7 @@ public class OHCAABOMEOF
     {
         int res = PGIIDPEGGPI / 1000;
         if(PGIIDPEGGPI - 2000 < 1000)
-            res =  (int)KGOGMKMBCPP_EventType.NKDOEBONGNI_EventQuest;
+            res =  (int)KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission;
 
         return (KGOGMKMBCPP_EventType)res;
     }

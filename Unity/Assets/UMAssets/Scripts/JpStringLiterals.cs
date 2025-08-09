@@ -486,6 +486,7 @@ class JpStringLiterals
 	public static string StringLiteral_18054 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_18054", "～{0}秒"); } } //0x03bba4d0
 	public static string StringLiteral_18067 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_18067", "エナジーが{0}に回復しました"); } } //0x03bba504
 	public static string StringLiteral_18280 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_18280", "プリズム"); } } //0x03bba858
+	public static string StringLiteral_18575 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_18575", "未達成"); } } //03bbacf4
 	public static string StringLiteral_18787 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_18787", "獲得ユニオンクレジット"); } } // 03bbb044
 	public static string StringLiteral_18797 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_18797", "小隊選択"); } } //0x03bbb06c
 	public static string StringLiteral_18843 { get { return DatabaseTextConverter.TranslateStringLiterals("StringLiteral_18843", "リザルト画面"); } } //0x03bbb124

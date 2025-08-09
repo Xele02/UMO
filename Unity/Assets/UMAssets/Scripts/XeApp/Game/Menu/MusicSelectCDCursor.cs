@@ -150,7 +150,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				m_bonusMessage.text = MessageManager.Instance.GetMessage("menu", "music_select_event_bonus");
+				m_bonusMessage.text = string.Format(MessageManager.Instance.GetMessage("menu", "music_select_event_bonus"), percent);
 				m_bonusMessage.enabled = true;
 				m_bonusPanelImage.enabled = true;
 			}
