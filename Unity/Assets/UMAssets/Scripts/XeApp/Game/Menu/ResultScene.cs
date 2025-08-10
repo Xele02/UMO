@@ -1678,7 +1678,12 @@ namespace XeApp.Game.Menu
 						}
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore:
-							TodoLogger.LogError(TodoLogger.EventScore_4, "Event");
+							yield return null;
+							{
+								MusicSelectArgs args = new MusicSelectArgs();
+								args.SetScoreRanking();
+								MenuScene.Instance.Mount(TransitionUniqueId.MUSICSELECT, args, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+							}
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission:
 							MenuScene.Instance.Mount(TransitionUniqueId.EVENTQUEST, new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, true), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);

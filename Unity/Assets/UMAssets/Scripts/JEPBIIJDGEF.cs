@@ -129,14 +129,20 @@ public class JEPBIIJDGEF_EventInfo
 	public IKDICBBFBMI_EventBase AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus BELFNAHNMDL = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/)
 	{
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		IKDICBBFBMI_EventBase res = null;
 		for(int i = 0; i < MPEOOINCGEN.Count; i++)
 		{
 			if(MPEOOINCGEN[i].HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore)
 			{
-				TodoLogger.LogError(TodoLogger.EventScore_4, "Event");
+				MPEOOINCGEN[i].HCDGELDHFHB_UpdateStatus(time);
+				if(MPEOOINCGEN[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.FFLKPBPBPEP_1 && MPEOOINCGEN[i].NGOFCFJHOMI_Status <= BELFNAHNMDL && 
+					(res == null || res.DPJCPDKALGI_End1 < MPEOOINCGEN[i].DPJCPDKALGI_End1))
+				{
+					res = MPEOOINCGEN[i];
+				}
 			}
 		}
-		return null;
+		return res;
 	}
 
 	// // RVA: 0x1C39DC4 Offset: 0x1C39DC4 VA: 0x1C39DC4

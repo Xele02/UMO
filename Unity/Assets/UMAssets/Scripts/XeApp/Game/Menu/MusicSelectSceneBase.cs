@@ -1952,8 +1952,17 @@ namespace XeApp.Game.Menu
 				return true;
 			if(selectMusicData.LEBDMNIGOJB_IsScoreEvent)
 			{
-				TodoLogger.LogError(TodoLogger.EventScore_4, "Check Event Limit");
-			}
+                IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6);
+				if(ev != null && ev.FKKDIDMGLMI)
+				{
+					JHHBAFKMBDL.HHCJCDFCLOB.PEIONAKEPCN_ShowRankingBanPopup(() =>
+					{
+						//0xF4A5B8
+						MenuScene.Instance.GotoTitle();
+					});
+					return true;
+				}
+            }
 			return MenuScene.Instance.CheckEventLimit(selectMusicData, true, true, m_eventStatus < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6 ? KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5 : KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, m_eventId);
 		}
 
@@ -2234,7 +2243,7 @@ namespace XeApp.Game.Menu
 				if(selectMusicData.LEBDMNIGOJB_IsScoreEvent)
 				{
 					MenuScene.Instance.InputDisable();
-					TodoLogger.LogError(TodoLogger.EventScore_4, "OnClickEventDetailButton");
+					m_scoreEventCtrl.HAAEJDGMICH(LBNLAENLPNK.JEKODBEDOMM.GBABFPJHPAG_0, OnWebViewClose, OnNetErrorToTitle);
 				}
 			}
 		}

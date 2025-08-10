@@ -13,6 +13,16 @@ public class NHGEHCMPDAI
 	public List<MFDJIFIIPJD> HBHMAKNGKFK = new List<MFDJIFIIPJD>(); // 0x14
 }
 
+
+public class LBNLAENLPNK
+{
+	public enum JEKODBEDOMM
+	{
+		GBABFPJHPAG_0 = 0,
+	}
+}
+
+
 [System.Obsolete("Use IKDICBBFBMI_EventBase", true)]
 public abstract class IKDICBBFBMI { }
 public abstract class IKDICBBFBMI_EventBase
@@ -1249,7 +1259,10 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8E233C Offset: 0x8E233C VA: 0x8E233C Slot: 69
-	// public virtual void HAAEJDGMICH(LBNLAENLPNK.JEKODBEDOMM INDDJNMPONH, IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG) { }
+	public virtual void HAAEJDGMICH(LBNLAENLPNK.JEKODBEDOMM INDDJNMPONH, IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG)
+	{
+		BHFHGFKBOHH();
+	}
 
 	// // RVA: 0x8E2368 Offset: 0x8E2368 VA: 0x8E2368 Slot: 70
 	public virtual void ADACMHAHHKC_PreSetupEventHome(IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK AOCANKOMKFG)

@@ -64,6 +64,9 @@ namespace XeApp.Game.Menu
 		}
 
         // // RVA: 0x1054EF8 Offset: 0x1054EF8 VA: 0x1054EF8
-        // public void SetScoreRanking() { }
+        public void SetScoreRanking()
+        {
+            isScoreRanking = true;
+        }
     }
 }

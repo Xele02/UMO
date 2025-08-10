@@ -31,10 +31,10 @@ public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_ServerSaveBlock
 		public List<byte> LGBKKDOLOFP_RwdClrL6 = new List<byte>(5); // 0x68
 		public List<byte> DKIIINIEKHP_RwdScL6 = new List<byte>(5); // 0x6C
 		public List<byte> JNNIOJIDNKM_RwdCbL6 = new List<byte>(5); // 0x70
-		public int ODEHJGPDFCL; // 0x74
-		public int PDNJGJNGPNJ; // 0x78
-		public int ANDJNPEINGI; // 0x7C
-		public int ABFNAEKEGOB; // 0x80
+		public int ODEHJGPDFCL_Score; // 0x74
+		public int PDNJGJNGPNJ_MaxCombo; // 0x78
+		public int ANDJNPEINGI_TeamLuck; // 0x7C
+		public int ABFNAEKEGOB_ComboRank; // 0x80
 		public List<int> BKJPGJJAODB; // 0x84
 		private int JDFAEOFJLAD_Crypted; // 0x88
 		public string MPCAGEPEJJJ_Key; // 0x8C
@@ -43,7 +43,7 @@ public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_ServerSaveBlock
 		public int INLNJOGHLJE_Show; // 0x9C
 		public int EHDDADDKMFI; // 0xA0
 
-		public int ECLDABOLHLM { get { return JDFAEOFJLAD_Crypted ^ ENOBDCFHELD; } set {  JDFAEOFJLAD_Crypted = value ^ ENOBDCFHELD; } } //0x14CCB58 HPPGLGDLIMM 0x14CCB68 ELFABLKMCMK
+		public int ECLDABOLHLM_ExcellentScore { get { return JDFAEOFJLAD_Crypted ^ ENOBDCFHELD; } set {  JDFAEOFJLAD_Crypted = value ^ ENOBDCFHELD; } } //0x14CCB58 HPPGLGDLIMM 0x14CCB68 ELFABLKMCMK
 		public bool HPLMECLKFID_RRcv { get { return MLLPMIHMMFL_Crypted == 113; } set { MLLPMIHMMFL_Crypted = (sbyte)(value ? 113: 50); } } //0x14CCB78 DCHHABKOMFP 0x14CCB8C EGGIBMLGCOJ
 		public long DNBFMLBNAEE_Point { get { return AADPAJOLEEF_Crypted ^ ENOBDCFHELD; } set { value = value >= 100000000 ? 99999999: value; AADPAJOLEEF_Crypted = value ^ ENOBDCFHELD; IOJOBGHPLIE_Crypted = value ^ FCEJCHGLFGN; } } //0x14CCBBC JKHIIAEMMDE 0x14CCBD4 PFFKLBLEPKB
 		public long NFIOKIBPJCJ_Update { get { return DLEEMCAPOBP_Crypted ^ ENOBDCFHELD; } set { DLEEMCAPOBP_Crypted = value ^ ENOBDCFHELD; JPNMMOEPAEM_Crypted = value ^ FCEJCHGLFGN; } } //0x14CCC58 NGIDBCKCAMO 0x14CCC70 AEHIIPBDNGE
@@ -78,7 +78,7 @@ public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_ServerSaveBlock
 			INLNJOGHLJE_Show = 0;
 			int k = FCEJCHGLFGN * 18;
 			BKJPGJJAODB = null;
-			ECLDABOLHLM = 0;
+			ECLDABOLHLM_ExcellentScore = 0;
 			for(int i = 0; i < 5; i++)
 			{
 				CEBFFLDKAEC_SecureInt v = new CEBFFLDKAEC_SecureInt();
@@ -206,13 +206,64 @@ public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_ServerSaveBlock
 		//public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int OIPCCBHIKIA, FEHINJKHDAP.ALGDNCMJHGN OHMCIEMIKCE, bool EFOEPDLNLJG) { }
 
 		//// RVA: 0x14D43F4 Offset: 0x14D43F4 VA: 0x14D43F4
-		//public void IOONPJENLOJ(JDDGGJCGOPA.EHFMCGGNPIJ GPBJHKLFCEP) { }
+		public void IOONPJENLOJ(JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo GPBJHKLFCEP)
+		{
+			for(int i = 0; i < 5; i++)
+			{
+				KNIFCANOHOC_Score[i].DNJEJEANJGL_Value = GPBJHKLFCEP.BDCAICINCKK_GetScoreForDiff(i);
+				NLKEBAOBJCM_Combo[i].DNJEJEANJGL_Value = GPBJHKLFCEP.NLKEBAOBJCM_Combo[i];
+				JNLKJCDFFMM_Clear[i].DNJEJEANJGL_Value = GPBJHKLFCEP.JNLKJCDFFMM_Clear[i];
+				EMHFDJEFIHG_Play[i].DNJEJEANJGL_Value = GPBJHKLFCEP.EMHFDJEFIHG_Play[i];
+				LAMCCNAKIOJ_CbRnk[i] = GPBJHKLFCEP.LAMCCNAKIOJ_CbRnk[i];
+				HNDPLCDMOJF_RwdClr[i] = GPBJHKLFCEP.HNDPLCDMOJF_RewardClear[i];
+				JDIDBMEMKBC_RwdSc[i] = GPBJHKLFCEP.JDIDBMEMKBC_RewardScore[i];
+				AGGFHNMMGMN_RwdCb[i] = GPBJHKLFCEP.AGGFHNMMGMN_RewardCombo[i];
+				HAFFCOKJHBN_ScoreL6[i].DNJEJEANJGL_Value = GPBJHKLFCEP.AHDKMPFDKPE_GetScoreL6_ForDiff(i);
+				DNIGPFPHJAK_ComboL6[i].DNJEJEANJGL_Value = GPBJHKLFCEP.DNIGPFPHJAK_ComboL6[i];
+				DPPCFFFNBGA_ClearL6[i].DNJEJEANJGL_Value = GPBJHKLFCEP.DPPCFFFNBGA_ClearL6[i];
+				FHFKOGIPAEH_PlayL6[i].DNJEJEANJGL_Value = GPBJHKLFCEP.FHFKOGIPAEH_PlayL6[i];
+				EEECMKPLPNL_CbRnkL6[i] = GPBJHKLFCEP.EEECMKPLPNL_CbRnkL6[i];
+				LGBKKDOLOFP_RwdClrL6[i] = GPBJHKLFCEP.LGBKKDOLOFP_RewardClearL6[i];
+				DKIIINIEKHP_RwdScL6[i] = GPBJHKLFCEP.DKIIINIEKHP_RewardScoreL6[i];
+				JNNIOJIDNKM_RwdCbL6[i] = GPBJHKLFCEP.JNNIOJIDNKM_RewardComboL6[i];
+			}
+			ODEHJGPDFCL_Score = GPBJHKLFCEP.ODEHJGPDFCL_Score;
+			PDNJGJNGPNJ_MaxCombo = GPBJHKLFCEP.PDNJGJNGPNJ_MaxCombo;
+			ANDJNPEINGI_TeamLuck = GPBJHKLFCEP.ANDJNPEINGI_TeamLuck;
+			ABFNAEKEGOB_ComboRank = GPBJHKLFCEP.ABFNAEKEGOB_ComboRank;
+			ECLDABOLHLM_ExcellentScore = GPBJHKLFCEP.ECLDABOLHLM_ExcellentScore;
+			BKJPGJJAODB = GPBJHKLFCEP.BKJPGJJAODB;
+		}
 
 		//// RVA: 0x14D4F08 Offset: 0x14D4F08 VA: 0x14D4F08
 		public JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo KJAFPNIFPGP()
 		{
-			TodoLogger.LogError(TodoLogger.EventScore_4, "KJAFPNIFPGP");
-			return new JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo();
+			JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo res = new JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo();
+			for(int i = 0; i < 5; i++)
+			{
+				res.ECKFCIHPHGJ_SetScore_ForDiff(i, KNIFCANOHOC_Score[i].DNJEJEANJGL_Value);
+				res.NLKEBAOBJCM_Combo[i] = NLKEBAOBJCM_Combo[i].DNJEJEANJGL_Value;
+				res.JNLKJCDFFMM_Clear[i] = JNLKJCDFFMM_Clear[i].DNJEJEANJGL_Value;
+				res.EMHFDJEFIHG_Play[i] = EMHFDJEFIHG_Play[i].DNJEJEANJGL_Value;
+				res.LAMCCNAKIOJ_CbRnk[i] = LAMCCNAKIOJ_CbRnk[i];
+				res.HNDPLCDMOJF_RewardClear[i] = HNDPLCDMOJF_RwdClr[i];
+				res.JDIDBMEMKBC_RewardScore[i] = JDIDBMEMKBC_RwdSc[i];
+				res.AGGFHNMMGMN_RewardCombo[i] = AGGFHNMMGMN_RwdCb[i];
+				res.AAELOPLDBPF_SetScoreL6_ForDiff(i, HAFFCOKJHBN_ScoreL6[i].DNJEJEANJGL_Value);
+				res.DNIGPFPHJAK_ComboL6[i] = DNIGPFPHJAK_ComboL6[i].DNJEJEANJGL_Value;
+				res.DPPCFFFNBGA_ClearL6[i] = DPPCFFFNBGA_ClearL6[i].DNJEJEANJGL_Value;
+				res.FHFKOGIPAEH_PlayL6[i] = FHFKOGIPAEH_PlayL6[i].DNJEJEANJGL_Value;
+				res.EEECMKPLPNL_CbRnkL6[i] = EEECMKPLPNL_CbRnkL6[i];
+				res.LGBKKDOLOFP_RewardClearL6[i] = LGBKKDOLOFP_RwdClrL6[i];
+				res.DKIIINIEKHP_RewardScoreL6[i] = DKIIINIEKHP_RwdScL6[i];
+				res.JNNIOJIDNKM_RewardComboL6[i] = JNNIOJIDNKM_RwdCbL6[i];
+			}
+			res.ODEHJGPDFCL_Score = ODEHJGPDFCL_Score;
+			res.PDNJGJNGPNJ_MaxCombo = PDNJGJNGPNJ_MaxCombo;
+			res.ANDJNPEINGI_TeamLuck = ANDJNPEINGI_TeamLuck;
+			res.ABFNAEKEGOB_ComboRank = ABFNAEKEGOB_ComboRank;
+			res.ECLDABOLHLM_ExcellentScore = ECLDABOLHLM_ExcellentScore;
+			return res;
 		}
 	}
 	private const int ECFEMKGFDCE = 2;

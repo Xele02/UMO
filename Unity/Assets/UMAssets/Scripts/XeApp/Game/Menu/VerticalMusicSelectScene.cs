@@ -1339,7 +1339,8 @@ namespace XeApp.Game.Menu
 			m_scoreEventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6);
 			if(m_scoreEventCtrl != null)
 			{
-				TodoLogger.LogError(TodoLogger.EventScore_4, "ApplyEventInfo");
+				m_isScoreEventTimeLimit = m_scoreEventCtrl.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5;
+				m_eventStatus = m_scoreEventCtrl.NGOFCFJHOMI_Status;
 			}
 		}
 

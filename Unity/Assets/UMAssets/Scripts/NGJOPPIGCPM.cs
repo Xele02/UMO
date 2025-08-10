@@ -146,7 +146,12 @@ public class NGJOPPIGCPM_ResultData
         }
 		else if(MNNHHJBBICA_GameEventType == 4)
 		{
-			TodoLogger.LogError(TodoLogger.EventScore_4, "Event");
+			HLEBAINCOME_EventScore ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as HLEBAINCOME_EventScore;
+			if(ev != null)
+			{
+				mInfo2 = ev.JIPPHOKGLIH(true).KJAFPNIFPGP();
+				mInfo1 = ev.JIPPHOKGLIH(false).KJAFPNIFPGP();
+			}
 		}
 		PBGLMBMEKAA_ComboCount = mInfo1.PDNJGJNGPNJ_MaxCombo;
 		GCAPLLEIAAI_HighScore = mInfo1.ODEHJGPDFCL_Score;

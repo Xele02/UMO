@@ -532,8 +532,74 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 	// // RVA: 0x1215F78 Offset: 0x1215F78 VA: 0x1215F78
 	public void PMKBMGNAJIL(HLEBAINCOME_EventScore LIKDEHHKFEH, bool GIKLNODJKFK)
 	{
-		TodoLogger.LogError(TodoLogger.EventScore_4, "Event Score");
-	}
+		GHBPLHBNMBK_FreeMusicId = LIKDEHHKFEH.HEACCHAKMFG_GetMusicsList()[0];
+        KEODKEGFDLD_FreeMusicInfo m = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[GHBPLHBNMBK_FreeMusicId - 1];
+		base.KHEKNNFCAOI(m.DLAEJOBELBH_MusicId);
+		EONOEHOKBEB_Music m2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[m.DLAEJOBELBH_MusicId - 1];
+		FEHINJKHDAP_EventScore.ALGDNCMJHGN data = LIKDEHHKFEH.JIPPHOKGLIH(false);
+		DEPGBBJMFED_CategoryId = m.DEPGBBJMFED_CategoryId;
+		EKANGPODCEP_EventId = LIKDEHHKFEH.PGIIDPEGGPI_EventId;
+		LEBDMNIGOJB_IsScoreEvent = true;
+		MNNHHJBBICA_GameEventType = 4;
+		OEILJHENAHN_PlayEventType = 4;
+		BJANNALFGGA_HasRanking = false;
+		LDGOHPAPBMM_IsNew = true;
+		PJLNJJIBFBN_HasExtremeDiff = LIKDEHHKFEH.PJLNJJIBFBN;
+		bool b2 = m.GBNOALJPOBM;
+		MGJKEJHEBPO_DiffInfos = new List<ANJLFFPBAEF_DifficultyInfo>();
+		int cnt = PJLNJJIBFBN_HasExtremeDiff ? 5 : 4;
+		bool b = true;
+		for(int diffIdx = 0; diffIdx < cnt; diffIdx++)
+		{
+			ANJLFFPBAEF_DifficultyInfo diff = new ANJLFFPBAEF_DifficultyInfo();
+			diff.HPBPDHPIBGN_EnemyData = new EJKBKMBJMGL_EnemyData();
+			int p;
+			if(!GIKLNODJKFK)
+			{
+				diff.KNIFCANOHOC_Score = data.KNIFCANOHOC_Score[diffIdx].DNJEJEANJGL_Value;
+				diff.NLKEBAOBJCM_Combo = data.NLKEBAOBJCM_Combo[diffIdx].DNJEJEANJGL_Value;
+				diff.JNLKJCDFFMM_Clear = data.JNLKJCDFFMM_Clear[diffIdx].DNJEJEANJGL_Value;
+				diff.LCOHGOIDMDF_ComboRank = data.LAMCCNAKIOJ_CbRnk[diffIdx];
+				diff.HPBPDHPIBGN_EnemyData.KHEKNNFCAOI(m.LHICAKGHIGF_EnemyIdByDiff[diffIdx], m.LJPKLMJPLAC[diffIdx]);
+				p = data.EMHFDJEFIHG_Play[diffIdx].DNJEJEANJGL_Value;
+			}
+			else
+			{
+				diff.KNIFCANOHOC_Score = data.HAFFCOKJHBN_ScoreL6[diffIdx].DNJEJEANJGL_Value;
+				diff.NLKEBAOBJCM_Combo = data.DNIGPFPHJAK_ComboL6[diffIdx].DNJEJEANJGL_Value;
+				diff.JNLKJCDFFMM_Clear = data.DPPCFFFNBGA_ClearL6[diffIdx].DNJEJEANJGL_Value;
+				diff.LCOHGOIDMDF_ComboRank = data.EEECMKPLPNL_CbRnkL6[diffIdx];
+				diff.HPBPDHPIBGN_EnemyData.KHEKNNFCAOI(m.PJNFOCDANCE_EnemyIdByDiffL6[diffIdx], m.ILCJOOPIILK[diffIdx]);
+				p = data.FHFKOGIPAEH_PlayL6[diffIdx].DNJEJEANJGL_Value;
+			}
+			if(diff.JNLKJCDFFMM_Clear < 1)
+			{
+				if(diff.EMHFDJEFIHG_Play > 0)
+				{
+					diff.CMCKNKKCNDK_Status = 2;
+					LDGOHPAPBMM_IsNew = false;
+				}
+				else
+				{
+					diff.CMCKNKKCNDK_Status = 1;
+				}
+			}
+			else
+			{
+				diff.CMCKNKKCNDK_Status = 3;
+				LDGOHPAPBMM_IsNew = false;
+			}
+			diff.HHMLMKAEJBJ_Score = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.ALJFMLEJEHH_GetMusicScore(m2.KKPAHLMJKIH_WavId, m2.BKJGCEOEPFB_VariationId, diffIdx, GIKLNODJKFK, true);
+			diff.BAKLKJLPLOJ = m.EMJCHPDJHEI(GIKLNODJKFK, diffIdx);
+			diff.BPLOEAHOPFI_Energy = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.HHEEPBJNAKA_GetEnergy(diff.HHMLMKAEJBJ_Score.ANAJIAENLNB_MusicLevel, GIKLNODJKFK);
+			MGJKEJHEBPO_DiffInfos.Add(diff);
+			b &= data.EMHFDJEFIHG_Play[diffIdx].DNJEJEANJGL_Value < 1;
+			b2 &= data.FHFKOGIPAEH_PlayL6[diffIdx].DNJEJEANJGL_Value < 1;
+		}
+		CADENLBDAEB_IsNew = b || b2 || CPBDGAGKNGH_UlNew;
+		LDGOHPAPBMM_IsNew = CPBDGAGKNGH_UlNew;
+		GBNOALJPOBM = m.GBNOALJPOBM;
+    }
 
 	// // RVA: 0x1216BB0 Offset: 0x1216BB0 VA: 0x1216BB0
 	private void EAHJLJOMFMG(int EPLEIPFGGHP, HAEDCCLHEMN_EventBattle LIKDEHHKFEH, bool GIKLNODJKFK)
@@ -879,7 +945,24 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 			HLEBAINCOME_EventScore eventScore = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6) as HLEBAINCOME_EventScore;
 			if (eventScore != null)
 			{
-				TodoLogger.LogError(TodoLogger.EventScore_4, "FKDIMODKKJD (generate song list event)");
+				IBJAKJJICBC ib = new IBJAKJJICBC();
+				ib.PMKBMGNAJIL(eventScore, JCOJKAHFADL);
+				if(EHBPHDPHPKF)
+				{
+					if(ib.CADENLBDAEB_IsNew)
+					{
+						//LAB_0121a784
+						res.Add(ib);
+						return res;
+					}
+				}
+				else
+				{
+					if(!JCOJKAHFADL || ib.GBNOALJPOBM)
+					{
+						res.Add(ib);
+					}
+				}
 			}
 			List<IKDICBBFBMI_EventBase> list2 = DJPFFHLCCNL(OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool, JHNMKKNEENE_Date, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6);
 			for (int i = 0; i < list2.Count; i++)
@@ -1146,9 +1229,10 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 		IKDICBBFBMI_EventBase data = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false);
 		if(data != null)
 		{
-			for(int i = 0; i < data.HEACCHAKMFG_GetMusicsList().Count; i++)
+			List<int> l = data.HEACCHAKMFG_GetMusicsList();
+			for(int i = 0; i < l.Count; i++)
 			{
-				int a1 = data.HEACCHAKMFG_GetMusicsList()[i];
+				int a1 = l[i];
 				IBJAKJJICBC ib = new IBJAKJJICBC();
 				ib.JBOHCKEIHKI(a1, data.HOOBCIIOCJD_GetSongEndTime(a1), data.PJLNJJIBFBN, data.PGIIDPEGGPI_EventId);
 				ib.LGIGMPBHJCI = true;
@@ -1161,7 +1245,18 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 		data = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6);
 		if(data != null)
 		{
-			TodoLogger.LogError(TodoLogger.EventScore_4, "FKDIMODKKJD event info");
+			List<int> l = data.HEACCHAKMFG_GetMusicsList();
+			for(int i = 0; i < l.Count; i++)
+			{
+				int a1 = l[i];
+				IBJAKJJICBC ib = new IBJAKJJICBC();
+				ib.JBOHCKEIHKI(a1, data.HOOBCIIOCJD_GetSongEndTime(a1), data.PJLNJJIBFBN, 0);
+				ib.OEILJHENAHN_PlayEventType = 4;
+				ib.MNNHHJBBICA_GameEventType = 4;
+				ib.LEBDMNIGOJB_IsScoreEvent = true;
+				ib.OGHOPBAKEFE_IsEventSpecial = true;
+				res.Add(ib);
+			}
 		}
 		List<IKDICBBFBMI_EventBase> ldata = DJPFFHLCCNL(OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool, JHNMKKNEENE, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6);
 		for(int i = 0; i < ldata.Count; i++)
