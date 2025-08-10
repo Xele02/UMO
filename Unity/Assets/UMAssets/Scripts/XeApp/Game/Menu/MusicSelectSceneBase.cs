@@ -835,7 +835,7 @@ namespace XeApp.Game.Menu
 					m_cdSelect.ApplyEventRank(m_scoreEventCtrl.CDINKAANIAA_Rank[0]);
 					if(!m_isScoreEventTimeLimit)
 					{
-						ApplyRemainTime(m_scoreEventCtrl.DPJCPDKALGI_End1, false, null);
+						ApplyRemainTime(m_scoreEventCtrl.DPJCPDKALGI_RankingEnd, false, null);
 					}
 					else
 					{

@@ -105,7 +105,7 @@ public class DKKPBBBDKMJ
 					if(ev != null)
 					{
 						ev.HCDGELDHFHB_UpdateStatus(t);
-						if (ev.EMEKFFHCHMH_End >= t)
+						if (ev.EMEKFFHCHMH_RewardEnd2 >= t)
 							continue;
 					}
 					AGAAGMGKNCO data = new AGAAGMGKNCO();

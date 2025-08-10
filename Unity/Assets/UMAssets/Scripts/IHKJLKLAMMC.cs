@@ -197,13 +197,13 @@ public class IHKJLKLAMMC
 									KECECJPFEPM.CDPAEHCPPAM = false;
 									KECECJPFEPM.GGHDEDJFFOM = d.BDEOMEBFDFF_GachaId;
 									KECECJPFEPM.PDBPFJJCADD_Start = dbEv2.NGHKJOEDLIP.FCNKIKOOFKE;
-									KECECJPFEPM.FDBNFFNFOND_End = ev2.DPJCPDKALGI_End1;
+									KECECJPFEPM.FDBNFFNFOND_End = ev2.DPJCPDKALGI_RankingEnd;
 									if(t >= dbEv2.NGHKJOEDLIP.FCNKIKOOFKE)
 									{
 										KECECJPFEPM.OAAKAAFFFLE = OHKECKAPJJL.ONKLMFNGCHJ.LAOEGNLOJHC_2;
 										KECECJPFEPM.CDPAEHCPPAM = true;
 									}
-									if(t < ev2.LJOHLEGGGMC)
+									if(t < ev2.LJOHLEGGGMC_RewardEnd)
 									{
 										KECECJPFEPM.FICHDKOOOOB_Enabled = l[i].PLALNIIBLOF_Enabled == 2;
 										break;
@@ -242,15 +242,15 @@ public class IHKJLKLAMMC
 								if(ev2 != null)
 								{
 									ev.HCDGELDHFHB_UpdateStatus(t);
-									if(t >= ev2.GLIMIGNNGGB_Start)
+									if(t >= ev2.GLIMIGNNGGB_RankingStart)
 									{
 										KECECJPFEPM.OAAKAAFFFLE = OHKECKAPJJL.ONKLMFNGCHJ.LAOEGNLOJHC_2;
 									}
-									if(t >= ev2.JDDFILGNGFH)
+									if(t >= ev2.JDDFILGNGFH_RewardStart)
 									{
 										KECECJPFEPM.OAAKAAFFFLE = OHKECKAPJJL.ONKLMFNGCHJ.FKHAJADPBJK_4_Epilogue;
 									}
-									if(t >= ev2.LJOHLEGGGMC)
+									if(t >= ev2.LJOHLEGGGMC_RewardEnd)
 									{
 										KECECJPFEPM.OAAKAAFFFLE = OHKECKAPJJL.ONKLMFNGCHJ.OLCLJKOKJCD_5_Ended;
 									}
@@ -260,13 +260,13 @@ public class IHKJLKLAMMC
 									}
 									if(ev2.NGOFCFJHOMI_Status < KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6)
 									{
-										KECECJPFEPM.FDBNFFNFOND_End = ev2.DPJCPDKALGI_End1;
+										KECECJPFEPM.FDBNFFNFOND_End = ev2.DPJCPDKALGI_RankingEnd;
 									}
 									else
 									{
-										if(l2 >= ev2.LJOHLEGGGMC)
+										if(l2 >= ev2.LJOHLEGGGMC_RewardEnd)
 										{
-											KECECJPFEPM.FDBNFFNFOND_End = ev2.LJOHLEGGGMC;
+											KECECJPFEPM.FDBNFFNFOND_End = ev2.LJOHLEGGGMC_RewardEnd;
 										}
 										else
 										{
@@ -275,7 +275,7 @@ public class IHKJLKLAMMC
 									}
 									KECECJPFEPM.GGHDEDJFFOM = ev2.PGIIDPEGGPI_EventId;
 									//i21 = 0;
-									if(t >= KECECJPFEPM.PDBPFJJCADD_Start && t < ev2.LJOHLEGGGMC)
+									if(t >= KECECJPFEPM.PDBPFJJCADD_Start && t < ev2.LJOHLEGGGMC_RewardEnd)
 									{
 										KECECJPFEPM.FICHDKOOOOB_Enabled = l[i].PLALNIIBLOF_Enabled == 2;
 									}

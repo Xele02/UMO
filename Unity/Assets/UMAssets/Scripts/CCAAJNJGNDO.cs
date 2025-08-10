@@ -191,7 +191,7 @@ public class CCAAJNJGNDO
 			EIIFHEMIAIJ.Clear();
 			if(isAdvNew)
 			{
-				DateTime dt = Utility.GetLocalDateTime(LIKDEHHKFEH.JDDFILGNGFH);
+				DateTime dt = Utility.GetLocalDateTime(LIKDEHHKFEH.JDDFILGNGFH_RewardStart);
 				EIIFHEMIAIJ.AppendFormat(bk.GetMessageByLabel("event_story_text_004"), new object[5]
 				{
 					dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute

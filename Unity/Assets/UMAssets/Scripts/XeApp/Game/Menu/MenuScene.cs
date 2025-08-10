@@ -1830,7 +1830,7 @@ namespace XeApp.Game.Menu
 				if(ev != null)
 				{
 					AMLGMLNGMFB_EventAprilFool aprilEv = ev as AMLGMLNGMFB_EventAprilFool;
-					if(aprilEv != null && time >= aprilEv.GLIMIGNNGGB_Start && time < aprilEv.DPJCPDKALGI_End1)
+					if(aprilEv != null && time >= aprilEv.GLIMIGNNGGB_RankingStart && time < aprilEv.DPJCPDKALGI_RankingEnd)
 						l.Add(aprilEv);
 				}
             }
@@ -1841,7 +1841,7 @@ namespace XeApp.Game.Menu
 					AMLGMLNGMFB_EventAprilFool aprilEv = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN[i] as AMLGMLNGMFB_EventAprilFool;
 					if(aprilEv != null)
 					{
-						if(time >= aprilEv.GLIMIGNNGGB_Start && time < aprilEv.DPJCPDKALGI_End1)
+						if(time >= aprilEv.GLIMIGNNGGB_RankingStart && time < aprilEv.DPJCPDKALGI_RankingEnd)
 							l.Add(aprilEv);
 						else
 							aprilEv.ALEPIOKNOCL();
@@ -2323,7 +2323,7 @@ namespace XeApp.Game.Menu
 			if(controller != null)
 			{
 				long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
-				if(controller.LJOHLEGGGMC >= t)
+				if(controller.LJOHLEGGGMC_RewardEnd >= t)
 					return false;
 			}
 			if(isDoTransition)

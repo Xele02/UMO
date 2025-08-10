@@ -1166,7 +1166,7 @@ namespace XeApp.Game.Menu
 					if (selectMusicData.LEBDMNIGOJB_IsScoreEvent)
 					{
 						MenuScene.Instance.InputDisable();
-						//m_scoreEventCtrl.HAAEJDGMICH(0, OnWebViewClose, OnNetErrorToTitle);
+						m_scoreEventCtrl.HAAEJDGMICH(0, OnWebViewClose, OnNetErrorToTitle);
 					}
 				}
 			}

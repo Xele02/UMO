@@ -546,7 +546,7 @@ namespace XeApp.Game.Menu
 				ApplyEventRemainTime(remain, true);
 			};
 			m_musicTimeWatcher.onEndCallback = null;
-			m_musicTimeWatcher.WatchStart(m_eventCtrl.DPJCPDKALGI_End1, false);
+			m_musicTimeWatcher.WatchStart(m_eventCtrl.DPJCPDKALGI_RankingEnd, false);
 			if(!IsEventEndChallengePeriod)
 			{
 				ApplyBattleInfo(musicData);
@@ -625,7 +625,7 @@ namespace XeApp.Game.Menu
 					ExtractRemainTime((int)remain, out d, out h, out m, out s);
 					m_battleLimit.SetLimitText(MessageManager.Instance.GetMessage("menu", "music_event_remain_prefix") + RichTextUtility.MakeColorTagString(MakeRemainTime(d, h, m, s), SystemTextColor.ImportantColor));
 				};
-				m_bannerTimeWatcher.WatchStart(m_eventCtrl.DPJCPDKALGI_End1, false);
+				m_bannerTimeWatcher.WatchStart(m_eventCtrl.DPJCPDKALGI_RankingEnd, false);
 			}
 		}
 

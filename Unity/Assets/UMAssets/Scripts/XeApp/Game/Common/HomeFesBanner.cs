@@ -82,11 +82,11 @@ namespace XeApp.Game.Common
 					{
 						if(((int)cont.NGOFCFJHOMI_Status & 0xc01) != 0) // 0/10/11
 							return;
-						start = cont.JDDFILGNGFH;
+						start = cont.JDDFILGNGFH_RewardStart;
 					}
 					else
 					{
-						start = cont.GLIMIGNNGGB_Start;
+						start = cont.GLIMIGNNGGB_RankingStart;
 					}
 				}
 				m_controller = cont;

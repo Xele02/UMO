@@ -252,6 +252,7 @@ class_to_generate = {
     "CEGMAIDIKLC" : {"FB_class":"EDNGOONFHEO"},
     "ANCFFLNKINL" : {"FB_class":"KCMFPGDPCIG"},
     "EDHLNJNFNDN" : {"FB_class":"MMLADLKNMEL"},
+    "PMPDPNDJBLB" : {"FB_class":"MCCEAMFIECM"},
 }
 
 

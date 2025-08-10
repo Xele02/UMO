@@ -63,16 +63,16 @@ public abstract class IKDICBBFBMI_EventBase
 	public string DGCOMDILAKM_EventName; // 0x10
 	public bool IBNKPMPFLGI_IsRankReward; // 0x14
 	public bool LEPALMDKEOK_IsPointReward; // 0x15
-	public string DOLJEDAAKNN; // 0x18
+	public string DOLJEDAAKNN_RankingName; // 0x18
 	public List<int> HGLAFGHHFKP; // 0x1C
 	public string FBHONHONKGD_MusicSelectDesc; // 0x20
 	public bool PJLNJJIBFBN; // 0x24
-	public long GLIMIGNNGGB_Start; // 0x28
-	public long DPJCPDKALGI_End1; // 0x30
-	public long LOLAANGCGDO; // 0x38
-	public long JDDFILGNGFH; // 0x40
-	public long LJOHLEGGGMC; // 0x48
-	public long EMEKFFHCHMH_End; // 0x50
+	public long GLIMIGNNGGB_RankingStart; // 0x28
+	public long DPJCPDKALGI_RankingEnd; // 0x30
+	public long LOLAANGCGDO_RankingEnd2; // 0x38
+	public long JDDFILGNGFH_RewardStart; // 0x40
+	public long LJOHLEGGGMC_RewardEnd; // 0x48
+	public long EMEKFFHCHMH_RewardEnd2; // 0x50
 	public bool IONOAFPLANN; // 0x58
 	public int PGIIDPEGGPI_EventId; // 0x5C
 	public int PBHNFNIHDJJ; // 0x60
@@ -175,7 +175,7 @@ public abstract class IKDICBBFBMI_EventBase
 	// // RVA: 0x8DD53C Offset: 0x8DD53C VA: 0x8DD53C Slot: 9
 	public virtual long HOOBCIIOCJD_GetSongEndTime(int GHBPLHBNMBK)
 	{
-		return DPJCPDKALGI_End1;
+		return DPJCPDKALGI_RankingEnd;
 	}
 
 	// // RVA: 0x8DD544 Offset: 0x8DD544 VA: 0x8DD544 Slot: 10
@@ -549,9 +549,9 @@ public abstract class IKDICBBFBMI_EventBase
 	// // RVA: 0x8DF69C Offset: 0x8DF69C VA: 0x8DF69C Slot: 26
 	public virtual bool KKFEDJNIAAG(long JHNMKKNEENE)
 	{
-		if (JHNMKKNEENE < GLIMIGNNGGB_Start)
+		if (JHNMKKNEENE < GLIMIGNNGGB_RankingStart)
 			return false;
-		return LJOHLEGGGMC >= JHNMKKNEENE;
+		return LJOHLEGGGMC_RewardEnd >= JHNMKKNEENE;
 	}
 
 	// // RVA: 0x8DF6D4 Offset: 0x8DF6D4 VA: 0x8DF6D4
@@ -802,7 +802,7 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8DFC3C Offset: 0x8DFC3C VA: 0x8DFC3C Slot: 48
-	public virtual void AMKJFGLEJGE(int KPIILHGOGJD)
+	public virtual void AMKJFGLEJGE_RequestUpdateEventPoint(int KPIILHGOGJD)
 	{
 		return;
 	}
@@ -1294,9 +1294,9 @@ public abstract class IKDICBBFBMI_EventBase
 	// // RVA: 0x8E23A4 Offset: 0x8E23A4 VA: 0x8E23A4
 	protected bool MNNNLDFNNCD(long JHNMKKNEENE)
 	{
-		if(JHNMKKNEENE < GLIMIGNNGGB_Start)
+		if(JHNMKKNEENE < GLIMIGNNGGB_RankingStart)
 			return false;
-		return LJOHLEGGGMC > JHNMKKNEENE;
+		return LJOHLEGGGMC_RewardEnd > JHNMKKNEENE;
 	}
 
 	// // RVA: 0x8E23DC Offset: 0x8E23DC VA: 0x8E23DC Slot: 74
@@ -1368,7 +1368,7 @@ public abstract class IKDICBBFBMI_EventBase
 	{
 		//0x8E355C
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
-		if(IONOAFPLANN || time >= LJOHLEGGGMC)
+		if(IONOAFPLANN || time >= LJOHLEGGGMC_RewardEnd)
 		{
 			IONOAFPLANN = false;
 			bool IMCBLDILPGA = false;
