@@ -374,7 +374,7 @@ namespace XeApp.Game.Menu
 				ApplyEventRemainTime(remain, true);
 			};
 			m_musicTimeWatcher.onEndCallback = null;
-			m_musicTimeWatcher.WatchStart(m_eventCtrl.DPJCPDKALGI_End1, false);
+			m_musicTimeWatcher.WatchStart(m_eventCtrl.DPJCPDKALGI_RankingEnd, false);
 		}
 
 		// // RVA: 0x13B2524 Offset: 0x13B2524 VA: 0x13B2524
@@ -388,7 +388,7 @@ namespace XeApp.Game.Menu
 				ApplyEventBannerRemainTime(remain, true);
 			};
 			m_bannerTimeWatcher.onEndCallback = null;
-			m_bannerTimeWatcher.WatchStart(m_eventCtrl.DPJCPDKALGI_End1, true);
+			m_bannerTimeWatcher.WatchStart(m_eventCtrl.DPJCPDKALGI_RankingEnd, true);
 			if(m_eventCtrl.MNDFBBMNJGN_IsUsingTicket)
 			{
 				m_cdSelect.EventTicketEnable(false);

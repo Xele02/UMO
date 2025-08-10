@@ -109,7 +109,17 @@ public class FPGEMAIAMBF_RewardData
 		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo prevMusicInfo = null;
 		if (MNNHHJBBICA_GameEventType == 4)
 		{
-			TodoLogger.LogError(TodoLogger.EventScore_4, "Event");
+			HLEBAINCOME_EventScore ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6) as HLEBAINCOME_EventScore;
+			if(ev != null)
+			{
+				musicInfo = ev.JIPPHOKGLIH(false).KJAFPNIFPGP();
+				prevMusicInfo = ev.JIPPHOKGLIH(true).KJAFPNIFPGP();
+			}
+			else
+			{
+				musicInfo = new JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo();
+				prevMusicInfo = new JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo();
+			}
 		}
 		else
 		{

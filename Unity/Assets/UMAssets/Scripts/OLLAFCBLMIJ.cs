@@ -84,13 +84,13 @@ public class OLLAFCBLMIJ
             MLIMPBOKIAM_EntryUrl = ev.MAICAKMIBEM("entry_url", "");
             MIKNPHMPNII_PrizeTemplate = ev.MAICAKMIBEM("prize_template", "");
             DLPGGMOLFHA_KiyakuTemplate = ev.MAICAKMIBEM("kiyaku_template", "");
-            HGGFIEELABK_Start = Utility.GetLocalDateTime(ev.GLIMIGNNGGB_Start);
-            KHNIJBEPHPL_End1 = Utility.GetLocalDateTime(ev.DPJCPDKALGI_End1);
-            KOHDMPJHOBB = Utility.GetLocalDateTime(ev.JDDFILGNGFH);
-            IHPPGMJOJIE = Utility.GetLocalDateTime(ev.LJOHLEGGGMC);
+            HGGFIEELABK_Start = Utility.GetLocalDateTime(ev.GLIMIGNNGGB_RankingStart);
+            KHNIJBEPHPL_End1 = Utility.GetLocalDateTime(ev.DPJCPDKALGI_RankingEnd);
+            KOHDMPJHOBB = Utility.GetLocalDateTime(ev.JDDFILGNGFH_RewardStart);
+            IHPPGMJOJIE = Utility.GetLocalDateTime(ev.LJOHLEGGGMC_RewardEnd);
             long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
             NDAMKMGINBM_CanEntryToday = false;
-            if(t >= ev.GLIMIGNNGGB_Start && ev.DPJCPDKALGI_End1 >= t && KGEKPADNGDM_CurrentDay != 0)
+            if(t >= ev.GLIMIGNNGGB_RankingStart && ev.DPJCPDKALGI_RankingEnd >= t && KGEKPADNGDM_CurrentDay != 0)
             {
                 if(!CKPIHCGOEDP[KGEKPADNGDM_CurrentDay - 1].CDMGDFLPPHN_HasStamp)
                     NDAMKMGINBM_CanEntryToday = true;

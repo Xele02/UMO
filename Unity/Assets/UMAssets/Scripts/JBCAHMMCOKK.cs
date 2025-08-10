@@ -292,8 +292,8 @@ public class JBCAHMMCOKK
 									data.KHEKNNFCAOI(KOGBMDOONFA.PPFNGGCBJKC);
 									data.EAHPLCJMPHD_EventId = ev.PGIIDPEGGPI_EventId;
 									data.PEDBFNIOCEN = ev.JOPOPMLFINI_QuestId;
-									data.KJBGCLPMLCG_OpenedAt = ev.GLIMIGNNGGB_Start;
-									data.GJFPFFBAKGK_CloseAt = ev.DPJCPDKALGI_End1;
+									data.KJBGCLPMLCG_OpenedAt = ev.GLIMIGNNGGB_RankingStart;
+									data.GJFPFFBAKGK_CloseAt = ev.DPJCPDKALGI_RankingEnd;
 									data.KNNDNOKMAOI = data.INKBPPLCNFC(data.KJBGCLPMLCG_OpenedAt, data.GJFPFFBAKGK_CloseAt, false);
 									data.HDBPGEMDLDN = data.INKBPPLCNFC(data.KJBGCLPMLCG_OpenedAt, data.GJFPFFBAKGK_CloseAt, true);
 									if (!b)
@@ -443,7 +443,19 @@ public class JBCAHMMCOKK
 					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6/*6*/);
 					if (ev == null)
 						return;
-					TodoLogger.LogError(TodoLogger.EventScore_4, "HEGEKFMJNCC 9 event");
+					JBCAHMMCOKK j = new JBCAHMMCOKK();
+					j.KHEKNNFCAOI(KOGBMDOONFA.PPFNGGCBJKC);
+					j.EAHPLCJMPHD_EventId = ev.PGIIDPEGGPI_EventId;
+					j.PEDBFNIOCEN = ev.JOPOPMLFINI_QuestId;
+					j.KJBGCLPMLCG_OpenedAt = ev.GLIMIGNNGGB_RankingStart;
+					j.GJFPFFBAKGK_CloseAt = ev.DPJCPDKALGI_RankingEnd;
+					j.KNNDNOKMAOI = j.INKBPPLCNFC(ev.GLIMIGNNGGB_RankingStart, ev.DPJCPDKALGI_RankingEnd, false);
+					j.HDBPGEMDLDN = j.INKBPPLCNFC(ev.GLIMIGNNGGB_RankingStart, ev.DPJCPDKALGI_RankingEnd, true);
+					if(!b)
+						j.BJIMIONBKDD = false;
+					if(ev.NGOFCFJHOMI_Status == KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6)
+						j.BJIMIONBKDD = false;
+					NNDGIAEFMOG.Add(j);
 				}
 				break;
 			case 10:
@@ -495,8 +507,8 @@ public class JBCAHMMCOKK
 									l3.Add(ev.PGIIDPEGGPI_EventId);
 									j.EAHPLCJMPHD_EventId = ev.PGIIDPEGGPI_EventId;
 									j.PEDBFNIOCEN = ev.JOPOPMLFINI_QuestId;
-									j.KJBGCLPMLCG_OpenedAt = ev.GLIMIGNNGGB_Start;
-									j.GJFPFFBAKGK_CloseAt = ev.DPJCPDKALGI_End1;
+									j.KJBGCLPMLCG_OpenedAt = ev.GLIMIGNNGGB_RankingStart;
+									j.GJFPFFBAKGK_CloseAt = ev.DPJCPDKALGI_RankingEnd;
 									j.HDBPGEMDLDN = MessageManager.Instance.GetMessage("menu", "home_event_epilogue");
 									j.IPHOLOBDEIK = true;
 									j.PIBLLGLCJEO = ev3.CAKEOPLJDAF_EndAdventureId.ToString();
@@ -533,8 +545,8 @@ public class JBCAHMMCOKK
 									}
 									data.EAHPLCJMPHD_EventId = ev2.PGIIDPEGGPI_EventId;
 									data.PEDBFNIOCEN = ev2.JOPOPMLFINI_QuestId;
-									data.KJBGCLPMLCG_OpenedAt = ev2.GLIMIGNNGGB_Start;
-									data.GJFPFFBAKGK_CloseAt = ev2.DPJCPDKALGI_End1;
+									data.KJBGCLPMLCG_OpenedAt = ev2.GLIMIGNNGGB_RankingStart;
+									data.GJFPFFBAKGK_CloseAt = ev2.DPJCPDKALGI_RankingEnd;
 									data.HDBPGEMDLDN = MessageManager.Instance.GetMessage("menu", "home_event_epilogue");
 									data.IPHOLOBDEIK = true;
 									data.PIBLLGLCJEO = ev2.CAKEOPLJDAF_EndAdventureId.ToString();
@@ -595,7 +607,7 @@ public class JBCAHMMCOKK
 								//LAB_0141ccb8
 								JBCAHMMCOKK j = new JBCAHMMCOKK();
 								j.KHEKNNFCAOI(KOGBMDOONFA.PPFNGGCBJKC);
-								j.ODGNHPFPBKA(l[i].GLIMIGNNGGB_Start, l[i].LJOHLEGGGMC, j.AOPMODMAANL, j.IPHOLOBDEIK);
+								j.ODGNHPFPBKA(l[i].GLIMIGNNGGB_RankingStart, l[i].LJOHLEGGGMC_RewardEnd, j.AOPMODMAANL, j.IPHOLOBDEIK);
 								NNDGIAEFMOG.Add(j);
 								return;
 							}
@@ -616,8 +628,8 @@ public class JBCAHMMCOKK
 					}
 					j.EAHPLCJMPHD_EventId = ev.PGIIDPEGGPI_EventId;
 					j.PEDBFNIOCEN = ev.JOPOPMLFINI_QuestId;
-					j.KJBGCLPMLCG_OpenedAt = ev.GLIMIGNNGGB_Start;
-					j.GJFPFFBAKGK_CloseAt = ev.DPJCPDKALGI_End1;
+					j.KJBGCLPMLCG_OpenedAt = ev.GLIMIGNNGGB_RankingStart;
+					j.GJFPFFBAKGK_CloseAt = ev.DPJCPDKALGI_RankingEnd;
 					NNDGIAEFMOG.Add(j);
 					return;
 				}

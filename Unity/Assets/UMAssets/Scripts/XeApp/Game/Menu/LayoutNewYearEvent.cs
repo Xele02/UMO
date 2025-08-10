@@ -112,8 +112,8 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				d1 = Utility.GetLocalDateTime(ev.GLIMIGNNGGB_Start);
-				d2 = Utility.GetLocalDateTime(ev.DPJCPDKALGI_End1);
+				d1 = Utility.GetLocalDateTime(ev.GLIMIGNNGGB_RankingStart);
+				d2 = Utility.GetLocalDateTime(ev.DPJCPDKALGI_RankingEnd);
 			}
 			m_textPeriod.text = string.Format(s, new object[10]
 			{

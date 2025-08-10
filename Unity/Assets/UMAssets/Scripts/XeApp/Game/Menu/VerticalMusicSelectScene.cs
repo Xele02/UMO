@@ -890,7 +890,7 @@ namespace XeApp.Game.Menu
 			{
 				if(musicListData.ViewMusic.LEBDMNIGOJB_IsScoreEvent)
 				{
-					if (m_isScoreEventTimeLimit)
+					if (!m_isScoreEventTimeLimit)
 						return;
 					m_playButton.SetButtonEnable(false);
 				}
@@ -1301,7 +1301,7 @@ namespace XeApp.Game.Menu
 							//0xBF1454
 							ApplyEventBannerRemainTime(m_eventBanner, remain);
 						};
-						m_bannerTimeWatcher.WatchStart(m_eventCtrl.DPJCPDKALGI_End1, true);
+						m_bannerTimeWatcher.WatchStart(m_eventCtrl.DPJCPDKALGI_RankingEnd, true);
 						if(m_feverLimit != null)
 						{
 							if(m_eventCtrl is MANPIONIGNO_EventGoDiva)
@@ -1339,7 +1339,8 @@ namespace XeApp.Game.Menu
 			m_scoreEventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6);
 			if(m_scoreEventCtrl != null)
 			{
-				TodoLogger.LogError(TodoLogger.EventScore_4, "ApplyEventInfo");
+				m_isScoreEventTimeLimit = m_scoreEventCtrl.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5;
+				m_eventStatus = m_scoreEventCtrl.NGOFCFJHOMI_Status;
 			}
 		}
 
@@ -1350,7 +1351,7 @@ namespace XeApp.Game.Menu
 			{
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
-				if(m_eventCtrl.DPJCPDKALGI_End1 >= t || m_isEventTimeLimit)
+				if(m_eventCtrl.DPJCPDKALGI_RankingEnd >= t || m_isEventTimeLimit)
 				{
 					if(m_eventCtrl.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 					{
@@ -1603,12 +1604,12 @@ namespace XeApp.Game.Menu
 				{
 					m_musicSelectUISapporter.SetScoreRankingNum(0);
 					m_musicSelectUISapporter.SetDetailEventType(true, VerticalMusicSelectMusicDetail.MusicRemainTimeType.ScoreRanking, false);
-					ApplyRemainTime(m_musicDetail, m_scoreEventCtrl.DPJCPDKALGI_End1, VerticalMusicSelectMusicDetail.MusicRemainTimeType.ScoreRanking, null);
+					ApplyRemainTime(m_musicDetail, m_scoreEventCtrl.DPJCPDKALGI_RankingEnd, VerticalMusicSelectMusicDetail.MusicRemainTimeType.ScoreRanking, null);
 					m_musicDetail.EventCountingEnable(true);
 					return;
 				}
 				m_musicSelectUISapporter.SetDetailEventType(true, VerticalMusicSelectMusicDetail.MusicRemainTimeType.ScoreRanking, true);
-				ApplyRemainTime(m_musicDetail, m_scoreEventCtrl.DPJCPDKALGI_End1, VerticalMusicSelectMusicDetail.MusicRemainTimeType.ScoreRanking, null);
+				ApplyRemainTime(m_musicDetail, m_scoreEventCtrl.DPJCPDKALGI_RankingEnd, VerticalMusicSelectMusicDetail.MusicRemainTimeType.ScoreRanking, null);
 				return;
 			}
 			if(selectMusicData.FGKMJHKLGLD)

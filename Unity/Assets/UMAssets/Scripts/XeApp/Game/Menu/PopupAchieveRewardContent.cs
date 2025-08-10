@@ -35,9 +35,10 @@ namespace XeApp.Game.Menu
 			{
 				m_achieveReward = setting.Content.GetComponent<LayoutPopupAchieveReward>();
 			}
-			if(s.gameEventType == 4)
+			HLEBAINCOME_EventScore ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as HLEBAINCOME_EventScore;
+			if(s.gameEventType == 4 && ev != null)
 			{
-				TodoLogger.LogError(TodoLogger.EventScore_4, "PopupAchieveRewardContent Init Event");
+				m_viewMusic.PMKBMGNAJIL(ev, s.isLine6Mode);
 			}
 			m_viewMusic.KHEKNNFCAOI(s.selectFreeMusicId, false, 0, 0, 0, s.diff == Difficulty.Type.Extreme, false);
 			//LAB_00df0d5c

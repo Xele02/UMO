@@ -153,12 +153,12 @@ public class FKMOKDCJFEN
 			CJCGFKDMDMN_DescriptionB = FBFNJMKPBBA.AGLILDLEFDK_Missions[CMEJFJFOIIJ - 1].BGBJPGEIEDE_DescBalloon;
 			if(!(FBFNJMKPBBA is KNKDBNFMAKF_EventSp))
 			{
-				BLHJBMPONHC = FBFNJMKPBBA.DPJCPDKALGI_End1;
+				BLHJBMPONHC = FBFNJMKPBBA.DPJCPDKALGI_RankingEnd;
 			}
 			else
 			{
 				KNKDBNFMAKF_EventSp ev = FBFNJMKPBBA as KNKDBNFMAKF_EventSp;
-				BLHJBMPONHC = ev.DPJCPDKALGI_End1;
+				BLHJBMPONHC = ev.DPJCPDKALGI_RankingEnd;
 				long v1, v2, v3;
 				b2 = ev.NEMGJHBEJCP(FBFNJMKPBBA.AGLILDLEFDK_Missions[CMEJFJFOIIJ - 1].KGICDMIJGDF_Group, JHNMKKNEENE, out v1, out v2, out v3, out aa);
 				if(b2)
@@ -200,7 +200,7 @@ public class FKMOKDCJFEN
 						{
 							//LAB_01189a60
                             ev2 = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(l[i]);
-							if(ev2 == null || JHNMKKNEENE < ev2.GLIMIGNNGGB_Start || ev2.DPJCPDKALGI_End1 < JHNMKKNEENE)
+							if(ev2 == null || JHNMKKNEENE < ev2.GLIMIGNNGGB_RankingStart || ev2.DPJCPDKALGI_RankingEnd < JHNMKKNEENE)
 							{
 								continue;
 							}
@@ -209,13 +209,13 @@ public class FKMOKDCJFEN
 						if(ev2 != null)
 						{
 							//LAB_01189a90
-							DateTime d3 = Utility.GetLocalDateTime(ev2.DPJCPDKALGI_End1);
+							DateTime d3 = Utility.GetLocalDateTime(ev2.DPJCPDKALGI_RankingEnd);
 							long t3 = Utility.GetTargetUnixTime(d3.Year, d3.Month, d3.Day, 0, 0, 0);
 							if(t1 == t3)
 							{
 								if(FBFNJMKPBBA.AGLILDLEFDK_Missions[CMEJFJFOIIJ - 1].HBJJCDIMOPO_TargetMusicConditionId == 4)
 								{
-									BLHJBMPONHC = ev2.DPJCPDKALGI_End1;
+									BLHJBMPONHC = ev2.DPJCPDKALGI_RankingEnd;
 									//LAB_01189d98
 								}
 								else if(FBFNJMKPBBA.AGLILDLEFDK_Missions[CMEJFJFOIIJ - 1].HBJJCDIMOPO_TargetMusicConditionId == 1)
@@ -229,7 +229,7 @@ public class FKMOKDCJFEN
 									if(idx > -1)
 									{
 										//LAB_011897a8
-										BLHJBMPONHC = ev2.DPJCPDKALGI_End1;
+										BLHJBMPONHC = ev2.DPJCPDKALGI_RankingEnd;
 									}
 									else
 									{
@@ -269,7 +269,7 @@ public class FKMOKDCJFEN
 					PNFDMBHDPAJ_IsRewardOnly = true;
 			}
 			EFJDHILLIEK_IsDaily = FBFNJMKPBBA.AGLILDLEFDK_Missions[CMEJFJFOIIJ - 1].GBJFNGCDKPM_Type == 2;
-			PNHMDOHCBGK = FBFNJMKPBBA.LJOHLEGGGMC;
+			PNHMDOHCBGK = FBFNJMKPBBA.LJOHLEGGGMC_RewardEnd;
 			if (b2)
 				PNHMDOHCBGK = aa;
 			if(FBFNJMKPBBA.AGLILDLEFDK_Missions[CMEJFJFOIIJ - 1].HDAMBOOCIAA_ClearType == 19)

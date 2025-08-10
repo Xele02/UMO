@@ -1191,7 +1191,7 @@ namespace XeApp.Game.Menu
 				ApplyEventBannerRemainTime(m_eventBanner, remain, true);
 			};
 			m_bannerTimeWatcher.onEndCallback = null;
-			m_bannerTimeWatcher.WatchStart(m_eventCtrl.DPJCPDKALGI_End1, true);
+			m_bannerTimeWatcher.WatchStart(m_eventCtrl.DPJCPDKALGI_RankingEnd, true);
 			if(m_eventCtrl.MNDFBBMNJGN_IsUsingTicket)
 			{
 				m_cdSelect.EventTicketEnable(false);

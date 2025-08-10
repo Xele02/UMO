@@ -843,7 +843,12 @@ namespace XeApp.Game.Menu
 					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.KPMNPGKKFJG/*6*/);
 					if (ev != null && ev.FKKDIDMGLMI)
 					{
-						TodoLogger.LogError(TodoLogger.EventScore_4, "CheckEventLimit");
+						JHHBAFKMBDL.HHCJCDFCLOB.PEIONAKEPCN_ShowRankingBanPopup(() =>
+						{
+							//0xAD304C
+							MenuScene.Instance.GotoTitle();
+						});
+						return true;
 					}
 				}
 				if(b1)
@@ -1161,7 +1166,7 @@ namespace XeApp.Game.Menu
 					if (selectMusicData.LEBDMNIGOJB_IsScoreEvent)
 					{
 						MenuScene.Instance.InputDisable();
-						//m_scoreEventCtrl.HAAEJDGMICH(0, OnWebViewClose, OnNetErrorToTitle);
+						m_scoreEventCtrl.HAAEJDGMICH(0, OnWebViewClose, OnNetErrorToTitle);
 					}
 				}
 			}

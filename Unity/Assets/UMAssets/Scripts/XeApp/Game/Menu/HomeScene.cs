@@ -3112,9 +3112,9 @@ namespace XeApp.Game.Menu
 						if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(advId))
 						{
 							long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
-							if(time >= ev.GLIMIGNNGGB_Start)
+							if(time >= ev.GLIMIGNNGGB_RankingStart)
 							{
-								if (ev.DPJCPDKALGI_End1 >= time)
+								if (ev.DPJCPDKALGI_RankingEnd >= time)
 									return advId;
 							}
 						}

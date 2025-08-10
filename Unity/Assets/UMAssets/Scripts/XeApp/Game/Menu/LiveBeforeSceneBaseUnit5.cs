@@ -159,7 +159,7 @@ namespace XeApp.Game.Menu
 			if(mi.openEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 			{
 				IKDICBBFBMI_EventBase evt = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.KPMNPGKKFJG, false);
-				if(evt == null || evt.DPJCPDKALGI_End1 < NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime())
+				if(evt == null || evt.DPJCPDKALGI_RankingEnd < NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime())
 				{
 					mi.ClearEventType();
 					h.MNNHHJBBICA_GameEventType = (int)mi.gameEventType;

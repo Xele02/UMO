@@ -112,14 +112,14 @@ namespace XeApp.Game.Common
 						else if(((1 << (int)list[i].NGOFCFJHOMI_Status) & 0x3cU) != 0)
 							// 11 1100
 						{
-							l1 = list[i].GLIMIGNNGGB_Start;
-							l2 = list[i].DPJCPDKALGI_End1;
+							l1 = list[i].GLIMIGNNGGB_RankingStart;
+							l2 = list[i].DPJCPDKALGI_RankingEnd;
 							str = "home_event_counting";
 						}
 						else
 						{
-							l1 = list[i].GLIMIGNNGGB_Start;
-							l2 = list[i].DPJCPDKALGI_End1;
+							l1 = list[i].GLIMIGNNGGB_RankingStart;
+							l2 = list[i].DPJCPDKALGI_RankingEnd;
 							str = "home_event_started";
 						}
 						str = bk.GetMessageByLabel(str);

@@ -255,7 +255,7 @@ namespace XeApp.Game.MusicSelect
 					}
 					else
 					{
-						eventPeriodString = GetEventPeriodString(eventController.GLIMIGNNGGB_Start, eventController.DPJCPDKALGI_End1);
+						eventPeriodString = GetEventPeriodString(eventController.GLIMIGNNGGB_RankingStart, eventController.DPJCPDKALGI_RankingEnd);
 						if (musicData.AHAEGEHKONB_GetOtherTimeLeft() == 0)
 						{
 							continue;
@@ -299,7 +299,7 @@ namespace XeApp.Game.MusicSelect
 									//0xCA3DB4
 									return x.MPLGPBNJDJB_FreeMusicId == musicData.GHBPLHBNMBK_FreeMusicId;
 								});
-								aprilFoolEndTime = eventApril.DPJCPDKALGI_End1;
+								aprilFoolEndTime = eventApril.DPJCPDKALGI_RankingEnd;
 								if (dd.FDBNFFNFOND_CloseAt != 0)
 								{
 									aprilFoolEndTime = dd.FDBNFFNFOND_CloseAt;

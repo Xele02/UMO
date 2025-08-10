@@ -26,7 +26,7 @@ public class MKIKFJKPEHK
 				if((int)ev.HIDHLFCBIDE_EventType == ENKGMPLGEIJ.MNNHHJBBICA_GameEventType)
 				{
 					long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
-					if(t < ev.DPJCPDKALGI_End1 && ev.MBHDIJJEOFL != null)
+					if(t < ev.DPJCPDKALGI_RankingEnd && ev.MBHDIJJEOFL != null)
 					{
 						int a1 = 1;
 						if(ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
@@ -75,7 +75,7 @@ public class MKIKFJKPEHK
 		if(ev != null)
 		{
 			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
-			if(t < ev.DPJCPDKALGI_End1)
+			if(t < ev.DPJCPDKALGI_RankingEnd)
 			{
 				if(!NMKDLINPAFM_UseTicket)
 				{
