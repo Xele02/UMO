@@ -1248,10 +1248,96 @@ public class ILCCJNDFFOB
 	// public void EPABCLLAJDP(string MDADLCOCEBN, MHAPMOLCPKM MOHDLLIJELH, int PFDFGDPLLCK) { }
 
 	// // RVA: 0x907500 Offset: 0x907500 VA: 0x907500
-	// public void LKOICKMAADB(JGEOBNENMAH.EDHCNKBMLGI OMNOFMEBLAD, string MDADLCOCEBN, int KALCJMLIAOK, int CBHACAOCJGP, MHAPMOLCPKM MOHDLLIJELH) { }
+	public void LKOICKMAADB(JGEOBNENMAH.EDHCNKBMLGI OMNOFMEBLAD, string MDADLCOCEBN, int KALCJMLIAOK, int CBHACAOCJGP, MHAPMOLCPKM_EventQuest MOHDLLIJELH)
+	{
+		EDOHBJAPLPF_JsonData json = LECBAPOGJAG(OMNOFMEBLAD, MDADLCOCEBN, KALCJMLIAOK, CBHACAOCJGP);
+		if(json != null)
+		{
+            PKADMPNDMGP d = MOHDLLIJELH.GAPOCIFPDDO_GetSelectedCardInfo();
+            OFNLIBDEIFA_EventQuest.AGFEALDEJOL d2 = MOHDLLIJELH.FPILJDOPPJC_GetSelectedCardSaveInfo();
+			json["mission_id"] = d.PPFNGGCBJKC_Id;
+			json["event_id"] = MOHDLLIJELH.PGIIDPEGGPI_EventId;
+			json["event_name"] = MOHDLLIJELH.DGCOMDILAKM_EventName;
+			json["difficulty"] = OMNOFMEBLAD.AKNELONELJK_Difficulty;
+			json["lucky"] = d2.KIFJKGDBDBH_Lucky;
+			json["boost_ratio"] = MOHDLLIJELH.HADLPHIMBHH_BoostRatio;
+			if(GBNDFCEDNMG.NKGDIBMNLNO(d) == 1)
+			{
+				json["mission_cnt"] = d2.OLDAGCNLJOI_Prog;
+				json["mission_clr_cnt"] = d.JJECMJFDEEP_ClearConditionValue;
+			}
+			else
+			{
+				json["mission_cnt"] = d2.OLDAGCNLJOI_Prog;
+				json["mission_clr_cnt"] = d.GLDIGCJNOBO_ClearCount;
+			}
+			json["start_pt"] = MOHDLLIJELH.FBGDBGKNKOD_GetCurrentPoint();
+			json["start_ranking"] = MOHDLLIJELH.CDINKAANIAA_Rank[0];
+			HADLOAPLCAF(json, OMNOFMEBLAD, MOHDLLIJELH);
+		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.LKOICKMAADB_42, json, false);
+        }
+	}
 
 	// // RVA: 0x907FA4 Offset: 0x907FA4 VA: 0x907FA4
-	// public void EEGOAEADLDP(CPHJGFLEFNF IJAOGPFKDBP, JGEOBNENMAH.HAJIFNABIFF OMNOFMEBLAD, string MDADLCOCEBN, MHAPMOLCPKM MOHDLLIJELH) { }
+	public void EEGOAEADLDP(CPHJGFLEFNF IJAOGPFKDBP, JGEOBNENMAH.HAJIFNABIFF OMNOFMEBLAD, string MDADLCOCEBN, MHAPMOLCPKM_EventQuest MOHDLLIJELH)
+	{
+		EDOHBJAPLPF_JsonData json = MKMJILJPOGC(IJAOGPFKDBP, OMNOFMEBLAD, MDADLCOCEBN);
+		if(json != null)
+		{
+            PKADMPNDMGP d = MOHDLLIJELH.GAPOCIFPDDO_GetSelectedCardInfo();
+            OFNLIBDEIFA_EventQuest.AGFEALDEJOL d2 = MOHDLLIJELH.FPILJDOPPJC_GetSelectedCardSaveInfo();
+            json["event_id"] = MOHDLLIJELH.PGIIDPEGGPI_EventId;
+			json["event_name"] = MOHDLLIJELH.DGCOMDILAKM_EventName;
+			json["mission_id"] = d.PPFNGGCBJKC_Id;
+			json["difficulty"] = IJAOGPFKDBP.AKNELONELJK_Difficulty;
+			json["lucky"] = d2.KIFJKGDBDBH_Lucky;
+			int mission_clr_cnt = 0;
+			if(GBNDFCEDNMG.NKGDIBMNLNO(d) == 1)
+			{
+				mission_clr_cnt = d.JJECMJFDEEP_ClearConditionValue;
+			}
+			else
+			{
+				mission_clr_cnt = d.GLDIGCJNOBO_ClearCount;
+			}
+			int mission_cnt = 0;
+			int get_pt = 0;
+			if(IJAOGPFKDBP.HBODCMLFDOB_Result == 1)
+			{
+				if(GBNDFCEDNMG.EIJIGDCMJLB(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, d, OMNOFMEBLAD, MOHDLLIJELH, true))
+				{
+					if(GBNDFCEDNMG.NKGDIBMNLNO(d) == 1)
+					{
+						mission_clr_cnt = d.JJECMJFDEEP_ClearConditionValue;
+						mission_cnt = OMNOFMEBLAD.KNIFCANOHOC_Score + d2.OLDAGCNLJOI_Prog;
+					}
+					else
+					{
+						mission_clr_cnt = d.GLDIGCJNOBO_ClearCount;
+						mission_cnt = 1 + d2.OLDAGCNLJOI_Prog;
+					}
+					if(GBNDFCEDNMG.GLDHKNMLEIG(d, d2, OMNOFMEBLAD))
+					{
+						if(d2.KIFJKGDBDBH_Lucky == 0)
+						{
+							get_pt = d.EIOFPIHABFC_Pts;
+						}
+						else
+						{
+							get_pt = d.EIOFPIHABFC_Pts * MOHDLLIJELH.BOLHIMADLBN(OMNOFMEBLAD.AKNELONELJK_Difficulty);
+						}
+						get_pt *= MOHDLLIJELH.HADLPHIMBHH_BoostRatio;
+					}
+				}
+			}
+			json["mission_cnt"] = mission_cnt;
+			json["mission_clr_cnt"] = mission_clr_cnt;
+			json["get_pt"] = get_pt;
+			json["end_pt"] = get_pt + MOHDLLIJELH.FBGDBGKNKOD_GetCurrentPoint();
+			json["use_liveskip"] = IJAOGPFKDBP.CAOHBKEIGDM_UseLiveSkip;
+			DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.EEGOAEADLDP_32, json, false);
+		}
+	}
 
 	// // RVA: 0x9089A4 Offset: 0x9089A4 VA: 0x9089A4
 	public void JMAJBHENDPF(JGEOBNENMAH.EDHCNKBMLGI OMNOFMEBLAD, string MDADLCOCEBN, int KALCJMLIAOK, int CBHACAOCJGP, IKDICBBFBMI_EventBase MOHDLLIJELH)

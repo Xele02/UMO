@@ -515,7 +515,27 @@ public static class DatabaseTextConverter
                         poFile.translationData.Add(prfx, blockDbSp.NNMPGOAGEOL_Missions[i].BGBJPGEIEDE_DescBalloon);
                     }
                 }
-                
+                ACBAHDMEFFL_EventMission blockDbMission = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(blocksName[sIdx]) as ACBAHDMEFFL_EventMission;
+                if(blockDbMission != null)
+                {
+                    for (int i = 0; i < blockDbMission.NNMPGOAGEOL_Missions.Count; i++)
+                    {
+                        string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbMission.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbMission.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
+                        poFile.translationData.Add(prfx, blockDbMission.NNMPGOAGEOL_Missions[i].FEMMDNIELFC_Desc);
+                        prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbMission.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbMission.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
+                        poFile.translationData.Add(prfx, blockDbMission.NNMPGOAGEOL_Missions[i].BGBJPGEIEDE_DescBalloon);
+                    }
+                    for(int i = 0; i < blockDbMission.LLCLJBEJOPM_BannerInfo.Count; i++)
+                    {
+                        string prfx = string.Format("event_banner_{0}_{1:D4}", blockDbMission.JIKKNHIAEKG_BlockName, blockDbMission.LLCLJBEJOPM_BannerInfo[i].PPFNGGCBJKC);
+                        poFile.translationData.Add(prfx, blockDbMission.LLCLJBEJOPM_BannerInfo[i].KLMPFGOCBHC_BannerText);
+                    }
+                    for(int i = 0; i < blockDbMission.LGODPKPFGHF.Count; i++)
+                    {
+                        string prfx = string.Format("event_mission_desc_{0}_{1:D4}", blockDbMission.JIKKNHIAEKG_BlockName, blockDbMission.LGODPKPFGHF[i].PPFNGGCBJKC_Id);
+                        poFile.translationData.Add(prfx, blockDbMission.LGODPKPFGHF[i].FEMMDNIELFC_Desc);
+                    }
+                }
             }
             string p = PoPath.Replace("{name}", "events_text");
             Directory.CreateDirectory(p);
@@ -1011,6 +1031,12 @@ public static class DatabaseTextConverter
     public static string TranslateRaidBossName(string event_db_name, int bossId, string def)
     {
         string prfx = string.Format("event_bossname_{0}_{1:D4}", event_db_name, bossId);
+        return Translate(eBank.events_text, prfx, def);
+    }
+
+    public static string TranslateEventMissionMissionDesc(string event_db_name, int descId, string def)
+    {
+        string prfx = string.Format("event_mission_desc_{0}_{1:D4}", event_db_name, descId);
         return Translate(eBank.events_text, prfx, def);
     }
 

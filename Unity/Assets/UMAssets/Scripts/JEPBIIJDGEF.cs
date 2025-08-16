@@ -9,7 +9,7 @@ public class JEPBIIJDGEF_EventInfo
 	private delegate IKDICBBFBMI_EventBase IKAFJHHHJDN();
 
 	public List<IKDICBBFBMI_EventBase> MPEOOINCGEN = new List<IKDICBBFBMI_EventBase>(); // 0x8
-	private static JEPBIIJDGEF_EventInfo.IKAFJHHHJDN[] OGCFJIIBLEO = new IKAFJHHHJDN[45] {
+	private static JEPBIIJDGEF_EventInfo.IKAFJHHHJDN[] OGCFJIIBLEO = new IKAFJHHHJDN[45 + 3] {
 														() => { return new HAEDCCLHEMN_EventBattle("event_battle_a"); /*0x1C3F1E0*/},
 														() => { return new HAEDCCLHEMN_EventBattle("event_battle_b"); /*0x1C3F260*/ },
 														() => { return new HAEDCCLHEMN_EventBattle("event_battle_c"); /*0x1C3F2E0*/ },
@@ -55,6 +55,10 @@ public class JEPBIIJDGEF_EventInfo
 														() => { return new MANPIONIGNO_EventGoDiva("event_godiva_a"); /*0x1C406E0*/ },
 														() => { return new MANPIONIGNO_EventGoDiva("event_godiva_b"); /*0x1C40760*/ },
 														() => { return new MANPIONIGNO_EventGoDiva("event_godiva_c"); /*0x1C407E0*/ },
+														// UMO add
+														() => { return new MHAPMOLCPKM_EventQuest("event_quest_a"); },
+														() => { return new MHAPMOLCPKM_EventQuest("event_quest_b"); },
+														() => { return new MHAPMOLCPKM_EventQuest("event_quest_c"); },
 													} ; // 0x4
 
 	public static JEPBIIJDGEF_EventInfo HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF JEPBIIJDGEF OKPMHKNCNAL

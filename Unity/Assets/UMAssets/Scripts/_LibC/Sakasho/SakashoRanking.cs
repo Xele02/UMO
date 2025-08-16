@@ -126,6 +126,8 @@ namespace ExternLib
 			res["rankings"].Add(GetRankingInfo("score_ranking_4024", false));
 			res["rankings"].Add(GetRankingInfo("score_ranking_4012", false));
 			res["rankings"].Add(GetRankingInfo("score_ranking_4013", false));
+			res["rankings"].Add(GetRankingInfo("quest_ranking_2001", false));
+			res["rankings"].Add(GetRankingInfo("quest_ranking_2002", false));
 
 			SendMessage(callbackId, res);
 			return 0;
@@ -611,6 +613,35 @@ namespace ExternLib
 				data["id"] = 400000 + int.Parse(k.Replace("score_ranking_", ""));
 				data["is_reverse"] = false;
 				data["name"] = "score_ranking";
+				data["name_for_api"] = k;
+				data["opened_at"] = 1575126000;
+				data["ranking_type"] = 1;
+				data["reward_opened_at"] = 1732978860;
+				data["score_precision"] = 6;
+				data["update_type"] = 0;
+				if (withRewards)
+				{
+					data["rewards"] = new EDOHBJAPLPF_JsonData();
+					data["rewards"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
+				}
+				return data;
+			}
+			else if(k.StartsWith("quest_ranking_"))
+			{
+				EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
+				data.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.JKMLKAMHJIF_Object);
+				data["allow_lower_score"] = false;
+				data["allow_negative_score"] = false;
+				data["allow_tied_rank"] = true;
+				data["batch_interval_time"] = 0;
+				data["batch_started_at"] = 0;
+				data["closed_at"] = 1734274740;
+				data["competition_closed_at"] = 1732978800;
+				data["default_score"] = 0;
+				data["description"] = "Quest ranking";
+				data["id"] = 400000 + int.Parse(k.Replace("quest_ranking_", ""));
+				data["is_reverse"] = false;
+				data["name"] = "quest_ranking";
 				data["name_for_api"] = k;
 				data["opened_at"] = 1575126000;
 				data["ranking_type"] = 1;

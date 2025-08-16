@@ -437,6 +437,14 @@ public class IMMAOANGPNK
 					// UMO Event End
 					JOBKIDDLCPL_ScheduleEvent.Add(info);
 				}
+				// Hack for UMO to add quest_a b & c
+				if(currentEvent != null && currentEvent.EnableBlock("event_quest_a"))
+					JOBKIDDLCPL_ScheduleEvent.Add(new GDIPLANPCEI() { OPFGFINHFCE_Name = "event_quest_a", KBFOIECIADN_OpenedAt = 0, EGBOHDFBAPB_ClosedAt = long.MaxValue });
+				if(currentEvent != null && currentEvent.EnableBlock("event_quest_b"))
+					JOBKIDDLCPL_ScheduleEvent.Add(new GDIPLANPCEI() { OPFGFINHFCE_Name = "event_quest_b", KBFOIECIADN_OpenedAt = 0, EGBOHDFBAPB_ClosedAt = long.MaxValue });
+				if(currentEvent != null && currentEvent.EnableBlock("event_quest_c"))
+					JOBKIDDLCPL_ScheduleEvent.Add(new GDIPLANPCEI() { OPFGFINHFCE_Name = "event_quest_c", KBFOIECIADN_OpenedAt = 0, EGBOHDFBAPB_ClosedAt = long.MaxValue });
+				//
 			}
 			else if(item.OPFGFINHFCE_Name.Contains(".json"))
 			{

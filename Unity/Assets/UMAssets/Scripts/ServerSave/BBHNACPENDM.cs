@@ -319,6 +319,13 @@ public class BBHNACPENDM_ServerSaveData
 					case /*0x49*/OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.MHGPKDOPEDJ_EventSpA:
 						val = val | /*0x4000000*/EPBMNPFALJL_FlagEventSP;
 					break;
+					//UMO
+					case OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.OJAHCPGNPDB_EventQuestA:
+					case OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.KGJMEGLKJDM_EventQuestB:
+					case OKGLGHCBCJP_Database.BEOKNKGHFFE_Section.LNBMDELKFHI_EventQuestC:
+						val = val | JIEPLLCMFHE_FlagEventQuest;
+					break;
+					//
 					default:
 					break;
 				}

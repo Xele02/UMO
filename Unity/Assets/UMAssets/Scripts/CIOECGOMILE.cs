@@ -991,13 +991,13 @@ public class CIOECGOMILE
 										if(dbStep.FGOGPCMHPIN_Count - 1 == l[i].CPNGJMKFCJI)
 										{
 											data.LKGELAPAACK = true;
-											data.LJGOOOMOMMA = JpStringLiterals.StringLiteral_9769;
+											data.LJGOOOMOMMA_Desc = JpStringLiterals.StringLiteral_9769;
 											data.DNBFMLBNAEE = dbStep.JENFHJDFFAD_Pt[l[i].CPNGJMKFCJI];
 										}
 										else
 										{
 											data.LKGELAPAACK = false;
-											data.LJGOOOMOMMA = string.Format(MessageManager.Instance.GetMessage("common", "unlock_episode_reward"), dbStep.JENFHJDFFAD_Pt[l[i].CPNGJMKFCJI]);
+											data.LJGOOOMOMMA_Desc = string.Format(MessageManager.Instance.GetMessage("common", "unlock_episode_reward"), dbStep.JENFHJDFFAD_Pt[l[i].CPNGJMKFCJI]);
 											data.DNBFMLBNAEE = dbStep.JENFHJDFFAD_Pt[l[i].CPNGJMKFCJI];
 										}
 										EBEGGFECPOE.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.CNACJCAMCFB_4, dbEp.KELFCMEOPPM.ToString() + ":" + l[i].HODPFJGODDN_EpIdx);

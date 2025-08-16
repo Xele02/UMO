@@ -2937,7 +2937,35 @@ namespace XeApp.Game.Menu
             IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.DDEODFNANDO_8_ResultRewardToReceive/*8*/, false);
 			if(ev != null && ev.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.MKKOHBGHADL_EventQuest_2/*2*/)
 			{
-				TodoLogger.LogError(TodoLogger.EventQuest_2, "Coroutine_EventReward");
+				MHAPMOLCPKM_EventQuest evQ = ev as MHAPMOLCPKM_EventQuest;
+				if(evQ.OADIALAGKGM())
+				{
+					bool is_close = false;
+					TextPopupSetting s = new TextPopupSetting();
+					MessageBank bk = MessageManager.Instance.GetBank("menu");
+					s.TitleText = bk.GetMessageByLabel("popup_event_quest_unreceived_reward_title");
+					s.Buttons = new ButtonInfo[2]
+					{
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
+						new ButtonInfo() { Label = PopupButton.ButtonLabel.SpecialPage, Type = PopupButton.ButtonType.Positive }
+					};
+					s.Text = string.Format(bk.GetMessageByLabel("popup_event_quest_unreceived_reward_text"), SystemTextColor.ImportantColor);
+					PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+					{
+						//0x13C7454
+						if(label == PopupButton.ButtonLabel.SpecialPage)
+						{
+							IKDICBBFBMI_EventBase ev2 = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false);
+							MenuScene.Instance.Mount(TransitionUniqueId.EVENTQUEST, new EventMusicSelectSceneArgs(ev2 != null ? ev2.PGIIDPEGGPI_EventId : 0, false, false), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+						}
+						is_close = true;
+					}, null, null, null, true, true, false);
+					yield return new WaitWhile(() =>
+					{
+						//0x13C75C4
+						return !is_close;
+					});
+				}
 			}
 			bool isShowReward = false;
 			bool isError = false;

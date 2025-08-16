@@ -83,6 +83,9 @@ public static class UMOEventList
         new EventData() { Id=4024, Name="ミス・マクロスコンテスト　マクロスΔ", BlockName="event_score_d"},
         new EventData() { Id=4012, Name="第12回ミスマクロスコンテスト", BlockName="event_score_e"},
         new EventData() { Id=4013, Name="第13回ミスマクロスコンテスト", BlockName="event_score_f"},
+//        new EventData() { Id=2001, Name="カナメイベント", BlockName="event_quest_a"},
+//        new EventData() { Id=2002, Name="水着イベント２（オリジナル） 2002", BlockName="event_quest_b"},
+//        new EventData() { Id=2003, Name="超時空シンデレラ ランカちゃん 2003", BlockName="event_quest_c"},
     };
     public static List<EventData> EventListHidden = new List<EventData>()
     {
