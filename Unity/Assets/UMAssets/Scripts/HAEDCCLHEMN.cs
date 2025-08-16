@@ -3378,8 +3378,8 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 				data.GBLHPHCAPLG_ScoreBonus,
 				" </color>"
 			}));
-			data.ANOCILKJGOJ_EpisodeCnt = LEPNPBIMHGM(ANOPDAGJIKG).Count;
-			data.ODCLHPGHDHA_EpisodeCntBns = CEICDKGEONG(ANOPDAGJIKG, MHADLGMJKGK);
+			data.ANOCILKJGOJ_EpisodeCnt = LEPNPBIMHGM_GetEquippedEpisodesWithBonus(ANOPDAGJIKG).Count;
+			data.ODCLHPGHDHA_EpisodeCntBns = CEICDKGEONG_GetEquippedEpisodesBonusValue(ANOPDAGJIKG, MHADLGMJKGK);
 			data.ODCLHPGHDHA_EpisodeCntBns += 100;
 			Debug.Log(string.Concat(new object[5]
 			{

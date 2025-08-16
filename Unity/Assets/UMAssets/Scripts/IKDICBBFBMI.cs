@@ -937,7 +937,7 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8DFD8C Offset: 0x8DFD8C VA: 0x8DFD8C
-	public List<int> LEPNPBIMHGM(int BMMPAHHEOJC)
+	public List<int> LEPNPBIMHGM_GetEquippedEpisodesWithBonus(int BMMPAHHEOJC)
 	{
 		List<int> res = new List<int>();
 		for(int i = 0; i < 3; i++)
@@ -1211,7 +1211,7 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8E20FC Offset: 0x8E20FC VA: 0x8E20FC
-	public int CEICDKGEONG(int BMMPAHHEOJC, int MHADLGMJKGK)
+	public int CEICDKGEONG_GetEquippedEpisodesBonusValue(int BMMPAHHEOJC, int MHADLGMJKGK)
 	{
 		List<GNPOABJANKO> l = LMDENICBIIB_GetEpisodesBonusList(BMMPAHHEOJC, MHADLGMJKGK);
 		int res = 0;

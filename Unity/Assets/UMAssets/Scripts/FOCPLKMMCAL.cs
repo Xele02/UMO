@@ -208,7 +208,13 @@ public class FOCPLKMMCAL
 				}
 				break;
 			case 2:
-				TodoLogger.LogError(TodoLogger.EventQuest_2, "HNNPBABEPBP event");
+				{
+					MHAPMOLCPKM_EventQuest ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false) as MHAPMOLCPKM_EventQuest;
+					if(ev != null)
+					{
+						ev.OAIBHKLKFKB(OMNOFMEBLAD, FCLGIPFPIPH, LFGNFNDDLJH_TicketCount, fsceneId, c);
+					}
+				}
 				break;
 			case 3:
 				{
@@ -546,7 +552,28 @@ public class FOCPLKMMCAL
 						}
 						else if(OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 2)
 						{
-							TodoLogger.LogError(TodoLogger.EventQuest_2, "HKEFOCFIKIL Event");
+							MHAPMOLCPKM_EventQuest ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6, false) as MHAPMOLCPKM_EventQuest;
+							OFNLIBDEIFA_EventQuest.HGCEGAAJFBC d = ev.JIPPHOKGLIH(OMNOFMEBLAD.GHBPLHBNMBK_FreeMusicId, false);
+							if(d != null)
+							{
+								if(d.KNIFCANOHOC_Score[OMNOFMEBLAD.AKNELONELJK_Difficulty] < OMNOFMEBLAD.KNIFCANOHOC_Score)
+								{
+									d.KNIFCANOHOC_Score[OMNOFMEBLAD.AKNELONELJK_Difficulty] = OMNOFMEBLAD.KNIFCANOHOC_Score;
+								}
+								if(d.NLKEBAOBJCM_Combo[OMNOFMEBLAD.AKNELONELJK_Difficulty] < OMNOFMEBLAD.NLKEBAOBJCM_MaxCombo)
+								{
+									d.NLKEBAOBJCM_Combo[OMNOFMEBLAD.AKNELONELJK_Difficulty] = OMNOFMEBLAD.NLKEBAOBJCM_MaxCombo;
+								}
+								if(d.LAMCCNAKIOJ_ComboRank[OMNOFMEBLAD.AKNELONELJK_Difficulty] < OMNOFMEBLAD.LCOHGOIDMDF_ComboRank)
+								{
+									d.LAMCCNAKIOJ_ComboRank[OMNOFMEBLAD.AKNELONELJK_Difficulty] = (sbyte)OMNOFMEBLAD.LCOHGOIDMDF_ComboRank;
+								}
+								if(d.JNLKJCDFFMM_Clear[OMNOFMEBLAD.AKNELONELJK_Difficulty] < 999999999)
+								{
+									d.JNLKJCDFFMM_Clear[OMNOFMEBLAD.AKNELONELJK_Difficulty]++;
+								}
+								d.GOIKCKHMBDL_FId = OMNOFMEBLAD.GHBPLHBNMBK_FreeMusicId;
+							}
 						}
 						else if (OMNOFMEBLAD.MNNHHJBBICA_GameEventType == 3)
 						{
