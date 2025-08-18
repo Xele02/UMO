@@ -244,7 +244,7 @@ namespace XeApp.Game.Menu
 					{
 						//0xEED948
 						GCAHJLOGMCI.KNMMOMEHDON_GachaType a = GCAHJLOGMCI.OLMFIANJBOB_GetGachaType(defaultGahcaId * 100);
-						if (a == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1)
+						if (a == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
 							return defaultGahcaId == 1;
 						else
 							return defaultGahcaId == x.FDEBLMKEMLF_TypeAndSeriesId;
@@ -525,7 +525,7 @@ namespace XeApp.Game.Menu
 				//0xEECB20
 				if (conditionId != TutorialConditionId.Condition36)
 					return false;
-				return m_view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1;
+				return m_view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily;
 			}));
 			yield return Co.R(TutorialManager.TryShowTutorialCoroutine((TutorialConditionId conditionId) =>
 			{
@@ -578,7 +578,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEE7948 Offset: 0xEE7948 VA: 0xEE7948
 		private void OnTimeLimit()
 		{
-			if(m_view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1)
+			if(m_view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
 			{
 				GachaUtility.OpenTimeLimitPopup(ResetLotInfo);
 			}
@@ -878,7 +878,7 @@ namespace XeApp.Game.Menu
 			}
 			int v3 = 0;
 			string s = "";
-			if(m_view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10)
+			if(m_view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
 			{
 				v3 = m_view.DPBDFPPMIPH_Gacha.MJNOAMAFNHA_CostItemId;
 				s = EKLNMHFCAOI.INCKKODFJAP_GetItemName(v3);
@@ -1096,7 +1096,7 @@ namespace XeApp.Game.Menu
 		{
 			m_rateInfoList.Clear();
 			m_episodeInfoList.Clear();
-			if (GachaUtility.selectCategory == GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8)
+			if (GachaUtility.selectCategory == GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8_StepUp)
 				MakeAppearRateForStepUp(-1);
 			else
 				MakeAppearRateForBasic();
@@ -1144,7 +1144,7 @@ namespace XeApp.Game.Menu
 			LOBDIAABMKG product = GachaUtility.netGachaProductData;
 			if (stepIndex < 0)
 			{
-				stepIndex = product.NECDFDNBHFK.LKHAAGIJEPG_PlayerStatus.DBNAGGGJDAB_CurrentStepIndex;
+				stepIndex = product.NECDFDNBHFK_StepData.LKHAAGIJEPG_PlayerStatus.DBNAGGGJDAB_CurrentStepIndex;
 			}
 			m_appearLot = new AppearLot(product.NLGPIELHAKC(stepIndex, true), product.NLGPIELHAKC(stepIndex, false), product.KACECFNECON);
 			MakeAppearRateInGroup(m_rateInfoList, m_appearLot);

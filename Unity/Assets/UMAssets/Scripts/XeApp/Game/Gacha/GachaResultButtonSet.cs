@@ -147,7 +147,7 @@ namespace XeApp.Game.Gacha
 		public void SetTelopType(GCAHJLOGMCI.KNMMOMEHDON_GachaType selectMode, KBPDNHOKEKD_ProductId productData, string msg)
 		{
             KBPDNHOKEKD_ProductId.KNEKLJHNHAK a = KBPDNHOKEKD_ProductId.KNEKLJHNHAK.HJNNKCMLGFL_0;
-			if(selectMode == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10)
+			if(selectMode == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
 			{
 				m_textTelop.text = "";
 			}

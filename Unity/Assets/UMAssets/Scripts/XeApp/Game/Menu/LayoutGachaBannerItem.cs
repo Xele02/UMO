@@ -63,11 +63,11 @@ namespace XeApp.Game.Menu
 					m_layoutEvTicket.StartChildrenAnimGoStop("01");
 				}
 			}
-			if(product.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10)
+			if(product.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
 			{
 				m_layoutBadge.StartChildrenAnimGoStop("02");
 			}
-			else if(product.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1)
+			else if(product.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
 			{
 				TexUVData data = m_uvMan.GetUVData(m_imageUvLabels[(int)timeZone]);
 				for(int i = 0; i < m_imageBadge.Length; i++)

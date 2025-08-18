@@ -67,7 +67,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x19AD7AC Offset: 0x19AD7AC VA: 0x19AD7AC
 		public void SetButtonType(BEPHBEGDFFK view)
 		{
-			KOPCFBCDBPC stepRecord = view.DPBDFPPMIPH_Gacha.NECDFDNBHFK;
+			KOPCFBCDBPC stepRecord = view.DPBDFPPMIPH_Gacha.NECDFDNBHFK_StepData;
 			if(stepRecord == null)
 			{
 				if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9)
@@ -91,7 +91,7 @@ namespace XeApp.Game.Menu
 						ButtonL.Hidden = true;
 					}
 				}
-				else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10)
+				else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
 				{
 					BEPHBEGDFFK.DMBKENKBIJD d = view.EIPFDJBIOKN(true);
 					if(d == null)
@@ -155,7 +155,7 @@ namespace XeApp.Game.Menu
 				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.PHABJLGFJNI_2:
 				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.GENEIBGNMPH_3:
 				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.JGDEHOGIENP_4:
-				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8_StepUp:
 					b1 = false;
 					if (view.DPBDFPPMIPH_Gacha.KACECFNECON == null)
 						break;
@@ -219,7 +219,7 @@ namespace XeApp.Game.Menu
 						}
 					}
 					break;
-				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha:
 					str = bk.GetMessageByLabel("gacha_desc_03");
 					b1 = false;
 					break;
@@ -252,7 +252,7 @@ namespace XeApp.Game.Menu
 				b2 = true;
 				str = "02";
 			}
-			else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10)
+			else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
 			{
 				b2 = true;
 				b1 = true;
@@ -340,7 +340,7 @@ namespace XeApp.Game.Menu
 		public void SetTelopType(BEPHBEGDFFK view)
 		{
 			string str = null;
-			if(view.DPBDFPPMIPH_Gacha.NECDFDNBHFK == null)
+			if(view.DPBDFPPMIPH_Gacha.NECDFDNBHFK_StepData == null)
 			{
 				m_layoutStepOnOff.StartChildrenAnimGoStop("01");
 				if(view.DPBDFPPMIPH_Gacha.KACECFNECON != null)
@@ -351,11 +351,11 @@ namespace XeApp.Game.Menu
 			else
 			{
 				m_layoutStepOnOff.StartChildrenAnimGoStop("02");
-				int stepNum = view.DPBDFPPMIPH_Gacha.NECDFDNBHFK.LKHAAGIJEPG_PlayerStatus.DBNAGGGJDAB_CurrentStepIndex;
+				int stepNum = view.DPBDFPPMIPH_Gacha.NECDFDNBHFK_StepData.LKHAAGIJEPG_PlayerStatus.DBNAGGGJDAB_CurrentStepIndex;
 				m_numberStepNum.SetNumber(stepNum, 0);
-				m_numberStepMax.SetNumber(view.DPBDFPPMIPH_Gacha.NECDFDNBHFK.BMFEGOMNECF_Step.Count);
-				m_layoutStepNum.StartChildrenAnimGoStop(view.DPBDFPPMIPH_Gacha.NECDFDNBHFK.LKHAAGIJEPG_PlayerStatus.NMNLJFIDFJE_CurrentStepRestCount < 0 ? "02" : "01");
-				MMNNAPPLHFM m = view.DPBDFPPMIPH_Gacha.NECDFDNBHFK.BMFEGOMNECF_Step[stepNum - 1];
+				m_numberStepMax.SetNumber(view.DPBDFPPMIPH_Gacha.NECDFDNBHFK_StepData.BMFEGOMNECF_Step.Count);
+				m_layoutStepNum.StartChildrenAnimGoStop(view.DPBDFPPMIPH_Gacha.NECDFDNBHFK_StepData.LKHAAGIJEPG_PlayerStatus.NMNLJFIDFJE_CurrentStepRestCount < 0 ? "02" : "01");
+				MMNNAPPLHFM m = view.DPBDFPPMIPH_Gacha.NECDFDNBHFK_StepData.BMFEGOMNECF_Step[stepNum - 1];
 				if(m != null)
 				{
 					str = m.KACECFNECON.KLMPFGOCBHC_Description;

@@ -48,12 +48,12 @@ namespace XeApp.Game.Menu
 					m_layoutEvTicket.StartChildrenAnimGoStop("01");
 				}
 			}
-			if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1)
+			if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
 			{
 				m_layoutPeriod.StartChildrenAnimGoStop("02");
 				m_textPeriod.text = view.IFLJEIDBBPP();
 			}
-			else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10)
+			else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
 			{
 				m_layoutPeriod.StartChildrenAnimGoStop("04");
 				m_textDesc.text = view.DPBDFPPMIPH_Gacha.KACECFNECON.KLMPFGOCBHC_Description;

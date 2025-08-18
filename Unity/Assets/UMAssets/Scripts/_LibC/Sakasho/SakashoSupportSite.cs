@@ -41,6 +41,8 @@ namespace ExternLib
 		}
 		public static int SakashoSupportSiteBuildUrl(int callbackId, string json)
 		{
+			EDOHBJAPLPF_JsonData input = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
+			UnityEngine.Debug.LogError("url SakashoSupportSiteBuildUrl "+json);
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res[AFEHLCGHAEE_Strings.EEDAHFGPNPH_sss_temporary_token] = "";
 			res[AFEHLCGHAEE_Strings.MCHAINJKMEB_url_with_token] = "";
@@ -49,6 +51,8 @@ namespace ExternLib
 		}
 		public static int SakashoSupportSiteGetInformationDetailURL(int callbackId, string json)
 		{
+			EDOHBJAPLPF_JsonData input = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
+			UnityEngine.Debug.LogError("url SakashoSupportSiteGetInformationDetailURL "+json);
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res[AFEHLCGHAEE_Strings.EEDAHFGPNPH_sss_temporary_token] = "";
 			res[AFEHLCGHAEE_Strings.MCHAINJKMEB_url_with_token] = "";
@@ -57,6 +61,8 @@ namespace ExternLib
 		}
 		public static int SakashoSupportSiteGetCommonTemplateURL(int callbackId, string json)
 		{
+			EDOHBJAPLPF_JsonData input = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
+			UnityEngine.Debug.LogError("url SakashoSupportSiteGetCommonTemplateURL "+json);
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res[AFEHLCGHAEE_Strings.EEDAHFGPNPH_sss_temporary_token] = "";
 			res[AFEHLCGHAEE_Strings.MCHAINJKMEB_url_with_token] = "";
@@ -76,6 +82,8 @@ namespace ExternLib
 		{
 			TodoLogger.LogError(TodoLogger.SakashoServer, "SakashoSupportSiteGetOriginalTemplateURL");
 
+			EDOHBJAPLPF_JsonData input = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
+			UnityEngine.Debug.LogError("url SakashoSupportSiteGetOriginalTemplateURL "+json);
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res[AFEHLCGHAEE_Strings.EEDAHFGPNPH_sss_temporary_token] = "";
 			res[AFEHLCGHAEE_Strings.MCHAINJKMEB_url_with_token] = "";

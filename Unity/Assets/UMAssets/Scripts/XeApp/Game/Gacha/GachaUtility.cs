@@ -105,7 +105,7 @@ namespace XeApp.Game.Gacha
 				{
 					return netGachaProduct;
 				}
-				if(selectCategory == GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8)
+				if(selectCategory == GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8_StepUp)
 				{
 					return netGachaProductData.DBHIEABGKII_GetSummon(GCAHJLOGMCI.NFCAJPIJFAM_SummonType.OBLEFFEJGIJ_8);
 				}
@@ -134,7 +134,7 @@ namespace XeApp.Game.Gacha
 			selectedLotType = LotType.None;
 			switch(selectCategory)
 			{
-				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily:
 					netGachaCountForAppearRate = GCAHJLOGMCI.NFCAJPIJFAM_SummonType.ODDGKAKAGLE_3;
 					break;
 				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.PHABJLGFJNI_2:
@@ -148,11 +148,11 @@ namespace XeApp.Game.Gacha
 					selectedLotType = LotType.PaidVC;
 					netGachaCountForAppearRate = GCAHJLOGMCI.NFCAJPIJFAM_SummonType.DIHBOGEPHFI_2;
 					break;
-				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.GKDFKDLFNAJ_5:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.GKDFKDLFNAJ_5_LimitedTicket1:
 					selectedLotType = LotType.Ticket;
 					netGachaCountForAppearRate = GCAHJLOGMCI.NFCAJPIJFAM_SummonType.LMHDFEKIDKG_6;
 					break;
-				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.BKNHBNINDOC_6:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.BKNHBNINDOC_6_LimitedTicket2:
 					selectedLotType = LotType.Ticket;
 					netGachaCountForAppearRate = GCAHJLOGMCI.NFCAJPIJFAM_SummonType.DIHBOGEPHFI_2;
 					break;
@@ -160,7 +160,7 @@ namespace XeApp.Game.Gacha
 					selectedLotType = LotType.PaidVC;
 					netGachaCountForAppearRate = GCAHJLOGMCI.NFCAJPIJFAM_SummonType.AIMPCCIHKAJ_1;
 					break;
-				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8_StepUp:
 					selectedLotType = LotType.PaidVC;
 					netGachaCountForAppearRate = GCAHJLOGMCI.NFCAJPIJFAM_SummonType.OBLEFFEJGIJ_8;
 					break;
@@ -168,7 +168,7 @@ namespace XeApp.Game.Gacha
 					selectedLotType = LotType.Ticket;
 					netGachaCountForAppearRate = GCAHJLOGMCI.NFCAJPIJFAM_SummonType.GOAHICNDICO_5;
 					break;
-				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha:
 					selectedLotType = LotType.Ticket;
 					netGachaCountForAppearRate = GCAHJLOGMCI.NFCAJPIJFAM_SummonType.AIMPCCIHKAJ_1;
 					break;
@@ -215,7 +215,7 @@ namespace XeApp.Game.Gacha
 		public static void UpdateCountType(bool isTicket)
 		{
 			GCAHJLOGMCI.NFCAJPIJFAM_SummonType value = GCAHJLOGMCI.NFCAJPIJFAM_SummonType.HJNNKCMLGFL_0;
-			if (selectCategory >= GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1 && selectCategory <= GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10)
+			if (selectCategory >= GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily && selectCategory <= GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
 			{
 				value = GCAHJLOGMCI.NFCAJPIJFAM_SummonType.OBLEFFEJGIJ_8;
 				switch(selectCategory)
@@ -253,8 +253,8 @@ namespace XeApp.Game.Gacha
 								value = GCAHJLOGMCI.NFCAJPIJFAM_SummonType.DIHBOGEPHFI_2;
 						}
 						break;
-					case GCAHJLOGMCI.KNMMOMEHDON_GachaType.GKDFKDLFNAJ_5:
-					case GCAHJLOGMCI.KNMMOMEHDON_GachaType.BKNHBNINDOC_6:
+					case GCAHJLOGMCI.KNMMOMEHDON_GachaType.GKDFKDLFNAJ_5_LimitedTicket1:
+					case GCAHJLOGMCI.KNMMOMEHDON_GachaType.BKNHBNINDOC_6_LimitedTicket2:
 					case GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9:
 						value = GCAHJLOGMCI.NFCAJPIJFAM_SummonType.HJNNKCMLGFL_0;
 						if (selectedCountType == CountType.Single)
@@ -263,10 +263,10 @@ namespace XeApp.Game.Gacha
 							value = GCAHJLOGMCI.NFCAJPIJFAM_SummonType.LMHDFEKIDKG_6;
 						break;
 					case GCAHJLOGMCI.KNMMOMEHDON_GachaType.ANFKBNLLJFN_7:
-					case GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10:
+					case GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha:
 						value = GCAHJLOGMCI.NFCAJPIJFAM_SummonType.AIMPCCIHKAJ_1;
 						break;
-					case GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8:
+					case GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8_StepUp:
 						break;
 				}
 			}
@@ -276,7 +276,7 @@ namespace XeApp.Game.Gacha
 		// // RVA: 0x9913B8 Offset: 0x9913B8 VA: 0x9913B8
 		public static int GetMenuSinglePrice(GCAHJLOGMCI.KNMMOMEHDON_GachaType type, LotType lotType)
 		{
-			if(type != GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1 && type != GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8)
+			if(type != GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily && type != GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8_StepUp)
 			{
 				if(lotType != LotType.PaidVC)
 				{
@@ -291,15 +291,15 @@ namespace XeApp.Game.Gacha
 		// // RVA: 0x99146C Offset: 0x99146C VA: 0x99146C
 		public static int GetMenuMultiPrice(GCAHJLOGMCI.KNMMOMEHDON_GachaType type, LotType lotType)
 		{
-			if(type != GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1)
+			if(type != GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
 			{
 				if(type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9)
 				{
 					return netGachaMultiProduct.NPPGKNGIFGK_Price;
 				}
-				else if(type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8)
+				else if(type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8_StepUp)
 				{
-					return netGachaProductData.CHNFEEOJJCO(netGachaProductData.NECDFDNBHFK.LKHAAGIJEPG_PlayerStatus.DBNAGGGJDAB_CurrentStepIndex).LCJPKJMMIAP_CurrencyAmmount;
+					return netGachaProductData.CHNFEEOJJCO(netGachaProductData.NECDFDNBHFK_StepData.LKHAAGIJEPG_PlayerStatus.DBNAGGGJDAB_CurrentStepIndex).LCJPKJMMIAP_CurrencyAmmount;
 				}
 				if(lotType == LotType.Ticket)
 				{
@@ -338,9 +338,9 @@ namespace XeApp.Game.Gacha
 			{
 				return GetMenuMultiPrice(type, LotType.Ticket);
 			}
-			if(type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8)
+			if(type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8_StepUp)
 			{
-				MMNNAPPLHFM m = netGachaProductData.CHNFEEOJJCO(netGachaProductData.NECDFDNBHFK.LKHAAGIJEPG_PlayerStatus.DBNAGGGJDAB_CurrentStepIndex);
+				MMNNAPPLHFM m = netGachaProductData.CHNFEEOJJCO(netGachaProductData.NECDFDNBHFK_StepData.LKHAAGIJEPG_PlayerStatus.DBNAGGGJDAB_CurrentStepIndex);
 				return m.MFFNDOEPJFO_NormalCount + m.EKOFPNGPCIP_RareCount;
 			}
 			if (netGachaMultiProduct == null)
@@ -379,7 +379,7 @@ namespace XeApp.Game.Gacha
 		// // RVA: 0x991AE8 Offset: 0x991AE8 VA: 0x991AE8
 		public static string GetGachaDetailWebViewTemplate()
 		{
-			if(m_selectCategory == GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8)
+			if(m_selectCategory == GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8_StepUp)
 			{
 				if(netGachaProductData.NJLONELPNCD.KACECFNECON_Desc != null)
 					return netGachaProductData.NJLONELPNCD.KACECFNECON_Desc.OKDLGFMLLFH_Templ;
@@ -546,7 +546,7 @@ namespace XeApp.Game.Gacha
 				}
 			}
 			PopupSetting s = null;
-			if (selectCategory == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10)
+			if (selectCategory == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
 			{
 				string ticketName = EKLNMHFCAOI.INCKKODFJAP_GetItemName(netGachaProductData.MJNOAMAFNHA_CostItemId);
 				if (v3_price <= v1_have)
@@ -584,7 +584,7 @@ namespace XeApp.Game.Gacha
 					toPurchaseVC = true;
 				}
 			}
-			else if (selectCategory == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1)
+			else if (selectCategory == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
 			{
 				//LAB_0099793c
 				s = MakePopupSettingForFree();
@@ -684,7 +684,7 @@ namespace XeApp.Game.Gacha
 				}
 				if(isPositive)
 				{
-					if(selectCategory == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10)
+					if(selectCategory == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
 					{
 						yield return Co.R(OpenPurchasePassWindow(null));
 					}
@@ -714,7 +714,7 @@ namespace XeApp.Game.Gacha
 		{
 			DateTime t = Utility.GetLocalDateTime(unixTime);
 			currentGachaLimitTime = -1;
-			if (selectCategory != GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1)
+			if (selectCategory != GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
 				return;
 			currentTimezone = GetTimezoneFor(unixTime);
 			int h;
@@ -840,11 +840,11 @@ namespace XeApp.Game.Gacha
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			string msg = "";
-			if(selectCategory == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1)
+			if(selectCategory == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
 			{
 				msg = bk.GetMessageByLabel("popup_gacha_reject_free_timeout_msg");
 			}
-			else if(selectCategory >= GCAHJLOGMCI.KNMMOMEHDON_GachaType.GKDFKDLFNAJ_5 && selectCategory <= GCAHJLOGMCI.KNMMOMEHDON_GachaType.BKNHBNINDOC_6)
+			else if(selectCategory >= GCAHJLOGMCI.KNMMOMEHDON_GachaType.GKDFKDLFNAJ_5_LimitedTicket1 && selectCategory <= GCAHJLOGMCI.KNMMOMEHDON_GachaType.BKNHBNINDOC_6_LimitedTicket2)
 			{
 				msg = bk.GetMessageByLabel("popup_gacha_reject_ticket_timeout_msg");
 			}
@@ -1086,7 +1086,7 @@ namespace XeApp.Game.Gacha
 		// // RVA: 0x995CCC Offset: 0x995CCC VA: 0x995CCC
 		public static int GetSeIdForMenuLeaving()
 		{
-			if(selectCategory == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1)
+			if(selectCategory == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
 			{
 				if(!s_directionInfo.CheckContainsStarNum(4))
 					return -1;
@@ -1117,7 +1117,7 @@ namespace XeApp.Game.Gacha
 		{
 			if(selectCategory != GCAHJLOGMCI.KNMMOMEHDON_GachaType.JGDEHOGIENP_4)
 			{
-				if(selectCategory == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10)
+				if(selectCategory == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
 				{
 					int itemId = netGachaProductData.MJNOAMAFNHA_CostItemId;
 					return EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId), null);
@@ -1134,7 +1134,7 @@ namespace XeApp.Game.Gacha
 		// // RVA: 0x996394 Offset: 0x996394 VA: 0x996394
 		public static void DrawLot(BEPHBEGDFFK.DMBKENKBIJD selectProductInfo, CDOPFBOHDEF onSuccess, DJBHIFLHJLK onFewVC, DJBHIFLHJLK onNetError)
 		{
-			if(selectCategory != GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10)
+			if(selectCategory != GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
 			{
 				if((!GameManager.Instance.IsTutorial && selectedLotType == LotType.PaidVC) || selectedLotType == LotType.Ticket)
 				{
@@ -1149,7 +1149,7 @@ namespace XeApp.Game.Gacha
 		// // RVA: 0x98DF10 Offset: 0x98DF10 VA: 0x98DF10
 		public static void DrawLotRetry(CDOPFBOHDEF onSuccess, DJBHIFLHJLK onFewVC, DJBHIFLHJLK onNetError)
 		{
-			if(selectCategory != GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10)
+			if(selectCategory != GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
 			{
 				if(selectedLotType == LotType.PaidVC || selectedLotType == LotType.Ticket)
 				{

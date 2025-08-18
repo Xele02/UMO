@@ -529,7 +529,7 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 				CEGDBNNIDIG d = new CEGDBNNIDIG();
 				d.KELFCMEOPPM_EpId = ev.LHAKGDAGEMM[i].KHPHAAMGMJP;
 				d.MIHNKIHNBBL_BaseBonus = ev.LHAKGDAGEMM[i].OFIAENKCJME / 100.0f;
-				d.MLLPMJFOKEC_GachaIds.AddRange(ev.LHAKGDAGEMM[i].KDNMBOBEGJM);
+				d.MLLPMJFOKEC_GachaIds.AddRange(ev.LHAKGDAGEMM[i].KDNMBOBEGJM_GachaIds);
 				LHAKGDAGEMM_EpBonusInfos.Add(d);
 			}
 			PGDAMNENGDA_EpBonusBySceneRarity.Clear();

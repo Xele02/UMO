@@ -138,7 +138,7 @@ public class BKOGPDBKFFJ_EventRaid : DIHHCBACKGG_DbSection
 		public int FBGGEFFJJHB; // 0x8
 		private int HHEEHHHLKHC_Crypted; // 0xC
 		private int LGAIHLFAPDC_Crypted; // 0x10
-		public List<int> KDNMBOBEGJM = new List<int>(); // 0x14
+		public List<int> KDNMBOBEGJM_GachaIds = new List<int>(); // 0x14
 
 		public int KHPHAAMGMJP_Id { get { return HHEEHHHLKHC_Crypted ^ FBGGEFFJJHB; } set { HHEEHHHLKHC_Crypted = value ^ FBGGEFFJJHB; } } //0x19B2908 ABFDDKBBPCH 0x19B2918 MHDOIIEMDEH
 		public int OFIAENKCJME { get { return LGAIHLFAPDC_Crypted ^ FBGGEFFJJHB; } set { LGAIHLFAPDC_Crypted = value ^ FBGGEFFJJHB; } } //0x19B2928 KADLAKFANGA 0x19B2938 AIDAPNCEPOB
@@ -155,7 +155,7 @@ public class BKOGPDBKFFJ_EventRaid : DIHHCBACKGG_DbSection
 			OFIAENKCJME = data.OFIAENKCJME;
 			for(int i = 0; i < data.JMLCLHHLJHM.Length; i++)
 			{
-				KDNMBOBEGJM.Add(data.JMLCLHHLJHM[i]);
+				KDNMBOBEGJM_GachaIds.Add(data.JMLCLHHLJHM[i]);
 			}
         }
 
@@ -165,7 +165,7 @@ public class BKOGPDBKFFJ_EventRaid : DIHHCBACKGG_DbSection
 			FBGGEFFJJHB = KNEFBLHBDBG;
 			KHPHAAMGMJP_Id = 0;
 			OFIAENKCJME = 0;
-			KDNMBOBEGJM.Clear();
+			KDNMBOBEGJM_GachaIds.Clear();
 		}
 	}
 

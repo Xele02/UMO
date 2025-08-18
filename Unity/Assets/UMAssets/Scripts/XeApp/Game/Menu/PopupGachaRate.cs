@@ -152,14 +152,14 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x17A2208 Offset: 0x17A2208 VA: 0x17A2208
 		private void SetupContent(float scrollPos)
 		{
-			if(m_setting.Mode == GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8)
+			if(m_setting.Mode == GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8_StepUp)
 			{
 				RectTransform rt = transform as RectTransform;
 				rt.anchoredPosition3D = Vector3.zero;
 				rt.sizeDelta = m_baseScale;
 				m_layoutWindow.SetActive(true);
 				m_scrollTrans = m_layoutWindow.scrollContent;
-				m_layoutWindow.SetStatus(m_setting.Data.NECDFDNBHFK);
+				m_layoutWindow.SetStatus(m_setting.Data.NECDFDNBHFK_StepData);
 			}
 			else
 			{
@@ -487,7 +487,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x17A4BDC Offset: 0x17A4BDC VA: 0x17A4BDC Slot: 18
 		public bool IsScrollable()
 		{
-			return m_setting.Mode != GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8;
+			return m_setting.Mode != GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8_StepUp;
 		}
 
 		// RVA: 0x17A4C0C Offset: 0x17A4C0C VA: 0x17A4C0C Slot: 19

@@ -329,7 +329,7 @@ public class LNELCMNJPIC_EventGoDiva : DIHHCBACKGG_DbSection
 		public int FBGGEFFJJHB; // 0x8
 		private int HHEEHHHLKHC_Crypted; // 0xC
 		private int LGAIHLFAPDC_Crypted; // 0x10
-		public List<int> KDNMBOBEGJM = new List<int>(); // 0x14
+		public List<int> KDNMBOBEGJM_GachaIds = new List<int>(); // 0x14
 
 		public int KHPHAAMGMJP { get { return HHEEHHHLKHC_Crypted ^ FBGGEFFJJHB; } set { HHEEHHHLKHC_Crypted = value ^ FBGGEFFJJHB; } } //0x10C21C0 ABFDDKBBPCH 0x10C21D0 MHDOIIEMDEH
 		public int OFIAENKCJME { get { return LGAIHLFAPDC_Crypted ^ FBGGEFFJJHB; } set { LGAIHLFAPDC_Crypted = value ^ FBGGEFFJJHB; } } //0x10C21E0 KADLAKFANGA 0x10C21F0 AIDAPNCEPOB
@@ -345,7 +345,7 @@ public class LNELCMNJPIC_EventGoDiva : DIHHCBACKGG_DbSection
 			OFIAENKCJME = JMHECKKKMLK.IEJLJIHIDJC[OIPCCBHIKIA - 1].OFIAENKCJME;
 			for(int i = 0; i < JMHECKKKMLK.IEJLJIHIDJC[OIPCCBHIKIA - 1].JMLCLHHLJHM.Length; i++)
 			{
-				KDNMBOBEGJM.Add(JMHECKKKMLK.IEJLJIHIDJC[OIPCCBHIKIA - 1].JMLCLHHLJHM[i]);
+				KDNMBOBEGJM_GachaIds.Add(JMHECKKKMLK.IEJLJIHIDJC[OIPCCBHIKIA - 1].JMLCLHHLJHM[i]);
 			}
 		}
 
@@ -355,7 +355,7 @@ public class LNELCMNJPIC_EventGoDiva : DIHHCBACKGG_DbSection
 			FBGGEFFJJHB = KNEFBLHBDBG;
 			KHPHAAMGMJP = 0;
 			OFIAENKCJME = 0;
-			KDNMBOBEGJM.Clear();
+			KDNMBOBEGJM_GachaIds.Clear();
 		}
 	}
 

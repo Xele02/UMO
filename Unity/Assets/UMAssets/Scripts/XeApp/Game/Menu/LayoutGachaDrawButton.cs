@@ -74,7 +74,7 @@ namespace XeApp.Game.Menu
 			m_layoutFirstSale.StartChildrenAnimGoStop(isFirstSale ? "01" : "02");
 			PMDCIJMMNGK_GachaTicket.EJAKHFONNGN tkt = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(currencyId);
 			SetButtonColor(isFirstSale, tkt != null);
-			if (gachaProduct.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1)
+			if (gachaProduct.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
 			{
 				Disable = LKBGPLDLNIK.JPIMHNNGJGI(currentTime) != 0;
 			}

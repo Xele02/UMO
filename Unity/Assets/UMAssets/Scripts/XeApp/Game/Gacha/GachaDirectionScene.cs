@@ -340,9 +340,9 @@ namespace XeApp.Game.Gacha
 			{
 				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.HJNNKCMLGFL_0:
 					break;
-				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily:
 				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.ANFKBNLLJFN_7:
-				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8_StepUp:
 				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9:
 					m_resultButtonUi.HideRetry();
 					b1 = true;
@@ -403,8 +403,8 @@ namespace XeApp.Game.Gacha
 						b1 = true;
 					}
 					break;
-				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.GKDFKDLFNAJ_5:
-				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.BKNHBNINDOC_6:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.GKDFKDLFNAJ_5_LimitedTicket1:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.BKNHBNINDOC_6_LimitedTicket2:
 					if (currentTicket < price)
 					{
 						m_resultButtonUi.HideRetry();
@@ -419,7 +419,7 @@ namespace XeApp.Game.Gacha
 						b1 = false;
 					}
 					break;
-				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10:
+				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha:
 					if (price <= currentTicket)
 					{
 						m_resultButtonUi.SetRetryConsume(GachaUtility.netGachaProductData.MJNOAMAFNHA_CostItemId, price);

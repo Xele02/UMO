@@ -1496,7 +1496,7 @@ namespace XeApp.Game.Menu
 						GachaUtility.selectCategory = GCAHJLOGMCI.KNMMOMEHDON_GachaType.GENEIBGNMPH_3;
 						break;
 					case JBCAHMMCOKK.ALEKHDPDOEA.KOLKHFLCBNP_19:
-						GachaUtility.selectCategory = GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8;
+						GachaUtility.selectCategory = GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8_StepUp;
 						break;
 					case JBCAHMMCOKK.ALEKHDPDOEA.JNFDONGNAGP_20:
 						GachaUtility.selectCategory = GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9;
@@ -1504,7 +1504,7 @@ namespace XeApp.Game.Menu
 					default:
 						break;
 					case JBCAHMMCOKK.ALEKHDPDOEA.KCOEIKAMLBD_27:
-						GachaUtility.selectCategory = GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10;
+						GachaUtility.selectCategory = GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha;
 						break;
 				}
 			}

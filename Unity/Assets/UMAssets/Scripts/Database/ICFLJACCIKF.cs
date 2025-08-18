@@ -185,7 +185,7 @@ public class ICFLJACCIKF_EventBattle : DIHHCBACKGG_DbSection
 		public int FBGGEFFJJHB; // 0x8
 		private int HHEEHHHLKHC_Crypted; // 0xC
 		private int LGAIHLFAPDC_Crypted; // 0x10
-		public List<int> KDNMBOBEGJM = new List<int>(); // 0x14
+		public List<int> KDNMBOBEGJM_GachaIds = new List<int>(); // 0x14
 
 		public int KHPHAAMGMJP { get { return HHEEHHHLKHC_Crypted ^ FBGGEFFJJHB; } set { HHEEHHHLKHC_Crypted = value ^ FBGGEFFJJHB; } } //0x11E84D0 ABFDDKBBPCH 0x11E84E0 MHDOIIEMDEH
 		public int OFIAENKCJME { get { return LGAIHLFAPDC_Crypted ^ FBGGEFFJJHB; } set { LGAIHLFAPDC_Crypted = value ^ FBGGEFFJJHB; } } //0x11E84F0 KADLAKFANGA 0x11E8500 AIDAPNCEPOB
@@ -202,7 +202,7 @@ public class ICFLJACCIKF_EventBattle : DIHHCBACKGG_DbSection
 			OFIAENKCJME = array.OFIAENKCJME;
 			for(int i = 0; i < array.JMLCLHHLJHM.Length; i++)
 			{
-				KDNMBOBEGJM.Add(array.JMLCLHHLJHM[i]);
+				KDNMBOBEGJM_GachaIds.Add(array.JMLCLHHLJHM[i]);
 			}
 		}
 
@@ -212,7 +212,7 @@ public class ICFLJACCIKF_EventBattle : DIHHCBACKGG_DbSection
 			FBGGEFFJJHB = KNEFBLHBDBG;
 			KHPHAAMGMJP = 0;
 			OFIAENKCJME = 0;
-			KDNMBOBEGJM.Clear();
+			KDNMBOBEGJM_GachaIds.Clear();
 		}
 	}
 

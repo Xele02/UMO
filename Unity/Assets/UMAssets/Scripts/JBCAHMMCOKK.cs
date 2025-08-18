@@ -722,7 +722,7 @@ public class JBCAHMMCOKK
 					for (int i = 0; i < NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.MHKCPJDNJKI_GatchaProducts.Count; i++)
 					{
                         LOBDIAABMKG p = NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.MHKCPJDNJKI_GatchaProducts[i];
-						if(p.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8)
+						if(p.INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8_StepUp)
 						{
 							JBCAHMMCOKK data = new JBCAHMMCOKK();
 							data.KHEKNNFCAOI(KOGBMDOONFA.PPFNGGCBJKC);
@@ -936,7 +936,7 @@ public class JBCAHMMCOKK
 					List<LOBDIAABMKG> l2 = NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.MHKCPJDNJKI_GatchaProducts;
 					for(int i = 0; i < l2.Count; i++)
 					{
-						if(l2[i].INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10)
+						if(l2[i].INDDJNMPONH_Category == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
 						{
 							int a = l2[i].FDEBLMKEMLF_TypeAndSeriesId;
 							if((l.Count == 1 && l.FindIndex((int GHPLINIACBB) =>
