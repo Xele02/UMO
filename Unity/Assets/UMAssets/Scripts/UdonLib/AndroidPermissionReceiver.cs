@@ -29,15 +29,21 @@ namespace UdonLib
 		{
 			if(m_instance != null)
 				return;
-			GameObject g = new GameObject("UniAndroidPermission");
+			GameObject g = new GameObject(ReceiverObjName);
 			g.AddComponent<AndroidPermissionReceiver>();
 		}
 
 		// // RVA: 0xE0892C Offset: 0xE0892C VA: 0xE0892C
-		// public bool GetLastResult() { }
+		public bool GetLastResult()
+		{
+			return m_permissionResult;
+		}
 
 		// // RVA: 0xE08934 Offset: 0xE08934 VA: 0xE08934
-		// public bool GetEstimateNever() { }
+		public bool GetEstimateNever()
+		{
+			return m_estimateNever;
+		}
 
 		// RVA: 0xE0893C Offset: 0xE0893C VA: 0xE0893C
 		public void RequestPremission(AndroidPermission permission, UnityAction onPermit, UnityAction notPermit)

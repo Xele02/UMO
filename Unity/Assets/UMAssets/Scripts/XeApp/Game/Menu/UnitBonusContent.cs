@@ -119,7 +119,7 @@ namespace XeApp.Game.Menu
 		private int m_loadedCount; // 0x3C
 
 		public PopupEpisodeBonusPlateSortList popupEpisodeBonusPlateSortList { get { return m_plateEpisodeList; } } //0xA46728
-		// public bool IsInitialize { get; } 0xA46730
+		public bool IsInitialize { get { return m_isInitialize; } } //0xA46730
 
 		// // RVA: 0xA46738 Offset: 0xA46738 VA: 0xA46738
 		public bool IsLoadImage()

@@ -15,7 +15,7 @@ namespace XeApp.Game.Common
 
 		public CriManaMovieController moviePlayer { get; private set; } // 0xC
 		public bool IsLoadedMovie { get { return isLoadedMovie; } } //0x110E93C
-		//public bool isAllLoaded { get; } 0x110E944
+		public bool isAllLoaded { get {return isUnused || isLoadedMovie; } } //0x110E944
 
 		// RVA: 0x110E968 Offset: 0x110E968 VA: 0x110E968
 		public void OnDestroy()

@@ -45,7 +45,7 @@ namespace XeApp.Game.Tutorial
 		}; // 0x38
 		private bool m_isRunning; // 0x3C
 
-		//public bool IsRunning { get; } 0xE4842C
+		public bool IsRunning { get { return m_isRunning; } } //0xE4842C
 
 		// RVA: 0xE48434 Offset: 0xE48434 VA: 0xE48434
 		private void Awake()

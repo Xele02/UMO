@@ -381,12 +381,12 @@ namespace XeApp.Game.Common
 		public int LoadedDivaId { get { return m_loadedDivaId; } } // get_LoadedDivaId 0x1BF87E8 
 		public int LoadedModelId { get { return m_loadedModelId; } } // get_LoadedModelId 0x1BF264C
 		public int LoadedColorId { get { return m_loadedColorId; } } // get_LoadedColorId 0x1BF2654
-		public bool isLoadedMusicAnimationResource { get; set; }  // 0x14C
-		public bool isLoadedARMusicAnimationResource { get; set; } // 0x14D
-		public int positionId { get; set; } // 0x150
-		public bool isLoadedMusicFacialResource { get; set; } // 0x154
+		public bool isLoadedMusicAnimationResource { get; private set; }  // 0x14C
+		public bool isLoadedARMusicAnimationResource { get; private set; } // 0x14D
+		public int positionId { get; private set; } // 0x150
+		public bool isLoadedMusicFacialResource { get; private set; } // 0x154
 		public bool isMusicAllLoaded { get { return isLoadedBasicResource && isLoadedMusicFacialResource && isLoadedMusicAnimationResource; } set {} } // get_isMusicAllLoaded 0x1BF9814 set_isMusicAllLoaded 0x1BF9840 
-		public bool isLoadedMenuAnimationResource { get; set; } // 0x155
+		public bool isLoadedMenuAnimationResource { get; private set; } // 0x155
 		public bool isMenuAllLoaded { get { return isLoadedBasicResource && isLoadedMenuAnimationResource; } set {} } // get_isMenuAllLoaded 0x1BF9E54 set_isMenuAllLoaded 0x1BF9E74  
 		public bool IsSimpleLoaded { get { return isLoadedBasicResource && isLoadedSimpleResource; } } // get_IsSimpleLoaded 0x1BF9F84 
 		public bool isLoadedSubCostumeResource { get; private set; } // 0x157

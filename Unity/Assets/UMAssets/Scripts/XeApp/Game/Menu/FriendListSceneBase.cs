@@ -56,7 +56,7 @@ namespace XeApp.Game.Menu
 		//protected virtual bool listCounterLimitOver { get; } 0xBAC8D0 Slot: 38
 		protected virtual bool emptyButtonLock { get { return true; } } //0xBAC8D8 Slot: 39
 		protected virtual string cautionMessage { get { return ""; } } //0xBAC8E0 Slot: 40
-		protected NetType lastNetType { get; set; } // 0xA4
+		protected NetType lastNetType { get; private set; } // 0xA4
 		protected PIGBKEIAMPE_FriendManager friendManager { get { return CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager; } } //0xBA1AA8
 
 		// RVA: 0xBAC084 Offset: 0xBAC084 VA: 0xBAC084 Slot: 4

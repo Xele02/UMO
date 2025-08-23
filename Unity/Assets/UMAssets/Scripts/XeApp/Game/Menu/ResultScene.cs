@@ -298,7 +298,8 @@ namespace XeApp.Game.Menu
 			bundleName.Set("ly/026.xab");
 			lytAssetOp = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "UI_ResultDrop");
 			yield return Co.R(lytAssetOp);
-			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) => {
+			fontInfo = GameManager.Instance.GetSystemFont();
+			yield return Co.R(lytAssetOp.InitializeLayoutCoroutine(fontInfo, (GameObject instance) => {
 				//0xB57A58
 				instance.transform.SetParent(transform, false);
 				dropLayoutController = instance.GetComponent<ResultDropLayoutController>();
@@ -309,7 +310,7 @@ namespace XeApp.Game.Menu
 			Layout layout = null;
 			TexUVListManager uvMan = null;
 
-			yield return Co.R(itemSetOp.CreateLayoutCoroutine(prefab.GetComponent<LayoutUGUIRuntime>(), GameManager.Instance.GetSystemFont(), (Layout loadLayout, TexUVListManager loadUvMan) => {
+			yield return Co.R(itemSetOp.CreateLayoutCoroutine(prefab.GetComponent<LayoutUGUIRuntime>(), fontInfo, (Layout loadLayout, TexUVListManager loadUvMan) => {
 				//0xB57B54
 				layout = loadLayout;
 				uvMan = loadUvMan;
@@ -1659,21 +1660,22 @@ namespace XeApp.Game.Menu
 					while(isChangedCueSheet)
 						yield return null;
 					PGIGNJDPCAH.HIHIEBACIHJ(PGIGNJDPCAH.FELLIEJEPIJ.NADCOIBMMJM);
-					switch(Database.Instance.gameSetup.musicInfo.gameEventType)
+					musicInfo = Database.Instance.gameSetup.musicInfo; 
+					switch(musicInfo.gameEventType)
 					{
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection:
-							MenuScene.Instance.Mount(TransitionUniqueId.EVENTMUSICSELECT, new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, true), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+							MenuScene.Instance.Mount(TransitionUniqueId.EVENTMUSICSELECT, new EventMusicSelectSceneArgs(musicInfo.EventUniqueId, musicInfo.IsLine6Mode, true), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 							break;
 						default:
 						{
 							MusicSelectArgs args = new MusicSelectArgs();
-							args.isLine6Mode = Database.Instance.gameSetup.musicInfo.IsLine6Mode;
+							args.isLine6Mode = musicInfo.IsLine6Mode;
 							MenuScene.Instance.Mount(TransitionUniqueId.MUSICSELECT, args, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 						}
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle:
 						{
-							EventMusicSelectSceneArgs args = new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, true);
+							EventMusicSelectSceneArgs args = new EventMusicSelectSceneArgs(musicInfo.EventUniqueId, musicInfo.IsLine6Mode, true);
 							MenuScene.Instance.Mount(TransitionUniqueId.EVENTBATTLE, args, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 						}
 							break;
@@ -1686,13 +1688,13 @@ namespace XeApp.Game.Menu
 							}
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.NKDOEBONGNI_EventMission:
-							MenuScene.Instance.Mount(TransitionUniqueId.EVENTQUEST, new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, true), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+							MenuScene.Instance.Mount(TransitionUniqueId.EVENTQUEST, new EventMusicSelectSceneArgs(musicInfo.EventUniqueId, musicInfo.IsLine6Mode, true), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid:
-							MenuScene.Instance.Mount(Database.Instance.gameSetup.musicInfo.returnTransitionUniqueId, new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, true), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+							MenuScene.Instance.Mount(musicInfo.returnTransitionUniqueId, new EventMusicSelectSceneArgs(musicInfo.EventUniqueId, musicInfo.IsLine6Mode, true), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 							break;
 						case OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva:
-							MenuScene.Instance.Mount(TransitionUniqueId.EVENTGODIVA, new EventMusicSelectSceneArgs(Database.Instance.gameSetup.musicInfo.EventUniqueId, Database.Instance.gameSetup.musicInfo.IsLine6Mode, true), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
+							MenuScene.Instance.Mount(TransitionUniqueId.EVENTGODIVA, new EventMusicSelectSceneArgs(musicInfo.EventUniqueId, musicInfo.IsLine6Mode, true), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 							break;
 					}
 				}

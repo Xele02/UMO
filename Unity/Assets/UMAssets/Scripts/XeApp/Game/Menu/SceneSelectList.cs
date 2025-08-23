@@ -217,10 +217,10 @@ namespace XeApp.Game.Menu
 			{
 				m_removeButton.AddOnClickCallback(OnRemoveScene);
 			}
-			SceneIconScrollContent srcObj = m_scrollList.ScrollObjects[0] as SceneIconScrollContent;
-			while(!srcObj.IsLoaded())
+			scrObject = m_scrollList.ScrollObjects[0] as SceneIconScrollContent;
+			while(!scrObject.IsLoaded())
 				yield return null;
-			srcObj.InitializeCompatibleAnimeParam(ref m_comAnimeParam);
+			scrObject.InitializeCompatibleAnimeParam(ref m_comAnimeParam);
 			m_scrollList.SetContentEscapeMode(true);
 			m_initialized = true;
 		}

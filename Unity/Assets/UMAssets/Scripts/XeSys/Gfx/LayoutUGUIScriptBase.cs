@@ -6,8 +6,7 @@ namespace XeSys.Gfx
 	{
 		public delegate void LoadedCallback();
 
-		// [CompilerGeneratedAttribute] // RVA: 0x653D74 Offset: 0x653D74 VA: 0x653D74
-		private LayoutUGUIScriptBase.LoadedCallback loadedEvent = () => {
+		private LoadedCallback loadedEvent = () => {
 			//0x1F04E1C
 			return;
 		}; // 0xC

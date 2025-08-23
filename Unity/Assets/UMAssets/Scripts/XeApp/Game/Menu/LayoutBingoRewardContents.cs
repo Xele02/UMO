@@ -29,7 +29,7 @@ namespace XeApp.Game.Menu
 		private AbsoluteLayout BingoCountLayout; // 0x44
 		private AbsoluteLayout ClearIconLayout; // 0x48
 
-		//public bool IsLoadedTexture { get; private set; } 0x14C6848 0x14C6850
+		public bool IsLoadedTexture { get { return m_isLoadedTexture; } private set { m_isLoadedTexture = value; } } //0x14C6848 0x14C6850
 
 		// RVA: 0x14C6858 Offset: 0x14C6858 VA: 0x14C6858
 		private void Start()

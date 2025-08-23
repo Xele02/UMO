@@ -36,7 +36,7 @@ namespace XeSys.Gfx
 		// public bool IsUseTimeMap { get; } 0x1EEA408
 		public TimeMap AnimTimeMap { get { return m_AnimTimeMap; } } //0x1EE9694
 		public int FrameNum { get { return m_FrameNum; } private set { m_FrameNum = value; } } //0x1EE960C 0x1EEC03C
-		// public string ID { get; set; } 0x1EE9638 0x1EE9668
+		public string ID { get { return m_Id; } set { m_Id = value; } } //0x1EE9638 0x1EE9668
 
 		// // RVA: 0x1EEBDE4 Offset: 0x1EEBDE4 VA: 0x1EEBDE4 Slot: 5
 		public void OnAfterDeserialize()

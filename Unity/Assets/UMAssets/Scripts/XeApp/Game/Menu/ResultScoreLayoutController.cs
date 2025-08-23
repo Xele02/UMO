@@ -494,7 +494,8 @@ namespace XeApp.Game.Menu
 			yield return Co.R(AssetBundleManager.LoadUnionAssetBundle(bundleName));
 			operation = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "root_game_res_mgrade_layout_root");
 			yield return Co.R(operation);
-			yield return Co.R(operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+			fontInfo = GameManager.Instance.GetSystemFont();
+			yield return Co.R(operation.InitializeLayoutCoroutine(fontInfo, (GameObject instance) =>
 			{
 				//0xB61478
 				instance.transform.SetParent(transform, false);
@@ -503,7 +504,7 @@ namespace XeApp.Game.Menu
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			operation = AssetBundleManager.LoadLayoutAsync(bundleName.ToString(), "root_game_res_mgrade_icon_layout_root");
 			yield return Co.R(operation);
-			yield return Co.R(operation.InitializeLayoutCoroutine(GameManager.Instance.GetSystemFont(), (GameObject instance) =>
+			yield return Co.R(operation.InitializeLayoutCoroutine(fontInfo, (GameObject instance) =>
 			{
 				//0xB61548
 				instance.transform.SetParent(transform, false);

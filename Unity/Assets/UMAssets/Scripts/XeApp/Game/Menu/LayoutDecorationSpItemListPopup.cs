@@ -52,7 +52,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x18BADC0 Offset: 0x18BADC0 VA: 0x18BADC0
-		// public bool IsLoading() { }
+		public bool IsLoading()
+		{
+			return !m_isLoadedTexture;
+		}
 
 		// // RVA: 0x18BADD4 Offset: 0x18BADD4 VA: 0x18BADD4
 		// public bool IsPlayingEnd() { }

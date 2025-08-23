@@ -28,7 +28,10 @@ namespace XeApp.Game.Menu
 		public Action OnClickButton; // 0x38
 
 		// // RVA: 0x17762FC Offset: 0x17762FC VA: 0x17762FC
-		// public bool IsLoading() { }
+		public bool IsLoading()
+		{
+			return KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning || m_isLoadingImage;
+		}
 
 		// RVA: 0x17763A8 Offset: 0x17763A8 VA: 0x17763A8
 		public void SetStatus(GONMPHKGKHI_RewardView.CECMLGBLHHG type, GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo info, Text titleText, bool _isKira = false)

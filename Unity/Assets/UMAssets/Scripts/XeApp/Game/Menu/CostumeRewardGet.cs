@@ -287,7 +287,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x163745C Offset: 0x163745C VA: 0x163745C
-		// public bool IsLoaded() { }
+		public bool IsLoaded()
+		{ 
+			return m_is_loaded_window;
+		}
 
 		// RVA: 0x1637464 Offset: 0x1637464 VA: 0x1637464
 		public void Restart(CloseCostumeCompWindowHandler onClose)

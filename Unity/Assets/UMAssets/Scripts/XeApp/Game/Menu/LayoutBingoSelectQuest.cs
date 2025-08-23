@@ -68,7 +68,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x19D44F8 Offset: 0x19D44F8 VA: 0x19D44F8
-		// public bool ILayoutLoaded() { }
+		public bool ILayoutLoaded()
+		{
+			return m_isItemIconLoad;
+		}
 
 		// RVA: 0x19D4500 Offset: 0x19D4500 VA: 0x19D4500 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

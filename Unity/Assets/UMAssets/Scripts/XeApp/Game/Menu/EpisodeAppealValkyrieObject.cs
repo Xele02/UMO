@@ -120,7 +120,10 @@ namespace XeApp.Game.Menu
 		// public bool IsPlayingAppealAnim() { }
 
 		// // RVA: 0x127E694 Offset: 0x127E694 VA: 0x127E694
-		// public bool IsEntered() { }
+		public bool IsEntered()
+		{
+			return m_IsEntered;
+		}
 
 		// // RVA: 0x127E69C Offset: 0x127E69C VA: 0x127E69C
 		// public bool IsLoaded() { }

@@ -31,7 +31,7 @@ namespace XeApp.Game.Menu
 		private const int MaxCellNum = 3;
 		private bool m_isInitialize; // 0x34
 
-		// public bool IsInitialize { get; } 0xA4A734
+		public bool IsInitialize { get { return m_isInitialize; } } //0xA4A734
 
 		// RVA: 0xA4A73C Offset: 0xA4A73C VA: 0xA4A73C Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

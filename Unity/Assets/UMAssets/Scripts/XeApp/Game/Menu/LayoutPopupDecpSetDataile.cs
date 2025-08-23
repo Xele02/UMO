@@ -23,7 +23,10 @@ namespace XeApp.Game.Menu
 		private bool m_scrollInitialized; // 0x2C
 
 		// // RVA: 0x171CF18 Offset: 0x171CF18 VA: 0x171CF18
-		// public bool IsLoading() { }
+		public bool IsLoading()
+		{
+			return !IsLoaded() || !m_scrollInitialized;
+		}
 
 		// // RVA: 0x171CF50 Offset: 0x171CF50 VA: 0x171CF50
 		// public void SetList(int decoSetItemId) { }

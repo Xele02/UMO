@@ -58,7 +58,17 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1299BEC Offset: 0x1299BEC VA: 0x1299BEC
-		// private void IconUpdater() { }
+		private void IconUpdater()
+		{
+			if(m_divaDecos != null)
+			{
+				int t = animParam.UpdateFrame(Time.deltaTime);
+				for(int i = 0; i < m_divaDecos.Count; i++)
+				{
+					m_divaDecos[i].FadeFrienFanAnimationSetFrame(t);
+				}
+			}
+		}
 
 		// RVA: 0x1299CF4 Offset: 0x1299CF4 VA: 0x1299CF4 Slot: 16
 		protected override void OnPreSetCanvas()
@@ -73,14 +83,7 @@ namespace XeApp.Game.Menu
 			m_updater = () =>
 			{
 				//0x129E4E4
-				if(m_divaDecos != null)
-				{
-					int t = animParam.UpdateFrame(Time.deltaTime);
-					for(int i = 0; i < m_divaDecos.Count; i++)
-					{
-						m_divaDecos[i].FadeFrienFanAnimationSetFrame(t);
-					}
-				}
+				IconUpdater();
 			};
 		}
 
