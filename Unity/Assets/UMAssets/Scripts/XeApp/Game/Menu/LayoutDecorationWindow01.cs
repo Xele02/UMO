@@ -132,9 +132,7 @@ namespace XeApp.Game.Menu
 		private bool m_isEnableFamousPhrase4; // 0xB4
 		private int m_tabNum; // 0xB8
 		private bool m_isReShow; // 0xBC
-		//[CompilerGeneratedAttribute] // RVA: 0x66C388 Offset: 0x66C388 VA: 0x66C388
 		public Action OnStartDownLoad; // 0xC0
-		//[CompilerGeneratedAttribute] // RVA: 0x66C398 Offset: 0x66C398 VA: 0x66C398
 		public Action OnEndDownLoad; // 0xC4
 		private Coroutine m_downLoadPolingCoroutine; // 0xC8
 		private StringBuilder m_strBuilder = new StringBuilder(); // 0xCC
@@ -882,9 +880,5 @@ namespace XeApp.Game.Menu
 				layout.DisableSelectItem();
 			}
 		}
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x6D7164 Offset: 0x6D7164 VA: 0x6D7164
-		//// RVA: 0x18C6B1C Offset: 0x18C6B1C VA: 0x18C6B1C
-		//private void <Co_UpdateList>b__115_2() { }
 	}
 }

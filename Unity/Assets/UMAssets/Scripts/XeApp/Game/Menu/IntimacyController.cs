@@ -719,14 +719,6 @@ namespace XeApp.Game.Menu
 			}
 		}
 
-		//[CompilerGeneratedAttribute] // RVA: 0x6E6894 Offset: 0x6E6894 VA: 0x6E6894
-		//// RVA: 0x14B1660 Offset: 0x14B1660 VA: 0x14B1660
-		//public bool get_m_isDisableIntimacyDeco() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6E68A4 Offset: 0x6E68A4 VA: 0x6E68A4
-		//// RVA: 0x14B1668 Offset: 0x14B1668 VA: 0x14B1668
-		//public void set_m_isDisableIntimacyDeco(bool value) { }
-
 		//// RVA: 0x14B1670 Offset: 0x14B1670 VA: 0x14B1670
 		public void HideDeco()
 		{

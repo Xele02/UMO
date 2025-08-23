@@ -854,9 +854,5 @@ namespace XeApp.Game.Menu
 		{
 			return;
 		}
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x6D426C Offset: 0x6D426C VA: 0x6D426C
-		//// RVA: 0x158C268 Offset: 0x158C268 VA: 0x158C268
-		//private void <RequestBuyOne>b__44_0() { }
 	}
 }

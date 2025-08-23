@@ -943,14 +943,6 @@ namespace XeApp.Game.RhythmGame
 		// [CompilerGeneratedAttribute] // RVA: 0x745724 Offset: 0x745724 VA: 0x745724
 		// // RVA: 0xBF93D0 Offset: 0xBF93D0 VA: 0xBF93D0
 		// private bool <Co_LoadARSpecialDirectionResource>b__88_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x745734 Offset: 0x745734 VA: 0x745734
-		// // RVA: 0xBF93FC Offset: 0xBF93FC VA: 0xBF93FC
-		// private void <LoadingUIPrefab>b__102_0(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x745744 Offset: 0x745744 VA: 0x745744
-		// // RVA: 0xBF9404 Offset: 0xBF9404 VA: 0xBF9404
-		// private void <LoadingUIPrefab>b__102_1(GameObject instance) { }
 	}
 }
 

@@ -139,9 +139,5 @@ namespace XeApp.Game.Menu
 			Loaded();
 			return true;
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6EECA4 Offset: 0x6EECA4 VA: 0x6EECA4
-		// // RVA: 0x1667D0C Offset: 0x1667D0C VA: 0x1667D0C
-		// private void <SetClass>b__18_0(IiconTexture icon) { }
 	}
 }

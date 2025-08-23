@@ -59,7 +59,6 @@ namespace XeApp.Game.Menu
 		private bool is_load_episode_image; // 0xBC
 		private bool is_load_episode_bg_image; // 0xBD
 		private bool is_load_episode_item_image; // 0xBE
-		//[CompilerGeneratedAttribute] // RVA: 0x66CD5C Offset: 0x66CD5C VA: 0x66CD5C
 		public Action<EpisodeSceneListArgs> PushSceneListHandler; // 0xC0
 
 		// RVA: 0xEF143C Offset: 0xEF143C VA: 0xEF143C Slot: 5

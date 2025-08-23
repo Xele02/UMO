@@ -1849,16 +1849,4 @@ public class IOGKADECKOP
 		}
 		
 	}
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6B4438 Offset: 0x6B4438 VA: 0x6B4438
-	// // RVA: 0xA085A0 Offset: 0xA085A0 VA: 0xA085A0
-	// private void <SetLayoutButtonCallback>b__31_0() { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6B4468 Offset: 0x6B4468 VA: 0x6B4468
-	// // RVA: 0xA088EC Offset: 0xA088EC VA: 0xA088EC
-	// private bool <Coroutine_DownloadTitleBannerTexture>b__38_0(FileResultObject NLCGHBBNOJA) { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6B4478 Offset: 0x6B4478 VA: 0x6B4478
-	// // RVA: 0xA089D0 Offset: 0xA089D0 VA: 0xA089D0
-	// private void <OnPushBackButton>b__44_0() { }
 }

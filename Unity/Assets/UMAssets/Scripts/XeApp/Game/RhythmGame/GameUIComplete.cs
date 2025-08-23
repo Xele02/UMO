@@ -19,7 +19,6 @@ namespace XeApp.Game.RhythmGame
 		private LayoutSymbolData m_referenceSymbol; // 0x30
 		private Action m_cb_playvoice_clear_fullcombo; // 0x34
 		private Action m_cb_playvoice_clear_perfectfullcombo; // 0x38
-		//[CompilerGeneratedAttribute] // RVA: 0x68EB48 Offset: 0x68EB48 VA: 0x68EB48
 		private Action leave_completed_event = () =>
 		{
 			//0xF75264
@@ -131,14 +130,6 @@ namespace XeApp.Game.RhythmGame
 			}
 			SoundManager.Instance.sePlayerGame.Play(cueId);
 		}
-
-		//[CompilerGeneratedAttribute] // RVA: 0x7469EC Offset: 0x7469EC VA: 0x7469EC
-		//							 // RVA: 0xF74D20 Offset: 0xF74D20 VA: 0xF74D20
-		//private void add_leave_completed_event(Action value) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x7469FC Offset: 0x7469FC VA: 0x7469FC
-		//							 // RVA: 0xF74E2C Offset: 0xF74E2C VA: 0xF74E2C
-		//private void remove_leave_completed_event(Action value) { }
 
 		//// RVA: 0xF74F38 Offset: 0xF74F38 VA: 0xF74F38
 		public void CleanupLeaveCompletedCallback()

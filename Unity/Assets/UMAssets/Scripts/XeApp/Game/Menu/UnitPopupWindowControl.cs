@@ -280,9 +280,5 @@ namespace XeApp.Game.Menu
 		{
 			PopupWindowManager.Show(m_subPlateLockSetting, null, null, null, null, true, true, false, null, endCallBack);
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x735A7C Offset: 0x735A7C VA: 0x735A7C
-		// // RVA: 0x12496F8 Offset: 0x12496F8 VA: 0x12496F8
-		// private void <ShowUnitAutoSettingWindow>b__13_1(IPopupContent content, PopupTabButton.ButtonLabel label) { }
 	}
 }

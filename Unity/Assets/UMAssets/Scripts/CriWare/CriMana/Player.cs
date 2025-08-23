@@ -93,7 +93,6 @@ namespace CriWare
 			private bool isStoppingForSeek; // 0x68
 			public CuePointCallback cuePointCallback; // 0x6C
 			public StatusChangeCallback statusChangeCallback; // 0x70
-			// [CompilerGeneratedAttribute] // RVA: 0x635294 Offset: 0x635294 VA: 0x635294
 			private SubtitleChangeCallback OnSubtitleChanged; // 0x74
 
 			// internal Player.Status nativeStatus { get; } 0x2957404
@@ -140,14 +139,6 @@ namespace CriWare
 			public Player.TimerType timerType { get { return _timerType; } } //0x2957A5C
 			public CriManaMoviePlayerHolder playerHolder { get; set; } // 0x8C
 			public bool isAlive { get { return playerId != -1; } } //0x295E640
-
-			// [CompilerGeneratedAttribute] // RVA: 0x63670C Offset: 0x63670C VA: 0x63670C
-			// // RVA: 0x2957584 Offset: 0x2957584 VA: 0x2957584
-			// public void add_OnSubtitleChanged(Player.SubtitleChangeCallback value) { }
-
-			// [CompilerGeneratedAttribute] // RVA: 0x63671C Offset: 0x63671C VA: 0x63671C
-			// // RVA: 0x2957690 Offset: 0x2957690 VA: 0x2957690
-			// public void remove_OnSubtitleChanged(Player.SubtitleChangeCallback value) { }
 
 			// // RVA: 0x2957A74 Offset: 0x2957A74 VA: 0x2957A74
 			public Player()

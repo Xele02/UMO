@@ -8,7 +8,6 @@ namespace XeApp.Game.Common
 	{
 		public delegate void OnStayCallback();
 
-		// [CompilerGeneratedAttribute] // RVA: 0x68CEA8 Offset: 0x68CEA8 VA: 0x68CEA8
 		private UGUIStayButton.OnStayCallback m_stayEvent = () => {
 			//0x1CDC1F4
 			return;
@@ -20,14 +19,6 @@ namespace XeApp.Game.Common
 		private bool m_isStayDisable; // 0x49
 
 		// public bool IsStayDisable { get; set; } 0x1CDB870 0x1CDB878
-
-		// [CompilerGeneratedAttribute] // RVA: 0x740664 Offset: 0x740664 VA: 0x740664
-		// // RVA: 0x1CDB658 Offset: 0x1CDB658 VA: 0x1CDB658
-		// private void add_m_stayEvent(UGUIStayButton.OnStayCallback value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x740674 Offset: 0x740674 VA: 0x740674
-		// // RVA: 0x1CDB764 Offset: 0x1CDB764 VA: 0x1CDB764
-		// private void remove_m_stayEvent(UGUIStayButton.OnStayCallback value) { }
 
 		// RVA: 0x1CDB880 Offset: 0x1CDB880 VA: 0x1CDB880 Slot: 11
 		protected override void Start()

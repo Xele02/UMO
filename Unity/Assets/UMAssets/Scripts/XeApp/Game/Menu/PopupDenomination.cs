@@ -129,7 +129,6 @@ namespace XeApp.Game.Menu
 		private const int ScrollItemCount = 3;
 		private LayoutPopupDenomination m_MainLayout; // 0x10
 		private PopupWindowControl m_control; // 0x14
-		//[CompilerGeneratedAttribute] // RVA: 0x66C808 Offset: 0x66C808 VA: 0x66C808
 		public Action SupportSiteManagerErrorHandler; // 0x18
 		private bool m_IsBuying; // 0x1C
 		private List<LGDNAJACFHI> m_paidVcProductDataList = new List<LGDNAJACFHI>(); // 0x20

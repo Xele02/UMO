@@ -2964,9 +2964,5 @@ namespace XeApp.Game.Menu
 		// [CompilerGeneratedAttribute] // RVA: 0x6F4C14 Offset: 0x6F4C14 VA: 0x6F4C14
 		// // RVA: 0xF4A1A8 Offset: 0xF4A1A8 VA: 0xF4A1A8
 		// private void <OpenCompletionWindow>b__221_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6F4C24 Offset: 0x6F4C24 VA: 0x6F4C24
-		// // RVA: 0xF4A1AC Offset: 0xF4A1AC VA: 0xF4A1AC
-		// private void <Co_LoadAssetBundle_LoginBonusPopup>b__232_0(GameObject instance) { }
 	}
 }

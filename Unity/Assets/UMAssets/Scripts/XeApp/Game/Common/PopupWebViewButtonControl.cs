@@ -25,9 +25,7 @@ namespace XeApp.Game.Common
 		private CheckboxButton m_rejectCheckbox; // 0x20
 		[SerializeField]
 		private Text m_rejectText; // 0x24
-		//[CompilerGeneratedAttribute] // RVA: 0x68BE6C Offset: 0x68BE6C VA: 0x68BE6C
 		public UnityAction PushReturnButtonHandler; // 0x28
-		//[CompilerGeneratedAttribute] // RVA: 0x68BE7C Offset: 0x68BE7C VA: 0x68BE7C
 		public UnityAction PushCloseButtonHandler; // 0x2C
 		private AbsoluteLayout m_rootLayout; // 0x30
 		private bool m_showReturnButton; // 0x34

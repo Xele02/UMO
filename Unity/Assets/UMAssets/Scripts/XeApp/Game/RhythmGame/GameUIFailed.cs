@@ -65,9 +65,7 @@ namespace XeApp.Game.RhythmGame
 		private GameUIFailed.ANIM_TABLE m_anim = ANIM_TABLE.NONE; // 0x18
 		private GameUIFailed.SePlayInfo failedSeInfo; // 0x1C
 		private GameUIFailed.SePlayInfo[] retrySeInfo; // 0x34
-		//[CompilerGeneratedAttribute] // RVA: 0x68EB58 Offset: 0x68EB58 VA: 0x68EB58
 		private Action failed_completed_event; // 0x38
-		//[CompilerGeneratedAttribute] // RVA: 0x68EB68 Offset: 0x68EB68 VA: 0x68EB68
 		private Action retry_completed_event; // 0x3C
 
 		//// RVA: 0xF753CC Offset: 0xF753CC VA: 0xF753CC
@@ -154,22 +152,6 @@ namespace XeApp.Game.RhythmGame
 
 		//// RVA: 0xF75CAC Offset: 0xF75CAC VA: 0xF75CAC
 		//public bool IsPlayingAnim() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x746A6C Offset: 0x746A6C VA: 0x746A6C
-		//							 // RVA: 0xF75CD8 Offset: 0xF75CD8 VA: 0xF75CD8
-		//private void add_failed_completed_event(Action value) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x746A7C Offset: 0x746A7C VA: 0x746A7C
-		//							 // RVA: 0xF75DE4 Offset: 0xF75DE4 VA: 0xF75DE4
-		//private void remove_failed_completed_event(Action value) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x746A8C Offset: 0x746A8C VA: 0x746A8C
-		//							 // RVA: 0xF75EF0 Offset: 0xF75EF0 VA: 0xF75EF0
-		//private void add_retry_completed_event(Action value) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x746A9C Offset: 0x746A9C VA: 0x746A9C
-		//							 // RVA: 0xF75FFC Offset: 0xF75FFC VA: 0xF75FFC
-		//private void remove_retry_completed_event(Action value) { }
 
 		//// RVA: 0xF76108 Offset: 0xF76108 VA: 0xF76108
 		public void CleanupFailedCompletedCallback()

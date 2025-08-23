@@ -165,9 +165,5 @@ namespace XeApp.Game.Common
 			m_isLayoutLoaded = true;
 			return true;
 		}
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x73DB7C Offset: 0x73DB7C VA: 0x73DB7C
-		//// RVA: 0xAFA21C Offset: 0xAFA21C VA: 0xAFA21C
-		//private void <InitializeLayout>b__2_9(bool isOk) { }
 	}
 }

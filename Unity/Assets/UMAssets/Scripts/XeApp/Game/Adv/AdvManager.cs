@@ -132,7 +132,6 @@ namespace XeApp.Game.Adv
 		private TextPopupSetting m_skipConfirmPopupSetting; // 0x90
 		private Coroutine m_syncVoiceCoroutine; // 0x94
 		private PrologueControl m_prologueControl; // 0x98
-		//[CompilerGeneratedAttribute] // RVA: 0x68DA8C Offset: 0x68DA8C VA: 0x68DA8C
 		public UnityAction NetErrorHandler; // 0x9C
 		private AdvManager.SkipTarget m_skipTarget; // 0xA0
 		public const int AdvTouchSeNo = 17;
@@ -1743,13 +1742,5 @@ namespace XeApp.Game.Adv
 			while(isWait)
 				yield return null;
 		}
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x7430FC Offset: 0x7430FC VA: 0x7430FC
-		//// RVA: 0xBC8FC4 Offset: 0xBC8FC4 VA: 0xBC8FC4
-		//private void <Co_TutorialFinish>b__109_5() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x74310C Offset: 0x74310C VA: 0x74310C
-		//// RVA: 0xBC8FF0 Offset: 0xBC8FF0 VA: 0xBC8FF0
-		//private void <Co_TutorialFinish>b__109_0() { }
 	}
 }

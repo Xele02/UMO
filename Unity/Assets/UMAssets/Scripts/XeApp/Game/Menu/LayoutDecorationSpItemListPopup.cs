@@ -74,9 +74,5 @@ namespace XeApp.Game.Menu
 		{
 			MenuScene.Instance.ShowItemDetail(m_itemId, m_itemId, null);
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6D6C8C Offset: 0x6D6C8C VA: 0x6D6C8C
-		// // RVA: 0x18BAF18 Offset: 0x18BAF18 VA: 0x18BAF18
-		// private void <LoadItem>b__13_0(IiconTexture texture) { }
 	}
 }

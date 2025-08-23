@@ -8,7 +8,6 @@ namespace XeApp.Game.Menu
 {
 	public class FlexibleItemScrollView
 	{
-		// [CompilerGeneratedAttribute] // RVA: 0x67AB3C Offset: 0x67AB3C VA: 0x67AB3C
 		public Action<IFlexibleListItem> UpdateItemListener; // 0x8
 		private const float EscapePositionX = 1200;
 		private List<IFlexibleListItem> m_listItem; // 0xC
@@ -22,14 +21,6 @@ namespace XeApp.Game.Menu
 		public Dictionary<int, List<FlexibleListItemLayout>> PartsChache { get { return m_partsChache; } } //0xB9DFA4
 		public int DispBeginIndex { get { return m_dispBeginIndex; } } //0xB9DFAC
 		public int DispEndIndex { get { return m_dispEndIndex; } } //0xB9DFB4
-
-		// [CompilerGeneratedAttribute] // RVA: 0x70D644 Offset: 0x70D644 VA: 0x70D644
-		// // RVA: 0xB9DD8C Offset: 0xB9DD8C VA: 0xB9DD8C
-		// public void add_UpdateItemListener(Action<IFlexibleListItem> value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x70D654 Offset: 0x70D654 VA: 0x70D654
-		// // RVA: 0xB9DE98 Offset: 0xB9DE98 VA: 0xB9DE98
-		// public void remove_UpdateItemListener(Action<IFlexibleListItem> value) { }
 
 		// // RVA: 0xB9DFBC Offset: 0xB9DFBC VA: 0xB9DFBC
 		public void Initialize(ScrollRect scroll)

@@ -46,7 +46,6 @@ namespace XeApp.Game.Menu
 		private AbsoluteLayout m_arrowLayer; // 0x40
 		private AbsoluteLayout m_buttonLayer; // 0x44
 		private AbsoluteLayout m_unReleaseFont; // 0x48
-		//[CompilerGeneratedAttribute] // RVA: 0x66D0AC Offset: 0x66D0AC VA: 0x66D0AC
 		public UnityAction<ButtonLabel, int, ButtonFunc> PushButtonListener; // 0x4C
 		private static Matrix23 identity; // 0x0
 		private ButtonFunc m_func; // 0x50

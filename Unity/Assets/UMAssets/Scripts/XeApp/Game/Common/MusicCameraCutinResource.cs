@@ -24,14 +24,6 @@ namespace XeApp.Game.Common
 			clip = null;
 		}
 
-		// [CompilerGeneratedAttribute] // RVA: 0x73A10C Offset: 0x73A10C VA: 0x73A10C
-		// // RVA: 0x111A2CC Offset: 0x111A2CC VA: 0x111A2CC
-		// public bool get_isLoaded() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73A11C Offset: 0x73A11C VA: 0x73A11C
-		// // RVA: 0x111A2D4 Offset: 0x111A2D4 VA: 0x111A2D4
-		// private void set_isLoaded(bool value) { }
-
 		// // RVA: 0x111A2DC Offset: 0x111A2DC VA: 0x111A2DC
 		public void LoadResouces(int wavId, int assetId, int stageDivaNum)
 		{

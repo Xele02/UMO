@@ -322,11 +322,13 @@ namespace XeApp.Game.RhythmGame
 			isBgmSoundLoaded = false;
 			gamePlayer.bgmPlayer.RequestChangeCueSheet(wavId, () =>
 			{
+				//0xDCA4BC
 				isBgmSoundLoaded = true;
 			});
 			isGameSESoundLoaded = false;
 			SoundManager.Instance.RequestEntryRhythmGameCueSheet(() =>
 			{
+				//0xDCA4C8
 				isGameSESoundLoaded = true;
 			}, Database.Instance.gameSetup.ForceNoteSe());
 			isDivaSoundLoaded = false;
@@ -334,6 +336,7 @@ namespace XeApp.Game.RhythmGame
 			{
 				SoundManager.Instance.voDiva.RequestChangeCueSheet(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId, () =>
 				{
+					//0xDCA4E0
 					isDivaSoundLoaded = true;
 				});
 			}
@@ -341,6 +344,7 @@ namespace XeApp.Game.RhythmGame
 			{
 				SoundManager.Instance.voDiva.RequestChangeCueSheetForReplacement(forceDivaVoice, () =>
 				{
+					//0xDCA4D4
 					isDivaSoundLoaded = true;
 				});
 			}
@@ -350,6 +354,7 @@ namespace XeApp.Game.RhythmGame
 				isDivaCosSoundLoaded = false;
 				SoundManager.Instance.voDivaCos.RequestChangeCueSheetSole(Database.Instance.gameSetup.teamInfo.danceDivaList[0].prismDivaId, () =>
 				{
+					//0xDCA4EC
 					isDivaCosSoundLoaded = true;
 				});
 			}
@@ -358,6 +363,7 @@ namespace XeApp.Game.RhythmGame
 			{
 				SoundManager.Instance.voPilot.RequestChangeCueSheet(pilotId, () =>
 				{
+					//0xDCA504
 					isPilotSoundLoaded = true;
 				});
 			}
@@ -365,6 +371,7 @@ namespace XeApp.Game.RhythmGame
 			{
 				SoundManager.Instance.voPilot.RequestChangeCueSheetForReplacement(forcePilotVoice, () =>
 				{
+					//0xDCA4F8
 					isPilotSoundLoaded = true;
 				});
 			}
@@ -537,33 +544,5 @@ namespace XeApp.Game.RhythmGame
 			if(updater != null)
 				updater();
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7440FC Offset: 0x7440FC VA: 0x7440FC
-		// // RVA: 0xDCA4BC Offset: 0xDCA4BC VA: 0xDCA4BC
-		// private void <WaitDownloadingData>b__44_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x74410C Offset: 0x74410C VA: 0x74410C
-		// // RVA: 0xDCA4C8 Offset: 0xDCA4C8 VA: 0xDCA4C8
-		// private void <WaitDownloadingData>b__44_1() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x74411C Offset: 0x74411C VA: 0x74411C
-		// // RVA: 0xDCA4D4 Offset: 0xDCA4D4 VA: 0xDCA4D4
-		// private void <WaitDownloadingData>b__44_2() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x74412C Offset: 0x74412C VA: 0x74412C
-		// // RVA: 0xDCA4E0 Offset: 0xDCA4E0 VA: 0xDCA4E0
-		// private void <WaitDownloadingData>b__44_3() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x74413C Offset: 0x74413C VA: 0x74413C
-		// // RVA: 0xDCA4EC Offset: 0xDCA4EC VA: 0xDCA4EC
-		// private void <WaitDownloadingData>b__44_4() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x74414C Offset: 0x74414C VA: 0x74414C
-		// // RVA: 0xDCA4F8 Offset: 0xDCA4F8 VA: 0xDCA4F8
-		// private void <WaitDownloadingData>b__44_5() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x74415C Offset: 0x74415C VA: 0x74415C
-		// // RVA: 0xDCA504 Offset: 0xDCA504 VA: 0xDCA504
-		// private void <WaitDownloadingData>b__44_6() { }
 	}
 }

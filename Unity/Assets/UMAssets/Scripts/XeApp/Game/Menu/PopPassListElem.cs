@@ -9,7 +9,6 @@ namespace XeApp.Game.Menu
 		public ActionButton m_btn_bonus; // 0x20
 		public RawImageEx m_image_frm_01; // 0x24
 		public RawImageEx m_image_frm_03; // 0x28
-		//[CompilerGeneratedAttribute] // RVA: 0x67737C Offset: 0x67737C VA: 0x67737C
 		public UnityAction<bool> m_cb_bonus; // 0x2C
 		private AbsoluteLayout m_anim_first; // 0x30
 		private AbsoluteLayout m_anim_privacy_contract_btn; // 0x34

@@ -89,7 +89,6 @@ namespace XeApp.Game.Menu
 		private StringBuilder m_modifyTagActiveSkillComment = new StringBuilder(64); // 0x68
 		private StringBuilder m_modifyTagLiveSkillComment = new StringBuilder(64); // 0x6C
 		private CCAAJNJGNDO m_eventStoryData = new CCAAJNJGNDO(); // 0x70
-		//[CompilerGeneratedAttribute] // RVA: 0x67D87C Offset: 0x67D87C VA: 0x67D87C
 		public UnityAction PushStoryButtonListener; // 0x74
 		private int m_pageNum; // 0x78
 		private int m_pageMax; // 0x7C

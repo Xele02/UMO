@@ -20,14 +20,6 @@ namespace XeSys.Gfx
 			return true;
 		}
 
-		// [CompilerGeneratedAttribute] // RVA: 0x692868 Offset: 0x692868 VA: 0x692868
-		// // RVA: 0x1F046F4 Offset: 0x1F046F4 VA: 0x1F046F4
-		// private void add_loadedEvent(LayoutUGUIScriptBase.LoadedCallback value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x692878 Offset: 0x692878 VA: 0x692878
-		// // RVA: 0x1F04800 Offset: 0x1F04800 VA: 0x1F04800
-		// private void remove_loadedEvent(LayoutUGUIScriptBase.LoadedCallback value) { }
-
 		// // RVA: 0x1F045C4 Offset: 0x1F045C4 VA: 0x1F045C4
 		public void ClearLoadedCallback()
 		{

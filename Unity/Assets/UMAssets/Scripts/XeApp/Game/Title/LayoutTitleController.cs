@@ -296,9 +296,5 @@ namespace XeApp.Game.Title
 				return true;
 			});
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6B3610 Offset: 0x6B3610 VA: 0x6B3610
-		// // RVA: 0xE37768 Offset: 0xE37768 VA: 0xE37768
-		// private void <LoadLayoutTitleLogo>b__63_0(GameObject instance) { }
 	}
 }

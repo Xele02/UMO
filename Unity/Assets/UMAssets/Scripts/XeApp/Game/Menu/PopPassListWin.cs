@@ -27,23 +27,14 @@ namespace XeApp.Game.Menu
 		private Text m_text_title; // 0x2C
 		[SerializeField]
 		private Text m_text_money; // 0x30
-		//[CompilerGeneratedAttribute] // RVA: 0x67740C Offset: 0x67740C VA: 0x67740C
 		public UnityAction m_cb_law_1; // 0x34
-		//[CompilerGeneratedAttribute] // RVA: 0x67741C Offset: 0x67741C VA: 0x67741C
 		public UnityAction m_cb_law_2; // 0x38
-		//[CompilerGeneratedAttribute] // RVA: 0x67742C Offset: 0x67742C VA: 0x67742C
 		public UnityAction m_cb_cancel; // 0x3C
-		//[CompilerGeneratedAttribute] // RVA: 0x67743C Offset: 0x67743C VA: 0x67743C
 		public UnityAction m_cb_buy; // 0x40
-		//[CompilerGeneratedAttribute] // RVA: 0x67744C Offset: 0x67744C VA: 0x67744C
 		public UnityAction m_cb_agre; // 0x44
-		//[CompilerGeneratedAttribute] // RVA: 0x67745C Offset: 0x67745C VA: 0x67745C
 		public UnityAction<bool> m_cb_bonus; // 0x48
-		//[CompilerGeneratedAttribute] // RVA: 0x67746C Offset: 0x67746C VA: 0x67746C
 		public UnityAction m_cb_detail; // 0x4C
-		//[CompilerGeneratedAttribute] // RVA: 0x67747C Offset: 0x67747C VA: 0x67747C
 		public UnityAction m_cb_contract; // 0x50
-		//[CompilerGeneratedAttribute] // RVA: 0x67748C Offset: 0x67748C VA: 0x67748C
 		public UnityAction m_cb_privacy; // 0x54
 		private PopPassListElem m_layout_content; // 0x58
 		private PopPassListAbout m_layout_about; // 0x5C

@@ -12,7 +12,7 @@ public class FCMTokenReceiver : MonoBehaviour
 	{
 		TodoLogger.LogError(TodoLogger.FCMTokenReceiver, "FCMTokenReceiver.Start");
 		{
-			//Method$FCMTokenReceiver.<Start>b__4_0()
+			//0xFC7A94
 			// Hack cause Firebase not coded
 			isDpendencyChecked = true;
 			InitializeFirebase();
@@ -44,8 +44,4 @@ public class FCMTokenReceiver : MonoBehaviour
 
 	//// RVA: 0xFC79FC Offset: 0xFC79FC VA: 0xFC79FC
 	//public void OnMessageReceived(object sender, MessageReceivedEventArgs e) { }
-
-	//[CompilerGeneratedAttribute] // RVA: 0x68FEEC Offset: 0x68FEEC VA: 0x68FEEC
-	//// RVA: 0xFC7A94 Offset: 0xFC7A94 VA: 0xFC7A94
-	//private void <Start>b__4_0(Task<DependencyStatus> checkTask) { }
 }

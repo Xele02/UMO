@@ -13,9 +13,7 @@ namespace XeApp.Game.Menu
 		private SwapScrollList m_swapScrollList; // 0x14
 		private AbsoluteLayout m_rootLayout; // 0x18
 		private AbsoluteLayout m_titleLayout; // 0x1C
-		//[CompilerGeneratedAttribute] // RVA: 0x66D04C Offset: 0x66D04C VA: 0x66D04C
 		public UnityAction<int, SwapScrollListContent> UpdateListListner; // 0x20
-		//[CompilerGeneratedAttribute] // RVA: 0x66D05C Offset: 0x66D05C VA: 0x66D05C
 		public UnityAction<EventStoryListContent.ButtonLabel, int, EventStoryListContent.ButtonFunc> PushButtonListner; // 0x24
 
 		// RVA: 0xB8FF68 Offset: 0xB8FF68 VA: 0xB8FF68 Slot: 5

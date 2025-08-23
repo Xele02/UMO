@@ -59,17 +59,11 @@ namespace XeApp.Game.Menu
 		private AbsoluteLayout m_CardSwitchAnim; // 0x8C
 		private Text m_touchText; // 0x90
 		private bool m_isPlaying; // 0x94
-		//[CompilerGeneratedAttribute] // RVA: 0x672F94 Offset: 0x672F94 VA: 0x672F94
 		public Action PushPlayButtonListener; // 0x98
-		//[CompilerGeneratedAttribute] // RVA: 0x672FA4 Offset: 0x672FA4 VA: 0x672FA4
 		public Action PushEventInfoButtonListner; // 0x9C
-		//[CompilerGeneratedAttribute] // RVA: 0x672FB4 Offset: 0x672FB4 VA: 0x672FB4
 		public Action PushMusicChangeButtonListner; // 0xA0
-		//[CompilerGeneratedAttribute] // RVA: 0x672FC4 Offset: 0x672FC4 VA: 0x672FC4
 		public Action<int> SelectedMissionListener; // 0xA4
-		//[CompilerGeneratedAttribute] // RVA: 0x672FD4 Offset: 0x672FD4 VA: 0x672FD4
 		public Action PushReturnMissionListner; // 0xA8
-		//[CompilerGeneratedAttribute] // RVA: 0x672FE4 Offset: 0x672FE4 VA: 0x672FE4
 		public Action PushBoxGachaListner; // 0xAC
 
 		// RVA: 0x18727EC Offset: 0x18727EC VA: 0x18727EC Slot: 5

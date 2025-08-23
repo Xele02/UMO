@@ -576,9 +576,5 @@ namespace XeApp.Game.Menu
 			if(m_episodeLayout != null)
 				m_episodeLayout.StartAnimGoStop("02");
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6E7E34 Offset: 0x6E7E34 VA: 0x6E7E34
-		// // RVA: 0x137E320 Offset: 0x137E320 VA: 0x137E320
-		// private void <UpdateScore>b__54_0(IiconTexture texture) { }
 	}
 }

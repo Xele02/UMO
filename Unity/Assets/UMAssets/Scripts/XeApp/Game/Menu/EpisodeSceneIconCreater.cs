@@ -24,9 +24,7 @@ namespace XeApp.Game.Menu
 		private RawImageEx m_right_btn_image; // 0x28
 		[SerializeField]
 		private Text m_text_empty; // 0x2C
-		//[CompilerGeneratedAttribute] // RVA: 0x66CEFC Offset: 0x66CEFC VA: 0x66CEFC
 		public Action<int, EpisodeIcon> ScrollUpdateHander; // 0x34
-		//[CompilerGeneratedAttribute] // RVA: 0x66CF0C Offset: 0x66CF0C VA: 0x66CF0C
 		public Action<int> PushDetailButtonHandler; // 0x38
 		private const int DispItemCount = 4;
 		private int m_itemCount; // 0x3C

@@ -41,7 +41,6 @@ namespace XeApp.Game.Menu
 		private Vector2 m_position; // 0x4C
 		private Coroutine m_positionMoveCoroutine; // 0x54
 		private RectTransform m_rectTransform; // 0x58
-		//[CompilerGeneratedAttribute] // RVA: 0x66BC08 Offset: 0x66BC08 VA: 0x66BC08
 		public Action PushButtonListener; // 0x5C
 
 		public bool IsPlayingReceiveAnime { get; private set; } // 0x60

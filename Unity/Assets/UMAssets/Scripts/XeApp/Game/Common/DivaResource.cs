@@ -781,30 +781,6 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BF92DC Offset: 0x1BF92DC VA: 0x1BF92DC
 		// private static void AssertCostumeColorTexture(Texture tex, string texName) { }
 
-		// [CompilerGeneratedAttribute] // RVA: 0x736808 Offset: 0x736808 VA: 0x736808
-		// // RVA: 0x1BF9364 Offset: 0x1BF9364 VA: 0x1BF9364
-		// public bool get_isLoadedMusicAnimationResource() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x736818 Offset: 0x736818 VA: 0x736818
-		// // RVA: 0x1BF858C Offset: 0x1BF858C VA: 0x1BF858C
-		// private void set_isLoadedMusicAnimationResource(bool value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x736828 Offset: 0x736828 VA: 0x736828
-		// // RVA: 0x1BF936C Offset: 0x1BF936C VA: 0x1BF936C
-		// public bool get_isLoadedARMusicAnimationResource() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x736838 Offset: 0x736838 VA: 0x736838
-		// // RVA: 0x1BF9374 Offset: 0x1BF9374 VA: 0x1BF9374
-		// private void set_isLoadedARMusicAnimationResource(bool value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x736848 Offset: 0x736848 VA: 0x736848
-		// // RVA: 0x1BF265C Offset: 0x1BF265C VA: 0x1BF265C
-		// public int get_positionId() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x736858 Offset: 0x736858 VA: 0x736858
-		// // RVA: 0x1BF937C Offset: 0x1BF937C VA: 0x1BF937C
-		// private void set_positionId(int value) { }
-
 		// // RVA: 0x1BF9384 Offset: 0x1BF9384 VA: 0x1BF9384
 		public void LoadMusicAnimationResource(int wavId, int primeId, int positionId = 1, int divaNum = 1, int divaId = 0)
 		{
@@ -970,14 +946,6 @@ namespace XeApp.Game.Common
 			XeApp.Core.AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 		}
 
-		// [CompilerGeneratedAttribute] // RVA: 0x7369D0 Offset: 0x7369D0 VA: 0x7369D0
-		// // RVA: 0x1BF96D4 Offset: 0x1BF96D4 VA: 0x1BF96D4
-		// public bool get_isLoadedMusicFacialResource() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7369E0 Offset: 0x7369E0 VA: 0x7369E0
-		// // RVA: 0x1BF859C Offset: 0x1BF859C VA: 0x1BF859C
-		// private void set_isLoadedMusicFacialResource(bool value) { }
-
 		// // RVA: 0x1BF96DC Offset: 0x1BF96DC VA: 0x1BF96DC
 		public void LoadFacialResource(int divaId, int wavId, int stageDivaNum)
 		{
@@ -1056,14 +1024,6 @@ namespace XeApp.Game.Common
 			
 			isLoadedMusicFacialResource = true;
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x736A68 Offset: 0x736A68 VA: 0x736A68
-		// // RVA: 0x1BF9844 Offset: 0x1BF9844 VA: 0x1BF9844
-		// public bool get_isLoadedMenuAnimationResource() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x736A78 Offset: 0x736A78 VA: 0x736A78
-		// // RVA: 0x1BF85A4 Offset: 0x1BF85A4 VA: 0x1BF85A4
-		// private void set_isLoadedMenuAnimationResource(bool value) { }
 
 		// // RVA: 0x1BF984C Offset: 0x1BF984C VA: 0x1BF984C
 		public void LoadMenuResource(int divaId, int modelId, DivaResource.MenuFacialType facialType, ResultScoreRank.Type scoreRank = ResultScoreRank.Type.Illegal)

@@ -20,7 +20,6 @@ namespace XeApp.Game.Menu
 		private List<PopupHelpBtn> m_btn_list = new List<PopupHelpBtn>(); // 0x20
 		private int m_uniqueId; // 0x24
 		private bool m_is_wiki = true; // 0x28
-		//[CompilerGeneratedAttribute] // RVA: 0x66FD80 Offset: 0x66FD80 VA: 0x66FD80
 		public Action<VeiwOptionHelpCategoryData, int, bool> PushButtonHandler; // 0x2C
 		private VeiwOptionHelpCategoryData m_help_data = new VeiwOptionHelpCategoryData(); // 0x30
 

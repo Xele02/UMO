@@ -19,7 +19,6 @@ namespace XeApp.Game.RhythmAdjust
 		private ActionButton[] m_buttons; // 0x14
 		[SerializeField]
 		private AbsoluteLayout m_windowAnimeLayout; // 0x18
-		//[CompilerGeneratedAttribute] // RVA: 0x66294C Offset: 0x66294C VA: 0x66294C
 		public UnityAction<ButtonType> ButtonHandler; // 0x1C
 
 		// RVA: 0xF5C44C Offset: 0xF5C44C VA: 0xF5C44C Slot: 5

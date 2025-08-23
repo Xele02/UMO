@@ -23,7 +23,6 @@ namespace XeApp.Game.RhythmAdjust
 		private LayoutRhythmAdjustBalloon m_LayoutBalloon; // 0x10
 		private LayoutRhythmAdjustTutorialConfirmWindow m_LayoutConfirmWindow; // 0x14
 		private ModeType m_mode = ModeType.ADJUST; // 0x18
-		//[CompilerGeneratedAttribute] // RVA: 0x66291C Offset: 0x66291C VA: 0x66291C
 		public UnityAction<LayoutRhythmAdjustTutorialConfirmWindow.ButtonType> ConfirmmButtonHandler; // 0x1C
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6B08E0 Offset: 0x6B08E0 VA: 0x6B08E0

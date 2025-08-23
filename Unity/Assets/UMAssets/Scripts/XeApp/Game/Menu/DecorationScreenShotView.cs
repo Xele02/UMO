@@ -28,15 +28,10 @@ namespace XeApp.Game.Menu
 		private Coroutine loopAnimationCoroutine; // 0x30
 		private RectTransform rectTransform; // 0x34
 		private float imageHeight; // 0x38
-		//[CompilerGeneratedAttribute] // RVA: 0x66B9A8 Offset: 0x66B9A8 VA: 0x66B9A8
 		public UnityAction PushCloseButtonListener; // 0x3C
-		//[CompilerGeneratedAttribute] // RVA: 0x66B9B8 Offset: 0x66B9B8 VA: 0x66B9B8
 		public UnityAction PushReturnButtonListner; // 0x40
-		//[CompilerGeneratedAttribute] // RVA: 0x66B9C8 Offset: 0x66B9C8 VA: 0x66B9C8
 		public UnityAction PushShareButtonListner; // 0x44
-		//[CompilerGeneratedAttribute] // RVA: 0x66B9D8 Offset: 0x66B9D8 VA: 0x66B9D8
 		public UnityAction PushTakeButtonListner; // 0x48
-		//[CompilerGeneratedAttribute] // RVA: 0x66B9E8 Offset: 0x66B9E8 VA: 0x66B9E8
 		public UnityAction PushMessagePanelButtonListner; // 0x4C
 
 		// // RVA: 0x11E1C64 Offset: 0x11E1C64 VA: 0x11E1C64

@@ -116,15 +116,7 @@ namespace XeApp.Game
 		private RaidBossTextureCache m_raidBossTextureCache; // 0x12C
 		private KiraDivaTextureCache m_kiraDivaTextureCache; // 0x130
 		private HomeBgIconBgTextureCache m_homeBgIconTextureCache; // 0x134
-		// [CompilerGeneratedAttribute] // RVA: 0x66266C Offset: 0x66266C VA: 0x66266C
 		public UnityAction<float> UpdateAction; // 0x140
-		// [CompilerGeneratedAttribute] // RVA: 0x6AD9A0 Offset: 0x6AD9A0 VA: 0x6AD9A0
-		// // RVA: 0x99A05C Offset: 0x99A05C VA: 0x99A05C
-		// public void add_UpdateAction(UnityAction<float> value) { }
-		// [CompilerGeneratedAttribute] // RVA: 0x6AD9B0 Offset: 0x6AD9B0 VA: 0x6AD9B0
-		// // RVA: 0x99A168 Offset: 0x99A168 VA: 0x99A168
-		// public void remove_UpdateAction(UnityAction<float> value) { }
-
 		private float m_sceneIconAnimeTime; // 0x144
 		private SnsNotification m_snsNotification; // 0x148
 		private GameUIIntro m_intro; // 0x14C

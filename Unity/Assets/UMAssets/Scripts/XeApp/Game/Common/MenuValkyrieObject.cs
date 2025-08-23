@@ -160,10 +160,6 @@ namespace XeApp.Game.Common
 			return m_coUnlockFinish != null;
 		}
 
-		//[CompilerGeneratedAttribute] // RVA: 0x73C188 Offset: 0x73C188 VA: 0x73C188
-		//// RVA: 0x1115A5C Offset: 0x1115A5C VA: 0x1115A5C
-		//private void <Unlock>b__25_0() { }
-
 		//[CompilerGeneratedAttribute] // RVA: 0x73C198 Offset: 0x73C198 VA: 0x73C198
 		//// RVA: 0x1115A68 Offset: 0x1115A68 VA: 0x1115A68
 		//private void <Watch>b__26_0() { }

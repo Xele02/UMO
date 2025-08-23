@@ -20,14 +20,6 @@ namespace CriWare
 
 		public static string errorMessage { get; set; } // 0x0
 
-		// [CompilerGeneratedAttribute] // RVA: 0x6364FC Offset: 0x6364FC VA: 0x6364FC
-		// // RVA: 0x2BAA120 Offset: 0x2BAA120 VA: 0x2BAA120
-		// public static void add_OnCallback(CriWareErrorHandler.Callback value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x63650C Offset: 0x63650C VA: 0x63650C
-		// // RVA: 0x2BAA2B4 Offset: 0x2BAA2B4 VA: 0x2BAA2B4
-		// public static void remove_OnCallback(CriWareErrorHandler.Callback value) { }
-
 		// // RVA: 0x2BAA448 Offset: 0x2BAA448 VA: 0x2BAA448
 		private void Awake()
 		{

@@ -8,7 +8,6 @@ namespace XeApp.Game.Common
 	{
 		public delegate void OnRepeatCallback();
 
-		//[CompilerGeneratedAttribute] // RVA: 0x68CDA0 Offset: 0x68CDA0 VA: 0x68CDA0
 		public OnRepeatCallback m_repeatEvent = () => { /*0x1CDB590*/ return;  }; // 0x38
 		private float m_interval = 0.4f; // 0x3C
 		private float m_repeat = 0.1f; // 0x40

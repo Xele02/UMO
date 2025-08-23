@@ -663,9 +663,5 @@ namespace XeApp.Game.Menu
 			m_pilotCutIn = null;
 			m_sortieLayout = null;
 		}
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x6FCE6C Offset: 0x6FCE6C VA: 0x6FCE6C
-		//// RVA: 0x1716A54 Offset: 0x1716A54 VA: 0x1716A54
-		//private void <OnClickTransformation>b__38_0() { }
 	}
 }

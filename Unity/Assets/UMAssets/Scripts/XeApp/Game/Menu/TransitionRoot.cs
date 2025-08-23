@@ -311,7 +311,6 @@ namespace XeApp.Game.Menu
 				{ SceneGroupCategory.EVENT_GODIVA, MenuButtonAnim.ButtonType.LIVE}
 			}; // 0x48
 			private List<NewMarkIcon> m_newMarkIconList = new List<NewMarkIcon>(32); // 0x50
-			// [CompilerGeneratedAttribute] // RVA: 0x66A050 Offset: 0x66A050 VA: 0x66A050
 			public UnityAction<SceneGroupCategory, SceneGroupCategory> ChangeGroupCategoryListener; // 0x54
 			private TransitionTreeObject treeObject; // 0x58
 			private List<TransitionList.Type> m_enableDivaModelTransitionName = new List<TransitionList.Type>() {
@@ -421,14 +420,6 @@ namespace XeApp.Game.Menu
 			public HelpButton HelpButton { get { return m_helpButton; } }// 0xA31498
 			// private List<TransitionTreeObject.SceneRoot> SceneDirectory { get; } 0xA316B8
 			public BgControl bgControl { get { return m_bgControl; } } //0xA399F8
-
-			// [CompilerGeneratedAttribute] // RVA: 0x6C8B4C Offset: 0x6C8B4C VA: 0x6C8B4C
-			// // RVA: 0xA314A0 Offset: 0xA314A0 VA: 0xA314A0
-			// public void add_ChangeGroupCategoryListener(UnityAction<SceneGroupCategory, SceneGroupCategory> value) { }
-
-			// [CompilerGeneratedAttribute] // RVA: 0x6C8B5C Offset: 0x6C8B5C VA: 0x6C8B5C
-			// // RVA: 0xA315AC Offset: 0xA315AC VA: 0xA315AC
-			// public void remove_ChangeGroupCategoryListener(UnityAction<SceneGroupCategory, SceneGroupCategory> value) { }
 
 			// // RVA: 0xA316E4 Offset: 0xA316E4 VA: 0xA316E4
 			public MenuTransitionControl(GameObject bgRoot, GameObject uiRoot, XeSys.FontInfo font, TransitionTreeObject tto)

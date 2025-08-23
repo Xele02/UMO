@@ -24,7 +24,6 @@ namespace XeApp.Game.Menu
 
 		[SerializeField]
 		private ActionButton m_button; // 0x14
-		// [CompilerGeneratedAttribute] // RVA: 0x66FD20 Offset: 0x66FD20 VA: 0x66FD20
 		public UnityAction<int, int> HelpButtonListener; // 0x18
 		private RectTransform m_rectTransform; // 0x1C
 		private int m_searchId; // 0x20
@@ -118,14 +117,6 @@ namespace XeApp.Game.Menu
 				new Vector2(0, 1),
 				new Vector2(0, 1)
 			}; // 0x5C
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6E1A6C Offset: 0x6E1A6C VA: 0x6E1A6C
-		// // RVA: 0xE301F8 Offset: 0xE301F8 VA: 0xE301F8
-		// public void add_HelpButtonListener(UnityAction<int, int> value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6E1A7C Offset: 0x6E1A7C VA: 0x6E1A7C
-		// // RVA: 0xE30304 Offset: 0xE30304 VA: 0xE30304
-		// public void remove_HelpButtonListener(UnityAction<int, int> value) { }
 
 		// RVA: 0xE30410 Offset: 0xE30410 VA: 0xE30410 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

@@ -11,7 +11,6 @@ namespace XeApp.Game.Menu
 		private AbsoluteLayout m_Anim; // 0x14
 		[SerializeField]
 		private ActionButton m_btn; // 0x18
-		//[CompilerGeneratedAttribute] // RVA: 0x672EB4 Offset: 0x672EB4 VA: 0x672EB4
 		public Action PushButtonListener; // 0x1C
 
 		// RVA: 0x187158C Offset: 0x187158C VA: 0x187158C Slot: 5

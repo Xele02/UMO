@@ -2511,13 +2511,5 @@ namespace XeApp.Game.Menu
 			m_swaip_touch.ResetInput();
 			m_swaip_touch.ResetInputState();
 		}
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x6FEFFC Offset: 0x6FEFFC VA: 0x6FEFFC
-		//// RVA: 0x117B2E8 Offset: 0x117B2E8 VA: 0x117B2E8
-		//private void <OnClickSceneInfo>b__229_0() { }
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x6FF06C Offset: 0x6FF06C VA: 0x6FF06C
-		//// RVA: 0x117BB54 Offset: 0x117BB54 VA: 0x117BB54
-		//private void <OnChangeAssitName>b__276_0(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
 	}
 }

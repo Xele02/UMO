@@ -339,13 +339,5 @@ namespace XeApp.Game.Common
 				overrideController["val_cmn_it_takeoff"] = a_resource.m_override_anim.m_takeoff;
 			}
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73C108 Offset: 0x73C108 VA: 0x73C108
-		// // RVA: 0xEA24C8 Offset: 0xEA24C8 VA: 0xEA24C8
-		// private void <StartTransformAnimation>b__48_0() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73C118 Offset: 0x73C118 VA: 0x73C118
-		// // RVA: 0xEA24D4 Offset: 0xEA24D4 VA: 0xEA24D4
-		// private void <DamageStart>b__59_0() { }
 	}
 }

@@ -20,10 +20,8 @@ namespace CriWare
 		public bool dontDestroyOnLoad = false; // 0x2C
 		// private static CriAtomExSequencer.EventCallback eventUserCallback; // 0x0
 		// private static CriAtomExSequencer.EventCbFunc eventUserCbFunc; // 0x4
-		// [CompilerGeneratedAttribute] // RVA: 0x63461C Offset: 0x63461C VA: 0x63461C
 		private static event CriAtomExBeatSync.CbFunc beatsyncUserCbFunc = null; // 0x8
 		// private static CriAtomExBeatSync.CbFunc obsoleteBeatSyncFunc; // 0xC
-		// [CompilerGeneratedAttribute] // RVA: 0x63462C Offset: 0x63462C VA: 0x63462C
 		// private static CriAtomEx.CueLinkCbFunc cueLinkUserCbFunc; // 0x10
 		private GCHandle acfRegisterGCHandle; // 0x30
 		public bool dontRemoveExistsCueSheet; // 0x34
@@ -45,22 +43,6 @@ namespace CriWare
 
 		// // RVA: 0x287A060 Offset: 0x287A060 VA: 0x287A060
 		// internal static void remove_OnEventSequencerCallback(CriAtomExSequencer.EventCallback value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x63541C Offset: 0x63541C VA: 0x63541C
-		// // RVA: 0x287A274 Offset: 0x287A274 VA: 0x287A274
-		// private static void add_beatsyncUserCbFunc(CriAtomExBeatSync.CbFunc value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x63542C Offset: 0x63542C VA: 0x63542C
-		// // RVA: 0x287A408 Offset: 0x287A408 VA: 0x287A408
-		// private static void remove_beatsyncUserCbFunc(CriAtomExBeatSync.CbFunc value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x63543C Offset: 0x63543C VA: 0x63543C
-		// // RVA: 0x287A8F8 Offset: 0x287A8F8 VA: 0x287A8F8
-		// private static void add_cueLinkUserCbFunc(CriAtomEx.CueLinkCbFunc value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x63544C Offset: 0x63544C VA: 0x63544C
-		// // RVA: 0x287AA8C Offset: 0x287AA8C VA: 0x287AA8C
-		// private static void remove_cueLinkUserCbFunc(CriAtomEx.CueLinkCbFunc value) { }
 
 		// // RVA: 0x287AC20 Offset: 0x287AC20 VA: 0x287AC20
 		// internal static void add_OnCueLinkCallback(CriAtomEx.CueLinkCbFunc value) { }

@@ -80,9 +80,7 @@ namespace XeApp.Game.Menu
 		public DecorationConstants.DecideItemCallback NewPostItemCallback; // 0x18
 		public Action<TabType> OnClickTabButton; // 0x1C
 		public Action BuyItemCallback; // 0x20
-		//[CompilerGeneratedAttribute] // RVA: 0x66B838 Offset: 0x66B838 VA: 0x66B838
 		public Action OnStartDownLoad; // 0x24
-		//[CompilerGeneratedAttribute] // RVA: 0x66B848 Offset: 0x66B848 VA: 0x66B848
 		public Action OnEndDownLoad; // 0x28
 		private LayoutDecorationWindow01 m_layoutDecorationWindow01; // 0x2C
 		private DecoratorType m_decoratorType; // 0x30

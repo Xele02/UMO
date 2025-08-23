@@ -24,7 +24,6 @@ namespace XeApp.Game.Menu
 		private Texture m_maskTexture; // 0x2C
 		private AbsoluteLayout m_abs; // 0x30
 		private float m_seStartFrame; // 0x34
-		//[CompilerGeneratedAttribute] // RVA: 0x6703E4 Offset: 0x6703E4 VA: 0x6703E4
 		public UnityAction PushOkListener; // 0x38
 		private StringBuilder m_bundleName = new StringBuilder(64); // 0x3C
 		private const string TexturePath = "ct/ba/rc/{0:D6}.xab";

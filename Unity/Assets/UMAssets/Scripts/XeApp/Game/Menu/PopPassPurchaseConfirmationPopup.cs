@@ -39,11 +39,8 @@ namespace XeApp.Game.Menu
 		public RawImageEx m_image_button; // 0x34
 		private Rect[] m_uv_button; // 0x38
 		private AbsoluteLayout m_anim_root; // 0x3C
-		//[CompilerGeneratedAttribute] // RVA: 0x67752C Offset: 0x67752C VA: 0x67752C
 		public UnityAction m_cb_agre; // 0x40
-		//[CompilerGeneratedAttribute] // RVA: 0x67753C Offset: 0x67753C VA: 0x67753C
 		public UnityAction m_cb_buy; // 0x44
-		//[CompilerGeneratedAttribute] // RVA: 0x67754C Offset: 0x67754C VA: 0x67754C
 		public UnityAction m_cb_cancel; // 0x48
 		public Result m_result; // 0x50
 		public NHPDPKHMFEP.GGNEBJEIFCP m_plan; // 0x54

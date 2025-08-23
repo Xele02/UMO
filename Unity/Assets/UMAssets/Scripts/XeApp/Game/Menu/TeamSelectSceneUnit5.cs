@@ -2420,25 +2420,5 @@ namespace XeApp.Game.Menu
 				}
 			}
 		}
-
-		//[CompilerGeneratedAttribute] // RVA: 0x72F85C Offset: 0x72F85C VA: 0x72F85C
-		//// RVA: 0xA9203C Offset: 0xA9203C VA: 0xA9203C
-		//private bool <Co_ShowHelp>b__101_0() { }
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x72F8AC Offset: 0x72F8AC VA: 0x72F8AC
-		//// RVA: 0xA92578 Offset: 0xA92578 VA: 0xA92578
-		//private void <ShowSubPlateWindow>b__158_0() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x72F8CC Offset: 0x72F8CC VA: 0x72F8CC
-		//// RVA: 0xA925D0 Offset: 0xA925D0 VA: 0xA925D0
-		//private void <OnClickAutoSettingButton>b__166_0(PopupAutoSettingContent content) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x72F8DC Offset: 0x72F8DC VA: 0x72F8DC
-		//// RVA: 0xA92688 Offset: 0xA92688 VA: 0xA92688
-		//private void <OnClickAutoSettingButton>b__166_1() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x72F8EC Offset: 0x72F8EC VA: 0x72F8EC
-		//// RVA: 0xA926AC Offset: 0xA926AC VA: 0xA926AC
-		//private void <OnClickAutoSettingButton>b__166_2() { }
 	}
 }

@@ -8,7 +8,6 @@ namespace XeApp.Game.Common
 	{
 		public delegate void OnStayCallback();
 
-		//[CompilerGeneratedAttribute] // RVA: 0x688EE0 Offset: 0x688EE0 VA: 0x688EE0
 		private OnStayCallback m_stayEvent = () =>
 			{
 				//0x1CCAFC8

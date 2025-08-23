@@ -63,11 +63,8 @@ namespace XeApp.Game.Menu
 		private static Rect CardUv = new Rect(0.0234375f, 0.2319336f, 0.9526367f, 0.5366211f); // 0x10
 		private static Rect CardUvHighRare = new Rect(0.0f, 0.21875f, 1.0f, 0.5625f); // 0x20
 		private SceneViewerPageLamp m_pageLamp; // 0x50
-		//[CompilerGeneratedAttribute] // RVA: 0x67B82C Offset: 0x67B82C VA: 0x67B82C
 		public UnityAction<int> onLeftArrow; // 0x54
-		//[CompilerGeneratedAttribute] // RVA: 0x67B83C Offset: 0x67B83C VA: 0x67B83C
 		public UnityAction<int> onRightArrow; // 0x58
-		//[CompilerGeneratedAttribute] // RVA: 0x67B84C Offset: 0x67B84C VA: 0x67B84C
 		public UnityAction onClose; // 0x5C
 		private bool m_isEventCall; // 0x60
 		private bool m_isEvolv; // 0x61

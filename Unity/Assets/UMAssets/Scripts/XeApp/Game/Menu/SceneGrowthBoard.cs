@@ -61,7 +61,6 @@ namespace XeApp.Game.Menu
 		[SerializeField]
 		protected string m_layoutExId; // 0x34
 		protected UnityAction m_boardChangeAction; // 0x38
-		//[CompilerGeneratedAttribute] // RVA: 0x67D5CC Offset: 0x67D5CC VA: 0x67D5CC
 		public UnityAction<SceneGrowthBoard, int, int> OnUnlockAction; // 0x3C
 		protected RectTransform m_parentObject; // 0x40
 		private int m_lastRewardItemId; // 0x44

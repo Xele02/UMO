@@ -614,9 +614,5 @@ namespace XeApp.Game.Menu
 
 		// // RVA: 0x1DA5328 Offset: 0x1DA5328 VA: 0x1DA5328
 		// private void StopCountUpLoopSE() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x71ACBC Offset: 0x71ACBC VA: 0x71ACBC
-		// // RVA: 0x1DA5414 Offset: 0x1DA5414 VA: 0x1DA5414
-		// private void <Setup>b__50_0(IiconTexture texture) { }
 	}
 }

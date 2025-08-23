@@ -44,9 +44,7 @@ namespace XeApp.Game.Menu
 		public readonly int MAX_LV = 6; // 0x70
 		public int m_lv; // 0x74
 		public int m_lv_max; // 0x78
-							 //[CompilerGeneratedAttribute] // RVA: 0x66B248 Offset: 0x66B248 VA: 0x66B248
 		public UnityAction<int> m_cb_try; // 0x7C
-										  //[CompilerGeneratedAttribute] // RVA: 0x66B258 Offset: 0x66B258 VA: 0x66B258
 		public UnityAction<int> m_cb_getinfo; // 0x80
 		public NewMarkIcon m_new_icon; // 0x84
 

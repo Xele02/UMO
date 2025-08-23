@@ -3672,14 +3672,6 @@ namespace XeApp.Game.Menu
 				saveDataLimit.KFPALNAJJBP_EventGachaTicketDate = currentTime;
 		}
 
-		// 	[CompilerGeneratedAttribute] // RVA: 0x6E44FC Offset: 0x6E44FC VA: 0x6E44FC
-		// 	// RVA: 0x97D1F4 Offset: 0x97D1F4 VA: 0x97D1F4
-		// 	private void <CheckSnsNotice>b__106_0() { }
-		
-		// 	[CompilerGeneratedAttribute] // RVA: 0x6E452C Offset: 0x6E452C VA: 0x6E452C
-		// 	// RVA: 0x97D318 Offset: 0x97D318 VA: 0x97D318
-		// 	private void <SetupBeginnerLead>b__149_0(IiconTexture image) { }
-		
 		private void LoadSLive()
 		{
 			this.StartCoroutineWatched(LoadSLiveCoroutine());

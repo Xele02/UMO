@@ -35,7 +35,6 @@ namespace XeApp.Game.Common
 		public Func<int> m_preCloseEndCallBack; // 0x44
 		public Action<int> m_postCloseEndCallBack; // 0x48
 		public Action m_closeEndCallBack; // 0x4C
-		// [CompilerGeneratedAttribute] // RVA: 0x68BE8C Offset: 0x68BE8C VA: 0x68BE8C
 		public Func<bool> m_closeWaitCallBack; // 0x50
 		public Func<PopupButton.ButtonType, PopupButton.ButtonLabel, bool> m_closeStartWaitCallBack; // 0x54
 		public Func<PopupWindowControl.SeType, bool> PlayWindowOpenHandler; // 0x58

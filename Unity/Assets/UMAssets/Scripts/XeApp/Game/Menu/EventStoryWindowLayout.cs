@@ -53,7 +53,6 @@ namespace XeApp.Game.Menu
 		private Text m_title_text; // 0x38
 		[SerializeField]
 		private SwapScrollList m_scrollList; // 0x3C
-		//[CompilerGeneratedAttribute] // RVA: 0x6766CC Offset: 0x6766CC VA: 0x6766CC
 		public UnityAction<Series> ChangeTablistener;
 		private AbsoluteLayout m_layoutRoot; // 0x44
 		private AbsoluteLayout m_tabLayout; // 0x48

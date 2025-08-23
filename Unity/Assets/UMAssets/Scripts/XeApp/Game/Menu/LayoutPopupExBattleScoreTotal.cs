@@ -352,9 +352,5 @@ namespace XeApp.Game.Menu
 				this.StartCoroutineWatched(co_close());
 			});
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x702E6C Offset: 0x702E6C VA: 0x702E6C
-		// // RVA: 0x1727504 Offset: 0x1727504 VA: 0x1727504
-		// private bool <Co_CountUpGetPoint>b__23_2() { }
 	}
 }

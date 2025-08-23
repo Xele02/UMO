@@ -585,13 +585,5 @@ namespace XeApp.Game.Menu
 			}
 			return false;
 		}
-		
-		// [CompilerGeneratedAttribute] // RVA: 0x7241D4 Offset: 0x7241D4 VA: 0x7241D4
-		// // RVA: 0xB61478 Offset: 0xB61478 VA: 0xB61478
-		// private void <Co_LoadSingRankRateEffectLayout>b__57_0(GameObject instance) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x7241E4 Offset: 0x7241E4 VA: 0x7241E4
-		// // RVA: 0xB61548 Offset: 0xB61548 VA: 0xB61548
-		// private void <Co_LoadSingRankRateEffectLayout>b__57_1(GameObject instance) { }
 	}
 }

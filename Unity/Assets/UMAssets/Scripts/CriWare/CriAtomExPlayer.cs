@@ -27,9 +27,7 @@ namespace CriWare
 			Error = 4,
 		}
 
-		// [CompilerGeneratedAttribute] // RVA: 0x634A04 Offset: 0x634A04 VA: 0x634A04
 		private event CriAtomExBeatSync.CbFunc _onBeatSyncCallback = null; // 0x18
-		// [CompilerGeneratedAttribute] // RVA: 0x634A14 Offset: 0x634A14 VA: 0x634A14
 		// private CriAtomExSequencer.EventCallback _onSequenceCallback; // 0x1C
 		private bool hasExistingNativeHandle; // 0x20
 		private IntPtr entryPoolHandle; // 0x24
@@ -43,29 +41,13 @@ namespace CriWare
 
 		public IntPtr nativeHandle { get {return this.handle;} } // 0x289FA10
 		public bool isAvailable {get {return this.handle != IntPtr.Zero;} } // 0x289F9AC
-		// public int entryPoolCapacity { get; } // 0x28A51E4
-
-		// [CompilerGeneratedAttribute] // RVA: 0x635F28 Offset: 0x635F28 VA: 0x635F28
-		// // RVA: 0x28A30AC Offset: 0x28A30AC VA: 0x28A30AC
-		// private void add__onBeatSyncCallback(CriAtomExBeatSync.CbFunc value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x635F38 Offset: 0x635F38 VA: 0x635F38
-		// // RVA: 0x28A31B8 Offset: 0x28A31B8 VA: 0x28A31B8
-		// private void remove__onBeatSyncCallback(CriAtomExBeatSync.CbFunc value) { }
+		public int entryPoolCapacity { get { return _entryPoolCapacity; } } // 0x28A51E4
 
 		// // RVA: 0x28A32C4 Offset: 0x28A32C4 VA: 0x28A32C4
 		// public void add_OnBeatSyncCallback(CriAtomExBeatSync.CbFunc value) { }
 
 		// // RVA: 0x28A339C Offset: 0x28A339C VA: 0x28A339C
 		// public void remove_OnBeatSyncCallback(CriAtomExBeatSync.CbFunc value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x635F48 Offset: 0x635F48 VA: 0x635F48
-		// // RVA: 0x28A3474 Offset: 0x28A3474 VA: 0x28A3474
-		// private void add__onSequenceCallback(CriAtomExSequencer.EventCallback value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x635F58 Offset: 0x635F58 VA: 0x635F58
-		// // RVA: 0x28A3580 Offset: 0x28A3580 VA: 0x28A3580
-		// private void remove__onSequenceCallback(CriAtomExSequencer.EventCallback value) { }
 
 		// // RVA: 0x28A368C Offset: 0x28A368C VA: 0x28A368C
 		// public void add_OnSequenceCallback(CriAtomExSequencer.EventCallback value) { }

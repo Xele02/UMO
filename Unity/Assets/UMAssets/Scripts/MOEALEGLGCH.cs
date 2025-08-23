@@ -10,25 +10,8 @@ public class MOEALEGLGCH
 {
 	private Dictionary<int, string> KGNCCIDGGCC; // 0x10
 
-	// Properties
-	public List<int> NBIGLBMHEDC { get; set; } // 0x8 ELHJMCKHBBO DGMMMDMLCJF PICPPMMJAEH
-	public List<LFAFJCNKLML> MGJKEJHEBPO { get; set; } // 0xC DPHOPMPKAHK BNPJIIPJJLJ HOKDNOFCDHM
-
-	//[CompilerGeneratedAttribute] // RVA: 0x7406C4 Offset: 0x7406C4 VA: 0x7406C4
-	//// RVA: 0x17B2DA8 Offset: 0x17B2DA8 VA: 0x17B2DA8
-	//public List<int> DGMMMDMLCJF() { }
-
-	//[CompilerGeneratedAttribute] // RVA: 0x7406D4 Offset: 0x7406D4 VA: 0x7406D4
-	//// RVA: 0x17B2DB0 Offset: 0x17B2DB0 VA: 0x17B2DB0
-	//private void PICPPMMJAEH(List<int> NANNGLGOFKH) { }
-
-	//[CompilerGeneratedAttribute] // RVA: 0x7406E4 Offset: 0x7406E4 VA: 0x7406E4
-	//// RVA: 0x17B2DB8 Offset: 0x17B2DB8 VA: 0x17B2DB8
-	//public List<LFAFJCNKLML> BNPJIIPJJLJ() { }
-
-	//[CompilerGeneratedAttribute] // RVA: 0x7406F4 Offset: 0x7406F4 VA: 0x7406F4
-	//// RVA: 0x17B2DC0 Offset: 0x17B2DC0 VA: 0x17B2DC0
-	//private void HOKDNOFCDHM(List<LFAFJCNKLML> NANNGLGOFKH) { }
+	public List<int> NBIGLBMHEDC { get; private set; } // 0x8 ELHJMCKHBBO DGMMMDMLCJF PICPPMMJAEH
+	public List<LFAFJCNKLML> MGJKEJHEBPO { get; private set; } // 0xC DPHOPMPKAHK BNPJIIPJJLJ HOKDNOFCDHM
 
 	//// RVA: 0x17B2DC8 Offset: 0x17B2DC8 VA: 0x17B2DC8
 	public void KHEKNNFCAOI()

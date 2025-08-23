@@ -47,9 +47,7 @@ namespace XeApp.Game.Menu
 		private bool m_isShow; // 0x44
 		private bool m_isOpen; // 0x45
 		private JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH m_attackType; // 0x48
-		//[CompilerGeneratedAttribute] // RVA: 0x67C36C Offset: 0x67C36C VA: 0x67C36C
 		public UnityAction OnClickPanelListner; // 0x4C
-		//[CompilerGeneratedAttribute] // RVA: 0x67C37C Offset: 0x67C37C VA: 0x67C37C
 		public UnityAction<JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH> OnClickPlayButtonListner; // 0x50
 
 		public bool IsOpen { get { return m_isOpen; } } //0x1454628

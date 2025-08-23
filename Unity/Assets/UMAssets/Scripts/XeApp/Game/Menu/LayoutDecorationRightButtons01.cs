@@ -67,7 +67,6 @@ namespace XeApp.Game.Menu
 		public Action OnClickMapChangeButton; // 0x4C
 		public Action OnClickMapNameEditButton; // 0x50
 		public Action<bool> OnClickShowEditButton; // 0x54
-		//[CompilerGeneratedAttribute] // RVA: 0x66BD88 Offset: 0x66BD88 VA: 0x66BD88
 		public Action ClickTakeButtonListener; // 0x58
 		public Action OnClickOptionButtonListner; // 0x5C
 		public Action<DecorationDecorator.DecoratorType> OnClickEditButton; // 0x60

@@ -23,7 +23,6 @@ namespace XeApp.Game.Menu
 		private TexUVListManager m_uvMan; // 0x2C
 		private StringBuilder m_strBuilder = new StringBuilder(128); // 0x30
 		private int m_index; // 0x34
-		//[CompilerGeneratedAttribute] // RVA: 0x672E74 Offset: 0x672E74 VA: 0x672E74
 		public UnityAction<int> PushButtonListener; // 0x38
 
 		// RVA: 0x1D68DF4 Offset: 0x1D68DF4 VA: 0x1D68DF4 Slot: 5

@@ -44,13 +44,9 @@ namespace XeApp.Game.Menu
 		private ActionButton m_btn_cos_change; // 0x28
 		[SerializeField]
 		private ActionButton m_btn_cos_build; // 0x2C
-		//[CompilerGeneratedAttribute] // RVA: 0x66B338 Offset: 0x66B338 VA: 0x66B338
 		public UnityAction<int> m_cb_try; // 0x30
-		//[CompilerGeneratedAttribute] // RVA: 0x66B348 Offset: 0x66B348 VA: 0x66B348
 		public UnityAction<int> m_cb_getinfo; // 0x34
-		//[CompilerGeneratedAttribute] // RVA: 0x66B358 Offset: 0x66B358 VA: 0x66B358
 		public UnityAction m_cb_cos_change; // 0x38
-		//[CompilerGeneratedAttribute] // RVA: 0x66B368 Offset: 0x66B368 VA: 0x66B368
 		public UnityAction m_cb_cos_build; // 0x3C
 		public int m_diva_id; // 0x40
 		public int m_index_set; // 0x44

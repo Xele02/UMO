@@ -592,13 +592,5 @@ namespace XeApp.Game.Menu
 					yield return null;
 			}
 		}
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x6E11B4 Offset: 0x6E11B4 VA: 0x6E11B4
-		//// RVA: 0x116955C Offset: 0x116955C VA: 0x116955C
-		//private void <RequestVCRecover>b__25_1() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6E11C4 Offset: 0x6E11C4 VA: 0x6E11C4
-		//// RVA: 0x116956C Offset: 0x116956C VA: 0x116956C
-		//private void <RequestVCRecover>b__25_2() { }
 	}
 }

@@ -2071,12 +2071,4 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 		}
 		return 0;
 	}
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BCED4 Offset: 0x6BCED4 VA: 0x6BCED4
-	// // RVA: 0x11417FC Offset: 0x11417FC VA: 0x11417FC
-	// private void <OnReceieveTotalReward>b__47_0(CACGCMBKHDI NHECPMNKEFK) { }
-
-	// [CompilerGeneratedAttribute] // RVA: 0x6BCEE4 Offset: 0x6BCEE4 VA: 0x6BCEE4
-	// // RVA: 0x1141808 Offset: 0x1141808 VA: 0x1141808
-	// private void <OnReceieveTotalReward>b__47_1(CACGCMBKHDI NHECPMNKEFK) { }
 }

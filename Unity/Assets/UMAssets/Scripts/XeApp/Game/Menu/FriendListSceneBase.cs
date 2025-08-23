@@ -718,14 +718,6 @@ namespace XeApp.Game.Menu
 			}, null, null, null);
 		}
 
-		//[CompilerGeneratedAttribute] // RVA: 0x6E02C4 Offset: 0x6E02C4 VA: 0x6E02C4
-		//// RVA: 0xBA3B40 Offset: 0xBA3B40 VA: 0xBA3B40
-		//protected FriendListSceneBase.NetType get_lastNetType() { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6E02D4 Offset: 0x6E02D4 VA: 0x6E02D4
-		//// RVA: 0xBAE300 Offset: 0xBAE300 VA: 0xBAE300
-		//private void set_lastNetType(FriendListSceneBase.NetType value) { }
-		
 		//// RVA: 0xBAE308 Offset: 0xBAE308 VA: 0xBAE308
 		//protected void DoFriendRequest(FriendListInfo info) { }
 
