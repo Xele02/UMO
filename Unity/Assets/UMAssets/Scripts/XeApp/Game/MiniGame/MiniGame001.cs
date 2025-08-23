@@ -380,7 +380,7 @@ namespace XeApp.Game.MiniGame
 		private IEnumerator MainIn()
 		{
 			//0x1CEE6D8
-			bool m_isPause = false;
+			m_isPause = false;
 			ShootingGameSceneState.MainSceneState = ShootingGameSceneState.GameMainState.Normal;
 			m_soundManager.BgmPlay(ShootingSoundManager.BGM_ID.Main);
 			m_viewShootingData.KHEKNNFCAOI();

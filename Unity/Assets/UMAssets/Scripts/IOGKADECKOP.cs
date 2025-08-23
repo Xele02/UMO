@@ -1661,7 +1661,8 @@ public class IOGKADECKOP
 	private void GJLDMJFMIOD_OnPushBackButton()
 	{
 		GameManager.Instance.RemovePushBackButtonHandler(this.GJLDMJFMIOD_OnPushBackButton);
-		PopupWindowManager.ApplicationQuitPopupShow(() => {
+		PopupWindowManager.ApplicationQuitPopupShow(() =>
+		{
 			//0xA089D0
 			GameManager.Instance.AddPushBackButtonHandler(this.GJLDMJFMIOD_OnPushBackButton);
 		});

@@ -143,7 +143,7 @@ namespace XeApp.Game.RhythmGame.UI
 
 			//0x1563E44
 			m_isPlaying = true;
-			for(int i = 0; m_skillQueue.Count > 0;)
+			while(m_skillQueue.Count > 0)
 			{
 				stackValue = m_skillQueue[0];
 				isChanged = false;

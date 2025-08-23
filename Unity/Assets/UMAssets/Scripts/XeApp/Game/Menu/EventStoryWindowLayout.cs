@@ -381,9 +381,11 @@ namespace XeApp.Game.Menu
 
 			//0xB9C890
 			isLoading = true;
-			while (GameManager.Instance.EventBannerTextureCache.IsLoading())
+			do
+			{
+				isLoading = GameManager.Instance.EventBannerTextureCache.IsLoading();
 				yield return null;
-			isLoading = false;
+			} while(isLoading);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FD844 Offset: 0x6FD844 VA: 0x6FD844

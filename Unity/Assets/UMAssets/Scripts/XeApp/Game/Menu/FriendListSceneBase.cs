@@ -759,7 +759,7 @@ namespace XeApp.Game.Menu
 		{
 			MessageBank msgBank = MessageManager.Instance.GetBank("menu");
 			string messageFormat = msgBank.GetMessageByLabel("popup_friend_released_msg");
-			int lastNetType = 4;
+			lastNetType = NetType.FriendRelease;
 			MenuScene.Instance.RaycastDisable();
 			friendManager.PBEDDFMFDKB(info.playerId, info.name, info.playerRank, () =>
 			{

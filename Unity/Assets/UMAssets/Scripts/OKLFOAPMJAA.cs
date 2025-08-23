@@ -181,6 +181,13 @@ public class OKLFOAPMJAA
 					//0x14A2CEC
 					NPNNPNAIONN = true;
 				}, false));
+				while(!PLOOEECNHFB && !NPNNPNAIONN)
+					yield return null;
+				if(NPNNPNAIONN)
+				{
+					MOBEEPPKFLG();
+					yield break;
+				}
 			}
 			BHFHGFKBOHH();
 		}

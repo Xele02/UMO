@@ -173,12 +173,15 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 			for(int i = 0; i < ev.IJJHFGOIDOK_Songs.Count; i++)
 			{
-				return ev.IJJHFGOIDOK_Songs[i].PDBPFJJCADD_OpenAt != 0 && 
+				if(ev.IJJHFGOIDOK_Songs[i].PDBPFJJCADD_OpenAt != 0 && 
 					ev.IJJHFGOIDOK_Songs[i].FDBNFFNFOND_CloseAt != 0 && 
 					ev.IJJHFGOIDOK_Songs[i].FDBNFFNFOND_CloseAt < DPJCPDKALGI_RankingEnd && 
 					t >= ev.IJJHFGOIDOK_Songs[i].PDBPFJJCADD_OpenAt && 
 					ev.IJJHFGOIDOK_Songs[i].FDBNFFNFOND_CloseAt >= t && 
-					ev.IJJHFGOIDOK_Songs[i].MPLGPBNJDJB_FMusicId == GHBPLHBNMBK;
+					ev.IJJHFGOIDOK_Songs[i].MPLGPBNJDJB_FMusicId == GHBPLHBNMBK)
+				{
+					return true;
+				}
 			}
 		}
 		return false;

@@ -1948,7 +1948,8 @@ namespace XeApp.Game.Menu
 							{
 								res += cosList[j].JLKPGDEKPEO_IsHave ? 1 : 0;
 							}
-							return res > 1;
+							if(res > 1)
+								return true;
 						}
 					}
 					break;

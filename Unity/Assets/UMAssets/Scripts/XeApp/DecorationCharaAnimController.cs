@@ -317,9 +317,12 @@ namespace XeApp
 		//// RVA: 0x1ACBEAC Offset: 0x1ACBEAC VA: 0x1ACBEAC
 		private void AnimTouchKeep()
 		{
+			float s = elapsedSec;
 			state = State.TouchKeep;
 			if (GetAnimHash() != HashWait)
-				;//? elapsedSec = elapsedSec;
+			{
+				elapsedSec = s;
+			}
 		}
 
 		//// RVA: 0x1ACBF60 Offset: 0x1ACBF60 VA: 0x1ACBF60

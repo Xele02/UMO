@@ -414,7 +414,7 @@ namespace XeApp.Game.DownLoad
                 }
 			}
 			m_DispDivaProfile = data;
-			if(on_finish != null)
+			if(on_finish != null && !b)
 				on_finish();
 		}
 

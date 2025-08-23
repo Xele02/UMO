@@ -187,7 +187,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_StartLayout()
 		{
 			//0x171B73C
-			bool IsEnter = true;
+			IsEnter = true;
 			m_valkyrieSelectController.EnterLayout();
 			while (m_valkyrieSelectController.IsPlayingLayout())
 				yield return null;

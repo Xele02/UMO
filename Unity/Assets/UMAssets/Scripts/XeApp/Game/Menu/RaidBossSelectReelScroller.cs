@@ -141,7 +141,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				UpdateScroll(off);
-				if(onScrollUpdated != null);
+				if(onScrollUpdated != null)
 					onScrollUpdated(true);
 			}
 		}

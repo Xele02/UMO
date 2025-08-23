@@ -199,7 +199,7 @@ namespace XeApp.Game.Menu
 					str2 = "popup_ap_text_00";
 				}
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
-				PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("str")
+				PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel(str)
 					, SizeType.Small, bk.GetMessageByLabel(str2), new ButtonInfo[1] 
 					{
 						new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
