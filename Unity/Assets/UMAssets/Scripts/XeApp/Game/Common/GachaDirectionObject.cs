@@ -80,6 +80,8 @@ namespace XeApp.Game.Common
 		public bool isOrbChange { get { return directionInfo.auraColor != AuraColorType.Blue; } } //0x1C18FC8
 		public bool isIgnoreEventFade { get; private set; } // 0x58
 
+		public bool Unused() { return m_isEndIntro; }
+
 		// RVA: 0x1C19D1C Offset: 0x1C19D1C VA: 0x1C19D1C
 		public void RegisterDirectionInfo(DirectionInfo directionInfo)
 		{

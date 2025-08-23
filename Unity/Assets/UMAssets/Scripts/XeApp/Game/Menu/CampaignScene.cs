@@ -106,7 +106,7 @@ namespace XeApp.Game.Menu
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.RegistSite, Type = PopupButton.ButtonType.Positive }
 			};
-			bool done = false;
+			//bool done = false;
 			PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{
 				//0x10A9D54
@@ -117,7 +117,7 @@ namespace XeApp.Game.Menu
 			}, null, null, null, true, true, false, null, () =>
 			{
 				//0x10A9E6C
-				done = true;
+				//done = true;
 			});
 		}
 

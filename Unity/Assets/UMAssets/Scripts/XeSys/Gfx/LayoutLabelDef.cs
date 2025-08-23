@@ -11,6 +11,8 @@ namespace XeSys.Gfx
 
 		public List<LabelDefData> DataList { get { return m_dataList; } } //0x1EF8980
 
+		public bool Unused() { return ASSET_NAME_FORMAT == null; }
+
 		// // RVA: 0x1EF8914 Offset: 0x1EF8914 VA: 0x1EF8914
 		// public static bool TryMakeAssetPath(string lytName, LayoutUGUIRuntime runtime, out string assetPath) { }
 

@@ -151,6 +151,8 @@ namespace XeApp.Game.Menu
 		public bool IsEventEndChallengePeriod { get { return m_eventStatus > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5; } } //0xF3975C
 		// public bool IsEventRankingEnd { get; } 0xF39770
 
+		public bool Unused() { return m_showitemReceivePopup; }
+
 		// RVA: -1 Offset: -1 Slot: 32
 		protected abstract MusicDataList GetMusicList(int i);
 

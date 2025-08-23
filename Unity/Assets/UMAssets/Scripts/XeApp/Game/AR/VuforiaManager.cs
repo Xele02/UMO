@@ -65,6 +65,8 @@ namespace XeApp.Game.AR
         public string InitializeErrorMessage { get { return m_initializeErrorMessage; } } //0x13A89F8
         public ARMarkerMasterData.Data LastFoundARMarkerMasterData { get { return m_lastFoundMasterData; } } //0x13AA3DC
 
+        public bool Unused() { return m_sleeping; }
+
         // // RVA: 0x13B55F4 Offset: 0x13B55F4 VA: 0x13B55F4
         public void SetErrorMessage(ERROR_TYPE errType, int code = 0)
         {
@@ -278,7 +280,9 @@ namespace XeApp.Game.AR
                     if(m_currTrackingObj != null)
                     {
                         if(m_hipsTr == null || m_lastFoundMasterData == null)
-                            ;//>LAB_013b815c;
+                        {
+                            //>LAB_013b815c;
+                        }
                         else
                         {
                             Vector3 v = m_hipsTr.position - m_cameraAR.transform.position;
@@ -310,7 +314,9 @@ namespace XeApp.Game.AR
                             else
                             {
                                 if((c >= f2 || f1 < m_hipsLimitNgCos) && !isHitDiva)
-                                    ;//>LAB_013b815c
+                                {
+                                    //>LAB_013b815c
+                                }
                                 else
                                 {
                                     if(!m_hipsFading)

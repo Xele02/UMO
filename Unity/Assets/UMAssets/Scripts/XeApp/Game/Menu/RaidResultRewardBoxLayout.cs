@@ -17,6 +17,8 @@ namespace XeApp.Game.Menu
 		[SerializeField] // RVA: 0x67D22C Offset: 0x67D22C VA: 0x67D22C
 		private ModelRaidRewardBox m_boxModel; // 0x38
 
+		public bool Unused() { return m_isSkiped; }
+
 		// RVA: 0x1BE166C Offset: 0x1BE166C VA: 0x1BE166C
 		private void OnDisable()
 		{

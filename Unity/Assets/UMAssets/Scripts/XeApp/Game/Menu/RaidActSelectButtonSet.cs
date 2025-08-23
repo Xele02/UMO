@@ -107,6 +107,8 @@ namespace XeApp.Game.Menu
 		public Action onClickMissionButton { private get; set; } // 0x44
 		public Action onClickMvpButton { private get; set; } // 0x48
 
+		public bool Unused() { return m_isShow && s_emptyOptionButtons == null; }
+
 		// // RVA: 0x144BCBC Offset: 0x144BCBC VA: 0x144BCBC
 		// public void TryEnter() { }
 

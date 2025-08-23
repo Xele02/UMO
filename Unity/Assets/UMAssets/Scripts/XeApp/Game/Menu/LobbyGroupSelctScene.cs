@@ -30,6 +30,8 @@ namespace XeApp.Game.Menu
 		private SelectLobbyInfo m_groupInfo; // 0x64
 		private int AddBackKeyCount; // 0x68
 
+		public bool Unused() { return BGM_ID == 0; }
+
 		// RVA: 0x1287964 Offset: 0x1287964 VA: 0x1287964 Slot: 4
 		protected override void Awake()
 		{

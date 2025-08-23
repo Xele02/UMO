@@ -347,6 +347,8 @@ namespace XeApp.Game.Menu
 		// public bool CheckTopLimit { get; } 0x1460674
 		// public bool CheckBottomLimit { get; } 0x1460688
 
+		public bool Unused() { return m_isShowCannon; }
+
 		// // RVA: 0x146064C Offset: 0x146064C VA: 0x146064C
 		// protected bool IsRangeOver(int index) { }
 

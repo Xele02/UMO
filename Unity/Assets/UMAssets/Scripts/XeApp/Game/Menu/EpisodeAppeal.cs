@@ -63,6 +63,8 @@ namespace XeApp.Game.Menu
 		public static bool AnimChenge; // 0x0
 		public bool IsAppeal = true; // 0x9C
 
+		public bool Unused() { return m_plateTexture == null && m_rankUpPlateTexture == null; }
+
 		// RVA: 0x1275A74 Offset: 0x1275A74 VA: 0x1275A74
 		private void Awake()
 		{

@@ -43,6 +43,8 @@ namespace XeApp.Game.Menu
 		private bool IsSwipOff; // 0x8C
 		private bool IsLeaveing; // 0x8D
 
+		public bool Unused() { return IsChengeLayout; }
+
 		// RVA: 0x1526358 Offset: 0x1526358 VA: 0x1526358
 		private void Awake()
 		{

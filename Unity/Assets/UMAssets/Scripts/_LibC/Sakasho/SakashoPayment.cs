@@ -342,7 +342,6 @@ namespace ExternLib
 			UserProducts userProducts = new UserProducts();
 			userProducts.Load(playerAccount.playerData.serverData);
 
-			EDOHBJAPLPF_JsonData r = null;
 			for(int j = 0; j < Currencies.Count; j++)
 			{
 				if (Currencies[j].id == currency_id)
@@ -370,7 +369,6 @@ namespace ExternLib
 			UserProducts userProducts = new UserProducts();
 			userProducts.Load(playerAccount.playerData.serverData);
 
-			EDOHBJAPLPF_JsonData r = null;
 			for(int j = 0; j < Currencies.Count; j++)
 			{
 				if (Currencies[j].id == currency_id)
@@ -466,8 +464,6 @@ namespace ExternLib
 		{
 			EDOHBJAPLPF_JsonData jsonData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(json);
 			EDOHBJAPLPF_JsonData ids = jsonData["virtualCurrencyIds"];
-
-			string message = "";
 
 			/*EDOHBJAPLPF_JsonData arrayData = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(@"[
 				{
@@ -1379,7 +1375,6 @@ namespace ExternLib
 			if(masterGroupName != null)
 				TodoLogger.LogError(TodoLogger.SakashoServer, "masterGroupName == "+masterGroupName+", check");
 
-			string message = "";
 
 			EDOHBJAPLPF_JsonData res = GetBaseMessage();
 			res["current_page"] = page;

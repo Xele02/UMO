@@ -712,7 +712,6 @@ public class GBNDFCEDNMG
 					KNKDBNFMAKF_EventSp ev = LIKDEHHKFEH as KNKDBNFMAKF_EventSp;
 					return aa3 <= ev.CAHDMMAHEJC_GetDivaTouchCount();
 				}
-				break;
 			default:
 				if(OMNOFMEBLAD == null)
 					return false;

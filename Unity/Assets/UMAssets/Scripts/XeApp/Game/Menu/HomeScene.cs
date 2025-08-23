@@ -85,6 +85,8 @@ namespace XeApp.Game.Menu
 
 		private bool isValidBalloonLead { get { return m_balloonLeadData != null; } } //0x96E6EC
 
+		public bool Unused() { return m_pickupToClose && m_isCheckEventReward && m_pickupToJump; }
+
 		// RVA: 0x96E6FC Offset: 0x96E6FC VA: 0x96E6FC Slot: 4
 		protected override void Awake()
 		{

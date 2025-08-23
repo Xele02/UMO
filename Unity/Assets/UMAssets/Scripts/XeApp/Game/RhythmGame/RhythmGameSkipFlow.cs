@@ -41,6 +41,8 @@ namespace XeApp.Game.RhythmGame
 
 		//public Status status { get; private set; } 0xBFF090 0xBFF098
 
+		public bool Unused() { return currentStatus == Status.Default; }
+
 		// RVA: 0xBFF0A0 Offset: 0xBFF0A0 VA: 0xBFF0A0
 		public RhythmGameSkipFlow(RhythmGameResource resouce, Action rhythmGameLoadedAction, Difficulty.Type difficluty, Action rhythmGameBeginedAction, RhythmGameSkipPlayer gamePlayer, RhythmGameUIController uiController, Action rhythmGameEndedAction, Action errorToTitleAction)
 		{

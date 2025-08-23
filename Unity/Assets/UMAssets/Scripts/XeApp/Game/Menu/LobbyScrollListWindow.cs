@@ -161,6 +161,8 @@ namespace XeApp.Game.Menu
 		public int RaidSelectType { get { return m_raidSelect; } set { m_raidSelect = value; } } //0xD0BB10 0xD1A11C
 		public bool IsIconChange { get { return m_isIconChange; } set { m_isIconChange = value; } } //0xD1A124 0xD1A12C
 
+		public bool Unused() { return m_isBbsAutoUpdate; }
+
 		//// RVA: 0xD130A8 Offset: 0xD130A8 VA: 0xD130A8
 		public ButtonBase GetGuidCharaBtn()
 		{

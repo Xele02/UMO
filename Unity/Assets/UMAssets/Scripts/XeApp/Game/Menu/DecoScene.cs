@@ -280,6 +280,8 @@ namespace XeApp.Game.Menu
 		private Vector3 m_captureLogoBaseScale; // 0x178
 		private string m_shareFilePath = ""; // 0x184
 
+		public bool Unused() { return isDoTake; }
+
 		// RVA: 0xC5B220 Offset: 0xC5B220 VA: 0xC5B220 Slot: 4
 		protected override void Awake()
 		{
@@ -2283,7 +2285,6 @@ namespace XeApp.Game.Menu
 					}
 					return l1;
 				}
-				break;
 				case DecorationDecorator.DecoratorType.Chara:
 				{
 					List<KDKFHGHGFEK> l3 = KDKFHGHGFEK.FKDIMODKKJD(NDBFKHKMMCE_DecoItem.ANMODBDBNPK.DBAMIACJODJ.MIIELMELDBO_Char);
@@ -2318,7 +2319,6 @@ namespace XeApp.Game.Menu
 					}
 					return l1;
 				}
-				break;
 				case DecorationDecorator.DecoratorType.Object:
 				{
 					List<KDKFHGHGFEK> l3 = KDKFHGHGFEK.FKDIMODKKJD(NDBFKHKMMCE_DecoItem.ANMODBDBNPK.DBAMIACJODJ.JKMLKAMHJIF_Obj);
@@ -2422,7 +2422,6 @@ namespace XeApp.Game.Menu
 					return l1;
 				}
 			}
-			return l1;
 		}
 
 		//// RVA: 0xC64040 Offset: 0xC64040 VA: 0xC64040

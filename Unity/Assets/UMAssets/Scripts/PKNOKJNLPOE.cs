@@ -2776,7 +2776,6 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 				int c = 1;
 				for(int i = 0; i < r.NFEAMMJIMPG.CFFDADAKJPB_AttackPlayers.Count; i++)
 				{
-					int a = 0;
 					if(r.NFEAMMJIMPG.CFFDADAKJPB_AttackPlayers[i].MLPEHNBNOGD_PlayerId == DACHLLPBFPI.MLPEHNBNOGD_Id)
 					{
 						if(MFAFEBNEEHE_IsMyself(r.NFEAMMJIMPG.CFFDADAKJPB_AttackPlayers[i].MLPEHNBNOGD_PlayerId))
@@ -4602,7 +4601,6 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
             JLOGEHCIBEJ_EventRaid.PMJBKKNNNEM save = KNKJHNJFONJ_GetSave(ev);
 			if(save.MPOLPHDMBKA(OFLJBDDKMII.PPFNGGCBJKC_Id))
 			{
-				bool b = true;
 				int a = ev.LPJLEHAJADA("raid_boss_ap_out_boss_pattern", 3);
 				int c = ev.LPJLEHAJADA("raid_boss_ap_out_locate_pattern", 3);
 				bool isSp = OFLJBDDKMII.MMEBLOIJBKE_UniqueKey.Contains("sp");

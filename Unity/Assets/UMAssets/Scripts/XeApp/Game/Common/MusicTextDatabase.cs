@@ -37,6 +37,8 @@ namespace XeApp.Game.Common
 		private static string ds_i = "ds_i"; // 0x20
 		private static string ds_a = "ds_a"; // 0x24
 
+		public bool Unused() { return ds_i == "" && buy1 == ""; }
+
 		// // RVA: 0xAEBAF0 Offset: 0xAEBAF0 VA: 0xAEBAF0
 		public MusicTextDatabase.TextInfo Get(int musicNameId)
 		{

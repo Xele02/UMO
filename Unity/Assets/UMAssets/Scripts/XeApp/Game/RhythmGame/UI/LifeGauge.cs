@@ -23,6 +23,8 @@ namespace XeApp.Game.RhythmGame.UI
 		private readonly int IdleAnimeStateHash = Animator.StringToHash("Idle"); // 0x6C
 		private readonly int LoopAnimeStateHash = Animator.StringToHash("LifeChangeEffect_Loop"); // 0x70
 
+		public bool Unused() { return m_sleshHold == 0; }
+
 		// // RVA: 0x1562088 Offset: 0x1562088 VA: 0x1562088
 		public void Initialize()
 		{

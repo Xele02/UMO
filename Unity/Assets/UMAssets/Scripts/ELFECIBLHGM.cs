@@ -9,6 +9,8 @@ public class ELFECIBLHGM
         private long BHEHGCHGBDG = 0xa42143651a1c9f; // 0x10
         private long AKHADFNHCBJ; // 0x18
 
+        public bool Unused() { return FBGGEFFJJHB == 0; }
+
         public long MOBHLLDIMMN_LastShowDate { get { return AKHADFNHCBJ ^ BHEHGCHGBDG; } set { AKHADFNHCBJ = value ^ BHEHGCHGBDG; } } //0x1305560 KAFHGBHOHBM 0x1304EB4 DKHPNKJALPP
 
         // RVA: 0x1304EA8 Offset: 0x1304EA8 VA: 0x1304EA8

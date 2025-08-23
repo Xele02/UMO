@@ -38,6 +38,8 @@ namespace XeApp.Game.Menu
 		private const int lackyLeafSmallFontSize = 10;
 		private const int lackyLeafStringAreaBaseSize = 109;
 
+		public bool Unused() { return isChangedSkillIcon; }
+
 		// RVA: 0x136D47C Offset: 0x136D47C VA: 0x136D47C Slot: 4
 		public bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{

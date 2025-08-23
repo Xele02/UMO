@@ -9,6 +9,8 @@ namespace ExternLib.Java_Sakasho
         private int _c;
         private string _d;
 
+        public bool Unused() { return a == null; }
+
         public ch(bg var1, int var2, string var3)
         {
             this._b = var1;

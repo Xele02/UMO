@@ -25,6 +25,8 @@ namespace ExternLib.Java_Sakasho
         private ExternLib.Java_Sakasho.jp.dena.sakasho.api.SakashoSystem.OnError _c;
         private int _d;
 
+        public bool Unused() { return _a == null; }
+
         public c(ExternLib.Java_Sakasho.jp.dena.sakasho.api.SakashoSystem.OnSuccess var1, ExternLib.Java_Sakasho.jp.dena.sakasho.api.SakashoSystem.OnError var2, int var3) {
             this._b = var1;
             this._c = var2;

@@ -561,7 +561,7 @@ namespace XeApp.Game.Menu
 
 			//0x1B642B4
 			etype = eType.Simulation;
-			yield return Co.R(LoadLayout(eType.Simulation));
+			yield return Co.R(LoadLayout(etype));
 			PopupConfigScrollListSetting setting = m_settingRhythmSimulation;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			setting.TitleText = bk.GetMessageByLabel("config_text_81");

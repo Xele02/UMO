@@ -178,6 +178,8 @@ namespace XeApp.Game.Menu
 		protected override MusicDataList currentMusicList { get { return GetMusicList((int)m_musicCategoryId - 1); } } //0x1063EB4
 		protected override bool isLine6ModeFlag { get { return m_musicSelectSupporter.isLine6Mode; } } //0x1063ECC
 
+		public bool Unused() { return m_isLoadingDiva; }
+
 		// // RVA: 0x1063E34 Offset: 0x1063E34 VA: 0x1063E34 Slot: 34
 		protected override MusicDataList GetMusicList(int index)
 		{

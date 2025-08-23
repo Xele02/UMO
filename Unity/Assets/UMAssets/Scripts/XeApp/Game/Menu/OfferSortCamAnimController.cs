@@ -23,6 +23,8 @@ namespace XeApp.Game.Menu
 		private Vector3[] m_camDefTgtPosList = new Vector3[3]; // 0x24
 		private bool IsAnimation; // 0x28
 
+		public bool Unused() { return IsAnimation; }
+
 		// [IteratorStateMachineAttribute] // RVA: 0x6FC584 Offset: 0x6FC584 VA: 0x6FC584
 		// RVA: 0x170F81C Offset: 0x170F81C VA: 0x170F81C
 		public IEnumerator Co_loadAssets(int from, Action LoadEndCallback)

@@ -109,7 +109,7 @@ namespace XeApp.Game.Menu
 		private void UpdatePlate()
 		{
 			Vector3 v = m_scrollRect.content.localPosition;
-			float f1 = 390;
+			//float f1 = 390;
 			float f2 = 0;
 			int index = 0;
 			for(int i = 0; i < m_plateList.Count; i++)

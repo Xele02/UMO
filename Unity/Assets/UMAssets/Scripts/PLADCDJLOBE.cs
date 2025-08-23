@@ -142,7 +142,6 @@ public class PLADCDJLOBE
 			data.LJIFDOFIHEA(f);
 			return data;
 		}
-		return null;
 	}
 
 	//// RVA: 0xFE83E4 Offset: 0xFE83E4 VA: 0xFE83E4

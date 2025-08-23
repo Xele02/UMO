@@ -55,6 +55,8 @@ namespace XeApp.Game.Menu
 		// public int buttonId { get; } 0xEC6EE8
 		public bool buttonAnimeDisable { get; set; } // 0xA1
 
+		public bool Unused() { return m_base_type == BaseType.Default; }
+
 		// RVA: 0xEC6EF8 Offset: 0xEC6EF8 VA: 0xEC6EF8
 		private void Update()
 		{

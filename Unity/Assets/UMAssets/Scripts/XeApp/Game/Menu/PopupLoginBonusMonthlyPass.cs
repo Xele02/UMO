@@ -19,6 +19,8 @@ namespace XeApp.Game.Menu
 		private GJFMKMJOFMB m_viewLoginBonusMonthlyPass; // 0xC
 		private bool m_isSuccess; // 0x10
 
+		public bool Unused() { return m_viewLoginBonusMonthlyPass == null; }
+
 		//[IteratorStateMachineAttribute] // RVA: 0x7061F4 Offset: 0x7061F4 VA: 0x7061F4
 		// RVA: 0x168AE50 Offset: 0x168AE50 VA: 0x168AE50
 		public static IEnumerator Show(Type popupType, bool forceAvailableTopplan = false, Transform parent = null, Action<bool> closeCallback = null)
@@ -93,14 +95,14 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x168B0D0 Offset: 0x168B0D0 VA: 0x168B0D0
 		private IEnumerator Co_RequestLoginBonusMonthlyPass(DJBHIFLHJLK onErrorToTitle)
 		{
-			int hotenCount;
+			//int hotenCount;
 
 			//0x168C4A4
 			m_isSuccess = false;
 			if(NHPDPKHMFEP.HHCJCDFCLOB.KBJJGEJAMOK())
 			{
-				bool done = false;
-				bool err = false;
+				//bool done = false;
+				//bool err = false;
 				//MenuScene.Instance.RaycastDisable();
 				TodoLogger.LogError(TodoLogger.MonthlyPass, "Co_RequestLoginBonusMonthlyPass");
 			}

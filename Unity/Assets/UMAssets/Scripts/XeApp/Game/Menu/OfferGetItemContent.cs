@@ -56,6 +56,8 @@ namespace XeApp.Game.Menu
 
 		public float Width { get { return layoutRoot.Width; } set { return; } } //0x152BAD4 0x152BB00
 
+		public bool Unused() { return normalAnimEndRate == 0 && rareAnimEndRate == 0; }
+
 		// RVA: 0x152BB04 Offset: 0x152BB04 VA: 0x152BB04
 		private void Start()
 		{

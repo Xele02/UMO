@@ -884,7 +884,6 @@ public class AMLGMLNGMFB_EventAprilFool : IKDICBBFBMI_EventBase
 						if (OLDFFDMPEBM_Quests.Count < c)
 							c = OLDFFDMPEBM_Quests.Count;
 						int a = 0;
-						int d = 0;
 						for(int i = 0; i < c; i++)
 						{
 							if(OLDFFDMPEBM_Quests[i].EALOBDHOCHP_Stat > 0)

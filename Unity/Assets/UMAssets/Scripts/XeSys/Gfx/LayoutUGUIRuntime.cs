@@ -432,6 +432,7 @@ namespace XeSys.Gfx
 		// public bool IsUpdate { get; set; } 0x1EFFE4C 0x1EFFEE4
 
 		//public ScriptableLayout debugLayout;
+		public bool Unused() { return m_uvlistPath == null && m_texturePath == null; }
 
 		// RVA: 0x1F0005C Offset: 0x1F0005C VA: 0x1F0005C
 		private void Awake()

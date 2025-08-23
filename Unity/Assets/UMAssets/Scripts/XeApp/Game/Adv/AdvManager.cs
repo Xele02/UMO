@@ -142,6 +142,8 @@ namespace XeApp.Game.Adv
 		private CriAtomExOutputAnalyzer exPlayerOutputAnalyzer; // 0xA4
 		private BgControl m_bgControl; // 0xA8
 
+		public bool Unused() { return m_isRunning; }
+
 		// RVA: 0xBC50CC Offset: 0xBC50CC VA: 0xBC50CC
 		private void Awake()
 		{
@@ -1566,7 +1568,7 @@ namespace XeApp.Game.Adv
 			if(isOk)
 			{
 				m_skipButton.interactable = false;
-				GameManager.FadeOut(0.4f);
+				GameManager.FadeOut(FADE_TIME);
 				if(SoundManager.Instance.voAdv.isPlaying)
 				{
 					SoundManager.Instance.voAdv.Stop();
@@ -1724,7 +1726,7 @@ namespace XeApp.Game.Adv
 			while(isWait)
 				yield return null;
 			unlockValkyrieManager.PushOkButtonHandler -= ok;
-			GameManager.FadeOut(0.4f);
+			GameManager.FadeOut(FADE_TIME);
 			yield return GameManager.Instance.WaitFadeYielder;
 			unlockValkyrieManager.Release();
 			Destroy(unlockValkyrieManager.gameObject);

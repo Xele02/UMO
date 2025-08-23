@@ -76,6 +76,8 @@ public class BBGDKLLEPIB
 	public OMIFMMJPMDJ OEPPEGHGNNO { get; set; }  // 0x20 KPEKONPJHCL LKCDOGAFPNM 0xF17894  NPJJMDFAIII 0xF1789C // Update percent callback
 	public OBHIGCFPKJN MAIHLKPEHJN { get; set; } // 0x24 EAIFOAGPGGH KCLBNOKEPIG 0xF178A4 OCIMGEFKKLM 0xF178AC // Error CB
 
+	public bool Unused() { return NDEJCDBHPLB == 0 && HGOIEGFBABK == 0; }
+
 	// // RVA: 0xF17748 Offset: 0xF17748 VA: 0xF17748
 	public bool KHJHKNLEOAB(long JHNMKKNEENE)
 	{
@@ -394,7 +396,6 @@ public class BBGDKLLEPIB
 			//goto LAB_00f1b828;
 			// To 4
 			}
-			break;
 		}
 	}
 

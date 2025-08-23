@@ -29,6 +29,8 @@ namespace XeApp.Game.Menu
 
 		// public bool IsLoaded { get; } 0x18B8964
 
+		public bool Unused() { return IsLoadedSerif && IsLoadedChara; }
+
 		// RVA: 0x18B8984 Offset: 0x18B8984 VA: 0x18B8984 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{

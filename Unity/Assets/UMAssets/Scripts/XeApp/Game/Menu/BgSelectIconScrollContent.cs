@@ -41,6 +41,8 @@ namespace XeApp.Game.Menu
 		//public int EpisodeID { get; } 0x1096510
 		//public RawImageEx SceneIconImage { get; } 0x1096518
 
+		public bool Unused() { return m_isCompatible; }
+
 		// RVA: 0x1096520 Offset: 0x1096520 VA: 0x1096520 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{

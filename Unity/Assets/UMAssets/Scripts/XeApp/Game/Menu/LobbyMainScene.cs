@@ -58,12 +58,14 @@ namespace XeApp.Game.Menu
 		private EventLobbyArgs CacheArgs; // 0xC0
 		private bool IsGotoNotDeco; // 0xC4
 		private bool IsDestroy; // 0xC5
-		private bool IsRequestGotoTitle; // 0xC7
+		new private bool IsRequestGotoTitle; // 0xC7
 		private bool IsNewsReportDirty; // 0xC8
 		private ProfilDateArgs m_returnArgs; // 0xCC
 		private bool IsAfterAutoUpdateAct; // 0xD0
 
 		private bool IsFirstLobby { get; set; } // 0xC6
+
+		public bool Unused() { return m_isMovieInitialize && series == SeriesAttr.Type.Delta; }
 
 		// RVA: 0x12A17A8 Offset: 0x12A17A8 VA: 0x12A17A8 Slot: 4
 		protected override void Awake()
@@ -1603,7 +1605,7 @@ namespace XeApp.Game.Menu
 		{
 			//0xD0AC38
 			m_lobbyFooter.IsButtonDisable(true);
-			bool success = false;
+			//bool success = false;
 			bool wait = false;
 			m_RaidLobbyController.PMCMAKBNJIL();
 			ANPBHCNJIDI.BNEIDPGIAFM d = new ANPBHCNJIDI.BNEIDPGIAFM();
@@ -1618,7 +1620,7 @@ namespace XeApp.Game.Menu
 			m_RaidLobbyController.HJNDLPNBBKF((NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE)m_raidSelect, d, () =>
 			{
 				//0xD08F84
-				success = true;
+				// success = true;
 				wait = true;
 				Debug.Log("StringLiteral_15454");
 			}, () =>

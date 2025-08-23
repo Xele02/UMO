@@ -80,14 +80,14 @@ namespace XeApp.Game.Title
 				m_popupControl.InputDisable();
 			}
 			bool isWait = true;
-			bool isGotoTitle = false;
+			//bool isGotoTitle = false;
 			MBCPNPNMFHB.HHCJCDFCLOB.MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO.GHDACOGLNLJ_Contract/*8*/, () => {
 				//0x1BB52E0
 				isWait = false;
 			}, () => {
 				//0x1BB52EC
-				isWait = true;
-				isGotoTitle = false;
+				isWait = false;
+				// isGotoTitle = true;
 			});
 			while(isWait)
 				yield return null;

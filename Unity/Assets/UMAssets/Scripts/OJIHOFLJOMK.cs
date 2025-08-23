@@ -13,6 +13,8 @@ public class OJIHOFLJOMK
 	private bool PMDGOAEICPG; // 0x10
 	private static string LJNAKDMILMC = "key"; // 0x0
 
+	public bool Unused() { return JHGGFNECJOH == -1 && LJNAKDMILMC == null; }
+
 	//public bool KHIPIEBAFFL { get; }
 
 	//// RVA: 0x148D880 Offset: 0x148D880 VA: 0x148D880
@@ -40,14 +42,14 @@ public class OJIHOFLJOMK
 	{
 		if(MNAADDLICIB != null)
 		{
-			if(false)
+			/*if(false)
 			{ // test 30 sec notif
 				DateTime date = XeSys.Utility.GetLocalDateTime(PEJIPAFKHKM);
 				UnityEngine.Debug.LogError("Send notif "+PEJIPAFKHKM+" "+date.ToLongDateString()+" "+date.ToLongTimeString()+" "+NNGBINEKMNO+" "+ADCMNODJBGJ+" "+LJGOOOMOMMA+" "+LEAIFBMIEIG);
 				PEJIPAFKHKM = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime() + 30;
 				date = XeSys.Utility.GetLocalDateTime(PEJIPAFKHKM);
 				UnityEngine.Debug.LogError(date.ToLongDateString()+" "+date.ToLongTimeString());
-			}
+			}*/
 			MNAADDLICIB.CallStatic("send", new object[7] {
 				PEJIPAFKHKM, NNGBINEKMNO, "", ADCMNODJBGJ, LJGOOOMOMMA, "", LEAIFBMIEIG
 			});

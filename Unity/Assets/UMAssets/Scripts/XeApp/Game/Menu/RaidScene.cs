@@ -68,6 +68,8 @@ namespace XeApp.Game.Menu
 			return m_raidController;
 		} } //0x181B62C
 
+		public bool Unused() { return m_showitemReceivePopup && m_loadingTicketGainedPopup && m_isEventChecked; }
+
 		// RVA: 0x181B6D4 Offset: 0x181B6D4 VA: 0x181B6D4 Slot: 29
 		protected override void InputEnable()
 		{

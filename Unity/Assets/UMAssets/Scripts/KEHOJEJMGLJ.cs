@@ -129,6 +129,8 @@ public class KEHOJEJMGLJ
 	public OMIFMMJPMDJ OEPPEGHGNNO { get; set; } // 0x1C KPEKONPJHCL LKCDOGAFPNM NPJJMDFAIII
 	public OBHIGCFPKJN MAIHLKPEHJN { get; set; } // 0x20 EAIFOAGPGGH KCLBNOKEPIG OCIMGEFKKLM
 
+	public bool Unused() { return NDEJCDBHPLB == 0; }
+
 	// // RVA: 0xE87F08 Offset: 0xE87F08 VA: 0xE87F08
 	public void IJBGPAENLJA(MonoBehaviour DANMJLOBLIE)
 	{
@@ -934,9 +936,9 @@ public class KEHOJEJMGLJ
 								string h = IFCHFDEDCGF_GetFileHash(md5, localPath);
 								TodoLogger.LogError(TodoLogger._Todo, "hash check disabled");
 								//if(h != afinfo.POEGMFKLFJG_Hash)
-								if(false) // UMO
+								/*if(false) // UMO, disable file timeout
 								{
-									if(fileKeepStatus != HODOGPOKOOJ.KMBJEEFHJOH.MCDCNJCJCAB/*2*/)
+									if(fileKeepStatus != HODOGPOKOOJ.KMBJEEFHJOH.MCDCNJCJCAB)
 									{
 										ICCMKHKNAMJ.Add(afinfo);
 										//LAB_00e8a99c
@@ -944,7 +946,7 @@ public class KEHOJEJMGLJ
 									}
 									//LAB_00e8a9ac
 									continue;
-								}
+								}*/
 							}
 							if(dbAsset != null)
 							{

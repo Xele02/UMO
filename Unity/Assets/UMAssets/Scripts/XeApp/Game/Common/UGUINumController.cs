@@ -41,6 +41,8 @@ namespace XeApp.Game.Common
 		private List<Image> m_imagesNum; // 0x3C
 		private List<Sprite> m_spliteListNum = new List<Sprite>(10); // 0x40
 
+		public bool Unused() { return ObjectNameDigits == null; }
+
 		// RVA: 0x1CD897C Offset: 0x1CD897C VA: 0x1CD897C
 		private void Awake()
 		{
@@ -108,7 +110,7 @@ namespace XeApp.Game.Common
 			}
 			if(m_animatorDigits.hasBoundPlayables)
 			{
-				m_animatorDigits.CrossFade(string.Format("D{0}", i), 0);
+				m_animatorDigits.CrossFade(string.Format(ObjectNameNum, i), 0);
 			}
 		}
 	}

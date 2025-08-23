@@ -737,7 +737,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB69CC8 Offset: 0xB69CC8 VA: 0xB69CC8
 		public IEnumerator LoadLayoutWindowR(Action callback)
 		{
-			bool isLoaded;
+			//bool isLoaded;
 
 			//0x1595920
 			if(layoutWindowR.Count < 1)
@@ -759,7 +759,7 @@ namespace XeApp.Game.Menu
 					layoutWindowR.Add(r.GetComponent<LayoutSNSTalkRight>());
 				}
 				UnityEngine.Object.Destroy(runtime.gameObject);
-				isLoaded = false;
+				//isLoaded = false;
 				for(int i = 0; i < layoutWindowR.Count; i++)
 				{
 					while (!layoutWindowR[i].IsLoaded())
@@ -774,7 +774,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB69D6C Offset: 0xB69D6C VA: 0xB69D6C
 		public IEnumerator LoadLayoutWindowL(Action callback)
 		{
-			bool isLoaded;
+			//bool isLoaded;
 
 			//0x15952FC
 			if(layoutWindowL.Count < 1)
@@ -795,7 +795,7 @@ namespace XeApp.Game.Menu
 					layoutWindowL.Add(r.GetComponent<LayoutSNSTalkLeft>());
 				}
 				UnityEngine.Object.Destroy(runtime.gameObject);
-				isLoaded = false;
+				//isLoaded = false;
 				for (int i = 0; i < layoutWindowL.Count; i++)
 				{
 					while (!layoutWindowL[i].IsLoaded())
@@ -810,7 +810,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB69E10 Offset: 0xB69E10 VA: 0xB69E10
 		public IEnumerator LoadLayoutHeadline(Action callback)
 		{
-			bool isLoaded;
+			//bool isLoaded;
 
 			//0x1592458
 			if(layoutHeadline.Count < 1)
@@ -831,7 +831,7 @@ namespace XeApp.Game.Menu
 					layoutHeadline.Add(r.GetComponent<LayoutSNSHeadline>());
 				}
 				UnityEngine.Object.Destroy(runtime.gameObject);
-				isLoaded = false;
+				//isLoaded = false;
 				for (int i = 0; i < layoutHeadline.Count; i++)
 				{
 					while (!layoutHeadline[i].IsLoaded())

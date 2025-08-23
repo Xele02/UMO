@@ -19,6 +19,8 @@ namespace XeApp.Game.Menu
 
 		public SwapScrollList Scroll { get { return m_scrollList; } } //0x1BCFDF8
 
+		public bool Unused() { return m_IsInialize; }
+
 		// RVA: 0x1BCFE00 Offset: 0x1BCFE00 VA: 0x1BCFE00 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{

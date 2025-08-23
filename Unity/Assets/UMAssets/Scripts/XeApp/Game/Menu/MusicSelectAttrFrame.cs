@@ -48,6 +48,8 @@ namespace XeApp.Game.Menu
 		private TextureListSupport m_texListSupport; // 0x20
 		private TexUVListManager m_uvMan; // 0x24
 
+		public bool Unused() { return s_frameSLiveUvFormat == null; }
+
 		// RVA: 0x1054F34 Offset: 0x1054F34 VA: 0x1054F34
 		public void SetAttribute(GameAttribute.Type attr)
 		{

@@ -19,6 +19,8 @@ public class IIDJLAEDMPI
 
 	// public bool BIOFMLDLNKD { get; } // ??
 
+	public bool Unused() { return OAJDFDHDMEN == 0 && NILMMFMIBMF == ""; }
+
 	// // RVA: 0x12038BC Offset: 0x12038BC VA: 0x12038BC
 	// public bool LEAPLHLPGDB() { }
 

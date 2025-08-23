@@ -365,6 +365,8 @@ namespace XeApp.Game
 				}
 				UnityEngine.Screen.orientation = ScreenOrientation.LandscapeLeft;
 			}
+#else
+			if(needUpdateScreen) {}
 #endif
 			yield return null;
 			Initialize_ScreenAndSystemLayout();

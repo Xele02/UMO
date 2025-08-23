@@ -347,25 +347,18 @@ namespace XeApp.Game.Common
 			{
 				case CategoryId.MENU_SE:
 					return CriAtom.GetCategoryVolume(0);
-					break;
 				case CategoryId.MENU_VOICE:
 					return CriAtom.GetCategoryVolume(1);
-					break;
 				case CategoryId.MENU_BGM:
 					return CriAtom.GetCategoryVolume(2);
-					break;
 				case CategoryId.GAME_SE:
 					return CriAtom.GetCategoryVolume(10);
-					break;
 				case CategoryId.GAME_VOICE:
 					return CriAtom.GetCategoryVolume(12);
-					break;
 				case CategoryId.GAME_BGM:
 					return CriAtom.GetCategoryVolume(13);
-					break;
 				case CategoryId.GAME_NOTES:
 					return CriAtom.GetCategoryVolume(14);
-					break;
 				default: break;
 			}
 			return 0;

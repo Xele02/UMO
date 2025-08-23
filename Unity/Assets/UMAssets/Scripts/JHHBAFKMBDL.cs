@@ -14,6 +14,8 @@ public class JHHBAFKMBDL
 	private Func<bool> HDGDDJDCNGE; // 0x8
 	private static string[] ECLAOLBGCDD = new string[6] {"<color=red>\n(", ")</color>", "saka_error", "0000", "update_error", JpStringLiterals.StringLiteral_11992}; // 0xC
 
+	public bool Unused() { return KKOBJLMKOJH; }
+
 	// // RVA: 0xB1DEA0 Offset: 0xB1DEA0 VA: 0xB1DEA0
 	public void IJBGPAENLJA_Start(MonoBehaviour DANMJLOBLIE)
 	{

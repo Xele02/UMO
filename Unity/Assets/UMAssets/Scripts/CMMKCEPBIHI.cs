@@ -551,7 +551,6 @@ public static class CMMKCEPBIHI
 	// // RVA: 0x1088C18 Offset: 0x1088C18 VA: 0x1088C18
 	private static bool FLPKCFDANMK_DivaMatchTarget(FFHPBEPOMAK_DivaInfo FDBOPFEOENF_DivaInfo, CenterSkillTarget.Type GJLFANGDGCL_SkillTargetType, int ABBDKBOIBCG_DivaIdx)
 	{
-		bool res = false;
 		switch(GJLFANGDGCL_SkillTargetType)
 		{
 			case CenterSkillTarget.Type.AllTeam:
@@ -570,13 +569,11 @@ public static class CMMKCEPBIHI
 			case CenterSkillTarget.Type.SeriresAttr4:
 				return FDBOPFEOENF_DivaInfo.AIHCEGFANAM_Serie == 4;
 		}
-		return res;
 	}
 
 	// // RVA: 0x108922C Offset: 0x108922C VA: 0x108922C
 	private static bool FJHLLHFGICG_SceneMatchTarget(GCIJNCFDNON_SceneInfo COIODGJDJEJ_SceneInfo, CenterSkillTarget.Type GJLFANGDGCL_SkillTargetType, int ABBDKBOIBCG_DivaIdx, int HBMFKPPOPMK_SceneIdx)
 	{
-		bool res = false;
 		switch(GJLFANGDGCL_SkillTargetType)
 		{
 			case CenterSkillTarget.Type.AllTeam:
@@ -603,7 +600,6 @@ public static class CMMKCEPBIHI
 			case CenterSkillTarget.Type.SeriresAttr4:
 				return (int)COIODGJDJEJ_SceneInfo.AIHCEGFANAM_SceneSeries == 4;
 		}
-		return res;
 	}
 
 	// // RVA: 0x1088D0C Offset: 0x1088D0C VA: 0x1088D0C

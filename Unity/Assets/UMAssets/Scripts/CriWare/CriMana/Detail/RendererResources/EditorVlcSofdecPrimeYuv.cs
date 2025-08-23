@@ -56,6 +56,8 @@ namespace CriWare.CriMana.Detail
         private bool isStoppingForSeek; // 0x7A
         private bool isStartTriggered = true; // 0x7B
 
+        public bool Unused() { return isStartTriggered; }
+
         // // RVA: 0x294F81C Offset: 0x294F81C VA: 0x294F81C
         public RendererResourceEditorVlcSofdecPrimeYuv(int playerId, MovieInfo movieInfo, bool additive, Shader userShader)
         {

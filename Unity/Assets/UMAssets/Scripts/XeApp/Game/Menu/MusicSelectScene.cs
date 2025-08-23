@@ -37,6 +37,8 @@ namespace XeApp.Game.Menu
 		protected override MusicDataList currentMusicList { get { return m_filteredMusicDataList[categoryId - 1]; } } //0x167F284
 		public int categoryId { get; set; } // 0x130
 
+		public bool Unused() { return m_isShowBanner && m_showScoreRankingPopup; }
+
 		// // RVA: 0x167F204 Offset: 0x167F204 VA: 0x167F204 Slot: 32
 		protected override MusicDataList GetMusicList(int i)
 		{
@@ -70,7 +72,7 @@ namespace XeApp.Game.Menu
 				NKGJPJPHLIF.DPCCNOCAHGC = false;
 			}
 			this.StartCoroutineWatched(Co_SetupBg());
-			bool changeUi = true;
+			//bool changeUi = true;
 			MenuScene.Instance.LobbyButtonControl.OnStartTutorial = () => {
 				//0x1685B28
 				TodoLogger.LogError(TodoLogger.OldMusicSelect, "OnPreSetCanvas");
@@ -360,13 +362,14 @@ namespace XeApp.Game.Menu
 			m_eventIndex = 0;
 			m_eventTicketId = 0;
 			NKOBMDPHNGP_EventRaidLobby d = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby/*13*/, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as NKOBMDPHNGP_EventRaidLobby;
-			bool b = false;
+			//bool b = false; used in one todologger later
 			if(d == null)
 			{
-				b = false;
+				//
 			}
 			else
 			{
+				//b = true;
 				if(d.AKNOOLKMEGJ())
 				{
 					m_eventTicketId = NKOBMDPHNGP_EventRaidLobby.ADPMLOEOAFD_GetTicketId();

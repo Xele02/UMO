@@ -27,6 +27,8 @@ namespace XeApp.Game.Menu
 
 		// public bool IsInitialized { get; } 0x159EFA4
 
+		public bool Unused() { return m_isInitialized; }
+
 		// RVA: 0x159EFAC Offset: 0x159EFAC VA: 0x159EFAC
 		public SceneCardTextureCache(int capacity = 1) : base(capacity)
 		{

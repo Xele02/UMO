@@ -46,11 +46,12 @@ namespace UdonLib
 		{
 #if UNITY_EDITOR
 			return 999999999;
-#endif
+#else
 			AndroidJavaObject c = new AndroidJavaObject("android.os.StatFs", new object[1] { Application.temporaryCachePath });
 			long l = c.Call<long>("getAvailableBlocksLong", Array.Empty<object>());
 			long l2 = c.Call<long>("getBlockSizeLong", Array.Empty<object>());
 			return l * l2; //?
+#endif
 		} } //0xE09C54
 		public static int ApiLevel { get
 		{
@@ -171,7 +172,7 @@ namespace UdonLib
 		{
 #if UNITY_EDITOR
 			return true;
-#endif
+#else
 			bool result = false;
 			if(ApiLevel < 23)
 			{
@@ -193,6 +194,7 @@ namespace UdonLib
 				});
 			}
 			return result;
+#endif
 		}
 
 		// // RVA: 0xE0A340 Offset: 0xE0A340 VA: 0xE0A340
@@ -233,8 +235,9 @@ namespace UdonLib
 		{
 #if UNITY_EDITOR
 			return true;
-#endif
+#else
 			return new AndroidJavaClass("jp.co.xeen.xeapp.UdonUtils").CallStatic<bool>("checkCameraHardware");
+#endif
 		}
 	}
 }

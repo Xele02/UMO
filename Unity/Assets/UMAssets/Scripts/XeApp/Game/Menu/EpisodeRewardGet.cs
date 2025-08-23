@@ -24,6 +24,8 @@ namespace XeApp.Game.Menu
 		private int m_receiveCount; // 0x2C
 		private const string BundleName = "ly/052.xab";
 
+		public bool Unused() { return m_reward_index == 0; }
+
 		// RVA: 0xEFE620 Offset: 0xEFE620 VA: 0xEFE620
 		private void Start()
 		{

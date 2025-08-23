@@ -44,6 +44,8 @@ namespace XeApp.Game.DownLoad
 
 		//private AbsoluteLayout m_progressAnim { get; set; } 0x982084 0x98208C
 
+		public bool Unused() { return m_currentQuestionaryType == 0; }
+
 		// RVA: 0x982094 Offset: 0x982094 VA: 0x982094 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{

@@ -51,6 +51,7 @@ namespace XeApp.Game
 			m_closeEnd = true;
 			TapGuardOFF();
 			#else
+			if(IsTouchInputField) {} // Unused warning delete
 			if(m_closeEnd)
 			{
 				m_closeEnd = false;

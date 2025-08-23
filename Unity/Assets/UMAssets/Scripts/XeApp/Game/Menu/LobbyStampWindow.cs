@@ -39,6 +39,8 @@ namespace XeApp.Game.Menu
 		public Action OnClickStampEditButton { get; set; } // 0x44
 		public Action<int, int> OnClickStamp { get; set; } // 0x48
 
+		public bool Unused() { return isSendStampSucess; }
+
 		//// RVA: 0xD21770 Offset: 0xD21770 VA: 0xD21770
 		private void CreateStampDataList()
 		{

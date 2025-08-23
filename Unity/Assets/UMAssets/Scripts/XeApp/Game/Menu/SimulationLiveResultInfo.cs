@@ -34,6 +34,8 @@ namespace XeApp.Game.Menu
 		public Action OnClickMusicButton { set { m_OnClickMusicCallback = value; } } //0xC4E700
 		public Action OnClickAnimeStoreButton { set { m_OnClickAnimeStoreCallback = value; } } //0xC4E708
 
+		public bool Unused() { return m_isLoadingImage; }
+
 		// RVA: 0xC4E710 Offset: 0xC4E710 VA: 0xC4E710 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{

@@ -26,6 +26,8 @@ namespace XeApp.Game.Menu
 
 		public Action OnClickButtonListener { private get; set; } // 0x20
 
+		public bool Unused() { return m_isEntered; }
+
 		// // RVA: 0xBE159C Offset: 0xBE159C VA: 0xBE159C
 		private void Awake()
 		{

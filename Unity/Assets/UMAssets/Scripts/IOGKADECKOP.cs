@@ -299,7 +299,7 @@ public class IOGKADECKOP
 	{
         //0xA0F2C4
 		bool BEKAMBBOLBO = false;
-		bool CNAIDEAFAAM = false;
+		//bool CNAIDEAFAAM = false;
 		AssetBundleManager.isTutorialNow = false;
 		if(!OKDMEMPECDO)
 		{
@@ -309,7 +309,7 @@ public class IOGKADECKOP
 			}, () => {
 				// 0xA08F9C
 				BEKAMBBOLBO = true;
-				CNAIDEAFAAM = true;
+				//CNAIDEAFAAM = true;
 			}, true, false);
 			while(!BEKAMBBOLBO)
 			{
@@ -319,7 +319,7 @@ public class IOGKADECKOP
 		OKDMEMPECDO = false;
 		
 		BEKAMBBOLBO = false;
-		CNAIDEAFAAM = false;
+		//CNAIDEAFAAM = false;
 		NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.OLBAIKLLIFE = true;
 		DOKOHKJIDBO.HHCJCDFCLOB.DBEPFLFHAFH_RequestMaster(false, () => {
 			// 0xA08FA8
@@ -327,7 +327,7 @@ public class IOGKADECKOP
 		}, () => {
 			// 0xA08FB4
 			BEKAMBBOLBO = true;
-			CNAIDEAFAAM = true;
+			//CNAIDEAFAAM = true;
 		});
 		while(!BEKAMBBOLBO)
 		{
@@ -335,7 +335,7 @@ public class IOGKADECKOP
 		}
 		
 		BEKAMBBOLBO = false;
-		CNAIDEAFAAM = false;
+		//CNAIDEAFAAM = false;
 		NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.OLBAIKLLIFE = true;
 		NKGJPJPHLIF.HHCJCDFCLOB.LLMEJNALPJD(false, () => {
 			// 0xA08FC0
@@ -343,7 +343,7 @@ public class IOGKADECKOP
 		}, () => {
 			// 0xA08FCC
 			BEKAMBBOLBO = true;
-			CNAIDEAFAAM = true;
+			//CNAIDEAFAAM = true;
 		}, false);
 		while(!BEKAMBBOLBO)
 		{
@@ -480,7 +480,7 @@ public class IOGKADECKOP
 		if(!AppEnv.IsCBT())
 		{
 			bool BEKAMBBOLBO_IsDone = false;
-			bool GIGHIFOIMNA = false;
+			//bool GIGHIFOIMNA = false;
 			bool DOGDHKIEBJA_IsError = false;
 			HDEEBKIFLNI.HHCJCDFCLOB.NLCBOJBAJFB_GetLinkageStatuses(() =>
 			{
@@ -490,7 +490,7 @@ public class IOGKADECKOP
 			{
 				//0xA09090
 				BEKAMBBOLBO_IsDone = true;
-				GIGHIFOIMNA = true;
+				//GIGHIFOIMNA = true;
 			}, () =>
 			{
 				//0xA0909C

@@ -18,6 +18,8 @@ public class DecorationMapNameController : MonoBehaviour
 	public Action NoChangeMapNameCallback; // 0x28
 	public Action<bool> DecoTapGuardCallback; // 0x2C
 
+	public bool Unused() { return m_IsWait; }
+
 	// RVA: 0x123F984 Offset: 0x123F984 VA: 0x123F984
 	private void Awake()
 	{

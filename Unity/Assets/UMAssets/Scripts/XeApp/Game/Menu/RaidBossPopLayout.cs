@@ -17,6 +17,8 @@ namespace XeApp.Game.Menu
 		private AbsoluteLayout m_layoutRank; // 0x24
 		private bool m_isShow; // 0x28
 
+		public bool Unused() { return m_isShow; }
+
 		// RVA: 0x145E140 Offset: 0x145E140 VA: 0x145E140 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{

@@ -103,6 +103,8 @@ namespace XeApp.Game.Menu
 		public EKLNMHFCAOI.FKGCBLHOOCL_Category ItemType { get; private set; } // 0xA8
 		public int ItemId { get; private set; } // 0xAC
 
+		public bool Unused() { return m_is_line_update && m_is_comp; }
+
 		// RVA: 0x127F7A8 Offset: 0x127F7A8 VA: 0x127F7A8 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{

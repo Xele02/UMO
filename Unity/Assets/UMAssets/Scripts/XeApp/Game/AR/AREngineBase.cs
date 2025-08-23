@@ -140,7 +140,7 @@ namespace XeApp.Game.AR
         {
 #if UNITY_EDITOR
             return true;
-#endif
+#else
             long l;
             if(Application.platform == RuntimePlatform.IPhonePlayer)
             {
@@ -151,6 +151,7 @@ namespace XeApp.Game.AR
                 l = AndroidUtils.GetAvailableStorageKB;
             }
             return kb < l;
+#endif
         }
 
         // RVA: 0x11CF498 Offset: 0x11CF498 VA: 0x11CF498 Slot: 21

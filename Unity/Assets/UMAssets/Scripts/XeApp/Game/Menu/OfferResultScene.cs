@@ -47,6 +47,8 @@ namespace XeApp.Game.Menu
 		private bool IsEndRelease; // 0xA5
 		private bool IsEntryAssetLoaded; // 0xA6
 
+		public bool Unused() { return m_IsRady; }
+
 		//// RVA: 0x1856274 Offset: 0x1856274 VA: 0x1856274
 		private void InitializeFinishCameraData()
 		{
@@ -280,7 +282,7 @@ namespace XeApp.Game.Menu
 			while (!isSuccess)
 				yield return null;
 			bool done = false;
-			bool err = false;
+			//bool err = false;
 			PBJPACKDIIB.NPIJAIOCACL(() =>
 			{
 				//0x18592D4
@@ -289,7 +291,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x18592E0
 				done = true;
-				err = true;
+				//err = true;
 			});
 			while (!done)
 				yield return null;

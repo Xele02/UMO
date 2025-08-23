@@ -66,6 +66,8 @@ public class AMOCLPHDGBP
 
 	public EJHPIMANJFP HFCNOINEPLB { get { return EJHPIMANJFP.HHCJCDFCLOB; } } // IHHPFGILBNE 0xCE9480
 
+	public bool Unused() { return PPKOLFEBLCF && NHOAJCLAEJD && OCNNKKPBDLL && LPEJBOIONDP && OHBJPKPCIEB == SakashoErrorId.UNKNOWN; }
+
 	// // RVA: 0xCE9488 Offset: 0xCE9488 VA: 0xCE9488
 	private void FCPBCDOKOPD(FINNDKJENCG PPFNGGCBJKC_Id, string IBDJFHFIIHN = "")
 	{
@@ -199,10 +201,10 @@ public class AMOCLPHDGBP
 			//LAB_00d4b224
 			if(RuntimeSettings.CurrentSettings.RemoveCrystalLimit || MEANCEOIMGE.FDGKHGFMCJJ + CIOECGOMILE.HHCJCDFCLOB.JBEKNFEGFFI().KCKBGALKNMA_NumPaidCrystal < 10000)
 			{
-				bool AAIOCNJGNEN = false;
+				//bool AAIOCNJGNEN = false;
 				//LAB_00d4b344
 				int a1 = 0;
-				AAIOCNJGNEN = false;
+				//AAIOCNJGNEN = false;
 				PNLGHFCFPPK = MEANCEOIMGE.DMFHKJBCFBK();
 				if(PNLGHFCFPPK != null)
 				{

@@ -20,6 +20,8 @@ namespace XeApp.Game.Common
 			return isLoaded;
 		} private set {} } //0x1118AB4 0x1118AD8
 
+		public bool Unused() { return CutinLimit == 0; }
+
 		// // RVA: 0x111878C Offset: 0x111878C VA: 0x111878C
 		public void OnDestroy()
 		{

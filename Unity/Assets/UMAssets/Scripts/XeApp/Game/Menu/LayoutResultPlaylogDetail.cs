@@ -67,6 +67,7 @@ namespace XeApp.Game.Menu
 		//public LayoutResultPlaylogDetailSkill SkillLayout { get; } 0x1D01A64
 
 		// RVA: 0x1D01A6C Offset: 0x1D01A6C VA: 0x1D01A6C Slot: 5
+		public bool Unused() { return SKILL_COUNT == 0; }
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
 			m_ChangeGraphAnim = layout.FindViewByExId("sw_log_detail_swtbl_log_indication") as AbsoluteLayout;

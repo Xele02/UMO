@@ -39,6 +39,8 @@ namespace XeApp.Game.Menu
 
 		public ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.MMALELPFEBH_UserList sortSaveData { get { return GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.ACCNCHJBDHM_UserList; } } //0x129997C
 
+		public bool Unused() { return m_groupName == null; }
+
 		// RVA: 0x1299A64 Offset: 0x1299A64 VA: 0x1299A64 Slot: 4
 		protected override void Awake()
 		{

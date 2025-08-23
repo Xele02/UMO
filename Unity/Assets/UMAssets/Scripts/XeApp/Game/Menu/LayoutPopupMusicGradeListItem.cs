@@ -39,6 +39,8 @@ namespace XeApp.Game.Menu
 
 		//public ECEPJHGMGBJ View { get; } 0x1733ABC
 
+		public bool Unused() { return m_initialized; }
+
 		//// RVA: 0x1733AC4 Offset: 0x1733AC4 VA: 0x1733AC4
 		//public bool IsJacketLoaded() { }
 

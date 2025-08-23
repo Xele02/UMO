@@ -24,6 +24,8 @@ namespace XeApp.Core
 		public static string BaseAssetBundleInstallPath { get; set; } // 0x20
 		public static string StreamingAssetBundlePath { get; set; } // 0x24
 
+		public bool Unused() { return m_AssetBundleManifest == null; }
+
 		// // RVA: 0xE12174 Offset: 0xE12174 VA: 0xE12174
 		public static string GetPlatformName()
 		{

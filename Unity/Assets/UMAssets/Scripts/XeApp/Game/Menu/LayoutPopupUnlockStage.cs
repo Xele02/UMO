@@ -35,6 +35,8 @@ namespace XeApp.Game.Menu
 			new FontSize() { shortFontSize = 30, longFontSize = 20, shortTextLength = 15, longTextLength = 34 }
 		}; // 0x34
 
+		public bool Unused() { return m_isClosed; }
+
 		// RVA: 0x1792CC4 Offset: 0x1792CC4 VA: 0x1792CC4
 		public void SetStatus(PopupUnlock.UnlockInfo info)
 		{

@@ -120,6 +120,8 @@ namespace XeSys.Gfx
 		public AbsoluteLayout Root { get { return m_Root; } } //0x2049F8C
 		// private Dictionary<string, string> TmpAttDic { get; }
 
+		public bool Unused() { return lineSpaceBase == 0 && TateScrollStr == null; }
+
 		// RVA: 0x2049F94 Offset: 0x2049F94 VA: 0x2049F94
 		public Layout() : this(false)
 		{

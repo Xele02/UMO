@@ -115,7 +115,7 @@ public class JDDGPJDKHNE
 		}
 		TodoLogger.LogError(TodoLogger.UMOSkip, "Skip log event");
 		return;
-		GBAMMLEAIOF a = new GBAMMLEAIOF();
+		/*GBAMMLEAIOF a = new GBAMMLEAIOF();
 		a.KHEKNNFCAOI_Init(KAPMOPMDHJE,JIBNPJCIALH, LAFGAPBDKML);
 		if(a.EJJEHEHFMGO.Length < 64001)
 		{
@@ -128,7 +128,7 @@ public class JDDGPJDKHNE
 			BBMBNCPEAHC_EventsToSend.MGJKEJHEBPO_Event.Add(a);
 			DGKBPJBILIK = true;
 			PJDLAMLLCPM = true;
-		}
+		}*/
 	}
 
 	// // RVA: 0x1C32048 Offset: 0x1C32048 VA: 0x1C32048

@@ -624,7 +624,7 @@ namespace XeApp.Game.Menu
 			bool isDone = false;
 			bool isExcess = false;
 			bool isError = false;
-			bool isAlreadySent = false;
+			//bool isAlreadySent = false;
 			if(NKGJPJPHLIF.HHCJCDFCLOB.DPJBHHIHJJK)
 			{
 				yield return this.StartCoroutineWatched(DecoScene.Co_UpdateDirtyTime());
@@ -648,7 +648,7 @@ namespace XeApp.Game.Menu
 			}, () =>
 			{
 				//0x11D9404
-				isAlreadySent = true;
+				//isAlreadySent = true;
 				isDone = true;
 			}, () =>
 			{

@@ -41,6 +41,8 @@ namespace XeApp.Game.Menu
 
 		public Action<int> onClickButton { private get; set; } // 0x3C
 
+		public bool Unused() { return m_isEntered; }
+
 		// // RVA: 0x144DA44 Offset: 0x144DA44 VA: 0x144DA44
 		// public void TryEnter(bool line6Mode) { }
 

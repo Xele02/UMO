@@ -38,6 +38,8 @@ namespace XeApp.Game.Menu
 		public Action OnCaptureClickButton { get; set; } // 0x38
 		public Action OnClickLogDisableButton { get; set; } // 0x3C
 
+		public bool Unused() { return buttonState; }
+
 		// RVA: 0x154C714 Offset: 0x154C714 VA: 0x154C714 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{

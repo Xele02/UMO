@@ -90,6 +90,8 @@ namespace XeApp.Game.RhythmGame
 		public bool isEnableCutin { get; set; } // 0xA9
 		public bool isShowNotes { get; set; } // 0xAA
 
+		public bool Unused() { return m_isSelectedPause; }
+
 		//// RVA: 0x9A92EC Offset: 0x9A92EC VA: 0x9A92EC Slot: 17
 		public void Initialize()
 		{

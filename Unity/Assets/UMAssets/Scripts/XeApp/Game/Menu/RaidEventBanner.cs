@@ -56,6 +56,8 @@ namespace XeApp.Game.Menu
 
 		public Action onClickBanner { private get; set; } // 0x60
 
+		public bool Unused() { return m_music_event_remain_prefix == null && m_music_event_remain_time == null && m_isShow; }
+
 		// // RVA: 0x1BCE5EC Offset: 0x1BCE5EC VA: 0x1BCE5EC
 		// public void TryEnter() { }
 

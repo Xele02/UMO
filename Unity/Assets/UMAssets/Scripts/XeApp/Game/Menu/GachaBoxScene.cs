@@ -229,7 +229,7 @@ namespace XeApp.Game.Menu
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 				};
 				s.SetParent(parent);
-				bool done = false;
+				//bool done = false;
 				PopupWindowManager.Show(s, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 				{
 					//0xEDE670
@@ -237,7 +237,7 @@ namespace XeApp.Game.Menu
 				}, null, null, null, true, true, false, null, () =>
 				{
 					//0xEDE76C
-					done = true;
+					// done = true;
 				});
 			}
 			else
@@ -273,7 +273,7 @@ namespace XeApp.Game.Menu
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 			};
-			bool done = false;
+			//bool done = false;
 			PopupWindowManager.Show(s, (PopupWindowControl ctrl, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{
 				//0xEDE674
@@ -281,7 +281,7 @@ namespace XeApp.Game.Menu
 			}, null, null, null, true, true, false, null, () =>
 			{
 				//0xEDE778
-				done = true;
+				//done = true;
 			});
 		}
 

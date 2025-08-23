@@ -752,6 +752,8 @@ namespace Cryptor
             static double   tp59 = 2048.0 * 65536.0 * 65536.0 * 65536.0;
             static double   tp76 = 4096.0 * 65536.0 * 65536.0 * 65536.0 * 65536.0;
 
+            public bool Unused() { return tm07 == 0 && tm24 == 0 && tp17 == 0 && tp59 == 0 && tp76 == 0; }
+
             public static void UIntToByte(uint val, byte[] array, int offset)
             {
                 array[offset] = (byte)(val & 0xff);

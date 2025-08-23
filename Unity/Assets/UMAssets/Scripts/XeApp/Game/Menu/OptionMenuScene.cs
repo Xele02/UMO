@@ -34,6 +34,8 @@ namespace XeApp.Game.Menu
 		private AccountRemoveTextWindow m_accountRemoveTextWindow; // 0x80
 		private bool m_isLoadedAccountLayout; // 0x84
 
+		public bool Unused() { return forceScrollChangeValue == 0; }
+
 		// RVA: 0xDD6C08 Offset: 0xDD6C08 VA: 0xDD6C08 Slot: 5
 		protected override void Start()
 		{

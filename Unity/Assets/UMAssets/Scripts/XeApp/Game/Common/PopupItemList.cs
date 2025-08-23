@@ -154,6 +154,8 @@ namespace XeApp.Game.Common
 
 		public Transform Parent { get { return MenuScene.Instance.transform; } } //0xAFCDA0
 
+		public bool Unused() { return m_dispItemType == ItemType.Growth; }
+
 		// RVA: 0xAFCE3C Offset: 0xAFCE3C VA: 0xAFCE3C
 		private void Awake()
 		{

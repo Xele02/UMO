@@ -294,7 +294,7 @@ namespace XeApp.Game.Menu
 			bool success = false;
 			bool isDone = false;
 			bool inList = false;
-			bool error = false;
+			//bool error = false;
 			CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.LJLKGPDFEAD_IsBlacklisted(m_ChatPlayerId, () =>
 			{
 				//0xC55980
@@ -309,7 +309,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xC55998
 				isDone = true;
-				error = true;
+				//error = true;
 			}, (CACGCMBKHDI_Request act) =>
 			{
 				//0xC559A8
@@ -463,7 +463,7 @@ namespace XeApp.Game.Menu
 			m_chatContller.OBKGEDCKHHE();
 			bool success = false;
 			bool isDone = false;
-			bool error = false;
+			//bool error = false;
 			bool inList = false;
 			CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.LJLKGPDFEAD_IsBlacklisted(m_ChatPlayerId, () =>
 			{
@@ -479,7 +479,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xC55CFC
 				isDone = true;
-				error = true;
+				//error = true;
 			}, (CACGCMBKHDI_Request act) =>
 			{
 				//0xC55D0C
@@ -519,7 +519,7 @@ namespace XeApp.Game.Menu
 		{
 			//0xC58D34
 			bool wait = false;
-			bool error = false;
+			//bool error = false;
 			bool success = false;
 			m_chatContller.MFFPEIEMGGM();
 			ANPBHCNJIDI.BNEIDPGIAFM data = new ANPBHCNJIDI.BNEIDPGIAFM();
@@ -544,7 +544,7 @@ namespace XeApp.Game.Menu
 			}, () =>
 			{
 				//0xC55F2C
-				error = true;
+				//error = true;
 				wait = true;
 			});
 			while (!wait)

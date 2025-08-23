@@ -12,6 +12,8 @@ namespace XeApp
 		private bool m_isAutoZoomOut; // 0x24
 		private float m_autoZoomTimer; // 0x28
 
+		public bool Unused() { return m_autoZoomTimer == 0 && m_isAutoZoomOut; }
+
 		// RVA: 0xBB53E0 Offset: 0xBB53E0 VA: 0xBB53E0
 		public DecorationZoomController(List<ControlData> settings, DecorationZoomControllerArgs args) : base(settings, args)
 		{

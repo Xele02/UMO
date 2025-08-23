@@ -416,7 +416,7 @@ namespace XeApp.Game.Menu
 			bool isDone = false;
 			bool isExcess = false;
 			bool isError = false;
-			bool isAlreadySent = false;
+			//bool isAlreadySent = false;
 			int _itemId = 0;
 			int _itemCount = 0;
 			int _sentCount = 0;
@@ -442,7 +442,7 @@ namespace XeApp.Game.Menu
 				}, () =>
 				{
 					//0x11D2E84
-					isAlreadySent = true;
+					//isAlreadySent = true;
 					isDone = true;
 				}, () =>
 				{

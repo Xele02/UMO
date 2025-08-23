@@ -1734,7 +1734,6 @@ public class KDHGBOOECKC
 												a5 = n.NONBCCLGBAO_Hit;
 												JFFFPPPPNGK += n.EHMLAAHLNMN;
 											}
-											int a6 = 0;
 											if (DGGBOFDCOLG == BOPFPIHGJMD.HBJMIJIOCAM.JIOPJDJBLFK_1)
 												res += a5 + ((i == 0 ? a1 : a2) * valk.NONBCCLGBAO_Hit) / 100;
 											else if(DGGBOFDCOLG == BOPFPIHGJMD.HBJMIJIOCAM.FMHLGHDKJBC_0)
@@ -2206,7 +2205,6 @@ public class KDHGBOOECKC
 	// // RVA: 0x102FDE0 Offset: 0x102FDE0 VA: 0x102FDE0
 	public int DOBEIMMEHJF(List<int> NNDGIAEFMOG)
 	{
-		int a;
 		if (NNDGIAEFMOG.Count < 1)
 			return -1;
 		int total = 0;

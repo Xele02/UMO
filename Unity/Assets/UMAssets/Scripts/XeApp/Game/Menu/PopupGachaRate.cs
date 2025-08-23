@@ -77,6 +77,8 @@ namespace XeApp.Game.Menu
 		private List<GachaRateInfo> currentInfoList { get; set; } // 0x68
 		//public RectTransform scrollTrans { get; } 0x17A20AC
 
+		public bool Unused() { return m_selectStepIndex == 0; }
+
 		// RVA: 0x17A1F14 Offset: 0x17A1F14 VA: 0x17A1F14
 		private void Awake()
 		{

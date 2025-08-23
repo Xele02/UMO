@@ -99,6 +99,8 @@ namespace XeApp.Game.Menu
 		private eMode m_sceneType = eMode.MusicSelect; // 0x6C
 		private int m_firstStampIndex = -1; // 0x70
 
+		public bool Unused() { return m_sceneType == eMode.None; }
+
 		//// RVA: 0x15DDAD0 Offset: 0x15DDAD0 VA: 0x15DDAD0
 		private void SwitchStampAnim(int arrayIndex, eStampStatus status)
 		{

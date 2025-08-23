@@ -34,6 +34,8 @@ namespace XeApp.Native
         // public static bool isExistCopyAsset { get; } 0x2F94550
         // public static int abiType { get; } 0x2F94D14
 
+        public bool Unused() { return isExistCopyAsset_ && secureVer_ == 0 && map_url == ""; }
+
         // // RVA: 0x2F93E50 Offset: 0x2F93E50 VA: 0x2F93E50
         private static void Init()
         {

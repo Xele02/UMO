@@ -896,7 +896,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 			}
 			bool done = false;
-			bool err = false;
+			//bool err = false;
 			PBJPACKDIIB.NPIJAIOCACL(() =>
 			{
 				//0x186D900
@@ -905,7 +905,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x186D90C
 				done = true;
-				err = true;
+				//err = true;
 			});
 			while (!done)
 				yield return null;

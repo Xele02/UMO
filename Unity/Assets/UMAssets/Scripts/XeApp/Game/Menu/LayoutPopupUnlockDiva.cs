@@ -30,6 +30,8 @@ namespace XeApp.Game.Menu
 		private bool m_isClosed; // 0x39
 		private List<IEnumerator> m_animationList = new List<IEnumerator>(8); // 0x3C
 
+		public bool Unused() { return m_isClosed; }
+
 		// RVA: 0x178E770 Offset: 0x178E770 VA: 0x178E770
 		public void SetStatus(PopupUnlock.UnlockInfo info)
 		{

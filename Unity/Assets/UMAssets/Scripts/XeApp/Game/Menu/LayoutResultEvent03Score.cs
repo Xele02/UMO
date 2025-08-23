@@ -99,6 +99,8 @@ namespace XeApp.Game.Menu
 		private NumberBase rivalNumberBonus; // 0x98
 		private CriAtomExPlayback countUpSEPlayback; // 0x9C
 
+		public bool Unused() { return COUNT_UP_FRAME_SCORE == 0 && COUNT_UP_FRAME_COMBO == 0; }
+
 		// RVA: 0x18D07F4 Offset: 0x18D07F4 VA: 0x18D07F4
 		private void OnDisable()
 		{

@@ -20,6 +20,8 @@ public class BOPPPCKONML
 	public List<GJDFHLBONOL> PJJFEAHIPGL = new List<GJDFHLBONOL>(); // 0x24
 	public List<GJDFHLBONOL> LCEMDBMFMFK = new List<GJDFHLBONOL>(); // 0x28
 
+	public bool Unused() { return LCKPHJINHPH && FLPHABPKNGM; }
+
 	//// RVA: 0x19D11B4 Offset: 0x19D11B4 VA: 0x19D11B4
 	public void LHPDDGIJKNB()
 	{

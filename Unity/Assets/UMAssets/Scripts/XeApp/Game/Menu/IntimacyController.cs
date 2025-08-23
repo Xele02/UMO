@@ -601,7 +601,7 @@ namespace XeApp.Game.Menu
 			//0x14B8528
 			MenuScene.Instance.RaycastDisable();
 			bool done = false;
-			bool err = false;
+			//bool err = false;
 			MenuScene.Save(() =>
 			{
 				//0x14B4530
@@ -610,7 +610,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x14B453C
 				done = true;
-				err = true;
+				//err = true;
 			});
 			while(!done)
 				yield return null;

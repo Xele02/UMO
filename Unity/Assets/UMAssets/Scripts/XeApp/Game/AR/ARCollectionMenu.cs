@@ -345,7 +345,9 @@ namespace XeApp.Game.AR
                             if(l3[j].stampId == 0)
                             {
                                 if(j != l3.Count - 1 || f3 < 1)
-                                    ;//f2 = y;
+                                {
+                                    //f2 = y;
+                                }
                                 else
                                     y += f1 + f5;
                             }

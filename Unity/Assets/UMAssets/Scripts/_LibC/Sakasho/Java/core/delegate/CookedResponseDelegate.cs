@@ -7,6 +7,8 @@ namespace ExternLib.Java_Sakasho.jp.dena.sakasho.core.delegate_
         private static string _c = "CookedResponseDelegate";
         private bool _d;
 
+        public bool Unused() { return _c == ""; }
+
         public CookedResponseDelegate(bg var1) : base(var1)
         {
             

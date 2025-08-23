@@ -26,6 +26,8 @@ public class DFKGGBMFFGB_PlayerInfo
 	public BBHNACPENDM_ServerSaveData AHEFHIMGIBI_ServerSave { get { return LDEGEHAEALK_ServerSave; } } // GNMGJMDJEGI 0x197E7F0
 	// public int NLMELNHPIID { get; set; }//DBEFCECMFMG 0x197E8C0 ILFOOPKEKLC 0x197E90C
 
+	public bool Unused() { return BNFDBPPOAOE; }
+
 	// // RVA: 0x197E960 Offset: 0x197E960 VA: 0x197E960
 	public void KHEKNNFCAOI_Init(BBHNACPENDM_ServerSaveData NIMOGBDCMLJ_ServerSave, bool HEHLHEKCIFF = false)
 	{

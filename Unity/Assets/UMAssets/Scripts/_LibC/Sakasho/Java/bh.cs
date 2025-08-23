@@ -9,6 +9,8 @@ namespace ExternLib.Java_Sakasho
         private SakashoRequest _c;
         private int _d;
 
+        public bool Unused() { return _a == null; }
+
         public bh(bg var1, SakashoRequest var2, int var3)
         {
             this._b = var1;

@@ -24,6 +24,8 @@ namespace XeApp.Game.Menu
 		private GameObject m_EffectPrefab; // 0x6C
 		private GameObject m_EffectInstance; // 0x70
 
+		public bool Unused() { return m_isSuccess; }
+
 		// RVA: 0x16F3FA8 Offset: 0x16F3FA8 VA: 0x16F3FA8 Slot: 4
 		protected override void Awake()
 		{

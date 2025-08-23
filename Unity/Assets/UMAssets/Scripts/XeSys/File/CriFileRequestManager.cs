@@ -46,6 +46,8 @@ namespace XeSys.File
 		public static Action<LBHFILLFAGA> CCGJIEMDFAI { get; set; } // 0xC GMMAAGMCBDH JHDCDJOKGMM FPOIIPBFKON
 		public IFDILJEGCLD NFABHMNAODN { get; set; } // 0x40 JGIJJAMABPM IMJKHFFDNEG KDJNMIHJEIL
 
+		public bool Unused() { return LMKJAHNKELA == 0 && emulationWait == 0 && loadCountLimit == 0; }
+
 		// // RVA: 0x2038238 Offset: 0x2038238 VA: 0x2038238
 		private void Awake()
 		{

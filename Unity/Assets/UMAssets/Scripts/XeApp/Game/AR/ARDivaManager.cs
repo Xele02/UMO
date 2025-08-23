@@ -36,6 +36,8 @@ namespace XeApp.Game.AR
         public bool IsLoading { get; private set; } // 0x48
         public bool IsLoaded { get; private set; } // 0x49
 
+        public bool Unused() { return m_isInitialized; }
+
         // RVA: 0x161D684 Offset: 0x161D684 VA: 0x161D684
         public void Start()
         {

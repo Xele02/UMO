@@ -495,7 +495,6 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 			info.IOKJFDPOEFP_InstallerStatusInfo = installer.GetStatusInfo();
 			info.ICKGJODOCBB = null;
 		}
-		return 0;
 	}
 
 	// // RVA: 0x1C380F0 Offset: 0x1C380F0 VA: 0x1C380F0

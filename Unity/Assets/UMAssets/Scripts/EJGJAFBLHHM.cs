@@ -8,6 +8,8 @@ public class EJGJAFBLHHM
 	public string IPLCMPCDNJJ = ""; // 0xC
 	public long FFDEBPDJOIJ; // 0x10
 
+	public bool Unused() { return AMIFBFDPOGL == ""; }
+
 	public static EJGJAFBLHHM HHCJCDFCLOB { get; set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
 
 	//// RVA: 0x12EE308 Offset: 0x12EE308 VA: 0x12EE308

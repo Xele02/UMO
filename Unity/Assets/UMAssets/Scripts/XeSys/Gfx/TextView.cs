@@ -61,6 +61,8 @@ namespace XeSys.Gfx
 		public int FontSize { get { return m_fontSize; } set { m_fontSize = value; } } //0x1EE2888 0x1EE2890
 		public float LineSpace { get { return m_LineSpace; } set { m_LineSpace = value; } } //0x1EE2898 0x1EE28A0
 
+		public bool Unused() { return prefab1 == null; }
+
 		// // RVA: 0x1EE2840 Offset: 0x1EE2840 VA: 0x1EE2840
 		// public void FadeParamCopy(TextView.FadeType type, float time, float count, Color col) { }
 

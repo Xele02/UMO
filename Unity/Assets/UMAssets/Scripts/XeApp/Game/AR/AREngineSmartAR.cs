@@ -21,6 +21,8 @@ namespace XeApp.Game.AR
         private List<string> m_markerNameList = new List<string>(); // 0x38
         private List<TargetEffector> m_targetList = new List<TargetEffector>(); // 0x3C
 
+        public bool Unused() { return m_loadDataSetDone; }
+
         // RVA: 0x11CF840 Offset: 0x11CF840 VA: 0x11CF840
         public AREngineSmartAR(VuforiaManager vm)
             : base(vm)

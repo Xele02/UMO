@@ -170,7 +170,6 @@ public class PGIGNJDPCAH
 					JHHBAFKMBDL.HHCJCDFCLOB.CIKMDHMMCIL_ShowErrorPopup(2, MBIKIBHLAGE_OnError);
 					LANLFCFBOHI = true;
 					return true;
-				break;
 				case IMOIPBMGIPN.OGFOHBGEAEC:
 				case IMOIPBMGIPN.PJPJEHEFMMJ:
 					JHHBAFKMBDL.HHCJCDFCLOB.PNIJEKOHEII(() =>
@@ -181,7 +180,6 @@ public class PGIGNJDPCAH
 					});
 					LANLFCFBOHI = true;
 					return true;
-				break;
 			}
 		}
 		return false;

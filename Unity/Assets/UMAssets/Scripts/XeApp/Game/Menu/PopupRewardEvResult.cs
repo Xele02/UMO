@@ -348,6 +348,8 @@ namespace XeApp.Game.Menu
 
 		public Transform Parent { get; private set; } // 0x10
 
+		public bool Unused() { return m_isReady; }
+
 		// RVA: 0x1A7C468 Offset: 0x1A7C468 VA: 0x1A7C468 Slot: 17
 		public void Initialize(PopupSetting setting, Vector2 size, PopupWindowControl control)
 		{

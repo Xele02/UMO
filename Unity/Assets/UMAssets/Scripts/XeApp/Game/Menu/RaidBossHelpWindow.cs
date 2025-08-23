@@ -39,6 +39,8 @@ namespace XeApp.Game.Menu
 		private HelpType m_currentHelpType; // 0x30
 		private Action<SelectType> onSelectType; // 0x34
 
+		public bool Unused() { return m_IsInialize; }
+
 		// RVA: 0x145BB90 Offset: 0x145BB90 VA: 0x145BB90 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{

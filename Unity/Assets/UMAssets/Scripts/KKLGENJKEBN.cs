@@ -38,6 +38,8 @@ public class KKLGENJKEBN
 
 	public static KKLGENJKEBN HHCJCDFCLOB { get; private set; } // 0x0 LGMPACEDIJF NKACBOEHELJ OKPMHKNCNAL
 
+	public bool Unused() { return NLHAJLNAEMC == 0; }
+
 	//// RVA: 0x1A04BA4 Offset: 0x1A04BA4 VA: 0x1A04BA4
 	//public void KMBMMCDPKDF(bool JKDJCFEBDHC, int FJOLNJLLJEJ) { }
 

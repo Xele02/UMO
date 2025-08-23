@@ -29,6 +29,8 @@ namespace XeApp.Game.AR
         public Action onHideNetworkIcon; // 0x20
         public int lastErrorId; // 0x24
 
+        public bool Unused() { return timeoutTimer == 0; }
+
         // // RVA: 0x11DAFC4 Offset: 0x11DAFC4 VA: 0x11DAFC4
         public void Load(IMCBBOAFION onSuccess, DJBHIFLHJLK onErrorToTitle)
         {

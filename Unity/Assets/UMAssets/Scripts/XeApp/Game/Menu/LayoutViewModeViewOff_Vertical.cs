@@ -166,7 +166,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x153BD40 Offset: 0x153BD40 VA: 0x153BD40 Slot: 12
-		public virtual void SetEnableHit(bool a_enable)
+		public override void SetEnableHit(bool a_enable)
 		{
 			foreach(var l in m_list_hit)
 			{

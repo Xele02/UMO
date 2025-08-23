@@ -27,6 +27,8 @@ namespace ExternLib.Java_Sakasho.jp.dena.sakasho.core
         // private static Set u;
         // private static JSONObject v;
 
+        public bool Unused() { return _c; }
+
         static SakashoSystem()
         {
             /*try {

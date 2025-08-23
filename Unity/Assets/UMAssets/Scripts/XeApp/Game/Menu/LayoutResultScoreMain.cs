@@ -65,6 +65,8 @@ namespace XeApp.Game.Menu
 		public Action<RhythmGameConsts.NoteResult, float> OnCountupNoteResult { get; set; } // 0x80
 		public Action OnFinishCountupNoteResult { get; set; } // 0x84
 
+		public bool Unused() { return COUNT_UP_FRAME_COMBO == 0 && COUNT_UP_FRAME_SCORE == 0; }
+
 		// RVA: 0x1D0FFD4 Offset: 0x1D0FFD4 VA: 0x1D0FFD4
 		private void OnDisable()
 		{

@@ -81,6 +81,8 @@ namespace XeApp.Game.Menu
 
 		public bool IsZoomable { get; set; } // 0x3C
 
+		public bool Unused() { return m_isTouchImage && m_isScroll; }
+
 		// RVA: 0x1372C38 Offset: 0x1372C38 VA: 0x1372C38
 		private void Start()
 		{

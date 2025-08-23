@@ -144,6 +144,8 @@ namespace XeApp.Game.Menu
 		public Action<Difficulty.Type> onChangedDifficulty { private get; set; } // 0xD4
 		public Action<int> onChangedMusic { private get; set; } // 0xD8
 
+		public bool Unused() { return m_isShow; }
+
 		// // RVA: 0x144E974 Offset: 0x144E974 VA: 0x144E974
 		// public void TryEnter() { }
 

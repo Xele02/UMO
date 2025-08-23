@@ -84,6 +84,8 @@ namespace XeApp.Game.Menu
 		private uint m_rankButtonStateBit; // 0x48
 		private uint m_joinButtonStateBit; // 0x4C
 
+		public bool Unused() { return m_IsInialize; }
+
 		// RVA: 0x1BCA98C Offset: 0x1BCA98C VA: 0x1BCA98C Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{

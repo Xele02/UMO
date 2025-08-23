@@ -91,6 +91,8 @@ namespace XeApp.Game.Menu
 			return m_itemImage[0];
 		} } //0x18B6B74
 
+		public bool Unused() { return m_selectLength == 0 && m_isPressedItem && m_haveNum == 0 && m_selectRange == 0; }
+
 		// RVA: 0x18B32AC Offset: 0x18B32AC VA: 0x18B32AC Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{

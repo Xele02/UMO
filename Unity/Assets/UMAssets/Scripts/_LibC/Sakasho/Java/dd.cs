@@ -7,6 +7,8 @@ namespace ExternLib.Java_Sakasho
         private static long _serialVersionUID = 1L;
         private int _a = 100;
 
+        public bool Unused() { return _a == 0 && _serialVersionUID == 0; }
+
         public dd(int var1)
         {
         }

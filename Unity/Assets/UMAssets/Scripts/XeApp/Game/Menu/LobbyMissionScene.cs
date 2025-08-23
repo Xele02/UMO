@@ -71,6 +71,8 @@ namespace XeApp.Game.Menu
 		private List<LobbyQuestInfo> m_missionDataList = new List<LobbyQuestInfo>(); // 0x60
 		private LDEBIBGHCGD_EventRaidLobby.NBGDKOACGLM m_lobbyEventSetting = new LDEBIBGHCGD_EventRaidLobby.NBGDKOACGLM(); // 0x64
 
+		public bool Unused() { return IsGetQuestDate; }
+
 		// RVA: 0xD1411C Offset: 0xD1411C VA: 0xD1411C Slot: 4
 		protected override void Awake()
 		{

@@ -654,7 +654,6 @@ namespace XeApp.Game.Menu
 						};
 						return res;
 					}
-					break;
 				default:
 					return null;
 			}

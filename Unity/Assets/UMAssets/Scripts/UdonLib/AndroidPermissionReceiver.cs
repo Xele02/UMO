@@ -46,7 +46,7 @@ namespace UdonLib
 			m_estimateNever = false;
 			m_startTime = DateTime.Now;
 #if !UNITY_EDITOR
-			AndroidJavaClass c = new AndroidJavaClass("jp.co.xeen.xeapp.PermissionManager");
+			AndroidJavaClass c = new AndroidJavaClass(PackageClassName);
 			c.CallStatic("requestPermission", new object[] { getPermissionStr(permission) });
 #endif
 			if(onPermit != null)
@@ -81,7 +81,7 @@ namespace UdonLib
 		public void NotPermit()
 		{
 			m_permissionResult = false;
-			m_estimateNever = (DateTime.Now - m_startTime).TotalMilliseconds < 250;
+			m_estimateNever = (DateTime.Now - m_startTime).TotalMilliseconds < ESTIMATE_NEVER_MS;
 			if(m_notPermitCallBack != null)
 				m_notPermitCallBack.Invoke();
 			m_permitCallBack = null;

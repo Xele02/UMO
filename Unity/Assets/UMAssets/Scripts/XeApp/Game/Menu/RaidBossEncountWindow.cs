@@ -13,6 +13,8 @@ namespace XeApp.Game.Menu
 		private RawImageEx m_itemImage; // 0x18
 		private bool m_IsInialize; // 0x1C
 
+		public bool Unused() { return m_IsInialize; }
+
 		// RVA: 0x145B6E4 Offset: 0x145B6E4 VA: 0x145B6E4 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{

@@ -652,7 +652,6 @@ public class JEPBIIJDGEF_EventInfo
 				return LDDDBPNGGIN_Game.NBIAKELCBLC_GetNumItems(MJBODMOLOBC, HDDCLCOMOOB, a1, a2);
 			}
 		}
-		return 0;
 	}
 
 	// // RVA: 0x1C3D084 Offset: 0x1C3D084 VA: 0x1C3D084

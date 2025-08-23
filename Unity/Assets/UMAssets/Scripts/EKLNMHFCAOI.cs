@@ -428,7 +428,6 @@ public class EKLNMHFCAOI
 	// // RVA: 0x12EC60C Offset: 0x12EC60C VA: 0x12EC60C
 	public static int FABCKNDLPDH_GetItemRarity(FKGCBLHOOCL_Category INDDJNMPONH, int PPFNGGCBJKC)
 	{
-		int res = 1;
 		switch(INDDJNMPONH)
 		{
 			case FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit:

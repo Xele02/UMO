@@ -45,6 +45,8 @@ namespace XeSys.Gfx
 		//public bool IsTouch { get; } 0x1F1239C
 		public bool IsTouchSimple { get { return m_IsTouchSimple; } set { m_IsTouchSimple = value; } } //0x1F123A4 0x1F123AC
 
+		public bool Unused() { return m_MoveAsobi == 0; }
+
 		// RVA: 0x1F123B4 Offset: 0x1F123B4 VA: 0x1F123B4
 		//public void StopInertia() { }
 

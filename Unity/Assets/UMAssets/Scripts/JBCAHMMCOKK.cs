@@ -254,7 +254,6 @@ public class JBCAHMMCOKK
 
 		if (!c)
 			return;
-		bool doSp = false;
 		switch(KOGBMDOONFA.GMELAKNFKMG)
 		{
 			case 0:
@@ -569,7 +568,6 @@ public class JBCAHMMCOKK
 					NNDGIAEFMOG.Add(j);
 					return;
 				}
-				break;
 			case 13: // 0xd
 				{
 					JBCAHMMCOKK j = new JBCAHMMCOKK();

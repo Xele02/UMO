@@ -48,6 +48,8 @@ namespace XeApp
 		public bool IsLoded { get; private set; } // 0x1C
 		public bool IsLodedTexture { get; private set; } // 0x1D
 
+		public bool Unused() { return m_innerAreaSize == 0; }
+
 		// RVA: 0x1D837D8 Offset: 0x1D837D8 VA: 0x1D837D8
 		private void Awake()
 		{

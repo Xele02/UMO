@@ -287,7 +287,6 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 				if(data.EEDDJLLIOBD != null)
 				{
 					List<AFIFDLOAKGI> l = data.NKBGIKPCLMI(false);
-					int k = 0;
 					for(int i = 0; i < l.Count - 1; i++)
 					{
 						if(l[i] != null && l[i].INDDJNMPONH_StatType == 19)

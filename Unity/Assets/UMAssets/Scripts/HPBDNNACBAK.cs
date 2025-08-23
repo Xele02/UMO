@@ -31,6 +31,7 @@ public class HPBDNNACBAK
 
 	public List<LOBDIAABMKG> MHKCPJDNJKI_GatchaProducts { get; private set; } // 0x8 CPMNDNELDME DFAHGPEFPOO IOMCCGAKKCP
 
+	public bool Unused() { return CHCMPDJFHHE == 0; }
 
 	// // RVA: 0x1601B14 Offset: 0x1601B14 VA: 0x1601B14
 	public HPBDNNACBAK()

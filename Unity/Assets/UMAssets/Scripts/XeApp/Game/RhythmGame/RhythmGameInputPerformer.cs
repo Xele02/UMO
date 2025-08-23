@@ -403,6 +403,8 @@ namespace XeApp.Game.RhythmGame
 		public RhythmGamePlayer refRhytmGamePlayer { get; set; } // 0x48
 		public DelegateCheckInput delegateCheckInput { get; set; } // 0x6C
 
+		public bool Unused() { return _longNoteSaveFrame == 0; }
+
 		//// RVA: 0x9A2B24 Offset: 0x9A2B24 VA: 0x9A2B24
 		private void Start()
 		{

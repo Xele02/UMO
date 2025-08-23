@@ -98,13 +98,7 @@ namespace XeApp.Game.Common
 		public bool IsActive { get { return m_isActive; } } //0x1BB888C
 		public IPopupContent Content { get { return m_content; } } //0x1BB8894
 
-		// [CompilerGeneratedAttribute] // RVA: 0x73EBD4 Offset: 0x73EBD4 VA: 0x73EBD4
-		// // RVA: 0x1BB8674 Offset: 0x1BB8674 VA: 0x1BB8674
-		// public void add_m_closeWaitCallBack(Func<bool> value) { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x73EBE4 Offset: 0x73EBE4 VA: 0x73EBE4
-		// // RVA: 0x1BB8780 Offset: 0x1BB8780 VA: 0x1BB8780
-		// public void remove_m_closeWaitCallBack(Func<bool> value) { }
+		public bool Unused() { return m_isAnimation; }
 
 		// // RVA: 0x1BB889C Offset: 0x1BB889C VA: 0x1BB889C
 		private static int CalcTblIndex(SizeType size, bool isCaption = true)

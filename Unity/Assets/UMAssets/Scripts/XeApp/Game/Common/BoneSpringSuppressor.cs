@@ -87,6 +87,8 @@ namespace XeApp.Game.Common
 		private bool m_isSuppressing; // 0x18
 		private Preset m_preset = Preset._Num; // 0x1C
 
+		public bool Unused() { return m_isSuppressing; }
+
 		// // RVA: 0xE627A0 Offset: 0xE627A0 VA: 0xE627A0
 		public void Load(GameObject root, BoneSpringSuppressParam param, BoneSpringSuppressor.Preset preset)
 		{

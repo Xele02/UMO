@@ -7,6 +7,8 @@ namespace XeSys
 		private static T mInstance; // 0x0
 		private static bool mApplicationIsQuitting; // 0x0
 
+		public bool Unused() { return mApplicationIsQuitting; }
+
 		public static T Instance { get
 		{
 			if(mInstance == null)

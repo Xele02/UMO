@@ -107,6 +107,8 @@ namespace XeApp.Game.Menu
 		public Action onClickStoryButton { private get; set; } // 0x40
 		public Action onClickMissionButton { private get; set; } // 0x44
 
+		public bool Unused() { return s_emptyOptionButtons == null; }
+
 		// // RVA: 0x166A09C Offset: 0x166A09C VA: 0x166A09C
 		public void TryEnter()
 		{

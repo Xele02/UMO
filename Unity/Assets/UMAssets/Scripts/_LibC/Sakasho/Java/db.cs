@@ -10,6 +10,8 @@ namespace ExternLib.Java_Sakasho
             private bg _a;
             private bool _b;
 
+            public bool Unused() { return _b; }
+
             public __b(bg var1, bool var2)
             {
                 this._a = var1;
@@ -88,6 +90,8 @@ namespace ExternLib.Java_Sakasho
         private static string _a = "db";
         private static int _b;
         private static int _c;
+
+        public bool Unused() { return _a == ""; }
 
         private db() {
         }

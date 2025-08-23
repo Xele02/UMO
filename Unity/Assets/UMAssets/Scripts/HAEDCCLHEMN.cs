@@ -3000,7 +3000,6 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 					}
 				}
 				DLPHPGJCAAF_RandomizeArraySort(l);
-				int idx = -1;
 				for(int i = 0; i < 100 && _PIMJMPHMCFO_NumRivals > PIPHAKNMIBL_Rivals.Count; i++)
 				{
 					if(i < l.Count)

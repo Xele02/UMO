@@ -874,6 +874,5 @@ public class KDKFHGHGFEK
 			case EKLNMHFCAOI.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso:
 				return 10;
 		}
-		return 1;
 	}
 }

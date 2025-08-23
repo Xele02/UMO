@@ -645,7 +645,6 @@ namespace XeApp.Game.Menu
 			GNIFOHMFDMO_DivaResultData.IKODHMDOMMP info = viewResultDivaData.NAIHIJAJPNK_Divas[divaIndex];
 			JJOELIOGMKK_DivaIntimacyInfo intimacy = new JJOELIOGMKK_DivaIntimacyInfo();
 			intimacy.KHEKNNFCAOI(info.AHHJLDLAPAN_DivaId);
-			bool b = false;
 			if(intimacy.HBODCMLFDOB.IGNABALECPK >= 1)
 			{
 				if (divaIndex == 0)

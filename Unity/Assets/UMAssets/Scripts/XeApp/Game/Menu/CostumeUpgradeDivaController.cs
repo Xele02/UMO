@@ -41,6 +41,8 @@ namespace XeApp.Game.Menu
 
 		public bool isLoadedModel { get; private set; } // 0x34
 
+		public bool Unused() { return m_queSheetName == null; }
+
 		//// RVA: 0x16F1B30 Offset: 0x16F1B30 VA: 0x16F1B30
 		public void Initialize(Controlype type, int divaId, int costumeModelId, int colorId = 0)
 		{

@@ -16,6 +16,8 @@ namespace XeApp.Game.Common
 		private InOutAnime m_inOutAnime; // 0x14
 		private bool m_hidden; // 0x18
 
+		public bool Unused() { return m_hidden; }
+
 		public Action<bool> onClickButton { private get; set; } // 0x1C
 		public bool IsInputLock { set {
 				m_buttonHide.IsInputLock = value;
