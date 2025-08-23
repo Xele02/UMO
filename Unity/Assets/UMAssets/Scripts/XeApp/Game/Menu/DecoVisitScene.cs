@@ -12,7 +12,7 @@ namespace XeApp.Game.Menu
 {
 	public class DecoVisitScene : TransitionRoot
 	{
-		public enum TransitionType
+		new public enum TransitionType
 		{
 			None = 0,
 			Deco = 1,

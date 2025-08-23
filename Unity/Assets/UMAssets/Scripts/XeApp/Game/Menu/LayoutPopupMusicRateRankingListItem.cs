@@ -37,7 +37,10 @@ namespace XeApp.Game.Menu
 		public Action<RankingListInfo> OnClickButton { get; set; } // 0x50
 
 		//// RVA: 0x1738EF4 Offset: 0x1738EF4 VA: 0x1738EF4
-		//public bool IsLoaded() { }
+		new public bool IsLoaded()
+		{
+			return m_initialized && m_imageDiva.enabled && m_imageScene.enabled && m_imageGrade.enabled;
+		}
 
 		//// RVA: 0x1738FA0 Offset: 0x1738FA0 VA: 0x1738FA0
 		public void SetStatus(RankingListInfo view)

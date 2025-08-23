@@ -159,7 +159,7 @@ namespace XeApp.Game.Menu
 			btn.Disable = value;
 		}); } } //0x18C1978
 		public ScrollRect ScrollRect { get { return m_scrollRect; } } //0x18B4FF8
-		public bool IsLoaded { get; private set; } // 0x84
+		new public bool IsLoaded { get; private set; } // 0x84
 		public bool IsAnimPlaying { get; set; } // 0xAA
 		private int ListCount { get
 		{

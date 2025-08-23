@@ -38,7 +38,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x14C9A34 Offset: 0x14C9A34 VA: 0x14C9A34
-		public bool IsLoaded()
+		new public bool IsLoaded()
 		{
 			return m_IsLoaded;
 		}

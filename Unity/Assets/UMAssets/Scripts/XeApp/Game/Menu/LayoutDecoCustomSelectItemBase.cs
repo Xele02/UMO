@@ -20,7 +20,7 @@ namespace XeApp.Game.Menu
 		private bool isShopProducts; // 0x4C
 		private bool IsLayoutInitialize; // 0x4D
 
-		public Vector2 Size { get { return m_size; } } //0x19DD17C
+		new public Vector2 Size { get { return m_size; } } //0x19DD17C
 		public int Id { get; protected set; } // 0x3C
 		public LayoutDecoCustomWindow01.SelectItemType Type { get; protected set; } // 0x40
 		public bool IsLoadedTexture { get; protected set; } // 0x44

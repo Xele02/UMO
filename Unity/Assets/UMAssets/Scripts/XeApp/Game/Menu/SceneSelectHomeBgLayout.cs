@@ -53,7 +53,10 @@ namespace XeApp.Game.Menu
 		public int SceneEvolveId { get; set; } // 0x1C
 
 		// // RVA: 0x13790A4 Offset: 0x13790A4 VA: 0x13790A4
-		// public bool IsLoaded() { }
+		new public bool IsLoaded()
+		{
+			return base.IsLoaded() && m_loadCount == m_loadedCount;
+		}
 
 		// RVA: 0x1379108 Offset: 0x1379108 VA: 0x1379108 Slot: 5
 		public override bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)

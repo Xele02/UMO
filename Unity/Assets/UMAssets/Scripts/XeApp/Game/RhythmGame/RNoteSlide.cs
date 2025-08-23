@@ -9,7 +9,7 @@ namespace XeApp.Game.RhythmGame
 	public class RNoteSlide : RNoteLong
 	{
 		private float lastGapTimeTmp; // 0x64
-		private bool isPause; // 0x68
+		new private bool isPause; // 0x68
 		private List<Vector2> uvListU = new List<Vector2>() { new Vector2(0.5f, 1.0f), new Vector2(0.5f, 1.0f), new Vector2(0.5f, 1.0f), 
 			new Vector2(0.5f, 1.0f), new Vector2(0.5f, 1.0f), new Vector2(0.5f, 1.0f) }; // 0x6C
 		private List<Vector2> uvListV = new List<Vector2>() { new Vector2(0.5f, 0.005859375f), new Vector2(0.5f, 0.005859375f), new Vector2(0.5f, 0.005859375f), 

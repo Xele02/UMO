@@ -19,7 +19,7 @@ namespace XeApp.Game.Menu
 		private MusicSelectLineButton m_lineButton; // 0x100
 		private MusicDataList m_musicList; // 0x104
 		private bool m_isEventChecked; // 0x108
-		private bool m_isEventTimeLimit; // 0x109
+		new private bool m_isEventTimeLimit; // 0x109
 
 		protected override int musicListCount { get { return 1; } } //0x13B12B0
 		protected override MusicDataList currentMusicList { get { return m_musicList; } } //0x13B12C0

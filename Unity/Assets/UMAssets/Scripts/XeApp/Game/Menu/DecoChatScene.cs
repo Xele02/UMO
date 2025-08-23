@@ -28,7 +28,7 @@ namespace XeApp.Game.Menu
 		private long preTime; // 0x78
 		private bool m_IsUpdateError; // 0x80
 		private bool IsTryProfile; // 0x81
-		private bool IsRequestGotoTitle; // 0x82
+		new private bool IsRequestGotoTitle; // 0x82
 		private bool IsAfterAutoUpdateAct; // 0x83
 		private bool IsTapGuardON; // 0x84
 		private bool IsTapGuardOFF; // 0x85

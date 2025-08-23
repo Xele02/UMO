@@ -265,7 +265,7 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 		public class CALIFIMGGMD : FCDIHBGEKOB
 		{
 			public int HALIDDHLNEG_Damage; // 0x50
-			public int FJOLNJLLJEJ_Rank; // 0x54
+			public new int FJOLNJLLJEJ_Rank; // 0x54
 		}
 
 		private const int JFMBNPLPAOB = 5;
@@ -279,7 +279,7 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 		public int ANAJIAENLNB_Level; // 0x70
 		public int INDDJNMPONH_Type; // 0x74
 		public int HPPDFBKEJCG_BgId; // 0x78
-		public int FJOLNJLLJEJ_Rank; // 0x7C
+		public new int FJOLNJLLJEJ_Rank; // 0x7C
 		public bool IKICLMGFFPB_IsSpecial; // 0x80
 		public bool DLMNFENNCJG_IsEntry; // 0x81
 		public bool CAKONDPGDIL_CanRequestHelp; // 0x82

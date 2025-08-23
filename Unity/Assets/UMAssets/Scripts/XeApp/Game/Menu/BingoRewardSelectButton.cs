@@ -13,7 +13,7 @@ namespace XeApp.Game.Menu
 		public Action<int> onSelectButton { private get; set; } // 0x84
 
 		//// RVA: 0x10A1C8C Offset: 0x10A1C8C VA: 0x10A1C8C
-		private void OnClick()
+		new private void OnClick()
 		{
 			if (onSelectButton != null)
 				onSelectButton(m_pageOffset);

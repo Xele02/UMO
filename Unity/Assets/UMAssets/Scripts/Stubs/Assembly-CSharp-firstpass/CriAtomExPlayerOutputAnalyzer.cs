@@ -4,7 +4,7 @@ namespace CriWare
 {
 	public class CriAtomExPlayerOutputAnalyzer : CriAtomExOutputAnalyzer
 	{
-		public struct Config
+		new public struct Config
 		{
 			public Config(int num_spectrum_analyzer_bands, int num_stored_output_data) : this()
 			{

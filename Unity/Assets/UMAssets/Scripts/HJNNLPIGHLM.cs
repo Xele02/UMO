@@ -163,7 +163,7 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x183B550 Offset: 0x183B550 VA: 0x183B550
-	public int OMJHBJPCFFC_GetEventBonusPercent(int EHDDADDKMFI)
+	public new int OMJHBJPCFFC_GetEventBonusPercent(int EHDDADDKMFI)
 	{
 		// Not used since it doesn't override. But db block don't match so it's normal I guess.
 		ACBAHDMEFFL_EventMission ev = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI_QuestId) as ACBAHDMEFFL_EventMission;

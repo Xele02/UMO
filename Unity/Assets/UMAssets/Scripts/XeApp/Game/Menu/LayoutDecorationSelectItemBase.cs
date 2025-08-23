@@ -75,7 +75,7 @@ namespace XeApp.Game.Menu
 		private bool m_isTouchCancel; // 0xCE
 		private Coroutine Co_ObsDragObject; // 0xD0
 
-		public Vector2 Size { get { return m_size; } } //0x18B3B88
+		new public Vector2 Size { get { return m_size; } } //0x18B3B88
 		public GameObject Instance { get; protected set; } // 0x50
 		public int Id { get; protected set; } // 0x74
 		public int SubId { get; protected set; } // 0x78

@@ -12,7 +12,7 @@ namespace XeApp.Game.RhythmGame
 		private static List<Vector2>[,] specialNoteUVOffsetList = new List<Vector2>[12, 9]; // 0x4
 		private GameObject[] noteObjects; // 0x14
 		private MeshFilter[] noteMeshFilters; // 0x18
-		private Renderer[] renderer; // 0x1C
+		new private Renderer[] renderer; // 0x1C
 		private int baseNoteObjectType = -1; // 0x20
 		private int specialNoteObjectType; // 0x24
 		[SerializeField]

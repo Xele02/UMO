@@ -48,7 +48,7 @@ public class CHHECNJBMLA_EventBoxGacha : IKDICBBFBMI_EventBase
 	public List<MDBEKHIHBJM> JMLKAGOACAE = new List<MDBEKHIHBJM>(); // 0xFC
 	public List<MDBEKHIHBJM> CKFCGDIJKKC = new List<MDBEKHIHBJM>(); // 0x100
 	public List<FMAHFJGBHMG> PNLJHCDHKCP_LotResult = new List<FMAHFJGBHMG>(); // 0x104
-	public JKNGJFOBADP JANMJPOKLFL_InventoryUtil = new JKNGJFOBADP(); // 0x108
+	public new JKNGJFOBADP JANMJPOKLFL_InventoryUtil = new JKNGJFOBADP(); // 0x108
 	private uint PMBEODGMMBB = 0x15ab17a1; // 0x10C
 	private StringBuilder OGNKHBFKHIP; // 0x110
 

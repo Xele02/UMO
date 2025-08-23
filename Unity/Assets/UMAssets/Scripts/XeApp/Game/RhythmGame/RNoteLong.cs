@@ -33,7 +33,7 @@ namespace XeApp.Game.RhythmGame
 		public RNoteObject firstRNoteObject; // 0x34
 		public RNoteObject lastRNoteObject; // 0x38
 		private Mesh mesh; // 0x3C
-		private Renderer renderer; // 0x40
+		new private Renderer renderer; // 0x40
 		protected ControlPoint[] controlPoints = new ControlPoint[divid_max]; // 0x44
 		protected Vector3[] leftSidePoints = new Vector3[divid_max]; // 0x48
 		protected Vector3[] rightSidePoints = new Vector3[divid_max]; // 0x4C

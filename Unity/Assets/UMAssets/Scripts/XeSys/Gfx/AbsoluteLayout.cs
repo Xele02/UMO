@@ -604,7 +604,7 @@ namespace XeSys.Gfx
 		}
 
 		// // RVA: 0x2041F80 Offset: 0x2041F80 VA: 0x2041F80
-		public void FinishAnimLoop()
+		new public void FinishAnimLoop()
 		{
 			FinishAnimLoop(m_List);
 		}

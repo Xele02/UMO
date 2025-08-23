@@ -77,7 +77,7 @@ namespace XeApp.Game.Menu
 		public bool RightButtonHidden { set { m_rightButton.Hidden = value; } } //0x19E4000
 		public int TargetStampId { get; set; } // 0x64
 		public int TargetSerifId { get; set; } // 0x68
-		public bool IsLoaded { get; set; } // 0x6C
+		new public bool IsLoaded { get; set; } // 0x6C
 		public bool IsOpen { get; set; } // 0x6D
 
 		// RVA: 0x19E4074 Offset: 0x19E4074 VA: 0x19E4074 Slot: 5

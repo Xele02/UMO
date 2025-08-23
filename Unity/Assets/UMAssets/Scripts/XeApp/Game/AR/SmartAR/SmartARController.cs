@@ -590,14 +590,15 @@ public class SmartARController : SmartARControllerBase
                 result.isRecognized_ = false;
             }
             return 0;
-#endif
+#else
             return sarSmartar_SarSmartARController_sarGetResult(self_, target, ref result);
+#endif
         }
         return Error.ERROR_INVALID_POINTER;
     }
 
 	// // RVA: 0x12F4ADC Offset: 0x12F4ADC VA: 0x12F4ADC
-	public static void adjustPose(Rotation cameraRotation, Rotation screenRotation, bool isFlipX, bool isFlipY, smartar.Vector3 srcPosition, smartar.Quaternion srcRotation, out smartar.Vector3 rotPosition, out smartar.Quaternion rotRotation)
+	new public static void adjustPose(Rotation cameraRotation, Rotation screenRotation, bool isFlipX, bool isFlipY, smartar.Vector3 srcPosition, smartar.Quaternion srcRotation, out smartar.Vector3 rotPosition, out smartar.Quaternion rotRotation)
     {
         Rotation r = (Rotation)((cameraRotation + 360 - screenRotation) % 360);
         rotPosition = srcPosition;

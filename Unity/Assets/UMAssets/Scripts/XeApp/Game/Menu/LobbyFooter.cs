@@ -50,7 +50,7 @@ namespace XeApp.Game.Menu
 		private bool IsEnableSendButton = true; // 0x3C
 		private string ChangeText = ""; // 0x40
 		private string PreText = ""; // 0x44
-		private bool IsLoaded; // 0x48
+		new private bool IsLoaded; // 0x48
 
 		public bool IsKeyBoardOpen { get { return m_keyBoard.IsOpenKeyboard; } private set { return; } } //0x154FDB0 0x154FDD4
 		public Action onSendClickButton { private get; set; } // 0x4C

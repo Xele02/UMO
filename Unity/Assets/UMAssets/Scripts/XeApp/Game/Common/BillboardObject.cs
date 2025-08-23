@@ -4,7 +4,7 @@ namespace XeApp.Game.Common
 {
 	public class BillboardObject : MonoBehaviour
 	{
-		public Camera camera; // 0xC
+		new public Camera camera; // 0xC
 		public bool enableVertical = true; // 0x10
 
 		// RVA: 0xE61A1C Offset: 0xE61A1C VA: 0xE61A1C

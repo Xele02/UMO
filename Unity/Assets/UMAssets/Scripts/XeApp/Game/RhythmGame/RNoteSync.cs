@@ -15,7 +15,7 @@ namespace XeApp.Game.RhythmGame
 			new Vector2(0, 0.5f), new Vector2(0, 0.5f), new Vector2(0, 0.5f)  };// 0x14
 		private List<Vector2> uvListV = new List<Vector2>() { new Vector2(0, 0.015625f), new Vector2(0, 0.015625f), new Vector2(0, 0.015625f), 
 			new Vector2(0, 0.015625f), new Vector2(0, 0.015625f), new Vector2(0, 0.015625f)}; // 0x18
-		private Renderer renderer; // 0x1C
+		new private Renderer renderer; // 0x1C
 		private Mesh mesh; // 0x20
 		public Transform firstTransform; // 0x24
 		public Transform lastTransform; // 0x28

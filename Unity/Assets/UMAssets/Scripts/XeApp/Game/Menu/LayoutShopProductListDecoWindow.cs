@@ -58,7 +58,7 @@ namespace XeApp.Game.Menu
 		public Action OnClickPopupEvent { get; set; } // 0x6C
 
 		// RVA: 0x19414A8 Offset: 0x19414A8 VA: 0x19414A8
-		public bool IsPlaying()
+		new public bool IsPlaying()
 		{
 			return m_layoutRoot.IsPlayingChildren();
 		}

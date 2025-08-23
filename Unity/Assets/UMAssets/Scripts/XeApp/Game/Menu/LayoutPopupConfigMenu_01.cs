@@ -69,9 +69,9 @@ namespace XeApp.Game.Menu
 		private GameObject m_sePos; // 0x74
 		[SerializeField]
 		private GameObject m_bgmPos; // 0x78
-		private bool m_changeSliderSePlay = true; // 0x80
+		new private bool m_changeSliderSePlay = true; // 0x80
 
-		public Transform Parent { get; set; } // 0x7C
+		new public Transform Parent { get; set; } // 0x7C
 
 		// RVA: 0x1EC4160 Offset: 0x1EC4160 VA: 0x1EC4160 Slot: 6
 		public override int GetContentsHeight()

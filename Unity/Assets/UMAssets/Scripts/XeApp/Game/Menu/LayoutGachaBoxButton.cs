@@ -19,7 +19,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x19A152C Offset: 0x19A152C VA: 0x19A152C
-		public bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
+		new public bool InitializeFromLayout(Layout layout, TexUVListManager uvMan)
 		{
 			NumberBase[] nbrs = GetComponentsInChildren<NumberBase>(true);
 			m_numNum = nbrs.Where((NumberBase _) =>

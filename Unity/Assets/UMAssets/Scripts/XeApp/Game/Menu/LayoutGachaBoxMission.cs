@@ -16,8 +16,8 @@ namespace XeApp.Game.Menu
 		private RawImageEx m_imageNext; // 0x9C
 		private RawImageEx m_imageChara; // 0xA0
 		private ActionButton m_buttonNext; // 0xA4
-		private AbsoluteLayout m_layoutPickup; // 0xA8
-		private AbsoluteLayout m_layoutChara; // 0xAC
+		new private AbsoluteLayout m_layoutPickup; // 0xA8
+		new private AbsoluteLayout m_layoutChara; // 0xAC
 		private AbsoluteLayout m_layoutGetPickup; // 0xB0
 		public Action OnClickButtonNext; // 0xB4
 
