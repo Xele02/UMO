@@ -109,11 +109,11 @@ public class TexturePacker : EditorWindow
                             else if(uvListAsset[i].Contains("m_serializeDatas:"))
                             {
                                 i++;
-                                int tu = -1;
-                                int tv = -1;
-                                int tw = -1;
-                                int th = -1;
-                                string ts = "";
+                                //int tu = -1;
+                                //int tv = -1;
+                                //int tw = -1;
+                                //int th = -1;
+                                //string ts = "";
                                 while(i < uvListAsset.Length)
                                 {
                                     if(uvListAsset[i].Contains("- name:"))

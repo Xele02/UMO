@@ -10,11 +10,11 @@ public static class MonoBehaviourExtensions
 {
     public static Coroutine StartCoroutineWatched(this MonoBehaviour owner, IEnumerator enumerator)
     {
-		if(false)
+		/*if(false)
 		{
 			return owner.StartCoroutine(enumerator);
 		}
-		else
+		else*/
 		{
 			Coroutine c_ = owner.StartCoroutine(enumerator);
 			if(c_ == null)
@@ -30,33 +30,33 @@ public static class MonoBehaviourExtensions
 	}
 	public static void StopCoroutineWatched(this MonoBehaviour owner, IEnumerator enumerator)
 	{
-		if(false)
+		/*if(false)
 		{
 			owner.StopCoroutine(enumerator);
 		}
-		else
+		else*/
 		{
 			CoroutineWatcher.Instance.Stop(owner, enumerator);
 		}
 	}
 	public static void StopCoroutineWatched(this MonoBehaviour owner, Coroutine coroutine)
 	{
-		if(false)
+		/*if(false)
 		{
 			owner.StopCoroutine(coroutine);
 		}
-		else
+		else*/
 		{
 			CoroutineWatcher.Instance.Stop(owner, coroutine);
 		}
 	}
 	public static void StopAllCoroutinesWatched(this MonoBehaviour owner)
 	{
-		if(false)
+		/*if(false)
 		{
 			owner.StopAllCoroutines();
 		}
-		else
+		else*/
 		{
 			CoroutineWatcher.Instance.StopAll(owner);
 			owner.StopAllCoroutines();
@@ -64,11 +64,11 @@ public static class MonoBehaviourExtensions
 	}
 	public static Coroutine StartCoroutineWatched(this MonoBehaviour owner, string FuncName)
 	{
-		if(false)
+		/*if(false)
 		{
 			return owner.StartCoroutine(FuncName);
 		}
-		else
+		else*/
 		{
 			Coroutine c = owner.StartCoroutine(FuncName);
 			return c;

@@ -86,6 +86,7 @@ class CriFileTest : MonoBehaviour
             //string path = Application.streamingAssetsPath+"/snd/bgm/_vgmt_acb_ext_cs_bgm_002/awb/00000_bgm_002.hca";
             //using (var inputFileStream = File.Open(path, FileMode.Open, FileAccess.Read)) {
             //inputStream = File.Open(path, FileMode.Open, FileAccess.Read);
+#if AA
             {
                 //using (MemoryStream outputFileStream = new MemoryStream()) {
                 //using (var outputFileStream = File.Open(path.Replace("hca","wav"), FileMode.Create, FileAccess.Write)) {
@@ -147,6 +148,7 @@ class CriFileTest : MonoBehaviour
                     }
                 //}
             }
+#endif
         }
     }
 }

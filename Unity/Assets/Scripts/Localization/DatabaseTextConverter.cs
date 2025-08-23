@@ -1095,7 +1095,6 @@ public static class DatabaseTextConverter
         HashSet<Texture2D> loadedTex = new HashSet<Texture2D>();
         foreach(var it in imgsByTexName)
         {
-            byte[] res = null;
             string bundleName = "";
             if(it.Key.EndsWith("cmn_menu_pack_base"))
             {

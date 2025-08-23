@@ -151,7 +151,7 @@ public class UMOFileServer : MonoBehaviour
             var data = Encoding.UTF8.GetBytes("UMO");
             udpClient.Send(data, data.Length, "255.255.255.255", PORT);
         }
-        udpClient.Close();
+        //udpClient.Close();
     }
 
     void OnDestroy()

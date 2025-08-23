@@ -72,7 +72,7 @@ public static class UMO_PlayerPrefs
     }
     public static void Save()
     {
-        SetInt("version", 1);
+        SetInt("version", version);
         EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
         data["ints"] = new EDOHBJAPLPF_JsonData();
         data["ints"].LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
