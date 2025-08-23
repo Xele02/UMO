@@ -429,7 +429,7 @@ public class IOGKADECKOP
 	}
 
 	// // RVA: 0xA06E24 Offset: 0xA06E24 VA: 0xA06E24
-	private void PELOLGDNOGL()
+	private void PELOLGDNOGL_SetLayoutButtonCallback()
 	{
 		NOFPJPHIPBD_LayoutTitleCtrl.ScreenTap.ButtonCallbackTap = this.FGBKOJCFMKM;
 		NOFPJPHIPBD_LayoutTitleCtrl.Buttons.ButtonCallbackSupport = () =>
@@ -651,7 +651,7 @@ public class IOGKADECKOP
 		}
 		while (AKIJKNDJNKP_Running)
 			yield return null;
-		PELOLGDNOGL();
+		PELOLGDNOGL_SetLayoutButtonCallback();
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B4168 Offset: 0x6B4168 VA: 0x6B4168
