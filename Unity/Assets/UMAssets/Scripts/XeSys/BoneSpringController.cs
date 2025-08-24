@@ -188,19 +188,19 @@ namespace XeSys
 		//private void ApplyControlPoint() { }
 
 		//// RVA: 0x192C02C Offset: 0x192C02C VA: 0x192C02C
-		public void Lock(int a_index = 0)
+		public void Lock(int a_index/* = 0*/)
 		{
 			isLockBit |= 1 << a_index;
 		}
 
 		//// RVA: 0x192C044 Offset: 0x192C044 VA: 0x192C044
-		public void Unlock(int a_index = 0)
+		public void Unlock(int a_index/* = 0*/)
 		{
 			isLockBit &= ~(1 << a_index);
 		}
 
 		//// RVA: 0x192C05C Offset: 0x192C05C VA: 0x192C05C
-		public bool IsLock(int a_index = 0)
+		public bool IsLock(int a_index/* = 0*/)
 		{
 			return (isLockBit & (1 << a_index)) != 0;
 		}

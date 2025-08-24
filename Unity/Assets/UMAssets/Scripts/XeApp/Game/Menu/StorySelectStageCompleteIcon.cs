@@ -87,7 +87,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12E88C8 Offset: 0x12E88C8 VA: 0x12E88C8
-		public void Hide(bool isNone = true)
+		public void Hide(bool isNone/* = true*/)
 		{
 			if (m_stageIcon != null && isNone)
 				m_stageIcon.StartChildrenAnimGoStop("st_non");

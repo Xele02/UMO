@@ -151,7 +151,7 @@ public class LFAFJCNKLML : CKFGMNAIBNG
 	}
 
 	//// RVA: 0xD690C8 Offset: 0xD690C8 VA: 0xD690C8
-	public static void HKKKKFLBFJN(LFAFJCNKLML IDLHJIOMJBK, int FJOLNJLLJEJ, out GFIPDFPIKIJ NGHKJOEDLIP, EJOEMKJOCMH OJBOEMCJPHJ = 0)
+	public static void HKKKKFLBFJN(LFAFJCNKLML IDLHJIOMJBK, int FJOLNJLLJEJ, out GFIPDFPIKIJ NGHKJOEDLIP, EJOEMKJOCMH OJBOEMCJPHJ/* = 0*/)
 	{
 		MessageBank masterBk = MessageManager.Instance.GetBank("master");
 		MessageBank menuBk = MessageManager.Instance.GetBank("menu");

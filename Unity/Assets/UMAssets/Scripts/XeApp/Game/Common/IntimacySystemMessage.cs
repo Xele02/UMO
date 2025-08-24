@@ -104,25 +104,25 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x11028C0 Offset: 0x11028C0 VA: 0x11028C0
-		public void Enter(bool force = false)
+		public void Enter(bool force/* = false*/)
 		{
 			m_systemWindow.Enter(force);
 		}
 
 		// // RVA: 0x11028F4 Offset: 0x11028F4 VA: 0x11028F4
-		public void Enter(float animTime, bool force = false)
+		public void Enter(float animTime, bool force/* = false*/)
 		{
 			m_systemWindow.Enter(animTime, force);
 		}
 
 		// // RVA: 0x1102930 Offset: 0x1102930 VA: 0x1102930
-		public void Leave(bool force = false)
+		public void Leave(bool force/* = false*/)
 		{
 			m_systemWindow.Leave(force);
 		}
 
 		// // RVA: 0x1102964 Offset: 0x1102964 VA: 0x1102964
-		public void Leave(float animTime, bool force = false)
+		public void Leave(float animTime, bool force/* = false*/)
 		{
 			m_systemWindow.Leave(animTime, force);
 		}

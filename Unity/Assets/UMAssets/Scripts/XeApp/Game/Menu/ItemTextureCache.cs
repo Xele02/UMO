@@ -50,7 +50,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x14BDAC4 Offset: 0x14BDAC4 VA: 0x14BDAC4
-		public void TryInstall(int id, int subId = 0)
+		public void TryInstall(int id, int subId/* = 0*/)
 		{
 			KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(MakeItemIconTexturePath(id, subId));
 		}
@@ -69,7 +69,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x14BD514 Offset: 0x14BD514 VA: 0x14BD514
-		public static string MakeItemIconTexturePath(int id, int subId = 0)
+		public static string MakeItemIconTexturePath(int id, int subId/* = 0*/)
 		{
 			EKLNMHFCAOI.FKGCBLHOOCL_Category val = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(id);
 			int val2 = 0;
@@ -173,7 +173,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x14BDCF8 Offset: 0x14BDCF8 VA: 0x14BDCF8
-		public static string MakeDecoItemIconTexturePath(int id, int subId = 0)
+		public static string MakeDecoItemIconTexturePath(int id, int subId/* = 0*/)
 		{
 			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(id);
 			string path = "ct/im/" + MakeDecoItemDirectoryPath(cat);
@@ -197,7 +197,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x14BDFFC Offset: 0x14BDFFC VA: 0x14BDFFC
-		public static string MakeDecoPosterIconTexturePath(int id, int subId = 0)
+		public static string MakeDecoPosterIconTexturePath(int id, int subId/* = 0*/)
 		{
 			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(id);
 			int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(id);
@@ -215,7 +215,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x14BE294 Offset: 0x14BE294 VA: 0x14BE294
-		public static string MakeDecoCostumeTorsoIconTexturePath(int id, int subId = 0)
+		public static string MakeDecoCostumeTorsoIconTexturePath(int id, int subId/* = 0*/)
 		{
 			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(id);
 			string path = "ct/im/" + MakeDecoItemDirectoryPath(cat);
@@ -226,7 +226,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x14BE194 Offset: 0x14BE194 VA: 0x14BE194
-		public static string MakeDecoVFFigureIconTexturePath(int id, int subId = 0)
+		public static string MakeDecoVFFigureIconTexturePath(int id, int subId/* = 0*/)
 		{
 			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(id);
 			return string.Format("{0}{1:D6}.xab", "ct/im/" + MakeDecoItemDirectoryPath(cat), id);

@@ -17,7 +17,7 @@ namespace XeApp.Game.Menu
 		//public bool IsLoading() { }
 
 		// RVA: 0x19410C8 Offset: 0x19410C8 VA: 0x19410C8
-		public void SetStatus(List<AODFBGCCBPE> list, bool resetScroll = true)
+		public void SetStatus(List<AODFBGCCBPE> list, bool resetScroll/* = true*/)
 		{
 			m_viewList = list;
 			SetupList(list.Count, resetScroll);

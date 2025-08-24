@@ -57,7 +57,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1736E00 Offset: 0x1736E00 VA: 0x1736E00
-		public void SetStatus(PopupWindowControl control, GHLGEECLCMH view, bool a_tab = true)
+		public void SetStatus(PopupWindowControl control, GHLGEECLCMH view, bool a_tab/* = true*/)
 		{
 			m_view = view;
 			m_control = control;

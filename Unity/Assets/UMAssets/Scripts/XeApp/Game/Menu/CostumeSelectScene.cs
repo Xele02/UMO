@@ -576,7 +576,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CD1B4 Offset: 0x6CD1B4 VA: 0x6CD1B4
 		//// RVA: 0x16DEFDC Offset: 0x16DEFDC VA: 0x16DEFDC
-		private IEnumerator CoroutineDivaModel(bool isTrying, bool local = true)
+		private IEnumerator CoroutineDivaModel(bool isTrying, bool local/* = true*/)
 		{
 			int hash;
 

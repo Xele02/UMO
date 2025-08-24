@@ -29,7 +29,7 @@ public class DFKGGBMFFGB_PlayerInfo
 	public bool Unused() { return BNFDBPPOAOE; }
 
 	// // RVA: 0x197E960 Offset: 0x197E960 VA: 0x197E960
-	public void KHEKNNFCAOI_Init(BBHNACPENDM_ServerSaveData NIMOGBDCMLJ_ServerSave, bool HEHLHEKCIFF = false)
+	public void KHEKNNFCAOI_Init(BBHNACPENDM_ServerSaveData NIMOGBDCMLJ_ServerSave, bool HEHLHEKCIFF/* = false*/)
 	{
 		BNFDBPPOAOE = true;
 		if(NIMOGBDCMLJ_ServerSave == null)
@@ -287,7 +287,7 @@ public class DFKGGBMFFGB_PlayerInfo
 	}
 
 	// // RVA: 0x19814C8 Offset: 0x19814C8 VA: 0x19814C8
-	public JLKEOGLJNOD_TeamInfo DPLBHAIKPGL_GetTeam(bool CMEOKJMCEBH = false)
+	public JLKEOGLJNOD_TeamInfo DPLBHAIKPGL_GetTeam(bool CMEOKJMCEBH/* = false*/)
 	{
 		if(CMEOKJMCEBH)
 			return LEIGKLOGCPF_MainUnitGoDiva;
@@ -301,7 +301,7 @@ public class DFKGGBMFFGB_PlayerInfo
 	}
 
 	// // RVA: 0x198156C Offset: 0x198156C VA: 0x198156C
-	public List<JLKEOGLJNOD_TeamInfo> DDMBOKCCLBD_GetUnits(bool CMEOKJMCEBH_IsGoDiva = false)
+	public List<JLKEOGLJNOD_TeamInfo> DDMBOKCCLBD_GetUnits(bool CMEOKJMCEBH_IsGoDiva/* = false*/)
 	{
 		return CMEOKJMCEBH_IsGoDiva ? HDCBAOKMFAH_UnitsGoDiva : EHGGOAGEGIM_UnitsNormal;
 	}

@@ -27,14 +27,14 @@ namespace XeApp.Game.Menu
 			}
 
 			// RVA: 0xB6C884 Offset: 0xB6C884 VA: 0xB6C884
-			public GachaArgs(int typeAndSeriesId, bool updateGachaProduct = true)
+			public GachaArgs(int typeAndSeriesId, bool updateGachaProduct/* = true*/)
 			{
 				UpdateGachaProduct = updateGachaProduct;
 				TypeAndSeriesId = typeAndSeriesId;
 			}
 
 			//// RVA: 0xB6C878 Offset: 0xB6C878 VA: 0xB6C878
-			public void Init(int typeAndSeriesId, bool updateGachaProduct = true)
+			public void Init(int typeAndSeriesId, bool updateGachaProduct/* = true*/)
 			{
 				UpdateGachaProduct = updateGachaProduct;
 				TypeAndSeriesId = typeAndSeriesId;
@@ -1139,7 +1139,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEEA1AC Offset: 0xEEA1AC VA: 0xEEA1AC
-		private void MakeAppearRateForStepUp(int stepIndex = -1)
+		private void MakeAppearRateForStepUp(int stepIndex/* = -1*/)
 		{
 			LOBDIAABMKG product = GachaUtility.netGachaProductData;
 			if (stepIndex < 0)
@@ -1289,7 +1289,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEEB604 Offset: 0xEEB604 VA: 0xEEB604
-		private void MakeAppearRateInGroup(List<GachaRateInfo> infoList, BPADANIKFHP lot, bool isHideRareMark = false)
+		private void MakeAppearRateInGroup(List<GachaRateInfo> infoList, BPADANIKFHP lot, bool isHideRareMark/* = false*/)
 		{
 			if(!isHideRareMark)
 			{

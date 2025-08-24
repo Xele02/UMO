@@ -215,7 +215,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12D84B8 Offset: 0x12D84B8 VA: 0x12D84B8
-		public void SetSortLabel(int index, SortItem item, bool isFriend = false)
+		public void SetSortLabel(int index, SortItem item, bool isFriend/* = false*/)
 		{
 			m_sortItemLabel[index].uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData(m_sortLabelUvTbl[(int)item]));
 		}
@@ -240,20 +240,20 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12D8958 Offset: 0x12D8958 VA: 0x12D8958
-		public void SetSelectSortButton(int index, bool isFriend = false)
+		public void SetSelectSortButton(int index, bool isFriend/* = false*/)
 		{
 			m_sortGroupButton.SelectGroupButton(index);
 		}
 
 		//// RVA: 0x12D898C Offset: 0x12D898C VA: 0x12D898C
-		public void SetSortButtonEnable(int index, bool isFriend = false)
+		public void SetSortButtonEnable(int index, bool isFriend/* = false*/)
 		{
 			m_sortToggleButtons[index].Hidden = false;
 			m_sortItemLabel[index].enabled = true;
 		}
 
 		//// RVA: 0x12D8A50 Offset: 0x12D8A50 VA: 0x12D8A50
-		public void SetSortButtonDisable(int index, bool isFriend = false)
+		public void SetSortButtonDisable(int index, bool isFriend/* = false*/)
 		{
 			m_sortToggleButtons[index].Hidden = true;
 			m_sortItemLabel[index].enabled = false;
@@ -266,7 +266,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12D8B48 Offset: 0x12D8B48 VA: 0x12D8B48
-		public void ShowFilter(bool isShowCompatibleCheck, bool isFriend = false)
+		public void ShowFilter(bool isShowCompatibleCheck, bool isFriend/* = false*/)
 		{
 			Vector2 s = (transform as RectTransform).sizeDelta;
 			m_childfilterAnimeLayout.StartChildrenAnimGoStop("01");
@@ -295,7 +295,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12D8D70 Offset: 0x12D8D70 VA: 0x12D8D70
-		public void ShowDecoFilter(bool isDecoShopInterior = false)
+		public void ShowDecoFilter(bool isDecoShopInterior/* = false*/)
 		{
 			m_childfilterAnimeLayout.StartChildrenAnimGoStop("01");
 			m_filterAnimeLayout.StartChildrenAnimGoStop("04");

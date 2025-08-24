@@ -58,7 +58,7 @@ public class OKPEFAPPFDH_GetRanksAroundSelf : CACGCMBKHDI_Request
 	public override bool OIDCBBGLPHL { get { return true; } } //0x14ACBE4 GINMIBJOABO
 
 	// RVA: 0x14ACB08 Offset: 0x14ACB08 VA: 0x14ACB08
-	public OKPEFAPPFDH_GetRanksAroundSelf(bool KCOEDBOCPIK = false)
+	public OKPEFAPPFDH_GetRanksAroundSelf(bool KCOEDBOCPIK/* = false*/)
 	{
 		if (KCOEDBOCPIK)
 			return;

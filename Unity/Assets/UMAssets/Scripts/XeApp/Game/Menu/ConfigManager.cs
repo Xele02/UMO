@@ -405,7 +405,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1B58E8C Offset: 0x1B58E8C VA: 0x1B58E8C
-		public void SetEffectCutinValue(int value, bool simulation = false)
+		public void SetEffectCutinValue(int value, bool simulation/* = false*/)
 		{
 			if(simulation)
 			{
@@ -448,7 +448,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1B59054 Offset: 0x1B59054 VA: 0x1B59054
-		public void SetQualityValue(int value, bool simulation = false)
+		public void SetQualityValue(int value, bool simulation/* = false*/)
 		{
 			if(!simulation)
 			{
@@ -461,7 +461,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1B59148 Offset: 0x1B59148 VA: 0x1B59148
-		public int GetQualityValue(bool simulation = false)
+		public int GetQualityValue(bool simulation/* = false*/)
 		{
 			if(!simulation)
 			{
@@ -487,7 +487,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1B592C8 Offset: 0x1B592C8 VA: 0x1B592C8
-		public void SetQualityCustomDiva3DValue(int value, bool simulation = false)
+		public void SetQualityCustomDiva3DValue(int value, bool simulation/* = false*/)
 		{
 			if(simulation)
 			{
@@ -500,7 +500,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1B59318 Offset: 0x1B59318 VA: 0x1B59318
-		public void SetQualityCustomOther3DValue(int value, bool simulation = false)
+		public void SetQualityCustomOther3DValue(int value, bool simulation/* = false*/)
 		{
 			if (simulation)
 			{
@@ -579,7 +579,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1B59500 Offset: 0x1B59500 VA: 0x1B59500
-		private float ChangeVolume(SoundManager.CategoryId category, int num, bool simulation = false)
+		private float ChangeVolume(SoundManager.CategoryId category, int num, bool simulation/* = false*/)
 		{
 			float val = 0;
 			switch (category)
@@ -626,19 +626,19 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1B59994 Offset: 0x1B59994 VA: 0x1B59994
-		public float VolumePlus(SoundManager.CategoryId category, bool simulation = false)
+		public float VolumePlus(SoundManager.CategoryId category, bool simulation/* = false*/)
 		{
 			return ChangeVolume(category, 1, simulation);
 		}
 
 		// // RVA: 0x1B599B4 Offset: 0x1B599B4 VA: 0x1B599B4
-		public float VolumeMinus(SoundManager.CategoryId category, bool simulation = false)
+		public float VolumeMinus(SoundManager.CategoryId category, bool simulation/* = false*/)
 		{
 			return ChangeVolume(category, -1, simulation);
 		}
 
 		// // RVA: 0x1B597E4 Offset: 0x1B597E4 VA: 0x1B597E4
-		public void SetVolume(SoundManager.CategoryId category, float value, bool simulation = false)
+		public void SetVolume(SoundManager.CategoryId category, float value, bool simulation/* = false*/)
 		{
 			switch(category)
 			{
@@ -777,7 +777,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1B5A35C Offset: 0x1B5A35C VA: 0x1B5A35C
-		public void ApplyValue(bool isSave = true, Action callback = null)
+		public void ApplyValue(bool isSave/* = true*/, Action callback/* = null*/)
 		{
 			if(!isSave)
 			{

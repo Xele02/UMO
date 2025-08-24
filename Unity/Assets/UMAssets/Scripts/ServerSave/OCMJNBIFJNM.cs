@@ -83,7 +83,7 @@ public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		//// RVA: 0x1B313B0 Offset: 0x1B313B0 VA: 0x1B313B0
-		public void LHPDDGIJKNB(int HBCEIBHJPFN = -1)
+		public void LHPDDGIJKNB(int HBCEIBHJPFN/* = -1*/)
 		{
 			if(HBCEIBHJPFN > -1)
 			{
@@ -195,7 +195,7 @@ public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		//// RVA: 0x1B3201C Offset: 0x1B3201C VA: 0x1B3201C
-		public void LHPDDGIJKNB(string MHNBNPJMDGL = "")
+		public void LHPDDGIJKNB(string MHNBNPJMDGL/* = ""*/)
 		{
 			OPFGFINHFCE_Name = MHNBNPJMDGL;
 			for (int i = 0; i < 3; i++)

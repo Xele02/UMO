@@ -96,7 +96,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x1656FCC Offset: 0x1656FCC VA: 0x1656FCC
-		public void ChangeSelectValkyrie(LayoutValkyrieSelect.Direction dir = LayoutValkyrieSelect.Direction.NONE)
+		public void ChangeSelectValkyrie(LayoutValkyrieSelect.Direction dir/* = LayoutValkyrieSelect.Direction.NONE*/)
 		{
 			if(m_SeriesValkyrieList[m_SelectSeries].Count < 2)
 			{

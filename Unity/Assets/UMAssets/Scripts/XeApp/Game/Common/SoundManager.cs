@@ -178,7 +178,7 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x139654C Offset: 0x139654C VA: 0x139654C
-		public void RequestEntryRhythmGameCueSheet(UnityAction onLoadedCallback, int forceNoteSe = 0)
+		public void RequestEntryRhythmGameCueSheet(UnityAction onLoadedCallback, int forceNoteSe/* = 0*/)
 		{
 			RemoveSectionallySECueSheet();
 			List<string> strs = new List<string>();
@@ -291,7 +291,7 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1396FA0 Offset: 0x1396FA0 VA: 0x1396FA0
-		public void SetCategoryVolumeFromMark(CategoryId a_id, int a_mark, bool a_is_slive = false)
+		public void SetCategoryVolumeFromMark(CategoryId a_id, int a_mark, bool a_is_slive/* = false*/)
 		{
 			float val = Mathf.Clamp((float)a_mark, 0, 20);
 			val = val / 20;

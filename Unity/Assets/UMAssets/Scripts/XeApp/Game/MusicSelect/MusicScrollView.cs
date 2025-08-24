@@ -97,7 +97,7 @@ namespace XeApp.Game.MusicSelect
 		}
 
 		//// RVA: 0xC9FA20 Offset: 0xC9FA20 VA: 0xC9FA20
-		public void UpdateListPosition(bool isForce = false)
+		public void UpdateListPosition(bool isForce/* = false*/)
 		{
 			float val = _scrollValue.y / 90.0f;
 			if(Math.Truncate(val) == 0 && !isForce)
@@ -132,7 +132,7 @@ namespace XeApp.Game.MusicSelect
 		//private bool CheckUpdateCenterItem(float rate) { }
 
 		//// RVA: 0xC9FDA4 Offset: 0xC9FDA4 VA: 0xC9FDA4
-		private void UpdateCenterItem(float rate, bool isClip, bool isForce = false)
+		private void UpdateCenterItem(float rate, bool isClip, bool isForce/* = false*/)
 		{
 			float absRate = Math.Abs(rate);
 			bool b = false;

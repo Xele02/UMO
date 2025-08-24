@@ -30,7 +30,7 @@ namespace XeApp.Game.MiniGame
 		}
 
 		//// RVA: 0xC9137C Offset: 0xC9137C VA: 0xC9137C
-		public void BgmFadeOut(float sec = 1, Action onStop = null)
+		public void BgmFadeOut(float sec/* = 1*/, Action onStop/* = null*/)
 		{
 			SoundManager.Instance.bgmPlayer.FadeOut(sec, onStop);
 		}

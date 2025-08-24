@@ -44,7 +44,7 @@ namespace XeApp.Game.Common
 				}
 
 				// // RVA: 0xE9F6C0 Offset: 0xE9F6C0 VA: 0xE9F6C0
-				public void SetupInfo(FFHPBEPOMAK_DivaInfo viewDivaData, DFKGGBMFFGB_PlayerInfo playerData, EEDKAACNBBG_MusicData musicData, AOJGDNFAIJL_PrismData.AMIECPBIALP prismData, int index, int positionId = 1)
+				public void SetupInfo(FFHPBEPOMAK_DivaInfo viewDivaData, DFKGGBMFFGB_PlayerInfo playerData, EEDKAACNBBG_MusicData musicData, AOJGDNFAIJL_PrismData.AMIECPBIALP prismData, int index, int positionId/* = 1*/)
 				{
 					Initialize();
 					this.positionId = positionId;
@@ -248,7 +248,7 @@ namespace XeApp.Game.Common
 			}
 
 			// // RVA: 0xE9E784 Offset: 0xE9E784 VA: 0xE9E784
-			public void SetupInfo(StatusData teamStateus, DFKGGBMFFGB_PlayerInfo playerData, int teamNo, EEDKAACNBBG_MusicData musicData, EAJCBFGKKFA_FriendInfo friendData, LimitOverStatusData limitOverStatus, AOJGDNFAIJL_PrismData.AMIECPBIALP prismData, bool isGoDiva = false)
+			public void SetupInfo(StatusData teamStateus, DFKGGBMFFGB_PlayerInfo playerData, int teamNo, EEDKAACNBBG_MusicData musicData, EAJCBFGKKFA_FriendInfo friendData, LimitOverStatusData limitOverStatus, AOJGDNFAIJL_PrismData.AMIECPBIALP prismData, bool isGoDiva/* = false*/)
 			{
 				Initialize();
 				StatusData status = new StatusData();
@@ -436,7 +436,7 @@ namespace XeApp.Game.Common
 			}
 
 			// // RVA: 0xE9D748 Offset: 0xE9D748 VA: 0xE9D748
-			public void SetupInfoByStoryMusic(int storyMusicId, int onStageDivaNum = 1)
+			public void SetupInfoByStoryMusic(int storyMusicId, int onStageDivaNum/* = 1*/)
 			{
 				mode = GameMode.Type.StoryBattle;
 				freeMusicId = 0;

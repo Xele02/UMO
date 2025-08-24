@@ -38,7 +38,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CE28E0 Offset: 0x1CE28E0 VA: 0x1CE28E0
-		public void Begin(float lerpSec = -1)
+		public void Begin(float lerpSec/* = -1*/)
 		{
 			m_isRunning = true;
 			m_isPause = false;

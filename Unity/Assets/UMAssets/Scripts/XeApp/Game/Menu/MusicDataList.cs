@@ -102,7 +102,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x10498EC Offset: 0x10498EC VA: 0x10498EC
-		public int FindIndex(int freeMusicId, OHCAABOMEOF.KGOGMKMBCPP_EventType gameEventType, bool line6Mode = false, bool simulation = false)
+		public int FindIndex(int freeMusicId, OHCAABOMEOF.KGOGMKMBCPP_EventType gameEventType, bool line6Mode/* = false*/, bool simulation/* = false*/)
 		{
 			return FindIndex((IBJAKJJICBC _) => {
 				//0x104A274
@@ -111,7 +111,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1049844 Offset: 0x1049844 VA: 0x1049844
-		public int FindIndex(Predicate<IBJAKJJICBC> match, bool line6Mode = false, bool simulation = false)
+		public int FindIndex(Predicate<IBJAKJJICBC> match, bool line6Mode/* = false*/, bool simulation/* = false*/)
 		{
 			List<IBJAKJJICBC> list;
 			if(simulation)

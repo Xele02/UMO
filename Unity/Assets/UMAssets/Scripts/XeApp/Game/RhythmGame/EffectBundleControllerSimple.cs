@@ -181,7 +181,7 @@ namespace XeApp.Game.RhythmGame
 		//public void Play(string groupName) { }
 
 		//// RVA: 0xF6351C Offset: 0xF6351C VA: 0xF6351C
-		public void Play(int groupHash, float normalizeTime = 0)
+		public void Play(int groupHash, float normalizeTime/* = 0*/)
 		{
 			int idx = 0;
 			if (m_searchDict.TryGetValue(groupHash, out idx))

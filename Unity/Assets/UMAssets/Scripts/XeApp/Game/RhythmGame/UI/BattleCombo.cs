@@ -48,7 +48,7 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		// // RVA: 0x15588CC Offset: 0x15588CC VA: 0x15588CC
-		public void Hide(bool isFaild = false)
+		public void Hide(bool isFaild/* = false*/)
 		{
 			for(int i = 0; i < ComboLevelAnimeStates.Length; i++)
 			{

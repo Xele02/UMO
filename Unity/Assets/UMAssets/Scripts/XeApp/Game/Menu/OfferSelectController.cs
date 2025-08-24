@@ -1153,7 +1153,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1865AE0 Offset: 0x1865AE0 VA: 0x1865AE0
-		public void SetViewList(OfferSelectList.OfferSelectTab tab, bool IsListUpdata = false)
+		public void SetViewList(OfferSelectList.OfferSelectTab tab, bool IsListUpdata/* = false*/)
 		{
 			HEFCLPGPMLK.AAOPGOGGMID d = viewOfferData.HHPEMLOLJIH();
 			m_timeWatcherFirstCompOffer.WatchStop();

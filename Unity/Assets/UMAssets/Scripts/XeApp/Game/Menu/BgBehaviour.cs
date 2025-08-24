@@ -205,7 +205,7 @@ namespace XeApp.Game.Menu
 		// public void ClearBg() { }
 
 		// // RVA: 0x1436D7C Offset: 0x1436D7C VA: 0x1436D7C
-		public void SetHomeBgTexture(BgControl.BgTexture texture, bool isScene, bool isBlur = false)
+		public void SetHomeBgTexture(BgControl.BgTexture texture, bool isScene, bool isBlur/* = false*/)
 		{
 			if(texture.texture != null)
 			{
@@ -217,7 +217,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1436EA4 Offset: 0x1436EA4 VA: 0x1436EA4
-		public void SetBgTexture(Texture2D texture, bool isScene, bool isBlur = false)
+		public void SetBgTexture(Texture2D texture, bool isScene, bool isBlur/* = false*/)
 		{
 			m_bgImage.texture = texture;
 			if(!isScene)
@@ -368,7 +368,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1438E14 Offset: 0x1438E14 VA: 0x1438E14
-		public void SetMusic(bool simulation = false)
+		public void SetMusic(bool simulation/* = false*/)
 		{
 			m_tileImage.enabled = true;
 			ChangeTilingType(simulation ? TilingType.Cross : TilingType.Dot, false);
@@ -698,7 +698,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1438A94 Offset: 0x1438A94 VA: 0x1438A94
-		public void ChangeTilingType(BgBehaviour.TilingType type, bool mask = false)
+		public void ChangeTilingType(BgBehaviour.TilingType type, bool mask/* = false*/)
 		{
 			switch(type)
 			{

@@ -234,7 +234,7 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8DD670 Offset: 0x8DD670 VA: 0x8DD670
-	protected void KOMAHOAEMEK(bool JMPLGBCLGOF = true)
+	protected void KOMAHOAEMEK(bool JMPLGBCLGOF/* = true*/)
 	{
 		if(AGLILDLEFDK_Missions != null && OLDFFDMPEBM_Quests != null)
 		{
@@ -558,7 +558,7 @@ public abstract class IKDICBBFBMI_EventBase
 	// public int CHHHPIDCDMH() { }
 
 	// // RVA: 0x8DF6E8 Offset: 0x8DF6E8 VA: 0x8DF6E8 Slot: 27
-	public virtual int HLOGNJNGDJO_GetHelpId(int OIPCCBHIKIA = 0)
+	public virtual int HLOGNJNGDJO_GetHelpId(int OIPCCBHIKIA/* = 0*/)
 	{
 		return 0;
 	}
@@ -573,7 +573,7 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8DF718 Offset: 0x8DF718 VA: 0x8DF718 Slot: 29
-	public virtual void MJFKJHJJLMN_GetRanks(int LHJCOPMMIGO = 0, bool FBBNPFFEJBN = false)
+	public virtual void MJFKJHJJLMN_GetRanks(int LHJCOPMMIGO/* = 0*/, bool FBBNPFFEJBN/* = false*/)
 	{
 		NPNNPNAIONN = false;
 		PLOOEECNHFB = true;
@@ -858,13 +858,13 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8DFD08 Offset: 0x8DFD08 VA: 0x8DFD08 Slot: 54
-	public virtual int NGIHFKHOJOK_GetRankingMax(bool DJHLDMOPCOL = true)
+	public virtual int NGIHFKHOJOK_GetRankingMax(bool DJHLDMOPCOL/* = true*/)
 	{
 		return 1;
 	}
 
 	// // RVA: 0x8DFD10 Offset: 0x8DFD10 VA: 0x8DFD10 Slot: 55
-	public virtual bool PIDEAJOJKKC(int LHJCOPMMIGO = 0)
+	public virtual bool PIDEAJOJKKC(int LHJCOPMMIGO/* = 0*/)
 	{
 		return true;
 	}
@@ -882,7 +882,7 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8DFD24 Offset: 0x8DFD24 VA: 0x8DFD24
-	public void FPPNKEPDEBL(int LHJCOPMMIGO = 0)
+	public void FPPNKEPDEBL(int LHJCOPMMIGO/* = 0*/)
 	{
 		NPNNPNAIONN = false;
 		PLOOEECNHFB = false;
@@ -1238,7 +1238,7 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8E22A0 Offset: 0x8E22A0 VA: 0x8E22A0 Slot: 66
-	public virtual void FGDDBFHGCGP_SetStartAdventureShown(bool JKDJCFEBDHC, long JHNMKKNEENE = 0)
+	public virtual void FGDDBFHGCGP_SetStartAdventureShown(bool JKDJCFEBDHC, long JHNMKKNEENE/* = 0*/)
 	{
 		return;
 	}

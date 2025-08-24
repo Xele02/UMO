@@ -1305,7 +1305,7 @@ namespace XeApp.Game.Adv
 
 		//[IteratorStateMachineAttribute] // RVA: 0x742DEC Offset: 0x742DEC VA: 0x742DEC
 		//// RVA: 0xBC7F70 Offset: 0xBC7F70 VA: 0xBC7F70
-		public IEnumerator DoAdv(int advId, bool isAuto = false)
+		public IEnumerator DoAdv(int advId, bool isAuto/* = false*/)
 		{
 			AdvScriptData adv_data; // 0x24
 			int message_index; // 0x28
@@ -1662,7 +1662,7 @@ namespace XeApp.Game.Adv
 
 		//[IteratorStateMachineAttribute] // RVA: 0x743044 Offset: 0x743044 VA: 0x743044
 		//// RVA: 0xBC84D8 Offset: 0xBC84D8 VA: 0xBC84D8
-		private IEnumerator Co_ValkyrieGet(int valId = 1)
+		private IEnumerator Co_ValkyrieGet(int valId/* = 1*/)
 		{
 			string bundleName; // 0x1C
 			AssetBundleLoadAssetOperation op; // 0x20

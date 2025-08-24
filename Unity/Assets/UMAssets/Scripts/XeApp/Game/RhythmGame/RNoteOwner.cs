@@ -73,7 +73,7 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDB1384 Offset: 0xDB1384 VA: 0xDB1384
-		public void Initialize(MusicData muiscData, RhythmGameMode gameMode, BuffEffectOwner buffOwner, RhythmGameSpecialNotesAssigner.AssignInfo a_assing_info, bool a_setting_mv, bool a_notes_seeting_mv, bool a_setting_skip = false)
+		public void Initialize(MusicData muiscData, RhythmGameMode gameMode, BuffEffectOwner buffOwner, RhythmGameSpecialNotesAssigner.AssignInfo a_assing_info, bool a_setting_mv, bool a_notes_seeting_mv, bool a_setting_skip/* = false*/)
 		{
 			musicData = muiscData;
 			musicScoreData = muiscData.musicScoreData;
@@ -657,7 +657,7 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDB5FF8 Offset: 0xDB5FF8 VA: 0xDB5FF8
-		public void EndedTouch(int lineNo, int lineNo_Begin, int fingerId, bool forceMiss, bool checkLine = false)
+		public void EndedTouch(int lineNo, int lineNo_Begin, int fingerId, bool forceMiss, bool checkLine/* = false*/)
 		{
 			if(isPause)
 			{
@@ -769,14 +769,14 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xDB9A9C Offset: 0xDB9A9C VA: 0xDB9A9C
-		public void ReleaseLine(int lineNo, int lineNo_Begin, int fingerId, bool forceMiss, bool checkLine = false)
+		public void ReleaseLine(int lineNo, int lineNo_Begin, int fingerId, bool forceMiss, bool checkLine/* = false*/)
 		{
 			if (!IsSlideBeganTouched(fingerId))
 				EndedTouch(lineNo, lineNo_Begin, fingerId, forceMiss, checkLine);
 		}
 
 		//// RVA: 0xDB9BDC Offset: 0xDB9BDC VA: 0xDB9BDC
-		public void NextLine(int lineNo0, int lineNo1, int fingerId, bool forceMiss, bool checkLine = false)
+		public void NextLine(int lineNo0, int lineNo1, int fingerId, bool forceMiss, bool checkLine/* = false*/)
 		{
 			return;
 		}

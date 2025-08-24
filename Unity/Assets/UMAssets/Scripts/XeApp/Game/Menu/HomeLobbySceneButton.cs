@@ -59,7 +59,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x967130 Offset: 0x967130 VA: 0x967130
-		public void Hide(bool isEnd = false)
+		public void Hide(bool isEnd/* = false*/)
 		{
 			if(!m_is_show)
 				return;

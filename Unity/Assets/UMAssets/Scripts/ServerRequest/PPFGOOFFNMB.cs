@@ -29,7 +29,7 @@ public class PPFGOOFFNMB_GetTopRanks : CACGCMBKHDI_Request
 	public NJAPFHHAOHE NFEAMMJIMPG { get; private set; } // 0x8C OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
 
 	// RVA: 0xDF691C Offset: 0xDF691C VA: 0xDF691C
-	public PPFGOOFFNMB_GetTopRanks(bool KCOEDBOCPIK = false)
+	public PPFGOOFFNMB_GetTopRanks(bool KCOEDBOCPIK/* = false*/)
 	{
 		if (KCOEDBOCPIK)
 			return;

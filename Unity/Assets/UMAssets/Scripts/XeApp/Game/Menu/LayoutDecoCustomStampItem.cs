@@ -164,7 +164,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x19DED28 Offset: 0x19DED28 VA: 0x19DED28
-		public void Copy(LayoutDecoCustomStampWindow.StampData item, int target = 0)
+		public void Copy(LayoutDecoCustomStampWindow.StampData item, int target/* = 0*/)
 		{
 			SetData(item.stampId, item.serifId, item.type, item.number);
 			if (number == target)

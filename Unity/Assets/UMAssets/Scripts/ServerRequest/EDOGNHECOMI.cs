@@ -21,7 +21,7 @@ public class EDOGNHECOMI_GetStepUpLotDetail : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0x1509DA8 Offset: 0x1509DA8 VA: 0x1509DA8
-	public EDOGNHECOMI_GetStepUpLotDetail(bool CMAKKCANGGD = false)
+	public EDOGNHECOMI_GetStepUpLotDetail(bool CMAKKCANGGD/* = false*/)
 	{
 		ENDFGMBBBEE = CMAKKCANGGD;
 	}

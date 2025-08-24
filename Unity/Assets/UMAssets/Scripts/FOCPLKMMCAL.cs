@@ -970,7 +970,7 @@ public class FOCPLKMMCAL
 	}
 
 	//// RVA: 0x13F2D60 Offset: 0x13F2D60 VA: 0x13F2D60
-	private void DFKOELMCDDL(int OIPCCBHIKIA_ItemCode, int KIJAPOFAGPN_ItemId, int HMFFHLPNMPH_Cnt, bool OEIGPPHPPFN = false)
+	private void DFKOELMCDDL(int OIPCCBHIKIA_ItemCode, int KIJAPOFAGPN_ItemId, int HMFFHLPNMPH_Cnt, bool OEIGPPHPPFN/* = false*/)
 	{
 		if (KIJAPOFAGPN_ItemId == 0)
 			return;
@@ -1015,7 +1015,7 @@ public class FOCPLKMMCAL
 	}
 
 	//// RVA: 0x13F2A20 Offset: 0x13F2A20 VA: 0x13F2A20
-	private void BDMIIPKOIKL(int OIPCCBHIKIA_ItemCode, int KIJAPOFAGPN_ItemId, int HMFFHLPNMPH_Cnt, bool OEIGPPHPPFN = false)
+	private void BDMIIPKOIKL(int OIPCCBHIKIA_ItemCode, int KIJAPOFAGPN_ItemId, int HMFFHLPNMPH_Cnt, bool OEIGPPHPPFN/* = false*/)
 	{
 		if (KIJAPOFAGPN_ItemId == 0)
 			return;

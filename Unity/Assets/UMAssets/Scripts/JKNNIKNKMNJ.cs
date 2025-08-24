@@ -119,7 +119,7 @@ public class JKNNIKNKMNJ
     }
 
 	// // RVA: 0x147292C Offset: 0x147292C VA: 0x147292C
-	public int DCLKMNGMIKC(bool LIFPCFFJEOA = false)
+	public int DCLKMNGMIKC(bool LIFPCFFJEOA/* = false*/)
 	{
 		if(!LIFPCFFJEOA)
 		{
@@ -167,7 +167,7 @@ public class JKNNIKNKMNJ
 	// public long LEHHIGOOIJJ() { }
 
 	// // RVA: 0x1472DCC Offset: 0x1472DCC VA: 0x1472DCC
-	public bool IGFMNMADJPP(int CHIHFGDIBJM, bool DDGFCOPPBBN = true)
+	public bool IGFMNMADJPP(int CHIHFGDIBJM, bool DDGFCOPPBBN/* = true*/)
 	{
 		long l1 = DCLKMNGMIKC(false);
 		if (CHIHFGDIBJM <= l1 && !DDGFCOPPBBN)

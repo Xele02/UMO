@@ -454,7 +454,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1B67498 Offset: 0x1B67498 VA: 0x1B67498
-		private void SettingRankMaxLayout(int next = -1)
+		private void SettingRankMaxLayout(int next/* = -1*/)
 		{
 			if(m_data.LLLCMHENKKN_LevelMax <= m_rank)
 			{

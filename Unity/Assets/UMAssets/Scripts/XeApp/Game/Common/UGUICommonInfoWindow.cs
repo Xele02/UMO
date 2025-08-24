@@ -125,25 +125,25 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CD1D44 Offset: 0x1CD1D44 VA: 0x1CD1D44
-		public void Enter(bool force = false)
+		public void Enter(bool force/* = false*/)
 		{
 			m_inOutAnime.Enter(force, null);
 		}
 
 		//// RVA: 0x1CD1D7C Offset: 0x1CD1D7C VA: 0x1CD1D7C
-		public void Enter(float animTime, bool force = false)
+		public void Enter(float animTime, bool force/* = false*/)
 		{
 			m_inOutAnime.Enter(animTime, force);
 		}
 
 		//// RVA: 0x1CD1DC8 Offset: 0x1CD1DC8 VA: 0x1CD1DC8
-		public void Leave(bool force = false)
+		public void Leave(bool force/* = false*/)
 		{
 			m_inOutAnime.Leave(force, null);
 		}
 
 		//// RVA: 0x1CD1E00 Offset: 0x1CD1E00 VA: 0x1CD1E00
-		public void Leave(float animTime, bool force = false)
+		public void Leave(float animTime, bool force/* = false*/)
 		{
 			m_inOutAnime.Leave(animTime, force, null);
 		}

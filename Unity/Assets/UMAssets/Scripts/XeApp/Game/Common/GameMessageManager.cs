@@ -25,7 +25,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xE98F48 Offset: 0xE98F48 VA: 0xE98F48
-		public static string GetSceneCardName(int caradId, int multi = 0, string orgName = "")
+		public static string GetSceneCardName(int caradId, int multi/* = 0*/, string orgName/* = ""*/)
 		{
 			if(orgName == "")
 			{

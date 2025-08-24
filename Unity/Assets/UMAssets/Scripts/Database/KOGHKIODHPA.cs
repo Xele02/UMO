@@ -160,7 +160,7 @@ public class KOGHKIODHPA_Board : DIHHCBACKGG_DbSection
 		}
 
         // // RVA: 0x1131DB4 Offset: 0x1131DB4 VA: 0x1131DB4
-        public void OMKKILODDIC_ApplyBoardValues(byte[] ODKMKEHJOCK, int MBLGJDKKLPO = 0)
+        public void OMKKILODDIC_ApplyBoardValues(byte[] ODKMKEHJOCK, int MBLGJDKKLPO/* = 0*/)
 		{
 			JFFEGBIODOJ = 0;
 			AEBEPGKIOFM = 0;
@@ -260,7 +260,7 @@ public class KOGHKIODHPA_Board : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x112F7DC Offset: 0x112F7DC VA: 0x112F7DC
-	public DMPDJFAGCPN GPKFGCFHDHH(int BJNBBEMBMIK, bool JEMMNNJIIJL = false)
+	public DMPDJFAGCPN GPKFGCFHDHH(int BJNBBEMBMIK, bool JEMMNNJIIJL/* = false*/)
 	{
 		return JEMMNNJIIJL ? GLEOCPPMAKK[BJNBBEMBMIK - 1] : OONHJNINFAD_Sub[BJNBBEMBMIK - 1];
 	}

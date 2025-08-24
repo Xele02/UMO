@@ -79,7 +79,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x11589E0 Offset: 0x11589E0 VA: 0x11589E0
-		public static IEnumerator Show(PopupUnlock.eSceneType type, Action<int> callbackClose, bool autoChangeTransition = false, Action<PopupUnlock> receivePopup = null)
+		public static IEnumerator Show(PopupUnlock.eSceneType type, Action<int> callbackClose, bool autoChangeTransition/* = false*/, Action<PopupUnlock> receivePopup/* = null*/)
 		{
 			return Coroutine_ShowUnlock(type,callbackClose,autoChangeTransition,receivePopup);
 		}

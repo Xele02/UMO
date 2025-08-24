@@ -420,7 +420,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6DE12C Offset: 0x6DE12C VA: 0x6DE12C
 		// // RVA: 0xEDDC58 Offset: 0xEDDC58 VA: 0xEDDC58
-		protected IEnumerator Co_DrawBox(int num = 1)
+		protected IEnumerator Co_DrawBox(int num/* = 1*/)
 		{
 			bool isEnpty; // 0x1C
 			JKNGJFOBADP inventoryUtil; // 0x20

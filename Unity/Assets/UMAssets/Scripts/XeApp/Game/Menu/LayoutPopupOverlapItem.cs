@@ -30,7 +30,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x173B070 Offset: 0x173B070 VA: 0x173B070
-		public void SetStatus(GONMPHKGKHI_RewardView.CECMLGBLHHG type, GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo info, bool _isKira = false)
+		public void SetStatus(GONMPHKGKHI_RewardView.CECMLGBLHHG type, GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo info, bool _isKira/* = false*/)
 		{
 			if(type == GONMPHKGKHI_RewardView.CECMLGBLHHG.JCGKGFLCKCP_8)
 			{
@@ -77,7 +77,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x173B4F4 Offset: 0x173B4F4 VA: 0x173B4F4
-		private void SetPlateImage(int id, int rank, bool isKira = false)
+		private void SetPlateImage(int id, int rank, bool isKira/* = false*/)
 		{
 			m_isLoadingImage = false;
 			if(m_imagePlate != null)

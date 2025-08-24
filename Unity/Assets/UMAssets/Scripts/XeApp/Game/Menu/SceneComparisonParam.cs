@@ -131,7 +131,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x15A0264 Offset: 0x15A0264 VA: 0x15A0264
-		public void UpdateContent(Style style, GCIJNCFDNON_SceneInfo sceneData, GCIJNCFDNON_SceneInfo comparisonScene, DFKGGBMFFGB_PlayerInfo playerData, FFHPBEPOMAK_DivaInfo divaData, int slotIndex, int divaSlot, int musicId = 0, bool isGoDiva = false)
+		public void UpdateContent(Style style, GCIJNCFDNON_SceneInfo sceneData, GCIJNCFDNON_SceneInfo comparisonScene, DFKGGBMFFGB_PlayerInfo playerData, FFHPBEPOMAK_DivaInfo divaData, int slotIndex, int divaSlot, int musicId/* = 0*/, bool isGoDiva/* = false*/)
 		{
 			m_sceneData = sceneData;
 			m_playerData = playerData;

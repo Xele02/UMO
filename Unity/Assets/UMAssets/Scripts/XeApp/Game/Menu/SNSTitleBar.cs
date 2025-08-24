@@ -128,7 +128,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x159DC2C Offset: 0x159DC2C VA: 0x159DC2C
-		private void SetPushButton(bool enable, bool isCoroutine = false)
+		private void SetPushButton(bool enable, bool isCoroutine/* = false*/)
 		{
 			if(!enable)
 			{
@@ -147,7 +147,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x159DCC4 Offset: 0x159DCC4 VA: 0x159DCC4
-		private void SwitchPushButtonEnable(ActionButton button, bool enable, bool isCoroutine = false)
+		private void SwitchPushButtonEnable(ActionButton button, bool enable, bool isCoroutine/* = false*/)
 		{
 			if (button == null)
 				return;
@@ -179,7 +179,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x159DFA4 Offset: 0x159DFA4 VA: 0x159DFA4
-		private void SetPushValue(bool active, bool save = true)
+		private void SetPushValue(bool active, bool save/* = true*/)
 		{
 			if(active)
 			{

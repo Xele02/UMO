@@ -144,7 +144,7 @@ public class NKFJNAANPNP : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xC12BD4 Offset: 0xC12BD4 VA: 0xC12BD4
-	public int APIEKGBMBPA(long JHNMKKNEENE, bool DDGFCOPPBBN = false)
+	public int APIEKGBMBPA(long JHNMKKNEENE, bool DDGFCOPPBBN/* = false*/)
 	{
 		int a = -1;
 		int b = int.MaxValue;

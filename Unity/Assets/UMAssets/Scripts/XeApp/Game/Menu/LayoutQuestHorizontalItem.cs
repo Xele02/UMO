@@ -166,7 +166,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1878728 Offset: 0x1878728 VA: 0x1878728
-		public void SwitchEmphasisIcon(BadgeConstant.ID id, string text = "")
+		public void SwitchEmphasisIcon(BadgeConstant.ID id, string text/* = ""*/)
 		{
 			m_badge.Set(id, text);
 		}

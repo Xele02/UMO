@@ -239,7 +239,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x18E955C Offset: 0x18E955C VA: 0x18E955C
-		private void SetupModeObject(List<GameObject> range_list, List<GameObject> line_list, List<GameObject> icon_list, RhythmGamePlayLog.ModeData data, LayoutResultPlaylogGraphParts.PartsData.ModeParts parts, GameObject line_obj, RectTransform parent, int end_time, bool is_show_end_line = true)
+		private void SetupModeObject(List<GameObject> range_list, List<GameObject> line_list, List<GameObject> icon_list, RhythmGamePlayLog.ModeData data, LayoutResultPlaylogGraphParts.PartsData.ModeParts parts, GameObject line_obj, RectTransform parent, int end_time, bool is_show_end_line/* = true*/)
 		{
 			float f = Mathf.Clamp(data.beginMillisec * 1.0f / end_time, 0, 1);
 			float f2 = Mathf.Clamp(data.endMillisec * 1.0f / end_time, 0, 1);
@@ -355,7 +355,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x18EA884 Offset: 0x18EA884 VA: 0x18EA884
-		public void FinishAnim(bool is_skip = false)
+		public void FinishAnim(bool is_skip/* = false*/)
 		{
 			for(int i = 0; i < GRAPH_COUNT; i++)
 			{

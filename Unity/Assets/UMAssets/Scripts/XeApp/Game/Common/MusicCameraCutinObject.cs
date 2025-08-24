@@ -17,7 +17,7 @@ namespace XeApp.Game.Common
 		//public void ResetAnimationPreview() { }
 
 		// RVA: 0x1119698 Offset: 0x1119698 VA: 0x1119698
-		public void Initialize(MusicCameraCutinResource resource, MusicCameraObject cameraObject, int resourceId = 0)
+		public void Initialize(MusicCameraCutinResource resource, MusicCameraObject cameraObject, int resourceId/* = 0*/)
 		{
 			this.cameraObject = cameraObject;
 			this.resource = resource;

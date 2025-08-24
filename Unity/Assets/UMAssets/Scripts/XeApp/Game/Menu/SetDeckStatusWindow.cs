@@ -339,7 +339,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x730D9C Offset: 0x730D9C VA: 0x730D9C
 		//// RVA: 0xA7903C Offset: 0xA7903C VA: 0xA7903C
-		private IEnumerator Co_ShowSubPlateWindowButton(bool isReShow = false)
+		private IEnumerator Co_ShowSubPlateWindowButton(bool isReShow/* = false*/)
 		{
 			//0xC306D8
 			bool isWait = true;

@@ -6,7 +6,7 @@ namespace CriWare
 		public const int DefaultReadUnitSize = 1048576;
 
 		// // RVA: 0x294CB34 Offset: 0x294CB34 VA: 0x294CB34
-		public static CriFsLoadFileRequest LoadFile(string path, int readUnitSize = 1048576)
+		public static CriFsLoadFileRequest LoadFile(string path, int readUnitSize/* = 1048576*/)
 		{
 			return CriFsServer.instance.LoadFile(null, path, null, readUnitSize);
 		}
@@ -15,7 +15,7 @@ namespace CriWare
 		// public static CriFsLoadFileRequest LoadFile(string path, CriFsRequest.DoneDelegate doneDelegate, int readUnitSize = 1048576) { }
 
 		// // RVA: 0x2947AEC Offset: 0x2947AEC VA: 0x2947AEC
-		public static CriFsLoadFileRequest LoadFile(CriFsBinder binder, string path, int readUnitSize = 1048576)
+		public static CriFsLoadFileRequest LoadFile(CriFsBinder binder, string path, int readUnitSize/* = 1048576*/)
 		{
 			TodoLogger.LogError(TodoLogger.CriFsPlugin, "TODO");
 			return null;

@@ -35,7 +35,7 @@ namespace XeApp.Game.Menu
 		public static float baseGaugeScale { get; set; } // 0x4
 
 		//// RVA: 0x1245E90 Offset: 0x1245E90 VA: 0x1245E90
-		public void SetScore(ResultScoreRank.Type scoreRank, float gaugeRatio, float[] rankPosition, int[] scoreParams, float viewRatio = 1)
+		public void SetScore(ResultScoreRank.Type scoreRank, float gaugeRatio, float[] rankPosition, int[] scoreParams, float viewRatio/* = 1*/)
 		{
 			m_gaugeRatio = gaugeRatio;
 			m_scoreRank = scoreRank;

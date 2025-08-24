@@ -453,7 +453,7 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1ABAAA0 Offset: 0x1ABAAA0 VA: 0x1ABAAA0
-		public void LoadBgResource(int floorId = -1, int wallLId = -1, int wallRId = -1, bool isInit = false)
+		public void LoadBgResource(int floorId/* = -1*/, int wallLId/* = -1*/, int wallRId/* = -1*/, bool isInit/* = false*/)
 		{
 			m_decorationBgManager.LoadTexutre(new DecorationBgManager.AreaData() { m_floorId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(floorId), m_wallLId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(wallLId), m_wallRId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(wallRId) }, isInit);
 		}

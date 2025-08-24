@@ -68,7 +68,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB662AC Offset: 0xB662AC VA: 0xB662AC
-		public void Initialize(FDDIIKBJNNA snsData, bool isReview = false)
+		public void Initialize(FDDIIKBJNNA snsData, bool isReview/* = false*/)
 		{
 			m_isReview = isReview;
 			m_viewDataSNS = snsData;
@@ -185,7 +185,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB66E14 Offset: 0xB66E14 VA: 0xB66E14
-		public void SetupRoom(int roomId, Action exitCallback, Action returnCallback, Action newTalkCallback, Action prevPageCallback, Action nextPageCallback, SNSTitleBar.eButtonType buttonType = 0, bool isBackButtonEmpty = false)
+		public void SetupRoom(int roomId, Action exitCallback, Action returnCallback, Action newTalkCallback, Action prevPageCallback, Action nextPageCallback, SNSTitleBar.eButtonType buttonType/* = 0*/, bool isBackButtonEmpty/* = false*/)
 		{
 			if(LayoutType == eType.Room)
 			{

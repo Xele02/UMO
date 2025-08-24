@@ -14,7 +14,7 @@ namespace XeApp.Game.RhythmGame.UI
 		private Renderer m_cutRenderer; // 0x1C
 
 		// RVA: 0x155EA1C Offset: 0x155EA1C VA: 0x155EA1C
-		public void Initialize(GameObject parent, int prefabIndex = 0)
+		public void Initialize(GameObject parent, int prefabIndex/* = 0*/)
 		{
 			m_stateNameHash = new int[m_stateName.Length];
 			for(int i = 0; i < m_stateName.Length; i++)
@@ -39,7 +39,7 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		//// RVA: 0x155EE48 Offset: 0x155EE48 VA: 0x155EE48
-		public void Play(int index = 0)
+		public void Play(int index/* = 0*/)
 		{
 			m_animator.Play(m_stateNameHash[index], 0, 0);
 		}

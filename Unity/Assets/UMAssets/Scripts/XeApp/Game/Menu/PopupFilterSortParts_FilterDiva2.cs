@@ -104,7 +104,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1C87B04 Offset: 0x1C87B04 VA: 0x1C87B04
-		public void Initialize(List<FFHPBEPOMAK_DivaInfo> a_view_diva, bool a_is_val, ButtonType a_btn_type = 0, WindowType a_wind_type = 0, bool a_is_has_only = false)
+		public void Initialize(List<FFHPBEPOMAK_DivaInfo> a_view_diva, bool a_is_val, ButtonType a_btn_type/* = 0*/, WindowType a_wind_type/* = 0*/, bool a_is_has_only/* = false*/)
 		{
 			m_btn_type = a_btn_type;
 			bool b = a_is_has_only;

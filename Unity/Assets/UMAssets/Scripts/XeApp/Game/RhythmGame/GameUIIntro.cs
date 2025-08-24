@@ -30,7 +30,7 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xF76240 Offset: 0xF76240 VA: 0xF76240
-		public void Enter(int musicNameId, string a_sub_text = "")
+		public void Enter(int musicNameId, string a_sub_text/* = ""*/)
 		{
 			m_musicName.SetMusicId(musicNameId);
 			if(RuntimeSettings.CurrentSettings.Language != "en" && RuntimeSettings.CurrentSettings.Language != "fr" )

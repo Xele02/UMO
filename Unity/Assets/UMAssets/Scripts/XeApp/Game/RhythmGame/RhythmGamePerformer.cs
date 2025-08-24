@@ -92,7 +92,7 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9AE1C0 Offset: 0x9AE1C0 VA: 0x9AE1C0 Slot: 5
-		public virtual void EndTouchSave(int lineNo, bool isCheckEndTouch = true)
+		public virtual void EndTouchSave(int lineNo, bool isCheckEndTouch/* = true*/)
 		{
 			return;
 		}

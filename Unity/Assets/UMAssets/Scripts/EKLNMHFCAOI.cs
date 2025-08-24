@@ -498,7 +498,7 @@ public class EKLNMHFCAOI
 	}
 
 	// // RVA: 0x12F75BC Offset: 0x12F75BC VA: 0x12F75BC
-	public static string NDBLEADIDLA(FKGCBLHOOCL_Category INDDJNMPONH, int JBGEEPFKIGG = 0, int cnt = 0)
+	public static string NDBLEADIDLA(FKGCBLHOOCL_Category INDDJNMPONH, int JBGEEPFKIGG/* = 0*/, int cnt = 0)
 	{
 		if(JBGEEPFKIGG > 0)
 		{

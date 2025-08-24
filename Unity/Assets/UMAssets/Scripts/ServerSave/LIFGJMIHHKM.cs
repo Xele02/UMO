@@ -143,7 +143,7 @@ public class LIFGJMIHHKM_LimitedItem : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x17FE71C Offset: 0x17FE71C VA: 0x17FE71C
-	public int CPIICACGNBH(int PPFNGGCBJKC, long JHNMKKNEENE, bool DDGFCOPPBBN = false)
+	public int CPIICACGNBH(int PPFNGGCBJKC, long JHNMKKNEENE, bool DDGFCOPPBBN/* = false*/)
 	{
 		if(PPFNGGCBJKC > 0)
 		{

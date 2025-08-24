@@ -42,7 +42,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12D12F0 Offset: 0x12D12F0 VA: 0x12D12F0
-		public void Show(int snsId, UnityAction pushAction, bool isButtonEnable = true)
+		public void Show(int snsId, UnityAction pushAction, bool isButtonEnable/* = true*/)
 		{
 			if(snsId != 0)
 			{
@@ -54,14 +54,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12D14E4 Offset: 0x12D14E4 VA: 0x12D14E4
-		public void ShowOffer(UnityAction pushAction, bool isButtonEnable = true)
+		public void ShowOffer(UnityAction pushAction, bool isButtonEnable/* = true*/)
 		{
 			Show(KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.AHHJLDLAPAN_DivaId, KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.PGOGHFDBIBA_OfferName, KDHGBOOECKC.HHCJCDFCLOB.IOCBOGFFHFE.PNOBKANLFHA_OfferText, pushAction, isButtonEnable, true);
 			m_dirtyClose = false;
 		}
 
 		//// RVA: 0x12D1408 Offset: 0x12D1408 VA: 0x12D1408
-		private void Show(int charaId, string header, string body, UnityAction pushAction, bool isButtonEnable = true, bool IsOffer = false)
+		private void Show(int charaId, string header, string body, UnityAction pushAction, bool isButtonEnable/* = true*/, bool IsOffer/* = false*/)
 		{
 			m_layout.SetFaceIcon(charaId, IsOffer);
 			m_layout.SetRoomName(header);
@@ -71,7 +71,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x735264 Offset: 0x735264 VA: 0x735264
 		//// RVA: 0x12D17A8 Offset: 0x12D17A8 VA: 0x12D17A8
-		private IEnumerator Co_TouchWait(UnityAction pushAction, bool isButtonEnable = true, bool IsOffer = false)
+		private IEnumerator Co_TouchWait(UnityAction pushAction, bool isButtonEnable/* = true*/, bool IsOffer/* = false*/)
 		{
 			//0x12D19A8
 			while(!m_layout.IsLoadedIcon)

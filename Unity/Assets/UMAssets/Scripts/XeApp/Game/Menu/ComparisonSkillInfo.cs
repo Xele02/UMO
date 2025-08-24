@@ -106,7 +106,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1B56F20 Offset: 0x1B56F20 VA: 0x1B56F20
-		public void SetSkillType(SkillType.Type type, int index = 0)
+		public void SetSkillType(SkillType.Type type, int index/* = 0*/)
 		{
 			if (m_typeLayouts.Length <= index)
 				return;
@@ -134,7 +134,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1B5170C Offset: 0x1B5170C VA: 0x1B5170C
-		public void SetSkillRank(SkillRank.Type rank, int index = 0)
+		public void SetSkillRank(SkillRank.Type rank, int index/* = 0*/)
 		{
 			if(m_rankImages.Length <= index)
 				return;
@@ -142,7 +142,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1B518A4 Offset: 0x1B518A4 VA: 0x1B518A4
-		public void SetSkillLevel(int level, int index = 0)
+		public void SetSkillLevel(int level, int index/* = 0*/)
 		{
 			if(index < m_levelTexts.Length)
 			{
@@ -157,7 +157,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1B51AD8 Offset: 0x1B51AD8 VA: 0x1B51AD8
-		public void SetSkillDescription(string description, int index = 0)
+		public void SetSkillDescription(string description, int index/* = 0*/)
 		{
 			if(m_detailsTexts.Length <= index)
 				return;

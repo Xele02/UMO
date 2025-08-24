@@ -68,7 +68,7 @@ namespace XeApp.Game.AR
         public bool Unused() { return m_sleeping; }
 
         // // RVA: 0x13B55F4 Offset: 0x13B55F4 VA: 0x13B55F4
-        public void SetErrorMessage(ERROR_TYPE errType, int code = 0)
+        public void SetErrorMessage(ERROR_TYPE errType, int code/* = 0*/)
         {
             m_needMessageWindow = true;
             switch(errType)

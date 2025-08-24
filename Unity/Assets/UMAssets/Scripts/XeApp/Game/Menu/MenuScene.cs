@@ -711,7 +711,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB30CD0 Offset: 0xB30CD0 VA: 0xB30CD0
-		public void SetActiveDivaModel(bool active, bool isIdle = true)
+		public void SetActiveDivaModel(bool active, bool isIdle/* = true*/)
 		{
 			divaManager.SetActive(active, isIdle);
 		}
@@ -935,7 +935,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7B04 Offset: 0x6C7B04 VA: 0x6C7B04
 		// // RVA: 0xB31238 Offset: 0xB31238 VA: 0xB31238
-		private IEnumerator GotoRhythmGameCorotine(Func<IEnumerator> wait, bool isSkip = false)
+		private IEnumerator GotoRhythmGameCorotine(Func<IEnumerator> wait, bool isSkip/* = false*/)
 		{
 			//0xB3B65C
 			yield return Co.R(RhythmGamePreLoad(wait));
@@ -950,7 +950,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB31758 Offset: 0xB31758 VA: 0xB31758
-		public void GotoAdventure(bool isExecuteSceneExit = false)
+		public void GotoAdventure(bool isExecuteSceneExit/* = false*/)
 		{
 			m_menuTransitionControl.SetHeaderMenuButtonDisable(MenuHeaderControl.Button.All);
 			m_menuTransitionControl.SetMenuContentButtonDisable();
@@ -995,7 +995,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C7BF4 Offset: 0x6C7BF4 VA: 0x6C7BF4
 		// // RVA: 0xB31B68 Offset: 0xB31B68 VA: 0xB31B68
-		private IEnumerator Co_GotoMiniGame(int miniGameId, int stageNum = 1)
+		private IEnumerator Co_GotoMiniGame(int miniGameId, int stageNum/* = 1*/)
 		{
 			//0xB394B0
 			enableFade = false;
@@ -1125,25 +1125,25 @@ namespace XeApp.Game.Menu
 		// private IEnumerator GotoBunchDownLoadCoroutine() { }
 
 		// // RVA: 0xB32010 Offset: 0xB32010 VA: 0xB32010
-		public void Return(bool isFading = true)
+		public void Return(bool isFading/* = true*/)
 		{
 			m_menuTransitionControl.Return(isFading);
 		}
 
 		// // RVA: 0xB32044 Offset: 0xB32044 VA: 0xB32044
-		public void Call(TransitionList.Type next, TransitionArgs args, bool isFading = true)
+		public void Call(TransitionList.Type next, TransitionArgs args, bool isFading/* = true*/)
 		{
 			m_menuTransitionControl.Call(next, args, isFading);
 		}
 
 		// // RVA: 0xB32094 Offset: 0xB32094 VA: 0xB32094
-		public void Mount(TransitionUniqueId uniqueId, TransitionArgs args, bool isFading = true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene cambackUnityScene = 0)
+		public void Mount(TransitionUniqueId uniqueId, TransitionArgs args, bool isFading/* = true*/, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene cambackUnityScene/* = 0*/)
 		{
 			m_menuTransitionControl.Mount(uniqueId,args,isFading,cambackUnityScene);
 		}
 
 		// // RVA: 0xB320EC Offset: 0xB320EC VA: 0xB320EC
-		public void MountWithFade(TransitionUniqueId uniqueId, TransitionArgs args, bool isFading = true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene cambackUnityScene = 0)
+		public void MountWithFade(TransitionUniqueId uniqueId, TransitionArgs args, bool isFading/* = true*/, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene cambackUnityScene/* = 0*/)
 		{
 			m_menuTransitionControl.MountWithFade(uniqueId,args,isFading,cambackUnityScene);
 		}
@@ -1300,7 +1300,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB327F0 Offset: 0xB327F0 VA: 0xB327F0
-		public void ShowDivaStatusPopupWindow(FFHPBEPOMAK_DivaInfo diva, DFKGGBMFFGB_PlayerInfo playerData, EEDKAACNBBG_MusicData musicData, bool isMoment, TransitionList.Type transitionName = TransitionList.Type.UNDEFINED, Action callBack = null, bool isChangeScene = true, bool isCloseOnly = false, int divaSlotNumber = -1, bool isGoDiva = false)
+		public void ShowDivaStatusPopupWindow(FFHPBEPOMAK_DivaInfo diva, DFKGGBMFFGB_PlayerInfo playerData, EEDKAACNBBG_MusicData musicData, bool isMoment, TransitionList.Type transitionName/* = TransitionList.Type.UNDEFINED*/, Action callBack/* = null*/, bool isChangeScene/* = true*/, bool isCloseOnly/* = false*/, int divaSlotNumber/* = -1*/, bool isGoDiva/* = false*/)
 		{
 			m_statusWindowControl.ShowDivaStatusPopupWindow(diva, playerData, null, musicData, isMoment, transitionName, callBack, false, isChangeScene, isCloseOnly, divaSlotNumber, isGoDiva);
 		}
@@ -1309,7 +1309,7 @@ namespace XeApp.Game.Menu
 		// public void ShowFriendDivaStatusPopupWindow(EAJCBFGKKFA friendData, DFKGGBMFFGB playerData, EEDKAACNBBG musicData, bool isMoment, TransitionList.Type transitionName = -2, Action callBack, bool isChangeScene = False) { }
 
 		// // RVA: 0xB32938 Offset: 0xB32938 VA: 0xB32938
-		public void ShowSceneStatusPopupWindow(GCIJNCFDNON_SceneInfo scene, DFKGGBMFFGB_PlayerInfo playerData, bool isMoment, TransitionList.Type transitionName = TransitionList.Type.UNDEFINED, Action callBack = null, bool isFriend = false, bool isReward = false, SceneStatusParam.PageSave pageSave = SceneStatusParam.PageSave.Player, bool isDisableZoom = false)
+		public void ShowSceneStatusPopupWindow(GCIJNCFDNON_SceneInfo scene, DFKGGBMFFGB_PlayerInfo playerData, bool isMoment, TransitionList.Type transitionName/* = TransitionList.Type.UNDEFINED*/, Action callBack/* = null*/, bool isFriend/* = false*/, bool isReward/* = false*/, SceneStatusParam.PageSave pageSave/* = SceneStatusParam.PageSave.Player*/, bool isDisableZoom/* = false*/)
 		{
 			if(!isFriend && !isReward)
 			{
@@ -1352,7 +1352,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB32CC4 Offset: 0xB32CC4 VA: 0xB32CC4
-		public void ShowSortWindow(PopupFilterSort.Scene a_type, UnityAction<PopupFilterSort> okCallBack, Action endCallBack, bool a_is_save = true)
+		public void ShowSortWindow(PopupFilterSort.Scene a_type, UnityAction<PopupFilterSort> okCallBack, Action endCallBack, bool a_is_save/* = true*/)
 		{
 			m_popupFilterSortWindowContrl.Show(a_type, okCallBack, endCallBack, a_is_save);
 		}
@@ -1373,7 +1373,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB32E14 Offset: 0xB32E14 VA: 0xB32E14
-		public void ShowItemListWindow(PopupItemList.ItemType type, bool isTab = false)
+		public void ShowItemListWindow(PopupItemList.ItemType type, bool isTab/* = false*/)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_popupItemListSetting.TitleText = bk.GetMessageByLabel("popup_text_10");
@@ -1475,7 +1475,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB33CB0 Offset: 0xB33CB0 VA: 0xB33CB0
-		public PopupWindowControl ShowItemDetail(int id, string title, string desc, bool isShop = false)
+		public PopupWindowControl ShowItemDetail(int id, string title, string desc, bool isShop/* = false*/)
 		{
 			m_popupItemDetailSettinig.TitleText = title;
 			m_popupItemDetailSettinig.ItemId = id;
@@ -1525,7 +1525,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB345E4 Offset: 0xB345E4 VA: 0xB345E4
-		public PopupItemDetail.PopupItemDetailSetting CreateIconTextContent(int id, string title, SizeType size, string name, string desc, ButtonInfo[] buttons, bool isCaption = true)
+		public PopupItemDetail.PopupItemDetailSetting CreateIconTextContent(int id, string title, SizeType size, string name, string desc, ButtonInfo[] buttons, bool isCaption/* = true*/)
 		{
 			m_popupItemDetailSettinig.ItemId = id;
 			m_popupItemDetailSettinig.SubId = 0;
@@ -1543,7 +1543,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB347DC Offset: 0xB347DC VA: 0xB347DC
-		public void ShowCostumeDetailWindow(CKFGMNAIBNG data, int colorId = 0)
+		public void ShowCostumeDetailWindow(CKFGMNAIBNG data, int colorId/* = 0*/)
 		{
 			m_popupDetailCostumeSetting.ViewCostumeData = data;
 			m_popupDetailCostumeSetting.ColorId = colorId;
@@ -2144,7 +2144,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB35920 Offset: 0xB35920 VA: 0xB35920
-		public bool CheckEventLimit(IBJAKJJICBC musicData, bool isCheckDateLine = true, bool isDoTransition = true, KGCNCBOKCBA.GNENJEHKMHD_EventStatus status = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5/*5*/, int eventUniqueId = 0)
+		public bool CheckEventLimit(IBJAKJJICBC musicData, bool isCheckDateLine/* = true*/, bool isDoTransition/* = true*/, KGCNCBOKCBA.GNENJEHKMHD_EventStatus status/* = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5*/, int eventUniqueId/* = 0*/)
 		{
 			if(isCheckDateLine)
 			{

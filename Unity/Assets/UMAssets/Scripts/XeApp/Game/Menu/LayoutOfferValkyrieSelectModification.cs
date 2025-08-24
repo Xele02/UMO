@@ -42,7 +42,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x15D7308 Offset: 0x15D7308 VA: 0x15D7308
-		public void IconSetting(int idx, bool IsSortie, bool IsBouns, bool IsSetPlatoon, int PlatoonNum = 0)
+		public void IconSetting(int idx, bool IsSortie, bool IsBouns, bool IsSetPlatoon, int PlatoonNum/* = 0*/)
 		{
 			sortieIcon(idx, IsSortie);
 			PlatoonIcon(idx, IsSetPlatoon, PlatoonNum);

@@ -252,7 +252,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x199B6AC Offset: 0x199B6AC VA: 0x199B6AC
-		public void SetChangeBgLoopState(bool stop, float waitTime = -1)
+		public void SetChangeBgLoopState(bool stop, float waitTime/* = -1*/)
 		{
 			if (m_loadGachaId > 0)
 				return;

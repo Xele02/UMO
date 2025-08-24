@@ -91,7 +91,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17DDBA8 Offset: 0x17DDBA8 VA: 0x17DDBA8
-		public void SetTargetObj(GameObject target, bool is_update_x = true, bool is_update_y = true)
+		public void SetTargetObj(GameObject target, bool is_update_x/* = true*/, bool is_update_y/* = true*/)
 		{
 			m_isUpdateX = is_update_x;
 			m_targetObj = target;

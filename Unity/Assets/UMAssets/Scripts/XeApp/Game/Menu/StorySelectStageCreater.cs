@@ -949,7 +949,7 @@ namespace XeApp.Game.Menu
 		//public bool IsInterruptDivaEffect() { }
 
 		//// RVA: 0x1A87704 Offset: 0x1A87704 VA: 0x1A87704
-		public void In(TransitionList.Type prevTransitionType = TransitionList.Type.UNDEFINED)
+		public void In(TransitionList.Type prevTransitionType/* = TransitionList.Type.UNDEFINED*/)
 		{
 			if (prevTransitionType == TransitionList.Type.UNLOCK_DIVA)
 				this.StartCoroutineWatched(UnlockDivaPhase());
@@ -1700,7 +1700,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72C42C Offset: 0x72C42C VA: 0x72C42C
 		//// RVA: 0x1A8915C Offset: 0x1A8915C VA: 0x1A8915C
-		private IEnumerator PopupShowLock(int no, string title, string message, bool isInterruptLock = false)
+		private IEnumerator PopupShowLock(int no, string title, string message, bool isInterruptLock/* = false*/)
 		{
 			//0x1A8D24C
 			if (MenuScene.Instance != null)
@@ -1890,7 +1890,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72C684 Offset: 0x72C684 VA: 0x72C684
 		//// RVA: 0x1A89748 Offset: 0x1A89748 VA: 0x1A89748
-		private IEnumerator ChangeBgm(LIEJFHMGNIA stageData, bool isStoryMenuBgm = false, Action finish = null, Action downloadFinish = null)
+		private IEnumerator ChangeBgm(LIEJFHMGNIA stageData, bool isStoryMenuBgm/* = false*/, Action finish/* = null*/, Action downloadFinish/* = null*/)
 		{
 			//0x1A8AEC8
 			if(!stageData.MMEGDFPNONJ_HasDivaId)

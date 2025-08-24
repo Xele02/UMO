@@ -29,7 +29,7 @@ public class PopupItemListItemIcon : FlexibleListItemLayout
 	}
 
 	//// RVA: 0xDFA18C Offset: 0xDFA18C VA: 0xDFA18C
-	public void UpdateContent(int id, int count, int index = 0)
+	public void UpdateContent(int id, int count, int index/* = 0*/)
 	{
 		MessageBank bk = MessageManager.Instance.GetBank("menu");
 		MenuScene.Instance.ItemTextureCache.Load(id, (IiconTexture texture) =>

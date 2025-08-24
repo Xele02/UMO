@@ -369,7 +369,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB29754 Offset: 0xB29754 VA: 0xB29754
-		public void Enter(bool isFading = false)
+		public void Enter(bool isFading/* = false*/)
 		{
 			if(m_userInfo != null)
 			{
@@ -378,7 +378,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB29810 Offset: 0xB29810 VA: 0xB29810
-		public void Leave(bool isFading = false)
+		public void Leave(bool isFading/* = false*/)
 		{
 			if(m_userInfo != null)
 			{

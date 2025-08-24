@@ -732,7 +732,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x170B7D4 Offset: 0x170B7D4 VA: 0x170B7D4
-		public static void GetMiddleTime(int totalSec, out int hours, out int minutes, out int seconds, bool IsSec = false)
+		public static void GetMiddleTime(int totalSec, out int hours, out int minutes, out int seconds, bool IsSec/* = false*/)
 		{
 			if(!IsSec)
 			{

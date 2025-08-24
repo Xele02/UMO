@@ -279,7 +279,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xF973A4 Offset: 0xF973A4 VA: 0xF973A4
-		public void SetAdjustment(bool width_flag, bool height_flag, int width_swaip = 50, int height_swaip = 50, int width_flick = 50, int height_flick = 50, bool once = true)
+		public void SetAdjustment(bool width_flag, bool height_flag, int width_swaip/* = 50*/, int height_swaip/* = 50*/, int width_flick/* = 50*/, int height_flick/* = 50*/, bool once/* = true*/)
 		{
 			m_is_swaip_height_flag = height_flag;
 			m_is_swaip_width_flag = width_flag;

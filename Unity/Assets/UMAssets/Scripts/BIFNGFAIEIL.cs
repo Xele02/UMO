@@ -35,7 +35,7 @@ public class BIFNGFAIEIL
 	}
 
 	//// RVA: 0xC802E0 Offset: 0xC802E0 VA: 0xC802E0
-	public void DNKCCHCEPBH(bool GFPBKOPKNCB = false)
+	public void DNKCCHCEPBH(bool GFPBKOPKNCB/* = false*/)
 	{
 		if(IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
 		{
@@ -218,7 +218,7 @@ public class BIFNGFAIEIL
 	}
 
 	//// RVA: 0xC81550 Offset: 0xC81550 VA: 0xC81550
-	public void DLKJAPDLDFG(bool HEDFNFLEPHI, int NIGMABNOBEF = 0)
+	public void DLKJAPDLDFG(bool HEDFNFLEPHI, int NIGMABNOBEF/* = 0*/)
 	{
 		if(IMMAOANGPNK.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
 		{
@@ -261,7 +261,7 @@ public class BIFNGFAIEIL
 	}
 
 	//// RVA: 0xC819F4 Offset: 0xC819F4 VA: 0xC819F4
-	public int OKBOEKMCBJM(long EOLFJGMAJAB = 0)
+	public int OKBOEKMCBJM(long EOLFJGMAJAB/* = 0*/)
 	{
 		int res = 0;
 		if(EOLFJGMAJAB == 0)

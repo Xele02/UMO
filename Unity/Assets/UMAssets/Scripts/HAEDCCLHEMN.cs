@@ -473,7 +473,7 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle; } } //0x1B6CA1C DKHCGLCNKCD  Slot: 4
 
 	// // RVA: 0x1B6CA24 Offset: 0x1B6CA24 VA: 0x1B6CA24 Slot: 32
-	public override EECOJKDJIFG DAKMIKNKHMF_GetRankingInfoForIndex(int LHJCOPMMIGO = 0)
+	public override EECOJKDJIFG DAKMIKNKHMF_GetRankingInfoForIndex(int LHJCOPMMIGO/* = 0*/)
 	{
 		if(NGIHFKHOJOK_GetRankingMax(true) <= LHJCOPMMIGO)
 			return null;
@@ -636,7 +636,7 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x1B6DE88 Offset: 0x1B6DE88 VA: 0x1B6DE88 Slot: 27
-	public override int HLOGNJNGDJO_GetHelpId(int OIPCCBHIKIA = 0)
+	public override int HLOGNJNGDJO_GetHelpId(int OIPCCBHIKIA/* = 0*/)
 	{
 		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI_QuestId);
 		if(db != null)
@@ -663,7 +663,7 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x1B6E428 Offset: 0x1B6E428 VA: 0x1B6E428 Slot: 29
-	public override void MJFKJHJJLMN_GetRanks(int LHJCOPMMIGO, bool FBBNPFFEJBN = false)
+	public override void MJFKJHJJLMN_GetRanks(int LHJCOPMMIGO, bool FBBNPFFEJBN/* = false*/)
 	{
 		PLOOEECNHFB = false;
 		NPNNPNAIONN = false;
@@ -1527,7 +1527,7 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x1B742CC Offset: 0x1B742CC VA: 0x1B742CC Slot: 54
-	public override int NGIHFKHOJOK_GetRankingMax(bool DJHLDMOPCOL = true)
+	public override int NGIHFKHOJOK_GetRankingMax(bool DJHLDMOPCOL/* = true*/)
 	{
 		if(IBNKPMPFLGI_IsRankReward)
 		{
@@ -1692,7 +1692,7 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x1B74C80 Offset: 0x1B74C80 VA: 0x1B74C80 Slot: 66
-	public override void FGDDBFHGCGP_SetStartAdventureShown(bool JKDJCFEBDHC, long JHNMKKNEENE = 0)
+	public override void FGDDBFHGCGP_SetStartAdventureShown(bool JKDJCFEBDHC, long JHNMKKNEENE/* = 0*/)
 	{
 		if(JKDJCFEBDHC)
 		{
@@ -2802,7 +2802,7 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x1B77DFC Offset: 0x1B77DFC VA: 0x1B77DFC
-	private void CAOCMDNBBPI(bool BGNCKAIEIGN = false)
+	private void CAOCMDNBBPI(bool BGNCKAIEIGN/* = false*/)
 	{
 		DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI_QuestId);
 		if(db != null)

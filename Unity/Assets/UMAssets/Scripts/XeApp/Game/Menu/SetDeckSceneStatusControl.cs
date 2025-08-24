@@ -319,7 +319,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA760A0 Offset: 0xA760A0 VA: 0xA760A0
-		private void ApplyLuckyLeaf(int count, bool isCrossFade = true)
+		private void ApplyLuckyLeaf(int count, bool isCrossFade/* = true*/)
 		{
 			if(m_luckyLeafObject != null)
 			{

@@ -181,7 +181,7 @@ namespace XeApp.Game.Menu
 		// private void ReturnScene() { }
 
 		// // RVA: 0x13806CC Offset: 0x13806CC VA: 0x13806CC
-		private void Listup(uint rarityFilterBit = 4294967295, uint attributeFilterBit = 4294967295, uint seriaseFilterBit = 4294967295, uint compatibleFilterBit = 4294967295, uint lskillRangeFilerBit = 4294967295, uint cskillRankFilerBit = 4294967295, uint askillRankFilerBit = 4294967295, uint lskillRankFilerBit = 4294967295, ulong cskillFilerBit = 18446744073709551615, ulong askillFilerBit = 18446744073709551615, ulong lskillFilerBit = 18446744073709551615, uint notesFilterBit = 4294967295, int episodeId = 0, bool isBonus = false, int rarityRestriction = -1)
+		private void Listup(uint rarityFilterBit/* = 4294967295*/, uint attributeFilterBit/* = 4294967295*/, uint seriaseFilterBit/* = 4294967295*/, uint compatibleFilterBit/* = 4294967295*/, uint lskillRangeFilerBit/* = 4294967295*/, uint cskillRankFilerBit/* = 4294967295*/, uint askillRankFilerBit/* = 4294967295*/, uint lskillRankFilerBit/* = 4294967295*/, ulong cskillFilerBit/* = 18446744073709551615*/, ulong askillFilerBit/* = 18446744073709551615*/, ulong lskillFilerBit/* = 18446744073709551615*/, uint notesFilterBit/* = 4294967295*/, int episodeId/* = 0*/, bool isBonus/* = false*/, int rarityRestriction/* = -1*/)
 		{
 			m_sceneIndexList.Clear();
 			MLIBEPGADJH_Scene sceneDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene;
@@ -1105,7 +1105,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1384A14 Offset: 0x1384A14 VA: 0x1384A14
-		private void Sort(bool isBonus, bool isPlateMission = false)
+		private void Sort(bool isBonus, bool isPlateMission/* = false*/)
 		{
 			uint rarityFilterBit;
 			uint attributeFilterBit;

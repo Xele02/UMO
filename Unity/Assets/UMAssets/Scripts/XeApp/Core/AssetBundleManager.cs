@@ -123,7 +123,7 @@ namespace XeApp.Core
 		// protected static void LoadDependencies(string assetBundleName) { }
 
 		// // RVA: 0xE12A28 Offset: 0xE12A28 VA: 0xE12A28
-		protected static void LoadAssetBundle(string assetBundleName, bool isLoadingAssetBundleManifest = false)
+		protected static void LoadAssetBundle(string assetBundleName, bool isLoadingAssetBundleManifest/* = false*/)
 		{
 			LoadAssetBundleInternal(assetBundleName);
 		}
@@ -223,7 +223,7 @@ namespace XeApp.Core
 		}
 
 		// // RVA: 0xE131E4 Offset: 0xE131E4 VA: 0xE131E4
-		public static void UnloadAssetBundle(string assetBundleName, bool unloadAllLoadedObject = false)
+		public static void UnloadAssetBundle(string assetBundleName, bool unloadAllLoadedObject/* = false*/)
 		{
 			UnloadAssetBundleInternal(assetBundleName, unloadAllLoadedObject);
 		}
@@ -249,7 +249,7 @@ namespace XeApp.Core
 		// protected static void UnloadDependencies(string assetBundleName) { }
 
 		// // RVA: 0xE1326C Offset: 0xE1326C VA: 0xE1326C
-		protected static void UnloadAssetBundleInternal(string assetBundleName, bool unloadAllLoadedObject = false)
+		protected static void UnloadAssetBundleInternal(string assetBundleName, bool unloadAllLoadedObject/* = false*/)
 		{
 			TodoLogger.Log(TodoLogger.AssetBundle, "Request bundle unload " + assetBundleName);
 			string error;

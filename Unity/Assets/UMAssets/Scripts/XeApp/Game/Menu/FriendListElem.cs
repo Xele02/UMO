@@ -134,13 +134,13 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xBA89B0 Offset: 0xBA89B0 VA: 0xBA89B0
-		public void SwapStatus(bool immediate = false)
+		public void SwapStatus(bool immediate/* = false*/)
 		{
 			ChangeStatus(!m_statusIsComment, immediate);
 		}
 
 		//// RVA: 0xBA5870 Offset: 0xBA5870 VA: 0xBA5870
-		public void ChangeStatus(bool toComment, bool immediate = false)
+		public void ChangeStatus(bool toComment, bool immediate/* = false*/)
 		{
 			m_symbolStatus.StartAnim(immediate ? (toComment ? "wait_1" : "wait_2") : (toComment ? "goto_1" : "goto_2"));
 			m_statusIsComment = toComment;

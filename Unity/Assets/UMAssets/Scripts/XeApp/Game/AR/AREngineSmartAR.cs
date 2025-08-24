@@ -48,7 +48,7 @@ namespace XeApp.Game.AR
 
         // [IteratorStateMachineAttribute] // RVA: 0x67841C Offset: 0x67841C VA: 0x67841C
         // RVA: 0x11CF9D8 Offset: 0x11CF9D8 VA: 0x11CF9D8
-        private IEnumerator CoSetup(Facing cameraFacing, bool createTarget = false, AssetBundleLoadAllAssetOperationBase op = null)
+        private IEnumerator CoSetup(Facing cameraFacing, bool createTarget/* = false*/, AssetBundleLoadAllAssetOperationBase op/* = null*/)
         {
             string dataset_local_path; // 0x20
             List<ARMarkerMasterData.Data> list; // 0x24

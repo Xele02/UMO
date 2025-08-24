@@ -72,7 +72,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1C9ACA4 Offset: 0x1C9ACA4 VA: 0x1C9ACA4
-		public void Initialize(List<FFHPBEPOMAK_DivaInfo> a_view_diva, bool a_is_val, bool compatibleEnable, bool a_is_has_only = false)
+		public void Initialize(List<FFHPBEPOMAK_DivaInfo> a_view_diva, bool a_is_val, bool compatibleEnable, bool a_is_has_only/* = false*/)
 		{
 			m_list_diva_id.Clear();
 			for(int i = 0; i < a_view_diva.Count; i++)

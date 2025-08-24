@@ -77,14 +77,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xECA8B0 Offset: 0xECA8B0 VA: 0xECA8B0
-		public void Load(int divaId, int modelId, int colorId, DivaResource.MenuFacialType facialType, bool defaultVisible = true)
+		public void Load(int divaId, int modelId, int colorId, DivaResource.MenuFacialType facialType, bool defaultVisible/* = true*/)
 		{
 			IsLoading = true;
 			this.StartCoroutineWatched(Coroutine_Load(divaId, modelId, colorId, facialType, defaultVisible));
 		}
 
 		//// RVA: 0xEB9C30 Offset: 0xEB9C30 VA: 0xEB9C30
-		public void Load(DFKGGBMFFGB_PlayerInfo playerData, DivaResource.MenuFacialType facialType, bool defaultVisible = true)
+		public void Load(DFKGGBMFFGB_PlayerInfo playerData, DivaResource.MenuFacialType facialType, bool defaultVisible/* = true*/)
 		{
 			IsLoading = true;
 			FFHPBEPOMAK_DivaInfo divaInfo = playerData.DPLBHAIKPGL_GetTeam(false).BCJEAJPLGMB_MainDivas[0];
@@ -97,7 +97,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6C6F94 Offset: 0x6C6F94 VA: 0x6C6F94
 		//// RVA: 0xECA8F8 Offset: 0xECA8F8 VA: 0xECA8F8
-		private IEnumerator Coroutine_Load(int divaId, int modelId, int colorId, DivaResource.MenuFacialType facialType, bool defaultVisible = true)
+		private IEnumerator Coroutine_Load(int divaId, int modelId, int colorId, DivaResource.MenuFacialType facialType, bool defaultVisible/* = true*/)
 		{
 			MenuScene menuSceneInstance;
 
@@ -187,7 +187,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xECAA24 Offset: 0xECAA24 VA: 0xECAA24
-		public void Load(DivaResource outerResource, int divaId, int modelId, int colorId, bool defaultVisible = true)
+		public void Load(DivaResource outerResource, int divaId, int modelId, int colorId, bool defaultVisible/* = true*/)
 		{
 			IsLoading = true;
 			if(divaObject == null)
@@ -210,13 +210,13 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xECAE80 Offset: 0xECAE80 VA: 0xECAE80
-		public void IdleCrossFade(string stateName = "")
+		public void IdleCrossFade(string stateName/* = ""*/)
 		{
 			divaObject.IdleCrossFade(stateName);
 		}
 
 		//// RVA: 0xECAEB4 Offset: 0xECAEB4 VA: 0xECAEB4
-		public void SetBodyCrossFade(string stateName, float duration = 0.07f)
+		public void SetBodyCrossFade(string stateName, float duration/* = 0.07f*/)
 		{
 			divaObject.SetBodyCrossFade(stateName, duration);
 		}
@@ -243,7 +243,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEB3CD8 Offset: 0xEB3CD8 VA: 0xEB3CD8
-		public void SetActive(bool active, bool isIdle = true)
+		public void SetActive(bool active, bool isIdle/* = true*/)
 		{
 			if(divaObject != null)
 			{
@@ -255,7 +255,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xECB00C Offset: 0xECB00C VA: 0xECB00C
-		public void SetEnableDivaEffect(bool a_enable, bool a_save_ignore = false)
+		public void SetEnableDivaEffect(bool a_enable, bool a_save_ignore/* = false*/)
 		{
 			if(divaObject != null)
 			{
@@ -270,7 +270,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xECB0FC Offset: 0xECB0FC VA: 0xECB0FC
-		public void SetEnableDivaWind(bool a_enable, bool a_save_ignore = false)
+		public void SetEnableDivaWind(bool a_enable, bool a_save_ignore/* = false*/)
 		{
 			if(divaObject != null)
 			{
@@ -320,7 +320,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEB9EF0 Offset: 0xEB9EF0 VA: 0xEB9EF0
-		public void OnIdle(string stateName = "")
+		public void OnIdle(string stateName/* = ""*/)
 		{
 			if(divaObject != null)
 			{
@@ -420,7 +420,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xECAC40 Offset: 0xECAC40 VA: 0xECAC40
-		public void ApplyCameraPos(int divaId, DivaMenuParam.CameraPosType type = 0)
+		public void ApplyCameraPos(int divaId, DivaMenuParam.CameraPosType type/* = 0*/)
 		{
 			Vector3 localPos = divaCamera.transform.localPosition;
 			if(divaMenuParam != null)
@@ -452,7 +452,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xECBC68 Offset: 0xECBC68 VA: 0xECBC68
-		public void LoadSub(int modelId, int colorId, int divaId = 0)
+		public void LoadSub(int modelId, int colorId, int divaId/* = 0*/)
 		{
 			IsLoading = true;
 			this.StartCoroutineWatched(Coroutine_LoadSub(modelId, colorId, divaId));

@@ -166,7 +166,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x164734C Offset: 0x164734C VA: 0x164734C
-		public void CreateItem(int a_diva_id, bool a_first_transition = true, TransitionList.Type transition = TransitionList.Type.COSTUME_SELECT, bool a_debug = false, bool isGoDiva = false)
+		public void CreateItem(int a_diva_id, bool a_first_transition/* = true*/, TransitionList.Type transition/* = TransitionList.Type.COSTUME_SELECT*/, bool a_debug/* = false*/, bool isGoDiva/* = false*/)
 		{
 			m_diva_id = a_diva_id;
 			FFHPBEPOMAK_DivaInfo selectedCostume = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[m_diva_id - 1];

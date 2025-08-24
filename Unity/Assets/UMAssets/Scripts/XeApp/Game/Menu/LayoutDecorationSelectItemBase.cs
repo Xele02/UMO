@@ -271,7 +271,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x18B4D6C Offset: 0x18B4D6C VA: 0x18B4D6C
-		public void ItemDecideCallback(bool isTapDecide = false)
+		public void ItemDecideCallback(bool isTapDecide/* = false*/)
 		{
 			if(!m_isProduct)
 				m_enableSelectItem = false;

@@ -553,7 +553,7 @@ public class EBFLJMOCLNA_Costume : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x14F8C6C Offset: 0x14F8C6C VA: 0x14F8C6C
-	public int LMLGEDEJCJO(int PPFNGGCBJKC, LCLCCHLDNHJ_Costume MFPNGNMFEAL, bool HGIKOKNMMDH = true)
+	public int LMLGEDEJCJO(int PPFNGGCBJKC, LCLCCHLDNHJ_Costume MFPNGNMFEAL, bool HGIKOKNMMDH/* = true*/)
 	{
 		if(PPFNGGCBJKC > 0)
 		{

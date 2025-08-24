@@ -130,7 +130,7 @@ namespace XeApp.Game.Menu
 		//private void UpdateNewIcon() { }
 
 		//// RVA: 0xF0472C Offset: 0xF0472C VA: 0xF0472C
-		public void InitializeScrollView(int itemCount, int position = 0)
+		public void InitializeScrollView(int itemCount, int position/* = 0*/)
 		{
 			for(int i = 0; i < m_swapScroll.ScrollObjectCount; i++)
 			{

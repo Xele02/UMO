@@ -78,7 +78,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA68F94 Offset: 0xA68F94 VA: 0xA68F94
-		public void Set(int divaId, SkillType skillType, GCIJNCFDNON_SceneInfo sceneData, int musicId = 0)
+		public void Set(int divaId, SkillType skillType, GCIJNCFDNON_SceneInfo sceneData, int musicId/* = 0*/)
 		{
 			m_divaId = divaId;
 			m_sceneData = sceneData;

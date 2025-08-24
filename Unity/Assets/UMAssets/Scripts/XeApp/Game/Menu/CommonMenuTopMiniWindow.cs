@@ -67,7 +67,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x1B4DF1C Offset: 0x1B4DF1C VA: 0x1B4DF1C
-		public void Setup(Type type, string text, int itemId = 0)
+		public void Setup(Type type, string text, int itemId/* = 0*/)
 		{
 			m_textPoint.text = text;
 			(m_rootMain.transform as RectTransform).anchoredPosition = m_position[(int)type];

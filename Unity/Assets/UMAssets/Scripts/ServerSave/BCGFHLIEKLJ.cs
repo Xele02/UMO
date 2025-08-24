@@ -34,7 +34,7 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		//// RVA: 0xF2EF18 Offset: 0xF2EF18 VA: 0xF2EF18
-		public void LHPDDGIJKNB(int PPFNGGCBJKC = 0)
+		public void LHPDDGIJKNB(int PPFNGGCBJKC/* = 0*/)
 		{
 			this.PPFNGGCBJKC_Id = PPFNGGCBJKC;
 			BFINGCJHOHI_Cnt = 0;
@@ -101,7 +101,7 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		//// RVA: 0xF2EF58 Offset: 0xF2EF58 VA: 0xF2EF58
-		public new void LHPDDGIJKNB(int PPFNGGCBJKC = 0)
+		public new void LHPDDGIJKNB(int PPFNGGCBJKC/* = 0*/)
 		{
 			base.LHPDDGIJKNB(PPFNGGCBJKC);
 			FOONCJDLLIK_ChargeTime = 0;

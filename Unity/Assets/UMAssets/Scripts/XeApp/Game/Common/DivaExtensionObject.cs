@@ -256,7 +256,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BEE84C Offset: 0x1BEE84C VA: 0x1BEE84C
-		public void LockBoneSpring(int a_index = 0, float a_seconds = 0.05f)
+		public void LockBoneSpring(int a_index/* = 0*/, float a_seconds/* = 0.05f*/)
 		{
 			if (m_coroutine_bsc_lock != null)
 				this.StopCoroutineWatched(m_coroutine_bsc_lock);
@@ -267,7 +267,7 @@ namespace XeApp.Game.Common
 
 		//[IteratorStateMachineAttribute] // RVA: 0x737C50 Offset: 0x737C50 VA: 0x737C50
 		//// RVA: 0x1BEE8D4 Offset: 0x1BEE8D4 VA: 0x1BEE8D4
-		public IEnumerator CoroutineWaitLockBoneSpring(int a_index = 0, float a_seconds = 0.1f)
+		public IEnumerator CoroutineWaitLockBoneSpring(int a_index/* = 0*/, float a_seconds/* = 0.1f*/)
 		{
 			//0x1BEED70
 			if(!m_is_bsc_lock)

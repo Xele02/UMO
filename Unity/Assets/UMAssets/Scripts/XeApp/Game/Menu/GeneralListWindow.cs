@@ -170,7 +170,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB87EEC Offset: 0xB87EEC VA: 0xB87EEC
-		public void ChangePreset(Preset preset, bool enableChangeRanking = false)
+		public void ChangePreset(Preset preset, bool enableChangeRanking/* = false*/)
 		{
 			ClearButtonCallback();
 			m_AnimEventRankingChangeBtn.StartChildrenAnimGoStop("st_non", "st_non");
@@ -470,7 +470,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB8943C Offset: 0xB8943C VA: 0xB8943C
-		public void SetEventMusicRankingJacket(IiconTexture iconTex, int index = 0)
+		public void SetEventMusicRankingJacket(IiconTexture iconTex, int index/* = 0*/)
 		{
 			if(iconTex == null)
 			{
@@ -532,7 +532,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB896E4 Offset: 0xB896E4 VA: 0xB896E4
-		public void ChangeEventSubHeaderStyle(EventSubHeaderStyle style, int a_diva_id = 0)
+		public void ChangeEventSubHeaderStyle(EventSubHeaderStyle style, int a_diva_id/* = 0*/)
 		{
 			switch(style)
 			{

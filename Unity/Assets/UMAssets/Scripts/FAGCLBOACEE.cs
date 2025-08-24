@@ -29,7 +29,7 @@ public class FAGCLBOACEE
 	public bool GIKLNODJKFK_6Line; // 0x14
 
 	// // RVA: 0xFC1A40 Offset: 0xFC1A40 VA: 0xFC1A40
-	public void KHEKNNFCAOI(BEFPBAIONFK DEPGBBJMFED, int PPFNGGCBJKC, int AKNELONELJK = 0, bool GIKLNODJKFK = false)
+	public void KHEKNNFCAOI(BEFPBAIONFK DEPGBBJMFED, int PPFNGGCBJKC, int AKNELONELJK/* = 0*/, bool GIKLNODJKFK/* = false*/)
     {
         this.DEPGBBJMFED = DEPGBBJMFED;
         int id = 0;

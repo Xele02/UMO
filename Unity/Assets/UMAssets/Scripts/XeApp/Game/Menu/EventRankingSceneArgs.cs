@@ -9,7 +9,7 @@ namespace XeApp.Game.Menu
 		public int selectDiva { get; private set; } // 0x14
 
 		// RVA: 0xB8F398 Offset: 0xB8F398 VA: 0xB8F398
-		public EventRankingSceneArgs(IKDICBBFBMI_EventBase eventCtrl, bool isPast = false, int currentRankinIndex = 0, int selectDiva = 0)
+		public EventRankingSceneArgs(IKDICBBFBMI_EventBase eventCtrl, bool isPast/* = false*/, int currentRankinIndex/* = 0*/, int selectDiva/* = 0*/)
 		{
 			this.isPast = isPast;
 			this.eventCtrl = eventCtrl;

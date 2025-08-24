@@ -177,7 +177,7 @@ namespace XeApp.Game.AR
 		// public bool IsEnableARMode() { }
 
 		// // RVA: 0xBB80BC Offset: 0xBB80BC VA: 0xBB80BC
-		public List<Data> GetEventList(bool isAll = false)
+		public List<Data> GetEventList(bool isAll/* = false*/)
 		{
 			List<Data> l = new List<Data>();
 			for(int i = 0; i < m_eventList.Count; i++)

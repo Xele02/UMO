@@ -251,7 +251,7 @@ namespace XeApp.Game.Common
 		//public void SetContentEscapeMode(bool isEnable) { }
 
 		//// RVA: 0x1CD63A4 Offset: 0x1CD63A4 VA: 0x1CD63A4
-		public void SetItemCount(int count, bool isLoop = false)
+		public void SetItemCount(int count, bool isLoop/* = false*/)
 		{
 			m_itemCount = count;
 			if (isLoop)
@@ -309,7 +309,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CD66C0 Offset: 0x1CD66C0 VA: 0x1CD66C0
-		public void SetPosition(int index, float animTime = 0)
+		public void SetPosition(int index, float animTime/* = 0*/)
 		{
 			Vector2 v = Vector2.zero;
 			if(vertical)

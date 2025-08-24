@@ -85,7 +85,7 @@ public class ALEKLHIANJN
 	}
 
 	//// RVA: 0xCD85A4 Offset: 0xCD85A4 VA: 0xCD85A4
-	public string DMBDNIEEMCB_GetDesc(bool PNNGGAKLJAC_UpColor = false)
+	public string DMBDNIEEMCB_GetDesc(bool PNNGGAKLJAC_UpColor/* = false*/)
 	{
 		string res = PNJICDLDCAE.ToString();
 		if (PNNGGAKLJAC_UpColor)

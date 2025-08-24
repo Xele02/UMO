@@ -95,7 +95,7 @@ namespace XeApp.Game
 		}
 
 		//// RVA: 0xD3A35C Offset: 0xD3A35C VA: 0xD3A35C
-		public void OpenKeyboard(string _text, int charaLimit, TouchScreenKeyboardType _type = 0, bool autocorrection = false, bool mulitline = false, bool secure = false, bool alert = false, string textPlaceholder = "")
+		public void OpenKeyboard(string _text, int charaLimit, TouchScreenKeyboardType _type/* = 0*/, bool autocorrection/* = false*/, bool mulitline/* = false*/, bool secure/* = false*/, bool alert/* = false*/, string textPlaceholder/* = ""*/)
 		{
 			#if UNITY_ANDROID
 			m_keyboard = TouchScreenKeyboard.Open(_text, _type, autocorrection, mulitline, secure, alert, textPlaceholder);

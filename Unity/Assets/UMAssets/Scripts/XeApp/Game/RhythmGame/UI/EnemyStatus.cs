@@ -129,7 +129,7 @@ namespace XeApp.Game.RhythmGame.UI
 		public bool IsChaseMode { get; private set; } // 0x40
 
 		//// RVA: 0x155AFD4 Offset: 0x155AFD4 VA: 0x155AFD4
-		public void Initialize(bool isEnemyNoDeath = false, bool isMvMode = false)
+		public void Initialize(bool isEnemyNoDeath/* = false*/, bool isMvMode/* = false*/)
 		{
 			GameObject go = RhythmGameHUD.RhythmGameInstantiatePrefab(m_enemyGaugePrefab);
 			go.transform.SetParent(transform, false);

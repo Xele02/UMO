@@ -80,7 +80,7 @@ namespace XeApp.Game.Menu
 		// public void ShowUnitList(bool isResetPosition, UnityAction callBack, UnityAction<int> unitDatailEvent, EEDKAACNBBG musicData, EJKBKMBJMGL enemyData, EAJCBFGKKFA friendData, DFKGGBMFFGB playerData, bool isGoDiva) { }
 
 		// // RVA: 0x1247A00 Offset: 0x1247A00 VA: 0x1247A00
-		public void ShowConfirmWindow(ConfirmType type, DFKGGBMFFGB_PlayerInfo playerData, int targetUnitId, EEDKAACNBBG_MusicData musicData, EJKBKMBJMGL_EnemyData enemyData, EAJCBFGKKFA_FriendInfo friendData, UnityAction onDecide, UnityAction okAction, Action onEnd, bool isGoDiva = false)
+		public void ShowConfirmWindow(ConfirmType type, DFKGGBMFFGB_PlayerInfo playerData, int targetUnitId, EEDKAACNBBG_MusicData musicData, EJKBKMBJMGL_EnemyData enemyData, EAJCBFGKKFA_FriendInfo friendData, UnityAction onDecide, UnityAction okAction, Action onEnd, bool isGoDiva/* = false*/)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_unitSaveConfirmSetting.Buttons = new ButtonInfo[2]
@@ -259,7 +259,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x124912C Offset: 0x124912C VA: 0x124912C
-		public void ShowSubPlateWindow(CFHDKAFLNEP result, Action openEnd, UnitWindowConstant.OperationMode opMode, Action endCallBack, Action closeCallBack, bool isReShow = false)
+		public void ShowSubPlateWindow(CFHDKAFLNEP result, Action openEnd, UnitWindowConstant.OperationMode opMode, Action endCallBack, Action closeCallBack, bool isReShow/* = false*/)
 		{
 			m_subPlateSetting.Buttons = new ButtonInfo[1]
 			{

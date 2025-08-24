@@ -31,7 +31,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x14C10B4 Offset: 0x14C10B4 VA: 0x14C10B4
-		public void Setup(int _base, int max, int diff0 = 0)
+		public void Setup(int _base, int max, int diff0/* = 0*/)
 		{
 			m_max = max;
 			m_base = _base;

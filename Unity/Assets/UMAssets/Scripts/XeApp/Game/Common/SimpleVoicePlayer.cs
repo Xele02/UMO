@@ -21,7 +21,7 @@ namespace XeApp.Game.Common
 		public bool m_isStop; // 0x20
 
 		//// RVA: 0x139363C Offset: 0x139363C VA: 0x139363C
-		public int PlayVoiceRandom(VoiceSetting setting, int exclusionId = -1)
+		public int PlayVoiceRandom(VoiceSetting setting, int exclusionId/* = -1*/)
 		{
 			int num = setting.m_randomNum;
 			if(num != -1)

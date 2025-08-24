@@ -30,7 +30,7 @@ namespace XeApp.Game.Menu
 		public bool Unused() { return m_isInitialized; }
 
 		// RVA: 0x159EFAC Offset: 0x159EFAC VA: 0x159EFAC
-		public SceneCardTextureCache(int capacity = 1) : base(capacity)
+		public SceneCardTextureCache(int capacity/* = 1*/) : base(capacity)
 		{
 			return;
 		}
@@ -43,7 +43,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6DCC6C Offset: 0x6DCC6C VA: 0x6DCC6C
 		// // RVA: 0x159F038 Offset: 0x159F038 VA: 0x159F038
-		public IEnumerator Initialize(bool needAlphaTex = false)
+		public IEnumerator Initialize(bool needAlphaTex/* = false*/)
 		{
 			AssetBundleLoadAllAssetOperationBase operation;
 

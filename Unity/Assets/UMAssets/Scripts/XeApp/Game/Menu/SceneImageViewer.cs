@@ -186,7 +186,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1373E4C Offset: 0x1373E4C VA: 0x1373E4C
-		public void Initialize(bool isEvolv, int baseRare, bool isKira = false)
+		public void Initialize(bool isEvolv, int baseRare, bool isKira/* = false*/)
 		{
 			m_page = isKira ? 2 : (isEvolv ? 1 : 0);
 			for(int i = 0; i < m_arrowButtonObject.Count; i++)

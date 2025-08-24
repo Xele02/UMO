@@ -880,7 +880,7 @@ namespace XeApp.Game.Menu
 		//private void OnClickArrowButtonR() { }
 
 		//// RVA: 0xBD490C Offset: 0xBD490C VA: 0xBD490C
-		private void OnClickSelectButton(bool isNotPlaySe = false)
+		private void OnClickSelectButton(bool isNotPlaySe/* = false*/)
 		{
 			if(!IsProcessing())
 			{

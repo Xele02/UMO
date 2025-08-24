@@ -105,7 +105,7 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDAC4EC Offset: 0xDAC4EC VA: 0xDAC4EC
-		public bool Judged(RhythmGameConsts.NoteResult result, RhythmGameConsts.NoteJudgeType judgetype = 0)
+		public bool Judged(RhythmGameConsts.NoteResult result, RhythmGameConsts.NoteJudgeType judgetype/* = 0*/)
 		{
 			if(!IsJudged())
 			{

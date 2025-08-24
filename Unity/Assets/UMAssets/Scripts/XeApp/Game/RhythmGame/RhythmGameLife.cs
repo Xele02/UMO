@@ -25,7 +25,7 @@ namespace XeApp.Game.RhythmGame
 		public bool isLiveSkip { get; set; } // 0x23
 
 		// RVA: 0x9A89B0 Offset: 0x9A89B0 VA: 0x9A89B0
-		public void Initialize(MusicData musicData, int max, bool a_is_liveskip = false)
+		public void Initialize(MusicData musicData, int max, bool a_is_liveskip/* = false*/)
 		{
 			short wavId = musicData.musicBase.KKPAHLMJKIH_WavId;
 			short variationId = musicData.musicBase.BKJGCEOEPFB_VariationId;

@@ -28,7 +28,7 @@ namespace XeApp.Game.Menu
 		private static readonly Color IconColorOff = Color.gray; // 0x10
 
 		// RVA: 0xA6BF08 Offset: 0xA6BF08 VA: 0xA6BF08
-		public void Set(int divaId, SkillType skillType, GCIJNCFDNON_SceneInfo sceneData, int musicId = 0)
+		public void Set(int divaId, SkillType skillType, GCIJNCFDNON_SceneInfo sceneData, int musicId/* = 0*/)
 		{
 			m_skillIconImage.enabled = false;
 			SetEffectEnable(false);

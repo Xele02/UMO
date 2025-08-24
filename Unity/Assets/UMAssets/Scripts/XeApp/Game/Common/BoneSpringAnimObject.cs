@@ -76,7 +76,7 @@ namespace XeApp.Game.Common
 		}
 
 		// RVA: 0xE62168 Offset: 0xE62168 VA: 0xE62168
-		public void Initialize(RhythmGameResource a_resource, GameObject a_diva_prefab, int index, int divaId = 0)
+		public void Initialize(RhythmGameResource a_resource, GameObject a_diva_prefab, int index, int divaId/* = 0*/)
 		{
 			if (!a_resource.musicBoneSpringResource[index].isUnused)
 			{

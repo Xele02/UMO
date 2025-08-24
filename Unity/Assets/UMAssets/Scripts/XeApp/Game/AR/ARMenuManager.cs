@@ -266,7 +266,7 @@ namespace XeApp.Game.AR
         }
 
         // RVA: 0x11E05AC Offset: 0x11E05AC VA: 0x11E05AC
-        public GameObject SetSelectWindow(string[] messages, bool topCanvas = false)
+        public GameObject SetSelectWindow(string[] messages, bool topCanvas/* = false*/)
         {
             if(m_selectWindowPref != null)
             {

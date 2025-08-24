@@ -412,7 +412,7 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 	}
 
 	//// RVA: 0x17FA29C Offset: 0x17FA29C VA: 0x17FA29C
-	public static List<LIEJFHMGNIA> FKDIMODKKJD(int KFOLEAPKGFC = 0, bool POOMOBGPCNE = true, bool OKIAAPADPLM = true, bool HFOAFJBMNOF = false)
+	public static List<LIEJFHMGNIA> FKDIMODKKJD(int KFOLEAPKGFC/* = 0*/, bool POOMOBGPCNE/* = true*/, bool OKIAAPADPLM/* = true*/, bool HFOAFJBMNOF/* = false*/)
 	{
 		int storyEnd = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ACNNFJJMEEO_StoryEnd;
 		LAEGMENIEDB_Story.ALGOILKGAAH LODFKHJLGJP = null;

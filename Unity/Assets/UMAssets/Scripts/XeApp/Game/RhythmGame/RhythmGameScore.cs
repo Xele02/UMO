@@ -82,7 +82,7 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0xBFE9F8 Offset: 0xBFE9F8 VA: 0xBFE9F8
-		public void IncreaseScore(RhythmGameConsts.NoteResultEx a_result_ex, int combo, float bonusRate, int bonusValue, RhythmGameConsts.SpecialNoteType spType, float a_excellent_score_rate, bool a_enable_combo_bonus = true)
+		public void IncreaseScore(RhythmGameConsts.NoteResultEx a_result_ex, int combo, float bonusRate, int bonusValue, RhythmGameConsts.SpecialNoteType spType, float a_excellent_score_rate, bool a_enable_combo_bonus/* = true*/)
 		{
 			float f = 1;
 			if(a_enable_combo_bonus)

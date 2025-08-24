@@ -93,7 +93,7 @@ namespace XeApp.Game.Menu
 			//public void SetContent(GameObject obj) { }
 
 			//// RVA: 0x1A7F9D8 Offset: 0x1A7F9D8 VA: 0x1A7F9D8
-			public void Init(IKDICBBFBMI_EventBase eventController, OHCAABOMEOF.KGOGMKMBCPP_EventType debugEventType = 0)
+			public void Init(IKDICBBFBMI_EventBase eventController, OHCAABOMEOF.KGOGMKMBCPP_EventType debugEventType/* = 0*/)
 			{
 				if(m_ViewData == null)
 					m_ViewData = new ViewRewardEvResultData();
@@ -241,7 +241,7 @@ namespace XeApp.Game.Menu
 			}
 
 			//// RVA: 0x11420D0 Offset: 0x11420D0 VA: 0x11420D0
-			public void InitializeRanking(IKDICBBFBMI_EventBase eventController, int rankingIndex, OHCAABOMEOF.KGOGMKMBCPP_EventType debugEventType = 0)
+			public void InitializeRanking(IKDICBBFBMI_EventBase eventController, int rankingIndex, OHCAABOMEOF.KGOGMKMBCPP_EventType debugEventType/* = 0*/)
 			{
 				data_type = Type.Rankings;
 				rankingRewardList.Clear();
@@ -275,7 +275,7 @@ namespace XeApp.Game.Menu
 			}
 
 			//// RVA: 0x11424F4 Offset: 0x11424F4 VA: 0x11424F4
-			public void InitializeEvHighScoreRanking(IKDICBBFBMI_EventBase eventController, OHCAABOMEOF.KGOGMKMBCPP_EventType debugEventType = 0)
+			public void InitializeEvHighScoreRanking(IKDICBBFBMI_EventBase eventController, OHCAABOMEOF.KGOGMKMBCPP_EventType debugEventType/* = 0*/)
 			{
 				data_type = Type.Rankings;
 				rankingRewardList.Clear();
@@ -622,7 +622,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1A7E6B4 Offset: 0x1A7E6B4 VA: 0x1A7E6B4
-		private static void ApplySetting(Type popup_type, Transform parent, int divaId = 0)
+		private static void ApplySetting(Type popup_type, Transform parent, int divaId/* = 0*/)
 		{
 			if(sm_Setting == null)
 			{

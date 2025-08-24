@@ -61,20 +61,20 @@ namespace smartar
         private ImageHolder imageHolder_ = new ImageHolder(IntPtr.Zero); // 0x60
 
         // RVA: 0x20B8428 Offset: 0x20B8428 VA: 0x20B8428
-        public CameraDevice(Smart smart, bool forceOldAndroidAPI = false) : this() 
+        public CameraDevice(Smart smart, bool forceOldAndroidAPI/* = false*/) : this() 
         { 
                 self_ = sarSmartar_SarCameraDevice_SarCameraDevice(smart.self_, forceOldAndroidAPI);
         }
 
         // RVA: 0x20B88B4 Offset: 0x20B88B4 VA: 0x20B88B4
-        public CameraDevice(Smart smart, int cameraId, bool forceOldAndroidAPI = false) 
+        public CameraDevice(Smart smart, int cameraId, bool forceOldAndroidAPI/* = false*/) 
                 : this(smart, cameraId, IntPtr.Zero, forceOldAndroidAPI)
         {
 
         }
 
         // RVA: 0x20B892C Offset: 0x20B892C VA: 0x20B892C
-        public CameraDevice(Smart smart, int cameraId, IntPtr nativeDevice, bool forceOldAndroidAPI = false) 
+        public CameraDevice(Smart smart, int cameraId, IntPtr nativeDevice, bool forceOldAndroidAPI/* = false*/) 
                 : this()
         {
                 self_ = sarSmartar_SarCameraDevice_SarCameraDevice2(smart.self_, cameraId, nativeDevice, forceOldAndroidAPI);
@@ -275,7 +275,7 @@ namespace smartar
         // public int SetOwningNativeDevice(bool isOwning) { }
 
         // // RVA: 0x20BB09C Offset: 0x20BB09C VA: 0x20BB09C
-        public static int GetDefaultCameraId(Smart smart, Facing facing, out int cameraId, bool forceOldAndroidAPI = false)
+        public static int GetDefaultCameraId(Smart smart, Facing facing, out int cameraId, bool forceOldAndroidAPI/* = false*/)
         {
             return sarSmartar_SarCameraDevice_sarGetDefaultCameraId(smart.self_, facing, out cameraId, forceOldAndroidAPI);
         }
@@ -390,24 +390,24 @@ namespace smartar
 
         // // RVA: 0x20B87C0 Offset: 0x20B87C0 VA: 0x20B87C0
 #if UNITY_EDITOR
-        private IntPtr sarSmartar_SarCameraDevice_SarCameraDevice(IntPtr smart, bool forceOldAndroidAPI = false)
+        private IntPtr sarSmartar_SarCameraDevice_SarCameraDevice(IntPtr smart, bool forceOldAndroidAPI/* = false*/)
         {
                 return IntPtr.Zero;
         }
 #else
         [DllImport("smartar")]
-        private static extern IntPtr sarSmartar_SarCameraDevice_SarCameraDevice(IntPtr smart, bool forceOldAndroidAPI = false);
+        private static extern IntPtr sarSmartar_SarCameraDevice_SarCameraDevice(IntPtr smart, bool forceOldAndroidAPI/* = false*/);
 #endif
 
         // // RVA: 0x20B89F0 Offset: 0x20B89F0 VA: 0x20B89F0
 #if UNITY_EDITOR
-        private IntPtr sarSmartar_SarCameraDevice_SarCameraDevice2(IntPtr smart, int cameraId, IntPtr nativeDevice, bool forceOldAndroidAPI = false)
+        private IntPtr sarSmartar_SarCameraDevice_SarCameraDevice2(IntPtr smart, int cameraId, IntPtr nativeDevice, bool forceOldAndroidAPI/* = false*/)
         {
                 return IntPtr.Zero;
         }
 #else
         [DllImport("smartar")]
-        private static extern IntPtr sarSmartar_SarCameraDevice_SarCameraDevice2(IntPtr smart, int cameraId, IntPtr nativeDevice, bool forceOldAndroidAPI = false);
+        private static extern IntPtr sarSmartar_SarCameraDevice_SarCameraDevice2(IntPtr smart, int cameraId, IntPtr nativeDevice, bool forceOldAndroidAPI/* = false*/);
 #endif
 
         // // RVA: 0x20B8D90 Offset: 0x20B8D90 VA: 0x20B8D90
@@ -541,14 +541,14 @@ namespace smartar
 
         // // RVA: 0x20BB150 Offset: 0x20BB150 VA: 0x20BB150
 #if UNITY_EDITOR
-        private static int sarSmartar_SarCameraDevice_sarGetDefaultCameraId(IntPtr smart, Facing facing, out int cameraId, bool forceOldAndroidAPI = false)
+        private static int sarSmartar_SarCameraDevice_sarGetDefaultCameraId(IntPtr smart, Facing facing, out int cameraId, bool forceOldAndroidAPI/* = false*/)
         {
             cameraId = 0;
             return 0;
         }
 #else
         [DllImport("smartar")]
-        private static extern int sarSmartar_SarCameraDevice_sarGetDefaultCameraId(IntPtr smart, Facing facing, out int cameraId, bool forceOldAndroidAPI = false);
+        private static extern int sarSmartar_SarCameraDevice_sarGetDefaultCameraId(IntPtr smart, Facing facing, out int cameraId, bool forceOldAndroidAPI/* = false*/);
 #endif
 
         // // RVA: 0x20BB300 Offset: 0x20BB300 VA: 0x20BB300

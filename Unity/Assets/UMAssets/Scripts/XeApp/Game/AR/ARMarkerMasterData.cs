@@ -196,7 +196,7 @@ namespace XeApp.Game.AR
 		}
 
 		// RVA: 0x11D2A3C Offset: 0x11D2A3C VA: 0x11D2A3C
-		public List<Data> GetMarkerList(bool isAll = false)
+		public List<Data> GetMarkerList(bool isAll/* = false*/)
 		{
 			List<Data> res = new List<Data>();
 			for(int i = 0; i < m_markerList.Count; i++)
@@ -234,7 +234,7 @@ namespace XeApp.Game.AR
 		}
 
 		// RVA: 0x11DAA34 Offset: 0x11DAA34 VA: 0x11DAA34
-		public List<Data> GetEventMarkerList(string eventId, bool isAll = false)
+		public List<Data> GetEventMarkerList(string eventId, bool isAll/* = false*/)
 		{
 			List<Data> l = GetMarkerList(isAll);
 			if(l.Count > 0)

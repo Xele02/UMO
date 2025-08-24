@@ -278,7 +278,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA98660 Offset: 0xA98660 VA: 0xA98660
-		public void Show(int count = 3)
+		public void Show(int count/* = 3*/)
 		{
 			if (m_isShow)
 				return;

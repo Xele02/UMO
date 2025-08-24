@@ -35,7 +35,7 @@ namespace XeApp.Game.Menu
 		public static string AssetName { get { return "root_pop_sel_card_reaf_layout_root"; } } //0x17AF828
 
 		//// RVA: 0x17AF884 Offset: 0x17AF884 VA: 0x17AF884
-		public static void Show(DFKGGBMFFGB_PlayerInfo playerData, uint order, List<GCIJNCFDNON_SceneInfo> sceneList, List<int> sceneIndexList, bool isBeginner, int tabIndex = 0, Action endCallBack = null)
+		public static void Show(DFKGGBMFFGB_PlayerInfo playerData, uint order, List<GCIJNCFDNON_SceneInfo> sceneList, List<int> sceneIndexList, bool isBeginner, int tabIndex/* = 0*/, Action endCallBack/* = null*/)
 		{
 			PopupLimitOverList p = new PopupLimitOverList();
 			MenuScene.Instance.StartCoroutineWatched(p.Co_Show(playerData, order, sceneList, sceneIndexList, isBeginner, tabIndex, endCallBack));
@@ -43,7 +43,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7052FC Offset: 0x7052FC VA: 0x7052FC
 		//// RVA: 0x17AF99C Offset: 0x17AF99C VA: 0x17AF99C
-		private IEnumerator Co_Show(DFKGGBMFFGB_PlayerInfo playerData, uint order, List<GCIJNCFDNON_SceneInfo> sceneList, List<int> sceneIndexList, bool isBeginner, int tabIndex = 0, Action endCallBack = null)
+		private IEnumerator Co_Show(DFKGGBMFFGB_PlayerInfo playerData, uint order, List<GCIJNCFDNON_SceneInfo> sceneList, List<int> sceneIndexList, bool isBeginner, int tabIndex/* = 0*/, Action endCallBack/* = null*/)
 		{
 			//0x1687164
 			MenuScene.Instance.InputDisable();

@@ -70,7 +70,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x1630A3C Offset: 0x1630A3C VA: 0x1630A3C
-		public void Init(int divaId = 1)
+		public void Init(int divaId/* = 1*/)
 		{
 			m_item_list = NIHHKCDHLNH.FKDIMODKKJD(divaId);
 			for(int i = 0; i < 3; i++)

@@ -328,7 +328,7 @@ namespace XeApp.Game.Tutorial
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AEF10 Offset: 0x6AEF10 VA: 0x6AEF10
 		//// RVA: 0xE4A588 Offset: 0xE4A588 VA: 0xE4A588
-		public static IEnumerator Co_OffeReleaseTutorial(InputLimitButton inputLimitButton, ButtonBase button, Action act, BasicTutorialMessageId messageId, bool IsInputLimit = true, MusicSelectCDSelect cdSelect = null, MusicScrollView musicScrollView = null)
+		public static IEnumerator Co_OffeReleaseTutorial(InputLimitButton inputLimitButton, ButtonBase button, Action act, BasicTutorialMessageId messageId, bool IsInputLimit/* = true*/, MusicSelectCDSelect cdSelect/* = null*/, MusicScrollView musicScrollView/* = null*/)
 		{
 			BasicTutorialManager mrg;
 			GameManager.PushBackButtonHandler dymmyBackHandler;
@@ -386,7 +386,7 @@ namespace XeApp.Game.Tutorial
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AEF88 Offset: 0x6AEF88 VA: 0x6AEF88
 		//// RVA: 0xE4A6AC Offset: 0xE4A6AC VA: 0xE4A6AC
-		public static IEnumerator Co_CostumeUpgrade(EBFLJMOCLNA_Costume.NDOPBOCEPJO type, ButtonBase button, BasicTutorialMessageId messageId, InputLimitButton limitButton = InputLimitButton.None, TutorialPointer.Direction direction = TutorialPointer.Direction.Normal)
+		public static IEnumerator Co_CostumeUpgrade(EBFLJMOCLNA_Costume.NDOPBOCEPJO type, ButtonBase button, BasicTutorialMessageId messageId, InputLimitButton limitButton/* = InputLimitButton.None*/, TutorialPointer.Direction direction/* = TutorialPointer.Direction.Normal*/)
 		{
 			EBFLJMOCLNA_Costume pd; // 0x28
 			BasicTutorialManager mrg; // 0x2C
@@ -444,7 +444,7 @@ namespace XeApp.Game.Tutorial
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AF000 Offset: 0x6AF000 VA: 0x6AF000
 		//// RVA: 0xE4A7C4 Offset: 0xE4A7C4 VA: 0xE4A7C4
-		public static IEnumerator Co_ValkyrieUpgrade(ButtonBase button, BasicTutorialMessageId messageId, InputLimitButton limitButton = InputLimitButton.None, TutorialPointer.Direction direction = TutorialPointer.Direction.Normal, MusicSelectCDSelect cdSelect = null, MusicScrollView musicScrollView = null)
+		public static IEnumerator Co_ValkyrieUpgrade(ButtonBase button, BasicTutorialMessageId messageId, InputLimitButton limitButton/* = InputLimitButton.None*/, TutorialPointer.Direction direction/* = TutorialPointer.Direction.Normal*/, MusicSelectCDSelect cdSelect/* = null*/, MusicScrollView musicScrollView/* = null*/)
 		{
 			BasicTutorialManager mrg;
 			GameManager.PushBackButtonHandler dymmyBackHandler;

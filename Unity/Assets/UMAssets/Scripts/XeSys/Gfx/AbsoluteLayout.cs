@@ -188,7 +188,7 @@ namespace XeSys.Gfx
 		// public void InitAllAnimation() { }
 
 		// // RVA: 0x2040068 Offset: 0x2040068 VA: 0x2040068
-		public void UpdateAllAnimation(float dt, bool forceChildren = false)
+		public void UpdateAllAnimation(float dt, bool forceChildren/* = false*/)
 		{
 			if(enabled && (UpdateAnim(dt) || forceChildren))
 			{

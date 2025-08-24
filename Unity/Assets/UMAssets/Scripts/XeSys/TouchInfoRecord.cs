@@ -115,7 +115,7 @@ namespace XeSys
         // public int GetSwipeAngleType(int divCount, bool isHalfOffset = True) { }
 
         // // RVA: 0x23A735C Offset: 0x23A735C VA: 0x23A735C
-        public int GetFlickAngleType(int divCount, int frame, float distanceRate, bool isHalfOffset = true)
+        public int GetFlickAngleType(int divCount, int frame, float distanceRate, bool isHalfOffset/* = true*/)
 		{
 			int res = -1;
 			TouchInfo info = FindRecentInfo(frame);

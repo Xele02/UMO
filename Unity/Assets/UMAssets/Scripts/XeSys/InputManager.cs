@@ -398,7 +398,7 @@ namespace XeSys
 				this.keyType = keyType;
 			}
 
-			public new int GetFlickAngleType(int divCount, int frame, float distanceRate, bool isHalfOffset = true)
+			public new int GetFlickAngleType(int divCount, int frame, float distanceRate, bool isHalfOffset/* = true*/)
 			{
 				return -2;
 			}

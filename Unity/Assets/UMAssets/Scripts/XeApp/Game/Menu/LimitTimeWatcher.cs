@@ -51,7 +51,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x15411A8 Offset: 0x15411A8 VA: 0x15411A8
-		public void WatchStart(long limitTime, bool forceCount = false)
+		public void WatchStart(long limitTime, bool forceCount/* = false*/)
 		{
 			m_limitTime = limitTime;
 			m_savedCurrentTime = 0;

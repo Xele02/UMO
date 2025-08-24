@@ -117,7 +117,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xECE310 Offset: 0xECE310 VA: 0xECE310
-		public void DoIntroTalk(bool resetTalkFlags = false)
+		public void DoIntroTalk(bool resetTalkFlags/* = false*/)
 		{
 			DateTime d1 = Utility.GetLocalDateTime(CIOECGOMILE.HHCJCDFCLOB.PKBOFLOJNIJ_LastLoginTime);
 			DateTime d2 = Utility.GetLocalDateTime(m_loginTime);
@@ -197,7 +197,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xECF740 Offset: 0xECF740 VA: 0xECF740
-		public void DoPresentReaction(int a_idnex = -1, OnChangedMessage a_callback_msg = null)
+		public void DoPresentReaction(int a_idnex/* = -1*/, OnChangedMessage a_callback_msg/* = null*/)
 		{
 			if(!m_divaControl.IsActionRequested)
 			{
@@ -378,7 +378,7 @@ namespace XeApp.Game.Menu
 		// private bool CheckComebackTalk(DateTime loginDate, DateTime lastLoginDate) { }
 
 		// // RVA: 0xECE538 Offset: 0xECE538 VA: 0xECE538
-		public bool CheckBirthdayTalk(bool checkOnly = true)
+		public bool CheckBirthdayTalk(bool checkOnly/* = true*/)
 		{
 			if(m_birthdayTalkData != null)
 			{
@@ -394,7 +394,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xECE6C0 Offset: 0xECE6C0 VA: 0xECE6C0
-		public bool CheckLimitedTalk(bool checkOnly = true)
+		public bool CheckLimitedTalk(bool checkOnly/* = true*/)
 		{
 			if (m_limitedTalkData.Count == 0)
 				return false;

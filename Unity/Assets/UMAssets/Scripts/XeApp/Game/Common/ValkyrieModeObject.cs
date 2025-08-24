@@ -82,7 +82,7 @@ namespace XeApp.Game.Common
 		}
 
 		// RVA: 0x1CE32A8 Offset: 0x1CE32A8 VA: 0x1CE32A8
-		public void Initialize(ValkyrieModeResource resource, bool isDebug = false)
+		public void Initialize(ValkyrieModeResource resource, bool isDebug/* = false*/)
 		{
 			InstantiatePrefab(resource);
 			MakeCameraParent();
@@ -122,7 +122,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CE3CEC Offset: 0x1CE3CEC VA: 0x1CE3CEC
-		public void Begin(bool isDebug = false)
+		public void Begin(bool isDebug/* = false*/)
 		{
 			if (m_coWaitForEnterEnd != null)
 			{

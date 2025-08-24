@@ -513,7 +513,7 @@ public static class CMMKCEPBIHI
 	}
 
 	// // RVA: 0x1088AC0 Offset: 0x1088AC0 VA: 0x1088AC0
-	private static bool FNIEADNMMIA_CenterSkillCondMatchMusic(CenterSkillCondition.Type FKDOMKHHOCD_CenterSkillCondition, EEDKAACNBBG_MusicData KKHIDFKKFJE_MusicInfo, SeriesAttr.Type AIHCEGFANAM_Serie = 0)
+	private static bool FNIEADNMMIA_CenterSkillCondMatchMusic(CenterSkillCondition.Type FKDOMKHHOCD_CenterSkillCondition, EEDKAACNBBG_MusicData KKHIDFKKFJE_MusicInfo, SeriesAttr.Type AIHCEGFANAM_Serie/* = 0*/)
 	{
 		if (FKDOMKHHOCD_CenterSkillCondition == 0)
 			return true;
@@ -1808,7 +1808,7 @@ public static class CMMKCEPBIHI
 	}
 
 	// // RVA: 0x1093E5C Offset: 0x1093E5C VA: 0x1093E5C
-	private static int MEAHJKCBGFE(int FLKGCONIFEE, int KHDDPKHPJID, DFKGGBMFFGB_PlayerInfo DJLNOAMJECI, EEDKAACNBBG_MusicData GMFMMDAKENC, SkillBuffEffect.Type MCJEIDPDMLF, int NKGHBKFMFCI, SkillDuration.Type FPMFEKIPFPI, int PHAGNOHBMCM, SkillTrigger.Type BAAFOOKFDLL, int LFGFBMJNBKN, int JLDDHNFKGHL, KLBKPANJCPL_Score POMOLHBFAPM, bool KIFJKGDBDBH = false)
+	private static int MEAHJKCBGFE(int FLKGCONIFEE, int KHDDPKHPJID, DFKGGBMFFGB_PlayerInfo DJLNOAMJECI, EEDKAACNBBG_MusicData GMFMMDAKENC, SkillBuffEffect.Type MCJEIDPDMLF, int NKGHBKFMFCI, SkillDuration.Type FPMFEKIPFPI, int PHAGNOHBMCM, SkillTrigger.Type BAAFOOKFDLL, int LFGFBMJNBKN, int JLDDHNFKGHL, KLBKPANJCPL_Score POMOLHBFAPM, bool KIFJKGDBDBH/* = false*/)
 	{
 		int res = 0;
 		if (MCJEIDPDMLF < SkillBuffEffect.Type.Num && ((1 << ((int)MCJEIDPDMLF & 0xff)) & 0x180202) != 0 && BAAFOOKFDLL == SkillTrigger.Type.EveryScore)

@@ -59,7 +59,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x1852E68 Offset: 0x1852E68 VA: 0x1852E68
-		public void StartChengeEnemyPower(int vfpId, bool Isinitialize, int vfForm = 0, bool IsCorrent = true)
+		public void StartChengeEnemyPower(int vfpId, bool Isinitialize, int vfForm/* = 0*/, bool IsCorrent/* = true*/)
 		{
 			if(powerChengeCoroutine != null)
 			{

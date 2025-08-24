@@ -34,7 +34,7 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAE3598 Offset: 0xAE3598 VA: 0xAE3598
-		public void Initialize(MusicCameraResource resource, List<int> divaIdList, bool isAdjustXZ = false)
+		public void Initialize(MusicCameraResource resource, List<int> divaIdList, bool isAdjustXZ/* = false*/)
 		{
 			animator = GetComponent<Animator>();
 			animator.speed = 0;
@@ -102,7 +102,7 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAE4320 Offset: 0xAE4320 VA: 0xAE4320
-		public void PlayMusicAnimation(double time = 0)
+		public void PlayMusicAnimation(double time/* = 0*/)
 		{
 			if(animator != null)
 			{
@@ -251,7 +251,7 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAE3AE4 Offset: 0xAE3AE4 VA: 0xAE3AE4
-		private void DivaHeightOffset(bool isSolo = false, bool isAdjustXZ = false)
+		private void DivaHeightOffset(bool isSolo/* = false*/, bool isAdjustXZ/* = false*/)
 		{
 			ObjectPositionAdjuster adjust = gameObject.GetComponent<ObjectPositionAdjuster>();
 			if(adjust == null)

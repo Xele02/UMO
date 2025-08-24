@@ -332,7 +332,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x18E6D2C Offset: 0x18E6D2C VA: 0x18E6D2C
-		private void ChangeCurrentExp(int playerLevel, float gaugePercentage, int sectionExp = -1)
+		private void ChangeCurrentExp(int playerLevel, float gaugePercentage, int sectionExp/* = -1*/)
 		{
 			int f = CalcGaugeFrame(playerLevel, gaugePercentage);
 			layoutExpGauge.StartChildrenAnimGoStop(f, f);
@@ -391,7 +391,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71C9F4 Offset: 0x71C9F4 VA: 0x71C9F4
 		// // RVA: 0x18E7078 Offset: 0x18E7078 VA: 0x18E7078
-		private IEnumerator Co_WaitAnim(AbsoluteLayout layout, bool enableSkip = true)
+		private IEnumerator Co_WaitAnim(AbsoluteLayout layout, bool enableSkip/* = true*/)
 		{
 			//0x18E8728
 			while(true)
@@ -411,7 +411,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x18E7158 Offset: 0x18E7158 VA: 0x18E7158
-		private void PlaySound(int cueId, bool enableSkip = true)
+		private void PlaySound(int cueId, bool enableSkip/* = true*/)
 		{
 			if (m_isSkiped && enableSkip)
 				return;

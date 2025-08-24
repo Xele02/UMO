@@ -195,7 +195,7 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AC50B0 Offset: 0x1AC50B0 VA: 0x1AC50B0
-		public void ResetState(bool isResetFlag = true, bool isHidePhrase = true, bool isChangeAnimForced = true, bool isResetEscape = true, bool isResetColl = false)
+		public void ResetState(bool isResetFlag/* = true*/, bool isHidePhrase/* = true*/, bool isChangeAnimForced/* = true*/, bool isResetEscape/* = true*/, bool isResetColl/* = false*/)
 		{
 			if(isResetFlag)
 			{
@@ -221,7 +221,7 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1ACB7D0 Offset: 0x1ACB7D0 VA: 0x1ACB7D0
-		private void AnimWait(bool isChangeForced = true)
+		private void AnimWait(bool isChangeForced/* = true*/)
 		{
 			state = 0;
 			ChangeAnim(HashWait, isChangeForced);
@@ -344,7 +344,7 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1ACC128 Offset: 0x1ACC128 VA: 0x1ACC128
-		public void Direct(Vector2 move, bool isChangeForced = false)
+		public void Direct(Vector2 move, bool isChangeForced/* = false*/)
 		{
 			if(move.x >= 0)
 			{
@@ -357,7 +357,7 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1ACB884 Offset: 0x1ACB884 VA: 0x1ACB884
-		private void ChangeAnim(int hash, bool isChangeForced = true)
+		private void ChangeAnim(int hash, bool isChangeForced/* = true*/)
 		{
 			if(CheckAnim())
 			{
@@ -416,7 +416,7 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AC5B58 Offset: 0x1AC5B58 VA: 0x1AC5B58
-		public void OnCollide(bool enterForced = false)
+		public void OnCollide(bool enterForced/* = false*/)
 		{
 			if ((coll | Coll.Turn) != Coll.Turn && !enterForced)
 				return;
@@ -528,7 +528,7 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1ACAF84 Offset: 0x1ACAF84 VA: 0x1ACAF84
-		private void UpdateState_GladJump(ref Vector2 pos, bool isEscape = false)
+		private void UpdateState_GladJump(ref Vector2 pos, bool isEscape/* = false*/)
 		{
 			if(!isWaitStartAnim)
 			{
@@ -593,7 +593,7 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1ACB314 Offset: 0x1ACB314 VA: 0x1ACB314
-		private void UpdateState_AngrySway(ref Vector2 pos, bool isEscape = false)
+		private void UpdateState_AngrySway(ref Vector2 pos, bool isEscape/* = false*/)
 		{
 			if(!isWaitStartAnim)
 			{

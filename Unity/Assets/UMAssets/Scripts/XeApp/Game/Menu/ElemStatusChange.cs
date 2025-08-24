@@ -17,7 +17,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12740F8 Offset: 0x12740F8 VA: 0x12740F8
-		public void Activate(bool immediate = false)
+		public void Activate(bool immediate/* = false*/)
 		{
 			m_isActive = true;
 			m_timer = immediate ? 0 : m_changeSec;

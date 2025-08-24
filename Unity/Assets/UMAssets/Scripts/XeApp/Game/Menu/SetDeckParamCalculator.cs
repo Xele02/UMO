@@ -54,7 +54,7 @@ namespace XeApp.Game.Menu
 		//public void Reset() { }
 
 		//// RVA: 0xA7015C Offset: 0xA7015C VA: 0xA7015C
-		public void Calc(GameSetupData.MusicInfo musicInfo, DFKGGBMFFGB_PlayerInfo viewPlayerData, JLKEOGLJNOD_TeamInfo viewUnitData, EEDKAACNBBG_MusicData viewMusicData, EAJCBFGKKFA_FriendInfo viewFriendData, EJKBKMBJMGL_EnemyData viewEnemyData, List<IKDICBBFBMI_EventBase.GNPOABJANKO> bonusList, bool isRaid = false)
+		public void Calc(GameSetupData.MusicInfo musicInfo, DFKGGBMFFGB_PlayerInfo viewPlayerData, JLKEOGLJNOD_TeamInfo viewUnitData, EEDKAACNBBG_MusicData viewMusicData, EAJCBFGKKFA_FriendInfo viewFriendData, EJKBKMBJMGL_EnemyData viewEnemyData, List<IKDICBBFBMI_EventBase.GNPOABJANKO> bonusList, bool isRaid/* = false*/)
 		{
 			m_addLuck = 0;
 			m_baseLuck = 0;

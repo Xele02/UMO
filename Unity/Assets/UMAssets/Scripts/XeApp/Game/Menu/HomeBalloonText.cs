@@ -135,7 +135,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x956FFC Offset: 0x956FFC VA: 0x956FFC
-		public void Enter(bool force = false)
+		public void Enter(bool force/* = false*/)
 		{
 			m_inOutAnime.Enter(force, null);
 		}
@@ -144,7 +144,7 @@ namespace XeApp.Game.Menu
 		// public void Enter(float animTime, bool force = False) { }
 
 		// // RVA: 0x957080 Offset: 0x957080 VA: 0x957080
-		public void Leave(bool force = false)
+		public void Leave(bool force/* = false*/)
 		{
 			m_inOutAnime.Leave(force, null);
 		}

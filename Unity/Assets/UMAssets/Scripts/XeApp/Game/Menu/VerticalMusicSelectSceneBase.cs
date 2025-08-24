@@ -525,7 +525,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xAC95E8 Offset: 0xAC95E8 VA: 0xAC95E8 Slot: 58
-		protected virtual bool CurrentMusicDecisionCheck(bool isSimulation, Action cancelCallback, MKIKFJKPEHK viewBoostData, int selectIndex = 0)
+		protected virtual bool CurrentMusicDecisionCheck(bool isSimulation, Action cancelCallback, MKIKFJKPEHK viewBoostData, int selectIndex/* = 0*/)
 		{
 			if(viewBoostData == null)
 			{
@@ -1709,7 +1709,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xAD22C0 Offset: 0xAD22C0 VA: 0xAD22C0
-		private bool IsEnableUnitDance(bool line6Mode = false)
+		private bool IsEnableUnitDance(bool line6Mode/* = false*/)
 		{
 			if(TransitionName == TransitionList.Type.EVENT_QUEST)
 			{
@@ -1752,7 +1752,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xAC37D8 Offset: 0xAC37D8 VA: 0xAC37D8
-		protected bool CanDoUnitDanceFocus(bool line6Mode = false)
+		protected bool CanDoUnitDanceFocus(bool line6Mode/* = false*/)
 		{
 			if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.INEAGJMJLFG_TutorialAlreadyFlags.ODKIHPBEOEC_IsTrue(48))
 				return false;

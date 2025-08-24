@@ -73,7 +73,7 @@ namespace XeApp.Game.Menu
 		//private string GetVocalNameLF(int id) { }
 
 		//// RVA: 0x178C9DC Offset: 0x178C9DC VA: 0x178C9DC
-		public void SetMusicName(string text, int attr = 3)
+		public void SetMusicName(string text, int attr/* = 3*/)
 		{
 			if(m_textMusicName != null)
 			{

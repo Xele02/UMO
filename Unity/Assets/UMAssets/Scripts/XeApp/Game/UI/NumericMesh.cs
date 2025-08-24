@@ -60,7 +60,7 @@ namespace XeApp.Game.UI
 		}
 
 		// RVA: 0x1921938 Offset: 0x1921938 VA: 0x1921938
-		public void SetNumber(int number, int type = 0)
+		public void SetNumber(int number, int type/* = 0*/)
 		{
 			int idx = 0;
 			if(meshFilters.Length >= 1)

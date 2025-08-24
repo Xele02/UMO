@@ -51,7 +51,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1252E90 Offset: 0x1252E90 VA: 0x1252E90
-		public static bool SetSkillDetails(Text text, string descript, int lineCount = 1)
+		public static bool SetSkillDetails(Text text, string descript, int lineCount/* = 1*/)
 		{
 			text.horizontalOverflow = HorizontalWrapMode.Wrap;
 			text.verticalOverflow = VerticalWrapMode.Overflow;
@@ -129,7 +129,7 @@ namespace XeApp.Game.Menu
 		//public static void SetLiveSkillDetails(Text text, string descript) { }
 
 		//// RVA: 0x124C89C Offset: 0x124C89C VA: 0x124C89C
-		public static void SetInvalidText(Text text, TextAnchor anchor = TextAnchor.MiddleCenter)
+		public static void SetInvalidText(Text text, TextAnchor anchor/* = TextAnchor.MiddleCenter*/)
 		{
 			text.alignment = anchor;
 			text.text = TextConstant.InvalidText;

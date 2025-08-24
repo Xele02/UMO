@@ -623,7 +623,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xFA13F4 Offset: 0xFA13F4 VA: 0xFA13F4
-		private void ApplyCurrentUnitContent(bool forPrism = false)
+		private void ApplyCurrentUnitContent(bool forPrism/* = false*/)
 		{
 			UpdateParamCalculator();
 			m_unitStatus.UpdateContent(m_paramCalculator);
@@ -1041,7 +1041,7 @@ namespace XeApp.Game.Menu
 		//private void OnClickSubPlateButton() { }
 
 		//// RVA: 0xFA5D6C Offset: 0xFA5D6C VA: 0xFA5D6C
-		private void ShowSubPlateWindow(bool isReShow = false)
+		private void ShowSubPlateWindow(bool isReShow/* = false*/)
 		{
 			CFHDKAFLNEP c = new CFHDKAFLNEP();
 			if (m_dispType == DispType.UnitSet)
@@ -1333,7 +1333,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D95BC Offset: 0x6D95BC VA: 0x6D95BC
 		//// RVA: 0xFA6C40 Offset: 0xFA6C40 VA: 0xFA6C40
-		private IEnumerator Co_ApplyUnitSetContent(bool isApplyUnitSetList = true)
+		private IEnumerator Co_ApplyUnitSetContent(bool isApplyUnitSetList/* = true*/)
 		{
 			//0xFA8C04
 			MenuScene.Instance.RaycastDisable();

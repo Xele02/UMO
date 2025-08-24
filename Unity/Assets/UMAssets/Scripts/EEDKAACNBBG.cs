@@ -85,7 +85,7 @@ public class EEDKAACNBBG_MusicData
 	}
 
 	// // RVA: 0x1C4917C Offset: 0x1C4917C VA: 0x1C4917C
-	public int IOMLIADJJLD(bool FJNPMGBCBGJ = false)
+	public int IOMLIADJJLD(bool FJNPMGBCBGJ/* = false*/)
 	{
 		int a = FJNPMGBCBGJ ? 0 : 1;
 		do

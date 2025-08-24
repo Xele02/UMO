@@ -362,7 +362,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA5B624 Offset: 0xA5B624 VA: 0xA5B624
-		public void UpdateContent(GCIJNCFDNON_SceneInfo sceneData, DFKGGBMFFGB_PlayerInfo playerData, bool isFriend, bool isDisableZoom, bool isDisableLuckyLeaf, PageSave pageSave = PageSave.Player)
+		public void UpdateContent(GCIJNCFDNON_SceneInfo sceneData, DFKGGBMFFGB_PlayerInfo playerData, bool isFriend, bool isDisableZoom, bool isDisableLuckyLeaf, PageSave pageSave/* = PageSave.Player*/)
 		{
 			if(m_rareChangeButton != null)
 			{

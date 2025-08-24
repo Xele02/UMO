@@ -287,7 +287,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x16EB95C Offset: 0x16EB95C VA: 0x16EB95C
-		private void SettingCostumeUI(int cursorIndex, bool is_update_costume_image = true, bool is_move_right = false, bool is_wait = false)
+		private void SettingCostumeUI(int cursorIndex, bool is_update_costume_image/* = true*/, bool is_move_right/* = false*/, bool is_wait/* = false*/)
 		{
 			m_showCostumeDataList.Clear();
 			List<int> l = new List<int>();
@@ -519,7 +519,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x16EB094 Offset: 0x16EB094 VA: 0x16EB094
-		public void SetFocus(int divaId, int cosutmeModelId, bool isUpdateFilter = false)
+		public void SetFocus(int divaId, int cosutmeModelId, bool isUpdateFilter/* = false*/)
 		{
 			if (divaId == 0 || cosutmeModelId == 0)
 				return;
@@ -840,7 +840,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x16F0940 Offset: 0x16F0940 VA: 0x16F0940
-		private void ChangeCostume(int offset = 0)
+		private void ChangeCostume(int offset/* = 0*/)
 		{
 			if(offset < 0)
 			{

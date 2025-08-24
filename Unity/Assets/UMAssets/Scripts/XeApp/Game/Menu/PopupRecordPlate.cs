@@ -10,14 +10,14 @@ namespace XeApp.Game.Menu
 		private LayoutPopupRecordPlateController m_prpController = new LayoutPopupRecordPlateController(); // 0xC
 
 		//// RVA: 0x1619DA0 Offset: 0x1619DA0 VA: 0x1619DA0
-		public static IEnumerator Show(RecordPlateUtility.eSceneType sceneType, Action callbackClose, bool allReceive = false)
+		public static IEnumerator Show(RecordPlateUtility.eSceneType sceneType, Action callbackClose, bool allReceive/* = false*/)
 		{
 			RecordPlateUtility.IsResultConfirm = false;
 			return Coroutine_Show(sceneType, callbackClose, allReceive);
 		}
 
 		//// RVA: 0x1619EFC Offset: 0x1619EFC VA: 0x1619EFC
-		public static IEnumerator Show(RecordPlateUtility.eSceneType sceneType, JKNGJFOBADP inventoryUtil, Action callbackClose, bool allReceive = false)
+		public static IEnumerator Show(RecordPlateUtility.eSceneType sceneType, JKNGJFOBADP inventoryUtil, Action callbackClose, bool allReceive/* = false*/)
 		{
 			RecordPlateUtility.inventoryUtil = inventoryUtil;
 			RecordPlateUtility.IsResultConfirm = false;
@@ -25,7 +25,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1619FA8 Offset: 0x1619FA8 VA: 0x1619FA8
-		public static IEnumerator ResultShow(RecordPlateUtility.eSceneType sceneType, Action callbackClose, bool allReceive = false)
+		public static IEnumerator ResultShow(RecordPlateUtility.eSceneType sceneType, Action callbackClose, bool allReceive/* = false*/)
 		{
 			RecordPlateUtility.IsResultConfirm = true;
 			return Coroutine_Show(sceneType, callbackClose, allReceive);

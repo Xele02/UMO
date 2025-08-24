@@ -38,7 +38,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1151114 Offset: 0x1151114 VA: 0x1151114
-		public void SetDefault(ILDKBCLAFPB.IJDOCJCLAIL_SortProprty sortProperty, PopupSortMenu.SortPlace place, SortItem sortItem = SortItem.None)
+		public void SetDefault(ILDKBCLAFPB.IJDOCJCLAIL_SortProprty sortProperty, PopupSortMenu.SortPlace place, SortItem sortItem/* = SortItem.None*/)
 		{
 			TitleText = MessageManager.Instance.GetBank("menu").GetMessageByLabel("popup_sort_title");
 			SortPlace = place;

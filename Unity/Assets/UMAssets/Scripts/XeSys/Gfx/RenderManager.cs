@@ -12,7 +12,7 @@ namespace XeSys.Gfx
 		public static Rect renderingRect { get; private set; } // 0x4
 
 		// // RVA: 0x1F10244 Offset: 0x1F10244 VA: 0x1F10244
-		public static RenderManager Create(string name = "RenderManager")
+		public static RenderManager Create(string name/* = "RenderManager"*/)
 		{
 			GameObject go = new GameObject(name);
 			RenderManager r = go.AddComponent<RenderManager>();

@@ -164,7 +164,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB9A110 Offset: 0xB9A110 VA: 0xB9A110
-		public void SetupList(int count, bool resetScroll = true, int settingPos = 0)
+		public void SetupList(int count, bool resetScroll/* = true*/, int settingPos/* = 0*/)
 		{
 			m_scrollList.SetItemCount(count);
 			m_scrollList.OnUpdateItem.RemoveAllListeners();
@@ -390,7 +390,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FD844 Offset: 0x6FD844 VA: 0x6FD844
 		//// RVA: 0xB9BD30 Offset: 0xB9BD30 VA: 0xB9BD30
-		private IEnumerator co_close(bool isTrans = false, int eventId = 0)
+		private IEnumerator co_close(bool isTrans/* = false*/, int eventId/* = 0*/)
 		{
 			//0xB9CE18
 			GameManager.Instance.InputEnabled = false;

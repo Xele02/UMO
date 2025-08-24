@@ -96,7 +96,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x19417F8 Offset: 0x19417F8 VA: 0x19417F8
-		public void SetStatus(AODFBGCCBPE view, bool resetScroll = true)
+		public void SetStatus(AODFBGCCBPE view, bool resetScroll/* = true*/)
 		{
 			m_view = view;
 			SetupList(view.MHKCPJDNJKI.Count, resetScroll);
@@ -302,7 +302,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x1944D14 Offset: 0x1944D14 VA: 0x1944D14
-		public void SetTabNum(bool isChara = true)
+		public void SetTabNum(bool isChara/* = true*/)
 		{
 			m_tabs.StartChildrenAnimGoStop(isChara ? "04" : "03");
 		}

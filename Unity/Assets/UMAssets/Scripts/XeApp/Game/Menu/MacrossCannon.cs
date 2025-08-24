@@ -21,7 +21,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7136E4 Offset: 0x7136E4 VA: 0x7136E4
 		// // RVA: 0xEBA7B4 Offset: 0xEBA7B4 VA: 0xEBA7B4
-		public IEnumerator Initialize(SeriesAttr.Type series, int pattern, int qualityId, Action onMoviePreEndCallBack, float preEndMovieSec = 0.1f)
+		public IEnumerator Initialize(SeriesAttr.Type series, int pattern, int qualityId, Action onMoviePreEndCallBack, float preEndMovieSec/* = 0.1f*/)
 		{
 			//0xEBAD0C
 			if(onMoviePreEndCallBack != null)

@@ -99,13 +99,13 @@ namespace XeApp.Game.Menu
 		//public void SetupButton(ScrollRect scrollRect, Action onClick) { }
 
 		//// RVA: 0xE2775C Offset: 0xE2775C VA: 0xE2775C
-		public void SwapStatus(bool immediate = false)
+		public void SwapStatus(bool immediate/* = false*/)
 		{
 			ChangeStatus(!m_statusIsTotal, immediate);
 		}
 
 		//// RVA: 0xE27774 Offset: 0xE27774 VA: 0xE27774
-		public void ChangeStatus(bool toTotal, bool immediate = false)
+		public void ChangeStatus(bool toTotal, bool immediate/* = false*/)
 		{
 			m_symbolStatus.StartAnim(toTotal ? (immediate ? "wait_1" : "goto_1") : (immediate ? "wait_2" : "goto_2"));
 			m_statusIsTotal = toTotal;

@@ -84,7 +84,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1341908 Offset: 0x1341908 VA: 0x1341908
-		public void SetInput(bool enabled, bool isOtherCostumeSelect = false)
+		public void SetInput(bool enabled, bool isOtherCostumeSelect/* = false*/)
 		{
 			PopupButton[] btns = transform.parent.parent.parent.GetComponentsInChildren<PopupButton>();
 			for(int i = 0; i < btns.Length; i++)

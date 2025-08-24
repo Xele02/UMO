@@ -45,7 +45,7 @@ public class FPGEMAIAMBF_RewardData
 	public List<LOIJICNJMKA> HFPMKBAANFO_ComboReward; // 0x10
 
 	//// RVA: 0x13FA620 Offset: 0x13FA620 VA: 0x13FA620
-	public void JMHCEMHPPCM(int GHBPLHBNMBK_MusicId, int AKNELONELJK_Difficulty, bool LFGNLKKFOCD_Is6Line, int MNNHHJBBICA_EventType = 0)
+	public void JMHCEMHPPCM(int GHBPLHBNMBK_MusicId, int AKNELONELJK_Difficulty, bool LFGNLKKFOCD_Is6Line, int MNNHHJBBICA_EventType/* = 0*/)
 	{
 		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo musicInfo;
 		if (MNNHHJBBICA_EventType == 4)
@@ -101,7 +101,7 @@ public class FPGEMAIAMBF_RewardData
 	}
 
 	//// RVA: 0x13FB01C Offset: 0x13FB01C VA: 0x13FB01C
-	public void CHOHLJOJKNJ(int GHBPLHBNMBK_FreeMusicId, int AKNELONELJK_Difficulty, bool LFGNLKKFOCD_IsLine6, int MNNHHJBBICA_GameEventType = 0)
+	public void CHOHLJOJKNJ(int GHBPLHBNMBK_FreeMusicId, int AKNELONELJK_Difficulty, bool LFGNLKKFOCD_IsLine6, int MNNHHJBBICA_GameEventType/* = 0*/)
 	{
 		BBHNACPENDM_ServerSaveData serverData = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave;
 		BBHNACPENDM_ServerSaveData prevServerData = CIOECGOMILE.HHCJCDFCLOB.MNJHBCIIHED_PrevServerData;

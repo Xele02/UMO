@@ -137,7 +137,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1729970 Offset: 0x1729970 VA: 0x1729970
-		private void UpdateCount(int count = 0)
+		private void UpdateCount(int count/* = 0*/)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			int[] li = new int[4];

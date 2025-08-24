@@ -307,7 +307,7 @@ namespace XeApp.Game.Menu
 		//private void RequestUpdate() { }
 
 		//// RVA: 0x961458 Offset: 0x961458 VA: 0x961458
-		private bool StartRunningCoroutine(IEnumerator a_co, bool a_check_null = true)
+		private bool StartRunningCoroutine(IEnumerator a_co, bool a_check_null/* = true*/)
 		{
 			if(m_runningCoroutine == null || !a_check_null)
 			{

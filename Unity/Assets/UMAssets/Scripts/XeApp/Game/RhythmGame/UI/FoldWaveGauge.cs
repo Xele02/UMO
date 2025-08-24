@@ -92,7 +92,7 @@ namespace XeApp.Game.RhythmGame.UI
 		}
 
 		// // RVA: 0x155F48C Offset: 0x155F48C VA: 0x155F48C
-		public void SetValue(int value, bool forceAnime = false, bool isLowSpec = false)
+		public void SetValue(int value, bool forceAnime/* = false*/, bool isLowSpec/* = false*/)
 		{
 			if(value < 100)
 			{

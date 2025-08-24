@@ -23,7 +23,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7061F4 Offset: 0x7061F4 VA: 0x7061F4
 		// RVA: 0x168AE50 Offset: 0x168AE50 VA: 0x168AE50
-		public static IEnumerator Show(Type popupType, bool forceAvailableTopplan = false, Transform parent = null, Action<bool> closeCallback = null)
+		public static IEnumerator Show(Type popupType, bool forceAvailableTopplan/* = false*/, Transform parent/* = null*/, Action<bool> closeCallback/* = null*/)
 		{
 			GJFMKMJOFMB view;
 

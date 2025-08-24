@@ -900,7 +900,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC5C7DC Offset: 0xC5C7DC VA: 0xC5C7DC
-		public void ChangeState(StateType state, DecorationConstants.Attribute.Type type = 0)
+		public void ChangeState(StateType state, DecorationConstants.Attribute.Type type/* = 0*/)
 		{
 			StateControlData data = StateControlTbl[(int)state];
 			EnableControllerControl(data.enableCanvasControl, data.enableItemControl, data.charaAnim);
@@ -968,7 +968,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC5DB20 Offset: 0xC5DB20 VA: 0xC5DB20
-		private void LayoutControl(StateType m_state, StateType oldState, DecorationConstants.Attribute.Type type = 0)
+		private void LayoutControl(StateType m_state, StateType oldState, DecorationConstants.Attribute.Type type/* = 0*/)
 		{
 			StateLayoutData data = StateLayoutDataTbl[(int)m_state];
 			if(oldState == StateType.None)
@@ -1586,7 +1586,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC5FB78 Offset: 0xC5FB78 VA: 0xC5FB78
-		private void MakeCategoryNewIconInfo(ref CategoryNewIconInfo info, DecorationDecorator.DecoratorType type, int charaId = -1)
+		private void MakeCategoryNewIconInfo(ref CategoryNewIconInfo info, DecorationDecorator.DecoratorType type, int charaId/* = -1*/)
 		{
 			info.Init();
 			List<List<KDKFHGHGFEK>> l = CreateCategoryItemLists(type, charaId);
@@ -1742,7 +1742,7 @@ namespace XeApp.Game.Menu
 		//private NDBFKHKMMCE.ANMODBDBNPK.DBAMIACJODJ GetItemCategory(DecorationDecorator.DecoratorType decoratorType) { }
 
 		//// RVA: 0xC5FEC8 Offset: 0xC5FEC8 VA: 0xC5FEC8
-		private List<List<KDKFHGHGFEK>> CreateCategoryItemLists(DecorationDecorator.DecoratorType type, int charaId = -1)
+		private List<List<KDKFHGHGFEK>> CreateCategoryItemLists(DecorationDecorator.DecoratorType type, int charaId/* = -1*/)
 		{
 			List<List<KDKFHGHGFEK>> res = new List<List<KDKFHGHGFEK>>(DecorationDecorator.tabCallBackList[(int)type].m_typeList.Length);
 			for(int i = 0; i < DecorationDecorator.tabCallBackList[(int)type].m_typeList.Length; i++)
@@ -2171,7 +2171,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D221C Offset: 0x6D221C VA: 0x6D221C
 		//// RVA: 0xC64818 Offset: 0xC64818 VA: 0xC64818
-		private IEnumerator PostItem(LayoutDecorationSelectItemBase item, bool isTapSelect = true)
+		private IEnumerator PostItem(LayoutDecorationSelectItemBase item, bool isTapSelect/* = true*/)
 		{
 			//0x1586150
 			DecorationItemBaseSetting s = new DecorationItemBaseSetting(item.Data);
@@ -2265,7 +2265,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC60DF0 Offset: 0xC60DF0 VA: 0xC60DF0
-		private List<KDKFHGHGFEK> CreateSelectItemDataList(DecorationDecorator.DecoratorType type, DecorationDecorator.TabType tab, int charaId = -1)
+		private List<KDKFHGHGFEK> CreateSelectItemDataList(DecorationDecorator.DecoratorType type, DecorationDecorator.TabType tab, int charaId/* = -1*/)
 		{
 			List<KDKFHGHGFEK> l1 = new List<KDKFHGHGFEK>();
 			List<KDKFHGHGFEK> l2 = new List<KDKFHGHGFEK>();

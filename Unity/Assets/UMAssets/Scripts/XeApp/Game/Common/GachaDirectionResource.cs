@@ -112,7 +112,7 @@ namespace XeApp.Game.Common
 		}
 
 		// RVA: 0x1C1EF88 Offset: 0x1C1EF88 VA: 0x1C1EF88
-		public void LoadResources(DirectionInfo directionInfo, bool retryTime = false)
+		public void LoadResources(DirectionInfo directionInfo, bool retryTime/* = false*/)
 		{
 			isMainLoading = true;
 			if(retryTime)

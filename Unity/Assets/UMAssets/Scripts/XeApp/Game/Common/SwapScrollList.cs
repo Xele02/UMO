@@ -221,7 +221,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CCC864 Offset: 0x1CCC864 VA: 0x1CCC864
-		public void SetPosition(int position, float xoffset = 0, float yoffset = 0, bool diffUpdate = false)
+		public void SetPosition(int position, float xoffset/* = 0*/, float yoffset/* = 0*/, bool diffUpdate/* = false*/)
 		{
 			Vector2 v = new Vector2(0, 0);
 			if(!m_isVertical)

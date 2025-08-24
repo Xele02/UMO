@@ -64,13 +64,13 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x10FF630 Offset: 0x10FF630 VA: 0x10FF630
-		public void Enter(bool force = false, Action endCallback = null)
+		public void Enter(bool force/* = false*/, Action endCallback/* = null*/)
 		{
 			Enter(animTime, force, endCallback);
 		}
 
 		//// RVA: 0x10FF654 Offset: 0x10FF654 VA: 0x10FF654
-		public void Enter(float animTime, bool force = false, Action endCallback = null)
+		public void Enter(float animTime, bool force/* = false*/, Action endCallback/* = null*/)
 		{
 			if (state == State.Enter)
 				return;
@@ -137,13 +137,13 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x10FFB64 Offset: 0x10FFB64 VA: 0x10FFB64
-		public void Leave(bool force = false, Action endCallback = null)
+		public void Leave(bool force/* = false*/, Action endCallback/* = null*/)
 		{
 			Leave(animTime, force, endCallback);
 		}
 
 		//// RVA: 0x10FF244 Offset: 0x10FF244 VA: 0x10FF244
-		public void Leave(float animTime, bool force = false, Action endCallback = null)
+		public void Leave(float animTime, bool force/* = false*/, Action endCallback/* = null*/)
 		{
 			if(state == State.Leave)
 				return;

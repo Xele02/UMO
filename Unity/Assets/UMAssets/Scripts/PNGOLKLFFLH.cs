@@ -29,7 +29,7 @@ public class PNGOLKLFFLH
 	// public string GMJIKEHEPPA() { }
 
 	// // RVA: 0xFF1AB0 Offset: 0xFF1AB0 VA: 0xFF1AB0
-	public void KHEKNNFCAOI_Init(int GPPEFLKGGGJ_ValkyrieId, int IGBFFCLMAMM_Form = 0, long BEBJKJKBOGH = 0)
+	public void KHEKNNFCAOI_Init(int GPPEFLKGGGJ_ValkyrieId, int IGBFFCLMAMM_Form/* = 0*/, long BEBJKJKBOGH/* = 0*/)
 	{
 		JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo valkDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.GCINIJEMHFK(GPPEFLKGGGJ_ValkyrieId);
 		this.GPPEFLKGGGJ_ValkyrieId = GPPEFLKGGGJ_ValkyrieId;
@@ -85,7 +85,7 @@ public class PNGOLKLFFLH
 	}
 
 	// // RVA: 0xFF240C Offset: 0xFF240C VA: 0xFF240C
-	public static List<PNGOLKLFFLH> FKDIMODKKJD(bool OJEBNBLHPNP = false)
+	public static List<PNGOLKLFFLH> FKDIMODKKJD(bool OJEBNBLHPNP/* = false*/)
 	{
 		List<PNGOLKLFFLH> res = new List<PNGOLKLFFLH>();
 		for(int i = 0; i < 100; i++)
@@ -109,7 +109,7 @@ public class PNGOLKLFFLH
 	}
 
 	// // RVA: 0xFF290C Offset: 0xFF290C VA: 0xFF290C
-	public static List<PNGOLKLFFLH> NEOMKKIEMJJ(BBHNACPENDM_ServerSaveData KPMOBPNENCD, bool OJEBNBLHPNP = false)
+	public static List<PNGOLKLFFLH> NEOMKKIEMJJ(BBHNACPENDM_ServerSaveData KPMOBPNENCD, bool OJEBNBLHPNP/* = false*/)
 	{
 		List<PNGOLKLFFLH> res = new List<PNGOLKLFFLH>();
 		for(int i = 0; i < 100; i++)

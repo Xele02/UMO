@@ -190,7 +190,7 @@ public class JBCAHMMCOKK
 	}
 
 	// // RVA: 0x14176C4 Offset: 0x14176C4 VA: 0x14176C4
-	public static List<JBCAHMMCOKK> FKDIMODKKJD(bool DKLOGCOPPKJ = false)
+	public static List<JBCAHMMCOKK> FKDIMODKKJD(bool DKLOGCOPPKJ/* = false*/)
 	{
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 		DateTime date = Utility.GetLocalDateTime(time);

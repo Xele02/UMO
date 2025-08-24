@@ -65,7 +65,7 @@ namespace XeApp.Game.Menu
 		public override GameObject Content { get { return m_content; } } //0x179C5B8
 
 		//// RVA: 0x179BD8C Offset: 0x179BD8C VA: 0x179BD8C
-		public void Initialize(PopupFilterSortUGUIInitParam a_param, string titleText = "")
+		public void Initialize(PopupFilterSortUGUIInitParam a_param, string titleText/* = ""*/)
 		{
 			if(m_param != null)
 			{

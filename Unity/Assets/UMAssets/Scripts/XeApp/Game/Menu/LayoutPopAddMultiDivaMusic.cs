@@ -74,7 +74,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x15DABE8 Offset: 0x15DABE8 VA: 0x15DABE8
-		public void SetMusicName(string text, int attr = 3)
+		public void SetMusicName(string text, int attr/* = 3*/)
 		{
 			if(m_musicName != null)
 			{

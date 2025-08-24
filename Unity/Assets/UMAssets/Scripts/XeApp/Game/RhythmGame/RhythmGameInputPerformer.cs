@@ -262,7 +262,7 @@ namespace XeApp.Game.RhythmGame
 			//public void ChangeLimitSec(float limitSec) { }
 
 			//// RVA: 0x9A3E6C Offset: 0x9A3E6C VA: 0x9A3E6C
-			public void SetLineSave(int lineNo, bool isSave, bool isCheckEndTouch = true)
+			public void SetLineSave(int lineNo, bool isSave, bool isCheckEndTouch/* = true*/)
 			{
 				bool prevVal = m_saveForLine[lineNo];
 				m_saveForLine[lineNo] = isSave;
@@ -491,7 +491,7 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9A4060 Offset: 0x9A4060 VA: 0x9A4060 Slot: 5
-		public override void EndTouchSave(int lineNo, bool isCheckEndTouch = true)
+		public override void EndTouchSave(int lineNo, bool isCheckEndTouch/* = true*/)
 		{
 			inputSaver.SetLineSave(lineNo, false, isCheckEndTouch);
 		}

@@ -96,7 +96,7 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xEAC288 Offset: 0xEAC288 VA: 0xEAC288
-		public void SetBanner(long start, long end, long currentTime, string text = "")
+		public void SetBanner(long start, long end, long currentTime, string text/* = ""*/)
 		{
 			SetIcon(m_controller, currentTime);
 			if(currentTime >= start || start - currentTime == 0)

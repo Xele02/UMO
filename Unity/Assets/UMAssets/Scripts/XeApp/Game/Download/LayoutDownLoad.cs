@@ -209,7 +209,7 @@ namespace XeApp.Game.DownLoad
 		}
 
 		// // RVA: 0x11BA3B8 Offset: 0x11BA3B8 VA: 0x11BA3B8
-		public void SetEnabledOperation(bool is_enable, bool is_change = false)
+		public void SetEnabledOperation(bool is_enable, bool is_change/* = false*/)
 		{
 			m_LayoutDownLoadMain.SetEnabledOperation(is_enable, is_change);
 			m_LayoutDownLoadArrow.SetEnabledOperation(is_enable);

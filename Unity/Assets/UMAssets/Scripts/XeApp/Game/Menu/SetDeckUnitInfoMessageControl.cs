@@ -101,7 +101,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xC36298 Offset: 0xC36298 VA: 0xC36298
-		public void Enter(DispType dispType, MessageType messageType = 0)
+		public void Enter(DispType dispType, MessageType messageType/* = 0*/)
 		{
 			m_allObject.SetActive(true);
 			m_dispType = dispType;

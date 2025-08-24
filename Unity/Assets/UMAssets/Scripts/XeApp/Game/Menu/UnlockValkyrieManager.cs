@@ -108,7 +108,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x164E408 Offset: 0x164E408 VA: 0x164E408
-		public void InitializeValkyrie(int valkyrieId, float camDepth = 0)
+		public void InitializeValkyrie(int valkyrieId, float camDepth/* = 0*/)
 		{
 			_valkyrieId = valkyrieId;
 			PNGOLKLFFLH p = new PNGOLKLFFLH();
@@ -126,7 +126,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7329F4 Offset: 0x7329F4 VA: 0x7329F4
 		// // RVA: 0x164E5BC Offset: 0x164E5BC VA: 0x164E5BC
-		private IEnumerator Load3dResourceCoroutine(int valkyrieId, float camDepth = 0)
+		private IEnumerator Load3dResourceCoroutine(int valkyrieId, float camDepth/* = 0*/)
 		{
 			//0x165072C
 			_isInitialized3dResource = false;

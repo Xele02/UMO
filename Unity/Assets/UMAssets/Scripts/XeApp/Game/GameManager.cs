@@ -1172,7 +1172,7 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x98060C Offset: 0x98060C VA: 0x98060C
-		public static void FadeIn(float time = 0.4f)
+		public static void FadeIn(float time/* = 0.4f*/)
 		{
 			if(GameManager.Instance.fullscreenFader != null)
 			{
@@ -1181,7 +1181,7 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x9809CC Offset: 0x9809CC VA: 0x9809CC
-		public static void FadeOut(float time = 0.4f)
+		public static void FadeOut(float time/* = 0.4f*/)
 		{
 			if(GameManager.Instance.fullscreenFader != null)
 			{
@@ -1206,7 +1206,7 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x9A08E0 Offset: 0x9A08E0 VA: 0x9A08E0
-		public void ShowSnsNotice(int snsId, UnityAction pushAction, bool isButtonEnable = true)
+		public void ShowSnsNotice(int snsId, UnityAction pushAction, bool isButtonEnable/* = true*/)
 		{
 			if(m_snsNotification != null)
 			{
@@ -1225,7 +1225,7 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x9A0AB0 Offset: 0x9A0AB0 VA: 0x9A0AB0
-		public void ShowOfferNotice(UnityAction pushAction, bool isButtonEnable = true)
+		public void ShowOfferNotice(UnityAction pushAction, bool isButtonEnable/* = true*/)
 		{
 			if(m_snsNotification != null)
 			{
@@ -1647,7 +1647,7 @@ namespace XeApp.Game
 		}
 
 		// // RVA: 0x9A165C Offset: 0x9A165C VA: 0x9A165C
-		public string GetWavDirectoryName(int wavId, string format, int stageDivaNum, int primeId = 1, int assetId = -1, bool isNoFindSoloChange = true)
+		public string GetWavDirectoryName(int wavId, string format, int stageDivaNum, int primeId/* = 1*/, int assetId/* = -1*/, bool isNoFindSoloChange/* = true*/)
 		{
 			//? format
 			StringBuilder sb = new StringBuilder();

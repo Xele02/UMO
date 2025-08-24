@@ -12,7 +12,7 @@ public class SakashoCallback : MonoBehaviour, ISakashoQueueHolder
         private AutoResetEvent resetEvent; // 0x10
 
         // RVA: 0x2BB84B8 Offset: 0x2BB84B8 VA: 0x2BB84B8
-        public ThreadQueue(bool isWorker = false)
+        public ThreadQueue(bool isWorker/* = false*/)
         {
             if(!isWorker)
                 return;

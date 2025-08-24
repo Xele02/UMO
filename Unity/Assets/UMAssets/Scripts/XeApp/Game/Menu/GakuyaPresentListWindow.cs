@@ -90,7 +90,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0xB74F90 Offset: 0xB74F90 VA: 0xB74F90
-		public void SetDark(bool enableFlag, string text = "")
+		public void SetDark(bool enableFlag, string text/* = ""*/)
 		{
 			m_imageDarkFill.enabled = enableFlag;
 			m_textDarkFill.enabled = enableFlag;

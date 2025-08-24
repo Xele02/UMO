@@ -2683,7 +2683,7 @@ public class ILDKBCLAFPB
 			}
 
 			//// RVA: 0x2030C14 Offset: 0x2030C14 VA: 0x2030C14
-			public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG, int CIDINFCADGB = 0, int JNGOCAGJGDN = 0, int MKICPACJHGE = 40)
+			public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG, int CIDINFCADGB/* = 0*/, int JNGOCAGJGDN/* = 0*/, int MKICPACJHGE/* = 40*/)
 			{
 				EOCPIGDIFNB_MusicAttrFilterBits = JsonUtil.GetInt(OBHAFLMHAKG, "filterMusicAttr", CIDINFCADGB);
 				JJNLEPEKNDO_ComboFilterBits = JsonUtil.GetInt(OBHAFLMHAKG, "filterCombo", CIDINFCADGB);
@@ -2764,7 +2764,7 @@ public class ILDKBCLAFPB
 			}
 
 			// RVA: 0x203076C Offset: 0x203076C VA: 0x203076C
-			public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG, int CIDINFCADGB = 0, int DOOPCGHMICD = 0)
+			public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG, int CIDINFCADGB/* = 0*/, int DOOPCGHMICD/* = 0*/)
 			{
 				LHPDCGNKPHD_sortItem = JsonUtil.GetInt(OBHAFLMHAKG, "sortItem", CIDINFCADGB);
 				NPEEPPCPEPE_assistItem = JsonUtil.GetInt(OBHAFLMHAKG, "assistItem", DOOPCGHMICD);
@@ -2838,7 +2838,7 @@ public class ILDKBCLAFPB
 			}
 
 			// RVA: 0x20308AC Offset: 0x20308AC VA: 0x20308AC
-			public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG, int CIDINFCADGB = 26)
+			public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG, int CIDINFCADGB/* = 26*/)
 			{
 				LHPDCGNKPHD_sortItem = JsonUtil.GetInt(OBHAFLMHAKG, "sortItem", CIDINFCADGB);
 				EILKGEADKGH_order = JsonUtil.GetInt(OBHAFLMHAKG, "order");
@@ -2906,7 +2906,7 @@ public class ILDKBCLAFPB
 			}
 
 			// RVA: 0x20309B0 Offset: 0x20309B0 VA: 0x20309B0
-			public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG, int CIDINFCADGB = 0)
+			public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG, int CIDINFCADGB/* = 0*/)
 			{
 				LHPDCGNKPHD_sortItem = JsonUtil.GetInt(OBHAFLMHAKG, "sortItem", CIDINFCADGB);
 				AOKFAJOMCKK_bossFilter = JsonUtil.GetInt(OBHAFLMHAKG, "bossFilter", CIDINFCADGB);
@@ -2984,7 +2984,7 @@ public class ILDKBCLAFPB
 			}
 
 			// RVA: 0x2030AB4 Offset: 0x2030AB4 VA: 0x2030AB4
-			public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG, int CIDINFCADGB = 0)
+			public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG, int CIDINFCADGB/* = 0*/)
 			{
 				EOCPIGDIFNB_FilterMusicAttr = JsonUtil.GetInt(OBHAFLMHAKG, "filterMusicAttr", CIDINFCADGB);
 				JJNLEPEKNDO_FilterCombo = JsonUtil.GetInt(OBHAFLMHAKG, "filterCombo", CIDINFCADGB);
@@ -3080,7 +3080,7 @@ public class ILDKBCLAFPB
 			}
 
 			// RVA: 0x2030EEC Offset: 0x2030EEC VA: 0x2030EEC
-			public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG, int CIDINFCADGB = 0)
+			public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG, int CIDINFCADGB/* = 0*/)
 			{
 				EOCPIGDIFNB_FilterMusicAttr = JsonUtil.GetInt(OBHAFLMHAKG, "filterMusicAttr", CIDINFCADGB);
 				JJNLEPEKNDO_FilterCombo = JsonUtil.GetInt(OBHAFLMHAKG, "filterCombo", CIDINFCADGB);
@@ -3177,7 +3177,7 @@ public class ILDKBCLAFPB
 			}
 
 			// RVA: 0x2030D8C Offset: 0x2030D8C VA: 0x2030D8C
-			public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG, int CIDINFCADGB = 0)
+			public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData OBHAFLMHAKG, int CIDINFCADGB/* = 0*/)
 			{
 				EOCPIGDIFNB_FilterMusicAttr = JsonUtil.GetInt(OBHAFLMHAKG, "filterMusicAttr", CIDINFCADGB);
 				JJNLEPEKNDO_FilterCombo = JsonUtil.GetInt(OBHAFLMHAKG, "filterCombo", CIDINFCADGB);

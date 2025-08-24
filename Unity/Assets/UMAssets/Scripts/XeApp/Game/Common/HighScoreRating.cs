@@ -39,7 +39,7 @@ namespace XeApp.Game.Common
 			}
 
 			//// RVA: 0xEA6C90 Offset: 0xEA6C90 VA: 0xEA6C90
-			public void Init(int grade, int rate, int pickup, List<MFDJIFIIPJD> items, bool isNow = false)
+			public void Init(int grade, int rate, int pickup, List<MFDJIFIIPJD> items, bool isNow/* = false*/)
 			{
 				this.grade = grade;
 				this.rate = rate;
@@ -82,7 +82,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xEA2F84 Offset: 0xEA2F84 VA: 0xEA2F84
-		public void CalcUtaRate(JDDGGJCGOPA_RecordMusic rec, bool pubUpd = false)
+		public void CalcUtaRate(JDDGGJCGOPA_RecordMusic rec, bool pubUpd/* = false*/)
 		{
 			BBHNACPENDM_ServerSaveData serverData = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave;
 			if (rec == null)
@@ -301,7 +301,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xEA5F18 Offset: 0xEA5F18 VA: 0xEA5F18
-		public int GetUtaRateAttr(int attr = 0)
+		public int GetUtaRateAttr(int attr/* = 0*/)
 		{
 			if (attr != 0)
 				return 0;

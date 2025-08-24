@@ -381,7 +381,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x160D338 Offset: 0x160D338 VA: 0x160D338
-		private void SetupModeObject(List<GameObject> range_list, List<GameObject> line_list, List<GameObject> icon_list, RhythmGamePlayLog.ModeData data, LayoutResultPlaylogGraphParts.PartsData.ModeParts parts, GameObject line_obj, RectTransform parent, float area_width, float area_space, int end_time, bool is_show_end_line = true)
+		private void SetupModeObject(List<GameObject> range_list, List<GameObject> line_list, List<GameObject> icon_list, RhythmGamePlayLog.ModeData data, LayoutResultPlaylogGraphParts.PartsData.ModeParts parts, GameObject line_obj, RectTransform parent, float area_width, float area_space, int end_time, bool is_show_end_line/* = true*/)
 		{
 			float a = Mathf.Clamp((data.beginMillisec / 1000.0f) / end_time, 0, 1);
 			float b = Mathf.Clamp((data.endMillisec / 1000.0f) / end_time, 0, 1);

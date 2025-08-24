@@ -228,7 +228,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x155087C Offset: 0x155087C VA: 0x155087C
-		private void SetInputSendMessge(InputField.ContentType contentType = 0)
+		private void SetInputSendMessge(InputField.ContentType contentType/* = 0*/)
 		{
 			if(m_textTextField != null)
 			{

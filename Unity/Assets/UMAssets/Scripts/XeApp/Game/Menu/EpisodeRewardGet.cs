@@ -39,13 +39,13 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xEF8848 Offset: 0xEF8848 VA: 0xEF8848
-		public void Show(ref PIGBBNDPPJC data, int add_point, JKNGJFOBADP rewards, CloseEpisodeCompWindowHandler onClose, bool episodeInfoBtn = true)
+		public void Show(ref PIGBBNDPPJC data, int add_point, JKNGJFOBADP rewards, CloseEpisodeCompWindowHandler onClose, bool episodeInfoBtn/* = true*/)
 		{
 			Show(ref data, add_point, rewards.HBHMAKNGKFK_Items, rewards.EPPFEAIMFOE_ItemCount, onClose, episodeInfoBtn);
 		}
 
 		//// RVA: 0xEFE760 Offset: 0xEFE760 VA: 0xEFE760
-		public void Show(ref PIGBBNDPPJC data, int add_point, List<MFDJIFIIPJD> items, int itemCount, CloseEpisodeCompWindowHandler onClose, bool episodeInfoBtn = true)
+		public void Show(ref PIGBBNDPPJC data, int add_point, List<MFDJIFIIPJD> items, int itemCount, CloseEpisodeCompWindowHandler onClose, bool episodeInfoBtn/* = true*/)
 		{
 			m_is_restart = false;
 			m_items = items;

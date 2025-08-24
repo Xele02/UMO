@@ -130,7 +130,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xE96DB0 Offset: 0xE96DB0 VA: 0xE96DB0
-		public void SetupBoneSpring(RhythmGameResource a_resource, int index = 0)
+		public void SetupBoneSpring(RhythmGameResource a_resource, int index/* = 0*/)
 		{
 			if(a_resource != null)
 			{
@@ -162,7 +162,7 @@ namespace XeApp.Game.Common
 		//private void ChangeVisibilityCallback(bool isVisible) { }
 
 		//// RVA: 0xE972E8 Offset: 0xE972E8 VA: 0xE972E8
-		public void PlayMusicAnimation(double time = 0)
+		public void PlayMusicAnimation(double time/* = 0*/)
 		{
 			if (animator == null)
 				return;

@@ -1284,7 +1284,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x11753B4 Offset: 0x11753B4 VA: 0x11753B4
-		private void SetDegreeNum(int num, bool active = true)
+		private void SetDegreeNum(int num, bool active/* = true*/)
 		{
 			m_degree_num.SetNumber(num, 0);
 			RawImageEx[] imgs = m_degree_num.transform.GetComponentsInChildren<RawImageEx>();

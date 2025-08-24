@@ -26,7 +26,7 @@ public class FNBIIGJJGKA_Counter : KLFDBFMNLBL_ServerSaveBlock
 	public override bool DMICHEJIAJL { get { return true; } } // 0x11A3920 NFKFOODCJJB
 
 	// // RVA: 0x119E81C Offset: 0x119E81C VA: 0x119E81C
-	public void BEJONIOEGCI(int DLAEJOBELBH_Id, int AKNELONELJK, bool BCGLDMKODLC, bool NANEGCHBEDN, List<int> PGPBALKFBNK, bool PMCGHPOGLGM, bool GIKLNODJKFK = false)
+	public void BEJONIOEGCI(int DLAEJOBELBH_Id, int AKNELONELJK, bool BCGLDMKODLC, bool NANEGCHBEDN, List<int> PGPBALKFBNK, bool PMCGHPOGLGM, bool GIKLNODJKFK/* = false*/)
 	{
 		if(AKNELONELJK < 5)
 		{

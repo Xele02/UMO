@@ -23,7 +23,7 @@ namespace XeApp.Game.Menu
 		//public IiconTexture ItemTexture { get; } 0x11653FC
 
 		// RVA: 0x1165404 Offset: 0x1165404 VA: 0x1165404
-		public PresentListInfo(int titleIndex, bool isAvailable, GJDFHLBONOL data, bool ReceLis = false)
+		public PresentListInfo(int titleIndex, bool isAvailable, GJDFHLBONOL data, bool ReceLis/* = false*/)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			List_index = titleIndex;

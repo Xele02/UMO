@@ -25,7 +25,7 @@ namespace XeApp.Game.Menu
 		//public void SetStatus() { }
 
 		//// RVA: 0x1D1D524 Offset: 0x1D1D524 VA: 0x1D1D524
-		public void SetIconEnd(bool isPlayAnim = false)
+		public void SetIconEnd(bool isPlayAnim/* = false*/)
 		{
 			SwitchIcon(eIconType.End);
 			if(m_endAnim != null)

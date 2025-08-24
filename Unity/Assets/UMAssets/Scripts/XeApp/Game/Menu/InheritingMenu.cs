@@ -191,7 +191,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x13DE708 Offset: 0x13DE708 VA: 0x13DE708
-		private void PopupShowPreparationMenu(bool isTitle = false, Action callback = null, Action errorToTitle = null)
+		private void PopupShowPreparationMenu(bool isTitle/* = false*/, Action callback/* = null*/, Action errorToTitle/* = null*/)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("common");
 			bool isTwitter = HDEEBKIFLNI.HHCJCDFCLOB.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter);
@@ -245,7 +245,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x13DECD4 Offset: 0x13DECD4 VA: 0x13DECD4
-		public void PopupShowPreparationNotice(bool isTitle = false, Action callback = null, Action errorToTitle = null)
+		public void PopupShowPreparationNotice(bool isTitle/* = false*/, Action callback/* = null*/, Action errorToTitle/* = null*/)
 		{
 			PopupSnsSetting setting = new PopupSnsSetting();
 			setting.TitleText = MessageManager.Instance.GetBank("common").GetMessageByLabel("popup_inh_title_000");
@@ -512,7 +512,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x13DFE90 Offset: 0x13DFE90 VA: 0x13DFE90
-		public void PopupShowSnsSuccess(eSnsType snsType, bool isLink = false)
+		public void PopupShowSnsSuccess(eSnsType snsType, bool isLink/* = false*/)
 		{
 			string title = "";
 			string msg = "";

@@ -274,7 +274,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1294928 Offset: 0x1294928 VA: 0x1294928
-		private void LoadIconTexture(int sudId = 0)
+		private void LoadIconTexture(int sudId/* = 0*/)
 		{
 			m_subId = sudId;
 			IsLoadedTexture = false;
@@ -305,7 +305,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1294BBC Offset: 0x1294BBC VA: 0x1294BBC
-		private void LoadtBallonTexture(int sudId = 0)
+		private void LoadtBallonTexture(int sudId/* = 0*/)
 		{
 			m_subId = sudId;
 			IsLoadedTexture = false;

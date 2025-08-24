@@ -371,7 +371,7 @@ namespace XeApp.Game.AR
         }
 
         // RVA: 0x161DED8 Offset: 0x161DED8 VA: 0x161DED8
-        public void Pause(PauseType type = 0)
+        public void Pause(PauseType type/* = 0*/)
         {
             if(type < PauseType.System && type > PauseType.Force)
                 return;
@@ -389,7 +389,7 @@ namespace XeApp.Game.AR
         }
 
         // RVA: 0x161ED58 Offset: 0x161ED58 VA: 0x161ED58
-        public void Resume(PauseType type = 0)
+        public void Resume(PauseType type/* = 0*/)
         {
             if(type < PauseType.System && type > PauseType.Force)
                 return;

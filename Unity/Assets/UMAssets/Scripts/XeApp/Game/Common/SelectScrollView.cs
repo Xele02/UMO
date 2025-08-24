@@ -49,7 +49,7 @@ namespace XeApp.Game.Common
 		// public virtual void ClearScrollObject() { }
 
 		// // RVA: 0x13903C0 Offset: 0x13903C0 VA: 0x13903C0
-		public void SetPosition(SelectScrollViewContent content, float animTime = 0)
+		public void SetPosition(SelectScrollViewContent content, float animTime/* = 0*/)
 		{
 			int idx = scrollObjects.FindIndex((SelectScrollViewContent x) =>
 			{
@@ -61,7 +61,7 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x13904EC Offset: 0x13904EC VA: 0x13904EC Slot: 64
-		public virtual void SetPosition(int pos, float animTime = 0)
+		public virtual void SetPosition(int pos, float animTime/* = 0*/)
 		{
 			int cnt = m_itemCount;
 			if (m_itemCount < 0)

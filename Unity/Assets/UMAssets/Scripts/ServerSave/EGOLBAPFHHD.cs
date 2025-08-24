@@ -611,7 +611,7 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	// public bool KCIPEJCFJMD() { }
 
 	// // RVA: 0x1C52038 Offset: 0x1C52038 VA: 0x1C52038
-	public List<int> LPFFDGNDLKG_UpdateMedals(bool ANLBEIOFIGB = true, int CPNEKIDCAMF = 2160)
+	public List<int> LPFFDGNDLKG_UpdateMedals(bool ANLBEIOFIGB/* = true*/, int CPNEKIDCAMF/* = 2160*/)
 	{
 		List<int> l = new List<int>();
 		l.Clear();

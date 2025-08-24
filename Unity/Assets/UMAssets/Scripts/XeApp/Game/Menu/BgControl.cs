@@ -231,7 +231,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C59E0 Offset: 0x6C59E0 VA: 0x6C59E0
 		// // RVA: 0x143D36C Offset: 0x143D36C VA: 0x143D36C
-		public IEnumerator ChangeBgCoroutine(BgType bgType, int id = -1, SceneGroupCategory category = SceneGroupCategory.UNDEFINED, TransitionList.Type transitionType = TransitionList.Type.UNDEFINED, int attribute = -1)
+		public IEnumerator ChangeBgCoroutine(BgType bgType, int id/* = -1*/, SceneGroupCategory category/* = SceneGroupCategory.UNDEFINED*/, TransitionList.Type transitionType/* = TransitionList.Type.UNDEFINED*/, int attribute/* = -1*/)
 		{
 			BgTextureType textureType = 0;
 			bool doFade;
@@ -553,7 +553,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C5A58 Offset: 0x6C5A58 VA: 0x6C5A58
 		// // RVA: 0x143D62C Offset: 0x143D62C VA: 0x143D62C
-		public IEnumerator ChangeHomeBgCoroutine(BgType bgType, int id = -1, int evolveId = -1, bool isBgDark = false, SceneGroupCategory category = SceneGroupCategory.UNDEFINED, TransitionList.Type transitionType = TransitionList.Type.UNDEFINED, int attribute = -1)
+		public IEnumerator ChangeHomeBgCoroutine(BgType bgType, int id/* = -1*/, int evolveId/* = -1*/, bool isBgDark/* = false*/, SceneGroupCategory category/* = SceneGroupCategory.UNDEFINED*/, TransitionList.Type transitionType/* = TransitionList.Type.UNDEFINED*/, int attribute/* = -1*/)
 		{
 			BgTextureType textureType; // 0x30
 			float fadeTime; // 0x34
@@ -835,7 +835,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6C5B48 Offset: 0x6C5B48 VA: 0x6C5B48
 		// // RVA: 0x143DF80 Offset: 0x143DF80 VA: 0x143DF80
-		public IEnumerator LoadBgTexture(BgTextureType textureType, int id, bool isBlur = false)
+		public IEnumerator LoadBgTexture(BgTextureType textureType, int id, bool isBlur/* = false*/)
 		{
 			Type types;
 			AssetBundleLoadAssetOperation operation;

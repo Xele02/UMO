@@ -723,7 +723,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x9731E0 Offset: 0x9731E0 VA: 0x9731E0
-		private void ShowInformation(bool disableDivaTalk = false)
+		private void ShowInformation(bool disableDivaTalk/* = false*/)
 		{
 			if(!GameManager.Instance.IsTutorial)
 			{
@@ -1885,7 +1885,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x9727C4 Offset: 0x9727C4 VA: 0x9727C4
-		private void LeaveMessage(bool force = false)
+		private void LeaveMessage(bool force/* = false*/)
 		{
 			m_divaBalloon.Leave(force);
 		}

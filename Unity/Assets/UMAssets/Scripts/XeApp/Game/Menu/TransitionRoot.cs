@@ -436,25 +436,25 @@ namespace XeApp.Game.Menu
 			// public void Move(SceneGroupCategory category, TransitionList.Type nextTransition, TransitionArgs args, bool isFading = True) { }
 
 			// // RVA: 0xA39000 Offset: 0xA39000 VA: 0xA39000
-			public void Mount(TransitionUniqueId uniqueId, TransitionArgs args, bool isFading = true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene cambackUnityScene = 0)
+			public void Mount(TransitionUniqueId uniqueId, TransitionArgs args, bool isFading/* = true*/, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene cambackUnityScene/* = 0*/)
 			{
 				ChangeMount(uniqueId,false,args,cambackUnityScene,false);
 			}
 
 			// // RVA: 0xA39334 Offset: 0xA39334 VA: 0xA39334
-			public void MountWithFade(TransitionUniqueId uniqueId, TransitionArgs args, bool isFading = true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene cambackUnityScene = 0)
+			public void MountWithFade(TransitionUniqueId uniqueId, TransitionArgs args, bool isFading/* = true*/, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene cambackUnityScene/* = 0*/)
 			{
 				ChangeMount(uniqueId,false,args,cambackUnityScene,true);
 			}
 
 			// // RVA: 0xA39364 Offset: 0xA39364 VA: 0xA39364
-			public void Call(TransitionList.Type next, TransitionArgs args, bool isFading = true)
+			public void Call(TransitionList.Type next, TransitionArgs args, bool isFading/* = true*/)
 			{
 				ChangeCall(next,false,args);
 			}
 
 			// // RVA: 0xA3966C Offset: 0xA3966C VA: 0xA3966C
-			public void Return(bool isFading = true)
+			public void Return(bool isFading/* = true*/)
 			{
 				m_transitionType = TransitionType.Return;
 				DirtyChangeScene = true;
@@ -462,7 +462,7 @@ namespace XeApp.Game.Menu
 			}
 
 			// // RVA: 0xA39384 Offset: 0xA39384 VA: 0xA39384
-			private void ChangeCall(TransitionList.Type nextTransition, bool isFading = true, TransitionArgs args = null)
+			private void ChangeCall(TransitionList.Type nextTransition, bool isFading/* = true*/, TransitionArgs args/* = null*/)
 			{
 				TransitionTreeObject.SceneRoot root = treeObject.List.Find((TransitionTreeObject.SceneRoot x) => {
 					//0xA3D5F8
@@ -500,7 +500,7 @@ namespace XeApp.Game.Menu
 			}
 
 			// // RVA: 0xA39030 Offset: 0xA39030 VA: 0xA39030
-			private void ChangeMount(TransitionUniqueId uniqueId, bool isFading = true, TransitionArgs args = null, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene camBackUnityScene = 0, bool isForceFading = false)
+			private void ChangeMount(TransitionUniqueId uniqueId, bool isFading/* = true*/, TransitionArgs args/* = null*/, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene camBackUnityScene/* = 0*/, bool isForceFading/* = false*/)
 			{
 				int group = (int)uniqueId >> 16;
 				TransitionTreeObject.SceneRoot root = treeObject.Find((TransitionTreeObject.SceneRoot x) => {
@@ -1635,7 +1635,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA9DD34 Offset: 0xA9DD34 VA: 0xA9DD34
-		public void InputEnable(string objName, string parentName = "")
+		public void InputEnable(string objName, string parentName/* = ""*/)
 		{
 			if (string.IsNullOrEmpty(objName))
 			{
@@ -1693,7 +1693,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA9E600 Offset: 0xA9E600 VA: 0xA9E600
-		public ButtonBase FindButton(string objName, string parentName = "")
+		public ButtonBase FindButton(string objName, string parentName/* = ""*/)
 		{
 			return m_buttons.Find((ButtonBase x) =>
 			{

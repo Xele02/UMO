@@ -224,7 +224,7 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AC43B8 Offset: 0x1AC43B8 VA: 0x1AC43B8
-		private CollStatus AdjustPos(Vector2 pos, bool isUpdatePos = true, Vector2? dstPos = null, bool willEscape = false)
+		private CollStatus AdjustPos(Vector2 pos, bool isUpdatePos/* = true*/, Vector2? dstPos/* = null*/, bool willEscape/* = false*/)
 		{
 			if (dstPos.HasValue)
 				pos = dstPos.Value;
@@ -763,7 +763,7 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1AC8824 Offset: 0x1AC8824 VA: 0x1AC8824
-		public void PlayVoice(VoiceType type, int id = 0)
+		public void PlayVoice(VoiceType type, int id/* = 0*/)
 		{
 			StringBuilder str = new StringBuilder(32);
 			str.SetFormat("{0:D3}", id);

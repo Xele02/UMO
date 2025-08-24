@@ -158,7 +158,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1880888 Offset: 0x1880888 VA: 0x1880888
-		public void SetTabType(int index, eTabNum tabNum = eTabNum.Normal)
+		public void SetTabType(int index, eTabNum tabNum/* = eTabNum.Normal*/)
 		{
 			if (tabNum == eTabNum.Beginner)
 				m_buttonParentLayout.StartChildrenAnimGoStop("01");

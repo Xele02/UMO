@@ -763,7 +763,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1337608 Offset: 0x1337608 VA: 0x1337608
-		private JJOELIOGMKK_DivaIntimacyInfo InitViewIntimacyData(int divaId = 0)
+		private JJOELIOGMKK_DivaIntimacyInfo InitViewIntimacyData(int divaId/* = 0*/)
 		{
 			JJOELIOGMKK_DivaIntimacyInfo data = new JJOELIOGMKK_DivaIntimacyInfo();
 			data.KHEKNNFCAOI(divaId);

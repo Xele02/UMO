@@ -217,14 +217,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x172BC28 Offset: 0x172BC28 VA: 0x172BC28
-		private void AnimPlayPlateNewGet(bool enable = false)
+		private void AnimPlayPlateNewGet(bool enable/* = false*/)
 		{
 			AnimPlayPlate(m_newGetPlate, WaitPlateGetAnim(), enable);
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_WND_004);
 		}
 
 		//// RVA: 0x172C014 Offset: 0x172C014 VA: 0x172C014
-		private void AnimPlayPlate(AbsoluteLayout laout, IEnumerator anim, bool enable = false)
+		private void AnimPlayPlate(AbsoluteLayout laout, IEnumerator anim, bool enable/* = false*/)
 		{
 			if (laout == null)
 				return;

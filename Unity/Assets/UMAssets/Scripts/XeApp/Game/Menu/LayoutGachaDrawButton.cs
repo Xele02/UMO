@@ -41,7 +41,7 @@ namespace XeApp.Game.Menu
 		public int LotCount { get; private set; } // 0xB8
 
 		// RVA: 0x19AB854 Offset: 0x19AB854 VA: 0x19AB854
-		public void Setup(BEPHBEGDFFK.DMBKENKBIJD info, BEPHBEGDFFK.ABBPGMEDDHD zone = 0)
+		public void Setup(BEPHBEGDFFK.DMBKENKBIJD info, BEPHBEGDFFK.ABBPGMEDDHD zone/* = 0*/)
 		{
 			int ticketCount = info.CMHHHCAKPCD();
 			if(info.BJLONGBNPCI_SummonType == GCAHJLOGMCI.NFCAJPIJFAM_SummonType.NGAHKKOBGPA_9 || info.BJLONGBNPCI_SummonType == GCAHJLOGMCI.NFCAJPIJFAM_SummonType.BPPLDIBMPKH_10)
@@ -64,7 +64,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x19ABA40 Offset: 0x19ABA40 VA: 0x19ABA40
-		public void Setup(LOBDIAABMKG gachaProduct, int currencyId, int lotCount, int price, string kakutei = "", bool isFirstSale = false, int ticketCount = 0, BEPHBEGDFFK.ABBPGMEDDHD zone = 0, long currentTime = 0)
+		public void Setup(LOBDIAABMKG gachaProduct, int currencyId, int lotCount, int price, string kakutei/* = ""*/, bool isFirstSale/* = false*/, int ticketCount/* = 0*/, BEPHBEGDFFK.ABBPGMEDDHD zone/* = 0*/, long currentTime/* = 0*/)
 		{
 			SetCurrencyType(gachaProduct, currencyId, price, zone);
 			LotCount = lotCount;

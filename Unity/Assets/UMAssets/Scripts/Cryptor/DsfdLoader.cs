@@ -1495,7 +1495,7 @@ namespace Cryptor
         }
 
         // // RVA: 0x2BAEAA8 Offset: 0x2BAEAA8 VA: 0x2BAEAA8
-        public static bool Initialize(byte[] seed1, byte[] seed2, byte[] seed3, bool shouldShowLogOnEditor = true)
+        public static bool Initialize(byte[] seed1, byte[] seed2, byte[] seed3, bool shouldShowLogOnEditor/* = true*/)
         {
             loadRequestDict = new Dictionary<uint, LoadRequest>();
             if(seed1.Length == 0x10 && seed2.Length == 0x10 && seed3.Length == 0x10)

@@ -114,7 +114,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA6A3A8 Offset: 0xA6A3A8 VA: 0xA6A3A8
-		public void Set(FFHPBEPOMAK_DivaInfo divaData, DFKGGBMFFGB_PlayerInfo playerData, bool isCenter, bool isGoDiva, int musicId = 0, bool isStory = false)
+		public void Set(FFHPBEPOMAK_DivaInfo divaData, DFKGGBMFFGB_PlayerInfo playerData, bool isCenter, bool isGoDiva, int musicId/* = 0*/, bool isStory/* = false*/)
 		{
 			m_divaData = divaData;
 			m_playerData = playerData;
@@ -228,7 +228,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xA6A648 Offset: 0xA6A648 VA: 0xA6A648
-		private void SetDivaImageAndColor(FFHPBEPOMAK_DivaInfo divaData, bool isGoDivaSub = false)
+		private void SetDivaImageAndColor(FFHPBEPOMAK_DivaInfo divaData, bool isGoDivaSub/* = false*/)
 		{
 			if(divaData == null)
 			{

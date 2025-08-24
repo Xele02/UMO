@@ -155,7 +155,7 @@ namespace XeApp.Game.Common
 		//private void ChangeVisibilityCallback(bool isVisible) { }
 
 		//// RVA: 0x110FAA8 Offset: 0x110FAA8 VA: 0x110FAA8
-		public void Idle(string stateName = "")
+		public void Idle(string stateName/* = ""*/)
 		{
 			if (string.IsNullOrEmpty(stateName))
 				stateName = "idle";
@@ -165,7 +165,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1110B60 Offset: 0x1110B60 VA: 0x1110B60
-		public void IdleCrossFade(string stateName = "")
+		public void IdleCrossFade(string stateName/* = ""*/)
 		{
 			if (string.IsNullOrEmpty(stateName))
 				stateName = "idle";
@@ -175,7 +175,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1110C90 Offset: 0x1110C90 VA: 0x1110C90
-		public void SetBodyCrossFade(string stateName, float duration = 0.07f)
+		public void SetBodyCrossFade(string stateName, float duration/* = 0.07f*/)
 		{
 			animator.CrossFade(stateName, duration);
 		}
@@ -280,7 +280,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x11113D8 Offset: 0x11113D8 VA: 0x11113D8
-		public void LoginAnimStart(int reactionId = 1)
+		public void LoginAnimStart(int reactionId/* = 1*/)
 		{
 			Anim_SetTrigger("login_toReaction");
 			Anim_SetInteger("login_reactionId", reactionId);

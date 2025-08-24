@@ -40,7 +40,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x179ABA0 Offset: 0x179ABA0 VA: 0x179ABA0
-		public void SetButton(string a_name = "", ButtonBase.OnClickCallback a_cb = null)
+		public void SetButton(string a_name/* = ""*/, ButtonBase.OnClickCallback a_cb/* = null*/)
 		{
 			m_cb_btn = a_cb;
 			m_btn_text[0].text = a_name;

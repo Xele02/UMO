@@ -75,7 +75,7 @@ public class MMOLNAHHDOM
     }
 
 	// // RVA: 0x1968E50 Offset: 0x1968E50 VA: 0x1968E50
-	public bool HJMKBCFJOOH_Write(bool FBBNPFFEJBN_Force = false)
+	public bool HJMKBCFJOOH_Write(bool FBBNPFFEJBN_Force/* = false*/)
     {
 		int a = BGDCMGOPCGE_GetHash(LAIIKHJABMP_MultiDiva);
 		if(!FBBNPFFEJBN_Force)

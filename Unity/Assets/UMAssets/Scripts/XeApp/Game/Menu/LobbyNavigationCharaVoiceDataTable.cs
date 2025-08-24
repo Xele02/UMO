@@ -24,7 +24,7 @@ namespace XeApp.Game.Menu
 		// public static SimpleDivaVoiceSetting VoiceTable(LobbyNavigationCharaVoiceDataTable.VoiceType type) { }
 
 		// // RVA: 0xD19738 Offset: 0xD19738 VA: 0xD19738
-		public static SimpleVoicePlayer.VoiceSetting VoiceSetting(VoiceType type, int divaId = 1)
+		public static SimpleVoicePlayer.VoiceSetting VoiceSetting(VoiceType type, int divaId/* = 1*/)
 		{
 			return voiceSettingList[(int)type].m_voiceSetting;
 		}

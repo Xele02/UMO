@@ -171,7 +171,7 @@ public class NDABOOOOENC
 	}
 
 	// // RVA: 0x1ADC3E8 Offset: 0x1ADC3E8 VA: 0x1ADC3E8
-	public void GLHANCMGNDM_UpdateAchievement(int PPFNGGCBJKC, double JBGEEPFKIGG = 100)
+	public void GLHANCMGNDM_UpdateAchievement(int PPFNGGCBJKC, double JBGEEPFKIGG/* = 100*/)
 	{
 		if(!AppEnv.IsCBT() && GKDLPKNOGCK_Initialized)
 		{

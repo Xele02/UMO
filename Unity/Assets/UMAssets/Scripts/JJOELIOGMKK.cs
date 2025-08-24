@@ -372,7 +372,7 @@ public class JJOELIOGMKK_DivaIntimacyInfo
 	}
 
 	//// RVA: 0x1351904 Offset: 0x1351904 VA: 0x1351904
-	public void HCDGELDHFHB(bool FBBNPFFEJBN = false)
+	public void HCDGELDHFHB(bool FBBNPFFEJBN/* = false*/)
 	{
 		if (AHHJLDLAPAN_DivaId < 0)
 			return;

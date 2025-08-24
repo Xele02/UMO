@@ -51,7 +51,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x9667E8 Offset: 0x9667E8 VA: 0x9667E8
-		public void Setup(Type a_type = Type.DOWN)
+		public void Setup(Type a_type/* = Type.DOWN*/)
 		{
 			if(m_IsInitialize)
 			{
@@ -162,7 +162,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x966FCC Offset: 0x966FCC VA: 0x966FCC
-		public void Show(bool isEnd = false)
+		public void Show(bool isEnd/* = false*/)
 		{
 			if (!m_EnableShow)
 				return;
@@ -170,7 +170,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x9670D0 Offset: 0x9670D0 VA: 0x9670D0
-		public void Hide(bool isEnd = false)
+		public void Hide(bool isEnd/* = false*/)
 		{
 			if(!m_EnableShow)
 				return;
@@ -584,7 +584,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x967EBC Offset: 0x967EBC VA: 0x967EBC
-		public static void Show_PopupNotAffiliationRaidEnd(Action transitionCallback, Action endCallback, NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase phase = NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.OLCLJKOKJCD_3_End)
+		public static void Show_PopupNotAffiliationRaidEnd(Action transitionCallback, Action endCallback, NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase phase/* = NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.OLCLJKOKJCD_3_End*/)
 		{
 			TextPopupSetting s = new TextPopupSetting();
 			s.Buttons = new ButtonInfo[1]

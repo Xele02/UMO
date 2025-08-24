@@ -2531,7 +2531,7 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0x9C1380 Offset: 0x9C1380 VA: 0x9C1380
-		private void PauseGame(bool isReserve = false)
+		private void PauseGame(bool isReserve/* = false*/)
 		{
 			isVisiblePauseWindow = true;
 			uiController.Hud.DisablePauseButton();

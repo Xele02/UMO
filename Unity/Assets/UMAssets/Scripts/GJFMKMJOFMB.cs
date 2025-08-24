@@ -28,7 +28,7 @@ public class GJFMKMJOFMB
 	public bool HNNAJBJCNEJ; // 0x38
 
 	// RVA: 0xAAC434 Offset: 0xAAC434 VA: 0xAAC434
-	public void KHEKNNFCAOI(bool JHOJAGMJABJ, bool IEABEILIGPO = false)
+	public void KHEKNNFCAOI(bool JHOJAGMJABJ, bool IEABEILIGPO/* = false*/)
 	{
 		if(IEABEILIGPO)
 		{

@@ -139,7 +139,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x95CFF4 Offset: 0x95CFF4 VA: 0x95CFF4
-		private void Listup(uint rarityFilterBit = 4294967295, uint seriaseFilterBit = 4294967295)
+		private void Listup(uint rarityFilterBit/* = 4294967295*/, uint seriaseFilterBit/* = 4294967295*/)
 		{
 			m_sceneIndexList.Clear();
 			List<int> l = new List<int>();

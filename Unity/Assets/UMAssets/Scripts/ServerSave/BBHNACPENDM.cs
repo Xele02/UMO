@@ -590,7 +590,7 @@ public class BBHNACPENDM_ServerSaveData
 	}
 
 	// // RVA: 0xF20570 Offset: 0xF20570 VA: 0xF20570
-	public EMHDCKMFCGE LEMFJICBALP(BBHNACPENDM_ServerSaveData GJLFANGDGCL, bool NNPGPAPDDMC = true)
+	public EMHDCKMFCGE LEMFJICBALP(BBHNACPENDM_ServerSaveData GJLFANGDGCL, bool NNPGPAPDDMC/* = true*/)
 	{
 		if (MGJKEJHEBPO_Blocks == null)
 			return null;
@@ -737,7 +737,7 @@ public class BBHNACPENDM_ServerSaveData
 	}
 
 	// // RVA: 0xF21F10 Offset: 0xF21F10 VA: 0xF21F10
-	public FENCAJJBLBH PFAKPFKJJKA(bool DHNFPAGENLN = true)
+	public FENCAJJBLBH PFAKPFKJJKA(bool DHNFPAGENLN/* = true*/)
 	{
 		if(MGJKEJHEBPO_Blocks == null)
 			return null;
@@ -768,7 +768,7 @@ public class BBHNACPENDM_ServerSaveData
 	}
 
 	// // RVA: 0xF2205C Offset: 0xF2205C VA: 0xF2205C
-	public void NEBDDPDPAKJ(bool FHBAKFIHFLE = false)
+	public void NEBDDPDPAKJ(bool FHBAKFIHFLE/* = false*/)
 	{
 		if(AppEnv.IsPresentation())
 		{

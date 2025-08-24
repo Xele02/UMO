@@ -60,7 +60,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x19DD2A0 Offset: 0x19DD2A0 VA: 0x19DD2A0
-		public void SetData(int id, LayoutDecoCustomWindow01.SelectItemType type, bool isNew = false, bool isProducts = false, FJGOKILCBJA product = null)
+		public void SetData(int id, LayoutDecoCustomWindow01.SelectItemType type, bool isNew/* = false*/, bool isProducts/* = false*/, FJGOKILCBJA product/* = null*/)
 		{
 			Id = id;
 			Type = type;

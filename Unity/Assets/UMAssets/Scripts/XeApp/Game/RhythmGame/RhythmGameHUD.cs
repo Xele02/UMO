@@ -773,7 +773,7 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDCFD7C Offset: 0xDCFD7C VA: 0xDCFD7C Slot: 42
-		public void HideValkyrie(bool isFaild = false)
+		public void HideValkyrie(bool isFaild/* = false*/)
 		{
 			if(isFaild)
 			{
@@ -846,7 +846,7 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xDD029C Offset: 0xDD029C VA: 0xDD029C Slot: 45
-		public void ShowDiva(bool isSpMode = false)
+		public void ShowDiva(bool isSpMode/* = false*/)
 		{
 			m_divaBottomUi.SetActive(true);
 			m_divaBottomUiAnimator.Play(isSpMode ? change_SPdiva_mode : change_diva_mode_Hash, 0, 0);

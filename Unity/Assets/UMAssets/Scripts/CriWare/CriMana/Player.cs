@@ -282,7 +282,7 @@ namespace CriWare
 			}
 
 			// // RVA: 0x2959C1C Offset: 0x2959C1C VA: 0x2959C1C
-			public bool SetFile(CriFsBinder binder, string moviePath, Player.SetMode setMode = 0)
+			public bool SetFile(CriFsBinder binder, string moviePath, Player.SetMode setMode/* = 0*/)
 			{
 				System.IntPtr binderPtr = (binder == null) ? System.IntPtr.Zero : binder.nativeHandle;
 				if(binder == null)
@@ -683,7 +683,7 @@ namespace CriWare
 			}
 
 			// // RVA: 0x2959834 Offset: 0x2959834 VA: 0x2959834
-			private void DisableInfos(bool keepFrameInfo = false)
+			private void DisableInfos(bool keepFrameInfo/* = false*/)
 			{
 				isMovieInfoAvailable = false;
 				isFrameInfoAvailable = false;

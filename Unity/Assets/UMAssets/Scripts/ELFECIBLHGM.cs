@@ -58,7 +58,7 @@ public class ELFECIBLHGM
     }
 
 	// // RVA: 0x1304ED4 Offset: 0x1304ED4 VA: 0x1304ED4
-	public bool HJMKBCFJOOH_TrySaveDate(bool FBBNPFFEJBN_Force = false)
+	public bool HJMKBCFJOOH_TrySaveDate(bool FBBNPFFEJBN_Force/* = false*/)
 	{
 		if(!FBBNPFFEJBN_Force && !BAJPJGFOFIN_NeedSave)
 			return false;

@@ -154,7 +154,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 	}
 
 	// RVA: 0x1C34A10 Offset: 0x1C34A10 VA: 0x1C34A10
-	public JEHIAIPJNJF_FileDownloader(int JAGOLJBNFMP_NumSimultDld = 3)
+	public JEHIAIPJNJF_FileDownloader(int JAGOLJBNFMP_NumSimultDld/* = 3*/)
 	{
 		KAMPHNKAHAB_IsDiskFull = true;
 		CMCKNKKCNDK_Status = JEHIAIPJNJF_FileDownloader.NKLKJEOKIFO_Status.PBIMGBKLDPP_0_None;

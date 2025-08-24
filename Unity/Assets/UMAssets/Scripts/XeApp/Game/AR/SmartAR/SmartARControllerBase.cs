@@ -57,7 +57,7 @@ public abstract class SmartARControllerBase : MonoBehaviour
         public bool willChangeUsingStatus_; // 0xC
 
         // RVA: 0x725534 Offset: 0x725534 VA: 0x725534
-        public TargetManager(TargetEntry entry, Target target, bool isUse = true, bool willChangeUsingStatus = false)
+        public TargetManager(TargetEntry entry, Target target, bool isUse/* = true*/, bool willChangeUsingStatus/* = false*/)
 		{
 			isUse_ = isUse;
 			target_ = target;

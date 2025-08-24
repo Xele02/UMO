@@ -105,7 +105,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xF93858 Offset: 0xF93858 VA: 0xF93858
-		public void Initialize(List<FFHPBEPOMAK_DivaInfo> a_view_diva, bool a_is_val, ButtonType a_btn_type = 0, WindowType a_wind_type = 0, bool a_is_has_only = false)
+		public void Initialize(List<FFHPBEPOMAK_DivaInfo> a_view_diva, bool a_is_val, ButtonType a_btn_type/* = 0*/, WindowType a_wind_type/* = 0*/, bool a_is_has_only/* = false*/)
 		{
 			m_btn_type = a_btn_type;
 			m_btn[0].Hidden = a_btn_type == ButtonType.Single;

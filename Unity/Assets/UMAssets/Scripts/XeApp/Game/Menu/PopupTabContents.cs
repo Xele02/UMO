@@ -178,7 +178,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x11534FC Offset: 0x11534FC VA: 0x11534FC
-		private void ContentActive(int type, bool enable, bool isReset = true)
+		private void ContentActive(int type, bool enable, bool isReset/* = true*/)
 		{
 			if(m_contents.ContainsKey(type))
 			{

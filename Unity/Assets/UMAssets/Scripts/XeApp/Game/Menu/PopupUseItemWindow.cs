@@ -30,7 +30,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x733634 Offset: 0x733634 VA: 0x733634
 		// // RVA: 0x1160990 Offset: 0x1160990 VA: 0x1160990
-		public IEnumerator Show(MNDAMOGGJBJ itemData, UseItemList.Unlock unlock = 0)
+		public IEnumerator Show(MNDAMOGGJBJ itemData, UseItemList.Unlock unlock/* = 0*/)
 		{
 			//0x1160C00
 			_result = UseItemResult.None;

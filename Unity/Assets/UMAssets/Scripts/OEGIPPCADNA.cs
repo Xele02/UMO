@@ -153,7 +153,7 @@ public class OEGIPPCADNA
 	}
 
 	//// RVA: 0x1B3CF94 Offset: 0x1B3CF94 VA: 0x1B3CF94
-	public void MJFKJHJJLMN_GetUtaRateRank(int LHJCOPMMIGO, bool FBBNPFFEJBN = false, IMCBBOAFION KLMFJJCNBIP_OnSuccess = null, DJBHIFLHJLK IDAEHNGOKAE_OnRankingError = null, DJBHIFLHJLK JGKOLBLPMPG_OnError = null)
+	public void MJFKJHJJLMN_GetUtaRateRank(int LHJCOPMMIGO, bool FBBNPFFEJBN/* = false*/, IMCBBOAFION KLMFJJCNBIP_OnSuccess/* = null*/, DJBHIFLHJLK IDAEHNGOKAE_OnRankingError/* = null*/, DJBHIFLHJLK JGKOLBLPMPG_OnError/* = null*/)
 	{
 		KKLGENJKEBN.HHCJCDFCLOB.HEOKADCEAGL_GetRanks(JFCBDOJBKNG.AJAHDNPMPHA_GetEventRankingKey(), () =>
 		{
@@ -189,7 +189,7 @@ public class OEGIPPCADNA
 	}
 
 	//// RVA: 0x1B3D1B0 Offset: 0x1B3D1B0 VA: 0x1B3D1B0
-	public void FGMOMBKGCNF_UpdateTotalUtaRate(int DPDCIICKJEJ = 0, IMCBBOAFION KLMFJJCNBIP = null, DJBHIFLHJLK NIMPEHIECJH = null, DJBHIFLHJLK JGKOLBLPMPG = null)
+	public void FGMOMBKGCNF_UpdateTotalUtaRate(int DPDCIICKJEJ/* = 0*/, IMCBBOAFION KLMFJJCNBIP/* = null*/, DJBHIFLHJLK NIMPEHIECJH/* = null*/, DJBHIFLHJLK JGKOLBLPMPG/* = null*/)
 	{
 		int utaRate = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.EAHPKPADCPL_TotalUtaRate;
 		if (utaRate < DPDCIICKJEJ)
@@ -292,7 +292,7 @@ public class OEGIPPCADNA
 	}
 
 	//// RVA: 0x1B3DF30 Offset: 0x1B3DF30 VA: 0x1B3DF30
-	public static string GEEFFAEGHAH(int BDGDHOAJDFM, bool DECFKDIGIJL = true)
+	public static string GEEFFAEGHAH(int BDGDHOAJDFM, bool DECFKDIGIJL/* = true*/)
 	{
 		string str = MessageManager.Instance.GetBank("menu").GetMessageByLabel("utaraterank_none");
 		if(BDGDHOAJDFM < 1)

@@ -186,7 +186,7 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x183B864 Offset: 0x183B864 VA: 0x183B864 Slot: 27
-	public override int HLOGNJNGDJO_GetHelpId(int OIPCCBHIKIA = 0)
+	public override int HLOGNJNGDJO_GetHelpId(int OIPCCBHIKIA/* = 0*/)
 	{
 		PHBACNMCMHG_EventCollection ev = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI_QuestId) as PHBACNMCMHG_EventCollection;
 		if(ev != null)
@@ -224,7 +224,7 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x183C064 Offset: 0x183C064 VA: 0x183C064 Slot: 29
-	public override void MJFKJHJJLMN_GetRanks(int LHJCOPMMIGO = 0, bool FBBNPFFEJBN = false)
+	public override void MJFKJHJJLMN_GetRanks(int LHJCOPMMIGO/* = 0*/, bool FBBNPFFEJBN/* = false*/)
 	{
 		PLOOEECNHFB = false;
 		NPNNPNAIONN = false;
@@ -1212,7 +1212,7 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x1843860 Offset: 0x1843860 VA: 0x1843860 Slot: 54
-	public override int NGIHFKHOJOK_GetRankingMax(bool DJHLDMOPCOL = true)
+	public override int NGIHFKHOJOK_GetRankingMax(bool DJHLDMOPCOL/* = true*/)
 	{
 		if(IBNKPMPFLGI_IsRankReward)
 		{
@@ -1373,7 +1373,7 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x1844468 Offset: 0x1844468 VA: 0x1844468 Slot: 66
-	public override void FGDDBFHGCGP_SetStartAdventureShown(bool JKDJCFEBDHC, long JHNMKKNEENE = 0)
+	public override void FGDDBFHGCGP_SetStartAdventureShown(bool JKDJCFEBDHC, long JHNMKKNEENE/* = 0*/)
 	{
 		if(JKDJCFEBDHC)
 		{

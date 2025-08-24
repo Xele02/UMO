@@ -118,19 +118,19 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1B5169C Offset: 0x1B5169C VA: 0x1B5169C
-		protected void SetSkillRank(int pos, SkillRank.Type rank, int index = 0)
+		protected void SetSkillRank(int pos, SkillRank.Type rank, int index/* = 0*/)
 		{
 			m_skillInfos[pos].SetSkillRank(rank, index);
 		}
 
 		//// RVA: 0x1B51834 Offset: 0x1B51834 VA: 0x1B51834
-		protected void SetSkillLevel(int pos, int level, int index = 0)
+		protected void SetSkillLevel(int pos, int level, int index/* = 0*/)
 		{
 			m_skillInfos[pos].SetSkillLevel(level, index);
 		}
 
 		//// RVA: 0x1B51A68 Offset: 0x1B51A68 VA: 0x1B51A68
-		protected void SetSkillDescription(int pos, string description, int index = 0)
+		protected void SetSkillDescription(int pos, string description, int index/* = 0*/)
 		{
 			m_skillInfos[pos].SetSkillDescription(description, index);
 		}

@@ -41,7 +41,7 @@ namespace XeApp.Game.Menu
 		public Action<bool> onClickRejectCheckbox { private get; set; } // 0x4C
 
 		//// RVA: 0x963EC4 Offset: 0x963EC4 VA: 0x963EC4
-		public void Enter(bool checkReject = false, bool checkBoxHidden = false, Action callback = null)
+		public void Enter(bool checkReject/* = false*/, bool checkBoxHidden/* = false*/, Action callback/* = null*/)
 		{
 			if (m_isOpen)
 				return;

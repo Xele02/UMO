@@ -75,7 +75,7 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BB6238 Offset: 0x1BB6238 VA: 0x1BB6238
-		public void ResetRejectCheckbox(bool on = false)
+		public void ResetRejectCheckbox(bool on/* = false*/)
 		{
 			if(on)
 				m_rejectCheckbox.SetOn();

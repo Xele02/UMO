@@ -63,7 +63,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12D1598 Offset: 0x12D1598 VA: 0x12D1598
-		public void SetFaceIcon(int charaId, bool IsOffer = false)
+		public void SetFaceIcon(int charaId, bool IsOffer/* = false*/)
 		{
 			IsLoadedIcon = false;
 			GameManager.Instance.SnsIconCache.CharIconLoad(charaId, (IiconTexture texture) =>
@@ -95,7 +95,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12D1E88 Offset: 0x12D1E88 VA: 0x12D1E88
-		public void Show(bool isEnableButton = true)
+		public void Show(bool isEnableButton/* = true*/)
 		{
 			m_layout.StartChildrenAnimGoStop("01");
 			IsPushed = false;
@@ -105,7 +105,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12D1D8C Offset: 0x12D1D8C VA: 0x12D1D8C
-		public void ShowOffer(bool isEnableButton = true)
+		public void ShowOffer(bool isEnableButton/* = true*/)
 		{
 			m_layout.StartChildrenAnimGoStop("02");
 			IsPushed = false;

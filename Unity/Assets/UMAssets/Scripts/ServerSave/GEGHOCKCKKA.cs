@@ -215,7 +215,7 @@ public class GEGHOCKCKKA_LimitedCompoItem : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x16B92C8 Offset: 0x16B92C8 VA: 0x16B92C8
-	public int CPIICACGNBH(int PPFNGGCBJKC, long JHNMKKNEENE, bool DDGFCOPPBBN = false)
+	public int CPIICACGNBH(int PPFNGGCBJKC, long JHNMKKNEENE, bool DDGFCOPPBBN/* = false*/)
 	{
 		if(PPFNGGCBJKC > 0)
 		{

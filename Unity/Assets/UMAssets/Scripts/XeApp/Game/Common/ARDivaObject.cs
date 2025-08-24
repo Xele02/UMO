@@ -79,7 +79,7 @@ namespace XeApp.Game.Common
         }
 
         // RVA: 0xB080F4 Offset: 0xB080F4 VA: 0xB080F4
-        public void IdleCrossFade(float time = 0.25f)
+        public void IdleCrossFade(float time/* = 0.25f*/)
         {
             if(animator != null)
             {

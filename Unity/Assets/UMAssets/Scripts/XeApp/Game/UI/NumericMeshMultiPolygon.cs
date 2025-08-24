@@ -68,7 +68,7 @@ namespace XeApp.Game.UI
 		}
 
 		// // RVA: 0x1922638 Offset: 0x1922638 VA: 0x1922638
-		public void SetNumber(int number, int type = 0)
+		public void SetNumber(int number, int type/* = 0*/)
 		{
 			int idx = 0;
 			if(digit != 0)

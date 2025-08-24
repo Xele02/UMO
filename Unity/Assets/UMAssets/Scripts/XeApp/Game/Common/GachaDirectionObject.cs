@@ -112,7 +112,7 @@ namespace XeApp.Game.Common
 		}
 
 		// RVA: 0x1C1AF74 Offset: 0x1C1AF74 VA: 0x1C1AF74
-		public void Setup(bool retryTime = false)
+		public void Setup(bool retryTime/* = false*/)
 		{
 			if(retryTime)
 			{

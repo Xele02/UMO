@@ -276,7 +276,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x19E06BC Offset: 0x19E06BC VA: 0x19E06BC
-		private void SetupList(int count, bool isPosUpdate = true)
+		private void SetupList(int count, bool isPosUpdate/* = true*/)
 		{
 			m_scrollList.SetItemCount(count);
 			m_scrollList.OnUpdateItem.RemoveAllListeners();

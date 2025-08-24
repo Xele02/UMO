@@ -56,7 +56,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12D3238 Offset: 0x12D3238 VA: 0x12D3238
-		public void Initialize(int snsId = 0, bool isReview = false)
+		public void Initialize(int snsId/* = 0*/, bool isReview/* = false*/)
 		{
 			m_isReview = isReview;
 			if (m_viewSnsData == null)
@@ -89,7 +89,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12D3490 Offset: 0x12D3490 VA: 0x12D3490
-		public void In(eSceneType sceneType = eSceneType.Menu, SNSController.eObjectOrderType orderType = SNSController.eObjectOrderType.Last, bool isReviewTutorial = false)
+		public void In(eSceneType sceneType/* = eSceneType.Menu*/, SNSController.eObjectOrderType orderType/* = SNSController.eObjectOrderType.Last*/, bool isReviewTutorial/* = false*/)
 		{
 			m_sceneType = sceneType;
 			m_orderType = orderType;
@@ -105,7 +105,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x12D36E0 Offset: 0x12D36E0 VA: 0x12D36E0
-		public void InRoom(eSceneType sceneType, int roomId, SNSController.eObjectOrderType orderType = SNSController.eObjectOrderType.Last, int snsId = 0, bool isEventStory = false, bool isReview = false)
+		public void InRoom(eSceneType sceneType, int roomId, SNSController.eObjectOrderType orderType/* = SNSController.eObjectOrderType.Last*/, int snsId/* = 0*/, bool isEventStory/* = false*/, bool isReview/* = false*/)
 		{
 			m_sceneType = sceneType;
 			m_orderType = orderType;
@@ -178,7 +178,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72A884 Offset: 0x72A884 VA: 0x72A884
 		//// RVA: 0x12D3514 Offset: 0x12D3514 VA: 0x12D3514
-		private IEnumerator DefaultPhase(SnsScreen.eInType inType, int snsId = 0, bool isEventStory = false, bool isCallTutorialEventStory = false, bool isReview = false)
+		private IEnumerator DefaultPhase(eInType inType, int snsId/* = 0*/, bool isEventStory/* = false*/, bool isCallTutorialEventStory/* = false*/, bool isReview/* = false*/)
 		{
 			//0x12D59B4
 			m_isPlayingInner = true;
@@ -226,7 +226,7 @@ namespace XeApp.Game.Menu
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72A8FC Offset: 0x72A8FC VA: 0x72A8FC
 		//// RVA: 0x12D3B5C Offset: 0x12D3B5C VA: 0x12D3B5C
-		private IEnumerator EntranceDefault(bool isBootAnimIn = true, SNSTitleBar.eButtonType buttonType = SNSTitleBar.eButtonType.Default, bool isReviewTutorial = false)
+		private IEnumerator EntranceDefault(bool isBootAnimIn/* = true*/, SNSTitleBar.eButtonType buttonType/* = SNSTitleBar.eButtonType.Default*/, bool isReviewTutorial/* = false*/)
 		{
 			//0x12D5C60
 			UnityEngine.Debug.LogError("EntranceDefault");

@@ -20,7 +20,7 @@ namespace XeApp.Game.Common
 		public GameResultData.TutorialOneResult tutorialOneResult { get; private set; } // 0x18
 
 		// RVA: 0xE9C898 Offset: 0xE9C898 VA: 0xE9C898
-		public void Setup(bool isClear, bool isGameOver, int[] noteResultCount, RhythmGamePlayLog gameLog, int a_noteResultCount_Excellent = 0)
+		public void Setup(bool isClear, bool isGameOver, int[] noteResultCount, RhythmGamePlayLog gameLog, int a_noteResultCount_Excellent/* = 0*/)
 		{
 			this.isGameOver = isGameOver;
 			this.isClear = isClear;

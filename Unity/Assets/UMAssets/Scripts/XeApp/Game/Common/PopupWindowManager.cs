@@ -15,7 +15,7 @@ namespace XeApp.Game.Common
 		public static int starRank = 0; // 0x8
 
 		// // RVA: 0x1BACEE4 Offset: 0x1BACEE4 VA: 0x1BACEE4
-		public static PopupWindowControl Show(PopupSetting setting, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> buttonCallBack, Action<IPopupContent, PopupTabButton.ButtonLabel> cotentUpdateCallBack, Action openStartCallBack, Action openEndCallBack, bool isButtonEnable = true, bool isShowBlack = true, bool isUnderFadePlane = false, Func<bool> closeWaitCallBack = null, Action endCallBaack = null, Func<PopupWindowControl.SeType, bool> playSeEvent = null, Func<PopupButton.ButtonLabel, PopupButton.ButtonType, bool> buttonSeEvent = null, Func<PopupButton.ButtonType, PopupButton.ButtonLabel, bool> closeStartWaitCallBack = null)
+		public static PopupWindowControl Show(PopupSetting setting, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> buttonCallBack, Action<IPopupContent, PopupTabButton.ButtonLabel> cotentUpdateCallBack, Action openStartCallBack, Action openEndCallBack, bool isButtonEnable/* = true*/, bool isShowBlack/* = true*/, bool isUnderFadePlane/* = false*/, Func<bool> closeWaitCallBack/* = null*/, Action endCallBaack/* = null*/, Func<PopupWindowControl.SeType, bool> playSeEvent/* = null*/, Func<PopupButton.ButtonLabel, PopupButton.ButtonType, bool> buttonSeEvent/* = null*/, Func<PopupButton.ButtonType, PopupButton.ButtonLabel, bool> closeStartWaitCallBack/* = null*/)
 		{
 			if(s_controls == null)
 			{
@@ -224,7 +224,7 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BC1AB0 Offset: 0x1BC1AB0 VA: 0x1BC1AB0
-		public static TextPopupSetting CrateTextContent(string title, SizeType size, string Message, ButtonInfo[] buttons, bool scrollable = false, bool isCaption = true)
+		public static TextPopupSetting CrateTextContent(string title, SizeType size, string Message, ButtonInfo[] buttons, bool scrollable/* = false*/, bool isCaption/* = true*/)
 		{
 			TextPopupSetting res = new TextPopupSetting();
 			res.TitleText = title;
@@ -762,7 +762,7 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BC5E74 Offset: 0x1BC5E74 VA: 0x1BC5E74
-		public static void ReviewStarPopupShow(MonoBehaviour mb, Action closeWaitCallback, int divaId = 1, int voiceId = 0)
+		public static void ReviewStarPopupShow(MonoBehaviour mb, Action closeWaitCallback, int divaId/* = 1*/, int voiceId/* = 0*/)
 		{
 			if(!KNHHNMFCJEN.AIGMIEKPPAD())
 			{

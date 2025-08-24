@@ -38,7 +38,7 @@ namespace XeApp.Game.Menu
 		private List<MFDJIFIIPJD> m_itemList; // 0x38
 
 		// RVA: 0x1778B04 Offset: 0x1778B04 VA: 0x1778B04
-		public void SetStatus(PopupQuestRewardListSetting.Type type, List<MFDJIFIIPJD> itemList, bool isOver = false)
+		public void SetStatus(PopupQuestRewardListSetting.Type type, List<MFDJIFIIPJD> itemList, bool isOver/* = false*/)
 		{
 			m_type = type;
 			m_itemList = itemList;

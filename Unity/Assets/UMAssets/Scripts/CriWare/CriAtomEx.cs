@@ -428,7 +428,7 @@ namespace CriWare
 			}
 
 			// // RVA: 0x81C664 Offset: 0x81C664 VA: 0x81C664
-			public Randomize3dConfig(bool followsOriginalSource, CriAtomEx.Randomize3dCalcType calculationType, float param1 = 0, float param2 = 0, float param3 = 0)
+			public Randomize3dConfig(bool followsOriginalSource, CriAtomEx.Randomize3dCalcType calculationType, float param1/* = 0*/, float param2/* = 0*/, float param3/* = 0*/)
 			{
 				this.followsOriginalSource = followsOriginalSource;
 				this.calculationType = calculationType;
@@ -448,7 +448,7 @@ namespace CriWare
 			}
 
 			// // RVA: 0x81C698 Offset: 0x81C698 VA: 0x81C698
-			public void ClearCalcParams(float initVal = 0)
+			public void ClearCalcParams(float initVal/* = 0*/)
 			{
 				for (int i = 0; i < NumOfCalcParams; ++i) {
 					calculationParameters[i] = initVal;

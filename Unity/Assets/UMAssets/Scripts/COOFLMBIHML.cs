@@ -16,7 +16,7 @@ public class COOFLMBIHML
 	private int DBOFPMOMPFH; // 0xC
 
 	//// RVA: 0x1765828 Offset: 0x1765828 VA: 0x1765828
-	public void KHEKNNFCAOI(int FKDCCLPGKDK, OKGLGHCBCJP_Database LKMHPJKIFDN, bool ECMMLBJNEKG = false)
+	public void KHEKNNFCAOI(int FKDCCLPGKDK, OKGLGHCBCJP_Database LKMHPJKIFDN, bool ECMMLBJNEKG/* = false*/)
 	{
 		List<int> rarityCnt = new List<int>();
 		for(int i = 0; i < 10; i++)

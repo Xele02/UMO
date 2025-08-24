@@ -88,7 +88,7 @@ namespace XeSys.Gfx
 			public RectTransform RectTrans { get { return m_rectTrans; } } //0x1F01710
 
 			// RVA: 0x1EFCFA8 Offset: 0x1EFCFA8 VA: 0x1EFCFA8
-			public UguiInfo(ViewBase view, RectTransform rt, bool setView = true)
+			public UguiInfo(ViewBase view, RectTransform rt, bool setView/* = true*/)
 			{
 				m_view = view;
 				m_rectTrans = rt;

@@ -66,7 +66,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x104C020 Offset: 0x104C020 VA: 0x104C020
-		public void Show(MonoBehaviour mb, CallType type, int musicId, EJKBKMBJMGL_EnemyData enemyData, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callBack, bool isSLive = false)
+		public void Show(MonoBehaviour mb, CallType type, int musicId, EJKBKMBJMGL_EnemyData enemyData, Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callBack, bool isSLive/* = false*/)
 		{
 			mb.StartCoroutineWatched(ShowCoroutine(mb, type, musicId, enemyData, callBack, isSLive));
 		}

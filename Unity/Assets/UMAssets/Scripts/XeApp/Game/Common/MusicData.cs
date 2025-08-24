@@ -188,7 +188,7 @@ namespace XeApp.Game.Common
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73A58C Offset: 0x73A58C VA: 0x73A58C
 		// // RVA: 0xAE6A98 Offset: 0xAE6A98 VA: 0xAE6A98
-		private IEnumerator LoadScoreData(AssetBundleLoadAllAssetOperationBase operation, int wavId, int variationId, int difficultyType, bool is6Line, Action<MusicScoreData> dataSetFunc, string strPrefix = "s_")
+		private IEnumerator LoadScoreData(AssetBundleLoadAllAssetOperationBase operation, int wavId, int variationId, int difficultyType, bool is6Line, Action<MusicScoreData> dataSetFunc, string strPrefix/* = "s_"*/)
 		{
 			//0xAE8084
 

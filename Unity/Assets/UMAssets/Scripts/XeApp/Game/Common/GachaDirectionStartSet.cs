@@ -30,7 +30,7 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1C1C078 Offset: 0x1C1C078 VA: 0x1C1C078
-		public void Begin(bool isRetry = false)
+		public void Begin(bool isRetry/* = false*/)
 		{
 			SoundManager.Instance.sePlayerGacha.Play((int)cs_se_gacha.SE_GACHA_000);
 			gameObject.SetActive(true);

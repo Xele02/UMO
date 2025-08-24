@@ -167,7 +167,7 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xEAA048 Offset: 0xEAA048 VA: 0xEAA048
-		public void AddBanner(int id, long start, long end, string text = "")
+		public void AddBanner(int id, long start, long end, string text/* = ""*/)
 		{
 			SelectScrollViewContent s = m_scrollView.scrollObjects.Find((SelectScrollViewContent x) =>
 			{

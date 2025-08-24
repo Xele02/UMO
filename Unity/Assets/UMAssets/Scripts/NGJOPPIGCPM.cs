@@ -80,7 +80,7 @@ public class NGJOPPIGCPM_ResultData
 	 public bool PMCGHPOGLGM_EnableLiveSkip { get { return BMAAEAOHMKD_EnableLiveSkipCrypted == CNECJGKECHK_True; } set { BMAAEAOHMKD_EnableLiveSkipCrypted = value ? CNECJGKECHK_True : JFOFMKBJBBE_False; } } //0x1AF6CE8 MANCOBIPIAG 0x1AF6CFC HIDGLBCKHOO
 
 	// RVA: 0x1AF6D2C Offset: 0x1AF6D2C VA: 0x1AF6D2C
-	public void KHEKNNFCAOI(int GHBPLHBNMBK_FreeMusicId, Difficulty.Type NOAKHKMLPFK_diff, bool JIBFGLODGHN_EnableLiveSkip, bool GIKLNODJKFK_IsLine6 = false, int MNNHHJBBICA_GameEventType = 0)
+	public void KHEKNNFCAOI(int GHBPLHBNMBK_FreeMusicId, Difficulty.Type NOAKHKMLPFK_diff, bool JIBFGLODGHN_EnableLiveSkip, bool GIKLNODJKFK_IsLine6/* = false*/, int MNNHHJBBICA_GameEventType/* = 0*/)
     {
 		KEODKEGFDLD_FreeMusicInfo HMONFKMAFDD = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(GHBPLHBNMBK_FreeMusicId);
 		this.GHBPLHBNMBK_FreeMusicId = GHBPLHBNMBK_FreeMusicId;

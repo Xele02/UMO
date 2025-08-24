@@ -102,7 +102,7 @@ public class GHLGEECLCMH
 	}
 
 	//// RVA: 0xAA6420 Offset: 0xAA6420 VA: 0xAA6420
-	public List<ECEPJHGMGBJ> BGMPAMNAKHN_GetMusicRateList(int FJFCNGNGIBN = 0)
+	public List<ECEPJHGMGBJ> BGMPAMNAKHN_GetMusicRateList(int FJFCNGNGIBN/* = 0*/)
 	{
 		List<ECEPJHGMGBJ> res = new List<ECEPJHGMGBJ>();
 		for(int i = 0; i < 10; i++)
@@ -133,7 +133,7 @@ public class GHLGEECLCMH
 	}
 
 	//// RVA: 0xAA6C20 Offset: 0xAA6C20 VA: 0xAA6C20
-	public void GLAHMLIFAPB(int KIMIHIBGONK_FreeMusicId, int FJFCNGNGIBN = 0)
+	public void GLAHMLIFAPB(int KIMIHIBGONK_FreeMusicId, int FJFCNGNGIBN/* = 0*/)
 	{
 		HBLFKGAKHHN_RankState = 0;
 		MIIAIBIGKOD_RankNum = 0;

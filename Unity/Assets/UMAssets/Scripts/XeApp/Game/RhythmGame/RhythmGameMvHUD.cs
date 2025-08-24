@@ -376,7 +376,7 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9AB618 Offset: 0x9AB618 VA: 0x9AB618 Slot: 42
-		public void HideValkyrie(bool isFaild = false)
+		public void HideValkyrie(bool isFaild/* = false*/)
 		{
 			m_valkyrieTopUi.SetActive(false);
 			m_targetSightMark.gameObject.SetActive(false);
@@ -404,7 +404,7 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		//// RVA: 0x9AB918 Offset: 0x9AB918 VA: 0x9AB918 Slot: 45
-		public void ShowDiva(bool isSpMode = false)
+		public void ShowDiva(bool isSpMode/* = false*/)
 		{
 			m_divaModeEffect.Play(cut_IN_MV_Hash, 0, 0);
 		}

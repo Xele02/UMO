@@ -193,7 +193,7 @@ namespace XeApp.Game.RhythmAdjust
 		// public bool IsReady() { }
 
 		// // RVA: 0xF5AF18 Offset: 0xF5AF18 VA: 0xF5AF18
-		public void Enter(bool isTutorial = false)
+		public void Enter(bool isTutorial/* = false*/)
 		{
 			m_bgAnime.StartChildrenAnimGoStop("go_in", "st_in");
 			if(!isTutorial)

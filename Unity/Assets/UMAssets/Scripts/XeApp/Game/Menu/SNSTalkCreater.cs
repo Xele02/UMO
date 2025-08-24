@@ -516,7 +516,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x15982CC Offset: 0x15982CC VA: 0x15982CC
-		private void ResetPage(bool isLatestPage = false)
+		private void ResetPage(bool isLatestPage/* = false*/)
 		{
 			snsController.layoutFooter.SetIconNone();
 			snsController.SNSInputDisable();
@@ -615,7 +615,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1598E64 Offset: 0x1598E64 VA: 0x1598E64
-		public void UpdateAllRead(bool isSnsCheck = false, bool isReadMessage = false)
+		public void UpdateAllRead(bool isSnsCheck/* = false*/, bool isReadMessage/* = false*/)
 		{
 			if (isReadMessage)
 				ReadMessage();
@@ -840,7 +840,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1599A94 Offset: 0x1599A94 VA: 0x1599A94
-		private int GetPageMsgCount(int page = -1)
+		private int GetPageMsgCount(int page/* = -1*/)
 		{
 			if (page == -1)
 				page = m_pageMax - 1;

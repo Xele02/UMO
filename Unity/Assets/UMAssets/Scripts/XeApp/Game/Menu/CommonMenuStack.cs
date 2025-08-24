@@ -17,7 +17,7 @@ namespace XeApp.Game.Menu
 		private bool m_labelVisible; // 0x29
 
 		//// RVA: 0x1B4A0CC Offset: 0x1B4A0CC VA: 0x1B4A0CC
-		public void EnterBackButton(bool forceAnim = false)
+		public void EnterBackButton(bool forceAnim/* = false*/)
 		{
 			m_backButton.SetOff();
 			if (m_buttonVisible && !forceAnim)
@@ -27,7 +27,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1B4A18C Offset: 0x1B4A18C VA: 0x1B4A18C
-		public void LeaveBackButton(bool forceAnim = false)
+		public void LeaveBackButton(bool forceAnim/* = false*/)
 		{
 			if (!m_buttonVisible && !forceAnim)
 				return;
@@ -43,7 +43,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1B4A2AC Offset: 0x1B4A2AC VA: 0x1B4A2AC
-		public void EnterLabel(CommonMenuStackLabel.LabelType labelType, SceneGroupCategory group, int descId, bool forceAnim = false)
+		public void EnterLabel(CommonMenuStackLabel.LabelType labelType, SceneGroupCategory group, int descId, bool forceAnim/* = false*/)
 		{
 			m_label.SetLabel(labelType);
 			m_label.SetDescription(group, descId);
@@ -54,7 +54,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1B4A6F0 Offset: 0x1B4A6F0 VA: 0x1B4A6F0
-		public void LeaveLabel(bool forceAnim = false)
+		public void LeaveLabel(bool forceAnim/* = false*/)
 		{
 			if (!m_labelVisible && !forceAnim)
 				return;

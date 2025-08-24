@@ -294,7 +294,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1D03980 Offset: 0x1D03980 VA: 0x1D03980
-		public bool GetSkillIconUv(RhythmGamePlayLog.SkillData data, ref Rect rect, int skillIndex = 0)
+		public bool GetSkillIconUv(RhythmGamePlayLog.SkillData data, ref Rect rect, int skillIndex/* = 0*/)
 		{
 			int[] a;
 			if (!data.isActive)

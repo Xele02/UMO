@@ -417,7 +417,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1527A9C Offset: 0x1527A9C VA: 0x1527A9C
-		private void OnClickValkyrieBanner(int index = 0)
+		private void OnClickValkyrieBanner(int index/* = 0*/)
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
 			this.StartCoroutineWatched(Co_GotoValkyrieSelect(index));

@@ -111,7 +111,7 @@ namespace XeApp.Game.Tutorial
 		}
 
 		// // RVA: 0xE3D3E8 Offset: 0xE3D3E8 VA: 0xE3D3E8
-		public void PreLoadResource(UnityAction finishCb, bool isAppendLayout = true)
+		public void PreLoadResource(UnityAction finishCb, bool isAppendLayout/* = true*/)
 		{
 			this.StartCoroutineWatched(PreLoadLayoutCoroutine(finishCb, isAppendLayout));
 		}
@@ -236,7 +236,7 @@ namespace XeApp.Game.Tutorial
 		}
 
 		// // RVA: 0xE3E170 Offset: 0xE3E170 VA: 0xE3E170
-		public void SetInputLimit(InputLimitButton button, UnityAction onPush, Func<ButtonBase> findButton, TutorialPointer.Direction dir = TutorialPointer.Direction.Normal)
+		public void SetInputLimit(InputLimitButton button, UnityAction onPush, Func<ButtonBase> findButton, TutorialPointer.Direction dir/* = TutorialPointer.Direction.Normal*/)
 		{
 			MenuHeaderControl.Button headerButton = 0;
 			MenuFooterControl.Button footerButton = 0;
@@ -643,7 +643,7 @@ namespace XeApp.Game.Tutorial
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6AE450 Offset: 0x6AE450 VA: 0x6AE450
 		// // RVA: 0xE3D40C Offset: 0xE3D40C VA: 0xE3D40C
-		private IEnumerator PreLoadLayoutCoroutine(UnityAction finishCb, bool isAppendLayout = false)
+		private IEnumerator PreLoadLayoutCoroutine(UnityAction finishCb, bool isAppendLayout/* = false*/)
 		{
 			//0xE43F00
 			yield return this.StartCoroutineWatched(LoadBaseLayoutCoroutine());

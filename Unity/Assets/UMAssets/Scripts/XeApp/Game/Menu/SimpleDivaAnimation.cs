@@ -520,7 +520,7 @@ namespace XeApp.Game.Menu
 		//private int GetLoopSimpleAnimationId(string motionName) { }
 
 		//// RVA: 0xC4BCF0 Offset: 0xC4BCF0 VA: 0xC4BCF0
-		public int PlayVoiceRandom(SimpleDivaVoiceSetting setting, int exclusionId = -1)
+		public int PlayVoiceRandom(SimpleDivaVoiceSetting setting, int exclusionId/* = -1*/)
 		{
 			int a = m_voicePlayer.PlayVoiceRandom(setting.m_voiceSetting, exclusionId);
 			this.StartCoroutineWatched(Co_SimpleLipSync(setting));

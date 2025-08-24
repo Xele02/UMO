@@ -56,7 +56,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x12E1708 Offset: 0x12E1708 VA: 0x12E1708
-		public void ShowDivaStatusPopupWindow(FFHPBEPOMAK_DivaInfo diva, DFKGGBMFFGB_PlayerInfo playerData, EAJCBFGKKFA_FriendInfo friendData, EEDKAACNBBG_MusicData musicData, bool isMoment, TransitionList.Type transitionName = TransitionList.Type.UNDEFINED, Action callBack = null, bool isFriend = false, bool isChangeScene = true, bool isCloseOnly = false, int divaSlotNumber = -1, bool isGoDiva = false)
+		public void ShowDivaStatusPopupWindow(FFHPBEPOMAK_DivaInfo diva, DFKGGBMFFGB_PlayerInfo playerData, EAJCBFGKKFA_FriendInfo friendData, EEDKAACNBBG_MusicData musicData, bool isMoment, TransitionList.Type transitionName/* = TransitionList.Type.UNDEFINED*/, Action callBack/* = null*/, bool isFriend/* = false*/, bool isChangeScene/* = true*/, bool isCloseOnly/* = false*/, int divaSlotNumber/* = -1*/, bool isGoDiva/* = false*/)
 		{
 			if(!isGoDiva)
 			{
@@ -167,7 +167,7 @@ namespace XeApp.Game.Menu
         }
 
 		// // RVA: 0x12E21FC Offset: 0x12E21FC VA: 0x12E21FC
-		public void ShowSceneStatusPopupWindow(GCIJNCFDNON_SceneInfo scene, DFKGGBMFFGB_PlayerInfo playerData, bool isMoment, TransitionList.Type transitionName = TransitionList.Type.UNDEFINED, Action callBack = null, bool isFriend = false, bool isReward = false, SceneStatusParam.PageSave pageSave = SceneStatusParam.PageSave.Player, bool isDisableZoom = false)
+		public void ShowSceneStatusPopupWindow(GCIJNCFDNON_SceneInfo scene, DFKGGBMFFGB_PlayerInfo playerData, bool isMoment, TransitionList.Type transitionName/* = TransitionList.Type.UNDEFINED*/, Action callBack/* = null*/, bool isFriend/* = false*/, bool isReward/* = false*/, SceneStatusParam.PageSave pageSave/* = SceneStatusParam.PageSave.Player*/, bool isDisableZoom/* = false*/)
 		{
 			if(isFriend || isReward)
 			{

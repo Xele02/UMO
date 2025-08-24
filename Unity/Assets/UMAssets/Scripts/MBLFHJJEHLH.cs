@@ -72,7 +72,7 @@ public class MBLFHJJEHLH_AnketoMgr
 	public int MCJBEJBMJMF_TotalCount; // 0xC
 
 	// RVA: 0xA2F5A8 Offset: 0xA2F5A8 VA: 0xA2F5A8
-	public bool KHEKNNFCAOI(int GJLFANGDGCL_Category, bool FBBNPFFEJBN_Force = false)
+	public bool KHEKNNFCAOI(int GJLFANGDGCL_Category, bool FBBNPFFEJBN_Force/* = false*/)
 	{
 		IPJBAPLFECP_Anketo dbAnketo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OILKBADFBOK_Anketo;
 		KICOACCACII_QData.Clear();

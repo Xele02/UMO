@@ -169,7 +169,7 @@ public class DCAKKIJODME : JDMLEAOJAJO
 	public int FHBAEDLKEEN_Rank { get { return PEKBNIPCGJB_Crypted ^ FBGGEFFJJHB; } set { PEKBNIPCGJB_Crypted = value ^ FBGGEFFJJHB; } } //0x176EE78 GMMJFPPANLA 0x176EE8C EJCOLGLELOL
 
 	// // RVA: 0x176EEA0 Offset: 0x176EEA0 VA: 0x176EEA0
-	public void KHEKNNFCAOI(bool PDEFINMIIDE = false)
+	public void KHEKNNFCAOI(bool PDEFINMIIDE/* = false*/)
     {
         IGIPKOJJIIA_TotalScore = 0;
         FHBAEDLKEEN_Rank = 0;
@@ -208,7 +208,7 @@ public class DCAKKIJODME : JDMLEAOJAJO
     }
 
 	// // RVA: 0x176EEB4 Offset: 0x176EEB4 VA: 0x176EEB4
-	public void PJHMKEGKMGH(bool MCBICECCNGO = false)
+	public void PJHMKEGKMGH(bool MCBICECCNGO/* = false*/)
     {
         MPALKPJIDPA.Clear();
         HAEDCCLHEMN_EventBattle ev = GGBDCHMDCFA();

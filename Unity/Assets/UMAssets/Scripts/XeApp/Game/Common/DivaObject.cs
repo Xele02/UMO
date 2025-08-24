@@ -58,7 +58,7 @@ namespace XeApp.Game.Common
 		} } //0x1BF6CA0
 		
 		//// RVA: 0x1BF227C Offset: 0x1BF227C VA: 0x1BF227C
-		public void Initialize(DivaResource resource, int divaId, bool useCommonMike = false)
+		public void Initialize(DivaResource resource, int divaId, bool useCommonMike/* = false*/)
 		{
 			InnerInitialize(resource, divaId, useCommonMike, true);
 			SetupEffectObject(resource.prefabEffect);
@@ -66,7 +66,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF25B4 Offset: 0x1BF25B4 VA: 0x1BF25B4
-		public void InitializeSub(DivaResource resource, int divaId, bool useCommonMike = false)
+		public void InitializeSub(DivaResource resource, int divaId, bool useCommonMike/* = false*/)
 		{
 			InnerInitialize(resource, divaId, useCommonMike, false);
 			SetupEffectObject(resource.subPrefabEffect);
@@ -417,7 +417,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF4A38 Offset: 0x1BF4A38 VA: 0x1BF4A38
-		public void LockBoneSpring(int a_index = 0)
+		public void LockBoneSpring(int a_index/* = 0*/)
 		{
 			if(boneSpringController != null)
 			{
@@ -426,7 +426,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF4AF4 Offset: 0x1BF4AF4 VA: 0x1BF4AF4
-		public void UnlockBoneSpring(bool a_fix = false, int a_index = 0)
+		public void UnlockBoneSpring(bool a_fix/* = false*/, int a_index/* = 0*/)
 		{
 			if(!a_fix)
 			{
@@ -444,7 +444,7 @@ namespace XeApp.Game.Common
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7364BC Offset: 0x7364BC VA: 0x7364BC
 		//// RVA: 0x1BF4C2C Offset: 0x1BF4C2C VA: 0x1BF4C2C
-		protected IEnumerator WaitUnlockBoneSpring(int a_index = 0)
+		protected IEnumerator WaitUnlockBoneSpring(int a_index/* = 0*/)
 		{
 			//0x1BF7B84
 			isWaitUnlockBoneSpring = true;
@@ -458,7 +458,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF4CF4 Offset: 0x1BF4CF4 VA: 0x1BF4CF4
-		public void WaitLockBoneSpring(int a_index = 0, float a_seconds = 0.05f)
+		public void WaitLockBoneSpring(int a_index/* = 0*/, float a_seconds/* = 0.05f*/)
 		{
 			if (m_coroutine_wait_lock != null)
 				this.StopCoroutineWatched(m_coroutine_wait_lock);
@@ -469,7 +469,7 @@ namespace XeApp.Game.Common
 
 		//[IteratorStateMachineAttribute] // RVA: 0x736534 Offset: 0x736534 VA: 0x736534
 		//// RVA: 0x1BF4D7C Offset: 0x1BF4D7C VA: 0x1BF4D7C
-		public IEnumerator CoroutineWaitLockBoneSpring(int a_index = 0, float a_seconds = 0.1f)
+		public IEnumerator CoroutineWaitLockBoneSpring(int a_index/* = 0*/, float a_seconds/* = 0.1f*/)
 		{
 			//0x1BF7988
 			if(!m_is_wait_lock)
@@ -598,7 +598,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF5C50 Offset: 0x1BF5C50 VA: 0x1BF5C50
-		protected void Anim_Play(string stateName, double time = 0)
+		protected void Anim_Play(string stateName, double time/* = 0*/)
 		{
 			animator.Play(stateName, 0);
 			facialBlendAnimMediator.selfAnimator.Play(stateName, 0);
@@ -614,7 +614,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF5ED0 Offset: 0x1BF5ED0 VA: 0x1BF5ED0
-		protected void Anim_CrossFadeInFixedTime(string stateName, float fixedTime = 0)
+		protected void Anim_CrossFadeInFixedTime(string stateName, float fixedTime/* = 0*/)
 		{
 			animator.CrossFadeInFixedTime(stateName, fixedTime, 0);
 			facialBlendAnimMediator.selfAnimator.CrossFadeInFixedTime(stateName, fixedTime, 0);
@@ -747,7 +747,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF7314 Offset: 0x1BF7314 VA: 0x1BF7314
-		public void SetEnableEffect(bool a_enable, bool a_save_ignore = false)
+		public void SetEnableEffect(bool a_enable, bool a_save_ignore/* = false*/)
 		{
 			if(!a_save_ignore)
 			{
@@ -813,7 +813,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1BF767C Offset: 0x1BF767C VA: 0x1BF767C
-		public void SetEnableWind(bool a_enable, bool a_save_ignore = false)
+		public void SetEnableWind(bool a_enable, bool a_save_ignore/* = false*/)
 		{
 			if (!a_save_ignore)
 			{

@@ -451,7 +451,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xBA38F8 Offset: 0xBA38F8 VA: 0xBA38F8
-		protected void JumpToProfile(EAJCBFGKKFA_FriendInfo friendData, ProfilMenuLayout.ButtonType btnType = 0)
+		protected void JumpToProfile(EAJCBFGKKFA_FriendInfo friendData, ProfilMenuLayout.ButtonType btnType/* = 0*/)
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
 			m_holdFriendInfo = true;

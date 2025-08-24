@@ -50,7 +50,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71EAFC Offset: 0x71EAFC VA: 0x71EAFC
 		// // RVA: 0x1D1BDE4 Offset: 0x1D1BDE4 VA: 0x1D1BDE4
-		private IEnumerator Co_WaitAnim(AbsoluteLayout layout, bool enableSkip = true)
+		private IEnumerator Co_WaitAnim(AbsoluteLayout layout, bool enableSkip/* = true*/)
 		{
 			//0x1D1C01C
 			while(layout.IsPlayingChildren())

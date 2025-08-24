@@ -474,7 +474,7 @@ public class IOGKADECKOP
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B3F88 Offset: 0x6B3F88 VA: 0x6B3F88
 	// // RVA: 0xA07174 Offset: 0xA07174 VA: 0xA07174
-	private IEnumerator ABPGOJDKKHO_Coroutine_PopupShowSNS(Action KBCBGIGOLHP, Action AOCANKOMKFG, bool DLNDPMNLMGC = false)
+	private IEnumerator ABPGOJDKKHO_Coroutine_PopupShowSNS(Action KBCBGIGOLHP, Action AOCANKOMKFG, bool DLNDPMNLMGC/* = false*/)
 	{
 		//0x1405480
 		if(!AppEnv.IsCBT())

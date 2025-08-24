@@ -43,7 +43,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x16F6AD4 Offset: 0x16F6AD4 VA: 0x16F6AD4
-		public static SimpleVoicePlayer.VoiceSetting VoiceSetting(VoiceType type, int divaId = 1)
+		public static SimpleVoicePlayer.VoiceSetting VoiceSetting(VoiceType type, int divaId/* = 1*/)
 		{
 			SimpleVoicePlayer.VoiceSetting setting = voiceSettingList[(int)type].m_voiceSetting;
 			if(type == VoiceType.ItemSelect)

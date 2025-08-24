@@ -325,7 +325,7 @@ public class NKGJPJPHLIF
 	}
 
 	// // RVA: 0xC17FB4 Offset: 0xC17FB4 VA: 0xC17FB4
-	public void HGJKAEOLMJN_InitializePlayerToken(IMCBBOAFION KLMFJJCNBIP_OnSuccess, DJBHIFLHJLK JGKOLBLPMPG_OnFail, bool MKFJAGGLEFL = true, bool FBBNPFFEJBN = false)
+	public void HGJKAEOLMJN_InitializePlayerToken(IMCBBOAFION KLMFJJCNBIP_OnSuccess, DJBHIFLHJLK JGKOLBLPMPG_OnFail, bool MKFJAGGLEFL/* = true*/, bool FBBNPFFEJBN/* = false*/)
 	{
 		N.a.StartCoroutineWatched(PFKIHFCAPNC_Coroutine_InitializePlayerToken(KLMFJJCNBIP_OnSuccess, JGKOLBLPMPG_OnFail, MKFJAGGLEFL, FBBNPFFEJBN));
 	}

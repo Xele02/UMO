@@ -467,7 +467,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1538F30 Offset: 0x1538F30 VA: 0x1538F30
-		public void IsValInfoChange(bool isInfoChange = true)
+		public void IsValInfoChange(bool isInfoChange/* = true*/)
 		{
 			if (!isInfoChange)
 				m_InfoChangeAnim.StartChildrenAnimGoStop("st_wait", "st_wait");

@@ -32,7 +32,7 @@ namespace CriWare
 		public IntPtr nativeHandle { get {return this.handle;} } // 0x2886A88
 
 		// // RVA: 0x2886650 Offset: 0x2886650 VA: 0x2886650
-		public CriAtomEx3dSource(CriAtomSource source, bool enableVoicePriorityDecay = false, uint randomPositionListMaxLength = 0)
+		public CriAtomEx3dSource(CriAtomSource source, bool enableVoicePriorityDecay/* = false*/, uint randomPositionListMaxLength/* = 0*/)
 		{
 			Config config = new Config(enableVoicePriorityDecay, randomPositionListMaxLength, source);
 			this.handle = criAtomEx3dSource_Create(ref config, IntPtr.Zero, 0);

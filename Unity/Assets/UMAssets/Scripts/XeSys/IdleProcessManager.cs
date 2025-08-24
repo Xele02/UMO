@@ -71,7 +71,7 @@ namespace XeSys
 		}
 
 		// // RVA: 0x1EF2D24 Offset: 0x1EF2D24 VA: 0x1EF2D24
-		public int Register(Func<IdleProcessManager.ProcessResult> process, int priority, float weight = 0)
+		public int Register(Func<IdleProcessManager.ProcessResult> process, int priority, float weight/* = 0*/)
 		{
 			int target = idle;
 			if(idle == -1)
@@ -100,7 +100,7 @@ namespace XeSys
 		}
 
 		// // RVA: 0x1EF34C8 Offset: 0x1EF34C8 VA: 0x1EF34C8
-		public int Register(IEnumerator coroutine, int priority, float weight = 0)
+		public int Register(IEnumerator coroutine, int priority, float weight/* = 0*/)
 		{
 			return Register(() => {
 				//0x1EF3F08

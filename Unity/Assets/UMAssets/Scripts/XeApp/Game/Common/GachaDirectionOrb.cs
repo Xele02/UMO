@@ -32,13 +32,13 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1C1D990 Offset: 0x1C1D990 VA: 0x1C1D990
-		public void Setup(GachaDirectionOrb.ColorType type, bool isRetry = false)
+		public void Setup(GachaDirectionOrb.ColorType type, bool isRetry/* = false*/)
 		{
 			m_type = type;
 		}
 
 		// // RVA: 0x1C1D998 Offset: 0x1C1D998 VA: 0x1C1D998
-		public void Begin(bool isRetry = false)
+		public void Begin(bool isRetry/* = false*/)
 		{
 			if(isRetry)
 			{

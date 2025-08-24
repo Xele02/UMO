@@ -42,7 +42,7 @@ namespace XeApp.Game.Menu
 		private StatusData m_status = new StatusData(); // 0x58
 
 		//// RVA: 0xA6AE5C Offset: 0xA6AE5C VA: 0xA6AE5C
-		public void SetSkill(FFHPBEPOMAK_DivaInfo divaData, DFKGGBMFFGB_PlayerInfo playerData, bool isCenter, int musicId = 0)
+		public void SetSkill(FFHPBEPOMAK_DivaInfo divaData, DFKGGBMFFGB_PlayerInfo playerData, bool isCenter, int musicId/* = 0*/)
 		{
 			if(divaData.FGFIBOBAPIA_SceneId < 1)
 			{

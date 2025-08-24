@@ -607,7 +607,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71DD0C Offset: 0x71DD0C VA: 0x71DD0C
 		// // RVA: 0x1D130AC Offset: 0x1D130AC VA: 0x1D130AC
-		private IEnumerator Co_WaitForSeconds(float wait, bool enableSkip = true)
+		private IEnumerator Co_WaitForSeconds(float wait, bool enableSkip/* = true*/)
 		{
 			float time;
 
@@ -628,7 +628,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71DDFC Offset: 0x71DDFC VA: 0x71DDFC
 		// // RVA: 0x1D13290 Offset: 0x1D13290 VA: 0x1D13290
-		private IEnumerator Co_WaitFrame(AbsoluteLayout layout, int frame, bool enableSkip = true)
+		private IEnumerator Co_WaitFrame(AbsoluteLayout layout, int frame, bool enableSkip/* = true*/)
 		{
 			//0x1D17A3C
 			while(!enableSkip || !(enableSkip && m_isSkiped))
@@ -641,7 +641,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x71DE74 Offset: 0x71DE74 VA: 0x71DE74
 		// // RVA: 0x1D13388 Offset: 0x1D13388 VA: 0x1D13388
-		private IEnumerator Co_WaitAnim(AbsoluteLayout layout, bool enableSkip = true)
+		private IEnumerator Co_WaitAnim(AbsoluteLayout layout, bool enableSkip/* = true*/)
 		{
 			//0x1D176F8
 			while(true)
@@ -662,7 +662,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1D13468 Offset: 0x1D13468 VA: 0x1D13468
-		private void PlaySound(int cueId, bool enableSkip = true)
+		private void PlaySound(int cueId, bool enableSkip/* = true*/)
 		{
 			if (m_isSkiped && enableSkip)
 				return;

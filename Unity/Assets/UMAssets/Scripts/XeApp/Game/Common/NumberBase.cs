@@ -48,7 +48,7 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAF43B4 Offset: 0xAF43B4 VA: 0xAF43B4 Slot: 6
-		public virtual void SetNumber(int number, int minDgit = 0)
+		public virtual void SetNumber(int number, int minDgit/* = 0*/)
 		{
 			m_number = number;
 			if (number >= m_numberMax)
@@ -89,7 +89,7 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAF46F8 Offset: 0xAF46F8 VA: 0xAF46F8 Slot: 8
-		public virtual void SetDigitLength(int length, bool isForce = false)
+		public virtual void SetDigitLength(int length, bool isForce/* = false*/)
 		{
 			if(!isForce && m_digitMax < length)
 				return;

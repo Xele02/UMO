@@ -28,7 +28,7 @@ namespace XeApp.Game.AR
         }
 
         // RVA: 0x161D3D0 Offset: 0x161D3D0 VA: 0x161D3D0
-        public bool IsHitDiva(Vector3 pos, float scale = 1)
+        public bool IsHitDiva(Vector3 pos, float scale/* = 1*/)
         {
             if(m_divaObject.divaPrefab != null)
             {

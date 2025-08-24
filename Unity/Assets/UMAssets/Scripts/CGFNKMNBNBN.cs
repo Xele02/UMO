@@ -39,7 +39,7 @@ public class CGFNKMNBNBN
 	}
 
 	// // RVA: 0x12B98EC Offset: 0x12B98EC VA: 0x12B98EC
-	public static void HHGLKFFKFAB(int HILIKOLBGEJ = -1)
+	public static void HHGLKFFKFAB(int HILIKOLBGEJ/* = -1*/)
 	{
 		List<DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo> listDiva = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList;
 		for (int i = 0; i < listDiva.Count; i++)

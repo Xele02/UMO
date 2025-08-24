@@ -458,7 +458,7 @@ public class JLKEOGLJNOD_TeamInfo
 	}
 
 	// // RVA: 0x147A020 Offset: 0x147A020 VA: 0x147A020
-	public void LDPCJAKOKHB(int GPPEFLKGGGJ_ValkyrieId, int GCCNMFHELCB_Form = -1)
+	public void LDPCJAKOKHB(int GPPEFLKGGGJ_ValkyrieId, int GCCNMFHELCB_Form/* = -1*/)
 	{
 		if (GPPEFLKGGGJ_ValkyrieId == 0)
 		{

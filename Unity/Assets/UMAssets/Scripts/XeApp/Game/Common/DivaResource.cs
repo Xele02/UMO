@@ -782,7 +782,7 @@ namespace XeApp.Game.Common
 		// private static void AssertCostumeColorTexture(Texture tex, string texName) { }
 
 		// // RVA: 0x1BF9384 Offset: 0x1BF9384 VA: 0x1BF9384
-		public void LoadMusicAnimationResource(int wavId, int primeId, int positionId = 1, int divaNum = 1, int divaId = 0)
+		public void LoadMusicAnimationResource(int wavId, int primeId, int positionId/* = 1*/, int divaNum/* = 1*/, int divaId/* = 0*/)
 		{
 			this.positionId = positionId;
 			if(!isLoadedMusicAnimationResource)
@@ -791,7 +791,7 @@ namespace XeApp.Game.Common
 
 		// [IteratorStateMachineAttribute] // RVA: 0x736868 Offset: 0x736868 VA: 0x736868
 		// // RVA: 0x1BF93D8 Offset: 0x1BF93D8 VA: 0x1BF93D8
-		private IEnumerator Co_LoadMusicAnimationResource(int wavId, int primeId, int positionId = 1, int divaNum = 1, int divaId = 0)
+		private IEnumerator Co_LoadMusicAnimationResource(int wavId, int primeId, int positionId/* = 1*/, int divaNum/* = 1*/, int divaId/* = 0*/)
 		{
 			// private int <>1__state; // 0x8
 			// private object <>2__current; // 0xC
@@ -1026,7 +1026,7 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BF984C Offset: 0x1BF984C VA: 0x1BF984C
-		public void LoadMenuResource(int divaId, int modelId, DivaResource.MenuFacialType facialType, ResultScoreRank.Type scoreRank = ResultScoreRank.Type.Illegal)
+		public void LoadMenuResource(int divaId, int modelId, DivaResource.MenuFacialType facialType, ResultScoreRank.Type scoreRank/* = ResultScoreRank.Type.Illegal*/)
 		{
 			if(!isLoadedMenuAnimationResource)
 			{
@@ -1602,7 +1602,7 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BF9FAC Offset: 0x1BF9FAC VA: 0x1BF9FAC
-		public void LoadSubResource(int modelId, int colorId, int divaId = 0)
+		public void LoadSubResource(int modelId, int colorId, int divaId/* = 0*/)
 		{
 			if(!isLoadedSubCostumeResource)
 			{

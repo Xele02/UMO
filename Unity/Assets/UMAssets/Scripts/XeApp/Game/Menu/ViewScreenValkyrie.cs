@@ -271,7 +271,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1CE8400 Offset: 0x1CE8400 VA: 0x1CE8400
-		public static GameObject Create(int vfId, int form, Action _ShowLodingEffect, Action _HideLodingEffect, bool _IsCameraMan = true)
+		public static GameObject Create(int vfId, int form, Action _ShowLodingEffect, Action _HideLodingEffect, bool _IsCameraMan/* = true*/)
 		{
 			GameObject go = new GameObject("View Mode Valkyrie");
 			ViewScreenValkyrie v = go.AddComponent<ViewScreenValkyrie>();

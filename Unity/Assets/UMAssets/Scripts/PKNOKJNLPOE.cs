@@ -516,7 +516,7 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x9400D4 Offset: 0x9400D4 VA: 0x9400D4 Slot: 32
-	public override EECOJKDJIFG DAKMIKNKHMF_GetRankingInfoForIndex(int LHJCOPMMIGO = 0)
+	public override EECOJKDJIFG DAKMIKNKHMF_GetRankingInfoForIndex(int LHJCOPMMIGO/* = 0*/)
 	{
 		return KBACNOCOANM;
 	}
@@ -692,7 +692,7 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x941710 Offset: 0x941710 VA: 0x941710 Slot: 27
-	public override int HLOGNJNGDJO_GetHelpId(int OIPCCBHIKIA = 0)
+	public override int HLOGNJNGDJO_GetHelpId(int OIPCCBHIKIA/* = 0*/)
 	{
 		BKOGPDBKFFJ_EventRaid ev = FJLIDJJAGOM();
 		if(ev != null)
@@ -714,7 +714,7 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x941AA8 Offset: 0x941AA8 VA: 0x941AA8 Slot: 29
-	public override void MJFKJHJJLMN_GetRanks(int LHJCOPMMIGO = 0, bool FBBNPFFEJBN = false)
+	public override void MJFKJHJJLMN_GetRanks(int LHJCOPMMIGO/* = 0*/, bool FBBNPFFEJBN/* = false*/)
 	{
 		NPNNPNAIONN = false;
 		PLOOEECNHFB = false;
@@ -1363,7 +1363,7 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x9456FC Offset: 0x9456FC VA: 0x9456FC Slot: 66
-	public override void FGDDBFHGCGP_SetStartAdventureShown(bool JKDJCFEBDHC, long JHNMKKNEENE = 0)
+	public override void FGDDBFHGCGP_SetStartAdventureShown(bool JKDJCFEBDHC, long JHNMKKNEENE/* = 0*/)
 	{
 		if(JKDJCFEBDHC)
 		{

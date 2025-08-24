@@ -179,7 +179,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x705E6C Offset: 0x705E6C VA: 0x705E6C
 		// // RVA: 0x1D5CD24 Offset: 0x1D5CD24 VA: 0x1D5CD24
-		private IEnumerator Co_WaitAnim(AbsoluteLayout layout, bool enableSkip = true)
+		private IEnumerator Co_WaitAnim(AbsoluteLayout layout, bool enableSkip/* = true*/)
 		{
 			//0x1D5E8E4
 			while(true)

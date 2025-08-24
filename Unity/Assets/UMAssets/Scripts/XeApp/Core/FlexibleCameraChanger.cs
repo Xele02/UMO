@@ -153,7 +153,7 @@ namespace XeApp.Core
 		//private bool IsOverAspectVdivH() { }
 
 		//// RVA: 0x1D6FC24 Offset: 0x1D6FC24 VA: 0x1D6FC24
-		public static FlexibleCameraChanger AddComponent(GameObject go, bool flexibleViewport, bool flexibleFov, float baseWidth = 0, float baseHeight = 0)
+		public static FlexibleCameraChanger AddComponent(GameObject go, bool flexibleViewport, bool flexibleFov, float baseWidth/* = 0*/, float baseHeight/* = 0*/)
 		{
 			FlexibleCameraChanger res = go.AddComponent<FlexibleCameraChanger>();
 			res.isEnableFlexibleFov = flexibleFov;

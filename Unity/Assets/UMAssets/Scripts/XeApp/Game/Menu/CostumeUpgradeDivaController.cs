@@ -44,7 +44,7 @@ namespace XeApp.Game.Menu
 		public bool Unused() { return m_queSheetName == null; }
 
 		//// RVA: 0x16F1B30 Offset: 0x16F1B30 VA: 0x16F1B30
-		public void Initialize(Controlype type, int divaId, int costumeModelId, int colorId = 0)
+		public void Initialize(Controlype type, int divaId, int costumeModelId, int colorId/* = 0*/)
 		{
 			m_type = type;
 			m_divaId = divaId;
@@ -250,7 +250,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x16F2814 Offset: 0x16F2814 VA: 0x16F2814
-		public int PlayVoice(CostumeUpgradeVoiceDataTable.VoiceType type, int exclusionId = -1)
+		public int PlayVoice(CostumeUpgradeVoiceDataTable.VoiceType type, int exclusionId/* = -1*/)
 		{
 			return m_simpleDivaAnimation.PlayVoiceRandom(CostumeUpgradeVoiceDataTable.VoiceTable(type), exclusionId);
 		}

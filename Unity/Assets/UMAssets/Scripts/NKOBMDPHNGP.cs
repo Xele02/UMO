@@ -137,7 +137,7 @@ public class NKOBMDPHNGP_EventRaidLobby : IKDICBBFBMI_EventBase
 	// public bool FCLIMIPGPAB { get; }
 
 	// // RVA: 0xC1E3C8 Offset: 0xC1E3C8 VA: 0xC1E3C8 Slot: 32
-	public override EECOJKDJIFG DAKMIKNKHMF_GetRankingInfoForIndex(int LHJCOPMMIGO = 0)
+	public override EECOJKDJIFG DAKMIKNKHMF_GetRankingInfoForIndex(int LHJCOPMMIGO/* = 0*/)
 	{
 		return KBACNOCOANM;
 	}
@@ -179,7 +179,7 @@ public class NKOBMDPHNGP_EventRaidLobby : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0xC1E9B8 Offset: 0xC1E9B8 VA: 0xC1E9B8 Slot: 27
-	public override int HLOGNJNGDJO_GetHelpId(int OIPCCBHIKIA = 0)
+	public override int HLOGNJNGDJO_GetHelpId(int OIPCCBHIKIA/* = 0*/)
 	{
         LDEBIBGHCGD_EventRaidLobby ev = FJLIDJJAGOM();
 		if(ev == null)

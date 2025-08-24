@@ -62,7 +62,7 @@ namespace XeSys.Gfx
 		// public void Initialize(FrameData[] frameDatas, Dictionary<int, string> labelList) { }
 
 		// // RVA: 0x1EE8984 Offset: 0x1EE8984 VA: 0x1EE8984
-		public void InitializeEmptyAnimation(bool force = false)
+		public void InitializeEmptyAnimation(bool force/* = false*/)
 		{
 			if(!force && data != null)
 				return;

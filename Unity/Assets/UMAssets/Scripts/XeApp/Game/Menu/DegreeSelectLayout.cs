@@ -164,7 +164,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x11E5040 Offset: 0x11E5040 VA: 0x11E5040
-		public void Init(bool allDebug = false)
+		public void Init(bool allDebug/* = false*/)
 		{
 			m_degree_list = IAPDFOPPGND.FKDIMODKKJD(allDebug);
 			m_degree_mol.SetNumber(m_degree_list.Count - 1, 0);

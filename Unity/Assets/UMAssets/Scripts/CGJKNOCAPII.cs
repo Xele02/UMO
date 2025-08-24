@@ -28,7 +28,7 @@ public class CGJKNOCAPII
 	}
 
 	//// RVA: 0x12BC584 Offset: 0x12BC584 VA: 0x12BC584
-	public CGJKNOCAPII BJKJLDPDEFA(IKDICBBFBMI_EventBase FBFNJMKPBBA, bool PNGKOHDEPFE = true)
+	public CGJKNOCAPII BJKJLDPDEFA(IKDICBBFBMI_EventBase FBFNJMKPBBA, bool PNGKOHDEPFE/* = true*/)
 	{
 		long l1 = 0;
 		long l2 = 0;
@@ -86,7 +86,7 @@ public class CGJKNOCAPII
 	}
 
 	//// RVA: 0x12BC978 Offset: 0x12BC978 VA: 0x12BC978
-	public static List<CGJKNOCAPII> JHCHAOJFHFG(bool PNGKOHDEPFE = true)
+	public static List<CGJKNOCAPII> JHCHAOJFHFG(bool PNGKOHDEPFE/* = true*/)
 	{
 		List<CGJKNOCAPII> res = new List<CGJKNOCAPII>();
 		List<CGJKNOCAPII> l2 = new List<CGJKNOCAPII>();
@@ -151,7 +151,7 @@ public class CGJKNOCAPII
 	}
 
 	//// RVA: 0x12BD220 Offset: 0x12BD220 VA: 0x12BD220
-	public CGJKNOCAPII NLCNDMLOCBC(int APFDNBGMMMM, bool PNGKOHDEPFE = true)
+	public CGJKNOCAPII NLCNDMLOCBC(int APFDNBGMMMM, bool PNGKOHDEPFE/* = true*/)
 	{
 		CGJKNOCAPII res = new CGJKNOCAPII();
 		res.JOPOPMLFINI_QuastName = "";
@@ -187,7 +187,7 @@ public class CGJKNOCAPII
 	}
 
 	//// RVA: 0x12BD520 Offset: 0x12BD520 VA: 0x12BD520
-	public static List<CGJKNOCAPII> GOGBAODOOAO(bool PNGKOHDEPFE = true)
+	public static List<CGJKNOCAPII> GOGBAODOOAO(bool PNGKOHDEPFE/* = true*/)
 	{
 		List<CGJKNOCAPII> res = new List<CGJKNOCAPII>();
 		if(GNGMCIAIKMA.HHCJCDFCLOB != null)

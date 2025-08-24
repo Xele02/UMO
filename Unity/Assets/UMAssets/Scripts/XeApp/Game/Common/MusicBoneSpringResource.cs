@@ -29,7 +29,7 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x11187A8 Offset: 0x11187A8 VA: 0x11187A8
-		public void LoadMusicResouces(int wavId, int primeId, int stageDivaNum, int positionId = 0)
+		public void LoadMusicResouces(int wavId, int primeId, int stageDivaNum, int positionId/* = 0*/)
 		{
 			this.StartCoroutineWatched(Co_LoadAllResouces(wavId, primeId, stageDivaNum, positionId));
 		}

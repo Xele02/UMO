@@ -51,7 +51,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x19EC0D8 Offset: 0x19EC0D8 VA: 0x19EC0D8
-		public void SetSetting(EAJCBFGKKFA_FriendInfo friend, bool isFan = false, int fanNum = 0)
+		public void SetSetting(EAJCBFGKKFA_FriendInfo friend, bool isFan/* = false*/, int fanNum/* = 0*/)
 		{
 			m_visitPlayerData = friend;
 			m_nameText.text = friend.LBODHBDOMGK_Name;

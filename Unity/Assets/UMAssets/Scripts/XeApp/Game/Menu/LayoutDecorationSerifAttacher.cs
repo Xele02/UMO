@@ -48,7 +48,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x18B8BEC Offset: 0x18B8BEC VA: 0x18B8BEC
-		public void Show(int charaId, int serifId = 0)
+		public void Show(int charaId, int serifId/* = 0*/)
 		{
 			m_charaId = charaId;
 			m_serifId = serifId;

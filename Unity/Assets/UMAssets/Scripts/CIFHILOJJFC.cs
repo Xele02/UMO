@@ -80,7 +80,7 @@ public class CIFHILOJJFC
 	}
 
 	// // RVA: 0xFF5EB0 Offset: 0xFF5EB0 VA: 0xFF5EB0
-	public void ODDIHGPONFL_Copy(CIFHILOJJFC GPBJHKLFCEP, bool OIBBFBLBLMH = false)
+	public void ODDIHGPONFL_Copy(CIFHILOJJFC GPBJHKLFCEP, bool OIBBFBLBLMH/* = false*/)
 	{
 		OPFGFINHFCE_Name = GPBJHKLFCEP.OPFGFINHFCE_Name;
 		for(int i = 0; i < 3; i++)

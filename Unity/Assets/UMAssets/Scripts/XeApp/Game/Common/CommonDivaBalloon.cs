@@ -119,7 +119,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0xE66714 Offset: 0xE66714 VA: 0xE66714
-		public void Enter(bool force = false)
+		public void Enter(bool force/* = false*/)
 		{
 			if (m_textMessage.text == "")
 				return;
@@ -131,7 +131,7 @@ namespace XeApp.Game.Common
 		//public void Enter(float animTime, bool force = False) { }
 
 		//// RVA: 0xE66450 Offset: 0xE66450 VA: 0xE66450
-		public void Leave(bool force = false)
+		public void Leave(bool force/* = false*/)
 		{
 			m_inOutAnime.Leave(force, null);
 		}

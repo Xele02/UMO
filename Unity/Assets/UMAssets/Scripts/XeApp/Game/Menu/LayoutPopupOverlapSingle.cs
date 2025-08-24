@@ -34,7 +34,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x17763A8 Offset: 0x17763A8 VA: 0x17763A8
-		public void SetStatus(GONMPHKGKHI_RewardView.CECMLGBLHHG type, GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo info, Text titleText, bool _isKira = false)
+		public void SetStatus(GONMPHKGKHI_RewardView.CECMLGBLHHG type, GONMPHKGKHI_RewardView.LCMJJMNMIKG_RewardInfo info, Text titleText, bool _isKira/* = false*/)
 		{
 			if(type == GONMPHKGKHI_RewardView.CECMLGBLHHG.JCGKGFLCKCP_8)
 			{

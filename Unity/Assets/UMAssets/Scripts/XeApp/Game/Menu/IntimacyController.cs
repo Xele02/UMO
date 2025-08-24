@@ -234,7 +234,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x14B084C Offset: 0x14B084C VA: 0x14B084C
-		public void EnterLongTouchTips(bool force = false)
+		public void EnterLongTouchTips(bool force/* = false*/)
 		{
 			if(m_enableLongTouchTips && m_divaTalk != null)
 			{
@@ -256,7 +256,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x14B0A74 Offset: 0x14B0A74 VA: 0x14B0A74
-		public void EnterLongTouchTips(float animTime, bool force = false)
+		public void EnterLongTouchTips(float animTime, bool force/* = false*/)
 		{
 			if(m_enableLongTouchTips && m_divaTalk != null && m_divaTalk.IsEnableReaction())
 			{
@@ -276,7 +276,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x14B0CB0 Offset: 0x14B0CB0 VA: 0x14B0CB0
-		public void LeaveLongTouchTips(bool force = false)
+		public void LeaveLongTouchTips(bool force/* = false*/)
 		{
 			bool enabled = m_viewIntimacyData.HFFOJIBDNOG();
 			if(m_viewIntimacyData.HHLEJPBEHNE() < 1)
@@ -289,7 +289,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x14B0D74 Offset: 0x14B0D74 VA: 0x14B0D74
-		public void LeaveLongTouchTips(float animTime, bool force = false)
+		public void LeaveLongTouchTips(float animTime, bool force/* = false*/)
 		{
 			bool enabled = m_viewIntimacyData.HFFOJIBDNOG();
 			if(m_viewIntimacyData.HHLEJPBEHNE() < 1)
@@ -524,7 +524,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x14B1040 Offset: 0x14B1040 VA: 0x14B1040
-		private void InitViewData(int divaId = 0)
+		private void InitViewData(int divaId/* = 0*/)
 		{
 			m_viewIntimacyData = new JJOELIOGMKK_DivaIntimacyInfo();
 			if(divaId == 0)
@@ -732,7 +732,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x14B17D4 Offset: 0x14B17D4 VA: 0x14B17D4
-		public void SetEnableDecoCounter(bool isEnabled, bool isDisableImmediately = false)
+		public void SetEnableDecoCounter(bool isEnabled, bool isDisableImmediately/* = false*/)
 		{
 			if (m_layoutCounterDeco == null)
 				return;

@@ -144,7 +144,7 @@ namespace XeApp.Game.Menu
 		//public bool IsListReady() { }
 
 		//// RVA: 0x15C9DE0 Offset: 0x15C9DE0 VA: 0x15C9DE0
-		public void SetStatus(GHLGEECLCMH view, Content tab, bool posReset = true)
+		public void SetStatus(GHLGEECLCMH view, Content tab, bool posReset/* = true*/)
 		{
 			m_view = view;
 			MakeList_Rate(view.BGMPAMNAKHN_GetMusicRateList(0));
@@ -246,7 +246,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x15CAE1C Offset: 0x15CAE1C VA: 0x15CAE1C
-		public void ChangeTab(Content tab, bool posReset = true)
+		public void ChangeTab(Content tab, bool posReset/* = true*/)
 		{
 			List<IFlexibleListItem> l = null;
 			string txt = "";

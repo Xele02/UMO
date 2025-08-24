@@ -15,7 +15,7 @@ public class WebViewObject : MonoBehaviour
 	// public void SetKeyboardVisible(string pIsVisible) { }
 
 	// RVA: 0x2F93290 Offset: 0x2F93290 VA: 0x2F93290
-	public void Init(Action<string> cb, bool transparent = false, Action<string> err = null)
+	public void Init(Action<string> cb, bool transparent/* = false*/, Action<string> err/* = null*/)
 	{
 		Debug.Log("WebViewObject name=" + name);
 		onJS = cb;

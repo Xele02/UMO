@@ -59,7 +59,7 @@ namespace XeSys
 
 
         // RVA: -1 Offset: -1
-        public IndexableDictionary(int capacity = 0)
+        public IndexableDictionary(int capacity/* = 0*/)
         {
             m_keyList = new List<TKey>(capacity);
             m_dictionary = new Dictionary<TKey, TValue>(capacity);

@@ -91,7 +91,7 @@ namespace UdonLib
 		}
 
 		// // RVA: 0xE09798 Offset: 0xE09798 VA: 0xE09798
-		public static bool OnShare2(string path, string message, string shareTitle, string mimeType = "application/octet-stream") 
+		public static bool OnShare2(string path, string message, string shareTitle, string mimeType/* = "application/octet-stream"*/) 
 		{ 
 #if UNITY_ANDROID
 			string className = "android.content.Intent";
@@ -132,7 +132,7 @@ namespace UdonLib
 
 		public static AndroidUtilsCallback callbacks = new AndroidUtilsCallback();
 
-		public static bool OpenFile(string message, Action<byte[]> onFileRead, Action<string> onFileError, string mimeType = "application/octet-stream")
+		public static bool OpenFile(string message, Action<byte[]> onFileRead, Action<string> onFileError, string mimeType/* = "application/octet-stream"*/)
 		{
 #if UNITY_ANDROID
 			string className = "android.content.Intent";

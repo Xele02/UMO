@@ -123,7 +123,7 @@ namespace XeApp.Game
 			public int groupId; // 0x1C
 
 			// RVA: 0xC9535C Offset: 0xC9535C VA: 0xC9535C
-			public ConditionSetting(int divaId = 0, int costumeModelId = 0, int valkyrieId = 0, int pilotId = 0, int positionId = 0)
+			public ConditionSetting(int divaId/* = 0*/, int costumeModelId/* = 0*/, int valkyrieId/* = 0*/, int pilotId/* = 0*/, int positionId/* = 0*/)
 			{
 				this.divaId = divaId;
 				this.costumeModelId = costumeModelId;

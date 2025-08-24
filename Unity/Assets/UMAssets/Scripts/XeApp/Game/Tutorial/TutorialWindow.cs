@@ -171,7 +171,7 @@ namespace XeApp.Game.Tutorial
 		}
 
 		//// RVA: 0x19187CC Offset: 0x19187CC VA: 0x19187CC
-		public void Show(Action finishCb, bool isBlackPlane = true)
+		public void Show(Action finishCb, bool isBlackPlane/* = true*/)
 		{
 			if (m_hideCoroutine != null)
 				this.StopCoroutineWatched(m_hideCoroutine);

@@ -99,7 +99,7 @@ namespace smartar
         private RecognitionResultHolder resultHolder_ = new RecognitionResultHolder(IntPtr.Zero); // 0x24
 
         // RVA: 0x20C2AD4 Offset: 0x20C2AD4 VA: 0x20C2AD4
-        public Recognizer(Smart smart, RecognitionMode recogMode = 0, SceneMappingInitMode initMode = 0)
+        public Recognizer(Smart smart, RecognitionMode recogMode/* = 0*/, SceneMappingInitMode initMode/* = 0*/)
         {
             self_ = sarSmartar_SarRecognizer_SarRecognizer(smart.self_, recogMode, initMode);
             thisObj_ = this;

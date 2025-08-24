@@ -248,7 +248,7 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1ABA630 Offset: 0x1ABA630 VA: 0x1ABA630
-		public static string GetItemBundleName(KDKFHGHGFEK viewData, bool useRareBrakePosterAnim, Attribute.Type attr = 0)
+		public static string GetItemBundleName(KDKFHGHGFEK viewData, bool useRareBrakePosterAnim, Attribute.Type attr/* = 0*/)
 		{
 			string str = GetItemAssetPathFormat(viewData, useRareBrakePosterAnim);
 			if(str != "")
@@ -259,7 +259,7 @@ namespace XeApp
 		}
 
 		//// RVA: 0x1ABA80C Offset: 0x1ABA80C VA: 0x1ABA80C
-		public static string GetThumbnailBundleName(KDKFHGHGFEK viewData, DecorationConstants.Attribute.Type attr = 0)
+		public static string GetThumbnailBundleName(KDKFHGHGFEK viewData, DecorationConstants.Attribute.Type attr/* = 0*/)
 		{
 			if(viewData == null)
 				return "";

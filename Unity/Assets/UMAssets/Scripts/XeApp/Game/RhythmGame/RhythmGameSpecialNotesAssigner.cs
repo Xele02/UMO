@@ -67,7 +67,7 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xC09A1C Offset: 0xC09A1C VA: 0xC09A1C
-		private void AssginFromList(List<RNote> rNoteList, ref List<int>[] a_temp_note_list, RhythmGameConsts.SpecialNoteType a_type, int a_index = -1)
+		private void AssginFromList(List<RNote> rNoteList, ref List<int>[] a_temp_note_list, RhythmGameConsts.SpecialNoteType a_type, int a_index/* = -1*/)
 		{
 			int step = Random.Range(1, 4);
 			int idx = Random.Range(0, a_temp_note_list[step].Count);

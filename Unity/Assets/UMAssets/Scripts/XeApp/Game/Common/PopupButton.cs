@@ -126,7 +126,7 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0xAF89BC Offset: 0xAF89BC VA: 0xAF89BC
-		public void SetLabel(MonoBehaviour mb, PopupButton.ButtonLabel label, PopupButton.ButtonType type = ButtonType.Positive)
+		public void SetLabel(MonoBehaviour mb, PopupButton.ButtonLabel label, PopupButton.ButtonType type/* = ButtonType.Positive*/)
 		{
 			IsReady = false;
 			mb.StartCoroutineWatched(SetLabelCoroutine(label, type));

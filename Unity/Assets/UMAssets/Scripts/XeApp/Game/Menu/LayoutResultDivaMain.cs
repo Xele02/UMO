@@ -671,7 +671,7 @@ namespace XeApp.Game.Menu
 
 		// [IteratorStateMachineAttribute] // RVA: 0x717BBC Offset: 0x717BBC VA: 0x717BBC
 		// // RVA: 0x18891A0 Offset: 0x18891A0 VA: 0x18891A0
-		private IEnumerator Co_MusicLevelExpIncreaseAnim(int divaIndex, bool BonusExp = false)
+		private IEnumerator Co_MusicLevelExpIncreaseAnim(int divaIndex, bool BonusExp/* = false*/)
 		{
 			DivaLayout dl; // 0x1C
 			float startExp; // 0x20

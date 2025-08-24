@@ -78,7 +78,7 @@ public class ALIPBIMCAPN_EventBoxGacha : KLFDBFMNLBL_ServerSaveBlock
 		public int BGCOKABBHNC_GachaTicketCnt { get { return NNAOOLFLCAE_Crypted ^ ENOBDCFHELD; } set { NNAOOLFLCAE_Crypted = value ^ ENOBDCFHELD; OGBIPMPCBEF_Crypted = value ^ FCEJCHGLFGN; } } // 0xCDAAC8 MNAHDPJGFOP 0xCDB310 DFEOLBNOMJE
 
 		// // RVA: 0xCDA114 Offset: 0xCDA114 VA: 0xCDA114
-		public void LHPDDGIJKNB(bool IJKLOFCMKCK = false)
+		public void LHPDDGIJKNB(bool IJKLOFCMKCK/* = false*/)
 		{
 			ENOBDCFHELD = (int)Utility.GetCurrentUnixTime();
 			FCEJCHGLFGN = ENOBDCFHELD ^ 0x7411141;

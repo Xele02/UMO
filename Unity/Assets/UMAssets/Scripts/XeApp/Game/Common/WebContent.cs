@@ -58,7 +58,7 @@ namespace XeApp.Game.Common
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73FAF4 Offset: 0x73FAF4 VA: 0x73FAF4
 		// // RVA: 0xD346E0 Offset: 0xD346E0 VA: 0xD346E0
-		public IEnumerator Show(string url, bool isShowBackButton = false, bool isShowCheckbox = false)
+		public IEnumerator Show(string url, bool isShowBackButton/* = false*/, bool isShowCheckbox/* = false*/)
 		{
 			//0xD34FFC
 			m_rootCanvas.enabled = false;

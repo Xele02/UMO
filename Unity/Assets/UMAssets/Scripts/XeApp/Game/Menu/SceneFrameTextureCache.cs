@@ -12,7 +12,7 @@ namespace XeApp.Game.Menu
 		private bool m_useCardUv; // 0x20
 
 		// RVA: 0x15A62E4 Offset: 0x15A62E4 VA: 0x15A62E4
-		public SceneFrameTexture(bool useCardUv = false)
+		public SceneFrameTexture(bool useCardUv/* = false*/)
 		{
 			m_useCardUv = useCardUv;
 		}

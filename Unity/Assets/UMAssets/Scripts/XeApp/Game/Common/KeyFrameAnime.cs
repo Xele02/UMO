@@ -88,13 +88,13 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1102D14 Offset: 0x1102D14 VA: 0x1102D14
-		public void Play(int index = 0, Action<KeyFrameAnime, int> callback = null)
+		public void Play(int index/* = 0*/, Action<KeyFrameAnime, int> callback/* = null*/)
 		{
 			Play(m_playType, index, callback);
 		}
 
 		//// RVA: 0x1102D54 Offset: 0x1102D54 VA: 0x1102D54
-		public void Play(PlayType type, int index = 0, Action<KeyFrameAnime, int> callback = null)
+		public void Play(PlayType type, int index/* = 0*/, Action<KeyFrameAnime, int> callback/* = null*/)
 		{
 			if(index > -1)
 			{
@@ -210,7 +210,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x110317C Offset: 0x110317C VA: 0x110317C
-		public void Stop(bool immediate = false)
+		public void Stop(bool immediate/* = false*/)
 		{
 			if(immediate && m_animCoroutine != null)
 			{

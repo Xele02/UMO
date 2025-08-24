@@ -11,7 +11,7 @@ public class HLEBAINCOME_EventScore : IKDICBBFBMI_EventBase
 	public override OHCAABOMEOF.KGOGMKMBCPP_EventType HIDHLFCBIDE_EventType { get { return OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore; } } //0x15EAAEC DKHCGLCNKCD  Slot: 4
 
 	// // RVA: 0x15EAAF4 Offset: 0x15EAAF4 VA: 0x15EAAF4 Slot: 32
-	public override EECOJKDJIFG DAKMIKNKHMF_GetRankingInfoForIndex(int LHJCOPMMIGO = 0)
+	public override EECOJKDJIFG DAKMIKNKHMF_GetRankingInfoForIndex(int LHJCOPMMIGO/* = 0*/)
 	{
 		return KBACNOCOANM;
 	}
@@ -57,7 +57,7 @@ public class HLEBAINCOME_EventScore : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x15EB0F4 Offset: 0x15EB0F4 VA: 0x15EB0F4 Slot: 29
-	public override void MJFKJHJJLMN_GetRanks(int LHJCOPMMIGO = 0, bool FBBNPFFEJBN = false)
+	public override void MJFKJHJJLMN_GetRanks(int LHJCOPMMIGO/* = 0*/, bool FBBNPFFEJBN/* = false*/)
 	{
 		NPNNPNAIONN = false;
 		PLOOEECNHFB = false;
@@ -528,7 +528,7 @@ public class HLEBAINCOME_EventScore : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x15EE24C Offset: 0x15EE24C VA: 0x15EE24C
-	public FEHINJKHDAP_EventScore.ALGDNCMJHGN JIPPHOKGLIH(bool HOENAFAJMGI = false)
+	public FEHINJKHDAP_EventScore.ALGDNCMJHGN JIPPHOKGLIH(bool HOENAFAJMGI/* = false*/)
 	{
 		HIHJGPDLNDN_EventScore ev = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI_QuestId) as HIHJGPDLNDN_EventScore;
 		if(ev != null)

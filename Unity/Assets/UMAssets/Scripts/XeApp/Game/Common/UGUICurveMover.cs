@@ -73,7 +73,7 @@ namespace XeApp.Game.Common
 		}
 
 		//// RVA: 0x1CD2F54 Offset: 0x1CD2F54 VA: 0x1CD2F54
-		public void Play(bool isLoop = false)
+		public void Play(bool isLoop/* = false*/)
 		{
 			Play(false, isLoop, 0);
 		}

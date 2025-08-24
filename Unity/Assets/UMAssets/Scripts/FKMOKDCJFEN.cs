@@ -128,7 +128,7 @@ public class FKMOKDCJFEN
 	}
 
 	//// RVA: 0x11891F8 Offset: 0x11891F8 VA: 0x11891F8
-	public void KAFDDLPNOCF(int CMEJFJFOIIJ, long JHNMKKNEENE, IKDICBBFBMI_EventBase FBFNJMKPBBA, bool GEDMCDAPPNH = false)
+	public void KAFDDLPNOCF(int CMEJFJFOIIJ, long JHNMKKNEENE, IKDICBBFBMI_EventBase FBFNJMKPBBA, bool GEDMCDAPPNH/* = false*/)
 	{
 		DLAFBGPFEON = 0;
 		CMEJFJFOIIJ_QuestId = CMEJFJFOIIJ;
@@ -360,7 +360,7 @@ public class FKMOKDCJFEN
 	//public static void LEHDLBJJBNC(List<FKMOKDCJFEN> NNDGIAEFMOG) { }
 
 	//// RVA: 0x118A404 Offset: 0x118A404 VA: 0x118A404
-	public static List<FKMOKDCJFEN> NNEHCMNOKFO_GetDailyQuests(bool FBBNPFFEJBN = false)
+	public static List<FKMOKDCJFEN> NNEHCMNOKFO_GetDailyQuests(bool FBBNPFFEJBN/* = false*/)
 	{
 		List<FKMOKDCJFEN> res = new List<FKMOKDCJFEN>();
 		IHKAGLGBDEE = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GOACJBOCLHH_Quest.DFFFCPCHBBE_EndDate();
@@ -445,25 +445,25 @@ public class FKMOKDCJFEN
 	}
 
 	//// RVA: 0x118AD14 Offset: 0x118AD14 VA: 0x118AD14
-	public static List<FKMOKDCJFEN> ABHPOFCEAEN_GetNormalQuests(bool FBBNPFFEJBN = false)
+	public static List<FKMOKDCJFEN> ABHPOFCEAEN_GetNormalQuests(bool FBBNPFFEJBN/* = false*/)
 	{
 		return CMLEFPDNBCB(FBBNPFFEJBN, 0, false);
 	}
 
 	//// RVA: 0x118B9C8 Offset: 0x118B9C8 VA: 0x118B9C8
-	public static List<FKMOKDCJFEN> IHEMBPBBIEO_GetSnsQuest(bool FBBNPFFEJBN = false)
+	public static List<FKMOKDCJFEN> IHEMBPBBIEO_GetSnsQuest(bool FBBNPFFEJBN/* = false*/)
 	{
 		return CMLEFPDNBCB(FBBNPFFEJBN, 1, false);
 	}
 
 	//// RVA: 0x118B9D4 Offset: 0x118B9D4 VA: 0x118B9D4
-	public static List<FKMOKDCJFEN> BAENBNLMPMO_GetBeginnerQuest(bool FBBNPFFEJBN = false)
+	public static List<FKMOKDCJFEN> BAENBNLMPMO_GetBeginnerQuest(bool FBBNPFFEJBN/* = false*/)
 	{
 		return CMLEFPDNBCB(FBBNPFFEJBN, 2, false);
 	}
 
 	//// RVA: 0x118AD20 Offset: 0x118AD20 VA: 0x118AD20
-	public static List<FKMOKDCJFEN> CMLEFPDNBCB(bool FBBNPFFEJBN = false, int EMJFHKHLHDB = 0, bool PLOBIFBCFMC = false)
+	public static List<FKMOKDCJFEN> CMLEFPDNBCB(bool FBBNPFFEJBN/* = false*/, int EMJFHKHLHDB/* = 0*/, bool PLOBIFBCFMC/* = false*/)
 	{
 		OKGLGHCBCJP_Database db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
 		BBHNACPENDM_ServerSaveData serverSave = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave;
@@ -596,7 +596,7 @@ public class FKMOKDCJFEN
 	}
 
 	//// RVA: 0x118B9F0 Offset: 0x118B9F0 VA: 0x118B9F0
-	public static List<FKMOKDCJFEN> KJHKBBBDBAL(string JOPOPMLFINI, bool GEDMCDAPPNH = false, int PLLOPLOEGDC = -1)
+	public static List<FKMOKDCJFEN> KJHKBBBDBAL(string JOPOPMLFINI, bool GEDMCDAPPNH/* = false*/, int PLLOPLOEGDC/* = -1*/)
 	{
 		List<FKMOKDCJFEN> res = new List<FKMOKDCJFEN>();
 		IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.LKJGDCBCLKO(JOPOPMLFINI);
@@ -706,7 +706,7 @@ public class FKMOKDCJFEN
 	}
 
 	//// RVA: 0x118C548 Offset: 0x118C548 VA: 0x118C548
-	public static void JKBOOMAPOBL(MEDJADCKPKH JONPKLHMOBL, List<int> MBFCHNDGNDP, string JOPOPMLFINI, Action<List<int>, bool> BHFHGFKBOHH, JFDNPFFOACP NIMPEHIECJH, bool KPBMFAALBKC = false)
+	public static void JKBOOMAPOBL(MEDJADCKPKH JONPKLHMOBL, List<int> MBFCHNDGNDP, string JOPOPMLFINI, Action<List<int>, bool> BHFHGFKBOHH, JFDNPFFOACP NIMPEHIECJH, bool KPBMFAALBKC/* = false*/)
 	{
 		int a = BDMMKMALOEN(JONPKLHMOBL, MBFCHNDGNDP, JOPOPMLFINI);
 		if (a < 0)

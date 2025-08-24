@@ -302,7 +302,7 @@ namespace XeApp.Game.Menu
 			public IKDICBBFBMI_EventBase contExt; // 0x5C
 
 			// // RVA: 0x1A6CC7C Offset: 0x1A6CC7C VA: 0x1A6CC7C
-			public void Init(IKDICBBFBMI_EventBase cont, bool isRaidBossSelect = false)
+			public void Init(IKDICBBFBMI_EventBase cont, bool isRaidBossSelect/* = false*/)
 			{
 				if(cont == null)
 					return;

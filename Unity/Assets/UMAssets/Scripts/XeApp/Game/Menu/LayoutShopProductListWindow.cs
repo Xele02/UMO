@@ -55,7 +55,7 @@ namespace XeApp.Game.Menu
 		// public bool IsLoading() { }
 
 		// // RVA: 0x19480C0 Offset: 0x19480C0 VA: 0x19480C0
-		public void SetStatus(AODFBGCCBPE view, List<FJGOKILCBJA> products, bool resetScroll = true)
+		public void SetStatus(AODFBGCCBPE view, List<FJGOKILCBJA> products, bool resetScroll/* = true*/)
 		{
 			m_view = view;
 			m_productList.Clear();

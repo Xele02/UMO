@@ -125,7 +125,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1B4D69C Offset: 0x1B4D69C VA: 0x1B4D69C
-		public void Enter(bool isEnd = false)
+		public void Enter(bool isEnd/* = false*/)
 		{
 			if(!is_show)
 			{
@@ -135,7 +135,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1B49E30 Offset: 0x1B49E30 VA: 0x1B49E30
-		public void Leave(bool isEnd = false)
+		public void Leave(bool isEnd/* = false*/)
 		{
 			if(is_show)
 			{
@@ -220,7 +220,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1B4D478 Offset: 0x1B4D478 VA: 0x1B4D478
-		private void SetEnergyMaxAnim(bool enable, bool force = false)
+		private void SetEnergyMaxAnim(bool enable, bool force/* = false*/)
 		{
 			if (!force && is_play_energy_max == enable)
 				return;

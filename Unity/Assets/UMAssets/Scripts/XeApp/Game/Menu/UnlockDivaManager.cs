@@ -320,7 +320,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1260950 Offset: 0x1260950 VA: 0x1260950
-		public void Release(bool isDestroyDivaManager = false)
+		public void Release(bool isDestroyDivaManager/* = false*/)
 		{
 			_menuDivaManager.EndControl(_divaControl);
 			SoundManager.Instance.voGreeting.RequestRemoveCueSheet();

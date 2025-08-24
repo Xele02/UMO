@@ -83,7 +83,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB6E21C Offset: 0xB6E21C VA: 0xB6E21C
-		public void SetItems(int divaId, int modelId = 0, int colorId = 0, bool debugAllOpen = false)
+		public void SetItems(int divaId, int modelId/* = 0*/, int colorId/* = 0*/, bool debugAllOpen/* = false*/)
 		{
 			m_divaId = divaId;
 			m_indexTry = 0;

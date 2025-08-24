@@ -150,7 +150,7 @@ namespace XeApp.Game.RhythmGame
 		}
 
 		// // RVA: 0xC0D964 Offset: 0xC0D964 VA: 0xC0D964
-		public void BeginCompleteAnim(Action callback, RhythmGameConsts.ResultComboType comboRank, bool isMvMode = false)
+		public void BeginCompleteAnim(Action callback, RhythmGameConsts.ResultComboType comboRank, bool isMvMode/* = false*/)
 		{
 			Hud.CloseSkillCutin();
 			Hud.EndAcceptOfInput();

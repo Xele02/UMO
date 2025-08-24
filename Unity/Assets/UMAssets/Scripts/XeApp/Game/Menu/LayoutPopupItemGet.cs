@@ -16,7 +16,7 @@ namespace XeApp.Game.Menu
 		private AbsoluteLayout m_queGetFnt; // 0x24
 
 		// RVA: 0x172E1EC Offset: 0x172E1EC VA: 0x172E1EC
-		public void SetStatus(int itemId, bool isPresentBox, int count = 0, string content = null)
+		public void SetStatus(int itemId, bool isPresentBox, int count/* = 0*/, string content/* = null*/)
 		{
 			if(count == 0)
 				m_ItemName.text = EKLNMHFCAOI.INCKKODFJAP_GetItemName(itemId);

@@ -100,7 +100,7 @@ public class LPPGENBEECK_MusicMaster : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x10CFC50 Offset: 0x10CFC50 VA: 0x10CFC50
-	public KLBKPANJCPL_Score ALJFMLEJEHH_GetMusicScore(int KKPAHLMJKIH_WavId, int BKJGCEOEPFB_VariationId, int NOAKHKMLPFK_Difficulty, bool GIKLNODJKFK_Line6 = false, bool IOOOMNMAGAH = true)
+	public KLBKPANJCPL_Score ALJFMLEJEHH_GetMusicScore(int KKPAHLMJKIH_WavId, int BKJGCEOEPFB_VariationId, int NOAKHKMLPFK_Difficulty, bool GIKLNODJKFK_Line6/* = false*/, bool IOOOMNMAGAH/* = true*/)
 	{
 		int a = 0;
 		if (GIKLNODJKFK_Line6)
@@ -126,7 +126,7 @@ public class LPPGENBEECK_MusicMaster : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x10CFE98 Offset: 0x10CFE98 VA: 0x10CFE98
-	public int CHBLIEKBOLL_GetScoreId(int KKPAHLMJKIH_WavId, int BKJGCEOEPFB_VariationId, int NOAKHKMLPFK_Difficulty, bool GIKLNODJKFK_Is6Line = false)
+	public int CHBLIEKBOLL_GetScoreId(int KKPAHLMJKIH_WavId, int BKJGCEOEPFB_VariationId, int NOAKHKMLPFK_Difficulty, bool GIKLNODJKFK_Is6Line/* = false*/)
 	{
 		int val = 0;
 		if (GIKLNODJKFK_Is6Line)

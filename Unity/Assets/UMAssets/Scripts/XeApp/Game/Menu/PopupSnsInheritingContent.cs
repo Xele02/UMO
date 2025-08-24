@@ -44,7 +44,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x11495AC Offset: 0x11495AC VA: 0x11495AC
-		public void SetButtonSnsStatus(LayoutPopupSnsSetting.eButtonType buttonType, LayoutPopupSnsSetting.eButtonStatus status = 0)
+		public void SetButtonSnsStatus(LayoutPopupSnsSetting.eButtonType buttonType, LayoutPopupSnsSetting.eButtonStatus status/* = 0*/)
 		{
 			if (m_layoutPopupSnsSetting != null)
 				m_layoutPopupSnsSetting.SetButtonSnsStatus(buttonType, status);

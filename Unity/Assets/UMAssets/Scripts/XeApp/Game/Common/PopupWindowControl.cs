@@ -100,43 +100,43 @@ namespace XeApp.Game.Common
 		public bool Unused() { return m_isAnimation; }
 
 		// // RVA: 0x1BB889C Offset: 0x1BB889C VA: 0x1BB889C
-		private static int CalcTblIndex(SizeType size, bool isCaption = true)
+		private static int CalcTblIndex(SizeType size, bool isCaption/* = true*/)
 		{
 			return (int)size + (isCaption ? 0 : 5);
 		}
 
 		// // RVA: 0x1BB88A8 Offset: 0x1BB88A8 VA: 0x1BB88A8
-		public static Vector2 GetWindowSize(SizeType size, bool isCaption = true)
+		public static Vector2 GetWindowSize(SizeType size, bool isCaption/* = true*/)
 		{
 			return s_sizeTbl[CalcTblIndex(size, isCaption)];
 		}
 
 		// // RVA: 0x1BB36F4 Offset: 0x1BB36F4 VA: 0x1BB36F4
-		public static Vector2 GetContentSize(SizeType size, bool isCaption = true)
+		public static Vector2 GetContentSize(SizeType size, bool isCaption/* = true*/)
 		{
 			return s_contentSizeTbl[CalcTblIndex(size, isCaption)];
 		}
 
 		// // RVA: 0x1BADFE0 Offset: 0x1BADFE0 VA: 0x1BADFE0
-		public static Vector2 GetContentSize2(SizeType size, bool isCaption = true)
+		public static Vector2 GetContentSize2(SizeType size, bool isCaption/* = true*/)
 		{
 			return s_contentSizeTbl2[CalcTblIndex(size, isCaption)];
 		}
 
 		// // RVA: 0x1BB8988 Offset: 0x1BB8988 VA: 0x1BB8988
-		public static Vector2 GetContentButtonPosition(SizeType size, bool isCaption = true)
+		public static Vector2 GetContentButtonPosition(SizeType size, bool isCaption/* = true*/)
 		{
 			return s_buttonPositionTbl[CalcTblIndex(size, isCaption)];
 		}
 
 		// // RVA: 0x1BB8A68 Offset: 0x1BB8A68 VA: 0x1BB8A68
-		public static Vector2 GetContentCenterOffset(SizeType size, bool isCaption = true)
+		public static Vector2 GetContentCenterOffset(SizeType size, bool isCaption/* = true*/)
 		{
 			return s_contentCenterTbl[CalcTblIndex(size, isCaption)];
 		}
 
 		// // RVA: 0x1BB8B48 Offset: 0x1BB8B48 VA: 0x1BB8B48
-		public static Vector2 GetWindowVerticalAdjust(SizeType size, bool isCaption = true)
+		public static Vector2 GetWindowVerticalAdjust(SizeType size, bool isCaption/* = true*/)
 		{
 			return new Vector2(0, s_windowVerticalAdjust[CalcTblIndex(size, isCaption)]);
 		}
@@ -318,7 +318,7 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BB9BC4 Offset: 0x1BB9BC4 VA: 0x1BB9BC4
-		public void Show(PopupSetting setting, bool isShowBlack = true, bool isButtonEnable = true, bool isError = false)
+		public void Show(PopupSetting setting, bool isShowBlack/* = true*/, bool isButtonEnable/* = true*/, bool isError/* = false*/)
 		{
 			m_isBlack = isShowBlack;
 			m_blockCount = 0;
@@ -761,7 +761,7 @@ namespace XeApp.Game.Common
 		}
 
 		// // RVA: 0x1BBC288 Offset: 0x1BBC288 VA: 0x1BBC288
-		public void ResetScroll(PopupSetting setting, IPopupContent content, float scrollPosition = 1)
+		public void ResetScroll(PopupSetting setting, IPopupContent content, float scrollPosition/* = 1*/)
 		{
 			m_scrollRect.content = setting.Content.GetComponent<RectTransform>();
 			if (content.IsScrollable())

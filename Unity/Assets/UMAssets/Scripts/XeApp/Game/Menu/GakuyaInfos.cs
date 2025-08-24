@@ -187,7 +187,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xB72338 Offset: 0xB72338 VA: 0xB72338
-		public void SetSelectType(SelectType type, bool force = false, bool isAnim = false)
+		public void SetSelectType(SelectType type, bool force/* = false*/, bool isAnim/* = false*/)
 		{
 			if(isAnim)
 			{

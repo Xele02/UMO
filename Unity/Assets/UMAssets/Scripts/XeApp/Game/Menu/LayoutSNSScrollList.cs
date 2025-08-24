@@ -104,7 +104,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x19346D0 Offset: 0x19346D0 VA: 0x19346D0
-		public void SetStatusTalk(List<SNSTalkCreater.ViewTalk> talkList, int homeDivaId, int unReadIndex, Action setEndCallback, bool isVisibleNextButton = true)
+		public void SetStatusTalk(List<SNSTalkCreater.ViewTalk> talkList, int homeDivaId, int unReadIndex, Action setEndCallback, bool isVisibleNextButton/* = true*/)
 		{
 			GameManager.Instance.StartCoroutineWatched(SetupTalk(talkList, homeDivaId, unReadIndex, setEndCallback, isVisibleNextButton));
 		}
@@ -339,7 +339,7 @@ namespace XeApp.Game.Menu
 		//public float GetPositionLastRoom() { }
 
 		//// RVA: 0x1935DBC Offset: 0x1935DBC VA: 0x1935DBC
-		public bool IsCheckRange(int index, bool forceTop = false)
+		public bool IsCheckRange(int index, bool forceTop/* = false*/)
 		{
 			bool res = false;
 			if(index > -1)
@@ -861,7 +861,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1935F34 Offset: 0x1935F34 VA: 0x1935F34
-		private void CalcScrollVisibleRange(LayoutUGUIScrollSupport support, out float yTop, out float yBottom, bool forceTop = false)
+		private void CalcScrollVisibleRange(LayoutUGUIScrollSupport support, out float yTop, out float yBottom, bool forceTop/* = false*/)
 		{
 			float f = 1;
 			if(!forceTop)

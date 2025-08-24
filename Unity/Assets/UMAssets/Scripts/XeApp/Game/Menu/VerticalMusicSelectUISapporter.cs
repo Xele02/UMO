@@ -313,7 +313,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xADB9B8 Offset: 0xADB9B8 VA: 0xADB9B8
-		public void SetDetailEventType(bool isVisible, VerticalMusicSelectMusicDetail.MusicRemainTimeType remainTimeType, bool showRemainTime = true)
+		public void SetDetailEventType(bool isVisible, VerticalMusicSelectMusicDetail.MusicRemainTimeType remainTimeType, bool showRemainTime/* = true*/)
 		{
 			m_musicDetail.SetEventInfo(isVisible, remainTimeType, showRemainTime);
 		}

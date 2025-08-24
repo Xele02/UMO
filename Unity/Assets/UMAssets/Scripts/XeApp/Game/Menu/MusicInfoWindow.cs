@@ -131,7 +131,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x104AF78 Offset: 0x104AF78 VA: 0x104AF78
-		public void SetMusicData(EEDKAACNBBG_MusicData data, bool isDetailCD = false)
+		public void SetMusicData(EEDKAACNBBG_MusicData data, bool isDetailCD/* = false*/)
 		{
 			m_title.text = data.NBKFBCLDGAL_OfficialName;
 			m_info.text = data.KLMPFGOCBHC_Description;

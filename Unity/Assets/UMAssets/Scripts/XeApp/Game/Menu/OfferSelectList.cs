@@ -263,7 +263,7 @@ namespace XeApp.Game.Menu
 		//public void AddScrollLsit(SwapScrollListContent _content) { }
 
 		// RVA: 0x1707100 Offset: 0x1707100 VA: 0x1707100
-		public void SetupList(int count, bool resetScroll = true)
+		public void SetupList(int count, bool resetScroll/* = true*/)
 		{
 			m_scrollList.SetItemCount(count);
 			m_scrollList.OnUpdateItem.RemoveAllListeners();

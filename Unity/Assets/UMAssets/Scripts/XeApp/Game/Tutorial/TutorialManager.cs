@@ -194,7 +194,7 @@ namespace XeApp.Game.Tutorial
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6AE8C0 Offset: 0x6AE8C0 VA: 0x6AE8C0
 		// // RVA: 0xE46220 Offset: 0xE46220 VA: 0xE46220
-		private IEnumerator PreLoadLayoutCoroutine(UnityAction finishCb, bool isAppendLayout = false)
+		private IEnumerator PreLoadLayoutCoroutine(UnityAction finishCb, bool isAppendLayout/* = false*/)
 		{
 			//0xE473AC
 			yield return this.StartCoroutineWatched(LoadBaseLayoutCoroutine());

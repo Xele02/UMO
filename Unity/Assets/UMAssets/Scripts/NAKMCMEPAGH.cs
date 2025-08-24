@@ -61,7 +61,7 @@ public class NAKMCMEPAGH
 	}
 
 	// // RVA: 0x17C06AC Offset: 0x17C06AC VA: 0x17C06AC
-	public void HIEBCILPBGB_AddDiffClear(int AKNELONELJK, bool GIKLNODJKFK = false)
+	public void HIEBCILPBGB_AddDiffClear(int AKNELONELJK, bool GIKLNODJKFK/* = false*/)
 	{
 		if(!GIKLNODJKFK)
 		{

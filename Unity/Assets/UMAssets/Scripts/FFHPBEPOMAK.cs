@@ -111,7 +111,7 @@ public class FFHPBEPOMAK_DivaInfo
 	}
 
 	// RVA: 0x14DE4E0 Offset: 0x14DE4E0 VA: 0x14DE4E0
-	public void KHEKNNFCAOI(int AHHJLDLAPAN_DivaId, BBHNACPENDM_ServerSaveData NIMOGBDCMLJ, bool OJEBNBLHPNP = false)
+	public void KHEKNNFCAOI(int AHHJLDLAPAN_DivaId, BBHNACPENDM_ServerSaveData NIMOGBDCMLJ, bool OJEBNBLHPNP/* = false*/)
 	{
 		BNFDBPPOAOE = true;
 		EEBBAGGJOGH = false;
@@ -192,7 +192,7 @@ public class FFHPBEPOMAK_DivaInfo
 	}
 
 	// RVA: 0x14DFA1C Offset: 0x14DFA1C VA: 0x14DFA1C
-	public void KHEKNNFCAOI(int AHHJLDLAPAN_DivaId, int PAOGPLDOMMI_Level, int PDEEMMEHDPK_CostumeId, int KOHAAFNNBOE_ColorId, GCIJNCFDNON_SceneInfo AFBMEMCHJCL_MainScene, List<GCIJNCFDNON_SceneInfo> HDJOHAJPGBA_SubScene, bool LGNOCBFCAAK = false)
+	public void KHEKNNFCAOI(int AHHJLDLAPAN_DivaId, int PAOGPLDOMMI_Level, int PDEEMMEHDPK_CostumeId, int KOHAAFNNBOE_ColorId, GCIJNCFDNON_SceneInfo AFBMEMCHJCL_MainScene, List<GCIJNCFDNON_SceneInfo> HDJOHAJPGBA_SubScene, bool LGNOCBFCAAK/* = false*/)
 	{
 		EEBBAGGJOGH = LGNOCBFCAAK;
 		BNFDBPPOAOE = false;
@@ -525,7 +525,7 @@ public class FFHPBEPOMAK_DivaInfo
 	}
 
 	// // RVA: 0x14E1758 Offset: 0x14E1758 VA: 0x14E1758
-	public void HOOJOFACOEK_SetCostume(int PDEEMMEHDPK, int HEHKNMCDBJJ, bool MNGIDJDFBFD = false, bool OJEBNBLHPNP = false)
+	public void HOOJOFACOEK_SetCostume(int PDEEMMEHDPK, int HEHKNMCDBJJ, bool MNGIDJDFBFD/* = false*/, bool OJEBNBLHPNP/* = false*/)
 	{
 		JPIDIENBGKH_CostumeId = PDEEMMEHDPK;
 		EKFONBFDAAP_ColorId = HEHKNMCDBJJ;
@@ -583,7 +583,7 @@ public class FFHPBEPOMAK_DivaInfo
 	}
 
 	// // RVA: 0x14E1C84 Offset: 0x14E1C84 VA: 0x14E1C84
-	public void JFIPEKCDKLG(int PDEEMMEHDPK, int HEHKNMCDBJJ, bool OJEBNBLHPNP = false)
+	public void JFIPEKCDKLG(int PDEEMMEHDPK, int HEHKNMCDBJJ, bool OJEBNBLHPNP/* = false*/)
 	{
 		KIIMFCFMMDN_HomeCostumeId = PDEEMMEHDPK;
 		JFFLFIMIMOI_HomeColorId = HEHKNMCDBJJ;
@@ -598,7 +598,7 @@ public class FFHPBEPOMAK_DivaInfo
 	}
 
 	// // RVA: 0x14E1D28 Offset: 0x14E1D28 VA: 0x14E1D28
-	public void OPDBFHFKKJN(int PDEEMMEHDPK, int HEHKNMCDBJJ, bool OJEBNBLHPNP = false)
+	public void OPDBFHFKKJN(int PDEEMMEHDPK, int HEHKNMCDBJJ, bool OJEBNBLHPNP/* = false*/)
 	{
 		JFIPEKCDKLG(PDEEMMEHDPK, HEHKNMCDBJJ, OJEBNBLHPNP);
 		if(!BNFDBPPOAOE)
@@ -665,7 +665,7 @@ public class FFHPBEPOMAK_DivaInfo
 	}
 
 	// // RVA: 0x14E239C Offset: 0x14E239C VA: 0x14E239C
-	public void CJBBDBGDFKJ(GCIJNCFDNON_SceneInfo PNLOINMCCKH, bool FBBNPFFEJBN = false)
+	public void CJBBDBGDFKJ(GCIJNCFDNON_SceneInfo PNLOINMCCKH, bool FBBNPFFEJBN/* = false*/)
 	{
 		bool a = false;
 		if(PNLOINMCCKH != null)
@@ -683,7 +683,7 @@ public class FFHPBEPOMAK_DivaInfo
 	}
 
 	// // RVA: 0x14E23DC Offset: 0x14E23DC VA: 0x14E23DC
-	public void GIGDKIHBDHB(GCIJNCFDNON_SceneInfo PNLOINMCCKH, int IMJIADPJJMM, bool FBBNPFFEJBN = false)
+	public void GIGDKIHBDHB(GCIJNCFDNON_SceneInfo PNLOINMCCKH, int IMJIADPJJMM, bool FBBNPFFEJBN/* = false*/)
 	{
 		if(FBBNPFFEJBN || (PNLOINMCCKH != null && DJICAKGOGFO_SubSceneIds[IMJIADPJJMM] == PNLOINMCCKH.BCCHOBPJJKE_SceneId))
 		{
@@ -699,7 +699,7 @@ public class FFHPBEPOMAK_DivaInfo
 	// public static int PFAGNJEPBCB(int AHHJLDLAPAN, int JPIDIENBGKH) { }
 
 	// // RVA: 0x14E2810 Offset: 0x14E2810 VA: 0x14E2810
-	public static List<FFHPBEPOMAK_DivaInfo> DNAIGDHCILM_GetCostumeList(int AHHJLDLAPAN, bool OJEBNBLHPNP = false)
+	public static List<FFHPBEPOMAK_DivaInfo> DNAIGDHCILM_GetCostumeList(int AHHJLDLAPAN, bool OJEBNBLHPNP/* = false*/)
 	{
 		List<FFHPBEPOMAK_DivaInfo> res = new List<FFHPBEPOMAK_DivaInfo>();
 		for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes.Count; i++)
@@ -752,7 +752,7 @@ public class FFHPBEPOMAK_DivaInfo
 	}
 
 	// // RVA: 0x14E2F68 Offset: 0x14E2F68 VA: 0x14E2F68
-	public static List<FFHPBEPOMAK_DivaInfo> OOJFGDKBOHK(int AHHJLDLAPAN, bool OJEBNBLHPNP = false)
+	public static List<FFHPBEPOMAK_DivaInfo> OOJFGDKBOHK(int AHHJLDLAPAN, bool OJEBNBLHPNP/* = false*/)
 	{
 		List<FFHPBEPOMAK_DivaInfo> res = new List<FFHPBEPOMAK_DivaInfo>();
 		for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes.Count; i++)

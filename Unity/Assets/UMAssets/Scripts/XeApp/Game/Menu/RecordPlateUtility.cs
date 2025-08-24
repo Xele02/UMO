@@ -181,7 +181,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0xCF9300 Offset: 0xCF9300 VA: 0xCF9300
-		public static string GetPlateName(int cardId, GONMPHKGKHI_RewardView.CECMLGBLHHG showType, bool isMulti = false)
+		public static string GetPlateName(int cardId, GONMPHKGKHI_RewardView.CECMLGBLHHG showType, bool isMulti/* = false*/)
 		{
 			int a = (int)showType - 3;
 			if (showType != GONMPHKGKHI_RewardView.CECMLGBLHHG.GBIDBHKEPGL/*1*/)

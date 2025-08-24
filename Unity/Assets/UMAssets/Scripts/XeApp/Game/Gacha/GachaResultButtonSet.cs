@@ -126,7 +126,7 @@ namespace XeApp.Game.Gacha
 		}
 
 		// RVA: 0x987AF0 Offset: 0x987AF0 VA: 0x987AF0
-		public void SetRemainCount(int count, int max = 1)
+		public void SetRemainCount(int count, int max/* = 1*/)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			if(count < 1)

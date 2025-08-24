@@ -38,7 +38,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x151B46C Offset: 0x151B46C VA: 0x151B46C
-		public void SetupList(int count, bool resetScroll = true)
+		public void SetupList(int count, bool resetScroll/* = true*/)
 		{
 			bottomFrameLayout.StartAnimGoStop(count < 3 ? "02" : "01");
 			m_scrollList.SetItemCount(count);

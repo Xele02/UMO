@@ -78,7 +78,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x1703750 Offset: 0x1703750 VA: 0x1703750
-		public void initializeCamera(bool IsFromHome = false)
+		public void initializeCamera(bool IsFromHome/* = false*/)
 		{
 			IsInCamera = false;
 			divaMenuParam = GameManager.Instance.divaResource.divaMenuParam;

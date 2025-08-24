@@ -398,7 +398,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x15DF264 Offset: 0x15DF264 VA: 0x15DF264
-		private void SetRewardStatus(int arrayIndex, FPGEMAIAMBF_RewardData.LOIJICNJMKA reward, bool isAllClear = false)
+		private void SetRewardStatus(int arrayIndex, FPGEMAIAMBF_RewardData.LOIJICNJMKA reward, bool isAllClear/* = false*/)
 		{
 			if (reward == null)
 				return;

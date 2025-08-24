@@ -244,7 +244,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x16FA950 Offset: 0x16FA950 VA: 0x16FA950
-		private static void SettingRewardIcon(RewardIconLayoutSetting layout_setting, IiconTexture texture, int rank, bool is_item, bool is_status_up, bool is_show_num, LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType rewardType, bool isTargetReward = false)
+		private static void SettingRewardIcon(RewardIconLayoutSetting layout_setting, IiconTexture texture, int rank, bool is_item, bool is_status_up, bool is_show_num, LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType rewardType, bool isTargetReward/* = false*/)
 		{
 			if(is_item)
 			{
