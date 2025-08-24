@@ -248,11 +248,11 @@ namespace XeApp.Game.Menu
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 				};
 				bool isOpenRankupPopup = true;
-				PopupWindowManager.Show(s, null, null, null, null, endCallBaack:() =>
+				PopupWindowManager.Show(s, null, null, null, null, true, true, false, null, () =>
 				{
 					//0x18E7354
 					isOpenRankupPopup = false;
-				});
+				}, null, null, null);
 				yield return new WaitWhile(() =>
 				{
 					//0x18E7360

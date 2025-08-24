@@ -101,7 +101,7 @@ namespace XeApp.Game.Menu
 					//0xDE8770
 					t_wait = false;
 					t_cancel = true;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				t_setting.OnClickLoginBonus = () =>
 				{
 					//0xDE877C
@@ -275,7 +275,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xDE8708
 				t_wait = true;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while (t_wait)
 				yield return null;
 		}

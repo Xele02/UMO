@@ -46,7 +46,7 @@ namespace XeApp.Game.Menu
 						//0x1163340
 						CallbackSupportSiteClose();
 						m_isOfficialSite = false;
-					});
+					}, 0.5f);
 				};
 				m_variousInfo.CallbackPortalSite = () =>
 				{
@@ -61,7 +61,7 @@ namespace XeApp.Game.Menu
 						//0x1163544
 						CallbackSupportSiteClose();
 						m_isPortalSite = false;
-					});
+					}, 0.5f);
 				};
 				m_variousInfo.CallbackWiki = () =>
 				{
@@ -76,7 +76,7 @@ namespace XeApp.Game.Menu
 						//0x1163748
 						CallbackSupportSiteClose();
 						m_isWiki = false;
-					});
+					}, 0.5f);
 				};
 				m_variousInfo.CallbackPolicy = () =>
 				{
@@ -151,7 +151,7 @@ namespace XeApp.Game.Menu
 						//0x11643C4
 						CallbackSupportSiteClose();
 						m_isFAQ = false;
-					});
+					}, 0.5f);
 				};
 				m_variousInfo.CallbackTwitter = () =>
 				{
@@ -166,7 +166,7 @@ namespace XeApp.Game.Menu
 						//0x11645C8
 						CallbackSupportSiteClose();
 						m_isTwitter = false;
-					});
+					}, 0.5f);
 				};
 				m_variousInfo.CallbackCredit = () =>
 				{

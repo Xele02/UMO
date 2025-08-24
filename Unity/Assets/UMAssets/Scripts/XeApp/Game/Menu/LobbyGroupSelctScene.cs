@@ -519,7 +519,7 @@ namespace XeApp.Game.Menu
 						return;
 					//0x1289A50
 					this.StartCoroutineWatched(SignalToReturnGroupSelect());
-				}, null, null, null, true, true, false);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
         }
 	}

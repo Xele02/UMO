@@ -8,6 +8,12 @@ namespace XeApp.Game.Menu
 	}
 	public class SNSTextureCache : IconTextureCache
 	{
+		// RVA: 0x159D2EC Offset: 0x159D2EC VA: 0x159D2EC
+		public SNSTextureCache() : base(0)
+		{
+			//
+		}
+
 		// // RVA: 0x159D2F8 Offset: 0x159D2F8 VA: 0x159D2F8 Slot: 5
 		public override void Terminated()
 		{

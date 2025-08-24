@@ -23,7 +23,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x13DBD3C Offset: 0x13DBD3C VA: 0x13DBD3C
 		public IconTextureCache(int capacity/* = 0*/)
 		{
-			m_loadingAssetBundle = new IndexableDictionary<string, IconTextureLodingInfo>();
+			m_loadingAssetBundle = new IndexableDictionary<string, IconTextureLodingInfo>(0);
 			m_iconTextureCache = new IndexableDictionary<string, IiconTexture>(capacity);
 			m_capacity = capacity;
 			m_createCount = 0;

@@ -160,7 +160,7 @@ namespace XeApp.Game.Menu
 			  {
 				  //0x104CB90
 				  (content as PopupTabContents).ChangeContents((int)blabel);
-			  }, null, null);
+			  }, null, null, true, true, false, null, null, null, null, null);
 			if (!isSLive)
 				yield break;
 			ctrl.m_tabButtonUguiRuntime.gameObject.SetActive(false);
@@ -183,7 +183,7 @@ namespace XeApp.Game.Menu
 			m_enemyInfoPopupSetting.WindowSize = GetEnemyPopupWindowSize(enemyData);
 			m_enemyInfoPopupSetting.Buttons = m_popupButton[(int)type].ToArray();
 			MenuScene.Instance.InputEnable();
-			PopupWindowManager.Show(m_enemyInfoPopupSetting, callBack, null, null, null);
+			PopupWindowManager.Show(m_enemyInfoPopupSetting, callBack, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x104C468 Offset: 0x104C468 VA: 0x104C468
@@ -218,11 +218,11 @@ namespace XeApp.Game.Menu
 				//0x104CDE8
 				if (type == PopupButton.ButtonType.Positive)
 					openUrl = true;
-			}, null, null, null, endCallBaack: () =>
+			}, null, null, null, true, true, false, null, () =>
 			{
 				//0x104CDF8
 				isClosed = true;
-			}, buttonSeEvent: OtherUtility.PopupWindowOpenUrlButtonSe);
+			}, null, OtherUtility.PopupWindowOpenUrlButtonSe, null);
 			while (!isClosed)
 				yield return null;
 			if(openUrl)

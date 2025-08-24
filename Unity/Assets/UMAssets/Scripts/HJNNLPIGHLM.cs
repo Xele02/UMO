@@ -1241,7 +1241,7 @@ public class HJNNLPIGHLM_EventCollection : IKDICBBFBMI_EventBase
 			if(e != null)
 			{
 				HLFHJIDHJMP = null;
-				OKPEFAPPFDH_GetRanksAroundSelf req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new OKPEFAPPFDH_GetRanksAroundSelf());
+				OKPEFAPPFDH_GetRanksAroundSelf req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new OKPEFAPPFDH_GetRanksAroundSelf(false));
 				req.EMPNJPMAKBF_Id = e.PPFNGGCBJKC_Id;
 				req.MJGOBEGONON_Type = 0;
 				req.NHPCKCOPKAM_From = 0;

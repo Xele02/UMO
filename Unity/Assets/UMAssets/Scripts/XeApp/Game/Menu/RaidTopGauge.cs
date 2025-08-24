@@ -246,7 +246,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xCF05DC
 					return;
-				}, null, null, null, true, true, false, null, callback);
+				}, null, null, null, true, true, false, null, callback, null, null, null);
 			}
 			else
 			{
@@ -258,7 +258,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xCF05E0
 					return;
-				}, null, null, null, true, true, false, null, callback);
+				}, null, null, null, true, true, false, null, callback, null, null, null);
 			}
 		}
 
@@ -398,7 +398,7 @@ namespace XeApp.Game.Menu
 				{
 					done = true;
 				}
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			MenuScene.Instance.InputDisable();
 			while(!done)
 				yield return null;
@@ -466,7 +466,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xCF0C24
 					done = true;
-				}, null, null, null, true, true, false);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			while(!done)
 				yield return null;
 		}

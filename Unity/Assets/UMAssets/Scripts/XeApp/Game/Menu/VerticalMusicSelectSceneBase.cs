@@ -331,6 +331,10 @@ namespace XeApp.Game.Menu
 						{
 							//0xAD2F50
 							return;
+						}, null, null, null, true, true, false, null, () =>
+						{
+							//0x1445FB0
+							done = true;
 						}, null, null, null);
 					while (!done)
 						yield return null;
@@ -515,11 +519,11 @@ namespace XeApp.Game.Menu
 			{
 				//0xAD2FB0
 				return;
-			}, null, null, null, endCallBaack:() =>
+			}, null, null, null, true, true, false, null, () =>
 			{
 				//0xAD3914
 				done = true;
-			});
+			}, null, null, null);
 			while(!done)
 				yield return null;
 		}
@@ -624,11 +628,11 @@ namespace XeApp.Game.Menu
 					//0xAD3B40
 					if(type == PopupButton.ButtonType.Negative)
 						cancel = true;
-				}, null, null, null, endCallBaack:() =>
+				}, null, null, null, true, true, false, null, () =>
 				{
 					//0xAD3B50
 					done = true;
-				});
+				}, null, null, null);
 				while(!done)
 					yield return null;
 				if(cancel)
@@ -865,7 +869,7 @@ namespace XeApp.Game.Menu
 					{
 						//0xAD30E8
 						MenuScene.Instance.Mount(TransitionUniqueId.HOME, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
-					}, null, null, null);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 					return true;
 				}
 			}
@@ -1108,7 +1112,7 @@ namespace XeApp.Game.Menu
 		{
 			if(!SoundManager.Instance.bgmPlayer.isPlaying)
 			{
-				SoundManager.Instance.bgmPlayer.Play(BgmPlayer.MENU_TRIAL_ID_BASE + wavId);
+				SoundManager.Instance.bgmPlayer.Play(BgmPlayer.MENU_TRIAL_ID_BASE + wavId, 1);
 				m_changeToTrialBgmId = -1;
 				return;
 			}
@@ -1335,7 +1339,7 @@ namespace XeApp.Game.Menu
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 			};
-			PopupWindowManager.Show(s, null, null, null, null);
+			PopupWindowManager.Show(s, null, null, null, null,true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0xACD850 Offset: 0xACD850 VA: 0xACD850
@@ -1394,7 +1398,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xAD31A8
 					return;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 
@@ -1415,7 +1419,7 @@ namespace XeApp.Game.Menu
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 			};
-			PopupWindowManager.Show(m_rewardPopupSetting, null, null, null, null);
+			PopupWindowManager.Show(m_rewardPopupSetting, null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0xAD08F4 Offset: 0xAD08F4 VA: 0xAD08F4
@@ -1538,7 +1542,7 @@ namespace XeApp.Game.Menu
 							if (l != PopupButton.ButtonLabel.Cancel)
 								return;
 							OpenMusicBookMarkWindow(okCallBack, false);
-						}, null, null, null);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 					}
 				}
 				else if(label == PopupButton.ButtonLabel.Ok)
@@ -1555,7 +1559,7 @@ namespace XeApp.Game.Menu
 						MenuScene.Instance.GotoTitle();
 					}, null);
 				}
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0xACD354 Offset: 0xACD354 VA: 0xACD354
@@ -1585,7 +1589,7 @@ namespace XeApp.Game.Menu
 						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(ev.GFIBLLLHMPD_StartAdventureId,  OAGBCBBHMPF.DKAMMIHBINF.IDINJDEBPKP_6);
 						Database.Instance.advSetup.Setup(dbAdv.KKPPFAHFOJI_FileId);
 						Database.Instance.advResult.Setup("Menu", TransitionUniqueId.EVENTMUSICSELECT, new AdvSetupParam());
-						MenuScene.Instance.GotoAdventure();
+						MenuScene.Instance.GotoAdventure(false);
 						return;
 					}
 				}

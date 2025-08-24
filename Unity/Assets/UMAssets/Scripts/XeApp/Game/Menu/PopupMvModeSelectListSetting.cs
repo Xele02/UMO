@@ -44,7 +44,7 @@ namespace XeApp.Game.Menu
             UnityEngine.Object.Destroy(sourceRunTime.gameObject);
             m_content.gameObject.SetActive(false);
             listItemOp = null;
-            AssetBundleManager.UnloadAssetBundle(BundleName);
+            AssetBundleManager.UnloadAssetBundle(BundleName, false);
         }
 
         // [CompilerGeneratedAttribute] // RVA: 0x730ADC Offset: 0x730ADC VA: 0x730ADC

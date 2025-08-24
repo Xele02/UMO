@@ -89,7 +89,7 @@ namespace XeApp.Game.Menu
 				m_scrollSupport.EndAddView();
 				m_scrollSupport.ContentSize = new Vector2(m_scrollSupport.RangeSize.x, 572);
 			}));
-			AssetBundleManager.UnloadAssetBundle(assetBundleName);
+			AssetBundleManager.UnloadAssetBundle(assetBundleName, false);
 			while (!m_contentLayout.IsLoaded())
 				yield return null;
 		}

@@ -51,7 +51,7 @@ namespace XeApp.Game.Common
 			assetName.SetFormat("dr_vo_{0:D3}", assetId);
 			param = operation.GetAsset<MusicVoiceChangerParam>(assetName.ToString());
 
-			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			isLoaded = true;
 		}
 	}

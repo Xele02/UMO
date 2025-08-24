@@ -89,7 +89,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xEE1F90
 				//done = true;
-			});
+			}, null, null, null);
 		}
 
 		// RVA: 0xEE118C Offset: 0xEE118C VA: 0xEE118C Slot: 36
@@ -254,7 +254,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xEE1FB4
 				done = true;
-			});
+			}, null, null, null);
 			yield return new WaitWhile(() =>
 			{
 				//0xEE1FC0
@@ -283,7 +283,7 @@ namespace XeApp.Game.Menu
 					{
 						//0xEE1FE4
 						done = true;
-					});
+					}, null, null, null);
 					yield return new WaitWhile(() =>
 					{
 						//0xEE1FF0
@@ -325,7 +325,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xEE201C
 				done = true;
-			});
+			}, null, null, null);
 			yield return new WaitWhile(() =>
 			{
 				//0xEE2028
@@ -354,7 +354,7 @@ namespace XeApp.Game.Menu
 					{
 						//0xEE2048
 						done = true;
-					});
+					}, null, null, null);
 				}
 			}
 		}

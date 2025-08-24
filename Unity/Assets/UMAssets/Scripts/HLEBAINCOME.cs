@@ -398,7 +398,7 @@ public class HLEBAINCOME_EventScore : IKDICBBFBMI_EventBase
 	// // RVA: 0x15EC10C Offset: 0x15EC10C VA: 0x15EC10C
 	private void PIMFJALCIGK()
 	{
-		int a = NGIHFKHOJOK_GetRankingMax();
+		int a = NGIHFKHOJOK_GetRankingMax(true);
 		for(int i = 0; i < a; i++)
 		{
 			BJEOAOACMGG(a);
@@ -438,7 +438,7 @@ public class HLEBAINCOME_EventScore : IKDICBBFBMI_EventBase
 		if(ev != null)
 		{
 			HLFHJIDHJMP = null;
-			OKPEFAPPFDH_GetRanksAroundSelf req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new OKPEFAPPFDH_GetRanksAroundSelf());
+			OKPEFAPPFDH_GetRanksAroundSelf req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new OKPEFAPPFDH_GetRanksAroundSelf(false));
 			req.EMPNJPMAKBF_Id = KBACNOCOANM.PPFNGGCBJKC_Id;
 			req.MJGOBEGONON_Type = 0;
 			req.NHPCKCOPKAM_From = 0;

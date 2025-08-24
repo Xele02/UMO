@@ -192,11 +192,11 @@ namespace XeApp.Game.Menu
 				if(label != PopupButton.ButtonLabel.Ok)
 					return;
 				ShowStatusUpWindow();
-			}, null, null, null, endCallBaack:() =>
+			}, null, null, null, true, true, false, null, () =>
 			{
 				//0x1B68910
 				m_is_wait_open_window = true;
-			});
+			}, null, null, null);
 			yield return new WaitWhile(() =>
 			{
 				//0x1B6891C
@@ -215,7 +215,7 @@ namespace XeApp.Game.Menu
 				m_costume_stup_window.m_data = m_data;
 				m_costume_stup_window.SetParent(transform);
 				m_costume_stup_window.Buttons = new ButtonInfo[1] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive } };
-				PopupWindowManager.Show(m_costume_stup_window, OnAchieveOKButton, null, null, null);
+				PopupWindowManager.Show(m_costume_stup_window, OnAchieveOKButton, null, null, null, true, true, false, null, null, null, null, null);
 			}
 			else if(m_achieve_window.data.JHLKLPEHHCD_GetCurrentLevelInfo().PEEAGFNOFFO_UnlockType == LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.PJJJGFBLIAP_5_Stat)
 			{
@@ -225,7 +225,7 @@ namespace XeApp.Game.Menu
 				m_diva_stup_window.m_data = m_data;
 				m_diva_stup_window.SetParent(transform);
 				m_diva_stup_window.Buttons = new ButtonInfo[1] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive } };
-				PopupWindowManager.Show(m_diva_stup_window, OnAchieveOKButton, null, null, null);
+				PopupWindowManager.Show(m_diva_stup_window, OnAchieveOKButton, null, null, null, true, true, false, null, null, null, null, null);
 			}
 			else
 			{

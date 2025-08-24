@@ -710,7 +710,7 @@ namespace XeApp.Game.Menu
 				m_unitSetSelectButtons.InOutLeft.Enter(false, null);
 				m_unitSetSelectButtons.InOutRight.Enter(false, null);
 				m_unitSetInfo.AnimeControl.TryEnter(d);
-				m_loadSaveButtons.InOut.Enter(false);
+				m_loadSaveButtons.InOut.Enter(false, null);
 			}
 		}
 
@@ -917,7 +917,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xFA8608
 				return;
-			}, null, null, true, true, false);
+			}, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0xFA5180 Offset: 0xFA5180 VA: 0xFA5180
@@ -1008,7 +1008,7 @@ namespace XeApp.Game.Menu
 				{
 					m_valkyriePopupSetting.ViewValkyrieData = m_viewUnitData.JOKFNBLEILN_Valkyrie;
 					m_valkyriePopupSetting.ViewValkyrieAbilityData = m_paramCalculator.ValkyrieAbilityData;
-					PopupWindowManager.Show(m_valkyriePopupSetting, null, null, null, null);
+					PopupWindowManager.Show(m_valkyriePopupSetting, null, null, null, null, true, true, false, null, null, null, null, null);
 				}
 			}
 		}

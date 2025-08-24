@@ -590,7 +590,7 @@ namespace XeApp.Game.Menu
 				//0x125B2EC
 				if(endCallBack != null)
 					endCallBack();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
         }
 
 		// // RVA: 0x125A0A4 Offset: 0x125A0A4 VA: 0x125A0A4

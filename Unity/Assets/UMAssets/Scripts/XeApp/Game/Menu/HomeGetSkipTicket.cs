@@ -181,7 +181,7 @@ namespace XeApp.Game.Menu
 						isChecked = !isChecked;
 					if (callback != null)
 						callback(isChecked);
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 	}

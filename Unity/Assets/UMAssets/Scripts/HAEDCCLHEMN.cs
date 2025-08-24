@@ -1223,7 +1223,7 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 	// // RVA: 0x1B71DB0 Offset: 0x1B71DB0 VA: 0x1B71DB0 Slot: 49
 	protected override void ODPJGHOJIOH(int LHJCOPMMIGO)
 	{
-        EECOJKDJIFG e = DAKMIKNKHMF_GetRankingInfoForIndex();
+        EECOJKDJIFG e = DAKMIKNKHMF_GetRankingInfoForIndex(LHJCOPMMIGO);
         if(e != null)
 		{
 			DIHHCBACKGG_DbSection db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI_QuestId);

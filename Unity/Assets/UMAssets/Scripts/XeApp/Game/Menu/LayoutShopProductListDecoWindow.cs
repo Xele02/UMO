@@ -278,7 +278,7 @@ namespace XeApp.Game.Menu
 					return;
 				if(OnChangeEvent != null)
 					OnChangeEvent(buy, view);
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// RVA: 0x1942CAC Offset: 0x1942CAC VA: 0x1942CAC Slot: 7

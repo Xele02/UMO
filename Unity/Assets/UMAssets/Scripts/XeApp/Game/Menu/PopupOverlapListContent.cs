@@ -361,7 +361,7 @@ namespace XeApp.Game.Menu
 				//0x16A17CC
 				if(onClose != null)
 					onClose();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
         }
 
 		// RVA: 0x16A0CEC Offset: 0x16A0CEC VA: 0x16A0CEC Slot: 7

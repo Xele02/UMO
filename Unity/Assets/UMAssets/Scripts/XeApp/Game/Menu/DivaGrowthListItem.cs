@@ -134,7 +134,7 @@ namespace XeApp.Game.Menu
 				m_conditionText, new ButtonInfo[1]
 				{
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
-				}, false, true), null, null, null, null);
+				}, false, true), null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 	}
 }

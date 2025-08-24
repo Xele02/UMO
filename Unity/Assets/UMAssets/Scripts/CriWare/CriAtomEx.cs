@@ -444,7 +444,7 @@ namespace CriWare
 				followsOriginalSource = false;
 				calculationType = Randomize3dCalcType.Rectangle;
 				this.calculationParameters = new float[NumOfCalcParams];
-				this.ClearCalcParams();
+				this.ClearCalcParams(0);
 			}
 
 			// // RVA: 0x81C698 Offset: 0x81C698 VA: 0x81C698

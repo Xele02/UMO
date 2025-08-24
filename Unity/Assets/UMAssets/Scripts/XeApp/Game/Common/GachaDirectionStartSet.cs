@@ -26,7 +26,7 @@ namespace XeApp.Game.Common
 		{
 			gameObject.SetActive(false);
 			m_orb = GetComponentInChildren<GachaDirectionOrb>(true);
-			m_orb.Setup(directionInfo.auraColor != AuraColorType.Blue ? GachaDirectionOrb.ColorType.Gold : GachaDirectionOrb.ColorType.Blue);
+			m_orb.Setup(directionInfo.auraColor != AuraColorType.Blue ? GachaDirectionOrb.ColorType.Gold : GachaDirectionOrb.ColorType.Blue, false);
 		}
 
 		// // RVA: 0x1C1C078 Offset: 0x1C1C078 VA: 0x1C1C078

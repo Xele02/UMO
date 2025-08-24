@@ -677,7 +677,7 @@ namespace XeApp.Game.Menu
 				//0xC56068
 				m_IsUpdateError = true;
 				wait = true;
-			});
+			}, true);
 			while (!wait)
 				yield return null;
 			IsTapGuardOFF = true;
@@ -911,7 +911,7 @@ namespace XeApp.Game.Menu
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 			};
-			PopupWindowManager.Show(s, null, null, null, null);
+			PopupWindowManager.Show(s, null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D060C Offset: 0x6D060C VA: 0x6D060C

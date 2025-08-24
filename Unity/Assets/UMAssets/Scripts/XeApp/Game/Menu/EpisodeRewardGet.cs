@@ -114,7 +114,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xEFFC84
 				isWait = false;
-			});
+			}, null, null, null);
 			while (isWait)
 				yield return null;
 			EpisodeCompWindow e = m_comp_window.Content.GetComponentInChildren<EpisodeCompWindow>();

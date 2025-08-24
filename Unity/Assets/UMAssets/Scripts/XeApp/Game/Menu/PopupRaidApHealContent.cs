@@ -83,7 +83,7 @@ namespace XeApp.Game.Menu
 				//0x1614434
 				t_loop = false;
 				t_exec = type == PopupButton.ButtonType.Positive;
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(t_loop)
 				yield return null;
 			if(t_exec)
@@ -134,7 +134,7 @@ namespace XeApp.Game.Menu
 				//0x1614604
 				t_step = 1;
 				t_exec = type == PopupButton.ButtonType.Positive;
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(t_step == 0)
 				yield return null;
 			if(t_exec)
@@ -159,7 +159,7 @@ namespace XeApp.Game.Menu
 				//0x1614644
 				t_loop = false;
 				t_exec = type == PopupButton.ButtonType.Positive;
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(t_loop)
 				yield return null;
 			if(t_exec)
@@ -228,7 +228,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x16146C8
 					t_loop = false;
-				}, null, null, null, true, true, false);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while(t_loop)
 					yield return null;
 				if(raidController.GDMLCKMCMBG() == 0)
@@ -247,7 +247,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x16146D4
 					t_loop = false;
-				}, null, null, null, true, true, false);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while(t_loop)
 					yield return null;
 			}
@@ -265,7 +265,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x16146BC
 					t_loop = false;
-				}, null, null, null, true, true, false);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while(t_loop)
 					yield return null;
 			}

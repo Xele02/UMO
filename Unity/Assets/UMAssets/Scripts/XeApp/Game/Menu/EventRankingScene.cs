@@ -92,7 +92,7 @@ namespace XeApp.Game.Menu
 						m_ranking_types[0] = v1 != 0 ? EnRankingType.Music : EnRankingType.Point;
 						m_ranking_types[1] = v1 != 0 ? EnRankingType.Point : EnRankingType.Music;
 					}
-					if(m_eventCtrl.NGIHFKHOJOK_GetRankingMax() > 1)
+					if(m_eventCtrl.NGIHFKHOJOK_GetRankingMax(false) > 1)
 					{
 						m_nameForApi[1] = m_eventCtrl.DAKMIKNKHMF_GetRankingInfoForIndex(v1 == 0 ? 1 : 0).OCGFKMHNEOF_NameForApi;
 						m_enableChangeRanking = true;
@@ -364,7 +364,7 @@ namespace XeApp.Game.Menu
 				m_windowUi.SetRankButtonLabel(m_rankRangeLabelList[m_nextRankRange]);
 				MenuScene.Instance.RaycastDisable();
 				GetRankingList(GetCurrentBaseRank(), 0);
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0xB8E38C Offset: 0xB8E38C VA: 0xB8E38C

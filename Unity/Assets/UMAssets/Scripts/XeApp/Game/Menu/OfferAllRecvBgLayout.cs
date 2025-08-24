@@ -135,7 +135,7 @@ namespace XeApp.Game.Menu
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 			};
-			PopupWindowManager.Show(s, null, null, null, null);
+			PopupWindowManager.Show(s, null, null, null, null, true, true, false, null, null, null, null, null);
 			yield return new WaitUntil(() =>
 			{
 				//0x151BEE8

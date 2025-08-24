@@ -75,7 +75,7 @@ namespace XeApp.Core
 			}
 			else
 			{
-				GameManager.FadeIn();
+				GameManager.FadeIn(0.4f);
 				updateState = this.UpdateEnterFadeIn;
 			}
 		}
@@ -103,7 +103,7 @@ namespace XeApp.Core
 				}
 				else
 				{
-					GameManager.FadeOut();
+					GameManager.FadeOut(0.4f);
 					updateState = this.UpdateLeaveFadeOut;
 				}
 			}

@@ -67,7 +67,7 @@ namespace XeApp.Game.Common
 			operation = AssetBundleManager.LoadAssetAsync(bundleName.ToString(), assetName.ToString(), typeof(Texture));
 			yield return operation;
 			introTexture = operation.GetAsset<Texture>();
-			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x7402AC Offset: 0x7402AC VA: 0x7402AC

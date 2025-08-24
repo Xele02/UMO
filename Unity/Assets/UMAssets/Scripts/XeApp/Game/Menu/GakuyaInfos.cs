@@ -284,7 +284,7 @@ namespace XeApp.Game.Menu
 						new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 					};
 					s.Text = JpStringLiterals.StringLiteral_16162;
-					PopupWindowManager.Show(s, null, null, null, null);
+					PopupWindowManager.Show(s, null, null, null, null, true, true, false, null, null, null, null, null);
 				}
 				else
 				{

@@ -511,7 +511,7 @@ namespace XeApp.Game.Menu
 				//0x1B60520
 				if (showEndCb != null)
 					showEndCb();
-			}, true, true, false);
+			}, true, true, false, null, null, null, null, null);
 			while(popupWait)
 				yield return null;
 			if(!isOk)
@@ -588,12 +588,12 @@ namespace XeApp.Game.Menu
 				//0x1B60590
 				if (showEndCb != null)
 					showEndCb();
-			});
+			}, true, true, false, null, null, null, null, null);
 			while (popupWait)
 				yield return null;
 			if(!isOk)
 			{
-				ConfigManager.Instance.ApplyValue(false);
+				ConfigManager.Instance.ApplyValue(false, null);
 				//LAB_01b649b4
 				if (finishCb != null)
 					finishCb(butLabel);
@@ -613,7 +613,7 @@ namespace XeApp.Game.Menu
 				}));
 				if(isReShow)
 				{
-					ConfigManager.Instance.ApplyValue(false);
+					ConfigManager.Instance.ApplyValue(false, null);
 					yield break;
 				}
 				else

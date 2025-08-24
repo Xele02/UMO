@@ -12,13 +12,13 @@ namespace XeApp.Game.MiniGame
 		// RVA: 0xC929E0 Offset: 0xC929E0 VA: 0xC929E0
 		public void Enter()
 		{
-			m_inOutAnim.Enter(false);
+			m_inOutAnim.Enter(false, null);
 		}
 
 		// RVA: 0xC92984 Offset: 0xC92984 VA: 0xC92984
 		public void Leave()
 		{
-			m_inOutAnim.Leave(false);
+			m_inOutAnim.Leave(false, null);
 		}
 	}
 }

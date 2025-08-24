@@ -293,7 +293,7 @@ namespace XeApp.Game.Menu
 					//0x1528D20
 					m_InfoLayout = instance.GetComponent<OfferInfoLayout>();
 				}));
-				AssetBundleManager.UnloadAssetBundle(bundleName);
+				AssetBundleManager.UnloadAssetBundle(bundleName, false);
 				bundleName = null;
 				font = null;
 				operation = null;
@@ -525,7 +525,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x152923C
 				return;
-			}, null, null);
+			}, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x15285D8 Offset: 0x15285D8 VA: 0x15285D8
@@ -565,7 +565,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x1529240
 				return;
-			}, null, null);
+			}, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x1528A0C Offset: 0x1528A0C VA: 0x1528A0C

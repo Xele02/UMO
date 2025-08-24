@@ -91,7 +91,7 @@ public class DecorationMapNameController : MonoBehaviour
 				DecoTapGuardCallback(true);
 			}
 			isClose = true;
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 		yield return new WaitUntil(() =>
 		{
 			//0x12409B0
@@ -144,7 +144,7 @@ public class DecorationMapNameController : MonoBehaviour
 			{
 				//0x1240638
 				DecoTapGuardCallback(false);
-			}, null, null, MenuScene.Instance.InputEnable);
+			}, null, null, MenuScene.Instance.InputEnable, true, true, false, null, null, null, null, null);
 		}
 		else
 		{
@@ -155,7 +155,7 @@ public class DecorationMapNameController : MonoBehaviour
 				//0x12406B4
 				DecoTapGuardCallback(false);
 				NoChangeMapNameCallback();
-			}, null, null, MenuScene.Instance.InputEnable);
+			}, null, null, MenuScene.Instance.InputEnable, true, true, false, null, null, null, null, null);
 		}
 	}
 }

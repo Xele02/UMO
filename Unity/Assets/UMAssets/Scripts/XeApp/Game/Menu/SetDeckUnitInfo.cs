@@ -165,7 +165,7 @@ namespace XeApp.Game.Menu
 								}
 								else
 								{
-									diva.m_sceneSetControl.Scenes[0].Set(unitDiva.AHHJLDLAPAN_DivaId, i != 0 ? SetDeckSceneControl.SkillType.Live : SetDeckSceneControl.SkillType.Active, viewPlayerData.OPIBAPEGCLA_Scenes[unitDiva.FGFIBOBAPIA_SceneId - 1]);
+									diva.m_sceneSetControl.Scenes[0].Set(unitDiva.AHHJLDLAPAN_DivaId, i != 0 ? SetDeckSceneControl.SkillType.Live : SetDeckSceneControl.SkillType.Active, viewPlayerData.OPIBAPEGCLA_Scenes[unitDiva.FGFIBOBAPIA_SceneId - 1], musicId);
 								}
 								diva.m_sceneSetControl.Scenes[0].SceneButton.Disable = false;
 							}
@@ -187,7 +187,7 @@ namespace XeApp.Game.Menu
 									}
 									else
 									{
-										diva.m_sceneSetControl.Scenes[j].Set(unitDiva.AHHJLDLAPAN_DivaId, SetDeckSceneControl.SkillType.Live, viewPlayerData.OPIBAPEGCLA_Scenes[unitDiva.DJICAKGOGFO_SubSceneIds[j - 1] - 1]);
+										diva.m_sceneSetControl.Scenes[j].Set(unitDiva.AHHJLDLAPAN_DivaId, SetDeckSceneControl.SkillType.Live, viewPlayerData.OPIBAPEGCLA_Scenes[unitDiva.DJICAKGOGFO_SubSceneIds[j - 1] - 1], musicId);
 									}
 									diva.m_sceneSetControl.Scenes[j].SceneButton.Disable = false;
 								}

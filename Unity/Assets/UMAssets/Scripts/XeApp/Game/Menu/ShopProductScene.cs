@@ -355,7 +355,7 @@ namespace XeApp.Game.Menu
 				if(myArgs.view.INDDJNMPONH_Type != AODFBGCCBPE.NJMPLEENNPO.MGEGNNJLJII_7_EpisodePlate1_4 && 
 					myArgs.view.INDDJNMPONH_Type != AODFBGCCBPE.NJMPLEENNPO.ACFEDNPIJKM_8_EpisodePlate5_6)
 				{
-					m_listProduct.SetStatus(myArgs.view, myArgs.view.MHKCPJDNJKI);
+					m_listProduct.SetStatus(myArgs.view, myArgs.view.MHKCPJDNJKI, true);
 					m_listProduct.SetSortButtonEnable(false);
 				}
 				else
@@ -363,7 +363,7 @@ namespace XeApp.Game.Menu
 					CreateFilterList(myArgs.view.MHKCPJDNJKI);
 					SetOrder(m_order != 0 ? SortOrder.Big : SortOrder.Small);
 					SetSort((SortItem)sortType);
-					m_listProduct.SetStatus(myArgs.view, m_productSortList);
+					m_listProduct.SetStatus(myArgs.view, m_productSortList, true);
 					m_listProduct.SetSortButtonEnable(true);
 					UpdateSortText();
 				}
@@ -432,7 +432,7 @@ namespace XeApp.Game.Menu
 					if(type == PopupButton.ButtonType.Negative)
 						isCancel = true;
 					isClose = true;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while(!isClose)
 					yield return null;
 				if(isCancel)
@@ -508,7 +508,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xC45980
 				done = true;
-			});
+			}, null, null, null);
 			yield return new WaitWhile(() =>
 			{
 				//0xC4598C
@@ -556,7 +556,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xC457F0
 				return;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0xC43AE8 Offset: 0xC43AE8 VA: 0xC43AE8
@@ -841,7 +841,7 @@ namespace XeApp.Game.Menu
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			SetOrder(m_order == SortOrder.Small ? SortOrder.Big : SortOrder.Small);
-			m_listProduct.SetStatus(myArgs.view, m_productSortList);
+			m_listProduct.SetStatus(myArgs.view, m_productSortList, false);
 			UpdateSortText();
 		}
 
@@ -865,7 +865,7 @@ namespace XeApp.Game.Menu
 					sp = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.HDKDFCCJEEP_ShopProduct5_6;
 				}
 				SetSort((SortItem)sp.LHPDCGNKPHD_SortItem);
-				m_listProduct.SetStatus(myArgs.view, m_productSortList);
+				m_listProduct.SetStatus(myArgs.view, m_productSortList, true);
 				UpdateSortText();
 			}, null);
 		}

@@ -122,7 +122,7 @@ namespace XeApp.Game.Menu
 				return;
 			m_costume_model_id = m_next_costume_model_id;
 			m_costume_color = m_next_costume_color;
-			MenuScene.Instance.divaManager.SetActive(false);
+			MenuScene.Instance.divaManager.SetActive(false, true);
 			m_model_loaded = false;
 			this.StartCoroutineWatched(CoroutineDivaModel(m_pushedTrying, false));
 		}
@@ -339,7 +339,7 @@ namespace XeApp.Game.Menu
 			bundleLoadCount++;
 			for(int i = 0; i < bundleLoadCount; i++)
 			{
-				AssetBundleManager.UnloadAssetBundle(bundleName);
+				AssetBundleManager.UnloadAssetBundle(bundleName, false);
 			}
 			while (!m_cos_list_win.IsLoaded())
 				yield return null;
@@ -522,11 +522,11 @@ namespace XeApp.Game.Menu
 				//0x16E1E38
 				t_next_upgrade = label == PopupButton.ButtonLabel.CostumeUpgrade;
 				t_next_episode = label == PopupButton.ButtonLabel.Episode;
-			}, null, null, null, endCallBaack:() =>
+			}, null, null, null, true, true, false, null, () =>
 			{
 				//0x16E1E5C
 				t_end_popup = true;
-			});
+			}, null, null, null);
 			while(!t_end_popup)
 				yield return null;
 			if(!t_next_episode)
@@ -569,7 +569,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x16E1E70
 				t_end_popup = true;
-			});
+			}, null, null, null);
 			while (!t_end_popup)
 				yield return null;
 		}
@@ -763,7 +763,7 @@ namespace XeApp.Game.Menu
 					m_costume_window.beforeData = divaInfo;
 					m_costume_window.afterData = item.m_view_diva;
 					m_costume_window.afterData.JEIGPGNJJCP_SetCostumeColor(item.m_cos_color);
-					PopupWindowManager.Show(m_costume_window, ChangeCostume, ChangeTabContens, null, null);
+					PopupWindowManager.Show(m_costume_window, ChangeCostume, ChangeTabContens, null, null, true, true, false, null, null, null, null, null);
 				}
 			}
 		}

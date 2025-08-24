@@ -305,7 +305,7 @@ public class NHPDPKHMFEP
 								long exp = PJJEOFOFDCO.FMPLMFLMJNE_Last[0].NKMNFPMMJND_ExpiredAt;
 								long t = 0;
 								if(exp != 0)
-									t = Utility.RoundDownDayUnixTime(exp);
+									t = Utility.RoundDownDayUnixTime(exp, 86399);
 								long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 								if(GBCPDBJEDHL(true))
 								{

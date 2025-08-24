@@ -121,17 +121,17 @@ namespace XeApp.Game.Menu
 					}
 					break;
 				case PopupRewardEvResult.Type.RankingsEventHiScore:
-					m_EventHiScore.SetNumber(view.evHighScore);
+					m_EventHiScore.SetNumber(view.evHighScore, 0);
 					m_numTexts[1].text = view.evScoreRank.ToString();
 					m_unitTexts[1].text = Smart.Format(MessageManager.Instance.GetMessage("menu", "popup_event_reward_currentrank_unit"), view.evScoreRank);
 					break;
 				case PopupRewardEvResult.Type.RankingsEventBattleHiScore:
-					m_EventHiScore.SetNumber((int)view.CurrentPoint);
+					m_EventHiScore.SetNumber((int)view.CurrentPoint, 0);
 					m_numTexts[1].text = view.Rank.ToString();
 					m_unitTexts[1].text = Smart.Format(MessageManager.Instance.GetMessage("menu", "popup_event_reward_currentrank_unit"), view.Rank);
 					break;
 				case PopupRewardEvResult.Type.RankingGoDivaEvent:
-					m_EventHiScore.SetNumber(view.evHighScore);
+					m_EventHiScore.SetNumber(view.evHighScore, 0);
 					m_numTexts[1].text = view.Rank.ToString();
 					m_unitTexts[1].text = Smart.Format(MessageManager.Instance.GetMessage("menu", "popup_event_reward_currentrank_unit"), view.Rank);
 					break;

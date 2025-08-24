@@ -9,6 +9,12 @@ namespace XeApp.Game.Menu
 		public const string DetailTextureBundleFormat = "ct/md/{0:D3}.xab";
 		public const string EventTextureBundleFormat = "ct/ev/mc/{0:D4}.xab";
 
+		// RVA: 0x104B8C4 Offset: 0x104B8C4 VA: 0x104B8C4
+		public MusicJacketTextureCache() : base(0)
+		{
+			//
+		}
+
 		// // RVA: 0x104B8D0 Offset: 0x104B8D0 VA: 0x104B8D0 Slot: 5
 		public override void Terminated()
 		{

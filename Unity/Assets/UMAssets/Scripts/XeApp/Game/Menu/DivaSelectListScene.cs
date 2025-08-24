@@ -129,7 +129,7 @@ namespace XeApp.Game.Menu
 				{
 					if (removeState != RemoveDivaState.CenterDiva)
 						return false;
-					PopupWindowManager.Show(PopupWindowManager.CreateMessageBankTextContent("menu", "popup_title_03", "popup_text_02", SizeType.Middle, new ButtonInfo[1] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive } }), null, null, null, null);
+					PopupWindowManager.Show(PopupWindowManager.CreateMessageBankTextContent("menu", "popup_title_03", "popup_text_02", SizeType.Middle, new ButtonInfo[1] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive } }), null, null, null, null, true, true, false, null, null, null, null, null);
 					return true;
 				}
 				ShowComparisonPopupWindow(d, null, PlayerData.NPFCMHCCDDH, m_args.slot, m_musicData);
@@ -144,7 +144,7 @@ namespace XeApp.Game.Menu
 					{
 						if(afterDiva.AHHJLDLAPAN_DivaId == f.AHHJLDLAPAN_DivaId)
 						{
-							PopupWindowManager.Show(PopupWindowManager.CreateMessageBankTextContent("menu", "popup_title_02", "popup_text_03", SizeType.Middle, new ButtonInfo[1] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive } }), null, null, null, null);
+							PopupWindowManager.Show(PopupWindowManager.CreateMessageBankTextContent("menu", "popup_title_02", "popup_text_03", SizeType.Middle, new ButtonInfo[1] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive } }), null, null, null, null, true, true, false, null, null, null, null, null);
 							return true;
 						}
 					}
@@ -262,7 +262,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x1264E5C
 				m_isOpenEndConfirmPopup = true;
-			});
+			}, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x17EFC68 Offset: 0x17EFC68 VA: 0x17EFC68

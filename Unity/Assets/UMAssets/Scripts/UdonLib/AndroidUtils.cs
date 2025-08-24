@@ -82,7 +82,7 @@ namespace UdonLib
 		{
 			//AndroidJavaClass c = new AndroidJavaClass("jp.co.xeen.xeapp.PostSNS");
 			//return c.CallStatic<bool>("share", new object[3] { path, message, shareTitle });
-			return OnShare2(path, message, shareTitle);
+			return OnShare2(path, message, shareTitle, "application/octet-stream");
 		}
 
 		public static bool OnShareImage(string path, string message, string shareTitle)

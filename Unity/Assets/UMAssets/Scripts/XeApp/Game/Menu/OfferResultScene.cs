@@ -528,7 +528,7 @@ namespace XeApp.Game.Menu
 					{
 						//0x185930C
 						PopupClose();
-					}, null, null, null);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 					return;
 				}
 			}
@@ -552,7 +552,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x1859338
 				closePopup();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x185748C Offset: 0x185748C VA: 0x185748C

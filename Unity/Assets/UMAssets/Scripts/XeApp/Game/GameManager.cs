@@ -540,7 +540,7 @@ namespace XeApp.Game
 				AssetBundleLoadAssetOperation bootAssetOperation = AssetBundleManager.LoadAssetAsync("bt.xab", "facial_name_list", typeof(TextAsset));
 				yield return Co.R(bootAssetOperation);
 				FacialNameDatabase.Create(bootAssetOperation.GetAsset<TextAsset>());
-				AssetBundleManager.UnloadAssetBundle("bt.xab");
+				AssetBundleManager.UnloadAssetBundle("bt.xab", false);
 			}
 			TipsControl tips = TipsControl.Instance;
 			GameObject root = GameObject.Find("Canvas-Popup");
@@ -1514,7 +1514,7 @@ namespace XeApp.Game
 			List<MusicDirectionParamBase.ConditionSetting> settingList = new List<MusicDirectionParamBase.ConditionSetting>();
 			for(int i = 0; i < mi.onStageDivaNum; i++)
 			{
-				MusicDirectionParamBase.ConditionSetting cond = new MusicDirectionParamBase.ConditionSetting();
+				MusicDirectionParamBase.ConditionSetting cond = new MusicDirectionParamBase.ConditionSetting(0, 0, 0, 0, 0);
 				cond.divaId = ti.danceDivaList[i].prismDivaId;
 				cond.costumeModelId = ti.danceDivaList[i].prismCostumeModelId;
 				cond.valkyrieId = ti.prismValkyrieId;

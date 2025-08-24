@@ -153,7 +153,7 @@ namespace XeApp.Game.Menu
 						icon.enabled = true;
 						image.Set(icon);
 					});
-					ItemIconNumList[i].SetNumber(m_view.PCPPHNINBBC[i]);
+					ItemIconNumList[i].SetNumber(m_view.PCPPHNINBBC[i], 0);
 					ItemIconAnimList[i].StartChildrenAnimGoStop("01");
 					ItemIconButtonList[i].Disable = m_view.CMCKNKKCNDK_Status == BOPFPIHGJMD.IGHPDAGKIKO.CADDNFIKDLG_4_Complete;
 					ItemIconButtonList[i].Hidden = false;
@@ -396,7 +396,7 @@ namespace XeApp.Game.Menu
 				//0x186413C
 				if (ItemDetailClose != null)
 					ItemDetailClose();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x185FB78 Offset: 0x185FB78 VA: 0x185FB78

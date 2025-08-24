@@ -100,7 +100,7 @@ namespace XeApp
 			m_decorationBgData.m_LeftFloorInnerOuterLine = d.m_LeftFloorInnerOuterLine;
 			SetEnablePostArea(DecorationConstants.Attribute.Type.None);
 			SetActive(false);
-			AssetBundleManager.UnloadAssetBundle(DecorationConstants.BgCmnAssetPath);
+			AssetBundleManager.UnloadAssetBundle(DecorationConstants.BgCmnAssetPath, false);
 			m_undoAreaData.m_floorId = -1;
 			m_undoAreaData.m_wallLId = -1;
 			m_undoAreaData.m_wallRId = -1;

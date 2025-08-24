@@ -72,7 +72,7 @@ namespace XeApp.Game.Menu
 		public void Hide()
 		{
 			m_isEntered = false;
-			m_inOut.Leave(0, false);
+			m_inOut.Leave(0, false, null);
 		}
 
 		// // RVA: 0x1679288 Offset: 0x1679288 VA: 0x1679288

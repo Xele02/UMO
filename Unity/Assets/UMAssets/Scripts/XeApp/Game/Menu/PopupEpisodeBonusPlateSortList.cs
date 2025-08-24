@@ -126,7 +126,7 @@ namespace XeApp.Game.Menu
 				if(btnlabel != PopupButton.ButtonLabel.GachaPull)
 					return;
 				m_monoBehaviour.StartCoroutineWatched(m_gachaList.Show());
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// RVA: 0xF88674 Offset: 0xF88674 VA: 0xF88674

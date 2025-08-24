@@ -755,7 +755,7 @@ namespace XeApp.Game.RhythmGame
 
 				for(int i = 0; i < 2; i++)
 				{
-					AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+					AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 				}
 				bundleOperation = null;
 				colorTex = null;

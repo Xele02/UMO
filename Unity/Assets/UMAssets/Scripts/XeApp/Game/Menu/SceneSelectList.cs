@@ -204,9 +204,9 @@ namespace XeApp.Game.Menu
 				}));
 				yield return null;
 			}
-			AssetBundleManager.UnloadAssetBundle(assetBundleName);
+			AssetBundleManager.UnloadAssetBundle(assetBundleName, false);
 			if(transitionName == TransitionList.Type.SCENE_SELECT)
-				AssetBundleManager.UnloadAssetBundle(assetBundleName);
+				AssetBundleManager.UnloadAssetBundle(assetBundleName, false);
 			for(i = 0; i < m_scrollList.ScrollObjects.Count; i++)
 			{
 				while(!m_scrollList.ScrollObjects[i].IsLoaded())

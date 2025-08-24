@@ -149,7 +149,7 @@ public class OEGIPPCADNA
 			NPNNPNAIONN_IsError = true;
 			if (JGKOLBLPMPG != null)
 				JGKOLBLPMPG();
-		});
+		}, true);
 	}
 
 	//// RVA: 0x1B3CF94 Offset: 0x1B3CF94 VA: 0x1B3CF94

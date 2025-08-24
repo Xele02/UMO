@@ -299,7 +299,7 @@ namespace XeApp.Game.Common
 							cancelCallBack();
 					}
 				}
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x1BC23A8 Offset: 0x1BC23A8 VA: 0x1BC23A8
@@ -336,7 +336,7 @@ namespace XeApp.Game.Common
 							okCallBack();
 					}
 				}
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x1BC272C Offset: 0x1BC272C VA: 0x1BC272C
@@ -371,12 +371,12 @@ namespace XeApp.Game.Common
 			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_title_week_recovery_01"), SizeType.Small, string.Format(bk.GetMessageByLabel("popup_text_week_recovery_03"), recovery), new ButtonInfo[1]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
-			}), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{
 				//0x1BC80DC
 				if(closeCallBack != null)
 					closeCallBack();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x1BC2BC8 Offset: 0x1BC2BC8 VA: 0x1BC2BC8
@@ -491,7 +491,7 @@ namespace XeApp.Game.Common
 						}
 					}
 				}
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x1BC3310 Offset: 0x1BC3310 VA: 0x1BC3310
@@ -542,7 +542,7 @@ namespace XeApp.Game.Common
 						}, cancelCallBack, cancelCallBack, errorCallBack, JpStringLiterals.StringLiteral_14401);
 					}
 				}
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x1BC396C Offset: 0x1BC396C VA: 0x1BC396C
@@ -570,7 +570,7 @@ namespace XeApp.Game.Common
 					if(cancelCallBack != null)
 						cancelCallBack();
 				}
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73F3B4 Offset: 0x73F3B4 VA: 0x73F3B4
@@ -639,7 +639,7 @@ namespace XeApp.Game.Common
 			{
 				//0x1BC8BD8
 				recoveryCallBack();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x1BC51BC Offset: 0x1BC51BC VA: 0x1BC51BC
@@ -657,7 +657,7 @@ namespace XeApp.Game.Common
 				//0x1BC8C04
 				if(endCallBack != null)
 					endCallBack();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73F42C Offset: 0x73F42C VA: 0x73F42C
@@ -698,7 +698,7 @@ namespace XeApp.Game.Common
 				if (type != PopupButton.ButtonType.Positive)
 					return;
 				OpenCacheClearCheckWindow(callback);
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x1BC587C Offset: 0x1BC587C VA: 0x1BC587C
@@ -719,7 +719,7 @@ namespace XeApp.Game.Common
 					MenuScene.Instance.InputDisable();
 				}
 				GameManager.Instance.StartCoroutineWatched(CacheClear(callback));
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73F4A4 Offset: 0x73F4A4 VA: 0x73F4A4
@@ -738,7 +738,7 @@ namespace XeApp.Game.Common
 				if (callback != null)
 					callback();
 				callback = null;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x1BC5C10 Offset: 0x1BC5C10 VA: 0x1BC5C10
@@ -758,7 +758,7 @@ namespace XeApp.Game.Common
 					if(cancelAction != null)
 						cancelAction();
 				}
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x1BC5E74 Offset: 0x1BC5E74 VA: 0x1BC5E74
@@ -808,7 +808,7 @@ namespace XeApp.Game.Common
 					if(okCallback != null)
 						okCallback();
 				}
-			}, null, null, null, endCallBaack:closeEndCallback);
+			}, null, null, null, true, true, false, null, closeEndCallback, null, null, null);
 		}
 
 		// // RVA: 0x1BC6D14 Offset: 0x1BC6D14 VA: 0x1BC6D14
@@ -836,7 +836,7 @@ namespace XeApp.Game.Common
 					if(okCallback != null)
 						okCallback();
 				}
-			}, null, null, null, endCallBaack:closeEndCallback);
+			}, null, null, null, true, true, false, null, closeEndCallback, null, null, null);
 		}
 
 		// // RVA: 0x1BC7054 Offset: 0x1BC7054 VA: 0x1BC7054
@@ -854,7 +854,7 @@ namespace XeApp.Game.Common
 			{
 				//0x1BC79A0
 				return;
-			}, null, null, null, endCallBaack:closeEndCallback);
+			}, null, null, null, true, true, false, null, closeEndCallback, null, null, null);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73F51C Offset: 0x73F51C VA: 0x73F51C

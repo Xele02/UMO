@@ -767,14 +767,14 @@ namespace XeApp.Game.MiniGame
 							{
 								this.StartCoroutineWatched(MainRetry());
 							}
-						}, null, null, null);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 					}
 					else
 					{
 						TaskUnPause();
 						m_isPause = false;
 					}
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 

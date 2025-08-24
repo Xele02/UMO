@@ -161,7 +161,7 @@ public class PopupItemListItemIcon : FlexibleListItemLayout
 		{
 			//0xDFB230
 			return;
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	//// RVA: 0xDFAE94 Offset: 0xDFAE94 VA: 0xDFAE94

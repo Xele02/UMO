@@ -582,7 +582,7 @@ namespace XeApp.Game.Menu
 					m_sceneSelectList.UpdateRegion();
 					m_sceneSelectList.UpdateScore();
 				}
-			}, null, null, ac);
+			}, null, null, ac, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x1382B50 Offset: 0x1382B50 VA: 0x1382B50
@@ -609,7 +609,7 @@ namespace XeApp.Game.Menu
 					m_sceneSelectList.UpdateRemoveButton(sceneData);
 				}
 				m_sceneSelectList.UpdateRegion();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// RVA: 0x1382D3C Offset: 0x1382D3C VA: 0x1382D3C Slot: 16
@@ -987,7 +987,7 @@ namespace XeApp.Game.Menu
 		{
 			if(BasicTutorialManager.Instance.GetRecoveryPoint() != ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.BNLDNJNMFMC_6)
 			{
-				BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.Scene, null, null);
+				BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.Scene, null, null, TutorialPointer.Direction.Normal);
 			}
 			else
 			{
@@ -1062,7 +1062,7 @@ namespace XeApp.Game.Menu
 			Sort(isBonus, false);
 			DisplayType dt = 0;
 			bool b = UnitWindowConstant.SortItemToDisplayType.TryGetValue((int)m_sortType, out dt);
-			CheckSkillIconType(PlayerData.DPLBHAIKPGL_GetTeam(), m_divaData);
+			CheckSkillIconType(PlayerData.DPLBHAIKPGL_GetTeam(m_isGoDivaEvent), m_divaData);
 			m_sceneSelectList.UpdateContent(PlayerData, m_divaData, m_musicBaseData != null ? m_musicBaseData.DLAEJOBELBH_MusicId : 0, PlayerData.OPIBAPEGCLA_Scenes, m_sceneIndexList, m_selectedSceneId, dt, m_dispRowCount, m_transitionName, m_isGoDivaEvent);
 			if(m_musicBaseData != null)
 			{
@@ -1205,7 +1205,7 @@ namespace XeApp.Game.Menu
 				compatibleFilterBit = 0;
 			}
 
-			Listup(rarityFilterBit, attributeFilterBit, seriaseFilterBit, compatibleFilterBit, lskillRangeFilerBit, cskillRankFilerBit, askillRankFilerBit, lskillRankFilerBit, cskillFilerBit, askillFilerBit, lskillFilerBit, notesFilterBit, m_episodeId, isBonus);
+			Listup(rarityFilterBit, attributeFilterBit, seriaseFilterBit, compatibleFilterBit, lskillRangeFilerBit, cskillRankFilerBit, askillRankFilerBit, lskillRankFilerBit, cskillFilerBit, askillFilerBit, lskillFilerBit, notesFilterBit, m_episodeId, isBonus, -1);
 			SortImpl();
 		}
 

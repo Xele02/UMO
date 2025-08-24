@@ -347,7 +347,7 @@ namespace XeSys.Gfx
 		public virtual void CopyTo(ViewBase view)
 		{
 			m_FrameAnimation.CopyTo(view.m_FrameAnimation);
-			m_FrameAnimation.InitializeEmptyAnimation();
+			m_FrameAnimation.InitializeEmptyAnimation(false);
 			view.m_ID = m_ID;
 			view.m_EXID = m_EXID;
 			view.m_AnimID = m_AnimID;

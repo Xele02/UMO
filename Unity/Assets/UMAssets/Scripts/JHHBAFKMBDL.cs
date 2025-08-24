@@ -79,7 +79,7 @@ public class JHHBAFKMBDL
 		{
 			//0x13470F8
 			EDIIEFHAOGP();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB1E8C4 Offset: 0xB1E8C4 VA: 0xB1E8C4
@@ -106,7 +106,7 @@ public class JHHBAFKMBDL
 			{
 				EDIIEFHAOGP();
 			}
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB1EC54 Offset: 0xB1EC54 VA: 0xB1EC54
@@ -123,7 +123,7 @@ public class JHHBAFKMBDL
 		{
 			//0x134718C
 			EDIIEFHAOGP();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB1EEEC Offset: 0xB1EEEC VA: 0xB1EEEC
@@ -139,7 +139,7 @@ public class JHHBAFKMBDL
 		PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel LHFGEOAJAAL) => {
 			//0x13471C0
 			EDIIEFHAOGP();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB1F184 Offset: 0xB1F184 VA: 0xB1F184
@@ -155,7 +155,7 @@ public class JHHBAFKMBDL
 		PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel LHFGEOAJAAL) => {
 			//0x13471F4
 			EDIIEFHAOGP();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB1F3F8 Offset: 0xB1F3F8 VA: 0xB1F3F8
@@ -186,7 +186,7 @@ public class JHHBAFKMBDL
 				});
 			}
 			EDIIEFHAOGP();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB1F758 Offset: 0xB1F758 VA: 0xB1F758
@@ -255,7 +255,7 @@ public class JHHBAFKMBDL
 				});
 			}
 			EDIIEFHAOGP();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB1FC18 Offset: 0xB1FC18 VA: 0xB1FC18
@@ -274,7 +274,7 @@ public class JHHBAFKMBDL
 			{
 				//0x1347820
 				EDIIEFHAOGP();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 		else
 		{
@@ -288,7 +288,7 @@ public class JHHBAFKMBDL
 			{
 				//0x134784C
 				EDIIEFHAOGP();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 	}
 
@@ -317,7 +317,7 @@ public class JHHBAFKMBDL
 				{
 					EDIIEFHAOGP();
 				}
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 		else
 		{
@@ -339,7 +339,7 @@ public class JHHBAFKMBDL
 				{
 					EDIIEFHAOGP();
 				}
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 	}
 
@@ -358,7 +358,7 @@ public class JHHBAFKMBDL
 		{
 			//0x1347938
 			EDIIEFHAOGP();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB208BC Offset: 0xB208BC VA: 0xB208BC
@@ -384,7 +384,7 @@ public class JHHBAFKMBDL
 			{
 				EDIIEFHAOGP();
 			}
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB20C60 Offset: 0xB20C60 VA: 0xB20C60
@@ -410,7 +410,7 @@ public class JHHBAFKMBDL
 		{
 			//0x1347BB0
 			BHEOPIPFEFJ();
-		}, null ,null, null);
+		}, null ,null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB21A54 Offset: 0xB21A54 VA: 0xB21A54
@@ -434,7 +434,7 @@ public class JHHBAFKMBDL
 			//0x1347C4C
 			if(BHEOPIPFEFJ != null)
 				BHEOPIPFEFJ();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB2200C Offset: 0xB2200C VA: 0xB2200C
@@ -478,7 +478,7 @@ public class JHHBAFKMBDL
 		{
 			//0x1347EA8
 			BHEOPIPFEFJ();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
     }
 
 	// // RVA: 0xB22450 Offset: 0xB22450 VA: 0xB22450
@@ -547,7 +547,7 @@ public class JHHBAFKMBDL
 				{
 					BHEOPIPFEFJ();
 				}
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 		else
 		{
@@ -560,7 +560,7 @@ public class JHHBAFKMBDL
 			{
 				//0x1348134
 				NIMPEHIECJH();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 	}
 
@@ -582,7 +582,7 @@ public class JHHBAFKMBDL
 		{
 			//0x134819C
 			HIDFAIBOHCC();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB2312C Offset: 0xB2312C VA: 0xB2312C
@@ -599,7 +599,7 @@ public class JHHBAFKMBDL
 		{
 			//0x13481D0
 			HIDFAIBOHCC();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB233E0 Offset: 0xB233E0 VA: 0xB233E0
@@ -616,7 +616,7 @@ public class JHHBAFKMBDL
 		{
 			//0x1348204
 			HIDFAIBOHCC();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB236E0 Offset: 0xB236E0 VA: 0xB236E0
@@ -633,7 +633,7 @@ public class JHHBAFKMBDL
 		{
 			//0x1348238
 			HIDFAIBOHCC();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB23944 Offset: 0xB23944 VA: 0xB23944
@@ -651,7 +651,7 @@ public class JHHBAFKMBDL
 		{
 			//0x134826C
 			JGKOLBLPMPG();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB23C98 Offset: 0xB23C98 VA: 0xB23C98
@@ -669,7 +669,7 @@ public class JHHBAFKMBDL
 		{
 			//0x13482A0
 			JGKOLBLPMPG();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB23F80 Offset: 0xB23F80 VA: 0xB23F80
@@ -701,7 +701,7 @@ public class JHHBAFKMBDL
 		{
 			//0x13483D8
 			HIDFAIBOHCC();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB246EC Offset: 0xB246EC VA: 0xB246EC
@@ -719,7 +719,7 @@ public class JHHBAFKMBDL
 		{
 			//0x134840C
 			HIDFAIBOHCC();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB249DC Offset: 0xB249DC VA: 0xB249DC
@@ -750,7 +750,7 @@ public class JHHBAFKMBDL
 				});
 			}
 			HIDFAIBOHCC.Invoke();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6B89E0 Offset: 0x6B89E0 VA: 0x6B89E0
@@ -771,7 +771,7 @@ public class JHHBAFKMBDL
 		{
 			//0x134871C
 			HIDFAIBOHCC();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB2509C Offset: 0xB2509C VA: 0xB2509C
@@ -788,7 +788,7 @@ public class JHHBAFKMBDL
 		{
 			//0x1348750
 			AOCANKOMKFG();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB2539C Offset: 0xB2539C VA: 0xB2539C
@@ -805,7 +805,7 @@ public class JHHBAFKMBDL
 		{
 			//0x1348784
 			AOCANKOMKFG();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB2569C Offset: 0xB2569C VA: 0xB2569C
@@ -823,7 +823,7 @@ public class JHHBAFKMBDL
 		{
 			//0x13487B8
 			NIMPEHIECJH();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB25948 Offset: 0xB25948 VA: 0xB25948
@@ -841,7 +841,7 @@ public class JHHBAFKMBDL
 		{
 			//0x13487EC
 			NIMPEHIECJH();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB25BF4 Offset: 0xB25BF4 VA: 0xB25BF4
@@ -856,7 +856,7 @@ public class JHHBAFKMBDL
 		PopupWindowManager.Show(popup, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel LHFGEOAJAAL) => {
 			//0x1348820
 			MBIKIBHLAGE();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB1551C Offset: 0xB1551C VA: 0xB1551C
@@ -872,7 +872,7 @@ public class JHHBAFKMBDL
 		{
 			//0x1348854
 			MBIKIBHLAGE();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB25EF4 Offset: 0xB25EF4 VA: 0xB25EF4
@@ -894,7 +894,7 @@ public class JHHBAFKMBDL
 			}
 			NIMPEHIECJH();
 			return;
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB2627C Offset: 0xB2627C VA: 0xB2627C
@@ -909,7 +909,7 @@ public class JHHBAFKMBDL
 		PopupWindowManager.Show(popup, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel LHFGEOAJAAL) => {
 			//0x13488E8
 			HIDFAIBOHCC();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB2657C Offset: 0xB2657C VA: 0xB2657C

@@ -242,7 +242,7 @@ public class MBCPNPNMFHB
 				{
 					//0xA2E9FC
 					BEKAMBBOLBO = true;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while(!BEKAMBBOLBO)
 					yield return null;
 			}
@@ -275,7 +275,7 @@ public class MBCPNPNMFHB
 			{
 				//0xA2E9E4
 				BEKAMBBOLBO = true;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(!BEKAMBBOLBO)
 				yield return null;
 		}

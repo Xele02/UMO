@@ -81,7 +81,7 @@ namespace XeApp
 		public string FileNameFormat { get { return DecorationConstants.GetItemFileNameFormat(ViewData); } } //0x1AD03D0
 		public int AssetId { get { return DecorationConstants.GetItemAssetId(ViewData); } } //0x1AD045C
 		public string FileName { get { return FileNameFormat == "" ? "" : string.Format(FileNameFormat, AssetId); } } //0x1AD04E8
-		public string BundlePath { get { return DecorationConstants.GetItemBundleName(ViewData, UseRareBrakePosterAnim); } } //0x1AD05C8
+		public string BundlePath { get { return DecorationConstants.GetItemBundleName(ViewData, UseRareBrakePosterAnim, DecorationConstants.Attribute.Type.None); } } //0x1AD05C8
 		public LayoutDecorationWindow01.SelectItemType ItemType { get
 			{
 				int a = 3;

@@ -92,7 +92,7 @@ namespace XeApp.Game.Menu
 				raidResultBossFilter = instance.GetComponent<RaidResultBossFilterLayout>();
 				raidResultBossFilter.gameObject.transform.SetAsFirstSibling();
 			}));
-			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7152A4 Offset: 0x7152A4 VA: 0x7152A4
@@ -224,7 +224,7 @@ namespace XeApp.Game.Menu
 						//0x1817338
 						isClose = true;
 						isHelp = type == PopupButton.ButtonType.Positive;
-					}, null, null, null, true, true, false);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 					while(!isClose)
 						yield return null;
 					if(isHelp)
@@ -248,7 +248,7 @@ namespace XeApp.Game.Menu
 								{
 									//0x1817874
 									done = true;
-								}, null, null, null, true, true, false);
+								}, null, null, null, true, true, false, null, null, null, null, null);
 							}
 							else
 							{
@@ -264,7 +264,7 @@ namespace XeApp.Game.Menu
 								{
 									//0x1817868
 									done = true;
-								}, null, null, null, true, true, false);
+								}, null, null, null, true, true, false, null, null, null, null, null);
 
 							}
 						}, () =>
@@ -286,7 +286,7 @@ namespace XeApp.Game.Menu
 							{
 								//0x1817B6C
 								done = true;
-							}, null, null, null, true, true, false);
+							}, null, null, null, true, true, false, null, null, null, null, null);
 						}, () =>
 						{
 							//0x1817B78
@@ -301,7 +301,7 @@ namespace XeApp.Game.Menu
 							{
 								//0x1817E58
 								done = true;
-							}, null, null, null, true, true, false);
+							}, null, null, null, true, true, false, null, null, null, null, null);
 						}, () =>
 						{
 							//0x1817E64
@@ -316,7 +316,7 @@ namespace XeApp.Game.Menu
 							{
 								//0x1818144
 								done = true;
-							}, null, null, null, true, true, false);
+							}, null, null, null, true, true, false, null, null, null, null, null);
 						}, () =>
 						{
 							//0x1818150
@@ -331,7 +331,7 @@ namespace XeApp.Game.Menu
 							{
 								//0x1818430
 								done = true;
-							}, null, null, null, true, true, false);
+							}, null, null, null, true, true, false, null, null, null, null, null);
 						}, () =>
 						{
 							//0x181843C
@@ -346,7 +346,7 @@ namespace XeApp.Game.Menu
 							{
 								//0x181871C
 								done = true;
-							}, null, null, null, true, true, false);
+							}, null, null, null, true, true, false, null, null, null, null, null);
 						});
 						//LAB_0181a1f0
 						while(!done)

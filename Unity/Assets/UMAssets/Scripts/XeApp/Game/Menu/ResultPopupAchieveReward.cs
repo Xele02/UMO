@@ -84,7 +84,7 @@ namespace XeApp.Game.Menu
 					if (!m_isSkip && onFinished != null)
 						onFinished();
 					onFinished = null;
-				}, null, null, null, false, true, false);
+				}, null, null, null, false, true, false, null, null, null, null, null);
 			}
 		}
 	}

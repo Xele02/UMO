@@ -357,7 +357,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xA49DF4
 					return;
-				}, null, null, null, true, true, false);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 			else if(m_bonusCellList[index].cellType == CellType.Episode)
 			{
@@ -371,7 +371,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xA49DF0
 					return;
-				}, null, null, null, true, true, false);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 

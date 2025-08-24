@@ -96,7 +96,7 @@ public class BDFPCPHIJCN : LBHFILLFAGA
 						, false, true), (PopupWindowControl control_, PopupButton.ButtonType t, PopupButton.ButtonLabel label) =>
 						{
 							BDALHEMDIDC_DoStart();
-						}, null, null, null);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 						return false;
 					}
 					else

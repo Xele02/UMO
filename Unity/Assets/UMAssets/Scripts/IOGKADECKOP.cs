@@ -230,7 +230,7 @@ public class IOGKADECKOP
 				{
 					//0xA08F48
 					HFPLKFCPHDK_ = false;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while(HFPLKFCPHDK_)
 				{
 					yield return null;
@@ -603,7 +603,7 @@ public class IOGKADECKOP
 				//0xA09100
 				HFPLKFCPHDK = true;
 				return true;
-			});
+			}, null, null, null, null);
 			while (HFPLKFCPHDK == false)
 				yield return null;
 			if(CILPABJCBPH == false)
@@ -833,7 +833,7 @@ public class IOGKADECKOP
 			//0xA092FC
 			BEKAMBBOLBO_Done = true;
 			CNAIDEAFAAM_IsError = true;
-		});
+		}, 0, 0);
 		//LAB_00a0cc14:
 		while(!BEKAMBBOLBO_Done)
 		{
@@ -1249,7 +1249,7 @@ public class IOGKADECKOP
 				}, () => {
 					//0xA09588
 					DANMJLOBLIE.StartCoroutineWatched(NNPDJBJGBFA_Coroutine_ReturnToTitle());
-				}));
+				}, OOICHDNLLJG_NeedTuto));
 				//goto LAB_00a0e3c0;
 				yield break;
 			}

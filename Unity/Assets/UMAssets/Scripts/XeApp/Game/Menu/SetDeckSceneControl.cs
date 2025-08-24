@@ -108,7 +108,7 @@ namespace XeApp.Game.Menu
 			if(m_sceneData == null)
 			{
 				m_attrIconEffectImage.enabled = false;
-				m_attrIconEffectAnime.Stop();
+				m_attrIconEffectAnime.Stop(true);
 			}
 			else
 			{
@@ -122,7 +122,7 @@ namespace XeApp.Game.Menu
 				else
 				{
 					m_attrIconEffectImage.enabled = false;
-					m_attrIconEffectAnime.Stop();
+					m_attrIconEffectAnime.Stop(true);
 				}
 			}
 			m_statucControl.SetOff();

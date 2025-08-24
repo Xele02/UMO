@@ -83,7 +83,7 @@ namespace XeApp.Game.Menu
 				m_layoutLimitOverList.ReleaseDecoration();
 				UnityEngine.Object.DestroyImmediate(m_tabContents.gameObject);
 				m_tabContents = null;
-			});
+			}, null, null, null);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x705374 Offset: 0x705374 VA: 0x705374

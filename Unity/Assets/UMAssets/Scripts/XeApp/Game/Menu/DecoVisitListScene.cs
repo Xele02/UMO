@@ -254,7 +254,7 @@ namespace XeApp.Game.Menu
 				m_layoutDecorationVisitButtons.ClickMemberReloadButtonCallback = OnClickMemberReloadButton;
 				m_layoutDecorationVisitButtons.Hide();
 			}));
-			AssetBundleManager.UnloadAssetBundle(DecorationConstants.BundleName);
+			AssetBundleManager.UnloadAssetBundle(DecorationConstants.BundleName, false);
 		}
 
 		//// RVA: 0x11D09A0 Offset: 0x11D09A0 VA: 0x11D09A0
@@ -467,7 +467,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x11D2EA4
 					isDone = true;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while (!isDone)
 					yield return null;
 			}
@@ -491,7 +491,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x11D2EBC
 					isDone = true;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while(!isDone)
 					yield return null;
 			}

@@ -193,7 +193,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x194A480
 					return;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 			else
 			{
@@ -243,7 +243,7 @@ namespace XeApp.Game.Menu
 					return;
 				if(OnChangeEvent != null)
 					OnChangeEvent(buy, view);
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x1949AF0 Offset: 0x1949AF0 VA: 0x1949AF0 Slot: 7

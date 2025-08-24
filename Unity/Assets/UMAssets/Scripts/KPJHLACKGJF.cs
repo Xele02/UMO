@@ -1010,7 +1010,7 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 	// // RVA: 0x1136AD8 Offset: 0x1136AD8 VA: 0x1136AD8
 	private void PIMFJALCIGK()
 	{
-		int a = NGIHFKHOJOK_GetRankingMax();
+		int a = NGIHFKHOJOK_GetRankingMax(true);
 		for(int i = 0; i < a; i++)
 		{
 			BJEOAOACMGG(i);
@@ -1097,7 +1097,7 @@ public class KPJHLACKGJF_EventMission : IKDICBBFBMI_EventBase
 			if(IBNKPMPFLGI_IsRankReward)
 			{
 				HLFHJIDHJMP = null;
-				OKPEFAPPFDH_GetRanksAroundSelf r = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new OKPEFAPPFDH_GetRanksAroundSelf());
+				OKPEFAPPFDH_GetRanksAroundSelf r = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new OKPEFAPPFDH_GetRanksAroundSelf(false));
 				r.EMPNJPMAKBF_Id = KBACNOCOANM.PPFNGGCBJKC_Id;
 				r.MJGOBEGONON_Type = 0;
 				r.NHPCKCOPKAM_From = 0;

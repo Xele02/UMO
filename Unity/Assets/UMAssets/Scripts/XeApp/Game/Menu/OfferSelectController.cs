@@ -342,7 +342,7 @@ namespace XeApp.Game.Menu
 				{
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 				};
-				PopupWindowManager.Show(s, null, null, null, null);
+				PopupWindowManager.Show(s, null, null, null, null, true, true, false, null, null, null, null, null);
 			}
 			return a1 != a2 && a1 - a2 > -1;
 		}
@@ -394,7 +394,7 @@ namespace XeApp.Game.Menu
 					m_orderListLayout.InitializeBadge();
 					m_orderListLayout.StartListUpdate();
 				}
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			return false;
 		}
 
@@ -442,7 +442,7 @@ namespace XeApp.Game.Menu
 					return;
 				}
 				ItemCheck.ButtonEnable();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x18677E4 Offset: 0x18677E4 VA: 0x18677E4
@@ -513,7 +513,7 @@ namespace XeApp.Game.Menu
 						}
 					}
 				}
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x1867E98 Offset: 0x1867E98 VA: 0x1867E98
@@ -687,7 +687,7 @@ namespace XeApp.Game.Menu
 						}, null);
 					}
 				}
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x18689C0 Offset: 0x18689C0 VA: 0x18689C0
@@ -704,7 +704,7 @@ namespace XeApp.Game.Menu
 				s.IsCaption = false;
 				s.WindowSize = SizeType.Small;
 				s.Buttons = new ButtonInfo[1] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive } };
-				PopupWindowManager.Show(s, null, null, null, null);
+				PopupWindowManager.Show(s, null, null, null, null, true, true, false, null, null, null, null, null);
 				return true;
 			}
 			return false;
@@ -730,7 +730,7 @@ namespace XeApp.Game.Menu
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 			};
-			PopupWindowManager.Show(s, null, null, null, null);
+			PopupWindowManager.Show(s, null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x18690D8 Offset: 0x18690D8 VA: 0x18690D8
@@ -746,7 +746,7 @@ namespace XeApp.Game.Menu
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 			};
-			PopupWindowManager.Show(s, null, null, null, null);
+			PopupWindowManager.Show(s, null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x18693A0 Offset: 0x18693A0 VA: 0x18693A0
@@ -1132,7 +1132,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x186B6C0
 					return;
-				}, BasicTutorialMessageId.Id_OfferOrder, true, null));
+				}, BasicTutorialMessageId.Id_OfferOrder, true, null, null));
 			}
 			IsOrderInduction = false;
 		}
@@ -1205,7 +1205,7 @@ namespace XeApp.Game.Menu
 				OnClick();
 				GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.MKFNKOLCBOP_UpdateVFpUnlock(s.nextPlatoonNum);
 				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FAC24 Offset: 0x6FAC24 VA: 0x6FAC24
@@ -1312,7 +1312,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x186E304
 				act();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x186A27C Offset: 0x186A27C VA: 0x186A27C
@@ -1331,7 +1331,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x186E330
 				act();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// RVA: 0x186A4D0 Offset: 0x186A4D0 VA: 0x186A4D0

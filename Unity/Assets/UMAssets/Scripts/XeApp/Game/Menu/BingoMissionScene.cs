@@ -116,7 +116,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x109C5E0
 					return;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			});
 			m_layout.SetContentButtonCallback((int i) =>
 			{
@@ -182,7 +182,7 @@ namespace XeApp.Game.Menu
 					return;
 				int a2 = m_view.MEAPAEMIOBB.BECEJMHDBBP[_index].DODGLIDGBBC_ConditionValue;
 				OnClickChallenge(ILLPDLODANB.HNHNHHCBLDE((ILLPDLODANB.LOEGALDKHPL)m_view.MEAPAEMIOBB.BECEJMHDBBP[_index].GMGGCIJHDJH_ConditionType, a2), a2);
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x1098C14 Offset: 0x1098C14 VA: 0x1098C14
@@ -241,14 +241,14 @@ namespace XeApp.Game.Menu
 			{
 				//0x109CCF4
 				popEnd();
-			}, null, null, null, playSeEvent:(PopupWindowControl.SeType type) =>
+			}, null, null, null, true, true, false, null, null, (PopupWindowControl.SeType type) =>
 			{
 				//0x109C5E4
 				if(type != PopupWindowControl.SeType.WindowOpen)
 					return false;
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_WND_004);
 				return true;
-			});
+			}, null, null);
 		}
 
 		//// RVA: 0x1099450 Offset: 0x1099450 VA: 0x1099450
@@ -280,7 +280,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x109CD20
 					endPopupAct();
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 
@@ -309,7 +309,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x109CD4C
 				ClosedPopup();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x1099D34 Offset: 0x1099D34 VA: 0x1099D34
@@ -330,7 +330,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x109CD78
 					_closePopupAct();
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 			else
 			{

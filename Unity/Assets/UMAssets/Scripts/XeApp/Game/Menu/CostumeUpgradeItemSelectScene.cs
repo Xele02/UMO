@@ -258,7 +258,7 @@ namespace XeApp.Game.Menu
 		{
 			//0x16F6478
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-			m_makinaVoicePlayer.PlayVoiceRandom(CostumeUpgradeVoiceDataTable.VoiceSetting(CostumeUpgradeVoiceDataTable.VoiceType.ItemSelect, m_upgradeData.AHHJLDLAPAN_DivaId));
+			m_makinaVoicePlayer.PlayVoiceRandom(CostumeUpgradeVoiceDataTable.VoiceSetting(CostumeUpgradeVoiceDataTable.VoiceType.ItemSelect, m_upgradeData.AHHJLDLAPAN_DivaId), -1);
 			MenuScene.Instance.InputDisable();
 			yield return Co.R(m_item_use_window.CO_Init(m_upgradeData, item_type));
 			MenuScene.Instance.InputEnable();
@@ -284,7 +284,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x16F5338
 				(content as PopupTabContents).ChangeContents((int)label);
-			}, null, null);
+			}, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x16F4C58 Offset: 0x16F4C58 VA: 0x16F4C58

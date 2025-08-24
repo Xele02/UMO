@@ -110,7 +110,7 @@ public class GCIJNCFDNON_SceneInfo
 	}
 
 	// // RVA: 0x16AB6C8 Offset: 0x16AB6C8 VA: 0x16AB6C8
-	public bool CGKAEMGLHNK_IsUnlocked(bool checkCheat/* = false*/)
+	public bool CGKAEMGLHNK_IsUnlocked(bool checkCheat = false)
 	{
 		/*if(checkCheat && RuntimeSettings.CurrentSettings.ForceCardsUnlock)
 		{

@@ -33,11 +33,11 @@ namespace XeApp.Game.Menu
 			bool done = false;
 			int AccountSelection = -1;
 			PopupWindowControl c = null;
-			c = PopupWindowManager.Show(s, null, null, null, null, endCallBaack:() =>
+			c = PopupWindowManager.Show(s, null, null, null, null, true, true, false, null, () =>
 			{
 				done = true;
 				AccountSelection = (c.Content as UMOPopupAccountPicker).AccountSelected;
-			});
+			}, null, null, null);
 			while(!done)
 				yield return null;
 			if(AccountSelection > 0)

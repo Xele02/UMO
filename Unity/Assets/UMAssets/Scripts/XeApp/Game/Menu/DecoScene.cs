@@ -1818,7 +1818,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xC6DCC4
 				SetEnableControllerTapGuard(false);
-			});
+			}, null, null, null);
 		}
 
 		//// RVA: 0xC5EFDC Offset: 0xC5EFDC VA: 0xC5EFDC
@@ -1848,7 +1848,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xC6DCCC
 				SetEnableControllerTapGuard(false);
-			});
+			}, null, null, null);
 		}
 
 		//// RVA: 0xC62608 Offset: 0xC62608 VA: 0xC62608
@@ -2790,7 +2790,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xC6EDE4
 				this.StartCoroutineWatched(Co_DecoSpPopupAction(type, label, currentTime, item, id));
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0xC65430 Offset: 0xC65430 VA: 0xC65430
@@ -2968,7 +2968,7 @@ namespace XeApp.Game.Menu
 				if(typ == PopupButton.ButtonType.Positive)
 					isOk = true;
 				isClosed = true;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			yield return new WaitUntil(() =>
 			{
 				//0xC6EED0
@@ -3192,7 +3192,7 @@ namespace XeApp.Game.Menu
 					if(typ == PopupButton.ButtonType.Positive)
 						isOk = true;
 					isClosed = true;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				yield return new WaitUntil(() =>
 				{
 					//0xC6EF88
@@ -3680,7 +3680,7 @@ namespace XeApp.Game.Menu
 					if (type == PopupButton.ButtonType.Positive)
 						isDecide = true;
 					isWait = false;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while (isWait)
 					yield return null;
 			}
@@ -3712,7 +3712,7 @@ namespace XeApp.Game.Menu
 				if(typ == PopupButton.ButtonType.Positive)
 					isOk = true;
 				isClosed = true;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			yield return new WaitUntil(() =>
 			{
 				//0xC6F160
@@ -3773,7 +3773,7 @@ namespace XeApp.Game.Menu
 					if(type != PopupButton.ButtonType.Positive)
 						isDecide = false;
 					isWait = false;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while(isWait)
 					yield return null;
 			}
@@ -3837,7 +3837,7 @@ namespace XeApp.Game.Menu
 					isDecide = true;
 				}
 				isDone = true;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(!isDone)
 				yield return null;
 			if(isDecide)
@@ -4055,7 +4055,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xC6F534
 				isWait = false;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(isWait)
 				yield return null;
 		}
@@ -4329,7 +4329,7 @@ namespace XeApp.Game.Menu
 					{
 						//0xC6F5BC
 						isWait = false;
-					}, null, null, null);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 					//LAB_01580cf0
 					while(isWait)
 						yield return null;
@@ -4359,7 +4359,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xC6F548
 					isWait = false;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while(isWait)
 					yield return null;
 			}
@@ -4421,7 +4421,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xC6F5DC
 				isWait = false;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(isWait)
 				yield return null;
 			MenuScene.Instance.InputEnable();
@@ -4582,7 +4582,7 @@ namespace XeApp.Game.Menu
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 				};
 				s.Text = MessageManager.Instance.GetMessage("menu", str);
-				PopupWindowManager.Show(s, null, null, null, null);
+				PopupWindowManager.Show(s, null, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 
@@ -4607,7 +4607,7 @@ namespace XeApp.Game.Menu
 				//0xC6F5F0
 				isWait = false;
 				tempResult = type == PopupButton.ButtonType.Positive ? ScreenShot.PermissionFuncResultCode.Ok : ScreenShot.PermissionFuncResultCode.Cancell;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(isWait)
 				yield return null;
 			result(tempResult);

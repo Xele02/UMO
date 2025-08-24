@@ -131,7 +131,7 @@ namespace XeApp.Game.Common
 				//0x1BB04EC
 				return _.IPJMPBANBPP;
 			});
-			m_scrollList.SetPosition(Mathf.Clamp(idx, 0, a));
+			m_scrollList.SetPosition(Mathf.Clamp(idx, 0, a), 0, 0, false);
 			m_scrollList.VisibleRegionUpdate();
 		}
 

@@ -572,7 +572,7 @@ namespace XeApp.Game.Menu
 				//0xEEDDD4
 				if (onClose != null)
 					onClose();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0xEE7948 Offset: 0xEE7948 VA: 0xEE7948
@@ -901,7 +901,7 @@ namespace XeApp.Game.Menu
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 			};
-			PopupWindowManager.Show(setting, null, null, null, null);
+			PopupWindowManager.Show(setting, null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0xEE9698 Offset: 0xEE9698 VA: 0xEE9698
@@ -1366,7 +1366,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xEED764
 					return;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 
@@ -1415,7 +1415,7 @@ namespace XeApp.Game.Menu
 						{
 							c.SwitchToRarityContent();
 						}
-					}, null, null);
+					}, null, null, true, true, false, null, null, null, null, null);
 				});
 			}
 		}
@@ -1431,7 +1431,7 @@ namespace XeApp.Game.Menu
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 			};
-			PopupWindowManager.Show(m_episodeRewardPopupSetting, null, null, null, null);
+			PopupWindowManager.Show(m_episodeRewardPopupSetting, null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0xEEC948 Offset: 0xEEC948 VA: 0xEEC948

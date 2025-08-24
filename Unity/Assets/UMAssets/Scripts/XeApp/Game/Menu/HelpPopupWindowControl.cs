@@ -123,7 +123,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x954468
 					return;
-				}, null, null);
+				}, null, null, true, true, false, null, null, null, null, null);
 			}
 			else
 			{
@@ -150,7 +150,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x954370
 					(content as PopupTabContents).ChangeContents((int)blabel);
-				}, null, null);
+				}, null, null, true, true, false, null, null, null, null, null);
 			}
 			while (isWait)
 				yield return null;

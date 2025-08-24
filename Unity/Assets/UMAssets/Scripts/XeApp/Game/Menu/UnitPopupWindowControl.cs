@@ -116,7 +116,7 @@ namespace XeApp.Game.Menu
 					//0x1249914
 					ShowSaveTextWindow(type, targetUnitId, okAction);
 				}, null);
-			}, null, null, null, true, true, false, null, onEnd);
+			}, null, null, null, true, true, false, null, onEnd, null, null, null);
 		}
 
 		// // RVA: 0x1247F64 Offset: 0x1247F64 VA: 0x1247F64
@@ -137,7 +137,7 @@ namespace XeApp.Game.Menu
 				//0x1249954
 				if (okAction != null)
 					okAction();
-			});
+			}, null, null, null);
 		}
 
 		// // RVA: 0x1248344 Offset: 0x1248344 VA: 0x1248344
@@ -183,7 +183,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x12496F8
 				m_unitAutoSettingSetting.TabCallBack.Invoke(label);
-			}, null, openEnd);
+			}, null, openEnd, true, true, false, null, null, null, null, null);
 			m_plateAllClearSetting.Buttons = new ButtonInfo[2]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
@@ -195,7 +195,7 @@ namespace XeApp.Game.Menu
 		public void ShowSkillWindow(string name, string descript)
 		{
 			m_skillInfoContentSetting.Text = name + JpStringLiterals.StringLiteral_5812 + descript;
-			PopupWindowManager.Show(m_skillInfoContentSetting, null, null, null, null);
+			PopupWindowManager.Show(m_skillInfoContentSetting, null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x12489B8 Offset: 0x12489B8 VA: 0x12489B8
@@ -228,7 +228,7 @@ namespace XeApp.Game.Menu
 					m_unitAutoSettingSetting.PlayerData = null;
 					m_unitAutoSettingSetting.OkCallBack = null;
 				}
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x1248C38 Offset: 0x1248C38 VA: 0x1248C38
@@ -272,13 +272,13 @@ namespace XeApp.Game.Menu
 			{
 				//0x1249A98
 				closeCallBack();
-			}, null, null, null, true, true, false, null, endCallBack);
+			}, null, null, null, true, true, false, null, endCallBack, null, null, null);
 		}
 
 		// // RVA: 0x12493B0 Offset: 0x12493B0 VA: 0x12493B0
 		public void ShowSubPlateLockWindow(Action endCallBack)
 		{
-			PopupWindowManager.Show(m_subPlateLockSetting, null, null, null, null, true, true, false, null, endCallBack);
+			PopupWindowManager.Show(m_subPlateLockSetting, null, null, null, null, true, true, false, null, endCallBack, null, null, null);
 		}
 	}
 }

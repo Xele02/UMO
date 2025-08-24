@@ -117,11 +117,11 @@ namespace XeApp.Game.RhythmGame
 			}
 			if(m_assign_info.m_event_item)
 			{
-				AssginFromList(rNoteList, ref validNotesIdxByModeType, RhythmGameConsts.SpecialNoteType.EventItem);
+				AssginFromList(rNoteList, ref validNotesIdxByModeType, RhythmGameConsts.SpecialNoteType.EventItem, -1);
 			}
 			if(m_assign_info.m_center_live_skill)
 			{
-				AssginFromList(rNoteList, ref validNotesIdxByModeType, RhythmGameConsts.SpecialNoteType.CenterLiveSkill);
+				AssginFromList(rNoteList, ref validNotesIdxByModeType, RhythmGameConsts.SpecialNoteType.CenterLiveSkill, -1);
 			}
 			rareItemRandSeed = Random.Range(0, 100000);
 			int numItems = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.NBIAKELCBLC_GetNumItems(Database.Instance.gameSetup.teamInfo.teamLuck, rareItemRandSeed);

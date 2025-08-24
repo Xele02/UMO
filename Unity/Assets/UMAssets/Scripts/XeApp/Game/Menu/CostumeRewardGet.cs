@@ -126,11 +126,11 @@ namespace XeApp.Game.Menu
 			{
 				//0x1637934
 				pushLabel = label;
-			}, null, null, null, endCallBaack:() =>
+			}, null, null, null, true, true, false, null, () =>
 			{
 				//0x163793C
 				isWait = false;
-			});
+			}, null, null, null);
 			while(isWait)
 				yield return null;
 			CostumeCompWindow w = m_comp_window.Content.GetComponentInChildren<CostumeCompWindow>();
@@ -175,11 +175,11 @@ namespace XeApp.Game.Menu
 			{
 				//0x16377D0
 				return;
-			}, null, null, null, endCallBaack:() =>
+			}, null, null, null, true, true, false, null, () =>
 			{
 				//0x1637950
 				is_wait = false;
-			});
+			}, null, null, null);
 			yield return new WaitWhile(() =>
 			{
 				//0x163795C

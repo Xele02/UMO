@@ -380,7 +380,7 @@ namespace XeApp.Game.Menu
 				m_degree_setting.SetContent(instance);
 			}));
 			m_degree_setting.SetParent(transform);
-			AssetBundleManager.UnloadAssetBundle(m_degree_setting.BundleName);
+			AssetBundleManager.UnloadAssetBundle(m_degree_setting.BundleName, false);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FD3FC Offset: 0x6FD3FC VA: 0x6FD3FC
@@ -437,7 +437,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x17CD920
 				(content as PopupTabContents).ChangeContents((int)label);
-			}, null, null);
+			}, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x11E64EC Offset: 0x11E64EC VA: 0x11E64EC

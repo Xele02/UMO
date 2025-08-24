@@ -637,7 +637,7 @@ namespace XeApp.Game.Menu
 					CallBackDivaSelectCancelButton();
 				else if (label == PopupButton.ButtonLabel.Ok)
 					CallBackDivaSelectOKButton();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x16EF194 Offset: 0x16EF194 VA: 0x16EF194
@@ -671,7 +671,7 @@ namespace XeApp.Game.Menu
 							m_filterDivaIdList = ldiva;
 							m_diva_select_window.SetFilterDivaIdList(m_filterDivaIdList);
 							CallBackDivaSelect();
-						}, null, null, null);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 						return;
 					}
 				}
@@ -704,7 +704,7 @@ namespace XeApp.Game.Menu
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 			};
-			PopupWindowManager.Show(s, null, null, null, null);
+			PopupWindowManager.Show(s, null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x16EFAD8 Offset: 0x16EFAD8 VA: 0x16EFAD8
@@ -774,7 +774,7 @@ namespace XeApp.Game.Menu
 			bool isApplyUnlockConnected = false;
 			bool isStartApplyCostumeUnlock = false;
 			bool isRankUpAnimation = false;
-			PopupWindowManager.Show(m_rank_unlock_window, null, null, null, null, closeStartWaitCallBack: (PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			PopupWindowManager.Show(m_rank_unlock_window, null, null, null, null, true, true, false, null, null, null, null, (PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{
 				//0x16F18FC
 				if(label == PopupButton.ButtonLabel.Release)
@@ -820,7 +820,7 @@ namespace XeApp.Game.Menu
 			s.WindowSize = SizeType.Middle;
 			s.Buttons = new ButtonInfo[1] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative } };
 			m_rank_unlock_window = s;
-			PopupWindowManager.Show(s, null, null, null, null);
+			PopupWindowManager.Show(s, null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x16EFAE0 Offset: 0x16EFAE0 VA: 0x16EFAE0

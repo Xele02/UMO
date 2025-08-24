@@ -73,7 +73,7 @@ namespace XeApp.Game.Menu
 				});
 				m_layout.StartChildrenAnimGoStop("06");
             }
-			m_layout.UpdateAllAnimation(TimeWrapper.deltaTime * 2);
+			m_layout.UpdateAllAnimation(TimeWrapper.deltaTime * 2, false);
 			m_layout.UpdateAll(m_identity, Color.white);
 		}
 

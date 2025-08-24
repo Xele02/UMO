@@ -137,19 +137,19 @@ namespace XeApp.Game.Menu
 		{
 			if(m_endInitLayout)
 			{
-				m_postChangeAnim.UpdateAllAnimation(TimeWrapper.deltaTime * 2);
+				m_postChangeAnim.UpdateAllAnimation(TimeWrapper.deltaTime * 2, false);
 				m_postChangeAnim.UpdateAll(new Matrix23(), Color.white);
-				m_videoThumAnim.UpdateAllAnimation(TimeWrapper.deltaTime * 2);
+				m_videoThumAnim.UpdateAllAnimation(TimeWrapper.deltaTime * 2, false);
 				m_videoThumAnim.UpdateAll(new Matrix23(), Color.white);
-				m_pickUpAnim.UpdateAllAnimation(TimeWrapper.deltaTime * 2);
+				m_pickUpAnim.UpdateAllAnimation(TimeWrapper.deltaTime * 2, false);
 				m_pickUpAnim.UpdateAll(new Matrix23(), Color.white);
-				m_textSizeChange.UpdateAllAnimation(TimeWrapper.deltaTime * 2);
+				m_textSizeChange.UpdateAllAnimation(TimeWrapper.deltaTime * 2, false);
 				m_textSizeChange.UpdateAll(new Matrix23(), Color.white);
-				m_textTypeChange.UpdateAllAnimation(TimeWrapper.deltaTime * 2);
+				m_textTypeChange.UpdateAllAnimation(TimeWrapper.deltaTime * 2, false);
 				m_textTypeChange.UpdateAll(new Matrix23(), Color.white);
-				m_numberEnable.UpdateAllAnimation(TimeWrapper.deltaTime * 2);
+				m_numberEnable.UpdateAllAnimation(TimeWrapper.deltaTime * 2, false);
 				m_numberEnable.UpdateAll(new Matrix23(), Color.white);
-				m_moveThumAnim.UpdateAllAnimation(TimeWrapper.deltaTime * 2);
+				m_moveThumAnim.UpdateAllAnimation(TimeWrapper.deltaTime * 2, false);
 				m_moveThumAnim.UpdateAll(new Matrix23(), Color.white);
 			}
 		}

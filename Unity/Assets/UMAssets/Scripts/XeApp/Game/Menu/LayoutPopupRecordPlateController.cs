@@ -70,7 +70,7 @@ namespace XeApp.Game.Menu
 				//0x177D0F8
 				if (callback != null)
 					callback();
-			}, null, null, null, info.IPMJIODJGBC != GONMPHKGKHI_RewardView.CECMLGBLHHG.GBIDBHKEPGL/*1*/, true, false);
+			}, null, null, null, info.IPMJIODJGBC != GONMPHKGKHI_RewardView.CECMLGBLHHG.GBIDBHKEPGL/*1*/, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x177A664 Offset: 0x177A664 VA: 0x177A664
@@ -92,7 +92,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x177D120
 				GameManager.Instance.StartCoroutineWatched(Co_ShowTutorial_39(cont));
-			}, null);
+			}, null, true, true, false, null, null, null, null, null);
         }
 
 		//// RVA: 0x177A910 Offset: 0x177A910 VA: 0x177A910
@@ -114,7 +114,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x177D200
 				GameManager.Instance.StartCoroutineWatched(Co_ShowTutorial_39(cont));
-			}, null);
+			}, null, true, true, false, null, null, null, null, null);
         }
 
 		//// RVA: 0x177ABBC Offset: 0x177ABBC VA: 0x177ABBC
@@ -153,7 +153,7 @@ namespace XeApp.Game.Menu
 						return true;
 					}
 					return false;
-				});
+				}, null, null);
 			}
 		}
 
@@ -300,7 +300,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x177D33C
 				isWait = false;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(isWait)
 				yield return null;
 		}
@@ -318,7 +318,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x177D350
 				isWait = false;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(isWait)
 				yield return null;
 		}
@@ -336,7 +336,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x177D364
 				isWait = false;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(isWait)
 				yield return null;
 		}
@@ -726,7 +726,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x177A388 Offset: 0x177A388 VA: 0x177A388
 		private void SetupSceneCard()
 		{
-			m_sceneCard = new SceneCardTextureCache();
+			m_sceneCard = new SceneCardTextureCache(1);
 			m_sceneFrame = new SceneFrameTextureCache();
 		}
 

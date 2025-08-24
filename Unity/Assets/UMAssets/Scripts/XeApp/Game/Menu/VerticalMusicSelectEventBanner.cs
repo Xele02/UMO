@@ -56,9 +56,9 @@ namespace XeApp.Game.Menu
 				//0xBDDAA0
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				if (m_pullDownInOut.IsEnter)
-					m_pullDownInOut.Leave(false);
+					m_pullDownInOut.Leave(false, null);
 				else
-					m_pullDownInOut.Enter(false);
+					m_pullDownInOut.Enter(false, null);
 			});
 			m_limitTime.transform.parent.Find("Text (TMP)_Title").GetComponent<TextMeshProUGUI>().text = JpStringLiterals.UMO_EventRunning;
 		}

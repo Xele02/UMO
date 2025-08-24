@@ -168,6 +168,12 @@ namespace XeApp.Game.Menu
 		public const string KiraEffect2048HoloMaterialName = "holo_2048_a_mul";
 		public static int IsKiraShaderParam; // 0x0
 
+		// RVA: 0x1370BE4 Offset: 0x1370BE4 VA: 0x1370BE4
+		public SceneIconTextureCache() : base(0)
+		{
+			//
+		}
+
 		// // RVA: 0x1370C64 Offset: 0x1370C64 VA: 0x1370C64 Slot: 5
 		public override void Terminated()
 		{

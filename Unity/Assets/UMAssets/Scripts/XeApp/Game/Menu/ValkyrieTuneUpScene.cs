@@ -95,7 +95,7 @@ namespace XeApp.Game.Menu
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName);
 			yield return operation;
 			m_EffectPrefab = operation.GetAsset<GameObject>(assetName);
-			AssetBundleManager.UnloadAssetBundle(bundleName);
+			AssetBundleManager.UnloadAssetBundle(bundleName, false);
 			m_IsLoadEffect = true;
 		}
 
@@ -160,7 +160,7 @@ namespace XeApp.Game.Menu
 					m_layoutValSelect.SetAtkArrowEnable(false);
 					m_layoutValSelect.SetHitArrowEnable(false);
 				}));
-				AssetBundleManager.UnloadAssetBundle(bundleName);
+				AssetBundleManager.UnloadAssetBundle(bundleName, false);
 				operation = null;
 			}
 			else
@@ -303,7 +303,7 @@ namespace XeApp.Game.Menu
 					instance.transform.SetParent(transform, false);
 					m_abilityUpAnim = instance.GetComponent<LayoutSkillUpAnimation>();
 				}));
-				AssetBundleManager.UnloadAssetBundle(bundleName);
+				AssetBundleManager.UnloadAssetBundle(bundleName, false);
 				operation = null;
 			}
 			else
@@ -493,7 +493,7 @@ namespace XeApp.Game.Menu
 		{
 			m_layoutValSelect.HasAbility = m_SeriesValkyrieList[SelectSeries][Select].CNLIAMIIJID_AbilityLevel > 0;
 			ALEKLHIANJN a = new ALEKLHIANJN(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId, m_SeriesValkyrieList[SelectSeries][Select].CNLIAMIIJID_AbilityLevel);
-			m_layoutValSelect.SetAbility(a.OPFGFINHFCE_SkillName, a.CHHADJECKNL_GetLevel(), a.DMBDNIEEMCB_GetDesc());
+			m_layoutValSelect.SetAbility(a.OPFGFINHFCE_SkillName, a.CHHADJECKNL_GetLevel(), a.DMBDNIEEMCB_GetDesc(false));
 		}
 
 		//// RVA: 0xBD2104 Offset: 0xBD2104 VA: 0xBD2104
@@ -895,7 +895,7 @@ namespace XeApp.Game.Menu
 				};
 				m_PopupSetting.before_data = new ALEKLHIANJN(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId, m_SeriesValkyrieList[SelectSeries][Select].CNLIAMIIJID_AbilityLevel);
 				m_PopupSetting.after_data = new ALEKLHIANJN(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId, m_SeriesValkyrieList[SelectSeries][Select].CNLIAMIIJID_AbilityLevel + 1);
-				PopupWindowManager.Show(m_PopupSetting, OnClickPopupButton, null, null, null);
+				PopupWindowManager.Show(m_PopupSetting, OnClickPopupButton, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 
@@ -944,7 +944,7 @@ namespace XeApp.Game.Menu
 					};
 					m_skillupRewardPopupSetting.itemId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill.NIIADANCEKL(a.NHFDCMNPFDK).MLIJKJFMOHN(m_SeriesValkyrieList[SelectSeries][Select].CNLIAMIIJID_AbilityLevel - 1);
 					m_skillupRewardPopupSetting.cnt = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill.NIIADANCEKL(a.NHFDCMNPFDK).IMALGGGJDJO(m_SeriesValkyrieList[SelectSeries][Select].CNLIAMIIJID_AbilityLevel - 1);
-					PopupWindowManager.Show(m_skillupRewardPopupSetting, OnClickSkillUpRewardPopupButton, null, null, null);
+					PopupWindowManager.Show(m_skillupRewardPopupSetting, OnClickSkillUpRewardPopupButton, null, null, null, true, true, false, null, null, null, null, null);
 				}
 			}
 		}
@@ -1019,7 +1019,7 @@ namespace XeApp.Game.Menu
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 			};
 			m_SkillCheckPopupSetting.data = new ALEKLHIANJN(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId, m_SeriesValkyrieList[SelectSeries][Select].CNLIAMIIJID_AbilityLevel);
-			PopupWindowManager.Show(m_SkillCheckPopupSetting, OnClickCheckPopupButton, null, null, null);
+			PopupWindowManager.Show(m_SkillCheckPopupSetting, OnClickCheckPopupButton, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x734C24 Offset: 0x734C24 VA: 0x734C24
@@ -1070,7 +1070,7 @@ namespace XeApp.Game.Menu
 							{
 								//0xBD6D50
 								return;
-							}, null, null, null);
+							}, null, null, null, true, true, false, null, null, null, null, null);
 					}
 					else
 					{

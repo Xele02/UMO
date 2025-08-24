@@ -251,7 +251,7 @@ namespace XeApp.Game.Menu
 				SetGauge((int)((m_data.ABLHIAEDJAI_CurrentPoint - m_data.DMHDNKILKGI_MaxPoint) * 100.0f / (m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_TotalPoint - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_StartPoint)),
 						(int)((a - m_data.DMHDNKILKGI_MaxPoint) * 100.0f / (m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_TotalPoint - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_StartPoint)));
 				m_point_den.SetNumber(a - m_data.DMHDNKILKGI_MaxPoint, 0);
-				m_point_mol.SetNumber(m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_TotalPoint - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_StartPoint);
+				m_point_mol.SetNumber(m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_TotalPoint - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_StartPoint, 0);
 			}
 			int a2 = Mathf.Min(m_have_item, m_use_item_max);
 			if(m_item_use_num == a2)

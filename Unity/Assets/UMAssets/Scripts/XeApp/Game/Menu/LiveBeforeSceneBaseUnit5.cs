@@ -208,7 +208,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x154A034
 					MenuScene.Instance.InputEnable();
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}, () =>
 			{
 				//0x154A0D0
@@ -220,7 +220,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x154A3C4
 					MenuScene.Instance.Mount(TransitionUniqueId.HOME, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}, () =>
 			{
 				//0x154A47C
@@ -251,7 +251,7 @@ namespace XeApp.Game.Menu
 						//0x154B468
 						MenuScene.Instance.Mount(mi.returnTransitionUniqueId, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 						MenuScene.Instance.InputEnable();
-					}, null, null, null);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 				}
 				else if(status != NHCDBBBMFFG.OPNEOJEGDJB_2_Dead)
 				{
@@ -273,7 +273,7 @@ namespace XeApp.Game.Menu
 						//0x154B360
 						MenuScene.Instance.Mount(mi.returnTransitionUniqueId, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 						MenuScene.Instance.InputEnable();
-					}, null, null, null);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 				}
 			});
 		}
@@ -381,7 +381,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x154A5F8
 				return;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x1549668 Offset: 0x1549668 VA: 0x1549668
@@ -401,7 +401,7 @@ namespace XeApp.Game.Menu
 						ShowOriginalPrismSettingFailurePopup(m_lackDivaIds);
 					}
 				}
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x1549810 Offset: 0x1549810 VA: 0x1549810

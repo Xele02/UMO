@@ -315,7 +315,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x16FBABC
 				buttonCallBack();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x16FB1C4 Offset: 0x16FB1C4 VA: 0x16FB1C4
@@ -339,7 +339,7 @@ namespace XeApp.Game.Menu
 					buttonCallBack();
 					GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.AHAECLAKMIB_UpdateDailyLv(nowDifficult);
 					GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 			else
 			{
@@ -361,7 +361,7 @@ namespace XeApp.Game.Menu
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 			};
-			PopupWindowManager.Show(s, null, null, null, null);
+			PopupWindowManager.Show(s, null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 	}
 }

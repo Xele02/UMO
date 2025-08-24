@@ -184,7 +184,7 @@ namespace XeApp.Game.Menu
 					{
 						//0xCFC814
 						return;
-					}, null, null, null);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 				}
 			}
 		}
@@ -209,7 +209,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xCFC818
 					return;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 
@@ -234,7 +234,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xCFC81C
 					return;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 
@@ -259,7 +259,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xCFC820
 					return;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 	}

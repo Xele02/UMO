@@ -244,7 +244,7 @@ public class HPBDNNACBAK
 						{
 							BEKAMBBOLBO = false;
 							CNAIDEAFAAM = false;
-							HHDMGJIKEKF_GetStepUpLotDetail = OKDOIAEGADK_Server.IFFNCAFNEAG_AddRequest(new EDOGNHECOMI_GetStepUpLotDetail());
+							HHDMGJIKEKF_GetStepUpLotDetail = OKDOIAEGADK_Server.IFFNCAFNEAG_AddRequest(new EDOGNHECOMI_GetStepUpLotDetail(false));
 							HHDMGJIKEKF_GetStepUpLotDetail.MMEBLOIJBKE = GGOLBBBGFME[HLLLGHINECC_i].FJGCDPLCIAK_UniqueKey;
 							CACGCMBKHDI_Request.HDHIKGLMOGF DMLJLPMBLCH = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
 							{

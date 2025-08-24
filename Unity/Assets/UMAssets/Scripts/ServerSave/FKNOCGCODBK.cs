@@ -235,7 +235,7 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 		FKNOCGCODBK_Unit u = GPBJHKLFCEP as FKNOCGCODBK_Unit;
 		for(int i = 0; i < AHBBMJANGHE.Count; i++)
 		{
-			AHBBMJANGHE[i].ODDIHGPONFL_Copy(u.AHBBMJANGHE[i]);
+			AHBBMJANGHE[i].ODDIHGPONFL_Copy(u.AHBBMJANGHE[i], false);
 		}
 	}
 

@@ -66,7 +66,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x1D5D990
 				return;
-			}, null, null, null, endCallBaack:closeCallback);
+			}, null, null, null, true, true, false, null, closeCallback, null, null, null);
 		}
 
 		// // RVA: 0x1D5B12C Offset: 0x1D5B12C VA: 0x1D5B12C
@@ -190,7 +190,7 @@ namespace XeApp.Game.Menu
 					yield return null;
 				else
 				{
-					layout.UpdateAllAnimation(TimeWrapper.deltaTime * 2);
+					layout.UpdateAllAnimation(TimeWrapper.deltaTime * 2, false);
 					layout.UpdateAll(m_identity, Color.white);
 				}
 			}

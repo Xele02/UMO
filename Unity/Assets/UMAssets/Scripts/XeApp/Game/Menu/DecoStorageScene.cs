@@ -297,7 +297,7 @@ namespace XeApp.Game.Menu
 					isClose = true;
 					if (lable == PopupButton.ButtonLabel.Cancel)
 						isCancel = true;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			yield return new WaitUntil(() =>
 			{
 				//0x11CAB0C
@@ -528,7 +528,7 @@ namespace XeApp.Game.Menu
 					if (type == PopupButton.ButtonType.Positive)
 						isDecide = true;
 					isWait = false;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while (isWait)
 					yield return null;
 				if(!isDecide)
@@ -585,7 +585,7 @@ namespace XeApp.Game.Menu
 						isClose = true;
 						if (label == PopupButton.ButtonLabel.Cancel)
 							isCancel = true;
-					}, null, null, null);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 				yield return new WaitUntil(() =>
 				{
 					//0x11CAC5C
@@ -700,7 +700,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x11CAC9C
 					isClose = true;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			yield return new WaitUntil(() =>
 			{
 				//0x11CACA8

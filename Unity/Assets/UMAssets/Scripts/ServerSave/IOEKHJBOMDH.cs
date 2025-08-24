@@ -182,7 +182,7 @@ public class IOEKHJBOMDH_DecoStamp : KLFDBFMNLBL_ServerSaveBlock
 		DMKMNGELNAE_Serif.Clear();
 		for(int i = 0; i < 30; i++)
 		{
-			GNKJGECHLNE_CustomList.Add(new PAFLFMFEOJD());
+			GNKJGECHLNE_CustomList.Add(new PAFLFMFEOJD(0));
 		}
 		for(int i = 0; i < 900; i++)
 		{

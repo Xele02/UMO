@@ -165,7 +165,7 @@ public class CEDOOHCPHMG_UnitGoDiva : KLFDBFMNLBL_ServerSaveBlock
 						}
 					}
 					CIFHILOJJFC c = new CIFHILOJJFC();
-					c.ODDIHGPONFL_Copy(ALDOJAEAMCJ(i + 1, 0));
+					c.ODDIHGPONFL_Copy(ALDOJAEAMCJ(i + 1, 0), false);
 					PKMMBKHODDM_Saved.Add(c);
 				}
 			}
@@ -302,7 +302,7 @@ public class MPBEHHIAGOI
 	{
 		for(int i = 0; i < AHBBMJANGHE_Units.Count; i++)
 		{
-			AHBBMJANGHE_Units[i].ODDIHGPONFL_Copy(GPBJHKLFCEP.AHBBMJANGHE_Units[i]);
+			AHBBMJANGHE_Units[i].ODDIHGPONFL_Copy(GPBJHKLFCEP.AHBBMJANGHE_Units[i], false);
 		}
 	}
 

@@ -686,7 +686,7 @@ namespace XeApp.Game.Menu
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 				};
 				s.Text = name + JpStringLiterals.StringLiteral_5812 + descript;
-				PopupWindowManager.Show(s, null, null, null, null);
+				PopupWindowManager.Show(s, null, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 
@@ -727,7 +727,7 @@ namespace XeApp.Game.Menu
 			m_windowControl.InputDisable();
 			if(m_sceneCardCache == null)
 			{
-				m_sceneCardCache = new SceneCardTextureCache();
+				m_sceneCardCache = new SceneCardTextureCache(1);
 				yield return Co.R(m_sceneCardCache.Initialize(false));
 			}
 			//LAB_00a62920
@@ -903,7 +903,7 @@ namespace XeApp.Game.Menu
 						m.CMBGGPOFBOO_UcCost = m_limitOverData.GNKGDDMMJPF;
 						this.StartCoroutineWatched(LimitOverMainCoroutine(m));
 					}
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 			else
 			{
@@ -912,7 +912,7 @@ namespace XeApp.Game.Menu
 				{
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 				};
-				PopupWindowManager.Show(m_luckyLeafTerminateSetting, null, null, null, null);
+				PopupWindowManager.Show(m_luckyLeafTerminateSetting, null, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 
@@ -996,7 +996,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xA61808
 				return;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 	}
 }

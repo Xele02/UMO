@@ -267,7 +267,7 @@ namespace XeApp.Game.Menu
 					return;
 				CreateStampEndProcess();
 				MenuScene.Instance.InputEnable();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x1588E14 Offset: 0x1588E14 VA: 0x1588E14
@@ -395,7 +395,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x158C08C
 				GameManager.Instance.RemovePushBackButtonHandler(NotBackKey);
-				MenuScene.Instance.HeaderMenu.MenuStack.EnterBackButton();
+				MenuScene.Instance.HeaderMenu.MenuStack.EnterBackButton(false);
 				MenuScene.Instance.HeaderMenu.MenuStack.EnterLabel();
 			}, () =>
 			{
@@ -463,7 +463,7 @@ namespace XeApp.Game.Menu
 					return;
 				}
 				m_customStampWindow.ExchangeSave();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while (!isDone)
 				yield return null;
 			if(isCancel)
@@ -567,7 +567,7 @@ namespace XeApp.Game.Menu
 						MenuScene.Instance.InputEnable();
 					});
 				}
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x158A7D4 Offset: 0x158A7D4 VA: 0x158A7D4
@@ -584,7 +584,7 @@ namespace XeApp.Game.Menu
 				//0x158C7A0
 				if (callback != null)
 					callback();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x158AAA8 Offset: 0x158AAA8 VA: 0x158AAA8
@@ -626,7 +626,7 @@ namespace XeApp.Game.Menu
 							isDone = true;
 							isCancel = true;
 						}
-					}, null, null, null);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 				}
 				else
 				{

@@ -261,7 +261,7 @@ namespace CriWare
 					CRIWARE0C381E92_criManaUnityPlayer_Stop(playerId);
 					UpdateNativePlayer();
 				}
-				DisableInfos();
+				DisableInfos(false);
 			}
 
 			// // RVA: 0x2959850 Offset: 0x2959850 VA: 0x2959850
@@ -659,7 +659,7 @@ namespace CriWare
 				}
 				if(_nativeStatus == Status.Error)
 				{
-					DisableInfos();
+					DisableInfos(false);
 				}
 			}
 

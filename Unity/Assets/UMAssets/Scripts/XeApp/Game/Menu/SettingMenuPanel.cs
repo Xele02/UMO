@@ -109,7 +109,7 @@ namespace XeApp.Game.Menu
 				{
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 				};
-				PopupWindowManager.Show(s, null, null, null, null, true, true, false);
+				PopupWindowManager.Show(s, null, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 
@@ -159,7 +159,7 @@ namespace XeApp.Game.Menu
 				{
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 				};
-				PopupWindowManager.Show(s, null, null, null, null);
+				PopupWindowManager.Show(s, null, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 
@@ -249,7 +249,7 @@ namespace XeApp.Game.Menu
 			BasicTutorialManager.Instance.ShowMessageWindow(BasicTutorialMessageId.Id_Setting, () =>
 			{
 				//0xC3CBEC
-				BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.UnitSetting, null, null);
+				BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.UnitSetting, null, null, TutorialPointer.Direction.Normal);
 			}, null);
 		}
 

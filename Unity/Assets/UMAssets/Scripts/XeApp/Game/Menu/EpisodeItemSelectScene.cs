@@ -164,7 +164,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xEF84D8
 				(content as PopupTabContents).ChangeContents((int)label);
-			}, null, null);
+			}, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0xEF80F0 Offset: 0xEF80F0 VA: 0xEF80F0

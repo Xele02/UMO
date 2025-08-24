@@ -90,7 +90,7 @@ namespace XeApp.Game.Title
 				if (label2 == PopupButton.ButtonLabel.Ok)
 					isOk = true;
 				isWait = false;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while (isWait)
 				yield return null;
 			if(!isOk)

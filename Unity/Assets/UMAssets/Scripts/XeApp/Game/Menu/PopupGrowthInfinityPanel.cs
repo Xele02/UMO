@@ -120,7 +120,7 @@ namespace XeApp.Game.Menu
 					{
 						m_textPopupSetting.Text = bk.GetMessageByLabel("growth_popup_text16");
 					}
-					PopupWindowManager.Show(m_textPopupSetting, null, null, null, null);
+					PopupWindowManager.Show(m_textPopupSetting, null, null, null, null, true, true, false, null, null, null, null, null);
 					SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_003);
 				}
 				else
@@ -141,7 +141,7 @@ namespace XeApp.Game.Menu
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
 				m_textPopupSetting.TitleText = bk.GetMessageByLabel("growth_popup_title_text06");
 				m_textPopupSetting.Text = bk.GetMessageByLabel("growth_popup_text15");
-				PopupWindowManager.Show(m_textPopupSetting, null, null, null, null);
+				PopupWindowManager.Show(m_textPopupSetting, null, null, null, null, true, true, false, null, null, null, null, null);
 				newValue--;
 				SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_003);
 			}

@@ -690,7 +690,7 @@ namespace XeApp.Game.Menu
 				PressButtonLabel = (int)label;
 				if (callback != null)
 					callback();
-			}, null, openStartCallback, null, true, true, false, closeWaitCallback);
+			}, null, openStartCallback, null, true, true, false, closeWaitCallback, null, null, null, null);
 		}
 	}
 }

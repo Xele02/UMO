@@ -601,7 +601,7 @@ namespace XeApp.Game.Menu
 					//0x969A34
 					if(endCallback != null)
 						endCallback();
-				}, null, null, null, true, true, false);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 			else
 			{
@@ -614,7 +614,7 @@ namespace XeApp.Game.Menu
 						transitionCallback();
 					if(endCallback != null)
 						endCallback();
-				}, null, null, null, true, true, false);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 	}

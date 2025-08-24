@@ -116,7 +116,7 @@ namespace XeApp.Game.Menu
 			m_swapScrollList.Apply();
 			Destroy(t_source);
 			t_source = null;
-			AssetBundleManager.UnloadAssetBundle(bundleName);
+			AssetBundleManager.UnloadAssetBundle(bundleName, false);
 			if(m_swapScrollList != null)
 			{
 				m_swapScrollList.OnUpdateItem.RemoveAllListeners();

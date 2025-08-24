@@ -212,7 +212,7 @@ namespace XeApp.Game.Menu
 			{
 				for(int i = 0; i < b.Value; i++)
 				{
-					AssetBundleManager.UnloadAssetBundle(b.Key);
+					AssetBundleManager.UnloadAssetBundle(b.Key, false);
 				}
 			}
 		}

@@ -59,6 +59,12 @@ namespace XeApp.Game.Menu
 			}
 		}
 
+		// RVA: 0x17E3694 Offset: 0x17E3694 VA: 0x17E3694
+		public DivaIconTextureCache() : base(0)
+		{
+			//
+		}
+
 		// // RVA: 0x17E3714 Offset: 0x17E3714 VA: 0x17E3714 Slot: 5
 		public override void Terminated()
 		{

@@ -131,7 +131,7 @@ namespace XeApp.Game.Menu
 				{
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative }
 				};
-			PopupWindowManager.Show(m_bookMarkMusicList, null, null, null, null);
+			PopupWindowManager.Show(m_bookMarkMusicList, null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x169124C Offset: 0x169124C VA: 0x169124C
@@ -159,7 +159,7 @@ namespace XeApp.Game.Menu
 					InputContent c = control.Content as InputContent;
 					m_bookMarkName[bookMarkIndex].text = c.Text;
 				}
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 	}
 }

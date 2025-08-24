@@ -66,7 +66,7 @@ namespace XeApp.Game.Common
 			yield return Co.R(operation);
 			assetName.SetFormat("dr_st_cmn_animator", Array.Empty<object>());
 			animatorController = operation.GetAsset<RuntimeAnimatorController>(assetName.ToString());
-			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73B8A0 Offset: 0x73B8A0 VA: 0x73B8A0
@@ -109,7 +109,7 @@ namespace XeApp.Game.Common
 			{
 				movieMaterial = new Material(mat);
 			}
-			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			if(mat != null)
 			{
 				yield return this.StartCoroutineWatched(Co_LoadMovieResource(wavId, divaId));

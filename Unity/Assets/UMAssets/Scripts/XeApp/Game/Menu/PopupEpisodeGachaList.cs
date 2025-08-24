@@ -171,7 +171,7 @@ namespace XeApp.Game.Menu
 				//0xF8A9B0
 				if(InputEnable != null)
 					InputEnable();
-			}, true, true, false);
+			}, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0xF8A7A0 Offset: 0xF8A7A0 VA: 0xF8A7A0
@@ -186,7 +186,7 @@ namespace XeApp.Game.Menu
 				//0xF8A9EC
 				if(InputEnable != null)
 					InputEnable();
-			}, true, true, false);
+			}, true, true, false, null, null, null, null, null);
 		}
 	}
 }

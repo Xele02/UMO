@@ -69,7 +69,7 @@ namespace XeApp.Game.Common
 		{
 			if(string.IsNullOrEmpty(shareImageFile))
 				return;
-			AndroidUtils.OnShare2(shareImageFile, teamplate, JpStringLiterals.StringLiteral_14411);
+			AndroidUtils.OnShare2(shareImageFile, teamplate, JpStringLiterals.StringLiteral_14411, "application/octet-stream");
 		}
 
 		// // RVA: 0x138C99C Offset: 0x138C99C VA: 0x138C99C

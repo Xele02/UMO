@@ -138,12 +138,12 @@ namespace XeApp.Game.Menu
 			m_isWaitExitAnimation = true;
 			while (IsPlaying())
 				yield return null;
-			m_headButtons.InOut.Leave(false);
-			m_prismSettingButtons.InOut.Leave(false);
-			m_valkyrieButton.InOut.Leave(false);
+			m_headButtons.InOut.Leave(false, null);
+			m_prismSettingButtons.InOut.Leave(false, null);
+			m_valkyrieButton.InOut.Leave(false, null);
 			m_prismUnitInfo.AnimeControl.TryLeave();
-			m_musicInfo.InOut.Leave(false);
-			m_playButtons.InOut.Leave(false);
+			m_musicInfo.InOut.Leave(false, null);
+			m_playButtons.InOut.Leave(false, null);
 			while (IsPlaying())
 				yield return null;
 			m_isWaitExitAnimation = false;
@@ -363,7 +363,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x12CFFEC
 				MenuScene.Instance.InputEnable();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x12CF9A8 Offset: 0x12CF9A8 VA: 0x12CF9A8

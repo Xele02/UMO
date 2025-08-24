@@ -90,7 +90,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_textTbl != null)
 			{
-				m_textTbl.UpdateAllAnimation(2 * TimeWrapper.deltaTime);
+				m_textTbl.UpdateAllAnimation(2 * TimeWrapper.deltaTime, false);
 				m_textTbl.UpdateAll(new Matrix23(), Color.white);
 			}
 			base.LayoutAllUpdate();

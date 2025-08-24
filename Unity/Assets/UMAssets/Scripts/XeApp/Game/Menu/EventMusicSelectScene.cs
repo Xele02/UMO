@@ -516,7 +516,7 @@ namespace XeApp.Game.Menu
 				//0x13B3C7C
 				if(label == PopupButton.ButtonLabel.Live)
 					GotoRegularMusicSelect();
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x13B3404 Offset: 0x13B3404 VA: 0x13B3404

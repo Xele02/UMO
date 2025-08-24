@@ -30,6 +30,12 @@ namespace XeApp.Game.Menu
 
 		public static Rect ImageUv { get { return imageUv; } } //0xF09714
 
+		// RVA: 0xF09690 Offset: 0xF09690 VA: 0xF09690
+		public EpisodeTextuteCache() : base(0)
+		{
+			//
+		}
+
 		// RVA: 0xF097A8 Offset: 0xF097A8 VA: 0xF097A8 Slot: 5
 		public override void Terminated()
 		{

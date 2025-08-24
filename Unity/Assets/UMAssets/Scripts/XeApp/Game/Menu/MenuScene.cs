@@ -586,7 +586,7 @@ namespace XeApp.Game.Menu
 			else if(m_sceneCamebackInfo.flags == MenuSceneCamebackInfo.Flags.ReturnScene)
 			{
 				m_menuTransitionControl.LoadStack(m_menuSceneStack);
-				m_menuTransitionControl.Return();
+				m_menuTransitionControl.Return(true);
 			}
 			else if(m_sceneCamebackInfo.flags == MenuSceneCamebackInfo.Flags.Adventure)
 			{
@@ -1407,7 +1407,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xB37F94
 				(content as PopupItemList).ChangeList(label);
-			}, null, null);
+			}, null, null, true, true, false, null, null, null, null, null);
 			yield break;
 		}
 
@@ -1432,7 +1432,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 				m_popupItemDetailSettinig.Buttons = buttons;
-			PopupWindowManager.Show(m_popupItemDetailSettinig, buttonCallBack, null, null, null, true, true, false);
+			PopupWindowManager.Show(m_popupItemDetailSettinig, buttonCallBack, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0xB335DC Offset: 0xB335DC VA: 0xB335DC
@@ -1451,7 +1451,7 @@ namespace XeApp.Game.Menu
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 			};
-			PopupWindowManager.Show(m_popupItemDetailSettinig, null, null, null, null, true, true, false, null, closeCallback);
+			PopupWindowManager.Show(m_popupItemDetailSettinig, null, null, null, null, true, true, false, null, closeCallback, null, null, null);
 		}
 
 		// // RVA: 0xB3394C Offset: 0xB3394C VA: 0xB3394C
@@ -1471,7 +1471,7 @@ namespace XeApp.Game.Menu
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 			};
-			PopupWindowManager.Show(m_popupItemDetailSettinig, null, null, null, null, true, true, false, null, closeCallback);
+			PopupWindowManager.Show(m_popupItemDetailSettinig, null, null, null, null, true, true, false, null, closeCallback, null, null, null);
 		}
 
 		// // RVA: 0xB33CB0 Offset: 0xB33CB0 VA: 0xB33CB0
@@ -1490,7 +1490,7 @@ namespace XeApp.Game.Menu
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 			};
-			return PopupWindowManager.Show(m_popupItemDetailSettinig, null, null, null, null);
+			return PopupWindowManager.Show(m_popupItemDetailSettinig, null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0xB33FA0 Offset: 0xB33FA0 VA: 0xB33FA0
@@ -1521,7 +1521,7 @@ namespace XeApp.Game.Menu
 				//0xB38674
 				if(endCallback != null)
 					endCallback();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0xB345E4 Offset: 0xB345E4 VA: 0xB345E4
@@ -1547,7 +1547,7 @@ namespace XeApp.Game.Menu
 		{
 			m_popupDetailCostumeSetting.ViewCostumeData = data;
 			m_popupDetailCostumeSetting.ColorId = colorId;
-			PopupWindowManager.Show(m_popupDetailCostumeSetting, null, null, null, null);
+			PopupWindowManager.Show(m_popupDetailCostumeSetting, null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0xB348F4 Offset: 0xB348F4 VA: 0xB348F4
@@ -1649,7 +1649,7 @@ namespace XeApp.Game.Menu
 					{
 						//0xB386B0
 						close = true;
-					}, null, null, null, true, true, false);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 					while (!close)
 						yield return null;
 					//3
@@ -1700,7 +1700,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xB386D0
 				close = true;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(!close)
 				yield return null;
 			while(!done)
@@ -1730,14 +1730,14 @@ namespace XeApp.Game.Menu
 			{
 				//0xB386E4
 				close = true;
-			}, null, null, null, playSeEvent:(PopupWindowControl.SeType seType) =>
+			}, null, null, null, true, true, false, null, null, (PopupWindowControl.SeType seType) =>
 			{
 				//0xB38124
 				if(seType != PopupWindowControl.SeType.WindowOpen)
 					return false;
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_WND_004);
 				return true;
-			});
+			}, null, null);
 			while(!close)
 				yield return null;
 		}
@@ -1802,7 +1802,7 @@ namespace XeApp.Game.Menu
 							return false;
 						SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_WND_004);
 						return true;
-					});
+					}, null, null);
 					while (!done)
 						yield return null;
 				}
@@ -1882,11 +1882,11 @@ namespace XeApp.Game.Menu
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 				};
 				bool isOpen = true;
-				PopupWindowManager.Show(s2, null, null, null, null, endCallBaack:() =>
+				PopupWindowManager.Show(s2, null, null, null, null, true, true, false, null, () =>
 				{
 					//0xB38724
 					isOpen = false;
-				});
+				}, null, null, null);
 				yield return new WaitWhile(() =>
 				{
 					//0xB38730
@@ -1923,7 +1923,7 @@ namespace XeApp.Game.Menu
 				//0xB38740
 				isEndPopup = true;
 				JHLCEOOMFLN.PBKLIKNOMEG();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(!isEndPopup)
 				yield return null;
 			bool done = false;
@@ -2247,7 +2247,7 @@ namespace XeApp.Game.Menu
 					{
 						//0xB38414
 						return;
-					}, null, null, null);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 			return true;
 		}
@@ -2307,7 +2307,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xB384C8
 					return;
-				}, null, null, null, true, true, false);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 			return true;
 		}
@@ -2343,7 +2343,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xB3857C
 					return;
-				}, null, null, null, true, true, false);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 			return true;
 		}
@@ -2413,7 +2413,7 @@ namespace XeApp.Game.Menu
 					Instance.HelpButton.HideEventHelpButton();
 					Instance.Mount(TransitionUniqueId.EVENTQUEST, new EventMusicSelectSceneArgs(unitqueId, false, false), true, MenuSceneCamebackInfo.CamBackUnityScene.None);
 				}
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			return true;
 		}
 

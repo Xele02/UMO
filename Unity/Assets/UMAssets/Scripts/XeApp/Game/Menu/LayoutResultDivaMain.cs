@@ -253,7 +253,7 @@ namespace XeApp.Game.Menu
 					intimacy.KHEKNNFCAOI(viewResultDivaData.NAIHIJAJPNK_Divas[i].AHHJLDLAPAN_DivaId);
 					for(int j = 0; j < divaLayouts[i].numberIntimacy.Length; j++)
 					{
-						divaLayouts[i].numberIntimacy[j].SetNumber(intimacy.HBODCMLFDOB.IGNABALECPK);
+						divaLayouts[i].numberIntimacy[j].SetNumber(intimacy.HBODCMLFDOB.IGNABALECPK, 0);
 					}
 					if (i == 0 && intimacy.HBODCMLFDOB.IGNABALECPK > 0)
 						IsCenterIntimacyBonus = true;
@@ -969,7 +969,7 @@ namespace XeApp.Game.Menu
 			{
 				new ButtonInfo() { Type = PopupButton.ButtonType.Positive, Label = PopupButton.ButtonLabel.Ok }
 			};
-			PopupWindowManager.Show(setting, null, null, null, null);
+			PopupWindowManager.Show(setting, null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x188A068 Offset: 0x188A068 VA: 0x188A068
@@ -1227,7 +1227,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x188B3AC
 					return;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 	}

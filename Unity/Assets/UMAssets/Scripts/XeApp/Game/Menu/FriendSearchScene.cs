@@ -146,7 +146,7 @@ namespace XeApp.Game.Menu
 			PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("popup_myid_copy_title"), SizeType.Small, bk.GetMessageByLabel("popup_myid_copy_msg"), new ButtonInfo[1]
 				{
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
-				}, false, true), null, null, null, null);
+				}, false, true), null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0xED991C Offset: 0xED991C VA: 0xED991C
@@ -259,7 +259,7 @@ namespace XeApp.Game.Menu
 				//0xEDAA74
 				m_friendInfoAllList.Clear();
 				SortFriendList();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0xED9A58 Offset: 0xED9A58 VA: 0xED9A58
@@ -286,7 +286,7 @@ namespace XeApp.Game.Menu
 			m_searchIdPopupSetting.onClickCopyButton = OnClickPopupCopyButton;
 			m_searchIdPopupSetting.onClickSearchButton = OnClickPopupSearchButton;
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-			PopupWindowManager.Show(m_searchIdPopupSetting, null, null, null, null);
+			PopupWindowManager.Show(m_searchIdPopupSetting, null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0xEDA3C8 Offset: 0xEDA3C8 VA: 0xEDA3C8
@@ -300,7 +300,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xEDAAF8
 					ShowFriendSearchPopup();
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6E068C Offset: 0x6E068C VA: 0x6E068C

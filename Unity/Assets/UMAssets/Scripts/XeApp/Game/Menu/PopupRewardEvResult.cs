@@ -566,14 +566,14 @@ namespace XeApp.Game.Menu
 			ApplySetting(Type.CumulativePoint, parent, 0);
 			sm_Setting.Init(JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived, false), OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0);
 			GameManager.Instance.ResetViewPlayerData();
-			PopupWindowManager.Show(sm_Setting, buttonCallBack, null, null, null, playSeEvent:(PopupWindowControl.SeType type) =>
+			PopupWindowManager.Show(sm_Setting, buttonCallBack, null, null, null, true, true, false, null, null, (PopupWindowControl.SeType type) =>
 			{
 				//0x1A7F12C
 				if(type != PopupWindowControl.SeType.WindowOpen)
 					return false;
 				SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_WND_004);
 				return true;
-			});
+			}, null, null);
 			yield break;
 		}
 
@@ -608,12 +608,12 @@ namespace XeApp.Game.Menu
 				if(buttonCallBack != null)
 					buttonCallBack(control, type, label);
 				isWait = false;
-			}, null, null, null, playSeEvent:(PopupWindowControl.SeType type) =>
+			}, null, null, null, true, true, false, null, null, (PopupWindowControl.SeType type) =>
 			{
 				//0x1A7F198
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_WND_004);
 				return true;
-			});
+			}, null, null);
 			yield return null;
 			while(isWait)
 				yield return null;

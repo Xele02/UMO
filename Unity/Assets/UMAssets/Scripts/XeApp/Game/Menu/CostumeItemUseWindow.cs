@@ -217,7 +217,7 @@ namespace XeApp.Game.Menu
 			int a1 = item_data.IILKAJBHLMJ_ItemPointValue * m_item_use_num;
 			SetGauge((int)(m_data.ABLHIAEDJAI_Point * 1.0f / m_data.JHLKLPEHHCD_GetCurrentLevelInfo().DNBFMLBNAEE_NeedPoint * 100), (int)((m_data.ABLHIAEDJAI_Point + a1) * 1.0f / m_data.JHLKLPEHHCD_GetCurrentLevelInfo().DNBFMLBNAEE_NeedPoint * 100));
 			m_point_den.SetNumber(m_data.ABLHIAEDJAI_Point + a1, 0);
-			m_point_mol.SetNumber(m_data.JHLKLPEHHCD_GetCurrentLevelInfo().DNBFMLBNAEE_NeedPoint);
+			m_point_mol.SetNumber(m_data.JHLKLPEHHCD_GetCurrentLevelInfo().DNBFMLBNAEE_NeedPoint, 0);
 			int a2 = Mathf.Min(m_have_item, m_use_item_max);
 			if(m_item_use_num == a2)
 			{

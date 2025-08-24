@@ -269,7 +269,7 @@ namespace XeApp
 			{
 				//0x1AC01A0
 				callback(_label);
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x1AB9BF4 Offset: 0x1AB9BF4 VA: 0x1AB9BF4

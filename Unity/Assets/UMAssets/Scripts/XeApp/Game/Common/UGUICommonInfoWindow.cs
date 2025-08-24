@@ -133,7 +133,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0x1CD1D7C Offset: 0x1CD1D7C VA: 0x1CD1D7C
 		public void Enter(float animTime, bool force/* = false*/)
 		{
-			m_inOutAnime.Enter(animTime, force);
+			m_inOutAnime.Enter(animTime, force, null);
 		}
 
 		//// RVA: 0x1CD1DC8 Offset: 0x1CD1DC8 VA: 0x1CD1DC8

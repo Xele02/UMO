@@ -437,7 +437,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xB7AE24
 					waitPopup = false;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while (waitPopup)
 					yield return null;
 			}
@@ -489,7 +489,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xB7AE38
 				isClose = true;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			yield return new WaitWhile(() =>
 			{
 				//0xB7AE44
@@ -983,11 +983,11 @@ namespace XeApp.Game.Menu
 				//0xB7B048
 				m_gotoEpisode = label == PopupButton.ButtonLabel.Episode;
 				m_costumeListWindow.SetInputDisable();
-			}, null, null, null, endCallBaack:() =>
+			}, null, null, null, true, true, false, null, () =>
 			{
 				//0xB7B0B4
 				isEntPopup = true;
-			});
+			}, null, null, null);
 			while(!isEntPopup)
 				yield return null;
 			if(!m_gotoEpisode)
@@ -1052,7 +1052,7 @@ namespace XeApp.Game.Menu
 									m_isGivingPresent = false;
 								});
 							}
-						}, null, null, null);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 					}
 					else
 					{
@@ -1087,7 +1087,7 @@ namespace XeApp.Game.Menu
 									m_isGivingPresent = false;
 								});
 							}
-						}, null, null, null);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 					}
 				}
 				else
@@ -1105,7 +1105,7 @@ namespace XeApp.Game.Menu
 					{
 						//0xB7A52C
 						return;
-					}, null, null, null);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 				}
 			}
 			else
@@ -1123,7 +1123,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xB7A528
 					return;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 

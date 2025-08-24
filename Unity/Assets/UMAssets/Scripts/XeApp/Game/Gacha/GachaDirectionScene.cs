@@ -175,7 +175,7 @@ namespace XeApp.Game.Gacha
 				//0x98A9C0
 				if(onClose != null)
 					onClose();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x98606C Offset: 0x98606C VA: 0x98606C
@@ -819,7 +819,7 @@ namespace XeApp.Game.Gacha
 				BasicTutorialManager.Instance.ShowMessageWindow(BasicTutorialMessageId.Id_GachaResult, () =>
 				{
 					//0x98A924
-					BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.GachaReturn, null, null);
+					BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.GachaReturn, null, null, TutorialPointer.Direction.Normal);
 				}, null);
 			}
 			inputEnable = true;

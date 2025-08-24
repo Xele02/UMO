@@ -158,7 +158,7 @@ namespace XeApp.Game.Title
 			}, () =>
 			{
 				m_tabContents.ChangeContents((int)s.DefaultTab);
-			},null);
+			}, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0xE39814 Offset: 0xE39814 VA: 0xE39814

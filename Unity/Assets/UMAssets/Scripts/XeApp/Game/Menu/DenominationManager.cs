@@ -141,7 +141,7 @@ namespace XeApp.Game.Menu
 					//0x17D1148
 					if(onCancel != null)
 						onCancel();
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 			else
 			{
@@ -213,7 +213,7 @@ namespace XeApp.Game.Menu
 				{
 					onCancel();
 				}
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 	}
 }

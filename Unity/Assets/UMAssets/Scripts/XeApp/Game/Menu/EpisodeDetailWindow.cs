@@ -379,7 +379,7 @@ namespace XeApp.Game.Menu
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 			};
-			PopupWindowManager.Show(m_reward_window, null, null, null, null);
+			PopupWindowManager.Show(m_reward_window, null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0xEF4098 Offset: 0xEF4098 VA: 0xEF4098

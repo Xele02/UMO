@@ -485,7 +485,7 @@ namespace XeApp.Game.Gacha
 							//0x99705C
 							wait = false;
 							cancel = true;
-						}, null, null, null);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 						s.OnClickButton = (BEPHBEGDFFK.DMBKENKBIJD productInfo) =>
 						{
 							//0x997068
@@ -528,7 +528,7 @@ namespace XeApp.Game.Gacha
 				tutoAction = () =>
 				{
 					//0x996E34
-					BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.PopupPositiveButton, null, null);
+					BasicTutorialManager.Instance.SetInputLimit(InputLimitButton.PopupPositiveButton, null, null, TutorialPointer.Direction.Normal);
 				};
 			}
 			toPurchaseVC = false;
@@ -634,7 +634,7 @@ namespace XeApp.Game.Gacha
 				//0x99728C
 				isWait = false;
 				isPositive = type == PopupButton.ButtonType.Positive;
-			}, null, null, tutoAction);
+			}, null, null, tutoAction, true, true, false, null, null, null, null, null);
 			while (isWait)
 				yield return null;
 			if(!toPurchaseVC)
@@ -832,7 +832,7 @@ namespace XeApp.Game.Gacha
 				//0x997410
 				if(onClose != null)
 					onClose();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x9935E4 Offset: 0x9935E4 VA: 0x9935E4
@@ -858,7 +858,7 @@ namespace XeApp.Game.Gacha
 				//0x997424
 				if(onClose != null)
 					onClose();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x993928 Offset: 0x993928 VA: 0x993928

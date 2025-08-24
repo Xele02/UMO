@@ -224,7 +224,7 @@ namespace XeApp.Game.Menu
 				m_windowUi.SetRankButtonLabel(m_rankRangeLabelList[m_nextRankRange]);
 				MenuScene.Instance.RaycastDisable();
 				GetRankingList(GetCurrentBaseRank(), 0);
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x1272AE8 Offset: 0x1272AE8 VA: 0x1272AE8

@@ -253,7 +253,7 @@ namespace XeApp.Game.Menu
 			{
 				CountType type = CountType.Perfect;
 				waitList.Add(type);
-				yield return Co.R(Co_WaitFrame(layoutMainAnim, countStartFrameList[(int)type]));
+				yield return Co.R(Co_WaitFrame(layoutMainAnim, countStartFrameList[(int)type], true));
 				SetCountUpValue(type, timerList, (int value) =>
 				{
 					//0x1D13FDC
@@ -272,7 +272,7 @@ namespace XeApp.Game.Menu
 			{
 				CountType type = CountType.Great;
 				waitList.Add(type);
-				yield return Co.R(Co_WaitFrame(layoutMainAnim, countStartFrameList[(int)type]));
+				yield return Co.R(Co_WaitFrame(layoutMainAnim, countStartFrameList[(int)type], true));
 				SetCountUpValue(type, timerList, (int value) =>
 				{
 					//0x1D14084
@@ -291,7 +291,7 @@ namespace XeApp.Game.Menu
 			{
 				CountType type = CountType.Good;
 				waitList.Add(type);
-				yield return Co.R(Co_WaitFrame(layoutMainAnim, countStartFrameList[(int)type]));
+				yield return Co.R(Co_WaitFrame(layoutMainAnim, countStartFrameList[(int)type], true));
 				SetCountUpValue(type, timerList, (int value) =>
 				{
 					//0x1D1412C
@@ -310,7 +310,7 @@ namespace XeApp.Game.Menu
 			{
 				CountType type = CountType.Bad;
 				waitList.Add(type);
-				yield return Co.R(Co_WaitFrame(layoutMainAnim, countStartFrameList[(int)type]));
+				yield return Co.R(Co_WaitFrame(layoutMainAnim, countStartFrameList[(int)type], true));
 				SetCountUpValue(type, timerList, (int value) =>
 				{
 					//0x1D141D4
@@ -329,7 +329,7 @@ namespace XeApp.Game.Menu
 			{
 				CountType type = CountType.Miss;
 				waitList.Add(type);
-				yield return Co.R(Co_WaitFrame(layoutMainAnim, countStartFrameList[(int)type]));
+				yield return Co.R(Co_WaitFrame(layoutMainAnim, countStartFrameList[(int)type], true));
 				SetCountUpValue(type, timerList, (int value) =>
 				{
 					//0x1D1427C
@@ -558,7 +558,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				PlaySound(1);
+				PlaySound(1, true);
 			}
 
 		}

@@ -8,6 +8,12 @@ namespace XeApp.Game.Menu
 
 	public class SubPlateIconTextureCache : IconTextureCache
 	{
+		// RVA: 0x1A9D7E0 Offset: 0x1A9D7E0 VA: 0x1A9D7E0
+		public SubPlateIconTextureCache() : base(0)
+		{
+			//
+		}
+
 		// // RVA: 0x1A9D7EC Offset: 0x1A9D7EC VA: 0x1A9D7EC Slot: 5
 		public override void Terminated()
 		{

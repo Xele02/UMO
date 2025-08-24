@@ -646,7 +646,7 @@ namespace XeApp.Game.Menu
 					{
 						new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 					};
-					PopupWindowManager.Show(s, null, null, null, null, true, true, false);
+					PopupWindowManager.Show(s, null, null, null, null, true, true, false, null, null, null, null, null);
 					yield return new WaitUntil(() =>
 					{
 						//0xE16F7C
@@ -701,7 +701,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					layout.UpdateAllAnimation(TimeWrapper.deltaTime * 2);
+					layout.UpdateAllAnimation(TimeWrapper.deltaTime * 2, false);
 					layout.UpdateAll(m_identity, Color.white);
 				}
 			}

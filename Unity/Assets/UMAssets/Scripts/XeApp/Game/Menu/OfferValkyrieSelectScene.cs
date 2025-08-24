@@ -231,7 +231,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x171B26C
 					return;
-				}, null, null);
+				}, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 

@@ -420,7 +420,7 @@ namespace XeApp.Game.Menu
 					//0x12D46B8
 					if (bgmId == -1)
 						return;
-					SoundManager.Instance.bgmPlayer.ContinuousPlay(bgmId);
+					SoundManager.Instance.bgmPlayer.ContinuousPlay(bgmId, 1);
 				});
 			}
 			else if(bgmId != -1)

@@ -88,7 +88,7 @@ public class BEPHBEGDFFK
 		FEMAEEHOCIJ.Clear();
 		COMCFOFCGJM.Clear();
 		CEPJKBFGKEN = new HomeBannerTextureCache();
-		LBMILLAEEBK = new SceneCardTextureCache();
+		LBMILLAEEBK = new SceneCardTextureCache(5);
 		IEnumerator e = LBMILLAEEBK.Initialize(false);
 		e.MoveNext();
 		MMJONIHIOFI = new GachaBgTextureCache();

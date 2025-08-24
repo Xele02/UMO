@@ -301,7 +301,7 @@ namespace XeApp.Game.Menu
 			arg.isSearchPlayer = true;
 			arg.data = m_guestInfoList[elemIndex].LobbyData;
 			m_returnArgs = arg;
-			MenuScene.Instance.Return();
+			MenuScene.Instance.Return(true);
 		}
 
 		// // RVA: 0x128F328 Offset: 0x128F328 VA: 0x128F328

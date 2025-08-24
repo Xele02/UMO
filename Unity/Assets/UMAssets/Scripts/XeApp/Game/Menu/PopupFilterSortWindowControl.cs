@@ -52,7 +52,7 @@ namespace XeApp.Game.Menu
 					if (okCallBack != null)
 						okCallBack(c);
 				}
-			}, null, null, null, true, true, false, null, endCallBack);
+			}, null, null, null, true, true, false, null, endCallBack, null, null, null);
 		}
 
 		// // RVA: 0x179E570 Offset: 0x179E570 VA: 0x179E570
@@ -76,7 +76,7 @@ namespace XeApp.Game.Menu
 					if (okCallBack != null)
 						okCallBack(c);
 				}
-			}, null, null, null, true, true, false, null, endCallBack);
+			}, null, null, null, true, true, false, null, endCallBack, null, null, null);
 		}
 	}
 }

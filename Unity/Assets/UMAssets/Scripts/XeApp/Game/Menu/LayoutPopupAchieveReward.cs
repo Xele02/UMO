@@ -384,7 +384,7 @@ namespace XeApp.Game.Menu
 				return;
 			if (m_nums[arrayIndex] == null)
 				return;
-			m_nums[arrayIndex].SetNumber(num);
+			m_nums[arrayIndex].SetNumber(num, 0);
 		}
 
 		//// RVA: 0x15DFC20 Offset: 0x15DFC20 VA: 0x15DFC20

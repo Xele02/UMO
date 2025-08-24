@@ -1133,11 +1133,11 @@ namespace XeApp.Game.Menu
 			{
 				//0x1A8A4C4
 				return;
-			}, null, null, null, endCallBaack:() =>
+			}, null, null, null, true, true, false, null, () =>
 			{
 				//0x1A8A4E4
 				t_end_popup = true;
-			});
+			}, null, null, null);
 			while(!t_end_popup)
 				yield return null;
 		}
@@ -1722,7 +1722,7 @@ namespace XeApp.Game.Menu
 				isWait = false;
 				if(label == PopupButton.ButtonLabel.Live)
 					isLive = true;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(isWait)
 				yield return null;
 			if (MenuScene.Instance != null)
@@ -1758,7 +1758,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x1A8A8F4
 				isWait = false;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while (isWait)
 				yield return null;
 			if (MenuScene.Instance != null)
@@ -1789,7 +1789,7 @@ namespace XeApp.Game.Menu
 				isWait = false;
 				if(type == PopupButton.ButtonType.Other)
 					changeMission = true;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(isWait)
 				yield return null;
 			if(MenuScene.Instance != null)
@@ -1821,7 +1821,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x1A8A928
 				isWait = false;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(isWait)
 				yield return null;
 			if(MenuScene.Instance != null)

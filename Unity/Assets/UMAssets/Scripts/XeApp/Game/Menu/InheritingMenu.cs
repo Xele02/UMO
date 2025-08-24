@@ -178,12 +178,12 @@ namespace XeApp.Game.Menu
 				m_snsInheritingContent.SetButtonSnsStatus(LayoutPopupSnsSetting.eButtonType.Facebook, LayoutPopupSnsSetting.eButtonStatus.NotCoop);
 				m_snsInheritingContent.SetButtonSnsStatus(LayoutPopupSnsSetting.eButtonType.Line, LayoutPopupSnsSetting.eButtonStatus.NotCoop);
 				m_snsInheritingContent.SetButtonSnsStatus(LayoutPopupSnsSetting.eButtonType.Apple, LayoutPopupSnsSetting.eButtonStatus.NotCoop);
-			}, null, closeWaitCallBack:() =>
+			}, null, true, true, false, () =>
 			{
 				//0x13E1234
 				isPopupWait = false;
 				return true;
-			});
+			}, null, null, null, null);
 			while (isPopupWait)
 				yield return null;
 			if (callback != null)
@@ -241,7 +241,7 @@ namespace XeApp.Game.Menu
 				m_snsInheritingContent.SetButtonSnsStatus(LayoutPopupSnsSetting.eButtonType.Facebook, isFacebook ? LayoutPopupSnsSetting.eButtonStatus.Release : LayoutPopupSnsSetting.eButtonStatus.NotCoop);
 				m_snsInheritingContent.SetButtonSnsStatus(LayoutPopupSnsSetting.eButtonType.Line, isLine ? LayoutPopupSnsSetting.eButtonStatus.Release : LayoutPopupSnsSetting.eButtonStatus.NotCoop);
 				m_snsInheritingContent.SetButtonSnsStatus(LayoutPopupSnsSetting.eButtonType.Apple, isApple ? LayoutPopupSnsSetting.eButtonStatus.Release : LayoutPopupSnsSetting.eButtonStatus.NotCoop);
-			}, null);
+			}, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x13DECD4 Offset: 0x13DECD4 VA: 0x13DECD4
@@ -295,7 +295,7 @@ namespace XeApp.Game.Menu
 				m_snsContent.SetButtonSnsStatus(LayoutPopupSnsSetting.eButtonType.Twitter, HDEEBKIFLNI.HHCJCDFCLOB.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.LMODEBIKEBC_Line) ? LayoutPopupSnsSetting.eButtonStatus.Coop : LayoutPopupSnsSetting.eButtonStatus.NotCoop);
 				m_snsContent.SetButtonSnsStatus(LayoutPopupSnsSetting.eButtonType.Facebook, HDEEBKIFLNI.HHCJCDFCLOB.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.AIECBKAKOGC_Twitter) ? LayoutPopupSnsSetting.eButtonStatus.Coop : LayoutPopupSnsSetting.eButtonStatus.NotCoop);
 				m_snsContent.SetButtonSnsStatus(LayoutPopupSnsSetting.eButtonType.Line, HDEEBKIFLNI.HHCJCDFCLOB.EPAKLDBFECD_IsLinked(HDEEBKIFLNI.DGNPPLKNCGH_PlatformLink.OKEAEMBLENP_Facebook) ? LayoutPopupSnsSetting.eButtonStatus.Coop : LayoutPopupSnsSetting.eButtonStatus.NotCoop);
-			}, null);
+			}, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x13DF250 Offset: 0x13DF250 VA: 0x13DF250
@@ -345,11 +345,11 @@ namespace XeApp.Game.Menu
 					//0x13E19FC
 					if (label == PopupButton.ButtonLabel.Cancel)
 						cancel = true;
-				}, null, null, null, endCallBaack: () =>
+				}, null, null, null, true, true, false, null, () =>
 				{
 					//0x13E1A0C
 					done = true;
-				});
+				}, null, null, null);
 			}
 			while (!done)
 				yield return null;
@@ -365,7 +365,7 @@ namespace XeApp.Game.Menu
 					if (label != PopupButton.ButtonLabel.Ok)
 						return;
 					this.StartCoroutineWatched(SnsInheritingInner(platform));
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 
@@ -433,7 +433,7 @@ namespace XeApp.Game.Menu
 				if (label != PopupButton.ButtonLabel.Cancel)
 					return;
 				Close();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E5A6C Offset: 0x6E5A6C VA: 0x6E5A6C
@@ -483,7 +483,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x13E0ED0
 				return;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x13DFC14 Offset: 0x13DFC14 VA: 0x13DFC14
@@ -508,7 +508,7 @@ namespace XeApp.Game.Menu
 				if (m_inheritingSuccess != null)
 					m_inheritingSuccess();
 				m_snsCoopControl.Close(null, null);
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x13DFE90 Offset: 0x13DFE90 VA: 0x13DFE90
@@ -563,7 +563,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x13E0ED4
 				return;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			
 		}
 
@@ -695,7 +695,7 @@ namespace XeApp.Game.Menu
 							error = true;
 						});
 					}
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while (!done)
 					yield return null;
 				st = LayoutPopupSnsSetting.eButtonStatus.NotCoop;

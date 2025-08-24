@@ -299,7 +299,7 @@ namespace XeApp.Game.Menu
 				{
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 				};
-				PopupWindowManager.Show(s, null, null, null, null);
+				PopupWindowManager.Show(s, null, null, null, null, true, true, false, null, null, null, null, null);
 			}
 			else
 			{

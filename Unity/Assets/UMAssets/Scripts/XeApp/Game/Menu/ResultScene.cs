@@ -991,7 +991,7 @@ namespace XeApp.Game.Menu
 						{
 							//0xB57B98
 							this.StartCoroutineWatched(Co_MountMenuScene(false));
-						}, null, null, null, true, true, false);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 					}
 					else
 					{
@@ -1036,7 +1036,7 @@ namespace XeApp.Game.Menu
 				//0xB55D70
 				MenuScene.Instance.InputEnable();
 				this.StartCoroutineWatched(ShowDropTutorialPopup());
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0xB51A4C Offset: 0xB51A4C VA: 0xB51A4C
@@ -1053,7 +1053,7 @@ namespace XeApp.Game.Menu
 				//0xB55E28
 				if(type == PopupButton.ButtonType.Positive)
 					DoFriendRequest();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0xB5208C Offset: 0xB5208C VA: 0xB5208C
@@ -1465,7 +1465,7 @@ namespace XeApp.Game.Menu
 											if(type != PopupButton.ButtonType.Positive)
 												return;
 											this.StartCoroutineWatched(Co_MountMenuScene(false));
-										}, null, null, null, true, true, false);
+										}, null, null, null, true, true, false, null, null, null, null, null);
 									}
 									else
 									{
@@ -1476,7 +1476,7 @@ namespace XeApp.Game.Menu
 											if(type != PopupButton.ButtonType.Positive)
 												return;
 											this.StartCoroutineWatched(Co_MountMenuScene(false));
-										}, null, null, null, true, true, false);
+										}, null, null, null, true, true, false, null, null, null, null, null);
 									}
 								}, () =>
 								{
@@ -1498,7 +1498,7 @@ namespace XeApp.Game.Menu
 										if(type != PopupButton.ButtonType.Positive)
 											return;
 										this.StartCoroutineWatched(Co_MountMenuScene(false));
-									}, null, null, null, true, true, false);
+									}, null, null, null, true, true, false, null, null, null, null, null);
 								}, () =>
 								{
 									//0xB56198
@@ -1513,7 +1513,7 @@ namespace XeApp.Game.Menu
 									{
 										//0xB56428
 										this.StartCoroutineWatched(Co_MountMenuScene(false));
-									}, null, null, null, true, true, false);
+									}, null, null, null, true, true, false, null, null, null, null, null);
 								}, () =>
 								{
 									//0xB56464
@@ -1528,7 +1528,7 @@ namespace XeApp.Game.Menu
 									{
 										//0xB566F4
 										this.StartCoroutineWatched(Co_MountMenuScene(false));
-									}, null, null, null, true, true, false);
+									}, null, null, null, true, true, false, null, null, null, null, null);
 								}, () =>
 								{
 									//0xB56730
@@ -1543,7 +1543,7 @@ namespace XeApp.Game.Menu
 									{
 										//0xB569C0
 										this.StartCoroutineWatched(Co_MountMenuScene(false));
-									}, null, null, null, true, true, false);
+									}, null, null, null, true, true, false, null, null, null, null, null);
 								}, () =>
 								{
 									//0xB569FC
@@ -1558,10 +1558,10 @@ namespace XeApp.Game.Menu
 									{
 										//0xB56C8C
 										this.StartCoroutineWatched(Co_MountMenuScene(false));
-									}, null, null, null, true, true, false);
+									}, null, null, null, true, true, false, null, null, null, null, null);
 								});
 							}
-						}, null, null, null, true, true, false);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 						return;
 					}
 				}
@@ -1626,7 +1626,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xB56180
 				return;
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x7230A4 Offset: 0x7230A4 VA: 0x7230A4

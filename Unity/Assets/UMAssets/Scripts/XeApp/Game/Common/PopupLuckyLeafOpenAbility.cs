@@ -20,7 +20,7 @@ namespace XeApp.Game.Common
 			parent = setting.m_parent;
 			luckyLeafOpenAbilityLayout.OnClickHelpButton = HelpButtonEvent;
 			luckyLeafOpenAbilityLayout.Setup(s.SceneData);
-			GetComponent<RectTransform>().sizeDelta = PopupWindowControl.GetContentSize2(s.WindowSize);
+			GetComponent<RectTransform>().sizeDelta = PopupWindowControl.GetContentSize2(s.WindowSize, s.IsCaption);
 		}
 
 		// RVA: 0x1BAEE58 Offset: 0x1BAEE58 VA: 0x1BAEE58 Slot: 18

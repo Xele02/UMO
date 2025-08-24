@@ -61,7 +61,7 @@ namespace XeApp.Game.Common
 			prefab = operation.GetAsset<GameObject>(assetName.ToString());
 			assetName.SetFormat("stg_{0:D4}_param", stageId);
 			param = operation.GetAsset<StageParam>(assetName.ToString());
-			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			bool fin = false;
 			tmpRoot = UnityEngine.Object.Instantiate<GameObject>(prefab);
 			WarmupTexturesGenerator.Instance.Create(tmpRoot, () =>

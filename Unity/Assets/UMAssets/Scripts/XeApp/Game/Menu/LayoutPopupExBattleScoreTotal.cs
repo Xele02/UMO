@@ -139,7 +139,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x1727620
 				return;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			yield break;
         }
 

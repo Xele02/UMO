@@ -312,11 +312,11 @@ namespace XeApp.Game.Menu
 				{
 					if(isVisibleBackButton)
 					{
-						m_menuStack.EnterBackButton();
+						m_menuStack.EnterBackButton(false);
 					}
 					else
 					{
-						m_menuStack.LeaveBackButton();
+						m_menuStack.LeaveBackButton(false);
 					}
 				}
 				else
@@ -425,7 +425,7 @@ namespace XeApp.Game.Menu
 
 			for(i = 0; i < assetBundleName.Length / 2; i++)
 			{
-				AssetBundleManager.UnloadAssetBundle(assetBundleName[i * 2]);
+				AssetBundleManager.UnloadAssetBundle(assetBundleName[i * 2], false);
 			}
 			runtime = m_userInfoInstance.GetComponent<LayoutUGUIRuntime>();
 			while (!runtime.IsReady)

@@ -88,7 +88,7 @@ namespace XeApp.Game.Common
 				assetName.SetFormat("dr_li_{0:D3}_add_{1}", assetId, i+1);
 				clip_add[i] = operation.GetAsset<AnimationClip>(assetName.ToString());
 			}
-			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 		}
 	}
 }

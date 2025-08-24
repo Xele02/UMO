@@ -486,7 +486,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x129E75C
 				return;
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x129C464 Offset: 0x129C464 VA: 0x129C464
@@ -533,7 +533,7 @@ namespace XeApp.Game.Menu
 						MenuScene.Instance.GotoTitle();
 					});
 				}
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x129C1FC Offset: 0x129C1FC VA: 0x129C1FC
@@ -587,7 +587,7 @@ namespace XeApp.Game.Menu
 						MenuScene.Instance.GotoTitle();
 					});
 				}
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x129D020 Offset: 0x129D020 VA: 0x129D020

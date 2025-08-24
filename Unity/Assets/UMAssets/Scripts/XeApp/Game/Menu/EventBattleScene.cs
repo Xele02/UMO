@@ -1218,7 +1218,7 @@ namespace XeApp.Game.Menu
 						return false;
 					SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_WND_004);
 					return true;
-				});
+				}, null, null);
 				yield return new WaitWhile(() =>
 				{
 					//0x10572F8
@@ -1258,7 +1258,7 @@ namespace XeApp.Game.Menu
 							return false;
 						SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_WND_004);
 						return true;
-					});
+					}, null, null);
 					yield return new WaitWhile(() =>
 					{
 						//0x1057320
@@ -1272,7 +1272,7 @@ namespace XeApp.Game.Menu
 						{
 							//0x1055F84
 							return;
-						}, null, null, null, true, true, false);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 						//LAB_01061fd0
 					}
 					//LAB_01061fd0
@@ -1581,7 +1581,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xF13B9C
 					m_ExBattleScoreTotal.ButtonEnable();
-				}, true, true, false);
+				}, true, true, false, null, null, null, null, null);
 			}, (EMGOCNMMPHC view) =>
 			{
 				//0xF13BC8
@@ -1639,7 +1639,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x10575C8
 				isClosed = true;
-			});
+			}, null, null, null);
 			bool isSelectClass = false;
 			while(!isClosed)
 			{
@@ -1703,7 +1703,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x1057758
 				isClosed = true;
-			});
+			}, null, null, null);
 			yield return new WaitWhile(() =>
 			{
 				//0x1057764

@@ -312,7 +312,7 @@ public class KEHOJEJMGLJ
 							control = PopupWindowManager.Show(PopupWindowManager.CrateTextContent("Integrity Check", SizeType.Small, "Checking files : 0/"+listToCheck.Count, new ButtonInfo[0], false, true), null, null, null, () =>
 							{
 								shown = true;
-							});
+							}, true, true, false, null, null, null, null, null);
 							while(!shown)
 								yield return null;
 							content = control.Content as TextContent;

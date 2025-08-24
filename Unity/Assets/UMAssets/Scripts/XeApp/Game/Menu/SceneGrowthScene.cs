@@ -702,7 +702,7 @@ namespace XeApp.Game.Menu
 				{
 					Array.Clear(m_addStatuList, 0, m_addStatuList.Length);
 				}
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x10E0154 Offset: 0x10E0154 VA: 0x10E0154
@@ -765,7 +765,7 @@ namespace XeApp.Game.Menu
 						return;
 				}
 				isClose = true;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(!isClose)
 				yield return null;
 			if(!isCancel)
@@ -790,7 +790,7 @@ namespace XeApp.Game.Menu
 								return;
 						}
 						isClose = true;
-					}, null, null, null);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 					while (!isClose)
 						yield return null;
 				}
@@ -949,7 +949,7 @@ namespace XeApp.Game.Menu
 				if (label == PopupButton.ButtonLabel.PassPurchase)
 					isPurchase = true;
 				isClose = true;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while (!isClose)
 				yield return null;
 			if(!isCancel)
@@ -973,7 +973,7 @@ namespace XeApp.Game.Menu
 							if (type == PopupButton.ButtonType.Negative)
 								isCancel = true;
 							isClose = true;
-						}, null, null, null);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 						while (!isClose)
 							yield return null;
 						if(isCancel)
@@ -1023,7 +1023,7 @@ namespace XeApp.Game.Menu
 						return;
 				}
 				isClose = true;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while (!isClose)
 				yield return null;
 			if (!isCancel)
@@ -1130,7 +1130,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x10E6C30
 					okCallBack();
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// RVA: 0x10E0888 Offset: 0x10E0888 VA: 0x10E0888 Slot: 16
@@ -1426,7 +1426,7 @@ namespace XeApp.Game.Menu
 							m_viewGrowItemData.CMBGGPOFBOO_UcCost = m_limitOverData.GNKGDDMMJPF;
 							this.StartCoroutineWatched(LimitOverMainCoroutine(m_viewGrowItemData));
 						}
-					}, null, null, null);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 				}
 				else
 				{
@@ -1435,7 +1435,7 @@ namespace XeApp.Game.Menu
 					{
 						new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 					};
-					PopupWindowManager.Show(m_luckyLeafTerminateSetting, null, null, null, null);
+					PopupWindowManager.Show(m_luckyLeafTerminateSetting, null, null, null, null, true, true, false, null, null, null, null, null);
 				}
 			}
 		}
@@ -2015,7 +2015,7 @@ namespace XeApp.Game.Menu
 				button = type;
 				count = (control.Content as PopupGrowthInfinityPanel).Value;
 				isWait = false;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(isWait)
 				yield return null;
 			callBack(button, count);
@@ -2381,7 +2381,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x10E70D8
 					isWait = false;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while(isWait)
 					yield return null;
 			}

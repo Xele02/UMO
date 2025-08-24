@@ -426,7 +426,7 @@ namespace XeApp.Game.Menu
 					//0x12831D8
 					GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.MKFNKOLCBOP_UpdateVFpUnlock(s.nextPlatoonNum);
 					GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 
@@ -457,7 +457,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x1283344
 				m_is_wait_open_window = false;
-			}, PlayPopupSe);
+			}, PlayPopupSe, null, null);
 			while (isWait)
 				yield return null;
 		}

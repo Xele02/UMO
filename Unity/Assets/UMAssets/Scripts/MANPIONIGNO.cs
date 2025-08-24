@@ -1007,7 +1007,7 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 	// // RVA: 0xA1B304 Offset: 0xA1B304 VA: 0xA1B304
 	private void PIMFJALCIGK()
 	{
-		int m = NGIHFKHOJOK_GetRankingMax();
+		int m = NGIHFKHOJOK_GetRankingMax(true);
 		if(m < 1)
 			return;
 		for(int i = 0; i < m; i++)
@@ -1334,7 +1334,7 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 			EECOJKDJIFG info = DAKMIKNKHMF_GetRankingInfoForIndex(LHJCOPMMIGO);
 			if(info != null && !DGOAGKOKCIJ_IsRewardReceived(LHJCOPMMIGO))
 			{
-				OKPEFAPPFDH_GetRanksAroundSelf req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new OKPEFAPPFDH_GetRanksAroundSelf());
+				OKPEFAPPFDH_GetRanksAroundSelf req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new OKPEFAPPFDH_GetRanksAroundSelf(false));
 				req.EMPNJPMAKBF_Id = info.PPFNGGCBJKC_Id;
 				req.MJGOBEGONON_Type = 0;
 				req.NHPCKCOPKAM_From = 0;
@@ -2112,7 +2112,7 @@ public class MANPIONIGNO_EventGoDiva : IKDICBBFBMI_EventBase
 			List<string> res = SoundResource.CreateBgmFilePathList(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(mId).KKPAHLMJKIH_WavId);
 			if(JKIADEKHGLC_TicketItemId != 0)
 			{
-				res.Add(ItemTextureCache.MakeItemIconTexturePath(0));
+				res.Add(ItemTextureCache.MakeItemIconTexturePath(JKIADEKHGLC_TicketItemId, 0));
 			}
 			return res;
 		}

@@ -54,7 +54,7 @@ namespace XeApp.Game.Common
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return Co.R(operation);
 			animator = operation.GetAsset<RuntimeAnimatorController>("game_cmn_cam_animator");
-			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			isLoadedAnimator = true;
 		}
 
@@ -79,7 +79,7 @@ namespace XeApp.Game.Common
 			yield return Co.R(operation);
 			assetName.SetFormat("music_{0}_prime_{1:D3}_cam", wavIdString, primeId);
 			clip = operation.GetAsset<AnimationClip>(assetName.ToString());
-			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			isLoadedMusicClip = true;
 		}
 
@@ -101,7 +101,7 @@ namespace XeApp.Game.Common
 			StringBuilder strBuilder2 = new StringBuilder(); // fix original game bug where they release wrong bundle name;
 			strBuilder2.SetFormat("mcp_{0:D4}", waveId);
 			m_param = operation.GetAsset<MusicCameraParam>(strBuilder2.ToString());
-			AssetBundleManager.UnloadAssetBundle(strBuilder.ToString());
+			AssetBundleManager.UnloadAssetBundle(strBuilder.ToString(), false);
 			isLoadedParam = true;
 		}
 	}

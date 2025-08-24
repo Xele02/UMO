@@ -138,7 +138,7 @@ namespace XeApp.Game.Menu
 					SetLoaded();
 				});
 				m_divaIconDecoration.SetActive(false);
-				UnitWindowConstant.SetInvalidText(m_nameText);
+				UnitWindowConstant.SetInvalidText(m_nameText, UnityEngine.TextAnchor.MiddleCenter);
 				for(int i = 0; i < m_notes.Length; i++)
 				{
 					m_notes[i].SetNotesInvalid();

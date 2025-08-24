@@ -237,7 +237,7 @@ public class AMOCLPHDGBP
 							{
 								//0xD45DC4
 								BEKAMBBOLBO = true;
-							}, null, null, null);
+							}, null, null, null, true, true, false, null, null, null, null, null);
 							//LAB_00d4b0fc
 							if(!BEKAMBBOLBO)
 								yield return null;
@@ -319,7 +319,7 @@ public class AMOCLPHDGBP
 					LNHFLJBGGJB = false;
 					if(PBJINBCLFBB != null)
 						PBJINBCLFBB();
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 		else
@@ -337,7 +337,7 @@ public class AMOCLPHDGBP
 				LNHFLJBGGJB = false;
 				if(PBJINBCLFBB != null)
 					PBJINBCLFBB();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 	}
 
@@ -356,7 +356,7 @@ public class AMOCLPHDGBP
 			//0xD45E64
 			if (GIGHIFOIMNA != null)
 				GIGHIFOIMNA();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xCE9D78 Offset: 0xCE9D78 VA: 0xCE9D78
@@ -596,7 +596,7 @@ public class AMOCLPHDGBP
 				{
 					//0xD45EBC
 					BEKAMBBOLBO_Done = true;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 			//LAB_00d47d74
 			//11
@@ -788,7 +788,7 @@ public class AMOCLPHDGBP
 					{
 						//0xD45EEC
 						BEKAMBBOLBO_Done = true;
-					}, null, null, null);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 					//LAB_00d49334
 					//21
 					while (!BEKAMBBOLBO_Done)
@@ -808,7 +808,7 @@ public class AMOCLPHDGBP
 					{
 						//0xD45EE0
 						BEKAMBBOLBO_Done = true;
-					}, null, null, null);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 					//LAB_00d490e0
 					//20
 					while (!BEKAMBBOLBO_Done)
@@ -1058,7 +1058,7 @@ public class AMOCLPHDGBP
 		{
 			//0xD45F00
 			BEKAMBBOLBO = true;
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 		while(!BEKAMBBOLBO)
 			yield return null;
 		if(DNNHOKJKHJK < 2)
@@ -1161,7 +1161,7 @@ public class AMOCLPHDGBP
 		{
 			//0xD45F14
 			BEKAMBBOLBO = true;
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 		while(!BEKAMBBOLBO)
 			yield return null;
 		if(DNNHOKJKHJK > 1)
@@ -1210,7 +1210,7 @@ public class AMOCLPHDGBP
 		{
 			//0xD45F28
 			NIMPEHIECJH();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xCEA5F8 Offset: 0xCEA5F8 VA: 0xCEA5F8

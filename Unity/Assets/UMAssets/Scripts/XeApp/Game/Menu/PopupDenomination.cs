@@ -165,7 +165,7 @@ namespace XeApp.Game.Menu
 				if(onCancel != null)
 					onCancel();
 				errorHandler = null;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6D802C Offset: 0x6D802C VA: 0x6D802C

@@ -171,7 +171,7 @@ namespace XeApp.Game.Common
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 			};
-			PopupWindowManager.Show(s, null, null, null, null);
+			PopupWindowManager.Show(s, null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x1BAC59C Offset: 0x1BAC59C VA: 0x1BAC59C
@@ -229,7 +229,7 @@ namespace XeApp.Game.Common
 		public void Show()
 		{
 			gameObject.SetActive(true);
-			m_layoutPeriod.UpdateAllAnimation(TimeWrapper.deltaTime);
+			m_layoutPeriod.UpdateAllAnimation(TimeWrapper.deltaTime, false);
 			m_layoutPeriod.UpdateAll(m_identity, Color.white);
 		}
 

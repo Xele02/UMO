@@ -1039,7 +1039,7 @@ namespace XeApp.Game.Menu
 				if (type == PopupButton.ButtonType.Positive)
 					isOk = true;
 				done = true;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while (!done)
 				yield return null;
 			if (callback != null)
@@ -1087,12 +1087,12 @@ namespace XeApp.Game.Menu
 					{
 						//0x9E7CE4
 						return;
-					}, null, null, null, closeWaitCallBack: () =>
+					}, null, null, null, true, true, false, () =>
 					{
 						//0x9E7EAC
 						popupWait = false;
 						return true;
-					});
+					}, null, null, null, null);
 					while (popupWait)
 						yield return null;
 				}
@@ -1132,7 +1132,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x9E7ED8
 				done = true;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while (!done)
 				yield return null;
 			MenuScene.Instance.RaycastDisable();

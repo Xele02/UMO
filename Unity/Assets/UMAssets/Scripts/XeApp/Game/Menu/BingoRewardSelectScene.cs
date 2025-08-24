@@ -102,7 +102,7 @@ namespace XeApp.Game.Menu
 							}
 							MenuScene.Instance.Mount(TransitionUniqueId.QUEST_BINGOMISSITON, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 						}
-					}, null, null, null);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 				}
 			});
 			m_layout.initializeScroll();

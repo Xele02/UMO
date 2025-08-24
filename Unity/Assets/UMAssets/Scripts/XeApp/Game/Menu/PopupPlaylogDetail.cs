@@ -153,7 +153,7 @@ namespace XeApp.Game.Menu
 				operation = null;
 				for(i = 0; i < loadCount; i++)
 				{
-					AssetBundleManager.UnloadAssetBundle(BundleName);
+					AssetBundleManager.UnloadAssetBundle(BundleName, false);
 				}
 				if(onfinished != null)
 				{
@@ -271,7 +271,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x160BA60 Offset: 0x160BA60 VA: 0x160BA60
 		public void ShowPopup(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> buttonCallBack)
 		{
-			PopupWindowManager.Show(sm_Setting, buttonCallBack, null, null, null);
+			PopupWindowManager.Show(sm_Setting, buttonCallBack, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// RVA: 0x160BB64 Offset: 0x160BB64 VA: 0x160BB64 Slot: 17

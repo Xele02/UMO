@@ -162,7 +162,7 @@ namespace XeApp.Game.Menu
 				}
 				sm_window = null;
 				errorHandler = null;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 	}
 }

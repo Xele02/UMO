@@ -898,7 +898,7 @@ namespace XeApp.Game.Menu
 					//0x159A6C4
 					butLabel = label;
 					isWait = false;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while(isWait)
 					yield return null;
 				snsController.layoutScrollList.ScrollSupport.scrollRect.enabled = prevScrollEnable;

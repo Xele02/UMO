@@ -41,7 +41,7 @@ namespace XeApp.Game.Menu
 			}));
 
 			yield return Co.R(content.GetComponent<UnitBonusWindow>().LoadContents());
-			AssetBundleManager.UnloadAssetBundle(BundleName.ToString());
+			AssetBundleManager.UnloadAssetBundle(BundleName.ToString(), false);
 			m_content = content;
 			content.transform.SetParent(m_parent, false);
 			content.gameObject.SetActive(false);

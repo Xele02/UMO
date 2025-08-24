@@ -978,7 +978,7 @@ namespace XeApp.Game.Menu
 			}
 			else if(dispType == DispType.CurrentUnit)
 			{
-				ApplyCurrentUnitContent();
+				ApplyCurrentUnitContent(false);
 			}
 			else if(dispType == DispType.UnitSet)
 			{
@@ -1019,42 +1019,42 @@ namespace XeApp.Game.Menu
 				deckDisp = SetDeckUnitInfoAnimeControl.DispType.Skill;
 			if(dispType == DispType.Prism)
 			{
-				m_headButtons.InOut.Enter();
-				m_valkyrieButton.InOut.Enter();
-				m_musicInfo.InOut.Enter();
-				m_playButtons.InOut.Enter();
-				m_prismSettingButtons.InOut.Enter();
+				m_headButtons.InOut.Enter(false, null);
+				m_valkyrieButton.InOut.Enter(false, null);
+				m_musicInfo.InOut.Enter(false, null);
+				m_playButtons.InOut.Enter(false, null);
+				m_prismSettingButtons.InOut.Enter(false, null);
 				m_prismUnitInfo.AnimeControl.TryEnter();
 			}
 			else if(dispType == DispType.UnitSet)
 			{
-				m_unitStatus.InOut.Enter();
-				m_valkyrieButton.InOut.Enter();
+				m_unitStatus.InOut.Enter(false, null);
+				m_valkyrieButton.InOut.Enter(false, null);
 				if(!m_isGoDivaEvent)
 				{
-					m_unitInfoChangeButton.InOut.Enter();
+					m_unitInfoChangeButton.InOut.Enter(false, null);
 				}
-				m_musicInfo.InOut.Enter();
-				m_unitSetListButtons.InOut.Enter();
+				m_musicInfo.InOut.Enter(false, null);
+				m_unitSetListButtons.InOut.Enter(false, null);
 				m_unitSetListButtons.ResetUnitNameScroll();
-				m_unitSetCloseButton.InOut.Enter();
-				m_unitSetSelectButtons.InOutLeft.Enter();
-				m_unitSetSelectButtons.InOutRight.Enter();
+				m_unitSetCloseButton.InOut.Enter(false, null);
+				m_unitSetSelectButtons.InOutLeft.Enter(false, null);
+				m_unitSetSelectButtons.InOutRight.Enter(false, null);
 				m_unitSetInfo.AnimeControl.TryEnter(deckDisp);
-				m_loadSaveButtons.InOut.Enter();
+				m_loadSaveButtons.InOut.Enter(false, null);
 			}
 			else if(dispType == DispType.CurrentUnit)
 			{
-				m_headButtons.InOut.Enter();
-				m_unitStatus.InOut.Enter();
-				m_valkyrieButton.InOut.Enter();
+				m_headButtons.InOut.Enter(false, null);
+				m_unitStatus.InOut.Enter(false, null);
+				m_valkyrieButton.InOut.Enter(false, null);
 				if(!m_isGoDivaEvent)
 				{
-					m_unitInfoChangeButton.InOut.Enter();
+					m_unitInfoChangeButton.InOut.Enter(false, null);
 				}
 				m_unitInfo.AnimeControl.TryEnter(deckDisp);
-				m_musicInfo.InOut.Enter();
-				m_playButtons.InOut.Enter();
+				m_musicInfo.InOut.Enter(false, null);
+				m_playButtons.InOut.Enter(false, null);
 			}
 		}
 
@@ -1065,33 +1065,35 @@ namespace XeApp.Game.Menu
 			{
 				if(dispType == DispType.UnitSet)
 				{
-					m_headButtons.InOut.Leave(false);
+					m_headButtons.InOut.Leave(false, null);
 					m_unitInfo.AnimeControl.TryLeave();
-					m_playButtons.InOut.Leave(false);
+					m_playButtons.InOut.Leave(false, null);
+					m_prismSettingButtons.InOut.Leave(false, null);
+					m_prismUnitInfo.AnimeControl.TryLeave();
 				}
 				else if(dispType == DispType.CurrentUnit)
 				{
-					m_unitSetListButtons.InOut.Leave(false);
-					m_unitSetCloseButton.InOut.Leave(false);
-					m_unitSetSelectButtons.InOutLeft.Leave(false);
-					m_unitSetSelectButtons.InOutRight.Leave(false);
+					m_unitSetListButtons.InOut.Leave(false, null);
+					m_unitSetCloseButton.InOut.Leave(false, null);
+					m_unitSetSelectButtons.InOutLeft.Leave(false, null);
+					m_unitSetSelectButtons.InOutRight.Leave(false, null);
 					m_unitSetInfo.AnimeControl.TryLeave();
-					m_loadSaveButtons.InOut.Leave(false);
-					m_prismSettingButtons.InOut.Leave(false);
+					m_loadSaveButtons.InOut.Leave(false, null);
+					m_prismSettingButtons.InOut.Leave(false, null);
 					m_prismUnitInfo.AnimeControl.TryLeave();
 				}
 			}
 			else
 			{
-				m_unitStatus.InOut.Leave(false);
-				m_unitInfoChangeButton.InOut.Leave(false);
+				m_unitStatus.InOut.Leave(false, null);
+				m_unitInfoChangeButton.InOut.Leave(false, null);
 				m_unitInfo.AnimeControl.TryLeave();
-				m_unitSetListButtons.InOut.Leave(false);
-				m_unitSetCloseButton.InOut.Leave(false);
-				m_unitSetSelectButtons.InOutLeft.Leave(false);
-				m_unitSetSelectButtons.InOutRight.Leave(false);
+				m_unitSetListButtons.InOut.Leave(false, null);
+				m_unitSetCloseButton.InOut.Leave(false, null);
+				m_unitSetSelectButtons.InOutLeft.Leave(false, null);
+				m_unitSetSelectButtons.InOutRight.Leave(false, null);
 				m_unitSetInfo.AnimeControl.TryLeave();
-				m_loadSaveButtons.InOut.Leave(false);
+				m_loadSaveButtons.InOut.Leave(false, null);
 			}
 		}
 
@@ -1178,23 +1180,23 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA88E24 Offset: 0xA88E24 VA: 0xA88E24
 		private void LeaveContents()
 		{
-			m_headButtons.InOut.Leave(false);
-			m_unitStatus.InOut.Leave(false);
-			m_valkyrieButton.InOut.Leave(false);
-			m_unitInfoChangeButton.InOut.Leave(false);
+			m_headButtons.InOut.Leave(false, null);
+			m_unitStatus.InOut.Leave(false, null);
+			m_valkyrieButton.InOut.Leave(false, null);
+			m_unitInfoChangeButton.InOut.Leave(false, null);
 			m_unitInfo.AnimeControl.TryLeave();
-			m_musicInfo.InOut.Leave(false);
-			m_playButtons.InOut.Leave(false);
-			m_unitSetListButtons.InOut.Leave(false);
-			m_unitSetCloseButton.InOut.Leave(false);
-			m_unitSetSelectButtons.InOutLeft.Leave(false);
-			m_unitSetSelectButtons.InOutRight.Leave(false);
+			m_musicInfo.InOut.Leave(false, null);
+			m_playButtons.InOut.Leave(false, null);
+			m_unitSetListButtons.InOut.Leave(false, null);
+			m_unitSetCloseButton.InOut.Leave(false, null);
+			m_unitSetSelectButtons.InOutLeft.Leave(false, null);
+			m_unitSetSelectButtons.InOutRight.Leave(false, null);
 			m_unitSetInfo.AnimeControl.TryLeave();
 			m_unitSetInfo.MessageControl.Leave();
-			m_loadSaveButtons.InOut.Leave(false);
-			m_prismSettingButtons.InOut.Leave(false);
+			m_loadSaveButtons.InOut.Leave(false, null);
+			m_prismSettingButtons.InOut.Leave(false, null);
 			m_prismUnitInfo.AnimeControl.TryLeave();
-			m_statusWindow.InOut.Leave(false);
+			m_statusWindow.InOut.Leave(false, null);
 			m_unitStatus.SetCheckStatusButtonState(SetDeckUnitStatus.CheckStatusButtonState.Normal);
 		}
 
@@ -1228,7 +1230,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 			while (m_statusWindow.InOut.IsPlaying())
 				yield return null;
-			m_statusWindow.InOut.Leave(false);
+			m_statusWindow.InOut.Leave(false, null);
 			m_unitStatus.SetCheckStatusButtonState(SetDeckUnitStatus.CheckStatusButtonState.Normal);
 			m_unitSetInfo.MessageControl.Leave();
 			SetTitleInOut(prevDispType, dispType);
@@ -1379,7 +1381,7 @@ namespace XeApp.Game.Menu
 					PreGameSkipShow(AdvanceGame);
 					return;
 			}
-			PopupWindowManager.Show(m_textPopupSetting, null, null, null, null);
+			PopupWindowManager.Show(m_textPopupSetting, null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0xA8A680 Offset: 0xA8A680 VA: 0xA8A680
@@ -1525,7 +1527,7 @@ namespace XeApp.Game.Menu
 					if (onContinue != null)
 						onContinue();
 				}
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0xA8C374 Offset: 0xA8C374 VA: 0xA8C374
@@ -1561,7 +1563,7 @@ namespace XeApp.Game.Menu
 					}
 					SettingCompleteShow(onContinue);
 				});
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0xA8B940 Offset: 0xA8B940 VA: 0xA8B940
@@ -1609,7 +1611,7 @@ namespace XeApp.Game.Menu
 								Database.Instance.gameSetup.teamInfo.SetupInfo(m_paramCalculator.AddStatus, m_playerData, 0, m_viewMusicData, m_viewFriendPlayerData, m_paramCalculator.LimitOverStatus, m_prismData, false);
 								AdvanceGame(m_paramCalculator.AddStatus, m_playerData, m_viewFriendPlayerData, m_paramCalculator.LimitOverStatus, m_isDoSkip, UseLiveSkipTicketCount, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime(), m_paramCalculator.LogParams, isAssist);
 							}
-						}, null, null, null, true, true, false);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 						return;
 					}
                 }
@@ -1631,7 +1633,7 @@ namespace XeApp.Game.Menu
 				MenuScene.Instance.InputEnable();
 				if (onClose != null)
 					onClose();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0xA89EF8 Offset: 0xA89EF8 VA: 0xA89EF8
@@ -1673,7 +1675,7 @@ namespace XeApp.Game.Menu
 				//0xA92044
 				this.StartCoroutineWatched(Co_SwitchDivaSelectDisplay());
 				MenuScene.Instance.InputEnable();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72F514 Offset: 0x72F514 VA: 0x72F514
@@ -1758,7 +1760,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xA92A94
 				return;
-			}, null, null);
+			}, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0xA8DCDC Offset: 0xA8DCDC VA: 0xA8DCDC
@@ -1781,7 +1783,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xA92A9C
 					return;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 			else
 			{
@@ -1789,7 +1791,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xA92A98
 					return;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 
@@ -1892,7 +1894,7 @@ namespace XeApp.Game.Menu
 				{
 					m_valkyriePopupSetting.ViewValkyrieData = m_viewUnitData.JOKFNBLEILN_Valkyrie;
 					m_valkyriePopupSetting.ViewValkyrieAbilityData = m_paramCalculator.ValkyrieAbilityData;
-					PopupWindowManager.Show(m_valkyriePopupSetting, null, null, null, null);
+					PopupWindowManager.Show(m_valkyriePopupSetting, null, null, null, null, true, true, false, null, null, null, null, null);
 				}
 			}
 		}
@@ -2045,7 +2047,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xA92584
 				m_musicInfo.ExpectedScoreGauge.UpdateScore();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0xA8FB84 Offset: 0xA8FB84 VA: 0xA8FB84
@@ -2107,7 +2109,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Instance.RaycastDisable();
 			yield return Co.R(Co_DownloadUnitSetResources());
 			yield return Co.R(Co_SwitchContents(DispType.UnitSet));
-			m_unitSetInfo.MessageControl.Enter(m_playerData.JKIJFGGMNAN_GetUnit(UnitSetIndex, m_isGoDivaEvent).EIGKIHENKNC_HasNoDivaSet ? SetDeckUnitInfoMessageControl.DispType.Keep : SetDeckUnitInfoMessageControl.DispType.OneShot);
+			m_unitSetInfo.MessageControl.Enter(m_playerData.JKIJFGGMNAN_GetUnit(UnitSetIndex, m_isGoDivaEvent).EIGKIHENKNC_HasNoDivaSet ? SetDeckUnitInfoMessageControl.DispType.Keep : SetDeckUnitInfoMessageControl.DispType.OneShot, SetDeckUnitInfoMessageControl.MessageType.UnitSetHelp);
 			MenuScene.Instance.RaycastEnable();
 		}
 
@@ -2168,7 +2170,7 @@ namespace XeApp.Game.Menu
 			m_textPopupSetting.Text = string.Format(MessageManager.Instance.GetBank("menu").GetMessageByLabel("popup_prism_unlock_text"), m_prismData.DPHIJENPBCJ_GetPrismLevelRequired());
 			m_textPopupSetting.WindowSize = SizeType.Small;
 			m_textPopupSetting.Buttons = m_textPopupOkButtons;
-			PopupWindowManager.Show(m_textPopupSetting, null, null, null, null);
+			PopupWindowManager.Show(m_textPopupSetting, null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0xA90564 Offset: 0xA90564 VA: 0xA90564

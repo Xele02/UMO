@@ -224,7 +224,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x10A64C0
 					done = true;
-				});
+				}, null, null, null);
 				yield return new WaitWhile(() =>
 				{
 					//0x10A64CC

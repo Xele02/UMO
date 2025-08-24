@@ -424,7 +424,7 @@ namespace XeApp.Game.Menu
 					yield return null;
 				else
 				{
-					layout.UpdateAllAnimation(TimeWrapper.deltaTime * 2);
+					layout.UpdateAllAnimation(TimeWrapper.deltaTime * 2, false);
 					layout.UpdateAll(m_identity, Color.white);
 				}
 			}

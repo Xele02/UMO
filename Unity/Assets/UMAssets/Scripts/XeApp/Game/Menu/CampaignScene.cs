@@ -118,7 +118,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x10A9E6C
 				//done = true;
-			});
+			}, null, null, null);
 		}
 
 		// // RVA: 0x10A92C4 Offset: 0x10A92C4 VA: 0x10A92C4

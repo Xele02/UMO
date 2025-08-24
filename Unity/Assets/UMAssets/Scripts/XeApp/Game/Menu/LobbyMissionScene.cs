@@ -621,7 +621,7 @@ namespace XeApp.Game.Menu
 					//0xD176E4
 					popupWait = false;
 					return true;
-				});
+				}, null, null, null, null);
 				while(popupWait)
 					yield return null;
 			}

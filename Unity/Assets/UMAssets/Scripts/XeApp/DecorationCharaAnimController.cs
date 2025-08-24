@@ -276,14 +276,14 @@ namespace XeApp
 			if(type == ReactionSpecifiedType.Angry)
 			{
 				state = State.AngrySway;
-				ChangeAnim(HashAngrySway);
+				ChangeAnim(HashAngrySway, true);
 				nextBlankSec = reactionAngryBlank;
 				isWaitNextAnim = true;
 			}
 			else if(type == ReactionSpecifiedType.Glad)
 			{
 				state = State.GladJump;
-				ChangeAnim(HashGlad);
+				ChangeAnim(HashGlad, true);
 				nextBlankSec = reactionGladBlank;
 				isWaitNextAnim = true;
 			}

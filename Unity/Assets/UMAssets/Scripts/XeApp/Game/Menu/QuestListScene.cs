@@ -208,12 +208,12 @@ namespace XeApp.Game.Menu
 				{
 					//0x9D6F6C
 					return;
-				}, null, null, null, closeWaitCallBack: () =>
+				}, null, null, null, true, true, false, () =>
 				{
 					//0x9D7118
 					popupWait = false;
 					return true;
-				});
+				}, null, null, null, null);
 				while(popupWait)
 					yield return null;
 				m_layoutScrollList.UpdateList();

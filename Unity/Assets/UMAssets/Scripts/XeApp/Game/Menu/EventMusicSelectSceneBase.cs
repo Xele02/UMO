@@ -228,7 +228,7 @@ namespace XeApp.Game.Menu
 		protected override void OnDestoryScene()
 		{
 			ReleaseScene();
-			m_unitLiveLocalSaveData.HJMKBCFJOOH_Write();
+			m_unitLiveLocalSaveData.HJMKBCFJOOH_Write(false);
 		}
 
 		// RVA: 0x13B91D8 Offset: 0x13B91D8 VA: 0x13B91D8 Slot: 15
@@ -794,7 +794,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x13BFBD8
 					done = true;
-				});
+				}, null, null, null);
 				//LAB_013c1090
 				while(!done)
 					yield return null;
@@ -879,7 +879,7 @@ namespace XeApp.Game.Menu
 					{
 						//0x13BFC08
 						done = true;
-					});
+					}, null, null, null);
 					//LAB_013c1a0c
 					while(!done)
 						yield return null;
@@ -1347,7 +1347,7 @@ namespace XeApp.Game.Menu
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 			};
-			PopupWindowManager.Show(m_rewardPopupSetting, null, null, null, null, true, true, false);
+			PopupWindowManager.Show(m_rewardPopupSetting, null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x13BD010 Offset: 0x13BD010 VA: 0x13BD010
@@ -1602,7 +1602,7 @@ namespace XeApp.Game.Menu
 					{
 						//0x13C0138
 						isWait = false;
-					}, null, null, null, true, true, false);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 					while(isWait)
 						yield return null;
 				}
@@ -1624,7 +1624,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x13C014C
 				isClosed = true;
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(!isClosed)
 				yield return null;
 			if(onEnd != null)

@@ -722,7 +722,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x9DDCF4 Offset: 0x9DDCF4 VA: 0x9DDCF4 Slot: 20
 		protected override bool OnBgmStart()
 		{
-			SoundManager.Instance.bgmPlayer.ContinuousPlay(MenuScene.Instance.GetDefaultBgmId(SceneGroupCategory.QUEST));
+			SoundManager.Instance.bgmPlayer.ContinuousPlay(MenuScene.Instance.GetDefaultBgmId(SceneGroupCategory.QUEST), 1);
 			return true;
 		}
 
@@ -750,12 +750,12 @@ namespace XeApp.Game.Menu
 				{
 					//0x9DE3B8
 					return;
-				}, null, null, null, closeWaitCallBack:() =>
+				}, null, null, null, true, true, false, () =>
 				{
 					//0x9DE8E4
 					popupWait = false;
 					return true;
-				});
+				}, null, null, null, null);
 				while (popupWait)
 					yield return null;
 				UpdateList();

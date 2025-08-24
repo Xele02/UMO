@@ -340,7 +340,7 @@ namespace XeApp.Game.Menu
 								//0x1445E98
 								CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsShowRaidAssistHelp, true);
 								ClickPlayButton();
-							}, null, null, null, true, true, false);
+							}, null, null, null, true, true, false, null, null, null, null, null);
 							return;
 						}
 					}
@@ -850,7 +850,7 @@ namespace XeApp.Game.Menu
 					{
 						//0x1445FB0
 						done = true;
-					});
+					}, null, null, null);
 					while(!done)
 						yield return null;
 					MenuScene.Instance.InputEnable();
@@ -955,7 +955,7 @@ namespace XeApp.Game.Menu
 						{
 							//0x1445448
 							MenuScene.Instance.Return(true);
-						}, null, null, null, true, true, false);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 					}
 					else if(raidController.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_Status != NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
 					{
@@ -968,7 +968,7 @@ namespace XeApp.Game.Menu
 						{
 							//0x14454E8
 							MenuScene.Instance.Return(true);
-						}, null, null, null, true, true, false);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 					}
 					MenuScene.Instance.InputEnable();
 				}, () =>

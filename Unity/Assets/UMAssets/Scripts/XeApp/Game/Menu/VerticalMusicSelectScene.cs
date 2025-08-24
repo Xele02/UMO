@@ -393,7 +393,7 @@ namespace XeApp.Game.Menu
 				m_isEndMyRankRequest = true;
 				m_showScoreRankingPopup = false;
 				GotoTitle();
-			});
+			}, false);
 			while (!m_isEndMyRankRequest)
 				yield return null;
 			yield return null;
@@ -502,7 +502,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xAC2BB0
 				isClosed = true;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(!isClosed)
 				yield return null;
 		}
@@ -682,7 +682,7 @@ namespace XeApp.Game.Menu
 
 			for(int i = 0; i < bundleCount; i++)
 			{
-				AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+				AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			}
 		}
 
@@ -1390,7 +1390,7 @@ namespace XeApp.Game.Menu
 					{
 						//0xAC28F0
 						MenuScene.Instance.Mount(TransitionUniqueId.HOME, null, true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
-					}, null, null, null);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 				}
 			}
 		}

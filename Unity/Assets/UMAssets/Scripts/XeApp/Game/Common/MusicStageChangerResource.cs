@@ -45,7 +45,7 @@ namespace XeApp.Game.Common
 			yield return Co.R(operation);
 			assetName.SetFormat("dr_sc_{0:D3}_param", assetId);
 			param = operation.GetAsset<MusicStageChangerParam>(assetName.ToString());
-			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			isLoaded = true;
 		}
 	}

@@ -716,7 +716,7 @@ public class IHKJLKLAMMC
 				s.WindowSize = SizeType.Small;
 				s.TitleText = bk.GetMessageByLabel("popup_sp_transition_bingo_error_title");
 				s.Text = string.Format(bk.GetMessageByLabel("popup_sp_bingo_debutmission_notclear_text"), 1, 1);
-				PopupWindowManager.Show(s, null, null, null, null, true, true, false);
+				PopupWindowManager.Show(s, null, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 	}

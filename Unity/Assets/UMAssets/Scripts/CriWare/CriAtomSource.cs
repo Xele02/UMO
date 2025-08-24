@@ -188,7 +188,7 @@ namespace CriWare
 			#endif
 			CriAtomPlugin.InitializeLibrary();
 			this.player = new CriAtomExPlayer(this, enable_audio_synced_timer);
-			this.source = new CriAtomEx3dSource(this, randomPositionListMaxLength:this.randomPositionListMaxLength);
+			this.source = new CriAtomEx3dSource(this, false, randomPositionListMaxLength);
 			this.initialized = true;
 		}
 

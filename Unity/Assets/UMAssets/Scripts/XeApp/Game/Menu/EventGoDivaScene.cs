@@ -1746,7 +1746,7 @@ namespace XeApp.Game.Menu
 					onChangeMusic();
 				if(onClosePopup != null)
 					onClosePopup();
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x10697DC Offset: 0x10697DC VA: 0x10697DC
@@ -1767,7 +1767,7 @@ namespace XeApp.Game.Menu
 				//0x1071760
 				if(onClosePopup != null)
 					onClosePopup();
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x1069AFC Offset: 0x1069AFC VA: 0x1069AFC
@@ -1786,7 +1786,7 @@ namespace XeApp.Game.Menu
 				//0x1071774
 				if(onClosePopup != null)
 					onClosePopup();
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x1069E6C Offset: 0x1069E6C VA: 0x1069E6C
@@ -1819,7 +1819,7 @@ namespace XeApp.Game.Menu
 					return;
 				if(onUseItem != null)
 					onUseItem(nextRate - currentRate);
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x106A6E8 Offset: 0x106A6E8 VA: 0x106A6E8
@@ -1837,7 +1837,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x10713E4
 				return;
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x106AA70 Offset: 0x106AA70 VA: 0x106AA70
@@ -1855,7 +1855,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x10713E8
 				return;
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x106ADEC Offset: 0x106ADEC VA: 0x106ADEC
@@ -1877,7 +1877,7 @@ namespace XeApp.Game.Menu
 					onChangeMusic();
 				if(onClosePopup != null)
 					onClosePopup();
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x106B164 Offset: 0x106B164 VA: 0x106B164

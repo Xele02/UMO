@@ -131,28 +131,28 @@ namespace XeApp.Game.Menu
 			SetCallbackSlider(0, (float value) =>
 			{
 				//0x1ECD730
-				ConfigManager.Instance.SetVolume(Common.SoundManager.CategoryId.GAME_VOICE, value);
+				ConfigManager.Instance.SetVolume(Common.SoundManager.CategoryId.GAME_VOICE, value, false);
 				if (m_changeSliderSePlay)
 					ConfigUtility.PlaySeSlider();
 			});
 			SetCallbackSlider(1, (float value) =>
 			{
 				//0x1ECD7FC
-				ConfigManager.Instance.SetVolume(Common.SoundManager.CategoryId.GAME_SE, value);
+				ConfigManager.Instance.SetVolume(Common.SoundManager.CategoryId.GAME_SE, value, false);
 				if (m_changeSliderSePlay)
 					ConfigUtility.PlaySeSlider();
 			});
 			SetCallbackSlider(2, (float value) =>
 			{
 				//0x1ECD8C8
-				ConfigManager.Instance.SetVolume(Common.SoundManager.CategoryId.GAME_BGM, value);
+				ConfigManager.Instance.SetVolume(Common.SoundManager.CategoryId.GAME_BGM, value, false);
 				if (m_changeSliderSePlay)
 					ConfigUtility.PlaySeSlider();
 			});
 			SetCallbackSlider(3, (float value) =>
 			{
 				//0x1ECD994
-				ConfigManager.Instance.SetVolume(Common.SoundManager.CategoryId.GAME_NOTES, value);
+				ConfigManager.Instance.SetVolume(Common.SoundManager.CategoryId.GAME_NOTES, value, false);
 				if (m_changeSliderSePlay)
 					ConfigUtility.PlaySeSlider();
 			});

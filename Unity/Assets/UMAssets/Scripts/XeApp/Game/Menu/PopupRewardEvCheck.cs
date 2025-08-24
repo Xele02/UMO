@@ -547,7 +547,7 @@ namespace XeApp.Game.Menu
 					it.IsGet = viewData.total_data_list[i].HMEOAKCLKJE_IsReceived;
 					it.isGoldFrame = it.Item.JOPPFEHKNFO_IsGold;
 					m_pointList.Add(it);
-					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(it.Item.JJBGOIMEIPF_ItemId));
+					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(it.Item.JJBGOIMEIPF_ItemId, 0));
 					a1++;
 				}
 			}
@@ -1098,7 +1098,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x1A6A9B8
 				(content as PopupRewardEvCheck).ChangeTab(label);
-			}, null, null);
+			}, null, null, true, true, false, null, null, null, null, null);
 			yield break;
 		}
 
@@ -1151,7 +1151,7 @@ namespace XeApp.Game.Menu
 					{
 						//0x1A6AB40
 						(content as PopupRewardEvCheck).ChangeTab(label);
-					}, null, null, true, true, false);
+					}, null, null, true, true, false, null, null, null, null, null);
 				}
 			}
 			yield break;

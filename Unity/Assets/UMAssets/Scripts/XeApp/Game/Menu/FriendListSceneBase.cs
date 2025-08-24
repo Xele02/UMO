@@ -643,7 +643,7 @@ namespace XeApp.Game.Menu
 					DoFriendRelease(info);
 				}
 				MenuScene.Instance.RaycastEnable();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0xBAD8F4 Offset: 0xBAD8F4 VA: 0xBAD8F4
@@ -677,7 +677,7 @@ namespace XeApp.Game.Menu
 					DoFriendAccept(info);
 				}
 				MenuScene.Instance.RaycastEnable();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0xBA34FC Offset: 0xBA34FC VA: 0xBA34FC
@@ -699,7 +699,7 @@ namespace XeApp.Game.Menu
 					DoFriendReject(info);
 				}
 				MenuScene.Instance.RaycastEnable();
-			}, null, null, null);
+			}, null, null, null, true, true, true, null, null, null, null, null);
 		}
 
 		//// RVA: 0xBAE0EC Offset: 0xBAE0EC VA: 0xBAE0EC
@@ -715,7 +715,7 @@ namespace XeApp.Game.Menu
 				//0xBAF88C
 				OnNetRequestSuccess();
 				MenuScene.Instance.RaycastEnable();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0xBAE308 Offset: 0xBAE308 VA: 0xBAE308

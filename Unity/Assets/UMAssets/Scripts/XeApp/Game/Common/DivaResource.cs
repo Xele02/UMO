@@ -1404,7 +1404,7 @@ namespace XeApp.Game.Common
 			assetName.SetFormat("diva_{0:D3}_menu_idle_mouth", divaId);
 			loginMotionOverride.idle.mouthBlendClip = operationDiva.GetAsset<AnimationClip>(assetName.ToString());
 
-			AssetBundleManager.UnloadAssetBundle(divaBundleName.ToString());
+			AssetBundleManager.UnloadAssetBundle(divaBundleName.ToString(), false);
 
 			personalityId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(divaId).FPMGHDKACOF_PersonalityId;
 			bundleName = new StringBuilder();
@@ -1744,7 +1744,7 @@ namespace XeApp.Game.Common
 				data.end.bodyClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 				menuMotionOverride.talk.Add(data);
 			}
-			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			bundleName.SetFormat("dv/ca/{0:D3}.xab", divaId);
 			operation = AssetBundleManager.LoadAllAssetAsync(bundleName.ToString());
 			yield return operation;
@@ -1756,7 +1756,7 @@ namespace XeApp.Game.Common
 			menuMotionOverride.idle.mouthBlendClip = operation.GetAsset<AnimationClip>(assetName.ToString());
 			assetName.SetFormat("diva_{0:D3}_menu_voicetable", divaId);
 			menuVoiceTable = operation.GetAsset<MenuDivaVoiceTable>(assetName.ToString());
-			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x737088 Offset: 0x737088 VA: 0x737088
@@ -1785,7 +1785,7 @@ namespace XeApp.Game.Common
 			unlockMotionOverride.end.faceBlendClip = operationDiva.GetAsset<AnimationClip>(assetName.ToString());
 			assetName.SetFormat("diva_{0:D3}_join_end_loop_mouth", divaId);
 			unlockMotionOverride.end.mouthBlendClip = operationDiva.GetAsset<AnimationClip>(assetName.ToString());
-			AssetBundleManager.UnloadAssetBundle(divaBundleName.ToString());
+			AssetBundleManager.UnloadAssetBundle(divaBundleName.ToString(), false);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x737100 Offset: 0x737100 VA: 0x737100
@@ -1827,7 +1827,7 @@ namespace XeApp.Game.Common
 					specialFacialResource.Add(new FacialOverrideResouece() { originalName = originalFacesName[i], overrideClip = operation.GetAsset<AnimationClip>(assetName.ToString()) });
 				}
 			}
-			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 		}
 
 		// // RVA: 0x1BFA5BC Offset: 0x1BFA5BC VA: 0x1BFA5BC Slot: 4

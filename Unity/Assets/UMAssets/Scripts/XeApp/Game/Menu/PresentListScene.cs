@@ -418,7 +418,7 @@ namespace XeApp.Game.Menu
 					s = PopupWindowManager.CrateTextContent(bk.GetMessageByLabel(strs[(int)type]), SizeType.Small, "", btns, false, true);
 					break;
 			}
-			PopupWindowManager.Show(s, OnClickPopupButton, null, null, null);
+			PopupWindowManager.Show(s, OnClickPopupButton, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x1168994 Offset: 0x1168994 VA: 0x1168994

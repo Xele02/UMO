@@ -53,7 +53,7 @@ namespace XeApp.Game.Menu
 				//0x95A094
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				m_showDiva = index == 0;
-				MenuScene.Instance.SetActiveDivaModel(m_showDiva);
+				MenuScene.Instance.SetActiveDivaModel(m_showDiva, true);
 			});
 			m_sceneToggleGroup.OnSelectToggleButtonEvent.RemoveAllListeners();
 			m_sceneToggleGroup.OnSelectToggleButtonEvent.AddListener((int index) =>
@@ -362,7 +362,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x95B464
 				t_end_popup = true;
-			});
+			}, null, null, null);
 			while (!t_end_popup)
 				yield return null;
 			if (t_next_episode)

@@ -157,7 +157,7 @@ namespace XeApp.Game.Menu
 				//0x1720188
 				if(m_conditionsCloseCallback != null)
 					m_conditionsCloseCallback();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x171F3DC Offset: 0x171F3DC VA: 0x171F3DC

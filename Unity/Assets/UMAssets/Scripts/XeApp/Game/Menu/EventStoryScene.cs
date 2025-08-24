@@ -305,7 +305,7 @@ namespace XeApp.Game.Menu
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 			};
-			PopupWindowManager.Show(s, null, null, null, null);
+			PopupWindowManager.Show(s, null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0xB9632C Offset: 0xB9632C VA: 0xB9632C
@@ -330,7 +330,7 @@ namespace XeApp.Game.Menu
 				{
 					MenuScene.Instance.Mount(TransitionUniqueId.SETTINGMENU_SCENEABILITYRELEASELIST_SCENEGROWTH, new SceneGrowthSceneArgs(m_viewSceneData, false), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 				}
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DBFE4 Offset: 0x6DBFE4 VA: 0x6DBFE4
@@ -377,7 +377,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xB975A0
 					isWait = false;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while(isWait)
 					yield return null;
 			}
@@ -401,7 +401,7 @@ namespace XeApp.Game.Menu
 					if(type == PopupButton.ButtonType.Positive)
 						isPositive = true;
 					isWait = false;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while(isWait)
 					yield return null;
 				if(!isPositive)
@@ -431,7 +431,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xB975D0
 					isWait = false;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while(isWait)
 					yield return null;
 				m_eventStoryList.ListUpdate();

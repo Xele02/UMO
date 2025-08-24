@@ -726,7 +726,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xDD9CD0
 				return;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0xDD8918 Offset: 0xDD8918 VA: 0xDD8918
@@ -810,7 +810,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xDD9DBC
 				return;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6FE004 Offset: 0x6FE004 VA: 0x6FE004
@@ -839,7 +839,7 @@ namespace XeApp.Game.Menu
 					{
 						//0xDD9DC0
 						return;
-					}, null, null, null);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 			else
 			{
@@ -883,7 +883,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xDD9DC4
 					return;
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 			while (!PopupWindowManager.IsActivePopupWindow())
 				yield return null;
@@ -935,12 +935,12 @@ namespace XeApp.Game.Menu
 				//0xDDA5FC
 				if (type == PopupButton.ButtonType.Positive)
 					isOk = true;
-			}, null, null, null, closeWaitCallBack: () =>
+			}, null, null, null, true, true, false, () =>
 			{
 				//0xDDA60C
 				isWait = false;
 				return true;
-			});
+			}, null, null, null, null);
 			while (isWait)
 				yield return null;
 			if (isOk)
@@ -1154,7 +1154,7 @@ namespace XeApp.Game.Menu
 					{
 						//0xDDADA0
 						waitPopup = false;
-					}, null, null, null);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 					yield return new WaitWhile(() =>
 					{
 						//0xDDADAC

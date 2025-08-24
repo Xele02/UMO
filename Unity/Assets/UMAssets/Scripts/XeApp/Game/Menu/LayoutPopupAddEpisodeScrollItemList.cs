@@ -80,7 +80,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x15E851C
 					return;
-				}, null);
+				}, null, true, true, false, null, null, null, null, null);
 			}
 		}
 	}

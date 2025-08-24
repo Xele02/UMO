@@ -581,7 +581,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				GCIJNCFDNON_SceneInfo g = new GCIJNCFDNON_SceneInfo();
-				g.KHEKNNFCAOI(info.sceneId, null, null);
+				g.KHEKNNFCAOI(info.sceneId, null, null, 0, 0, 0, false, 0, 0);
 				if(g.KAFAAPEBCPD_IsMatchCenterSkillMusicAttr(Database.Instance.gameSetup.musicInfo.musicId))
 				{
 					elem.SetSkillMask(GuestListElem.SkillMask.None);

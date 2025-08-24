@@ -69,7 +69,7 @@ namespace XeApp.Game.Common
 			LoadURL(url);
 			m_buttonControl.ShowReturnButton(isShowBackButton);
 			m_buttonControl.ShowRejectCheckbox(isShowCheckbox);
-			m_buttonControl.ResetRejectCheckbox();
+			m_buttonControl.ResetRejectCheckbox(false);
 			yield return null;
 			GameManager.Instance.AddPushBackButtonHandler(Close);
 			m_rootCanvas.enabled = true;

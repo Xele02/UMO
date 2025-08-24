@@ -193,7 +193,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xD04BB0
 				m_layoutBattleScoreTotal.ButtonEnable();
-			});
+			}, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0xD04A08 Offset: 0xD04A08 VA: 0xD04A08

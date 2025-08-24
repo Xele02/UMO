@@ -466,7 +466,7 @@ namespace XeApp.Game.Menu
 									isClosePopup = true;
 									GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.AHOBDLOOLHD(m_viewIntimacyData.AHHJLDLAPAN_DivaId, next);
 									GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
-								}, null, null, null);
+								}, null, null, null, true, true, false, null, null, null, null, null);
 								yield return new WaitUntil(() =>
 								{
 									//0x14B4520
@@ -1165,7 +1165,7 @@ namespace XeApp.Game.Menu
 											isClosePopup = true;
 											GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.AHOBDLOOLHD(m_viewIntimacyData.AHHJLDLAPAN_DivaId, next);
 											GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
-										}, null, null, null);
+										}, null, null, null, true, true, false, null, null, null, null, null);
 										yield return new WaitUntil(() =>
 										{
 											//0x14B4978
@@ -1389,7 +1389,7 @@ namespace XeApp.Game.Menu
 			for(i = 0; i < typeList.Count; i++)
 			{
 				m_systemMessage.SetTextLevelUpBonus(m_viewIntimacyData.AHHJLDLAPAN_DivaId, m_viewIntimacyData.IGLBKDDCKEJ(), typeList[i], paramList[i]);
-				m_systemMessage.Enter();
+				m_systemMessage.Enter(false);
 				yield return new WaitForSeconds(3);
 				m_systemMessage.Leave(false);
 				yield return new WaitWhile(() =>
@@ -1422,7 +1422,7 @@ namespace XeApp.Game.Menu
 						isLoad = true;
 						GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.AHOBDLOOLHD(m_viewIntimacyData.AHHJLDLAPAN_DivaId, next);
 						GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
-					}, null, null, null);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 					yield return new WaitUntil(() =>
 					{
 						//0x14B4B88

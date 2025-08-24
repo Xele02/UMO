@@ -1017,7 +1017,7 @@ public class JGEOBNENMAH
 								}
 							}
 							IBJAKJJICBC data = new IBJAKJJICBC();
-							data.KHEKNNFCAOI(OMNOFMEBLAD.GHBPLHBNMBK_FreeMusicId, false, 0, 0, 0, false, false);
+							data.KHEKNNFCAOI(OMNOFMEBLAD.GHBPLHBNMBK_FreeMusicId, false, 0, 0, 0, false, false, false);
 							if(data.CPBDGAGKNGH_UlNew)
 							{
 								d.CPBDGAGKNGH_UlNew = false;

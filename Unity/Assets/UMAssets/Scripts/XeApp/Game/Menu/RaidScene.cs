@@ -511,7 +511,7 @@ namespace XeApp.Game.Menu
 						{
 							//0x1826684
 							popWindow = false;
-						}, null, null, null, true, true, false);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 						while(popWindow)
 							yield return null;
 					}
@@ -969,7 +969,7 @@ namespace XeApp.Game.Menu
 											{
 												//0x182500C
 												this.StartCoroutineWatched(Co_UpdateBossInfoList(false, null));
-											}, null, null, null, true, true, false);
+											}, null, null, null, true, true, false, null, null, null, null, null);
 										}
 										if(RaidController.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_Status == NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
 										{
@@ -977,7 +977,7 @@ namespace XeApp.Game.Menu
 											{
 												//0x1825038
 												this.StartCoroutineWatched(Co_UpdateBossInfoList(false, null));
-											}, null, null, null, true, true, false);
+											}, null, null, null, true, true, false, null, null, null, null, null);
 										}
 									}, () =>
 									{
@@ -986,7 +986,7 @@ namespace XeApp.Game.Menu
 										MenuScene.Instance.GotoTitle();
 									});
 								}
-							}, null, null, null, true, true, false);
+							}, null, null, null, true, true, false, null, null, null, null, null);
 						}
 					}
 				}
@@ -1159,7 +1159,7 @@ namespace XeApp.Game.Menu
 				(control.Content as PopupRaidBossSortContent).GetComponent<RaidBossSortWindow>().ApplyLocalSaveData(ref GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty);
 				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
 				this.StartCoroutineWatched(Co_UpdateBossInfoList(true, null));
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x181EE84 Offset: 0x181EE84 VA: 0x181EE84
@@ -1226,7 +1226,7 @@ namespace XeApp.Game.Menu
 					//0x18267AC
 					showPop = false;
 					requestHelp = type == PopupButton.ButtonType.Positive;
-				}, null, null, null, true, true, false);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 			while(showPop)
 				yield return null;
@@ -1245,7 +1245,7 @@ namespace XeApp.Game.Menu
 					//0x18267C4
 					showPop = false;
 					requestHelp = type == PopupButton.ButtonType.Positive;
-				}, null, null, null, true, true, false);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while(showPop)
 					yield return null;
 				if(requestHelp)
@@ -1274,7 +1274,7 @@ namespace XeApp.Game.Menu
 							{
 								//0x1825AF4
 								return;
-							}, null, null, null, true, true, false);
+							}, null, null, null, true, true, false, null, null, null, null, null);
 						}
 						else
 						{
@@ -1282,7 +1282,7 @@ namespace XeApp.Game.Menu
 							{
 								//0x1825AF0
 								return;
-							}, null, null, null, true, true, false);
+							}, null, null, null, true, true, false, null, null, null, null, null);
 						}
 					}, () =>
 					{
@@ -1305,7 +1305,7 @@ namespace XeApp.Game.Menu
 						{
 							//0x1825AF8
 							return;
-						}, null, null, null, true, true, false);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 					}, () =>
 					{
 						//0x18274C0
@@ -1322,7 +1322,7 @@ namespace XeApp.Game.Menu
 							done = true;
 							isResetList = true;
 							return;
-						}, null, null, null, true, true, false);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 					}, () =>
 					{
 						//0x18277AC
@@ -1339,7 +1339,7 @@ namespace XeApp.Game.Menu
 							done = true;
 							isResetList = true;
 							return;
-						}, null, null, null, true, true, false);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 					}, () => 
 					{
 						//0x1827A98
@@ -1356,7 +1356,7 @@ namespace XeApp.Game.Menu
 							done = true;
 							isResetList = true;
 							return;
-						}, null, null, null, true, true, false);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 					}, () =>
 					{
 						//0x1827D84
@@ -1373,7 +1373,7 @@ namespace XeApp.Game.Menu
 							done = true;
 							isResetList = true;
 							return;
-						}, null, null, null, true, true, false);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 					});
 					while(!done)
 						yield return null;
@@ -1415,7 +1415,7 @@ namespace XeApp.Game.Menu
 						{
 							//0x182565C
 							this.StartCoroutineWatched(Co_UpdateBossInfoList(false, null));
-						}, null, null, null, true, true, false);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 					}
 					else if(RaidController.JIBMOEHKMGB_SelectedBoss.CMCKNKKCNDK_Status != NHCDBBBMFFG.NFDONDKDHPK_3_Escaped)
 					{
@@ -1436,7 +1436,7 @@ namespace XeApp.Game.Menu
 						{
 							//0x1825688
 							this.StartCoroutineWatched(Co_UpdateBossInfoList(false, null));
-						}, null, null, null, true, true, false);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 					}
 				}
 				MenuScene.Instance.InputEnable();
@@ -1530,14 +1530,14 @@ namespace XeApp.Game.Menu
 								//0x1828844
 								m_isRaidBossEncount = -1;
 								MenuScene.Instance.InputEnable();
-							}, null, null, null, true, true, false);
+							}, null, null, null, true, true, false, null, null, null, null, null);
 						});
 					}
 				}, null, null, () =>
 				{
 					//0x1828900
 					m_isOpenEndUseFoldRadar = true;
-				}, true, true, false);
+				}, true, true, false, null, null, null, null, null);
 			}
 			else
 			{
@@ -1550,7 +1550,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x1825CD0
 					return;
-				}, null, null, null, true, true, false);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 
@@ -2025,7 +2025,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x18263A4
 				isWait = false;
-			});
+			}, null, null, null);
 			while(isWait)
 				yield return null;
 		}
@@ -2141,7 +2141,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x1826420
 					isWait = false;
-				}, null, null, null, true, true, false);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while(isWait)
 					yield return null;
 				m_bottomButtonLayout.SetItemNum(RaidController.NPICFLFAIJK_GetNumTicket());
@@ -2169,7 +2169,7 @@ namespace XeApp.Game.Menu
 				m_ticketGainedPopupSetting.SetContent(instance);
 			}));
 			m_ticketGainedPopupSetting.SetParent(transform);
-			AssetBundleManager.UnloadAssetBundle(m_ticketGainedPopupSetting.BundleName);
+			AssetBundleManager.UnloadAssetBundle(m_ticketGainedPopupSetting.BundleName, false);
 			m_loadingTicketGainedPopup = false;
 		}
 

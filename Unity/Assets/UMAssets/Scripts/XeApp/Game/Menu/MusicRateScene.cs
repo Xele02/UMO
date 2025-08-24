@@ -105,9 +105,9 @@ namespace XeApp.Game.Menu
 		protected override void OnStartExitAnimation()
 		{
 			m_layout.Leave();
-			m_layoutTitle.LeaveLabel();
+			m_layoutTitle.LeaveLabel(false);
 			if (IsRootScene())
-				m_layoutTitle.LeaveBackButton();
+				m_layoutTitle.LeaveBackButton(false);
 		}
 
 		// RVA: 0x104EF04 Offset: 0x104EF04 VA: 0x104EF04 Slot: 13
@@ -493,7 +493,7 @@ namespace XeApp.Game.Menu
 				m_nextRankRange = next;
 			};
 			m_nextRankRange = m_currentRankRange;
-			PopupWindowManager.Show(m_rankRangePopupSetting, null, null, null, null);
+			PopupWindowManager.Show(m_rankRangePopupSetting, null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x1050CE0 Offset: 0x1050CE0 VA: 0x1050CE0

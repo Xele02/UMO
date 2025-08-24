@@ -289,12 +289,12 @@ namespace XeApp.Game.Title
 				//0xE381F4
 				if (closeCallback != null)
 					closeCallback();
-			}, null, null, null, closeWaitCallBack: () =>
+			}, null, null, null, true, true, false, () =>
 			{
 				//0xE38208
 				IsSupportPopupOpen = false;
 				return true;
-			});
+			}, null, null, null, null);
 		}
 	}
 }

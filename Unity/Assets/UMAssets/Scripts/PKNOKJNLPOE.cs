@@ -1241,7 +1241,7 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 			if(IBNKPMPFLGI_IsRankReward)
 			{
 				HLFHJIDHJMP = null;
-				OKPEFAPPFDH_GetRanksAroundSelf req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new OKPEFAPPFDH_GetRanksAroundSelf());
+				OKPEFAPPFDH_GetRanksAroundSelf req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new OKPEFAPPFDH_GetRanksAroundSelf(false));
 				req.EMPNJPMAKBF_Id = KBACNOCOANM.PPFNGGCBJKC_Id;
 				req.MJGOBEGONON_Type = 0;
 				req.NHPCKCOPKAM_From = 0;
@@ -3562,7 +3562,7 @@ public class PKNOKJNLPOE_EventRaid : IKDICBBFBMI_EventBase
 					if(LHFGEOAJAAL == PopupButton.ButtonLabel.Cancel)
 						AEJMLBHEKCH = true;
 					LDPKJLNFHNN = true;
-				}, null, null, null, true, true, false);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while(!LDPKJLNFHNN)
 					yield return null;
 			}

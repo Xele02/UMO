@@ -522,7 +522,7 @@ static class FileSystemProxy
 		go = UnityEngine.Object.Instantiate(go);
 		ExtractBundle(operation, "100601");
 		yield return null;
-		AssetBundleManager.UnloadAssetBundle(s);
+		AssetBundleManager.UnloadAssetBundle(s, false);
 		s = "ad/am/100602.xab";
 		UnityEngine.Debug.LogError(s);
 		operation = AssetBundleManager.LoadAllAssetAsync(s);
@@ -531,7 +531,7 @@ static class FileSystemProxy
 		go = UnityEngine.Object.Instantiate(go);
 		ExtractBundle(operation, "100602");
 		yield return null;
-		AssetBundleManager.UnloadAssetBundle(s);
+		AssetBundleManager.UnloadAssetBundle(s, false);
 		yield return new WaitForSeconds(1);
 		IsTesting = false;
 		UnityEngine.Debug.LogError("Done");

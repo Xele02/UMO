@@ -283,7 +283,7 @@ namespace XeApp.Game.AR
                     onRetry();
                 else
                     onErrorToTitle();
-            }, null, null, null);
+            }, null, null, null, true, true, false, null, null, null, null, null);
         }
     }
 }

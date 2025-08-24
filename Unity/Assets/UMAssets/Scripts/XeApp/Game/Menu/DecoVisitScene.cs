@@ -356,7 +356,7 @@ namespace XeApp.Game.Menu
 					{
 						//0x11D8F28
 						MenuScene.Instance.InputEnable();
-					}, null, null, null, true, true, false);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 				}, (CACGCMBKHDI_Request error) =>
 				{
 					//0x11D8FC4
@@ -678,7 +678,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x11D943C
 					isDone = true;
-				}, null, null, null, true, true, false);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while(!isDone)
 					yield return null;
 				m_decoRightButtons.DisableButton_Gift();
@@ -689,7 +689,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x11D9424
 					isDone = true;
-				}, null, null, null, true, true, false);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				while(!isDone)
 					yield return null;
 			}
@@ -714,7 +714,7 @@ namespace XeApp.Game.Menu
 				//0x11D9450
 				isDone = true;
 				isRequest = type == PopupButton.ButtonType.Positive;
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(!isDone)
 				yield return null;
 			if(isRequest)
@@ -765,7 +765,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x11D9498
 				isDone = true;
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(!isDone)
 				yield return null;
 		}
@@ -907,7 +907,7 @@ namespace XeApp.Game.Menu
 				//0x11D9BA0
 				if(onEndPopup != null)
 					onEndPopup();
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 	}
 }

@@ -215,7 +215,7 @@ namespace XeApp.Game.Menu
 			int a1 = KDHGBOOECKC.HHCJCDFCLOB.ECBHIIOABCK();
 			int a2 = KDHGBOOECKC.HHCJCDFCLOB.PDGOLEJBNMM(BOPFPIHGJMD.IGHPDAGKIKO.CADDNFIKDLG_4_Complete, true);
 			m_MaxDebutNum.SetNumber(a1, 0);
-			m_ClearDebutNum.SetNumber(a2);
+			m_ClearDebutNum.SetNumber(a2, 0);
 			debutClearIconChenge(a1 == a2);
 			UpdateGaugePosition(a2 * 1.0f / a1);
 		}

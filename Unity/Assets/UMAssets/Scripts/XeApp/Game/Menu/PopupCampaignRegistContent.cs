@@ -57,7 +57,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x133E5AC
 				return;
-			});
+			}, null, null, null);
 		}
 
 		// RVA: 0x133E3EC Offset: 0x133E3EC VA: 0x133E3EC Slot: 18

@@ -96,7 +96,7 @@ namespace XeApp.Game.Menu
 				//0xBA6200
 				t_loop = false;
 				t_type = t;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(t_loop)
 				yield return null;
 			if(t_type == PopupButton.ButtonType.Positive)
@@ -132,7 +132,7 @@ namespace XeApp.Game.Menu
 					{
 						//0xBA6210
 						t_loop = false;
-					}, null, null, null);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 					while(t_loop)
 						yield return null;
 					SearchFriend();

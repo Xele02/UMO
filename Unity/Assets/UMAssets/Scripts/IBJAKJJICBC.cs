@@ -1405,7 +1405,7 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 			for(int i = 0; i < musicList.Count; i++)
 			{
 				IBJAKJJICBC ib = new IBJAKJJICBC();
-				ib.KHEKNNFCAOI(musicList[i], false, 0, 0, JHNMKKNEENE, FBFNJMKPBBA.PJLNJJIBFBN, true);
+				ib.KHEKNNFCAOI(musicList[i], false, 0, 0, JHNMKKNEENE, FBFNJMKPBBA.PJLNJJIBFBN, true, JCOJKAHFADL);
 				ib.MNNHHJBBICA_GameEventType = (int)HIDHLFCBIDE;
 				ib.MFJKNCACBDG_OpenEventType = (int)HIDHLFCBIDE;
 				ib.OEILJHENAHN_PlayEventType = (int)HIDHLFCBIDE;

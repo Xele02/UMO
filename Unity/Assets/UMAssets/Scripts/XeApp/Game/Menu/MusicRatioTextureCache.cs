@@ -46,6 +46,12 @@ namespace XeApp.Game.Menu
 		private const int IconCount = 2;
 		private const string TexturePath = "ct/mr/{0:D2}.xab";
 
+		// RVA: 0x1053FCC Offset: 0x1053FCC VA: 0x1053FCC
+		public MusicRatioTextureCache() : base(0)
+		{
+			//
+		}
+
 		// RVA: 0x1053FD8 Offset: 0x1053FD8 VA: 0x1053FD8 Slot: 5
 		public override void Terminated()
 		{

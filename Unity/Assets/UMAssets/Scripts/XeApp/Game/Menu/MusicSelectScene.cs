@@ -234,7 +234,7 @@ namespace XeApp.Game.Menu
 				m_isEndMyRankRequest = true;
 				m_showScoreRankingPopup = false;
 				GotoTitle();
-			});
+			}, false);
 			while(!m_isEndMyRankRequest)
 				yield return null;
 			

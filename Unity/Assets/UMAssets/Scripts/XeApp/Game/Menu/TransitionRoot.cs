@@ -628,7 +628,7 @@ namespace XeApp.Game.Menu
 				}));
 				if(finish != null)
 					finish();
-				AssetBundleManager.UnloadAssetBundle("ly/092.xab");
+				AssetBundleManager.UnloadAssetBundle("ly/092.xab", false);
 			}
 
 			// // RVA: 0xA39CC4 Offset: 0xA39CC4 VA: 0xA39CC4
@@ -657,7 +657,7 @@ namespace XeApp.Game.Menu
 					int key = m_instanceCacheDict.GetKey(i);
 					if(!string.IsNullOrEmpty(assetBundleNames[key].bundlePath))
 					{
-						AssetBundleManager.UnloadAssetBundle(assetBundleNames[key].bundlePath);
+						AssetBundleManager.UnloadAssetBundle(assetBundleNames[key].bundlePath, false);
 					}
 					m_instanceCacheDict.GetValue(key).OnDeleteCache();
 					UnityEngine.Object.Destroy(m_instanceCacheDict.GetValue(key).gameObject);

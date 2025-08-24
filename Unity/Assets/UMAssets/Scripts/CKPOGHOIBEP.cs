@@ -87,7 +87,7 @@ public class CKPOGHOIBEP
                 //0x1082300
                 MenuScene.Instance.InputEnable();
                 PCIDGIBANFO = false;
-            });
+            }, true, true, false, null, null, null, null, null);
         }
     }
 
@@ -144,7 +144,7 @@ public class CKPOGHOIBEP
         {
             //0x108241C
             BEKAMBBOLBO = true;
-        });
+        }, null, null, null);
         yield return new WaitWhile(() =>
         {
             //0x1082428

@@ -61,7 +61,7 @@ namespace XeApp.Game.Common
 			yield return Co.R(operation);
 			assetName.SetFormat("dr_dv_cmn_animator", Array.Empty<object>());
 			animatorController = operation.GetAsset<RuntimeAnimatorController>(assetName.ToString());
-			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x737E28 Offset: 0x737E28 VA: 0x737E28
@@ -88,7 +88,7 @@ namespace XeApp.Game.Common
 				assetName.SetFormat("dr_dv_{0:D3}_prefab_{1:D2}", assetId, i + 1);
 				prefabList.Add(operation.GetAsset<GameObject>(assetName.ToString()));
 			}
-			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 		}
 	}
 }

@@ -266,7 +266,7 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
 			UnlockFadeManager.Release();
 			GameManager.Instance.RemovePushBackButtonHandler(OnBackButton);
-			MenuScene.Instance.Return();
+			MenuScene.Instance.Return(true);
 		}
 
 		// // RVA: 0x10B3B7C Offset: 0x10B3B7C VA: 0x10B3B7C

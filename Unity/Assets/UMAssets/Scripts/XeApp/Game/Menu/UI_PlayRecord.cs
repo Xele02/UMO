@@ -337,7 +337,7 @@ namespace XeApp.Game.Menu
 			t_bundle_cnt++;
 			for(int i = 0; i < t_bundle_cnt; i++)
 			{
-				AssetBundleManager.UnloadAssetBundle(t_bundle_name.ToString());
+				AssetBundleManager.UnloadAssetBundle(t_bundle_name.ToString(), false);
 			}
 			t_bundle_op = null;
 			t_bundle_name = null;

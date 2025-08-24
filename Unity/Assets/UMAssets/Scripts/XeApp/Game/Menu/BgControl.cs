@@ -930,7 +930,7 @@ namespace XeApp.Game.Menu
 				{
 					tex.material = operation.GetAsset<Material>();
 				}
-				AssetBundleManager.UnloadAssetBundle(m_strBuilder.ToString());
+				AssetBundleManager.UnloadAssetBundle(m_strBuilder.ToString(), false);
 			}
 			m_bgBehaviour.SetHomeBgTexture(tex, m_textureType == BgTextureType.Scene, isBlur);
 			UnloadBgTexture();

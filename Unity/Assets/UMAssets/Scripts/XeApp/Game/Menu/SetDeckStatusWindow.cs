@@ -242,7 +242,7 @@ namespace XeApp.Game.Menu
 						{
 							//0xC30680
 							return;
-						}, null, null, null);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 					}
 					else
 					{
@@ -260,7 +260,7 @@ namespace XeApp.Game.Menu
 						{
 							//0xC30684
 							return;
-						}, null, null, null);
+						}, null, null, null, true, true, false, null, null, null, null, null);
 					}
 				}
 			}

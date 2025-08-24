@@ -2685,7 +2685,7 @@ namespace XeApp.Game.RhythmGame
 		// // RVA: 0x9C47C8 Offset: 0x9C47C8 VA: 0x9C47C8
 		private void GameStartErrorToTitleAction()
 		{
-			XeApp.Game.GameManager.FadeOut();
+			GameManager.FadeOut(0.4f);
 			this.StartCoroutineWatched(Co_FadeOutAndExit());
 		}
 
@@ -2697,7 +2697,7 @@ namespace XeApp.Game.RhythmGame
 			// private object <>2__current; // 0xC
 			// public RhythmGamePlayer <>4__this; // 0x10
 			// 0xBF2980
-			while(XeApp.Game.GameManager.IsFading())
+			while(GameManager.IsFading())
 			{
 				yield return null;
 			}

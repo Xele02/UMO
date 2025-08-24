@@ -67,7 +67,7 @@ namespace XeApp.Game.Menu
 				else if (label == PopupButton.ButtonLabel.Ok)
 					_result = UseItemResult.OK;
 				isWait = false;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while (isWait)
 				yield return null;
 		}

@@ -364,7 +364,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x1621ED8
 				return;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x1621078 Offset: 0x1621078 VA: 0x1621078

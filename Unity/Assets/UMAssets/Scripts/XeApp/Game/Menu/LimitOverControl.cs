@@ -141,11 +141,11 @@ namespace XeApp.Game.Menu
 			{
 				//0x153EE14
 				return;
-			}, null, null, null, endCallBaack:() =>
+			}, null, null, null, true, true, false, null, () =>
 			{
 				//0x153EF84
 				done = true;
-			});
+			}, null, null, null);
 			while(!done)
 				yield return null;
 		}

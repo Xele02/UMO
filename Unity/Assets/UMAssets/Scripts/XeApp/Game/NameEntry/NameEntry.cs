@@ -28,7 +28,7 @@ namespace XeApp.Game.NameEntry
 			{
 				//0xCA48DC
 				ShowPlayerNameConfirmPopup((control.Content as InputContent).Text, onSuccess, onFailed);
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0xCA44C0 Offset: 0xCA44C0 VA: 0xCA44C0
@@ -70,7 +70,7 @@ namespace XeApp.Game.NameEntry
 				{
 					ShowPlayerNameEntry(name, onSuccess, onFailed);
 				}
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 	}
 }

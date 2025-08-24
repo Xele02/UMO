@@ -74,7 +74,7 @@ namespace XeApp.Game.Menu
 			}));
 			yield return null;
 			m_scrollList.Apply();
-			AssetBundleManager.UnloadAssetBundle(assetBundleName);
+			AssetBundleManager.UnloadAssetBundle(assetBundleName, false);
 			for(i = 0; i < m_scrollList.ScrollObjects.Count; i++)
 			{
 				while(!m_scrollList.ScrollObjects[i].IsLoaded())

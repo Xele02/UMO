@@ -1360,7 +1360,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xF4B3A4
 					done = true;
-				});
+				}, null, null, null);
 				//LAB_00f4c590
 				while(!done)
 					yield return null;
@@ -1428,7 +1428,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xF4B3B8
 				done = true;
-			});
+			}, null, null, null);
 			while(!done)
 				yield return null;
 			
@@ -1480,7 +1480,7 @@ namespace XeApp.Game.Menu
 					{
 						//0xF4B3D4
 						done = true;
-					});
+					}, null, null, null);
 					//LAB_00f4d3b4
 					while(!done)
 						yield return null;
@@ -2388,7 +2388,7 @@ namespace XeApp.Game.Menu
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 			};
-			PopupWindowManager.Show(m_rewardPopupSetting, null, null, null, null);
+			PopupWindowManager.Show(m_rewardPopupSetting, null, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0xF45F90 Offset: 0xF45F90 VA: 0xF45F90
@@ -2785,7 +2785,7 @@ namespace XeApp.Game.Menu
 					{
 						//0xF4B8C0
 						isWait = false;
-					}, null, null, null);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 					while(isWait)
 						yield return null;
 				}
@@ -2806,7 +2806,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xF4B8D4
 				isClosed = true;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(!isClosed)
 				yield return null;
 			if(a_callback != null)

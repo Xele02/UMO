@@ -121,7 +121,7 @@ namespace XeApp.Game.Menu
 		{
 			if (!m_musicAttrEffectAnime.IsPlaying())
 				return;
-			m_musicAttrEffectAnime.Stop();
+			m_musicAttrEffectAnime.Stop(true);
 			m_musicAttrEffectAnime.Play(0, null);
 		}
 

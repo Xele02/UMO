@@ -57,7 +57,7 @@ namespace XeApp.Game.Common
 			yield return Co.R(operation);
 			assetName.SetFormat("dr_cc_cmn_animator", Array.Empty<object>());
 			animatorController = operation.GetAsset<RuntimeAnimatorController>(assetName.ToString());
-			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x73A21C Offset: 0x73A21C VA: 0x73A21C
@@ -82,7 +82,7 @@ namespace XeApp.Game.Common
 				assetName.SetFormat("dr_cc_{0:D3}_cut_{1:D2}", assetId, i + 1);
 				cutinClips[i] = operation.GetAsset<AnimationClip>(assetName.ToString());
 			}
-			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 		}
 	}
 }

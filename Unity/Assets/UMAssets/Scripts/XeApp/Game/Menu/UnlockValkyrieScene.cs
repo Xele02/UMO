@@ -77,7 +77,7 @@ namespace XeApp.Game.Menu
 			//0x16531D0
 			UnlockValkyrieArgs arg = Args as UnlockValkyrieArgs;
 			m_ValkyrieId = arg.valkyrie_id;
-			_unlockValkyrieManager.InitializeValkyrie(m_ValkyrieId);
+			_unlockValkyrieManager.InitializeValkyrie(m_ValkyrieId, 0);
 			m_IsAllComplete = false;
 			yield return new WaitWhile(() =>
 			{

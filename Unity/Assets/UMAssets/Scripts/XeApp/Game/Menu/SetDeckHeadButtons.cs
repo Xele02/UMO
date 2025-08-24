@@ -177,10 +177,10 @@ namespace XeApp.Game.Menu
 				foreach (var a in m_prismOnEffectAnimes)
 				{
 					a.gameObject.SetActive(true);
-					a.Stop();
+					a.Stop(true);
 					if (a.gameObject.activeInHierarchy)
 					{
-						a.Play();
+						a.Play(0, null);
 					}
 				}
 				m_prismOnImage.gameObject.SetActive(true);
@@ -192,7 +192,7 @@ namespace XeApp.Game.Menu
 				foreach (var a in m_prismOnEffectAnimes)
 				{
 					a.gameObject.SetActive(false);
-					a.Stop();
+					a.Stop(true);
 				}
 				m_prismOnImage.gameObject.SetActive(false);
 				m_prismOffImage.gameObject.SetActive(true);

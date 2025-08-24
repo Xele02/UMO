@@ -109,7 +109,7 @@ namespace XeApp.Game.Menu
 			m_pullDownButton.Disable = !isEneble;
 			if(!isEneble)
 			{
-				m_pullDownInOut.Leave(0.1f, true);
+				m_pullDownInOut.Leave(0.1f, true, null);
 			}
 		}
 

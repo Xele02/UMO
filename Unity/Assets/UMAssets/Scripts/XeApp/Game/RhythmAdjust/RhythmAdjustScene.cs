@@ -652,7 +652,7 @@ namespace XeApp.Game.RhythmAdjust
 		{
 			if(touchEffect.resultEffectSimple == null)
 				return;
-			touchEffect.resultEffectSimple.Play(ResultAnimationStateTable[(int)result]);
+			touchEffect.resultEffectSimple.Play(ResultAnimationStateTable[(int)result], 0);
 		}
 
 		// // RVA: 0xF62DBC Offset: 0xF62DBC VA: 0xF62DBC
@@ -770,11 +770,11 @@ namespace XeApp.Game.RhythmAdjust
 				{
 					//0xF647DC
 					BasicTutorialManager.Instance.HideCursor();
-				}, null);
+				}, null, true, true, false, null, null, null, null, null);
 			}
 			else
 			{
-				PopupWindowManager.Show(s, AdjustMoveConfirmMode, null, null, null);
+				PopupWindowManager.Show(s, AdjustMoveConfirmMode, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 
@@ -797,11 +797,11 @@ namespace XeApp.Game.RhythmAdjust
 				{
 					//0xF64858
 					BasicTutorialManager.Instance.HideCursor();
-				}, null);
+				}, null, true, true, false, null, null, null, null, null);
 			}
 			else
 			{
-				PopupWindowManager.Show(s, AdjustConfirmPopupResult, null, null, null);
+				PopupWindowManager.Show(s, AdjustConfirmPopupResult, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 
@@ -871,9 +871,9 @@ namespace XeApp.Game.RhythmAdjust
 			};
 			s.Text = bk.GetMessageByLabel("popup_rhythm_adjust_start_text");
 			if(GameManager.Instance.IsTutorial)
-				PopupWindowManager.Show(s, AdjustTutorialPopupResult, null, null, null);
+				PopupWindowManager.Show(s, AdjustTutorialPopupResult, null, null, null, true, true, false, null ,null, null, null, null);
 			else
-				PopupWindowManager.Show(s, AdjustPopupResult, null, null, null);
+				PopupWindowManager.Show(s, AdjustPopupResult, null, null, null, true, true, false, null ,null, null, null, null);
 		}
 
 		// // RVA: 0xF63D30 Offset: 0xF63D30 VA: 0xF63D30

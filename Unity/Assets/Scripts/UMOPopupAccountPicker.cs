@@ -132,7 +132,7 @@ public class UMOPopupAccountPicker : UIBehaviour, IPopupContent
                     }
                 }, () => {});
             }
-        }, null, null, null);
+        }, null, null, null, true, true, false, null, null, null, null, null);
     }
 
     public void OnDelete(int Id)
@@ -171,7 +171,7 @@ public class UMOPopupAccountPicker : UIBehaviour, IPopupContent
                     scrollList.VisibleRegionUpdate();
                 }
             }
-        }, null, null, null);
+        }, null, null, null, true, true, false, null, null, null, null, null);
     }
 
     public void OnSaveProfile(int Id)
@@ -238,7 +238,7 @@ public class UMOPopupAccountPicker : UIBehaviour, IPopupContent
             if(t == PopupButton.ButtonType.Negative)
                 isCancel = true;
             isShowPopup = false;
-        }, null, null, null, true, true, false);
+        }, null, null, null, true, true, false, null, null, null, null, null);
         while(isShowPopup)
             yield return null;
         if(isCancel)
@@ -253,7 +253,7 @@ public class UMOPopupAccountPicker : UIBehaviour, IPopupContent
             }, (string error) =>
             {
                 isRunning = false;
-            });
+            }, "application/octet-stream");
             while(isRunning)
                 yield return null;
             bool isError = false;
@@ -287,7 +287,7 @@ public class UMOPopupAccountPicker : UIBehaviour, IPopupContent
                     if(t == PopupButton.ButtonType.Negative)
                         isCancel = true;
                     isShowPopup = false;
-                }, null, null, null, true, true, false);
+                }, null, null, null, true, true, false, null, null, null, null, null);
                 while(isShowPopup)
                     yield return null;
                 if(isCancel)
@@ -310,7 +310,7 @@ public class UMOPopupAccountPicker : UIBehaviour, IPopupContent
             if(t == PopupButton.ButtonType.Other)
                 isSkip = true;
             isShowPopup = false;
-        }, null, null, null, true, true, false);
+        }, null, null, null, true, true, false, null, null, null, null, null);
         while(isShowPopup)
             yield return null;
         if(isCancel)
@@ -325,7 +325,7 @@ public class UMOPopupAccountPicker : UIBehaviour, IPopupContent
             }, (string error) =>
             {
                 isRunning = false;
-            });
+            }, "application/octet-stream");
             while(isRunning)
                 yield return null;
             bool isError = false;
@@ -361,7 +361,7 @@ public class UMOPopupAccountPicker : UIBehaviour, IPopupContent
                     if(t == PopupButton.ButtonType.Other)
                         isSkip = true;
                     isShowPopup = false;
-                }, null, null, null, true, true, false);
+                }, null, null, null, true, true, false, null, null, null, null, null);
                 while(isShowPopup)
                     yield return null;
                 if(isCancel)
@@ -390,7 +390,7 @@ public class UMOPopupAccountPicker : UIBehaviour, IPopupContent
 			{
 				accountId = int.Parse((control.Content as InputContent).Text);
                 isShowPopup = false;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
             while(isShowPopup)
                 yield return null;
             if(accountId < 100000000 || accountId > 599999999)
@@ -406,7 +406,7 @@ public class UMOPopupAccountPicker : UIBehaviour, IPopupContent
                     if(t == PopupButton.ButtonType.Negative)
                         isCancel = true;
                     isShowPopup = false;
-                }, null, null, null, true, true, false);
+                }, null, null, null, true, true, false, null, null, null, null, null);
                 while(isShowPopup)
                     yield return null;
                 if(isCancel)
@@ -425,7 +425,7 @@ public class UMOPopupAccountPicker : UIBehaviour, IPopupContent
                     if(t == PopupButton.ButtonType.Negative)
                         isCancel = true;
                     isShowPopup = false;
-                }, null, null, null, true, true, false);
+                }, null, null, null, true, true, false, null, null, null, null, null);
                 while(isShowPopup)
                     yield return null;
                 if(isCancel)

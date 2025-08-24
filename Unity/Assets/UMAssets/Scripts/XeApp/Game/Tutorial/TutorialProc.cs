@@ -1301,7 +1301,7 @@ namespace XeApp.Game.Tutorial
 			{
 				//0xE4C490
 				isWait = false;
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(isWait)
 				yield return null;
 		}

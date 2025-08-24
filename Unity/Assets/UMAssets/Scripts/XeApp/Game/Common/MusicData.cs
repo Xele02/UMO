@@ -98,7 +98,7 @@ namespace XeApp.Game.Common
 
 			yield return this.StartCoroutineWatched(LoadDirectionParam(operation, musicBase.KKPAHLMJKIH_WavId));
 
-			AssetBundleManager.UnloadAssetBundle(bundleName.ToString());
+			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
 			RhythmGameConsts.SetWide(musicScoreData.isWideTrack);
 		}
 

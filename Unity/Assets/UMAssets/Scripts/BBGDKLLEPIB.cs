@@ -244,7 +244,7 @@ public class BBGDKLLEPIB
 				FLHOFIEOKDH_BaseUrl = "http://"+FileSystemProxy.foundServer+":8000";
 			}
 	#endif
-			JEHIAIPJNJF_FileDownloader MHHFMCPJONH = new JEHIAIPJNJF_FileDownloader();
+			JEHIAIPJNJF_FileDownloader MHHFMCPJONH = new JEHIAIPJNJF_FileDownloader(3);
 			MHHFMCPJONH.DOMFHDPMCCO_AddFiles(ICCMKHKNAMJ_ToDldList, FLHOFIEOKDH_BaseUrl, JCMJBMBMJAK);
 			MHHFMCPJONH.LBGNKOJFOFC = (JEHIAIPJNJF_FileDownloader.HCJPJKCIBDL_DldFileInfo JGBPLIGAILE) => {
 				//0xF1A318

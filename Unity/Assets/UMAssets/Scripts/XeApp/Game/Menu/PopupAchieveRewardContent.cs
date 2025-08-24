@@ -42,7 +42,7 @@ namespace XeApp.Game.Menu
 			{
 				m_viewMusic.PMKBMGNAJIL(ev, s.isLine6Mode);
 			}
-			m_viewMusic.KHEKNNFCAOI(s.selectFreeMusicId, false, 0, 0, 0, s.diff == Difficulty.Type.Extreme, false);
+			m_viewMusic.KHEKNNFCAOI(s.selectFreeMusicId, false, 0, 0, 0, s.diff == Difficulty.Type.Extreme, false, s.isLine6Mode);
 			//LAB_00df0d5c
 			ViewInitialize(s);
 			if(s.mode == LayoutPopupAchieveReward.eMode.Result)
@@ -183,7 +183,7 @@ namespace XeApp.Game.Menu
 			{
 				//0xDF22B4
 				isOpen = true;
-			}, null, true, true, false);
+			}, null, true, true, false, null, null, null, null, null);
 			while (!isOpen)
 				yield return null;
 			while (popupWindowControl.IsActivePopupWindow())

@@ -199,7 +199,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x1524980
 				MenuScene.Instance.RaycastEnable();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x1523CEC Offset: 0x1523CEC VA: 0x1523CEC
@@ -246,7 +246,7 @@ namespace XeApp.Game.Menu
 					inputComment = c.Text;
 				}
 				isWait = false;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while (isWait)
 				yield return null;
 			if(isDecide)
@@ -297,7 +297,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x1524AB8
 				return;
-			}, null, null);
+			}, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x1524398 Offset: 0x1524398 VA: 0x1524398

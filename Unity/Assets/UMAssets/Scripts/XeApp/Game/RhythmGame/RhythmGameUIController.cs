@@ -240,18 +240,18 @@ namespace XeApp.Game.RhythmGame
 		{
 			if (Database.Instance.gameSetup.musicInfo.isFreeMode)
 			{
-				PopupWindowManager.Show(CreateConfirmationSetting(errorGotoTitle), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe);
+				PopupWindowManager.Show(CreateConfirmationSetting(errorGotoTitle), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe, null);
 			}
 			else
 			{
-				PopupWindowManager.Show(CreateConfirmationSettingForStory(), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe);
+				PopupWindowManager.Show(CreateConfirmationSettingForStory(), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe, null);
 			}
 		}
 
 		// // RVA: 0xBF2E70 Offset: 0xBF2E70 VA: 0xBF2E70
 		public void ShowContinueWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback)
 		{
-			PopupWindowManager.Show(CreateContinueSetting(), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe);
+			PopupWindowManager.Show(CreateContinueSetting(), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe, null);
 		}
 
 		// // RVA: 0xC0F378 Offset: 0xC0F378 VA: 0xC0F378
@@ -259,18 +259,18 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(Database.Instance.gameSetup.musicInfo.isFreeMode)
 			{
-				PopupWindowManager.Show(CreateRetirePopupsetting(), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe);
+				PopupWindowManager.Show(CreateRetirePopupsetting(), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe, null);
 			}
 			else
 			{
-				PopupWindowManager.Show(CreateRetirePopupsettingForStory(), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe);
+				PopupWindowManager.Show(CreateRetirePopupsettingForStory(), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe, null);
 			}
 		}
 
 		// // RVA: 0xC0FBD8 Offset: 0xC0FBD8 VA: 0xC0FBD8
 		public void ShowPauseWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback)
 		{
-			PopupWindowManager.Show(CreatePausePopupsetting(), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe);
+			PopupWindowManager.Show(CreatePausePopupsetting(), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe, null);
 		}
 
 		// // RVA: 0xC104CC Offset: 0xC104CC VA: 0xC104CC
@@ -278,11 +278,11 @@ namespace XeApp.Game.RhythmGame
 		{
 			if (Database.Instance.gameSetup.musicInfo.isFreeMode)
 			{
-				PopupWindowManager.Show(CreateRetirePopupsetting(), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe);
+				PopupWindowManager.Show(CreateRetirePopupsetting(), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe, null);
 			}
 			else
 			{
-				PopupWindowManager.Show(CreateRetirePopupsettingForStory(), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe);
+				PopupWindowManager.Show(CreateRetirePopupsettingForStory(), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe, null);
 			}
 		}
 
@@ -291,24 +291,24 @@ namespace XeApp.Game.RhythmGame
 		{
 			if(Database.Instance.gameSetup.musicInfo.isStoryMode)
 			{
-				PopupWindowManager.Show(CreateSkipPopupsettingForStory(), callback, null, null, null, playSeEvent:PlayPopupOpenSe, buttonSeEvent:PlayPopupButtonSe);
+				PopupWindowManager.Show(CreateSkipPopupsettingForStory(), callback, null, null, null, true, true, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe, null);
 			}
 			else
 			{
-				PopupWindowManager.Show(CreateSkipPopupsettingForTutorial(), callback, null, null, null, playSeEvent:PlayPopupOpenSe, buttonSeEvent:PlayPopupButtonSe);
+				PopupWindowManager.Show(CreateSkipPopupsettingForTutorial(), callback, null, null, null, true, true, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe, null);
 			}
 		}
 
 		// // RVA: 0xC10E9C Offset: 0xC10E9C VA: 0xC10E9C
 		public void ShowMvModePauseWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback)
 		{
-			PopupWindowManager.Show(CreateMvModePausePopupSetting(), callback, null, null, null, true, false, false, null, null, this.PlayPopupOpenSe, this.PlayPopupButtonSe);
+			PopupWindowManager.Show(CreateMvModePausePopupSetting(), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe, null);
 		}
 
 		// // RVA: 0xC11608 Offset: 0xC11608 VA: 0xC11608
 		public void ShowMvModeEndConfirmWindow(Action<PopupWindowControl, PopupButton.ButtonType, PopupButton.ButtonLabel> callback)
 		{
-			PopupWindowManager.Show(CreateMvModeEndConfirmPopupSetting(), callback, null, null, null, true, false, false, null, null, this.PlayPopupOpenSe, this.PlayPopupButtonSe);
+			PopupWindowManager.Show(CreateMvModeEndConfirmPopupSetting(), callback, null, null, null, true, false, false, null, null, PlayPopupOpenSe, PlayPopupButtonSe, null);
 		}
 
 		// // RVA: 0xC119E0 Offset: 0xC119E0 VA: 0xC119E0

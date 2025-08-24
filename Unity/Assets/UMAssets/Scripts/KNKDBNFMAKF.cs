@@ -525,7 +525,7 @@ public class KNKDBNFMAKF_EventSp : IKDICBBFBMI_EventBase
 		{
 			if(IBNKPMPFLGI_IsRankReward)
 			{
-				OKPEFAPPFDH_GetRanksAroundSelf req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new OKPEFAPPFDH_GetRanksAroundSelf());
+				OKPEFAPPFDH_GetRanksAroundSelf req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new OKPEFAPPFDH_GetRanksAroundSelf(false));
 				req.EMPNJPMAKBF_Id = KBACNOCOANM.PPFNGGCBJKC_Id;
 				req.MJGOBEGONON_Type = 0;
 				req.NHPCKCOPKAM_From = 0;

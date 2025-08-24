@@ -73,7 +73,7 @@ namespace XeApp.Game.Common
 		{
 			bundleName = new StringBuilder();
 			assetName = new StringBuilder();
-			m_sceneCardCache = new SceneCardTextureCache();
+			m_sceneCardCache = new SceneCardTextureCache(1);
 			m_sceneFrameCache = new SceneFrameTextureCache();
 		}
 

@@ -48,7 +48,7 @@ namespace XeApp.Game.Menu
 						if (callback != null)
 							callback(true);
 					}
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x1B64F58 Offset: 0x1B64F58 VA: 0x1B64F58
@@ -72,7 +72,7 @@ namespace XeApp.Game.Menu
 						if (callback != null)
 							callback(true);
 					}
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x1B6526C Offset: 0x1B6526C VA: 0x1B6526C
@@ -88,7 +88,7 @@ namespace XeApp.Game.Menu
 					//0x1B65A84
 					if (callback != null)
 						callback(label == PopupButton.ButtonLabel.Ok);
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x1B65580 Offset: 0x1B65580 VA: 0x1B65580
@@ -112,7 +112,7 @@ namespace XeApp.Game.Menu
 						if (callback != null)
 							callback(true);
 					}
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x1B60B24 Offset: 0x1B60B24 VA: 0x1B60B24
@@ -137,7 +137,7 @@ namespace XeApp.Game.Menu
 						if (callback != null)
 							callback(true);
 					}
-				}, null, null, null);
+				}, null, null, null, true,true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x1B60E30 Offset: 0x1B60E30 VA: 0x1B60E30
@@ -152,7 +152,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x1B65920
 					return;
-				}, null, null, null, true, true, false, null, callback);
+				}, null, null, null, true, true, false, null, callback, null, null, null);
 		}
 	}
 }

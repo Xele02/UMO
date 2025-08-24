@@ -643,12 +643,12 @@ namespace XeApp.Game.Menu
 			{
 				//0x1D597C4
 				return;
-			}, null, null, null, endCallBaack:() =>
+			}, null, null, null, true, true, false, null, () =>
 			{
 				//0x1D59E0C
 				if(callback != null)
 					callback();
-			});
+			}, null, null, null);
 		}
 
 		//// RVA: 0x1D58D8C Offset: 0x1D58D8C VA: 0x1D58D8C

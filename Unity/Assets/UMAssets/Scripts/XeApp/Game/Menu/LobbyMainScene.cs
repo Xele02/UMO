@@ -1213,7 +1213,7 @@ namespace XeApp.Game.Menu
 				{
 					this.StartCoroutineWatched(Co_BattleCommentRepost(index));
 				}
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x12A5450 Offset: 0x12A5450 VA: 0x12A5450
@@ -1987,7 +1987,7 @@ namespace XeApp.Game.Menu
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 			};
-			PopupWindowManager.Show(m_popupCannonGauge, OnClickCannonGaugePopup, null, null, null, true, true, false);
+			PopupWindowManager.Show(m_popupCannonGauge, OnClickCannonGaugePopup, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0x12A6B18 Offset: 0x12A6B18 VA: 0x12A6B18

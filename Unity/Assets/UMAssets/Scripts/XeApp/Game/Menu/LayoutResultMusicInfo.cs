@@ -127,10 +127,10 @@ namespace XeApp.Game.Menu
 			}
 			textSingRateBefore.text = view_data.IHEKLEFBAEL_PrevUtaRate.ToString();
 			textSingRankBefore.text = view_data.EPHLOKIIFMH_PrevUtaRateTotal.ToString();
-			numSingRateAfter[0].SetNumber(view_data.BJGOPOEAAIC_UtaRate);
-			numSingRateAfter[1].SetNumber(view_data.BJGOPOEAAIC_UtaRate);
-			numSingRankAfter[0].SetNumber(view_data.NPODFKNEKOF_UtaRateTotal);
-			numSingRankAfter[1].SetNumber(view_data.NPODFKNEKOF_UtaRateTotal);
+			numSingRateAfter[0].SetNumber(view_data.BJGOPOEAAIC_UtaRate, 0);
+			numSingRateAfter[1].SetNumber(view_data.BJGOPOEAAIC_UtaRate, 0);
+			numSingRankAfter[0].SetNumber(view_data.NPODFKNEKOF_UtaRateTotal, 0);
+			numSingRankAfter[1].SetNumber(view_data.NPODFKNEKOF_UtaRateTotal, 0);
 			HighScoreRatingRank.Type singRank = view_data.CMOIBLMELHD_PrevScoreRatingRanking;
 			GameManager.Instance.MusicRatioTextureCache.Load(singRank, (IiconTexture texture) =>
 			{
@@ -419,7 +419,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x18E3188
 				s.layout.ChangeTab(label);
-			}, null, null);
+			}, null, null, true, true, false, null, null, null, null, null);
 		}
 	}
 }

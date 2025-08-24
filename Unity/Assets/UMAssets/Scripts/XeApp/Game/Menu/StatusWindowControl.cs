@@ -163,7 +163,7 @@ namespace XeApp.Game.Menu
 				if(!a)
 					counter = 1;
 				return a;
-			});
+			}, null, null, null, null);
         }
 
 		// // RVA: 0x12E21FC Offset: 0x12E21FC VA: 0x12E21FC
@@ -252,7 +252,7 @@ namespace XeApp.Game.Menu
 				if(!b)
 					counter = 1;
 				return b;
-			});
+			}, null, null, null, null);
 		}
 
 		// // RVA: 0x12E2978 Offset: 0x12E2978 VA: 0x12E2978

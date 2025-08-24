@@ -927,7 +927,7 @@ namespace XeApp.Game.Menu
 				{
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 				};
-				PopupWindowManager.Show(s, null, null, null, null, true, true, false);
+				PopupWindowManager.Show(s, null, null, null, null, true, true, false, null, null, null, null, null);
 			}
 		}
 
@@ -942,7 +942,7 @@ namespace XeApp.Game.Menu
 				ApplyEventBannerRemainTime(remain, true);
 			};
 			m_bannerTimeWatcher.onEndCallback = null;
-			m_bannerTimeWatcher.WatchStart(m_eventCtrl.DPJCPDKALGI_RankingEnd);
+			m_bannerTimeWatcher.WatchStart(m_eventCtrl.DPJCPDKALGI_RankingEnd, true);
 			if(m_eventCtrl.MNDFBBMNJGN_IsUsingTicket)
 			{
 				m_cdSelect.EventTicketEnable(false);
@@ -1018,7 +1018,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x10382DC
 				return;
-			}, null, null, true, true, false);
+			}, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// // RVA: 0xB46358 Offset: 0xB46358 VA: 0xB46358
@@ -1747,7 +1747,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x1038890
 				isWait = false;
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(isWait)
 				yield return null;
 			missionEventCtrl.EGOJLOEFMOH_IsUpdateLimitedMusic = false;

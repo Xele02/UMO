@@ -1560,7 +1560,7 @@ namespace XeApp.Game.Adv
 				if (t == PopupButton.ButtonType.Positive)
 					isOk = true;
 				isWait = false;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(isWait)
 				yield return null;
 			m_isPushSkipButton = false;

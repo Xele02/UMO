@@ -263,6 +263,12 @@ namespace XeApp.Game.Menu
 			}, () => {
 				//0x13C7A3C
 				m_isUpdateMusicRateRanking = true;
+			}, () =>
+			{
+				//0x13C7A64
+				m_isUpdateMusicRateRanking = true;
+				OnExternalTransition();
+				GotoTitle();
 			});
 			if(!MenuScene.IsAlreadyHome)
 			{
@@ -475,7 +481,7 @@ namespace XeApp.Game.Menu
 			{
 				m_leadBalloon.Leave(true);
 			}
-			MenuScene.Instance.LobbyButtonControl.Hide();
+			MenuScene.Instance.LobbyButtonControl.Hide(false);
 			if(MenuScene.Instance.GetCurrentScene().cacheCategory == MenuScene.Instance.GetNextScene().cacheCategory)
 			{
 				if(MenuScene.Instance.GetCurrentScene().fadeId == MenuScene.Instance.GetNextScene().fadeId && 
@@ -701,7 +707,11 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x9731CC Offset: 0x9731CC VA: 0x9731CC
-		// private void OnExternalTransition() { }
+		private void OnExternalTransition()
+		{
+			if(m_isWaitIntro)
+				m_isAbortIntro = true;
+		}
 
 		// // RVA: 0x9715E0 Offset: 0x9715E0 VA: 0x9715E0
 		private void BingoQuestStart()
@@ -824,7 +834,7 @@ namespace XeApp.Game.Menu
 			PopupWindowManager.Show(PopupWindowManager.CrateTextContent("UMO", SizeType.Small, "Notice not avaiable", new ButtonInfo[1]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
-			}, false, true), null, null, null, null);
+			}, false, true), null, null, null, null, true, true, false, null, null, null, null, null);
 			//ShowInformation(true);
 		}
 
@@ -1266,7 +1276,7 @@ namespace XeApp.Game.Menu
 			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(a1);
 			ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(a1, OAGBCBBHMPF.DKAMMIHBINF.IFEDIOFCOBC_7);
 			Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
-			MenuScene.Instance.GotoAdventure();
+			MenuScene.Instance.GotoAdventure(true);
 			MenuScene.Instance.InputDisable();
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
         }
@@ -1342,7 +1352,7 @@ namespace XeApp.Game.Menu
 						CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(id);
 						ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(id, OAGBCBBHMPF.DKAMMIHBINF.IDINJDEBPKP_6);
 						Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
-						MenuScene.Instance.GotoAdventure();
+						MenuScene.Instance.GotoAdventure(true);
 						MenuScene.Instance.InputDisable();
 						return;
 					}
@@ -2025,7 +2035,7 @@ namespace XeApp.Game.Menu
 					if (!m_isHomeShowDiva)
 						return;
 					m_divaTalk.TimerRestart();
-				}, null, null, null);
+				}, null, null, null, true, true, false, null, null, null, null, null);
 				return;
 			}
 			if (TryLobbyAnnounce())
@@ -2076,7 +2086,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x13C6A4C
 				NKGJPJPHLIF.HHCJCDFCLOB.DHEFMDMGPMG_LoginBonusManager = null;
-			}, null, null, null, true, true, false);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			m_updater = LoginBonusPopup;
 			return true;
 		}
@@ -2329,11 +2339,11 @@ namespace XeApp.Game.Menu
 			{
 				//0x13C70C0
 				t_change = label == PopupButton.ButtonLabel.Change;
-			}, null, null, null, endCallBaack:() =>
+			}, null, null, null, true, true, false, null, () =>
 			{
 				//0x13C70D4
 				t_end_popup = true;
-			});
+			}, null, null, null);
 			while(!t_end_popup)
 				yield return null;
 			saveData.GBCEALJIKFN_Home.HBGKPLDGGLF(t_master_homebg.GJFPFFBAKGK_CloseAt);
@@ -2961,7 +2971,7 @@ namespace XeApp.Game.Menu
 							MenuScene.Instance.Mount(TransitionUniqueId.EVENTQUEST, new EventMusicSelectSceneArgs(ev2 != null ? ev2.PGIIDPEGGPI_EventId : 0, false, false), true, MenuScene.MenuSceneCamebackInfo.CamBackUnityScene.None);
 						}
 						is_close = true;
-					}, null, null, null, true, true, false);
+					}, null, null, null, true, true, false, null, null, null, null, null);
 					yield return new WaitWhile(() =>
 					{
 						//0x13C75C4
@@ -3087,7 +3097,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x13C761C
 				isClosed = true;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(!isClosed)
 				yield return null;
 			onTransition();
@@ -3443,7 +3453,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x13C7824
 				isClose = true;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(!isClose)
 				yield return null;
 			if(itemValue == 3)
@@ -3515,7 +3525,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x13C7838
 				close();
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		// [IteratorStateMachineAttribute] // RVA: 0x6E4344 Offset: 0x6E4344 VA: 0x6E4344
@@ -3620,7 +3630,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x13C78B8
 				isClose = true;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(!isClose)
 				yield return null;
 			if(HPBDNNACBAK.FIHFDIBDKKE(currencyId))
@@ -3663,7 +3673,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x13C78CC
 				isClose = true;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while(!isClose)
 				yield return null;
 			if(HPBDNNACBAK.FIHFDIBDKKE(currencyId))

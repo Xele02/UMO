@@ -305,7 +305,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x165A5EC Offset: 0x165A5EC VA: 0x165A5EC
 		private void ResetValkyrieData()
 		{
-			m_ValkyrieList = PNGOLKLFFLH.FKDIMODKKJD();
+			m_ValkyrieList = PNGOLKLFFLH.FKDIMODKKJD(false);
 			PNGOLKLFFLH valk = m_UnitData.JOKFNBLEILN_Valkyrie;
 			if(valk == null)
 			{
@@ -824,7 +824,7 @@ namespace XeApp.Game.Menu
 							//0x165FD34
 							return;
 						});
-						PopupWindowManager.Show(m_PopupSetting, OnClickPopupButton, null, null, null);
+						PopupWindowManager.Show(m_PopupSetting, OnClickPopupButton, null, null, null, true, true, false, null, null, null, null, null);
 					}
 				}
 			}
@@ -926,7 +926,7 @@ namespace XeApp.Game.Menu
 							{
 								//0x165FD38
 								return;
-							}, null, null, null);
+							}, null, null, null, true, true, false, null, null, null, null, null);
 						}
 						else
 						{

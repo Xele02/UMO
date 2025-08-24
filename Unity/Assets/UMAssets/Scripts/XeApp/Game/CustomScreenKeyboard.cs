@@ -128,7 +128,7 @@ namespace XeApp.Game
 					m_Text = c.Text;
 				}
 				m_closeEnd = true;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			#endif
 			IsOpenKeyboard = true;
 			IsTouchInputField = true;

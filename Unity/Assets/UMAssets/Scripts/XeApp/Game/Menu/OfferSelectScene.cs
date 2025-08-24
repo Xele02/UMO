@@ -543,7 +543,7 @@ namespace XeApp.Game.Menu
 			{
 				//0x170BD84
 				IsClosePopup = true;
-			}, null, null, null);
+			}, null, null, null, true, true, false, null, null, null, null, null);
 			while (!IsClosePopup)
 				yield return null;
 		}

@@ -76,6 +76,6 @@ public abstract class AILHMHMOKKA_BaseLinkage
 		{
 			//0xCD1B44
 			NIMPEHIECJH();
-		}, null, null, null);
+		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 }

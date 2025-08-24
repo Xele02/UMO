@@ -256,11 +256,11 @@ namespace XeApp.Game.Menu
 				//0x12C99C8
 				if(type == PopupButton.ButtonType.Positive)
 					openUrl = true;
-			}, null, null, null, endCallBaack:() =>
+			}, null, null, null, true, true, false, null, () =>
 			{
 				//0x12C99D8
 				isClosed = true;
-			}, buttonSeEvent:OtherUtility.PopupWindowOpenUrlButtonSe);
+			}, null, OtherUtility.PopupWindowOpenUrlButtonSe, null);
 			while(!isClosed)
 				yield return null;
 			if(openUrl)
@@ -292,11 +292,11 @@ namespace XeApp.Game.Menu
 				//0x12C99EC
 				if(type == PopupButton.ButtonType.Positive)
 					openUrl = true;
-			}, null, null, null, endCallBaack:() =>
+			}, null, null, null, true, true, false, null, () =>
 			{
 				//0x12C99FC
 				isClosed = true;
-			}, buttonSeEvent:OtherUtility.PopupWindowOpenUrlButtonSe);
+			}, null, OtherUtility.PopupWindowOpenUrlButtonSe, null);
 			while(!isClosed)
 				yield return null;
 			if(openUrl)

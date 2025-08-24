@@ -20,7 +20,7 @@ namespace XeApp.Game.Menu
 			m_episodeLayout.ScrollItemCount = m_setting.ScrollItemCount;
 			m_episodeLayout.UpdateList = m_setting.UpdateList;
 			parent = setting.m_parent;
-			GetComponent<RectTransform>().sizeDelta = PopupWindowControl.GetContentSize2(setting.WindowSize);
+			GetComponent<RectTransform>().sizeDelta = PopupWindowControl.GetContentSize2(setting.WindowSize, true);
 			m_episodeLayout.Setup();
 			gameObject.SetActive(true);
 		}
