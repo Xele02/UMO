@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace XeSys
 {
-	public static class TransformExtension // TypeDefIndex: 6057
+	public static class TransformExtension
 	{
 		//[ExtensionAttribute] // RVA: 0x690490 Offset: 0x690490 VA: 0x690490
 		//// RVA: 0x23A774C Offset: 0x23A774C VA: 0x23A774C

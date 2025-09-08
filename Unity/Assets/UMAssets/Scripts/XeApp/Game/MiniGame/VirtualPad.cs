@@ -19,7 +19,11 @@ namespace XeApp.Game.MiniGame
 		}
 
 		//// RVA: 0xC92CF0 Offset: 0xC92CF0 VA: 0xC92CF0
-		//public void OnUpdate() { }
+		public void OnUpdate()
+		{
+			if(stick != null)
+				return;
+		}
 
 		// RVA: 0xC92D04 Offset: 0xC92D04 VA: 0xC92D04
 		private void OnApplicationPause(bool pause)

@@ -26,6 +26,9 @@ namespace XeSys.Gfx
 		// public void SetTexture(Texture tex) { }
 
 		// // RVA: 0x1F10004 Offset: 0x1F10004 VA: 0x1F10004
-		// public void SetRaycastTarget(bool flag) { }
+		public void SetRaycastTarget(bool flag)
+		{
+			raycastTarget = flag;
+		}
 	}
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace XeApp
 { 
-	public class DecorationItemBaseSetting // TypeDefIndex: 7374
+	public class DecorationItemBaseSetting
 	{
 		public enum PriorityControlType
 		{

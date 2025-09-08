@@ -8,7 +8,7 @@ using XeSys;
 public class KEPNMGHABPI
 {
     //[DefaultMemberAttribute("Item")] // RVA: 0x63D4EC Offset: 0x63D4EC VA: 0x63D4EC
-    public class FKGOOHONBGI // TypeDefIndex: 10101
+    public class FKGOOHONBGI
     {
         private Dictionary<string, KEPNMGHABPI> GCOJLMHEBNJ = new Dictionary<string, KEPNMGHABPI>(); // 0x8
 

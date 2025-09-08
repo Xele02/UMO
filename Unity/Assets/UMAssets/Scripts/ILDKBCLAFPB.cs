@@ -5286,7 +5286,7 @@ public class ILDKBCLAFPB
     }
 }
 
-public class FLGABCAPFEC<T> // TypeDefIndex: 7782
+public class FLGABCAPFEC<T>
 {
 	protected List<T> DOBDFAGOIJK_List; // 0x0
 

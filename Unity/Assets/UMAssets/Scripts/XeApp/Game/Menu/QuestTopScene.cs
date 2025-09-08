@@ -320,7 +320,32 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x9DAFF0 Offset: 0x9DAFF0 VA: 0x9DAFF0
-		//private void CheckTabIcon(LayoutQuestTab.eTabType type) { }
+		private void CheckTabIcon(LayoutQuestTab.eTabType type)
+		{
+			switch(type)
+			{
+				case LayoutQuestTab.eTabType.Event:
+					m_layoutTab.SwitchEmphasisIcon(0, QuestUtility.IsEmphasis(LayoutQuestTab.eTabType.Event));
+					break;
+				case LayoutQuestTab.eTabType.Normal:
+					m_layoutTab.SwitchEmphasisIcon(1, QuestUtility.IsEmphasis(LayoutQuestTab.eTabType.Normal));
+					break;
+				case LayoutQuestTab.eTabType.Daily:
+					m_layoutTab.SwitchEmphasisIcon(2, QuestUtility.IsEmphasis(LayoutQuestTab.eTabType.Daily));
+					break;
+				case LayoutQuestTab.eTabType.Diva:
+					m_layoutTab.SwitchEmphasisIcon(3, QuestUtility.IsEmphasis(LayoutQuestTab.eTabType.Diva));
+					break;
+				case LayoutQuestTab.eTabType.Beginner:
+					m_layoutTab.SwitchEmphasisIcon(4, QuestUtility.IsEmphasis(LayoutQuestTab.eTabType.Beginner));
+					break;
+				case LayoutQuestTab.eTabType.Bingo:
+					m_layoutTab.SwitchEmphasisIcon(5, QuestUtility.IsEmphasis(LayoutQuestTab.eTabType.Bingo));
+					break;
+				default:
+					break;
+			}
+		}
 
 		//// RVA: 0x9DA05C Offset: 0x9DA05C VA: 0x9DA05C
 		private void RefleshQuestList()
@@ -366,7 +391,7 @@ namespace XeApp.Game.Menu
 			}
 			m_layoutTab.SetStatus((int)m_tabType);
 			m_layoutTab.SetTabType((int)m_tabType, tabNum);
-			CheckTabIcon();
+			CheckTabIcon(m_tabType);
 			QuestUtility.FooterMenuBadge();
 		}
 

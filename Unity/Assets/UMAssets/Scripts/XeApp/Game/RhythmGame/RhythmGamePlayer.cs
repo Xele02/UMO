@@ -2100,6 +2100,7 @@ namespace XeApp.Game.RhythmGame
 				HAEDCCLHEMN_EventBattle ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(Database.Instance.gameSetup.musicInfo.EventUniqueId) as HAEDCCLHEMN_EventBattle;
 				if(ev != null)
 				{
+					ev.IJGLLGDMDKK_SetScoreForStep(idx, score);
 					return ev.OMHGENLJFLK_HasWinStepBattle(idx, currentRawMusicMillisec, musicMillisecLength);
 				}
 			}

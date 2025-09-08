@@ -63,6 +63,7 @@ namespace XeApp.Game.Menu
 			SetPlayerRank(playerData.ADFIHAPELAN_PLevel);
 			SetPlayerBe(playerData.OFHFGHJEKKL);
 			SetPlayerRankImage(playerData.HIMMCGKKOOL_Rate);
+			SetPlayerEventRank(playerData.FJOLNJLLJEJ_Rank);
 			EAJCBFGKKFA_FriendInfo f = new EAJCBFGKKFA_FriendInfo();
 			f.KHEKNNFCAOI(playerData);
 			SetPlayerIcon(f.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId, f.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, f.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId);
@@ -149,7 +150,26 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x1BD63C0 Offset: 0x1BD63C0 VA: 0x1BD63C0
-		// private void SetPlayerEventRank(int rank) { }
+		private void SetPlayerEventRank(int rank)
+		{
+			if(rank == 3)
+			{
+				m_eventRankImageLayout.StartChildrenAnimGoStop("03");
+			}
+			else if(rank == 2)
+			{
+				m_eventRankImageLayout.StartChildrenAnimGoStop("02");
+			}
+			else if(rank == 1)
+			{
+				m_eventRankImageLayout.StartChildrenAnimGoStop("01");
+			}
+			else
+			{
+				m_eventRankImageLayout.StartChildrenAnimGoStop("04", "04");
+				m_eventRankText.text = rank.ToString();
+			}
+		}
 
 		// // RVA: 0x1BD68F4 Offset: 0x1BD68F4 VA: 0x1BD68F4
 		private void OnClickProfileCallback()

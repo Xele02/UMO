@@ -3,7 +3,7 @@ using XeApp.Game.Common;
 
 namespace XeApp.Game.Menu
 { 
-	public class PlayRecordView_Total // TypeDefIndex: 13767
+	public class PlayRecordView_Total
 	{
 		public enum MusicSeries
 		{

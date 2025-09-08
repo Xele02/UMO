@@ -80,7 +80,7 @@ namespace XeApp.Game.RhythmGame
 			}
 		}
 
-		private class EventLoop : EventBase // TypeDefIndex: 18139
+		private class EventLoop : EventBase
 		{
 			public delegate void DelegateOnActive(bool a_enable, RhythmGameCheerSoundOrderer.EventLoop a_event);
 

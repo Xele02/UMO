@@ -1113,7 +1113,29 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB46EA4 Offset: 0xB46EA4 VA: 0xB46EA4
-		// private void OnSelectedDifficulty(Difficulty.Type difficulty) { }
+		new private void OnSelectedDifficulty(Difficulty.Type difficulty)
+		{
+			if(m_currentStep == Step.MissionConfirm)
+			{
+				diff = difficulty;
+				OnChangeMusicFilter(true);
+				m_LayoutMissonSelect.UpdatePlayButton(selectMusicData, diff);
+			}
+			else
+			{
+				base.OnSelectedDifficulty(difficulty);
+				OnChangeMusicFilter(false);
+			}
+			SaveDifficulty();
+			if(!m_isListEmptyByFilter && !listIsEmpty)
+			{
+				m_LayoutMissonSelect.SetMissionSetData(m_missionSetData, selectMusicData, m_isLine6Mode, diff);
+			}
+			else
+			{
+				m_LayoutMissonSelect.SetMissionSetData(m_missionSetData, null, m_isLine6Mode, diff);
+			}
+		}
 
 		// // RVA: 0xB43264 Offset: 0xB43264 VA: 0xB43264
 		private void SaveDifficulty()

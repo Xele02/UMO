@@ -4149,7 +4149,15 @@ public class HAEDCCLHEMN_EventBattle : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x1B873B8 Offset: 0x1B873B8 VA: 0x1B873B8
-	// public bool IJGLLGDMDKK(int IOPHIHFOOEP, int AFKHNFBOMKI) { }
+	public bool IJGLLGDMDKK_SetScoreForStep(int IOPHIHFOOEP, int AFKHNFBOMKI)
+	{
+		if(IOPHIHFOOEP < 2 && AFKHNFBOMKI > -1)
+		{
+			PBIEALDEMLK_ScoreAtStep[IOPHIHFOOEP] = AFKHNFBOMKI ^ 0x69a8d;
+			return true;
+		}
+		return false;
+	}
 
 	// // RVA: 0x1B81570 Offset: 0x1B81570 VA: 0x1B81570
 	public int OMEAIMCDHOA_GetScoreForStep(int IOPHIHFOOEP)

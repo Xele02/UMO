@@ -1649,7 +1649,17 @@ public class IBJAKJJICBC : EEDKAACNBBG_MusicData
 	}
 
 	// // RVA: 0x121F99C Offset: 0x121F99C VA: 0x121F99C Slot: 3
-	// public override string ToString() { }
+	public override string ToString()
+	{
+		return string.Concat(new object[5]
+		{
+			"{f_id=",
+			GHBPLHBNMBK_FreeMusicId,
+			",name=",
+			NEDBBJDAFBH_MusicName,
+			"}"
+		});
+	}
 
 	// // RVA: 0x121FC40 Offset: 0x121FC40 VA: 0x121FC40
 	public static bool FPLIAMHMFJP()

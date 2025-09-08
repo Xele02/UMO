@@ -35,7 +35,19 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1D1C40C Offset: 0x1D1C40C VA: 0x1D1C40C
-		//public void Update() { }
+		public void Update()
+		{
+			for(int i = 0; i < m_animList.Count; i++)
+			{
+				if(m_animList[i] != null)
+				{
+					if(!m_animList[i].MoveNext())
+					{
+						m_animList[i] = null;
+					}
+				}
+			}
+		}
 
 		//// RVA: 0x1D1C5A8 Offset: 0x1D1C5A8 VA: 0x1D1C5A8
 		public void Out()

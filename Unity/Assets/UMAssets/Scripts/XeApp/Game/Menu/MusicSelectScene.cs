@@ -430,7 +430,10 @@ namespace XeApp.Game.Menu
 		}
 
 		// RVA: 0x1682F18 Offset: 0x1682F18 VA: 0x1682F18 Slot: 53
-		// protected override void EnterForScrollEnd() { }
+		protected override void EnterForScrollEnd()
+		{
+			TodoLogger.LogError(TodoLogger.OldMusicSelect, "MusicSelectScene* EnterForScrollEnd");
+		}
 
 		// // RVA: 0x1682F50 Offset: 0x1682F50 VA: 0x1682F50
 		private bool IsFilter()

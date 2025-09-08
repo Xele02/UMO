@@ -348,7 +348,7 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < l2.Count; i++)
 			{
 				l2[i].transform.SetAsLastSibling();
-				l2[i].GetComponent<RawImageEx>().raycastTarget = false;
+				l2[i].GetComponent<RawImageEx>().SetRaycastTarget(false);
 			}
 			for(int i = 0; i < l4.Count; i++)
 			{
@@ -357,14 +357,14 @@ namespace XeApp.Game.Menu
 					RawImageEx[] imgs = l4[i].GetComponentsInChildren<RawImageEx>(true);
 					for (int j = 0; j < imgs.Length; j++)
 					{
-						imgs[j].raycastTarget = false;
+						imgs[j].SetRaycastTarget(false);
 					}
 				}
 			}
 			for(int i = 0; i < l3.Count; i++)
 			{
 				l3[i].transform.SetAsLastSibling();
-				l3[i].GetComponent<RawImageEx>().raycastTarget = false;
+				l3[i].GetComponent<RawImageEx>().SetRaycastTarget(false);
 			}
 			SetupObject(sm_Setting.GetSelectFrameObj, m_MainLayout.ScoreBarRange, 0);
 			sm_Setting.GetSelectFrameObj.SetActive(false);
@@ -372,7 +372,7 @@ namespace XeApp.Game.Menu
 				RawImageEx[] imgs = sm_Setting.GetSelectFrameObj.GetComponentsInChildren<RawImageEx>(true);
 				for (int i = 0; i < imgs.Length; i++)
 				{
-					imgs[i].raycastTarget = false;
+					imgs[i].SetRaycastTarget(false);
 				}
 			}
 			m_MainLayout.SwapScroll.Apply();

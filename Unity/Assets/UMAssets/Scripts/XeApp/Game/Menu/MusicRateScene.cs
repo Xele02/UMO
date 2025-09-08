@@ -493,7 +493,27 @@ namespace XeApp.Game.Menu
 				m_nextRankRange = next;
 			};
 			m_nextRankRange = m_currentRankRange;
-			PopupWindowManager.Show(m_rankRangePopupSetting, null, null, null, null, true, true, false, null, null, null, null, null);
+			PopupWindowManager.Show(m_rankRangePopupSetting, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
+			{
+				//0x1050F60
+				if(m_currentRankRange != m_nextRankRange)
+				{
+					m_currentRankRange = m_nextRankRange;
+					MenuScene.Instance.RaycastDisable();
+					m_layout.FxScrollView.SetEnableScrollBar(false);
+					GetRankingList(m_rankRangeList[m_currentRankRange], 0, () =>
+					{
+						//0x10510E4
+						MenuScene.Instance.RaycastEnable();
+						if(m_isErrorToTitle)
+							return;
+						m_listUpdate = OEGIPPCADNA.HHCJCDFCLOB.HGGPIBNLALJ.Count > 0;
+						m_layout.FxScrollView.SetEnableScrollBar(true);
+						m_layout.ChangeTab(m_selectTab, true);
+						m_layout.SetRankRange(m_rankRangeLabelList[m_currentRankRange]);
+					});
+				}
+			}, null, null, null, true, true, false, null, null, null, null, null);
 		}
 
 		//// RVA: 0x1050CE0 Offset: 0x1050CE0 VA: 0x1050CE0
@@ -628,13 +648,5 @@ namespace XeApp.Game.Menu
 			while (!m_layout.IsLoaded())
 				yield return null;
 		}
-		
-		//[CompilerGeneratedAttribute] // RVA: 0x6ED9FC Offset: 0x6ED9FC VA: 0x6ED9FC
-		//// RVA: 0x1050F60 Offset: 0x1050F60 VA: 0x1050F60
-		//private void <OnClickRankingButton>b__43_1(PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) { }
-
-		//[CompilerGeneratedAttribute] // RVA: 0x6EDA0C Offset: 0x6EDA0C VA: 0x6EDA0C
-		//// RVA: 0x10510E4 Offset: 0x10510E4 VA: 0x10510E4
-		//private void <OnClickRankingButton>b__43_2() { }
 	}
 }

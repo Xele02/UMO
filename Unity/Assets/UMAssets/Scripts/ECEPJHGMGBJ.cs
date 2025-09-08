@@ -10,5 +10,13 @@ public class ECEPJHGMGBJ : IBJAKJJICBC
 	public bool LFGNLKKFOCD_IsLine6 { get; set; } // 0xEC JPINIEEOCME PAIHMADGJKE ICADLJCGFIN
 
 	//// RVA: 0x1502C90 Offset: 0x1502C90 VA: 0x1502C90
-	//public void KHEKNNFCAOI(int GHBPLHBNMBK) { }
+	new public void KHEKNNFCAOI(int GHBPLHBNMBK)
+	{
+		base.KHEKNNFCAOI(GHBPLHBNMBK, false, 0, 0, 0, false, false, false);
+		LPALNMHPDKK_Score = 0;
+		HKIAHOEEMLC_PrevScore = 0;
+		AKNELONELJK_Difficulty = Difficulty.Type.Easy;
+		FJOLNJLLJEJ_RankNum = 0;
+		LFGNLKKFOCD_IsLine6 = false;
+	}
 }

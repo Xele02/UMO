@@ -270,7 +270,15 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xE30DD0 Offset: 0xE30DD0 VA: 0xE30DD0
-		// public void HideDecoStorageHelpButton() { }
+		public void HideDecoStorageHelpButton()
+		{
+			if(m_isShow)
+			{
+				m_buttonAnimLayout.StartChildrenAnimGoStop("go_out", "st_out");
+				m_isShow = false;
+			}
+			m_state = State.Hide;
+		}
 
 		// // RVA: 0xE30DD4 Offset: 0xE30DD4 VA: 0xE30DD4
 		public void TryHide(TransitionList.Type transitionName)

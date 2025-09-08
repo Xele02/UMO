@@ -12,7 +12,6 @@ namespace XeApp.Game.Menu
 		private ActionButton m_button; // 0x14
 		private AbsoluteLayout m_root; // 0x1C
 
-		// Properties
 		public Action CallbackButton { get; set; } // 0x18
 
 		//// RVA: 0x12E4F08 Offset: 0x12E4F08 VA: 0x12E4F08

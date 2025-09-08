@@ -3,7 +3,7 @@ using XeApp.Game.Common;
 
 namespace XeApp.Game.RhythmGame
 {
-	public class SkillTriggerBase // TypeDefIndex: 18279
+	public class SkillTriggerBase
 	{
 		public SkillTrigger.Type m_type; // 0x8
 

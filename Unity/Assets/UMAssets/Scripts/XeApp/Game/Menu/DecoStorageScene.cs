@@ -343,6 +343,7 @@ namespace XeApp.Game.Menu
 			m_cover.gameObject.SetActive(false);
 			m_layoutDecorationStorageWindow.Leave();
 			m_layoutDecorationBottomButtons.Enter(LayoutDecorationBottomButtons.BottomButtonsType.ChangeStorage, OnClickChangeStorageCancelButton, OnClickChangeStorageOKButton, null);
+			HeaderLeave();
 			yield return new WaitUntil(() =>
 			{
 				//0x11CA618
@@ -727,7 +728,14 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x11C9EB4 Offset: 0x11C9EB4 VA: 0x11C9EB4
-		//private void HeaderLeave() { }
+		private void HeaderLeave()
+		{
+			MenuScene.Instance.HelpButton.HideDecoStorageHelpButton();
+			MenuScene.Instance.HeaderMenu.MenuStack.LeaveLabel(false);
+			MenuScene.Instance.HeaderMenu.MenuStack.LeaveBackButton(false);
+			GameManager.Instance.AddPushBackButtonHandler(NotBackKey);
+			m_addBackKeyCount++;
+		}
 
 		//// RVA: 0x11CA0E8 Offset: 0x11CA0E8 VA: 0x11CA0E8
 		private void HeaderEnter()
