@@ -779,6 +779,7 @@ namespace XeApp.Game.Menu
 			m_menuTransitionControl.SetMenuContentButtonDisable();
 			m_menuTransitionControl.SetFooterMenuButtonDisable(MenuFooterControl.Button.All);
 			this.StartCoroutineWatched(GotoRhythmGameCorotine(() => {
+				//0xB37CCC
 				return m_menuTransitionControl.DestroyTransion();
 			}, isSkip));
 		}
@@ -2574,11 +2575,7 @@ namespace XeApp.Game.Menu
 		{
 			return m_menuTransitionControl.GetDivaCameraRotByScene(type);
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x6C831C Offset: 0x6C831C VA: 0x6C831C
-		// // RVA: 0xB37CCC Offset: 0xB37CCC VA: 0xB37CCC
-		// private IEnumerator <GotoRhythmGame>b__148_0() { }
-
+		
 		public XeSys.FontInfo GetFont()
 		{
 			return GameManager.Instance.GetSystemFont(m_font);

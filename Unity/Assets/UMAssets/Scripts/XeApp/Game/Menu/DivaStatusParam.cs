@@ -410,7 +410,10 @@ namespace XeApp.Game.Menu
 						bool b = UnitWindowConstant.SetSkillDetails(m_skillDescriptTexts[0], sceneList[0].IHLINMFMCDN_GetCenterSkillDesc(centerSkill1 == centerSkill2), 1);
 						if(b)
 						{
-							m_skillDetailsButtons[0].AddOnClickCallback(OnShowCenterSkillDetails2);
+							if(centerSkill1 != centerSkill2)
+								m_skillDetailsButtons[0].AddOnClickCallback(OnShowCenterSkillDetails);
+							else
+								m_skillDetailsButtons[0].AddOnClickCallback(OnShowCenterSkillDetails2);
 						}
 						m_skillDetailIconImages[0].enabled = b;
 					}
@@ -468,6 +471,7 @@ namespace XeApp.Game.Menu
 							int skillRank = sceneList[0].OAHMFMJIENM_LiveSkillRank;
 							string skillName = sceneList[0].NDPPEMCHKHA_LiveSkillName1;
 							string skillDesc = sceneList[0].KDGACEJPGFG_GetLiveSkillDesc(false);
+							bool b2 = false;
 							if(liveSkill1 == liveSkill2 && sceneList[0].BLPHPMBFIEI_LiveSkillHasSwitchPatternCond())
 							{
 								skillRank = sceneList[0].ELNJADBILOM_LiveSkillRank2;
@@ -479,6 +483,7 @@ namespace XeApp.Game.Menu
 									m_liveSkillTypeTbl[0].StartChildrenAnimGoStop("02");
 									GameManager.Instance.UnionTextureManager.SetImageLiveSkillType(m_liveSkillTypeImages[0], (LiveSkillType.Type)p.AOPELJFAMCL_LiveSkillType);
 								}
+								b2 = true;
 							}
 							else
 							{
@@ -498,11 +503,22 @@ namespace XeApp.Game.Menu
 							bool b = UnitWindowConstant.SetSkillDetails(m_skillDescriptTexts[LiveSkillDispPartsTypes[0]], skillDesc, 1);
 							if(b)
 							{
-								m_skillDetailsButtons[LiveSkillDetailButtonsTypes[0]].AddOnClickCallback(() =>
+								if(!b2)
 								{
-									//0x1270E78
-									OnShowLiveSkillDetail2(0);
-								});
+									m_skillDetailsButtons[LiveSkillDetailButtonsTypes[0]].AddOnClickCallback(() =>
+									{
+										//0x1270E80
+										OnShowLiveSkillDetail(0);
+									});
+								}
+								else
+								{
+									m_skillDetailsButtons[LiveSkillDetailButtonsTypes[0]].AddOnClickCallback(() =>
+									{
+										//0x1270E78
+										OnShowLiveSkillDetail2(0);
+									});
+								}
 							}
 							m_skillDetailIconImages[LiveSkillDispPartsTypes[0]].enabled = b;
 						}
@@ -700,6 +716,7 @@ namespace XeApp.Game.Menu
 							int skillRank = sceneData.OAHMFMJIENM_LiveSkillRank;
 							string skillName = sceneData.NDPPEMCHKHA_LiveSkillName1;
 							string skillDesc = sceneData.KDGACEJPGFG_GetLiveSkillDesc(false);
+							bool b2 = false;
 							if(liveSkill1 == liveSkill2 && sceneData.BLPHPMBFIEI_LiveSkillHasSwitchPatternCond())
 							{
 								skillRank = sceneData.ELNJADBILOM_LiveSkillRank2;
@@ -711,6 +728,7 @@ namespace XeApp.Game.Menu
 									m_liveSkillTypeTbl[i * 2 + 3].StartChildrenAnimGoStop("02");
 									GameManager.Instance.UnionTextureManager.SetImageLiveSkillType(m_liveSkillTypeImages[i * 2 + 3], (LiveSkillType.Type)p.AOPELJFAMCL_LiveSkillType);
 								}
+								b2 = true;
 							}
 							else
 							{
@@ -730,11 +748,22 @@ namespace XeApp.Game.Menu
 							bool b = UnitWindowConstant.SetSkillDetails(m_skillDescriptTexts[slot], skillDesc, 1);
 							if(b)
 							{
-								m_skillDetailsButtons[btn].AddOnClickCallback(() =>
+								if(!b2)
 								{
-									//0x127103C
-									OnShowLiveSkillDetail2(0);
-								});
+									m_skillDetailsButtons[btn].AddOnClickCallback(() =>
+									{
+										//0x1271044
+										OnShowLiveSkillDetail(0);
+									});
+								}
+								else
+								{
+									m_skillDetailsButtons[btn].AddOnClickCallback(() =>
+									{
+										//0x127103C
+										OnShowLiveSkillDetail2(0);
+									});
+								}
 							}
 							m_skillDetailIconImages[slot].enabled = b;
 						}
@@ -971,13 +1000,5 @@ namespace XeApp.Game.Menu
 		{
 			MenuScene.Instance.UnitSaveWindowControl.ShowSkillWindow(m_sceneList[0].LNLECENGMKK_LiveSkillName2, m_sceneList[skillIndex].KDGACEJPGFG_GetLiveSkillDesc(true));
 		}
-
-		// [CompilerGeneratedAttribute] // RVA: 0x70F5AC Offset: 0x70F5AC VA: 0x70F5AC
-		// // RVA: 0x1270E80 Offset: 0x1270E80 VA: 0x1270E80
-		// private void <UpdateContent>b__56_5() { }
-
-		// [CompilerGeneratedAttribute] // RVA: 0x70F5FC Offset: 0x70F5FC VA: 0x70F5FC
-		// // RVA: 0x1271044 Offset: 0x1271044 VA: 0x1271044
-		// private void <UpdateContent>b__56_11() { }
 	}
 }
