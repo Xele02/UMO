@@ -29,7 +29,7 @@ public class ALJHJDHNFFB_HomeBg : DIHHCBACKGG_DbSection
 		public int IJEKNCDIIAE_MVer { get { return GNGNIKNNCNH ^ FBGGEFFJJHB; } set { GNGNIKNNCNH = value ^ FBGGEFFJJHB; } } //0xCDFB38 KJIMMIBDCIL 0xCDE868 DMEGNOKIKCD
 		public string OPFGFINHFCE_Name { get { return FINCFIGKHPA.DNJEJEANJGL_Value; } set { FINCFIGKHPA.DNJEJEANJGL_Value = value; } } //0xCDFBD0 DKJOHDGOIJE 0xCDE9A8 MJAMIGECMMF
 		public int LEJOJFHKHIJ_Have { get { return GNGNIKNNCNH ^ FBGGEFFJJHB; } set { GNGNIKNNCNH = value ^ FBGGEFFJJHB; } } //0xCDFBFC PGCOGCIHNGG 0xCDE904 PJDCNPKFOBE
-		public SeriesAttr.Type AIHCEGFANAM_Sa { get; set; } // 0x34 FJOGAAMLJMA ANEJPLENMAL HEHDOGFEIOL
+		public SeriesAttr.Type AIHCEGFANAM_SerieAttr { get; set; } // 0x34 FJOGAAMLJMA ANEJPLENMAL HEHDOGFEIOL
 
 		//// RVA: 0xCDF06C Offset: 0xCDF06C VA: 0xCDF06C
 		//public uint CAOGDCBPBAN() { }
@@ -83,7 +83,7 @@ public class ALJHJDHNFFB_HomeBg : DIHHCBACKGG_DbSection
 			data.PLALNIIBLOF_En = (int)array[i].PLALNIIBLOF;
 			data.IJEKNCDIIAE_MVer = array[i].IJEKNCDIIAE;
 			data.LEJOJFHKHIJ_Have = array[i].LEJOJFHKHIJ;
-			data.AIHCEGFANAM_Sa = (SeriesAttr.Type)array[i].JPFMJHLCMJL;
+			data.AIHCEGFANAM_SerieAttr = (SeriesAttr.Type)array[i].JPFMJHLCMJL;
 			data.OPFGFINHFCE_Name = DatabaseTextConverter.TranslateHomeBgName(i, array[i].OPFGFINHFCE);
 
 			if(RuntimeSettings.CurrentSettings.RemoveHomeBgDateLimit)

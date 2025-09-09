@@ -38,7 +38,7 @@ public class PGCGJPPBOOA
 		EGBOHDFBAPB_ClosedAt = JsonUtil.GetLong(IDLHJIOMJBK, AFEHLCGHAEE_Strings.EGBOHDFBAPB_closed_at, 0);
 		OFJFGMDBFPK_BatchIntervalTime = JsonUtil.GetLong(IDLHJIOMJBK, AFEHLCGHAEE_Strings.OFJFGMDBFPK_batch_interval_time, 0);
 		DNBPICNPJNE_ScorePrecision = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.DNBPICNPJNE_score_precision];
-		ADKJLADBKKK_DefaultScore = JsonUtil.GetInt(IDLHJIOMJBK, AFEHLCGHAEE_Strings.ADKJLADBKKK_default_score, 0);
+		ADKJLADBKKK_DefaultScore = JsonUtil.GetInt(IDLHJIOMJBK, AFEHLCGHAEE_Strings.ADKJLADBKKK_DefaultScore, 0);
 		KDIDMAMLBLO_AllowLowerScore = (bool)IDLHJIOMJBK[AFEHLCGHAEE_Strings.KDIDMAMLBLO_allow_lower_score];
 		DNDNFAAOOBA_IsReverse = (bool)IDLHJIOMJBK[AFEHLCGHAEE_Strings.DNDNFAAOOBA_is_reverse];
 		KBJAHKHGHAN_AllowTiedRank = (bool)IDLHJIOMJBK[AFEHLCGHAEE_Strings.KBJAHKHGHAN_allow_tied_rank];

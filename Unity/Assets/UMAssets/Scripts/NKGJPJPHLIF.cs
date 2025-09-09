@@ -467,7 +467,7 @@ public class NKGJPJPHLIF
 			NLGFEPAJBOJ.OIEBCNPOMIB_UpdateDayChange(FBBNPFFEJBN);
 			NLGFEPAJBOJ.KPHFDEOFKLM_UpdateEnergyDayChange();
 			NLGFEPAJBOJ.LBLNLMGHLAG_UpdateShop();
-			NLGFEPAJBOJ.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.LPFFDGNDLKG_UpdateMedals(true, 2160);
+			NLGFEPAJBOJ.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.LPFFDGNDLKG_UpdateMedals(true, 2160);
 			NLGFEPAJBOJ.FAFAKNJLLIC_ResetIntimacyPresentLeft();
 			NLGFEPAJBOJ.CDIADEIOIHP_ResetIntimacyTouchCount();
 			KDHGBOOECKC.HHCJCDFCLOB.PCPECPFJMGC();
@@ -519,7 +519,7 @@ public class NKGJPJPHLIF
 		HFPNGIDPOBF.NNGHCGKIIHM_SetStaminaLotNotif(false);
 		if(IBLPICFDGOF_ServerRequester.IEFOIIAEBBJ && !IBLPICFDGOF_ServerRequester.NFECEPJEMHG)
 		{
-			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd == 2)
+			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd == 2)
 			{
 				IBLPICFDGOF_ServerRequester.NFECEPJEMHG = true;
 				int disable_recmonded_notice = EJDOEBLBGIO.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("disable_recmonded_notice", 0);
@@ -623,7 +623,7 @@ public class NKGJPJPHLIF
 				{
 					//0xC1A8A8
 					BEKAMBBOLBO = true;
-				}, (CACGCMBKHDI_Request ADKIDBJCAJA) =>
+				}, (CACGCMBKHDI_Request _ADKIDBJCAJA_action) =>
 				{
 					//0xC1A8B4
 					BEKAMBBOLBO = true;

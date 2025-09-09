@@ -8,7 +8,7 @@ public class IELJJAAJAOE
 	public int JPIPENJGGDD; // 0x18
 	public int PLKAGPBEHMB; // 0x1C
 	public int ONDODHPHOOF; // 0x20
-	public int ABIFFLDIAMM; // 0x24
+	public int ABIFFLDIAMM_ConvertItemCount; // 0x24
 	public bool LHEDLDEMPPG; // 0x28
 	public bool PHJHJGDLPED; // 0x29
 	public bool BAKFIPIFDLE; // 0x2A

@@ -40,7 +40,7 @@ namespace XeApp.Game.Menu
 		private Action m_updater; // 0xA4
 		private CompatibleLayoutAnimeParam animParam; // 0xA8
 
-		public ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.MMALELPFEBH_UserList sortSaveData { get { return GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.ACCNCHJBDHM_UserList; } } //0x128D260
+		public ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.MMALELPFEBH_UserList sortSaveData { get { return GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.ACCNCHJBDHM_UsersList; } } //0x128D260
 
 		public bool Unused() { return m_guestNotFoundMessage == null && m_guestAllFilteredMessage == null && m_monitorReloadCoolingTime; }
 
@@ -236,13 +236,13 @@ namespace XeApp.Game.Menu
 			cont.NLIJCLIGIFC(() =>
 			{
 				//0x1290DC4
-				UpdateListCounter(cont.ACCNCHJBDHM_Users.Count);
-				m_buttonRuntime.SetReloadButtonLock(cont.ACCNCHJBDHM_Users.Count < 1);
-				m_windowUi.SetMessageVisible(cont.ACCNCHJBDHM_Users.Count < 1);
-				for(int i = 0; i < cont.ACCNCHJBDHM_Users.Count; i++)
+				UpdateListCounter(cont.ACCNCHJBDHM_UsersList.Count);
+				m_buttonRuntime.SetReloadButtonLock(cont.ACCNCHJBDHM_UsersList.Count < 1);
+				m_windowUi.SetMessageVisible(cont.ACCNCHJBDHM_UsersList.Count < 1);
+				for(int i = 0; i < cont.ACCNCHJBDHM_UsersList.Count; i++)
 				{
 					EAJCBFGKKFA_FriendInfo f = new EAJCBFGKKFA_FriendInfo();
-					f.KHEKNNFCAOI(cont.ACCNCHJBDHM_Users[i]);
+					f.KHEKNNFCAOI(cont.ACCNCHJBDHM_UsersList[i]);
 					friends.Add(f);
 				}
 				this.StartCoroutineWatched(OnSuccessSearchFriend());
@@ -370,7 +370,7 @@ namespace XeApp.Game.Menu
 		{
 			m_sortType = (SortItem) sortSaveData.LHPDCGNKPHD_sortItem;
 			m_sortOrder = (GeneralList.SortOrder) sortSaveData.EILKGEADKGH_order;
-			m_rarityFilter = (uint)sortSaveData.ACCHOFLOOEC_filter;
+			m_rarityFilter = (uint)sortSaveData.ACCHOFLOOEC_RarityFilter;
 			m_attrFilter = (uint)sortSaveData.BOFFOHHLLFG_attributeFilter;
 			m_seriesFilter = (uint)sortSaveData.BBIIHLNBHDE_seriaseFilter;
 			m_buttonRuntime.ChangePreset(GeneralListButtonRuntime.Preset.FriendList);

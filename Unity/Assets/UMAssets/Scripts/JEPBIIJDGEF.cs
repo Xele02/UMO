@@ -593,7 +593,7 @@ public class JEPBIIJDGEF_EventInfo
 	}
 
 	// // RVA: 0x1C3C704 Offset: 0x1C3C704 VA: 0x1C3C704
-	public int NBIAKELCBLC(int MNNHHJBBICA, int MFJKNCACBDG, int AKNELONELJK, bool GIKLNODJKFK, int MJBODMOLOBC, int HDDCLCOMOOB)
+	public int NBIAKELCBLC(int MNNHHJBBICA, int MFJKNCACBDG, int _AKNELONELJK_Difficulty, bool GIKLNODJKFK, int MJBODMOLOBC, int HDDCLCOMOOB)
 	{
 		if(MNNHHJBBICA == 0)
 		{
@@ -604,7 +604,7 @@ public class JEPBIIJDGEF_EventInfo
 				return 0;
 			int a1 = 0;
 			int a2 = 0;
-			ev.EMEPJNLHJHJ(1, AKNELONELJK, GIKLNODJKFK, ref a1, ref a2);
+			ev.EMEPJNLHJHJ(1, _AKNELONELJK_Difficulty, GIKLNODJKFK, ref a1, ref a2);
 			return LDDDBPNGGIN_Game.NBIAKELCBLC_GetNumItems(MJBODMOLOBC, HDDCLCOMOOB, a1, a2);
 		}
 		else
@@ -616,7 +616,7 @@ public class JEPBIIJDGEF_EventInfo
 					return 0;
 				int a1 = 0;
 				int a2 = 0;
-				ev.EMEPJNLHJHJ(6, AKNELONELJK, GIKLNODJKFK, ref a1, ref a2);
+				ev.EMEPJNLHJHJ(6, _AKNELONELJK_Difficulty, GIKLNODJKFK, ref a1, ref a2);
 				Debug.Log(string.Concat(new object[4]
 				{
 					"StringLiteral_11879", a1, ",", a2
@@ -630,7 +630,7 @@ public class JEPBIIJDGEF_EventInfo
 					return 0;
 				int a1 = 0;
 				int a2 = 0;
-				ev.EMEPJNLHJHJ(1, AKNELONELJK, GIKLNODJKFK, ref a1, ref a2);
+				ev.EMEPJNLHJHJ(1, _AKNELONELJK_Difficulty, GIKLNODJKFK, ref a1, ref a2);
 				Debug.Log(string.Concat(new object[4]
 				{
 					"StringLiteral_11879", a1, ",", a2
@@ -644,7 +644,7 @@ public class JEPBIIJDGEF_EventInfo
 					return 0;
 				int a1 = 0;
 				int a2 = 0;
-				ev.EMEPJNLHJHJ(1, AKNELONELJK, GIKLNODJKFK, ref a1, ref a2);
+				ev.EMEPJNLHJHJ(1, _AKNELONELJK_Difficulty, GIKLNODJKFK, ref a1, ref a2);
 				Debug.Log(string.Concat(new object[4]
 				{
 					"StringLiteral_11879", a1, ",", a2

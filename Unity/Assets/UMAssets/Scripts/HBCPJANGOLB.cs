@@ -58,7 +58,7 @@ public class HBCPJANGOLB
 	// // RVA: 0x173DD7C Offset: 0x173DD7C VA: 0x173DD7C
 	public long JPAICCMDGHD_GetMaxLastShowDate(long JHNMKKNEENE)
     {
-        long lastEpTime = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.MOBHLLDIMMN_EpisodeLastShowTime;
+        long lastEpTime = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MOBHLLDIMMN_LastShowDate;
         long t2 = KKEFACGGKOD.HFPEDBCGFOJ_GetLastShowDate();
         long m = System.Math.Max(lastEpTime, t2);
         if(JHNMKKNEENE < m)
@@ -71,7 +71,7 @@ public class HBCPJANGOLB
 	{
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 		long t = JPAICCMDGHD_GetMaxLastShowDate(time);
-		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.MOBHLLDIMMN_EpisodeLastShowTime = t;
+		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MOBHLLDIMMN_LastShowDate = t;
 		KKEFACGGKOD.JKHNJBFAFBL_SetLastShowDate(t);
 		return KKEFACGGKOD.HJMKBCFJOOH_TrySaveDate(false);
 	}
@@ -115,7 +115,7 @@ public class HBCPJANGOLB
                     {
                         if(dbCostumes.CDENCMNHNGA_Costumes[j].JPIDIENBGKH_CostumeId == l[i].GOOIIPFHOIG.NNFNGLJOKKF_ItemId)
                         {
-                            int id = dbCostumes.CDENCMNHNGA_Costumes[j].AHHJLDLAPAN_PrismDivaId;
+                            int id = dbCostumes.CDENCMNHNGA_Costumes[j].AHHJLDLAPAN_DivaId;
                             int id2 = dbCostumes.CDENCMNHNGA_Costumes[j].DAJGPBLEEOB_PrismCostumeModelId;
                             PHCEFKKOECA.Add(string.Format("dv/cs/{0:D3}_{1:D3}.xab", id, id2));
                             PHCEFKKOECA.Add(string.Format("ct/dv/co/{0:D2}_{1:D3}.xab", id, id2));

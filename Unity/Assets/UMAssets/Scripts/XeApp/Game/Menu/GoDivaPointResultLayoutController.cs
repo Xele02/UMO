@@ -119,7 +119,7 @@ namespace XeApp.Game.Menu
 			m_textEpisodeRate.text = ""+(viewEventData.PFJMBKBEFMA_EpisodeRate - 100);
 			m_ScorePoint.SetNumber(viewEventData.KNIFCANOHOC_ScorePoint, 0);
 			m_basePointText.text = viewEventData.EJDJIBPKKNO_BasePoint.ToString();
-			m_textPointTotal.text = viewEventData.AHOKAPCGJMA_NextPoint.ToString();
+			m_textPointTotal.text = viewEventData.AHOKAPCGJMA_TotalPoint.ToString();
 			m_scoreBonusText.text = viewEventData.OPILAHLPJGH_ScoreBonus.ToString();
 			m_textMedalNum.text = viewEventData.ODOOKDGCKMF_MedalNum.ToString();
 			m_textBonusMusicProbability.text = viewEventData.AIODBKOOCMM_BonusMusicProbaBefore.ToString();

@@ -333,7 +333,7 @@ namespace XeApp.Game.Menu
 		private void InitCostumeData(CKFGMNAIBNG costumeData, int appItemId)
 		{
 			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[EKLNMHFCAOI.DEACAHNLMNI_getItemId(appItemId) - 1];
-			costumeData.KHEKNNFCAOI(cos.AHHJLDLAPAN_PrismDivaId, EKLNMHFCAOI.DEACAHNLMNI_getItemId(appItemId), 0, false);
+			costumeData.KHEKNNFCAOI(cos.AHHJLDLAPAN_DivaId, EKLNMHFCAOI.DEACAHNLMNI_getItemId(appItemId), 0, false);
 		}
 
 		// RVA: 0x1882A1C Offset: 0x1882A1C VA: 0x1882A1C Slot: 5

@@ -475,15 +475,15 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 
 	public class GHLIDOPMMDB
 	{
-		private int EHOIENNDEDH; // 0x8
-		private int FPOLAPKKDMG; // 0xC
-		private int ICKOHEDLEFP; // 0x10
-		private int MMEINLBEOMK; // 0x14
+		private int EHOIENNDEDH_Crypted; // 0x8
+		private int FPOLAPKKDMG_Crypted; // 0xC
+		private int ICKOHEDLEFP_Crypted; // 0x10
+		private int MMEINLBEOMK_NumCrypted; // 0x14
 
-		public int PPFNGGCBJKC { get { return EHOIENNDEDH ^ FBGGEFFJJHB; } set { EHOIENNDEDH = value ^ FBGGEFFJJHB; } } //0xD802D0 DEMEPMAEJOO 0xD7DDA8 HIGKAIDMOKN
-		public int OAFPGJLCNFM_ReleaseCondition { get { return FPOLAPKKDMG ^ FBGGEFFJJHB; } set { FPOLAPKKDMG = value ^ FBGGEFFJJHB; } } //0xD80368 PMJFANGPJIE 0xD7DE44 HEECOBEHHPJ
-		public int JBGEEPFKIGG { get { return ICKOHEDLEFP ^ FBGGEFFJJHB; } set { ICKOHEDLEFP = value ^ FBGGEFFJJHB; } } //0xD80400 OLOCMINKGON 0xD7DEE0 ABAFHIBFKCE
-		public int ADPPAIPFHML { get { return MMEINLBEOMK ^ FBGGEFFJJHB; } set { MMEINLBEOMK = value ^ FBGGEFFJJHB; } } //0xD80498 LJMLHOOPGEM 0xD7DF7C PHNIOCPOBGO
+		public int PPFNGGCBJKC { get { return EHOIENNDEDH_Crypted ^ FBGGEFFJJHB; } set { EHOIENNDEDH_Crypted = value ^ FBGGEFFJJHB; } } //0xD802D0 DEMEPMAEJOO 0xD7DDA8 HIGKAIDMOKN
+		public int OAFPGJLCNFM_ReleaseCondition { get { return FPOLAPKKDMG_Crypted ^ FBGGEFFJJHB; } set { FPOLAPKKDMG_Crypted = value ^ FBGGEFFJJHB; } } //0xD80368 PMJFANGPJIE 0xD7DE44 HEECOBEHHPJ
+		public int JBGEEPFKIGG { get { return ICKOHEDLEFP_Crypted ^ FBGGEFFJJHB; } set { ICKOHEDLEFP_Crypted = value ^ FBGGEFFJJHB; } } //0xD80400 OLOCMINKGON 0xD7DEE0 ABAFHIBFKCE
+		public int ADPPAIPFHML_Num { get { return MMEINLBEOMK_NumCrypted ^ FBGGEFFJJHB; } set { MMEINLBEOMK_NumCrypted = value ^ FBGGEFFJJHB; } } //0xD80498 LJMLHOOPGEM 0xD7DF7C PHNIOCPOBGO
 
 		//// RVA: 0xD80530 Offset: 0xD80530 VA: 0xD80530
 		//public void LHPDDGIJKNB() { }
@@ -1301,7 +1301,7 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 			data.PPFNGGCBJKC = array[i].PPFNGGCBJKC;
 			data.OAFPGJLCNFM_ReleaseCondition = array[i].OAFPGJLCNFM;
 			data.JBGEEPFKIGG = array[i].JBGEEPFKIGG;
-			data.ADPPAIPFHML = array[i].ADPPAIPFHML;
+			data.ADPPAIPFHML_Num = array[i].ADPPAIPFHML;
 			GLOOEBIBCOC.Add(data);
 		}
 		return true;

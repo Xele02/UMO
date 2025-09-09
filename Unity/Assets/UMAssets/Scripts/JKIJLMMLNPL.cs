@@ -61,7 +61,7 @@ public class JKIJLMMLNPL
 					{
 						data.ODNDCOMBAOH = GCMIDNBBMLA_SceneAttrBonus;
 					}
-					if(viewscene.AIHCEGFANAM_SceneSeries == KOGEKHMBHOI_SceneSerie)
+					if(viewscene.AIHCEGFANAM_SerieAttr == KOGEKHMBHOI_SceneSerie)
 					{
 						data.CGIKGNJJCIG = IDDAGCGIAPA_SceneSerieBonus;
 					}
@@ -93,6 +93,6 @@ public class JKIJLMMLNPL
 	{
 		JKIJLMMLNPL data = new JKIJLMMLNPL();
 		data.DEHCKHMIENO(null);
-		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.MHEAEGMIKIE_PublicStatus.OENMBJEKJII_McPower = data.HALIDDHLNEG_MCannonDamage;
+		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.OENMBJEKJII_McPower = data.HALIDDHLNEG_MCannonDamage;
 	}
 }

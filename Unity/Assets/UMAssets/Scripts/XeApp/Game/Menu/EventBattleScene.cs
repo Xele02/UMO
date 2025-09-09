@@ -702,7 +702,7 @@ namespace XeApp.Game.Menu
 					rank = scene.CGIELKDLHGE_GetEvolveId();
 					isKira = scene.MBMFJILMOBP_IsKira();
 				}
-				m_battleInfo.ApplySelfTitle(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName);
+				m_battleInfo.ApplySelfTitle(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName);
 				GameManager.Instance.DivaIconCache.Load(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId, 
 					GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, 
 					GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].EKFONBFDAAP_ColorId, m_battleInfo.ApplySelfDivaIcon);
@@ -720,11 +720,11 @@ namespace XeApp.Game.Menu
 				bool isKira = false;
 				int sceneId = 0;
 				int rank = 0;
-				if(musicData.DACLONHOFLA.AFBMEMCHJCL_Scene != null)
+				if(musicData.DACLONHOFLA.AFBMEMCHJCL_MainScene != null)
 				{
-					sceneId = musicData.DACLONHOFLA.AFBMEMCHJCL_Scene.BCCHOBPJJKE_SceneId;
-					rank = musicData.DACLONHOFLA.AFBMEMCHJCL_Scene.CGIELKDLHGE_GetEvolveId();
-					isKira = musicData.DACLONHOFLA.AFBMEMCHJCL_Scene.MBMFJILMOBP_IsKira();
+					sceneId = musicData.DACLONHOFLA.AFBMEMCHJCL_MainScene.BCCHOBPJJKE_SceneId;
+					rank = musicData.DACLONHOFLA.AFBMEMCHJCL_MainScene.CGIELKDLHGE_GetEvolveId();
+					isKira = musicData.DACLONHOFLA.AFBMEMCHJCL_MainScene.MBMFJILMOBP_IsKira();
 				}
 				int str = musicData.DACLONHOFLA.BHCIFFILAKJ_Str;
 				if(str > 2)
@@ -744,7 +744,7 @@ namespace XeApp.Game.Menu
 				m_rivalDivaDeco.SetActive(true);
 				m_rivalDivaDeco.Change(musicData.DACLONHOFLA.FDBOPFEOENF_RivalData, DisplayType.Level);
 				m_rivalSceneDeco.SetActive(true);
-				m_rivalSceneDeco.Change(musicData.DACLONHOFLA.AFBMEMCHJCL_Scene, DisplayType.Level);
+				m_rivalSceneDeco.Change(musicData.DACLONHOFLA.AFBMEMCHJCL_MainScene, DisplayType.Level);
 				m_battleExGauge.Setup(ev.HEOGGKBILIA_GetCurrentClassEmblemId(), ev.NJDPMDCIFBP_GetResultExPoint(musicData.DACLONHOFLA.BHCIFFILAKJ_Str, true), ev.NJDPMDCIFBP_GetResultExPoint(musicData.DACLONHOFLA.BHCIFFILAKJ_Str, false), ev.GGBNNMCLDMO_GetExPoint(), 100);
 				if(m_eventTicketId < 1)
 				{
@@ -1104,7 +1104,7 @@ namespace XeApp.Game.Menu
 			}
 			if(!MenuScene.Instance.DirtyChangeScene)
 			{
-				if(KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DAEJHMCMFJD_Offer.MLBBKNLPBBD_HasShowTuto(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0))
+				if(KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_HasShowTuto(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0))
 				{
 					MenuScene.Instance.RaycastEnable();
 					yield return Co.R(TutorialProc.Co_OffeReleaseTutorial(InputLimitButton.VOP, MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.VOP), () =>
@@ -1119,7 +1119,7 @@ namespace XeApp.Game.Menu
 			}
 			if(!MenuScene.Instance.DirtyChangeScene)
 			{
-				if(SettingMenuPanel.IsValkyrieTuneUpUnlock() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(Common.GPFlagConstant.ID.IsValkyrieUpgrade))
+				if(SettingMenuPanel.IsValkyrieTuneUpUnlock() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(Common.GPFlagConstant.ID.IsValkyrieUpgrade))
 				{
 					MenuScene.Instance.RaycastEnable();
 					yield return Co.R(TutorialProc.Co_ValkyrieUpgrade(MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.Setting), BasicTutorialMessageId.Id_ValkyrieUpgradeHome, InputLimitButton.Setting, TutorialPointer.Direction.Down, m_cdSelect, null));
@@ -1776,10 +1776,10 @@ namespace XeApp.Game.Menu
 				GameManager.Instance.DivaIconCache.TryInstall(musicList[i].DACLONHOFLA.FDBOPFEOENF_RivalData.AHHJLDLAPAN_DivaId,
 					musicList[i].DACLONHOFLA.FDBOPFEOENF_RivalData.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, 
 					musicList[i].DACLONHOFLA.FDBOPFEOENF_RivalData.EKFONBFDAAP_ColorId);
-				if(musicList[i].DACLONHOFLA.AFBMEMCHJCL_Scene != null)
+				if(musicList[i].DACLONHOFLA.AFBMEMCHJCL_MainScene != null)
 				{
-					GameManager.Instance.SceneIconCache.TryInstall(musicList[i].DACLONHOFLA.AFBMEMCHJCL_Scene.BCCHOBPJJKE_SceneId, 
-						musicList[i].DACLONHOFLA.AFBMEMCHJCL_Scene.CGIELKDLHGE_GetEvolveId());
+					GameManager.Instance.SceneIconCache.TryInstall(musicList[i].DACLONHOFLA.AFBMEMCHJCL_MainScene.BCCHOBPJJKE_SceneId, 
+						musicList[i].DACLONHOFLA.AFBMEMCHJCL_MainScene.CGIELKDLHGE_GetEvolveId());
 				}
 				KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(MusicJacketTextureCache.MakeJacketTexturePath(musicList[i].JNCPEGJGHOG_JacketId));
 			}

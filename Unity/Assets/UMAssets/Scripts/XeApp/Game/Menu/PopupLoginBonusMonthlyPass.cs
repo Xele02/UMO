@@ -107,7 +107,7 @@ namespace XeApp.Game.Menu
 				TodoLogger.LogError(TodoLogger.MonthlyPass, "Co_RequestLoginBonusMonthlyPass");
 			}
 			//LAB_0168cc50
-			int numItem = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.FKGCBLHOOCL_Category.PJCJEOECLBK_MonthlyPassItem, 1, null);
+			int numItem = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.FKGCBLHOOCL_Category.PJCJEOECLBK_MonthlyPassItem, 1, null);
 			if(numItem < 1)
 			{
 				//LAB_0168d4e4

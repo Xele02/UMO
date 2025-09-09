@@ -317,7 +317,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				if((int)sceneData.AIHCEGFANAM_SceneSeries != musicData.AIHCEGFANAM_Serie)
+				if((int)sceneData.AIHCEGFANAM_SerieAttr != musicData.AIHCEGFANAM_SerieAttr)
 				{
 					status.excellentRate_SameSeriesAttr = 0;
 					status.centerLiveSkillRate_SameSeriesAttr = 0;
@@ -565,7 +565,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					int a = m_mainScene.MEOOLHNNMHL_GetCenterSkillId(false, viewMusicData.FKDCCLPGKDK_JacketAttr, viewMusicData.AIHCEGFANAM_Serie);
+					int a = m_mainScene.MEOOLHNNMHL_GetCenterSkillId(false, viewMusicData.FKDCCLPGKDK_JacketAttr, viewMusicData.AIHCEGFANAM_SerieAttr);
 					g = a;
 					if (a > 0)
 					{
@@ -608,24 +608,24 @@ namespace XeApp.Game.Menu
 							if(m_mainScene.ABIOBCMPEHM_SkillSwitchPatternCondition() == SkillSwitchPatternCondition.Type.SeriesAttr_Scn)
 							{
 								m_centerSkillRegulation[1].SetActive(true);
-								if(m_mainScene.KAFAAPEBCPD(viewMusicData.DLAEJOBELBH_MusicId, true) && (int)m_mainScene.AIHCEGFANAM_SceneSeries != m.AIHCEGFANAM_SerieAttr)
+								if(m_mainScene.KAFAAPEBCPD(viewMusicData.DLAEJOBELBH_MusicId, true) && (int)m_mainScene.AIHCEGFANAM_SerieAttr != m.AIHCEGFANAM_SerieAttr)
 								{
 									m_centerSkillNonActive[0].SetActive(true);
 									m_centerSkillRegulationText[0].text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_status_skill_regulation_series_n");
 								}
-								else if(!m_mainScene.KAFAAPEBCPD(viewMusicData.DLAEJOBELBH_MusicId, true) && (int)m_mainScene.AIHCEGFANAM_SceneSeries != m.AIHCEGFANAM_SerieAttr)
+								else if(!m_mainScene.KAFAAPEBCPD(viewMusicData.DLAEJOBELBH_MusicId, true) && (int)m_mainScene.AIHCEGFANAM_SerieAttr != m.AIHCEGFANAM_SerieAttr)
 								{
 									m_centerSkillNonActive[1].SetActive(true);
 									m_centerSkillRegulationText[1].text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_status_skill_regulation_attr");
 									m_centerSkillNonActive[0].SetActive(true);
 									m_centerSkillRegulationText[0].text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_status_skill_regulation_attr");
 								}
-								if(m_mainScene.KAFAAPEBCPD(viewMusicData.DLAEJOBELBH_MusicId, true) && (int)m_mainScene.AIHCEGFANAM_SceneSeries == m.AIHCEGFANAM_SerieAttr)
+								if(m_mainScene.KAFAAPEBCPD(viewMusicData.DLAEJOBELBH_MusicId, true) && (int)m_mainScene.AIHCEGFANAM_SerieAttr == m.AIHCEGFANAM_SerieAttr)
 								{
 									m_centerSkillNonActive[1].SetActive(true);
 									m_centerSkillRegulationText[1].text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_status_skill_regulation_series_y");
 								}
-								else if(!m_mainScene.KAFAAPEBCPD(viewMusicData.DLAEJOBELBH_MusicId, true) && (int)m_mainScene.AIHCEGFANAM_SceneSeries == m.AIHCEGFANAM_SerieAttr)
+								else if(!m_mainScene.KAFAAPEBCPD(viewMusicData.DLAEJOBELBH_MusicId, true) && (int)m_mainScene.AIHCEGFANAM_SerieAttr == m.AIHCEGFANAM_SerieAttr)
 								{
 									m_centerSkillNonActive[1].SetActive(true);
 									m_centerSkillRegulationText[1].text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_status_skill_regulation_attr");

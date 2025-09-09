@@ -54,7 +54,7 @@ namespace XeApp.Game.Tutorial
 			//0xE47C64
 			master = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict;
 			saveData = GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial;
-			playerRank = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+			playerRank = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 			saveBitIndex = 0;
 			GameManager.Instance.AddPushBackButtonHandler(OnDummyBackButton);
 			bool hasShown = false;

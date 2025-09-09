@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 public class CIFHILOJJFC
 {
-    public delegate bool OJPDCIGOLMA(int AHHJLDLAPAN, int BCCHOBPJJKE);
+    public delegate bool OJPDCIGOLMA(int _AHHJLDLAPAN_DivaId, int BCCHOBPJJKE);
     
 	public int GIDKKHFHALL; // 0x8
 	public string OPFGFINHFCE_Name = ""; // 0xC

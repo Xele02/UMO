@@ -307,9 +307,9 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 	// public void HAEOIGABDDM(int LJACHJCFMJH) { }
 
 	// // RVA: 0xD85B00 Offset: 0xD85B00 VA: 0xD85B00
-	public void DGIBOADNFOI(int ADPPAIPFHML)
+	public void DGIBOADNFOI(int _ADPPAIPFHML_Num)
 	{
-		JAMCDEDFHHK_HotenCnt += ADPPAIPFHML;
+		JAMCDEDFHHK_HotenCnt += _ADPPAIPFHML_Num;
 		if(JAMCDEDFHHK_HotenCnt > 98)
 			JAMCDEDFHHK_HotenCnt = 99;
 	}

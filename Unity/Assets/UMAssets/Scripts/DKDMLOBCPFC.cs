@@ -3,14 +3,14 @@ public class DKDMLOBCPFC
 {
 	public int DIPKCALNIII_Id; // 0x8
 	public int BEEAIAAJOHD_CosId; // 0xC
-	public int AFNIOJHODAG_ColId; // 0x10
+	public int AFNIOJHODAG_CostumeColorId; // 0x10
 
 	// // RVA: 0x198E648 Offset: 0x198E648 VA: 0x198E648
 	public void LHPDDGIJKNB_Reset()
 	{
 		DIPKCALNIII_Id = 0;
 		BEEAIAAJOHD_CosId = 0;
-		AFNIOJHODAG_ColId = 0;
+		AFNIOJHODAG_CostumeColorId = 0;
 	}
 
 	// // RVA: 0x198E65C Offset: 0x198E65C VA: 0x198E65C
@@ -18,7 +18,7 @@ public class DKDMLOBCPFC
 	{
 		DIPKCALNIII_Id = GPBJHKLFCEP.DIPKCALNIII_Id;
 		BEEAIAAJOHD_CosId = GPBJHKLFCEP.BEEAIAAJOHD_CosId;
-		AFNIOJHODAG_ColId = GPBJHKLFCEP.AFNIOJHODAG_ColId;
+		AFNIOJHODAG_CostumeColorId = GPBJHKLFCEP.AFNIOJHODAG_CostumeColorId;
 	}
 
 	// // RVA: 0x198E6C4 Offset: 0x198E6C4 VA: 0x198E6C4
@@ -26,7 +26,7 @@ public class DKDMLOBCPFC
 	{
 		if(DIPKCALNIII_Id != OIKJFMGEICL.DIPKCALNIII_Id ||
 			BEEAIAAJOHD_CosId != OIKJFMGEICL.BEEAIAAJOHD_CosId ||
-			AFNIOJHODAG_ColId != OIKJFMGEICL.AFNIOJHODAG_ColId)
+			AFNIOJHODAG_CostumeColorId != OIKJFMGEICL.AFNIOJHODAG_CostumeColorId)
 			return false;
 		return true;
 	}
@@ -37,7 +37,7 @@ public class DKDMLOBCPFC
 		EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
 		data[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = DIPKCALNIII_Id;
 		data[AFEHLCGHAEE_Strings.ODNOJKHHEOP_c_id] = BEEAIAAJOHD_CosId;
-		data["c_col"] = AFNIOJHODAG_ColId;
+		data["c_col"] = AFNIOJHODAG_CostumeColorId;
 		return data;
 	}
 }

@@ -505,7 +505,7 @@ namespace XeApp.Game.Menu
 				}
 				if(phase == NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.ECAAJMPLIPG_2_Now)
 				{
-					if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsRaidFromMcrsLobby))
+					if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsRaidFromMcrsLobby))
 					{
 						//LAB_00d12d18
 						m_RaidLobbyController.OBIDIBBDEKM(false);
@@ -1418,7 +1418,7 @@ namespace XeApp.Game.Menu
 			a.AHHJLDLAPAN_DivaId = divaId;
 			a.EBBJPBGHJOL_Content = m_messgeText;
 			a.LBODBHCBAMD = isViewing;
-			a.PCEHLFNFIDA(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave);
+			a.PCEHLFNFIDA(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData);
 			m_RaidLobbyController.HJNDLPNBBKF((NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE) m_raidSelect, a, () =>
 			{
 				//0xD08D40
@@ -1616,7 +1616,7 @@ namespace XeApp.Game.Menu
 			d.HEKIEDEBAEO_StampId = stampId;
 			d.EKAMPLIAENM_SerifId = serifId;
 			d.GKEKNMJMMPK_CannonLogId = m_mcannonLogId;
-			d.PCEHLFNFIDA(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave);
+			d.PCEHLFNFIDA(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData);
 			m_RaidLobbyController.HJNDLPNBBKF((NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE)m_raidSelect, d, () =>
 			{
 				//0xD08F84
@@ -1658,7 +1658,7 @@ namespace XeApp.Game.Menu
 			m.HEKIEDEBAEO_StampId = stampId;
 			m.EKAMPLIAENM_SerifId = serifId;
 			m.GKEKNMJMMPK_CannonLogId = m_mcannonLogId;
-			m.PCEHLFNFIDA(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave);
+			m.PCEHLFNFIDA(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData);
 			m_RaidLobbyController.HJNDLPNBBKF((NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE) m_raidSelect, m, () =>
 			{
 				//0xD091BC

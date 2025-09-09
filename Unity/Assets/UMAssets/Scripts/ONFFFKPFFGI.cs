@@ -37,7 +37,7 @@ public class ONFFFKPFFGI
                 {
                     if(dbRich.FDBNFFNFOND >= time)
                     {
-                        if(dbRich.FJOLNJLLJEJ <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level)
+                        if(dbRich.FJOLNJLLJEJ <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level)
                         {
                             ABBFICCGNOG data = new ABBFICCGNOG();
                             data.DCHDFOIHMJL = dbRich.KNHOMNONOEB;
@@ -54,7 +54,7 @@ public class ONFFFKPFFGI
 	// // RVA: 0xCAEA18 Offset: 0xCAEA18 VA: 0xCAEA18
 	private long JPAICCMDGHD(long JHNMKKNEENE)
     {
-        long t = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.FMBNOBGLMKB_RichbannerLastShowTime;
+        long t = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.FMBNOBGLMKB_RichbannerLastShowTime;
         long t2 = Math.Max(t, JADNGGIOOJH.KOGBMDOONFA.NPDKEIIMCDI);
         if(JHNMKKNEENE < t2)
         {
@@ -67,7 +67,7 @@ public class ONFFFKPFFGI
 	public void HJMKBCFJOOH()
     {
         long t = JPAICCMDGHD(CDCKLGCKHFG);
-        CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.FMBNOBGLMKB_RichbannerLastShowTime = t;
+        CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.FMBNOBGLMKB_RichbannerLastShowTime = t;
         JADNGGIOOJH.KOGBMDOONFA.NPDKEIIMCDI = t;
         JADNGGIOOJH.HJMKBCFJOOH();
     }

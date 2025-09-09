@@ -23,7 +23,7 @@ public class EEDKAACNBBG_MusicData
 	public int DLAEJOBELBH_MusicId { get { return KOPBFHIBOJJ_MusicIdCrypted ^ FBGGEFFJJHB; } set { KOPBFHIBOJJ_MusicIdCrypted = value ^ FBGGEFFJJHB; } }// 0x1C487F4 MPGNHBOBFBD 0x1C48808 EPEMOAEGPLI
 	public int JNCPEGJGHOG_JacketId { get { return GBGHABAJPGJ_JacketIdCrypted ^ FBGGEFFJJHB; } set { GBGHABAJPGJ_JacketIdCrypted = value ^ FBGGEFFJJHB; } } //0x1C4881C HHEADMHBBPB 0x1C48830 GOFFKDDNACG
 	public int NNHOBFBCIIJ_Cd { get { return PAAEGMPLLOD_CdCrypted ^ FBGGEFFJJHB; } set { PAAEGMPLLOD_CdCrypted = value ^ FBGGEFFJJHB; } } //0x1C48844 AOBMNDMGGIO 0x1C48858 NIMNBBDNJMC
-	public int AIHCEGFANAM_Serie { get { return NJHHGPGBEOF_SerieCrypted ^ FBGGEFFJJHB; } set { NJHHGPGBEOF_SerieCrypted = value ^ FBGGEFFJJHB; } } //0x1C4886C ANEJPLENMAL 0x1C48880 HEHDOGFEIOL
+	public int AIHCEGFANAM_SerieAttr { get { return NJHHGPGBEOF_SerieCrypted ^ FBGGEFFJJHB; } set { NJHHGPGBEOF_SerieCrypted = value ^ FBGGEFFJJHB; } } //0x1C4886C ANEJPLENMAL 0x1C48880 HEHDOGFEIOL
 	public int EMIKBGHIOMN_SerieLogoId { get { return AHECDFEOOBF_SerieLogoIdCrypted ^ FBGGEFFJJHB; } set { AHECDFEOOBF_SerieLogoIdCrypted = value ^ FBGGEFFJJHB; } } //0x1C48894 BJGJCKFOBCA 0x1C488A8 OAKIKBEEACC
 	public int FKDCCLPGKDK_JacketAttr { get { return BNJIMPADBAH_JacketAttrCrypted ^ FBGGEFFJJHB; } set { BNJIMPADBAH_JacketAttrCrypted = value ^ FBGGEFFJJHB; } } //0x1C488BC FBADKBMGIBP 0x1C488D0 NCNMMABFHGN
 	public int KKPAHLMJKIH_WavId { get { return EDDPAECJHHC_WavIdCrypted ^ FBGGEFFJJHB; } set { EDDPAECJHHC_WavIdCrypted = value ^ FBGGEFFJJHB; } } //0x1C488E4 ENODDPDBIPA 0x1C488F8 HOAKFLEAEOH
@@ -38,7 +38,7 @@ public class EEDKAACNBBG_MusicData
 		JNCPEGJGHOG_JacketId = musicInfo.JNCPEGJGHOG_Cov;
 		NNHOBFBCIIJ_Cd = musicInfo.NNHOBFBCIIJ_Cd;
 		EMIKBGHIOMN_SerieLogoId = musicInfo.EMIKBGHIOMN_SerieLogoId;
-		AIHCEGFANAM_Serie = (int)SeriesAttr.ConvertFromLogoId((SeriesLogoId.Type)musicInfo.EMIKBGHIOMN_SerieLogoId);
+		AIHCEGFANAM_SerieAttr = (int)SeriesAttr.ConvertFromLogoId((SeriesLogoId.Type)musicInfo.EMIKBGHIOMN_SerieLogoId);
 		FKDCCLPGKDK_JacketAttr = musicInfo.FKDCCLPGKDK_Ma;
 		NEDBBJDAFBH_MusicName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).musicName;
 		NBKFBCLDGAL_OfficialName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).officialName;
@@ -57,7 +57,7 @@ public class EEDKAACNBBG_MusicData
 	// // RVA: 0x1C48F30 Offset: 0x1C48F30 VA: 0x1C48F30 Slot: 5
 	public virtual bool DBIGDCOHOIC_IsMultiDanceUnlocked()
 	{
-		return JFEEHOKLFPO_GetMultiDanceMinLevel() <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+		return JFEEHOKLFPO_GetMultiDanceMinLevel() <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 	}
 
 	// // RVA: 0x1C49024 Offset: 0x1C49024 VA: 0x1C49024
@@ -101,7 +101,7 @@ public class EEDKAACNBBG_MusicData
 	public bool JAPLKHPLOOF(OHCAABOMEOF.KGOGMKMBCPP_EventType JONPKLHMOBL)
 	{
 		int multi_dance_player_level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("multi_dance_player_level", 3);
-		if (JONPKLHMOBL != 0 || CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level >= multi_dance_player_level)
+		if (JONPKLHMOBL != 0 || CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level >= multi_dance_player_level)
 		{
 			if(JONPKLHMOBL == OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0 && BNCMJNMIDIN_AvaiableDivaModes > 1 && (BNCMJNMIDIN_AvaiableDivaModes & 1) == 0)
 			{
@@ -115,9 +115,9 @@ public class EEDKAACNBBG_MusicData
 					}
 				}
 				int cnt = 0;
-				for(int i = 0; i < CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList.Count; i++)
+				for(int i = 0; i < CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList.Count; i++)
 				{
-					if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i].CPGFPEDMDEH_Have > 0)
+					if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i].CPGFPEDMDEH_Have > 0)
 						cnt++;
 				}
 				if (cnt < numDiva)

@@ -510,7 +510,7 @@ namespace XeApp.Game.Menu
 					ApplyFriendSortParam(localSaveData.DOKBEPGKNJK_PendingList);
 					break;
 				case PopupSortMenu.SortPlace.LobbyMemberList:
-					ApplyFriendSortParam(localSaveData.ACCNCHJBDHM_UserList);
+					ApplyFriendSortParam(localSaveData.ACCNCHJBDHM_UsersList);
 					break;
 			}
 		}
@@ -520,7 +520,7 @@ namespace XeApp.Game.Menu
 		{
 			friendProperty.LHPDCGNKPHD_sortItem = (int)m_sortItem;
 			friendProperty.NPEEPPCPEPE_assistItem = (int)m_assistItem;
-			friendProperty.ACCHOFLOOEC_filter = (int)m_rarityButtonStateBit;
+			friendProperty.ACCHOFLOOEC_RarityFilter = (int)m_rarityButtonStateBit;
 			friendProperty.BOFFOHHLLFG_attributeFilter = (int)m_attributeButtonStateBit;
 			friendProperty.BBIIHLNBHDE_seriaseFilter = (int)m_seriaseButtonStateBit;
 			friendProperty.LKPCKPJGJKN_centerSkillFilter = (int)m_centerSkillButtonStateBit;
@@ -607,7 +607,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				int jacketAttr = musicData.FKDCCLPGKDK_JacketAttr;
-				int serie = musicData.AIHCEGFANAM_Serie;
+				int serie = musicData.AIHCEGFANAM_SerieAttr;
 				int a = 0;
 				int b = 0;
 				if(isCenterSkill)

@@ -425,16 +425,16 @@ namespace XeApp.Game.Menu
 				m_rankUpUnlockButton.Disable = true;
 				m_conditionCheckButton.Disable = true;
 				level = m_selectCostumeData.LLLCMHENKKN_LevelMax - 1;
-				m_releaseValue.num.SetNumber(m_selectCostumeData.OCOOHBINGBG_LevelInfo[m_selectCostumeData.LLLCMHENKKN_LevelMax - 1].DNBFMLBNAEE_NeedPoint, 0);
-				m_releaseValue.max.SetNumber(m_selectCostumeData.OCOOHBINGBG_LevelInfo[m_selectCostumeData.LLLCMHENKKN_LevelMax - 1].DNBFMLBNAEE_NeedPoint, 0);
+				m_releaseValue.num.SetNumber(m_selectCostumeData.OCOOHBINGBG_LevelInfo[m_selectCostumeData.LLLCMHENKKN_LevelMax - 1].DNBFMLBNAEE_Point, 0);
+				m_releaseValue.max.SetNumber(m_selectCostumeData.OCOOHBINGBG_LevelInfo[m_selectCostumeData.LLLCMHENKKN_LevelMax - 1].DNBFMLBNAEE_Point, 0);
 			}
 			else
 			{
 				m_useItemButton.Disable = false;
 				m_rankUpUnlockButton.Disable = false;
 				m_conditionCheckButton.Disable = false;
-				m_releaseValue.num.SetNumber(m_selectCostumeData.ABLHIAEDJAI_Point, 0);
-				m_releaseValue.max.SetNumber(m_selectCostumeData.JHLKLPEHHCD_GetCurrentLevelInfo().DNBFMLBNAEE_NeedPoint, 0);
+				m_releaseValue.num.SetNumber(m_selectCostumeData.ABLHIAEDJAI_CurrentValue, 0);
+				m_releaseValue.max.SetNumber(m_selectCostumeData.JHLKLPEHHCD_GetCurrentLevelInfo().DNBFMLBNAEE_Point, 0);
 			}
 			SettingRewardIcon(level);
 			bool b = true;
@@ -648,7 +648,7 @@ namespace XeApp.Game.Menu
 			{
 				foreach(var d in ldiva)
 				{
-					DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo dInfo = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(d);
+					DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo dInfo = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(d);
 					if(dInfo.CPGFPEDMDEH_Have == 0)
 					{
 						MessageBank bk = MessageManager.Instance.GetBank("menu");

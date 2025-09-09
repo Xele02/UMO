@@ -718,9 +718,9 @@ namespace XeApp.Game.Menu
 		private List<LayoutDecoCustomWindow01.SelectItemData> PossetionSerifList()
 		{
 			List<LayoutDecoCustomWindow01.SelectItemData> res = new List<LayoutDecoCustomWindow01.SelectItemData>();
-			for(int i = 0; i < CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.FJPOELGFPBP_DecoStamp.DMKMNGELNAE_Serif.Count; i++)
+			for(int i = 0; i < CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.FJPOELGFPBP_DecoStamp.DMKMNGELNAE_Serif.Count; i++)
 			{
-				IOEKHJBOMDH_DecoStamp.GFPPDCEPLCM saveStamp = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.FJPOELGFPBP_DecoStamp.DMKMNGELNAE_Serif[i];
+				IOEKHJBOMDH_DecoStamp.GFPPDCEPLCM saveStamp = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.FJPOELGFPBP_DecoStamp.DMKMNGELNAE_Serif[i];
 				if(saveStamp.BFINGCJHOHI_Cnt > 0)
 				{
 					int itemid = saveStamp.PPFNGGCBJKC_Id;
@@ -774,7 +774,7 @@ namespace XeApp.Game.Menu
 					//0x158C8CC
 					if(item.EAIJAAEKDAB_GetNumRemain() != 0)
 					{
-						return EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.KIJAPOFAGPN_ItemFullId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(item.KIJAPOFAGPN_ItemFullId), null) == 0;
+						return EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.KIJAPOFAGPN_ItemFullId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(item.KIJAPOFAGPN_ItemFullId), null) == 0;
 					}
 					return false;
 				});

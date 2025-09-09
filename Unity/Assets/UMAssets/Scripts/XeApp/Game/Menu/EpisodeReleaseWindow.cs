@@ -239,16 +239,16 @@ namespace XeApp.Game.Menu
 			m_item_value.text = m_item_use_num.ToString() + " / " + m_have_item.ToString();
 			m_episode_item_num.text = m_item_use_num.ToString();
 			RewardIndex();
-			int a = item_data.IILKAJBHLMJ_Value * m_item_use_num + m_data.ABLHIAEDJAI_CurrentPoint;
+			int a = item_data.IILKAJBHLMJ_Value * m_item_use_num + m_data.ABLHIAEDJAI_CurrentValue;
 			if(!m_data.CCBKMCLDGAD_HasReward)
 			{
-				SetGauge((int)(m_data.ABLHIAEDJAI_CurrentPoint * 100.0f / m_data.DMHDNKILKGI_MaxPoint), (int)(a * 100.0f / m_data.DMHDNKILKGI_MaxPoint));
+				SetGauge((int)(m_data.ABLHIAEDJAI_CurrentValue * 100.0f / m_data.DMHDNKILKGI_MaxPoint), (int)(a * 100.0f / m_data.DMHDNKILKGI_MaxPoint));
 				m_point_den.SetNumber(a, 0);
 				m_point_mol.SetNumber(m_data.DMHDNKILKGI_MaxPoint, 0);
 			}
 			else
 			{
-				SetGauge((int)((m_data.ABLHIAEDJAI_CurrentPoint - m_data.DMHDNKILKGI_MaxPoint) * 100.0f / (m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_TotalPoint - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_StartPoint)),
+				SetGauge((int)((m_data.ABLHIAEDJAI_CurrentValue - m_data.DMHDNKILKGI_MaxPoint) * 100.0f / (m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_TotalPoint - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_StartPoint)),
 						(int)((a - m_data.DMHDNKILKGI_MaxPoint) * 100.0f / (m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_TotalPoint - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_StartPoint)));
 				m_point_den.SetNumber(a - m_data.DMHDNKILKGI_MaxPoint, 0);
 				m_point_mol.SetNumber(m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_TotalPoint - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_StartPoint, 0);
@@ -282,7 +282,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < m_reward_list.Count - 1; i++)
 			{
-				if (item_data.IILKAJBHLMJ_Value * m_item_use_num + m_data.ABLHIAEDJAI_CurrentPoint < m_reward_list[i].DNBFMLBNAEE_TotalPoint)
+				if (item_data.IILKAJBHLMJ_Value * m_item_use_num + m_data.ABLHIAEDJAI_CurrentValue < m_reward_list[i].DNBFMLBNAEE_TotalPoint)
 					return i;
 			}
 			return m_reward_list.Count - 1;
@@ -293,7 +293,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < m_reward_list.Count - 1; i++)
 			{
-				if (m_data.ABLHIAEDJAI_CurrentPoint < m_reward_list[i].DNBFMLBNAEE_TotalPoint)
+				if (m_data.ABLHIAEDJAI_CurrentValue < m_reward_list[i].DNBFMLBNAEE_TotalPoint)
 					return i;
 			}
 			return m_reward_list.Count - 1;

@@ -77,7 +77,7 @@ namespace XeApp.Game.Menu
 			m_episode_name.text = data.OPFGFINHFCE_Name;
 			if(!data.CCBKMCLDGAD_HasReward)
 			{
-				int a = EpisodeUtility.CalcEpisodeGaugeFrame(data.ABLHIAEDJAI_CurrentPoint, data.DMHDNKILKGI_MaxPoint, GaugeMaxFrame);
+				int a = EpisodeUtility.CalcEpisodeGaugeFrame(data.ABLHIAEDJAI_CurrentValue, data.DMHDNKILKGI_MaxPoint, GaugeMaxFrame);
 				m_icon_mask_anim.StartChildrenAnimGoStop(a, a);
 				m_comp_icon.enabled = false;
 				m_comp_anim.StartChildrenAnimGoStop("st_wait");

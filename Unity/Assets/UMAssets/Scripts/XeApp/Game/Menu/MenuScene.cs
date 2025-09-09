@@ -355,7 +355,7 @@ namespace XeApp.Game.Menu
 								TeamSelectSceneListArgs arg = new TeamSelectSceneListArgs();
 								arg.defaultSelectScene = 0;
 								arg.divaSlotIndex = 0;
-								arg.divaData = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_MainDivas[0].DIPKCALNIII_Id - 1];
+								arg.divaData = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_MainDivas[0].DIPKCALNIII_Id - 1];
 								info.category = SceneGroupCategory.FORMATION;
 								info.nextName = TransitionList.Type.SCENE_SELECT;
 								info.parentName = TransitionList.Type.TEAM_EDIT;
@@ -1562,7 +1562,7 @@ namespace XeApp.Game.Menu
 			bool isHaveAnyKiraPlate; // 0x20
 
 			//0xB40A38
-			pd = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave;
+			pd = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
 			isHaveAnyKiraPlate = pd.PNLOINMCCKH_Scene.MBGEHFKKOEN_HasRarePlate(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene);
 			if (!pd.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsDecolture))
 			{
@@ -1753,7 +1753,7 @@ namespace XeApp.Game.Menu
 			//0xB419F0
 			if (!HighScoreRating.IsNotReceivedRewardUtaGrade())
 				yield break;
-			grade = HighScoreRating.GetUtaGrade(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.EAHPKPADCPL_TotalUtaRate);
+			grade = HighScoreRating.GetUtaGrade(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EAHPKPADCPL_TotalUtaRate);
 			HighScoreRating hs = new HighScoreRating();
 			hs.Init();
 			rewardList = hs.GetUtaGradeList(grade);

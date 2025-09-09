@@ -320,14 +320,14 @@ namespace XeApp.Game.Menu
 			}
 			for(int i = 0; i < m_ValkyrieList.Count; i++)
 			{
-				m_SeriesValkyrieList[m_ValkyrieList[i].AIHCEGFANAM_Serie - 1].Add(m_ValkyrieList[i]);
+				m_SeriesValkyrieList[m_ValkyrieList[i].AIHCEGFANAM_SerieAttr - 1].Add(m_ValkyrieList[i]);
 			}
 			int id = m_UnitData.JOKFNBLEILN_Valkyrie.GPPEFLKGGGJ_ValkyrieId;
 			SelectSeries = m_ValkyrieList.Find((PNGOLKLFFLH _) =>
 			{
 				//0x165FD88
 				return _.GPPEFLKGGGJ_ValkyrieId == id;
-			}).AIHCEGFANAM_Serie - 1;
+			}).AIHCEGFANAM_SerieAttr - 1;
 			Select = m_SeriesValkyrieList[SelectSeries].FindIndex((PNGOLKLFFLH _) =>
 			{
 				//0x165FDC0

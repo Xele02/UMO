@@ -220,9 +220,9 @@ public class JJOPEDJCCJK_Exp : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x1356058 Offset: 0x1356058 VA: 0x1356058
-	public int FIHFEGCDONI(int AKNELONELJK, int DCBDCHPKLCN, bool GIKLNODJKFK)
+	public int FIHFEGCDONI(int _AKNELONELJK_Difficulty, int DCBDCHPKLCN, bool GIKLNODJKFK)
 	{
-		int idx = DCBDCHPKLCN * 5 + AKNELONELJK;
+		int idx = DCBDCHPKLCN * 5 + _AKNELONELJK_Difficulty;
 		if(!GIKLNODJKFK)
 		{
 			return AOLNJDHGNGA_GetMExp_1[idx] ^ JIBLNGDIPIG_GetMExpKey_1[idx];

@@ -37,7 +37,7 @@ namespace XeApp.Game.Menu
 		private Action m_updater; // 0x9C
 		private CompatibleLayoutAnimeParam animParam; // 0xA0
 
-		public ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.MMALELPFEBH_UserList sortSaveData { get { return GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.ACCNCHJBDHM_UserList; } } //0x129997C
+		public ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.MMALELPFEBH_UserList sortSaveData { get { return GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.ACCNCHJBDHM_UsersList; } } //0x129997C
 
 		public bool Unused() { return m_groupName == null; }
 
@@ -79,7 +79,7 @@ namespace XeApp.Game.Menu
 			m_buttonRuntime.Hide();
 			m_isDeco = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("deco_player_level", 0) != 0;
 			this.StartCoroutineWatched(Co_Initialize());
-			m_favoritCount = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GAAOPEGIPKA_FavoritePlayer.EFNAAHDHCEL();
+			m_favoritCount = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.EFNAAHDHCEL();
 			m_updater = () =>
 			{
 				//0x129E4E4
@@ -318,11 +318,11 @@ namespace XeApp.Game.Menu
 			cont.IIBLJMMGMPD(() =>
 			{
 				//0x129EF74
-				UpdateListCounter(cont.ACCNCHJBDHM_Users.Count);
-				for(int i = 0; i < cont.ACCNCHJBDHM_Users.Count; i++)
+				UpdateListCounter(cont.ACCNCHJBDHM_UsersList.Count);
+				for(int i = 0; i < cont.ACCNCHJBDHM_UsersList.Count; i++)
 				{
 					EAJCBFGKKFA_FriendInfo f = new EAJCBFGKKFA_FriendInfo();
-					f.KHEKNNFCAOI(cont.ACCNCHJBDHM_Users[i]);
+					f.KHEKNNFCAOI(cont.ACCNCHJBDHM_UsersList[i]);
 					friends.Add(f);
 				}
 				this.StartCoroutineWatched(OnSuccessSearchFriend());
@@ -595,7 +595,7 @@ namespace XeApp.Game.Menu
 		{
 			m_guestInfoList[select].isFavorite = true;
 			NKOBMDPHNGP_EventRaidLobby evLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
-			NKOBMDPHNGP_EventRaidLobby.ELKMKCNPDFO f = evLobby.ACCNCHJBDHM_Users.Find((NKOBMDPHNGP_EventRaidLobby.ELKMKCNPDFO data) =>
+			NKOBMDPHNGP_EventRaidLobby.ELKMKCNPDFO f = evLobby.ACCNCHJBDHM_UsersList.Find((NKOBMDPHNGP_EventRaidLobby.ELKMKCNPDFO data) =>
 			{
 				//0x129FBFC
 				return m_guestInfoList[select].playerId == data.MLPEHNBNOGD_Id;
@@ -613,7 +613,7 @@ namespace XeApp.Game.Menu
 		{
 			m_guestInfoList[select].isFavorite = false;
 			NKOBMDPHNGP_EventRaidLobby evLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
-			NKOBMDPHNGP_EventRaidLobby.ELKMKCNPDFO f = evLobby.ACCNCHJBDHM_Users.Find((NKOBMDPHNGP_EventRaidLobby.ELKMKCNPDFO data) =>
+			NKOBMDPHNGP_EventRaidLobby.ELKMKCNPDFO f = evLobby.ACCNCHJBDHM_UsersList.Find((NKOBMDPHNGP_EventRaidLobby.ELKMKCNPDFO data) =>
 			{
 				//0x129FCD8
 				return m_guestInfoList[select].playerId == data.MLPEHNBNOGD_Id;
@@ -677,7 +677,7 @@ namespace XeApp.Game.Menu
 		{
 			m_sortType = (SortItem) sortSaveData.LHPDCGNKPHD_sortItem;
 			m_sortOrder = (GeneralList.SortOrder) sortSaveData.EILKGEADKGH_order;
-			m_rarityFilter = (uint) sortSaveData.ACCHOFLOOEC_filter;
+			m_rarityFilter = (uint) sortSaveData.ACCHOFLOOEC_RarityFilter;
 			m_attrFilter = (uint)sortSaveData.BOFFOHHLLFG_attributeFilter;
 			m_seriesFilter = (uint)sortSaveData.BBIIHLNBHDE_seriaseFilter;
 			m_buttonRuntime.ChangePreset(GeneralListButtonRuntime.Preset.FriendList);

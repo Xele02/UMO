@@ -67,7 +67,7 @@ namespace XeApp.Game.Menu
 		{
 			if (m_name.horizontalOverflow != UnityEngine.HorizontalWrapMode.Wrap)
 				m_name.horizontalOverflow = UnityEngine.HorizontalWrapMode.Wrap;
-			TextGeneratorUtility.SetTextRectangleMessage(m_name, data.ADCMNODJBGJ_EmblemName, 2, JpStringLiterals.StringLiteral_12038);
+			TextGeneratorUtility.SetTextRectangleMessage(m_name, data.ADCMNODJBGJ_Title, 2, JpStringLiterals.StringLiteral_12038);
 			SetDegreeImage(data.MDPKLNFFDBO_EmblemId);
 			if(data.HMFFHLPNMPH > 0)
 			{

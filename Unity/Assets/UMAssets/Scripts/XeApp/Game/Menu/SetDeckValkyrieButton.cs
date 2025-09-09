@@ -62,7 +62,7 @@ namespace XeApp.Game.Menu
 				NHDJHOPLMDE data = new NHDJHOPLMDE(viewUnitData.JOKFNBLEILN_Valkyrie.GPPEFLKGGGJ_ValkyrieId, 0);
 				if(data != null)
 				{
-					if(data.LAKLFHGMCLI((SeriesAttr.Type)viewMusicData.AIHCEGFANAM_Serie))
+					if(data.LAKLFHGMCLI((SeriesAttr.Type)viewMusicData.AIHCEGFANAM_SerieAttr))
 					{
 						m_viewValkyrieAbilityData = data;
 					}

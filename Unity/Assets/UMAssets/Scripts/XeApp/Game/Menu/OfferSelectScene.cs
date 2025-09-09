@@ -348,7 +348,7 @@ namespace XeApp.Game.Menu
 			m_controller.SetOrderButton(OrderButton, ProgressButton, CompleteButton);
 			IsEnterCorutineEnd = false;
 			MenuScene.Instance.InputDisable();
-			pd = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave;
+			pd = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
 			if (pd != null)
 			{
 				if (!pd.DAEJHMCMFJD_Offer.MLBBKNLPBBD_HasShowTuto(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0))
@@ -491,14 +491,14 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_DivaOfferHelp()
 		{
 			//0x170CB7C
-			if(KDHGBOOECKC.HHCJCDFCLOB.MGHPDFMDFCJ() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DAEJHMCMFJD_Offer.MLBBKNLPBBD_HasShowTuto(BOPFPIHGJMD.PDLKAKEABDP.LGJIPMIHAKC_2))
+			if(KDHGBOOECKC.HHCJCDFCLOB.MGHPDFMDFCJ() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_HasShowTuto(BOPFPIHGJMD.PDLKAKEABDP.LGJIPMIHAKC_2))
 			{
-				for(int i = 0; i < CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList.Count; i++)
+				for(int i = 0; i < CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList.Count; i++)
 				{
 					GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.AHOBDLOOLHD(i + 1, KDHGBOOECKC.HHCJCDFCLOB.HFLNFKFGEJH(i + 1));
 				}
 				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
-				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DAEJHMCMFJD_Offer.ILMPHFPFLJE(BOPFPIHGJMD.PDLKAKEABDP.LGJIPMIHAKC_2, true);
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.ILMPHFPFLJE(BOPFPIHGJMD.PDLKAKEABDP.LGJIPMIHAKC_2, true);
 				yield return Co.R(TutorialManager.TryShowTutorialCoroutine(CheckTutorialFunc_OpenDivaOffer));
 			}
 		}
@@ -508,7 +508,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_CostumeUpgradeTutorial()
 		{
 			//0x170C1E8
-			if(MOEALEGLGCH.CDOCOLOKCJK() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(0))
+			if(MOEALEGLGCH.CDOCOLOKCJK() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(0))
 			{
 				IsTutorial = true;
 				IsPopupPhase = false;

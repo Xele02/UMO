@@ -9,32 +9,32 @@ public class HHPEMHHCKBE_Compo : DIHHCBACKGG_DbSection
 	public class MLMDKHBFOJM
 	{
 		public int FBGGEFFJJHB = 0x3fb377; // 0x8
-		private int EHOIENNDEDH; // 0xC
-		public int[] OGEBLOHMGAM; // 0x10
-		public int[] AHGCGHAAHOO; // 0x14
-		public int EAJCFBCHIFB; // 0x18
+		private int EHOIENNDEDH_Crypted; // 0xC
+		public int[] OGEBLOHMGAM_Crypted; // 0x10
+		public int[] AHGCGHAAHOO_ItemIdCrypted; // 0x14
+		public int EAJCFBCHIFB_Crypted; // 0x18
 
-		public int PPFNGGCBJKC { get { return EHOIENNDEDH ^ FBGGEFFJJHB; } set { EHOIENNDEDH = value ^ FBGGEFFJJHB; } } //0x18337DC DEMEPMAEJOO 0x1833654 HIGKAIDMOKN
-		public int EKLIPGELKCL { get { return EAJCFBCHIFB ^ FBGGEFFJJHB; } set { EAJCFBCHIFB = value ^ FBGGEFFJJHB; } } //0x18337EC OEEHBGECGKL 0x1833664 GHLMHLJJBIG
+		public int PPFNGGCBJKC { get { return EHOIENNDEDH_Crypted ^ FBGGEFFJJHB; } set { EHOIENNDEDH_Crypted = value ^ FBGGEFFJJHB; } } //0x18337DC DEMEPMAEJOO 0x1833654 HIGKAIDMOKN
+		public int EKLIPGELKCL { get { return EAJCFBCHIFB_Crypted ^ FBGGEFFJJHB; } set { EAJCFBCHIFB_Crypted = value ^ FBGGEFFJJHB; } } //0x18337EC OEEHBGECGKL 0x1833664 GHLMHLJJBIG
 
 		//// RVA: 0x18337FC Offset: 0x18337FC VA: 0x18337FC
 		public int JCJGGHGIKIJ()
 		{
-			if(AHGCGHAAHOO != null)
-				return AHGCGHAAHOO.Length;
+			if(AHGCGHAAHOO_ItemIdCrypted != null)
+				return AHGCGHAAHOO_ItemIdCrypted.Length;
 			return 0;
 		}
 
 		//// RVA: 0x1833810 Offset: 0x1833810 VA: 0x1833810
 		public int CBLLFCGEJAI(int OIPCCBHIKIA)
 		{
-			return AHGCGHAAHOO[OIPCCBHIKIA] ^ FBGGEFFJJHB;
+			return AHGCGHAAHOO_ItemIdCrypted[OIPCCBHIKIA] ^ FBGGEFFJJHB;
 		}
 
 		//// RVA: 0x1833864 Offset: 0x1833864 VA: 0x1833864
 		public int HBJMCLGKLBA(int OIPCCBHIKIA)
 		{
-			return OGEBLOHMGAM[OIPCCBHIKIA] ^ FBGGEFFJJHB;
+			return OGEBLOHMGAM_Crypted[OIPCCBHIKIA] ^ FBGGEFFJJHB;
 		}
 
 		//// RVA: 0x1833760 Offset: 0x1833760 VA: 0x1833760
@@ -72,12 +72,12 @@ public class HHPEMHHCKBE_Compo : DIHHCBACKGG_DbSection
 			data.EKLIPGELKCL = array[i].EKLIPGELKCL;
 			int[] l1 = array[i].AIHOJKFNEEN;
 			uint[] l2 = array[i].BFINGCJHOHI;
-			data.AHGCGHAAHOO = new int[l1.Length];
-			data.OGEBLOHMGAM = new int[l2.Length];
+			data.AHGCGHAAHOO_ItemIdCrypted = new int[l1.Length];
+			data.OGEBLOHMGAM_Crypted = new int[l2.Length];
 			for(int j = 0; j < l1.Length; j++)
 			{
-				data.AHGCGHAAHOO[j] = data.FBGGEFFJJHB ^ l1[j];
-				data.OGEBLOHMGAM[j] = data.FBGGEFFJJHB ^ (int)l2[j];
+				data.AHGCGHAAHOO_ItemIdCrypted[j] = data.FBGGEFFJJHB ^ l1[j];
+				data.OGEBLOHMGAM_Crypted[j] = data.FBGGEFFJJHB ^ (int)l2[j];
 			}
 			CDENCMNHNGA.Add(data);
 		}

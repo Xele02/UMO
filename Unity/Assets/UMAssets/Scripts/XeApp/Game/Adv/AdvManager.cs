@@ -855,7 +855,7 @@ namespace XeApp.Game.Adv
 							NameEntry.NameEntry.ShowPlayerNameEntry("", (string name) =>
 							{
 								//0xBC9534
-								CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName = name;
+								CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName = name;
 								isWait = false;
 							}, NetErrorHandler);
 							while (isWait)
@@ -1593,11 +1593,11 @@ namespace XeApp.Game.Adv
 				yield break;
 			}
 			BIFNGFAIEIL.HHCJCDFCLOB.ALIANOFCAEI();
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LNOOKHJBENO_StoryRecord.LOAOLBNFNNP_InitDefault();
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LNOOKHJBENO_StoryRecord.LOAOLBNFNNP_InitDefault();
 			CIOECGOMILE.HHCJCDFCLOB.OIEBCNPOMIB_UpdateDayChange(true);
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.MNLAJEDKLCI_StamineLotTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.JLJJHDGEHLK_RecvSns = 1;
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd = 1;
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MNLAJEDKLCI_StamineLotTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.JLJJHDGEHLK_RecvSns = 1;
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd = 1;
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PPOJCDCCFNI_TutorialEnd = 1;
 			BIFNGFAIEIL.HHCJCDFCLOB.DLKJAPDLDFG(true, 0);
 			bool isWait = true;
@@ -1624,7 +1624,7 @@ namespace XeApp.Game.Adv
 			}, null);
 			while(isWait)
 				yield return null;
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.AGEAPKNODHO();
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.AGEAPKNODHO();
 			BasicTutorialManager.Instance.Release();
 			Destroy(BasicTutorialManager.Instance);
 			GameManager.Instance.IsTutorial = false;

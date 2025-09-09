@@ -209,7 +209,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEC4E90 Offset: 0xEC4E90 VA: 0xEC4E90
 		private bool CheckFirstAdvVOP()
 		{
-			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DAEJHMCMFJD_Offer.MLBBKNLPBBD_HasShowTuto(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0))
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_HasShowTuto(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0))
 			{
 				int advId = 88;
 				if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
@@ -222,7 +222,7 @@ namespace XeApp.Game.Menu
 				else
 				{
 					Database.Instance.advResult.Setup("Menu", TransitionUniqueId.OFFERSELECT, new AdvSetupParam());
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(advId);
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(advId);
 					Database.Instance.advSetup.Setup(adv.KKPPFAHFOJI_FileId);
 					MenuScene.Instance.GotoAdventure(true);
 					ILCCJNDFFOB.HHCJCDFCLOB.BKLNHBHDDEJ(JpStringLiterals.StringLiteral_16417);

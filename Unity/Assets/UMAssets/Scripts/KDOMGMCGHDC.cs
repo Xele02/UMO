@@ -21,9 +21,9 @@ public class KDOMGMCGHDC
 	}
 
 	//// RVA: 0xE862CC Offset: 0xE862CC VA: 0xE862CC
-	public static HJNMIKNAMFH ODIAFJCPIFO(int DLAEJOBELBH_MusicId, int AHHJLDLAPAN_DivaId, BBHNACPENDM_ServerSaveData AHEFHIMGIBI_SaveServer, int EFFAFONBNFM_PrevMusicLevel)
+	public static HJNMIKNAMFH ODIAFJCPIFO(int DLAEJOBELBH_MusicId, int AHHJLDLAPAN_DivaId, BBHNACPENDM_ServerSaveData _AHEFHIMGIBI_PlayerData, int EFFAFONBNFM_PrevMusicLevel)
 	{
-		DEKKMGAFJCG_Diva saveDiva = AHEFHIMGIBI_SaveServer.DGCJCAHIAPP_Diva;
+		DEKKMGAFJCG_Diva saveDiva = _AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva;
 		HJNMIKNAMFH res = new HJNMIKNAMFH();
 		LPPGENBEECK_MusicMaster dbMusic = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music;
 		JJOPEDJCCJK_Exp dbExp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FMPEMFPLPDA_Exp;
@@ -78,13 +78,13 @@ public class KDOMGMCGHDC
 	}
 
 	//// RVA: 0xE86F00 Offset: 0xE86F00 VA: 0xE86F00
-	public static HJNMIKNAMFH NEGKGKKLICK(int DLAEJOBELBH_MusicId, int AHHJLDLAPAN_DivaId, BBHNACPENDM_ServerSaveData AHEFHIMGIBI_SaveData)
+	public static HJNMIKNAMFH NEGKGKKLICK(int DLAEJOBELBH_MusicId, int AHHJLDLAPAN_DivaId, BBHNACPENDM_ServerSaveData _AHEFHIMGIBI_PlayerData)
 	{
 		int level = 0;
 		HJNMIKNAMFH res = null;
 		do
 		{
-			res = ODIAFJCPIFO(DLAEJOBELBH_MusicId, AHHJLDLAPAN_DivaId, AHEFHIMGIBI_SaveData, level);
+			res = ODIAFJCPIFO(DLAEJOBELBH_MusicId, AHHJLDLAPAN_DivaId, _AHEFHIMGIBI_PlayerData, level);
 		} while (!res.NBHEBLNHOJO_IsMax && !res.HHBJAEOIGIH_IsLocked && level++ < 8);
 		return res;
 	}

@@ -44,7 +44,7 @@ namespace XeApp.Game.Menu
 				if(!episodeData.CCBKMCLDGAD_HasReward)
 				{
 					m_compAnimeLayout.StartChildrenAnimGoStop("num");
-					m_num.SetNumber(episodeData.ABLHIAEDJAI_CurrentPoint, 0);
+					m_num.SetNumber(episodeData.ABLHIAEDJAI_CurrentValue, 0);
 					m_den.SetNumber(episodeData.DMHDNKILKGI_MaxPoint, 0);
 				}
 				else

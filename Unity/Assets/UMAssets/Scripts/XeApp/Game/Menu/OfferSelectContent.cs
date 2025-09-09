@@ -638,8 +638,8 @@ namespace XeApp.Game.Menu
 			}
 			OfferLogoState.StartChildrenAnimGoStop("02");
 			StringBuilder str = new StringBuilder(64);
-			str.SetFormat("diva_s_{0:D2}", m_view.AHHJLDLAPAN);
-			m_DivaIcon.StartChildrenAnimGoStop(m_view.AHHJLDLAPAN.ToString("D2"));
+			str.SetFormat("diva_s_{0:D2}", m_view.AHHJLDLAPAN_DivaId);
+			m_DivaIcon.StartChildrenAnimGoStop(m_view.AHHJLDLAPAN_DivaId.ToString("D2"));
 			DivaName.text = MessageManager.Instance.GetMessage("master", str.ToString());
 			SetDivaTimeWatcher(m_view.LOAEGNGKFNF_Expr);
 		}

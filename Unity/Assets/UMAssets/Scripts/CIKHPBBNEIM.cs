@@ -69,7 +69,7 @@ public class CIKHPBBNEIM
                         ODGCADPPIFA GJLFANGDGCL = new ODGCADPPIFA();
                         GJLFANGDGCL.BCCHOBPJJKE_SceneId = l[j].BCCHOBPJJKE_Id;
                         GJLFANGDGCL.BPMAIEFLOPP = l[j].EKLIPGELKCL_Rarity;
-                        MMPBPOIFDAF_Scene.PMKOFEIONEG saveScene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA[l[j].BCCHOBPJJKE_Id - 1];
+                        MMPBPOIFDAF_Scene.PMKOFEIONEG saveScene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA[l[j].BCCHOBPJJKE_Id - 1];
                         GJLFANGDGCL.IADCHIFJHOJ_Unlocked = saveScene.IHIAFIHAAPO_Unlocked;
                         GJLFANGDGCL.CBLHLEKLLDE = false;
                         GJLFANGDGCL.ILOKENBBBAE_Available = false;

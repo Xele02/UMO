@@ -286,13 +286,13 @@ namespace XeApp.Game.Menu
 		{
 			List<LFAFJCNKLML.FHLDDEKAJKI> res = new List<LFAFJCNKLML.FHLDDEKAJKI>();
 			int a1 = add_point;
-			int a2 = data.ABLHIAEDJAI_Point;
+			int a2 = data.ABLHIAEDJAI_CurrentValue;
 			for(int i = data.GKIKAABHAAD_Level; i < data.OCOOHBINGBG_LevelInfo.Count; i++)
 			{
-				if(data.OCOOHBINGBG_LevelInfo[i].DNBFMLBNAEE_NeedPoint >= a2 + a1)
+				if(data.OCOOHBINGBG_LevelInfo[i].DNBFMLBNAEE_Point >= a2 + a1)
 				{
 					res.Add(data.OCOOHBINGBG_LevelInfo[i]);
-					a1 = data.OCOOHBINGBG_LevelInfo[i].DNBFMLBNAEE_NeedPoint - a2;
+					a1 = data.OCOOHBINGBG_LevelInfo[i].DNBFMLBNAEE_Point - a2;
 					a2 = 0;
 				}
 			}

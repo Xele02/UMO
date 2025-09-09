@@ -49,7 +49,7 @@ namespace XeApp.Game.Menu
 		{
 			if (musicId == 0)
 				return;
-			KDOMGMCGHDC.HJNMIKNAMFH a = KDOMGMCGHDC.ODIAFJCPIFO(musicId, divaData.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, divaData.PKLPGBKKFOL_DivaLevels[musicId - 1]);
+			KDOMGMCGHDC.HJNMIKNAMFH a = KDOMGMCGHDC.ODIAFJCPIFO(musicId, divaData.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, divaData.PKLPGBKKFOL_DivaLevels[musicId - 1]);
 			if (a == null)
 				Reset();
 			else

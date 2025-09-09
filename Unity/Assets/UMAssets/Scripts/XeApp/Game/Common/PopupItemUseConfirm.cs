@@ -202,18 +202,18 @@ namespace XeApp.Game.Common
 				}
 				else if(itemCat == EKLNMHFCAOI.FKGCBLHOOCL_Category.CIOGEKJNMBB_RareUpItem)
 				{
-					return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DPNKPPBEAGJ_RareUpItem.MCPIBDPKBBD(currentTime);
+					return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DPNKPPBEAGJ_RareUpItem.MCPIBDPKBBD(currentTime);
 				}
 			}
 			else
 			{
 				if (itemCat == EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem)
 				{
-					return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.AFHFIPLOKMN_LimitedItem.BNGLMLIMFDM(EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId), currentTime);
+					return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.AFHFIPLOKMN_LimitedItem.BNGLMLIMFDM(EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId), currentTime);
 				}
 				else if (itemCat == EKLNMHFCAOI.FKGCBLHOOCL_Category.CKCPFLDGILD_LimitedCompoItem)
 				{
-					return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GJCOJBDOOJG_LimitedCompoItem.BNGLMLIMFDM(EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId), currentTime);
+					return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GJCOJBDOOJG_LimitedCompoItem.BNGLMLIMFDM(EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId), currentTime);
 				}
 			}
 			return res;

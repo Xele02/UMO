@@ -12,7 +12,7 @@ public class MPOEMCEBBJH_Pilot : DIHHCBACKGG_DbSection
 		[UMOMember(ReaderMember = "PPFNGGCBJKC", Desc = "Id in the list")]
 		public short PFGJJLGLPAC_Id; // 0x8
 		[UMOMember(ReaderMember = "JPFMJHLCMJL", Desc = "Serie")]
-		public sbyte AIHCEGFANAM_Sa; // 0xA
+		public sbyte AIHCEGFANAM_SerieAttr; // 0xA
 		[UMOMember(ReaderMember = "MJMPANIBFED", Desc = "")]
 		public short CHIMPKJDCPP_Pid; // 0xC
 
@@ -71,7 +71,7 @@ public class MPOEMCEBBJH_Pilot : DIHHCBACKGG_DbSection
 		{
 			KOAKMNKEHDE_PilotInfo data = new KOAKMNKEHDE_PilotInfo();
 			data.PFGJJLGLPAC_Id = (short)array[i].PPFNGGCBJKC;
-			data.AIHCEGFANAM_Sa = (sbyte)array[i].JPFMJHLCMJL;
+			data.AIHCEGFANAM_SerieAttr = (sbyte)array[i].JPFMJHLCMJL;
 			data.CHIMPKJDCPP_Pid = (short)array[i].MJMPANIBFED;
 			CDENCMNHNGA_PilotList.Add(data);
 		}

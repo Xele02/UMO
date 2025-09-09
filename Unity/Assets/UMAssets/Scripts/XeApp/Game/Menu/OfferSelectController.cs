@@ -123,7 +123,7 @@ namespace XeApp.Game.Menu
 			}).First();
 			int attr = 1;
 			if (valk != null)
-				attr = valk.AIHCEGFANAM_Sa;
+				attr = valk.AIHCEGFANAM_SerieAttr;
 			UnlockFadeManager.Create();
 			yield return Co.R(UnlockFadeManager.Instance.Co_LoadFadeEffect(attr));
 			UnlockFadeManager.Instance.GetEffect().Enter();
@@ -519,7 +519,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1867E98 Offset: 0x1867E98 VA: 0x1867E98
 		private void OnClockFastComp(int index)
 		{
-			if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave == null)
+			if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData == null)
 				return;
 			if (IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database == null)
 				return;
@@ -534,14 +534,14 @@ namespace XeApp.Game.Menu
 			KDHGBOOECKC.LKBMNFAOOII d2_ProgramCost = KDHGBOOECKC.HHCJCDFCLOB.NNMPMKGBJFB(viewData.FGHGMHPNEMG_Category, viewData.PPFNGGCBJKC, BOPFPIHGJMD.AGGLEGJDLGF.JPAODAPCJGG_1_Program, -1);
 			int useCount = 0;
 			int haveCount = 0;
-			int a2_DiffFastProgram = KDHGBOOECKC.HHCJCDFCLOB.CKINCELGOEE_GetNumFastProgramAvaiable() - d2_ProgramCost.ADPPAIPFHML_UseCount;
+			int a2_DiffFastProgram = KDHGBOOECKC.HHCJCDFCLOB.CKINCELGOEE_GetNumFastProgramAvaiable() - d2_ProgramCost.ADPPAIPFHML_Num;
 			IsStones = a2_DiffFastProgram < 0;
-			int a3_DiffPaidCurrency = CIOECGOMILE.HHCJCDFCLOB.DEAPMEIDCGC_GetTotalPaidCurrency() - d1_StoneCost.ADPPAIPFHML_UseCount;
+			int a3_DiffPaidCurrency = CIOECGOMILE.HHCJCDFCLOB.DEAPMEIDCGC_GetTotalPaidCurrency() - d1_StoneCost.ADPPAIPFHML_Num;
 			string s1, s2;
 			PopupButton.ButtonLabel a4;
 			if (a2_DiffFastProgram < 0)
 			{
-				useCount = d1_StoneCost.ADPPAIPFHML_UseCount;
+				useCount = d1_StoneCost.ADPPAIPFHML_Num;
 				haveCount = CIOECGOMILE.HHCJCDFCLOB.DEAPMEIDCGC_GetTotalPaidCurrency();
 				if (a3_DiffPaidCurrency < 0)
 				{
@@ -588,9 +588,9 @@ namespace XeApp.Game.Menu
 				//0x186C200
 				long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
 				fastCompleteItemData = KDHGBOOECKC.HHCJCDFCLOB.NNMPMKGBJFB(viewList[index].PCCFAKEOBIC_EndDate - t, IsStones ? BOPFPIHGJMD.AGGLEGJDLGF.NLGNJNJBLEJ_2_Stone : BOPFPIHGJMD.AGGLEGJDLGF.JPAODAPCJGG_1_Program);
-				if(useCount != fastCompleteItemData.ADPPAIPFHML_UseCount)
+				if(useCount != fastCompleteItemData.ADPPAIPFHML_Num)
 				{
-					popText = Smart.Format(text, fastCompleteItemData.ADPPAIPFHML_UseCount, haveCount, haveCount - fastCompleteItemData.ADPPAIPFHML_UseCount);
+					popText = Smart.Format(text, fastCompleteItemData.ADPPAIPFHML_Num, haveCount, haveCount - fastCompleteItemData.ADPPAIPFHML_Num);
 					content.SetMainText(popText);
 				}
 			};
@@ -626,11 +626,11 @@ namespace XeApp.Game.Menu
 						}
 						if(!IsStones)
 						{
-							KDHGBOOECKC.HHCJCDFCLOB.HJIJAOHCLOE(fastCompleteItemData.ADPPAIPFHML_UseCount);
+							KDHGBOOECKC.HHCJCDFCLOB.HJIJAOHCLOE(fastCompleteItemData.ADPPAIPFHML_Num);
 							CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
 							{
 								//0x186D0AC
-								ILCCJNDFFOB.HHCJCDFCLOB.FDFMKBGPALI(target.FGHGMHPNEMG_Category, target.PPFNGGCBJKC, 210002, fastCompleteItemData.ADPPAIPFHML_UseCount, KDHGBOOECKC.HHCJCDFCLOB.CKINCELGOEE_GetNumFastProgramAvaiable(), (int)rest_time);
+								ILCCJNDFFOB.HHCJCDFCLOB.FDFMKBGPALI(target.FGHGMHPNEMG_Category, target.PPFNGGCBJKC, 210002, fastCompleteItemData.ADPPAIPFHML_Num, KDHGBOOECKC.HHCJCDFCLOB.CKINCELGOEE_GetNumFastProgramAvaiable(), (int)rest_time);
 								KDHGBOOECKC.HHCJCDFCLOB.BCJNPJKGNHF(1);
 								IsSaveSuccess = true;
 							}, () =>
@@ -641,7 +641,7 @@ namespace XeApp.Game.Menu
 						}
 						else
 						{
-							int itemNum = fastCompleteItemData.ADPPAIPFHML_UseCount / fastCompleteItemData.AICGFEIBKFL_Price;
+							int itemNum = fastCompleteItemData.ADPPAIPFHML_Num / fastCompleteItemData.AICGFEIBKFL_Price;
 							CIOECGOMILE.HHCJCDFCLOB.ELGMEAEDOHI_OfferFastCompleteByPaidVC(() =>
 							{
 								//0x186D2CC
@@ -1118,7 +1118,7 @@ namespace XeApp.Game.Menu
 		{
 			//0x1702E8C
 			IsOrderInduction = true;
-			//CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DAEJHMCMFJD_Offer
+			//CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer
 			ButtonBase[] btns = m_orderListLayout.List.ScrollObjects[0].GetComponentsInChildren<ButtonBase>();
 			ButtonBase b = null;
 			for (int i = 0; i < btns.Length; i++)
@@ -1246,7 +1246,7 @@ namespace XeApp.Game.Menu
 			//0x186EFE0
 			bool closePopup = false;
 			saveData = GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer;
-			pd = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave;
+			pd = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
 			int LvMax = 0;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			text = bk.GetMessageByLabel("offer_diva_offer_levelup_text");

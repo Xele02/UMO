@@ -125,7 +125,7 @@ namespace XeApp.Game.Menu
 				}
 				if(IsAnyDivaMusicExp(GameManager.Instance.ViewPlayerData, e.DLAEJOBELBH_Id))
 				{
-					KDOMGMCGHDC.HJNMIKNAMFH data = KDOMGMCGHDC.ODIAFJCPIFO(e.DLAEJOBELBH_Id, m_divaData.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, m_divaData.PKLPGBKKFOL_DivaLevels[e.DLAEJOBELBH_Id - 1]);
+					KDOMGMCGHDC.HJNMIKNAMFH data = KDOMGMCGHDC.ODIAFJCPIFO(e.DLAEJOBELBH_Id, m_divaData.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, m_divaData.PKLPGBKKFOL_DivaLevels[e.DLAEJOBELBH_Id - 1]);
 					if(data != null)
 					{
 						int a = data.PBGFIOONCMB_NextLevelMusicExp - data.PMBFNFOCNAJ_CurLevelMusicExp;
@@ -234,7 +234,7 @@ namespace XeApp.Game.Menu
 			{
 				if(viewPlayerData.NBIGLBMHEDC_Divas[i].IPJMPBANBPP_Enabled)
 				{
-					KDOMGMCGHDC.ODIAFJCPIFO(musicId, viewPlayerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, viewPlayerData.NBIGLBMHEDC_Divas[i].PKLPGBKKFOL_DivaLevels[musicId - 1]);
+					KDOMGMCGHDC.ODIAFJCPIFO(musicId, viewPlayerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, viewPlayerData.NBIGLBMHEDC_Divas[i].PKLPGBKKFOL_DivaLevels[musicId - 1]);
 					if (viewPlayerData.NBIGLBMHEDC_Divas[i].HMBECPGHPOE_DivaExps[musicId - 1] > 0)
 						return true;
 				}

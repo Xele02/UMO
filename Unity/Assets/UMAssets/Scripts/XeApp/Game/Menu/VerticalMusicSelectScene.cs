@@ -147,9 +147,9 @@ namespace XeApp.Game.Menu
 				m_musicTab = VerticalMusicSelecChoiceMusicListTab.MusicTab.Event;
 			
 			openSimulationLive = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("mv_player_level", 5) <= 
-				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 
-			m_simulationButton.SetTicketNum(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.GKKDNOFMJJN_NumTicket);
+			m_simulationButton.SetTicketNum(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.GKKDNOFMJJN_NumTicket);
 			Database.Instance.bonusData.ClearEpisodeBonus();
 			if(m_pickupFreeMusicId > 0)
 				songId = m_pickupFreeMusicId;
@@ -420,7 +420,7 @@ namespace XeApp.Game.Menu
 				if (!MenuScene.Instance.DirtyChangeScene)
 				{
 					if (KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk() &&
-						!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DAEJHMCMFJD_Offer.MLBBKNLPBBD_HasShowTuto(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0/*0*/))
+						!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_HasShowTuto(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0/*0*/))
 					{
 						yield return Co.R(TutorialProc.Co_OffeReleaseTutorial(InputLimitButton.VOP, MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.VOP),
 							() =>
@@ -435,7 +435,7 @@ namespace XeApp.Game.Menu
 				}
 				if (!MenuScene.Instance.DirtyChangeScene)
 				{
-					if(SettingMenuPanel.IsValkyrieTuneUpUnlock() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade))
+					if(SettingMenuPanel.IsValkyrieTuneUpUnlock() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade))
 					{
 						yield return Co.R(TutorialProc.Co_ValkyrieUpgrade(MenuScene.Instance.FooterMenu.FindButton(MenuFooterControl.Button.Setting), BasicTutorialMessageId.Id_ValkyrieUpgradeHome, InputLimitButton.Setting, TutorialPointer.Direction.Down, null, m_musicList.MusicScrollView));
 						//LAB_00ac36b4
@@ -1430,7 +1430,7 @@ namespace XeApp.Game.Menu
 			}
 			if (musicListData.IsHighLevel)
 			{
-				return SeriesToNewSeriesBgId[selectMusicData.AIHCEGFANAM_Serie];
+				return SeriesToNewSeriesBgId[selectMusicData.AIHCEGFANAM_SerieAttr];
 			}
 			else
 			{
@@ -2039,7 +2039,7 @@ namespace XeApp.Game.Menu
 		{
 			if (series == 0)
 				return true;
-			return musicData.AIHCEGFANAM_Serie == series;
+			return musicData.AIHCEGFANAM_SerieAttr == series;
 		}
 
 		// // RVA: 0xBEF238 Offset: 0xBEF238 VA: 0xBEF238
@@ -2147,7 +2147,7 @@ namespace XeApp.Game.Menu
 		private bool IsCanDoUnitHelp()
 		{
 			int multi_dance_player_level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("multi_dance_player_level", 3);
-			if(multi_dance_player_level <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level)
+			if(multi_dance_player_level <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level)
 			{
 				if(!GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.INEAGJMJLFG_TutorialAlreadyFlags.ODKIHPBEOEC_IsTrue(48))
 				{

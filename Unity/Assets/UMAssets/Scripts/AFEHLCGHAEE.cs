@@ -6,7 +6,7 @@ public class AFEHLCGHAEE_Strings
 	public static string JNPCEKKNEBF_scene_level = "scene_level"; // 0x8
 	public static string KLKOINDHOHG_kind = "kind"; // 0xC
 	public static string JMPEGAACBKA_di_bg = "di_bg"; // 0x10
-	public static string ADCMNODJBGJ_title = "title"; // 0x14
+	public static string ADCMNODJBGJ_Title = "title"; // 0x14
 	public static string MDIBIIHAAPN_next_page = "next_page"; // 0x18
 	public static string CIGKEJEONGE_af_main_clothes = "af_main_clothes"; // 0x1C
 	public static string CDOBCKMHAOK_inf = "inf"; // 0x20
@@ -56,7 +56,7 @@ public class AFEHLCGHAEE_Strings
 	public static string OOIJCMLEAJP_is_received = "is_received"; // 0xD0
 	public static string BIOGKIEECGN_created_at = "created_at"; // 0xD4
 	public static string IIPIPIABGDG_nam = "nam"; // 0xD8
-	public static string AIPJAKIFMPN_dv1 = "dv1"; // 0xDC
+	public static string AIPJAKIFMPN_Diva1Id = "dv1"; // 0xDC
 	public static string DHDHHHOAIKF_regular_ranking_ranks = "regular_ranking_ranks"; // 0xE0
 	public static string DIPKCALNIII_diva_id = "diva_id"; // 0xE4
 	public static string LBMELIONKKB_thid = "thid"; // 0xE8
@@ -123,7 +123,7 @@ public class AFEHLCGHAEE_Strings
 	public static string FHBJOLPCAPN_max_count = "max_count"; // 0x1DC
 	public static string KJGHLKIBGGD_update_type = "update_type"; // 0x1E0
 	public static string OEGHFGCHIFA_up_per = "up_per"; // 0x1E4
-	public static string AEMHPNJBFFD_is_lot = "is_lot"; // 0x1E8
+	public static string AEMHPNJBFFD_IsLot = "is_lot"; // 0x1E8
 	public static string FOILNHKHHDF_pt = "pt"; // 0x1EC
 	public static string BIEPKMIADMM_user_rank = "user_rank"; // 0x1F0
 	public static string KMFHHOANPFH_v_max = "v_max"; // 0x1F4
@@ -154,7 +154,7 @@ public class AFEHLCGHAEE_Strings
 	public static string DLDKPDCPHLN_exprience_pt = "exprience_pt"; // 0x258
 	public static string DDBEJNGJIPF_para_foldwave = "para_foldwave"; // 0x25C
 	public static string KLHFCNIDECB_tokusho_ho_android = "tokusho_ho_android"; // 0x260
-	public static string AEBENOJEGOJ_max_sc = "max_sc"; // 0x264
+	public static string AEBENOJEGOJ_MaxScore = "max_sc"; // 0x264
 	public static string ILJEIMNCKME_cf_id = "cf_id"; // 0x268
 	public static string ODMJFHDIGLP_cnd = "cnd"; // 0x26C
 	public static string PCMDFNHIEBE_valkyrie_id = "valkyrie_id"; // 0x270
@@ -186,7 +186,7 @@ public class AFEHLCGHAEE_Strings
 	public static string JGEIIONMJMI_v_in = "v_in"; // 0x2D8
 	public static string PAIIHEJIGKO_ds = "ds"; // 0x2DC
 	public static string ILJODCEHHGH_use_pt = "use_pt"; // 0x2E0
-	public static string ACABEFKBBEN_exp_frag = "exp_frag"; // 0x2E4
+	public static string ACABEFKBBEN_ExpFrag = "exp_frag"; // 0x2E4
 	public static string PAFFIBGPOJN__rare4only = "_rare4only"; // 0x2E8
 	public static string PNMKPKMDOND_af_main_lv = "af_main_lv"; // 0x2EC
 	public static string JJPFFMADLLB_shikin_kessai_ho_sub = "shikin_kessai_ho_sub"; // 0x2F0
@@ -239,7 +239,7 @@ public class AFEHLCGHAEE_Strings
 	public static string PFDDNKEOKBF_ch_mexp = "ch_mexp"; // 0x3AC
 	public static string PJFKNNNDMIA_to = "to"; // 0x3B0
 	public static string EBDNICPAFLB_s_slot = "s_slot"; // 0x3B4
-	public static string ADPPAIPFHML_num = "num"; // 0x3B8
+	public static string ADPPAIPFHML_Num = "num"; // 0x3B8
 	public static string JFMEKPDHJPP_player_account_status = "player_account_status"; // 0x3BC
 	public static string HPPHKHBPFMJ_serif_id = "serif_id"; // 0x3C0
 	public static string IFCJDGINBGF_facebook_uid = "facebook_uid"; // 0x3C4
@@ -249,7 +249,7 @@ public class AFEHLCGHAEE_Strings
 	public static string FMGKFCHAOCF_sp1 = "sp1"; // 0x3D4
 	public static string KBNGOBEAHIC_key_path = "key_path"; // 0x3D8
 	public static string MJBODMOLOBC_luck = "luck"; // 0x3DC
-	public static string ADLGKMBIPCA_fd = "fd"; // 0x3E0
+	public static string ADLGKMBIPCA_Fold = "fd"; // 0x3E0
 	public static string NEILEPPJKIN_favorite = "favorite"; // 0x3E4
 	public static string EMDMJBBKMHJ_age = "age"; // 0x3E8
 	public static string EJFAEKPGKNJ_daily = "daily"; // 0x3EC
@@ -352,7 +352,7 @@ public class AFEHLCGHAEE_Strings
 	public static string LOMHJBIJMOD_categories = "categories"; // 0x570
 	public static string JGOHPDKCJKB_rw = "rw"; // 0x574
 	public static string PJJFEAHIPGL_inventories = "inventories"; // 0x578
-	public static string ADKJLADBKKK_default_score = "default_score"; // 0x57C
+	public static string ADKJLADBKKK_DefaultScore = "default_score"; // 0x57C
 	public static string PBHBFBNFPJI_friend_requests = "friend_requests"; // 0x580
 	public static string CMENIBCJJNF_v_aw = "v_aw"; // 0x584
 	public static string NEMMJLNMEHB_money = "money"; // 0x588
@@ -479,8 +479,8 @@ public class AFEHLCGHAEE_Strings
 	public static string MIDCDCFCJJM_char_level = "char_level"; // 0x76C
 	public static string LLHFLCGIMPB_char_cos = "char_cos"; // 0x770
 	public static string HLLEEFLLFPD_home_show_diva = "home_show_diva"; // 0x774
-	public static string ADKDHKMPMHP_rate = "rate"; // 0x778
-	public static string AFKHNFBOMKI_sc = "sc"; // 0x77C
+	public static string ADKDHKMPMHP_Rate = "rate"; // 0x778
+	public static string AFKHNFBOMKI_Sc = "sc"; // 0x77C
 	public static string HHOCBLMEGGM_m_scene = "m_scene"; // 0x780
 	public static string POBGGHEKLIB_c_tm_ofs = "c_tm_ofs"; // 0x784
 	public static string NENOJMFOAOC_exec_num = "exec_num"; // 0x788
@@ -494,7 +494,7 @@ public class AFEHLCGHAEE_Strings
 	public static string IAGNOJOCBPF_normal = "/normal/"; // 0x7A8
 	public static string LIDBKCIMCKE_rarity = "rarity"; // 0x7AC
 	public static string HBKBKHACHHI_para_soul = "para_soul"; // 0x7B0
-	public static string AFPONJEJKCO_rename_date = "rename_date"; // 0x7B4
+	public static string AFPONJEJKCO_RenameDate = "rename_date"; // 0x7B4
 	public static string OJIMENABACH_price_amount_micros = "price_amount_micros"; // 0x7B8
 	public static string LCFIHFMFICM_b_coef = "b_coef"; // 0x7BC
 	public static string KHEBCAGHEIN_total_count = "total_count"; // 0x7C0
@@ -526,7 +526,7 @@ public class AFEHLCGHAEE_Strings
 	public static string OIMLBHPAMGD_vo_mexp = "vo_mexp"; // 0x828
 	public static string BHFBDOGBOKL_sta_save_time = "sta_save_time"; // 0x82C
 	public static string IFNLEKOILPM_updated_at = "updated_at"; // 0x830
-	public static string AGBCJMMMLON_step_index = "step_index"; // 0x834
+	public static string AGBCJMMMLON_StepIndex = "step_index"; // 0x834
 	public static string NBBLIKLDGKL_d_mis = "d_mis"; // 0x838
 	public static string KLJGEHBKMMG_new = "new"; // 0x83C
 	public static string KKAKGFJKMKL_get_main_obj_ids = "get_main_obj_ids"; // 0x840
@@ -599,7 +599,7 @@ public class AFEHLCGHAEE_Strings
 	public static string CAJKBDLCGOD_rdr2 = "rdr2"; // 0x94C
 	public static string IMEPEOAFIIB_cbrnk = "cbrnk"; // 0x950
 	public static string PNIFJJPHLDH_probability_per_group_key = "probability_per_group_key"; // 0x954
-	public static string ABLOIBMGLFD_em_id = "em_id"; // 0x958
+	public static string ABLOIBMGLFD_EmId = "em_id"; // 0x958
 	public static string KGMLFAFPOKP_flags = "flags"; // 0x95C
 	public static string KOEAHHAHDNP_mission_type = "mission_type"; // 0x960
 	public static string ICJEDACBMMF_start_t = "start_t"; // 0x964
@@ -658,7 +658,7 @@ public class AFEHLCGHAEE_Strings
 	public static string KBDOBONLNOJ_is_accepted = "is_accepted"; // 0xA38
 	public static string DFOIEJOKDKJ_avo = "avo"; // 0xA3C
 	public static string DNBFMLBNAEE_point = "point"; // 0xA40
-	public static string AHJNPEAMCCH_rewards = "rewards"; // 0xA44
+	public static string AHJNPEAMCCH_Rewards = "rewards"; // 0xA44
 	public static string CPAGFPBNGBC_information = "information"; // 0xA48
 	public static string DLAIGBEOGNN_ex = "ex"; // 0xA4C
 	public static string FBAIDPHDEBA_num_af = "num_af"; // 0xA50
@@ -690,7 +690,7 @@ public class AFEHLCGHAEE_Strings
 	public static string HCFCNNPOJAE_event_weekday = "event_weekday"; // 0xAB8
 	public static string LHAFADCJBME_bd = "bd"; // 0xABC
 	public static string NKAKDIEKAGL_open_pl_rank = "open_pl_rank"; // 0xAC0
-	public static string ACGLMKEBMDL_uc = "uc"; // 0xAC4
+	public static string ACGLMKEBMDL_Uc = "uc"; // 0xAC4
 	public static string MOHDLLIJELH_cont = "cont"; // 0xAC8
 	public static string CPGFPEDMDEH_have = "have"; // 0xACC
 	public static string GELKOLABEIF_af_main_deck = "af_main_deck"; // 0xAD0

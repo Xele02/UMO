@@ -227,7 +227,7 @@ namespace XeApp.Game.Menu
 						}
 						else
 						{
-							skillId = sceneInfo.MEOOLHNNMHL_GetCenterSkillId(false, m_musicData.FKDCCLPGKDK_JacketAttr, m_musicData.AIHCEGFANAM_Serie);
+							skillId = sceneInfo.MEOOLHNNMHL_GetCenterSkillId(false, m_musicData.FKDCCLPGKDK_JacketAttr, m_musicData.AIHCEGFANAM_SerieAttr);
 							if(skillId < 1)
 								resetDisplay = true;
 							else
@@ -295,8 +295,8 @@ namespace XeApp.Game.Menu
 							}
 							else
 							{
-								skillId = sceneInfo.FILPDDHMKEJ_GetLiveSkillId(false, m_musicData.FKDCCLPGKDK_JacketAttr, m_musicData.AIHCEGFANAM_Serie);
-								skillId2 = sceneInfo.FILPDDHMKEJ_GetLiveSkillId(true, m_musicData.FKDCCLPGKDK_JacketAttr, m_musicData.AIHCEGFANAM_Serie);
+								skillId = sceneInfo.FILPDDHMKEJ_GetLiveSkillId(false, m_musicData.FKDCCLPGKDK_JacketAttr, m_musicData.AIHCEGFANAM_SerieAttr);
+								skillId2 = sceneInfo.FILPDDHMKEJ_GetLiveSkillId(true, m_musicData.FKDCCLPGKDK_JacketAttr, m_musicData.AIHCEGFANAM_SerieAttr);
 								mask = ComparisonSkillInfo.SkillMask.None;
 								if(skillId == skillId2 && sceneInfo.BLPHPMBFIEI_LiveSkillHasSwitchPatternCond())
 								{

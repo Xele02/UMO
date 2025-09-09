@@ -58,7 +58,7 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB1E5F4 Offset: 0xB1E5F4 VA: 0xB1E5F4
-	public void AJIJCMKMAMA(SakashoErrorId PPFNGGCBJKC, CACGCMBKHDI_Request ADKIDBJCAJA, int MJACIGCPNDA, IMCBBOAFION EDIIEFHAOGP)
+	public void AJIJCMKMAMA(SakashoErrorId PPFNGGCBJKC, CACGCMBKHDI_Request _ADKIDBJCAJA_action, int MJACIGCPNDA, IMCBBOAFION EDIIEFHAOGP)
 	{
 		TextPopupSetting t = new TextPopupSetting();
 		t.TitleText = JGJFFKPFMDB.HHAEOPHPCEF(PPFNGGCBJKC);
@@ -83,7 +83,7 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB1E8C4 Offset: 0xB1E8C4 VA: 0xB1E8C4
-	public void ICELKJMJJJH(SakashoErrorId PPFNGGCBJKC, CACGCMBKHDI_Request ADKIDBJCAJA, int MJACIGCPNDA, IMCBBOAFION EDIIEFHAOGP, JFDNPFFOACP NEFKBBNKNPP)
+	public void ICELKJMJJJH(SakashoErrorId PPFNGGCBJKC, CACGCMBKHDI_Request _ADKIDBJCAJA_action, int MJACIGCPNDA, IMCBBOAFION EDIIEFHAOGP, JFDNPFFOACP NEFKBBNKNPP)
 	{
 		GameManager.Instance.CloseSnsNotice();
 		GameManager.Instance.CloseOfferNotice();
@@ -110,7 +110,7 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB1EC54 Offset: 0xB1EC54 VA: 0xB1EC54
-	public void CIKMDHMMCIL(CACGCMBKHDI_Request ADKIDBJCAJA, int CMCKNKKCNDK, IMCBBOAFION EDIIEFHAOGP)
+	public void CIKMDHMMCIL(CACGCMBKHDI_Request _ADKIDBJCAJA_action, int CMCKNKKCNDK, IMCBBOAFION EDIIEFHAOGP)
 	{
 		TextPopupSetting s = new TextPopupSetting();
 		s.TitleText = JpStringLiterals.StringLiteral_11776;
@@ -159,7 +159,7 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB1F3F8 Offset: 0xB1F3F8 VA: 0xB1F3F8
-	public void NCBLFMHKAFL(SakashoErrorId PPFNGGCBJKC, CACGCMBKHDI_Request ADKIDBJCAJA, string LJGOOOMOMMA, IMCBBOAFION EDIIEFHAOGP)
+	public void NCBLFMHKAFL(SakashoErrorId PPFNGGCBJKC, CACGCMBKHDI_Request _ADKIDBJCAJA_action, string LJGOOOMOMMA, IMCBBOAFION EDIIEFHAOGP)
 	{
 		PopupStopAccountSetting s = new PopupStopAccountSetting();
 		MessageBank bk = MessageManager.Instance.GetBank("common");
@@ -190,7 +190,7 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB1F758 Offset: 0xB1F758 VA: 0xB1F758
-	public void NNOBHCCINEN(SakashoErrorId PPFNGGCBJKC, CACGCMBKHDI_Request ADKIDBJCAJA, string LJGOOOMOMMA, IMCBBOAFION EDIIEFHAOGP)
+	public void NNOBHCCINEN(SakashoErrorId PPFNGGCBJKC, CACGCMBKHDI_Request _ADKIDBJCAJA_action, string LJGOOOMOMMA, IMCBBOAFION EDIIEFHAOGP)
 	{
 		if(string.IsNullOrEmpty(LJGOOOMOMMA))
 		{
@@ -344,7 +344,7 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB20594 Offset: 0xB20594 VA: 0xB20594
-	public void APEODCECEON(SakashoErrorId PPFNGGCBJKC, CACGCMBKHDI_Request ADKIDBJCAJA, string LJGOOOMOMMA, IMCBBOAFION EDIIEFHAOGP)
+	public void APEODCECEON(SakashoErrorId PPFNGGCBJKC, CACGCMBKHDI_Request _ADKIDBJCAJA_action, string LJGOOOMOMMA, IMCBBOAFION EDIIEFHAOGP)
 	{
 		PopupVersionUpCautionSetting s = new PopupVersionUpCautionSetting();
 		s.Buttons = new ButtonInfo[1]
@@ -620,10 +620,10 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB236E0 Offset: 0xB236E0 VA: 0xB236E0
-	public void JNFBLHKMMBI(string ADCMNODJBGJ, string LJGOOOMOMMA, IMCBBOAFION HIDFAIBOHCC)
+	public void JNFBLHKMMBI(string _ADCMNODJBGJ_Title, string LJGOOOMOMMA, IMCBBOAFION HIDFAIBOHCC)
 	{
 		TextPopupSetting s = new TextPopupSetting();
-		s.TitleText = ADCMNODJBGJ;
+		s.TitleText = _ADCMNODJBGJ_Title;
 		s.Buttons = new ButtonInfo[1]
 		{
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }

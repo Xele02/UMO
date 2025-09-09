@@ -60,13 +60,13 @@ namespace XeApp.Game.Menu
 		{
 			int itemId = itemInfo.m_presentData.KIJAPOFAGPN_FullItemId;
 			int index = itemInfo.m_index;
-			int presentId = itemInfo.m_presentData.ADJBIEOILPJ_Id;
+			int presentId = itemInfo.m_presentData.ADJBIEOILPJ_ItemPresentId;
 			GameManager.Instance.ItemTextureCache.Load(itemId, (IiconTexture icon) =>
 			{
 				//0xB744CC
 				if(index == m_itemInfo.m_index)
 				{
-					if(m_itemInfo.m_presentData.ADJBIEOILPJ_Id == presentId)
+					if(m_itemInfo.m_presentData.ADJBIEOILPJ_ItemPresentId == presentId)
 					{
 						if(m_itemInfo.m_presentData.KIJAPOFAGPN_FullItemId == itemId)
 						{

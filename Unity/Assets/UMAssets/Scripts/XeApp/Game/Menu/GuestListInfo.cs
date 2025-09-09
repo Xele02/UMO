@@ -91,8 +91,8 @@ namespace XeApp.Game.Menu
 				sceneRank = g.CGIELKDLHGE_GetEvolveId();
 				sceneLevel = g.CIEOBFIIPLD_SceneLevel;
 				sceneAttr = (GameAttribute.Type)g.JGJFIJOCPAG_SceneAttr;
-				sceneSeries = g.AIHCEGFANAM_SceneSeries;
-				int v = g.MEOOLHNNMHL_GetCenterSkillId(false, musicData == null ? 0 : musicData.FKDCCLPGKDK_JacketAttr, musicData == null ? 0 : musicData.AIHCEGFANAM_Serie);
+				sceneSeries = g.AIHCEGFANAM_SerieAttr;
+				int v = g.MEOOLHNNMHL_GetCenterSkillId(false, musicData == null ? 0 : musicData.FKDCCLPGKDK_JacketAttr, musicData == null ? 0 : musicData.AIHCEGFANAM_SerieAttr);
 				if(v != 0)
 				{
 					int v2 = g.MEOOLHNNMHL_GetCenterSkillId(true, 0, 0);

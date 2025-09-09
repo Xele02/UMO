@@ -76,7 +76,7 @@ namespace XeApp.Game.Common
 							sceneIdList[i] = vals[i];
 							if(vals[i] > 0)
 							{
-								int skillId = playerData.OPIBAPEGCLA_Scenes[vals[i] - 1].FILPDDHMKEJ_GetLiveSkillId(false, musicData != null ? musicData.FKDCCLPGKDK_JacketAttr : 0, musicData != null ? musicData.AIHCEGFANAM_Serie : 0);
+								int skillId = playerData.OPIBAPEGCLA_Scenes[vals[i] - 1].FILPDDHMKEJ_GetLiveSkillId(false, musicData != null ? musicData.FKDCCLPGKDK_JacketAttr : 0, musicData != null ? musicData.AIHCEGFANAM_SerieAttr : 0);
 								bool lives = CheckLiveSkill(musicData, skillId);
 								bool b = playerData.OPIBAPEGCLA_Scenes[vals[i] - 1].DCLLIDMKNGO_IsDivaCompatible(divaId);
 								bool c = i != 0 || index != 0;
@@ -113,7 +113,7 @@ namespace XeApp.Game.Common
 							sceneIdList[index * 3 + i] = vals[i];
 							if(vals[i] > 0)
 							{
-								int skillId = playerData.OPIBAPEGCLA_Scenes[vals[i] - 1].FILPDDHMKEJ_GetLiveSkillId(false, musicData == null ? 0 : musicData.FKDCCLPGKDK_JacketAttr, musicData == null ? 0 : musicData.AIHCEGFANAM_Serie);
+								int skillId = playerData.OPIBAPEGCLA_Scenes[vals[i] - 1].FILPDDHMKEJ_GetLiveSkillId(false, musicData == null ? 0 : musicData.FKDCCLPGKDK_JacketAttr, musicData == null ? 0 : musicData.AIHCEGFANAM_SerieAttr);
 								if(CheckLiveSkill(musicData, skillId) && 
 									playerData.OPIBAPEGCLA_Scenes[vals[i] - 1].DCLLIDMKNGO_IsDivaCompatible(divaId))
 								{
@@ -276,8 +276,8 @@ namespace XeApp.Game.Common
 							{
 								int godiva_fold_correction_value = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("godiva_fold_correction_value", 300);
 								int godiva_support_correction_value = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("godiva_support_correction_value", 300);
-								int i4 = Math.Max(unit.BCJEAJPLGMB_MainDivas[i].JLJGCBOHJID_Status.fold - playerData.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.NNIKNCGNDHK_GetStatForDiva(unit.BCJEAJPLGMB_MainDivas[i].AHHJLDLAPAN_DivaId).fold, 0);
-								int i5 = Math.Max(unit.BCJEAJPLGMB_MainDivas[i].JLJGCBOHJID_Status.support - playerData.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.NNIKNCGNDHK_GetStatForDiva(unit.BCJEAJPLGMB_MainDivas[i].AHHJLDLAPAN_DivaId).support, 0);
+								int i4 = Math.Max(unit.BCJEAJPLGMB_MainDivas[i].JLJGCBOHJID_Status.fold - playerData.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.NNIKNCGNDHK_GetStatForDiva(unit.BCJEAJPLGMB_MainDivas[i].AHHJLDLAPAN_DivaId).fold, 0);
+								int i5 = Math.Max(unit.BCJEAJPLGMB_MainDivas[i].JLJGCBOHJID_Status.support - playerData.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.NNIKNCGNDHK_GetStatForDiva(unit.BCJEAJPLGMB_MainDivas[i].AHHJLDLAPAN_DivaId).support, 0);
 								status.fold = (int)(godiva_fold_correction_value / 100.0f * i4) - i4;
 								status.support = (int)(godiva_support_correction_value / 100.0f * i5) - i5;
 							}

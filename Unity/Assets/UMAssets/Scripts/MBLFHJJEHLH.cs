@@ -13,7 +13,7 @@ public class MBLFHJJEHLH_AnketoMgr
 		public int EILKGEADKGH_Idx; // 0xC
 		public int INDDJNMPONH_NotifId; // 0x10
 		public int CEMEIPNMAAD_Version; // 0x14
-		public string ADCMNODJBGJ_Question; // 0x18
+		public string ADCMNODJBGJ_Title; // 0x18
 		public string[] LPKAJMLOAMF_ChoiceText; // 0x1C
 		public bool[] MHBBJADMHPN_ChoiceSelected; // 0x20
 		public int CIMPIIJBFPE = 1; // 0x24
@@ -97,7 +97,7 @@ public class MBLFHJJEHLH_AnketoMgr
 					data.PPFNGGCBJKC_Id = question.PPFNGGCBJKC_Id;
 					data.EILKGEADKGH_Idx = question.EILKGEADKGH_Idx;
 					data.INDDJNMPONH_NotifId = question.INDDJNMPONH_NotifId;
-					data.ADCMNODJBGJ_Question = question.ADCMNODJBGJ_Question;
+					data.ADCMNODJBGJ_Title = question.ADCMNODJBGJ_Title;
 					data.LPKAJMLOAMF_ChoiceText = question.BNMCMNPPPCI_ChoiceText;
 					data.MHBBJADMHPN_ChoiceSelected = new bool[data.LPKAJMLOAMF_ChoiceText.Length];
 					data.CIMPIIJBFPE = question.EMNLOGDDOBC;

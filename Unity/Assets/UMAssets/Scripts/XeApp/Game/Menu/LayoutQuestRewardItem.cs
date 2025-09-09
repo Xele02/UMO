@@ -41,7 +41,7 @@ namespace XeApp.Game.Menu
 				{
 					CKFGMNAIBNG data = new CKFGMNAIBNG();
 					int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemInfo.JJBGOIMEIPF_ItemId);
-					data.KHEKNNFCAOI(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[itemId - 1].AHHJLDLAPAN_PrismDivaId, itemId, 0, false);
+					data.KHEKNNFCAOI(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[itemId - 1].AHHJLDLAPAN_DivaId, itemId, 0, false);
 					MenuScene.Instance.ShowCostumeDetailWindow(data, 0);
 				}
 				else if(itemInfo.NPPNDDMPFJJ_ItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)

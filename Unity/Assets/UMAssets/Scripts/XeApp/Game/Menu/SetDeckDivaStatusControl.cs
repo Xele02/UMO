@@ -143,7 +143,7 @@ namespace XeApp.Game.Menu
 					//0xA6CB60
 					return x.AHHJLDLAPAN_DivaId == divaData.AHHJLDLAPAN_DivaId;
 				});
-				KDOMGMCGHDC.HJNMIKNAMFH h = KDOMGMCGHDC.ODIAFJCPIFO(musicId, f.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, f.PKLPGBKKFOL_DivaLevels[musicId - 1]);
+				KDOMGMCGHDC.HJNMIKNAMFH h = KDOMGMCGHDC.ODIAFJCPIFO(musicId, f.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, f.PKLPGBKKFOL_DivaLevels[musicId - 1]);
 				if(h == null)
 				{
 					SetInvalidMusicExp();

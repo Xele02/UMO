@@ -118,7 +118,7 @@ namespace XeApp.Game.Menu
 		{
 			//0xA45640
 			m_view_data = new PlayRecordView();
-			m_view_data.Create(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave);
+			m_view_data.Create(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData);
 			yield return null;
 			m_anim_ctrl = new PlayRecord_Animator(m_anim);
 			m_content_total.Initialize();

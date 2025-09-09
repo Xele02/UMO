@@ -296,7 +296,7 @@ namespace XeApp.Game.Menu
 			{
 				m_textPoint[i].text = "0";
 			}
-			m_textTotal.text = m_view.AHOKAPCGJMA_NewPoint.ToString();
+			m_textTotal.text = m_view.AHOKAPCGJMA_TotalPoint.ToString();
 			m_RankNum.SetNumber(m_view.BJJGECFMNIP_Rank, 0);
 			if(m_view.FCLGIPFPIPH_DashBonus < 2)
 			{

@@ -28,7 +28,7 @@ public class AAOCPMCMPCP_GetNormalLotItems : CACGCMBKHDI_Request
 		}
 	}
 
-	public int AFKAGFOFAHM; // 0x7C
+	public int AFKAGFOFAHM_ProductId; // 0x7C
 	public int BPNPBJALGHM; // 0x80
 
 	public KMFEEFFEHAD NFEAMMJIMPG { get; private set; } // 0x84 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
@@ -36,7 +36,7 @@ public class AAOCPMCMPCP_GetNormalLotItems : CACGCMBKHDI_Request
 	// RVA: 0x15AFB60 Offset: 0x15AFB60 VA: 0x15AFB60 Slot: 12
 	public override void DHLDNIEELHO()
 	{
-		EBGACDGNCAA_CallContext = SakashoNormalLotProduct.GetNormalLotItems(AFKAGFOFAHM, BPNPBJALGHM, DCKLDDCAJAP, MEOCKCJBDAD);
+		EBGACDGNCAA_CallContext = SakashoNormalLotProduct.GetNormalLotItems(AFKAGFOFAHM_ProductId, BPNPBJALGHM, DCKLDDCAJAP, MEOCKCJBDAD);
 	}
 
 	// RVA: 0x15AFC58 Offset: 0x15AFC58 VA: 0x15AFC58 Slot: 13

@@ -557,7 +557,7 @@ namespace XeApp.Game.Menu
             LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(m_diva_id, m_after_costume.id);
 			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.JAHFLLONDCN(cos.JPIDIENBGKH_CostumeId, m_after_costume.color_id) && 
 				HNDLICBDEMI.AFGKIJMPNNN_IsDecoEnabled() &&
-				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsDecolture))
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsDecolture))
 			{
 				MenuScene.Instance.InputDisable();
 				yield return Co.R(MenuScene.Instance.ShowGetDecoItemWindow(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.NNBMEEPOBIO_DecoItemCostumeTorso, cos.JPIDIENBGKH_CostumeId)));

@@ -234,7 +234,7 @@ namespace XeApp.Game.Menu
 				}
 				//LAB_00c40024
 				FJGOKILCBJA data = new FJGOKILCBJA();
-				data.CLCJHOIDENO(shopProductDataList[i].OPKDAIMPJBH_ShopId, cat, id, shopProductDataList[i].ELEPHBOKIGK_BuyLimit, shopProductDataList[i].DKEPCPPCIKA_Price);
+				data.CLCJHOIDENO(shopProductDataList[i].OPKDAIMPJBH_ShopId, cat, id, shopProductDataList[i].ELEPHBOKIGK_MaxCount, shopProductDataList[i].DKEPCPPCIKA_Price);
 				shopProductDataList.Remove(shopProductDataList[i]);
 				shopProductDataList.Add(data);
 				end--;
@@ -409,7 +409,7 @@ namespace XeApp.Game.Menu
                 EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.KIJAPOFAGPN_ItemFullId);
                 int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemFullId);
 				string name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(view.KIJAPOFAGPN_ItemFullId);
-				int numItem = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, cat, id, null);
+				int numItem = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, cat, id, null);
 				setting.TitleText = bk.GetMessageByLabel("item_popup_shop_text_00");
 				setting.WindowSize = SizeType.Middle;
 				setting.TypeItemId = view.KIJAPOFAGPN_ItemFullId;
@@ -943,7 +943,7 @@ namespace XeApp.Game.Menu
 						if(PopupSortMenu.IsHaveFilterOn(d2.CGKAEMGLHNK_IsUnlocked(), (uint)sp.EGBPCFOGOCK_HaveFilter) && 
 							PopupSortMenu.IsRarityFilterOn(d2.EKLIPGELKCL_SceneRarity, (uint)sp.ACCHOFLOOEC_RarityFilter) && 
 							PopupSortMenu.IsAttributeFilterOn(d2.JGJFIJOCPAG_SceneAttr, (uint)sp.BOFFOHHLLFG_AttrFilter) && 
-							PopupSortMenu.IsSerializeFilterOn((int)d2.AIHCEGFANAM_SceneSeries, (uint)sp.BBIIHLNBHDE_SerieFilter) && 
+							PopupSortMenu.IsSerializeFilterOn((int)d2.AIHCEGFANAM_SerieAttr, (uint)sp.BBIIHLNBHDE_SerieFilter) && 
 							PopupSortMenu.IsCompatibleFilterOn(d2.AOLIJKMIJJE_DivaCompatible, (uint)sp.ABLBLOEKBKA_CompatibleFilter) && 
 							PopupSortMenu.IsNotesFilterOn(d2.IGPMJPPAILL_Note, (uint)sp.NLLEDCOAPIG_NoteExpectedFilter) && 
 							PopupSortMenu.IsSkillRangeFilterOn(d2.BJJNCCGPBGN, (uint)sp.OAJNACDACDF_LiveSkillRangeFilter) && 

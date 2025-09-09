@@ -1997,7 +1997,7 @@ namespace XeApp.Game.Menu
 				case TutorialConditionId.Condition35:
 					if(m_transitionName == TransitionList.Type.TEAM_SELECT || m_transitionName == TransitionList.Type.TEAM_EDIT)
 					{
-						if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level > 4)
+						if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level > 4)
 						{
 							return !GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PNNHEOOJBFI_TutorialGeneralFlags.ODKIHPBEOEC_IsTrue(2);
 						}
@@ -2021,7 +2021,7 @@ namespace XeApp.Game.Menu
 				case TutorialConditionId.Condition38:
 					return m_transitionName == TransitionList.Type.SCENE_GROWTH;
 				case TutorialConditionId.Condition40:
-					if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level < 3)
+					if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level < 3)
 						return false;
 					return m_transitionName == TransitionList.Type.MUSIC_SELECT;
 				case TutorialConditionId.Condition42:
@@ -2032,7 +2032,7 @@ namespace XeApp.Game.Menu
 							if ((m_args as TeamEditSceneArgs).IsFromBeginner)
 								return false;
 						}
-						if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[3].EALOBDHOCHP_Stat < 2)
+						if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[3].EALOBDHOCHP_Stat < 2)
 						{
 							int res = 0;
 							for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Count; i++)
@@ -2066,7 +2066,7 @@ namespace XeApp.Game.Menu
 				case TutorialConditionId.Condition48:
 					if(m_transitionName == TransitionList.Type.MUSIC_SELECT)
 					{
-						return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("mv_player_level", 5) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+						return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("mv_player_level", 5) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 					}
 					break;
 				case TutorialConditionId.Condition49:
@@ -2087,7 +2087,7 @@ namespace XeApp.Game.Menu
 				case TutorialConditionId.Condition65:
 					if(m_transitionName == TransitionList.Type.TEAM_EDIT || m_transitionName == TransitionList.Type.TEAM_SELECT)
 					{
-						return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.GODGHFDMAHF_GetRateBySupportPlate() != null;
+						return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.GODGHFDMAHF_GetRateBySupportPlate() != null;
 					}
 					break;
 				}

@@ -378,15 +378,15 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xDA12BC Offset: 0xDA12BC VA: 0xDA12BC
-	public int GAHIBKLEDBF(int AKNELONELJK_Difficulty, bool GIKLNODJKFK_IsLine6)
+	public int GAHIBKLEDBF(int _AKNELONELJK_Difficulty, bool GIKLNODJKFK_IsLine6)
 	{
 		if(!GIKLNODJKFK_IsLine6)
 		{
-			return DOAAGIMJOMM[AKNELONELJK_Difficulty];
+			return DOAAGIMJOMM[_AKNELONELJK_Difficulty];
 		}
 		else
 		{
-			return KMJNLIMMCED[AKNELONELJK_Difficulty];
+			return KMJNLIMMCED[_AKNELONELJK_Difficulty];
 		}
 	}
 
@@ -553,7 +553,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 			for (int i = 0; i < array.Length / 2; i++)
 			{
 				JANMKFAKHIC_ComboBonus data = new JANMKFAKHIC_ComboBonus();
-				data.ADKDHKMPMHP = (int)array[i * 2];
+				data.ADKDHKMPMHP_Rate = (int)array[i * 2];
 				data.DHIPGHBJLIL = (int)array[i * 2 + 1];
 				KGHLOJNCFDO_ComboBonus.Add(data);
 			}
@@ -1028,7 +1028,7 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 public class JANMKFAKHIC { }
 public class JANMKFAKHIC_ComboBonus
 {
-	public int ADKDHKMPMHP; // 0x8
+	public int ADKDHKMPMHP_Rate; // 0x8
 	public int DHIPGHBJLIL; // 0xC
 }
 

@@ -153,7 +153,7 @@ namespace XeApp.Game.Menu
 		private void SetItemSetting(List<ALEKLHIANJN.HJBLCFPOFPO> list)
 		{
             OKGLGHCBCJP_Database db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database;
-            BBHNACPENDM_ServerSaveData save = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave;
+            BBHNACPENDM_ServerSaveData save = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
             StringBuilder str = new StringBuilder();
 			string[] strs = new string[2];
 			for(int i = 0; i < list.Count; i++)

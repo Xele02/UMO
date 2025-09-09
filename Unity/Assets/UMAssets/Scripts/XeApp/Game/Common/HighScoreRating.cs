@@ -84,7 +84,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0xEA2F84 Offset: 0xEA2F84 VA: 0xEA2F84
 		public void CalcUtaRate(JDDGGJCGOPA_RecordMusic rec, bool pubUpd/* = false*/)
 		{
-			BBHNACPENDM_ServerSaveData serverData = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave;
+			BBHNACPENDM_ServerSaveData serverData = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
 			if (rec == null)
 				rec = serverData.LCKMBHDMPIP_RecordMusic;
 			int rating_coef = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK["score_rating_coef"];
@@ -154,7 +154,7 @@ namespace XeApp.Game.Common
 		public void CalcUtaRateForLog(JDDGGJCGOPA_RecordMusic rec, int freeMusicId, int lastDifficulty, int lastRatingScore)
 		{
 			if (rec == null)
-				rec = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LCKMBHDMPIP_RecordMusic;
+				rec = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LCKMBHDMPIP_RecordMusic;
 			int score_rating_coef = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.OHJFBLFELNK["score_rating_coef"];
 			List<HSRatingData>[] data = new List<HSRatingData>[1] { new List<HSRatingData>() };
 			data[0].Clear();
@@ -262,7 +262,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0xEA3F80 Offset: 0xEA3F80 VA: 0xEA3F80
 		private void UpdatePublicStatus()
 		{
-			JNMFKOHFAFB_PublicStatus.LBGEDDJKOKF rating = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.MHEAEGMIKIE_PublicStatus.AEIADFODLMC_HsRating[0];
+			JNMFKOHFAFB_PublicStatus.LBGEDDJKOKF rating = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.AEIADFODLMC_HsRating[0];
 			rating.KMBPACJNEOF_Reset();
 			for(int i = 0; i < 10; i++)
 			{
@@ -297,7 +297,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0xEA5E50 Offset: 0xEA5E50 VA: 0xEA5E50
 		public static int GetUtaRate(int free_music_id)
 		{
-			return GetUtaRate(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LCKMBHDMPIP_RecordMusic, free_music_id);
+			return GetUtaRate(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LCKMBHDMPIP_RecordMusic, free_music_id);
 		}
 
 		//// RVA: 0xEA5F18 Offset: 0xEA5F18 VA: 0xEA5F18
@@ -343,8 +343,8 @@ namespace XeApp.Game.Common
 		//// RVA: 0xEA6414 Offset: 0xEA6414 VA: 0xEA6414
 		public static bool IsNotReceivedRewardUtaGrade()
 		{
-			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.EAFLCGCIOND_RetRewRecGra !=
-				(int)GetUtaGrade(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.EAHPKPADCPL_TotalUtaRate);
+			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EAFLCGCIOND_RetRewRecGra !=
+				(int)GetUtaGrade(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EAHPKPADCPL_TotalUtaRate);
 		}
 
 		//// RVA: 0xEA6544 Offset: 0xEA6544 VA: 0xEA6544

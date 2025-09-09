@@ -548,7 +548,7 @@ public class MMPBPOIFDAF_Scene : KLFDBFMNLBL_ServerSaveBlock
 							if(itemId > 0)
 							{
 								LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = dbCos.CDENCMNHNGA_Costumes[itemId - 1];
-								if (cos.AHHJLDLAPAN_PrismDivaId == DPKCMAHGHNI)
+								if (cos.AHHJLDLAPAN_DivaId == DPKCMAHGHNI)
 									return true;
 							}
 						}

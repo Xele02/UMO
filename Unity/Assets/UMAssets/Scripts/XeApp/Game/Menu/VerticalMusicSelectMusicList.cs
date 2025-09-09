@@ -264,9 +264,9 @@ namespace XeApp.Game.Menu
 					obj.SetRewardState(false, false, false);
 				}
 			}
-			if(m_musicList[listIndex].ViewMusic.AIHCEGFANAM_Serie < 5)
+			if(m_musicList[listIndex].ViewMusic.AIHCEGFANAM_SerieAttr < 5)
 			{
-				obj.SetSeries(m_musicList[listIndex].ViewMusic.AIHCEGFANAM_Serie);
+				obj.SetSeries(m_musicList[listIndex].ViewMusic.AIHCEGFANAM_SerieAttr);
 			}
 			else
 			{

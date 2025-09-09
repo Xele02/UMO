@@ -59,7 +59,7 @@ public class DKKPBBBDKMJ
 							{
 								if(storyEvent.MGBDCFIKBPM_Serie == 5)
 								{
-									MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA[CCAAJNJGNDO.FCMFPPALLOM(storyEvent.OAFJONPIFGM_EventId) - 1];
+									MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA[CCAAJNJGNDO.FCMFPPALLOM(storyEvent.OAFJONPIFGM_EventId) - 1];
 									MLIBEPGADJH_Scene.KKLDOOJBJMN scene2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[CCAAJNJGNDO.FCMFPPALLOM(storyEvent.OAFJONPIFGM_EventId) - 1];
 									HOMGKHBHDME.KHEKNNFCAOI(scene.PPFNGGCBJKC_Id, scene.PDNIFBEGMHC_Mb, scene.EMOJHJGHJLN_Sb, scene.JPIPENJGGDD_Mlt, scene.IELENGDJPHF_Ulk, scene.MJBODMOLOBC_Luck, scene.LHMOAJAIJCO_New, scene.BEBJKJKBOGH_Date, scene.DMNIMMGGJJJ_Leaf);
 									if(HOMGKHBHDME.CGKAEMGLHNK_IsUnlocked())
@@ -71,7 +71,7 @@ public class DKKPBBBDKMJ
 												if(HOMGKHBHDME.FGMPFHOEPEL_GetNumUnlockedStory() != 0)
 												{
 													MHCPOIEDLJF = true;
-													hasNewAdv |= !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(storyEvent2.LOHMKCPKBON_AdvId);
+													hasNewAdv |= !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(storyEvent2.LOHMKCPKBON_AdvId);
 													b2 = true;
 													continue;
 												}
@@ -83,7 +83,7 @@ public class DKKPBBBDKMJ
 							}
 							else if(storyEvent2.CHOFDPDFPDC == 3)
 							{
-								if (!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(storyEvent2.LOHMKCPKBON_AdvId))
+								if (!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(storyEvent2.LOHMKCPKBON_AdvId))
 								{
 									b3 = true;
 								}
@@ -155,7 +155,7 @@ public class DKKPBBBDKMJ
 				{
 					if(k2.OAFJONPIFGM_EventId == k.PGIIDPEGGPI_EventId && k2.CHOFDPDFPDC == 4)
 					{
-						MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA[CCAAJNJGNDO.FCMFPPALLOM(k2.OAFJONPIFGM_EventId) - 1];
+						MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA[CCAAJNJGNDO.FCMFPPALLOM(k2.OAFJONPIFGM_EventId) - 1];
 						MLIBEPGADJH_Scene.KKLDOOJBJMN scene2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[CCAAJNJGNDO.FCMFPPALLOM(k2.OAFJONPIFGM_EventId) - 1];
 						HOMGKHBHDME.KHEKNNFCAOI(scene.PPFNGGCBJKC_Id, scene.PDNIFBEGMHC_Mb, scene.EMOJHJGHJLN_Sb, scene.JPIPENJGGDD_Mlt, scene.IELENGDJPHF_Ulk, scene.MJBODMOLOBC_Luck, scene.LHMOAJAIJCO_New, scene.BEBJKJKBOGH_Date, scene.DMNIMMGGJJJ_Leaf);
 						a1++;
@@ -167,7 +167,7 @@ public class DKKPBBBDKMJ
 								{
 									if(HOMGKHBHDME.FGMPFHOEPEL_GetNumUnlockedStory() >= a1)
 									{
-										hasViewed |= !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(k2.LOHMKCPKBON_AdvId);
+										hasViewed |= !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(k2.LOHMKCPKBON_AdvId);
 									}
 								}
 							}
@@ -196,7 +196,7 @@ public class DKKPBBBDKMJ
 		bool res = false;
 		if(!QuestUtility.IsBeginnerQuest())
 		{
-			res = !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(XeApp.Game.Common.GPFlagConstant.ID.IsNewEventStory);
+			res = !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(XeApp.Game.Common.GPFlagConstant.ID.IsNewEventStory);
 		}
 		return res;
 	}
@@ -204,6 +204,6 @@ public class DKKPBBBDKMJ
 	//// RVA: 0x1226E78 Offset: 0x1226E78 VA: 0x1226E78
 	public static void EMNNLEFCKHM(bool CNNHEENBECK)
 	{
-		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(XeApp.Game.Common.GPFlagConstant.ID.IsNewEventStory, CNNHEENBECK);
+		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(XeApp.Game.Common.GPFlagConstant.ID.IsNewEventStory, CNNHEENBECK);
 	}
 }

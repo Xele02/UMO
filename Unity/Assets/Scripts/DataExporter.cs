@@ -77,9 +77,9 @@ class DataExporter
 			for (int i = 0; i < CostumeDb.CDENCMNHNGA_Costumes.Count; i++)
 			{
 				var cosInfo = CostumeDb.CDENCMNHNGA_Costumes[i];
-				if (cosInfo.PPEGAKEIEGM_Enabled == 2 && cosInfo.AHHJLDLAPAN_PrismDivaId == diva)
+				if (cosInfo.PPEGAKEIEGM_Enabled == 2 && cosInfo.AHHJLDLAPAN_DivaId == diva)
 				{
-					GameManager.Instance.DivaIconCache.LoadDivaUpIco(cosInfo.AHHJLDLAPAN_PrismDivaId, cosInfo.DAJGPBLEEOB_PrismCostumeModelId, 0, (IiconTexture texture) =>
+					GameManager.Instance.DivaIconCache.LoadDivaUpIco(cosInfo.AHHJLDLAPAN_DivaId, cosInfo.DAJGPBLEEOB_PrismCostumeModelId, 0, (IiconTexture texture) =>
 					{
 						//0x169C1D8
 						Material mat = new Material(Shader.Find("MCRS/SplitTextureRGB16A8"));
@@ -90,7 +90,7 @@ class DataExporter
 					});
 
 					string cos_name = MessageManager.Instance.GetMessage("master", "cos_" + cosInfo.DAJGPBLEEOB_PrismCostumeModelId.ToString("D4"));
-					fileOutput += "|[[/images/costumes/"+ cosInfo.JPIDIENBGKH_CostumeId + ".png]]|" + cosInfo.AHHJLDLAPAN_PrismDivaId + "|" + cosInfo.DAJGPBLEEOB_PrismCostumeModelId + "|" + cosInfo.JPIDIENBGKH_CostumeId + "|" + cos_name + "\n";
+					fileOutput += "|[[/images/costumes/"+ cosInfo.JPIDIENBGKH_CostumeId + ".png]]|" + cosInfo.AHHJLDLAPAN_DivaId + "|" + cosInfo.DAJGPBLEEOB_PrismCostumeModelId + "|" + cosInfo.JPIDIENBGKH_CostumeId + "|" + cos_name + "\n";
 				}
 			}
 		}

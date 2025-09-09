@@ -205,7 +205,7 @@ public class MFDJIFIIPJD
 				{
 					cat = EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
 				}
-				else if (HAAJGNCFNJM_ItemName == AFEHLCGHAEE_Strings.ACGLMKEBMDL_uc)
+				else if (HAAJGNCFNJM_ItemName == AFEHLCGHAEE_Strings.ACGLMKEBMDL_Uc)
 				{
 					cat = EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
 				}

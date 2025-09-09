@@ -504,7 +504,7 @@ public class EJABAIAPFLK
 	// public uint CAOGDCBPBAN() { }
 
 	// // RVA: 0x12EBCB8 Offset: 0x12EBCB8 VA: 0x12EBCB8
-	public EMOLDNAEDMG MGCBIOALLFE(BBHNACPENDM_ServerSaveData AHEFHIMGIBI)
+	public EMOLDNAEDMG MGCBIOALLFE(BBHNACPENDM_ServerSaveData _AHEFHIMGIBI_PlayerData)
 	{
 		int? from = null;
 		int? to = null;
@@ -519,10 +519,10 @@ public class EJABAIAPFLK
 				to = PJFKNNNDMIA_To + 1;
 				break;
 			case GHEPCFJHEEA.NDGMFGMHCJM:
-				from = NHPCKCOPKAM_From + AHEFHIMGIBI.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+				from = NHPCKCOPKAM_From + _AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 				if (from < 2)
 					from = 1;
-				to = PJFKNNNDMIA_To + AHEFHIMGIBI.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+				to = PJFKNNNDMIA_To + _AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 				break;
 			case GHEPCFJHEEA.HJNNKCMLGFL:
 				from = NHPCKCOPKAM_From;

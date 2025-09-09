@@ -618,7 +618,7 @@ namespace XeApp.Game.Menu
 				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[itemId - 1];
 				CheckNewCostumeArgs arg = new CheckNewCostumeArgs();
 				arg.cos_id = cos.DAJGPBLEEOB_PrismCostumeModelId;
-				arg.diva_id = cos.AHHJLDLAPAN_PrismDivaId;
+				arg.diva_id = cos.AHHJLDLAPAN_DivaId;
 				MenuScene.Instance.Call(TransitionList.Type.GACHA_CHECK_NEW_COSTUME, arg, true);
 			}
 		}

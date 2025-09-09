@@ -11,7 +11,7 @@ public class ELNKLCNHDEE
 	public bool PLOOEECNHFB; // 0x8
 	public bool GBCOABCAJHG; // 0x9
 	public bool NPNNPNAIONN; // 0xA
-	public List<CEBFFLDKAEC_SecureInt> AILDCKKOLJG = new List<CEBFFLDKAEC_SecureInt>(); // 0xC
+	public List<CEBFFLDKAEC_SecureInt> AILDCKKOLJG_Results = new List<CEBFFLDKAEC_SecureInt>(); // 0xC
 	public string MHCDHKLGGBG; // 0x10
 	public List<GJDFHLBONOL> IPFEPMFHHAM; // 0x14
 	public List<long> HBINEKIILJL; // 0x18
@@ -88,23 +88,23 @@ public class ELNKLCNHDEE
             {
                 IPFEPMFHHAM.Add(NMJONJBONLM[i]);
             }
-            AILDCKKOLJG.Clear();
+            AILDCKKOLJG_Results.Clear();
             for(int i = 0; i < NMJONJBONLM.Count; i++)
             {
                 for(int j = 0; j < NMJONJBONLM[i].MBJIFDBEDAC_ItemCount; j++)
                 {
                     CEBFFLDKAEC_SecureInt c = new CEBFFLDKAEC_SecureInt();
                     c.DNJEJEANJGL_Value = NMJONJBONLM[i].OCNINMIMHGC_ItemValue;
-                    AILDCKKOLJG.Add(c);
+                    AILDCKKOLJG_Results.Add(c);
                 }
             }
             StringBuilder str = new StringBuilder();
             bool b = false;
-            for(int i = 0; i < AILDCKKOLJG.Count; i++)
+            for(int i = 0; i < AILDCKKOLJG_Results.Count; i++)
             {
                 if(b)
                     str.Append(',');
-                str.Append(AILDCKKOLJG[i].DNJEJEANJGL_Value);
+                str.Append(AILDCKKOLJG_Results[i].DNJEJEANJGL_Value);
             }
             MHCDHKLGGBG = str.ToString();
             Debug.Log("StringLiteral_10275 " + MHCDHKLGGBG);

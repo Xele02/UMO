@@ -216,7 +216,7 @@ public class JBCAHMMCOKK
 		if (KOGBMDOONFA.PPEGAKEIEGM_Enabled != 2)
 			return;
 		bool b = true;
-		int level = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+		int level = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 		if (KOGBMDOONFA.JPKPDCCGGLA > 0)
 			b = KOGBMDOONFA.JPKPDCCGGLA < level;
 		bool c = true;
@@ -309,7 +309,7 @@ public class JBCAHMMCOKK
 			case 5:
 				{
 					int a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.NCEMAEDMJLO_GetBeginnerGachaVersion(JHNMKKNEENE);
-					if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BKCJPIPJCCM_StaminaLotDone == a)
+					if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BKCJPIPJCCM_StaminaLotDone == a)
 						return;
 					List<LOBDIAABMKG> l = NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.MHKCPJDNJKI_GatchaProducts;
 					for (int i = 0; i < l.Count; i++)
@@ -649,7 +649,7 @@ public class JBCAHMMCOKK
 								}
 								if(p.FJAOAGNFABN_HasOneDay)
 								{
-                                    EGOLBAPFHHD_Common.PCHECKGDJDK cg = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BGDMJGDEKFJ_GetGachaDraw(p.FDEBLMKEMLF_TypeAndSeriesId);
+                                    EGOLBAPFHHD_Common.PCHECKGDJDK cg = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BGDMJGDEKFJ_GetGachaDraw(p.FDEBLMKEMLF_TypeAndSeriesId);
 									if(cg != null)
 									{
 										if(p.ABNMIDCBENB_OneDay <= cg.HMFFHLPNMPH)

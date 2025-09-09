@@ -15,7 +15,7 @@ public class IDNNDIHDLGA
 public abstract class CACGCMBKHDI {}
 public abstract class CACGCMBKHDI_Request
 {
-    public delegate void HDHIKGLMOGF(CACGCMBKHDI_Request ADKIDBJCAJA);
+    public delegate void HDHIKGLMOGF(CACGCMBKHDI_Request _ADKIDBJCAJA_action);
 
     public long CKOOCBJGHBI_RequestId; // 0x8
     public int CFICLNJACCD_NumRetry = 3; // 0x10

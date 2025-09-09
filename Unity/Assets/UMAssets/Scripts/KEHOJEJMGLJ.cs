@@ -287,7 +287,7 @@ public class KEHOJEJMGLJ
 			}
 			else
 			{
-				if(LHJNPJFNDNA != COJNCNGHIJC.HOHOBEOJPBK_ServerInfo.AJBPBEALBOB_ServerCurrentAssetRevision)
+				if(LHJNPJFNDNA != COJNCNGHIJC.HOHOBEOJPBK_ServerInfo.AJBPBEALBOB_SakashoCurrentAssetRevision)
 				{
 					Dictionary<string, int> FAOOOLDDBBB;
 					bool KOMKKBDABJP;
@@ -381,7 +381,7 @@ public class KEHOJEJMGLJ
 							{
 								yield return null;
 							}
-							LHJNPJFNDNA = COJNCNGHIJC.HOHOBEOJPBK_ServerInfo.AJBPBEALBOB_ServerCurrentAssetRevision;
+							LHJNPJFNDNA = COJNCNGHIJC.HOHOBEOJPBK_ServerInfo.AJBPBEALBOB_SakashoCurrentAssetRevision;
 							if(MLPDBGFBAAC != null)
 							{
 								MLPDBGFBAAC.HJMKBCFJOOH();
@@ -511,7 +511,7 @@ public class KEHOJEJMGLJ
 								KLIJFOBEKBE.HJMKBCFJOOH();
 								GC.Collect();
 								NGDBJIAFCKE = true;
-								LHJNPJFNDNA = COJNCNGHIJC.HOHOBEOJPBK_ServerInfo.AJBPBEALBOB_ServerCurrentAssetRevision;
+								LHJNPJFNDNA = COJNCNGHIJC.HOHOBEOJPBK_ServerInfo.AJBPBEALBOB_SakashoCurrentAssetRevision;
 								if(EMJFHKHLHDB == KEHOJEJMGLJ.ACGGHEIMPHC.GGCIMLDFDOC/*1*/)
 								{
 									PKLPEIBEGNO();

@@ -13,7 +13,7 @@ public class PJANOOPJIDE_TutorialPict : DIHHCBACKGG_DbSection
 		public int PPEGAKEIEGM_Enabled; // 0x14
 		public int KNHABOOAAIP; // 0x18
 		public string[] JONNCMDGMKA_Messages; // 0x1C
-		public string[] ADCMNODJBGJ_Titles; // 0x20
+		public string[] ADCMNODJBGJ_Title; // 0x20
 		public int[] MAPDMCPCLFA_PicIds; // 0x24
 		public int[] KMDGMOMCDAD; // 0x28
 		public int IODLCIBCONC; // 0x2C
@@ -76,9 +76,9 @@ public class PJANOOPJIDE_TutorialPict : DIHHCBACKGG_DbSection
 			for(int j = 0; j < data.JONNCMDGMKA_Messages.Length; j++)
 				data.JONNCMDGMKA_Messages[j] = DatabaseTextConverter.TranslateTutoPictMessage(i, j, array[i].IPBHCLIHAPG[j]);
 
-			data.ADCMNODJBGJ_Titles = new string[array[i].ADCMNODJBGJ.Length];
-			for(int j = 0; j < data.ADCMNODJBGJ_Titles.Length; j++)
-				data.ADCMNODJBGJ_Titles[j] = DatabaseTextConverter.TranslateTutoPictTitle(i, j, array[i].ADCMNODJBGJ[j]);
+			data.ADCMNODJBGJ_Title = new string[array[i].ADCMNODJBGJ.Length];
+			for(int j = 0; j < data.ADCMNODJBGJ_Title.Length; j++)
+				data.ADCMNODJBGJ_Title[j] = DatabaseTextConverter.TranslateTutoPictTitle(i, j, array[i].ADCMNODJBGJ[j]);
 
 			data.MAPDMCPCLFA_PicIds = array[i].HANMDEBPBHG;
 			data.FJOLNJLLJEJ = array[i].INANEEGAEEG;

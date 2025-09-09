@@ -90,7 +90,7 @@ namespace XeApp.Game.RhythmGame
 				int totalCombo = totalComboCount;
 				for (int i = 0; i < comboBonusDataList.Count; i++)
 				{
-					if(combo * 1.0f / totalCombo >= comboBonusDataList[i].ADKDHKMPMHP / 100.0f)
+					if(combo * 1.0f / totalCombo >= comboBonusDataList[i].ADKDHKMPMHP_Rate / 100.0f)
 					{
 						f = comboBonusDataList[i].DHIPGHBJLIL / 100.0f;
 						break;

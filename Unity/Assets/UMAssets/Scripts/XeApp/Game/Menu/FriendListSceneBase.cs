@@ -229,7 +229,7 @@ namespace XeApp.Game.Menu
 		{
 			m_sortType = (SortItem)sortSaveData.LHPDCGNKPHD_sortItem;
 			m_sortOrder = (GeneralList.SortOrder)sortSaveData.EILKGEADKGH_order;
-			m_rarityFilter = (uint)sortSaveData.ACCHOFLOOEC_filter;
+			m_rarityFilter = (uint)sortSaveData.ACCHOFLOOEC_RarityFilter;
 			m_attrFilter = (uint)sortSaveData.BOFFOHHLLFG_attributeFilter;
 			m_seriesFilter = (uint)sortSaveData.BBIIHLNBHDE_seriaseFilter;
 		}

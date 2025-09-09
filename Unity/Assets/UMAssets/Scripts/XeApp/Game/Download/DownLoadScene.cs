@@ -63,15 +63,15 @@ namespace XeApp.Game.DownLoad
 			//0x11BFC54 
 			yield return this.StartCoroutineWatched(Co_InitializeQuestionary());
 			KEHOJEJMGLJ.HHCJCDFCLOB.OEPPEGHGNNO = InstallGuiEvent;
-			int tutoEnd = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd;
+			int tutoEnd = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd;
 			int INAEAAJIJMF = 0;
 			int freeMusicId = 0;
 			if (tutoEnd != 2)
 			{
-				for (int i = 0; i < CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList.Count; i++)
+				for (int i = 0; i < CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList.Count; i++)
 				{
 					INAEAAJIJMF = 1;
-					DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo serverDiva = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i];
+					DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo serverDiva = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i];
 					if (serverDiva.CPGFPEDMDEH_Have > 0)
 					{
 						BJPLLEBHAGO_DivaInfo dbdiva = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas[serverDiva.DIPKCALNIII_DivaId - 1];

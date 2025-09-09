@@ -300,7 +300,7 @@ namespace XeApp.Game.Menu
 			}
 			//LAB_00b813f0
 			int intimacy_player_level = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("intimacy_player_level", 8);
-			int level = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+			int level = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 			m_infos.SetGiftLock(level, intimacy_player_level);
 			m_homeButton.OnClickHomeButtonCallback = OnClickHomeButton;
 			m_viewModeButton.OnClickViewButtonCallback = OnClickViewButton;
@@ -1045,7 +1045,7 @@ namespace XeApp.Game.Menu
 									useItemCount = (control.Content as PopupGakuyaPresentUse2Contents).UseItemVal;
 								}
 								GameManager.Instance.SetFPS(60);
-								m_intimacyController.StartToPresentGakuya(itemInfo.m_presentData.ADJBIEOILPJ_Id, useItemCount, v, () =>
+								m_intimacyController.StartToPresentGakuya(itemInfo.m_presentData.ADJBIEOILPJ_ItemPresentId, useItemCount, v, () =>
 								{
 									//0xB7B1B8
 									GameManager.Instance.SetFPS(30);
@@ -1080,7 +1080,7 @@ namespace XeApp.Game.Menu
 									useItemCount = (control.Content as PopupGakuyaPresentUse2Contents).UseItemVal;
 								}
 								GameManager.Instance.SetFPS(60);
-								m_intimacyController.StartToPresentGakuya(itemInfo.m_presentData.ADJBIEOILPJ_Id, useItemCount, pos, () =>
+								m_intimacyController.StartToPresentGakuya(itemInfo.m_presentData.ADJBIEOILPJ_ItemPresentId, useItemCount, pos, () =>
 								{
 									//0xB7B1B8
 									GameManager.Instance.SetFPS(30);

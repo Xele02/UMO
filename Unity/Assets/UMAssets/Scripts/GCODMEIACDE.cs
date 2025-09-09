@@ -9,7 +9,7 @@ public class GCODMEIACDE
         public int KIJAPOFAGPN_ItemId; // 0x8
         public int DNBFMLBNAEE_Point; // 0xC
         public int HMFFHLPNMPH_Cnt; // 0x10
-        public int AHOKAPCGJMA_TargetNum; // 0x14
+        public int AHOKAPCGJMA_TotalPoint; // 0x14
     }
 
 	public int PLKMAOGKFPP; // 0x8
@@ -19,7 +19,7 @@ public class GCODMEIACDE
 	public int OKBEOCOKGEI; // 0x18
 	public int PHPANNCGOKC_GetPoint; // 0x1C
 	public int HNNAJJNMCKE_PrevPoint; // 0x20
-	public int AHOKAPCGJMA_NewPoint; // 0x24
+	public int AHOKAPCGJMA_TotalPoint; // 0x24
 	public int BEOKMNIPFBA_MedalItemId; // 0x28
 	public int ODOOKDGCKMF_MedalNum; // 0x2C
 	public int[] BKKPKIGLMCN_Ranks = new int[2]; // 0x30
@@ -45,7 +45,7 @@ public class GCODMEIACDE
         PHPANNCGOKC_GetPoint = ev.EELENPNCGLM.PIIEGNPOPJI_GetPoint;
         OKBEOCOKGEI = ev.EELENPNCGLM.FCLGIPFPIPH;
         HNNAJJNMCKE_PrevPoint = JGEOBNENMAH.HHCJCDFCLOB.FFDBCEDKMGN_PrevPoint;
-        AHOKAPCGJMA_NewPoint = JGEOBNENMAH.HHCJCDFCLOB.MMLPAMGJEOD_NewPoint;
+        AHOKAPCGJMA_TotalPoint = JGEOBNENMAH.HHCJCDFCLOB.MMLPAMGJEOD_NewPoint;
         OENBOLPDBAB_FreeMusicId = ev.EELENPNCGLM.OENBOLPDBAB;
         KHHPEIBPDAB = ev.EELENPNCGLM.GCAPLLEIAAI_NewScore;
         BFPBEAIBEDJ = ev.EELENPNCGLM.IDCFOMMKGIK;
@@ -66,7 +66,7 @@ public class GCODMEIACDE
                 d.KIJAPOFAGPN_ItemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.EMOLGEDEEJP_EventItem, JGEOBNENMAH.HHCJCDFCLOB.JCDPLILNKDG[i]);
                 d.DNBFMLBNAEE_Point = it.JBGEEPFKIGG_Val;
                 d.HMFFHLPNMPH_Cnt = JGEOBNENMAH.HHCJCDFCLOB.CMCDIOOEHMI[i];
-                d.AHOKAPCGJMA_TargetNum = d.DNBFMLBNAEE_Point * d.HMFFHLPNMPH_Cnt;
+                d.AHOKAPCGJMA_TotalPoint = d.DNBFMLBNAEE_Point * d.HMFFHLPNMPH_Cnt;
                 Debug.Log(string.Concat(new object[8]
                 {
                     "StringLiteral_10444",
@@ -76,7 +76,7 @@ public class GCODMEIACDE
                     " x ",
                     d.HMFFHLPNMPH_Cnt,
                     "=",
-                    d.AHOKAPCGJMA_TargetNum
+                    d.AHOKAPCGJMA_TotalPoint
                 }));
                 HBHMAKNGKFK.Add(d);
                 PLKMAOGKFPP += d.HMFFHLPNMPH_Cnt;

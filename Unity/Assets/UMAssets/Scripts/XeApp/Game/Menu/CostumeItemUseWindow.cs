@@ -215,9 +215,9 @@ namespace XeApp.Game.Menu
 			m_item_num.text = m_item_use_num.ToString();
 			RewardIndex();
 			int a1 = item_data.IILKAJBHLMJ_ItemPointValue * m_item_use_num;
-			SetGauge((int)(m_data.ABLHIAEDJAI_Point * 1.0f / m_data.JHLKLPEHHCD_GetCurrentLevelInfo().DNBFMLBNAEE_NeedPoint * 100), (int)((m_data.ABLHIAEDJAI_Point + a1) * 1.0f / m_data.JHLKLPEHHCD_GetCurrentLevelInfo().DNBFMLBNAEE_NeedPoint * 100));
-			m_point_den.SetNumber(m_data.ABLHIAEDJAI_Point + a1, 0);
-			m_point_mol.SetNumber(m_data.JHLKLPEHHCD_GetCurrentLevelInfo().DNBFMLBNAEE_NeedPoint, 0);
+			SetGauge((int)(m_data.ABLHIAEDJAI_CurrentValue * 1.0f / m_data.JHLKLPEHHCD_GetCurrentLevelInfo().DNBFMLBNAEE_Point * 100), (int)((m_data.ABLHIAEDJAI_CurrentValue + a1) * 1.0f / m_data.JHLKLPEHHCD_GetCurrentLevelInfo().DNBFMLBNAEE_Point * 100));
+			m_point_den.SetNumber(m_data.ABLHIAEDJAI_CurrentValue + a1, 0);
+			m_point_mol.SetNumber(m_data.JHLKLPEHHCD_GetCurrentLevelInfo().DNBFMLBNAEE_Point, 0);
 			int a2 = Mathf.Min(m_have_item, m_use_item_max);
 			if(m_item_use_num == a2)
 			{
@@ -256,7 +256,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < m_reward_list.Count - 1; i++)
 			{
-				if(item_data.IILKAJBHLMJ_ItemPointValue * m_item_use_num + m_data.ABLHIAEDJAI_Point < m_reward_list[i].DNBFMLBNAEE_NeedPoint)
+				if(item_data.IILKAJBHLMJ_ItemPointValue * m_item_use_num + m_data.ABLHIAEDJAI_CurrentValue < m_reward_list[i].DNBFMLBNAEE_Point)
 					return i;
 			}
 			return m_reward_list.Count - 1;
@@ -274,7 +274,7 @@ namespace XeApp.Game.Menu
 			m_reward_list = data.OCOOHBINGBG_LevelInfo;
 			m_have_item = item_data.HMFFHLPNMPH_Cnt;
 			m_use_item_min = 0;
-			m_use_item_max = Mathf.CeilToInt((m_data.JHLKLPEHHCD_GetCurrentLevelInfo().DNBFMLBNAEE_NeedPoint - m_data.ABLHIAEDJAI_Point) * 1.0f / item_data.IILKAJBHLMJ_ItemPointValue);
+			m_use_item_max = Mathf.CeilToInt((m_data.JHLKLPEHHCD_GetCurrentLevelInfo().DNBFMLBNAEE_Point - m_data.ABLHIAEDJAI_CurrentValue) * 1.0f / item_data.IILKAJBHLMJ_ItemPointValue);
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			StringBuilder str = new StringBuilder();
 			str.SetFormatSmart(bk.GetMessageByLabel("costume_upgrade_use_item_limit_text"), m_use_item_max);

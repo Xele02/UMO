@@ -434,7 +434,7 @@ namespace XeApp.Game.Gacha
 			}
 			if(GachaUtility.netGachaProductData.FJAOAGNFABN_HasOneDay)
 			{
-				EGOLBAPFHHD_Common.PCHECKGDJDK d = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BGDMJGDEKFJ_GetGachaDraw(GachaUtility.netGachaProductData.FDEBLMKEMLF_TypeAndSeriesId);
+				EGOLBAPFHHD_Common.PCHECKGDJDK d = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BGDMJGDEKFJ_GetGachaDraw(GachaUtility.netGachaProductData.FDEBLMKEMLF_TypeAndSeriesId);
 				if(d != null && GachaUtility.netGachaProductData.ABNMIDCBENB_OneDay <= d.HMFFHLPNMPH)
 				{
 					m_resultButtonUi.HideRetry();

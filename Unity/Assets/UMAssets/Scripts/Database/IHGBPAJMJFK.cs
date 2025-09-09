@@ -93,11 +93,11 @@ public class IHGBPAJMJFK_Emblem : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x11FB384 Offset: 0x11FB384 VA: 0x11FB384
-	public bool MNFCLPNLFIJ_IsEmblemAvaiable(int ABLOIBMGLFD)
+	public bool MNFCLPNLFIJ_IsEmblemAvaiable(int _ABLOIBMGLFD_EmId)
 	{
-		if(ABLOIBMGLFD > 0 && ABLOIBMGLFD <= CDENCMNHNGA_EmblemList.Count)
+		if(_ABLOIBMGLFD_EmId > 0 && _ABLOIBMGLFD_EmId <= CDENCMNHNGA_EmblemList.Count)
 		{
-			return CDENCMNHNGA_EmblemList[ABLOIBMGLFD - 1].HANMDEBPBHG_Pic > 0;
+			return CDENCMNHNGA_EmblemList[_ABLOIBMGLFD_EmId - 1].HANMDEBPBHG_Pic > 0;
 		}
 		return false;
 	}

@@ -1505,7 +1505,7 @@ namespace ExternLib
 							p = new ProductInfo()
 							{
 								id = 400000 + items[i].KAPMOPMDHJE_Label,
-								buy_limit = items[i].ELEPHBOKIGK_BuyLimit,
+								buy_limit = items[i].ELEPHBOKIGK_MaxCount,
 								closed_at = 32512611600,
 								label = items[i].KAPMOPMDHJE_Label,
 								name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(items[i].KIJAPOFAGPN_ItemFullId),

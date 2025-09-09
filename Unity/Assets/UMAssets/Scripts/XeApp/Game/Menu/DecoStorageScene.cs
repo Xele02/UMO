@@ -111,7 +111,7 @@ namespace XeApp.Game.Menu
 						NDBFKHKMMCE_DecoItem.FIDBAFHNGCF dbSp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp[id - 1];
 						if(dbSp.GBJFNGCDKPM_SpType <= 3)
 						{
-							BCGFHLIEKLJ_DecoItem.GNGFGEIAGJL saveSp = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.OMMNKDEODJP_DecoItem.NBKAMFFIOOG_Sp[id - 1];
+							BCGFHLIEKLJ_DecoItem.GNGFGEIAGJL saveSp = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.OMMNKDEODJP_DecoItem.NBKAMFFIOOG_Sp[id - 1];
 							saveSp.FOONCJDLLIK_ChargeTime = chargeTime;
 							saveSp.EMHCHMHMFHJ_ChargeTimeOffset = 0;
 							DecoScene.SendPushMessage(dbSp, saveSp.ANAJIAENLNB_Level, chargeTime, 0);
@@ -662,7 +662,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_UpdatePublicStatus()
 		{
 			//0x11CF7AC
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DOPABKCMOOI(CIOECGOMILE.HHCJCDFCLOB.LGBMDHOLOIF_decoPlayerData, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.MHEAEGMIKIE_PublicStatus.DALCINDEJLC_DcTm);
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DOPABKCMOOI(CIOECGOMILE.HHCJCDFCLOB.LGBMDHOLOIF_decoPlayerData, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.DALCINDEJLC_DcTm);
 			bool isDone = false;
 			bool isError = false;
 			MenuScene.Instance.InputDisable();

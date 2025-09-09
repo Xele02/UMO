@@ -99,7 +99,7 @@ namespace ExternLib
 								bool itemFound = false;
 								for(int j = 0; j < NDFIEMPPMLF.FCIPEDFHFEM_RewardStep.Count; j++)
 								{
-									PHBACNMCMHG_EventCollection.PFGFDNLGPKP item = NDFIEMPPMLF.FCIPEDFHFEM_RewardStep[j].AHJNPEAMCCH_Items.Find((PHBACNMCMHG_EventCollection.PFGFDNLGPKP _) =>
+									PHBACNMCMHG_EventCollection.PFGFDNLGPKP item = NDFIEMPPMLF.FCIPEDFHFEM_RewardStep[j].AHJNPEAMCCH_Rewards.Find((PHBACNMCMHG_EventCollection.PFGFDNLGPKP _) =>
 									{
 										return id == _.NMKEOMCMIPP_RewardId;
 									});
@@ -138,7 +138,7 @@ namespace ExternLib
 								bool itemFound = false;
 								for(int j = 0; j < evMission.FCIPEDFHFEM_RewardStep.Count; j++)
 								{
-									ACBAHDMEFFL_EventMission.PFKENFLKIOP item = evMission.FCIPEDFHFEM_RewardStep[j].AHJNPEAMCCH_Items.Find((ACBAHDMEFFL_EventMission.PFKENFLKIOP _) =>
+									ACBAHDMEFFL_EventMission.PFKENFLKIOP item = evMission.FCIPEDFHFEM_RewardStep[j].AHJNPEAMCCH_Rewards.Find((ACBAHDMEFFL_EventMission.PFKENFLKIOP _) =>
 									{
 										return id == _.NMKEOMCMIPP_RewardId;
 									});
@@ -500,17 +500,17 @@ namespace ExternLib
 									bool found = false;
 									for(int k = 0; k < dbSection.FCIPEDFHFEM_Rewards.Count; k++)
 									{
-										for(int j = 0; j < dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Items.Count; j++)
+										for(int j = 0; j < dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Rewards.Count; j++)
 										{
-											if(dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Items[j].NMKEOMCMIPP_RewardId > 0)
+											if(dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Rewards[j].NMKEOMCMIPP_RewardId > 0)
 											{
-												if(key == string.Concat(dbSection.NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix, dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Items[j].NMKEOMCMIPP_RewardId.ToString()))
+												if(key == string.Concat(dbSection.NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix, dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Rewards[j].NMKEOMCMIPP_RewardId.ToString()))
 												{
 													MFDJIFIIPJD data = new MFDJIFIIPJD();
-													data.KHEKNNFCAOI(dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Items[j].GLCLFMGPMAN_ItemId, dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Items[j].HMFFHLPNMPH_Cnt);
+													data.KHEKNNFCAOI(dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Rewards[j].GLCLFMGPMAN_ItemId, dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_Cnt);
 													UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 													{
-														item_count = dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Items[j].HMFFHLPNMPH_Cnt,
+														item_count = dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_Cnt,
 														item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
 														item_type = data.MJBKGOJBPAD_Type,
 														item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
@@ -583,17 +583,17 @@ namespace ExternLib
 									bool found = false;
 									for(int k = 0; k < dbSection.FCIPEDFHFEM_Rewards.Count; k++)
 									{
-										for(int j = 0; j < dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Items.Count; j++)
+										for(int j = 0; j < dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Rewards.Count; j++)
 										{
-											if(dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Items[j].NMKEOMCMIPP_RewardId > 0)
+											if(dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Rewards[j].NMKEOMCMIPP_RewardId > 0)
 											{
-												if(key == string.Concat(dbSection.NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix, dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Items[j].NMKEOMCMIPP_RewardId.ToString()))
+												if(key == string.Concat(dbSection.NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix, dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Rewards[j].NMKEOMCMIPP_RewardId.ToString()))
 												{
 													MFDJIFIIPJD data = new MFDJIFIIPJD();
-													data.KHEKNNFCAOI(dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Items[j].GLCLFMGPMAN_ItemId, dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Items[j].HMFFHLPNMPH_ItemCnt);
+													data.KHEKNNFCAOI(dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Rewards[j].GLCLFMGPMAN_ItemId, dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_ItemCnt);
 													UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 													{
-														item_count = dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Items[j].HMFFHLPNMPH_ItemCnt,
+														item_count = dbSection.FCIPEDFHFEM_Rewards[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_ItemCnt,
 														item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
 														item_type = data.MJBKGOJBPAD_Type,
 														item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
@@ -763,17 +763,17 @@ namespace ExternLib
 									{
 										for(int k = 0; k < dbSection.FCIPEDFHFEM_RewardStep.Count && !found; k++)
 										{
-											for(int j = 0; j < dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Items.Count; j++)
+											for(int j = 0; j < dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Rewards.Count; j++)
 											{
-												if(dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Items[j].NMKEOMCMIPP_RewardId > 0)
+												if(dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Rewards[j].NMKEOMCMIPP_RewardId > 0)
 												{
-													if(key == string.Concat(dbSection.NGHKJOEDLIP.OCDMGOGMHGE_RewardPrefix, dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Items[j].NMKEOMCMIPP_RewardId.ToString()))
+													if(key == string.Concat(dbSection.NGHKJOEDLIP.OCDMGOGMHGE_RewardPrefix, dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Rewards[j].NMKEOMCMIPP_RewardId.ToString()))
 													{
 														MFDJIFIIPJD data = new MFDJIFIIPJD();
-														data.KHEKNNFCAOI(dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Items[j].GLCLFMGPMAN_ItemId, dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Items[j].HMFFHLPNMPH_Cnt);
+														data.KHEKNNFCAOI(dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Rewards[j].GLCLFMGPMAN_ItemId, dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_Cnt);
 														UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 														{
-															item_count = dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Items[j].HMFFHLPNMPH_Cnt,
+															item_count = dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_Cnt,
 															item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
 															item_type = data.MJBKGOJBPAD_Type,
 															item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,
@@ -849,17 +849,17 @@ namespace ExternLib
 									{
 										for(int k = 0; k < dbSection.FCIPEDFHFEM_RewardStep.Count && !found; k++)
 										{
-											for(int j = 0; j < dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Items.Count; j++)
+											for(int j = 0; j < dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Rewards.Count; j++)
 											{
-												if(dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Items[j].NMKEOMCMIPP_RewardId > 0)
+												if(dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Rewards[j].NMKEOMCMIPP_RewardId > 0)
 												{
-													if(key == string.Concat(dbSection.NGHKJOEDLIP_Settings.OCDMGOGMHGE_RewardPrefix, dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Items[j].NMKEOMCMIPP_RewardId.ToString()))
+													if(key == string.Concat(dbSection.NGHKJOEDLIP_Settings.OCDMGOGMHGE_RewardPrefix, dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Rewards[j].NMKEOMCMIPP_RewardId.ToString()))
 													{
 														MFDJIFIIPJD data = new MFDJIFIIPJD();
-														data.KHEKNNFCAOI(dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Items[j].GLCLFMGPMAN_ItemId, dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Items[j].HMFFHLPNMPH_Cnt);
+														data.KHEKNNFCAOI(dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Rewards[j].GLCLFMGPMAN_ItemId, dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_Cnt);
 														UserInventoryItem addedItem = AddInventoryItem(new UserInventoryItem()
 														{
-															item_count = dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Items[j].HMFFHLPNMPH_Cnt,
+															item_count = dbSection.FCIPEDFHFEM_RewardStep[k].AHJNPEAMCCH_Rewards[j].HMFFHLPNMPH_Cnt,
 															item_name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(data.JJBGOIMEIPF_ItemId),
 															item_type = data.MJBKGOJBPAD_Type,
 															item_value = data.JJBGOIMEIPF_ItemId == 10001 ? 1001 : data.JJBGOIMEIPF_ItemId,

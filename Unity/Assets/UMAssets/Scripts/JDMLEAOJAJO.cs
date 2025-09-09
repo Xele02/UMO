@@ -217,7 +217,7 @@ public class DCAKKIJODME : JDMLEAOJAJO
             ICFLJACCIKF_EventBattle dbEvent = FFMBHIBHPBA(ev);
             if(dbEvent != null)
             {
-                CCPKHBECNLH_EventBattle.BHIDLKBIJFK saveEv = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DKJBALDICBG_EventBattle.FBCJICEPLED[dbEvent.NGHKJOEDLIP.MOEKELIIDEO_SaveIdx];
+                CCPKHBECNLH_EventBattle.BHIDLKBIJFK saveEv = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DKJBALDICBG_EventBattle.FBCJICEPLED[dbEvent.NGHKJOEDLIP.MOEKELIIDEO_SaveIdx];
                 List<int> l = BIJJHHFMODA();
                 int min = Math.Min(l.Count, saveEv.PCNOCBANFOO_ExResult.Count);
                 for(int i = 0; i < min; i++)
@@ -269,7 +269,7 @@ public class DCAKKIJODME : JDMLEAOJAJO
             if(dbSection != null)
             {
                 bool res = false;
-                CCPKHBECNLH_EventBattle.BHIDLKBIJFK saveEv = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DKJBALDICBG_EventBattle.FBCJICEPLED[dbSection.NGHKJOEDLIP.MOEKELIIDEO_SaveIdx];
+                CCPKHBECNLH_EventBattle.BHIDLKBIJFK saveEv = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DKJBALDICBG_EventBattle.FBCJICEPLED[dbSection.NGHKJOEDLIP.MOEKELIIDEO_SaveIdx];
                 if(saveEv.PCNOCBANFOO_ExResult[GOBMOGJNEFA].JKAMFMNGEBB_Hs < ev.CKCPAMDDNPF.OOEKGFAIFPK_ExBattleMusicScore)
                 {
                     saveEv.PCNOCBANFOO_ExResult[GOBMOGJNEFA].JKAMFMNGEBB_Hs = ev.CKCPAMDDNPF.OOEKGFAIFPK_ExBattleMusicScore;

@@ -125,7 +125,7 @@ namespace XeApp.Game.Menu
 			ProfilDateArgs arg = new ProfilDateArgs();
 			arg.data = f;
 			arg.infoType = ProfilMenuLayout.InfoType.SCENE;
-			arg.isFavorite = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(f.MLPEHNBNOGD_Id);
+			arg.isFavorite = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(f.MLPEHNBNOGD_Id);
 			arg.btnType = NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD_GetPlayerId() == f.MLPEHNBNOGD_Id ? ProfilMenuLayout.ButtonType.None : ProfilMenuLayout.ButtonType.Raid_Result;
 			MenuScene.Instance.Call(TransitionList.Type.PROFIL, arg, true);
 		}

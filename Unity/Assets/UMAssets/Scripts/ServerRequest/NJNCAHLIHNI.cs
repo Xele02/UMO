@@ -18,7 +18,7 @@ public class NJNCAHLIHNI_GetPlayerData : CACGCMBKHDI_Request
 
 	public class JFNMOPPICNP
 	{
-		public List<OKMDAFICFHJ> AIGKNOKPMEJ; // 0x8
+		public List<OKMDAFICFHJ> AIGKNOKPMEJ_Players; // 0x8
 	}
 
 	public List<int> FAMHAPONILI_Ids; // 0x7C
@@ -53,7 +53,7 @@ public class NJNCAHLIHNI_GetPlayerData : CACGCMBKHDI_Request
 	{
 		JFNMOPPICNP res = new JFNMOPPICNP();
 		EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result);
-		res.AIGKNOKPMEJ = new List<OKMDAFICFHJ>(data["players"].HNBFOAJIIAL_Count);
+		res.AIGKNOKPMEJ_Players = new List<OKMDAFICFHJ>(data["players"].HNBFOAJIIAL_Count);
 		for (int i = 0; i < data["players"].HNBFOAJIIAL_Count; i++)
 		{
 			EDOHBJAPLPF_JsonData p = data["players"][i];
@@ -61,13 +61,13 @@ public class NJNCAHLIHNI_GetPlayerData : CACGCMBKHDI_Request
 			d.EHGBICNIBKE_PlayerId = (int)p["player_id"];
 			d.IFNLEKOILPM_UpdatedAt = (int)p["updated_at"];
 			d.HJDBGMMPPEF_PlayerData = p["player_data"];
-			res.AIGKNOKPMEJ.Add(d);
+			res.AIGKNOKPMEJ_Players.Add(d);
 		}
 		if(PINPBOCDKLI != null)
 		{
-			for(int i = 0; i < res.AIGKNOKPMEJ.Count; i++)
+			for(int i = 0; i < res.AIGKNOKPMEJ_Players.Count; i++)
 			{
-				bool b = PINPBOCDKLI(i, res.AIGKNOKPMEJ[i].EHGBICNIBKE_PlayerId, res.AIGKNOKPMEJ[i].IFNLEKOILPM_UpdatedAt, HHIHCJKLJFF_BlockNames, res.AIGKNOKPMEJ[i].HJDBGMMPPEF_PlayerData);
+				bool b = PINPBOCDKLI(i, res.AIGKNOKPMEJ_Players[i].EHGBICNIBKE_PlayerId, res.AIGKNOKPMEJ_Players[i].IFNLEKOILPM_UpdatedAt, HHIHCJKLJFF_BlockNames, res.AIGKNOKPMEJ_Players[i].HJDBGMMPPEF_PlayerData);
 				if(!b)
 				{
 					DLKLLHPLANH = true;

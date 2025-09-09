@@ -16,7 +16,7 @@ namespace XeApp.Game.Common
 		public void Init(int id)
 		{
 			JKDKODAPGBJ_EnergyItem.GFGCCICHBHK dbItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KOPOGNLKAEN_EnergyItem.CDENCMNHNGA[id - 1];
-			EGOLBAPFHHD_Common.FKLHGOGJOHH saveItem = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KFEBOFKAHAJ_EngItem[id - 1];
+			EGOLBAPFHHD_Common.FKLHGOGJOHH saveItem = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KFEBOFKAHAJ_EngItem[id - 1];
 			this.id = id;
 			haveCount = saveItem.BFINGCJHOHI_Cnt;
 			maxCount = dbItem.DOOGFEGEKLG_Max;

@@ -93,7 +93,7 @@ public class KBCCGHLCFNO_MonthlyPass : DIHHCBACKGG_DbSection
 	}
 
 	public static int FBGGEFFJJHB = 0x9694bcb; // 0x0
-	public List<JKGFAIPDNDL> AHJNPEAMCCH; // 0x20
+	public List<JKGFAIPDNDL> AHJNPEAMCCH_Rewards; // 0x20
 	public List<OFCDEIEAKLN> JHNEKMAHOPJ; // 0x24
 	public List<BJEKBPEKCIM> MHKCPJDNJKI; // 0x28
 	public static int DMDKPBPBDKD = -1; // 0x4
@@ -134,7 +134,7 @@ public class KBCCGHLCFNO_MonthlyPass : DIHHCBACKGG_DbSection
 	// // RVA: 0x1018880 Offset: 0x1018880 VA: 0x1018880
 	public JKGFAIPDNDL DHBEKJNJOMC(int ADECCOKCCDH, int BAOFEFFADPD)
 	{
-		return AHJNPEAMCCH.Find((JKGFAIPDNDL GHPLINIACBB) =>
+		return AHJNPEAMCCH_Rewards.Find((JKGFAIPDNDL GHPLINIACBB) =>
 		{
 			//0x101A5C8
 			if (GHPLINIACBB.JJPDPNJFBHN != ADECCOKCCDH)
@@ -151,7 +151,7 @@ public class KBCCGHLCFNO_MonthlyPass : DIHHCBACKGG_DbSection
     {
 		JIKKNHIAEKG_BlockName = "";
 		LNIMEIMBCMF = false;
-		AHJNPEAMCCH = new List<JKGFAIPDNDL>();
+		AHJNPEAMCCH_Rewards = new List<JKGFAIPDNDL>();
 		JHNEKMAHOPJ = new List<OFCDEIEAKLN>();
 		MHKCPJDNJKI = new List<BJEKBPEKCIM>();
 		OHJFBLFELNK_IntValues = new Dictionary<string, CEBFFLDKAEC_SecureInt>();
@@ -162,7 +162,7 @@ public class KBCCGHLCFNO_MonthlyPass : DIHHCBACKGG_DbSection
 	// // RVA: 0x1018C7C Offset: 0x1018C7C VA: 0x1018C7C Slot: 8
 	protected override void KMBPACJNEOF()
     {
-		AHJNPEAMCCH.Clear();
+		AHJNPEAMCCH_Rewards.Clear();
 		JHNEKMAHOPJ.Clear();
 		MHKCPJDNJKI.Clear();
 		OHJFBLFELNK_IntValues.Clear();
@@ -197,7 +197,7 @@ public class KBCCGHLCFNO_MonthlyPass : DIHHCBACKGG_DbSection
 				{
 					data.ALDHNJDLNHG[j] = array3[j] ^ FBGGEFFJJHB;
 				}
-				AHJNPEAMCCH.Add(data);
+				AHJNPEAMCCH_Rewards.Add(data);
 			}
 		}
 		{

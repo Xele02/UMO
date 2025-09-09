@@ -395,12 +395,12 @@ namespace XeApp.Game.Menu
 			m_name_btn.AddOnClickCallback(() =>
 			{
 				//0x117ADF8
-				OnChangePlayerName(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName);
+				OnChangePlayerName(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName);
 			});
 			m_comment_btn.AddOnClickCallback(() =>
 			{
 				//0x117AEE4
-				OnChangeComment(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.CMKKFCGBILD_Prof);
+				OnChangeComment(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.CMKKFCGBILD_Prof);
 			});
 			m_degree_btn.AddOnClickCallback(() =>
 			{
@@ -618,7 +618,7 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			JLKEOGLJNOD_TeamInfo t = GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(false);
 			SetDivaImage(t.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId, t.BCJEAJPLGMB_MainDivas[0].FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, t.BCJEAJPLGMB_MainDivas[0].EKFONBFDAAP_ColorId);
-			SetMusicRate(GameManager.Instance.ViewPlayerData.AGJIIKKOKFJ_MusicRate);
+			SetMusicRate(GameManager.Instance.ViewPlayerData.AGJIIKKOKFJ_ScoreRatingRank);
 			m_viewHSRatingData.KHEKNNFCAOI(null, null);
 			GCIJNCFDNON_SceneInfo scene = null;
 			if(t.BCJEAJPLGMB_MainDivas[0].FGFIBOBAPIA_SceneId > 0)
@@ -627,9 +627,9 @@ namespace XeApp.Game.Menu
 			}
 			SetMainSceneInfo(scene);
 			SetCenterSkillInfo(t.BCJEAJPLGMB_MainDivas[0], m_scene_data);
-			m_player_name.text = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName;
+			m_player_name.text = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName;
 			m_player_id.text = NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD_GetPlayerId().ToString();
-			m_comment.text = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.CMKKFCGBILD_Prof;
+			m_comment.text = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.CMKKFCGBILD_Prof;
 			m_comment.horizontalOverflow = HorizontalWrapMode.Wrap;
 			SetDegreeInfo(GameManager.Instance.ViewPlayerData.NDOLELKAJNL_Degree);
 			m_degree_data = GetDegreeData(GameManager.Instance.ViewPlayerData.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId);
@@ -647,7 +647,7 @@ namespace XeApp.Game.Menu
 			m_level_icon.Change(t.BCJEAJPLGMB_MainDivas[0], GameManager.Instance.ViewPlayerData, DisplayType.Level);
 			m_player_id_switch.StartChildrenAnimGoStop(0, 0);
 			m_text_switch.StartChildrenAnimGoStop(0, 0);
-			SetStatsInfo(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.MHEAEGMIKIE_PublicStatus);
+			SetStatsInfo(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus);
 			AssistSelectInit();
 		}
 
@@ -679,7 +679,7 @@ namespace XeApp.Game.Menu
 			m_level_icon.Change(data.JIGONEMPPNP_Diva, GameManager.Instance.ViewPlayerData, DisplayType.Level);
 			m_player_id_switch.StartChildrenAnimGoStop(1, 1);
 			m_text_switch.StartChildrenAnimGoStop(1, 1);
-			SetStatsInfo(data.PCEGKKLKFNO.AHEFHIMGIBI_ServerData.MHEAEGMIKIE_PublicStatus);
+			SetStatsInfo(data.PCEGKKLKFNO.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus);
 			AssistSelectInit(data);
 		}
 
@@ -973,9 +973,9 @@ namespace XeApp.Game.Menu
 			//0x117DAB4
 			bool isError = false;
 			MenuScene.Instance.InputDisable();
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName = playerName;
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName = playerName;
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.AFPONJEJKCO_RenameDate = time;
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.AFPONJEJKCO_RenameDate = time;
 			mon = 0;
 			day = 0;
 			CIOECGOMILE.HHCJCDFCLOB.HNDJBAAAHDO(ref mon, ref day);
@@ -988,8 +988,8 @@ namespace XeApp.Game.Menu
 				yield return null;
 			while(isError)
 				yield return null;
-			m_player_name.text = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName;
-			m_comment.text = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.CMKKFCGBILD_Prof;
+			m_player_name.text = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName;
+			m_comment.text = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.CMKKFCGBILD_Prof;
 			MenuScene.Instance.InputEnable();
 			SetChangePlayerNameTime(mon, day);
 			ChangePlayerName();
@@ -998,13 +998,13 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x117386C Offset: 0x117386C VA: 0x117386C
 		private bool IsChangePlayerName(string changedName)
 		{
-			return changedName != CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName;
+			return changedName != CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName;
 		}
 
 		//// RVA: 0x1173958 Offset: 0x1173958 VA: 0x1173958
 		private bool IsChangeComment(string changedComment)
 		{
-			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.CMKKFCGBILD_Prof != changedComment;
+			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.CMKKFCGBILD_Prof != changedComment;
 		}
 
 		//// RVA: 0x1173A44 Offset: 0x1173A44 VA: 0x1173A44
@@ -1131,7 +1131,7 @@ namespace XeApp.Game.Menu
 		{
 			//0x9CDA64
 			bool isError = false;
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.CMKKFCGBILD_Prof = inputComment;
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.CMKKFCGBILD_Prof = inputComment;
 			ILLPDLODANB.HECOAKHIAKP(ILLPDLODANB.LOEGALDKHPL.HDJGNKOIMOH/*26*/, 2, false);
 			MenuScene.Save(null, () =>
 			{
@@ -1143,8 +1143,8 @@ namespace XeApp.Game.Menu
 			while (isError)
 				yield return null;
 			MenuScene.Instance.InputEnable();
-			m_comment.text = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.CMKKFCGBILD_Prof;
-			m_player_name.text = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName;
+			m_comment.text = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.CMKKFCGBILD_Prof;
+			m_player_name.text = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName;
 			ChangeComment();
 		}
 
@@ -1416,7 +1416,7 @@ namespace XeApp.Game.Menu
 			{
 				m_degree.horizontalOverflow = HorizontalWrapMode.Overflow;
 				m_degree.verticalOverflow = VerticalWrapMode.Overflow;
-				TextGeneratorUtility.SetTextNewLineMessage(m_degree, emblem.ADCMNODJBGJ_EmblemName);
+				TextGeneratorUtility.SetTextNewLineMessage(m_degree, emblem.ADCMNODJBGJ_Title);
 				SetDegreeImage(emblem.MDPKLNFFDBO_EmblemId);
 				SetDegreeNum(emblem.HMFFHLPNMPH, emblem.HMFFHLPNMPH > 0);
 			}
@@ -1439,8 +1439,8 @@ namespace XeApp.Game.Menu
 			m_stats_mission_clear_count.text = status.APFOBLMCLAO_QCnt.ToString();
 			m_stats_clear_count.text = status.PCBJHBCNNGD_TClr.ToString();
 			m_stats_perfect_notes_count.text = status.LDKEOMCNLBE_PfTap.ToString();
-			m_stats_highscore_value.text = status.AEBENOJEGOJ_MaxSc.ToString();
-			if(status.AEBENOJEGOJ_MaxSc < 1)
+			m_stats_highscore_value.text = status.AEBENOJEGOJ_MaxScore.ToString();
+			if(status.AEBENOJEGOJ_MaxScore < 1)
 			{
 				m_stats_highscore_music.text = "";
 				m_stats_highscore_diff.enabled = false;
@@ -1807,7 +1807,7 @@ namespace XeApp.Game.Menu
 			m_btnType = a_type;
 			if(a_type >= ButtonType.Raid && a_type <= ButtonType.Raid_Result)
 			{
-				fanEntryHidden = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(m_friend_player_data.MLPEHNBNOGD_Id);
+				fanEntryHidden = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(m_friend_player_data.MLPEHNBNOGD_Id);
 				lobbyHidden = true;
 				visitHidden = true;
 				blockHidden = true;
@@ -1841,7 +1841,7 @@ namespace XeApp.Game.Menu
 					lobbyHidden = true;
 					fanReleaseHidden = true;
 					bool b = false;
-					if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(m_friend_player_data.MLPEHNBNOGD_Id))
+					if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(m_friend_player_data.MLPEHNBNOGD_Id))
 					{
 						fanReleaseHidden = false;
 						lobbyHidden = m_btnType != ButtonType.Fan;

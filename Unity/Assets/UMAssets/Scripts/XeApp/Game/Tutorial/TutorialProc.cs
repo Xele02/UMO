@@ -39,7 +39,7 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE49B54 Offset: 0xE49B54 VA: 0xE49B54
 		public static bool CanAutoSettingHelp()
 		{
-			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsAutoSetting))
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsAutoSetting))
 			{
 				if(QuestUtility.m_beginnerViewList.Count != 0)
 				{
@@ -63,7 +63,7 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE49E78 Offset: 0xE49E78 VA: 0xE49E78
 		public static bool CanAutoSettingNavi()
 		{
-			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.IGJAAIEAJPB_GetNumUnlockedScene() > 2;
+			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.IGJAAIEAJPB_GetNumUnlockedScene() > 2;
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6AEDA8 Offset: 0x6AEDA8 VA: 0x6AEDA8
@@ -78,7 +78,7 @@ namespace XeApp.Game.Tutorial
 			bool isWait = true;
 			if(!CanAutoSettingNavi())
 			{
-				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsAutoSetting, true);
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsAutoSetting, true);
 				MenuScene.Instance.InputDisable();
 				isWait = true;
 				MenuScene.Save(() =>
@@ -155,7 +155,7 @@ namespace XeApp.Game.Tutorial
 				}, null);
 				while(isWait)
 					yield return null;
-				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsAutoSetting, true);
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsAutoSetting, true);
 				ILLPDLODANB.ILOGJDALEOO();
 				MenuScene.Instance.InputDisable();
 				isWait = true;
@@ -174,7 +174,7 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE4A008 Offset: 0xE4A008 VA: 0xE4A008
 		public static bool CanUnit5Help(GameSetupData.MusicInfo musicInfo)
 		{
-			if (musicInfo == null || CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsUnit5Help) || musicInfo.onStageDivaNum < 4)
+			if (musicInfo == null || CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsUnit5Help) || musicInfo.onStageDivaNum < 4)
 				return false;
 			return !GameManager.Instance.IsTutorial;
 		}
@@ -238,7 +238,7 @@ namespace XeApp.Game.Tutorial
 			}, null);
 			while(isWait)
 				yield return null;
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsUnit5Help, true);
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsUnit5Help, true);
 			MenuScene.Instance.InputEnable();
 			isWait = true;
 			MenuScene.Save(() =>
@@ -255,7 +255,7 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE4A1F8 Offset: 0xE4A1F8 VA: 0xE4A1F8
 		public static bool CanBeginnerMissionLiveClearLiveHelp()
 		{
-			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsBeginnerLiveMission))
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsBeginnerLiveMission))
 			{
 				if(QuestUtility.m_beginnerViewList.Count != 0)
 				{
@@ -393,7 +393,7 @@ namespace XeApp.Game.Tutorial
 			GameManager.PushBackButtonHandler dymmyBackHandler; // 0x30
 
 			//0xE4DC20
-			pd = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume;
+			pd = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume;
 			if(pd.MLBBKNLPBBD_IsTutoDone((int)type))
 				yield break;
 			MenuScene.Instance.InputDisable();
@@ -450,7 +450,7 @@ namespace XeApp.Game.Tutorial
 			GameManager.PushBackButtonHandler dymmyBackHandler;
 
 			//0x1915D2C
-			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade))
+			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade))
 				yield break;
 			MenuScene.Instance.InputDisable();
 			BasicTutorialManager.Initialize();
@@ -514,7 +514,7 @@ namespace XeApp.Game.Tutorial
 			GameManager.PushBackButtonHandler dymmyBackHandler; // 0x24
 
 			//0x1910FAC
-			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsMcrsLobby))
+			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsMcrsLobby))
 				yield break;
 			if(proc != null)
 				proc();
@@ -578,9 +578,9 @@ namespace XeApp.Game.Tutorial
 			GameManager.PushBackButtonHandler dymmyBackHandler; // 0x20
 
 			//0x19130D0
-			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsRaidFromMcrsLobby))
+			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsRaidFromMcrsLobby))
 				yield break;
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsRaidFromMcrsLobby, true);
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsRaidFromMcrsLobby, true);
 			MenuScene.Instance.InputDisable();
 			BasicTutorialManager.Initialize();
 			mrg = BasicTutorialManager.Instance;
@@ -636,7 +636,7 @@ namespace XeApp.Game.Tutorial
 			GameManager.PushBackButtonHandler dymmyBackHandler; // 0x24
 
 			//0xE4E414
-			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsDecolture))
+			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsDecolture))
 				yield break;
 			if(proc != null)
 				proc();
@@ -696,9 +696,9 @@ namespace XeApp.Game.Tutorial
 			BasicTutorialMessageId messageId; // 0x30
 
 			//0x1913958
-			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsRaidUseFoldRadar))
+			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsRaidUseFoldRadar))
 				yield break;
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsRaidUseFoldRadar, true);
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsRaidUseFoldRadar, true);
 			mrg = BasicTutorialManager.Instance;
 			bool isWait = true;
 			MenuScene.Instance.InputDisable();
@@ -793,7 +793,7 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE4AB98 Offset: 0xE4AB98 VA: 0xE4AB98
 		public static bool CanBeginnerMissionLiveClearMissionList(TransitionList.Type prevType)
 		{
-			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsBeginnerLiveMission))
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsBeginnerLiveMission))
 			{
 				if (prevType < TransitionList.Type.EPISODE_SELECT)
 				{
@@ -851,7 +851,7 @@ namespace XeApp.Game.Tutorial
 			}, null);
 			while(isWait)
 				yield return null;
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsBeginnerLiveMission, true);
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsBeginnerLiveMission, true);
 			MenuScene.Instance.InputDisable();
 			isWait = true;
 			MenuScene.Save(() =>
@@ -1178,9 +1178,9 @@ namespace XeApp.Game.Tutorial
 		//// RVA: 0xE4B79C Offset: 0xE4B79C VA: 0xE4B79C
 		public static bool CanBeginnerAssistSelect()
 		{
-			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsSelectAssist))
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsSelectAssist))
 			{
-				if (!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsAutoSetting))
+				if (!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsAutoSetting))
 				{
 					return true;
 				}
@@ -1252,7 +1252,7 @@ namespace XeApp.Game.Tutorial
 			while(isWait)
 				yield return null;
 			GameManager.Instance.RemovePushBackButtonHandler(dymmyBackHandler);
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsSelectAssist, true);
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsSelectAssist, true);
 			isWait = true;
 			MenuScene.Save(() =>
 			{
@@ -1268,17 +1268,17 @@ namespace XeApp.Game.Tutorial
 		{
 			if(HNDLICBDEMI.AFGKIJMPNNN_IsDecoEnabled())
 			{
-				if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsDecolture))
+				if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsDecolture))
 					return true;
 			}
-			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DAEJHMCMFJD_Offer.MLBBKNLPBBD_HasShowTuto(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0))
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.MLBBKNLPBBD_HasShowTuto(BOPFPIHGJMD.PDLKAKEABDP.EILIAPKFCEO_0))
 			{
 				if(KDHGBOOECKC.HHCJCDFCLOB.LOCAIBNPKDL_IsPlayerLevelOk())
 					return true;
 			}
 			if(SettingMenuPanel.IsValkyrieTuneUpUnlock())
 			{
-				return !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade);
+				return !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade);
 			}
 			return false;
 		}

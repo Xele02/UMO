@@ -210,7 +210,7 @@ namespace XeApp.Game.Menu
 			}
 			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
 			{
-				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.EEOADCECNOM_GetCostumeInfo(id).AHHJLDLAPAN_PrismDivaId;
+				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.EEOADCECNOM_GetCostumeInfo(id).AHHJLDLAPAN_DivaId;
 			}
 			return (uint)(1 << a);
 		}

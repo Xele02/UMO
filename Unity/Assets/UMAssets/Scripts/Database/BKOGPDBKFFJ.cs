@@ -23,10 +23,10 @@ public class BKOGPDBKFFJ_EventRaid : DIHHCBACKGG_DbSection
 		public long KNLGKBBIBOH_End; // 0x50
 		public int MJBKGOJBPAD_TicketType; // 0x58
 		public sbyte POGEFBMBPCB; // 0x5C
-		public sbyte AHKNMANFILO; // 0x5D
+		public sbyte AHKNMANFILO_DayGroup; // 0x5D
 		public sbyte MOEKELIIDEO_SaveIdx; // 0x5E
 		public sbyte HKKNEAGCIEB; // 0x5F
-		public sbyte AHKPNPNOAMO; // 0x60
+		public sbyte AHKPNPNOAMO_ExtreamOpen; // 0x60
 		public string OMCAOJJGOGG; // 0x64
 		private NNJFKLBPBNK_SecureString EBGIDCIIGDO = new NNJFKLBPBNK_SecureString(); // 0x68
 		private NNJFKLBPBNK_SecureString NJKIMJAFCPC = new NNJFKLBPBNK_SecureString(); // 0x6C
@@ -49,7 +49,7 @@ public class BKOGPDBKFFJ_EventRaid : DIHHCBACKGG_DbSection
 			EHHFFKAFOMC = 0;
 			MJBKGOJBPAD_TicketType = 1;
 			POGEFBMBPCB = 0;
-			AHKNMANFILO = 0;
+			AHKNMANFILO_DayGroup = 0;
 			OPFGFINHFCE_Name = null;
 			HEDAGCNPHGD = null;
 			OCGFKMHNEOF = null;
@@ -61,7 +61,7 @@ public class BKOGPDBKFFJ_EventRaid : DIHHCBACKGG_DbSection
 			HIOOGLEJBKM_StartAdventureId = 0;
 			FJCADCDNPMP_EndAdventureId = 0;
 			EJBGHLOOLBC = null;
-			AHKPNPNOAMO = 0;
+			AHKPNPNOAMO_ExtreamOpen = 0;
 		}
 
 		//// RVA: 0x19B1CC4 Offset: 0x19B1CC4 VA: 0x19B1CC4
@@ -180,7 +180,7 @@ public class BKOGPDBKFFJ_EventRaid : DIHHCBACKGG_DbSection
 	{
 		public int PPFNGGCBJKC; // 0x8
 		public int DNBFMLBNAEE; // 0xC
-		public List<LEFPDKNJDBF> AHJNPEAMCCH = new List<LEFPDKNJDBF>(); // 0x10
+		public List<LEFPDKNJDBF> AHJNPEAMCCH_Rewards = new List<LEFPDKNJDBF>(); // 0x10
 		public bool JOPPFEHKNFO; // 0x14
 
 		//// RVA: 0x19B1938 Offset: 0x19B1938 VA: 0x19B1938
@@ -342,7 +342,7 @@ public class BKOGPDBKFFJ_EventRaid : DIHHCBACKGG_DbSection
 	{
 		public class NEGFCJPAPLC
 		{
-			public int AIHOJKFNEEN_Id; // 0x8
+			public int AIHOJKFNEEN_itm; // 0x8
 			public int BFINGCJHOHI_Count; // 0xC
 			public int EHKJFNAABMC_Rate; // 0x10
 			public int DOOGFEGEKLG_Max; // 0x14
@@ -363,7 +363,7 @@ public class BKOGPDBKFFJ_EventRaid : DIHHCBACKGG_DbSection
 			for(int i = 0; i < IDLHJIOMJBK.AIHOJKFNEEN.Length; i++)
 			{
 				CMIGGBMMBKK_ItemRewards[i] = new NEGFCJPAPLC();
-				CMIGGBMMBKK_ItemRewards[i].AIHOJKFNEEN_Id = (int)IDLHJIOMJBK.AIHOJKFNEEN[i];
+				CMIGGBMMBKK_ItemRewards[i].AIHOJKFNEEN_itm = (int)IDLHJIOMJBK.AIHOJKFNEEN[i];
 				CMIGGBMMBKK_ItemRewards[i].BFINGCJHOHI_Count = (int)IDLHJIOMJBK.BFINGCJHOHI[i];
 				CMIGGBMMBKK_ItemRewards[i].EHKJFNAABMC_Rate = (int)IDLHJIOMJBK.EHKJFNAABMC[i];
 				CMIGGBMMBKK_ItemRewards[i].DOOGFEGEKLG_Max = (int)IDLHJIOMJBK.DOOGFEGEKLG[i];
@@ -590,7 +590,7 @@ public class BKOGPDBKFFJ_EventRaid : DIHHCBACKGG_DbSection
 		NGHKJOEDLIP.IDDBFFBPNGI = data.IDDBFFBPNGI;
 		NGHKJOEDLIP.KNLGKBBIBOH_End = data.KNLGKBBIBOH;
 		NGHKJOEDLIP.POGEFBMBPCB = (sbyte)data.JMJDLDEIFKE;
-		NGHKJOEDLIP.AHKNMANFILO = (sbyte)data.AHKNMANFILO;
+		NGHKJOEDLIP.AHKNMANFILO_DayGroup = (sbyte)data.AHKNMANFILO;
 		NGHKJOEDLIP.MOEKELIIDEO_SaveIdx = (sbyte)data.MOEKELIIDEO;
 		NGHKJOEDLIP.OCDMGOGMHGE_AchievementIdPrefix = data.OCDMGOGMHGE;
 		NGHKJOEDLIP.PJBILOFOCIC = data.PJBILOFOCIC;
@@ -600,7 +600,7 @@ public class BKOGPDBKFFJ_EventRaid : DIHHCBACKGG_DbSection
 		NGHKJOEDLIP.HIOOGLEJBKM_StartAdventureId = data.HIOOGLEJBKM;
 		NGHKJOEDLIP.FJCADCDNPMP_EndAdventureId = data.FJCADCDNPMP;
 		NGHKJOEDLIP.EJBGHLOOLBC = data.EJBGHLOOLBC;
-		NGHKJOEDLIP.AHKPNPNOAMO = (sbyte)data.AHKPNPNOAMO;
+		NGHKJOEDLIP.AHKPNPNOAMO_ExtreamOpen = (sbyte)data.AHKPNPNOAMO;
 		NGHKJOEDLIP.OMCAOJJGOGG = data.OMCAOJJGOGG;
 		for(int i = 0; i < data.JHPCPNJJHLI.Length; i++)
 		{

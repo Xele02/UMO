@@ -241,7 +241,7 @@ public class HGFPAFPGIKG
                 d.PPFNGGCBJKC = ev.PNLJHCDHKCP_LotResult[i].PPFNGGCBJKC;
                 d.GLCLFMGPMAN_ItemId = ev.PNLJHCDHKCP_LotResult[i].KIJAPOFAGPN_ItemId;
                 d.LJKMKCOAICL = ev.PNLJHCDHKCP_LotResult[i].HMFFHLPNMPH_Cnt;
-                d.JOPPFEHKNFO_IsPickup = ev.PNLJHCDHKCP_LotResult[i].AEDMJLGNDHN;
+                d.JOPPFEHKNFO_IsPickup = ev.PNLJHCDHKCP_LotResult[i].AEDMJLGNDHN_IsSp;
                 d.LIDBKCIMCKE_Rarity = EKLNMHFCAOI.FABCKNDLPDH_GetItemRarity(d.GLCLFMGPMAN_ItemId);
                 d.OPFGFINHFCE_Name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(d.GLCLFMGPMAN_ItemId);
                 l.Add(d);

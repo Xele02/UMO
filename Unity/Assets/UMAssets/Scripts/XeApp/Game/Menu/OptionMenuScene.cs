@@ -519,7 +519,7 @@ namespace XeApp.Game.Menu
 				m_isLoadedAccountLayout = true;
 			}
 			//LAB_00ddb27c
-			playerData = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave;
+			playerData = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
 			sakashoMrg = NKGJPJPHLIF.HHCJCDFCLOB;
 			linkageMrg = HDEEBKIFLNI.HHCJCDFCLOB;
 			balanceData = CIOECGOMILE.HHCJCDFCLOB.JBEKNFEGFFI();

@@ -1457,7 +1457,7 @@ namespace XeApp.Game.Menu
 			ProfilDateArgs arg = new ProfilDateArgs();
 			arg.data = f;
 			arg.infoType = ProfilMenuLayout.InfoType.PLAYER;
-			arg.isFavorite = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(f.MLPEHNBNOGD_Id);
+			arg.isFavorite = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(f.MLPEHNBNOGD_Id);
 			arg.btnType = NKGJPJPHLIF.HHCJCDFCLOB.CAFHLEFMMGD_GetPlayerId() == f.MLPEHNBNOGD_Id ? ProfilMenuLayout.ButtonType.None : ProfilMenuLayout.ButtonType.Raid;
 			MenuScene.Instance.Call(TransitionList.Type.PROFIL, arg, true);
 		}
@@ -1660,10 +1660,10 @@ namespace XeApp.Game.Menu
 			m_bossSelectListLayout.InitializeDecoration();
 			base.OnPreSetCanvas();
 			NKOBMDPHNGP_EventRaidLobby evLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
-			if(evLobby != null && CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LLBECHBNIJG_EventRaidPlayer != null)
+			if(evLobby != null && CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LLBECHBNIJG_EventRaidPlayer != null)
 			{
-				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LLBECHBNIJG_EventRaidPlayer.MEBHCFJCKFE_LobbyId = evLobby.PDNFHDLNENO(NKOBMDPHNGP_EventRaidLobby.FAKHCOJIOBD(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LLBECHBNIJG_EventRaidPlayer.MEBHCFJCKFE_LobbyId, 1));
-				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LLBECHBNIJG_EventRaidPlayer.KDMPHHFADMC_ClusterId = evLobby.DKNNNOIMMFN_GetClusterId();
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LLBECHBNIJG_EventRaidPlayer.MEBHCFJCKFE_LobbyId = evLobby.PDNFHDLNENO(NKOBMDPHNGP_EventRaidLobby.FAKHCOJIOBD(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LLBECHBNIJG_EventRaidPlayer.MEBHCFJCKFE_LobbyId, 1));
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LLBECHBNIJG_EventRaidPlayer.KDMPHHFADMC_ClusterId = evLobby.DKNNNOIMMFN_GetClusterId();
 			}
 			this.StartCoroutineWatched(Co_OnPresetCanvas());
 		}
@@ -1952,7 +1952,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsRaidUseFoldRadar))
+					if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsRaidUseFoldRadar))
 					{
 						if(!RaidController.PMIIMELDPAJ_GetMyBoss().DNJGAJPIIPI_IsLoaded)
 						{

@@ -1578,7 +1578,7 @@ namespace XeApp.Game.Menu
 					PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ d = evRaid.JIBMOEHKMGB_SelectedBoss;
 					long t = d.OCFJGNPMJBA_GetTime();
 					NKOBMDPHNGP_EventRaidLobby evLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
-                    LGGPBMPINDL_EventRaidPlayer evP = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LLBECHBNIJG_EventRaidPlayer;
+                    LGGPBMPINDL_EventRaidPlayer evP = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LLBECHBNIJG_EventRaidPlayer;
 					if(evLobby != null && evP != null)
 					{
 						int a = evP.MEBHCFJCKFE_LobbyId;
@@ -2057,7 +2057,7 @@ namespace XeApp.Game.Menu
 			KLBKPANJCPL_Score score = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.ALJFMLEJEHH_GetMusicScore(m_viewMusicData.KKPAHLMJKIH_WavId, m_viewMusicData.BKJGCEOEPFB_Variation, (int)Database.Instance.gameSetup.musicInfo.difficultyType, Database.Instance.gameSetup.musicInfo.IsLine6Mode, true);
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			m_isOpenEndAutoSetting = false;
-			MenuScene.Instance.UnitSaveWindowControl.ShowUnitAutoSettingWindow(m_playerData, PopupAutoSettingContent.Place.UnitSelect, m_viewMusicData.FKDCCLPGKDK_JacketAttr, m_viewMusicData.AIHCEGFANAM_Serie, m_viewMusicData.DLAEJOBELBH_MusicId, (PopupAutoSettingContent content) =>
+			MenuScene.Instance.UnitSaveWindowControl.ShowUnitAutoSettingWindow(m_playerData, PopupAutoSettingContent.Place.UnitSelect, m_viewMusicData.FKDCCLPGKDK_JacketAttr, m_viewMusicData.AIHCEGFANAM_SerieAttr, m_viewMusicData.DLAEJOBELBH_MusicId, (PopupAutoSettingContent content) =>
 			{
 				//0xA925D0
 				content.ApplyAutoSetting(m_playerData.DPLBHAIKPGL_GetTeam(m_isGoDivaEvent), m_playerData, m_isGoDivaEvent);

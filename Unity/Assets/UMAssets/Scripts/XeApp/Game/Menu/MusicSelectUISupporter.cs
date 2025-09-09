@@ -387,7 +387,7 @@ namespace XeApp.Game.Menu
 							{
 								for(int kk = 0; kk < m_snsData.NPKPBDIDBBG_RoomData[k].CNEOPOINCBA.Count; kk++)
 								{
-									if(m_snsData.NPKPBDIDBBG_RoomData[k].CNEOPOINCBA[kk].AIPLIEMLHGC == m_eventCtrl.PFPJHJJAGAG_Rewards[i].HBHMAKNGKFK_Items[j].NNFNGLJOKKF_ItemId)
+									if(m_snsData.NPKPBDIDBBG_RoomData[k].CNEOPOINCBA[kk].AIPLIEMLHGC_SnsId == m_eventCtrl.PFPJHJJAGAG_Rewards[i].HBHMAKNGKFK_Items[j].NNFNGLJOKKF_ItemId)
 									{
 										if(!m_snsData.NPKPBDIDBBG_RoomData[k].CNEOPOINCBA[kk].EDCBHGECEBE_Read)
 										{

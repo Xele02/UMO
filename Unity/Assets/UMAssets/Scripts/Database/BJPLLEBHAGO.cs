@@ -101,7 +101,7 @@ public class BJPLLEBHAGO_DivaInfo
 	public List<EPPOHFLMDBC_DivaStats> CMCKNKKCNDK_StatsByLevel = new List<EPPOHFLMDBC_DivaStats>(); // 0x14
 
 	[UMOMember(ReaderMember = "JPFMJHLCMJL", Name = "Attribute", Desc = "Refer to the series where the diva belongs.")]
-	public sbyte AIHCEGFANAM_Attr { get; set; } // 0x8 FJOGAAMLJMA ANEJPLENMAL HEHDOGFEIOL
+	public sbyte AIHCEGFANAM_SerieAttr { get; set; } // 0x8 FJOGAAMLJMA ANEJPLENMAL HEHDOGFEIOL
 	[UMOMember(ReaderMember = "PPFNGGCBJKC", Name = "Diva Id", Desc = "Id of the diva, used to reference it from other data.")]
 	public sbyte AHHJLDLAPAN_DivaId { get; set; } // 0x9 AMALMGIALDF IPKDLMIDMHH IENNENMKEFO
 	[UMOMember(ReaderMember = "JIBNPJCIALH", Name = "Body Id")]

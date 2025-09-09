@@ -287,7 +287,7 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 			data2[AFEHLCGHAEE_Strings.PIGLAEFPNEK_m_slot] = d.PIGLAEFPNEK_MSlot;
 			data2[AFEHLCGHAEE_Strings.DIPKCALNIII_diva_id] = d.DIPKCALNIII_DivaId;
 			data2[AFEHLCGHAEE_Strings.HEBKEJBDCBH_diva_lv] = d.HEBKEJBDCBH_DivaLevel;
-			data2[AFEHLCGHAEE_Strings.ACABEFKBBEN_exp_frag] = d.ACABEFKBBEN_ExpFrag;
+			data2[AFEHLCGHAEE_Strings.ACABEFKBBEN_ExpFrag] = d.ACABEFKBBEN_ExpFrag;
 			data2[AFEHLCGHAEE_Strings.ODNOJKHHEOP_c_id] = d.BEEAIAAJOHD_CostumeId;
 			data2["c_col"] = d.AFNIOJHODAG_CostumeColorId;
 			data2[AFEHLCGHAEE_Strings.JJLLJCEJENB_h_c_id] = d.HPJMPINPKEP_HomeCostumeId;
@@ -348,7 +348,7 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 						val = i + 1;
 					info.DIPKCALNIII_DivaId = val;
 					info.HEBKEJBDCBH_DivaLevel = CJAENOMGPDA_ReadInt(subData, AFEHLCGHAEE_Strings.HEBKEJBDCBH_diva_lv, 1, ref isInvalid);
-					info.ACABEFKBBEN_ExpFrag = CJAENOMGPDA_ReadInt(subData, AFEHLCGHAEE_Strings.ACABEFKBBEN_exp_frag, 0, ref isInvalid);
+					info.ACABEFKBBEN_ExpFrag = CJAENOMGPDA_ReadInt(subData, AFEHLCGHAEE_Strings.ACABEFKBBEN_ExpFrag, 0, ref isInvalid);
 					info.PIGLAEFPNEK_MSlot = CJAENOMGPDA_ReadInt(subData, AFEHLCGHAEE_Strings.PIGLAEFPNEK_m_slot, 0, ref isInvalid);
 					info.BEEAIAAJOHD_CostumeId = CJAENOMGPDA_ReadInt(subData, AFEHLCGHAEE_Strings.ODNOJKHHEOP_c_id, 0, ref isInvalid);
 					info.AFNIOJHODAG_CostumeColorId = CJAENOMGPDA_ReadInt(subData, "c_col", 0, ref isInvalid);
@@ -473,11 +473,11 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 	// public void OBDIJIHNKLE(List<int> HNHCIGMKPDC, ref List<int> ONOICEHIHPJ) { }
 
 	// // RVA: 0x197AFF8 Offset: 0x197AFF8 VA: 0x197AFF8
-	public int BJBKCMPCPME(int AHHJLDLAPAN, int DNBFMLBNAEE, GJALOMELEHD_Intimacy NDFIEMPPMLF)
+	public int BJBKCMPCPME(int _AHHJLDLAPAN_DivaId, int DNBFMLBNAEE, GJALOMELEHD_Intimacy NDFIEMPPMLF)
 	{
-		if(AHHJLDLAPAN > 0 && NDFIEMPPMLF != null)
+		if(_AHHJLDLAPAN_DivaId > 0 && NDFIEMPPMLF != null)
 		{
-			MNNLOBDPCCH_DivaInfo diva = NBIGLBMHEDC_DivaList[AHHJLDLAPAN - 1];
+			MNNLOBDPCCH_DivaInfo diva = NBIGLBMHEDC_DivaList[_AHHJLDLAPAN_DivaId - 1];
 			int exp = diva.BNDNNCHJGBB_IntimacyExp;
 			int maxLevel = NDFIEMPPMLF.GLHEHGGKILG_GetMaxLevel();
 			int level = diva.KCCONFODCPN_IntimacyLevel;
@@ -527,40 +527,40 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x197B35C Offset: 0x197B35C VA: 0x197B35C
-	// public int OFFBPFBODLJ(int AHHJLDLAPAN) { }
+	// public int OFFBPFBODLJ(int _AHHJLDLAPAN_DivaId) { }
 
 	// // RVA: 0x197B418 Offset: 0x197B418 VA: 0x197B418
-	// public bool BNLJGNBGMFM(int AHHJLDLAPAN, int HMFFHLPNMPH) { }
+	// public bool BNLJGNBGMFM(int _AHHJLDLAPAN_DivaId, int HMFFHLPNMPH) { }
 
 	// // RVA: 0x197B4D8 Offset: 0x197B4D8 VA: 0x197B4D8
-	public int MCIPCILAJIN(int AHHJLDLAPAN)
+	public int MCIPCILAJIN(int _AHHJLDLAPAN_DivaId)
 	{
-		if (AHHJLDLAPAN < 1)
+		if (_AHHJLDLAPAN_DivaId < 1)
 			return 0;
-		int res = NBIGLBMHEDC_DivaList[AHHJLDLAPAN - 1].DDODJCCIENF_IntimacyPresentTotal;
+		int res = NBIGLBMHEDC_DivaList[_AHHJLDLAPAN_DivaId - 1].DDODJCCIENF_IntimacyPresentTotal;
 		if (res < -1)
 			res = 0;
 		return res;
 	}
 
 	// // RVA: 0x197B59C Offset: 0x197B59C VA: 0x197B59C
-	public bool IGFOFCEKIAM(int AHHJLDLAPAN, int HMFFHLPNMPH)
+	public bool IGFOFCEKIAM(int _AHHJLDLAPAN_DivaId, int HMFFHLPNMPH)
 	{
-		if(AHHJLDLAPAN > 0)
+		if(_AHHJLDLAPAN_DivaId > 0)
 		{
-			NBIGLBMHEDC_DivaList[AHHJLDLAPAN - 1].DDODJCCIENF_IntimacyPresentTotal += HMFFHLPNMPH;
+			NBIGLBMHEDC_DivaList[_AHHJLDLAPAN_DivaId - 1].DDODJCCIENF_IntimacyPresentTotal += HMFFHLPNMPH;
 			return true;
 		}
 		return false;
 	}
 
 	// // RVA: 0x197B67C Offset: 0x197B67C VA: 0x197B67C
-	public int KPJIMHGMAGN(int AHHJLDLAPAN)
+	public int KPJIMHGMAGN(int _AHHJLDLAPAN_DivaId)
 	{
-		if(AHHJLDLAPAN < 1)
+		if(_AHHJLDLAPAN_DivaId < 1)
 			return 0;
-		if(NBIGLBMHEDC_DivaList[AHHJLDLAPAN - 1].NEAADNDKGLG_IntimacyTouchTotal < 1)
+		if(NBIGLBMHEDC_DivaList[_AHHJLDLAPAN_DivaId - 1].NEAADNDKGLG_IntimacyTouchTotal < 1)
 			return 0;
-		return NBIGLBMHEDC_DivaList[AHHJLDLAPAN - 1].NEAADNDKGLG_IntimacyTouchTotal;
+		return NBIGLBMHEDC_DivaList[_AHHJLDLAPAN_DivaId - 1].NEAADNDKGLG_IntimacyTouchTotal;
 	}
 }

@@ -174,7 +174,7 @@ namespace XeApp.Game.Tutorial
 		{
 			if((GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.NJFNCNCJMOO_FirstLogin & 1) == 0)
 			{
-				if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level != 1)
+				if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level != 1)
 					return;
 				Log(OAGBCBBHMPF.OGBCFNIKAFI.CFHINEFGHPC_47);
 				GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.NJFNCNCJMOO_FirstLogin |= 1;
@@ -187,7 +187,7 @@ namespace XeApp.Game.Tutorial
 		{
 			if((GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.NJFNCNCJMOO_FirstLogin & 2) == 0)
 			{
-				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level != 1)
+				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level != 1)
 				{
 					return;
 				}
@@ -717,7 +717,7 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE41884 Offset: 0xE41884 VA: 0xE41884
 		public void UpdateLocalPlayerData()
 		{
-			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.LFNEPDFBINM(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave);
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.LFNEPDFBINM(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData);
 		}
 
 		// // RVA: 0xE419D0 Offset: 0xE419D0 VA: 0xE419D0
@@ -730,7 +730,7 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE41B10 Offset: 0xE41B10 VA: 0xE41B10
 		public void SaveMusicResult()
 		{
-			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.AHEFHIMGIBI_PlayerData.EJFNMIFOFME(JGEOBNENMAH.HHCJCDFCLOB, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, Database.Instance.gameSetup, Database.Instance.gameResult);
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.AHEFHIMGIBI_PlayerData.EJFNMIFOFME(JGEOBNENMAH.HHCJCDFCLOB, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, Database.Instance.gameSetup, Database.Instance.gameResult);
 			UpdateLocalPlayerData();
 			UpdateRecoveryPoint(ILDKBCLAFPB.CDIPJNPICCO_RecoveryPoint.KIDJFNEGAHO_7_ToMusicResult);
 		}
@@ -783,7 +783,7 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE42544 Offset: 0xE42544 VA: 0xE42544
 		public static bool IsBeginnerMission()
 		{
-			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd < 2;
+			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd < 2;
 		}
 	}
 }

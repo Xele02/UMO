@@ -355,12 +355,12 @@ namespace XeApp.Game.Menu
 				FFHPBEPOMAK_DivaInfo f = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Find((FFHPBEPOMAK_DivaInfo x) =>
 				{
 					//0x154B72C
-					return x.AHHJLDLAPAN_DivaId == originalPrism.AHHJLDLAPAN[i];
+					return x.AHHJLDLAPAN_DivaId == originalPrism.AHHJLDLAPAN_DivaId[i];
 				});
 				int id = 0;
 				if(f == null || !f.FJODMPGPDDD_DivaHave)
 				{
-					m_lackDivaIds.Add(originalPrism.AHHJLDLAPAN[i]);
+					m_lackDivaIds.Add(originalPrism.AHHJLDLAPAN_DivaId[i]);
 					res = true;
 				}
 				else

@@ -100,7 +100,7 @@ namespace XeApp.Game.Menu
 					}
 					int rarity_up_item_id = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("rarity_up_item_id", 230001);
 					rarity_up_item_id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(rarity_up_item_id);
-					int cnt = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.JJKEDPHDEDO_GetSpItemCount(rarity_up_item_id);
+					int cnt = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.JJKEDPHDEDO_GetSpItemCount(rarity_up_item_id);
 					m_boardSquareList[c][2].id = 0;
 					m_boardSquareList[c][2].saveIndex = (short)d;
 					m_boardSquareList[c][2].type = SquareType.Lock;

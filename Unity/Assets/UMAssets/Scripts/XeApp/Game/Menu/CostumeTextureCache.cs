@@ -33,7 +33,7 @@ namespace XeApp.Game.Menu
 		public void Load(int cosId, int colorId, Action<IiconTexture> callBack)
 		{
 			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo costume = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[cosId - 1];
-			Load(MakeCostumeTexturePath(costume.AHHJLDLAPAN_PrismDivaId, costume.DAJGPBLEEOB_PrismCostumeModelId, colorId), callBack);
+			Load(MakeCostumeTexturePath(costume.AHHJLDLAPAN_DivaId, costume.DAJGPBLEEOB_PrismCostumeModelId, colorId), callBack);
 		}
 
 		// // RVA: 0x16E8948 Offset: 0x16E8948 VA: 0x16E8948

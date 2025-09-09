@@ -73,7 +73,7 @@ namespace XeApp.Game.Menu
 			m_musicTitle.verticalOverflow = VerticalWrapMode.Truncate;
 			m_musicTitle.resizeTextForBestFit = true;
 			m_musicInfo.text = Database.Instance.selectedMusic.GetSelectedMusicData().KLMPFGOCBHC_Description;
-			m_animeTitle.text = GetAnimName(Database.Instance.selectedMusic.GetSelectedMusicData().AIHCEGFANAM_Serie - 1);
+			m_animeTitle.text = GetAnimName(Database.Instance.selectedMusic.GetSelectedMusicData().AIHCEGFANAM_SerieAttr - 1);
 			SetDetailCD(Database.Instance.selectedMusic.GetSelectedMusicData().NNHOBFBCIIJ_Cd);
 			if (bannerId == 0)
 				m_LayoutSwitch.StartChildrenAnimGoStop(1, 1);

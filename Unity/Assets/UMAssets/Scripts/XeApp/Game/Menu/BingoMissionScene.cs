@@ -736,7 +736,7 @@ namespace XeApp.Game.Menu
 				_currntBingoNum = reward.PPFNGGCBJKC;
 				_getItemID = reward.GLCLFMGPMAN_ItemFullId;
 				_getItemNum = reward.LJKMKCOAICL_ItemCount;
-				GNGMCIAIKMA.HHCJCDFCLOB.CPIICACGNBH(inventoryUtil, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, reward.GLCLFMGPMAN_ItemFullId, reward.LJKMKCOAICL_ItemCount, bingoId);
+				GNGMCIAIKMA.HHCJCDFCLOB.CPIICACGNBH(inventoryUtil, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, reward.GLCLFMGPMAN_ItemFullId, reward.LJKMKCOAICL_ItemCount, bingoId);
 				if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(_getItemID) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 				{
 					GameManager.Instance.ResetViewPlayerData();
@@ -967,7 +967,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x109B7C0 Offset: 0x109B7C0 VA: 0x109B7C0
 		private bool IsBingoMissionHelp()
 		{
-			return !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsBingoPlay);
+			return !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsBingoPlay);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CA3B4 Offset: 0x6CA3B4 VA: 0x6CA3B4
@@ -987,7 +987,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 			bool isWait = true;
 			yield return Co.R(TutorialManager.ShowTutorial(GNGMCIAIKMA.HHCJCDFCLOB.GEAMLAKKMLI(), null));
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsBingoPlay, true);
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsBingoPlay, true);
 			MenuScene.Save(() =>
 			{
 				//0x109D0FC

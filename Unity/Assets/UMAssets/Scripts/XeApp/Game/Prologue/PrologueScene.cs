@@ -330,7 +330,7 @@ namespace XeApp.Game.Prologue
 			int progress = GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.OLDAGCNLJOI_Progress;
 			if(progress > 0)
 			{
-				GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.AHEFHIMGIBI_PlayerData.INBCGKAFHDO(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave);
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.AHEFHIMGIBI_PlayerData.INBCGKAFHDO(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData);
 			}
 			switch(progress)
 			{
@@ -346,7 +346,7 @@ namespace XeApp.Game.Prologue
 					break;
 				case 7:
 					Database.Instance.gameSetup.musicInfo.SetupInfoByTutorial(TutorialGameMode.Type.TutorialTwo);
-					GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.AHEFHIMGIBI_PlayerData.MFNPKIACGLM(JGEOBNENMAH.HHCJCDFCLOB, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, Database.Instance.gameSetup, Database.Instance.gameResult);
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.AHEFHIMGIBI_PlayerData.MFNPKIACGLM(JGEOBNENMAH.HHCJCDFCLOB, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, Database.Instance.gameSetup, Database.Instance.gameResult);
 					Database.Instance.advSetup.Setup(4);
 					NextScene("Menu");
 					break;
@@ -362,18 +362,18 @@ namespace XeApp.Game.Prologue
 					NextScene("DivaSelect");
 					break;
 				default:
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(1).CPGFPEDMDEH_Have = 1;
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().LHPDDGIJKNB_Reset();
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_MainDivas[0].DIPKCALNIII_Id = 1;
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_MainDivas[0].BEEAIAAJOHD_CId = 1;
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_MainDivas[0].AFNIOJHODAG_ColId = 0;
-					GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.AHEFHIMGIBI_PlayerData.MNGKOHKKAHI(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave);
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(1).CPGFPEDMDEH_Have = 1;
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().LHPDDGIJKNB_Reset();
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_MainDivas[0].DIPKCALNIII_Id = 1;
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_MainDivas[0].BEEAIAAJOHD_CId = 1;
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_MainDivas[0].AFNIOJHODAG_CostumeColorId = 0;
+					GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.AHEFHIMGIBI_PlayerData.MNGKOHKKAHI(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData);
 					Database.Instance.advSetup.Setup(1);
 					Database.Instance.advResult.Setup("RhythmAdjust");
 					NextScene("Adv");
 					break;
 			}
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.NELPFCBCJAO();
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.NELPFCBCJAO();
 			GameManager.Instance.CreateViewPlayerData();
 		}
 

@@ -212,7 +212,7 @@ namespace XeApp.Game.Menu
 						MessageBank bk = MessageManager.Instance.GetBank("menu");
 						m_episodeHeaderTextInstance.text = bk.GetMessageByLabel("episode_appeal_text_001");
 						m_episodeNameTextInstance.text = PIGBBNDPPJC.EJOJNFDHDHN_GetEpName(episodeId);
-						m_modelInterface.SetLog(dbScene.AIHCEGFANAM_Serie);
+						m_modelInterface.SetLog(dbScene.AIHCEGFANAM_SerieAttr);
 						m_mainCamera = m_modelInterface.GetComponentInChildren<Camera>(true);
 					}
 					yield break;
@@ -246,7 +246,7 @@ namespace XeApp.Game.Menu
 				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = cosMaster.CDENCMNHNGA_Costumes[i];
 				if(cos.JPIDIENBGKH_CostumeId == itemInfo.NNFNGLJOKKF_ItemId)
 				{
-					divaId = cos.AHHJLDLAPAN_PrismDivaId;
+					divaId = cos.AHHJLDLAPAN_DivaId;
 					modelId = cos.DAJGPBLEEOB_PrismCostumeModelId;
 					cosId = cos.JPIDIENBGKH_CostumeId;
 					break;

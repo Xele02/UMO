@@ -30,7 +30,7 @@ namespace XeApp.Game.Menu
 			if(friend.JIGONEMPPNP_Diva != null)
 			{
 				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_GetUnlockedCostumeOrDefault(friend.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId, friend.JIGONEMPPNP_Diva.JPIDIENBGKH_CostumeId);
-				divaId = cos.AHHJLDLAPAN_PrismDivaId;
+				divaId = cos.AHHJLDLAPAN_DivaId;
 				divaCostumeId = cos.DAJGPBLEEOB_PrismCostumeModelId;
 				divaCostumeColorId = friend.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId;
 			}

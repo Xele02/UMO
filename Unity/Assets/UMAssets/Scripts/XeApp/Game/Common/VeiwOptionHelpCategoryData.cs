@@ -32,7 +32,7 @@ namespace XeApp.Game.Common
 			{
 				for(int i = 0; i < list[found].EBEMOEPADJB.Length; i++)
 				{
-					if(list[found].EBEMOEPADJB[i].OCPIODNOHKL <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level)
+					if(list[found].EBEMOEPADJB[i].OCPIODNOHKL <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level)
 					{
 						if(CanShowContents((VeiwOptionHelpContentData.ConditionId)list[found].EBEMOEPADJB[i].KDBLHOFCPIO, list[found].EBEMOEPADJB[i].KLHAFHMFFNK, (VeiwOptionHelpContentData.ConditionOperation) list[found].EBEMOEPADJB[i].BENBNKNPOAA))
 						{

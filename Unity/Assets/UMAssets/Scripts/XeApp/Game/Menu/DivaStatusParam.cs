@@ -299,7 +299,7 @@ namespace XeApp.Game.Menu
 				texture.Set(m_divaIconImage);
 				m_lodingFlags |= LoadingFlags.DivaIcon;
 			});
-			MenuScene.Instance.MenuResidentTextureCache.LoadLogo(divaData.AIHCEGFANAM_Serie, (IiconTexture texture) =>
+			MenuScene.Instance.MenuResidentTextureCache.LoadLogo(divaData.AIHCEGFANAM_SerieAttr, (IiconTexture texture) =>
 			{
 				//0x1270D8C
 				texture.Set(m_logoIconImage);
@@ -382,7 +382,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					centerSkill1 = sceneList[0].MEOOLHNNMHL_GetCenterSkillId(false, musicData.FKDCCLPGKDK_JacketAttr, musicData.AIHCEGFANAM_Serie);
+					centerSkill1 = sceneList[0].MEOOLHNNMHL_GetCenterSkillId(false, musicData.FKDCCLPGKDK_JacketAttr, musicData.AIHCEGFANAM_SerieAttr);
 					if(centerSkill1 < 1)
 					{
 						//LAB_01269df8
@@ -456,8 +456,8 @@ namespace XeApp.Game.Menu
 				{
 					if(musicData != null)
 					{
-						int liveSkill1 = sceneList[0].FILPDDHMKEJ_GetLiveSkillId(false, musicData.FKDCCLPGKDK_JacketAttr, musicData.AIHCEGFANAM_Serie);
-						int liveSkill2 = sceneList[0].FILPDDHMKEJ_GetLiveSkillId(true, musicData.FKDCCLPGKDK_JacketAttr, musicData.AIHCEGFANAM_Serie);
+						int liveSkill1 = sceneList[0].FILPDDHMKEJ_GetLiveSkillId(false, musicData.FKDCCLPGKDK_JacketAttr, musicData.AIHCEGFANAM_SerieAttr);
+						int liveSkill2 = sceneList[0].FILPDDHMKEJ_GetLiveSkillId(true, musicData.FKDCCLPGKDK_JacketAttr, musicData.AIHCEGFANAM_SerieAttr);
 						if(liveSkill1 < 1)
 						{
 							UnitWindowConstant.SetInvalidText(m_skillNameTexts[LiveSkillDispPartsTypes[0]], TextAnchor.MiddleLeft);
@@ -700,8 +700,8 @@ namespace XeApp.Game.Menu
 					}
 					else
 					{
-						int liveSkill1 = sceneData.FILPDDHMKEJ_GetLiveSkillId(false, musicData.FKDCCLPGKDK_JacketAttr, musicData.AIHCEGFANAM_Serie);
-						int liveSkill2 = sceneData.FILPDDHMKEJ_GetLiveSkillId(true, musicData.FKDCCLPGKDK_JacketAttr, musicData.AIHCEGFANAM_Serie);
+						int liveSkill1 = sceneData.FILPDDHMKEJ_GetLiveSkillId(false, musicData.FKDCCLPGKDK_JacketAttr, musicData.AIHCEGFANAM_SerieAttr);
+						int liveSkill2 = sceneData.FILPDDHMKEJ_GetLiveSkillId(true, musicData.FKDCCLPGKDK_JacketAttr, musicData.AIHCEGFANAM_SerieAttr);
 						if(liveSkill1 < 1)
 						{
 							//LAB_0126dc34
@@ -853,7 +853,7 @@ namespace XeApp.Game.Menu
 					else
 					{
 						e.KHEKNNFCAOI(musicId);
-						skillId = m_sceneList[0].MEOOLHNNMHL_GetCenterSkillId(false, e.FKDCCLPGKDK_JacketAttr, e.AIHCEGFANAM_Serie);
+						skillId = m_sceneList[0].MEOOLHNNMHL_GetCenterSkillId(false, e.FKDCCLPGKDK_JacketAttr, e.AIHCEGFANAM_SerieAttr);
 					}
 					if(!m_isCenterDiva)
 					{
@@ -894,7 +894,7 @@ namespace XeApp.Game.Menu
 					}
 					else
 					{
-						skillId = m_sceneList[0].FILPDDHMKEJ_GetLiveSkillId(false, m_musicData.FKDCCLPGKDK_JacketAttr, m_musicData.AIHCEGFANAM_Serie);
+						skillId = m_sceneList[0].FILPDDHMKEJ_GetLiveSkillId(false, m_musicData.FKDCCLPGKDK_JacketAttr, m_musicData.AIHCEGFANAM_SerieAttr);
 					}
 					if(skillId > 0)
 					{
@@ -937,7 +937,7 @@ namespace XeApp.Game.Menu
 						}
 						else
 						{
-							skillId = m_sceneList[i].FILPDDHMKEJ_GetLiveSkillId(false, m_musicData.FKDCCLPGKDK_JacketAttr, m_musicData.AIHCEGFANAM_Serie);
+							skillId = m_sceneList[i].FILPDDHMKEJ_GetLiveSkillId(false, m_musicData.FKDCCLPGKDK_JacketAttr, m_musicData.AIHCEGFANAM_SerieAttr);
 						}
 						if(skillId > 0)
 						{

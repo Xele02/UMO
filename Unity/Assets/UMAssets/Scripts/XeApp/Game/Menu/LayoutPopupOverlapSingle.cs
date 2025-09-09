@@ -79,7 +79,7 @@ namespace XeApp.Game.Menu
 			m_textDesc.text = string.Format(bk.GetMessageByLabel("pop_deco_get_desc"), bk.GetMessageByLabel(str));
 			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.AEFGOANHNMG_DecoItemPosterSceneBef || cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KKGHNKKGLCO_DecoItemPosterSceneAft)
 			{
-				m_textLimit.text = string.Format(bk.GetMessageByLabel("pop_deco_get_limit"), bk.GetMessageByLabel(str), EKLNMHFCAOI.AFEONHCADEL_GetMaxAllowed(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, cat, 1, null));
+				m_textLimit.text = string.Format(bk.GetMessageByLabel("pop_deco_get_limit"), bk.GetMessageByLabel(str), EKLNMHFCAOI.AFEONHCADEL_GetMaxAllowed(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, cat, 1, null));
 			}
 			else
 			{

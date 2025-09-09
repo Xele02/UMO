@@ -10,7 +10,7 @@ public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_ServerSaveBlock
 	{
 		public int ENOBDCFHELD; // 0x8
 		public int FCEJCHGLFGN; // 0xC
-		public long AADPAJOLEEF_Crypted; // 0x10
+		public long AADPAJOLEEF_PointCrypted; // 0x10
 		public long IOJOBGHPLIE_Crypted; // 0x18
 		public long DLEEMCAPOBP_Crypted; // 0x20
 		public long JPNMMOEPAEM_Crypted; // 0x28
@@ -22,7 +22,7 @@ public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_ServerSaveBlock
 		public List<sbyte> LAMCCNAKIOJ_CbRnk = new List<sbyte>(5); // 0x44
 		public List<byte> HNDPLCDMOJF_RwdClr = new List<byte>(5); // 0x48
 		public List<byte> JDIDBMEMKBC_RwdSc = new List<byte>(5); // 0x4C
-		public List<byte> AGGFHNMMGMN_RwdCb = new List<byte>(5); // 0x50
+		public List<byte> AGGFHNMMGMN_RewardCombo = new List<byte>(5); // 0x50
 		public List<CEBFFLDKAEC_SecureInt> HAFFCOKJHBN_ScoreL6 = new List<CEBFFLDKAEC_SecureInt>(5); // 0x54
 		public List<CEBFFLDKAEC_SecureInt> DNIGPFPHJAK_ComboL6 = new List<CEBFFLDKAEC_SecureInt>(5); // 0x58
 		public List<CEBFFLDKAEC_SecureInt> DPPCFFFNBGA_ClearL6 = new List<CEBFFLDKAEC_SecureInt>(5); // 0x5C
@@ -45,7 +45,7 @@ public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_ServerSaveBlock
 
 		public int ECLDABOLHLM_ExcellentScore { get { return JDFAEOFJLAD_Crypted ^ ENOBDCFHELD; } set {  JDFAEOFJLAD_Crypted = value ^ ENOBDCFHELD; } } //0x14CCB58 HPPGLGDLIMM 0x14CCB68 ELFABLKMCMK
 		public bool HPLMECLKFID_RRcv { get { return MLLPMIHMMFL_Crypted == 113; } set { MLLPMIHMMFL_Crypted = (sbyte)(value ? 113: 50); } } //0x14CCB78 DCHHABKOMFP 0x14CCB8C EGGIBMLGCOJ
-		public long DNBFMLBNAEE_Point { get { return AADPAJOLEEF_Crypted ^ ENOBDCFHELD; } set { value = value >= 100000000 ? 99999999: value; AADPAJOLEEF_Crypted = value ^ ENOBDCFHELD; IOJOBGHPLIE_Crypted = value ^ FCEJCHGLFGN; } } //0x14CCBBC JKHIIAEMMDE 0x14CCBD4 PFFKLBLEPKB
+		public long DNBFMLBNAEE_Point { get { return AADPAJOLEEF_PointCrypted ^ ENOBDCFHELD; } set { value = value >= 100000000 ? 99999999: value; AADPAJOLEEF_PointCrypted = value ^ ENOBDCFHELD; IOJOBGHPLIE_Crypted = value ^ FCEJCHGLFGN; } } //0x14CCBBC JKHIIAEMMDE 0x14CCBD4 PFFKLBLEPKB
 		public long NFIOKIBPJCJ_Update { get { return DLEEMCAPOBP_Crypted ^ ENOBDCFHELD; } set { DLEEMCAPOBP_Crypted = value ^ ENOBDCFHELD; JPNMMOEPAEM_Crypted = value ^ FCEJCHGLFGN; } } //0x14CCC58 NGIDBCKCAMO 0x14CCC70 AEHIIPBDNGE
 
 		//// RVA: 0x14CCC98 Offset: 0x14CCC98 VA: 0x14CCC98
@@ -66,7 +66,7 @@ public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_ServerSaveBlock
 			LAMCCNAKIOJ_CbRnk.Clear();
 			HNDPLCDMOJF_RwdClr.Clear();
 			JDIDBMEMKBC_RwdSc.Clear();
-			AGGFHNMMGMN_RwdCb.Clear();
+			AGGFHNMMGMN_RewardCombo.Clear();
 			HAFFCOKJHBN_ScoreL6.Clear();
 			DNIGPFPHJAK_ComboL6.Clear();
 			DPPCFFFNBGA_ClearL6.Clear();
@@ -94,7 +94,7 @@ public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_ServerSaveBlock
 				v.DNJEJEANJGL_Value = k;
 				EMHFDJEFIHG_Play.Add(v);
 				JDIDBMEMKBC_RwdSc.Add(0);
-				AGGFHNMMGMN_RwdCb.Add(0);
+				AGGFHNMMGMN_RewardCombo.Add(0);
 				HNDPLCDMOJF_RwdClr.Add(0);
 				LAMCCNAKIOJ_CbRnk.Add(0);
 				v = new CEBFFLDKAEC_SecureInt();
@@ -133,7 +133,7 @@ public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_ServerSaveBlock
 				JNLKJCDFFMM_Clear[i].DNJEJEANJGL_Value = GPBJHKLFCEP.JNLKJCDFFMM_Clear[i].DNJEJEANJGL_Value;
 				EMHFDJEFIHG_Play[i].DNJEJEANJGL_Value = GPBJHKLFCEP.EMHFDJEFIHG_Play[i].DNJEJEANJGL_Value;
 				JDIDBMEMKBC_RwdSc[i] = GPBJHKLFCEP.JDIDBMEMKBC_RwdSc[i];
-				AGGFHNMMGMN_RwdCb[i] = GPBJHKLFCEP.AGGFHNMMGMN_RwdCb[i];
+				AGGFHNMMGMN_RewardCombo[i] = GPBJHKLFCEP.AGGFHNMMGMN_RewardCombo[i];
 				HNDPLCDMOJF_RwdClr[i] = GPBJHKLFCEP.HNDPLCDMOJF_RwdClr[i];
 				LAMCCNAKIOJ_CbRnk[i] = GPBJHKLFCEP.LAMCCNAKIOJ_CbRnk[i];
 				HAFFCOKJHBN_ScoreL6[i].DNJEJEANJGL_Value = GPBJHKLFCEP.HAFFCOKJHBN_ScoreL6[i].DNJEJEANJGL_Value;
@@ -176,7 +176,7 @@ public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_ServerSaveBlock
 					return false;
 				if(JDIDBMEMKBC_RwdSc[i] != OIKJFMGEICL.JDIDBMEMKBC_RwdSc[i])
 					return false;
-				if(AGGFHNMMGMN_RwdCb[i] != OIKJFMGEICL.AGGFHNMMGMN_RwdCb[i])
+				if(AGGFHNMMGMN_RewardCombo[i] != OIKJFMGEICL.AGGFHNMMGMN_RewardCombo[i])
 					return false;
 				if(HNDPLCDMOJF_RwdClr[i] != OIKJFMGEICL.HNDPLCDMOJF_RwdClr[i])
 					return false;
@@ -217,7 +217,7 @@ public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_ServerSaveBlock
 				LAMCCNAKIOJ_CbRnk[i] = GPBJHKLFCEP.LAMCCNAKIOJ_CbRnk[i];
 				HNDPLCDMOJF_RwdClr[i] = GPBJHKLFCEP.HNDPLCDMOJF_RewardClear[i];
 				JDIDBMEMKBC_RwdSc[i] = GPBJHKLFCEP.JDIDBMEMKBC_RewardScore[i];
-				AGGFHNMMGMN_RwdCb[i] = GPBJHKLFCEP.AGGFHNMMGMN_RewardCombo[i];
+				AGGFHNMMGMN_RewardCombo[i] = GPBJHKLFCEP.AGGFHNMMGMN_RewardCombo[i];
 				HAFFCOKJHBN_ScoreL6[i].DNJEJEANJGL_Value = GPBJHKLFCEP.AHDKMPFDKPE_GetScoreL6_ForDiff(i);
 				DNIGPFPHJAK_ComboL6[i].DNJEJEANJGL_Value = GPBJHKLFCEP.DNIGPFPHJAK_ComboL6[i];
 				DPPCFFFNBGA_ClearL6[i].DNJEJEANJGL_Value = GPBJHKLFCEP.DPPCFFFNBGA_ClearL6[i];
@@ -248,7 +248,7 @@ public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_ServerSaveBlock
 				res.LAMCCNAKIOJ_CbRnk[i] = LAMCCNAKIOJ_CbRnk[i];
 				res.HNDPLCDMOJF_RewardClear[i] = HNDPLCDMOJF_RwdClr[i];
 				res.JDIDBMEMKBC_RewardScore[i] = JDIDBMEMKBC_RwdSc[i];
-				res.AGGFHNMMGMN_RewardCombo[i] = AGGFHNMMGMN_RwdCb[i];
+				res.AGGFHNMMGMN_RewardCombo[i] = AGGFHNMMGMN_RewardCombo[i];
 				res.AAELOPLDBPF_SetScoreL6_ForDiff(i, HAFFCOKJHBN_ScoreL6[i].DNJEJEANJGL_Value);
 				res.DNIGPFPHJAK_ComboL6[i] = DNIGPFPHJAK_ComboL6[i].DNJEJEANJGL_Value;
 				res.DPPCFFFNBGA_ClearL6[i] = DPPCFFFNBGA_ClearL6[i].DNJEJEANJGL_Value;
@@ -333,7 +333,7 @@ public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_ServerSaveBlock
 				data6.Add(FBCJICEPLED[i].NLKEBAOBJCM_Combo[j].DNJEJEANJGL_Value);
 				data7.Add((int)FBCJICEPLED[i].HNDPLCDMOJF_RwdClr[j]);
 				data8.Add((int)FBCJICEPLED[i].JDIDBMEMKBC_RwdSc[j]);
-				data9.Add((int)FBCJICEPLED[i].AGGFHNMMGMN_RwdCb[j]);
+				data9.Add((int)FBCJICEPLED[i].AGGFHNMMGMN_RewardCombo[j]);
 				data10.Add((int)FBCJICEPLED[i].LAMCCNAKIOJ_CbRnk[j]);
 			}
 			data2[AFEHLCGHAEE_Strings.KNIFCANOHOC_score] = data3;
@@ -463,7 +463,7 @@ public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_ServerSaveBlock
 						IBCGPBOGOGP_ReadIntArray(block[i], AFEHLCGHAEE_Strings.GNHMCCLFBLB_rwd_cb, 0, 5, (int OIPCCBHIKIA, int JBGEEPFKIGG) =>
 						{
 							//0x14CC4C0
-							FBCJICEPLED[i].AGGFHNMMGMN_RwdCb[OIPCCBHIKIA] = (byte)JBGEEPFKIGG;
+							FBCJICEPLED[i].AGGFHNMMGMN_RewardCombo[OIPCCBHIKIA] = (byte)JBGEEPFKIGG;
 						}, ref isInvalid);
 						IBCGPBOGOGP_ReadIntArray(block[i], AFEHLCGHAEE_Strings.IMEPEOAFIIB_cbrnk, 0, 5, (int OIPCCBHIKIA, int JBGEEPFKIGG) =>
 						{

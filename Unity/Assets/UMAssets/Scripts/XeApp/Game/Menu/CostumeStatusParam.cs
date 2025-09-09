@@ -81,7 +81,7 @@ namespace XeApp.Game.Menu
 						texture.Set(m_image_diva);
 						m_flags |= (int)Flags.Loaded_Diva;
 					});
-					GameManager.Instance.MenuResidentTextureCache.LoadLogo(diva.AIHCEGFANAM_Serie, (IiconTexture texture) =>
+					GameManager.Instance.MenuResidentTextureCache.LoadLogo(diva.AIHCEGFANAM_SerieAttr, (IiconTexture texture) =>
 					{
 						//0x16E8C78
 						texture.Set(m_image_logo);

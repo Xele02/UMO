@@ -329,7 +329,7 @@ namespace XeApp.Game.Menu
 					raidController.FDNIODNLDAI(attackType);
 					if(attackType >= JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Support && attackType < JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_FullPower)
 					{
-						if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsShowRaidAssistHelp))
+						if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsShowRaidAssistHelp))
 						{
 							MessageBank bk = MessageManager.Instance.GetBank("menu");
 							PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("pop_raid_assist_attack_skip_title"), SizeType.Middle, bk.GetMessageByLabel("pop_raid_assist_attack_skip_desc_01"), new ButtonInfo[1]
@@ -338,7 +338,7 @@ namespace XeApp.Game.Menu
 							}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 							{
 								//0x1445E98
-								CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsShowRaidAssistHelp, true);
+								CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsShowRaidAssistHelp, true);
 								ClickPlayButton();
 							}, null, null, null, true, true, false, null, null, null, null, null);
 							return;
@@ -831,9 +831,9 @@ namespace XeApp.Game.Menu
 			if(danceDivaCount >= 2)
 			{
 				int cnt = 0;
-				for(int i = 0; i < CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList.Count; i++)
+				for(int i = 0; i < CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList.Count; i++)
 				{
-					cnt += CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i].CPGFPEDMDEH_Have;
+					cnt += CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i].CPGFPEDMDEH_Have;
 				}
 				if(cnt < danceDivaCount)
 				{

@@ -62,7 +62,7 @@ namespace XeApp.Game.Menu
 				m_isLoadingPresentTexture = false;
 			});
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			m_textMessage.text = string.Format(bk.GetMessageByLabel("pop_gakuya_present_ask"), OJEGDIBEBHP.MPKLLGIOBIP_GetDesc2(s.m_divaPresentData.ADJBIEOILPJ_Id));
+			m_textMessage.text = string.Format(bk.GetMessageByLabel("pop_gakuya_present_ask"), OJEGDIBEBHP.MPKLLGIOBIP_GetDesc2(s.m_divaPresentData.ADJBIEOILPJ_ItemPresentId));
 			m_cautionText.text = bk.GetMessageByLabel("pop_gakuya_present_caution");
 			gameObject.SetActive(true);
 			ButtonStateUpdate();

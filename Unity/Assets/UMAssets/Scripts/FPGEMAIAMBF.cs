@@ -62,7 +62,7 @@ public class FPGEMAIAMBF_RewardData
 		}
 		else
 		{
-			musicInfo = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LCKMBHDMPIP_RecordMusic.FAMANJGJANN_FreeMusicInfo[GHBPLHBNMBK_MusicId - 1];
+			musicInfo = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LCKMBHDMPIP_RecordMusic.FAMANJGJANN_FreeMusicInfo[GHBPLHBNMBK_MusicId - 1];
 		}
 		KEODKEGFDLD_FreeMusicInfo freemusicData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(GHBPLHBNMBK_MusicId);
 		int musicId = freemusicData.DLAEJOBELBH_MusicId;
@@ -103,7 +103,7 @@ public class FPGEMAIAMBF_RewardData
 	//// RVA: 0x13FB01C Offset: 0x13FB01C VA: 0x13FB01C
 	public void CHOHLJOJKNJ(int GHBPLHBNMBK_FreeMusicId, int AKNELONELJK_Difficulty, bool LFGNLKKFOCD_IsLine6, int MNNHHJBBICA_GameEventType/* = 0*/)
 	{
-		BBHNACPENDM_ServerSaveData serverData = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave;
+		BBHNACPENDM_ServerSaveData serverData = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
 		BBHNACPENDM_ServerSaveData prevServerData = CIOECGOMILE.HHCJCDFCLOB.MNJHBCIIHED_PrevServerData;
 		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo musicInfo = null;
 		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo prevMusicInfo = null;

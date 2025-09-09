@@ -74,7 +74,7 @@ namespace XeApp.Game.Menu
 				fanNum = 0;
 			}
 			m_numberFan.SetNumber(fanNum, 0);
-			m_MusicRateRankText.text = OEGIPPCADNA.GEEFFAEGHAH(OEGIPPCADNA.BFKAHKBKBJE(friend.PCEGKKLKFNO.AHEFHIMGIBI_ServerData.MHEAEGMIKIE_PublicStatus.AILEOFKIELL_UtaRateRank, friend.PCEGKKLKFNO.AJECHDLMKOE_LastLogin), true);
+			m_MusicRateRankText.text = OEGIPPCADNA.GEEFFAEGHAH(OEGIPPCADNA.BFKAHKBKBJE(friend.PCEGKKLKFNO.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.AILEOFKIELL_UtaRateRank, friend.PCEGKKLKFNO.AJECHDLMKOE_LastLogin), true);
 			m_giftButton.Disable = m_netDecoVisitControl.MHGJGAPLMFO(m_visitPlayerData.MLPEHNBNOGD_Id);
 			GameManager.Instance.DivaIconCache.SetLoadingIcon(m_divaIconImage);
 			this.StartCoroutineWatched(Co_SettingDivaIcon(friend));
@@ -118,7 +118,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x19EC584 Offset: 0x19EC584 VA: 0x19EC584
 		private void SettingDivaIconDecoration(EAJCBFGKKFA_FriendInfo friend)
 		{
-			m_divaDeco.Change(friend.JIGONEMPPNP_Diva, friend, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(friend.MLPEHNBNOGD_Id), DisplayType.Level);
+			m_divaDeco.Change(friend.JIGONEMPPNP_Diva, friend, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(friend.MLPEHNBNOGD_Id), DisplayType.Level);
 			m_divaDeco.SetActive(true);
 		}
 

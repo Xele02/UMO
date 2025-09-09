@@ -130,7 +130,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x9DACB4 Offset: 0x9DACB4 VA: 0x9DACB4
 		private bool IsBingoMissionHelp()
 		{
-			return IsBingoMissionEnable() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsBingoMission);
+			return IsBingoMissionEnable() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsBingoMission);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x710894 Offset: 0x710894 VA: 0x710894
@@ -242,7 +242,7 @@ namespace XeApp.Game.Menu
 			while(isWait)
 				yield return null;
 			isWait = true;
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsBingoMission, true);
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsBingoMission, true);
 			MenuScene.Save(() =>
 			{
 				//0x9DE6E0
@@ -835,7 +835,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x9DE914
 					LHFOAFAOPLC.FPCGNJMEHCI();
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd = 2;
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.IJHBIMNKOMC_TutorialEnd = 2;
 					MenuScene.SaveRequest();
 					GameManager.Instance.RemovePushBackButtonHandler(backButtonDummy);
 					MenuScene.Instance.InputEnable();

@@ -214,7 +214,7 @@ namespace XeApp.Game.Menu
 								}
 								if(PopupSortMenu.IsRarityFilterOn(scene.EKLIPGELKCL_SceneRarity, rarityFilterBit) && 
 									PopupSortMenu.IsAttributeFilterOn(scene.JGJFIJOCPAG_SceneAttr, attributeFilterBit) && 
-									PopupSortMenu.IsSerializeFilterOn((int)scene.AIHCEGFANAM_SceneSeries, seriaseFilterBit) && 
+									PopupSortMenu.IsSerializeFilterOn((int)scene.AIHCEGFANAM_SerieAttr, seriaseFilterBit) && 
 									PopupSortMenu.IsCompatibleFilterOn(scene.AOLIJKMIJJE_DivaCompatible, compatibleFilterBit) && 
 									PopupSortMenu.IsNotesFilterOn(scene.IGPMJPPAILL_Note, notesFilterBit) && 
 									PopupSortMenu.IsSkillRangeFilterOn(scene.BJJNCCGPBGN, lskillRangeFilerBit) && 
@@ -903,7 +903,7 @@ namespace XeApp.Game.Menu
 			{
 				m_sceneSelectList.ShowEpisodePoint();
 				m_episodeData.KHEKNNFCAOI(m_episodeId);
-				m_sceneSelectList.SetEpisodePoint(m_episodeData.ABLHIAEDJAI_CurrentPoint, m_episodeData.DMHDNKILKGI_MaxPoint);
+				m_sceneSelectList.SetEpisodePoint(m_episodeData.ABLHIAEDJAI_CurrentValue, m_episodeData.DMHDNKILKGI_MaxPoint);
 			}
 		}
 

@@ -196,7 +196,7 @@ public class EJHPIMANJFP
 		long staminaCheckTime = 0;
 		if(CIOECGOMILE.HHCJCDFCLOB.LNAHEIEIBOI_Initialized)
 		{
-			staminaCheckTime = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.MNLAJEDKLCI_StamineLotTime;
+			staminaCheckTime = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MNLAJEDKLCI_StamineLotTime;
 		}
 		long nextCheck = staminaCheckTime + 259200;
 		for (int i = 0; i < BBKDLIPKADG.Count; i++)

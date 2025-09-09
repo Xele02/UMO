@@ -366,7 +366,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xBD1350 Offset: 0xBD1350 VA: 0xBD1350
 		private void ResetValkyrieData()
 		{
-			m_ValkyrieList = PNGOLKLFFLH.NEOMKKIEMJJ(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, false);
+			m_ValkyrieList = PNGOLKLFFLH.NEOMKKIEMJJ(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, false);
 			if(m_UnitData.JOKFNBLEILN_Valkyrie == null)
 			{
 				if(m_ValkyrieList.Count > 0)
@@ -380,7 +380,7 @@ namespace XeApp.Game.Menu
 			}
 			for(int i = 0; i < m_ValkyrieList.Count; i++)
 			{
-				m_SeriesValkyrieList[m_ValkyrieList[i].AIHCEGFANAM_Serie - 1].Add(m_ValkyrieList[i]);
+				m_SeriesValkyrieList[m_ValkyrieList[i].AIHCEGFANAM_SerieAttr - 1].Add(m_ValkyrieList[i]);
 			}
 			int selId = GameManager.Instance.localSave.EPJOACOONAC_GetSave().IOAFPGDJCDH_ValkyrieTuneUp.IHAHBHEDIAK_SelectVfId;
 			PNGOLKLFFLH valk = m_ValkyrieList.Find((PNGOLKLFFLH _) =>
@@ -390,7 +390,7 @@ namespace XeApp.Game.Menu
 			});
 			if(valk != null)
 			{
-				SelectSeries = valk.AIHCEGFANAM_Serie - 1;
+				SelectSeries = valk.AIHCEGFANAM_SerieAttr - 1;
 				Select = m_SeriesValkyrieList[SelectSeries].FindIndex((PNGOLKLFFLH _) =>
 				{
 					//0xBD6DD8
@@ -694,7 +694,7 @@ namespace XeApp.Game.Menu
 			GameManager.PushBackButtonHandler backButtonDummy;
 
 			//0xBD9F88
-			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgradeHelp))
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgradeHelp))
 			{
 				MenuScene.Instance.InputDisable();
 				backButtonDummy = () =>
@@ -704,8 +704,8 @@ namespace XeApp.Game.Menu
 				};
 				yield return Co.R(TutorialManager.ShowTutorial(117, null));
 				bool done = false;
-				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsValkyrieUpgrade, true);
-				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsValkyrieUpgradeHelp, true);
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsValkyrieUpgrade, true);
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsValkyrieUpgradeHelp, true);
 				MenuScene.Save(() =>
 				{
 					//0xBD6E54
@@ -1005,9 +1005,9 @@ namespace XeApp.Game.Menu
 			m_haveItemCheck.Enter();
 			MenuScene.Instance.HeaderEnter();
 			MenuScene.Instance.HeaderMenu.MenuStack.EnterBackButton(false);
-			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave != null && CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JJFFBDLIOCF_Valkyrie != null)
+			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData != null && CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JJFFBDLIOCF_Valkyrie != null)
 			{
-				m_SeriesValkyrieList[SelectSeries][Select].CNLIAMIIJID_AbilityLevel = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JJFFBDLIOCF_Valkyrie.OEMMJCLJMGB_GetLevel(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId);
+				m_SeriesValkyrieList[SelectSeries][Select].CNLIAMIIJID_AbilityLevel = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JJFFBDLIOCF_Valkyrie.OEMMJCLJMGB_GetLevel(m_SeriesValkyrieList[SelectSeries][Select].GPPEFLKGGGJ_ValkyrieId);
 			}
 			ApplyAbility();
 			m_viewSceneFlag = false;

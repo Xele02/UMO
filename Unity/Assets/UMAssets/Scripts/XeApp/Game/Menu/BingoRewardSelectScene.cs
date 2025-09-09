@@ -95,7 +95,7 @@ namespace XeApp.Game.Menu
 							{
 								NFMHCLHEMHB_Bingo.CCGKCGJKADC bingo = GNGMCIAIKMA.HHCJCDFCLOB.MENDFPNPAAO_GetSaveBingo(bingoId);
 								bingo.AHCFGOGCJKI_St.EIHOBHDKCDB_RId = reward.PPFNGGCBJKC;
-								bingo.AHCFGOGCJKI_St.AHHJLDLAPAN_Dv = reward.AHHJLDLAPAN_DivaId;
+								bingo.AHCFGOGCJKI_St.AHHJLDLAPAN_DivaId = reward.AHHJLDLAPAN_DivaId;
 								bingo.AHCFGOGCJKI_St.DAJGPBLEEOB_Mdl = reward.DAJGPBLEEOB_CostumeId;
 								MenuScene.SaveRequest();
 								IsStartTransition = true;
@@ -245,7 +245,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10A21D4 Offset: 0x10A21D4 VA: 0x10A21D4
 		private bool IsBingoMissionHelp()
 		{
-			return !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsBingoReward);
+			return !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsBingoReward);
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6CA7F4 Offset: 0x6CA7F4 VA: 0x6CA7F4
@@ -265,7 +265,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 			bool isWait = true;
 			yield return Co.R(TutorialManager.ShowTutorial(GNGMCIAIKMA.HHCJCDFCLOB.FIAHJAMFNPD_GetTutorialId(), null));
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsBingoReward, true);
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsBingoReward, true);
 			MenuScene.Save(() =>
 			{
 				//0x10A3898

@@ -120,7 +120,7 @@ namespace XeApp.Game.Menu
 			m_textTitle.text = string.Format(bk.GetMessageByLabel("popup_get_liveskip_ticket_title"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(typeItemId));
 			m_textDesc1.text = string.Format("{0} {1}{2}", EKLNMHFCAOI.INCKKODFJAP_GetItemName(typeItemId), getCount, EKLNMHFCAOI.NDBLEADIDLA(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(typeItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId)));
 			m_textDesc2.text = Smart.Format(bk.GetMessageByLabel("popup_get_liveskip_ticket_desc"), getCount);
-			m_textNumCount.text = string.Format("{0}/{1}", CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GJCOJBDOOJG_LimitedCompoItem.HPPKOGKNKMH(1, time), CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GJCOJBDOOJG_LimitedCompoItem.OPCIHPEIFFE(1));
+			m_textNumCount.text = string.Format("{0}/{1}", CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GJCOJBDOOJG_LimitedCompoItem.HPPKOGKNKMH(1, time), CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GJCOJBDOOJG_LimitedCompoItem.OPCIHPEIFFE(1));
 		}
 
 		//// RVA: 0x964844 Offset: 0x964844 VA: 0x964844 Slot: 5

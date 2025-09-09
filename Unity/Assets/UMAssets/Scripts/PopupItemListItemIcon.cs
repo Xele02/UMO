@@ -64,11 +64,11 @@ public class PopupItemListItemIcon : FlexibleListItemLayout
 		int limitTime = 0;
 		if (cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.CIOGEKJNMBB_RareUpItem)
 		{
-			limitTime = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DPNKPPBEAGJ_RareUpItem.JCJKKMECCFI(time);
+			limitTime = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DPNKPPBEAGJ_RareUpItem.JCJKKMECCFI(time);
 		}
 		else if (cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.CKCPFLDGILD_LimitedCompoItem)
 		{
-			limitTime = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GJCOJBDOOJG_LimitedCompoItem.BLKPKBICPKK(EKLNMHFCAOI.DEACAHNLMNI_getItemId(id), time);
+			limitTime = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GJCOJBDOOJG_LimitedCompoItem.BLKPKBICPKK(EKLNMHFCAOI.DEACAHNLMNI_getItemId(id), time);
 			int t = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MBAGKLJDKMH_LimitedCompoItem.OCMMLAOEPIG[EKLNMHFCAOI.DEACAHNLMNI_getItemId(id) - 1].EMIJNAFJFJO;
 			if (limitTime < time || t == 0)
 				ShowItemDetail(id, count);
@@ -78,7 +78,7 @@ public class PopupItemListItemIcon : FlexibleListItemLayout
 		}
 		else if (cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem)
 		{
-			limitTime = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.AFHFIPLOKMN_LimitedItem.BLKPKBICPKK(EKLNMHFCAOI.DEACAHNLMNI_getItemId(id), time);
+			limitTime = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.AFHFIPLOKMN_LimitedItem.BLKPKBICPKK(EKLNMHFCAOI.DEACAHNLMNI_getItemId(id), time);
 		}
 		else
 		{

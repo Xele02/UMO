@@ -199,15 +199,15 @@ namespace XeApp.Game.Menu
 				});
 				layout.count.SetNumber(data.HBHMAKNGKFK[i].HMFFHLPNMPH_Cnt, 0);
 				layout.point.text = string.Concat(RichTextUtility.MakeColorTagString(data.HBHMAKNGKFK[i].DNBFMLBNAEE_Point.ToString(), SystemTextColor.ImportantColor) + JpStringLiterals.StringLiteral_1290);
-				layout.total.text = data.HBHMAKNGKFK[i].AHOKAPCGJMA_TargetNum.ToString();
-				layout.target_num = data.HBHMAKNGKFK[i].AHOKAPCGJMA_TargetNum;
+				layout.total.text = data.HBHMAKNGKFK[i].AHOKAPCGJMA_TotalPoint.ToString();
+				layout.target_num = data.HBHMAKNGKFK[i].AHOKAPCGJMA_TotalPoint;
 			}
 			for(int i = 0; i < m_PointText.Length; i++)
 			{
 				m_PointText[i].text = "0";
 			}
 			m_RankNum.SetNumber(m_ResultData.BKKPKIGLMCN_Ranks[0], 0);
-			m_TotalText.text = m_ResultData.AHOKAPCGJMA_NewPoint.ToString();
+			m_TotalText.text = m_ResultData.AHOKAPCGJMA_TotalPoint.ToString();
 			m_EpisodeBonus.text = m_ResultData.ANOCILKJGOJ_EpBonus.ToString() + JpStringLiterals.StringLiteral_11079;
 			m_EpisodeBonusMulti.text = (m_ResultData.ODCLHPGHDHA_EpBonusMulti - 100).ToString();
 			int s = m_ResultData.ODCLHPGHDHA_EpBonusMulti < 101 ? 1 : 0;
@@ -299,7 +299,7 @@ namespace XeApp.Game.Menu
 			{
 				m_PointText[i].text = m_ResultData.PHPANNCGOKC_GetPoint.ToString();
 			}
-			m_TotalText.text = m_ResultData.AHOKAPCGJMA_NewPoint.ToString();
+			m_TotalText.text = m_ResultData.AHOKAPCGJMA_TotalPoint.ToString();
 			for(int i = 0; i < m_ItemLayoutList.Length; i++)
 			{
 				m_ItemLayoutList[i].total.text = m_ItemLayoutList[i].target_num.ToString();

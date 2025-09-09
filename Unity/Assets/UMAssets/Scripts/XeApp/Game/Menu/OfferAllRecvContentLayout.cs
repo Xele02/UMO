@@ -202,8 +202,8 @@ namespace XeApp.Game.Menu
 		{
 			m_offerLogoState.StartChildrenAnimGoStop("02");
 			StringBuilder str = new StringBuilder(64);
-			str.SetFormat("diva_s_{0:D2}", offerInfo.AHHJLDLAPAN);
-			m_divaIcon.StartChildrenAnimGoStop(offerInfo.AHHJLDLAPAN.ToString("D2"));
+			str.SetFormat("diva_s_{0:D2}", offerInfo.AHHJLDLAPAN_DivaId);
+			m_divaIcon.StartChildrenAnimGoStop(offerInfo.AHHJLDLAPAN_DivaId.ToString("D2"));
 			m_divaName.text = MessageManager.Instance.GetMessage("master", str.ToString());
 		}
 

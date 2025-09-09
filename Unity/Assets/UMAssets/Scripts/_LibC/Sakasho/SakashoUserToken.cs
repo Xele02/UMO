@@ -266,7 +266,7 @@ namespace ExternLib
 						return res;
 					});
 
-					publicBlock.AFBMEMCHJCL_MScene.DOMFHDPMCCO(scenes[0].BCCHOBPJJKE_SceneId, scenes[0].KBOLNIBLIND_Mb, scenes[0].ODKMKEHJOCK_Sb, scenes[0].MJBODMOLOBC_Luck, scenes[0].JPIPENJGGDD_NumBoard, scenes[0].MKHFCGPJPFI_LimitOverCount);
+					publicBlock.AFBMEMCHJCL_MainScene.DOMFHDPMCCO(scenes[0].BCCHOBPJJKE_SceneId, scenes[0].KBOLNIBLIND_Mb, scenes[0].ODKMKEHJOCK_Sb, scenes[0].MJBODMOLOBC_Luck, scenes[0].JPIPENJGGDD_NumBoard, scenes[0].MKHFCGPJPFI_LimitOverCount);
 					for (int i = 0; i < 4; i++)
 					{
 						for (int j = 0; j < scenes.Count; j++)

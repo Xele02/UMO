@@ -77,7 +77,7 @@ namespace XeApp.Game.Menu
 		{
 			m_viewFriendData = null;
 			SetDiva(ghostData.FDBOPFEOENF_RivalData);
-			SetScene(ghostData.FDBOPFEOENF_RivalData, ghostData.AFBMEMCHJCL_Scene, null);
+			SetScene(ghostData.FDBOPFEOENF_RivalData, ghostData.AFBMEMCHJCL_MainScene, null);
 			m_assistIconObject.SetActive(false);
 			m_rivalIconObject.SetActive(true);
 			m_rivalRankImage.gameObject.SetActive(true);

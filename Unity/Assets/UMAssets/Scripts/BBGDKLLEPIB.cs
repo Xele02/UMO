@@ -180,7 +180,7 @@ public class BBGDKLLEPIB
 				FLHOFIEOKDH_BaseUrl = COJNCNGHIJC.NFEAMMJIMPG.GLMGHMCOMEC_BaseUrl;
 
 				DMPNAEEIANJ = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
-				if(COJNCNGHIJC.HOHOBEOJPBK_ServerInfo.AJBPBEALBOB_ServerCurrentAssetRevision == LHJNPJFNDNA)
+				if(COJNCNGHIJC.HOHOBEOJPBK_ServerInfo.AJBPBEALBOB_SakashoCurrentAssetRevision == LHJNPJFNDNA)
 				{
 					if(GBCDHECMDMC())
 					{
@@ -218,7 +218,7 @@ public class BBGDKLLEPIB
 					//LAB_00f1b234
 					while(!KOMKKBDABJP)
 						yield return null;
-					LHJNPJFNDNA = COJNCNGHIJC.HOHOBEOJPBK_ServerInfo.AJBPBEALBOB_ServerCurrentAssetRevision;
+					LHJNPJFNDNA = COJNCNGHIJC.HOHOBEOJPBK_ServerInfo.AJBPBEALBOB_SakashoCurrentAssetRevision;
 					//LAB_00f1b2e8:
 				}
 				else
@@ -274,7 +274,7 @@ public class BBGDKLLEPIB
 					//10
 					while(!KOMKKBDABJP)
 						yield return null;
-					LHJNPJFNDNA = COJNCNGHIJC.HOHOBEOJPBK_ServerInfo.AJBPBEALBOB_ServerCurrentAssetRevision;
+					LHJNPJFNDNA = COJNCNGHIJC.HOHOBEOJPBK_ServerInfo.AJBPBEALBOB_SakashoCurrentAssetRevision;
 					if(GBCDHECMDMC())
 					{
 						KEHOJEJMGLJ.AFKGMCBJBJA();

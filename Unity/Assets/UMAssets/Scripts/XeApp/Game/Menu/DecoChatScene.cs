@@ -530,7 +530,7 @@ namespace XeApp.Game.Menu
 			data.DJHMGDKKKFO_ColorId = diva.EKFONBFDAAP_ColorId;
 			data.HEKIEDEBAEO_StampId = stampId;
 			data.EKAMPLIAENM_SerifId = serifId;
-			data.PCEHLFNFIDA(GameManager.Instance.ViewPlayerData.AHEFHIMGIBI_ServerSave);
+			data.PCEHLFNFIDA(GameManager.Instance.ViewPlayerData.AHEFHIMGIBI_PlayerData);
 			m_chatContller.NPIBJOGODKG(0, data, () =>
 			{
 				//0xC55DD8
@@ -696,7 +696,7 @@ namespace XeApp.Game.Menu
 			ANPBHCNJIDI.AIFBLOAGFOP data = new ANPBHCNJIDI.AIFBLOAGFOP();
 			data.AHHJLDLAPAN_DivaId = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId;
 			data.EBBJPBGHJOL_Content = m_messgeText;
-			data.PCEHLFNFIDA(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave);
+			data.PCEHLFNFIDA(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData);
 			m_chatContller.NPIBJOGODKG(0, data, () =>
 			{
 				//0xC56120

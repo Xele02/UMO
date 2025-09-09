@@ -553,7 +553,7 @@ namespace XeApp.Game.Menu
 										b9 = true;
 								}
 								bool b2 = false;
-								if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level > 9)
+								if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level > 9)
 								{
 									if (initParam.viewResultData.PENICOGGNLF_RankScore < 2)
 										b2 = true;

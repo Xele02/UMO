@@ -12,7 +12,7 @@ public class BOPPPCKONML
 	private static string PLHNDPDKNLB = "inventory_record"; // 0x0
 	public long KAKFEGGEKLB; // 0x8
 	public long JJJEFNCIFJN; // 0x10
-	public int AGPKGMFOJHC; // 0x18
+	public int AGPKGMFOJHC_rev; // 0x18
 	public int ECPCDCKJOPC; // 0x1C
 	private bool FLPHABPKNGM; // 0x20
 	private bool LCKPHJINHPH; // 0x21
@@ -87,8 +87,8 @@ public class BOPPPCKONML
 			LCKPHJINHPH = true;
 		KAKFEGGEKLB = JsonUtil.GetInt(data, AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id, 0);
 		JJJEFNCIFJN = KAKFEGGEKLB;
-		AGPKGMFOJHC = JsonUtil.GetInt(data, AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev, 0);
-		ECPCDCKJOPC = AGPKGMFOJHC;
+		AGPKGMFOJHC_rev = JsonUtil.GetInt(data, AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev, 0);
+		ECPCDCKJOPC = AGPKGMFOJHC_rev;
 		if(data.BBAJPINMOEP_Contains(PLHNDPDKNLB))
 		{
 			EDOHBJAPLPF_JsonData dataList = data[PLHNDPDKNLB];
@@ -248,7 +248,7 @@ public class BOPPPCKONML
 				return;
 			}
 		}
-		AGPKGMFOJHC = 1;
+		AGPKGMFOJHC_rev = 1;
 		GGKHIHFPKDH_SavePlayerData req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new GGKHIHFPKDH_SavePlayerData());
 		req.HHIHCJKLJFF_Names = HMJBJGFPEPG;
 		req.NBFDEFGFLPJ = (SakashoErrorId FMEMECBIDIB) =>
@@ -257,9 +257,9 @@ public class BOPPPCKONML
 			return true;
 		};
 		bool isPartial = false;
-		req.AHEFHIMGIBI_PlayerData = OKJPIBHMKMJ(out isPartial, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.MCKEOKFMLAH_SaveId + 1);
+		req.AHEFHIMGIBI_PlayerData = OKJPIBHMKMJ(out isPartial, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MCKEOKFMLAH_SaveId + 1);
 		req.CHDDDCCHJJH_Replace = !isPartial;
-		req.MCKEOKFMLAH_SaveId = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.MCKEOKFMLAH_SaveId + 1;
+		req.MCKEOKFMLAH_SaveId = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MCKEOKFMLAH_SaveId + 1;
 		req.BHFHGFKBOHH_OnSuccess = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
 		{
 			//0x18ED998
@@ -267,7 +267,7 @@ public class BOPPPCKONML
 			{
 				LCEMDBMFMFK[i].ODDIHGPONFL(PJJFEAHIPGL[i]);
 			}
-			ECPCDCKJOPC = AGPKGMFOJHC;
+			ECPCDCKJOPC = AGPKGMFOJHC_rev;
 			JJJEFNCIFJN = KAKFEGGEKLB;
 			FLPHABPKNGM = true;
 			LCKPHJINHPH = false;

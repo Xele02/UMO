@@ -4,16 +4,16 @@ public class OBOKMHHMOIL { }
 public class OBOKMHHMOIL_ServerInfo
 {
 	public string EBCFHFIOHBN_ServerCurrentMasterRevision; // 0x8
-	public string AJBPBEALBOB_ServerCurrentAssetRevision; // 0xC
+	public string AJBPBEALBOB_SakashoCurrentAssetRevision; // 0xC
 	public long LCAINKFINEI_ServerCurrentDateTime; // 0x10
-	public string ABFADMDAAKJ_ServerRecommendedClientVersion; // 0x18
+	public string ABFADMDAAKJ_SakashoRecommendedClientVersion; // 0x18
 
 	// // RVA: 0x1B2B8E4 Offset: 0x1B2B8E4 VA: 0x1B2B8E4
 	public void LHPDDGIJKNB_Reset()
     {
-		ABFADMDAAKJ_ServerRecommendedClientVersion = null;
+		ABFADMDAAKJ_SakashoRecommendedClientVersion = null;
 		EBCFHFIOHBN_ServerCurrentMasterRevision = null;
-		AJBPBEALBOB_ServerCurrentAssetRevision = null;
+		AJBPBEALBOB_SakashoCurrentAssetRevision = null;
 		LCAINKFINEI_ServerCurrentDateTime = 0;
     }
 
@@ -25,11 +25,11 @@ public class OBOKMHHMOIL_ServerInfo
 			return;
 		if(GPBJHKLFCEP.EBCFHFIOHBN_ServerCurrentMasterRevision != null)
 			EBCFHFIOHBN_ServerCurrentMasterRevision = GPBJHKLFCEP.EBCFHFIOHBN_ServerCurrentMasterRevision;
-		if(GPBJHKLFCEP.AJBPBEALBOB_ServerCurrentAssetRevision != null)
-			AJBPBEALBOB_ServerCurrentAssetRevision = GPBJHKLFCEP.AJBPBEALBOB_ServerCurrentAssetRevision;
+		if(GPBJHKLFCEP.AJBPBEALBOB_SakashoCurrentAssetRevision != null)
+			AJBPBEALBOB_SakashoCurrentAssetRevision = GPBJHKLFCEP.AJBPBEALBOB_SakashoCurrentAssetRevision;
 		LCAINKFINEI_ServerCurrentDateTime = GPBJHKLFCEP.LCAINKFINEI_ServerCurrentDateTime;
-		if(GPBJHKLFCEP.ABFADMDAAKJ_ServerRecommendedClientVersion != null)
-			ABFADMDAAKJ_ServerRecommendedClientVersion = GPBJHKLFCEP.ABFADMDAAKJ_ServerRecommendedClientVersion;
+		if(GPBJHKLFCEP.ABFADMDAAKJ_SakashoRecommendedClientVersion != null)
+			ABFADMDAAKJ_SakashoRecommendedClientVersion = GPBJHKLFCEP.ABFADMDAAKJ_SakashoRecommendedClientVersion;
     }
 
 	// // RVA: 0x1B2B94C Offset: 0x1B2B94C VA: 0x1B2B94C
@@ -43,7 +43,7 @@ public class OBOKMHHMOIL_ServerInfo
 		idx = HGAMEAPCKJL.IndexOf(AFEHLCGHAEE_Strings.AJBPBEALBOB_SakashoCurrentAssetRevision); // SAKASHO_CURRENT_ASSET_REVISION
 		if(idx >= 0)
 		{
-			AJBPBEALBOB_ServerCurrentAssetRevision  = PEMIFCIFEKK(HGAMEAPCKJL, idx + AFEHLCGHAEE_Strings.AJBPBEALBOB_SakashoCurrentAssetRevision.Length + 3);
+			AJBPBEALBOB_SakashoCurrentAssetRevision  = PEMIFCIFEKK(HGAMEAPCKJL, idx + AFEHLCGHAEE_Strings.AJBPBEALBOB_SakashoCurrentAssetRevision.Length + 3);
 		}
 		idx = HGAMEAPCKJL.IndexOf(AFEHLCGHAEE_Strings.LCAINKFINEI_SakashoCurrentDateTime); // SAKASHO_CURRENT_DATE_TIME
 		if(idx >= 0)
@@ -53,7 +53,7 @@ public class OBOKMHHMOIL_ServerInfo
 		idx = HGAMEAPCKJL.IndexOf(AFEHLCGHAEE_Strings.ABFADMDAAKJ_SakashoRecommendedClientVersion); // SAKASHO_RECOMMENDED_CLIENT_VERSION
 		if(idx >= 0)
 		{
-			ABFADMDAAKJ_ServerRecommendedClientVersion  = PEMIFCIFEKK(HGAMEAPCKJL, idx + AFEHLCGHAEE_Strings.ABFADMDAAKJ_SakashoRecommendedClientVersion.Length + 3);
+			ABFADMDAAKJ_SakashoRecommendedClientVersion  = PEMIFCIFEKK(HGAMEAPCKJL, idx + AFEHLCGHAEE_Strings.ABFADMDAAKJ_SakashoRecommendedClientVersion.Length + 3);
 		}
     }
 

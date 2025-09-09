@@ -209,10 +209,10 @@ public static class DatabaseTextConverter
             PJANOOPJIDE_TutorialPict tutoDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict;
             for(int i = 0; i < tutoDb.CDENCMNHNGA.Count; i++)
             {
-                for(int j = 0; j < tutoDb.CDENCMNHNGA[i].ADCMNODJBGJ_Titles.Length; j++)
+                for(int j = 0; j < tutoDb.CDENCMNHNGA[i].ADCMNODJBGJ_Title.Length; j++)
                 {
                     string prfx = string.Format("tutopict_{0:D4}_{1:D4}_title", i, j);
-                    poFile.translationData.Add(prfx, tutoDb.CDENCMNHNGA[i].ADCMNODJBGJ_Titles[j]);
+                    poFile.translationData.Add(prfx, tutoDb.CDENCMNHNGA[i].ADCMNODJBGJ_Title[j]);
                 }
                 for(int j = 0; j < tutoDb.CDENCMNHNGA[i].JONNCMDGMKA_Messages.Length; j++)
                 {
@@ -287,7 +287,7 @@ public static class DatabaseTextConverter
             {
                 {
                     string prfx = string.Format("anketo_{0:D4}_question", i);
-                    poFile.translationData.Add(prfx, blockDb.CDENCMNHNGA[i].ADCMNODJBGJ_Question);
+                    poFile.translationData.Add(prfx, blockDb.CDENCMNHNGA[i].ADCMNODJBGJ_Title);
                 }
                 for(int j = 0; j < blockDb.CDENCMNHNGA[i].BNMCMNPPPCI_ChoiceText.Length; j++)
                 {

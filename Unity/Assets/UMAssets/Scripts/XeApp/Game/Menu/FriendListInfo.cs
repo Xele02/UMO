@@ -82,7 +82,7 @@ namespace XeApp.Game.Menu
 				sceneRank = fri.AFBMEMCHJCL_MainScene.CGIELKDLHGE_GetEvolveId();
 				sceneLevel = fri.AFBMEMCHJCL_MainScene.CIEOBFIIPLD_SceneLevel;
 				sceneAttr = (GameAttribute.Type)fri.AFBMEMCHJCL_MainScene.JGJFIJOCPAG_SceneAttr;
-				sceneSeries = fri.AFBMEMCHJCL_MainScene.AIHCEGFANAM_SceneSeries;
+				sceneSeries = fri.AFBMEMCHJCL_MainScene.AIHCEGFANAM_SerieAttr;
 				int skillId = fri.AFBMEMCHJCL_MainScene.MEOOLHNNMHL_GetCenterSkillId(false, 0, 0);
 				if(skillId != 0)
 				{

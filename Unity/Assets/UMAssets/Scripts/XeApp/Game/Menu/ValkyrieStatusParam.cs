@@ -82,7 +82,7 @@ namespace XeApp.Game.Menu
 				texture.Set(m_pilotImage);
 				m_flags |= (byte)Flags.PilotLoaded;
 			});
-			int serie = valkyrieData.AIHCEGFANAM_Serie;
+			int serie = valkyrieData.AIHCEGFANAM_SerieAttr;
 			if (serie == 5)
 				serie = 10;
 			GameManager.Instance.MenuResidentTextureCache.LoadLogo(serie, (IiconTexture texture) =>

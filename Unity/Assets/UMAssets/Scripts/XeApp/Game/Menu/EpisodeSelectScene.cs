@@ -261,7 +261,7 @@ namespace XeApp.Game.Menu
 							cos1 = cos2;
 							cos2 = tmp;
 						}
-						int res = cos2.AHHJLDLAPAN_PrismDivaId - cos1.AHHJLDLAPAN_PrismDivaId;
+						int res = cos2.AHHJLDLAPAN_DivaId - cos1.AHHJLDLAPAN_DivaId;
 						if (res != 0)
 							return res;
 						return cos2.JPIDIENBGKH_CostumeId - cos1.JPIDIENBGKH_CostumeId;
@@ -317,7 +317,7 @@ namespace XeApp.Game.Menu
 						a = b;
 						b = tmp;
 					}
-					int res = b.ABLHIAEDJAI_CurrentPoint - a.ABLHIAEDJAI_CurrentPoint;
+					int res = b.ABLHIAEDJAI_CurrentValue - a.ABLHIAEDJAI_CurrentValue;
 					if (res == 0)
 						res = b.FKMAEKNOLJB_EpisodeNo - a.FKMAEKNOLJB_EpisodeNo;
 					return res;

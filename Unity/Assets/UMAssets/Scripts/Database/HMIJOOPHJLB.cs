@@ -10,7 +10,7 @@ public class HMIJOOPHJLB_Diva2 : DIHHCBACKGG_DbSection
 	public static bool DINNDBNPNFK; // 0x0
 	public const int NLPCOAKLBAN = 0;
 	public const int DNLFNEFLNED = 200;
-	public int AGNCAAFGLBE; // 0x20
+	public int AGNCAAFGLBE_MaxLevels; // 0x20
 	public List<OAMBPGCJEGJ> LENIIENHJJK = new List<OAMBPGCJEGJ>(); // 0x24
 	private List<int> KNOMABFHFEB = new List<int>(); // 0x28
 	private List<int> BEKCOEABLJJ = new List<int>(); // 0x2C

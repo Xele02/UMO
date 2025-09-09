@@ -476,7 +476,7 @@ namespace XeApp.Game.Menu
 					ANPBHCNJIDI.JLHGKKIEALB data = _cm as ANPBHCNJIDI.JLHGKKIEALB;
 					FullComboListItem it = new FullComboListItem();
 					it.Messge = data.EBBJPBGHJOL_Content;
-					it.FreeId = data.ADHMMMEOJMK_FreeSongId;
+					it.FreeId = data.ADHMMMEOJMK_FreeMusicId;
 					it.ChatType = CommentType.BattleLog;
 					it.DiveId = data.AHHJLDLAPAN_DivaId;
 					it.DivaCosId = data.NNOHKLNKGAD_CostumeId;

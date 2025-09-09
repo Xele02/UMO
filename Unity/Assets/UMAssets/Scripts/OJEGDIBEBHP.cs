@@ -3,7 +3,7 @@ using XeSys;
 
 public class OJEGDIBEBHP
 {
-	public int ADJBIEOILPJ_Id; // 0x8
+	public int ADJBIEOILPJ_ItemPresentId; // 0x8
 	public int PNJICDLDCAE; // 0xC
 	public string OPFGFINHFCE_Name = ""; // 0x10
 	public int JONPKLHMOBL; // 0x14
@@ -17,8 +17,8 @@ public class OJEGDIBEBHP
 		if(PPFNGGCBJKC > 0)
 		{
 			GJALOMELEHD_Intimacy.ELAIMNHBCFB db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.CJAEGOMDICD[PPFNGGCBJKC - 1];
-			EGOLBAPFHHD_Common.DEEGPPKGGLK save = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.DHJFHILPKLB_IntimacyPresent[PPFNGGCBJKC - 1];
-			ADJBIEOILPJ_Id = PPFNGGCBJKC;
+			EGOLBAPFHHD_Common.DEEGPPKGGLK save = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.DHJFHILPKLB_IntimacyPresent[PPFNGGCBJKC - 1];
+			ADJBIEOILPJ_ItemPresentId = PPFNGGCBJKC;
 			PNJICDLDCAE = db.JBGEEPFKIGG;
 			OPFGFINHFCE_Name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(EKLNMHFCAOI.FKGCBLHOOCL_Category.DLBHNNOHLMM_PresentItem, PPFNGGCBJKC);
 			JONPKLHMOBL = db.JONPKLHMOBL;
@@ -32,11 +32,11 @@ public class OJEGDIBEBHP
 	//public bool FBANBDCOEJL() { }
 
 	//// RVA: 0x148C700 Offset: 0x148C700 VA: 0x148C700
-	public bool MCLFHOABKGP(int AHHJLDLAPAN)
+	public bool MCLFHOABKGP(int _AHHJLDLAPAN_DivaId)
 	{
-		if(AHHJLDLAPAN > 0)
+		if(_AHHJLDLAPAN_DivaId > 0)
 		{
-			return (BMBACIHEICJ & (1 << AHHJLDLAPAN - 1)) != 0;
+			return (BMBACIHEICJ & (1 << _AHHJLDLAPAN_DivaId - 1)) != 0;
 		}
 		return false;
 	}
@@ -47,10 +47,10 @@ public class OJEGDIBEBHP
 		List<OJEGDIBEBHP> res = new List<OJEGDIBEBHP>();
 		if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
 		{
-			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave != null)
+			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData != null)
 			{
 				int num = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.CJAEGOMDICD.Count;
-				int num2 = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.DHJFHILPKLB_IntimacyPresent.Count;
+				int num2 = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.DHJFHILPKLB_IntimacyPresent.Count;
 				if (num2 < num)
 					num = num2;
 				for(int i = 0; i < num; i++)
@@ -80,21 +80,21 @@ public class OJEGDIBEBHP
 	}
 
 	//// RVA: 0x148CB50 Offset: 0x148CB50 VA: 0x148CB50
-	public static string DDICENAFJDP_GetName(int ADJBIEOILPJ)
+	public static string DDICENAFJDP_GetName(int _ADJBIEOILPJ_ItemPresentId)
 	{
-		return MessageManager.Instance.GetMessage("master", "itp_nm_"+ADJBIEOILPJ.ToString("D4"));
+		return MessageManager.Instance.GetMessage("master", "itp_nm_"+_ADJBIEOILPJ_ItemPresentId.ToString("D4"));
 	}
 
 	//// RVA: 0x148CC28 Offset: 0x148CC28 VA: 0x148CC28
-	public static string LJKBBAGJLFP_GetDesc(int ADJBIEOILPJ)
+	public static string LJKBBAGJLFP_GetDesc(int _ADJBIEOILPJ_ItemPresentId)
 	{
-		return MessageManager.Instance.GetMessage("master", "itp_dsc_" + ADJBIEOILPJ.ToString("D4"));
+		return MessageManager.Instance.GetMessage("master", "itp_dsc_" + _ADJBIEOILPJ_ItemPresentId.ToString("D4"));
 	}
 
 	//// RVA: 0x148CD00 Offset: 0x148CD00 VA: 0x148CD00
-	public static string MPKLLGIOBIP_GetDesc2(int ADJBIEOILPJ)
+	public static string MPKLLGIOBIP_GetDesc2(int _ADJBIEOILPJ_ItemPresentId)
 	{
-		return MessageManager.Instance.GetMessage("master", "itp_dsc2_" + ADJBIEOILPJ.ToString("D4"));
+		return MessageManager.Instance.GetMessage("master", "itp_dsc2_" + _ADJBIEOILPJ_ItemPresentId.ToString("D4"));
 	}
 
 	//// RVA: 0x148CDD8 Offset: 0x148CDD8 VA: 0x148CDD8

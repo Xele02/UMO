@@ -162,7 +162,7 @@ namespace XeApp.Game.Menu
 			int a = 1;
 			if(dinfo != null)
 			{
-				if(dinfo.AIHCEGFANAM_Serie == 2)
+				if(dinfo.AIHCEGFANAM_SerieAttr == 2)
 				{
 					a = 2;
 					if(divaId != 6)
@@ -172,9 +172,9 @@ namespace XeApp.Game.Menu
 							a = 3;
 					}
 				}
-				if (dinfo.AIHCEGFANAM_Serie == 3)
+				if (dinfo.AIHCEGFANAM_SerieAttr == 3)
 					a = 4;
-				if (dinfo.AIHCEGFANAM_Serie == 4)
+				if (dinfo.AIHCEGFANAM_SerieAttr == 4)
 					a = 5;
 			}
 			string k = string.Format("sel_st_get_icon_{0:d2}", a);

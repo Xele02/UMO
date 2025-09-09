@@ -31,14 +31,14 @@ public class JKCDLPOPCGC_GetRaidboss : CACGCMBKHDI_Request
         {
             public int MLPEHNBNOGD_PlayerId; // 0x8
             public int HALIDDHLNEG_Damage; // 0xC
-            public EDOHBJAPLPF_JsonData AHEFHIMGIBI; // 0x10
+            public EDOHBJAPLPF_JsonData AHEFHIMGIBI_PlayerData; // 0x10
 
             // RVA: 0x135C44C Offset: 0x135C44C VA: 0x135C44C
             public BJIJAEOEHBJ(EDOHBJAPLPF_JsonData DLENPPIJNPA)
             {
                 MLPEHNBNOGD_PlayerId = (int)DLENPPIJNPA["player_id"];
                 HALIDDHLNEG_Damage = (int)DLENPPIJNPA["damage"];
-                AHEFHIMGIBI = DLENPPIJNPA.LBDOLHGDIEB("player_data", null);
+                AHEFHIMGIBI_PlayerData = DLENPPIJNPA.LBDOLHGDIEB("player_data", null);
             }
         }
         

@@ -20,7 +20,7 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 		public short KIDNEIEHOMN_Crypted; // 0x16
 		public short CDDLNKAPCFB_Crypted; // 0x18
 		[UMOMember(ReaderMember = "JPFMJHLCMJL", Desc = "Serie")]
-		public sbyte AIHCEGFANAM_Sa; // 0x1A
+		public sbyte AIHCEGFANAM_SerieAttr; // 0x1A
 		[UMOMember(ReaderMember = "GMELAKNFKMG", Desc = "Bitfield for each enabled form")]
 		public sbyte CMAJHIMEIAC; // 0x1B
 		public short AENGKBBMPGM_SkillIdCrypted; // 0x1C
@@ -125,7 +125,7 @@ public class JPIANKEOOMB_Valkyrie : DIHHCBACKGG_DbSection
 		{
 			CDENCMNHNGA_ValkyrieList[i].GPPEFLKGGGJ_Id = (short)(array[i].PPFNGGCBJKC);
 			CDENCMNHNGA_ValkyrieList[i].DAJGPBLEEOB_ModelId = (short)(array[i].FLNJLKKAFPB);
-			CDENCMNHNGA_ValkyrieList[i].AIHCEGFANAM_Sa = (sbyte)array[i].JPFMJHLCMJL;
+			CDENCMNHNGA_ValkyrieList[i].AIHCEGFANAM_SerieAttr = (sbyte)array[i].JPFMJHLCMJL;
 			CDENCMNHNGA_ValkyrieList[i].PFGJJLGLPAC_PilotId = (short)(array[i].HDEBAGHEIKD);
 			CDENCMNHNGA_ValkyrieList[i].PPEGAKEIEGM_Enabled = (short)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
 			CDENCMNHNGA_ValkyrieList[i].KINFGHHNFCF_Atk = (short)(array[i].FCBJFKGDINH);

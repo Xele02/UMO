@@ -21,7 +21,7 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 		public byte[] OCKJIHPHMDE; // 0x98
 
 		public int BCCHOBPJJKE_Id { get; set; } // 0x8 BNOLCKHMAAH COHCNONLPAC HJEBBEHGHGG
-		public SeriesAttr.Type AIHCEGFANAM_Serie { get; set; } // 0xC FJOGAAMLJMA ANEJPLENMAL HEHDOGFEIOL
+		public SeriesAttr.Type AIHCEGFANAM_SerieAttr { get; set; } // 0xC FJOGAAMLJMA ANEJPLENMAL HEHDOGFEIOL
 		public SeriesLogoId.Type EMIKBGHIOMN_SerieLogo { get; set; } // 0x10 CCEIEDMCHLA BJGJCKFOBCA OAKIKBEEACC
 		public sbyte EKLIPGELKCL_Rarity { get; set; } // 0x14 DMGPKEIBKHJ OEEHBGECGKL GHLMHLJJBIG
 		public sbyte PPEGAKEIEGM_En { get; set; } // 0x15 NEKLJCCBECB KPOEEPIMMJP NCIEAFEDPBH
@@ -117,7 +117,7 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 		{
 			EKLIPGELKCL_Rarity = 1;
 			BCCHOBPJJKE_Id = PPFNGGCBJKC_Id;
-			AIHCEGFANAM_Serie = SeriesAttr.Type.Delta;
+			AIHCEGFANAM_SerieAttr = SeriesAttr.Type.Delta;
 			EMIKBGHIOMN_SerieLogo = SeriesLogoId.Type.DeltaTV;
 			FKDCCLPGKDK_Ma = 1;
 			AOLIJKMIJJE_Dv = 0;
@@ -454,7 +454,7 @@ public class MLIBEPGADJH_Scene : DIHHCBACKGG_DbSection
 			CDENCMNHNGA_SceneList[i].EKLIPGELKCL_Rarity = (sbyte)array[i].FBFLDFMFFOH;
 			CDENCMNHNGA_SceneList[i].PPEGAKEIEGM_En = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
 			CDENCMNHNGA_SceneList[i].EMIKBGHIOMN_SerieLogo = (SeriesLogoId.Type)array[i].JPFMJHLCMJL;
-			CDENCMNHNGA_SceneList[i].AIHCEGFANAM_Serie = SeriesAttr.ConvertFromLogoId(CDENCMNHNGA_SceneList[i].EMIKBGHIOMN_SerieLogo);
+			CDENCMNHNGA_SceneList[i].AIHCEGFANAM_SerieAttr = SeriesAttr.ConvertFromLogoId(CDENCMNHNGA_SceneList[i].EMIKBGHIOMN_SerieLogo);
 			CDENCMNHNGA_SceneList[i].FKDCCLPGKDK_Ma = (sbyte)array[i].AOLLIMFKDAA;
 			CDENCMNHNGA_SceneList[i].HFIDCMNFBJG_Life = (int)array[i].BCCOMAODPJI;
 			CDENCMNHNGA_SceneList[i].PFJCOCPKABN_Soul = (int)array[i].LJELGFAFGAB;

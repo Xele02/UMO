@@ -412,7 +412,7 @@ namespace XeApp.Game.Menu
 				yield break;
 			PIGBKEIAMPE_FriendManager fm = CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager;
 			MenuScene.Instance.InputDisable();
-			pd = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave;
+			pd = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
 			bool isDone = false;
 			bool isExcess = false;
 			bool isError = false;
@@ -708,7 +708,7 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < m_cashFriendPlayerData_Other.Count; i++)
 				{
 					IFICNCAHIGI it = m_cashFriendPlayerData_Other[i] as IFICNCAHIGI;
-					it.BBNAEPGAMMA_IsFavorite = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(it.MLPEHNBNOGD_Id);
+					it.BBNAEPGAMMA_IsFavorite = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(it.MLPEHNBNOGD_Id);
 				}
 			}
 		}

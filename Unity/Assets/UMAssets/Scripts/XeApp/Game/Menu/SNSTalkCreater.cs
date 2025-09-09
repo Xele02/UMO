@@ -279,7 +279,7 @@ namespace XeApp.Game.Menu
 				idx2 = m_viewDataRoom.CNEOPOINCBA.FindIndex((IMKNEDJDNGC x) =>
 				{
 					//0x159A414
-					return x.AIPLIEMLHGC == snsId;
+					return x.AIPLIEMLHGC_SnsId == snsId;
 				});
 				if(!m_viewDataRoom.CNEOPOINCBA[idx2].GAIEHFCHAOK_New)
 				{

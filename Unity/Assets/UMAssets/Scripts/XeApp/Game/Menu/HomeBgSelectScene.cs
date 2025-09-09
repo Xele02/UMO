@@ -149,7 +149,7 @@ namespace XeApp.Game.Menu
 				{
 					if(PlayerData.OPIBAPEGCLA_Scenes[i].CGKAEMGLHNK_IsUnlocked() && !PlayerData.OPIBAPEGCLA_Scenes[i].MCCIFLKCNKO_Feed)
 					{
-						if(PopupSortMenu.IsSerializeFilterOn((int)PlayerData.OPIBAPEGCLA_Scenes[i].AIHCEGFANAM_SceneSeries, seriaseFilterBit))
+						if(PopupSortMenu.IsSerializeFilterOn((int)PlayerData.OPIBAPEGCLA_Scenes[i].AIHCEGFANAM_SerieAttr, seriaseFilterBit))
 						{
 							if(JKHEOEEPBMJ.DGGEAHIKPBB <= PlayerData.OPIBAPEGCLA_Scenes[i].JKGFBFPIMGA_Rarity)
 							{

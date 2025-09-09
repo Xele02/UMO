@@ -91,12 +91,12 @@ public class LPPGENBEECK_MusicMaster : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x10CFB94 Offset: 0x10CFB94 VA: 0x10CFB94
-	public HDNKOFNBCEO_RewardInfo NEJKJJPIGKD_GetRewardInfo(KEODKEGFDLD_FreeMusicInfo AOKGAGHGAEC_FreeMusicInfo, int AKNELONELJK_Difficulty, bool GIKLNODJKFK_Is6Line)
+	public HDNKOFNBCEO_RewardInfo NEJKJJPIGKD_GetRewardInfo(KEODKEGFDLD_FreeMusicInfo AOKGAGHGAEC_FreeMusicInfo, int _AKNELONELJK_Difficulty, bool GIKLNODJKFK_Is6Line)
 	{
 		if (!GIKLNODJKFK_Is6Line)
-			return MGDLFOAKGGF[AOKGAGHGAEC_FreeMusicInfo.EAEDODGPLEC_RewardBaseId + AKNELONELJK_Difficulty - 1];
+			return MGDLFOAKGGF[AOKGAGHGAEC_FreeMusicInfo.EAEDODGPLEC_RewardBaseId + _AKNELONELJK_Difficulty - 1];
 		else
-			return MGDLFOAKGGF[AOKGAGHGAEC_FreeMusicInfo.LOKLNBLBBFD_Reward6LineBaseId + AKNELONELJK_Difficulty - 1];
+			return MGDLFOAKGGF[AOKGAGHGAEC_FreeMusicInfo.LOKLNBLBBFD_Reward6LineBaseId + _AKNELONELJK_Difficulty - 1];
 	}
 
 	// // RVA: 0x10CFC50 Offset: 0x10CFC50 VA: 0x10CFC50
@@ -190,7 +190,7 @@ public class LPPGENBEECK_MusicMaster : DIHHCBACKGG_DbSection
 				break;
 			if(k.DLAEJOBELBH_Id == JHNCAFBGOKA && k.OFGIOBGAJPA == HKOHGJAIJMA)
 			{
-				int[] a = k.AHHJLDLAPAN;
+				int[] a = k.AHHJLDLAPAN_DivaId;
 				bool valid = true;
 				for(int i = 0; i < a.Length; i++)
 				{
@@ -661,7 +661,7 @@ public class LPPGENBEECK_MusicMaster : DIHHCBACKGG_DbSection
 			data.DLAEJOBELBH_Id = (int)array[i].KLMIFEKNBLL;
 			for(int j = 0; j < array[i].DIPKCALNIII.Length; j++)
 			{
-				data.AHHJLDLAPAN[j] = (int)array[i].DIPKCALNIII[j];
+				data.AHHJLDLAPAN_DivaId[j] = (int)array[i].DIPKCALNIII[j];
 			}
 			data.OFGIOBGAJPA = (int)array[i].ELDPFJIDNAB;
 			data.OEJOOMPKAOO = (int)array[i].NDIJPKPDOMG;
@@ -900,15 +900,15 @@ public class KEODKEGFDLD_FreeMusicInfo
 	}
 
 	// // RVA: 0x19F32FC Offset: 0x19F32FC VA: 0x19F32FC
-	public ADDHLABEFKH EMJCHPDJHEI(bool GIKLNODJKFK_Is6Line, int AKNELONELJK_Difficulty)
+	public ADDHLABEFKH EMJCHPDJHEI(bool GIKLNODJKFK_Is6Line, int _AKNELONELJK_Difficulty)
 	{
 		if (IPFHDCEFLDE_ByDiffLine6.Count < 1 || !GIKLNODJKFK_Is6Line)
 		{
-			if(AKNELONELJK_Difficulty >= COGKJBAFBKN_ByDiff.Count)
-				UnityEngine.Debug.LogError("diffculty error : "+AKNELONELJK_Difficulty+" "+COGKJBAFBKN_ByDiff.Count);
-			return COGKJBAFBKN_ByDiff[AKNELONELJK_Difficulty];
+			if(_AKNELONELJK_Difficulty >= COGKJBAFBKN_ByDiff.Count)
+				UnityEngine.Debug.LogError("diffculty error : "+_AKNELONELJK_Difficulty+" "+COGKJBAFBKN_ByDiff.Count);
+			return COGKJBAFBKN_ByDiff[_AKNELONELJK_Difficulty];
 		}
-		return IPFHDCEFLDE_ByDiffLine6[AKNELONELJK_Difficulty];
+		return IPFHDCEFLDE_ByDiffLine6[_AKNELONELJK_Difficulty];
 	}
 
 }
@@ -961,7 +961,7 @@ public class HMJHLLPBCLD : IComparable<HMJHLLPBCLD>
 	[UMOMember(ReaderMember = "LJNAKDMILMC")]
 	public int LJNAKDMILMC { get; set; } // 0x8 KNJIHALCKLN LIIHHICIBKM OACJGKPBHIK
 	// public int ANAJIAENLNB { get; } 0x15F6920 MMOMNMBKHJF
-	// public int AHHJLDLAPAN { get; } 0x15F6944 IPKDLMIDMHH
+	// public int AHHJLDLAPAN_DivaId { get; } 0x15F6944 IPKDLMIDMHH
 	// public int DLAEJOBELBH_Id { get; } 0x15F6974 MPGNHBOBFBD
 	[UMOMember(ReaderMember = "JBKMAPLCBMO/0")]
 	public short LHBDCGFOKCA_DivaId { get; set; } // 0xC HHBMOFEAFKC OLHHGEIKLDM DOOHFPHPMPF
@@ -1021,7 +1021,7 @@ public class AJIKMKFGNCJ
 {
 	// public short JOMGCCBFKEF { get; set; } // 0x8 JIHJGFNPPIL GGFGMDFOFLG JCJBHJOOIDP
 	// public byte INDDJNMPONH { get; set; } // 0xA JDIGGEBNOPK GHAILOLPHPF BACGOKIGMBC
-	// public byte AHHJLDLAPAN { get; set; } // 0xB AMALMGIALDF IPKDLMIDMHH IENNENMKEFO
+	// public byte AHHJLDLAPAN_DivaId { get; set; } // 0xB AMALMGIALDF IPKDLMIDMHH IENNENMKEFO
 	// public int JBGEEPFKIGG { get; set; } // 0xC AHPLCJAKAOP OLOCMINKGON ABAFHIBFKCE
 }
 
@@ -1070,7 +1070,7 @@ public class AOJCMPIBFHD
 	[UMOMember(ReaderMember = "KLMIFEKNBLL")]
 	public int DLAEJOBELBH_Id; // 0x10
 	[UMOMember(ReaderMember = "DIPKCALNIII")]
-	public int[] AHHJLDLAPAN = new int[5]; // 0x14
+	public int[] AHHJLDLAPAN_DivaId = new int[5]; // 0x14
 	[UMOMember(ReaderMember = "ELDPFJIDNAB")]
 	public int OFGIOBGAJPA; // 0x18
 	[UMOMember(ReaderMember = "NDIJPKPDOMG")]

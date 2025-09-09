@@ -99,7 +99,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(ev.CAKEOPLJDAF_EndAdventureId))
+					if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(ev.CAKEOPLJDAF_EndAdventureId))
 					{
 						m_viewDataSpPage.GEOGJOBNKHG(pageInfo);
 						return;
@@ -121,7 +121,7 @@ namespace XeApp.Game.Menu
 				Database.Instance.advResult.Setup("Menu", TransitionUniqueId.HOME_NEWYEAREVENT);
 			}
 			int fId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(advId).KKPPFAHFOJI_FileId;
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(advId);
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(advId);
 			ILCCJNDFFOB.HHCJCDFCLOB.LIIJEGOIKDP(advId, OAGBCBBHMPF.DKAMMIHBINF.KDDHGLNCFMF_8);
 			Database.Instance.advSetup.Setup(fId);
 			MenuScene.Instance.GotoAdventure(true);

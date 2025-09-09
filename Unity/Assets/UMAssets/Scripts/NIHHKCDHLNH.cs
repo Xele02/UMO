@@ -36,7 +36,7 @@ public class NIHHKCDHLNH
 	public void KHEKNNFCAOI(int MHFBCINOJEE)
     {
         PLPBJOFICEJ_CosItem.IBEMFIAFIKH_ItemInfo item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.EEOADCECNOM_GetItemById(MHFBCINOJEE);
-        EGOLBAPFHHD_Common.PGENIOHDCDI saveItem = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.EFBKCNNFIPJ(MHFBCINOJEE);
+        EGOLBAPFHHD_Common.PGENIOHDCDI saveItem = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EFBKCNNFIPJ(MHFBCINOJEE);
         MessageBank bk = MessageManager.Instance.GetBank("master");
         StringBuilder str = new StringBuilder(32);
         str.SetFormat("cs_i_nm_{0:D4}", MHFBCINOJEE);
@@ -53,7 +53,7 @@ public class NIHHKCDHLNH
     }
 
 	// RVA: 0x18A0B94 Offset: 0x18A0B94 VA: 0x18A0B94
-	public static List<NIHHKCDHLNH> FKDIMODKKJD(int AHHJLDLAPAN)
+	public static List<NIHHKCDHLNH> FKDIMODKKJD(int _AHHJLDLAPAN_DivaId)
     {
         int cnt = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.MIGONIENGBF_GetItemsCount();;
         List<NIHHKCDHLNH> res = new List<NIHHKCDHLNH>(cnt);

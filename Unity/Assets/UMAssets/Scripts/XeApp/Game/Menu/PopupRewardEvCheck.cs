@@ -371,7 +371,7 @@ namespace XeApp.Game.Menu
 							m.KHEKNNFCAOI(l[j].PPFNGGCBJKC, l[j].HMFFHLPNMPH_Count);
 							h.HBHMAKNGKFK_Items.Add(m);
 							h.OFEGDGADHPK_IsPickupItem.Add(l[j].POACKFONCAH_IsPickup);
-							h.ADKDHKMPMHP_RateItem.Add(l[j].ADKDHKMPMHP_Rate);
+							h.ADKDHKMPMHP_Rate.Add(l[j].ADKDHKMPMHP_Rate);
 						}
 						mvp_reward_list.Add(h);
 						l = contExt_.CMDOFKLCFEB_GetAllBossRewards(i + 1, PKNOKJNLPOE_EventRaid.IEJAFPGDGNP.DBPDLIPKFAL_First_1);
@@ -383,7 +383,7 @@ namespace XeApp.Game.Menu
 							m.KHEKNNFCAOI(l[j].PPFNGGCBJKC, l[j].HMFFHLPNMPH_Count);
 							h.HBHMAKNGKFK_Items.Add(m);
 							h.OFEGDGADHPK_IsPickupItem.Add(l[j].POACKFONCAH_IsPickup);
-							h.ADKDHKMPMHP_RateItem.Add(l[j].ADKDHKMPMHP_Rate);
+							h.ADKDHKMPMHP_Rate.Add(l[j].ADKDHKMPMHP_Rate);
 						}
 						attack1st_reward_list.Add(h);
 						l = contExt_.CMDOFKLCFEB_GetAllBossRewards(i + 1, PKNOKJNLPOE_EventRaid.IEJAFPGDGNP.NIHKBNNICFB_Defeat_0);
@@ -395,7 +395,7 @@ namespace XeApp.Game.Menu
 							m.KHEKNNFCAOI(l[j].PPFNGGCBJKC, l[j].HMFFHLPNMPH_Count);
 							h.HBHMAKNGKFK_Items.Add(m);
 							h.OFEGDGADHPK_IsPickupItem.Add(l[j].POACKFONCAH_IsPickup);
-							h.ADKDHKMPMHP_RateItem.Add(l[j].ADKDHKMPMHP_Rate);
+							h.ADKDHKMPMHP_Rate.Add(l[j].ADKDHKMPMHP_Rate);
 						}
 						disempowerment_reward_list.Add(h);
 					}
@@ -624,7 +624,7 @@ namespace XeApp.Game.Menu
 						it.ResourceType = 4;
 						it.Item = viewData.disempowerment_reward_list[i].HBHMAKNGKFK_Items[j];
 						it.IsPickupItem = viewData.disempowerment_reward_list[i].OFEGDGADHPK_IsPickupItem[j];
-						it.Rate = viewData.disempowerment_reward_list[i].ADKDHKMPMHP_RateItem[j];
+						it.Rate = viewData.disempowerment_reward_list[i].ADKDHKMPMHP_Rate[j];
 						m_rewardDisempowermentList.Add(it);
 						KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(it.Item.JJBGOIMEIPF_ItemId, 0));
 						f1 += 104;

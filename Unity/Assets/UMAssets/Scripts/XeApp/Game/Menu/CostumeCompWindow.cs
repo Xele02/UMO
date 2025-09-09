@@ -95,14 +95,14 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1B6713C Offset: 0x1B6713C VA: 0x1B6713C
 		public void SettingNextRewardPoint()
 		{
-			m_next_rank_point = m_data.OCOOHBINGBG_LevelInfo[GetRankToIndex()].DNBFMLBNAEE_NeedPoint;
+			m_next_rank_point = m_data.OCOOHBINGBG_LevelInfo[GetRankToIndex()].DNBFMLBNAEE_Point;
 		}
 
 		// // RVA: 0x1B67260 Offset: 0x1B67260 VA: 0x1B67260
 		public void Initialize(LFAFJCNKLML data, int add_point, int prev_offer_difficult, SimpleVoicePlayer voicePlayer)
 		{
 			m_data = data;
-			m_currentPoint = data.ABLHIAEDJAI_Point;
+			m_currentPoint = data.ABLHIAEDJAI_CurrentValue;
 			m_addPoint = add_point;
 			m_rank = m_data.GKIKAABHAAD_Level;
 			m_voicePlayer = voicePlayer;
@@ -149,7 +149,7 @@ namespace XeApp.Game.Menu
 		public void InitializeReShow(LFAFJCNKLML data, int addPoint)
 		{
 			m_data = data;
-			m_currentPoint = data.ABLHIAEDJAI_Point;
+			m_currentPoint = data.ABLHIAEDJAI_CurrentValue;
 			m_get_point.SetNumber(addPoint, 0);
 			ItemType = LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.HJNNKCMLGFL_0_None;
 			SettingRankMaxLayout(-1);

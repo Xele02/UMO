@@ -52,38 +52,38 @@ namespace XeApp.Game.Menu
 				if(dbCostume.PPEGAKEIEGM_Enabled == 2)
 				{
 					m_costume_max_array[0]++;
-					m_costume_max_array[dbCostume.AHHJLDLAPAN_PrismDivaId]++;
+					m_costume_max_array[dbCostume.AHHJLDLAPAN_DivaId]++;
 					for(int j = 0; j < dbCostume.BJGNGNPHCBA_LevelsInfo.Length; j++)
 					{
 						if(dbCostume.BJGNGNPHCBA_LevelsInfo[j].INDDJNMPONH_UnlockType == 4)
 						{
 							m_costume_color_max_array[0]++;
-							m_costume_color_max_array[dbCostume.AHHJLDLAPAN_PrismDivaId]++;
+							m_costume_color_max_array[dbCostume.AHHJLDLAPAN_DivaId]++;
 						}
 					}
 					if (dbCostume.LLLCMHENKKN_LevelMax > 0)
 					{
 						m_costume_upgrade_max_array[0]++;
-						m_costume_upgrade_max_array[dbCostume.AHHJLDLAPAN_PrismDivaId]++;
+						m_costume_upgrade_max_array[dbCostume.AHHJLDLAPAN_DivaId]++;
 					}
 					if(dbCostume.DAJGPBLEEOB_PrismCostumeModelId == 1 || saveCostume.CGKAEMGLHNK_Possessed())
 					{
-						if(a_player_data.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(dbCostume.AHHJLDLAPAN_PrismDivaId).CPGFPEDMDEH_Have != 0)
+						if(a_player_data.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(dbCostume.AHHJLDLAPAN_DivaId).CPGFPEDMDEH_Have != 0)
 						{
 							//LAB_00de38f4
 							m_costume_now_array[0]++;
-							m_costume_now_array[dbCostume.AHHJLDLAPAN_PrismDivaId]++;
+							m_costume_now_array[dbCostume.AHHJLDLAPAN_DivaId]++;
 							if(dbCostume.LLLCMHENKKN_LevelMax > 0)
 							{
 								if(dbCostume.LLLCMHENKKN_LevelMax <= saveCostume.ANAJIAENLNB_Level)
 								{
 									m_costume_upgrade_now_array[0]++;
-									m_costume_upgrade_now_array[dbCostume.AHHJLDLAPAN_PrismDivaId]++;
+									m_costume_upgrade_now_array[dbCostume.AHHJLDLAPAN_DivaId]++;
 								}
 							}
 							int numCol = dbCostume.KKLPLPGBOFD_GetAvaiableColor(saveCostume.ANAJIAENLNB_Level).Length;
 							m_costume_color_now_array[0] += numCol;
-							m_costume_color_now_array[dbCostume.AHHJLDLAPAN_PrismDivaId]++;
+							m_costume_color_now_array[dbCostume.AHHJLDLAPAN_DivaId]++;
 						}
 					}
 				}

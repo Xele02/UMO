@@ -945,7 +945,7 @@ namespace XeApp.Game.Menu
 						Database.Instance.advResult.Setup("Menu", goScene, param);
 						goScene = TransitionUniqueId.EVENTQUEST;
 					}
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(ev.GFIBLLLHMPD_StartAdventureId);
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(ev.GFIBLLLHMPD_StartAdventureId);
 					Database.Instance.advSetup.Setup(advId);
 					MenuScene.Instance.GotoAdventure(true);
 					return;
@@ -1001,7 +1001,7 @@ namespace XeApp.Game.Menu
 				HHPEMHHCKBE_Compo.MLMDKHBFOJM dbCompo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ALFKMKICDPP_Compo.CDENCMNHNGA[info.NNFNGLJOKKF_ItemId - 1];
 				for(int i = 0; i < dbCompo.JCJGGHGIKIJ(); i++)
 				{
-					if(CheckItemPossessionLimit(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, dbCompo.CBLLFCGEJAI(i), dbCompo.HBJMCLGKLBA(i) * info.MBJIFDBEDAC_Cnt) > 0)
+					if(CheckItemPossessionLimit(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, dbCompo.CBLLFCGEJAI(i), dbCompo.HBJMCLGKLBA(i) * info.MBJIFDBEDAC_Cnt) > 0)
 					{
 						MFDJIFIIPJD data = new MFDJIFIIPJD();
 						data.KHEKNNFCAOI(dbCompo.CBLLFCGEJAI(i), dbCompo.HBJMCLGKLBA(i) * info.MBJIFDBEDAC_Cnt);
@@ -1011,7 +1011,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				if(CheckItemPossessionLimit(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, info.JJBGOIMEIPF_ItemId, info.MBJIFDBEDAC_Cnt) > 0)
+				if(CheckItemPossessionLimit(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, info.JJBGOIMEIPF_ItemId, info.MBJIFDBEDAC_Cnt) > 0)
 				{
 					MFDJIFIIPJD data = new MFDJIFIIPJD();
 					data.KHEKNNFCAOI(info.JJBGOIMEIPF_ItemId, info.MBJIFDBEDAC_Cnt);
@@ -1203,7 +1203,7 @@ namespace XeApp.Game.Menu
 				int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(id);
 				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[itemId - 1];
 				UnlockCostumeArgs args = new UnlockCostumeArgs();
-				args.diva_id = cos != null ? cos.AHHJLDLAPAN_PrismDivaId : 1;
+				args.diva_id = cos != null ? cos.AHHJLDLAPAN_DivaId : 1;
 				args.after_costume_data = new UnlockCostumeScene.CostumeData();
 				args.after_costume_data.id = cos != null ? cos.DAJGPBLEEOB_PrismCostumeModelId : 1;
 				MenuScene.Instance.Call(TransitionList.Type.UNLOCK_COSTUME, args, true);
@@ -1222,7 +1222,7 @@ namespace XeApp.Game.Menu
 					return itemId == _.GPPEFLKGGGJ_Id;
 				});
 				if (valk != null)
-					return valk.AIHCEGFANAM_Sa;
+					return valk.AIHCEGFANAM_SerieAttr;
 			}
 			else if(type == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
 			{
@@ -1231,9 +1231,9 @@ namespace XeApp.Game.Menu
 				int idx = 0;
 				if(cos != null)
 				{
-					idx = cos.AHHJLDLAPAN_PrismDivaId - 1;
+					idx = cos.AHHJLDLAPAN_DivaId - 1;
 				}
-				return GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[idx].AIHCEGFANAM_Serie;
+				return GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[idx].AIHCEGFANAM_SerieAttr;
 			}
 			return 1;
 		}

@@ -891,7 +891,7 @@ namespace XeApp.Game.Menu
 			if(!m_isDisableIntimacyDeco && CheckUnlock())
 			{
 				FFHPBEPOMAK_DivaInfo data = new FFHPBEPOMAK_DivaInfo();
-				data.KHEKNNFCAOI(viewIntimacyData.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, false);
+				data.KHEKNNFCAOI(viewIntimacyData.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, false);
 				if(data.FJODMPGPDDD_DivaHave && data.IPJMPBANBPP_Enabled)
 				{
 					if(viewIntimacyData.GMIEFBELJJH() > 0)

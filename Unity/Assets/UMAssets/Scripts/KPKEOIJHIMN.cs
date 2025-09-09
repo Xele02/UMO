@@ -35,16 +35,16 @@ public class KPKEOIJHIMN
 	// // RVA: 0xD8E9A8 Offset: 0xD8E9A8 VA: 0xD8E9A8
 	public void FFEJIGPPHOA(string IEJLCENFLNK)
     {
-        IBLKLEMGCCG.AJBPBEALBOB_ServerCurrentAssetRevision = IEJLCENFLNK;
+        IBLKLEMGCCG.AJBPBEALBOB_SakashoCurrentAssetRevision = IEJLCENFLNK;
     }
 
 	// // RVA: 0xD8E9D0 Offset: 0xD8E9D0 VA: 0xD8E9D0
 	public GIDACIOHFNN PGBOFGNOBLD()
     {
-        if(CINGFPEPPED.AJBPBEALBOB_ServerCurrentAssetRevision == null)
+        if(CINGFPEPPED.AJBPBEALBOB_SakashoCurrentAssetRevision == null)
             return GIDACIOHFNN.NHHHCIINJKO;
 
-        if(IBLKLEMGCCG.AJBPBEALBOB_ServerCurrentAssetRevision != CINGFPEPPED.AJBPBEALBOB_ServerCurrentAssetRevision)
+        if(IBLKLEMGCCG.AJBPBEALBOB_SakashoCurrentAssetRevision != CINGFPEPPED.AJBPBEALBOB_SakashoCurrentAssetRevision)
             return GIDACIOHFNN.GJCDHOAEIHP;
             
 		return GIDACIOHFNN.NHHHCIINJKO;

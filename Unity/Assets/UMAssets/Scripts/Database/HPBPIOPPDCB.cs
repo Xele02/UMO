@@ -16,21 +16,21 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 	public List<BJPLLEBHAGO_DivaInfo> CDENCMNHNGA_Divas = new List<BJPLLEBHAGO_DivaInfo>(10); // 0x24
 
 	// // RVA: 0x160846C Offset: 0x160846C VA: 0x160846C
-	public bool BEEGJHCDHJB_IsDivaAvaiable(int AHHJLDLAPAN_DivaId)
+	public bool BEEGJHCDHJB_IsDivaAvaiable(int _AHHJLDLAPAN_DivaId)
 	{
-		if(AHHJLDLAPAN_DivaId > 0 && AHHJLDLAPAN_DivaId <= CDENCMNHNGA_Divas.Count)
+		if(_AHHJLDLAPAN_DivaId > 0 && _AHHJLDLAPAN_DivaId <= CDENCMNHNGA_Divas.Count)
 		{
-			return CDENCMNHNGA_Divas[AHHJLDLAPAN_DivaId - 1].PPEGAKEIEGM_Enabled == 2;
+			return CDENCMNHNGA_Divas[_AHHJLDLAPAN_DivaId - 1].PPEGAKEIEGM_Enabled == 2;
 		}
 		return false;
 	}
 
 	// // RVA: 0x1608560 Offset: 0x1608560 VA: 0x1608560
-	public BJPLLEBHAGO_DivaInfo GCINIJEMHFK_GetInfo(int AHHJLDLAPAN_DivaId)
+	public BJPLLEBHAGO_DivaInfo GCINIJEMHFK_GetInfo(int _AHHJLDLAPAN_DivaId)
     {
-        if(AHHJLDLAPAN_DivaId != 0)
+        if(_AHHJLDLAPAN_DivaId != 0)
 		{
-			return CDENCMNHNGA_Divas[AHHJLDLAPAN_DivaId - 1];
+			return CDENCMNHNGA_Divas[_AHHJLDLAPAN_DivaId - 1];
 		}
 		return null;
     }
@@ -79,7 +79,7 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 				long val2 = time * 0x96a + 2;
 				BJPLLEBHAGO_DivaInfo data = CDENCMNHNGA_Divas[i];
 				data.AHHJLDLAPAN_DivaId = (sbyte)array[i].PPFNGGCBJKC;
-				data.AIHCEGFANAM_Attr = (sbyte)array[i].JPFMJHLCMJL;
+				data.AIHCEGFANAM_SerieAttr = (sbyte)array[i].JPFMJHLCMJL;
 				data.IDDHKOEFJFB_BodyId = (sbyte)array[i].JIBNPJCIALH;
 				data.FPMGHDKACOF_PersonalityId = (sbyte)array[i].OKADDOIJGNB;
 				data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
@@ -132,7 +132,7 @@ public class HPBPIOPPDCB_Diva : DIHHCBACKGG_DbSection
 			BJPLLEBHAGO_DivaInfo data = CDENCMNHNGA_Divas[i];
 			EDOHBJAPLPF_JsonData jsonData = new EDOHBJAPLPF_JsonData();
 			jsonData["divaId"] = data.AHHJLDLAPAN_DivaId;
-			jsonData["attr"] = data.AIHCEGFANAM_Attr;
+			jsonData["attr"] = data.AIHCEGFANAM_SerieAttr;
 			jsonData["bodyId"] = data.IDDHKOEFJFB_BodyId;
 			jsonData["personalityId"] = data.FPMGHDKACOF_PersonalityId;
 			jsonData["enabled"] = data.PPEGAKEIEGM_Enabled;

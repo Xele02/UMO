@@ -42,7 +42,7 @@ public class NHDJHOPLMDE
 		{
 			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
 			{
-				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave != null)
+				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData != null)
 				{
 					JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo dbInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.GCINIJEMHFK(LLOBHDMHJIG);
 					if (dbInfo != null && dbInfo.PPEGAKEIEGM_Enabled == 2)
@@ -66,7 +66,7 @@ public class NHDJHOPLMDE
 									NBLBJCLIDNN_SkillLevel = skill_level_max;
 								if(ANAJIAENLNB < 1)
 								{
-									ANAJIAENLNB = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.JJFFBDLIOCF_Valkyrie.OEMMJCLJMGB_GetLevel(GPPEFLKGGGJ);
+									ANAJIAENLNB = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JJFFBDLIOCF_Valkyrie.OEMMJCLJMGB_GetLevel(GPPEFLKGGGJ);
 								}
 								CIEOBFIIPLD = NBLBJCLIDNN_SkillLevel;
 								if (ANAJIAENLNB <= NBLBJCLIDNN_SkillLevel)
@@ -140,7 +140,7 @@ public class NHDJHOPLMDE
 	}
 
 	//// RVA: 0x1890E18 Offset: 0x1890E18 VA: 0x1890E18
-	public bool LAKLFHGMCLI(SeriesAttr.Type AIHCEGFANAM)
+	public bool LAKLFHGMCLI(SeriesAttr.Type _AIHCEGFANAM_SerieAttr)
 	{
 		bool res = false;
 		if(EICJJFIBCEF == EPIFHEDDJAE.NGEDJNHECKN.MGJDKBFHDML/*1*/)
@@ -149,7 +149,7 @@ public class NHDJHOPLMDE
 			int v = (int)CHOFDPDFPDC;
 			if ((v - 1) > 4)
 				v = 0;
-			if (v == (int)AIHCEGFANAM && CIEOBFIIPLD > 0)
+			if (v == (int)_AIHCEGFANAM_SerieAttr && CIEOBFIIPLD > 0)
 				res = true;
 		}
 		return res;

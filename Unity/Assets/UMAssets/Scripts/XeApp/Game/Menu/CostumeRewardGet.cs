@@ -260,7 +260,7 @@ namespace XeApp.Game.Menu
 				if(cos != null)
 				{
 					cosId = cos.DAJGPBLEEOB_PrismCostumeModelId;
-					divaId = cos.AHHJLDLAPAN_PrismDivaId;
+					divaId = cos.AHHJLDLAPAN_DivaId;
 				}
 				MenuScene.Instance.Call(TransitionList.Type.UNLOCK_COSTUME, 
 					new UnlockCostumeArgs() { diva_id = divaId, 
@@ -281,9 +281,9 @@ namespace XeApp.Game.Menu
 			if(cos != null)
 			{
 				//cos.DAJGPBLEEOB_PrismCostumeModelId;
-				idx = cos.AHHJLDLAPAN_PrismDivaId - 1;
+				idx = cos.AHHJLDLAPAN_DivaId - 1;
 			}
-			return GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[idx].AIHCEGFANAM_Serie;
+			return GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[idx].AIHCEGFANAM_SerieAttr;
 		}
 
 		// // RVA: 0x163745C Offset: 0x163745C VA: 0x163745C

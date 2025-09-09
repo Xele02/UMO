@@ -119,7 +119,7 @@ namespace XeApp.Game.Menu
 			if(IsValkyrieTuneUpUnlock())
 			{
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-				if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade))
+				if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade))
 				{
 					int valkyrietuneup_first_adv_id = 0;
 					if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
@@ -134,7 +134,7 @@ namespace XeApp.Game.Menu
 							return;
 					}
 					Database.Instance.advResult.Setup("Menu", TransitionUniqueId.SETTINGMENU_VALKYRIETUNEUP, new AdvSetupParam());
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(valkyrietuneup_first_adv_id);
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(valkyrietuneup_first_adv_id);
 					Database.Instance.advSetup.Setup(dbAdv.KKPPFAHFOJI_FileId);
 					MenuScene.Instance.GotoAdventure(true);
 					MenuScene.Instance.InputDisable();
@@ -209,9 +209,9 @@ namespace XeApp.Game.Menu
 		{
 			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
 			{
-				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave != null)
+				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData != null)
 				{
-					return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("valkyrietuneup_player_level", 0) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+					return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("valkyrietuneup_player_level", 0) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 				}
 			}
 			return false;
@@ -258,13 +258,13 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_OnTutorial()
 		{
 			//0xC3CC8C
-			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(1) && MOEALEGLGCH.CDOCOLOKCJK() && CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(0))
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(1) && MOEALEGLGCH.CDOCOLOKCJK() && CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.BEKHNNCGIEL_Costume.MLBBKNLPBBD_IsTutoDone(0))
 			{
 				yield return Co.R(TutorialProc.Co_CostumeUpgrade(EBFLJMOCLNA_Costume.NDOPBOCEPJO.CAPLNONHNCO/*1*/, m_menuButtons[4], BasicTutorialMessageId.Id_CostumeUpgradeMenu, InputLimitButton.Delegate, TutorialPointer.Direction.Normal));
 			}
 			else
 			{
-				if(IsValkyrieTuneUpUnlock() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade))
+				if(IsValkyrieTuneUpUnlock() && !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsValkyrieUpgrade))
 				{
 					yield return Co.R(TutorialProc.Co_ValkyrieUpgrade(m_menuButtons[5], BasicTutorialMessageId.Id_ValkyrieUpgradeMenu, InputLimitButton.Delegate, TutorialPointer.Direction.Normal, null, null));
 				}

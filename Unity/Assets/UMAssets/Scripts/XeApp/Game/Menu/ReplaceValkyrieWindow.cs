@@ -102,7 +102,7 @@ namespace XeApp.Game.Menu
 				PNGOLKLFFLH data = i == 0 ? before : after;
 				NHDJHOPLMDE data_ab = i == 0 ? before_ab : after_ab;
 				int index = i;
-				MenuScene.Instance.MenuResidentTextureCache.LoadLogo((int)SeriesLogoId.ConvertFromAttr((SeriesAttr.Type)data.AIHCEGFANAM_Serie), (IiconTexture texture) =>
+				MenuScene.Instance.MenuResidentTextureCache.LoadLogo((int)SeriesLogoId.ConvertFromAttr((SeriesAttr.Type)data.AIHCEGFANAM_SerieAttr), (IiconTexture texture) =>
 				{
 					//0xCFE87C
 					texture.Set(m_StatusLayout[index].logo_image);

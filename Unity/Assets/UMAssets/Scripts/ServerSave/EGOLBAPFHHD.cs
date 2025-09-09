@@ -273,7 +273,7 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	private int NNADNBDMJEC_EvBtlClsuCheck; // 0x104
 	private long LNOAFOOIJEF_GachaLastShowTimeCrypted; // 0x108
 	private long MGMHKPBGDDP_GachaLastShowTimeCheck; // 0x110
-	private long AKHADFNHCBJ_EpisodeLastShowTimeCrypted; // 0x118
+	private long AKHADFNHCBJ_LastShowDateCrypted; // 0x118
 	private long JHLMNABIFLC_EpisodeLastShowTimeCheck; // 0x120
 	private long ELILELKGALC_RichbannerLastShowTimeCrypted; // 0x128
 	private long PAMGCEIDHEM_RichbannerLastShowTimeCheck; // 0x130
@@ -384,7 +384,8 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	public int ANNIPKMMIAC_IntimacyPresentSaveDate { get { return DPOFEICCHFG_IntimacyPresentSaveDateCrypted ^ FBGGEFFJJHB; } set { LIGPENECNLA_IntimacyPresentSaveDateCheck = value; DPOFEICCHFG_IntimacyPresentSaveDateCrypted = value ^ FBGGEFFJJHB; } }  //BMDNGGCBHEJ 0x1C517EC MFIDNMFGJNM 0x1C517FC
 	public int CPAGIICKKNN_EvBtlClsu { get { return CHBFLALKKON_EvBtlClsuCrypted ^ FBGGEFFJJHB; } set { if (value < 2) value = 1; NNADNBDMJEC_EvBtlClsuCheck = value; CHBFLALKKON_EvBtlClsuCrypted = value ^ FBGGEFFJJHB; } } //ABHCOAHNCKE 0x1C51810 BCDHGJNIDIN 0x1C51820
 	public long AGJINOICNJP_GachaLastShowTime { get { return LNOAFOOIJEF_GachaLastShowTimeCrypted ^ FBGGEFFJJHB; } set { MGMHKPBGDDP_GachaLastShowTimeCheck = value; LNOAFOOIJEF_GachaLastShowTimeCrypted = value ^ FBGGEFFJJHB; } } //GDBEDJCAGCI 0x1C5183C JFHIKLPDMFM 0x1C51854
-	public long MOBHLLDIMMN_EpisodeLastShowTime { get { return AKHADFNHCBJ_EpisodeLastShowTimeCrypted ^ FBGGEFFJJHB; } set { JHLMNABIFLC_EpisodeLastShowTimeCheck = value; AKHADFNHCBJ_EpisodeLastShowTimeCrypted = value ^ FBGGEFFJJHB; } } //KAFHGBHOHBM 0x1C51870 DKHPNKJALPP 0x1C51888
+	// Episode Last show time
+	public long MOBHLLDIMMN_LastShowDate { get { return AKHADFNHCBJ_LastShowDateCrypted ^ FBGGEFFJJHB; } set { JHLMNABIFLC_EpisodeLastShowTimeCheck = value; AKHADFNHCBJ_LastShowDateCrypted = value ^ FBGGEFFJJHB; } } //KAFHGBHOHBM 0x1C51870 DKHPNKJALPP 0x1C51888
 	public long FMBNOBGLMKB_RichbannerLastShowTime { get { return ELILELKGALC_RichbannerLastShowTimeCrypted ^ FBGGEFFJJHB; } set { PAMGCEIDHEM_RichbannerLastShowTimeCheck = value; ELILELKGALC_RichbannerLastShowTimeCrypted = value ^ FBGGEFFJJHB; } } //DKHDOHKNFBA 0x1C518A4 NDKIPIFKHOO 0x1C518BC
 	public int LFCCCLPFJMB_LastFm { get { return HKHJMINFNPM_LastFmCrypted ^ FBGGEFFJJHB; } set { LFBBBAMEAHA_LastFmCheck = value; HKHJMINFNPM_LastFmCrypted = value ^ FBGGEFFJJHB; } } //IPHBDPOBGNL 0x1C518D8 NBIPEOLNKAD 0x1C518E8
 	public int KMIJDPFIFII_LastDf { get { return BEHGDBOFFDD_LastDfCrypted ^ FBGGEFFJJHB; } set { JPANEGCAJJM_LastDfCheck = value; BEHGDBOFFDD_LastDfCrypted = value ^ FBGGEFFJJHB; } } //JAODPPLJLDM 0x1C518FC LKOEGANGJMH 0x1C5190C
@@ -700,8 +701,8 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x1C52BA4 Offset: 0x1C52BA4 VA: 0x1C52BA4
 	public int LCDLKPOLHHJ_GetAddRegularMusicVer()
 	{
-		if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.MMPPEHPKGLI_AddRegularMusicMVer != 0)
-			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.MMPPEHPKGLI_AddRegularMusicMVer;
+		if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MMPPEHPKGLI_AddRegularMusicMVer != 0)
+			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MMPPEHPKGLI_AddRegularMusicMVer;
 		return DIHHCBACKGG_DbSection.IEFOPDOOLOK_MasterVersion;
 	}
 
@@ -1028,7 +1029,7 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 		BGEGFMKGNHN_IntimacyCntVal = 0;
 		MJDMEKMGFJA_IntimacyTouchSaveTime = 0;
 		AGJINOICNJP_GachaLastShowTime = 0;
-		MOBHLLDIMMN_EpisodeLastShowTime = 0;
+		MOBHLLDIMMN_LastShowDate = 0;
 		ANNIPKMMIAC_IntimacyPresentSaveDate = 0;
 		CPAGIICKKNN_EvBtlClsu = 1;
 		FMBNOBGLMKB_RichbannerLastShowTime = 0;
@@ -1338,7 +1339,7 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 		OILEIIEIBHP[JIKKNHIAEKG_BlockName] = data;
 		data["ev_btl_clsu"] = CPAGIICKKNN_EvBtlClsu;
 		data["gacha_last_show_time"] = AGJINOICNJP_GachaLastShowTime;
-		data["episode_last_show_time"] = MOBHLLDIMMN_EpisodeLastShowTime;
+		data["episode_last_show_time"] = MOBHLLDIMMN_LastShowDate;
 		data["richbanner_last_show_time"] = FMBNOBGLMKB_RichbannerLastShowTime;
 		data["last_fm"] = LFCCCLPFJMB_LastFm;
 		data["last_df"] = KMIJDPFIFII_LastDf;
@@ -1419,7 +1420,7 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 		ANNIPKMMIAC_IntimacyPresentSaveDate = CJAENOMGPDA_ReadInt(data, "intm_present_save_date", 0, ref isInvalid);
 		CPAGIICKKNN_EvBtlClsu = CJAENOMGPDA_ReadInt(data, "ev_btl_clsu", 1, ref isInvalid);
 		AGJINOICNJP_GachaLastShowTime = DKMPHAPBDLH_ReadLong(data, "gacha_last_show_time", 0, ref isInvalid);
-		MOBHLLDIMMN_EpisodeLastShowTime = DKMPHAPBDLH_ReadLong(data, "episode_last_show_time", 0, ref isInvalid);
+		MOBHLLDIMMN_LastShowDate = DKMPHAPBDLH_ReadLong(data, "episode_last_show_time", 0, ref isInvalid);
 		FMBNOBGLMKB_RichbannerLastShowTime = DKMPHAPBDLH_ReadLong(data, "richbanner_last_show_time", 0, ref isInvalid);
 		LFCCCLPFJMB_LastFm = CJAENOMGPDA_ReadInt(data, "last_fm", 0, ref isInvalid);
 		KMIJDPFIFII_LastDf = CJAENOMGPDA_ReadInt(data, "last_df", 0, ref isInvalid);
@@ -1694,7 +1695,7 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 		ANNIPKMMIAC_IntimacyPresentSaveDate = c.ANNIPKMMIAC_IntimacyPresentSaveDate;
 		CPAGIICKKNN_EvBtlClsu = c.CPAGIICKKNN_EvBtlClsu;
 		AGJINOICNJP_GachaLastShowTime = c.AGJINOICNJP_GachaLastShowTime;
-		MOBHLLDIMMN_EpisodeLastShowTime = c.MOBHLLDIMMN_EpisodeLastShowTime;
+		MOBHLLDIMMN_LastShowDate = c.MOBHLLDIMMN_LastShowDate;
 		FMBNOBGLMKB_RichbannerLastShowTime = c.FMBNOBGLMKB_RichbannerLastShowTime;
 		LFCCCLPFJMB_LastFm = c.LFCCCLPFJMB_LastFm;
 		KMIJDPFIFII_LastDf = c.KMIJDPFIFII_LastDf;
@@ -1835,7 +1836,7 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 			FGDNHEABLBN_IntimacyTensionSaveTime != other.FGDNHEABLBN_IntimacyTensionSaveTime ||
 			MJDMEKMGFJA_IntimacyTouchSaveTime != other.MJDMEKMGFJA_IntimacyTouchSaveTime ||
 			AGJINOICNJP_GachaLastShowTime != other.AGJINOICNJP_GachaLastShowTime ||
-			MOBHLLDIMMN_EpisodeLastShowTime != other.MOBHLLDIMMN_EpisodeLastShowTime ||
+			MOBHLLDIMMN_LastShowDate != other.MOBHLLDIMMN_LastShowDate ||
 			FMBNOBGLMKB_RichbannerLastShowTime != other.FMBNOBGLMKB_RichbannerLastShowTime ||
 			BCFPEJODJPP_Stamina != other.BCFPEJODJPP_Stamina ||
 			NFHLDFJIBKI_HaveUc != other.NFHLDFJIBKI_HaveUc ||

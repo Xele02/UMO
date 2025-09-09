@@ -70,7 +70,7 @@ namespace XeApp.Game.Menu
 				NHDJHOPLMDE n = new NHDJHOPLMDE(p.GPPEFLKGGGJ_ValkyrieId, 0);
 				if(n != null)
 				{
-					if(n.LAKLFHGMCLI((SeriesAttr.Type)viewMusicData.AIHCEGFANAM_Serie))
+					if(n.LAKLFHGMCLI((SeriesAttr.Type)viewMusicData.AIHCEGFANAM_SerieAttr))
 					{
 						m_viewValkyrieAbilityData = n;
 					}
@@ -125,7 +125,7 @@ namespace XeApp.Game.Menu
 				NHDJHOPLMDE n = new NHDJHOPLMDE(viewUnitData.JOKFNBLEILN_Valkyrie.GPPEFLKGGGJ_ValkyrieId, 0);
 				if(n != null)
 				{
-					if(n.LAKLFHGMCLI((SeriesAttr.Type)viewMusicData.AIHCEGFANAM_Serie))
+					if(n.LAKLFHGMCLI((SeriesAttr.Type)viewMusicData.AIHCEGFANAM_SerieAttr))
 					{
 						m_viewValkyrieAbilityData = n;
 					}
@@ -345,7 +345,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xA72EB0 Offset: 0xA72EB0 VA: 0xA72EB0
 		private static void AdjustOverLimit(LimitOverStatusData status, GCIJNCFDNON_SceneInfo sceneData, EEDKAACNBBG_MusicData musicData)
 		{
-			if((int)sceneData.AIHCEGFANAM_SceneSeries != musicData.AIHCEGFANAM_Serie)
+			if((int)sceneData.AIHCEGFANAM_SerieAttr != musicData.AIHCEGFANAM_SerieAttr)
 			{
 				status.excellentRate_SameSeriesAttr = 0;
 				status.centerLiveSkillRate_SameSeriesAttr = 0;

@@ -252,7 +252,7 @@ public class PLADCDJLOBE
 						}
 						if(advId > -1 && itemId != 0)
 						{
-							if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(advId))
+							if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(advId))
 							{
 								if(t1 == 0 || ev.LJOHLEGGGMC_RewardEnd < t1)
 								{

@@ -230,7 +230,7 @@ namespace XeApp.Game.Menu
 		private void InitializeTipsList()
 		{
 			BCKMELFCKKN_Tips dbTips = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KNMFNBEOGON_Tips;
-			EGOLBAPFHHD_Common saveCommon = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common;
+			EGOLBAPFHHD_Common saveCommon = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common;
 			int level = saveCommon.KIECDDFNCAN_Level;
 			int priorityTable = SearchPriorityTableIndex(level);
 			m_firstPageTipsIdList.Clear();

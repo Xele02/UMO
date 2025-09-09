@@ -210,7 +210,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1A8166C Offset: 0x1A8166C VA: 0x1A8166C
 		private bool IsComplete()
 		{
-			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LNOOKHJBENO_StoryRecord.EOHHFADHHBL_Complete;
+			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LNOOKHJBENO_StoryRecord.EOHHFADHHBL_Complete;
 		}
 
 		//// RVA: 0x1A81740 Offset: 0x1A81740 VA: 0x1A81740
@@ -1240,7 +1240,7 @@ namespace XeApp.Game.Menu
 				//0x1A8A4F8
 				return _.AHHJLDLAPAN_DivaId == viewStageData.AHHJLDLAPAN_DivaId;
 			});
-			logo_id = diva != null ? diva.AIHCEGFANAM_Serie : 1;
+			logo_id = diva != null ? diva.AIHCEGFANAM_SerieAttr : 1;
 			if(UnlockFadeManager.Instance != null)
 			{
 				UnlockFadeManager.Release();
@@ -1737,7 +1737,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1A894DC Offset: 0x1A894DC VA: 0x1A894DC
 		private void StoryComplete()
 		{
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LNOOKHJBENO_StoryRecord.EOHHFADHHBL_Complete = true;
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LNOOKHJBENO_StoryRecord.EOHHFADHHBL_Complete = true;
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x72C4A4 Offset: 0x72C4A4 VA: 0x72C4A4

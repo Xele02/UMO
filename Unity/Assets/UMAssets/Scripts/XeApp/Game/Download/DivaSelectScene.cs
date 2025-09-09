@@ -176,15 +176,15 @@ namespace XeApp.Game.DownLoad
 		// // RVA: 0x11B9FC8 Offset: 0x11B9FC8 VA: 0x11B9FC8
 		private void OnClickDecide()
 		{
-			DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo diva = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(1);
+			DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo diva = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(1);
 			diva.CPGFPEDMDEH_Have = 0;
 			diva.BEEAIAAJOHD_CostumeId = 0;
 			diva.AFNIOJHODAG_CostumeColorId = 0;
 			int mslot = diva.PIGLAEFPNEK_MSlot;
 			diva.PIGLAEFPNEK_MSlot = 0;
 			int id = m_Layout.GetSelectDivaId();
-            diva = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(id);
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.NGJEPEPIHIL(id);
+            diva = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(id);
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.NGJEPEPIHIL(id);
 			diva.PIGLAEFPNEK_MSlot = mslot;
 			m_Layout.SetEnabledOperation(false, false);
 			PNGOLKLFFLH p = new PNGOLKLFFLH();
@@ -277,7 +277,7 @@ namespace XeApp.Game.DownLoad
 			g.transform.SetParent(m_Layout.transform.parent, false);
 			_unlockManager = g.GetComponent<UnlockDivaManager>();
 			BasicTutorialManager.Log(OAGBCBBHMPF.OGBCFNIKAFI.FFFHCFBMHDD_34);
-			int serie = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[divaId - 1].AIHCEGFANAM_Serie;
+			int serie = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[divaId - 1].AIHCEGFANAM_SerieAttr;
 			UnlockFadeManager.Create();
 			this.StartCoroutineWatched(UnlockFadeManager.Instance.Co_LoadFadeEffect(serie));
 			_unlockManager.InitializeLayoutResource();

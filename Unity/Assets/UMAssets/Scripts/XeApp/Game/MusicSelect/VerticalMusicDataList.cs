@@ -317,7 +317,7 @@ namespace XeApp.Game.MusicSelect
 						isOpen = IBJAKJJICBC.LBHPMGDNPHK_IsMusicOpen(musicData.GHBPLHBNMBK_FreeMusicId, musicData.DEPGBBJMFED_CategoryId);
 						if (musicData.HAMPEDFMIAD_HasOnlyMultiDivaMode())
 						{
-							isOpen &= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("multi_dance_player_level", 3) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
+							isOpen &= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("multi_dance_player_level", 3) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 						}
 					}
 					MusicSelectConsts.MusicType musicType = (MusicSelectConsts.MusicType)(musicData.EEFLOOBOAGF % 10);

@@ -173,7 +173,7 @@ namespace XeApp.Game.Menu
 						yield break;
 					}
 				}
-				m_mainGunPower = a_arg.data.PCEGKKLKFNO.AHEFHIMGIBI_ServerData.MHEAEGMIKIE_PublicStatus.OENMBJEKJII_McPower;
+				m_mainGunPower = a_arg.data.PCEGKKLKFNO.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.OENMBJEKJII_McPower;
 				t_is_end = false;
 				t_is_error = false;
 				CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.NDDIOKIKCNA_GetFanCount(a_arg.data.PCEGKKLKFNO.MLPEHNBNOGD_Id, (int fanCount) =>
@@ -233,7 +233,7 @@ namespace XeApp.Game.Menu
 						{
 							if(otherLobbyId != 0)
 							{
-								if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LLBECHBNIJG_EventRaidPlayer.MEBHCFJCKFE_LobbyId != otherLobbyId)
+								if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LLBECHBNIJG_EventRaidPlayer.MEBHCFJCKFE_LobbyId != otherLobbyId)
 								{
 									IsLobby = true;
 								}
@@ -273,7 +273,7 @@ namespace XeApp.Game.Menu
 				m_profil.HiddenVisitButton(!a_arg.isFavorite);
 				m_profil.SetFanCount(m_fanCount);
 				m_profil.SetMainGunPower(m_mainGunPower);
-				m_musicRank = OEGIPPCADNA.BFKAHKBKBJE(a_arg.data.PCEGKKLKFNO.AHEFHIMGIBI_ServerData.MHEAEGMIKIE_PublicStatus.AILEOFKIELL_UtaRateRank, a_arg.data.PCEGKKLKFNO.AJECHDLMKOE_LastLogin);
+				m_musicRank = OEGIPPCADNA.BFKAHKBKBJE(a_arg.data.PCEGKKLKFNO.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.AILEOFKIELL_UtaRateRank, a_arg.data.PCEGKKLKFNO.AJECHDLMKOE_LastLogin);
 				m_profil.SetMusicRanking(m_musicRank);
 				m_profil.SetButtonType(a_arg.btnType);
 				m_profil.SetPlayerInfoWindow(_isCannonEnable, _isFanEnable);
@@ -282,9 +282,9 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{ 
-				m_profil.CostumeList = CKFGMNAIBNG.NEOMKKIEMJJ(GameManager.Instance.ViewPlayerData.AHEFHIMGIBI_ServerSave, false, true);
-				m_profil.ValkyrieList = PNGOLKLFFLH.NEOMKKIEMJJ(GameManager.Instance.ViewPlayerData.AHEFHIMGIBI_ServerSave, false);
-				m_mainGunPower = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.MHEAEGMIKIE_PublicStatus.OENMBJEKJII_McPower;
+				m_profil.CostumeList = CKFGMNAIBNG.NEOMKKIEMJJ(GameManager.Instance.ViewPlayerData.AHEFHIMGIBI_PlayerData, false, true);
+				m_profil.ValkyrieList = PNGOLKLFFLH.NEOMKKIEMJJ(GameManager.Instance.ViewPlayerData.AHEFHIMGIBI_PlayerData, false);
+				m_mainGunPower = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.OENMBJEKJII_McPower;
 				t_is_end = false;
 				t_is_error = false;
 				CIOECGOMILE.HHCJCDFCLOB.CHNJPFCKFOI_FriendManager.CCAOOIMEPAL_GetPlayerFanCount((int fanCount) =>

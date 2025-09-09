@@ -12,12 +12,12 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 		public long PCCFAKEOBIC_EndDate; // 0x10
 		public int JCADAMLIOKK_Id; // 0x18
 		public sbyte PPEGAKEIEGM_Enabled; // 0x1C
-		public int AIDNHPGEHPM_Crypted; // 0x20
+		public int AIDNHPGEHPM_MaxCountCrypted; // 0x20
 		public int DJCHKGLCLPD_Crypted; // 0x24
 		public string CIOJJBOHEEJ; // 0x28
 		public List<List<int>> BEPAMEEBPGI_SongIdByWeekday = new List<List<int>>(); // 0x2C
 
-		public int ELEPHBOKIGK_MaxCount { get { return AIDNHPGEHPM_Crypted ^ 0x5717f14f; } set { AIDNHPGEHPM_Crypted = value ^ 0x5717f14f; } } //0x198E5A0 IIJFLONJAFL 0x198E160 LHNFGPIGCNE
+		public int ELEPHBOKIGK_MaxCount { get { return AIDNHPGEHPM_MaxCountCrypted ^ 0x5717f14f; } set { AIDNHPGEHPM_MaxCountCrypted = value ^ 0x5717f14f; } } //0x198E5A0 IIJFLONJAFL 0x198E160 LHNFGPIGCNE
 		public int AEHCKNNGAKF_BonusMaxCount { get { return DJCHKGLCLPD_Crypted ^ 0x5717f14f; } set { DJCHKGLCLPD_Crypted = value ^ 0x5717f14f; } } //0x198E5B4 KKNJPEMGEBF 0x198E174 NPDLLBHCIJP
 
 		//// RVA: 0x198E5C8 Offset: 0x198E5C8 VA: 0x198E5C8

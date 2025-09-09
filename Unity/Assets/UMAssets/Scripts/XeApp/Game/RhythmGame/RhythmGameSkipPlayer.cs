@@ -544,9 +544,9 @@ namespace XeApp.Game.RhythmGame
 			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.KKBJCJNAGDB_CutInEnabled())
 			{
 				int sceneId = Database.Instance.gameSetup.teamInfo.divaList[0].sceneIdList[0];
-				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave != null)
+				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData != null)
 				{
-					//CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA[sceneId - 1].JPIPENJGGDD_Mlt;
+					//CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA[sceneId - 1].JPIPENJGGDD_Mlt;
 				}
 			}
 			if(Database.Instance.gameSetup.musicInfo.isTutorialTwo)

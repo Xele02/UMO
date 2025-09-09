@@ -1,6 +1,6 @@
 
 [System.Obsolete("Use AIBFEFOFMFK_LineLinkage", true)]
-public class AIBFEFOFMFK_Line { }
+public class AIBFEFOFMFK { }
 public class AIBFEFOFMFK_LineLinkage : AILHMHMOKKA_BaseLinkage
 {
 	private const int JGFDMBLDIGP_LineVersion = 1;

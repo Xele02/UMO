@@ -166,7 +166,7 @@ namespace XeApp.Game.Menu
 			//0x128ABA0
 			if(m_groupInfo == null)
 				EnterBackButton();
-			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsMcrsLobbyHelp))
+			if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsMcrsLobbyHelp))
 				yield break;
 			MenuScene.Instance.InputDisable();
 			backButtonDummy = () =>
@@ -176,8 +176,8 @@ namespace XeApp.Game.Menu
 			};
 			yield return Co.R(TutorialManager.ShowTutorial(118, null));
 			bool done = false;
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsMcrsLobby, true);
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsMcrsLobbyHelp, true);
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsMcrsLobby, true);
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsMcrsLobbyHelp, true);
 			MenuScene.Save(() =>
 			{
 				//0x12895DC
@@ -439,7 +439,7 @@ namespace XeApp.Game.Menu
 
 			//0x128B1C4
 			cont = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
-            LGGPBMPINDL_EventRaidPlayer savePl = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.LLBECHBNIJG_EventRaidPlayer;
+            LGGPBMPINDL_EventRaidPlayer savePl = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LLBECHBNIJG_EventRaidPlayer;
 			bool wait = false;
 			bool error = false;
 			bool isCapacityOver = false;

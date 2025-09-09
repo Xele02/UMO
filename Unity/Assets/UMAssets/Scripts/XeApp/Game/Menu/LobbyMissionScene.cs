@@ -628,14 +628,14 @@ namespace XeApp.Game.Menu
 			//LAB_00d18eb8
 			if(OnReceiveCallback != null)
 				OnReceiveCallback();
-			KBAGKBIBGPM_EventRaidLobby.JAIFDODKMIA saveLobby = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PJCMHDEJLGF_EventRaidLobby.FBCJICEPLED[m_lobbyEventSetting.MOEKELIIDEO_SaveIdx];
+			KBAGKBIBGPM_EventRaidLobby.JAIFDODKMIA saveLobby = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PJCMHDEJLGF_EventRaidLobby.FBCJICEPLED[m_lobbyEventSetting.MOEKELIIDEO_SaveIdx];
 			saveLobby.NNMPGOAGEOL_Quests[m_missionDataList[index].PPFNGGCBJKC_Id - 1].EALOBDHOCHP_Stat = 3;
 			CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.JCHLONCMPAJ();
 			StringBuilder str = new StringBuilder();
 			str.Append(saveLobby.NNMPGOAGEOL_Quests[index].PPFNGGCBJKC_Id);
 			str.Append(':');
 			CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.PCDOEIFMLHG_10, str.ToString());
-			CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.CPIICACGNBH_AddItem(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, itemId, itemCount, null, 0);
+			CIOECGOMILE.HHCJCDFCLOB.JANMJPOKLFL.CPIICACGNBH_AddItem(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, itemId, itemCount, null, 0);
 			GameManager.Instance.ResetViewPlayerData();
 			bool IsDone = false;
 			bool IsError = false;

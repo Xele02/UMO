@@ -814,7 +814,7 @@ public class DocusaurusGenerator
 
         foreach(var costume in Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes)
         {
-            int i = costume.AHHJLDLAPAN_PrismDivaId;
+            int i = costume.AHHJLDLAPAN_DivaId;
             int cosId = costume.DAJGPBLEEOB_PrismCostumeModelId;
             short[] cols = costume.CHDBGFLFPNC_GetAllAvaiableColors();
             if(cols.Length > 1)

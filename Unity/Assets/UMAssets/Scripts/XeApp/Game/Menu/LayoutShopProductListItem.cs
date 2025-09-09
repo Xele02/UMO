@@ -83,7 +83,7 @@ namespace XeApp.Game.Menu
 			}
 			else if(view.FPJBMCDMAMO == 1)
 			{
-				if(view.ELEPHBOKIGK_BuyLimit < 1)
+				if(view.ELEPHBOKIGK_MaxCount < 1)
 				{
 					object[] obj = new object[4]
 					{
@@ -117,7 +117,7 @@ namespace XeApp.Game.Menu
 			}
 			name += " " + view.JDLJPNMLFID_Count.ToString() + EKLNMHFCAOI.NDBLEADIDLA(cat, id);
 			m_textName.text = name;
-			int num = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, cat, id, null);
+			int num = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, cat, id, null);
 			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit)
 				m_textOwn.text = "";
 			else

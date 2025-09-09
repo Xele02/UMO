@@ -236,7 +236,7 @@ namespace XeApp.Game.Menu
 					{
 						adv = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("mcrslobby_first_adv_id", 0);
 					}
-					if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(adv))
+					if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(adv))
 					{
                         GPMHOAKFALE_Adventure.NGDBKCKMDHE_AdventureData advData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure.GCINIJEMHFK_GetAdventure(adv);
 						if(advData == null)
@@ -245,14 +245,14 @@ namespace XeApp.Game.Menu
 						{
 							//LAB_00967bc4
 							Database.Instance.advResult.Setup("Menu", TransitionUniqueId.HOME_LOBBYGROUPSELECT, new AdvSetupParam());
-							CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(adv);
+							CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.GFANLIOMMNA_SetReleased(adv);
 							Database.Instance.advSetup.Setup(advData.KKPPFAHFOJI_FileId);
 							MenuScene.Instance.GotoAdventure(true);
 							MenuScene.Instance.InputDisable();
 							return;
 						}
                     }
-					if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsMcrsLobby) || !evLobby.EHLFBIEGDDF())
+					if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsMcrsLobby) || !evLobby.EHLFBIEGDDF())
 					{
 						MenuScene.Instance.Call(TransitionList.Type.LOBBY_GROUP_SELECT, null, true);
 						return;
@@ -269,7 +269,7 @@ namespace XeApp.Game.Menu
 				{
 					return;
 				}
-				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsMcrsLobby) && evLobby.EHLFBIEGDDF())
+				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsMcrsLobby) && evLobby.EHLFBIEGDDF())
 				{
 					EventLobbyArgs arg = new EventLobbyArgs();
 					arg.IsMyLobby = true;
@@ -345,7 +345,7 @@ namespace XeApp.Game.Menu
 					{
 						if(!ev.ANOPCGFIMEJ())
 						{
-							return !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsMcrsLobby);
+							return !CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsMcrsLobby);
 						}
 						else
 						{

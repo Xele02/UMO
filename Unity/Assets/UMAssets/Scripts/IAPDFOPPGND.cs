@@ -4,7 +4,7 @@ using XeSys;
 
 public class IAPDFOPPGND
 {
-	public string ADCMNODJBGJ_EmblemName; // 0x8
+	public string ADCMNODJBGJ_Title; // 0x8
 	public string FEMMDNIELFC_EmblemDesc; // 0xC
 	public int EAHPLCJMPHD_EmblemPic; // 0x10
 	public int HMFFHLPNMPH; // 0x14
@@ -12,15 +12,15 @@ public class IAPDFOPPGND
 	private int EILKGEADKGH_EmblemOdr; // 0x1C
 
 	// // RVA: 0x120EB38 Offset: 0x120EB38 VA: 0x120EB38
-	public void KHEKNNFCAOI_Init(int ABLOIBMGLFD, int HMFFHLPNMPH)
+	public void KHEKNNFCAOI_Init(int ABLOIBMGLFD_EmId, int HMFFHLPNMPH)
 	{
-		IHGBPAJMJFK_Emblem.AKJPPHFGEFG_EmblemInfo emblem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem.CDENCMNHNGA_EmblemList[ABLOIBMGLFD - 1];
+		IHGBPAJMJFK_Emblem.AKJPPHFGEFG_EmblemInfo emblem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem.CDENCMNHNGA_EmblemList[ABLOIBMGLFD_EmId - 1];
 		MessageBank bank = MessageManager.Instance.GetBank("master");
-		ADCMNODJBGJ_EmblemName = bank.GetMessageByLabel("em_nm_" + ABLOIBMGLFD.ToString("D4"));
-		FEMMDNIELFC_EmblemDesc = bank.GetMessageByLabel("em_dsc_" + ABLOIBMGLFD.ToString("D4"));
+		ADCMNODJBGJ_Title = bank.GetMessageByLabel("em_nm_" + ABLOIBMGLFD_EmId.ToString("D4"));
+		FEMMDNIELFC_EmblemDesc = bank.GetMessageByLabel("em_dsc_" + ABLOIBMGLFD_EmId.ToString("D4"));
 		EAHPLCJMPHD_EmblemPic = emblem.HANMDEBPBHG_Pic;
 		this.HMFFHLPNMPH = HMFFHLPNMPH;
-		MDPKLNFFDBO_EmblemId = ABLOIBMGLFD;
+		MDPKLNFFDBO_EmblemId = ABLOIBMGLFD_EmId;
 		EILKGEADKGH_EmblemOdr = emblem.FPOMEEJFBIG_Odr;
 	}
 
@@ -30,7 +30,7 @@ public class IAPDFOPPGND
 	// // RVA: 0x120F0BC Offset: 0x120F0BC VA: 0x120F0BC
 	public static List<IAPDFOPPGND> FKDIMODKKJD(bool CDEOEEHBOBI_ForceAll)
 	{
-		List<JGGLDGNKELI_Emblem.AAHAAJEJNLJ> saveEmblems = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.OFAJDLJBMEM_Emblem.MDKOHOCONKE;
+		List<JGGLDGNKELI_Emblem.AAHAAJEJNLJ> saveEmblems = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.OFAJDLJBMEM_Emblem.MDKOHOCONKE;
 		List<IHGBPAJMJFK_Emblem.AKJPPHFGEFG_EmblemInfo> dbEmblem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem.CDENCMNHNGA_EmblemList;
 		int cnt = saveEmblems.Count;
 		if (dbEmblem.Count < cnt)

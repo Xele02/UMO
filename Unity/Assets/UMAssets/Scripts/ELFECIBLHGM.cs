@@ -7,11 +7,11 @@ public class ELFECIBLHGM
     {
         private int FBGGEFFJJHB = 0x4617e65; // 0x8
         private long BHEHGCHGBDG = 0xa42143651a1c9f; // 0x10
-        private long AKHADFNHCBJ; // 0x18
+        private long AKHADFNHCBJ_LastShowDateCrypted; // 0x18
 
         public bool Unused() { return FBGGEFFJJHB == 0; }
 
-        public long MOBHLLDIMMN_LastShowDate { get { return AKHADFNHCBJ ^ BHEHGCHGBDG; } set { AKHADFNHCBJ = value ^ BHEHGCHGBDG; } } //0x1305560 KAFHGBHOHBM 0x1304EB4 DKHPNKJALPP
+        public long MOBHLLDIMMN_LastShowDate { get { return AKHADFNHCBJ_LastShowDateCrypted ^ BHEHGCHGBDG; } set { AKHADFNHCBJ_LastShowDateCrypted = value ^ BHEHGCHGBDG; } } //0x1305560 KAFHGBHOHBM 0x1304EB4 DKHPNKJALPP
 
         // RVA: 0x1304EA8 Offset: 0x1304EA8 VA: 0x1304EA8
         // public void KHEKNNFCAOI() { }

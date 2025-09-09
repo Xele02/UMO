@@ -46,7 +46,7 @@ public class JBMPOAAMGNB_Base : KLFDBFMNLBL_ServerSaveBlock
 		data[AFEHLCGHAEE_Strings.LLNDMKBBNIJ_ver] = LLNDMKBBNIJ_Version;
 		data[AFEHLCGHAEE_Strings.CMKKFCGBILD_prof] = CMKKFCGBILD_Prof;
 		data[AFEHLCGHAEE_Strings.IJHBIMNKOMC_tutorial_end] = IJHBIMNKOMC_TutorialEnd;
-		data[AFEHLCGHAEE_Strings.AFPONJEJKCO_rename_date] = AFPONJEJKCO_RenameDate;
+		data[AFEHLCGHAEE_Strings.AFPONJEJKCO_RenameDate] = AFPONJEJKCO_RenameDate;
 		data[AFEHLCGHAEE_Strings.FNLNIKFNHAM_force_rename] = FNLNIKFNHAM_ForceRename ? 1 : 0;
 		data[AFEHLCGHAEE_Strings.PBEKKMOPENN_agree_tos_ver] = PBEKKMOPENN_AgreeTosVer;
 		OILEIIEIBHP[JIKKNHIAEKG_BlockName] = data;
@@ -69,7 +69,7 @@ public class JBMPOAAMGNB_Base : KLFDBFMNLBL_ServerSaveBlock
 		IJHBIMNKOMC_TutorialEnd = CJAENOMGPDA_ReadInt(block, AFEHLCGHAEE_Strings.IJHBIMNKOMC_tutorial_end, 0, ref isInvalid);
 		FNLNIKFNHAM_ForceRename = CJAENOMGPDA_ReadInt(block, AFEHLCGHAEE_Strings.FNLNIKFNHAM_force_rename, 0, ref isInvalid) != 0;
 		PBEKKMOPENN_AgreeTosVer = CJAENOMGPDA_ReadInt(block, AFEHLCGHAEE_Strings.PBEKKMOPENN_agree_tos_ver, 0, ref isInvalid);
-		AFPONJEJKCO_RenameDate = FNLNIKFNHAM_ForceRename ? 0 : DKMPHAPBDLH_ReadLong(block, AFEHLCGHAEE_Strings.AFPONJEJKCO_rename_date, 0, ref isInvalid);
+		AFPONJEJKCO_RenameDate = FNLNIKFNHAM_ForceRename ? 0 : DKMPHAPBDLH_ReadLong(block, AFEHLCGHAEE_Strings.AFPONJEJKCO_RenameDate, 0, ref isInvalid);
 		if(OPFGFINHFCE_PlayerName.Length > 10)
 			OPFGFINHFCE_PlayerName = OPFGFINHFCE_PlayerName.Substring(0, 10);
 		if (CMKKFCGBILD_Prof.Length > 25)

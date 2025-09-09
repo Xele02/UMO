@@ -74,11 +74,11 @@ namespace XeApp.Game.Menu
 			m_contents[1].Text3.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item01_text03"), data.FNCPAEFEECO_CurrencyPaid);
 			m_contents[2].Text1.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item02_text01"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(RaidItemConstants.MakeItemId(RaidItemConstants.Type.ApHealS)));
 			m_contents[2].Text2.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item02_text02"), ev.COEIAHBIFBN(RaidItemConstants.MakeItemId(RaidItemConstants.Type.ApHealS), CIOECGOMILE.LIILJGHKIDL.HLAJMFGDAHP_1));
-			int numAp1 = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem, 2, null);
+			int numAp1 = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem, 2, null);
 			m_contents[2].Text3.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item02_text03"), numAp1);
 			m_contents[3].Text1.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item02_text01"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(RaidItemConstants.MakeItemId(RaidItemConstants.Type.ApHealL)));
 			m_contents[3].Text2.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item02_text02"), ev.COEIAHBIFBN(RaidItemConstants.MakeItemId(RaidItemConstants.Type.ApHealL), CIOECGOMILE.LIILJGHKIDL.FPNFLAAECMK_2));
-			int numAp2 = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem, 3, null);
+			int numAp2 = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.FKGCBLHOOCL_Category.CFLFPPDMFAE_RaidItem, 3, null);
 			m_contents[3].Text3.text = string.Format(bk.GetMessageByLabel("pop_raid_ap_heal_item02_text03"), numAp2);
 			m_contents[0].Num.SetNumber(CIOECGOMILE.HHCJCDFCLOB.CBOJGDKGCEF_GetApPrice()[1], 0);
 			m_contents[1].Num.SetNumber(CIOECGOMILE.HHCJCDFCLOB.CBOJGDKGCEF_GetApPrice()[2], 0);

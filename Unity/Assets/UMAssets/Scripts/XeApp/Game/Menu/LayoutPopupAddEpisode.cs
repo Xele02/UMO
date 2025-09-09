@@ -117,7 +117,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x15E5144 Offset: 0x15E5144 VA: 0x15E5144
 		private int GetDivaIdForCostume(int costumeId)
 		{
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[costumeId - 1].AHHJLDLAPAN_PrismDivaId;
+			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[costumeId - 1].AHHJLDLAPAN_DivaId;
 		}
 
 		//// RVA: 0x15E55C0 Offset: 0x15E55C0 VA: 0x15E55C0

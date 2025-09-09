@@ -597,7 +597,7 @@ namespace XeApp.Game.Menu
 		public void OnEnablePassButton(SceneGrowthPanel panel)
 		{
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
-			int cnt = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.FKGCBLHOOCL_Category.CIOGEKJNMBB_RareUpItem, 1, null);
+			int cnt = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.FKGCBLHOOCL_Category.CIOGEKJNMBB_RareUpItem, 1, null);
 			int cnt2 = NHPDPKHMFEP.HHCJCDFCLOB.MENKMJPCELJ();
 			if((cnt2 == 0 || cnt2 == -3) && cnt == 0)
 			{
@@ -682,7 +682,7 @@ namespace XeApp.Game.Menu
 				yield return this.StartCoroutineWatched(m_popupGrowthConfirmSetting.LoadAssetBundlePrefab(transform));
 			}
 			PopupGrowthConfirm p = m_popupGrowthConfirmSetting.Content.GetComponent<PopupGrowthConfirm>();
-			yield return this.StartCoroutineWatched(p.LoadAppendLayoutCoroutine(m_addStatuList, m_episodeData.DMHDNKILKGI_MaxPoint <= m_episodeData.ABLHIAEDJAI_CurrentPoint));
+			yield return this.StartCoroutineWatched(p.LoadAppendLayoutCoroutine(m_addStatuList, m_episodeData.DMHDNKILKGI_MaxPoint <= m_episodeData.ABLHIAEDJAI_CurrentValue));
 			MenuScene.Instance.InputEnable();
 			m_popupGrowthConfirmSetting.Buttons = new ButtonInfo[2]
 			{
@@ -734,7 +734,7 @@ namespace XeApp.Game.Menu
 			m_popupItemUseConfirmSetting.WindowSize = SizeType.Middle;
 			m_popupItemUseConfirmSetting.TypeItemId = secret_board_item_id;
 			m_popupItemUseConfirmSetting.Cost = 1;
-			m_popupItemUseConfirmSetting.OwnCount = EKLNMHFCAOI.DLNFNHMPGLI_GetNumClamped(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, itemType, itemId, null);
+			m_popupItemUseConfirmSetting.OwnCount = EKLNMHFCAOI.DLNFNHMPGLI_GetNumClamped(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, itemType, itemId, null);
 			m_popupItemUseConfirmSetting.Period = 0;
 			m_popupItemUseConfirmSetting.OverrideText = bank.GetMessageByLabel("secret_board_item_use_desc_2");
 			if (m_popupItemUseConfirmSetting.OwnCount < 1)
@@ -813,14 +813,14 @@ namespace XeApp.Game.Menu
 			m_viewSceneData.JPIPENJGGDD_NumBoard++;
 			JKNGJFOBADP d = new JKNGJFOBADP();
 			d.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.MIDINHNHGNP_43, "");
-			d.CPIICACGNBH_AddItem(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, m_viewSceneData.BCCHOBPJJKE_SceneId, 1, null, 0);
+			d.CPIICACGNBH_AddItem(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, m_viewSceneData.BCCHOBPJJKE_SceneId, 1, null, 0);
 			int typeItemId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("secret_board_item_id", 70027);
 			EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(typeItemId);
 			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId);
-			int cnt = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, cat, id, null);
+			int cnt = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, cat, id, null);
 			if(cnt > 0)
 			{
-				EKLNMHFCAOI.DPHGFMEPOCA_SetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, cat, id, cnt - 1,  null);
+				EKLNMHFCAOI.DPHGFMEPOCA_SetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, cat, id, cnt - 1,  null);
 			}
 			bool isWaitSave = true;
 			MenuScene.Save(() =>
@@ -895,9 +895,9 @@ namespace XeApp.Game.Menu
 			int rarityUpItemId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("rarity_up_item_id", 230001);
 			itemType = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(rarityUpItemId);
 			itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(rarityUpItemId);
-			int num = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.FKGCBLHOOCL_Category.CIOGEKJNMBB_RareUpItem, 1, null);
+			int num = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.FKGCBLHOOCL_Category.CIOGEKJNMBB_RareUpItem, 1, null);
 			int a = 0;
-			List<NKFJNAANPNP.MOJLCADLMKH> n = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.DPNKPPBEAGJ_RareUpItem.MCPIBDPKBBD(time);
+			List<NKFJNAANPNP.MOJLCADLMKH> n = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DPNKPPBEAGJ_RareUpItem.MCPIBDPKBBD(time);
 			if (n.Count > 0)
 			{
 				a = n[0].HNKFMAJIFJD_ExpireAt;
@@ -1043,11 +1043,11 @@ namespace XeApp.Game.Menu
 			m_viewSceneData.IELENGDJPHF = 0;
 			JKNGJFOBADP d = new JKNGJFOBADP();
 			d.FEGDNPIEKJC(OAGBCBBHMPF.COIIJOEKBDH.CDJJNKKIBJN, "");
-			d.CPIICACGNBH_AddItem(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, m_viewSceneData.BCCHOBPJJKE_SceneId, 1, null, 0);
+			d.CPIICACGNBH_AddItem(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene, m_viewSceneData.BCCHOBPJJKE_SceneId, 1, null, 0);
 			int typeItemId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("rarity_up_item_id", 230001);
-			int num = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(typeItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId), null);
+			int num = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(typeItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId), null);
 			if (num > 0)
-				EKLNMHFCAOI.DPHGFMEPOCA_SetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(typeItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId), num - 1, null);
+				EKLNMHFCAOI.DPHGFMEPOCA_SetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(typeItemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(typeItemId), num - 1, null);
 			yield return Co.R(PopupRecordPlate.Show(RecordPlateUtility.eSceneType.RarityUp, null, false));
 			SoundResource.AddCueSheet(SoundManager.Instance.sePlayerGacha.cueSheet);
 			GameManager.Instance.fullscreenFader.Fade(0.5f, Color.white);
@@ -1451,9 +1451,9 @@ namespace XeApp.Game.Menu
 				yield break;
 			if(itemData.KMIFDLLCBEL() != 1)
 				yield break;
-			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsShowKiraPlatePopUp2))
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsShowKiraPlatePopUp2))
 			{
-				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsShowKiraPlatePopUp2, true);
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsShowKiraPlatePopUp2, true);
 			}
 			bool done = false;
 			bool err = false;
@@ -1475,7 +1475,7 @@ namespace XeApp.Game.Menu
 				MenuScene.Instance.GotoTitle();
 				yield break;
 			}
-			MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA[m_viewSceneData.BCCHOBPJJKE_SceneId - 1];
+			MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA[m_viewSceneData.BCCHOBPJJKE_SceneId - 1];
 			m_viewSceneData.MKHFCGPJPFI_LimitOverCount = scene.DMNIMMGGJJJ_Leaf;
 			m_limitOverData.KHEKNNFCAOI(m_viewSceneData.JKGFBFPIMGA_Rarity, scene.DMNIMMGGJJJ_Leaf, m_viewSceneData.MJBODMOLOBC_Luck);
 			done = false;
@@ -2029,7 +2029,7 @@ namespace XeApp.Game.Menu
 				List<int> l = new List<int>();
 				for (int i = 0; i < 22; i++)
 					l.Add(0);
-				MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA[m_viewSceneData.BCCHOBPJJKE_SceneId - 1];
+				MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA[m_viewSceneData.BCCHOBPJJKE_SceneId - 1];
 				if(!m_viewSceneData.KEJMFDLFIEO())
 				{
 					JHHBAFKMBDL.HHCJCDFCLOB.GKMAHMLNMEK(() =>

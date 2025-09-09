@@ -927,9 +927,9 @@ namespace XeApp.Game.Menu
 			m_windowControl.InputDisable();
 			if(itemData.KMIFDLLCBEL() != 1)
 				yield break;
-			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsShowKiraPlatePopUp2))
+			if(!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsShowKiraPlatePopUp2))
 			{
-				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsShowKiraPlatePopUp2, true);
+				CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.BCLKCMDGDLD(GPFlagConstant.ID.IsShowKiraPlatePopUp2, true);
 			}
 			bool done = false;
 			bool err = false;
@@ -951,7 +951,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA[m_sceneData.BCCHOBPJJKE_SceneId - 1];
+				MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA[m_sceneData.BCCHOBPJJKE_SceneId - 1];
 				m_sceneData.MKHFCGPJPFI_LimitOverCount = scene.DMNIMMGGJJJ_Leaf;
 				m_limitOverData.KHEKNNFCAOI(m_sceneData.JKGFBFPIMGA_Rarity, scene.DMNIMMGGJJJ_Leaf, m_sceneData.MJBODMOLOBC_Luck);
 				done = false;

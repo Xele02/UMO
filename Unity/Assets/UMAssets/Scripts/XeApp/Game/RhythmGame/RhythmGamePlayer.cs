@@ -1967,9 +1967,9 @@ namespace XeApp.Game.RhythmGame
 			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.KKBJCJNAGDB_CutInEnabled())
 			{
 				int a = 0;
-				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave != null)
+				if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData != null)
 				{
-					a = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.PNLOINMCCKH_Scene.OPIBAPEGCLA[Database.Instance.gameSetup.teamInfo.danceDivaList[0].sceneIdList[0] - 1].JPIPENJGGDD_Mlt;
+					a = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA[Database.Instance.gameSetup.teamInfo.danceDivaList[0].sceneIdList[0] - 1].JPIPENJGGDD_Mlt;
 				}
 				uiController.Hud.ShowActiveSkillCutin(GameMessageManager.GetSceneCardName(Database.Instance.gameSetup.teamInfo.danceDivaList[0].sceneIdList[0], a, ""), resource.uiTextureResources);
 			}

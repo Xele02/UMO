@@ -620,7 +620,7 @@ namespace XeApp.Game.Menu
 		{
 			//0x11DDACC
 			MenuScene.Instance.InputDisable();
-            BBHNACPENDM_ServerSaveData pd = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave;
+            BBHNACPENDM_ServerSaveData pd = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
 			bool isDone = false;
 			bool isExcess = false;
 			bool isError = false;
@@ -777,7 +777,7 @@ namespace XeApp.Game.Menu
 			bool isFav;
 
 			//0x11DCCD8
-			isFav = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(friendData.MLPEHNBNOGD_Id);
+			isFav = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GAAOPEGIPKA_FavoritePlayer.FFKIDMKHIOE(friendData.MLPEHNBNOGD_Id);
 			bool isDone = false;
 			bool isError = false;
 			bool isOk = false;

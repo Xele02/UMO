@@ -115,7 +115,7 @@ namespace XeApp.Game.Menu
 			p.KHEKNNFCAOI_Init(_valkyrieId, 0, 0);
 			m_LayoutInfo.Setup(p);
 			_isInitializedPilotVoice = false;
-			_seriesAttr = p.AIHCEGFANAM_Serie;
+			_seriesAttr = p.AIHCEGFANAM_SerieAttr;
 			SoundManager.Instance.voPilot.RequestChangeCueSheet(p.OPBPKNHIPPE_Pilot.PFGJJLGLPAC_PilotId, () =>
 			{
 				//0x164F0DC
@@ -241,7 +241,7 @@ namespace XeApp.Game.Menu
 		private IEnumerator Co_OpenPopupGetDecoVFFigure()
 		{
 			//0x164F510
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.AAACOMKNJJJ(_valkyrieId) && HNDLICBDEMI.AFGKIJMPNNN_IsDecoEnabled() && CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsDecolture))
+			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.AAACOMKNJJJ(_valkyrieId) && HNDLICBDEMI.AFGKIJMPNNN_IsDecoEnabled() && CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.ADKJDHPEAJH(GPFlagConstant.ID.IsDecolture))
 			{
 				MenuScene.Instance.InputDisable();
 				yield return Co.R(MenuScene.Instance.ShowGetDecoItemWindow(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.HEMGMACMGAB_DecoItemVFFigure, _valkyrieId)));

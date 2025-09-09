@@ -133,7 +133,7 @@ namespace XeApp.Game.Menu
 				});
 				if(f != null)
 				{
-					SetSeriesLogoImage((int)SeriesAttr.ConvertFromLogoId((SeriesLogoId.Type) f.AIHCEGFANAM_Serie));
+					SetSeriesLogoImage((int)SeriesAttr.ConvertFromLogoId((SeriesLogoId.Type) f.AIHCEGFANAM_SerieAttr));
 					MessageBank bk = MessageManager.Instance.GetBank("menu");
 					SetStoryOne(bk.GetMessageByLabel(string.Format("story_diva_tilte_{0:d2}", stageData.AHHJLDLAPAN_DivaId)));
 					SetStoryMain(bk.GetMessageByLabel(string.Format("story_diva_desc_{0:d2}", stageData.AHHJLDLAPAN_DivaId)));

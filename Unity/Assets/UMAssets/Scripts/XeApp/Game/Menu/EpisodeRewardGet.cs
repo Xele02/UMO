@@ -263,7 +263,7 @@ namespace XeApp.Game.Menu
 				if(dbCos != null)
 				{
 					cosId = dbCos.DAJGPBLEEOB_PrismCostumeModelId;
-					divaId = dbCos.AHHJLDLAPAN_PrismDivaId;
+					divaId = dbCos.AHHJLDLAPAN_DivaId;
 				}
 				UnlockCostumeArgs arg = new UnlockCostumeArgs();
 				arg.diva_id = divaId;
@@ -311,7 +311,7 @@ namespace XeApp.Game.Menu
 					return itemId == _.GPPEFLKGGGJ_Id;
 				}).First();
 				if (dbValk != null)
-					res = dbValk.AIHCEGFANAM_Sa;
+					res = dbValk.AIHCEGFANAM_SerieAttr;
 			}
 			else if(type == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
 			{
@@ -320,9 +320,9 @@ namespace XeApp.Game.Menu
 				int index = 0;
 				if(dbCos != null)
 				{
-					index = dbCos.AHHJLDLAPAN_PrismDivaId - 1;
+					index = dbCos.AHHJLDLAPAN_DivaId - 1;
 				}
-				res = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[index].AIHCEGFANAM_Serie;
+				res = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[index].AIHCEGFANAM_SerieAttr;
 			}
 			return res;
 		}

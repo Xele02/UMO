@@ -469,7 +469,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 			rivalDivaManager = MenuScene.Instance.GetComponentInChildren<RivalDivaManager>(true);
 			rivalDivaManager.gameObject.SetActive(true);
-			rivalDivaManager.Load(costumeMaster.AHHJLDLAPAN_PrismDivaId, costumeMaster.DAJGPBLEEOB_PrismCostumeModelId, rivalDiva.EKFONBFDAAP_ColorId);
+			rivalDivaManager.Load(costumeMaster.AHHJLDLAPAN_DivaId, costumeMaster.DAJGPBLEEOB_PrismCostumeModelId, rivalDiva.EKFONBFDAAP_ColorId);
 			rivalDivaManager.LockBoneSpring();
 			while(rivalDivaManager.IsLoading)
 				yield return null;

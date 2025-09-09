@@ -102,7 +102,7 @@ namespace XeApp.Game.Menu
 					SetFriendSortProprty(sortProperty.DOKBEPGKNJK_PendingList);
 					break;
 				case PopupSortMenu.SortPlace.LobbyMemberList:
-					SetFriendSortProprty(sortProperty.ACCNCHJBDHM_UserList);
+					SetFriendSortProprty(sortProperty.ACCNCHJBDHM_UsersList);
 					break;
 			}
 		}
@@ -112,7 +112,7 @@ namespace XeApp.Game.Menu
 		{
 			SortItem = (SortItem)friendProperty.LHPDCGNKPHD_sortItem;
 			AssistItem = (AssistItem)friendProperty.NPEEPPCPEPE_assistItem;
-			RarityFilter = (uint)friendProperty.ACCHOFLOOEC_filter;
+			RarityFilter = (uint)friendProperty.ACCHOFLOOEC_RarityFilter;
 			AttributeFilter = (uint)friendProperty.BOFFOHHLLFG_attributeFilter;
 			SeriaseFilter = (uint)friendProperty.BBIIHLNBHDE_seriaseFilter;
 			CenterSkillFilter = (uint)friendProperty.LKPCKPJGJKN_centerSkillFilter;

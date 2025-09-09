@@ -20,8 +20,8 @@ namespace XeApp.Game.Menu
 		{
 			base.SetStatus(info);
 			m_textName.text = EKLNMHFCAOI.INCKKODFJAP_GetItemName(info.JJBGOIMEIPF_ItemId);
-			int value = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, info.NPPNDDMPFJJ_ItemCategory, info.NNFNGLJOKKF_ItemId, null);
-			int max = EKLNMHFCAOI.AFEONHCADEL_GetMaxAllowed(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_ServerSave, info.NPPNDDMPFJJ_ItemCategory, info.NNFNGLJOKKF_ItemId, null);
+			int value = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, info.NPPNDDMPFJJ_ItemCategory, info.NNFNGLJOKKF_ItemId, null);
+			int max = EKLNMHFCAOI.AFEONHCADEL_GetMaxAllowed(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, info.NPPNDDMPFJJ_ItemCategory, info.NNFNGLJOKKF_ItemId, null);
 			int d = info.MBJIFDBEDAC_Cnt - max + Mathf.Clamp(value, 0, max);
 			m_textRecvNum.text = string.Format(MessageManager.Instance.GetMessage("menu", "popup_quest_receive_get"), Mathf.Clamp(info.MBJIFDBEDAC_Cnt - d, 0, max).ToString() + EKLNMHFCAOI.NDBLEADIDLA(info.NPPNDDMPFJJ_ItemCategory, info.NNFNGLJOKKF_ItemId));
 			m_textLoseNum.text = string.Format(MessageManager.Instance.GetMessage("menu", "popup_quest_receive_lose"), d, EKLNMHFCAOI.NDBLEADIDLA(info.NPPNDDMPFJJ_ItemCategory, info.NNFNGLJOKKF_ItemId));
