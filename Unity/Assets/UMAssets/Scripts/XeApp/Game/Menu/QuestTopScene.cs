@@ -693,7 +693,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x9DD5E0 Offset: 0x9DD5E0 VA: 0x9DD5E0 Slot: 16
 		protected override void OnPreSetCanvas()
 		{
-			m_currentTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			m_currentTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			m_layoutTab.InitializeBadge();
 			for(int i = 0; i < m_eventMissionButtonList.Count; i++)
 			{

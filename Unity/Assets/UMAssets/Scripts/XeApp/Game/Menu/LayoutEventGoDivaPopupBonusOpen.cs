@@ -35,7 +35,7 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			if(m_layoutTitleType != null)
 			{
-				if(godivaData.GEGAEDDGNMA_Bonuses[0].CGHNCPEKOCK)
+				if(godivaData.GEGAEDDGNMA_Bonuses[0].CGHNCPEKOCK_IsDaily)
 				{
 					m_layoutTitleType.StartChildrenAnimGoStop("02");
 					m_layoutTitleCurrent = m_layoutTitle2;

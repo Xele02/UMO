@@ -27,7 +27,7 @@ public class FPOEFNEPJDH_CreateBbsThread : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0x13FC024 Offset: 0x13FC024 VA: 0x13FC024 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG = new OIPIPIHBJFM();
 		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

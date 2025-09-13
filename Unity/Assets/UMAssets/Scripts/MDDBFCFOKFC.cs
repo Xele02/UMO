@@ -33,18 +33,18 @@ public class MDDBFCFOKFC
 		}
 
 		//// RVA: 0x130ED14 Offset: 0x130ED14 VA: 0x130ED14
-		public void FKGBNKPHCJL(int CEMEIPNMAAD, BinaryReader CLJIOLIEPNA)
+		public void FKGBNKPHCJL(int _CEMEIPNMAAD_Version, BinaryReader _CLJIOLIEPNA_reader)
 		{
-			if(CEMEIPNMAAD == 2)
+			if(_CEMEIPNMAAD_Version == 2)
 			{
-				NPDKEIIMCDI_LastShowtime = CLJIOLIEPNA.ReadInt64();
-				CINLIMIKCAL_EnableBgEffect = CLJIOLIEPNA.ReadBoolean();
-				HEKJKLJDHNN_EnablePosterAnim = CLJIOLIEPNA.ReadBoolean();
+				NPDKEIIMCDI_LastShowtime = _CLJIOLIEPNA_reader.ReadInt64();
+				CINLIMIKCAL_EnableBgEffect = _CLJIOLIEPNA_reader.ReadBoolean();
+				HEKJKLJDHNN_EnablePosterAnim = _CLJIOLIEPNA_reader.ReadBoolean();
 			}
-			else if(CEMEIPNMAAD == 1)
+			else if(_CEMEIPNMAAD_Version == 1)
 			{
-				NPDKEIIMCDI_LastShowtime = CLJIOLIEPNA.ReadInt64();
-				CINLIMIKCAL_EnableBgEffect = CLJIOLIEPNA.ReadBoolean();
+				NPDKEIIMCDI_LastShowtime = _CLJIOLIEPNA_reader.ReadInt64();
+				CINLIMIKCAL_EnableBgEffect = _CLJIOLIEPNA_reader.ReadBoolean();
 				HEKJKLJDHNN_EnablePosterAnim = true;
 			}
 		}
@@ -52,24 +52,24 @@ public class MDDBFCFOKFC
 
 	public const int JNCCCCPBDIC = 2;
 	public IFHIAPIJGMI KOGBMDOONFA = new IFHIAPIJGMI(); // 0x8
-	private string ELLBAAFKDCH_Path; // 0xC
+	private string ELLBAAFKDCH_Filename; // 0xC
 
 	// RVA: 0x130E700 Offset: 0x130E700 VA: 0x130E700
 	public MDDBFCFOKFC()
 	{
-		ELLBAAFKDCH_Path = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/SaveData/dc";
+		ELLBAAFKDCH_Filename = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/SaveData/dc";
 	}
 
 	//// RVA: 0x130E7D4 Offset: 0x130E7D4 VA: 0x130E7D4
-	//public void KHEKNNFCAOI(string CJEKGLGBIHF) { }
+	//public void KHEKNNFCAOI(string _CJEKGLGBIHF_path) { }
 
 	// RVA: 0x130E7DC Offset: 0x130E7DC VA: 0x130E7DC
 	public void PCODDPDFLHK_Load()
 	{
 		KOGBMDOONFA.KHEKNNFCAOI();
-		if(File.Exists(ELLBAAFKDCH_Path))
+		if(File.Exists(ELLBAAFKDCH_Filename))
 		{
-			using (FileStream f = new FileStream(ELLBAAFKDCH_Path, FileMode.Open))
+			using (FileStream f = new FileStream(ELLBAAFKDCH_Filename, FileMode.Open))
 			{
 				using (BinaryReader b = new BinaryReader(f))
 				{
@@ -82,10 +82,10 @@ public class MDDBFCFOKFC
 	// RVA: 0x130EE74 Offset: 0x130EE74 VA: 0x130EE74
 	public void HJMKBCFJOOH_Save()
 	{
-		string dir = Path.GetDirectoryName(ELLBAAFKDCH_Path);
+		string dir = Path.GetDirectoryName(ELLBAAFKDCH_Filename);
 		if (!Directory.Exists(dir))
 			Directory.CreateDirectory(dir);
-		using (FileStream f = new FileStream(ELLBAAFKDCH_Path, FileMode.Create))
+		using (FileStream f = new FileStream(ELLBAAFKDCH_Filename, FileMode.Create))
 		{
 			using (BinaryWriter b = new BinaryWriter(f))
 			{

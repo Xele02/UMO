@@ -22,7 +22,7 @@ public class CBMFOOHOAOE_Purchase : CACGCMBKHDI_Request
     }
 
 	// RVA: 0x18F8990 Offset: 0x18F8990 VA: 0x18F8990 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
         BEAOCBFAHKF data = new BEAOCBFAHKF();
         data.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

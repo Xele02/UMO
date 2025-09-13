@@ -65,7 +65,7 @@ namespace XeApp.Game.Menu
 				m_musicRecordList[i].gameObject.SetActive(true);
 				m_musicRecordList[i].SetUp(m_view.JNALKFEADEM()[i]);
 				m_musicRecordList[i].SetStatus();
-				m_musicRecordList[i].IconEnable(m_view.JNALKFEADEM()[i].FFHMPNGJCLK_IsHighScore);
+				m_musicRecordList[i].IconEnable(m_view.JNALKFEADEM()[i].FFHMPNGJCLK_NewRecord);
 				m_musicRecordList[i].setSearchBtnAction((EMGOCNMMPHC _view) =>
 				{
 					//0x1727624
@@ -86,7 +86,7 @@ namespace XeApp.Game.Menu
 				{
 					m_musicRecordList[i].HideButton();
 				}
-				update |= m_view.JNALKFEADEM()[i].FFHMPNGJCLK_IsHighScore;
+				update |= m_view.JNALKFEADEM()[i].FFHMPNGJCLK_NewRecord;
 			}
 			WindowTitleState(update);
 			m_schedule.ClearOnClickCallback();

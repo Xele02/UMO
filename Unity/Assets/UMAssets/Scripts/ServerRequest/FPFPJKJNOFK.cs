@@ -13,13 +13,13 @@ public class FPFPJKJNOFK_UpdateRankingScore : CACGCMBKHDI_Request
 		public long KNIFCANOHOC_ScoreTrunc; // 0x10
 		public long FJOLNJLLJEJ_Rank; // 0x18
 		public bool POOLBEALDMA_DroppedPlayer; // 0x20
-		public List<long> COGMPENEPBD; // 0x24
+		public List<long> COGMPENEPBD_InventoryIds; // 0x24
 
 		// RVA: 0x13FA430 Offset: 0x13FA430 VA: 0x13FA430
 		public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
 		{
 			BOAGCEOHJEO.IIEMACPEEBJ(IDLHJIOMJBK[AFEHLCGHAEE_Strings.KNIFCANOHOC_score], out HOCPLDLAIGL_Score, out KNIFCANOHOC_ScoreTrunc);
-			FJOLNJLLJEJ_Rank = JsonUtil.GetLong(IDLHJIOMJBK, AFEHLCGHAEE_Strings.FJOLNJLLJEJ_rank, 0);
+			FJOLNJLLJEJ_Rank = JsonUtil.GetLong(IDLHJIOMJBK, AFEHLCGHAEE_Strings.FJOLNJLLJEJ_Rank, 0);
 			POOLBEALDMA_DroppedPlayer = (bool)IDLHJIOMJBK["ranking_dropped_player"];
 		}
 	}
@@ -37,7 +37,7 @@ public class FPFPJKJNOFK_UpdateRankingScore : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0x13FA350 Offset: 0x13FA350 VA: 0x13FA350 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG = new PIFKFGCKNPN();
 		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

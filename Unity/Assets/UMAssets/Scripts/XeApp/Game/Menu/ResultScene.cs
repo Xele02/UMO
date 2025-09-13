@@ -315,7 +315,7 @@ namespace XeApp.Game.Menu
 				layout = loadLayout;
 				uvMan = loadUvMan;
 			}));
-			int num = dropLayoutInitParam.viewDropResultData.HBHMAKNGKFK.Count;
+			int num = dropLayoutInitParam.viewDropResultData.HBHMAKNGKFK_Items.Count;
 			dropLayoutInitParam.layoutItemList = new List<LayoutResultDropItem>(num);
 			for(int i = 0; i < num; i++)
 			{
@@ -581,7 +581,7 @@ namespace XeApp.Game.Menu
 			GameManager.Instance.SetFPS(60);
 			if(Database.Instance.gameSetup.EnableLiveSkip)
 			{
-				if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid && raidResultPointLayoutInitParam.viewEventRaidPointData.CFLEMFADGLG > 0 && raidResultPointLayoutInitParam.viewEventRaidPointData.CFLEMFADGLG < 3)
+				if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid && raidResultPointLayoutInitParam.viewEventRaidPointData.CFLEMFADGLG_AttackType > 0 && raidResultPointLayoutInitParam.viewEventRaidPointData.CFLEMFADGLG_AttackType < 3)
 				{
 					commonLayoutController.ChangeViewForSupportResult();
 					scoreLayoutController.ChangeViewForSupportResult();

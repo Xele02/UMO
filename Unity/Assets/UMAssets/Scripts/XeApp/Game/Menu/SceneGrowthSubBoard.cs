@@ -19,7 +19,7 @@ namespace XeApp.Game.Menu
 		{
 			m_sceneData = sceneData;
 			m_boardSquareList.Clear();
-			MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[sceneData.BCCHOBPJJKE_SceneId - 1];
+			MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[sceneData.BCCHOBPJJKE_SceneId - 1];
 			int a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.GENHLFPKOEE(dbScene.EKLIPGELKCL_Rarity, dbScene.MCCIFLKCNKO_Feed);
 			int b = sceneData.JPIPENJGGDD_NumBoard;
 			if (a < b)
@@ -33,10 +33,10 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < b; i++)
 				{
 					DMPDJFAGCPN d = sceneData.JCNIAPAJAOB;
-					if (i < n.JPJNKNOJBMM)
+					if (i < n.JPJNKNOJBMM_Mlt)
 						d = sceneData.IKBBCHGLLKB;
 					NLNDLEEJOFD n2 = d.PDKGMFHIFML_Panels[d.PDKGMFHIFML_Panels.Count - 2];
-					v2 += Mathf.Max(n2.GHPLINIACBB_Col, d.ADPJCNHAJPC_Roads[d.ADPJCNHAJPC_Roads.Count - 2].GHPLINIACBB_Col);
+					v2 += Mathf.Max(n2.GHPLINIACBB_x, d.ADPJCNHAJPC_Roads[d.ADPJCNHAJPC_Roads.Count - 2].GHPLINIACBB_x);
 					v1 += d.PDKGMFHIFML_Panels.Count - 1;
 				}
 				if(a < sceneData.JPIPENJGGDD_NumBoard)
@@ -59,7 +59,7 @@ namespace XeApp.Game.Menu
 				{
 					//L326
 					d2 = sceneData.JCNIAPAJAOB;
-					if (i < n.JPJNKNOJBMM)
+					if (i < n.JPJNKNOJBMM_Mlt)
 						d2 = sceneData.IKBBCHGLLKB;
 					for(int j = 0; j < d2.PDKGMFHIFML_Panels.Count - 1; j++)
 					{
@@ -74,10 +74,10 @@ namespace XeApp.Game.Menu
 						if(v4 > 0)
 						{
 							AFIFDLOAKGI a_ = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.PJADHDHKOEJ[v4 - 1];
-							m_boardSquareList[n2.GHPLINIACBB_Col + x][n2.PMBEODGMMBB_Row].id = a_.INDDJNMPONH_StatType;
-							m_boardSquareList[n2.GHPLINIACBB_Col + x][n2.PMBEODGMMBB_Row].saveIndex = (short)idx;
-							m_boardSquareList[n2.GHPLINIACBB_Col + x][n2.PMBEODGMMBB_Row].type = SquareType.Panel;
-							m_boardSquareList[n2.GHPLINIACBB_Col + x][n2.PMBEODGMMBB_Row].isOpen = sceneData.OIEHPHINMIO(idx) == GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG_2/*2*/;
+							m_boardSquareList[n2.GHPLINIACBB_x + x][n2.PMBEODGMMBB_Row].id = a_.INDDJNMPONH_StatType;
+							m_boardSquareList[n2.GHPLINIACBB_x + x][n2.PMBEODGMMBB_Row].saveIndex = (short)idx;
+							m_boardSquareList[n2.GHPLINIACBB_x + x][n2.PMBEODGMMBB_Row].type = SquareType.Panel;
+							m_boardSquareList[n2.GHPLINIACBB_x + x][n2.PMBEODGMMBB_Row].isOpen = sceneData.OIEHPHINMIO(idx) == GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG_2/*2*/;
 							if(a_.INDDJNMPONH_StatType > 1 && a_.INDDJNMPONH_StatType < 5)
 							{
 								if(v3 == 0)
@@ -93,7 +93,7 @@ namespace XeApp.Game.Menu
 									}
 								}
 								//LAB_0136544c
-								m_boardSquareList[n2.GHPLINIACBB_Col + x][n2.PMBEODGMMBB_Row].value = v3;
+								m_boardSquareList[n2.GHPLINIACBB_x + x][n2.PMBEODGMMBB_Row].value = v3;
 							}
 							else
 							{
@@ -101,12 +101,12 @@ namespace XeApp.Game.Menu
 									v3 = 1;
 								else if(a_.INDDJNMPONH_StatType == 18)
 									v3 = a_.MKNDAOHGOAK;
-								m_boardSquareList[n2.GHPLINIACBB_Col + x][n2.PMBEODGMMBB_Row].value = v3;
+								m_boardSquareList[n2.GHPLINIACBB_x + x][n2.PMBEODGMMBB_Row].value = v3;
 							}
 							idx++;
 						}
 					}
-					x += d2.PDKGMFHIFML_Panels[d2.PDKGMFHIFML_Panels.Count - 2].GHPLINIACBB_Col;
+					x += d2.PDKGMFHIFML_Panels[d2.PDKGMFHIFML_Panels.Count - 2].GHPLINIACBB_x;
 				}
 				if (a < sceneData.JPIPENJGGDD_NumBoard)
 				{
@@ -123,35 +123,35 @@ namespace XeApp.Game.Menu
 				for(int i = 0, idx2 = 0; i <= b; i++)
 				{
 					d2 = sceneData.JCNIAPAJAOB;
-					if (i < n.JPJNKNOJBMM)
+					if (i < n.JPJNKNOJBMM_Mlt)
 						d2 = sceneData.IKBBCHGLLKB;
 					for (int j = 0; j < d2.ADPJCNHAJPC_Roads.Count - 1; j++, idx2++)
 					{
 						NLNDLEEJOFD n2 = d2.ADPJCNHAJPC_Roads[j];
 						AFIFDLOAKGI a_ = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.PJADHDHKOEJ[n2.JBGEEPFKIGG - 1];
-						if(v3_ + n2.GHPLINIACBB_Col + 1 < m_boardSquareList.Count)
+						if(v3_ + n2.GHPLINIACBB_x + 1 < m_boardSquareList.Count)
 						{
 							if(a_.INDDJNMPONH_StatType != 16)
 							{
-								if (m_boardSquareList[n2.GHPLINIACBB_Col + 1][n2.PMBEODGMMBB_Row].type == SquareType.None)
+								if (m_boardSquareList[n2.GHPLINIACBB_x + 1][n2.PMBEODGMMBB_Row].type == SquareType.None)
 									continue;
 							}
-							if(m_boardSquareList[v3_ + n2.GHPLINIACBB_Col][n2.PMBEODGMMBB_Row].type != SquareType.Panel)
+							if(m_boardSquareList[v3_ + n2.GHPLINIACBB_x][n2.PMBEODGMMBB_Row].type != SquareType.Panel)
 							{
-								m_boardSquareList[v3_ + n2.GHPLINIACBB_Col][n2.PMBEODGMMBB_Row].isOpen = m_boardSquareList[v3_ + n2.GHPLINIACBB_Col + 1][n2.PMBEODGMMBB_Row].isOpen;
-								m_boardSquareList[v3_ + n2.GHPLINIACBB_Col][n2.PMBEODGMMBB_Row].id = n2.JBGEEPFKIGG - 2;
-								m_boardSquareList[v3_ + n2.GHPLINIACBB_Col][n2.PMBEODGMMBB_Row].saveIndex = (short)(idx2);
-								m_boardSquareList[v3_ + n2.GHPLINIACBB_Col][n2.PMBEODGMMBB_Row].type = a_.INDDJNMPONH_StatType != 16 ? SquareType.Road : SquareType.Start;
+								m_boardSquareList[v3_ + n2.GHPLINIACBB_x][n2.PMBEODGMMBB_Row].isOpen = m_boardSquareList[v3_ + n2.GHPLINIACBB_x + 1][n2.PMBEODGMMBB_Row].isOpen;
+								m_boardSquareList[v3_ + n2.GHPLINIACBB_x][n2.PMBEODGMMBB_Row].id = n2.JBGEEPFKIGG - 2;
+								m_boardSquareList[v3_ + n2.GHPLINIACBB_x][n2.PMBEODGMMBB_Row].saveIndex = (short)(idx2);
+								m_boardSquareList[v3_ + n2.GHPLINIACBB_x][n2.PMBEODGMMBB_Row].type = a_.INDDJNMPONH_StatType != 16 ? SquareType.Road : SquareType.Start;
 							}
 						}
 					}
-					v3_ += d2.PDKGMFHIFML_Panels[d2.PDKGMFHIFML_Panels.Count - 2].GHPLINIACBB_Col;
+					v3_ += d2.PDKGMFHIFML_Panels[d2.PDKGMFHIFML_Panels.Count - 2].GHPLINIACBB_x;
 				}
 			}
 			else
 			{
 				//L1068
-				int cnt = Mathf.Max(sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels[sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels.Count - 1].GHPLINIACBB_Col, sceneData.JCNIAPAJAOB.ADPJCNHAJPC_Roads[sceneData.JCNIAPAJAOB.ADPJCNHAJPC_Roads.Count - 2].GHPLINIACBB_Col);
+				int cnt = Mathf.Max(sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels[sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels.Count - 1].GHPLINIACBB_x, sceneData.JCNIAPAJAOB.ADPJCNHAJPC_Roads[sceneData.JCNIAPAJAOB.ADPJCNHAJPC_Roads.Count - 2].GHPLINIACBB_x);
 				cnt *= b;
 				if (a < sceneData.JPIPENJGGDD_NumBoard)
 					cnt += 2;
@@ -163,13 +163,13 @@ namespace XeApp.Game.Menu
 					m_boardSquareList.Add(squares);
 				}
 				int cnt2 = (sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels.Count - 1) * b;
-				int col = sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels[sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels.Count - 2].GHPLINIACBB_Col;
+				int col = sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels[sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels.Count - 2].GHPLINIACBB_x;
 				for (int j = 0; j < cnt2; j++)
 				{
 					int idx = j % (sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels.Count - 1);
 					NLNDLEEJOFD n = sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels[idx];
 					AFIFDLOAKGI a_ = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.PJADHDHKOEJ[n.JBGEEPFKIGG - 1];
-					int x = (j / col) * col + n.GHPLINIACBB_Col;
+					int x = (j / col) * col + n.GHPLINIACBB_x;
 					m_boardSquareList[x][n.PMBEODGMMBB_Row].id = a_.INDDJNMPONH_StatType;
 					m_boardSquareList[x][n.PMBEODGMMBB_Row].saveIndex = (short)j;
 					m_boardSquareList[x][n.PMBEODGMMBB_Row].type = SquareType.Panel;
@@ -200,12 +200,12 @@ namespace XeApp.Game.Menu
 					{
 						NLNDLEEJOFD n2 = sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels[i % (sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels.Count - 1)];
 						AFIFDLOAKGI a_ = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.PJADHDHKOEJ[n2.JBGEEPFKIGG - 1];
-						int x2 = (i / (sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels.Count - 1) * n.GHPLINIACBB_Col + n2.GHPLINIACBB_Col);
+						int x2 = (i / (sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels.Count - 1) * n.GHPLINIACBB_x + n2.GHPLINIACBB_x);
 						if(x2 + 1 < m_boardSquareList.Count)
 						{
 							if(a_.INDDJNMPONH_StatType != 16)
 							{
-								if (m_boardSquareList[n2.GHPLINIACBB_Col + 1][n2.PMBEODGMMBB_Row].type == 0)
+								if (m_boardSquareList[n2.GHPLINIACBB_x + 1][n2.PMBEODGMMBB_Row].type == 0)
 									continue;
 							}
 							if(m_boardSquareList[x2][n2.PMBEODGMMBB_Row].type != SquareType.Panel)
@@ -299,10 +299,10 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1367CF4 Offset: 0x1367CF4 VA: 0x1367CF4 Slot: 11
 		public override void InitializeExpandDirection(ref List<LayoutUGUIScriptBase> directionList)
 		{
-			MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[m_sceneData.BCCHOBPJJKE_SceneId - 1];
+			MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[m_sceneData.BCCHOBPJJKE_SceneId - 1];
 			NLNDLEEJOFD n = m_sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels[m_sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels.Count - 2];
 			NLNDLEEJOFD n2 = m_sceneData.JCNIAPAJAOB.ADPJCNHAJPC_Roads[m_sceneData.JCNIAPAJAOB.ADPJCNHAJPC_Roads.Count - 2];
-			int cnt = Mathf.Max(n.GHPLINIACBB_Col, n2.GHPLINIACBB_Col);
+			int cnt = Mathf.Max(n.GHPLINIACBB_x, n2.GHPLINIACBB_x);
 			int a = m_sceneData.IELENGDJPHF;
 			int b = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.GENHLFPKOEE(dbScene.EKLIPGELKCL_Rarity, dbScene.MCCIFLKCNKO_Feed);
 			if (b < m_sceneData.IELENGDJPHF)
@@ -314,15 +314,15 @@ namespace XeApp.Game.Menu
 				NHINPDLLFIO n3 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.GJLBMELKHEM[m_sceneData.ILABPFOMEAG_Va - 1];
 				NLNDLEEJOFD n4 = m_sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels[m_sceneData.JCNIAPAJAOB.PDKGMFHIFML_Panels.Count - 2];
 				NLNDLEEJOFD n5 = m_sceneData.JCNIAPAJAOB.ADPJCNHAJPC_Roads[m_sceneData.JCNIAPAJAOB.ADPJCNHAJPC_Roads.Count - 2];
-				cnt = Mathf.Max(n4.GHPLINIACBB_Col, n5.GHPLINIACBB_Col);
+				cnt = Mathf.Max(n4.GHPLINIACBB_x, n5.GHPLINIACBB_x);
 				n4 = m_sceneData.IKBBCHGLLKB.PDKGMFHIFML_Panels[m_sceneData.IKBBCHGLLKB.PDKGMFHIFML_Panels.Count - 2];
 				n5 = m_sceneData.IKBBCHGLLKB.ADPJCNHAJPC_Roads[m_sceneData.IKBBCHGLLKB.ADPJCNHAJPC_Roads.Count - 2];
-				int cnt2 = Mathf.Max(n4.GHPLINIACBB_Col, n5.GHPLINIACBB_Col);
+				int cnt2 = Mathf.Max(n4.GHPLINIACBB_x, n5.GHPLINIACBB_x);
 				int c = cnt2;
 				for (int i = 0; i < a2; i++)
 				{
 					c = cnt;
-					if (i < n3.JPJNKNOJBMM)
+					if (i < n3.JPJNKNOJBMM_Mlt)
 						c = cnt2;
 					d = c;
 				}

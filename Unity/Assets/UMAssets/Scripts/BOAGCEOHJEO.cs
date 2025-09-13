@@ -10,7 +10,7 @@ public class BOAGCEOHJEO
 	//public static double LLPDMEJCMGA(long KINJOEIAHFK, long PCCFAKEOBIC, long KNIKOPJKPCI) { }
 
 	//// RVA: 0x19CBC78 Offset: 0x19CBC78 VA: 0x19CBC78
-	public static double GOAOBNBGDBJ(long KINJOEIAHFK, long PCCFAKEOBIC, long KNIKOPJKPCI, long DNBFMLBNAEE)
+	public static double GOAOBNBGDBJ(long KINJOEIAHFK, long PCCFAKEOBIC, long KNIKOPJKPCI, long _DNBFMLBNAEE_Point)
 	{
 		long pKNIKOPJKPCI = KNIKOPJKPCI;
 		if (KNIKOPJKPCI == 0)
@@ -20,7 +20,7 @@ public class BOAGCEOHJEO
 			d = 0;
 		if (d >= 0.49f)
 			d = 0.49f;
-		return d + DNBFMLBNAEE;
+		return d + _DNBFMLBNAEE_Point;
 	}
 
 	//// RVA: 0x19CBD60 Offset: 0x19CBD60 VA: 0x19CBD60
@@ -30,7 +30,7 @@ public class BOAGCEOHJEO
 	}
 
 	//// RVA: 0x19CBDEC Offset: 0x19CBDEC VA: 0x19CBDEC
-	public static void IIEMACPEEBJ(EDOHBJAPLPF_JsonData IDLHJIOMJBK, out double IGFLJCNGAML, out long DNBFMLBNAEE)
+	public static void IIEMACPEEBJ(EDOHBJAPLPF_JsonData IDLHJIOMJBK, out double IGFLJCNGAML, out long _DNBFMLBNAEE_Point)
 	{
 		IGFLJCNGAML = 0;
 		if (IDLHJIOMJBK.NFPOKKABOHN_IsDouble)
@@ -45,6 +45,6 @@ public class BOAGCEOHJEO
 		{
 			IGFLJCNGAML = (long)IDLHJIOMJBK;
 		}
-		DNBFMLBNAEE = (long)CFLDNJANAPI_Truncate(IGFLJCNGAML);
+		_DNBFMLBNAEE_Point = (long)CFLDNJANAPI_Truncate(IGFLJCNGAML);
 	}
 }

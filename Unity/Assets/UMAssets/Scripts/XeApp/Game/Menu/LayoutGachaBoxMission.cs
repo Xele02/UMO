@@ -63,11 +63,11 @@ namespace XeApp.Game.Menu
 		{
 			if(list == null || list.Count < 1)
 				return;
-			int order = list[0].EILKGEADKGH;
+			int order = list[0].EILKGEADKGH_Order;
 			List<HGFPAFPGIKG.LBEPCOMCHNE> l2 = list.FindAll((HGFPAFPGIKG.LBEPCOMCHNE x) =>
 			{
 				//0x19A8BE4
-				return x.EILKGEADKGH == order;
+				return x.EILKGEADKGH_Order == order;
 			});
 			HGFPAFPGIKG.LBEPCOMCHNE it = l2[UnityEngine.Random.Range(0, l2.Count)];
 			m_layoutChara.StartChildrenAnimGoStop(it.BKCIPBIHKJG_CharaId.ToString("D2"));

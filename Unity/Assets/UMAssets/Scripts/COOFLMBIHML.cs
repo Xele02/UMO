@@ -7,7 +7,7 @@ public class COOFLMBIHML
 	public class IKBKEPGDGMJ
 	{
 		public int BCCHOBPJJKE_SceneId; // 0x8
-		public int FCDKJAKLGMB; // 0xC
+		public int FCDKJAKLGMB_TargetValue; // 0xC
 		public int MKNDAOHGOAK; // 0x10
 	}
 
@@ -28,9 +28,9 @@ public class COOFLMBIHML
 		{
 			total += LKMHPJKIFDN.HGLIIPFLMFB_Drop.BNFPHOEFKBA_GameDropRate[i].DNJEJEANJGL_Value;
 		}
-		for(int i = 0; i < LKMHPJKIFDN.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList.Count; i++)
+		for(int i = 0; i < LKMHPJKIFDN.ECNHDEHADGL_Scene.CDENCMNHNGA_table.Count; i++)
 		{
-			MLIBEPGADJH_Scene.KKLDOOJBJMN scene = LKMHPJKIFDN.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[i];
+			MLIBEPGADJH_Scene.KKLDOOJBJMN scene = LKMHPJKIFDN.ECNHDEHADGL_Scene.CDENCMNHNGA_table[i];
 			int a = 0;
 			if (!ECMMLBJNEKG)
 				a = scene.LDMOHIKFDEK_Gdrp;
@@ -46,9 +46,9 @@ public class COOFLMBIHML
 		}
 		int c = LKMHPJKIFDN.HGLIIPFLMFB_Drop.BFNDKINIEOE_GameDropMaEq[FKDCCLPGKDK - 1];
 		int d = LKMHPJKIFDN.HGLIIPFLMFB_Drop.CFECAEBGLIH_GameDropMaNe[FKDCCLPGKDK - 1];
-		for (int i = 0; i < LKMHPJKIFDN.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList.Count; i++)
+		for (int i = 0; i < LKMHPJKIFDN.ECNHDEHADGL_Scene.CDENCMNHNGA_table.Count; i++)
 		{
-			MLIBEPGADJH_Scene.KKLDOOJBJMN scene = LKMHPJKIFDN.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[i];
+			MLIBEPGADJH_Scene.KKLDOOJBJMN scene = LKMHPJKIFDN.ECNHDEHADGL_Scene.CDENCMNHNGA_table[i];
 			int a = 0;
 			if (!ECMMLBJNEKG)
 				a = scene.LDMOHIKFDEK_Gdrp;
@@ -67,7 +67,7 @@ public class COOFLMBIHML
 					if(r > 0)
 					{
 						IKBKEPGDGMJ data = new IKBKEPGDGMJ();
-						data.BCCHOBPJJKE_SceneId = scene.BCCHOBPJJKE_Id;
+						data.BCCHOBPJJKE_SceneId = scene.BCCHOBPJJKE_SceneId;
 						data.MKNDAOHGOAK = r;
 						HDNPGKDFEJB.Add(data);
 					}
@@ -78,7 +78,7 @@ public class COOFLMBIHML
 		for (int i = 0; i < HDNPGKDFEJB.Count; i++)
 		{
 			cnt += HDNPGKDFEJB[i].MKNDAOHGOAK;
-			HDNPGKDFEJB[i].FCDKJAKLGMB = cnt;
+			HDNPGKDFEJB[i].FCDKJAKLGMB_TargetValue = cnt;
 		}
 		DBOFPMOMPFH = cnt;
 	}
@@ -90,7 +90,7 @@ public class COOFLMBIHML
 		int idx = 0;
 		for(int i = 0; i < HDNPGKDFEJB.Count; i++)
 		{
-			if(HDNPGKDFEJB[i].FCDKJAKLGMB > rnd)
+			if(HDNPGKDFEJB[i].FCDKJAKLGMB_TargetValue > rnd)
 			{
 				idx = i;
 				break;

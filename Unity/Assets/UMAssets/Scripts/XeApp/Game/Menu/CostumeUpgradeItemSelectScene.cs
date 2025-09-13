@@ -233,11 +233,11 @@ namespace XeApp.Game.Menu
 		{
 			//0x16F606C
 			m_EffectInstance.SetActive(true);
-			m_divaController.TryInstall(m_upgradeData.AHHJLDLAPAN_DivaId, m_upgradeData.DAJGPBLEEOB_PrismCostumeId);
+			m_divaController.TryInstall(m_upgradeData.AHHJLDLAPAN_DivaId, m_upgradeData.DAJGPBLEEOB_ModelId);
 			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			m_isDownLoading = false;
-			m_divaController.Initialize(CostumeUpgradeDivaController.Controlype.ItemSelect, m_upgradeData.AHHJLDLAPAN_DivaId, m_upgradeData.DAJGPBLEEOB_PrismCostumeId, 0);
+			m_divaController.Initialize(CostumeUpgradeDivaController.Controlype.ItemSelect, m_upgradeData.AHHJLDLAPAN_DivaId, m_upgradeData.DAJGPBLEEOB_ModelId, 0);
 			m_divaController.LoadDivaResource();
 			yield return new WaitUntil(() =>
 			{

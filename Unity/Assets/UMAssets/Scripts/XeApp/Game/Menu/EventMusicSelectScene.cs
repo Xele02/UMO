@@ -299,7 +299,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x13B1C7C Offset: 0x13B1C7C VA: 0x13B1C7C Slot: 40
 		protected override void SetupViewMusicData()
 		{
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			if(m_eventCtrl == null)
 			{
 				//LAB_013b1de4
@@ -618,7 +618,7 @@ namespace XeApp.Game.Menu
 			m_isEventTimeLimit = false;
 			m_eventStatus = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.HJNNKCMLGFL_0;
 			m_eventCtrl = null;
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			if(arg != null)
 			{
 				m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(arg.EventUniqueId);

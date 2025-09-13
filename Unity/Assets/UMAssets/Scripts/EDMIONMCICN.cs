@@ -3,22 +3,22 @@ using XeApp.Game.Common;
 
 public struct CGCBEHANFJO
 {
-	public int LDLHPACIIAB_Soul; // 0x0
-	public int MKMIEGPOKGG_Vocal; // 0x4
-	public int EACDINDLGLF_Charm; // 0x8
+	public int LDLHPACIIAB_Charm; // 0x0
+	public int MKMIEGPOKGG_Soul; // 0x4
+	public int EACDINDLGLF_Voice; // 0x8
 
 	// RVA: 0x7FC620 Offset: 0x7FC620 VA: 0x7FC620
 	public void JCHLONCMPAJ()
 	{
-		LDLHPACIIAB_Soul = 0;
-		MKMIEGPOKGG_Vocal = 0;
-		EACDINDLGLF_Charm = 0;
+		LDLHPACIIAB_Charm = 0;
+		MKMIEGPOKGG_Soul = 0;
+		EACDINDLGLF_Voice = 0;
 	}
 
 	// RVA: 0x7FC634 Offset: 0x7FC634 VA: 0x7FC634
 	public int PJCKMKEJCEL_Total()
 	{
-		return LDLHPACIIAB_Soul + MKMIEGPOKGG_Vocal + EACDINDLGLF_Charm;
+		return LDLHPACIIAB_Charm + MKMIEGPOKGG_Soul + EACDINDLGLF_Voice;
 	}
 }
 public struct EDMIONMCICN

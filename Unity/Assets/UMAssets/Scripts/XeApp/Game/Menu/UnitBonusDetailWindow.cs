@@ -61,16 +61,16 @@ namespace XeApp.Game.Menu
 			{
 				SwitchCell(m_cellLayout[i], CellType.Costume);
 				m_nameTextList[i].text = data[i].IFGEJDMMAHE_CostumeInfo.OPFGFINHFCE_Name;
-				m_bonusTextList[i].text = string.Format(JpStringLiterals.StringLiteral_20803, data[i].DJJGNDCMNHF_UnitBonusCostume);
+				m_bonusTextList[i].text = string.Format(JpStringLiterals.StringLiteral_20803, data[i].DJJGNDCMNHF_BonusValue);
 				SwitchCell(m_bonusValue[i], CellType.Costume);
-				SetBounus(m_bonusLayout[i], data[i].NFAPNIKALBK_Active, data[i].IFGEJDMMAHE_CostumeInfo.FJODMPGPDDD_Possessed);
+				SetBounus(m_bonusLayout[i], data[i].NFAPNIKALBK_Active, data[i].IFGEJDMMAHE_CostumeInfo.FJODMPGPDDD_Unlocked);
 				int idx = i;
-				GameManager.Instance.CostumeIconCache.Load(data[i].IFGEJDMMAHE_CostumeInfo.AHHJLDLAPAN_DivaId, data[i].IFGEJDMMAHE_CostumeInfo.DAJGPBLEEOB_PrismCostumeId, 0, (IiconTexture texture) =>
+				GameManager.Instance.CostumeIconCache.Load(data[i].IFGEJDMMAHE_CostumeInfo.AHHJLDLAPAN_DivaId, data[i].IFGEJDMMAHE_CostumeInfo.DAJGPBLEEOB_ModelId, 0, (IiconTexture texture) =>
 				{
 					//0xA4C044
 					texture.Set(m_mainImageList[idx]);
 				});
-				GameManager.Instance.DivaIconCache.Load(data[i].IFGEJDMMAHE_CostumeInfo.AHHJLDLAPAN_DivaId, data[i].IFGEJDMMAHE_CostumeInfo.DAJGPBLEEOB_PrismCostumeId, 0, (IiconTexture texture) =>
+				GameManager.Instance.DivaIconCache.Load(data[i].IFGEJDMMAHE_CostumeInfo.AHHJLDLAPAN_DivaId, data[i].IFGEJDMMAHE_CostumeInfo.DAJGPBLEEOB_ModelId, 0, (IiconTexture texture) =>
 				{
 					//0xA4C16C
 					texture.Set(m_iconImageList[idx]);
@@ -91,7 +91,7 @@ namespace XeApp.Game.Menu
 			{
 				SwitchCell(m_cellLayout[i], CellType.Valkyrie);
 				m_nameTextList[i].text = data[i].IFGEJDMMAHE_ValkInfo.IJBLEJOKEFH_ValkyrieName;
-				m_bonusTextList[i].text = string.Format(JpStringLiterals.StringLiteral_20803, data[i].DJJGNDCMNHF_UnitBonusValk);
+				m_bonusTextList[i].text = string.Format(JpStringLiterals.StringLiteral_20803, data[i].DJJGNDCMNHF_BonusValue);
 				SwitchCell(m_bonusValue[i], CellType.Costume);
 				SetBounus(m_bonusLayout[i], data[i].NFAPNIKALBK_Active, data[i].IFGEJDMMAHE_ValkInfo.FJODMPGPDDD_Unlocked);
 				int idx = i;

@@ -67,7 +67,7 @@ namespace XeApp.Game.Common
 				}
 				else if(id == VeiwOptionHelpContentData.ConditionId.HighScoreRate)
 				{
-					a = GameManager.Instance.ViewPlayerData.BJGOPOEAAIC;
+					a = GameManager.Instance.ViewPlayerData.BJGOPOEAAIC_UtaRate;
 				}
 				if(op != VeiwOptionHelpContentData.ConditionOperation.None)
 				{
@@ -83,7 +83,7 @@ namespace XeApp.Game.Common
 		//// RVA: 0xD30A1C Offset: 0xD30A1C VA: 0xD30A1C
 		public static List<VeiwOptionHelpCategoryData> CreateList()
 		{
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			List<VeiwOptionHelpCategoryData> res = new List<VeiwOptionHelpCategoryData>();
 			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser.LOMHJBIJMOD.Length; i++)
 			{
@@ -92,7 +92,7 @@ namespace XeApp.Game.Common
 				{
 					if(t >= h.PDBPFJJCADD)
 					{
-						if(h.FDBNFFNFOND >= t || XeSys.Utility.GetLocalDateTime(h.PDBPFJJCADD).Year > 2024) // Umo update, help will stop in 2029, allow all that was runnin after game close to be always enabled
+						if(h.FDBNFFNFOND/*_CloseAt*/ >= t || XeSys.Utility.GetLocalDateTime(h.PDBPFJJCADD).Year > 2024) // Umo update, help will stop in 2029, allow all that was runnin after game close to be always enabled
 						{
 							VeiwOptionHelpCategoryData data = new VeiwOptionHelpCategoryData();
 							data.Init(h.OBGBAOLONDD);

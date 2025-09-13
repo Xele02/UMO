@@ -147,7 +147,7 @@ namespace XeApp.Game.Menu
 				bool done = false;
 				McrsCannonViewer.Initiarize(transform, ev.KFBDBBCCPBB(ev.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_Type), ev.NNDFMCHDJOH_GetBossSerie(ev.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_Type), 
 					ev.JIBMOEHKMGB_SelectedBoss.HPPDFBKEJCG_BgId, ev.JIBMOEHKMGB_SelectedBoss.FJOLNJLLJEJ_Rank, ev.AGEJGHGEGFF_GetBossName(ev.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_Type), 
-					ev.GGDBEANLCPC.HALIDDHLNEG_MCannonDamage, () =>
+					ev.GGDBEANLCPC.HALIDDHLNEG_Damage, () =>
 					{
 						//0x1817314
 						done = true;

@@ -85,7 +85,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x136A8A0 Offset: 0x136A8A0 VA: 0x136A8A0
 		private bool IsMaxLevel(GCIJNCFDNON_SceneInfo sceneData)
 		{
-			return sceneData.CIEOBFIIPLD_SceneLevel > IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(sceneData.JKGFBFPIMGA_Rarity, true, sceneData.MCCIFLKCNKO_Feed);
+			return sceneData.CIEOBFIIPLD_Level > IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(sceneData.JKGFBFPIMGA_Rarity, true, sceneData.MCCIFLKCNKO_Feed);
 		}
 
 		//// RVA: 0x136A9DC Offset: 0x136A9DC VA: 0x136A9DC
@@ -121,7 +121,7 @@ namespace XeApp.Game.Menu
 				case DisplayType.Luck:
 					isShowLevel = true;
 					isMax = IsMaxLevel(sceneData);
-					val = sceneData.CIEOBFIIPLD_SceneLevel;
+					val = sceneData.CIEOBFIIPLD_Level;
 					break;
 				case DisplayType.Life:
 					val = sceneData.CMCKNKKCNDK_Status.life;
@@ -184,7 +184,7 @@ namespace XeApp.Game.Menu
 				case DisplayType.EpisodeName:
 					isShowLevel = true;
 					isMax = IsMaxLevel(sceneData);
-					m_sceneIconDecrationBehaviour.SetEpisode(sceneData.KELFCMEOPPM_EpisodeId, sceneData.CIEOBFIIPLD_SceneLevel, IsMaxLevel(sceneData), sceneData.MCCIFLKCNKO_Feed);
+					m_sceneIconDecrationBehaviour.SetEpisode(sceneData.KELFCMEOPPM_EpisodeId, sceneData.CIEOBFIIPLD_Level, IsMaxLevel(sceneData), sceneData.MCCIFLKCNKO_Feed);
 					return;
 				case DisplayType.SecretBoard:
 					val = sceneData.JPIPENJGGDD_NumBoard - 1;

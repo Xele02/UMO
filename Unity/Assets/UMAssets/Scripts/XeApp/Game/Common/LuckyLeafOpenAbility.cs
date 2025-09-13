@@ -70,7 +70,7 @@ namespace XeApp.Game.Common
 				s = currentOverLimit.LJHOOPJACPI_LeafMax.ToString("00");
 			}
 			nextLeafLayout.StartChildrenAnimGoStop(s);
-			if(currentOverLimit.EKLIPGELKCL < 5 || currentOverLimit.DJEHLEJCPEL_LeafNum != 4 || currentOverLimit.LJHOOPJACPI_LeafMax != 5)
+			if(currentOverLimit.EKLIPGELKCL_Rarity < 5 || currentOverLimit.DJEHLEJCPEL_LeafNum != 4 || currentOverLimit.LJHOOPJACPI_LeafMax != 5)
 			{
 				kiraLayout.StartChildrenAnimGoStop("02");
 			}
@@ -98,7 +98,7 @@ namespace XeApp.Game.Common
 			prevLeafEffectTexts[0].text = currentOverLimit.ABKCMICDHLN_LeafEffectExcellentRate;
 			prevLeafEffectTexts[1].text = currentOverLimit.ACKDDGKFNIJ_LeafEffectCenterSkillRate;
 			unlockCondition.text = currentOverLimit.IBKNFJLAGIH_UnlockCond;
-			skillCautionLayout.StartChildrenAnimGoStop(currentOverLimit.CMCKNKKCNDK.centerLiveSkillRate > 0 ? "01" : "02");
+			skillCautionLayout.StartChildrenAnimGoStop(currentOverLimit.CMCKNKKCNDK_Status.centerLiveSkillRate > 0 ? "01" : "02");
 			if(currentOverLimit.CJLNHKNLBGH.Count == 2)
 			{
 				statusLayoutUnder.StartChildrenAnimGoStop("03");
@@ -133,7 +133,7 @@ namespace XeApp.Game.Common
 			}
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			skillCaution.text = bk.GetMessageByLabel("limit_over_unlock_04");
-			kiraCaution.text = string.Format(bk.GetMessageByLabel("limit_over_popup_caution"), sceneData.EKLIPGELKCL_SceneRarity);
+			kiraCaution.text = string.Format(bk.GetMessageByLabel("limit_over_popup_caution"), sceneData.EKLIPGELKCL_Rarity);
 		}
 	}
 }

@@ -121,8 +121,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1657208 Offset: 0x1657208 VA: 0x1657208
 		private void ApplyAbility()
 		{
-			ALEKLHIANJN d = new ALEKLHIANJN(m_SeriesValkyrieList[m_SelectSeries][m_Select].LLOBHDMHJIG_Id, m_SeriesValkyrieList[m_SelectSeries][m_Select].CNLIAMIIJID_Level);
-			m_layoutValSelect.HasAbility = m_SeriesValkyrieList[m_SelectSeries][m_Select].CNLIAMIIJID_Level > 0;
+			ALEKLHIANJN d = new ALEKLHIANJN(m_SeriesValkyrieList[m_SelectSeries][m_Select].LLOBHDMHJIG_Id, m_SeriesValkyrieList[m_SelectSeries][m_Select].CNLIAMIIJID_AbilityLevel);
+			m_layoutValSelect.HasAbility = m_SeriesValkyrieList[m_SelectSeries][m_Select].CNLIAMIIJID_AbilityLevel > 0;
 			m_layoutValSelect.SetAbility(d.OPFGFINHFCE_SkillName, d.CHHADJECKNL_GetLevel(), d.DMBDNIEEMCB_GetDesc(false));
 			m_layoutValSelect.IsValInfoChange(m_layoutValSelect.HasAbility);
 		}

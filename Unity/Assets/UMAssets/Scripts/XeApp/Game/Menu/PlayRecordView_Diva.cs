@@ -39,9 +39,9 @@ namespace XeApp.Game.Menu
 			m_diva_level = saveDiva.HEBKEJBDCBH_DivaLevel;
 			m_intimacy_touch = Mathf.Max(0, saveDiva.NEAADNDKGLG_IntimacyTouchTotal);
 			m_intimacy_present = Mathf.Max(0, saveDiva.DDODJCCIENF_IntimacyPresentTotal);
-			for(int i = 0; i < saveDiva.ANAJIAENLNB_Levels.Count; i++)
+			for(int i = 0; i < saveDiva.ANAJIAENLNB_Level.Count; i++)
 			{
-				if (KDOMGMCGHDC.BKEMLLBKELP(saveDiva.ANAJIAENLNB_Levels[i]))
+				if (KDOMGMCGHDC.BKEMLLBKELP(saveDiva.ANAJIAENLNB_Level[i]))
 					m_music_lv_max++;
 			}
 			int maxLevel = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("godiva_max_level", IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OAINIGNLJKC_Diva2.NBJKHMLGNPA());
@@ -61,9 +61,9 @@ namespace XeApp.Game.Menu
 			m_sns_cnt = 0;
 			m_sns = new List<SNS>();
 			BJPLLEBHAGO_DivaInfo dbDiva = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(a_diva_id);
-			for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA_Talks.Count; i++)
+			for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA_table.Count; i++)
 			{
-				BOKMNHAFJHF_Sns.KEIGMAOCJHK_Talk dbSns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA_Talks[i];
+				BOKMNHAFJHF_Sns.KEIGMAOCJHK_Talk dbSns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA_table[i];
 				if(dbSns.PPEGAKEIEGM_Enabled == 2)
 				{
 					if(dbSns.MALFHCHNEFN_RoomId == 3 && dbSns.JKNGNIMLDDJ_UnlockType == 10)

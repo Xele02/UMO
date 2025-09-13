@@ -14,7 +14,7 @@ public class OMOHMPMNOJG : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0xCAE040 Offset: 0xCAE040 VA: 0xCAE040 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		SakashoLine.CallLinkWithLineAfterOAuth();
 	}

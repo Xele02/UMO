@@ -1384,12 +1384,12 @@ namespace ExternLib
 			if(!ProductsInitialized)
 			{
 				ProductsInitialized = true;
-				for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem.CDENCMNHNGA.Count; i++)
+				for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem.CDENCMNHNGA_table.Count; i++)
 				{
-					DKJMDIFAKKD_VcItem.EBGPAPPHBAH item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem.CDENCMNHNGA[i];
+					DKJMDIFAKKD_VcItem.EBGPAPPHBAH item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem.CDENCMNHNGA_table[i];
 					Products.Add(new ProductInfo() {
 						id = 10000000 + item.PPFNGGCBJKC_Id,
-						platform_product_id = item.GLHKICCPGKJ_PlatformProductIds.Length > 0 ? item.GLHKICCPGKJ_PlatformProductIds[0] : "UMO."+item.DLCGAMHADEN_Label+"."+item.PPFNGGCBJKC_Id,
+						platform_product_id = item.GLHKICCPGKJ_PlatformProductId.Length > 0 ? item.GLHKICCPGKJ_PlatformProductId[0] : "UMO."+item.DLCGAMHADEN_Label+"."+item.PPFNGGCBJKC_Id,
 						name = item.OPFGFINHFCE_Name,
 						original_name = item.OriginalName,
 						label = item.DLCGAMHADEN_Label,
@@ -1401,7 +1401,7 @@ namespace ExternLib
 						if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.KGOFMDMDFCJ_BonusId[j]) == EKLNMHFCAOI.FKGCBLHOOCL_Category.IBBDMIFICCN_BonusVC)
 						{
 							int bonusId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(item.KGOFMDMDFCJ_BonusId[j]);
-                            HHJHIFJIKAC_BonusVc.MNGJPJBCMBH bonusItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.CDENCMNHNGA[bonusId - 1];
+                            HHJHIFJIKAC_BonusVc.MNGJPJBCMBH bonusItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.CDENCMNHNGA_table[bonusId - 1];
 							/*long t = Utility.GetCurrentUnixTime();
 							if(t < bonusItem.PDBPFJJCADD_OpenAt || t > bonusItem.EGBOHDFBAPB_ClosedAt)
 								continue;
@@ -1487,13 +1487,13 @@ namespace ExternLib
 					}
 				}
 
-				List<BKPAPCMJKHE_Shop.DNOENEKHGMI> shops = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IFLGCDGOLOP_Shop.CDENCMNHNGA.FindAll((BKPAPCMJKHE_Shop.DNOENEKHGMI _) =>
+				List<BKPAPCMJKHE_Shop.DNOENEKHGMI> shops = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IFLGCDGOLOP_Shop.CDENCMNHNGA_table.FindAll((BKPAPCMJKHE_Shop.DNOENEKHGMI _) =>
 				{
 					return _.JPGALGPNJAI_VcId != 0;
 				});
 				foreach(BKPAPCMJKHE_Shop.DNOENEKHGMI shop in shops)
 				{
-					List<FJGOKILCBJA> items = FJGOKILCBJA.FKDIMODKKJD(shop.OPKDAIMPJBH_ShopId, shop.EFNMDPKEJIM_LineupId, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime());
+					List<FJGOKILCBJA> items = FJGOKILCBJA.FKDIMODKKJD(shop.OPKDAIMPJBH_ShopId, shop.EFNMDPKEJIM_LineupId, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 					for(int i = 0; i < items.Count; i++)
 					{
 						ProductInfo p = Products.Find((ProductInfo _) =>
@@ -1505,7 +1505,7 @@ namespace ExternLib
 							p = new ProductInfo()
 							{
 								id = 400000 + items[i].KAPMOPMDHJE_Label,
-								buy_limit = items[i].ELEPHBOKIGK_MaxCount,
+								buy_limit = items[i].ELEPHBOKIGK_Limit,
 								closed_at = 32512611600,
 								label = items[i].KAPMOPMDHJE_Label,
 								name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(items[i].KIJAPOFAGPN_ItemFullId),
@@ -1514,7 +1514,7 @@ namespace ExternLib
 							};
 							Products.Add(p);
 						}
-						int cId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.CDENCMNHNGA[shop.JPGALGPNJAI_VcId - 1].CPGFOBNKKBF_CurrencyId;
+						int cId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.CDENCMNHNGA_table[shop.JPGALGPNJAI_VcId - 1].CPGFOBNKKBF_CurrencyId;
 						p.price_by_currency.Add(cId, items[i].DKEPCPPCIKA_Price);
 					}
 				}
@@ -1618,14 +1618,14 @@ namespace ExternLib
 			}
 			else if(productType == 0 && currencyId == 2)
 			{
-				for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem.CDENCMNHNGA.Count; i++)
+				for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem.CDENCMNHNGA_table.Count; i++)
 				{
-                    DKJMDIFAKKD_VcItem.EBGPAPPHBAH item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem.CDENCMNHNGA[i];
+                    DKJMDIFAKKD_VcItem.EBGPAPPHBAH item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem.CDENCMNHNGA_table[i];
                     if (item.DLCGAMHADEN == label)
 					{
 						EDOHBJAPLPF_JsonData data = new EDOHBJAPLPF_JsonData();
 						data[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = item.PPFNGGCBJKC;
-						data[AFEHLCGHAEE_Strings.GLHKICCPGKJ_platform_product_id] = item.GLHKICCPGKJ.Length > 0 ? item.GLHKICCPGKJ[0] : "UMO."+label+"."+item.PPFNGGCBJKC;
+						data[AFEHLCGHAEE_Strings.GLHKICCPGKJ_PlatformProductId] = item.GLHKICCPGKJ_PlatformProductId.Length > 0 ? item.GLHKICCPGKJ_PlatformProductId[0] : "UMO."+label+"."+item.PPFNGGCBJKC;
 						data[AFEHLCGHAEE_Strings.OPFGFINHFCE_name] = item.OPFGFINHFCE;
 						data[AFEHLCGHAEE_Strings.KLMPFGOCBHC_description] = "Desc "+item.OPFGFINHFCE;
 						data[AFEHLCGHAEE_Strings.KAPMOPMDHJE_label] = label;
@@ -1697,25 +1697,25 @@ namespace ExternLib
 			EDOHBJAPLPF_JsonData inv = res[AFEHLCGHAEE_Strings.PJJFEAHIPGL_inventories];
 			if(product.productType == 2) // gacha
 			{
-				List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenesList = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList.FindAll((MLIBEPGADJH_Scene.KKLDOOJBJMN _) =>
+				List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenesList = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table.FindAll((MLIBEPGADJH_Scene.KKLDOOJBJMN _) =>
 				{
 					return _.PPEGAKEIEGM_En == 2/* && _.EKLIPGELKCL_Rarity == 5*/;
 				});
 				List<string> summons = product.item_set_name_for_api;
 				for(int j = 0; j < summons.Count; j++)
 				{
-					int id = scenesList[UnityEngine.Random.Range(0, scenesList.Count - 1)].BCCHOBPJJKE_Id;
+					int id = scenesList[UnityEngine.Random.Range(0, scenesList.Count - 1)].BCCHOBPJJKE_SceneId;
 					EDOHBJAPLPF_JsonData invData = new EDOHBJAPLPF_JsonData();
 					inv.Add(invData);
 					invData[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = id; // long
 					invData[AFEHLCGHAEE_Strings.LJGOOOMOMMA_message] = ""; // string
-					invData[AFEHLCGHAEE_Strings.HAAJGNCFNJM_item_name] = AFEHLCGHAEE_Strings.COIODGJDJEJ_scene; // string
+					invData[AFEHLCGHAEE_Strings.HAAJGNCFNJM_ItemName] = AFEHLCGHAEE_Strings.COIODGJDJEJ_scene; // string
 					invData[AFEHLCGHAEE_Strings.OCNINMIMHGC_item_value] = id; // int
 					invData[AFEHLCGHAEE_Strings.MJBKGOJBPAD_item_type] = 3; // int
 					invData[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = 1; // int
 					invData[AFEHLCGHAEE_Strings.INDDJNMPONH_type] = 0; // int
-					invData[AFEHLCGHAEE_Strings.BIOGKIEECGN_created_at] = Utility.GetCurrentUnixTime(); // long
-					invData[AFEHLCGHAEE_Strings.EGBOHDFBAPB_closed_at] = Utility.GetTargetUnixTime(2030, 1, 1, 0, 0, 0); // long
+					invData[AFEHLCGHAEE_Strings.BIOGKIEECGN_CreatedAt] = Utility.GetCurrentUnixTime(); // long
+					invData[AFEHLCGHAEE_Strings.EGBOHDFBAPB_CloseAt] = Utility.GetTargetUnixTime(2030, 1, 1, 0, 0, 0); // long
 					invData[AFEHLCGHAEE_Strings.LNDEFMALKAN_received_at] = Utility.GetCurrentUnixTime(); // long
 					invData["order"] = j; // long
 				}
@@ -1725,20 +1725,20 @@ namespace ExternLib
 				if(product.price_by_currency.ContainsKey(2))
 				{
 					// VC
-					DKJMDIFAKKD_VcItem.EBGPAPPHBAH item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem.CDENCMNHNGA.Find((DKJMDIFAKKD_VcItem.EBGPAPPHBAH _) =>
+					DKJMDIFAKKD_VcItem.EBGPAPPHBAH item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem.CDENCMNHNGA_table.Find((DKJMDIFAKKD_VcItem.EBGPAPPHBAH _) =>
 					{
 						return _.PPFNGGCBJKC_Id == product.id % 10000000;
 					});
 					if(item != null)
 					{
 						// bought vc, update balance
-						AddToBalance(item.CPGFOBNKKBF_Currency, item.HMFFHLPNMPH_Count * quantity);
-						GetBalances(res, new List<int>() { item.CPGFOBNKKBF_Currency });
+						AddToBalance(item.CPGFOBNKKBF_CurrencyId, item.HMFFHLPNMPH_Count * quantity);
+						GetBalances(res, new List<int>() { item.CPGFOBNKKBF_CurrencyId });
 						for(int i = 0; i < item.KGOFMDMDFCJ_BonusId.Length; i++)
 						{
 							if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.KGOFMDMDFCJ_BonusId[i]) == EKLNMHFCAOI.FKGCBLHOOCL_Category.IBBDMIFICCN_BonusVC)
 							{
-								HHJHIFJIKAC_BonusVc.MNGJPJBCMBH db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.CDENCMNHNGA[EKLNMHFCAOI.DEACAHNLMNI_getItemId(item.KGOFMDMDFCJ_BonusId[i]) - 1];
+								HHJHIFJIKAC_BonusVc.MNGJPJBCMBH db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.CDENCMNHNGA_table[EKLNMHFCAOI.DEACAHNLMNI_getItemId(item.KGOFMDMDFCJ_BonusId[i]) - 1];
 								//if(db.INDDJNMPONH == 1)
 								//{
 									AddToBalance(db.CPGFOBNKKBF_CurrencyId, item.NNIIINKFDBG_BonusCount[i] * quantity);
@@ -1775,7 +1775,7 @@ namespace ExternLib
 					//UnityEngine.Debug.LogError(dbItem2.EJHMPCJNHBP_ItemFullId);
 					int id = int.Parse(strs[1]);
 					int cnt = int.Parse(strs[2]);
-					HHJHIFJIKAC_BonusVc.MNGJPJBCMBH db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.CDENCMNHNGA[id - 1];
+					HHJHIFJIKAC_BonusVc.MNGJPJBCMBH db = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.CDENCMNHNGA_table[id - 1];
 					int itemId = 0;
 					switch(db.PPFNGGCBJKC_Id)
 					{
@@ -1819,13 +1819,13 @@ namespace ExternLib
 						invData[AFEHLCGHAEE_Strings.LJGOOOMOMMA_message] = ""; // string
 						MFDJIFIIPJD data = new MFDJIFIIPJD();
 						data.KHEKNNFCAOI(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(itemId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId), 0);
-						invData[AFEHLCGHAEE_Strings.HAAJGNCFNJM_item_name] = data.HAAJGNCFNJM_ItemName; // string
+						invData[AFEHLCGHAEE_Strings.HAAJGNCFNJM_ItemName] = data.HAAJGNCFNJM_ItemName; // string
 						invData[AFEHLCGHAEE_Strings.OCNINMIMHGC_item_value] = data.NNFNGLJOKKF_ItemId; // int
 						invData[AFEHLCGHAEE_Strings.MJBKGOJBPAD_item_type] = 0; // int
 						invData[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = cnt * quantity; // int
 						invData[AFEHLCGHAEE_Strings.INDDJNMPONH_type] = 0; // int
-						invData[AFEHLCGHAEE_Strings.BIOGKIEECGN_created_at] = Utility.GetCurrentUnixTime(); // long
-						invData[AFEHLCGHAEE_Strings.EGBOHDFBAPB_closed_at] = Utility.GetTargetUnixTime(2030, 1, 1, 0, 0, 0); // long
+						invData[AFEHLCGHAEE_Strings.BIOGKIEECGN_CreatedAt] = Utility.GetCurrentUnixTime(); // long
+						invData[AFEHLCGHAEE_Strings.EGBOHDFBAPB_CloseAt] = Utility.GetTargetUnixTime(2030, 1, 1, 0, 0, 0); // long
 						invData[AFEHLCGHAEE_Strings.LNDEFMALKAN_received_at] = Utility.GetCurrentUnixTime(); // long
 						invData["order"] = 0; // long
 					}
@@ -1850,13 +1850,13 @@ namespace ExternLib
 						invData[AFEHLCGHAEE_Strings.LJGOOOMOMMA_message] = ""; // string
 						MFDJIFIIPJD data = new MFDJIFIIPJD();
 						data.KHEKNNFCAOI(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(dbItem2.EJHMPCJNHBP_ItemFullId), EKLNMHFCAOI.DEACAHNLMNI_getItemId(dbItem2.EJHMPCJNHBP_ItemFullId), 0);
-						invData[AFEHLCGHAEE_Strings.HAAJGNCFNJM_item_name] = data.HAAJGNCFNJM_ItemName; // string
+						invData[AFEHLCGHAEE_Strings.HAAJGNCFNJM_ItemName] = data.HAAJGNCFNJM_ItemName; // string
 						invData[AFEHLCGHAEE_Strings.OCNINMIMHGC_item_value] = data.NNFNGLJOKKF_ItemId; // int
 						invData[AFEHLCGHAEE_Strings.MJBKGOJBPAD_item_type] = 0; // int
 						invData[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = dbItem2.LBCNKLPIMHL_Count * quantity; // int
 						invData[AFEHLCGHAEE_Strings.INDDJNMPONH_type] = 0; // int
-						invData[AFEHLCGHAEE_Strings.BIOGKIEECGN_created_at] = Utility.GetCurrentUnixTime(); // long
-						invData[AFEHLCGHAEE_Strings.EGBOHDFBAPB_closed_at] = Utility.GetTargetUnixTime(2030, 1, 1, 0, 0, 0); // long
+						invData[AFEHLCGHAEE_Strings.BIOGKIEECGN_CreatedAt] = Utility.GetCurrentUnixTime(); // long
+						invData[AFEHLCGHAEE_Strings.EGBOHDFBAPB_CloseAt] = Utility.GetTargetUnixTime(2030, 1, 1, 0, 0, 0); // long
 						invData[AFEHLCGHAEE_Strings.LNDEFMALKAN_received_at] = Utility.GetCurrentUnixTime(); // long
 						invData["order"] = 0; // long
 					}

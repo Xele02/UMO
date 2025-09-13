@@ -26,14 +26,14 @@ public class IBIGBMDANNM
 	public int PDJEMLMOEPF_DivaId { get { return AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.DIPKCALNIII_DivaId; } set { AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.DIPKCALNIII_DivaId = value; } } //0x12126AC OICEHMGFBOG 0x12126F8 GIAENPIECFL
 	public int FCKJJGIMPPI_Level { get { return AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.ANAJIAENLNB_Level; } set { AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.ANAJIAENLNB_Level = value; } } //0x121274C KHAEBKHHDDH 0x1212798 FODBHLHKHFI
 	public int NOEAJIJIIHK_McPower { get { return AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.OENMBJEKJII_McPower; } set { AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.OENMBJEKJII_McPower = value; } } //0x12127EC IKHEOMAMDGP 0x1212838 MMLGLIOAOBA
-	//public bool CADENLBDAEB { get; } 0x121288C KJGFPPLHLAB
+	//public bool CADENLBDAEB_IsNew { get; } 0x121288C KJGFPPLHLAB
 	public int NEILEPPJKIN_IsFavorite { get; set; } // 0x24 MBBNGAAAJKL 0x12128A0 CPCOJHKJPAG 0x12128A8 JOPFPEAKGOH
 
 	//// RVA: 0x12128B0 Offset: 0x12128B0 VA: 0x12128B0
 	//public string LDBPEIMINJB() { }
 
 	//// RVA: 0x1212D10 Offset: 0x1212D10 VA: 0x1212D10 Slot: 4
-	public virtual bool EDEDFDDIOKO(int PPFNGGCBJKC_Id, long IFNLEKOILPM_LastLogin, bool MLEHCBKPNGK_IsFriend, List<string> OHNJJIMGKGK_BlockList, EDOHBJAPLPF_JsonData IDLHJIOMJBK_PlayerData)
+	public virtual bool EDEDFDDIOKO_Set(int PPFNGGCBJKC_Id, long IFNLEKOILPM_LastLogin, bool MLEHCBKPNGK_IsFriend, List<string> OHNJJIMGKGK_BlockList, EDOHBJAPLPF_JsonData IDLHJIOMJBK_PlayerData)
 	{
 		BBHNACPENDM_ServerSaveData data = new BBHNACPENDM_ServerSaveData();
 		data.EBKCPELHDKN_InitWithBaseAndPublicStatus();
@@ -48,7 +48,7 @@ public class IBIGBMDANNM
 			AJECHDLMKOE_LastLogin = IFNLEKOILPM_LastLogin;
 			MLPEHNBNOGD_Id = PPFNGGCBJKC_Id;
 			this.AHEFHIMGIBI_PlayerData = _AHEFHIMGIBI_PlayerData;
-			LFKJNMFFCLH_LastLoginString = PIGBKEIAMPE_FriendManager.MKILKPFAOIC_GetLastLoginString(IFNLEKOILPM_LastLogin, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime());
+			LFKJNMFFCLH_LastLoginString = PIGBKEIAMPE_FriendManager.MKILKPFAOIC_GetLastLoginString(IFNLEKOILPM_LastLogin, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 			LHMDABPNDDH_Type = MLEHCBKPNGK_IsFriend ? LJJOIIAEICI.HEEJBCDDOJJ_Friend : LJJOIIAEICI.CCAPCGPIIPF_Guest;
 			return true;
 		}
@@ -59,7 +59,7 @@ public class IBIGBMDANNM
 	public static FriendPlayerDataClass HEGEKFMJNCC<FriendPlayerDataClass>(int PPFNGGCBJKC_Id, long IFNLEKOILPM_LastLogin, bool MLEHCBKPNGK_IsFriend, List<string> OHNJJIMGKGK_BlockList, EDOHBJAPLPF_JsonData IDLHJIOMJBK_PlayerData) where FriendPlayerDataClass : IBIGBMDANNM, new()
 	{
 		FriendPlayerDataClass res = new FriendPlayerDataClass();
-		if(res.EDEDFDDIOKO(PPFNGGCBJKC_Id, IFNLEKOILPM_LastLogin, MLEHCBKPNGK_IsFriend, OHNJJIMGKGK_BlockList, IDLHJIOMJBK_PlayerData))
+		if(res.EDEDFDDIOKO_Set(PPFNGGCBJKC_Id, IFNLEKOILPM_LastLogin, MLEHCBKPNGK_IsFriend, OHNJJIMGKGK_BlockList, IDLHJIOMJBK_PlayerData))
 		{
 			return res;
 		}
@@ -79,7 +79,7 @@ public class IBIGBMDANNM
 	{
 		AHEFHIMGIBI_PlayerData = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
 		MLPEHNBNOGD_Id = NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId;
-		AJECHDLMKOE_LastLogin = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		AJECHDLMKOE_LastLogin = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		LFKJNMFFCLH_LastLoginString = PIGBKEIAMPE_FriendManager.MKILKPFAOIC_GetLastLoginString(AJECHDLMKOE_LastLogin, AJECHDLMKOE_LastLogin);
 		LHMDABPNDDH_Type = LJJOIIAEICI.CCAPCGPIIPF_Guest;
 	}

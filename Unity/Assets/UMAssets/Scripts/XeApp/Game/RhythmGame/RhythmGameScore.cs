@@ -60,7 +60,7 @@ namespace XeApp.Game.RhythmGame
 				musicLevelData = db.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(setup.musicInfo.freeMusicId).EMJCHPDJHEI(line6, (int)diff);
 			}
 			totalComboCount = musicData.musicScoreData.CalcComboLimit();
-			musicLevel = db.IBPAFKKEKNK_Music.ALJFMLEJEHH_GetMusicScore(wavId, variationId, (int)diff, line6, true).ANAJIAENLNB_MusicLevel;
+			musicLevel = db.IBPAFKKEKNK_Music.ALJFMLEJEHH_GetMusicScore(wavId, variationId, (int)diff, line6, true).ANAJIAENLNB_Level;
 			musicLevelBonusRate = db.HNMMJINNHII_Game.ADBELGIDIEN_GetProgress(musicLevel, line6) / 1000.0f;
 			baseNoteScore = musicLevelBonusRate * teamScoreBonusValue / totalComboCount;
 			scoreNotesValue = musicLevelBonusRate * teamScoreBonusValue / db.HNMMJINNHII_Game.GAHIBKLEDBF((int)diff, line6);
@@ -92,7 +92,7 @@ namespace XeApp.Game.RhythmGame
 				{
 					if(combo * 1.0f / totalCombo >= comboBonusDataList[i].ADKDHKMPMHP_Rate / 100.0f)
 					{
-						f = comboBonusDataList[i].DHIPGHBJLIL / 100.0f;
+						f = comboBonusDataList[i].DHIPGHBJLIL_Coef / 100.0f;
 						break;
 					}
 				}

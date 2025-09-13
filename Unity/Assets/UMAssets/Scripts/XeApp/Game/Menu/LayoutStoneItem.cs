@@ -107,7 +107,7 @@ namespace XeApp.Game.Menu
 				//0x194B90C
 				return _.name == "cmn_item_10000 (ImageView)";
 			}).First();
-			GameManager.Instance.DenomIconCache.Load(data.EAHPLCJMPHD, (IiconTexture texture) =>
+			GameManager.Instance.DenomIconCache.Load(data.EAHPLCJMPHD_PId, (IiconTexture texture) =>
 			{
 				//0x194BCA8
 				texture.Set(icon);
@@ -145,7 +145,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				m_CloseTime = data.EMEKFFHCHMH_CloseAt;
+				m_CloseTime = data.EMEKFFHCHMH_RewardEnd2;
 				LimitType type = LimitType.None;
 				int time;
 				CalcLimitTime(out type, out time);
@@ -173,7 +173,7 @@ namespace XeApp.Game.Menu
 		private void CalcLimitTime(out LayoutStoneItem.LimitType type, out int time)
 		{
 			DateTime date = Utility.GetLocalDateTime(m_CloseTime);
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			DateTime date2 = Utility.GetLocalDateTime(t);
 			if(t >= m_CloseTime)
 			{

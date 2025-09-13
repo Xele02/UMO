@@ -24,8 +24,8 @@ public class LGJOOFGOGCD_RequestInventories : CACGCMBKHDI_Request
 				data.DPKCOKLMFMK(b[i]);
 				PJJFEAHIPGL.Add(data);
 			}
-			CJNNMLLEKEF_PreviousPage = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.CJNNMLLEKEF_previous_page];
-			GPPOJHNNINK_CurrentPage = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.GPPOJHNNINK_current_page];
+			CJNNMLLEKEF_PreviousPage = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.CJNNMLLEKEF_PreviousPage];
+			GPPOJHNNINK_CurrentPage = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.GPPOJHNNINK_CurrentPage];
 			MDIBIIHAAPN_NextPage = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.MDIBIIHAAPN_next_page];
 		}
 	}
@@ -43,7 +43,7 @@ public class LGJOOFGOGCD_RequestInventories : CACGCMBKHDI_Request
     }
 
 	// RVA: 0x17F4340 Offset: 0x17F4340 VA: 0x17F4340 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
 		NFEAMMJIMPG_ResultData = new GIAIPIKNBBB();
 		NFEAMMJIMPG_ResultData.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

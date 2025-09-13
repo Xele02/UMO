@@ -55,7 +55,7 @@ namespace XeApp.Game.Menu
 			m_Number01.SetNumber(data.KNIFCANOHOC_ScorePoint, 0);
 			m_Number02.SetNumber(data.LMBFJMBIIGN, 0);
 			m_Number03.SetNumber(data.JLIKEOKBBAM_HighScore, 0);
-			m_is_anim_new_recode = data.FFHMPNGJCLK_NewRecode;
+			m_is_anim_new_recode = data.FFHMPNGJCLK_NewRecord;
 			if(data.HGHEENFMKGH_ScoreRanking == 0)
 			{
 				m_text_rank.text = JpStringLiterals.StringLiteral_6527;
@@ -81,7 +81,7 @@ namespace XeApp.Game.Menu
 			m_isJacket = false;
 			m_isSetup = false;
 			m_Number01.SetNumber(data.KHHPEIBPDAB, 0);
-			m_text_episode.text = Smart.Format(MessageManager.Instance.GetMessage("menu", "event_result_episode"), data.ANOCILKJGOJ_EpBonus);
+			m_text_episode.text = Smart.Format(MessageManager.Instance.GetMessage("menu", "event_result_episode"), data.ANOCILKJGOJ_EpisodeCnt);
 			m_text_episode_rate.text = (data.ODCLHPGHDHA_EpBonusMulti - 100).ToString();
 			m_is_anim_episode_up = data.ODCLHPGHDHA_EpBonusMulti - 100 >= 0;
 			m_Number02.SetNumber(data.BFPBEAIBEDJ, 0);

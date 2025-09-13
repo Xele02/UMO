@@ -25,7 +25,7 @@ public class DKIAFKAJMED_GetTwitterLinkageStatus : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0x198F864 Offset: 0x198F864 VA: 0x198F864 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG = new BLECILEFEEE();
 		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

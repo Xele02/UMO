@@ -875,8 +875,8 @@ namespace XeApp.Game.Menu
 						dId = 0;
 					int hid = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.BBIOMNCILMC_HomeDivaId;
 					FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
-					if(diva.EGAFMGDFFCH_HomeDivaCostume.DAJGPBLEEOB_PrismCostumeId ==
-						diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId)
+					if(diva.EGAFMGDFFCH_HomeDivaCostume.DAJGPBLEEOB_ModelId ==
+						diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId)
 					{
 						if(diva.JFFLFIMIMOI_HomeColorId != diva.JFFLFIMIMOI_HomeColorId)
 							b3 = true;

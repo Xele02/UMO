@@ -7,8 +7,8 @@ namespace XeApp.Game.Menu
 {
 	public class BingoRewardContents : MonoBehaviour
 	{
-		private int xor = GNGMCIAIKMA.FBGGEFFJJHB; // 0xC
-		private long xorl = GNGMCIAIKMA.BBEGLBMOBOF; // 0x10
+		private int xor = GNGMCIAIKMA.FBGGEFFJJHB_xor; // 0xC
+		private long xorl = GNGMCIAIKMA.BBEGLBMOBOF_xorl; // 0x10
 		[SerializeField]
 		private RawImageEx SceneIcon; // 0x18
 		[SerializeField]
@@ -24,9 +24,9 @@ namespace XeApp.Game.Menu
 		private AbsoluteLayout AcquiredIcon; // 0x30
 		private AbsoluteLayout DivaColorChange; // 0x34
 		private AbsoluteLayout episodeReleasable; // 0x38
-		private int DivaImageId_ = GNGMCIAIKMA.FBGGEFFJJHB; // 0x3C
-		private int ModelImageId_ = GNGMCIAIKMA.FBGGEFFJJHB; // 0x40
-		private int SceneImageId_ = GNGMCIAIKMA.FBGGEFFJJHB; // 0x44
+		private int DivaImageId_ = GNGMCIAIKMA.FBGGEFFJJHB_xor; // 0x3C
+		private int ModelImageId_ = GNGMCIAIKMA.FBGGEFFJJHB_xor; // 0x40
+		private int SceneImageId_ = GNGMCIAIKMA.FBGGEFFJJHB_xor; // 0x44
 
 		private int DivaImageId { get { return DivaImageId_ ^ xor; } set { DivaImageId_ = value ^ xor; } } //0x10A0E5C 0x10A0E6C
 		private int ModelImageId { get { return ModelImageId_ ^ xor; } set { ModelImageId_ = value ^ xor; } } //0x10A0E7C 0x10A0E8C

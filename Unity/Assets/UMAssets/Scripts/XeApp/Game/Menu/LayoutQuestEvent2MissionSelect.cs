@@ -324,20 +324,20 @@ namespace XeApp.Game.Menu
 		// RVA: 0x18742D8 Offset: 0x18742D8 VA: 0x18742D8
 		public void SetMissionSetData(IAFDICLEOPF data, IBJAKJJICBC musicData, bool is6Line, Difficulty.Type diffculty)
 		{
-			if(data.GAAHOOBMDEE_Missions != null)
+			if(data.GAAHOOBMDEE_Mission != null)
 			{
-				for(int i = 0; i < data.GAAHOOBMDEE_Missions.Count; i++)
+				for(int i = 0; i < data.GAAHOOBMDEE_Mission.Count; i++)
 				{
 					LayoutMissionCardButton[] l;
-					if(data.GAAHOOBMDEE_Missions[i].CIEOBFIIPLD == 3)
+					if(data.GAAHOOBMDEE_Mission[i].CIEOBFIIPLD_Level == 3)
 					{
 						l = m_cardlevel3Buttons;
 					}
-					else if(data.GAAHOOBMDEE_Missions[i].CIEOBFIIPLD == 2)
+					else if(data.GAAHOOBMDEE_Mission[i].CIEOBFIIPLD_Level == 2)
 					{
 						l = m_cardlevel2Buttons;
 					}
-					else if(data.GAAHOOBMDEE_Missions[i].CIEOBFIIPLD == 1)
+					else if(data.GAAHOOBMDEE_Mission[i].CIEOBFIIPLD_Level == 1)
 					{
 						l = m_cardlevel1Buttons;
 					}
@@ -347,7 +347,7 @@ namespace XeApp.Game.Menu
 					}
 					for(int j = 0; j < l.Length; j++)
 					{
-						l[j].UpdateContent(data.GAAHOOBMDEE_Missions[i], i, j, musicData, is6Line, diffculty);
+						l[j].UpdateContent(data.GAAHOOBMDEE_Mission[i], i, j, musicData, is6Line, diffculty);
 					}
 				}
 			}
@@ -523,7 +523,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1875634 Offset: 0x1875634 VA: 0x1875634
 		public void UpdatePlayButton(IBJAKJJICBC musicData, Difficulty.Type difficulty)
 		{
-			SetNeedEnergy(musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].BPLOEAHOPFI_Energy);
+			SetNeedEnergy(musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].BPLOEAHOPFI_Stamina);
 			SetPlayBtn(musicData.IFNPBIJEPBO_IsDlded ? PlayButtonWrapper.Type.PlayEn : PlayButtonWrapper.Type.Download);
 		}
 

@@ -326,7 +326,7 @@ public class OKGLGHCBCJP_Database
 		"limited_compo_item"}; // 0x4
 	public List<BEOKNKGHFFE_Section> NDLAAACJOLP = new List<BEOKNKGHFFE_Section>(); // 0x8
 	public string[] IIILDINMAKI_SectionNames = new string[117]; // 0xC
-	public long[] GJFPFFBAKGK_SectionCloseTime = new long[117]; // 0x10
+	public long[] GJFPFFBAKGK_CloseAt = new long[117]; // 0x10
 
 	private List<DIHHCBACKGG_DbSection> MGJKEJHEBPO_SectionList; // 0x130
 	private static Dictionary<int, BIFFPAKDHJJ_CreateSectionDelegate> BGEJFKHOMOC_CreateFuncs = new Dictionary<int, BIFFPAKDHJJ_CreateSectionDelegate>() {
@@ -558,7 +558,7 @@ public class OKGLGHCBCJP_Database
 		for(int i = 0; i < 117; i++)
 		{
 			IIILDINMAKI_SectionNames[i] = IJBLEJOKEFH_SectionNames[i];
-			GJFPFFBAKGK_SectionCloseTime[i] = 0;
+			GJFPFFBAKGK_CloseAt[i] = 0;
 		}
 	}
 
@@ -610,7 +610,7 @@ public class OKGLGHCBCJP_Database
 		for(int i = 0; i < 117; i++)
 		{
 			IIILDINMAKI_SectionNames[i] = IJBLEJOKEFH_SectionNames[i];
-			GJFPFFBAKGK_SectionCloseTime[i] = 0;
+			GJFPFFBAKGK_CloseAt[i] = 0;
 			bool valid = true;
 			//if(false) // Disable when exporting localization
 			{
@@ -674,7 +674,7 @@ public class OKGLGHCBCJP_Database
 						if(IJBLEJOKEFH_SectionNames[i] != "" && JOBKIDDLCPL[j].OPFGFINHFCE_Name == IJBLEJOKEFH_SectionNames[i])
 						{
 							IIILDINMAKI_SectionNames[i] = JOBKIDDLCPL[j].OPFGFINHFCE_Name;
-							GJFPFFBAKGK_SectionCloseTime[i] = JOBKIDDLCPL[j].EGBOHDFBAPB_ClosedAt;
+							GJFPFFBAKGK_CloseAt[i] = JOBKIDDLCPL[j].EGBOHDFBAPB_ClosedAt;
 							valid = true;
 						}
 					}
@@ -888,9 +888,9 @@ public class OKGLGHCBCJP_Database
 	// // RVA: 0x1494FAC Offset: 0x1494FAC VA: 0x1494FAC
 	public bool IIEMACPEEBJ(List<string> ANFNAHPIJDH_BlockNames, CBBJHPBGBAJ_Archive OCMCEKEKAPI)
 	{
-		CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File found = OCMCEKEKAPI.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File GHPLINIACBB) => {
+		CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File found = OCMCEKEKAPI.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File _GHPLINIACBB_x) => {
 				//0x149D488
-				return GHPLINIACBB.OPFGFINHFCE_Name == "schema_hash.bytes";
+				return _GHPLINIACBB_x.OPFGFINHFCE_Name == "schema_hash.bytes";
 		});
 		Dictionary<string, int> data = new Dictionary<string, int>();
 		if(found != null)
@@ -914,9 +914,9 @@ public class OKGLGHCBCJP_Database
 			if(OCMCEKEKAPI != null && item != null)
 			{
 				string KHFAJGHCHPN = item.JIKKNHIAEKG_BlockName + ".bytes";
-				CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File found2 = OCMCEKEKAPI.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File GHPLINIACBB) => {
+				CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File found2 = OCMCEKEKAPI.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File _GHPLINIACBB_x) => {
 					//0x14A0728
-					return GHPLINIACBB.OPFGFINHFCE_Name == KHFAJGHCHPN;
+					return _GHPLINIACBB_x.OPFGFINHFCE_Name == KHFAJGHCHPN;
 				});
 				bool read = false;
 				if(found2 != null)
@@ -946,9 +946,9 @@ public class OKGLGHCBCJP_Database
 					}
 				}
 				string ECLJBKNPACL = item.JIKKNHIAEKG_BlockName + ".json";
-				found2 = OCMCEKEKAPI.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File GHPLINIACBB) => {
+				found2 = OCMCEKEKAPI.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File _GHPLINIACBB_x) => {
 					//0x14A075C 
-					return GHPLINIACBB.OPFGFINHFCE_Name == ECLJBKNPACL;
+					return _GHPLINIACBB_x.OPFGFINHFCE_Name == ECLJBKNPACL;
 				});
 				if(!read && found2 != null)
 				{

@@ -176,7 +176,7 @@ namespace XeApp.Game.Menu
 				texture.Set(m_sceneIconImage);
 				SceneIconTextureCache.ChangeKiraMaterial(m_sceneIconImage, texture as IconTexture, isKira);
 			});
-			MenuScene.Instance.MenuResidentTextureCache.LoadLogo(sceneData.EMIKBGHIOMN_SerieLogo == SeriesLogoId.Type.FrontiaItsuwari ? 10 : (int)sceneData.EMIKBGHIOMN_SerieLogo, (IiconTexture texture) =>
+			MenuScene.Instance.MenuResidentTextureCache.LoadLogo(sceneData.EMIKBGHIOMN_SerieLogoId == SeriesLogoId.Type.FrontiaItsuwari ? 10 : (int)sceneData.EMIKBGHIOMN_SerieLogoId, (IiconTexture texture) =>
 			{
 				//0x136391C
 				texture.Set(m_titleIconImage);

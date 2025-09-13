@@ -25,7 +25,7 @@ public class MFDJIFIIPJD
 	//// RVA: 0x1312448 Offset: 0x1312448 VA: 0x1312448
 	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
 	{
-		HAAJGNCFNJM_ItemName = (string)IDLHJIOMJBK[AFEHLCGHAEE_Strings.HAAJGNCFNJM_item_name];
+		HAAJGNCFNJM_ItemName = (string)IDLHJIOMJBK[AFEHLCGHAEE_Strings.HAAJGNCFNJM_ItemName];
 		OCNINMIMHGC_ItemFullId = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.OCNINMIMHGC_item_value];
 		MBJIFDBEDAC_Cnt = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count];
 		MJBKGOJBPAD_Type = 0;
@@ -75,7 +75,7 @@ public class MFDJIFIIPJD
 				HAAJGNCFNJM_ItemName = AFEHLCGHAEE_Strings.KBMDMEEMGLK_grow_item;
 				break;
 			case EKLNMHFCAOI.FKGCBLHOOCL_Category.MEDAKGBKIMO_EpisodeItem:
-				HAAJGNCFNJM_ItemName = AFEHLCGHAEE_Strings.GJODJNIHKKF_epi_item;
+				HAAJGNCFNJM_ItemName = AFEHLCGHAEE_Strings.GJODJNIHKKF_EpiItem;
 				break;
 			case EKLNMHFCAOI.FKGCBLHOOCL_Category.MNCJMDDAFJB_EmblemItem:
 				HAAJGNCFNJM_ItemName = "emblem";
@@ -217,7 +217,7 @@ public class MFDJIFIIPJD
 				{
 					cat = EKLNMHFCAOI.FKGCBLHOOCL_Category.EMOLGEDEEJP_EventItem;
 				}
-				else if (HAAJGNCFNJM_ItemName == AFEHLCGHAEE_Strings.GJODJNIHKKF_epi_item)
+				else if (HAAJGNCFNJM_ItemName == AFEHLCGHAEE_Strings.GJODJNIHKKF_EpiItem)
 				{
 					cat = EKLNMHFCAOI.FKGCBLHOOCL_Category.MEDAKGBKIMO_EpisodeItem;
 				}
@@ -391,7 +391,7 @@ public class PNFCNPCGKDM
 	public string LJNAKDMILMC_Key; // 0x8
 	public string LJGOOOMOMMA_Message; // 0xC
 	public bool OOIJCMLEAJP_IsReceived; // 0x10
-	public List<MFDJIFIIPJD> HBHMAKNGKFK; // 0x14
+	public List<MFDJIFIIPJD> HBHMAKNGKFK_Items; // 0x14
 	public long KBFOIECIADN_OpenAt; // 0x18
 	public long EGBOHDFBAPB_ClosedAt; // 0x20
 
@@ -404,33 +404,33 @@ public class PNFCNPCGKDM
 		if(IDLHJIOMJBK.BBAJPINMOEP_Contains("current_period"))
 		{
 			KBFOIECIADN_OpenAt = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(IDLHJIOMJBK["current_period"], AFEHLCGHAEE_Strings.KBFOIECIADN_opened_at);
-			EGBOHDFBAPB_ClosedAt = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(IDLHJIOMJBK["current_period"], AFEHLCGHAEE_Strings.EGBOHDFBAPB_closed_at);
+			EGBOHDFBAPB_ClosedAt = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(IDLHJIOMJBK["current_period"], AFEHLCGHAEE_Strings.EGBOHDFBAPB_CloseAt);
 		}
-		EDOHBJAPLPF_JsonData items = IDLHJIOMJBK[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items];
-		HBHMAKNGKFK = new List<MFDJIFIIPJD>(items.HNBFOAJIIAL_Count);
+		EDOHBJAPLPF_JsonData items = IDLHJIOMJBK[AFEHLCGHAEE_Strings.HBHMAKNGKFK_Items];
+		HBHMAKNGKFK_Items = new List<MFDJIFIIPJD>(items.HNBFOAJIIAL_Count);
 		for(int i = 0; i < items.HNBFOAJIIAL_Count; i++)
 		{
 			MFDJIFIIPJD data = new MFDJIFIIPJD();
 			data.KHEKNNFCAOI(items[i]);
-			HBHMAKNGKFK.Add(data);
+			HBHMAKNGKFK_Items.Add(data);
 		}
 	}
 }
 
 public class IGPDIKDNFKD
 {
-	public List<PNFCNPCGKDM> CEDLLCCONJP; // 0x8
+	public List<PNFCNPCGKDM> CEDLLCCONJP_AchievementPrizes; // 0x8
 
 	// RVA: 0x11F702C Offset: 0x11F702C VA: 0x11F702C
 	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
 	{
-		EDOHBJAPLPF_JsonData prizes = IDLHJIOMJBK[AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes];
-		CEDLLCCONJP = new List<PNFCNPCGKDM>();
+		EDOHBJAPLPF_JsonData prizes = IDLHJIOMJBK[AFEHLCGHAEE_Strings.CEDLLCCONJP_AchievementPrizes];
+		CEDLLCCONJP_AchievementPrizes = new List<PNFCNPCGKDM>();
 		for(int i = 0; i < prizes.HNBFOAJIIAL_Count; i++)
 		{
 			PNFCNPCGKDM data = new PNFCNPCGKDM();
 			data.KHEKNNFCAOI(prizes[i]);
-			CEDLLCCONJP.Add(data);
+			CEDLLCCONJP_AchievementPrizes.Add(data);
 		}
 	}
 }
@@ -454,11 +454,11 @@ public class JGMEFHJCNHP_GetAchievementRecords : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0xB1B510 Offset: 0xB1B510 VA: 0xB1B510 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG = new IGPDIKDNFKD();
 		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
-		CIOECGOMILE.HHCJCDFCLOB.KPFKKDDOHCN.ECFNAOCFKKN_Date = 0;
+		CIOECGOMILE.HHCJCDFCLOB.KPFKKDDOHCN.ECFNAOCFKKN_LastDate = 0;
 		NKGJPJPHLIF.HHCJCDFCLOB.OLDKENOLHLL = 0;
 	}
 }

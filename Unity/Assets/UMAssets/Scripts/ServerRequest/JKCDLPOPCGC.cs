@@ -10,7 +10,7 @@ public class MFKPFMCLOIB : EBHIMFFJBIJ
 	public MFKPFMCLOIB(GIINMFDIIMD CDGMPGLAING)
         : base(CDGMPGLAING)
     {
-        DAOPLDNLCBF_LastUpdatedPlayerData = CDGMPGLAING.DLENPPIJNPA.LBDOLHGDIEB("last_updated_player_data", null);
+        DAOPLDNLCBF_LastUpdatedPlayerData = CDGMPGLAING.DLENPPIJNPA_json.LBDOLHGDIEB("last_updated_player_data", null);
     }
 }
 
@@ -34,11 +34,11 @@ public class JKCDLPOPCGC_GetRaidboss : CACGCMBKHDI_Request
             public EDOHBJAPLPF_JsonData AHEFHIMGIBI_PlayerData; // 0x10
 
             // RVA: 0x135C44C Offset: 0x135C44C VA: 0x135C44C
-            public BJIJAEOEHBJ(EDOHBJAPLPF_JsonData DLENPPIJNPA)
+            public BJIJAEOEHBJ(EDOHBJAPLPF_JsonData _DLENPPIJNPA_json)
             {
-                MLPEHNBNOGD_PlayerId = (int)DLENPPIJNPA["player_id"];
-                HALIDDHLNEG_Damage = (int)DLENPPIJNPA["damage"];
-                AHEFHIMGIBI_PlayerData = DLENPPIJNPA.LBDOLHGDIEB("player_data", null);
+                MLPEHNBNOGD_PlayerId = (int)_DLENPPIJNPA_json["player_id"];
+                HALIDDHLNEG_Damage = (int)_DLENPPIJNPA_json["damage"];
+                AHEFHIMGIBI_PlayerData = _DLENPPIJNPA_json.LBDOLHGDIEB("player_data", null);
             }
         }
         
@@ -48,24 +48,24 @@ public class JKCDLPOPCGC_GetRaidboss : CACGCMBKHDI_Request
         public BJIJAEOEHBJ MIOBFBAJDHJ_FinishPlayer; // 0x14
 
         // RVA: 0x135BCFC Offset: 0x135BCFC VA: 0x135BCFC
-        public CEHKLJKGJPI(EDOHBJAPLPF_JsonData DLENPPIJNPA)
+        public CEHKLJKGJPI(EDOHBJAPLPF_JsonData _DLENPPIJNPA_json)
         {
-            GJFJLEOGFLD_RaidBoss = new NCMFOICNJEB<MFKPFMCLOIB>(DLENPPIJNPA.PFBEBCDEIND("raidboss"), (GIINMFDIIMD IDLHJIOMJBK) =>
+            GJFJLEOGFLD_RaidBoss = new NCMFOICNJEB<MFKPFMCLOIB>(_DLENPPIJNPA_json.PFBEBCDEIND("raidboss"), (GIINMFDIIMD IDLHJIOMJBK) =>
             {
                 //0x135C358
                 return new MFKPFMCLOIB(IDLHJIOMJBK);
             });
-            CFFDADAKJPB_AttackPlayers.MAECPJAJNBO<BJIJAEOEHBJ>(DLENPPIJNPA.PFBEBCDEIND("attack_players"), (GIINMFDIIMD IDLHJIOMJBK) =>
+            CFFDADAKJPB_AttackPlayers.MAECPJAJNBO<BJIJAEOEHBJ>(_DLENPPIJNPA_json.PFBEBCDEIND("attack_players"), (GIINMFDIIMD IDLHJIOMJBK) =>
             {
                 //0x135C3CC
                 return new BJIJAEOEHBJ(GIINMFDIIMD.JNEJKMKNIJJ(IDLHJIOMJBK));
             });
-            COGCGJLFDKG_FirstAttackPlayer = DLENPPIJNPA.LBDOLHGDIEB("first_attack_player", null).DOHALJMPAAN<BJIJAEOEHBJ>((EDOHBJAPLPF_JsonData CMKPEDGJJPL) =>
+            COGCGJLFDKG_FirstAttackPlayer = _DLENPPIJNPA_json.LBDOLHGDIEB("first_attack_player", null).DOHALJMPAAN<BJIJAEOEHBJ>((EDOHBJAPLPF_JsonData CMKPEDGJJPL) =>
             {
                 //0x135C570
                 return new BJIJAEOEHBJ(CMKPEDGJJPL);
             }, null);
-            MIOBFBAJDHJ_FinishPlayer = DLENPPIJNPA.LBDOLHGDIEB("finish_player", null).DOHALJMPAAN<BJIJAEOEHBJ>((EDOHBJAPLPF_JsonData CMKPEDGJJPL) =>
+            MIOBFBAJDHJ_FinishPlayer = _DLENPPIJNPA_json.LBDOLHGDIEB("finish_player", null).DOHALJMPAAN<BJIJAEOEHBJ>((EDOHBJAPLPF_JsonData CMKPEDGJJPL) =>
             {
                 //0x135C5E0
                 return new BJIJAEOEHBJ(CMKPEDGJJPL);
@@ -84,7 +84,7 @@ public class JKCDLPOPCGC_GetRaidboss : CACGCMBKHDI_Request
     }
 
 	// RVA: 0x135BC40 Offset: 0x135BC40 VA: 0x135BC40 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
         Debug.LogError(NGCAIEGPLKD_result);
         NFEAMMJIMPG = new CEHKLJKGJPI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

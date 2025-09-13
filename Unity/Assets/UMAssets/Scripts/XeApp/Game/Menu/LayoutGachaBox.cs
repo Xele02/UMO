@@ -148,7 +148,7 @@ namespace XeApp.Game.Menu
 				//0x19A1B40
 				SetOpenLayout(true);
 			};
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			if(t >= view.JOFAGCFNKIO_Start)
 			{
 				SetOpenLayout(true);
@@ -183,7 +183,7 @@ namespace XeApp.Game.Menu
 			{
 				if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 				{
-					MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[id - 1];
+					MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[id - 1];
 					SetImagePlate(id, false);
 					SetImageFrame(scene.FKDCCLPGKDK_Ma, scene.EKLIPGELKCL_Rarity, 1);
 					m_layoutPickup.StartChildrenAnimGoStop("01");
@@ -200,7 +200,7 @@ namespace XeApp.Game.Menu
 			{
 				if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 				{
-					MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[id - 1];
+					MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[id - 1];
 					SetImagePlate(id, false);
 					SetImagePlateSilhouette(id);
 					SetImageFrame(scene.FKDCCLPGKDK_Ma, scene.EKLIPGELKCL_Rarity, 1);

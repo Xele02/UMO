@@ -2,7 +2,7 @@ using System.Text;
 
 public class GBAMMLEAIOF
 {
-	private const int FBGGEFFJJHB = 23;
+	private const int FBGGEFFJJHB_xor = 23;
 	public byte[] EJJEHEHFMGO; // 0x8
 	public int PGEDKFOIPIP_EventIdx; // 0xC
 

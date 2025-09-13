@@ -21,7 +21,7 @@ public class MIILMDFOKBC_GetLoginBonusRecord : CACGCMBKHDI_Request
     }
 
 	// RVA: 0x1956B44 Offset: 0x1956B44 VA: 0x1956B44 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
         NFEAMMJIMPG = null;
         BNJPAKLNOPA_WorkerThreadQueue.Add(DIAMDBHBKBH);

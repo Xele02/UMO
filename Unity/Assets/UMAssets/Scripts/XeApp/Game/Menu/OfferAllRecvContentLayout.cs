@@ -69,7 +69,7 @@ namespace XeApp.Game.Menu
 			SetSeriesLogo(offerInfo.DFMOGBOPLEF_Series);
 			SetSeriesIcon(offerInfo.DFMOGBOPLEF_Series);
 			SetLevelIcon(offerInfo.CIEOBFIIPLD_Level, offerInfo.NBLBJCLIDNN_MaxLevel, offerInfo.NBHEBLNHOJO);
-			if (offerInfo.FGHGMHPNEMG_Category == BOPFPIHGJMD.MLBMHDCCGHI.FMLPIOFBCMA_3_Diva)
+			if (offerInfo.FGHGMHPNEMG_Type == BOPFPIHGJMD.MLBMHDCCGHI.FMLPIOFBCMA_3_Diva)
 				SetDivaOffer(offerInfo);
 			int loadCount = 0;
 			for (int i = 0; i < vfInfoList.Count; i++)

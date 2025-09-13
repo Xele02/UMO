@@ -14,13 +14,13 @@ public class NPAFCENJADP
 	private const int MNEEKKKIDED = 16;
 	public List<GBAMMLEAIOF> MGJKEJHEBPO_Event = new List<GBAMMLEAIOF>(); // 0x8
 	private Rijndael KHFCJBEFJNC; // 0xC
-	private string[] ELLBAAFKDCH = new string[2]; // 0x10
+	private string[] ELLBAAFKDCH_Filename = new string[2]; // 0x10
 	private byte[] CFFBJGGICCE; // 0x14
 	public bool LNHFLJBGGJB; // 0x18
 	public long JCNNBEEHFLE; // 0x20
 
 	// // RVA: 0x1CAFFC0 Offset: 0x1CAFFC0 VA: 0x1CAFFC0
-	public void KHEKNNFCAOI_Init(string CJEKGLGBIHF)
+	public void KHEKNNFCAOI_Init(string _CJEKGLGBIHF_path)
     {
         KHFCJBEFJNC = new RijndaelManaged();
         byte[] out1 = null;
@@ -29,8 +29,8 @@ public class NPAFCENJADP
         KHFCJBEFJNC.Key = out1;
         KHFCJBEFJNC.IV = out2;
 
-        ELLBAAFKDCH[0] = CJEKGLGBIHF+"_0";
-        ELLBAAFKDCH[1] = CJEKGLGBIHF+"_1";
+        ELLBAAFKDCH_Filename[0] = _CJEKGLGBIHF_path+"_0";
+        ELLBAAFKDCH_Filename[1] = _CJEKGLGBIHF_path+"_1";
 
         JCNNBEEHFLE = 0;
         for(int i = 0; i < 2; i++)
@@ -53,9 +53,9 @@ public class NPAFCENJADP
 	public bool PCODDPDFLHK(int IMJIADPJJMM)
     {
         MGJKEJHEBPO_Event.Clear();
-        if(File.Exists(ELLBAAFKDCH[IMJIADPJJMM]))
+        if(File.Exists(ELLBAAFKDCH_Filename[IMJIADPJJMM]))
         {
-            byte[] b = File.ReadAllBytes(ELLBAAFKDCH[IMJIADPJJMM]);
+            byte[] b = File.ReadAllBytes(ELLBAAFKDCH_Filename[IMJIADPJJMM]);
             ICryptoTransform iCryptT = KHFCJBEFJNC.CreateDecryptor();
             b = iCryptT.TransformFinalBlock(b, 0, b.Length);
 
@@ -134,8 +134,8 @@ public class NPAFCENJADP
 			{
 				CFFBJGGICCE[i] = 0;
 			}
-			Utility.SaveToStorage(ELLBAAFKDCH[0], res, true);
-			Utility.SaveToStorage(ELLBAAFKDCH[1], res, true);
+			Utility.SaveToStorage(ELLBAAFKDCH_Filename[0], res, true);
+			Utility.SaveToStorage(ELLBAAFKDCH_Filename[1], res, true);
 			LNHFLJBGGJB = false;
 		});
 		

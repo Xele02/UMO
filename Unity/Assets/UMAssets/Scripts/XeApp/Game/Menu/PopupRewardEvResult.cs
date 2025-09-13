@@ -246,7 +246,7 @@ namespace XeApp.Game.Menu
 				data_type = Type.Rankings;
 				rankingRewardList.Clear();
 				Rank = eventController.HLFHJIDHJMP.FJOLNJLLJEJ_Rank;
-				CurrentPoint = eventController.HLFHJIDHJMP.DNBFMLBNAEE_CurrentPoint;
+				CurrentPoint = eventController.HLFHJIDHJMP.DNBFMLBNAEE_Point;
 				evHighScore = 0;
 				evScoreRank = 0;
 				EventId = eventController.PGIIDPEGGPI_EventId;
@@ -259,9 +259,9 @@ namespace XeApp.Game.Menu
 					MusicName = ib.NEDBBJDAFBH_MusicName;
 					CoverId = ib.JNCPEGJGHOG_JacketId;
 				}
-				for(int i = 0; i < eventController.HLFHJIDHJMP.HBHMAKNGKFK.Count; i++)
+				for(int i = 0; i < eventController.HLFHJIDHJMP.HBHMAKNGKFK_Items.Count; i++)
 				{
-					rankingRewardList.Add(eventController.HLFHJIDHJMP.HBHMAKNGKFK[i]);
+					rankingRewardList.Add(eventController.HLFHJIDHJMP.HBHMAKNGKFK_Items[i]);
 				}
 				int r = Rank;
 				for(int i = 0; i < eventController.EGIPGHCDMII_RankData[rankingIndex].Count; i++)
@@ -280,7 +280,7 @@ namespace XeApp.Game.Menu
 				data_type = Type.Rankings;
 				rankingRewardList.Clear();
 				evScoreRank = eventController.HLFHJIDHJMP.FJOLNJLLJEJ_Rank;
-				CurrentPoint = eventController.HLFHJIDHJMP.DNBFMLBNAEE_CurrentPoint;
+				CurrentPoint = eventController.HLFHJIDHJMP.DNBFMLBNAEE_Point;
 				Rank = evScoreRank;
 				evHighScore = (int)CurrentPoint;
 				EventId = eventController.PGIIDPEGGPI_EventId;
@@ -301,9 +301,9 @@ namespace XeApp.Game.Menu
 					CoverId = ib.JNCPEGJGHOG_JacketId;
 				}
 				//LAB_011427dc
-				for(int i = 0; i < eventController.HLFHJIDHJMP.HBHMAKNGKFK.Count; i++)
+				for(int i = 0; i < eventController.HLFHJIDHJMP.HBHMAKNGKFK_Items.Count; i++)
 				{
-					rankingRewardList.Add(eventController.HLFHJIDHJMP.HBHMAKNGKFK[i]);
+					rankingRewardList.Add(eventController.HLFHJIDHJMP.HBHMAKNGKFK_Items[i]);
 				}
 				int r = Rank;
 				for(int i = 0; i < eventController.EGIPGHCDMII_RankData[1].Count; i++)

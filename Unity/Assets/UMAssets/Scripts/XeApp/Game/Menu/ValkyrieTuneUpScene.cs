@@ -621,7 +621,7 @@ namespace XeApp.Game.Menu
 		{
 			base.OnPreSetCanvas();
 			MenuScene.Instance.BgControl.SetPriority(BgPriority.TopMost);
-			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PNNHEOOJBFI_TutorialGeneralFlags.EDEDFDDIOKO_SetTrue(2);
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PNNHEOOJBFI_TutorialGeneralFlags.EDEDFDDIOKO_Set(2);
 			m_IsSceneActivate = false;
 			this.StartCoroutineWatched(Co_Initialize());
 		}
@@ -926,7 +926,7 @@ namespace XeApp.Game.Menu
 		{
 			if(label == PopupButton.ButtonLabel.Ok)
 			{
-				GKFMJAHKEMA_ValSkill.CCPFGNNIBDD a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill.MNHBHNIHJJH(m_SeriesValkyrieList[SelectSeries][Select].ENMAEBJGEKL);
+				GKFMJAHKEMA_ValSkill.CCPFGNNIBDD a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill.MNHBHNIHJJH(m_SeriesValkyrieList[SelectSeries][Select].ENMAEBJGEKL_SkillId);
 				if (a.NHFDCMNPFDK < 1)
 				{
 					if (IsAbilityMax())
@@ -1060,7 +1060,7 @@ namespace XeApp.Game.Menu
 					PIGBBNDPPJC ep = GetEpisodeData(m_SeriesValkyrieList[SelectSeries][Select].KELFCMEOPPM_EpisodeId);
 					string epName = ep != null ? ep.OPFGFINHFCE_Name : "";
 					SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
-					if(ep == null || !m_SeriesValkyrieList[SelectSeries][Select].CPGDEPMPMFK)
+					if(ep == null || !m_SeriesValkyrieList[SelectSeries][Select].CPGDEPMPMFK_EpisodeUnlocked)
 					{
 						MessageBank bk = MessageManager.Instance.GetBank("menu");
 						PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("costume_select_text_03"), SizeType.Small, string.Format("costume_select_text_04", epName), new ButtonInfo[1]

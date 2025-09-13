@@ -270,12 +270,12 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < viewData.PDONJHCHBAE_ScoreReward.Count; i++)
 			{
 				SetRewardStatus(i + 4, viewData.PDONJHCHBAE_ScoreReward[i], false);
-				SwitchRank(i + 4, (ResultScoreRank.Type) viewMusic.MGJKEJHEBPO_DiffInfos[cnt].BAKLKJLPLOJ.DLPBHJALHCK_GetScoreRank(viewData.PDONJHCHBAE_ScoreReward[i].FCDKJAKLGMB_TargetValue));
+				SwitchRank(i + 4, (ResultScoreRank.Type) viewMusic.MGJKEJHEBPO_DiffInfos[cnt].BAKLKJLPLOJ_MusicLevel.DLPBHJALHCK_GetScoreRank(viewData.PDONJHCHBAE_ScoreReward[i].FCDKJAKLGMB_TargetValue));
 			}
 			for (int i = 0; i < viewData.HFPMKBAANFO_ComboReward.Count; i++)
 			{
 				SetRewardStatus(i + 8, viewData.HFPMKBAANFO_ComboReward[i], false);
-				SwitchComboRank(i + 8, (ResultScoreRank.Type)viewMusic.MGJKEJHEBPO_DiffInfos[cnt].BAKLKJLPLOJ.CCFAAPPKILD_GetRankCombo(viewData.HFPMKBAANFO_ComboReward[i].FCDKJAKLGMB_TargetValue));
+				SwitchComboRank(i + 8, (ResultScoreRank.Type)viewMusic.MGJKEJHEBPO_DiffInfos[cnt].BAKLKJLPLOJ_MusicLevel.CCFAAPPKILD_GetRankCombo(viewData.HFPMKBAANFO_ComboReward[i].FCDKJAKLGMB_TargetValue));
 			}
 			for (int i = 0; i < viewData.IOCLNNCJFKA_ClearReward.Count; i++)
 			{
@@ -414,14 +414,14 @@ namespace XeApp.Game.Menu
 			SetThresholdNumber(arrayIndex, txt);
 			SetItemNumber(arrayIndex, reward.JDLJPNMLFID);
 			SetIcon(arrayIndex, reward.KIJAPOFAGPN_GlobalItemId);
-			if(reward.CMCKNKKCNDK_Achieved != FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA/*0*/)
+			if(reward.CMCKNKKCNDK_Status != FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA/*0*/)
 			{
-				if(reward.CMCKNKKCNDK_Achieved == FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL/*1*/)
+				if(reward.CMCKNKKCNDK_Status == FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL/*1*/)
 				{
 					SwitchStampAnim(arrayIndex, eStampStatus.Press);
 					return;
 				}
-				if (reward.CMCKNKKCNDK_Achieved != FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_Achieved/*2*/)
+				if (reward.CMCKNKKCNDK_Status != FPGEMAIAMBF_RewardData.LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_Achieved/*2*/)
 					return;
 				m_stampPlayList.Add(arrayIndex);
 			}

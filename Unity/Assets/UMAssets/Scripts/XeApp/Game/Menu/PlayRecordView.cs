@@ -45,10 +45,10 @@ namespace XeApp.Game.Menu
 			int[] m_costume_now_array = new int[11];
 			int[] m_costume_color_now_array = new int[11];
 			int[] m_costume_upgrade_now_array = new int[11];
-			for(int i = 0; i < dbCostumes.CDENCMNHNGA_Costumes.Count; i++)
+			for(int i = 0; i < dbCostumes.CDENCMNHNGA_table.Count; i++)
 			{
-				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo dbCostume = dbCostumes.CDENCMNHNGA_Costumes[i];
-				EBFLJMOCLNA_Costume.ILFJDCICIKN saveCostume = a_player_data.BEKHNNCGIEL_Costume.FABAGMLEKIB_List[i];
+				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo dbCostume = dbCostumes.CDENCMNHNGA_table[i];
+				EBFLJMOCLNA_Costume.ILFJDCICIKN saveCostume = a_player_data.BEKHNNCGIEL_Costume.FABAGMLEKIB_CostumeList[i];
 				if(dbCostume.PPEGAKEIEGM_Enabled == 2)
 				{
 					m_costume_max_array[0]++;
@@ -66,7 +66,7 @@ namespace XeApp.Game.Menu
 						m_costume_upgrade_max_array[0]++;
 						m_costume_upgrade_max_array[dbCostume.AHHJLDLAPAN_DivaId]++;
 					}
-					if(dbCostume.DAJGPBLEEOB_PrismCostumeModelId == 1 || saveCostume.CGKAEMGLHNK_Possessed())
+					if(dbCostume.DAJGPBLEEOB_ModelId == 1 || saveCostume.CGKAEMGLHNK_Possessed())
 					{
 						if(a_player_data.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(dbCostume.AHHJLDLAPAN_DivaId).CPGFPEDMDEH_Have != 0)
 						{

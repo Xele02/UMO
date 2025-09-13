@@ -192,14 +192,14 @@ namespace XeApp.Game.Menu
 				data.m_name_base = f_.FFKMJNHFFFL_Costume.HCPCHEPCFEA_GetCostumeName(0);
 				data.m_status = f_.FFKMJNHFFFL_Costume.FCEGELPJAMH_SkillDesc;
 				data.m_cos_id = f_.FFKMJNHFFFL_Costume.JPIDIENBGKH_CostumeId;
-				data.m_cos_model_id = f_.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
+				data.m_cos_model_id = f_.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
 				data.m_cos_color = 0;
 				data.m_lv = f_.FFKMJNHFFFL_Costume.GKIKAABHAAD_Level;
 				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cosInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_GetUnlockedCostumeOrDefault(a_diva_id, data.m_cos_id);
 				data.m_lv_max = cosInfo.LLLCMHENKKN_LevelMax;
 				data.m_is_have = f_.JLKPGDEKPEO_IsHave;
 				data.m_is_new = f_.MBFADDHOEOK_IsNew;
-				if(transition == TransitionList.Type.COSTUME_SELECT && selectedCostume.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId == f_.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId)
+				if(transition == TransitionList.Type.COSTUME_SELECT && selectedCostume.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId == f_.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId)
 				{
 					data.m_is_set = data.m_cos_color == selectedCostume.EKFONBFDAAP_ColorId;
 					if (!data.m_is_set)
@@ -243,14 +243,14 @@ namespace XeApp.Game.Menu
 					dataCol.m_name_base = f_.FFKMJNHFFFL_Costume.HCPCHEPCFEA_GetCostumeName(0);
 					dataCol.m_status = f_.FFKMJNHFFFL_Costume.FCEGELPJAMH_SkillDesc;
 					dataCol.m_cos_id = f_.FFKMJNHFFFL_Costume.JPIDIENBGKH_CostumeId;
-					dataCol.m_cos_model_id = f_.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
+					dataCol.m_cos_model_id = f_.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
 					dataCol.m_cos_color = cols[j];
 					dataCol.m_lv = f_.FFKMJNHFFFL_Costume.GKIKAABHAAD_Level;
 					dataCol.m_lv_max = cosInfo.LLLCMHENKKN_LevelMax;
 					dataCol.m_is_set = false;
 					if(transition == TransitionList.Type.COSTUME_SELECT)
 					{
-						if(selectedCostume.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId == f_.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId)
+						if(selectedCostume.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId == f_.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId)
 						{
 							dataCol.m_is_set = selectedCostume.EKFONBFDAAP_ColorId == f_.EKFONBFDAAP_ColorId;
 						}
@@ -262,9 +262,9 @@ namespace XeApp.Game.Menu
 						if(avaiableCols[k] == dataCol.m_cos_color)
 						{
 							dataCol.m_is_have = true;
-							if(f_.FFKMJNHFFFL_Costume.EJODLFBKFDK_ColNewflags.Length != 0)
+							if(f_.FFKMJNHFFFL_Costume.EJODLFBKFDK_IsNewColor.Length != 0)
 							{
-								dataCol.m_is_new = f_.FFKMJNHFFFL_Costume.EJODLFBKFDK_ColNewflags[j];
+								dataCol.m_is_new = f_.FFKMJNHFFFL_Costume.EJODLFBKFDK_IsNewColor[j];
 							}
 							break;
 						}
@@ -300,7 +300,7 @@ namespace XeApp.Game.Menu
 				{
 					if(transition == TransitionList.Type.COSTUME_SELECT)
 					{
-						if((selectedCostume.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId == m_list_item[j].m_view_diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId) && 
+						if((selectedCostume.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId == m_list_item[j].m_view_diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId) && 
 							selectedCostume.EKFONBFDAAP_ColorId == m_list_item[j].m_cos_color)
 						{
 							m_index_set = j;

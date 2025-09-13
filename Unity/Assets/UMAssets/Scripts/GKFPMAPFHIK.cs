@@ -12,9 +12,9 @@ public class GKFPMAPFHIK_ViewEventAprilFoolMiniGameData
 	private const int ICAELHBJFFO = 1;
 	private const sbyte JFOFMKBJBBE_False = 19;
 	private const sbyte CNECJGKECHK_True = 87;
-	private sbyte ALPDMEILILP_ClearCrypted; // 0x8
+	private sbyte ALPDMEILILP_IsClearCrypted; // 0x8
 
-	public bool BCGLDMKODLC_IsClear { get { return ALPDMEILILP_ClearCrypted == CNECJGKECHK_True; } set { PNBAPMLNDLN_SetClear(value); } } //0xAB254C NNGALFPBDNA 0xAB2560 JJBMOHCMALD
+	public bool BCGLDMKODLC_IsClear { get { return ALPDMEILILP_IsClearCrypted == CNECJGKECHK_True; } set { PNBAPMLNDLN_SetClear(value); } } //0xAB254C NNGALFPBDNA 0xAB2560 JJBMOHCMALD
 	public int LGDLEHHOIEL_HighScore { get { return OOBJBHJCLON_LocalSaveShooting.LJKLECGFIEN_GetHighScore(); } set
 		{
 			BIEBAEDGDIA_SetHighScore(value);
@@ -29,7 +29,7 @@ public class GKFPMAPFHIK_ViewEventAprilFoolMiniGameData
 	//// RVA: 0xAB28C4 Offset: 0xAB28C4 VA: 0xAB28C4
 	public bool KHEKNNFCAOI()
 	{
-		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		AMLGMLNGMFB_EventAprilFool ev = OEGDCBLNNFF(time, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MINDIGBAJFG_3/*3*/);
 		if(ev != null)
 		{
@@ -61,20 +61,20 @@ public class GKFPMAPFHIK_ViewEventAprilFoolMiniGameData
 	}
 
 	//// RVA: 0xAB2564 Offset: 0xAB2564 VA: 0xAB2564
-	private void PNBAPMLNDLN_SetClear(bool BCGLDMKODLC)
+	private void PNBAPMLNDLN_SetClear(bool _BCGLDMKODLC_IsClear)
 	{
-		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		AMLGMLNGMFB_EventAprilFool ev = OEGDCBLNNFF(time, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/);
 		if (ev == null)
 			return;
-		ALPDMEILILP_ClearCrypted = BCGLDMKODLC ? CNECJGKECHK_True : JFOFMKBJBBE_False;
-		ev.NDNDIAFEBFJ().KBAHNBKMFDL_IsMinigameClear = BCGLDMKODLC;
+		BCGLDMKODLC_IsClear = _BCGLDMKODLC_IsClear;
+		ev.NDNDIAFEBFJ().KBAHNBKMFDL_IsMinigameClear = _BCGLDMKODLC_IsClear;
 	}
 
 	//// RVA: 0xAB2CE8 Offset: 0xAB2CE8 VA: 0xAB2CE8
-	private void EKKFCEJECFK(int EKANGPODCEP)
+	private void EKKFCEJECFK(int _EKANGPODCEP_EventId)
 	{
-		if (!OOBJBHJCLON_LocalSaveShooting.FKEJBAHCMGC(EKANGPODCEP))
+		if (!OOBJBHJCLON_LocalSaveShooting.FKEJBAHCMGC(_EKANGPODCEP_EventId))
 			return;
 		GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
 	}

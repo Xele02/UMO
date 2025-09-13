@@ -101,7 +101,7 @@ public class NDABOOOOENC
     }
 
 	// // RVA: 0x1ADBDC0 Offset: 0x1ADBDC0 VA: 0x1ADBDC0
-	public void OHFNPFMHMMJ_TryLogin(IMCBBOAFION CNJANCCFBIL_Cb, bool HCEMFKINGPE_Force)
+	public void OHFNPFMHMMJ_TryLogin(IMCBBOAFION _CNJANCCFBIL_Cb, bool HCEMFKINGPE_Force)
 	{
 		if(GKDLPKNOGCK_Initialized)
 		{
@@ -110,10 +110,10 @@ public class NDABOOOOENC
 				KBCANNBANIL_ReadStatusOnSavedFile();
 				if(FAGBLGODELF_LoginStatus == 1 || HCEMFKINGPE_Force)
 				{
-					Social.localUser.Authenticate((bool FHANAFNKIFC_Success) =>
+					Social.localUser.Authenticate((bool _FHANAFNKIFC_Success) =>
 					{
 						//0x1ADDD84
-						if(FHANAFNKIFC_Success)
+						if(_FHANAFNKIFC_Success)
 						{
 							HJOPHGFDHAM_SetStatus(1);
 							Debug.Log(JpStringLiterals.StringLiteral_12573);
@@ -126,7 +126,7 @@ public class NDABOOOOENC
 						{
 							HJOPHGFDHAM_SetStatus(2);
 						}
-						CNJANCCFBIL_Cb();
+						_CNJANCCFBIL_Cb();
 					});
 					return;
 				}
@@ -136,7 +136,7 @@ public class NDABOOOOENC
 				NHDNHAONHBK_ShowAchievements();
 			} 
 		}
-		CNJANCCFBIL_Cb();
+		_CNJANCCFBIL_Cb();
 	}
 
 	// // RVA: 0x1ADBFEC Offset: 0x1ADBFEC VA: 0x1ADBFEC
@@ -184,7 +184,7 @@ public class NDABOOOOENC
 					if (!string.IsNullOrEmpty(str))
 						achId = str;
 				}
-				Social.ReportProgress(achId, 100, (bool FHANAFNKIFC) =>
+				Social.ReportProgress(achId, 100, (bool _FHANAFNKIFC_Success) =>
 				{
 					//0x1ADDD80
 					return;

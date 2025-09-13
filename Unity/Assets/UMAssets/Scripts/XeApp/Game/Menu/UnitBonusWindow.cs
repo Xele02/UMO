@@ -47,7 +47,7 @@ namespace XeApp.Game.Menu
 				m_scrollSupport.scrollRect.enabled = false;
 			};
 			m_contentLayout.Initialize(m_content);
-			if(m_unitBonusInfo.BBAJKJPKOHD_EpisodeBonuses.Count < 4)
+			if(m_unitBonusInfo.BBAJKJPKOHD_EpisodeList.Count < 4)
 			{
 				m_scrollSupport.ContentHeight = 380;
 			}

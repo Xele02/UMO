@@ -9,7 +9,7 @@ public class CNGFKOJANNP
 	private const int DFLLFGDDFFG_StartCheckFrame = 750;
 	private int DGIPJOMHJEJ_WaitCheck; // 0x10
 	private int LGADCGFMLLD_State; // 0x14
-	private int FBGGEFFJJHB; // 0x18
+	private int FBGGEFFJJHB_xor; // 0x18
 	public PJADOKMABLA IBJEFPCNMAL; // 0x1C
 
 	public static CNGFKOJANNP HHCJCDFCLOB { get; set; } // 0x0 LGMPACEDIJF // NKACBOEHELJ OKPMHKNCNAL
@@ -23,9 +23,9 @@ public class CNGFKOJANNP
 	}
 
 	// // RVA: 0x175B490 Offset: 0x175B490 VA: 0x175B490
-	public void IJBGPAENLJA_Init(MonoBehaviour DANMJLOBLIE)
+	public void IJBGPAENLJA_Init(MonoBehaviour _DANMJLOBLIE_mb)
 	{
-		FBGGEFFJJHB = (int)(Utility.GetCurrentUnixTime() * 0x1d7);
+		FBGGEFFJJHB_xor = (int)(Utility.GetCurrentUnixTime() * 0x1d7);
 		HHCJCDFCLOB = this;
 		IKBKLPNADJM = new CEBFFLDKAEC_SecureInt();
 		IKBKLPNADJM.DNJEJEANJGL_Value = 0;

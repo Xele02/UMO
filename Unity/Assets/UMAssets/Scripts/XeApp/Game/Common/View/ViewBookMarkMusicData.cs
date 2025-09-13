@@ -5,26 +5,26 @@ namespace XeApp.Game.Common.View
 	public class ViewBookMarkMusicData : MonoBehaviour
 	{
 		//// RVA: 0xD30ECC Offset: 0xD30ECC VA: 0xD30ECC
-		public static bool KNKGEALPDGF(int DLAEJOBELBH, int OIPCCBHIKIA)
+		public static bool KNKGEALPDGF(int _DLAEJOBELBH_MusicId, int OIPCCBHIKIA)
 		{
-			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KNKGEALPDGF_GetBookmark(DLAEJOBELBH, OIPCCBHIKIA);
+			return CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KNKGEALPDGF_GetBookmark(_DLAEJOBELBH_MusicId, OIPCCBHIKIA);
 		}
 
 		//// RVA: 0xD30FB8 Offset: 0xD30FB8 VA: 0xD30FB8
-		public static bool KNKGEALPDGF(int DLAEJOBELBH)
+		public static bool KNKGEALPDGF(int _DLAEJOBELBH_MusicId)
 		{
 			bool res = false;
 			for(int i = 0; i < 3; i++)
 			{
-				res |= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KNKGEALPDGF_GetBookmark(DLAEJOBELBH, i);
+				res |= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KNKGEALPDGF_GetBookmark(_DLAEJOBELBH_MusicId, i);
 			}
 			return res;
 		}
 
 		//// RVA: 0xD310BC Offset: 0xD310BC VA: 0xD310BC
-		public static void OBHMLEOHEFF_SetBookmark(int DLAEJOBELBH, int OIPCCBHIKIA, bool MHBBJADMHPN)
+		public static void OBHMLEOHEFF_SetBookmark(int _DLAEJOBELBH_MusicId, int OIPCCBHIKIA, bool MHBBJADMHPN)
 		{
-			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.DOGPMKIKKDA_SetBookmark(DLAEJOBELBH, OIPCCBHIKIA, MHBBJADMHPN);
+			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.DOGPMKIKKDA_SetBookmark(_DLAEJOBELBH_MusicId, OIPCCBHIKIA, MHBBJADMHPN);
 		}
 
 		//// RVA: 0xD311BC Offset: 0xD311BC VA: 0xD311BC

@@ -58,7 +58,7 @@ namespace XeApp.Game.Common
 					MKIKFJKPEHK data = new MKIKFJKPEHK();
 					if(!data.DPICLLJJPAC(selectedMusic as IBJAKJJICBC, (int)difficulty, isLine6))
 					{
-						return (selectedMusic as IBJAKJJICBC).MGJKEJHEBPO_DiffInfos[(int)difficulty].BPLOEAHOPFI_Energy;
+						return (selectedMusic as IBJAKJJICBC).MGJKEJHEBPO_DiffInfos[(int)difficulty].BPLOEAHOPFI_Stamina;
 					}
 					if(Database.Instance.gameSetup.SelectedDashIndex > -1)
 					{

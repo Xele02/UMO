@@ -5,10 +5,10 @@ using XeSys;
 public class EJKBKMBJMGL { }
 public class EJKBKMBJMGL_EnemyData
 {
-	public int EJNIMIAPJFJ = 0; // 0x8
+	public int EJNIMIAPJFJ_Id = 0; // 0x8
 	public int JKPPKAHPPKH = 0; // 0xC
 	public int ADMMEMNGKEN_Avo = 0; // 0x10
-	public int EAHPLCJMPHD_Pic = 0; // 0x14
+	public int EAHPLCJMPHD_PId = 0; // 0x14 Pic
 	public int EELBHDJJJHH_Plt = 1; // 0x18
 	public int JMEGLFEKEBD_LiveSkill = 1; // 0x1C
 	public int MOMCFBMJJKB_CenterSkill = 1; // 0x20
@@ -33,18 +33,18 @@ public class EJKBKMBJMGL_EnemyData
 		} } //0x12F37B8 NKOCPFCGNOG
 
 	//// RVA: 0x12F37F4 Offset: 0x12F37F4 VA: 0x12F37F4
-	public void KHEKNNFCAOI(int EJNIMIAPJFJ, int IHKNHNKMGAD)
+	public void KHEKNNFCAOI(int _EJNIMIAPJFJ_Id, int IHKNHNKMGAD)
 	{
-		this.EJNIMIAPJFJ = EJNIMIAPJFJ;
+		this.EJNIMIAPJFJ_Id = _EJNIMIAPJFJ_Id;
 		JKPPKAHPPKH = IHKNHNKMGAD / 100;
-		MHDFCLCMDKO_Enemy.CJLENGHPIDH_EnemyInfo dbEnnemy = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.INONDJKKOKG(EJNIMIAPJFJ);
-		EAHPLCJMPHD_Pic = dbEnnemy.EAHPLCJMPHD_Pic;
+		MHDFCLCMDKO_Enemy.CJLENGHPIDH_EnemyInfo dbEnnemy = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.INONDJKKOKG(_EJNIMIAPJFJ_Id);
+		EAHPLCJMPHD_PId = dbEnnemy.EAHPLCJMPHD_PId;
 		EELBHDJJJHH_Plt = dbEnnemy.EELBHDJJJHH_Plt;
 		JMEGLFEKEBD_LiveSkill = dbEnnemy.EDLACELKJIK_LiveSkill;
 		MOMCFBMJJKB_CenterSkill = dbEnnemy.NJOPIPNGANO_CS;
 		ADMMEMNGKEN_Avo = dbEnnemy.ADMMEMNGKEN_Avo;
-		OPFGFINHFCE_Name = MessageManager.Instance.GetBank("master").GetMessageByLabel("e_nm_" + EJNIMIAPJFJ.ToString("D4"));
-		KLMPFGOCBHC_Desc = MessageManager.Instance.GetBank("master").GetMessageByLabel("e_dsc_" + EJNIMIAPJFJ.ToString("D4"));
+		OPFGFINHFCE_Name = MessageManager.Instance.GetBank("master").GetMessageByLabel("e_nm_" + _EJNIMIAPJFJ_Id.ToString("D4"));
+		KLMPFGOCBHC_Desc = MessageManager.Instance.GetBank("master").GetMessageByLabel("e_dsc_" + _EJNIMIAPJFJ_Id.ToString("D4"));
 		NDPPEMCHKHA_SkillName = "";
 		if(KKPLDFNDFDE_OverrideLiveSkill > 0)
 		{

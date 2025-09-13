@@ -137,7 +137,7 @@ namespace XeApp.Game.Menu
 					{
 						if(m_view.NPIOEBNLBCI(j).PGIIDPEGGPI_EventId == eventId)
 						{
-							m_selectSeries = (Series)m_view.NPIOEBNLBCI(j).CPKMLLNADLJ;
+							m_selectSeries = (Series)m_view.NPIOEBNLBCI(j).CPKMLLNADLJ_Serie;
 							m_selectBannerPosition = i / m_scrollList.ColumnCount;
 							if(m_selectBannerPosition <= m_scrollList.ColumnCount)
 							{

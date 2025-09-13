@@ -145,7 +145,7 @@ namespace XeApp.Game.Common
 				SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 				OpenPopupItemPeriodComfirmList(setup.TypeItemId);
 			});
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			List<NKFJNAANPNP.MOJLCADLMKH> l = GetHaveItemInfoList(setup.TypeItemId, time);
 			if(l.Count < 1)
 			{
@@ -161,7 +161,7 @@ namespace XeApp.Game.Common
 		public void OpenPopupItemPeriodComfirmList(int typeItemId)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			PopupItemPeriodComfirmListSetting s = new PopupItemPeriodComfirmListSetting();
 			s.TypeItemId = typeItemId;
 			s.TitleText = string.Format(bk.GetMessageByLabel("item_use_period_title"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(typeItemId));

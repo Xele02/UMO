@@ -282,7 +282,7 @@ namespace XeApp.Game.Menu
 		{
 			if(!itemInfo.PHJHJGDLPED_IsRareItem && !itemInfo.BAKFIPIFDLE_IsEventRareItem)
 			{
-				if (itemInfo.DJJGNDCMNHF_BonusCount < 1)
+				if (itemInfo.DJJGNDCMNHF_BonusValue < 1)
 					return;
 				normalItem.layoutNumAnim.StartChildrenAnimGoStop("go_act_01", "st_act_01");
 			}
@@ -293,7 +293,7 @@ namespace XeApp.Game.Menu
 		{
 			if(!itemInfo.PHJHJGDLPED_IsRareItem && !itemInfo.BAKFIPIFDLE_IsEventRareItem)
 			{
-				if (itemInfo.DJJGNDCMNHF_BonusCount < 1)
+				if (itemInfo.DJJGNDCMNHF_BonusValue < 1)
 					return;
 				normalItem.layoutNumAnim.StartChildrenAnimGoStop("go_countup", "st_countup");
 			}
@@ -304,7 +304,7 @@ namespace XeApp.Game.Menu
 		{
 			if(!itemInfo.PHJHJGDLPED_IsRareItem && !itemInfo.BAKFIPIFDLE_IsEventRareItem)
 			{
-				if (itemInfo.DJJGNDCMNHF_BonusCount < 1)
+				if (itemInfo.DJJGNDCMNHF_BonusValue < 1)
 					return;
 				normalItem.layoutNumAnim.StartChildrenAnimLoop("logo", "loen");
 			}
@@ -435,7 +435,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1D9205C Offset: 0x1D9205C VA: 0x1D9205C
 		public void FinalizeBaseCountNumber()
 		{
-			ChangeBaseCountNumber(itemInfo.DJJGNDCMNHF_BonusCount + itemInfo.HMFFHLPNMPH);
+			ChangeBaseCountNumber(itemInfo.DJJGNDCMNHF_BonusValue + itemInfo.HMFFHLPNMPH);
 		}
 
 		//// RVA: 0x1D9232C Offset: 0x1D9232C VA: 0x1D9232C
@@ -456,7 +456,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1D920B0 Offset: 0x1D920B0 VA: 0x1D920B0
 		private void FinalizeBonusCountNumber()
 		{
-			ChangeBonusCountNumber(itemInfo.DJJGNDCMNHF_BonusCount);
+			ChangeBonusCountNumber(itemInfo.DJJGNDCMNHF_BonusValue);
 		}
 
 		//// RVA: 0x1D90E08 Offset: 0x1D90E08 VA: 0x1D90E08

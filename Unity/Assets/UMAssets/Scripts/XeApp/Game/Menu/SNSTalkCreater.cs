@@ -266,7 +266,7 @@ namespace XeApp.Game.Menu
 				return x.MALFHCHNEFN_Id == rid;
 			});
 			m_roomId = room_id;
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			m_currentTalkIndex = m_viewDataRoom.FOBEBCPEILE_GetCurrentTalkIndex(time, false, false);
 			m_unReadIndex = m_viewDataRoom.MCGDHHHFBMO_GetUnreadIndex(time, false);
 			CalcPageIndex();

@@ -4,22 +4,22 @@ using XeSys;
 
 public class IHGLIHBAOII
 {
-	private const int FBGGEFFJJHB = 625060239; //0x2541a98f
+	private const int FBGGEFFJJHB_xor = 625060239; //0x2541a98f
 	private const sbyte JFOFMKBJBBE_False = 19; // 0x13
 	private const sbyte CNECJGKECHK_True = 87; // 0x57
-	public int BHFNCIIKDDO_Crypted = FBGGEFFJJHB; // 0x8
-	public int IOIPGANODIC_Crypted = FBGGEFFJJHB; // 0xC
+	public int BHFNCIIKDDO_Crypted = FBGGEFFJJHB_xor; // 0x8
+	public int IOIPGANODIC_Crypted = FBGGEFFJJHB_xor; // 0xC
 	public string GJILKONKOCI_Name = ""; // 0x10
-	public int PCDEGCBOCNM_Crypted = FBGGEFFJJHB; // 0x14
-	public int EBPEHCGLLJF_Crypted = FBGGEFFJJHB; // 0x18
-	public int PMJDAJHAOEM_Crypted = FBGGEFFJJHB; // 0x1C
+	public int PCDEGCBOCNM_Crypted = FBGGEFFJJHB_xor; // 0x14
+	public int EBPEHCGLLJF_Crypted = FBGGEFFJJHB_xor; // 0x18
+	public int PMJDAJHAOEM_Crypted = FBGGEFFJJHB_xor; // 0x1C
 	public sbyte HNPAGJCFKMA_Crypted = JFOFMKBJBBE_False; // 0x20
 
-	public int AIMCAJDBNOI_ClassId { get { return BHFNCIIKDDO_Crypted ^ FBGGEFFJJHB; } set { BHFNCIIKDDO_Crypted = value ^ FBGGEFFJJHB; } } //0x11FC348 DCNBOEMCLPE 0x11FC35C JIEOEFLMDFK
-	public int GIDPPGJPOJA_Id { get { return IOIPGANODIC_Crypted ^ FBGGEFFJJHB; } set { IOIPGANODIC_Crypted = value ^ FBGGEFFJJHB; } } //0x11FC370 PEBDJENFIDJ 0x11FC384 JEHNBAKGJHE
-	public int JGIJGANFCPG_EmblemId { get { return PCDEGCBOCNM_Crypted ^ FBGGEFFJJHB; } set { PCDEGCBOCNM_Crypted = value ^ FBGGEFFJJHB; } } //0x11FC398 ICCHBANCEBH 0x11FC3AC FLDFMMABAMM
-	public int PMNGBEJMECI_Score { get { return EBPEHCGLLJF_Crypted ^ FBGGEFFJJHB; } set { EBPEHCGLLJF_Crypted = value ^ FBGGEFFJJHB; } } //0x11FC3C0 BPDJJDLMOEC 0x11FC3D4 BLEPEPOPHNK
-	public int MDPKLNFFDBO_EmblemId { get { return PMJDAJHAOEM_Crypted ^ FBGGEFFJJHB; } set { PMJDAJHAOEM_Crypted = value ^ FBGGEFFJJHB; } } //0x11FC3E8 LBEKGEJLADI 0x11FC3FC MAAHDBCNMBJ
+	public int AIMCAJDBNOI_ClassId { get { return BHFNCIIKDDO_Crypted ^ FBGGEFFJJHB_xor; } set { BHFNCIIKDDO_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x11FC348 DCNBOEMCLPE 0x11FC35C JIEOEFLMDFK
+	public int GIDPPGJPOJA_Id { get { return IOIPGANODIC_Crypted ^ FBGGEFFJJHB_xor; } set { IOIPGANODIC_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x11FC370 PEBDJENFIDJ 0x11FC384 JEHNBAKGJHE
+	public int JGIJGANFCPG_EmblemId { get { return PCDEGCBOCNM_Crypted ^ FBGGEFFJJHB_xor; } set { PCDEGCBOCNM_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x11FC398 ICCHBANCEBH 0x11FC3AC FLDFMMABAMM
+	public int PMNGBEJMECI_Score { get { return EBPEHCGLLJF_Crypted ^ FBGGEFFJJHB_xor; } set { EBPEHCGLLJF_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x11FC3C0 BPDJJDLMOEC 0x11FC3D4 BLEPEPOPHNK
+	public int MDPKLNFFDBO_EmblemId { get { return PMJDAJHAOEM_Crypted ^ FBGGEFFJJHB_xor; } set { PMJDAJHAOEM_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x11FC3E8 LBEKGEJLADI 0x11FC3FC MAAHDBCNMBJ
 	public bool MNAKKLEJBFG_IsUnlocked { get { return HNPAGJCFKMA_Crypted == CNECJGKECHK_True; } set { HNPAGJCFKMA_Crypted = value ? CNECJGKECHK_True : JFOFMKBJBBE_False; } } //0x11FC410 BFLKKAPJAFF 0x11FC424 AIEMFLPLOFI
 	public IHGLIHBAOII JFLOBDBGIKL { get; set; }  // 0x24 FCMKIKIACPD OKBILGABBCA OFLOBHDGPIP
 
@@ -39,9 +39,9 @@ public class IHGLIHBAOII
 
 public class PMFBBLGPLLJ
 {
-	private const int FBGGEFFJJHB = 625060239; // 0x2541a98f
+	private const int FBGGEFFJJHB_xor = 625060239; // 0x2541a98f
 	private List<IHGLIHBAOII> OEKFKJHGMME_Classes; // 0x8
-	public int NJAFPPNLEML_Crypted = FBGGEFFJJHB ^ 1; // 0xC
+	public int NJAFPPNLEML_Crypted = FBGGEFFJJHB_xor ^ 1; // 0xC
 
 	public int JAKOAOFBPIB_LastClassId { get { return NJAFPPNLEML_Crypted ^ 0x2541a98f; } set { NJAFPPNLEML_Crypted = value ^ 0x2541a98f; } } //0xFEE100 GCKMHNLGBFM 0xFEE114 ENFGFKNDEEG
 

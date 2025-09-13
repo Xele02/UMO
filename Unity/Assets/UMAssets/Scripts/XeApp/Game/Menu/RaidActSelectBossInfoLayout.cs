@@ -54,13 +54,13 @@ namespace XeApp.Game.Menu
 		public void InitLayout(PKNOKJNLPOE_EventRaid.MJFMOPMOFDJ bossInfo, string bossName, int assistBonusMax)
 		{
 			SetSp(bossInfo.IKICLMGFFPB_IsSpecial);
-			SetHp((int)(bossInfo.BCCOMAODPJI_HpCurrent * 100.0f / bossInfo.PIKKHCGNGNN_HpMax));
-			m_bossHpNum.SetNumber(bossInfo.BCCOMAODPJI_HpCurrent, 0);
+			SetHp((int)(bossInfo.BCCOMAODPJI_Hp * 100.0f / bossInfo.PIKKHCGNGNN_HpMax));
+			m_bossHpNum.SetNumber(bossInfo.BCCOMAODPJI_Hp, 0);
 			SetRank(bossInfo.FJOLNJLLJEJ_Rank);
 			m_bossNameText.text = bossName;
 			m_joinNum.SetNumber(bossInfo.MHABJOMJCFI_JoinedMember, 0);
-			SetAssistNum(bossInfo.CLNPBIJBIIJ_CoopBonus);
-			SetAssistIsMax(assistBonusMax <= bossInfo.CLNPBIJBIIJ_CoopBonus);
+			SetAssistNum(bossInfo.CLNPBIJBIIJ_SupportBonus);
+			SetAssistIsMax(assistBonusMax <= bossInfo.CLNPBIJBIIJ_SupportBonus);
 		}
 
 		// // RVA: 0x144B650 Offset: 0x144B650 VA: 0x144B650

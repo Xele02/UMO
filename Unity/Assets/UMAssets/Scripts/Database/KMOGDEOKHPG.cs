@@ -25,10 +25,10 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 				{
 					if(BBAJKJPKOHD_EpisodeList[j].PPEGAKEIEGM == 2)
 					{
-						int idx = BBAJKJPKOHD_EpisodeList[j].HHJGBJCIFON_Rewards.FindIndex((short GHPLINIACBB) =>
+						int idx = BBAJKJPKOHD_EpisodeList[j].HHJGBJCIFON_Rewards.FindIndex((short _GHPLINIACBB_x) =>
 						{
 							//0x11203DC
-							return IAPEBMMOLMM_RewardId == GHPLINIACBB;
+							return IAPEBMMOLMM_RewardId == _GHPLINIACBB_x;
 						});
 						if(idx > -1)
 						{
@@ -43,9 +43,9 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x111E9EC Offset: 0x111E9EC VA: 0x111E9EC
-	public int HFAMPKLFFEJ_FindEpisodeForReward(int GPPEFLKGGGJ)
+	public int HFAMPKLFFEJ_FindEpisodeForReward(int _GPPEFLKGGGJ_ValkyrieId)
 	{
-		int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie, GPPEFLKGGGJ);
+		int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie, _GPPEFLKGGGJ_ValkyrieId);
 		for (int i = 0; i < LFAAEPAAEMB_Rewards.Count; i++)
 		{
 			if(LFAAEPAAEMB_Rewards[i].KIJAPOFAGPN_Item == itemId)
@@ -54,10 +54,10 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 				{
 					if(BBAJKJPKOHD_EpisodeList[j].PPEGAKEIEGM == 2)
 					{
-						int idx = BBAJKJPKOHD_EpisodeList[j].HHJGBJCIFON_Rewards.FindIndex((short GHPLINIACBB) =>
+						int idx = BBAJKJPKOHD_EpisodeList[j].HHJGBJCIFON_Rewards.FindIndex((short _GHPLINIACBB_x) =>
 						{
 							//0x11203F4
-							return LFAAEPAAEMB_Rewards[i].EIHOBHDKCDB_RewardId == GHPLINIACBB;
+							return LFAAEPAAEMB_Rewards[i].EIHOBHDKCDB_RewardId == _GHPLINIACBB_x;
 						});
 						if (idx > -1)
 							return BBAJKJPKOHD_EpisodeList[j].KELFCMEOPPM;
@@ -85,9 +85,9 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x111EF48 Offset: 0x111EF48 VA: 0x111EF48 Slot: 9
-	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
+	public override bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data)
     {
-		MHNEAKBPPDA parser = MHNEAKBPPDA.HEGEKFMJNCC(DBBGALAPFGC);
+		MHNEAKBPPDA parser = MHNEAKBPPDA.HEGEKFMJNCC(_DBBGALAPFGC_Data);
 		LEPDBLAKJCF_LoadStep(parser);
 		JOMKCAPLPEE(parser);
 		IHJNKFOJPKM_LoadReward(parser);
@@ -111,7 +111,7 @@ public class KMOGDEOKHPG_Episode : DIHHCBACKGG_DbSection
 			data.KELFCMEOPPM = (short)array[i].PPFNGGCBJKC;
 			data.IOFHEGJPHKG_StepId = (short)array[i].BDJMFDKLHPM;
 			data.PPEGAKEIEGM = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
-			data.EILKGEADKGH = (short)array[i].FPOMEEJFBIG;
+			data.EILKGEADKGH_Order = (short)array[i].FPOMEEJFBIG;
 			for(int j = 0; j < array[i].JGOHPDKCJKB.Length; j++)
 			{
 				data.HHJGBJCIFON_Rewards.Add((short)array[i].JGOHPDKCJKB[j]);
@@ -187,7 +187,7 @@ public class HMGPODKEFBA_EpisodeInfo
 {
 	public short KELFCMEOPPM; // 0x8
 	public short IOFHEGJPHKG_StepId; // 0xA
-	public short EILKGEADKGH; // 0xC
+	public short EILKGEADKGH_Order; // 0xC
 	public sbyte PPEGAKEIEGM; // 0xE
 	public sbyte FGOGPCMHPIN_Count; // 0xF
 	public List<short> HHJGBJCIFON_Rewards = new List<short>(10); // 0x10

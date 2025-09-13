@@ -9,7 +9,7 @@ public class DKFCEGODKFJ_GetPlayerCounters : CACGCMBKHDI_Request
 	public class ENKJGMFOJDI
 	{
 		public string IHALNOJAMLE_CounterName; // 0x8
-		public List<int> FAMHAPONILI_PlayerList; // 0xC
+		public List<int> FAMHAPONILI_PlayerIds; // 0xC
 	}
 
 	public class HJKLBEOACCA
@@ -39,11 +39,11 @@ public class DKFCEGODKFJ_GetPlayerCounters : CACGCMBKHDI_Request
 	// RVA: 0x198F224 Offset: 0x198F224 VA: 0x198F224 Slot: 12
 	public override void DHLDNIEELHO()
 	{
-		EBGACDGNCAA_CallContext = SakashoPlayerCounter.GetPlayerCounters(BIHCCEHLAOD.IHALNOJAMLE_CounterName, BIHCCEHLAOD.FAMHAPONILI_PlayerList.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
+		EBGACDGNCAA_CallContext = SakashoPlayerCounter.GetPlayerCounters(BIHCCEHLAOD.IHALNOJAMLE_CounterName, BIHCCEHLAOD.FAMHAPONILI_PlayerIds.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
 	}
 
 	// RVA: 0x198F378 Offset: 0x198F378 VA: 0x198F378 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG = new HJKLBEOACCA();
 		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

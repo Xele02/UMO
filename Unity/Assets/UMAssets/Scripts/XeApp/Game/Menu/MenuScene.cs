@@ -355,7 +355,7 @@ namespace XeApp.Game.Menu
 								TeamSelectSceneListArgs arg = new TeamSelectSceneListArgs();
 								arg.defaultSelectScene = 0;
 								arg.divaSlotIndex = 0;
-								arg.divaData = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_MainDivas[0].DIPKCALNIII_Id - 1];
+								arg.divaData = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_Diva[0].DIPKCALNIII_DivaId - 1];
 								info.category = SceneGroupCategory.FORMATION;
 								info.nextName = TransitionList.Type.SCENE_SELECT;
 								info.parentName = TransitionList.Type.TEAM_EDIT;
@@ -756,7 +756,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_playerStatusData != null)
 			{
-				return m_playerStatusData.EPNALMONMHB_CurEnergy;
+				return m_playerStatusData.EPNALMONMHB_CurrentStamina;
 			}
 			return 0;
 		}
@@ -1238,7 +1238,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xB32384 Offset: 0xB32384 VA: 0xB32384
 		public void UpdateEnterToHomeTime()
 		{
-			m_enterToHomeTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			m_enterToHomeTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		}
 
 		// // RVA: 0xB32468 Offset: 0xB32468 VA: 0xB32468
@@ -1307,7 +1307,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xB32898 Offset: 0xB32898 VA: 0xB32898
-		// public void ShowFriendDivaStatusPopupWindow(EAJCBFGKKFA friendData, DFKGGBMFFGB playerData, EEDKAACNBBG musicData, bool isMoment, TransitionList.Type transitionName = -2, Action callBack, bool isChangeScene = False) { }
+		// public void ShowFriendDivaStatusPopupWindow(EAJCBFGKKFA friendData, DFKGGBMFFGB_PlayerInfo playerData, EEDKAACNBBG musicData, bool isMoment, TransitionList.Type transitionName = -2, Action callBack, bool isChangeScene = False) { }
 
 		// // RVA: 0xB32938 Offset: 0xB32938 VA: 0xB32938
 		public void ShowSceneStatusPopupWindow(GCIJNCFDNON_SceneInfo scene, DFKGGBMFFGB_PlayerInfo playerData, bool isMoment, TransitionList.Type transitionName/* = TransitionList.Type.UNDEFINED*/, Action callBack/* = null*/, bool isFriend/* = false*/, bool isReward/* = false*/, SceneStatusParam.PageSave pageSave/* = SceneStatusParam.PageSave.Player*/, bool isDisableZoom/* = false*/)
@@ -1315,7 +1315,7 @@ namespace XeApp.Game.Menu
 			if(!isFriend && !isReward)
 			{
 				scene.LEHDLBJJBNC_SetNotNew();
-				scene.CADENLBDAEB_New = false;
+				scene.CADENLBDAEB_IsNew = false;
 			}
 			m_statusWindowControl.ShowSceneStatusPopupWindow(scene, playerData, isMoment, 
 			transitionName, callBack, isFriend, isReward, pageSave, isDisableZoom);
@@ -1822,7 +1822,7 @@ namespace XeApp.Game.Menu
 			if (!GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.AAFEFCNONGL_StepUpQuest.IAPNOPFIPAG_IsShowNextInfo)
 				yield break;
 			List<AMLGMLNGMFB_EventAprilFool> l = new List<AMLGMLNGMFB_EventAprilFool>();
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			if(GetCurrentScene().name == TransitionList.Type.RESULT)
 			{
 				if(Database.Instance.gameSetup.musicInfo == null)
@@ -1872,7 +1872,7 @@ namespace XeApp.Game.Menu
 				s.currentStep = nextList[i].JJJNKGBCFMI_CurrentStep;
 				s.nextStep = nextList[i].AGKIABJHDDG_NextStep;
 				s.musicName = nextList[i].NEDBBJDAFBH_MusicName;
-				s.missionDesc = nextList[i].FEMMDNIELFC_MissionDesc;
+				s.missionDesc = nextList[i].FEMMDNIELFC_Desc;
 				PopupPlayerRankupSetting s2 = new PopupPlayerRankupSetting();
 				s2.TitleText = "";
 				s2.IsCaption = false;
@@ -2154,7 +2154,7 @@ namespace XeApp.Game.Menu
 			}
 			if (musicData == null)
 				return false;
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			long date = 0;
 			if (!musicData.AJGCPCMLGKO_IsEvent)
 			{
@@ -2215,7 +2215,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					date = musicData.NOKBLCDMLPP_MinigameEventInfo.EMEKFFHCHMH_End;
+					date = musicData.NOKBLCDMLPP_MinigameEventInfo.EMEKFFHCHMH_RewardEnd2;
 					//LAB_00b35acc
 					if (date >= time)
 						return false;
@@ -2224,7 +2224,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				date = musicData.AFCMIOIGAJN_EventInfo.EMEKFFHCHMH_End;
+				date = musicData.AFCMIOIGAJN_EventInfo.EMEKFFHCHMH_RewardEnd2;
 				//LAB_00b35acc
 				if (date >= time)
 					return false;
@@ -2261,7 +2261,7 @@ namespace XeApp.Game.Menu
 				if(CheckDatelineAndAssetUpdate())
 					return true;
 			}
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0)
 				return false;
 			else if(eventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.ENMHPBGOOII_Week)
@@ -2323,7 +2323,7 @@ namespace XeApp.Game.Menu
 			}
 			if(controller != null)
 			{
-				long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 				if(controller.LJOHLEGGGMC_RewardEnd >= t)
 					return false;
 			}
@@ -2354,7 +2354,7 @@ namespace XeApp.Game.Menu
 		{
 			if (musicCloseAt == 0)
 				return false;
-			if (NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime() < musicCloseAt)
+			if (NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime() < musicCloseAt)
 				return false;
 			TextPopupSetting s = new TextPopupSetting();
 			s.IsCaption = false;

@@ -25,19 +25,19 @@ public class ONFFFKPFFGI
 	// // RVA: 0xCAE618 Offset: 0xCAE618 VA: 0xCAE618
 	private void BJLEOACLGBO()
     {
-        long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+        long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
         CDCKLGCKHFG = JPAICCMDGHD(time);
         LMMLAMKOAKA.Clear();
-        for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MLGEHCJPAFB_RichBanner.CDENCMNHNGA.Count; i++)
+        for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MLGEHCJPAFB_RichBanner.CDENCMNHNGA_table.Count; i++)
         {
-            JKMLBONMAHD_RichBanner.OIDOINPHPOE dbRich = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MLGEHCJPAFB_RichBanner.CDENCMNHNGA[i];
+            JKMLBONMAHD_RichBanner.OIDOINPHPOE dbRich = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MLGEHCJPAFB_RichBanner.CDENCMNHNGA_table[i];
             if(dbRich.PPEGAKEIEGM_Enabled > 1)
             {
                 if(CDCKLGCKHFG < dbRich.PDBPFJJCADD && time >= dbRich.PDBPFJJCADD)
                 {
-                    if(dbRich.FDBNFFNFOND >= time)
+                    if(dbRich.FDBNFFNFOND_CloseAt >= time)
                     {
-                        if(dbRich.FJOLNJLLJEJ <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level)
+                        if(dbRich.FJOLNJLLJEJ_Rank <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level)
                         {
                             ABBFICCGNOG data = new ABBFICCGNOG();
                             data.DCHDFOIHMJL = dbRich.KNHOMNONOEB;

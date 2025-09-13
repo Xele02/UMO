@@ -67,7 +67,7 @@ namespace XeApp.Game.Menu
 			m_name.text = data.OPFGFINHFCE_Name;
 			m_info.text = data.KLMPFGOCBHC_Desc;
 			SetWindowStyle(skillNum);
-			m_enemy_id = data.EAHPLCJMPHD_Pic;
+			m_enemy_id = data.EAHPLCJMPHD_PId;
 			m_is_tex_loaded = false;
 			m_is_mask_loaded = false;
 			m_enemy_image.enabled = false;

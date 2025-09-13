@@ -1,9 +1,9 @@
 
 public class KJGBJBLMBJN
 {
-	public BLHNHKMMPAD HBODCMLFDOB = new BLHNHKMMPAD(); // 0x8
+	public BLHNHKMMPAD HBODCMLFDOB_Result = new BLHNHKMMPAD(); // 0x8
 	public string OPFGFINHFCE_Name; // 0xC
-	public int BHCIFFILAKJ_Strg; // 0x10
+	public int BHCIFFILAKJ_Strength; // 0x10
 	public int PCPKGJIMLGO_Crypted; // 0x14
 
 	public int PBJLLAOJMAK_PId { get { return PCPKGJIMLGO_Crypted ^ 0x749f717e; } set { PCPKGJIMLGO_Crypted = value ^ 0x749f717e; } } //0x1A02F00 FOAOPKGHJGM 0x1A02F14 JGEILGLALBP
@@ -11,22 +11,22 @@ public class KJGBJBLMBJN
 	// RVA: 0x1A02F28 Offset: 0x1A02F28 VA: 0x1A02F28
 	public void LHPDDGIJKNB()
     {
-        HBODCMLFDOB.LHPDDGIJKNB_Reset();
+        HBODCMLFDOB_Result.LHPDDGIJKNB_Reset();
         OPFGFINHFCE_Name = "";
-        BHCIFFILAKJ_Strg = 0;
+        BHCIFFILAKJ_Strength = 0;
         PBJLLAOJMAK_PId = 0;
     }
 
 	// // RVA: 0x1A02FC4 Offset: 0x1A02FC4 VA: 0x1A02FC4
 	public bool AGBOGBEOFME(KJGBJBLMBJN OIKJFMGEICL)
 	{
-		if(!HBODCMLFDOB.AGBOGBEOFME(OIKJFMGEICL.HBODCMLFDOB))
+		if(!HBODCMLFDOB_Result.AGBOGBEOFME(OIKJFMGEICL.HBODCMLFDOB_Result))
 			return false;
 		if(OPFGFINHFCE_Name != OIKJFMGEICL.OPFGFINHFCE_Name)
 			return false;
 		if(PCPKGJIMLGO_Crypted != OIKJFMGEICL.PCPKGJIMLGO_Crypted)
 			return false;
-		if(BHCIFFILAKJ_Strg != OIKJFMGEICL.BHCIFFILAKJ_Strg)
+		if(BHCIFFILAKJ_Strength != OIKJFMGEICL.BHCIFFILAKJ_Strength)
 			return false;
 		return true;
 	}
@@ -35,18 +35,18 @@ public class KJGBJBLMBJN
 	public void ODDIHGPONFL(KJGBJBLMBJN OIKJFMGEICL)
 	{
 		OPFGFINHFCE_Name = OIKJFMGEICL.OPFGFINHFCE_Name;
-		HBODCMLFDOB.ODDIHGPONFL(OIKJFMGEICL.HBODCMLFDOB);
+		HBODCMLFDOB_Result.ODDIHGPONFL(OIKJFMGEICL.HBODCMLFDOB_Result);
 		PCPKGJIMLGO_Crypted = OIKJFMGEICL.PCPKGJIMLGO_Crypted;
-		BHCIFFILAKJ_Strg = OIKJFMGEICL.BHCIFFILAKJ_Strg;
+		BHCIFFILAKJ_Strength = OIKJFMGEICL.BHCIFFILAKJ_Strength;
 	}
 
 	// // RVA: 0x1A030E8 Offset: 0x1A030E8 VA: 0x1A030E8
 	public EDOHBJAPLPF_JsonData OKJPIBHMKMJ()
 	{
-		EDOHBJAPLPF_JsonData res = HBODCMLFDOB.NOJCMGAFAAC();
+		EDOHBJAPLPF_JsonData res = HBODCMLFDOB_Result.NOJCMGAFAAC();
 		res["pid"] = PBJLLAOJMAK_PId;
 		res["name"] = OPFGFINHFCE_Name;
-		res["strg"] = BHCIFFILAKJ_Strg;
+		res["strg"] = BHCIFFILAKJ_Strength;
 		return res;
 	}
 }

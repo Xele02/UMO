@@ -85,7 +85,7 @@ namespace XeApp.Game.Menu
 		protected override void GetRankingList(int baseRank, int rankingIdx)
 		{
 			m_windowUi.SetMessageVisible(false);
-			LAMCONGFONF.HHCJCDFCLOB.FAMFKPBPIAA(m_select_diva_id - 1, isFriendList, baseRank, () =>
+			LAMCONGFONF.HHCJCDFCLOB.FAMFKPBPIAA_GetRankingPlayerList(m_select_diva_id - 1, isFriendList, baseRank, () =>
 			{
 				//0x1272B6C
 				OnReceivedRankingList(LAMCONGFONF.HHCJCDFCLOB.HGGPIBNLALJ);

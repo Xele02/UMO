@@ -32,8 +32,8 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x16E8E3C Offset: 0x16E8E3C VA: 0x16E8E3C
 		public void Load(int cosId, int colorId, Action<IiconTexture> callBack)
 		{
-			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo costume = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[cosId - 1];
-			Load(MakeCostumeTexturePath(costume.AHHJLDLAPAN_DivaId, costume.DAJGPBLEEOB_PrismCostumeModelId, colorId), callBack);
+			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo costume = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[cosId - 1];
+			Load(MakeCostumeTexturePath(costume.AHHJLDLAPAN_DivaId, costume.DAJGPBLEEOB_ModelId, colorId), callBack);
 		}
 
 		// // RVA: 0x16E8948 Offset: 0x16E8948 VA: 0x16E8948

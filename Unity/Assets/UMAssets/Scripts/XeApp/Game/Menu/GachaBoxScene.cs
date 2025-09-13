@@ -249,7 +249,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEDD1B0 Offset: 0xEDD1B0 VA: 0xEDD1B0
 		protected void OnSelectItem(Transform parent, HGFPAFPGIKG.CMEDMHFOFAH item)
 		{
-			if(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime() < m_view.JOFAGCFNKIO_Start && 
+			if(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime() < m_view.JOFAGCFNKIO_Start && 
 				EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.GLCLFMGPMAN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene && item.JOPPFEHKNFO_IsPickup)
 			{
 				OnItemSecret(parent, m_view.JOFAGCFNKIO_Start);
@@ -306,7 +306,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEDD858 Offset: 0xEDD858 VA: 0xEDD858
 		protected bool CloseTimeCheck(string endLabel)
 		{
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			if(m_view.EBCHFBIINDP_End < time)
 			{
 				PopupWindowManager.Show(PopupWindowManager.CrateTextContent("", SizeType.Small, MessageManager.Instance.GetMessage("menu", endLabel), new ButtonInfo[1]

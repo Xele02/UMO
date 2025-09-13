@@ -18,7 +18,7 @@ public class JPAPJLIPNOK_RequestAssetList : CACGCMBKHDI_Request
     }
 
 	// RVA: 0x1BA5110 Offset: 0x1BA5110 VA: 0x1BA5110 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
         CHEGCAOBBEA = false;
         BNJPAKLNOPA_WorkerThreadQueue.Add(this.JFEPLJOIFBI);
@@ -60,7 +60,7 @@ public class IKAHKDKIGNA
             fileInfo.KHEKNNFCAOI_Load(fileData, i);
             KGHAJGGMPKL_Files.Add(fileInfo);
         }
-        GLMGHMCOMEC_BaseUrl = (string)IDLHJIOMJBK[AFEHLCGHAEE_Strings.GLMGHMCOMEC_base_url/*base_url*/];
+        GLMGHMCOMEC_BaseUrl = (string)IDLHJIOMJBK[AFEHLCGHAEE_Strings.GLMGHMCOMEC_BaseUrl/*base_url*/];
     }
 
 	// // RVA: 0x8DB8C0 Offset: 0x8DB8C0 VA: 0x8DB8C0

@@ -7,7 +7,7 @@ public class LLBKNDPMGEP
     {
         public int FJOLNJLLJEJ_Rank; // 0x8
         public bool KCGJGPOFOCD; // 0xC
-        public List<MFDJIFIIPJD> HBHMAKNGKFK = new List<MFDJIFIIPJD>(); // 0x10
+        public List<MFDJIFIIPJD> HBHMAKNGKFK_Items = new List<MFDJIFIIPJD>(); // 0x10
     }
 
 	public int EKANGPODCEP_EventId; // 0x8
@@ -20,10 +20,10 @@ public class LLBKNDPMGEP
     {
         AILDCKKOLJG_Results.Clear();
         JMLKAGOACAE.Clear();
-        CANAFALMGLI_EventPresentCampaign ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Find((IKDICBBFBMI_EventBase GHPLINIACBB) =>
+        CANAFALMGLI_EventPresentCampaign ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Find((IKDICBBFBMI_EventBase _GHPLINIACBB_x) =>
         {
             //0x180BCFC
-            return GHPLINIACBB.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign;
+            return _GHPLINIACBB_x.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DMPMKBCPHMA_PresentCampaign;
         }) as CANAFALMGLI_EventPresentCampaign;
         if(ev != null)
         {
@@ -53,7 +53,7 @@ public class LLBKNDPMGEP
                         {
                             MFDJIFIIPJD m_ = new MFDJIFIIPJD();
                             m_.KHEKNNFCAOI(db.OBPOHDENMHH[AILDCKKOLJG_Results[i] - 1].GLCLFMGPMAN_ItemId[j], db.OBPOHDENMHH[AILDCKKOLJG_Results[i] - 1].MBJIFDBEDAC_Cnt[j]);
-                            d.HBHMAKNGKFK.Add(m_);
+                            d.HBHMAKNGKFK_Items.Add(m_);
                         }
                         JMLKAGOACAE.Add(d);
                     }
@@ -104,7 +104,7 @@ public class LLBKNDPMGEP
         m.NNFNGLJOKKF_ItemId = 60000;
         m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
         l2.Add(m);
-        g.HBHMAKNGKFK = l2;
+        g.HBHMAKNGKFK_Items = l2;
         JMLKAGOACAE.Add(g);
         g = new GDGOMBCIJDL();
         g.FJOLNJLLJEJ_Rank = 2;
@@ -130,7 +130,7 @@ public class LLBKNDPMGEP
         m.NNFNGLJOKKF_ItemId = 40000;
         m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
         l2.Add(m);
-        g.HBHMAKNGKFK = l2;
+        g.HBHMAKNGKFK_Items = l2;
         JMLKAGOACAE.Add(g);
         g = new GDGOMBCIJDL();
         g.FJOLNJLLJEJ_Rank = 3;
@@ -146,7 +146,7 @@ public class LLBKNDPMGEP
         m.NNFNGLJOKKF_ItemId = 20000;
         m.NPPNDDMPFJJ_ItemCategory = EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit;
         l2.Add(m);
-        g.HBHMAKNGKFK = l2;
+        g.HBHMAKNGKFK_Items = l2;
         JMLKAGOACAE.Add(g);
     }
 }

@@ -678,7 +678,7 @@ namespace XeApp.Game.Common
 			OKGLGHCBCJP_Database o = im.NKEBMCIMJND_Database;
 			LCLCCHLDNHJ_Costume l = o.MFPNGNMFEAL_Costume;
 			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo a = l.NLIBHNJNJAN_GetUnlockedCostumeOrDefault(divaId, modelId);
-			int e = a.EGLDFPILJLG_HasSpecialEffects;
+			int e = a.EGLDFPILJLG_SkillBuffEffect;
 			if(e == 0)
 			{
 				yield break;

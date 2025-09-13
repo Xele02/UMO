@@ -218,7 +218,7 @@ namespace XeApp.Game.Menu
 			}
 			for(int i = 0; i < m_ValkyrieList.Count; i++)
 			{
-				m_SeriesValkyrieList[(int)m_ValkyrieList[i].CPKMLLNADLJ_Attr - 1].Add(m_ValkyrieList[i]);
+				m_SeriesValkyrieList[(int)m_ValkyrieList[i].CPKMLLNADLJ_Serie - 1].Add(m_ValkyrieList[i]);
 			}
 			for(int i = 0; i < 5; i++)
 			{
@@ -241,7 +241,7 @@ namespace XeApp.Game.Menu
 				//0x1529244
 				return _.LLOBHDMHJIG_Id == vfId;
 			});
-			SelectSeries = (int)d.CPKMLLNADLJ_Attr - 1;
+			SelectSeries = (int)d.CPKMLLNADLJ_Serie - 1;
 			Select = m_SeriesValkyrieList[SelectSeries].FindIndex((HEFCLPGPMLK.ANKPCIEKPAH _) =>
 			{
 				//0x152927C
@@ -255,7 +255,7 @@ namespace XeApp.Game.Menu
 			if(vfId < 1)
 			{
 				vfId = GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.AHMOGDDPIFL_LastVfId;
-				List<int> l = m_view.LOEDABGEMFJ(GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.CPKMLLNADLJ_Series);
+				List<int> l = m_view.LOEDABGEMFJ(GameManager.Instance.localSave.EPJOACOONAC_GetSave().DKFCBKNPPOO_Offer.CPKMLLNADLJ_Serie);
 				if (l.Count > 0)
 					vfId = l[0];
 			}
@@ -264,7 +264,7 @@ namespace XeApp.Game.Menu
 				//0x15292B4
 				return _.LLOBHDMHJIG_Id == vfId;
 			});
-			SelectSeries = (int)d.CPKMLLNADLJ_Attr - 1;
+			SelectSeries = (int)d.CPKMLLNADLJ_Serie - 1;
 			Select = m_SeriesValkyrieList[SelectSeries].FindIndex((HEFCLPGPMLK.ANKPCIEKPAH _) =>
 			{
 				//0x15292EC

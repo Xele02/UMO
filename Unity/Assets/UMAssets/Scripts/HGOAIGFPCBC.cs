@@ -4,7 +4,7 @@ using XeApp.Game.Menu;
 
 public class HGOAIGFPCBC
 {
-	public BadgeConstant.ID BEEIIJJKDBH_BadgeId; // 0x8
+	public BadgeConstant.ID BEEIIJJKDBH_BadgeConstantId; // 0x8
 	public string BHANMJKCCBC_BadgeText; // 0xC
 	public int PKNLMLDKCLM_AchievedCount; // 0x10
 	
@@ -38,12 +38,12 @@ public class HGOAIGFPCBC
 		PKNLMLDKCLM_AchievedCount = HMFFHLPNMPH;
 		if(HMFFHLPNMPH < 1)
 		{
-			BEEIIJJKDBH_BadgeId = 0;
+			BEEIIJJKDBH_BadgeConstantId = 0;
 			BHANMJKCCBC_BadgeText = "";
 		}
 		else
 		{
-			BEEIIJJKDBH_BadgeId = BadgeConstant.ID.Label;
+			BEEIIJJKDBH_BadgeConstantId = BadgeConstant.ID.Label;
 			BHANMJKCCBC_BadgeText = QuestUtility.GetAchievedCountText(HMFFHLPNMPH);
 		}
 	}

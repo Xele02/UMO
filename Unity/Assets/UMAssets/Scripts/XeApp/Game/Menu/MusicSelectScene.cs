@@ -302,7 +302,7 @@ namespace XeApp.Game.Menu
 		protected override void SetupViewMusicData()
 		{
 			m_originalMusicDataList.Clear();
-			long val = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long val = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			for(int i = 1; i < 7; i++)
 			{
 				List<IBJAKJJICBC> viewList = IBJAKJJICBC.FKDIMODKKJD(i, val, false, false, false, false);

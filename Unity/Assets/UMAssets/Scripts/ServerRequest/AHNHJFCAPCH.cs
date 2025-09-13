@@ -33,11 +33,11 @@ public class AHNHJFCAPCH_SetRaidbossRewardsReceivedAndSave : CACGCMBKHDI_Request
 		public int ICEMJDBBDMG_DataStatus; // 0x18
 
 		// RVA: 0x15C8DD4 Offset: 0x15C8DD4 VA: 0x15C8DD4
-		public LKFHBFHOLBG(EDOHBJAPLPF_JsonData DLENPPIJNPA)
+		public LKFHBFHOLBG(EDOHBJAPLPF_JsonData _DLENPPIJNPA_json)
 		{
-			OJCCKOICMJK_CreatedAt = JsonUtil.GetLong(DLENPPIJNPA, "created_at", 0);
-			LPJIIDJJKOE_UpdatedAt = JsonUtil.GetLong(DLENPPIJNPA, "updated_at", 0);
-			ICEMJDBBDMG_DataStatus = (int)DLENPPIJNPA["data_status"];
+			OJCCKOICMJK_CreatedAt = JsonUtil.GetLong(_DLENPPIJNPA_json, "created_at", 0);
+			LPJIIDJJKOE_UpdatedAt = JsonUtil.GetLong(_DLENPPIJNPA_json, "updated_at", 0);
+			ICEMJDBBDMG_DataStatus = (int)_DLENPPIJNPA_json["data_status"];
 		}
 	}
 
@@ -52,7 +52,7 @@ public class AHNHJFCAPCH_SetRaidbossRewardsReceivedAndSave : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0x15C8CBC Offset: 0x15C8CBC VA: 0x15C8CBC Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		PJKLMCGEJMK.DALFMJFKCGJ = BIHCCEHLAOD.MCKEOKFMLAH;
 		NFEAMMJIMPG = new LKFHBFHOLBG(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

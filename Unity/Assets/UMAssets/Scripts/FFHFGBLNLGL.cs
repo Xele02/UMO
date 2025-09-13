@@ -6,35 +6,35 @@ public class FFHFGBLNLGL
 {
 	public class IHJLLOMMCCG
 	{
-		private int EHOIENNDEDH; // 0x8
+		private int EHOIENNDEDH_IdCrypted; // 0x8
 		private int HLMAFFLCCKD; // 0xC
 		private int MPBBPNKICGA; // 0x10
 
-		public int PPFNGGCBJKC_Id { get { return EHOIENNDEDH; } set { EHOIENNDEDH = value; } } //0x14DDA18 DEMEPMAEJOO 0x14DD31C HIGKAIDMOKN
+		public int PPFNGGCBJKC_Id { get { return EHOIENNDEDH_IdCrypted; } set { EHOIENNDEDH_IdCrypted = value; } } //0x14DDA18 DEMEPMAEJOO 0x14DD31C HIGKAIDMOKN
 		public int HMFFHLPNMPH { get { return HLMAFFLCCKD; } set { HLMAFFLCCKD = value; } } //0x14DDA20 NJOGDDPICKG 0x14DD324 NBBGMMBICNA
 		public int MBACHPLELHF { get { return MPBBPNKICGA; } set { MPBBPNKICGA = value; } } //0x14DDA28 GBEOFPAFPEL 0x14DD32C GEBBPCBLJLG
 	}
 
 	private const int JNCCCCPBDIC = 1;
 	private List<IHJLLOMMCCG> DHDCHLAIAMP = new List<IHJLLOMMCCG>(); // 0x8
-	private string ELLBAAFKDCH_FilePath; // 0xC
+	private string ELLBAAFKDCH_Filename; // 0xC
 
 	// RVA: 0x14DCCA0 Offset: 0x14DCCA0 VA: 0x14DCCA0
 	public FFHFGBLNLGL()
 	{
-		ELLBAAFKDCH_FilePath = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/SaveData/gd";
+		ELLBAAFKDCH_Filename = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/SaveData/gd";
 	}
 
 	//// RVA: 0x14DCD7C Offset: 0x14DCD7C VA: 0x14DCD7C
-	//private void KHEKNNFCAOI(string CJEKGLGBIHF) { }
+	//private void KHEKNNFCAOI(string _CJEKGLGBIHF_path) { }
 
 	//// RVA: 0x14DCD84 Offset: 0x14DCD84 VA: 0x14DCD84
 	public void PCODDPDFLHK()
 	{
 		DHDCHLAIAMP.Clear();
-		if(File.Exists(ELLBAAFKDCH_FilePath))
+		if(File.Exists(ELLBAAFKDCH_Filename))
 		{
-			FileStream fs = new FileStream(ELLBAAFKDCH_FilePath, FileMode.Open);
+			FileStream fs = new FileStream(ELLBAAFKDCH_Filename, FileMode.Open);
 			BinaryReader br = new BinaryReader(fs);
 			int v = br.ReadInt32();
 			int num = br.ReadInt32();
@@ -54,12 +54,12 @@ public class FFHFGBLNLGL
 	//// RVA: 0x14DD334 Offset: 0x14DD334 VA: 0x14DD334
 	public void HJMKBCFJOOH()
 	{
-		string dir = Path.GetDirectoryName(ELLBAAFKDCH_FilePath);
+		string dir = Path.GetDirectoryName(ELLBAAFKDCH_Filename);
 		if(!Directory.Exists(dir))
 		{
 			Directory.CreateDirectory(dir);
 		}
-		FileStream fs = new FileStream(ELLBAAFKDCH_FilePath, FileMode.Create);
+		FileStream fs = new FileStream(ELLBAAFKDCH_Filename, FileMode.Create);
 		BinaryWriter br = new BinaryWriter(fs);
 		br.Write(1);
 		br.Write(DHDCHLAIAMP.Count);
@@ -78,10 +78,10 @@ public class FFHFGBLNLGL
 	//// RVA: 0x14DDA30 Offset: 0x14DDA30 VA: 0x14DDA30
 	public void NIFJAPKCPOK(int HHGMPEEGFMA, int BHBHMFCMLHN)
 	{
-		IHJLLOMMCCG d = DHDCHLAIAMP.Find((IHJLLOMMCCG GHPLINIACBB) =>
+		IHJLLOMMCCG d = DHDCHLAIAMP.Find((IHJLLOMMCCG _GHPLINIACBB_x) =>
 		{
 			//0x14DE0CC
-			return GHPLINIACBB.PPFNGGCBJKC_Id == HHGMPEEGFMA;
+			return _GHPLINIACBB_x.PPFNGGCBJKC_Id == HHGMPEEGFMA;
 		});
 		if(d == null)
 		{
@@ -98,10 +98,10 @@ public class FFHFGBLNLGL
 	{
 		while(true)
 		{
-			int idx = DHDCHLAIAMP.FindIndex((IHJLLOMMCCG GHPLINIACBB) =>
+			int idx = DHDCHLAIAMP.FindIndex((IHJLLOMMCCG _GHPLINIACBB_x) =>
 			{
 				//0x14DE104
-				return GHPLINIACBB.MBACHPLELHF != BHBHMFCMLHN;
+				return _GHPLINIACBB_x.MBACHPLELHF != BHBHMFCMLHN;
 			});
 			if (idx < 0)
 				break;

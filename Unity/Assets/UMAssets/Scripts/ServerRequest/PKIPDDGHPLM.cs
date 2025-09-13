@@ -14,8 +14,8 @@ public class PKIPDDGHPLM_IncrementLoginCount : CACGCMBKHDI_Request
         // RVA: 0x93E510 Offset: 0x93E510 VA: 0x93E510
         public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
         {
-            CHEAKMNHEAM_LastPlayedAt = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.CHEAKMNHEAM_last_played_at];
-            EDOHBJAPLPF_JsonData list = IDLHJIOMJBK[AFEHLCGHAEE_Strings.CEBOHGGJBMN_login_bonuses];
+            CHEAKMNHEAM_LastPlayedAt = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.CHEAKMNHEAM_LastPlayedAt];
+            EDOHBJAPLPF_JsonData list = IDLHJIOMJBK[AFEHLCGHAEE_Strings.CEBOHGGJBMN_LoginBonuses];
             CEBOHGGJBMN_LoginBonuses = new List<GMHKBJLIILI>(list.HNBFOAJIIAL_Count);
             for(int i = 0; i < list.HNBFOAJIIAL_Count; i++)
             {
@@ -44,7 +44,7 @@ public class PKIPDDGHPLM_IncrementLoginCount : CACGCMBKHDI_Request
     }
 
 	// RVA: 0x93E430 Offset: 0x93E430 VA: 0x93E430 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
         NFEAMMJIMPG = new MNIIGPNDJOC();
         NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

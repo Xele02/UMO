@@ -199,7 +199,7 @@ namespace XeApp.Game.MiniGame
 			ShootingButtonDisable();
 			bool done = false;
 			bool err = false;
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			controller = m_viewShootingData.OEGDCBLNNFF(time, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/);
 			if(controller != null)
 			{
@@ -575,7 +575,7 @@ namespace XeApp.Game.MiniGame
 			}
 			m_resultLayout.PlayerEnter();
 			yield return Co.R(Fade(0));
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			AMLGMLNGMFB_EventAprilFool af = m_viewShootingData.OEGDCBLNNFF(time, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/);
 			score = m_resultData.Score;
 			highScore = m_viewShootingData.LGDLEHHOIEL_HighScore;
@@ -660,7 +660,7 @@ namespace XeApp.Game.MiniGame
 		public void HelpButton()
 		{
 			m_soundManager.SystemSePlay(3);
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			AMLGMLNGMFB_EventAprilFool af = m_viewShootingData.OEGDCBLNNFF(time, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/);
 			if(af != null)
 			{

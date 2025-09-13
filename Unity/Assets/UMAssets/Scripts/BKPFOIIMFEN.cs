@@ -1,7 +1,7 @@
 
 public class BKPFOIIMFEN
 {
-	public static string[] CDENCMNHNGA = new string[353]
+	public static string[] CDENCMNHNGA_table = new string[353]
     {
         "UNKNOWN",
         "INTERNAL_SERVER_ERROR",

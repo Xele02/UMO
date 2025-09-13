@@ -62,7 +62,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x1782B04 Offset: 0x1782B04 VA: 0x1782B04
 		public void Setup(GameObject year_obj, GameObject month_obj)
 		{
-			DateTime date = Utility.GetLocalDateTime(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime());
+			DateTime date = Utility.GetLocalDateTime(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 			m_YearStart = date.Year - 100;
 			m_YearEnd = date.Year - 1;
 			Transform t = transform.Find("sw_birth (AbsoluteLayout)");

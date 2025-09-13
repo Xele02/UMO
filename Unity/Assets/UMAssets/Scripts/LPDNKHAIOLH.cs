@@ -5,7 +5,7 @@ public class LPDNKHAIOLH
 	private static uint PMBEODGMMBB = 0x15ab17a1; // 0x4
 
 	// // RVA: 0x10CE2AC Offset: 0x10CE2AC VA: 0x10CE2AC
-	private static uint FBGGEFFJJHB()
+	private static uint FBGGEFFJJHB_xor()
 	{
 		uint a = PMBEODGMMBB ^ (PMBEODGMMBB << 0xd);
 		a = a ^ a >> 0x11;
@@ -23,7 +23,7 @@ public class LPDNKHAIOLH
 	// // RVA: 0x10CE3F4 Offset: 0x10CE3F4 VA: 0x10CE3F4
 	public static int CEIBAFOCNCA()
 	{
-		return (int)(FBGGEFFJJHB() ^ 0x7fffffff);
+		return (int)(FBGGEFFJJHB_xor() ^ 0x7fffffff);
 	}
 
 	// // RVA: 0x10CE470 Offset: 0x10CE470 VA: 0x10CE470

@@ -58,7 +58,7 @@ namespace XeApp.Game.Menu
 			m_numScore.SetNumber(m_view.KNIFCANOHOC_Sc, 0);
 			m_numExBattleScore.SetNumber(m_view.KDNCMJBDCLE_ExBattleScore, 0);
 			m_numExBattleHiScore.SetNumber(m_view.LDIODNEADGG_Hs, 0);
-			if(m_view.FFHMPNGJCLK_IsHighScore)
+			if(m_view.FFHMPNGJCLK_NewRecord)
 			{
 				m_layoutNewRecord.StartChildrenAnimGoStop("01");
 				m_layoutNewRecordIcon.StartChildrenAnimGoStop("01");
@@ -72,7 +72,7 @@ namespace XeApp.Game.Menu
             MessageBank bk = MessageManager.Instance.GetBank("menu");
             m_textClassRank.text = string.Format(bk.GetMessageByLabel("music_event_battle_class"), m_view.BGJDHCEOIDB_ClassRank);
 			m_numWinBonus.SetNumber(m_view.IOOBNLAHLEJ_WinBonus, 0);
-			if(m_view.DPCFADCFMOA_Wl)
+			if(m_view.DPCFADCFMOA_Win)
 			{
 				m_textWinResult.text = bk.GetMessageByLabel("event_reward_result_win");
 				m_layoutWinLose.StartChildrenAnimGoStop("01");

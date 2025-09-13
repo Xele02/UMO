@@ -113,8 +113,8 @@ namespace XeApp.Game.Menu
 			SortItem = (SortItem)friendProperty.LHPDCGNKPHD_sortItem;
 			AssistItem = (AssistItem)friendProperty.NPEEPPCPEPE_assistItem;
 			RarityFilter = (uint)friendProperty.ACCHOFLOOEC_RarityFilter;
-			AttributeFilter = (uint)friendProperty.BOFFOHHLLFG_attributeFilter;
-			SeriaseFilter = (uint)friendProperty.BBIIHLNBHDE_seriaseFilter;
+			AttributeFilter = (uint)friendProperty.BOFFOHHLLFG_AttributeFilter;
+			SeriaseFilter = (uint)friendProperty.BBIIHLNBHDE_SerieFilter;
 			CenterSkillFilter = (uint)friendProperty.LKPCKPJGJKN_centerSkillFilter;
 		}
 	}

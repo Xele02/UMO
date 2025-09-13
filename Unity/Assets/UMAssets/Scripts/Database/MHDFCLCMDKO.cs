@@ -7,7 +7,7 @@ public class MHDFCLCMDKO_Enemy : DIHHCBACKGG_DbSection
     public class CJLENGHPIDH_EnemyInfo
     {
         public int EJNIMIAPJFJ_Id; // 0x8
-        public int EAHPLCJMPHD_Pic; // 0xC
+        public int EAHPLCJMPHD_PId; // 0xC Pic
         public int EELBHDJJJHH_Plt; // 0x10
         public int EDLACELKJIK_LiveSkill; // 0x14
         public int NJOPIPNGANO_CS; // 0x18
@@ -23,7 +23,7 @@ public class MHDFCLCMDKO_Enemy : DIHHCBACKGG_DbSection
         public void ODDIHGPONFL_Copy(MHDFCLCMDKO_Enemy.CJLENGHPIDH_EnemyInfo GPBJHKLFCEP)
 		{
 			EJNIMIAPJFJ_Id = GPBJHKLFCEP.EJNIMIAPJFJ_Id;
-			EAHPLCJMPHD_Pic = GPBJHKLFCEP.EAHPLCJMPHD_Pic;
+			EAHPLCJMPHD_PId = GPBJHKLFCEP.EAHPLCJMPHD_PId;
 			EELBHDJJJHH_Plt = GPBJHKLFCEP.EELBHDJJJHH_Plt;
 			EDLACELKJIK_LiveSkill = GPBJHKLFCEP.EDLACELKJIK_LiveSkill;
 			NJOPIPNGANO_CS = GPBJHKLFCEP.NJOPIPNGANO_CS;
@@ -34,12 +34,12 @@ public class MHDFCLCMDKO_Enemy : DIHHCBACKGG_DbSection
 	public List<CJLENGHPIDH_EnemyInfo> CKADCLJDCJK_EnemyList { get; private set; } // 0x20 LKHMPJNEEHH NOIMCFANIGL KFNHNMPHCGM
 
 	// // RVA: 0x132ACA4 Offset: 0x132ACA4 VA: 0x132ACA4
-	public CJLENGHPIDH_EnemyInfo INONDJKKOKG(int EJNIMIAPJFJ)
+	public CJLENGHPIDH_EnemyInfo INONDJKKOKG(int _EJNIMIAPJFJ_Id)
 	{
 		return CKADCLJDCJK_EnemyList.Find((CJLENGHPIDH_EnemyInfo PKLPKMLGFGK) =>
 		{
 			//0x132B744
-			return PKLPKMLGFGK.EJNIMIAPJFJ_Id == EJNIMIAPJFJ;
+			return PKLPKMLGFGK.EJNIMIAPJFJ_Id == _EJNIMIAPJFJ_Id;
 		});
 	}
 
@@ -59,9 +59,9 @@ public class MHDFCLCMDKO_Enemy : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x132AF10 Offset: 0x132AF10 VA: 0x132AF10 Slot: 9
-	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
+	public override bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data)
     {
-		NHADPDNKGIE parser = NHADPDNKGIE.HEGEKFMJNCC(DBBGALAPFGC);
+		NHADPDNKGIE parser = NHADPDNKGIE.HEGEKFMJNCC(_DBBGALAPFGC_Data);
 		FJGJEJDJHEG(parser);
 		return true;
     }
@@ -81,7 +81,7 @@ public class MHDFCLCMDKO_Enemy : DIHHCBACKGG_DbSection
 		{
 			CJLENGHPIDH_EnemyInfo data = new CJLENGHPIDH_EnemyInfo();
 			data.EJNIMIAPJFJ_Id = (int)array[i].PPFNGGCBJKC;
-			data.EAHPLCJMPHD_Pic = (int)array[i].HANMDEBPBHG;
+			data.EAHPLCJMPHD_PId = (int)array[i].HANMDEBPBHG;
 			data.EELBHDJJJHH_Plt = (int)array[i].HDEBAGHEIKD;
 			data.EDLACELKJIK_LiveSkill = (int)array[i].LNKKMBCDPHH;
 			data.NJOPIPNGANO_CS = (int)array[i].AKOJJJLPCKA;

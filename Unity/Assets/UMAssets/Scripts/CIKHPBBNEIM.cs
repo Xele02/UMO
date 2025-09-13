@@ -14,7 +14,7 @@ public class CIKHPBBNEIM
         public bool ONCKEDBOIDN_IsEvo; // 0x19
         public bool JKCLMIDAIMI_IsAssistEvo; // 0x1A
         public bool IADCHIFJHOJ_Unlocked; // 0x1B
-        public bool CBLHLEKLLDE; // 0x1C
+        public bool CBLHLEKLLDE_IsSet; // 0x1C
         public bool ILOKENBBBAE_Available; // 0x1D
     }
 
@@ -28,15 +28,15 @@ public class CIKHPBBNEIM
 	private List<PBJEFDNBBCD> EMCDEMHBFDB = new List<PBJEFDNBBCD>(); // 0x8
 
 	// // RVA: 0xFF8418 Offset: 0xFF8418 VA: 0xFF8418
-	public void OBKGEDCKHHE(IKDICBBFBMI_EventBase OBMKLJFKAPH, bool CMEOKJMCEBH)
+	public void OBKGEDCKHHE(IKDICBBFBMI_EventBase OBMKLJFKAPH, bool _CMEOKJMCEBH_IsGoDiva)
     {
-        OBKGEDCKHHE(OBMKLJFKAPH, GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(CMEOKJMCEBH));
+        OBKGEDCKHHE(OBMKLJFKAPH, GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(_CMEOKJMCEBH_IsGoDiva));
     }
 
 	// // RVA: 0xFF9CE8 Offset: 0xFF9CE8 VA: 0xFF9CE8
-	public void NFEECBNKKHD(IKDICBBFBMI_EventBase OBMKLJFKAPH, int CEHNJCIIKDN, bool CMEOKJMCEBH)
+	public void NFEECBNKKHD(IKDICBBFBMI_EventBase OBMKLJFKAPH, int CEHNJCIIKDN, bool _CMEOKJMCEBH_IsGoDiva)
     {
-        OBKGEDCKHHE(OBMKLJFKAPH, GameManager.Instance.ViewPlayerData.JKIJFGGMNAN_GetUnit(CEHNJCIIKDN, CMEOKJMCEBH));
+        OBKGEDCKHHE(OBMKLJFKAPH, GameManager.Instance.ViewPlayerData.JKIJFGGMNAN_GetUnit(CEHNJCIIKDN, _CMEOKJMCEBH_IsGoDiva));
     }
 
 	// // RVA: 0xFF84F4 Offset: 0xFF84F4 VA: 0xFF84F4
@@ -47,10 +47,10 @@ public class CIKHPBBNEIM
         {
             IKDICBBFBMI_EventBase.CEGDBNNIDIG d = OBMKLJFKAPH.LHAKGDAGEMM_EpBonusInfos[i];
             int KELFCMEOPPM = d.KELFCMEOPPM_EpId;
-            List<MLIBEPGADJH_Scene.KKLDOOJBJMN> l = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList.FindAll((MLIBEPGADJH_Scene.KKLDOOJBJMN GHPLINIACBB) =>
+            List<MLIBEPGADJH_Scene.KKLDOOJBJMN> l = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table.FindAll((MLIBEPGADJH_Scene.KKLDOOJBJMN _GHPLINIACBB_x) =>
             {
                 //0xFFA128
-                return KELFCMEOPPM == GHPLINIACBB.KELFCMEOPPM_Ep;
+                return KELFCMEOPPM == _GHPLINIACBB_x.KELFCMEOPPM_Ep;
             });
             PBJEFDNBBCD p = new PBJEFDNBBCD();
             float f = 0;
@@ -66,23 +66,23 @@ public class CIKHPBBNEIM
                 {
                     if(!l[j].MCCIFLKCNKO_Feed)
                     {
-                        ODGCADPPIFA GJLFANGDGCL = new ODGCADPPIFA();
-                        GJLFANGDGCL.BCCHOBPJJKE_SceneId = l[j].BCCHOBPJJKE_Id;
-                        GJLFANGDGCL.BPMAIEFLOPP = l[j].EKLIPGELKCL_Rarity;
-                        MMPBPOIFDAF_Scene.PMKOFEIONEG saveScene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA[l[j].BCCHOBPJJKE_Id - 1];
-                        GJLFANGDGCL.IADCHIFJHOJ_Unlocked = saveScene.IHIAFIHAAPO_Unlocked;
-                        GJLFANGDGCL.CBLHLEKLLDE = false;
-                        GJLFANGDGCL.ILOKENBBBAE_Available = false;
-                        GJLFANGDGCL.GKBNFLFEIOF_IsAssist = false;
-                        GJLFANGDGCL.ONCKEDBOIDN_IsEvo = saveScene.JPIPENJGGDD_Mlt > 0;
-                        if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.OEEJKKFOBKD(l[j].BCCHOBPJJKE_Id))
+                        ODGCADPPIFA GJLFANGDGCL_Target = new ODGCADPPIFA();
+                        GJLFANGDGCL_Target.BCCHOBPJJKE_SceneId = l[j].BCCHOBPJJKE_SceneId;
+                        GJLFANGDGCL_Target.BPMAIEFLOPP = l[j].EKLIPGELKCL_Rarity;
+                        MMPBPOIFDAF_Scene.PMKOFEIONEG saveScene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA[l[j].BCCHOBPJJKE_SceneId - 1];
+                        GJLFANGDGCL_Target.IADCHIFJHOJ_Unlocked = saveScene.IHIAFIHAAPO_Unlocked;
+                        GJLFANGDGCL_Target.CBLHLEKLLDE_IsSet = false;
+                        GJLFANGDGCL_Target.ILOKENBBBAE_Available = false;
+                        GJLFANGDGCL_Target.GKBNFLFEIOF_IsAssist = false;
+                        GJLFANGDGCL_Target.ONCKEDBOIDN_IsEvo = saveScene.JPIPENJGGDD_Mlt > 0;
+                        if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.OEEJKKFOBKD(l[j].BCCHOBPJJKE_SceneId))
                         {
-                            GJLFANGDGCL.ONCKEDBOIDN_IsEvo = true;
+                            GJLFANGDGCL_Target.ONCKEDBOIDN_IsEvo = true;
                         }
-                        IKDICBBFBMI_EventBase.MEBJJBHPMEO ik = OBMKLJFKAPH.DHOMAEOEFMJ_EpBonuByScene.Find((IKDICBBFBMI_EventBase.MEBJJBHPMEO GHPLINIACBB) =>
+                        IKDICBBFBMI_EventBase.MEBJJBHPMEO ik = OBMKLJFKAPH.DHOMAEOEFMJ_EpBonuByScene.Find((IKDICBBFBMI_EventBase.MEBJJBHPMEO _GHPLINIACBB_x) =>
                         {
                             //0xFFA16C
-                            return GHPLINIACBB.CNKFPJCGNFE_SceneId == GJLFANGDGCL.BCCHOBPJJKE_SceneId;
+                            return _GHPLINIACBB_x.CNKFPJCGNFE_SceneId == GJLFANGDGCL_Target.BCCHOBPJJKE_SceneId;
                         });
                         int a1, a2;
                         if(ik == null)
@@ -96,17 +96,17 @@ public class CIKHPBBNEIM
                             a1 = ik.GNFBMCGMCFO_BonusBefore;
                             a2 = ik.BFFGFAMJAIG_BonusAfter;
                         }
-                        GJLFANGDGCL.FDLEABMKOGO_BonusBefore = (int)(f * a1);
-                        GJLFANGDGCL.ALDAOOLPHCH_BonusAfter = (int)(f * a2);
+                        GJLFANGDGCL_Target.FDLEABMKOGO_BonusBefore = (int)(f * a1);
+                        GJLFANGDGCL_Target.ALDAOOLPHCH_BonusAfter = (int)(f * a2);
                         for(int k = 0; k < 3; k++)
                         {
-                            if(MLAFAACKKBG.DJPFJGKGOOF_ScoreTeam.FDBOPFEOENF_MainDivas[k].DIPKCALNIII_Id != 0)
+                            if(MLAFAACKKBG.DJPFJGKGOOF_ScoreTeam.FDBOPFEOENF_Diva[k].DIPKCALNIII_DivaId != 0)
                             {
                                 for(int kk = 0; kk < 3; kk++)
                                 {
-                                    if(GJLFANGDGCL.BCCHOBPJJKE_SceneId == MLAFAACKKBG.DJPFJGKGOOF_ScoreTeam.FDBOPFEOENF_MainDivas[k].EBDNICPAFLB_SSlot[kk])
+                                    if(GJLFANGDGCL_Target.BCCHOBPJJKE_SceneId == MLAFAACKKBG.DJPFJGKGOOF_ScoreTeam.FDBOPFEOENF_Diva[k].EBDNICPAFLB_SSlot[kk])
                                     {
-                                        GJLFANGDGCL.CBLHLEKLLDE = true;
+                                        GJLFANGDGCL_Target.CBLHLEKLLDE_IsSet = true;
                                     }
                                 }
                             }
@@ -114,29 +114,29 @@ public class CIKHPBBNEIM
                         if(GameManager.Instance.SelectedGuestData != null && 
                             GameManager.Instance.SelectedGuestData.KHGKPKDBMOH_GetAssistScene() != null)
                         {
-                            if(GameManager.Instance.SelectedGuestData.KHGKPKDBMOH_GetAssistScene().BCCHOBPJJKE_SceneId == GJLFANGDGCL.BCCHOBPJJKE_SceneId)
+                            if(GameManager.Instance.SelectedGuestData.KHGKPKDBMOH_GetAssistScene().BCCHOBPJJKE_SceneId == GJLFANGDGCL_Target.BCCHOBPJJKE_SceneId)
                             {
-                                GJLFANGDGCL.JKCLMIDAIMI_IsAssistEvo = GameManager.Instance.SelectedGuestData.KHGKPKDBMOH_GetAssistScene().CGIELKDLHGE_GetEvolveId() > 1;
-                                GJLFANGDGCL.GKBNFLFEIOF_IsAssist = true;
-                                if(!GJLFANGDGCL.JKCLMIDAIMI_IsAssistEvo)
+                                GJLFANGDGCL_Target.JKCLMIDAIMI_IsAssistEvo = GameManager.Instance.SelectedGuestData.KHGKPKDBMOH_GetAssistScene().CGIELKDLHGE_GetEvolveId() > 1;
+                                GJLFANGDGCL_Target.GKBNFLFEIOF_IsAssist = true;
+                                if(!GJLFANGDGCL_Target.JKCLMIDAIMI_IsAssistEvo)
                                 {
-                                    if(GJLFANGDGCL.CBLHLEKLLDE)
+                                    if(GJLFANGDGCL_Target.CBLHLEKLLDE_IsSet)
                                     {
-                                        GJLFANGDGCL.GKBNFLFEIOF_IsAssist = false;
-                                        if(!GJLFANGDGCL.JKCLMIDAIMI_IsAssistEvo)
+                                        GJLFANGDGCL_Target.GKBNFLFEIOF_IsAssist = false;
+                                        if(!GJLFANGDGCL_Target.JKCLMIDAIMI_IsAssistEvo)
                                         {
-                                            GJLFANGDGCL.GKBNFLFEIOF_IsAssist = !GJLFANGDGCL.ONCKEDBOIDN_IsEvo;
+                                            GJLFANGDGCL_Target.GKBNFLFEIOF_IsAssist = !GJLFANGDGCL_Target.ONCKEDBOIDN_IsEvo;
                                         }
                                     }
                                 }
-                                GJLFANGDGCL.CBLHLEKLLDE = true;
-                                if(GJLFANGDGCL.GKBNFLFEIOF_IsAssist)
+                                GJLFANGDGCL_Target.CBLHLEKLLDE_IsSet = true;
+                                if(GJLFANGDGCL_Target.GKBNFLFEIOF_IsAssist)
                                 {
-                                    GJLFANGDGCL.BPMAIEFLOPP = GameManager.Instance.SelectedGuestData.KHGKPKDBMOH_GetAssistScene().JKGFBFPIMGA_Rarity;
+                                    GJLFANGDGCL_Target.BPMAIEFLOPP = GameManager.Instance.SelectedGuestData.KHGKPKDBMOH_GetAssistScene().JKGFBFPIMGA_Rarity;
                                 }
                             }
                         }
-                        p.FLJNOOPOAGI.Add(GJLFANGDGCL);
+                        p.FLJNOOPOAGI.Add(GJLFANGDGCL_Target);
                     }
                 }
             }
@@ -157,7 +157,7 @@ public class CIKHPBBNEIM
             int a4 = -1;
             for(int j = 0; j < p.FLJNOOPOAGI.Count; j++)
             {
-                if(p.FLJNOOPOAGI[j].CBLHLEKLLDE)
+                if(p.FLJNOOPOAGI[j].CBLHLEKLLDE_IsSet)
                 {
                     bool a5 = true;
                     if(a3 < 0)
@@ -201,10 +201,10 @@ public class CIKHPBBNEIM
 	// // RVA: 0xFF9F38 Offset: 0xFF9F38 VA: 0xFF9F38
 	public PBJEFDNBBCD GGHMLFOFELH(int KELFCMEOPPM)
     {
-        return EMCDEMHBFDB.Find((PBJEFDNBBCD GHPLINIACBB) =>
+        return EMCDEMHBFDB.Find((PBJEFDNBBCD _GHPLINIACBB_x) =>
         {
             //0xFFA1B8
-            return GHPLINIACBB.KELFCMEOPPM == KELFCMEOPPM;
+            return _GHPLINIACBB_x.KELFCMEOPPM == KELFCMEOPPM;
         });
     }
 }

@@ -6,7 +6,7 @@ public class BOKJNFPGGIB // TypeDefIndex: 10380
 	public int PPFNGGCBJKC_Id; // 0x8
 	public string OPFGFINHFCE_name; // 0xC
 	public string KLMPFGOCBHC_description; // 0x10
-	public int BPNPBJALGHM_quantity; // 0x14
+	public int BPNPBJALGHM_Quantity; // 0x14
 
 	// // RVA: 0x19CD790 Offset: 0x19CD790 VA: 0x19CD790
 	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
@@ -14,7 +14,7 @@ public class BOKJNFPGGIB // TypeDefIndex: 10380
         PPFNGGCBJKC_Id = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id];
         OPFGFINHFCE_name = (string)IDLHJIOMJBK[AFEHLCGHAEE_Strings.OPFGFINHFCE_name];
         KLMPFGOCBHC_description = (string)IDLHJIOMJBK[AFEHLCGHAEE_Strings.KLMPFGOCBHC_description];
-        BPNPBJALGHM_quantity = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.BPNPBJALGHM_quantity];
+        BPNPBJALGHM_Quantity = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.BPNPBJALGHM_Quantity];
     }
 }
 
@@ -65,7 +65,7 @@ public class ANGEDJODMKO : GJDFHLBONOL
 public class BEAOCBFAHKF
 {
 	public List<ANGEDJODMKO> PJJFEAHIPGL_inventories = new List<ANGEDJODMKO>(); // 0x8
-	public List<KPPFJJJAFFC> BBEPLKNMICJ_balances = new List<KPPFJJJAFFC>(); // 0xC
+	public List<KPPFJJJAFFC> BBEPLKNMICJ_Balances = new List<KPPFJJJAFFC>(); // 0xC
 	public BOKJNFPGGIB EFHCKFKLJDK_purchased_virtual_currency = new BOKJNFPGGIB(); // 0x10
 	public List<BOKJNFPGGIB> DPHEHNKLHEI_gained_virtual_currencies = new List<BOKJNFPGGIB>(); // 0x14
 	public PFIJNPCEOIL JENBPPBNAHP_player_normal_lot_free_state = new PFIJNPCEOIL(); // 0x18
@@ -84,15 +84,15 @@ public class BEAOCBFAHKF
                 PJJFEAHIPGL_inventories.Add(data2);
             }
         }
-        if(IDLHJIOMJBK.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.BBEPLKNMICJ_balances))
+        if(IDLHJIOMJBK.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.BBEPLKNMICJ_Balances))
         {
-            EDOHBJAPLPF_JsonData data = IDLHJIOMJBK[AFEHLCGHAEE_Strings.BBEPLKNMICJ_balances];
-            BBEPLKNMICJ_balances = new List<KPPFJJJAFFC>(data.HNBFOAJIIAL_Count);
+            EDOHBJAPLPF_JsonData data = IDLHJIOMJBK[AFEHLCGHAEE_Strings.BBEPLKNMICJ_Balances];
+            BBEPLKNMICJ_Balances = new List<KPPFJJJAFFC>(data.HNBFOAJIIAL_Count);
             for(int i = 0; i < data.HNBFOAJIIAL_Count; i++)
             {
                 KPPFJJJAFFC data2 = new KPPFJJJAFFC();
                 data2.KHEKNNFCAOI(data[i]);
-                BBEPLKNMICJ_balances.Add(data2);
+                BBEPLKNMICJ_Balances.Add(data2);
             }
         }
         if(IDLHJIOMJBK.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.EFHCKFKLJDK_purchased_virtual_currency))

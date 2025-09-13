@@ -11,8 +11,8 @@ namespace XeApp.Game.Menu
 {
 	public class BingoRewardSelectScene : TransitionRoot
 	{
-		private int xor = GNGMCIAIKMA.FBGGEFFJJHB; // 0x48
-		private long xorl = GNGMCIAIKMA.BBEGLBMOBOF; // 0x50
+		private int xor = GNGMCIAIKMA.FBGGEFFJJHB_xor; // 0x48
+		private long xorl = GNGMCIAIKMA.BBEGLBMOBOF_xorl; // 0x50
 		private const int BGM_ID = 1029;
 		private int bingoId; // 0x58
 		private LayoutBingoRewardSelect m_layout; // 0x5C
@@ -94,9 +94,9 @@ namespace XeApp.Game.Menu
 							if(GNGMCIAIKMA.HHCJCDFCLOB != null)
 							{
 								NFMHCLHEMHB_Bingo.CCGKCGJKADC bingo = GNGMCIAIKMA.HHCJCDFCLOB.MENDFPNPAAO_GetSaveBingo(bingoId);
-								bingo.AHCFGOGCJKI_St.EIHOBHDKCDB_RId = reward.PPFNGGCBJKC;
+								bingo.AHCFGOGCJKI_St.EIHOBHDKCDB_RewardId = reward.PPFNGGCBJKC;
 								bingo.AHCFGOGCJKI_St.AHHJLDLAPAN_DivaId = reward.AHHJLDLAPAN_DivaId;
-								bingo.AHCFGOGCJKI_St.DAJGPBLEEOB_Mdl = reward.DAJGPBLEEOB_CostumeId;
+								bingo.AHCFGOGCJKI_St.DAJGPBLEEOB_ModelId = reward.DAJGPBLEEOB_ModelId;
 								MenuScene.SaveRequest();
 								IsStartTransition = true;
 							}
@@ -124,7 +124,7 @@ namespace XeApp.Game.Menu
 			InstallCheck = false;
 			for (int i = 0; i < m_rewardList.Count; i++)
 			{
-				InstallCheck |= install.BDOFDNICMLC_StartInstallIfNeeded(DivaIconTextureCache.GetDivaStandingCostumeIconPath(m_rewardList[i].AHHJLDLAPAN_DivaId, m_rewardList[i].DAJGPBLEEOB_CostumeId));
+				InstallCheck |= install.BDOFDNICMLC_StartInstallIfNeeded(DivaIconTextureCache.GetDivaStandingCostumeIconPath(m_rewardList[i].AHHJLDLAPAN_DivaId, m_rewardList[i].DAJGPBLEEOB_ModelId));
 			}
 			install.OFLDICKPNFD(true, () =>
 			{
@@ -336,7 +336,7 @@ namespace XeApp.Game.Menu
 					c.TextSetting(m_rewardList[a - 1].BGIMCADKCKJ_EpisodeName, string.Format(bk.GetMessageByLabel("bingo_reward_select_scene_detail_text"), m_rewardList[a - 1].BGIMCADKCKJ_EpisodeName));
 					c.ChengeLayout(m_rewardList[a - 1].AHHJLDLAPAN_DivaId);
 					c.SetSceneIcon(m_rewardList[a - 1].BCCHOBPJJKE_SceneId, m_rewardList[a - 1].BOCDGDKMMIP_Rarity);
-					c.SetDivaIcon(m_rewardList[a - 1].AHHJLDLAPAN_DivaId, m_rewardList[a - 1].DAJGPBLEEOB_CostumeId);
+					c.SetDivaIcon(m_rewardList[a - 1].AHHJLDLAPAN_DivaId, m_rewardList[a - 1].DAJGPBLEEOB_ModelId);
 					c.SetAcquiredIconEnable(m_rewardList[a - 1].FIKLKJBHCOH_Acquired);
 					c.SetexplanationText(m_rewardList[a - 1].GNKKNILFNDP_ExplanationText);
 				}

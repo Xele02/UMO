@@ -55,7 +55,7 @@ namespace XeApp.Game.Menu
 		public void Setup(KOPCFBCDBPC stepUpRecord, BEPHBEGDFFK view)
 		{
 			int step = stepUpRecord.LKHAAGIJEPG_PlayerStatus.DBNAGGGJDAB_CurrentStepIndex;
-			MMNNAPPLHFM m = stepUpRecord.BMFEGOMNECF_Step.Find((MMNNAPPLHFM x) =>
+			MMNNAPPLHFM m = stepUpRecord.BMFEGOMNECF_Steps.Find((MMNNAPPLHFM x) =>
 			{
 				//0x19AD67C
 				return step == x.AGBCJMMMLON_StepIndex;

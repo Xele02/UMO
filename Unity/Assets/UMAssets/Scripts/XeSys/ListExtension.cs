@@ -15,7 +15,7 @@ namespace XeSys
 		///* GenericInstMethod :
 		//|
 		//|-RVA: 0x1A0DFD8 Offset: 0x1A0DFD8 VA: 0x1A0DFD8
-		//|-ListExtension.IsEmpty<DAJBODHMLAB.MMLACIFMNBN.MHODOAJPNHD>
+		//|-ListExtension.IsEmpty<DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.MHODOAJPNHD>
 		//|-ListExtension.IsEmpty<JKHBHIGMJIC>
 		//|-ListExtension.IsEmpty<KEPNMGHABPI.CAIPMAMHNJP>
 		//|-ListExtension.IsEmpty<KEPNMGHABPI.LNCLNAOPNKF>

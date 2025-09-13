@@ -160,7 +160,7 @@ namespace XeApp.Game.RhythmGame
 			numItemsByMode[3] = part;
 			TodoLogger.Log(TodoLogger.Game, "Items to spawn : "+numToSpawn+" "+numItemsByMode[1]+ " "+numItemsByMode[2]+" "+numItemsByMode[3]);
 
-			EGLJKICMCPG[] ar = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.BBFNPHGDCOF(specialNoteByDifficulty[(int)Database.Instance.gameSetup.musicInfo.difficultyType]).CDENCMNHNGA.ToArray();
+			EGLJKICMCPG[] ar = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.BBFNPHGDCOF(specialNoteByDifficulty[(int)Database.Instance.gameSetup.musicInfo.difficultyType]).CDENCMNHNGA_table.ToArray();
 			int[] li2 = new int[6];
 			MusicData.NoteModeType[] nt = new MusicData.NoteModeType[6] { MusicData.NoteModeType.Normal, MusicData.NoteModeType.Valkyrie, MusicData.NoteModeType.Diva, MusicData.NoteModeType.Diva, MusicData.NoteModeType.Valkyrie, MusicData.NoteModeType.Diva };
 			for (int i = 0; i < 6; i++)
@@ -203,15 +203,15 @@ namespace XeApp.Game.RhythmGame
 					}
 					else
 					{
-						if(sum < 100 || (j + 1) == ar[i].DAPGDCPDCNA_Pri)
+						if(sum < 100 || (j + 1) == ar[i].DAPGDCPDCNA_Prio)
 						{
 							//LAB_00c0b118
 							m = Mathf.RoundToInt((Database.Instance.gameSetup.teamInfo.teamStatus.spNoteExpected[j + 1] / 10.0f + ar[i].JNNKKPNGPAA((SpecialNoteAttribute.Type)(j + 1))) / 100.0f * li2[i]);
 						}
 						else
 						{
-							int n = (Database.Instance.gameSetup.teamInfo.teamStatus.spNoteExpected[ar[i].DAPGDCPDCNA_Pri] / 10 + ar[i].JNNKKPNGPAA((SpecialNoteAttribute.Type)ar[i].DAPGDCPDCNA_Pri));
-							m = (int)((Database.Instance.gameSetup.teamInfo.teamStatus.spNoteExpected[j + 1] / 10 + ar[i].JNNKKPNGPAA((SpecialNoteAttribute.Type)ar[i].DAPGDCPDCNA_Pri)) * 1.0f / (sum - n) * (li2[i] - Mathf.RoundToInt(n / 100.0f * li2[i])));
+							int n = (Database.Instance.gameSetup.teamInfo.teamStatus.spNoteExpected[ar[i].DAPGDCPDCNA_Prio] / 10 + ar[i].JNNKKPNGPAA((SpecialNoteAttribute.Type)ar[i].DAPGDCPDCNA_Prio));
+							m = (int)((Database.Instance.gameSetup.teamInfo.teamStatus.spNoteExpected[j + 1] / 10 + ar[i].JNNKKPNGPAA((SpecialNoteAttribute.Type)ar[i].DAPGDCPDCNA_Prio)) * 1.0f / (sum - n) * (li2[i] - Mathf.RoundToInt(n / 100.0f * li2[i])));
 						}
 					}
 					li3[j + 1, i] = m;
@@ -222,7 +222,7 @@ namespace XeApp.Game.RhythmGame
 					{
 						int v = Random.Range(0, l3.Count);
 						onModeAttrAssignCallback(l3[v], (KLJCBKMHKNK.HHMPIIILOLD)i, RhythmGameConsts.SpecialNoteType.RareItem);
-						onModeItemInfoAssignCallback(l3[v], (KLJCBKMHKNK.HHMPIIILOLD)i, itemsToSpawn[j].KIJAPOFAGPN_ItemId, itemsToSpawn[j].OIPCCBHIKIA_ItemIdx);
+						onModeItemInfoAssignCallback(l3[v], (KLJCBKMHKNK.HHMPIIILOLD)i, itemsToSpawn[j].KIJAPOFAGPN_ItemId, itemsToSpawn[j].OIPCCBHIKIA_Idx);
 						l3.RemoveAt(v);
 					}
 				}
@@ -231,7 +231,7 @@ namespace XeApp.Game.RhythmGame
 					for (int j = 0; j < assignedRareItemsByMode[(int)nt[i]].Count; j++)
 					{
 						onModeAttrAssignCallback(l3[assignedRareItemsByMode[(int)nt[i]][j].noteListIndex], (KLJCBKMHKNK.HHMPIIILOLD)i, RhythmGameConsts.SpecialNoteType.RareItem);
-						onModeItemInfoAssignCallback(l3[assignedRareItemsByMode[(int)nt[i]][j].noteListIndex], (KLJCBKMHKNK.HHMPIIILOLD)i, itemsToSpawn[j].KIJAPOFAGPN_ItemId, itemsToSpawn[j].OIPCCBHIKIA_ItemIdx);
+						onModeItemInfoAssignCallback(l3[assignedRareItemsByMode[(int)nt[i]][j].noteListIndex], (KLJCBKMHKNK.HHMPIIILOLD)i, itemsToSpawn[j].KIJAPOFAGPN_ItemId, itemsToSpawn[j].OIPCCBHIKIA_Idx);
 						l3.RemoveAt(assignedRareItemsByMode[(int)nt[i]][j].noteListIndex);
 					}
 				}

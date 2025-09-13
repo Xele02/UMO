@@ -382,7 +382,7 @@ namespace XeApp.Game.Menu
 				SceneIconTextureCache.ChangeKiraMaterial(m_sceneIconImage, texture as IconTexture, sceneData.MBMFJILMOBP_IsKira());
 				m_loadingFlag |= LoadingFlag.Scene;
 			});
-			GameManager.Instance.MenuResidentTextureCache.LoadLogo((int)sceneData.EMIKBGHIOMN_SerieLogo, (IiconTexture texture) =>
+			GameManager.Instance.MenuResidentTextureCache.LoadLogo((int)sceneData.EMIKBGHIOMN_SerieLogoId, (IiconTexture texture) =>
 			{
 				//0xA619C8
 				texture.Set(m_seriesIconImage);
@@ -633,7 +633,7 @@ namespace XeApp.Game.Menu
 		public void UpdateLimitBreak()
 		{
 			m_luckyLeaf.SetLeafNum(m_limitOverData.DJEHLEJCPEL_LeafNum, m_limitOverData.LJHOOPJACPI_LeafMax);
-			m_limitBreak.SetValue(m_limitOverData.CMCKNKKCNDK);
+			m_limitBreak.SetValue(m_limitOverData.CMCKNKKCNDK_Status);
 		}
 
 		// // RVA: 0xA5F8CC Offset: 0xA5F8CC VA: 0xA5F8CC
@@ -760,7 +760,7 @@ namespace XeApp.Game.Menu
 			m_KiraOverlayImage.rectTransform.sizeDelta = m_zoomSceneImage.rectTransform.sizeDelta;
 			m_KiraOverlayImage.uvRect = m_zoomSceneImage.uvRect;
 			yield return Co.R(m_viewer.Co_LoadRareFrame(m_sceneData.JKGFBFPIMGA_Rarity));
-			m_viewer.SetFrame(baseRare, attr, m_sceneData.JKGFBFPIMGA_Rarity != m_sceneData.EKLIPGELKCL_SceneRarity);
+			m_viewer.SetFrame(baseRare, attr, m_sceneData.JKGFBFPIMGA_Rarity != m_sceneData.EKLIPGELKCL_Rarity);
 			m_viewer.IsZoomable = baseRare > 3;
 			float s = SceneImageViewer.GetEndScale(m_sceneData.JKGFBFPIMGA_Rarity);
 			endScale = new Vector3(s, s, 1);
@@ -873,7 +873,7 @@ namespace XeApp.Game.Menu
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			m_limitOverData.KHEKNNFCAOI(m_sceneData.JKGFBFPIMGA_Rarity, m_sceneData.MKHFCGPJPFI_LimitOverCount, m_sceneData.MJBODMOLOBC_Luck);
-			if(!m_limitOverData.EOBACDCDGOF)
+			if(!m_limitOverData.EOBACDCDGOF_IsTerminate)
 			{
 				m_luckyLeafSetting.Setup(m_sceneData);
 				if(!m_limitOverData.JMHIDPKHELB)

@@ -151,7 +151,7 @@ namespace XeApp.Game.AR
 			{
 				EventTime data = new EventTime();
 				data.startTime = 0;
-				data.endTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime() + 3600;
+				data.endTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime() + 3600;
 				data.enable = 2;
 				m_eventTime.Add(data);
 			}
@@ -208,7 +208,7 @@ namespace XeApp.Game.AR
 					return res;
 			}
 
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			for(int i = 0; i < m_chengeBg.Count; i++)
 			{
 				if(m_chengeBg[i].enable == 2)
@@ -231,7 +231,7 @@ namespace XeApp.Game.AR
 		// RVA: 0x11D4334 Offset: 0x11D4334 VA: 0x11D4334
 		public EventTime FindEventTime()
 		{
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			for(int i = 0; i < m_eventTime.Count; i++)
 			{
 				if(m_eventTime[i].enable == 2)

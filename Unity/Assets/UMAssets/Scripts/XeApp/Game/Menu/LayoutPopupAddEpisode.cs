@@ -117,13 +117,13 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x15E5144 Offset: 0x15E5144 VA: 0x15E5144
 		private int GetDivaIdForCostume(int costumeId)
 		{
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[costumeId - 1].AHHJLDLAPAN_DivaId;
+			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[costumeId - 1].AHHJLDLAPAN_DivaId;
 		}
 
 		//// RVA: 0x15E55C0 Offset: 0x15E55C0 VA: 0x15E55C0
 		private int GetPilotIdForValkyrie(int vfId)
 		{
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[vfId - 1].PFGJJLGLPAC_PilotId;
+			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[vfId - 1].PFGJJLGLPAC_PilotId;
 		}
 
 		//// RVA: 0x15E5274 Offset: 0x15E5274 VA: 0x15E5274
@@ -141,13 +141,13 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x15E4CF0 Offset: 0x15E4CF0 VA: 0x15E4CF0
 		private int GetHomeBgId(int bgid)
 		{
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PFEKKPABPKL_HomeBg.CDENCMNHNGA[bgid - 1].OENPCNBFPDA_BgId;
+			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PFEKKPABPKL_HomeBg.CDENCMNHNGA_table[bgid - 1].OENPCNBFPDA_BgId;
 		}
 
 		//// RVA: 0x15E4B0C Offset: 0x15E4B0C VA: 0x15E4B0C
 		private string GetHomeBgName(int bgid)
 		{
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PFEKKPABPKL_HomeBg.CDENCMNHNGA[bgid - 1].OPFGFINHFCE_Name;
+			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PFEKKPABPKL_HomeBg.CDENCMNHNGA_table[bgid - 1].OPFGFINHFCE_Name;
 		}
 
 		//// RVA: 0x15E5FEC Offset: 0x15E5FEC VA: 0x15E5FEC

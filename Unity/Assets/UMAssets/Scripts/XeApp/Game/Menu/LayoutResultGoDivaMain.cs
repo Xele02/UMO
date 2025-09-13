@@ -109,7 +109,7 @@ namespace XeApp.Game.Menu
 			yield return new WaitForSeconds(0.5f);
 			if(m_resultData.FPKGGEIMAFD_HasRanking)
 			{
-				if(m_resultData.FFHMPNGJCLK_NewRecode)
+				if(m_resultData.FFHMPNGJCLK_NewRecord)
 				{
 					yield return Co.R(Co_OpenEventHiScoreWindow(1));
 				}

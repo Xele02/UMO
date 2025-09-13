@@ -95,7 +95,7 @@ namespace XeApp.Game.Common
 			m_logoSeriesExceptText[series].text = "";
 			GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_skillRankImages[series], (SkillRank.Type) m_sceneData.ELNJADBILOM_LiveSkillRank2);
 			UnitWindowConstant.SetSkillDetails(m_skillDetails[series], m_sceneData.KDGACEJPGFG_GetLiveSkillDesc(true), 2);
-			GameManager.Instance.MenuResidentTextureCache.LoadLogo((int)m_sceneData.EMIKBGHIOMN_SerieLogo, (IiconTexture texture) =>
+			GameManager.Instance.MenuResidentTextureCache.LoadLogo((int)m_sceneData.EMIKBGHIOMN_SerieLogoId, (IiconTexture texture) =>
 			{
 				//0x1109928
 				texture.Set(m_logoSeriesImages[series]);
@@ -126,7 +126,7 @@ namespace XeApp.Game.Common
 			m_logoSeriesExceptText[series].text = "";
 			GameManager.Instance.UnionTextureManager.SetImageSkillRank(m_skillRankImages[series], (SkillRank.Type) m_sceneData.FFDCGHDNDFJ_CenterSkillRank2);
 			UnitWindowConstant.SetSkillDetails(m_skillDetails[series], m_sceneData.IHLINMFMCDN_GetCenterSkillDesc(true), 2);
-			GameManager.Instance.MenuResidentTextureCache.LoadLogo((int)m_sceneData.EMIKBGHIOMN_SerieLogo, (IiconTexture texture) =>
+			GameManager.Instance.MenuResidentTextureCache.LoadLogo((int)m_sceneData.EMIKBGHIOMN_SerieLogoId, (IiconTexture texture) =>
 			{
 				//0x1109A54
 				texture.Set(m_logoSeriesImages[series]);

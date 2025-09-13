@@ -18,7 +18,7 @@ public class CKPOGHOIBEP
     }
 
 	// RVA: 0x1081770 Offset: 0x1081770 VA: 0x1081770
-	public void IJELHNMHAJH(MonoBehaviour CFLCEFJJPDH, FJGOKILCBJA COCEIPAKJKF, Action JGELCIJAGFF, Action LIELJBACFKB, Action MOBEEPPKFLG, Action NIMPEHIECJH)
+	public void IJELHNMHAJH(MonoBehaviour CFLCEFJJPDH, FJGOKILCBJA _COCEIPAKJKF_Item, Action JGELCIJAGFF, Action LIELJBACFKB, Action MOBEEPPKFLG, Action NIMPEHIECJH)
     {
         if(!PCIDGIBANFO)
         {
@@ -33,7 +33,7 @@ public class CKPOGHOIBEP
                 new ButtonInfo() { Label = PopupButton.ButtonLabel.Exchange, Type = PopupButton.ButtonType.Positive }
             };
             s.WindowSize = SizeType.Large;
-            s.View = COCEIPAKJKF;
+            s.View = _COCEIPAKJKF_Item;
             PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel KAPMOPMDHJE) =>
             {
                 //0x1081DD0
@@ -74,7 +74,7 @@ public class CKPOGHOIBEP
                                 LIELJBACFKB();
                         };
                         int DPHIJHDAPLJ = 1;
-                        CFLCEFJJPDH.StartCoroutineWatched(EHDNGPFPOKJ_Co_Buy(DPHIJHDAPLJ, COCEIPAKJKF, CMJMGEFNBDK, DMLJLPMBLCH, EEIFDMNADPA, NDBKOPGCPHJ));
+                        CFLCEFJJPDH.StartCoroutineWatched(EHDNGPFPOKJ_Co_Buy(DPHIJHDAPLJ, _COCEIPAKJKF_Item, CMJMGEFNBDK, DMLJLPMBLCH, EEIFDMNADPA, NDBKOPGCPHJ));
                     }
                 }
                 else
@@ -99,16 +99,16 @@ public class CKPOGHOIBEP
 
         //0x1082460
         MenuScene.Instance.InputDisable();
-        bool BEKAMBBOLBO = false;
+        bool BEKAMBBOLBO_Done = false;
         bool GIGHIFOIMNA = false;
         IFGEJDMMAHE.PFIBEGFOBEG_Buy(NANNGLGOFKH, () =>
         {
             //0x10823C4
-            BEKAMBBOLBO = true;
+            BEKAMBBOLBO_Done = true;
         }, () =>
         {
             //0x10823D0
-            BEKAMBBOLBO = true;
+            BEKAMBBOLBO_Done = true;
             GIGHIFOIMNA = true;
         }, () =>
         {
@@ -118,7 +118,7 @@ public class CKPOGHOIBEP
         yield return new WaitWhile(() =>
         {
             //0x1082408
-            return !BEKAMBBOLBO;
+            return !BEKAMBBOLBO_Done;
         });
         if(GIGHIFOIMNA)
         {
@@ -131,11 +131,11 @@ public class CKPOGHOIBEP
         MessageBank bk = MessageManager.Instance.GetBank("menu");
         HMIHNDIJBJD = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(IFGEJDMMAHE.KIJAPOFAGPN_ItemFullId);
         TextPopupSetting s = PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("item_popup_shop_text_05"), SizeType.Middle, 
-            string.Format(bk.GetMessageByLabel("pbox_text_03"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(IFGEJDMMAHE.KIJAPOFAGPN_ItemFullId) + " " + (NANNGLGOFKH * IFGEJDMMAHE.JDLJPNMLFID_Count).ToString() + EKLNMHFCAOI.NDBLEADIDLA(HMIHNDIJBJD, EKLNMHFCAOI.DEACAHNLMNI_getItemId(IFGEJDMMAHE.KIJAPOFAGPN_ItemFullId))), new ButtonInfo[1]
+            string.Format(bk.GetMessageByLabel("pbox_text_03"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(IFGEJDMMAHE.KIJAPOFAGPN_ItemFullId) + " " + (NANNGLGOFKH * IFGEJDMMAHE.JDLJPNMLFID_ItemCount).ToString() + EKLNMHFCAOI.NDBLEADIDLA(HMIHNDIJBJD, EKLNMHFCAOI.DEACAHNLMNI_getItemId(IFGEJDMMAHE.KIJAPOFAGPN_ItemFullId))), new ButtonInfo[1]
             {
                 new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
             }, false, true);
-        BEKAMBBOLBO = false;
+        BEKAMBBOLBO_Done = false;
         PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel KAPMOPMDHJE) =>
         {
             //0x1081DCC
@@ -143,26 +143,26 @@ public class CKPOGHOIBEP
         }, null, null, null, true, true, false, null, () =>
         {
             //0x108241C
-            BEKAMBBOLBO = true;
+            BEKAMBBOLBO_Done = true;
         }, null, null, null);
         yield return new WaitWhile(() =>
         {
             //0x1082428
-            return !BEKAMBBOLBO;
+            return !BEKAMBBOLBO_Done;
         });
         GameManager.Instance.ResetViewPlayerData();
         if(HMIHNDIJBJD == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
         {
-            BEKAMBBOLBO = false;
+            BEKAMBBOLBO_Done = false;
             yield return Co.R(PopupRecordPlate.Show(RecordPlateUtility.eSceneType.Shop, IFGEJDMMAHE.JANMJPOKLFL, () =>
             {
                 //0x108243C
-                BEKAMBBOLBO = true;
+                BEKAMBBOLBO_Done = true;
             }, false));
             yield return new WaitWhile(() =>
             {
                 //0x1082448
-                return !BEKAMBBOLBO;
+                return !BEKAMBBOLBO_Done;
             });
         }
         if(HPNGEKABKBE != null)

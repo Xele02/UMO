@@ -54,7 +54,7 @@ namespace XeApp.Game.Menu
 					string[] strs = strid.Split(new char[] { ',' });
 					if(strs.Length == 3)
 					{
-						long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+						long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 						int idx = BgControl.GetHomeBgId(time);
 						int id2;
 						if(int.TryParse(strs[idx - 1], out id2))
@@ -396,7 +396,7 @@ namespace XeApp.Game.Menu
 			m_layoutDivaSerifWindow.Enter();
 			if(type >= ANPGILOLNFK.CDOGFBNLIPG.DHGCJEOPEIE_3 && type < ANPGILOLNFK.CDOGFBNLIPG.LAOEGNLOJHC_5)
 			{
-				if (CheckComebackTalk(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime(), CIOECGOMILE.HHCJCDFCLOB.PKBOFLOJNIJ_LastLoginTime))
+				if (CheckComebackTalk(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), CIOECGOMILE.HHCJCDFCLOB.PKBOFLOJNIJ_LastLoginTime))
 				{
 					m_layoutDivaSerifWindow.SetText(MenuScene.Instance.divaManager.GetMessageByLabel("talk_comeback_01"));
 					m_divaControl.RequestLoginBonus(LoginBonusDivaControl.Type.Comeback_001);

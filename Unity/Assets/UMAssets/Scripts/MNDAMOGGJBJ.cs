@@ -25,18 +25,18 @@ public class MNDAMOGGJBJ
 	}
 
 	private EGOLBAPFHHD_Common KCCLEHLLOFG; // 0x8
-	public int FBGGEFFJJHB; // 0xC
+	public int FBGGEFFJJHB_xor; // 0xC
 	private int NEGMNPCHENF; // 0x1C
 
 	public List<JFJJNPJNBPI> MHGAOHAHFDN { get; set; } // 0x10 DJBDDFLFPLE PGKLOONAKPD GLBMFLPHJLB
 	public int PGGKBIIJOND { get; set; } // 0x14 PKFNBLMOBCL MKBBJIKHFJD KMOMHPMBMNL
 	public List<JFJJNPJNBPI> INLBMFMOHCI_CostItems { get; set; } // 0x18 PIDPINOOAPN KLLCKKLHEHH EBBKKLLCDMB
-	public int CMBGGPOFBOO_UcCost { get { return NEGMNPCHENF ^ FBGGEFFJJHB; } set { NEGMNPCHENF = value ^ FBGGEFFJJHB; } } //0x17B00B0 PPKIKKIKGMK 0x17B00C0 HOGAFMDJKPK
+	public int CMBGGPOFBOO_UcCost { get { return NEGMNPCHENF ^ FBGGEFFJJHB_xor; } set { NEGMNPCHENF = value ^ FBGGEFFJJHB_xor; } } //0x17B00B0 PPKIKKIKGMK 0x17B00C0 HOGAFMDJKPK
 
 	//// RVA: 0x17B00D0 Offset: 0x17B00D0 VA: 0x17B00D0
 	public void KHEKNNFCAOI(BBHNACPENDM_ServerSaveData _AHEFHIMGIBI_PlayerData)
 	{
-		FBGGEFFJJHB = (int)(Utility.GetCurrentUnixTime() * 0x15573);
+		FBGGEFFJJHB_xor = (int)(Utility.GetCurrentUnixTime() * 0x15573);
 		if(_AHEFHIMGIBI_PlayerData == null)
 		{
 			_AHEFHIMGIBI_PlayerData = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
@@ -52,7 +52,7 @@ public class MNDAMOGGJBJ
 	//// RVA: 0x17B024C Offset: 0x17B024C VA: 0x17B024C
 	public void MDHKGJJBLNL()
 	{
-		FBGGEFFJJHB = (int)(Utility.GetCurrentUnixTime() * 0x15573);
+		FBGGEFFJJHB_xor = (int)(Utility.GetCurrentUnixTime() * 0x15573);
 		INLBMFMOHCI_CostItems.Clear();
 		CMBGGPOFBOO_UcCost = 0;
 	}

@@ -52,7 +52,7 @@ namespace XeApp.Game.Menu
 			int lvl = data.GKIKAABHAAD_Level;
 			for (int i = 0; i < m_scrollItemList.Count; i++)
 			{
-				m_scrollItemList[i].SetItem(data, i, i < lvl, data.AHHJLDLAPAN_DivaId, data.JPIDIENBGKH_CostumeId, data.DAJGPBLEEOB_PrismCostumeId);
+				m_scrollItemList[i].SetItem(data, i, i < lvl, data.AHHJLDLAPAN_DivaId, data.JPIDIENBGKH_CostumeId, data.DAJGPBLEEOB_ModelId);
 			}
 		}
 

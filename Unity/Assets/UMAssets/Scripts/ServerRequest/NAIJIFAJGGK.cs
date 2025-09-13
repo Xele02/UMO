@@ -13,7 +13,7 @@ public class NAIJIFAJGGK_RequestLoadPlayerData : CACGCMBKHDI_Request
     {
         public long BIOGKIEECGN_CreatedAt; // 0x8
         public long IFNLEKOILPM_UpdatedAt; // 0x10
-        public int CEMEIPNMAAD; // 0x18
+        public int CEMEIPNMAAD_Version; // 0x18
         public sbyte MLGKDBJLNBM_DataStatus; // 0x1C
         public bool PLEAGPCJICK; // 0x1D
     }
@@ -38,7 +38,7 @@ public class NAIJIFAJGGK_RequestLoadPlayerData : CACGCMBKHDI_Request
     }
 
 	// // RVA: 0x17C0260 Offset: 0x17C0260 VA: 0x17C0260 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
         NFEAMMJIMPG_Result = null;
         BNJPAKLNOPA_WorkerThreadQueue.Add(this.DIAMDBHBKBH);

@@ -265,7 +265,7 @@ namespace XeApp.Game.Menu
 				int numNote = 0;
 				if(divaData != null)
 				{
-					numNote = divaData.CMCKNKKCNDK_EquippedStatus.spNoteExpected.Length;
+					numNote = divaData.CMCKNKKCNDK_Status.spNoteExpected.Length;
 				}
 				int numNoteDisp = m_notes.Length;
 				int cnt = 0;

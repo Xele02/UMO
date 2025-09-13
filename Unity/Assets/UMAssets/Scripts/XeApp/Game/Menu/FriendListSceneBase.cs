@@ -228,10 +228,10 @@ namespace XeApp.Game.Menu
 		protected void InitializeSortSetting()
 		{
 			m_sortType = (SortItem)sortSaveData.LHPDCGNKPHD_sortItem;
-			m_sortOrder = (GeneralList.SortOrder)sortSaveData.EILKGEADKGH_order;
+			m_sortOrder = (GeneralList.SortOrder)sortSaveData.EILKGEADKGH_Order;
 			m_rarityFilter = (uint)sortSaveData.ACCHOFLOOEC_RarityFilter;
-			m_attrFilter = (uint)sortSaveData.BOFFOHHLLFG_attributeFilter;
-			m_seriesFilter = (uint)sortSaveData.BBIIHLNBHDE_seriaseFilter;
+			m_attrFilter = (uint)sortSaveData.BOFFOHHLLFG_AttributeFilter;
+			m_seriesFilter = (uint)sortSaveData.BBIIHLNBHDE_SerieFilter;
 		}
 
 		//// RVA: 0xBA2520 Offset: 0xBA2520 VA: 0xBA2520
@@ -275,7 +275,7 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			m_sortOrder = m_sortOrder == GeneralList.SortOrder.Ascend ? GeneralList.SortOrder.Descend : GeneralList.SortOrder.Ascend;
 			m_saveDataDirty = true;
-			sortSaveData.EILKGEADKGH_order = (int)m_sortOrder;
+			sortSaveData.EILKGEADKGH_Order = (int)m_sortOrder;
 			OnChangeSortOrder();
 			SortFriendList();
 		}
@@ -409,10 +409,10 @@ namespace XeApp.Game.Menu
 
 			rarA = 0;
 			if (a.friend.AFBMEMCHJCL_MainScene != null)
-				rarA = a.friend.AFBMEMCHJCL_MainScene.EKLIPGELKCL_SceneRarity;
+				rarA = a.friend.AFBMEMCHJCL_MainScene.EKLIPGELKCL_Rarity;
 			rarB = 0;
 			if (b.friend.AFBMEMCHJCL_MainScene != null)
-				rarB = b.friend.AFBMEMCHJCL_MainScene.EKLIPGELKCL_SceneRarity;
+				rarB = b.friend.AFBMEMCHJCL_MainScene.EKLIPGELKCL_Rarity;
 			return rarA - rarB;
 		}
 

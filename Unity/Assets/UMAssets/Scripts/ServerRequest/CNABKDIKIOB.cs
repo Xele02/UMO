@@ -75,7 +75,7 @@ public class CNABKDIKIOB_RequestVirtualCurrencyBalancesWithExpiredAt : CACGCMBKH
 	}
 
 	// RVA: 0x175AB6C Offset: 0x175AB6C VA: 0x175AB6C Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
 		NFEAMMJIMPG = new NDMAHKFPCAB();
 		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

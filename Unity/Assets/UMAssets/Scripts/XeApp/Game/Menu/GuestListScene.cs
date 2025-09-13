@@ -196,8 +196,8 @@ namespace XeApp.Game.Menu
 		{
 			ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.MMALELPFEBH_UserList guestInfo = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.GDMIGCCMEEF_GuestSelect;
 			m_sortType = (SortItem)guestInfo.LHPDCGNKPHD_sortItem;
-			m_sortOrder = (GeneralList.SortOrder)guestInfo.EILKGEADKGH_order;
-			m_seriesFilter = (uint)guestInfo.BBIIHLNBHDE_seriaseFilter;
+			m_sortOrder = (GeneralList.SortOrder)guestInfo.EILKGEADKGH_Order;
+			m_seriesFilter = (uint)guestInfo.BBIIHLNBHDE_SerieFilter;
 			m_centerSkillFilter = (uint)guestInfo.LKPCKPJGJKN_centerSkillFilter;
 			if(PrevTransition == TransitionList.Type.TEAM_SELECT || PrevTransition == TransitionList.Type.PROFIL || PrevTransition == TransitionList.Type.GODIVA_TEAM_SELECT)
 			{
@@ -404,7 +404,7 @@ namespace XeApp.Game.Menu
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			m_sortOrder = m_sortOrder == GeneralList.SortOrder.Ascend ? GeneralList.SortOrder.Descend : GeneralList.SortOrder.Ascend;
-			GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.GDMIGCCMEEF_GuestSelect.EILKGEADKGH_order = (int)m_sortOrder;
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.GDMIGCCMEEF_GuestSelect.EILKGEADKGH_Order = (int)m_sortOrder;
 			m_saveDataDirty = true;
 			m_buttonRuntime.SetSortOrder(m_sortOrder);
 			SortGuestList();
@@ -547,7 +547,7 @@ namespace XeApp.Game.Menu
 			int res = (a.friend.KHGKPKDBMOH_GetAssistScene() != null ? a.friend.KHGKPKDBMOH_GetAssistScene().JKGFBFPIMGA_Rarity : 0).CompareTo(b.friend.KHGKPKDBMOH_GetAssistScene() != null ? b.friend.KHGKPKDBMOH_GetAssistScene().JKGFBFPIMGA_Rarity : 0);
 			if(res == 0)
 			{
-				res = (a.friend.KHGKPKDBMOH_GetAssistScene() != null ? a.friend.KHGKPKDBMOH_GetAssistScene().EKLIPGELKCL_SceneRarity : 0).CompareTo(b.friend.KHGKPKDBMOH_GetAssistScene() != null ? b.friend.KHGKPKDBMOH_GetAssistScene().EKLIPGELKCL_SceneRarity : 0);
+				res = (a.friend.KHGKPKDBMOH_GetAssistScene() != null ? a.friend.KHGKPKDBMOH_GetAssistScene().EKLIPGELKCL_Rarity : 0).CompareTo(b.friend.KHGKPKDBMOH_GetAssistScene() != null ? b.friend.KHGKPKDBMOH_GetAssistScene().EKLIPGELKCL_Rarity : 0);
 			}
 			return res;
 		}

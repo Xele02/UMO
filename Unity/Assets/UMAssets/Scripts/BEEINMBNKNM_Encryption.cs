@@ -13,7 +13,7 @@ public class BEEINMBNKNM_Encryption
 	private int PLNOOFNMHAL = 1; // 0x1C
 
 	// RVA: 0xC73B0C Offset: 0xC73B0C VA: 0xC73B0C
-	//private uint FBGGEFFJJHB() { }
+	//private uint _FBGGEFFJJHB_xor() { }
 
 	// RVA: 0xC73B28 Offset: 0xC73B28 VA: 0xC73B28
 	public void KHEKNNFCAOI_Init(uint KNEFBLHBDBG)
@@ -58,30 +58,30 @@ public class BEEINMBNKNM_Encryption
 	}
 
 	// RVA: 0xC73C18 Offset: 0xC73C18 VA: 0xC73C18
-	private static /*extern*/ void FFPAGMCDALB(byte[] CDENCMNHNGA, byte[] DBBGALAPFGC, int NFHFALDMGGC)
+	private static /*extern*/ void FFPAGMCDALB(byte[] _CDENCMNHNGA_table, byte[] _DBBGALAPFGC_Data, int NFHFALDMGGC)
 	{
 			//TODO extract to lib file
 			// Decrypt xedec
-			uint offset = (uint)DBBGALAPFGC.Length;
-			for(int i = 0; i < DBBGALAPFGC.Length; i++)
+			uint offset = (uint)_DBBGALAPFGC_Data.Length;
+			for(int i = 0; i < _DBBGALAPFGC_Data.Length; i++)
 			{
 				uint val = (uint)((offset << 3)&0xffffffff);
 				offset = (uint)(val - offset);
 				offset++;
-				DBBGALAPFGC[i] = (byte)(DBBGALAPFGC[i] ^ CDENCMNHNGA[offset%1024]);
+				_DBBGALAPFGC_Data[i] = (byte)(_DBBGALAPFGC_Data[i] ^ _CDENCMNHNGA_table[offset%1024]);
 			}
 	}
 
 	// RVA: 0xC73D28 Offset: 0xC73D28 VA: 0xC73D28
-	//private static extern void MFKJIGBFJEN(IntPtr CDENCMNHNGA, IntPtr DBBGALAPFGC, int NFHFALDMGGC) { }
+	//private static extern void MFKJIGBFJEN(IntPtr _CDENCMNHNGA_table, IntPtr _DBBGALAPFGC_Data, int NFHFALDMGGC) { }
 
 	// RVA: 0xC73E34 Offset: 0xC73E34 VA: 0xC73E34
-	//public void DMDLDOAOIAJ(byte[] DBBGALAPFGC) { }
+	//public void DMDLDOAOIAJ(byte[] _DBBGALAPFGC_Data) { }
 
 	// RVA: 0xC70A18 Offset: 0xC70A18 VA: 0xC70A18
-	public void CLNHGLGOKPF_Decrypt(byte[] DBBGALAPFGC)
+	public void CLNHGLGOKPF_Decrypt(byte[] _DBBGALAPFGC_Data)
 	{
-			FFPAGMCDALB(GPGMEAPLJAI_Key, DBBGALAPFGC, DBBGALAPFGC.Length);
+			FFPAGMCDALB(GPGMEAPLJAI_Key, _DBBGALAPFGC_Data, _DBBGALAPFGC_Data.Length);
 	}
 
 	// RVA: 0xC73ECC Offset: 0xC73ECC VA: 0xC73ECC
@@ -91,37 +91,37 @@ public class BEEINMBNKNM_Encryption
 	//public string AGKMBDIJHID(int INDDJNMPONH) { }
 
 	// RVA: 0xC73F54 Offset: 0xC73F54 VA: 0xC73F54
-	public static uint GKBODMNBFJM(uint IOIMHJAOKOO, byte[] DBBGALAPFGC)
+	public static uint GKBODMNBFJM(uint IOIMHJAOKOO, byte[] _DBBGALAPFGC_Data)
 	{
-		return ANMDMMBEJPB(IOIMHJAOKOO, DBBGALAPFGC, DBBGALAPFGC.Length);
+		return ANMDMMBEJPB(IOIMHJAOKOO, _DBBGALAPFGC_Data, _DBBGALAPFGC_Data.Length);
 	}
 
 	// RVA: 0xC73FC8 Offset: 0xC73FC8 VA: 0xC73FC8
-	private static /*extern*/ uint ANMDMMBEJPB(uint IOIMHJAOKOO, /*IntPtr */byte[] DBBGALAPFGC, int NFHFALDMGGC)
+	private static /*extern*/ uint ANMDMMBEJPB(uint IOIMHJAOKOO, /*IntPtr */byte[] _DBBGALAPFGC_Data, int NFHFALDMGGC)
 	{
-		// return xedec_hash(IOIMHJAOKOO, DBBGALAPFGC, NFHFALDMGGC);
+		// return xedec_hash(IOIMHJAOKOO, DBBGALAPFGC_Data, NFHFALDMGGC);
 		TodoLogger.LogError(TodoLogger.Xedec, "BEEINMBNKNM_Encryption.ANMDMMBEJPB xedec_hash");
 		return 0;
 	}
 
 	// RVA: 0xC740D4 Offset: 0xC740D4 VA: 0xC740D4
-	public static uint DIKDKNIKPNJ(uint IOIMHJAOKOO, string CJEKGLGBIHF_path)
+	public static uint DIKDKNIKPNJ(uint IOIMHJAOKOO, string _CJEKGLGBIHF_path)
 	{
-		return GKBODMNBFJM(IOIMHJAOKOO, Encoding.UTF8.GetBytes(CJEKGLGBIHF_path));
+		return GKBODMNBFJM(IOIMHJAOKOO, Encoding.UTF8.GetBytes(_CJEKGLGBIHF_path));
 	}
 
 	// RVA: 0xC74128 Offset: 0xC74128 VA: 0xC74128
-	public void DGBPHDMEDNP(int DHIPGHBJLIL, int POMLAOPLMNA, int DFIDIEENJAE)
+	public void DGBPHDMEDNP(int _DHIPGHBJLIL_Coef, int POMLAOPLMNA, int DFIDIEENJAE)
 	{
-			GELENHPBKFA = DHIPGHBJLIL;
+			GELENHPBKFA = _DHIPGHBJLIL_Coef;
 			DLDLDGJEOJG = POMLAOPLMNA;
 			PLNOOFNMHAL = DFIDIEENJAE;
 	}
 
 	// RVA: 0xC74134 Offset: 0xC74134 VA: 0xC74134
-	public void LBGGPBBOIEH(byte[] DBBGALAPFGC)
+	public void LBGGPBBOIEH(byte[] _DBBGALAPFGC_Data)
 	{ 
-		int size = DBBGALAPFGC.Length;
+		int size = _DBBGALAPFGC_Data.Length;
 		PMBEODGMMBB = KNEFBLHBDBG;
 		if (size > 0)
 		{
@@ -129,15 +129,15 @@ public class BEEINMBNKNM_Encryption
 			for (int i = 0; i < size; i++)
 			{
 				q = (uint)(q * GELENHPBKFA + DLDLDGJEOJG);
-				DBBGALAPFGC[i] = (byte)(GPGMEAPLJAI_Key[q & 0x3ff] ^ DBBGALAPFGC[i]);
+				_DBBGALAPFGC_Data[i] = (byte)(GPGMEAPLJAI_Key[q & 0x3ff] ^ _DBBGALAPFGC_Data[i]);
 			}
 		}
 	}
 
 	// RVA: 0xC74230 Offset: 0xC74230 VA: 0xC74230
-	public void FAEFDAJAMCE(byte[] DBBGALAPFGC)
+	public void FAEFDAJAMCE(byte[] _DBBGALAPFGC_Data)
 	{
-		uint size = (uint)DBBGALAPFGC.Length;
+		uint size = (uint)_DBBGALAPFGC_Data.Length;
 		PMBEODGMMBB = KNEFBLHBDBG;
 		if (size > 0)
 		{
@@ -145,7 +145,7 @@ public class BEEINMBNKNM_Encryption
 			for (int i = 0; i < size; i++)
 			{
 				q = (uint)(q * GELENHPBKFA + DLDLDGJEOJG);
-				DBBGALAPFGC[i] = (byte)(GPGMEAPLJAI_Key[q & 0x3ff] ^ DBBGALAPFGC[i]);
+				_DBBGALAPFGC_Data[i] = (byte)(GPGMEAPLJAI_Key[q & 0x3ff] ^ _DBBGALAPFGC_Data[i]);
 			}
 		}
 	}

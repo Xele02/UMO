@@ -9,7 +9,7 @@ public class KDLBHAKPLPH_ArMarker : KLFDBFMNLBL_ServerSaveBlock
 	{
 		public int HIEKBDMHKLP_Id { get; set; } // 0x8 MICLNMBOAJD FEDEEOKEBBH AJEOEBDGIEJ
 		public long BEBJKJKBOGH_Date { get; set; } // 0x10 MCIJNMKFMDB DIAPHCJBPFD IHAIKPNEEJE
-		//public bool FJODMPGPDDD { get; }
+		//public bool FJODMPGPDDD_Unlocked { get; }
 
 		//// RVA: 0xE7D51C Offset: 0xE7D51C VA: 0xE7D51C
 		//public void GLHANCMGNDM(long JGNBPFCJLKI) { }
@@ -127,7 +127,7 @@ public class KDLBHAKPLPH_ArMarker : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xE7C2F4 Offset: 0xE7C2F4 VA: 0xE7C2F4 Slot: 7
-	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	public override void BMGGKONLFIC_Copy(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
 		KDLBHAKPLPH_ArMarker a = GPBJHKLFCEP as KDLBHAKPLPH_ArMarker;
 		for(int i = 0; i < DNKNFFPLGNM.Count; i++)
@@ -151,5 +151,5 @@ public class KDLBHAKPLPH_ArMarker : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xE7C7E0 Offset: 0xE7C7E0 VA: 0xE7C7E0 Slot: 10
-	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH);
+	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock _GJLFANGDGCL_Target, long MCKEOKFMLAH);
 }

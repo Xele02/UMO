@@ -15,7 +15,7 @@ namespace XeApp.Game.Menu
 			ValkyriePopupSetting s = setting as ValkyriePopupSetting;
 			transform.GetComponent<RectTransform>().sizeDelta = size;
 			ValkyrieSkillUpWindow w = transform.GetComponent<ValkyrieSkillUpWindow>();
-			int level = s.before_data.CIEOBFIIPLD_AbilityLevel;
+			int level = s.before_data.CIEOBFIIPLD_Level;
 			if(CheckNeedItem(s.after_data.PFIFFGHLCJJ()))
 			{
 				control.FindButton(PopupButton.ButtonLabel.Ok).Disable = true;
@@ -36,11 +36,11 @@ namespace XeApp.Game.Menu
 				int cnt = 0;
 				if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.MABCLBNIOFA_ValkyrieItem)
 				{
-					cnt = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MJAIFKFOPPI_ValItem[EKLNMHFCAOI.DEACAHNLMNI_getItemId(id) - 1].BFINGCJHOHI_Cnt;
+					cnt = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MJAIFKFOPPI_ValItem[EKLNMHFCAOI.DEACAHNLMNI_getItemId(id) - 1].BFINGCJHOHI_Count;
 				}
 				else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.HLCHKCJLEGK_GrowItem)
 				{
-					cnt = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KBMDMEEMGLK_GrowItem[EKLNMHFCAOI.DEACAHNLMNI_getItemId(id) - 1].BFINGCJHOHI_Cnt;
+					cnt = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KBMDMEEMGLK_GrowItem[EKLNMHFCAOI.DEACAHNLMNI_getItemId(id) - 1].BFINGCJHOHI_Count;
 				}
 				if(cnt < list[i].NANNGLGOFKH)
 					return true;

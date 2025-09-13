@@ -11,7 +11,7 @@ public class DKKPBBBDKMJ
 	{
 		public int PGIIDPEGGPI_EventId; // 0x8
 		public string LLNKMABDDEB_Period; // 0xC
-		public byte CPKMLLNADLJ; // 0x10
+		public byte CPKMLLNADLJ_Serie; // 0x10
 		public bool CADENLBDAEB_IsNew; // 0x11
 	}
 
@@ -38,7 +38,7 @@ public class DKKPBBBDKMJ
 	public void KHEKNNFCAOI()
 	{
 		MessageBank bk = MessageManager.Instance.GetBank("menu");
-		long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		MHCPOIEDLJF = false;
 		for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBEMLGADAGK_EventStory.ILEJEJKNOBN_StoryList.Count; i++)
 		{
@@ -55,18 +55,18 @@ public class DKKPBBBDKMJ
 					{
 						if(storyEvent2.JDJNNJEJDAJ_Type == FBIOJHECAHB_EventStory.NMIGMCJHAIE.MOPAEGFEGCB_5_EpisodeStory)
 						{
-							if(storyEvent2.CHOFDPDFPDC == 4)
+							if(storyEvent2.CHOFDPDFPDC_ConfigValue == 4)
 							{
 								if(storyEvent.MGBDCFIKBPM_Serie == 5)
 								{
 									MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA[CCAAJNJGNDO.FCMFPPALLOM(storyEvent.OAFJONPIFGM_EventId) - 1];
-									MLIBEPGADJH_Scene.KKLDOOJBJMN scene2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[CCAAJNJGNDO.FCMFPPALLOM(storyEvent.OAFJONPIFGM_EventId) - 1];
+									MLIBEPGADJH_Scene.KKLDOOJBJMN scene2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[CCAAJNJGNDO.FCMFPPALLOM(storyEvent.OAFJONPIFGM_EventId) - 1];
 									HOMGKHBHDME.KHEKNNFCAOI(scene.PPFNGGCBJKC_Id, scene.PDNIFBEGMHC_Mb, scene.EMOJHJGHJLN_Sb, scene.JPIPENJGGDD_Mlt, scene.IELENGDJPHF_Ulk, scene.MJBODMOLOBC_Luck, scene.LHMOAJAIJCO_New, scene.BEBJKJKBOGH_Date, scene.DMNIMMGGJJJ_Leaf);
 									if(HOMGKHBHDME.CGKAEMGLHNK_IsUnlocked())
 									{
 										if(scene2.PPEGAKEIEGM_En > 1)
 										{
-											if(HOMGKHBHDME.EKLIPGELKCL_SceneRarity > 5)
+											if(HOMGKHBHDME.EKLIPGELKCL_Rarity > 5)
 											{
 												if(HOMGKHBHDME.FGMPFHOEPEL_GetNumUnlockedStory() != 0)
 												{
@@ -81,7 +81,7 @@ public class DKKPBBBDKMJ
 								}
 								b3 = true;
 							}
-							else if(storyEvent2.CHOFDPDFPDC == 3)
+							else if(storyEvent2.CHOFDPDFPDC_ConfigValue == 3)
 							{
 								if (!CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HBPPNFHOMNB_Adventure.FABEJIHKFGN_IsReleased(storyEvent2.LOHMKCPKBON_AdvId))
 								{
@@ -111,9 +111,9 @@ public class DKKPBBBDKMJ
 					AGAAGMGKNCO data = new AGAAGMGKNCO();
 					data.PGIIDPEGGPI_EventId = storyEvent.OAFJONPIFGM_EventId;
 					data.CADENLBDAEB_IsNew = hasNewAdv;
-					data.CPKMLLNADLJ = storyEvent.MGBDCFIKBPM_Serie;
+					data.CPKMLLNADLJ_Serie = storyEvent.MGBDCFIKBPM_Serie;
 					DateTime dt = Utility.GetLocalDateTime(storyEvent.PDBPFJJCADD_PeriodStart);
-					DateTime dt2 = Utility.GetLocalDateTime(storyEvent.FDBNFFNFOND_PeriodEnd);
+					DateTime dt2 = Utility.GetLocalDateTime(storyEvent.FDBNFFNFOND_CloseAt);
 					FAEDHJHCEFJ.Clear();
 					FAEDHJHCEFJ.AppendFormat(bk.GetMessageByLabel("event_story_list_period"), new object[6]
 					{
@@ -132,38 +132,38 @@ public class DKKPBBBDKMJ
 	}
 
 	//// RVA: 0x12261E8 Offset: 0x12261E8 VA: 0x12261E8
-	public void NFGLACBNEEN(int CPKMLLNADLJ)
+	public void NFGLACBNEEN(int _CPKMLLNADLJ_Serie)
 	{
 		AIAPGDMLIIE.Clear();
 		for(int i = NNDGIAEFMOG.Count - 1; i >= 0; i--)
 		{
-			if (NNDGIAEFMOG[i].CPKMLLNADLJ == CPKMLLNADLJ)
+			if (NNDGIAEFMOG[i].CPKMLLNADLJ_Serie == _CPKMLLNADLJ_Serie)
 				AIAPGDMLIIE.Add(i);
 		}
 	}
 
 	//// RVA: 0x1226328 Offset: 0x1226328 VA: 0x1226328
-	public void JPLNEJFDPHN(int CPKMLLNADLJ)
+	public void JPLNEJFDPHN(int _CPKMLLNADLJ_Serie)
 	{
 		foreach(var k in NNDGIAEFMOG)
 		{
-			if(k.CPKMLLNADLJ == 5)
+			if(k.CPKMLLNADLJ_Serie == 5)
 			{
 				int a1 = 0;
 				bool hasViewed = false;
 				foreach (var k2 in IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBEMLGADAGK_EventStory.JPIGOBGOMON_StoryPartsList)
 				{
-					if(k2.OAFJONPIFGM_EventId == k.PGIIDPEGGPI_EventId && k2.CHOFDPDFPDC == 4)
+					if(k2.OAFJONPIFGM_EventId == k.PGIIDPEGGPI_EventId && k2.CHOFDPDFPDC_ConfigValue == 4)
 					{
 						MMPBPOIFDAF_Scene.PMKOFEIONEG scene = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PNLOINMCCKH_Scene.OPIBAPEGCLA[CCAAJNJGNDO.FCMFPPALLOM(k2.OAFJONPIFGM_EventId) - 1];
-						MLIBEPGADJH_Scene.KKLDOOJBJMN scene2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[CCAAJNJGNDO.FCMFPPALLOM(k2.OAFJONPIFGM_EventId) - 1];
+						MLIBEPGADJH_Scene.KKLDOOJBJMN scene2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[CCAAJNJGNDO.FCMFPPALLOM(k2.OAFJONPIFGM_EventId) - 1];
 						HOMGKHBHDME.KHEKNNFCAOI(scene.PPFNGGCBJKC_Id, scene.PDNIFBEGMHC_Mb, scene.EMOJHJGHJLN_Sb, scene.JPIPENJGGDD_Mlt, scene.IELENGDJPHF_Ulk, scene.MJBODMOLOBC_Luck, scene.LHMOAJAIJCO_New, scene.BEBJKJKBOGH_Date, scene.DMNIMMGGJJJ_Leaf);
 						a1++;
 						if (HOMGKHBHDME.CGKAEMGLHNK_IsUnlocked())
 						{
 							if(scene2.PPEGAKEIEGM_En > 1)
 							{
-								if(HOMGKHBHDME.EKLIPGELKCL_SceneRarity > 5)
+								if(HOMGKHBHDME.EKLIPGELKCL_Rarity > 5)
 								{
 									if(HOMGKHBHDME.FGMPFHOEPEL_GetNumUnlockedStory() >= a1)
 									{
@@ -180,18 +180,18 @@ public class DKKPBBBDKMJ
 	}
 
 	//// RVA: 0x1226BD4 Offset: 0x1226BD4 VA: 0x1226BD4
-	public bool ONIBJLOEMDF_IsNewInCategorie(int CPKMLLNADLJ)
+	public bool ONIBJLOEMDF_IsNewInCategorie(int _CPKMLLNADLJ_Serie)
 	{
 		foreach(var k in NNDGIAEFMOG)
 		{
-			if (k.CPKMLLNADLJ == CPKMLLNADLJ && k.CADENLBDAEB_IsNew)
+			if (k.CPKMLLNADLJ_Serie == _CPKMLLNADLJ_Serie && k.CADENLBDAEB_IsNew)
 				return true;
 		}
 		return false;
 	}
 
 	//// RVA: 0x1226D50 Offset: 0x1226D50 VA: 0x1226D50
-	public static bool CADENLBDAEB()
+	public static bool CADENLBDAEB_IsNew()
 	{
 		bool res = false;
 		if(!QuestUtility.IsBeginnerQuest())

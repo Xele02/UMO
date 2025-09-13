@@ -94,7 +94,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1BCA514 Offset: 0x1BCA514 VA: 0x1BCA514
 		public void UpdateOrderText()
 		{
-			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JGAFBCMOGLP_Raid.EILKGEADKGH_order == 0)
+			if(GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JGAFBCMOGLP_Raid.EILKGEADKGH_Order == 0)
 				m_bossOrderAnim.StartChildrenAnimGoStop("01", "01");
 			else
 				m_bossOrderAnim.StartChildrenAnimGoStop("02", "02");

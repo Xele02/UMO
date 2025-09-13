@@ -88,11 +88,11 @@ namespace XeSys.File
 		}
 
 		// // RVA: 0x20385AC Offset: 0x20385AC VA: 0x20385AC
-		public void ELFMKCOKNHK_AddRequest(LBHFILLFAGA COJNCNGHIJC)
+		public void ELFMKCOKNHK_AddRequest(LBHFILLFAGA _COJNCNGHIJC_Req)
 		{
 			if(JPNMBNEHBOC != null)
-				JPNMBNEHBOC(COJNCNGHIJC.BOPDLODALFD_withoutPlarformPath);
-			CEKHMLAEKIK.Add(COJNCNGHIJC);
+				JPNMBNEHBOC(_COJNCNGHIJC_Req.BOPDLODALFD_withoutPlarformPath);
+			CEKHMLAEKIK.Add(_COJNCNGHIJC_Req);
 		}
 
 		// // RVA: 0x2038664 Offset: 0x2038664 VA: 0x2038664
@@ -129,13 +129,13 @@ namespace XeSys.File
 		}
 
 		// // RVA: 0x2038954 Offset: 0x2038954 VA: 0x2038954
-		private bool BNOGEKDDEIB(string CJEKGLGBIHF_path)
+		private bool BNOGEKDDEIB(string _CJEKGLGBIHF_path)
 		{
 			return false;
 		}
 
 		// // RVA: 0x203895C Offset: 0x203895C VA: 0x203895C
-		private bool LDMEFPHAABD(string CJEKGLGBIHF_path)
+		private bool LDMEFPHAABD(string _CJEKGLGBIHF_path)
 		{
 			return true;
 		}
@@ -150,7 +150,7 @@ namespace XeSys.File
 			// private CriFileRequestManager.IFDILJEGCLD IKCDCEKDGHP; // 0x14
 			// private int BAGKENPNLJA; // 0x18
 			// private LBHFILLFAGA BPOJOBICBAC; // 0x1C
-			// private bool HAPBOLOABJI; // 0x20
+			// private bool HAPBOLOABJI_hasFailed; // 0x20
 			//0x2038B0C
 			IFDILJEGCLD IKCDCEKDGHP = IFDILJEGCLD.NFFGMBBNNPH_None;
 			for(int i = 0; i < MEDMPJHJNBJ.Count;)
@@ -262,15 +262,15 @@ namespace XeSys.File
 		// private IEnumerator NBCKHIAINIM() { }
 
 		// // RVA: 0x2038A30 Offset: 0x2038A30 VA: 0x2038A30
-		private bool EKAEAKACODC_CanRetry(LBHFILLFAGA COJNCNGHIJC)
+		private bool EKAEAKACODC_CanRetry(LBHFILLFAGA _COJNCNGHIJC_Req)
 		{
-			return EAABKFGHKBG_TryCount != COJNCNGHIJC.EAABKFGHKBG_TryCount;
+			return EAABKFGHKBG_TryCount != _COJNCNGHIJC_Req.EAABKFGHKBG_TryCount;
 		}
 
 		// // RVA: 0x2038A70 Offset: 0x2038A70 VA: 0x2038A70
-		// private bool GCPOIANJEOC(LBHFILLFAGA COJNCNGHIJC) { }
+		// private bool GCPOIANJEOC(LBHFILLFAGA _COJNCNGHIJC_Req) { }
 
 		// // RVA: 0x2038A9C Offset: 0x2038A9C VA: 0x2038A9C
-		// private bool INODGGFPKOE_IsSuccess(LBHFILLFAGA COJNCNGHIJC) { }
+		// private bool INODGGFPKOE_IsSuccess(LBHFILLFAGA _COJNCNGHIJC_Req) { }
 	}
 }

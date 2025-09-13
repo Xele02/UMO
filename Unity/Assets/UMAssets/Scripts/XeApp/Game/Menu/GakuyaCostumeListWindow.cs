@@ -99,18 +99,18 @@ namespace XeApp.Game.Menu
 				info.m_name = k.FFKMJNHFFFL_Costume.HCPCHEPCFEA_GetCostumeName(0);
 				info.m_nameBase = k.FFKMJNHFFFL_Costume.HCPCHEPCFEA_GetCostumeName(0);
 				info.m_cosId = k.FFKMJNHFFFL_Costume.JPIDIENBGKH_CostumeId;
-				info.m_cosModelId = k.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
+				info.m_cosModelId = k.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
 				info.m_cosColor = 0;
 				info.m_lv = k.FFKMJNHFFFL_Costume.GKIKAABHAAD_Level;
 				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo dbCos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_GetUnlockedCostumeOrDefault(divaId, info.m_cosId);
 				info.m_lvMax = dbCos.LLLCMHENKKN_LevelMax;
 				info.m_isHave = k.JLKPGDEKPEO_IsHave;
 				info.m_isNew = k.MBFADDHOEOK_IsNew;
-				info.m_isTry = CheckIsSetCostume(d, k.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, info.m_cosColor);
+				info.m_isTry = CheckIsSetCostume(d, k.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, info.m_cosColor);
 				info.m_isSet = info.m_isTry;
 				if(modelId > 0)
 				{
-					info.m_isTry = k.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId == modelId && info.m_cosColor == colorId;
+					info.m_isTry = k.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId == modelId && info.m_cosColor == colorId;
 				}
 				info.m_srcItem = null;
 				if(!info.m_isSet)
@@ -134,16 +134,16 @@ namespace XeApp.Game.Menu
 					info2.m_name = k.FFKMJNHFFFL_Costume.HCPCHEPCFEA_GetCostumeName(allCols[i]);
 					info2.m_nameBase = k.FFKMJNHFFFL_Costume.HCPCHEPCFEA_GetCostumeName(0);
 					info2.m_cosId = k.FFKMJNHFFFL_Costume.JPIDIENBGKH_CostumeId;
-					info2.m_cosModelId = k.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
+					info2.m_cosModelId = k.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
 					info2.m_cosColor = allCols[i];
 					info2.m_lv = k.FFKMJNHFFFL_Costume.GKIKAABHAAD_Level;
 					info2.m_lvMax = dbCos.LLLCMHENKKN_LevelMax;
 					info2.m_isHave = k.JLKPGDEKPEO_IsHave;
-					info2.m_isTry = CheckIsSetCostume(d, k.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, info2.m_cosColor);
+					info2.m_isTry = CheckIsSetCostume(d, k.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, info2.m_cosColor);
 					info2.m_isSet = info2.m_isTry;
 					if(modelId > 0)
 					{
-						info2.m_isTry = k.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId == modelId && info2.m_cosColor == colorId;
+						info2.m_isTry = k.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId == modelId && info2.m_cosColor == colorId;
 					}
 					info2.m_srcItem = info;
 					info2.m_isHave = false;
@@ -152,10 +152,10 @@ namespace XeApp.Game.Menu
 						if (info2.m_cosColor == unlockCols[j])
 						{
 							info2.m_isHave = true;
-							if (k.FFKMJNHFFFL_Costume.EJODLFBKFDK_ColNewflags.Length == 0)
+							if (k.FFKMJNHFFFL_Costume.EJODLFBKFDK_IsNewColor.Length == 0)
 								info2.m_isNew = false;
 							else
-								info2.m_isNew = k.FFKMJNHFFFL_Costume.EJODLFBKFDK_ColNewflags[j];
+								info2.m_isNew = k.FFKMJNHFFFL_Costume.EJODLFBKFDK_IsNewColor[j];
 							break;
 						}
 					}
@@ -201,12 +201,12 @@ namespace XeApp.Game.Menu
 			{
 				if (GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId == divaData.AHHJLDLAPAN_DivaId)
 				{
-					if (divaData.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId != modelId)
+					if (divaData.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId != modelId)
 						return false;
 					return divaData.EKFONBFDAAP_ColorId == colorId;
 				}
 			}
-			if (divaData.EGAFMGDFFCH_HomeDivaCostume.DAJGPBLEEOB_PrismCostumeId != modelId)
+			if (divaData.EGAFMGDFFCH_HomeDivaCostume.DAJGPBLEEOB_ModelId != modelId)
 				return false;
 			return divaData.JFFLFIMIMOI_HomeColorId == colorId;
 		}

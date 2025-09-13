@@ -40,10 +40,10 @@ public class LCKOLEDFDAL
 	}
 
 	//// RVA: 0xD949E4 Offset: 0xD949E4 VA: 0xD949E4
-	public static SakashoProductCriteria BAKNLGCIHAN(int CPGFOBNKKBF)
+	public static SakashoProductCriteria BAKNLGCIHAN(int _CPGFOBNKKBF_CurrencyId)
 	{
 		SakashoProductCriteria res = new SakashoProductCriteria();
-		res.CurrencyId = CPGFOBNKKBF;
+		res.CurrencyId = _CPGFOBNKKBF_CurrencyId;
 		res.ProductType = 0;
 		return res;
 	}

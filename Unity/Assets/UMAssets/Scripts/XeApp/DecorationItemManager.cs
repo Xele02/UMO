@@ -856,7 +856,7 @@ namespace XeApp
 			{
 				if(k.DecorationItemCategory == EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
 				{
-					if (k.Setting.viewDecoItemData.GBJFNGCDKPM_Attribute == 1)
+					if (k.Setting.viewDecoItemData.GBJFNGCDKPM_Type == 1)
 						res++;
 				}
 			}
@@ -1075,7 +1075,7 @@ namespace XeApp
 							if(s.PPFNGGCBJKC == chara.Setting.InitWord)
 							{
 								DecorationItemBaseSetting setting = new DecorationItemBaseSetting();
-								LoadItem(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif, chara.Setting.InitWord), parent, setting, PostType.Posted, new DecorationSerifArgs(s.GBJFNGCDKPM_FrameId, NCPPAHHCCAO.GHHOBKGGADG(s.PPFNGGCBJKC), s.LDLGLHBGOKE_FontSize, chara));
+								LoadItem(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif, chara.Setting.InitWord), parent, setting, PostType.Posted, new DecorationSerifArgs(s.GBJFNGCDKPM_Type, NCPPAHHCCAO.GHHOBKGGADG(s.PPFNGGCBJKC), s.LDLGLHBGOKE_FontSize, chara));
 								break;
 							}
 						}

@@ -15,7 +15,7 @@ public class IIDJLAEDMPI
 	private uint HFFJFEMMIGF; // 0x28
 	private long OAJDFDHDMEN; // 0x30
 	private string NILMMFMIBMF; // 0x38
-	private static string[] ECLAOLBGCDD = new string[8] {"yyyy/MM/dd HH:mm:ss", "(+", "(-", "day", "h", "m", ")", "serverTime="}; // 0x0
+	private static string[] ECLAOLBGCDD_tbl = new string[8] {"yyyy/MM/dd HH:mm:ss", "(+", "(-", "day", "h", "m", ")", "serverTime="}; // 0x0
 
 	// public bool BIOFMLDLNKD { get; } // ??
 

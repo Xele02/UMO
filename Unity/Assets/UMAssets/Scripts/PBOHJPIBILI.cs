@@ -36,12 +36,12 @@ public class PBOHJPIBILI
     }
 
 	// // RVA: 0xCBDC90 Offset: 0xCBDC90 VA: 0xCBDC90
-	public static bool EFOHKCAOFFE_IsMcGaugeMax(bool DDGFCOPPBBN/* = True*/)
+	public static bool EFOHKCAOFFE_IsMcGaugeMax(bool _DDGFCOPPBBN_test/* = True*/)
     {
         int cnt = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.IKLFJPAGHJG_McGauge;
         if(cnt > 99)
         {
-            if(!DDGFCOPPBBN)
+            if(!_DDGFCOPPBBN_test)
             {
                 CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.IKLFJPAGHJG_McGauge -= 100;
             }
@@ -77,7 +77,7 @@ public class PBOHJPIBILI
     }
 
 	// // RVA: 0xCBE138 Offset: 0xCBE138 VA: 0xCBE138
-	public static int BPAOMGFCODD(int KIJAPOFAGPN, IMCBBOAFION BHFHGFKBOHH)
+	public static int BPAOMGFCODD(int KIJAPOFAGPN, IMCBBOAFION _BHFHGFKBOHH_OnSuccess)
     {
         int num = GJPMPGIIPHA(KIJAPOFAGPN);
         if(num > 0)
@@ -98,7 +98,7 @@ public class PBOHJPIBILI
             {
                 //0xCBE540
                 JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
-                BHFHGFKBOHH();
+                _BHFHGFKBOHH_OnSuccess();
             }, null);
             return 1;
         }

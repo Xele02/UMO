@@ -21,13 +21,13 @@ namespace XeApp.Game.Menu
 			private int stat_; // 0x94
 			private int count_; // 0x98
 
-			public int stat { get { return stat_ ^ FBGGEFFJJHB; } set { stat_ = value ^ FBGGEFFJJHB; } } //0xD15538 0xD19654
-			public int count { get { return count_ ^ FBGGEFFJJHB; } set { count_ = value ^ FBGGEFFJJHB; } } //0xD15528 0xD19664
+			public int stat { get { return stat_ ^ FBGGEFFJJHB_xor; } set { stat_ = value ^ FBGGEFFJJHB_xor; } } //0xD15538 0xD19654
+			public int count { get { return count_ ^ FBGGEFFJJHB_xor; } set { count_ = value ^ FBGGEFFJJHB_xor; } } //0xD15528 0xD19664
 
 			// RVA: 0xD14A0C Offset: 0xD14A0C VA: 0xD14A0C
 			public LobbyQuestInfo(AKIIJBEJOEP src, int stat, int count)
 			{
-				FBGGEFFJJHB = LPDNKHAIOLH.CEIBAFOCNCA();
+				FBGGEFFJJHB_xor = LPDNKHAIOLH.CEIBAFOCNCA();
 				this.stat = stat;
 				this.count = count;
 				PPFNGGCBJKC_Id = src.PPFNGGCBJKC_Id;
@@ -39,10 +39,10 @@ namespace XeApp.Game.Menu
 				LMPPENOILPF = src.LMPPENOILPF;
 				KIJAPOFAGPN_ItemId = src.KIJAPOFAGPN_ItemId;
 				JDLJPNMLFID_ItemCount = src.JDLJPNMLFID_ItemCount;
-				EILKGEADKGH = src.EILKGEADKGH;
+				EILKGEADKGH_Order = src.EILKGEADKGH_Order;
 				HHIBBHFHENH_NextStepId = src.HHIBBHFHENH_NextStepId;
 				KJBGCLPMLCG_Start = src.KJBGCLPMLCG_Start;
-				GJFPFFBAKGK_End = src.GJFPFFBAKGK_End;
+				GJFPFFBAKGK_CloseAt = src.GJFPFFBAKGK_CloseAt;
 				DGMIADAEGAI_TargetDifficultyType = src.DGMIADAEGAI_TargetDifficultyType;
 				HBJJCDIMOPO_TargetMusicConditionId = src.HBJJCDIMOPO_TargetMusicConditionId;
 				HMOJCCPIPBP_TargetMusicType = src.HMOJCCPIPBP_TargetMusicType;
@@ -232,7 +232,7 @@ namespace XeApp.Game.Menu
 					else if(a.stat == 1 && b.stat == 2)
 						return 1;
 				}
-				return a.EILKGEADKGH.CompareTo(b.EILKGEADKGH);
+				return a.EILKGEADKGH_Order.CompareTo(b.EILKGEADKGH_Order);
 			});
 			if(RuntimeSettings.CurrentSettings.UnlimitedEvent)
 			{
@@ -248,7 +248,7 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < m_missionDataList.Count; i++)
 			{
 				m_lobbyMission.SetGauge(i, m_missionDataList[i].count, m_missionDataList[i].GLDIGCJNOBO_ClearCount);
-				m_lobbyMission.SettingTimer(m_missionDataList[i].GJFPFFBAKGK_End, i);
+				m_lobbyMission.SettingTimer(m_missionDataList[i].GJFPFFBAKGK_CloseAt, i);
 				m_lobbyMission.SetDesc(i, m_missionDataList[i].FEMMDNIELFC_Desc);
 				m_lobbyMission.SetItemIcon(i, m_missionDataList[i].KIJAPOFAGPN_ItemId);
 				m_lobbyMission.SetQuentConpCont(i, m_missionDataList[i].count, m_missionDataList[i].GLDIGCJNOBO_ClearCount);
@@ -402,7 +402,7 @@ namespace XeApp.Game.Menu
 				case BKANGIKIEML.NODKLJHEAJB.OBDLOMGHHED_12:
 				{
 						MusicSelectArgs arg = null;
-                        List<IBJAKJJICBC> l = IBJAKJJICBC.FKDIMODKKJD(5, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime(), true, false, false, false);
+                        List<IBJAKJJICBC> l = IBJAKJJICBC.FKDIMODKKJD(5, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), true, false, false, false);
 						for(int i = 0; i < l.Count; i++)
 						{
 							if(l[i].LHONOILACFL_IsWeeklyEvent)
@@ -430,11 +430,11 @@ namespace XeApp.Game.Menu
 				case BKANGIKIEML.NODKLJHEAJB.LINKBPIPHAK_17:
 					if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
 					{
-						long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+						long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 						for(int j = 1; j <= 6; j++)
 						{
                             List<IBJAKJJICBC> l = IBJAKJJICBC.FKDIMODKKJD(j, t, true, false, false, false);
-							List<KEODKEGFDLD_FreeMusicInfo> freeMusicList = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas.FindAll((KEODKEGFDLD_FreeMusicInfo _) =>
+							List<KEODKEGFDLD_FreeMusicInfo> freeMusicList = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicData.FindAll((KEODKEGFDLD_FreeMusicInfo _) =>
 							{
 								//0xD17590
 								return conditionId == _.DLAEJOBELBH_MusicId;

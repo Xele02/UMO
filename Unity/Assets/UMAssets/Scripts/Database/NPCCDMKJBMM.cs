@@ -13,15 +13,15 @@ public class NPCCDMKJBMM_HomeVoice : DIHHCBACKGG_DbSection
 		public sbyte PPEGAKEIEGM_Enabled; // 0xC
 		public sbyte INDDJNMPONH; // 0xD
 		public int NKCNHKHGJHN_TalkType; // 0x10
-		public int CHOFDPDFPDC_DivaId; // 0x14
+		public int CHOFDPDFPDC_ConfigValue; // 0x14 //DivaId
 		public long PDBPFJJCADD_StartAt; // 0x18
-		public long FDBNFFNFOND_EndAt; // 0x20
+		public long FDBNFFNFOND_CloseAt; // 0x20
 
 		// RVA: 0x1CB5F60 Offset: 0x1CB5F60 VA: 0x1CB5F60
 		//public uint CAOGDCBPBAN() { }
 	}
 
-	public List<KLKLEALABPN> CDENCMNHNGA = new List<KLKLEALABPN>(); // 0x20
+	public List<KLKLEALABPN> CDENCMNHNGA_table = new List<KLKLEALABPN>(); // 0x20
 
 	// RVA: 0x1CB59F4 Offset: 0x1CB59F4 VA: 0x1CB59F4
 	public NPCCDMKJBMM_HomeVoice()
@@ -34,13 +34,13 @@ public class NPCCDMKJBMM_HomeVoice : DIHHCBACKGG_DbSection
 	// RVA: 0x1CB5AE8 Offset: 0x1CB5AE8 VA: 0x1CB5AE8 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		CDENCMNHNGA.Clear();
+		CDENCMNHNGA_table.Clear();
 	}
 
 	// RVA: 0x1CB5B60 Offset: 0x1CB5B60 VA: 0x1CB5B60 Slot: 9
-	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
+	public override bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data)
 	{
-		PCKMEHLNOFO parser = PCKMEHLNOFO.HEGEKFMJNCC(DBBGALAPFGC);
+		PCKMEHLNOFO parser = PCKMEHLNOFO.HEGEKFMJNCC(_DBBGALAPFGC_Data);
 		OCANCOENHML[] array = parser.EKDAACJJAPP;
 		for(int i = 0; i < array.Length; i++)
 		{
@@ -49,9 +49,9 @@ public class NPCCDMKJBMM_HomeVoice : DIHHCBACKGG_DbSection
 			data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
 			data.INDDJNMPONH = (sbyte)array[i].GBJFNGCDKPM;
 			data.NKCNHKHGJHN_TalkType = (int)array[i].CHOIMHCMAHG;
-			data.CHOFDPDFPDC_DivaId = (int)array[i].JBFLEDKDFCO;
+			data.CHOFDPDFPDC_ConfigValue = (int)array[i].JBFLEDKDFCO;
 			data.PDBPFJJCADD_StartAt = array[i].PDBPFJJCADD;
-			data.FDBNFFNFOND_EndAt = array[i].FDBNFFNFOND;
+			data.FDBNFFNFOND_CloseAt = array[i].FDBNFFNFOND;
 			// UMO : Update all talk to work in current year
 			long prevStart = data.PDBPFJJCADD_StartAt;
 			if(data.PDBPFJJCADD_StartAt != 0)
@@ -59,19 +59,19 @@ public class NPCCDMKJBMM_HomeVoice : DIHHCBACKGG_DbSection
 				DateTime startDate = Utility.GetLocalDateTime(data.PDBPFJJCADD_StartAt);
 				data.PDBPFJJCADD_StartAt = Utility.GetTargetUnixTime(DateTime.Now.Year, startDate.Month, startDate.Day, startDate.Hour, startDate.Minute, startDate.Second);
 			}
-			if(data.FDBNFFNFOND_EndAt != 0)
+			if(data.FDBNFFNFOND_CloseAt != 0)
 			{
 				if(prevStart == 0)
 				{
-					DateTime endDate = Utility.GetLocalDateTime(data.FDBNFFNFOND_EndAt);
-					data.FDBNFFNFOND_EndAt = Utility.GetTargetUnixTime(DateTime.Now.Year, endDate.Month, endDate.Day, endDate.Hour, endDate.Minute, endDate.Second);
+					DateTime endDate = Utility.GetLocalDateTime(data.FDBNFFNFOND_CloseAt);
+					data.FDBNFFNFOND_CloseAt = Utility.GetTargetUnixTime(DateTime.Now.Year, endDate.Month, endDate.Day, endDate.Hour, endDate.Minute, endDate.Second);
 				}
 				else
 				{
-					data.FDBNFFNFOND_EndAt = data.PDBPFJJCADD_StartAt + (data.FDBNFFNFOND_EndAt - prevStart);
+					data.FDBNFFNFOND_CloseAt = data.PDBPFJJCADD_StartAt + (data.FDBNFFNFOND_CloseAt - prevStart);
 				}
 			}
-			CDENCMNHNGA.Add(data);
+			CDENCMNHNGA_table.Add(data);
 		}
 		return true;
 	}

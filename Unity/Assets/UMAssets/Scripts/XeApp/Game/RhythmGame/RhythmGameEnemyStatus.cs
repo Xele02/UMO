@@ -64,8 +64,8 @@ namespace XeApp.Game.RhythmGame
 				KEODKEGFDLD_FreeMusicInfo musicdb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(musicInfo.freeMusicId);
 				if(!musicInfo.IsLine6Mode)
 				{
-					subgoalValue = musicdb.LJPKLMJPLAC[(int)musicInfo.difficultyType];
-					goalValue = musicdb.MALHPBKPIDE[(int)musicInfo.difficultyType];
+					subgoalValue = musicdb.LJPKLMJPLAC_DIn[(int)musicInfo.difficultyType];
+					goalValue = musicdb.MALHPBKPIDE_SdIn[(int)musicInfo.difficultyType];
 					enemyId = musicdb.LHICAKGHIGF_EnemyIdByDiff[(int)musicInfo.difficultyType];
 				}
 				else
@@ -78,8 +78,8 @@ namespace XeApp.Game.RhythmGame
 			else
 			{
 				DJNPIGEFPMF_StoryMusicInfo musicdb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(musicInfo.storyMusicId);
-				subgoalValue = musicdb.LJPKLMJPLAC[(int)musicInfo.difficultyType];
-				goalValue = musicdb.MALHPBKPIDE[(int)musicInfo.difficultyType];
+				subgoalValue = musicdb.LJPKLMJPLAC_DIn[(int)musicInfo.difficultyType];
+				goalValue = musicdb.MALHPBKPIDE_SdIn[(int)musicInfo.difficultyType];
 				enemyId = musicdb.LHICAKGHIGF[(int)musicInfo.difficultyType];
 			}
 			gameMaster = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game;
@@ -124,7 +124,7 @@ namespace XeApp.Game.RhythmGame
 				v1 = data.NONBCCLGBAO_Hit;
 				v2 = data.KINFGHHNFCF_Atk;
 			}
-			JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo vInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[valkyrieId - 1];
+			JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo vInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[valkyrieId - 1];
 			teamAttack = (v2 + vInfo.OJHINEMKMOP(0)) * supportRate;
 			teamAccuracy = (v1 + vInfo.PAELLCKLEJP(0)) * supportRate;
 			evadeRate = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OPFBEAJJMJB_Enemy.INONDJKKOKG(enemyId).ADMMEMNGKEN_Avo;

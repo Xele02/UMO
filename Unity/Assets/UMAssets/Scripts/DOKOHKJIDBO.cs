@@ -21,7 +21,7 @@ public class DOKOHKJIDBO
 
 	// RVA: 0x12328E8 Offset: 0x12328E8 VA: 0x12328E8
 	// LFIEDDHNLBE : GameStart : true, Initialize : false
-	public void DBEPFLFHAFH_RequestMaster(bool LFIEDDHNLBE, IMCBBOAFION BHFHGFKBOHH, DJBHIFLHJLK MOBEEPPKFLG)
+	public void DBEPFLFHAFH_RequestMaster(bool LFIEDDHNLBE, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK MOBEEPPKFLG)
 	{
 		// // RVA: 0x12330E0 Offset: 0x12330E0 VA: 0x12330E0
 		// internal bool APDFIGKALGM(SakashoErrorId LJJGBICGLLF) { }
@@ -55,7 +55,7 @@ public class DOKOHKJIDBO
 				{
 					ANDDAABHGIP();
 					LNAHEIEIBOI = true;
-					BHFHGFKBOHH.Invoke();
+					_BHFHGFKBOHH_OnSuccess.Invoke();
 					return;
 				}
 			}
@@ -64,7 +64,7 @@ public class DOKOHKJIDBO
 				GNCHKCLDCBP(MOBEEPPKFLG);
 				return;
 			}
-			BHFHGFKBOHH.Invoke();
+			_BHFHGFKBOHH_OnSuccess.Invoke();
 		};
 		request.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request JIPCHHHLOMM) => 
 		{
@@ -76,7 +76,7 @@ public class DOKOHKJIDBO
 			}
 			if(!LFIEDDHNLBE)
 			{
-				BHFHGFKBOHH();
+				_BHFHGFKBOHH_OnSuccess();
 				return;
 			}
 			GNCHKCLDCBP(MOBEEPPKFLG);

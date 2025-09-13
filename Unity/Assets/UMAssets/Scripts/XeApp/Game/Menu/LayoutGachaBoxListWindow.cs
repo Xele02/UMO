@@ -75,7 +75,7 @@ namespace XeApp.Game.Menu
 			LayoutGachaBoxListItem l = content as LayoutGachaBoxListItem;
 			if(l != null)
 			{
-				long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 				bool b = false;
 				if(time < m_view.JOFAGCFNKIO_Start)
 				{

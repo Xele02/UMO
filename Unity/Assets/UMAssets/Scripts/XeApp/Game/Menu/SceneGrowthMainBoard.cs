@@ -16,14 +16,14 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10D7F2C Offset: 0x10D7F2C VA: 0x10D7F2C Slot: 8
 		public override void SetBoardLayout(GCIJNCFDNON_SceneInfo sceneData)
 		{
-			MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[sceneData.BCCHOBPJJKE_SceneId - 1];
+			MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[sceneData.BCCHOBPJJKE_SceneId - 1];
 			m_sceneData = sceneData;
 			m_boardSquareList.Clear();
 			int a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(sceneData.JKGFBFPIMGA_Rarity, m_sceneData.CGIELKDLHGE_GetEvolveId() > 1, sceneData.MCCIFLKCNKO_Feed) - 1;
 			if(a > -1 && sceneData.DKFCPBEOBHB_Layout.PDKGMFHIFML_Panels.Count > a)
 			{
 				NLNDLEEJOFD n = sceneData.DKFCPBEOBHB_Layout.PDKGMFHIFML_Panels[a];
-				for(int j = 0; j < n.GHPLINIACBB_Col + 1; j++)
+				for(int j = 0; j < n.GHPLINIACBB_x + 1; j++)
 				{
 					BoardSquare[] squares = new BoardSquare[5];
 					for (int i = 0; i < 5; i++)
@@ -35,9 +35,9 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < sceneData.DKFCPBEOBHB_Layout.PDKGMFHIFML_Panels.Count; i++)
 				{
 					n = sceneData.DKFCPBEOBHB_Layout.PDKGMFHIFML_Panels[i];
-					if (n.GHPLINIACBB_Col < m_boardSquareList.Count)
+					if (n.GHPLINIACBB_x < m_boardSquareList.Count)
 					{
-						BoardSquare[] squares = m_boardSquareList[n.GHPLINIACBB_Col];
+						BoardSquare[] squares = m_boardSquareList[n.GHPLINIACBB_x];
 						int idx = n.PMBEODGMMBB_Row;
 						AFIFDLOAKGI a_ = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.PJADHDHKOEJ[n.JBGEEPFKIGG - 1];
 						squares[idx].id = a_.INDDJNMPONH_StatType;
@@ -50,22 +50,22 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < sceneData.DKFCPBEOBHB_Layout.ADPJCNHAJPC_Roads.Count; i++)
 				{
 					n = sceneData.DKFCPBEOBHB_Layout.ADPJCNHAJPC_Roads[i];
-					if(n.GHPLINIACBB_Col + 1 < m_boardSquareList.Count)
+					if(n.GHPLINIACBB_x + 1 < m_boardSquareList.Count)
 					{
 						AFIFDLOAKGI a_ = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.PJADHDHKOEJ[n.JBGEEPFKIGG - 1];
 						if(a_.INDDJNMPONH_StatType != 16)
 						{
-							BoardSquare[] squares = m_boardSquareList[n.GHPLINIACBB_Col + 1];
+							BoardSquare[] squares = m_boardSquareList[n.GHPLINIACBB_x + 1];
 							if (squares[n.PMBEODGMMBB_Row].type == SquareType.None)
 								continue;
 						}
-						m_boardSquareList[n.GHPLINIACBB_Col][n.PMBEODGMMBB_Row].isOpen = m_boardSquareList[n.GHPLINIACBB_Col + 1][n.PMBEODGMMBB_Row].isOpen;
-						m_boardSquareList[n.GHPLINIACBB_Col][n.PMBEODGMMBB_Row].id = n.JBGEEPFKIGG - 2;
-						m_boardSquareList[n.GHPLINIACBB_Col][n.PMBEODGMMBB_Row].saveIndex = (short)i;
-						m_boardSquareList[n.GHPLINIACBB_Col][n.PMBEODGMMBB_Row].type = a_.INDDJNMPONH_StatType == 16 ? SquareType.Start : SquareType.Road;
+						m_boardSquareList[n.GHPLINIACBB_x][n.PMBEODGMMBB_Row].isOpen = m_boardSquareList[n.GHPLINIACBB_x + 1][n.PMBEODGMMBB_Row].isOpen;
+						m_boardSquareList[n.GHPLINIACBB_x][n.PMBEODGMMBB_Row].id = n.JBGEEPFKIGG - 2;
+						m_boardSquareList[n.GHPLINIACBB_x][n.PMBEODGMMBB_Row].saveIndex = (short)i;
+						m_boardSquareList[n.GHPLINIACBB_x][n.PMBEODGMMBB_Row].type = a_.INDDJNMPONH_StatType == 16 ? SquareType.Start : SquareType.Road;
 					}
 				}
-				bool b = sceneData.JKGFBFPIMGA_Rarity > 3 && sceneData.JKGFBFPIMGA_Rarity == sceneData.EKLIPGELKCL_SceneRarity && sceneData.JKGFBFPIMGA_Rarity < 6;
+				bool b = sceneData.JKGFBFPIMGA_Rarity > 3 && sceneData.JKGFBFPIMGA_Rarity == sceneData.EKLIPGELKCL_Rarity && sceneData.JKGFBFPIMGA_Rarity < 6;
 				if(b && NHPDPKHMFEP.HHCJCDFCLOB.MENKMJPCELJ() != -2)
 				{
 					int idx = 0;
@@ -81,10 +81,10 @@ namespace XeApp.Game.Menu
 					int d = 0;
 					for(int i = 0; i < sceneData.DKFCPBEOBHB_Layout.PDKGMFHIFML_Panels.Count; i++)
 					{
-						if(idx < sceneData.DKFCPBEOBHB_Layout.PDKGMFHIFML_Panels[i].GHPLINIACBB_Col &&
+						if(idx < sceneData.DKFCPBEOBHB_Layout.PDKGMFHIFML_Panels[i].GHPLINIACBB_x &&
 							sceneData.DKFCPBEOBHB_Layout.PDKGMFHIFML_Panels[i].PMBEODGMMBB_Row == 2)
 						{
-							c = sceneData.DKFCPBEOBHB_Layout.PDKGMFHIFML_Panels[i].GHPLINIACBB_Col;
+							c = sceneData.DKFCPBEOBHB_Layout.PDKGMFHIFML_Panels[i].GHPLINIACBB_x;
 							d = i;
 							break;
 						}
@@ -118,7 +118,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				Debug.LogError(string.Concat(new object[9] { "boardId=", dbScene.BJNBBEMBMIK_BoardId, JpStringLiterals.StringLiteral_20178,
-					sceneData.EKLIPGELKCL_SceneRarity, JpStringLiterals.StringLiteral_20179, a + 1,
+					sceneData.EKLIPGELKCL_Rarity, JpStringLiterals.StringLiteral_20179, a + 1,
 					JpStringLiterals.StringLiteral_20180, sceneData.DKFCPBEOBHB_Layout.PDKGMFHIFML_Panels.Count,
 					JpStringLiterals.StringLiteral_20181
 				}));
@@ -188,7 +188,7 @@ namespace XeApp.Game.Menu
 		{
 			int a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(m_sceneData.JKGFBFPIMGA_Rarity, false, m_sceneData.MCCIFLKCNKO_Feed);
 			NLNDLEEJOFD n = m_sceneData.DKFCPBEOBHB_Layout.PDKGMFHIFML_Panels[a];
-			SetScrollPosition(GetScrollAreaInPosition(n.GHPLINIACBB_Col * 120, 0.2f));
+			SetScrollPosition(GetScrollAreaInPosition(n.GHPLINIACBB_x * 120, 0.2f));
 			for(int i = 0; i < m_boardSquareList.Count; i++)
 			{
 				for(int j = 0; j < m_boardSquareList[i].Length; j++)

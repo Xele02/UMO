@@ -695,7 +695,7 @@ namespace XeApp.Game.Menu
 			m_chatContller.MFFPEIEMGGM();
 			ANPBHCNJIDI.AIFBLOAGFOP data = new ANPBHCNJIDI.AIFBLOAGFOP();
 			data.AHHJLDLAPAN_DivaId = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId;
-			data.EBBJPBGHJOL_Content = m_messgeText;
+			data.EBBJPBGHJOL_text = m_messgeText;
 			data.PCEHLFNFIDA(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData);
 			m_chatContller.NPIBJOGODKG(0, data, () =>
 			{

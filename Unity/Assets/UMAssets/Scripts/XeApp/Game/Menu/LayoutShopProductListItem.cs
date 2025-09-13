@@ -83,7 +83,7 @@ namespace XeApp.Game.Menu
 			}
 			else if(view.FPJBMCDMAMO == 1)
 			{
-				if(view.ELEPHBOKIGK_MaxCount < 1)
+				if(view.ELEPHBOKIGK_Limit < 1)
 				{
 					object[] obj = new object[4]
 					{
@@ -115,7 +115,7 @@ namespace XeApp.Game.Menu
 			{
 				name += "(" + NCPPAHHCCAO.EFNHFKLKNHJ(id) + ")";
 			}
-			name += " " + view.JDLJPNMLFID_Count.ToString() + EKLNMHFCAOI.NDBLEADIDLA(cat, id);
+			name += " " + view.JDLJPNMLFID_ItemCount.ToString() + EKLNMHFCAOI.NDBLEADIDLA(cat, id);
 			m_textName.text = name;
 			int num = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, cat, id, null);
 			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.ACGHELNGNGK_UnionCredit)

@@ -596,7 +596,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x10DF84C Offset: 0x10DF84C VA: 0x10DF84C
 		public void OnEnablePassButton(SceneGrowthPanel panel)
 		{
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			int cnt = EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EKLNMHFCAOI.FKGCBLHOOCL_Category.CIOGEKJNMBB_RareUpItem, 1, null);
 			int cnt2 = NHPDPKHMFEP.HHCJCDFCLOB.MENKMJPCELJ();
 			if((cnt2 == 0 || cnt2 == -3) && cnt == 0)
@@ -826,7 +826,7 @@ namespace XeApp.Game.Menu
 			MenuScene.Save(() =>
 			{
 				//0x10E7F2C
-				ILCCJNDFFOB.HHCJCDFCLOB.NNAPCDMAAJM(m_viewSceneData.BCCHOBPJJKE_SceneId, m_viewSceneData.JPIPENJGGDD_NumBoard, m_viewSceneData.CIEOBFIIPLD_SceneLevel, m_viewSceneData.CIEOBFIIPLD_SceneLevel, new List<int>() { typeItemId }, new List<int>(), 0, new List<int>());
+				ILCCJNDFFOB.HHCJCDFCLOB.NNAPCDMAAJM(m_viewSceneData.BCCHOBPJJKE_SceneId, m_viewSceneData.JPIPENJGGDD_NumBoard, m_viewSceneData.CIEOBFIIPLD_Level, m_viewSceneData.CIEOBFIIPLD_Level, new List<int>() { typeItemId }, new List<int>(), 0, new List<int>());
 				isWaitSave = false;
 			}, null);
 			while (isWaitSave)
@@ -890,7 +890,7 @@ namespace XeApp.Game.Menu
 			if (!m_popupItemUseConfirmSetting.ISLoaded())
 				yield return this.StartCoroutineWatched(m_popupItemUseConfirmSetting.LoadAssetBundlePrefab(transform));
 			MenuScene.Instance.InputEnable();
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			bank = MessageManager.Instance.GetBank("menu");
 			int rarityUpItemId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("rarity_up_item_id", 230001);
 			itemType = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(rarityUpItemId);
@@ -1038,7 +1038,7 @@ namespace XeApp.Game.Menu
 
 			//0x10E8200
 			MenuScene.Instance.InputDisable();
-			m_viewSceneData.EKLIPGELKCL_SceneRarity = (byte)(m_viewSceneData.JKGFBFPIMGA_Rarity + 1);
+			m_viewSceneData.EKLIPGELKCL_Rarity = (byte)(m_viewSceneData.JKGFBFPIMGA_Rarity + 1);
 			m_viewSceneData.JPIPENJGGDD_NumBoard = 1;
 			m_viewSceneData.IELENGDJPHF = 0;
 			JKNGJFOBADP d = new JKNGJFOBADP();
@@ -1078,8 +1078,8 @@ namespace XeApp.Game.Menu
 			{
 				//0x10E6944
 				ILCCJNDFFOB.HHCJCDFCLOB.NNAPCDMAAJM(m_viewSceneData.BCCHOBPJJKE_SceneId,
-					m_viewSceneData.JPIPENJGGDD_NumBoard, m_viewSceneData.CIEOBFIIPLD_SceneLevel,
-					m_viewSceneData.CIEOBFIIPLD_SceneLevel, new List<int>() { typeItemId }, new List<int>() { 1 }, 0, new List<int>());
+					m_viewSceneData.JPIPENJGGDD_NumBoard, m_viewSceneData.CIEOBFIIPLD_Level,
+					m_viewSceneData.CIEOBFIIPLD_Level, new List<int>() { typeItemId }, new List<int>() { 1 }, 0, new List<int>());
 				m_isWaitSave = false;
 			}, () =>
 			{
@@ -1159,7 +1159,7 @@ namespace XeApp.Game.Menu
 				if (m_isAddtiveSubBoard)
 				{
 					//LAB_010e0ad0
-					MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[m_viewSceneData.BCCHOBPJJKE_SceneId - 1];
+					MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[m_viewSceneData.BCCHOBPJJKE_SceneId - 1];
 					int a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.GENHLFPKOEE(scene.EKLIPGELKCL_Rarity, scene.MCCIFLKCNKO_Feed);
 					m_isFirstInfinityPanelOpen = m_viewSceneData.IELENGDJPHF <= a;
 					m_isAddtiveFirstSubBoard = m_viewSceneData.IELENGDJPHF < 2;
@@ -1396,7 +1396,7 @@ namespace XeApp.Game.Menu
 			if(!MenuScene.CheckDatelineAndAssetUpdate())
 			{
 				m_limitOverData.KHEKNNFCAOI(m_viewSceneData.JKGFBFPIMGA_Rarity, m_viewSceneData.MKHFCGPJPFI_LimitOverCount, m_viewSceneData.MJBODMOLOBC_Luck);
-				if(!m_limitOverData.EOBACDCDGOF)
+				if(!m_limitOverData.EOBACDCDGOF_IsTerminate)
 				{
 					m_luckyLeafSetting.Setup(m_viewSceneData);
 					if(!m_limitOverData.JMHIDPKHELB)

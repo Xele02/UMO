@@ -67,10 +67,10 @@ public class OAFCKDDEBFN
 	}
 
 	// RVA: 0x1CBF008 Offset: 0x1CBF008 VA: 0x1CBF008
-	public BEEINMBNKNM_Encryption MFHAOMELJKJ_FindDecryptor(string CJEKGLGBIHF_path)
+	public BEEINMBNKNM_Encryption MFHAOMELJKJ_FindDecryptor(string _CJEKGLGBIHF_path)
 	{
 		int index = 0;
-		string input = CJEKGLGBIHF_path.Replace('\\','/');
+		string input = _CJEKGLGBIHF_path.Replace('\\','/');
 		while(true)
 		{
 			if(MGJKEJHEBPO.Count <= index)

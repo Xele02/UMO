@@ -6,26 +6,26 @@ public class FFMIPGABHHA { }
 public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 {
 	private const int ECFEMKGFDCE = 2;
-	public const long BBEGLBMOBOF = 0x77ccefaa9;
+	public const long BBEGLBMOBOF_xorl = 0x77ccefaa9;
 	public static string POFDDFCGEGP = "_"; // 0x0
 	public string IOIMHJAOKOO_Hash; // 0x24
 	private long KLAPHOKNEDG_TimeCrypted; // 0x28
 	public long AFNJCFEKFDD_Dirty; // 0x30
 
-	public long BEBJKJKBOGH_Time { get { return KLAPHOKNEDG_TimeCrypted ^ BBEGLBMOBOF; } set { KLAPHOKNEDG_TimeCrypted = value ^ BBEGLBMOBOF; } } //DIAPHCJBPFD 0x14E4B88 IHAIKPNEEJE 0x14E4BA0
+	public long BEBJKJKBOGH_Date { get { return KLAPHOKNEDG_TimeCrypted ^ BBEGLBMOBOF_xorl; } set { KLAPHOKNEDG_TimeCrypted = value ^ BBEGLBMOBOF_xorl; } } //DIAPHCJBPFD 0x14E4B88 IHAIKPNEEJE 0x14E4BA0
 	public override bool DMICHEJIAJL { get { return true; } } // 0x14E5A68 NFKFOODCJJB
 
 	// // RVA: 0x14E4BBC Offset: 0x14E4BBC VA: 0x14E4BBC
-	public static string CAOGDCBPBAN(string MDADLCOCEBN, int EHDDADDKMFI, int FEOKKEPAIBB)
+	public static string CAOGDCBPBAN(string MDADLCOCEBN, int _EHDDADDKMFI_f_id, int _FEOKKEPAIBB_diff)
 	{
 		StringBuilder str = new StringBuilder();
 		str.Append(MDADLCOCEBN);
 		str.Append('-');
-		str.Append(EHDDADDKMFI);
+		str.Append(_EHDDADDKMFI_f_id);
 		str.Append('-');
-		str.Append(FEOKKEPAIBB);
+		str.Append(_FEOKKEPAIBB_diff);
 		str.Append('-');
-		str.Append(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime());
+		str.Append(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 		return str.ToString();
 	}
 
@@ -38,7 +38,7 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x14E4E48 Offset: 0x14E4E48 VA: 0x14E4E48 Slot: 4
 	public override void KMBPACJNEOF()
 	{
-		BEBJKJKBOGH_Time = 0;
+		BEBJKJKBOGH_Date = 0;
 		AFNJCFEKFDD_Dirty = 0;
 		IOIMHJAOKOO_Hash = "";
 	}
@@ -50,7 +50,7 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 		data[AFEHLCGHAEE_Strings.KAKFEGGEKLB_save_id] = MCKEOKFMLAH;
 		data[AFEHLCGHAEE_Strings.AGPKGMFOJHC_rev] = 2;
 		data["hash"] = IOIMHJAOKOO_Hash;
-		data["date"] = BEBJKJKBOGH_Time;
+		data["date"] = BEBJKJKBOGH_Date;
 		data["dirty"] = AFNJCFEKFDD_Dirty;
 		OILEIIEIBHP[JIKKNHIAEKG_BlockName] = data;
 	}
@@ -74,7 +74,7 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 					isInvalid = true;
 			}
 			IOIMHJAOKOO_Hash = FGCNMLBACGO_ReadString(block, "hash", "", ref isInvalid);
-			BEBJKJKBOGH_Time = DKMPHAPBDLH_ReadLong(block, "date", 0, ref isInvalid);
+			BEBJKJKBOGH_Date = DKMPHAPBDLH_ReadLong(block, "date", 0, ref isInvalid);
 			AFNJCFEKFDD_Dirty = DKMPHAPBDLH_ReadLong(block, "dirty", 0, ref isInvalid);
 		}
 		KFKDMBPNLJK_BlockInvalid = isInvalid;
@@ -82,11 +82,11 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x14E5400 Offset: 0x14E5400 VA: 0x14E5400 Slot: 7
-	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	public override void BMGGKONLFIC_Copy(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
 		FFMIPGABHHA_SaveHash s = GPBJHKLFCEP as FFMIPGABHHA_SaveHash;
 		IOIMHJAOKOO_Hash = string.Copy(s.IOIMHJAOKOO_Hash);
-		BEBJKJKBOGH_Time = s.BEBJKJKBOGH_Time;
+		BEBJKJKBOGH_Date = s.BEBJKJKBOGH_Date;
 		AFNJCFEKFDD_Dirty = s.AFNJCFEKFDD_Dirty;
 	}
 
@@ -94,7 +94,7 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 	public override bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
 		FFMIPGABHHA_SaveHash other = GPBJHKLFCEP as FFMIPGABHHA_SaveHash;
-		if(BEBJKJKBOGH_Time != other.BEBJKJKBOGH_Time ||
+		if(BEBJKJKBOGH_Date != other.BEBJKJKBOGH_Date ||
 			IOIMHJAOKOO_Hash != other.IOIMHJAOKOO_Hash ||
 			AFNJCFEKFDD_Dirty != other.AFNJCFEKFDD_Dirty)
 			return false;
@@ -102,5 +102,5 @@ public class FFMIPGABHHA_SaveHash : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x14E56AC Offset: 0x14E56AC VA: 0x14E56AC Slot: 10
-	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH);
+	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock _GJLFANGDGCL_Target, long MCKEOKFMLAH);
 }

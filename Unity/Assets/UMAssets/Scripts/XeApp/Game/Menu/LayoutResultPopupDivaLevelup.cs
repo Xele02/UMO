@@ -244,7 +244,7 @@ namespace XeApp.Game.Menu
 		private void StartLoadDivaIcon(int divaId)
 		{
 			FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[divaId - 1];
-			MenuScene.Instance.DivaIconCache.LoadPortraitIcon(divaId, diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, diva.EKFONBFDAAP_ColorId, (IiconTexture iconTexture) =>
+			MenuScene.Instance.DivaIconCache.LoadPortraitIcon(divaId, diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, diva.EKFONBFDAAP_ColorId, (IiconTexture iconTexture) =>
 			{
 				//0x1D09F5C
 				iconTexture.Set(imageDiva);

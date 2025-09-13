@@ -92,7 +92,7 @@ namespace XeApp.Game.Menu
 					{
 						if (unitData.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId != MenuScene.Instance.divaManager.DivaId)
 							return true;
-						if (unitData.BCJEAJPLGMB_MainDivas[0].FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId != MenuScene.Instance.divaManager.ModelId)
+						if (unitData.BCJEAJPLGMB_MainDivas[0].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId != MenuScene.Instance.divaManager.ModelId)
 							return true;
 						return unitData.BCJEAJPLGMB_MainDivas[0].EKFONBFDAAP_ColorId != MenuScene.Instance.divaManager.ColorId;
 					}
@@ -105,7 +105,7 @@ namespace XeApp.Game.Menu
 						{
 							if (unitData.BCJEAJPLGMB_MainDivas[i].AHHJLDLAPAN_DivaId == MenuScene.Instance.divaManager.DivaId)
 							{
-								if (unitData.BCJEAJPLGMB_MainDivas[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId != MenuScene.Instance.divaManager.ModelId)
+								if (unitData.BCJEAJPLGMB_MainDivas[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId != MenuScene.Instance.divaManager.ModelId)
 									return true;
 								if (unitData.BCJEAJPLGMB_MainDivas[0].EKFONBFDAAP_ColorId != MenuScene.Instance.divaManager.ColorId)
 									return true;
@@ -159,7 +159,7 @@ namespace XeApp.Game.Menu
 			if(mi.openEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.AOPKACCDKPA_EventCollection)
 			{
 				IKDICBBFBMI_EventBase evt = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.KPMNPGKKFJG, false);
-				if(evt == null || evt.DPJCPDKALGI_RankingEnd < NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime())
+				if(evt == null || evt.DPJCPDKALGI_RankingEnd < NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime())
 				{
 					mi.ClearEventType();
 					h.MNNHHJBBICA_GameEventType = (int)mi.gameEventType;
@@ -358,7 +358,7 @@ namespace XeApp.Game.Menu
 					return x.AHHJLDLAPAN_DivaId == originalPrism.AHHJLDLAPAN_DivaId[i];
 				});
 				int id = 0;
-				if(f == null || !f.FJODMPGPDDD_DivaHave)
+				if(f == null || !f.FJODMPGPDDD_Unlocked)
 				{
 					m_lackDivaIds.Add(originalPrism.AHHJLDLAPAN_DivaId[i]);
 					res = true;

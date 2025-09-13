@@ -93,9 +93,9 @@ namespace XeApp.Game.Menu
 			m_costume.SetCostumeIcon(new CostumeUpgradeUtility.CostumeData.Setting()
 			{
 				divaId = data.AHHJLDLAPAN_DivaId,
-				costumeModelId = data.DAJGPBLEEOB_PrismCostumeId,
+				costumeModelId = data.DAJGPBLEEOB_ModelId,
 				colorId = null,
-				isHave = data.FJODMPGPDDD_Possessed,
+				isHave = data.FJODMPGPDDD_Unlocked,
 				rankMax = data.LLLCMHENKKN_LevelMax,
 				rankNum = data.GKIKAABHAAD_Level
 			}, null);
@@ -131,7 +131,7 @@ namespace XeApp.Game.Menu
 				m_item_need_num.SetNumber(m_itemCount, 0);
 				PLPBJOFICEJ_CosItem.IBEMFIAFIKH_ItemInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.LBDOLHGDIEB_FindItem(data.AHHJLDLAPAN_DivaId, PLPBJOFICEJ_CosItem.DPNGHIDJCHA_Category.GLHANCMGNDM_2);
                 EGOLBAPFHHD_Common.PGENIOHDCDI saveCos = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.EFBKCNNFIPJ(cos.PPFNGGCBJKC_Id);
-				m_item_have_num.text = saveCos.BFINGCJHOHI_Cnt.ToString();
+				m_item_have_num.text = saveCos.BFINGCJHOHI_Count.ToString();
 				SetItemIcon(m_itemId);
             }
 			m_rank = data.GKIKAABHAAD_Level;

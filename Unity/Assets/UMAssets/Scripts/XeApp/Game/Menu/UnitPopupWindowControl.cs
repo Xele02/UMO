@@ -77,7 +77,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x12476C0 Offset: 0x12476C0 VA: 0x12476C0
-		// public void ShowUnitList(bool isResetPosition, UnityAction callBack, UnityAction<int> unitDatailEvent, EEDKAACNBBG musicData, EJKBKMBJMGL enemyData, EAJCBFGKKFA friendData, DFKGGBMFFGB playerData, bool isGoDiva) { }
+		// public void ShowUnitList(bool isResetPosition, UnityAction callBack, UnityAction<int> unitDatailEvent, EEDKAACNBBG musicData, EJKBKMBJMGL enemyData, EAJCBFGKKFA friendData, DFKGGBMFFGB_PlayerInfo playerData, bool isGoDiva) { }
 
 		// // RVA: 0x1247A00 Offset: 0x1247A00 VA: 0x1247A00
 		public void ShowConfirmWindow(ConfirmType type, DFKGGBMFFGB_PlayerInfo playerData, int targetUnitId, EEDKAACNBBG_MusicData musicData, EJKBKMBJMGL_EnemyData enemyData, EAJCBFGKKFA_FriendInfo friendData, UnityAction onDecide, UnityAction okAction, Action onEnd, bool isGoDiva/* = false*/)

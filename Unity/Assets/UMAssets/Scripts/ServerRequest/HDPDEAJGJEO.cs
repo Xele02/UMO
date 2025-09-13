@@ -8,12 +8,12 @@ public class HDPDEAJGJEO_PaymentGetPurchasingStatus : CACGCMBKHDI_Request
 {
 	public class FDECBLBCNIC
 	{
-		public int DJJGPACGEMM_DJJGPACGEMM_product_id; // 0x8
+		public int DJJGPACGEMM_ProductId; // 0x8
 
 		// RVA: 0x1743180 Offset: 0x1743180 VA: 0x1743180
 		public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
 		{
-			DJJGPACGEMM_DJJGPACGEMM_product_id = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.DJJGPACGEMM_product_id];
+			DJJGPACGEMM_ProductId = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.DJJGPACGEMM_ProductId];
 		}
 	}
 
@@ -46,7 +46,7 @@ public class HDPDEAJGJEO_PaymentGetPurchasingStatus : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0x1742DD8 Offset: 0x1742DD8 VA: 0x1742DD8 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG = new NMEEMBOCCPA();
 		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

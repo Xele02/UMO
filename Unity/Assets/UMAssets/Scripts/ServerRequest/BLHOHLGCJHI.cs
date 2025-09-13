@@ -21,7 +21,7 @@ public class BLHOHLGCJHI_GetItemSetRecord : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0x19C19B0 Offset: 0x19C19B0 VA: 0x19C19B0 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG = null;
 		BNJPAKLNOPA_WorkerThreadQueue.Add(DIAMDBHBKBH);

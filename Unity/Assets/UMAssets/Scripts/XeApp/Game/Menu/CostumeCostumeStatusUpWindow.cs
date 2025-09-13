@@ -50,9 +50,9 @@ namespace XeApp.Game.Menu
 			m_costume.SetCostumeIcon(new CostumeUpgradeUtility.CostumeData.Setting()
 			{
 				divaId = data.AHHJLDLAPAN_DivaId,
-				costumeModelId = data.DAJGPBLEEOB_PrismCostumeId,
+				costumeModelId = data.DAJGPBLEEOB_ModelId,
 				colorId = null,
-				isHave = data.FJODMPGPDDD_Possessed,
+				isHave = data.FJODMPGPDDD_Unlocked,
 				rankMax = data.LLLCMHENKKN_LevelMax,
 				rankNum = data.GKIKAABHAAD_Level + 1
 			}, null);

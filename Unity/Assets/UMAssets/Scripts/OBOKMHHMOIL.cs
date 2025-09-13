@@ -3,7 +3,7 @@
 public class OBOKMHHMOIL { }
 public class OBOKMHHMOIL_ServerInfo
 {
-	public string EBCFHFIOHBN_ServerCurrentMasterRevision; // 0x8
+	public string EBCFHFIOHBN_SakashoCurrentMasterRevision; // 0x8
 	public string AJBPBEALBOB_SakashoCurrentAssetRevision; // 0xC
 	public long LCAINKFINEI_ServerCurrentDateTime; // 0x10
 	public string ABFADMDAAKJ_SakashoRecommendedClientVersion; // 0x18
@@ -12,7 +12,7 @@ public class OBOKMHHMOIL_ServerInfo
 	public void LHPDDGIJKNB_Reset()
     {
 		ABFADMDAAKJ_SakashoRecommendedClientVersion = null;
-		EBCFHFIOHBN_ServerCurrentMasterRevision = null;
+		EBCFHFIOHBN_SakashoCurrentMasterRevision = null;
 		AJBPBEALBOB_SakashoCurrentAssetRevision = null;
 		LCAINKFINEI_ServerCurrentDateTime = 0;
     }
@@ -23,8 +23,8 @@ public class OBOKMHHMOIL_ServerInfo
 		LHPDDGIJKNB_Reset();
 		if(GPBJHKLFCEP == null)
 			return;
-		if(GPBJHKLFCEP.EBCFHFIOHBN_ServerCurrentMasterRevision != null)
-			EBCFHFIOHBN_ServerCurrentMasterRevision = GPBJHKLFCEP.EBCFHFIOHBN_ServerCurrentMasterRevision;
+		if(GPBJHKLFCEP.EBCFHFIOHBN_SakashoCurrentMasterRevision != null)
+			EBCFHFIOHBN_SakashoCurrentMasterRevision = GPBJHKLFCEP.EBCFHFIOHBN_SakashoCurrentMasterRevision;
 		if(GPBJHKLFCEP.AJBPBEALBOB_SakashoCurrentAssetRevision != null)
 			AJBPBEALBOB_SakashoCurrentAssetRevision = GPBJHKLFCEP.AJBPBEALBOB_SakashoCurrentAssetRevision;
 		LCAINKFINEI_ServerCurrentDateTime = GPBJHKLFCEP.LCAINKFINEI_ServerCurrentDateTime;
@@ -38,7 +38,7 @@ public class OBOKMHHMOIL_ServerInfo
 		int idx = HGAMEAPCKJL.IndexOf(AFEHLCGHAEE_Strings.EBCFHFIOHBN_SakashoCurrentMasterRevision); // SAKASHO_CURRENT_MASTER_REVISION
 		if(idx >= 0)
 		{
-			EBCFHFIOHBN_ServerCurrentMasterRevision = MBPLJOOMEBA(HGAMEAPCKJL, idx + AFEHLCGHAEE_Strings.EBCFHFIOHBN_SakashoCurrentMasterRevision.Length + 2);
+			EBCFHFIOHBN_SakashoCurrentMasterRevision = MBPLJOOMEBA(HGAMEAPCKJL, idx + AFEHLCGHAEE_Strings.EBCFHFIOHBN_SakashoCurrentMasterRevision.Length + 2);
 		}
 		idx = HGAMEAPCKJL.IndexOf(AFEHLCGHAEE_Strings.AJBPBEALBOB_SakashoCurrentAssetRevision); // SAKASHO_CURRENT_ASSET_REVISION
 		if(idx >= 0)

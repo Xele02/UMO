@@ -90,11 +90,11 @@ namespace XeApp.Game.AR
         // RVA: 0x161D838 Offset: 0x161D838 VA: 0x161D838
         public bool CheckLoadedDiva(ARMarkerMasterData.Data markerData)
         {
-            LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[markerData.costumeId - 1];
+            LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[markerData.costumeId - 1];
             bool b = false;
             if(IsLoaded && m_divaId == markerData.divaId)
             {
-                if(m_modelId == cos.DAJGPBLEEOB_PrismCostumeModelId && m_wavId == markerData.wavId && m_motionId == markerData.motionId)
+                if(m_modelId == cos.DAJGPBLEEOB_ModelId && m_wavId == markerData.wavId && m_motionId == markerData.motionId)
                     b = true;
             }
             return b;
@@ -126,7 +126,7 @@ namespace XeApp.Game.AR
         {
             assetList.Add("dv/ca/cmn.xab");
             assetList.Add(string.Format("dv/ca/{0:D3}.xab", markerData.divaId));
-            int cosId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[markerData.costumeId - 1].DAJGPBLEEOB_PrismCostumeModelId;
+            int cosId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[markerData.costumeId - 1].DAJGPBLEEOB_ModelId;
             assetList.Add(string.Format("dv/cs/{0:D3}_{1:D3}.xab", markerData.divaId, cosId));
             assetList.Add(string.Format("dv/bs/{0:D3}_{1:D3}.xab", markerData.divaId, cosId));
             int pId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.GCINIJEMHFK_GetInfo(markerData.divaId).FPMGHDKACOF_PersonalityId;
@@ -227,7 +227,7 @@ namespace XeApp.Game.AR
             yield return Co.R(Co_DownloadAssets(markerData));
             divaId = markerData.divaId;
             motionId = markerData.motionId;
-            modelId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[markerData.costumeId - 1].DAJGPBLEEOB_PrismCostumeModelId;
+            modelId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[markerData.costumeId - 1].DAJGPBLEEOB_ModelId;
             wavId = markerData.wavId;
             bgmId = BgmPlayer.AR_BGM_ID_BASE + wavId;
             yield return Co.R(Co_LoadResource(divaId, modelId, wavId, motionId));

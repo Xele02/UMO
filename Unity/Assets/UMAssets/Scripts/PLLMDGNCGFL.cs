@@ -11,7 +11,7 @@ public class PLLMDGNCGFL
         // public void FPEKCEGADMG(BinaryWriter OMLLGAKPMAN) { }
 
         // // RVA: 0xFEA74C Offset: 0xFEA74C VA: 0xFEA74C
-        // public void FKGBNKPHCJL(int CEMEIPNMAAD, BinaryReader CLJIOLIEPNA) { }
+        // public void FKGBNKPHCJL(int _CEMEIPNMAAD_Version, BinaryReader _CLJIOLIEPNA_reader) { }
     }
 
 	public const int JNCCCCPBDIC = 1;
@@ -25,7 +25,7 @@ public class PLLMDGNCGFL
     }
 
 	// // RVA: 0xFEA27C Offset: 0xFEA27C VA: 0xFEA27C
-	// public void KHEKNNFCAOI(string CJEKGLGBIHF) { }
+	// public void KHEKNNFCAOI(string _CJEKGLGBIHF_path) { }
 
 	// // RVA: 0xFEA284 Offset: 0xFEA284 VA: 0xFEA284
 	public void PCODDPDFLHK()

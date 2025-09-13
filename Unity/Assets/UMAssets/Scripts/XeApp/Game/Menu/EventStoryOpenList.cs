@@ -54,8 +54,8 @@ namespace XeApp.Game.Menu
 			m_swapScrollList.SetItemCount(m_storyList.Count);
 			m_swapScrollList.VisibleRegionUpdate();
 			int a1 = CCAAJNJGNDO.FCMFPPALLOM(data.PPMNNKKFJNM_EventId);
-			MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[a1 - 1];
-			GameManager.Instance.MenuResidentTextureCache.LoadLogo((int)scene.EMIKBGHIOMN_SerieLogo, (IiconTexture texture) =>
+			MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[a1 - 1];
+			GameManager.Instance.MenuResidentTextureCache.LoadLogo((int)scene.EMIKBGHIOMN_SerieLogoId, (IiconTexture texture) =>
 			{
 				//0xB9379C
 				texture.Set(m_logImage);

@@ -16,7 +16,7 @@ public class KJKDAGGGJCO
 	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
     {
         PPFNGGCBJKC_Id = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id];
-        BPEAIOBHMFD_NameForApis = (string)IDLHJIOMJBK[AFEHLCGHAEE_Strings.BPEAIOBHMFD_name_for_apis];
+        BPEAIOBHMFD_NameForApis = (string)IDLHJIOMJBK[AFEHLCGHAEE_Strings.BPEAIOBHMFD_NameForApis];
         ILLPEMPBDJG_CanReceiveNext = (bool)IDLHJIOMJBK[AFEHLCGHAEE_Strings.ILLPEMPBDJG_can_receive_next];
         HMFFHLPNMPH_Count = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.HMFFHLPNMPH_count];
         HLMLHOFHIOK_LastReceivedAt = 0;
@@ -37,7 +37,7 @@ public class NJJGODCKNAK_GetLoginBonusStatuses : CACGCMBKHDI_Request
         // // RVA: 0x18ABA28 Offset: 0x18ABA28 VA: 0x18ABA28
         public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
         {
-            EDOHBJAPLPF_JsonData list = IDLHJIOMJBK[AFEHLCGHAEE_Strings.CEBOHGGJBMN_login_bonuses];
+            EDOHBJAPLPF_JsonData list = IDLHJIOMJBK[AFEHLCGHAEE_Strings.CEBOHGGJBMN_LoginBonuses];
             CEBOHGGJBMN_LoginBonuses = new List<KJKDAGGGJCO>(list.HNBFOAJIIAL_Count);
             for(int i = 0; i < list.HNBFOAJIIAL_Count; i++)
             {
@@ -48,7 +48,7 @@ public class NJJGODCKNAK_GetLoginBonusStatuses : CACGCMBKHDI_Request
         }
     }
 
-	public List<int> EAFEGCPEKDC; // 0x7C
+	public List<int> EAFEGCPEKDC_Ids; // 0x7C
 
 	public OLNONCJIHBA NFEAMMJIMPG { get; private set; } // 0x80 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
 	public override bool EBPLLJGPFDA_HasResult { get { return NFEAMMJIMPG != null; } } //0x18AB8B8 HGPAELCGELL
@@ -56,11 +56,11 @@ public class NJJGODCKNAK_GetLoginBonusStatuses : CACGCMBKHDI_Request
 	// RVA: 0x18AB6EC Offset: 0x18AB6EC VA: 0x18AB6EC Slot: 12
 	public override void DHLDNIEELHO()
     {
-        EBGACDGNCAA_CallContext = SakashoLoginBonus.GetLoginBonusStatuses(EAFEGCPEKDC.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
+        EBGACDGNCAA_CallContext = SakashoLoginBonus.GetLoginBonusStatuses(EAFEGCPEKDC_Ids.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
     }
 
 	// RVA: 0x18AB7FC Offset: 0x18AB7FC VA: 0x18AB7FC Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
         NFEAMMJIMPG = null;
         BNJPAKLNOPA_WorkerThreadQueue.Add(DIAMDBHBKBH);

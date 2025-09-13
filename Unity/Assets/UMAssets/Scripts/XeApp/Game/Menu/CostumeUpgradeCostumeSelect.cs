@@ -391,8 +391,8 @@ namespace XeApp.Game.Menu
 						m_costumeLayoutList[layerId].SetCostumeIcon(new CostumeUpgradeUtility.CostumeData.Setting()
 						{
 							divaId = m_showCostumeDataList[i].AHHJLDLAPAN_DivaId,
-							costumeModelId = m_showCostumeDataList[i].DAJGPBLEEOB_PrismCostumeId,
-							colorId = null, isHave = m_showCostumeDataList[i].FJODMPGPDDD_Possessed, 
+							costumeModelId = m_showCostumeDataList[i].DAJGPBLEEOB_ModelId,
+							colorId = null, isHave = m_showCostumeDataList[i].FJODMPGPDDD_Unlocked, 
 							rankMax = m_showCostumeDataList[i].LLLCMHENKKN_LevelMax,
 							rankNum = m_showCostumeDataList[i].GKIKAABHAAD_Level
 						}, (CostumeUpgradeUtility.CostumeData.Setting setting) =>
@@ -400,7 +400,7 @@ namespace XeApp.Game.Menu
 							//0x16F1524
 							if(m_showCostumeDataList[index].AHHJLDLAPAN_DivaId == setting.divaId)
 							{
-								return m_showCostumeDataList[index].DAJGPBLEEOB_PrismCostumeId == setting.costumeModelId;
+								return m_showCostumeDataList[index].DAJGPBLEEOB_ModelId == setting.costumeModelId;
 							}
 							return false;
 						});
@@ -414,7 +414,7 @@ namespace XeApp.Game.Menu
 		{
 			m_selectCostumeData = m_showCostumeDataList[2];
 			m_divaId = m_selectCostumeData.AHHJLDLAPAN_DivaId;
-			m_costumeModelId = m_selectCostumeData.DAJGPBLEEOB_PrismCostumeId;
+			m_costumeModelId = m_selectCostumeData.DAJGPBLEEOB_ModelId;
 			m_costumeName.text = m_selectCostumeData.OPFGFINHFCE_Name;
 			m_baseColorAnim.StartAllAnimGoStop(m_selectCostumeData.AHHJLDLAPAN_DivaId + 1, m_selectCostumeData.AHHJLDLAPAN_DivaId + 1);
 			SetDivaImage(m_divaId, 1, 0);
@@ -455,7 +455,7 @@ namespace XeApp.Game.Menu
 				//0x16F12DC
 				if(viewData.AHHJLDLAPAN_DivaId == m_selectCostumeData.AHHJLDLAPAN_DivaId)
 				{
-					if(viewData.DAJGPBLEEOB_PrismCostumeId == m_selectCostumeData.DAJGPBLEEOB_PrismCostumeId)
+					if(viewData.DAJGPBLEEOB_ModelId == m_selectCostumeData.DAJGPBLEEOB_ModelId)
 					{
 						return true;
 					}
@@ -472,7 +472,7 @@ namespace XeApp.Game.Menu
 					//0x16F138C
 					if (viewData.AHHJLDLAPAN_DivaId == m_selectCostumeData.AHHJLDLAPAN_DivaId)
 					{
-						if (viewData.DAJGPBLEEOB_PrismCostumeId == m_selectCostumeData.DAJGPBLEEOB_PrismCostumeId)
+						if (viewData.DAJGPBLEEOB_ModelId == m_selectCostumeData.DAJGPBLEEOB_ModelId)
 						{
 							return true;
 						}
@@ -537,7 +537,7 @@ namespace XeApp.Game.Menu
 			{
 				if(m_divaId == m_filterCostumeDataList[i].AHHJLDLAPAN_DivaId)
 				{
-					if(m_costumeModelId == m_filterCostumeDataList[i].DAJGPBLEEOB_PrismCostumeId)
+					if(m_costumeModelId == m_filterCostumeDataList[i].DAJGPBLEEOB_ModelId)
 					{
 						m_cursorIndex = i;
 						break;
@@ -897,7 +897,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < m_costumeUpgradeData.MGJKEJHEBPO.Count; i++)
 			{
-				MenuScene.Instance.CostumeIconCache.TryInstallCostume(m_costumeUpgradeData.MGJKEJHEBPO[i].AHHJLDLAPAN_DivaId, m_costumeUpgradeData.MGJKEJHEBPO[i].DAJGPBLEEOB_PrismCostumeId, 0);
+				MenuScene.Instance.CostumeIconCache.TryInstallCostume(m_costumeUpgradeData.MGJKEJHEBPO[i].AHHJLDLAPAN_DivaId, m_costumeUpgradeData.MGJKEJHEBPO[i].DAJGPBLEEOB_ModelId, 0);
 				MenuScene.Instance.DivaIconCache.TryInstall(m_costumeUpgradeData.MGJKEJHEBPO[i].AHHJLDLAPAN_DivaId, 1, 0);
 				MenuScene.Instance.DivaIconCache.TryStateDivaIconInstall(m_costumeUpgradeData.MGJKEJHEBPO[i].AHHJLDLAPAN_DivaId, 1, 0);
 				for(int j = 0; j < m_costumeUpgradeData.MGJKEJHEBPO[i].OCOOHBINGBG_LevelInfo.Count; j++)

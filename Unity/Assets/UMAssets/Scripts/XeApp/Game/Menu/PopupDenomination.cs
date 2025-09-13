@@ -89,7 +89,7 @@ namespace XeApp.Game.Menu
 				m_ItemSize = inst.GetComponent<RectTransform>().sizeDelta;
 				yield return null;
 				ReleaseScrollObj();
-				long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 				LayoutUGUIRuntime runtime = inst.GetComponent<LayoutUGUIRuntime>();
 				ApplyProductFilter(m_paidVcProductDataList, NetPaidVCPurchase);
 				for(int i = 0; i < m_paidVcProductDataList.Count; i++)
@@ -98,7 +98,7 @@ namespace XeApp.Game.Menu
 					r.GetComponent<LayoutStoneItem>().Setup(m_paidVcProductDataList[i]);
 					ScrollObject sObject = new ScrollObject();
 					sObject.obj = r.gameObject;
-					sObject.is_disp = m_paidVcProductDataList[i].EMEKFFHCHMH_CloseAt == 0 || t < m_paidVcProductDataList[i].EMEKFFHCHMH_CloseAt;
+					sObject.is_disp = m_paidVcProductDataList[i].EMEKFFHCHMH_RewardEnd2 == 0 || t < m_paidVcProductDataList[i].EMEKFFHCHMH_RewardEnd2;
 					m_ScrollObjList.Add(sObject);
 				}
 				Destroy(inst);

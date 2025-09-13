@@ -109,7 +109,7 @@ namespace XeApp.Game.Menu
 			yield return Co.R(Co_TextureInitialize());
 			yield return Co.R(Co_EffectInitialize());
 			AssetBundleManager.UnloadAssetBundle("ly/095.xab", false);
-			yield return Co.R(Co_DivaInitialize(initParam.viewEventMatchResultData.EKOCEKHBHLE_Rival.FDBOPFEOENF_RivalData));
+			yield return Co.R(Co_DivaInitialize(initParam.viewEventMatchResultData.EKOCEKHBHLE_Rival.FDBOPFEOENF_Diva));
 			isPlayerWin = initParam.viewEventMatchResultData.GGOPOOLMLBA_IsPlayerWin;
 			layoutOkayButton = initParam.layoutOkayButton;
 			layoutOkayButton.SetupCallback(null, OnClickOkayButton);
@@ -120,11 +120,11 @@ namespace XeApp.Game.Menu
 			myDivaManager.SetActive(true, true);
 			myDivaManager.UnlockBoneSpring();
 			myDivaControl.OnBattleResultStart();
-			SetEffectPos(Effect.Player1, myDivaManager.GetComponentInChildren<Camera>(), initParam.viewEventMatchResultData.HIHPPOFHMNF_Player.FDBOPFEOENF_RivalData.AHHJLDLAPAN_DivaId);
+			SetEffectPos(Effect.Player1, myDivaManager.GetComponentInChildren<Camera>(), initParam.viewEventMatchResultData.HIHPPOFHMNF_Player.FDBOPFEOENF_Diva.AHHJLDLAPAN_DivaId);
 			rivalDivaManager.SetActive(true, true);
 			rivalDivaManager.UnlockBoneSpring();
 			rivalDivaManager.OnBattleResultStart();
-			SetEffectPos(Effect.Player2, rivalDivaManager.GetComponentInChildren<Camera>(), initParam.viewEventMatchResultData.EKOCEKHBHLE_Rival.FDBOPFEOENF_RivalData.AHHJLDLAPAN_DivaId);
+			SetEffectPos(Effect.Player2, rivalDivaManager.GetComponentInChildren<Camera>(), initParam.viewEventMatchResultData.EKOCEKHBHLE_Rival.FDBOPFEOENF_Diva.AHHJLDLAPAN_DivaId);
 			Transform[] ts = new Transform[3]
 			{
 				myDivaManager.transform,
@@ -464,12 +464,12 @@ namespace XeApp.Game.Menu
 
 			//0xD07BF4
 			costumeMaster = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_GetUnlockedCostumeOrDefault(rivalDiva.AHHJLDLAPAN_DivaId, rivalDiva.JPIDIENBGKH_CostumeId);
-			KDLPEDBKMID.HHCJCDFCLOB.NMFCNFFFMAC_InstallDivaCostume(rivalDiva.AHHJLDLAPAN_DivaId, costumeMaster.DAJGPBLEEOB_PrismCostumeModelId, false);
+			KDLPEDBKMID.HHCJCDFCLOB.NMFCNFFFMAC_InstallDivaCostume(rivalDiva.AHHJLDLAPAN_DivaId, costumeMaster.DAJGPBLEEOB_ModelId, false);
 			while(KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
 				yield return null;
 			rivalDivaManager = MenuScene.Instance.GetComponentInChildren<RivalDivaManager>(true);
 			rivalDivaManager.gameObject.SetActive(true);
-			rivalDivaManager.Load(costumeMaster.AHHJLDLAPAN_DivaId, costumeMaster.DAJGPBLEEOB_PrismCostumeModelId, rivalDiva.EKFONBFDAAP_ColorId);
+			rivalDivaManager.Load(costumeMaster.AHHJLDLAPAN_DivaId, costumeMaster.DAJGPBLEEOB_ModelId, rivalDiva.EKFONBFDAAP_ColorId);
 			rivalDivaManager.LockBoneSpring();
 			while(rivalDivaManager.IsLoading)
 				yield return null;

@@ -14,8 +14,8 @@ public class CGJKNOCAPII
 	public long PCCFAKEOBIC_End; // 0x28
 	public int BCOKKAALGHC_Group; // 0x30
 	public bool PNFDMBHDPAJ; // 0x34
-	public BadgeConstant.ID BEEIIJJKDBH; // 0x38
-	public string BHANMJKCCBC_QuestAchievedCountText; // 0x3C
+	public BadgeConstant.ID BEEIIJJKDBH_BadgeConstantId; // 0x38
+	public string BHANMJKCCBC_BadgeText; // 0x3C
 	public int PKNLMLDKCLM_AchievedQuests; // 0x40
 	public IKDICBBFBMI_EventBase COAMJFMEIBF; // 0x44
 	public BKANGIKIEML.NODKLJHEAJB NNHHNFFLCFO; // 0x48
@@ -24,7 +24,7 @@ public class CGJKNOCAPII
 	//// RVA: 0x12BC47C Offset: 0x12BC47C VA: 0x12BC47C
 	public int KJILFMNCDLC()
 	{
-		return (int)(PCCFAKEOBIC_End - NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime());
+		return (int)(PCCFAKEOBIC_End - NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 	}
 
 	//// RVA: 0x12BC584 Offset: 0x12BC584 VA: 0x12BC584
@@ -65,8 +65,8 @@ public class CGJKNOCAPII
 			res.PNFDMBHDPAJ = b1;
 		}
 		res.NNHHNFFLCFO = ILLPDLODANB.ODEHLBNBPPE(FBFNJMKPBBA);
-		res.BEEIIJJKDBH = 0;
-		res.BHANMJKCCBC_QuestAchievedCountText = "";
+		res.BEEIIJJKDBH_BadgeConstantId = 0;
+		res.BHANMJKCCBC_BadgeText = "";
 		if(PNGKOHDEPFE)
 		{
 			List<FKMOKDCJFEN> l = QuestUtility.GetEventQuestList(res.JOPOPMLFINI_QuastName);
@@ -77,8 +77,8 @@ public class CGJKNOCAPII
 			PKNLMLDKCLM_AchievedQuests = QuestUtility.GetQuestCountByStatus(l, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
 			if(PKNLMLDKCLM_AchievedQuests > 0)
 			{
-				res.BEEIIJJKDBH = BadgeConstant.ID.Label;
-				res.BHANMJKCCBC_QuestAchievedCountText = QuestUtility.GetAchievedCountText(PKNLMLDKCLM_AchievedQuests);
+				res.BEEIIJJKDBH_BadgeConstantId = BadgeConstant.ID.Label;
+				res.BHANMJKCCBC_BadgeText = QuestUtility.GetAchievedCountText(PKNLMLDKCLM_AchievedQuests);
 			}
 		}
 		res.BALFPCLMOGJ = 0;
@@ -90,7 +90,7 @@ public class CGJKNOCAPII
 	{
 		List<CGJKNOCAPII> res = new List<CGJKNOCAPII>();
 		List<CGJKNOCAPII> l2 = new List<CGJKNOCAPII>();
-		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		for(int i = 0; i < JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN.Count; i++)
 		{
 			IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.MPEOOINCGEN[i];
@@ -151,36 +151,36 @@ public class CGJKNOCAPII
 	}
 
 	//// RVA: 0x12BD220 Offset: 0x12BD220 VA: 0x12BD220
-	public CGJKNOCAPII NLCNDMLOCBC(int APFDNBGMMMM, bool PNGKOHDEPFE/* = true*/)
+	public CGJKNOCAPII NLCNDMLOCBC(int _APFDNBGMMMM_BingoId, bool PNGKOHDEPFE/* = true*/)
 	{
 		CGJKNOCAPII res = new CGJKNOCAPII();
 		res.JOPOPMLFINI_QuastName = "";
 		res.DGCOMDILAKM_EventName = "";
-		res.PGIIDPEGGPI_EventId = APFDNBGMMMM;
-		res.JHAOHBNPMNA_EventId = GNGMCIAIKMA.HHCJCDFCLOB.CBMJAPJKBNL(APFDNBGMMMM);
-		res.LFCOJABLOEN_EventId = GNGMCIAIKMA.HHCJCDFCLOB.CBMJAPJKBNL(APFDNBGMMMM);
+		res.PGIIDPEGGPI_EventId = _APFDNBGMMMM_BingoId;
+		res.JHAOHBNPMNA_EventId = GNGMCIAIKMA.HHCJCDFCLOB.CBMJAPJKBNL(_APFDNBGMMMM_BingoId);
+		res.LFCOJABLOEN_EventId = GNGMCIAIKMA.HHCJCDFCLOB.CBMJAPJKBNL(_APFDNBGMMMM_BingoId);
 		res.COAMJFMEIBF = null;
-		JKICPBIIHNE_Bingo.HNOGDJFJGPM bingo = GNGMCIAIKMA.HHCJCDFCLOB.EBEDAPJFHCE_GetBingo(APFDNBGMMMM);
+		JKICPBIIHNE_Bingo.HNOGDJFJGPM bingo = GNGMCIAIKMA.HHCJCDFCLOB.EBEDAPJFHCE_GetBingo(_APFDNBGMMMM_BingoId);
 		res.KINJOEIAHFK_Start = bingo.PDBPFJJCADD_StartTime;
 		res.NNHHNFFLCFO = BKANGIKIEML.NODKLJHEAJB.BPNDHDHHKGE_38/*38*/;
-		res.BEEIIJJKDBH = 0;
-		res.PCCFAKEOBIC_End = bingo.FDBNFFNFOND_EndTime;
+		res.BEEIIJJKDBH_BadgeConstantId = 0;
+		res.PCCFAKEOBIC_End = bingo.FDBNFFNFOND_CloseAt;
 		res.PNFDMBHDPAJ = false;
-		res.BHANMJKCCBC_QuestAchievedCountText = "";
+		res.BHANMJKCCBC_BadgeText = "";
 		if(PNGKOHDEPFE)
 		{
-			res.PKNLMLDKCLM_AchievedQuests = GNGMCIAIKMA.HHCJCDFCLOB.OBOGIOGEBPK(APFDNBGMMMM, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
+			res.PKNLMLDKCLM_AchievedQuests = GNGMCIAIKMA.HHCJCDFCLOB.OBOGIOGEBPK(_APFDNBGMMMM_BingoId, FKMOKDCJFEN.ADCPCCNCOMD_Status.FJGFAPKLLCL_Achieved);
 			if(res.PKNLMLDKCLM_AchievedQuests > 0)
 			{
-				res.BHANMJKCCBC_QuestAchievedCountText = QuestUtility.GetAchievedCountText(res.PKNLMLDKCLM_AchievedQuests);
+				res.BHANMJKCCBC_BadgeText = QuestUtility.GetAchievedCountText(res.PKNLMLDKCLM_AchievedQuests);
 			}
 		}
 		res.BALFPCLMOGJ = 0;
-		if(!GNGMCIAIKMA.HHCJCDFCLOB.DOEGBMNNFKH(APFDNBGMMMM))
+		if(!GNGMCIAIKMA.HHCJCDFCLOB.DOEGBMNNFKH(_APFDNBGMMMM_BingoId))
 		{
-			if(!GNGMCIAIKMA.HHCJCDFCLOB.DHPLHALIDHH(APFDNBGMMMM))
+			if(!GNGMCIAIKMA.HHCJCDFCLOB.DHPLHALIDHH(_APFDNBGMMMM_BingoId))
 			{
-				res.BALFPCLMOGJ = GNGMCIAIKMA.HHCJCDFCLOB.GKDBBGIEPLC(APFDNBGMMMM);
+				res.BALFPCLMOGJ = GNGMCIAIKMA.HHCJCDFCLOB.GKDBBGIEPLC(_APFDNBGMMMM_BingoId);
 			}
 		}
 		return res;
@@ -192,7 +192,7 @@ public class CGJKNOCAPII
 		List<CGJKNOCAPII> res = new List<CGJKNOCAPII>();
 		if(GNGMCIAIKMA.HHCJCDFCLOB != null)
 		{
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			GNGMCIAIKMA.HHCJCDFCLOB.KIAAOBFJCHP(time);
 			List<int> bingos = GNGMCIAIKMA.HHCJCDFCLOB.CNADOFDDNLO_GetActiveBingos(time);
 			for(int i = 0; i < bingos.Count; i++)

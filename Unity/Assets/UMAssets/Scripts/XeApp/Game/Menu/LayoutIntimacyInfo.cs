@@ -45,9 +45,9 @@ namespace XeApp.Game.Menu
 		{
 			m_viewData = viewData;
 			m_layoutRoot.StartChildrenAnimGoStop(isHome ? "home" : "present");
-			m_layoutLevelMax.StartChildrenAnimGoStop(viewData.HBODCMLFDOB.PFIILLOIDIL ? "01" : "00");
+			m_layoutLevelMax.StartChildrenAnimGoStop(viewData.HBODCMLFDOB_Result.PFIILLOIDIL ? "01" : "00");
 			m_numLevel.SetNumber(m_viewData.HEKJGCMNJAB_CurrentLevel, 0);
-			if(m_viewData.HBODCMLFDOB.PFIILLOIDIL)
+			if(m_viewData.HBODCMLFDOB_Result.PFIILLOIDIL)
 			{
 				SetExp(0, 0);
 				UpdateGaugePosition(1);
@@ -114,7 +114,7 @@ namespace XeApp.Game.Menu
 			int i; // 0x1C
 
 			//0x1D54508
-			if(m_viewData.HBODCMLFDOB.HOMOKJEKKNK_Bonus < 1)
+			if(m_viewData.HBODCMLFDOB_Result.HOMOKJEKKNK_Bonus < 1)
 			{
 				m_layoutPoint.StartChildrenAnimGoStop("01");
 				m_layoutPointAnim = m_layoutPointAnimTbl[0];
@@ -125,7 +125,7 @@ namespace XeApp.Game.Menu
 				m_layoutPointAnim = m_layoutPointAnimTbl[1];
 			}
 			coutupCoroutines = new List<Coroutine>();
-			yield return Co.R(Co_CountPoint(coutupCoroutines, m_viewData.HBODCMLFDOB.ODHAIDDEFJL_GetExp, m_viewData.HBODCMLFDOB.HOMOKJEKKNK_Bonus));
+			yield return Co.R(Co_CountPoint(coutupCoroutines, m_viewData.HBODCMLFDOB_Result.ODHAIDDEFJL_GetExp, m_viewData.HBODCMLFDOB_Result.HOMOKJEKKNK_Bonus));
 			for(i = 0; i < coutupCoroutines.Count; i++)
 			{
 				yield return coutupCoroutines[i];
@@ -157,7 +157,7 @@ namespace XeApp.Game.Menu
 			{ 
 				yield return null;
 			}
-			if (!m_viewData.HBODCMLFDOB.EDPNAEOKGNM)
+			if (!m_viewData.HBODCMLFDOB_Result.EDPNAEOKGNM)
 			{
 				coutupCoroutines.Add(this.StartCoroutineWatched(Co_ExpGaugeAnim((bool isLevelUp) =>
 				{
@@ -225,7 +225,7 @@ namespace XeApp.Game.Menu
 			float timeLength; // 0x38
 
 			//0x1D53E90
-			result = m_viewData.HBODCMLFDOB;
+			result = m_viewData.HBODCMLFDOB_Result;
 			int a1 = m_viewData.JCFAPAOLDOI(result.CPDEMMFGKED_Level + 1);
 			crntMaxExp = m_viewData.JCFAPAOLDOI(result.KBHJOBKOOGC_NextLevel + 1);
 			float f = 1;

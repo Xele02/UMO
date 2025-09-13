@@ -51,13 +51,13 @@ namespace XeApp.Game.Menu
 			{
 				layoutRoot.StartAnimGoStop("02");
 				scorePoint.SetNumber(viewData.EKOCEKHBHLE_Rival.KNIFCANOHOC_ScorePoint, 0);
-				scoreBonus.SetNumber(viewData.EKOCEKHBHLE_Rival.EACPIDGGPPO_Bonus, 0);
+				scoreBonus.SetNumber(viewData.EKOCEKHBHLE_Rival.EACPIDGGPPO_ExcellentScore, 0);
 			}
 			else
 			{
 				layoutRoot.StartAnimGoStop("01");
 				scorePoint.SetNumber(viewData.HIHPPOFHMNF_Player.KNIFCANOHOC_ScorePoint, 0);
-				scoreBonus.SetNumber(viewData.HIHPPOFHMNF_Player.EACPIDGGPPO_Bonus, 0);
+				scoreBonus.SetNumber(viewData.HIHPPOFHMNF_Player.EACPIDGGPPO_ExcellentScore, 0);
 			}
 		}
 

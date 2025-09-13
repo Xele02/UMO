@@ -125,7 +125,7 @@ public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xD6C138 Offset: 0xD6C138 VA: 0xD6C138 Slot: 7
-	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	public override void BMGGKONLFIC_Copy(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
 		LFHGFLJLGFB_FavoritePlayer f = GPBJHKLFCEP as LFHGFLJLGFB_FavoritePlayer;
 		FNDJLOMNECG.Clear();
@@ -154,7 +154,7 @@ public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xD6C5F8 Offset: 0xD6C5F8 VA: 0xD6C5F8 Slot: 10
-	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH);
+	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock _GJLFANGDGCL_Target, long MCKEOKFMLAH);
 
 	// // RVA: 0xD6C604 Offset: 0xD6C604 VA: 0xD6C604 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()

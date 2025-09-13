@@ -6,9 +6,9 @@ public class JKHEOEEPBMJ
 	public static int DGGEAHIKPBB = 4; // 0x0
 
 	// // RVA: 0x135F8A8 Offset: 0x135F8A8 VA: 0x135F8A8
-	public static void NDFFOBHACPE_SetHomeSceneId(int BCCHOBPJJKE, int NCAFLPPKLPK)
+	public static void NDFFOBHACPE_SetHomeSceneId(int _BCCHOBPJJKE_SceneId, int NCAFLPPKLPK)
 	{
-		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.GPHPNEGGGBG_HomeSceneId = BCCHOBPJJKE;
+		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.GPHPNEGGGBG_HomeSceneId = _BCCHOBPJJKE_SceneId;
 		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MDKELFPNCDB_HomeSceneEvolveId = NCAFLPPKLPK;
 	}
 
@@ -37,10 +37,10 @@ public class JKHEOEEPBMJ
     }
 
 	// // RVA: 0x135FD3C Offset: 0x135FD3C VA: 0x135FD3C
-	public static bool KIIBKADPJAF_FillSceneEvoleInfo(out int BCCHOBPJJKE_SceneId, out int FJOLNJLLJEJ_SceneEvolveId)
+	public static bool KIIBKADPJAF_FillSceneEvoleInfo(out int BCCHOBPJJKE_SceneId, out int _FJOLNJLLJEJ_Rank)
 	{
 		BCCHOBPJJKE_SceneId = -1;
-		FJOLNJLLJEJ_SceneEvolveId = -1;
+		_FJOLNJLLJEJ_Rank = -1;
 		DFKGGBMFFGB_PlayerInfo pData = GameManager.Instance.ViewPlayerData;
 		int homeSceneId = AGHGOOBIGDI_GetHomeSceneId();
 		if(homeSceneId > 0)
@@ -51,7 +51,7 @@ public class JKHEOEEPBMJ
 				if(DGGEAHIKPBB <= scene.JKGFBFPIMGA_Rarity)
 				{
 					BCCHOBPJJKE_SceneId = scene.BCCHOBPJJKE_SceneId;
-					FJOLNJLLJEJ_SceneEvolveId = HDLMKFFMGEP_GetHomeSceneEvolveId();
+					_FJOLNJLLJEJ_Rank = HDLMKFFMGEP_GetHomeSceneEvolveId();
 					return true;
 				}
 			}

@@ -317,7 +317,7 @@ namespace XeApp.Game.Menu
 			int total = 0;
 			for(int i = 0; i < l.Count; i++)
 			{
-				total += l[i].CADENLBDAEB ? 1 : 0;
+				total += l[i].CADENLBDAEB_IsNew ? 1 : 0;
 			}
 			m_option_anim.SetBadge(0, total > 0 ? BadgeConstant.ID.Menu_ShopCheck : BadgeConstant.ID.None);
 			BadgeConstant.ID id = NKGJPJPHLIF.HHCJCDFCLOB.AFJEOKGBCNA_NumReplies > 0 ? BadgeConstant.ID.Menu_ResvMsg : BadgeConstant.ID.None;
@@ -329,7 +329,7 @@ namespace XeApp.Game.Menu
 			{
 				m_option_anim.SetBadge(12, id);
 			}
-			m_option_anim.SetBadge(14, DKKPBBBDKMJ.CADENLBDAEB() ? BadgeConstant.ID.Menu_NewFuncAdd : BadgeConstant.ID.None);
+			m_option_anim.SetBadge(14, DKKPBBBDKMJ.CADENLBDAEB_IsNew() ? BadgeConstant.ID.Menu_NewFuncAdd : BadgeConstant.ID.None);
 		}
 
 		// RVA: 0xDD7410 Offset: 0xDD7410 VA: 0xDD7410 Slot: 12
@@ -770,14 +770,14 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xDD8E4C Offset: 0xDD8E4C VA: 0xDD8E4C
 		private void OnEventReview()
 		{
-			if(DKKPBBBDKMJ.CADENLBDAEB())
+			if(DKKPBBBDKMJ.CADENLBDAEB_IsNew())
 			{
 				DKKPBBBDKMJ.EMNNLEFCKHM(true);
 				CIOECGOMILE.HHCJCDFCLOB.AIKJMHBDABF_SavePlayerData(() =>
 				{
 					//0xDD9A90
 					setNewIcon();
-					m_option_anim.SetBadge(14, DKKPBBBDKMJ.CADENLBDAEB() ? BadgeConstant.ID.Menu_NewFuncAdd : BadgeConstant.ID.None);
+					m_option_anim.SetBadge(14, DKKPBBBDKMJ.CADENLBDAEB_IsNew() ? BadgeConstant.ID.Menu_NewFuncAdd : BadgeConstant.ID.None);
 					JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = false;
 				}, () =>
 				{
@@ -1027,7 +1027,7 @@ namespace XeApp.Game.Menu
 		{
 			bool isNew = true;
 			if (NKGJPJPHLIF.HHCJCDFCLOB.AFJEOKGBCNA_NumReplies < 1 && !AODFBGCCBPE.PLKKMHBFDCJ())
-				isNew = DKKPBBBDKMJ.CADENLBDAEB();
+				isNew = DKKPBBBDKMJ.CADENLBDAEB_IsNew();
 			MenuScene.Instance.FooterMenu.SetButtonNew(MenuFooterControl.Button.Menu, isNew);
 		}
 

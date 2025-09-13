@@ -110,12 +110,12 @@ public class EJFIKLONGDD
     }
 
 	// // RVA: 0x12EDEFC Offset: 0x12EDEFC VA: 0x12EDEFC
-	public static List<EJFIKLONGDD> FKDIMODKKJD(List<IHAEIOAKEMG> NNDGIAEFMOG, string CNLJNGLMMHB)
+	public static List<EJFIKLONGDD> FKDIMODKKJD(List<IHAEIOAKEMG> NNDGIAEFMOG, string _CNLJNGLMMHB_Options)
     {
         List<EJFIKLONGDD> res = new List<EJFIKLONGDD>();
         if(NNDGIAEFMOG != null)
         {
-            string[] strs = CNLJNGLMMHB.Split(new char[] { ',' });
+            string[] strs = _CNLJNGLMMHB_Options.Split(new char[] { ',' });
             for(int i = 0; i < strs.Length; i++)
             {
                 if(strs[i] == "vc")

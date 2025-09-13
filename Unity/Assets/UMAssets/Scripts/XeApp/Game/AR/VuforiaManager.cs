@@ -548,7 +548,7 @@ namespace XeApp.Game.AR
             });
             if(data != null && data.enable == 2)
             {
-                long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+                long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
                 if(t >= data.markerStart)
                     return t >= data.markerEnd;
                 return true;

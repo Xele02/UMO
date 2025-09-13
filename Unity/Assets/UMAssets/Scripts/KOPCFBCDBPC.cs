@@ -11,7 +11,7 @@ public class KOPCFBCDBPC
 	public NABANOOIECF LKPHIGAFJKD_VirtualCurrency; // 0x14
 	public long JJLCCDHHOKK_OpenAtCrypted = 0x5a7d5afa35ac5a5a; // 0x18
 	public long JLFFBIOJBAO_CloseAtCrypted = 0x5a7d5afa35ac5a5a; // 0x20
-	public List<MMNNAPPLHFM> BMFEGOMNECF_Step; // 0x28
+	public List<MMNNAPPLHFM> BMFEGOMNECF_Steps; // 0x28
 	public IAPIDHGIEED LKHAAGIJEPG_PlayerStatus; // 0x2C
 
 	public long KBFOIECIADN_OpenAt { get { return JJLCCDHHOKK_OpenAtCrypted ^ BHEHGCHGBDG; } set { JJLCCDHHOKK_OpenAtCrypted = value ^ BHEHGCHGBDG; } } //0x11323B8 NAIEFPFHLJM 0x11323D8 BMLJOGEMFBH
@@ -22,20 +22,20 @@ public class KOPCFBCDBPC
 	{
 		OPFGFINHFCE_Name = (string)IDLHJIOMJBK[AFEHLCGHAEE_Strings.OPFGFINHFCE_name];
 		KLMPFGOCBHC_Description = (string)IDLHJIOMJBK[AFEHLCGHAEE_Strings.KLMPFGOCBHC_description];
-		FJGCDPLCIAK_UniqueKey = (string)IDLHJIOMJBK[AFEHLCGHAEE_Strings.FJGCDPLCIAK_unique_key];
+		FJGCDPLCIAK_UniqueKey = (string)IDLHJIOMJBK[AFEHLCGHAEE_Strings.FJGCDPLCIAK_UniqueKey];
 		LKPHIGAFJKD_VirtualCurrency = new NABANOOIECF();
 		LKPHIGAFJKD_VirtualCurrency.KHEKNNFCAOI(IDLHJIOMJBK[AFEHLCGHAEE_Strings.LKPHIGAFJKD_virtual_currency]);
 		KBFOIECIADN_OpenAt = JsonUtil.GetLong(IDLHJIOMJBK, AFEHLCGHAEE_Strings.KBFOIECIADN_opened_at, 0);
-		EGBOHDFBAPB_CloseAt = JsonUtil.GetLong(IDLHJIOMJBK, AFEHLCGHAEE_Strings.EGBOHDFBAPB_closed_at, 0);
+		EGBOHDFBAPB_CloseAt = JsonUtil.GetLong(IDLHJIOMJBK, AFEHLCGHAEE_Strings.EGBOHDFBAPB_CloseAt, 0);
 		LKHAAGIJEPG_PlayerStatus = new IAPIDHGIEED();
 		LKHAAGIJEPG_PlayerStatus.KHEKNNFCAOI(IDLHJIOMJBK[AFEHLCGHAEE_Strings.LKHAAGIJEPG_player_status]);
-		EDOHBJAPLPF_JsonData d = IDLHJIOMJBK[AFEHLCGHAEE_Strings.BMFEGOMNECF_steps];
-		BMFEGOMNECF_Step = new List<MMNNAPPLHFM>();
+		EDOHBJAPLPF_JsonData d = IDLHJIOMJBK[AFEHLCGHAEE_Strings.BMFEGOMNECF_Steps];
+		BMFEGOMNECF_Steps = new List<MMNNAPPLHFM>();
 		for(int i = 0; i < d.HNBFOAJIIAL_Count; i++)
 		{
 			MMNNAPPLHFM m = new MMNNAPPLHFM();
 			m.KHEKNNFCAOI(d[i]);
-			BMFEGOMNECF_Step.Add(m);
+			BMFEGOMNECF_Steps.Add(m);
 		}
 	}
 }

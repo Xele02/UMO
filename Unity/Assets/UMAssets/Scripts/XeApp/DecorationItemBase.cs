@@ -129,7 +129,7 @@ namespace XeApp
 		public bool CanEdit { get {
 				if(ViewData.NPADACLCNAN_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp)
 				{
-					return ViewData.GBJFNGCDKPM_Attribute != 11;
+					return ViewData.GBJFNGCDKPM_Type != 11;
 				}
 				return true;
 			} } //0x1AD07E4
@@ -684,7 +684,7 @@ namespace XeApp
 		//// RVA: 0x1AC8094 Offset: 0x1AC8094 VA: 0x1AC8094 Slot: 27
 		public virtual void SetInfo(DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN.MHODOAJPNHD info)
 		{
-			Position = new Vector2(info.GHPLINIACBB_PosX, info.PMBEODGMMBB_PosY);
+			Position = new Vector2(info.GHPLINIACBB_x, info.PMBEODGMMBB_PosY);
 			SortingOrder = info.BNHOEFJAAKK_Prio;
 			Flip(info.BDEEIPPDCLE_Rvs);
 			m_setting.InitWord = info.BEJGNPAAKNB_Word;

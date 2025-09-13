@@ -46,16 +46,16 @@ namespace XeApp.Game.Menu
 		// RVA: 0x14C6860 Offset: 0x14C6860 VA: 0x14C6860
 		public void SetUp(JJPEIELNEJB.JLHHGLANHGE _itemInfo, Action IconLodedAct, Action<int> OnClickAct)
 		{
-			SetImage(_itemInfo.GLCLFMGPMAN_ItemFullId, (int idx) =>
+			SetImage(_itemInfo.GLCLFMGPMAN_ItemId, (int idx) =>
 			{
 				//0x14C7494
 				IconLodedAct();
 			});
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			string str;
-			if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(_itemInfo.GLCLFMGPMAN_ItemFullId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
+			if(EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(_itemInfo.GLCLFMGPMAN_ItemId) == EKLNMHFCAOI.FKGCBLHOOCL_Category.MHKFDBLMOGF_Scene)
 			{
-				str = string.Format(bk.GetMessageByLabel("popup_event_reward_platetitle"), EKLNMHFCAOI.APDHLDGBENB(_itemInfo.GLCLFMGPMAN_ItemFullId), _itemInfo.HAAJGNCFNJM_ItemName);
+				str = string.Format(bk.GetMessageByLabel("popup_event_reward_platetitle"), EKLNMHFCAOI.APDHLDGBENB(_itemInfo.GLCLFMGPMAN_ItemId), _itemInfo.HAAJGNCFNJM_ItemName);
 			}
 			else
 			{

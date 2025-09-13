@@ -12,7 +12,7 @@ public class NCBEKFBAFCL_GetFacebookLinkageStatus : CACGCMBKHDI_Request
 		// RVA: 0x17CC0A4 Offset: 0x17CC0A4 VA: 0x17CC0A4
 		public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
 		{
-			EMEGKEGFJBK_FacebookLinkage = (bool)IDLHJIOMJBK[AFEHLCGHAEE_Strings.EMEGKEGFJBK_facebook_linkage];
+			EMEGKEGFJBK_FacebookLinkage = (bool)IDLHJIOMJBK[AFEHLCGHAEE_Strings.EMEGKEGFJBK_FacebookLinkage];
 		}
 	}
 
@@ -25,7 +25,7 @@ public class NCBEKFBAFCL_GetFacebookLinkageStatus : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0x17CBFC4 Offset: 0x17CBFC4 VA: 0x17CBFC4 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG = new EOOEOFIDGFC();
 		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

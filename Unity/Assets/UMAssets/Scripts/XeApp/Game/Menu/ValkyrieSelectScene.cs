@@ -536,7 +536,7 @@ namespace XeApp.Game.Menu
 			}
 			m_UnitData = GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(m_isGoDiva);
 			MenuScene.Instance.BgControl.SetPriority(BgPriority.TopMost);
-			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PNNHEOOJBFI_TutorialGeneralFlags.EDEDFDDIOKO_SetTrue(2);
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PNNHEOOJBFI_TutorialGeneralFlags.EDEDFDDIOKO_Set(2);
 			m_IsSceneActivate = false;
 			this.StartCoroutineWatched(Co_Initialize());
 		}
@@ -916,7 +916,7 @@ namespace XeApp.Game.Menu
 						string n = "";
 						if(p != null)
 							n = p.OPFGFINHFCE_Name;
-						if(p == null || !m_SeriesValkyrieList[SelectSeries][Select].CPGDEPMPMFK)
+						if(p == null || !m_SeriesValkyrieList[SelectSeries][Select].CPGDEPMPMFK_EpisodeUnlocked)
 						{
 							MessageBank bk = MessageManager.Instance.GetBank("menu");
 							PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("costume_select_text_03"), SizeType.Small, string.Format(bk.GetMessageByLabel("costume_select_text_04"), n), new ButtonInfo[1]

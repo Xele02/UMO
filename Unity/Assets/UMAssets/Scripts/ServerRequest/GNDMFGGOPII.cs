@@ -24,18 +24,18 @@ public class GNDMFGGOPII_GetInventoryRecords : CACGCMBKHDI_Request
         }
     }
 
-	public List<long> AMOMNBEAHBF; // 0x7C
+	public List<long> AMOMNBEAHBF_InventoryIds; // 0x7C
 
 	public MOPKBHCNLLJ NFEAMMJIMPG { get; private set; } // 0x80 LFOJDJCNOHB KMKEGMGKCBA
 
 	// RVA: 0xAB8748 Offset: 0xAB8748 VA: 0xAB8748 Slot: 12
 	public override void DHLDNIEELHO()
     {
-        EBGACDGNCAA_CallContext = SakashoInventory.GetInventoryRecords(AMOMNBEAHBF.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
+        EBGACDGNCAA_CallContext = SakashoInventory.GetInventoryRecords(AMOMNBEAHBF_InventoryIds.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
     }
 
 	// RVA: 0xAB8858 Offset: 0xAB8858 VA: 0xAB8858 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
         NFEAMMJIMPG = new MOPKBHCNLLJ();
         NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

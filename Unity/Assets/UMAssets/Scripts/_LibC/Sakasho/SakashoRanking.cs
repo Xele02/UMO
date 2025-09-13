@@ -239,8 +239,8 @@ namespace ExternLib
 				d["score"] = playerAccount.playerData.rankingsData[rankingId].score;
 				res["ranks"].Add(d);
 			}
-			res[AFEHLCGHAEE_Strings.GPPOJHNNINK_current_page] = 1;
-			res[AFEHLCGHAEE_Strings.CJNNMLLEKEF_previous_page] = -1;
+			res[AFEHLCGHAEE_Strings.GPPOJHNNINK_CurrentPage] = 1;
+			res[AFEHLCGHAEE_Strings.CJNNMLLEKEF_PreviousPage] = -1;
 			res[AFEHLCGHAEE_Strings.MDIBIIHAAPN_next_page] = -1;
 
 			SendMessage(callbackId, res);

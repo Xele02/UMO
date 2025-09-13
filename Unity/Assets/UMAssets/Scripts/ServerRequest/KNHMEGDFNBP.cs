@@ -33,16 +33,16 @@ public class PGCGJPPBOOA
 		KLMPFGOCBHC_Description = (string)IDLHJIOMJBK[AFEHLCGHAEE_Strings.KLMPFGOCBHC_description];
 		KBFOIECIADN_OpenedAt = JsonUtil.GetLong(IDLHJIOMJBK, AFEHLCGHAEE_Strings.KBFOIECIADN_opened_at, 0);
 		HEOKKHAGEIE_BatchStartedAt = JsonUtil.GetLong(IDLHJIOMJBK, AFEHLCGHAEE_Strings.HEOKKHAGEIE_batch_started_at, 0);
-		ENMGMCHECGE_CompetitionCloseAt = JsonUtil.GetLong(IDLHJIOMJBK, AFEHLCGHAEE_Strings.ENMGMCHECGE_competition_closed_at, 0);
-		GKOAEJDMLED_RewardOpenedAt = JsonUtil.GetLong(IDLHJIOMJBK, AFEHLCGHAEE_Strings.GKOAEJDMLED_reward_opened_at, 0);
-		EGBOHDFBAPB_ClosedAt = JsonUtil.GetLong(IDLHJIOMJBK, AFEHLCGHAEE_Strings.EGBOHDFBAPB_closed_at, 0);
+		ENMGMCHECGE_CompetitionCloseAt = JsonUtil.GetLong(IDLHJIOMJBK, AFEHLCGHAEE_Strings.ENMGMCHECGE_CompetitionCloseAt, 0);
+		GKOAEJDMLED_RewardOpenedAt = JsonUtil.GetLong(IDLHJIOMJBK, AFEHLCGHAEE_Strings.GKOAEJDMLED_RewardOpenedAt, 0);
+		EGBOHDFBAPB_ClosedAt = JsonUtil.GetLong(IDLHJIOMJBK, AFEHLCGHAEE_Strings.EGBOHDFBAPB_CloseAt, 0);
 		OFJFGMDBFPK_BatchIntervalTime = JsonUtil.GetLong(IDLHJIOMJBK, AFEHLCGHAEE_Strings.OFJFGMDBFPK_batch_interval_time, 0);
-		DNBPICNPJNE_ScorePrecision = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.DNBPICNPJNE_score_precision];
+		DNBPICNPJNE_ScorePrecision = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.DNBPICNPJNE_ScorePrecision];
 		ADKJLADBKKK_DefaultScore = JsonUtil.GetInt(IDLHJIOMJBK, AFEHLCGHAEE_Strings.ADKJLADBKKK_DefaultScore, 0);
 		KDIDMAMLBLO_AllowLowerScore = (bool)IDLHJIOMJBK[AFEHLCGHAEE_Strings.KDIDMAMLBLO_allow_lower_score];
-		DNDNFAAOOBA_IsReverse = (bool)IDLHJIOMJBK[AFEHLCGHAEE_Strings.DNDNFAAOOBA_is_reverse];
+		DNDNFAAOOBA_IsReverse = (bool)IDLHJIOMJBK[AFEHLCGHAEE_Strings.DNDNFAAOOBA_IsReverse];
 		KBJAHKHGHAN_AllowTiedRank = (bool)IDLHJIOMJBK[AFEHLCGHAEE_Strings.KBJAHKHGHAN_allow_tied_rank];
-		GFENIDOHDFP_AllowNegativeScore = (bool)IDLHJIOMJBK[AFEHLCGHAEE_Strings.GFENIDOHDFP_allow_negative_score];
+		GFENIDOHDFP_AllowNegativeScore = (bool)IDLHJIOMJBK[AFEHLCGHAEE_Strings.GFENIDOHDFP_AllowNegativeScore];
 	}
 }
 
@@ -79,7 +79,7 @@ public class KNHMEGDFNBP_GetRankings : CACGCMBKHDI_Request
     }
 
 	// RVA: 0x1122870 Offset: 0x1122870 VA: 0x1122870 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
         NFEAMMJIMPG = new HJANIHAJLFA();
         NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

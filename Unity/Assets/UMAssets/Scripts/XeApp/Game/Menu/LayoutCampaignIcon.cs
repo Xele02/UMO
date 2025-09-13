@@ -19,8 +19,8 @@ namespace XeApp.Game.Menu
 		public void Setup(OLLAFCBLMIJ.KAAHBIABMBC info)
 		{
 			m_info = info;
-			m_textDayTime.text = string.Format("{0}/{1}", info.KLCMKLPIDDJ, info.BAOFEFFADPD);
-			m_layoutStamp.StartChildrenAnimGoStop(!info.CDMGDFLPPHN_HasStamp ? "02" : "01");
+			m_textDayTime.text = string.Format("{0}/{1}", info.KLCMKLPIDDJ, info.BAOFEFFADPD_Day);
+			m_layoutStamp.StartChildrenAnimGoStop(!info.CDMGDFLPPHN_Entry ? "02" : "01");
 			m_layoutOnOff.StartChildrenAnimGoStop(!info.CKJPGFCCPIL_IsEnded ? "01" : "02");
 		}
 

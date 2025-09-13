@@ -290,7 +290,7 @@ namespace XeApp.Game.Menu
 			m_windowUi.NaviCharaTextAnimStart();
 			m_windowUi.NaviCharaVoicePlay(m_RaidLobbyController.CHDNDNMHJHI_GetPhase());
 			MenuScene.Instance.InputDisable();
-			if(m_RaidLobbyController.KINIOEOOCAA_GetPhase(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime()) == NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.ECAAJMPLIPG_2_Now)
+			if(m_RaidLobbyController.KINIOEOOCAA_GetPhase(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime()) == NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.ECAAJMPLIPG_2_Now)
 			{
 				List<ActionButton> btns = new List<ActionButton>(GetComponentsInChildren<ActionButton>(true));
 				yield return Co.R(TutorialProc.Co_RaidFromMcrsLobby(btns.Find((ActionButton _) =>
@@ -398,7 +398,7 @@ namespace XeApp.Game.Menu
 			m_windowUi.GuideCharaInitialize(m_RaidLobbyController);
 			yield return Co.R(m_windowUi.SettingCharaVoice());
 			m_lobbyFooterTransButton.FooterPhaseInit(m_RaidLobbyController);
-			m_lobbyFooterTransButton.SetDayText(m_RaidLobbyController.IICHMBONEIE_GetDayBefore(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime()));
+			m_lobbyFooterTransButton.SetDayText(m_RaidLobbyController.IICHMBONEIE_GetDayBefore(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime()));
 			m_lobbyFooterTransButton.SetFoldRadar(m_RaidLobbyController.ONKKHPKHCIA_GetNumTicket());
 			int curStock;
 			int curGauge;
@@ -1082,14 +1082,14 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_001);
 			m_newsReport.Leave();
 			LobbyLayoutItemR.CannonMovieInfo d = new LobbyLayoutItemR.CannonMovieInfo();
-			ANPBHCNJIDI.NBHIMCACDHM m = m_RaidLobbyController.KPPHGAAOMDN.HCAHCFGPJIF;
+			ANPBHCNJIDI.NBHIMCACDHM m = m_RaidLobbyController.KPPHGAAOMDN.HCAHCFGPJIF_Desc;
 			d.userName = m.PHGNPFJIBLF_Name;
 			d.bossName = m.GJAOLNLFEBD_BossName;
 			d.damage = m.HALIDDHLNEG_Damage;
 			d.bossRank = m.EJGDHAENIDC_BossRank;
 			d.bossImageNum = m.JNBDLNBKDCO_BossImage;
 			d.series = (SeriesAttr.Type) m.PCPODOMOFDH_BossSeriesAttr;
-			d.logId = m.CNOHJPEHHCH_LogId;
+			d.logId = m.CNOHJPEHHCH_StampId;
 			d.wavId = m.KKPAHLMJKIH_WavId;
 			this.StartCoroutineWatched(Co_PlayMovie(d));
 		}
@@ -1416,7 +1416,7 @@ namespace XeApp.Game.Menu
 			m_RaidLobbyController.PMCMAKBNJIL();
 			ANPBHCNJIDI.AIFBLOAGFOP a = new ANPBHCNJIDI.AIFBLOAGFOP();
 			a.AHHJLDLAPAN_DivaId = divaId;
-			a.EBBJPBGHJOL_Content = m_messgeText;
+			a.EBBJPBGHJOL_text = m_messgeText;
 			a.LBODBHCBAMD = isViewing;
 			a.PCEHLFNFIDA(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData);
 			m_RaidLobbyController.HJNDLPNBBKF((NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE) m_raidSelect, a, () =>
@@ -1903,7 +1903,7 @@ namespace XeApp.Game.Menu
 		{
 			//0xD116BC
 			yield return Co.R(TutorialManager.TryShowTutorialCoroutine(CheckTutorialFunc_LOBBY_HELP));
-			if(m_RaidLobbyController.KINIOEOOCAA_GetPhase(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime()) == NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.ECAAJMPLIPG_2_Now)
+			if(m_RaidLobbyController.KINIOEOOCAA_GetPhase(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime()) == NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.ECAAJMPLIPG_2_Now)
 			{
 				yield return Co.R(TutorialManager.TryShowTutorialCoroutine(CheckTutorialFunc_LIVE_HELP));
 			}

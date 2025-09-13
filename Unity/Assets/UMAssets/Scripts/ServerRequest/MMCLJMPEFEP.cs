@@ -44,7 +44,7 @@ public class MMCLJMPEFEP_GetBbsThreads : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0x19641C4 Offset: 0x19641C4 VA: 0x19641C4 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG = new CAMBPKCCBDO();
 		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

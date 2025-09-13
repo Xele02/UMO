@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CLHMBMLOAOE
 {
-	private const long BBEGLBMOBOF = 0x745922765f;//499711637087;
+	private const long BBEGLBMOBOF_xorl = 0x745922765f;//499711637087;
 	private long OILIPGICBIK; // 0x8
 	private long NJKMDELFJGE; // 0x10
 
-	public long FDFGEMODIIF { get { return OILIPGICBIK ^ BBEGLBMOBOF; } set { OILIPGICBIK = value ^ BBEGLBMOBOF; } } //0x1083E48 CBDHPDMLJKB 0x1083E60 OPBOAMBLLDF
-	public long NKMNFPMMJND { get { return NJKMDELFJGE ^ BBEGLBMOBOF; } set { NJKMDELFJGE = value ^ BBEGLBMOBOF; } } //0x1083E7C JCDIJBHKGMA 0x1083E94 FDMBGEAJNPK
+	public long FDFGEMODIIF { get { return OILIPGICBIK ^ BBEGLBMOBOF_xorl; } set { OILIPGICBIK = value ^ BBEGLBMOBOF_xorl; } } //0x1083E48 CBDHPDMLJKB 0x1083E60 OPBOAMBLLDF
+	public long NKMNFPMMJND { get { return NJKMDELFJGE ^ BBEGLBMOBOF_xorl; } set { NJKMDELFJGE = value ^ BBEGLBMOBOF_xorl; } } //0x1083E7C JCDIJBHKGMA 0x1083E94 FDMBGEAJNPK
 
 	//// RVA: 0x1083EB0 Offset: 0x1083EB0 VA: 0x1083EB0
 	//public void KHEKNNFCAOI(EDOHBJAPLPF IDLHJIOMJBK) { }
@@ -17,7 +17,7 @@ public class CLHMBMLOAOE
 
 public class BCEHKBJAEDM
 {
-	public string FJGCDPLCIAK; // 0x8
+	public string FJGCDPLCIAK_UniqueKey; // 0x8
 	public CLHMBMLOAOE LKCCMBEOLLA; // 0xC
 	public CLHMBMLOAOE PACPEOKLGCI; // 0x10
 	public CLHMBMLOAOE FPIKAFLHBMO; // 0x14
@@ -53,7 +53,7 @@ public class BJGEJMNDOLK_GetSubscriptionStatuses : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0xC858A4 Offset: 0xC858A4 VA: 0xC858A4 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG = new FNFDLMDKONP();
 		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

@@ -216,7 +216,7 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 		for(int i = 0; i < CEKHMLAEKIK.Count; i++)
 		{
 			HCJPJKCIBDL_DldFileInfo data = new HCJPJKCIBDL_DldFileInfo();
-			data.AJPIGKBIDDL_LocalFileName = CEKHMLAEKIK[i].CJEKGLGBIHF_LocalPathRelativeToDataDir;
+			data.AJPIGKBIDDL_LocalFileName = CEKHMLAEKIK[i].CJEKGLGBIHF_path;
 			data.NFCMNIEHJML_ServerPath = FileSystemProxy.ConvertURL(CEKHMLAEKIK[i].BLHCFFOHBNF_ServerPath);
 			data.ADHHKEMDOIK_LocalPath = CEKHMLAEKIK[i].NOCCPNGFFPF_FullLocalPath;
 			data.OIPCCBHIKIA_Idx = i;
@@ -227,11 +227,11 @@ public class JEHIAIPJNJF_FileDownloader : IDisposable
 	}
 
 	// // RVA: 0x1C354B8 Offset: 0x1C354B8 VA: 0x1C354B8
-	public bool MNAIIMMIMIO_IsFileDownloading(string CJEKGLGBIHF)
+	public bool MNAIIMMIMIO_IsFileDownloading(string _CJEKGLGBIHF_path)
 	{
 		for(int i = 0; i < JOJMBFBGMGN_DldQueue.Count; i++)
 		{
-			if(JOJMBFBGMGN_DldQueue[i].AJPIGKBIDDL_LocalFileName == CJEKGLGBIHF)
+			if(JOJMBFBGMGN_DldQueue[i].AJPIGKBIDDL_LocalFileName == _CJEKGLGBIHF_path)
 				return true;
 				
 		}

@@ -579,7 +579,7 @@ namespace XeApp.Game.Gacha
 				}
 				else
 				{
-					s = MakePopupSettingForFewBonusTicket(ticketName, v1_have, v3_price, netGachaProductData.ALPOJNBHNDK(netGachaProductData.OMNAPCHLBHF(netGachaCount), NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime()));
+					s = MakePopupSettingForFewBonusTicket(ticketName, v1_have, v3_price, netGachaProductData.ALPOJNBHNDK(netGachaProductData.OMNAPCHLBHF(netGachaCount), NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime()));
 					//LAB_00997d04
 					toPurchaseVC = true;
 				}
@@ -748,7 +748,7 @@ namespace XeApp.Game.Gacha
 		{
 			if (currentGachaLimitTime < 0)
 				return false;
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			return t >= currentGachaLimitTime;
 		}
 
@@ -1180,7 +1180,7 @@ namespace XeApp.Game.Gacha
 				if (!h.CPGNMGCIIKI())
 					return 0;
 				SetupFreeTimezone();
-				long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 				Timezone t = GetTimezoneFor(time);
 				if ((int)t < 3)
 					return (BadgeConstant.ID)(t + (int)BadgeConstant.ID.Gacha_FreeMorning);

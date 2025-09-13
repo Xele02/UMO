@@ -77,8 +77,8 @@ namespace XeApp.Game.Menu
 			m_layoutMedal.StartChildrenAnimGoStop(view.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.FNLODOLMLML_3 ? "coin_off" : "coin_on");
 			for(int i = 0; i < m_imageMedal.Length; i++)
 			{
-                EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.EAHPLCJMPHD_PayItemId);
-                int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.EAHPLCJMPHD_PayItemId);
+                EKLNMHFCAOI.FKGCBLHOOCL_Category cat = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.EAHPLCJMPHD_PId);
+                int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.EAHPLCJMPHD_PId);
 				switch(cat)
 				{
 					case EKLNMHFCAOI.FKGCBLHOOCL_Category.GIMBFBNKPNO_CompoItem:
@@ -116,7 +116,7 @@ namespace XeApp.Game.Menu
 				}
 			}
 			m_textMedalNum.text = view.JJPAFPIOBCK_GetCount().ToString();
-			UnityEngine.Debug.Log("Shop : "+view.INDDJNMPONH_Type+" "+view.JPGALGPNJAI_VcId+" "+view.OCGCPJHDJEN+" "+view.EAHPLCJMPHD_PayItemId);
+			UnityEngine.Debug.Log("Shop : "+view.INDDJNMPONH_Type+" "+view.JPGALGPNJAI_VcId+" "+view.OCGCPJHDJEN+" "+view.EAHPLCJMPHD_PId);
 			for(int i = 0; i < List.ScrollObjects.Count; i++)
 			{
 				if(List.ScrollObjects[i] != null)

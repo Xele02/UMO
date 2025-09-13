@@ -14,7 +14,7 @@ public class DDEMMEPBOIA_Sns : KLFDBFMNLBL_ServerSaveBlock
 		public long BEBJKJKBOGH_Date { get; set; } // 0x10 MCIJNMKFMDB DIAPHCJBPFD IHAIKPNEEJE
 		public short LDJIMGPHFPA_Cnt { get; set; } // 0x18 BGNCILNJBOP CIDCJMJPLIH KHABJPPLOIB
 		//public bool PCHDDIJADBD { get; } 0x17724D0 BINPLPCDDCD
-		//public bool FJODMPGPDDD { get; } 0x17742B4 CGKAEMGLHNK
+		//public bool FJODMPGPDDD_Unlocked { get; } 0x17742B4 CGKAEMGLHNK
 
 		//// RVA: 0x1772AC8 Offset: 0x1772AC8 VA: 0x1772AC8
 		public void ODDIHGPONFL(EFIFBJGKPJF GPBJHKLFCEP)
@@ -37,7 +37,7 @@ public class DDEMMEPBOIA_Sns : KLFDBFMNLBL_ServerSaveBlock
 		}
 
 		//// RVA: 0x1773220 Offset: 0x1773220 VA: 0x1773220
-		//public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int OIPCCBHIKIA, DDEMMEPBOIA.EFIFBJGKPJF OHMCIEMIKCE, bool KFCGIKHEEMB) { }
+		//public void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, string JIKKNHIAEKG, string MJBACHKCIHA, int OIPCCBHIKIA, DDEMMEPBOIA_Sns.EFIFBJGKPJF OHMCIEMIKCE, bool KFCGIKHEEMB) { }
 	}
 
 	private const int ECFEMKGFDCE = 2;
@@ -76,7 +76,7 @@ public class DDEMMEPBOIA_Sns : KLFDBFMNLBL_ServerSaveBlock
 			{
 				EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
 				data2[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = HAJEJPFGILG[i].HBNIMMAEKHJ_Id;
-				data2[AFEHLCGHAEE_Strings.BFINGCJHOHI_cnt] = HAJEJPFGILG[i].LDJIMGPHFPA_Cnt;
+				data2[AFEHLCGHAEE_Strings.BFINGCJHOHI_Count] = HAJEJPFGILG[i].LDJIMGPHFPA_Cnt;
 				data2[AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date] = HAJEJPFGILG[i].BEBJKJKBOGH_Date;
 				data2[AFEHLCGHAEE_Strings.AIHOJKFNEEN_itm] = HAJEJPFGILG[i].PMKJFKJFDOC_Itm;
 				data[POFDDFCGEGP + (i + 1)] = data2;
@@ -112,16 +112,16 @@ public class DDEMMEPBOIA_Sns : KLFDBFMNLBL_ServerSaveBlock
 			else
 			{
 				BOKMNHAFJHF_Sns snsDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns;
-				for(int i = 0; i < snsDb.CDENCMNHNGA_Talks.Count; i++)
+				for(int i = 0; i < snsDb.CDENCMNHNGA_table.Count; i++)
 				{
-					BOKMNHAFJHF_Sns.KEIGMAOCJHK_Talk item = snsDb.CDENCMNHNGA_Talks[i];
+					BOKMNHAFJHF_Sns.KEIGMAOCJHK_Talk item = snsDb.CDENCMNHNGA_table[i];
 					EFIFBJGKPJF data = HAJEJPFGILG[i];
 					string str = POFDDFCGEGP + (i + 1).ToString();
 					if(block.BBAJPINMOEP_Contains(str))
 					{
 						EDOHBJAPLPF_JsonData b = block[str];
 						data.HBNIMMAEKHJ_Id = item.AIPLIEMLHGC_SnsId;
-						data.LDJIMGPHFPA_Cnt = (short)CJAENOMGPDA_ReadInt(b, AFEHLCGHAEE_Strings.BFINGCJHOHI_cnt, 0, ref isInvalid);
+						data.LDJIMGPHFPA_Cnt = (short)CJAENOMGPDA_ReadInt(b, AFEHLCGHAEE_Strings.BFINGCJHOHI_Count, 0, ref isInvalid);
 						data.BEBJKJKBOGH_Date = CJAENOMGPDA_ReadInt(b, AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date, 0, ref isInvalid);
 						data.PMKJFKJFDOC_Itm = (sbyte)CJAENOMGPDA_ReadInt(b, AFEHLCGHAEE_Strings.AIHOJKFNEEN_itm, 0, ref isInvalid);
 					}
@@ -134,7 +134,7 @@ public class DDEMMEPBOIA_Sns : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x17728F8 Offset: 0x17728F8 VA: 0x17728F8 Slot: 7
-	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	public override void BMGGKONLFIC_Copy(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
 		DDEMMEPBOIA_Sns s = GPBJHKLFCEP as DDEMMEPBOIA_Sns;
 		for(int i = 0; i < HAJEJPFGILG.Count; i++)
@@ -158,5 +158,5 @@ public class DDEMMEPBOIA_Sns : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1772E14 Offset: 0x1772E14 VA: 0x1772E14 Slot: 10
-	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH);
+	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock _GJLFANGDGCL_Target, long MCKEOKFMLAH);
 }

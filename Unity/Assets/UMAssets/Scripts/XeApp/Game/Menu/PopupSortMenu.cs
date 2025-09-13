@@ -521,8 +521,8 @@ namespace XeApp.Game.Menu
 			friendProperty.LHPDCGNKPHD_sortItem = (int)m_sortItem;
 			friendProperty.NPEEPPCPEPE_assistItem = (int)m_assistItem;
 			friendProperty.ACCHOFLOOEC_RarityFilter = (int)m_rarityButtonStateBit;
-			friendProperty.BOFFOHHLLFG_attributeFilter = (int)m_attributeButtonStateBit;
-			friendProperty.BBIIHLNBHDE_seriaseFilter = (int)m_seriaseButtonStateBit;
+			friendProperty.BOFFOHHLLFG_AttributeFilter = (int)m_attributeButtonStateBit;
+			friendProperty.BBIIHLNBHDE_SerieFilter = (int)m_seriaseButtonStateBit;
 			friendProperty.LKPCKPJGJKN_centerSkillFilter = (int)m_centerSkillButtonStateBit;
 		}
 
@@ -680,7 +680,7 @@ namespace XeApp.Game.Menu
 									{
 										if(a.INDDJNMPONH[k] != 0)
 											b = true;
-										if(a.GJLFANGDGCL[k] != 0)
+										if(a.GJLFANGDGCL_Target[k] != 0)
 											b = true;
 										if(a.OAFPGJLCNFM[k] != 0)
 											b = true;
@@ -690,7 +690,7 @@ namespace XeApp.Game.Menu
 										KFCIIMBBNCD dataK = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PEPLECGHBFA_SceneEffectInfo[a1[k] - 1];
 										if(dataK.INDDJNMPONH_ModifierType != a.INDDJNMPONH[k])
 											b = true;
-										if(dataK.GJLFANGDGCL_CenterSkillTarget != a.GJLFANGDGCL[k])
+										if(dataK.GJLFANGDGCL_Target != a.GJLFANGDGCL_Target[k])
 											b = true;
 										if(dataK.OAFPGJLCNFM_CenterSkillCondition != a.OAFPGJLCNFM[k])
 											b = true;
@@ -724,9 +724,9 @@ namespace XeApp.Game.Menu
 						{
 							CCINPCJDFJG c = h.NNDGIAEFMOG[j];
 							bool b = false;
-							for(int k = 0; k < skill.EGLDFPILJLG_BuffEffectType.Length; k++)
+							for(int k = 0; k < skill.EGLDFPILJLG_SkillBuffEffect.Length; k++)
 							{
-								if(skill.EGLDFPILJLG_BuffEffectType[k] != c.EGLDFPILJLG[k])
+								if(skill.EGLDFPILJLG_SkillBuffEffect[k] != c.EGLDFPILJLG_SkillBuffEffect[k])
 								{
 									b = true;
 									break;
@@ -734,7 +734,7 @@ namespace XeApp.Game.Menu
 							}
 							for(int k = 0; k < skill.FPMFEKIPFPI_DurationType.Length; k++)
 							{
-								if (skill.FPMFEKIPFPI_DurationType[k] != c.FPMFEKIPFPI[k])
+								if (skill.FPMFEKIPFPI_DurationType[k] != c.FPMFEKIPFPI_DurationType[k])
 								{
 									b = true;
 									break;
@@ -770,7 +770,7 @@ namespace XeApp.Game.Menu
 							bool b = f.NEHDLDEHFCD != skill.FLJHGGKIOJH_SkillType;
 							for(int k = 0; k < skill.EGLDFPILJLG_SkillBuffEffect.Length; k++)
 							{
-								if(skill.EGLDFPILJLG_SkillBuffEffect[k] != f.EGLDFPILJLG[k])
+								if(skill.EGLDFPILJLG_SkillBuffEffect[k] != f.EGLDFPILJLG_SkillBuffEffect[k])
 								{
 									b = true;
 									break;
@@ -778,30 +778,30 @@ namespace XeApp.Game.Menu
 							}
 							for (int k = 0; k < skill.FPMFEKIPFPI_DurationType.Length; k++)
 							{
-								if (skill.FPMFEKIPFPI_DurationType[k] != f.FPMFEKIPFPI[k])
+								if (skill.FPMFEKIPFPI_DurationType[k] != f.FPMFEKIPFPI_DurationType[k])
 								{
 									b = true;
 									break;
 								}
 							}
-							bool b2 = skill.CEFHDLLAPDH_MusicIdCond > 0;
-							if (f.CEFHDLLAPDH < 1)
-								b2 = skill.CEFHDLLAPDH_MusicIdCond == 0;
+							bool b2 = skill.CEFHDLLAPDH_MusicId > 0;
+							if (f.CEFHDLLAPDH_MusicId < 1)
+								b2 = skill.CEFHDLLAPDH_MusicId == 0;
 							bool b3 = false;
 							if(f.BHADMHLIFMM < 1)
 							{
 								b3 = false;
 								TodoLogger.LogError(TodoLogger.ToCheck, "Check test");
-								if(scene.AOLIJKMIJJE_DivaCompatible < 2)
+								if(scene.AOLIJKMIJJE_Diva < 2)
 								{
 									b3 = true;
 								}
 							}
 							else
 							{
-								b3 = f.BHADMHLIFMM < scene.AOLIJKMIJJE_DivaCompatible;
+								b3 = f.BHADMHLIFMM < scene.AOLIJKMIJJE_Diva;
 							}
-							if (!(b || f.CPNAGMFCIJK != skill.CPNAGMFCIJK_TriggerType || !b2 || f.NFIBKOACELP != skill.NFIBKOACELP_Attr || b3))
+							if (!(b || f.CPNAGMFCIJK_TriggerType != skill.CPNAGMFCIJK_TriggerType || !b2 || f.NFIBKOACELP != skill.NFIBKOACELP_Attr || b3))
 								return true;
 						}
 					}
@@ -813,7 +813,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x114D304 Offset: 0x114D304 VA: 0x114D304
 		public static bool IsMusicLevelFilter(int levelMin, int levelMax, IBJAKJJICBC musicData, Difficulty.Type difficulty)
 		{
-			int pt = musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].CIEOBFIIPLD;
+			int pt = musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].CIEOBFIIPLD_Level;
 			return pt >= levelMin && pt <= levelMax;
 		}
 
@@ -822,7 +822,7 @@ namespace XeApp.Game.Menu
 		{
 			foreach(var r in rewards)
 			{
-				if (r.CMCKNKKCNDK_Achieved == 0)
+				if (r.CMCKNKKCNDK_Status == 0)
 					return false;
 			}
 			return true;

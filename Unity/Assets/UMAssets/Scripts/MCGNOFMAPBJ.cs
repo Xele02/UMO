@@ -2,7 +2,7 @@ using XeSys;
 
 public class MCGNOFMAPBJ
 {
-	private int FBGGEFFJJHB; // 0x8
+	private int FBGGEFFJJHB_xor; // 0x8
 	private long DDPGLABEIEM; // 0x10
 	private int PINPIHODOKP; // 0x18
 	private int BPADHGOCPIH; // 0x1C
@@ -17,13 +17,13 @@ public class MCGNOFMAPBJ
 	private const int FGPCFEMHOGO = 999;
 
 	public long DLPEEDCCNMJ_StaminaSaveTime { get {
-			if ((EHCBKLCHFHE ^ FBGGEFFJJHB) != DDPGLABEIEM)
+			if ((EHCBKLCHFHE ^ FBGGEFFJJHB_xor) != DDPGLABEIEM)
 				MNJAPFEIOKD |= 1;
-			return EHCBKLCHFHE ^ FBGGEFFJJHB;
+			return EHCBKLCHFHE ^ FBGGEFFJJHB_xor;
 		} set
 		{
 			DDPGLABEIEM = value;
-			EHCBKLCHFHE = value ^ FBGGEFFJJHB;
+			EHCBKLCHFHE = value ^ FBGGEFFJJHB_xor;
 		}
 	} //0x130CD40 IPMOLPGCIIB 0x130CB20 POJLMKDPBHI
 	public int NEPIPMPAFIE_Stamina { get
@@ -32,21 +32,21 @@ public class MCGNOFMAPBJ
 			{
 				MNJAPFEIOKD |= 2;
 			}
-			return FBGGEFFJJHB ^ HICKJFPDBEG;
+			return FBGGEFFJJHB_xor ^ HICKJFPDBEG;
 		} set {
 			PINPIHODOKP = value;
 			if (value < 1)
 				PINPIHODOKP = 0;
 			if (value > 999)
 				PINPIHODOKP = 999;
-			HICKJFPDBEG = FBGGEFFJJHB ^ PINPIHODOKP;
+			HICKJFPDBEG = FBGGEFFJJHB_xor ^ PINPIHODOKP;
 		}
 	} //0x130CD7C DNNADJLKBPC 0x130CB40 BJOJAFDBOBL
 	public int DCBENCMNOGO_MaxStamina { get
 		{
-			if((EMGIAPOEKLL ^ FBGGEFFJJHB) != BPADHGOCPIH)
+			if((EMGIAPOEKLL ^ FBGGEFFJJHB_xor) != BPADHGOCPIH)
 				MKMBHBOGFHM = MKMBHBOGFHM | 4;
-			return EMGIAPOEKLL ^ FBGGEFFJJHB;
+			return EMGIAPOEKLL ^ FBGGEFFJJHB_xor;
 		} set
 		{
 			BPADHGOCPIH = value;
@@ -54,34 +54,34 @@ public class MCGNOFMAPBJ
 				BPADHGOCPIH = 0;
 			if (value > 999)
 				BPADHGOCPIH = 999;
-			EMGIAPOEKLL = BPADHGOCPIH ^ FBGGEFFJJHB;
+			EMGIAPOEKLL = BPADHGOCPIH ^ FBGGEFFJJHB_xor;
 		} } //0x130CDA4 HHBCMCGODFP 0x130CB68 NPANKNNLDOB
 	public long FLJGHBLEDDB_HealSec { get
 		{
-			if ((JCGIEJGOEIM ^ FBGGEFFJJHB) != OPDBPKLCEFO)
+			if ((JCGIEJGOEIM ^ FBGGEFFJJHB_xor) != OPDBPKLCEFO)
 				MNJAPFEIOKD |= 8;
-			return JCGIEJGOEIM ^ FBGGEFFJJHB;
+			return JCGIEJGOEIM ^ FBGGEFFJJHB_xor;
 		}
 		set {
 			OPDBPKLCEFO = value;
-			JCGIEJGOEIM = value ^ FBGGEFFJJHB;
+			JCGIEJGOEIM = value ^ FBGGEFFJJHB_xor;
 		} } //0x130CDCC DEOLPKEGHFP 0x130CB90 OCIMIINBMAD
 	public long FJDBNGEPKHL_Time { get {
-			long val = FBGGEFFJJHB ^ HFMOEKIBNKA;
+			long val = FBGGEFFJJHB_xor ^ HFMOEKIBNKA;
 			if((val ^ MKMBHBOGFHM) != 0)
 				MKMBHBOGFHM = MKMBHBOGFHM | 0x10;
 			return val;
 		}
 		set {
 			MKMBHBOGFHM = value;
-			HFMOEKIBNKA = value ^ FBGGEFFJJHB;
+			HFMOEKIBNKA = value ^ FBGGEFFJJHB_xor;
 		} } //0x130CE08 FIIMIGEKDCM 0x130CBB0 JFIOOGMDBJD
 
 	// RVA: 0x130CA20 Offset: 0x130CA20 VA: 0x130CA20
 	public MCGNOFMAPBJ()
     {
         long time = Utility.GetCurrentUnixTime();
-        FBGGEFFJJHB = (int)time ^ 0x51020427;
+        FBGGEFFJJHB_xor = (int)time ^ 0x51020427;
 		FLJGHBLEDDB_HealSec = 180;
 		FJDBNGEPKHL_Time = 0;
 		DCBENCMNOGO_MaxStamina = 0;
@@ -100,7 +100,7 @@ public class MCGNOFMAPBJ
 	}
 
 	// // RVA: 0x130CE44 Offset: 0x130CE44 VA: 0x130CE44 Slot: 4
-	public virtual int DCLKMNGMIKC_GetCurrent()
+	public virtual int DCLKMNGMIKC_GetCurrentValue()
 	{
 		int res = NEPIPMPAFIE_Stamina;
 		if(res < DCBENCMNOGO_MaxStamina)
@@ -155,11 +155,11 @@ public class MCGNOFMAPBJ
 	}
 
 	// // RVA: 0x130D2AC Offset: 0x130D2AC VA: 0x130D2AC
-	public bool IGFMNMADJPP_Consume(int CHIHFGDIBJM, bool _DDGFCOPPBBN_CheckOnly/* = true*/)
+	public bool IGFMNMADJPP_Consume(int CHIHFGDIBJM, bool _DDGFCOPPBBN_test/* = true*/)
 	{
-		if(CHIHFGDIBJM <= DCLKMNGMIKC_GetCurrent() && _DDGFCOPPBBN_CheckOnly == false)
+		if(CHIHFGDIBJM <= DCLKMNGMIKC_GetCurrentValue() && _DDGFCOPPBBN_test == false)
 		{
-			NEPIPMPAFIE_Stamina = DCLKMNGMIKC_GetCurrent() - CHIHFGDIBJM;
+			NEPIPMPAFIE_Stamina = DCLKMNGMIKC_GetCurrentValue() - CHIHFGDIBJM;
 			if (NEPIPMPAFIE_Stamina < 0)
 				NEPIPMPAFIE_Stamina = 0;
 			DLPEEDCCNMJ_StaminaSaveTime = FJDBNGEPKHL_Time;
@@ -171,20 +171,20 @@ public class MCGNOFMAPBJ
 		}
 		else
 		{
-			return CHIHFGDIBJM <= DCLKMNGMIKC_GetCurrent();
+			return CHIHFGDIBJM <= DCLKMNGMIKC_GetCurrentValue();
 		}
 	}
 
 	// // RVA: 0x130D3E0 Offset: 0x130D3E0 VA: 0x130D3E0 Slot: 6
-	public virtual bool MAPPOEFALIP(int BBCCIJGFKHD, bool MDNODGAFHJN/* = true*/, bool DDGFCOPPBBN/* = true*/)
+	public virtual bool MAPPOEFALIP(int BBCCIJGFKHD, bool MDNODGAFHJN/* = true*/, bool _DDGFCOPPBBN_test/* = true*/)
 	{
-		int a = DCLKMNGMIKC_GetCurrent();
+		int a = DCLKMNGMIKC_GetCurrentValue();
 		if(a < DCBENCMNOGO_MaxStamina)
 		{
 			int a2 = DCBENCMNOGO_MaxStamina;
 			if(MDNODGAFHJN)
 				a2 = a + BBCCIJGFKHD;
-			if(!DDGFCOPPBBN)
+			if(!_DDGFCOPPBBN_test)
 			{
 				NEPIPMPAFIE_Stamina = a2;
 				DLPEEDCCNMJ_StaminaSaveTime = FJDBNGEPKHL_Time;
@@ -195,15 +195,15 @@ public class MCGNOFMAPBJ
 	}
 
 	// // RVA: 0x130D4C8 Offset: 0x130D4C8 VA: 0x130D4C8
-	public bool FCEMLLDEJFL(bool MDNODGAFHJN/* = true*/, bool DDGFCOPPBBN/* = true*/)
+	public bool FCEMLLDEJFL(bool MDNODGAFHJN/* = true*/, bool _DDGFCOPPBBN_test/* = true*/)
 	{
-		return MAPPOEFALIP(DCBENCMNOGO_MaxStamina, MDNODGAFHJN, DDGFCOPPBBN);
+		return MAPPOEFALIP(DCBENCMNOGO_MaxStamina, MDNODGAFHJN, _DDGFCOPPBBN_test);
 	}
 
 	// // RVA: 0x130D520 Offset: 0x130D520 VA: 0x130D520
 	public void GFOAJNICANO(int GDDFDGNEACK)
 	{
-		int cur = DCLKMNGMIKC_GetCurrent();
+		int cur = DCLKMNGMIKC_GetCurrentValue();
 		cur += GDDFDGNEACK;
 		NEPIPMPAFIE_Stamina = cur;
 		DLPEEDCCNMJ_StaminaSaveTime = FJDBNGEPKHL_Time;
@@ -214,9 +214,9 @@ public class MCGNOFMAPBJ
 public class KAFHAKBBJEI : MCGNOFMAPBJ
 {
 	// RVA: 0x1BA9BE4 Offset: 0x1BA9BE4 VA: 0x1BA9BE4 Slot: 6
-	public override bool MAPPOEFALIP(int BBCCIJGFKHD, bool MDNODGAFHJN/* = True*/, bool DDGFCOPPBBN/* = True*/)
+	public override bool MAPPOEFALIP(int BBCCIJGFKHD, bool MDNODGAFHJN/* = True*/, bool _DDGFCOPPBBN_test/* = True*/)
 	{
-		if(DCLKMNGMIKC_GetCurrent() < DCBENCMNOGO_MaxStamina)
+		if(DCLKMNGMIKC_GetCurrentValue() < DCBENCMNOGO_MaxStamina)
 		{
 			long r = MLLGPBGFLFI_GetRemainingTime();
 			int v;
@@ -226,9 +226,9 @@ public class KAFHAKBBJEI : MCGNOFMAPBJ
 			}
 			else
 			{
-				v = DCLKMNGMIKC_GetCurrent() + BBCCIJGFKHD;
+				v = DCLKMNGMIKC_GetCurrentValue() + BBCCIJGFKHD;
 			}
-			if(!DDGFCOPPBBN)
+			if(!_DDGFCOPPBBN_test)
 			{
 				NEPIPMPAFIE_Stamina = v;
 				DLPEEDCCNMJ_StaminaSaveTime = FJDBNGEPKHL_Time;

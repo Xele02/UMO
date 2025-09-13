@@ -96,7 +96,7 @@ public class NFIMGIABIOI_GetBbsThreadComments : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0x1AE9C18 Offset: 0x1AE9C18 VA: 0x1AE9C18 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG = new CIIDLDOOKBB();
 		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

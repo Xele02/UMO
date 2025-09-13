@@ -52,7 +52,7 @@ namespace XeApp.Game.Common
 			}
 			if((int)view.NNHHNFFLCFO < 28 && (1 << ((int)view.NNHHNFFLCFO) & 0x81c0060U) != 0)
 			{
-				SetGachaTexture(view.EAHPLCJMPHD_EventId, loadBannerTexture, () =>
+				SetGachaTexture(view.EAHPLCJMPHD_PId, loadBannerTexture, () =>
 				{
 					//0xEB0DB8
 					SetPeriod(text);
@@ -60,7 +60,7 @@ namespace XeApp.Game.Common
 			}
 			else
 			{
-				SetTexture(view.EAHPLCJMPHD_EventId, loadBannerTexture, () =>
+				SetTexture(view.EAHPLCJMPHD_PId, loadBannerTexture, () =>
 				{
 					//0xEB0DE8
 					SetPeriod(text);

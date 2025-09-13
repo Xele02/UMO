@@ -80,7 +80,7 @@ namespace XeApp.Game.Menu
 				if(friendData.JIGONEMPPNP_Diva != null)
 				{
 					divaId = friendData.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId;
-					costumeId = friendData.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
+					costumeId = friendData.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
 					colorId = friendData.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId;
 				}
 				MenuScene.Instance.DivaIconCache.Load(divaId, costumeId, colorId, (IiconTexture iconTexture) =>
@@ -108,7 +108,7 @@ namespace XeApp.Game.Menu
 				sceneIconDecoration = new SceneIconDecoration(imageScene.gameObject, SceneIconDecoration.Size.S, layoutSceneImage, null);
 				sceneIconDecoration.Change(friendData.KHGKPKDBMOH_GetAssistScene(), DisplayType.Level);
 				HighScoreRatingRank.Type rank = friendData.AGJIIKKOKFJ_ScoreRatingRank;
-				textSingRank.text = friendData.BJGOPOEAAIC_MusicRatio.ToString();
+				textSingRank.text = friendData.BJGOPOEAAIC_UtaRate.ToString();
 				GameManager.Instance.MusicRatioTextureCache.Load(rank, (IiconTexture texture) =>
 				{
 					//0x1D8F6F8

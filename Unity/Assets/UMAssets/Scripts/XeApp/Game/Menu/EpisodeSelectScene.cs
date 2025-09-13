@@ -59,7 +59,7 @@ namespace XeApp.Game.Menu
 			if(!isBeginner)
 			{
 				m_btn_sort.EnableSave(true);
-				m_btn_sort.m_order = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CEJNPBFIIMJ_EpisodeSelect.EILKGEADKGH_order;
+				m_btn_sort.m_order = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CEJNPBFIIMJ_EpisodeSelect.EILKGEADKGH_Order;
 				m_btn_sort.m_sort = (SortItem)GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CEJNPBFIIMJ_EpisodeSelect.LHPDCGNKPHD_sortItem;
 			}
 			else

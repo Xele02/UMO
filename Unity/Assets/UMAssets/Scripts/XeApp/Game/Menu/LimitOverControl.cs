@@ -50,7 +50,7 @@ namespace XeApp.Game.Menu
 			yield return Co.R(LimitOverPopupCoroutine());
 			if(m_animType == AnimType.Release)
 			{
-				if(m_limitOverData.EOBACDCDGOF)
+				if(m_limitOverData.EOBACDCDGOF_IsTerminate)
 				{
 					if(m_sceneData.ELKHCOEMNOJ_IsKira() > 0)
 					{
@@ -116,7 +116,7 @@ namespace XeApp.Game.Menu
 			bool a1 = true;
 			if(!m_limitOverData.JMHIDPKHELB)
 			{
-				a1 = m_limitOverData.EOBACDCDGOF;
+				a1 = m_limitOverData.EOBACDCDGOF_IsTerminate;
 			}
 			string str = "";
 			if(m_animType == AnimType.Release)

@@ -436,7 +436,7 @@ namespace XeApp.Game.Menu
 			}
 			if(IsEventEndChallengePeriod)
 			{
-				long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 				m_overrideButtonStyle = MusicSelectButtonSet.OptionStyle.EndEventHome;
 				m_musicList = new MusicDataList(IBJAKJJICBC.GCCBCAKFJMF(5, t, m_eventCtrl.PGIIDPEGGPI_EventId, false), IBJAKJJICBC.GCCBCAKFJMF(5, t, m_eventCtrl.PGIIDPEGGPI_EventId, true));
 				list_no = 0;
@@ -447,7 +447,7 @@ namespace XeApp.Game.Menu
 			{
 				if(m_isMatched)
 				{
-					long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+					long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
                     List<IBJAKJJICBC> l = IBJAKJJICBC.EHNABCEGAHO(t, false, false);
                     m_musicList = new MusicDataList(l, IBJAKJJICBC.EHNABCEGAHO(t, false, true));
 					OverrideEnemySkill();
@@ -704,7 +704,7 @@ namespace XeApp.Game.Menu
 				}
 				m_battleInfo.ApplySelfTitle(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName);
 				GameManager.Instance.DivaIconCache.Load(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId, 
-					GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, 
+					GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, 
 					GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].EKFONBFDAAP_ColorId, m_battleInfo.ApplySelfDivaIcon);
 				GameManager.Instance.SceneIconCache.Load(sceneId, rank, (IiconTexture texture) =>
 				{
@@ -726,26 +726,26 @@ namespace XeApp.Game.Menu
 					rank = musicData.DACLONHOFLA.AFBMEMCHJCL_MainScene.CGIELKDLHGE_GetEvolveId();
 					isKira = musicData.DACLONHOFLA.AFBMEMCHJCL_MainScene.MBMFJILMOBP_IsKira();
 				}
-				int str = musicData.DACLONHOFLA.BHCIFFILAKJ_Str;
+				int str = musicData.DACLONHOFLA.BHCIFFILAKJ_Strength;
 				if(str > 2)
 					str = 3;
-				ev.ECFNKBGDJCA(list_no, musicData.DACLONHOFLA.OIPCCBHIKIA_RivalIdx, str);
+				ev.ECFNKBGDJCA(list_no, musicData.DACLONHOFLA.OIPCCBHIKIA_Idx, str);
 				m_battleInfo.ApplyRivalRank((MusicSelectBattleInfo.RivalRankType)str);
 				m_battleInfo.ApplyRivalTitle(musicData.DACLONHOFLA.OPFGFINHFCE_Name);
 				m_battleInfo.ApplyRivalScore(ev.HOJNMALLCME_GetClassMaxScore(str, 0));
-				GameManager.Instance.DivaIconCache.Load(musicData.DACLONHOFLA.FDBOPFEOENF_RivalData.AHHJLDLAPAN_DivaId, 
-					musicData.DACLONHOFLA.FDBOPFEOENF_RivalData.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, 
-					musicData.DACLONHOFLA.FDBOPFEOENF_RivalData.EKFONBFDAAP_ColorId, m_battleInfo.ApplyRivalDivaIcon);
+				GameManager.Instance.DivaIconCache.Load(musicData.DACLONHOFLA.FDBOPFEOENF_Diva.AHHJLDLAPAN_DivaId, 
+					musicData.DACLONHOFLA.FDBOPFEOENF_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, 
+					musicData.DACLONHOFLA.FDBOPFEOENF_Diva.EKFONBFDAAP_ColorId, m_battleInfo.ApplyRivalDivaIcon);
 				GameManager.Instance.SceneIconCache.Load(sceneId, rank, (IiconTexture texture) =>
 				{
 					//0x1056110
 					m_battleInfo.ApplyRivalSceneIcon(texture, isKira);
 				});
 				m_rivalDivaDeco.SetActive(true);
-				m_rivalDivaDeco.Change(musicData.DACLONHOFLA.FDBOPFEOENF_RivalData, DisplayType.Level);
+				m_rivalDivaDeco.Change(musicData.DACLONHOFLA.FDBOPFEOENF_Diva, DisplayType.Level);
 				m_rivalSceneDeco.SetActive(true);
 				m_rivalSceneDeco.Change(musicData.DACLONHOFLA.AFBMEMCHJCL_MainScene, DisplayType.Level);
-				m_battleExGauge.Setup(ev.HEOGGKBILIA_GetCurrentClassEmblemId(), ev.NJDPMDCIFBP_GetResultExPoint(musicData.DACLONHOFLA.BHCIFFILAKJ_Str, true), ev.NJDPMDCIFBP_GetResultExPoint(musicData.DACLONHOFLA.BHCIFFILAKJ_Str, false), ev.GGBNNMCLDMO_GetExPoint(), 100);
+				m_battleExGauge.Setup(ev.HEOGGKBILIA_GetCurrentClassEmblemId(), ev.NJDPMDCIFBP_GetResultExPoint(musicData.DACLONHOFLA.BHCIFFILAKJ_Strength, true), ev.NJDPMDCIFBP_GetResultExPoint(musicData.DACLONHOFLA.BHCIFFILAKJ_Strength, false), ev.GGBNNMCLDMO_GetExPoint(), 100);
 				if(m_eventTicketId < 1)
 				{
 					m_battleInfo.SetDropIconType(false);
@@ -767,7 +767,7 @@ namespace XeApp.Game.Menu
 			EventMusicSelectSceneArgs EventArgsReturn = ArgsReturn as EventMusicSelectSceneArgs;
 			m_isEventTimeLimit = false;
 			m_isEventChecked = false;
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			m_eventCtrl = null;
 			if(EventArg == null)
 			{
@@ -1508,7 +1508,7 @@ namespace XeApp.Game.Menu
 			m_battleMatch.Leave();
 			while(m_battleMatch.IsPlaying())
 				yield return null;
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			List<IBJAKJJICBC> l = IBJAKJJICBC.EHNABCEGAHO(t, false, false);
 			m_musicList = new MusicDataList(l, IBJAKJJICBC.EHNABCEGAHO(t, false, true));
 			OverrideEnemySkill();
@@ -1757,7 +1757,7 @@ namespace XeApp.Game.Menu
 						for(int j = 0; j < GetMusicList(i).GetCount(false, false); j++)
 						{
 							IBJAKJJICBC m = GetMusicList(i).Get(j, false, false);
-							if(m != null && m.DACLONHOFLA != null && m.DACLONHOFLA.BHCIFFILAKJ_Str > 2)
+							if(m != null && m.DACLONHOFLA != null && m.DACLONHOFLA.BHCIFFILAKJ_Strength > 2)
 								return true;
 						}
 					}
@@ -1773,9 +1773,9 @@ namespace XeApp.Game.Menu
 			//0x1057910
 			for(int i = 0; i < musicList.Count; i++)
 			{
-				GameManager.Instance.DivaIconCache.TryInstall(musicList[i].DACLONHOFLA.FDBOPFEOENF_RivalData.AHHJLDLAPAN_DivaId,
-					musicList[i].DACLONHOFLA.FDBOPFEOENF_RivalData.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, 
-					musicList[i].DACLONHOFLA.FDBOPFEOENF_RivalData.EKFONBFDAAP_ColorId);
+				GameManager.Instance.DivaIconCache.TryInstall(musicList[i].DACLONHOFLA.FDBOPFEOENF_Diva.AHHJLDLAPAN_DivaId,
+					musicList[i].DACLONHOFLA.FDBOPFEOENF_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, 
+					musicList[i].DACLONHOFLA.FDBOPFEOENF_Diva.EKFONBFDAAP_ColorId);
 				if(musicList[i].DACLONHOFLA.AFBMEMCHJCL_MainScene != null)
 				{
 					GameManager.Instance.SceneIconCache.TryInstall(musicList[i].DACLONHOFLA.AFBMEMCHJCL_MainScene.BCCHOBPJJKE_SceneId, 
@@ -1784,7 +1784,7 @@ namespace XeApp.Game.Menu
 				KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(MusicJacketTextureCache.MakeJacketTexturePath(musicList[i].JNCPEGJGHOG_JacketId));
 			}
 			GameManager.Instance.DivaIconCache.TryInstall(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId,
-				GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId,
+				GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId,
 				GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0].EKFONBFDAAP_ColorId);
             FFHPBEPOMAK_DivaInfo diva = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.BCJEAJPLGMB_MainDivas[0];
             if (diva.FGFIBOBAPIA_SceneId > 0)
@@ -1804,7 +1804,7 @@ namespace XeApp.Game.Menu
 			m_isLine6Mode = style == 1;
 			GameManager.Instance.localSave.EPJOACOONAC_GetSave().MCNEIJAOLNO_Select.BCOIACHCMLA_Live.HPDBEKAGKOD_SetIsLine6(m_isLine6Mode);
 			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
-			this.StartCoroutineWatched(Co_ChangeLineMode(selectMusicData.GHBPLHBNMBK_FreeMusicId, selectMusicData.DACLONHOFLA.BHCIFFILAKJ_Str, () =>
+			this.StartCoroutineWatched(Co_ChangeLineMode(selectMusicData.GHBPLHBNMBK_FreeMusicId, selectMusicData.DACLONHOFLA.BHCIFFILAKJ_Strength, () =>
 			{
 				//0x1055F98
 				MenuScene.Instance.RaycastEnable();
@@ -1839,7 +1839,7 @@ namespace XeApp.Game.Menu
 			int idx = m_musicList.FindIndex((IBJAKJJICBC _) =>
 			{
 				//0x1057870
-				return _.GHBPLHBNMBK_FreeMusicId == freeMusicId && _.DACLONHOFLA.BHCIFFILAKJ_Str == strength;
+				return _.GHBPLHBNMBK_FreeMusicId == freeMusicId && _.DACLONHOFLA.BHCIFFILAKJ_Strength == strength;
 			}, m_isLine6Mode, false);
 			if(idx < 0)
 				idx = 0;

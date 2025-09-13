@@ -101,7 +101,7 @@ public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x15C77EC Offset: 0x15C77EC VA: 0x15C77EC Slot: 7
-	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	public override void BMGGKONLFIC_Copy(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
 		AHHPBMBBCFM_DecoPrivateSet other = GPBJHKLFCEP as AHHPBMBBCFM_DecoPrivateSet;
 		for(int i = 0; i < JBJHCJFOICD.Count; i++)
@@ -123,7 +123,7 @@ public class AHHPBMBBCFM_DecoPrivateSet : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x15C7BB0 Offset: 0x15C7BB0 VA: 0x15C7BB0 Slot: 10
-	// public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH);
+	// public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock _GJLFANGDGCL_Target, long MCKEOKFMLAH);
 
 	// // RVA: 0x15C8268 Offset: 0x15C8268 VA: 0x15C8268 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()

@@ -332,7 +332,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1882870 Offset: 0x1882870 VA: 0x1882870
 		private void InitCostumeData(CKFGMNAIBNG costumeData, int appItemId)
 		{
-			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[EKLNMHFCAOI.DEACAHNLMNI_getItemId(appItemId) - 1];
+			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[EKLNMHFCAOI.DEACAHNLMNI_getItemId(appItemId) - 1];
 			costumeData.KHEKNNFCAOI(cos.AHHJLDLAPAN_DivaId, EKLNMHFCAOI.DEACAHNLMNI_getItemId(appItemId), 0, false);
 		}
 

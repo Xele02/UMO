@@ -83,7 +83,7 @@ namespace XeApp.Game.AR
 
 			public string cueSheetId { get 
 			{
-				long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 				for(int i = 0; i < cueSheetList.Count; i++)
 				{
 					if(cueSheetList[i].soundStart <= t && t < cueSheetList[i].soundEnd)
@@ -143,7 +143,7 @@ namespace XeApp.Game.AR
 					if(NKGJPJPHLIF.HHCJCDFCLOB != null)
 					{
 						d.soundStart = 0;
-						d.soundEnd = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime() + 360000;
+						d.soundEnd = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime() + 360000;
 					}
 					// UMO
 					l.Add(d);
@@ -178,7 +178,7 @@ namespace XeApp.Game.AR
 					if(NKGJPJPHLIF.HHCJCDFCLOB != null)
 					{
 						nd.markerStart = 0;
-						nd.markerEnd = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime() + 360000;
+						nd.markerEnd = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime() + 360000;
 					}
 					// UMO
 					nd.emblemId = array[i].APGKOJKNNGP;
@@ -209,7 +209,7 @@ namespace XeApp.Game.AR
 				{
 					if(m_markerList[i].enable > 1)
 					{
-						long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+						long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 						if(m_markerList[i].markerStart <= t && t < m_markerList[i].markerEnd)
 						{
 							res.Add(m_markerList[i]);
@@ -224,7 +224,7 @@ namespace XeApp.Game.AR
 		public List<Data> GetStartingMarkerList()
 		{
 			List<Data> res = new List<Data>();
-			long l = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long l = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			for(int i = 0; i < m_markerList.Count; i++)
 			{
 				if(m_markerList[i].enable != 0 && l >= m_markerList[i].markerStart)

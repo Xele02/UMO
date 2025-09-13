@@ -1,13 +1,13 @@
 
 using System.Collections.Generic;
 
-public delegate bool CCHAFMBDGOB(int BMBBDIAEOMP, int EHGBICNIBKE, long IFNLEKOILPM, bool DMBJLEIGCCG, List<string> OHNJJIMGKGK, EDOHBJAPLPF_JsonData NMICBJDPLOH);
+public delegate bool CCHAFMBDGOB(int _BMBBDIAEOMP_i, int _EHGBICNIBKE_PlayerId, long IFNLEKOILPM, bool DMBJLEIGCCG, List<string> OHNJJIMGKGK, EDOHBJAPLPF_JsonData NMICBJDPLOH);
 
 public class LBKPFADGHPK : IHFBKJMNIPH<LNGMNNNJBJP_SearchForPlayer>
 {
 	public List<string> HHIHCJKLJFF_ServerInfoBlockList; // 0x10
 	public CCHAFMBDGOB PINPBOCDKLI_OnFriendCb; // 0x14
-	public SakashoPlayerData.SearchOrder EILKGEADKGH_SearchOrder; // 0x18
+	public SakashoPlayerData.SearchOrder EILKGEADKGH_Order; // 0x18
 	private int MDEGLGEMHGG_Page; // 0x1C
 
 	public SakashoPlayerCriteria IPKCADIAAPG_SakashoCrit { get; set; } // 0xC GOKPJIPOKCK FLHEFBEHCKK EIDLJIDFPFG
@@ -21,11 +21,11 @@ public class LBKPFADGHPK : IHFBKJMNIPH<LNGMNNNJBJP_SearchForPlayer>
 	}
 
 	//// RVA: 0xD995F4 Offset: 0xD995F4 VA: 0xD995F4 Slot: 5
-	protected override LNGMNNNJBJP_SearchForPlayer JIJACMIFOMB_OnStartAction(PJKLMCGEJMK CPHFEPHDJIB)
+	protected override LNGMNNNJBJP_SearchForPlayer JIJACMIFOMB_OnStartAction(PJKLMCGEJMK _CPHFEPHDJIB_ServerRequester)
 	{
-		LNGMNNNJBJP_SearchForPlayer res = CPHFEPHDJIB.IFFNCAFNEAG_AddRequest(new LNGMNNNJBJP_SearchForPlayer());
+		LNGMNNNJBJP_SearchForPlayer res = _CPHFEPHDJIB_ServerRequester.IFFNCAFNEAG_AddRequest(new LNGMNNNJBJP_SearchForPlayer());
 		res.IPKCADIAAPG_SakashoCrit = IPKCADIAAPG_SakashoCrit;
-		res.EILKGEADKGH_SearchOrder = EILKGEADKGH_SearchOrder;
+		res.EILKGEADKGH_Order = EILKGEADKGH_Order;
 		res.MLPLGFLKKLI_Ipp = 100;
 		res.HHIHCJKLJFF_ServerInfoBlockList = HHIHCJKLJFF_ServerInfoBlockList;
 		res.IGNIIEBMFIN_Page = MDEGLGEMHGG_Page;

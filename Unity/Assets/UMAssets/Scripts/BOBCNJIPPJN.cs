@@ -5,36 +5,36 @@ using System.IO;
 public class BOBCNJIPPJN
 {
 	// RVA: 0x19CC098 Offset: 0x19CC098 VA: 0x19CC098
-	public static bool AGJJGJCIMKI(byte[] DBBGALAPFGC)
+	public static bool AGJJGJCIMKI(byte[] _DBBGALAPFGC_Data)
     {
-        if(DBBGALAPFGC.Length < 16)
+        if(_DBBGALAPFGC_Data.Length < 16)
             return false;
-        return DBBGALAPFGC[0] == 0x1f && DBBGALAPFGC[1] == 0x8B && DBBGALAPFGC[2] == 0x8;
+        return _DBBGALAPFGC_Data[0] == 0x1f && _DBBGALAPFGC_Data[1] == 0x8B && _DBBGALAPFGC_Data[2] == 0x8;
     }
 
 	// // RVA: 0x19CC130 Offset: 0x19CC130 VA: 0x19CC130
-	public static int JAIEEHOPAFD(byte[] DBBGALAPFGC)
+	public static int JAIEEHOPAFD(byte[] _DBBGALAPFGC_Data)
 	{
-		if(AGJJGJCIMKI(DBBGALAPFGC))
+		if(AGJJGJCIMKI(_DBBGALAPFGC_Data))
 		{
-			return BitConverter.ToInt32(DBBGALAPFGC, DBBGALAPFGC.Length - 4);
+			return BitConverter.ToInt32(_DBBGALAPFGC_Data, _DBBGALAPFGC_Data.Length - 4);
 		}
-		return DBBGALAPFGC.Length;
+		return _DBBGALAPFGC_Data.Length;
 	}
 
 	// // RVA: 0x19CC1E4 Offset: 0x19CC1E4 VA: 0x19CC1E4
-	public static byte[] JCBCBNFPJDH(byte[] DBBGALAPFGC)
+	public static byte[] JCBCBNFPJDH(byte[] _DBBGALAPFGC_Data)
 	{
-		if(AGJJGJCIMKI(DBBGALAPFGC))
+		if(AGJJGJCIMKI(_DBBGALAPFGC_Data))
 		{
-			byte[] res = new byte[JAIEEHOPAFD(DBBGALAPFGC)];
-			if(HCPBJNNFONO(DBBGALAPFGC, res) != 0)
+			byte[] res = new byte[JAIEEHOPAFD(_DBBGALAPFGC_Data)];
+			if(HCPBJNNFONO(_DBBGALAPFGC_Data, res) != 0)
 			{
-				return DBBGALAPFGC;
+				return _DBBGALAPFGC_Data;
 			}
 			return res;
 		}
-		return DBBGALAPFGC;
+		return _DBBGALAPFGC_Data;
 	}
 
 	// // RVA: 0x19CC338 Offset: 0x19CC338 VA: 0x19CC338
@@ -57,8 +57,8 @@ public class BOBCNJIPPJN
 	}
 
 	// // RVA: 0x19CC280 Offset: 0x19CC280 VA: 0x19CC280
-	private static int HCPBJNNFONO(byte[] DBBGALAPFGC, byte[] IAKPCFDLMKP)
+	private static int HCPBJNNFONO(byte[] _DBBGALAPFGC_Data, byte[] IAKPCFDLMKP)
 	{
-		return KEHJJDKPDLL(DBBGALAPFGC, DBBGALAPFGC.Length, IAKPCFDLMKP, IAKPCFDLMKP.Length);
+		return KEHJJDKPDLL(_DBBGALAPFGC_Data, _DBBGALAPFGC_Data.Length, IAKPCFDLMKP, IAKPCFDLMKP.Length);
 	}
 }

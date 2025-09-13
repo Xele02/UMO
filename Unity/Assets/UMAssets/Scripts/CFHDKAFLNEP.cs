@@ -45,7 +45,7 @@ public struct CFHDKAFLNEP
 	}
 
 	public OCNHGDCPJDG[,] KOGBMDOONFA; // 0x0
-	public StatusData CMCKNKKCNDK; // 0x4
+	public StatusData CMCKNKKCNDK_Status; // 0x4
 
 	//// RVA: 0x7FC4CC Offset: 0x7FC4CC VA: 0x7FC4CC
 	public void OBKGEDCKHHE()
@@ -58,7 +58,7 @@ public struct CFHDKAFLNEP
 				KOGBMDOONFA[i, j] = new OCNHGDCPJDG();
 			}
 		}
-		CMCKNKKCNDK = new StatusData();
+		CMCKNKKCNDK_Status = new StatusData();
 	}
 
 	//// RVA: 0x7FC4D4 Offset: 0x7FC4D4 VA: 0x7FC4D4
@@ -71,7 +71,7 @@ public struct CFHDKAFLNEP
 				KOGBMDOONFA[i, j].JCHLONCMPAJ();
 			}
 		}
-		CMCKNKKCNDK.Clear();
+		CMCKNKKCNDK_Status.Clear();
 	}
 
 	//// RVA: 0x7FC4DC Offset: 0x7FC4DC VA: 0x7FC4DC
@@ -89,21 +89,21 @@ public struct CFHDKAFLNEP
 	}
 
 	//// RVA: 0x7FC4E4 Offset: 0x7FC4E4 VA: 0x7FC4E4
-	public int IKEJLHJEANO(int CMCKNKKCNDK)
+	public int IKEJLHJEANO(int _CMCKNKKCNDK_Status)
 	{
 		int res = 0;
 		for(int i = 0; i < KOGBMDOONFA.GetLength(1); i++)
 		{
 			int a = 3;
-			if (!KOGBMDOONFA[CMCKNKKCNDK, i].LHFPLDHBAAN)
+			if (!KOGBMDOONFA[_CMCKNKKCNDK_Status, i].LHFPLDHBAAN)
 				a = 2;
-			if (!KOGBMDOONFA[CMCKNKKCNDK, i].KPNDMALAOKC)
-				a = KOGBMDOONFA[CMCKNKKCNDK, i].LHFPLDHBAAN ? 1 : 0;
+			if (!KOGBMDOONFA[_CMCKNKKCNDK_Status, i].KPNDMALAOKC)
+				a = KOGBMDOONFA[_CMCKNKKCNDK_Status, i].LHFPLDHBAAN ? 1 : 0;
 			res |= a;
 		}
 		return res;
 	}
 
 	//// RVA: 0x7FC4EC Offset: 0x7FC4EC VA: 0x7FC4EC
-	//public bool CDOCOLOKCJK(int CMCKNKKCNDK) { }
+	//public bool CDOCOLOKCJK(int _CMCKNKKCNDK_Status) { }
 }

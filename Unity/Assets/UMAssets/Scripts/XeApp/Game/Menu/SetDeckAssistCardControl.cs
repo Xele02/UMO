@@ -76,12 +76,12 @@ namespace XeApp.Game.Menu
 		public void UpdateContent(BKKMNPEEILG ghostData)
 		{
 			m_viewFriendData = null;
-			SetDiva(ghostData.FDBOPFEOENF_RivalData);
-			SetScene(ghostData.FDBOPFEOENF_RivalData, ghostData.AFBMEMCHJCL_MainScene, null);
+			SetDiva(ghostData.FDBOPFEOENF_Diva);
+			SetScene(ghostData.FDBOPFEOENF_Diva, ghostData.AFBMEMCHJCL_MainScene, null);
 			m_assistIconObject.SetActive(false);
 			m_rivalIconObject.SetActive(true);
 			m_rivalRankImage.gameObject.SetActive(true);
-			int idx = ghostData.BHCIFFILAKJ_Str > 2 ? 3 : ghostData.BHCIFFILAKJ_Str;
+			int idx = ghostData.BHCIFFILAKJ_Strength > 2 ? 3 : ghostData.BHCIFFILAKJ_Strength;
 			m_rivalRankImage.sprite = m_rivalRankSprite[idx];
 			m_scoreObject.gameObject.SetActive(true);
 			Text t = m_scoreObject.transform.Find("Image_TitleBack/Text_Title").GetComponent<Text>();

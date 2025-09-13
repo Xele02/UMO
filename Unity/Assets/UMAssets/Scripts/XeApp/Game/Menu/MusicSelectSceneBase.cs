@@ -690,7 +690,7 @@ namespace XeApp.Game.Menu
 			{
 				if(!musicData.HDPMAJKGIOI)
 				{
-					playButtonUI.SetNeedEnergy(musicData.MGJKEJHEBPO_DiffInfos[(int)diff].BPLOEAHOPFI_Energy);
+					playButtonUI.SetNeedEnergy(musicData.MGJKEJHEBPO_DiffInfos[(int)diff].BPLOEAHOPFI_Stamina);
 				}
 			}
 			m_buttonSet.SetEnemyHasSkill(musicData.MGJKEJHEBPO_DiffInfos[(int)diff].HPBPDHPIBGN_EnemyData.CDEFLIHHNAB_HasSkills);
@@ -710,7 +710,7 @@ namespace XeApp.Game.Menu
 			if(musicData.MGJKEJHEBPO_DiffInfos[(int)diff].HHMLMKAEJBJ_Score != null)
 			{
 				StringBuilder str = new StringBuilder(8);
-				str.Set(musicData.MGJKEJHEBPO_DiffInfos[(int)diff].HHMLMKAEJBJ_Score.ANAJIAENLNB_MusicLevel.ToString());
+				str.Set(musicData.MGJKEJHEBPO_DiffInfos[(int)diff].HHMLMKAEJBJ_Score.ANAJIAENLNB_Level.ToString());
 				if(m_isLine6Mode)
 					str.Append("+");
 				m_musicInfo.SetMusicLevel(str.ToString());
@@ -744,7 +744,7 @@ namespace XeApp.Game.Menu
 					if(musicData.MGJKEJHEBPO_DiffInfos[(int)diff].BCGLDMKODLC_IsClear)
 					{
 						m_musicInfo.SetHighscore(musicData.MGJKEJHEBPO_DiffInfos[(int)diff].KNIFCANOHOC_Score);
-						m_musicInfo.SetMusicScoreRank((ResultScoreRank.Type)musicData.MGJKEJHEBPO_DiffInfos[(int)diff].BAKLKJLPLOJ.DLPBHJALHCK_GetScoreRank(musicData.MGJKEJHEBPO_DiffInfos[(int)diff].KNIFCANOHOC_Score));
+						m_musicInfo.SetMusicScoreRank((ResultScoreRank.Type)musicData.MGJKEJHEBPO_DiffInfos[(int)diff].BAKLKJLPLOJ_MusicLevel.DLPBHJALHCK_GetScoreRank(musicData.MGJKEJHEBPO_DiffInfos[(int)diff].KNIFCANOHOC_Score));
 					}
 					else
 					{
@@ -1245,7 +1245,7 @@ namespace XeApp.Game.Menu
 				{
 					//0xF4A48C
 					return;
-				}, evRaidLobby.KINIOEOOCAA_GetPhase(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime()));
+				}, evRaidLobby.KINIOEOOCAA_GetPhase(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime()));
 				return;
 			}
 			if(eventId > 0)
@@ -1335,7 +1335,7 @@ namespace XeApp.Game.Menu
 				PopupDashContentSetting setting = new PopupDashContentSetting();
 				setting.EventId = m_eventId;
 				setting.CostType = v;
-				setting.OwnValue = viewBoostData.DCLKMNGMIKC();
+				setting.OwnValue = viewBoostData.DCLKMNGMIKC_GetCurrentValue();
 				setting.Param = p;
 				setting.WindowSize = SizeType.Middle;
 				setting.TitleText = bk.GetMessageByLabel(s);
@@ -1657,7 +1657,7 @@ namespace XeApp.Game.Menu
 						return false;
 					}
 				}
-				if(selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].BPLOEAHOPFI_Energy <= CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC_GetCurrent())
+				if(selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].BPLOEAHOPFI_Stamina <= CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_Stamina.DCLKMNGMIKC_GetCurrentValue())
 					return true;
 				OpenStaminaWindow(() =>
 				{
@@ -1955,7 +1955,7 @@ namespace XeApp.Game.Menu
 			if(selectMusicData.LEBDMNIGOJB_IsScoreEvent)
 			{
                 IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6);
-				if(ev != null && ev.FKKDIDMGLMI)
+				if(ev != null && ev.FKKDIDMGLMI_IsDroppedPlayer)
 				{
 					JHHBAFKMBDL.HHCJCDFCLOB.PEIONAKEPCN_ShowRankingBanPopup(() =>
 					{
@@ -2697,7 +2697,7 @@ namespace XeApp.Game.Menu
 			//0xF4F300
 			if(m_ticketGainedPopupSetting == null || a_controller == null)
 				yield break;
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			m_showTicketGainedPopup = false;
 			itemId = 0;
 			itemCount = 0;

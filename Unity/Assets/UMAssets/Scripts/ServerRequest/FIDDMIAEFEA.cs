@@ -13,9 +13,9 @@ public class ONKPGLLOJDK
 	public void DPKCOKLMFMK(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
 	{
 		JPHDGGNAKMO_HighRank = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.JPHDGGNAKMO_high_rank];
-		FGCAJEAIABA_LowRank = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.FGCAJEAIABA_low_rank];
+		FGCAJEAIABA_LowRank = (int)IDLHJIOMJBK[AFEHLCGHAEE_Strings.FGCAJEAIABA_LowRank];
 		IPFEKNMBEBI_InventoryMessage = (string)IDLHJIOMJBK[AFEHLCGHAEE_Strings.IPFEKNMBEBI_inventory_message];
-        EDOHBJAPLPF_JsonData items = IDLHJIOMJBK[AFEHLCGHAEE_Strings.HBHMAKNGKFK_items];
+        EDOHBJAPLPF_JsonData items = IDLHJIOMJBK[AFEHLCGHAEE_Strings.HBHMAKNGKFK_Items];
         HBHMAKNGKFK_Items = new List<MFDJIFIIPJD>(items.HNBFOAJIIAL_Count);
 		for(int i = 0; i < items.HNBFOAJIIAL_Count; i++)
 		{
@@ -79,7 +79,7 @@ public class FIDDMIAEFEA_GetRankingRecordsByKeys : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0x14E8A78 Offset: 0x14E8A78 VA: 0x14E8A78 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
 		NFEAMMJIMPG = new HHAPIDPPJJK();
 		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

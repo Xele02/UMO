@@ -464,10 +464,10 @@ namespace XeApp.Game.Menu
 			}
 			if (SubPlateResult.CDOCOLOKCJK())
 			{
-				m_status[0].Set(m_baseStatus.Total - SubPlateResult.CMCKNKKCNDK.Total, m_addStatus.Total - SubPlateResult.CMCKNKKCNDK.Total, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), "#"+ColorExtension.HexStringRGBA(m_normalColorCode), 9999999);
-				m_status[1].Set(m_baseStatus.soul - SubPlateResult.CMCKNKKCNDK.soul, m_addStatus.soul - SubPlateResult.CMCKNKKCNDK.soul, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.BICPBLMPBPH_Soul), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.BICPBLMPBPH_Soul), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
-				m_status[2].Set(m_baseStatus.vocal - SubPlateResult.CMCKNKKCNDK.vocal, m_addStatus.vocal - SubPlateResult.CMCKNKKCNDK.vocal, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.GPCMMGOCPHC_Vocal), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.GPCMMGOCPHC_Vocal), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
-				m_status[3].Set(m_baseStatus.charm - SubPlateResult.CMCKNKKCNDK.charm, m_addStatus.charm - SubPlateResult.CMCKNKKCNDK.charm, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.LGOHMPBLPKA_Charm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.LGOHMPBLPKA_Charm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+				m_status[0].Set(m_baseStatus.Total - SubPlateResult.CMCKNKKCNDK_Status.Total, m_addStatus.Total - SubPlateResult.CMCKNKKCNDK_Status.Total, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.MKADAMIGMPO_SoulVocalCharm), "#"+ColorExtension.HexStringRGBA(m_normalColorCode), 9999999);
+				m_status[1].Set(m_baseStatus.soul - SubPlateResult.CMCKNKKCNDK_Status.soul, m_addStatus.soul - SubPlateResult.CMCKNKKCNDK_Status.soul, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.BICPBLMPBPH_Soul), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.BICPBLMPBPH_Soul), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+				m_status[2].Set(m_baseStatus.vocal - SubPlateResult.CMCKNKKCNDK_Status.vocal, m_addStatus.vocal - SubPlateResult.CMCKNKKCNDK_Status.vocal, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.GPCMMGOCPHC_Vocal), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.GPCMMGOCPHC_Vocal), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
+				m_status[3].Set(m_baseStatus.charm - SubPlateResult.CMCKNKKCNDK_Status.charm, m_addStatus.charm - SubPlateResult.CMCKNKKCNDK_Status.charm, false, res.IJACIMIPBBK_IsBufftarget(MKHCIKICBOI.LGOHMPBLPKA_Charm), res.ADENHAHPBCJ_IsDebuffTarget(MKHCIKICBOI.LGOHMPBLPKA_Charm), "#" + ColorExtension.HexStringRGBA(m_normalColorCode), 999999);
 			}
 			else
 			{
@@ -742,10 +742,10 @@ namespace XeApp.Game.Menu
 			string hexa = "#" + m_normalColorCode.HexStringRGBA();
 			int[] a = new int[4]
 			{
-				SubPlateResult.CMCKNKKCNDK.Total,
-				SubPlateResult.CMCKNKKCNDK.soul,
-				SubPlateResult.CMCKNKKCNDK.vocal,
-				SubPlateResult.CMCKNKKCNDK.charm
+				SubPlateResult.CMCKNKKCNDK_Status.Total,
+				SubPlateResult.CMCKNKKCNDK_Status.soul,
+				SubPlateResult.CMCKNKKCNDK_Status.vocal,
+				SubPlateResult.CMCKNKKCNDK_Status.charm
 			};
 			int d = 0;
 			for (int i = 1; i < 4; i++)

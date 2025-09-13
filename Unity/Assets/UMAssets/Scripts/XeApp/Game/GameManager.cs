@@ -1583,7 +1583,7 @@ namespace XeApp.Game
 				{
 					DJNPIGEFPMF_StoryMusicInfo mData = master.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(storyMusicId);
 					enemyInfo = master.OPFBEAJJMJB_Enemy.INONDJKKOKG(mData.LHICAKGHIGF[(int)difficulty]);
-					musicBase = master.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(mData.DLAEJOBELBH_Id);
+					musicBase = master.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(mData.DLAEJOBELBH_MusicId);
 				}
 				musicBase = master.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(0);
 			}
@@ -1639,7 +1639,7 @@ namespace XeApp.Game
 			list.Add(string.Format("ct/pl/{0:D3}.xab", pilotId));
 			list.Add(string.Format("vl/{0:D4}.xab", valkyrieId));
 			list.Add(string.Format("ct/em/pl/{0:D3}.xab", enemyInfo.EELBHDJJJHH_Plt));
-			list.Add(string.Format("ct/em/mh/{0:D3}.xab", enemyInfo.EAHPLCJMPHD_Pic));
+			list.Add(string.Format("ct/em/mh/{0:D3}.xab", enemyInfo.EAHPLCJMPHD_PId));
 			list.Add(string.Format("dv/cs/{0:D3}_{1:D3}.xab", divaId, divaModelId));
 			list.Add(string.Format("dv/bs/{0:D3}_{1:D3}.xab", divaId, divaModelId));
 			list.Add(string.Format("ct/dv/ps/{0:D2}_{1:D2}.xab", divaId, divaModelId));

@@ -594,7 +594,7 @@ namespace XeApp.Game.Menu
 		{
 			int res = left.JKGFBFPIMGA_Rarity - right.JKGFBFPIMGA_Rarity;
 			if (res == 0)
-				res = left.EKLIPGELKCL_SceneRarity - right.EKLIPGELKCL_SceneRarity;
+				res = left.EKLIPGELKCL_Rarity - right.EKLIPGELKCL_Rarity;
 			return res;
 		}
 

@@ -785,10 +785,10 @@ namespace XeApp.Game.RhythmGame
 			clearSetup.JNNDFGPMEDA_EnergyLeft = status.energy.GetGaugeValue();
 			clearSetup.JKPPKAHPPKH_LifeLeft = status.life.current;
 			clearSetup.IPEKDLNEOFI_TeamLife = Database.Instance.gameSetup.teamInfo.teamStatus.life;
-			clearSetup.HBKBKHACHHI_TeamSoul = Database.Instance.gameSetup.teamInfo.teamStatus.soul;
-			clearSetup.GMECIBOJCFF_TeamVocal = Database.Instance.gameSetup.teamInfo.teamStatus.vocal;
+			clearSetup.HBKBKHACHHI_ParaSoul = Database.Instance.gameSetup.teamInfo.teamStatus.soul;
+			clearSetup.GMECIBOJCFF_ParaVoice = Database.Instance.gameSetup.teamInfo.teamStatus.vocal;
 			clearSetup.MIMLMJGGNJH_TeamCharm = Database.Instance.gameSetup.teamInfo.teamStatus.charm;
-			clearSetup.BFHPKJEKJNN_TeamSupport = Database.Instance.gameSetup.teamInfo.teamStatus.support;
+			clearSetup.BFHPKJEKJNN_ParaSupport = Database.Instance.gameSetup.teamInfo.teamStatus.support;
 			clearSetup.DDBEJNGJIPF_Fold = Database.Instance.gameSetup.teamInfo.teamStatus.fold;
 			clearSetup.JBCKLEMCEBD_LiveSkillActivateCount = new List<int>(liveSkillActivateCountList);
 			clearSetup.CPNOKMINILL_SkillDataList = new List<RhythmGamePlayLog.SkillData>(logger.log.skillDataList);

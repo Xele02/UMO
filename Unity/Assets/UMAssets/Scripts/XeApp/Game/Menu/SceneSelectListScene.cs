@@ -212,10 +212,10 @@ namespace XeApp.Game.Menu
 										continue;
 									}
 								}
-								if(PopupSortMenu.IsRarityFilterOn(scene.EKLIPGELKCL_SceneRarity, rarityFilterBit) && 
+								if(PopupSortMenu.IsRarityFilterOn(scene.EKLIPGELKCL_Rarity, rarityFilterBit) && 
 									PopupSortMenu.IsAttributeFilterOn(scene.JGJFIJOCPAG_SceneAttr, attributeFilterBit) && 
 									PopupSortMenu.IsSerializeFilterOn((int)scene.AIHCEGFANAM_SerieAttr, seriaseFilterBit) && 
-									PopupSortMenu.IsCompatibleFilterOn(scene.AOLIJKMIJJE_DivaCompatible, compatibleFilterBit) && 
+									PopupSortMenu.IsCompatibleFilterOn(scene.AOLIJKMIJJE_Diva, compatibleFilterBit) && 
 									PopupSortMenu.IsNotesFilterOn(scene.IGPMJPPAILL_Note, notesFilterBit) && 
 									PopupSortMenu.IsSkillRangeFilterOn(scene.BJJNCCGPBGN, lskillRangeFilerBit) && 
 									PopupSortMenu.IsSkillRankFilterOn(scene.DHEFMEGKKDN_CenterSkillRank, scene.FFDCGHDNDFJ_CenterSkillRank2, cskillRankFilerBit, true, scene, m_musicBaseData) &&
@@ -296,12 +296,12 @@ namespace XeApp.Game.Menu
 						rightVal = rscene.NPHOIEOPIJO;
 						break;
 					case SortItem.Rarity:
-						leftVal = lscene.EKLIPGELKCL_SceneRarity;
-						rightVal = rscene.EKLIPGELKCL_SceneRarity;
+						leftVal = lscene.EKLIPGELKCL_Rarity;
+						rightVal = rscene.EKLIPGELKCL_Rarity;
 						break;
 					case SortItem.Level:
-						leftVal = lscene.CIEOBFIIPLD_SceneLevel;
-						rightVal = rscene.CIEOBFIIPLD_SceneLevel;
+						leftVal = lscene.CIEOBFIIPLD_Level;
+						rightVal = rscene.CIEOBFIIPLD_Level;
 						break;
 					case SortItem.Life:
 						leftVal = lscene.CMCKNKKCNDK_Status.life;
@@ -470,14 +470,14 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x13824B4 Offset: 0x13824B4 VA: 0x13824B4
-		// private int GetEquSceneId(int selectedSlot, FFHPBEPOMAK divaData) { }
+		// private int GetEquSceneId(int selectedSlot, FFHPBEPOMAK_DivaInfo divaData) { }
 
 		// // RVA: 0x1382560 Offset: 0x1382560 VA: 0x1382560
 		private void ShowComparisonPopupWindow(GCIJNCFDNON_SceneInfo beforeScene, GCIJNCFDNON_SceneInfo afterScene, FFHPBEPOMAK_DivaInfo diva)
 		{
 			if(afterScene != null)
 			{
-				afterScene.CADENLBDAEB_New = false;
+				afterScene.CADENLBDAEB_IsNew = false;
 			}
 			Action ac = null;
 			if(GameManager.Instance.IsTutorial)
@@ -1256,7 +1256,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				sceneInfo.CADENLBDAEB_New = false;
+				sceneInfo.CADENLBDAEB_IsNew = false;
 				sceneInfo.LEHDLBJJBNC_SetNotNew();
 				m_selectedSceneId = sceneInfo.BCCHOBPJJKE_SceneId;
 				MenuScene.Instance.Call(TransitionList.Type.SCENE_GROWTH, new SceneGrowthSceneArgs(sceneInfo, m_isBeginner), true);

@@ -251,7 +251,7 @@ namespace XeApp.Game.Menu
 				{
 					int defaultBgId = GetDefaultHomeBg();
 					JKHEOEEPBMJ.NDFFOBHACPE_SetHomeSceneId(defaultBgId, 0);
-					long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+					long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 					CGFNKMNBNBN.DPMCLJMIBDK(defaultBgId, time);
 					CGFNKMNBNBN.HHGLKFFKFAB(-1);
 				}
@@ -353,7 +353,7 @@ namespace XeApp.Game.Menu
 					long time = MenuScene.Instance.EnterToHomeTime;
 					if(time == 0)
 					{
-						time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+						time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 					}
 					CGFNKMNBNBN c;
 					if(CGFNKMNBNBN.DELFEMBCFCO_GetFirstAvaiableMusicBg(time, out c))
@@ -762,7 +762,7 @@ namespace XeApp.Game.Menu
 			{
 				idx = d.AHHJLDLAPAN_DivaId - 1;
 			}
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas[idx].CMBCBNEODPD_HomeBgId;
+			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[idx].CMBCBNEODPD_HomeBgId;
 		}
 
 		// // RVA: 0x143DBCC Offset: 0x143DBCC VA: 0x143DBCC
@@ -853,7 +853,7 @@ namespace XeApp.Game.Menu
 					int itemId = m_id / 1000000;
 					m_strBuilder.SetFormat("{0:D6}_{1:D2}", m_id % 1000000, itemId);
 					assetId = m_strBuilder.ToString();
-					List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenesList = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList;
+					List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenesList = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table;
 					if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.LENJLNLNPEO_IsPlateAnimationHome == 0 
 						&& itemId > 0 
 						&& scenesList.Count >= itemId
@@ -1094,7 +1094,7 @@ namespace XeApp.Game.Menu
 						textureType = (BgTextureType)bgType;
 						break;
 					case BgType.LoginBonus:
-						id = GetHomeBgId(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime());
+						id = GetHomeBgId(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 						textureType = BgTextureType.Normal;
 						break;
 					case BgType.UnlockValkyrie:

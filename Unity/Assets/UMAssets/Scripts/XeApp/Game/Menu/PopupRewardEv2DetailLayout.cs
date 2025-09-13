@@ -194,7 +194,7 @@ namespace XeApp.Game.Menu
 				texture.Set(m_sceneIconImage);
 				m_loadingFlag |= LoadingFlag.Scene;
 			});
-			GameManager.Instance.MenuResidentTextureCache.LoadLogo((int)sceneData.EMIKBGHIOMN_SerieLogo, (IiconTexture texture) =>
+			GameManager.Instance.MenuResidentTextureCache.LoadLogo((int)sceneData.EMIKBGHIOMN_SerieLogoId, (IiconTexture texture) =>
 			{
 				//0x1621D70
 				texture.Set(m_seriesIconImage);

@@ -332,8 +332,8 @@ namespace XeApp.Game.Menu
 						{
 							case MenuButtonAnim.ButtonType.VOP:
 								m_HomebadgeData.FBANBDCOEJL(isNew && !isTuto);
-								badgeText = m_HomebadgeData.BHANMJKCCBC;
-								badgeId = m_HomebadgeData.BEEIIJJKDBH;
+								badgeText = m_HomebadgeData.BHANMJKCCBC_BadgeText;
+								badgeId = m_HomebadgeData.BEEIIJJKDBH_BadgeConstantId;
 								break;
 							case MenuButtonAnim.ButtonType.LIVE:
 							case MenuButtonAnim.ButtonType.MENU:
@@ -352,7 +352,7 @@ namespace XeApp.Game.Menu
 							case MenuButtonAnim.ButtonType.QUEST:
 								m_QuestbadgeData.FBANBDCOEJL(true);
 								badgeText = m_QuestbadgeData.BHANMJKCCBC_BadgeText;
-								badgeId = m_QuestbadgeData.BEEIIJJKDBH_BadgeId;
+								badgeId = m_QuestbadgeData.BEEIIJJKDBH_BadgeConstantId;
 								break;
 						}
 						string[] values = new string[6] { "buttonType:", buttonType.ToString(), " / badgeID:", badgeId.ToString(), " / badgeText:", badgeText };

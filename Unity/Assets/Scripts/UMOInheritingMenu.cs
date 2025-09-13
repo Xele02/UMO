@@ -51,16 +51,16 @@ namespace XeApp.Game.Menu
 					UMO_PlayerPrefs.SetInt("cpid", 0);
 					UMO_PlayerPrefs.Save();
 
-					bool BEKAMBBOLBO = false;
+					bool BEKAMBBOLBO_Done = false;
 					NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.OLBAIKLLIFE = true;
 					NKGJPJPHLIF.HHCJCDFCLOB.HGJKAEOLMJN_InitializePlayerToken(() => {
 						//0xA08F1C
-						BEKAMBBOLBO = true;
+						BEKAMBBOLBO_Done = true;
 					}, () => {
 						// 0xA08F28
-						BEKAMBBOLBO = true;
+						BEKAMBBOLBO_Done = true;
 					}, true, false);
-					while(!BEKAMBBOLBO)
+					while(!BEKAMBBOLBO_Done)
 					{
 						yield return null;
 					}

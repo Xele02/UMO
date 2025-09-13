@@ -61,7 +61,7 @@ namespace XeApp.Game.Menu
 			{
 				m_lastExRivalIdx = initParam.viewEventGameResultData.BOLHMCFBGBP_ExRivalIdx;
                 EMGOCNMMPHC em = initParam.viewEventExRivalResultData.KLMPGMPHNOP(m_lastExRivalIdx);
-                m_isHighScore = em.FFHMPNGJCLK_IsHighScore;
+                m_isHighScore = em.FFHMPNGJCLK_NewRecord;
 				if(m_isHighScore)
 				{
 					m_layoutBattleScore.Setup(em);

@@ -123,19 +123,19 @@ namespace XeApp.Game.Menu
 					list = new List<ListData>();
 					m_growsList[e.AIHCEGFANAM_SerieAttr] = list;
 				}
-				if(IsAnyDivaMusicExp(GameManager.Instance.ViewPlayerData, e.DLAEJOBELBH_Id))
+				if(IsAnyDivaMusicExp(GameManager.Instance.ViewPlayerData, e.DLAEJOBELBH_MusicId))
 				{
-					KDOMGMCGHDC.HJNMIKNAMFH data = KDOMGMCGHDC.ODIAFJCPIFO(e.DLAEJOBELBH_Id, m_divaData.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, m_divaData.PKLPGBKKFOL_DivaLevels[e.DLAEJOBELBH_Id - 1]);
+					KDOMGMCGHDC.HJNMIKNAMFH data = KDOMGMCGHDC.ODIAFJCPIFO(e.DLAEJOBELBH_MusicId, m_divaData.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, m_divaData.PKLPGBKKFOL_DivaLevels[e.DLAEJOBELBH_MusicId - 1]);
 					if(data != null)
 					{
 						int a = data.PBGFIOONCMB_NextLevelMusicExp - data.PMBFNFOCNAJ_CurLevelMusicExp;
 						list.Add(new ListData()
 						{
-							meta = a > 0 ? (m_divaData.HMBECPGHPOE_DivaExps[e.DLAEJOBELBH_Id - 1] - data.PMBFNFOCNAJ_CurLevelMusicExp) * 1.0f / a : 0,
+							meta = a > 0 ? (m_divaData.HMBECPGHPOE_DivaExps[e.DLAEJOBELBH_MusicId - 1] - data.PMBFNFOCNAJ_CurLevelMusicExp) * 1.0f / a : 0,
 							rewardId = 0,
 							unlockDivaId = data.LHBDCGFOKCA_DivaId,
 							unlockMusicId = data.CEFHDLLAPDH_MusicId,
-							exp = m_divaData.HMBECPGHPOE_DivaExps[e.DLAEJOBELBH_Id - 1] - data.PMBFNFOCNAJ_CurLevelMusicExp,
+							exp = m_divaData.HMBECPGHPOE_DivaExps[e.DLAEJOBELBH_MusicId - 1] - data.PMBFNFOCNAJ_CurLevelMusicExp,
 							maxexp = a,
 							musicNameId = e.KNMGEEFGDNI_Nam,
 							unlockLevel = (short)data.KDGIHMCBLND_MusicLevel,

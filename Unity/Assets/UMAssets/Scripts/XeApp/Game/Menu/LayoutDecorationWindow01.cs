@@ -839,7 +839,7 @@ namespace XeApp.Game.Menu
 				{
 					int c = GetPostNum(ss.Data.KGBAOKCMALD);
 					ss.SetStatusIcon(c > -1);
-					ss.SetNum(ss.Data.BFINGCJHOHI, ss.Data.BFINGCJHOHI - c);
+					ss.SetNum(ss.Data.BFINGCJHOHI_Count, ss.Data.BFINGCJHOHI_Count - c);
 					return;
 				}
 			}
@@ -856,7 +856,7 @@ namespace XeApp.Game.Menu
 				{
 					int c = GetPostNum(d.KGBAOKCMALD);
 					ss.SetStatusIcon(c > -1);
-					ss.SetNum(d.BFINGCJHOHI, d.BFINGCJHOHI - c);
+					ss.SetNum(d.BFINGCJHOHI_Count, d.BFINGCJHOHI_Count - c);
 				}
 			}
 		}

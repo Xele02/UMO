@@ -78,11 +78,11 @@ namespace XeApp.Game.Menu
 		public void Setup(FLCAECNBMML view)
 		{
 			m_view = view;
-			if(view.CFLEMFADGLG == 3)
+			if(view.CFLEMFADGLG_AttackType == 3)
 			{
 				m_layoutAct.StartChildrenAnimGoStop("02");
 			}
-			else if(view.CFLEMFADGLG == 1)
+			else if(view.CFLEMFADGLG_AttackType == 1)
 			{
 				m_layoutAct.StartChildrenAnimGoStop("01");
 			}
@@ -187,9 +187,9 @@ namespace XeApp.Game.Menu
 
 			//0x1813B6C
 			layout = m_layoutMain;
-			if(m_view.HALIDDHLNEG_Point < 1)
+			if(m_view.HALIDDHLNEG_Damage < 1)
 			{
-				SetPoint(m_view.HALIDDHLNEG_Point);
+				SetPoint(m_view.HALIDDHLNEG_Damage);
 			}
 			else
 			{
@@ -197,7 +197,7 @@ namespace XeApp.Game.Menu
 				List<float> f = new List<float>();
 				NumberAnimationUtility.MakeAccelerationTimeList(8, 0.24f, 0.02f, ref f);
 				PlayCountUpLoopSE();
-				co = this.StartCoroutineWatched(NumberAnimationUtility.Co_FakeCountup(m_view.HALIDDHLNEG_Point, f, (int num) =>
+				co = this.StartCoroutineWatched(NumberAnimationUtility.Co_FakeCountup(m_view.HALIDDHLNEG_Damage, f, (int num) =>
 				{
 					//0x181396C
 					SetPoint(num);
@@ -210,7 +210,7 @@ namespace XeApp.Game.Menu
 					yield return null;
 				this.StopCoroutineWatched(co);
 				m_countUpSEPlayback.Stop(false);
-				SetPoint(m_view.HALIDDHLNEG_Point);
+				SetPoint(m_view.HALIDDHLNEG_Damage);
 				layout.StartChildrenAnimGoStop("act_pt", "acten_pt");
 				yield return Co.R(Co_WaitAnim(layout, true));
 			}

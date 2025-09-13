@@ -28,7 +28,7 @@ public class HODOGPOKOOJ
 	public static List<int> KCCLHODILPA_Event2 = new List<int>(); // 0x4
 	public static List<int> JNDKAFPBENO_Gacha = new List<int>(); // 0x8
 	public static List<int> IBBMNGEHDEP_Pickup = new List<int>(); // 0xC
-	private static string[] ECLAOLBGCDD = new string[1] { "cs_w_" }; // 0x10
+	private static string[] ECLAOLBGCDD_tbl = new string[1] { "cs_w_" }; // 0x10
 
 	//// RVA: 0x16008C8 Offset: 0x16008C8 VA: 0x16008C8
 	public static KMBJEEFHJOH FABLNMEEKKF_GetFileKeepStatus(PKKHIEAEDPC CEJDIAECJKD, KNNLDAHADJB GKOAGCJNBBM)
@@ -123,13 +123,13 @@ public class HODOGPOKOOJ
 	}
 
 	//// RVA: 0x16010D4 Offset: 0x16010D4 VA: 0x16010D4
-	public static KMBJEEFHJOH FABLNMEEKKF_GetFileKeepStatus(string CJEKGLGBIHF, HODOGPOKOOJ.KNNLDAHADJB GKOAGCJNBBM)
+	public static KMBJEEFHJOH FABLNMEEKKF_GetFileKeepStatus(string _CJEKGLGBIHF_path, HODOGPOKOOJ.KNNLDAHADJB GKOAGCJNBBM)
 	{
 		if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
 		{
 			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IELDDHJMFKN_Asset != null)
 			{
-				return FABLNMEEKKF_GetFileKeepStatus(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IELDDHJMFKN_Asset.NBHDIKJMLEN(CJEKGLGBIHF), GKOAGCJNBBM);
+				return FABLNMEEKKF_GetFileKeepStatus(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IELDDHJMFKN_Asset.NBHDIKJMLEN(_CJEKGLGBIHF_path), GKOAGCJNBBM);
 			}
 		}
 		return KMBJEEFHJOH.MCDCNJCJCAB/*2*/;
@@ -138,6 +138,6 @@ public class HODOGPOKOOJ
 	//// RVA: 0x1600FA4 Offset: 0x1600FA4 VA: 0x1600FA4
 	private static bool EDLHFANJJJK_IsSongInstalled(int KKPAHLMJKIH)
 	{
-		return SoundResource.IsInstalledCueSheet(ECLAOLBGCDD[0] + KKPAHLMJKIH.ToString("D4"));
+		return SoundResource.IsInstalledCueSheet(ECLAOLBGCDD_tbl[0] + KKPAHLMJKIH.ToString("D4"));
 	}
 }

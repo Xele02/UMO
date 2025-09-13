@@ -171,11 +171,11 @@ namespace XeApp.Game.Menu
 				PPGHMBNIAEC skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PNJMFKFGIML_LiveSkills.Find((PPGHMBNIAEC _) =>
 				{
 					//0xCFC72C
-					return m_sceneData.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) == _.BEKFHEBCPEE;
+					return m_sceneData.FILPDDHMKEJ_GetLiveSkillId(false, 0, 0) == _.BEKFHEBCPEE_LiveSkillId;
 				});
 				if(skill != null)
 				{
-					EONOEHOKBEB_Music music = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[skill.CEFHDLLAPDH_MusicIdCond - 1];
+					EONOEHOKBEB_Music music = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[skill.CEFHDLLAPDH_MusicId - 1];
 					MessageBank bk = MessageManager.Instance.GetBank("menu");
 					PopupWindowManager.Show(PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("pop_compatible_music_title"), SizeType.Small, string.Format(bk.GetMessageByLabel("pop_compatible_music_desc"), RichTextUtility.MakeColorTagString(Database.Instance.musicText.Get(music.KNMGEEFGDNI_Nam).musicName, GameAttributeTextColor.Colors[music.FKDCCLPGKDK_Ma - 1])), new ButtonInfo[1]
 					{

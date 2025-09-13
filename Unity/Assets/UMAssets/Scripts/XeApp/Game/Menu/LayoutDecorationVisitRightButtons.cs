@@ -125,7 +125,7 @@ namespace XeApp.Game.Menu
 			m_mapNameText.text = mapName;
 			m_rateText.text = HighScoreRatingRank.GetRankName(playerData.AGJIIKKOKFJ_ScoreRatingRank);
 			m_rateRankText.text = OEGIPPCADNA.GEEFFAEGHAH(OEGIPPCADNA.BFKAHKBKBJE(playerData.PCEGKKLKFNO.AHEFHIMGIBI_PlayerData.MHEAEGMIKIE_PublicStatus.AILEOFKIELL_UtaRateRank, playerData.PCEGKKLKFNO.AJECHDLMKOE_LastLogin), true);
-			GameManager.Instance.DivaIconCache.Load(playerData.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId, playerData.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, playerData.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId, (IiconTexture texture) =>
+			GameManager.Instance.DivaIconCache.Load(playerData.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId, playerData.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, playerData.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId, (IiconTexture texture) =>
 			{
 				//0x18BECFC
 				texture.Set(m_divaIconImage);

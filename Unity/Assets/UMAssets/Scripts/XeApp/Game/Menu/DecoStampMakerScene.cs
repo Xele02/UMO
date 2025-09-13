@@ -694,13 +694,13 @@ namespace XeApp.Game.Menu
 			List<NCPPAHHCCAO> l = NCPPAHHCCAO.FKDIMODKKJD();
 			for(int i = 0; i < l.Count; i++)
 			{
-				if(l[i].BFINGCJHOHI_Cnt > 0)
+				if(l[i].BFINGCJHOHI_Count > 0)
 				{
 					res.Add(new LayoutDecoCustomWindow01.SelectItemData() {
 						id = l[i].PPFNGGCBJKC,
 						type = LayoutDecoCustomWindow01.SelectItemType.Chara,
 						text = null,
-						series = (SeriesAttr.Type)l[i].CPKMLLNADLJ,
+						series = (SeriesAttr.Type)l[i].CPKMLLNADLJ_Serie,
 						isShopProduct = false,
 						charaId = l[i].IDELKEKDIFD_CharaId,
 						charaType = l[i].INDDJNMPONH,
@@ -721,7 +721,7 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.FJPOELGFPBP_DecoStamp.DMKMNGELNAE_Serif.Count; i++)
 			{
 				IOEKHJBOMDH_DecoStamp.GFPPDCEPLCM saveStamp = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.FJPOELGFPBP_DecoStamp.DMKMNGELNAE_Serif[i];
-				if(saveStamp.BFINGCJHOHI_Cnt > 0)
+				if(saveStamp.BFINGCJHOHI_Count > 0)
 				{
 					int itemid = saveStamp.PPFNGGCBJKC_Id;
 					IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP dbStamp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif.Find((IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP item) =>
@@ -734,13 +734,13 @@ namespace XeApp.Game.Menu
 						id = dbStamp.PPFNGGCBJKC,
 						type = LayoutDecoCustomWindow01.SelectItemType.Serif,
 						text = null,
-						series = (SeriesAttr.Type) dbStamp.CPKMLLNADLJ,
+						series = (SeriesAttr.Type) dbStamp.CPKMLLNADLJ_Serie,
 						isShopProduct = false,
 						charaId = dbStamp.JBFLEDKDFCO,
 						charaType = 0,
 						emotion = 0,
 						IsNew = false,
-						tabCategory = dbStamp.DMEDKJPOLCH,
+						tabCategory = dbStamp.DMEDKJPOLCH_Category,
 						product = null
 					});
 				}
@@ -791,8 +791,8 @@ namespace XeApp.Game.Menu
 						{
 							IHFIAFDLAAK_DecoStamp.MCBOAJEIFNP dbItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif[id - 1];
 							data.charaId = dbItem.JBFLEDKDFCO;
-							data.tabCategory = dbItem.DMEDKJPOLCH;
-							data.series = (SeriesAttr.Type)dbItem.CPKMLLNADLJ;
+							data.tabCategory = dbItem.DMEDKJPOLCH_Category;
+							data.series = (SeriesAttr.Type)dbItem.CPKMLLNADLJ_Serie;
 						}
 						else if(category == EKLNMHFCAOI.FKGCBLHOOCL_Category.GGEFMAAOMFH_StampItemChara)
 						{

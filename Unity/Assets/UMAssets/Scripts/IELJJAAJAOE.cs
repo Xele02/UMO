@@ -11,5 +11,5 @@ public class IELJJAAJAOE
 	public int ABIFFLDIAMM_ConvertItemCount; // 0x24
 	public bool LHEDLDEMPPG; // 0x28
 	public bool PHJHJGDLPED; // 0x29
-	public bool BAKFIPIFDLE; // 0x2A
+	public bool BAKFIPIFDLE_IsEventRareItem; // 0x2A
 }

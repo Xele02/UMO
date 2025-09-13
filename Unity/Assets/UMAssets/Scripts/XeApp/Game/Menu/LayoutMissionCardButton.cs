@@ -54,10 +54,10 @@ namespace XeApp.Game.Menu
 				//0x1D69944
 				return GameMessageManager.MissionMessageTagFunc(m_strBuilder, tag, musicData == null ? 0 : musicData.GHBPLHBNMBK_FreeMusicId, is6Line, diffculty);
 			});
-			m_pointText.text = string.Format(MessageManager.Instance.GetMessage("menu", "event_mission_message_000"), info.DJJGNDCMNHF);
-			m_levelImage.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData(string.Format("s_m_e_card_lv_{0:D2}", info.CIEOBFIIPLD)));
+			m_pointText.text = string.Format(MessageManager.Instance.GetMessage("menu", "event_mission_message_000"), info.DJJGNDCMNHF_BonusValue);
+			m_levelImage.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData(string.Format("s_m_e_card_lv_{0:D2}", info.CIEOBFIIPLD_Level)));
 			m_index = missionIndex;
-			m_layout.StartChildrenAnimGoStop(info.JKPDKNPDEBC ? "04" : info.CIEOBFIIPLD.ToString("00"));
+			m_layout.StartChildrenAnimGoStop(info.JKPDKNPDEBC ? "04" : info.CIEOBFIIPLD_Level.ToString("00"));
 			m_dangerLay.StartChildrenAnimGoStop(layoutIndex == 0 ? "01" : "02");
 		}
 

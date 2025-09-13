@@ -617,7 +617,7 @@ namespace XeApp.Game.Menu
 			m_enable_lobby_btn = false;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			JLKEOGLJNOD_TeamInfo t = GameManager.Instance.ViewPlayerData.DPLBHAIKPGL_GetTeam(false);
-			SetDivaImage(t.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId, t.BCJEAJPLGMB_MainDivas[0].FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, t.BCJEAJPLGMB_MainDivas[0].EKFONBFDAAP_ColorId);
+			SetDivaImage(t.BCJEAJPLGMB_MainDivas[0].AHHJLDLAPAN_DivaId, t.BCJEAJPLGMB_MainDivas[0].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, t.BCJEAJPLGMB_MainDivas[0].EKFONBFDAAP_ColorId);
 			SetMusicRate(GameManager.Instance.ViewPlayerData.AGJIIKKOKFJ_ScoreRatingRank);
 			m_viewHSRatingData.KHEKNNFCAOI(null, null);
 			GCIJNCFDNON_SceneInfo scene = null;
@@ -634,10 +634,10 @@ namespace XeApp.Game.Menu
 			SetDegreeInfo(GameManager.Instance.ViewPlayerData.NDOLELKAJNL_Degree);
 			m_degree_data = GetDegreeData(GameManager.Instance.ViewPlayerData.NDOLELKAJNL_Degree.MDPKLNFFDBO_EmblemId);
 			int IBAKPKKEDJM = 0;
-			int BAOFEFFADPD = 0;
-			if (CIOECGOMILE.HHCJCDFCLOB.HNDJBAAAHDO(ref IBAKPKKEDJM, ref BAOFEFFADPD))
+			int BAOFEFFADPD_Day = 0;
+			if (CIOECGOMILE.HHCJCDFCLOB.HNDJBAAAHDO(ref IBAKPKKEDJM, ref BAOFEFFADPD_Day))
 			{
-				SetChangePlayerNameTime(IBAKPKKEDJM, BAOFEFFADPD);
+				SetChangePlayerNameTime(IBAKPKKEDJM, BAOFEFFADPD_Day);
 			}
 			else
 			{
@@ -659,7 +659,7 @@ namespace XeApp.Game.Menu
 			m_friend_player_data = data;
 			m_enable_lobby_btn = a_enable_lobby_btn;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			SetDivaImage(data.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId, data.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, data.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId);
+			SetDivaImage(data.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId, data.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, data.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId);
 			SetMusicRate(data.AGJIIKKOKFJ_ScoreRatingRank);
 			m_viewHSRatingData = data.PPMGIDEHHDI_ViewHSRatingData;
 			SetMainSceneInfo(data.JIGONEMPPNP_Diva.FGFIBOBAPIA_SceneId < 1 ? null : data.AFBMEMCHJCL_MainScene);
@@ -974,7 +974,7 @@ namespace XeApp.Game.Menu
 			bool isError = false;
 			MenuScene.Instance.InputDisable();
 			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_PlayerName = playerName;
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.AFPONJEJKCO_RenameDate = time;
 			mon = 0;
 			day = 0;
@@ -1432,7 +1432,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x11704A8 Offset: 0x11704A8 VA: 0x11704A8
 		private void SetStatsInfo(JNMFKOHFAFB_PublicStatus status)
 		{
-			m_stats_plate_count.text = status.BKIFLJAMJGG_ScnCnt.ToString();
+			m_stats_plate_count.text = status.BKIFLJAMJGG_SceneCount.ToString();
 			m_stats_valkyrie_count.text = status.MIFLBHBPBNF_VfCnt.ToString();
 			m_stats_lvmax_plate_count.text = status.JGDNCEANEBB_LvMaxCnt.ToString();
 			m_stats_costume_count.text = status.FOFGELKGMAH_CosCnt.ToString();

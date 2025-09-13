@@ -11,29 +11,29 @@ public class LAGEHKFIPPC
 		//public void FPEKCEGADMG(BinaryWriter OMLLGAKPMAN) { }
 
 		//// RVA: 0xD90054 Offset: 0xD90054 VA: 0xD90054
-		//public void FKGBNKPHCJL(int CEMEIPNMAAD, BinaryReader CLJIOLIEPNA) { }
+		//public void FKGBNKPHCJL(int _CEMEIPNMAAD_Version, BinaryReader _CLJIOLIEPNA_reader) { }
 	}
 
 	public const int JNCCCCPBDIC = 1;
 	public EHPHFDNBFAO KOGBMDOONFA; // 0x8
-	private string ELLBAAFKDCH_Path; // 0xC
+	private string ELLBAAFKDCH_Filename; // 0xC
 	
 	// RVA: 0xD8FAB0 Offset: 0xD8FAB0 VA: 0xD8FAB0
 	public LAGEHKFIPPC()
 	{
 		KOGBMDOONFA = new EHPHFDNBFAO();
-		ELLBAAFKDCH_Path = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/SaveData/cbp0";
+		ELLBAAFKDCH_Filename = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/SaveData/cbp0";
 	}
 
 	//// RVA: 0xD8FB84 Offset: 0xD8FB84 VA: 0xD8FB84
-	//public void KHEKNNFCAOI(string CJEKGLGBIHF) { }
+	//public void KHEKNNFCAOI(string _CJEKGLGBIHF_path) { }
 
 	//// RVA: 0xD8FB8C Offset: 0xD8FB8C VA: 0xD8FB8C
 	public void PCODDPDFLHK_Load()
 	{
-		if(!File.Exists(ELLBAAFKDCH_Path))
+		if(!File.Exists(ELLBAAFKDCH_Filename))
 			return;
-		FileStream fs = new FileStream(ELLBAAFKDCH_Path, FileMode.Open);
+		FileStream fs = new FileStream(ELLBAAFKDCH_Filename, FileMode.Open);
 		BinaryReader br = new BinaryReader(fs);
 		br.ReadInt32();
 		KOGBMDOONFA.IDCGBCGNOLH_Day = br.ReadInt32();
@@ -45,10 +45,10 @@ public class LAGEHKFIPPC
 	//// RVA: 0xD90090 Offset: 0xD90090 VA: 0xD90090
 	public void HJMKBCFJOOH_Save()
 	{
-		string dirName = Path.GetDirectoryName(ELLBAAFKDCH_Path);
+		string dirName = Path.GetDirectoryName(ELLBAAFKDCH_Filename);
 		if (!Directory.Exists(dirName))
 			Directory.CreateDirectory(dirName);
-		FileStream fs = new FileStream(ELLBAAFKDCH_Path, FileMode.Create);
+		FileStream fs = new FileStream(ELLBAAFKDCH_Filename, FileMode.Create);
 		BinaryWriter br = new BinaryWriter(fs);
 		br.Write(JNCCCCPBDIC);
 		br.Write(KOGBMDOONFA.IDCGBCGNOLH_Day);

@@ -9,19 +9,19 @@ public class IIMBAOGHCIG
 		JJGHKIBKFFJ = 1,
 	}
 
-	public BadgeConstant.ID BEEIIJJKDBH; // 0x8
-	public string BHANMJKCCBC; // 0xC
+	public BadgeConstant.ID BEEIIJJKDBH_BadgeConstantId; // 0x8
+	public string BHANMJKCCBC_BadgeText; // 0xC
 
 	//// RVA: 0x1204B5C Offset: 0x1204B5C VA: 0x1204B5C
-	public void FBANBDCOEJL(bool CADENLBDAEB)
+	public void FBANBDCOEJL(bool _CADENLBDAEB_IsNew)
 	{
 		if(HNNHJGJCFIL() != BEFNGAHBLEN.JJGHKIBKFFJ/*1*/)
 		{
-			BEEIIJJKDBH = CADENLBDAEB ? BadgeConstant.ID.New : BadgeConstant.ID.None;
+			BEEIIJJKDBH_BadgeConstantId = _CADENLBDAEB_IsNew ? BadgeConstant.ID.New : BadgeConstant.ID.None;
 			return;
 		}
-		BEEIIJJKDBH = BadgeConstant.ID.Label;
-		BHANMJKCCBC = KDHGBOOECKC.HHCJCDFCLOB.JIDINGHMOJF();
+		BEEIIJJKDBH_BadgeConstantId = BadgeConstant.ID.Label;
+		BHANMJKCCBC_BadgeText = KDHGBOOECKC.HHCJCDFCLOB.JIDINGHMOJF();
 	}
 
 	//// RVA: 0x1204BC0 Offset: 0x1204BC0 VA: 0x1204BC0

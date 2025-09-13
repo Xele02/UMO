@@ -20,7 +20,7 @@ public class IHKOJFIFPKB_RequestInquiryResponsesNumber : CACGCMBKHDI_Request
     }
 
 	// RVA: 0x12029A8 Offset: 0x12029A8 VA: 0x12029A8 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
         EDOHBJAPLPF_JsonData json = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result);
         NFEAMMJIMPG = new IHKOJFIFPKB_RequestInquiryResponsesNumber.HBFOPNJHBCK();

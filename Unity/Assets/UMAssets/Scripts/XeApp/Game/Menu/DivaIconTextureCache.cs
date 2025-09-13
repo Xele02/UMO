@@ -145,8 +145,8 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x17E39C0 Offset: 0x17E39C0 VA: 0x17E39C0
 		public void LoadLobbyIcon(int cosId, int colorId, Action<IiconTexture> callBack)
 		{
-			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[cosId - 1];
-			Load(GetIconPath(IconType.SSize, cos.AHHJLDLAPAN_DivaId, cos.DAJGPBLEEOB_PrismCostumeModelId, colorId), callBack);
+			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[cosId - 1];
+			Load(GetIconPath(IconType.SSize, cos.AHHJLDLAPAN_DivaId, cos.DAJGPBLEEOB_ModelId, colorId), callBack);
 		}
 
 		// // RVA: 0x17E061C Offset: 0x17E061C VA: 0x17E061C
@@ -220,10 +220,10 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < playerData.NBIGLBMHEDC_Divas.Count; i++)
 			{
-				if(playerData.NBIGLBMHEDC_Divas[i].FJODMPGPDDD_DivaHave)
+				if(playerData.NBIGLBMHEDC_Divas[i].FJODMPGPDDD_Unlocked)
 				{
-					TryInstall(playerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId, playerData.NBIGLBMHEDC_Divas[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, 0);
-					TryStateDivaIconInstall(playerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId, playerData.NBIGLBMHEDC_Divas[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, 0);
+					TryInstall(playerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId, playerData.NBIGLBMHEDC_Divas[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, 0);
+					TryStateDivaIconInstall(playerData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId, playerData.NBIGLBMHEDC_Divas[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, 0);
 				}
 			}
 		}

@@ -7,18 +7,18 @@ public class DOLDMCAMEOD_RequestRemainingForCurrencyIds : CACGCMBKHDI_Request
 {
     public class LDADODICMLG_ResultData
     {
-        public List<MCKCJMLOAFP_CurrencyInfo> BBEPLKNMICJ_CurrenciesList; // 0x8
+        public List<MCKCJMLOAFP_CurrencyInfo> BBEPLKNMICJ_Balances; // 0x8
 
         // RVA: 0x1233554 Offset: 0x1233554 VA: 0x1233554
         public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
 		{
-			EDOHBJAPLPF_JsonData b = IDLHJIOMJBK[AFEHLCGHAEE_Strings.BBEPLKNMICJ_balances];
-			BBEPLKNMICJ_CurrenciesList = new List<MCKCJMLOAFP_CurrencyInfo>(b.HNBFOAJIIAL_Count);
+			EDOHBJAPLPF_JsonData b = IDLHJIOMJBK[AFEHLCGHAEE_Strings.BBEPLKNMICJ_Balances];
+			BBEPLKNMICJ_Balances = new List<MCKCJMLOAFP_CurrencyInfo>(b.HNBFOAJIIAL_Count);
 			for(int i = 0; i < b.HNBFOAJIIAL_Count; i++)
 			{
 				MCKCJMLOAFP_CurrencyInfo data = new MCKCJMLOAFP_CurrencyInfo();
 				data.DPKCOKLMFMK(b[i]);
-				BBEPLKNMICJ_CurrenciesList.Add(data);
+				BBEPLKNMICJ_Balances.Add(data);
 			}
 		}
     }
@@ -34,7 +34,7 @@ public class DOLDMCAMEOD_RequestRemainingForCurrencyIds : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0x1233474 Offset: 0x1233474 VA: 0x1233474 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
 		NFEAMMJIMPG = new LDADODICMLG_ResultData();
 		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

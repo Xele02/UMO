@@ -5,7 +5,7 @@ using UnityEngine;
 public class PMDLLGNDFCJ
 {
 	public string LJNAKDMILMC_Key; // 0x8
-	public List<long> COGMPENEPBD; // 0xC
+	public List<long> COGMPENEPBD_InventoryIds; // 0xC
 
 	// RVA: 0xFED9B0 Offset: 0xFED9B0 VA: 0xFED9B0
 	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
@@ -14,10 +14,10 @@ public class PMDLLGNDFCJ
 		if(IDLHJIOMJBK.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.EGPADBNAOKP_inventory_ids))
 		{
 			EDOHBJAPLPF_JsonData inventory_ids = IDLHJIOMJBK[AFEHLCGHAEE_Strings.EGPADBNAOKP_inventory_ids];
-			COGMPENEPBD = new List<long>(inventory_ids.HNBFOAJIIAL_Count);
+			COGMPENEPBD_InventoryIds = new List<long>(inventory_ids.HNBFOAJIIAL_Count);
 			for(int i = 0; i < inventory_ids.HNBFOAJIIAL_Count; i++)
 			{
-				COGMPENEPBD.Add((long)inventory_ids[i]);
+				COGMPENEPBD_InventoryIds.Add((long)inventory_ids[i]);
 			}
 		}
 	}
@@ -25,18 +25,18 @@ public class PMDLLGNDFCJ
 
 public class BGKCFBHGNDI
 {
-	public List<PMDLLGNDFCJ> CEDLLCCONJP; // 0x8
+	public List<PMDLLGNDFCJ> CEDLLCCONJP_AchievementPrizes; // 0x8
 
 	// RVA: 0xC7CE74 Offset: 0xC7CE74 VA: 0xC7CE74
 	public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
 	{
-		EDOHBJAPLPF_JsonData achievement_prizes = IDLHJIOMJBK[AFEHLCGHAEE_Strings.CEDLLCCONJP_achievement_prizes];
-		CEDLLCCONJP = new List<PMDLLGNDFCJ>(achievement_prizes.HNBFOAJIIAL_Count);
+		EDOHBJAPLPF_JsonData achievement_prizes = IDLHJIOMJBK[AFEHLCGHAEE_Strings.CEDLLCCONJP_AchievementPrizes];
+		CEDLLCCONJP_AchievementPrizes = new List<PMDLLGNDFCJ>(achievement_prizes.HNBFOAJIIAL_Count);
 		for(int i = 0; i < achievement_prizes.HNBFOAJIIAL_Count; i++)
 		{
 			PMDLLGNDFCJ data = new PMDLLGNDFCJ();
 			data.KHEKNNFCAOI(achievement_prizes[i]);
-			CEDLLCCONJP.Add(data);
+			CEDLLCCONJP_AchievementPrizes.Add(data);
 		}
 	}
 }
@@ -83,7 +83,7 @@ public class FLONELKGABJ_ClaimAchievementPrizes : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0x11982F0 Offset: 0x11982F0 VA: 0x11982F0 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		BGKCFBHGNDI d = new BGKCFBHGNDI();
 		d.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

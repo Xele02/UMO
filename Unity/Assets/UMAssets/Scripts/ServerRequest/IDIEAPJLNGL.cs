@@ -29,7 +29,7 @@ public class IDIEAPJLNGL_SetFriendsLimit : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0x11EB8BC Offset: 0x11EB8BC VA: 0x11EB8BC Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG_ResultData = new HEHEEIFJAKM();
 		NFEAMMJIMPG_ResultData.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

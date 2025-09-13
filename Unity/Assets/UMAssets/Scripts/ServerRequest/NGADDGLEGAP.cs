@@ -26,7 +26,7 @@ public class NGADDGLEGAP_GetFriendsLimit : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0x1AF558C Offset: 0x1AF558C VA: 0x1AF558C Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG_ResultData = new MJAEAHLDEHE();
 		NFEAMMJIMPG_ResultData.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

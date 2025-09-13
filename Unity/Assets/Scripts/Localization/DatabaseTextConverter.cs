@@ -173,12 +173,12 @@ public static class DatabaseTextConverter
             //Export Tips texts
             PoFile poFile = new PoFile();
             BCKMELFCKKN_Tips tipsDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KNMFNBEOGON_Tips;
-            for(int i = 0; i < tipsDb.CDENCMNHNGA.Count; i++)
+            for(int i = 0; i < tipsDb.CDENCMNHNGA_table.Count; i++)
             {
                 string prfx = string.Format("tips_{0:D4}_title", i);
-                poFile.translationData.Add(prfx, tipsDb.CDENCMNHNGA[i].ADCMNODJBGJ_Title);
+                poFile.translationData.Add(prfx, tipsDb.CDENCMNHNGA_table[i].ADCMNODJBGJ_Title);
                 prfx = string.Format("tips_{0:D4}_msg", i);
-                poFile.translationData.Add(prfx, tipsDb.CDENCMNHNGA[i].JONNCMDGMKA_Message);
+                poFile.translationData.Add(prfx, tipsDb.CDENCMNHNGA_table[i].JONNCMDGMKA_Message);
             }
             string p = PoPath.Replace("{name}", "tipsDb_text");
             Directory.CreateDirectory(p);
@@ -190,12 +190,12 @@ public static class DatabaseTextConverter
             //Export VcItem texts
             PoFile poFile = new PoFile();
             DKJMDIFAKKD_VcItem vcDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KCCDBKIOLDJ_VcItem;
-            for(int i = 0; i < vcDb.CDENCMNHNGA.Count; i++)
+            for(int i = 0; i < vcDb.CDENCMNHNGA_table.Count; i++)
             {
                 string prfx = string.Format("vcitem_{0:D4}_title", i);
-                poFile.translationData.Add(prfx, vcDb.CDENCMNHNGA[i].OPFGFINHFCE_Name);
+                poFile.translationData.Add(prfx, vcDb.CDENCMNHNGA_table[i].OPFGFINHFCE_Name);
                 prfx = string.Format("vcitem_{0:D4}_desc", i);
-                poFile.translationData.Add(prfx, vcDb.CDENCMNHNGA[i].KLMPFGOCBHC_Desc);
+                poFile.translationData.Add(prfx, vcDb.CDENCMNHNGA_table[i].KLMPFGOCBHC_Desc);
             }
             string p = PoPath.Replace("{name}", "vcItemDb_text");
             Directory.CreateDirectory(p);
@@ -207,17 +207,17 @@ public static class DatabaseTextConverter
             //Export TutoPict texts
             PoFile poFile = new PoFile();
             PJANOOPJIDE_TutorialPict tutoDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict;
-            for(int i = 0; i < tutoDb.CDENCMNHNGA.Count; i++)
+            for(int i = 0; i < tutoDb.CDENCMNHNGA_table.Count; i++)
             {
-                for(int j = 0; j < tutoDb.CDENCMNHNGA[i].ADCMNODJBGJ_Title.Length; j++)
+                for(int j = 0; j < tutoDb.CDENCMNHNGA_table[i].ADCMNODJBGJ_Title.Length; j++)
                 {
                     string prfx = string.Format("tutopict_{0:D4}_{1:D4}_title", i, j);
-                    poFile.translationData.Add(prfx, tutoDb.CDENCMNHNGA[i].ADCMNODJBGJ_Title[j]);
+                    poFile.translationData.Add(prfx, tutoDb.CDENCMNHNGA_table[i].ADCMNODJBGJ_Title[j]);
                 }
-                for(int j = 0; j < tutoDb.CDENCMNHNGA[i].JONNCMDGMKA_Messages.Length; j++)
+                for(int j = 0; j < tutoDb.CDENCMNHNGA_table[i].JONNCMDGMKA_Messages.Length; j++)
                 {
                     string prfx = string.Format("tutopict_{0:D4}_{1:D4}_msg", i, j);
-                    poFile.translationData.Add(prfx, tutoDb.CDENCMNHNGA[i].JONNCMDGMKA_Messages[j]);
+                    poFile.translationData.Add(prfx, tutoDb.CDENCMNHNGA_table[i].JONNCMDGMKA_Messages[j]);
                 }
             }
             string p = PoPath.Replace("{name}", "tutoPictDb_text");
@@ -231,12 +231,12 @@ public static class DatabaseTextConverter
             PoFile poFile = new PoFile();
             GPMHOAKFALE_Adventure advDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure;
             List<int> advIds = new List<int>() { 1, 2, 3, 4, 5, 6 };
-            for(int i = 0; i < advDb.CDENCMNHNGA_List.Count; i++)
+            for(int i = 0; i < advDb.CDENCMNHNGA_table.Count; i++)
             {
-                if(advDb.CDENCMNHNGA_List[i].PPEGAKEIEGM_Enabled == 2)
+                if(advDb.CDENCMNHNGA_table[i].PPEGAKEIEGM_Enabled == 2)
                 {
-                    if(!advIds.Contains(advDb.CDENCMNHNGA_List[i].KKPPFAHFOJI_FileId))
-                        advIds.Add(advDb.CDENCMNHNGA_List[i].KKPPFAHFOJI_FileId);
+                    if(!advIds.Contains(advDb.CDENCMNHNGA_table[i].KKPPFAHFOJI_FileId))
+                        advIds.Add(advDb.CDENCMNHNGA_table[i].KKPPFAHFOJI_FileId);
                 }
             }
             for(int i = 0; i < advIds.Count; i++)
@@ -265,12 +265,12 @@ public static class DatabaseTextConverter
             // Export TutoMiniAdv strings
             PoFile poFile = new PoFile();
             ILLPGHGGKLL_TutorialMiniAdv blockDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LINHIDCNAMG_TutorialMiniAdv;
-            for(int i = 0; i < blockDb.CDENCMNHNGA.Count; i++)
+            for(int i = 0; i < blockDb.CDENCMNHNGA_table.Count; i++)
             {
-                for(int j = 0; j < blockDb.CDENCMNHNGA[i].JONNCMDGMKA_Messages.Length; j++)
+                for(int j = 0; j < blockDb.CDENCMNHNGA_table[i].JONNCMDGMKA_Messages.Length; j++)
                 {
                     string prfx = string.Format("tuto_miniadv_{0:D4}_{1:D4}_msg", i, j);
-                    poFile.translationData.Add(prfx, blockDb.CDENCMNHNGA[i].JONNCMDGMKA_Messages[j]);
+                    poFile.translationData.Add(prfx, blockDb.CDENCMNHNGA_table[i].JONNCMDGMKA_Messages[j]);
                 }
             }
             string p = PoPath.Replace("{name}", "tutoMiniAdvDb_text");
@@ -283,16 +283,16 @@ public static class DatabaseTextConverter
             // Export Anketo strings
             PoFile poFile = new PoFile();
             IPJBAPLFECP_Anketo blockDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OILKBADFBOK_Anketo;
-            for(int i = 0; i < blockDb.CDENCMNHNGA.Count; i++)
+            for(int i = 0; i < blockDb.CDENCMNHNGA_table.Count; i++)
             {
                 {
                     string prfx = string.Format("anketo_{0:D4}_question", i);
-                    poFile.translationData.Add(prfx, blockDb.CDENCMNHNGA[i].ADCMNODJBGJ_Title);
+                    poFile.translationData.Add(prfx, blockDb.CDENCMNHNGA_table[i].ADCMNODJBGJ_Title);
                 }
-                for(int j = 0; j < blockDb.CDENCMNHNGA[i].BNMCMNPPPCI_ChoiceText.Length; j++)
+                for(int j = 0; j < blockDb.CDENCMNHNGA_table[i].BNMCMNPPPCI_ChoiceText.Length; j++)
                 {
                     string prfx = string.Format("anketo_{0:D4}_{1:D4}_choice", i, j);
-                    poFile.translationData.Add(prfx, blockDb.CDENCMNHNGA[i].BNMCMNPPPCI_ChoiceText[j]);
+                    poFile.translationData.Add(prfx, blockDb.CDENCMNHNGA_table[i].BNMCMNPPPCI_ChoiceText[j]);
                 }
             }
             string p = PoPath.Replace("{name}", "anketoDb_text");
@@ -336,10 +336,10 @@ public static class DatabaseTextConverter
             // Export homeBg strings
             PoFile poFile = new PoFile();
             ALJHJDHNFFB_HomeBg blockDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PFEKKPABPKL_HomeBg;
-            for(int i = 0; i < blockDb.CDENCMNHNGA.Count; i++)
+            for(int i = 0; i < blockDb.CDENCMNHNGA_table.Count; i++)
             {
                 string prfx = string.Format("homebg_{0:D4}_name", i);
-                poFile.translationData.Add(prfx, blockDb.CDENCMNHNGA[i].OPFGFINHFCE_Name);
+                poFile.translationData.Add(prfx, blockDb.CDENCMNHNGA_table[i].OPFGFINHFCE_Name);
             }
             string p = PoPath.Replace("{name}", "homeBgDb_text");
             Directory.CreateDirectory(p);
@@ -351,10 +351,10 @@ public static class DatabaseTextConverter
             // Export shopDb strings
             PoFile poFile = new PoFile();
             BKPAPCMJKHE_Shop blockDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IFLGCDGOLOP_Shop;
-            for(int i = 0; i < blockDb.CDENCMNHNGA.Count; i++)
+            for(int i = 0; i < blockDb.CDENCMNHNGA_table.Count; i++)
             {
                 string prfx = string.Format("shop_{0:D4}_name", i);
-                poFile.translationData.Add(prfx, blockDb.CDENCMNHNGA[i].NEMKDKDIIDK_ShopName);
+                poFile.translationData.Add(prfx, blockDb.CDENCMNHNGA_table[i].NEMKDKDIIDK_ShopName);
             }
             string p = PoPath.Replace("{name}", "shopDb_text");
             Directory.CreateDirectory(p);
@@ -373,7 +373,7 @@ public static class DatabaseTextConverter
                     for(int k = 0; k < blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].MFMGDFACBON.Count; k++)
                     {
                         string prfx = string.Format("bingo_{0:D4}_{1:D4}_{2:D4}_desc", blockDb.JJAICEAEGKF[i].PPFNGGCBJKC, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].PPFNGGCBJKC, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].MFMGDFACBON[k].PPFNGGCBJKC);
-                        poFile.translationData.Add(prfx, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].MFMGDFACBON[k].FEMMDNIELFC);
+                        poFile.translationData.Add(prfx, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].MFMGDFACBON[k].FEMMDNIELFC_Desc);
                         prfx = string.Format("bingo_{0:D4}_{1:D4}_{2:D4}_cond", blockDb.JJAICEAEGKF[i].PPFNGGCBJKC, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].PPFNGGCBJKC, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].MFMGDFACBON[k].PPFNGGCBJKC);
                         poFile.translationData.Add(prfx, blockDb.JJAICEAEGKF[i].DPGMFEGFCJN[j].MFMGDFACBON[k].JEPGJJJBFLN);
                     }
@@ -456,10 +456,10 @@ public static class DatabaseTextConverter
                         string prfx = string.Format("event_banner_{0}_{1:D4}", blockDbRaid.JIKKNHIAEKG_BlockName, blockDbRaid.LLCLJBEJOPM_BannerInfo[i].PPFNGGCBJKC);
                         poFile.translationData.Add(prfx, blockDbRaid.LLCLJBEJOPM_BannerInfo[i].KLMPFGOCBHC_BannerText);
                     }
-                    for(int i = 0; i < blockDbRaid.GJFJLEOGFLD_BossInfo.Count; i++)
+                    for(int i = 0; i < blockDbRaid.GJFJLEOGFLD_RaidBoss.Count; i++)
                     {
-                        string prfx = string.Format("event_bossname_{0}_{1:D4}", blockDbRaid.JIKKNHIAEKG_BlockName, blockDbRaid.GJFJLEOGFLD_BossInfo[i].PPFNGGCBJKC);
-                        poFile.translationData.Add(prfx, blockDbRaid.GJFJLEOGFLD_BossInfo[i].OPFGFINHFCE_Name);
+                        string prfx = string.Format("event_bossname_{0}_{1:D4}", blockDbRaid.JIKKNHIAEKG_BlockName, blockDbRaid.GJFJLEOGFLD_RaidBoss[i].PPFNGGCBJKC);
+                        poFile.translationData.Add(prfx, blockDbRaid.GJFJLEOGFLD_RaidBoss[i].OPFGFINHFCE_Name);
                     }
                 }
                 LDEBIBGHCGD_EventRaidLobby blockDbLobby = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(blocksName[sIdx]) as LDEBIBGHCGD_EventRaidLobby;

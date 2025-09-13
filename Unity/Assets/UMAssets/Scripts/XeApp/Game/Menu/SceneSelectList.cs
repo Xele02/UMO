@@ -268,7 +268,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x137BFCC Offset: 0x137BFCC VA: 0x137BFCC
-		// public void UpdateDefaultButton(GCIJNCFDNON sceneData) { }
+		// public void UpdateDefaultButton(_GCIJNCFDNON_SceneInfo sceneData) { }
 
 		// // RVA: 0x137BFD0 Offset: 0x137BFD0 VA: 0x137BFD0
 		public void SetSelectedSlot(int selectedSlotNumber)
@@ -442,7 +442,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x137D038 Offset: 0x137D038 VA: 0x137D038
 		public static uint GetSceneIconBitFlag(DFKGGBMFFGB_PlayerInfo playerData, GCIJNCFDNON_SceneInfo sceneData, bool isGoDiva)
 		{
-			int res = sceneData.CADENLBDAEB_New ? 1 : 0;
+			int res = sceneData.CADENLBDAEB_IsNew ? 1 : 0;
 			if(IsUnitScene(playerData, sceneData, isGoDiva))
 				res |= 2;
 			if(sceneData.MCCIFLKCNKO_Feed)
@@ -468,7 +468,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x137D4EC Offset: 0x137D4EC VA: 0x137D4EC
-		// public static bool IsSetScene(DFKGGBMFFGB playerData, GCIJNCFDNON sceneData) { }
+		// public static bool IsSetScene(DFKGGBMFFGB_PlayerInfo playerData, _GCIJNCFDNON_SceneInfo sceneData) { }
 
 		// // RVA: 0x137D32C Offset: 0x137D32C VA: 0x137D32C
 		public static bool IsDivaEquipScene(FFHPBEPOMAK_DivaInfo divaData, List<GCIJNCFDNON_SceneInfo> sceneList, GCIJNCFDNON_SceneInfo sceneData)

@@ -49,12 +49,12 @@ namespace XeApp
 			IsOverlay = MakeOverlay(viewDecoItemData.NPADACLCNAN_Category, AttributeType, viewDecoItemData.FJFCNGNGIBN);
 			IsOnShelf = MakeOnShelf(viewDecoItemData);
 			IsShelf = false;
-			PriorityControl = MakePriortyControl(viewDecoItemData.NPADACLCNAN_Category, viewDecoItemData.GBJFNGCDKPM_Attribute, AttributeType);
+			PriorityControl = MakePriortyControl(viewDecoItemData.NPADACLCNAN_Category, viewDecoItemData.GBJFNGCDKPM_Type, AttributeType);
 			AdjustOffset.x = viewDecoItemData.EDEEMPJPFCP;
 			AdjustOffset.y = viewDecoItemData.HDHNEILDILJ;
 			FontSizeType = viewDecoItemData.DBGAJBIBODC_FontType;
 			Thickness = MakeThickness(viewDecoItemData);
-			Order = viewDecoItemData.EILKGEADKGH;
+			Order = viewDecoItemData.EILKGEADKGH_Order;
 		}
 
 		//// RVA: 0x1AD4EAC Offset: 0x1AD4EAC VA: 0x1AD4EAC

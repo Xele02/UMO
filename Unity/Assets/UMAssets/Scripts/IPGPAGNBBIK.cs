@@ -5,14 +5,14 @@ using Cryptor;
 
 public class IPGPAGNBBIK : LBHFILLFAGA
 {
-	private DsfdLoader.ILoadRequest COJNCNGHIJC; // 0x4C
+	private DsfdLoader.ILoadRequest COJNCNGHIJC_Req; // 0x4C
 #if UNITY_EDITOR || UNITY_STANDALONE
 	bool isInstalling = false;
 #endif
 
 	// RVA: 0x140F5A4 Offset: 0x140F5A4 VA: 0x140F5A4
-	public IPGPAGNBBIK(string CJEKGLGBIHF_path, string BOPDLODALFD_withoutPlarformPath, FileLoadedPostProcess OGLMMENAJFL_onSuccess, FileLoadedPostProcess GOIHDOPGPCE_onFail, Dictionary<string, string> JBKMAPLCBMO_arg, int HNKPENAFDKA_argValue, FileLoadInfo LAMFBMFNOFP_fi, bool ALJGNAPELAH)
-		: base(CJEKGLGBIHF_path,BOPDLODALFD_withoutPlarformPath,OGLMMENAJFL_onSuccess,GOIHDOPGPCE_onFail,JBKMAPLCBMO_arg,HNKPENAFDKA_argValue,LAMFBMFNOFP_fi)
+	public IPGPAGNBBIK(string _CJEKGLGBIHF_path, string BOPDLODALFD_withoutPlarformPath, FileLoadedPostProcess OGLMMENAJFL_onSuccess, FileLoadedPostProcess GOIHDOPGPCE_onFail, Dictionary<string, string> JBKMAPLCBMO_arg, int HNKPENAFDKA_argValue, FileLoadInfo LAMFBMFNOFP_fi, bool ALJGNAPELAH)
+		: base(_CJEKGLGBIHF_path,BOPDLODALFD_withoutPlarformPath,OGLMMENAJFL_onSuccess,GOIHDOPGPCE_onFail,JBKMAPLCBMO_arg,HNKPENAFDKA_argValue,LAMFBMFNOFP_fi)
     {
 		return;
     }
@@ -27,7 +27,7 @@ public class IPGPAGNBBIK : LBHFILLFAGA
 			isInstalling = false;
 			HHHEFALNMJO_mPath = newPath;
 #endif
-			COJNCNGHIJC = Cryptor.DsfdLoader.LoadFile(HHHEFALNMJO_mPath);
+			COJNCNGHIJC_Req = Cryptor.DsfdLoader.LoadFile(HHHEFALNMJO_mPath);
 #if UNITY_EDITOR || UNITY_STANDALONE
 		});
 #endif
@@ -42,7 +42,7 @@ public class IPGPAGNBBIK : LBHFILLFAGA
 #endif
 		if(FHHAFJMELMD_alreadyLoading)
 			return true;
-		return COJNCNGHIJC.IsDone;
+		return COJNCNGHIJC_Req.IsDone;
 	}
 
 	// // RVA: 0x140F7EC Offset: 0x140F7EC VA: 0x140F7EC Slot: 6
@@ -52,7 +52,7 @@ public class IPGPAGNBBIK : LBHFILLFAGA
 		if (isInstalling)
 			return null;
 #endif
-		if (!COJNCNGHIJC.IsSuccess)
+		if (!COJNCNGHIJC_Req.IsSuccess)
 		{
 			return "decrypt error";
 		}
@@ -64,7 +64,7 @@ public class IPGPAGNBBIK : LBHFILLFAGA
 	{
 		if(!FHHAFJMELMD_alreadyLoading)
 		{
-			byte[] data = COJNCNGHIJC.Result;
+			byte[] data = COJNCNGHIJC_Req.Result;
 			if(BOBCNJIPPJN.AGJJGJCIMKI(data))
 			{
 				data = BOBCNJIPPJN.JCBCBNFPJDH(data);
@@ -83,7 +83,7 @@ public class IPGPAGNBBIK : LBHFILLFAGA
 #endif
 		if (FHHAFJMELMD_alreadyLoading)
 			return;
-		COJNCNGHIJC = null;
+		COJNCNGHIJC_Req = null;
 		base.PAHHAMPDBFP();
 	}
 

@@ -39,20 +39,20 @@ namespace XeApp.Game.Menu
 				switch(SortType)
 				{
 					case SortItem.Total:
-						val1 = fl.CMCKNKKCNDK_EquippedStatus.Total;
-						val2 = fr.CMCKNKKCNDK_EquippedStatus.Total;
+						val1 = fl.CMCKNKKCNDK_Status.Total;
+						val2 = fr.CMCKNKKCNDK_Status.Total;
 						break;
 					case SortItem.Soul:
-						val1 = fl.CMCKNKKCNDK_EquippedStatus.soul;
-						val2 = fr.CMCKNKKCNDK_EquippedStatus.soul;
+						val1 = fl.CMCKNKKCNDK_Status.soul;
+						val2 = fr.CMCKNKKCNDK_Status.soul;
 						break;
 					case SortItem.Voice:
-						val1 = fl.CMCKNKKCNDK_EquippedStatus.vocal;
-						val2 = fr.CMCKNKKCNDK_EquippedStatus.vocal;
+						val1 = fl.CMCKNKKCNDK_Status.vocal;
+						val2 = fr.CMCKNKKCNDK_Status.vocal;
 						break;
 					case SortItem.Charm:
-						val1 = fl.CMCKNKKCNDK_EquippedStatus.charm;
-						val2 = fr.CMCKNKKCNDK_EquippedStatus.charm;
+						val1 = fl.CMCKNKKCNDK_Status.charm;
+						val2 = fr.CMCKNKKCNDK_Status.charm;
 						break;
 					case SortItem.Get:
 					case SortItem.Rarity:
@@ -62,24 +62,24 @@ namespace XeApp.Game.Menu
 						val2 = fr.CIEOBFIIPLD_Level;
 						break;
 					case SortItem.Life:
-						val1 = fl.CMCKNKKCNDK_EquippedStatus.life;
-						val2 = fr.CMCKNKKCNDK_EquippedStatus.life;
+						val1 = fl.CMCKNKKCNDK_Status.life;
+						val2 = fr.CMCKNKKCNDK_Status.life;
 						break;
 					case SortItem.Luck:
 						val1 = DivaIconDecoration.GetEquipmentLuck(fl, m_playerData);
 						val2 = DivaIconDecoration.GetEquipmentLuck(fr, m_playerData);
 						break;
 					case SortItem.Support:
-						val1 = fl.CMCKNKKCNDK_EquippedStatus.support;
-						val2 = fr.CMCKNKKCNDK_EquippedStatus.support;
+						val1 = fl.CMCKNKKCNDK_Status.support;
+						val2 = fr.CMCKNKKCNDK_Status.support;
 						break;
 					case SortItem.Fold:
-						val1 = fl.CMCKNKKCNDK_EquippedStatus.fold;
-						val2 = fr.CMCKNKKCNDK_EquippedStatus.fold;
+						val1 = fl.CMCKNKKCNDK_Status.fold;
+						val2 = fr.CMCKNKKCNDK_Status.fold;
 						break;
 					default:
-						val1 = fl.CMCKNKKCNDK_EquippedStatus.spNoteExpected[(int)SortType - 10];
-						val2 = fr.CMCKNKKCNDK_EquippedStatus.spNoteExpected[(int)SortType - 10];
+						val1 = fl.CMCKNKKCNDK_Status.spNoteExpected[(int)SortType - 10];
+						val2 = fr.CMCKNKKCNDK_Status.spNoteExpected[(int)SortType - 10];
 						break;
 				}
 			}

@@ -27,7 +27,7 @@ namespace XeApp.Game.Menu
 			id = data.PPFNGGCBJKC_Id;
 			title = data.ADCMNODJBGJ_Title;
 			message = data.JONNCMDGMKA_Message;
-			imageId = data.EAHPLCJMPHD_ImageId;
+			imageId = data.EAHPLCJMPHD_PId;
 			graffitiId = data.LKDJHPLBKAI_GraffitiId;
 			divaLId = data.GGHHHIIENAF_DivaLId;
 			divaRId = data.NLPDDGADNFP_DivaRId;
@@ -239,9 +239,9 @@ namespace XeApp.Game.Menu
 			m_notPriorityTipsIdList.Clear();
 			m_listUpList.Clear();
 			m_totalWeight = 0;
-			for(int i = 0; i < dbTips.CDENCMNHNGA.Count; i++)
+			for(int i = 0; i < dbTips.CDENCMNHNGA_table.Count; i++)
 			{
-				BCKMELFCKKN_Tips.ALLFFCNKFBG tips = dbTips.CDENCMNHNGA[i];
+				BCKMELFCKKN_Tips.ALLFFCNKFBG tips = dbTips.CDENCMNHNGA_table[i];
 				if(tips.PPEGAKEIEGM_Enabled > 1)
 				{
 					if(tips.HFLGGIBMEOL[priorityTable] != 0)
@@ -251,7 +251,7 @@ namespace XeApp.Game.Menu
 							if (!IsSessionEvent(tips.NCGNCEOOBGP_EventType))
 								continue;
 						}
-						if (Utility.IsWithinPeriod(GetServerUnixTime(), tips.KJBGCLPMLCG_Start, tips.GJFPFFBAKGK_End))
+						if (Utility.IsWithinPeriod(GetServerUnixTime(), tips.KJBGCLPMLCG_Start, tips.GJFPFFBAKGK_CloseAt))
 						{
 							int idx = m_historyList.FindIndex((int x) =>
 							{
@@ -267,7 +267,7 @@ namespace XeApp.Game.Menu
 									m_listUpList.Clear();
 									m_totalWeight = 0;
 								}
-								m_listUpList.Add(new ListupInfo() { flags = (uint)((tips.EAHPLCJMPHD_ImageId > 0) ? 1 : 0), tipsId = tips.PPFNGGCBJKC_Id, weight = m_totalWeight });
+								m_listUpList.Add(new ListupInfo() { flags = (uint)((tips.EAHPLCJMPHD_PId > 0) ? 1 : 0), tipsId = tips.PPFNGGCBJKC_Id, weight = m_totalWeight });
 								m_totalWeight += tips.HFLGGIBMEOL[priorityTable];
 							}
 						}
@@ -443,7 +443,7 @@ namespace XeApp.Game.Menu
 							if (!IsSessionEvent(eventType))
 								continue;
 						}
-						if (!Utility.IsWithinPeriod(GetServerUnixTime(), tip.KJBGCLPMLCG_Start, tip.GJFPFFBAKGK_End))
+						if (!Utility.IsWithinPeriod(GetServerUnixTime(), tip.KJBGCLPMLCG_Start, tip.GJFPFFBAKGK_CloseAt))
 							continue;
 						m_tipsList.Add(new TipsData(tip));
 						if(tip.ILPJHHKLOEN_Situation == 0)
@@ -485,7 +485,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA98584 Offset: 0xA98584 VA: 0xA98584
 		private long GetServerUnixTime()
 		{
-			return NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			return NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		}
 	}
 }

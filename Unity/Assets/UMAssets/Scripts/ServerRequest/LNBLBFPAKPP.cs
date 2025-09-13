@@ -32,7 +32,7 @@ public class LNBLBFPAKPP_GetLineLinkageStatus : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0x10BC458 Offset: 0x10BC458 VA: 0x10BC458 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG = new GKGOHBEFKEE();
 		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

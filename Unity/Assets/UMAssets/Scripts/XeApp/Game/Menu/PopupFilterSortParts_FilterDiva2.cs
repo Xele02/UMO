@@ -121,7 +121,7 @@ namespace XeApp.Game.Menu
 			m_list_diva_id.Clear();
 			for(int i = 0; i < a_view_diva.Count; i++)
 			{
-				if(!a_is_has_only || a_view_diva[i].FJODMPGPDDD_DivaHave)
+				if(!a_is_has_only || a_view_diva[i].FJODMPGPDDD_Unlocked)
 				{
 					m_bind_tbl[m_list_diva_id.Count].m_diva_id = a_view_diva[i].AHHJLDLAPAN_DivaId;
 					m_list_diva_id.Add(a_view_diva[i].AHHJLDLAPAN_DivaId);
@@ -144,7 +144,7 @@ namespace XeApp.Game.Menu
 						});
 						if(diva != null)
 						{
-							cosId = diva.EGAFMGDFFCH_HomeDivaCostume.DAJGPBLEEOB_PrismCostumeId;
+							cosId = diva.EGAFMGDFFCH_HomeDivaCostume.DAJGPBLEEOB_ModelId;
 							colId = diva.JFFLFIMIMOI_HomeColorId;
 						}
 					}

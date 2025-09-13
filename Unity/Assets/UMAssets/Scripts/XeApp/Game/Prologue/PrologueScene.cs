@@ -364,9 +364,9 @@ namespace XeApp.Game.Prologue
 				default:
 					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.LGKFMLIOPKL_GetDivaInfo(1).CPGFPEDMDEH_Have = 1;
 					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().LHPDDGIJKNB_Reset();
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_MainDivas[0].DIPKCALNIII_Id = 1;
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_MainDivas[0].BEEAIAAJOHD_CId = 1;
-					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_MainDivas[0].AFNIOJHODAG_CostumeColorId = 0;
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_Diva[0].DIPKCALNIII_DivaId = 1;
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_Diva[0].BEEAIAAJOHD_CostumeId = 1;
+					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_Diva[0].AFNIOJHODAG_CostumeColorId = 0;
 					GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.AHEFHIMGIBI_PlayerData.MNGKOHKKAHI(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData);
 					Database.Instance.advSetup.Setup(1);
 					Database.Instance.advResult.Setup("RhythmAdjust");
@@ -389,9 +389,9 @@ namespace XeApp.Game.Prologue
 			List<int> l = new List<int>();
 			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
 			{
-				for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas.Count; i++)
+				for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table.Count; i++)
 				{
-					BJPLLEBHAGO_DivaInfo dInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas[i];
+					BJPLLEBHAGO_DivaInfo dInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[i];
 					if(dInfo.PPEGAKEIEGM_Enabled == 2)
 					{
 						l.Add(dInfo.AHHJLDLAPAN_DivaId);
@@ -444,29 +444,29 @@ namespace XeApp.Game.Prologue
 		private List<string> ListupSceneAssetPath(int sceneId)
 		{
 			List<string> res = new List<string>();
-			MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[sceneId - 1];
+			MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[sceneId - 1];
 			res.Add(string.Format("ct/sc/me/01/{0:D6}_01.xab", sceneId));
 			res.Add(string.Format("ct/sc/me/01/{0:D6}_02.xab", sceneId));
 			res.Add(string.Format("ct/sc/me/02/{0:D6}_01.xab", sceneId));
 			if(scene.PBEPKDEEBBK_AS > 0)
 			{
 				CDNKOFIELMK skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[scene.PBEPKDEEBBK_AS - 1];
-				for(int i = 0; i < skill.EGLDFPILJLG_BuffEffectType.Length; i++)
+				for(int i = 0; i < skill.EGLDFPILJLG_SkillBuffEffect.Length; i++)
 				{
-					if(skill.EGLDFPILJLG_BuffEffectType[i] != 0)
+					if(skill.EGLDFPILJLG_SkillBuffEffect[i] != 0)
 					{
-						res.Add(string.Format("ct/gm/as/{0:D3}.xab", skill.EGLDFPILJLG_BuffEffectType[i]));
+						res.Add(string.Format("ct/gm/as/{0:D3}.xab", skill.EGLDFPILJLG_SkillBuffEffect[i]));
 					}
 				}
 			}
 			if (scene.ECKJJCGPOPN_AS2 > 0)
 			{
 				CDNKOFIELMK skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[scene.ECKJJCGPOPN_AS2 - 1];
-				for (int i = 0; i < skill.EGLDFPILJLG_BuffEffectType.Length; i++)
+				for (int i = 0; i < skill.EGLDFPILJLG_SkillBuffEffect.Length; i++)
 				{
-					if (skill.EGLDFPILJLG_BuffEffectType[i] != 0)
+					if (skill.EGLDFPILJLG_SkillBuffEffect[i] != 0)
 					{
-						res.Add(string.Format("ct/gm/as/{0:D3}.xab", skill.EGLDFPILJLG_BuffEffectType[i]));
+						res.Add(string.Format("ct/gm/as/{0:D3}.xab", skill.EGLDFPILJLG_SkillBuffEffect[i]));
 					}
 				}
 			}

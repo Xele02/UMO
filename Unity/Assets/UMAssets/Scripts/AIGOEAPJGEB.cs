@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 public class AIGOEAPJGEB
 {
-	public int EHOIENNDEDH_Crypted; // 0x8
+	public int EHOIENNDEDH_IdCrypted; // 0x8
 	public int MKENMKMJFKP_Crypted; // 0xC
 	public int ICKOHEDLEFP_Crypted; // 0x10
 	public int HDMBJJJJEEG_Crypted; // 0x14
-	public int PPFNGGCBJKC { get { return EHOIENNDEDH_Crypted ^ 0x301d6e99; } set { EHOIENNDEDH_Crypted = value ^ 0x301d6e99; } } //0xCD0F34 DEMEPMAEJOO 0xCD0F48 HIGKAIDMOKN
+	public int PPFNGGCBJKC { get { return EHOIENNDEDH_IdCrypted ^ 0x301d6e99; } set { EHOIENNDEDH_IdCrypted = value ^ 0x301d6e99; } } //0xCD0F34 DEMEPMAEJOO 0xCD0F48 HIGKAIDMOKN
 	public int INDDJNMPONH { get { return MKENMKMJFKP_Crypted ^ 0xc85b093; } set { MKENMKMJFKP_Crypted = value ^ 0xc85b093; } } //0xCD0F5C GHAILOLPHPF 0xCD0F70 BACGOKIGMBC
 	public int JBGEEPFKIGG { get { return ICKOHEDLEFP_Crypted ^ 0x299e7cd; } set { ICKOHEDLEFP_Crypted = value ^ 0x299e7cd; } } //0xCD0F84 OLOCMINKGON 0xCD0F98 ABAFHIBFKCE
 	public int MAFAIIHJAFG { get { return HDMBJJJJEEG_Crypted ^ 0x598ffe9; } set { HDMBJJJJEEG_Crypted = value ^ 0x598ffe9; } } //0xCD0FAC LLNFMLKMFKB 0xCD0FC0 PCICDCAILIF

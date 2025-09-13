@@ -248,10 +248,10 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				SetGauge((int)((m_data.ABLHIAEDJAI_CurrentValue - m_data.DMHDNKILKGI_MaxPoint) * 100.0f / (m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_TotalPoint - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_StartPoint)),
-						(int)((a - m_data.DMHDNKILKGI_MaxPoint) * 100.0f / (m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_TotalPoint - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_StartPoint)));
+				SetGauge((int)((m_data.ABLHIAEDJAI_CurrentValue - m_data.DMHDNKILKGI_MaxPoint) * 100.0f / (m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_Point - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_StartPoint)),
+						(int)((a - m_data.DMHDNKILKGI_MaxPoint) * 100.0f / (m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_Point - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_StartPoint)));
 				m_point_den.SetNumber(a - m_data.DMHDNKILKGI_MaxPoint, 0);
-				m_point_mol.SetNumber(m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_TotalPoint - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_StartPoint, 0);
+				m_point_mol.SetNumber(m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_Point - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_StartPoint, 0);
 			}
 			int a2 = Mathf.Min(m_have_item, m_use_item_max);
 			if(m_item_use_num == a2)
@@ -282,7 +282,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < m_reward_list.Count - 1; i++)
 			{
-				if (item_data.IILKAJBHLMJ_Value * m_item_use_num + m_data.ABLHIAEDJAI_CurrentValue < m_reward_list[i].DNBFMLBNAEE_TotalPoint)
+				if (item_data.IILKAJBHLMJ_Value * m_item_use_num + m_data.ABLHIAEDJAI_CurrentValue < m_reward_list[i].DNBFMLBNAEE_Point)
 					return i;
 			}
 			return m_reward_list.Count - 1;
@@ -293,7 +293,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < m_reward_list.Count - 1; i++)
 			{
-				if (m_data.ABLHIAEDJAI_CurrentValue < m_reward_list[i].DNBFMLBNAEE_TotalPoint)
+				if (m_data.ABLHIAEDJAI_CurrentValue < m_reward_list[i].DNBFMLBNAEE_Point)
 					return i;
 			}
 			return m_reward_list.Count - 1;
@@ -344,7 +344,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				m_use_item_max = (m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_TotalPoint - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_StartPoint) / item_data.IILKAJBHLMJ_Value;
+				m_use_item_max = (m_reward_list[m_reward_list.Count - 1].DNBFMLBNAEE_Point - m_reward_list[m_reward_list.Count - 1].CCDPNBJMKDI_StartPoint) / item_data.IILKAJBHLMJ_Value;
 			}
 			m_caution.text = JpStringLiterals.StringLiteral_15830 + m_use_item_max.ToString() + Smart.Format(JpStringLiterals.StringLiteral_15831, m_use_item_max);
 			m_episode_item.text = item_data.OPFGFINHFCE_Name;
@@ -484,7 +484,7 @@ namespace XeApp.Game.Menu
 					_index++;
 				}
 			}
-			int a = (int)(m_reward_list[index].DNBFMLBNAEE_TotalPoint * 100.0f / m_data.DMHDNKILKGI_MaxPoint);
+			int a = (int)(m_reward_list[index].DNBFMLBNAEE_Point * 100.0f / m_data.DMHDNKILKGI_MaxPoint);
 			if (isAcquired)
 				a = 0;
 			m_item_icon_list[_index].line_abs.StartAllAnimGoStop(a, a);

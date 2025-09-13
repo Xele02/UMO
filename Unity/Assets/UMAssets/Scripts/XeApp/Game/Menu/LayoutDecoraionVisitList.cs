@@ -86,7 +86,7 @@ namespace XeApp.Game.Menu
 		{
 			//0x19ECFD0
 			bool isLoaded = false;
-			GameManager.Instance.DivaIconCache.Load(friend.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId, friend.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, friend.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId, (IiconTexture texture) =>
+			GameManager.Instance.DivaIconCache.Load(friend.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId, friend.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, friend.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId, (IiconTexture texture) =>
 			{
 				//0x19ECB88
 				isLoaded = true;

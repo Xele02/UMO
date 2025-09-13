@@ -28,7 +28,7 @@ namespace XeApp.Game.Menu
 				}
 				else
 				{
-					long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+					long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 					if(time != m_savedCurrentTime)
 					{
 						m_savedCurrentTime = time;
@@ -72,7 +72,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x15406BC Offset: 0x15406BC VA: 0x15406BC
 		public void CheckRestart()
 		{
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			if(m_savedCurrentTime == time)
 				return;
 			m_savedCurrentTime = time;

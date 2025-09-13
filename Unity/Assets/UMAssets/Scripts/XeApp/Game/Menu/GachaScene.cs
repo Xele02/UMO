@@ -181,7 +181,7 @@ namespace XeApp.Game.Menu
 				yield return null;
 			if(!err)
 			{
-				CIOECGOMILE.HHCJCDFCLOB.DJICHKCLMCD_UpdateCurrencies(req.NFEAMMJIMPG.BBEPLKNMICJ_CurrenciesList);
+				CIOECGOMILE.HHCJCDFCLOB.DJICHKCLMCD_UpdateCurrencies(req.NFEAMMJIMPG.BBEPLKNMICJ_Balances);
 				req = null;
 				done = false;
 				err = false;
@@ -396,7 +396,7 @@ namespace XeApp.Game.Menu
 			{
 				for(int i = 0; i < GachaProductList.Count; i++)
 				{
-					GachaProductList[i].CADENLBDAEB = false;
+					GachaProductList[i].CADENLBDAEB_IsNew = false;
 				}
 			}
 		}
@@ -476,10 +476,10 @@ namespace XeApp.Game.Menu
 			m_appearLot = null;
 			m_rateInfoList.Clear();
 			m_episodeInfoList.Clear();
-			product.CADENLBDAEB = false;
+			product.CADENLBDAEB_IsNew = false;
 			NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.DKHDHGAFPGC();
 			NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.ANGMDEPOBEE();
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			GachaUtility.typeAndSeriesId = product.FDEBLMKEMLF_TypeAndSeriesId;
 			GachaUtility.selectCategory = product.INDDJNMPONH_Category;
 			GachaUtility.UpdateGachaProductCategory();
@@ -550,7 +550,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEE74D0 Offset: 0xEE74D0 VA: 0xEE74D0
 		private int FindRelatedEpisodeId(int cardId)
 		{
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[cardId - 1].KELFCMEOPPM_Ep;
+			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[cardId - 1].KELFCMEOPPM_Ep;
 		}
 
 		//// RVA: 0xEE7600 Offset: 0xEE7600 VA: 0xEE7600
@@ -607,17 +607,17 @@ namespace XeApp.Game.Menu
             int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(fullItemId);
 			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.PFIOMNHDHCO_Valkyrie)
 			{
-				JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo valk = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[itemId - 1];
+				JPIANKEOOMB_Valkyrie.KJPIDJOMODA_ValkyrieInfo valk = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[itemId - 1];
 				CheckNewValkyrieArgs arg = new CheckNewValkyrieArgs();
 				arg.pilot_id = valk.PFGJJLGLPAC_PilotId;
-				arg.val_id = valk.GPPEFLKGGGJ_Id;
+				arg.val_id = valk.GPPEFLKGGGJ_ValkyrieId;
 				MenuScene.Instance.Call(TransitionList.Type.GACHA_CHECK_NEW_VALKYRIE, arg, true);
 			}
 			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume)
 			{
-				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[itemId - 1];
+				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[itemId - 1];
 				CheckNewCostumeArgs arg = new CheckNewCostumeArgs();
-				arg.cos_id = cos.DAJGPBLEEOB_PrismCostumeModelId;
+				arg.cos_id = cos.DAJGPBLEEOB_ModelId;
 				arg.diva_id = cos.AHHJLDLAPAN_DivaId;
 				MenuScene.Instance.Call(TransitionList.Type.GACHA_CHECK_NEW_COSTUME, arg, true);
 			}
@@ -1294,17 +1294,17 @@ namespace XeApp.Game.Menu
 			if(!isHideRareMark)
 			{
 				GachaRateRarityInfo info = new GachaRateRarityInfo();
-				info.starNum = lot.EKLIPGELKCL;
+				info.starNum = lot.EKLIPGELKCL_Rarity;
 				info.percent = lot.MMOJHIPAAIK;
 				infoList.Add(info);
 			}
-			for(int i = 0; i < lot.HBHMAKNGKFK.Count; i++)
+			for(int i = 0; i < lot.HBHMAKNGKFK_Items.Count; i++)
 			{
 				GachaRateItemInfo info = new GachaRateItemInfo();
-				info.attribute = GetCardAttributeType(lot.HBHMAKNGKFK[i].JJBGOIMEIPF_ItemId);
-				info.name = lot.HBHMAKNGKFK[i].JBLCNEILLMJ_ItemName;
-				info.percent = lot.HBHMAKNGKFK[i].MMOJHIPAAIK_Probability;
-				info.pickup = lot.HBHMAKNGKFK[i].JOPPFEHKNFO_IsPickup;
+				info.attribute = GetCardAttributeType(lot.HBHMAKNGKFK_Items[i].JJBGOIMEIPF_ItemId);
+				info.name = lot.HBHMAKNGKFK_Items[i].JBLCNEILLMJ_ItemName;
+				info.percent = lot.HBHMAKNGKFK_Items[i].MMOJHIPAAIK_Probability;
+				info.pickup = lot.HBHMAKNGKFK_Items[i].JOPPFEHKNFO_IsPickup;
 				infoList.Add(info);
 			}
 		}
@@ -1317,14 +1317,14 @@ namespace XeApp.Game.Menu
 			info.episodeId = lot.GDEJFKCMNAC_EpisodeId;
 			info.episodeContent = PIGBBNDPPJC.EJOJNFDHDHN_GetEpName(lot.GDEJFKCMNAC_EpisodeId);
 			infoList.Add(info);
-			for(int i = 0; i < lot.HBHMAKNGKFK.Count; i++)
+			for(int i = 0; i < lot.HBHMAKNGKFK_Items.Count; i++)
 			{
 				GachaRateEpItemInfo info2 = new GachaRateEpItemInfo();
-				info2.attribute = GetCardAttributeType(lot.HBHMAKNGKFK[i].JJBGOIMEIPF_ItemId);
-				info2.name = lot.HBHMAKNGKFK[i].JBLCNEILLMJ_ItemName;
-				info2.percent = lot.HBHMAKNGKFK[i].MMOJHIPAAIK_Probability;
-				info2.pickup = lot.HBHMAKNGKFK[i].JOPPFEHKNFO_IsPickup;
-				info2.starNum = lot.HBHMAKNGKFK[i].FJNGOPBGEOI_GroupIdx;
+				info2.attribute = GetCardAttributeType(lot.HBHMAKNGKFK_Items[i].JJBGOIMEIPF_ItemId);
+				info2.name = lot.HBHMAKNGKFK_Items[i].JBLCNEILLMJ_ItemName;
+				info2.percent = lot.HBHMAKNGKFK_Items[i].MMOJHIPAAIK_Probability;
+				info2.pickup = lot.HBHMAKNGKFK_Items[i].JOPPFEHKNFO_IsPickup;
+				info2.starNum = lot.HBHMAKNGKFK_Items[i].FJNGOPBGEOI_GroupIdx;
 				infoList.Add(info2);
 			}
 		}
@@ -1334,7 +1334,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < groups.Count; i++)
 			{
-				if (groups[i].EKLIPGELKCL == rare)
+				if (groups[i].EKLIPGELKCL_Rarity == rare)
 					return groups[i];
 			}
 			return null;
@@ -1344,7 +1344,7 @@ namespace XeApp.Game.Menu
 		private static GameAttribute.Type GetCardAttributeType(int app_item_id)
 		{
 			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(app_item_id);
-			return (GameAttribute.Type)IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[id - 1].FKDCCLPGKDK_Ma;
+			return (GameAttribute.Type)IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[id - 1].FKDCCLPGKDK_Ma;
 		}
 
 		//// RVA: 0xEEBCE4 Offset: 0xEEBCE4 VA: 0xEEBCE4

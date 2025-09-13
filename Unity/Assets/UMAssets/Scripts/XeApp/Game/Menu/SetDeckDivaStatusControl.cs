@@ -100,7 +100,7 @@ namespace XeApp.Game.Menu
 			CMMKCEPBIHI.AECDJDIJJKD_ApplySkills(ref m_calcStatusResult, divaData, null, playerData, null, null, null);
 			m_status.Clear();
 			m_calcStatusResult.IMLOCECFHGK(ref m_status);
-			m_status.Add(divaData.CMCKNKKCNDK_EquippedStatus);
+			m_status.Add(divaData.CMCKNKKCNDK_Status);
 			m_statusTitleText.text = MessageManager.Instance.GetBank("menu").GetMessageByLabel("unit_diva_status_titla_total");
 			SetStatusTextEnable(true);
 			SetStatusValue(m_status.Total);

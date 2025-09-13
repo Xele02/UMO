@@ -12,7 +12,7 @@ public class ANCJLICGOLP
     }
 
 	private Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK; // 0x8
-	private Dictionary<string, JDEFIJBCJLC_EncryptedString> FJOEBCMGDMI; // 0xC
+	private Dictionary<string, JDEFIJBCJLC_EncryptedString> FJOEBCMGDMI_String; // 0xC
 	public List<MFJONNINDCJ> JGJJIBPPEPD_List; // 0x10
 	private static List<string> OHNJJIMGKGK_TypesStr; // 0x0
 
@@ -38,18 +38,18 @@ public class ANCJLICGOLP
 	public void KHEKNNFCAOI_Init()
 	{
 		OHJFBLFELNK = new Dictionary<string, CEBFFLDKAEC_SecureInt>();
-		FJOEBCMGDMI = new Dictionary<string, JDEFIJBCJLC_EncryptedString>();
+		FJOEBCMGDMI_String = new Dictionary<string, JDEFIJBCJLC_EncryptedString>();
 		JGJJIBPPEPD_List = new List<MFJONNINDCJ>();
 	}
 
 	// RVA: 0xD52F58 Offset: 0xD52F58 VA: 0xD52F58
-	public bool IIEMACPEEBJ(List<string> ANFNAHPIJDH, EDOHBJAPLPF_JsonData AAEDAEHIONI)
+	public bool IIEMACPEEBJ(List<string> _ANFNAHPIJDH_BlockNames, EDOHBJAPLPF_JsonData AAEDAEHIONI)
 	{
 		int cnt = 0;    // var7
 		int cnt2 = 0;  // var9
 		do
 		{
-			int size = ANFNAHPIJDH.Count;
+			int size = _ANFNAHPIJDH_BlockNames.Count;
 			if(size <= cnt)
 			{
 				size = OHNJJIMGKGK_TypesStr.Count;
@@ -57,7 +57,7 @@ public class ANCJLICGOLP
 			}
 			if(AAEDAEHIONI != null)
 			{
-				string s = ANFNAHPIJDH[cnt];
+				string s = _ANFNAHPIJDH_BlockNames[cnt];
 				bool r = AAEDAEHIONI.BBAJPINMOEP_Contains(s);
 				if(r)
 				{
@@ -66,8 +66,8 @@ public class ANCJLICGOLP
 					EDOHBJAPLPF_JsonData b = AAEDAEHIONI[s];
 					b = b[AFEHLCGHAEE_Strings.KAPMOPMDHJE_label]; // label
 					int label = (int)b;
-					int idx = OHNJJIMGKGK_TypesStr.FindIndex((/*string*/ GHPLINIACBB) => {
-						return ANFNAHPIJDH[cnt] == GHPLINIACBB;
+					int idx = OHNJJIMGKGK_TypesStr.FindIndex((/*string*/ _GHPLINIACBB_x) => {
+						return _ANFNAHPIJDH_BlockNames[cnt] == _GHPLINIACBB_x;
 					});
 					if(-1 < idx)
 					{
@@ -158,7 +158,7 @@ public class ANCJLICGOLP
 				EDOHBJAPLPF_JsonData data = IMKIBKOICBF[OIPCCBHIKIA];
 				JDEFIJBCJLC_EncryptedString elem = new JDEFIJBCJLC_EncryptedString();
 				elem.DNJEJEANJGL_Value = (string)data["v"];
-				FJOEBCMGDMI.Add((string)data["k"], elem);
+				FJOEBCMGDMI_String.Add((string)data["k"], elem);
 				OIPCCBHIKIA++;
 			} while(OIPCCBHIKIA != size);
 		}

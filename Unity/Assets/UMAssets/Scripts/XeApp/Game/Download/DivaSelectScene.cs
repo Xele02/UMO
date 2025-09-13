@@ -79,9 +79,9 @@ namespace XeApp.Game.DownLoad
 				List<int> l = new List<int>();
 				if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
 				{
-					for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas.Count; i++)
+					for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table.Count; i++)
 					{
-                        BJPLLEBHAGO_DivaInfo diva = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas[i];
+                        BJPLLEBHAGO_DivaInfo diva = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[i];
 						if(diva.PPEGAKEIEGM_Enabled == 2)
 						{
 							l.Add(diva.AHHJLDLAPAN_DivaId);

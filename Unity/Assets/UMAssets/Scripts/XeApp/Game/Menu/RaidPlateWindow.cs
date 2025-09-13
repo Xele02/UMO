@@ -41,7 +41,7 @@ namespace XeApp.Game.Menu
 		{
 			PKNOKJNLPOE_EventRaid ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.CADKONMJEDA_EventRaid, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as PKNOKJNLPOE_EventRaid;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			m_damegeText.text = string.Format(bk.GetMessageByLabel("pop_raid_cannon_plate_text01"), ev.GGDBEANLCPC.HALIDDHLNEG_MCannonDamage);
+			m_damegeText.text = string.Format(bk.GetMessageByLabel("pop_raid_cannon_plate_text01"), ev.GGDBEANLCPC.HALIDDHLNEG_Damage);
 			m_text01.text = "";
 			m_text02.text = "";
 			if(ev.GGDBEANLCPC.OPIBAPEGCLA_MCannonPlate.Count < 1)

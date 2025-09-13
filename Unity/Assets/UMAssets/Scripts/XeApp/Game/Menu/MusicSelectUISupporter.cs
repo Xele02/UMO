@@ -253,7 +253,7 @@ namespace XeApp.Game.Menu
 						EventMusicSelectSceneBase.OpenWeekRecoveryWindow(musicData, OnWeekRecovery, cancelCallback);
 						return false;
 					}
-					if(CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC_GetCurrent() >= musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].BPLOEAHOPFI_Energy)
+					if(CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_Stamina.DCLKMNGMIKC_GetCurrentValue() >= musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].BPLOEAHOPFI_Stamina)
 						return true;
 					EventMusicSelectSceneBase.OpenStaminaWindow(() =>
 					{
@@ -741,7 +741,7 @@ namespace XeApp.Game.Menu
 			}
 			if(!musicData.HDPMAJKGIOI)
 			{
-				m_playButtonUI.SetNeedEnergy(musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].BPLOEAHOPFI_Energy);
+				m_playButtonUI.SetNeedEnergy(musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].BPLOEAHOPFI_Stamina);
 			}
 			data.enemyHasSkill = musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].HPBPDHPIBGN_EnemyData.CDEFLIHHNAB_HasSkills;
 			data.isReceiveMission = IsReceiveMission();
@@ -757,7 +757,7 @@ namespace XeApp.Game.Menu
 			if(musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].HHMLMKAEJBJ_Score != null)
 			{
 				StringBuilder str = new StringBuilder(8);
-				str.Set(musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].HHMLMKAEJBJ_Score.ANAJIAENLNB_MusicLevel.ToString());
+				str.Set(musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].HHMLMKAEJBJ_Score.ANAJIAENLNB_Level.ToString());
 				if(isLine6Mode)
 				{
 					str.Append("+");
@@ -786,7 +786,7 @@ namespace XeApp.Game.Menu
 				if(musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].BCGLDMKODLC_IsClear)
 				{
 					m_musicInfo.SetHighscore(musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].KNIFCANOHOC_Score);
-					m_musicInfo.SetMusicScoreRank((ResultScoreRank.Type)musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].BAKLKJLPLOJ.DLPBHJALHCK_GetScoreRank(musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].KNIFCANOHOC_Score));
+					m_musicInfo.SetMusicScoreRank((ResultScoreRank.Type)musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].BAKLKJLPLOJ_MusicLevel.DLPBHJALHCK_GetScoreRank(musicData.MGJKEJHEBPO_DiffInfos[(int)m_difficulty].KNIFCANOHOC_Score));
 				}
 				else
 				{

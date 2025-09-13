@@ -10,31 +10,31 @@ public class GPMHOAKFALE_Adventure : DIHHCBACKGG_DbSection
 	[UMOClass(ReaderClass = "LLFEFBAPGCH")]
 	public class NGDBKCKMDHE_AdventureData
 	{
-		public int FBGGEFFJJHB; // 0x8
+		public int FBGGEFFJJHB_xor; // 0x8
 		public int AOGEMIIMFLD; // 0xC
 		public int OIFAFKDMEEJ_EnabledCrypted; // 0x10
 		public int INAKHLKLFOK_FileIdCrypted; // 0x14
 
 		[UMOMember(ReaderMember = "PPFNGGCBJKC", CryptedInMemory = true, Desc = "Adventure id")]
-		public int BPNKGDGBBFG { get { return AOGEMIIMFLD  ^ FBGGEFFJJHB; } set { AOGEMIIMFLD = value ^ FBGGEFFJJHB; } } //0x1E5F810 OPOKKOIDCLG 0x1E5F6B8 CKNHCODBIAG
+		public int BPNKGDGBBFG { get { return AOGEMIIMFLD  ^ FBGGEFFJJHB_xor; } set { AOGEMIIMFLD = value ^ FBGGEFFJJHB_xor; } } //0x1E5F810 OPOKKOIDCLG 0x1E5F6B8 CKNHCODBIAG
 		[UMOMember(ReaderMember = "CEHGGKDLAFA", CryptedInMemory = true, Desc = "Id of the file to read for the adv setup (/adv/xxx.dat)")]
-		public int KKPPFAHFOJI_FileId { get { return INAKHLKLFOK_FileIdCrypted ^ FBGGEFFJJHB; } set { INAKHLKLFOK_FileIdCrypted = value ^ FBGGEFFJJHB; } } //0x1E5F820 JHDAICCKIOG 0x1E5F6D8 MCCPIGOELKB
+		public int KKPPFAHFOJI_FileId { get { return INAKHLKLFOK_FileIdCrypted ^ FBGGEFFJJHB_xor; } set { INAKHLKLFOK_FileIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1E5F820 JHDAICCKIOG 0x1E5F6D8 MCCPIGOELKB
 		[UMOMember(ReaderMember = "IJEKNCDIIAE|PLALNIIBLOF", Desc = "Availabe in game if value = 2", CryptedInMemory = true)]
-		public int PPEGAKEIEGM_Enabled { get { return OIFAFKDMEEJ_EnabledCrypted ^ FBGGEFFJJHB; } set { OIFAFKDMEEJ_EnabledCrypted = value ^ FBGGEFFJJHB; } } //0x1E5F830 KPOEEPIMMJP 0x1E5F6C8 NCIEAFEDPBH
+		public int PPEGAKEIEGM_Enabled { get { return OIFAFKDMEEJ_EnabledCrypted ^ FBGGEFFJJHB_xor; } set { OIFAFKDMEEJ_EnabledCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1E5F830 KPOEEPIMMJP 0x1E5F6C8 NCIEAFEDPBH
 
 		// RVA: 0x1E5F7EC Offset: 0x1E5F7EC VA: 0x1E5F7EC
 		//public uint CAOGDCBPBAN() { }
 	}
 
 	[UMOMember(ReaderMember = "CEEPNGEADMG", Desc = "List of the adventures")]
-	public List<NGDBKCKMDHE_AdventureData> CDENCMNHNGA_List { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
+	public List<NGDBKCKMDHE_AdventureData> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
 
 	//// RVA: 0x1E5F1EC Offset: 0x1E5F1EC VA: 0x1E5F1EC
 	public NGDBKCKMDHE_AdventureData GCINIJEMHFK_GetAdventure(int PPFNGGCBJKC)
 	{
-		if (PPFNGGCBJKC != 0 && PPFNGGCBJKC <= CDENCMNHNGA_List.Count)
+		if (PPFNGGCBJKC != 0 && PPFNGGCBJKC <= CDENCMNHNGA_table.Count)
 		{
-			return CDENCMNHNGA_List[PPFNGGCBJKC - 1];
+			return CDENCMNHNGA_table[PPFNGGCBJKC - 1];
 		}
 		return null;
 	}
@@ -45,19 +45,19 @@ public class GPMHOAKFALE_Adventure : DIHHCBACKGG_DbSection
 		JIKKNHIAEKG_BlockName = "";
 		LNIMEIMBCMF = false;
 		LMHMIIKCGPE = 0;
-		CDENCMNHNGA_List = new List<NGDBKCKMDHE_AdventureData>();
+		CDENCMNHNGA_table = new List<NGDBKCKMDHE_AdventureData>();
 	}
 
 	// RVA: 0x1E5F3AC Offset: 0x1E5F3AC VA: 0x1E5F3AC Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		CDENCMNHNGA_List.Clear();
+		CDENCMNHNGA_table.Clear();
 	}
 
 	// RVA: 0x1E5F424 Offset: 0x1E5F424 VA: 0x1E5F424 Slot: 9
-	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
+	public override bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data)
 	{
-		NJBPFPMDKHN parser = NJBPFPMDKHN.HEGEKFMJNCC(DBBGALAPFGC);
+		NJBPFPMDKHN parser = NJBPFPMDKHN.HEGEKFMJNCC(_DBBGALAPFGC_Data);
 		MGEJEAENEEG(parser);
 		return true;
 	}
@@ -76,11 +76,11 @@ public class GPMHOAKFALE_Adventure : DIHHCBACKGG_DbSection
 		for (int i = 0; i < array.Length; i++)
 		{
 			NGDBKCKMDHE_AdventureData data = new NGDBKCKMDHE_AdventureData();
-			data.FBGGEFFJJHB = k;
+			data.FBGGEFFJJHB_xor = k;
 			data.BPNKGDGBBFG = array[i].PPFNGGCBJKC;
 			data.PPEGAKEIEGM_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 			data.KKPPFAHFOJI_FileId = array[i].CEHGGKDLAFA;
-			CDENCMNHNGA_List.Add(data);
+			CDENCMNHNGA_table.Add(data);
 			k *= 0x8d;
 		}
 		return true;

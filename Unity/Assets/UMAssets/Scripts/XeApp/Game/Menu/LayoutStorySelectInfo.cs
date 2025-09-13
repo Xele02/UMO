@@ -243,7 +243,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_buttonTbl == null)
 				return;
-			if(!stageData.BCGLDMKODLC_StatusCompleted)
+			if(!stageData.BCGLDMKODLC_IsClear)
 			{
 				if(stageData.HHBJAEOIGIH_IsLocked)
 				{

@@ -144,7 +144,7 @@ namespace XeApp.Game.Gacha
 		private void ApplyUserInfo(IFBCGCCJBHI playerStatus)
 		{
 			m_userInfoUi.SetLevelLimit(playerStatus.NMCICIHMOCM_PlayerLevelLimit);
-			m_userInfoUi.ChangeEnergyValue(playerStatus.EPNALMONMHB_CurEnergy, playerStatus.POKDILOKODG_MaxEnergy);
+			m_userInfoUi.ChangeEnergyValue(playerStatus.EPNALMONMHB_CurrentStamina, playerStatus.POKDILOKODG_MaxEnergy);
 			m_userInfoUi.ChangeRemainTime(playerStatus.CMCHABFEOHH_RemainTime);
 			m_userInfoUi.ChangeLevelValue(playerStatus.DMBFOMLCGBG_ChangeLevelValue);
 			m_userInfoUi.ChangeEXPValue(playerStatus.OPBHNBECFII_CurExp, playerStatus.PBGFIOONCMB_MaxExp);
@@ -326,7 +326,7 @@ namespace XeApp.Game.Gacha
 		{
 			inputEnable = false;
 			m_mainHud.HideSkipButton();
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			GachaUtility.SetupGachaLimitTime(t);
 			int max = GachaUtility.netGachaProductData.GBAMENANDAN_GetMaxLimit();
 			int ownedQuantity = GachaUtility.netGachaProductData.IEEHJPABKMP_GetOwnedQuantity();
@@ -718,7 +718,7 @@ namespace XeApp.Game.Gacha
 			}
 			else
 			{
-				if(CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC_GetCurrent() < CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCBENCMNOGO_MaxStamina)
+				if(CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_Stamina.DCLKMNGMIKC_GetCurrentValue() < CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_Stamina.DCBENCMNOGO_MaxStamina)
 				{
 					inputEnable = false;
 					PopupWindowManager.OpenStaminaWindow(m_denomControl, () =>

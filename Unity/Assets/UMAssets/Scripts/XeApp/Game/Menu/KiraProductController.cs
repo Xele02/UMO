@@ -75,12 +75,12 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0x14BE938 Offset: 0x14BE938 VA: 0x14BE938
-		// private GCIJNCFDNON GetKiraSceneData(int sceneId) { }
+		// private GCIJNCFDNON_SceneInfo GetKiraSceneData(int sceneId) { }
 
 		// // RVA: 0x14BE808 Offset: 0x14BE808 VA: 0x14BE808
 		private int GetSceneCardIdFromAttrId(int cardId)
 		{
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[cardId - 1].FKDCCLPGKDK_Ma;
+			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[cardId - 1].FKDCCLPGKDK_Ma;
 		}
 
 		// RVA: 0x14BEBEC Offset: 0x14BEBEC VA: 0x14BEBEC

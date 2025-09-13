@@ -271,7 +271,7 @@ namespace XeApp.Game.Menu
 				m_thresholds[0] = Mathf.Clamp((baseRank / 10) * 10, 1, 1000);
 				m_thresholds[1] = Mathf.Clamp((baseRank / 10) * 10 + 10, 1, 1000);
 			}
-			OEGIPPCADNA.HHCJCDFCLOB.FAMFKPBPIAA(false, baseRank, rankingIdx, () =>
+			OEGIPPCADNA.HHCJCDFCLOB.FAMFKPBPIAA_GetRankingPlayerList(false, baseRank, rankingIdx, () =>
 			{
 				//0x105184C
 				OnReceivedRankingList(callback);

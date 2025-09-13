@@ -60,7 +60,7 @@ namespace XeApp.Game.RhythmGame
 				{
 					subgoalValue = musicdb.HLKHOFPAOMK_SubGoalFreeModeByDiff[(int)musicInfo.difficultyType];
 					goalValue = musicdb.HLLJIICKNIP_GoalFreeModeByDiff[(int)musicInfo.difficultyType];
-					maxValue = musicdb.FENOHOEIJOE_MaxValueFreeModeByDiff[(int)musicInfo.difficultyType];
+					maxValue = musicdb.FENOHOEIJOE_MaxValue[(int)musicInfo.difficultyType];
 				}
 				else
 				{
@@ -74,7 +74,7 @@ namespace XeApp.Game.RhythmGame
 				DJNPIGEFPMF_StoryMusicInfo musicdb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.FLMLJIKBIMJ_GetStoryMusicData(musicInfo.storyMusicId);
 				subgoalValue = musicdb.HLKHOFPAOMK_SubGoalByDiff[(int)musicInfo.difficultyType];
 				goalValue = musicdb.HLLJIICKNIP_GoalByDiff[(int)musicInfo.difficultyType];
-				maxValue = musicdb.FENOHOEIJOE_MaxValueByDiff[(int)musicInfo.difficultyType];
+				maxValue = musicdb.FENOHOEIJOE_MaxValue[(int)musicInfo.difficultyType];
 			}
 			basicValue = gameDb.LECAOCJCEKF_FCoeff0;
 			awakenIncreaseRate = gameDb.IHIONKFAAED_FCoeff1 / 100.0f;

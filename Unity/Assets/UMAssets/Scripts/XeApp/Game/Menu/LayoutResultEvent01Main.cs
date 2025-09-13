@@ -187,20 +187,20 @@ namespace XeApp.Game.Menu
 			m_is_loading = true;
 			m_is_loading_music_jacket = true;
 			m_loadedFileCount = 0;
-			m_loadingFileCount = data.HBHMAKNGKFK.Count;
-			for(int i = 0; i < data.HBHMAKNGKFK.Count; i++)
+			m_loadingFileCount = data.HBHMAKNGKFK_Items.Count;
+			for(int i = 0; i < data.HBHMAKNGKFK_Items.Count; i++)
 			{
 				ItemLayout layout = m_ItemLayoutList[i];
-				GameManager.Instance.ItemTextureCache.Load(data.HBHMAKNGKFK[i].KIJAPOFAGPN_ItemId, (IiconTexture texture) =>
+				GameManager.Instance.ItemTextureCache.Load(data.HBHMAKNGKFK_Items[i].KIJAPOFAGPN_ItemId, (IiconTexture texture) =>
 				{
 					//0x1D9DC04
 					texture.Set(layout.icon);
 					m_loadedFileCount++;
 				});
-				layout.count.SetNumber(data.HBHMAKNGKFK[i].HMFFHLPNMPH_Cnt, 0);
-				layout.point.text = string.Concat(RichTextUtility.MakeColorTagString(data.HBHMAKNGKFK[i].DNBFMLBNAEE_Point.ToString(), SystemTextColor.ImportantColor) + JpStringLiterals.StringLiteral_1290);
-				layout.total.text = data.HBHMAKNGKFK[i].AHOKAPCGJMA_TotalPoint.ToString();
-				layout.target_num = data.HBHMAKNGKFK[i].AHOKAPCGJMA_TotalPoint;
+				layout.count.SetNumber(data.HBHMAKNGKFK_Items[i].HMFFHLPNMPH_Cnt, 0);
+				layout.point.text = string.Concat(RichTextUtility.MakeColorTagString(data.HBHMAKNGKFK_Items[i].DNBFMLBNAEE_Point.ToString(), SystemTextColor.ImportantColor) + JpStringLiterals.StringLiteral_1290);
+				layout.total.text = data.HBHMAKNGKFK_Items[i].AHOKAPCGJMA_TotalPoint.ToString();
+				layout.target_num = data.HBHMAKNGKFK_Items[i].AHOKAPCGJMA_TotalPoint;
 			}
 			for(int i = 0; i < m_PointText.Length; i++)
 			{
@@ -208,7 +208,7 @@ namespace XeApp.Game.Menu
 			}
 			m_RankNum.SetNumber(m_ResultData.BKKPKIGLMCN_Ranks[0], 0);
 			m_TotalText.text = m_ResultData.AHOKAPCGJMA_TotalPoint.ToString();
-			m_EpisodeBonus.text = m_ResultData.ANOCILKJGOJ_EpBonus.ToString() + JpStringLiterals.StringLiteral_11079;
+			m_EpisodeBonus.text = m_ResultData.ANOCILKJGOJ_EpisodeCnt.ToString() + JpStringLiterals.StringLiteral_11079;
 			m_EpisodeBonusMulti.text = (m_ResultData.ODCLHPGHDHA_EpBonusMulti - 100).ToString();
 			int s = m_ResultData.ODCLHPGHDHA_EpBonusMulti < 101 ? 1 : 0;
 			m_UpAnim.StartChildrenAnimGoStop(s, s);

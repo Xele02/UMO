@@ -59,7 +59,7 @@ namespace XeApp.Game.Menu
 		private static int ConvertDegreeTexId(int itemId)
 		{
 			int a = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId);
-			return EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.MNCJMDDAFJB_EmblemItem, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem.CDENCMNHNGA_EmblemList[a - 1].HANMDEBPBHG_Pic);
+			return EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.MNCJMDDAFJB_EmblemItem, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem.CDENCMNHNGA_table[a - 1].HANMDEBPBHG_Pic);
 		}
 
 		// // RVA: 0x14BD984 Offset: 0x14BD984 VA: 0x14BD984
@@ -91,7 +91,7 @@ namespace XeApp.Game.Menu
 					}
 					else
 					{
-						MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[val3 - 1];
+						MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[val3 - 1];
 						if(!dbScene.FBJDHLGODPP_Sngl)
 						{
 							subId = Mathf.Min(dbScene.EKLIPGELKCL_Rarity - 3, 3);
@@ -179,7 +179,7 @@ namespace XeApp.Game.Menu
 			string path = "ct/im/" + MakeDecoItemDirectoryPath(cat);
 			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif)
 			{
-				return string.Format("{0}{1:D5}.xab", path, EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif[EKLNMHFCAOI.DEACAHNLMNI_getItemId(id) - 1].GBJFNGCDKPM_FrameId));
+				return string.Format("{0}{1:D5}.xab", path, EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GAPONCJOKAC_DecoStamp.DMKMNGELNAE_Serif[EKLNMHFCAOI.DEACAHNLMNI_getItemId(id) - 1].GBJFNGCDKPM_Type));
 			}
 			else
 			{

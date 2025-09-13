@@ -14,12 +14,12 @@ public class EBHIMFFJBIJ
 	// RVA: 0x14F6240 Offset: 0x14F6240 VA: 0x14F6240
 	public EBHIMFFJBIJ(GIINMFDIIMD CDGMPGLAING)
     {
-        MCJEIDPDMLF_EffectId = JsonUtil.GetInt(CDGMPGLAING.DLENPPIJNPA, "effect_id", 0);
-        LHJMEJOJGKL_NumberOfTimes = JsonUtil.GetInt(CDGMPGLAING.DLENPPIJNPA, "number_of_times", 0);
-        OJCCKOICMJK_CreatedAt = JsonUtil.GetLong(CDGMPGLAING.DLENPPIJNPA, "created_at", 0);
-        LPJIIDJJKOE_UpdatedAt = JsonUtil.GetLong(CDGMPGLAING.DLENPPIJNPA, "updated_at", 0);
-        FFDEBPDJOIJ_ExpiredAt = JsonUtil.GetLong(CDGMPGLAING.DLENPPIJNPA, "expired_at", 0);
-        NMEGALKLMKH_LastUpdatedPlayerId = CDGMPGLAING.DLENPPIJNPA.LBDOLHGDIEB("last_updated_player_id", null).DOHALJMPAAN<int>((EDOHBJAPLPF_JsonData IDLHJIOMJBK) =>
+        MCJEIDPDMLF_EffectId = JsonUtil.GetInt(CDGMPGLAING.DLENPPIJNPA_json, "effect_id", 0);
+        LHJMEJOJGKL_NumberOfTimes = JsonUtil.GetInt(CDGMPGLAING.DLENPPIJNPA_json, "number_of_times", 0);
+        OJCCKOICMJK_CreatedAt = JsonUtil.GetLong(CDGMPGLAING.DLENPPIJNPA_json, "created_at", 0);
+        LPJIIDJJKOE_UpdatedAt = JsonUtil.GetLong(CDGMPGLAING.DLENPPIJNPA_json, "updated_at", 0);
+        FFDEBPDJOIJ_ExpiredAt = JsonUtil.GetLong(CDGMPGLAING.DLENPPIJNPA_json, "expired_at", 0);
+        NMEGALKLMKH_LastUpdatedPlayerId = CDGMPGLAING.DLENPPIJNPA_json.LBDOLHGDIEB("last_updated_player_id", null).DOHALJMPAAN<int>((EDOHBJAPLPF_JsonData IDLHJIOMJBK) =>
         {
             //0x14FDF14
             return (int)IDLHJIOMJBK;
@@ -39,8 +39,8 @@ public class KDMINIMGGLI_EncounterRaidboss : CACGCMBKHDI_Request
     public class ODMFEOAPAAA : CMPLGKFJCIC<EBHIMFFJBIJ>
     {
         // RVA: 0xE85EF4 Offset: 0xE85EF4 VA: 0xE85EF4
-        public ODMFEOAPAAA(EDOHBJAPLPF_JsonData DLENPPIJNPA)
-            : base(new GIINMFDIIMD(DLENPPIJNPA), (GIINMFDIIMD IDLHJIOMJBK) =>
+        public ODMFEOAPAAA(EDOHBJAPLPF_JsonData _DLENPPIJNPA_json)
+            : base(new GIINMFDIIMD(_DLENPPIJNPA_json), (GIINMFDIIMD IDLHJIOMJBK) =>
             {
                 //0xE861A0
                 return new EBHIMFFJBIJ(IDLHJIOMJBK);
@@ -59,7 +59,7 @@ public class KDMINIMGGLI_EncounterRaidboss : CACGCMBKHDI_Request
     }
 
 	// RVA: 0xE85E38 Offset: 0xE85E38 VA: 0xE85E38 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
         NFEAMMJIMPG = new ODMFEOAPAAA(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));
     }

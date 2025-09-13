@@ -32,7 +32,7 @@ namespace XeApp.Game.Menu
 			m_roomData = data;
 			m_roomName.text = data.OPFGFINHFCE_Name;
 			SetImage(data.MALFHCHNEFN_Id);
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			m_newEnable = data.PLKKMHBFDCJ(time);
 			SwitchNewIcon(m_newEnable);
 		}

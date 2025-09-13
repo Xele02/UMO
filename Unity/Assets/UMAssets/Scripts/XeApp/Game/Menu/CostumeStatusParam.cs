@@ -68,14 +68,14 @@ namespace XeApp.Game.Menu
 						m_txt_effect_01.text = strs[0];
 						m_txt_effect_02.text = strs[1];
 					}
-					GameManager.Instance.CostumeIconCache.Load(a_data.AHHJLDLAPAN_DivaId, a_data.DAJGPBLEEOB_PrismCostumeId, a_color, (IiconTexture texture) =>
+					GameManager.Instance.CostumeIconCache.Load(a_data.AHHJLDLAPAN_DivaId, a_data.DAJGPBLEEOB_ModelId, a_color, (IiconTexture texture) =>
 					{
 						//0x16E89F0
 						texture.Set(m_image_cos);
 						m_image_cos.enabled = true;
 						m_flags |= (int)Flags.Loaded_Costume;
 					});
-					GameManager.Instance.DivaIconCache.LoadDivaUpIco(a_data.AHHJLDLAPAN_DivaId, a_data.DAJGPBLEEOB_PrismCostumeId, a_color, (IiconTexture texture) =>
+					GameManager.Instance.DivaIconCache.LoadDivaUpIco(a_data.AHHJLDLAPAN_DivaId, a_data.DAJGPBLEEOB_ModelId, a_color, (IiconTexture texture) =>
 					{
 						//0x16E8B50
 						texture.Set(m_image_diva);

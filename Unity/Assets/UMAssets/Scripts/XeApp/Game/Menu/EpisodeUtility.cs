@@ -17,7 +17,7 @@ namespace XeApp.Game.Menu
 		{
 			for(int i = 0; i < list.Count - 1; i++)
 			{
-				if (point < list[i].DNBFMLBNAEE_TotalPoint)
+				if (point < list[i].DNBFMLBNAEE_Point)
 					return i;
 			}
 			return list.Count - 1;

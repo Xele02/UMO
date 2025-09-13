@@ -44,9 +44,9 @@ namespace XeApp.Game.DownLoad
 			List<int> l = new List<int>();
 			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
 			{
-				for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas.Count; i++)
+				for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table.Count; i++)
 				{
-					BJPLLEBHAGO_DivaInfo dbDiva = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas[i];
+					BJPLLEBHAGO_DivaInfo dbDiva = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[i];
 					if(dbDiva.PPEGAKEIEGM_Enabled == 2)
 					{
 						l.Add(dbDiva.AHHJLDLAPAN_DivaId);
@@ -74,7 +74,7 @@ namespace XeApp.Game.DownLoad
 					DEKKMGAFJCG_Diva.MNNLOBDPCCH_DivaInfo serverDiva = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.NBIGLBMHEDC_DivaList[i];
 					if (serverDiva.CPGFPEDMDEH_Have > 0)
 					{
-						BJPLLEBHAGO_DivaInfo dbdiva = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas[serverDiva.DIPKCALNIII_DivaId - 1];
+						BJPLLEBHAGO_DivaInfo dbdiva = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[serverDiva.DIPKCALNIII_DivaId - 1];
 						freeMusicId = dbdiva.LIOGKHIGJKN_FreeMusicId;
 						INAEAAJIJMF = 1;
 						break;

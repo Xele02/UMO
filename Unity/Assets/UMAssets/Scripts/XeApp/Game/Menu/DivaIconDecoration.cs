@@ -144,7 +144,7 @@ namespace XeApp.Game.Menu
 			CMMKCEPBIHI.AECDJDIJJKD_ApplySkills(ref m_calcStatusResult, divaData, null, playerData, null, null, null);
 			m_status.Clear();
 			m_calcStatusResult.IMLOCECFHGK(ref m_status);
-			m_status.Add(divaData.CMCKNKKCNDK_EquippedStatus);
+			m_status.Add(divaData.CMCKNKKCNDK_Status);
 			Change(divaData, null, luck, 0, type);
 		}
 
@@ -184,7 +184,7 @@ namespace XeApp.Game.Menu
 				m_divaFriendIconDecrationBehaviour.SetDegreeNumber(friendPlayerData.NDOLELKAJNL_DegreeData.HMFFHLPNMPH);
 			}
 			m_status.Clear();
-			m_status.Add(divaData.CMCKNKKCNDK_EquippedStatus);
+			m_status.Add(divaData.CMCKNKKCNDK_Status);
 			Change(divaData, null, luck, 0, type);
 		}
 
@@ -192,7 +192,7 @@ namespace XeApp.Game.Menu
 		public void Change(FFHPBEPOMAK_DivaInfo divaData, DisplayType type)
 		{
 			m_status.Clear();
-			m_status.Add(divaData.CMCKNKKCNDK_EquippedStatus);
+			m_status.Add(divaData.CMCKNKKCNDK_Status);
 			Change(divaData, null, 0, 0, type);
 		}
 
@@ -206,7 +206,7 @@ namespace XeApp.Game.Menu
 				m_divaFriendIconDecrationBehaviour.SetDegreeNumber(friendPlayerData.NDOLELKAJNL_DegreeData.HMFFHLPNMPH);
 			}
 			m_status.Clear();
-			m_status.Add(divaData.CMCKNKKCNDK_EquippedStatus);
+			m_status.Add(divaData.CMCKNKKCNDK_Status);
 			Change(divaData, null, 0, 0, type);
 		}
 
@@ -284,7 +284,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x17E2128 Offset: 0x17E2128 VA: 0x17E2128
-		//public static int GetEquipmentRarity(FFHPBEPOMAK divaData, DFKGGBMFFGB playerData) { }
+		//public static int GetEquipmentRarity(FFHPBEPOMAK_DivaInfo divaData, DFKGGBMFFGB_PlayerInfo playerData) { }
 
 		//// RVA: 0x17D4D5C Offset: 0x17D4D5C VA: 0x17D4D5C
 		public static int GetEquipmentLuck(FFHPBEPOMAK_DivaInfo divaData, DFKGGBMFFGB_PlayerInfo playerData)

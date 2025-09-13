@@ -16,7 +16,7 @@ public class BABKNDMOIJA : CACGCMBKHDI_Request
 
 	public class FCIINFAOJPO
 	{
-		public List<IMNICDGDCBB> HBOIBKJEIAP; // 0x8
+		public List<IMNICDGDCBB> HBOIBKJEIAP_Friends; // 0x8
 
 		// RVA: 0xF13E50 Offset: 0xF13E50 VA: 0xF13E50
 		//public void KHEKNNFCAOI(EDOHBJAPLPF IDLHJIOMJBK) { }
@@ -24,7 +24,7 @@ public class BABKNDMOIJA : CACGCMBKHDI_Request
 
 	public const int HDJIHPCCJAF = 0;
 	public const int NHJPNAACGLK = 1;
-	public List<int> FAMHAPONILI; // 0x7C
+	public List<int> FAMHAPONILI_PlayerIds; // 0x7C
 	public int NEILEPPJKIN = 1; // 0x80
 
 	public FCIINFAOJPO NFEAMMJIMPG { get; private set; } // 0x84 OHEIOONIIKB LFOJDJCNOHB KMKEGMGKCBA
@@ -32,11 +32,11 @@ public class BABKNDMOIJA : CACGCMBKHDI_Request
 	// RVA: 0xF13C5C Offset: 0xF13C5C VA: 0xF13C5C Slot: 12
 	public override void DHLDNIEELHO()
 	{
-		EBGACDGNCAA_CallContext = SakashoFriend.SetFriendsFavoriteValue(FAMHAPONILI.ToArray(), NEILEPPJKIN, DCKLDDCAJAP, MEOCKCJBDAD);
+		EBGACDGNCAA_CallContext = SakashoFriend.SetFriendsFavoriteValue(FAMHAPONILI_PlayerIds.ToArray(), NEILEPPJKIN, DCKLDDCAJAP, MEOCKCJBDAD);
 	}
 
 	// RVA: 0xF13D80 Offset: 0xF13D80 VA: 0xF13D80 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG = new FCIINFAOJPO();
 	}

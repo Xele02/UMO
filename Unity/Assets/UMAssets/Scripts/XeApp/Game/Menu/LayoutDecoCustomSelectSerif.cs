@@ -51,7 +51,7 @@ namespace XeApp.Game.Menu
 				return item.PPFNGGCBJKC == Id;
 			});
 			int id = Id;
-			m_SerifId = n.GBJFNGCDKPM_FrameId;
+			m_SerifId = n.GBJFNGCDKPM_Type;
 			int attrId = m_SerifId;
 			SetSerifEnable(false);
 			SetTextEnable(false);

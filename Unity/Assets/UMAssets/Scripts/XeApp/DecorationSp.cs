@@ -23,7 +23,7 @@ namespace XeApp
 		private LevelupIconStatus m_levelupIconStatus; // 0xB8
 
 		public override bool IsLoaded { get { return base.IsLoaded && IsLoadedSpResource; } } //0xBB2E5C
-		public NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC SpType { get { return (NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC)ViewData.GBJFNGCDKPM_Attribute; } } //0xBB2E90
+		public NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC SpType { get { return (NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC)ViewData.GBJFNGCDKPM_Type; } } //0xBB2E90
 
 		// RVA: 0xBB2EC4 Offset: 0xBB2EC4 VA: 0xBB2EC4 Slot: 6
 		protected override void PostLoadResource(GameObject spriteBase, EKLNMHFCAOI.FKGCBLHOOCL_Category itemCategory, int id, DecorationItemBaseSetting setting, DecorationItemArgsBase args)
@@ -77,7 +77,7 @@ namespace XeApp
 			else if(SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.IOEGFJMNDBM_2/*2*/)
 			{
 				isLoadedTexture = false;
-				MenuScene.Instance.ItemTextureCache.Load(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ICICKEBMEFA_Medal.DNEKJCKEOHL_GetMonthlyItemFullId(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime()), (IiconTexture texture) =>
+				MenuScene.Instance.ItemTextureCache.Load(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ICICKEBMEFA_Medal.DNEKJCKEOHL_GetMonthlyItemFullId(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime()), (IiconTexture texture) =>
 				{
 					//0xBB4428
 					m_texture = texture;
@@ -301,7 +301,7 @@ namespace XeApp
 			{
 				return SpType == NDBFKHKMMCE_DecoItem.ANMODBDBNPK.BIKFCCKCHHC.JPPOGMHJKKJ_VisitItemSp/*11*/;
 			}
-			return KDKFHGHGFEK.HMDOAKPBLFL_HasItemsReady(ResourceId, KDKFHGHGFEK.DFMGMEDILKB(ResourceId), NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime());
+			return KDKFHGHGFEK.HMDOAKPBLFL_HasItemsReady(ResourceId, KDKFHGHGFEK.DFMGMEDILKB(ResourceId), NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 		}
 
 		// // RVA: 0xBB4328 Offset: 0xBB4328 VA: 0xBB4328

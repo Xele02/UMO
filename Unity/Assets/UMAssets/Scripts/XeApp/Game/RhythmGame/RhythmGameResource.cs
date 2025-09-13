@@ -710,7 +710,7 @@ namespace XeApp.Game.RhythmGame
 			uiTextureResources.activeSkillIconMaterial = new Material(Shader.Find("MCRS/RhythmUI/RhythmUIVertexColor"));
 			uiTextureResources.activeSkillIconMaterial.SetTexture("_MainTex", uiTextureResources.centerCardTexture);
 
-			int off = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[mainSceneId - 1].GCLAAGFKPPJ_Aofs;
+			int off = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[mainSceneId - 1].GCLAAGFKPPJ_Aofs;
 			uiTextureResources.activeSkillIconMaterial.SetTextureOffset("_MainTex", new Vector2(0, off * 1.0f / uiTextureResources.centerCardTexture.height));
 
 			AssetBundleManager.UnloadAssetBundle(bundleName.ToString(), false);
@@ -718,7 +718,7 @@ namespace XeApp.Game.RhythmGame
 			md = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[activeSkillId - 1];
 			for (i = 0; i < 1; i++)
 			{
-				effectType = md.EGLDFPILJLG_BuffEffectType[i];
+				effectType = md.EGLDFPILJLG_SkillBuffEffect[i];
 				yield return this.StartCoroutineWatched(LoadSkillEffectTextureCoroutine(effectType, bundleName, assetName));
 				uiTextureResources.activeSkillEffectMaterial = uiTextureResources.skillEffectMaterials[effectType];
 			}
@@ -869,9 +869,9 @@ namespace XeApp.Game.RhythmGame
 			gameSetup = Database.Instance.gameSetup;
 			enemyInfo = gameSetup.musicInfo.GetEnemyInfo();
 
-			yield return this.StartCoroutineWatched(m_pilotTexture.Load(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList[gameSetup.teamInfo.prismValkyrieId - 1].PFGJJLGLPAC_PilotId));
+			yield return this.StartCoroutineWatched(m_pilotTexture.Load(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table[gameSetup.teamInfo.prismValkyrieId - 1].PFGJJLGLPAC_PilotId));
 			yield return this.StartCoroutineWatched(m_enemyPilotTexture.Load(enemyInfo.EELBHDJJJHH_Plt));
-			yield return this.StartCoroutineWatched(m_enemyRobotTexture.Load(enemyInfo.EAHPLCJMPHD_Pic));
+			yield return this.StartCoroutineWatched(m_enemyRobotTexture.Load(enemyInfo.EAHPLCJMPHD_PId));
 			if (musicVoiceChangerResource == null)
 				yield break;
 			yield return new WaitUntil(() =>

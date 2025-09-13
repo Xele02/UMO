@@ -34,7 +34,7 @@ public class AHOBHNDOEBO : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0x15C9170 Offset: 0x15C9170 VA: 0x15C9170 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG = new LLIAJIBOCBB();
 		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

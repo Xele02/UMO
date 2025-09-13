@@ -166,7 +166,7 @@ namespace XeApp.Game.Menu
 							yield return DivaResourceLoad(l[i].GOOIIPFHOIG);
 						}
 						//LAB_0127b7ec
-						MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[sceneId - 1];
+						MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[sceneId - 1];
 						if(dbScene.EKLIPGELKCL_Rarity < 6)
 						{
 							m_bundleName.SetFormat("ct/sc/me/02/{0:D6}_01.xab", sceneId);
@@ -241,13 +241,13 @@ namespace XeApp.Game.Menu
 			divaId = 0;
 			modelId = 0;
 			cosId = 0;
-			for(int i = 0; i < cosMaster.CDENCMNHNGA_Costumes.Count; i++)
+			for(int i = 0; i < cosMaster.CDENCMNHNGA_table.Count; i++)
 			{
-				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = cosMaster.CDENCMNHNGA_Costumes[i];
+				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = cosMaster.CDENCMNHNGA_table[i];
 				if(cos.JPIDIENBGKH_CostumeId == itemInfo.NNFNGLJOKKF_ItemId)
 				{
 					divaId = cos.AHHJLDLAPAN_DivaId;
-					modelId = cos.DAJGPBLEEOB_PrismCostumeModelId;
+					modelId = cos.DAJGPBLEEOB_ModelId;
 					cosId = cos.JPIDIENBGKH_CostumeId;
 					break;
 				}

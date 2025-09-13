@@ -167,7 +167,7 @@ namespace XeApp.Game.Menu
 		public static int FindHelpUniqueId(int searchId)
 		{
 			DPGPEALHJOB[] hp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LOJAMHAADBF_HelpBrowser.LOMHJBIJMOD;
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			// UMO : adapted to return the newest help without date restriction, this could not match exactly registred event help, but it should be fine
 			long foundt = -1;
 			int res = -1;
@@ -175,11 +175,11 @@ namespace XeApp.Game.Menu
 			{
 				if (hp[i].DIJHLDAIBCA == searchId)
 				{
-					//UnityEngine.Debug.LogError(hp[i].DIJHLDAIBCA+" "+hp[i].OPFGFINHFCE+" "+hp[i].PLALNIIBLOF+" "+XeSys.Utility.GetLocalDateTime(hp[i].PDBPFJJCADD).ToLongDateString()+" "+XeSys.Utility.GetLocalDateTime(hp[i].FDBNFFNFOND).ToLongDateString());
+					//UnityEngine.Debug.LogError(hp[i].DIJHLDAIBCA+" "+hp[i].OPFGFINHFCE+" "+hp[i].PLALNIIBLOF+" "+XeSys.Utility.GetLocalDateTime(hp[i].PDBPFJJCADD).ToLongDateString()+" "+XeSys.Utility.GetLocalDateTime(hp[i].FDBNFFNFOND_CloseAt).ToLongDateString());
 					//if(time >= hp[i].PDBPFJJCADD)
 					if(hp[i].PDBPFJJCADD > foundt || foundt == -1)
 					{
-						//if(hp[i].FDBNFFNFOND >= time)
+						//if(hp[i].FDBNFFNFOND_CloseAt >= time)
 						{
 							//return hp[i].OBGBAOLONDD;
 							res = hp[i].OBGBAOLONDD;

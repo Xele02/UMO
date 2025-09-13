@@ -4,23 +4,23 @@ using UnityEngine;
 public class MIDMMFMJFPJ
 {
 	public const int DKIBAEABOCL = 99999999;
-	public int FBGGEFFJJHB; // 0x8
+	public int FBGGEFFJJHB_xor; // 0x8
 	public string OCGFKMHNEOF_Key; // 0xC
-	public long EGBOHDFBAPB_End; // 0x10
+	public long EGBOHDFBAPB_CloseAt; // 0x10
 	private int OHMGPDPKGLF_Crypted; // 0x18
 	private int PKDOICIGHDM_Crypted; // 0x1C
 	private sbyte BBOONOFIBIA_Crypted; // 0x20
 
-	public int NANNGLGOFKH_Val { get { return OHMGPDPKGLF_Crypted ^ FBGGEFFJJHB; } set { value = Mathf.Clamp(value, 0, 100000000); OHMGPDPKGLF_Crypted = value ^ FBGGEFFJJHB; PKDOICIGHDM_Crypted = value; } } //0x19553DC EDFAHCMGHKM 0x19553EC BKPDFNKGNHA
+	public int NANNGLGOFKH_Val { get { return OHMGPDPKGLF_Crypted ^ FBGGEFFJJHB_xor; } set { value = Mathf.Clamp(value, 0, 100000000); OHMGPDPKGLF_Crypted = value ^ FBGGEFFJJHB_xor; PKDOICIGHDM_Crypted = value; } } //0x19553DC EDFAHCMGHKM 0x19553EC BKPDFNKGNHA
 	public bool CKFKFHKHOHA_RRcv { get { return BBOONOFIBIA_Crypted == 113; } set { BBOONOFIBIA_Crypted = (sbyte)(value ? 113 : 50); } } //0x1955490 EPJGLLALNMI 0x19554A4 AEOKPBOJABO
 
 	// // RVA: 0x19554D4 Offset: 0x19554D4 VA: 0x19554D4
 	public void LHPDDGIJKNB(int KNEFBLHBDBG)
     {
-        FBGGEFFJJHB = KNEFBLHBDBG;
+        FBGGEFFJJHB_xor = KNEFBLHBDBG;
 		OCGFKMHNEOF_Key = "";
         NANNGLGOFKH_Val = 0;
-        EGBOHDFBAPB_End = 0;
+        EGBOHDFBAPB_CloseAt = 0;
         CKFKFHKHOHA_RRcv = false;
     }
 
@@ -29,7 +29,7 @@ public class MIDMMFMJFPJ
 	{
 		if(OCGFKMHNEOF_Key != OIKJFMGEICL.OCGFKMHNEOF_Key)
 			return false;
-		if(EGBOHDFBAPB_End != OIKJFMGEICL.EGBOHDFBAPB_End)
+		if(EGBOHDFBAPB_CloseAt != OIKJFMGEICL.EGBOHDFBAPB_CloseAt)
 			return false;
 		if(NANNGLGOFKH_Val != OIKJFMGEICL.NANNGLGOFKH_Val)
 			return false;
@@ -42,7 +42,7 @@ public class MIDMMFMJFPJ
 	public void ODDIHGPONFL(MIDMMFMJFPJ OIKJFMGEICL)
 	{
 		OCGFKMHNEOF_Key = OIKJFMGEICL.OCGFKMHNEOF_Key;
-		EGBOHDFBAPB_End = OIKJFMGEICL.EGBOHDFBAPB_End;
+		EGBOHDFBAPB_CloseAt = OIKJFMGEICL.EGBOHDFBAPB_CloseAt;
 		NANNGLGOFKH_Val = OIKJFMGEICL.NANNGLGOFKH_Val;
 		CKFKFHKHOHA_RRcv = OIKJFMGEICL.CKFKFHKHOHA_RRcv;
 	}
@@ -55,7 +55,7 @@ public class MIDMMFMJFPJ
 	{
 		EDOHBJAPLPF_JsonData res = new EDOHBJAPLPF_JsonData();
 		res[AFEHLCGHAEE_Strings.LJNAKDMILMC_key] = OCGFKMHNEOF_Key;
-		res[AFEHLCGHAEE_Strings.KOMKKBDABJP_end] = EGBOHDFBAPB_End;
+		res[AFEHLCGHAEE_Strings.KOMKKBDABJP_end] = EGBOHDFBAPB_CloseAt;
 		res[AFEHLCGHAEE_Strings.JBGEEPFKIGG_val] = NANNGLGOFKH_Val;
 		res[AFEHLCGHAEE_Strings.LDALACBKEJN_r_rcv] = CKFKFHKHOHA_RRcv ? 1 : 0;
 		return res;

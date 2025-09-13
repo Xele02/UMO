@@ -234,7 +234,7 @@ namespace XeApp.Game.Menu
 			{
 				m_voiceSetting.m_voiceSetting.m_queFormat = "m_result_exp_000";
 			}
-			m_simpleDivaAnimation.LoadGoDivaResource(viewEventResultData.AHHJLDLAPAN_DivaId, viewEventResultData.DAJGPBLEEOB_CostumeId, viewEventResultData.HEHKNMCDBJJ_ColorId, m_animSetting);
+			m_simpleDivaAnimation.LoadGoDivaResource(viewEventResultData.AHHJLDLAPAN_DivaId, viewEventResultData.DAJGPBLEEOB_ModelId, viewEventResultData.HEHKNMCDBJJ_ColorId, m_animSetting);
 			yield return new WaitWhile(() =>
 			{
 				//0xE16E1C

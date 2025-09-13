@@ -59,7 +59,7 @@ namespace XeApp.Game.Menu
 			FFHPBEPOMAK_DivaInfo dInfo = null;
 			for(int i = 0; i < l.Count; i++)
 			{
-				if(l[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId == cos_id)
+				if(l[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId == cos_id)
 				{
 					dInfo = l[i];
 					break;

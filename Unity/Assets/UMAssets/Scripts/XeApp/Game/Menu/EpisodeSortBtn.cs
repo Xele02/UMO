@@ -115,7 +115,7 @@ namespace XeApp.Game.Menu
 			ChangeButtonOrder(m_order);
 			if(m_is_save)
 			{
-				GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CEJNPBFIIMJ_EpisodeSelect.EILKGEADKGH_order = m_order;
+				GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.CEJNPBFIIMJ_EpisodeSelect.EILKGEADKGH_Order = m_order;
 				GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
 			}
 			if(m_delegate_order != null)

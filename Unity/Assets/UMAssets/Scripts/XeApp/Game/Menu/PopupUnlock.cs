@@ -140,7 +140,7 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < viewData.Count; i++)
 			{
 				UnlockParam param = new UnlockParam();
-				switch(viewData[i].DEPGBBJMFED)
+				switch(viewData[i].DEPGBBJMFED_CategoryId)
 				{
 					case FAGCLBOACEE.BEFPBAIONFK.KDGLIKDMGCN_Stage/*1*/:
 						param.unlockType = eUnlockType.Stage;
@@ -165,17 +165,17 @@ namespace XeApp.Game.Menu
 						param.sceneType = sceneType;
 						param.id = viewData[i].PPFNGGCBJKC;
 						param.difficultyBit = 0;
-						if (!viewData[i].GIKLNODJKFK_6Line)
+						if (!viewData[i].GIKLNODJKFK_IsLine6)
 						{
 							param.difficultyBit = 1 << viewData[i].AKNELONELJK_Difficulty;
 						}
 						param.difficulty6LineBit = 0;
-						if(viewData[i].GIKLNODJKFK_6Line)
+						if(viewData[i].GIKLNODJKFK_IsLine6)
 						{
 							param.difficulty6LineBit = 1 << viewData[i].AKNELONELJK_Difficulty;
 						}
 						//LAB_011596fc;
-						param.isLine6 = viewData[i].GIKLNODJKFK_6Line;
+						param.isLine6 = viewData[i].GIKLNODJKFK_IsLine6;
 						AddParam(param);
 						break;
 					case FAGCLBOACEE.BEFPBAIONFK.OPPDJDDHHFM_MultDivaMusic/*5*/:
@@ -191,7 +191,7 @@ namespace XeApp.Game.Menu
 						param.isLine6 = true;
 						param.difficultyBit = 0;
 						param.difficulty6LineBit = 0;
-						if (viewData[i].GIKLNODJKFK_6Line)
+						if (viewData[i].GIKLNODJKFK_IsLine6)
 						{
 							param.difficulty6LineBit = 1 << viewData[i].AKNELONELJK_Difficulty;
 						}
@@ -203,17 +203,17 @@ namespace XeApp.Game.Menu
 						param.sceneType = sceneType;
 						param.id = viewData[i].PPFNGGCBJKC;
 						param.difficultyBit = 0;
-						if (!viewData[i].GIKLNODJKFK_6Line)
+						if (!viewData[i].GIKLNODJKFK_IsLine6)
 						{
 							param.difficultyBit = 1 << viewData[i].AKNELONELJK_Difficulty;
 						}
 						param.difficulty6LineBit = 0;
-						if (viewData[i].GIKLNODJKFK_6Line)
+						if (viewData[i].GIKLNODJKFK_IsLine6)
 						{
 							param.difficulty6LineBit = 1 << viewData[i].AKNELONELJK_Difficulty;
 						}
 						//LAB_011596fc
-						param.isLine6 = viewData[i].GIKLNODJKFK_6Line;
+						param.isLine6 = viewData[i].GIKLNODJKFK_IsLine6;
 						//LAB_01159728
 						//LAB_01159738
 						AddParam(param);

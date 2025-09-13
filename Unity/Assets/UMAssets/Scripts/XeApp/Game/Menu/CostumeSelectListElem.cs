@@ -153,7 +153,7 @@ namespace XeApp.Game.Menu
 			int itemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume, a_item.m_cos_id);
 			m_costume_id = a_item.m_cos_id;
 			m_diva_id = a_diva_id;
-			m_costume_model_id = a_item.m_view_diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
+			m_costume_model_id = a_item.m_view_diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
 			m_costume_color = a_item.m_cos_color;
 			m_item_id = itemId;
 			if (m_costume_color == 0)

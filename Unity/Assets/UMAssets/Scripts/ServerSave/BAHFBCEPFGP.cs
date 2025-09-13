@@ -16,9 +16,9 @@ public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_ServerSaveBlock
 	public override bool DMICHEJIAJL { get { return true; } } // 0xF15DE4 NFKFOODCJJB
 
 	// // RVA: 0xF14400 Offset: 0xF14400 VA: 0xF14400
-	public void DDCBGCODHHN(int DLAEJOBELBH_Id, int HPNLNIFICNI)
+	public void DDCBGCODHHN(int _DLAEJOBELBH_MusicId, int HPNLNIFICNI)
 	{
-		int a = (DLAEJOBELBH_Id - 1) >> 3;
+		int a = (_DLAEJOBELBH_MusicId - 1) >> 3;
 		if(a < 38)
 		{
 			if(HPNLNIFICNI >= 2 && HPNLNIFICNI < 6)
@@ -39,19 +39,19 @@ public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_ServerSaveBlock
 						array = KKPKAMANKOH_ShowAddUnitLiveQuintet;
 						break;
 				}
-				array[a] |= (byte)(1 << ((DLAEJOBELBH_Id - 1) & 7));
+				array[a] |= (byte)(1 << ((_DLAEJOBELBH_MusicId - 1) & 7));
 			}
 			else
 			{
-				Debug.Log(JpStringLiterals.StringLiteral_9528 + DLAEJOBELBH_Id);
+				Debug.Log(JpStringLiterals.StringLiteral_9528 + _DLAEJOBELBH_MusicId);
 			}
 		}
 	}
 
 	// // RVA: 0xF14574 Offset: 0xF14574 VA: 0xF14574
-	public bool CGEPJMFFLLJ(int DLAEJOBELBH_Id, int HPNLNIFICNI)
+	public bool CGEPJMFFLLJ(int _DLAEJOBELBH_MusicId, int HPNLNIFICNI)
 	{
-		int a = (DLAEJOBELBH_Id - 1) >> 3;
+		int a = (_DLAEJOBELBH_MusicId - 1) >> 3;
 		if(a < 38)
 		{
 			if(HPNLNIFICNI >= 2 && HPNLNIFICNI < 6)
@@ -72,11 +72,11 @@ public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_ServerSaveBlock
 						array = KKPKAMANKOH_ShowAddUnitLiveQuintet;
 						break;
 				}
-				return ((1 << ((DLAEJOBELBH_Id - 1) & 7)) & array[a]) != 0;
+				return ((1 << ((_DLAEJOBELBH_MusicId - 1) & 7)) & array[a]) != 0;
 			}
 			else
 			{
-				Debug.Log(JpStringLiterals.StringLiteral_9528 + DLAEJOBELBH_Id.ToString());
+				Debug.Log(JpStringLiterals.StringLiteral_9528 + _DLAEJOBELBH_MusicId.ToString());
 			}
 		}
 		return false;
@@ -155,7 +155,7 @@ public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xF14EB8 Offset: 0xF14EB8 VA: 0xF14EB8 Slot: 7
-	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	public override void BMGGKONLFIC_Copy(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
 		BAHFBCEPFGP_AddMusic b = GPBJHKLFCEP as BAHFBCEPFGP_AddMusic;
 		for (int i = 0; i < BJFCIFJLJJI_ShowAddUnitLiveDio.Length; i++)
@@ -204,5 +204,5 @@ public class BAHFBCEPFGP_AddMusic : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xF15600 Offset: 0xF15600 VA: 0xF15600 Slot: 10
-	// public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH);
+	// public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock _GJLFANGDGCL_Target, long MCKEOKFMLAH);
 }

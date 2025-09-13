@@ -66,7 +66,7 @@ namespace XeApp.Game.Menu
 			SetPlayerEventRank(playerData.FJOLNJLLJEJ_Rank);
 			EAJCBFGKKFA_FriendInfo f = new EAJCBFGKKFA_FriendInfo();
 			f.KHEKNNFCAOI(playerData);
-			SetPlayerIcon(f.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId, f.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, f.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId);
+			SetPlayerIcon(f.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId, f.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, f.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId);
 			SetPlayerPlate(f.AFBMEMCHJCL_MainScene);
 			m_divaDecoration.Change(f.JIGONEMPPNP_Diva, f, DisplayType.Level, f.AFBMEMCHJCL_MainScene);
 			m_sceneDecoration.Change(f.AFBMEMCHJCL_MainScene, DisplayType.Level);

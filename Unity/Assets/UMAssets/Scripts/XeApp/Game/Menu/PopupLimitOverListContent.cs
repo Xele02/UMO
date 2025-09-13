@@ -266,7 +266,7 @@ namespace XeApp.Game.Menu
 			}
 			if(res == 0)
 			{
-				res = s1.EKLIPGELKCL_SceneRarity - s2.EKLIPGELKCL_SceneRarity;
+				res = s1.EKLIPGELKCL_Rarity - s2.EKLIPGELKCL_Rarity;
 			}
 			if(res == 0)
 			{

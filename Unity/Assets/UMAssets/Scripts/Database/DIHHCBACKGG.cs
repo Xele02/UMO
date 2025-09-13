@@ -29,7 +29,7 @@ public abstract class DIHHCBACKGG_DbSection
 	protected abstract void KMBPACJNEOF();
 
 	// // RVA: 0x198ABEC Offset: 0x198ABEC VA: 0x198ABEC Slot: 9
-	public virtual bool IIEMACPEEBJ(byte[] DBBGALAPFGC) 
+	public virtual bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data) 
     { 
         return true;
     }
@@ -47,7 +47,7 @@ public abstract class DIHHCBACKGG_DbSection
 	// protected string FGCNMLBACGO(EDOHBJAPLPF_JsonData LFFNOHMOKJA, string LJNAKDMILMC, string HDDJJLKAFIF, ref bool NGJDHLGMHMH) { }
 
 	// // RVA: 0x198AEC8 Offset: 0x198AEC8 VA: 0x198AEC8
-	// protected void IBCGPBOGOGP(EDOHBJAPLPF_JsonData NICPPBGFMBI, string LJNAKDMILMC, int HCGFLHLODKD, int GLBEAENLHKC, DIHHCBACKGG.NPLKKHGGCOM OCMLFNJCIDN, ref bool NGJDHLGMHMH) { }
+	// protected void IBCGPBOGOGP(EDOHBJAPLPF_JsonData NICPPBGFMBI, string LJNAKDMILMC, int HCGFLHLODKD, int _GLBEAENLHKC_Count, DIHHCBACKGG.NPLKKHGGCOM OCMLFNJCIDN, ref bool NGJDHLGMHMH) { }
 
 	// // RVA: 0x198B55C Offset: 0x198B55C VA: 0x198B55C
 	// protected void IBCGPBOGOGP(EDOHBJAPLPF_JsonData NICPPBGFMBI, string LJNAKDMILMC, int HCGFLHLODKD, DIHHCBACKGG.NPLKKHGGCOM BLOEDBAPDHJ, ref bool NGJDHLGMHMH) { }

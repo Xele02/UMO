@@ -181,7 +181,7 @@ namespace XeApp.Game.Menu
 				numberNoteResultCountList[i].SetNumber(0, 0);
 			}
 			numberNoteResultCountList[5].SetNumber(resultData.GetNoteExcellentCount(), 0);
-			numberBonus.SetNumber(viewData.GPMILOPNBPA_Bonus, 0);
+			numberBonus.SetNumber(viewData.GPMILOPNBPA_LastScoreExcellent, 0);
 			numberCombo.SetNumber(0, 0);
 			numberScore.SetNumber(0, 0);
 			numberHighScore.SetNumber(viewData.HMDHDKLDPFK_PrevScore, 0);
@@ -384,7 +384,7 @@ namespace XeApp.Game.Menu
 					count = viewData.PBGLMBMEKAA_ComboCount;
 					break;
 				case CountType.Score:
-					count = viewData.GCAPLLEIAAI_HighScore;
+					count = viewData.GCAPLLEIAAI_LastScore;
 					break;
 				default:
 					count = 0;
@@ -524,9 +524,9 @@ namespace XeApp.Game.Menu
 			countUpSEPlayback.Stop();
 			if(!viewData.PMCGHPOGLGM_EnableLiveSkip)
 			{
-				if(viewData.GCAPLLEIAAI_HighScore > viewData.HMDHDKLDPFK_PrevScore)
+				if(viewData.GCAPLLEIAAI_LastScore > viewData.HMDHDKLDPFK_PrevScore)
 				{
-					numberHighScore.SetNumber(viewData.GCAPLLEIAAI_HighScore, 0);
+					numberHighScore.SetNumber(viewData.GCAPLLEIAAI_LastScore, 0);
 				}
 			}
 		}

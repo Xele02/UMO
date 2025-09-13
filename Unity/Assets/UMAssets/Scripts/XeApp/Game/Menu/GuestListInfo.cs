@@ -57,12 +57,12 @@ namespace XeApp.Game.Menu
 			SetFriListInfo(titleIndex, isAvailable, fri);
 			playerRank = fri.ILOJAJNCPEC_Rank;
 			lastLogin = fri.PCEGKKLKFNO.AJECHDLMKOE_LastLogin;
-			musicRatio = fri.BJGOPOEAAIC_MusicRatio;
+			musicRatio = fri.BJGOPOEAAIC_UtaRate;
 			scoreRatingRank = fri.AGJIIKKOKFJ_ScoreRatingRank;
 			if(fri.JIGONEMPPNP_Diva != null)
 			{
 				divaId = fri.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId;
-				divaModelId = fri.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
+				divaModelId = fri.JIGONEMPPNP_Diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
 				divaColorId = fri.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId;
 			}
 			emblemId = fri.NDOLELKAJNL_DegreeData.MDPKLNFFDBO_EmblemId;
@@ -87,9 +87,9 @@ namespace XeApp.Game.Menu
 			{
 				sceneId = g.BCCHOBPJJKE_SceneId;
 				episodeId = g.KELFCMEOPPM_EpisodeId;
-				sceneRarity = g.EKLIPGELKCL_SceneRarity;
+				sceneRarity = g.EKLIPGELKCL_Rarity;
 				sceneRank = g.CGIELKDLHGE_GetEvolveId();
-				sceneLevel = g.CIEOBFIIPLD_SceneLevel;
+				sceneLevel = g.CIEOBFIIPLD_Level;
 				sceneAttr = (GameAttribute.Type)g.JGJFIJOCPAG_SceneAttr;
 				sceneSeries = g.AIHCEGFANAM_SerieAttr;
 				int v = g.MEOOLHNNMHL_GetCenterSkillId(false, musicData == null ? 0 : musicData.FKDCCLPGKDK_JacketAttr, musicData == null ? 0 : musicData.AIHCEGFANAM_SerieAttr);

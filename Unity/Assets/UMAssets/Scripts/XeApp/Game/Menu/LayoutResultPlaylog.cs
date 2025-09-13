@@ -526,7 +526,7 @@ namespace XeApp.Game.Menu
 					{
 						GCIJNCFDNON_SceneInfo scene = scenes[sceneId];
 						int a = gameDb.LAGGGIEIPEG(scene.JKGFBFPIMGA_Rarity, scene.CGIELKDLHGE_GetEvolveId() > 1, scene.MCCIFLKCNKO_Feed);
-						if (scene.CIEOBFIIPLD_SceneLevel <= a / 3) // ??
+						if (scene.CIEOBFIIPLD_Level <= a / 3) // ??
 							return true;
 					}
 				}
@@ -550,7 +550,7 @@ namespace XeApp.Game.Menu
 					if (sceneId > 0 && sceneId < scenes.Count)
 					{
 						GCIJNCFDNON_SceneInfo scene = scenes[sceneId];
-						if (scene.EKLIPGELKCL_SceneRarity > 3)
+						if (scene.EKLIPGELKCL_Rarity > 3)
 							cnt++;
 					}
 				}
@@ -582,9 +582,9 @@ namespace XeApp.Game.Menu
 				{
 					JNKEEAOKNCI_Skill skillDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill;
 					CDNKOFIELMK skill = skillDb.PABCHCAAEAA_ActiveSkills[divaList[0].activeSkillId - 1];
-					for(int i = 0; i < skill.EGLDFPILJLG_BuffEffectType.Length; i++)
+					for(int i = 0; i < skill.EGLDFPILJLG_SkillBuffEffect.Length; i++)
 					{
-						if ((skill.EGLDFPILJLG_BuffEffectType[i] | 8) == 10) // 3, 8, 10?
+						if ((skill.EGLDFPILJLG_SkillBuffEffect[i] | 8) == 10) // 3, 8, 10?
 							return false;
 					}
 					for(int i = 0; i < playlog.skillDataList.Count; i++)
@@ -608,9 +608,9 @@ namespace XeApp.Game.Menu
 				{
 					JNKEEAOKNCI_Skill skillDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill;
 					CDNKOFIELMK skill = skillDb.PABCHCAAEAA_ActiveSkills[divaList[0].activeSkillId - 1];
-					for (int i = 0; i < skill.EGLDFPILJLG_BuffEffectType.Length; i++)
+					for (int i = 0; i < skill.EGLDFPILJLG_SkillBuffEffect.Length; i++)
 					{
-						if ((skill.EGLDFPILJLG_BuffEffectType[i] | 8) == 10) // 3, 8, 10?
+						if ((skill.EGLDFPILJLG_SkillBuffEffect[i] | 8) == 10) // 3, 8, 10?
 							return false;
 					}
 					return true;

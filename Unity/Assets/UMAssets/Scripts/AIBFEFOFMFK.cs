@@ -6,7 +6,7 @@ public class AIBFEFOFMFK_LineLinkage : AILHMHMOKKA_BaseLinkage
 	private const int JGFDMBLDIGP_LineVersion = 1;
 
 	//// RVA: 0xCCA700 Offset: 0xCCA700 VA: 0xCCA700 Slot: 4
-	public override void EMKKJILHOOB_GetLinkageStatus(IMCBBOAFION BHFHGFKBOHH, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK AOCANKOMKFG)
+	public override void EMKKJILHOOB_GetLinkageStatus(IMCBBOAFION _BHFHGFKBOHH_OnSuccess, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK _AOCANKOMKFG_OnError)
 	{
 		JEDJNIKPFLH_IsLinked = false;
 		MOJEDCPFGJJ_IsVersionOk = false;
@@ -20,7 +20,7 @@ public class AIBFEFOFMFK_LineLinkage : AILHMHMOKKA_BaseLinkage
 			JEDJNIKPFLH_IsLinked = r.NFEAMMJIMPG.EFKMIECABBK_LineLinkage;
 			if (r.NFEAMMJIMPG.OOOIPFEGKFD_Version == JGFDMBLDIGP_LineVersion)
 				MOJEDCPFGJJ_IsVersionOk = true;
-			BHFHGFKBOHH();
+			_BHFHGFKBOHH_OnSuccess();
 		};
 		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
 		{
@@ -30,7 +30,7 @@ public class AIBFEFOFMFK_LineLinkage : AILHMHMOKKA_BaseLinkage
 	}
 
 	//// RVA: 0xCCA99C Offset: 0xCCA99C VA: 0xCCA99C Slot: 5
-	public override void GGNBIHHFJMP(IMCBBOAFION BHFHGFKBOHH, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK AOCANKOMKFG)
+	public override void GGNBIHHFJMP(IMCBBOAFION _BHFHGFKBOHH_OnSuccess, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK _AOCANKOMKFG_OnError)
 	{
 		OMOHMPMNOJG req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new OMOHMPMNOJG());
 		req.ICDEFIIADDO_Timeout = 15;
@@ -39,7 +39,7 @@ public class AIBFEFOFMFK_LineLinkage : AILHMHMOKKA_BaseLinkage
 			//0xCCB600
 			JEDJNIKPFLH_IsLinked = true;
 			MOJEDCPFGJJ_IsVersionOk = false;
-			BHFHGFKBOHH();
+			_BHFHGFKBOHH_OnSuccess();
 		};
 		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
 		{
@@ -54,19 +54,19 @@ public class AIBFEFOFMFK_LineLinkage : AILHMHMOKKA_BaseLinkage
 				{
 					if (!HGOKJBPIDJB(JIPCHHHLOMM))
 					{
-						AOCANKOMKFG();
+						_AOCANKOMKFG_OnError();
 						return;
 					}
 				}
 				NIMPEHIECJH();
 				return;
 			}
-			AOCANKOMKFG();
+			_AOCANKOMKFG_OnError();
 		};
 	}
 
 	//// RVA: 0xCCABE4 Offset: 0xCCABE4 VA: 0xCCABE4 Slot: 6
-	public override void MOHPODEDIEK(IMCBBOAFION BHFHGFKBOHH, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK AOCANKOMKFG)
+	public override void MOHPODEDIEK(IMCBBOAFION _BHFHGFKBOHH_OnSuccess, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK _AOCANKOMKFG_OnError)
 	{
 		HJMMIMBMFFP req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new HJMMIMBMFFP());
 		req.ICDEFIIADDO_Timeout = 15;
@@ -75,7 +75,7 @@ public class AIBFEFOFMFK_LineLinkage : AILHMHMOKKA_BaseLinkage
 			//0xCCB770
 			JEDJNIKPFLH_IsLinked = false;
 			MOJEDCPFGJJ_IsVersionOk = false;
-			BHFHGFKBOHH();
+			_BHFHGFKBOHH_OnSuccess();
 		};
 		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
 		{
@@ -90,19 +90,19 @@ public class AIBFEFOFMFK_LineLinkage : AILHMHMOKKA_BaseLinkage
 				{
 					if(!HGOKJBPIDJB(JIPCHHHLOMM))
 					{
-						AOCANKOMKFG();
+						_AOCANKOMKFG_OnError();
 						return;
 					}
 				}
 				NIMPEHIECJH();
 				return;
 			}
-			AOCANKOMKFG();
+			_AOCANKOMKFG_OnError();
 		};
 	}
 
 	//// RVA: 0xCCAE2C Offset: 0xCCAE2C VA: 0xCCAE2C Slot: 7
-	public override void BMJMJCIKALP(IMCBBOAFION BHFHGFKBOHH, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK AOCANKOMKFG)
+	public override void BMJMJCIKALP(IMCBBOAFION _BHFHGFKBOHH_OnSuccess, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK _AOCANKOMKFG_OnError)
 	{
 		MOJEDCPFGJJ_IsVersionOk = false;
 		AOODABADOGG req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new AOODABADOGG());
@@ -112,14 +112,14 @@ public class AIBFEFOFMFK_LineLinkage : AILHMHMOKKA_BaseLinkage
 		{
 			//0xCCB8DC
 			NKGJPJPHLIF.HHCJCDFCLOB.IJMGMJHLGDG((JIPCHHHLOMM as AOODABADOGG).NFEAMMJIMPG.EHGBICNIBKE_PlayerId);
-			BHFHGFKBOHH();
+			_BHFHGFKBOHH_OnSuccess();
 		};
 		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
 		{
 			//0xCCBAFC
 			if(JIPCHHHLOMM.PDAPLCPOCMA)
 			{
-				AOCANKOMKFG();
+				_AOCANKOMKFG_OnError();
 				return;
 			}
 			if (DGLAMLJFEDB_CheckError(JIPCHHHLOMM.CJMFJOMECKI_ErrorId))
@@ -135,7 +135,7 @@ public class AIBFEFOFMFK_LineLinkage : AILHMHMOKKA_BaseLinkage
 				}
 				if(!HGOKJBPIDJB(JIPCHHHLOMM))
 				{
-					AOCANKOMKFG();
+					_AOCANKOMKFG_OnError();
 					return;
 				}
 			}

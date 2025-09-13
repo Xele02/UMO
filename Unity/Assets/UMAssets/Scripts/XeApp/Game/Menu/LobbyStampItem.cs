@@ -87,7 +87,7 @@ namespace XeApp.Game.Menu
 				//0xD21374
 				return item.PPFNGGCBJKC == m_serifId;
 			});
-			MenuScene.Instance.DecorationItemTextureCache.LoadForSelectSerif(stamp.GBJFNGCDKPM_FrameId, (IiconTexture image) =>
+			MenuScene.Instance.DecorationItemTextureCache.LoadForSelectSerif(stamp.GBJFNGCDKPM_Type, (IiconTexture image) =>
 			{
 				//0xD213B8
 				SetStampBallonImageIcon(image);

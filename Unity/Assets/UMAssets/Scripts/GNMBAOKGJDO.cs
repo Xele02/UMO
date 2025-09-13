@@ -10,26 +10,26 @@ public class GNMBAOKGJDO
 	public byte[] IAKPCFDLMKP; // 0xC
 
 	// // RVA: 0x1E59358 Offset: 0x1E59358 VA: 0x1E59358
-	public void MCDJJPAKBLH(string CJEKGLGBIHF)
+	public void MCDJJPAKBLH(string _CJEKGLGBIHF_path)
     {
 		PLOOEECNHFB = false;
 		BIOFMLDLNKD = false;
 		NPNNPNAIONN = false;
-		UnityEngine.Debug.Log("start Coroutine_Load="+CJEKGLGBIHF);
+		UnityEngine.Debug.Log("start Coroutine_Load="+_CJEKGLGBIHF_path);
         
-		N.a.StartCoroutineWatched(ODDEPBIJHOE_Coroutine_Load(CJEKGLGBIHF));
+		N.a.StartCoroutineWatched(ODDEPBIJHOE_Coroutine_Load(_CJEKGLGBIHF_path));
     }
 
 	// [IteratorStateMachineAttribute] // RVA: 0x6BA184 Offset: 0x6BA184 VA: 0x6BA184
 	// // RVA: 0x1E59448 Offset: 0x1E59448 VA: 0x1E59448
-	private IEnumerator ODDEPBIJHOE_Coroutine_Load(string CJEKGLGBIHF)
+	private IEnumerator ODDEPBIJHOE_Coroutine_Load(string _CJEKGLGBIHF_path)
 	{
 		// public GNMBAOKGJDO KIGBLACMODG; // 0x14
 		// private DsfdLoader.ILoadRequest OCJDGDAJMFC; // 0x18
 		//0x1E5951C
 
-		UnityEngine.Debug.Log("start DsfdLoader.LoadFile "+CJEKGLGBIHF);
-		DsfdLoader.ILoadRequest OCJDGDAJMFC = DsfdLoader.LoadFile(CJEKGLGBIHF);
+		UnityEngine.Debug.Log("start DsfdLoader.LoadFile "+_CJEKGLGBIHF_path);
+		DsfdLoader.ILoadRequest OCJDGDAJMFC = DsfdLoader.LoadFile(_CJEKGLGBIHF_path);
 		if(OCJDGDAJMFC == null)
 		{
 			UnityEngine.Debug.Log("err DsfdLoader.LoadFile");

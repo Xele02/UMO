@@ -97,7 +97,7 @@ namespace XeApp.Game.Menu
 		{
 			if (item == null)
 				return;
-			RegisterPlateIdInner(item.GLCLFMGPMAN_ItemFullId);
+			RegisterPlateIdInner(item.GLCLFMGPMAN_ItemId);
 		}
 
 		//// RVA: 0xCF86A4 Offset: 0xCF86A4 VA: 0xCF86A4

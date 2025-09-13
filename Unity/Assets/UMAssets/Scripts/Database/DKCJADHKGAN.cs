@@ -17,7 +17,7 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 		public string CIOJJBOHEEJ; // 0x28
 		public List<List<int>> BEPAMEEBPGI_SongIdByWeekday = new List<List<int>>(); // 0x2C
 
-		public int ELEPHBOKIGK_MaxCount { get { return AIDNHPGEHPM_MaxCountCrypted ^ 0x5717f14f; } set { AIDNHPGEHPM_MaxCountCrypted = value ^ 0x5717f14f; } } //0x198E5A0 IIJFLONJAFL 0x198E160 LHNFGPIGCNE
+		public int ELEPHBOKIGK_Limit { get { return AIDNHPGEHPM_MaxCountCrypted ^ 0x5717f14f; } set { AIDNHPGEHPM_MaxCountCrypted = value ^ 0x5717f14f; } } //0x198E5A0 IIJFLONJAFL 0x198E160 LHNFGPIGCNE
 		public int AEHCKNNGAKF_BonusMaxCount { get { return DJCHKGLCLPD_Crypted ^ 0x5717f14f; } set { DJCHKGLCLPD_Crypted = value ^ 0x5717f14f; } } //0x198E5B4 KKNJPEMGEBF 0x198E174 NPDLLBHCIJP
 
 		//// RVA: 0x198E5C8 Offset: 0x198E5C8 VA: 0x198E5C8
@@ -27,13 +27,13 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0x198DA90 Offset: 0x198DA90 VA: 0x198DA90
-		public bool FLPDCNBLOKL_IsSongForWeekDay(int IAPNPKAGEGH, int GHBPLHBNMBK)
+		public bool FLPDCNBLOKL_IsSongForWeekDay(int IAPNPKAGEGH, int _GHBPLHBNMBK_FreeMusicId)
 		{
 			if(BEPAMEEBPGI_SongIdByWeekday[IAPNPKAGEGH] != null)
 			{
 				for(int i = 0; i < BEPAMEEBPGI_SongIdByWeekday[IAPNPKAGEGH].Count; i++)
 				{
-					if (BEPAMEEBPGI_SongIdByWeekday[IAPNPKAGEGH][i] == GHBPLHBNMBK)
+					if (BEPAMEEBPGI_SongIdByWeekday[IAPNPKAGEGH][i] == _GHBPLHBNMBK_FreeMusicId)
 						return true;
 				}
 			}
@@ -58,12 +58,12 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x198D990 Offset: 0x198D990 VA: 0x198D990
-	public bool FLPDCNBLOKL(long JHNMKKNEENE, int GHBPLHBNMBK)
+	public bool FLPDCNBLOKL(long JHNMKKNEENE, int _GHBPLHBNMBK_FreeMusicId)
 	{
 		JFFPEKOEINE data = PPIBJECKCEF(JHNMKKNEENE);
 		if(data != null)
 		{
-			return data.FLPDCNBLOKL_IsSongForWeekDay((int)Utility.GetLocalDateTime(JHNMKKNEENE).DayOfWeek, GHBPLHBNMBK);
+			return data.FLPDCNBLOKL_IsSongForWeekDay((int)Utility.GetLocalDateTime(JHNMKKNEENE).DayOfWeek, _GHBPLHBNMBK_FreeMusicId);
 		}
 		return false;
 	}
@@ -83,9 +83,9 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 	}
 
 	// RVA: 0x198DD00 Offset: 0x198DD00 VA: 0x198DD00 Slot: 9
-	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
+	public override bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data)
 	{
-		PMHJIJGDJMO parser = PMHJIJGDJMO.HEGEKFMJNCC(DBBGALAPFGC);
+		PMHJIJGDJMO parser = PMHJIJGDJMO.HEGEKFMJNCC(_DBBGALAPFGC_Data);
 		FBCAIGGLGMK[] array = parser.MDFFJJKBDFC;
 		for(int i = 0; i < array.Length; i++)
 		{
@@ -95,12 +95,12 @@ public class DKCJADHKGAN_EventWeekDay : DIHHCBACKGG_DbSection
 			data.KINJOEIAHFK_StartDate = array[i].FNEIADJMHHO;
 			data.PCCFAKEOBIC_EndDate = array[i].KOMKKBDABJP;
 			data.CIOJJBOHEEJ = array[i].GENIJOLKBNH;
-			data.ELEPHBOKIGK_MaxCount = array[i].BFINGCJHOHI;
+			data.ELEPHBOKIGK_Limit = array[i].BFINGCJHOHI;
 			data.AEHCKNNGAKF_BonusMaxCount = array[i].OEOIHIIIMCK;
-			//UnityEngine.Debug.LogError(Utility.GetLocalDateTime(data.KINJOEIAHFK_StartDate).ToShortDateString() + " " + Utility.GetLocalDateTime(data.KINJOEIAHFK_StartDate).ToShortTimeString()+" "+ Utility.GetLocalDateTime(data.PCCFAKEOBIC_EndDate).ToShortDateString() + " " + Utility.GetLocalDateTime(data.PCCFAKEOBIC_EndDate).ToShortTimeString() + " " + data.CIOJJBOHEEJ+" "+data.ELEPHBOKIGK_MaxCount+" "+data.AEHCKNNGAKF_BonusMaxCount);
-			for(int j = 0; j < array[i].EHDDADDKMFI.Length; j++)
+			//UnityEngine.Debug.LogError(Utility.GetLocalDateTime(data.KINJOEIAHFK_StartDate).ToShortDateString() + " " + Utility.GetLocalDateTime(data.KINJOEIAHFK_StartDate).ToShortTimeString()+" "+ Utility.GetLocalDateTime(data.PCCFAKEOBIC_EndDate).ToShortDateString() + " " + Utility.GetLocalDateTime(data.PCCFAKEOBIC_EndDate).ToShortTimeString() + " " + data.CIOJJBOHEEJ+" "+data.ELEPHBOKIGK_Limit+" "+data.AEHCKNNGAKF_BonusMaxCount);
+			for(int j = 0; j < array[i].EHDDADDKMFI_f_id.Length; j++)
 			{
-				data.BEPAMEEBPGI_SongIdByWeekday.Add(JCAGLPANMFC(array[i].EHDDADDKMFI[j]));
+				data.BEPAMEEBPGI_SongIdByWeekday.Add(JCAGLPANMFC(array[i].EHDDADDKMFI_f_id[j]));
 				/*for(int k = 0; k < data.BEPAMEEBPGI_SongIdByWeekday[data.BEPAMEEBPGI_SongIdByWeekday.Count - 1].Count; k++)
 				{
 					UnityEngine.Debug.LogError(j+" "+data.BEPAMEEBPGI_SongIdByWeekday[data.BEPAMEEBPGI_SongIdByWeekday.Count - 1][k]);

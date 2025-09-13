@@ -108,7 +108,7 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			if(m_current_ranking_type == EnRankingType.Score)
 			{
-				KEODKEGFDLD_FreeMusicInfo fmi = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[m_eventCtrl.HEACCHAKMFG_GetMusicsList()[0] - 1];
+				KEODKEGFDLD_FreeMusicInfo fmi = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicData[m_eventCtrl.HEACCHAKMFG_GetMusicsList()[0] - 1];
 				EONOEHOKBEB_Music mi = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.EPMMNEFADAP_Musics[fmi.DLAEJOBELBH_MusicId - 1];
 				m_windowUi.ChangePreset(GeneralListWindow.Preset.ScoreEventRanking, false);
 				m_windowUi.SetMusicTitle(Database.Instance.musicText.Get(mi.KNMGEEFGDNI_Nam).musicName, GameAttributeTextColor.Colors[mi.FKDCCLPGKDK_Ma - 1]);
@@ -131,7 +131,7 @@ namespace XeApp.Game.Menu
 				else if(m_current_ranking_type >= EnRankingType.GoDivaScore_01 && m_current_ranking_type <= EnRankingType.GoDivaScore_10)
 					m_windowUi.ChangePreset(GeneralListWindow.Preset.GoDivaEventRanking, m_enableChangeRanking);
 				//int y, m, d, H, M;
-				//ExtractDateTime(m_eventCtrl.GLIMIGNNGGB_Start, out y, out m, out d, out H, out M);
+				//ExtractDateTime(m_eventCtrl.GLIMIGNNGGB_RankingStart, out y, out m, out d, out H, out M);
 				if(!m_isPast)
 					m_windowUi.SetRankingMessage(bk.GetMessageByLabel("ranking_ev_message"));
 				else

@@ -10,9 +10,9 @@ public class EFLBHNFNFHA
 	public bool CILPABJCBPH_AgreeTos { get; private set; } // 0x8 AKNCKHDGMNK PBGPIOGGCIP DILNDDFKGLK
 
 	//// RVA: 0x1C4C680 Offset: 0x1C4C680 VA: 0x1C4C680
-	private string HIOMFHINAAH_GetFileName(int CCNCPGJGNDP)
+	private string HIOMFHINAAH_GetFileName(int _CCNCPGJGNDP_SagashoGameId)
 	{
-		return Application.persistentDataPath + "/50/" + string.Format("{0}", CCNCPGJGNDP ^ 0x266e3);
+		return Application.persistentDataPath + "/50/" + string.Format("{0}", _CCNCPGJGNDP_SagashoGameId ^ 0x266e3);
 	}
 
 	//// RVA: 0x1C4C754 Offset: 0x1C4C754 VA: 0x1C4C754

@@ -12,12 +12,12 @@ public class JHHBAFKMBDL
 	private static bool KKOBJLMKOJH = false; // 0x4
 	public static JHHBAFKMBDL HHCJCDFCLOB; // 0x8
 	private Func<bool> HDGDDJDCNGE; // 0x8
-	private static string[] ECLAOLBGCDD = new string[6] {"<color=red>\n(", ")</color>", "saka_error", "0000", "update_error", JpStringLiterals.StringLiteral_11992}; // 0xC
+	private static string[] ECLAOLBGCDD_tbl = new string[6] {"<color=red>\n(", ")</color>", "saka_error", "0000", "update_error", JpStringLiterals.StringLiteral_11992}; // 0xC
 
 	public bool Unused() { return KKOBJLMKOJH; }
 
 	// // RVA: 0xB1DEA0 Offset: 0xB1DEA0 VA: 0xB1DEA0
-	public void IJBGPAENLJA_Start(MonoBehaviour DANMJLOBLIE)
+	public void IJBGPAENLJA_Start(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		HHCJCDFCLOB = this;
 	}
@@ -45,15 +45,15 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB1E330 Offset: 0xB1E330 VA: 0xB1E330
-	public static string MLCPIKEMFBK_GetErrorText(int CMCKNKKCNDK)
+	public static string MLCPIKEMFBK_GetErrorText(int _CMCKNKKCNDK_Status)
 	{
 		if(MessageManager.Instance.IsExistBank(LGNLCJIKOEO))
 		{
-			return MessageManager.Instance.GetBank(LGNLCJIKOEO).GetMessageByLabel(ECLAOLBGCDD[4] + CMCKNKKCNDK.ToString(ECLAOLBGCDD[3]));
+			return MessageManager.Instance.GetBank(LGNLCJIKOEO).GetMessageByLabel(ECLAOLBGCDD_tbl[4] + _CMCKNKKCNDK_Status.ToString(ECLAOLBGCDD_tbl[3]));
 		}
 		else
 		{
-			return ECLAOLBGCDD[5] + CMCKNKKCNDK;
+			return ECLAOLBGCDD_tbl[5] + _CMCKNKKCNDK_Status;
 		}
 	}
 
@@ -110,7 +110,7 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB1EC54 Offset: 0xB1EC54 VA: 0xB1EC54
-	public void CIKMDHMMCIL(CACGCMBKHDI_Request _ADKIDBJCAJA_action, int CMCKNKKCNDK, IMCBBOAFION EDIIEFHAOGP)
+	public void CIKMDHMMCIL(CACGCMBKHDI_Request _ADKIDBJCAJA_action, int _CMCKNKKCNDK_Status, IMCBBOAFION EDIIEFHAOGP)
 	{
 		TextPopupSetting s = new TextPopupSetting();
 		s.TitleText = JpStringLiterals.StringLiteral_11776;
@@ -118,7 +118,7 @@ public class JHHBAFKMBDL
 		{
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
-		s.Text = MLCPIKEMFBK_GetErrorText(CMCKNKKCNDK);
+		s.Text = MLCPIKEMFBK_GetErrorText(_CMCKNKKCNDK_Status);
 		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x134718C
@@ -127,7 +127,7 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB1EEEC Offset: 0xB1EEEC VA: 0xB1EEEC
-	public void CIKMDHMMCIL_ShowErrorPopup(int CMCKNKKCNDK, IMCBBOAFION EDIIEFHAOGP)
+	public void CIKMDHMMCIL_ShowErrorPopup(int _CMCKNKKCNDK_Status, IMCBBOAFION EDIIEFHAOGP)
 	{
 		TextPopupSetting setting = new TextPopupSetting();
 		setting.TitleText = JpStringLiterals.StringLiteral_11921;
@@ -135,7 +135,7 @@ public class JHHBAFKMBDL
 		{
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
-		setting.Text = MLCPIKEMFBK_GetErrorText(CMCKNKKCNDK);
+		setting.Text = MLCPIKEMFBK_GetErrorText(_CMCKNKKCNDK_Status);
 		PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel LHFGEOAJAAL) => {
 			//0x13471C0
 			EDIIEFHAOGP();
@@ -775,7 +775,7 @@ public class JHHBAFKMBDL
 	}
 
 	// // RVA: 0xB2509C Offset: 0xB2509C VA: 0xB2509C
-	public void LOMNLGIDLKO(DJBHIFLHJLK AOCANKOMKFG)
+	public void LOMNLGIDLKO(DJBHIFLHJLK _AOCANKOMKFG_OnError)
 	{
 		TextPopupSetting s = new TextPopupSetting();
 		s.TitleText = MessageManager.Instance.GetMessage("menu", "popup_error_purchase_multi_title");
@@ -787,12 +787,12 @@ public class JHHBAFKMBDL
 		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x1348750
-			AOCANKOMKFG();
+			_AOCANKOMKFG_OnError();
 		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 
 	// // RVA: 0xB2539C Offset: 0xB2539C VA: 0xB2539C
-	public void MDKADDJMLHA(DJBHIFLHJLK AOCANKOMKFG)
+	public void MDKADDJMLHA(DJBHIFLHJLK _AOCANKOMKFG_OnError)
 	{
 		TextPopupSetting s = new TextPopupSetting();
 		s.TitleText = MessageManager.Instance.GetMessage("common", "popup_s_mas_title");
@@ -804,7 +804,7 @@ public class JHHBAFKMBDL
 		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x1348784
-			AOCANKOMKFG();
+			_AOCANKOMKFG_OnError();
 		}, null, null, null, true, true, false, null, null, null, null, null);
 	}
 

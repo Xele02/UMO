@@ -21,7 +21,7 @@ namespace ExternLib
 			blocks = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject<Dictionary<string, EDOHBJAPLPF_JsonData>>(jsonRes.EJCOJCGIBNG_ToJson());
 			newData.IIEMACPEEBJ_Load(blocks.Keys.ToList(), jsonRes);
 
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 
 			int baseVersion = 1;
 			// Config full unlocked profile
@@ -61,13 +61,13 @@ namespace ExternLib
 				// Setup a bg
 				if(commonBlock.GPHPNEGGGBG_HomeSceneId == 0)
 				{
-					commonBlock.GPHPNEGGGBG_HomeSceneId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas[0].CMBCBNEODPD_HomeBgId;
+					commonBlock.GPHPNEGGGBG_HomeSceneId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[0].CMBCBNEODPD_HomeBgId;
 					commonBlock.MDKELFPNCDB_HomeSceneEvolveId = 0;
 				}
 				commonBlock.ACNNFJJMEEO_StoryEnd = 999;
 				commonBlock.ENIPGFLGJHH_LastStory = 999;
 
-				commonBlock.BBFIGEOBOMB_SpItem[7].BFINGCJHOHI_Cnt = 9999999; // deco coin
+				commonBlock.BBFIGEOBOMB_SpItem[7].BFINGCJHOHI_Count = 9999999; // deco coin
 
 				for(int i = 0; i < (int)GPFlagConstant.ID._max; i++)
 				{
@@ -90,7 +90,7 @@ namespace ExternLib
 			{
 				NEKDCJKANAH_StoryRecord storyBlock = newData.LBDOLHGDIEB_GetBlock("story_record") as NEKDCJKANAH_StoryRecord;
 				LAEGMENIEDB_Story storyDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OHCIFMDPAPD_Story;
-				for (int i = 0; i < storyDb.CDENCMNHNGA.Count; i++)
+				for (int i = 0; i < storyDb.CDENCMNHNGA_table.Count; i++)
 				{
 					storyBlock.MMKAJBFBKNH[i].EALOBDHOCHP_Stat = 4;
 					storyBlock.MMKAJBFBKNH[i].OKJMIFELDMD_Opn = 0xffff;
@@ -104,8 +104,8 @@ namespace ExternLib
 					divaBlock.NBIGLBMHEDC_DivaList[i].CPGFPEDMDEH_Have = 1;
 					divaBlock.NBIGLBMHEDC_DivaList[i].KCCONFODCPN_IntimacyLevel = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.GLHEHGGKILG_GetMaxLevel();
 					divaBlock.NBIGLBMHEDC_DivaList[i].JLEPLIHFPKD_IntimacySkillLevel = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.COHLJLNLBKM.Count - 1;
-					for (int j = 0; j < divaBlock.NBIGLBMHEDC_DivaList[i].ANAJIAENLNB_Levels.Count; j++)
-						divaBlock.NBIGLBMHEDC_DivaList[i].ANAJIAENLNB_Levels[j] = 8;
+					for (int j = 0; j < divaBlock.NBIGLBMHEDC_DivaList[i].ANAJIAENLNB_Level.Count; j++)
+						divaBlock.NBIGLBMHEDC_DivaList[i].ANAJIAENLNB_Level[j] = 8;
 					divaBlock.NBIGLBMHEDC_DivaList[i].HEBKEJBDCBH_DivaLevel = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.AGNCAAFGLBE_MaxLevels;
 				}
 			}
@@ -114,7 +114,7 @@ namespace ExternLib
 				int numSns = 0;
 				for (int i = 0; i < 2000; i++)
 				{
-					BOKMNHAFJHF_Sns.KEIGMAOCJHK_Talk dbSns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA_Talks[i];
+					BOKMNHAFJHF_Sns.KEIGMAOCJHK_Talk dbSns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA_table[i];
 					if (dbSns.PPEGAKEIEGM_Enabled == 2)
 					{
 						DDEMMEPBOIA_Sns.EFIFBJGKPJF saveSns = snsBlock.HAJEJPFGILG[i];
@@ -131,9 +131,9 @@ namespace ExternLib
 			{
 				MLIBEPGADJH_Scene dbScenes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene;
 				MMPBPOIFDAF_Scene saveScenes = newData.LBDOLHGDIEB_GetBlock("scene") as MMPBPOIFDAF_Scene;
-				for (int i = 0; i < dbScenes.CDENCMNHNGA_SceneList.Count; i++)
+				for (int i = 0; i < dbScenes.CDENCMNHNGA_table.Count; i++)
 				{
-					MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = dbScenes.CDENCMNHNGA_SceneList[i];
+					MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = dbScenes.CDENCMNHNGA_table[i];
 					if (dbScene.PPEGAKEIEGM_En == 2)
 					{
 						if (i < saveScenes.OPIBAPEGCLA.Count)
@@ -175,7 +175,7 @@ namespace ExternLib
 						});
 						if(saveItem != null)
 						{			
-							if(saveItem.BFINGCJHOHI_Cnt < 1)
+							if(saveItem.BFINGCJHOHI_Count < 1)
 							{
 								saveItem.PPJAGFPBFHJ(1);
 							}
@@ -185,7 +185,7 @@ namespace ExternLib
 			}
 			{
 				List<JGGLDGNKELI_Emblem.AAHAAJEJNLJ> saveEmblems = newData.OFAJDLJBMEM_Emblem.MDKOHOCONKE;
-				List<IHGBPAJMJFK_Emblem.AKJPPHFGEFG_EmblemInfo> dbEmblem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem.CDENCMNHNGA_EmblemList;
+				List<IHGBPAJMJFK_Emblem.AKJPPHFGEFG_EmblemInfo> dbEmblem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBNBNAFGMDE_Emblem.CDENCMNHNGA_table;
 				int cnt = saveEmblems.Count;
 				if (dbEmblem.Count < cnt)
 					cnt = dbEmblem.Count;
@@ -196,7 +196,7 @@ namespace ExternLib
 						if (saveEmblems[i].BEBJKJKBOGH_Date == 0)
 						{
 							saveEmblems[i].BEBJKJKBOGH_Date = time;
-							saveEmblems[i].FHCAFLCLGAA_Cnt = 1;
+							saveEmblems[i].FHCAFLCLGAA_EmCnt = 1;
 						}
 					}
 				}
@@ -204,16 +204,16 @@ namespace ExternLib
 			{
 				EBFLJMOCLNA_Costume costumeBlock = newData.LBDOLHGDIEB_GetBlock("costume") as EBFLJMOCLNA_Costume;
 				LCLCCHLDNHJ_Costume costumeDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume;
-				for (int i = 0; i < costumeDb.CDENCMNHNGA_Costumes.Count; i++)
+				for (int i = 0; i < costumeDb.CDENCMNHNGA_table.Count; i++)
 				{
-					LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo item = costumeDb.CDENCMNHNGA_Costumes[i];
+					LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo item = costumeDb.CDENCMNHNGA_table[i];
 					if (item.PPEGAKEIEGM_Enabled == 2)
 					{
-						if (costumeBlock.FABAGMLEKIB_List[i].BEBJKJKBOGH_Date == 0)
+						if (costumeBlock.FABAGMLEKIB_CostumeList[i].BEBJKJKBOGH_Date == 0)
 						{
-							costumeBlock.FABAGMLEKIB_List[i].BEBJKJKBOGH_Date = time;
+							costumeBlock.FABAGMLEKIB_CostumeList[i].BEBJKJKBOGH_Date = time;
 						}
-						costumeBlock.FABAGMLEKIB_List[i].ANAJIAENLNB_Level = costumeDb.CDENCMNHNGA_Costumes[i].LLLCMHENKKN_LevelMax;
+						costumeBlock.FABAGMLEKIB_CostumeList[i].ANAJIAENLNB_Level = costumeDb.CDENCMNHNGA_table[i].LLLCMHENKKN_LevelMax;
 					}
 				}
 				for (int i = 0; i < 30; i++)
@@ -225,18 +225,18 @@ namespace ExternLib
 				OIGEIIGKMNH_Valkyrie valkBlock = newData.LBDOLHGDIEB_GetBlock("valkyrie") as OIGEIIGKMNH_Valkyrie;
 				GKFMJAHKEMA_ValSkill dbValkSkill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DIAEPFPGPEP_ValSkill;
 				JPIANKEOOMB_Valkyrie dbValk = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.PEOALFEGNDH_Valkyrie;
-				for (int i = 0; i < dbValk.CDENCMNHNGA_ValkyrieList.Count; i++)
+				for (int i = 0; i < dbValk.CDENCMNHNGA_table.Count; i++)
 				{
-					if (dbValk.CDENCMNHNGA_ValkyrieList[i].IPJMPBANBPP_IsEnabled)
+					if (dbValk.CDENCMNHNGA_table[i].IPJMPBANBPP_IsEnabled)
 					{
 						if (valkBlock.CNGNBKNBKGI_ValkList[i].BEBJKJKBOGH_Date == 0)
 						{
 							valkBlock.CNGNBKNBKGI_ValkList[i].BEBJKJKBOGH_Date = time;
 						}
-						GKFMJAHKEMA_ValSkill.CCPFGNNIBDD valkSkill = dbValkSkill.MNHBHNIHJJH(dbValk.CDENCMNHNGA_ValkyrieList[i].BMIJDLBGFNP_SkillId);
-						if (valkSkill != null && valkSkill.DOOGFEGEKLG > 0)
+						GKFMJAHKEMA_ValSkill.CCPFGNNIBDD valkSkill = dbValkSkill.MNHBHNIHJJH(dbValk.CDENCMNHNGA_table[i].BMIJDLBGFNP_SkillId);
+						if (valkSkill != null && valkSkill.DOOGFEGEKLG_Max > 0)
 						{
-							valkBlock.CNGNBKNBKGI_ValkList[i].CIEOBFIIPLD_Level = valkSkill.DOOGFEGEKLG;
+							valkBlock.CNGNBKNBKGI_ValkList[i].CIEOBFIIPLD_Level = valkSkill.DOOGFEGEKLG_Max;
 						}
 					}
 				}
@@ -286,7 +286,7 @@ namespace ExternLib
 					if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.KHCACDIKJLG_ItemsChara[i].PLALNIIBLOF_Enabled == 2)
 					{
 						BCGFHLIEKLJ_DecoItem.AKAHOEBACGJ it = decoItem.PEBDEIKBCCM_Chars[i];
-						it.BFINGCJHOHI_Cnt = 1;
+						it.BFINGCJHOHI_Count = 1;
 					}
 				}
 			}
@@ -298,8 +298,8 @@ namespace ExternLib
 					if(dbSp.PLALNIIBLOF_Enabled == 2)
 					{
 						BCGFHLIEKLJ_DecoItem.GNGFGEIAGJL saveSp = newData.OMMNKDEODJP_DecoItem.NBKAMFFIOOG_Sp[i];
-						if(saveSp.BFINGCJHOHI_Cnt == 0)
-							saveSp.BFINGCJHOHI_Cnt = 1;
+						if(saveSp.BFINGCJHOHI_Count == 0)
+							saveSp.BFINGCJHOHI_Count = 1;
 					}
 				}
 			}

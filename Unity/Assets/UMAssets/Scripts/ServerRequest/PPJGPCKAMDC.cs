@@ -9,7 +9,7 @@ public class PPJGPCKAMDC_PlatformPaymentRecover : CACGCMBKHDI_Request
 	public class DEGAKGMBJDF
 	{
 		public bool ONGLFBEGEMI_ExistUncompletedTransaction; // 0x8
-		public List<MCKCJMLOAFP_CurrencyInfo> BBEPLKNMICJ_Currencies = new List<MCKCJMLOAFP_CurrencyInfo>(); // 0xC
+		public List<MCKCJMLOAFP_CurrencyInfo> BBEPLKNMICJ_Balances = new List<MCKCJMLOAFP_CurrencyInfo>(); // 0xC
 		
 		// RVA: 0xDF7A24 Offset: 0xDF7A24 VA: 0xDF7A24
 		public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
@@ -26,7 +26,7 @@ public class PPJGPCKAMDC_PlatformPaymentRecover : CACGCMBKHDI_Request
 				{
 					MCKCJMLOAFP_CurrencyInfo data = new MCKCJMLOAFP_CurrencyInfo();
 					data.DPKCOKLMFMK(b[i]);
-					BBEPLKNMICJ_Currencies.Add(data);
+					BBEPLKNMICJ_Balances.Add(data);
 				}
 			}
 		}
@@ -41,7 +41,7 @@ public class PPJGPCKAMDC_PlatformPaymentRecover : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0xDF78C4 Offset: 0xDF78C4 VA: 0xDF78C4 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG = new DEGAKGMBJDF();
 		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

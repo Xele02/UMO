@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 public class IJNOIMLNBGN
 {
-	private int EHOIENNDEDH; // 0x8
+	private int EHOIENNDEDH_IdCrypted; // 0x8
 	private long PCLNFCNIECH; // 0x10
 	private long HHPIJHADAOB; // 0x18
 	private string PMKLGDOEFNM; // 0x20
 
-	public int PPFNGGCBJKC { get { return EHOIENNDEDH; } set { EHOIENNDEDH = value; } } //0x8DAB5C DEMEPMAEJOO 0x8DAB64 HIGKAIDMOKN
+	public int PPFNGGCBJKC { get { return EHOIENNDEDH_IdCrypted; } set { EHOIENNDEDH_IdCrypted = value; } } //0x8DAB5C DEMEPMAEJOO 0x8DAB64 HIGKAIDMOKN
 	public long PDBPFJJCADD_OpenAt { get { return PCLNFCNIECH; } set { PCLNFCNIECH = value; } } //0x8DAB6C FOACOMBHPAC 0x8DAB74 NBACOBCOJCA
 	public long FDBNFFNFOND_CloseAt { get { return HHPIJHADAOB; } set { HHPIJHADAOB = value; } } //0x8DAB84 BPJOGHJCLDJ 0x8DAB8C NLJKMCHOCBK
 	public string KLMPFGOCBHC_BannerText { get { return PMKLGDOEFNM; } set { PMKLGDOEFNM = value; } } //0x8DAB9C BGJNIABLBDB 0x8DABA4 HFBJLALGKOM

@@ -137,7 +137,7 @@ namespace XeApp.Game.Menu
 			m_itemParam = param;
 			SetIcon(param.questData.JHAOHBNPMNA_EventId);
 			SetFont(param.questData.LFCOJABLOEN_EventId);
-			SwitchEmphasisIcon(param.questData.BEEIIJJKDBH, param.questData.BHANMJKCCBC_QuestAchievedCountText);
+			SwitchEmphasisIcon(param.questData.BEEIIJJKDBH_BadgeConstantId, param.questData.BHANMJKCCBC_BadgeText);
 			SwitchReceiptIcon(param.questData.PNFDMBHDPAJ);
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			if(param.questData.NNHHNFFLCFO == BKANGIKIEML.NODKLJHEAJB.BPNDHDHHKGE_38)

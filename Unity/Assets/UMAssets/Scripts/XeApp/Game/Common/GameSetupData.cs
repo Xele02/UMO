@@ -55,7 +55,7 @@ namespace XeApp.Game.Common
 					if(viewDivaData != null)
 					{
 						divaId = viewDivaData.AHHJLDLAPAN_DivaId;
-						costumeModelId = viewDivaData.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
+						costumeModelId = viewDivaData.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
 						costumeColorId = viewDivaData.EKFONBFDAAP_ColorId;
 						JJOELIOGMKK_DivaIntimacyInfo d = new JJOELIOGMKK_DivaIntimacyInfo();
 						d.KHEKNNFCAOI(divaId);
@@ -163,7 +163,7 @@ namespace XeApp.Game.Common
 					}
 					if(prismData.OCNHIHMAGMJ_GetPrismCostumeIdForSlot(index) > 0)
 					{
-						prismCostumeModelId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[prismData.OCNHIHMAGMJ_GetPrismCostumeIdForSlot(index) - 1].DAJGPBLEEOB_PrismCostumeModelId;
+						prismCostumeModelId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[prismData.OCNHIHMAGMJ_GetPrismCostumeIdForSlot(index) - 1].DAJGPBLEEOB_ModelId;
 						prismCostumeColorId = prismData.DOIGAGAAAOP_GetPrismCostumeColorIdForSlot(index);
 					}
 				}
@@ -176,7 +176,7 @@ namespace XeApp.Game.Common
 					if(a_prism.AHHJLDLAPAN_DivaId[a_index] > 0 && a_prism.JPIDIENBGKH_CostumeId[a_index] > 0)
 					{
 						prismDivaId = a_prism.AHHJLDLAPAN_DivaId[a_index];
-						prismCostumeModelId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[a_prism.JPIDIENBGKH_CostumeId[a_index] - 1].DAJGPBLEEOB_PrismCostumeModelId;
+						prismCostumeModelId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[a_prism.JPIDIENBGKH_CostumeId[a_index] - 1].DAJGPBLEEOB_ModelId;
 						prismCostumeColorId = 0;
 					}
 				}
@@ -446,13 +446,13 @@ namespace XeApp.Game.Common
 				openEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0/*0*/;
 				gameEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0/*0*/;
 				tutorial = TutorialGameMode.Type.None;
-				musicId = info.DLAEJOBELBH_Id;
+				musicId = info.DLAEJOBELBH_MusicId;
 				m_prismMusicId = 0;
 				difficultyType = Difficulty.Type.Easy;
 				EventUniqueId = 0;
 				IsMvMode = false;
 				IsLine6Mode = false;
-				setupTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				setupTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 				mvLimitTime = -1;
 				LimitTime = 0;
 				this.onStageDivaNum = onStageDivaNum;
@@ -473,7 +473,7 @@ namespace XeApp.Game.Common
 				this.mode = GameMode.Type.FreeBattle;
 				this.freeMusicId = freeMusicId;
 				storyMusicId = 0;
-				musicId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[freeMusicId - 1].DLAEJOBELBH_MusicId;
+				musicId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicData[freeMusicId - 1].DLAEJOBELBH_MusicId;
 				prismMusicId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.CIKALPJDGMF_ResolveMusicId(freeMusicId, musicId);
 				this.difficultyType = difficultyType;
 				tutorial = TutorialGameMode.Type.None;
@@ -486,7 +486,7 @@ namespace XeApp.Game.Common
 				IsLine6Mode = isLine6Mode;
 				if(setupTime == 0)
 				{
-					setupTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+					setupTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 				}
 				this.musicLoadText = musicLoadText;
 				this.onStageDivaNum = onStageDivaNum;
@@ -513,14 +513,14 @@ namespace XeApp.Game.Common
 				playEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0;
 				openEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0;
 				gameEventType = OHCAABOMEOF.KGOGMKMBCPP_EventType.HJNNKCMLGFL_0;
-				musicId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[freeMusicId - 1].DLAEJOBELBH_MusicId;
+				musicId = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicData[freeMusicId - 1].DLAEJOBELBH_MusicId;
 				m_prismMusicId = 0;
 				tutorial = tutorialMode;
 				difficultyType = 0;
 				EventUniqueId = 0;
 				IsMvMode = false;
 				IsLine6Mode = false;
-				setupTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				setupTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 				mvLimitTime = -1;
 				LimitTime = 0;
 				onStageDivaNum = 1;

@@ -93,7 +93,7 @@ namespace XeApp.Game.Menu
 					m_layout.SetSubValkyrieIcon(list[i].JMHKMDFNAIN - 1, list[i].LLOBHDMHJIG_Id);
 				}
 				b1 &= list[i].LLOBHDMHJIG_Id < 1;
-				b2 |= KDHGBOOECKC.HHCJCDFCLOB.CKBDHFNLLJE(OfferSeries, list[i].CPKMLLNADLJ_Attr);
+				b2 |= KDHGBOOECKC.HHCJCDFCLOB.CKBDHFNLLJE(OfferSeries, list[i].CPKMLLNADLJ_Serie);
 			}
 			for(int i = 0; i < 5; i++)
 			{

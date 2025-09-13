@@ -331,7 +331,7 @@ namespace XeApp.Game.Menu
 							ev.HNDKCBHOJEH[i].CLLKANEGGBJ.ToString(),
 							JpStringLiterals.StringLiteral_10090
 						};
-						AddViewPlateList(ev.HNDKCBHOJEH[i].GLCLFMGPMAN, string.Concat(strs), ListType.Ranking, str);
+						AddViewPlateList(ev.HNDKCBHOJEH[i].GLCLFMGPMAN_ItemId, string.Concat(strs), ListType.Ranking, str);
 					}
 				}
 			}
@@ -369,12 +369,12 @@ namespace XeApp.Game.Menu
 			m_plateSmallList.Sort((ViewPlateData a, ViewPlateData b) =>
 			{
 				//0x16263C8
-				return a.data.EKLIPGELKCL_SceneRarity - b.data.EKLIPGELKCL_SceneRarity;
+				return a.data.EKLIPGELKCL_Rarity - b.data.EKLIPGELKCL_Rarity;
 			});
 			m_plateBigList.Sort((ViewPlateData a, ViewPlateData b) =>
 			{
 				//0x1626430
-				return a.data.EKLIPGELKCL_SceneRarity - b.data.EKLIPGELKCL_SceneRarity;
+				return a.data.EKLIPGELKCL_Rarity - b.data.EKLIPGELKCL_Rarity;
 			});
 			m_plateList.AddRange(m_plateBigList);
 			m_plateList.AddRange(m_plateSmallList);

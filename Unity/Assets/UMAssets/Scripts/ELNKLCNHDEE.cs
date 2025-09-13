@@ -18,12 +18,12 @@ public class ELNKLCNHDEE
 	private string BIDDPDCFFHA; // 0x1C
 
 	// RVA: 0x1305F24 Offset: 0x1305F24 VA: 0x1305F24
-	public void HBOKJNECOPA(string HAAJGNCFNJM/* = "trigger_item"*/)
+	public void HBOKJNECOPA(string _HAAJGNCFNJM_ItemName/* = "trigger_item"*/)
     {
         NPNNPNAIONN = false;
         PLOOEECNHFB = false;
         GBCOABCAJHG = false;
-        BIDDPDCFFHA = HAAJGNCFNJM;
+        BIDDPDCFFHA = _HAAJGNCFNJM_ItemName;
         N.a.StartCoroutineWatched(JBGPGBKBOMH_Co_GetLotResultData());
     }
 

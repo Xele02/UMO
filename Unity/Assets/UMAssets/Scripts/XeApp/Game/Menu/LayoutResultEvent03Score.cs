@@ -298,8 +298,8 @@ namespace XeApp.Game.Menu
 			myNameText.text = viewData.HIHPPOFHMNF_Player.OPFGFINHFCE_Name;
 			rivalNameText.text = viewData.EKOCEKHBHLE_Rival.OPFGFINHFCE_Name;
 			layoutRankAnim.StartChildrenAnimGoStop((rivalStrength + 1).ToString("D2"));
-			myTotal.SetNumber(viewData.HIHPPOFHMNF_Player.BDLNMOIOMHK_TotalStats, 0);
-			rivalTotal.SetNumber(viewData.EKOCEKHBHLE_Rival.BDLNMOIOMHK_TotalStats, 0);
+			myTotal.SetNumber(viewData.HIHPPOFHMNF_Player.BDLNMOIOMHK_Total, 0);
+			rivalTotal.SetNumber(viewData.EKOCEKHBHLE_Rival.BDLNMOIOMHK_Total, 0);
 			if(!viewData.HIHPPOFHMNF_Player.JCOJKAHFADL_Is6Line)
 			{
 				myDiffImage.uvRect = diffImageRectList[viewData.HIHPPOFHMNF_Player.AKNELONELJK_Difficulty];
@@ -369,8 +369,8 @@ namespace XeApp.Game.Menu
 			rivalNumberNoteResultCountList[5].SetNumber(viewData.EKOCEKHBHLE_Rival.NKLHOLHLEEI_ExcellentCount, 0);
 			myNumberScore.SetNumber(0, 0);
 			rivalNumberScore.SetNumber(0, 0);
-			myNumberBonus.SetNumber(viewData.HIHPPOFHMNF_Player.EACPIDGGPPO_Bonus, 0);
-			rivalNumberBonus.SetNumber(viewData.EKOCEKHBHLE_Rival.EACPIDGGPPO_Bonus, 0);
+			myNumberBonus.SetNumber(viewData.HIHPPOFHMNF_Player.EACPIDGGPPO_ExcellentScore, 0);
+			rivalNumberBonus.SetNumber(viewData.EKOCEKHBHLE_Rival.EACPIDGGPPO_ExcellentScore, 0);
 		}
 
 		// // RVA: 0x18D4AE0 Offset: 0x18D4AE0 VA: 0x18D4AE0

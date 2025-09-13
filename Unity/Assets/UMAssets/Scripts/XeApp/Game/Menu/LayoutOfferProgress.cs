@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 		public void PopupSetting()
 		{
 			int offerId = m_OfferView.PPFNGGCBJKC;
-            BOPFPIHGJMD.MLBMHDCCGHI offerType = m_OfferView.FGHGMHPNEMG_Category;
+            BOPFPIHGJMD.MLBMHDCCGHI offerType = m_OfferView.FGHGMHPNEMG_Type;
 			OCMJNBIFJNM_Offer.JPOHOLBBFGP of = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.FOFLMHELILC.Find((OCMJNBIFJNM_Offer.JPOHOLBBFGP _) =>
 			{
 				//0x15D5C50

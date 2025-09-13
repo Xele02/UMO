@@ -184,7 +184,7 @@ namespace XeApp.Game.Menu
 				//0x187B900
 				int res = sortTbl[(int)a.CMCKNKKCNDK_Status] - sortTbl[(int)b.CMCKNKKCNDK_Status];
 				if(res == 0)
-					res = a.EEFLOOBOAGF - b.EEFLOOBOAGF;
+					res = a.EEFLOOBOAGF_ViewOrder - b.EEFLOOBOAGF_ViewOrder;
 				return res;
 			});
 		}

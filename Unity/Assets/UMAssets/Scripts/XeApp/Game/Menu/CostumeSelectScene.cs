@@ -153,7 +153,7 @@ namespace XeApp.Game.Menu
 				for(int i = 0; i < m_cos_list_win.m_list_item.Count; i++)
 				{
 					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume, m_cos_list_win.m_list_item[i].m_cos_id), m_cos_list_win.m_list_item[i].m_cos_color));
-					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(CostumeTextureCache.MakeCostumeTexturePath(m_diva_id, m_cos_list_win.m_list_item[i].m_view_diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, m_cos_list_win.m_list_item[i].m_cos_color));
+					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(CostumeTextureCache.MakeCostumeTexturePath(m_diva_id, m_cos_list_win.m_list_item[i].m_view_diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, m_cos_list_win.m_list_item[i].m_cos_color));
 				}
 				m_episode_list = PIGBBNDPPJC.FKDIMODKKJD_GetAvaiableEpisodes(true);
 				m_costume_model_id = -1;
@@ -162,7 +162,7 @@ namespace XeApp.Game.Menu
 				{
 					if(m_transitionName == TransitionList.Type.COSTUME_SELECT)
 					{
-						m_next_costume_model_id = m_cos_list_win.GetSelectItem().m_view_diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
+						m_next_costume_model_id = m_cos_list_win.GetSelectItem().m_view_diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
 						m_next_costume_color = m_cos_list_win.GetSelectItem().m_cos_color;
 					}
 				}
@@ -476,7 +476,7 @@ namespace XeApp.Game.Menu
 			s.TitleText = bk.GetMessageByLabel("popup_sel_cos_terms_title");
 			s.m_diva_id = m_diva_id;
 			s.m_costume_color = t_item.m_cos_color;
-			s.m_costume_model_id = t_item.m_view_diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
+			s.m_costume_model_id = t_item.m_view_diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
 			s.WindowSize = SizeType.Middle;
 			if(s.m_type == 0)
 			{
@@ -535,7 +535,7 @@ namespace XeApp.Game.Menu
 				{
 					CostumeUpgradeArgs arg = new CostumeUpgradeArgs();
 					arg.divaId = m_diva_id;
-					arg.costumemModelId = t_item.m_view_diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
+					arg.costumemModelId = t_item.m_view_diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
 					MenuScene.Instance.Call(TransitionList.Type.COSTUME_UPGRADE, arg, true);
 				}
 			}
@@ -721,7 +721,7 @@ namespace XeApp.Game.Menu
 				item.m_view_diva.LEHDLBJJBNC();
 			}
 			m_pushedTrying = true;
-			m_next_costume_model_id = item.m_view_diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
+			m_next_costume_model_id = item.m_view_diva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
 			m_next_costume_color = item.m_cos_color;
 		}
 

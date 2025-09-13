@@ -125,7 +125,7 @@ namespace XeApp.Game.Menu
 					m_layoutMain.StartSiblingAnimGoStop("03");
 				}
 			}
-			string s = string.Format("{0:D2}", m_view.FJOLNJLLJEJ_BossRank);
+			string s = string.Format("{0:D2}", m_view.FJOLNJLLJEJ_Rank);
 			m_bossRank.StartChildrenAnimGoStop(s, s);
 			m_bossNameText.text = m_view.OPFGFINHFCE_Name;
 			for(int i = 0; i < m_view.NEAPOLIIELG_MvpRewards.Count; i++)

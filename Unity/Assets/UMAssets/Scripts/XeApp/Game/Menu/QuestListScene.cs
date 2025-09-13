@@ -333,7 +333,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				int cnt = req.NFEAMMJIMPG.CEDLLCCONJP.Count;
+				int cnt = req.NFEAMMJIMPG.CEDLLCCONJP_AchievementPrizes.Count;
 				for(int i = 0; i < quest.Count; i++)
 				{
 					if(controller.GBADILEHLGC_GetStatus(quest[i].PPFNGGCBJKC_Id) == 2)
@@ -344,7 +344,7 @@ namespace XeApp.Game.Menu
 							{
 								for(int j = 0; j < cnt; j++)
 								{
-									if(req.NFEAMMJIMPG.CEDLLCCONJP[j].OOIJCMLEAJP_IsReceived)
+									if(req.NFEAMMJIMPG.CEDLLCCONJP_AchievementPrizes[j].OOIJCMLEAJP_IsReceived)
 									{
 										string str = controller.DCODGEOEDPG();
 										if(str == null)
@@ -352,7 +352,7 @@ namespace XeApp.Game.Menu
 										sBuilder.Clear();
 										sBuilder.Append(str);
 										sBuilder.Append(quest[i].HPAOAKMKCMA_Slt2.ToString("D4"));
-										if(req.NFEAMMJIMPG.CEDLLCCONJP[j].LJNAKDMILMC_Key == sBuilder.ToString())
+										if(req.NFEAMMJIMPG.CEDLLCCONJP_AchievementPrizes[j].LJNAKDMILMC_Key == sBuilder.ToString())
 										{
 											clearQuestIds.Add(quest[i].PPFNGGCBJKC_Id);
 										}
@@ -366,7 +366,7 @@ namespace XeApp.Game.Menu
 							{
 								for(int j = 0; j < cnt; j++)
 								{
-									if(req.NFEAMMJIMPG.CEDLLCCONJP[j].OOIJCMLEAJP_IsReceived)
+									if(req.NFEAMMJIMPG.CEDLLCCONJP_AchievementPrizes[j].OOIJCMLEAJP_IsReceived)
 									{
 										string str = controller.IFKKBHPMALH();
 										if(str == null)
@@ -374,7 +374,7 @@ namespace XeApp.Game.Menu
 										sBuilder.Clear();
 										sBuilder.Append(str);
 										sBuilder.Append(quest[i].IKJAAKEINHC_Slt.ToString());
-										if(req.NFEAMMJIMPG.CEDLLCCONJP[j].LJNAKDMILMC_Key == sBuilder.ToString())
+										if(req.NFEAMMJIMPG.CEDLLCCONJP_AchievementPrizes[j].LJNAKDMILMC_Key == sBuilder.ToString())
 										{
 											clearQuestIds.Add(quest[i].PPFNGGCBJKC_Id);
 										}

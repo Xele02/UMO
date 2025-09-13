@@ -156,11 +156,11 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE3D7CC Offset: 0xE3D7CC VA: 0xE3D7CC
 		public static void SetupFirstTutorialLog()
 		{
-			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.KINJOEIAHFK_StartTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.KINJOEIAHFK_StartTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
 			if (GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.OLDAGCNLJOI_Progress != 0)
 				return;
-			Log(OAGBCBBHMPF.OGBCFNIKAFI.FKPEAGGKNLC_0);
+			Log(OAGBCBBHMPF.OGBCFNIKAFI.FKPEAGGKNLC_Start_0);
 		}
 
 		// // RVA: 0xE3D9B0 Offset: 0xE3D9B0 VA: 0xE3D9B0
@@ -754,7 +754,7 @@ namespace XeApp.Game.Tutorial
 			CMMKCEPBIHI.DIDENKKDJKI(ref a, GameManager.Instance.ViewPlayerData.NPFCMHCCDDH, GameManager.Instance.ViewPlayerData, ib, null, ib.MGJKEJHEBPO_DiffInfos[0].HPBPDHPIBGN_EnemyData);
 			a.GEEDEOHGMOM(ref status1);
 			status2.Clear();
-			status2.Copy(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.CMCKNKKCNDK_GoDivaStatus);
+			status2.Copy(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.CMCKNKKCNDK_Status);
 			status2.Add(status1);
 			Database.Instance.gameSetup.teamInfo.SetupInfo(status2, GameManager.Instance.ViewPlayerData, 0, ib, null, null, null, false);
 			JGEOBNENMAH.EDHCNKBMLGI res = new JGEOBNENMAH.EDHCNKBMLGI();

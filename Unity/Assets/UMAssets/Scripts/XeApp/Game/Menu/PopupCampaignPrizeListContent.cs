@@ -150,17 +150,17 @@ namespace XeApp.Game.Menu
 				h.Rank = view.JMLKAGOACAE[i].FJOLNJLLJEJ_Rank;
 				m_list.Add(h);
 				f += 55;
-				for(int j = 0; j < view.JMLKAGOACAE[i].HBHMAKNGKFK.Count; j++)
+				for(int j = 0; j < view.JMLKAGOACAE[i].HBHMAKNGKFK_Items.Count; j++)
 				{
 					CampaignListItem it = new CampaignListItem();
 					it.Top = new Vector2((j & 1) * 480 + 10, -(f + (j / 2) * 108 + 4));
 					it.Height = 108;
 					it.ResourceType = 2;
-					it.Data = view.JMLKAGOACAE[i].HBHMAKNGKFK[j];
+					it.Data = view.JMLKAGOACAE[i].HBHMAKNGKFK_Items[j];
 					m_list.Add(it);
-					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(view.JMLKAGOACAE[i].HBHMAKNGKFK[j].JJBGOIMEIPF_ItemId, 0));
+					KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(ItemTextureCache.MakeItemIconTexturePath(view.JMLKAGOACAE[i].HBHMAKNGKFK_Items[j].JJBGOIMEIPF_ItemId, 0));
 				}
-				f += 104 + 104 * (view.JMLKAGOACAE[i].HBHMAKNGKFK.Count - 1) / 2;
+				f += 104 + 104 * (view.JMLKAGOACAE[i].HBHMAKNGKFK_Items.Count - 1) / 2;
 			}
 		}
 

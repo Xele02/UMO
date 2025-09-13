@@ -17,10 +17,10 @@ public class CPHJGFLEFNF
 	public long ICJEDACBMMF_ServerTime; // 0x38
 	public int LMOBPKIDIHF_AverageFps; // 0x40
 	public int IPAAOFCGEAB_MinFps; // 0x44
-	public int CNDDKMJAIBG; // 0x48
+	public int CNDDKMJAIBG_mode; // 0x48
 	public int HJILBFGFFEM_BaseUnionCredit; // 0x4C
 	public int PICAFKPEJCJ; // 0x50
-	public int FILFPNDEINH_ComboRank; // 0x54
+	public int FILFPNDEINH_Combo; // 0x54
 	public int POGINDBNBAJ_MaxCombo; // 0x58
 	public int MPHFGEPJOGL_NumSkillActive; // 0x5C
 	public int HNCDHJDENJO_LastSkillMillisec; // 0x60

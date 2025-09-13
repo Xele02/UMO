@@ -28,7 +28,7 @@ namespace XeApp.Game.Menu
 			base.OnPreSetCanvas();
 			m_menuUi.Hide();
 			Initialize();
-			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PNNHEOOJBFI_TutorialGeneralFlags.EDEDFDDIOKO_SetTrue(1);
+			GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.PNNHEOOJBFI_TutorialGeneralFlags.EDEDFDDIOKO_Set(1);
 		}
 
 		// RVA: 0xED5CA0 Offset: 0xED5CA0 VA: 0xED5CA0 Slot: 17

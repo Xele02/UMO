@@ -143,9 +143,9 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xEE1754 Offset: 0xEE1754 VA: 0xEE1754
 		private bool CheckReaction(HGFPAFPGIKG.LBEPCOMCHNE reaction)
 		{
-			if(reaction.FKDOMKHHOCD == HGFPAFPGIKG.GDEJHABHLFH.HJNNKCMLGFL_0 || reaction.FKDOMKHHOCD > HGFPAFPGIKG.GDEJHABHLFH.EOAFEBEENLI_5)
+			if(reaction.FKDOMKHHOCD_CenterSkillCondition == HGFPAFPGIKG.GDEJHABHLFH.HJNNKCMLGFL_0 || reaction.FKDOMKHHOCD_CenterSkillCondition > HGFPAFPGIKG.GDEJHABHLFH.EOAFEBEENLI_5)
 				return false;
-			switch(reaction.FKDOMKHHOCD)
+			switch(reaction.FKDOMKHHOCD_CenterSkillCondition)
 			{
 				case HGFPAFPGIKG.GDEJHABHLFH.HPFFBANMJOD_1:
 					break;
@@ -158,13 +158,13 @@ namespace XeApp.Game.Menu
 						return false;
 					if(m_prevPickup.NNCCGILOOIE_Remain <= m_crntPickup.NNCCGILOOIE_Remain)
 						return false;
-					if(reaction.FKDOMKHHOCD == HGFPAFPGIKG.GDEJHABHLFH.DAFJKGJDAND_3)
+					if(reaction.FKDOMKHHOCD_CenterSkillCondition == HGFPAFPGIKG.GDEJHABHLFH.DAFJKGJDAND_3)
 					{
 						if(!m_isBoxFull)
 							return false;
 						return true;
 					}
-					if(reaction.FKDOMKHHOCD != HGFPAFPGIKG.GDEJHABHLFH.BEJJEGKLGMP_4)
+					if(reaction.FKDOMKHHOCD_CenterSkillCondition != HGFPAFPGIKG.GDEJHABHLFH.BEJJEGKLGMP_4)
 						return false;
 					return !m_isBoxFull;
 				case HGFPAFPGIKG.GDEJHABHLFH.EOAFEBEENLI_5:
@@ -267,7 +267,7 @@ namespace XeApp.Game.Menu
 				HGFPAFPGIKG.LBEPCOMCHNE d = m_reactionList.Find((HGFPAFPGIKG.LBEPCOMCHNE x) =>
 				{
 					//0xEE1F58
-					return x.FKDOMKHHOCD >= HGFPAFPGIKG.GDEJHABHLFH.DAFJKGJDAND_3 && x.FKDOMKHHOCD < HGFPAFPGIKG.GDEJHABHLFH.EOAFEBEENLI_5;
+					return x.FKDOMKHHOCD_CenterSkillCondition >= HGFPAFPGIKG.GDEJHABHLFH.DAFJKGJDAND_3 && x.FKDOMKHHOCD_CenterSkillCondition < HGFPAFPGIKG.GDEJHABHLFH.EOAFEBEENLI_5;
 				});
 				if(d != null)
 				{

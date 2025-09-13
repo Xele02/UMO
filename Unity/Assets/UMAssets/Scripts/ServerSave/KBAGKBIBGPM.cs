@@ -12,7 +12,7 @@ public class KBAGKBIBGPM_EventRaidLobby : KLFDBFMNLBL_ServerSaveBlock
 		private int ENOBDCFHELD; // 0x8
 		private int FCEJCHGLFGN; // 0xC
 		public int AFGHJEJKDHN_StepCrypted; // 0x10
-		public int FBDJBMDEENG_Crypted; // 0x14
+		public int FBDJBMDEENG_StepCrypted2; // 0x14
 		private int HFIHMDILNFD_Crypted; // 0x18
 		private int IGMFFIKLEHP_Crypted; // 0x1C
 		private int GEIHLKKJNDG_Crypted; // 0x20
@@ -23,10 +23,10 @@ public class KBAGKBIBGPM_EventRaidLobby : KLFDBFMNLBL_ServerSaveBlock
 		public bool CJALBNNJOOB_IsFl; // 0x34
 		public List<IKCGAJKCPFN> NNMPGOAGEOL_Quests = new List<IKCGAJKCPFN>(50); // 0x38
 		public string MPCAGEPEJJJ_Key; // 0x3C
-		public long EGBOHDFBAPB_End; // 0x40
+		public long EGBOHDFBAPB_CloseAt; // 0x40
 		public string MDADLCOCEBN_SessionId = ""; // 0x48
 
-		public int LGADCGFMLLD_Step { get { return AFGHJEJKDHN_StepCrypted ^ ENOBDCFHELD; } set { AFGHJEJKDHN_StepCrypted = value ^ ENOBDCFHELD; FBDJBMDEENG_Crypted = value ^ FCEJCHGLFGN; } } //0x1014918 MAFBDLKFHGJ 0x10153DC EPEFBOIALDI
+		public int LGADCGFMLLD_Step { get { return AFGHJEJKDHN_StepCrypted ^ ENOBDCFHELD; } set { AFGHJEJKDHN_StepCrypted = value ^ ENOBDCFHELD; FBDJBMDEENG_StepCrypted2 = value ^ FCEJCHGLFGN; } } //0x1014918 MAFBDLKFHGJ 0x10153DC EPEFBOIALDI
 		public int OMCAOJJGOGG_Lb { get { return HFIHMDILNFD_Crypted ^ ENOBDCFHELD; } set { HFIHMDILNFD_Crypted = value ^ ENOBDCFHELD; IGMFFIKLEHP_Crypted = value ^ FCEJCHGLFGN; } } //0x1014928 PBEMPHPDDDB 0x10153F0 MCADMIEOCCF
 		public int KMMJMDGLIFA_FrCns { get { return GEIHLKKJNDG_Crypted ^ ENOBDCFHELD; } set { GEIHLKKJNDG_Crypted = value ^ ENOBDCFHELD; BIOAGBAPPJA_Crypted = value ^ FCEJCHGLFGN; } } //0x1014938 ODELLHEMAAK 0x1015404 DNGGAOCFLAB
 		public int GNICDMGKMEP_Qu { get { return BHFAGDDEOKC_Crypted ^ ENOBDCFHELD; } set { BHFAGDDEOKC_Crypted = value ^ ENOBDCFHELD; EOODGLMGDLC_Crypted = value ^ FCEJCHGLFGN; } } //0x1014948 CHJKNNCKKJP 0x1015418 FCPDMGEHNCK
@@ -63,7 +63,7 @@ public class KBAGKBIBGPM_EventRaidLobby : KLFDBFMNLBL_ServerSaveBlock
 			ENOBDCFHELD = (int)Utility.GetCurrentUnixTime();
 			FCEJCHGLFGN = ENOBDCFHELD ^ 0x8730115;
 			MPCAGEPEJJJ_Key = "";
-			EGBOHDFBAPB_End = 0;
+			EGBOHDFBAPB_CloseAt = 0;
 			CJALBNNJOOB_IsFl = false;
 			LGADCGFMLLD_Step = 0;
 			OMCAOJJGOGG_Lb = 0;
@@ -93,7 +93,7 @@ public class KBAGKBIBGPM_EventRaidLobby : KLFDBFMNLBL_ServerSaveBlock
 		{
 			MPCAGEPEJJJ_Key = GPBJHKLFCEP.MPCAGEPEJJJ_Key;
 			LGADCGFMLLD_Step = GPBJHKLFCEP.LGADCGFMLLD_Step;
-			EGBOHDFBAPB_End = GPBJHKLFCEP.EGBOHDFBAPB_End;
+			EGBOHDFBAPB_CloseAt = GPBJHKLFCEP.EGBOHDFBAPB_CloseAt;
 			OMCAOJJGOGG_Lb = GPBJHKLFCEP.OMCAOJJGOGG_Lb;
 			KMMJMDGLIFA_FrCns = GPBJHKLFCEP.KMMJMDGLIFA_FrCns;
 			GNICDMGKMEP_Qu = GPBJHKLFCEP.GNICDMGKMEP_Qu;
@@ -119,7 +119,7 @@ public class KBAGKBIBGPM_EventRaidLobby : KLFDBFMNLBL_ServerSaveBlock
 				return false;
 			if(LGADCGFMLLD_Step != OIKJFMGEICL.LGADCGFMLLD_Step)
 				return false;
-			if(EGBOHDFBAPB_End != OIKJFMGEICL.EGBOHDFBAPB_End)
+			if(EGBOHDFBAPB_CloseAt != OIKJFMGEICL.EGBOHDFBAPB_CloseAt)
 				return false;
 			if(GNICDMGKMEP_Qu != OIKJFMGEICL.GNICDMGKMEP_Qu)
 				return false;
@@ -192,7 +192,7 @@ public class KBAGKBIBGPM_EventRaidLobby : KLFDBFMNLBL_ServerSaveBlock
 			}
 			EDOHBJAPLPF_JsonData data4 = new EDOHBJAPLPF_JsonData();
 			data4[AFEHLCGHAEE_Strings.LJNAKDMILMC_key] = FBCJICEPLED[i].MPCAGEPEJJJ_Key;
-			data4[AFEHLCGHAEE_Strings.KOMKKBDABJP_end] = FBCJICEPLED[i].EGBOHDFBAPB_End;
+			data4[AFEHLCGHAEE_Strings.KOMKKBDABJP_end] = FBCJICEPLED[i].EGBOHDFBAPB_CloseAt;
 			data4[AFEHLCGHAEE_Strings.LGADCGFMLLD_step] = FBCJICEPLED[i].LGADCGFMLLD_Step;
 			data4[AFEHLCGHAEE_Strings.NNMPGOAGEOL_quests] = data2;
 			data4[AFEHLCGHAEE_Strings.MDADLCOCEBN_session_id] = FBCJICEPLED[i].MDADLCOCEBN_SessionId;
@@ -243,7 +243,7 @@ public class KBAGKBIBGPM_EventRaidLobby : KLFDBFMNLBL_ServerSaveBlock
 					for(int i = 0; i < cnt; i++)
 					{
 						FBCJICEPLED[i].MPCAGEPEJJJ_Key = FGCNMLBACGO_ReadString(block[i], AFEHLCGHAEE_Strings.LJNAKDMILMC_key, "", ref isInvalid);
-						FBCJICEPLED[i].EGBOHDFBAPB_End = DKMPHAPBDLH_ReadLong(block[i], AFEHLCGHAEE_Strings.KOMKKBDABJP_end, 0, ref isInvalid);
+						FBCJICEPLED[i].EGBOHDFBAPB_CloseAt = DKMPHAPBDLH_ReadLong(block[i], AFEHLCGHAEE_Strings.KOMKKBDABJP_end, 0, ref isInvalid);
 						FBCJICEPLED[i].LGADCGFMLLD_Step = CJAENOMGPDA_ReadInt(block[i], AFEHLCGHAEE_Strings.LGADCGFMLLD_step, 0, ref isInvalid);
 						FBCJICEPLED[i].MDADLCOCEBN_SessionId = FGCNMLBACGO_ReadString(block[i], AFEHLCGHAEE_Strings.MDADLCOCEBN_session_id, "", ref isInvalid);
 						FBCJICEPLED[i].OMCAOJJGOGG_Lb = CJAENOMGPDA_ReadInt(block[i], "lb", 0, ref isInvalid);
@@ -264,7 +264,7 @@ public class KBAGKBIBGPM_EventRaidLobby : KLFDBFMNLBL_ServerSaveBlock
 							for(int j = 0; j < 50; j++)
 							{
 								FBCJICEPLED[i].NNMPGOAGEOL_Quests[j].PPFNGGCBJKC_Id = CJAENOMGPDA_ReadInt(d[j], AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id, j + 1, ref isInvalid);
-								FBCJICEPLED[i].NNMPGOAGEOL_Quests[j].EALOBDHOCHP_Stat = CJAENOMGPDA_ReadInt(d[j], AFEHLCGHAEE_Strings.EALOBDHOCHP_stat, 0, ref isInvalid);
+								FBCJICEPLED[i].NNMPGOAGEOL_Quests[j].EALOBDHOCHP_Stat = CJAENOMGPDA_ReadInt(d[j], AFEHLCGHAEE_Strings.EALOBDHOCHP_Stat, 0, ref isInvalid);
 								FBCJICEPLED[i].NNMPGOAGEOL_Quests[j].HMFFHLPNMPH_Count = CJAENOMGPDA_ReadInt(d[j], AFEHLCGHAEE_Strings.HMFFHLPNMPH_count, 0, ref isInvalid);
 								FBCJICEPLED[i].NNMPGOAGEOL_Quests[j].BEBJKJKBOGH_Date = DKMPHAPBDLH_ReadLong(d[j], AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date, 0, ref isInvalid);
 								FBCJICEPLED[i].NNMPGOAGEOL_Quests[j].CADENLBDAEB_IsNew = CJAENOMGPDA_ReadInt(d[j], AFEHLCGHAEE_Strings.KLJGEHBKMMG_new, 0, ref isInvalid) == 1;
@@ -280,7 +280,7 @@ public class KBAGKBIBGPM_EventRaidLobby : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x101542C Offset: 0x101542C VA: 0x101542C Slot: 7
-	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	public override void BMGGKONLFIC_Copy(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
 		KBAGKBIBGPM_EventRaidLobby other = GPBJHKLFCEP as KBAGKBIBGPM_EventRaidLobby;
 		for(int i = 0; i < FBCJICEPLED.Count; i++)
@@ -302,7 +302,7 @@ public class KBAGKBIBGPM_EventRaidLobby : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1015EB8 Offset: 0x1015EB8 VA: 0x1015EB8 Slot: 10
-	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH);
+	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock _GJLFANGDGCL_Target, long MCKEOKFMLAH);
 
 	// // RVA: 0x1017F88 Offset: 0x1017F88 VA: 0x1017F88 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()

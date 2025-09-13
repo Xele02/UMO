@@ -15,7 +15,7 @@ public class HBCPJANGOLB
     {
         KKEFACGGKOD.PCODDPDFLHK();
         MNJNCKPELGE.Clear();
-        long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+        long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
         long t2 = JPAICCMDGHD_GetMaxLastShowDate(time);
         List<LOBDIAABMKG> l = NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.MHKCPJDNJKI_GatchaProducts;
         long date = -1;
@@ -69,7 +69,7 @@ public class HBCPJANGOLB
 	// // RVA: 0x173DFC4 Offset: 0x173DFC4 VA: 0x173DFC4
 	public bool HJMKBCFJOOH()
 	{
-		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		long t = JPAICCMDGHD_GetMaxLastShowDate(time);
 		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MOBHLLDIMMN_LastShowDate = t;
 		KKEFACGGKOD.JKHNJBFAFBL_SetLastShowDate(t);
@@ -90,7 +90,7 @@ public class HBCPJANGOLB
             {
                 str.SetFormat("ct/sc/me/02_2/{0:D6}_{1:D2}.xab", l[i].ADDCEJNOJLG_Scenes[j].DNJEJEANJGL_Value, 1);
                 res.Add(str.ToString());
-                if(dbScenes.CDENCMNHNGA_SceneList[l[i].ADDCEJNOJLG_Scenes[j].DNJEJEANJGL_Value - 1].EKLIPGELKCL_Rarity > 3)
+                if(dbScenes.CDENCMNHNGA_table[l[i].ADDCEJNOJLG_Scenes[j].DNJEJEANJGL_Value - 1].EKLIPGELKCL_Rarity > 3)
                 {
                     str.SetFormat("ct/sc/me/02_2/{0:D6}_{1:D2}.xab", l[i].ADDCEJNOJLG_Scenes[j].DNJEJEANJGL_Value, 2);
                     res.Add(str.ToString());
@@ -111,12 +111,12 @@ public class HBCPJANGOLB
             {
                 if(l[i].GOOIIPFHOIG != null)
                 {
-                    for(int j = 0; j < dbCostumes.CDENCMNHNGA_Costumes.Count; j++)
+                    for(int j = 0; j < dbCostumes.CDENCMNHNGA_table.Count; j++)
                     {
-                        if(dbCostumes.CDENCMNHNGA_Costumes[j].JPIDIENBGKH_CostumeId == l[i].GOOIIPFHOIG.NNFNGLJOKKF_ItemId)
+                        if(dbCostumes.CDENCMNHNGA_table[j].JPIDIENBGKH_CostumeId == l[i].GOOIIPFHOIG.NNFNGLJOKKF_ItemId)
                         {
-                            int id = dbCostumes.CDENCMNHNGA_Costumes[j].AHHJLDLAPAN_DivaId;
-                            int id2 = dbCostumes.CDENCMNHNGA_Costumes[j].DAJGPBLEEOB_PrismCostumeModelId;
+                            int id = dbCostumes.CDENCMNHNGA_table[j].AHHJLDLAPAN_DivaId;
+                            int id2 = dbCostumes.CDENCMNHNGA_table[j].DAJGPBLEEOB_ModelId;
                             PHCEFKKOECA.Add(string.Format("dv/cs/{0:D3}_{1:D3}.xab", id, id2));
                             PHCEFKKOECA.Add(string.Format("ct/dv/co/{0:D2}_{1:D3}.xab", id, id2));
                             PHCEFKKOECA.Add(string.Format("ct/dv/me/01/{0:D2}_{1:D2}.xab", id, id2));

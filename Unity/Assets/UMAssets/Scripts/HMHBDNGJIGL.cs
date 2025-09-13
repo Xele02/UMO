@@ -13,9 +13,9 @@ public class HMHBDNGJIGL : LBHFILLFAGA
 		public int MABJPACAAPI_Height; // 0x4
 
 		// RVA: 0x7FD02C Offset: 0x7FD02C VA: 0x7FD02C
-		public BIIAHJNILEE(int GHPLINIACBB, int PMBEODGMMBB)
+		public BIIAHJNILEE(int _GHPLINIACBB_x, int PMBEODGMMBB)
 		{
-			PHHAMBAEGPI_Width = GHPLINIACBB;
+			PHHAMBAEGPI_Width = _GHPLINIACBB_x;
 			MABJPACAAPI_Height = PMBEODGMMBB;
 		}
 	}
@@ -24,8 +24,8 @@ public class HMHBDNGJIGL : LBHFILLFAGA
 	private CriFsLoadFileRequest CHPPDDBBEFF; // 0x4C
 
 	// // RVA: 0x15F4DEC Offset: 0x15F4DEC VA: 0x15F4DEC
-	public HMHBDNGJIGL(string CJEKGLGBIHF_path, string BOPDLODALFD_withoutPlarformPath, FileLoadedPostProcess OGLMMENAJFL_onSuccess, FileLoadedPostProcess GOIHDOPGPCE_onFail, Dictionary<string, string> JBKMAPLCBMO_arg, int HNKPENAFDKA_argValue, FileLoadInfo LAMFBMFNOFP_fi, bool ALJGNAPELAH)
-		: base(CJEKGLGBIHF_path,BOPDLODALFD_withoutPlarformPath,OGLMMENAJFL_onSuccess,GOIHDOPGPCE_onFail,JBKMAPLCBMO_arg,HNKPENAFDKA_argValue,LAMFBMFNOFP_fi)
+	public HMHBDNGJIGL(string _CJEKGLGBIHF_path, string BOPDLODALFD_withoutPlarformPath, FileLoadedPostProcess OGLMMENAJFL_onSuccess, FileLoadedPostProcess GOIHDOPGPCE_onFail, Dictionary<string, string> JBKMAPLCBMO_arg, int HNKPENAFDKA_argValue, FileLoadInfo LAMFBMFNOFP_fi, bool ALJGNAPELAH)
+		: base(_CJEKGLGBIHF_path,BOPDLODALFD_withoutPlarformPath,OGLMMENAJFL_onSuccess,GOIHDOPGPCE_onFail,JBKMAPLCBMO_arg,HNKPENAFDKA_argValue,LAMFBMFNOFP_fi)
     {
 		return;
     }

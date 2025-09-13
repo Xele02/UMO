@@ -116,7 +116,7 @@ namespace XeApp.Game.Adv
 			CMMKCEPBIHI.DIDENKKDJKI(ref a_, GameManager.Instance.ViewPlayerData.NPFCMHCCDDH, GameManager.Instance.ViewPlayerData, ib_, null, ib_.MGJKEJHEBPO_DiffInfos[0].HPBPDHPIBGN_EnemyData);
 			a_.GEEDEOHGMOM(ref st);
 			st2.Clear();
-			st2.Copy(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.CMCKNKKCNDK_GoDivaStatus);
+			st2.Copy(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH.CMCKNKKCNDK_Status);
 			st2.Add(st);
 			Database.Instance.gameSetup.teamInfo.SetupInfo(st2, GameManager.Instance.ViewPlayerData, 0, ib_, null, null, null, false);
 			JGEOBNENMAH.EDHCNKBMLGI j_ = new JGEOBNENMAH.EDHCNKBMLGI();

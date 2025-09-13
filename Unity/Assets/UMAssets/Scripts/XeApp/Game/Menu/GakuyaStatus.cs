@@ -138,8 +138,8 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xB83A74 Offset: 0xB83A74 VA: 0xB83A74
 		private int GetDivaBaseTotalStatus(FFHPBEPOMAK_DivaInfo divaData)
 		{
-			BJPLLEBHAGO_DivaInfo d = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas[divaData.AHHJLDLAPAN_DivaId - 1];
-			EPPOHFLMDBC_DivaStats s = d.CMCKNKKCNDK_StatsByLevel[divaData.CIEOBFIIPLD_Level];
+			BJPLLEBHAGO_DivaInfo d = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[divaData.AHHJLDLAPAN_DivaId - 1];
+			EPPOHFLMDBC_DivaStats s = d.CMCKNKKCNDK_Status[divaData.CIEOBFIIPLD_Level];
 			return s.PFJCOCPKABN_Soul + s.JFJDLEMNKFE_Vocal + s.GDOLPGBLMEA_Charm;
 		}
 

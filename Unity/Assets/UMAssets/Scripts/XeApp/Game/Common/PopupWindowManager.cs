@@ -382,7 +382,7 @@ namespace XeApp.Game.Common
 		// // RVA: 0x1BC2BC8 Offset: 0x1BC2BC8 VA: 0x1BC2BC8
 		private static bool IsStaminaMax()
 		{
-			return CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCBENCMNOGO_MaxStamina <= CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC_GetCurrent(); 
+			return CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_Stamina.DCBENCMNOGO_MaxStamina <= CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_Stamina.DCLKMNGMIKC_GetCurrentValue(); 
 		}
 
 		// // RVA: 0x1BC2CE8 Offset: 0x1BC2CE8 VA: 0x1BC2CE8
@@ -442,7 +442,7 @@ namespace XeApp.Game.Common
 			int v = item.healValue;
 			if(item.healValue == 0)
 			{
-				v = CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCBENCMNOGO_MaxStamina;
+				v = CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_Stamina.DCBENCMNOGO_MaxStamina;
 			}
 			string s = Smart.Format(bk.GetMessageByLabel("popup_text_stamina_05"), new object[5]
 			{
@@ -504,7 +504,7 @@ namespace XeApp.Game.Common
 			s.Text = Smart.Format(bk.GetMessageByLabel("popup_text_stamina_01"), new object[4]
 			{
 				CIOECGOMILE.HHCJCDFCLOB.CIPHAHDGGPH(),
-				CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCBENCMNOGO_MaxStamina,
+				CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_Stamina.DCBENCMNOGO_MaxStamina,
 				CIOECGOMILE.HHCJCDFCLOB.DEAPMEIDCGC_GetTotalPaidCurrency(),
 				CIOECGOMILE.HHCJCDFCLOB.DEAPMEIDCGC_GetTotalPaidCurrency() - CIOECGOMILE.HHCJCDFCLOB.CIPHAHDGGPH()
 			});
@@ -552,7 +552,7 @@ namespace XeApp.Game.Common
 			TextPopupSetting s = new TextPopupSetting();
 			s.TitleText = bk.GetMessageByLabel("popup_title_stamina_01");
 			s.WindowSize = SizeType.Small;
-			s.Text = string.Format(bk.GetMessageByLabel("popup_text_stamina_02"), CIOECGOMILE.HHCJCDFCLOB.CIPHAHDGGPH(), CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCBENCMNOGO_MaxStamina);
+			s.Text = string.Format(bk.GetMessageByLabel("popup_text_stamina_02"), CIOECGOMILE.HHCJCDFCLOB.CIPHAHDGGPH(), CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_Stamina.DCBENCMNOGO_MaxStamina);
 			s.Buttons = new ButtonInfo[2]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
@@ -632,7 +632,7 @@ namespace XeApp.Game.Common
 		public static void OpenStaminaCompletionWindow(Action recoveryCallBack)
 		{
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			Show(CrateTextContent(bk.GetMessageByLabel("popup_title_stamina_01"), SizeType.Small, string.Format(bk.GetMessageByLabel("popup_text_stamina_03"), CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_StaminaUpdater.DCLKMNGMIKC_GetCurrent()), new ButtonInfo[1]
+			Show(CrateTextContent(bk.GetMessageByLabel("popup_title_stamina_01"), SizeType.Small, string.Format(bk.GetMessageByLabel("popup_text_stamina_03"), CIOECGOMILE.HHCJCDFCLOB.BPLOEAHOPFI_Stamina.DCLKMNGMIKC_GetCurrentValue()), new ButtonInfo[1]
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 			}, false, true), (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>

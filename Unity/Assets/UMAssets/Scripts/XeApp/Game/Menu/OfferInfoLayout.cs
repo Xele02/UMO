@@ -79,7 +79,7 @@ namespace XeApp.Game.Menu
 			bool IsMoreEnemyForces; // 0x38
 
 			//0x18539B8
-			NextClearTime = KDHGBOOECKC.HHCJCDFCLOB.NPEFMNPOMMJ(ViewOfferInfo.FGHGMHPNEMG_Category, ViewOfferInfo.PPFNGGCBJKC, vfpId, (FKGMGBHBNOC.HPJOCKGKNCC_Form) vfForm, IsCorrent);
+			NextClearTime = KDHGBOOECKC.HHCJCDFCLOB.NPEFMNPOMMJ(ViewOfferInfo.FGHGMHPNEMG_Type, ViewOfferInfo.PPFNGGCBJKC, vfpId, (FKGMGBHBNOC.HPJOCKGKNCC_Form) vfForm, IsCorrent);
 			ChengeTime = currntClearTime;
 			IsLackPower = ViewOfferInfo.IMPNNOLLMBK < NextClearTime;
 			StartLackPowerAnim();

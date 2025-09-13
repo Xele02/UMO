@@ -83,7 +83,7 @@ namespace XeApp.Game.Menu
 				{
 					m_imageBadge[i].uvRect = LayoutUGUIUtility.MakeUnityUVRect(data);
 				}
-				m_layoutBadge.StartChildrenAnimGoStop(GachaProduct.CADENLBDAEB ? "01" : "02");
+				m_layoutBadge.StartChildrenAnimGoStop(GachaProduct.CADENLBDAEB_IsNew ? "01" : "02");
 			}
 		}
 

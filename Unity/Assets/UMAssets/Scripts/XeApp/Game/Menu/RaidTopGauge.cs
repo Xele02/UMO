@@ -265,7 +265,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xCEF6A0 Offset: 0xCEF6A0 VA: 0xCEF6A0
 		private bool IsEndRaidEvent()
 		{
-			raidController.HCDGELDHFHB_UpdateStatus(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime());
+			raidController.HCDGELDHFHB_UpdateStatus(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 			if(raidController.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5)
 			{
 				JHHBAFKMBDL.HHCJCDFCLOB.DNABPEOICIJ(() =>

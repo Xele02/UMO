@@ -74,14 +74,14 @@ namespace XeApp.Game.Menu
 			else
 			{
 				luck = DivaIconDecoration.GetEquipmentLuck(divaData, playerData);
-				m_paramTexts[0].text = divaData.CMCKNKKCNDK_EquippedStatus.Total.ToString();
-				m_paramTexts[1].text = divaData.CMCKNKKCNDK_EquippedStatus.soul.ToString();
-				m_paramTexts[2].text = divaData.CMCKNKKCNDK_EquippedStatus.vocal.ToString();
-				m_paramTexts[3].text = divaData.CMCKNKKCNDK_EquippedStatus.charm.ToString();
-				m_paramTexts[4].text = divaData.CMCKNKKCNDK_EquippedStatus.life.ToString();
+				m_paramTexts[0].text = divaData.CMCKNKKCNDK_Status.Total.ToString();
+				m_paramTexts[1].text = divaData.CMCKNKKCNDK_Status.soul.ToString();
+				m_paramTexts[2].text = divaData.CMCKNKKCNDK_Status.vocal.ToString();
+				m_paramTexts[3].text = divaData.CMCKNKKCNDK_Status.charm.ToString();
+				m_paramTexts[4].text = divaData.CMCKNKKCNDK_Status.life.ToString();
 				UnitWindowConstant.SetLuckText(m_paramTexts[5], luck);
-				m_paramTexts[6].text = divaData.CMCKNKKCNDK_EquippedStatus.support.ToString();
-				m_paramTexts[7].text = divaData.CMCKNKKCNDK_EquippedStatus.fold.ToString();
+				m_paramTexts[6].text = divaData.CMCKNKKCNDK_Status.support.ToString();
+				m_paramTexts[7].text = divaData.CMCKNKKCNDK_Status.fold.ToString();
 			}
 			if(m_arrowImages.Length != 0)
 			{
@@ -95,38 +95,38 @@ namespace XeApp.Game.Menu
 					{
 						if(divaData != null)
 						{
-							ComparisonValue(m_paramTexts[0], 0, divaData.CMCKNKKCNDK_EquippedStatus.Total, 0);
-							ComparisonValue(m_paramTexts[1], 0, divaData.CMCKNKKCNDK_EquippedStatus.soul, 1);
-							ComparisonValue(m_paramTexts[2], 0, divaData.CMCKNKKCNDK_EquippedStatus.vocal, 2);
-							ComparisonValue(m_paramTexts[3], 0, divaData.CMCKNKKCNDK_EquippedStatus.charm, 3);
-							ComparisonValue(m_paramTexts[4], 0, divaData.CMCKNKKCNDK_EquippedStatus.life, 4);
+							ComparisonValue(m_paramTexts[0], 0, divaData.CMCKNKKCNDK_Status.Total, 0);
+							ComparisonValue(m_paramTexts[1], 0, divaData.CMCKNKKCNDK_Status.soul, 1);
+							ComparisonValue(m_paramTexts[2], 0, divaData.CMCKNKKCNDK_Status.vocal, 2);
+							ComparisonValue(m_paramTexts[3], 0, divaData.CMCKNKKCNDK_Status.charm, 3);
+							ComparisonValue(m_paramTexts[4], 0, divaData.CMCKNKKCNDK_Status.life, 4);
 							ComparisonValue(m_paramTexts[5], 0, luck, 5);
-							ComparisonValue(m_paramTexts[6], 0, divaData.CMCKNKKCNDK_EquippedStatus.support, 6);
-							ComparisonValue(m_paramTexts[7], 0, divaData.CMCKNKKCNDK_EquippedStatus.fold, 7);
+							ComparisonValue(m_paramTexts[6], 0, divaData.CMCKNKKCNDK_Status.support, 6);
+							ComparisonValue(m_paramTexts[7], 0, divaData.CMCKNKKCNDK_Status.fold, 7);
 						}
 					}
 					else
 					{
-						ComparisonValue(m_paramTexts[0], comparisonDiva.CMCKNKKCNDK_EquippedStatus.Total, 0, 0);
-						ComparisonValue(m_paramTexts[1], comparisonDiva.CMCKNKKCNDK_EquippedStatus.soul, 0, 1);
-						ComparisonValue(m_paramTexts[2], comparisonDiva.CMCKNKKCNDK_EquippedStatus.vocal, 0, 2);
-						ComparisonValue(m_paramTexts[3], comparisonDiva.CMCKNKKCNDK_EquippedStatus.charm, 0, 3);
-						ComparisonValue(m_paramTexts[4], comparisonDiva.CMCKNKKCNDK_EquippedStatus.life, 0, 4);
+						ComparisonValue(m_paramTexts[0], comparisonDiva.CMCKNKKCNDK_Status.Total, 0, 0);
+						ComparisonValue(m_paramTexts[1], comparisonDiva.CMCKNKKCNDK_Status.soul, 0, 1);
+						ComparisonValue(m_paramTexts[2], comparisonDiva.CMCKNKKCNDK_Status.vocal, 0, 2);
+						ComparisonValue(m_paramTexts[3], comparisonDiva.CMCKNKKCNDK_Status.charm, 0, 3);
+						ComparisonValue(m_paramTexts[4], comparisonDiva.CMCKNKKCNDK_Status.life, 0, 4);
 						ComparisonValue(m_paramTexts[5], 0, 0, 5);
-						ComparisonValue(m_paramTexts[6], comparisonDiva.CMCKNKKCNDK_EquippedStatus.support, 0, 6);
-						ComparisonValue(m_paramTexts[7], comparisonDiva.CMCKNKKCNDK_EquippedStatus.fold, 0, 7);
+						ComparisonValue(m_paramTexts[6], comparisonDiva.CMCKNKKCNDK_Status.support, 0, 6);
+						ComparisonValue(m_paramTexts[7], comparisonDiva.CMCKNKKCNDK_Status.fold, 0, 7);
 					}
 				}
 				else
 				{
-					ComparisonValue(m_paramTexts[0], comparisonDiva.CMCKNKKCNDK_EquippedStatus.Total, divaData.CMCKNKKCNDK_EquippedStatus.Total, 0);
-					ComparisonValue(m_paramTexts[1], comparisonDiva.CMCKNKKCNDK_EquippedStatus.soul, divaData.CMCKNKKCNDK_EquippedStatus.soul, 1);
-					ComparisonValue(m_paramTexts[2], comparisonDiva.CMCKNKKCNDK_EquippedStatus.vocal, divaData.CMCKNKKCNDK_EquippedStatus.vocal, 2);
-					ComparisonValue(m_paramTexts[3], comparisonDiva.CMCKNKKCNDK_EquippedStatus.charm, divaData.CMCKNKKCNDK_EquippedStatus.charm, 3);
-					ComparisonValue(m_paramTexts[4], comparisonDiva.CMCKNKKCNDK_EquippedStatus.life, divaData.CMCKNKKCNDK_EquippedStatus.life, 4);
+					ComparisonValue(m_paramTexts[0], comparisonDiva.CMCKNKKCNDK_Status.Total, divaData.CMCKNKKCNDK_Status.Total, 0);
+					ComparisonValue(m_paramTexts[1], comparisonDiva.CMCKNKKCNDK_Status.soul, divaData.CMCKNKKCNDK_Status.soul, 1);
+					ComparisonValue(m_paramTexts[2], comparisonDiva.CMCKNKKCNDK_Status.vocal, divaData.CMCKNKKCNDK_Status.vocal, 2);
+					ComparisonValue(m_paramTexts[3], comparisonDiva.CMCKNKKCNDK_Status.charm, divaData.CMCKNKKCNDK_Status.charm, 3);
+					ComparisonValue(m_paramTexts[4], comparisonDiva.CMCKNKKCNDK_Status.life, divaData.CMCKNKKCNDK_Status.life, 4);
 					ComparisonValue(m_paramTexts[5], 0, luck, 5);
-					ComparisonValue(m_paramTexts[6], comparisonDiva.CMCKNKKCNDK_EquippedStatus.support, divaData.CMCKNKKCNDK_EquippedStatus.support, 6);
-					ComparisonValue(m_paramTexts[7], comparisonDiva.CMCKNKKCNDK_EquippedStatus.fold, divaData.CMCKNKKCNDK_EquippedStatus.fold, 7);
+					ComparisonValue(m_paramTexts[6], comparisonDiva.CMCKNKKCNDK_Status.support, divaData.CMCKNKKCNDK_Status.support, 6);
+					ComparisonValue(m_paramTexts[7], comparisonDiva.CMCKNKKCNDK_Status.fold, divaData.CMCKNKKCNDK_Status.fold, 7);
 				}
 			}
 			m_flags = 0;
@@ -146,7 +146,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				MenuScene.Instance.DivaIconCache.LoadStateIcon(divaData.AHHJLDLAPAN_DivaId, divaData.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, divaData.EKFONBFDAAP_ColorId, (IiconTexture texture) => {
+				MenuScene.Instance.DivaIconCache.LoadStateIcon(divaData.AHHJLDLAPAN_DivaId, divaData.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, divaData.EKFONBFDAAP_ColorId, (IiconTexture texture) => {
 					//0x17D6218
 					texture.Set(m_iconImage);
 					SetLoaded();
@@ -160,11 +160,11 @@ namespace XeApp.Game.Menu
 				}
 				{
 					int j = 0;
-					for(int i = 0; i < divaData.CMCKNKKCNDK_EquippedStatus.spNoteExpected.Length && i < m_notes.Length && j < m_notes.Length; i++)
+					for(int i = 0; i < divaData.CMCKNKKCNDK_Status.spNoteExpected.Length && i < m_notes.Length && j < m_notes.Length; i++)
 					{
-						if(divaData.CMCKNKKCNDK_EquippedStatus.spNoteExpected[i] > 0)
+						if(divaData.CMCKNKKCNDK_Status.spNoteExpected[i] > 0)
 						{
-							m_notes[j].SetNotesValue(divaData.CMCKNKKCNDK_EquippedStatus.spNoteExpected[i]);
+							m_notes[j].SetNotesValue(divaData.CMCKNKKCNDK_Status.spNoteExpected[i]);
 							m_notes[j].SetNotesIcon((SpecialNoteAttribute.Type)i);
 							j++;
 						}

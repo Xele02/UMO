@@ -119,12 +119,12 @@ public class LFPOMKLKHPB
 				UnityEngine.Debug.LogError(JMNNBKPAAKF.error);
 				OLEKCNABLNH = true;
 			}
-			bool BEKAMBBOLBO = false;
+			bool BEKAMBBOLBO_Done = false;
 			JHHBAFKMBDL.HHCJCDFCLOB.AINKKHHAKLK_ShowDldSizeErrorPopup(() => {
 				//0xD70230
-				BEKAMBBOLBO = true;
+				BEKAMBBOLBO_Done = true;
 			});
-			while(!BEKAMBBOLBO)
+			while(!BEKAMBBOLBO_Done)
 				yield return null;
 		} while(true);
 	}

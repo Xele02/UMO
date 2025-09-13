@@ -364,7 +364,7 @@ namespace XeApp.Game.Menu
 			//0x13C42E8
 			EventMusicSelectSceneArgs Arg = Args as EventMusicSelectSceneArgs;
 			EventMusicSelectSceneArgs ArgRet = ArgsReturn as EventMusicSelectSceneArgs;
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			m_eventCtrl = null;
 			if(Arg != null)
 			{
@@ -753,7 +753,7 @@ namespace XeApp.Game.Menu
 			if(viewBoostData.DPICLLJJPAC(selectMusicData, (int)diff, isLine6ModeFlag))
 			{
 				MessageBank bk = MessageManager.Instance.GetBank("menu");
-				//selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].BPLOEAHOPFI_Energy;
+				//selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].BPLOEAHOPFI_Stamina;
 				string str1 = "popup_dash_energy_title";
 				if(viewBoostData.NMKDLINPAFM_UseTicket)
 				{
@@ -769,7 +769,7 @@ namespace XeApp.Game.Menu
 				PopupDashContentSetting s = new PopupDashContentSetting();
 				s.EventId = m_eventId;
 				s.CostType = viewBoostData.NMKDLINPAFM_UseTicket ? LayoutPopupDash.CostType.Ticket : LayoutPopupDash.CostType.Energy;
-				s.OwnValue = viewBoostData.DCLKMNGMIKC();
+				s.OwnValue = viewBoostData.DCLKMNGMIKC_GetCurrentValue();
 				s.Param = p;
 				s.WindowSize = SizeType.Middle;
 				s.TitleText = bk.GetMessageByLabel(str1);
@@ -1097,7 +1097,7 @@ namespace XeApp.Game.Menu
 				{
 					//0x13BF640
 					return;
-				}, evLobby.KINIOEOOCAA_GetPhase(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime()));
+				}, evLobby.KINIOEOOCAA_GetPhase(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime()));
 				return;
 			}
 			if(eventId > 0)
@@ -1172,7 +1172,7 @@ namespace XeApp.Game.Menu
 			if(musicData != null && musicData.LEBDMNIGOJB_IsScoreEvent)
 			{
                 IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.AJLEDCKMFLP_GetEventScore(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.EMAMLLFAOJI_Counting_6);
-                if (ev != null && ev.FKKDIDMGLMI)
+                if (ev != null && ev.FKKDIDMGLMI_IsDroppedPlayer)
 				{
 					JHHBAFKMBDL.HHCJCDFCLOB.PEIONAKEPCN_ShowRankingBanPopup(() =>
 					{
@@ -1500,7 +1500,7 @@ namespace XeApp.Game.Menu
 			//0x13C33BC
 			if(m_ticketGainedPopupSetting == null || a_controller == null)
 				yield break;
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			m_showTicketGainedPopup = false;
 			itemId = 0;
 			itemCount = 0;

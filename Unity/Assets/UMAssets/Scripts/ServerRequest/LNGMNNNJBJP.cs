@@ -27,7 +27,7 @@ public class LNGMNNNJBJP_SearchForPlayer : CACGCMBKHDI_Request
 	public const int GBBILKJEBCO = 100;
 	public List<string> HHIHCJKLJFF_ServerInfoBlockList; // 0x80
 	public CCHAFMBDGOB PINPBOCDKLI_OnFriendCb; // 0x84
-	public SakashoPlayerData.SearchOrder EILKGEADKGH_SearchOrder; // 0x88 GINMIBJOABO  Slot: 7
+	public SakashoPlayerData.SearchOrder EILKGEADKGH_Order; // 0x88 GINMIBJOABO  Slot: 7
 	public int IGNIIEBMFIN_Page = 1; // 0x90
 	public int MLPLGFLKKLI_Ipp = 15; // 0x94
 
@@ -39,11 +39,11 @@ public class LNGMNNNJBJP_SearchForPlayer : CACGCMBKHDI_Request
 	// RVA: 0x10C38A4 Offset: 0x10C38A4 VA: 0x10C38A4 Slot: 12
 	public override void DHLDNIEELHO()
 	{
-		EBGACDGNCAA_CallContext = SakashoPlayerData.SearchForPlayer(IPKCADIAAPG_SakashoCrit, HHIHCJKLJFF_ServerInfoBlockList.ToArray(), EILKGEADKGH_SearchOrder, IGNIIEBMFIN_Page, MLPLGFLKKLI_Ipp, DCKLDDCAJAP, MEOCKCJBDAD);
+		EBGACDGNCAA_CallContext = SakashoPlayerData.SearchForPlayer(IPKCADIAAPG_SakashoCrit, HHIHCJKLJFF_ServerInfoBlockList.ToArray(), EILKGEADKGH_Order, IGNIIEBMFIN_Page, MLPLGFLKKLI_Ipp, DCKLDDCAJAP, MEOCKCJBDAD);
 	}
 
 	// RVA: 0x10C3A0C Offset: 0x10C3A0C VA: 0x10C3A0C Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG_FriendsResult = null;
 		BNJPAKLNOPA_WorkerThreadQueue.Add(DIAMDBHBKBH);

@@ -161,9 +161,9 @@ namespace XeApp.Game.Menu
 						KPJHLACKGJF_EventMission ev = m_eventCtrl as KPJHLACKGJF_EventMission;
 						if(IsEventEndChallengePeriod)
 						{
-							if(m_missionSetData.GAAHOOBMDEE_Missions != null)
+							if(m_missionSetData.GAAHOOBMDEE_Mission != null)
 							{
-								m_missionSetData.GAAHOOBMDEE_Missions.Clear();
+								m_missionSetData.GAAHOOBMDEE_Mission.Clear();
 							}
 						}
 						else
@@ -226,7 +226,7 @@ namespace XeApp.Game.Menu
 						m_eventInfo.SetRankUnitLabel(bk.GetMessageByLabel("music_event_collect_rank_unit"), 0);
 						m_eventInfo.SetRankLabel(bk.GetMessageByLabel(IsEventEndChallengePeriod ? "music_event_collect_rank_counting_label" : "music_event_collect_rank_label"), 0);
 						m_LayoutMissonSelect.SetMissionSetData(m_missionSetData, null, false, Difficulty.Type.Illegal);
-						long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+						long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 						CreateFilteredMusicDataList(m_filteredMusicDataList, m_originalMusicDataList, t, (IBJAKJJICBC m, long ct) =>
 						{
 							//0x10382BC
@@ -333,7 +333,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0xB42FB4 Offset: 0xB42FB4 VA: 0xB42FB4 Slot: 51
 		protected override void OnDecideCurrentMusic()
 		{
-			m_missionText = GameMessageManager.ReplaceMessageTag(m_missionSetData.GAAHOOBMDEE_Missions[m_selectedCardIndex].FEMMDNIELFC_Desc, (string tag) =>
+			m_missionText = GameMessageManager.ReplaceMessageTag(m_missionSetData.GAAHOOBMDEE_Mission[m_selectedCardIndex].FEMMDNIELFC_Desc, (string tag) =>
 			{
 				//0xB48280
 				int fmId = 0;
@@ -797,7 +797,7 @@ namespace XeApp.Game.Menu
 				freeMusicId = selectMusicData.GHBPLHBNMBK_FreeMusicId;
 				gameEventType = selectMusicData.MNNHHJBBICA_GameEventType;
 			}
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			if(!isClear)
 			{
 				CreateFilteredMusicDataList(m_filteredMusicDataList, m_originalMusicDataList, t, CheckMatchMusicFilter);
@@ -1165,7 +1165,7 @@ namespace XeApp.Game.Menu
 			m_isEventChecked = false;
 			m_isEventTimeLimit = false;
 			m_eventStatus = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.HJNNKCMLGFL_0;
-			currentTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			currentTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			m_eventCtrl = null;
 			if(args != null)
 			{
@@ -1626,7 +1626,7 @@ namespace XeApp.Game.Menu
 					m_LayoutEventSettingBtn.Enter();
 					m_musicInfo.onChangedDifficulty = OnSelectedDifficulty;
 					ApplyMusicInfo();
-					if(!selectMusicData.GBNOALJPOBM)
+					if(!selectMusicData.GBNOALJPOBM_IsLine6)
 					{
 						m_lineButton.TryLeave();
 					}

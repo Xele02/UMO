@@ -70,7 +70,7 @@ public class PKKHIEAEDPC
 	public int HHGMPEEGFMA_GachaId; // 0x18
 	public int DIDOFBIHPMB_PickupId; // 0x1C
 	public int INFIBMLIHLO_ItemId; // 0x20
-	public string CJEKGLGBIHF; // 0x24
+	public string CJEKGLGBIHF_path; // 0x24
 }
 
 [System.Obsolete("Use LFPJCEMANCK_Asset", true)]
@@ -85,18 +85,18 @@ public class LFPJCEMANCK_Asset : DIHHCBACKGG_DbSection
 	public List<NLEFIGMHGCO_MVerList> OAOOIDNBOGA_MVer_List { get; private set; } // 0x24 NPFKICOMNGC LKMOIDPNAPB JHMPDPDLAIN
 
 	// // RVA: 0xD6D49C Offset: 0xD6D49C VA: 0xD6D49C
-	public PKKHIEAEDPC NBHDIKJMLEN(string CJEKGLGBIHF_Filename)
+	public PKKHIEAEDPC NBHDIKJMLEN(string _CJEKGLGBIHF_path)
     {
 		if(KCMFDGNNPIL_Rules != null && KCMFDGNNPIL_Rules.Count > 0)
 		{
 			for(int i = 0; i < KCMFDGNNPIL_Rules.Count; i++)
 			{
-				Match match = KCMFDGNNPIL_Rules[i].FPEEJDLMOJB_FileRegex.Match(CJEKGLGBIHF_Filename);
+				Match match = KCMFDGNNPIL_Rules[i].FPEEJDLMOJB_FileRegex.Match(_CJEKGLGBIHF_path);
 				if (match.Success)
 				{
 					PKKHIEAEDPC data = new PKKHIEAEDPC();
 					data.NKGJOAEDCPH = KCMFDGNNPIL_Rules[i];
-					data.CJEKGLGBIHF = CJEKGLGBIHF_Filename;
+					data.CJEKGLGBIHF_path = _CJEKGLGBIHF_path;
 					data.MABBBOEAPAA_Match = match;
 					if(match.Groups.Count > 0)
 					{
@@ -191,9 +191,9 @@ public class LFPJCEMANCK_Asset : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xD6E4E4 Offset: 0xD6E4E4 VA: 0xD6E4E4 Slot: 9
-	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
+	public override bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data)
     {
-		CPHIOGHFPKN parser = CPHIOGHFPKN.HEGEKFMJNCC(DBBGALAPFGC);
+		CPHIOGHFPKN parser = CPHIOGHFPKN.HEGEKFMJNCC(_DBBGALAPFGC_Data);
 		NNDMLKDMALA(parser);
 		MCIFBBDDPID(parser);
 		OEEJIIIICCP = parser.KLDHBJPDAFG;

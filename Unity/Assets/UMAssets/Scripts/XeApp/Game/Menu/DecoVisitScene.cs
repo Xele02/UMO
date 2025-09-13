@@ -253,7 +253,7 @@ namespace XeApp.Game.Menu
 		// RVA: 0x11D6878 Offset: 0x11D6878 VA: 0x11D6878 Slot: 20
 		protected override bool OnBgmStart()
 		{
-			int id = BgControl.GetHomeBgId(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime());
+			int id = BgControl.GetHomeBgId(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 			int idx = id - 1;
 			if(m_bgmIds.Length  < id - 1)
 				idx = 0;

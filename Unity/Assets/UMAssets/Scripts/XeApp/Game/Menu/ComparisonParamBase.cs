@@ -181,7 +181,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x1B52220 Offset: 0x1B52220 VA: 0x1B52220
-		//protected bool IsMainSlot(FFHPBEPOMAK divaData, GCIJNCFDNON sceneData) { }
+		//protected bool IsMainSlot(FFHPBEPOMAK_DivaInfo divaData, _GCIJNCFDNON_SceneInfo sceneData) { }
 
 		//// RVA: 0x1B52278 Offset: 0x1B52278 VA: 0x1B52278
 		public bool IsLoading()

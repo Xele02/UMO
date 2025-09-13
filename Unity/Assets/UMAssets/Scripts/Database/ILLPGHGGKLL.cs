@@ -14,15 +14,15 @@ public class ILLPGHGGKLL_TutorialMiniAdv : DIHHCBACKGG_DbSection
 		public int[] CJPMCKIOCGI; // 0x18
 	}
 
-	public List<AFBMNDPOALE> CDENCMNHNGA { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
+	public List<AFBMNDPOALE> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
 
 	//// RVA: 0x9F61C8 Offset: 0x9F61C8 VA: 0x9F61C8
 	public AFBMNDPOALE LBDOLHGDIEB(int PPFNGGCBJKC)
 	{
-		return CDENCMNHNGA.Find((AFBMNDPOALE GHPLINIACBB) =>
+		return CDENCMNHNGA_table.Find((AFBMNDPOALE _GHPLINIACBB_x) =>
 		{
 			//0x9F66A8
-			return GHPLINIACBB.PPFNGGCBJKC_Id == PPFNGGCBJKC;
+			return _GHPLINIACBB_x.PPFNGGCBJKC_Id == PPFNGGCBJKC;
 		});
 	}
 
@@ -31,20 +31,20 @@ public class ILLPGHGGKLL_TutorialMiniAdv : DIHHCBACKGG_DbSection
 	{
 		JIKKNHIAEKG_BlockName = "";
 		LNIMEIMBCMF = false;
-		CDENCMNHNGA = new List<AFBMNDPOALE>();
+		CDENCMNHNGA_table = new List<AFBMNDPOALE>();
 		LMHMIIKCGPE = 82;
 	}
 
 	// RVA: 0x9F63BC Offset: 0x9F63BC VA: 0x9F63BC Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		CDENCMNHNGA.Clear();
+		CDENCMNHNGA_table.Clear();
 	}
 
 	// RVA: 0x9F6434 Offset: 0x9F6434 VA: 0x9F6434 Slot: 9
-	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
+	public override bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data)
 	{
-		EMEEODMLEHD parser = EMEEODMLEHD.HEGEKFMJNCC(DBBGALAPFGC);
+		EMEEODMLEHD parser = EMEEODMLEHD.HEGEKFMJNCC(_DBBGALAPFGC_Data);
 		KLNOMBKJDNN(parser);
 		return true;
 	}
@@ -69,7 +69,7 @@ public class ILLPGHGGKLL_TutorialMiniAdv : DIHHCBACKGG_DbSection
 			data.CJPMCKIOCGI = array[i].OGDLCNPFODO;
 			data.NDFOAINJPIN_WindowPositionTop = array[i].NDFOAINJPIN;
 			data.KGJHFFNFPOK_CharacterId = array[i].ECEOBKOFJHK;
-			CDENCMNHNGA.Add(data);
+			CDENCMNHNGA_table.Add(data);
 		}
 		return true;
 	}

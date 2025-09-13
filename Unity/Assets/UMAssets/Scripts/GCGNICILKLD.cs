@@ -15,7 +15,7 @@ public class GCGNICILKLD_AssetFileInfo
 	public uint FGGCKOJFJGK_FileHash; // 0x20
 	public int LBALIFCJKON_Idx; // 0x24
 	private uint JCKCPNHIKGP_Key1; // 0x28
-	private long BBEGLBMOBOF_Key2; // 0x30
+	private long BBEGLBMOBOF_xorl; // 0x30
 	public int FDDDLPAJIEJ_IsMediaFile; // 0x38
 	public static uint LAFJPOLCKLP_Key1 = 0x14577faf; // 0x8
 	public static long PMMJABPFGOA_Key2 = 0x74841251; // 0x10
@@ -36,16 +36,16 @@ public class GCGNICILKLD_AssetFileInfo
         return null;
     } } //0x16AAC90 NCFJKJMKANL
 	public long CALJIGKCAAH_LastUpdated { get { // last update
-        return BBEGLBMOBOF_Key2 ^ CFKONDFCBEB_LastUpdated;
+        return BBEGLBMOBOF_xorl ^ CFKONDFCBEB_LastUpdated;
     } set {
-        CFKONDFCBEB_LastUpdated = BBEGLBMOBOF_Key2 ^ value;
+        CFKONDFCBEB_LastUpdated = BBEGLBMOBOF_xorl ^ value;
     } } //0x16AACA8 MMINNMHAJGO 0x16AACBC CBMKIPILIND
 	public uint HHPEMFKDHLK_FileHash { get { return JCKCPNHIKGP_Key1 ^ FGGCKOJFJGK_FileHash; } } // 0x16AACDC NCFONAKINMA
 
 	// RVA: 0x16AACEC Offset: 0x16AACEC VA: 0x16AACEC
 	public void KHEKNNFCAOI_Load(EDOHBJAPLPF_JsonData IDLHJIOMJBK_Json, int OIPCCBHIKIA_Idx)
     {
-        BBEGLBMOBOF_Key2 = PMMJABPFGOA_Key2;
+        BBEGLBMOBOF_xorl = PMMJABPFGOA_Key2;
         JCKCPNHIKGP_Key1 = LAFJPOLCKLP_Key1;
         LAFJPOLCKLP_Key1 = LAFJPOLCKLP_Key1 * 0xe;
         PMMJABPFGOA_Key2 = PMMJABPFGOA_Key2 * 0x1c;
@@ -81,6 +81,6 @@ public class GCGNICILKLD_AssetFileInfo
         NKLIKAENLNC_Hash.DNJEJEANJGL_Value = (string)IDLHJIOMJBK_Json[AFEHLCGHAEE_Strings.POEGMFKLFJG_hash_value/*hash_value*/];
 
         LBALIFCJKON_Idx = OIPCCBHIKIA_Idx;
-        CFKONDFCBEB_LastUpdated = (int)IDLHJIOMJBK_Json[AFEHLCGHAEE_Strings.CALJIGKCAAH_last_updated_at/*last_updated_at*/] ^ BBEGLBMOBOF_Key2;
+        CFKONDFCBEB_LastUpdated = (int)IDLHJIOMJBK_Json[AFEHLCGHAEE_Strings.CALJIGKCAAH_LastUpdated/*last_updated_at*/] ^ BBEGLBMOBOF_xorl;
     }
 }

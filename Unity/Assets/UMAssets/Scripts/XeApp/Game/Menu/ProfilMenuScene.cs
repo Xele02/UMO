@@ -315,7 +315,7 @@ namespace XeApp.Game.Menu
 					mng.MJFKJHJJLMN_GetUtaRateRank(0, false, () =>
 					{
 						//0x9CFC28
-						m_musicRank = OEGIPPCADNA.BFKAHKBKBJE(mng.CDINKAANIAA, 0);
+						m_musicRank = OEGIPPCADNA.BFKAHKBKBJE(mng.CDINKAANIAA_Rank, 0);
 						t_is_end = true;
 					}, () =>
 					{
@@ -343,7 +343,7 @@ namespace XeApp.Game.Menu
 				List<IAPDFOPPGND> embList = IAPDFOPPGND.FKDIMODKKJD(false);
 				foreach(var emb in embList)
 				{
-					if(emb.EAHPLCJMPHD_EmblemPic > 0)
+					if(emb.EAHPLCJMPHD_PId > 0)
 					{
 						m_profil.EmblemList.Add(emb);
 					}

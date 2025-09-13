@@ -212,7 +212,7 @@ namespace XeApp.Game.Menu
 		{
 			//0x1519BD8
 			m_isEventTimeLimit = false;
-			m_currentTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			m_currentTime = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			m_isEventChecked = false;
 			m_eventCtrl = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.ENPJADLIFAB_EventSp, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as KNKDBNFMAKF_EventSp;
 			if(!MenuScene.Instance.CheckEventLimit(m_eventCtrl, false, true))
@@ -343,7 +343,7 @@ namespace XeApp.Game.Menu
 				{
 					m_eventHelpId.AddRange(l);
 				}
-				m_eventCtrl.FJHIHFCAHMH(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime());
+				m_eventCtrl.FJHIHFCAHMH(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 			}
 			m_isShowFirstHelp = m_eventCtrl.CMPEJEHCOEI;
 			m_eventCtrl.CMPEJEHCOEI = false;
@@ -430,7 +430,7 @@ namespace XeApp.Game.Menu
 			}
 			m_popupEvent.IsCaption = false;
 			m_popupEvent.WindowSize = SizeType.Middle;
-			m_popupEvent.bannerId = btnInfo.LCCDKCPBJAK;
+			m_popupEvent.bannerId = btnInfo.LCCDKCPBJAK_BannerId;
 			PopupWindowManager.Show(m_popupEvent, (PopupWindowControl control, PopupButton.ButtonType type, PopupButton.ButtonLabel label) =>
 			{
 				//0x15189A0

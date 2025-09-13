@@ -1,7 +1,7 @@
 
 public class IKCGAJKCPFN
 {
-	public int FBGGEFFJJHB; // 0x8
+	public int FBGGEFFJJHB_xor; // 0x8
 	public int EOONNJAMAMJ_StatCrypted2; // 0xC
 	public int EHOIENNDEDH_IdCrypted; // 0x10
 	public int HLMAFFLCCKD_CountCrypted; // 0x14
@@ -11,16 +11,16 @@ public class IKCGAJKCPFN
 	public long BEBJKJKBOGH_Date; // 0x28
 	public bool CADENLBDAEB_IsNew; // 0x30
 
-	public int PPFNGGCBJKC_Id { get { return FBGGEFFJJHB ^ EHOIENNDEDH_IdCrypted; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB; } } //0x8DBB88 DEMEPMAEJOO 0x8DBB98 HIGKAIDMOKN
-	public int EALOBDHOCHP_Stat { get { return FBGGEFFJJHB ^ INNAAKJONMJ_StatCrypted; } set { INNAAKJONMJ_StatCrypted = value ^ FBGGEFFJJHB; EOONNJAMAMJ_StatCrypted2 = INNAAKJONMJ_StatCrypted; } } //0x8DBBA8 KLDFNIEJBFE 0x8DBBB8 GJLLJFLGMCN
-	public int HMFFHLPNMPH_Count { get { return FBGGEFFJJHB ^ HLMAFFLCCKD_CountCrypted; } set { HLMAFFLCCKD_CountCrypted = value ^ FBGGEFFJJHB; IMKEAJDJANE_CountCrypted2 = HLMAFFLCCKD_CountCrypted; } } //0x8DBBCC NJOGDDPICKG 0x8DBBDC NBBGMMBICNA
-	public int JIOMCDGKIAF { get { return FBGGEFFJJHB ^ BJMDLOCLCEN_Crypted; } set { BJMDLOCLCEN_Crypted = value ^ FBGGEFFJJHB; } } //0x8DBBF0 DJHPCCHENCM 0x8DBC00 CJEGJOKIJPO
+	public int PPFNGGCBJKC_Id { get { return FBGGEFFJJHB_xor ^ EHOIENNDEDH_IdCrypted; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x8DBB88 DEMEPMAEJOO 0x8DBB98 HIGKAIDMOKN
+	public int EALOBDHOCHP_Stat { get { return FBGGEFFJJHB_xor ^ INNAAKJONMJ_StatCrypted; } set { INNAAKJONMJ_StatCrypted = value ^ FBGGEFFJJHB_xor; EOONNJAMAMJ_StatCrypted2 = INNAAKJONMJ_StatCrypted; } } //0x8DBBA8 KLDFNIEJBFE 0x8DBBB8 GJLLJFLGMCN
+	public int HMFFHLPNMPH_Count { get { return FBGGEFFJJHB_xor ^ HLMAFFLCCKD_CountCrypted; } set { HLMAFFLCCKD_CountCrypted = value ^ FBGGEFFJJHB_xor; IMKEAJDJANE_CountCrypted2 = HLMAFFLCCKD_CountCrypted; } } //0x8DBBCC NJOGDDPICKG 0x8DBBDC NBBGMMBICNA
+	public int JIOMCDGKIAF { get { return FBGGEFFJJHB_xor ^ BJMDLOCLCEN_Crypted; } set { BJMDLOCLCEN_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x8DBBF0 DJHPCCHENCM 0x8DBC00 CJEGJOKIJPO
 
 	//// RVA: 0x8DBC10 Offset: 0x8DBC10 VA: 0x8DBC10
 	public void LHPDDGIJKNB(int PPFNGGCBJKC, int KNEFBLHBDBG)
 	{
 		BEBJKJKBOGH_Date = 0;
-		FBGGEFFJJHB = KNEFBLHBDBG;
+		FBGGEFFJJHB_xor = KNEFBLHBDBG;
 		EALOBDHOCHP_Stat = 0;
 		this.PPFNGGCBJKC_Id = PPFNGGCBJKC;
 		HMFFHLPNMPH_Count = 0;

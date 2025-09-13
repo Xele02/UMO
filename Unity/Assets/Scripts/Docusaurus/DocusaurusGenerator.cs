@@ -108,9 +108,9 @@ public class DocusaurusGenerator
 
             {
                 long JHNMKKNEENE_Time = Utility.GetCurrentUnixTime();
-                CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File arch = DbArchive.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File GHPLINIACBB) =>
+                CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File arch = DbArchive.KGHAJGGMPKL_Files.Find((CBBJHPBGBAJ_Archive.JBCFNCNGLPM_File _GHPLINIACBB_x) =>
                 {
-                    return GHPLINIACBB.OPFGFINHFCE_Name.Contains("version.bytes");
+                    return _GHPLINIACBB_x.OPFGFINHFCE_Name.Contains("version.bytes");
                 }); // 0x9FDDD8
                 if(arch != null)
                 {
@@ -120,7 +120,7 @@ public class DocusaurusGenerator
                     IMMAOANGPNK.MPFFINOMILP obj = null;
                     for(int i = 0; i < b.Length; i++)
                     {
-                        int val = b[i].BEBJKJKBOGH;
+                        int val = b[i].BEBJKJKBOGH_Date;
                         if(JHNMKKNEENE_Time >= val)
                         {
                             if(obj != null)
@@ -812,10 +812,10 @@ public class DocusaurusGenerator
         OAFCKDDEBFN decryptor = new OAFCKDDEBFN();
         decryptor.PGLANLKJBLI_Init();
 
-        foreach(var costume in Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes)
+        foreach(var costume in Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table)
         {
             int i = costume.AHHJLDLAPAN_DivaId;
-            int cosId = costume.DAJGPBLEEOB_PrismCostumeModelId;
+            int cosId = costume.DAJGPBLEEOB_ModelId;
             short[] cols = costume.CHDBGFLFPNC_GetAllAvaiableColors();
             if(cols.Length > 1)
                 Debug.LogError("Too much unlockable color");
@@ -874,7 +874,7 @@ public class DocusaurusGenerator
     {
         string temp_adv_path = DataPath + "temp/adv/";
         CheckPath(temp_adv_path);
-        //foreach(var advDb in Database.EFMAIKAHFEK_Adventure.CDENCMNHNGA_List)
+        //foreach(var advDb in Database.EFMAIKAHFEK_Adventure.CDENCMNHNGA_table)
         EDOHBJAPLPF_JsonData advList = new EDOHBJAPLPF_JsonData();
         advList.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
         foreach(var file in Directory.GetFiles(Application.persistentDataPath + "/data/android/adv/"))
@@ -1070,7 +1070,7 @@ public class DocusaurusGenerator
         snsCharaList.LAJDIPCJCPO_SetJsonType(JFBMDLGBPEN_JsonType.BDHGEFMCJDF_Array);
         foreach(var chara in Database.OMGFKMANMAB_Sns.KHCACDIKJLG_Characters)
         {
-            int i = chara.EAHPLCJMPHD_PicId;
+            int i = chara.EAHPLCJMPHD_PId;
             string bundleName = string.Format("/ct/sn/ch/{0:D2}.xab", i);
             if(!File.Exists(Application.persistentDataPath + "/data/android/" + bundleName))
                 continue;
@@ -1111,7 +1111,7 @@ public class DocusaurusGenerator
 
         {
             EDOHBJAPLPF_JsonData snsData = new EDOHBJAPLPF_JsonData();
-            foreach(var snsTalk in Database.OMGFKMANMAB_Sns.CDENCMNHNGA_Talks)
+            foreach(var snsTalk in Database.OMGFKMANMAB_Sns.CDENCMNHNGA_table)
             {
                 SNSRoomTextData.Header h = roomText.textData.FindHeader(snsTalk.AJIDLAGFPGM_TalkId);
                 if(h != null)
@@ -1170,7 +1170,7 @@ public class DocusaurusGenerator
         OAFCKDDEBFN decryptor = new OAFCKDDEBFN();
         decryptor.PGLANLKJBLI_Init();
 
-        foreach(var valkyrie in Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_ValkyrieList)
+        foreach(var valkyrie in Database.PEOALFEGNDH_Valkyrie.CDENCMNHNGA_table)
         {
             if(valkyrie.PPEGAKEIEGM_Enabled != 2)
                 continue;
@@ -1178,7 +1178,7 @@ public class DocusaurusGenerator
             {
                 for(int i = 0; i < 3; i++)
                 {
-                    string outName = string.Format(file[0], valkyrie.GPPEFLKGGGJ_Id, i);
+                    string outName = string.Format(file[0], valkyrie.GPPEFLKGGGJ_ValkyrieId, i);
                     if(File.Exists(imgs_path + outName + ".png"))
                         continue;
                     string bundleName = string.Format(file[1], valkyrie.DAJGPBLEEOB_ModelId, i);

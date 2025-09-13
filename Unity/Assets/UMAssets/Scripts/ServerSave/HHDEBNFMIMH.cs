@@ -8,9 +8,9 @@ public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_ServerSaveBlock
 	public class JLAPDGALDGC
 	{
 		public int DPMFCMCDBKL_Id { get; set; } // 0x8 PEGDAIOMDKH BDFDFHFLEKI MBOGFMBGAIG
-		public bool CADENLBDAEB_New { get; set; } // 0xC HMFLCAALEKM KJGFPPLHLAB ILJHLPMDHPO
+		public bool CADENLBDAEB_IsNew { get; set; } // 0xC HMFLCAALEKM KJGFPPLHLAB ILJHLPMDHPO
 		public long BEBJKJKBOGH_Date { get; set; } // 0x10 MCIJNMKFMDB DIAPHCJBPFD IHAIKPNEEJE
-		//public bool FJODMPGPDDD { get; }
+		//public bool FJODMPGPDDD_Unlocked { get; }
 
 		//// RVA: 0x17574A8 Offset: 0x17574A8 VA: 0x17574A8
 		//public void GLHANCMGNDM(long JGNBPFCJLKI) { }
@@ -22,7 +22,7 @@ public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_ServerSaveBlock
 		public void ODDIHGPONFL(JLAPDGALDGC GPBJHKLFCEP)
 		{
 			DPMFCMCDBKL_Id = GPBJHKLFCEP.DPMFCMCDBKL_Id;
-			CADENLBDAEB_New = GPBJHKLFCEP.CADENLBDAEB_New;
+			CADENLBDAEB_IsNew = GPBJHKLFCEP.CADENLBDAEB_IsNew;
 			BEBJKJKBOGH_Date = GPBJHKLFCEP.BEBJKJKBOGH_Date;
 		}
 
@@ -30,7 +30,7 @@ public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_ServerSaveBlock
 		public bool AGBOGBEOFME(JLAPDGALDGC OIKJFMGEICL)
 		{
 			if(DPMFCMCDBKL_Id != OIKJFMGEICL.DPMFCMCDBKL_Id ||
-				CADENLBDAEB_New != OIKJFMGEICL.CADENLBDAEB_New ||
+				CADENLBDAEB_IsNew != OIKJFMGEICL.CADENLBDAEB_IsNew ||
 				BEBJKJKBOGH_Date != OIKJFMGEICL.BEBJKJKBOGH_Date)
 				return false;
 			return true;
@@ -49,7 +49,7 @@ public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_ServerSaveBlock
 	// // RVA: 0x17550EC Offset: 0x17550EC VA: 0x17550EC
 	public void GFANLIOMMNA_SetReleased(int BPNKGDGBBFG)
 	{
-		JBBHBNAJMJB[BPNKGDGBBFG - 1].BEBJKJKBOGH_Date = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		JBBHBNAJMJB[BPNKGDGBBFG - 1].BEBJKJKBOGH_Date = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 	}
 
 	// // RVA: 0x175523C Offset: 0x175523C VA: 0x175523C
@@ -88,7 +88,7 @@ public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_ServerSaveBlock
 			{
 				EDOHBJAPLPF_JsonData data2 = new EDOHBJAPLPF_JsonData();
 				data2[AFEHLCGHAEE_Strings.PPFNGGCBJKC_Id] = JBBHBNAJMJB[i].DPMFCMCDBKL_Id;
-				data2[AFEHLCGHAEE_Strings.KLJGEHBKMMG_new] = JBBHBNAJMJB[i].CADENLBDAEB_New ? 1 : 0;
+				data2[AFEHLCGHAEE_Strings.KLJGEHBKMMG_new] = JBBHBNAJMJB[i].CADENLBDAEB_IsNew ? 1 : 0;
 				data2[AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date] = JBBHBNAJMJB[i].BEBJKJKBOGH_Date;
 				data[POFDDFCGEGP + (i + 1)] = data2;
 			}
@@ -123,7 +123,7 @@ public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_ServerSaveBlock
 			else
 			{
 				GPMHOAKFALE_Adventure advDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EFMAIKAHFEK_Adventure;
-				for(int i = 0; i < advDb.CDENCMNHNGA_List.Count; i++)
+				for(int i = 0; i < advDb.CDENCMNHNGA_table.Count; i++)
 				{
 					string str = POFDDFCGEGP + (i + 1).ToString();
 					if(block.BBAJPINMOEP_Contains(str))
@@ -131,7 +131,7 @@ public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_ServerSaveBlock
 						EDOHBJAPLPF_JsonData b = block[str];
 						JLAPDGALDGC data = JBBHBNAJMJB[i];
 						data.DPMFCMCDBKL_Id = i + 1;
-						data.CADENLBDAEB_New = CJAENOMGPDA_ReadInt(b, AFEHLCGHAEE_Strings.KLJGEHBKMMG_new, 0, ref isInvalid) != 0;
+						data.CADENLBDAEB_IsNew = CJAENOMGPDA_ReadInt(b, AFEHLCGHAEE_Strings.KLJGEHBKMMG_new, 0, ref isInvalid) != 0;
 						data.BEBJKJKBOGH_Date = CJAENOMGPDA_ReadInt(b, AFEHLCGHAEE_Strings.BEBJKJKBOGH_Date, 0, ref isInvalid);
 					}
 				}
@@ -143,7 +143,7 @@ public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1755EF0 Offset: 0x1755EF0 VA: 0x1755EF0 Slot: 7
-	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	public override void BMGGKONLFIC_Copy(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
 		HHDEBNFMIMH_Adventure a = GPBJHKLFCEP as HHDEBNFMIMH_Adventure;
 		for(int i = 0; i < JBBHBNAJMJB.Count; i++)
@@ -167,5 +167,5 @@ public class HHDEBNFMIMH_Adventure : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x17563E8 Offset: 0x17563E8 VA: 0x17563E8 Slot: 10
-	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH);
+	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock _GJLFANGDGCL_Target, long MCKEOKFMLAH);
 }

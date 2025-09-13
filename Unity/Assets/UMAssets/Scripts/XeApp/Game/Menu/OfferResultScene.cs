@@ -231,13 +231,13 @@ namespace XeApp.Game.Menu
 			EntryAnimStart();
 			JDDGPJDKHNE.HHCJCDFCLOB.NFNLGGHMEAM();
 			JDDGPJDKHNE.HHCJCDFCLOB.FCMCNIMEAEA = true;
-			KDHGBOOECKC.HHCJCDFCLOB.MOOJLBNGNOB(m_viewOfferInfo.FGHGMHPNEMG_Category, m_viewOfferInfo.PPFNGGCBJKC, BOPFPIHGJMD.IGHPDAGKIKO.CADDNFIKDLG_4_Complete);
-			KDHGBOOECKC.HHCJCDFCLOB.PGGLEDMJEHB(m_viewOfferInfo.FGHGMHPNEMG_Category, m_viewOfferInfo.PPFNGGCBJKC, 1);
-			KDHGBOOECKC.HHCJCDFCLOB.EBJOGGIHHBA(m_viewOfferInfo.FGHGMHPNEMG_Category, m_viewOfferInfo.PPFNGGCBJKC, false);
+			KDHGBOOECKC.HHCJCDFCLOB.MOOJLBNGNOB(m_viewOfferInfo.FGHGMHPNEMG_Type, m_viewOfferInfo.PPFNGGCBJKC, BOPFPIHGJMD.IGHPDAGKIKO.CADDNFIKDLG_4_Complete);
+			KDHGBOOECKC.HHCJCDFCLOB.PGGLEDMJEHB(m_viewOfferInfo.FGHGMHPNEMG_Type, m_viewOfferInfo.PPFNGGCBJKC, 1);
+			KDHGBOOECKC.HHCJCDFCLOB.EBJOGGIHHBA(m_viewOfferInfo.FGHGMHPNEMG_Type, m_viewOfferInfo.PPFNGGCBJKC, false);
 			JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.HEFIKPAHCIA(GBNDFCEDNMG.CJDGJFINBFH.PMMOLBAAHEM_31);
-			m_viewCompItem = ViewOfferCompensation.CreateList(m_viewOfferInfo.FGHGMHPNEMG_Category, m_viewOfferInfo.PPFNGGCBJKC);
+			m_viewCompItem = ViewOfferCompensation.CreateList(m_viewOfferInfo.FGHGMHPNEMG_Type, m_viewOfferInfo.PPFNGGCBJKC);
 			IsGreatSuccessState = m_viewCompItem.IsGreatSuccess;
-			ILCCJNDFFOB.HHCJCDFCLOB.ONPIDKLOPIP(m_viewOfferInfo.FGHGMHPNEMG_Category, m_viewOfferInfo.PPFNGGCBJKC, IsGreatSuccessState ? 2 : 1);
+			ILCCJNDFFOB.HHCJCDFCLOB.ONPIDKLOPIP(m_viewOfferInfo.FGHGMHPNEMG_Type, m_viewOfferInfo.PPFNGGCBJKC, IsGreatSuccessState ? 2 : 1);
 			yield return null;
 			this.StartCoroutineWatched(AllAssetLoad());
 			yield return new WaitUntil(() =>
@@ -250,11 +250,11 @@ namespace XeApp.Game.Menu
 			OCMJNBIFJNM_Offer.JPOHOLBBFGP of = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAEJHMCMFJD_Offer.FOFLMHELILC.Find((OCMJNBIFJNM_Offer.JPOHOLBBFGP _) =>
 			{
 				//0x18591AC
-				if (_.GBJFNGCDKPM_Type != (int)m_viewOfferInfo.FGHGMHPNEMG_Category)
+				if (_.GBJFNGCDKPM_Type != (int)m_viewOfferInfo.FGHGMHPNEMG_Type)
 					return false;
 				return _.MLDPDLPHJPM_OfferId == m_viewOfferInfo.PPFNGGCBJKC;
 			});
-			m_layout.SettingValkyrieFormIcon(of.MNCEBKHBBEF_VFform, (int)m_viewOfferInfo.FGHGMHPNEMG_Category, m_viewOfferInfo.PPFNGGCBJKC);
+			m_layout.SettingValkyrieFormIcon(of.MNCEBKHBBEF_VFform, (int)m_viewOfferInfo.FGHGMHPNEMG_Type, m_viewOfferInfo.PPFNGGCBJKC);
 			while (!m_layout.ItemIconLoded())
 				yield return null;
 			yield return null;
@@ -308,7 +308,7 @@ namespace XeApp.Game.Menu
 		{
 			//0x185C7C8
 			HEFCLPGPMLK d = new HEFCLPGPMLK();
-			ValkyrieData = d.FFGHIOAOABE(d.LLMEKDNIOEF(m_viewOfferInfo.FGHGMHPNEMG_Category, m_viewOfferInfo.PPFNGGCBJKC));
+			ValkyrieData = d.FFGHIOAOABE(d.LLMEKDNIOEF(m_viewOfferInfo.FGHGMHPNEMG_Type, m_viewOfferInfo.PPFNGGCBJKC));
 			if(ValkyrieData == null)
 			{
 				m_pilotId = 1;
@@ -492,7 +492,7 @@ namespace XeApp.Game.Menu
 				for(i = 0; i < NotReceiveItemList.Count; i++)
 				{
 					IsOpnePopup = true;
-					ShowNotReceivedPopup(NotReceiveItemList[i].PPFNGGCBJKC_Id, NotReceiveItemList[i].BFINGCJHOHI_Cnt, () =>
+					ShowNotReceivedPopup(NotReceiveItemList[i].PPFNGGCBJKC_Id, NotReceiveItemList[i].BFINGCJHOHI_Count, () =>
 					{
 						//0x1859300
 						IsOpnePopup = false;
@@ -513,7 +513,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_viewOfferInfo.OHOGIHMFEIJ)
 			{
-				if(m_viewOfferInfo.CADENLBDAEB)
+				if(m_viewOfferInfo.CADENLBDAEB_IsNew)
 				{
 					MessageBank bk = MessageManager.Instance.GetBank("menu");
 					PopupItemGetSetting s = new PopupItemGetSetting();

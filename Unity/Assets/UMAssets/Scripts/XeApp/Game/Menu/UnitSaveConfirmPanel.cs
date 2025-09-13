@@ -153,7 +153,7 @@ namespace XeApp.Game.Menu
 				if(f != null)
 				{
 					divaId = f.AHHJLDLAPAN_DivaId;
-					cosId = f.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId;
+					cosId = f.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId;
 					colId = f.EKFONBFDAAP_ColorId;
 				}
 				if(isGoDiva && i != 0)

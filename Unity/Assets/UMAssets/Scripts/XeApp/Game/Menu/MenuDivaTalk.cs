@@ -314,7 +314,7 @@ namespace XeApp.Game.Menu
 				{
 					DivaTalk("talk_login_{0:D2}", (int)talkType + 1, null);
 					TimerStop();
-					talkFlags.EDEDFDDIOKO_SetTrue(idx);
+					talkFlags.EDEDFDDIOKO_Set(idx);
 				}
 			}
 		}
@@ -385,7 +385,7 @@ namespace XeApp.Game.Menu
 				bool b = talkFlags.ODKIHPBEOEC_IsTrue(1);
 				if (!b && !checkOnly)
 				{
-					talkFlags.EDEDFDDIOKO_SetTrue(1);
+					talkFlags.EDEDFDDIOKO_Set(1);
 					return true;
 				}
 				return !b;
@@ -401,7 +401,7 @@ namespace XeApp.Game.Menu
 			bool b = talkFlags.ODKIHPBEOEC_IsTrue(2);
 			if (!b && !checkOnly)
 			{
-				talkFlags.EDEDFDDIOKO_SetTrue(2);
+				talkFlags.EDEDFDDIOKO_Set(2);
 				return true;
 			}
 			return !b;

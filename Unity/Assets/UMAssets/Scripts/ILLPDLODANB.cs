@@ -124,14 +124,14 @@ public class ILLPDLODANB
 	}
 
 	//// RVA: 0x9F1CF4 Offset: 0x9F1CF4 VA: 0x9F1CF4
-	public static long DCLKMNGMIKC_GetQuestCurrentValue(CNLPPCFJEID_QuestInfo KOGBMDOONFA, OKGLGHCBCJP_Database LKMHPJKIFDN, BBHNACPENDM_ServerSaveData LDEGEHAEALK)
+	public static long DCLKMNGMIKC_GetCurrentValue(CNLPPCFJEID_QuestInfo KOGBMDOONFA, OKGLGHCBCJP_Database LKMHPJKIFDN, BBHNACPENDM_ServerSaveData LDEGEHAEALK)
 	{
 		int questValue = KOGBMDOONFA.CHOFDPDFPDC_ConfigValue;
 		int questType = KOGBMDOONFA.INDDJNMPONH_Type;
 		switch(questType)
 		{
 			case 1:
-				return LDEGEHAEALK.OEKEIGFAIGN_Counter.EJFAEKPGKNJ_Day.MILCBLJDADN_MClr;
+				return LDEGEHAEALK.OEKEIGFAIGN_Counter.EJFAEKPGKNJ_daily.MILCBLJDADN_MClr;
 			case 2:
 				{
 					long res = 0;
@@ -139,17 +139,17 @@ public class ILLPDLODANB
 					{
 						if (questValue <= i)
 						{
-							res += LDEGEHAEALK.OEKEIGFAIGN_Counter.EJFAEKPGKNJ_Day.GEIONHDKGEB_SRnk[i];
+							res += LDEGEHAEALK.OEKEIGFAIGN_Counter.EJFAEKPGKNJ_daily.GEIONHDKGEB_ScoreRank[i];
 						}
 					}
 					return res;
 				}
 			case 3:
-				return LDEGEHAEALK.OEKEIGFAIGN_Counter.EJFAEKPGKNJ_Day.MPHFGEPJOGL_AS;
+				return LDEGEHAEALK.OEKEIGFAIGN_Counter.EJFAEKPGKNJ_daily.MPHFGEPJOGL_AS;
 			case 4:
-				return LDEGEHAEALK.OEKEIGFAIGN_Counter.EJFAEKPGKNJ_Day.NDNHHGJKJGM_Gach;
+				return LDEGEHAEALK.OEKEIGFAIGN_Counter.EJFAEKPGKNJ_daily.NDNHHGJKJGM_Gach;
 			case 5:
-				return LDEGEHAEALK.OEKEIGFAIGN_Counter.EJFAEKPGKNJ_Day.GACBDCLPOCD_Sdv;
+				return LDEGEHAEALK.OEKEIGFAIGN_Counter.EJFAEKPGKNJ_daily.GACBDCLPOCD_Sdv;
 			case 6:
 				{
 					long res = 0;
@@ -177,9 +177,9 @@ public class ILLPDLODANB
 					return res;
 				}
 			case 7:
-				for(int i = 0; i < LKMHPJKIFDN.OHCIFMDPAPD_Story.CDENCMNHNGA.Count; i++)
+				for(int i = 0; i < LKMHPJKIFDN.OHCIFMDPAPD_Story.CDENCMNHNGA_table.Count; i++)
 				{
-					LAEGMENIEDB_Story.ALGOILKGAAH dbStory = LKMHPJKIFDN.OHCIFMDPAPD_Story.CDENCMNHNGA[i];
+					LAEGMENIEDB_Story.ALGOILKGAAH dbStory = LKMHPJKIFDN.OHCIFMDPAPD_Story.CDENCMNHNGA_table[i];
 					if (dbStory.KLCIIHKFPPO_StoryMusicId == questValue)
 					{
 						NEKDCJKANAH_StoryRecord.HKDNILFKCFC saveStory = LDEGEHAEALK.LNOOKHJBENO_StoryRecord.MMKAJBFBKNH[dbStory.LFLLLOPAKCO_Id - 1];
@@ -202,7 +202,7 @@ public class ILLPDLODANB
 			case 11: // 0xb
 				return LDEGEHAEALK.OEKEIGFAIGN_Counter.BDLNMOIOMHK_Total.HLNOELCIBPH_Perf;
 			case 12: // 0xc
-				return LDEGEHAEALK.OEKEIGFAIGN_Counter.BDLNMOIOMHK_Total.FILFPNDEINH_Fcb;
+				return LDEGEHAEALK.OEKEIGFAIGN_Counter.BDLNMOIOMHK_Total.FILFPNDEINH_Combo;
 			case 13: // 0xd
 				return LDEGEHAEALK.OEKEIGFAIGN_Counter.BDLNMOIOMHK_Total.KOONLNKCIJC_SS;
 			case 14: // 0xe
@@ -263,9 +263,9 @@ public class ILLPDLODANB
 			case 33: // 0x21
 				{
 					int res = 0;
-					for (int i = 0; i < LKMHPJKIFDN.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList.Count; i++)
+					for (int i = 0; i < LKMHPJKIFDN.ECNHDEHADGL_Scene.CDENCMNHNGA_table.Count; i++)
 					{
-						MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = LKMHPJKIFDN.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[i];
+						MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = LKMHPJKIFDN.ECNHDEHADGL_Scene.CDENCMNHNGA_table[i];
 						if (dbScene.PPEGAKEIEGM_En == 2)
 						{
 							MMPBPOIFDAF_Scene.PMKOFEIONEG saveScene = LDEGEHAEALK.PNLOINMCCKH_Scene.OPIBAPEGCLA[i];
@@ -397,7 +397,7 @@ public class ILLPDLODANB
 	}
 
 	//// RVA: 0x9F4088 Offset: 0x9F4088 VA: 0x9F4088
-	public static BKANGIKIEML.NODKLJHEAJB HNHNHHCBLDE(LOEGALDKHPL INDDJNMPONH, int CHOFDPDFPDC)
+	public static BKANGIKIEML.NODKLJHEAJB HNHNHHCBLDE(LOEGALDKHPL INDDJNMPONH, int _CHOFDPDFPDC_ConfigValue)
 	{
 		switch(INDDJNMPONH)
 		{
@@ -439,13 +439,13 @@ public class ILLPDLODANB
 			case LOEGALDKHPL.LBKOGDGCFCM/*0x29*/:
 				return BKANGIKIEML.NODKLJHEAJB.PAAIHBHJJMM_3/*3*/;
 			case LOEGALDKHPL.ABDCDIGADHD/*9*/:
-				if (CHOFDPDFPDC == 0 || CHOFDPDFPDC - 1 > 4)
+				if (_CHOFDPDFPDC_ConfigValue == 0 || _CHOFDPDFPDC_ConfigValue - 1 > 4)
 					return BKANGIKIEML.NODKLJHEAJB.HJNNKCMLGFL/*0*/;
 				return new BKANGIKIEML.NODKLJHEAJB[5] { BKANGIKIEML.NODKLJHEAJB.GONENLHJLCJ_9/*9*/
 					, BKANGIKIEML.NODKLJHEAJB.MLINGAKKDEP_8/*8*/
 					, BKANGIKIEML.NODKLJHEAJB.OEFNIAKHGKD_7/*7*/
 					, BKANGIKIEML.NODKLJHEAJB.HBIPNFMLLBF_6/*6*/
-					, BKANGIKIEML.NODKLJHEAJB.BBAEIHMIFFI_11/*0xb*/ }[CHOFDPDFPDC - 1];
+					, BKANGIKIEML.NODKLJHEAJB.BBAEIHMIFFI_11/*0xb*/ }[_CHOFDPDFPDC_ConfigValue - 1];
 			case LOEGALDKHPL.CHPEIDMDNFP/*0x10*/:
 			case LOEGALDKHPL.ANALBHDNGKP/*0x52*/:
 			case LOEGALDKHPL.LMFBIGPJMFM/*0x58*/:
@@ -491,8 +491,8 @@ public class ILLPDLODANB
 					{
 						return BKANGIKIEML.NODKLJHEAJB.KBHGPMNGALJ_33/*33*/;
 					}
-					AMCGONHBGGF unit = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_MainDivas[0];
-					if (unit.DIPKCALNIII_Id == 1)
+					AMCGONHBGGF unit = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.MLAFAACKKBG_Unit.FJDDNKGHPHN_GetDefault().FDBOPFEOENF_Diva[0];
+					if (unit.DIPKCALNIII_DivaId == 1)
 						return BKANGIKIEML.NODKLJHEAJB.MGJDKBFHDML_5/*5*/;
 				}
 				return BKANGIKIEML.NODKLJHEAJB.OBBOJKJAHIE_20/*20*/;
@@ -598,11 +598,11 @@ public class ILLPDLODANB
 					case 1:
 						if (FBFNJMKPBBA.HIDHLFCBIDE_EventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool)
 							return BKANGIKIEML.NODKLJHEAJB.FNILHIFGOCE_15/*15*/;
-						int EHDDADDKMFI = NDFIEMPPMLF.HBJJCDIMOPO_TargetMusicConditionId;
-						int idx = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.HEACCHAKMFG(FBFNJMKPBBA).FindIndex((int GHPLINIACBB) =>
+						int EHDDADDKMFI_f_id = NDFIEMPPMLF.HBJJCDIMOPO_TargetMusicConditionId;
+						int idx = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.HEACCHAKMFG(FBFNJMKPBBA).FindIndex((int _GHPLINIACBB_x) =>
 						{
 							//0x9F61A4
-							return EHDDADDKMFI == GHPLINIACBB;
+							return EHDDADDKMFI_f_id == _GHPLINIACBB_x;
 						});
 						if(idx < 0)
 							return BKANGIKIEML.NODKLJHEAJB.FNILHIFGOCE_15/*15*/;
@@ -662,25 +662,25 @@ public class ILLPDLODANB
 	}
 
 	//// RVA: 0x9F3E6C Offset: 0x9F3E6C VA: 0x9F3E6C
-	public static int KPEDEPGGMEC_GetDailyQuestStatus(int CMEJFJFOIIJ, OKGLGHCBCJP_Database LKMHPJKIFDN, BBHNACPENDM_ServerSaveData LDEGEHAEALK)
+	public static int KPEDEPGGMEC_GetDailyQuestStatus(int _CMEJFJFOIIJ_QuestId, OKGLGHCBCJP_Database LKMHPJKIFDN, BBHNACPENDM_ServerSaveData LDEGEHAEALK)
 	{
-		CNLPPCFJEID_QuestInfo dbQuest = LKMHPJKIFDN.MHGPMMIDKMM_Quest.BEGCHDHHEKC_DailyQuests[CMEJFJFOIIJ - 1];
-		NFPHOINMHKN_QuestInfo saveQuest = LDEGEHAEALK.GOACJBOCLHH_Quest.BEGCHDHHEKC_DailyQuests[CMEJFJFOIIJ - 1];
+		CNLPPCFJEID_QuestInfo dbQuest = LKMHPJKIFDN.MHGPMMIDKMM_Quest.BEGCHDHHEKC_DailyQuests[_CMEJFJFOIIJ_QuestId - 1];
+		NFPHOINMHKN_QuestInfo saveQuest = LDEGEHAEALK.GOACJBOCLHH_Quest.BEGCHDHHEKC_DailyQuests[_CMEJFJFOIIJ_QuestId - 1];
 		if (dbQuest.INDDJNMPONH_Type == 0)
 			return 0;
 		if(saveQuest.EALOBDHOCHP_Stat != 1)
 		{
 			return saveQuest.EALOBDHOCHP_Stat;
 		}
-		long v = DCLKMNGMIKC_GetQuestCurrentValue(dbQuest, LKMHPJKIFDN, LDEGEHAEALK);
-		return v < dbQuest.FCDKJAKLGMB ? 1 : 2;
+		long v = DCLKMNGMIKC_GetCurrentValue(dbQuest, LKMHPJKIFDN, LDEGEHAEALK);
+		return v < dbQuest.FCDKJAKLGMB_TargetValue ? 1 : 2;
 	}
 
 	//// RVA: 0x9F4D28 Offset: 0x9F4D28 VA: 0x9F4D28
-	public static int OBOJKHIJBGL_GetNormalQuestStatus(int CMEJFJFOIIJ, OKGLGHCBCJP_Database LKMHPJKIFDN, BBHNACPENDM_ServerSaveData LDEGEHAEALK, bool KDEBJBCDFOL/* = false*/)
+	public static int OBOJKHIJBGL_GetNormalQuestStatus(int _CMEJFJFOIIJ_QuestId, OKGLGHCBCJP_Database LKMHPJKIFDN, BBHNACPENDM_ServerSaveData LDEGEHAEALK, bool KDEBJBCDFOL/* = false*/)
 	{
-		CNLPPCFJEID_QuestInfo dbQuest = LKMHPJKIFDN.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests[CMEJFJFOIIJ - 1];
-		NFPHOINMHKN_QuestInfo saveQuest = LDEGEHAEALK.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[CMEJFJFOIIJ - 1];
+		CNLPPCFJEID_QuestInfo dbQuest = LKMHPJKIFDN.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests[_CMEJFJFOIIJ_QuestId - 1];
+		NFPHOINMHKN_QuestInfo saveQuest = LDEGEHAEALK.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[_CMEJFJFOIIJ_QuestId - 1];
 		int c = 0;
 		if(dbQuest.INDDJNMPONH_Type != 0)
 		{
@@ -692,9 +692,9 @@ public class ILLPDLODANB
 				if(dbQuest.HHIBBHFHENH_LinkQuestId != 0)
 				{
 					CNLPPCFJEID_QuestInfo q2 = LKMHPJKIFDN.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests[dbQuest.HHIBBHFHENH_LinkQuestId - 1];
-					long t = DCLKMNGMIKC_GetQuestCurrentValue(q2, LKMHPJKIFDN, LDEGEHAEALK);
+					long t = DCLKMNGMIKC_GetCurrentValue(q2, LKMHPJKIFDN, LDEGEHAEALK);
 					a = 2;
-					if(t < q2.FCDKJAKLGMB)
+					if(t < q2.FCDKJAKLGMB_TargetValue)
 					{
 						NFPHOINMHKN_QuestInfo s2 = LDEGEHAEALK.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[dbQuest.HHIBBHFHENH_LinkQuestId - 1];
 						a = s2.EALOBDHOCHP_Stat;
@@ -702,12 +702,12 @@ public class ILLPDLODANB
 				}
 			}
 			c = 2;
-			long t2 = DCLKMNGMIKC_GetQuestCurrentValue(dbQuest, LKMHPJKIFDN, LDEGEHAEALK);
-			if(t2 < dbQuest.FCDKJAKLGMB)
+			long t2 = DCLKMNGMIKC_GetCurrentValue(dbQuest, LKMHPJKIFDN, LDEGEHAEALK);
+			if(t2 < dbQuest.FCDKJAKLGMB_TargetValue)
 			{
-				if(dbQuest.EKANGPODCEP != 0)
+				if(dbQuest.EKANGPODCEP_EventId != 0)
 				{
-					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(dbQuest.EKANGPODCEP);
+					IKDICBBFBMI_EventBase ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OIKOHACJPCB_GetEventById(dbQuest.EKANGPODCEP_EventId);
 					if (ev == null)
 						return 0;
 					if (ev.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5/*5*/)
@@ -720,7 +720,7 @@ public class ILLPDLODANB
 	}
 
 	// RVA: 0x9F5228 Offset: 0x9F5228 VA: 0x9F5228
-	public static void MOFIPNGNNPA(LOEGALDKHPL INDDJNMPONH, OKGLGHCBCJP_Database LKMHPJKIFDN, BBHNACPENDM_ServerSaveData LDEGEHAEALK, int EALOBDHOCHP, bool FBBNPFFEJBN/* = false*/)
+	public static void MOFIPNGNNPA(LOEGALDKHPL INDDJNMPONH, OKGLGHCBCJP_Database LKMHPJKIFDN, BBHNACPENDM_ServerSaveData LDEGEHAEALK, int _EALOBDHOCHP_Stat, bool _FBBNPFFEJBN_Force/* = false*/)
 	{
 		if((int)INDDJNMPONH > 39)
 		{
@@ -728,20 +728,20 @@ public class ILLPDLODANB
 			{
 				if(!DDJGDCHMCBN(INDDJNMPONH))
 				{
-					CNLPPCFJEID_QuestInfo c = LKMHPJKIFDN.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests.Find((CNLPPCFJEID_QuestInfo GHPLINIACBB) =>
+					CNLPPCFJEID_QuestInfo c = LKMHPJKIFDN.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests.Find((CNLPPCFJEID_QuestInfo _GHPLINIACBB_x) =>
 					{
 						//0x9F60D8
-						return (int)INDDJNMPONH == GHPLINIACBB.INDDJNMPONH_Type;
+						return (int)INDDJNMPONH == _GHPLINIACBB_x.INDDJNMPONH_Type;
 					});
 					if(c != null)
 					{
 						NFPHOINMHKN_QuestInfo n = LDEGEHAEALK.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[c.PPFNGGCBJKC - 1];
-						if(!FBBNPFFEJBN)
+						if(!_FBBNPFFEJBN_Force)
 						{
-							if (EALOBDHOCHP <= n.EALOBDHOCHP_Stat)
+							if (_EALOBDHOCHP_Stat <= n.EALOBDHOCHP_Stat)
 								return;
 						}
-						n.EALOBDHOCHP_Stat = EALOBDHOCHP;
+						n.EALOBDHOCHP_Stat = _EALOBDHOCHP_Stat;
 					}
 				}
 			}
@@ -749,21 +749,21 @@ public class ILLPDLODANB
 	}
 
 	//// RVA: 0x9F54E8 Offset: 0x9F54E8 VA: 0x9F54E8
-	public static void MOFIPNGNNPA(LOEGALDKHPL INDDJNMPONH, int EALOBDHOCHP/* = 2*/, bool FBBNPFFEJBN/* = false*/)
+	public static void MOFIPNGNNPA(LOEGALDKHPL INDDJNMPONH, int _EALOBDHOCHP_Stat/* = 2*/, bool _FBBNPFFEJBN_Force/* = false*/)
 	{
 		if(CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData != null && IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database != null)
 		{
-			MOFIPNGNNPA(INDDJNMPONH, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, EALOBDHOCHP, FBBNPFFEJBN);
+			MOFIPNGNNPA(INDDJNMPONH, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database, CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData, _EALOBDHOCHP_Stat, _FBBNPFFEJBN_Force);
 		}
 	}
 
 	//// RVA: 0x9F5634 Offset: 0x9F5634 VA: 0x9F5634
 	public static int BFLCENAJOEN(LOEGALDKHPL INDDJNMPONH)
 	{
-		CNLPPCFJEID_QuestInfo c = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests.Find((CNLPPCFJEID_QuestInfo GHPLINIACBB) =>
+		CNLPPCFJEID_QuestInfo c = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests.Find((CNLPPCFJEID_QuestInfo _GHPLINIACBB_x) =>
 		{
 			//0x9F611C
-			return GHPLINIACBB.INDDJNMPONH_Type == (int)INDDJNMPONH;
+			return _GHPLINIACBB_x.INDDJNMPONH_Type == (int)INDDJNMPONH;
 		});
 		if(c != null)
 		{
@@ -773,22 +773,22 @@ public class ILLPDLODANB
 	}
 
 	//// RVA: 0x9F58BC Offset: 0x9F58BC VA: 0x9F58BC
-	public static void HECOAKHIAKP(LOEGALDKHPL INDDJNMPONH, int EALOBDHOCHP/* = 2*/, bool FBBNPFFEJBN/* = false*/)
+	public static void HECOAKHIAKP(LOEGALDKHPL INDDJNMPONH, int _EALOBDHOCHP_Stat/* = 2*/, bool _FBBNPFFEJBN_Force/* = false*/)
 	{
-		CNLPPCFJEID_QuestInfo quest = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests.Find((CNLPPCFJEID_QuestInfo GHPLINIACBB) =>
+		CNLPPCFJEID_QuestInfo quest = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests.Find((CNLPPCFJEID_QuestInfo _GHPLINIACBB_x) =>
 		{
 			//0x9F6160
-			return GHPLINIACBB.INDDJNMPONH_Type == (int)INDDJNMPONH;
+			return _GHPLINIACBB_x.INDDJNMPONH_Type == (int)INDDJNMPONH;
 		});
 		if(quest != null)
 		{
 			NFPHOINMHKN_QuestInfo q = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[quest.PPFNGGCBJKC - 1];
-			if(!FBBNPFFEJBN)
+			if(!_FBBNPFFEJBN_Force)
 			{
-				if (EALOBDHOCHP <= q.EALOBDHOCHP_Stat)
+				if (_EALOBDHOCHP_Stat <= q.EALOBDHOCHP_Stat)
 					return;
 			}
-			q.EALOBDHOCHP_Stat = EALOBDHOCHP;
+			q.EALOBDHOCHP_Stat = _EALOBDHOCHP_Stat;
 		}
 	}
 
@@ -801,7 +801,7 @@ public class ILLPDLODANB
 	}
 
 	//// RVA: 0x9F5BC0 Offset: 0x9F5BC0 VA: 0x9F5BC0
-	public static bool OHFOAIDPDEM(int MALFHCHNEFN, out int CMEJFJFOIIJ)
+	public static bool OHFOAIDPDEM(int MALFHCHNEFN, out int _CMEJFJFOIIJ_QuestId)
 	{
 		int a = BIFNGFAIEIL.HHCJCDFCLOB.CEDPKMOHANM(MALFHCHNEFN);
 		List<CNLPPCFJEID_QuestInfo> dbQuests = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests;
@@ -814,24 +814,24 @@ public class ILLPDLODANB
 				{
 					if(saveQuests[i].EALOBDHOCHP_Stat < 2)
 					{
-						if (dbQuests[i].FCDKJAKLGMB <= a)
+						if (dbQuests[i].FCDKJAKLGMB_TargetValue <= a)
 						{
-							CMEJFJFOIIJ = i + 1;
+							_CMEJFJFOIIJ_QuestId = i + 1;
 							return true;
 						}
-						CMEJFJFOIIJ = 0;
+						_CMEJFJFOIIJ_QuestId = 0;
 						return false;
 					}
 				}
 			}
 		}
-		CMEJFJFOIIJ = 0;
+		_CMEJFJFOIIJ_QuestId = 0;
 		return false;
 	}
 
 	//// RVA: 0x9F5F10 Offset: 0x9F5F10 VA: 0x9F5F10
-	public static void CIEDCPPINCB(int CMEJFJFOIIJ, int EALOBDHOCHP/* = 2*/)
+	public static void CIEDCPPINCB(int _CMEJFJFOIIJ_QuestId, int _EALOBDHOCHP_Stat/* = 2*/)
 	{
-		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[CMEJFJFOIIJ - 1].EALOBDHOCHP_Stat = EALOBDHOCHP;
+		CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GOACJBOCLHH_Quest.GPMKFMFEKLN_NormalQuests[_CMEJFJFOIIJ_QuestId - 1].EALOBDHOCHP_Stat = _EALOBDHOCHP_Stat;
 	}
 }

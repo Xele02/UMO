@@ -113,7 +113,7 @@ namespace XeApp.Game.Menu
 			sts[1] = stA;
 			for(int i = 0; i < 2; i++)
 			{
-				sts[i].Add(list[i].CMCKNKKCNDK_EquippedStatus);
+				sts[i].Add(list[i].CMCKNKKCNDK_Status);
 			}
 			for(int i = 0; i < 2; i++)
 			{
@@ -129,7 +129,7 @@ namespace XeApp.Game.Menu
 				m_panel_data[i].effect2.alignment = list[i].FFKMJNHFFFL_Costume.ENMAEBJGEKL_SkillId == 0 ? TextAnchor.UpperCenter : TextAnchor.UpperLeft;
 				m_panel_data[i].effect2.text = list[i].FFKMJNHFFFL_Costume.FCEGELPJAMH_SkillDesc;
 				int index = i;
-				GameManager.Instance.CostumeIconCache.Load(list[i].AHHJLDLAPAN_DivaId, list[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, list[i].EKFONBFDAAP_ColorId, (IiconTexture icon) => {
+				GameManager.Instance.CostumeIconCache.Load(list[i].AHHJLDLAPAN_DivaId, list[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, list[i].EKFONBFDAAP_ColorId, (IiconTexture icon) => {
 					//0x162FDD4
 					icon.Set(m_panel_data[index].costume);
 				});

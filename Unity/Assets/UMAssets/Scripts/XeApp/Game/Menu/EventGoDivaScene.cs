@@ -540,7 +540,7 @@ namespace XeApp.Game.Menu
 			}
 			foreach(var d in m_eventGoDivaData.NBIGLBMHEDC_Divas)
 			{
-				GameManager.Instance.DivaIconCache.TryInstall(d.AHHJLDLAPAN_DivaId, d.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, d.EKFONBFDAAP_ColorId);
+				GameManager.Instance.DivaIconCache.TryInstall(d.AHHJLDLAPAN_DivaId, d.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, d.EKFONBFDAAP_ColorId);
 			}
 			foreach(var d in m_eventGoDivaData.NJIKMDFPNDH)
 			{
@@ -1164,7 +1164,7 @@ namespace XeApp.Game.Menu
 			}
 			MenuScene.Instance.divaManager.Release(true);
 			yield return Resources.UnloadUnusedAssets();
-			MenuScene.Instance.divaManager.Load(divaId, GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[divaId - 1].FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, 
+			MenuScene.Instance.divaManager.Load(divaId, GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[divaId - 1].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, 
 				GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[divaId - 1].EKFONBFDAAP_ColorId, DivaResource.MenuFacialType.Home, false);
 			while(MenuScene.Instance.divaManager.IsLoading)
 				yield return null;
@@ -1221,9 +1221,9 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < m_eventGoDivaData.NBIGLBMHEDC_Divas.Count; i++)
 			{
 				m_selectDiva.SetDivaIcon(m_eventGoDivaData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId - 1, m_eventGoDivaData.NBIGLBMHEDC_Divas[i].AHHJLDLAPAN_DivaId, 
-					!m_eventGoDivaData.NBIGLBMHEDC_Divas[i].FFKMJNHFFFL_Costume.FJODMPGPDDD_Possessed ? 1 : m_eventGoDivaData.NBIGLBMHEDC_Divas[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, 
-					!m_eventGoDivaData.NBIGLBMHEDC_Divas[i].FFKMJNHFFFL_Costume.FJODMPGPDDD_Possessed ? 0 : m_eventGoDivaData.NBIGLBMHEDC_Divas[i].EKFONBFDAAP_ColorId, 
-					!m_eventGoDivaData.NBIGLBMHEDC_Divas[i].FFKMJNHFFFL_Costume.FJODMPGPDDD_Possessed);
+					!m_eventGoDivaData.NBIGLBMHEDC_Divas[i].FFKMJNHFFFL_Costume.FJODMPGPDDD_Unlocked ? 1 : m_eventGoDivaData.NBIGLBMHEDC_Divas[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, 
+					!m_eventGoDivaData.NBIGLBMHEDC_Divas[i].FFKMJNHFFFL_Costume.FJODMPGPDDD_Unlocked ? 0 : m_eventGoDivaData.NBIGLBMHEDC_Divas[i].EKFONBFDAAP_ColorId, 
+					!m_eventGoDivaData.NBIGLBMHEDC_Divas[i].FFKMJNHFFFL_Costume.FJODMPGPDDD_Unlocked);
 			}
 			m_selectDiva.SetSelecting(m_divaId - 1);
 		}
@@ -1231,7 +1231,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1067428 Offset: 0x1067428 VA: 0x1067428
 		private void ApplyFeverTimeStatus()
 		{
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			if(m_eventGoDivaData.GNDOGPBIGIL_GetCurrentBonusRate(t) > 0)
 			{
 				if(!m_musicSelectSupporter.IsEventEndChallengePeriod)
@@ -1408,7 +1408,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1068824 Offset: 0x1068824 VA: 0x1068824
 		private void ApplyEventMusicInfo(IBJAKJJICBC musicData, Difficulty.Type difficulty, bool is6LineMode)
 		{
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
             ExpType expType = GetMusicExpType(musicData, difficulty, t);
             int expValue = GetMusicExp(musicData, difficulty, t, expType);
 			float m = 0;
@@ -1429,7 +1429,7 @@ namespace XeApp.Game.Menu
 			{
 				if(IsBonusOpen(d))
 				{
-					if(d.CGHNCPEKOCK)
+					if(d.CGHNCPEKOCK_IsDaily)
 					{
 						v = m_eventGoDivaData.DDDKOKOPCGG() + 1;
 						v2 = LayoutEventGoDivaMusicInfo.BonusStatusType.Daily;
@@ -1439,7 +1439,7 @@ namespace XeApp.Game.Menu
 					v2 = LayoutEventGoDivaMusicInfo.BonusStatusType.Normal;
 				}
 			}
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			m_eventMusicInfo.SetBonusLotsStatus(musicData.OGHOPBAKEFE_IsEventSpecial ? v2 : (v2 == LayoutEventGoDivaMusicInfo.BonusStatusType.Daily ? LayoutEventGoDivaMusicInfo.BonusStatusType.Hide : LayoutEventGoDivaMusicInfo.BonusStatusType.None), 
 				v2 != 0 ? 100 : Mathf.Min(100, m_eventGoDivaData.GNDOGPBIGIL_GetCurrentBonusRate(t) + m_eventGoDivaData.AFGCEMJEOJL_Rate),
 				v, CheckBonusItemStatus(t) != BonusItemStatus.NotHave, true);
@@ -1692,7 +1692,7 @@ namespace XeApp.Game.Menu
 				{
 					if(m_currentPageType == PageType.EventHome)
 					{
-						int v = m_eventGoDivaData.GNDOGPBIGIL_GetCurrentBonusRate(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime());
+						int v = m_eventGoDivaData.GNDOGPBIGIL_GetCurrentBonusRate(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 						int v2 = (m_eventCtrl as MANPIONIGNO_EventGoDiva).AELBIEDNPGB_GetTicketCount(null);
 						if(v <= 0 && v2 < 1)
 						{
@@ -1925,19 +1925,19 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x106BCE8 Offset: 0x106BCE8 VA: 0x106BCE8
 		private void CreateFilterdMusicList()
 		{
-			MusicSelectSceneBase.CreateFilteredMusicDataList(m_filteredMusicLists, m_originalMusicLists, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime(), CheckMatchMusicFilter);
+			MusicSelectSceneBase.CreateFilteredMusicDataList(m_filteredMusicLists, m_originalMusicLists, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), CheckMatchMusicFilter);
 		}
 
 		// // RVA: 0x106BE34 Offset: 0x106BE34 VA: 0x106BE34
 		private void CreateEventHomeFilterd()
 		{
-			MusicSelectSceneBase.CreateFilteredMusicDataList(m_filteredMusicLists, m_originalMusicLists, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime(), CheckMatchEventHomeFilter);
+			MusicSelectSceneBase.CreateFilteredMusicDataList(m_filteredMusicLists, m_originalMusicLists, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), CheckMatchEventHomeFilter);
 		}
 
 		// // RVA: 0x106BF80 Offset: 0x106BF80 VA: 0x106BF80
 		private void CreateDefaultMusicList()
 		{
-			MusicSelectSceneBase.CreateFilteredMusicDataList(m_filteredMusicLists, m_originalMusicLists, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime(), (IBJAKJJICBC m, long ct) =>
+			MusicSelectSceneBase.CreateFilteredMusicDataList(m_filteredMusicLists, m_originalMusicLists, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), (IBJAKJJICBC m, long ct) =>
 			{
 				//0x10713EC
 				return true;
@@ -2111,7 +2111,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x106C910 Offset: 0x106C910 VA: 0x106C910
 		private List<MusicPosInfo> CreateMusicPosInfoList(bool is6LineMode, bool downloadedOnly, Difficulty.Type difficulty)
 		{
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			List<MusicPosInfo> res = new List<MusicPosInfo>();
 			for(int i = 0; i < m_filteredMusicLists.Count; i++)
 			{
@@ -2233,7 +2233,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x106D4E4 Offset: 0x106D4E4 VA: 0x106D4E4
 		private void OnApplyMusicInfoNormal(IBJAKJJICBC musicData, MusicSelectUISupporter.ApplyInfoData applyData)
 		{
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			m_playButtonUI.SetupUnitLive(null, null);
             ExpType expType = GetMusicExpType(musicData, diff, t);
             m_cdSelect.SetEventGoDivaExpType(expType);
@@ -2461,7 +2461,7 @@ namespace XeApp.Game.Menu
 			SoundManager.Instance.sePlayerBoot.Play((int)mcrs.cs_se_boot.SE_BTN_003);
 			if(CheckEventLimit(selectMusicData, m_eventCtrl.HIDHLFCBIDE_EventType, m_eventStatus, m_eventId))
 				return;
-            BonusItemStatus bonus = CheckBonusItemStatus(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime());
+            BonusItemStatus bonus = CheckBonusItemStatus(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 			if(bonus != BonusItemStatus.CanUse)
 			{
 				ShowPopupCanNotUseBonusItem(bonus);

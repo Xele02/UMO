@@ -7,7 +7,7 @@ public class BKNLPABECOB_FacebookLinkage : AILHMHMOKKA_BaseLinkage
 	private string NOBJMCIIHKO; // 0xC
 
 	//// RVA: 0xC890E0 Offset: 0xC890E0 VA: 0xC890E0 Slot: 4
-	public override void EMKKJILHOOB_GetLinkageStatus(IMCBBOAFION BHFHGFKBOHH, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK AOCANKOMKFG)
+	public override void EMKKJILHOOB_GetLinkageStatus(IMCBBOAFION _BHFHGFKBOHH_OnSuccess, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK _AOCANKOMKFG_OnError)
 	{
 		JEDJNIKPFLH_IsLinked = false;
 		NCBEKFBAFCL_GetFacebookLinkageStatus req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new NCBEKFBAFCL_GetFacebookLinkageStatus());
@@ -18,7 +18,7 @@ public class BKNLPABECOB_FacebookLinkage : AILHMHMOKKA_BaseLinkage
 			//0xC89A84
 			NCBEKFBAFCL_GetFacebookLinkageStatus r = JIPCHHHLOMM as NCBEKFBAFCL_GetFacebookLinkageStatus;
 			JEDJNIKPFLH_IsLinked = r.NFEAMMJIMPG.EMEGKEGFJBK_FacebookLinkage;
-			BHFHGFKBOHH();
+			_BHFHGFKBOHH_OnSuccess();
 		};
 		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
 		{
@@ -28,7 +28,7 @@ public class BKNLPABECOB_FacebookLinkage : AILHMHMOKKA_BaseLinkage
 	}
 
 	//// RVA: 0xC8935C Offset: 0xC8935C VA: 0xC8935C Slot: 5
-	public override void GGNBIHHFJMP(IMCBBOAFION BHFHGFKBOHH, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK AOCANKOMKFG)
+	public override void GGNBIHHFJMP(IMCBBOAFION _BHFHGFKBOHH_OnSuccess, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK _AOCANKOMKFG_OnError)
 	{
 		NPPLCKMKIFE req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new NPPLCKMKIFE());
 		req.ICDEFIIADDO_Timeout = 15;
@@ -36,7 +36,7 @@ public class BKNLPABECOB_FacebookLinkage : AILHMHMOKKA_BaseLinkage
 		{
 			//0xC89D3C
 			JEDJNIKPFLH_IsLinked = true;
-			BHFHGFKBOHH();
+			_BHFHGFKBOHH_OnSuccess();
 		};
 		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
 		{
@@ -49,19 +49,19 @@ public class BKNLPABECOB_FacebookLinkage : AILHMHMOKKA_BaseLinkage
 				{
 					if (!HGOKJBPIDJB(JIPCHHHLOMM))
 					{
-						AOCANKOMKFG();
+						_AOCANKOMKFG_OnError();
 						return;
 					}
 				}
 				NIMPEHIECJH();
 				return;
 			}
-			AOCANKOMKFG();
+			_AOCANKOMKFG_OnError();
 		};
 	}
 
 	//// RVA: 0xC895A4 Offset: 0xC895A4 VA: 0xC895A4 Slot: 6
-	public override void MOHPODEDIEK(IMCBBOAFION BHFHGFKBOHH, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK AOCANKOMKFG)
+	public override void MOHPODEDIEK(IMCBBOAFION _BHFHGFKBOHH_OnSuccess, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK _AOCANKOMKFG_OnError)
 	{
 		NIAECEJLJKH req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new NIAECEJLJKH());
 		req.ICDEFIIADDO_Timeout = 15;
@@ -69,7 +69,7 @@ public class BKNLPABECOB_FacebookLinkage : AILHMHMOKKA_BaseLinkage
 		{
 			//0xC89E8C
 			JEDJNIKPFLH_IsLinked = false;
-			BHFHGFKBOHH();
+			_BHFHGFKBOHH_OnSuccess();
 		};
 		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
 		{
@@ -82,19 +82,19 @@ public class BKNLPABECOB_FacebookLinkage : AILHMHMOKKA_BaseLinkage
 				{
 					if(!HGOKJBPIDJB(JIPCHHHLOMM))
 					{
-						AOCANKOMKFG();
+						_AOCANKOMKFG_OnError();
 						return;
 					}
 				}
 				NIMPEHIECJH();
 				return;
 			}
-			AOCANKOMKFG();
+			_AOCANKOMKFG_OnError();
 		};
 	}
 
 	//// RVA: 0xC897EC Offset: 0xC897EC VA: 0xC897EC Slot: 7
-	public override void BMJMJCIKALP(IMCBBOAFION BHFHGFKBOHH, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK AOCANKOMKFG)
+	public override void BMJMJCIKALP(IMCBBOAFION _BHFHGFKBOHH_OnSuccess, JFDNPFFOACP NIMPEHIECJH, DJBHIFLHJLK _AOCANKOMKFG_OnError)
 	{
 		ANLMHAMGJHP req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new ANLMHAMGJHP());
 		req.ICDEFIIADDO_Timeout = 15;
@@ -103,7 +103,7 @@ public class BKNLPABECOB_FacebookLinkage : AILHMHMOKKA_BaseLinkage
 		{
 			//0xC89FDC
 			NKGJPJPHLIF.HHCJCDFCLOB.IJMGMJHLGDG((JIPCHHHLOMM as ANLMHAMGJHP).NFEAMMJIMPG.EHGBICNIBKE_PlayerId);
-			BHFHGFKBOHH();
+			_BHFHGFKBOHH_OnSuccess();
 		};
 		req.MOBEEPPKFLG_OnFail = (CACGCMBKHDI_Request JIPCHHHLOMM) =>
 		{
@@ -123,16 +123,16 @@ public class BKNLPABECOB_FacebookLinkage : AILHMHMOKKA_BaseLinkage
 					}
 					if(!HGOKJBPIDJB(JIPCHHHLOMM))
 					{
-						if (AOCANKOMKFG != null)
-							AOCANKOMKFG();
+						if (_AOCANKOMKFG_OnError != null)
+							_AOCANKOMKFG_OnError();
 						return;
 					}
 				}
 				NIMPEHIECJH();
 				return;
 			}
-			if(AOCANKOMKFG != null)
-				AOCANKOMKFG();
+			if(_AOCANKOMKFG_OnError != null)
+				_AOCANKOMKFG_OnError();
 		};
 	}
 }

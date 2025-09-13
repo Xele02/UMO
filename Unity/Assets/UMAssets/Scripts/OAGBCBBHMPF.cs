@@ -108,7 +108,7 @@ public class OAGBCBBHMPF
 	
 	public enum OGBCFNIKAFI
 	{
-		FKPEAGGKNLC_0 = 0,
+		FKPEAGGKNLC_Start_0 = 0,
 		BABBMOJCMDM_1 = 1,
 		MHFHGNFCEHJ = 2, // 2 => 12 %
 		NJLGGHGMLMN = 3,

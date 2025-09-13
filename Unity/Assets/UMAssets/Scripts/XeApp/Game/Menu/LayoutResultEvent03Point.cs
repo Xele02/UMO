@@ -257,7 +257,7 @@ namespace XeApp.Game.Menu
 			m_view = view;
 			m_list = list;
             MessageBank menuBk = MessageManager.Instance.GetBank("menu");
-			if(!m_view.DPCFADCFMOA_RewardWin)
+			if(!m_view.DPCFADCFMOA_Win)
 			{
 				m_textLoseResult.text = menuBk.GetMessageByLabel("event_reward_result_lose");
 				m_textLoseBonus.text = menuBk.GetMessageByLabel("event_reward_result_lose");
@@ -284,7 +284,7 @@ namespace XeApp.Game.Menu
 				GameManager.Instance.UnionTextureManager.GetTexture("cmn_tex_02_pack").Set(m_imageDiff);
 			}
 			m_textWinLosePoint.text = m_view.IOOBNLAHLEJ_Point2.ToString();
-			m_ScorePoint.SetNumber(m_view.GCAPLLEIAAI_Score, 0);
+			m_ScorePoint.SetNumber(m_view.GCAPLLEIAAI_LastScore, 0);
 			m_ScoreBonusText.text = m_view.GBLHPHCAPLG_ScoreBonus.ToString();
 			m_textClassRank.text = string.Format(menuBk.GetMessageByLabel("music_event_battle_class"), m_view.BGJDHCEOIDB_BattleClass);
 			m_textDiffBonus.text = (m_view.OHDIGACEJPM_DifficultyBonus - 100).ToString();
@@ -314,7 +314,7 @@ namespace XeApp.Game.Menu
 			}
 			m_textMedalNum.text = m_view.ODOOKDGCKMF_MedalNum.ToString();
 			m_isLoading = true;
-			MenuScene.Instance.ItemTextureCache.Load(m_view.BEOKMNIPFBA_MedalId, (IiconTexture texture) =>
+			MenuScene.Instance.ItemTextureCache.Load(m_view.BEOKMNIPFBA_MedalItemId, (IiconTexture texture) =>
 			{
 				//0x1DA5414
 				texture.Set(m_imageMedal);

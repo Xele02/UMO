@@ -65,14 +65,14 @@ public class HIHJGPDLNDN_EventScore : DIHHCBACKGG_DbSection
 	public DKGDLFPELAB NGHKJOEDLIP_Setting = new DKGDLFPELAB(); // 0x20
 	public List<AAAPPIKNOKB> ADPFKHEMNBL = new List<AAAPPIKNOKB>(); // 0x2C
 
-	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI { get; private set; } // 0x24 IHKPIFIBECO GAMGELHIHHI DDDEJIJGGBJ
+	public Dictionary<string, NNJFKLBPBNK_SecureString> FJOEBCMGDMI_String { get; private set; } // 0x24 IHKPIFIBECO GAMGELHIHHI DDDEJIJGGBJ
 	public Dictionary<string, CEBFFLDKAEC_SecureInt> OHJFBLFELNK { get; private set; } // 0x28 KLDCHOIPJGB AEMNOGNEBOJ DGKDBOAMNBB
 
 	//// RVA: 0x18358DC Offset: 0x18358DC VA: 0x18358DC
 	public string EFEGBHACJAL(string LJNAKDMILMC, string KKMJBMKHGNH)
 	{
-		if(FJOEBCMGDMI.ContainsKey(LJNAKDMILMC))
-			return FJOEBCMGDMI[LJNAKDMILMC].DNJEJEANJGL_Value;
+		if(FJOEBCMGDMI_String.ContainsKey(LJNAKDMILMC))
+			return FJOEBCMGDMI_String[LJNAKDMILMC].DNJEJEANJGL_Value;
 		return KKMJBMKHGNH;
 	}
 
@@ -90,7 +90,7 @@ public class HIHJGPDLNDN_EventScore : DIHHCBACKGG_DbSection
 		JIKKNHIAEKG_BlockName = "";
 		LNIMEIMBCMF = false;
 		OHJFBLFELNK = new Dictionary<string, CEBFFLDKAEC_SecureInt>();
-		FJOEBCMGDMI = new Dictionary<string, NNJFKLBPBNK_SecureString>();
+		FJOEBCMGDMI_String = new Dictionary<string, NNJFKLBPBNK_SecureString>();
 		LMHMIIKCGPE = 41;
 	}
 
@@ -99,13 +99,13 @@ public class HIHJGPDLNDN_EventScore : DIHHCBACKGG_DbSection
 	{
 		NGHKJOEDLIP_Setting.LHPDDGIJKNB();
 		OHJFBLFELNK.Clear();
-		FJOEBCMGDMI.Clear();
+		FJOEBCMGDMI_String.Clear();
 	}
 
 	// RVA: 0x1835E9C Offset: 0x1835E9C VA: 0x1835E9C Slot: 9
-	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
+	public override bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data)
 	{
-		PMPDPNDJBLB data = PMPDPNDJBLB.HEGEKFMJNCC(DBBGALAPFGC);
+		PMPDPNDJBLB data = PMPDPNDJBLB.HEGEKFMJNCC(_DBBGALAPFGC_Data);
 		DGKKMKLCEDF_DeserializeSetting(data);
 		for(int i = 0; i < data.BHGDNGHDDAC.Length; i++)
 		{
@@ -117,7 +117,7 @@ public class HIHJGPDLNDN_EventScore : DIHHCBACKGG_DbSection
 		{
 			NNJFKLBPBNK_SecureString d = new NNJFKLBPBNK_SecureString();
 			d.DNJEJEANJGL_Value = data.MHGMDJNOLMI[i].JBGEEPFKIGG;
-			FJOEBCMGDMI.Add(data.MHGMDJNOLMI[i].LJNAKDMILMC, d);
+			FJOEBCMGDMI_String.Add(data.MHGMDJNOLMI[i].LJNAKDMILMC, d);
 		}
 
 		UnityEngine.Debug.LogError(NGHKJOEDLIP_Setting.OPFGFINHFCE_Name+" "+NGHKJOEDLIP_Setting.OBGBAOLONDD_UniqueId);

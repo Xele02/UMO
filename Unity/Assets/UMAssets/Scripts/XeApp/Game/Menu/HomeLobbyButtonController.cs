@@ -62,7 +62,7 @@ namespace XeApp.Game.Menu
 				NKOBMDPHNGP_EventRaidLobby ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as NKOBMDPHNGP_EventRaidLobby;
 				if(ev != null)
 				{
-					if(ev.KINIOEOOCAA_GetPhase(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime()) != NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.HJNNKCMLGFL_0)
+					if(ev.KINIOEOOCAA_GetPhase(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime()) != NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.HJNNKCMLGFL_0)
 					{
 						m_lobbyTabBtn.SetNewIcon(m_IsNewMark, m_IsNewMarkEffect);
 						m_lobbyTabBtn.SetType(a_type);
@@ -147,7 +147,7 @@ namespace XeApp.Game.Menu
 			t_raid_lobby_ctrl = null;
 			if(t_raid_ctrl != null && t_raid_lobby_ctrl != null)
 			{
-				long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 				if(t_raid_lobby_ctrl.KINIOEOOCAA_GetPhase(t) == NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.ECAAJMPLIPG_2_Now)
 				{
 					m_IsNewMark |= !t_raid_ctrl.LDMOBKMEKMD();
@@ -224,7 +224,7 @@ namespace XeApp.Game.Menu
 		{
 			if(!m_IsInitialize)
 				return;
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			NKOBMDPHNGP_EventRaidLobby evLobby = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived) as NKOBMDPHNGP_EventRaidLobby;
 			if(evLobby != null)
 			{
@@ -340,7 +340,7 @@ namespace XeApp.Game.Menu
 				NKOBMDPHNGP_EventRaidLobby ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as NKOBMDPHNGP_EventRaidLobby;
 				if(ev != null)
 				{
-                    NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase phase = ev.KINIOEOOCAA_GetPhase(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime());
+                    NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase phase = ev.KINIOEOOCAA_GetPhase(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 					if(phase != NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.HJNNKCMLGFL_0 && phase != NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.OLCLJKOKJCD_3_End)
 					{
 						if(!ev.ANOPCGFIMEJ())
@@ -533,7 +533,7 @@ namespace XeApp.Game.Menu
 			NKOBMDPHNGP_EventRaidLobby ev = JEPBIIJDGEF_EventInfo.HHCJCDFCLOB.OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType.MCGPGMGEPHG_EventRaidLobby, KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived/*9*/) as NKOBMDPHNGP_EventRaidLobby;
 			if(ev != null)
 			{
-				long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
                 NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase phase = ev.KINIOEOOCAA_GetPhase(t);
                 if (phase == NKOBMDPHNGP_EventRaidLobby.FIPGKDJHKCH_Phase.OLCLJKOKJCD_3_End)
 				{

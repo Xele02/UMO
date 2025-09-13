@@ -27,7 +27,7 @@ namespace XeApp.Game.RhythmGame
 			SkillLimitcountTrigger t = new SkillLimitcountTrigger();
 			if (masterSkill.CPNAGMFCIJK_TriggerType == (int)SkillTrigger.Type.EveryScore && !centerPlate)
 			{
-				t.Initialize(masterSkill.ELEPHBOKIGK_LimitCount[0]);
+				t.Initialize(masterSkill.ELEPHBOKIGK_Limit[0]);
 				triggers.Add(t);
 			}
 			else if (masterSkill.CPNAGMFCIJK_TriggerType != (int)SkillTrigger.Type.EveryTime || centerPlate)

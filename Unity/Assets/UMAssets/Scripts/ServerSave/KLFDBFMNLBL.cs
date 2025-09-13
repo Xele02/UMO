@@ -54,17 +54,17 @@ public abstract class KLFDBFMNLBL_ServerSaveBlock
 		MCNELPPHFKJ = GPBJHKLFCEP.MCNELPPHFKJ;
 		KFKDMBPNLJK_BlockInvalid = GPBJHKLFCEP.KFKDMBPNLJK_BlockInvalid;
 		FHMMFHAIPLF = GPBJHKLFCEP.FHMMFHAIPLF;
-		BMGGKONLFIC(GPBJHKLFCEP);
+		BMGGKONLFIC_Copy(GPBJHKLFCEP);
 	}
 
 	// // RVA: -1 Offset: -1 Slot: 7
-	public abstract void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP);
+	public abstract void BMGGKONLFIC_Copy(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP);
 
 	// // RVA: -1 Offset: -1 Slot: 8
 	public abstract bool AGBOGBEOFME(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP);
 	
 	// // RVA: 0x1A0BD2C Offset: 0x1A0BD2C VA: 0x1A0BD2C Slot: 10
-	//public virtual void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH);
+	//public virtual void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock _GJLFANGDGCL_Target, long MCKEOKFMLAH);
 
 	// // RVA: 0x1A0BD30 Offset: 0x1A0BD30 VA: 0x1A0BD30
 	protected int CJAENOMGPDA_ReadInt(EDOHBJAPLPF_JsonData LFFNOHMOKJA, string LJNAKDMILMC, int HDDJJLKAFIF_DefaultValue, ref bool NGJDHLGMHMH_NotValid)
@@ -138,22 +138,22 @@ public abstract class KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1A0C41C Offset: 0x1A0C41C VA: 0x1A0C41C
-	protected void IBCGPBOGOGP_ReadIntArray(EDOHBJAPLPF_JsonData NICPPBGFMBI, string LJNAKDMILMC, int HCGFLHLODKD_DefaultValue, int GLBEAENLHKC_Count, CLMHDCHPBNC OCMLFNJCIDN_Callback, ref bool NGJDHLGMHMH_IsInvalid)
+	protected void IBCGPBOGOGP_ReadIntArray(EDOHBJAPLPF_JsonData NICPPBGFMBI, string LJNAKDMILMC, int HCGFLHLODKD_DefaultValue, int _GLBEAENLHKC_Count, CLMHDCHPBNC OCMLFNJCIDN_Callback, ref bool NGJDHLGMHMH_IsInvalid)
 	{
 		if(!NICPPBGFMBI.BBAJPINMOEP_Contains(LJNAKDMILMC))
 		{
 			NGJDHLGMHMH_IsInvalid = true;
-			for(int i = 0; i < GLBEAENLHKC_Count; i++)
+			for(int i = 0; i < _GLBEAENLHKC_Count; i++)
 			{
 				OCMLFNJCIDN_Callback(i, HCGFLHLODKD_DefaultValue);
 			}
 			return;
 		}
-		if(NICPPBGFMBI[LJNAKDMILMC].HNBFOAJIIAL_Count != GLBEAENLHKC_Count)
+		if(NICPPBGFMBI[LJNAKDMILMC].HNBFOAJIIAL_Count != _GLBEAENLHKC_Count)
 		{
 			NGJDHLGMHMH_IsInvalid = true;
 		}
-		for(int i = 0; i < GLBEAENLHKC_Count; i++)
+		for(int i = 0; i < _GLBEAENLHKC_Count; i++)
 		{
 			if(i < NICPPBGFMBI[LJNAKDMILMC].HNBFOAJIIAL_Count)
 			{
@@ -167,14 +167,14 @@ public abstract class KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1A0C634 Offset: 0x1A0C634 VA: 0x1A0C634
-	protected void IEKHEAMPLDA_ReadLongArray(EDOHBJAPLPF_JsonData NICPPBGFMBI, string LJNAKDMILMC, long HCGFLHLODKD, int GLBEAENLHKC, MIOHEAMJJAK OCMLFNJCIDN, ref bool NGJDHLGMHMH)
+	protected void IEKHEAMPLDA_ReadLongArray(EDOHBJAPLPF_JsonData NICPPBGFMBI, string LJNAKDMILMC, long HCGFLHLODKD, int _GLBEAENLHKC_Count, MIOHEAMJJAK OCMLFNJCIDN, ref bool NGJDHLGMHMH)
 	{
 		if(NICPPBGFMBI.BBAJPINMOEP_Contains(LJNAKDMILMC))
 		{
 			EDOHBJAPLPF_JsonData b = NICPPBGFMBI[LJNAKDMILMC];
-			if (GLBEAENLHKC != b.HNBFOAJIIAL_Count)
+			if (_GLBEAENLHKC_Count != b.HNBFOAJIIAL_Count)
 				NGJDHLGMHMH = true;
-			for(int i = 0; i < GLBEAENLHKC; i++)
+			for(int i = 0; i < _GLBEAENLHKC_Count; i++)
 			{
 				if(i < b.HNBFOAJIIAL_Count)
 				{
@@ -199,7 +199,7 @@ public abstract class KLFDBFMNLBL_ServerSaveBlock
 		}
 		else
 		{
-			for (int i = 0; i < GLBEAENLHKC; i++)
+			for (int i = 0; i < _GLBEAENLHKC_Count; i++)
 			{
 				OCMLFNJCIDN(i, HCGFLHLODKD);
 			}

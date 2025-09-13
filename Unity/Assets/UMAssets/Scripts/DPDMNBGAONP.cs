@@ -11,27 +11,27 @@ public class DPDMNBGAONP : IHFBKJMNIPH<DKFCEGODKFJ_GetPlayerCounters>
 	protected override void LJDCONBNPBM_Initialize()
 	{
 		HMFFHLPNMPH = 0;
-		NFEAMMJIMPG.OJCNJFLJCLA = new System.Collections.Generic.Dictionary<int, int>(BIHCCEHLAOD.FAMHAPONILI_PlayerList.Count);
+		NFEAMMJIMPG.OJCNJFLJCLA = new System.Collections.Generic.Dictionary<int, int>(BIHCCEHLAOD.FAMHAPONILI_PlayerIds.Count);
 	}
 
 	//// RVA: 0x1233DC4 Offset: 0x1233DC4 VA: 0x1233DC4 Slot: 5
-	protected override DKFCEGODKFJ_GetPlayerCounters JIJACMIFOMB_OnStartAction(PJKLMCGEJMK CPHFEPHDJIB)
+	protected override DKFCEGODKFJ_GetPlayerCounters JIJACMIFOMB_OnStartAction(PJKLMCGEJMK _CPHFEPHDJIB_ServerRequester)
 	{
-		DKFCEGODKFJ_GetPlayerCounters res = CPHFEPHDJIB.IFFNCAFNEAG_AddRequest(new DKFCEGODKFJ_GetPlayerCounters());
-		if(BIHCCEHLAOD.FAMHAPONILI_PlayerList.Count < 101)
+		DKFCEGODKFJ_GetPlayerCounters res = _CPHFEPHDJIB_ServerRequester.IFFNCAFNEAG_AddRequest(new DKFCEGODKFJ_GetPlayerCounters());
+		if(BIHCCEHLAOD.FAMHAPONILI_PlayerIds.Count < 101)
 		{
 			res.BIHCCEHLAOD = BIHCCEHLAOD;
-			HMFFHLPNMPH = res.BIHCCEHLAOD.FAMHAPONILI_PlayerList.Count;
+			HMFFHLPNMPH = res.BIHCCEHLAOD.FAMHAPONILI_PlayerIds.Count;
 		}
 		else
 		{
 			DKFCEGODKFJ_GetPlayerCounters.ENKJGMFOJDI data = new DKFCEGODKFJ_GetPlayerCounters.ENKJGMFOJDI();
 			data.IHALNOJAMLE_CounterName = BIHCCEHLAOD.IHALNOJAMLE_CounterName;
-			data.FAMHAPONILI_PlayerList = new System.Collections.Generic.List<int>(100);
-			int c = Mathf.Min(BIHCCEHLAOD.FAMHAPONILI_PlayerList.Count, HMFFHLPNMPH + 100);
+			data.FAMHAPONILI_PlayerIds = new System.Collections.Generic.List<int>(100);
+			int c = Mathf.Min(BIHCCEHLAOD.FAMHAPONILI_PlayerIds.Count, HMFFHLPNMPH + 100);
 			for(int i = HMFFHLPNMPH; i < c; i++)
 			{
-				data.FAMHAPONILI_PlayerList.Add(BIHCCEHLAOD.FAMHAPONILI_PlayerList[i]);
+				data.FAMHAPONILI_PlayerIds.Add(BIHCCEHLAOD.FAMHAPONILI_PlayerIds[i]);
 			}
 			HMFFHLPNMPH += 100;
 			res.BIHCCEHLAOD = data;
@@ -51,6 +51,6 @@ public class DPDMNBGAONP : IHFBKJMNIPH<DKFCEGODKFJ_GetPlayerCounters>
 	//// RVA: 0x1234140 Offset: 0x1234140 VA: 0x1234140 Slot: 6
 	protected override bool IMOEHHBDHGN_ContinueAction()
 	{
-		return HMFFHLPNMPH < BIHCCEHLAOD.FAMHAPONILI_PlayerList.Count;
+		return HMFFHLPNMPH < BIHCCEHLAOD.FAMHAPONILI_PlayerIds.Count;
 	}
 }

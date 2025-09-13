@@ -113,7 +113,7 @@ namespace XeApp
 				if(c.NPADACLCNAN_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.OKPAJOALDCG_DecoItemObj ||
 					c.NPADACLCNAN_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif)
 				{
-					cnt += c.BFINGCJHOHI;
+					cnt += c.BFINGCJHOHI_Count;
 				}
 			}
 			return cnt;
@@ -208,7 +208,7 @@ namespace XeApp
 				DestroyImmediate(m_bgEffect);
 				m_bgEffect = null;
 			}
-			long ct = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long ct = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			ViewDecoBgEffect found = new ViewDecoBgEffect();
 			if (!found.Init(ct))
 				yield break;
@@ -331,7 +331,7 @@ namespace XeApp
 				KDKFHGHGFEK data = new KDKFHGHGFEK();
 				data.KHEKNNFCAOI(EKLNMHFCAOI.DEACAHNLMNI_getItemId(item.HAJKNHNAIKL_ItemId), EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(item.HAJKNHNAIKL_ItemId));
 				DecorationItemBaseSetting s = new DecorationItemBaseSetting(data);
-				s.InitPosition.x = item.GHPLINIACBB_PosX;
+				s.InitPosition.x = item.GHPLINIACBB_x;
 				s.InitPosition.y = item.PMBEODGMMBB_PosY;
 				s.InitOrder = item.BNHOEFJAAKK_Prio;
 				s.InitFlip = item.BDEEIPPDCLE_Rvs;
@@ -850,7 +850,7 @@ namespace XeApp
                 NDBFKHKMMCE_DecoItem.FIDBAFHNGCF item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp.Find((NDBFKHKMMCE_DecoItem.FIDBAFHNGCF p) =>
 				{
 					//0x1AC008C
-					return p.GBJFNGCDKPM_SpType == 11;
+					return p.GBJFNGCDKPM_Type == 11;
 				});
 				if(item != null)
 				{

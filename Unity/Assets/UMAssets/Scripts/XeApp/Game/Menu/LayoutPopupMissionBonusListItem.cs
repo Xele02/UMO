@@ -24,7 +24,7 @@ namespace XeApp.Game.Menu
 		public void SetStatus(KPJHLACKGJF_EventMission.HLMINENBCKO data)
 		{
 			m_textDate.text = data.HJAFPEBIBOP_DateText;
-			m_textDesc.text = data.GJLFANGDGCL_Desc;
+			m_textDesc.text = data.GJLFANGDGCL_Target;
 			SetIconImage(data.CIANOCNPIFF_Type, data.IIAAIPNHJFJ_Value);
 		}
 

@@ -32,7 +32,7 @@ public class IECJNEHIEKO_CreateBbsComment : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0x11ED0D4 Offset: 0x11ED0D4 VA: 0x11ED0D4 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		KFECPHAOCMN d = new KFECPHAOCMN();
 		d.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

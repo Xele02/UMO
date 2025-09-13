@@ -161,7 +161,7 @@ namespace XeApp.Game.Menu
 			isFirstEntry = m_viewEntry.CKPIHCGOEDP.Find((OLLAFCBLMIJ.KAAHBIABMBC x) =>
 			{
 				//0x10A9D30
-				return x.CDMGDFLPPHN_HasStamp;
+				return x.CDMGDFLPPHN_Entry;
 			}) == null;
 			today = m_viewEntry.DHNCPKGDEFL();
 			if(today != null)

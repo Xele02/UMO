@@ -8,7 +8,7 @@ public class PJANOOPJIDE_TutorialPict : DIHHCBACKGG_DbSection
 	public class HNHHGJCPMEA
 	{
 		public int PPFNGGCBJKC; // 0x8
-		public int[] FJOLNJLLJEJ; // 0xC
+		public int[] FJOLNJLLJEJ_Rank; // 0xC
 		public int[] AKBHPFBDDOL_TutoCondId; // 0x10
 		public int PPEGAKEIEGM_Enabled; // 0x14
 		public int KNHABOOAAIP; // 0x18
@@ -19,15 +19,15 @@ public class PJANOOPJIDE_TutorialPict : DIHHCBACKGG_DbSection
 		public int IODLCIBCONC; // 0x2C
 	}
 
-	public List<HNHHGJCPMEA> CDENCMNHNGA { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
+	public List<HNHHGJCPMEA> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
 
 	//// RVA: 0x92FFCC Offset: 0x92FFCC VA: 0x92FFCC
 	public HNHHGJCPMEA LBDOLHGDIEB(int PPFNGGCBJKC)
 	{
-		return CDENCMNHNGA.Find((HNHHGJCPMEA GHPLINIACBB) =>
+		return CDENCMNHNGA_table.Find((HNHHGJCPMEA _GHPLINIACBB_x) =>
 		{
 			//0x9305E8
-			return GHPLINIACBB.PPFNGGCBJKC == PPFNGGCBJKC;
+			return _GHPLINIACBB_x.PPFNGGCBJKC == PPFNGGCBJKC;
 		});
 	}
 
@@ -36,20 +36,20 @@ public class PJANOOPJIDE_TutorialPict : DIHHCBACKGG_DbSection
 	{
 		JIKKNHIAEKG_BlockName = "";
 		LNIMEIMBCMF = false;
-		CDENCMNHNGA = new List<HNHHGJCPMEA>();
+		CDENCMNHNGA_table = new List<HNHHGJCPMEA>();
 		LMHMIIKCGPE = 83;
 	}
 
 	// RVA: 0x9301C0 Offset: 0x9301C0 VA: 0x9301C0 Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		CDENCMNHNGA.Clear();
+		CDENCMNHNGA_table.Clear();
 	}
 
 	// RVA: 0x930238 Offset: 0x930238 VA: 0x930238 Slot: 9
-	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
+	public override bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data)
 	{
-		BOFIIKIJEPA parser = BOFIIKIJEPA.HEGEKFMJNCC(DBBGALAPFGC);
+		BOFIIKIJEPA parser = BOFIIKIJEPA.HEGEKFMJNCC(_DBBGALAPFGC_Data);
 		KLNOMBKJDNN(parser);
 		return true;
 	}
@@ -81,10 +81,10 @@ public class PJANOOPJIDE_TutorialPict : DIHHCBACKGG_DbSection
 				data.ADCMNODJBGJ_Title[j] = DatabaseTextConverter.TranslateTutoPictTitle(i, j, array[i].ADCMNODJBGJ[j]);
 
 			data.MAPDMCPCLFA_PicIds = array[i].HANMDEBPBHG;
-			data.FJOLNJLLJEJ = array[i].INANEEGAEEG;
+			data.FJOLNJLLJEJ_Rank = array[i].INANEEGAEEG;
 			data.KMDGMOMCDAD = array[i].JOFAJDPOEOB;
 			data.IODLCIBCONC = array[i].BFCILBEICEN;
-			CDENCMNHNGA.Add(data);
+			CDENCMNHNGA_table.Add(data);
 		}
 		return true;
 	}

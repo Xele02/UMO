@@ -12,7 +12,7 @@ public class ANLMHAMGJHP : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0xD54000 Offset: 0xD54000 VA: 0xD54000 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG = new HEHLBMMFMPL_PlayerStatusInfo();
 		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

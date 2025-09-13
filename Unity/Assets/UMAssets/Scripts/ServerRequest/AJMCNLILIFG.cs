@@ -82,7 +82,7 @@ public class AJMCNLILIFG_UpdatePlayerCounters : CACGCMBKHDI_Request
     }
 
 	// RVA: 0xCD2674 Offset: 0xCD2674 VA: 0xCD2674 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
         NFEAMMJIMPG = new BAKPFHFBOND();
         NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

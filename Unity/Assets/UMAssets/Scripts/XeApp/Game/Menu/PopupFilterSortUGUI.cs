@@ -864,7 +864,7 @@ namespace XeApp.Game.Menu
 					bitFlag |= (uint)(1 << (i - 1));
 			}
 			m_shopProductParts.filterRarity.SetRarity(bitFlag);
-			m_shopProductParts.filterAttribute.SetBit(m_setting.m_param.EnableSave ? (uint)sort.BOFFOHHLLFG_AttrFilter : 0);
+			m_shopProductParts.filterAttribute.SetBit(m_setting.m_param.EnableSave ? (uint)sort.BOFFOHHLLFG_AttributeFilter : 0);
 			m_shopProductParts.filterSeries.SetBit(m_setting.m_param.EnableSave ? (uint)sort.BBIIHLNBHDE_SerieFilter : 0);
 			m_shopProductParts.filterHave.SetBit(m_setting.m_param.EnableSave ? (uint)sort.EGBPCFOGOCK_HaveFilter : 0);
 			m_shopProductParts.filterNotesExpectation.SetBit(m_setting.m_param.EnableSave ? (uint)sort.NLLEDCOAPIG_NoteExpectedFilter : 0);
@@ -908,7 +908,7 @@ namespace XeApp.Game.Menu
 			PopupFilterSortUGUIParts_ShopProduct p = m_setting.m_list_parts[0].m_base as PopupFilterSortUGUIParts_ShopProduct;
 			sort.LHPDCGNKPHD_SortItem = (int)p.filterSort.GetSortItem();
 			sort.ACCHOFLOOEC_RarityFilter = (int)p.filterRarity.GetBit();
-			sort.BOFFOHHLLFG_AttrFilter = (int)p.filterAttribute.GetBit();
+			sort.BOFFOHHLLFG_AttributeFilter = (int)p.filterAttribute.GetBit();
 			sort.BBIIHLNBHDE_SerieFilter = (int)p.filterSeries.GetBit();
 			sort.EGBPCFOGOCK_HaveFilter = (int)p.filterHave.GetBit();
 			sort.NLLEDCOAPIG_NoteExpectedFilter = (int)p.filterNotesExpectation.GetBit();
@@ -1003,14 +1003,14 @@ namespace XeApp.Game.Menu
 			filter.filterSort.SetSortItem((SortItem)GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.LHPDCGNKPHD_sortItem);
 			filter.titleFilter.SetTitle(bk.GetMessageByLabel("popup_filter_title_h1"));
 			filter.titleFilter.SetButton(bk.GetMessageByLabel("popup_sort_filter_reset"), ResetVerticalMusicSelectFilter);
-			filter.filterMusicBookMark.SetIndex(m_setting.m_param.EnableSave ? GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.GONLKIDILLH_BookmarkIndex : 0);
+			filter.filterMusicBookMark.SetIndex(m_setting.m_param.EnableSave ? GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.GONLKIDILLH_FilterMusicBookmark : 0);
 			filter.filterMusicBookMark.SetBookMarkText();
-			filter.filterMusicAttr.SetBit((uint)(m_setting.m_param.EnableSave ? GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.EOCPIGDIFNB_MusicAttrFilterBits : 0));
+			filter.filterMusicAttr.SetBit((uint)(m_setting.m_param.EnableSave ? GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.EOCPIGDIFNB_FilterMusicAttr : 0));
 			filter.filterCombo.SetBit((uint)(m_setting.m_param.EnableSave ? GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.JJNLEPEKNDO_ComboFilterBits : 0));
 			filter.filterReward.SetBit((uint)(m_setting.m_param.EnableSave ? GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.PGMJCBIHNHK_RewardFilterBits : 0));
 			filter.filterMusicLock.SetBit((uint)(m_setting.m_param.EnableSave ? GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.AONOGHPAENH_filterMusicUnLock : 0));
 			filter.filterRange.SetBit((uint)(m_setting.m_param.EnableSave ? GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.ALGFGPCPGFK_filterRange : 0));
-			filter.filterUnitLive.SetBit((uint)(m_setting.m_param.EnableSave ? GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.DPDBMECAIIO_NumUnitsFilterBits : 0));
+			filter.filterUnitLive.SetBit((uint)(m_setting.m_param.EnableSave ? GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect.DPDBMECAIIO_FilterUnit : 0));
 		}
 
 		//// RVA: 0x1C981C0 Offset: 0x1C981C0 VA: 0x1C981C0
@@ -1021,13 +1021,13 @@ namespace XeApp.Game.Menu
 			PopupFilterSortUGUIParts_FilterMusicSelect filter = m_setting.m_list_parts[0].m_base as PopupFilterSortUGUIParts_FilterMusicSelect;
             ILDKBCLAFPB.IJDOCJCLAIL_SortProprty.CLBMCCEEDGE_VerticalMusicSelect s = GameManager.Instance.localSave.EPJOACOONAC_GetSave().PPCGEFGJJIC_SortProprty.JHCKHAMFHMG_VerticalMusicSelect;
             s.LHPDCGNKPHD_sortItem = (int)filter.filterSort.GetSortItem();
-			s.GONLKIDILLH_BookmarkIndex = filter.filterMusicBookMark.GetIndex();
-			s.EOCPIGDIFNB_MusicAttrFilterBits = (int)filter.filterMusicAttr.GetBit();
+			s.GONLKIDILLH_FilterMusicBookmark = filter.filterMusicBookMark.GetIndex();
+			s.EOCPIGDIFNB_FilterMusicAttr = (int)filter.filterMusicAttr.GetBit();
 			s.JJNLEPEKNDO_ComboFilterBits = (int)filter.filterCombo.GetBit();
 			s.PGMJCBIHNHK_RewardFilterBits = (int)filter.filterReward.GetBit();
 			s.AONOGHPAENH_filterMusicUnLock = (int)filter.filterMusicLock.GetBit();
 			s.ALGFGPCPGFK_filterRange = (int)filter.filterRange.GetBit();
-			s.DPDBMECAIIO_NumUnitsFilterBits = (int)filter.filterUnitLive.GetBit();
+			s.DPDBMECAIIO_FilterUnit = (int)filter.filterUnitLive.GetBit();
 		}
 
 		//// RVA: 0x1C9DD9C Offset: 0x1C9DD9C VA: 0x1C9DD9C

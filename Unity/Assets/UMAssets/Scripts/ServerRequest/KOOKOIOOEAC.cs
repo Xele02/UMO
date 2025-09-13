@@ -15,7 +15,7 @@ public class KOOKOIOOEAC_IsOnBlacklistOf : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0x1132230 Offset: 0x1132230 VA: 0x1132230 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		ELCCCJDLLAJ_Blacklisted = (bool)IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result)["blacklisted"];
 	}

@@ -109,7 +109,7 @@ namespace XeApp.Game.Menu
 					{
 						int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(it.HAJKNHNAIKL_ItemId);
 						NDBFKHKMMCE_DecoItem.FIDBAFHNGCF dbSp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp[id - 1];
-						if(dbSp.GBJFNGCDKPM_SpType <= 3)
+						if(dbSp.GBJFNGCDKPM_Type <= 3)
 						{
 							BCGFHLIEKLJ_DecoItem.GNGFGEIAGJL saveSp = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.OMMNKDEODJP_DecoItem.NBKAMFFIOOG_Sp[id - 1];
 							saveSp.FOONCJDLLIK_ChargeTime = chargeTime;
@@ -416,7 +416,7 @@ namespace XeApp.Game.Menu
 			int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(itemId);
 			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.BMMBLLOKNPF_DecoItemSp)
 			{
-				return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp[id - 1].GBJFNGCDKPM_SpType == 11;
+				return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp[id - 1].GBJFNGCDKPM_Type == 11;
 			}
 			return false;
 		}
@@ -485,7 +485,7 @@ namespace XeApp.Game.Menu
 				{
 					int id = EKLNMHFCAOI.DEACAHNLMNI_getItemId(m_copyPublicData.LJMCPFACDGJ.HBHMAKNGKFK_Items[i].HAJKNHNAIKL_ItemId);
 					NDBFKHKMMCE_DecoItem.FIDBAFHNGCF dbSp = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.EPAHOAKPAJJ_DecoItem.GMONECJCJFK_Sp[id - 1];
-					if(dbSp.GBJFNGCDKPM_SpType < 4)
+					if(dbSp.GBJFNGCDKPM_Type < 4)
 					{
 						m_spItemListupList.Add(m_copyPublicData.LJMCPFACDGJ.HBHMAKNGKFK_Items[i].HAJKNHNAIKL_ItemId);
 					}
@@ -543,7 +543,7 @@ namespace XeApp.Game.Menu
 			if(NKGJPJPHLIF.HHCJCDFCLOB.DPJBHHIHJJK)
 				yield return this.StartCoroutineWatched(DecoScene.Co_UpdateDirtyTime());
 
-			RsetSpItemChargeTime(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime(), m_spItemOriginalListupList, m_decoPublicSetData);
+			RsetSpItemChargeTime(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), m_spItemOriginalListupList, m_decoPublicSetData);
 			ListupOriginalSpItem();
 			yield return this.StartCoroutineWatched(Co_SavePublicStorageData((bool _result) =>
 			{

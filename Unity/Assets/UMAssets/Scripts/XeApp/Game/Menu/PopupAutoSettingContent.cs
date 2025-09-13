@@ -293,7 +293,7 @@ namespace XeApp.Game.Menu
 			m_intimacyList.Clear();
 			for(int i = 0; i < playerData.OPIBAPEGCLA_Scenes.Count; i++)
 			{
-				MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[playerData.OPIBAPEGCLA_Scenes[i].BCCHOBPJJKE_SceneId - 1];
+				MLIBEPGADJH_Scene.KKLDOOJBJMN dbScene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[playerData.OPIBAPEGCLA_Scenes[i].BCCHOBPJJKE_SceneId - 1];
 				if(dbScene.PPEGAKEIEGM_En == 2)
 				{
 					if(playerData.OPIBAPEGCLA_Scenes[i].CGKAEMGLHNK_IsUnlocked())
@@ -349,7 +349,7 @@ namespace XeApp.Game.Menu
 			{
 				if(!IsKeepCenterSkill || IsSimpleAutoSet)
 				{
-					playerData.OPIBAPEGCLA_Scenes[m_sortSceneList[0].sceneListIndex].CADENLBDAEB_New = false;
+					playerData.OPIBAPEGCLA_Scenes[m_sortSceneList[0].sceneListIndex].CADENLBDAEB_IsNew = false;
 					playerData.OPIBAPEGCLA_Scenes[m_sortSceneList[0].sceneListIndex].LEHDLBJJBNC_SetNotNew();
 					if(isGoDiva)
 					{
@@ -387,7 +387,7 @@ namespace XeApp.Game.Menu
 					{
 						if(!IsKeepCenterSkill || IsSimpleAutoSet)
 						{
-							playerData.OPIBAPEGCLA_Scenes[m_intimacyList[0].sceneListIndex].CADENLBDAEB_New = false;
+							playerData.OPIBAPEGCLA_Scenes[m_intimacyList[0].sceneListIndex].CADENLBDAEB_IsNew = false;
 							playerData.OPIBAPEGCLA_Scenes[m_intimacyList[0].sceneListIndex].LEHDLBJJBNC_SetNotNew();
 							if(isGoDiva)
 							{
@@ -489,7 +489,7 @@ namespace XeApp.Game.Menu
 		{
 			if (slotType == SlotType.Main)
 			{
-				playerData.OPIBAPEGCLA_Scenes[sceneListIndex].CADENLBDAEB_New = false;
+				playerData.OPIBAPEGCLA_Scenes[sceneListIndex].CADENLBDAEB_IsNew = false;
 				playerData.OPIBAPEGCLA_Scenes[sceneListIndex].LEHDLBJJBNC_SetNotNew();
 				if (isGoDiva)
 				{
@@ -505,7 +505,7 @@ namespace XeApp.Game.Menu
 				int slotIndex = (int)slotType - 1;
 				if(slotIndex < 2)
 				{
-					playerData.OPIBAPEGCLA_Scenes[sceneListIndex].CADENLBDAEB_New = false;
+					playerData.OPIBAPEGCLA_Scenes[sceneListIndex].CADENLBDAEB_IsNew = false;
 					playerData.OPIBAPEGCLA_Scenes[sceneListIndex].LEHDLBJJBNC_SetNotNew();
 					if (isGoDiva)
 					{
@@ -922,7 +922,7 @@ namespace XeApp.Game.Menu
 							{
 								FOKHDKJJOFB_EffectByNumDiva eff = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.EFJFIIPIMOO_GetEffectValue(info.KCOHMHFBDKF_ValueByLevel[skillLevel - 1]);
 								val = eff.NANNGLGOFKH_Value[skillLevel - 1]
-										* CMMKCEPBIHI.FPJIKEFIJOL_GetNumValidSceneForDivas(eff.FDBOPFEOENF_DivaFlag, unitData) + eff.NNDBJGDFEEM_Min;
+										* CMMKCEPBIHI.FPJIKEFIJOL_GetNumValidSceneForDivas(eff.FDBOPFEOENF_Diva, unitData) + eff.NNDBJGDFEEM_Min;
 							}
 						}
 						if(skill.AKGNPLBDKLN_P2 > 0)
@@ -932,7 +932,7 @@ namespace XeApp.Game.Menu
 							{
 								FOKHDKJJOFB_EffectByNumDiva eff = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.EFJFIIPIMOO_GetEffectValue(info2.KCOHMHFBDKF_ValueByLevel[skillLevel - 1]);
 								int val2 = eff.NANNGLGOFKH_Value[skillLevel - 1]
-										* CMMKCEPBIHI.FPJIKEFIJOL_GetNumValidSceneForDivas(eff.FDBOPFEOENF_DivaFlag, unitData) + eff.NNDBJGDFEEM_Min;
+										* CMMKCEPBIHI.FPJIKEFIJOL_GetNumValidSceneForDivas(eff.FDBOPFEOENF_Diva, unitData) + eff.NNDBJGDFEEM_Min;
 								if(val < val2)
 								{
 									val = info.KCOHMHFBDKF_ValueByLevel[skillLevel - 1];
@@ -1067,14 +1067,14 @@ namespace XeApp.Game.Menu
 				EHGAHMIBPIB skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(value);
 				value = skill.KCOHMHFBDKF_Value1[sceneData.AADFFCIDJCB_LiveSkillLevel - 1];
 				int[] value2 = skill.HLMMBNCIIAC_Value2;
-				return Mathf.Min(viewIntimacy.HEKJGCMNJAB_CurrentLevel / value * value2[sceneData.AADFFCIDJCB_LiveSkillLevel - 1], skill.DOOGFEGEKLG_ValueMax) * duration;
+				return Mathf.Min(viewIntimacy.HEKJGCMNJAB_CurrentLevel / value * value2[sceneData.AADFFCIDJCB_LiveSkillLevel - 1], skill.DOOGFEGEKLG_Max) * duration;
 			}
 			if(eff == 19)
 			{
 				EHGAHMIBPIB skill = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(value);
 				value = skill.KCOHMHFBDKF_Value1[sceneData.AADFFCIDJCB_LiveSkillLevel - 1];
 				int[] value2 = skill.HLMMBNCIIAC_Value2;
-				return Mathf.Min(100 / value * value2[sceneData.AADFFCIDJCB_LiveSkillLevel - 1], skill.DOOGFEGEKLG_ValueMax) * duration;
+				return Mathf.Min(100 / value * value2[sceneData.AADFFCIDJCB_LiveSkillLevel - 1], skill.DOOGFEGEKLG_Max) * duration;
 			}
 			if(eff != 18)
 			{
@@ -1102,7 +1102,7 @@ namespace XeApp.Game.Menu
 				if(sortType == 0)
 				{
 					if (pattern.INDDJNMPONH_ModifierType == 3)
-						return pattern.GJLFANGDGCL_CenterSkillTarget == 1;
+						return pattern.GJLFANGDGCL_Target == 1;
 				}
 				return false;
 			}
@@ -1122,19 +1122,19 @@ namespace XeApp.Game.Menu
 				case 0:
 					if (pattern.INDDJNMPONH_ModifierType != 3)
 						return false;
-					return pattern.GJLFANGDGCL_CenterSkillTarget >= 6 && pattern.GJLFANGDGCL_CenterSkillTarget < 9;
+					return pattern.GJLFANGDGCL_Target >= 6 && pattern.GJLFANGDGCL_Target < 9;
 				case 1:
 					if (pattern.INDDJNMPONH_ModifierType != 3)
 						return false;
-					return pattern.GJLFANGDGCL_CenterSkillTarget == 6;
+					return pattern.GJLFANGDGCL_Target == 6;
 				case 2:
 					if (pattern.INDDJNMPONH_ModifierType != 3)
 						return false;
-					return pattern.GJLFANGDGCL_CenterSkillTarget == 7;
+					return pattern.GJLFANGDGCL_Target == 7;
 				case 3:
 					if (pattern.INDDJNMPONH_ModifierType != 3)
 						return false;
-					return pattern.GJLFANGDGCL_CenterSkillTarget == 8;
+					return pattern.GJLFANGDGCL_Target == 8;
 			}
 			return false;
 		}

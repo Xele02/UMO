@@ -13,24 +13,24 @@ public class PJKPGLKHGIP
 	//public bool LIPIIKKIKOI(int PPFNGGCBJKC) { }
 
 	//// RVA: 0x937AFC Offset: 0x937AFC VA: 0x937AFC
-	//public void ANIJHEBLMGB(int PPFNGGCBJKC, int BEBJKJKBOGH) { }
+	//public void ANIJHEBLMGB(int PPFNGGCBJKC, int _BEBJKJKBOGH_Date) { }
 
 	//// RVA: 0x937BB0 Offset: 0x937BB0 VA: 0x937BB0
-	public void JCHLONCMPAJ(string CJEKGLGBIHF)
+	public void JCHLONCMPAJ(string _CJEKGLGBIHF_path)
 	{
 		PAAFIOOKJIP_ReceivedSns = 0;
 		ONOICEHIHPJ_Ids.Clear();
 		KJNJHHHELBK_Dates.Clear();
-		if (CJEKGLGBIHF == null)
+		if (_CJEKGLGBIHF_path == null)
 			return;
-		if (File.Exists(CJEKGLGBIHF))
-			File.Delete(CJEKGLGBIHF);
+		if (File.Exists(_CJEKGLGBIHF_path))
+			File.Delete(_CJEKGLGBIHF_path);
 	}
 
 	//// RVA: 0x937C8C Offset: 0x937C8C VA: 0x937C8C
-	public void HJMKBCFJOOH(string CJEKGLGBIHF)
+	public void HJMKBCFJOOH(string _CJEKGLGBIHF_path)
 	{
-		FileStream fs = new FileStream(CJEKGLGBIHF, FileMode.Create);
+		FileStream fs = new FileStream(_CJEKGLGBIHF_path, FileMode.Create);
 		BinaryWriter bw = new BinaryWriter(fs);
 		bw.Write(2);
 		bw.Write(ONOICEHIHPJ_Ids.Count);
@@ -48,7 +48,7 @@ public class PJKPGLKHGIP
 	}
 
 	//// RVA: 0x9382A0 Offset: 0x9382A0 VA: 0x9382A0
-	//public void PCODDPDFLHK(string CJEKGLGBIHF) { }
+	//public void PCODDPDFLHK(string _CJEKGLGBIHF_path) { }
 
 	//// RVA: 0x9384CC Offset: 0x9384CC VA: 0x9384CC
 	public void ADOIBPKFJKB()

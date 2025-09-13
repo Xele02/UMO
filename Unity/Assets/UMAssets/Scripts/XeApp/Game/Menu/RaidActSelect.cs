@@ -139,7 +139,7 @@ namespace XeApp.Game.Menu
 				m_isLine6Mode = arg.EventMusicSelectSceneArgs != null && arg.EventMusicSelectSceneArgs.isLine6Mode;
 				m_returnUniqueId = arg.ReturnTransitionUniqueId; 
 			}
-			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long t = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
             List<IBJAKJJICBC> l1 = IBJAKJJICBC.DHFHJBMKEHN(5, t, false);
             List<IBJAKJJICBC> l2 = IBJAKJJICBC.DHFHJBMKEHN(5, t, true);
             List<IBJAKJJICBC> viewList = new List<IBJAKJJICBC>();
@@ -578,7 +578,7 @@ namespace XeApp.Game.Menu
 			if(m_selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].HHMLMKAEJBJ_Score != null)
 			{
 				StringBuilder str = new StringBuilder(8);
-				str.Set(m_selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].HHMLMKAEJBJ_Score.ANAJIAENLNB_MusicLevel.ToString());
+				str.Set(m_selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].HHMLMKAEJBJ_Score.ANAJIAENLNB_Level.ToString());
 				if(m_isLine6Mode)
 				{
 					str.Append("+");
@@ -596,7 +596,7 @@ namespace XeApp.Game.Menu
 				m_selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].KNIFCANOHOC_Score > 0)
 			{
 				m_musicInfo.SetHighscore(m_selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].KNIFCANOHOC_Score);
-				m_musicInfo.SetMusicScoreRank((ResultScoreRank.Type)m_selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].BAKLKJLPLOJ.DLPBHJALHCK_GetScoreRank(m_selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].KNIFCANOHOC_Score));
+				m_musicInfo.SetMusicScoreRank((ResultScoreRank.Type)m_selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].BAKLKJLPLOJ_MusicLevel.DLPBHJALHCK_GetScoreRank(m_selectMusicData.MGJKEJHEBPO_DiffInfos[(int)diff].KNIFCANOHOC_Score));
 			}
 			else
 			{
@@ -1140,7 +1140,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x9EF69C Offset: 0x9EF69C VA: 0x9EF69C
 		private bool IsEndRaidEvent()
 		{
-			raidController.HCDGELDHFHB_UpdateStatus(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime());
+			raidController.HCDGELDHFHB_UpdateStatus(NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime());
 			if(raidController.NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5)
 			{
 				JHHBAFKMBDL.HHCJCDFCLOB.DNABPEOICIJ(() =>

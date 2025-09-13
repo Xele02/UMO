@@ -34,7 +34,7 @@ namespace XeApp.Game.Menu
 				base.Setting(item, postNum, canKira, tab, type, window);
 				if(item.NPADACLCNAN_Category == EKLNMHFCAOI.FKGCBLHOOCL_Category.ICIMCGOJEMD_StampItemSerif)
 				{
-					SettingSerif(item.GBJFNGCDKPM_Attribute, item.DOIGLOBENMG_StampName, item.DBGAJBIBODC_FontType);
+					SettingSerif(item.GBJFNGCDKPM_Type, item.DOIGLOBENMG_StampName, item.DBGAJBIBODC_FontType);
 				}
 				else
 				{

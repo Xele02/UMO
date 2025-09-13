@@ -473,12 +473,12 @@ namespace XeApp.Game.Menu
 			coroutineSave = this.StartCoroutineWatched(Co_Save());
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			bool isClose = false;
-			string v = JKNGJFOBADP.JKOAGEAPJHI(m_intimacyController.viewData.HBODCMLFDOB.IOCFPAAEFHM_FullItemId, m_intimacyController.viewData.HBODCMLFDOB.LEAKFAFGEKK_Count, 20);
+			string v = JKNGJFOBADP.JKOAGEAPJHI(m_intimacyController.viewData.HBODCMLFDOB_Result.IOCFPAAEFHM_FullItemId, m_intimacyController.viewData.HBODCMLFDOB_Result.LEAKFAFGEKK_Count, 20);
 			PopupPresentSetting s = new PopupPresentSetting();
 			s.TitleText = bk.GetMessageByLabel("");
 			s.itemName = v;
-			s.itemId = m_intimacyController.viewData.HBODCMLFDOB.IOCFPAAEFHM_FullItemId;
-			s.itemDetail = m_intimacyController.viewData.HBODCMLFDOB.JLKIADFKPFL_Desc;
+			s.itemId = m_intimacyController.viewData.HBODCMLFDOB_Result.IOCFPAAEFHM_FullItemId;
+			s.itemDetail = m_intimacyController.viewData.HBODCMLFDOB_Result.JLKIADFKPFL_Desc;
 			s.WindowSize = 0;
 			s.IsCaption = false;
 			s.Buttons = new ButtonInfo[1]
@@ -611,7 +611,7 @@ namespace XeApp.Game.Menu
 				GakuyaCostumeListWindow.ItemInfo cosInfo = m_costumeListWindow.GetItem(i);
 				string p = ItemTextureCache.MakeItemIconTexturePath(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.KBHGPMNGALJ_Costume, cosInfo.m_cosId), cosInfo.m_cosColor);
 				KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(p);
-				p = CostumeTextureCache.MakeCostumeTexturePath(divaId, cosInfo.m_viewDiva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, cosInfo.m_cosColor);
+				p = CostumeTextureCache.MakeCostumeTexturePath(divaId, cosInfo.m_viewDiva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, cosInfo.m_cosColor);
 				KDLPEDBKMID.HHCJCDFCLOB.BDOFDNICMLC_StartInstallIfNeeded(p);
 			}
 			while (KDLPEDBKMID.HHCJCDFCLOB.LNHFLJBGGJB_IsRunning)
@@ -1015,7 +1015,7 @@ namespace XeApp.Game.Menu
 				return;
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
 			bool presentDivaLimit = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.NJGEDPHNIKC_IsPresentLimitEnabled();
-			if(!m_intimacyController.viewData.HBODCMLFDOB.PFIILLOIDIL || presentDivaLimit)
+			if(!m_intimacyController.viewData.HBODCMLFDOB_Result.PFIILLOIDIL || presentDivaLimit)
 			{
 				if(m_intimacyController.viewData.NCNAPMHEINJ())
 				{
@@ -1151,11 +1151,11 @@ namespace XeApp.Game.Menu
 			{
 				if(id != d.AHHJLDLAPAN_DivaId)
 				{
-					m_divaCostumeInfos.Add(new DivaCostumeInfo(d.AHHJLDLAPAN_DivaId, d.EGAFMGDFFCH_HomeDivaCostume.DAJGPBLEEOB_PrismCostumeId, d.JFFLFIMIMOI_HomeColorId));
+					m_divaCostumeInfos.Add(new DivaCostumeInfo(d.AHHJLDLAPAN_DivaId, d.EGAFMGDFFCH_HomeDivaCostume.DAJGPBLEEOB_ModelId, d.JFFLFIMIMOI_HomeColorId));
 				}
 				else
 				{
-					m_divaCostumeInfos.Add(new DivaCostumeInfo(d.AHHJLDLAPAN_DivaId, d.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, d.EKFONBFDAAP_ColorId));
+					m_divaCostumeInfos.Add(new DivaCostumeInfo(d.AHHJLDLAPAN_DivaId, d.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, d.EKFONBFDAAP_ColorId));
 				}
 			}
 		}
@@ -1230,7 +1230,7 @@ namespace XeApp.Game.Menu
 		{
 			foreach(var d in GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas)
 			{
-				if(d.FJODMPGPDDD_DivaHave)
+				if(d.FJODMPGPDDD_Unlocked)
 				{
 					DivaCostumeInfo info = GetDivaCostumeInfo(d.AHHJLDLAPAN_DivaId);
 					GameManager.Instance.ViewPlayerData.OPDBFHFKKJN_SetHomeCostume(d.AHHJLDLAPAN_DivaId, GetCostumeId(d.AHHJLDLAPAN_DivaId, info.modelId), info.colorId);
@@ -1257,7 +1257,7 @@ namespace XeApp.Game.Menu
 			List<int> l = new List<int>();
 			foreach(var diva in GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas)
 			{
-				if(m_divaId != diva.AHHJLDLAPAN_DivaId && diva.FJODMPGPDDD_DivaHave)
+				if(m_divaId != diva.AHHJLDLAPAN_DivaId && diva.FJODMPGPDDD_Unlocked)
 				{
 					int oldCos = diva.KIIMFCFMMDN_HomeCostumeId;
 					int oldCol = diva.JFFLFIMIMOI_HomeColorId;

@@ -344,7 +344,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1260C70 Offset: 0x1260C70 VA: 0x1260C70
 		private int GetDivaDefaultModelId(int divaId)
 		{
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_GetUnlockedCostumeOrDefault(divaId, 1).DAJGPBLEEOB_PrismCostumeModelId;
+			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_GetUnlockedCostumeOrDefault(divaId, 1).DAJGPBLEEOB_ModelId;
 		}
 
 		// // RVA: 0x1260D78 Offset: 0x1260D78 VA: 0x1260D78

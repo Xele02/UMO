@@ -107,7 +107,7 @@ namespace XeApp.Game.Menu
 		{
 			m_typeItemId = typeItemId;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			MenuScene.Instance.ItemTextureCache.Load(typeItemId, (IiconTexture texture) =>
 			{
 				//0x964E78

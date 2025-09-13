@@ -5,11 +5,11 @@ public class GJFMKMJOFMB
 {
 	public class OJIMKCKABGE
 	{
-		public int BAOFEFFADPD; // 0x8
+		public int BAOFEFFADPD_Day; // 0x8
 		public int MKPJBDFDHOL; // 0xC
 		public int BOEJGNAHPII; // 0x10
 		public bool LNACKEBEMOB; // 0x14
-		public List<MFDJIFIIPJD> HBHMAKNGKFK; // 0x18
+		public List<MFDJIFIIPJD> HBHMAKNGKFK_Items; // 0x18
 		public List<MFDJIFIIPJD> OBGHDLKKMLJ; // 0x1C
 	}
 
@@ -134,9 +134,9 @@ public class GJFMKMJOFMB
 	}
 
 	//// RVA: 0xAACBA0 Offset: 0xAACBA0 VA: 0xAACBA0
-	private int ELCNECGFGAO(List<OJIMKCKABGE> NNDGIAEFMOG, int FDGBLNFGBPJ, bool HNNAJBJCNEJ)
+	private int ELCNECGFGAO(List<OJIMKCKABGE> NNDGIAEFMOG, int _FDGBLNFGBPJ_stamp_id, bool HNNAJBJCNEJ)
 	{
-		LGIDLHLBFFJ_MonthlyPass.ODHIHCNALDL savePass = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HMMNDKHKEBC_MonthlyPass.EOHPPNNLBNH_Stamp[FDGBLNFGBPJ - 1];
+		LGIDLHLBFFJ_MonthlyPass.ODHIHCNALDL savePass = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.HMMNDKHKEBC_MonthlyPass.EOHPPNNLBNH_Stamp[_FDGBLNFGBPJ_stamp_id - 1];
 		int res = 0;
 		for(int i = 0; i < 20; i++)
 		{
@@ -147,11 +147,11 @@ public class GJFMKMJOFMB
 			}
 			KBCCGHLCFNO_MonthlyPass.JKGFAIPDNDL dbPass = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MEGJDBJCEOC_MonthlyPass.DHBEKJNJOMC(tId, i + 1);
 			OJIMKCKABGE data = new OJIMKCKABGE();
-			data.BAOFEFFADPD = i + 1;
+			data.BAOFEFFADPD_Day = i + 1;
 			data.MKPJBDFDHOL = dbPass.HNHOGHMLFNL;
 			data.BOEJGNAHPII = dbPass.PHHBIBOJAEI;
 			data.LNACKEBEMOB = savePass.LPGIECKPBDK(i) != 0;
-			data.HBHMAKNGKFK = new List<MFDJIFIIPJD>();
+			data.HBHMAKNGKFK_Items = new List<MFDJIFIIPJD>();
 			data.OBGHDLKKMLJ = new List<MFDJIFIIPJD>();
 			if (savePass.LPGIECKPBDK(i) != 0)
 				res++;
@@ -159,17 +159,17 @@ public class GJFMKMJOFMB
 			{
 				MFDJIFIIPJD data2 = new MFDJIFIIPJD();
 				data2.KHEKNNFCAOI(dbPass.FKNBLDPIPMC(k), dbPass.KAINPNMMAEK(k));
-				data.HBHMAKNGKFK.Add(data2);
+				data.HBHMAKNGKFK_Items.Add(data2);
 			}
 			if(HNNAJBJCNEJ)
 			{
 				for(int k = 0; k < dbPass.EGBJFDGDMLG(); k++)
 				{
 					int a = dbPass.CNJELJGBCKC(k);
-					MFDJIFIIPJD data2 = data.HBHMAKNGKFK.Find((MFDJIFIIPJD GHPLINIACBB) =>
+					MFDJIFIIPJD data2 = data.HBHMAKNGKFK_Items.Find((MFDJIFIIPJD _GHPLINIACBB_x) =>
 					{
 						//0xAAD358
-						return GHPLINIACBB.JJBGOIMEIPF_ItemId == a;
+						return _GHPLINIACBB_x.JJBGOIMEIPF_ItemId == a;
 					});
 					if(data2 == null)
 					{

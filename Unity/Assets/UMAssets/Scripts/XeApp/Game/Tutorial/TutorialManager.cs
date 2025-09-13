@@ -58,13 +58,13 @@ namespace XeApp.Game.Tutorial
 			saveBitIndex = 0;
 			GameManager.Instance.AddPushBackButtonHandler(OnDummyBackButton);
 			bool hasShown = false;
-			for (index = 0; index < master.CDENCMNHNGA.Count; index++)
+			for (index = 0; index < master.CDENCMNHNGA_table.Count; index++)
 			{
-				if(master.CDENCMNHNGA[index].PPEGAKEIEGM_Enabled > 1)
+				if(master.CDENCMNHNGA_table[index].PPEGAKEIEGM_Enabled > 1)
 				{
-					int a = master.CDENCMNHNGA[index].PPFNGGCBJKC;
-					if (master.CDENCMNHNGA[index].IODLCIBCONC > 0)
-						a = master.CDENCMNHNGA[index].IODLCIBCONC;
+					int a = master.CDENCMNHNGA_table[index].PPFNGGCBJKC;
+					if (master.CDENCMNHNGA_table[index].IODLCIBCONC > 0)
+						a = master.CDENCMNHNGA_table[index].IODLCIBCONC;
 					saveBitIndex = 0;
 					if(a > 63)
 					{
@@ -75,15 +75,15 @@ namespace XeApp.Game.Tutorial
 					saveBitIndex = a;
 					if(!saveData.INEAGJMJLFG_TutorialAlreadyFlags.ODKIHPBEOEC_IsTrue(a))
 					{
-						for(int i = 0; i < master.CDENCMNHNGA[index].AKBHPFBDDOL_TutoCondId.Length; i++)
+						for(int i = 0; i < master.CDENCMNHNGA_table[index].AKBHPFBDDOL_TutoCondId.Length; i++)
 						{
-							if(master.CDENCMNHNGA[index].FJOLNJLLJEJ[i] <= playerRank)
+							if(master.CDENCMNHNGA_table[index].FJOLNJLLJEJ_Rank[i] <= playerRank)
 							{
-								if(checker((TutorialConditionId)master.CDENCMNHNGA[index].AKBHPFBDDOL_TutoCondId[i]))
+								if(checker((TutorialConditionId)master.CDENCMNHNGA_table[index].AKBHPFBDDOL_TutoCondId[i]))
 								{
 									Initialize();
-									yield return Instance.ShowTutorialCoroutine(master.CDENCMNHNGA[index]);
-									saveData.INEAGJMJLFG_TutorialAlreadyFlags.EDEDFDDIOKO_SetTrue(saveBitIndex);
+									yield return Instance.ShowTutorialCoroutine(master.CDENCMNHNGA_table[index]);
+									saveData.INEAGJMJLFG_TutorialAlreadyFlags.EDEDFDDIOKO_Set(saveBitIndex);
 									hasShown = true;
 								}
 							}
@@ -128,9 +128,9 @@ namespace XeApp.Game.Tutorial
 		// // RVA: 0xE4657C Offset: 0xE4657C VA: 0xE4657C
 		public static bool IsAlreadyTutorial(TutorialConditionId conditionId)
 		{
-			for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict.CDENCMNHNGA.Count; i++)
+			for (int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict.CDENCMNHNGA_table.Count; i++)
 			{
-				PJANOOPJIDE_TutorialPict.HNHHGJCPMEA pic = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict.CDENCMNHNGA[i];
+				PJANOOPJIDE_TutorialPict.HNHHGJCPMEA pic = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KIBMNCOLJNC_TutorialPict.CDENCMNHNGA_table[i];
 				int id = pic.PPFNGGCBJKC;
 				if (pic.IODLCIBCONC > 0)
 					id = pic.IODLCIBCONC;

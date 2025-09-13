@@ -102,7 +102,7 @@ public class GGHPEFNADEN_Ticket : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xAA1E44 Offset: 0xAA1E44 VA: 0xAA1E44 Slot: 7
-	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	public override void BMGGKONLFIC_Copy(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
 		GGHPEFNADEN_Ticket other = GPBJHKLFCEP as GGHPEFNADEN_Ticket;
 		LJNAKDMILMC_key = other.LJNAKDMILMC_key;
@@ -139,7 +139,7 @@ public class GGHPEFNADEN_Ticket : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xAA21DC Offset: 0xAA21DC VA: 0xAA21DC Slot: 10
-	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH);
+	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock _GJLFANGDGCL_Target, long MCKEOKFMLAH);
 
 	// // RVA: 0xAA2900 Offset: 0xAA2900 VA: 0xAA2900 Slot: 11
 	public override FENCAJJBLBH PFAKPFKJJKA()

@@ -198,8 +198,8 @@ namespace XeApp.Game.Menu
 				m_levelNumImage.uvRect = m_levelRectArray[data.AJCMCKGNFHC_Level - 1];
 				int d = data.JKPDKNPDEBC_EnemyHasSkill ? 3 : data.AJCMCKGNFHC_Level - 1;
 				m_CardSwitch.StartChildrenAnimGoStop(d, d);
-				m_ClearSwitch.StartChildrenAnimGoStop(!data.BCGLDMKODLC ? 1 : 0, !data.BCGLDMKODLC ? 1 : 0);
-				m_basePointText.text = data.FPEOGFMKMKJ_BasePoint.ToString();
+				m_ClearSwitch.StartChildrenAnimGoStop(!data.BCGLDMKODLC_IsClear ? 1 : 0, !data.BCGLDMKODLC_IsClear ? 1 : 0);
+				m_basePointText.text = data.FPEOGFMKMKJ_Point.ToString();
 				m_missionBonusText.text = (data.PJEFKNPJEBE_MissionBonus - 100).ToString();
 				SetActiveUpIcon(0, data.PJEFKNPJEBE_MissionBonus - 100 > 0);
 				m_musicBonusText.text = (data.JKDICBNOGBL_MusicBonus - 100).ToString();

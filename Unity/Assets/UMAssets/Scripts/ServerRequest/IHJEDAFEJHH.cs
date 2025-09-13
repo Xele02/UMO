@@ -61,7 +61,7 @@ public class JAMDHMMODCG
 				PJJFEAHIPGL_Inventory.Add(data);
 			}
 		}
-		EDOHBJAPLPF_JsonData balances = IDLHJIOMJBK[AFEHLCGHAEE_Strings.BBEPLKNMICJ_balances];
+		EDOHBJAPLPF_JsonData balances = IDLHJIOMJBK[AFEHLCGHAEE_Strings.BBEPLKNMICJ_Balances];
 		BBEPLKNMICJ_Balances = new List<MCKCJMLOAFP_CurrencyInfo>(balances.HNBFOAJIIAL_Count);
 		for(int i = 0; i < balances.HNBFOAJIIAL_Count; i++)
 		{
@@ -93,7 +93,7 @@ public class IHJEDAFEJHH_StepUpLotPurchase : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0x11FC6F8 Offset: 0x11FC6F8 VA: 0x11FC6F8 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG = null;
 		BNJPAKLNOPA_WorkerThreadQueue.Add(DIAMDBHBKBH);

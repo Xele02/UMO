@@ -199,7 +199,7 @@ namespace XeApp.Game.MusicSelect
 				}
 				else
 				{
-					KEODKEGFDLD_FreeMusicInfo freeMusicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicDatas[musicData.GHBPLHBNMBK_FreeMusicId - 1];
+					KEODKEGFDLD_FreeMusicInfo freeMusicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.GEAANLPDJBP_FreeMusicData[musicData.GHBPLHBNMBK_FreeMusicId - 1];
 					EONOEHOKBEB_Music musicInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.INJDLHAEPEK_GetMusicInfo(musicData.GHBPLHBNMBK_FreeMusicId, freeMusicInfo.DLAEJOBELBH_MusicId);
 					string musicName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).musicName;
 					string vocalName = Database.Instance.musicText.Get(musicInfo.KNMGEEFGDNI_Nam).vocalName;
@@ -288,7 +288,7 @@ namespace XeApp.Game.MusicSelect
 					else
 					{
 						isHighLevel = false;
-						List<IKDICBBFBMI_EventBase> list = GetEventControllerList(OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime(), KGCNCBOKCBA.GNENJEHKMHD_EventStatus.KPMNPGKKFJG);
+						List<IKDICBBFBMI_EventBase> list = GetEventControllerList(OHCAABOMEOF.KGOGMKMBCPP_EventType.DAMDPLEBNCB_AprilFool, NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime(), KGCNCBOKCBA.GNENJEHKMHD_EventStatus.KPMNPGKKFJG);
 						for (int j = 0; j < list.Count; j++)
 						{
 							AMLGMLNGMFB_EventAprilFool eventApril = list[j] as AMLGMLNGMFB_EventAprilFool;
@@ -320,7 +320,7 @@ namespace XeApp.Game.MusicSelect
 							isOpen &= IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("multi_dance_player_level", 3) <= CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KIECDDFNCAN_Level;
 						}
 					}
-					MusicSelectConsts.MusicType musicType = (MusicSelectConsts.MusicType)(musicData.EEFLOOBOAGF % 10);
+					MusicSelectConsts.MusicType musicType = (MusicSelectConsts.MusicType)(musicData.EEFLOOBOAGF_ViewOrder % 10);
 					if (musicType > MusicSelectConsts.MusicType.Another)
 						musicType = MusicSelectConsts.MusicType.None;
 					bool isUnlockable;

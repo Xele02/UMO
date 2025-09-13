@@ -139,8 +139,8 @@ namespace XeApp.Game.AR
         private IEnumerator Co_ShowDiva(int summonCnt)
         {
             //0x11E4F08
-            LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[m_masterData.costumeId - 1];
-            //cos.DAJGPBLEEOB_PrismCostumeModelId;
+            LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[m_masterData.costumeId - 1];
+            //cos.DAJGPBLEEOB_ModelId;
             m_isLoading++;
             while(m_isLoading != 1 || (m_divaMan.IsLoaded && !m_isReady))
                 yield return null;

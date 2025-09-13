@@ -15,7 +15,7 @@ public class PKNOGNLPHAE_CreatePlayer : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0x93FF14 Offset: 0x93FF14 VA: 0x93FF14 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG = new HEHLBMMFMPL_PlayerStatusInfo();
 		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

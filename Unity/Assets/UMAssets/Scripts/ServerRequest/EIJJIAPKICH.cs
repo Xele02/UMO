@@ -14,7 +14,7 @@ public class EIJJIAPKICH_RequestToken : CACGCMBKHDI_Request
 		{
 			//0x12EBA6C
 			DCKLDDCAJAP(IDLHJIOMJBK);
-			NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.EAJMLOKKOOK_SetServerTime(HOHOBEOJPBK_ServerInfo.LCAINKFINEI_ServerCurrentDateTime);
+			NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.EAJMLOKKOOK_SetServerTime(HOHOBEOJPBK_ServerInfo.LCAINKFINEI_ServerCurrentDateTime);
 			Debug.Log("ServerTime Updated ok");
 		}, (SakashoError FMEMECBIDIB) =>
 		{

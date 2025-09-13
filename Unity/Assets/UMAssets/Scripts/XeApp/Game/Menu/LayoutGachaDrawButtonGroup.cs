@@ -353,9 +353,9 @@ namespace XeApp.Game.Menu
 				m_layoutStepOnOff.StartChildrenAnimGoStop("02");
 				int stepNum = view.DPBDFPPMIPH_Gacha.NECDFDNBHFK_StepData.LKHAAGIJEPG_PlayerStatus.DBNAGGGJDAB_CurrentStepIndex;
 				m_numberStepNum.SetNumber(stepNum, 0);
-				m_numberStepMax.SetNumber(view.DPBDFPPMIPH_Gacha.NECDFDNBHFK_StepData.BMFEGOMNECF_Step.Count, 0);
+				m_numberStepMax.SetNumber(view.DPBDFPPMIPH_Gacha.NECDFDNBHFK_StepData.BMFEGOMNECF_Steps.Count, 0);
 				m_layoutStepNum.StartChildrenAnimGoStop(view.DPBDFPPMIPH_Gacha.NECDFDNBHFK_StepData.LKHAAGIJEPG_PlayerStatus.NMNLJFIDFJE_CurrentStepRestCount < 0 ? "02" : "01");
-				MMNNAPPLHFM m = view.DPBDFPPMIPH_Gacha.NECDFDNBHFK_StepData.BMFEGOMNECF_Step[stepNum - 1];
+				MMNNAPPLHFM m = view.DPBDFPPMIPH_Gacha.NECDFDNBHFK_StepData.BMFEGOMNECF_Steps[stepNum - 1];
 				if(m != null)
 				{
 					str = m.KACECFNECON.KLMPFGOCBHC_Description;
@@ -372,7 +372,7 @@ namespace XeApp.Game.Menu
 				BEPHBEGDFFK.DMBKENKBIJD d = view.IIPOPGHKHBA(true);
 				if(d != null && d.NCIBIAJJBFF > 0)
 				{
-					if (d.GLBEAENLHKC_MaxLimit < 2)
+					if (d.GLBEAENLHKC_Count < 2)
 						m_textTelop.text = bk.GetMessageByLabel("gacha_telop_01");
 					else
 					{

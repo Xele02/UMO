@@ -676,10 +676,10 @@ namespace XeApp.Game.Menu
 		private void InitializeSortSetting()
 		{
 			m_sortType = (SortItem) sortSaveData.LHPDCGNKPHD_sortItem;
-			m_sortOrder = (GeneralList.SortOrder) sortSaveData.EILKGEADKGH_order;
+			m_sortOrder = (GeneralList.SortOrder) sortSaveData.EILKGEADKGH_Order;
 			m_rarityFilter = (uint) sortSaveData.ACCHOFLOOEC_RarityFilter;
-			m_attrFilter = (uint)sortSaveData.BOFFOHHLLFG_attributeFilter;
-			m_seriesFilter = (uint)sortSaveData.BBIIHLNBHDE_seriaseFilter;
+			m_attrFilter = (uint)sortSaveData.BOFFOHHLLFG_AttributeFilter;
+			m_seriesFilter = (uint)sortSaveData.BBIIHLNBHDE_SerieFilter;
 			m_buttonRuntime.ChangePreset(GeneralListButtonRuntime.Preset.FriendList);
 			OnChangeSortType();
 			OnChangeSortOrder();

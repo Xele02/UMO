@@ -20,7 +20,7 @@ public class HDPLHCDAFHA_RequestMaster : CACGCMBKHDI_Request
     } // Prepare request
 
 	// RVA: 0x174339C Offset: 0x174339C VA: 0x174339C Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE) 
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb) 
 	{
 		OGLMMENAJFL_onSuccess = false;
 		BNJPAKLNOPA_WorkerThreadQueue.Add(this.DIAMDBHBKBH);

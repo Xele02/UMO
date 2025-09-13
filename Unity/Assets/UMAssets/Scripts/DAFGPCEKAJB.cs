@@ -1,12 +1,12 @@
 
 public class DAFGPCEKAJB
 {
-	public const int FBGGEFFJJHB = 625060344;
+	public const int FBGGEFFJJHB_xor = 625060344;
 	public long JGHELDIAPMG_Crypted; // 0x8
 	public int JMFKPCFMNKN_Crypted; // 0x10
 
-	public long AEIMNLACMFA_Damage { get { return JGHELDIAPMG_Crypted ^ FBGGEFFJJHB; } set { JGHELDIAPMG_Crypted = value ^ FBGGEFFJJHB; } } //0x1768F88 OBJFDJFEAEO 0x1768F9C IOCKEEIFIJD
-	public int FJOLNJLLJEJ_Rank { get { return JMFKPCFMNKN_Crypted ^ FBGGEFFJJHB; } set { JMFKPCFMNKN_Crypted = value ^ FBGGEFFJJHB; } } //0x1768FB8 EAKAGHDPEMI 0x1768FCC GHECCGBGCBI
+	public long AEIMNLACMFA_Damage { get { return JGHELDIAPMG_Crypted ^ FBGGEFFJJHB_xor; } set { JGHELDIAPMG_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1768F88 OBJFDJFEAEO 0x1768F9C IOCKEEIFIJD
+	public int FJOLNJLLJEJ_Rank { get { return JMFKPCFMNKN_Crypted ^ FBGGEFFJJHB_xor; } set { JMFKPCFMNKN_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1768FB8 EAKAGHDPEMI 0x1768FCC GHECCGBGCBI
 
 	// // RVA: 0x1768FE0 Offset: 0x1768FE0 VA: 0x1768FE0
 	public void KHEKNNFCAOI()

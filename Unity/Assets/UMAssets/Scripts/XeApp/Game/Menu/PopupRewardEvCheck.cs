@@ -410,8 +410,8 @@ namespace XeApp.Game.Menu
 						f.DJEMBILEBFP_IsPlayerRank = l2[i].ILELGGCCGMJ_UtaGrade == a3;
 						int a4 = Mathf.Max(1, l2[i].ILELGGCCGMJ_UtaGrade - a2);
 						int a5 = Mathf.Min(a3, a1 + l2[i].ILELGGCCGMJ_UtaGrade);
-						f.IOBJDNEGEBB_RankLower = l2[a4 - 1].EJGDHAENIDC_Rank;
-						f.PKLKOMIAKNL_RankUpper = l2[a5 - 1].EJGDHAENIDC_Rank;
+						f.IOBJDNEGEBB_RankLower = l2[a4 - 1].EJGDHAENIDC_BossRank;
+						f.PKLKOMIAKNL_RankUpper = l2[a5 - 1].EJGDHAENIDC_BossRank;
 						f.ABHGIJFDLMM_DefeatRewardCountLower = l2[a4 - 1].LCJGEMENAFM_DefeatRewardCount;
 						f.EMPCHHKMKBG_DefeatRewardCountUpper = l2[a5 - 1].LCJGEMENAFM_DefeatRewardCount;
 						f.DFMBENKEIHF_FirstRewardCountLower = l2[a4 - 1].LBEGGOOHIFM_FirstRewardCount;
@@ -427,8 +427,8 @@ namespace XeApp.Game.Menu
 						f.DJEMBILEBFP_IsPlayerRank = l2[i].ILELGGCCGMJ_UtaGrade == a3;
 						int a4 = Mathf.Max(1, l2[i].ILELGGCCGMJ_UtaGrade - a2);
 						int a5 = Mathf.Min(a3, a1 + l2[i].ILELGGCCGMJ_UtaGrade);
-						f.IOBJDNEGEBB_RankLower = l2[a4 - 1].EJGDHAENIDC_Rank;
-						f.PKLKOMIAKNL_RankUpper = l2[a5 - 1].EJGDHAENIDC_Rank;
+						f.IOBJDNEGEBB_RankLower = l2[a4 - 1].EJGDHAENIDC_BossRank;
+						f.PKLKOMIAKNL_RankUpper = l2[a5 - 1].EJGDHAENIDC_BossRank;
 						f.ABHGIJFDLMM_DefeatRewardCountLower = l2[a4 - 1].DFCBKNLAFIM_DefeatSpRewardCount;
 						f.EMPCHHKMKBG_DefeatRewardCountUpper = l2[a5 - 1].DFCBKNLAFIM_DefeatSpRewardCount;
 						f.DFMBENKEIHF_FirstRewardCountLower = l2[a4 - 1].GEKJGFHKGEP_FirstSpRewardCount;

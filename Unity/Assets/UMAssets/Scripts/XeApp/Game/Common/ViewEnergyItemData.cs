@@ -15,10 +15,10 @@ namespace XeApp.Game.Common
 		//// RVA: 0xD32EB0 Offset: 0xD32EB0 VA: 0xD32EB0
 		public void Init(int id)
 		{
-			JKDKODAPGBJ_EnergyItem.GFGCCICHBHK dbItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KOPOGNLKAEN_EnergyItem.CDENCMNHNGA[id - 1];
+			JKDKODAPGBJ_EnergyItem.GFGCCICHBHK dbItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KOPOGNLKAEN_EnergyItem.CDENCMNHNGA_table[id - 1];
 			EGOLBAPFHHD_Common.FKLHGOGJOHH saveItem = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.KFEBOFKAHAJ_EngItem[id - 1];
 			this.id = id;
-			haveCount = saveItem.BFINGCJHOHI_Cnt;
+			haveCount = saveItem.BFINGCJHOHI_Count;
 			maxCount = dbItem.DOOGFEGEKLG_Max;
 			healValue = dbItem.JBGEEPFKIGG_HealValue;
 			name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(EKLNMHFCAOI.FKGCBLHOOCL_Category.DMMIIBCMCFG_EnergyItem, id);
@@ -30,9 +30,9 @@ namespace XeApp.Game.Common
 		public static List<ViewEnergyItemData> CreateList()
 		{
 			List<ViewEnergyItemData> res = new List<ViewEnergyItemData>();
-			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KOPOGNLKAEN_EnergyItem.CDENCMNHNGA.Count; i++)
+			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KOPOGNLKAEN_EnergyItem.CDENCMNHNGA_table.Count; i++)
 			{
-				JKDKODAPGBJ_EnergyItem.GFGCCICHBHK dbItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KOPOGNLKAEN_EnergyItem.CDENCMNHNGA[i];
+				JKDKODAPGBJ_EnergyItem.GFGCCICHBHK dbItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KOPOGNLKAEN_EnergyItem.CDENCMNHNGA_table[i];
 				if(dbItem.PPEGAKEIEGM_Enabled == 2)
 				{
 					ViewEnergyItemData data = new ViewEnergyItemData();
@@ -47,9 +47,9 @@ namespace XeApp.Game.Common
 		//// RVA: 0xD33540 Offset: 0xD33540 VA: 0xD33540
 		private static int SortFunc(ViewEnergyItemData left, ViewEnergyItemData right)
 		{
-			JKDKODAPGBJ_EnergyItem.GFGCCICHBHK dbItem1 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KOPOGNLKAEN_EnergyItem.CDENCMNHNGA[left.id - 1];
-			JKDKODAPGBJ_EnergyItem.GFGCCICHBHK dbItem2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KOPOGNLKAEN_EnergyItem.CDENCMNHNGA[right.id - 1];
-			return dbItem1.FPOMEEJFBIG - dbItem2.FPOMEEJFBIG;
+			JKDKODAPGBJ_EnergyItem.GFGCCICHBHK dbItem1 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KOPOGNLKAEN_EnergyItem.CDENCMNHNGA_table[left.id - 1];
+			JKDKODAPGBJ_EnergyItem.GFGCCICHBHK dbItem2 = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KOPOGNLKAEN_EnergyItem.CDENCMNHNGA_table[right.id - 1];
+			return dbItem1.FPOMEEJFBIG_Order - dbItem2.FPOMEEJFBIG_Order;
 		}
 	}
 }

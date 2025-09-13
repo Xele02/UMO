@@ -6,34 +6,34 @@ public class MGCDMPJLFKP
 {
 	public class MIIIIBANPPB
 	{
-		public int FDEBLMKEMLF; // 0x8
+		public int FDEBLMKEMLF_TypeAndSeriesId; // 0x8
 		public int CLDKMLONBHJ; // 0xC
 		public int JDDIOOJHIHP; // 0x10
 		public int INHOGJODJFJ; // 0x14
-		public bool CADENLBDAEB; // 0x18
+		public bool CADENLBDAEB_IsNew; // 0x18
 		public long NPDKEIIMCDI; // 0x20
 	}
 
 	public const int JNCCCCPBDIC_Version = 3;
 	public List<MIIIIBANPPB> DHDCHLAIAMP = new List<MIIIIBANPPB>(); // 0x8
-	private string ELLBAAFKDCH_FilePath; // 0xC
+	private string ELLBAAFKDCH_Filename; // 0xC
 
 	// RVA: 0x1316434 Offset: 0x1316434 VA: 0x1316434
 	public MGCDMPJLFKP()
 	{
-		ELLBAAFKDCH_FilePath = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/sys/gc2";
+		ELLBAAFKDCH_Filename = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/sys/gc2";
 	}
 
 	//// RVA: 0x1316510 Offset: 0x1316510 VA: 0x1316510
-	//public void KHEKNNFCAOI(string CJEKGLGBIHF) { }
+	//public void KHEKNNFCAOI(string _CJEKGLGBIHF_path) { }
 
 	//// RVA: 0x1316518 Offset: 0x1316518 VA: 0x1316518
 	public void PCODDPDFLHK()
 	{
 		DHDCHLAIAMP.Clear();
-		if(File.Exists(ELLBAAFKDCH_FilePath))
+		if(File.Exists(ELLBAAFKDCH_Filename))
 		{
-			using(FileStream f = new FileStream(ELLBAAFKDCH_FilePath, FileMode.Open))
+			using(FileStream f = new FileStream(ELLBAAFKDCH_Filename, FileMode.Open))
 			{
 				using(BinaryReader r = new BinaryReader(f))
 				{
@@ -44,11 +44,11 @@ public class MGCDMPJLFKP
 						for(int i = 0; i < cnt; i++)
 						{
 							MIIIIBANPPB m = new MIIIIBANPPB();
-							m.FDEBLMKEMLF = r.ReadInt32();
+							m.FDEBLMKEMLF_TypeAndSeriesId = r.ReadInt32();
 							m.CLDKMLONBHJ = r.ReadInt32();
 							m.JDDIOOJHIHP = r.ReadInt32();
 							m.INHOGJODJFJ = 0;
-							m.CADENLBDAEB = false;
+							m.CADENLBDAEB_IsNew = false;
 							m.NPDKEIIMCDI = 0;
 							DHDCHLAIAMP.Add(m);
 						}
@@ -59,10 +59,10 @@ public class MGCDMPJLFKP
 						for(int i = 0; i < cnt; i++)
 						{
 							MIIIIBANPPB m = new MIIIIBANPPB();
-							m.FDEBLMKEMLF = r.ReadInt32();
+							m.FDEBLMKEMLF_TypeAndSeriesId = r.ReadInt32();
 							m.CLDKMLONBHJ = 0;
 							m.INHOGJODJFJ = r.ReadInt32();
-							m.CADENLBDAEB = r.ReadBoolean();
+							m.CADENLBDAEB_IsNew = r.ReadBoolean();
 							m.JDDIOOJHIHP = r.ReadInt32();
 							m.NPDKEIIMCDI = 0;
 							DHDCHLAIAMP.Add(m);
@@ -74,8 +74,8 @@ public class MGCDMPJLFKP
 						for(int i = 0; i < cnt; i++)
 						{
 							MIIIIBANPPB m = new MIIIIBANPPB();
-							m.CADENLBDAEB = false;
-							m.FDEBLMKEMLF = 0;
+							m.CADENLBDAEB_IsNew = false;
+							m.FDEBLMKEMLF_TypeAndSeriesId = 0;
 							m.CLDKMLONBHJ = 0;
 							m.INHOGJODJFJ = 0;
 							m.JDDIOOJHIHP = 0;
@@ -92,10 +92,10 @@ public class MGCDMPJLFKP
 	//// RVA: 0x1316F0C Offset: 0x1316F0C VA: 0x1316F0C
 	public void HJMKBCFJOOH_Save()
 	{
-		string dir = Path.GetDirectoryName(ELLBAAFKDCH_FilePath);
+		string dir = Path.GetDirectoryName(ELLBAAFKDCH_Filename);
 		if (!Directory.Exists(dir))
 			Directory.CreateDirectory(dir);
-		using (FileStream f = new FileStream(ELLBAAFKDCH_FilePath, FileMode.Create))
+		using (FileStream f = new FileStream(ELLBAAFKDCH_Filename, FileMode.Create))
 		{
 			using (BinaryWriter b = new BinaryWriter(f))
 			{

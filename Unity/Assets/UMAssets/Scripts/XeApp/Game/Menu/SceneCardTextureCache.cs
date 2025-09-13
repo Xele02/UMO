@@ -98,9 +98,9 @@ namespace XeApp.Game.Menu
 		{
 			if(id > 0)
 			{
-				if(id - 1 < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList.Count)
+				if(id - 1 < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table.Count)
 				{
-					MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[id - 1];
+					MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[id - 1];
 					if (scene.MCCIFLKCNKO_Feed)
 					{
 						Load(MakeBundlePath(m_strBuilder, id, rank, false).ToString(), IconTextureType.Texture, callback);

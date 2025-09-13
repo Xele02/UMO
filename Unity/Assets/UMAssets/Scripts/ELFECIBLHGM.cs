@@ -5,11 +5,11 @@ public class ELFECIBLHGM
 {
     public class DFHIELOMEGA
     {
-        private int FBGGEFFJJHB = 0x4617e65; // 0x8
+        private int FBGGEFFJJHB_xor = 0x4617e65; // 0x8
         private long BHEHGCHGBDG = 0xa42143651a1c9f; // 0x10
         private long AKHADFNHCBJ_LastShowDateCrypted; // 0x18
 
-        public bool Unused() { return FBGGEFFJJHB == 0; }
+        public bool Unused() { return FBGGEFFJJHB_xor == 0; }
 
         public long MOBHLLDIMMN_LastShowDate { get { return AKHADFNHCBJ_LastShowDateCrypted ^ BHEHGCHGBDG; } set { AKHADFNHCBJ_LastShowDateCrypted = value ^ BHEHGCHGBDG; } } //0x1305560 KAFHGBHOHBM 0x1304EB4 DKHPNKJALPP
 
@@ -20,7 +20,7 @@ public class ELFECIBLHGM
 	public const int JNCCCCPBDIC = 2;
 	private static DFHIELOMEGA KLGILMKOHOI = new DFHIELOMEGA(); // 0x0
 	private static bool BAJPJGFOFIN_NeedSave = false; // 0x4
-	private string ELLBAAFKDCH_FilePath; // 0x8
+	private string ELLBAAFKDCH_Filename; // 0x8
 
 	// RVA: 0x1304800 Offset: 0x1304800 VA: 0x1304800
 	public ELFECIBLHGM()
@@ -29,12 +29,12 @@ public class ELFECIBLHGM
     }
 
 	// // RVA: 0x13048BC Offset: 0x13048BC VA: 0x13048BC
-	// public void KHEKNNFCAOI(string CJEKGLGBIHF) { }
+	// public void KHEKNNFCAOI(string _CJEKGLGBIHF_path) { }
 
 	// // RVA: 0x1304820 Offset: 0x1304820 VA: 0x1304820
 	public void KHEKNNFCAOI()
     {
-        ELLBAAFKDCH_FilePath = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/SaveData/ea0";
+        ELLBAAFKDCH_Filename = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + "/SaveData/ea0";
     }
 
 	// // RVA: 0x13048C4 Offset: 0x13048C4 VA: 0x13048C4
@@ -42,9 +42,9 @@ public class ELFECIBLHGM
     {
         KLGILMKOHOI.MOBHLLDIMMN_LastShowDate = 0;
         int a = -1;
-        if(File.Exists(ELLBAAFKDCH_FilePath))
+        if(File.Exists(ELLBAAFKDCH_Filename))
         {
-            FileStream fs = new FileStream(ELLBAAFKDCH_FilePath, FileMode.Open);
+            FileStream fs = new FileStream(ELLBAAFKDCH_Filename, FileMode.Open);
             BinaryReader br = new BinaryReader(fs);
             a = br.ReadInt32();
             if(a == 2)
@@ -58,14 +58,14 @@ public class ELFECIBLHGM
     }
 
 	// // RVA: 0x1304ED4 Offset: 0x1304ED4 VA: 0x1304ED4
-	public bool HJMKBCFJOOH_TrySaveDate(bool FBBNPFFEJBN_Force/* = false*/)
+	public bool HJMKBCFJOOH_TrySaveDate(bool _FBBNPFFEJBN_Force/* = false*/)
 	{
-		if(!FBBNPFFEJBN_Force && !BAJPJGFOFIN_NeedSave)
+		if(!_FBBNPFFEJBN_Force && !BAJPJGFOFIN_NeedSave)
 			return false;
-		string dirName = Path.GetDirectoryName(ELLBAAFKDCH_FilePath);
+		string dirName = Path.GetDirectoryName(ELLBAAFKDCH_Filename);
 		if (!Directory.Exists(dirName))
 			Directory.CreateDirectory(dirName);
-		FileStream fs = new FileStream(ELLBAAFKDCH_FilePath, FileMode.Create);
+		FileStream fs = new FileStream(ELLBAAFKDCH_Filename, FileMode.Create);
 		BinaryWriter bw = new BinaryWriter(fs);
 		bw.Write(2);
 		bw.Write(KLGILMKOHOI.MOBHLLDIMMN_LastShowDate);

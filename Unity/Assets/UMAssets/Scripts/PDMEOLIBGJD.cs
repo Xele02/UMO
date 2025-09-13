@@ -5,9 +5,9 @@ using System.Text.RegularExpressions;
 public class PDMEOLIBGJD : IKMBBPDBECA
 {
 	// RVA: 0xCC1EC0 Offset: 0xCC1EC0 VA: 0xCC1EC0 Slot: 4
-	public override void KHEKNNFCAOI(string DLENPPIJNPA)
+	public override void KHEKNNFCAOI(string _DLENPPIJNPA_json)
     {
-		EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(DLENPPIJNPA);
+		EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(_DLENPPIJNPA_json);
 		if(data.BBAJPINMOEP_Contains("name"))
 		{
 			OPFGFINHFCE_Name = (string)data["name"];
@@ -160,7 +160,7 @@ public class PDMEOLIBGJD : IKMBBPDBECA
 		{
 			if(data["close_at"].EPNAPDBIJJE_IsString)
 			{
-				EABMLBFHJBH_CloseAtString = (string)data["close_at"];
+				EABMLBFHJBH_CloseAt = (string)data["close_at"];
 			}
 		}
 		if(data.BBAJPINMOEP_Contains("open_time"))
@@ -193,11 +193,11 @@ public class PDMEOLIBGJD : IKMBBPDBECA
 				{
 					CEBFFLDKAEC_SecureInt d = new CEBFFLDKAEC_SecureInt();
 					d.DNJEJEANJGL_Value = a;
-					int ep = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[a - 1].KELFCMEOPPM_Ep;
-					HGBOODNMNFM h = NNDMIOEKKMM_NewEpisode.Find((HGBOODNMNFM GHPLINIACBB) =>
+					int ep = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[a - 1].KELFCMEOPPM_Ep;
+					HGBOODNMNFM h = NNDMIOEKKMM_NewEpisode.Find((HGBOODNMNFM _GHPLINIACBB_x) =>
 					{
 						//0xCC4394
-						return ep == GHPLINIACBB.KELFCMEOPPM_EpisodeId;
+						return ep == _GHPLINIACBB_x.KELFCMEOPPM_EpisodeId;
 					});
 					if(h != null)
 					{

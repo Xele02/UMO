@@ -31,7 +31,7 @@ namespace XeApp.Game.Menu
 			{
 				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.LBDOLHGDIEB_GetUnlockedCostumeOrDefault(friend.JIGONEMPPNP_Diva.AHHJLDLAPAN_DivaId, friend.JIGONEMPPNP_Diva.JPIDIENBGKH_CostumeId);
 				divaId = cos.AHHJLDLAPAN_DivaId;
-				divaCostumeId = cos.DAJGPBLEEOB_PrismCostumeModelId;
+				divaCostumeId = cos.DAJGPBLEEOB_ModelId;
 				divaCostumeColorId = friend.JIGONEMPPNP_Diva.EKFONBFDAAP_ColorId;
 			}
 			isKira = false;
@@ -46,7 +46,7 @@ namespace XeApp.Game.Menu
 			playerLevel = friend.PCEGKKLKFNO.ADFIHAPELAN_PLevel;
 			score = friend.PCEGKKLKFNO.KNIFCANOHOC_Score;
 			isOwner = friend.PCEGKKLKFNO.ONAFFLLLBHE_IsSelf;
-			musicRatio = friend.BJGOPOEAAIC_MusicRatio;
+			musicRatio = friend.BJGOPOEAAIC_UtaRate;
 			scoreRatingRank = friend.AGJIIKKOKFJ_ScoreRatingRank;
 		}
 

@@ -81,7 +81,7 @@ namespace XeApp.Game.Menu
 			Vector2 p = new Vector2(318, 103);
 			for(int i = 0; i < divaList.Count; i++)
 			{
-				if(divaList[i].IPJMPBANBPP_Enabled && divaList[i].FJODMPGPDDD_DivaHave)
+				if(divaList[i].IPJMPBANBPP_Enabled && divaList[i].FJODMPGPDDD_Unlocked)
 				{
 					ItemParam item = new ItemParam(divaList[i], new Vector2(0, 0), p);
 					m_paramList.Add(item);
@@ -201,7 +201,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0x1721A30 Offset: 0x1721A30 VA: 0x1721A30
 		public void UpdateScroll()
 		{
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			float f = 0;
 			float f2 = 0;
 			AIPOFGJGPKI_CampaignDiva.KBLBMGDILAI a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NGCCGLLLDIB_CampaignDiva.MDKOCDHIDMA(time);

@@ -101,7 +101,7 @@ namespace XeApp.Game.Menu
 		// private void SelectHomeBgScene(SceneSelectHomeBgLayout.PlateState plateState) { }
 
 		// // RVA: 0x1379968 Offset: 0x1379968 VA: 0x1379968
-		// private void SetSceneIcon(SceneSelectHomeBgLayout.PlateState plateState, GCIJNCFDNON sceneData, SceneSelectHomeBgLayout.SetBgType setBgType) { }
+		// private void SetSceneIcon(SceneSelectHomeBgLayout.PlateState plateState, _GCIJNCFDNON_SceneInfo sceneData, SceneSelectHomeBgLayout.SetBgType setBgType) { }
 
 		// [IteratorStateMachineAttribute] // RVA: 0x72DF04 Offset: 0x72DF04 VA: 0x72DF04
 		// // RVA: 0x1379B10 Offset: 0x1379B10 VA: 0x1379B10

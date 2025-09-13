@@ -285,7 +285,7 @@ namespace XeApp.Game.Menu
 			int baseRare = 0;
 			if (index > -1)
 			{
-				List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList;
+				List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table;
 				if(index < scenes.Count)
 				{
 					baseRare = scenes[index].EKLIPGELKCL_Rarity;
@@ -365,7 +365,7 @@ namespace XeApp.Game.Menu
 			int baseRare = 0;
 			if(index >= 0)
 			{
-				List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList;
+				List<MLIBEPGADJH_Scene.KKLDOOJBJMN> scenes = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table;
 				if (index < scenes.Count)
 				{
 					baseRare = scenes[index].EKLIPGELKCL_Rarity;

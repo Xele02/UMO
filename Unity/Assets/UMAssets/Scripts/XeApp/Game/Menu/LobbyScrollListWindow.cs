@@ -380,7 +380,7 @@ namespace XeApp.Game.Menu
 					it.EnmblemCount = data.KDHCKDHIHIP_EmblemCount;
 					it.utarate_rank = data.AILEOFKIELL_UtaRateRank;
 					it.utarate = data.KIFEGLJLEDC_TotalUtaRate;
-					it.Messge = data.EBBJPBGHJOL_Content;
+					it.Messge = data.EBBJPBGHJOL_text;
 					it.Time = data.EKEGHNPNCEH_UpdateAt;
 					it.ResourceType = _playerId == _cm.MLPEHNBNOGD_WritterId ? 1 : 2;
 					m_list.Add(it);
@@ -417,7 +417,7 @@ namespace XeApp.Game.Menu
 					Debug.Log("StringLiteral_18439");
 					ANPBHCNJIDI.KNGOGLLMKDL data = _cm as ANPBHCNJIDI.KNGOGLLMKDL;
 					DefeatBossListItem it = new DefeatBossListItem();
-					it.Messge = data.EBBJPBGHJOL_Content;
+					it.Messge = data.EBBJPBGHJOL_text;
 					it.Damage = data.HALIDDHLNEG_Damage;
 					it.BossType = data.MFMPCHIJINJ_BossType;
 					it.ChatType = CommentType.BattleLog;
@@ -443,7 +443,7 @@ namespace XeApp.Game.Menu
 					Debug.Log("StringLiteral_18440");
 					ANPBHCNJIDI.NBHIMCACDHM data = _cm as ANPBHCNJIDI.NBHIMCACDHM;
 					MacrossCannonListItem it = new MacrossCannonListItem();
-					it.Messge = data.EBBJPBGHJOL_Content;
+					it.Messge = data.EBBJPBGHJOL_text;
 					it.Damage = data.HALIDDHLNEG_Damage;
 					it.Defeat = data.IGNJCGMLBDA_Defeat;
 					it.Time = data.EKEGHNPNCEH_UpdateAt;
@@ -463,7 +463,7 @@ namespace XeApp.Game.Menu
 					it.IsPickUp = m_raidSelect == 0;
 					it.BossImageNum = data.JNBDLNBKDCO_BossImage;
 					it.BossRank = data.EJGDHAENIDC_BossRank;
-					it.LogId = data.CNOHJPEHHCH_LogId;
+					it.LogId = data.CNOHJPEHHCH_StampId;
 					it.utarate_rank = data.AILEOFKIELL_UtaRateRank;
 					it.WavId = data.KKPAHLMJKIH_WavId;
 					it.utarate = data.KIFEGLJLEDC_TotalUtaRate;
@@ -475,7 +475,7 @@ namespace XeApp.Game.Menu
 					Debug.Log("StringLiteral_18440");
 					ANPBHCNJIDI.JLHGKKIEALB data = _cm as ANPBHCNJIDI.JLHGKKIEALB;
 					FullComboListItem it = new FullComboListItem();
-					it.Messge = data.EBBJPBGHJOL_Content;
+					it.Messge = data.EBBJPBGHJOL_text;
 					it.FreeId = data.ADHMMMEOJMK_FreeMusicId;
 					it.ChatType = CommentType.BattleLog;
 					it.DiveId = data.AHHJLDLAPAN_DivaId;
@@ -794,7 +794,7 @@ namespace XeApp.Game.Menu
 			else
 			{
 				NKOBMDPHNGP_EventRaidLobby.GDNGPJINPDK d = _cont.IBDNMIFLEKK(NKOBMDPHNGP_EventRaidLobby.NGHEKBHLBAN.CFBJGAGBJEN_0);
-				SetGuideCharaData(d.FDBOPFEOENF_Id, d.IJLLIGENJCI_Pic, d.LJGOOOMOMMA_Message);
+				SetGuideCharaData(d.FDBOPFEOENF_Diva, d.IJLLIGENJCI_Pic, d.LJGOOOMOMMA_Message);
 			}
 		}
 

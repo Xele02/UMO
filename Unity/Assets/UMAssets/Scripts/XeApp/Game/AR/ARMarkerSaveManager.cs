@@ -97,7 +97,7 @@ namespace XeApp.Game.AR
             {
                 if(marker_no <= arPlayerData.LCLPLFCBDBB_ArMarker.DNKNFFPLGNM.Count)
                 {
-                    arPlayerData.LCLPLFCBDBB_ArMarker.DNKNFFPLGNM[marker_no - 1].BEBJKJKBOGH_Date = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+                    arPlayerData.LCLPLFCBDBB_ArMarker.DNKNFFPLGNM[marker_no - 1].BEBJKJKBOGH_Date = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
                 }
             }
             if(isExistPlayerData)

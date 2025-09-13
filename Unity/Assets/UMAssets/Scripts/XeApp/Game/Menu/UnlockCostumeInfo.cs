@@ -70,7 +70,7 @@ namespace XeApp.Game.Menu
 			FFHPBEPOMAK_DivaInfo diva = null;
 			for(int i = 0; i < l.Count; i++)
 			{
-				if(l[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId == cos_id)
+				if(l[i].FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId == cos_id)
 				{
 					diva = l[i];
 					break;

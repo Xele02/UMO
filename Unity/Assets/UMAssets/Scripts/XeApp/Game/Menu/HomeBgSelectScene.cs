@@ -163,18 +163,18 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < l.Count; i++)
 			{
 				GCIJNCFDNON_SceneInfo scene = PlayerData.OPIBAPEGCLA_Scenes[l[i]];
-				if(scene.EKLIPGELKCL_SceneRarity == scene.JKGFBFPIMGA_Rarity)
+				if(scene.EKLIPGELKCL_Rarity == scene.JKGFBFPIMGA_Rarity)
 				{
-					if(PopupSortMenu.IsRarityFilterOn(scene.EKLIPGELKCL_SceneRarity, rarityFilterBit))
+					if(PopupSortMenu.IsRarityFilterOn(scene.EKLIPGELKCL_Rarity, rarityFilterBit))
 					{
 						m_sceneIndexList.Add(new SceneInfo() { index = l[i], evolveId = (short)scene.CGIELKDLHGE_GetEvolveId() });
 					}
 				}
 				else
 				{
-					if (PopupSortMenu.IsRarityFilterOn(scene.JKGFBFPIMGA_Rarity, rarityFilterBit) || PopupSortMenu.IsRarityFilterOn(scene.EKLIPGELKCL_SceneRarity, rarityFilterBit))
+					if (PopupSortMenu.IsRarityFilterOn(scene.JKGFBFPIMGA_Rarity, rarityFilterBit) || PopupSortMenu.IsRarityFilterOn(scene.EKLIPGELKCL_Rarity, rarityFilterBit))
 					{
-						if(PopupSortMenu.IsRarityFilterOn(scene.EKLIPGELKCL_SceneRarity, rarityFilterBit))
+						if(PopupSortMenu.IsRarityFilterOn(scene.EKLIPGELKCL_Rarity, rarityFilterBit))
 						{
 							m_sceneIndexList.Add(new SceneInfo() { index = l[i], evolveId = 2 });
 						}
@@ -263,7 +263,7 @@ namespace XeApp.Game.Menu
 		}
 
 		//// RVA: 0x95DFB4 Offset: 0x95DFB4 VA: 0x95DFB4
-		//private int GetSameEvaluationValue(GCIJNCFDNON left, GCIJNCFDNON right) { }
+		//private int GetSameEvaluationValue(_GCIJNCFDNON_SceneInfo left, _GCIJNCFDNON_SceneInfo right) { }
 
 		//// RVA: 0x95DEE8 Offset: 0x95DEE8 VA: 0x95DEE8
 		private int GetSameEvaluationValue2(GCIJNCFDNON_SceneInfo left, GCIJNCFDNON_SceneInfo right)

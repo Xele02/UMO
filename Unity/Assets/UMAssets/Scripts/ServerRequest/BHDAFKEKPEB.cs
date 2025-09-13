@@ -36,7 +36,7 @@ public class BHDAFKEKPEB_GetStepUpLotRecords : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0xC7EE8C Offset: 0xC7EE8C VA: 0xC7EE8C Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG = null;
 		BNJPAKLNOPA_WorkerThreadQueue.Add(DIAMDBHBKBH);

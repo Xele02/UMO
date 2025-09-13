@@ -53,7 +53,7 @@ namespace XeApp.Game.Menu
 			//// RVA: 0x1A908EC Offset: 0x1A908EC VA: 0x1A908EC
 			public void SetNewMark(LayoutStorySelectController ssController)
 			{
-				if(!viewStageData.BCGLDMKODLC_StatusCompleted)
+				if(!viewStageData.BCGLDMKODLC_IsClear)
 				{
 					if(!viewStageData.HHBJAEOIGIH_IsLocked)
 					{
@@ -107,7 +107,7 @@ namespace XeApp.Game.Menu
 							layoutIcon.SetPosition(new Vector3(f, pos.y, pos.z));
 							if (!IsEffect())
 							{
-								if(!viewStageData.BCGLDMKODLC_StatusCompleted)
+								if(!viewStageData.BCGLDMKODLC_IsClear)
 								{
 									if (isEmphasis)
 									{
@@ -532,7 +532,7 @@ namespace XeApp.Game.Menu
 				LIEJFHMGNIA viewStageData = m_viewDataList[index];
 				StorySelectStageIcon layout = m_scrollViewList[index].layoutIcon;
 				StorySelectStageTerminationIcon layoutTermination = m_scrollViewList[index].layoutTerminationIcon;
-				if (!viewStageData.BCGLDMKODLC_StatusCompleted)
+				if (!viewStageData.BCGLDMKODLC_IsClear)
 				{
 					CallbackEffectPhaseEnd = () =>
 					{
@@ -646,7 +646,7 @@ namespace XeApp.Game.Menu
 				if((m_viewDataList[a - 1].AHHJLDLAPAN_DivaId & 0xfffffffeU) == 8)
 				{
 					c = a - 1;
-					if (m_viewDataList[a - 1].BCGLDMKODLC_StatusCompleted)
+					if (m_viewDataList[a - 1].BCGLDMKODLC_IsClear)
 						c = a;
 				}
 			}
@@ -687,7 +687,7 @@ namespace XeApp.Game.Menu
 				{
 					if(!m_viewDataList[i].HHBJAEOIGIH_IsLocked)
 					{
-						if(!m_viewDataList[i].BCGLDMKODLC_StatusCompleted)
+						if(!m_viewDataList[i].BCGLDMKODLC_IsClear)
 						{
 							m_scrollViewList[i].size = LAYOUT_SIZE_L;
 							m_scrollViewList[i].isSizeL = true;
@@ -697,7 +697,7 @@ namespace XeApp.Game.Menu
 				b = false;
 				if((m_viewDataList[i].AHHJLDLAPAN_DivaId & 0xfffffffeU) == 8)
 				{
-					b = !m_viewDataList[i].BCGLDMKODLC_StatusCompleted;
+					b = !m_viewDataList[i].BCGLDMKODLC_IsClear;
 				}
 				m_scrollViewList[i].pos = v;
 				m_scrollViewList[i].pos.x += m_scrollViewList[i].size.x * -0.5f;
@@ -707,7 +707,7 @@ namespace XeApp.Game.Menu
 			UpdateScrollInner();
 			for(int i = 0; i < m_scrollViewList.Count; i++)
 			{
-				if(!m_scrollViewList[i].viewStageData.BCGLDMKODLC_StatusCompleted)
+				if(!m_scrollViewList[i].viewStageData.BCGLDMKODLC_IsClear)
 				{
 					if (!m_scrollViewList[i].viewStageData.EOBACDCDGOF_IsTerminate)
 					{
@@ -754,7 +754,7 @@ namespace XeApp.Game.Menu
 			{
 				if(!m_viewDataList[index].HHBJAEOIGIH_IsLocked)
 				{
-					if(!m_viewDataList[index].BCGLDMKODLC_StatusCompleted)
+					if(!m_viewDataList[index].BCGLDMKODLC_IsClear)
 					{
 						m_scrollViewList[index].isSizeL = true;
 						m_scrollViewList[index].size = LAYOUT_SIZE_L;
@@ -767,7 +767,7 @@ namespace XeApp.Game.Menu
 			EffectType eff;
 			IsEffectIcon(m_viewDataList[index], out eff);
 			UpdateScrollInner();
-			if(!m_scrollViewList[index].viewStageData.BCGLDMKODLC_StatusCompleted)
+			if(!m_scrollViewList[index].viewStageData.BCGLDMKODLC_IsClear)
 			{
 				if (!m_scrollViewList[index].viewStageData.EOBACDCDGOF_IsTerminate)
 				{
@@ -833,7 +833,7 @@ namespace XeApp.Game.Menu
 				{
 					if(!m_viewDataList[i].HHBJAEOIGIH_IsLocked)
 					{
-						if(!m_viewDataList[i].BCGLDMKODLC_StatusCompleted)
+						if(!m_viewDataList[i].BCGLDMKODLC_IsClear)
 						{
 							item.isSizeL = true;
 							s = LAYOUT_SIZE_L;
@@ -843,7 +843,7 @@ namespace XeApp.Game.Menu
 				b2 = false;
 				if((m_viewDataList[i].AHHJLDLAPAN_DivaId & 0xfffffffeU) == 8)
 				{
-					b2 = !m_viewDataList[i].BCGLDMKODLC_StatusCompleted;
+					b2 = !m_viewDataList[i].BCGLDMKODLC_IsClear;
 				}
 				item.size = s;
 				item.pos = v;
@@ -853,7 +853,7 @@ namespace XeApp.Game.Menu
 			}
 			for(int i = start; i < m_scrollViewList.Count; i++)
 			{
-				if(!m_scrollViewList[i].viewStageData.BCGLDMKODLC_StatusCompleted)
+				if(!m_scrollViewList[i].viewStageData.BCGLDMKODLC_IsClear)
 				{
 					if(!m_scrollViewList[i].viewStageData.EOBACDCDGOF_IsTerminate)
 					{
@@ -1050,7 +1050,7 @@ namespace XeApp.Game.Menu
 			{
 				if (m_freeNewMarkIcon == null)
 					yield break;
-				if(!m_scrollViewList[i].viewStageData.BCGLDMKODLC_StatusCompleted)
+				if(!m_scrollViewList[i].viewStageData.BCGLDMKODLC_IsClear)
 				{
 					if(m_scrollViewList[i].layoutIcon != null)
 					{
@@ -1113,7 +1113,7 @@ namespace XeApp.Game.Menu
 				}
 			}
 			LIEJFHMGNIA l = m_viewDataList[f];
-			BJPLLEBHAGO_DivaInfo diva = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas[l.AHHJLDLAPAN_DivaId - 1];
+			BJPLLEBHAGO_DivaInfo diva = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[l.AHHJLDLAPAN_DivaId - 1];
 			CGFNKMNBNBN.HHGLKFFKFAB(diva.AHHJLDLAPAN_DivaId);
 			if(CGFNKMNBNBN.JBNMNPMCIBM_HaveBg(diva.CMBCBNEODPD_HomeBgId))
 				yield break;
@@ -1451,7 +1451,7 @@ namespace XeApp.Game.Menu
 				{
 					if((m_viewDataList[index].AHHJLDLAPAN_DivaId & 0xfffffffeU) == 8)
 					{
-						return !m_viewDataList[index].BCGLDMKODLC_StatusCompleted;
+						return !m_viewDataList[index].BCGLDMKODLC_IsClear;
 					}
 				}
 			}
@@ -1631,12 +1631,12 @@ namespace XeApp.Game.Menu
 			{
 				if (MenuScene.Instance != null)
 				{
-					LAEGMENIEDB_Story.ALGOILKGAAH dbStory = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OHCIFMDPAPD_Story.CDENCMNHNGA[stageData.LFLLLOPAKCO_StoryId - 1];
+					LAEGMENIEDB_Story.ALGOILKGAAH dbStory = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OHCIFMDPAPD_Story.CDENCMNHNGA_table[stageData.LFLLLOPAKCO_StoryId - 1];
 					int freeMusicId = dbStory.ICKPLIABPKC_FreeMusicId;
 					MusicSelectArgs arg = null;
 					if (freeMusicId > 0)
 					{
-						long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+						long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 						for (int i = 1; i - 1 <= 5; i++)
 						{
 							List<IBJAKJJICBC> l = IBJAKJJICBC.FKDIMODKKJD(i, time, true, false, false, false);

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate bool MEIEDGPOMOO(int BMBBDIAEOMP, int EHGBICNIBKE, long IFNLEKOILPM, List<string> OHNJJIMGKGK, EDOHBJAPLPF_JsonData NMICBJDPLOH);
+public delegate bool MEIEDGPOMOO(int _BMBBDIAEOMP_i, int _EHGBICNIBKE_PlayerId, long IFNLEKOILPM, List<string> OHNJJIMGKGK, EDOHBJAPLPF_JsonData NMICBJDPLOH);
 
 [System.Obsolete("Use NJNCAHLIHNI_GetPlayerData", true)]
 public class NJNCAHLIHNI { }
@@ -21,7 +21,7 @@ public class NJNCAHLIHNI_GetPlayerData : CACGCMBKHDI_Request
 		public List<OKMDAFICFHJ> AIGKNOKPMEJ_Players; // 0x8
 	}
 
-	public List<int> FAMHAPONILI_Ids; // 0x7C
+	public List<int> FAMHAPONILI_PlayerIds; // 0x7C
 	public List<string> HHIHCJKLJFF_BlockNames; // 0x80
 	public const int GLOLJBMGDNP = 50;
 	public MEIEDGPOMOO PINPBOCDKLI; // 0x84
@@ -32,11 +32,11 @@ public class NJNCAHLIHNI_GetPlayerData : CACGCMBKHDI_Request
 	// RVA: 0x18ABC90 Offset: 0x18ABC90 VA: 0x18ABC90 Slot: 12
 	public override void DHLDNIEELHO()
 	{
-		EBGACDGNCAA_CallContext = SakashoPlayerData.GetPlayerData(FAMHAPONILI_Ids.ToArray(), HHIHCJKLJFF_BlockNames.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
+		EBGACDGNCAA_CallContext = SakashoPlayerData.GetPlayerData(FAMHAPONILI_PlayerIds.ToArray(), HHIHCJKLJFF_BlockNames.ToArray(), DCKLDDCAJAP, MEOCKCJBDAD);
 	}
 
 	// RVA: 0x18ABE0C Offset: 0x18ABE0C VA: 0x18ABE0C Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG = null;
 		BNJPAKLNOPA_WorkerThreadQueue.Add(DIAMDBHBKBH);

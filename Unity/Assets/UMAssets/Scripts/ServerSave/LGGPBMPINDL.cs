@@ -25,9 +25,9 @@ public class LGGPBMPINDL_EventRaidPlayer : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xD7395C Offset: 0xD7395C VA: 0xD7395C
-	public bool IPLBEGCODDC(int EKANGPODCEP)
+	public bool IPLBEGCODDC(int _EKANGPODCEP_EventId)
 	{
-		return EKANGPODCEP == OBGBAOLONDD && EKANGPODCEP != 0 && OBGBAOLONDD != 0 && MEBHCFJCKFE_LobbyId != 0;
+		return _EKANGPODCEP_EventId == OBGBAOLONDD && _EKANGPODCEP_EventId != 0 && OBGBAOLONDD != 0 && MEBHCFJCKFE_LobbyId != 0;
 	}
 
 	// // RVA: 0xD73990 Offset: 0xD73990 VA: 0xD73990
@@ -99,7 +99,7 @@ public class LGGPBMPINDL_EventRaidPlayer : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xD741C0 Offset: 0xD741C0 VA: 0xD741C0 Slot: 7
-	public override void BMGGKONLFIC(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
+	public override void BMGGKONLFIC_Copy(KLFDBFMNLBL_ServerSaveBlock GPBJHKLFCEP)
 	{
 		LGGPBMPINDL_EventRaidPlayer other = GPBJHKLFCEP as LGGPBMPINDL_EventRaidPlayer;
 		MEBHCFJCKFE_LobbyId = other.MEBHCFJCKFE_LobbyId;
@@ -124,5 +124,5 @@ public class LGGPBMPINDL_EventRaidPlayer : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0xD74470 Offset: 0xD74470 VA: 0xD74470 Slot: 10
-	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock GJLFANGDGCL, long MCKEOKFMLAH);
+	//public override void AGHKODFKOJI(BHBONAHFKHD JBBHNIACMFJ, KLFDBFMNLBL_ServerSaveBlock _GJLFANGDGCL_Target, long MCKEOKFMLAH);
 }

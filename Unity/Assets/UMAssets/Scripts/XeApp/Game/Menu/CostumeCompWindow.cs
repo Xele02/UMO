@@ -115,7 +115,7 @@ namespace XeApp.Game.Menu
 			m_voicePlayer.PlayVoiceRandom(CostumeUpgradeVoiceDataTable.VoiceSetting(CostumeUpgradeVoiceDataTable.VoiceType.PointUp, 1), -1);
 			m_costume.SetCostumeIcon(new CostumeUpgradeUtility.CostumeData.Setting() {
 				divaId = data.AHHJLDLAPAN_DivaId,
-				costumeModelId = data.DAJGPBLEEOB_PrismCostumeId,
+				costumeModelId = data.DAJGPBLEEOB_ModelId,
 				colorId = null,
 				isHave = true,
 				rankMax = data.LLLCMHENKKN_LevelMax,
@@ -136,7 +136,7 @@ namespace XeApp.Game.Menu
 			SetGauge(m_currentPoint);
 			m_costume.SetCostumeIcon(new CostumeUpgradeUtility.CostumeData.Setting() {
 				divaId = m_data.AHHJLDLAPAN_DivaId,
-				costumeModelId = m_data.DAJGPBLEEOB_PrismCostumeId,
+				costumeModelId = m_data.DAJGPBLEEOB_ModelId,
 				colorId = null,
 				isHave = true,
 				rankMax = m_data.LLLCMHENKKN_LevelMax,
@@ -156,7 +156,7 @@ namespace XeApp.Game.Menu
 			SetGauge(m_currentPoint);
 			m_costume.SetCostumeIcon(new CostumeUpgradeUtility.CostumeData.Setting() {
 				divaId = data.AHHJLDLAPAN_DivaId,
-				costumeModelId = data.DAJGPBLEEOB_PrismCostumeId,
+				costumeModelId = data.DAJGPBLEEOB_ModelId,
 				colorId = null,
 				isHave = true,
 				rankMax = data.LLLCMHENKKN_LevelMax,
@@ -248,7 +248,7 @@ namespace XeApp.Game.Menu
 			});
 			m_costume.SetCostumeIcon(new CostumeUpgradeUtility.CostumeData.Setting() {
 				divaId = m_data.AHHJLDLAPAN_DivaId,
-				costumeModelId = m_data.DAJGPBLEEOB_PrismCostumeId,
+				costumeModelId = m_data.DAJGPBLEEOB_ModelId,
 				colorId = null,
 				isHave = true,
 				rankMax = m_data.LLLCMHENKKN_LevelMax,

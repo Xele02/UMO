@@ -59,9 +59,9 @@ namespace XeApp.Game.RhythmGame
 			if(Database.Instance.gameSetup.teamInfo.divaList[0].activeSkillId > 0)
 			{
 				CDNKOFIELMK skillInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[Database.Instance.gameSetup.teamInfo.divaList[0].activeSkillId - 1];
-				for (int k = 0; k < skillInfo.EGLDFPILJLG_BuffEffectType.Length; k++)
+				for (int k = 0; k < skillInfo.EGLDFPILJLG_SkillBuffEffect.Length; k++)
 				{
-					if (skillInfo.EGLDFPILJLG_BuffEffectType[k] != 0)
+					if (skillInfo.EGLDFPILJLG_SkillBuffEffect[k] != 0)
 					{
 						ActiveSkill sk = new ActiveSkill();
 						activeSkill = sk;
@@ -226,12 +226,12 @@ namespace XeApp.Game.RhythmGame
 				if(ls.buffEffectType == SkillBuffEffect.Type.ScoreUpPercentage_FoldWave)
 				{
 					res = (status.energy.GetGaugeValue() / IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(ls.baseBuffEffectValue).HLMMBNCIIAC_Value2[ls.skillLevel - 1]) * IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(ls.baseBuffEffectValue).HLMMBNCIIAC_Value2[ls.skillLevel - 1];
-					res = a_skill.CalcEffectValueUp(Mathf.Min(res, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(ls.baseBuffEffectValue).DOOGFEGEKLG_ValueMax));
+					res = a_skill.CalcEffectValueUp(Mathf.Min(res, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(ls.baseBuffEffectValue).DOOGFEGEKLG_Max));
 				}
 				else if (ls.buffEffectType == SkillBuffEffect.Type.ScoreUpPercentage_Intimacy)
 				{
 					res = (Database.Instance.gameSetup.teamInfo.divaList[a_skill.ownerDivaIndex].intimacyLv / IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(ls.baseBuffEffectValue).KCOHMHFBDKF_Value1[ls.skillLevel - 1]) * IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(ls.baseBuffEffectValue).HLMMBNCIIAC_Value2[ls.skillLevel - 1];
-					res = a_skill.CalcEffectValueUp(Mathf.Min(res, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(ls.baseBuffEffectValue).DOOGFEGEKLG_ValueMax));
+					res = a_skill.CalcEffectValueUp(Mathf.Min(res, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.HJGDBBPDHON(ls.baseBuffEffectValue).DOOGFEGEKLG_Max));
 				}
 			}
 			return res;

@@ -41,7 +41,7 @@ namespace XeApp.Game.Menu
 				m_stepIndex = data.LKHAAGIJEPG_PlayerStatus.DBNAGGGJDAB_CurrentStepIndex;
 			}
 			m_buttonPrev.Disable = m_stepIndex < 2;
-			m_buttonNext.Disable = m_stepData.BMFEGOMNECF_Step.Count <= m_stepIndex;
+			m_buttonNext.Disable = m_stepData.BMFEGOMNECF_Steps.Count <= m_stepIndex;
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			m_textContent.text = string.Format(bk.GetMessageByLabel("popup_gacha_rate_stepup"), m_stepIndex);
 		}

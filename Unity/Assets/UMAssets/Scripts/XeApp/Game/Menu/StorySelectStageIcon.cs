@@ -96,7 +96,7 @@ namespace XeApp.Game.Menu
 			gameObject.SetActive(true);
 			SetButtonEnable(false);
 			bool enable = false;
-			if (!viewStageData.BCGLDMKODLC_StatusCompleted)
+			if (!viewStageData.BCGLDMKODLC_IsClear)
 			{
 				if (!viewStageData.NDLKPJDHHCN_NotShown && !viewStageData.DHPNLACAGPG)
 					enable = !viewStageData.PGCCOCKGCKO;
@@ -236,7 +236,7 @@ namespace XeApp.Game.Menu
 				return;
 			if(m_effect_abs != null && viewStageData != null)
 			{
-				if(!viewStageData.PGCCOCKGCKO && !viewStageData.BCGLDMKODLC_StatusCompleted)
+				if(!viewStageData.PGCCOCKGCKO && !viewStageData.BCGLDMKODLC_IsClear)
 				{
 					m_isPlayEmphasis = true;
 					m_syncEmphasisAnimParam.Initialize(1, 74);
@@ -249,7 +249,7 @@ namespace XeApp.Game.Menu
 		{
 			if(m_is_large && viewStageData != null)
 			{
-				if (viewStageData.BCGLDMKODLC_StatusCompleted)
+				if (viewStageData.BCGLDMKODLC_IsClear)
 					return;
 				if(m_effect_abs != null)
 				{
@@ -312,7 +312,7 @@ namespace XeApp.Game.Menu
 				{
 					if (!viewData.DHPNLACAGPG)
 					{
-						if (!viewData.BCGLDMKODLC_StatusCompleted)
+						if (!viewData.BCGLDMKODLC_IsClear)
 						{
 							if(!viewData.PGCCOCKGCKO)
 							{

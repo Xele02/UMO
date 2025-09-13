@@ -8,12 +8,12 @@ public class JNKDLNLLHCE_ClaimSubscriptionContinuationBonus : CACGCMBKHDI_Reques
 {
     public class KHNBILNPGFF
     {
-        public List<long> COGMPENEPBD = new List<long>(); // 0x8
+        public List<long> COGMPENEPBD_InventoryIds = new List<long>(); // 0x8
 
         // RVA: 0x1B8FF68 Offset: 0x1B8FF68 VA: 0x1B8FF68
         public void KHEKNNFCAOI(EDOHBJAPLPF_JsonData IDLHJIOMJBK)
         {
-            COGMPENEPBD.Clear();
+            COGMPENEPBD_InventoryIds.Clear();
             if(IDLHJIOMJBK.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.GLJINGPAEDM_subscription_continuation_bonuses))
             {
                 EDOHBJAPLPF_JsonData bonus = IDLHJIOMJBK[AFEHLCGHAEE_Strings.GLJINGPAEDM_subscription_continuation_bonuses];
@@ -24,7 +24,7 @@ public class JNKDLNLLHCE_ClaimSubscriptionContinuationBonus : CACGCMBKHDI_Reques
                         EDOHBJAPLPF_JsonData invs = bonus[i][AFEHLCGHAEE_Strings.EGPADBNAOKP_inventory_ids];
                         for(int j = 0; j < invs.HNBFOAJIIAL_Count; j++)
                         {
-                            COGMPENEPBD.Add((long)invs[j]);
+                            COGMPENEPBD_InventoryIds.Add((long)invs[j]);
                         }
                     }
                 }
@@ -41,7 +41,7 @@ public class JNKDLNLLHCE_ClaimSubscriptionContinuationBonus : CACGCMBKHDI_Reques
     }
 
 	// RVA: 0x1B8FE08 Offset: 0x1B8FE08 VA: 0x1B8FE08 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
     {
         NFEAMMJIMPG = new KHNBILNPGFF();
         NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

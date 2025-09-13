@@ -112,7 +112,7 @@ public class GHLGEECLCMH
 				ECEPJHGMGBJ data = new ECEPJHGMGBJ();
 				data.KHEKNNFCAOI(JPJHBJAHPFP_HsRating.hsRatingMusicData[i, FJFCNGNGIBN].FreeMusicId);
 				data.LPALNMHPDKK_Score = JPJHBJAHPFP_HsRating.hsRatingMusicData[i, FJFCNGNGIBN].Score;
-				data.FJOLNJLLJEJ_RankNum = JPJHBJAHPFP_HsRating.hsRatingMusicData[i, FJFCNGNGIBN].RankNum;
+				data.FJOLNJLLJEJ_Rank = JPJHBJAHPFP_HsRating.hsRatingMusicData[i, FJFCNGNGIBN].RankNum;
 				data.AKNELONELJK_Difficulty = (Difficulty.Type)(JPJHBJAHPFP_HsRating.hsRatingMusicData[i, FJFCNGNGIBN].Difficulty > 4 ? 0 : JPJHBJAHPFP_HsRating.hsRatingMusicData[i, FJFCNGNGIBN].Difficulty);
 				data.LFGNLKKFOCD_IsLine6 = JPJHBJAHPFP_HsRating.hsRatingMusicData[i, FJFCNGNGIBN].isLine6 != 0;
 				if(HOHNHJEFCBF_PrevHsRating != null)

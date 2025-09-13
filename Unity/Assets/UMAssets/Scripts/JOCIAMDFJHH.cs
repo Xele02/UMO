@@ -42,7 +42,7 @@ public class JOCIAMDFJHH
 	}
 
 	//// RVA: 0x1BA2CA0 Offset: 0x1BA2CA0 VA: 0x1BA2CA0
-	//public List<DAJBODHMLAB.MMLACIFMNBN> JPPOALLHLKA() { }
+	//public List<DAJBODHMLAB_DecoPublicSet.MMLACIFMNBN> JPPOALLHLKA() { }
 
 	//// RVA: 0x1BA2A30 Offset: 0x1BA2A30 VA: 0x1BA2A30
 	//private bool LMEKFGOFLBC(int IOPHIHFOOEP) { }

@@ -256,10 +256,10 @@ namespace XeApp.Game.Menu
 			{
 				int cosId = 1;
 				int divaId = 1;
-				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[id - 1];
+				LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[id - 1];
 				if(cos != null)
 				{
-					cosId = cos.DAJGPBLEEOB_PrismCostumeModelId;
+					cosId = cos.DAJGPBLEEOB_ModelId;
 					divaId = cos.AHHJLDLAPAN_DivaId;
 				}
 				MenuScene.Instance.Call(TransitionList.Type.UNLOCK_COSTUME, 
@@ -276,7 +276,7 @@ namespace XeApp.Game.Menu
 		{
 			if(type != LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType.CFOEMAAKOMC_4_CostumeColor)
 				return 1;
-			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_Costumes[id - 1];
+			LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo cos = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MFPNGNMFEAL_Costume.CDENCMNHNGA_table[id - 1];
 			int idx = 0;
 			if(cos != null)
 			{

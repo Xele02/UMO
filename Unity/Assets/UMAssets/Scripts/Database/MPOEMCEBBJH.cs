@@ -21,14 +21,14 @@ public class MPOEMCEBBJH_Pilot : DIHHCBACKGG_DbSection
 	}
 
 	[UMOMember(ReaderMember = "NNCNIHFAPBO", Desc = "List of pilots")]
-	public List<KOAKMNKEHDE_PilotInfo> CDENCMNHNGA_PilotList { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
+	public List<KOAKMNKEHDE_PilotInfo> CDENCMNHNGA_table { get; private set; } // 0x20 GIODFKFCBMO JDMECLDHNOF ILHOADLEJPB
 
 	//// RVA: 0x17BC85C Offset: 0x17BC85C VA: 0x17BC85C
 	public KOAKMNKEHDE_PilotInfo GCINIJEMHFK_GetPilot(int PPFNGGCBJKC)
 	{
-		if(PPFNGGCBJKC != 0 && PPFNGGCBJKC <= CDENCMNHNGA_PilotList.Count)
+		if(PPFNGGCBJKC != 0 && PPFNGGCBJKC <= CDENCMNHNGA_table.Count)
 		{
-			return CDENCMNHNGA_PilotList[PPFNGGCBJKC - 1];
+			return CDENCMNHNGA_table[PPFNGGCBJKC - 1];
 		}
 		return null;
 	}
@@ -39,19 +39,19 @@ public class MPOEMCEBBJH_Pilot : DIHHCBACKGG_DbSection
 		JIKKNHIAEKG_BlockName = "";
 		LNIMEIMBCMF = false;
 		LMHMIIKCGPE = 65;
-		CDENCMNHNGA_PilotList = new List<KOAKMNKEHDE_PilotInfo>(100);
+		CDENCMNHNGA_table = new List<KOAKMNKEHDE_PilotInfo>(100);
 	}
 
 	// RVA: 0x17BCA1C Offset: 0x17BCA1C VA: 0x17BCA1C Slot: 8
 	protected override void KMBPACJNEOF()
 	{
-		CDENCMNHNGA_PilotList.Clear();
+		CDENCMNHNGA_table.Clear();
 	}
 
 	// RVA: 0x17BCA94 Offset: 0x17BCA94 VA: 0x17BCA94 Slot: 9
-	public override bool IIEMACPEEBJ(byte[] DBBGALAPFGC)
+	public override bool IIEMACPEEBJ(byte[] _DBBGALAPFGC_Data)
 	{
-		LBMIEHAHNFD parser = LBMIEHAHNFD.HEGEKFMJNCC(DBBGALAPFGC);
+		LBMIEHAHNFD parser = LBMIEHAHNFD.HEGEKFMJNCC(_DBBGALAPFGC_Data);
 		KFIHBHIAMCL(parser);
 		return true;
 	}
@@ -73,7 +73,7 @@ public class MPOEMCEBBJH_Pilot : DIHHCBACKGG_DbSection
 			data.PFGJJLGLPAC_Id = (short)array[i].PPFNGGCBJKC;
 			data.AIHCEGFANAM_SerieAttr = (sbyte)array[i].JPFMJHLCMJL;
 			data.CHIMPKJDCPP_Pid = (short)array[i].MJMPANIBFED;
-			CDENCMNHNGA_PilotList.Add(data);
+			CDENCMNHNGA_table.Add(data);
 		}
 		return true;
 	}

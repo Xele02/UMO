@@ -7,7 +7,7 @@ public class IBBBOJEGGLE
 {
 	public int EHGBICNIBKE_PlayerId; // 0x8
 	public int EAIMNLAMBFJ_CreatedAt; // 0xC
-	public long BIOGKIEECGN_CreatedBy; // 0x10
+	public long BIOGKIEECGN_CreatedAt; // 0x10
 }
 
 [System.Obsolete("Use DPMKJDMNDNN_GetBlackList", true)]
@@ -32,7 +32,7 @@ public class DPMKJDMNDNN_GetBlackList : CACGCMBKHDI_Request
 				IBBBOJEGGLE data = new IBBBOJEGGLE();
 				data.EHGBICNIBKE_PlayerId = JsonUtil.GetInt(jsonData, "player_id", 0);
 				data.EAIMNLAMBFJ_CreatedAt = JsonUtil.GetInt(jsonData, "created_at", 0);
-				data.BIOGKIEECGN_CreatedBy = JsonUtil.GetLong(jsonData, "created_by", 0);
+				data.BIOGKIEECGN_CreatedAt = JsonUtil.GetLong(jsonData, "created_by", 0);
 				FOCOFKEFHIO_BlackList.Add(data);
 			}
 			HMFFHLPNMPH_Count = JsonUtil.GetInt(IDLHJIOMJBK, "count", 0);
@@ -53,7 +53,7 @@ public class DPMKJDMNDNN_GetBlackList : CACGCMBKHDI_Request
 	}
 
 	// RVA: 0x12355A4 Offset: 0x12355A4 VA: 0x12355A4 Slot: 13
-	public override void MGFNKDPHFGI(MonoBehaviour DANMJLOBLIE)
+	public override void MGFNKDPHFGI(MonoBehaviour _DANMJLOBLIE_mb)
 	{
 		NFEAMMJIMPG = new NOFBHALLIMD();
 		NFEAMMJIMPG.KHEKNNFCAOI(IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(NGCAIEGPLKD_result));

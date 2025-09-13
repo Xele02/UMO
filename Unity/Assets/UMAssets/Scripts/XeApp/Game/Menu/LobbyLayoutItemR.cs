@@ -314,7 +314,7 @@ namespace XeApp.Game.Menu
 				//0x1296868
 				return item.PPFNGGCBJKC == m_subId;
 			});
-			int attrId = dbInfo.GBJFNGCDKPM_FrameId;
+			int attrId = dbInfo.GBJFNGCDKPM_Type;
 			stampBallonImageId = attrId;
 			m_stampBallonImage.enabled = false;
 			MenuScene.Instance.DecorationItemTextureCache.LoadForSelectSerif(attrId, (IiconTexture image) =>

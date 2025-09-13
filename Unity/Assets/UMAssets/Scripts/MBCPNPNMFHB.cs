@@ -55,7 +55,7 @@ public class MBCPNPNMFHB
 	}
 
 	//// RVA: 0xA2D92C Offset: 0xA2D92C VA: 0xA2D92C
-	public void MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO INDDJNMPONH, IMCBBOAFION HIDFAIBOHCC_OnSuccess, IMCBBOAFION AOCANKOMKFG_OnFail)
+	public void MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO INDDJNMPONH, IMCBBOAFION HIDFAIBOHCC_OnSuccess, IMCBBOAFION _AOCANKOMKFG_OnError)
 	{
 		MHOILBOJFHL.KCAEDEHGAFO OIPCCBHIKIA = INDDJNMPONH;
 		LKFOCCGOINN_GetURL l = BAGOKKHNLDB(INDDJNMPONH);
@@ -82,7 +82,7 @@ public class MBCPNPNMFHB
 				}
 				if(eId == SakashoErrorId.NETWORK_ERROR || eId == eId2 || eId == SakashoErrorId.INACTIVE_PLAYER_DEVICE)
 				{
-					AOCANKOMKFG_OnFail();
+					_AOCANKOMKFG_OnError();
 				}
 				else
 				{
@@ -95,7 +95,7 @@ public class MBCPNPNMFHB
 	}
 
 	//// RVA: 0xA21E3C Offset: 0xA21E3C VA: 0xA21E3C
-	public void FLLLPBIECCP(string OKDLGFMLLFH, IMCBBOAFION HIDFAIBOHCC, DJBHIFLHJLK AOCANKOMKFG)
+	public void FLLLPBIECCP(string OKDLGFMLLFH, IMCBBOAFION HIDFAIBOHCC, DJBHIFLHJLK _AOCANKOMKFG_OnError)
 	{
 		AMFBEGANJGC_GetOriginalTemplateURL data = new AMFBEGANJGC_GetOriginalTemplateURL();
 		data.COHBIBEAMAF = OKDLGFMLLFH;
@@ -114,14 +114,14 @@ public class MBCPNPNMFHB
 			}
 			else
 			{
-				AOCANKOMKFG();
+				_AOCANKOMKFG_OnError();
 			}
 		};
 		NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(data);
 	}
 
 	//// RVA: 0xA2DE68 Offset: 0xA2DE68 VA: 0xA2DE68
-	public void PBIKAGIOOHC(string APLKCOFFHKN, IMCBBOAFION HIDFAIBOHCC, IMCBBOAFION AOCANKOMKFG)
+	public void PBIKAGIOOHC(string APLKCOFFHKN, IMCBBOAFION HIDFAIBOHCC, IMCBBOAFION _AOCANKOMKFG_OnError)
 	{
 		AIOILMKDPOG_GetInformationDetailURL req = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new AIOILMKDPOG_GetInformationDetailURL());
 		req.APLKCOFFHKN = APLKCOFFHKN;
@@ -138,7 +138,7 @@ public class MBCPNPNMFHB
 				NHECPMNKEFK.CJMFJOMECKI_ErrorId == SakashoErrorId.INVALID_PLAYER_TOKEN || 
 				NHECPMNKEFK.CJMFJOMECKI_ErrorId == SakashoErrorId.INACTIVE_PLAYER_DEVICE)
 			{
-				AOCANKOMKFG();
+				_AOCANKOMKFG_OnError();
 			}
 			else
 			{
@@ -196,29 +196,29 @@ public class MBCPNPNMFHB
 		//0xA2EA0C
 		string s = AppEnv.IsCBT() ? "riyou_kiyaku_sub" : "riyou_kiyaku";
 		DNALKLKKGAG = 0;
-		bool BEKAMBBOLBO = false;
+		bool BEKAMBBOLBO_Done = false;
 		string HPEPNAGOHEN = null;
-		SakashoError DOGDHKIEBJA = null;
+		SakashoError DOGDHKIEBJA_Error = null;
 		OIDFKCIECJN = SakashoSupportSite.GetCommonTemplateURL(s, (string IDLHJIOMJBK) =>
 		{
 			//0xA2E9C4
-			BEKAMBBOLBO = true;
+			BEKAMBBOLBO_Done = true;
 			HPEPNAGOHEN = IDLHJIOMJBK;
-		}, (SakashoError CNAIDEAFAAM) =>
+		}, (SakashoError _CNAIDEAFAAM_Error) =>
 		{
 			//0xA2E9D4
-			BEKAMBBOLBO = false;
-			DOGDHKIEBJA = CNAIDEAFAAM;
+			BEKAMBBOLBO_Done = false;
+			DOGDHKIEBJA_Error = _CNAIDEAFAAM_Error;
 		});
 		OLIDBAGENIL = false;
-		while(!BEKAMBBOLBO)
+		while(!BEKAMBBOLBO_Done)
 		{
 			DNALKLKKGAG += Time.deltaTime;
 			if(DNALKLKKGAG >= 15)
 			{
 				OLIDBAGENIL = true;
 				OIDFKCIECJN.CancelAPICall();
-				BEKAMBBOLBO = true;
+				BEKAMBBOLBO_Done = true;
 				break;
 			}
 			yield return null;
@@ -227,23 +227,23 @@ public class MBCPNPNMFHB
 		{
 			if(HPEPNAGOHEN == null)
 			{
-				if(DOGDHKIEBJA == null)
+				if(DOGDHKIEBJA_Error == null)
 					yield break;
-				Debug.Log("errorId=" + DOGDHKIEBJA.getErrorId().ToString());
-				BEKAMBBOLBO = false;
+				Debug.Log("errorId=" + DOGDHKIEBJA_Error.getErrorId().ToString());
+				BEKAMBBOLBO_Done = false;
 				TextPopupSetting setting = new TextPopupSetting();
 				setting.TitleText = JpStringLiterals.StringLiteral_11918;
 				setting.Buttons = new ButtonInfo[1]
 				{
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 				};
-				setting.Text = string.Format(JpStringLiterals.StringLiteral_12462, DOGDHKIEBJA.getErrorId().ToString());
+				setting.Text = string.Format(JpStringLiterals.StringLiteral_12462, DOGDHKIEBJA_Error.getErrorId().ToString());
 				PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 				{
 					//0xA2E9FC
-					BEKAMBBOLBO = true;
+					BEKAMBBOLBO_Done = true;
 				}, null, null, null, true, true, false, null, null, null, null, null);
-				while(!BEKAMBBOLBO)
+				while(!BEKAMBBOLBO_Done)
 					yield return null;
 			}
 			else
@@ -251,19 +251,19 @@ public class MBCPNPNMFHB
 				EDOHBJAPLPF_JsonData data = IKPIMINCOPI_JsonMapper.PFAMKCGJKKL_ToObject(HPEPNAGOHEN);
 				string url = (string)data[AFEHLCGHAEE_Strings.MCHAINJKMEB_url_with_token];
 				Debug.Log("url_with_token=" + url);
-				BEKAMBBOLBO = false;
+				BEKAMBBOLBO_Done = false;
 				OIPOPJCPDPC_DisplayUrlCb(url, () =>
 				{
 					//0xA2E9F0
-					BEKAMBBOLBO = true;
+					BEKAMBBOLBO_Done = true;
 				}, true, false);
-				while(!BEKAMBBOLBO)
+				while(!BEKAMBBOLBO_Done)
 					yield return null;
 			}
 		}
 		else
 		{
-			BEKAMBBOLBO = false;
+			BEKAMBBOLBO_Done = false;
 			TextPopupSetting setting = new TextPopupSetting();
 			setting.TitleText = JpStringLiterals.StringLiteral_11918;
 			setting.Buttons = new ButtonInfo[1]
@@ -274,9 +274,9 @@ public class MBCPNPNMFHB
 			PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType INDDJNMPONH, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 			{
 				//0xA2E9E4
-				BEKAMBBOLBO = true;
+				BEKAMBBOLBO_Done = true;
 			}, null, null, null, true, true, false, null, null, null, null, null);
-			while(!BEKAMBBOLBO)
+			while(!BEKAMBBOLBO_Done)
 				yield return null;
 		}
 	}

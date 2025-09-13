@@ -6,7 +6,7 @@ public class EPPOHFLMDBC { }
 [UMOClass(ReaderClass = "DCHENGJKOKI")]
 public class EPPOHFLMDBC_DivaStats
 {
-	public int FBGGEFFJJHB_Key = 0x1a915b; // 0x8
+	public int FBGGEFFJJHB_xor = 0x1a915b; // 0x8
 	public int MBCPMFPKNBA_LevelCrypted; // 0xC
 	public int DBJFLJIMONP_LifeCrypted; // 0x10
 	public int NDKJOJLCJBI_SoulCrypted; // 0x14
@@ -16,24 +16,24 @@ public class EPPOHFLMDBC_DivaStats
 	public int EHDLPKCCJIA_SupportCrypted; // 0x24
 
 	[UMOMember(ReaderMember = "", ReaderDisplay = "DivaStat")]
-	public int ANAJIAENLNB_Level { get { return FBGGEFFJJHB_Key ^ MBCPMFPKNBA_LevelCrypted; } set { MBCPMFPKNBA_LevelCrypted = FBGGEFFJJHB_Key ^ value; } } //0xFC14D4 MMOMNMBKHJF 0xFC14E4 FEHNFGPFINK
+	public int ANAJIAENLNB_Level { get { return FBGGEFFJJHB_xor ^ MBCPMFPKNBA_LevelCrypted; } set { MBCPMFPKNBA_LevelCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC14D4 MMOMNMBKHJF 0xFC14E4 FEHNFGPFINK
 	[UMOMember(ReaderMember = "BCCOMAODPJI|OEOIHIIIMCK", ReaderDisplay = "DivaStat_1")]
-	public int HFIDCMNFBJG_Life { get { return FBGGEFFJJHB_Key ^ DBJFLJIMONP_LifeCrypted; } set { DBJFLJIMONP_LifeCrypted = FBGGEFFJJHB_Key ^ value; } } //0xFC14F4 CMDOHPBAFCO 0xFC1504 BJBDGCMJNEO
+	public int HFIDCMNFBJG_Life { get { return FBGGEFFJJHB_xor ^ DBJFLJIMONP_LifeCrypted; } set { DBJFLJIMONP_LifeCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC14F4 CMDOHPBAFCO 0xFC1504 BJBDGCMJNEO
 	[UMOMember(ReaderMember = "LJELGFAFGAB|OEOIHIIIMCK", ReaderDisplay = "DivaStat_2")]
-	public int PFJCOCPKABN_Soul { get { return FBGGEFFJJHB_Key ^ NDKJOJLCJBI_SoulCrypted; } set { NDKJOJLCJBI_SoulCrypted = FBGGEFFJJHB_Key ^ value; } } //0xFC1514 EJPPLFNLAAO 0xFC1524 NEMMJEJENFD
+	public int PFJCOCPKABN_Soul { get { return FBGGEFFJJHB_xor ^ NDKJOJLCJBI_SoulCrypted; } set { NDKJOJLCJBI_SoulCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC1514 EJPPLFNLAAO 0xFC1524 NEMMJEJENFD
 	[UMOMember(ReaderMember = "KNEDJFLCCLN|OEOIHIIIMCK", ReaderDisplay = "DivaStat_3")]
-	public int JFJDLEMNKFE_Vocal { get { return FBGGEFFJJHB_Key ^ GLMAGOANCLM_VocalCrypted; } set { GLMAGOANCLM_VocalCrypted = FBGGEFFJJHB_Key ^ value; } }// 0xFC1534 GCMPLDKECFM 0xFC1544 CEHKELOHIBD
+	public int JFJDLEMNKFE_Vocal { get { return FBGGEFFJJHB_xor ^ GLMAGOANCLM_VocalCrypted; } set { GLMAGOANCLM_VocalCrypted = FBGGEFFJJHB_xor ^ value; } }// 0xFC1534 GCMPLDKECFM 0xFC1544 CEHKELOHIBD
 	[UMOMember(ReaderMember = "MBAMIOJNGBD|OEOIHIIIMCK", ReaderDisplay = "DivaStat_4")]
-	public int GDOLPGBLMEA_Charm { get { return FBGGEFFJJHB_Key ^ CHINMGJCEDH_CharmCrypted; } set { CHINMGJCEDH_CharmCrypted = FBGGEFFJJHB_Key ^ value; } } //0xFC1554 LEHDODJMICA 0xFC1564 IKPOCJDOOGA
+	public int GDOLPGBLMEA_Charm { get { return FBGGEFFJJHB_xor ^ CHINMGJCEDH_CharmCrypted; } set { CHINMGJCEDH_CharmCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC1554 LEHDODJMICA 0xFC1564 IKPOCJDOOGA
 	[UMOMember(ReaderMember = "ADLGKMBIPCA|OEOIHIIIMCK", ReaderDisplay = "DivaStat_5")]
-	public int ONDFNOOICLE_Fold { get { return FBGGEFFJJHB_Key ^ EAJBBFLFDHI_FoldCrypted; } set { EAJBBFLFDHI_FoldCrypted = FBGGEFFJJHB_Key ^ value; } } //0xFC1574 OGGOHKCANFG 0xFC1584 BKMHMPEBNPE
+	public int ONDFNOOICLE_Fold { get { return FBGGEFFJJHB_xor ^ EAJBBFLFDHI_FoldCrypted; } set { EAJBBFLFDHI_FoldCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC1574 OGGOHKCANFG 0xFC1584 BKMHMPEBNPE
 	[UMOMember(ReaderMember = "PIPCIMIALOO|OEOIHIIIMCK", ReaderDisplay = "DivaStat_6")]
-	public int HCFOMFDPGEC_Support { get { return FBGGEFFJJHB_Key ^ EHDLPKCCJIA_SupportCrypted; } set { EHDLPKCCJIA_SupportCrypted = FBGGEFFJJHB_Key ^ value; } } //0xFC1594 GGIDKCOMCJL 0xFC15A4 LAIHOHGICJD
+	public int HCFOMFDPGEC_Support { get { return FBGGEFFJJHB_xor ^ EHDLPKCCJIA_SupportCrypted; } set { EHDLPKCCJIA_SupportCrypted = FBGGEFFJJHB_xor ^ value; } } //0xFC1594 GGIDKCOMCJL 0xFC15A4 LAIHOHGICJD
 
 	// // RVA: 0xFC15B4 Offset: 0xFC15B4 VA: 0xFC15B4
-	public void DOMFHDPMCCO_Init(int ANAJIAENLNB_Level, int FBGGEFFJJHB_Key, short JKPPKAHPPKH_Life, short MKMIEGPOKGG_Soul, short MELGGCAIONF_Vocal, short LDLHPACIIAB_Charm, short JNNDFGPMEDA_Fold, short IDOIMLGLPAB_Support)
+	public void DOMFHDPMCCO_Init(int ANAJIAENLNB_Level, int _FBGGEFFJJHB_xor, short JKPPKAHPPKH_Life, short MKMIEGPOKGG_Soul, short MELGGCAIONF_Vocal, short LDLHPACIIAB_Charm, short JNNDFGPMEDA_Fold, short IDOIMLGLPAB_Support)
 	{
-		this.FBGGEFFJJHB_Key = FBGGEFFJJHB_Key;
+		this.FBGGEFFJJHB_xor = _FBGGEFFJJHB_xor;
 		this.ANAJIAENLNB_Level = ANAJIAENLNB_Level;
 		HFIDCMNFBJG_Life = JKPPKAHPPKH_Life;
 		PFJCOCPKABN_Soul = MKMIEGPOKGG_Soul;
@@ -98,7 +98,7 @@ public class BJPLLEBHAGO_DivaInfo
 	[UMOMember(ReaderMember = "BAOFEFFADPD", Name = "Birthday day")]
 	public sbyte PKNONBBKCCP_Day; // 0xE
 	[UMOMember(ReaderMemberChild = "DFEDIAPLFHN", ReaderDisplay = "PropagateReader", Name = "Stats by level", Desc = "Diva stat for each level.\nLevel 0 has the base value, then for each level, add a stat.\nAdditional values are stored in alternative type/value. Types are : \n* 1:Life\n* 2:Sould\n* 3:Vocal\n* 4:Charm\n* 5:Fold\n* 6:Support")]
-	public List<EPPOHFLMDBC_DivaStats> CMCKNKKCNDK_StatsByLevel = new List<EPPOHFLMDBC_DivaStats>(); // 0x14
+	public List<EPPOHFLMDBC_DivaStats> CMCKNKKCNDK_Status = new List<EPPOHFLMDBC_DivaStats>(); // 0x14
 
 	[UMOMember(ReaderMember = "JPFMJHLCMJL", Name = "Attribute", Desc = "Refer to the series where the diva belongs.")]
 	public sbyte AIHCEGFANAM_SerieAttr { get; set; } // 0x8 FJOGAAMLJMA ANEJPLENMAL HEHDOGFEIOL

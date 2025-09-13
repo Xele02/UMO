@@ -419,7 +419,7 @@ namespace XeApp.Game.Menu
 					yield return null;
 				MenuScene.Instance.InputEnable();
 				d = m_eventStoryData.FFPCLEONGHE[index];
-				BOKMNHAFJHF_Sns.KEIGMAOCJHK_Talk sns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA_Talks[d.PBPOLELIPJI_AdventureId];
+				BOKMNHAFJHF_Sns.KEIGMAOCJHK_Talk sns = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.OMGFKMANMAB_Sns.CDENCMNHNGA_table[d.PBPOLELIPJI_AdventureId];
 				ILCCJNDFFOB.HHCJCDFCLOB.JOLBIMMKGIP(sns.MALFHCHNEFN_RoomId, sns.AIPLIEMLHGC_SnsId, sns.AJIDLAGFPGM_TalkId, EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.FMIIHMHKJDI_SpItem, 1));
 				textPopup.TitleText = bank.GetMessageByLabel("event_story_text_008");
 				textPopup.Text = bank.GetMessageByLabel("event_story_text_010");

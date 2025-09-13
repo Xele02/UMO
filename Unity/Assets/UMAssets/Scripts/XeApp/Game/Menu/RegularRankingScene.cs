@@ -78,7 +78,7 @@ namespace XeApp.Game.Menu
 		{
 			//NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester
 			m_windowUi.SetMessageVisible(false);
-			CNNIKANJMNG.HHCJCDFCLOB.FAMFKPBPIAA(NGNLPIBPHJH.DEPGBBJMFED, m_musicData.GHBPLHBNMBK_FreeMusicId, isFriendList, baseRank, rankingIdx, OnReceivedRankingList, OnRankingError, OnNetError);
+			CNNIKANJMNG.HHCJCDFCLOB.FAMFKPBPIAA_GetRankingPlayerList(NGNLPIBPHJH.DEPGBBJMFED_CategoryId, m_musicData.GHBPLHBNMBK_FreeMusicId, isFriendList, baseRank, rankingIdx, OnReceivedRankingList, OnRankingError, OnNetError);
 		}
 
 		// RVA: 0xCF9EA4 Offset: 0xCF9EA4 VA: 0xCF9EA4 Slot: 35

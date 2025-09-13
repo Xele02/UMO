@@ -1227,7 +1227,7 @@ namespace XeApp.Game.Menu
 					isNew = true;
 					if(!AODFBGCCBPE.PLKKMHBFDCJ())
 					{
-						isNew = DKKPBBBDKMJ.CADENLBDAEB();
+						isNew = DKKPBBBDKMJ.CADENLBDAEB_IsNew();
 					}
 				}
 				else
@@ -1239,7 +1239,7 @@ namespace XeApp.Game.Menu
 				if (nextTransition == TransitionList.Type.OFFER_RESULT || prevTransition == TransitionList.Type.OFFER_SELECT)
 					return;
 				bool d = KDHGBOOECKC.HHCJCDFCLOB.PPPLNJCFAID();
-				long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+				long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 				KDHGBOOECKC.HHCJCDFCLOB.JPNPPIHOJFC(time);
 				MenuScene.Instance.FooterMenu.SetButtonNew(MenuFooterControl.Button.VOP, nextTransition != TransitionList.Type.OFFER_SELECT && d);
 				MenuScene.Instance.FooterMenu.SetOfferUnlockRank();
@@ -2037,7 +2037,7 @@ namespace XeApp.Game.Menu
 							int res = 0;
 							for(int i = 0; i < GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas.Count; i++)
 							{
-								res += GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[i].FJODMPGPDDD_DivaHave ? 1 : 0;
+								res += GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[i].FJODMPGPDDD_Unlocked ? 1 : 0;
 							}
 							return res > 1;
 						}
@@ -2055,7 +2055,7 @@ namespace XeApp.Game.Menu
 						{
 
 							AEKDNMPPOJN data = new AEKDNMPPOJN();
-							MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_SceneList[args.ViewSceneData.BCCHOBPJJKE_SceneId - 1];
+							MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[args.ViewSceneData.BCCHOBPJJKE_SceneId - 1];
 							data.KHEKNNFCAOI(args.ViewSceneData.JKGFBFPIMGA_Rarity, args.ViewSceneData.MKHFCGPJPFI_LimitOverCount,
 								scene.PKNGPIFNIGN(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board, args.ViewSceneData.JPIPENJGGDD_NumBoard, IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.GENHLFPKOEE(scene.EKLIPGELKCL_Rarity, scene.MCCIFLKCNKO_Feed)));
 							if (data.LJHOOPJACPI_LeafMax > 0)

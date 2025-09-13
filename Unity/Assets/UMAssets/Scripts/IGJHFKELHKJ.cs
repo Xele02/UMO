@@ -11,11 +11,11 @@ public class IGJHFKELHKJ
         public uint AAFDKMODECB; // 0x18
         public bool CPBPOIMHIML; // 0x1C
 
-        public uint IOIMHJAOKOO { get { return FBGGEFFJJHB ^ AAFDKMODECB; } set { AAFDKMODECB = value ^ FBGGEFFJJHB; } } //0x11F5288 HJMJGBCJBIN 0x11F60B8 OLGHLLNJPKD
+        public uint IOIMHJAOKOO { get { return FBGGEFFJJHB_xor ^ AAFDKMODECB; } set { AAFDKMODECB = value ^ FBGGEFFJJHB_xor; } } //0x11F5288 HJMJGBCJBIN 0x11F60B8 OLGHLLNJPKD
     }
     
 	private const int BIAOPOMKMJE = 0x28747411;
-	private static uint FBGGEFFJJHB = 0x171114; // 0x0
+	private static uint FBGGEFFJJHB_xor = 0x171114; // 0x0
 	public Dictionary<uint, IGJHFKELHKJ.HPJEDLPEJLF> BEIEHPNODAM = new Dictionary<uint, IGJHFKELHKJ.HPJEDLPEJLF>(); // 0x8
 	private string JHJMNLMNPGO_BasePath; // 0xC
 
@@ -58,7 +58,7 @@ public class IGJHFKELHKJ
 	// // RVA: 0x11F5320 Offset: 0x11F5320 VA: 0x11F5320
 	public void PCODDPDFLHK()
 	{
-		IGJHFKELHKJ.FBGGEFFJJHB = (uint)(Utility.GetCurrentUnixTime() + 100);
+		IGJHFKELHKJ.FBGGEFFJJHB_xor = (uint)(Utility.GetCurrentUnixTime() + 100);
 		BEIEHPNODAM.Clear();
 		JHJMNLMNPGO_BasePath = CJMOKHDNBNB.FIPFFELDIOG_PersistentPath + KCOGAGGCPBP.HAFLEFNJAKD_DirSys; // /sys
 		if(!Directory.Exists(JHJMNLMNPGO_BasePath))

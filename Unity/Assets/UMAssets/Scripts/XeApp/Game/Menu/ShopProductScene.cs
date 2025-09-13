@@ -195,7 +195,7 @@ namespace XeApp.Game.Menu
 							//0xC4587C
 							return id == item.PPFNGGCBJKC_Id;
 						});
-						if(it.CPKMLLNADLJ != 0)
+						if(it.CPKMLLNADLJ_Serie != 0)
 							continue;
 					}
 					if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
@@ -205,7 +205,7 @@ namespace XeApp.Game.Menu
 							//0xC457F4
 							return id == item.PPFNGGCBJKC_Id;
 						});
-						if(it.CPKMLLNADLJ != 0)
+						if(it.CPKMLLNADLJ_Serie != 0)
 							continue;
 					}
 				}
@@ -218,23 +218,23 @@ namespace XeApp.Game.Menu
 							//0xC45838
 							return id == item.PPFNGGCBJKC;
 						});
-                        if (it.CPKMLLNADLJ != 0)
+                        if (it.CPKMLLNADLJ_Serie != 0)
 							continue;
 					}
 					if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.ICJOEDJECAP_DecoSetItem)
 					{
-                        BBLECJKKKLA_DecoSetItem.GJBPBKNHLHC_DecoSetItemInfo it = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MJALLIOHKEJ_DecoSetItem.CDENCMNHNGA.Find((BBLECJKKKLA_DecoSetItem.GJBPBKNHLHC_DecoSetItemInfo item) =>
+                        BBLECJKKKLA_DecoSetItem.GJBPBKNHLHC_DecoSetItemInfo it = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MJALLIOHKEJ_DecoSetItem.CDENCMNHNGA_table.Find((BBLECJKKKLA_DecoSetItem.GJBPBKNHLHC_DecoSetItemInfo item) =>
 						{
 							//0xC458C0
 							return id == item.PPFNGGCBJKC_Id;
 						});
-                        if (it.CPKMLLNADLJ != 0)
+                        if (it.CPKMLLNADLJ_Serie != 0)
 							continue;
 					}
 				}
 				//LAB_00c40024
 				FJGOKILCBJA data = new FJGOKILCBJA();
-				data.CLCJHOIDENO(shopProductDataList[i].OPKDAIMPJBH_ShopId, cat, id, shopProductDataList[i].ELEPHBOKIGK_MaxCount, shopProductDataList[i].DKEPCPPCIKA_Price);
+				data.CLCJHOIDENO(shopProductDataList[i].OPKDAIMPJBH_ShopId, cat, id, shopProductDataList[i].ELEPHBOKIGK_Limit, shopProductDataList[i].DKEPCPPCIKA_Price);
 				shopProductDataList.Remove(shopProductDataList[i]);
 				shopProductDataList.Add(data);
 				end--;
@@ -394,7 +394,7 @@ namespace XeApp.Game.Menu
 			PopupItemUseConfirmSetting setting; // 0x24
 
 			//0xC485D8
-			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			period = CheckLimitedItem(view.KIJAPOFAGPN_ItemFullId, time);
 			if(period > 0)
 			{
@@ -495,7 +495,7 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			itemType = EKLNMHFCAOI.BKHFLDMOGBD_GetItemCategory(view.KIJAPOFAGPN_ItemFullId);
 			TextPopupSetting s = PopupWindowManager.CrateTextContent(bk.GetMessageByLabel("item_popup_shop_text_05"), SizeType.Middle, 
-				string.Format(bk.GetMessageByLabel("pbox_text_03"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(view.KIJAPOFAGPN_ItemFullId) + " " + (value * view.JDLJPNMLFID_Count).ToString() + EKLNMHFCAOI.NDBLEADIDLA(itemType, EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemFullId))), new ButtonInfo[1]
+				string.Format(bk.GetMessageByLabel("pbox_text_03"), EKLNMHFCAOI.INCKKODFJAP_GetItemName(view.KIJAPOFAGPN_ItemFullId) + " " + (value * view.JDLJPNMLFID_ItemCount).ToString() + EKLNMHFCAOI.NDBLEADIDLA(itemType, EKLNMHFCAOI.DEACAHNLMNI_getItemId(view.KIJAPOFAGPN_ItemFullId))), new ButtonInfo[1]
 				{
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 				}, false, true);
@@ -541,7 +541,7 @@ namespace XeApp.Game.Menu
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_003);
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
-			DateTime date = Utility.GetLocalDateTime(view.GJFPFFBAKGK);
+			DateTime date = Utility.GetLocalDateTime(view.GJFPFFBAKGK_CloseAt);
 			object[] obj = new object[6]
 			{
 				EKLNMHFCAOI.INCKKODFJAP_GetItemName(view.OCGCPJHDJEN),
@@ -576,11 +576,11 @@ namespace XeApp.Game.Menu
 			int a = 0;
 			if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.DLOPEFGOAPD_LimitedItem)
 			{
-				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IHPFCIJKFIC_LimitedItem.CDENCMNHNGA[id - 1].EMIJNAFJFJO;
+				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IHPFCIJKFIC_LimitedItem.CDENCMNHNGA_table[id - 1].EMIJNAFJFJO_Expir;
 			}
 			else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.CIOGEKJNMBB_RareUpItem)
 			{
-				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KKIMFMKOHFH_RareUpItem.CDENCMNHNGA[id - 1].EIGNPDFHIJA;
+				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KKIMFMKOHFH_RareUpItem.CDENCMNHNGA_table[id - 1].EIGNPDFHIJA;
 			}
 			else
 				return 0;
@@ -771,7 +771,7 @@ namespace XeApp.Game.Menu
 							//0xC461F8
 							return item.PPFNGGCBJKC_Id == id;
 						});
-						a = it.CPKMLLNADLJ;
+						a = it.CPKMLLNADLJ_Serie;
 					}
 					else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.MCKHJLHKMJD_DecoItemChara)
 					{
@@ -780,7 +780,7 @@ namespace XeApp.Game.Menu
 							//0xC46170
 							return item.PPFNGGCBJKC_Id == id;
 						});
-						a = it.CPKMLLNADLJ;
+						a = it.CPKMLLNADLJ_Serie;
 					}
 					else
 					{
@@ -798,16 +798,16 @@ namespace XeApp.Game.Menu
 							//0xC461B4
 							return item.PPFNGGCBJKC == id;
 						});
-						a = it.CPKMLLNADLJ;
+						a = it.CPKMLLNADLJ_Serie;
 					}
 					else if(cat == EKLNMHFCAOI.FKGCBLHOOCL_Category.ICJOEDJECAP_DecoSetItem)
 					{
-                        BBLECJKKKLA_DecoSetItem.GJBPBKNHLHC_DecoSetItemInfo it = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MJALLIOHKEJ_DecoSetItem.CDENCMNHNGA.Find((BBLECJKKKLA_DecoSetItem.GJBPBKNHLHC_DecoSetItemInfo item) =>
+                        BBLECJKKKLA_DecoSetItem.GJBPBKNHLHC_DecoSetItemInfo it = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MJALLIOHKEJ_DecoSetItem.CDENCMNHNGA_table.Find((BBLECJKKKLA_DecoSetItem.GJBPBKNHLHC_DecoSetItemInfo item) =>
 						{
 							//0xC4623C
 							return item.PPFNGGCBJKC_Id == id;
 						});
-						a = it.CPKMLLNADLJ;
+						a = it.CPKMLLNADLJ_Serie;
 					}
 					else
 					{
@@ -826,7 +826,7 @@ namespace XeApp.Game.Menu
 							//0xC46280
 							return item.PPFNGGCBJKC_Id == id;
 						});
-						if(!PopupSortMenu.IsInteriorTypeFilterOn(it.GBJFNGCDKPM_SpType, m_interiorFilter))
+						if(!PopupSortMenu.IsInteriorTypeFilterOn(it.GBJFNGCDKPM_Type, m_interiorFilter))
 							continue;
 					}
 					//LAB_00c40fe8
@@ -941,10 +941,10 @@ namespace XeApp.Game.Menu
 							continue;
 						GCIJNCFDNON_SceneInfo d2 = GameManager.Instance.ViewPlayerData.OPIBAPEGCLA_Scenes[sceneData.BCCHOBPJJKE_SceneId - 1];
 						if(PopupSortMenu.IsHaveFilterOn(d2.CGKAEMGLHNK_IsUnlocked(), (uint)sp.EGBPCFOGOCK_HaveFilter) && 
-							PopupSortMenu.IsRarityFilterOn(d2.EKLIPGELKCL_SceneRarity, (uint)sp.ACCHOFLOOEC_RarityFilter) && 
-							PopupSortMenu.IsAttributeFilterOn(d2.JGJFIJOCPAG_SceneAttr, (uint)sp.BOFFOHHLLFG_AttrFilter) && 
+							PopupSortMenu.IsRarityFilterOn(d2.EKLIPGELKCL_Rarity, (uint)sp.ACCHOFLOOEC_RarityFilter) && 
+							PopupSortMenu.IsAttributeFilterOn(d2.JGJFIJOCPAG_SceneAttr, (uint)sp.BOFFOHHLLFG_AttributeFilter) && 
 							PopupSortMenu.IsSerializeFilterOn((int)d2.AIHCEGFANAM_SerieAttr, (uint)sp.BBIIHLNBHDE_SerieFilter) && 
-							PopupSortMenu.IsCompatibleFilterOn(d2.AOLIJKMIJJE_DivaCompatible, (uint)sp.ABLBLOEKBKA_CompatibleFilter) && 
+							PopupSortMenu.IsCompatibleFilterOn(d2.AOLIJKMIJJE_Diva, (uint)sp.ABLBLOEKBKA_CompatibleFilter) && 
 							PopupSortMenu.IsNotesFilterOn(d2.IGPMJPPAILL_Note, (uint)sp.NLLEDCOAPIG_NoteExpectedFilter) && 
 							PopupSortMenu.IsSkillRangeFilterOn(d2.BJJNCCGPBGN, (uint)sp.OAJNACDACDF_LiveSkillRangeFilter) && 
 							PopupSortMenu.IsSkillRankFilterOn(d2.DHEFMEGKKDN_CenterSkillRank, d2.FFDCGHDNDFJ_CenterSkillRank2, (uint)sp.PFNPLBNHDJK_CenterSkillRankFilter) && 
@@ -993,12 +993,12 @@ namespace XeApp.Game.Menu
 					b = rightScene.NPHOIEOPIJO;
 					break;
 				case SortItem.Rarity:
-					a = leftScene.EKLIPGELKCL_SceneRarity;
-					b = rightScene.EKLIPGELKCL_SceneRarity;
+					a = leftScene.EKLIPGELKCL_Rarity;
+					b = rightScene.EKLIPGELKCL_Rarity;
 					break;
 				case SortItem.Level:
-					a = leftScene.CIEOBFIIPLD_SceneLevel;
-					b = rightScene.CIEOBFIIPLD_SceneLevel;
+					a = leftScene.CIEOBFIIPLD_Level;
+					b = rightScene.CIEOBFIIPLD_Level;
 					break;
 				case SortItem.Life:
 					a = leftScene.CMCKNKKCNDK_Status.life;

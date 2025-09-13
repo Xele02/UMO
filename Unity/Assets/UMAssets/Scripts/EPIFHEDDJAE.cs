@@ -11,7 +11,7 @@ public class EPIFHEDDJAE
 	public enum JAOBCBKBKJJ
 	{
 		HJNNKCMLGFL = 0,
-		FMHLGHDKJBC = 1,
+		FMHLGHDKJBC_1 = 1,
 		JIOPJDJBLFK = 2,
 		FIFJJFPHOEM = 3,
 	}

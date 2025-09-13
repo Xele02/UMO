@@ -142,7 +142,7 @@ namespace XeApp.Game.Menu
 			m_badgeData.FBANBDCOEJL((LayoutQuestTab.eTabType)index, true);
 			Debug.Log(new object[8]
 			{
-				"tabIndex:", index, " / badgeID:", m_badgeData.BEEIIJJKDBH_BadgeId, " / badgeText:", m_badgeData.BHANMJKCCBC_BadgeText, " / achievedCount:", m_badgeData.PKNLMLDKCLM_AchievedCount
+				"tabIndex:", index, " / badgeID:", m_badgeData.BEEIIJJKDBH_BadgeConstantId, " / badgeText:", m_badgeData.BHANMJKCCBC_BadgeText, " / achievedCount:", m_badgeData.PKNLMLDKCLM_AchievedCount
 			});
 			m_badgeIcons[index].Set(enable ? BadgeConstant.ID.Label : BadgeConstant.ID.None, m_badgeData.BHANMJKCCBC_BadgeText);
 		}

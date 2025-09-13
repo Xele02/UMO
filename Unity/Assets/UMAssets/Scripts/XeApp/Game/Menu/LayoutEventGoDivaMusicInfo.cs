@@ -205,12 +205,12 @@ namespace XeApp.Game.Menu
 			SetBonusIconOnOff(isOpenBonus);
 			if(musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].HHMLMKAEJBJ_Score != null)
 			{
-				SetLevel(musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].HHMLMKAEJBJ_Score.ANAJIAENLNB_MusicLevel, is6LineMode);
+				SetLevel(musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].HHMLMKAEJBJ_Score.ANAJIAENLNB_Level, is6LineMode);
 			}
 			if(musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].BCGLDMKODLC_IsClear)
 			{
 				int score = musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].KNIFCANOHOC_Score;
-				SetScoreRank((ResultScoreRank.Type)musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].BAKLKJLPLOJ.DLPBHJALHCK_GetScoreRank(score));
+				SetScoreRank((ResultScoreRank.Type)musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].BAKLKJLPLOJ_MusicLevel.DLPBHJALHCK_GetScoreRank(score));
 				SetHighScore(score);
 			}
 			else
@@ -225,7 +225,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0x1992634 Offset: 0x1992634 VA: 0x1992634
 		public void SetPlayButton(IBJAKJJICBC musicData, Difficulty.Type difficulty)
 		{
-			SetNeedEnergy(musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].BPLOEAHOPFI_Energy);
+			SetNeedEnergy(musicData.MGJKEJHEBPO_DiffInfos[(int)difficulty].BPLOEAHOPFI_Stamina);
 			SetPlayButtonType(musicData.IFNPBIJEPBO_IsDlded ? PlayButtonWrapper.Type.PlayEn : PlayButtonWrapper.Type.Download);
 		}
 

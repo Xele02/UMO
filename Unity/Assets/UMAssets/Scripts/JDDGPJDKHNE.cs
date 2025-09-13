@@ -238,15 +238,15 @@ public class JDDGPJDKHNE
 	}
 
 	// // RVA: 0x1C3232C Offset: 0x1C3232C VA: 0x1C3232C
-	private void MGGMIOBICLP_OnLogFail(SakashoError DOGDHKIEBJA)
+	private void MGGMIOBICLP_OnLogFail(SakashoError _DOGDHKIEBJA_Error)
 	{
 		ELFLFGCFPIP_LastSent = Utility.GetCurrentUnixTime();
-		if(DOGDHKIEBJA.getErrorId() == SakashoErrorId.NETWORK_ERROR)
+		if(_DOGDHKIEBJA_Error.getErrorId() == SakashoErrorId.NETWORK_ERROR)
 		{
 			DGKBPJBILIK = false;
 			ELFLFGCFPIP_LastSent += 180;
 		}
-		else if(DOGDHKIEBJA.getErrorId() == SakashoErrorId.SESSION_NOT_FOUND)
+		else if(_DOGDHKIEBJA_Error.getErrorId() == SakashoErrorId.SESSION_NOT_FOUND)
 		{
 			DGKBPJBILIK = false;
 		}
@@ -317,10 +317,10 @@ public class JDDGPJDKHNE
 	}
 
 	// // RVA: 0x1C32568 Offset: 0x1C32568 VA: 0x1C32568
-	private void HNDCPCFHKDB(SakashoError DOGDHKIEBJA)
+	private void HNDCPCFHKDB(SakashoError _DOGDHKIEBJA_Error)
 	{
 		MMLMIMLGPON = Utility.GetCurrentUnixTime();
-		SakashoErrorId eId = DOGDHKIEBJA.getErrorId();
+		SakashoErrorId eId = _DOGDHKIEBJA_Error.getErrorId();
 		if(eId < SakashoErrorId.INVALID_TEMPLATE_NAME)
 		{
 			if(eId < SakashoErrorId.MASTER_DATA_IDS_NOT_FOUND)
@@ -407,7 +407,7 @@ public class JDDGPJDKHNE
 		int gameId = 0;
 		byte[] bt = new byte[8];
 		int.TryParse(NKGJPJPHLIF.HHCJCDFCLOB.MLKOPOKGHHH_SakashoGameId, out gameId);
-		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		int playerId = NKGJPJPHLIF.HHCJCDFCLOB.MDAMJIGBOLD_PlayerId;
 		byte[] btTime = BitConverter.GetBytes((int)time);
 		bt[0] = btTime[0];

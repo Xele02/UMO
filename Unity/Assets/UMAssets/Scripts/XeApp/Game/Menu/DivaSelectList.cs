@@ -198,7 +198,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				MenuScene.Instance.DivaIconCache.Load(selectedDiva.AHHJLDLAPAN_DivaId, selectedDiva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, selectedDiva.EKFONBFDAAP_ColorId, (IiconTexture texture) => {
+				MenuScene.Instance.DivaIconCache.Load(selectedDiva.AHHJLDLAPAN_DivaId, selectedDiva.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, selectedDiva.EKFONBFDAAP_ColorId, (IiconTexture texture) => {
 					//0x17EC448
 					texture.Set(m_selectDivaIconImage);
 				});
@@ -288,7 +288,7 @@ namespace XeApp.Game.Menu
 		{
 			DivaSelectListIcon data = content as DivaSelectListIcon;
 			FFHPBEPOMAK_DivaInfo f = GameManager.Instance.ViewPlayerData.NBIGLBMHEDC_Divas[m_sortDivaList[index]];
-			data.SetDivaIcon(f.AHHJLDLAPAN_DivaId, f.FFKMJNHFFFL_Costume.DAJGPBLEEOB_PrismCostumeId, f.EKFONBFDAAP_ColorId, IsCenter(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH, f.AHHJLDLAPAN_DivaId), IsUnitMember(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH, f.AHHJLDLAPAN_DivaId));
+			data.SetDivaIcon(f.AHHJLDLAPAN_DivaId, f.FFKMJNHFFFL_Costume.DAJGPBLEEOB_ModelId, f.EKFONBFDAAP_ColorId, IsCenter(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH, f.AHHJLDLAPAN_DivaId), IsUnitMember(GameManager.Instance.ViewPlayerData.NPFCMHCCDDH, f.AHHJLDLAPAN_DivaId));
 			for(int i = 0; i < 3; i++)
 			{
 				if (i == 0)

@@ -14,15 +14,15 @@ public class NJOOMLFFIJB
 
 	public LGAJNFGABFK NEJBNCHLMNJ_Type; // 0x8
 	public long KJBGCLPMLCG_StartAt; // 0x10
-	public long GJFPFFBAKGK_EndAt; // 0x18
+	public long GJFPFFBAKGK_CloseAt; // 0x18
 	public int NKCNHKHGJHN_TalkType; // 0x20
 
 	// RVA: 0x18ACCF8 Offset: 0x18ACCF8 VA: 0x18ACCF8
 	public static List<NJOOMLFFIJB> FKDIMODKKJD(int PDJEMLMOEPF)
 	{
-		BJPLLEBHAGO_DivaInfo diva = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_Divas[PDJEMLMOEPF - 1];
-		List<NPCCDMKJBMM_HomeVoice.KLKLEALABPN> voiceList = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGIMEEEALPK_HomeVoice.CDENCMNHNGA;
-		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL.KMEFBNBFJHI_GetServerTime();
+		BJPLLEBHAGO_DivaInfo diva = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGFMPKLLGHE_Diva.CDENCMNHNGA_table[PDJEMLMOEPF - 1];
+		List<NPCCDMKJBMM_HomeVoice.KLKLEALABPN> voiceList = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MGIMEEEALPK_HomeVoice.CDENCMNHNGA_table;
+		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		DateTime date = Utility.GetLocalDateTime(time);
 		List<NJOOMLFFIJB> res = new List<NJOOMLFFIJB>();
 		for(int i = 0; i < voiceList.Count; i++)
@@ -31,7 +31,7 @@ public class NJOOMLFFIJB
 			{
 				if(voiceList[i].INDDJNMPONH == (int)LGAJNFGABFK.DDAFHPDFFPI_Brithday)
 				{
-					if(time >= voiceList[i].PDBPFJJCADD_StartAt && time < voiceList[i].FDBNFFNFOND_EndAt && voiceList[i].CHOFDPDFPDC_DivaId == PDJEMLMOEPF)
+					if(time >= voiceList[i].PDBPFJJCADD_StartAt && time < voiceList[i].FDBNFFNFOND_CloseAt && voiceList[i].CHOFDPDFPDC_ConfigValue == PDJEMLMOEPF)
 					{
 						if(diva.DOAJJALOKLI_Month == date.Month)
 						{
@@ -40,7 +40,7 @@ public class NJOOMLFFIJB
 								NJOOMLFFIJB data = new NJOOMLFFIJB();
 								data.NEJBNCHLMNJ_Type = LGAJNFGABFK.DDAFHPDFFPI_Brithday;
 								data.KJBGCLPMLCG_StartAt = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0);
-								data.GJFPFFBAKGK_EndAt = data.KJBGCLPMLCG_StartAt + 86399;
+								data.GJFPFFBAKGK_CloseAt = data.KJBGCLPMLCG_StartAt + 86399;
 								data.NKCNHKHGJHN_TalkType = voiceList[i].NKCNHKHGJHN_TalkType;
 								res.Add(data);
 							}
@@ -49,12 +49,12 @@ public class NJOOMLFFIJB
 				}
 				else if(voiceList[i].INDDJNMPONH == (int)LGAJNFGABFK.AJGKPBOPIJI_Limited)
 				{
-					if (time >= voiceList[i].PDBPFJJCADD_StartAt && time < voiceList[i].FDBNFFNFOND_EndAt && voiceList[i].CHOFDPDFPDC_DivaId == PDJEMLMOEPF)
+					if (time >= voiceList[i].PDBPFJJCADD_StartAt && time < voiceList[i].FDBNFFNFOND_CloseAt && voiceList[i].CHOFDPDFPDC_ConfigValue == PDJEMLMOEPF)
 					{
 						NJOOMLFFIJB data = new NJOOMLFFIJB();
 						data.NEJBNCHLMNJ_Type = LGAJNFGABFK.AJGKPBOPIJI_Limited;
 						data.KJBGCLPMLCG_StartAt = voiceList[i].PDBPFJJCADD_StartAt;
-						data.GJFPFFBAKGK_EndAt = voiceList[i].FDBNFFNFOND_EndAt;
+						data.GJFPFFBAKGK_CloseAt = voiceList[i].FDBNFFNFOND_CloseAt;
 						data.NKCNHKHGJHN_TalkType = voiceList[i].NKCNHKHGJHN_TalkType;
 						res.Add(data);
 					}
@@ -64,7 +64,7 @@ public class NJOOMLFFIJB
 					NJOOMLFFIJB data = new NJOOMLFFIJB();
 					data.NEJBNCHLMNJ_Type = LGAJNFGABFK.CCAPCGPIIPF_Normal;
 					data.KJBGCLPMLCG_StartAt = voiceList[i].PDBPFJJCADD_StartAt;
-					data.GJFPFFBAKGK_EndAt = voiceList[i].FDBNFFNFOND_EndAt;
+					data.GJFPFFBAKGK_CloseAt = voiceList[i].FDBNFFNFOND_CloseAt;
 					data.NKCNHKHGJHN_TalkType = voiceList[i].NKCNHKHGJHN_TalkType;
 					res.Add(data);
 				}

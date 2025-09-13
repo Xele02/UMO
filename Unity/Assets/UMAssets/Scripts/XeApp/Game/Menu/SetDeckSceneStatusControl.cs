@@ -112,7 +112,7 @@ namespace XeApp.Game.Menu
 					break;
 				case DisplayType.Level:
 					SetLevelEnable(true);
-					ApplyLevel(sceneData.CIEOBFIIPLD_SceneLevel, IsMaxLevel(sceneData));
+					ApplyLevel(sceneData.CIEOBFIIPLD_Level, IsMaxLevel(sceneData));
 					break;
 				case DisplayType.Life:
 					SetParamEnable(true);
@@ -157,7 +157,7 @@ namespace XeApp.Game.Menu
 		{
 			SetOff();
 			SetLevelEnable(true);
-			ApplyLevel(sceneData.CIEOBFIIPLD_SceneLevel, IsMaxLevel(sceneData));
+			ApplyLevel(sceneData.CIEOBFIIPLD_Level, IsMaxLevel(sceneData));
 			if (sceneData.MKHFCGPJPFI_LimitOverCount < 1)
 				return;
 			SetParamEnable(true);
@@ -332,7 +332,7 @@ namespace XeApp.Game.Menu
 		// // RVA: 0xA74F9C Offset: 0xA74F9C VA: 0xA74F9C
 		private bool IsMaxLevel(GCIJNCFDNON_SceneInfo sceneData)
 		{
-			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(sceneData.JKGFBFPIMGA_Rarity, true, sceneData.MCCIFLKCNKO_Feed) < sceneData.CIEOBFIIPLD_SceneLevel;
+			return IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.LAGGGIEIPEG(sceneData.JKGFBFPIMGA_Rarity, true, sceneData.MCCIFLKCNKO_Feed) < sceneData.CIEOBFIIPLD_Level;
 		}
 
 		// // RVA: 0xA76218 Offset: 0xA76218 VA: 0xA76218
@@ -342,7 +342,7 @@ namespace XeApp.Game.Menu
 		}
 
 		// // RVA: 0xA761E8 Offset: 0xA761E8 VA: 0xA761E8
-		// private bool CheckMatchActiveSkill(GCIJNCFDNON sceneData) { }
+		// private bool CheckMatchActiveSkill(_GCIJNCFDNON_SceneInfo sceneData) { }
 
 		// // RVA: 0xA7624C Offset: 0xA7624C VA: 0xA7624C
 		private bool CheckMatchLiveSkill(GCIJNCFDNON_SceneInfo sceneData, int divaId, int musicId)
