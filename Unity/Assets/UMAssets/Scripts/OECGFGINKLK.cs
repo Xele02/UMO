@@ -34,8 +34,8 @@ public class OECGFGINKLK
 	public const int KJALJPBIHLP = 38;
 
 	// RVA: 0x1B3C1C8 Offset: 0x1B3C1C8 VA: 0x1B3C1C8
-	public static bool NKBNHCECIPH(int _AKNELONELJK_Difficulty)
+	public static bool NKBNHCECIPH(int _AKNELONELJK_difficulty)
     {
-        return _AKNELONELJK_Difficulty < 5 && _AKNELONELJK_Difficulty > 0;
+        return _AKNELONELJK_difficulty < 5 && _AKNELONELJK_difficulty > 0;
     }
 }

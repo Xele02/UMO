@@ -45,7 +45,7 @@ public class FPGEMAIAMBF_RewardData
 	public List<LOIJICNJMKA> HFPMKBAANFO_ComboReward; // 0x10
 
 	//// RVA: 0x13FA620 Offset: 0x13FA620 VA: 0x13FA620
-	public void JMHCEMHPPCM(int _GHBPLHBNMBK_FreeMusicId, int AKNELONELJK_Difficulty, bool _LFGNLKKFOCD_IsLine6, int _MNNHHJBBICA_GameEventType/* = 0*/)
+	public void JMHCEMHPPCM(int _GHBPLHBNMBK_FreeMusicId, int AKNELONELJK_difficulty, bool _LFGNLKKFOCD_IsLine6, int _MNNHHJBBICA_GameEventType/* = 0*/)
 	{
 		JDDGGJCGOPA_RecordMusic.EHFMCGGNPIJ_MusicInfo musicInfo;
 		if (_MNNHHJBBICA_GameEventType == 4)
@@ -66,17 +66,17 @@ public class FPGEMAIAMBF_RewardData
 		}
 		KEODKEGFDLD_FreeMusicInfo freemusicData = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(_GHBPLHBNMBK_FreeMusicId);
 		int musicId = freemusicData.DLAEJOBELBH_MusicId;
-		HDNKOFNBCEO_RewardInfo rewardInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NEJKJJPIGKD_GetRewardInfo(freemusicData, AKNELONELJK_Difficulty, _LFGNLKKFOCD_IsLine6);
+		HDNKOFNBCEO_RewardInfo rewardInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NEJKJJPIGKD_GetRewardInfo(freemusicData, AKNELONELJK_difficulty, _LFGNLKKFOCD_IsLine6);
 		List<byte> rewardScoreList = _LFGNLKKFOCD_IsLine6 ? musicInfo.DKIIINIEKHP_RewardScoreL6 : musicInfo.JDIDBMEMKBC_RewardScore;
 		List<byte> rewardComboList = _LFGNLKKFOCD_IsLine6 ? musicInfo.JNNIOJIDNKM_RewardComboL6 : musicInfo.AGGFHNMMGMN_RewardCombo;
 		List<byte> rewardClearList = _LFGNLKKFOCD_IsLine6 ? musicInfo.LGBKKDOLOFP_RewardClearL6 : musicInfo.HNDPLCDMOJF_RewardClear;
-		ADDHLABEFKH otherInfo2 = freemusicData.EMJCHPDJHEI(_LFGNLKKFOCD_IsLine6, AKNELONELJK_Difficulty);
+		ADDHLABEFKH otherInfo2 = freemusicData.EMJCHPDJHEI(_LFGNLKKFOCD_IsLine6, AKNELONELJK_difficulty);
 		PDONJHCHBAE_ScoreReward = new List<LOIJICNJMKA>();
 		for(int i = 0; i < 4; i++)
 		{
 			LOIJICNJMKA lo = new LOIJICNJMKA();
 			lo.FCDKJAKLGMB_TargetValue = otherInfo2.KNIFCANOHOC_score[i];
-			lo.CMCKNKKCNDK_Status = i < rewardScoreList[AKNELONELJK_Difficulty] ? LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL : LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA;
+			lo.CMCKNKKCNDK_Status = i < rewardScoreList[AKNELONELJK_difficulty] ? LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL : LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA;
 			lo.GONNICAJNLK(i+4, rewardInfo);
 			PDONJHCHBAE_ScoreReward.Add(lo);
 		}
@@ -85,7 +85,7 @@ public class FPGEMAIAMBF_RewardData
 		{
 			LOIJICNJMKA lo = new LOIJICNJMKA();
 			lo.FCDKJAKLGMB_TargetValue = otherInfo2.NLKEBAOBJCM_combo[i];
-			lo.CMCKNKKCNDK_Status = i < rewardComboList[AKNELONELJK_Difficulty] ? LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL : LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA;
+			lo.CMCKNKKCNDK_Status = i < rewardComboList[AKNELONELJK_difficulty] ? LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL : LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA;
 			lo.GONNICAJNLK(i + 8, rewardInfo);
 			HFPMKBAANFO_ComboReward.Add(lo);
 		}
@@ -94,14 +94,14 @@ public class FPGEMAIAMBF_RewardData
 		{
 			LOIJICNJMKA lo = new LOIJICNJMKA();
 			lo.FCDKJAKLGMB_TargetValue = rewardInfo.GPBKAAMLIBF(i);
-			lo.CMCKNKKCNDK_Status = i < rewardClearList[AKNELONELJK_Difficulty] ? LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL : LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA;
+			lo.CMCKNKKCNDK_Status = i < rewardClearList[AKNELONELJK_difficulty] ? LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL : LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA;
 			lo.GONNICAJNLK(i, rewardInfo);
 			IOCLNNCJFKA_ClearReward.Add(lo);
 		}
 	}
 
 	//// RVA: 0x13FB01C Offset: 0x13FB01C VA: 0x13FB01C
-	public void CHOHLJOJKNJ(int GHBPLHBNMBK_FreeMusicId, int AKNELONELJK_Difficulty, bool LFGNLKKFOCD_IsLine6, int _MNNHHJBBICA_GameEventType/* = 0*/)
+	public void CHOHLJOJKNJ(int GHBPLHBNMBK_FreeMusicId, int AKNELONELJK_difficulty, bool LFGNLKKFOCD_IsLine6, int _MNNHHJBBICA_GameEventType/* = 0*/)
 	{
 		BBHNACPENDM_ServerSaveData serverData = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData;
 		BBHNACPENDM_ServerSaveData prevServerData = CIOECGOMILE.HHCJCDFCLOB.MNJHBCIIHED_PrevServerData;
@@ -128,8 +128,8 @@ public class FPGEMAIAMBF_RewardData
 		}
 		KEODKEGFDLD_FreeMusicInfo freeMusic = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(GHBPLHBNMBK_FreeMusicId);
 		EONOEHOKBEB_Music music = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(freeMusic.DLAEJOBELBH_MusicId);
-		HDNKOFNBCEO_RewardInfo rewardInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NEJKJJPIGKD_GetRewardInfo(freeMusic, AKNELONELJK_Difficulty, LFGNLKKFOCD_IsLine6);
-		ADDHLABEFKH data = freeMusic.EMJCHPDJHEI(LFGNLKKFOCD_IsLine6, AKNELONELJK_Difficulty);
+		HDNKOFNBCEO_RewardInfo rewardInfo = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NEJKJJPIGKD_GetRewardInfo(freeMusic, AKNELONELJK_difficulty, LFGNLKKFOCD_IsLine6);
+		ADDHLABEFKH data = freeMusic.EMJCHPDJHEI(LFGNLKKFOCD_IsLine6, AKNELONELJK_difficulty);
 		List<byte> rewardScore = !LFGNLKKFOCD_IsLine6 ? musicInfo.JDIDBMEMKBC_RewardScore : musicInfo.DKIIINIEKHP_RewardScoreL6;
 		List<byte> prevRewardScore = !LFGNLKKFOCD_IsLine6 ? prevMusicInfo.JDIDBMEMKBC_RewardScore : prevMusicInfo.DKIIINIEKHP_RewardScoreL6;
 		PDONJHCHBAE_ScoreReward = new List<LOIJICNJMKA>(4);
@@ -137,10 +137,10 @@ public class FPGEMAIAMBF_RewardData
 		{
 			LOIJICNJMKA data2 = new LOIJICNJMKA();
 			data2.FCDKJAKLGMB_TargetValue = data.KNIFCANOHOC_score[i];
-			data2.CMCKNKKCNDK_Status = i < prevRewardScore[AKNELONELJK_Difficulty] ? LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL : LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA;
-			if(prevRewardScore[AKNELONELJK_Difficulty] <= i)
+			data2.CMCKNKKCNDK_Status = i < prevRewardScore[AKNELONELJK_difficulty] ? LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL : LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA;
+			if(prevRewardScore[AKNELONELJK_difficulty] <= i)
 			{
-				if(i < rewardScore[AKNELONELJK_Difficulty])
+				if(i < rewardScore[AKNELONELJK_difficulty])
 				{
 					data2.CMCKNKKCNDK_Status = LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_Achieved;
 				}
@@ -155,10 +155,10 @@ public class FPGEMAIAMBF_RewardData
 		{
 			LOIJICNJMKA data2 = new LOIJICNJMKA();
 			data2.FCDKJAKLGMB_TargetValue = data.NLKEBAOBJCM_combo[i];
-			data2.CMCKNKKCNDK_Status = i < prevRewardCombo[AKNELONELJK_Difficulty] ? LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL : LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA;
-			if (prevRewardCombo[AKNELONELJK_Difficulty] <= i)
+			data2.CMCKNKKCNDK_Status = i < prevRewardCombo[AKNELONELJK_difficulty] ? LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL : LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA;
+			if (prevRewardCombo[AKNELONELJK_difficulty] <= i)
 			{
-				if (i < rewardCombo[AKNELONELJK_Difficulty])
+				if (i < rewardCombo[AKNELONELJK_difficulty])
 				{
 					data2.CMCKNKKCNDK_Status = LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_Achieved;
 				}
@@ -173,10 +173,10 @@ public class FPGEMAIAMBF_RewardData
 		{
 			LOIJICNJMKA data2 = new LOIJICNJMKA();
 			data2.FCDKJAKLGMB_TargetValue = rewardInfo.GPBKAAMLIBF(i);
-			data2.CMCKNKKCNDK_Status = i < prevRewardClear[AKNELONELJK_Difficulty] ? LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL : LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA;
-			if (prevRewardClear[AKNELONELJK_Difficulty] <= i)
+			data2.CMCKNKKCNDK_Status = i < prevRewardClear[AKNELONELJK_difficulty] ? LOIJICNJMKA.KPGOMKPPJEE.FJGFAPKLLCL : LOIJICNJMKA.KPGOMKPPJEE.PCNKFALHCDA;
+			if (prevRewardClear[AKNELONELJK_difficulty] <= i)
 			{
-				if (i < rewardClear[AKNELONELJK_Difficulty])
+				if (i < rewardClear[AKNELONELJK_difficulty])
 				{
 					data2.CMCKNKKCNDK_Status = LOIJICNJMKA.KPGOMKPPJEE.JMAFBDCPBJD_Achieved;
 				}

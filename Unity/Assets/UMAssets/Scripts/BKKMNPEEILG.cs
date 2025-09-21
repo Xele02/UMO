@@ -13,7 +13,7 @@ public class BKKMNPEEILG
 	public long BEBJKJKBOGH_Date; // 0x20
 	public int NBOLDNMPJFG_scoreCrypted; // 0x28
 	public int EFPOCKLJDIE_Crypted; // 0x2C
-	public int AKNELONELJK_Difficulty; // 0x30
+	public int AKNELONELJK_difficulty; // 0x30
 	public int[] PGPBALKFBNK_Notes; // 0x34
 	public int NKLHOLHLEEI_ExcellentCount; // 0x38
 	public int BHCIFFILAKJ_Strength; // 0x3C
@@ -42,7 +42,7 @@ public class BKKMNPEEILG
 			FDBOPFEOENF_Diva.KHEKNNFCAOI_Init(1, 1, 0, 0, null, null, false);
 			FDBOPFEOENF_Diva.OPFGFINHFCE_name = JpStringLiterals.StringLiteral_9635;
 			IPPNCOHEEOD_ScoreAverage = 12345;
-			AKNELONELJK_Difficulty = 0;
+			AKNELONELJK_difficulty = 0;
 			BEBJKJKBOGH_Date = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			PGPBALKFBNK_Notes = new int[5];
 		}
@@ -66,7 +66,7 @@ public class BKKMNPEEILG
 			KNIFCANOHOC_score = _MOHDLLIJELH_cont.PIPHAKNMIBL_Rivals[ODHFJJCJHDD].KNIFCANOHOC_score;
 			EACPIDGGPPO_ExcellentScore = _MOHDLLIJELH_cont.PIPHAKNMIBL_Rivals[ODHFJJCJHDD].OFJHABJNGOD_ScoreExcellentBonus;
 			BHCIFFILAKJ_Strength = _MOHDLLIJELH_cont.PIPHAKNMIBL_Rivals[ODHFJJCJHDD].BHCIFFILAKJ_Strength;
-			AKNELONELJK_Difficulty = _MOHDLLIJELH_cont.PIPHAKNMIBL_Rivals[ODHFJJCJHDD].AKNELONELJK_Difficulty;
+			AKNELONELJK_difficulty = _MOHDLLIJELH_cont.PIPHAKNMIBL_Rivals[ODHFJJCJHDD].AKNELONELJK_difficulty;
 			PGPBALKFBNK_Notes = _MOHDLLIJELH_cont.PIPHAKNMIBL_Rivals[ODHFJJCJHDD].MJNMPAKBNKB_NotesResult;
 			NKLHOLHLEEI_ExcellentCount = _MOHDLLIJELH_cont.PIPHAKNMIBL_Rivals[ODHFJJCJHDD].NHLGACIHDAH_ExcellentCount;
 			NLKEBAOBJCM_combo = _MOHDLLIJELH_cont.PIPHAKNMIBL_Rivals[ODHFJJCJHDD].NLKEBAOBJCM_combo;
@@ -120,7 +120,7 @@ public class BKKMNPEEILG
 		if(v < 0)
 		{
 			Debug.LogError("not found result data");
-			AKNELONELJK_Difficulty = 0;
+			AKNELONELJK_difficulty = 0;
 			IPPNCOHEEOD_ScoreAverage = 0;
 			PGPBALKFBNK_Notes = new int[5];
 			JCOJKAHFADL_Is6Line = false;
@@ -129,7 +129,7 @@ public class BKKMNPEEILG
 		else
 		{
 			IPPNCOHEEOD_ScoreAverage = ebp.AILDCKKOLJG_Results[v].IPPNCOHEEOD_ScoreAverage;
-			AKNELONELJK_Difficulty = ebp.AILDCKKOLJG_Results[v].AKNELONELJK_Difficulty;
+			AKNELONELJK_difficulty = ebp.AILDCKKOLJG_Results[v].AKNELONELJK_difficulty;
 			KNIFCANOHOC_score = ebp.AILDCKKOLJG_Results[v].KNIFCANOHOC_score;
 			EACPIDGGPPO_ExcellentScore = ebp.AILDCKKOLJG_Results[v].OFJHABJNGOD_ExcellentScore;
 			PGPBALKFBNK_Notes = ebp.AILDCKKOLJG_Results[v].MJNMPAKBNKB_NotesResult;
@@ -170,7 +170,7 @@ public class BKKMNPEEILG
 		EACPIDGGPPO_ExcellentScore = 12;
 		BDLNMOIOMHK_Total = 1234;
 		IPPNCOHEEOD_ScoreAverage = 123;
-		AKNELONELJK_Difficulty = 0;
+		AKNELONELJK_difficulty = 0;
 		PGPBALKFBNK_Notes = new int[5] { 1, 2, 3, 4, 5 };
 		NKLHOLHLEEI_ExcellentCount = 1;
 		JCOJKAHFADL_Is6Line = false;
@@ -186,7 +186,7 @@ public class BKKMNPEEILG
 		EACPIDGGPPO_ExcellentScore = 12;
 		BDLNMOIOMHK_Total = 1234;
 		IPPNCOHEEOD_ScoreAverage = UnityEngine.Random.Range(1000,100000);
-		AKNELONELJK_Difficulty = 0;
+		AKNELONELJK_difficulty = 0;
 		PGPBALKFBNK_Notes = new int[5] { 1, 2, 3, 4, 5 };
 		NKLHOLHLEEI_ExcellentCount = 1;
 		JCOJKAHFADL_Is6Line = false;

@@ -624,7 +624,7 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < unlockIndexList.Count; i++)
 			{
 				AFIFDLOAKGI a = board.GetPanelItem(unlockIndexList[i]);
-				if(a.INDDJNMPONH_Type == 20)
+				if(a.INDDJNMPONH_type == 20)
 				{
 					return unlockIndexList[i];
 				}
@@ -642,7 +642,7 @@ namespace XeApp.Game.Menu
 			for(int i = 0; i < unlockIndexList.Count; i++)
 			{
 				AFIFDLOAKGI a = board.GetPanelItem(unlockIndexList[i]);
-				if(a.INDDJNMPONH_Type == 20)
+				if(a.INDDJNMPONH_type == 20)
 				{
 					c = a.MKNDAOHGOAK_weight;
 					m_viewSceneData.KPCLNEADGEM(unlockIndexList[i]);
@@ -1956,7 +1956,7 @@ namespace XeApp.Game.Menu
 				AFIFDLOAKGI a = board.GetPanelItem(unLockIndexList[i]);
 				//a.ENNLMALGDKN();
 				int count = 1;
-				if (a.INDDJNMPONH_Type == 20)
+				if (a.INDDJNMPONH_type == 20)
 				{
 					//a.PKLGGJPPBAN();
 					count = infLoopCount;
@@ -1978,7 +1978,7 @@ namespace XeApp.Game.Menu
 			{
 				int val = board.GetPanelValue(unlockIndexList[i]);
 				AFIFDLOAKGI a = board.GetPanelItem(unlockIndexList[i]);
-				int type = a.INDDJNMPONH_Type;
+				int type = a.INDDJNMPONH_type;
 				int cnt = 1;
 				if (type == 20)
 				{
@@ -2048,7 +2048,7 @@ namespace XeApp.Game.Menu
 						AFIFDLOAKGI af = m_viewSceneData.LDGCIDPEMPG(m_unLockTargetPanelIndex[i]);
 						if(af != null)
 						{
-							l[af.INDDJNMPONH_Type]++;
+							l[af.INDDJNMPONH_type]++;
 						}
 						b |= !scene.IEPGLOIICLJ(m_unLockTargetPanelIndex[i]);
 					}
@@ -2072,7 +2072,7 @@ namespace XeApp.Game.Menu
 						AFIFDLOAKGI af = m_viewSceneData.CDDHNNLPOLG(m_unLockTargetPanelIndex[i], m_viewSceneData.ILABPFOMEAG_Va, m_viewSceneData.JGJFIJOCPAG_SceneAttr);
 						if(af != null)
 						{
-							if(af.INDDJNMPONH_Type == 20)
+							if(af.INDDJNMPONH_type == 20)
 							{
 								if(m_infinityPanelUnlockInfo.index > -1 && m_infinityPanelUnlockInfo.count > 0)
 								{
@@ -2080,13 +2080,13 @@ namespace XeApp.Game.Menu
 									AFIFDLOAKGI af2 = m_viewSceneData.CDDHNNLPOLG(m_infinityPanelUnlockInfo.index, m_viewSceneData.ILABPFOMEAG_Va, m_viewSceneData.JGJFIJOCPAG_SceneAttr);
 									if(af2 != null)
 									{
-										l[af2.INDDJNMPONH_Type]++;
+										l[af2.INDDJNMPONH_type]++;
 									}
 								}
 							}
 							else
 							{
-								l[af.INDDJNMPONH_Type]++;
+								l[af.INDDJNMPONH_type]++;
 								b |= !scene.PJLNENPKEDD(m_unLockTargetPanelIndex[i]);
 							}
 						}

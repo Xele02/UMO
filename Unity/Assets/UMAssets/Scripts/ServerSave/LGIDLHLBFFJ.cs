@@ -568,10 +568,10 @@ public class LGIDLHLBFFJ_MonthlyPass : KLFDBFMNLBL_ServerSaveBlock
 						ODHIHCNALDL data = EOHPPNNLBNH_Stamp[i];
 						data.JJPDPNJFBHN_TableId = CJAENOMGPDA_ReadInt(b2, "table_id", 0, ref isInvalid);
 						data.MMPCPKODGKI_reset_at = DKMPHAPBDLH_ReadLong(b2, "reset_at", 0, ref isInvalid);
-						IEKHEAMPLDA_ReadLongArray(b2, "dates", 0, 20, (int _OIPCCBHIKIA_index, long _JBGEEPFKIGG_Value) =>
+						IEKHEAMPLDA_ReadLongArray(b2, "dates", 0, 20, (int _OIPCCBHIKIA_index, long _JBGEEPFKIGG_val) =>
 						{
 							//0x17F1120
-							data.ACCIBAABEPN(_OIPCCBHIKIA_index, _JBGEEPFKIGG_Value);
+							data.ACCIBAABEPN(_OIPCCBHIKIA_index, _JBGEEPFKIGG_val);
 						}, ref isInvalid);
 					}
 				}

@@ -128,23 +128,23 @@ public class AEKDNMPPOJN
 	}
 
 	// RVA: 0x15BCB24 Offset: 0x15BCB24 VA: 0x15BCB24
-	private string JLJOPOFHAPJ(LimitOverTypeId.Type _PPFNGGCBJKC_id, int _JBGEEPFKIGG_Value)
+	private string JLJOPOFHAPJ(LimitOverTypeId.Type _PPFNGGCBJKC_id, int _JBGEEPFKIGG_val)
 	{
 		string res = JpStringLiterals.StringLiteral_8686;
 		switch(_PPFNGGCBJKC_id)
 		{
 			case LimitOverTypeId.Type.ExcellentRate:
-				return string.Format(MessageManager.Instance.GetMessage("menu", "limit_over_excellent_rate_01"), _JBGEEPFKIGG_Value);
+				return string.Format(MessageManager.Instance.GetMessage("menu", "limit_over_excellent_rate_01"), _JBGEEPFKIGG_val);
 			case LimitOverTypeId.Type.CenterLiveSkillRate:
-				return string.Format(MessageManager.Instance.GetMessage("menu", "limit_over_center_live_skill_01"), _JBGEEPFKIGG_Value);
+				return string.Format(MessageManager.Instance.GetMessage("menu", "limit_over_center_live_skill_01"), _JBGEEPFKIGG_val);
 			case LimitOverTypeId.Type.ExcellentRate_SameMusicAttr:
-				return string.Format(MessageManager.Instance.GetMessage("menu", "limit_over_excellent_rate_04"), _JBGEEPFKIGG_Value);
+				return string.Format(MessageManager.Instance.GetMessage("menu", "limit_over_excellent_rate_04"), _JBGEEPFKIGG_val);
 			case LimitOverTypeId.Type.CenterLiveSkillRate_SameMusicAttr:
-				return string.Format(MessageManager.Instance.GetMessage("menu", "limit_over_center_live_skill_04"), _JBGEEPFKIGG_Value);
+				return string.Format(MessageManager.Instance.GetMessage("menu", "limit_over_center_live_skill_04"), _JBGEEPFKIGG_val);
 			case LimitOverTypeId.Type.ExcellentRate_SameSeriesAttr:
-				return string.Format(MessageManager.Instance.GetMessage("menu", "limit_over_excellent_rate_05"), _JBGEEPFKIGG_Value);
+				return string.Format(MessageManager.Instance.GetMessage("menu", "limit_over_excellent_rate_05"), _JBGEEPFKIGG_val);
 			case LimitOverTypeId.Type.CenterLiveSkillRate_SameSeriesAttr:
-				return string.Format(MessageManager.Instance.GetMessage("menu", "limit_over_center_live_skill_05"), _JBGEEPFKIGG_Value);
+				return string.Format(MessageManager.Instance.GetMessage("menu", "limit_over_center_live_skill_05"), _JBGEEPFKIGG_val);
 			default:
 				break;
 		}

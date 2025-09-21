@@ -34,11 +34,11 @@ public class HGPEFPFODHO_HighScoreRanking : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0x175311C Offset: 0x175311C VA: 0x175311C
-		public void OEFHMMJFEKC(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value)
+		public void OEFHMMJFEKC(int IOPHIHFOOEP, int _JBGEEPFKIGG_val)
 		{
 			if (IOPHIHFOOEP < 0)
 				return;
-			AHGCGHAAHOO_ItemIdCrypted.Add(_JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor);
+			AHGCGHAAHOO_ItemIdCrypted.Add(_JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor);
 		}
 
 		//// RVA: 0x1753B94 Offset: 0x1753B94 VA: 0x1753B94
@@ -58,11 +58,11 @@ public class HGPEFPFODHO_HighScoreRanking : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0x17531C0 Offset: 0x17531C0 VA: 0x17531C0
-		public void BLMLMOGEMCN(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value)
+		public void BLMLMOGEMCN(int IOPHIHFOOEP, int _JBGEEPFKIGG_val)
 		{
 			if (IOPHIHFOOEP < 0)
 				return;
-			FAEPDABICLE_Crypted.Add(_JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor);
+			FAEPDABICLE_Crypted.Add(_JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor);
 		}
 
 		//// RVA: 0x1753F7C Offset: 0x1753F7C VA: 0x1753F7C

@@ -74,7 +74,7 @@ namespace XeApp.Game.Menu
 			m_layoutFirstSale.StartChildrenAnimGoStop(isFirstSale ? "01" : "02");
 			PMDCIJMMNGK_GachaTicket.EJAKHFONNGN tkt = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(currencyId);
 			SetButtonColor(isFirstSale, tkt != null);
-			if (gachaProduct.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
+			if (gachaProduct.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
 			{
 				Disable = LKBGPLDLNIK.JPIMHNNGJGI(currentTime) != 0;
 			}
@@ -96,7 +96,7 @@ namespace XeApp.Game.Menu
 			PMDCIJMMNGK_GachaTicket.EJAKHFONNGN tkt = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GKMAHADAAFI_GachaTicket.AAJILEFHFGC(currencyId);
 			int a = 4;
 			if (tkt == null)
-				a = (int)gachaProduct.INDDJNMPONH_Type - 1;
+				a = (int)gachaProduct.INDDJNMPONH_type - 1;
 			switch(a)
 			{
 				case 0:

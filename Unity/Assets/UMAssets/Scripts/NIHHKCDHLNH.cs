@@ -47,7 +47,7 @@ public class NIHHKCDHLNH
         KHLMJCJAOCC_DescShort = bk.GetMessageByLabel(str.ToString());
         HMFFHLPNMPH_Count = saveItem.BFINGCJHOHI_Count;
         GLBEAENLHKC_Count = 9999;
-        IILKAJBHLMJ_Value = item.JBGEEPFKIGG_Value;
+        IILKAJBHLMJ_Value = item.JBGEEPFKIGG_val;
         PBPOLELIPJI_Id = _MHFBCINOJEE_Num;
         INFIBMLIHLO_ItemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.NEIIGCODGBA_CostumeItem, _MHFBCINOJEE_Num);
     }
@@ -62,7 +62,7 @@ public class NIHHKCDHLNH
             PLPBJOFICEJ_CosItem.IBEMFIAFIKH_ItemInfo item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GOGFKAECFIP_CosItem.LOOANCFLPMP_GetItemByIdx(i);
             if(item.FDBOPFEOENF_Diva == 0)
             {
-                if(item.INDDJNMPONH_Type == 1)
+                if(item.INDDJNMPONH_type == 1)
                 {
                     NIHHKCDHLNH data = new NIHHKCDHLNH();
                     data.KHEKNNFCAOI_Init(item.PPFNGGCBJKC_id);

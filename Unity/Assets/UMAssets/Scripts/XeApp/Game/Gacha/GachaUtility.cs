@@ -181,7 +181,7 @@ namespace XeApp.Game.Gacha
 				idx = gpm.MHKCPJDNJKI_products.FindIndex((LOBDIAABMKG p) =>
 				{
 					//0x996CE4
-					return p.INDDJNMPONH_Type == m_selectCategory;
+					return p.INDDJNMPONH_type == m_selectCategory;
 				});
 			}
 			else

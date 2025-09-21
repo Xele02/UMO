@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using XeSys;
 
-[System.Obsolete("Use OEIJEFBBJBD_Sp", true)]
+[System.Obsolete("Use OEIJEFBBJBD_EventSp", true)]
 public class OEIJEFBBJBD { }
 public class OEIJEFBBJBD_EventSp : DIHHCBACKGG_DbSection
 {

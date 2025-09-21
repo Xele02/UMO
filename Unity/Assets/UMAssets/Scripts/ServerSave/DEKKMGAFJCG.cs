@@ -378,25 +378,25 @@ public class DEKKMGAFJCG_Diva : KLFDBFMNLBL_ServerSaveBlock
 						}
 					}
 					info.CPGFPEDMDEH_Have = CJAENOMGPDA_ReadInt(subData, AFEHLCGHAEE_Strings.CPGFPEDMDEH_Have, 0, ref isInvalid);
-					IBCGPBOGOGP_ReadIntArray(subData, AFEHLCGHAEE_Strings.ANAJIAENLNB_Level, 0, 300, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+					IBCGPBOGOGP_ReadIntArray(subData, AFEHLCGHAEE_Strings.ANAJIAENLNB_Level, 0, 300, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 					{
 						//0x197B738
-						info.ANAJIAENLNB_Level[_OIPCCBHIKIA_index] = _JBGEEPFKIGG_Value;
+						info.ANAJIAENLNB_Level[_OIPCCBHIKIA_index] = _JBGEEPFKIGG_val;
 					}, ref isInvalid);
-					IBCGPBOGOGP_ReadIntArray(subData, AFEHLCGHAEE_Strings.LKIFDCEKDCK_exp, 0, 300, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+					IBCGPBOGOGP_ReadIntArray(subData, AFEHLCGHAEE_Strings.LKIFDCEKDCK_exp, 0, 300, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 					{
 						//0x197B7D4
-						info.LKIFDCEKDCK_exp[_OIPCCBHIKIA_index] = _JBGEEPFKIGG_Value;
+						info.LKIFDCEKDCK_exp[_OIPCCBHIKIA_index] = _JBGEEPFKIGG_val;
 					}, ref isInvalid);
-					IBCGPBOGOGP_ReadIntArray(subData, AFEHLCGHAEE_Strings.KBOLNIBLIND_unlock, 0, 300, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+					IBCGPBOGOGP_ReadIntArray(subData, AFEHLCGHAEE_Strings.KBOLNIBLIND_unlock, 0, 300, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 					{
 						//0x197B870
-						info.KBOLNIBLIND_unlock[_OIPCCBHIKIA_index] = _JBGEEPFKIGG_Value;
+						info.KBOLNIBLIND_unlock[_OIPCCBHIKIA_index] = _JBGEEPFKIGG_val;
 					}, ref isInvalid);
-					IBCGPBOGOGP_ReadIntArray(subData, AFEHLCGHAEE_Strings.EBDNICPAFLB_SSlot, 0, 2, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+					IBCGPBOGOGP_ReadIntArray(subData, AFEHLCGHAEE_Strings.EBDNICPAFLB_SSlot, 0, 2, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 					{
 						//0x197B90C
-						info.EBDNICPAFLB_SSlot[_OIPCCBHIKIA_index] = _JBGEEPFKIGG_Value;
+						info.EBDNICPAFLB_SSlot[_OIPCCBHIKIA_index] = _JBGEEPFKIGG_val;
 					}, ref isInvalid);
 					info.KCCONFODCPN_IntimacyLevel = CJAENOMGPDA_ReadInt(subData, "intm_lv", 1, ref isInvalid);
 					info.BNDNNCHJGBB_IntimacyExp = CJAENOMGPDA_ReadInt(subData, "intm_exp", 0, ref isInvalid);

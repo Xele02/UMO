@@ -63,33 +63,33 @@ public class GCAHJLOGMCI
 	}
 
 	//// RVA: 0x16A9768 Offset: 0x16A9768 VA: 0x16A9768
-	public static long PMBGPACNPIN(KNMMOMEHDON_GachaType _INDDJNMPONH_Type, string _OPFGFINHFCE_name, long _KJBGCLPMLCG_OpenedAt, long NMPMNPLGIEL/* = 0*/)
+	public static long PMBGPACNPIN(KNMMOMEHDON_GachaType _INDDJNMPONH_type, string _OPFGFINHFCE_name, long _KJBGCLPMLCG_OpenedAt, long NMPMNPLGIEL/* = 0*/)
 	{
-		if(_INDDJNMPONH_Type != KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily/*1*/ && _INDDJNMPONH_Type != KNMMOMEHDON_GachaType.ANFKBNLLJFN_7/*7*/)
+		if(_INDDJNMPONH_type != KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily/*1*/ && _INDDJNMPONH_type != KNMMOMEHDON_GachaType.ANFKBNLLJFN_7/*7*/)
 		{
-			if(_INDDJNMPONH_Type == KNMMOMEHDON_GachaType.GENEIBGNMPH_3)
+			if(_INDDJNMPONH_type == KNMMOMEHDON_GachaType.GENEIBGNMPH_3)
 			{
 				if(_OPFGFINHFCE_name.Contains(JpStringLiterals.StringLiteral_10431_Jp))
 				{
 					NMPMNPLGIEL = 0;
-					TodoLogger.LogError(TodoLogger.ToCheck, "PMBGPACNPIN values "+_INDDJNMPONH_Type+" "+_OPFGFINHFCE_name+" "+_KJBGCLPMLCG_OpenedAt+" "+NMPMNPLGIEL+" "+(NMPMNPLGIEL | _KJBGCLPMLCG_OpenedAt | (0xff0000 << 32)));
+					TodoLogger.LogError(TodoLogger.ToCheck, "PMBGPACNPIN values "+_INDDJNMPONH_type+" "+_OPFGFINHFCE_name+" "+_KJBGCLPMLCG_OpenedAt+" "+NMPMNPLGIEL+" "+(NMPMNPLGIEL | _KJBGCLPMLCG_OpenedAt | (0xff0000 << 32)));
 					return NMPMNPLGIEL | _KJBGCLPMLCG_OpenedAt | (0xff0000 << 32);
 				}
 			}
 			if(NMPMNPLGIEL != 0)
 			{
-				TodoLogger.LogError(TodoLogger.ToCheck, "PMBGPACNPIN values"+_INDDJNMPONH_Type+" "+_OPFGFINHFCE_name+" "+_KJBGCLPMLCG_OpenedAt+" "+NMPMNPLGIEL+" "+(NMPMNPLGIEL | _KJBGCLPMLCG_OpenedAt));
+				TodoLogger.LogError(TodoLogger.ToCheck, "PMBGPACNPIN values"+_INDDJNMPONH_type+" "+_OPFGFINHFCE_name+" "+_KJBGCLPMLCG_OpenedAt+" "+NMPMNPLGIEL+" "+(NMPMNPLGIEL | _KJBGCLPMLCG_OpenedAt));
 				return NMPMNPLGIEL | _KJBGCLPMLCG_OpenedAt;
 			}
 			long val = 0;
-			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.IOIDJALFFJA_GachaSortPriority.TryGetValue((int)_INDDJNMPONH_Type, out val))
+			if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.IOIDJALFFJA_GachaSortPriority.TryGetValue((int)_INDDJNMPONH_type, out val))
 			{
-				TodoLogger.LogError(TodoLogger.ToCheck, "PMBGPACNPIN values"+_INDDJNMPONH_Type+" "+_OPFGFINHFCE_name+" "+_KJBGCLPMLCG_OpenedAt+" "+NMPMNPLGIEL+" "+(val | _KJBGCLPMLCG_OpenedAt));
+				TodoLogger.LogError(TodoLogger.ToCheck, "PMBGPACNPIN values"+_INDDJNMPONH_type+" "+_OPFGFINHFCE_name+" "+_KJBGCLPMLCG_OpenedAt+" "+NMPMNPLGIEL+" "+(val | _KJBGCLPMLCG_OpenedAt));
 				return val | _KJBGCLPMLCG_OpenedAt;
 			}
 		}
 		NMPMNPLGIEL = 0;
-		TodoLogger.LogError(TodoLogger.ToCheck, "PMBGPACNPIN values"+_INDDJNMPONH_Type+" "+_OPFGFINHFCE_name+" "+_KJBGCLPMLCG_OpenedAt+" "+NMPMNPLGIEL+" "+(NMPMNPLGIEL | _KJBGCLPMLCG_OpenedAt));
+		TodoLogger.LogError(TodoLogger.ToCheck, "PMBGPACNPIN values"+_INDDJNMPONH_type+" "+_OPFGFINHFCE_name+" "+_KJBGCLPMLCG_OpenedAt+" "+NMPMNPLGIEL+" "+(NMPMNPLGIEL | _KJBGCLPMLCG_OpenedAt));
 		return NMPMNPLGIEL | _KJBGCLPMLCG_OpenedAt;
 	}
 }

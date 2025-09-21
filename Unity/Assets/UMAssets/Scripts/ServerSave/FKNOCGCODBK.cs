@@ -143,9 +143,9 @@ public class FKNOCGCODBK_Unit : KLFDBFMNLBL_ServerSaveBlock
 							a.BEEAIAAJOHD_CostumeId = cosId;
 							a.AFNIOJHODAG_CostumeColorId = colId;
 
-							IBCGPBOGOGP_ReadIntArray(divaArray[j], AFEHLCGHAEE_Strings.EBDNICPAFLB_SSlot, 0, 3, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) => {
+							IBCGPBOGOGP_ReadIntArray(divaArray[j], AFEHLCGHAEE_Strings.EBDNICPAFLB_SSlot, 0, 3, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) => {
 								//0x1191F3C
-								a.EBDNICPAFLB_SSlot[_OIPCCBHIKIA_index] = _JBGEEPFKIGG_Value;
+								a.EBDNICPAFLB_SSlot[_OIPCCBHIKIA_index] = _JBGEEPFKIGG_val;
 							}, ref notValid);
 							if(db != null)
 							{

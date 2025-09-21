@@ -26,7 +26,7 @@ public class AODFBGCCBPE
 	public int IBAKPKKEDJM_Month; // 0x20
 	public int JPGALGPNJAI_VcId; // 0x24
 	public int EAHPLCJMPHD_PId; // 0x28 PayItemId
-	public NJMPLEENNPO INDDJNMPONH_Type; // 0x2C
+	public NJMPLEENNPO INDDJNMPONH_type; // 0x2C
 	public bool FPJBMCDMAMO; // 0x30
 	public bool HKKPNKOIOKL; // 0x31
 	public int EILKGEADKGH_Order; // 0x34
@@ -41,7 +41,7 @@ public class AODFBGCCBPE
 		if(OCGCPJHDJEN == 0)
 			return 0;
         List<EGOLBAPFHHD_Common.GLBBNDKGEOC> saveMedal = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.KCCLEHLLOFG_Common.MHKJEBNOPIM_Medal;
-        switch (INDDJNMPONH_Type)
+        switch (INDDJNMPONH_type)
 		{
 			case NJMPLEENNPO.AOMIBCNBBOD_1_Vc:
 				return CIOECGOMILE.HHCJCDFCLOB.NOJDLFKKMDD_GetCurrencyTotal(JPGALGPNJAI_VcId);
@@ -89,12 +89,12 @@ public class AODFBGCCBPE
 		this.OPKDAIMPJBH_ShopId = dbShop.OPKDAIMPJBH_ShopId;
 		IBAKPKKEDJM_Month = dbShop.IBAKPKKEDJM_Month;
 		EAHPLCJMPHD_PId = dbShop.EAHPLCJMPHD_PId;
-		INDDJNMPONH_Type = (NJMPLEENNPO)dbShop.HCCEFDMGPEA;
+		INDDJNMPONH_type = (NJMPLEENNPO)dbShop.HCCEFDMGPEA;
 		FPJBMCDMAMO = dbShop.FPJBMCDMAMO != 0;
 		HKKPNKOIOKL = dbShop.FPJBMCDMAMO != 0;
 		EILKGEADKGH_Order = dbShop.EILKGEADKGH_Order;
 		JPGALGPNJAI_VcId = dbShop.JPGALGPNJAI_VcId;
-		switch(INDDJNMPONH_Type)
+		switch(INDDJNMPONH_type)
 		{
 			case NJMPLEENNPO.AOMIBCNBBOD_1_Vc/*1*/:
 				HHJHIFJIKAC_BonusVc.MNGJPJBCMBH h = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.NPOALOFHFPN(JPGALGPNJAI_VcId);
@@ -148,7 +148,7 @@ public class AODFBGCCBPE
 					if (time >= dbShopList[i].KJBGCLPMLCG_OpenedAt && dbShopList[i].GJFPFFBAKGK_CloseAt >= time && dbShopList[i].HCCEFDMGPEA == 1)
 					{
 						HHJHIFJIKAC_BonusVc.MNGJPJBCMBH bonus = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.NPOALOFHFPN(EKLNMHFCAOI.DEACAHNLMNI_getItemId(dbShopList[i].EAHPLCJMPHD_PId));
-						if (bonus == null || time < bonus.PDBPFJJCADD_open_at || bonus.EGBOHDFBAPB_ClosedAt < time)
+						if (bonus == null || time < bonus.PDBPFJJCADD_open_at || bonus.EGBOHDFBAPB_CloseAt < time)
 							continue;
 					}
 				}
@@ -196,7 +196,7 @@ public class AODFBGCCBPE
 	//// RVA: 0xD58F80 Offset: 0xD58F80 VA: 0xD58F80
 	public void GKHAMEAMKCN(IMCBBOAFION CFHALLLJAOP, DJBHIFLHJLK _AOCANKOMKFG_OnError)
 	{
-		if(INDDJNMPONH_Type != NJMPLEENNPO.AOMIBCNBBOD_1_Vc)
+		if(INDDJNMPONH_type != NJMPLEENNPO.AOMIBCNBBOD_1_Vc)
 		{
 			CFHALLLJAOP();
 			return;
@@ -226,7 +226,7 @@ public class AODFBGCCBPE
 		//0xD59554
 		for(int i = 0; i < NNDGIAEFMOG.Count; i++)
 		{
-			if(NNDGIAEFMOG[i].INDDJNMPONH_Type == NJMPLEENNPO.AOMIBCNBBOD_1_Vc)
+			if(NNDGIAEFMOG[i].INDDJNMPONH_type == NJMPLEENNPO.AOMIBCNBBOD_1_Vc)
 			{
 				bool BEKAMBBOLBO_Done = false;
 				bool CNAIDEAFAAM_Error = false;

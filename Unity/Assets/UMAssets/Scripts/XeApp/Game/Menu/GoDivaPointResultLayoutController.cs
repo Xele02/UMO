@@ -107,12 +107,12 @@ namespace XeApp.Game.Menu
 			MessageBank bk = MessageManager.Instance.GetBank("menu");
 			if(!viewEventResultData.LFGNLKKFOCD_IsLine6)
 			{
-				m_imageDiff.uvRect = m_imageDiffRectList[viewEventResultData.AKNELONELJK_Difficulty];
+				m_imageDiff.uvRect = m_imageDiffRectList[viewEventResultData.AKNELONELJK_difficulty];
 				GameManager.Instance.UnionTextureManager.GetTexture("cmn_tex_pack").Set(m_imageDiff);
 			}
 			else
 			{
-				m_imageDiff.uvRect = m_imageDiffRectList_6Line[viewEventResultData.AKNELONELJK_Difficulty - 2];
+				m_imageDiff.uvRect = m_imageDiffRectList_6Line[viewEventResultData.AKNELONELJK_difficulty - 2];
 				GameManager.Instance.UnionTextureManager.GetTexture("cmn_tex_02_pack").Set(m_imageDiff);
 			}
 			m_textEpisodeCount.text = Smart.Format(bk.GetMessageByLabel("event_reward_result_episodebonus_unit"), viewEventData.LIPIAPOGHIP_EpisodeNum);

@@ -9,7 +9,7 @@ using XeApp.Game;
 using XeSys;
 using XeApp.Game.Common;
 
-public delegate bool OMIFMMJPMDJ(int _INDDJNMPONH_Type, float LNAHJANMJNM);
+public delegate bool OMIFMMJPMDJ(int _INDDJNMPONH_type, float LNAHJANMJNM);
 public delegate void OBHIGCFPKJN(string _DOGDHKIEBJA_Error, IMCBBOAFION _KLMFJJCNBIP_OnSuccess, JFDNPFFOACP NEFKBBNKNPP);
 
 public class KDLPEDBKMID
@@ -294,7 +294,7 @@ public class KDLPEDBKMID
 		int APGOAMNGFFF = 0;
 		if(OEPPEGHGNNO == null)
 		{
-			OEPPEGHGNNO = (int _INDDJNMPONH_Type, float LNAHJANMJNM) => 
+			OEPPEGHGNNO = (int _INDDJNMPONH_type, float LNAHJANMJNM) => 
 			{
 				//0xE84258
 				return true;

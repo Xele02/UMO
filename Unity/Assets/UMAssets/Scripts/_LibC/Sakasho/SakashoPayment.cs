@@ -1403,9 +1403,9 @@ namespace ExternLib
 							int bonusId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(item.KGOFMDMDFCJ_BonusId[j]);
                             HHJHIFJIKAC_BonusVc.MNGJPJBCMBH bonusItem = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.CDENCMNHNGA_table[bonusId - 1];
 							/*long t = Utility.GetCurrentUnixTime();
-							if(t < bonusItem.PDBPFJJCADD_open_at || t > bonusItem.EGBOHDFBAPB_ClosedAt)
+							if(t < bonusItem.PDBPFJJCADD_open_at || t > bonusItem.EGBOHDFBAPB_CloseAt)
 								continue;
-							if(bonusItem.INDDJNMPONH_Type != 1)
+							if(bonusItem.INDDJNMPONH_type != 1)
 							{
 								int giftId = 0;
 								switch(item.KGOFMDMDFCJ_BonusId[j])
@@ -1713,7 +1713,7 @@ namespace ExternLib
 					invData[AFEHLCGHAEE_Strings.OCNINMIMHGC_item_value] = id; // int
 					invData[AFEHLCGHAEE_Strings.MJBKGOJBPAD_item_type] = 3; // int
 					invData[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = 1; // int
-					invData[AFEHLCGHAEE_Strings.INDDJNMPONH_Type] = 0; // int
+					invData[AFEHLCGHAEE_Strings.INDDJNMPONH_type] = 0; // int
 					invData[AFEHLCGHAEE_Strings.BIOGKIEECGN_CreatedAt] = Utility.GetCurrentUnixTime(); // long
 					invData[AFEHLCGHAEE_Strings.EGBOHDFBAPB_CloseAt] = Utility.GetTargetUnixTime(2030, 1, 1, 0, 0, 0); // long
 					invData[AFEHLCGHAEE_Strings.LNDEFMALKAN_received_at] = Utility.GetCurrentUnixTime(); // long
@@ -1823,7 +1823,7 @@ namespace ExternLib
 						invData[AFEHLCGHAEE_Strings.OCNINMIMHGC_item_value] = data.NNFNGLJOKKF_ItemId; // int
 						invData[AFEHLCGHAEE_Strings.MJBKGOJBPAD_item_type] = 0; // int
 						invData[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = cnt * quantity; // int
-						invData[AFEHLCGHAEE_Strings.INDDJNMPONH_Type] = 0; // int
+						invData[AFEHLCGHAEE_Strings.INDDJNMPONH_type] = 0; // int
 						invData[AFEHLCGHAEE_Strings.BIOGKIEECGN_CreatedAt] = Utility.GetCurrentUnixTime(); // long
 						invData[AFEHLCGHAEE_Strings.EGBOHDFBAPB_CloseAt] = Utility.GetTargetUnixTime(2030, 1, 1, 0, 0, 0); // long
 						invData[AFEHLCGHAEE_Strings.LNDEFMALKAN_received_at] = Utility.GetCurrentUnixTime(); // long
@@ -1854,7 +1854,7 @@ namespace ExternLib
 						invData[AFEHLCGHAEE_Strings.OCNINMIMHGC_item_value] = data.NNFNGLJOKKF_ItemId; // int
 						invData[AFEHLCGHAEE_Strings.MJBKGOJBPAD_item_type] = 0; // int
 						invData[AFEHLCGHAEE_Strings.MBJIFDBEDAC_item_count] = dbItem2.LBCNKLPIMHL_Count * quantity; // int
-						invData[AFEHLCGHAEE_Strings.INDDJNMPONH_Type] = 0; // int
+						invData[AFEHLCGHAEE_Strings.INDDJNMPONH_type] = 0; // int
 						invData[AFEHLCGHAEE_Strings.BIOGKIEECGN_CreatedAt] = Utility.GetCurrentUnixTime(); // long
 						invData[AFEHLCGHAEE_Strings.EGBOHDFBAPB_CloseAt] = Utility.GetTargetUnixTime(2030, 1, 1, 0, 0, 0); // long
 						invData[AFEHLCGHAEE_Strings.LNDEFMALKAN_received_at] = Utility.GetCurrentUnixTime(); // long

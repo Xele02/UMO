@@ -65,12 +65,12 @@ public class PHBACNMCMHG_EventCollection : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0x16CF0E0 Offset: 0x16CF0E0 VA: 0x16CF0E0
-		public int KIGCDOJGJEP(int _AKNELONELJK_Difficulty, bool _GIKLNODJKFK_IsLine6)
+		public int KIGCDOJGJEP(int _AKNELONELJK_difficulty, bool _GIKLNODJKFK_IsLine6)
 		{
 			if(_GIKLNODJKFK_IsLine6)
-				return HOJFGDGNBCF[_AKNELONELJK_Difficulty];
+				return HOJFGDGNBCF[_AKNELONELJK_difficulty];
 			else
-				return DMDHPBNAPKI[_AKNELONELJK_Difficulty];
+				return DMDHPBNAPKI[_AKNELONELJK_difficulty];
 		}
 
 		//// RVA: 0x16CB724 Offset: 0x16CB724 VA: 0x16CB724

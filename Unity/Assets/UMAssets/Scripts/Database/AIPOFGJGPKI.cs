@@ -18,9 +18,9 @@ public class AIPOFGJGPKI_CampaignDiva : DIHHCBACKGG_DbSection
 		//public uint CAOGDCBPBAN() { }
 
 		//// RVA: 0xCD248C Offset: 0xCD248C VA: 0xCD248C
-		public int MPHGKGNCCEE(int _AHHJLDLAPAN_DivaId, int _AKNELONELJK_Difficulty)
+		public int MPHGKGNCCEE(int _AHHJLDLAPAN_DivaId, int _AKNELONELJK_difficulty)
 		{
-			return BMFACNFNCKC[_AKNELONELJK_Difficulty] * MFKKADJIHHK[_AHHJLDLAPAN_DivaId - 1];
+			return BMFACNFNCKC[_AKNELONELJK_difficulty] * MFKKADJIHHK[_AHHJLDLAPAN_DivaId - 1];
 		}
 	}
 

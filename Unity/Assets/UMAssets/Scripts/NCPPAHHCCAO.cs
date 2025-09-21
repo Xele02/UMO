@@ -17,7 +17,7 @@ public class NCPPAHHCCAO
 	private int IFEHKNJONPL_CountCrypted; // 0x38
 
 	public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = FBGGEFFJJHB_xor ^ value; } } //0x1ADA0E0 DEMEPMAEJOO 0x1ADA0F0 HIGKAIDMOKN
-	public int INDDJNMPONH_Type { get { return MKENMKMJFKP_TypeCrypted ^ FBGGEFFJJHB_xor; } set { MKENMKMJFKP_TypeCrypted = FBGGEFFJJHB_xor ^ value; } } //0x1ADA100 GHAILOLPHPF 0x1ADA110 BACGOKIGMBC
+	public int INDDJNMPONH_type { get { return MKENMKMJFKP_TypeCrypted ^ FBGGEFFJJHB_xor; } set { MKENMKMJFKP_TypeCrypted = FBGGEFFJJHB_xor ^ value; } } //0x1ADA100 GHAILOLPHPF 0x1ADA110 BACGOKIGMBC
 	public int IDELKEKDIFD_CharaId { get { return HONLHOODCKN ^ FBGGEFFJJHB_xor; } set { HONLHOODCKN = FBGGEFFJJHB_xor ^ value; } } //0x1ADA120 HIMAGNHENDH 0x1ADA130 IOPEENMGODH
 	public int BEHMEDMNJMC_EmotionId { get { return PDNDHGFKNOI ^ FBGGEFFJJHB_xor; } set { PDNDHGFKNOI = FBGGEFFJJHB_xor ^ value; } } //0x1ADA140 FFDHAICGIIF 0x1ADA150 IAIEKNACIJC
 	public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = FBGGEFFJJHB_xor ^ value; } } //0x1ADA160 OEEHBGECGKL 0x1ADA170 GHLMHLJJBIG
@@ -42,7 +42,7 @@ public class NCPPAHHCCAO
 		BFINGCJHOHI_Count = 0;
 		BBEGLBMOBOF_xorl = FBGGEFFJJHB_xor;
 		PPFNGGCBJKC_id = 0;
-		INDDJNMPONH_Type = 0;
+		INDDJNMPONH_type = 0;
 		IDELKEKDIFD_CharaId = 0;
 		BEHMEDMNJMC_EmotionId = 0;
 	}
@@ -68,7 +68,7 @@ public class NCPPAHHCCAO
 						{
 							NCPPAHHCCAO stamp = new NCPPAHHCCAO();
 							stamp.PPFNGGCBJKC_id = dbStamp.PPFNGGCBJKC_id;
-							stamp.INDDJNMPONH_Type = dbStamp.GBJFNGCDKPM_Type;
+							stamp.INDDJNMPONH_type = dbStamp.GBJFNGCDKPM_Type;
 							stamp.IDELKEKDIFD_CharaId = dbStamp.JBFLEDKDFCO_CId;
 							stamp.BEHMEDMNJMC_EmotionId = dbStamp.ALAEHBKAEPB;
 							stamp.EKLIPGELKCL_Rarity = dbStamp.EKLIPGELKCL_Rarity;
@@ -141,7 +141,7 @@ public class NCPPAHHCCAO
 	}
 
 	//// RVA: 0x1ADB36C Offset: 0x1ADB36C VA: 0x1ADB36C
-	private static List<int> OCHICNLNALL(OKGLGHCBCJP_Database _LKMHPJKIFDN_md, BBHNACPENDM_ServerSaveData _LDEGEHAEALK_ServerData, EKLNMHFCAOI.FKGCBLHOOCL_Category _INDDJNMPONH_Type, string _LJNAKDMILMC_key)
+	private static List<int> OCHICNLNALL(OKGLGHCBCJP_Database _LKMHPJKIFDN_md, BBHNACPENDM_ServerSaveData _LDEGEHAEALK_ServerData, EKLNMHFCAOI.FKGCBLHOOCL_Category _INDDJNMPONH_type, string _LJNAKDMILMC_key)
 	{
 		List<int> res = new List<int>();
 		string str = _LKMHPJKIFDN_md.GAPONCJOKAC_DecoStamp.EFEGBHACJAL(_LJNAKDMILMC_key, "");
@@ -151,10 +151,10 @@ public class NCPPAHHCCAO
 			int v = 0;
 			if(int.TryParse(strs[i], out v) && v > 0)
 			{
-				if(EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(_LKMHPJKIFDN_md, _LDEGEHAEALK_ServerData, _INDDJNMPONH_Type, v, null) == 0)
+				if(EKLNMHFCAOI.ALHCGDMEMID_GetNumItems(_LKMHPJKIFDN_md, _LDEGEHAEALK_ServerData, _INDDJNMPONH_type, v, null) == 0)
 				{
-					EKLNMHFCAOI.DPHGFMEPOCA_SetNumItems(_LKMHPJKIFDN_md, _LDEGEHAEALK_ServerData, _INDDJNMPONH_Type, v, 1, null);
-					res.Add(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(_INDDJNMPONH_Type, v));
+					EKLNMHFCAOI.DPHGFMEPOCA_SetNumItems(_LKMHPJKIFDN_md, _LDEGEHAEALK_ServerData, _INDDJNMPONH_type, v, 1, null);
+					res.Add(EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(_INDDJNMPONH_type, v));
 				}
 			}
 		}

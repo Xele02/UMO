@@ -430,85 +430,85 @@ public class FEHINJKHDAP_EventScore : KLFDBFMNLBL_ServerSaveBlock
 						FBCJICEPLED[i].NFIOKIBPJCJ_uptime = DKMPHAPBDLH_ReadLong(block[i], AFEHLCGHAEE_Strings.NFIOKIBPJCJ_uptime, 0, ref isInvalid);
 						FBCJICEPLED[i].INLNJOGHLJE_Show = CJAENOMGPDA_ReadInt(block[i], "show", 0, ref isInvalid);
 						FBCJICEPLED[i].HPLMECLKFID_RRcv = CJAENOMGPDA_ReadInt(block[i], AFEHLCGHAEE_Strings.LDALACBKEJN_r_rcv, 0, ref isInvalid) != 0;
-						IBCGPBOGOGP_ReadIntArray(block[i], AFEHLCGHAEE_Strings.KNIFCANOHOC_score, 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+						IBCGPBOGOGP_ReadIntArray(block[i], AFEHLCGHAEE_Strings.KNIFCANOHOC_score, 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 						{
 							//0x14CC098
-							FBCJICEPLED[i].KNIFCANOHOC_score[_OIPCCBHIKIA_index].DNJEJEANJGL_Value = _JBGEEPFKIGG_Value;
+							FBCJICEPLED[i].KNIFCANOHOC_score[_OIPCCBHIKIA_index].DNJEJEANJGL_Value = _JBGEEPFKIGG_val;
 						}, ref isInvalid);
-						IBCGPBOGOGP_ReadIntArray(block[i], AFEHLCGHAEE_Strings.JNLKJCDFFMM_clear, 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+						IBCGPBOGOGP_ReadIntArray(block[i], AFEHLCGHAEE_Strings.JNLKJCDFFMM_clear, 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 						{
 							//0x14CC154
-							FBCJICEPLED[i].JNLKJCDFFMM_clear[_OIPCCBHIKIA_index].DNJEJEANJGL_Value = _JBGEEPFKIGG_Value;
+							FBCJICEPLED[i].JNLKJCDFFMM_clear[_OIPCCBHIKIA_index].DNJEJEANJGL_Value = _JBGEEPFKIGG_val;
 						}, ref isInvalid);
-						IBCGPBOGOGP_ReadIntArray(block[i], AFEHLCGHAEE_Strings.EMHFDJEFIHG_Play, 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+						IBCGPBOGOGP_ReadIntArray(block[i], AFEHLCGHAEE_Strings.EMHFDJEFIHG_Play, 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 						{
 							//0x14CC210
-							FBCJICEPLED[i].EMHFDJEFIHG_Play[_OIPCCBHIKIA_index].DNJEJEANJGL_Value = _JBGEEPFKIGG_Value;
+							FBCJICEPLED[i].EMHFDJEFIHG_Play[_OIPCCBHIKIA_index].DNJEJEANJGL_Value = _JBGEEPFKIGG_val;
 						}, ref isInvalid);
-						IBCGPBOGOGP_ReadIntArray(block[i], AFEHLCGHAEE_Strings.NLKEBAOBJCM_combo, 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+						IBCGPBOGOGP_ReadIntArray(block[i], AFEHLCGHAEE_Strings.NLKEBAOBJCM_combo, 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 						{
 							//0x14CC2CC
-							FBCJICEPLED[i].NLKEBAOBJCM_combo[_OIPCCBHIKIA_index].DNJEJEANJGL_Value = _JBGEEPFKIGG_Value;
+							FBCJICEPLED[i].NLKEBAOBJCM_combo[_OIPCCBHIKIA_index].DNJEJEANJGL_Value = _JBGEEPFKIGG_val;
 						}, ref isInvalid);
-						IBCGPBOGOGP_ReadIntArray(block[i], AFEHLCGHAEE_Strings.ACBIPLOOEKI_rwd_clr, 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+						IBCGPBOGOGP_ReadIntArray(block[i], AFEHLCGHAEE_Strings.ACBIPLOOEKI_rwd_clr, 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 						{
 							//0x14CC388
-							FBCJICEPLED[i].HNDPLCDMOJF_RewardClear[_OIPCCBHIKIA_index] = (byte)_JBGEEPFKIGG_Value;
+							FBCJICEPLED[i].HNDPLCDMOJF_RewardClear[_OIPCCBHIKIA_index] = (byte)_JBGEEPFKIGG_val;
 						}, ref isInvalid);
-						IBCGPBOGOGP_ReadIntArray(block[i], AFEHLCGHAEE_Strings.LKCHLHEOHFF_rwd_sc, 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+						IBCGPBOGOGP_ReadIntArray(block[i], AFEHLCGHAEE_Strings.LKCHLHEOHFF_rwd_sc, 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 						{
 							//0x14CC424
-							FBCJICEPLED[i].JDIDBMEMKBC_RewardScore[_OIPCCBHIKIA_index] = (byte)_JBGEEPFKIGG_Value;
+							FBCJICEPLED[i].JDIDBMEMKBC_RewardScore[_OIPCCBHIKIA_index] = (byte)_JBGEEPFKIGG_val;
 						}, ref isInvalid);
-						IBCGPBOGOGP_ReadIntArray(block[i], AFEHLCGHAEE_Strings.GNHMCCLFBLB_rwd_cb, 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+						IBCGPBOGOGP_ReadIntArray(block[i], AFEHLCGHAEE_Strings.GNHMCCLFBLB_rwd_cb, 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 						{
 							//0x14CC4C0
-							FBCJICEPLED[i].AGGFHNMMGMN_RewardCombo[_OIPCCBHIKIA_index] = (byte)_JBGEEPFKIGG_Value;
+							FBCJICEPLED[i].AGGFHNMMGMN_RewardCombo[_OIPCCBHIKIA_index] = (byte)_JBGEEPFKIGG_val;
 						}, ref isInvalid);
-						IBCGPBOGOGP_ReadIntArray(block[i], AFEHLCGHAEE_Strings.IMEPEOAFIIB_ComboRank, 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+						IBCGPBOGOGP_ReadIntArray(block[i], AFEHLCGHAEE_Strings.IMEPEOAFIIB_ComboRank, 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 						{
 							//0x14CC55C
-							FBCJICEPLED[i].LAMCCNAKIOJ_ComboRank[_OIPCCBHIKIA_index] = (sbyte)_JBGEEPFKIGG_Value;
+							FBCJICEPLED[i].LAMCCNAKIOJ_ComboRank[_OIPCCBHIKIA_index] = (sbyte)_JBGEEPFKIGG_val;
 						}, ref isInvalid);
-						IBCGPBOGOGP_ReadIntArray(block[i], "score_l6", 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+						IBCGPBOGOGP_ReadIntArray(block[i], "score_l6", 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 						{
 							//0x14CC5F8
-							FBCJICEPLED[i].HAFFCOKJHBN_ScoreL6[_OIPCCBHIKIA_index].DNJEJEANJGL_Value = _JBGEEPFKIGG_Value;
+							FBCJICEPLED[i].HAFFCOKJHBN_ScoreL6[_OIPCCBHIKIA_index].DNJEJEANJGL_Value = _JBGEEPFKIGG_val;
 						}, ref isInvalid);
-						IBCGPBOGOGP_ReadIntArray(block[i], "clear_l6", 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+						IBCGPBOGOGP_ReadIntArray(block[i], "clear_l6", 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 						{
 							//0x14CC6B4
-							FBCJICEPLED[i].DPPCFFFNBGA_ClearL6[_OIPCCBHIKIA_index].DNJEJEANJGL_Value = _JBGEEPFKIGG_Value;
+							FBCJICEPLED[i].DPPCFFFNBGA_ClearL6[_OIPCCBHIKIA_index].DNJEJEANJGL_Value = _JBGEEPFKIGG_val;
 						}, ref isInvalid);
-						IBCGPBOGOGP_ReadIntArray(block[i], "play_l6", 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+						IBCGPBOGOGP_ReadIntArray(block[i], "play_l6", 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 						{
 							//0x14CC770
-							FBCJICEPLED[i].FHFKOGIPAEH_PlayL6[_OIPCCBHIKIA_index].DNJEJEANJGL_Value = _JBGEEPFKIGG_Value;
+							FBCJICEPLED[i].FHFKOGIPAEH_PlayL6[_OIPCCBHIKIA_index].DNJEJEANJGL_Value = _JBGEEPFKIGG_val;
 						}, ref isInvalid);
-						IBCGPBOGOGP_ReadIntArray(block[i], "combo_l6", 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+						IBCGPBOGOGP_ReadIntArray(block[i], "combo_l6", 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 						{
 							//0x14CC82C
-							FBCJICEPLED[i].DNIGPFPHJAK_ComboL6[_OIPCCBHIKIA_index].DNJEJEANJGL_Value = _JBGEEPFKIGG_Value;
+							FBCJICEPLED[i].DNIGPFPHJAK_ComboL6[_OIPCCBHIKIA_index].DNJEJEANJGL_Value = _JBGEEPFKIGG_val;
 						}, ref isInvalid);
-						IBCGPBOGOGP_ReadIntArray(block[i], "rwd_clr_l6", 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+						IBCGPBOGOGP_ReadIntArray(block[i], "rwd_clr_l6", 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 						{
 							//0x14CC8E8
-							FBCJICEPLED[i].LGBKKDOLOFP_RewardClearL6[_OIPCCBHIKIA_index] = (byte)_JBGEEPFKIGG_Value;
+							FBCJICEPLED[i].LGBKKDOLOFP_RewardClearL6[_OIPCCBHIKIA_index] = (byte)_JBGEEPFKIGG_val;
 						}, ref isInvalid);
-						IBCGPBOGOGP_ReadIntArray(block[i], "rwd_sc_l6", 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+						IBCGPBOGOGP_ReadIntArray(block[i], "rwd_sc_l6", 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 						{
 							//0x14CC984
-							FBCJICEPLED[i].DKIIINIEKHP_RewardScoreL6[_OIPCCBHIKIA_index] = (byte)_JBGEEPFKIGG_Value;
+							FBCJICEPLED[i].DKIIINIEKHP_RewardScoreL6[_OIPCCBHIKIA_index] = (byte)_JBGEEPFKIGG_val;
 						}, ref isInvalid);
-						IBCGPBOGOGP_ReadIntArray(block[i], "rwd_cb_l6", 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+						IBCGPBOGOGP_ReadIntArray(block[i], "rwd_cb_l6", 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 						{
 							//0x14CCA20
-							FBCJICEPLED[i].JNNIOJIDNKM_RewardComboL6[_OIPCCBHIKIA_index] = (byte)_JBGEEPFKIGG_Value;
+							FBCJICEPLED[i].JNNIOJIDNKM_RewardComboL6[_OIPCCBHIKIA_index] = (byte)_JBGEEPFKIGG_val;
 						}, ref isInvalid);
-						IBCGPBOGOGP_ReadIntArray(block[i], "cbrnk_l6", 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+						IBCGPBOGOGP_ReadIntArray(block[i], "cbrnk_l6", 0, 5, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 						{
 							//0x14CCABC
-							FBCJICEPLED[i].EEECMKPLPNL_ComboRankL6[_OIPCCBHIKIA_index] = (sbyte)_JBGEEPFKIGG_Value;
+							FBCJICEPLED[i].EEECMKPLPNL_ComboRankL6[_OIPCCBHIKIA_index] = (sbyte)_JBGEEPFKIGG_val;
 						}, ref isInvalid);
 					}
 				}

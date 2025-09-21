@@ -91,7 +91,7 @@ namespace XeApp.Game.Menu
 			}
 			IBJAKJJICBC ib = m_eventMusicData.Get(m_isLine6Mode ? m_currentSelectIndex6 : m_currentSelectIndex, m_isLine6Mode, false);
 			SetViewMusicData(ib.GHBPLHBNMBK_FreeMusicId);
-			m_bossInfoLayout.InitLayout(raidController.JIBMOEHKMGB_SelectedBoss, raidController.AGEJGHGEGFF_GetBossName(raidController.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_Type), raidController.MCBGNPBECCI_SupportBonusMax());
+			m_bossInfoLayout.InitLayout(raidController.JIBMOEHKMGB_SelectedBoss, raidController.AGEJGHGEGFF_GetBossName(raidController.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_type), raidController.MCBGNPBECCI_SupportBonusMax());
 			m_rootPanel.Left.SetActType(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Support, raidController.CBDMCDKKFBE_GetNeedAp(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Support));
 			m_rootPanel.Right.SetActType(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_FullPower, raidController.CBDMCDKKFBE_GetNeedAp(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.OOEHFFBHCIC_3_FullPower));
 			m_rootPanel.Left.SetBonusNum(raidController.AFODCOIFHKO_GetSupportBonus(JLOGEHCIBEJ_EventRaid.JJAFLOEBLDH.CCAPCGPIIPF_1_Support));
@@ -144,7 +144,7 @@ namespace XeApp.Game.Menu
             List<IBJAKJJICBC> l2 = IBJAKJJICBC.DHFHJBMKEHN(5, t, true);
             List<IBJAKJJICBC> viewList = new List<IBJAKJJICBC>();
 			List<IBJAKJJICBC> view6List = new List<IBJAKJJICBC>();
-            List<int> freeMusicIds = raidController.HEACCHAKMFG_GetMusicsList(raidController.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_Type);
+            List<int> freeMusicIds = raidController.HEACCHAKMFG_GetMusicsList(raidController.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_type);
 			for(int i = 0; i < freeMusicIds.Count; i++)
 			{
 				IBJAKJJICBC ib = l1.Find((IBJAKJJICBC a) =>

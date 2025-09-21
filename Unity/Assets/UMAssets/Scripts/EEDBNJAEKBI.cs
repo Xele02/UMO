@@ -21,7 +21,7 @@ public class EEDBNJAEKBI
 		KLMPFGOCBHC_description = bk.GetMessageByLabel("ep_i_dsc_" + _MHFBCINOJEE_Num.ToString("D4"));
 		HMFFHLPNMPH_Count = saveEpi.BFINGCJHOHI_Count;
 		GLBEAENLHKC_Count = 9999;
-		IILKAJBHLMJ_Value = epi.JBGEEPFKIGG_Value;
+		IILKAJBHLMJ_Value = epi.JBGEEPFKIGG_val;
 		INFIBMLIHLO_ItemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.MEDAKGBKIMO_EpisodeItem, _MHFBCINOJEE_Num);
 	}
 

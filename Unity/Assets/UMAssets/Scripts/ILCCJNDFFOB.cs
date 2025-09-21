@@ -140,12 +140,12 @@ public class ILCCJNDFFOB
 	// public void KMEONFIEFHN(int _ADPPAIPFHML_Num, int _FKIBPHGINAE_af_num, FHPFLAGNCAF _MEANCEOIMGE_Summon) { }
 
 	// // RVA: 0x8F602C Offset: 0x8F602C VA: 0x8F602C
-	public void PMFGEJJDMCK(int _PPFNGGCBJKC_id, int _INDDJNMPONH_Type, string FPGMBHJNGIK, int _ADPPAIPFHML_Num, int _JLPEGFAMKPK_amount)
+	public void PMFGEJJDMCK(int _PPFNGGCBJKC_id, int _INDDJNMPONH_type, string FPGMBHJNGIK, int _ADPPAIPFHML_Num, int _JLPEGFAMKPK_amount)
 	{
 		EDOHBJAPLPF_JsonData res = new EDOHBJAPLPF_JsonData();
 		FLBFCCIEPNC_InitBaseJson(res, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
 		res["id"] = _PPFNGGCBJKC_id;
-		res["type"] = _INDDJNMPONH_Type;
+		res["type"] = _INDDJNMPONH_type;
 		res["from_where"] = FPGMBHJNGIK;
 		res["num"] = _ADPPAIPFHML_Num;
 		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.PMFGEJJDMCK, res, true);
@@ -188,11 +188,11 @@ public class ILCCJNDFFOB
 			res["music_id"] = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.IAJLOELFHKC_GetMusicInfo(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.NOBCLJIAMLC_GetFreeMusicData(OMNOFMEBLAD.GHBPLHBNMBK_FreeMusicId).DLAEJOBELBH_MusicId).DLAEJOBELBH_MusicId;
 			if(!OMNOFMEBLAD.LFGNLKKFOCD_IsLine6)
 			{
-				res["difficulty"] = OMNOFMEBLAD.AKNELONELJK_Difficulty;
+				res["difficulty"] = OMNOFMEBLAD.AKNELONELJK_difficulty;
 			}
 			else
 			{
-				res["difficulty"] = OMNOFMEBLAD.AKNELONELJK_Difficulty + 10;
+				res["difficulty"] = OMNOFMEBLAD.AKNELONELJK_difficulty + 10;
 			}
 			switch(GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.DDHCLNFPNGK_RenderQuality)
 			{
@@ -362,7 +362,7 @@ public class ILCCJNDFFOB
 			res["open_event_type"] = OMNOFMEBLAD.MFJKNCACBDG_OpenEventType;
 			res["remaint_stamina"] = KALCJMLIAOK;
 			res["use_stamina"] = CBHACAOCJGP;
-			res["notes_speed"] = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.DGCDPGPAAII_GetNotesSpeed((Difficulty.Type)OMNOFMEBLAD.AKNELONELJK_Difficulty, false);
+			res["notes_speed"] = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.DGCDPGPAAII_GetNotesSpeed((Difficulty.Type)OMNOFMEBLAD.AKNELONELJK_difficulty, false);
 			JBBHNIACMFJ.Length = 0;
 			b = false;
 			for(int i = 0; i < dList.Count; i++)
@@ -478,11 +478,11 @@ public class ILCCJNDFFOB
 			data["music_id"] = mdata.DLAEJOBELBH_MusicId;
 			if(IJAOGPFKDBP.LIDKENJKLGA_IsLine6 == 0)
 			{
-				data["difficulty"] = IJAOGPFKDBP.AKNELONELJK_Difficulty;
+				data["difficulty"] = IJAOGPFKDBP.AKNELONELJK_difficulty;
 			}
 			else
 			{
-				data["difficulty"] = IJAOGPFKDBP.AKNELONELJK_Difficulty + 10;
+				data["difficulty"] = IJAOGPFKDBP.AKNELONELJK_difficulty + 10;
 			}
 			data["result"] = IJAOGPFKDBP.HBODCMLFDOB_Result;
 			data["start_t"] = BGLHDAKDPMJ_DateToString(Utility.GetLocalDateTime(IJAOGPFKDBP.ICJEDACBMMF_StartTime));
@@ -594,7 +594,7 @@ public class ILCCJNDFFOB
 			rating.CalcUtaRate(CIOECGOMILE.HHCJCDFCLOB.MNJHBCIIHED_PrevServerData.LCKMBHDMPIP_RecordMusic, false);
 			HighScoreRating rating2 = new HighScoreRating();
 			rating2.Init();
-			rating2.CalcUtaRateForLog(CIOECGOMILE.HHCJCDFCLOB.MNJHBCIIHED_PrevServerData.LCKMBHDMPIP_RecordMusic, IJAOGPFKDBP.GOIKCKHMBDL_FreeMusicId, IJAOGPFKDBP.AKNELONELJK_Difficulty, IJAOGPFKDBP.KNIFCANOHOC_score);
+			rating2.CalcUtaRateForLog(CIOECGOMILE.HHCJCDFCLOB.MNJHBCIIHED_PrevServerData.LCKMBHDMPIP_RecordMusic, IJAOGPFKDBP.GOIKCKHMBDL_FreeMusicId, IJAOGPFKDBP.AKNELONELJK_difficulty, IJAOGPFKDBP.KNIFCANOHOC_score);
 			JBBHNIACMFJ.Length = 0;
 			bool b = false;
 			for (int i = 0; i < 10; i++)
@@ -904,7 +904,7 @@ public class ILCCJNDFFOB
 	}
 
 	// // RVA: 0x900DE0 Offset: 0x900DE0 VA: 0x900DE0
-	private void DBIDGHMFLIC(OAGBCBBHMPF.KJDNDEDOIOO _INDDJNMPONH_Type, int _AHHJLDLAPAN_DivaId, int IGCLCOMCHHB, int IBKAENIBBIL, int DPJCPEIPAPN, int EKPGGDOOLFM) 
+	private void DBIDGHMFLIC(OAGBCBBHMPF.KJDNDEDOIOO _INDDJNMPONH_type, int _AHHJLDLAPAN_DivaId, int IGCLCOMCHHB, int IBKAENIBBIL, int DPJCPEIPAPN, int EKPGGDOOLFM) 
 	{
 		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
 		FLBFCCIEPNC_InitBaseJson(json, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
@@ -913,7 +913,7 @@ public class ILCCJNDFFOB
 		json["af_cos"] = IBKAENIBBIL;
 		json["bf_color_id"] = DPJCPEIPAPN;
 		json["af_color_id"] = EKPGGDOOLFM;
-		DEGEPBNNOAF(_INDDJNMPONH_Type, json, false);
+		DEGEPBNNOAF(_INDDJNMPONH_type, json, false);
 	}
 
 	// // RVA: 0x9011EC Offset: 0x9011EC VA: 0x9011EC
@@ -940,7 +940,7 @@ public class ILCCJNDFFOB
 		}
 		else
 		{
-			if (ILLPDLODANB.HHMKDAIGMKC_IsDebutMission((ILLPDLODANB.LOEGALDKHPL)quest.INDDJNMPONH_Type))
+			if (ILLPDLODANB.HHMKDAIGMKC_IsDebutMission((ILLPDLODANB.LOEGALDKHPL)quest.INDDJNMPONH_type))
 			{
 				json[AFEHLCGHAEE_Strings.KOEAHHAHDNP_mission_type] = JpStringLiterals.StringLiteral_11218;
 			}
@@ -1258,7 +1258,7 @@ public class ILCCJNDFFOB
 			json["mission_id"] = d.PPFNGGCBJKC_id;
 			json["event_id"] = _MOHDLLIJELH_cont.PGIIDPEGGPI_EventId;
 			json["event_name"] = _MOHDLLIJELH_cont.DGCOMDILAKM_EventName;
-			json["difficulty"] = OMNOFMEBLAD.AKNELONELJK_Difficulty;
+			json["difficulty"] = OMNOFMEBLAD.AKNELONELJK_difficulty;
 			json["lucky"] = d2.KIFJKGDBDBH_lucky;
 			json["boost_ratio"] = _MOHDLLIJELH_cont.HADLPHIMBHH_BoostRatio;
 			if(GBNDFCEDNMG.NKGDIBMNLNO(d) == 1)
@@ -1289,7 +1289,7 @@ public class ILCCJNDFFOB
             json["event_id"] = _MOHDLLIJELH_cont.PGIIDPEGGPI_EventId;
 			json["event_name"] = _MOHDLLIJELH_cont.DGCOMDILAKM_EventName;
 			json["mission_id"] = d.PPFNGGCBJKC_id;
-			json["difficulty"] = IJAOGPFKDBP.AKNELONELJK_Difficulty;
+			json["difficulty"] = IJAOGPFKDBP.AKNELONELJK_difficulty;
 			json["lucky"] = d2.KIFJKGDBDBH_lucky;
 			int mission_clr_cnt = 0;
 			if(GBNDFCEDNMG.NKGDIBMNLNO(d) == 1)
@@ -1324,7 +1324,7 @@ public class ILCCJNDFFOB
 						}
 						else
 						{
-							get_pt = d.EIOFPIHABFC_Pts * _MOHDLLIJELH_cont.BOLHIMADLBN(OMNOFMEBLAD.AKNELONELJK_Difficulty);
+							get_pt = d.EIOFPIHABFC_Pts * _MOHDLLIJELH_cont.BOLHIMADLBN(OMNOFMEBLAD.AKNELONELJK_difficulty);
 						}
 						get_pt *= _MOHDLLIJELH_cont.HADLPHIMBHH_BoostRatio;
 					}
@@ -1348,7 +1348,7 @@ public class ILCCJNDFFOB
 			if(_MOHDLLIJELH_cont.MNDFBBMNJGN_IsUsingTicket)
 			{
 				json["remaint_stamina"] = _MOHDLLIJELH_cont.AELBIEDNPGB_GetTicketCount(null);
-				json["use_stamina"] = _MOHDLLIJELH_cont.EAMODCHMCEL_GetTicketCost(OMNOFMEBLAD.AKNELONELJK_Difficulty, OMNOFMEBLAD.LFGNLKKFOCD_IsLine6);
+				json["use_stamina"] = _MOHDLLIJELH_cont.EAMODCHMCEL_GetTicketCost(OMNOFMEBLAD.AKNELONELJK_difficulty, OMNOFMEBLAD.LFGNLKKFOCD_IsLine6);
 			}
 			json["event_id"] = _MOHDLLIJELH_cont.PGIIDPEGGPI_EventId;
 			json["event_name"] = _MOHDLLIJELH_cont.DGCOMDILAKM_EventName;
@@ -1437,7 +1437,7 @@ public class ILCCJNDFFOB
 		JBBHNIACMFJ.Append(':');
 		JBBHNIACMFJ.Append(BIGMHOMLMAG.KNIFCANOHOC_score);
 		JBBHNIACMFJ.Append(':');
-		JBBHNIACMFJ.Append(BIGMHOMLMAG.AKNELONELJK_Difficulty);
+		JBBHNIACMFJ.Append(BIGMHOMLMAG.AKNELONELJK_difficulty);
 		JBBHNIACMFJ.Append(':');
 		JBBHNIACMFJ.Append(BIGMHOMLMAG.EHGBICNIBKE_PlayerId > 9999);
 		JBBHNIACMFJ.Append(':');
@@ -1768,7 +1768,7 @@ public class ILCCJNDFFOB
 			}
 			json["event_id"] = _MOHDLLIJELH_cont.PGIIDPEGGPI_EventId;
 			json["event_name"] = _MOHDLLIJELH_cont.DGCOMDILAKM_EventName;
-			json["difficulty"] = OMNOFMEBLAD.AKNELONELJK_Difficulty;
+			json["difficulty"] = OMNOFMEBLAD.AKNELONELJK_difficulty;
 			json["boost_ratio"] = _MOHDLLIJELH_cont.HADLPHIMBHH_BoostRatio;
 			json["start_pt"] = _MOHDLLIJELH_cont.FBGDBGKNKOD_GetCurrentPoint();
 			json["start_ranking"] = _MOHDLLIJELH_cont.CDINKAANIAA_Rank[0];
@@ -1802,7 +1802,7 @@ public class ILCCJNDFFOB
 			json["event_id"] = _MOHDLLIJELH_cont.PGIIDPEGGPI_EventId;
 			json["event_name"] = _MOHDLLIJELH_cont.DGCOMDILAKM_EventName;
 			json["mission_id"] = l;
-			json["difficulty"] = IJAOGPFKDBP.AKNELONELJK_Difficulty;
+			json["difficulty"] = IJAOGPFKDBP.AKNELONELJK_difficulty;
 			if(IJAOGPFKDBP.HBODCMLFDOB_Result == 1)
 			{
 				json["base_point"] = 0;
@@ -1870,9 +1870,9 @@ public class ILCCJNDFFOB
 		json["free_music_id"] = OMNOFMEBLAD.GHBPLHBNMBK_FreeMusicId;
 		json["music_id"] = mData.DLAEJOBELBH_MusicId;
 		if(!OMNOFMEBLAD.LFGNLKKFOCD_IsLine6)
-			json["difficulty"] = OMNOFMEBLAD.AKNELONELJK_Difficulty;
+			json["difficulty"] = OMNOFMEBLAD.AKNELONELJK_difficulty;
 		else
-			json["difficulty"] = OMNOFMEBLAD.AKNELONELJK_Difficulty + 10;
+			json["difficulty"] = OMNOFMEBLAD.AKNELONELJK_difficulty + 10;
 		switch(GameManager.Instance.localSave.EPJOACOONAC_GetSave().MHHPDGJLJGE_OptionsSLive.DDHCLNFPNGK_RenderQuality)
 		{
 			case 0:
@@ -1901,7 +1901,7 @@ public class ILCCJNDFFOB
 		json["mv_valkyrie_id"] = Database.Instance.gameSetup.teamInfo.valkyrieId;
 		json["remain_mv_ticket"] = JPLMIPNGKEA;
 		json["use_mv_ticket"] = AIMGOGFLILF;
-		json["notes_speed"] = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.DGCDPGPAAII_GetNotesSpeed((Difficulty.Type)OMNOFMEBLAD.AKNELONELJK_Difficulty, false);
+		json["notes_speed"] = GameManager.Instance.localSave.EPJOACOONAC_GetSave().CNLJNGLMMHB_Options.DGCDPGPAAII_GetNotesSpeed((Difficulty.Type)OMNOFMEBLAD.AKNELONELJK_difficulty, false);
         NPOOPJIOMHF_Prism.CLGGEONAHPL_TeamSelectionSetting team = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.GHDDPJBBEOC_Prism.GCINIJEMHFK_GetTeamForSong(mData.DLAEJOBELBH_MusicId);
         json["notes_disp"] = team.NLFMKOJHAHJ_nt;
 		if(team.MKKGKKHABEK_vm == 0)
@@ -1941,11 +1941,11 @@ public class ILCCJNDFFOB
 		json["music_id"] = mData.DLAEJOBELBH_MusicId;
 		if(IJAOGPFKDBP.LIDKENJKLGA_IsLine6 == 0)
 		{
-			json["difficulty"] = OMNOFMEBLAD.AKNELONELJK_Difficulty;
+			json["difficulty"] = OMNOFMEBLAD.AKNELONELJK_difficulty;
 		}
 		else
 		{
-			json["difficulty"] = OMNOFMEBLAD.AKNELONELJK_Difficulty + 10;
+			json["difficulty"] = OMNOFMEBLAD.AKNELONELJK_difficulty + 10;
 		}
 		json["result"] = IJAOGPFKDBP.HBODCMLFDOB_Result;
 		json["start_t"] = BGLHDAKDPMJ_DateToString(Utility.GetLocalDateTime(IJAOGPFKDBP.ICJEDACBMMF_StartTime));
@@ -2212,11 +2212,11 @@ public class ILCCJNDFFOB
 	}
 
 	// // RVA: 0x9154B4 Offset: 0x9154B4 VA: 0x9154B4
-	public void BKLNHBHDDEJ(string _INDDJNMPONH_Type)
+	public void BKLNHBHDDEJ(string _INDDJNMPONH_type)
 	{
 		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
 		FLBFCCIEPNC_InitBaseJson(json, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
-		json["type"] = _INDDJNMPONH_Type;
+		json["type"] = _INDDJNMPONH_type;
 		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.BKLNHBHDDEJ_63, json, false);
 	}
 
@@ -2395,7 +2395,7 @@ public class ILCCJNDFFOB
 	// public void NJMBKGKPCKL() { }
 
 	// // RVA: 0x918698 Offset: 0x918698 VA: 0x918698
-	// public void PEBDGCDNPDM(NKOBMDPHNGP _MOHDLLIJELH_cont, string _INDDJNMPONH_Type) { }
+	// public void PEBDGCDNPDM(NKOBMDPHNGP _MOHDLLIJELH_cont, string _INDDJNMPONH_type) { }
 
 	// // RVA: 0x9189E0 Offset: 0x9189E0 VA: 0x9189E0
 	// public void LHCHBHPHLCP() { }
@@ -2862,11 +2862,11 @@ public class ILCCJNDFFOB
 	}
 
 	// // RVA: 0x91F708 Offset: 0x91F708 VA: 0x91F708
-	public void CLGHLKLHEAK(string _INDDJNMPONH_Type, int HHFIMKIKJBC)
+	public void CLGHLKLHEAK(string _INDDJNMPONH_type, int HHFIMKIKJBC)
 	{
 		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
 		FLBFCCIEPNC_InitBaseJson(json, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
-		json["type"] = _INDDJNMPONH_Type;
+		json["type"] = _INDDJNMPONH_type;
 		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.CLGHLKLHEAK, json, false);
 	}
 
@@ -3003,7 +3003,7 @@ public class ILCCJNDFFOB
 	}
 
 	// // RVA: 0x921C2C Offset: 0x921C2C VA: 0x921C2C
-	public void MINOEGPNBIH(int IJIEMJFAJKL, int GGJLPODCHIO, int _JGGKJBCGKCC_use_item_id, int PJIOJCFCFOK, string _INDDJNMPONH_Type, string GNOOPLDMLBE)
+	public void MINOEGPNBIH(int IJIEMJFAJKL, int GGJLPODCHIO, int _JGGKJBCGKCC_use_item_id, int PJIOJCFCFOK, string _INDDJNMPONH_type, string GNOOPLDMLBE)
 	{
 		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
 		FLBFCCIEPNC_InitBaseJson(json, JDDGPJDKHNE.HHCJCDFCLOB.KPKAKIIAFFB_GetNextRequestId());
@@ -3011,7 +3011,7 @@ public class ILCCJNDFFOB
 		json["mc_guage_af"] = GGJLPODCHIO;
 		json["use_item_id"] = _JGGKJBCGKCC_use_item_id;
 		json["af_item_num"] = PJIOJCFCFOK;
-		json["type"] = _INDDJNMPONH_Type;
+		json["type"] = _INDDJNMPONH_type;
 		json["attack_info"] = GNOOPLDMLBE;
 		DEGEPBNNOAF(OAGBCBBHMPF.KJDNDEDOIOO.MINOEGPNBIH_81, json, false);
 	}
@@ -3037,7 +3037,7 @@ public class ILCCJNDFFOB
 	}
 
 	// // RVA: 0x9225F0 Offset: 0x9225F0 VA: 0x9225F0
-	public void BOIIMIEPMLG(string _INDDJNMPONH_Type, int _PPFNGGCBJKC_id, string KIFBPEGOEDL)
+	public void BOIIMIEPMLG(string _INDDJNMPONH_type, int _PPFNGGCBJKC_id, string KIFBPEGOEDL)
 	{
 		return;
 	}

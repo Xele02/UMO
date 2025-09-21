@@ -14,7 +14,7 @@ public class PGCGJPPBOOA
 	public long HEOKKHAGEIE_BatchStartedAt; // 0x28
 	public long ENMGMCHECGE_CompetitionCloseAt; // 0x30
 	public long GKOAEJDMLED_RewardOpenedAt; // 0x38
-	public long EGBOHDFBAPB_ClosedAt; // 0x40
+	public long EGBOHDFBAPB_CloseAt; // 0x40
 	public long OFJFGMDBFPK_batch_interval_time; // 0x48
 	public int DNBPICNPJNE_ScorePrecision; // 0x50
 	public int ADKJLADBKKK_DefaultScore; // 0x54
@@ -35,7 +35,7 @@ public class PGCGJPPBOOA
 		HEOKKHAGEIE_BatchStartedAt = JsonUtil.GetLong(_IDLHJIOMJBK_Data, AFEHLCGHAEE_Strings.HEOKKHAGEIE_BatchStartedAt, 0);
 		ENMGMCHECGE_CompetitionCloseAt = JsonUtil.GetLong(_IDLHJIOMJBK_Data, AFEHLCGHAEE_Strings.ENMGMCHECGE_CompetitionCloseAt, 0);
 		GKOAEJDMLED_RewardOpenedAt = JsonUtil.GetLong(_IDLHJIOMJBK_Data, AFEHLCGHAEE_Strings.GKOAEJDMLED_RewardOpenedAt, 0);
-		EGBOHDFBAPB_ClosedAt = JsonUtil.GetLong(_IDLHJIOMJBK_Data, AFEHLCGHAEE_Strings.EGBOHDFBAPB_CloseAt, 0);
+		EGBOHDFBAPB_CloseAt = JsonUtil.GetLong(_IDLHJIOMJBK_Data, AFEHLCGHAEE_Strings.EGBOHDFBAPB_CloseAt, 0);
 		OFJFGMDBFPK_batch_interval_time = JsonUtil.GetLong(_IDLHJIOMJBK_Data, AFEHLCGHAEE_Strings.OFJFGMDBFPK_batch_interval_time, 0);
 		DNBPICNPJNE_ScorePrecision = (int)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.DNBPICNPJNE_ScorePrecision];
 		ADKJLADBKKK_DefaultScore = JsonUtil.GetInt(_IDLHJIOMJBK_Data, AFEHLCGHAEE_Strings.ADKJLADBKKK_DefaultScore, 0);

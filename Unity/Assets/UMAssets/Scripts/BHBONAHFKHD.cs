@@ -20,31 +20,31 @@ public class BHBONAHFKHD
 	//private void BNFBKGHBHHN(string JIKKNHIAEKG, EDOHBJAPLPF OBHAFLMHAKG) { }
 
 	//// RVA: 0xC7D270 Offset: 0xC7D270 VA: 0xC7D270
-	//public void ANIJHEBLMGB(string JIKKNHIAEKG, string ALGBKNAAEKO, EDOHBJAPLPF _JBGEEPFKIGG_Value) { }
+	//public void ANIJHEBLMGB(string JIKKNHIAEKG, string ALGBKNAAEKO, EDOHBJAPLPF _JBGEEPFKIGG_val) { }
 
 	//// RVA: 0xC7D430 Offset: 0xC7D430 VA: 0xC7D430
-	//public void ANIJHEBLMGB(string JIKKNHIAEKG, string ALGBKNAAEKO, bool _JBGEEPFKIGG_Value) { }
+	//public void ANIJHEBLMGB(string JIKKNHIAEKG, string ALGBKNAAEKO, bool _JBGEEPFKIGG_val) { }
 
 	//// RVA: 0xC7D600 Offset: 0xC7D600 VA: 0xC7D600
-	//public void ANIJHEBLMGB(string JIKKNHIAEKG, string ALGBKNAAEKO, int _JBGEEPFKIGG_Value) { }
+	//public void ANIJHEBLMGB(string JIKKNHIAEKG, string ALGBKNAAEKO, int _JBGEEPFKIGG_val) { }
 
 	//// RVA: 0xC7D7D0 Offset: 0xC7D7D0 VA: 0xC7D7D0
-	//public void ANIJHEBLMGB(string JIKKNHIAEKG, string ALGBKNAAEKO, string _JBGEEPFKIGG_Value) { }
+	//public void ANIJHEBLMGB(string JIKKNHIAEKG, string ALGBKNAAEKO, string _JBGEEPFKIGG_val) { }
 
 	//// RVA: 0xC7D9A0 Offset: 0xC7D9A0 VA: 0xC7D9A0
 	//public void OJCJPCHFPGO(string JIKKNHIAEKG, string ALGBKNAAEKO) { }
 
 	//// RVA: 0xC7DB18 Offset: 0xC7DB18 VA: 0xC7DB18
-	//public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, EDOHBJAPLPF_JsonData _JBGEEPFKIGG_Value)
+	//public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, EDOHBJAPLPF_JsonData _JBGEEPFKIGG_val)
 
 	//// RVA: 0xC7DCD8 Offset: 0xC7DCD8 VA: 0xC7DCD8
-	//public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, bool _JBGEEPFKIGG_Value)
+	//public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, bool _JBGEEPFKIGG_val)
 
 	//// RVA: 0xC7DEA8 Offset: 0xC7DEA8 VA: 0xC7DEA8
-	//public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, int _JBGEEPFKIGG_Value)
+	//public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, int _JBGEEPFKIGG_val)
 
 	//// RVA: 0xC7E078 Offset: 0xC7E078 VA: 0xC7E078
-	//public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, string _JBGEEPFKIGG_Value)
+	//public void OJLJAHAGBLK(string JIKKNHIAEKG, string ALGBKNAAEKO, string _JBGEEPFKIGG_val)
 
 	//// RVA: 0xC7E248 Offset: 0xC7E248 VA: 0xC7E248
 	//public void AKBLDNCONGK(string JIKKNHIAEKG, string _NHPCKCOPKAM_from, string ALGBKNAAEKO) { }
@@ -53,16 +53,16 @@ public class BHBONAHFKHD
 	//public void ODDIHGPONFL_Copy(string JIKKNHIAEKG, string _NHPCKCOPKAM_from, string ALGBKNAAEKO) { }
 
 	//// RVA: 0xC7E5E8 Offset: 0xC7E5E8 VA: 0xC7E5E8
-	//public void KCCCOEMPPEA(string JIKKNHIAEKG, string ALGBKNAAEKO, EDOHBJAPLPF _JBGEEPFKIGG_Value) { }
+	//public void KCCCOEMPPEA(string JIKKNHIAEKG, string ALGBKNAAEKO, EDOHBJAPLPF _JBGEEPFKIGG_val) { }
 
 	//// RVA: 0xC7E7A8 Offset: 0xC7E7A8 VA: 0xC7E7A8
-	//public void FHPBAKLNKOL(string JIKKNHIAEKG, string ALGBKNAAEKO, bool _JBGEEPFKIGG_Value) { }
+	//public void FHPBAKLNKOL(string JIKKNHIAEKG, string ALGBKNAAEKO, bool _JBGEEPFKIGG_val) { }
 
 	//// RVA: 0xC7E978 Offset: 0xC7E978 VA: 0xC7E978
-	//public void FHPBAKLNKOL(string JIKKNHIAEKG, string ALGBKNAAEKO, int _JBGEEPFKIGG_Value) { }
+	//public void FHPBAKLNKOL(string JIKKNHIAEKG, string ALGBKNAAEKO, int _JBGEEPFKIGG_val) { }
 
 	//// RVA: 0xC7EB48 Offset: 0xC7EB48 VA: 0xC7EB48
-	//public void FHPBAKLNKOL(string JIKKNHIAEKG, string ALGBKNAAEKO, string _JBGEEPFKIGG_Value) { }
+	//public void FHPBAKLNKOL(string JIKKNHIAEKG, string ALGBKNAAEKO, string _JBGEEPFKIGG_val) { }
 
 	//// RVA: 0xC7ED18 Offset: 0xC7ED18 VA: 0xC7ED18
 	//public void OPBAJJIJENO() { }

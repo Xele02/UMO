@@ -11,7 +11,7 @@ public class LFAFJCNKLML : CKFGMNAIBNG
 	{
 		public class LKICDEKECIH
 		{
-			public LCLCCHLDNHJ_Costume.LKLGPLFNJBA_UnlockCondition INDDJNMPONH_Type; // 0x8
+			public LCLCCHLDNHJ_Costume.LKLGPLFNJBA_UnlockCondition INDDJNMPONH_type; // 0x8
 			public int[] PIBLLGLCJEO_Param; // 0xC UnlockValue
 		}
 
@@ -101,7 +101,7 @@ public class LFAFJCNKLML : CKFGMNAIBNG
 					for(int j = 0; j < cosInfo.BJGNGNPHCBA_LevelsInfo.Length; j++)
 					{
 						FHLDDEKAJKI data2 = new FHLDDEKAJKI();
-						data2.PEEAGFNOFFO_UnlockType = (LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType)cosInfo.BJGNGNPHCBA_LevelsInfo[j].INDDJNMPONH_Type;
+						data2.PEEAGFNOFFO_UnlockType = (LCLCCHLDNHJ_Costume.FPDJGDGEBNG_UnlockType)cosInfo.BJGNGNPHCBA_LevelsInfo[j].INDDJNMPONH_type;
 						data2.KJNAHLOODKD_Value = cosInfo.BJGNGNPHCBA_LevelsInfo[j].PIBLLGLCJEO_Param;
 						data2.DNBFMLBNAEE_Point = i1[j];
 						data2.ACGLMKEBMDL_Uc = i2[j];
@@ -112,10 +112,10 @@ public class LFAFJCNKLML : CKFGMNAIBNG
 							List<FHLDDEKAJKI.LKICDEKECIH> lu = new List<FHLDDEKAJKI.LKICDEKECIH>(unlock.NKNBKLHCAFD_UnlocksConditions.Length);
 							for(int k = 0; k < unlock.NKNBKLHCAFD_UnlocksConditions.Length; k++)
 							{
-								if(unlock.NKNBKLHCAFD_UnlocksConditions[k].INDDJNMPONH_Type > 0)
+								if(unlock.NKNBKLHCAFD_UnlocksConditions[k].INDDJNMPONH_type > 0)
 								{
 									FHLDDEKAJKI.LKICDEKECIH data3 = new FHLDDEKAJKI.LKICDEKECIH();
-									data3.INDDJNMPONH_Type = (LCLCCHLDNHJ_Costume.LKLGPLFNJBA_UnlockCondition)unlock.NKNBKLHCAFD_UnlocksConditions[k].INDDJNMPONH_Type;
+									data3.INDDJNMPONH_type = (LCLCCHLDNHJ_Costume.LKLGPLFNJBA_UnlockCondition)unlock.NKNBKLHCAFD_UnlocksConditions[k].INDDJNMPONH_type;
 									data3.PIBLLGLCJEO_Param = unlock.NKNBKLHCAFD_UnlocksConditions[k].PIBLLGLCJEO_Param;
 									lu.Add(data3);
 								}

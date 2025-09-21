@@ -929,7 +929,7 @@ namespace XeApp.Game.Menu
 			for(int i = m_commentCount - 1; i >= 0; i--)
 			{
 				ANPBHCNJIDI.NNPGLGHDBKN cm = m_RaidLobbyController.GDGCADFCDCL_GetComment( (NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE) m_raidSelect, i);
-				m_windowUi.AddBbsListItem(cm, cm.INDDJNMPONH_Type, m_PlayerId, i, IsMemberLobby);
+				m_windowUi.AddBbsListItem(cm, cm.INDDJNMPONH_type, m_PlayerId, i, IsMemberLobby);
 			}
 			m_windowUi.AddScrollItem();
 			m_windowUi.UpdateScroll();
@@ -943,7 +943,7 @@ namespace XeApp.Game.Menu
 			for(int i = m_commentCount - 1; i >= 0; i--)
 			{
 				ANPBHCNJIDI.NNPGLGHDBKN cm = m_RaidLobbyController.GDGCADFCDCL_GetComment( (NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE) m_raidSelect, i);
-				m_windowUi.AddBbsListItem(cm, cm.INDDJNMPONH_Type, m_PlayerId, i, IsMemberLobby);
+				m_windowUi.AddBbsListItem(cm, cm.INDDJNMPONH_type, m_PlayerId, i, IsMemberLobby);
 			}
 			m_windowUi.AddScrollItem();
 			m_windowUi.UpdateDisplayOnly();
@@ -959,7 +959,7 @@ namespace XeApp.Game.Menu
 			for(int i = m_commentCount - 1; i >= 0; i--)
 			{
                 ANPBHCNJIDI.NNPGLGHDBKN cm = m_RaidLobbyController.GDGCADFCDCL_GetComment((NKOBMDPHNGP_EventRaidLobby.FLHJEJGJJGE)m_raidSelect, i);
-				m_windowUi.AddBbsListItem(cm, cm.INDDJNMPONH_Type, m_PlayerId, i,IsMemberLobby);
+				m_windowUi.AddBbsListItem(cm, cm.INDDJNMPONH_type, m_PlayerId, i,IsMemberLobby);
             }
 			m_windowUi.AddScrollItem();
 			m_windowUi.NextCommentAddScrollLsit(index);

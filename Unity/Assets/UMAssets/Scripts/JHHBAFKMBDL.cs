@@ -75,7 +75,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = label, Type = type }
 		};
 		t.Text = HPPMBEDJGKB(_PPFNGGCBJKC_id, 0, false);
-		PopupWindowManager.Show(t, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(t, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x13470F8
 			EDIIEFHAOGP();
@@ -95,7 +95,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Retry, Type = PopupButton.ButtonType.Positive }
 		};
 		s.Text = HPPMBEDJGKB(_PPFNGGCBJKC_id, 0, true);
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x134712C
 			if(LHFGEOAJAAL != PopupButton.ButtonLabel.Retry)
@@ -119,7 +119,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
 		s.Text = MLCPIKEMFBK_GetErrorText(_CMCKNKKCNDK_Status);
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x134718C
 			EDIIEFHAOGP();
@@ -136,7 +136,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
 		setting.Text = MLCPIKEMFBK_GetErrorText(_CMCKNKKCNDK_Status);
-		PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) => {
+		PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) => {
 			//0x13471C0
 			EDIIEFHAOGP();
 		}, null, null, null, true, true, false, null, null, null, null, null);
@@ -152,7 +152,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
 		setting.Text = JpStringLiterals.StringLiteral_11923;
-		PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) => {
+		PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) => {
 			//0x13471F4
 			EDIIEFHAOGP();
 		}, null, null, null, true, true, false, null, null, null, null, null);
@@ -170,7 +170,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Contact, Type = PopupButton.ButtonType.Positive },
 		};
 		s.WindowSize = SizeType.Middle;
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x1347228
 			if(LHFGEOAJAAL == PopupButton.ButtonLabel.Contact)
@@ -231,7 +231,7 @@ public class JHHBAFKMBDL
 		s.Buttons = btns;
 		s.WindowSize = ws;
 		s.Text = _LJGOOOMOMMA_message;
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x13474A4
 			if(LHFGEOAJAAL == PopupButton.ButtonLabel.Contact)
@@ -270,7 +270,7 @@ public class JHHBAFKMBDL
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Retry, Type = PopupButton.ButtonType.Positive }
 			};
 			s.Text = JpStringLiterals.StringLiteral_11928;
-			PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+			PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 			{
 				//0x1347820
 				EDIIEFHAOGP();
@@ -284,7 +284,7 @@ public class JHHBAFKMBDL
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Retry, Type = PopupButton.ButtonType.Positive }
 			};
 			s.Text = JpStringLiterals.StringLiteral_11930;
-			PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+			PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 			{
 				//0x134784C
 				EDIIEFHAOGP();
@@ -306,7 +306,7 @@ public class JHHBAFKMBDL
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Retry, Type = PopupButton.ButtonType.Positive }
 			};
-			PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+			PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 			{
 				//0x1347880
 				if(LHFGEOAJAAL != PopupButton.ButtonLabel.Retry)
@@ -328,7 +328,7 @@ public class JHHBAFKMBDL
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Retry, Type = PopupButton.ButtonType.Positive }
 			};
-			PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+			PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 			{
 				//0x13478D8
 				if(LHFGEOAJAAL != PopupButton.ButtonLabel.Retry)
@@ -354,7 +354,7 @@ public class JHHBAFKMBDL
 		s.TitleText = MessageManager.Instance.GetMessage("common", "popup_app_update_title");
 		s.Message = MessageManager.Instance.GetMessage("common", "popup_app_update_an");
 		s.WindowSize = SizeType.Middle;
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x1347938
 			EDIIEFHAOGP();
@@ -373,7 +373,7 @@ public class JHHBAFKMBDL
 		setting.TitleText = MessageManager.Instance.GetMessage("menu", "popup_rcmd_app_update_title");
 		setting.Message = MessageManager.Instance.GetMessage("menu", "popup_rcmd_app_update_an");
 		setting.WindowSize = SizeType.Middle;
-		PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x134796C
 			if(LHFGEOAJAAL != PopupButton.ButtonLabel.Update)
@@ -406,7 +406,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType. Negative }
 		};
 		s.Text = MessageManager.Instance.GetMessage(LGNLCJIKOEO, "popup_data_error");
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x1347BB0
 			BHEOPIPFEFJ();
@@ -429,7 +429,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
 		s.Text = MessageManager.Instance.GetMessage(LGNLCJIKOEO, "popup_playerdata_error");
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x1347C4C
 			if(BHEOPIPFEFJ != null)
@@ -474,7 +474,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
 		s.Text = MessageManager.Instance.GetMessage(LGNLCJIKOEO, "popup_app_error");
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x1347EA8
 			BHEOPIPFEFJ();
@@ -536,7 +536,7 @@ public class JHHBAFKMBDL
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Retry, Type = PopupButton.ButtonType.Positive }
 			};
 			s.Text = JpStringLiterals.StringLiteral_11955;
-			PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+			PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 			{
 				//0x13480DC
 				if(LHFGEOAJAAL != PopupButton.ButtonLabel.Retry)
@@ -556,7 +556,7 @@ public class JHHBAFKMBDL
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive },
 			};
 			s.Text = JpStringLiterals.StringLiteral_11956;
-			PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+			PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 			{
 				//0x1348134
 				NIMPEHIECJH();
@@ -578,7 +578,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
 		s.Text = MessageManager.Instance.GetMessage("menu", CINOHLCJLJF ? "popup_event_end_text_1" : "popup_event_end_text_2");
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x134819C
 			_HIDFAIBOHCC_OnSuccess();
@@ -595,7 +595,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
 		s.Text = MessageManager.Instance.GetMessage("common", "popup_purchase_recover_store_server_error_an");
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x13481D0
 			_HIDFAIBOHCC_OnSuccess();
@@ -612,7 +612,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
 		s.Text = MessageManager.Instance.GetMessage("common", "popup_ngword_error_message");
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x1348204
 			_HIDFAIBOHCC_OnSuccess();
@@ -629,7 +629,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 		};
 		s.Text = _LJGOOOMOMMA_message;
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x1348238
 			_HIDFAIBOHCC_OnSuccess();
@@ -647,7 +647,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
 		s.Text = bk.GetMessageByLabel(MBJKHOOMAFE ? "popup_present_expire_01" : "popup_present_expire_02");
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x134826C
 			_JGKOLBLPMPG_OnFail();
@@ -665,7 +665,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
 		s.Text = bk.GetMessageByLabel("popup_gacha_expire_01");
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x13482A0
 			_JGKOLBLPMPG_OnFail();
@@ -697,7 +697,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
 		s.Text = bk.GetMessageByLabel("popup_lb_already_received");
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x13483D8
 			_HIDFAIBOHCC_OnSuccess();
@@ -715,7 +715,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
 		s.Text = JpStringLiterals.StringLiteral_11973;
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x134840C
 			_HIDFAIBOHCC_OnSuccess();
@@ -734,7 +734,7 @@ public class JHHBAFKMBDL
 		};
 		s.WindowSize = SizeType.Middle;
 		s.type = LayoutPopupStopAccount.Type.EVENT;
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x1348440
 			if(LHFGEOAJAAL == PopupButton.ButtonLabel.Contact)
@@ -767,7 +767,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
 		s.Text = MessageManager.Instance.GetMessage("common", "popup_inf_line_api_update_content");
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x134871C
 			_HIDFAIBOHCC_OnSuccess();
@@ -784,7 +784,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
 		s.Text = MessageManager.Instance.GetMessage("menu", "popup_error_purchase_multi_text_00");
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x1348750
 			_AOCANKOMKFG_OnError();
@@ -801,7 +801,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
 		s.Text = MessageManager.Instance.GetMessage("common", "popup_s_mas_text");
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x1348784
 			_AOCANKOMKFG_OnError();
@@ -819,7 +819,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
 		s.Text = MessageManager.Instance.GetMessage("menu", "pop_pass_store_error");
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x13487B8
 			NIMPEHIECJH();
@@ -837,7 +837,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
 		s.Text = MessageManager.Instance.GetMessage("menu", "pop_pass_goto_home_2");
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x13487EC
 			NIMPEHIECJH();
@@ -853,7 +853,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
 		popup.Text = MessageManager.Instance.GetMessage("menu", "popup_dateline_error_text");
-		PopupWindowManager.Show(popup, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) => {
+		PopupWindowManager.Show(popup, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) => {
 			//0x1348820
 			_MBIKIBHLAGE_OnError();
 		}, null, null, null, true, true, false, null, null, null, null, null);
@@ -868,7 +868,7 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
 		s.Text = MessageManager.Instance.GetMessage("menu", "popup_recover_done_text");
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0x1348854
 			_MBIKIBHLAGE_OnError();
@@ -885,9 +885,9 @@ public class JHHBAFKMBDL
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 		};
-		PopupWindowManager.Show(popup, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) => {
+		PopupWindowManager.Show(popup, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) => {
 			//0x1348888
-			if(_INDDJNMPONH_Type != PopupButton.ButtonType.Negative)
+			if(_INDDJNMPONH_type != PopupButton.ButtonType.Negative)
 			{
 				_HIDFAIBOHCC_OnSuccess();
 				return;
@@ -906,7 +906,7 @@ public class JHHBAFKMBDL
 		popup.Buttons = new ButtonInfo[1] {
 			new ButtonInfo() { Label = PopupButton.ButtonLabel.Retry, Type = PopupButton.ButtonType.Positive }
 		};
-		PopupWindowManager.Show(popup, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) => {
+		PopupWindowManager.Show(popup, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) => {
 			//0x13488E8
 			_HIDFAIBOHCC_OnSuccess();
 		}, null, null, null, true, true, false, null, null, null, null, null);

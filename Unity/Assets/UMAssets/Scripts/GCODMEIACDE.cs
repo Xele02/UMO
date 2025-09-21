@@ -64,7 +64,7 @@ public class GCODMEIACDE
                 HGLPLKKBBOL_EventItem.JMCDEDCMCJE it = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.DHOFNBMPBAG_EventItem.CDENCMNHNGA_table[JGEOBNENMAH.HHCJCDFCLOB.JCDPLILNKDG[i] - 1];
                 PKJINGDIFNG d = new PKJINGDIFNG();
                 d.KIJAPOFAGPN_ItemId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.EMOLGEDEEJP_EventItem, JGEOBNENMAH.HHCJCDFCLOB.JCDPLILNKDG[i]);
-                d.DNBFMLBNAEE_Point = it.JBGEEPFKIGG_Value;
+                d.DNBFMLBNAEE_Point = it.JBGEEPFKIGG_val;
                 d.HMFFHLPNMPH_Count = JGEOBNENMAH.HHCJCDFCLOB.CMCDIOOEHMI[i];
                 d.AHOKAPCGJMA_TotalPoint = d.DNBFMLBNAEE_Point * d.HMFFHLPNMPH_Count;
                 Debug.Log(string.Concat(new object[8]
@@ -72,7 +72,7 @@ public class GCODMEIACDE
                     "StringLiteral_10444",
                     d.KIJAPOFAGPN_ItemId,
                     ",",
-                    it.JBGEEPFKIGG_Value,
+                    it.JBGEEPFKIGG_val,
                     " x ",
                     d.HMFFHLPNMPH_Count,
                     "=",

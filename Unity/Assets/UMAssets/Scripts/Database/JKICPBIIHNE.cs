@@ -114,11 +114,11 @@ public class JKICPBIIHNE_Bingo : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0x1362238 Offset: 0x1362238 VA: 0x1362238
-		public bool APPMICHOCFN(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value)
+		public bool APPMICHOCFN(int IOPHIHFOOEP, int _JBGEEPFKIGG_val)
 		{
 			if (IOPHIHFOOEP > -1 && IOPHIHFOOEP < KGANBBFKCDD_Crypted.Count)
 			{
-				KGANBBFKCDD_Crypted[IOPHIHFOOEP] = FBGGEFFJJHB_xor ^ _JBGEEPFKIGG_Value;
+				KGANBBFKCDD_Crypted[IOPHIHFOOEP] = FBGGEFFJJHB_xor ^ _JBGEEPFKIGG_val;
 				return true;
 			}
 			return false;
@@ -135,11 +135,11 @@ public class JKICPBIIHNE_Bingo : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0x1362320 Offset: 0x1362320 VA: 0x1362320
-		public bool OEFHMMJFEKC(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value)
+		public bool OEFHMMJFEKC(int IOPHIHFOOEP, int _JBGEEPFKIGG_val)
 		{
 			if (IOPHIHFOOEP > -1 && IOPHIHFOOEP < AHGCGHAAHOO_ItemIdCrypted.Count)
 			{
-				AHGCGHAAHOO_ItemIdCrypted[IOPHIHFOOEP] = FBGGEFFJJHB_xor ^ _JBGEEPFKIGG_Value;
+				AHGCGHAAHOO_ItemIdCrypted[IOPHIHFOOEP] = FBGGEFFJJHB_xor ^ _JBGEEPFKIGG_val;
 				return true;
 			}
 			return false;
@@ -156,11 +156,11 @@ public class JKICPBIIHNE_Bingo : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0x1362408 Offset: 0x1362408 VA: 0x1362408
-		public bool PPJAGFPBFHJ(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value)
+		public bool PPJAGFPBFHJ(int IOPHIHFOOEP, int _JBGEEPFKIGG_val)
 		{
 			if (IOPHIHFOOEP > -1 && IOPHIHFOOEP < CMBLIDNDLOO_Crypted.Count)
 			{
-				CMBLIDNDLOO_Crypted[IOPHIHFOOEP] = FBGGEFFJJHB_xor ^ _JBGEEPFKIGG_Value;
+				CMBLIDNDLOO_Crypted[IOPHIHFOOEP] = FBGGEFFJJHB_xor ^ _JBGEEPFKIGG_val;
 				return true;
 			}
 			return false;
@@ -170,11 +170,11 @@ public class JKICPBIIHNE_Bingo : DIHHCBACKGG_DbSection
 		//public int BINCAIKOHGF(int IOPHIHFOOEP) { }
 
 		//// RVA: 0x13624F0 Offset: 0x13624F0 VA: 0x13624F0
-		public bool DKAFBIJCDIF(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value)
+		public bool DKAFBIJCDIF(int IOPHIHFOOEP, int _JBGEEPFKIGG_val)
 		{
 			if (IOPHIHFOOEP > -1 && IOPHIHFOOEP < AIGOPKGALKA_Crypted.Count)
 			{
-				AIGOPKGALKA_Crypted[IOPHIHFOOEP] = FBGGEFFJJHB_xor ^ _JBGEEPFKIGG_Value;
+				AIGOPKGALKA_Crypted[IOPHIHFOOEP] = FBGGEFFJJHB_xor ^ _JBGEEPFKIGG_val;
 				return true;
 			}
 			return false;
@@ -233,11 +233,11 @@ public class JKICPBIIHNE_Bingo : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0x1468180 Offset: 0x1468180 VA: 0x1468180
-		public bool OEFHMMJFEKC(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value)
+		public bool OEFHMMJFEKC(int IOPHIHFOOEP, int _JBGEEPFKIGG_val)
 		{
 			if (IOPHIHFOOEP > -1 && IOPHIHFOOEP < AHGCGHAAHOO_ItemIdCrypted.Count)
 			{
-				AHGCGHAAHOO_ItemIdCrypted[IOPHIHFOOEP] = FBGGEFFJJHB_xor ^ _JBGEEPFKIGG_Value;
+				AHGCGHAAHOO_ItemIdCrypted[IOPHIHFOOEP] = FBGGEFFJJHB_xor ^ _JBGEEPFKIGG_val;
 				return true;
 			}
 			return false;
@@ -271,7 +271,7 @@ public class JKICPBIIHNE_Bingo : DIHHCBACKGG_DbSection
 	{
 		private int EHOIENNDEDH_IdCrypted; // 0x8
 		private int OHPLLHANLHO_CidCrypted; // 0xC
-		private int HNJHPNPFAAN_EnabledCrypted_Crypted; // 0x10
+		private int HNJHPNPFAAN_EnabledCrypted; // 0x10
 		private int MEJIFDMJHLM_Crypted; // 0x14
 		private int IPAKEGGICML_Crypted; // 0x18
 		private int LLEMDLLGIAH_Crypted; // 0x1C
@@ -289,7 +289,7 @@ public class JKICPBIIHNE_Bingo : DIHHCBACKGG_DbSection
 
 		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x14662DC DEMEPMAEJOO 0x1466348 HIGKAIDMOKN
 		public int PBEEPMLJGJC { get { return OHPLLHANLHO_CidCrypted ^ FBGGEFFJJHB_xor; } set { OHPLLHANLHO_CidCrypted = value ^ FBGGEFFJJHB_xor; } } //0x14663B8 JGJMCAHJFFE 0x1466424 FJPAJAAPBEN
-		public int PLALNIIBLOF_en { get { return HNJHPNPFAAN_EnabledCrypted_Crypted ^ FBGGEFFJJHB_xor; } set { HNJHPNPFAAN_EnabledCrypted_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1466494 JPCJNLHHIPE 0x1466500 JJFJNEJLBDG
+		public int PLALNIIBLOF_en { get { return HNJHPNPFAAN_EnabledCrypted ^ FBGGEFFJJHB_xor; } set { HNJHPNPFAAN_EnabledCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1466494 JPCJNLHHIPE 0x1466500 JJFJNEJLBDG
 		public int NDFOAINJPIN_pos { get { return MEJIFDMJHLM_Crypted ^ FBGGEFFJJHB_xor; } set { MEJIFDMJHLM_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1466570 CLKKCPLEKBC 0x14665DC CLJOOFCICMO
 		public int CPKMLLNADLJ_Serie { get { return IPAKEGGICML_Crypted ^ FBGGEFFJJHB_xor; } set { IPAKEGGICML_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x146664C BJPJMGHCDNO 0x14666B8 BPKIOJBKNBP
 		public int FDBOPFEOENF_Diva { get { return LLEMDLLGIAH_Crypted ^ FBGGEFFJJHB_xor; } set { LLEMDLLGIAH_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1466728 MJPHCAIKKJG 0x1466794 GHECGDMEBFF

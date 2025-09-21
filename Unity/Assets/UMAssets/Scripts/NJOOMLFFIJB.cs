@@ -29,7 +29,7 @@ public class NJOOMLFFIJB
 		{
 			if(voiceList[i].PPEGAKEIEGM_Enabled == 2)
 			{
-				if(voiceList[i].INDDJNMPONH_Type == (int)LGAJNFGABFK.DDAFHPDFFPI_Brithday)
+				if(voiceList[i].INDDJNMPONH_type == (int)LGAJNFGABFK.DDAFHPDFFPI_Brithday)
 				{
 					if(time >= voiceList[i].PDBPFJJCADD_open_at && time < voiceList[i].FDBNFFNFOND_CloseAt && voiceList[i].CHOFDPDFPDC_ConfigValue == PDJEMLMOEPF)
 					{
@@ -47,7 +47,7 @@ public class NJOOMLFFIJB
 						}
 					}
 				}
-				else if(voiceList[i].INDDJNMPONH_Type == (int)LGAJNFGABFK.AJGKPBOPIJI_Limited)
+				else if(voiceList[i].INDDJNMPONH_type == (int)LGAJNFGABFK.AJGKPBOPIJI_Limited)
 				{
 					if (time >= voiceList[i].PDBPFJJCADD_open_at && time < voiceList[i].FDBNFFNFOND_CloseAt && voiceList[i].CHOFDPDFPDC_ConfigValue == PDJEMLMOEPF)
 					{
@@ -59,7 +59,7 @@ public class NJOOMLFFIJB
 						res.Add(data);
 					}
 				}
-				else if(voiceList[i].INDDJNMPONH_Type == (int)LGAJNFGABFK.CCAPCGPIIPF_Normal)
+				else if(voiceList[i].INDDJNMPONH_type == (int)LGAJNFGABFK.CCAPCGPIIPF_Normal)
 				{
 					NJOOMLFFIJB data = new NJOOMLFFIJB();
 					data.NEJBNCHLMNJ_Type = LGAJNFGABFK.CCAPCGPIIPF_Normal;

@@ -61,19 +61,19 @@ public class NAKMCMEPAGH
 	}
 
 	// // RVA: 0x17C06AC Offset: 0x17C06AC VA: 0x17C06AC
-	public void HIEBCILPBGB_AddDiffClear(int _AKNELONELJK_Difficulty, bool _GIKLNODJKFK_IsLine6/* = false*/)
+	public void HIEBCILPBGB_AddDiffClear(int _AKNELONELJK_difficulty, bool _GIKLNODJKFK_IsLine6/* = false*/)
 	{
 		if(!_GIKLNODJKFK_IsLine6)
 		{
-			if (PHPPOGOEOAF_DiffClear[_AKNELONELJK_Difficulty] > 99999998)
+			if (PHPPOGOEOAF_DiffClear[_AKNELONELJK_difficulty] > 99999998)
 				return;
-			PHPPOGOEOAF_DiffClear[_AKNELONELJK_Difficulty]++;
+			PHPPOGOEOAF_DiffClear[_AKNELONELJK_difficulty]++;
 		}
 		else
 		{
-			if (IAFPEPABGJJ_DiffClear16[_AKNELONELJK_Difficulty] > 99999998)
+			if (IAFPEPABGJJ_DiffClear16[_AKNELONELJK_difficulty] > 99999998)
 				return;
-			IAFPEPABGJJ_DiffClear16[_AKNELONELJK_Difficulty]++;
+			IAFPEPABGJJ_DiffClear16[_AKNELONELJK_difficulty]++;
 		}
 	}
 

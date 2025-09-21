@@ -448,10 +448,10 @@ public class NILOACEHJKJ_EventSP : KLFDBFMNLBL_ServerSaveBlock
 						CCBEKGNDDBE.OOBBAGJNDIH_LstHpTime = DKMPHAPBDLH_ReadLong(d, "lst_hp_time", 0, ref isInvalid);
 						CCBEKGNDDBE.JJMIEHHIKJE_RplQuest = CJAENOMGPDA_ReadInt(d, "rpl_quest", 0, ref isInvalid);
 						CEDHHAGBIBA.IFOLECIIDPO_StringToByteArray(CCBEKGNDDBE.AKBDBIGGADH_NewFlags, FGCNMLBACGO_ReadString(d, AFEHLCGHAEE_Strings.COJJHFBKGML_new_flag, "", ref isInvalid));
-						IBCGPBOGOGP_ReadIntArray(d, AFEHLCGHAEE_Strings.CJCJBKIMLOB_t_rcv, 0, 100, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+						IBCGPBOGOGP_ReadIntArray(d, AFEHLCGHAEE_Strings.CJCJBKIMLOB_t_rcv, 0, 100, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 						{
 							//0x18AB18C
-							CCBEKGNDDBE.IPNLHCLFIDB(_OIPCCBHIKIA_index, _JBGEEPFKIGG_Value != 0);
+							CCBEKGNDDBE.IPNLHCLFIDB(_OIPCCBHIKIA_index, _JBGEEPFKIGG_val != 0);
 						}, ref isInvalid);
 						if(d.BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.NNMPGOAGEOL_quests))
 						{

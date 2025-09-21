@@ -35,7 +35,7 @@ public class JLCHNKIHGHK
 	public bool GNNKKJDKGJO; // 0x51
 	public bool CGHNCPEKOCK_IsDaily; // 0x52
 	public bool LFGNLKKFOCD_IsLine6; // 0x53
-	public int AKNELONELJK_Difficulty; // 0x54
+	public int AKNELONELJK_difficulty; // 0x54
 	public int JNCPEGJGHOG_JacketId; // 0x58
 	public int DAJGPBLEEOB_ModelId; // 0x5C
 	public int HEHKNMCDBJJ_ColorId; // 0x60
@@ -86,7 +86,7 @@ public class JLCHNKIHGHK
 			IBJAKJJICBC ib = new IBJAKJJICBC();
 			ib.KHEKNNFCAOI_Init(JGEOBNENMAH.HHCJCDFCLOB.PFHMFKKDMBM_FreeMusicId, false, 0, 0, 0, false, false, false);
 			LFGNLKKFOCD_IsLine6 = goEv.CMCEGEKGEEP.LFGNLKKFOCD_IsLine6;
-			AKNELONELJK_Difficulty = JGEOBNENMAH.HHCJCDFCLOB.LBLOIOMNEIH_Difficulty;
+			AKNELONELJK_difficulty = JGEOBNENMAH.HHCJCDFCLOB.LBLOIOMNEIH_Difficulty;
 			JNCPEGJGHOG_JacketId = ib.JNCPEGJGHOG_JacketId;
 			DAJGPBLEEOB_ModelId = Database.Instance.gameSetup.teamInfo.divaList[0].costumeModelId;
 			HEHKNMCDBJJ_ColorId = Database.Instance.gameSetup.teamInfo.divaList[0].costumeColorId;

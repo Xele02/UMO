@@ -17,7 +17,7 @@ public class ANPBHCNJIDI
 
 	public class NNPGLGHDBKN
 	{
-		public NOJONDLAMOC INDDJNMPONH_Type; // 0x8
+		public NOJONDLAMOC INDDJNMPONH_type; // 0x8
 		public string OPFGFINHFCE_name; // 0xC
 		public int OIPCCBHIKIA_index; // 0x10
 		public int MLPEHNBNOGD_PlayerId; // 0x14 WritterId
@@ -122,7 +122,7 @@ public class ANPBHCNJIDI
 		// RVA: 0xD547F8 Offset: 0xD547F8 VA: 0xD547F8
 		public AIFBLOAGFOP()
 		{
-			INDDJNMPONH_Type = NOJONDLAMOC.CCAPCGPIIPF_1_Chat;
+			INDDJNMPONH_type = NOJONDLAMOC.CCAPCGPIIPF_1_Chat;
 		}
 
 		//// RVA: 0xD55410 Offset: 0xD55410 VA: 0xD55410 Slot: 4
@@ -156,7 +156,7 @@ public class ANPBHCNJIDI
 		// RVA: 0xD54848 Offset: 0xD54848 VA: 0xD54848
 		public BNEIDPGIAFM()
 		{
-			INDDJNMPONH_Type = NOJONDLAMOC.DDPLFFAOAEB_2_Stamp;
+			INDDJNMPONH_type = NOJONDLAMOC.DDPLFFAOAEB_2_Stamp;
 		}
 
 		//// RVA: 0xD55CE0 Offset: 0xD55CE0 VA: 0xD55CE0 Slot: 4
@@ -249,7 +249,7 @@ public class ANPBHCNJIDI
 		// RVA: 0xD54898 Offset: 0xD54898 VA: 0xD54898
 		public KNGOGLLMKDL()
 		{
-			INDDJNMPONH_Type = NOJONDLAMOC.CGEPNIOPFHF_3_DefeatBoss;
+			INDDJNMPONH_type = NOJONDLAMOC.CGEPNIOPFHF_3_DefeatBoss;
 		}
 
 		//// RVA: 0xD56350 Offset: 0xD56350 VA: 0xD56350 Slot: 4
@@ -288,7 +288,7 @@ public class ANPBHCNJIDI
 		// RVA: 0xD548E8 Offset: 0xD548E8 VA: 0xD548E8
 		public NBHIMCACDHM()
 		{
-			INDDJNMPONH_Type = NOJONDLAMOC.JDGLJOFPHLK_4_MaccrossCannon;
+			INDDJNMPONH_type = NOJONDLAMOC.JDGLJOFPHLK_4_MaccrossCannon;
 		}
 
 		//// RVA: 0xD569DC Offset: 0xD569DC VA: 0xD569DC Slot: 4
@@ -345,7 +345,7 @@ public class ANPBHCNJIDI
 	public class JLHGKKIEALB : KNGOGLLMKDL
 	{
 		public int ADHMMMEOJMK_FreeMusicId; // 0x54
-		public int AKNELONELJK_Difficulty; // 0x58
+		public int AKNELONELJK_difficulty; // 0x58
 		public bool GIKLNODJKFK_IsLine6; // 0x5C
 
 		public bool IGNJCGMLBDA_Defeat { get { return HALIDDHLNEG_Damage > 0; } } //0xD56184 BFHLAKNJFDH
@@ -353,7 +353,7 @@ public class ANPBHCNJIDI
 		// RVA: 0xD54938 Offset: 0xD54938 VA: 0xD54938
 		public JLHGKKIEALB()
 		{
-			INDDJNMPONH_Type = NOJONDLAMOC.JPOGBMJKPIJ_5_FullCombo;
+			INDDJNMPONH_type = NOJONDLAMOC.JPOGBMJKPIJ_5_FullCombo;
 		}
 
 		//// RVA: 0xD56198 Offset: 0xD56198 VA: 0xD56198 Slot: 4
@@ -362,11 +362,11 @@ public class ANPBHCNJIDI
 			if(base.KLAOLMDCLHO(LBJACBOOLEL, _DLENPPIJNPA_json))
 			{
 				ADHMMMEOJMK_FreeMusicId = JsonUtil.GetInt(_DLENPPIJNPA_json, "fid", 1);
-				AKNELONELJK_Difficulty = JsonUtil.GetInt(_DLENPPIJNPA_json, "dif", 0);
+				AKNELONELJK_difficulty = JsonUtil.GetInt(_DLENPPIJNPA_json, "dif", 0);
 				int ln6 = JsonUtil.GetInt(_DLENPPIJNPA_json, "ln6", 0);
 				if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.IBPAFKKEKNK_Music.BHJKMPBACAC_IsFreeMusicAvaiable(ADHMMMEOJMK_FreeMusicId))
 				{
-					if(ln6 < 2 && OECGFGINKLK.NKBNHCECIPH(AKNELONELJK_Difficulty))
+					if(ln6 < 2 && OECGFGINKLK.NKBNHCECIPH(AKNELONELJK_difficulty))
 					{
 						GIKLNODJKFK_IsLine6 = ln6 == 1;
 						return true;
@@ -381,7 +381,7 @@ public class ANPBHCNJIDI
 		{
 			base.EFOOHDOMCAI(_KOGBMDOONFA_Info, _DLENPPIJNPA_json);
 			_DLENPPIJNPA_json["fid"] = ADHMMMEOJMK_FreeMusicId;
-			_DLENPPIJNPA_json["dif"] = AKNELONELJK_Difficulty;
+			_DLENPPIJNPA_json["dif"] = AKNELONELJK_difficulty;
 			_DLENPPIJNPA_json["ln6"] = GIKLNODJKFK_IsLine6 ? 1 : 0;
 		}
 	}
@@ -391,9 +391,9 @@ public class ANPBHCNJIDI
 	public List<NNPGLGHDBKN> HDMKAIKOMCB = new List<NNPGLGHDBKN>(); // 0x10
 
 	//// RVA: 0xD54160 Offset: 0xD54160 VA: 0xD54160
-	public static bool JCGBEAHDNEI_IsBattleLogMessage(NOJONDLAMOC _INDDJNMPONH_Type)
+	public static bool JCGBEAHDNEI_IsBattleLogMessage(NOJONDLAMOC _INDDJNMPONH_type)
 	{
-		return _INDDJNMPONH_Type >= NOJONDLAMOC.CGEPNIOPFHF_3_DefeatBoss && _INDDJNMPONH_Type <= NOJONDLAMOC.JPOGBMJKPIJ_5_FullCombo;
+		return _INDDJNMPONH_type >= NOJONDLAMOC.CGEPNIOPFHF_3_DefeatBoss && _INDDJNMPONH_type <= NOJONDLAMOC.JPOGBMJKPIJ_5_FullCombo;
 	}
 
 	//// RVA: 0xD54174 Offset: 0xD54174 VA: 0xD54174
@@ -442,23 +442,23 @@ public class ANPBHCNJIDI
 		{
 			case 1:
 				data = new AIFBLOAGFOP();
-				data.INDDJNMPONH_Type = NOJONDLAMOC.CCAPCGPIIPF_1_Chat;
+				data.INDDJNMPONH_type = NOJONDLAMOC.CCAPCGPIIPF_1_Chat;
 				break;
 			case 2:
 				data = new BNEIDPGIAFM();
-				data.INDDJNMPONH_Type = NOJONDLAMOC.DDPLFFAOAEB_2_Stamp;
+				data.INDDJNMPONH_type = NOJONDLAMOC.DDPLFFAOAEB_2_Stamp;
 				break;
 			case 3:
 				data = new KNGOGLLMKDL();
-				data.INDDJNMPONH_Type = NOJONDLAMOC.CGEPNIOPFHF_3_DefeatBoss;
+				data.INDDJNMPONH_type = NOJONDLAMOC.CGEPNIOPFHF_3_DefeatBoss;
 				break;
 			case 4:
 				data = new NBHIMCACDHM();
-				data.INDDJNMPONH_Type = NOJONDLAMOC.JDGLJOFPHLK_4_MaccrossCannon;
+				data.INDDJNMPONH_type = NOJONDLAMOC.JDGLJOFPHLK_4_MaccrossCannon;
 				break;
 			case 5:
 				data = new JLHGKKIEALB();
-				data.INDDJNMPONH_Type = NOJONDLAMOC.JPOGBMJKPIJ_5_FullCombo;
+				data.INDDJNMPONH_type = NOJONDLAMOC.JPOGBMJKPIJ_5_FullCombo;
 				break;
 			default:
 				return;
@@ -487,7 +487,7 @@ public class ANPBHCNJIDI
 	{
 		SakashoBbsCommentInfo res = new SakashoBbsCommentInfo();
 		EDOHBJAPLPF_JsonData json = new EDOHBJAPLPF_JsonData();
-		json["type"] = (int)_HCAHCFGPJIF_Desc.INDDJNMPONH_Type;
+		json["type"] = (int)_HCAHCFGPJIF_Desc.INDDJNMPONH_type;
 		_HCAHCFGPJIF_Desc.OPFGFINHFCE_name = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.JHFIPCIHJNL_Base.OPFGFINHFCE_name;
 		_HCAHCFGPJIF_Desc.EFOOHDOMCAI(res, json);
 		res.Extra = json.EJCOJCGIBNG_ToJson(); //IKPIMINCOPI_JsonMapper.EJCOJCGIBNG_ToJson(json);

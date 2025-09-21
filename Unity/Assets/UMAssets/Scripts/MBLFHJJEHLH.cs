@@ -11,7 +11,7 @@ public class MBLFHJJEHLH_AnketoMgr
 	{
 		public int PPFNGGCBJKC_id; // 0x8
 		public int EILKGEADKGH_Order; // 0xC
-		public int INDDJNMPONH_Type; // 0x10 NotifId
+		public int INDDJNMPONH_type; // 0x10 NotifId
 		public int CEMEIPNMAAD_Version; // 0x14
 		public string ADCMNODJBGJ_Title; // 0x18
 		public string[] LPKAJMLOAMF_ChoiceText; // 0x1C
@@ -24,13 +24,13 @@ public class MBLFHJJEHLH_AnketoMgr
 		//// RVA: 0xA2FF20 Offset: 0xA2FF20 VA: 0xA2FF20
 		public bool NMEMGMMNMDK()
 		{
-			return INDDJNMPONH_Type == 1;
+			return INDDJNMPONH_type == 1;
 		}
 
 		//// RVA: 0xA2FF30 Offset: 0xA2FF30 VA: 0xA2FF30
 		public bool CPLDDCLIBAL()
 		{
-			return INDDJNMPONH_Type == 2;
+			return INDDJNMPONH_type == 2;
 		}
 
 		//// RVA: 0xA2FF44 Offset: 0xA2FF44 VA: 0xA2FF44
@@ -53,14 +53,14 @@ public class MBLFHJJEHLH_AnketoMgr
 		//// RVA: 0xA2FD70 Offset: 0xA2FD70 VA: 0xA2FD70
 		public bool GIEPMFIEPJD_IsValid()
 		{
-			if(INDDJNMPONH_Type == 1)
+			if(INDDJNMPONH_type == 1)
 			{
 				if(LLGNLAGBHKN_GetNumChecked() == 1)
 				{
 					return true;
 				}
 			}
-			if(INDDJNMPONH_Type == 2)
+			if(INDDJNMPONH_type == 2)
 			{
 				return LLGNLAGBHKN_GetNumChecked() > 0;
 			}
@@ -96,7 +96,7 @@ public class MBLFHJJEHLH_AnketoMgr
 					CGBKENNCMMC data = new CGBKENNCMMC();
 					data.PPFNGGCBJKC_id = question.PPFNGGCBJKC_id;
 					data.EILKGEADKGH_Order = question.EILKGEADKGH_Order;
-					data.INDDJNMPONH_Type = question.INDDJNMPONH_Type;
+					data.INDDJNMPONH_type = question.INDDJNMPONH_type;
 					data.ADCMNODJBGJ_Title = question.ADCMNODJBGJ_Title;
 					data.LPKAJMLOAMF_ChoiceText = question.BNMCMNPPPCI_ChoiceText;
 					data.MHBBJADMHPN_ChoiceSelected = new bool[data.LPKAJMLOAMF_ChoiceText.Length];

@@ -221,7 +221,7 @@ public class JJOELIOGMKK_DivaIntimacyInfo
 				{
 					saveIntimacy.BFINGCJHOHI_Count -= _HMFFHLPNMPH_Count;
 					CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DGCJCAHIAPP_Diva.IGFOFCEKIAM(AHHJLDLAPAN_DivaId, _HMFFHLPNMPH_Count);
-					int a1 = dbIntmacy.JBGEEPFKIGG_Value * _HMFFHLPNMPH_Count;
+					int a1 = dbIntmacy.JBGEEPFKIGG_val * _HMFFHLPNMPH_Count;
 					if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.GLHEHGGKILG_GetMaxLevel() <= HEKJGCMNJAB_CurrentLevel)
 					{
 						if(IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.KDIALKDKBGE_Intimacy.NJGEDPHNIKC_IsPresentLimitEnabled())
@@ -429,7 +429,7 @@ public class JJOELIOGMKK_DivaIntimacyInfo
 				{
 					if (levelInfo.EIIDPKCBKEK_prm < intimacyDb.COHLJLNLBKM.Count)
 					{
-						c = intimacyDb.COHLJLNLBKM[levelInfo.EIIDPKCBKEK_prm - 1].JBGEEPFKIGG_Value / 100;
+						c = intimacyDb.COHLJLNLBKM[levelInfo.EIIDPKCBKEK_prm - 1].JBGEEPFKIGG_val / 100;
 					}
 				}
 				HBODCMLFDOB_Result.EEIBCALKFFF.Add(c);
@@ -443,7 +443,7 @@ public class JJOELIOGMKK_DivaIntimacyInfo
 			}
 		}
 		HBODCMLFDOB_Result.JHOBMMMEJHH_SkillLevel = divaInfo.JLEPLIHFPKD_IntimacySkillLevel;
-		HBODCMLFDOB_Result.IGNABALECPK = HBODCMLFDOB_Result.JHOBMMMEJHH_SkillLevel < 1 ? 0 : intimacyDb.COHLJLNLBKM[HBODCMLFDOB_Result.JHOBMMMEJHH_SkillLevel - 1].JBGEEPFKIGG_Value / 100;
+		HBODCMLFDOB_Result.IGNABALECPK = HBODCMLFDOB_Result.JHOBMMMEJHH_SkillLevel < 1 ? 0 : intimacyDb.COHLJLNLBKM[HBODCMLFDOB_Result.JHOBMMMEJHH_SkillLevel - 1].JBGEEPFKIGG_val / 100;
 		CIOECGOMILE.HHCJCDFCLOB.MJNHMCABCGH();
 	}
 

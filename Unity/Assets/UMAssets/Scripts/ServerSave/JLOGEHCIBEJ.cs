@@ -185,15 +185,15 @@ public class JLOGEHCIBEJ_EventRaid : KLFDBFMNLBL_ServerSaveBlock
 		// public bool DOBNKAKAGGP() { }
 
 		// // RVA: 0x147D8EC Offset: 0x147D8EC VA: 0x147D8EC
-		public int KAHKFBKIMBE_GetMyBossAttackCount(JJAFLOEBLDH _INDDJNMPONH_Type)
+		public int KAHKFBKIMBE_GetMyBossAttackCount(JJAFLOEBLDH _INDDJNMPONH_type)
 		{
-			return JMPBGDLHAPE_MyBossAtkCount[(int)_INDDJNMPONH_Type - 1].DNJEJEANJGL_Value;
+			return JMPBGDLHAPE_MyBossAtkCount[(int)_INDDJNMPONH_type - 1].DNJEJEANJGL_Value;
 		}
 
 		// // RVA: 0x14899EC Offset: 0x14899EC VA: 0x14899EC
-		public void GNDJFKNNMHD(JJAFLOEBLDH _INDDJNMPONH_Type, int _HMFFHLPNMPH_Count)
+		public void GNDJFKNNMHD(JJAFLOEBLDH _INDDJNMPONH_type, int _HMFFHLPNMPH_Count)
 		{
-			JMPBGDLHAPE_MyBossAtkCount[(int)_INDDJNMPONH_Type - 1].DNJEJEANJGL_Value = _HMFFHLPNMPH_Count;
+			JMPBGDLHAPE_MyBossAtkCount[(int)_INDDJNMPONH_type - 1].DNJEJEANJGL_Value = _HMFFHLPNMPH_Count;
 		}
 
 		// // RVA: 0x148A3D4 Offset: 0x148A3D4 VA: 0x148A3D4
@@ -825,20 +825,20 @@ public class JLOGEHCIBEJ_EventRaid : KLFDBFMNLBL_ServerSaveBlock
 								}
 							}
 						}
-						IBCGPBOGOGP_ReadIntArray(block[i], "my_boss_atk_count", 0, 4, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+						IBCGPBOGOGP_ReadIntArray(block[i], "my_boss_atk_count", 0, 4, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 						{
 							//0x14899B4
-							FBCJICEPLED[i].GNDJFKNNMHD((JJAFLOEBLDH)_OIPCCBHIKIA_index + 1, _JBGEEPFKIGG_Value);
+							FBCJICEPLED[i].GNDJFKNNMHD((JJAFLOEBLDH)_OIPCCBHIKIA_index + 1, _JBGEEPFKIGG_val);
 						}, ref isInvalid);
 						FBCJICEPLED[i].BADLOIKHGLK();
 						if(block[i].BBAJPINMOEP_Contains("o_boss_list"))
 						{
-							IBCGPBOGOGP_ReadIntArray(block[i], "o_boss_list", 0, 20, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+							IBCGPBOGOGP_ReadIntArray(block[i], "o_boss_list", 0, 20, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 							{
 								//0x1489A94
-								if(_JBGEEPFKIGG_Value == 0)
+								if(_JBGEEPFKIGG_val == 0)
 									return;
-								FBCJICEPLED[i].NBCJGLLLFOH(_JBGEEPFKIGG_Value);
+								FBCJICEPLED[i].NBCJGLLLFOH(_JBGEEPFKIGG_val);
 							}, ref isInvalid);
 						}
 						FBCJICEPLED[i].LGJLABFMGHG();

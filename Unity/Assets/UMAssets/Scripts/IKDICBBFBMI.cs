@@ -191,13 +191,13 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8DD554 Offset: 0x8DD554 VA: 0x8DD554 Slot: 12
-	public virtual int EAMODCHMCEL_GetTicketCost(int _AKNELONELJK_Difficulty, bool _GIKLNODJKFK_IsLine6)
+	public virtual int EAMODCHMCEL_GetTicketCost(int _AKNELONELJK_difficulty, bool _GIKLNODJKFK_IsLine6)
 	{
 		return 0;
 	}
 
 	// // RVA: 0x8DD55C Offset: 0x8DD55C VA: 0x8DD55C Slot: 13
-	public virtual bool NLFIGGNLEFP(int _AKNELONELJK_Difficulty, bool _GIKLNODJKFK_IsLine6, int LCCGDFGGIHI)
+	public virtual bool NLFIGGNLEFP(int _AKNELONELJK_difficulty, bool _GIKLNODJKFK_IsLine6, int LCCGDFGGIHI)
 	{
 		return false;
 	}
@@ -359,7 +359,7 @@ public abstract class IKDICBBFBMI_EventBase
 			JGEOBNENMAH.HAJIFNABIFF data = new JGEOBNENMAH.HAJIFNABIFF();
 			data.KNIFCANOHOC_score = -1;
 			data.GHBPLHBNMBK_FreeMusicId = OMNOFMEBLAD.GHBPLHBNMBK_FreeMusicId;
-			data.AKNELONELJK_Difficulty = OMNOFMEBLAD.AKNELONELJK_Difficulty;
+			data.AKNELONELJK_difficulty = OMNOFMEBLAD.AKNELONELJK_difficulty;
 			data.LFGNLKKFOCD_IsLine6 = OMNOFMEBLAD.LFGNLKKFOCD_IsLine6;
 			data.MNNHHJBBICA_GameEventType = OMNOFMEBLAD.MNNHHJBBICA_GameEventType;
 			data.OEILJHENAHN_PlayEventType = OMNOFMEBLAD.OEILJHENAHN_PlayEventType;
@@ -599,31 +599,31 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8DF784 Offset: 0x8DF784 VA: 0x8DF784 Slot: 34
-	public virtual int JDFHIHPPAHN_UpdateDropItemSet(int NHIJBNLJGDJ, OHCAABOMEOF.KGOGMKMBCPP_EventType _INDDJNMPONH_Type)
+	public virtual int JDFHIHPPAHN_UpdateDropItemSet(int NHIJBNLJGDJ, OHCAABOMEOF.KGOGMKMBCPP_EventType _INDDJNMPONH_type)
 	{
 		return NHIJBNLJGDJ;
 	}
 
 	// // RVA: 0x8DF78C Offset: 0x8DF78C VA: 0x8DF78C Slot: 35
-	public virtual int NCHKBINKKBH_UpdateDropRateSet(int _BFOLFCOBBJD_RateId, OHCAABOMEOF.KGOGMKMBCPP_EventType _INDDJNMPONH_Type)
+	public virtual int NCHKBINKKBH_UpdateDropRateSet(int _BFOLFCOBBJD_RateId, OHCAABOMEOF.KGOGMKMBCPP_EventType _INDDJNMPONH_type)
 	{
 		return _BFOLFCOBBJD_RateId;
 	}
 
 	// // RVA: 0x8DF794 Offset: 0x8DF794 VA: 0x8DF794 Slot: 36
-	public virtual int EEMGDCPJNEG(int JEAHDIOLGEL, OHCAABOMEOF.KGOGMKMBCPP_EventType _INDDJNMPONH_Type)
+	public virtual int EEMGDCPJNEG(int JEAHDIOLGEL, OHCAABOMEOF.KGOGMKMBCPP_EventType _INDDJNMPONH_type)
 	{
 		return JEAHDIOLGEL;
 	}
 
 	// // RVA: 0x8DF79C Offset: 0x8DF79C VA: 0x8DF79C Slot: 37
-	public virtual int DJHOMGLGAHA(int PLLAIBDLKHB, OHCAABOMEOF.KGOGMKMBCPP_EventType _INDDJNMPONH_Type)
+	public virtual int DJHOMGLGAHA(int PLLAIBDLKHB, OHCAABOMEOF.KGOGMKMBCPP_EventType _INDDJNMPONH_type)
 	{
 		return PLLAIBDLKHB;
 	}
 
 	// // RVA: 0x8DF7A4 Offset: 0x8DF7A4 VA: 0x8DF7A4 Slot: 38
-	public virtual void EMEPJNLHJHJ(int GJEADBKFAPA, int _AKNELONELJK_Difficulty, bool _GIKLNODJKFK_IsLine6, ref int APMGOLOPLFP, ref int FBBDNLAMPMH)
+	public virtual void EMEPJNLHJHJ(int GJEADBKFAPA, int _AKNELONELJK_difficulty, bool _GIKLNODJKFK_IsLine6, ref int APMGOLOPLFP, ref int FBBDNLAMPMH)
 	{
 		APMGOLOPLFP = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.JJIBDCAIBIO_LuckCoef0;
 		FBBDNLAMPMH = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.AMNBEMCJCHF_LuckCoef1;
@@ -1259,7 +1259,7 @@ public abstract class IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x8E233C Offset: 0x8E233C VA: 0x8E233C Slot: 69
-	public virtual void HAAEJDGMICH(LBNLAENLPNK.JEKODBEDOMM _INDDJNMPONH_Type, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _AOCANKOMKFG_OnError)
+	public virtual void HAAEJDGMICH(LBNLAENLPNK.JEKODBEDOMM _INDDJNMPONH_type, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _AOCANKOMKFG_OnError)
 	{
 		_BHFHGFKBOHH_OnSuccess();
 	}

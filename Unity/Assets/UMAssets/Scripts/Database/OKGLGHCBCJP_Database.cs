@@ -669,12 +669,12 @@ public class OKGLGHCBCJP_Database
 				}
 				for(int j = 0; j < _JOBKIDDLCPL_schedules.Count; j++)
 				{
-					if(_JHNMKKNEENE_Time >= _JOBKIDDLCPL_schedules[j].KBFOIECIADN_opened_at && _JHNMKKNEENE_Time < _JOBKIDDLCPL_schedules[j].EGBOHDFBAPB_ClosedAt)
+					if(_JHNMKKNEENE_Time >= _JOBKIDDLCPL_schedules[j].KBFOIECIADN_opened_at && _JHNMKKNEENE_Time < _JOBKIDDLCPL_schedules[j].EGBOHDFBAPB_CloseAt)
 					{
 						if(IJBLEJOKEFH_Name[i] != "" && _JOBKIDDLCPL_schedules[j].OPFGFINHFCE_name == IJBLEJOKEFH_Name[i])
 						{
 							IIILDINMAKI_SectionNames[i] = _JOBKIDDLCPL_schedules[j].OPFGFINHFCE_name;
-							GJFPFFBAKGK_CloseAt[i] = _JOBKIDDLCPL_schedules[j].EGBOHDFBAPB_ClosedAt;
+							GJFPFFBAKGK_CloseAt[i] = _JOBKIDDLCPL_schedules[j].EGBOHDFBAPB_CloseAt;
 							valid = true;
 						}
 					}

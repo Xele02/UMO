@@ -536,10 +536,10 @@ public class HPBDNNACBAK
 	}
 
 	// // RVA: 0x1603B50 Offset: 0x1603B50 VA: 0x1603B50
-	// private void ILNEOCCIPDA(Dictionary<int, List<KBPDNHOKEKD>> EKFKOGHAKNE, GCAHJLOGMCI.KNMMOMEHDON _INDDJNMPONH_Type, int _APHNELOFGAK_CurrencyId) { }
+	// private void ILNEOCCIPDA(Dictionary<int, List<KBPDNHOKEKD>> EKFKOGHAKNE, GCAHJLOGMCI.KNMMOMEHDON _INDDJNMPONH_type, int _APHNELOFGAK_CurrencyId) { }
 
 	// // RVA: 0x16038F4 Offset: 0x16038F4 VA: 0x16038F4
-	private void KDGFJJHFKIL(Dictionary<int, List<KBPDNHOKEKD_ProductId>> EKFKOGHAKNE_GachaList, GCAHJLOGMCI.KNMMOMEHDON_GachaType _INDDJNMPONH_Type, int _APHNELOFGAK_CurrencyId)
+	private void KDGFJJHFKIL(Dictionary<int, List<KBPDNHOKEKD_ProductId>> EKFKOGHAKNE_GachaList, GCAHJLOGMCI.KNMMOMEHDON_GachaType _INDDJNMPONH_type, int _APHNELOFGAK_CurrencyId)
 	{
 		if(EKFKOGHAKNE_GachaList.Keys.Count > 0)
 		{
@@ -547,7 +547,7 @@ public class HPBDNNACBAK
 			for(int i = l.Count - 1; i >= 0; i--)
 			{
 				LOBDIAABMKG data = new LOBDIAABMKG();
-				if(data.KHEKNNFCAOI_Init(EKFKOGHAKNE_GachaList[l[i]], l[i], _INDDJNMPONH_Type, DLNDPMNLMGC_IsTutorial, _APHNELOFGAK_CurrencyId))
+				if(data.KHEKNNFCAOI_Init(EKFKOGHAKNE_GachaList[l[i]], l[i], _INDDJNMPONH_type, DLNDPMNLMGC_IsTutorial, _APHNELOFGAK_CurrencyId))
 				{
 					MHKCPJDNJKI_products.Add(data);
 				}
@@ -556,7 +556,7 @@ public class HPBDNNACBAK
 	}
 
 	// // RVA: 0x160421C Offset: 0x160421C VA: 0x160421C
-	private void DGMLALAJGMA(Dictionary<int, int> BEIEHPNODAM, List<KOPCFBCDBPC> CCBEKGNDDBE, List<JBHCLFDBPKP> BKGFCEIFMNF, GCAHJLOGMCI.KNMMOMEHDON_GachaType _INDDJNMPONH_Type, int _APHNELOFGAK_CurrencyId)
+	private void DGMLALAJGMA(Dictionary<int, int> BEIEHPNODAM, List<KOPCFBCDBPC> CCBEKGNDDBE, List<JBHCLFDBPKP> BKGFCEIFMNF, GCAHJLOGMCI.KNMMOMEHDON_GachaType _INDDJNMPONH_type, int _APHNELOFGAK_CurrencyId)
 	{
 		int cnt = BEIEHPNODAM.Keys.Count;
 		if(cnt > 0)
@@ -566,7 +566,7 @@ public class HPBDNNACBAK
 			{
 				LOBDIAABMKG data = new LOBDIAABMKG();
 				int idx = BEIEHPNODAM[l[i]];
-				if(data.KHEKNNFCAOI_Init(CCBEKGNDDBE[idx], BKGFCEIFMNF[idx], l[i], _INDDJNMPONH_Type, _APHNELOFGAK_CurrencyId))
+				if(data.KHEKNNFCAOI_Init(CCBEKGNDDBE[idx], BKGFCEIFMNF[idx], l[i], _INDDJNMPONH_type, _APHNELOFGAK_CurrencyId))
 				{
 					MHKCPJDNJKI_products.Add(data);
 				}
@@ -673,7 +673,7 @@ public class HPBDNNACBAK
 			for(int i = 0; i < MHKCPJDNJKI_products.Count; i++)
 			{
 				bool b = false;
-				if(MHKCPJDNJKI_products[i].INDDJNMPONH_Type != GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily/*1*/ && MHKCPJDNJKI_products[i].INDDJNMPONH_Type != GCAHJLOGMCI.KNMMOMEHDON_GachaType.ANFKBNLLJFN_7/*7*/)
+				if(MHKCPJDNJKI_products[i].INDDJNMPONH_type != GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily/*1*/ && MHKCPJDNJKI_products[i].INDDJNMPONH_type != GCAHJLOGMCI.KNMMOMEHDON_GachaType.ANFKBNLLJFN_7/*7*/)
 				{
 					long t2 = GachaUtility.GetGachaProductOpenTime(MHKCPJDNJKI_products[i]);
 					b = t < t2;
@@ -691,7 +691,7 @@ public class HPBDNNACBAK
 			{
 				bool b = false;
 				LOBDIAABMKG MEANCEOIMGE_Summon = MHKCPJDNJKI_products[i];
-				if (MHKCPJDNJKI_products[i].INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily/*1*/ || MHKCPJDNJKI_products[i].INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.ANFKBNLLJFN_7/*7*/)
+				if (MHKCPJDNJKI_products[i].INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily/*1*/ || MHKCPJDNJKI_products[i].INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.ANFKBNLLJFN_7/*7*/)
 				{
 					b = false;
 				}
@@ -744,11 +744,11 @@ public class HPBDNNACBAK
 	// // RVA: 0x16056E8 Offset: 0x16056E8 VA: 0x16056E8
 	public void CAILKLPCFHK(LOBDIAABMKG _MEANCEOIMGE_Summon, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _AOCANKOMKFG_OnError)
 	{
-		if(_MEANCEOIMGE_Summon.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
+		if(_MEANCEOIMGE_Summon.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
 		{
 			_BHFHGFKBOHH_OnSuccess();
 		}
-		else if(_MEANCEOIMGE_Summon.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8_StepUp)
+		else if(_MEANCEOIMGE_Summon.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.BCBJMKDAAKA_8_StepUp)
 		{
 			_MEANCEOIMGE_Summon.OALDDFAJFDL_GetStepUpItemSetRecord(() =>
 			{
@@ -807,7 +807,7 @@ public class HPBDNNACBAK
 		PFLJNIANOHE = false;
 		for(int i = 0; i < MHKCPJDNJKI_products.Count; i++)
 		{
-			if(MHKCPJDNJKI_products[i].INDDJNMPONH_Type != GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily /*1*/)
+			if(MHKCPJDNJKI_products[i].INDDJNMPONH_type != GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily /*1*/)
 			{
 				if (MHKCPJDNJKI_products[i].CADENLBDAEB_IsNew)
 				{

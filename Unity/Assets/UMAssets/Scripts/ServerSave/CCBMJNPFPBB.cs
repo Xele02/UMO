@@ -560,7 +560,7 @@ public class CCBMJNPFPBB_EventGoDiva : KLFDBFMNLBL_ServerSaveBlock
 								{
 									FBCJICEPLED[i].LGFFMGDBIAH_ranking[j].OCGFKMHNEOF_name_for_api = FGCNMLBACGO_ReadString(data2[j], AFEHLCGHAEE_Strings.LJNAKDMILMC_key, "", ref isInvalid);
 									FBCJICEPLED[i].LGFFMGDBIAH_ranking[j].EGBOHDFBAPB_CloseAt = DKMPHAPBDLH_ReadLong(data2[j], AFEHLCGHAEE_Strings.KOMKKBDABJP_end, 0, ref isInvalid);
-									FBCJICEPLED[i].LGFFMGDBIAH_ranking[j].NANNGLGOFKH_value = CJAENOMGPDA_ReadInt(data2[j], AFEHLCGHAEE_Strings.JBGEEPFKIGG_Value, 0, ref isInvalid);
+									FBCJICEPLED[i].LGFFMGDBIAH_ranking[j].NANNGLGOFKH_value = CJAENOMGPDA_ReadInt(data2[j], AFEHLCGHAEE_Strings.JBGEEPFKIGG_val, 0, ref isInvalid);
 									FBCJICEPLED[i].LGFFMGDBIAH_ranking[j].CKFKFHKHOHA_RRcv = CJAENOMGPDA_ReadInt(data2[j], AFEHLCGHAEE_Strings.LDALACBKEJN_r_rcv, 0, ref isInvalid) != 0;
 								}
 							}
@@ -586,18 +586,18 @@ public class CCBMJNPFPBB_EventGoDiva : KLFDBFMNLBL_ServerSaveBlock
 								}
 							}
 						}
-						IBCGPBOGOGP_ReadIntArray(d, AFEHLCGHAEE_Strings.DKHIHHMOIKM_Bonus, 0, 2, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+						IBCGPBOGOGP_ReadIntArray(d, AFEHLCGHAEE_Strings.DKHIHHMOIKM_Bonus, 0, 2, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 						{
 							//0x190709C
 							if(_OIPCCBHIKIA_index == 1)
-								FBCJICEPLED[i].JHKKAKJCJOF_Bns2 = _JBGEEPFKIGG_Value;
+								FBCJICEPLED[i].JHKKAKJCJOF_Bns2 = _JBGEEPFKIGG_val;
 							else if(_OIPCCBHIKIA_index == 0)
-								FBCJICEPLED[i].KAPGPAMOKDD_Bns1 = _JBGEEPFKIGG_Value;
+								FBCJICEPLED[i].KAPGPAMOKDD_Bns1 = _JBGEEPFKIGG_val;
 						}, ref isInvalid);
-						IBCGPBOGOGP_ReadIntArray(d, AFEHLCGHAEE_Strings.CJCJBKIMLOB_t_rcv, 0, 100, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+						IBCGPBOGOGP_ReadIntArray(d, AFEHLCGHAEE_Strings.CJCJBKIMLOB_t_rcv, 0, 100, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 						{
 							//0x1907130
-							FBCJICEPLED[i].IPNLHCLFIDB_SetRewardReceived(_OIPCCBHIKIA_index, _JBGEEPFKIGG_Value != 0);
+							FBCJICEPLED[i].IPNLHCLFIDB_SetRewardReceived(_OIPCCBHIKIA_index, _JBGEEPFKIGG_val != 0);
 						}, ref isInvalid);
 					}
 				}

@@ -39,9 +39,9 @@ public class GDMKJMAFJAG
 							{
 								int itemId = EKLNMHFCAOI.DEACAHNLMNI_getItemId(GEDOFFFKIFN.FKNBLDPIPMC_GetItemId(i));
 								KEEKEFEPKFN_GrowItem.MDFGLOIGAFE_GrowItemData item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NKDGLGCAPEI_GrowItem.CDENCMNHNGA_table[itemId - 1];
-								if(item.INDDJNMPONH_Type > 1)
+								if(item.INDDJNMPONH_type > 1)
 								{
-									if(item.INDDJNMPONH_Type < 6)
+									if(item.INDDJNMPONH_type < 6)
 									{
 										l[item.EKLIPGELKCL_Rarity].Add(i);
 									}

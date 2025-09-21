@@ -281,7 +281,7 @@ namespace ExternLib
 						item_type = 1,
 						item_value = 1001,
 						type = 109,
-						message = ILLPDLODANB.HHMKDAIGMKC_IsDebutMission((ILLPDLODANB.LOEGALDKHPL)quest.INDDJNMPONH_Type) ? JpStringLiterals.UMO_achievements_debut_quest : JpStringLiterals.UMO_achievements_normal_quest,
+						message = ILLPDLODANB.HHMKDAIGMKC_IsDebutMission((ILLPDLODANB.LOEGALDKHPL)quest.INDDJNMPONH_type) ? JpStringLiterals.UMO_achievements_debut_quest : JpStringLiterals.UMO_achievements_normal_quest,
 						closed_at = closeAt
 					}, playerAccount.playerData);
 					//UnityEngine.Debug.LogError(addedItem.item_name+" "+addedItem.item_value);

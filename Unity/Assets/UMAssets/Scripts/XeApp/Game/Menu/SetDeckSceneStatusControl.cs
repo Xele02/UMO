@@ -230,7 +230,7 @@ namespace XeApp.Game.Menu
 				Color col = IconColorOff;
 				if(sceneData.HGONFBDIBPM_ActiveSkillId >= 1)
 				{
-					a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[sceneData.HGONFBDIBPM_ActiveSkillId - 1].HEOLEHDFLJO_Icon[0];
+					a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[sceneData.HGONFBDIBPM_ActiveSkillId - 1].HEOLEHDFLJO_ico[0];
 					col = IconColorOn;
 				}
 				m_activeIconImage.enabled = true;

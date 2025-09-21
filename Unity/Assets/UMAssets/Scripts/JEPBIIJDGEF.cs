@@ -70,14 +70,14 @@ public class JEPBIIJDGEF_EventInfo
 	}
 
 	// // RVA: 0x1C33488 Offset: 0x1C33488 VA: 0x1C33488
-	public IKDICBBFBMI_EventBase OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType _INDDJNMPONH_Type, KGCNCBOKCBA.GNENJEHKMHD_EventStatus BELFNAHNMDL/* = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived*/)
+	public IKDICBBFBMI_EventBase OEGDCBLNNFF(OHCAABOMEOF.KGOGMKMBCPP_EventType _INDDJNMPONH_type, KGCNCBOKCBA.GNENJEHKMHD_EventStatus BELFNAHNMDL/* = KGCNCBOKCBA.GNENJEHKMHD_EventStatus.BCKENOKGLIJ_9_ResultRewardreceived*/)
     {
 		IKDICBBFBMI_EventBase res = null;
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		for(int i = 0; i < MPEOOINCGEN.Count; i++)
 		{
 			MPEOOINCGEN[i].HCDGELDHFHB_UpdateStatus(time);
-			if(MPEOOINCGEN[i].HIDHLFCBIDE_EventType == _INDDJNMPONH_Type && MPEOOINCGEN[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.FFLKPBPBPEP_1/*1*/ && MPEOOINCGEN[i].NGOFCFJHOMI_Status < BELFNAHNMDL)
+			if(MPEOOINCGEN[i].HIDHLFCBIDE_EventType == _INDDJNMPONH_type && MPEOOINCGEN[i].NGOFCFJHOMI_Status > KGCNCBOKCBA.GNENJEHKMHD_EventStatus.FFLKPBPBPEP_1/*1*/ && MPEOOINCGEN[i].NGOFCFJHOMI_Status < BELFNAHNMDL)
 			{
 				if(res == null || res.DPJCPDKALGI_RankingEnd < MPEOOINCGEN[i].DPJCPDKALGI_RankingEnd)
 				{
@@ -333,12 +333,12 @@ public class JEPBIIJDGEF_EventInfo
 	}
 
 	// // RVA: 0x1C3AC54 Offset: 0x1C3AC54 VA: 0x1C3AC54
-	public IKDICBBFBMI_EventBase HGHDAFJKEKO_GetEventForType(OHCAABOMEOF.KGOGMKMBCPP_EventType _INDDJNMPONH_Type)
+	public IKDICBBFBMI_EventBase HGHDAFJKEKO_GetEventForType(OHCAABOMEOF.KGOGMKMBCPP_EventType _INDDJNMPONH_type)
 	{
-		if(_INDDJNMPONH_Type != OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore/*4*/)
+		if(_INDDJNMPONH_type != OHCAABOMEOF.KGOGMKMBCPP_EventType.KEILBOLBDHN_EventScore/*4*/)
 		{
 			IKDICBBFBMI_EventBase evt = MKBJOOAILBB_GetEventByStatus(KGCNCBOKCBA.GNENJEHKMHD_EventStatus.MEAJLPAHINL_ChallengePeriod_5/*5*/, false);
-			if (evt != null && evt.HIDHLFCBIDE_EventType == _INDDJNMPONH_Type)
+			if (evt != null && evt.HIDHLFCBIDE_EventType == _INDDJNMPONH_type)
 				return evt;
 			return null;
 		}
@@ -593,7 +593,7 @@ public class JEPBIIJDGEF_EventInfo
 	}
 
 	// // RVA: 0x1C3C704 Offset: 0x1C3C704 VA: 0x1C3C704
-	public int NBIAKELCBLC(int _MNNHHJBBICA_GameEventType, int _MFJKNCACBDG_OpenEventType, int _AKNELONELJK_Difficulty, bool _GIKLNODJKFK_IsLine6, int _MJBODMOLOBC_luck, int HDDCLCOMOOB)
+	public int NBIAKELCBLC(int _MNNHHJBBICA_GameEventType, int _MFJKNCACBDG_OpenEventType, int _AKNELONELJK_difficulty, bool _GIKLNODJKFK_IsLine6, int _MJBODMOLOBC_luck, int HDDCLCOMOOB)
 	{
 		if(_MNNHHJBBICA_GameEventType == 0)
 		{
@@ -604,7 +604,7 @@ public class JEPBIIJDGEF_EventInfo
 				return 0;
 			int a1 = 0;
 			int a2 = 0;
-			ev.EMEPJNLHJHJ(1, _AKNELONELJK_Difficulty, _GIKLNODJKFK_IsLine6, ref a1, ref a2);
+			ev.EMEPJNLHJHJ(1, _AKNELONELJK_difficulty, _GIKLNODJKFK_IsLine6, ref a1, ref a2);
 			return LDDDBPNGGIN_Game.NBIAKELCBLC_GetNumItems(_MJBODMOLOBC_luck, HDDCLCOMOOB, a1, a2);
 		}
 		else
@@ -616,7 +616,7 @@ public class JEPBIIJDGEF_EventInfo
 					return 0;
 				int a1 = 0;
 				int a2 = 0;
-				ev.EMEPJNLHJHJ(6, _AKNELONELJK_Difficulty, _GIKLNODJKFK_IsLine6, ref a1, ref a2);
+				ev.EMEPJNLHJHJ(6, _AKNELONELJK_difficulty, _GIKLNODJKFK_IsLine6, ref a1, ref a2);
 				Debug.Log(string.Concat(new object[4]
 				{
 					"StringLiteral_11879", a1, ",", a2
@@ -630,7 +630,7 @@ public class JEPBIIJDGEF_EventInfo
 					return 0;
 				int a1 = 0;
 				int a2 = 0;
-				ev.EMEPJNLHJHJ(1, _AKNELONELJK_Difficulty, _GIKLNODJKFK_IsLine6, ref a1, ref a2);
+				ev.EMEPJNLHJHJ(1, _AKNELONELJK_difficulty, _GIKLNODJKFK_IsLine6, ref a1, ref a2);
 				Debug.Log(string.Concat(new object[4]
 				{
 					"StringLiteral_11879", a1, ",", a2
@@ -644,7 +644,7 @@ public class JEPBIIJDGEF_EventInfo
 					return 0;
 				int a1 = 0;
 				int a2 = 0;
-				ev.EMEPJNLHJHJ(1, _AKNELONELJK_Difficulty, _GIKLNODJKFK_IsLine6, ref a1, ref a2);
+				ev.EMEPJNLHJHJ(1, _AKNELONELJK_difficulty, _GIKLNODJKFK_IsLine6, ref a1, ref a2);
 				Debug.Log(string.Concat(new object[4]
 				{
 					"StringLiteral_11879", a1, ",", a2

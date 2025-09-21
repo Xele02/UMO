@@ -481,7 +481,7 @@ namespace XeApp.Game.Menu
 			NKGJPJPHLIF.HHCJCDFCLOB.FPNBCFJHENI.ANGMDEPOBEE();
 			long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 			GachaUtility.typeAndSeriesId = product.FDEBLMKEMLF_TypeAndSeriesId;
-			GachaUtility.selectCategory = product.INDDJNMPONH_Type;
+			GachaUtility.selectCategory = product.INDDJNMPONH_type;
 			GachaUtility.UpdateGachaProductCategory();
 			GachaUtility.SetupFreeTimezone();
 			GachaUtility.SetupGachaLimitTime(time);
@@ -525,7 +525,7 @@ namespace XeApp.Game.Menu
 				//0xEECB20
 				if (conditionId != TutorialConditionId.Condition36)
 					return false;
-				return m_view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily;
+				return m_view.DPBDFPPMIPH_Gacha.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily;
 			}));
 			yield return Co.R(TutorialManager.TryShowTutorialCoroutine((TutorialConditionId conditionId) =>
 			{
@@ -578,7 +578,7 @@ namespace XeApp.Game.Menu
 		//// RVA: 0xEE7948 Offset: 0xEE7948 VA: 0xEE7948
 		private void OnTimeLimit()
 		{
-			if(m_view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
+			if(m_view.DPBDFPPMIPH_Gacha.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.CCAPCGPIIPF_1_Daily)
 			{
 				GachaUtility.OpenTimeLimitPopup(ResetLotInfo);
 			}
@@ -638,7 +638,7 @@ namespace XeApp.Game.Menu
 		private void OnClickDrawGacha(int lotCount)
 		{
 			SoundManager.Instance.sePlayerBoot.Play((int)cs_se_boot.SE_BTN_001);
-			this.StartCoroutineWatched(OpenGachaPopup(GachaUtility.netGachaProductData.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.GENEIBGNMPH_3 || lotCount > 1 ? GachaUtility.CountType.Multi : GachaUtility.CountType.Single));
+			this.StartCoroutineWatched(OpenGachaPopup(GachaUtility.netGachaProductData.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.GENEIBGNMPH_3 || lotCount > 1 ? GachaUtility.CountType.Multi : GachaUtility.CountType.Single));
 		}
 
 		//[IteratorStateMachineAttribute] // RVA: 0x6DCFEC Offset: 0x6DCFEC VA: 0x6DCFEC
@@ -878,7 +878,7 @@ namespace XeApp.Game.Menu
 			}
 			int v3 = 0;
 			string s = "";
-			if(m_view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
+			if(m_view.DPBDFPPMIPH_Gacha.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
 			{
 				v3 = m_view.DPBDFPPMIPH_Gacha.MJNOAMAFNHA_CostItemId;
 				s = EKLNMHFCAOI.INCKKODFJAP_GetItemName(v3);
@@ -1108,7 +1108,7 @@ namespace XeApp.Game.Menu
 			LOBDIAABMKG product = GachaUtility.netGachaProductData;
 			HIMAFGJCECK limitedLot = product.OHBCGMINBDP(GachaUtility.netGachaCountForAppearRate, true);
 			HIMAFGJCECK basicLot = product.OHBCGMINBDP(GachaUtility.netGachaCountForAppearRate, false);
-			if(product.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9)
+			if(product.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9)
 			{
 				if (limitedLot == null)
 				{

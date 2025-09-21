@@ -167,12 +167,12 @@ namespace XeApp.Game.Menu
 						param.difficultyBit = 0;
 						if (!viewData[i].GIKLNODJKFK_IsLine6)
 						{
-							param.difficultyBit = 1 << viewData[i].AKNELONELJK_Difficulty;
+							param.difficultyBit = 1 << viewData[i].AKNELONELJK_difficulty;
 						}
 						param.difficulty6LineBit = 0;
 						if(viewData[i].GIKLNODJKFK_IsLine6)
 						{
-							param.difficulty6LineBit = 1 << viewData[i].AKNELONELJK_Difficulty;
+							param.difficulty6LineBit = 1 << viewData[i].AKNELONELJK_difficulty;
 						}
 						//LAB_011596fc;
 						param.isLine6 = viewData[i].GIKLNODJKFK_IsLine6;
@@ -193,7 +193,7 @@ namespace XeApp.Game.Menu
 						param.difficulty6LineBit = 0;
 						if (viewData[i].GIKLNODJKFK_IsLine6)
 						{
-							param.difficulty6LineBit = 1 << viewData[i].AKNELONELJK_Difficulty;
+							param.difficulty6LineBit = 1 << viewData[i].AKNELONELJK_difficulty;
 						}
 						//LAB_01159728;
 						AddParam(param);
@@ -205,12 +205,12 @@ namespace XeApp.Game.Menu
 						param.difficultyBit = 0;
 						if (!viewData[i].GIKLNODJKFK_IsLine6)
 						{
-							param.difficultyBit = 1 << viewData[i].AKNELONELJK_Difficulty;
+							param.difficultyBit = 1 << viewData[i].AKNELONELJK_difficulty;
 						}
 						param.difficulty6LineBit = 0;
 						if (viewData[i].GIKLNODJKFK_IsLine6)
 						{
-							param.difficulty6LineBit = 1 << viewData[i].AKNELONELJK_Difficulty;
+							param.difficulty6LineBit = 1 << viewData[i].AKNELONELJK_difficulty;
 						}
 						//LAB_011596fc
 						param.isLine6 = viewData[i].GIKLNODJKFK_IsLine6;

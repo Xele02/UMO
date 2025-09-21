@@ -529,7 +529,7 @@ public class IHKJLKLAMMC
 						}
 						break;
 				}
-				//KECECJPFEPM.FICHDKOOOOB = bv36 && l[i].PLALNIIBLOF_Enabled == 2;
+				//KECECJPFEPM.FICHDKOOOOB = bv36 && l[i].PLALNIIBLOF_en == 2;
 				if(!KECECJPFEPM.FICHDKOOOOB_Enabled)
 				{
 					KECECJPFEPM.LHMOAJAIJCO_is_new = false;

@@ -160,7 +160,7 @@ namespace XeApp.Game.Menu
 							List<EMGOCNMMPHC> l = dc.JNALKFEADEM();
 							for(int i = 0; i < l.Count; i++)
 							{
-								SetEventMusicRankingJacket(l[i].JNCPEGJGHOG_JackedId, i);
+								SetEventMusicRankingJacket(l[i].JNCPEGJGHOG_JacketId, i);
 							}
 						}
 						else

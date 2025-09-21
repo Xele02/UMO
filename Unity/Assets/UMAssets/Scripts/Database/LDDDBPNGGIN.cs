@@ -378,15 +378,15 @@ public class LDDDBPNGGIN_Game : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0xDA12BC Offset: 0xDA12BC VA: 0xDA12BC
-	public int GAHIBKLEDBF(int _AKNELONELJK_Difficulty, bool _GIKLNODJKFK_IsLine6)
+	public int GAHIBKLEDBF(int _AKNELONELJK_difficulty, bool _GIKLNODJKFK_IsLine6)
 	{
 		if(!_GIKLNODJKFK_IsLine6)
 		{
-			return DOAAGIMJOMM[_AKNELONELJK_Difficulty];
+			return DOAAGIMJOMM[_AKNELONELJK_difficulty];
 		}
 		else
 		{
-			return KMJNLIMMCED[_AKNELONELJK_Difficulty];
+			return KMJNLIMMCED[_AKNELONELJK_difficulty];
 		}
 	}
 

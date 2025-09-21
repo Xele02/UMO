@@ -200,14 +200,14 @@ public class LMBBEGIAKAD_EventQuest : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x10B807C Offset: 0x10B807C VA: 0x10B807C
-	public List<int> GEFEGEHCFNE(int _AKNELONELJK_Difficulty)
+	public List<int> GEFEGEHCFNE(int _AKNELONELJK_difficulty)
 	{
 		List<int> res = new List<int>(HKODBHPMLCP_Cards.Count);
 		for(int i = 0; i < HKODBHPMLCP_Cards.Count; i++)
 		{
 			if(HKODBHPMLCP_Cards[i].PPEGAKEIEGM_Enabled == 2)
 			{
-				if(HKODBHPMLCP_Cards[i].DGMIADAEGAI_TargetDifficultyType == _AKNELONELJK_Difficulty + 1)
+				if(HKODBHPMLCP_Cards[i].DGMIADAEGAI_TargetDifficultyType == _AKNELONELJK_difficulty + 1)
 					res.Add(i);
 			}
 		}

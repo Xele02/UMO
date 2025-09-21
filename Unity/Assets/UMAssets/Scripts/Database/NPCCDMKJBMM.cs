@@ -11,7 +11,7 @@ public class NPCCDMKJBMM_HomeVoice : DIHHCBACKGG_DbSection
 	{
 		public int PPFNGGCBJKC_id; // 0x8
 		public sbyte PPEGAKEIEGM_Enabled; // 0xC
-		public sbyte INDDJNMPONH_Type; // 0xD
+		public sbyte INDDJNMPONH_type; // 0xD
 		public int NKCNHKHGJHN_TalkType; // 0x10
 		public int CHOFDPDFPDC_ConfigValue; // 0x14 //DivaId
 		public long PDBPFJJCADD_open_at; // 0x18
@@ -47,7 +47,7 @@ public class NPCCDMKJBMM_HomeVoice : DIHHCBACKGG_DbSection
 			KLKLEALABPN data = new KLKLEALABPN();
 			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
 			data.PPEGAKEIEGM_Enabled = (sbyte)JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, (int)array[i].PLALNIIBLOF, 0);
-			data.INDDJNMPONH_Type = (sbyte)array[i].GBJFNGCDKPM;
+			data.INDDJNMPONH_type = (sbyte)array[i].GBJFNGCDKPM;
 			data.NKCNHKHGJHN_TalkType = (int)array[i].CHOIMHCMAHG;
 			data.CHOFDPDFPDC_ConfigValue = (int)array[i].JBFLEDKDFCO;
 			data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD;

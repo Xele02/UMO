@@ -171,7 +171,7 @@ public class NDABOOOOENC
 	}
 
 	// // RVA: 0x1ADC3E8 Offset: 0x1ADC3E8 VA: 0x1ADC3E8
-	public void GLHANCMGNDM_UpdateAchievement(int _PPFNGGCBJKC_id, double _JBGEEPFKIGG_Value/* = 100*/)
+	public void GLHANCMGNDM_UpdateAchievement(int _PPFNGGCBJKC_id, double _JBGEEPFKIGG_val/* = 100*/)
 	{
 		if(!AppEnv.IsCBT() && GKDLPKNOGCK_Initialized)
 		{
@@ -206,7 +206,7 @@ public class NDABOOOOENC
 					for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests.Count; i++)
 					{
 						CNLPPCFJEID_QuestInfo dbquest = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests[i];
-						if (dbquest.INDDJNMPONH_Type != 0)
+						if (dbquest.INDDJNMPONH_type != 0)
 						{
 							if(dbquest.HDBFCIOCNPA_AchievementId != 0)
 							{
@@ -247,7 +247,7 @@ public class NDABOOOOENC
 					for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests.Count; i++)
 					{
 						CNLPPCFJEID_QuestInfo dbQuest = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.MHGPMMIDKMM_Quest.GPMKFMFEKLN_NormalQuests[i];
-						if (dbQuest.INDDJNMPONH_Type != 0)
+						if (dbQuest.INDDJNMPONH_type != 0)
 						{
 							if(dbQuest.HDBFCIOCNPA_AchievementId != 0)
 							{

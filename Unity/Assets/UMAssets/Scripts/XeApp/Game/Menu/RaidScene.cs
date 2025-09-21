@@ -537,7 +537,7 @@ namespace XeApp.Game.Menu
 						List<PKNOKJNLPOE_EventRaid.KMFKFGEDPGJ> l6 = new List<PKNOKJNLPOE_EventRaid.KMFKFGEDPGJ>();
 						for(int i = 0; i < l.Count; i++)
 						{
-							if(l[i].INDDJNMPONH_Type == PKNOKJNLPOE_EventRaid.BKKPEJEABJN.AOFLHCJEDOA_0)
+							if(l[i].INDDJNMPONH_type == PKNOKJNLPOE_EventRaid.BKKPEJEABJN.AOFLHCJEDOA_0)
 							{
 								l5.Add(l[i]);
 							}
@@ -1062,8 +1062,8 @@ namespace XeApp.Game.Menu
 					//0x1826798
 					waitBossImage = true;
 				});
-				m_bossInfoLayout.SetBossName(m_bossInfoList[idx].INDDJNMPONH_Type);
-				m_bossInfoLayout.SetSeries(RaidController.NNDFMCHDJOH_GetBossSerie(m_bossInfoList[idx].INDDJNMPONH_Type));
+				m_bossInfoLayout.SetBossName(m_bossInfoList[idx].INDDJNMPONH_type);
+				m_bossInfoLayout.SetSeries(RaidController.NNDFMCHDJOH_GetBossSerie(m_bossInfoList[idx].INDDJNMPONH_type));
 				m_bossInfoLayout.SetSongBonus(m_bossInfoList[idx].NFOOOBMJINC_MissionBonusNum);
 				m_bossInfoLayout.SetMissionInfoText(m_bossInfoList[idx].CJLHLKKNMEE_MissionText);
 				m_bossInfoLayout.SetSp(m_bossInfoList[idx].IKICLMGFFPB_IsSpecial);
@@ -1128,8 +1128,8 @@ namespace XeApp.Game.Menu
 			if(m_bossInfoViewList.Count < index)
 				return;
 			m_bossImageLayout.SetBossImage(m_bossInfoViewList[index].HPPDFBKEJCG_BgId, null);
-			m_bossInfoLayout.SetBossName(RaidController.AGEJGHGEGFF_GetBossName(m_bossInfoViewList[index].INDDJNMPONH_Type));
-			m_bossInfoLayout.SetSeries(RaidController.NNDFMCHDJOH_GetBossSerie(m_bossInfoViewList[index].INDDJNMPONH_Type));
+			m_bossInfoLayout.SetBossName(RaidController.AGEJGHGEGFF_GetBossName(m_bossInfoViewList[index].INDDJNMPONH_type));
+			m_bossInfoLayout.SetSeries(RaidController.NNDFMCHDJOH_GetBossSerie(m_bossInfoViewList[index].INDDJNMPONH_type));
 			m_bossInfoLayout.SetSongBonus(m_bossInfoViewList[index].NFOOOBMJINC_MissionBonusNum);
 			m_bossInfoLayout.SetMissionInfoText(m_bossInfoViewList[index].CJLHLKKNMEE_MissionText);
 			m_bossInfoLayout.SetSp(m_bossInfoViewList[index].IKICLMGFFPB_IsSpecial);
@@ -1180,8 +1180,8 @@ namespace XeApp.Game.Menu
 			m_bossSelectListLayout.InitPanel(m_bossInfoViewList.Count, m_bossInfoViewList.IndexOf(RaidController.PMIIMELDPAJ_GetMyBoss()));
 			int idx = Mathf.Max(0, m_bossInfoViewList.IndexOf(RaidController.PMIIMELDPAJ_GetMyBoss()));
 			m_bossImageLayout.SetBossImage(m_bossInfoViewList[idx].HPPDFBKEJCG_BgId, null);
-			m_bossInfoLayout.SetBossName(RaidController.AGEJGHGEGFF_GetBossName(m_bossInfoViewList[idx].INDDJNMPONH_Type));
-			m_bossInfoLayout.SetSeries(RaidController.NNDFMCHDJOH_GetBossSerie(m_bossInfoViewList[idx].INDDJNMPONH_Type));
+			m_bossInfoLayout.SetBossName(RaidController.AGEJGHGEGFF_GetBossName(m_bossInfoViewList[idx].INDDJNMPONH_type));
+			m_bossInfoLayout.SetSeries(RaidController.NNDFMCHDJOH_GetBossSerie(m_bossInfoViewList[idx].INDDJNMPONH_type));
 			m_bossInfoLayout.SetSongBonus(m_bossInfoViewList[idx].NFOOOBMJINC_MissionBonusNum);
 			m_bossInfoLayout.SetMissionInfoText(m_bossInfoViewList[idx].CJLHLKKNMEE_MissionText);
 			m_bossInfoLayout.SetSp(m_bossInfoViewList[idx].IKICLMGFFPB_IsSpecial);
@@ -1603,7 +1603,7 @@ namespace XeApp.Game.Menu
 				AODFBGCCBPE data = AODFBGCCBPE.FKDIMODKKJD(false).Find((AODFBGCCBPE _) =>
 				{
 					//0x1825CD8
-					return _.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.FNJAOJBICJD_6_SuperGalaxyMedal;
+					return _.INDDJNMPONH_type == AODFBGCCBPE.NJMPLEENNPO.FNJAOJBICJD_6_SuperGalaxyMedal;
 				});
 				if(data != null)
 				{

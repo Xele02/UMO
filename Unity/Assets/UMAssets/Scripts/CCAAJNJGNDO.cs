@@ -87,11 +87,11 @@ public class CCAAJNJGNDO
 		}
 
 		//// RVA: 0x18FAB44 Offset: 0x18FAB44 VA: 0x18FAB44
-		public void KHEKNNFCAOI_Init(string _ADCMNODJBGJ_Title, string _HBNEKPHPKII_UnlockText_, NIPDOAIGCIB _INDDJNMPONH_Type, int _PPFNGGCBJKC_id, int _OAFJONPIFGM_EventId, int _MALFHCHNEFN_RoomId, bool _IBJNBJIFPAM_NeedUnlock, bool _IPJMPBANBPP_Enabled)
+		public void KHEKNNFCAOI_Init(string _ADCMNODJBGJ_Title, string _HBNEKPHPKII_UnlockText_, NIPDOAIGCIB _INDDJNMPONH_type, int _PPFNGGCBJKC_id, int _OAFJONPIFGM_EventId, int _MALFHCHNEFN_RoomId, bool _IBJNBJIFPAM_NeedUnlock, bool _IPJMPBANBPP_Enabled)
 		{
 			this.ADCMNODJBGJ_Title = _ADCMNODJBGJ_Title;
 			this.HBNEKPHPKII_UnlockText_ = _HBNEKPHPKII_UnlockText_;
-			EMJFHKHLHDB = _INDDJNMPONH_Type;
+			EMJFHKHLHDB = _INDDJNMPONH_type;
 			this.PPFNGGCBJKC_id = _PPFNGGCBJKC_id;
 			MKPJBDFDHOL_ThumbId = _OAFJONPIFGM_EventId;
 			this.MALFHCHNEFN_RoomId = _MALFHCHNEFN_RoomId;
@@ -104,11 +104,11 @@ public class CCAAJNJGNDO
 		}
 
 		//// RVA: 0x18FCF48 Offset: 0x18FCF48 VA: 0x18FCF48
-		public void KHEKNNFCAOI_Init(string _ADCMNODJBGJ_Title, string _HBNEKPHPKII_UnlockText_, NIPDOAIGCIB _INDDJNMPONH_Type, int _PPFNGGCBJKC_id, int _OAFJONPIFGM_EventId, int _MALFHCHNEFN_RoomId, bool _IBJNBJIFPAM_NeedUnlock, bool _IPJMPBANBPP_Enabled, bool _DJPODCBFDCN_NeedRelease, int _CHOFDPDFPDC_ConfigValue, int _PFGAKEDKOPD_UnlockCost, JLFOIPMADEP _LJPMEHDDBGP_UnlockError)
+		public void KHEKNNFCAOI_Init(string _ADCMNODJBGJ_Title, string _HBNEKPHPKII_UnlockText_, NIPDOAIGCIB _INDDJNMPONH_type, int _PPFNGGCBJKC_id, int _OAFJONPIFGM_EventId, int _MALFHCHNEFN_RoomId, bool _IBJNBJIFPAM_NeedUnlock, bool _IPJMPBANBPP_Enabled, bool _DJPODCBFDCN_NeedRelease, int _CHOFDPDFPDC_ConfigValue, int _PFGAKEDKOPD_UnlockCost, JLFOIPMADEP _LJPMEHDDBGP_UnlockError)
 		{
 			this.ADCMNODJBGJ_Title = _ADCMNODJBGJ_Title;
 			this.HBNEKPHPKII_UnlockText_ = _HBNEKPHPKII_UnlockText_;
-			EMJFHKHLHDB = _INDDJNMPONH_Type;
+			EMJFHKHLHDB = _INDDJNMPONH_type;
 			this.PPFNGGCBJKC_id = _PPFNGGCBJKC_id;
 			MKPJBDFDHOL_ThumbId = _OAFJONPIFGM_EventId;
 			this.MALFHCHNEFN_RoomId = _MALFHCHNEFN_RoomId;
@@ -124,11 +124,11 @@ public class CCAAJNJGNDO
 		}
 
 		//// RVA: 0x18FB9F4 Offset: 0x18FB9F4 VA: 0x18FB9F4
-		public void KHEKNNFCAOI_Init(string _ADCMNODJBGJ_Title, string _HBNEKPHPKII_UnlockText_, NIPDOAIGCIB _INDDJNMPONH_Type, int _PPFNGGCBJKC_id, int _OAFJONPIFGM_EventId, int _MALFHCHNEFN_RoomId, bool _IBJNBJIFPAM_NeedUnlock, bool _IPJMPBANBPP_Enabled, int _KDGJBBFKLGI_Chapter, bool _CADENLBDAEB_IsNew, bool _NPMMHCENABK_PreviousViewed)
+		public void KHEKNNFCAOI_Init(string _ADCMNODJBGJ_Title, string _HBNEKPHPKII_UnlockText_, NIPDOAIGCIB _INDDJNMPONH_type, int _PPFNGGCBJKC_id, int _OAFJONPIFGM_EventId, int _MALFHCHNEFN_RoomId, bool _IBJNBJIFPAM_NeedUnlock, bool _IPJMPBANBPP_Enabled, int _KDGJBBFKLGI_Chapter, bool _CADENLBDAEB_IsNew, bool _NPMMHCENABK_PreviousViewed)
 		{
 			this.ADCMNODJBGJ_Title = _ADCMNODJBGJ_Title;
 			this.HBNEKPHPKII_UnlockText_ = _HBNEKPHPKII_UnlockText_;
-			EMJFHKHLHDB = _INDDJNMPONH_Type;
+			EMJFHKHLHDB = _INDDJNMPONH_type;
 			this.PPFNGGCBJKC_id = _PPFNGGCBJKC_id;
 			MKPJBDFDHOL_ThumbId = _OAFJONPIFGM_EventId;
 			this.MALFHCHNEFN_RoomId = _MALFHCHNEFN_RoomId;

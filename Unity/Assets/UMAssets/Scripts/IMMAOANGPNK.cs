@@ -51,7 +51,7 @@ public class IMMAOANGPNK
 	{
 		for(int i = 0; i < JOBKIDDLCPL_schedules.Count; i++)
 		{
-			if(_JHNMKKNEENE_Time >= JOBKIDDLCPL_schedules[i].KBFOIECIADN_opened_at && JOBKIDDLCPL_schedules[i].EGBOHDFBAPB_ClosedAt >= _JHNMKKNEENE_Time)
+			if(_JHNMKKNEENE_Time >= JOBKIDDLCPL_schedules[i].KBFOIECIADN_opened_at && JOBKIDDLCPL_schedules[i].EGBOHDFBAPB_CloseAt >= _JHNMKKNEENE_Time)
 			{
 				if (JOBKIDDLCPL_schedules[i].OPFGFINHFCE_name.Contains(FJMNHCBPKCJ))
 					return JOBKIDDLCPL_schedules[i];
@@ -423,7 +423,7 @@ public class IMMAOANGPNK
 					GDIPLANPCEI info = new GDIPLANPCEI();
 					info.OPFGFINHFCE_name = schedule_item[i].OPFGFINHFCE;
 					info.KBFOIECIADN_opened_at = schedule_item[i].KBFOIECIADN;
-					info.EGBOHDFBAPB_ClosedAt = schedule_item[i].EGBOHDFBAPB;
+					info.EGBOHDFBAPB_CloseAt = schedule_item[i].EGBOHDFBAPB;
 					// UMO Event
 					if(currentEvent != null && currentEvent.EnableBlock(info.OPFGFINHFCE_name))
 					//if(info.OPFGFINHFCE_name.Contains("april"))
@@ -432,18 +432,18 @@ public class IMMAOANGPNK
 						date = date.Subtract(new TimeSpan(1, 0, 0, 0));
 						info.KBFOIECIADN_opened_at = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0);
 						date = date.AddDays(11);
-						info.EGBOHDFBAPB_ClosedAt = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0);
+						info.EGBOHDFBAPB_CloseAt = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0);
 					}
 					// UMO Event End
 					JOBKIDDLCPL_schedules.Add(info);
 				}
 				// Hack for UMO to add quest_a b & c
 				if(currentEvent != null && currentEvent.EnableBlock("event_quest_a"))
-					JOBKIDDLCPL_schedules.Add(new GDIPLANPCEI() { OPFGFINHFCE_name = "event_quest_a", KBFOIECIADN_opened_at = 0, EGBOHDFBAPB_ClosedAt = long.MaxValue });
+					JOBKIDDLCPL_schedules.Add(new GDIPLANPCEI() { OPFGFINHFCE_name = "event_quest_a", KBFOIECIADN_opened_at = 0, EGBOHDFBAPB_CloseAt = long.MaxValue });
 				if(currentEvent != null && currentEvent.EnableBlock("event_quest_b"))
-					JOBKIDDLCPL_schedules.Add(new GDIPLANPCEI() { OPFGFINHFCE_name = "event_quest_b", KBFOIECIADN_opened_at = 0, EGBOHDFBAPB_ClosedAt = long.MaxValue });
+					JOBKIDDLCPL_schedules.Add(new GDIPLANPCEI() { OPFGFINHFCE_name = "event_quest_b", KBFOIECIADN_opened_at = 0, EGBOHDFBAPB_CloseAt = long.MaxValue });
 				if(currentEvent != null && currentEvent.EnableBlock("event_quest_c"))
-					JOBKIDDLCPL_schedules.Add(new GDIPLANPCEI() { OPFGFINHFCE_name = "event_quest_c", KBFOIECIADN_opened_at = 0, EGBOHDFBAPB_ClosedAt = long.MaxValue });
+					JOBKIDDLCPL_schedules.Add(new GDIPLANPCEI() { OPFGFINHFCE_name = "event_quest_c", KBFOIECIADN_opened_at = 0, EGBOHDFBAPB_CloseAt = long.MaxValue });
 				//
 			}
 			else if(item.OPFGFINHFCE_name.Contains(".json"))
@@ -456,7 +456,7 @@ public class IMMAOANGPNK
 					GDIPLANPCEI info = new GDIPLANPCEI();
 					info.OPFGFINHFCE_name = (string)data[i][AFEHLCGHAEE_Strings.OPFGFINHFCE_name];
 					info.KBFOIECIADN_opened_at = JsonUtil.GetLong(data[i], AFEHLCGHAEE_Strings.KBFOIECIADN_opened_at);
-					info.EGBOHDFBAPB_ClosedAt = JsonUtil.GetLong(data[i], AFEHLCGHAEE_Strings.EGBOHDFBAPB_CloseAt);
+					info.EGBOHDFBAPB_CloseAt = JsonUtil.GetLong(data[i], AFEHLCGHAEE_Strings.EGBOHDFBAPB_CloseAt);
 					// UMO Event
 					if(currentEvent != null && currentEvent.EnableBlock(info.OPFGFINHFCE_name))
 					//if(info.OPFGFINHFCE_name.Contains("april"))
@@ -465,7 +465,7 @@ public class IMMAOANGPNK
 						date = date.Subtract(new TimeSpan(1, 0, 0, 0));
 						info.KBFOIECIADN_opened_at = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0);
 						date = date.AddDays(11);
-						info.EGBOHDFBAPB_ClosedAt = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0);
+						info.EGBOHDFBAPB_CloseAt = Utility.GetTargetUnixTime(date.Year, date.Month, date.Day, 0, 0, 0);
 					}
 					// UMO Event End
 					JOBKIDDLCPL_schedules.Add(info);
@@ -479,7 +479,7 @@ public class IMMAOANGPNK
 	{
 		for(int i = 0; i < JOBKIDDLCPL_schedules.Count; i++)
 		{
-			if (JOBKIDDLCPL_schedules[i].KBFOIECIADN_opened_at <= _JHNMKKNEENE_Time && JOBKIDDLCPL_schedules[i].EGBOHDFBAPB_ClosedAt >= _JHNMKKNEENE_Time)
+			if (JOBKIDDLCPL_schedules[i].KBFOIECIADN_opened_at <= _JHNMKKNEENE_Time && JOBKIDDLCPL_schedules[i].EGBOHDFBAPB_CloseAt >= _JHNMKKNEENE_Time)
 			{
 				if (NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOBKIDDLCPL_schedules[i].OPFGFINHFCE_name) == null)
 					return true;

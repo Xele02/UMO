@@ -302,7 +302,7 @@ public class AFEHLCGHAEE_Strings
 	public static string DAHGIMDKPCP_tokusho_ho_ios = "tokusho_ho_ios"; // 0x4A8
 	public static string GNHMCCLFBLB_rwd_cb = "rwd_cb"; // 0x4AC
 	public static string NONMPJBNBNN_m_clr = "m_clr"; // 0x4B0
-	public static string INDDJNMPONH_Type = "type"; // 0x4B4
+	public static string INDDJNMPONH_type = "type"; // 0x4B4
 	public static string PMGMELIKALB_o_id = "o_id"; // 0x4B8
 	public static string COIODGJDJEJ_scene = "scene"; // 0x4BC
 	public static string IBAKPKKEDJM_Month = "month"; // 0x4C0
@@ -409,7 +409,7 @@ public class AFEHLCGHAEE_Strings
 	public static string DLCJLEBGBCI_swp_st = "swp_st"; // 0x654
 	public static string LJGOOOMOMMA_message = "message"; // 0x658
 	public static string HENOGPAINDF_center_card = "center_card"; // 0x65C
-	public static string JBGEEPFKIGG_Value = "val"; // 0x660
+	public static string JBGEEPFKIGG_val = "val"; // 0x660
 	public static string BEHEPILDEGG_combo_bonus = "combo_bonus"; // 0x664
 	public static string EHGBICNIBKE_PlayerId = "player_id"; // 0x668
 	public static string MIKCFEHGNJB_dt = "dt"; // 0x66C

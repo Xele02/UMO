@@ -122,7 +122,7 @@ namespace XeApp.Game.Adv
 			JGEOBNENMAH.EDHCNKBMLGI j_ = new JGEOBNENMAH.EDHCNKBMLGI();
 			j_.GHBPLHBNMBK_FreeMusicId = Database.Instance.gameSetup.musicInfo.freeMusicId;
 			j_.KLCIIHKFPPO_StoryMusicId = Database.Instance.gameSetup.musicInfo.storyMusicId;
-			j_.AKNELONELJK_Difficulty = (int)Database.Instance.gameSetup.musicInfo.difficultyType;
+			j_.AKNELONELJK_difficulty = (int)Database.Instance.gameSetup.musicInfo.difficultyType;
 			j_.OALJNDABDHK = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH;
 			j_.NHPGGBCKLHC_FriendData = null;
 			j_.MNNHHJBBICA_GameEventType = 0;

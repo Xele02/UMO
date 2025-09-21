@@ -70,7 +70,7 @@ namespace XeApp.Game.Menu
 			KOPCFBCDBPC stepRecord = view.DPBDFPPMIPH_Gacha.NECDFDNBHFK_StepData;
 			if(stepRecord == null)
 			{
-				if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9)
+				if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9)
 				{
 					BEPHBEGDFFK.DMBKENKBIJD d = view.EIPFDJBIOKN(false);
 					if(d == null)
@@ -91,7 +91,7 @@ namespace XeApp.Game.Menu
 						ButtonL.Hidden = true;
 					}
 				}
-				else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
+				else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
 				{
 					BEPHBEGDFFK.DMBKENKBIJD d = view.EIPFDJBIOKN(true);
 					if(d == null)
@@ -115,7 +115,7 @@ namespace XeApp.Game.Menu
 				else
 				{
 					BEPHBEGDFFK.DMBKENKBIJD d = view.EIPFDJBIOKN(true);
-					if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type != GCAHJLOGMCI.KNMMOMEHDON_GachaType.ANFKBNLLJFN_7)
+					if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_type != GCAHJLOGMCI.KNMMOMEHDON_GachaType.ANFKBNLLJFN_7)
 					{
 						BEPHBEGDFFK.DMBKENKBIJD d2 = view.IIPOPGHKHBA(true);
 						if(d != null && d2 != null)
@@ -150,7 +150,7 @@ namespace XeApp.Game.Menu
 			string str = "";
 			bool b1 = false;
 			bool b2 = true;
-			switch(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type)
+			switch(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_type)
 			{
 				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.PHABJLGFJNI_2_Regular:
 				case GCAHJLOGMCI.KNMMOMEHDON_GachaType.GENEIBGNMPH_3:
@@ -247,12 +247,12 @@ namespace XeApp.Game.Menu
 			bool b1 = false;
 			bool b2;
 			string str;
-			if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9)
+			if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.OOABDNHIEFK_9)
 			{
 				b2 = true;
 				str = "02";
 			}
-			else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_Type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
+			else if(view.DPBDFPPMIPH_Gacha.INDDJNMPONH_type == GCAHJLOGMCI.KNMMOMEHDON_GachaType.DLOPEFGOAPD_10_PassGacha)
 			{
 				b2 = true;
 				b1 = true;

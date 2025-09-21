@@ -20,7 +20,7 @@ namespace XeApp.Game.Common
 			this.id = id;
 			haveCount = saveItem.BFINGCJHOHI_Count;
 			maxCount = dbItem.DOOGFEGEKLG_Max;
-			healValue = dbItem.JBGEEPFKIGG_Value;
+			healValue = dbItem.JBGEEPFKIGG_val;
 			name = EKLNMHFCAOI.INCKKODFJAP_GetItemName(EKLNMHFCAOI.FKGCBLHOOCL_Category.DMMIIBCMCFG_EnergyItem, id);
 			desc = EKLNMHFCAOI.ILKGBGOCLAO_GetItemDesc(EKLNMHFCAOI.FKGCBLHOOCL_Category.DMMIIBCMCFG_EnergyItem, id);
 			isLimit = dbItem.HJAFPEBIBOP_Limit != 0;

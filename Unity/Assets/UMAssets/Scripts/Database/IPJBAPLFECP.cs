@@ -10,7 +10,7 @@ public class IPJBAPLFECP_Anketo : DIHHCBACKGG_DbSection
 		public int PPFNGGCBJKC_id; // 0x8
 		public int PLALNIIBLOF_en; // 0xC
 		public int EILKGEADKGH_Order; // 0x10
-		public int INDDJNMPONH_Type; // 0x14 NotifId
+		public int INDDJNMPONH_type; // 0x14 NotifId
 		public int GJLFANGDGCL_Target; // 0x18 // Category
 		public string ADCMNODJBGJ_Title; // 0x1C
 		public string[] BNMCMNPPPCI_ChoiceText; // 0x20
@@ -65,7 +65,7 @@ public class IPJBAPLFECP_Anketo : DIHHCBACKGG_DbSection
 			data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC;
 			data.PLALNIIBLOF_en = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 			data.EILKGEADKGH_Order = array[i].EILKGEADKGH;
-			data.INDDJNMPONH_Type = array[i].GBJFNGCDKPM;
+			data.INDDJNMPONH_type = array[i].GBJFNGCDKPM;
 			data.ADCMNODJBGJ_Title = DatabaseTextConverter.TranslateAnketoQuestion(i, array[i].ADCMNODJBGJ);
 			data.BNMCMNPPPCI_ChoiceText = new string[array[i].BNMCMNPPPCI.Length];
 			for(int j = 0; j < data.BNMCMNPPPCI_ChoiceText.Length; j++)

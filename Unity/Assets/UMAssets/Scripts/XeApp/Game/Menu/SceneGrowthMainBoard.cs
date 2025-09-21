@@ -39,8 +39,8 @@ namespace XeApp.Game.Menu
 					{
 						BoardSquare[] squares = m_boardSquareList[n.GHPLINIACBB_x];
 						int idx = n.PMBEODGMMBB_y;
-						AFIFDLOAKGI a_ = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.PJADHDHKOEJ[n.JBGEEPFKIGG_Value - 1];
-						squares[idx].id = a_.INDDJNMPONH_Type;
+						AFIFDLOAKGI a_ = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.PJADHDHKOEJ[n.JBGEEPFKIGG_val - 1];
+						squares[idx].id = a_.INDDJNMPONH_type;
 						squares[idx].saveIndex = (short)i;
 						squares[idx].type = SquareType.Panel;
 						squares[idx].isOpen = sceneData.FAPMGGOMCOE(i) == GCIJNCFDNON_SceneInfo.HINAICIJJJC.JIKCABGFIEG_2/*2*/;
@@ -52,17 +52,17 @@ namespace XeApp.Game.Menu
 					n = sceneData.DKFCPBEOBHB_Layout.ADPJCNHAJPC_Roads[i];
 					if(n.GHPLINIACBB_x + 1 < m_boardSquareList.Count)
 					{
-						AFIFDLOAKGI a_ = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.PJADHDHKOEJ[n.JBGEEPFKIGG_Value - 1];
-						if(a_.INDDJNMPONH_Type != 16)
+						AFIFDLOAKGI a_ = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.PJADHDHKOEJ[n.JBGEEPFKIGG_val - 1];
+						if(a_.INDDJNMPONH_type != 16)
 						{
 							BoardSquare[] squares = m_boardSquareList[n.GHPLINIACBB_x + 1];
 							if (squares[n.PMBEODGMMBB_y].type == SquareType.None)
 								continue;
 						}
 						m_boardSquareList[n.GHPLINIACBB_x][n.PMBEODGMMBB_y].isOpen = m_boardSquareList[n.GHPLINIACBB_x + 1][n.PMBEODGMMBB_y].isOpen;
-						m_boardSquareList[n.GHPLINIACBB_x][n.PMBEODGMMBB_y].id = n.JBGEEPFKIGG_Value - 2;
+						m_boardSquareList[n.GHPLINIACBB_x][n.PMBEODGMMBB_y].id = n.JBGEEPFKIGG_val - 2;
 						m_boardSquareList[n.GHPLINIACBB_x][n.PMBEODGMMBB_y].saveIndex = (short)i;
-						m_boardSquareList[n.GHPLINIACBB_x][n.PMBEODGMMBB_y].type = a_.INDDJNMPONH_Type == 16 ? SquareType.Start : SquareType.Road;
+						m_boardSquareList[n.GHPLINIACBB_x][n.PMBEODGMMBB_y].type = a_.INDDJNMPONH_type == 16 ? SquareType.Start : SquareType.Road;
 					}
 				}
 				bool b = sceneData.JKGFBFPIMGA_Rarity > 3 && sceneData.JKGFBFPIMGA_Rarity == sceneData.EKLIPGELKCL_Rarity && sceneData.JKGFBFPIMGA_Rarity < 6;

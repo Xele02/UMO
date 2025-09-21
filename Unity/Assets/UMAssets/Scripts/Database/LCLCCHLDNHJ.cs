@@ -56,7 +56,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 		public class FBKPFMKPMAF_LevelInfo
 		{
 			[UMOMember(ReaderMember = "BFIFIDKOJGD", ReaderDisplay = "CostumeArrayData", Desc = "Unlock Type\n* 0 : None\n* 1 : Costume Effect. Value_0 = Costume Skill Level\n* 2 : Object. Value_0 = ItemId, Value_1 = Number get\n* 3 : Object?\n* 4 : Unlock Costume Color. Value_0 : Color Id\n* 5 : Diva Stat. Value_0 : Type ( 1 : Soul, 2 : Voice, 3 : Charm, 4 : Life, 5 : Support, 6 : Bio-Fold ), Value_1 : Value\n* 6 : Unlock support plate. Value_0 : Attribute ( 1 : Star, 2 : Love, 3 : Life ), Value_1 : Status ( 1 : Soul, 2 : Voice, 3 : Charm )")]
-			public int INDDJNMPONH_Type; // 0x8
+			public int INDDJNMPONH_type; // 0x8
 			[UMOMember(ReaderMember = "AJNPNDIDJLD", ReaderDisplay = "ArrayIdxOwnerMerged", Desc = "Setting values depending of the Unlock Type")]
 			public int[] PIBLLGLCJEO_Param; // 0xC
 			[UMOMember(ReaderMember = "GMKDHMPGLFL", ReaderDisplay = "CostumeArrayData", Desc = "Unlock condition Index [Database:Costume/FDNBEPCEHBH_UnlocksConditions]")]
@@ -70,13 +70,13 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 			//// RVA: 0xD9ECBC Offset: 0xD9ECBC VA: 0xD9ECBC
 			public bool LMNEDALDGNC()
 			{
-				return (INDDJNMPONH_Type | 1) == 3;
+				return (INDDJNMPONH_type | 1) == 3;
 			}
 
 			//// RVA: 0xD9ECD4 Offset: 0xD9ECD4 VA: 0xD9ECD4
 			public int LDHIAOGPINB()
 			{
-				if(INDDJNMPONH_Type != 4)
+				if(INDDJNMPONH_type != 4)
 					return 0;
 				return PIBLLGLCJEO_Param[0];
 			}
@@ -145,7 +145,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 			int DEOBDFOPLHG_SkillLevel = 1;
 			JEJCHECAEBD_ForEachLevel(_ANAJIAENLNB_Level, (int FGMJJBBDOOI_Level, FBKPFMKPMAF_LevelInfo GMCEJHMOJJD_Info) => {
 				//0xD9E83C
-				if(GMCEJHMOJJD_Info.INDDJNMPONH_Type != 1)
+				if(GMCEJHMOJJD_Info.INDDJNMPONH_type != 1)
 					return;
 				DEOBDFOPLHG_SkillLevel = GMCEJHMOJJD_Info.PIBLLGLCJEO_Param[0];
 			});
@@ -159,7 +159,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 			JEJCHECAEBD_ForEachLevel(_ANAJIAENLNB_Level, (int FGMJJBBDOOI, LCLCCHLDNHJ_Costume.ILODJKFJJDO_CostumeInfo.FBKPFMKPMAF_LevelInfo GMCEJHMOJJD) =>
 			{
 				//0xD9E8A4
-				if (GMCEJHMOJJD.INDDJNMPONH_Type != 4)
+				if (GMCEJHMOJJD.INDDJNMPONH_type != 4)
 					return;
 				result.Add((short)GMCEJHMOJJD.PIBLLGLCJEO_Param[0]);
 			});
@@ -169,7 +169,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
         // // RVA: 0xD9E428 Offset: 0xD9E428 VA: 0xD9E428
         public int LLJPMOIPBAG_GetColorForLevel(int _ANAJIAENLNB_Level)
 		{
-			if(BJGNGNPHCBA_LevelsInfo[_ANAJIAENLNB_Level].INDDJNMPONH_Type != 4)
+			if(BJGNGNPHCBA_LevelsInfo[_ANAJIAENLNB_Level].INDDJNMPONH_type != 4)
 				return 0;
 			return BJGNGNPHCBA_LevelsInfo[_ANAJIAENLNB_Level].PIBLLGLCJEO_Param[0];
 		}
@@ -181,7 +181,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 			JEJCHECAEBD_ForEachLevel(LLLCMHENKKN_LevelMax, (int FGMJJBBDOOI, FBKPFMKPMAF_LevelInfo GMCEJHMOJJD) =>
 			{
 				//0xD9E974
-				if(GMCEJHMOJJD.INDDJNMPONH_Type == 4)
+				if(GMCEJHMOJJD.INDDJNMPONH_type == 4)
 				{
 					if(GMCEJHMOJJD.PIBLLGLCJEO_Param[0] == _HEHKNMCDBJJ_ColorId)
 						res = FGMJJBBDOOI + 1;
@@ -202,7 +202,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 			JEJCHECAEBD_ForEachLevel(_ANAJIAENLNB_Level, (int FGMJJBBDOOI_Level, FBKPFMKPMAF_LevelInfo GMCEJHMOJJD_Info) =>
 			{
 				//0xD9EA00
-				if (GMCEJHMOJJD_Info.INDDJNMPONH_Type != 5)
+				if (GMCEJHMOJJD_Info.INDDJNMPONH_type != 5)
 					return;
 				if(GMCEJHMOJJD_Info.PIBLLGLCJEO_Param[0] > 0 && GMCEJHMOJJD_Info.PIBLLGLCJEO_Param[0] < 7)
 				{
@@ -237,7 +237,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 			JEJCHECAEBD_ForEachLevel(_ANAJIAENLNB_Level, (int FGMJJBBDOOI, FBKPFMKPMAF_LevelInfo GMCEJHMOJJD) =>
 			{
 				//0xD9EBB4
-				if (GMCEJHMOJJD.INDDJNMPONH_Type != 6)
+				if (GMCEJHMOJJD.INDDJNMPONH_type != 6)
 					return;
 				LAEAKOHKNHO[GMCEJHMOJJD.PIBLLGLCJEO_Param[0] - 1, GMCEJHMOJJD.PIBLLGLCJEO_Param[1] - 1]++;
 			});
@@ -256,20 +256,20 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 		public class PGGEBICEDGH
 		{
 			[UMOMember(ReaderMember = "IKKKOBGCPGN", ReaderDisplay = "ArrayIdxOwnerMerged", Desc = "Unlock Condition\n* 1 : Own {Value_1} costume of level {Value_0}+\n* 2 : Use {Value_0} costume item\n*3 : Have the owning diva an affection of {Value_0}+")]
-			public int INDDJNMPONH_Type; // 0x8
+			public int INDDJNMPONH_type; // 0x8
 			[UMOMember(ReaderMember = "CHIFFONJIAD", ReaderDisplay = "ArrayIdxOwnerMerged")]
 			public int[] PIBLLGLCJEO_Param; // 0xC
 
 			//// RVA: 0xD9EDD4 Offset: 0xD9EDD4 VA: 0xD9EDD4
 			public bool OHIADCDNJPB(PGGEBICEDGH _GJLFANGDGCL_Target)
 			{
-				if(INDDJNMPONH_Type == _GJLFANGDGCL_Target.INDDJNMPONH_Type)
+				if(INDDJNMPONH_type == _GJLFANGDGCL_Target.INDDJNMPONH_type)
 				{
-					if(INDDJNMPONH_Type == 3 || INDDJNMPONH_Type == 2)
+					if(INDDJNMPONH_type == 3 || INDDJNMPONH_type == 2)
 					{
 						return _GJLFANGDGCL_Target.PIBLLGLCJEO_Param[0] <= PIBLLGLCJEO_Param[0];
 					}
-					else if(INDDJNMPONH_Type == 1)
+					else if(INDDJNMPONH_type == 1)
 					{
 						return _GJLFANGDGCL_Target.PIBLLGLCJEO_Param[0] <= PIBLLGLCJEO_Param[0]
 							&& _GJLFANGDGCL_Target.PIBLLGLCJEO_Param[1] <= PIBLLGLCJEO_Param[1];
@@ -293,9 +293,9 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 			LKLGPLFNJBA_UnlockCondition res = LKLGPLFNJBA_UnlockCondition.NBEFPGIMEGA_1_OwnedCostume;
 			for (int i = 0; i < NKNBKLHCAFD_UnlocksConditions.Length; i++)
 			{
-				if (NKNBKLHCAFD_UnlocksConditions[i].INDDJNMPONH_Type == 2)
+				if (NKNBKLHCAFD_UnlocksConditions[i].INDDJNMPONH_type == 2)
 					return LKLGPLFNJBA_UnlockCondition.BCJHILDCONA_2_UseItems;
-				if (NKNBKLHCAFD_UnlocksConditions[i].INDDJNMPONH_Type == 3)
+				if (NKNBKLHCAFD_UnlocksConditions[i].INDDJNMPONH_type == 3)
 					res = LKLGPLFNJBA_UnlockCondition.CALCHKAMIDB_3_DivaIntimacy;
 			}
 			return res;
@@ -448,7 +448,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 				for(int j = 0; j < array[i].BFIFIDKOJGD.Length; j++)
 				{
 					ILODJKFJJDO_CostumeInfo.FBKPFMKPMAF_LevelInfo data2 = new ILODJKFJJDO_CostumeInfo.FBKPFMKPMAF_LevelInfo();
-					data2.INDDJNMPONH_Type = array[i].BFIFIDKOJGD[j];
+					data2.INDDJNMPONH_type = array[i].BFIFIDKOJGD[j];
 					data2.PIBLLGLCJEO_Param = new int[val];
 					for(int k = 0; k < val; k++)
 					{
@@ -492,7 +492,7 @@ public class LCLCCHLDNHJ_Costume : DIHHCBACKGG_DbSection
 				for(int j = 0; j < array4[i].IKKKOBGCPGN.Length; j++)
 				{
 					JMEHNBGDEBD.PGGEBICEDGH data2 = new JMEHNBGDEBD.PGGEBICEDGH();
-					data2.INDDJNMPONH_Type = array4[i].IKKKOBGCPGN[j];
+					data2.INDDJNMPONH_type = array4[i].IKKKOBGCPGN[j];
 					data2.PIBLLGLCJEO_Param = new int[val];
 					for(int k = 0; k < val; k++)
 					{

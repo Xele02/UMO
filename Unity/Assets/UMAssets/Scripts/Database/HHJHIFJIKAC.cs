@@ -23,12 +23,12 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
         public int PPFNGGCBJKC_id; // 0x8
         public int PLALNIIBLOF_en; // 0xC
         public int PDBPFJJCADD_open_at; // 0x10
-        public int EGBOHDFBAPB_ClosedAt; // 0x14
+        public int EGBOHDFBAPB_CloseAt; // 0x14
         public int KMENGHEAIOC; // 0x18
         public int JDANEOJCLBB; // 0x1C
         public int CPGFOBNKKBF_CurrencyId; // 0x20
-        public int INDDJNMPONH_Type; // 0x24
-        public int JBGEEPFKIGG_Value; // 0x28
+        public int INDDJNMPONH_type; // 0x24
+        public int JBGEEPFKIGG_val; // 0x28
 
         // // RVA: 0x1831930 Offset: 0x1831930 VA: 0x1831930
         // public uint CAOGDCBPBAN() { }
@@ -36,9 +36,9 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
         // // RVA: 0x18319B4 Offset: 0x18319B4 VA: 0x18319B4
         public bool EHKLFIBLHPI_IsTimeValid(long _JHNMKKNEENE_Time)
 		{
-			if(PLALNIIBLOF_en == 2 && INDDJNMPONH_Type == 3)
+			if(PLALNIIBLOF_en == 2 && INDDJNMPONH_type == 3)
 			{
-				return PDBPFJJCADD_open_at <= _JHNMKKNEENE_Time && _JHNMKKNEENE_Time <= EGBOHDFBAPB_ClosedAt;
+				return PDBPFJJCADD_open_at <= _JHNMKKNEENE_Time && _JHNMKKNEENE_Time <= EGBOHDFBAPB_CloseAt;
 			}
 			return false;
 		}
@@ -56,7 +56,7 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
 		{
 			if(id <= CDENCMNHNGA_table.Count)
 			{
-				return CDENCMNHNGA_table[id - 1].INDDJNMPONH_Type == 4;
+				return CDENCMNHNGA_table[id - 1].INDDJNMPONH_type == 4;
 			}
 		}
 		return false;
@@ -67,7 +67,7 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
 	{
 		for(int i = 0; i < CDENCMNHNGA_table.Count; i++)
 		{
-			if (CDENCMNHNGA_table[i].PLALNIIBLOF_en == 2 && CDENCMNHNGA_table[i].INDDJNMPONH_Type == 1 && CDENCMNHNGA_table[i].PPFNGGCBJKC_id == _PPFNGGCBJKC_id)
+			if (CDENCMNHNGA_table[i].PLALNIIBLOF_en == 2 && CDENCMNHNGA_table[i].INDDJNMPONH_type == 1 && CDENCMNHNGA_table[i].PPFNGGCBJKC_id == _PPFNGGCBJKC_id)
 				return CDENCMNHNGA_table[i];
 		}
 		return null;
@@ -81,9 +81,9 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
 	{
 		for(int i = 0; i < CDENCMNHNGA_table.Count; i++)
 		{
-			if(CDENCMNHNGA_table[i].PLALNIIBLOF_en == 2 && CDENCMNHNGA_table[i].INDDJNMPONH_Type == (int)CHOIMHCMAHG)
+			if(CDENCMNHNGA_table[i].PLALNIIBLOF_en == 2 && CDENCMNHNGA_table[i].INDDJNMPONH_type == (int)CHOIMHCMAHG)
 			{
-				if (CDENCMNHNGA_table[i].PDBPFJJCADD_open_at <= _EOLFJGMAJAB_CurrentTime && CDENCMNHNGA_table[i].EGBOHDFBAPB_ClosedAt >= _EOLFJGMAJAB_CurrentTime)
+				if (CDENCMNHNGA_table[i].PDBPFJJCADD_open_at <= _EOLFJGMAJAB_CurrentTime && CDENCMNHNGA_table[i].EGBOHDFBAPB_CloseAt >= _EOLFJGMAJAB_CurrentTime)
 				{
 					return CDENCMNHNGA_table[i];
 				}
@@ -117,15 +117,15 @@ public class HHJHIFJIKAC_BonusVc : DIHHCBACKGG_DbSection
 			data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC;
 			data.PLALNIIBLOF_en = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 			data.PDBPFJJCADD_open_at = array[i].PDBPFJJCADD;
-			data.EGBOHDFBAPB_ClosedAt = array[i].EGBOHDFBAPB;
-			//UnityEngine.Debug.LogError(data.PPFNGGCBJKC_id+" "+Utility.GetLocalDateTime(data.PDBPFJJCADD_open_at).ToLongDateString()+" "+Utility.GetLocalDateTime(data.EGBOHDFBAPB_ClosedAt).ToLongDateString());
+			data.EGBOHDFBAPB_CloseAt = array[i].EGBOHDFBAPB;
+			//UnityEngine.Debug.LogError(data.PPFNGGCBJKC_id+" "+Utility.GetLocalDateTime(data.PDBPFJJCADD_open_at).ToLongDateString()+" "+Utility.GetLocalDateTime(data.EGBOHDFBAPB_CloseAt).ToLongDateString());
 			// UMO unlock
-			data.EGBOHDFBAPB_ClosedAt = (int)Utility.GetCurrentUnixTime() + 24 * 3600;
+			data.EGBOHDFBAPB_CloseAt = (int)Utility.GetCurrentUnixTime() + 24 * 3600;
 			data.KMENGHEAIOC = array[i].KMENGHEAIOC;
 			data.JDANEOJCLBB = array[i].JDANEOJCLBB;
 			data.CPGFOBNKKBF_CurrencyId = array[i].CPGFOBNKKBF;
-			data.INDDJNMPONH_Type = array[i].GBJFNGCDKPM;
-			data.JBGEEPFKIGG_Value = array[i].JBGEEPFKIGG;
+			data.INDDJNMPONH_type = array[i].GBJFNGCDKPM;
+			data.JBGEEPFKIGG_val = array[i].JBGEEPFKIGG;
 			CDENCMNHNGA_table.Add(data);
 		}
 		return true;

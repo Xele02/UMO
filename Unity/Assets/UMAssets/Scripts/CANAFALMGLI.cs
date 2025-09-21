@@ -44,7 +44,7 @@ public class CANAFALMGLI_EventPresentCampaign : IKDICBBFBMI_EventBase
             GDIPLANPCEI g = IMMAOANGPNK.HHCJCDFCLOB.ACEFBFLFKFD_GetScheduleEventData(db.JIKKNHIAEKG_BlockName, _JHNMKKNEENE_Time);
 			if(g != null)
 			{
-				return _JHNMKKNEENE_Time >= db.NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart && db.NGHKJOEDLIP_Settings.KNLGKBBIBOH_RewardEnd2_End >= _JHNMKKNEENE_Time;
+				return _JHNMKKNEENE_Time >= db.NGHKJOEDLIP_Settings.BONDDBOFBND_RankingStart && db.NGHKJOEDLIP_Settings.KNLGKBBIBOH_RewardEnd2 >= _JHNMKKNEENE_Time;
 			}
         }
 		return false;
@@ -80,7 +80,7 @@ public class CANAFALMGLI_EventPresentCampaign : IKDICBBFBMI_EventBase
 			LOLAANGCGDO_RankingEnd2 = evDb.NGHKJOEDLIP_Settings.LNFKGHNHJKE_RankingEnd2;
 			JDDFILGNGFH_RewardStart = evDb.NGHKJOEDLIP_Settings.JGMDAOACOJF_RewardStart;
 			LJOHLEGGGMC_RewardEnd = evDb.NGHKJOEDLIP_Settings.IDDBFFBPNGI_RewardEnd;
-			EMEKFFHCHMH_RewardEnd2 = evDb.NGHKJOEDLIP_Settings.KNLGKBBIBOH_RewardEnd2_End;
+			EMEKFFHCHMH_RewardEnd2 = evDb.NGHKJOEDLIP_Settings.KNLGKBBIBOH_RewardEnd2;
 			PGIIDPEGGPI_EventId = evDb.NGHKJOEDLIP_Settings.OBGBAOLONDD_UniqueId;
 			PBHNFNIHDJJ = evDb.NGHKJOEDLIP_Settings.HFNIHKOAMGC;
 			NHGPCLGPEHH_TicketType = evDb.NGHKJOEDLIP_Settings.MJBKGOJBPAD_item_type;

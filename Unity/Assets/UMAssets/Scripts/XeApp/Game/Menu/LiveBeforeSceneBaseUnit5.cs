@@ -134,7 +134,7 @@ namespace XeApp.Game.Menu
 			JGEOBNENMAH.EDHCNKBMLGI h = new JGEOBNENMAH.EDHCNKBMLGI();
 			h.GHBPLHBNMBK_FreeMusicId = mi.freeMusicId;
 			h.KLCIIHKFPPO_StoryMusicId = mi.storyMusicId;
-			h.AKNELONELJK_Difficulty = (int)mi.difficultyType;
+			h.AKNELONELJK_difficulty = (int)mi.difficultyType;
 			h.LFGNLKKFOCD_IsLine6 = mi.IsLine6Mode;
 			h.OALJNDABDHK = playerData.DPLBHAIKPGL_GetTeam(mi.gameEventType == OHCAABOMEOF.KGOGMKMBCPP_EventType.BNECMLPHAGJ_EventGoDiva);
 			h.NHPGGBCKLHC_FriendData = friendData;

@@ -58,14 +58,14 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 		public int EHOIENNDEDH_IdCrypted; // 0xC
 		public int IFEHKNJONPL_CountCrypted; // 0x10
 		public int ONFJFGFNGGD; // 0x14
-		public long KLAPHOKNEDG; // 0x18
+		public long KLAPHOKNEDG_DateCrypted; // 0x18
 
 		public int PPFNGGCBJKC_id { get { return FBGGEFFJJHB_xor ^ EHOIENNDEDH_IdCrypted; } set { EHOIENNDEDH_IdCrypted = FBGGEFFJJHB_xor ^ value; } } //0x12E8C2C DEMEPMAEJOO 0x12E8C38 HIGKAIDMOKN
 		public int BFINGCJHOHI_Count { get { return FBGGEFFJJHB_xor ^ IFEHKNJONPL_CountCrypted; } set { 
 			IFEHKNJONPL_CountCrypted = FBGGEFFJJHB_xor ^ value;
 			ONFJFGFNGGD = value;
 		 } } //0x12E8C48 LFMCLIDAPHB 0x12E8C58 EDAEPDGGFJJ
-		public long BEBJKJKBOGH_Date { get { return KLAPHOKNEDG ^ FBGGEFFJJHB_xor; } set { KLAPHOKNEDG = FBGGEFFJJHB_xor ^ value; } } //0x12E8C6C DIAPHCJBPFD 0x12E8C84 IHAIKPNEEJE
+		public long BEBJKJKBOGH_Date { get { return KLAPHOKNEDG_DateCrypted ^ FBGGEFFJJHB_xor; } set { KLAPHOKNEDG_DateCrypted = FBGGEFFJJHB_xor ^ value; } } //0x12E8C6C DIAPHCJBPFD 0x12E8C84 IHAIKPNEEJE
 	}
 
 	public class MCOEBJCAMKO
@@ -1602,10 +1602,10 @@ public class EGOLBAPFHHD_Common : KLFDBFMNLBL_ServerSaveBlock
 				num = 1;
 				isInvalid = true;
 			}
-			IBCGPBOGOGP_ReadIntArray(data, "gp_flg", 0, num, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+			IBCGPBOGOGP_ReadIntArray(data, "gp_flg", 0, num, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 			{
 				//0x1C6A1EC
-				CKDPJCLINAB_GpFlg[_OIPCCBHIKIA_index] = _JBGEEPFKIGG_Value;
+				CKDPJCLINAB_GpFlg[_OIPCCBHIKIA_index] = _JBGEEPFKIGG_val;
 			}, ref isInvalid);
 		}
 		else

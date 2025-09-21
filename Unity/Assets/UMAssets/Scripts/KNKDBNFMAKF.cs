@@ -775,10 +775,10 @@ public class KNKDBNFMAKF_EventSp : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x1127D78 Offset: 0x1127D78 VA: 0x1127D78 Slot: 69
-	public override void HAAEJDGMICH(LBNLAENLPNK.JEKODBEDOMM _INDDJNMPONH_Type, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _AOCANKOMKFG_OnError)
+	public override void HAAEJDGMICH(LBNLAENLPNK.JEKODBEDOMM _INDDJNMPONH_type, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _AOCANKOMKFG_OnError)
 	{
 		string s = null;
-		if(_INDDJNMPONH_Type == 0)
+		if(_INDDJNMPONH_type == 0)
 		{
 			s = JOPOPMLFINI_QuestName + "_rule";
 		}
@@ -870,7 +870,7 @@ public class KNKDBNFMAKF_EventSp : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x1128C04 Offset: 0x1128C04 VA: 0x1128C04 Slot: 38
-	public override void EMEPJNLHJHJ(int GJEADBKFAPA, int _AKNELONELJK_Difficulty, bool _GIKLNODJKFK_IsLine6, ref int APMGOLOPLFP, ref int FBBDNLAMPMH)
+	public override void EMEPJNLHJHJ(int GJEADBKFAPA, int _AKNELONELJK_difficulty, bool _GIKLNODJKFK_IsLine6, ref int APMGOLOPLFP, ref int FBBDNLAMPMH)
 	{
 		return;
 	}
@@ -906,18 +906,18 @@ public class KNKDBNFMAKF_EventSp : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x11292C0 Offset: 0x11292C0 VA: 0x11292C0
-	public void POHBAGJLOLI_IncDivaCount(JJOELIOGMKK_DivaIntimacyInfo.OPOEENHEJOC _INDDJNMPONH_Type)
+	public void POHBAGJLOLI_IncDivaCount(JJOELIOGMKK_DivaIntimacyInfo.OPOEENHEJOC _INDDJNMPONH_type)
 	{
 		OEIJEFBBJBD_EventSp ev = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI_QuestName) as OEIJEFBBJBD_EventSp;
 		if(ev != null)
 		{
             NILOACEHJKJ_EventSP.MDCMFPENCEK save = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAKCBBBMIMD_EventSP.FBCJICEPLED[ev.NGHKJOEDLIP_Settings.MOEKELIIDEO_SaveIdx];
-			if(_INDDJNMPONH_Type == JJOELIOGMKK_DivaIntimacyInfo.OPOEENHEJOC.EMIFDDHCOFB_1_DivaPresent)
+			if(_INDDJNMPONH_type == JJOELIOGMKK_DivaIntimacyInfo.OPOEENHEJOC.EMIFDDHCOFB_1_DivaPresent)
 			{
 				if(save.ECABPJAIIOM_DivaPresentCount < 9999)
 					save.ECABPJAIIOM_DivaPresentCount++;
 			}
-			else if(_INDDJNMPONH_Type == JJOELIOGMKK_DivaIntimacyInfo.OPOEENHEJOC.FNGFADPFKOD_0_DivaIntimacy)
+			else if(_INDDJNMPONH_type == JJOELIOGMKK_DivaIntimacyInfo.OPOEENHEJOC.FNGFADPFKOD_0_DivaIntimacy)
 			{
 				if(save.CDAHMFBNOFA_DivaIntimacyCount < 9999)
 					save.CDAHMFBNOFA_DivaIntimacyCount++;
@@ -933,17 +933,17 @@ public class KNKDBNFMAKF_EventSp : IKDICBBFBMI_EventBase
 	}
 
 	// // RVA: 0x1129684 Offset: 0x1129684 VA: 0x1129684
-	public int ACEEBCPOEBF_GetDivaCount(JJOELIOGMKK_DivaIntimacyInfo.OPOEENHEJOC _INDDJNMPONH_Type)
+	public int ACEEBCPOEBF_GetDivaCount(JJOELIOGMKK_DivaIntimacyInfo.OPOEENHEJOC _INDDJNMPONH_type)
 	{
 		OEIJEFBBJBD_EventSp ev = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI_QuestName) as OEIJEFBBJBD_EventSp;
 		if(ev != null)
 		{
             NILOACEHJKJ_EventSP.MDCMFPENCEK save = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.DAKCBBBMIMD_EventSP.FBCJICEPLED[ev.NGHKJOEDLIP_Settings.MOEKELIIDEO_SaveIdx];
-			if(_INDDJNMPONH_Type == JJOELIOGMKK_DivaIntimacyInfo.OPOEENHEJOC.EMIFDDHCOFB_1_DivaPresent)
+			if(_INDDJNMPONH_type == JJOELIOGMKK_DivaIntimacyInfo.OPOEENHEJOC.EMIFDDHCOFB_1_DivaPresent)
 			{
 				return save.ECABPJAIIOM_DivaPresentCount;
 			}
-			else if(_INDDJNMPONH_Type == JJOELIOGMKK_DivaIntimacyInfo.OPOEENHEJOC.FNGFADPFKOD_0_DivaIntimacy)
+			else if(_INDDJNMPONH_type == JJOELIOGMKK_DivaIntimacyInfo.OPOEENHEJOC.FNGFADPFKOD_0_DivaIntimacy)
 			{
 				return save.CDAHMFBNOFA_DivaIntimacyCount;
 			}

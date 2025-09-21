@@ -784,10 +784,10 @@ public class GCIJNCFDNON_SceneInfo
 			if(_OIPCCBHIKIA_index < DKFCPBEOBHB_Layout.PDKGMFHIFML_Panels.Count)
 			{
 				NLNDLEEJOFD n = DKFCPBEOBHB_Layout.PDKGMFHIFML_Panels[_OIPCCBHIKIA_index];
-				AFIFDLOAKGI a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.DDGNLCJGFJF(n.JBGEEPFKIGG_Value);
+				AFIFDLOAKGI a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.DDGNLCJGFJF(n.JBGEEPFKIGG_val);
 				if(a != null)
 				{
-					if (a.INDDJNMPONH_Type != 0)
+					if (a.INDDJNMPONH_type != 0)
 						return a;
 				}
 			}
@@ -821,7 +821,7 @@ public class GCIJNCFDNON_SceneInfo
 		}
 		MLIBEPGADJH_Scene.KKLDOOJBJMN scene = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.ECNHDEHADGL_Scene.CDENCMNHNGA_table[BCCHOBPJJKE_SceneId - 1];
 		AFIFDLOAKGI b = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.BHMFCIIGKCB(scene.BJNBBEMBMIK_BoardId, _OIPCCBHIKIA_index);
-		if(b != null && b.INDDJNMPONH_Type != 0)
+		if(b != null && b.INDDJNMPONH_type != 0)
 		{
 			if((a & 7) == 7)
 			{
@@ -840,9 +840,9 @@ public class GCIJNCFDNON_SceneInfo
 		AFIFDLOAKGI b = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.JEMMMJEJLNL_Board.PBINAHNEFIK(dbscene.AOPBAOJIOGO_Sb, _OIPCCBHIKIA_index, JPIPENJGGDD_NumBoard, a, dbscene.ILABPFOMEAG_Va, dbscene.FKDCCLPGKDK_Ma);
 		if(b != null)
 		{
-			if(b.INDDJNMPONH_Type != 0)
+			if(b.INDDJNMPONH_type != 0)
 			{
-				if(b.INDDJNMPONH_Type != 20)
+				if(b.INDDJNMPONH_type != 20)
 				{
 					if(ODKMKEHJOCK_Sb != null)
 					{

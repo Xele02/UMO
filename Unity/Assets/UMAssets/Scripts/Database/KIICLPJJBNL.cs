@@ -13,7 +13,7 @@ public class KIICLPJJBNL_EpiItem : DIHHCBACKGG_DbSection
 
 		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x19FFF4C DEMEPMAEJOO 0x19FF8F8 HIGKAIDMOKN
 		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0x19FFFE4 OEEHBGECGKL 0x19FF994 GHLMHLJJBIG
-		public int JBGEEPFKIGG_Value { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1A0007C OLOCMINKGON 0x19FFA30 ABAFHIBFKCE
+		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1A0007C OLOCMINKGON 0x19FFA30 ABAFHIBFKCE
 
 		// RVA: 0x19FFEB0 Offset: 0x19FFEB0 VA: 0x19FFEB0
 		//public uint CAOGDCBPBAN() { }
@@ -49,7 +49,7 @@ public class KIICLPJJBNL_EpiItem : DIHHCBACKGG_DbSection
 				NKGPGMOHAFM data = new NKGPGMOHAFM();
 				data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
 				data.EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH;
-				data.JBGEEPFKIGG_Value = (int)array[i].JBGEEPFKIGG;
+				data.JBGEEPFKIGG_val = (int)array[i].JBGEEPFKIGG;
 				CDENCMNHNGA_table.Add(data);
 			}
 			return true;

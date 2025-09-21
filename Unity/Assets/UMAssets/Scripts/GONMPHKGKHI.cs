@@ -58,12 +58,12 @@ public class GONMPHKGKHI_RewardView
 			JKNGJFOBADP.GPPAIFNBHDP FKHPGALPAIC = BEJHIEGCGNE.FIGHNFKAMGI[i];
 			if(FKHPGALPAIC.JKGFBFPIMGA_Rarity < 4)
 			{
-				if(FKHPGALPAIC.INDDJNMPONH_Type >= 3 && FKHPGALPAIC.INDDJNMPONH_Type < 5)
+				if(FKHPGALPAIC.INDDJNMPONH_type >= 3 && FKHPGALPAIC.INDDJNMPONH_type < 5)
 				{
 					LCMJJMNMIKG_RewardInfo rewardInfo = JPMPIFCKEHH_RewardsInfo.Find((LCMJJMNMIKG_RewardInfo _GHPLINIACBB_x) =>
 					{
 						//0x1E5D914
-						if ((int)_GHPLINIACBB_x.IPMJIODJGBC != FKHPGALPAIC.INDDJNMPONH_Type)
+						if ((int)_GHPLINIACBB_x.IPMJIODJGBC != FKHPGALPAIC.INDDJNMPONH_type)
 							return false;
 						return _GHPLINIACBB_x.BCCHOBPJJKE_SceneId == FKHPGALPAIC.BCCHOBPJJKE_SceneId;
 					});
@@ -71,7 +71,7 @@ public class GONMPHKGKHI_RewardView
 					{
 						rewardInfo = new LCMJJMNMIKG_RewardInfo();
 						rewardInfo.BCCHOBPJJKE_SceneId = FKHPGALPAIC.BCCHOBPJJKE_SceneId;
-						rewardInfo.IPMJIODJGBC = (CECMLGBLHHG)FKHPGALPAIC.INDDJNMPONH_Type;
+						rewardInfo.IPMJIODJGBC = (CECMLGBLHHG)FKHPGALPAIC.INDDJNMPONH_type;
 						rewardInfo.JKGFBFPIMGA_Rarity = FKHPGALPAIC.JKGFBFPIMGA_Rarity;
 						rewardInfo.MPGNHFDGOBO_PrevRarity = FKHPGALPAIC.MPGNHFDGOBO_PrevRarity;
 						rewardInfo.HNNAODKJGPD_NextRarity = FKHPGALPAIC.HNNAODKJGPD_NextRarity;
@@ -85,18 +85,18 @@ public class GONMPHKGKHI_RewardView
 						rewardInfo.FICKICOHCAD_NextNumBoard = Mathf.Max(FKHPGALPAIC.JPIPENJGGDD_NumBoard, rewardInfo.FICKICOHCAD_NextNumBoard);
 					}
 				}
-				else if(FKHPGALPAIC.INDDJNMPONH_Type == 6)
+				else if(FKHPGALPAIC.INDDJNMPONH_type == 6)
 				{
 					LCMJJMNMIKG_RewardInfo rewardInfo = JPMPIFCKEHH_RewardsInfo.Find((LCMJJMNMIKG_RewardInfo _GHPLINIACBB_x) =>
 					{
 						//0x1E5D988
-						return (int)_GHPLINIACBB_x.IPMJIODJGBC == FKHPGALPAIC.INDDJNMPONH_Type;
+						return (int)_GHPLINIACBB_x.IPMJIODJGBC == FKHPGALPAIC.INDDJNMPONH_type;
 					});
 					if (rewardInfo == null)
 					{
 						rewardInfo = new LCMJJMNMIKG_RewardInfo();
 						rewardInfo.BCCHOBPJJKE_SceneId = FKHPGALPAIC.BCCHOBPJJKE_SceneId;
-						rewardInfo.IPMJIODJGBC = (CECMLGBLHHG)FKHPGALPAIC.INDDJNMPONH_Type;
+						rewardInfo.IPMJIODJGBC = (CECMLGBLHHG)FKHPGALPAIC.INDDJNMPONH_type;
 						rewardInfo.JKGFBFPIMGA_Rarity = FKHPGALPAIC.JKGFBFPIMGA_Rarity;
 						rewardInfo.MPGNHFDGOBO_PrevRarity = FKHPGALPAIC.MPGNHFDGOBO_PrevRarity;
 						rewardInfo.HNNAODKJGPD_NextRarity = FKHPGALPAIC.HNNAODKJGPD_NextRarity;
@@ -110,11 +110,11 @@ public class GONMPHKGKHI_RewardView
 						}
 					}
 				}
-				else if(FKHPGALPAIC.INDDJNMPONH_Type == 1)
+				else if(FKHPGALPAIC.INDDJNMPONH_type == 1)
 				{
 					LCMJJMNMIKG_RewardInfo rewardInfo = new LCMJJMNMIKG_RewardInfo();
 					rewardInfo.BCCHOBPJJKE_SceneId = FKHPGALPAIC.BCCHOBPJJKE_SceneId;
-					rewardInfo.IPMJIODJGBC = (CECMLGBLHHG)FKHPGALPAIC.INDDJNMPONH_Type;
+					rewardInfo.IPMJIODJGBC = (CECMLGBLHHG)FKHPGALPAIC.INDDJNMPONH_type;
 					rewardInfo.JKGFBFPIMGA_Rarity = FKHPGALPAIC.JKGFBFPIMGA_Rarity;
 					rewardInfo.MPGNHFDGOBO_PrevRarity = FKHPGALPAIC.MPGNHFDGOBO_PrevRarity;
 					rewardInfo.HNNAODKJGPD_NextRarity = FKHPGALPAIC.HNNAODKJGPD_NextRarity;
@@ -123,11 +123,11 @@ public class GONMPHKGKHI_RewardView
 					JPMPIFCKEHH_RewardsInfo.Add(rewardInfo);
 				}
 			}
-			else if(FKHPGALPAIC.INDDJNMPONH_Type == 1)
+			else if(FKHPGALPAIC.INDDJNMPONH_type == 1)
 			{
 				LCMJJMNMIKG_RewardInfo rewardInfo = new LCMJJMNMIKG_RewardInfo();
 				rewardInfo.BCCHOBPJJKE_SceneId = FKHPGALPAIC.BCCHOBPJJKE_SceneId;
-				rewardInfo.IPMJIODJGBC = (CECMLGBLHHG)FKHPGALPAIC.INDDJNMPONH_Type;
+				rewardInfo.IPMJIODJGBC = (CECMLGBLHHG)FKHPGALPAIC.INDDJNMPONH_type;
 				rewardInfo.JKGFBFPIMGA_Rarity = FKHPGALPAIC.JKGFBFPIMGA_Rarity;
 				rewardInfo.MPGNHFDGOBO_PrevRarity = FKHPGALPAIC.MPGNHFDGOBO_PrevRarity;
 				rewardInfo.HNNAODKJGPD_NextRarity = FKHPGALPAIC.HNNAODKJGPD_NextRarity;
@@ -147,12 +147,12 @@ public class GONMPHKGKHI_RewardView
 			}
 			else
 			{
-				if(FKHPGALPAIC.INDDJNMPONH_Type == 4)
+				if(FKHPGALPAIC.INDDJNMPONH_type == 4)
 				{
 					LCMJJMNMIKG_RewardInfo rewardInfo = NJCMJLPPIGK.Find((LCMJJMNMIKG_RewardInfo _GHPLINIACBB_x) =>
 					{
 						//0x1E5D67C
-						if ((int)_GHPLINIACBB_x.IPMJIODJGBC != FKHPGALPAIC.INDDJNMPONH_Type)
+						if ((int)_GHPLINIACBB_x.IPMJIODJGBC != FKHPGALPAIC.INDDJNMPONH_type)
 							return false;
 						return _GHPLINIACBB_x.BCCHOBPJJKE_SceneId == FKHPGALPAIC.BCCHOBPJJKE_SceneId;
 					});
@@ -160,7 +160,7 @@ public class GONMPHKGKHI_RewardView
 					{
 						rewardInfo = new LCMJJMNMIKG_RewardInfo();
 						rewardInfo.BCCHOBPJJKE_SceneId = FKHPGALPAIC.BCCHOBPJJKE_SceneId;
-						rewardInfo.IPMJIODJGBC = (CECMLGBLHHG)FKHPGALPAIC.INDDJNMPONH_Type;
+						rewardInfo.IPMJIODJGBC = (CECMLGBLHHG)FKHPGALPAIC.INDDJNMPONH_type;
 						rewardInfo.JKGFBFPIMGA_Rarity = FKHPGALPAIC.JKGFBFPIMGA_Rarity;
 						rewardInfo.MPGNHFDGOBO_PrevRarity = FKHPGALPAIC.MPGNHFDGOBO_PrevRarity;
 						rewardInfo.HNNAODKJGPD_NextRarity = FKHPGALPAIC.HNNAODKJGPD_NextRarity;
@@ -232,7 +232,7 @@ public class GONMPHKGKHI_RewardView
 				{
 					LCMJJMNMIKG_RewardInfo rewardInfo = new LCMJJMNMIKG_RewardInfo();
 					rewardInfo.BCCHOBPJJKE_SceneId = FKHPGALPAIC.BCCHOBPJJKE_SceneId;
-					rewardInfo.IPMJIODJGBC = (CECMLGBLHHG)FKHPGALPAIC.INDDJNMPONH_Type;
+					rewardInfo.IPMJIODJGBC = (CECMLGBLHHG)FKHPGALPAIC.INDDJNMPONH_type;
 					rewardInfo.JKGFBFPIMGA_Rarity = FKHPGALPAIC.JKGFBFPIMGA_Rarity;
 					rewardInfo.MPGNHFDGOBO_PrevRarity = FKHPGALPAIC.MPGNHFDGOBO_PrevRarity;
 					rewardInfo.HNNAODKJGPD_NextRarity = FKHPGALPAIC.HNNAODKJGPD_NextRarity;
@@ -375,16 +375,16 @@ public class GONMPHKGKHI_RewardView
 	//public void NFOHOGAJGHB(List<int> _CGCFENMHJIM_Ids, List<int> PIHPOPCPAHL, bool IMBGFAJLPEK) { }
 
 	//// RVA: 0x1E5C984 Offset: 0x1E5C984 VA: 0x1E5C984
-	public bool LBHPMGDNPHK(CECMLGBLHHG _INDDJNMPONH_Type)
+	public bool LBHPMGDNPHK(CECMLGBLHHG _INDDJNMPONH_type)
 	{
 		List<LCMJJMNMIKG_RewardInfo> l1 = new List<LCMJJMNMIKG_RewardInfo>();
 		List<LCMJJMNMIKG_RewardInfo> l2 = new List<LCMJJMNMIKG_RewardInfo>();
 		List<int> l3 = new List<int>();
-		return JDKOAKDLHMG(_INDDJNMPONH_Type, ref l1, ref l2, ref l3);
+		return JDKOAKDLHMG(_INDDJNMPONH_type, ref l1, ref l2, ref l3);
 	}
 
 	//// RVA: 0x1E5CA78 Offset: 0x1E5CA78 VA: 0x1E5CA78
-	public bool JDKOAKDLHMG(CECMLGBLHHG _INDDJNMPONH_Type, ref List<LCMJJMNMIKG_RewardInfo> PJFOENCFNEK, ref List<LCMJJMNMIKG_RewardInfo> MPCJGPEBCCD, ref List<int> _BBAJKJPKOHD_EpisodeList)
+	public bool JDKOAKDLHMG(CECMLGBLHHG _INDDJNMPONH_type, ref List<LCMJJMNMIKG_RewardInfo> PJFOENCFNEK, ref List<LCMJJMNMIKG_RewardInfo> MPCJGPEBCCD, ref List<int> _BBAJKJPKOHD_EpisodeList)
 	{
 		PJFOENCFNEK.Clear();
 		MPCJGPEBCCD.Clear();
@@ -392,14 +392,14 @@ public class GONMPHKGKHI_RewardView
 		List<LCMJJMNMIKG_RewardInfo> rewards = NJCMJLPPIGK.FindAll((LCMJJMNMIKG_RewardInfo JPAEDJJFFOI) =>
 		{
 			//0x1E5D60C
-			return JPAEDJJFFOI.IPMJIODJGBC == _INDDJNMPONH_Type;
+			return JPAEDJJFFOI.IPMJIODJGBC == _INDDJNMPONH_type;
 		});
 		List<LCMJJMNMIKG_RewardInfo> rewards2 = JPMPIFCKEHH_RewardsInfo.FindAll((LCMJJMNMIKG_RewardInfo JPAEDJJFFOI) =>
 		{
 			//0x1E5D644
-			return JPAEDJJFFOI.IPMJIODJGBC == _INDDJNMPONH_Type;
+			return JPAEDJJFFOI.IPMJIODJGBC == _INDDJNMPONH_type;
 		});
-		if(_INDDJNMPONH_Type == CECMLGBLHHG.INJNLJHGGKB_4/*4*/)
+		if(_INDDJNMPONH_type == CECMLGBLHHG.INJNLJHGGKB_4/*4*/)
 		{
 			List<LCMJJMNMIKG_RewardInfo> rewards3 = NJCMJLPPIGK.FindAll((LCMJJMNMIKG_RewardInfo JPAEDJJFFOI) =>
 			{
@@ -414,7 +414,7 @@ public class GONMPHKGKHI_RewardView
 			});
 			rewards2.InsertRange(0, rewards3);
 		}
-		switch(_INDDJNMPONH_Type)
+		switch(_INDDJNMPONH_type)
 		{
 			case CECMLGBLHHG.AGLFBCCGHJM_2/*2*/:
 				_BBAJKJPKOHD_EpisodeList.AddRange(DKJLFPMHDJC);

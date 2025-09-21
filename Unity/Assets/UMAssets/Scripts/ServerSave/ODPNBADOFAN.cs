@@ -30,7 +30,7 @@ public class ODPNBADOFAN_Quest : KLFDBFMNLBL_ServerSaveBlock
 		int res = 0;
 		for(int i = 0; i < MHGPMMIDKMM.GPMKFMFEKLN_NormalQuests.Count; i++)
 		{
-			if(MHGPMMIDKMM.GPMKFMFEKLN_NormalQuests[i].INDDJNMPONH_Type != 0)
+			if(MHGPMMIDKMM.GPMKFMFEKLN_NormalQuests[i].INDDJNMPONH_type != 0)
 			{
 				if(GPMKFMFEKLN_NormalQuests[i].EALOBDHOCHP_Stat == 3)
 					res++;

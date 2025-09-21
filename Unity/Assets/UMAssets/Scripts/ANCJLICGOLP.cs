@@ -116,7 +116,7 @@ public class ANCJLICGOLP
 				b.MKANHLNEEGL_filter = s;
 				EDOHBJAPLPF_JsonData c = a["k"];
 				int NANNGLGOFKH_value = (int)c;
-				b.JBGEEPFKIGG_Value = NANNGLGOFKH_value;
+				b.JBGEEPFKIGG_val = NANNGLGOFKH_value;
 				JGJJIBPPEPD_List.Add(b);
 				OIPCCBHIKIA_index++;
 			} while(OIPCCBHIKIA_index != size);

@@ -87,7 +87,7 @@ namespace XeApp.Game.Menu
 			m_score_point.SetNumber(viewResultDivaData.GCAPLLEIAAI_LastScore, 0);
 			m_score_magnification.SetNumber(viewResultDivaData.FFEBMCAKOHK - 100, 0);
 			SetTotalScore(0);
-			int a = viewResultDivaData.LFGNLKKFOCD_IsLine6 ? viewResultDivaData.AKNELONELJK_Difficulty + 3 : viewResultDivaData.AKNELONELJK_Difficulty;
+			int a = viewResultDivaData.LFGNLKKFOCD_IsLine6 ? viewResultDivaData.AKNELONELJK_difficulty + 3 : viewResultDivaData.AKNELONELJK_difficulty;
 			m_layout_diff_type.StartChildrenAnimGoStop(a, a);
 			m_layout_score_anim.StartChildrenAnimGoStop("st_non", "st_non");
 			m_is_open_window = false;

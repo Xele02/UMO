@@ -53,7 +53,7 @@ public class GJMCHHCPFDL
 			FJOLNJLLJEJ_Rank = ev.JIBMOEHKMGB_SelectedBoss.FJOLNJLLJEJ_Rank;
 			MPKBLMCNHOM_MissionIsSpecial = ev.JIBMOEHKMGB_SelectedBoss.IKICLMGFFPB_IsSpecial;
 			HPPDFBKEJCG_BgId = ev.JIBMOEHKMGB_SelectedBoss.HPPDFBKEJCG_BgId;
-			OPFGFINHFCE_name = ev.AGEJGHGEGFF_GetBossName(ev.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_Type);
+			OPFGFINHFCE_name = ev.AGEJGHGEGFF_GetBossName(ev.JIBMOEHKMGB_SelectedBoss.INDDJNMPONH_type);
 		}
 	}
 }

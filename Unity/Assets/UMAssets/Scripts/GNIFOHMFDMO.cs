@@ -29,7 +29,7 @@ public class GNIFOHMFDMO_DivaResultData
 		public int DACHHLHPAAB_BonusExp; // 0x7C
 	}
 
-	public int AKNELONELJK_Difficulty; // 0x8
+	public int AKNELONELJK_difficulty; // 0x8
 	public int OGFBKCGGPBC_DiffPoint; // 0xC
 	public int GCAPLLEIAAI_LastScore; // 0x10
 	public int FFEBMCAKOHK; // 0x14
@@ -67,7 +67,7 @@ public class GNIFOHMFDMO_DivaResultData
 		});
 		if (forcedSetting != null)
 			DHJAFJKALCA_ForcedMusicId = forcedSetting.IOPCBBNHJIP_ForcedMusicId;
-		AKNELONELJK_Difficulty = JGEOBNENMAH.HHCJCDFCLOB.LBLOIOMNEIH_Difficulty;
+		AKNELONELJK_difficulty = JGEOBNENMAH.HHCJCDFCLOB.LBLOIOMNEIH_Difficulty;
 		OGFBKCGGPBC_DiffPoint = JGEOBNENMAH.HHCJCDFCLOB.NGDDIIDJFNG;
 		GCAPLLEIAAI_LastScore = JGEOBNENMAH.HHCJCDFCLOB.GCAPLLEIAAI_LastScore;
 		FFEBMCAKOHK = JGEOBNENMAH.HHCJCDFCLOB.LKGONGDLJBH + 100;
@@ -107,7 +107,7 @@ public class GNIFOHMFDMO_DivaResultData
 				data.OJLEDBKKMLN = KDOMGMCGHDC.NEGKGKKLICK(DLAEJOBELBH_MusicId, data.AHHJLDLAPAN_DivaId, CIOECGOMILE.HHCJCDFCLOB.MNJHBCIIHED_PrevServerData);
 				if(JGEOBNENMAH.HHCJCDFCLOB.HMMFHMHENAO != null)
 				{
-					int a = JGEOBNENMAH.HHCJCDFCLOB.HMMFHMHENAO.MPHGKGNCCEE(data.AHHJLDLAPAN_DivaId, AKNELONELJK_Difficulty);
+					int a = JGEOBNENMAH.HHCJCDFCLOB.HMMFHMHENAO.MPHGKGNCCEE(data.AHHJLDLAPAN_DivaId, AKNELONELJK_difficulty);
 					int b = Database.Instance.gameSetup.LiveSkipTicketCount;
 					if (!Database.Instance.gameSetup.EnableLiveSkip)
 						b = 1;

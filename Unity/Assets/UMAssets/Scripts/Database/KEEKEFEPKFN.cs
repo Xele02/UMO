@@ -16,7 +16,7 @@ public class KEEKEFEPKFN_GrowItem : DIHHCBACKGG_DbSection
 
 		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0xE87BD4 DEMEPMAEJOO 0xE87740 HIGKAIDMOKN
 		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0xE87BE4 OEEHBGECGKL 0xE87A90 GHLMHLJJBIG
-		public int INDDJNMPONH_Type { get { return MKENMKMJFKP_TypeCrypted ^ FBGGEFFJJHB_xor; } set { MKENMKMJFKP_TypeCrypted = value ^ FBGGEFFJJHB_xor; } } //0xE87BF4 GHAILOLPHPF 0xE87AA0 BACGOKIGMBC
+		public int INDDJNMPONH_type { get { return MKENMKMJFKP_TypeCrypted ^ FBGGEFFJJHB_xor; } set { MKENMKMJFKP_TypeCrypted = value ^ FBGGEFFJJHB_xor; } } //0xE87BF4 GHAILOLPHPF 0xE87AA0 BACGOKIGMBC
 
 		// RVA: 0xE87BB0 Offset: 0xE87BB0 VA: 0xE87BB0
 		//public uint CAOGDCBPBAN() { }
@@ -60,7 +60,7 @@ public class KEEKEFEPKFN_GrowItem : DIHHCBACKGG_DbSection
 			MDFGLOIGAFE_GrowItemData data = CDENCMNHNGA_table[i];
 			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
 			data.EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH;
-			data.INDDJNMPONH_Type = (int)array[i].GBJFNGCDKPM;
+			data.INDDJNMPONH_type = (int)array[i].GBJFNGCDKPM;
 			data.PPEGAKEIEGM_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 		}
 		return true;

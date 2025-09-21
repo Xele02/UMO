@@ -112,12 +112,12 @@ public class LFHGFLJLGFB_FavoritePlayer : KLFDBFMNLBL_ServerSaveBlock
 		FNDJLOMNECG.Clear();
 		if(OILEIIEIBHP.BBAJPINMOEP_Contains("list"))
 		{
-			IBCGPBOGOGP_ReadIntArray(OILEIIEIBHP, "list", 0, 50, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+			IBCGPBOGOGP_ReadIntArray(OILEIIEIBHP, "list", 0, 50, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 			{
 				//0xD6C6B8
-				if (_JBGEEPFKIGG_Value == 0)
+				if (_JBGEEPFKIGG_val == 0)
 					return;
-				BNFBKGHBHHN(_JBGEEPFKIGG_Value);
+				BNFBKGHBHHN(_JBGEEPFKIGG_val);
 			}, ref isInvalid);
 		}
 		KFKDMBPNLJK_BlockInvalid = isInvalid;

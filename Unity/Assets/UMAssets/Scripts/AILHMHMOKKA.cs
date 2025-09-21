@@ -72,7 +72,7 @@ public abstract class AILHMHMOKKA_BaseLinkage
 		s.TitleText = MessageManager.Instance.GetMessage("common", "popup_inh_title_005");
 		s.Buttons = new ButtonInfo[1] { new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive } };
 		s.Text = string.Format(MessageManager.Instance.GetMessage("common", "popup_inh_player_not_found"), JJPJAJEOECI);
-		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+		PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 		{
 			//0xCD1B44
 			NIMPEHIECJH();

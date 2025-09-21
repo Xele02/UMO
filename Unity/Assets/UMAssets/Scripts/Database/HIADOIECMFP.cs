@@ -19,7 +19,7 @@ public class HIADOIECMFP_EventPresentCampaign : DIHHCBACKGG_DbSection
 		public long LNFKGHNHJKE_RankingEnd2; // 0x30
 		public long JGMDAOACOJF_RewardStart; // 0x38
 		public long IDDBFFBPNGI_RewardEnd; // 0x40
-		public long KNLGKBBIBOH_RewardEnd2_End; // 0x48
+		public long KNLGKBBIBOH_RewardEnd2; // 0x48
 		public int MJBKGOJBPAD_item_type; // 0x50
 		public sbyte POGEFBMBPCB_MonthOdd; // 0x54
 		public sbyte AHKNMANFILO_DayGroup; // 0x55
@@ -222,7 +222,7 @@ public class HIADOIECMFP_EventPresentCampaign : DIHHCBACKGG_DbSection
 			if (NGHKJOEDLIP_Settings.LNFKGHNHJKE_RankingEnd2 != 0) NGHKJOEDLIP_Settings.LNFKGHNHJKE_RankingEnd2 += offset;
 			if (NGHKJOEDLIP_Settings.JGMDAOACOJF_RewardStart != 0) NGHKJOEDLIP_Settings.JGMDAOACOJF_RewardStart += offset;
 			if (NGHKJOEDLIP_Settings.IDDBFFBPNGI_RewardEnd != 0) NGHKJOEDLIP_Settings.IDDBFFBPNGI_RewardEnd += offset;
-			if (NGHKJOEDLIP_Settings.KNLGKBBIBOH_RewardEnd2_End != 0) NGHKJOEDLIP_Settings.KNLGKBBIBOH_RewardEnd2_End += offset;
+			if (NGHKJOEDLIP_Settings.KNLGKBBIBOH_RewardEnd2 != 0) NGHKJOEDLIP_Settings.KNLGKBBIBOH_RewardEnd2 += offset;
 
 			for(int i = 0; i < EENHCEEKBBD.Count; i++)
 			{
@@ -256,7 +256,7 @@ public class HIADOIECMFP_EventPresentCampaign : DIHHCBACKGG_DbSection
 		NGHKJOEDLIP_Settings.LNFKGHNHJKE_RankingEnd2 = JMHECKKKMLK.HMBHNLCFDIH.HPNOGLIFJOP;
 		NGHKJOEDLIP_Settings.JGMDAOACOJF_RewardStart = JMHECKKKMLK.HMBHNLCFDIH.JGMDAOACOJF;
 		NGHKJOEDLIP_Settings.IDDBFFBPNGI_RewardEnd = JMHECKKKMLK.HMBHNLCFDIH.IDDBFFBPNGI;
-		NGHKJOEDLIP_Settings.KNLGKBBIBOH_RewardEnd2_End = JMHECKKKMLK.HMBHNLCFDIH.KNLGKBBIBOH;
+		NGHKJOEDLIP_Settings.KNLGKBBIBOH_RewardEnd2 = JMHECKKKMLK.HMBHNLCFDIH.KNLGKBBIBOH;
 		NGHKJOEDLIP_Settings.POGEFBMBPCB_MonthOdd = (sbyte)JMHECKKKMLK.HMBHNLCFDIH.JMJDLDEIFKE;
 		NGHKJOEDLIP_Settings.AHKNMANFILO_DayGroup = (sbyte)JMHECKKKMLK.HMBHNLCFDIH.AHKNMANFILO;
 		NGHKJOEDLIP_Settings.MOEKELIIDEO_SaveIdx = (sbyte)JMHECKKKMLK.HMBHNLCFDIH.MOEKELIIDEO;

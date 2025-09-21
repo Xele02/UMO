@@ -56,7 +56,7 @@ namespace XeApp.Game.Menu
 				limit = JpStringLiterals.StringLiteral_19639;
 				if (!data.JLFHLOCONEE())
 				{
-					long close = data.EGBOHDFBAPB_ClosedAt;
+					long close = data.EGBOHDFBAPB_CloseAt;
 					int[] ints = new int[3] { 86400, 3600, 60 };
 					int a1 = 12;
 					long a2 = close / ints[0];

@@ -59,7 +59,7 @@ public class OAFCKDDEBFN
 			AACCPKIGMED newData = new AACCPKIGMED();
 			MFJONNINDCJ data = JGJJIBPPEPD_List[index];
 			string MKANHLNEEGL_filter = data.MKANHLNEEGL_filter;
-			int value = data.JBGEEPFKIGG_Value;
+			int value = data.JBGEEPFKIGG_val;
 			newData.KHEKNNFCAOI_Init(MKANHLNEEGL_filter, value);
 			MGJKEJHEBPO_Blocks.Add(newData);
 			index = index + 1;

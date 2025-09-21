@@ -81,7 +81,7 @@ public class GJOOGLGLFID
 	public int ODOOKDGCKMF_MedalNum { get { return JMJDBIGGGLH_Crypted ^ FBGGEFFJJHB_xor; } set { JMJDBIGGGLH_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE22C DGFGDHAPJPJ 0xAAE240 GOIMAJACHOF
 	public int BGJDHCEOIDB_BattleClass { get { return BBJHIKDJEJL_Crypted ^ FBGGEFFJJHB_xor; } set { BBJHIKDJEJL_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE254 OCKGMLNANOK 0xAAE268 NINDNKAPBLB
 	public int IOOBNLAHLEJ_Point2 { get { return JNLBGAKBBMH_Crypted ^ FBGGEFFJJHB_xor; } set { JNLBGAKBBMH_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE27C PILACCFMMMP 0xAAE290 LDNPPCPAFEO
-	public int AKNELONELJK_Difficulty { get { return CPCKPCJBDEL_Crypted ^ FBGGEFFJJHB_xor; } set { CPCKPCJBDEL_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE2A4 BPPILHGDABB 0xAAE2B8 PMMIIHKEGCI
+	public int AKNELONELJK_difficulty { get { return CPCKPCJBDEL_Crypted ^ FBGGEFFJJHB_xor; } set { CPCKPCJBDEL_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE2A4 BPPILHGDABB 0xAAE2B8 PMMIIHKEGCI
 	public int OHDIGACEJPM_DifficultyBonus { get { return LNKHGJMLBMG_Crypted ^ FBGGEFFJJHB_xor; } set { LNKHGJMLBMG_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE2CC AHCIDJFMLNB 0xAAE2E0 LDFJHFHIMEP
 	public int GLOKIBHBNDN_PrevExPoint { get { return BCMMJJPHCGN_Crypted ^ FBGGEFFJJHB_xor; } set { BCMMJJPHCGN_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE2F4 OBDKENDNFNO 0xAAE308 DEIGANPJMKF
 	public int IBNOJFPGLHI_NextExPoint { get { return IGHCGEFMHPM_Crypted ^ FBGGEFFJJHB_xor; } set { IGHCGEFMHPM_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xAAE31C PLJPEGBFNFH 0xAAE330 KCGMKKNCAGL
@@ -117,7 +117,7 @@ public class GJOOGLGLFID
             BEOKMNIPFBA_MedalItemId = JGEOBNENMAH.HHCJCDFCLOB.BEOKMNIPFBA_MedalItemId;
             ODOOKDGCKMF_MedalNum = FCLGIPFPIPH_DashBonus * JGEOBNENMAH.HHCJCDFCLOB.ODOOKDGCKMF_MedalNum;
             BGJDHCEOIDB_BattleClass = ev.CKCPAMDDNPF.EIMCIBOANHE_CurrentClass;
-            AKNELONELJK_Difficulty = ev.CKCPAMDDNPF.LBLOIOMNEIH_Difficulty;
+            AKNELONELJK_difficulty = ev.CKCPAMDDNPF.LBLOIOMNEIH_Difficulty;
             OHDIGACEJPM_DifficultyBonus = ev.CKCPAMDDNPF.APEFEONDBKL_DiffBonus;
             GLOKIBHBNDN_PrevExPoint = ev.CKCPAMDDNPF.ONLIMGFHGBH_ExPt;
             IBNOJFPGLHI_NextExPoint = ev.CKCPAMDDNPF.CINCDFAOEOJ_NewExPoint;

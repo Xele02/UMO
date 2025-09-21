@@ -703,7 +703,7 @@ namespace XeApp.Game.Menu
 						series = (SeriesAttr.Type)l[i].CPKMLLNADLJ_Serie,
 						isShopProduct = false,
 						charaId = l[i].IDELKEKDIFD_CharaId,
-						charaType = l[i].INDDJNMPONH_Type,
+						charaType = l[i].INDDJNMPONH_type,
 						emotion = l[i].BEHMEDMNJMC_EmotionId,
 						IsNew = false,
 						tabCategory = l[i].BEHMEDMNJMC_EmotionId,
@@ -756,7 +756,7 @@ namespace XeApp.Game.Menu
 			AODFBGCCBPE a = l.Find((AODFBGCCBPE item) =>
 			{
 				//0x158C3E0
-				return item.INDDJNMPONH_Type == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5;
+				return item.INDDJNMPONH_type == AODFBGCCBPE.NJMPLEENNPO.BJNAMAANNMB_5;
 			});
 			if(a == null)
 			{

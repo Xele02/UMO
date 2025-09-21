@@ -1093,7 +1093,7 @@ namespace XeApp.Game.Menu
 			{
 				if (SelectMusicID != 0)
 					return IsSimplePickCenterSkill3(pattern);
-				if (pattern.INDDJNMPONH_Type >= 4 && pattern.INDDJNMPONH_Type < 7)
+				if (pattern.INDDJNMPONH_type >= 4 && pattern.INDDJNMPONH_type < 7)
 					return true;
 				return false;
 			}
@@ -1101,7 +1101,7 @@ namespace XeApp.Game.Menu
 			{
 				if(sortType == 0)
 				{
-					if (pattern.INDDJNMPONH_Type == 3)
+					if (pattern.INDDJNMPONH_type == 3)
 						return pattern.GJLFANGDGCL_Target == 1;
 				}
 				return false;
@@ -1120,19 +1120,19 @@ namespace XeApp.Game.Menu
 			switch(SelectMusicAttribute)
 			{
 				case 0:
-					if (pattern.INDDJNMPONH_Type != 3)
+					if (pattern.INDDJNMPONH_type != 3)
 						return false;
 					return pattern.GJLFANGDGCL_Target >= 6 && pattern.GJLFANGDGCL_Target < 9;
 				case 1:
-					if (pattern.INDDJNMPONH_Type != 3)
+					if (pattern.INDDJNMPONH_type != 3)
 						return false;
 					return pattern.GJLFANGDGCL_Target == 6;
 				case 2:
-					if (pattern.INDDJNMPONH_Type != 3)
+					if (pattern.INDDJNMPONH_type != 3)
 						return false;
 					return pattern.GJLFANGDGCL_Target == 7;
 				case 3:
-					if (pattern.INDDJNMPONH_Type != 3)
+					if (pattern.INDDJNMPONH_type != 3)
 						return false;
 					return pattern.GJLFANGDGCL_Target == 8;
 			}

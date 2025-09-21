@@ -10,7 +10,7 @@ public class GAEBMAEDNAN_DecoPoint : DIHHCBACKGG_DbSection
 	{
 		public const string PPFNGGCBJKC_id = "id";
 		public const string FBFLDFMFFOH = "rar";
-		public const string JBGEEPFKIGG_Value = "val";
+		public const string JBGEEPFKIGG_val = "val";
 	}
 
 	public class KFFELNOEBPB
@@ -22,7 +22,7 @@ public class GAEBMAEDNAN_DecoPoint : DIHHCBACKGG_DbSection
 
 		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } }// 0x13FDEC0 DEMEPMAEJOO 0x13FDB7C HIGKAIDMOKN
 		public int FBFLDFMFFOH_Rarity { get { return CBJIBLBAJLD_Rarity ^ FBGGEFFJJHB_xor; } set { CBJIBLBAJLD_Rarity = value ^ FBGGEFFJJHB_xor; } }// 0x13FDED0 HNLMNIOMOLI 0x13FDB8C CHHJKABBIBL
-		public int JBGEEPFKIGG_Value { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } }// 0x13FDEE0 OLOCMINKGON 0x13FDB9C ABAFHIBFKCE
+		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } }// 0x13FDEE0 OLOCMINKGON 0x13FDB9C ABAFHIBFKCE
 
 		// RVA: 0x13FDAD8 Offset: 0x13FDAD8 VA: 0x13FDAD8
 		public KFFELNOEBPB()
@@ -30,7 +30,7 @@ public class GAEBMAEDNAN_DecoPoint : DIHHCBACKGG_DbSection
 			FBGGEFFJJHB_xor = (int)Utility.GetCurrentUnixTime();
 			PPFNGGCBJKC_id = 0;
 			FBFLDFMFFOH_Rarity = 0;
-			JBGEEPFKIGG_Value = 0;
+			JBGEEPFKIGG_val = 0;
 		}
 
 		// RVA: 0x13FDE9C Offset: 0x13FDE9C VA: 0x13FDE9C
@@ -66,7 +66,7 @@ public class GAEBMAEDNAN_DecoPoint : DIHHCBACKGG_DbSection
 				KFFELNOEBPB data = new KFFELNOEBPB();
 				data.PPFNGGCBJKC_id = (int)array[0].PPFNGGCBJKC;
 				data.FBFLDFMFFOH_Rarity = (int)array[0].FBFLDFMFFOH;
-				data.JBGEEPFKIGG_Value = (int)array[0].JBGEEPFKIGG;
+				data.JBGEEPFKIGG_val = (int)array[0].JBGEEPFKIGG;
 				CDENCMNHNGA_table.Add(data);
 			}
 			return true;

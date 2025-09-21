@@ -12,7 +12,7 @@ public class DGLBJJCIIDG
 
 	public int NPHNPEAGFFM_Id { get { return DGNFIGBNKCK_Crypted ^ FBGGEFFJJHB_xor; } set { DGNFIGBNKCK_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x1985F34 EDIKGLOOMGO 0x1985F48 FCBNHLIMONF
 	public int GHBPLHBNMBK_FreeMusicId { get { return EPGOIGPKPPJ_FreeMusicIdCrypted ^ FBGGEFFJJHB_xor; } set { EPGOIGPKPPJ_FreeMusicIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1985F5C HKFCFPFPMBN 0x1985F70 IFMPBFAAKNN
-	public int JNCPEGJGHOG_JackedId { get { return GBGHABAJPGJ_JacketIdCrypted ^ FBGGEFFJJHB_xor; } set { GBGHABAJPGJ_JacketIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1985F84 HHEADMHBBPB 0x1985F98 GOFFKDDNACG
+	public int JNCPEGJGHOG_JacketId { get { return GBGHABAJPGJ_JacketIdCrypted ^ FBGGEFFJJHB_xor; } set { GBGHABAJPGJ_JacketIdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1985F84 HHEADMHBBPB 0x1985F98 GOFFKDDNACG
 	public long KJBGCLPMLCG_OpenedAt { get { return IBCNABKLHHH_StartCrypted ^ FBGGEFFJJHB_xor; } set { IBCNABKLHHH_StartCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1985FAC IDLJOCDJJOC 0x1985FC0 ODIEKGPKOAC
 	public long GJFPFFBAKGK_CloseAt { get { return MABPKDKBJAG_CloseAtCrypted ^ FBGGEFFJJHB_xor; } set { MABPKDKBJAG_CloseAtCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1985FDC KPBMCJKFEGN 0x1985FF0 IEFCDGKGICA
 	public int EKHAFFFELCO_CSkill { get { return LJMNBDMIJNK_Crypted ^ FBGGEFFJJHB_xor; } set { LJMNBDMIJNK_Crypted = value ^ FBGGEFFJJHB_xor; } } //0x198600C NLJFEDEABCC 0x1986020 IFABHNFDEII
@@ -23,12 +23,12 @@ public class DGLBJJCIIDG
     {
         NPHNPEAGFFM_Id = _PPFNGGCBJKC_id;
         GHBPLHBNMBK_FreeMusicId = _GOIKCKHMBDL_FreeMusicId;
-        JNCPEGJGHOG_JackedId = 0;
+        JNCPEGJGHOG_JacketId = 0;
         if(_GOIKCKHMBDL_FreeMusicId > 0)
         {
             IBJAKJJICBC data = new IBJAKJJICBC();
             data.KHEKNNFCAOI_Init(GHBPLHBNMBK_FreeMusicId, false, 0, 0, 0, false, false, false);
-            JNCPEGJGHOG_JackedId = data.JNCPEGJGHOG_JacketId;
+            JNCPEGJGHOG_JacketId = data.JNCPEGJGHOG_JacketId;
         }
         KJBGCLPMLCG_OpenedAt = _PDBPFJJCADD_open_at;
         GJFPFFBAKGK_CloseAt = _FDBNFFNFOND_CloseAt;

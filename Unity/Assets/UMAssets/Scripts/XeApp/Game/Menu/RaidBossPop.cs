@@ -45,7 +45,7 @@ namespace XeApp.Game.Menu
 			layout.Hide();
 			while(layout.IsPlaying())
 				yield return null;
-			layout.SetName(raidEventCtl.AGEJGHGEGFF_GetBossName(bossInfo.INDDJNMPONH_Type));
+			layout.SetName(raidEventCtl.AGEJGHGEGFF_GetBossName(bossInfo.INDDJNMPONH_type));
 			layout.SetRank(RankLabel(bossInfo.FJOLNJLLJEJ_Rank));
 			bool done = false;
 			layout.SetBossImage(bossInfo.HPPDFBKEJCG_BgId, () =>

@@ -55,10 +55,10 @@ public class MBCPNPNMFHB
 	}
 
 	//// RVA: 0xA2D92C Offset: 0xA2D92C VA: 0xA2D92C
-	public void MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO _INDDJNMPONH_Type, IMCBBOAFION _HIDFAIBOHCC_OnSuccess, IMCBBOAFION _AOCANKOMKFG_OnError)
+	public void MDGPGGLHIPB_ShowWebUrl(MHOILBOJFHL.KCAEDEHGAFO _INDDJNMPONH_type, IMCBBOAFION _HIDFAIBOHCC_OnSuccess, IMCBBOAFION _AOCANKOMKFG_OnError)
 	{
-		MHOILBOJFHL.KCAEDEHGAFO OIPCCBHIKIA_index = _INDDJNMPONH_Type;
-		LKFOCCGOINN_GetURL l = BAGOKKHNLDB(_INDDJNMPONH_Type);
+		MHOILBOJFHL.KCAEDEHGAFO OIPCCBHIKIA_index = _INDDJNMPONH_type;
+		LKFOCCGOINN_GetURL l = BAGOKKHNLDB(_INDDJNMPONH_type);
 		if(l != null)
 		{
 			bool DBJECEMOJON = true;
@@ -148,9 +148,9 @@ public class MBCPNPNMFHB
 	}
 
 	//// RVA: 0xA2DB5C Offset: 0xA2DB5C VA: 0xA2DB5C
-	private LKFOCCGOINN_GetURL BAGOKKHNLDB(MHOILBOJFHL.KCAEDEHGAFO _INDDJNMPONH_Type)
+	private LKFOCCGOINN_GetURL BAGOKKHNLDB(MHOILBOJFHL.KCAEDEHGAFO _INDDJNMPONH_type)
 	{
-		switch(_INDDJNMPONH_Type)
+		switch(_INDDJNMPONH_type)
 		{
 			case MHOILBOJFHL.KCAEDEHGAFO.GCCBFIFJHII_Information:
 				return new KNOINKGFINE_GetInformationURL();
@@ -238,7 +238,7 @@ public class MBCPNPNMFHB
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 				};
 				setting.Text = string.Format(JpStringLiterals.StringLiteral_12462, DOGDHKIEBJA_Error.getErrorId().ToString());
-				PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+				PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 				{
 					//0xA2E9FC
 					BEKAMBBOLBO_Done = true;
@@ -271,7 +271,7 @@ public class MBCPNPNMFHB
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 			};
 			setting.Text = JpStringLiterals.StringLiteral_12459;
-			PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+			PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 			{
 				//0xA2E9E4
 				BEKAMBBOLBO_Done = true;

@@ -121,7 +121,7 @@ public class OAMBPGCJEGJ
     }
 
 	// // RVA: 0x1CC6FDC Offset: 0x1CC6FDC VA: 0x1CC6FDC
-	// public void ANIJHEBLMGB(int _INDDJNMPONH_Type, short _JBGEEPFKIGG_Value) { }
+	// public void ANIJHEBLMGB(int _INDDJNMPONH_type, short _JBGEEPFKIGG_val) { }
 
 	// // RVA: 0x1CC7028 Offset: 0x1CC7028 VA: 0x1CC7028
 	// public void ODDIHGPONFL_Copy(OAMBPGCJEGJ GPBJHKLFCEP) { }

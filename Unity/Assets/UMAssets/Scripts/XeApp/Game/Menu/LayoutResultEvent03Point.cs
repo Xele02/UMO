@@ -275,12 +275,12 @@ namespace XeApp.Game.Menu
 			m_layoutRank[1].StartChildrenAnimGoStop((m_view.IDBJPDBLIIG_ScoreResultRank + 1).ToString("D2"));
 			if(!m_view.LFGNLKKFOCD_IsLine6)
 			{
-				m_imageDiff.uvRect = m_imageDiffRectList[m_view.AKNELONELJK_Difficulty];
+				m_imageDiff.uvRect = m_imageDiffRectList[m_view.AKNELONELJK_difficulty];
 				GameManager.Instance.UnionTextureManager.GetTexture("cmn_tex_pack").Set(m_imageDiff);
 			}
 			else
 			{
-				m_imageDiff.uvRect = m_imageDiffRectList_6Line[m_view.AKNELONELJK_Difficulty - 2];
+				m_imageDiff.uvRect = m_imageDiffRectList_6Line[m_view.AKNELONELJK_difficulty - 2];
 				GameManager.Instance.UnionTextureManager.GetTexture("cmn_tex_02_pack").Set(m_imageDiff);
 			}
 			m_textWinLosePoint.text = m_view.IOOBNLAHLEJ_Point2.ToString();
@@ -324,7 +324,7 @@ namespace XeApp.Game.Menu
 			{
 				for(int i = 0; i < m_list.Count; i++)
 				{
-					SetJacketImage(i, m_list[i].JNCPEGJGHOG_JackedId);
+					SetJacketImage(i, m_list[i].JNCPEGJGHOG_JacketId);
 				}
 				m_textExPoint.text = "" + 100 + "/" + 100;
 				m_layoutGauge.Setup(100, 100, 0);

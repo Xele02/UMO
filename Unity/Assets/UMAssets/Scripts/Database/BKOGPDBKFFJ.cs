@@ -233,7 +233,7 @@ public class BKOGPDBKFFJ_EventRaid : DIHHCBACKGG_DbSection
 		public int NNLAMKCDMEL_RewardDefeat; // 0x18
 		public int FCDNMBBPBKI_RewardFirst; // 0x1C
 		public int EPMCPGDIBHI_RewardMvp; // 0x20
-		public int AKBHPFBDDOL_Rate; // 0x24
+		public int AKBHPFBDDOL_Val; // 0x24 Rate
 
 		//// RVA: 0x19B1E54 Offset: 0x19B1E54 VA: 0x19B1E54
 		public void KHEKNNFCAOI_Init(string blockName, KCFGJMAMFCH _IDLHJIOMJBK_Data)
@@ -245,7 +245,7 @@ public class BKOGPDBKFFJ_EventRaid : DIHHCBACKGG_DbSection
 			NNLAMKCDMEL_RewardDefeat = _IDLHJIOMJBK_Data.NNLAMKCDMEL;
 			FCDNMBBPBKI_RewardFirst = _IDLHJIOMJBK_Data.FCDNMBBPBKI;
 			EPMCPGDIBHI_RewardMvp = _IDLHJIOMJBK_Data.EPMCPGDIBHI;
-			AKBHPFBDDOL_Rate = _IDLHJIOMJBK_Data.AKBHPFBDDOL;
+			AKBHPFBDDOL_Val = _IDLHJIOMJBK_Data.AKBHPFBDDOL;
 		}
 
 		//// RVA: 0x19B1FA4 Offset: 0x19B1FA4 VA: 0x19B1FA4
@@ -323,14 +323,14 @@ public class BKOGPDBKFFJ_EventRaid : DIHHCBACKGG_DbSection
 		}
 
 		public int PPFNGGCBJKC_id; // 0x8
-		public int INDDJNMPONH_Type; // 0xC
+		public int INDDJNMPONH_type; // 0xC
 		public int GLCLFMGPMAN_ItemId; // 0x10
 
 		//// RVA: 0x19B2408 Offset: 0x19B2408 VA: 0x19B2408
 		public void KHEKNNFCAOI_Init(JHBMNFIHGBI _IDLHJIOMJBK_Data)
 		{
 			PPFNGGCBJKC_id = (int)_IDLHJIOMJBK_Data.PPFNGGCBJKC;
-			INDDJNMPONH_Type = (int)_IDLHJIOMJBK_Data.GBJFNGCDKPM;
+			INDDJNMPONH_type = (int)_IDLHJIOMJBK_Data.GBJFNGCDKPM;
 			GLCLFMGPMAN_ItemId = (int)_IDLHJIOMJBK_Data.GLCLFMGPMAN;
 		}
 

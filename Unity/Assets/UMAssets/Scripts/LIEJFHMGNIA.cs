@@ -562,7 +562,7 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 	}
 
 	//// RVA: 0x17FB76C Offset: 0x17FB76C VA: 0x17FB76C
-	private static bool OCIKEFNDJKC(List<LIEJFHMGNIA> NNDGIAEFMOG, int _INDDJNMPONH_Type)
+	private static bool OCIKEFNDJKC(List<LIEJFHMGNIA> NNDGIAEFMOG, int _INDDJNMPONH_type)
 	{
 		int cat1Id = 0;
 		int cat2Id = 0;
@@ -582,7 +582,7 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 				}
 			}
 		}
-		if(_INDDJNMPONH_Type == 2)
+		if(_INDDJNMPONH_type == 2)
 		{
 			if (cat2Id == 0)
 				return false;
@@ -592,7 +592,7 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 		}
 		else
 		{
-			if (_INDDJNMPONH_Type != 1)
+			if (_INDDJNMPONH_type != 1)
 				return false;
 			if (cat1Id == 0)
 				return false;
@@ -603,7 +603,7 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 	}
 
 	//// RVA: 0x17FBC28 Offset: 0x17FBC28 VA: 0x17FBC28
-	private static LIEJFHMGNIA DJAHKAIDCKH(int _INDDJNMPONH_Type)
+	private static LIEJFHMGNIA DJAHKAIDCKH(int _INDDJNMPONH_type)
 	{
 		int cat1Id = 0;
 		int cat2Id = 0;
@@ -623,7 +623,7 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 				}
 			}
 		}
-		if (_INDDJNMPONH_Type == 2)
+		if (_INDDJNMPONH_type == 2)
 		{
 			if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LNOOKHJBENO_StoryRecord.MMKAJBFBKNH[cat1Id - 1].EALOBDHOCHP_Stat < 2)
 				return null;
@@ -634,7 +634,7 @@ public class LIEJFHMGNIA : EEDKAACNBBG_MusicData
 		}
 		else
 		{
-			if (_INDDJNMPONH_Type != 1)
+			if (_INDDJNMPONH_type != 1)
 				return null;
 			if (CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.LNOOKHJBENO_StoryRecord.MMKAJBFBKNH[cat1Id - 1].EALOBDHOCHP_Stat != 0)
 				return null;

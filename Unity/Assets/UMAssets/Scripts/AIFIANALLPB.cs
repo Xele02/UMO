@@ -420,14 +420,14 @@ public class AIFIANALLPB
 				if (cat != EKLNMHFCAOI.FKGCBLHOOCL_Category.IBBDMIFICCN_BonusVC)
 					return false;
 				HHJHIFJIKAC_BonusVc.MNGJPJBCMBH item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.CDENCMNHNGA_table[AIMLPJOGPID.NNFNGLJOKKF_ItemId - 1];
-				if ((item.INDDJNMPONH_Type & 0xfffffffeU) != 2)
+				if ((item.INDDJNMPONH_type & 0xfffffffeU) != 2)
 					return false;
-				if(item.EGBOHDFBAPB_ClosedAt < AIMLPJOGPID.EGBOHDFBAPB_ClosedAt)
+				if(item.EGBOHDFBAPB_CloseAt < AIMLPJOGPID.EGBOHDFBAPB_CloseAt)
 				{
-					AIMLPJOGPID.EGBOHDFBAPB_ClosedAt = item.EGBOHDFBAPB_ClosedAt;
+					AIMLPJOGPID.EGBOHDFBAPB_CloseAt = item.EGBOHDFBAPB_CloseAt;
 					AIMLPJOGPID.BGOJPEJJJFB_IsAvaiable = false;
 				}
-				return time >= AIMLPJOGPID.EGBOHDFBAPB_ClosedAt;
+				return time >= AIMLPJOGPID.EGBOHDFBAPB_CloseAt;
 			}
 			if(AIMLPJOGPID.NNFNGLJOKKF_ItemId < 200)
 			{
@@ -435,7 +435,7 @@ public class AIFIANALLPB
 					return false;
 				int gachaPeriod = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.GDEKCOOBLMA_System.LPJLEHAJADA("gacha_ticket_presentbox_period", 2592000);
 				AIMLPJOGPID.BGOJPEJJJFB_IsAvaiable = false;
-				AIMLPJOGPID.EGBOHDFBAPB_ClosedAt = AIMLPJOGPID.BIOGKIEECGN_CreatedAt + gachaPeriod;
+				AIMLPJOGPID.EGBOHDFBAPB_CloseAt = AIMLPJOGPID.BIOGKIEECGN_CreatedAt + gachaPeriod;
 			}
 		}
 		else
@@ -448,26 +448,26 @@ public class AIFIANALLPB
 				if (item.KHCBANFDKBO_Duration == 0)
 					return false;
 				long t = AIMLPJOGPID.BIOGKIEECGN_CreatedAt + item.KHCBANFDKBO_Duration * 86400;
-				if(t < AIMLPJOGPID.EGBOHDFBAPB_ClosedAt)
+				if(t < AIMLPJOGPID.EGBOHDFBAPB_CloseAt)
 				{
-					AIMLPJOGPID.EGBOHDFBAPB_ClosedAt = t;
+					AIMLPJOGPID.EGBOHDFBAPB_CloseAt = t;
 					AIMLPJOGPID.BGOJPEJJJFB_IsAvaiable = false;
 				}
-				if (time < AIMLPJOGPID.EGBOHDFBAPB_ClosedAt)
+				if (time < AIMLPJOGPID.EGBOHDFBAPB_CloseAt)
 					return false;
 				return true;
 			}
 			JNGINLMOJKH_EventGachaTicket.JDNAAGCHCOH itm = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NKOKFIMNCJM_EventGachaTicket.CDENCMNHNGA_table[AIMLPJOGPID.NNFNGLJOKKF_ItemId - 1];
 			if(itm.EMIJNAFJFJO_Expir != 0)
 			{
-				if(itm.EMIJNAFJFJO_Expir < AIMLPJOGPID.EGBOHDFBAPB_ClosedAt)
+				if(itm.EMIJNAFJFJO_Expir < AIMLPJOGPID.EGBOHDFBAPB_CloseAt)
 				{
-					AIMLPJOGPID.EGBOHDFBAPB_ClosedAt = itm.EMIJNAFJFJO_Expir;
+					AIMLPJOGPID.EGBOHDFBAPB_CloseAt = itm.EMIJNAFJFJO_Expir;
 					AIMLPJOGPID.BGOJPEJJJFB_IsAvaiable = false;
 				}
 			}
 		}
-		if (time < AIMLPJOGPID.EGBOHDFBAPB_ClosedAt)
+		if (time < AIMLPJOGPID.EGBOHDFBAPB_CloseAt)
 			return false;
 		return true;
 	}

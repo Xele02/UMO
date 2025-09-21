@@ -441,8 +441,8 @@ public static class DatabaseTextConverter
                     {
                         string prfx = string.Format("mission_desc_{0}_{1:D4}", blockDbRaid.HDMADAHNLDN_Missions[i].JOPOPMLFINI_QuestName, 10000 + blockDbRaid.HDMADAHNLDN_Missions[i].PPFNGGCBJKC_id);
                         poFile.translationData.Add(prfx, blockDbRaid.HDMADAHNLDN_Missions[i].FEMMDNIELFC_Desc);
-                        //prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbRaid.NNMPGOAGEOL_Missions[i].JOPOPMLFINI, blockDbRaid.NNMPGOAGEOL_Missions[i].PPFNGGCBJKC_Id);
-                        //poFile.translationData.Add(prfx, blockDbRaid.NNMPGOAGEOL_Missions[i].BGBJPGEIEDE_DescBalloon);
+                        //prfx = string.Format("mission_desc2_{0}_{1:D4}", blockDbRaid.NNMPGOAGEOL_quests[i].JOPOPMLFINI, blockDbRaid.NNMPGOAGEOL_quests[i].PPFNGGCBJKC_id);
+                        //poFile.translationData.Add(prfx, blockDbRaid.NNMPGOAGEOL_quests[i].BGBJPGEIEDE_DescBalloon);
                     }
                     for (int i = 0; i < blockDbRaid.NNMPGOAGEOL_quests.Count; i++)
                     {

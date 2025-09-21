@@ -56,7 +56,7 @@ public class MIDMMFMJFPJ
 		EDOHBJAPLPF_JsonData res = new EDOHBJAPLPF_JsonData();
 		res[AFEHLCGHAEE_Strings.LJNAKDMILMC_key] = OCGFKMHNEOF_name_for_api;
 		res[AFEHLCGHAEE_Strings.KOMKKBDABJP_end] = EGBOHDFBAPB_CloseAt;
-		res[AFEHLCGHAEE_Strings.JBGEEPFKIGG_Value] = NANNGLGOFKH_value;
+		res[AFEHLCGHAEE_Strings.JBGEEPFKIGG_val] = NANNGLGOFKH_value;
 		res[AFEHLCGHAEE_Strings.LDALACBKEJN_r_rcv] = CKFKFHKHOHA_RRcv ? 1 : 0;
 		return res;
 	}

@@ -297,7 +297,7 @@ namespace XeApp.Game.Menu
 			LayoutShopProductListItem c = content as LayoutShopProductListItem;
 			if(c != null)
 			{
-				c.SetStatus(m_view.INDDJNMPONH_Type, m_view.MHKCPJDNJKI_products[index]);
+				c.SetStatus(m_view.INDDJNMPONH_type, m_view.MHKCPJDNJKI_products[index]);
 			}
 		}
 

@@ -85,13 +85,13 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 	}
 
 	//// RVA: 0x1B909B4 Offset: 0x1B909B4 VA: 0x1B909B4
-	//private List<PPGHMBNIAEC> DGKHKMNMMDN(JNKEEAOKNCI.MKGJHBAKMBD _INDDJNMPONH_Type) { }
+	//private List<PPGHMBNIAEC> DGKHKMNMMDN(JNKEEAOKNCI.MKGJHBAKMBD _INDDJNMPONH_type) { }
 
 	//// RVA: 0x1B909E0 Offset: 0x1B909E0 VA: 0x1B909E0
-	//private List<HBDCPGLAPHH> LGONDBKGPMH(JNKEEAOKNCI.MKGJHBAKMBD _INDDJNMPONH_Type) { }
+	//private List<HBDCPGLAPHH> LGONDBKGPMH(JNKEEAOKNCI.MKGJHBAKMBD _INDDJNMPONH_type) { }
 
 	//// RVA: 0x1B90A1C Offset: 0x1B90A1C VA: 0x1B90A1C
-	//private List<KFCIIMBBNCD> BHHJHMEKCCB(JNKEEAOKNCI.MKGJHBAKMBD _INDDJNMPONH_Type) { }
+	//private List<KFCIIMBBNCD> BHHJHMEKCCB(JNKEEAOKNCI.MKGJHBAKMBD _INDDJNMPONH_type) { }
 
 	//// RVA: 0x1B90A58 Offset: 0x1B90A58 VA: 0x1B90A58
 	public JNKEEAOKNCI_Skill()
@@ -217,9 +217,9 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 			data.FPMFEKIPFPI_DurationType[1] = (byte)array[i].LFOHDJJHLJE;
 			data.JGDJACOPHJP_LineTarget = (byte)array[i].PLMHOKJIPJK;
 			data.JGNHOGKKPDM = (byte)array[i].INANEEGAEEG;
-			data.HEOLEHDFLJO_Icon = new int[2];
-			data.HEOLEHDFLJO_Icon[0] = (int)array[i].HEOLEHDFLJO;
-			data.HEOLEHDFLJO_Icon[1] = (int)array[i].AOELPHMDDND;
+			data.HEOLEHDFLJO_ico = new int[2];
+			data.HEOLEHDFLJO_ico[0] = (int)array[i].HEOLEHDFLJO;
+			data.HEOLEHDFLJO_ico[1] = (int)array[i].AOELPHMDDND;
 			data.GIEFBAHPMMM = (int)array[i].KPECMLFDLOI;
 			data.NLCJNOBOBAH_MaxActivation = (int)array[i].GAMODHFMOMK;
 			{
@@ -387,7 +387,7 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 				KFCIIMBBNCD data = new KFCIIMBBNCD();
 				data.MJMPANIBFED_pid = (int)array[i].MJMPANIBFED;
 				data.GJLFANGDGCL_Target = (byte)array[i].AGNHPHEJKMK;
-				data.INDDJNMPONH_Type = (byte)array[i].GBJFNGCDKPM;
+				data.INDDJNMPONH_type = (byte)array[i].GBJFNGCDKPM;
 				data.OAFPGJLCNFM_cond = (int)array[i].ODMJFHDIGLP & 0xff;
 				data.BBFKKANELFP_EffectType = (byte)array[i].BBFKKANELFP;
 				{
@@ -408,7 +408,7 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 				KFCIIMBBNCD data = new KFCIIMBBNCD();
 				data.MJMPANIBFED_pid = (int)array[i].MJMPANIBFED;
 				data.GJLFANGDGCL_Target = (byte)array[i].AGNHPHEJKMK;
-				data.INDDJNMPONH_Type = (byte)array[i].GBJFNGCDKPM;
+				data.INDDJNMPONH_type = (byte)array[i].GBJFNGCDKPM;
 				data.OAFPGJLCNFM_cond = (int)array[i].ODMJFHDIGLP & 0xff;
 				data.BBFKKANELFP_EffectType = 0;
 				{
@@ -429,7 +429,7 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 				KFCIIMBBNCD data = new KFCIIMBBNCD();
 				data.MJMPANIBFED_pid = (int)array[i].MJMPANIBFED;
 				data.GJLFANGDGCL_Target = (byte)array[i].AGNHPHEJKMK;
-				data.INDDJNMPONH_Type = (byte)array[i].GBJFNGCDKPM;
+				data.INDDJNMPONH_type = (byte)array[i].GBJFNGCDKPM;
 				data.OAFPGJLCNFM_cond = (int)array[i].ODMJFHDIGLP & 0xff;
 				data.BBFKKANELFP_EffectType = 0;
 				{
@@ -672,9 +672,9 @@ public class JNKEEAOKNCI_Skill : DIHHCBACKGG_DbSection
 			data.GJLFANGDGCL_Target = new byte[2];
 			data.GJLFANGDGCL_Target[0] = (byte)array[i].GNPACBPKKCP;
 			data.GJLFANGDGCL_Target[1] = (byte)array[i].CGNBOKANMAD;
-			data.INDDJNMPONH_Type = new byte[2];
-			data.INDDJNMPONH_Type[0] = (byte)array[i].EPIBJMFJNDC;
-			data.INDDJNMPONH_Type[1] = (byte)array[i].KLCMNKMONJJ;
+			data.INDDJNMPONH_type = new byte[2];
+			data.INDDJNMPONH_type[0] = (byte)array[i].EPIBJMFJNDC;
+			data.INDDJNMPONH_type[1] = (byte)array[i].KLCMNKMONJJ;
 			data.OAFPGJLCNFM_cond = new int[2];
 			data.OAFPGJLCNFM_cond[0] = (int)array[i].GCFHEHAFHKO;
 			data.OAFPGJLCNFM_cond[1] = (int)array[i].JOKNHEBCHFB;
@@ -837,7 +837,7 @@ public class KFCIIMBBNCD
 	public int MJMPANIBFED_pid; // 0x8
 	public short[] KCOHMHFBDKF_Value1 = new short[5]; // 0xC // ValueByLevel
 	public byte GJLFANGDGCL_Target; // 0x10 // CenterSkillTarget
-	public byte INDDJNMPONH_Type; // 0x11 ModifierType
+	public byte INDDJNMPONH_type; // 0x11 ModifierType
 	public int OAFPGJLCNFM_cond; // 0x14 CenterSkillCondition
 	public byte BBFKKANELFP_EffectType; // 0x18
 
@@ -848,13 +848,13 @@ public class KFCIIMBBNCD
 public class CDNKOFIELMK
 {
 	public int DDMENKOHCGM_aid; // 0x8
-	public short[,] NKGHBKFMFCI_BuffValue = new short[5, 2]; // 0xC NKGHBKFMFCI_BuffValueByIndexAndLevel
+	public short[,] NKGHBKFMFCI_BuffValue = new short[5, 2]; // 0xC BuffValueByIndexAndLevel
 	public short[,] PHAGNOHBMCM_DurationByIndexAndLevel = new short[5, 2]; // 0x10
 	public byte[] EGLDFPILJLG_SkillBuffEffect; // 0x14
 	public byte[] FPMFEKIPFPI_DurationType; // 0x18
 	public byte JGDJACOPHJP_LineTarget; // 0x1C
 	public byte JGNHOGKKPDM; // 0x1D
-	public int[] HEOLEHDFLJO_Icon; // 0x20
+	public int[] HEOLEHDFLJO_ico; // 0x20
 	public int GIEFBAHPMMM; // 0x24
 	public int NLCJNOBOBAH_MaxActivation; // 0x28
 
@@ -882,7 +882,7 @@ public class CDNKOFIELMK
 public class PPGHMBNIAEC
 {
 	public int BEKFHEBCPEE_LiveSkillId; // 0x8
-	public short[,] NKGHBKFMFCI_BuffValue = new short[5, 2]; // 0xC NKGHBKFMFCI_BuffValueByIndexAndLevel
+	public short[,] NKGHBKFMFCI_BuffValue = new short[5, 2]; // 0xC BuffValueByIndexAndLevel
 	public short[,] PHAGNOHBMCM_DurationByIndexAndLevel = new short[5, 2]; // 0x10
 	public short[] LFGFBMJNBKN_ConfigValue = new short[5]; // 0x14
 	public int FLJHGGKIOJH_SkillType; // 0x18
@@ -1032,7 +1032,7 @@ public class AFLHKMDNHID
 	public int PPFNGGCBJKC_id; // 0x8
 	public int PLALNIIBLOF_en; // 0xC
 	public int MKDDOJOADMF; // 0x10
-	public byte[] INDDJNMPONH_Type; // 0x14
+	public byte[] INDDJNMPONH_type; // 0x14
 	public byte[] GJLFANGDGCL_Target; // 0x18
 	public int[] OAFPGJLCNFM_cond; // 0x1C
 

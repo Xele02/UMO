@@ -39,7 +39,7 @@ public class MHAPMOLCPKM_EventQuest : IKDICBBFBMI_EventBase
     public class NEJFNBKMPFD
     {
         public int AMCCOGJACPK_CardId; // 0x8
-        public int AKNELONELJK_Difficulty; // 0xC
+        public int AKNELONELJK_difficulty; // 0xC
         public int DCACDLIAJJK_Pts; // 0x10
         public int FPEOGFMKMKJ_Point; // 0x14
         public int INDKDHNKFAB; // 0x18
@@ -876,7 +876,7 @@ public class MHAPMOLCPKM_EventQuest : IKDICBBFBMI_EventBase
 	// public int NOODJNMIDPN() { }
 
 	// // RVA: 0x131FF18 Offset: 0x131FF18 VA: 0x131FF18
-	// public void PNFDENHKMGK(int _AKNELONELJK_Difficulty, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _AOCANKOMKFG_OnError) { }
+	// public void PNFDENHKMGK(int _AKNELONELJK_difficulty, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _AOCANKOMKFG_OnError) { }
 
 	// // RVA: 0x13202DC Offset: 0x13202DC VA: 0x13202DC
 	// public ALPMEPDDDIP.FDDIFOGNJEF MHPFJFDNILM() { }
@@ -1013,7 +1013,7 @@ public class MHAPMOLCPKM_EventQuest : IKDICBBFBMI_EventBase
                                     JMEHHJKCGNJ.PHOPDCNFFEI = !EGKODECGHNM();
                                     JMEHHJKCGNJ.DCACDLIAJJK_Pts = ci.EIOFPIHABFC_Pts;
                                     JMEHHJKCGNJ.AMCCOGJACPK_CardId = ci.PPFNGGCBJKC_id;
-                                    JMEHHJKCGNJ.AKNELONELJK_Difficulty = ci.DGMIADAEGAI_TargetDifficultyType - 1;
+                                    JMEHHJKCGNJ.AKNELONELJK_difficulty = ci.DGMIADAEGAI_TargetDifficultyType - 1;
                                     if(!JMEHHJKCGNJ.PHOPDCNFFEI)
                                     {
                                         JMEHHJKCGNJ.FPEOGFMKMKJ_Point = ci.EIOFPIHABFC_Pts;
@@ -1034,7 +1034,7 @@ public class MHAPMOLCPKM_EventQuest : IKDICBBFBMI_EventBase
                                     }
                                     else
                                     {
-                                        l = KEHCNBNPJHB.NGHKJOEDLIP_Settings.HEABAENHIDE[JMEHHJKCGNJ.AKNELONELJK_Difficulty];
+                                        l = KEHCNBNPJHB.NGHKJOEDLIP_Settings.HEABAENHIDE[JMEHHJKCGNJ.AKNELONELJK_difficulty];
                                     }
                                     JMEHHJKCGNJ.INDKDHNKFAB = l;
                                     JMEHHJKCGNJ.ANOCILKJGOJ_EpisodeCnt = AIPLGDHHAJI.JNAHAJFKKCB_EpiCnt;
@@ -1293,27 +1293,27 @@ public class MHAPMOLCPKM_EventQuest : IKDICBBFBMI_EventBase
     }
 
 	// // RVA: 0x1321E30 Offset: 0x1321E30 VA: 0x1321E30
-	public int BOLHIMADLBN(int _AKNELONELJK_Difficulty)
+	public int BOLHIMADLBN(int _AKNELONELJK_difficulty)
     {
         LMBBEGIAKAD_EventQuest ev = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI_QuestName) as LMBBEGIAKAD_EventQuest;
         if(ev != null)
         {
-            return ev.NGHKJOEDLIP_Settings.HEABAENHIDE[_AKNELONELJK_Difficulty];
+            return ev.NGHKJOEDLIP_Settings.HEABAENHIDE[_AKNELONELJK_difficulty];
         }
         return 0;
     }
 
 	// // RVA: 0x1321FE0 Offset: 0x1321FE0 VA: 0x1321FE0
-	// public PKADMPNDMGP NPCMANKMGCJ(int _AKNELONELJK_Difficulty, int _IKPIDCFOFEA_no) { }
+	// public PKADMPNDMGP NPCMANKMGCJ(int _AKNELONELJK_difficulty, int _IKPIDCFOFEA_no) { }
 
 	// // RVA: 0x1322328 Offset: 0x1322328 VA: 0x1322328
-	// public OFNLIBDEIFA.AGFEALDEJOL ALDHOIEBGNM(int _AKNELONELJK_Difficulty, int _IKPIDCFOFEA_no) { }
+	// public OFNLIBDEIFA.AGFEALDEJOL ALDHOIEBGNM(int _AKNELONELJK_difficulty, int _IKPIDCFOFEA_no) { }
 
 	// // RVA: 0x13225BC Offset: 0x13225BC VA: 0x13225BC
 	// public void DPBLJLFKMPL(IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _AOCANKOMKFG_OnError) { }
 
 	// // RVA: 0x1322934 Offset: 0x1322934 VA: 0x1322934
-	// public void LLCMINJNADH(int _AKNELONELJK_Difficulty, int _IKPIDCFOFEA_no, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _AOCANKOMKFG_OnError) { }
+	// public void LLCMINJNADH(int _AKNELONELJK_difficulty, int _IKPIDCFOFEA_no, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _AOCANKOMKFG_OnError) { }
 
 	// // RVA: 0x1322CE4 Offset: 0x1322CE4 VA: 0x1322CE4
 	public PKADMPNDMGP GAPOCIFPDDO_GetSelectedCardInfo()
@@ -1351,13 +1351,13 @@ public class MHAPMOLCPKM_EventQuest : IKDICBBFBMI_EventBase
 	// public int CDKDCKOAEMA() { }
 
 	// // RVA: 0x13235E0 Offset: 0x13235E0 VA: 0x13235E0
-	public int KGIIPFJIAGB_GetPlayCost(int _AKNELONELJK_Difficulty)
+	public int KGIIPFJIAGB_GetPlayCost(int _AKNELONELJK_difficulty)
     {
         LMBBEGIAKAD_EventQuest ev = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBDOLHGDIEB_GetDbSection(JOPOPMLFINI_QuestName) as LMBBEGIAKAD_EventQuest;
         if(ev != null)
         {
             OFNLIBDEIFA_EventQuest.GCCDGBBDICM save = CIOECGOMILE.HHCJCDFCLOB.AHEFHIMGIBI_PlayerData.PMMENILLJJE_EventQuest.FBCJICEPLED[ev.NGHKJOEDLIP_Settings.MOEKELIIDEO_SaveIdx];
-            return ev.NGHKJOEDLIP_Settings.HIAMHLLHAON_PlayCost[_AKNELONELJK_Difficulty];
+            return ev.NGHKJOEDLIP_Settings.HIAMHLLHAON_PlayCost[_AKNELONELJK_difficulty];
         }
         return 0;
     }
@@ -1442,10 +1442,10 @@ public class MHAPMOLCPKM_EventQuest : IKDICBBFBMI_EventBase
     }
 
 	// RVA: 0x1324E2C Offset: 0x1324E2C VA: 0x1324E2C Slot: 69
-	public override void HAAEJDGMICH(LBNLAENLPNK.JEKODBEDOMM _INDDJNMPONH_Type, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _AOCANKOMKFG_OnError)
+	public override void HAAEJDGMICH(LBNLAENLPNK.JEKODBEDOMM _INDDJNMPONH_type, IMCBBOAFION _BHFHGFKBOHH_OnSuccess, DJBHIFLHJLK _AOCANKOMKFG_OnError)
     {
         string v = null;
-        if(_INDDJNMPONH_Type == 0)
+        if(_INDDJNMPONH_type == 0)
         {
             v = JOPOPMLFINI_QuestName + "_rule";
         }
@@ -1554,7 +1554,7 @@ public class MHAPMOLCPKM_EventQuest : IKDICBBFBMI_EventBase
     }
 
 	// RVA: 0x13266E8 Offset: 0x13266E8 VA: 0x13266E8 Slot: 38
-	public override void EMEPJNLHJHJ(int GJEADBKFAPA, int _AKNELONELJK_Difficulty, bool _GIKLNODJKFK_IsLine6, ref int APMGOLOPLFP, ref int FBBDNLAMPMH)
+	public override void EMEPJNLHJHJ(int GJEADBKFAPA, int _AKNELONELJK_difficulty, bool _GIKLNODJKFK_IsLine6, ref int APMGOLOPLFP, ref int FBBDNLAMPMH)
     {
         APMGOLOPLFP = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.JJIBDCAIBIO_LuckCoef0;
         FBBDNLAMPMH = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.HNMMJINNHII_Game.AMNBEMCJCHF_LuckCoef1;

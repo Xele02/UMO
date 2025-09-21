@@ -8,7 +8,7 @@ public class ABPEPHGCNDA
 	private const sbyte CNECJGKECHK_True = 0x57;
 	public sbyte EAJCFBCHIFB_RarityCrypted = JFOFMKBJBBE_False; // 0x8
 	public int HLMAFFLCCKD_CountCrypted = FBGGEFFJJHB_xor; // 0xC
-	public List<BPADANIKFHP> OJGPPOKENLG_Groups; // 0x10 OJGPPOKENLG_ProbabilityPerGroupKey
+	public List<BPADANIKFHP> OJGPPOKENLG_Groups; // 0x10 ProbabilityPerGroupKey
 	public List<IJPECOFPOCH> DDGPEFEEKFP_Items; // 0x14
 
 	public bool EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted == CNECJGKECHK_True; } set { EAJCFBCHIFB_RarityCrypted = value ? CNECJGKECHK_True : JFOFMKBJBBE_False; } } //0x15B1454 OEEHBGECGKL 0x15B1468 GHLMHLJJBIG

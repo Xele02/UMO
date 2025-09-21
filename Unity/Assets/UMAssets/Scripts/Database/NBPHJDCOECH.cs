@@ -399,21 +399,21 @@ public class NBPHJDCOECH_Drop : DIHHCBACKGG_DbSection
 
 	//[CompilerGeneratedAttribute] // RVA: 0x6C0010 Offset: 0x6C0010 VA: 0x6C0010
 	//// RVA: 0x17CB71C Offset: 0x17CB71C VA: 0x17CB71C
-	//private void <Deserialize_GameDrop>b__60_0(int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) { }
+	//private void <Deserialize_GameDrop>b__60_0(int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) { }
 
 	//[CompilerGeneratedAttribute] // RVA: 0x6C0020 Offset: 0x6C0020 VA: 0x6C0020
 	//// RVA: 0x17CB7DC Offset: 0x17CB7DC VA: 0x17CB7DC
-	//private void <Deserialize_GameDrop>b__60_1(int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) { }
+	//private void <Deserialize_GameDrop>b__60_1(int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) { }
 
 	//[CompilerGeneratedAttribute] // RVA: 0x6C0030 Offset: 0x6C0030 VA: 0x6C0030
 	//// RVA: 0x17CB85C Offset: 0x17CB85C VA: 0x17CB85C
-	//private void <Deserialize_GameDrop>b__60_2(int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) { }
+	//private void <Deserialize_GameDrop>b__60_2(int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) { }
 
 	//[CompilerGeneratedAttribute] // RVA: 0x6C0040 Offset: 0x6C0040 VA: 0x6C0040
 	//// RVA: 0x17CB8DC Offset: 0x17CB8DC VA: 0x17CB8DC
-	//private void <Deserialize_GameDrop>b__60_3(int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) { }
+	//private void <Deserialize_GameDrop>b__60_3(int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) { }
 
 	//[CompilerGeneratedAttribute] // RVA: 0x6C0050 Offset: 0x6C0050 VA: 0x6C0050
 	//// RVA: 0x17CB99C Offset: 0x17CB99C VA: 0x17CB99C
-	//private void <Deserialize_GameDrop>b__60_4(int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) { }
+	//private void <Deserialize_GameDrop>b__60_4(int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) { }
 }

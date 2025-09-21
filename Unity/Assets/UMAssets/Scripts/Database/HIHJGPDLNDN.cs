@@ -208,5 +208,5 @@ public class HIHJGPDLNDN_EventScore : DIHHCBACKGG_DbSection
 
 	//[CompilerGeneratedAttribute] // RVA: 0x6C0400 Offset: 0x6C0400 VA: 0x6C0400
 	//// RVA: 0x1837304 Offset: 0x1837304 VA: 0x1837304
-	//private void <DeserializeSetting>b__19_0(int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) { }
+	//private void <DeserializeSetting>b__19_0(int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) { }
 }

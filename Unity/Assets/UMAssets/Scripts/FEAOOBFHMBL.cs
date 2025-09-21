@@ -34,7 +34,7 @@ public class FEAOOBFHMBL
 				for(int i = 0; i < _LKMHPJKIFDN_md.MHGPMMIDKMM_Quest.BEGCHDHHEKC_DailyQuests.Count; i++)
 				{
 					CNLPPCFJEID_QuestInfo q = _LKMHPJKIFDN_md.MHGPMMIDKMM_Quest.BEGCHDHHEKC_DailyQuests[i];
-					if (q.INDDJNMPONH_Type != 0)
+					if (q.INDDJNMPONH_type != 0)
 					{
 						if((q.KJBGCLPMLCG_OpenedAt == 0 && q.GJFPFFBAKGK_CloseAt == 0) || (q.KJBGCLPMLCG_OpenedAt < _JHNMKKNEENE_Time && q.GJFPFFBAKGK_CloseAt > _JHNMKKNEENE_Time))
 						{
@@ -43,10 +43,10 @@ public class FEAOOBFHMBL
 								LAB_00fcec84
 							}*/
 							//LAB_00fcecd4
-							if(q.AKBHPFBDDOL_DayOfWeek < 10 || q.AKBHPFBDDOL_DayOfWeek > 16)
+							if(q.AKBHPFBDDOL_Val < 10 || q.AKBHPFBDDOL_Val > 16)
 							{
 								//LAB_00fced48
-								if (q.AKBHPFBDDOL_DayOfWeek != 1)
+								if (q.AKBHPFBDDOL_Val != 1)
 								{
 									l.Add(i);
 									// goLAB_00fcee70
@@ -54,7 +54,7 @@ public class FEAOOBFHMBL
 								else
 								{
 									int a = i;
-									if (q.INDDJNMPONH_Type != 6)
+									if (q.INDDJNMPONH_type != 6)
 										a = qIdx;
 									if (qIdx < 0)
 										qIdx = a;
@@ -69,14 +69,14 @@ public class FEAOOBFHMBL
 									LAB_00fced48
 								}*/
 								int dayOfWeek = (int)questDate2.DayOfWeek;
-								int b = q.AKBHPFBDDOL_DayOfWeek;
+								int b = q.AKBHPFBDDOL_Val;
 								if (dayOfWeek + 10 != b)
 								{
 									// go LAB_00fcee70
 								}
 								else
 								{
-									if (q.INDDJNMPONH_Type == 6)
+									if (q.INDDJNMPONH_type == 6)
 									{
 										if (qIdx < 0)
 										{

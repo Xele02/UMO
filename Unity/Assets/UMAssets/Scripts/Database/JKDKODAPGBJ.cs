@@ -19,7 +19,7 @@ public class JKDKODAPGBJ_EnergyItem : DIHHCBACKGG_DbSection
 		public int PPEGAKEIEGM_Enabled { get { return HNJHPNPFAAN_EnabledCrypted ^ FBGGEFFJJHB_xor; } set { HNJHPNPFAAN_EnabledCrypted = value ^ FBGGEFFJJHB_xor; } } //0x135D1F0 KPOEEPIMMJP 0x135CB5C NCIEAFEDPBH
 		public int HJAFPEBIBOP_Limit { get { return JEDNBJLMBKE ^ FBGGEFFJJHB_xor; } set { JEDNBJLMBKE = value ^ FBGGEFFJJHB_xor; } } //0x135D288 GNDLHNBPMHN 0x135CD30 HPFNBOKBEDD
 		public int DOOGFEGEKLG_Max { get { return LCGJKAGIFGO_MaxCrypted ^ FBGGEFFJJHB_xor; } set { LCGJKAGIFGO_MaxCrypted = value ^ FBGGEFFJJHB_xor; } } //0x135D320 AECMFIOFFJN 0x135CDCC NGOJJDOCIDG
-		public int JBGEEPFKIGG_Value { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x135D3B8 OLOCMINKGON 0x135CC94 ABAFHIBFKCE
+		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x135D3B8 OLOCMINKGON 0x135CC94 ABAFHIBFKCE
 		public int FPOMEEJFBIG_Order { get { return JDIJODDBCPK_OderCrypted ^ FBGGEFFJJHB_xor; } set { JDIJODDBCPK_OderCrypted = value ^ FBGGEFFJJHB_xor; } } //0x135D450 OEEBAHNAPEC 0x135CE68 BEHAPLPPLNE
 		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0x135D4E8 OEEHBGECGKL 0x135CF04 GHLMHLJJBIG
 
@@ -55,10 +55,10 @@ public class JKDKODAPGBJ_EnergyItem : DIHHCBACKGG_DbSection
 			GFGCCICHBHK data = new GFGCCICHBHK();
 			data.PPEGAKEIEGM_Enabled = JKAECBCNHAN_IsEnabled(array[i].IJEKNCDIIAE, array[i].PLALNIIBLOF, 0);
 			data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC;
-			data.JBGEEPFKIGG_Value = array[i].JBGEEPFKIGG;
+			data.JBGEEPFKIGG_val = array[i].JBGEEPFKIGG;
 			data.HJAFPEBIBOP_Limit = array[i].HJAFPEBIBOP;
 			data.DOOGFEGEKLG_Max = array[i].DOOGFEGEKLG;
-			data.JBGEEPFKIGG_Value = array[i].JBGEEPFKIGG;
+			data.JBGEEPFKIGG_val = array[i].JBGEEPFKIGG;
 			data.FPOMEEJFBIG_Order = array[i].FPOMEEJFBIG;
 			data.EKLIPGELKCL_Rarity = (int)array[i].FBFLDFMFFOH;
 			CDENCMNHNGA_table.Add(data);

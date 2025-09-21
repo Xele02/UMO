@@ -122,7 +122,7 @@ public class GBNDFCEDNMG
 				{
 					if(MEAJMANDEOL_CheckTargetMusic(_LKMHPJKIFDN_md, _LDEGEHAEALK_ServerData, _NDFIEMPPMLF_master, OMNOFMEBLAD, LIKDEHHKFEH))
 					{
-						if(PDPGLIBBCPJ_CheckDifficulty(_NDFIEMPPMLF_master, OMNOFMEBLAD.AKNELONELJK_Difficulty, NPFECBGCJPG))
+						if(PDPGLIBBCPJ_CheckDifficulty(_NDFIEMPPMLF_master, OMNOFMEBLAD.AKNELONELJK_difficulty, NPFECBGCJPG))
 						{
 							if(GCFIJFKDJBE_CheckTargetUnit(_LKMHPJKIFDN_md, _LDEGEHAEALK_ServerData, _NDFIEMPPMLF_master, OMNOFMEBLAD))
 							{
@@ -187,7 +187,7 @@ public class GBNDFCEDNMG
 					{
 						if(OMNOFMEBLAD != null)
 						{
-							if (!PDPGLIBBCPJ_CheckDifficulty(_NDFIEMPPMLF_master, OMNOFMEBLAD.AKNELONELJK_Difficulty, NPFECBGCJPG))
+							if (!PDPGLIBBCPJ_CheckDifficulty(_NDFIEMPPMLF_master, OMNOFMEBLAD.AKNELONELJK_difficulty, NPFECBGCJPG))
 								return false;
 						}
 						if(GCFIJFKDJBE_CheckTargetUnit(_LKMHPJKIFDN_md, _LDEGEHAEALK_ServerData, _NDFIEMPPMLF_master, OMNOFMEBLAD))
@@ -424,7 +424,7 @@ public class GBNDFCEDNMG
 	}
 
 	// // RVA: 0x16A38E0 Offset: 0x16A38E0 VA: 0x16A38E0
-	private static bool PDPGLIBBCPJ_CheckDifficulty(AKIIJBEJOEP _NDFIEMPPMLF_master, int _AKNELONELJK_Difficulty, bool HCBMLNNKKLN)
+	private static bool PDPGLIBBCPJ_CheckDifficulty(AKIIJBEJOEP _NDFIEMPPMLF_master, int _AKNELONELJK_difficulty, bool HCBMLNNKKLN)
 	{
 		switch(_NDFIEMPPMLF_master.DGMIADAEGAI_TargetDifficultyType)
 		{
@@ -432,24 +432,24 @@ public class GBNDFCEDNMG
 				break;
 			case 1:
 				if (HCBMLNNKKLN)
-					return _AKNELONELJK_Difficulty == 0;
-				return _AKNELONELJK_Difficulty > -1;
+					return _AKNELONELJK_difficulty == 0;
+				return _AKNELONELJK_difficulty > -1;
 			case 2:
 				if (HCBMLNNKKLN)
-					return _AKNELONELJK_Difficulty == 1;
-				return _AKNELONELJK_Difficulty > 0;
+					return _AKNELONELJK_difficulty == 1;
+				return _AKNELONELJK_difficulty > 0;
 			case 3:
 				if (HCBMLNNKKLN)
-					return _AKNELONELJK_Difficulty == 2;
-				return _AKNELONELJK_Difficulty > 1;
+					return _AKNELONELJK_difficulty == 2;
+				return _AKNELONELJK_difficulty > 1;
 			case 4:
 				if (HCBMLNNKKLN)
-					return _AKNELONELJK_Difficulty == 3;
-				return _AKNELONELJK_Difficulty > 2;
+					return _AKNELONELJK_difficulty == 3;
+				return _AKNELONELJK_difficulty > 2;
 			case 5:
 				if (HCBMLNNKKLN)
-					return _AKNELONELJK_Difficulty == 4;
-				return _AKNELONELJK_Difficulty > 3;
+					return _AKNELONELJK_difficulty == 4;
+				return _AKNELONELJK_difficulty > 3;
 		}
 		return true;
 	}
@@ -545,13 +545,13 @@ public class GBNDFCEDNMG
 					if(skill.HEKHODDJHAO_P1 > 0)
 					{
 						KFCIIMBBNCD k = _LKMHPJKIFDN_md.FOFADHAENKC_Skill.PEPLECGHBFA_SceneEffectInfo[skill.HEKHODDJHAO_P1 - 1];
-						if (_NDFIEMPPMLF_master.FAHLEOKHBGH_TargetUnitConditionValue == k.INDDJNMPONH_Type)
+						if (_NDFIEMPPMLF_master.FAHLEOKHBGH_TargetUnitConditionValue == k.INDDJNMPONH_type)
 							return true;
 					}
 					if(skill.AKGNPLBDKLN_P2 > 0)
 					{
 						KFCIIMBBNCD k = _LKMHPJKIFDN_md.FOFADHAENKC_Skill.PEPLECGHBFA_SceneEffectInfo[skill.AKGNPLBDKLN_P2 - 1];
-						if (_NDFIEMPPMLF_master.FAHLEOKHBGH_TargetUnitConditionValue == k.INDDJNMPONH_Type)
+						if (_NDFIEMPPMLF_master.FAHLEOKHBGH_TargetUnitConditionValue == k.INDDJNMPONH_type)
 							return true;
 					}
 				}
@@ -747,7 +747,7 @@ public class GBNDFCEDNMG
 					PKNOKJNLPOE_EventRaid ev = LIKDEHHKFEH as PKNOKJNLPOE_EventRaid;
 					if(_NDFIEMPPMLF_master.JJECMJFDEEP_ClearConditionValue == 0)
 						return true;
-					return _NDFIEMPPMLF_master.JJECMJFDEEP_ClearConditionValue == ev.MCEJJBANCDA.INDDJNMPONH_Type;
+					return _NDFIEMPPMLF_master.JJECMJFDEEP_ClearConditionValue == ev.MCEJJBANCDA.INDDJNMPONH_type;
 				}
 			case 30:
 			case 31:
@@ -804,7 +804,7 @@ public class GBNDFCEDNMG
 					return false;
 				return aa3 <= OMNOFMEBLAD.NLKEBAOBJCM_combo;
 			case 3:
-				return aa3 <= fminfo.EMJCHPDJHEI(OMNOFMEBLAD.LFGNLKKFOCD_IsLine6, OMNOFMEBLAD.AKNELONELJK_Difficulty).DLPBHJALHCK_GetScoreRank(OMNOFMEBLAD.KNIFCANOHOC_score);
+				return aa3 <= fminfo.EMJCHPDJHEI(OMNOFMEBLAD.LFGNLKKFOCD_IsLine6, OMNOFMEBLAD.AKNELONELJK_difficulty).DLPBHJALHCK_GetScoreRank(OMNOFMEBLAD.KNIFCANOHOC_score);
 			case 4:
 				return aa3 <= OMNOFMEBLAD.KNIFCANOHOC_score;
 			case 5:
@@ -900,7 +900,7 @@ public class GBNDFCEDNMG
 			case 22:
 				if(Database.Instance.gameSetup.EnableLiveSkip)
 					return false;
-				return _NDFIEMPPMLF_master.JJECMJFDEEP_ClearConditionValue <= fminfo.EMJCHPDJHEI(OMNOFMEBLAD.LFGNLKKFOCD_IsLine6, OMNOFMEBLAD.AKNELONELJK_Difficulty).CCFAAPPKILD_GetRankCombo(OMNOFMEBLAD.NLKEBAOBJCM_combo);
+				return _NDFIEMPPMLF_master.JJECMJFDEEP_ClearConditionValue <= fminfo.EMJCHPDJHEI(OMNOFMEBLAD.LFGNLKKFOCD_IsLine6, OMNOFMEBLAD.AKNELONELJK_difficulty).CCFAAPPKILD_GetRankCombo(OMNOFMEBLAD.NLKEBAOBJCM_combo);
 			case 23:
 				if(LIKDEHHKFEH.HIDHLFCBIDE_EventType != OHCAABOMEOF.KGOGMKMBCPP_EventType.PFKOKHODEGL_EventBattle)
 					return false;
@@ -972,7 +972,7 @@ public class GBNDFCEDNMG
 			case 39:
 				if(OMNOFMEBLAD.OEILJHENAHN_PlayEventType < 1)
 					return false;
-				return aa3 <= fminfo.EMJCHPDJHEI(OMNOFMEBLAD.LFGNLKKFOCD_IsLine6, OMNOFMEBLAD.AKNELONELJK_Difficulty).DLPBHJALHCK_GetScoreRank(OMNOFMEBLAD.KNIFCANOHOC_score);
+				return aa3 <= fminfo.EMJCHPDJHEI(OMNOFMEBLAD.LFGNLKKFOCD_IsLine6, OMNOFMEBLAD.AKNELONELJK_difficulty).DLPBHJALHCK_GetScoreRank(OMNOFMEBLAD.KNIFCANOHOC_score);
 			case 40:
 				if(OMNOFMEBLAD.OEILJHENAHN_PlayEventType < 1)
 					return false;
@@ -1001,7 +1001,7 @@ public class GBNDFCEDNMG
 					return false;
 				if(OMNOFMEBLAD.OEILJHENAHN_PlayEventType < 1)
 					return false;
-				return aa3 <= fminfo.EMJCHPDJHEI(OMNOFMEBLAD.LFGNLKKFOCD_IsLine6, OMNOFMEBLAD.AKNELONELJK_Difficulty).DLPBHJALHCK_GetScoreRank(OMNOFMEBLAD.KNIFCANOHOC_score);
+				return aa3 <= fminfo.EMJCHPDJHEI(OMNOFMEBLAD.LFGNLKKFOCD_IsLine6, OMNOFMEBLAD.AKNELONELJK_difficulty).DLPBHJALHCK_GetScoreRank(OMNOFMEBLAD.KNIFCANOHOC_score);
 			case 48:
 				if(OMNOFMEBLAD.OEILJHENAHN_PlayEventType != (int)LIKDEHHKFEH.HIDHLFCBIDE_EventType)
 					return false;

@@ -18,11 +18,11 @@ public class FHPFLAGNCAF
 	public string IPFEKNMBEBI_InventoryMessage; // 0x14
 	public int NPPGKNGIFGK_price; // 0x18
 	public string NGIKLCDKAMB_FormatedPrice; // 0x1C
-	public string JMEMGIPGGIK_CurrencyCode; // 0x20
+	public string JMEMGIPGGIK_currency_code; // 0x20
 	public int OJIMENABACH_price_amount_micros; // 0x24
 	public string KACECFNECON_extra; // 0x28
 	public long KBFOIECIADN_opened_at; // 0x30
-	public long EGBOHDFBAPB_ClosedAt; // 0x38
+	public long EGBOHDFBAPB_CloseAt; // 0x38
 	public KDDNHFJFENA IPOKMIAHMNF_PlatformProduct; // 0x40
 
 	//// RVA: 0x14E8444 Offset: 0x14E8444 VA: 0x14E8444
@@ -34,11 +34,11 @@ public class FHPFLAGNCAF
 		IPFEKNMBEBI_InventoryMessage = CEDHHAGBIBA.BNCLNFJHEND_ReadString(_IDLHJIOMJBK_Data, "inventory_message");
 		NPPGKNGIFGK_price = CEDHHAGBIBA.GNJBKANDLEE_ReadInt(_IDLHJIOMJBK_Data, "price");
 		NGIKLCDKAMB_FormatedPrice = CEDHHAGBIBA.BNCLNFJHEND_ReadString(_IDLHJIOMJBK_Data, "formatted_price");
-		JMEMGIPGGIK_CurrencyCode = CEDHHAGBIBA.BNCLNFJHEND_ReadString(_IDLHJIOMJBK_Data, "currency_code");
+		JMEMGIPGGIK_currency_code = CEDHHAGBIBA.BNCLNFJHEND_ReadString(_IDLHJIOMJBK_Data, "currency_code");
 		OJIMENABACH_price_amount_micros = CEDHHAGBIBA.GNJBKANDLEE_ReadInt(_IDLHJIOMJBK_Data, "price_amount_micros");
 		KACECFNECON_extra = CEDHHAGBIBA.BNCLNFJHEND_ReadString(_IDLHJIOMJBK_Data, "extra");
 		KBFOIECIADN_opened_at = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(_IDLHJIOMJBK_Data, "opened_at");
-		EGBOHDFBAPB_ClosedAt = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(_IDLHJIOMJBK_Data, "closed_at");
+		EGBOHDFBAPB_CloseAt = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(_IDLHJIOMJBK_Data, "closed_at");
 		IPOKMIAHMNF_PlatformProduct = new KDDNHFJFENA();
 		IPOKMIAHMNF_PlatformProduct.FJGCDPLCIAK_UniqueKey = CEDHHAGBIBA.BNCLNFJHEND_ReadString(_IDLHJIOMJBK_Data["platform_product_sku"], "unique_key");
 		IPOKMIAHMNF_PlatformProduct.JPBAJIPKCPG_Sku = CEDHHAGBIBA.BNCLNFJHEND_ReadString(_IDLHJIOMJBK_Data["platform_product_sku"], "platform_sku");

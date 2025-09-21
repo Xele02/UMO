@@ -20,7 +20,7 @@ public class JNGINLMOJKH_EventGachaTicket : DIHHCBACKGG_DbSection
 		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1B8F7D0 DEMEPMAEJOO 0x1B8EC94 HIGKAIDMOKN
 		public int EJPKFBHNDGI_EvNo { get { return FCDPPFKIHEN ^ FBGGEFFJJHB_xor; } set { FCDPPFKIHEN = value ^ FBGGEFFJJHB_xor; } } //0x1B8F868 BDKLEOCKELL 0x1B8ED30 JILBLBACAEL
 		public int GOBMACPDDCL_EvId { get { return IIBCIOJIODJ ^ FBGGEFFJJHB_xor; } set { IIBCIOJIODJ = value ^ FBGGEFFJJHB_xor; } } //0x1B8F900 ODBGFPGPPAC 0x1B8EDCC LIMKOCNLLPL
-		public int JBGEEPFKIGG_Value { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1B8F998 OLOCMINKGON 0x1B8EE68 ABAFHIBFKCE
+		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1B8F998 OLOCMINKGON 0x1B8EE68 ABAFHIBFKCE
 		public long EMIJNAFJFJO_Expir { get { return LBDKPOLAELH ^ FBGGEFFJJHB_xor; } set { LBDKPOLAELH = value ^ FBGGEFFJJHB_xor; } } //0x1B8FA30 GBGPKONOFGD 0x1B8EFA0 KCFHLAFJJPJ
 		public int PLALNIIBLOF_en { get { return HNJHPNPFAAN_EnabledCrypted ^ FBGGEFFJJHB_xor; } set { HNJHPNPFAAN_EnabledCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1B8FACC JPCJNLHHIPE 0x1B8F044 JJFJNEJLBDG
 		public int IJEKNCDIIAE_MVer { get { return GNGNIKNNCNH_MVerCrypted ^ FBGGEFFJJHB_xor; } set { GNGNIKNNCNH_MVerCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1B8FB64 KJIMMIBDCIL 0x1B8F0E0 DMEGNOKIKCD
@@ -59,7 +59,7 @@ public class JNGINLMOJKH_EventGachaTicket : DIHHCBACKGG_DbSection
 			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
 			data.EJPKFBHNDGI_EvNo = (int)array[i].EJPKFBHNDGI;
 			data.GOBMACPDDCL_EvId = (int)array[i].GOBMACPDDCL;
-			data.JBGEEPFKIGG_Value = (int)array[i].JBGEEPFKIGG;
+			data.JBGEEPFKIGG_val = (int)array[i].JBGEEPFKIGG;
 			data.DOOGFEGEKLG_Max = (int)array[i].DOOGFEGEKLG;
 			data.EMIJNAFJFJO_Expir = array[i].EMIJNAFJFJO;
 			data.PLALNIIBLOF_en = (int)array[i].PLALNIIBLOF;

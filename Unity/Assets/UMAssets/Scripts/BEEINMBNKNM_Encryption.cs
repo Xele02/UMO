@@ -88,7 +88,7 @@ public class BEEINMBNKNM_Encryption
 	//private int NEKCJNMGNID(int PKLPKMLGFGK) { }
 
 	// RVA: 0xC73ED8 Offset: 0xC73ED8 VA: 0xC73ED8
-	//public string AGKMBDIJHID(int _INDDJNMPONH_Type) { }
+	//public string AGKMBDIJHID(int _INDDJNMPONH_type) { }
 
 	// RVA: 0xC73F54 Offset: 0xC73F54 VA: 0xC73F54
 	public static uint GKBODMNBFJM(uint _IOIMHJAOKOO_Hash, byte[] _DBBGALAPFGC_Data)

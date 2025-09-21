@@ -228,12 +228,12 @@ namespace XeApp.Game.Common
 				KEEKEFEPKFN_GrowItem.MDFGLOIGAFE_GrowItemData item = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NKDGLGCAPEI_GrowItem.CDENCMNHNGA_table[i];
 				if(item.PPEGAKEIEGM_Enabled > 1)
 				{
-					if(item.INDDJNMPONH_Type != a)
+					if(item.INDDJNMPONH_type != a)
 					{
 						if (prev != null)
 							m_growthList.Add(prev);
 						prev = new PopupGrowItemIconItem();
-						a = item.INDDJNMPONH_Type;
+						a = item.INDDJNMPONH_type;
 					}
 					PCKLFFNPPLF p = new PCKLFFNPPLF();
 					p.NCMOCCDGKBP(m_growItemData, EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.HLCHKCJLEGK_GrowItem, item.PPFNGGCBJKC_id));

@@ -246,8 +246,8 @@ namespace XeApp.Game.DownLoad
 		//// RVA: 0x982AF4 Offset: 0x982AF4 VA: 0x982AF4
 		private string GetNotificationMessage(MBLFHJJEHLH_AnketoMgr.CGBKENNCMMC data)
 		{
-			string str = MessageManager.Instance.GetMessage("menu", string.Format("questionary_notification_{0:D3}", data.INDDJNMPONH_Type - 1));
-			if(data.INDDJNMPONH_Type == 2)
+			string str = MessageManager.Instance.GetMessage("menu", string.Format("questionary_notification_{0:D3}", data.INDDJNMPONH_type - 1));
+			if(data.INDDJNMPONH_type == 2)
 			{
 				if (data.DOOGFEGEKLG_Max > 2)
 					str = Smart.Format(str, data.DOOGFEGEKLG_Max);

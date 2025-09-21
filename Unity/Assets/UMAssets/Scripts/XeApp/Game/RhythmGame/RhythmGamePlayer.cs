@@ -2823,7 +2823,7 @@ namespace XeApp.Game.RhythmGame
 			clearSetup = new JGEOBNENMAH.HAJIFNABIFF();
 			clearSetup.KLCIIHKFPPO_StoryMusicId = Database.Instance.gameSetup.musicInfo.storyMusicId;
 			clearSetup.GHBPLHBNMBK_FreeMusicId = Database.Instance.gameSetup.musicInfo.freeMusicId;
-			clearSetup.AKNELONELJK_Difficulty = (int)Database.Instance.gameSetup.musicInfo.difficultyType;
+			clearSetup.AKNELONELJK_difficulty = (int)Database.Instance.gameSetup.musicInfo.difficultyType;
 			clearSetup.LFGNLKKFOCD_IsLine6 = Database.Instance.gameSetup.musicInfo.IsLine6Mode;
 			clearSetup.MNNHHJBBICA_GameEventType = (int)Database.Instance.gameSetup.musicInfo.gameEventType;
 			clearSetup.MFJKNCACBDG_OpenEventType = (int)Database.Instance.gameSetup.musicInfo.openEventType;

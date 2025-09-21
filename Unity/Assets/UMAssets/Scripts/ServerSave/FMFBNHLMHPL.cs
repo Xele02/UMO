@@ -258,10 +258,10 @@ public class FMFBNHLMHPL_EventAprilFool : KLFDBFMNLBL_ServerSaveBlock
 						int c2 = nxsq.HNBFOAJIIAL_Count;
 						if (c2 > 0)
 							c2 = 1;
-						IBCGPBOGOGP_ReadIntArray(data, "nxsq", 0, c2, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+						IBCGPBOGOGP_ReadIntArray(data, "nxsq", 0, c2, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 						{
 							//0x119DF5C
-							CCBEKGNDDBE.AAJOOBMPOEP[_OIPCCBHIKIA_index].DNJEJEANJGL_Value = _JBGEEPFKIGG_Value;
+							CCBEKGNDDBE.AAJOOBMPOEP[_OIPCCBHIKIA_index].DNJEJEANJGL_Value = _JBGEEPFKIGG_val;
 						}, ref isInvalid);
 					}
 				}

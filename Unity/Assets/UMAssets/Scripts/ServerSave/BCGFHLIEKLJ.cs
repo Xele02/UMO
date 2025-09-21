@@ -89,7 +89,7 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 		public long AEHDMHDCOAH; // 0x58
 		public long GKBHBHNPMED; // 0x60
 
-		public int JBGEEPFKIGG_Value { get { return ICKOHEDLEFP_ValueCrypted ^ ENOBDCFHELD; } set { ICKOHEDLEFP_ValueCrypted = value ^ ENOBDCFHELD; DNNBPDILAKL = value ^ FCEJCHGLFGN; } } //0xF30DD4 OLOCMINKGON 0xF32420 ABAFHIBFKCE
+		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ ENOBDCFHELD; } set { ICKOHEDLEFP_ValueCrypted = value ^ ENOBDCFHELD; DNNBPDILAKL = value ^ FCEJCHGLFGN; } } //0xF30DD4 OLOCMINKGON 0xF32420 ABAFHIBFKCE
 		public int ANAJIAENLNB_Level { get { return MBCPMFPKNBA_LevelCrypted ^ ENOBDCFHELD; } set { MBCPMFPKNBA_LevelCrypted = value ^ ENOBDCFHELD; DKOGOBKOGBM = value ^ FCEJCHGLFGN; } } //0xF30DE4 MMOMNMBKHJF 0xF32438 FEHNFGPFINK
 		public long FOONCJDLLIK_ChargeTime { get { return MCPHOEIDJAD ^ JHOLGGAKMOH; } set { MCPHOEIDJAD = value ^ JHOLGGAKMOH; LPKAMAJLKPP = value ^ BCGMFGMCPCP; } } //0xF30DF4 BONPKDDFHNB 0xF32450 OEAGMCNGNLL
 		public long EMHCHMHMFHJ_ChargeTimeOffset { get { return AEHDMHDCOAH ^ JHOLGGAKMOH; } set { AEHDMHDCOAH = value ^ JHOLGGAKMOH; GKBHBHNPMED = value ^ BCGMFGMCPCP; } } //0xF30E08 HEOOBGPDPND 0xF32474 KFMNIKFMHOD
@@ -106,7 +106,7 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 			base.LHPDDGIJKNB_Reset(_PPFNGGCBJKC_id);
 			FOONCJDLLIK_ChargeTime = 0;
 			EMHCHMHMFHJ_ChargeTimeOffset = 0;
-			JBGEEPFKIGG_Value = 0;
+			JBGEEPFKIGG_val = 0;
 			ANAJIAENLNB_Level = 1;
 		}
 
@@ -114,7 +114,7 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 		public GNGFGEIAGJL ODDIHGPONFL_Copy(GNGFGEIAGJL GPBJHKLFCEP)
 		{
 			base.ODDIHGPONFL_Copy(GPBJHKLFCEP);
-			JBGEEPFKIGG_Value = GPBJHKLFCEP.JBGEEPFKIGG_Value;
+			JBGEEPFKIGG_val = GPBJHKLFCEP.JBGEEPFKIGG_val;
 			ANAJIAENLNB_Level = GPBJHKLFCEP.ANAJIAENLNB_Level;
 			FOONCJDLLIK_ChargeTime = GPBJHKLFCEP.FOONCJDLLIK_ChargeTime;
 			EMHCHMHMFHJ_ChargeTimeOffset = GPBJHKLFCEP.EMHCHMHMFHJ_ChargeTimeOffset;
@@ -127,7 +127,7 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 		{
 			if(!base.AGBOGBEOFME(OIKJFMGEICL))
 				return false;
-			return JBGEEPFKIGG_Value != OIKJFMGEICL.JBGEEPFKIGG_Value || 
+			return JBGEEPFKIGG_val != OIKJFMGEICL.JBGEEPFKIGG_val || 
 				ANAJIAENLNB_Level != OIKJFMGEICL.ANAJIAENLNB_Level || 
 				FOONCJDLLIK_ChargeTime != OIKJFMGEICL.FOONCJDLLIK_ChargeTime || 
 				EMHCHMHMFHJ_ChargeTimeOffset != OIKJFMGEICL.EMHCHMHMFHJ_ChargeTimeOffset;
@@ -137,7 +137,7 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 		public bool DFIGPDCBAPB_IsNotInitialized()
 		{
 			return ANAJIAENLNB_Level == 1 && BFINGCJHOHI_Count == 0 && 
-				!CADENLBDAEB_IsNew && JBGEEPFKIGG_Value == 0 && FOONCJDLLIK_ChargeTime == 0;
+				!CADENLBDAEB_IsNew && JBGEEPFKIGG_val == 0 && FOONCJDLLIK_ChargeTime == 0;
 		}
 
 		//// RVA: 0xF34460 Offset: 0xF34460 VA: 0xF34460
@@ -296,13 +296,13 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 			for (int i = 0; i < NBKAMFFIOOG_Sp.Count; i++)
 			{
 				if (NBKAMFFIOOG_Sp[i].BFINGCJHOHI_Count != 0 || NBKAMFFIOOG_Sp[i].CADENLBDAEB_IsNew ||
-					NBKAMFFIOOG_Sp[i].FOONCJDLLIK_ChargeTime != 0 || NBKAMFFIOOG_Sp[i].JBGEEPFKIGG_Value != 0 ||
+					NBKAMFFIOOG_Sp[i].FOONCJDLLIK_ChargeTime != 0 || NBKAMFFIOOG_Sp[i].JBGEEPFKIGG_val != 0 ||
 					NBKAMFFIOOG_Sp[i].ANAJIAENLNB_Level != 1)
 				{
 					EDOHBJAPLPF_JsonData data3 = new EDOHBJAPLPF_JsonData();
 					data3[AFEHLCGHAEE_Strings.PPFNGGCBJKC_id] = NBKAMFFIOOG_Sp[i].PPFNGGCBJKC_id;
 					data3[AFEHLCGHAEE_Strings.BFINGCJHOHI_Count] = NBKAMFFIOOG_Sp[i].BFINGCJHOHI_Count;
-					data3[AFEHLCGHAEE_Strings.JBGEEPFKIGG_Value] = NBKAMFFIOOG_Sp[i].JBGEEPFKIGG_Value;
+					data3[AFEHLCGHAEE_Strings.JBGEEPFKIGG_val] = NBKAMFFIOOG_Sp[i].JBGEEPFKIGG_val;
 					data3[AFEHLCGHAEE_Strings.ANAJIAENLNB_Level] = NBKAMFFIOOG_Sp[i].ANAJIAENLNB_Level;
 					data3[AFEHLCGHAEE_Strings.MKHBDJBODON_c_tm] = NBKAMFFIOOG_Sp[i].FOONCJDLLIK_ChargeTime;
 					data3[AFEHLCGHAEE_Strings.POBGGHEKLIB_c_tm_ofs] = NBKAMFFIOOG_Sp[i].EMHCHMHMFHJ_ChargeTimeOffset;
@@ -459,7 +459,7 @@ public class BCGFHLIEKLJ_DecoItem : KLFDBFMNLBL_ServerSaveBlock
 							data.BFINGCJHOHI_Count = CJAENOMGPDA_ReadInt(b2, AFEHLCGHAEE_Strings.BFINGCJHOHI_Count, 0, ref isInvalid);
 							if (data.BFINGCJHOHI_Count > 0)
 								data.BFINGCJHOHI_Count = 1;
-							data.JBGEEPFKIGG_Value = CJAENOMGPDA_ReadInt(b2, AFEHLCGHAEE_Strings.JBGEEPFKIGG_Value, 0, ref isInvalid);
+							data.JBGEEPFKIGG_val = CJAENOMGPDA_ReadInt(b2, AFEHLCGHAEE_Strings.JBGEEPFKIGG_val, 0, ref isInvalid);
 							data.ANAJIAENLNB_Level = CJAENOMGPDA_ReadInt(b2, AFEHLCGHAEE_Strings.ANAJIAENLNB_Level, 1, ref isInvalid);
 							data.FOONCJDLLIK_ChargeTime = DKMPHAPBDLH_ReadLong(b2, AFEHLCGHAEE_Strings.MKHBDJBODON_c_tm, 0, ref isInvalid);
 							data.EMHCHMHMFHJ_ChargeTimeOffset = DKMPHAPBDLH_ReadLong(b2, AFEHLCGHAEE_Strings.POBGGHEKLIB_c_tm_ofs, 0, ref isInvalid);

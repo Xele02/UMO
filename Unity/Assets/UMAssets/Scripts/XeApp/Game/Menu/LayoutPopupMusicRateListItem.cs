@@ -88,7 +88,7 @@ namespace XeApp.Game.Menu
 			SetFrameUv(s_frameAttrUvFormat[view.FKDCCLPGKDK_JacketAttr]);
 			SetIconUv(s_iconAttrUvFormat[view.FKDCCLPGKDK_JacketAttr]);
 			SetRating(view.HKIAHOEEMLC_PrevScore, view.LPALNMHPDKK_Score);
-			m_imageDifficulty.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData("cmn_music_diff_" + (view.LFGNLKKFOCD_IsLine6 ? (int)view.AKNELONELJK_Difficulty + 3 : (int)view.AKNELONELJK_Difficulty + 1).ToString("D2")));
+			m_imageDifficulty.uvRect = LayoutUGUIUtility.MakeUnityUVRect(m_uvMan.GetUVData("cmn_music_diff_" + (view.LFGNLKKFOCD_IsLine6 ? (int)view.AKNELONELJK_difficulty + 3 : (int)view.AKNELONELJK_difficulty + 1).ToString("D2")));
 			GameManager.Instance.UnionTextureManager.GetTexture(!view.LFGNLKKFOCD_IsLine6 ? "cmn_tex_pack" : "cmn_tex_02_pack").Set(m_imageDifficulty);
 			m_imageJacket.enabled = false;
 			m_JacketId = view.JNCPEGJGHOG_JacketId;

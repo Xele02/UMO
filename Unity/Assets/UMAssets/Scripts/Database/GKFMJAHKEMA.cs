@@ -67,9 +67,9 @@ public class GKFMJAHKEMA_ValSkill : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xAB07E4 Offset: 0xAB07E4 VA: 0xAB07E4
-		public void JPNADFKGNJH(int _JBGEEPFKIGG_Value)
+		public void JPNADFKGNJH(int _JBGEEPFKIGG_val)
 		{
-			DNHMKIAGFAM.Add(_JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor);
+			DNHMKIAGFAM.Add(_JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor);
 		}
 
 		//// RVA: 0xAB23B4 Offset: 0xAB23B4 VA: 0xAB23B4
@@ -83,7 +83,7 @@ public class GKFMJAHKEMA_ValSkill : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xAB2480 Offset: 0xAB2480 VA: 0xAB2480
-		//public void OKBPHBEBHAN(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value) { }
+		//public void OKBPHBEBHAN(int IOPHIHFOOEP, int _JBGEEPFKIGG_val) { }
 
 		// RVA: 0xAB0610 Offset: 0xAB0610 VA: 0xAB0610
 		public GBDONNIHJHG()
@@ -121,9 +121,9 @@ public class GKFMJAHKEMA_ValSkill : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xAB0ABC Offset: 0xAB0ABC VA: 0xAB0ABC
-		public void GFEGKFCLAPM(int _JBGEEPFKIGG_Value)
+		public void GFEGKFCLAPM(int _JBGEEPFKIGG_val)
 		{
-			ONJNHLABLLC.Add(_JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor);
+			ONJNHLABLLC.Add(_JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor);
 		}
 
 		//// RVA: 0xAB18E8 Offset: 0xAB18E8 VA: 0xAB18E8
@@ -138,7 +138,7 @@ public class GKFMJAHKEMA_ValSkill : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xAB19B4 Offset: 0xAB19B4 VA: 0xAB19B4
-		//public void OIPMPJDOFAG(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value) { }
+		//public void OIPMPJDOFAG(int IOPHIHFOOEP, int _JBGEEPFKIGG_val) { }
 
 		//// RVA: 0xAB0B40 Offset: 0xAB0B40 VA: 0xAB0B40
 		public void LIHOGOPMPFO()
@@ -147,9 +147,9 @@ public class GKFMJAHKEMA_ValSkill : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xAB0BB8 Offset: 0xAB0BB8 VA: 0xAB0BB8
-		public void ELLLMJAMBOF(int _JBGEEPFKIGG_Value)
+		public void ELLLMJAMBOF(int _JBGEEPFKIGG_val)
 		{
-			HKLBJCBAIEN.Add(_JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor);
+			HKLBJCBAIEN.Add(_JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor);
 		}
 
 		//// RVA: 0xAB1A80 Offset: 0xAB1A80 VA: 0xAB1A80
@@ -164,7 +164,7 @@ public class GKFMJAHKEMA_ValSkill : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xAB1B4C Offset: 0xAB1B4C VA: 0xAB1B4C
-		//public void IDLIHDFEONH(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value) { }
+		//public void IDLIHDFEONH(int IOPHIHFOOEP, int _JBGEEPFKIGG_val) { }
 
 		//// RVA: 0xAB0C3C Offset: 0xAB0C3C VA: 0xAB0C3C
 		public void LIEBGPMFBDF()
@@ -173,9 +173,9 @@ public class GKFMJAHKEMA_ValSkill : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xAB0CB4 Offset: 0xAB0CB4 VA: 0xAB0CB4
-		public void DNCBOGHFNOH(int _JBGEEPFKIGG_Value)
+		public void DNCBOGHFNOH(int _JBGEEPFKIGG_val)
 		{
-			BKKNICIKHKI.Add(_JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor);
+			BKKNICIKHKI.Add(_JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor);
 		}
 
 		//// RVA: 0xAB1C18 Offset: 0xAB1C18 VA: 0xAB1C18
@@ -190,7 +190,7 @@ public class GKFMJAHKEMA_ValSkill : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xAB1CE4 Offset: 0xAB1CE4 VA: 0xAB1CE4
-		//public void EJNBIPBGOJD(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value) { }
+		//public void EJNBIPBGOJD(int IOPHIHFOOEP, int _JBGEEPFKIGG_val) { }
 
 		//// RVA: 0xAB0D38 Offset: 0xAB0D38 VA: 0xAB0D38
 		public void FIFBLGBHFGL()
@@ -199,9 +199,9 @@ public class GKFMJAHKEMA_ValSkill : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xAB0DB0 Offset: 0xAB0DB0 VA: 0xAB0DB0
-		public void FIHBIFNEALC(int _JBGEEPFKIGG_Value)
+		public void FIHBIFNEALC(int _JBGEEPFKIGG_val)
 		{
-			GEECBABNMHK.Add(_JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor);
+			GEECBABNMHK.Add(_JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor);
 		}
 
 		//// RVA: 0xAB1DB0 Offset: 0xAB1DB0 VA: 0xAB1DB0
@@ -216,7 +216,7 @@ public class GKFMJAHKEMA_ValSkill : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xAB1E7C Offset: 0xAB1E7C VA: 0xAB1E7C
-		//public void PJLPLKNPMOG(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value) { }
+		//public void PJLPLKNPMOG(int IOPHIHFOOEP, int _JBGEEPFKIGG_val) { }
 
 		//// RVA: 0xAB0868 Offset: 0xAB0868 VA: 0xAB0868
 		public FCHIPJMDHBM()
@@ -251,9 +251,9 @@ public class GKFMJAHKEMA_ValSkill : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xAB1000 Offset: 0xAB1000 VA: 0xAB1000
-		public void OPFHCMDOHHC(int _JBGEEPFKIGG_Value)
+		public void OPFHCMDOHHC(int _JBGEEPFKIGG_val)
 		{
-			JKLOKAKFJKP.Add(_JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor);
+			JKLOKAKFJKP.Add(_JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor);
 		}
 
 		//// RVA: 0xAB1F48 Offset: 0xAB1F48 VA: 0xAB1F48
@@ -270,7 +270,7 @@ public class GKFMJAHKEMA_ValSkill : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xAB2014 Offset: 0xAB2014 VA: 0xAB2014
-		//public void JFKBPEBPGCK(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value) { }
+		//public void JFKBPEBPGCK(int IOPHIHFOOEP, int _JBGEEPFKIGG_val) { }
 
 		//// RVA: 0xAB1084 Offset: 0xAB1084 VA: 0xAB1084
 		public void OIKGBOJBEIL()
@@ -279,9 +279,9 @@ public class GKFMJAHKEMA_ValSkill : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xAB10FC Offset: 0xAB10FC VA: 0xAB10FC
-		public void NGCIEKBKPJJ(int _JBGEEPFKIGG_Value)
+		public void NGCIEKBKPJJ(int _JBGEEPFKIGG_val)
 		{
-			IFEHKNJONPL_CountCrypted.Add(_JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor);
+			IFEHKNJONPL_CountCrypted.Add(_JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor);
 		}
 
 		//// RVA: 0xAB20E0 Offset: 0xAB20E0 VA: 0xAB20E0
@@ -298,7 +298,7 @@ public class GKFMJAHKEMA_ValSkill : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xAB21AC Offset: 0xAB21AC VA: 0xAB21AC
-		//public void BHJNIOKNDLM(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value) { }
+		//public void BHJNIOKNDLM(int IOPHIHFOOEP, int _JBGEEPFKIGG_val) { }
 
 		//// RVA: 0xAB0E34 Offset: 0xAB0E34 VA: 0xAB0E34
 		public FIKGJJDIBPH()

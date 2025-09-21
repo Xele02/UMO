@@ -37,7 +37,7 @@ public class PLFJMDBBAJD
             FJOLNJLLJEJ_Rank = p.FJOLNJLLJEJ_Rank;
             MPKBLMCNHOM_MissionIsSpecial = p.IKICLMGFFPB_IsSpecial;
             HPPDFBKEJCG_BgId = p.HPPDFBKEJCG_BgId;
-            OPFGFINHFCE_name = ev.AGEJGHGEGFF_GetBossName(p.INDDJNMPONH_Type);
+            OPFGFINHFCE_name = ev.AGEJGHGEGFF_GetBossName(p.INDDJNMPONH_type);
 			if(p2 != null)
 			{
 				NEAPOLIIELG_MvpRewards = p2.NEAPOLIIELG_MvpRewards;
@@ -60,7 +60,7 @@ public class PLFJMDBBAJD
 				FJOLNJLLJEJ_Rank = _GJFJLEOGFLD_RaidBoss.FJOLNJLLJEJ_Rank;
 				MPKBLMCNHOM_MissionIsSpecial = _GJFJLEOGFLD_RaidBoss.IKICLMGFFPB_IsSpecial;
 				HPPDFBKEJCG_BgId = _GJFJLEOGFLD_RaidBoss.HPPDFBKEJCG_BgId;
-				OPFGFINHFCE_name = ev.AGEJGHGEGFF_GetBossName(_GJFJLEOGFLD_RaidBoss.INDDJNMPONH_Type);
+				OPFGFINHFCE_name = ev.AGEJGHGEGFF_GetBossName(_GJFJLEOGFLD_RaidBoss.INDDJNMPONH_type);
 				if(ev.KONJMFICNJJ_RewardsInfo != null)
 				{
 					NEAPOLIIELG_MvpRewards = ev.KONJMFICNJJ_RewardsInfo.NEAPOLIIELG_MvpRewards;

@@ -5,7 +5,7 @@ public class CPHJGFLEFNF
 {
 	public int GOIKCKHMBDL_FreeMusicId; // 0x8
 	public int LKNCHJCLLFN_MusicId; // 0xC
-	public int AKNELONELJK_Difficulty; // 0x10
+	public int AKNELONELJK_difficulty; // 0x10
 	public int LIDKENJKLGA_IsLine6; // 0x14
 	public int HBODCMLFDOB_Result; // 0x18
 	public int HGACHHHCHHM_ContinueCount; // 0x1C

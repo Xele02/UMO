@@ -373,10 +373,10 @@ public class OKLMJPBJHKL_EventMission : KLFDBFMNLBL_ServerSaveBlock
 						FBCJICEPLED[i].PPHEALAJAKD_MiSet = CJAENOMGPDA_ReadInt(block[i], "mi_set", 0, ref isInvalid);
 						FBCJICEPLED[i].KGGPBOEPKCE_PrevSel = CJAENOMGPDA_ReadInt(block[i], "prev_sel", 0, ref isInvalid) != 0;
 						FBCJICEPLED[i].MHKICPIMFEI_PlayCount = CJAENOMGPDA_ReadInt(block[i], "play_cnt", 0, ref isInvalid);
-						IBCGPBOGOGP_ReadIntArray(block[i], AFEHLCGHAEE_Strings.CJCJBKIMLOB_t_rcv, 0, 100, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+						IBCGPBOGOGP_ReadIntArray(block[i], AFEHLCGHAEE_Strings.CJCJBKIMLOB_t_rcv, 0, 100, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 						{
 							//0x14AC99C
-							FBCJICEPLED[i].IPNLHCLFIDB(_OIPCCBHIKIA_index, _JBGEEPFKIGG_Value != 0);
+							FBCJICEPLED[i].IPNLHCLFIDB(_OIPCCBHIKIA_index, _JBGEEPFKIGG_val != 0);
 						}, ref isInvalid);
 						if(block[i].BBAJPINMOEP_Contains(AFEHLCGHAEE_Strings.NNMPGOAGEOL_quests))
 						{

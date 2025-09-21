@@ -65,9 +65,9 @@ public class FJGOKILCBJA
 			for(int i = 0; i < IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.CDENCMNHNGA_table.Count; i++)
 			{
 				HHJHIFJIKAC_BonusVc.MNGJPJBCMBH bonusVc = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.NBKNAAPBFFL_BonusVc.CDENCMNHNGA_table[i];
-				if(bonusVc.INDDJNMPONH_Type == 1)
+				if(bonusVc.INDDJNMPONH_type == 1)
 				{
-					if(bonusVc.JBGEEPFKIGG_Value == dbItem3.JPGALGPNJAI_VcId)
+					if(bonusVc.JBGEEPFKIGG_val == dbItem3.JPGALGPNJAI_VcId)
 					{
 						JPJMHLNOIAJ_ItemCostFullId = EKLNMHFCAOI.GJEEGMCBGGM_GetItemFullId(EKLNMHFCAOI.FKGCBLHOOCL_Category.IBBDMIFICCN_BonusVC, bonusVc.PPFNGGCBJKC_id);
 						break;
@@ -536,7 +536,7 @@ public class FJGOKILCBJA
 		KBPDNHOKEKD_ProductId k = GLHFDCKOJDN.LBDOLHGDIEB(KAPMOPMDHJE_label);
 		if(k != null)
 		{
-			JIHKOPIENAC = Utility.GetLocalDateTime(k.EGBOHDFBAPB_ClosedAt);
+			JIHKOPIENAC = Utility.GetLocalDateTime(k.EGBOHDFBAPB_CloseAt);
 			ELEPHBOKIGK_Limit = k.HMFDJHEEGNN_BuyLimit;
 			DKEPCPPCIKA_Price = k.NPPGKNGIFGK_price;
 			JLENMGOCHDG_Count = k.GIEBJDKLCDH_BoughtQuantity;

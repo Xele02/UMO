@@ -416,7 +416,7 @@ public class NHMKBENBIPI
 	}
 
 	//// RVA: 0x1891E40 Offset: 0x1891E40 VA: 0x1891E40
-	private bool ALDMHFCFECK(int _INDDJNMPONH_Type, float LNAHJANMJNM)
+	private bool ALDMHFCFECK(int _INDDJNMPONH_type, float LNAHJANMJNM)
 	{
 		return true;
 	}
@@ -451,7 +451,7 @@ public class NHMKBENBIPI
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 			};
-			PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+			PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 			{
 				//0x18935F4
 			}, null, null, null, true, true, false, null, null, null, null, null);
@@ -548,11 +548,11 @@ public class NHMKBENBIPI
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Cancel, Type = PopupButton.ButtonType.Negative },
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Ok, Type = PopupButton.ButtonType.Positive }
 			};
-			PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+			PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 			{
 				//0x18937B8
 				NDGCIEKAIIL = false;
-				if (_INDDJNMPONH_Type == PopupButton.ButtonType.Negative)
+				if (_INDDJNMPONH_type == PopupButton.ButtonType.Negative)
 				{
 					if (NIMPEHIECJH != null)
 						NIMPEHIECJH();
@@ -576,7 +576,7 @@ public class NHMKBENBIPI
 			{
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Close, Type = PopupButton.ButtonType.Negative }
 			};
-			PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
+			PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel LHFGEOAJAAL) =>
 			{
 				//0x189379C
 				NDGCIEKAIIL = false;

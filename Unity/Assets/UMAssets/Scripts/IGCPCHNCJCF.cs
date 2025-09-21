@@ -80,7 +80,7 @@ public class IGCPCHNCJCF
 		long time = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.FJDBNGEPKHL_Time.KMEFBNBFJHI_GetServerTime();
 		if(time >= PPMJJBAGPOG.KBFOIECIADN_opened_at)
 		{
-			if(PPMJJBAGPOG.EGBOHDFBAPB_ClosedAt >= time)
+			if(PPMJJBAGPOG.EGBOHDFBAPB_CloseAt >= time)
 			{
 				PMNKDBLBFHM = NKGJPJPHLIF.HHCJCDFCLOB.IBLPICFDGOF_ServerRequester.IFFNCAFNEAG_AddRequest(new DOLDMCAMEOD_RequestRemainingForCurrencyIds());
 				PMNKDBLBFHM.CGCFENMHJIM_Ids = new List<int>();

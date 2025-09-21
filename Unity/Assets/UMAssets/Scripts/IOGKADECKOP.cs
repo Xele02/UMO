@@ -226,7 +226,7 @@ public class IOGKADECKOP
 				{
 					new ButtonInfo() { Label = PopupButton.ButtonLabel.Retry, Type = PopupButton.ButtonType.Positive }
 				};
-				PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel _KAPMOPMDHJE_label) =>
+				PopupWindowManager.Show(s, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel _KAPMOPMDHJE_label) =>
 				{
 					//0xA08F48
 					HFPLKFCPHDK_ = false;
@@ -593,10 +593,10 @@ public class IOGKADECKOP
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Disagree, Type = PopupButton.ButtonType.Negative },
 				new ButtonInfo() { Label = PopupButton.ButtonLabel.Agree, Type = PopupButton.ButtonType.Positive }
 			};
-			PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_Type, PopupButton.ButtonLabel _KAPMOPMDHJE_label) =>
+			PopupWindowManager.Show(setting, (PopupWindowControl HEIEPLBJGJA, PopupButton.ButtonType _INDDJNMPONH_type, PopupButton.ButtonLabel _KAPMOPMDHJE_label) =>
 			{
 				//0xA090F0
-				if (_INDDJNMPONH_Type == PopupButton.ButtonType.Positive)
+				if (_INDDJNMPONH_type == PopupButton.ButtonType.Positive)
 					CILPABJCBPH_AgreeTos = true;
 			}, null, null, null, true, true, false, () =>
 			{
@@ -1277,28 +1277,28 @@ public class IOGKADECKOP
 		bool DHGMILEPDKF_IsRankingError = false;
 		if (JICFCEAHCDJ == null || pstatus == null)
 			yield break;
-		bool BEKAMBBOLBO_IsDone = false;
+		bool BEKAMBBOLBO_Done = false;
 		bool CNAIDEAFAAM_Error = false;
 		OEGIPPCADNA.HHCJCDFCLOB.MJFKJHJJLMN_GetRanks(0, false, () =>
 		{
 			//0xA09640
-			BEKAMBBOLBO_IsDone = true;
+			BEKAMBBOLBO_Done = true;
 		}, () =>
 		{
 			//0xA0964C
-			BEKAMBBOLBO_IsDone = true;
+			BEKAMBBOLBO_Done = true;
 			DHGMILEPDKF_IsRankingError = true;
 		}, () =>
 		{
 			//0xA09678
-			BEKAMBBOLBO_IsDone = true;
+			BEKAMBBOLBO_Done = true;
 			CNAIDEAFAAM_Error = true;
 		});
-		while (!BEKAMBBOLBO_IsDone)
+		while (!BEKAMBBOLBO_Done)
 			yield return null;
 		if(!CNAIDEAFAAM_Error)
 		{
-			BEKAMBBOLBO_IsDone = false;
+			BEKAMBBOLBO_Done = false;
 			CNAIDEAFAAM_Error = false;
 			if(!DHGMILEPDKF_IsRankingError)
 			{
@@ -1311,18 +1311,18 @@ public class IOGKADECKOP
 			OEGIPPCADNA.HHCJCDFCLOB.FGMOMBKGCNF_UpdateTotalUtaRate(JICFCEAHCDJ.EAHPKPADCPL_TotalUtaRate, () =>
 			{
 				//0xA09684
-				BEKAMBBOLBO_IsDone = true;
+				BEKAMBBOLBO_Done = true;
 			}, () =>
 			{
 				//0xA09690
-				BEKAMBBOLBO_IsDone = true;
+				BEKAMBBOLBO_Done = true;
 			}, () =>
 			{
 				//0xA0969C
-				BEKAMBBOLBO_IsDone = true;
+				BEKAMBBOLBO_Done = true;
 				CNAIDEAFAAM_Error = true;
 			});
-			while (!BEKAMBBOLBO_IsDone)
+			while (!BEKAMBBOLBO_Done)
 				yield return null;
 			if (!CNAIDEAFAAM_Error)
 				yield break;

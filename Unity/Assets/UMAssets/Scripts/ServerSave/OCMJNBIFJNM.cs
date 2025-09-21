@@ -308,7 +308,7 @@ public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 	// public List<OCMJNBIFJNM.JPOHOLBBFGP> CCMINIGMJDM(BOPFPIHGJMD.IGHPDAGKIKO _CMCKNKKCNDK_Status) { }
 
 	// // RVA: 0x1B317AC Offset: 0x1B317AC VA: 0x1B317AC
-	// public List<OCMJNBIFJNM.JPOHOLBBFGP> DOFBNAIFFAN(BOPFPIHGJMD.MLBMHDCCGHI _INDDJNMPONH_Type) { }
+	// public List<OCMJNBIFJNM.JPOHOLBBFGP> DOFBNAIFFAN(BOPFPIHGJMD.MLBMHDCCGHI _INDDJNMPONH_type) { }
 
 	// // RVA: 0x1B31994 Offset: 0x1B31994 VA: 0x1B31994
 	public int MIPAIEGENEA(int IOPHIHFOOEP)
@@ -323,11 +323,11 @@ public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 	}
 
 	// // RVA: 0x1B319F4 Offset: 0x1B319F4 VA: 0x1B319F4
-	public void ALANKFMEIPK(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value)
+	public void ALANKFMEIPK(int IOPHIHFOOEP, int _JBGEEPFKIGG_val)
 	{
 		if(IOPHIHFOOEP > -1 && AELDPNJIOOC_LastVopDivaLv.Length > IOPHIHFOOEP)
 		{
-			AELDPNJIOOC_LastVopDivaLv[IOPHIHFOOEP] = _JBGEEPFKIGG_Value ^ ENOBDCFHELD;
+			AELDPNJIOOC_LastVopDivaLv[IOPHIHFOOEP] = _JBGEEPFKIGG_val ^ ENOBDCFHELD;
 		}
 	}
 
@@ -523,18 +523,18 @@ public class OCMJNBIFJNM_Offer : KLFDBFMNLBL_ServerSaveBlock
 						LGHIPHEDCNC_Offer offerDb = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.LBCMJGOOHLJ_Offer;
 						string str = offerDb.EFEGBHACJAL("default_vf_platoon_name", JpStringLiterals.StringLiteral_12943);
 						data.OPFGFINHFCE_name = FGCNMLBACGO_ReadString(b2, AFEHLCGHAEE_Strings.OPFGFINHFCE_name, str, ref isInvalid);
-						IBCGPBOGOGP_ReadIntArray(b2, AFEHLCGHAEE_Strings.PPFNGGCBJKC_id, 0, 3, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) => {
+						IBCGPBOGOGP_ReadIntArray(b2, AFEHLCGHAEE_Strings.PPFNGGCBJKC_id, 0, 3, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) => {
 							//0x1B374CC
-							data.ODGFPJFJPFP(_OIPCCBHIKIA_index, _JBGEEPFKIGG_Value);
+							data.ODGFPJFJPFP(_OIPCCBHIKIA_index, _JBGEEPFKIGG_val);
 						}, ref isInvalid);
 					}
 				}
 				GHKKEFGDIBC_LastVfpUnlock = CJAENOMGPDA_ReadInt(block, "last_vfp_unlock", 0, ref isInvalid);
 				CHFMCFNEFEO_LastVopDailyLv = CJAENOMGPDA_ReadInt(block, "last_vop_daily_lv", 0, ref isInvalid);
-				IBCGPBOGOGP_ReadIntArray(block, "last_vop_diva_lv", 0, 10, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_Value) =>
+				IBCGPBOGOGP_ReadIntArray(block, "last_vop_diva_lv", 0, 10, (int _OIPCCBHIKIA_index, int _JBGEEPFKIGG_val) =>
 				{
 					//0x1B373C8
-					ALANKFMEIPK(_OIPCCBHIKIA_index, _JBGEEPFKIGG_Value);
+					ALANKFMEIPK(_OIPCCBHIKIA_index, _JBGEEPFKIGG_val);
 				}, ref isInvalid);
 				KNIKMMKNOFA_ARcv = CJAENOMGPDA_ReadInt(block, "a_rcv", 0, ref isInvalid);
 			}

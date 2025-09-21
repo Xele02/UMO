@@ -56,7 +56,7 @@ namespace XeApp.Game.Menu
 		public void SetUp(EMGOCNMMPHC _view)
 		{
 			m_view = _view;
-			m_jacketId = _view.JNCPEGJGHOG_JackedId;
+			m_jacketId = _view.JNCPEGJGHOG_JacketId;
 			m_score = _view.LDIODNEADGG_Hs;
 		}
 

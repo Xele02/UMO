@@ -38,12 +38,12 @@ public class MKIKFJKPEHK
 						KLOOIJIDKGO_Cost = new List<int>();
 						for(int i = 0; i < ev.MBHDIJJEOFL.Count; i++)
 						{
-							if(ev.MBHDIJJEOFL[i].INDDJNMPONH_Type == a1)
+							if(ev.MBHDIJJEOFL[i].INDDJNMPONH_type == a1)
 							{
 								if(ev.MBHDIJJEOFL[i].MAFAIIHJAFG_spurt <= (((int)ev.NGOFCFJHOMI_Status & 0xfffffffe) == 4 ? 1 : 0))
 								{
 									int a2;
-									if(ev.MBHDIJJEOFL[i].INDDJNMPONH_Type == 1)
+									if(ev.MBHDIJJEOFL[i].INDDJNMPONH_type == 1)
 									{
 										a2 = ENKGMPLGEIJ.MGJKEJHEBPO_Blocks[FCHBEILHFBC].BPLOEAHOPFI_Stamina;
 									}
@@ -51,8 +51,8 @@ public class MKIKFJKPEHK
 									{
 										a2 = ev.EAMODCHMCEL_GetTicketCost(FCHBEILHFBC, _GIKLNODJKFK_IsLine6);
 									}
-									KLOOIJIDKGO_Cost.Add(ev.MBHDIJJEOFL[i].JBGEEPFKIGG_Value * a2);
-									BGIKOPLLDJB_Rate.Add(ev.MBHDIJJEOFL[i].JBGEEPFKIGG_Value);
+									KLOOIJIDKGO_Cost.Add(ev.MBHDIJJEOFL[i].JBGEEPFKIGG_val * a2);
+									BGIKOPLLDJB_Rate.Add(ev.MBHDIJJEOFL[i].JBGEEPFKIGG_val);
 								}
 							}
 						}

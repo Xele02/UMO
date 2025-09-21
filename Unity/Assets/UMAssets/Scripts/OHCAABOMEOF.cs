@@ -23,9 +23,9 @@ public class OHCAABOMEOF
 	public const int NKMJHIAPPFL = 1000;
 
 	// // RVA: 0x1DDFF1C Offset: 0x1DDFF1C VA: 0x1DDFF1C
-	public static int LDGFHMMAFOC(KGOGMKMBCPP_EventType _INDDJNMPONH_Type, int _PPFNGGCBJKC_id)
+	public static int LDGFHMMAFOC(KGOGMKMBCPP_EventType _INDDJNMPONH_type, int _PPFNGGCBJKC_id)
 	{
-		return (int)_INDDJNMPONH_Type * 1000 + _PPFNGGCBJKC_id;
+		return (int)_INDDJNMPONH_type * 1000 + _PPFNGGCBJKC_id;
 	}
 
 	// // RVA: 0x1DDFF28 Offset: 0x1DDFF28 VA: 0x1DDFF28

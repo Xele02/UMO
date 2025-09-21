@@ -55,7 +55,7 @@ namespace XeApp.Game.Menu
 					m_costume_max_array[dbCostume.AHHJLDLAPAN_DivaId]++;
 					for(int j = 0; j < dbCostume.BJGNGNPHCBA_LevelsInfo.Length; j++)
 					{
-						if(dbCostume.BJGNGNPHCBA_LevelsInfo[j].INDDJNMPONH_Type == 4)
+						if(dbCostume.BJGNGNPHCBA_LevelsInfo[j].INDDJNMPONH_type == 4)
 						{
 							m_costume_color_max_array[0]++;
 							m_costume_color_max_array[dbCostume.AHHJLDLAPAN_DivaId]++;

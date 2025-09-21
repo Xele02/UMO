@@ -302,22 +302,22 @@ namespace XeApp.Game.Menu
 			rivalTotal.SetNumber(viewData.EKOCEKHBHLE_Rival.BDLNMOIOMHK_Total, 0);
 			if(!viewData.HIHPPOFHMNF_Player.JCOJKAHFADL_Is6Line)
 			{
-				myDiffImage.uvRect = diffImageRectList[viewData.HIHPPOFHMNF_Player.AKNELONELJK_Difficulty];
+				myDiffImage.uvRect = diffImageRectList[viewData.HIHPPOFHMNF_Player.AKNELONELJK_difficulty];
 				GameManager.Instance.UnionTextureManager.GetTexture("cmn_tex_pack").Set(myDiffImage);
 			}
 			else
 			{
-				myDiffImage.uvRect = diffImageRectList_6Line[viewData.HIHPPOFHMNF_Player.AKNELONELJK_Difficulty - 2];
+				myDiffImage.uvRect = diffImageRectList_6Line[viewData.HIHPPOFHMNF_Player.AKNELONELJK_difficulty - 2];
 				GameManager.Instance.UnionTextureManager.GetTexture("cmn_tex_02_pack").Set(myDiffImage);
 			}
 			if(!viewData.EKOCEKHBHLE_Rival.JCOJKAHFADL_Is6Line)
 			{
-				rivalDiffImage.uvRect = diffImageRectList[viewData.EKOCEKHBHLE_Rival.AKNELONELJK_Difficulty];
+				rivalDiffImage.uvRect = diffImageRectList[viewData.EKOCEKHBHLE_Rival.AKNELONELJK_difficulty];
 				GameManager.Instance.UnionTextureManager.GetTexture("cmn_tex_pack").Set(rivalDiffImage);
 			}
 			else
 			{
-				rivalDiffImage.uvRect = diffImageRectList_6Line[viewData.EKOCEKHBHLE_Rival.AKNELONELJK_Difficulty - 2];
+				rivalDiffImage.uvRect = diffImageRectList_6Line[viewData.EKOCEKHBHLE_Rival.AKNELONELJK_difficulty - 2];
 				GameManager.Instance.UnionTextureManager.GetTexture("cmn_tex_02_pack").Set(rivalDiffImage);
 			}
 			myNumberCombo.SetNumber(0, 0);

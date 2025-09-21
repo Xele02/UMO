@@ -19,17 +19,17 @@ public class FAGCLBOACEE
     public class MFHPNBOLPAO
     {
         public BEFPBAIONFK DEPGBBJMFED_CategoryId; // 0x8
-        public Difficulty.Type AKNELONELJK_Difficulty; // 0xC
+        public Difficulty.Type AKNELONELJK_difficulty; // 0xC
         public bool GIKLNODJKFK_IsLine6; // 0x10
     }
 
 	public BEFPBAIONFK DEPGBBJMFED_CategoryId; // 0x8
 	public int PPFNGGCBJKC_id; // 0xC
-	public int AKNELONELJK_Difficulty; // 0x10
+	public int AKNELONELJK_difficulty; // 0x10
 	public bool GIKLNODJKFK_IsLine6; // 0x14
 
 	// // RVA: 0xFC1A40 Offset: 0xFC1A40 VA: 0xFC1A40
-	public void KHEKNNFCAOI_Init(BEFPBAIONFK _DEPGBBJMFED_CategoryId, int _PPFNGGCBJKC_id, int _AKNELONELJK_Difficulty/* = 0*/, bool _GIKLNODJKFK_IsLine6/* = false*/)
+	public void KHEKNNFCAOI_Init(BEFPBAIONFK _DEPGBBJMFED_CategoryId, int _PPFNGGCBJKC_id, int _AKNELONELJK_difficulty/* = 0*/, bool _GIKLNODJKFK_IsLine6/* = false*/)
     {
         this.DEPGBBJMFED_CategoryId = _DEPGBBJMFED_CategoryId;
         int id = 0;
@@ -69,7 +69,7 @@ public class FAGCLBOACEE
                 return;
         }
         this.PPFNGGCBJKC_id = id;
-        this.AKNELONELJK_Difficulty = _AKNELONELJK_Difficulty;
+        this.AKNELONELJK_difficulty = _AKNELONELJK_difficulty;
         this.GIKLNODJKFK_IsLine6 = _GIKLNODJKFK_IsLine6;
     }
 

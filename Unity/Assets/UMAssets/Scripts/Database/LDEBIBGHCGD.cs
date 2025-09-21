@@ -66,7 +66,7 @@ public class LDEBIBGHCGD_EventRaidLobby : DIHHCBACKGG_DbSection
 	{
 		public int PPFNGGCBJKC_id; // 0x8
 		public int GJNIPHMPMIC_Phase; // 0xC
-		public int INDDJNMPONH_Type; // 0x10
+		public int INDDJNMPONH_type; // 0x10
 		public int FDBOPFEOENF_Diva; // 0x14
 		public int MJMPANIBFED_pid; // 0x18 Pic
 		public string LICPCDCLOIO_Message; // 0x1C
@@ -76,7 +76,7 @@ public class LDEBIBGHCGD_EventRaidLobby : DIHHCBACKGG_DbSection
 		{
 			PPFNGGCBJKC_id = (int)_IDLHJIOMJBK_Data.PPFNGGCBJKC;
 			GJNIPHMPMIC_Phase = (int)_IDLHJIOMJBK_Data.GJNIPHMPMIC;
-			INDDJNMPONH_Type = (int)_IDLHJIOMJBK_Data.GBJFNGCDKPM;
+			INDDJNMPONH_type = (int)_IDLHJIOMJBK_Data.GBJFNGCDKPM;
 			FDBOPFEOENF_Diva = (int)_IDLHJIOMJBK_Data.FDBOPFEOENF;
 			MJMPANIBFED_pid = (int)_IDLHJIOMJBK_Data.MJMPANIBFED;
 			LICPCDCLOIO_Message = DatabaseTextConverter.TranslateLobbyGuideText( BlockName, PPFNGGCBJKC_id, _IDLHJIOMJBK_Data.LICPCDCLOIO );

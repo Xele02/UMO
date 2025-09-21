@@ -3,7 +3,7 @@ using System;
 using XeApp.Game.Common;
 using Unity.IO.LowLevel.Unsafe;
 
-[System.Obsolete("Use LPPGENBEECK_musicMaster", true)]
+[System.Obsolete("Use LPPGENBEECK_MusicMaster", true)]
 public class LPPGENBEECK {}
 [UMOClass(ReaderClass = "BMHPFEELLNP")]
 public class LPPGENBEECK_MusicMaster : DIHHCBACKGG_DbSection
@@ -91,12 +91,12 @@ public class LPPGENBEECK_MusicMaster : DIHHCBACKGG_DbSection
 	}
 
 	// // RVA: 0x10CFB94 Offset: 0x10CFB94 VA: 0x10CFB94
-	public HDNKOFNBCEO_RewardInfo NEJKJJPIGKD_GetRewardInfo(KEODKEGFDLD_FreeMusicInfo AOKGAGHGAEC_FreeMusicInfo, int _AKNELONELJK_Difficulty, bool _GIKLNODJKFK_IsLine6)
+	public HDNKOFNBCEO_RewardInfo NEJKJJPIGKD_GetRewardInfo(KEODKEGFDLD_FreeMusicInfo AOKGAGHGAEC_FreeMusicInfo, int _AKNELONELJK_difficulty, bool _GIKLNODJKFK_IsLine6)
 	{
 		if (!_GIKLNODJKFK_IsLine6)
-			return MGDLFOAKGGF[AOKGAGHGAEC_FreeMusicInfo.EAEDODGPLEC_RewardBaseId + _AKNELONELJK_Difficulty - 1];
+			return MGDLFOAKGGF[AOKGAGHGAEC_FreeMusicInfo.EAEDODGPLEC_RewardBaseId + _AKNELONELJK_difficulty - 1];
 		else
-			return MGDLFOAKGGF[AOKGAGHGAEC_FreeMusicInfo.LOKLNBLBBFD_Reward6LineBaseId + _AKNELONELJK_Difficulty - 1];
+			return MGDLFOAKGGF[AOKGAGHGAEC_FreeMusicInfo.LOKLNBLBBFD_Reward6LineBaseId + _AKNELONELJK_difficulty - 1];
 	}
 
 	// // RVA: 0x10CFC50 Offset: 0x10CFC50 VA: 0x10CFC50
@@ -900,15 +900,15 @@ public class KEODKEGFDLD_FreeMusicInfo
 	}
 
 	// // RVA: 0x19F32FC Offset: 0x19F32FC VA: 0x19F32FC
-	public ADDHLABEFKH EMJCHPDJHEI(bool _GIKLNODJKFK_IsLine6, int _AKNELONELJK_Difficulty)
+	public ADDHLABEFKH EMJCHPDJHEI(bool _GIKLNODJKFK_IsLine6, int _AKNELONELJK_difficulty)
 	{
 		if (IPFHDCEFLDE_ByDiffLine6.Count < 1 || !_GIKLNODJKFK_IsLine6)
 		{
-			if(_AKNELONELJK_Difficulty >= COGKJBAFBKN_ByDiff.Count)
-				UnityEngine.Debug.LogError("diffculty error : "+_AKNELONELJK_Difficulty+" "+COGKJBAFBKN_ByDiff.Count);
-			return COGKJBAFBKN_ByDiff[_AKNELONELJK_Difficulty];
+			if(_AKNELONELJK_difficulty >= COGKJBAFBKN_ByDiff.Count)
+				UnityEngine.Debug.LogError("diffculty error : "+_AKNELONELJK_difficulty+" "+COGKJBAFBKN_ByDiff.Count);
+			return COGKJBAFBKN_ByDiff[_AKNELONELJK_difficulty];
 		}
-		return IPFHDCEFLDE_ByDiffLine6[_AKNELONELJK_Difficulty];
+		return IPFHDCEFLDE_ByDiffLine6[_AKNELONELJK_difficulty];
 	}
 
 }
@@ -1020,9 +1020,9 @@ public class NONFIGBOJLN
 public class AJIKMKFGNCJ
 {
 	// public short JOMGCCBFKEF_MissionId { get; set; } // 0x8 JIHJGFNPPIL GGFGMDFOFLG JCJBHJOOIDP
-	// public byte INDDJNMPONH_Type { get; set; } // 0xA JDIGGEBNOPK GHAILOLPHPF BACGOKIGMBC
+	// public byte INDDJNMPONH_type { get; set; } // 0xA JDIGGEBNOPK GHAILOLPHPF BACGOKIGMBC
 	// public byte AHHJLDLAPAN_DivaId { get; set; } // 0xB AMALMGIALDF IPKDLMIDMHH IENNENMKEFO
-	// public int JBGEEPFKIGG_Value { get; set; } // 0xC AHPLCJAKAOP OLOCMINKGON ABAFHIBFKCE
+	// public int JBGEEPFKIGG_val { get; set; } // 0xC AHPLCJAKAOP OLOCMINKGON ABAFHIBFKCE
 }
 
 [System.Obsolete("Use AIPEHINPIHC_ForcedSettingInfo", true)]
@@ -1138,11 +1138,11 @@ public class ADDHLABEFKH
 	public List<int> NLKEBAOBJCM_combo = new List<int>(); // 0x10
 
 	//// RVA: 0x15B9E74 Offset: 0x15B9E74 VA: 0x15B9E74
-	public int DLPBHJALHCK_GetScoreRank(int _JBGEEPFKIGG_Value)
+	public int DLPBHJALHCK_GetScoreRank(int _JBGEEPFKIGG_val)
 	{
 		for(int i = 0; i < KNIFCANOHOC_score.Count; i++)
 		{
-			if (KNIFCANOHOC_score[i] > _JBGEEPFKIGG_Value)
+			if (KNIFCANOHOC_score[i] > _JBGEEPFKIGG_val)
 				return i;
 		}
 		//return KNIFCANOHOC_score.Count;
@@ -1150,11 +1150,11 @@ public class ADDHLABEFKH
 	}
 
 	//// RVA: 0x15B9F40 Offset: 0x15B9F40 VA: 0x15B9F40
-	public int CCFAAPPKILD_GetRankCombo(int _JBGEEPFKIGG_Value)
+	public int CCFAAPPKILD_GetRankCombo(int _JBGEEPFKIGG_val)
 	{
 		for (int i = 0; i < NLKEBAOBJCM_combo.Count; i++)
 		{
-			if (NLKEBAOBJCM_combo[i] > _JBGEEPFKIGG_Value)
+			if (NLKEBAOBJCM_combo[i] > _JBGEEPFKIGG_val)
 				return i;
 		}
 		return NLKEBAOBJCM_combo.Count;

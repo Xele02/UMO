@@ -6,9 +6,9 @@ public class HLMJIADBPIJ
 	public static int MKLHIENKAFA = 864000; // 0x0
 
 	// RVA: 0x15F2314 Offset: 0x15F2314 VA: 0x15F2314
-	public static bool IBHJAMDGGMC(NJLGICBHIOC.EOFJDIACFEC _INDDJNMPONH_Type, long _DPIBHFNDJII_UnlockCond1, long _EKPBOLNFGJB_UnlockCond2, BBHNACPENDM_ServerSaveData _AHEFHIMGIBI_PlayerData, OKGLGHCBCJP_Database NKEBMCIMJND, long _JHNMKKNEENE_Time)
+	public static bool IBHJAMDGGMC(NJLGICBHIOC.EOFJDIACFEC _INDDJNMPONH_type, long _DPIBHFNDJII_UnlockCond1, long _EKPBOLNFGJB_UnlockCond2, BBHNACPENDM_ServerSaveData _AHEFHIMGIBI_PlayerData, OKGLGHCBCJP_Database NKEBMCIMJND, long _JHNMKKNEENE_Time)
     {
-        switch(_INDDJNMPONH_Type)
+        switch(_INDDJNMPONH_type)
 		{
 			case NJLGICBHIOC.EOFJDIACFEC.HIJCECJACBK/*1*/:
 				{

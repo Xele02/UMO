@@ -100,7 +100,7 @@ public class KBPDNHOKEKD_ProductId
 	public int PANKNKOIIJE_group_key; // 0x38
 	public List<string> GJEBPJHECIK_ItemSetNameForApi = new List<string>(); // 0x3C
 	public long KBFOIECIADN_opened_at; // 0x40
-	public long EGBOHDFBAPB_ClosedAt; // 0x48
+	public long EGBOHDFBAPB_CloseAt; // 0x48
 	public string MMOIFDEPIEP_app_public_key; // 0x50
 	public HFDMKKIFNNP KHEGONOKLPN_NormalLotFreeSetting; // 0x54
 	public PFIJNPCEOIL JENBPPBNAHP_PlayerNormalLotFreeState; // 0x58
@@ -139,11 +139,11 @@ public class KBPDNHOKEKD_ProductId
 		KAPMOPMDHJE_label = CEDHHAGBIBA.GNJBKANDLEE_ReadInt(_IDLHJIOMJBK_Data, AFEHLCGHAEE_Strings.KAPMOPMDHJE_label);
 		PANKNKOIIJE_group_key = CEDHHAGBIBA.GNJBKANDLEE_ReadInt(_IDLHJIOMJBK_Data, AFEHLCGHAEE_Strings.PANKNKOIIJE_group_key);
 		KBFOIECIADN_opened_at = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(_IDLHJIOMJBK_Data, AFEHLCGHAEE_Strings.KBFOIECIADN_opened_at);
-		EGBOHDFBAPB_ClosedAt = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(_IDLHJIOMJBK_Data, AFEHLCGHAEE_Strings.EGBOHDFBAPB_CloseAt);
+		EGBOHDFBAPB_CloseAt = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(_IDLHJIOMJBK_Data, AFEHLCGHAEE_Strings.EGBOHDFBAPB_CloseAt);
 		MMOIFDEPIEP_app_public_key = CEDHHAGBIBA.BNCLNFJHEND_ReadString(_IDLHJIOMJBK_Data, AFEHLCGHAEE_Strings.MMOIFDEPIEP_app_public_key);
 		NGIKLCDKAMB_FormatedPrice = CEDHHAGBIBA.BNCLNFJHEND_ReadString(_IDLHJIOMJBK_Data, "formatted_price");
-		if (EGBOHDFBAPB_ClosedAt != 0)
-			EGBOHDFBAPB_ClosedAt--;
+		if (EGBOHDFBAPB_CloseAt != 0)
+			EGBOHDFBAPB_CloseAt--;
 		int idx = OPFGFINHFCE_name.IndexOf(" (TEST1234");
 		if (idx > -1)
 		{
@@ -199,7 +199,7 @@ public class KBPDNHOKEKD_ProductId
 		KAPMOPMDHJE_label = (_HMFFHLPNMPH_Count == 10) ? 7000102 : 7000101;
 		NPPGKNGIFGK_price = (_HMFFHLPNMPH_Count == 10) ? 500 : 50;
 		KBFOIECIADN_opened_at = Utility.GetTargetUnixTime(2010, 1, 1, 0, 0, 0);
-		EGBOHDFBAPB_ClosedAt = Utility.GetTargetUnixTime(3000, 1, 1, 0, 0, 0);
+		EGBOHDFBAPB_CloseAt = Utility.GetTargetUnixTime(3000, 1, 1, 0, 0, 0);
 	}
 
 	//// RVA: 0x101D81C Offset: 0x101D81C VA: 0x101D81C

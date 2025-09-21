@@ -75,11 +75,11 @@ namespace XeApp.Game.Tutorial
 					saveBitIndex = a;
 					if(!saveData.INEAGJMJLFG_TutorialAlreadyFlags.ODKIHPBEOEC_IsTrue(a))
 					{
-						for(int i = 0; i < master.CDENCMNHNGA_table[index].AKBHPFBDDOL_TutoCondId.Length; i++)
+						for(int i = 0; i < master.CDENCMNHNGA_table[index].AKBHPFBDDOL_Val.Length; i++)
 						{
 							if(master.CDENCMNHNGA_table[index].FJOLNJLLJEJ_Rank[i] <= playerRank)
 							{
-								if(checker((TutorialConditionId)master.CDENCMNHNGA_table[index].AKBHPFBDDOL_TutoCondId[i]))
+								if(checker((TutorialConditionId)master.CDENCMNHNGA_table[index].AKBHPFBDDOL_Val[i]))
 								{
 									Initialize();
 									yield return Instance.ShowTutorialCoroutine(master.CDENCMNHNGA_table[index]);
@@ -136,7 +136,7 @@ namespace XeApp.Game.Tutorial
 					id = pic.IODLCIBCONC;
 				if(id < 64)
 				{
-					if(pic.AKBHPFBDDOL_TutoCondId[0] == (int)conditionId)
+					if(pic.AKBHPFBDDOL_Val[0] == (int)conditionId)
 					{
 						if (!GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.INEAGJMJLFG_TutorialAlreadyFlags.ODKIHPBEOEC_IsTrue(id))
 							return false;
@@ -145,7 +145,7 @@ namespace XeApp.Game.Tutorial
 				else if((id >= 501 && id < 565))
 				{
 					id -= 437;
-					if (pic.AKBHPFBDDOL_TutoCondId[0] == (int)conditionId)
+					if (pic.AKBHPFBDDOL_Val[0] == (int)conditionId)
 					{
 						if (!GameManager.Instance.localSave.EPJOACOONAC_GetSave().IAHLNPMFJMH_Tutorial.INEAGJMJLFG_TutorialAlreadyFlags.ODKIHPBEOEC_IsTrue(id))
 							return false;

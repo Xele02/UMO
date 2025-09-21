@@ -89,10 +89,10 @@ public class BBOPDOIIOGM
     }
 
 	// // RVA: 0xF2D6E8 Offset: 0xF2D6E8 VA: 0xF2D6E8
-	public int APFJJLFMIGN(int _GHBPLHBNMBK_FreeMusicId, int _AKNELONELJK_Difficulty, long _JHNMKKNEENE_Time)
+	public int APFJJLFMIGN(int _GHBPLHBNMBK_FreeMusicId, int _AKNELONELJK_difficulty, long _JHNMKKNEENE_Time)
     {
         LNELCMNJPIC_EventGoDiva.DPKGKNJBFBJ d = NJGBKGKFOED(_GHBPLHBNMBK_FreeMusicId, _JHNMKKNEENE_Time);
-        int v = OCLKNJELBFO(_GHBPLHBNMBK_FreeMusicId, _AKNELONELJK_Difficulty);
+        int v = OCLKNJELBFO(_GHBPLHBNMBK_FreeMusicId, _AKNELONELJK_difficulty);
         int v2 = 100;
         if(HODCLEPALGP(0) < 100)
         {
@@ -102,10 +102,10 @@ public class BBOPDOIIOGM
     }
 
 	// // RVA: 0xF2D96C Offset: 0xF2D96C VA: 0xF2D96C
-	public int PKGGEBBLJIN(int _GHBPLHBNMBK_FreeMusicId, int _AKNELONELJK_Difficulty, long _JHNMKKNEENE_Time)
+	public int PKGGEBBLJIN(int _GHBPLHBNMBK_FreeMusicId, int _AKNELONELJK_difficulty, long _JHNMKKNEENE_Time)
     {
         LNELCMNJPIC_EventGoDiva.DPKGKNJBFBJ d = NJGBKGKFOED(_GHBPLHBNMBK_FreeMusicId, _JHNMKKNEENE_Time);
-        int v = OCLKNJELBFO(_GHBPLHBNMBK_FreeMusicId, _AKNELONELJK_Difficulty);
+        int v = OCLKNJELBFO(_GHBPLHBNMBK_FreeMusicId, _AKNELONELJK_difficulty);
         int v2 = 100;
         if(HODCLEPALGP(1) < 100)
         {
@@ -115,10 +115,10 @@ public class BBOPDOIIOGM
     }
 
 	// // RVA: 0xF2DA08 Offset: 0xF2DA08 VA: 0xF2DA08
-	public int HLDLLGJIIJJ(int _GHBPLHBNMBK_FreeMusicId, int _AKNELONELJK_Difficulty, long _JHNMKKNEENE_Time)
+	public int HLDLLGJIIJJ(int _GHBPLHBNMBK_FreeMusicId, int _AKNELONELJK_difficulty, long _JHNMKKNEENE_Time)
     {
         LNELCMNJPIC_EventGoDiva.DPKGKNJBFBJ d = NJGBKGKFOED(_GHBPLHBNMBK_FreeMusicId, _JHNMKKNEENE_Time);
-        int v = OCLKNJELBFO(_GHBPLHBNMBK_FreeMusicId, _AKNELONELJK_Difficulty);
+        int v = OCLKNJELBFO(_GHBPLHBNMBK_FreeMusicId, _AKNELONELJK_difficulty);
         int v2 = 100;
         if(HODCLEPALGP(2) < 100)
         {
@@ -128,15 +128,15 @@ public class BBOPDOIIOGM
     }
 
 	// // RVA: 0xF2D818 Offset: 0xF2D818 VA: 0xF2D818
-	public float HODCLEPALGP(int _INDDJNMPONH_Type)
+	public float HODCLEPALGP(int _INDDJNMPONH_type)
     {
         if(NLBJOMFILIP.Count > 0)
         {
-            if(_INDDJNMPONH_Type == 2)
+            if(_INDDJNMPONH_type == 2)
                 return NLBJOMFILIP[0].DGAELGEJPNA / 100.0f;
-            if(_INDDJNMPONH_Type == 1)
+            if(_INDDJNMPONH_type == 1)
                 return NLBJOMFILIP[0].PKDAEFIGMLI / 100.0f;
-            if(_INDDJNMPONH_Type == 0)
+            if(_INDDJNMPONH_type == 0)
                 return NLBJOMFILIP[0].NOEFINFEMBM / 100.0f;
         }
         return 0;
@@ -158,9 +158,9 @@ public class BBOPDOIIOGM
     }
 
 	// // RVA: 0xF2D7D8 Offset: 0xF2D7D8 VA: 0xF2D7D8
-	public int OCLKNJELBFO(int _GHBPLHBNMBK_FreeMusicId, int _AKNELONELJK_Difficulty)
+	public int OCLKNJELBFO(int _GHBPLHBNMBK_FreeMusicId, int _AKNELONELJK_difficulty)
     {
-        return OEGDCBLNNFF_GetEvent().BDIJPOGEGNB(_GHBPLHBNMBK_FreeMusicId, _AKNELONELJK_Difficulty);
+        return OEGDCBLNNFF_GetEvent().BDIJPOGEGNB(_GHBPLHBNMBK_FreeMusicId, _AKNELONELJK_difficulty);
     }
 
 	// // RVA: 0xF2DAEC Offset: 0xF2DAEC VA: 0xF2DAEC
@@ -305,9 +305,9 @@ public class BBOPDOIIOGM
     }
 
 	// // RVA: 0xF2CA9C Offset: 0xF2CA9C VA: 0xF2CA9C
-	private void PNFDENHKMGK_SetDifficulty(Difficulty.Type _AKNELONELJK_Difficulty)
+	private void PNFDENHKMGK_SetDifficulty(Difficulty.Type _AKNELONELJK_difficulty)
     {
-        CCFENBAOPAG_LocalSaveData.HJHBGHMNGKL_SetDifficulty(_AKNELONELJK_Difficulty);
+        CCFENBAOPAG_LocalSaveData.HJHBGHMNGKL_SetDifficulty(_AKNELONELJK_difficulty);
         GameManager.Instance.localSave.HJMKBCFJOOH_TrySave();
     }
 

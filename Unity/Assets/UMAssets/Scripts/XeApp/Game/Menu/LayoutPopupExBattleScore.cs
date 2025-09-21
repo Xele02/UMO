@@ -49,7 +49,7 @@ namespace XeApp.Game.Menu
 			m_view = view;
 			m_parent = transform.parent;
 			m_imageJacket.enabled = false;
-			MenuScene.Instance.MusicJacketTextureCache.Load(m_view.JNCPEGJGHOG_JackedId, (IiconTexture texture) =>
+			MenuScene.Instance.MusicJacketTextureCache.Load(m_view.JNCPEGJGHOG_JacketId, (IiconTexture texture) =>
 			{
 				//0x1725644
 				m_imageJacket.enabled = true;

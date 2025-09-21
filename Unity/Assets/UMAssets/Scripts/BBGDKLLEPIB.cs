@@ -551,7 +551,7 @@ public class BBGDKLLEPIB
 	}
 
 	// // RVA: 0xF19620 Offset: 0xF19620 VA: 0xF19620
-	private bool ALDMHFCFECK(int _INDDJNMPONH_Type, float LNAHJANMJNM)
+	private bool ALDMHFCFECK(int _INDDJNMPONH_type, float LNAHJANMJNM)
 	{
 		return true;
 	}

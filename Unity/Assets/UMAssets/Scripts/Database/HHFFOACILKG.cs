@@ -22,7 +22,7 @@ public class HHFFOACILKG_Medal : DIHHCBACKGG_DbSection
 		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1757E94 DEMEPMAEJOO 0x1758FD4 HIGKAIDMOKN
 		public int GBJFNGCDKPM_Type { get { return NOFECLGOLAI_TypeCrypted ^ FBGGEFFJJHB_xor; } set { NOFECLGOLAI_TypeCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1757CC4 CEJJMKODOGK 0x1759070 HOHCEBMMACI
 		public int IBAKPKKEDJM_Month { get { return MKHGNAKFPBE ^ FBGGEFFJJHB_xor; } set { MKHGNAKFPBE = value ^ FBGGEFFJJHB_xor; } } //0x1757F2C IJHAHFOOJKH 0x175910C LNKIOJGIKMB
-		public int JBGEEPFKIGG_Value { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1759730 OLOCMINKGON 0x17591A8 ABAFHIBFKCE
+		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1759730 OLOCMINKGON 0x17591A8 ABAFHIBFKCE
 		public int PLALNIIBLOF_en { get { return HNJHPNPFAAN_EnabledCrypted ^ FBGGEFFJJHB_xor; } set { HNJHPNPFAAN_EnabledCrypted = value ^ FBGGEFFJJHB_xor; } } //0x1757C2C JPCJNLHHIPE 0x1759244 JJFJNEJLBDG
 		public int IJEKNCDIIAE_MVer { get { return GNGNIKNNCNH_MVerCrypted ^ FBGGEFFJJHB_xor; } set { GNGNIKNNCNH_MVerCrypted = value ^ FBGGEFFJJHB_xor; } } //0x17597C8 KJIMMIBDCIL 0x17592E0 DMEGNOKIKCD
 		public long AHILKBKLFJM { get { return DBKJDLJJLLI ^ FBGGEFFJJHB_xor; } set { DBKJDLJJLLI = value ^ FBGGEFFJJHB_xor; } } //0x1757D5C BOKMCIGOLOP 0x175937C HIFMNLCEDCB
@@ -151,7 +151,7 @@ public class HHFFOACILKG_Medal : DIHHCBACKGG_DbSection
 			data.PPFNGGCBJKC_id = (int)array[i].PPFNGGCBJKC;
 			data.GBJFNGCDKPM_Type = (int)array[i].GBJFNGCDKPM;
 			data.IBAKPKKEDJM_Month = (int)array[i].IBAKPKKEDJM;
-			data.JBGEEPFKIGG_Value = (int)array[i].JBGEEPFKIGG;
+			data.JBGEEPFKIGG_val = (int)array[i].JBGEEPFKIGG;
 			data.PLALNIIBLOF_en = (int)array[i].PLALNIIBLOF;
 			data.IJEKNCDIIAE_MVer = array[i].IJEKNCDIIAE;
 			data.AHILKBKLFJM = array[i].AHILKBKLFJM;

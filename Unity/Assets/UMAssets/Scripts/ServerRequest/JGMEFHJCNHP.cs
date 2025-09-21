@@ -37,12 +37,12 @@ public class MFDJIFIIPJD
 	}
 
 	//// RVA: 0x131311C Offset: 0x131311C VA: 0x131311C
-	public void KHEKNNFCAOI_Init(string _OPFGFINHFCE_name, int _NANNGLGOFKH_value, int _HMFFHLPNMPH_Count, int _INDDJNMPONH_Type/* = 0*/)
+	public void KHEKNNFCAOI_Init(string _OPFGFINHFCE_name, int _NANNGLGOFKH_value, int _HMFFHLPNMPH_Count, int _INDDJNMPONH_type/* = 0*/)
 	{
 		HAAJGNCFNJM_ItemName = _OPFGFINHFCE_name;
 		OCNINMIMHGC_item_value = _NANNGLGOFKH_value;
 		MBJIFDBEDAC_item_count = _HMFFHLPNMPH_Count;
-		MJBKGOJBPAD_item_type = _INDDJNMPONH_Type;
+		MJBKGOJBPAD_item_type = _INDDJNMPONH_type;
 		MCDEKMIABEN();
 	}
 
@@ -389,22 +389,22 @@ public class MFDJIFIIPJD
 public class PNFCNPCGKDM
 {
 	public string LJNAKDMILMC_key; // 0x8
-	public string LJGOOOMOMMA_Message; // 0xC
+	public string LJGOOOMOMMA_message; // 0xC
 	public bool OOIJCMLEAJP_is_received; // 0x10
 	public List<MFDJIFIIPJD> HBHMAKNGKFK_Items; // 0x14
 	public long KBFOIECIADN_opened_at; // 0x18
-	public long EGBOHDFBAPB_ClosedAt; // 0x20
+	public long EGBOHDFBAPB_CloseAt; // 0x20
 
 	// RVA: 0xFF1614 Offset: 0xFF1614 VA: 0xFF1614
 	public void KHEKNNFCAOI_Init(EDOHBJAPLPF_JsonData _IDLHJIOMJBK_Data)
 	{
 		LJNAKDMILMC_key = (string)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.LJNAKDMILMC_key];
-		LJGOOOMOMMA_Message = (string)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.LJGOOOMOMMA_message];
+		LJGOOOMOMMA_message = (string)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.LJGOOOMOMMA_message];
 		OOIJCMLEAJP_is_received = (bool)_IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.OOIJCMLEAJP_is_received];
 		if(_IDLHJIOMJBK_Data.BBAJPINMOEP_Contains("current_period"))
 		{
 			KBFOIECIADN_opened_at = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(_IDLHJIOMJBK_Data["current_period"], AFEHLCGHAEE_Strings.KBFOIECIADN_opened_at);
-			EGBOHDFBAPB_ClosedAt = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(_IDLHJIOMJBK_Data["current_period"], AFEHLCGHAEE_Strings.EGBOHDFBAPB_CloseAt);
+			EGBOHDFBAPB_CloseAt = CEDHHAGBIBA.NIKODNFGCEM_ReadLong(_IDLHJIOMJBK_Data["current_period"], AFEHLCGHAEE_Strings.EGBOHDFBAPB_CloseAt);
 		}
 		EDOHBJAPLPF_JsonData items = _IDLHJIOMJBK_Data[AFEHLCGHAEE_Strings.HBHMAKNGKFK_Items];
 		HBHMAKNGKFK_Items = new List<MFDJIFIIPJD>(items.HNBFOAJIIAL_Count);

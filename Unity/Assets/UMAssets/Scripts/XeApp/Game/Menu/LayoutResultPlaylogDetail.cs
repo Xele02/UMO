@@ -303,7 +303,7 @@ namespace XeApp.Game.Menu
 			}
 			else
 			{
-				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[data.skillId - 1].HEOLEHDFLJO_Icon;
+				a = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PABCHCAAEAA_ActiveSkills[data.skillId - 1].HEOLEHDFLJO_ico;
 			}
 			rect = LayoutUGUIUtility.MakeUnityUVRect(m_UvListManager.GetUVData(string.Format("log_skill_icon_{0:00}", a[skillIndex])));
 			return true;

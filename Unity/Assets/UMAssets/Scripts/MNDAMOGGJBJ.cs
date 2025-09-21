@@ -96,10 +96,10 @@ public class MNDAMOGGJBJ
 	}
 
 	//// RVA: 0x17B0810 Offset: 0x17B0810 VA: 0x17B0810
-	//public void IDKIMNBOBLA(int _PPFNGGCBJKC_id, int _JBGEEPFKIGG_Value) { }
+	//public void IDKIMNBOBLA(int _PPFNGGCBJKC_id, int _JBGEEPFKIGG_val) { }
 
 	//// RVA: 0x17B08EC Offset: 0x17B08EC VA: 0x17B08EC
-	//public void MBBGCIFMOHC(int JBGJDEELLOP, int _JBGEEPFKIGG_Value) { }
+	//public void MBBGCIFMOHC(int JBGJDEELLOP, int _JBGEEPFKIGG_val) { }
 
 	//// RVA: 0x17B09CC Offset: 0x17B09CC VA: 0x17B09CC
 	public int ANFHCKKFIEA()

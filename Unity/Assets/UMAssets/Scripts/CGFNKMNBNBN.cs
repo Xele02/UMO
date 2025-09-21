@@ -10,7 +10,7 @@ public class CGFNKMNBNBN
 	public int KEFGPJBKAOD_BgId; // 0x24
 	public int KLMAMIOBDHP_MusicId; // 0x28
 	public string OPFGFINHFCE_name; // 0x2C
-	public SeriesAttr.Type AIHCEGFANAM_Attr; // 0x30
+	public SeriesAttr.Type AIHCEGFANAM_SerieAttr; // 0x30
 
 	// // RVA: 0x12B951C Offset: 0x12B951C VA: 0x12B951C
 	public static List<CGFNKMNBNBN> KIONEGHMJIA()
@@ -31,7 +31,7 @@ public class CGFNKMNBNBN
 				data.KEFGPJBKAOD_BgId = dbBg.OENPCNBFPDA_bg_id;
 				data.KLMAMIOBDHP_MusicId = dbBg.KFNDHKFLPPK_mus_id;
 				data.OPFGFINHFCE_name = dbBg.OPFGFINHFCE_name;
-				data.AIHCEGFANAM_Attr = dbBg.AIHCEGFANAM_SerieAttr;
+				data.AIHCEGFANAM_SerieAttr = dbBg.AIHCEGFANAM_SerieAttr;
 				res.Add(data);
 			}
 		}
@@ -94,7 +94,7 @@ public class CGFNKMNBNBN
 							data.KEFGPJBKAOD_BgId = l[i].OENPCNBFPDA_bg_id;
 							data.KLMAMIOBDHP_MusicId = l[i].KFNDHKFLPPK_mus_id;
 							data.OPFGFINHFCE_name = l[i].OPFGFINHFCE_name;
-							data.AIHCEGFANAM_Attr = l[i].AIHCEGFANAM_SerieAttr;
+							data.AIHCEGFANAM_SerieAttr = l[i].AIHCEGFANAM_SerieAttr;
 							res.Add(data);
 						}
 					}
@@ -162,7 +162,7 @@ public class CGFNKMNBNBN
 				res.KEFGPJBKAOD_BgId = bg.OENPCNBFPDA_bg_id;
 				res.KLMAMIOBDHP_MusicId = bg.KFNDHKFLPPK_mus_id;
 				res.OPFGFINHFCE_name = bg.OPFGFINHFCE_name;
-				res.AIHCEGFANAM_Attr = bg.AIHCEGFANAM_SerieAttr;
+				res.AIHCEGFANAM_SerieAttr = bg.AIHCEGFANAM_SerieAttr;
 				return res;
 			}
 		}
@@ -188,7 +188,7 @@ public class CGFNKMNBNBN
 				data.KEFGPJBKAOD_BgId = bg.OENPCNBFPDA_bg_id;
 				data.KLMAMIOBDHP_MusicId = bg.KFNDHKFLPPK_mus_id;
 				data.OPFGFINHFCE_name = bg.OPFGFINHFCE_name;
-				data.AIHCEGFANAM_Attr = bg.AIHCEGFANAM_SerieAttr;
+				data.AIHCEGFANAM_SerieAttr = bg.AIHCEGFANAM_SerieAttr;
 				res.Add(data);
 			}
 		}

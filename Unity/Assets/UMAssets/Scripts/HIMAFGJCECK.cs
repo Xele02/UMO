@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class HIMAFGJCECK
 {
 	public string KLMPFGOCBHC_description; // 0x8
-	public List<BPADANIKFHP> OJGPPOKENLG_Groups; // 0xC OJGPPOKENLG_ProbabilityPerGroupKey
+	public List<BPADANIKFHP> OJGPPOKENLG_Groups; // 0xC ProbabilityPerGroupKey
 	public List<IJPECOFPOCH> DDGPEFEEKFP_Items; // 0x10
 	public IKMBBPDBECA KACECFNECON_extra; // 0x14
 

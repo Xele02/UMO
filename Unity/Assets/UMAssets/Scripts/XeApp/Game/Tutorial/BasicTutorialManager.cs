@@ -760,7 +760,7 @@ namespace XeApp.Game.Tutorial
 			JGEOBNENMAH.EDHCNKBMLGI res = new JGEOBNENMAH.EDHCNKBMLGI();
 			res.GHBPLHBNMBK_FreeMusicId = Database.Instance.gameSetup.musicInfo.freeMusicId;
 			res.KLCIIHKFPPO_StoryMusicId = Database.Instance.gameSetup.musicInfo.storyMusicId;
-			res.AKNELONELJK_Difficulty = (int)Database.Instance.gameSetup.musicInfo.difficultyType;
+			res.AKNELONELJK_difficulty = (int)Database.Instance.gameSetup.musicInfo.difficultyType;
 			res.OALJNDABDHK = GameManager.Instance.ViewPlayerData.NPFCMHCCDDH;
 			res.NHPGGBCKLHC_FriendData = null;
 			res.KAIPAEILJHO_TicketCount = 0;

@@ -53,11 +53,11 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xD7B888 Offset: 0xD7B888 VA: 0xD7B888
-		public bool PGBPLOHNAOC(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value)
+		public bool PGBPLOHNAOC(int IOPHIHFOOEP, int _JBGEEPFKIGG_val)
 		{
 			if (FGNPIJIDIID.Length <= IOPHIHFOOEP)
 				return false;
-			FGNPIJIDIID[IOPHIHFOOEP] = _JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor;
+			FGNPIJIDIID[IOPHIHFOOEP] = _JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor;
 			return true;
 		}
 
@@ -82,11 +82,11 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xD7B984 Offset: 0xD7B984 VA: 0xD7B984
-		public bool HHIOOFDNPFF(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value)
+		public bool HHIOOFDNPFF(int IOPHIHFOOEP, int _JBGEEPFKIGG_val)
 		{
 			if (ABICFGIHNDO.Length <= IOPHIHFOOEP)
 				return false;
-			ABICFGIHNDO[IOPHIHFOOEP] = _JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor;
+			ABICFGIHNDO[IOPHIHFOOEP] = _JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor;
 			return true;
 		}
 
@@ -99,11 +99,11 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xD7BA80 Offset: 0xD7BA80 VA: 0xD7BA80
-		public bool LILKNMJPLLN(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value)
+		public bool LILKNMJPLLN(int IOPHIHFOOEP, int _JBGEEPFKIGG_val)
 		{
 			if (EHLBDJELKKG.Length <= IOPHIHFOOEP)
 				return false;
-			EHLBDJELKKG[IOPHIHFOOEP] = _JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor;
+			EHLBDJELKKG[IOPHIHFOOEP] = _JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor;
 			return true;
 		}
 
@@ -134,11 +134,11 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xD7BB7C Offset: 0xD7BB7C VA: 0xD7BB7C
-		public bool MKGIKKJCPBL(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value)
+		public bool MKGIKKJCPBL(int IOPHIHFOOEP, int _JBGEEPFKIGG_val)
 		{
 			if (EAHEGFMLPJJ.Length <= IOPHIHFOOEP)
 				return false;
-			EAHEGFMLPJJ[IOPHIHFOOEP] = _JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor;
+			EAHEGFMLPJJ[IOPHIHFOOEP] = _JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor;
 			return true;
 		}
 
@@ -233,11 +233,11 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xD7C3EC Offset: 0xD7C3EC VA: 0xD7C3EC
-		public bool OLPACJAMDIP(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value)
+		public bool OLPACJAMDIP(int IOPHIHFOOEP, int _JBGEEPFKIGG_val)
 		{
 			if (JKLOKAKFJKP.Length <= IOPHIHFOOEP)
 				return false;
-			JKLOKAKFJKP[IOPHIHFOOEP] = _JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor;
+			JKLOKAKFJKP[IOPHIHFOOEP] = _JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor;
 			return true;
 		}
 
@@ -250,11 +250,11 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xD7C4E8 Offset: 0xD7C4E8 VA: 0xD7C4E8
-		public bool PAKEIOIDMEJ(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value)
+		public bool PAKEIOIDMEJ(int IOPHIHFOOEP, int _JBGEEPFKIGG_val)
 		{
 			if (IFEHKNJONPL_CountCrypted.Length <= IOPHIHFOOEP)
 				return false;
-			IFEHKNJONPL_CountCrypted[IOPHIHFOOEP] = _JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor;
+			IFEHKNJONPL_CountCrypted[IOPHIHFOOEP] = _JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor;
 			return true;
 		}
 
@@ -267,11 +267,11 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xD7C5E4 Offset: 0xD7C5E4 VA: 0xD7C5E4
-		public bool OPFJDAHPGHI(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value)
+		public bool OPFJDAHPGHI(int IOPHIHFOOEP, int _JBGEEPFKIGG_val)
 		{
 			if (JPHGMBLDFOM.Length <= IOPHIHFOOEP)
 				return false;
-			JPHGMBLDFOM[IOPHIHFOOEP] = _JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor;
+			JPHGMBLDFOM[IOPHIHFOOEP] = _JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor;
 			return true;
 		}
 
@@ -284,11 +284,11 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xD7C6E0 Offset: 0xD7C6E0 VA: 0xD7C6E0
-		public bool CJEGGLPCIOD(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value)
+		public bool CJEGGLPCIOD(int IOPHIHFOOEP, int _JBGEEPFKIGG_val)
 		{
 			if (LCGJKAGIFGO_MaxCrypted.Length <= IOPHIHFOOEP)
 				return false;
-			LCGJKAGIFGO_MaxCrypted[IOPHIHFOOEP] = _JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor;
+			LCGJKAGIFGO_MaxCrypted[IOPHIHFOOEP] = _JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor;
 			return true;
 		}
 
@@ -354,11 +354,11 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xD7CD40 Offset: 0xD7CD40 VA: 0xD7CD40
-		public bool OMKABGNMOCN(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value)
+		public bool OMKABGNMOCN(int IOPHIHFOOEP, int _JBGEEPFKIGG_val)
 		{
 			if (GFBIBNABAHB_DayCrypted.Length <= IOPHIHFOOEP)
 				return false;
-			GFBIBNABAHB_DayCrypted[IOPHIHFOOEP] = _JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor;
+			GFBIBNABAHB_DayCrypted[IOPHIHFOOEP] = _JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor;
 			return true;
 		}
 
@@ -484,7 +484,7 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 		public int PPFNGGCBJKC_id { get { return EHOIENNDEDH_IdCrypted ^ FBGGEFFJJHB_xor; } set { EHOIENNDEDH_IdCrypted = value ^ FBGGEFFJJHB_xor; } } //0xD802D0 DEMEPMAEJOO 0xD7DDA8 HIGKAIDMOKN
 		//ReleaseCondition
 		public int OAFPGJLCNFM_cond { get { return FPOLAPKKDMG_Crypted ^ FBGGEFFJJHB_xor; } set { FPOLAPKKDMG_Crypted = value ^ FBGGEFFJJHB_xor; } } //0xD80368 PMJFANGPJIE 0xD7DE44 HEECOBEHHPJ
-		public int JBGEEPFKIGG_Value { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0xD80400 OLOCMINKGON 0xD7DEE0 ABAFHIBFKCE
+		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0xD80400 OLOCMINKGON 0xD7DEE0 ABAFHIBFKCE
 		public int ADPPAIPFHML_Num { get { return MMEINLBEOMK_NumCrypted ^ FBGGEFFJJHB_xor; } set { MMEINLBEOMK_NumCrypted = value ^ FBGGEFFJJHB_xor; } } //0xD80498 LJMLHOOPGEM 0xD7DF7C PHNIOCPOBGO
 
 		//// RVA: 0xD80530 Offset: 0xD80530 VA: 0xD80530
@@ -513,11 +513,11 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xD7E1D4 Offset: 0xD7E1D4 VA: 0xD7E1D4
-		public bool IFIEMNCGJBB(int CMBFEFIJFBK, int _JBGEEPFKIGG_Value)
+		public bool IFIEMNCGJBB(int CMBFEFIJFBK, int _JBGEEPFKIGG_val)
 		{
 			if (NIOPNCALFOE.Length <= CMBFEFIJFBK)
 				return false;
-			NIOPNCALFOE[CMBFEFIJFBK] = _JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor;
+			NIOPNCALFOE[CMBFEFIJFBK] = _JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor;
 			return true;
 		}
 
@@ -530,11 +530,11 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xD7E2D0 Offset: 0xD7E2D0 VA: 0xD7E2D0
-		public bool MPBCJDOBKJD(int CMBFEFIJFBK, int _JBGEEPFKIGG_Value)
+		public bool MPBCJDOBKJD(int CMBFEFIJFBK, int _JBGEEPFKIGG_val)
 		{
 			if (CDDLNKAPCFB_HitCrypted.Length <= CMBFEFIJFBK)
 				return false;
-			CDDLNKAPCFB_HitCrypted[CMBFEFIJFBK] = _JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor;
+			CDDLNKAPCFB_HitCrypted[CMBFEFIJFBK] = _JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor;
 			return true;
 		}
 
@@ -567,9 +567,9 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xD7E5A8 Offset: 0xD7E5A8 VA: 0xD7E5A8
-		public bool CDEEPLNNAIA(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value)
+		public bool CDEEPLNNAIA(int IOPHIHFOOEP, int _JBGEEPFKIGG_val)
 		{
-			JPDONOHOEPD[IOPHIHFOOEP] = _JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor;
+			JPDONOHOEPD[IOPHIHFOOEP] = _JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor;
 			return true;
 		}
 
@@ -580,9 +580,9 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xD7E680 Offset: 0xD7E680 VA: 0xD7E680
-		public bool AELPPMPGMKL(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value)
+		public bool AELPPMPGMKL(int IOPHIHFOOEP, int _JBGEEPFKIGG_val)
 		{
-			MDHDCMOKNFN[IOPHIHFOOEP] = _JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor;
+			MDHDCMOKNFN[IOPHIHFOOEP] = _JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor;
 			return true;
 		}
 
@@ -593,9 +593,9 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xD7E758 Offset: 0xD7E758 VA: 0xD7E758
-		public bool MMIGDOAKGMN(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value)
+		public bool MMIGDOAKGMN(int IOPHIHFOOEP, int _JBGEEPFKIGG_val)
 		{
-			BLONJEJPPAC[IOPHIHFOOEP] = _JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor;
+			BLONJEJPPAC[IOPHIHFOOEP] = _JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor;
 			return true;
 		}
 
@@ -606,9 +606,9 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 		}
 
 		//// RVA: 0xD7E830 Offset: 0xD7E830 VA: 0xD7E830
-		public bool PFGPMBCGEKC(int IOPHIHFOOEP, int _JBGEEPFKIGG_Value)
+		public bool PFGPMBCGEKC(int IOPHIHFOOEP, int _JBGEEPFKIGG_val)
 		{
-			DNDFHJJCEAO[IOPHIHFOOEP] = _JBGEEPFKIGG_Value ^ FBGGEFFJJHB_xor;
+			DNDFHJJCEAO[IOPHIHFOOEP] = _JBGEEPFKIGG_val ^ FBGGEFFJJHB_xor;
 			return true;
 		}
 
@@ -1302,7 +1302,7 @@ public class LGHIPHEDCNC_Offer : DIHHCBACKGG_DbSection
 			GHLIDOPMMDB data = new GHLIDOPMMDB();
 			data.PPFNGGCBJKC_id = array[i].PPFNGGCBJKC;
 			data.OAFPGJLCNFM_cond = array[i].OAFPGJLCNFM;
-			data.JBGEEPFKIGG_Value = array[i].JBGEEPFKIGG;
+			data.JBGEEPFKIGG_val = array[i].JBGEEPFKIGG;
 			data.ADPPAIPFHML_Num = array[i].ADPPAIPFHML;
 			GLOOEBIBCOC.Add(data);
 		}

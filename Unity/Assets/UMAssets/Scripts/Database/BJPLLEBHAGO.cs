@@ -44,27 +44,27 @@ public class EPPOHFLMDBC_DivaStats
 	}
 
 	// // RVA: 0xFC160C Offset: 0xFC160C VA: 0xFC160C
-	public void ANIJHEBLMGB_AddStat(int _INDDJNMPONH_Type, short _JBGEEPFKIGG_Value)
+	public void ANIJHEBLMGB_AddStat(int _INDDJNMPONH_type, short _JBGEEPFKIGG_val)
 	{
-		switch(_INDDJNMPONH_Type)
+		switch(_INDDJNMPONH_type)
 		{
 			case 1:
-				HFIDCMNFBJG_Life += _JBGEEPFKIGG_Value;
+				HFIDCMNFBJG_Life += _JBGEEPFKIGG_val;
 			break;
 			case 2:
-				PFJCOCPKABN_Soul += _JBGEEPFKIGG_Value;
+				PFJCOCPKABN_Soul += _JBGEEPFKIGG_val;
 			break;
 			case 3:
-				JFJDLEMNKFE_Vocal += _JBGEEPFKIGG_Value;
+				JFJDLEMNKFE_Vocal += _JBGEEPFKIGG_val;
 			break;
 			case 4:
-				GDOLPGBLMEA_Charm += _JBGEEPFKIGG_Value;
+				GDOLPGBLMEA_Charm += _JBGEEPFKIGG_val;
 			break;
 			case 5:
-				ONDFNOOICLE_Fold += _JBGEEPFKIGG_Value;
+				ONDFNOOICLE_Fold += _JBGEEPFKIGG_val;
 			break;
 			case 6:
-				HCFOMFDPGEC_Support += _JBGEEPFKIGG_Value;
+				HCFOMFDPGEC_Support += _JBGEEPFKIGG_val;
 			break;
 			default:
 			break;

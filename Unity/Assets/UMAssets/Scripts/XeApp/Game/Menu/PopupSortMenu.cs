@@ -678,7 +678,7 @@ namespace XeApp.Game.Menu
 								{
 									if(a1[k] < 1)
 									{
-										if(a.INDDJNMPONH_Type[k] != 0)
+										if(a.INDDJNMPONH_type[k] != 0)
 											b = true;
 										if(a.GJLFANGDGCL_Target[k] != 0)
 											b = true;
@@ -688,7 +688,7 @@ namespace XeApp.Game.Menu
 									else
 									{
 										KFCIIMBBNCD dataK = IMMAOANGPNK.HHCJCDFCLOB.NKEBMCIMJND_Database.FOFADHAENKC_Skill.PEPLECGHBFA_SceneEffectInfo[a1[k] - 1];
-										if(dataK.INDDJNMPONH_Type != a.INDDJNMPONH_Type[k])
+										if(dataK.INDDJNMPONH_type != a.INDDJNMPONH_type[k])
 											b = true;
 										if(dataK.GJLFANGDGCL_Target != a.GJLFANGDGCL_Target[k])
 											b = true;

@@ -22,7 +22,7 @@ public class JHAAHJNEBOG_LimitedCompoItem : DIHHCBACKGG_DbSection
 		public int PLALNIIBLOF_en { get { return HNJHPNPFAAN_EnabledCrypted ^ FBGGEFFJJHB_xor; } set { HNJHPNPFAAN_EnabledCrypted = value ^ FBGGEFFJJHB_xor; } } //0xB1D09C JPCJNLHHIPE 0xB1C564 JJFJNEJLBDG
 		public int DMEDKJPOLCH_Category { get { return HNNLOMMFHEN ^ FBGGEFFJJHB_xor; } set { HNNLOMMFHEN = value ^ FBGGEFFJJHB_xor; } } //0xB1D134 IPKCKAAEEOE 0xB1C600 JOGLLINFLJN
 		public int EILKGEADKGH_Order { get { return HHPFFPINGAA_OrderCrypted ^ FBGGEFFJJHB_xor; } set { HHPFFPINGAA_OrderCrypted = value ^ FBGGEFFJJHB_xor; } } //0xB1D1CC NPDDACIHBKD 0xB1C69C BJJMCKHBPNH
-		public int JBGEEPFKIGG_Value { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0xB1D264 OLOCMINKGON 0xB1C7D4 ABAFHIBFKCE
+		public int JBGEEPFKIGG_val { get { return ICKOHEDLEFP_ValueCrypted ^ FBGGEFFJJHB_xor; } set { ICKOHEDLEFP_ValueCrypted = value ^ FBGGEFFJJHB_xor; } } //0xB1D264 OLOCMINKGON 0xB1C7D4 ABAFHIBFKCE
 		public int EKLIPGELKCL_Rarity { get { return EAJCFBCHIFB_RarityCrypted ^ FBGGEFFJJHB_xor; } set { EAJCFBCHIFB_RarityCrypted = value ^ FBGGEFFJJHB_xor; } } //0xB1D2FC OEEHBGECGKL 0xB1C738 GHLMHLJJBIG
 		public int EMIJNAFJFJO_Expir { get { return LBDKPOLAELH ^ FBGGEFFJJHB_xor; } set { LBDKPOLAELH = value ^ FBGGEFFJJHB_xor; } } //0xB1D394 GBGPKONOFGD 0xB1C870 KCFHLAFJJPJ
 		public int PENIOLJHIPK { get { return BFEJGHJHIOF ^ FBGGEFFJJHB_xor; } set { BFEJGHJHIOF = value ^ FBGGEFFJJHB_xor; } } //0xB1C9A8 AHIONKNDHHH 0xB1C90C NEOFLJKHAKC
@@ -122,7 +122,7 @@ public class JHAAHJNEBOG_LimitedCompoItem : DIHHCBACKGG_DbSection
 				data.DMEDKJPOLCH_Category = array[i].DMEDKJPOLCH;
 				data.EILKGEADKGH_Order = array[i].FPOMEEJFBIG;
 				data.EKLIPGELKCL_Rarity = array[i].FBFLDFMFFOH;
-				data.JBGEEPFKIGG_Value = array[i].JBGEEPFKIGG;
+				data.JBGEEPFKIGG_val = array[i].JBGEEPFKIGG;
 				data.EMIJNAFJFJO_Expir = array[i].EMIJNAFJFJO;
 				data.PENIOLJHIPK = (int)array[i].PENIOLJHIPK;
 				OCMMLAOEPIG.Add(data);
